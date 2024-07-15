@@ -1,657 +1,3 @@
-Vetulocystida†        541-501
-Xenambulacraria
-  Xenacoelomorpha
-  Ambulacraria
-    Cambroernida†
-      Herpetogaster†
-      Phlogites†
-      Eldonoidea†
-    Yanjiahella†
-    Hemichordata
-      Enteropneusta
-      Pterobranchia
-        Cephalodiscida
-        Graptolithina
-      Planctosphaeroidea
-    Echinodermata
-      Ctenoimbricata†
-      Ctenocystoidea†
-      Cincta†
-      Stylophora†
-        Cornuta†
-        Mitrata†
-      Blastozoa†
-        Soluta†
-        Blastoidea†
-        Cystoidea†
-        Eocrinoidea†
-        Paracrinoidea†
-      Crinozoa
-        Crinoidea
-        Edrioasteroidia†
-        Cystoidea†
-        Rhombifera†
-      Eleutherozoa
-        Aterozoa
-          Ophiuroidea
-          Asteroidea
-        Echinozoa
-          Helicoplacoidea†
-          Ophiocistiodea†
-          Echinoidea
-          Holothuroidea
-
-Echinodermata
--------------
-Ambulacraria
-  Echinodermata
-    Homalozoa (Gill & Caster, 1960)
-      Cincta
-      Soluta
-      Stylophora
-      Ctenocystoidea (Robinson & Sprinkle, 1969)
-    Crinozoa
-      Crinoidea
-      Edrioasteroidea
-      Cystoidea
-      Rhombifera
-    Asterozoa
-      Ophiuroidea
-      Asteroidea
-    Echinozoa
-      Echinoidea
-      Holothuroidea
-      Ophiocistioidea
-      Helicoplacoidea
-    Blastozoa
-      Blastoidea
-      Cystoidea
-      Eocrinoidea
-      Paracrinoidea
-
-Homalozoa
----------
-Echinodermata
-  Homalozoa
-    Stylophora (mitrates and cornutes)
-    Soluta
-    Cincta
-    Ctenocystoidea (ctenoid-bearing homalozoans)
-
-Stylophora
-----------
-Echinodermata
-  Stylophora
-    Cornuta
-    Mitrata
-
-Cornuta
--------
-Echnodermata
-  Stylophora
-    Cornuta (Jaekel, 1901)
-      Cothurnocystidae (Bather, 1913)
-->      https://paleobiodb.org/classic/basicTaxonInfo?taxon_no=64824
-        Chauvelicystinae
-          Ampelocarpus
-          Chauvelicystis
-          Flabellicarpus
-          Lyricocarpus
-          Milonicystis
-          Prochauvelicystis
-          Proscotiaecystis
-          Sokkaejaecystis
-        Cothurnocystinae
-          Cothurnocystis
-        Phyllocystinae
-        Scotiaecystinae
-          Bohemiaecystis
-          Scotiaecystis
-          Thoralicystis
-        - Acuticarpus
-          Archaeocothurnus
-          Cardiocystella
-          Nevadaecystis
-          Ponticulocarpus
-          Trigonocarpus
-
-Mitrata
--------
-Echinodermata
-  Stylophora
-    Mitrata (Jaekel, 1918)
-
-Soluta
-------
-Echinodermata
-  Soluta (Jaekel, 1901)
-    Syringocrinida
-    Dendrocystitida
-[phylogenetic tree showing only genus?]
-  Soluta (2011-11-26-a Parsley, Rozhnov, Sumrall)
-    Coleicarpus
-    - Castericystis
-      Minervaecystis
-      - Girvanicystis
-        Dendrocystites
-        - Maennilia
-          Heckericystis
-        - Dendrocystoides
-          - Claritacarpus
-            - Rutroclypeus
-              - - Iowacystis
-                  Scalenocystites
-                - Syringocrinus
-                  - Myeinocystites
-                    Belemnocystites
-
-Cincta
-------
-Echinodermata
-  Cincta
-    Trochocystitidae
-    Gyrocystidae
-    Sucocystidae
-pyhologenetic tree:
-Echinodermata
-  Ctenocystoidea
-  - Cincta (2019-02-15-a Topper et al; 2020-02-11-a Zamora et al)
-      (↓ 2008-09-09-a Smith & Zamora; 2012-09-04-a Zamora, Rahman, Smith)
-      Asturicystis
-      Trochocystitidae
-        Trochocystites
-        Trochocystoides
-      - Sotocinctus
-        - Graciacystis
-          - Protocinctus
-            Gyrocystidae
-              Progyrocystis
-              Gyrocystis
-            Sucocystidae
-              Ludwigicinctus
-              - Undatacinctus
-                - Sucocystis
-                  - Lignanicystis
-                    Elliptocinctus
-    (↓ 2008-09-09-a Smith & Zamora; 2012-09-04-a Zamora, Rahman, Smith)
-    - Soluta
-      - Helicoplacus
-        - Camptostroma
-          - Stromatocystites
-            - Kinzercystis
-              - Gogia
-                - Akadocrinus
-                  - Pleurocystites
-                    Ubaghsicystis
-                  - Macrocystella
-                    Aethocrinus
-
-Ctenocystoidea
---------------
-Echinodermata
-  Ctenocystoidea (Robinson & Sprinkle, 1969)
-    (↓ https://hdl.handle.net/20.500.14352/55669 1999, in spanish)
-    Courtessolea
-    - - Jugoszovia
-        Conollia
-      - Pembrocystis
-        - Etoctenocystis
-          - Gilcidia
-            Ctenocystis
-
-Crinozoa
---------
-Echinodermata
-  Crinozoa (Matsumoto, 1929)
-    Crinoidea
-    Cystoidea (von Buch, 1846)
-    Edrioasteroidea
-    Paracrinoidea (Regnéll, 1945)
-    Rhombifera
-
-Crinoidea
----------
-Echinodermata
-  Crinozoa
-    Crinoidea (Miller, 1921)
-      Camerata
-      Pentacrinoidea
-        Articulata
-        Disparida
-        Procrinoidea
-        Flexibilia
-    (two large phylogentic trees given)
-
-Camerata
---------
-Echinodermata
-  Crinozoa
-    Crinoidea
-      Camerata (Wachsmuth and Springer, 1885)
-        Cladida?
-        Adelphicrinus
-        Eknomocrinus
-        Cnemecrinus
-        Quechuacrinus
-        Reteocrinus
-        Eucamerata
-        Rosfacrinus
-        Diplobathrida
-        Monobathrida
-
-Cladida
--------
-Echinodermata
-  Crinoidea
-    Pentacrinoidea
-      Inadunata
-        Cladida (Moore and Laudon, 1943)
-          Porocrinoidea
-          Flexibilia
-          Eucladida
-            Ampelocrinida
-            Cyathoformes
-            Articulata
-
-PC Cladida
-  SO Porocrinoidea
-    O Hybocrinida
-    O Porocrinida
-  SO Flexibilia
-    O Sagenocrinida
-    O Taxocrinida
-  MO Eucladida
-    Ampelocrinda (incertae sedis)
-    SO Cyathoformes ("primitive cladids:)
-      "Cyathocrinida"
-      "Dedrocrinida" [in part]
-      g Poteriocrinites
-    Articuliformes ("intermediate and advanced cladids")
-      "Poteriocrinida" [in part]
-      "Dendrocrinida" [in part]
-      SO Articulata
-        O Encrinida
-        O Holocrinida
-        O Millericrinida
-        O Roveacrinida
-        O Uintacrinida
-        O Comatulida
-        O Cyrtocrinida
-        O Hyocrinida
-        O Isocrinida
-
-Pentacrinoidea
---------------
-Echinodermata
-  Crinoidea
-    Pentacrinoidea (Jaekel, 1918)
-      Disparida
-      Cladida
-
-Inadunata
----------
-(redirects to Pentacrinoidea)
-
-Disparida
----------
-Echinodermata
-  Crinoidea
-    Inadunata
-      Disparida
-        (↓ 2016-09-02-a Wright et al)
-        Calceocrinida
-        Eustenocrinida
-        Homocrinida
-        Maennilicrinida
-        Myelodactyla
-        Pisocrinoidea
-        Tetragonocrinida
-      (large list of families and genera)
-
-Flexibilia
-----------
-Echinodermata
-  Crinoidea
-    Cladida
-      Flexibilia (Ziettel, 1895)
-        Sagenocrinida
-        Taxocrinia (paraphyletic?)
-
-Articulata
-----------
-Echinodermata
-  Crinoidea
-    Articulata
-      Comatulida
-      Cyrtocrinida
-      Hyocrinida
-      Isocrinida
-      Encrinida
-      Holocrinida
-      Millericinida
-      Roveacrinida
-      Uintacrinida
-    (large tree of orders/families)
-    ("bourgueticrinids" in text as the stalked type, but not in list, not link)
-
-Cystoidea
----------
-Echinodermata
-  Crinozoa
-    Cystoidea (von Buch, 1846)
-
-Edrioasteroidea
----------------
-Echinodermata
-  Crinozoa
-    Edrioasteroidea (Billings, 1858)
-    (long list of genera but no intermediate taxons)
-
-Paracrinoidea
--------------
-Echinodermata
-  Blastozoa
-    Paracrinoidea (Regnell, 1945)
-      Comarocystitida
-        Heckeritidae?
-          Heckerites
-        Amygdalocystitidae
-          Achradocystites (Volborth, 1870)
-          Amygdalocystites (Billings, 1854) (= Ottawaystis; Billingsocystis?)
-          Oklahomacystis (Bassler, 1943)
-          Ovulocystites (Frest et al., 1980)
-        Comarocystitidae (Balther, 1899)
-          Comarocystites (Billings, 1845)
-          Implicaticystis
-          Sinclairocystis
-      Platycystitida
-        Platycystitidae
-          Canadocystinae (Frest, Strimple, & Coney, 1979)
-            Canadocystis (= Sigmacystis)
-          Platycystitinae (Frest, Strimple, & Coney, 1979)
-            Globulocystites (Frest, Strimple, & Coney, 1979)
-            Platycycstites (Miller, 1889)
-        Malocystitidae
-          Malocystites
-          Wellerocystis
-        Bistomiacystitidae
-          Bistomiacystis
-      ? Springerocystidae (Bassler, 1950)
-          (suggested paracrinoids / Canadacystis Sprinkel, 1973)
-          (eocrinoids per ?Bassler, Parsley & Mintz, 1975)
-          Columbocystis
-          Foertecystis
-          Springerocystis
-      ? "Doubtful"
-        Allocystites (Sprinke 1973 yes; Parsley & Nintz 1975 no)
-        Paleocystites
-        Ulrichocystis
-
-Phylogeny after Limbeck (2018)
--+-- C. laevis (Cryptocrinites laevis?)
- `--+-- Columbocystis ovata (Columbocystis ovata? Eocrinoid)
-    |-- Columbocystis typica
-    `--+--+-- Bistomiacystis globosa
-       |  |-- Bistomiacystis schrantzi
-       |  `-- Achradocystites schmidti
-       `--+--+-- Comarocystites punctatus
-          |  |-- Comarocystites tribrachius
-          |  |-- Implicaticystis shumardi
-          |  `-- Implicaticystis symmetricus
-          `--+-- Canadocystis tennesseensis
-             `--+-- Canadocystis barrandei
-                |-- Canadocystis emmonsi
-                `--+-- Malocystites murchisoni
-                   `--+-- Sinclairocystis praedicta
-                      |--+-- Amygdalocystites florealis
-                      |  |-- Amygdalocystites radiatus
-                      |  |-- Oklahomacystis bibrachiatus
-                      |  |-- Oklahomacystis spissus
-                      |  |-- Oklahomacystis tribrachiatus
-                      |  |-- Oklahomacystis trigonis
-                      |  `-- Wellerocystis kimmswickensis
-                      `--+-- Globulocystites cristatus
-                         |-- Globulocystites rotundatus
-                         |-- Globulocystites (originally Platycystites) infundus
-                         |-- Platycystites cristatus
-                         `-- Platycystites faberi
-
-Rhombifera
-----------
--> Eocrinoidea
-
-Blastozoa
----------
-Echinodermata
-  Blastozoa (Sprinkel, 1973)
-    Eocrinoidea
-    Parablastoidea
-    Rhombifera
-    Diploporita
-    Blastoidea
-    Paracrinoidea
-
-Eocrinoidea
------------
-Echinodermata
-  Blastozoa
-    Eocrinoidea (Jaekel, 1899) (grade wrt Blastoids)
-      Gogiida
-      Rhombifera
-      Diploporita? (in text only)
-      Coronoidea? (in text only)
-      Blastoidea? (in text and note only)
-      Parablastoidea? (in text only)
-      Paracrinoidea? (in text only)
-      Cystoidea? (in text only, said to be ancestral to "modern crinoids")
-
-Gogiida
--------
-Echinodermata
-  Eocrinoidea
-    Gogiida (Broadhead, 1982)
-      Eocrinidae (Jaekel, 1918)
-        Gogia (Walcott, 1917)
-      Lyracystidae (Sprinkel & Collins, 2006)
-        Lyracystis
-
-Diploporita
------------
-Echinodermata
-  Blastozoa
-    Diploporita (polyphyletic according to text – Paul, 1988)
-      Asteroblastoidea (not thought to be monophyletic)
-      Glyptosphaeritida (not thought to be monophyletic)
-      Sphaeronitida
-
-Blastoidea
-----------
-Echinodermata
-  Blastozoa
-    Blastoidea (Say, 1825)
-      Fissiculata
-        (no info)
-      Spiraculata
-->      (long list of genera, no intermediate subdivisions)
-      ?
-        Macurdablastus
-
-Asterozoa
----------
-Echinodermata
-  Asterozoa (von Zittel, 1895)
-    Asteroidea
-    Ophiuroidea
-    Somasteroidea
-
-Somasteroidea
--------------
-Echinodermata
-  Asterozoa
-    Somasteroidea
-      Archegonasteridae (Spencer, 1951)
-      Archophiactinidae? (Spencer, 1927)
-      Catervaparmasterida (Blake, 2000)
-      Chinianasteridae (Spencer, 1951)
-      Helianthasteridae? (Owen, 1965)
-      Villebrunasteridae (Fell, 1963)
-
-Echinozoa
----------
-Echinodermata
-  Echinozoa
-    Echinoidea
-    Holothuroidea
-    Ophiocistioidea
-    Helicoplacoidea
-
-Ophiocistioidea
----------------
-Echinodermata
-  Echinooa
-    Ophiocistiodea
-
-Helicoplacoidea
----------------
-Echinodermata
-  Helicoplacoidea
-    Helicoplacus (Durham & Caster, 1963)
-    Polyplacus (Durham, 1967)
-    Waucobella (Durham, 1967)
-
-Isorophida
-----------
-Echinodermata
-  Edrioasteroidea
-    Isorophida (Bell, 1976)
-      Agelacrinitidae
-      Lebetodiscidae
-
-Eleutherozoa
-------------
-Echinodermata
-  Eleutherozoa (Bather, 1900)
-    Asterozoa
-      Ateroidea
-      Ophiuroidea
-    Echinozoa
-      Echinoidea
-      Holothuroidea
-    Somasteroidea
-
-Helicosystitidae
-----------------
-Echinodermata
-  Helicocystitidae (Smith & Zamora, 2013)
-
-LIST OF ECHINODERM ORDERS
-
-BP Crinozoa
-  C Crinoidea
-    SC Articulata
-      O Bourgueticrinida
-      O Comatulida
-      O Cyrtocrinida
-      O Hyocrinida
-      O Isocrinida
-      O Millericrinida
-    SC Flexibilia
-    SC  Camerata
-    SC  Disperida
-  C Paracrinoidea
-    O Comarocystitida
-      F Heckeritidae
-      F Amygdalocystitidae
-      F Comarocystitidae
-    O Platycystitida
-      F Platycystitidae
-      F Malocystitidae
-      F Bistomiacystitidae
-  C Cystoidea
-    O Aristocystitida
-    O Asteroblastida
-    O Glyptosphaeritida
-    O Sphaeronitida
-  C Edrioasteroidea
-    O Edrioasterida
-    O Isorophida
-BP Asterozoa
-  C Ophiuroidea
-    O Euryalida
-    O Ophiurida
-    O Amphilepidida
-    O Ophiacanthida
-    O Ophioleucida
-    O Ophioscolecida
-  C Asteroidea
-    IC Concentricycloidea
-      O Peripodida
-    SO Forcipulatacea
-      O Brisingida
-      O Forcipulatida
-    SO Spinulosacea
-      O Spinulosida
-    SO Valvatacea
-      O Notomyotida
-      O Paxillosida
-      O Valvatida
-    O Valatida
-    F Calliasterellidae
-    O Trichasteropsida
-BP Echinozoa
-  C Echinoidea
-    SO Diadematacia
-      O Diadematoida
-      O Echinothuroida
-      O Pedinoida
-    SO Echinacea
-      O Arbacioida
-      O Echinoida
-      O Phyosomatoida
-      O Salenoida
-      O Temnopleuroida
-    SO Gnathostomata
-      O lypeasteroida
-      O Holectypoidea
-    SO Atelostomata
-      O Holasteroida
-      O Spatangoida
-  C Holothuroidea
-    O Apodida
-    O Dendrochirotida
-    O Elasipodida
-    O Holothuriida
-    O Molpadida
-    O Persiculida
-    O Synallactida
-  C Ophiocistoidea
-    F Eucladiidae
-    F Sollasiniidae
-    F Volchoviidae
-    F Rhenosquanidae?
-  C Helicoplacoidea
-BP Blastozoa
-  C Blastoidea
-    O Coronata
-    O Fissiculata
-    O Spiraculata
-    B Macurdablastus
-  C Eocrinoidea
-    O Acocystida
-    O Gogiida
-    O Imbricata
-    O Trachelocrinida
-BP Homalozoa (= Homostelea)
-  C Ctenocystoidea
-    O Ctenocystida
-  C Soluta
-  C Cincta
-  C Stylophora
-    O Cornuta
-    O Mitrata
-
---------------------
-
 -----
 
 1955-00-00-p Treatise on Invertebrate Paleontology — Part V- Graptolithina.pdf
@@ -730,9 +76,7 @@ C Stylophora (Gill & Caster, emend. Caster & Ubaghs in pres)
 1968-00-00-p Morphology and function of dichoporite pore-structures in cystoids.pdf
 Paul, C.R.C.
 
-"List of species with dichoporite pore-structures examined."
-
-TREE
+TREE "List of species with dichoporite pore-structures examined."
 C Rhombifera (Miller)
   O Dichoporita (Jaekel emend.)
     SF Glyptocystitida (Bather)
@@ -858,7 +202,6 @@ C Rhombifera (Miller)
       F Thomacystidae (Paul)
         g Thomacystis
           Thomacystis tuberculata (Paul)
-
 
 -----
 
@@ -1070,7 +413,7 @@ P Echinodermata
   BP Homalozoa (Whitehouse 1941)
   BP Crinozoa (Matsomoto 1929, revised herein)
     C Crinoidea (Miller 1821)
-    Paracrinoidea (Regnéll 1945) ?
+    C Paracrinoidea (Regnéll 1945) ?
   BP Blastozoa n. subphyl.
     C Eocrinoidea (Jaekel 1918)
     C Parablastoidea (Hudson 1907)
@@ -1091,6 +434,14 @@ BC (now C) Eocrinoidea (Jaekel 1918) proposed for "early cystoid-like forms that
 Eocrinoidea -> other classes "presently defined as the point where an eocrinoid ancestor successfully developed one of the three later internal foldlike respiratory systems."
 
 Notes that genus Macrocystella was moved from eocrinoids to rhombiferan cystoids by Paul (1968a); this returns it to eocrinoids, but otherwise agrees with Paul that the genus is "truly transitional between the two classes."
+
+TREE outdated
+P Echinodermata
+  C Blastoidea (Say 1825) established to include echinoderms "intermediate between crinoids and echinoids."
+  C Cystoidea (von Buch 1846) (purpose not mentioned in immediate text)
+    BC Eocrinoidea (Jaekel 1918) proposed for "early cystoid-like forms that could not be assigned elswhere." (now a Class)
+    O Rhombifera was originally one of 2 orders here (apparently w/Diploporita)
+    O Diploporita
 
 TREE
 P Echinodermata (Bruguiere 1789)
@@ -1115,7 +466,7 @@ P Echinodermata (Bruguiere 1789)
             Gogia guntheri n. sp.
             Gogia kitchnerensis n. sp.
             Gogia hobbsi n. sp.
-            Gogia? radiata n. sp.
+            Gogia radiata n. sp. (genus uncertain)
             Gogia species 1
             Gogia species 2
           g Acanthocystites (Barrande 1887)
@@ -1129,7 +480,7 @@ P Echinodermata (Bruguiere 1789)
           g Rhopalocystis (Ubaghs 1963)
             Rhopalocystis destombesi (Ubaghs 1963)
         F ["Indeterminate"]
-          "Archaeocyathids" from Poland
+          E "Archaeocyathids" from Poland
       O [Unnamed #2]
         F ["Indeterminate"]
           g Pareocrinus (Yakovlev 1956)
@@ -1186,8 +537,8 @@ P Echinodermata (Bruguiere 1789)
       F Blastocystidae (Jaekel 1916)
         g Blastoidocrinus (Billings 1859)
           Blastoidocrinus carchariaedens (Billings 1859)
-          Blastoidocrinus? cf. B. carchariaedens (Ross 1949)
-          Blastoidocrinus? nevadensis n. sp.
+          Blastoidocrinus cf. B. carchariaedens (Ross 1949) (genus uncertain)
+          Blastoidocrinus nevadensis n. sp. (genus uncertain)
         g Blastocystis (Jaekel 1918)
           Blastocystis rossica (Jaekel 1918)
       F Meristoschismatidae n. fam.
@@ -1246,7 +597,7 @@ P Echinodermata
       F Meristoschismatidae
     C Blastoidea
       O Fissiculata
-      ???
+
 
 -----
 
@@ -1257,7 +608,7 @@ TREE
 P Echinodermata
   BP Crinozoa
     E Crinoids
-    E ?Paracrionoids?
+    E Paracrionoids ?
   BP Blastozoa
     E Eocrinoids
     E Rhombiferan Cystoids
@@ -1313,7 +664,8 @@ P Echinodermata (Fleming 1828)
                 Cremacrinus guttenbergensis n. sp.
               g Anulocrinus (Ramsbottom 1961)
                 Anulocrinus thraivensis (Ramsbottom 1961)
-                - Anulocrinus drummuckensis (Ramsbottom 1961)
+                E
+                  Anulocrinus drummuckensis (Ramsbottom 1961)
                   Anulocrinus forrestonensis n. sp.
           SF Heterocrinacea (Zittel 1879)
             F Heterocrinidae (Zittel 1879)
@@ -1333,7 +685,7 @@ P Echinodermata (Fleming 1828)
                 g Porocrinus (Billings 1857)
                   Porocrinus conicus (Billings 1859)
                   Porocrinus pentagonius (Meek & Worthen 1865)
-                  (sp. nov. transitional btwn pentagonius and smithi)
+                  Porocrinus sp. sp. nov. transitional btwn pentagonius and smithi)
                   Porocrinus smithi (Grant 1881)
               F Carabocrinidae (Bather 1899)
                 g Carabocrinus (Billings 1857)
@@ -1344,7 +696,7 @@ P Echinodermata (Fleming 1828)
               F Dendrocrinidae (Wachsmuth & Springer 1886)
                 g Dendrocrinus (Hall 1852)
                   Dendrocrinus longidactylus (Hall 1852)
-                  Dendrocrinus? springeri n. sp.
+                  Dendrocrinus springeri n. sp. (genus uncertain)
             SF Merocrinacea (S. A. Miller 1890)
               F Merocrinidae (S. A. Miller 1890)
                 g Merocrinus (Walcott 1884)
@@ -1610,7 +962,7 @@ BP Blastozoa (Sprinkle 1973)
       F Stephanocrinidae (Wachsmuth & Springer 1886)
         g Stephanocrinus (Contrad 1842)
           Stephanocrinus angulatus (Conrad 1842)
-          Stephanocrinus? gemmiformis (Hall 1852)
+          Stephanocrinus gemmiformis (Hall 1852) (genus uncertain)
 
 Three possibilities:
   * Coronoids may be directly ancestral to blastoids
@@ -1652,7 +1004,7 @@ P Hemichordata
 Gehling, J. G.
 
 TREE [tentative]
-P Echinodermata (total group)
+P Echinodermata (total)
   E Arkarua ?
     E Eleutherozoa
       g Stromatocystites "and all other members of the Eleutherozoa"
@@ -1686,7 +1038,7 @@ SP Deuterostomia (Grobben 1908)
 TREE "(If a chordate, then stem group of the Chordata)"
 E Soluta (Jaekel 1900; "invalid stem group of the Dexiothetica)
   g Dendrocystoides (Jaekel 1918)
-      Dendrocystoides scoticus (Bather 1913)
+    Dendrocystoides scoticus (Bather 1913)
 
 TREE Notes Arkarua as indicating precambrian split between echinoderms and chordates, raising possibility of solutes in the late precambrian.
 SP Deuterostomia
@@ -1994,7 +1346,6 @@ P Chordata
   BP Tunicata
   BP Craniata
 
-
 -----
 
 1991-00-00-c Two types of bilateral symmetry in the Metazoa- chordate and bilaterian.pdf
@@ -2052,45 +1403,45 @@ E Metazoa -> [multicellularity; diploidy with gametic meiosis; oogenesis with th
                               Z Cornuta
                               G Mitrata
                               E Chordata (crown)  -> [right gill slits and pharynx]
-                                  E Cephalochordata (total)
-                                    E
-                                      g Lagynocystis
-                                    ZZ Mitrata
-                                    E Cephalochordata (crown) -> [entire loss of calcite skeleton]
-                                  E Olfactores (total)
-                                    E Olfactores (crown)
-                                      E Tunicata (total)
+                                E Cephalochordata (total)
+                                  E
+                                    g Lagynocystis
+                                  ZZ Mitrata
+                                  E Cephalochordata (crown) -> [entire loss of calcite skeleton]
+                                E Olfactores (total)
+                                  E Olfactores (crown)
+                                    E Tunicata (total)
+                                      E
+                                        g Peltocystis
+                                      E
                                         E
-                                          g Peltocystis
+                                          g Balanocystites
                                         E
                                           E
-                                            g Balanocystites
+                                            g Anatifopsis
+                                          ZZ Mitrata
+                                          E Tunicata (crown) -> [entire loss of calcite skeleton]
+                                    E Craniata (total)
+                                      E
+                                        g Chinianocarpos
+                                      E
+                                        E
+                                          g Chauvella
+                                        E
+                                          E
+                                            g Aspidocarpus
                                           E
                                             E
-                                              g Anatifopsis
-                                            ZZ Mitrata
-                                            E Tunicata (crown) -> [entire loss of calcite skeleton]
-                                      E Craniata (total)
-                                        E
-                                          g Chinianocarpos
-                                        E
-                                          E
-                                            g Chauvella
-                                          E
+                                              g Mitrocystites
                                             E
-                                              g Aspidocarpus
-                                            E
-                                              E
-                                                g Mitrocystites
-                                              E
-                                                g Mytrocystella
-                                                  Mytrocystella barrandei
+                                              g Mytrocystella
+                                                Mytrocystella barrandei
+                                                E
+                                                  Mitrocystella incipiens
                                                   E
-                                                    Mitrocystella incipiens
-                                                    E
-                                                      g Placocystites
-                                                      Z Mitrata
-                                                      E Craniata (crown) -> [entire loss of calcite skeleton]
+                                                    g Placocystites
+                                                    Z Mitrata
+                                                    E Craniata (crown) -> [entire loss of calcite skeleton]
 
 Cephalodiscus
 Soluta [dexiothetism]
@@ -2169,20 +1520,21 @@ Helicoplacoidea
 Sprinkel, J.; Wahlman, G.P.
 
 TREE
-BP Blastozoa (Sprinkel 1973)
-  C Rhombifera (Zittle 1879, emended Paul 1968b)
-    O Dichoporita (Jaekel 1899, emended Paul 1968b)
-      SF Glyptocystitida? (Bather 1899)
-        F Cuniculocystidae n. fam.
-          g Cuniculocystis n. gen.
-            Cuniculocystis floweri
-  C Eocrinoidea (Jaekel 1918)
-    [O "indeterminate"]
-      F Bockiidae (Ubaghs 1972)
-        g Bockia (Hecker 1938)
-          Bockia neglecta
-          Bockia? elpasoensis n. sp.
-BP Crinozoa (Matsumoto 1929)
+P Echinodermata
+  BP Blastozoa (Sprinkel 1973)
+    C Rhombifera (Zittle 1879, emended Paul 1968b)
+      O Dichoporita (Jaekel 1899, emended Paul 1968b)
+        SF Glyptocystitida ? (Bather 1899)
+          F Cuniculocystidae n. fam.
+            g Cuniculocystis n. gen.
+              Cuniculocystis floweri
+    C Eocrinoidea (Jaekel 1918)
+      O ["indeterminate"]
+        F Bockiidae (Ubaghs 1972)
+          g Bockia (Hecker 1938)
+            Bockia neglecta
+            Bockia elpasoensis n. sp. (genus uncertain)
+  BP Crinozoa (Matsumoto 1929)
   C Crinoidea (Miller 1821)
     BC Inadunata (Wachsmuth & Springer 1885)
       O Cladida (Moore & Laudon 1943)
@@ -2321,9 +1673,9 @@ C Crinoidea (Miller 1821)
       Barycrinus spectabilis (Meek & Worthen 1870)
       Barycrinus geometricus (Meek & Worthen 1873, nomen dubium)
       Barycrinus benedicti (Miller 1891a, nomen dubium)
-      Barycrinus? stenobranchium (Ausich & Lane 1982)
+      Barycrinus stenobranchium (Ausich & Lane 1982) (genus uncertain)
     incertae sedis
-      "Barycrinus" stellifer (Miller 1892b)
+      Barycrinus stellifer (Miller 1892b) (genus uncertain?)
     g Cestocrinus (Kirk 1940)
       Cestocrinus striatus (Kirk 1940) (by original designation)
       Cestocrinus signatus (Miller & Gurley 1894)
@@ -2543,42 +1895,43 @@ Eleutherozoans and cystoids have different expressions of pentamery which strong
 Sumrall, C.D.; Sprinkle, J.; Guensburg, T.E.
 
 TREE
-C Stylophora (Gill & Caster 1960)
-  O Cornuta (Jaekel 1901)
-    F Cothurnocystidae (Bather 1913)
-      g Acuticarpus n. gen.
-        Acuticarpus delticus n. sp.
-        Acuticarpus? republicensis n. sp.
-      g Archaeocothurnus n. gen.
-        Corthurnocystis? bifida (type species)
-        Archaeocothurnus goshutensis n. sp.
-    F Scotiaecystidae (Caster & Ubaghs, in Ubaghs 1968)
-      g Scotiaecystis (Caster & Ubaghs, in Ubaghs 1968)
-        Scotiaecystis? sp.
-C Homoiostelea (Gill & Caster 1960)
-  O Soluta (Jaekel 1901)
-    F Minervaecystidae (Ubaghs & Caster, in Caster 1968)
-      g Minervaecystis (Ubaghs & Caster, in Caster 1968)
-        Minervaecystis? sp.
-C Eocrinoidea (Jaekel 1918)
-  O Trachelocrinida n. o.
-    F Trachelocrinidae (Sprinkle 1973)
-      g Trachelocrinus (Ulrich 1929)
-        Trachelocrinus resseri
-        Trachelocrinus? sp.
-      g Tatonkacystis n. gen.
-        Takonacystis codyensis n. sp.
-  O Gogiida (Broadhead 1982)
-    F ["indeterminate"]
-      g ["indeterminate"]
-        ["epispire-bearing golbular eocrinoid" sp.]
-  O ["indeterminate"]
-    ["globular eocrinoid?"]
-C Edrioasteroidea (Billings 1858)
-  O Ederioasterida (Bell 1976)
-    F ["indeterminate"]
-      g ["indeterminate"]
-        ["poorly preserved edrioasterid"]
+P Echinodermata
+  C Stylophora (Gill & Caster 1960)
+    O Cornuta (Jaekel 1901)
+      F Cothurnocystidae (Bather 1913)
+        g Acuticarpus n. gen.
+          Acuticarpus delticus n. sp.
+          Acuticarpus republicensis n. sp. (genus uncertain)
+        g Archaeocothurnus n. gen.
+          Corthurnocystis bifida (type species) (genus uncertain?)
+          Archaeocothurnus goshutensis n. sp.
+      F Scotiaecystidae (Caster & Ubaghs, in Ubaghs 1968)
+        g Scotiaecystis (Caster & Ubaghs, in Ubaghs 1968)
+          Scotiaecystis sp. (genus uncertain)
+  C Homoiostelea (Gill & Caster 1960)
+    O Soluta (Jaekel 1901)
+      F Minervaecystidae (Ubaghs & Caster, in Caster 1968)
+        g Minervaecystis (Ubaghs & Caster, in Caster 1968)
+          Minervaecystis sp. (genus uncertain)
+  C Eocrinoidea (Jaekel 1918)
+    O Trachelocrinida n. o.
+      F Trachelocrinidae (Sprinkle 1973)
+        g Trachelocrinus (Ulrich 1929)
+          Trachelocrinus resseri
+          Trachelocrinus sp. (genus uncertain)
+        g Tatonkacystis n. gen.
+          Takonacystis codyensis n. sp.
+    O Gogiida (Broadhead 1982)
+      F ["indeterminate"]
+        g ["indeterminate"]
+          ["epispire-bearing-golbular-eocrinoid"] sp.
+    O ["indeterminate"]
+      ["globular-eocrinoid"] sp. ?
+  C Edrioasteroidea (Billings 1858)
+    O Ederioasterida (Bell 1976)
+      F ["indeterminate"]
+        g ["indeterminate"]
+          ["poorly-preserved-edrioasterid"] sp.
 
 -----
 
@@ -2633,30 +1986,31 @@ C Crinoidea
     O Monobathra
 
 TREE Crinoid classification by Moore and Teichert (1978)
-C Crinoidea
-  BC Echmatocrinea
-    O Echmatorinida
-  BC Camerata
-    O Diplobathrida
-    O Monobathrida
-  BC Inadunata
-    O Disparida
-    O Hybocrinida
-    O Coronata
-    O Cladida
-  BC Flexibilia
-    O Taxocrinda
-    O Sagenocrinida
-  BC Articulata
-    O Millericrinida
-    O Cyrtocrinida
-    O Bourgueticrinida
-    O Isocrinida
-    O Comatulida
-    O Uintacrinida
-    O Roveacrinda
-C Hemistretocrinoidea (Arendt 1976) [New class of crinoidea proposed by Arendt (1976)]
-  O Hemistreptocrinida
+E
+  C Crinoidea
+    BC Echmatocrinea
+      O Echmatorinida
+    BC Camerata
+      O Diplobathrida
+      O Monobathrida
+    BC Inadunata
+      O Disparida
+      O Hybocrinida
+      O Coronata
+      O Cladida
+    BC Flexibilia
+      O Taxocrinda
+      O Sagenocrinida
+    BC Articulata
+      O Millericrinida
+      O Cyrtocrinida
+      O Bourgueticrinida
+      O Isocrinida
+      O Comatulida
+      O Uintacrinida
+      O Roveacrinda
+  C Hemistretocrinoidea (Arendt 1976) [New class of crinoidea proposed by Arendt (1976)]
+    O Hemistreptocrinida
 
 
 TREE Crinoid classification by Simms and Sevastopulo (1993)
@@ -2730,8 +2084,6 @@ C Crinoidea (Miller 1821)
           Perittocrinus radiatus (Beyrich 1879)
         g Tetracionocrinus (Ubaghs 1971)
           Tetracionocrinus transistor (Jaekel 198) from Perittocrinus
-
-      
 
 -----
 
@@ -2971,7 +2323,7 @@ P Echinodermata (total) -> [pentaradial symmetry; water vascular system]
 
 -----
 
-1997-12-00 British Ordovician Cystoids (Part 3).pdf
+1997-12-00-p British Ordovician Cystoids (Part 3).pdf
 Paul, C.R.C.
 
 British Ordovician cystoid fauna consists of 25 gen and 67 sp., with at least:
@@ -3070,10 +2422,12 @@ P Echinodermata -> [wat vasc from 5 primary lobes in rudiment]
       E Camptostroma
     E Crinoidea
       E
-        E Asteroidea
-          Ophiuroidea
-        E Holothuroidea
-          Echinoidea
+        E
+          E Asteroidea
+          E Ophiuroidea
+        E
+          E Holothuroidea
+          E Echinoidea
 
 -----
 
@@ -3258,6 +2612,7 @@ Asserts homologies that prevent the cornute->mitrate inversion required by the c
 1999-11-25-p A new stylophoran echinoderm, Juliaecarpus milnerorum, from the late Ordovician Upper Ktaoua Formation of Morocco.pdf
 Ruta, M.
 
+TREE
 P Echinodermata (Fleming 1828)
   C Stylophora (Gill & Caster 1960)
     O Ankyroida (Parsley 1997)
