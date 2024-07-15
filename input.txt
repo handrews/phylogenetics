@@ -1,0 +1,3998 @@
+Vetulocystida†        541-501
+Xenambulacraria
+  Xenacoelomorpha
+  Ambulacraria
+    Cambroernida†
+      Herpetogaster†
+      Phlogites†
+      Eldonoidea†
+    Yanjiahella†
+    Hemichordata
+      Enteropneusta
+      Pterobranchia
+        Cephalodiscida
+        Graptolithina
+      Planctosphaeroidea
+    Echinodermata
+      Ctenoimbricata†
+      Ctenocystoidea†
+      Cincta†
+      Stylophora†
+        Cornuta†
+        Mitrata†
+      Blastozoa†
+        Soluta†
+        Blastoidea†
+        Cystoidea†
+        Eocrinoidea†
+        Paracrinoidea†
+      Crinozoa
+        Crinoidea
+        Edrioasteroidia†
+        Cystoidea†
+        Rhombifera†
+      Eleutherozoa
+        Aterozoa
+          Ophiuroidea
+          Asteroidea
+        Echinozoa
+          Helicoplacoidea†
+          Ophiocistiodea†
+          Echinoidea
+          Holothuroidea
+
+Echinodermata
+-------------
+Ambulacraria
+  Echinodermata
+    Homalozoa (Gill & Caster, 1960)
+      Cincta
+      Soluta
+      Stylophora
+      Ctenocystoidea (Robinson & Sprinkle, 1969)
+    Crinozoa
+      Crinoidea
+      Edrioasteroidea
+      Cystoidea
+      Rhombifera
+    Asterozoa
+      Ophiuroidea
+      Asteroidea
+    Echinozoa
+      Echinoidea
+      Holothuroidea
+      Ophiocistioidea
+      Helicoplacoidea
+    Blastozoa
+      Blastoidea
+      Cystoidea
+      Eocrinoidea
+      Paracrinoidea
+
+Homalozoa
+---------
+Echinodermata
+  Homalozoa
+    Stylophora (mitrates and cornutes)
+    Soluta
+    Cincta
+    Ctenocystoidea (ctenoid-bearing homalozoans)
+
+Stylophora
+----------
+Echinodermata
+  Stylophora
+    Cornuta
+    Mitrata
+
+Cornuta
+-------
+Echnodermata
+  Stylophora
+    Cornuta (Jaekel, 1901)
+      Cothurnocystidae (Bather, 1913)
+->      https://paleobiodb.org/classic/basicTaxonInfo?taxon_no=64824
+        Chauvelicystinae
+          Ampelocarpus
+          Chauvelicystis
+          Flabellicarpus
+          Lyricocarpus
+          Milonicystis
+          Prochauvelicystis
+          Proscotiaecystis
+          Sokkaejaecystis
+        Cothurnocystinae
+          Cothurnocystis
+        Phyllocystinae
+        Scotiaecystinae
+          Bohemiaecystis
+          Scotiaecystis
+          Thoralicystis
+        - Acuticarpus
+          Archaeocothurnus
+          Cardiocystella
+          Nevadaecystis
+          Ponticulocarpus
+          Trigonocarpus
+
+Mitrata
+-------
+Echinodermata
+  Stylophora
+    Mitrata (Jaekel, 1918)
+
+Soluta
+------
+Echinodermata
+  Soluta (Jaekel, 1901)
+    Syringocrinida
+    Dendrocystitida
+[phylogenetic tree showing only genus?]
+  Soluta (2011-11-26-a Parsley, Rozhnov, Sumrall)
+    Coleicarpus
+    - Castericystis
+      Minervaecystis
+      - Girvanicystis
+        Dendrocystites
+        - Maennilia
+          Heckericystis
+        - Dendrocystoides
+          - Claritacarpus
+            - Rutroclypeus
+              - - Iowacystis
+                  Scalenocystites
+                - Syringocrinus
+                  - Myeinocystites
+                    Belemnocystites
+
+Cincta
+------
+Echinodermata
+  Cincta
+    Trochocystitidae
+    Gyrocystidae
+    Sucocystidae
+pyhologenetic tree:
+Echinodermata
+  Ctenocystoidea
+  - Cincta (2019-02-15-a Topper et al; 2020-02-11-a Zamora et al)
+      (↓ 2008-09-09-a Smith & Zamora; 2012-09-04-a Zamora, Rahman, Smith)
+      Asturicystis
+      Trochocystitidae
+        Trochocystites
+        Trochocystoides
+      - Sotocinctus
+        - Graciacystis
+          - Protocinctus
+            Gyrocystidae
+              Progyrocystis
+              Gyrocystis
+            Sucocystidae
+              Ludwigicinctus
+              - Undatacinctus
+                - Sucocystis
+                  - Lignanicystis
+                    Elliptocinctus
+    (↓ 2008-09-09-a Smith & Zamora; 2012-09-04-a Zamora, Rahman, Smith)
+    - Soluta
+      - Helicoplacus
+        - Camptostroma
+          - Stromatocystites
+            - Kinzercystis
+              - Gogia
+                - Akadocrinus
+                  - Pleurocystites
+                    Ubaghsicystis
+                  - Macrocystella
+                    Aethocrinus
+
+Ctenocystoidea
+--------------
+Echinodermata
+  Ctenocystoidea (Robinson & Sprinkle, 1969)
+    (↓ https://hdl.handle.net/20.500.14352/55669 1999, in spanish)
+    Courtessolea
+    - - Jugoszovia
+        Conollia
+      - Pembrocystis
+        - Etoctenocystis
+          - Gilcidia
+            Ctenocystis
+
+Crinozoa
+--------
+Echinodermata
+  Crinozoa (Matsumoto, 1929)
+    Crinoidea
+    Cystoidea (von Buch, 1846)
+    Edrioasteroidea
+    Paracrinoidea (Regnéll, 1945)
+    Rhombifera
+
+Crinoidea
+---------
+Echinodermata
+  Crinozoa
+    Crinoidea (Miller, 1921)
+      Camerata
+      Pentacrinoidea
+        Articulata
+        Disparida
+        Procrinoidea
+        Flexibilia
+    (two large phylogentic trees given)
+
+Camerata
+--------
+Echinodermata
+  Crinozoa
+    Crinoidea
+      Camerata (Wachsmuth and Springer, 1885)
+        Cladida?
+        Adelphicrinus
+        Eknomocrinus
+        Cnemecrinus
+        Quechuacrinus
+        Reteocrinus
+        Eucamerata
+        Rosfacrinus
+        Diplobathrida
+        Monobathrida
+
+Cladida
+-------
+Echinodermata
+  Crinoidea
+    Pentacrinoidea
+      Inadunata
+        Cladida (Moore and Laudon, 1943)
+          Porocrinoidea
+          Flexibilia
+          Eucladida
+            Ampelocrinida
+            Cyathoformes
+            Articulata
+
+PC Cladida
+  SO Porocrinoidea
+    O Hybocrinida
+    O Porocrinida
+  SO Flexibilia
+    O Sagenocrinida
+    O Taxocrinida
+  MO Eucladida
+    Ampelocrinda (incertae sedis)
+    SO Cyathoformes ("primitive cladids:)
+      "Cyathocrinida"
+      "Dedrocrinida" [in part]
+      g Poteriocrinites
+    Articuliformes ("intermediate and advanced cladids")
+      "Poteriocrinida" [in part]
+      "Dendrocrinida" [in part]
+      SO Articulata
+        O Encrinida
+        O Holocrinida
+        O Millericrinida
+        O Roveacrinida
+        O Uintacrinida
+        O Comatulida
+        O Cyrtocrinida
+        O Hyocrinida
+        O Isocrinida
+
+Pentacrinoidea
+--------------
+Echinodermata
+  Crinoidea
+    Pentacrinoidea (Jaekel, 1918)
+      Disparida
+      Cladida
+
+Inadunata
+---------
+(redirects to Pentacrinoidea)
+
+Disparida
+---------
+Echinodermata
+  Crinoidea
+    Inadunata
+      Disparida
+        (↓ 2016-09-02-a Wright et al)
+        Calceocrinida
+        Eustenocrinida
+        Homocrinida
+        Maennilicrinida
+        Myelodactyla
+        Pisocrinoidea
+        Tetragonocrinida
+      (large list of families and genera)
+
+Flexibilia
+----------
+Echinodermata
+  Crinoidea
+    Cladida
+      Flexibilia (Ziettel, 1895)
+        Sagenocrinida
+        Taxocrinia (paraphyletic?)
+
+Articulata
+----------
+Echinodermata
+  Crinoidea
+    Articulata
+      Comatulida
+      Cyrtocrinida
+      Hyocrinida
+      Isocrinida
+      Encrinida
+      Holocrinida
+      Millericinida
+      Roveacrinida
+      Uintacrinida
+    (large tree of orders/families)
+    ("bourgueticrinids" in text as the stalked type, but not in list, not link)
+
+Cystoidea
+---------
+Echinodermata
+  Crinozoa
+    Cystoidea (von Buch, 1846)
+
+Edrioasteroidea
+---------------
+Echinodermata
+  Crinozoa
+    Edrioasteroidea (Billings, 1858)
+    (long list of genera but no intermediate taxons)
+
+Paracrinoidea
+-------------
+Echinodermata
+  Blastozoa
+    Paracrinoidea (Regnell, 1945)
+      Comarocystitida
+        Heckeritidae?
+          Heckerites
+        Amygdalocystitidae
+          Achradocystites (Volborth, 1870)
+          Amygdalocystites (Billings, 1854) (= Ottawaystis; Billingsocystis?)
+          Oklahomacystis (Bassler, 1943)
+          Ovulocystites (Frest et al., 1980)
+        Comarocystitidae (Balther, 1899)
+          Comarocystites (Billings, 1845)
+          Implicaticystis
+          Sinclairocystis
+      Platycystitida
+        Platycystitidae
+          Canadocystinae (Frest, Strimple, & Coney, 1979)
+            Canadocystis (= Sigmacystis)
+          Platycystitinae (Frest, Strimple, & Coney, 1979)
+            Globulocystites (Frest, Strimple, & Coney, 1979)
+            Platycycstites (Miller, 1889)
+        Malocystitidae
+          Malocystites
+          Wellerocystis
+        Bistomiacystitidae
+          Bistomiacystis
+      ? Springerocystidae (Bassler, 1950)
+          (suggested paracrinoids / Canadacystis Sprinkel, 1973)
+          (eocrinoids per ?Bassler, Parsley & Mintz, 1975)
+          Columbocystis
+          Foertecystis
+          Springerocystis
+      ? "Doubtful"
+        Allocystites (Sprinke 1973 yes; Parsley & Nintz 1975 no)
+        Paleocystites
+        Ulrichocystis
+
+Phylogeny after Limbeck (2018)
+-+-- C. laevis (Cryptocrinites laevis?)
+ `--+-- Columbocystis ovata (Columbocystis ovata? Eocrinoid)
+    |-- Columbocystis typica
+    `--+--+-- Bistomiacystis globosa
+       |  |-- Bistomiacystis schrantzi
+       |  `-- Achradocystites schmidti
+       `--+--+-- Comarocystites punctatus
+          |  |-- Comarocystites tribrachius
+          |  |-- Implicaticystis shumardi
+          |  `-- Implicaticystis symmetricus
+          `--+-- Canadocystis tennesseensis
+             `--+-- Canadocystis barrandei
+                |-- Canadocystis emmonsi
+                `--+-- Malocystites murchisoni
+                   `--+-- Sinclairocystis praedicta
+                      |--+-- Amygdalocystites florealis
+                      |  |-- Amygdalocystites radiatus
+                      |  |-- Oklahomacystis bibrachiatus
+                      |  |-- Oklahomacystis spissus
+                      |  |-- Oklahomacystis tribrachiatus
+                      |  |-- Oklahomacystis trigonis
+                      |  `-- Wellerocystis kimmswickensis
+                      `--+-- Globulocystites cristatus
+                         |-- Globulocystites rotundatus
+                         |-- Globulocystites (originally Platycystites) infundus
+                         |-- Platycystites cristatus
+                         `-- Platycystites faberi
+
+Rhombifera
+----------
+-> Eocrinoidea
+
+Blastozoa
+---------
+Echinodermata
+  Blastozoa (Sprinkel, 1973)
+    Eocrinoidea
+    Parablastoidea
+    Rhombifera
+    Diploporita
+    Blastoidea
+    Paracrinoidea
+
+Eocrinoidea
+-----------
+Echinodermata
+  Blastozoa
+    Eocrinoidea (Jaekel, 1899) (grade wrt Blastoids)
+      Gogiida
+      Rhombifera
+      Diploporita? (in text only)
+      Coronoidea? (in text only)
+      Blastoidea? (in text and note only)
+      Parablastoidea? (in text only)
+      Paracrinoidea? (in text only)
+      Cystoidea? (in text only, said to be ancestral to "modern crinoids")
+
+Gogiida
+-------
+Echinodermata
+  Eocrinoidea
+    Gogiida (Broadhead, 1982)
+      Eocrinidae (Jaekel, 1918)
+        Gogia (Walcott, 1917)
+      Lyracystidae (Sprinkel & Collins, 2006)
+        Lyracystis
+
+Diploporita
+-----------
+Echinodermata
+  Blastozoa
+    Diploporita (polyphyletic according to text – Paul, 1988)
+      Asteroblastoidea (not thought to be monophyletic)
+      Glyptosphaeritida (not thought to be monophyletic)
+      Sphaeronitida
+
+Blastoidea
+----------
+Echinodermata
+  Blastozoa
+    Blastoidea (Say, 1825)
+      Fissiculata
+        (no info)
+      Spiraculata
+->      (long list of genera, no intermediate subdivisions)
+      ?
+        Macurdablastus
+
+Asterozoa
+---------
+Echinodermata
+  Asterozoa (von Zittel, 1895)
+    Asteroidea
+    Ophiuroidea
+    Somasteroidea
+
+Somasteroidea
+-------------
+Echinodermata
+  Asterozoa
+    Somasteroidea
+      Archegonasteridae (Spencer, 1951)
+      Archophiactinidae? (Spencer, 1927)
+      Catervaparmasterida (Blake, 2000)
+      Chinianasteridae (Spencer, 1951)
+      Helianthasteridae? (Owen, 1965)
+      Villebrunasteridae (Fell, 1963)
+
+Echinozoa
+---------
+Echinodermata
+  Echinozoa
+    Echinoidea
+    Holothuroidea
+    Ophiocistioidea
+    Helicoplacoidea
+
+Ophiocistioidea
+---------------
+Echinodermata
+  Echinooa
+    Ophiocistiodea
+
+Helicoplacoidea
+---------------
+Echinodermata
+  Helicoplacoidea
+    Helicoplacus (Durham & Caster, 1963)
+    Polyplacus (Durham, 1967)
+    Waucobella (Durham, 1967)
+
+Isorophida
+----------
+Echinodermata
+  Edrioasteroidea
+    Isorophida (Bell, 1976)
+      Agelacrinitidae
+      Lebetodiscidae
+
+Eleutherozoa
+------------
+Echinodermata
+  Eleutherozoa (Bather, 1900)
+    Asterozoa
+      Ateroidea
+      Ophiuroidea
+    Echinozoa
+      Echinoidea
+      Holothuroidea
+    Somasteroidea
+
+Helicosystitidae
+----------------
+Echinodermata
+  Helicocystitidae (Smith & Zamora, 2013)
+
+LIST OF ECHINODERM ORDERS
+
+BP Crinozoa
+  C Crinoidea
+    SC Articulata
+      O Bourgueticrinida
+      O Comatulida
+      O Cyrtocrinida
+      O Hyocrinida
+      O Isocrinida
+      O Millericrinida
+    SC Flexibilia
+    SC  Camerata
+    SC  Disperida
+  C Paracrinoidea
+    O Comarocystitida
+      F Heckeritidae
+      F Amygdalocystitidae
+      F Comarocystitidae
+    O Platycystitida
+      F Platycystitidae
+      F Malocystitidae
+      F Bistomiacystitidae
+  C Cystoidea
+    O Aristocystitida
+    O Asteroblastida
+    O Glyptosphaeritida
+    O Sphaeronitida
+  C Edrioasteroidea
+    O Edrioasterida
+    O Isorophida
+BP Asterozoa
+  C Ophiuroidea
+    O Euryalida
+    O Ophiurida
+    O Amphilepidida
+    O Ophiacanthida
+    O Ophioleucida
+    O Ophioscolecida
+  C Asteroidea
+    IC Concentricycloidea
+      O Peripodida
+    SO Forcipulatacea
+      O Brisingida
+      O Forcipulatida
+    SO Spinulosacea
+      O Spinulosida
+    SO Valvatacea
+      O Notomyotida
+      O Paxillosida
+      O Valvatida
+    O Valatida
+    F Calliasterellidae
+    O Trichasteropsida
+BP Echinozoa
+  C Echinoidea
+    SO Diadematacia
+      O Diadematoida
+      O Echinothuroida
+      O Pedinoida
+    SO Echinacea
+      O Arbacioida
+      O Echinoida
+      O Phyosomatoida
+      O Salenoida
+      O Temnopleuroida
+    SO Gnathostomata
+      O lypeasteroida
+      O Holectypoidea
+    SO Atelostomata
+      O Holasteroida
+      O Spatangoida
+  C Holothuroidea
+    O Apodida
+    O Dendrochirotida
+    O Elasipodida
+    O Holothuriida
+    O Molpadida
+    O Persiculida
+    O Synallactida
+  C Ophiocistoidea
+    F Eucladiidae
+    F Sollasiniidae
+    F Volchoviidae
+    F Rhenosquanidae?
+  C Helicoplacoidea
+BP Blastozoa
+  C Blastoidea
+    O Coronata
+    O Fissiculata
+    O Spiraculata
+    B Macurdablastus
+  C Eocrinoidea
+    O Acocystida
+    O Gogiida
+    O Imbricata
+    O Trachelocrinida
+BP Homalozoa (= Homostelea)
+  C Ctenocystoidea
+    O Ctenocystida
+  C Soluta
+  C Cincta
+  C Stylophora
+    O Cornuta
+    O Mitrata
+
+--------------------
+
+-----
+
+1955-00-00-p Treatise on Invertebrate Paleontology — Part V- Graptolithina.pdf
+P Chordata
+  BP Stomochorda
+    C Enteropneusta
+    C Pterobranchia
+      O Rhabdopleurida
+        F Rhabdopleuridae
+      O Cephalodiscida
+        F Eocephalodiscidae
+        F Cephalodiscidae
+    C Graptolithina
+      O Dendroida
+        F Dendrograptidae
+        F Anisograptidae
+        F Acathograptidae
+        F Inocaulidae
+        F Ptilogratidae
+        F Chaunograptidae
+      O Tuboidea
+        F Tubidendridae
+        F Idiotubidae
+      O Camaroidea
+        F Bithecocamaridae
+        F Cysticamaridae
+      O Stolonoidea
+        F Stolonodendridae
+      O Graptoloidea
+        F Dichograptidae
+          Multiramous forms
+            Goniograpti
+            Temnograpti
+            Schizograpti
+            Dichograpti
+          Pauciramous forms
+            Tetragrapti
+            Didymograpti
+        F Corynoididae
+        F Cryptograptidae
+        F Leptograptidae
+        F Dicranograptidae
+        F Diplograptidae
+          BF Climacograptinae
+          BF Diplograptinae
+          BF Petalograptinae
+        F Lasiograptidae
+        F Retiolitidae
+          BF Archiretiolitinae
+          BF Retiolitinae
+          BF Plectograptinae
+        F Dimorphograptidae
+        F Monograptidae
+          BF Monograptinae
+          BF Cyrtograptinae
+    C ["Incertae sedis"]
+      Graptovermida
+      Graptoblasti
+      Acanthastida
+
+-----
+
+1967-11-30-p Le Genre Ceratocystis Jaekel (Echinodermata, Stylophora).pdf
+Ubaghs, G.
+
+TREE
+C Stylophora (Gill & Caster, emend. Caster & Ubaghs in pres)
+  O Cornuta
+    F Ceratocystidae (Jaekel 1901)
+      g Ceratocystis (Jalkel) [Jaekel?]
+    F Cothurnocystidae (Bather)
+      g Cothurnocystis
+
+-----
+
+1968-00-00-p Morphology and function of dichoporite pore-structures in cystoids.pdf
+Paul, C.R.C.
+
+"List of species with dichoporite pore-structures examined."
+
+TREE
+C Rhombifera (Miller)
+  O Dichoporita (Jaekel emend.)
+    SF Glyptocystitida (Bather)
+      F Macrocystellidae (Bather emend. Jaekel)
+        g Macrosystella
+          Macrocystella mariae (Callaway)
+          Macrocystella bohemicus (Barrande)
+          Macrocystella azaisei (Thoral)
+      F Cheirocrinidae (Jaekel)
+        g Cheirocrinus
+          Cheirocrinus sp. (Ngwetung)
+          Cheirocrinus atavus (Jaekel)
+          Cheirocrinus giganteus (Leuchtenberg)
+          Cheirocrinus languedocianus (Thoral)
+          Cheirocrinus granulatus (Jaekel)
+          Cheirocrinus anatiformis (Hall)
+          Cheirocrinus sp. nov. (Tramore)
+          Cheirocrinus sp. (Katlino)
+          Cheirocrinus interruptus (Jaekel)
+          Cheirocrinus jamesi (M'Coy)
+        g Homocystites
+          Homocystites alter (Barrande)
+          Homocystites constrictus (Bather)
+      F Echinoencrinitidae (Bather)
+        BF Echinoencrinitinae (Paul)
+          g Echinoencrinites
+            Echinoencrinites angulosus (Pander)
+            Echinoencrinites senckenbergii (von Meyer)
+            Echinoencrinites reticulatus (Jaekel)
+          g Erinocystis
+            Erinocystis sp.
+        BF Scoliocystinae (Jaekel emend. Paul)
+          g Schizocystis
+            Schizocystis armata (Forbes)
+          g Glansicystis
+            glansicystis baccata (Forbes)
+          g Osulocystis
+            Osulocystis monobrachiolata (Paul)
+      F Rhombiferidae (Kesling)
+        g Rhombifera
+          Rhombifera bohemica
+      F Pleurocystitidae
+        g Amecystis
+          Amecystis laevis (Raymond)
+          Amecystis sp. nov.
+        g Praepleurocystis
+          Praepleurocystis watkinsi (Strimple)
+        g Pleurocystites
+          Pleurocystites elegans (Billings)
+          Pleurocystites filitextus (Billings)
+          Pleurocystites squamosus (Billings)
+          Pleurocystites rugeri (Salter)
+          Pleurocystites quadratus (Bather)
+          Pleurocystites gibbus (Bather)
+        g Regulaecystis
+          Regulaecystis pleurocystoides (Dehm)
+      F Glyptocystitidae (Bather)
+        g Glyptocystites
+          Glyptocystites ehlersi (Kesling)
+          Glyptocystites multiporus (Billings)
+          Glyptocystites regnelli (Sinclair)
+          Glyptocystites batheri (Sinclair)
+      F Callocystitidae (Bernard)
+        g Callocystites
+          Callocystites jewetti (Hall)
+          Callocystites canadensis (Billings)
+          Callocystites subglobosus (Hall)
+        g Sphaerocystites
+          Sphaerocystites multifasciatus (Hall)
+          Sphaerocystites bloomfieldensis (Schuchert)
+        g Hallicystis
+          Hallicystis imago (Hall)
+          Hallicystis elongata (Jaekel)
+          Hallicystis attenuata (Paul)
+        g Lepadocystis
+          Lepadocystis moorei (Meek)
+        g Brockocystis
+          Brockocystis tecumseh (Billings)
+        g Jaekelocystis
+          Jaekelocystis hartleyi (Schuchert)
+        g Lovenicystis
+          Lovenicystis angelini (Haeckel)
+        g Apiocystites
+          Apiocystites pentrematoides (Forbes)
+        g Lepocrinites
+          Lepocrinites gebhardii (Conrad)
+        g Prunocystites
+          Prunocystites fletcheri (Forbes)
+        g Lipsanocystis
+          Lipsanocystis traversensis (Ehlers & Leighley)
+          Lipsanocystis magnus (Stumm)
+        g Tetracystis
+          Tetracystis fenestratus (Troost)
+          Tetracystis chrysalis (Schuchert)
+          Tetracystis oblongus (Forbes)
+          Tetracystis elegans (Hall)
+        g Strobilocystites
+          Strobilocystites calvini (White)
+        g Staurocystis
+          Staurocystis quadrifasciatus (Pence)
+        g Pseudocrinites
+          Pseudocrinites bifasciatus (Pence)
+          Pseudocrinites pyriformis (Paul)
+          Pseudocrinites gordoni (Schuchert)
+          Pseudocrinites perdewi (Schuchert)
+          Pseudocrinites stellatus (Schuchert)
+          Pseudocrinites clarki (Schuchert)
+    SF Hemicosmitida (Jaekel)
+      F Hemicosmitidae
+        g Hemicosmites
+          Hemicosmites pyriformis (von Buch)
+          Hemicosmites extraneus (Eichwald)
+          Hemicosmites sp. nov. (Kullsberg)
+          Hemicosmites malum (Pander)
+          Hemicosmites cf. verrucosus (Eichwald)
+          Hemicosmites sp. (Karrast)
+          Hemicosmites sp. (Uxnörm)
+      F Caryocrinitidae (Bernard)
+        g Caryocrinites
+          Caryocrinites ornatus (Say)
+          Caryocrinites septentrionalis (Regnéll)
+          Caryocrinites elognatus (Rowley)
+      F Thomacystidae (Paul)
+        g Thomacystis
+          Thomacystis tuberculata (Paul)
+
+
+-----
+
+1968-10-02-p Notes on cystoids.pdf
+Paul, C.R.C
+
+TREE
+E Diploporita
+  SF Glyptosphaeritida (Bernard 1985)
+    F Dactylocystidae (Jaekel 1899)
+      g Revalocystis ?
+        Revalocystis kearsargensis ? (Stauffer 1930)
+
+1930  Strobilocystites ?? kearsargensis (Stauffer)
+1943  Strobilocystites ?? kearsargensis (Bassler & Moodey)
+
+Reassigns Strobilocystites kearsargensis to Revalocystis kearsargensis
+
+-----
+
+1969-08-16-v Ctenocystoidea- New Class of Primitive Echinoderms.pdf
+Robinson, R.A.; Sprinkle, J.
+
+TREE
+P Echinodermata
+  C Ctenocystoidea class nov
+    g Ctenocystis gen. nov
+      Ctenocystis utahensis gen. et sp. nov
+
+-----
+
+1970-00-00-p Treatise on Invertebrate Paleontology — Part V- Graptolithina (Revised and Enlarged).pdf
+
+P Hemichordata
+  C Enteropneusta
+  C Pterobranchia
+    O Rhabdopleurida
+      F Rhabdopleuridae
+    O Cephalodiscida
+      F Eocephalodiscidae
+      F Cephalodiscidae
+  C Graptolithina
+    O Dendroida
+      F Dendrograptidae
+      F Anisograptidae
+      F Ptilogratidae
+      F Acathograptidae
+    O Tuboidea
+      F Tubidendridae
+      F Idiotubidae
+    O Camaroidea
+      F Bithecocamaridae
+      F Cysticamaridae
+    O Crustoidea
+      F Wimanicrustidae
+      F Hormograptidae
+    O Stolonoidea
+      F Stolonodendridae
+    O Graptoloidea
+      BO Didymograptina
+        F Dichograptidae
+          Multiramous forms
+            Goniograpti
+            Temnograpti
+            Schizograpti
+            Dichograpti
+          Pauciramous forms
+            Tetragrapti
+            Didymograpti
+        F Sinograptidae
+        F Abrograptidae
+        F Corynoididae
+        F Nemagraptidae
+        F Dicranograptidae
+      BO Diplograptina
+        F Diplograptidae
+        F Lasiograptidae
+        F Retiolitidae
+          BF Retiolitinae
+          BF Archiretiolitinae
+          BF Plectograptinae
+        F Dimorphograptidae
+      BO Monograptina
+      F Monograptidae
+      F Cryptograptidae
+        BF Cyrtograptinae
+        BF Linograptinae
+  C ["Incertae sedis"]
+    Graptoblasti
+    Acanthastida
+    Graptovermida
+
+-----
+
+1972-05-00-a A new calcichordate from the Ordovician of Bohemia and its anatomy, adaptations and relationships.pdf
+Jefferies, R.P.S.; Prokop, R.J.
+
+TREE
+P Chordata
+  BP Calcichordata (Jefferies 1967)
+    C Stylophora (Gill & Caster 1960)
+      O Cornuta (Jaekel 1900)
+        F Amygdalothecidae (Ubaghs 1970, as within O Cornuta)
+          g Amygdalotheca (Ubaughs 1970)
+          g Gallaecystis (Ubaughs 1970)
+          g Reticulocarpos hanusi gen. et sp. nov
+          O Mitrata (Jaekel 1918, but prob not in this position)
+            g Lagynocystis (position unclear from text)
+
+XTREE
+E Cornuta
+  F Ceratocystidae
+    g Ceratocystis
+      Ceratocystis perneri
+    - g Nevadaecystis
+        Nevadaecystis americana
+      - g Cothurnocystis
+          Cothurnocystis sp.
+        - - g Phyliocystis
+              Phyliocystis sp.
+              - Phyllocystis crossimorginata
+                Phyllocystis biayoci
+          - - g Chauvelicystis
+                Chauvelicystis spinosa
+                Chauvelicystis ubaghsi                    Cornuta Ceratocystidae
+            - - Cothurnocystis fellinensis              Cornuta Ceratocystidae
+                Cothurnocystis primaeva                 Cornuta Ceratocystidae
+              - - - Cothurnocystis elizos               Cornuta Ceratocystidae
+                    Cothurnocystis courtessolei         Cornuta Ceratocystidae
+  
+                  - Scotiaecystis griffei               Cornuta Scotiaecystidae
+                    - Scotiaecystis curvata             Cornuta Scotiaecystidae
+                      Bohemiaecystis bouceki            Cornuta Scotiaecystidae
+  
+                - Galliaecystis lignieresi              Cornuta Amygdalothecidae
+                  - - Amygdalotheca griffei             Cornuta Amygdalothecidae
+                      Reticulocarpos hausi              Cornuta Amygdalothecidae
+  
+                    - Lagynocystis pyramidalis          Mitrata
+                      - Peltocystis cornuta             Mitrata
+                        - Chinianocarpos thorali        Mitrata
+                          - Placocystites forbesianus   Mitrata
+                            - Mitrocystella barrandei   Mitrata
+                                Mitrocystella incipiens Mitrata
+                              Mitrocystites mitra       Mitrata
+
+(Notes P Echinodermata / BP Homalozoa (Whitehouse 1941) as alternative)
+O1 == Arenig
+O2 == Llanvirn
+O3 == Llandeilo
+O4 == Caradoc
+O5 == Ashgill
+S1 == Llandovery
+S2 == Wenlock
+S3 == Ludlow
+
+MC  Ceratocystis perneri                                Cornuta Ceratocystidae
+SC  - Nevadaecystis americana                           Cornuta Ceratocystidae
+MC    - Cothurnocystis sp.                              Cornuta Ceratocystidae
+SC      - - Phyliocystis sp.                            Cornuta Ceratocystidae
+O1          - Phyllocystis crossimorginata              Cornuta Ceratocystidae
+O1            Phyllocystis biayoci                      Cornuta Ceratocystidae
+O1        - - Chauvelicystis spinosa                    Cornuta Ceratocystidae
+O1            Chauvelicystis ubaghsi                    Cornuta Ceratocystidae
+O1          - - Cothurnocystis fellinensis              Cornuta Ceratocystidae
+O1              Cothurnocystis primaeva                 Cornuta Ceratocystidae
+O5            - - - Cothurnocystis elizos               Cornuta Ceratocystidae
+O1                  Cothurnocystis courtessolei         Cornuta Ceratocystidae
+
+O1                - Scotiaecystis griffei               Cornuta Scotiaecystidae
+O5                  - Scotiaecystis curvata             Cornuta Scotiaecystidae
+O3                    Bohemiaecystis bouceki            Cornuta Scotiaecystidae
+
+O1              - Galliaecystis lignieresi              Cornuta Amygdalothecidae
+O1                - - Amygdalotheca griffei             Cornuta Amygdalothecidae
+O2                    Reticulocarpos hausi              Cornuta Amygdalothecidae
+
+O2                  - Lagynocystis pyramidalis          Mitrata
+O1                    - Peltocystis cornuta             Mitrata
+O1                      - Chinianocarpos thorali        Mitrata
+S2-3                      - Placocystites forbesianus   Mitrata
+O2                          - Mitrocystella barrandei   Mitrata
+O3                              Mitrocystella incipiens Mitrata
+O2                            Mitrocystites mitra       Mitrata
+
+-----
+
+1973-00-00-p Morphology and Evolution of Blastozoan Echinoderms.pdf
+Sprinkle, J.
+
+TREE (from abundance chart)
+P Echinodermata
+  BP Crinozoa
+    E Paracrinoidea ?
+    E Diploporita ?
+  BP Blastozoa
+    E Eocrinoidea
+      E Diploporita ?
+      E Parablastoidea ?
+      E Rhombifera
+      E Blastoidea ?
+
+Notes that the Pelmetazoa / Eleutherozoa subphylum classification was rejected by Fell (1962, 1963), who suggested Crinozoa / Asterozoa / Echinozoa / Homalozoa, which serves as the basis here.
+
+TREE
+P Echinodermata
+  BP Asterozoa (Zittel 1895)
+  BP Echinozoa (Zittel 1895)
+  BP Homalozoa (Whitehouse 1941)
+  BP Crinozoa (Matsomoto 1929, revised herein)
+    C Crinoidea (Miller 1821)
+    Paracrinoidea (Regnéll 1945) ?
+  BP Blastozoa n. subphyl.
+    C Eocrinoidea (Jaekel 1918)
+    C Parablastoidea (Hudson 1907)
+    C Rhombifera (Zittel 1879)
+    C Blastoidea (Say 1825)
+  E Incertae sedis
+    C Diploporita (Müller 1854)
+
+1st blastozoan species was Echinus (now Echinosphaerites) aurantium (Gyllenhaal 1772)
+
+C Blastoidea (Say 1825) established to include echinoderms "intermediate between crinoids and echinoids."
+
+C Cystoidea (von Buch 1846) (purpose not mentioned in immediate text)
+  O Rhombifera was originally one of 2 orders here (apparently w/Diploporita)
+
+BC (now C) Eocrinoidea (Jaekel 1918) proposed for "early cystoid-like forms that could not be assigned elswhere."
+
+Eocrinoidea -> other classes "presently defined as the point where an eocrinoid ancestor successfully developed one of the three later internal foldlike respiratory systems."
+
+Notes that genus Macrocystella was moved from eocrinoids to rhombiferan cystoids by Paul (1968a); this returns it to eocrinoids, but otherwise agrees with Paul that the genus is "truly transitional between the two classes."
+
+TREE
+P Echinodermata (Bruguiere 1789)
+  BP Blastozoa n. subphylum
+    C Eocrinoidea (Jaekel 1918)
+      O Imbricata n. order (== C Lepidocystoidea (Durham 1967))
+        F Lepidocystidae (Durham 1967)
+          g Lepidocystis (Foerste 1938)
+            Lepidocystis wanneri (Foerste 1938)
+            Lepidocystis cf. L. wanneri (Foerste)
+          g Kenzercystis n. gen.
+            Kenzercystis durhami n. sp.
+      O [Unnamed #1]
+        F Eocrinidae (Jaekel 1918)
+          g Gogia (Walcott 1917)
+            Gogia prolifica (Walcott 1917b)
+            Gogia longidactylus (Walcott 1886)
+            Gogia multibrachiatus (Kirk 1945)
+            Gogia spiralis (Robinson 1965)
+            Gogia granulosa (Robinson 1965)
+            Gogia palmeri n. sp.
+            Gogia guntheri n. sp.
+            Gogia kitchnerensis n. sp.
+            Gogia hobbsi n. sp.
+            Gogia? radiata n. sp.
+            Gogia species 1
+            Gogia species 2
+          g Acanthocystites (Barrande 1887)
+            Acanthocystites briarcus (Barrande 1887)
+          g Akadocrinus (Prokop 1962)
+            Akadocrinus jani (Prokop 1962)
+        F Lichenoididae (Jaekel 1918)
+          g Lichenoides (Barrande 1846)
+            Lichenoides priscus (Barrande 1846)
+        F Rhopalocystidae (Ubaghs 1967)
+          g Rhopalocystis (Ubaghs 1963)
+            Rhopalocystis destombesi (Ubaghs 1963)
+        F ["Indeterminate"]
+          "Archaeocyathids" from Poland
+      O [Unnamed #2]
+        F ["Indeterminate"]
+          g Pareocrinus (Yakovlev 1956)
+            Pareocrinus ljubzovi (Yakovlev 1956)
+          g Eustypocystis n. gen.
+            Eustypocystis minor n. sp.
+          g Nolichuckia n. gen.
+            Nolichuckia casteri n. sp.
+        F Ascocystitidae (Ubaghs 1967)
+          g Ascocystites (Barrande 1887)
+            Ascocystites drabowensis (Barrande 1887)
+        F ["Indeterminate"]
+          g Cambrocrinus (Orlowski 1968)
+            Cambrocrinus regularis (Orlowski 1968)
+          g Eocystites (Billings 1868)
+            Eocystites primaevus (Billings 1868)
+        F Macrocystellidae (Bather 1899)
+          g Macrocystella (Callaway 1877)
+            Macrocystella mariae (Callaway 1877) "probably directly ancestral to rhombieran Cheirocrinus"
+      O ["Indeterminate"]
+        F Trachelocrinidae n. fam.
+          g Trachelocrinus (Ulrich 1929)
+            Trachelocrinus resseri (Ulrich 1929)
+      O ["Indeterminate"]
+        F Cryptocrinitidae (Bassler 1938)
+          g Cryptocrinites (von Buch 1840)
+        F ["Indeterminate"]
+          g Bockia (Hecker 1938)
+            Bockia neglecta (Hecker 1938)
+      O ["Indeterminate"]
+        F Lingulocystidae (Ubaghs 1960)
+          g Lingulocystis (Thoral 1935)
+            Lingulocystis elongata (Thoral 1935)
+        F ["Indeterminate"]
+          g Cardiocystites (Barronde 1887)
+            Cardiocystites bohemicus (Barrande 1887)
+        F Rhipidocystidae (Jaekel 1901)
+          g Rhipidocystis (Jaekel 1901)
+            Rhipidocystic gigas (Jaekel 1901)
+          g Batherocystis (Bassler 1950)
+            Batherocystis appressa (Bassler 1950)
+          g Petalocystites n. gen.
+            Petalocystites ikecanensis n. sp.
+    E [provisionally or definitively removed from the Eocrinoids]
+      g Cigaria (Barrande 1887)
+        Cigaria dusli (Barrande 1887)
+      F Springerocystidae (Bossler 1950)
+        g Archaeocystites (Barrande 1887)
+          Archaeocystites medusa (Barrande 1887)
+        g Palaeocystites (Billings 1859)
+          Palaeocystites dawsoni (Billings 1859)
+        g Lysocystites (Miller 1889)
+    C Parablastoidea (Hudson 1907)
+      F Blastocystidae (Jaekel 1916)
+        g Blastoidocrinus (Billings 1859)
+          Blastoidocrinus carchariaedens (Billings 1859)
+          Blastoidocrinus? cf. B. carchariaedens (Ross 1949)
+          Blastoidocrinus? nevadensis n. sp.
+        g Blastocystis (Jaekel 1918)
+          Blastocystis rossica (Jaekel 1918)
+      F Meristoschismatidae n. fam.
+        g Meristoschisma n. gen.
+          Meristoschisma hudsoni n. sp.
+          Meristoschisma fayi n. sp.
+    C Rhombifera (Zittel 1879) [??? not studied for this book, referred to Paul]
+    C Blastoidea (Say 1825) [??? not studied for this book, except a single plate in..]
+      O Fissiculata ? (Jaekel 1918)
+
+
+P Echinodermata
+  BP Blastozoa
+    C Eocrinoidea
+      O Imbricata
+        F Lepidocystidae
+      O [Unnamed #1]
+        F Eocrinidae (Jaekel 1918)
+        F Lichenoididae (Jaekel 1918)
+        F Rhopalocystidae (Ubaghs 1967)
+        F ["Indeterminate" – "Archaeocyathids"]
+      O [Unnamed #2]
+        F ["Indeterminate" – Pareocrinus, Eustypocystis, Nolichuckia]
+        F Ascocystitidae (Ubaghs 1967)
+        F ["Indeterminate" – Cambrocrinus, Eocystites]
+        F Macrocystellidae (Bather 1899)
+          C Rhombifera
+            O Dichoporita
+              SF Glyptocystitida
+                F Macrocystellidae
+                F Cheirocrinidae
+                F Echinoencrinitidae
+                  BF Echinoencrinitinae
+                  BF Scoliocystinae
+                F Rhombiferidae
+                F Pleurocystitidae
+                F Glyptocystitidae
+                F Callocystitidae
+              SF Hemicosmitida
+                F Hemicosmitidae
+                F Caryocrinitidae
+                F Thomacystidae
+      O ["Indeterminate"]
+        F Trachelocrinidae n. fam.
+      O ["Indeterminate"]
+        F Cryptocrinitidae (Bassler 1938)
+        F ["Indeterminate" – Bockia]
+      O ["Indeterminate"]
+        F Lingulocystidae (Ubaghs 1960)
+        F ["Indeterminate"]
+        F Rhipidocystidae (Jaekel 1901)
+    [provisionally or definitively removed from the Eocrinoids]
+      F Springerocystidae (Bossler 1950)
+    C Parablastoidea
+      F Blastocystidae
+      F Meristoschismatidae
+    C Blastoidea
+      O Fissiculata
+      ???
+
+-----
+
+1975-03-24-v The "Arms" of Caryocrinites, a Rhombiferan Cystoid Convergent on Crinoids.pdf
+Sprinkle, J.
+
+TREE
+P Echinodermata
+  BP Crinozoa
+    E Crinoids
+    E ?Paracrionoids?
+  BP Blastozoa
+    E Eocrinoids
+    E Rhombiferan Cystoids
+    E Parablastoids
+    E Blastoids
+  BP Echinozoa
+    E Edrioasteroids
+    E Edrioblastoids
+
+Arms (Crinozoans) vs Brachioles (Blastozoans) theory, with attention paid to exceptions and convergence
+
+
+-----
+
+1975-05-00-p Middle Ordovician Echinoderms from Northern Illinois and Southern Wisconsin.pdf
+Kolata, D.R.
+
+TREE
+P Echinodermata (Fleming 1828)
+  BP Homalozoa (Whitehouse 1941)
+    C Homoiostelea (Gill & Caster 1960)
+      O Soluta (Jaekel 1901)
+        F Belemnocystitidae (Parsley in Caster 1968)
+          g Belemnocystites
+            Belemnocystites wetherbyi (Miller & Curley 1894)
+          g Myeinocystites
+            Myeinocystites natus (Strimple 1953)
+          g Scalenocystites
+            Scalenocystites strimplei (Kolata 1973)
+        F Iowacystidae
+          g Iowacistis
+  BP Crinozoa (Matsumoto 1929)
+    C Cystoidea (von Buch 1846)
+      O Rhombifera (Zittel 1879)
+        SF Glyptocystitida (Bather 1899)
+          F Pleurocystitidae (Neumayr 1899)
+            g Pleurocystites (Billings 1854)
+              Pleurocystites squamosus (Billings 1854)
+            g Praepleurocystis (Paul 1967a)
+              Praepleurocystis watkinsi (Strimple 1948)
+          F Cheirocrinidae (Jaekel 1899)
+            g Coronocystis (Paul 1972)
+              Cheirocrinus angulatus (type species despite not matching genus?)
+              Coronocystis durandensis n. sp.
+    C Crinoidea (Miller 1821)
+      BC Inadunata (Wachsmuth & Springer 1885)
+        O Disparida (Moore & Laudon 1943)
+          SF Calceocrinacea (Meek & Worthen 1869)
+            F Calceocrinidae (Meek & WOrthen 1869)
+              g Cremacrinus (Ulrich 1886)
+                Cremacrinus punctatus (Ulrich 1886)
+                Cremacrinus arctus (Sardeson 1928)
+                Cremacrinus guttenbergensis n. sp.
+              g Anulocrinus (Ramsbottom 1961)
+                Anulocrinus thraivensis (Ramsbottom 1961)
+                - Anulocrinus drummuckensis (Ramsbottom 1961)
+                  Anulocrinus forrestonensis n. sp.
+          SF Heterocrinacea (Zittel 1879)
+            F Heterocrinidae (Zittel 1879)
+              g Isotomocrinus (Ulrich 1924)
+                Isotomocrinus typus (Ulrich 1924)
+                Isotomocrinus tenuis (Billings 1857) -> reassigned from Ottawacrinus tenuis (Jaekel 1918)
+                Isotomocrinus minutus n. sp.
+        O Hybocrinida (Jaekel 1918)
+          SF Hybocrinacea (Zittel 1879)
+            F Hybocrinidae (Zittel 1879)
+              g Hybocrinus (Billings 1857)
+                Hybocrinus conicus (Billings 1857)
+        O Cladida (Moore & Landon 1943)
+          BO Cyathocrinina (Bather 1899)
+            SF Gasterocomacea (Roemer 1854)
+              F Porocrinidae (Miller & Gurley 1894)
+                g Porocrinus (Billings 1857)
+                  Porocrinus conicus (Billings 1859)
+                  Porocrinus pentagonius (Meek & Worthen 1865)
+                  (sp. nov. transitional btwn pentagonius and smithi)
+                  Porocrinus smithi (Grant 1881)
+              F Carabocrinidae (Bather 1899)
+                g Carabocrinus (Billings 1857)
+                  Carabocrinus radiatus (Billings 1857)
+                  Carabocrinus oogyi n. sp.
+          BO Dendrocrinina (Bather 1899)
+            SF Dendrocrinacea (Wachsmuth & Springer 1886)
+              F Dendrocrinidae (Wachsmuth & Springer 1886)
+                g Dendrocrinus (Hall 1852)
+                  Dendrocrinus longidactylus (Hall 1852)
+                  Dendrocrinus? springeri n. sp.
+            SF Merocrinacea (S. A. Miller 1890)
+              F Merocrinidae (S. A. Miller 1890)
+                g Merocrinus (Walcott 1884)
+                  Merocrinus typus (Walcott 1884)
+                  Merocrinus britonensis n. sp.
+              F Cupulocrinidae (Moore & Laudon 1943)
+                g Cupulocrinus (d'Orbigny 1849)
+                  Scyphocrinus heterocostalis (Hall 1874) (type spec)
+                  Cupulocrinus conjugans (Billings 1859)
+                  Cupulocrinus gracilis (Hall 1847)
+                  Cupulocrinus humilis (Billings 1857)
+                  Cupulocrinus jewetti (Billings 1859)
+                  Cupulocrinus molanderi n. sp.
+                  Cupulocrinus plattevillensis n. sp.
+      BC Camerata (Wachsmuth & Springer 1885)
+        O Diplobathra (Moore & Laudon 1943)
+          F Reteocrinidae (Wachsmuth & Springer 1885)
+            g Reteocrinus (Billings 1859)
+              Retrocrinus stellaris (Billings 1859)
+              Retrocrinus rocktonensis n. sp.
+              Retrocrinus spinosus n. sp.
+            g Gaurocrinus
+              Gaurocrinus nealli (Wachsmuth & Springer)
+              Gaurocrinus fimbriatus (Wachsmuth & Springer)
+              Gaurocrinus magnificus (S. A. Miller)
+            g Traskocrinus n. gen.
+              Traskocrinus mahlburgi n. gen. et sp.
+          F Archaeocrinidae (Moore & Laudon 1943)
+            g Rhaphanocrinus (Wachsmuth & Springer 1885)
+              Glyptocrinus subnodus (Walcott 1884) (type species)
+              Rhaphanocrinus buckleyi n. sp.
+        O Monobathra (Moore & Laudon 1943)
+          F Glyptocrinidae (Zittel 1879)
+            g Glyptocrinus (Hall 1847)
+              Glyptocrinus decadactylus (Hall 1847)
+              Glyptocrinus charltoni n. sp.
+              Glyptocrinus pustulosis n. sp.
+            g Periglyptocrinus (Wachsmuth & Springer 1897)
+            g Pycnocrinus (S. A. Miller 1883)
+    C Stelleroidea (Lamark 1816)
+      BC Asteroidea (de Blainville 1830)
+        O Valvatida (Perrier 1884)
+          BO Pustulosina (Spencer 1951)
+            SF Promopalaeasteraceae (Schucher 1914)
+              F Promopalaeasteridae (Schuchert 1914)
+                g Promopalaeaster (Schuchert 1914)
+                  Palaeaster granulosus (Meek 1872) (type species)
+                  Promopalaeaster wilsoni (Raymond 1912)
+            SF Palaeasteraceae (S. A. Miller 1889)
+              F Hudsonasteridae (Schuchert 1914)
+                g Hudsonaster (Sturtz 1900)
+                  Palasterina rugosus (Billings 1857) (type species)
+        O Forcipulatida (Perrier 1884)
+          BO Uractinina (Spencer & Wright 1966)
+            F Urasterellidae (Schuchert 1914)
+              g Urasterella (M'Coy 1851)
+                Urasteralla ruthveni (M'Coy 1851)
+    C Edrioasteroidea (Billings 1858)
+      F Edrioasteridae (Bather 1898)
+        g Edrioaster (Billings 1858)
+          Edrioaster bigsbyi (Billings 1858)
+    C Cyclocystoidea
+      F Cyclocystoididae (S. A. Miller 1882)
+        g Cyclocystoides (Salter & Billings 1858)
+          Cyclocystoides halli (Salter & Billings 1858)
+    C Echinoidea (Leske 1778)
+      BC Perishoechinoidea (M'Coy 1849)
+        O Bothriocidaroida (Zittel 1879)
+          F Bothriocidaridae (Kelm 1904)
+            g Bothriocidaris (Eichwalk 1860)
+              Bothriocidaris globulus (Eichwald 1860)
+              Bothriocidaris solemi n. sp.
+            g Neobothriocidaris (Paul 1967b)
+              Neobothriocidaris peculiaris (Paul 1967b)
+              Neobothriocidaris templetoni n. sp.
+
+CONDENSED
+P Echinodermata (Fleming 1828)
+  BP Homalozoa (Whitehouse 1941)
+    C Homoiostelea (Gill & Caster 1960)
+      O Soluta (Jaekel 1901)
+        F Belemnocystitidae (Parsley in Caster 1968)
+        F Iowacystidae
+  BP Crinozoa (Matsumoto 1929)
+    C Cystoidea (von Buch 1846)
+      O Rhombifera (Zittel 1879)
+        SF Glyptocystitida (Bather 1899)
+          F Pleurocystitidae (Neumayr 1899)
+          F Cheirocrinidae (Jaekel 1899)
+    C Crinoidea (Miller 1821)
+      BC Inadunata (Wachsmuth & Springer 1885)
+        O Disparida (Moore & Laudon 1943)
+          SF Calceocrinacea (Meek & Worthen 1869)
+            F Calceocrinidae (Meek & WOrthen 1869)
+          SF Heterocrinacea (Zittel 1879)
+            F Heterocrinidae (Zittel 1879)
+        O Hybocrinida (Jaekel 1918)
+          SF Hybocrinacea (Zittel 1879)
+            F Hybocrinidae (Zittel 1879)
+        O Cladida (Moore & Landon 1943)
+          BO Cyathocrinina (Bather 1899)
+            SF Gasterocomacea (Roemer 1854)
+              F Porocrinidae (Miller & Gurley 1894)
+              F Carabocrinidae (Bather 1899)
+          BO Dendrocrinina (Bather 1899)
+            SF Dendrocrinacea (Wachsmuth & Springer 1886)
+              F Dendrocrinidae (Wachsmuth & Springer 1886)
+            SF Merocrinacea (S. A. Miller 1890)
+              F Merocrinidae (S. A. Miller 1890)
+              F Cupulocrinidae (Moore & Laudon 1943)
+      BC Camerata (Wachsmuth & Springer 1885)
+        O Diplobathra (Moore & Laudon 1943)
+          F Reteocrinidae (Wachsmuth & Springer 1885)
+          F Archaeocrinidae (Moore & Laudon 1943)
+        O Monobathra (Moore & Laudon 1943)
+          F Glyptocrinidae (Zittel 1879)
+    C Stelleroidea (Lamark 1816)
+      BC Asteroidea (de Blainville 1830)
+        O Valvatida (Perrier 1884)
+          BO Pustulosina (Spencer 1951)
+            SF Promopalaeasteraceae (Schucher 1914)
+              F Promopalaeasteridae (Schuchert 1914)
+            SF Palaeasteraceae (S. A. Miller 1889)
+              F Hudsonasteridae (Schuchert 1914)
+        O Forcipulatida (Perrier 1884)
+          BO Uractinina (Spencer & Wright 1966)
+            F Urasterellidae (Schuchert 1914)
+    C Edrioasteroidea (Billings 1858)
+      F Edrioasteridae (Bather 1898)
+    C Cyclocystoidea
+      F Cyclocystoididae (S. A. Miller 1882)
+    C Echinoidea (Leske 1778)
+      BC Perishoechinoidea (M'Coy 1849)
+        O Bothriocidaroida (Zittel 1879)
+          F Bothriocidaridae (Kelm 1904)
+
+
+-----
+
+1976-03-00-p Classification and Phylogeny of "Pelmatozoan" Echinoderms.pdf
+Sprinkle, J.
+
+TREE CITED FROM Breimer and Ubaghs (1974)
+P Echinodermata (De Bruguiere 1791)
+  BP Pelmatozoa (Leuckart 1848)
+    SC Cystoidea (Buch 1845)
+      C Eocrinoidea (Jaekel 1918)
+      C Rhombifera (Zittel 1879)
+      C Diploporita* (Müller 1854)
+      C Blastoidea (Say 1825)
+        BC Parablastoidea (Hudson 1907)
+    SC Brachiatoidea (Burmeister 1856)
+      C Crinoidea (Miller 1821)
+    SC ["indeterminate"]
+      C Paracrinoidea** (Regnéll 1945)
+
+TREE CITED FROM Ubaghs (1968), Sprinkle (1973), and others
+P Echinodermata
+  BP Blastozoa (Sprinkle 1973)
+    C Eocrinoidea
+    C Rhombifera
+    C Diploporita*
+    C Blastoidea
+    C Parablastoidea
+  BP Crinozoa (Matsumoto 1929)
+    C Crinoidea
+  C ["Unassigned Class"]
+    C Paracrinoidea**
+
+*Diploporita prob -> BP Blastozoa per Breimer and Ubaghs 1974, but left unassigned per Sprinkle 1973 b/c food-gathering appendages poorly known.
+**Srinkle 1973 assigned Paracrinoidea to BP Crinozoa w some reservations, but Prsley and Mintz 1975 have proposed paracrinoids as thier own BP.
+
+Conclusions: Critical of B&U 1974: """There is probably no "fundamental unity" of stalked or "pelmatozoan" echinoderms, but rather two distinct and separate groups (arm-bearing vs. brachiole-bearing forms) which have adopted the same way of life.  These two groups have been separate lineages since the beginning of the Cambrian although they show many examples of parallel evolution and convergence in their later history.  Breimer and Ubaghs' use of discarded or unused higher taxa names to promote strict priority over currently accepted usage and their establishment of a new category level (superclass) for stalked echinoderms only add to the problem of classifying echinoderms and do little to maintain stability."""
+
+-----
+
+1977-07-05-v Totiglobus, an Unusual New Edrioasteroid from the Middle Cambrian of Nevada.pdf
+Bell, B.M; Sprinkle, J.
+
+TREE
+C Edrioasteroidea (Billings 1858)
+  O Edrioasterida (Bell 1976) [emend. herein]
+    F Edrioasteridae (Bell 1976) [emend. herein]
+    F Totiglobidae n. fam.
+      g Totiglobus n. gen. (monotypic)
+        Totiglobus nimius n. sp.
+      g Aepyaster (Sprinkle & Strimple in pre) (monotypic)
+  O Isorophida ? [possibly under Edrioasterida]
+  E Incertae sedis
+    g Stromatocystids
+
+Stromatocystids typically considered Edrioasteroidea but neither Edrioasterida nor Isorophoida, and maybe not Edrioasteroidea for that matter.
+
+T. nimus establishes existence of Cambrian edrioasterids (Edrioasterida), and the possibility that edrioasteroids predate and gave rise to isorophids (Isorophida).  But conclusion is that Edrioasterida and Isorophida were both derived from an as yet unknown common ancestor which shared traits of both.  Totiglobus suggests that such an ancestor has a completely plated theca, and perhaps also a basal disk similar to that found in Totiglobus.
+
+-----
+
+1977-07-18-v Attachment Structures in the Rhombiferan Cystoid Caryocrinites and Their Paleobiological Implications.pdf
+Brett, C.E.
+
+TREE
+E "Rhombiferan Cystoid"
+  SF Hemicosmitada (Jaekel 1918)
+    F Caryocrinitidae (Bernard, 1895)
+
+-----
+
+1977-11-02-a Paedomorphosis in edrioasteroid echinoderms.pdf
+Sprinkle, J.; Bell, B.M.
+
+TREE
+C Edrioasteroidea
+  O Isorophida
+    BO Isorophina
+    BO Cyathocystina
+
+-----
+
+1979-06-16-v New Comarocystitida (Echinodermata- Paracrinoidea) from the Silurian of Iowa and Ordovician of Oklahoma.pdf
+Frest, T.J.; Strimple, H.L.; Witzke, B. J.
+
+TREE
+C Paracrinoidea (Regnell 1945)
+  O Camarocystitida (Parsley & Mintz 1975)
+    F Amygdalocystitidae (Bather 1899)
+      g Amygdalocystites (Billings 1854)
+      g Achradocystites (Volborth 1870)
+      g Oklahomacystis (Parsley & Mintz 1975)
+        Oklahomacystis tribrachiatus (Bassler 1943)
+        Oklahomacystis spissus n. sp.
+      g Ovulocystites n. gen.
+        Ovulocystites hopkintonensis n. sp.
+
+-----
+
+1981-03-17-a Echinoderms from the Ordovician of the Girvan district, Scotland, with the description of two new species.pdf
+Regnéll, G.; Paul, C.R.C.
+
+TREE Not 100% clear if Cheirocrinidae is within Glyptocystitida
+C Rhombifera (Zittel 1879 nom transl. Paul 1972)
+  O Dichoporita (Jaekel 1899 emend. Paul 1972)
+    SF Glyptocystitida (Bather 1899)
+      F Pleurocystitidae (Neumayr 1889 emend. Sprinkle 1974)
+        g Pleurocystites (Billings 1854)
+          Pleurocystites squamosus (Billings by desig. of S. A. Miller 1889)
+          Pleurocystites mitratus sp. nov.
+      F Cheirocrinidae (Jaekel 1899)
+        g Homocystites (Barrande 1887)
+          Homocystites alter (Barrande 1887)
+
+Not 100% clear if Cheirocrinidae is within Glyptocystitida
+There is more discussion here of additional genus and species
+
+-----
+
+1982-08-05-v Coronoidea- A New Class of Blastozoan Echinoderms Based on Taxonomic Reevaluation of Stephanocrinus.pdf
+Brett, C.E.; Frest, T.J.; Sprinkle, J.; Clement, C.R.
+
+TREE
+BP Blastozoa (Sprinkle 1973)
+  C Coronoidea n. class
+    O Coronata (Jaekel 1918)
+      F Stephanocrinidae (Wachsmuth & Springer 1886)
+        g Stephanocrinus (Contrad 1842)
+          Stephanocrinus angulatus (Conrad 1842)
+          Stephanocrinus? gemmiformis (Hall 1852)
+
+Three possibilities:
+  * Coronoids may be directly ancestral to blastoids
+  * Blastoids may be directly ancestral to coronoids
+  * both groups may have a common ancestor, presumably an eocrinoid
+
+
+-----
+
+1985-01-27-s Middle Cambrian cystoid (sensu lato) stem columnals from Bornholm, Denmark.pdf
+Berg-Madsen, V.
+
+Ceratocystis perneri - "one of the oldest known stylophorans"
+Akadocrinus jani - "oldest stemmed eocrinoid"
+Eustypocystis minor - "oldest known stem-bearing cystoid from North America"
+
+"""
+Middle Cambrian cystoid (sensu luto) stem col- umnals are recorded from Bornholm, Denmark. Some of these occur in the Exsulans Limestone/ Kalby marl in the zone of Ptychagnostus gibblrs and thus represent stemmed cystoids older than the oldest stem-bearing eocrinoid Akadocrinus jani from the Jince Formation in Bohemia and Eustypocystis minor from the upper Middle Cambrian of North America.
+"""
+"""
+The morphology is very advanced with regard to articulation, which has not previously been de- scribed in Cambrian cystoids. This is an indica- tion of differentiation within the cystoids earlier than hitherto believed. At least two main groups of columnals occur but clearly more than two species are represented provided the articulation is specific to either genus andor species.
+
+As pointed out by several authors (Regntll 1945; Sprinkle 1973; Breimer & Ubaghs 1974; Ubaghs 1975; Paul & Smith 1984) the Eocrinoi- dea is a problematic polyphyletic group defined on primitive features which should be abandoned as taxon. Among the eocrinoids are forms with polyplated stalks living parallel with true stemmed forms and the oldest crinoid with a primitive stalk. Among the problematic forms are Trachelocrinusresseri, not a crinoid nor quite accepted as an eocrinoid. The development from a polyplated stalk through a meric to a holomeric stem happened independently in cystoids and cri- noids. Some of the columnals described here may belong to crinoids rather than cystoids and are thus a contribution to the current discussion.
+"""
+
+-----
+
+1986-01-02-r Photographs of Invertebrate Megafauna from Abyssal Depths of the North-Eastern Equatorial Pacific Ocean".pdf
+Foell, E. J.; Pawson, D. L.
+
+TREE
+P Hemichordata
+  E Enteropneusta
+    E "Lophenteropneust"
+
+-----
+
+1986-07-28-r Earliest known echinoderm — a new Ediacaran fossil from the Pound Subgroup of South Australia.pdf
+Gehling, J. G.
+
+TREE [tentative]
+P Echinodermata (total group)
+  E Arkarua ?
+    E Eleutherozoa
+      g Stromatocystites "and all other members of the Eleutherozoa"
+  E Tribrachidium
+    E Helicoplacoidea
+
+-----
+
+1987-05-28-r Mandalacystis, a New Rhipidocystid Eocrinoid from the Whiterockian Stage (Ordovician) in Oklahoma and Nevada.pdf
+Lewis, R.D.; Sprinkle, J.; Bailey, J.M.; Parsley, R.L.
+
+TREE
+P Echinodermata (Bruguiere 1789)
+  BP Blastozoa (Sprinkle 1973)
+    C Eocrinoidea (Jaekel 1918)
+      O Digitata (Gekker 1938)
+        F Rhipidocystidae (Jaekel 1901)
+          g Mandalacystis n. gen.
+            Mandalacystis dockeryi n. sp.
+
+-----
+
+1989-08-20-r The solute Dendrocystites scoticus from the Upper Ordovician of Scotland and the ancestry of chordates and echinoderms.pdf
+Jefferies, R. P. S.
+
+TREE
+SP Deuterostomia (Grobben 1908)
+  BSP Dexiothetica (Jefferies 1979)
+    P Chordata (Bateson 1886)
+
+TREE "(If a chordate, then stem group of the Chordata)"
+E Soluta (Jaekel 1900; "invalid stem group of the Dexiothetica)
+  g Dendrocystoides (Jaekel 1918)
+      Dendrocystoides scoticus (Bather 1913)
+
+TREE Notes Arkarua as indicating precambrian split between echinoderms and chordates, raising possibility of solutes in the late precambrian.
+SP Deuterostomia
+  X Cephalodiscus
+  G Soluta [dex'ism, calcite skel, mouth ant, protocoel int, stone canal]
+    E Dexiothetica
+      Z Soluta -> [loss of tail]
+        E Cincta -> [cinctan appendage]
+          g Trochocystites
+        E -> [mouth dorsally central, triradiality, loss of gill slit]
+          E Helicoplacoidea -> [spirality]
+            g Helicoplacus
+          E -> [quinqueradiality]
+            E Echinodermata (crown)
+              g Kinzercystis {Edrioasteroidea}
+      g Castericystis
+      E -> [mid tail, quadriserial fore tail, gill slit at left posterior in head]
+        E Dendrocystoides
+        E -> [dorsal plate large]
+          g Iowacystis
+          E -> [ventral plates large, arm short]
+            g Belemnocystites
+            Z Soluta
+              E Cornuta -> [loss arm+wv, hydro/gonopore post, repllicaton of gill slits]
+                g Ceratocystis
+                E Mitrata -> [new right gill slits]
+                  E Chordata (crown)
+
+
+
+Conclusions: "The latest common ancestor of echinoderms and chordates would have had a tail, a branchial slit, and an arm, and... would be placed in the Soluta.  The solutes, therefore, straddled the phylogenetic separation between echinoderms and chordates and so, to use Hennig's term, were an invalid stem group of the Dexiothetica. Further work will be needed to put the known solutes in their correct stem groups."
+
+-----
+1990-11-00-a A cladistic analysis of the cornutes (stem chordates).pdf
+Cripps, A. P.
+
+X-tree Calcichordata
+
+XTREE Calcichordate theory
+Echinodermata
+Chordata (total)
+  1               Cornuta
+    - - 2         Cornuta
+        3         Cornuta
+      - 4         Cornuta
+        - 5       Cornuta
+          Chordata (crown)
+            Acraniata
+            Mitrata
+              Tunicata
+              Craniata
+
+X-tree Stylophora
+
+XTREE
+Chordata
+?Hemichordata?
+- Mitrata (basal)
+    1
+    2
+  Stylophora
+    Cornuta
+      Mitrata (derived)
+
+TREE
+SP Deuterostomia
+  X Lophophorata ?
+  G Hemichordata
+    E Rhabdopleura
+    E
+      E Cephalodiscus
+      E
+        E Enteropnuesta
+        E
+          Z Hemichordata
+          E Dexiothetica
+            P Echinodermata
+            P Chordata
+
+TREE
+G Cornuta
+  g Ceratocystis
+    Ceratocystis perneri
+    Ceratocystis vizcainoi
+  E
+    Protocystites menevensis
+    E
+      Nevadaecystis americana
+      E
+        Cothurnocystis primaeva
+        E
+          Cothurnocystis fellinensis
+          E
+            Procothurnocystis owensi
+            E
+              Cothurnocystis courtessolei
+              Cothurnocystis elizae
+        E
+          E
+            Cothurnocystis bifida
+            G Thorallicystis
+              Thorallicystis melchiori
+              E
+                Thoralicystis zagoraensis
+                E
+                  Thoralicystis griffei
+                  Z Thorallicystis
+                  G Bohemiaecystis
+                    Bohemiaecystis bouceki
+                    Z Bohemiaecystis
+                    g Scotiaecystis
+                      Scotiaecystis collapsa
+                      Scotiaecystis curvata
+          E
+            E
+              E
+                Amygdalotheca griffei
+                Milonicystis kerfonei
+              E
+                g Phyllocystis salairica
+                  E
+                    Phyllocystis blayaci
+                    Phyllocystis crassimarginata
+                E
+                  Prochauvelicystis semispinosa
+                  g Chauvelicystis
+                    Chauvelicystis spinosa
+                    E
+                      Chauvelicystis ubaghsi
+                      Chauvelicystis vizcainoi
+            E
+              E
+                Galliaecystis lignieresi
+                E
+                  Progalliaecystis ubaghsi
+                  g Hanusia
+                    Hanusia prilepensis
+                    Hanusia serkensis
+                    Hanusia obtusa
+              E
+                E
+                  Reticulocarpos hanusi
+                  Beryllia miranda
+                E
+                  Domfrontia pissotensis
+                  E
+                    Prokopicystis mergil
+                    Z Cornuta
+                    O Mitrata
+
+[outgroup]
+CORNUTA
+  - Ceratocystis perneri
+    Ceratocystis vizcainoi
+  - Protocystites menevensis
+    - Nevadaecystis americana
+      - Cothurnocystis primaeva
+        - Cothurnocystis fellinensis
+          - Procothurnocystis owensi
+            - Cothurnocystis courtessolei
+              Cothurnocystis elizae
+        - - Cothurnocystis bifida
+            - Thorallicystis melchiori
+              - Thoralicystis zagoraensis
+                - Thoralicystis griffei
+                  - Bohemiaecystis bouceki
+                    - Scotiaecystis collapsa
+                      Scotiaecystis curvata
+          - - - Amygdalotheca griffei
+                Milonicystis kerfonei
+              - - Phyllocystis salairica
+                  - Phyllocystis blayaci
+                    Phyllocystis crassimarginata
+                - Prochauvelicystis semispinosa
+                  - Chauvelicystis spinosa
+                    - Chauvelicystis ubaghsi
+                      Chauvelicystis vizcainoi
+            - - Galliaecystis lignieresi
+                - Progalliaecystis ubaghsi
+                  - Hanusia prilepensis
+                    Hanusia serkensis
+                    Hanusia obtusa
+              - - Reticulocarpos hanusi
+                  Beryllia miranda
+                - Domfrontia pissotensis
+                  - Prokopicystis mergil
+                    MITRATA
+
+TREE
+G Cornuta
+  F Cothurnocystidae
+  E
+    F Scotiaecystidae
+    E
+      F Phyllocystidae
+      E
+        F Hanusiidae
+          Z Cornuta
+          O Mitrata
+
+[outroup]
+CORNUTA
+  Cothurnocystidae
+  - Scotiaecystidae
+    - Phyllocystidae
+      - Hanusiidae
+        MITRATA
+
+PL = "Plesion" (neighbor?)
+
+P Chordata
+PL (g) Ceratocystis
+  Ceratocystis perneri Jaekel
+  Ceratocystis vizcainoi Ubaghs
+PL Protocystites menevensis Hicks
+PL Nevadaecystis americana Ubaghs
+PL Cothurnocystis primaeva Thoral, sedis mutabilis
+PL (F) Cothurnocystidae, sedis mutabilis
+  Cothurnocystis fellinensis Ubaghs
+  Procothurnocystis owensi Woods and Jefferies (in prep)
+  Cothurnocystis courtessolei Ubaghs
+  Cothurnocystis elizae Bather
+PL (F) Scotiaecystidae
+  Cothurnocystis bifida Ubaghs
+  Thoralicystis melchiori Ubaghs
+  Thoralicystis zagoraensis Chauvel
+  Thoralicystis griffei Ubaghs
+  Bohemiaecystis bouceki Caster
+  Scotiaecystis curvola Bather
+  Scotiaecystis collapsa Cripps
+PL (F) Phyllocystidae
+  - Amygdalotheca griffei Ubaghs
+    Milonicystis kerfornei Chauvel (Cripps, in prep)
+  - - Phyllocystis salairica Dubatolova
+      Phyllocystis blayaci Thoral
+      Phyllocystis crassimarginata Thoral
+    - Prochauvelicystis semispinosa Daley (in press)
+      Chauvelicystis spinosa Ubaghs
+      Chauvelicystis ubaghsi Chauvel
+      Chauvelicystis vizcainoi Ubaghs
+PL (F) Hanusiidae fam. nov.
+  Galliaecystis lignieresi Ubaghs
+  Progalliaecystis ubaghsi Ubaghs
+  Hanusia obtusa Cripps, sedis utabilis
+  Hanusia sarkensis Cripps, sedis mutabilis
+  Hanusia prilepensis Cripps, sedis mutabilis
+PL -
+  Beryllia miranda Cripps (in press)
+  Reticulocarpos hanusi Jeffries & Prokop
+PL Domfrontia pissotensis Chauvel (Cripps, in prep)
+PL Prokopicystis mergli Cripps
+BP Cephalochordata
+BP Tunicata
+BP Craniata
+
+Conclusion: "Mitrocystella incipiens is most closely related to crown chordates and is, therefore a, a stem chordate." 4 monophyletic Cornute families (Cothurnocystidae, Phyllocystidae, Scotiaecystidae, Hanusiidae); position of Cothurnocystis primaeva is uncertain.  Notes poor fit of times of appearance to nodes in the cladogram, blames on poor fossil record.
+
+TREE
+P Chordata
+  g Ceratocystis
+    Ceratocystis perneri Jaekel
+    Ceratocystis vizcainoi Ubaghs
+  Protocystites menevensis Hicks
+  Nevadaecystis americana Ubaghs
+  Cothurnocystis primaeva Thoral sedis mutabilis
+  F Cothurnocystidae sedis mutabilis
+    Cothurnocystis fellinensis Ubaghs
+    Procothurnocystis owensi Woods and Jefferies (in prep)
+    Cothurnocystis courtessolei Ubaghs
+    Cothurnocystis elizae Bather
+  F Scotiaecystidae
+    Cothurnocystis bifida Ubaghs
+    Thoralicystis melchiori Ubaghs
+    Thoralicystis zagoraensis Chauvel
+    Thoralicystis griffei Ubaghs
+    Bohemiaecystis bouceki Caster
+    Scotiaecystis curvola Bather
+    Scotiaecystis collapsa Cripps
+  F Phyllocystidae
+    E
+      Amygdalotheca griffei Ubaghs
+      Milonicystis kerfornei Chauvel (Cripps, in prep)
+    E
+      E
+        Phyllocystis salairica Dubatolova
+        Phyllocystis blayaci Thoral
+        Phyllocystis crassimarginata Thoral
+      E
+        Prochauvelicystis semispinosa Daley (in press)
+        Chauvelicystis spinosa Ubaghs
+        Chauvelicystis ubaghsi Chauvel
+        Chauvelicystis vizcainoi Ubaghs
+  F  Hanusiidae fam. nov.
+    Galliaecystis lignieresi Ubaghs
+    Progalliaecystis ubaghsi Ubaghs
+    Hanusia obtusa Cripps, sedis utabilis
+    Hanusia sarkensis Cripps, sedis mutabilis
+    Hanusia prilepensis Cripps, sedis mutabilis
+  E
+    Beryllia miranda Cripps (in press)
+    Reticulocarpos hanusi Jeffries & Prokop
+  Domfrontia pissotensis Chauvel (Cripps, in prep)
+  Prokopicystis mergli Cripps
+  BP Cephalochordata
+  BP Tunicata
+  BP Craniata
+
+
+-----
+
+1991-00-00-c Two types of bilateral symmetry in the Metazoa- chordate and bilaterian.pdf
+Jeffries, R.P.S.
+
+TREE
+E Metazoa -> [multicellularity; diploidy with gametic meiosis; oogenesis with the formation of tiny polar bodies; sperm with a conical head, a middle piece containing a few mitochondria and two centrioles, of which the distal one forms the basal body of the cilium; collagen]
+  E Porifera -> [sessility; dermal pores and osculum (feeding current flow); perhaps a planktonic larva]
+  E Endodermata -> [true enzyme-secreting endoderm; belt desmosomes; muscles; gland cells in the endodermis secreting digestive enzymes; gut formation (at least temporary) through invagination]
+    E Placozoa
+    E Eumetazoa -> [permanent gut and blastopore; sensory cells; never cells]
+      E Coelenterata -> [tetraradial symmetry; nematoblasts (stinging cells)]
+      E Bilateria -> [bilateral symmetry from unidirectional locomotion and a horisontal anteroposterior axis; brain and longitudinal nerve tracts; mesoderm, probably arising in ontogeny from the 4d cell of spiral cleavage; protonephridia, each built of three standard cells]
+        E Radialla -> [trimery]
+          E Tentacula
+            E Bryozoa
+            E Brachiopoda
+            E Phoronida
+          E Deuterostomia -> [deuterostomy]
+            E Hemichordata
+              E Rhabdopleura
+              E Cephalodiscus
+              E Enteropneusta
+            G Soluta
+            E Dexiothetica (total) -> [dexiothetism, enclosure of protocoel in body, calcite skeleton] (Jefferies 1979)
+              E Dexiothetica (crown)
+                E Echinodermata (total)
+                  ZZ Soluta -> [loss of tail]
+                  E Cincta -> [anchoring stele]
+                    g Trochocystites
+                  E Echinodermata (crown) -> [mouth in center of upper surface, pentameral symetry, loss of remaining gill slit]
+                E Chordata (total) -> [notochord]
+                  E
+                    g Dendrocystoides
+                  Z Soluta
+                  G Cornuta -> [loss of arm, feeding by endostylar mucous filter in pharynx]]
+                  E
+                    E
+                      g Cothurnocystis
+                    E -> [increased head symmetry]
+                      E
+                        g Progalliaecystis
+                      E -> [increased head symmetry]
+                        E
+                          g Hanusia
+                        E -> [increased head symmetry]
+                          E
+                            g Reticulocarpos
+                          E
+                            E
+                              g Domfrontia
+                            E
+                              E
+                                g Prokopicystis
+                              Z Cornuta
+                              G Mitrata
+                              E Chordata (crown)  -> [right gill slits and pharynx]
+                                  E Cephalochordata (total)
+                                    E
+                                      g Lagynocystis
+                                    ZZ Mitrata
+                                    E Cephalochordata (crown) -> [entire loss of calcite skeleton]
+                                  E Olfactores (total)
+                                    E Olfactores (crown)
+                                      E Tunicata (total)
+                                        E
+                                          g Peltocystis
+                                        E
+                                          E
+                                            g Balanocystites
+                                          E
+                                            E
+                                              g Anatifopsis
+                                            ZZ Mitrata
+                                            E Tunicata (crown) -> [entire loss of calcite skeleton]
+                                      E Craniata (total)
+                                        E
+                                          g Chinianocarpos
+                                        E
+                                          E
+                                            g Chauvella
+                                          E
+                                            E
+                                              g Aspidocarpus
+                                            E
+                                              E
+                                                g Mitrocystites
+                                              E
+                                                g Mytrocystella
+                                                  Mytrocystella barrandei
+                                                  E
+                                                    Mitrocystella incipiens
+                                                    E
+                                                      g Placocystites
+                                                      Z Mitrata
+                                                      E Craniata (crown) -> [entire loss of calcite skeleton]
+
+Cephalodiscus
+Soluta [dexiothetism]
+  [loss of tail - exit Soluta]
+    Cincta [anchoring stele]
+      Trochocystites
+    [mouth centre upper, pent sym, loss of remaining gill slit]
+      Echinodermata
+  [notochord]
+    Dendrocystoides
+    Cornuta [loss of arm - exit Soluta]
+      Cothurnocystis
+      Mitrata [right gill slits and pharynx]
+        [loss of calcite skeleton]
+          Acraniata
+        [loss of calcite skeleton]
+          Tunicata
+        - Mitrocystella
+          [loss of calcite skeleton]
+            Craniata
+
+Conclusions:
+"Bilateral symmetry of the head was acquired at least twice in calcichordates; in cornutes related to the genus Phyllocystis and in the most crownward cornutes and the mitrates.  The latter development is especially important because it represents the first stage in the evolution of the bilateral symmetry of the head in modern chordates." (narrative of reduction in Cornute appendages, reduction of size of left or primary pharynx, etc.)
+"In summary, the origin of the chordate plane of bilateral symmetry can now be traced using fossil evidence.  This plane is not homologous with the primitive bilaterian plane of bilateral symmetry, but perpendicular to it.  The sagittal plane of a human is erpendicular to that of a beetle."
+
+-----
+
+1991-03-07-a The Youngest Carpoid- Occurrence, Affinities, And Life Mode Of A Pennsylvanian (Morrowan) Mitrate From Oklahoma.pdf
+Kolata, D.R.; Frest, T.J.; Mapes, R.H.
+
+TREE
+P Echinodermata (Fleming 1828)
+  BP Homalozoa (Whitehouse 1941)
+    C Stylophora (Gill & Caster 1960)
+      O Mitrata (Jaekel 1918)
+        BO Peltocystida (Jefferies 1973)
+          F Jaekelocarpidae n. fam.
+            g Jaekelocarpus n. gen.
+              Jaekelocarpus oklahomensis n. sp.
+
+-----
+
+1992-05-13-a Observations On The Early Cambrian Helicoplacoid Echinoderms.pdf
+Durham, J.W.
+
+TREE
+C Helicoplacoidea (Durham & Caster 1963)
+  BC Helicoplacida (Durham 1967)
+    F Helicoplacidae (Durham & Caster 1966)
+      g Helicoplacus (Durham & Caster 1963)
+        Helicoplacus gilberti (Durham & Caster 1963)
+        Helicoplacus everndeni (Durham 1967)
+        Helicoplacus casteri n. sp.
+        Helicoplcaus guthi n. sp.
+    F Westgardellidae n. fam.
+      g Westgardella n. gen. (all from Helicoplacus)
+        Westgardella curtisi (Durham & Caster 1963)
+        Westgardella firbyi (Durham 1967)
+        Westgardella blancoensis n. sp.
+      g Waucobella (Durham 1967)
+        Waucobella nelsoni (Durham 1967)
+  BC Polyplacida (Durham 1967)
+    g Polyplacus (Durham 1967)
+      Polyplacus kilmeri (Durham 1967)
+
+Helicoplacoidea
+  Helicoplacida
+    Helicoplacidae
+    Westgardellidae
+  Polyplacida
+    [Polyplacidae]
+
+-----
+
+1992-12-26-a New Echinoderms From The Early Ordovician Of West Texas.pdf
+Sprinkel, J.; Wahlman, G.P.
+
+TREE
+BP Blastozoa (Sprinkel 1973)
+  C Rhombifera (Zittle 1879, emended Paul 1968b)
+    O Dichoporita (Jaekel 1899, emended Paul 1968b)
+      SF Glyptocystitida? (Bather 1899)
+        F Cuniculocystidae n. fam.
+          g Cuniculocystis n. gen.
+            Cuniculocystis floweri
+  C Eocrinoidea (Jaekel 1918)
+    [O "indeterminate"]
+      F Bockiidae (Ubaghs 1972)
+        g Bockia (Hecker 1938)
+          Bockia neglecta
+          Bockia? elpasoensis n. sp.
+BP Crinozoa (Matsumoto 1929)
+  C Crinoidea (Miller 1821)
+    BC Inadunata (Wachsmuth & Springer 1885)
+      O Cladida (Moore & Laudon 1943)
+        BO Dendrocinina (Bather 1899)
+          SF Dendrocrinacea (Wachsmuth & Springer 1886)
+            F Dendrocrinidae (Wachsmuth & Springer 1886)
+              g Elpasocrinus n. gen.
+                Elpasocrinus radiatus n. sp.
+
+-----
+
+1994-09-21-a Origin of Echinoderms in the Paleozoic Evolutionary Fauna- The Role of Substrates.pdf
+Sprinkle, J.; Guensburg, T.E.
+
+Soft-substrate assemblage:
+* Rhombiferans
+* Mitrate stylophorans
+
+Hard-substrate assemblage:
+* Eocrinoids (+ holdfasts)
+* Crinoids (+ holdfasts)
+* Edrioasteroids
+
+Sponge-algal mound assemblage:
+* Crinoids (+ holdfasts)
+* Eocrinoids (+ holdfasts)
+* Edrioasteroids
+
+-----
+
+1994-12-13-a A New Stem-Chordate Solute Fromthe Middle Ordovician Of Estonia.pdf
+Jefferies, R.P.S.; Rozhnov, S.V.
+
+XTREE
+[Cephalodiscus-like ancestor]
+  Cephalodiscus
+  Dexiothetica [dex, ant mo, calcite, noto? perm attach tail, loss head shield]
+    Castericystis sprinklei (only known Dex stem group member)
+    Dexiothetica (crown) [adult release from floor, ant right mo, lr-biser tail]
+      Echinodermata [biradial incumbent amb, cover plates, gono united w hydro]
+        Cincta [anus ant left, large opercular plate over gill slit]
+        - [loss of tail (and notochord if pres), l/r amb (BC & DE) symmetrical]
+          Ctenocystoidea [labrum developed as a grille- ctenoid organ]
+          - [trirad amb A, mo up mid oral face (hemi-left, chord-dorsal)]
+            Helicoplacoidea [burrowing, left-hand helical skeleton]
+            Edrioasteroidea [quin amb by splitting BC -> B, C, DE -> D, E]
+              Echinodermata (crown)
+      Soluta [locomotion left flex of tail in power stroke, adaptation of tail]
+        Castericystis vali
+        - [loss of distal tail budding & juv fixation, quadriseriality of ftail]
+          Minervaecystis [arm, mo left ant]
+          - [d&v sugar-loaf periproct plate, abrupt tail insertion]
+            Iowacystidae [dorsal head plates combine for rigid armor]
+            - [counter-torsion of hind tail, lr-biserial tail to dv-biserial]
+              - [major plates of fore tail ring-shaped and visibly composite]
+                Maennitiidae [mid t symm, head rigid, hydr->madreporite]
+                Dendrocystites sedgwicki
+              - [marginal suture dor-vent skel in left post part of head]
+                Dendrocystoides scoticus
+                - [all-head marg suture, gono away mo, dorsal armor w keel]
+                  Girvanicystis batheri [ant dor anus, gono/hyrdo on ant proces]
+                  Cornuta [loss arm, mult gill sl, dor med eye, ear l of tail
+                           hydro r post, anus no periproct or sugar loaf and
+                           just r of tail, gono near anus]
+                    Ceratocystis perneri (Jaekel 1901)
+
+Conclusions: Establish new Soluta family Maenniliidae; "Maennilia estonica may have lived ventral-up, unlike other solutes."
+
+-----
+
+1995-05-23-a The Early Phylogeny of Chordates and Echinoderms and the Origin of Chordate Left-Right Asymmetry and Bilateral Symmetry.pdf
+Jeffereis, R.P.S.; Brown, N.A; Daley, P.E.J.
+
+(generally similar internode steps, but not verified to be the same as above)
+
+XTREE
+[Cephalodiscus-like ancestor]
+  Cephalodiscus
+  Dexiothetica (total) / Soluta
+    Castericystis sprinklei
+    - Echinodermata (total)
+      - Cincta
+          Trochocystites
+        - Ctenocystoidea
+            Ctenocystis
+          - Helicoplacoidea
+              Westgardelia
+            Edrioasteroidea
+              Edrioaster
+              Echinodermata (crown)
+      Chordata (total)
+        Castericystis vali
+        - Dendrocystoides
+          - Ceratocystis
+            - Cothurnocystis
+              - Prokopicystis
+                Chordata (crown)
+                  Acraniata (total)
+                    Lagynocystis
+                    Acraniata (crown)
+                  Olfactores
+                    Tunicata (total)
+                      Peltocystis
+                      Tunicata (crown)
+                    Craniata (total)
+                      Mitrocystites
+                      Craniata (crown)
+
+-----
+
+1995-11-00-a The first solute which is attached as an adult- a Mid-Cambrian fossil from Utah with echinoderm and chordate affinities.pdf
+Daley, P.E.J.
+
+Coleicarpus sprinklei (in places of Castericystis? sprinklei Ubaghs & Robinson 1988)
+Probably the most primitive known solute becaue of its attachment and lack of tail regions.  Supports descent of solutes from Cephalodiscus-like animal, with placement of C. sprinklei in Dexiothetica stem group... or possibly an unresolved trichotromy w/chordates and echinoderms.
+
+-----
+
+1995-11-27-a Primitive Cladid Crinoids from Upper Osagean-Lower Meramecian (Mississippian) Rocks of East-Central United States.pdf
+Kammer, T.W.; Ausich, W.I.
+
+TREE
+C Crinoidea (Miller 1821)
+  O Cladida (Moore & Laudon 1943)
+    g Atelestocrinus (Wachsmuth & Springer 1886)
+      Atelestocrinus delicatus (Wachs. & Springer 1866, by subs des Miller 1889)
+      Atelestocrinus robustus (Wachsmuth & Springer 1885)
+      Atelestocrinus indianensis (Ausich & Lane 1982)
+    g Barycrinus (Meek & Worthen 1868)
+      Cyathocrinus spurius (Hall 1858) (by original designation)
+      Barycrinus spurious (Hall 1858) (from Cyathocrinus)
+      Barycrinus rhombiferus (Owen & Shumard 1852a)
+      Barycrinus magister (Hall 1858)
+      Barycrinus stellatus (Hall 1858)
+      Barycrinus crassibrachiatus (Hall 1860)
+      Barycrinus spectabilis (Meek & Worthen 1870)
+      Barycrinus geometricus (Meek & Worthen 1873, nomen dubium)
+      Barycrinus benedicti (Miller 1891a, nomen dubium)
+      Barycrinus? stenobranchium (Ausich & Lane 1982)
+    incertae sedis
+      "Barycrinus" stellifer (Miller 1892b)
+    g Cestocrinus (Kirk 1940)
+      Cestocrinus striatus (Kirk 1940) (by original designation)
+      Cestocrinus signatus (Miller & Gurley 1894)
+    g Costalocrinus (Jaekel 1918)
+      Poteriocrinus dilatatus (Schultze 1867) (by original designation)
+      Costalocrinus cornutus (Owen & Shumard 1850)
+    g Cyathocrinites (Miller 1821)
+      Cyathocrinites planus (Miller 1821) (by subs des Wachs. Spr. 1880)
+      Cyathocrinites iowensis (Owen & Shumard 1850)
+      Cyathocrinites multibrachiatus (Lyon & Casseday 1859)
+      Cyathocrinites kelloggi (White 1862)
+      Cyathocrinites farleyi (Meek & Worthen 1866b)
+      Cyathocrinites harrodi (Wachsmuth & Springer 1880)
+      Cyathocrinites asperrimus (Springer 1911b)
+      Cyathocrinites glenni (Ausich & Lane 1982)
+    g Menisocrinus n. gen.
+      Meninsocrinus magnitubus n. sp.
+    g Parisocrinus (Wachsmuth & Springer 1880)
+      Poteriocrinites perplexus (Meek & Worthen, 1869, by original designation)
+      Parisocrinus cawfordsvillensis (Miller 1882)
+      Parisocrinus labyrinthicus (Miller 1891a)
+    g Pellecrinus (Kirk 1929)
+      Cyathocrinus hexadactylus (Lyon & Casseday 1860 by monotypy)
+      Pellecrinus hexadactylus (Lyon & Casseday 1860) (from Cyathocrinus)
+      Pellecrinus intermedius (Hall 1858)
+    g Saccosomopsis (Meek & Worthen 1870)
+      Saccosomopsis posterium (Meek & Worthen 1870, by monotypy)
+      Saccosomopsis insperatus (Lyon 1869)
+
+-----
+
+1996-01-24-a Late Paleozoic Edrioasteroids (Echinodermata) From The North American Midcontinent.pdf
+Sumrall, C.D.
+
+TREE
+C Edrioasteroidea (Billings 1858)
+  O Isorophida (Bell 1967a)
+    SO Isorophina (Bell 1967a)
+      F Isorophinidae (mentioned in text)
+      F Agelacrinitidae (Chapman 1860)
+        g Lepidodiscus (Meek & Worthen 1868)
+          Lepidodiscus squamosus (Meek & Worthen 1868) (from Agelacrinites)
+        BF Discocystinae n. subfam.
+          g Discocystis (Gregory 1897)
+            Discocystis kaskaskiensis (Hall 1858) (from Agelacrinus)
+          g Clavidiscus n. gen.
+            Clavidiscus laudoni (Bassler 1936) (from Discocystis)
+          g Hypsiclavus n. gen.
+            Hypsiclavus huntsvellensis n. sp.
+            Hypsiclavus priesti (Strimple 1968)
+            Hypsiclavus kinsleyi n. sp.
+            Hypsiclavus guensburgi n. sp.
+          g Bostryclavus n. gen.
+            Bostryclavus sampsoni (Miller 1891) (from Echinodiscus)
+          g Spiraclavus (Sumrall 1992)
+            Spiraclavus nacoensis (Sumrall 1992)
+
+-----
+
+1996-04-09-a Middle Mississippian Disparid Crinoids from the Midcontinental United States.pdf
+Ausich, W.I.; Kammer, T.W.; Myer, D.L.
+
+TREE
+C Crinoidea (Miller 1921)
+  BC Disparida (Moore & Laudon 1943)
+    SF Calceocrinacea (Meek & Worthen 1869)
+      F Calceocrinidae (Meek & Worthen 1869)
+        g Halysiocrinus (Ulrich 1886)
+          Cheirocrinus dactylus (Hall 1860 by original designation)
+          Hyalysiocrinus tunicatus (Hall 1860)
+          Hyalysiocrinus bradleyi (Meek & Worthen 1869)
+          Hyalysiocrinus springeri (Brower 1966)
+          Hyalysiocrinus cumberlandensis n. sp.
+    SF Allagecgrinacea (Carpenter & Etheridge 1881)
+      F Catillocrinidae (Wachsmuth & Springer 1886)
+        g Catillocrinus (Shumard 1865)
+          Catillocrinus tennesseeae (Shumard 1865 by monotypy)
+          Catillocrinus wachsmuthi (Meek & Worthen 1866)
+        g Eucatillocrinus (Springer 1923)
+          Catillocrinus bradleyi (Meek & Worthen 1868 by original description)
+          Eucatillocrinus bradleyi (Meek & Worthen 1868) (from Catillocrinus)
+    SF Belemnocrinacea (S.A. Miller 1883)
+      F Synbathocrinidae (S.A. Miller 1889)
+        g Synbathocrinus (Phillips 1836)
+          Synbathocrinus conicus (Phillips 1836 by monotypy)
+          Synbathocrinus swallovi (Hall 1858)
+          Synbathocrinus Blairi (Miller 1891)
+
+-----
+
+1996-04-10-s A defence of the calcichordates.pdf
+Jefferies, R.P.S.
+
+XTREE
+Ignoring calcichordates:
+  Deuterostomia
+    Phoronida
+    Echinodermata
+    - Pterobranchia
+      - Enteropneusta
+        Chordata
+          - Tunicata
+            Acraniata
+          Craniata
+
+XTREE
+With calcichordates:
+  Deuterostomia
+    Phoronida
+    Pterobranchia
+    - Enteropneusta
+      - Dendrocystoides
+        - Cothurnocystis
+          - - Lagynocystis
+              Acraniata
+            - - Anatifopsis
+                Tunicata
+              - Mitrocystites
+                Craniata
+
+-----
+
+1996-08-06-a Phylogeny of Calceocrinid Crinoids (Paleozoic- Echinodermata)- Biogeography and Mosaic Evolution.pdf
+Harvey, E.W.; Ausich, W.I.
+
+F Calceocrinidae – lots of detail on past and new phylogeny of this family
+
+-----
+
+1996-11-11-a Morphologic Variation within and among Populations of the Camerate Crinoid Agaricocrinus (Lower Mississippian, Kentucky and Tennessee)- Breaking the Spell of the Mushroom.pdf
+Meyer, D.L.; Ausich, W.I.
+
+TREE
+C Crinoidea (Miller 1821)
+  BC Camerata (Wachsmuth & Springer 1885)
+    O Monobathrida (Moore & Laudon 1943)
+      BO Compsocrinina (Ubaghs 1978)
+        F Coelocrinidae (Bather 1899)
+          g Agaricocrinus (Hall 1858) (no type species mentioned?)
+            Agaricocrinus americanus (Roemer 1854)
+            Agaricocrinus crassus (Wetherby 1881)
+            Agaricocrinus coreyi (Lyon & Casseday 1860)
+
+-----
+
+1997-00-00-p Biology of the Chengjiang fauna.pdf
+Chen, J.; Zhou, G.
+
+C Vetulicolida n. cl.  (considered related to Arthropoda)
+  g Vetulocola
+    Vetulicola cuneatus (Hou 1987a)
+  g Banffia (Walcott 1911)
+    Banffia constricta (Walcott 1911)
+    Banffia confusa n. gen., n. sp.
+
+g Yunnanozoon
+
+-----
+
+1997-00-00-p Echinoderm Larvae and Phylogeny.pdf
+Smith, A.B.
+(at least partially challenges EAT)
+
+XTREE
+Echinodermata
+  [Crinozoa] (Crinoids)
+    Isocrinida
+    Comatulida
+  [Eleutherozoa]
+    - [Asteroidea] (Asteroids)
+        Paxilliosida
+        - Forcipulata
+          - Gonlasteracea
+            Ganerfacea
+          - Velatida
+            Spinulosida
+      [Ophiuroidea] (Ophiuroids)
+        - Ophicanopidae
+          Ophiacanthidae
+        - - - Ophioieididae
+              - - Ophiodermatidae
+                  Ophiocomidae
+                Ophiochitonidae
+            - Ophiuridae
+              - - Ophiothricidae
+                  Ophiactidae
+                Amphiuridae
+          Euryalidae
+    - [Holothuroidea] (Holothurians)
+        Apoda
+        - Elasipodida
+          - Aspidochirota
+            Dendrochirota
+      [Echinoidea] (Echinoids)
+        Cidaroida
+        - Echinothurioida
+          - Diadematoida
+            - - Spatangoida
+                - Clypeasteroida
+                  Cassiduloida
+              - Arbacoida
+                - Phymosomatoida
+                  - Temnopleuroida
+                    Echinoida
+
+Conclusions:
+
+Also notes that "Echmatocrinus" was recently shown to be an octocoral, not the oldest supported crinoid.  Most likely sister group to crinoids are fistuliporite rhombiferans, based on stem, cup, and arm morphological similarities.
+
+Crinoid arms are homologous to asteroid arms, but arms did not simply evolve once.  "Although some cystoids (blastoids, diploporite cystoids) certainly had no extension of somatic components into their free appendages, others (e.g. paracrinoids, fistuliporite and rhombiferan cystoids) had large arms fully comparable to those of crinoids.
+
+Eleutherozoans and cystoids have different expressions of pentamery which strongly supports the placement of edrioasteroids as Eleutherozoa, rather than as a sister group to cystoids and all extant classes as suggested by Mooi et al.
+
+-----
+
+1997-02-21-a Systematics And Paleoecology Of Late Cambrian Echinoderms From The Western United States.pdf
+Sumrall, C.D.; Sprinkle, J.; Guensburg, T.E.
+
+TREE
+C Stylophora (Gill & Caster 1960)
+  O Cornuta (Jaekel 1901)
+    F Cothurnocystidae (Bather 1913)
+      g Acuticarpus n. gen.
+        Acuticarpus delticus n. sp.
+        Acuticarpus? republicensis n. sp.
+      g Archaeocothurnus n. gen.
+        Corthurnocystis? bifida (type species)
+        Archaeocothurnus goshutensis n. sp.
+    F Scotiaecystidae (Caster & Ubaghs, in Ubaghs 1968)
+      g Scotiaecystis (Caster & Ubaghs, in Ubaghs 1968)
+        Scotiaecystis? sp.
+C Homoiostelea (Gill & Caster 1960)
+  O Soluta (Jaekel 1901)
+    F Minervaecystidae (Ubaghs & Caster, in Caster 1968)
+      g Minervaecystis (Ubaghs & Caster, in Caster 1968)
+        Minervaecystis? sp.
+C Eocrinoidea (Jaekel 1918)
+  O Trachelocrinida n. o.
+    F Trachelocrinidae (Sprinkle 1973)
+      g Trachelocrinus (Ulrich 1929)
+        Trachelocrinus resseri
+        Trachelocrinus? sp.
+      g Tatonkacystis n. gen.
+        Takonacystis codyensis n. sp.
+  O Gogiida (Broadhead 1982)
+    F ["indeterminate"]
+      g ["indeterminate"]
+        ["epispire-bearing golbular eocrinoid" sp.]
+  O ["indeterminate"]
+    ["globular eocrinoid?"]
+C Edrioasteroidea (Billings 1858)
+  O Ederioasterida (Bell 1976)
+    F ["indeterminate"]
+      g ["indeterminate"]
+        ["poorly preserved edrioasterid"]
+
+-----
+
+1999-07-02-a A pipiscid-like fossil from the Lower Cambrian of south China.pdf
+Shu, D.; Conway Morris, S.; Zhang, X-L.; Chen, L.; Li, Y.; Han, J.
+
+P ["Uncertain"]
+  g Xidazoon (Shu, Conway Morris, & Zhang) gen. nov.
+    Xidazoon stephanus (Shu, Conway Morris, & Zhang) sp. nov.
+
+-----
+
+1997-09-25-a Early Phylogeny And Subclass Division Of The Crinoidea (Phylum Echinodermata).pdf
+Ausich, W.I.
+
+
+TREE Crinoid classification by Wachsmuth and Springer (1897)
+C Crinoidea
+  O Inadunata
+    BO Larviformioa
+    BO Fistulata
+  O Camerata
+  O Articulata
+    BO Impinnata
+    BO Pinnata
+
+TREE Crinoid classification by Bather (1899) [note- parallel order names are intentional]
+C Crinoidea
+  BC Monocyclica
+    O Inadunata
+    O Adunata
+    O Camerata
+  BC Dicylica
+    O Inadunata
+    O Flexibilia
+      G Impinnata
+      Z Impinnata
+      G Pinnata (most articulates)
+      Z Pinnata
+    O Camerata
+
+TREE Paleozoic crinoid classification by Moore and Laudon (1943)
+C Crinoidea
+  BC Inadunata
+    O Disparida
+    O Cladoidea
+  BC Flexibilia
+    O Taxocrinoidea
+    O Sagenocrinoidea
+  BC Camerata
+    O Diplobathra
+    O Monobathra
+
+TREE Crinoid classification by Moore and Teichert (1978)
+C Crinoidea
+  BC Echmatocrinea
+    O Echmatorinida
+  BC Camerata
+    O Diplobathrida
+    O Monobathrida
+  BC Inadunata
+    O Disparida
+    O Hybocrinida
+    O Coronata
+    O Cladida
+  BC Flexibilia
+    O Taxocrinda
+    O Sagenocrinida
+  BC Articulata
+    O Millericrinida
+    O Cyrtocrinida
+    O Bourgueticrinida
+    O Isocrinida
+    O Comatulida
+    O Uintacrinida
+    O Roveacrinda
+C Hemistretocrinoidea (Arendt 1976) [New class of crinoidea proposed by Arendt (1976)]
+  O Hemistreptocrinida
+
+
+TREE Crinoid classification by Simms and Sevastopulo (1993)
+C Crinoidea
+  BC Camerata
+    O Diplobathrida
+    O Monobathrida
+  BC Disparida
+  BC Cladida
+    E ["stem-group cladids"]
+    IC Cyathocrinina
+    IC Flexibilia
+    IC Articulata
+  BC Hybocrinda incertae sedis
+
+  Incertae Sedis ('Subclass') Hybocrinida
+
+NEW INTERPRETATION
+
+XTREE
+X Caryocystites [outgroup representing "four-circlet Rhombiferan ancestor"]
+C Crinoidea
+- BC GRADE Aethocrinea (nov. subclass, from which "all other Cr evolved"
+    F Aethocrinidae
+      Aethocrinus
+    F Perittocrinidae
+      Perittocrinus
+      Tetracionocrinus
+    - BC GRADE (w.r.t...?) Cladida
+        - - [new cladid]
+            - Elpasocrinus
+              Palaeocrinus
+          Archaeotaxocrinus
+        Compagicrinus
+      BC Camerata
+        Celtocrinus
+        - - Deocrinus
+            - Proexenocrinus
+              Neoarchaeocrinus
+          Trichonocrinus
+    BC Disparida
+      - Inyocrinus
+        Pogonipocrinus
+      - - - Ramseyocrinus
+            Tetragonocrinus
+          - Pultivocrinus
+            - - Maennilicrinus
+                Vosketocrinus
+              Pandoracrinus
+        - - - Ibexocrinus
+              Isotomocrinus
+            Othneiocrinus
+          - - Iocrinus
+              - Caleidocrinus (Huxleyocrinus)
+                "Pariocrinus"
+            - - Tripatocrinus
+                - Revalocrinus
+                  Hybocrinus
+              Hopolocrinus
+
+TREE
+C Crinoidea (Miller 1821)
+  BC Aethocrinea (Ausich n. subclass)
+    O Aethocrinida (Ausich n. o.)
+      F Aethocrinidae (Ubaghs 1969)
+        g Aethocrinus (Ubaghs 1969)
+          Aethocrinus moorei (Ubaghs 1969)
+          Aethocrinus murchisoni (Donovan 1986)
+      F Perittocrinidae (Abel 1920)
+        g Perittocrinus (Jaekel 1902)
+          Perittocrinus radiatus (Beyrich 1879)
+        g Tetracionocrinus (Ubaghs 1971)
+          Tetracionocrinus transistor (Jaekel 198) from Perittocrinus
+
+      
+
+-----
+
+1997-10-00-c The echinoderm classes Stylophora and Homoiostelea- Non-Calcichordata.pdf
+Parsley, R.L.
+
+TREE
+O Stylophora
+  G Cornuta
+  g Ceratocystis (used as outgroup)
+  E
+    E
+      g Chauvelicystis
+      g Prochauvelicystis
+    E
+      ["Spence Shale Specimen"]
+      E
+        E
+          g Nevadacystis
+          g Galliaecystis
+        E
+          E
+            g Bohemiacystis
+            g Scotiacystis
+          E
+            g Cothurnocystis
+              Cothurnocystis bifida
+              E
+                g Procotothurnocystis
+                Cothurnocystis elizae
+      E
+        Phyllocystis blacyi
+        E
+          Phyllocystis crassmarginata
+          Z Cornuta
+          E Ankyroida
+            g Amygdalotheca
+            E
+              E
+                g Lyricocarpus
+                E
+                  g Beryllia
+                  E
+                    g Chinianocarpus
+                    E
+                      g Peltocystis
+                      E
+                        g Anatiferocystis
+                        g Jaekelocarpus
+              E
+                E
+                  g Hanusia
+                  E
+                    g Reticulocarpos
+                    g Prokopicystis
+                E
+                  g Milonicystis
+                  E
+                    g Nanocarpus
+                    E
+                      g Ovocarpus
+                      E
+                        g Chauvelia
+                        E
+                          g Aspidocarpus
+                          E
+                            g Mitrocystites
+                            E
+                              g Mitrocystella
+                              E
+                                g Eumitrocystella
+                                E
+                                  g Barrandeocarpus
+                                  E
+                                    E
+                                      g Lagynocystis
+                                      g Diamphidiocystis
+                                    E
+                                      E
+                                        g Anomalocystites
+                                        g Enoploura
+                                      E
+                                        E
+                                          g Ateleocystites
+                                          E
+                                            g Placocystites
+                                            g Rhenocystis
+                                        E
+                                          g Allanictydium
+                                          E
+                                            g Notocarpos
+                                            g Tasmancytidium
+
+
+TREE
+E
+  X Gogia --Spence Shale Specimen --Eocrinoidea
+  O Homoiostelea
+    E Soluta
+      g Coleicarpus
+      E
+        g Castericystis
+        E
+          g Minervaecystis
+          E
+            E
+              g Girvanicystis
+              E
+                g Maennilia
+                g Heckericystis
+            E
+              g Dendrocystites
+              E
+                g Dendrocystoides
+                E
+                  g Rutroclypeus
+                  E
+                    E
+                      g Iowacystis
+                      g Scalenocystites
+                    E
+                      g Syringocrinus
+                      E
+                        g Belmnocystites
+                        g Myeinocystites
+
+-----
+
+1997-10-00-p Early radiation of echinoderms.pdf
+Sprinkle, J.; Guensburg, T.E.
+
+C  '   '   |O
+E  'M  'C  |I  'W  'M  'C
+123'456'789|123'456'789'ABC
+   '---'   |   '   '   '    Ctenocystoids
+   '---'-.-|-.-'-..'...'.-  Cornute Stylophorans
+   '   '   | --'.-.'-.-'--- Mitrate Stylophorans
+   ' --'   |   '   '   '    Homosteleans (Cinctans)
+   ' --'..-|.--'.--'---'--- Homoiosteleans (Solutes)
+   '   '   |  -'.--'---'-.. Paracrinoids
+   '   '   |  -'---'   '    Rhipidocystids
+  -'---'---|---'---'---'... Eocrinoids
+   '   '   |  -'-.-'-  '    Parablastoids
+   '   '   |---'---'---'--- Glyptocystitid Rhombiferans
+   '   '   |   '   ' -.'--. Hemicosmitid Rhombiferans
+   '   '   |  -'.-.'---'-   Fistuliporite Rhombiferans
+   '   '   | --'---'---'--  Diploporites
+   '   '   |   '  -'-..'.-. Coronoids
+   '   '   |   '   '-..'... Blastoids
+   '   '   | --'--.'---'--- Disparid Inadunate Crinoids
+   '   '   |  -'---'---'..- Hybocrinids
+   ' -.'..?|   '   '   '    Echmatocrinids
+   '   '   | --'-.-'---'--- Cladid Inadunate Crinoids
+   '   '   |   '   '  -'--- Flexible Crinoids
+   '   '   |  -'-.-'---'.-- Diplobathrid Camerate Crinoids
+   '   '   |  -'...'---'--- Monobathrid Camerate Crinoids
+ --'---'.-.|.--'.-.'---'--- Edrioasteroids
+ - '   '   |   '   '   '    Helicoplacoids
+   '   '   |   ' --'---'--- Cyclocystoids
+   ' -.'...|...'...'-..'... Holothurians
+   '   '   |  -'-..'...'..- Ophiocistioids
+   '   '   |   '   '--.'.-. Echinoids
+   '   '   | --'-..'...'.-  Somasteroids
+   '   '   | --'---'---'--- Asteroids
+   '   '   |  -'-..'-.-'.-- Ophiuroids
+
+C  '   '   |O
+E  'M  'C  |I  'W  'M  'C
+123'456'789|123'456'789'ABC
+-  '   '   |   '   '   '    Yanjiahella
+ - '   '   |   '   '   '    Helicoplacoids
+ --'---'.-.|.--'.-.'---'--- Edrioasteroids
+  -'---'---|---'---'---'... Eocrinoids
+   '---'   |   '   '   '    Ctenocystoids
+   '---'-.-|-.-'-..'...'.-  Cornute Stylophorans
+   ' --'   |   '   '   '    Homosteleans (Cinctans)
+   ' -.'..?|   '   '   '    Echmatocrinids
+   ' --'..-|.--'.--'---'--- Homoiosteleans (Solutes)
+   ' -.'...|...'...'-..'... Holothurians
+   '   '   |---'---'---'--- Glyptocystitid Rhombiferans
+   '   '   | --'---'---'--  Diploporites
+   '   '   | --'.-.'-.-'--- Mitrate Stylophorans
+   '   '   | --'--.'---'--- Disparid Inadunate Crinoids
+   '   '   | --'-.-'---'--- Cladid Inadunate Crinoids
+   '   '   | --'-..'...'.-  Somasteroids
+   '   '   | --'---'---'--- Asteroids
+   '   '   |  -'.-.'---'-   Fistuliporite Rhombiferans
+   '   '   |  -'.--'---'-.. Paracrinoids
+   '   '   |  -'---'   '    Rhipidocystids
+   '   '   |  -'-.-'-  '    Parablastoids
+   '   '   |  -'---'---'..- Hybocrinids
+   '   '   |  -'-.-'---'.-- Diplobathrid Camerate Crinoids
+   '   '   |  -'...'---'--- Monobathrid Camerate Crinoids
+   '   '   |  -'-..'...'..- Ophiocistioids
+   '   '   |  -'-..'-.-'.-- Ophiuroids
+   '   '   |   ' --'---'--- Cyclocystoids
+   '   '   |   '  -'-..'.-. Coronoids
+   '   '   |   '   '-..'... Blastoids
+   '   '   |   '   '--.'.-. Echinoids
+   '   '   |   '   ' -.'--. Hemicosmitid Rhombiferans
+   '   '   |   '   '  -'--- Flexible Crinoids
+
+UNCERTAIN EMERGENCE PATTERNS
+
+Edrioasteroids
+  Helicoplacoids?
+  Crinoids?
+  Asterozoans
+Blastozoans
+  Crinoids?
+Eocrinoids?
+  Homalozoans?
+
+-----
+
+1997-10-00-p Skeletal homologies of echinoderms.pdf
+Moois, R.; David, B.
+
+TREE
+P Echinodermata (total) -> [pentaradial symmetry; water vascular system]
+  g Arkarua ["?" on branch]
+  E -> [stereom]
+    E ["Edrioasteroid-like taxa"]
+    E -> [loss of marginal ring; constriction of imperforate extraxial]
+      E -> [brachioles; axial arms]
+        E Blastoidea
+        E Cystoidea
+      P Echinodermata (crown) -> [arms]
+        E Crinoidea -> [pinules]
+        E ->  [loss of imperforate extraxial; hyponeural sinus; madreporite]
+          E -> [adambulacrals; mouth frame]
+            E Asteroidea
+            E Ophiuroidea
+          E -> [expansion of "lantern" coelom; epineural canal]
+            E Holothuroidea
+            E Echinoidea
+
+-----
+
+1997-12-00 British Ordovician Cystoids (Part 3).pdf
+Paul, C.R.C.
+
+British Ordovician cystoid fauna consists of 25 gen and 67 sp., with at least:
+* 10 gen, 27 sp diploporites
+* 11 gen, 24 sp dichoporite rhombiferans
+* 4 gen 16 sp fistuliporite rhombiferans
+
+Cystoids were generally sessile, suspension feeders and effected respiratory gas exchange through their pore-structures.
+
+Changes since Part 2:
+  * incertae seds -> Sphaeronites (Ataphros) insuliporus (Paul & Bockelie 1983)
+  * Eucystis sp w/4 ambulacra in Tetreucystis (Bockelie 1984) gen. nov.
+  * One British sp Eucystis munita (Forbes 1848) -> Tetreucystis munita
+  * g Acathalepis erroneously reported as Acatholepis (McCoy)
+
+TREE
+C Cystoidea
+  O Diploporita (Müller 1854) [incomplete - only corrections from vol. 1]
+    SF Sphaeronitida (Neumayr 1889)
+      F Sphaeronitidae (Neumayr 1889)
+        BF Sphaeronitinae subfam. nov. (possibly paraphyletic)
+        BF Diplosphaeroninae subfam. nov.
+          g Diplosphaeronis (Paul 1973) (type genus)
+            Diplosphaeronis laevis (Paul)
+          g Archegocystis
+          g Proboscisphaeronis gen. nov.
+            Proboscisphaeronis inexpectata gen. et sp. nov.
+    SF Protocrinitida (Bather 1899)
+      F Eumorphocystidae (Branson & Peck 1940)
+        g Eumorphocystis (Branson & Peck 1940)
+          Eumorphocystis multiporate (Branson & Peck 1940, by monotypy)
+          Eumorphocystis coxi sp. nov.
+  O Dichoporita [absent - described in vol. 2]
+  O Fistuliporita (All fistuliporite rhombiferans belong to a single subfamily)
+    SF Caryocystitida (Jaekel 1918)
+      F Caryocystitidae (Jaekel 1918)
+        g Caryocystites (von Buch 1846)
+          Caryocystites dubius (Angelin 1878)
+          Caryocystites lagenalis (Regnéll 1945)
+        g Heliocrinites (Eichwald 1840)
+          Echinosphaerites balticus (Eichwald 1829)
+          Heliocrinites triangulatus sp. nov.
+          Heliocrinites devisii (McCoy 1848)
+          Heliocrinites kildarensis sp. nov.
+          Heliocrinites laevis sp. nov.
+        g Lophotocystis (Paul 1972)
+          Echinosphaerites granatum (Wahlenberg 1821)
+          Lophotocystis malaisei (Regnéll 1951)
+      F Echinosphaeritidae (Neumayr 1889)
+        g Echinosphaerites (Wahlenberg 1821)
+          Echinus aurantium (Gyllenhaal 1772)
+          bg Echinosphaerites (Wahlenberg 1821)
+            Echinosphaerites (Echinosphaerites) granulatus (McCoy 1846)
+          bg Striatosphaerites subgen. nov.
+            Sphaeronites arachnoideus (Forbes 1848)
+            Echinosphaerites (Striatosphaerites) arachnoideus (Forbes 1848)
+      F Stichocystidae
+      F Echinosphaeritidae
+
+(from a chart of "stratigraphic distribution")
+E
+  O Diploporita
+  O Dichoporita
+  O Fistuliporita
+
+
+-----
+
+1998-06-20-a Bilateral homologues in echinoderms and a predictive model of the bilateral echinoderm ancestor.pdf
+Morris, V.B.
+
+
+Definition of the bilateral echinodem ancestor
+
+The bilateral echinoderm ancestor (Fig. 1G) was elongate with an anterior mouth and posterior anus on the ventral side of the body. A paired nerve cord also on the ventral side of the body extended from mouth to anus but diverged anteriorly to form a nerve ring encircling the mouth. Long coelomic sacs lay on either side of the nerve ring and paired nerve cord. Protrusions from these sacs formed a metameric series of paired tube feet along the length of the body ventrally, innervated from the nerve ring and paired nerve cord. Anteriorly, each coelomic sac ended in a madreporite-like connexion to the exterior.
+
+
+Embryology supports a new theory of skeletal homologies for the phylum Echinodermata
+
+-----
+
+1998-12-00-p Evolution within a Bizarre Phylum- Homologies of the First Echinoderms.pdf
+Mooi, R.; David, B.
+
+TREE
+P Echinodermata -> [wat vasc from 5 primary lobes in rudiment]
+  g Arkarua
+  E -> [stereom]
+    g Stromatocystites
+    E -> [imperforate extraxial marginal ring]
+      g Cambraster
+      g Edriodiscus
+    E Helicoplacoidea ["?" in place of notes on this branch]
+    E -> [imperforate extraxial sac]
+      E Blastozoans
+      E Camptostroma
+    E Crinoidea
+      E
+        E Asteroidea
+          Ophiuroidea
+        E Holothuroidea
+          Echinoidea
+
+-----
+
+1999-02-14-a New Ordovician Cornutes (Echinodermata, Stylophora) From Montagne Noire And Brittany (France) And A Revision Of The Order Cornuta Jaekel 1901.pdf
+Lefebvre, B.; Vizcaino, D.
+
+TREE
+C Stylophora (total) (Gill & Caster 1960)
+  g Ceratocystis
+    Ceratocystis perneri
+  C Stylophora (crown)
+    O Cornuta (total) (Jaekel 1901)
+      g Protocystites
+        Protocystites menevensis (Hicks) (most primitive Cornute)
+      E
+        g Nevadaecystis
+          Nevadaecystis americana (Ubaghs)
+        O Cornuta (crown)
+          BO Amygdalothecida (Ubaghs 1969) subord. nov.
+            F Amygdalothecidae (Ubaghs 1969)
+              g Amygdalotheca -> [marginal frame widely open posteriorly]
+                Amygdalotheca griffei (oldest, most primitive, type sp. of F)
+              E
+                g Nanocarpus
+                  Nanocarpus dolambii
+                g Domfrontia
+                  Domfrontia pissotensis
+                g Beryllia
+            F Hanusiidae (Cripps 1991) -> [M4-M'4 bar on upper surface]
+              g Galliaecystis
+                Galliacystis ubaghsi (Cripps 1991) (most primitive of F)
+                Galliacystis lignieresi (Ubaghs 1969)
+              E
+                g Reticulocarpos
+                  Reticulocarpos hanusi (Jefferies & Prokop)
+                g Prokopicystis
+                  Prokopicystis mergli (Cripps)
+                g Hanusia
+                  Hanusia prilepensis
+          BO Cothurnocystida (Bather 1913) subord. nov.
+            g Acuticarpus ? (incertae sedis)
+            F Cothurnocystidae (total)
+              g Arauricystis nov. gen.
+                Arauricystis prmaeva (type species)
+              F Cothurnocystidae (crown)
+                BF ["unassigned"]
+                  g Archaeocothurnus (Sumrall et al. 1997)
+                    Archaeocothurnus bifida (Ubaghs & Robinson 1988) (from Cothurnocystis)
+                    Archaeocothurnus goshutensis ? (Sumrall et al.)
+                  g Trigonocarpus (Ubaghs 1994)
+                    Trigonocarpus singularis (Ubaghs 1994)
+                BF Cothurnocystinae (Bather 1913)
+                  g Cothurnocystis (Bather 1913)
+                    Cothurnocystis elizae (Bather 1913)
+                    Cothurnocystis fellinensis (Ubaghs)
+                    Cothurnocystis courtessolei (Ubaghs)
+                    Cothurnocystis owensi (Woods & Jefferies)
+                BF Chauvelicystinae (Daley 1992)
+                  g Chauvelicystis
+                    Chauvelicystis ubaghsi (Chauvel)
+                    Chauvelicystis spinosa (Ubaghs)
+                    Chauvelicystis vizcainoi (Daley)
+                  g Prochauvelicystis
+                    Prochauvelicystis semispinosa (Daley)
+                  g Lyricocarpus
+                    Lyricocarpus courtessolei (Ubaghs)
+                  g Ampelocarpus nov. gen.
+                    Ampelocarpus landeyranensis nov. sp.
+                  g Milonicystis
+                    Milonicystis kerfornei
+                BF Phyllocystinae (Derstler 1978) subfam. nov. [rank amended]
+                  g Phyllocystis (Thoral 1935)
+                    Phyllocystis blayaci (Thoral 1935)
+                    Phyllocystis crassimarginata
+                BF Scotiaecystinae (Cater & Ubaghs in Ubaghs 1968) [rank amended]
+                  g Proscotiaecystis (Ubaghs 1994)
+                    Proscotiaecystis melchiori (Ubaghs 1983) (from Cothurnocystis)
+                  g Thoralicystis (Chauvel 1971)
+                    Thoralicystis griffei (Ubaghs) (from Scotiaecystis)
+                    Thoralicystis ubaghsi nov. sp.
+                    Thoralicystis zagoraensis (Chauvel)
+                    Thoralicystis bouceki (Caster)
+                  g Scotiaecystis (Caster & Ubaghs in Ubaghs 1968)
+                    Scotiaecystis curvata (Bather 1913) (from Cothurnocystis)
+                    Scotiaecystis collapsa (Cripps)
+                    Scotiaecystis jefferiesi (Gil Cid et al.) (from Bohemiacystis)
+                    Scotiaecystis guilloui nov. sp.
+      O Mitrata (representative species, not full tree)
+        BO Lagynocystida
+          g Lagynocystis
+        E
+          BO Mitrocystitida
+            g Mitrycystites
+              Mitrocystites mitra
+            BO Anomalocystida
+          BO Peltocystida
+            g Peltocystis
+              Peltocystis cornuta
+    
+
+C Stylophora
+  Ceratocystis perneri
+  O Mitrata
+    E
+      Mitrocystites mitra
+      Peltocystis cornuta
+    Lagynocystis pyramidalis
+  O Cornuta
+    Protocystites menevensis
+    E
+      Amygdalothecida
+        Amygdalotheca griffei
+        Galliaecystis ubaghsi
+      Cothurnocystida -> [Mc plate]
+        Auricystis primaeva
+        E
+          Cothurnocystis fellinensis
+          Chauvelicystis vizcainoi
+          Phyllocystis crassimarginata
+          Proscotiaecystis melchiori
+
+-----
+
+1999-09-00-p Brief review of the stylophoran debate.pdf
+Ruta, M.
+
+STRICT
+Deuterostomes
+  - Phoronids
+    Echinoderms
+    Pterobranches
+    Enteropneusts
+  - Dendrocystoides
+    Cothurnocystis
+    Mitrocystites
+    Lagynocystis
+    Anatifopsis
+    Tunicates
+    Acraniates
+    Craniates
+
+50% MAJORITY RULE CONSENSUS
+Deuterostomes
+  Phoronids
+  - Echinoderms
+    - Pterobranches
+      - Enteropneusts
+        Chordates
+          - Tunicates
+            - Dendrocystoides
+              - Cothurnocystis
+                - Mitrocystites
+                  - Lagynocystis
+                    Anatifopsis
+            - Acraniates
+              Craniates
+
+CALCICHORDATE (REFUTED IN PAPER)
+Deuterostomes
+  Phoronids
+  - Pterobranches
+    - Enteropneusts
+      - Echinoderms
+        - Dendrocystoides
+          - Cothurnocystis
+            - - Lagynocystis
+                Acraniates
+              - - Anatifopsis
+                  Tunicates
+                - Mitrocystites
+                  Craniates
+
+-----
+
+1999-09-17-a Homologies In Stylophora- A Test Of The 'Calcichordate Theory'.pdf
+Lefebvre, B.
+
+Asserts homologies that prevent the cornute->mitrate inversion required by the calcichordate theory.
+
+-----
+
+1999-11-25-p A new stylophoran echinoderm, Juliaecarpus milnerorum, from the late Ordovician Upper Ktaoua Formation of Morocco.pdf
+Ruta, M.
+
+P Echinodermata (Fleming 1828)
+  C Stylophora (Gill & Caster 1960)
+    O Ankyroida (Parsley 1997)
+      F ["unassigned"] [due to state of flux plus ? of need for named clades]
+        g Juliaecarpus nov.
+          Juliaecarpus milnerorum sp. nov.
+
+Conclusions: Juliaecarpus, together with Beryllia, Domfrontia, and Reticulocarpus, ranks among the most bilaterally symmetrical stylophoran echinoderms. placing it in the Ankyroida.  Acquisition of increasingly symmetrical outline presumably preceded complete symmetrization of the paired marginalia.  Acquisition of bilateral symmetry probably occured several times independently in stylophorans (see also plate homologies).
+
+-----
+
+2000-02-24-a Evolution of the Chordate Body Plan- New Insights from Phylogenetic Analyses of Deuterostome Phyla.pdf
+Cameron, C.B.; Garey, J.R.; Swalia, B.J.
+
+TREE
+SP Deuterostomia -> [deuterostomy]
+  E Ambulacraria -> [tornaria larva, tricoelomate]
+    P Hemichordata -> [collar, stomochord]
+      G Enteropneusta
+      F Ptychoderidae
+        g Ptychodera
+          Ptychodera bhamensis
+        g Balanoglossus
+      E
+        F Harrimaniidae
+          g Harrimania
+            Harrimania planktophilus
+          g Saccoglossus
+            Saccoglossus cambriensis
+            E
+              Saccoglossus barkleyii
+              Saccoglossus kowalevskii
+        Z Enteropneusta
+        E Pterobranchia
+          g Rhabdopleura
+            Rhabdopleura normani
+          g Cephalodiscus
+            Cephalodiscus gracilus
+    P Echinodermata -> [endoskeleton]
+      E
+        E Crinoidea
+          g Antedon
+            Antedon serrata
+        E Asteroidea
+          g Asterias
+            Asterias amurensis
+      E
+        E Echinoidea
+          g Strongylocentrotus
+            Strongylocentrotus purpuatus
+        E Ophiuroidea
+          g Ophioplocus
+            Ophioplocus japonicus
+  E -> [notochord]
+    E Urochordata -> [tunic]
+      E
+        g Styela
+          Styela plicata
+        g Halocynthia
+          Halocynthia roretzi
+      E
+        g Ciona
+          Ciona intestinalis
+        g Pyrosoma
+          Pyrosoma atlanticum
+        E
+          g Ascidia
+            Ascidia ceratodes
+          g Phallusia
+            Phallusia mammillata
+    E Chordata -> [myotomes]
+      E
+        g Branchiostoma
+          Branchiostoma floridae
+        E
+          g Petromyzon
+            Ptromyzon marinus
+          E
+            g Rattus
+              Rattus norvegicus
+            g Homo
+              Homo sapiens
+
+-----
+
+2000-04-06-a Are homalozoans echinoderms? An answer from the extraxial-axial theory.pdf
+Mooi, R.; David, B.
+
+Chordata
+Echinodermata
+  Arkarua?
+  - Helicoplacoidea
+    Edrioasteroidea
+    - Blastozoa
+        Lepidocystoidea
+        - Eocrinoidea (pars)
+          - Eocrinoidea (pars)
+            - Eocrinoidea (pars)
+              - Ctenocystoidea
+                Homostelea (Cincta)
+            Homoiostelea (Soluta)
+            - Diploporite Cystoids
+              - Rhombiferan Cystoids
+                Blastoids
+      - AHOE
+        Crinozoa (total)
+          Stylophora
+          Crinozoa (crownward)
+
+(personal reframing)
+Echinodermata
+  Arkarua?
+  - Helicoplacoidea
+    Edrioasteroidea
+  - Blastozoa
+      Lepidocystoidea
+      Eocrinoidea
+        Homoiostelea (Soluta)
+        [Eocrinoidea]
+          Cystoidea
+          Diploporita
+            [Diploporita]
+            Rhombifera
+            Blastoidea
+          [Eocrinoidea]
+            Ctenocystoidea
+            Homostelea (Cincta)
+    - Eleutherozoa
+      Crinozoa (total)
+        Stylophora
+        Crinozoa (crownward)
+
+-----
+
+2000-06-00-p What a New Model of Skeletal Homologies Tells Us about Asteroid Evolution.pdf
+Mooi, R.; David, B.
+
+[marginals]
+[adambulacrals/virgal series]
+[iterradial odontophore/axillary]
+?Some Somasteroids?
+[no adambulacral associated with 1st ambulacral]
+[1st + 2nd ambulacrals tightly joined]
+[jaw frame of 1st + 2nd ambulacrals]
+[musculature between adambulacrals and ambulacrals
+- (towards Ophiuroids)
+  [torus (?)]
+  [marginal series restricted to disk or lost]
+  ?Some Somasteroids?
+  [pairing of ambulacrals (homoplasy)]
+  [ventral arm plates]
+  [bursae]
+  [buccal slit depth reduced (homoplasy)]
+  [1st ambulacral fused to 2nd ambulacral]
+  [fusion of ambulacrals to make vertebrae]
+  [ambulacrals grow around radial vessel]
+  [ambullae absent]
+  [1st tube foot displaced to 2nd ambulacral]
+  Crown Ophiuroids
+- (towards Asteroids)
+  [MAO external part aligned with adambulacrals]
+  [aboral madreporite]
+  [pairing of ambulacrals (homoplasy)]
+  [1st ambulacral enlarged to form MAO]
+  Basal Asteroids
+  [buccal slit depth reduced (homoplasy)]
+  [deep ambulacral grovoe (arched ambulacrals)]
+  [podial pores to internal ambullae]
+  [ambulacrals resting on adambulacrals]
+  [staggering of ambulacrals and adambulcrals]
+  [odontophore internal to proximal ambulacrals]
+  Crown Asteroids
+
+-----
+
+2000-06-15-p Echmatocrinus, a Burgess Shale animal reconsidered.pdf
+Ausich, W.I.; Babcock, L.E.
+
+Argument for Echmatocrinus brachiatus as an echinoderm (rather than an
+octocoral) not found convincing, although still a possibility.
+
+
+-----
+
+2000-07-24-a Not all written in stone- Interdisciplinary syntheses in echinoderm paleontology.pdf
+Mooi, R.
+
+SMITH (1984) + PAUL & SMITH (1984)
+Echinodermata
+  Carpoids
+    Dendrocystites
+  - Helicoplacoids
+      Helicoplacus
+    - Camptostromatoids
+        Camptostroma
+      Pelmetazoa
+        [Crinozoa]
+          Lepidocystoids
+            Lepidocystis
+          - Echmatocrinus
+            Crinoids
+              Aethocrinus
+        [Blastozoa]
+          Eocrinoids
+            Gogia
+            - - Rhopalocystis [Eocrinoid]
+                Lepadocystis [Rhombifera]
+              - Paracrinoids
+                  Amygdalocystites
+                Blastoids
+                  Pentremites
+      - Stromatocystitoid
+          Stromatocystites
+        - Edrioasteroids
+            Edrioaster
+          Eleutherozoa
+            Asteroids
+              Protopaleaster
+            - Ophiuroids
+                Eophiura
+              - Echinoids
+                  Aptilechinus
+                - Ophiocistioids
+                    Gillocystis
+                  Holothuroids
+                    Protankyra
+
+SUMRALL (1996a, 1997)
+Echinodermata (total)
+  - Camptostromatoids
+      Camptostroma
+    Imbricata
+      Lepidocystis
+    Helicoplacoids
+      Helicoplacus
+  Echinodermata (crown)
+    Edrioasteroids
+      Edrioaster
+      - Cyclocystoids
+          Cyclocystoides
+        - Gogia [Eocrinoid]
+          - [Homalozoans]
+            Homoiosteleans (Solutes)
+              Dendrocystites
+            - Homosteleans (Cinctans)
+                Trochocystites
+              - Stylophorans
+                  Phyllocystis
+                Ctenocystoids
+                  Ctenocystis
+            - Rhopaiocysts [Eocrinoid]
+              - - Echmatocrinus
+                  Aethocrinus [Crinoid]
+                - Parablastoids
+                    Blastocrinus
+                  - Paracrinoids ["?" on branch]
+                      Amygdalocystites
+                    - Rhombiferans
+                        Lepadocystites
+                      Blastoids
+                        Pentremites
+    Eleutherozoa
+      [Echinozoa]
+        Echinoids
+          Aptilechinus
+        Holothuroids
+          Protankyra
+      [Asterozoa]
+        Asteroids
+          Protopalaeaster
+        Ophiuroids
+          Eophiura
+
+DAVID AND MOOI (1999) + MOOI AND DAVID (1998)
+
+Echinodermata (total)
+  Arkarua
+  - - Helicoplacoids ["?" on branch]
+        Helicoplacus
+      Camptostromatoids
+        Camptostroma
+      Stromatocystitoids
+        Stromatocystites
+      Edrioasteroids
+        Edrioaster
+    Echinodermata (crown)
+      [Blastozoa]
+        Lepidocystoids
+          Lepidocystis
+        - Eocrinoids
+            Gogia
+          - Rhombiferans
+              Lepadocystis
+            Blastoids
+              Pentremites
+      - [Crinozoa]
+          Stylophorans
+            Phyllocystis
+          Crinoids
+            Aethocrinus
+        [Eleutherozoa]
+          [Asterozoa]
+            Ophiuroids
+              Eophiura
+            Asteroids
+              Protopalaeaster
+            - Echinoids
+                Aptilechinus
+              - Ophiocistioids
+                  Gillocystis
+                Hologhuroids
+                  Protankyra
+
+-----
+
+2000-09-18-a Stratocladistic Analysis Of Blastoid Phylogeny.pdf
+Bodenbender, B.E.; Fisher, D.C.
+
+CURRENT STATE:
+
+P Echinodermata
+  C Blastoidea
+    - S. angulatus
+      S. gemmiformis
+      S. hammeli
+    - Macurdablastus                                ?
+      - Polydeltoideus                              Phaenoschismatidae
+        - - Decaschisma                             Phaenoschismatidae
+            - - - Pleuroschisma                     Phaenoschismatidae
+                  - Caryoblastus                    Phaenoschismatidae
+                    Phaenoblastus                   Phaenoschismatidae
+                - - Heteroschisma                   Phaenoschismatidae
+                    - Angioblastus                  Codasteridae
+                      Nannoblastus                  Codasteridae
+                      Pteroblastus                  Codasteridae
+                    - Codaster                      Codasteridae
+                      - Notoblastus                 Neoschismatidae
+                        - Austroblastus             Neoschismatidae
+                          Timoroblastus             Neoschismatidae
+                  - Cryptoschisma                   Phaenoschismatidae
+                    - Pentremitidea                 Phaenoschismatidae
+                      - Eleutherocrinus             Hyperoblastidae
+                        - Hyperoblastus             Hyperoblastidae
+                          Cordyloblastus            Hyperoblastidae
+                        - Devonoblastus             Hyperoblastidae
+                          - Montanablastus          Pentremitidae
+                            - Pentremoblastus       Phaenoschismatidae
+                              - Strongyloblastus    Pentremitidae
+                                - Pentremites       Pentremitidae
+                                  Ambolostoma       Ambolostomatidae
+              Leptoschisma                          Phaenoschismatidae
+              - Phaenoschisma                       Phaenoschismatidae
+                - Koryschisma                       Phaenoschismatidae
+                  - Astrocrinus                     Astrocrinidae
+                    - Hadroblastus                  Neoschismatidae
+                      - Katoblastus                 Orophocrinidae
+                        - Orophocrinus              Orophocrinidae
+                          - Brachyschisma           Orophocrinidae
+                            Anthoblastus            Orophocrinidae
+            - - Troosticrinus                       Troosticrinidae
+                - Schizotremites                    Troosticrinidae
+                  - Costatoblastus                  Troosticrinidae
+                    - Tricoelocrinus                Troosticrinidae
+                      - Metablastus                 Troosticrinidae
+                        Calycoblastus               Troosticrinidae
+                  Diploblastus                      Diplobastidae
+              - - Elaeacrinus                       Nucleocrinidae
+                  - Nucleocrinus                    Nucleocrinidae
+                    Placoblastus                    Nucleocrinidae
+                - Globoblastus                      Orbitremitidae
+                  - Ellipticoblastus                Orbitremitidae
+                    Orbitremites                    Orbitremitidae
+                - - Auloblastus                     Schizoblastidae
+                    - Lophoblastus                  Schizoblastidae
+                      - Orbiblastus                 Schizoblastidae
+                        Deltoblastus                Schizoblastidae
+                    Schizoblastus                   Schizoblastidae
+                Deliablastus                        Granatocrinidae
+                - Perittoblastus                    Granatocrinidae
+                  - Cribroblastus                   Granatocrinidae
+                    Heteroblastus                   Granatocrinidae
+                Granatocrinus                       Granatocrinidae
+                - Euryoblastus                      Granatocrinidae
+                  - Decemoblastus                   Granatocrinidae
+                    Arcuoblastus                    Granatocrinidae
+                Poroblastus                         Granatocrinidae
+                - Monadoblastus                     Granatocrinidae
+                  Ptychoblastus                     Granatocrinidae
+                Dentiblastus                        Granatocrinidae
+                - Cryptoblastus                     Granatocrinidae
+                  Tanaoblastus                      Granatocrinidae
+                Mesoblastus                         Granatocrinidae
+                Monoschizoblastus                   Granatocrinidae
+
+Phaenoschismatidae (pars)
+  ...
+    ...
+      Codasteridae
+        ...
+          Neoschismatidae
+    ...
+      Hyperoblastidae
+        ...
+          Pentremitidae (pars)
+            Phaenoschismatidae (pars)
+              Pentremitidae (pars
+                ...
+                  Ambolostomatidae
+    ...
+      Astrocrinidae
+        Neoschismatidae
+          Orophocrinidae
+  ...
+    Troosticrinidae
+      ...
+        Diploblastidae
+    ...
+      Nucleocrinidae
+      Orbitremitidae
+      ...
+        Schizoblastidae (potentially mixed with Granatocrinidae)
+        Granatocrinidae (potentially mixed with Schizoblastidae)
+
+NEW TREE:
+Blastoidea
+  - S. angulatus
+    - S. Gemmiformis
+      S. hammeli
+  - Macurdablastus                                      ?
+    - - Troosticrinus                                   T
+        - Decaschisma                                   Ph
+          - Leptoschisma                                Ph
+            - Caryoblastus                              Ph
+              - Schizotremites                          T
+                - Metablastus                           T
+                  Tricoelocrinus                        T
+      - Polydeltoideus                                  Ph
+        - - Cryptoschisma                               Ph
+            - Phaenoschema                              Ph
+              - Phaenoblastus                           Ph
+                - Pentremoblastus                       Ph
+                  - Katoblastus                         O
+                    Koryschisma                         Ph
+          - Pentremitidea                               Ph
+            - - Pleuroschisma                           Ph
+                Heteroschisma                           Ph
+              - Cordyloblastus                          H
+                - Brachyschisma                         O
+                  - Dentiblastus                        G
+                    - Orophocrinus                      O
+                      - Hadroblastus                    N
+                        - Codaster                      C
+                          - - Austroblastus             N
+                              Notoblastus               N
+                            - Angloblastus              C
+                              - Timoroblastus           N
+                                - Nannoblastus          C
+                                  - Anthoblastus        O
+                                    Pteroblstus         C
+                - Hyperoblastus                         H
+                  - - Eleutherocrinus                   H
+                      - Calycoblastus                   T
+                        Devonoblastus                   H
+                    - - Elaeacrinus                     Nu
+                        - Nucleocrinus                  Nu
+                          Placoblastus                  Nu
+                      - - - Decemoblastus               G
+                            - Cribroblastus             G
+                              - Perittoblastus          G
+                                - Deliablastus          G
+                                  Euryoblastus          G
+                          - - - Ptychoblastus           G
+                                  Granatocrinus         G (sole under Ptycho)
+                              - Monadoblastus           G
+                                Poroblastus             G
+                            - Cryptoblastus             G
+                              - Globoblastus            Orb
+                                - Ellipticoblastus      Orb
+                                  - Orbitremites        Orb
+                                    Monoschizoblastus   G
+                        - Arcuoblastus                  G
+                          - - - Mesoblastus             G
+                                Tanaoblastus            G
+                              - Costatoblastus          T
+                                Diploblastus            D
+                            - Auloblastus               S
+                              - - Montanablastus        Pe
+                                  - Strongyloblastus    Pe
+                                    Pentremites         Pe
+                                      Ambolostoma       Am (sole under Pentr)
+                                - Orbiblastus           S
+                                  - Lophoblastus        S
+                                    - Schizoblastus     S
+                                      - Astrocrinus     As
+                                        - Heteroblastus G
+                                          Deltoblastus  S
+
+-----
+
+2000-11-23-p The Ecology of the Cambrian Radiation — Ecologic Radiation of Cambro-Ordovician Echinoderms.pdf
+Guensburg, T.E; Sprinkle, J.
+
+NON-CLADOGRAM that looks vaguely like:
+
+* Echinoderms
+  * Edrioasteroids
+    * Helicoplacoids
+    * Eleutherozoans
+      * Holothurians
+        Stelleroids
+        Echinoids
+        Ophiocistioids
+  * Eocrinoids
+    * Ctenocystoids
+      Cinctans
+      Stylophorans
+      Solutans
+    * Crinoids
+    * Rhombiferans
+      * Paracrinoids
+    * Diploporites
+      Fistuliporites
+    * Parablastoids
+      * Blastoids
+
+-----
+
+2001-03-17-a Comparison Of Flattened Blastozoan Echinoderms- Insights From The New Early Ordovician Eocrinoid Haimacystis Rozhnovi.pdf
+Sumrall, C.D.; Sprinkle, J.; Guensburg, T.E.
+
+
+OVERVIEW OF FLATTENED BLASTOZOAN FORMS:
+
+Eocrinoidea
+  Cardiocystitids
+    Cardiocystites bohemicus
+    Cardiocystites pleuricostatus
+  Lingulocystids
+    Lingulocystis elongata
+    Lingulocystis boliviensis
+  Rhipidocystids
+    Rhipidocystis
+    Batherocystis
+    Mandalocystis
+    Petalocystites
+    Neorhipidocystis
+
+  glyptocystitid rhombiferans (under Eocrinoidea?)
+    pleurocystitids
+
+C Eocrinoidea (Jaekel 1918)
+  O ["uncertain"]
+    F ["uncertain"]
+      g Haimacystis n. g.
+        Haimacystis rozhnovi n. sp.
+
+-----
+
+2001-05-18-a A Critical Comment On 'Ankyroids' (Echinodermata, Stylophora).pdf
+Lefebvre
+
+Stylophora
+  Ceratocystis (Cornuta)
+  [Cornuta] (except Ceratocystis)
+    Nevadaecystis
+    - - - - - - - Galliaecystis
+                  Hanusia
+                - Reticulocarpos
+                  Prokopicystis
+              - Amygdalotheca
+            - Nanocarpus
+              Beryllia
+            Lyricocarpus
+            Milonicystis
+          - Chauvelicystis
+            Prochauvelicysits
+        - Thoralicystis
+          Scotiaecystis
+        Phyllocystis
+      - Cothurnocystis
+  [Mitrata]
+    - - Peltocystis
+        - Anatifopsis
+          Jaekelocarpus
+      - Chinlanocarpos
+        - Aspidocarus
+          Mitrocystites
+        Mitrocystella
+        Eumitrocystella
+        - - Ateleocystites
+            Barrandeocarpus
+          Enoploura
+          Diamphidiocystis
+    Lagynocystis
+
+-----
+
+2001-06-25-a Cheirocystis fultonensis, a New Glyptocystitoid Rhombiferan from the Upper Ordovician of the Cincinnati Arch- Comments on Cheirocrinid Ontogeny.pdf
+Sumrall, C.D.; Schumacher, G.A.
+
+[Rhombifera]
+  C Glyptocystitida (Bather 1899)
+    F Cheirocrinidae (Jaekel 1899)
+      g Cheirocystis (Paul 1972)
+        Cheirocystis fultonensis n. sp.
+
+-----
+
+2001-09-13-a Primitive deuterostomes from the Chengjiang Lagerstätte (Lower Cambrian, China).pdf
+Shu, D.-G.; Morris, S.C.; Han, J.; Chen, L.; Zhang, X-L.; Liu, H.-Q.; Liu, J.-N.
+
+P Vetulicolia nov.
+  C Vetulicolida (Chen & Zhou 1997)
+    F Didazoonidae (Shu & Han fam. nov.)
+      g Didazoon (Shu & Han gen. nov.)
+        Didazoon haoae (Shu & Han sp. nov.)
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+
+2018-07-20-a A Re-Interpretation Of The Ambulacralsystem Of Eumorphocystis (Blastozoa, Echinodermata) And Its Bearing On Theevolution Of Early Crinoids.pdf
+
+C Diploporita (Müller, 1954)
+  O Glyptosphaeritida (Bernard, 1895)
+    F Eumorphocystidae (Branson & Peck, 1940)
+      G Eumorphocystis (Branson & Peck, 1940)
+(conclusion: Crinoids are rooted within Blastozoans, w no relation to Edrioast.)
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+
+2023-04-19-a Cambrian stem-group ambulacrarians and the nature of the ancestral deuterostome.pdf
+
+Deuterostomia
+  Chordata (total)
+    Vetulicola
+    Pomatrum
+    Ooedigera
+    Chordata (crown)
+      Cephalochordata
+      [Olfactores]
+        Urochordata
+        - Vertebrata
+          Myllokunmingia
+  Ambulacraria (total)
+    [Stem group (Cambroernida)]
+      Herpetogaster
+      - Phlogites
+        - Rotadiscus
+          - Eldonia
+            Pararotadiscus
+    [Crown group]
+      [Echinodermata]
+        Courtessolea
+        - Helicoplacus
+          - Helicocystis
+            - Crinoidea
+              Gogia
+          - Asteroidea
+            - Ophiuroidea
+              - Echinoidea
+                Holothuroidea
+      [Hemichordata]
+        [Pterobranchia]
+          Gyaltsenglossus
+          - Rhabdopleura
+            - Atubaria
+              Cephalogdiscus
+        [Enteropneusta]
+          Spartobranchus
+          Oesia
+          - Saccoglossus
+            - Spengelidae
+              Ptychoderidae
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+
+2024-01-02-x Origin and Early Evolution of Echinoderms.pdf
+
+Ambulacraria (crown)
+  Hemichordata
+  Echinodermata (total)
+    Ctenoimbricata
+    [Ctenocystoidea]
+      Ctenocystis
+      Courtessolea
+    [Cincta] Protocinctus
+    - - [Soluta] Coleicarpus
+        ?[Stylophora] Ceratocystis?
+      - Helicoplacus
+        - Helicocystis
+          - [Eocrinoidea] Gogia
+            [Edrioasteroidea] Camptostroma
+            Crinoidea
+            - - Echinoidea
+                Holothuroidea
+              - Asteroidea
+                Ophiuroidea
+
+-----
+
+2024-04-15-a Cheirocystis liexiensis, a new rhombiferan blastozoan (Echinodermata) from Lower Ordovician of South China Block.pdf
+
+C Rhombifera (Zittel, 1879)
+  O Dichoporita (Jaekel, 1899)
+    SupF Glyptocystitoida (Bather, 1899)
+      F Cheirocrinidae (Jaekel, 1899)
+        Cheirocystis liexiensis (n. sp.)
+
+-----
+
+2024-05-03-a Rhombifera Barrande, 1867, and the origin of the Blastoidea (Echinodermata, Blastozoa).pdf
+
+- - Hemicosmitoida
+      Thomacystis
+      - Caryocrinites
+        Hemicosmites
+    - - Codaster          Blastoidea s.l.
+        Macurdablastus    Blastoidea s.l.
+      Lysocystites        Blastoidea s.l.
+      Stephanocrinus      Blastoidea s.l.
+      Rhombifera          Glyptocystitoida
+  - Cystoblastus          Glyptocystitoida
+    - Lepadocystis        Glyptocystitoida
+      - Echinoecrinites   Glyptocystitoida
+        - Cheirocystella  Glyptocystitoida
+          Macrocystella   Glyptocystitoida
+Sanducystis
+Ridersia
+- Cambrocrinus
+  Adakocrinus
+
+(conclusion: Rhombifera is a link between Glyptocystitoid Rhombiferans and Blastoidea s.l.)
+
