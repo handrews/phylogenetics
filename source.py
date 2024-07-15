@@ -65,7 +65,7 @@ for line in lines:
     elif line == '-----':
         assert (paper or i == 1) and not section, f'{i}: "{line}" ({section}, "{paper}")'
         section = True
-        if paper:
+        if paper and paper['trees']:
             papers.append(paper)
         paper = {}
 
