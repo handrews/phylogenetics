@@ -331,15 +331,15 @@ E Cornuta
                 Cothurnocystis primaeva                 Cornuta Ceratocystidae
               - - - Cothurnocystis elizos               Cornuta Ceratocystidae
                     Cothurnocystis courtessolei         Cornuta Ceratocystidae
-  
+
                   - Scotiaecystis griffei               Cornuta Scotiaecystidae
                     - Scotiaecystis curvata             Cornuta Scotiaecystidae
                       Bohemiaecystis bouceki            Cornuta Scotiaecystidae
-  
+
                 - Galliaecystis lignieresi              Cornuta Amygdalothecidae
                   - - Amygdalotheca griffei             Cornuta Amygdalothecidae
                       Reticulocarpos hausi              Cornuta Amygdalothecidae
-  
+
                     - Lagynocystis pyramidalis          Mitrata
                       - Peltocystis cornuta             Mitrata
                         - Chinianocarpos thorali        Mitrata
@@ -1669,6 +1669,50 @@ E Chordata
         Pikaia gracilens (Walcott 1911)
       E Cephalochordata (crown)
 
+-----
+
+1995-09-00-p Yunnantozoon and the ancestry of chordates.pdf
+Dzik, J.
+
+TREE
+E -> [gill slits]
+  E Pterobranchia (total)
+    g Rhabdotubus
+    E Pterobranchia (crown)
+  E -> [metameric gill slits and gonads]
+    E Enteropneusta
+      g Megadereion
+    E -> [mouth apparatus]
+      C Dipleurozoa (Harrington & Moore 1955)
+        g Odontogriphus
+      E
+        O Dickinsoniida (Harrington & Moore 1955)
+          F Dickinsoniidae (Harrington & Moore 1955)
+            g Dickinsonia
+        E -> [notochord]
+          C Yunnanozoa cls n.
+            O Yunnanozoida ord n.
+              F Yunnanozoidae fam n.
+                g Yunnanozoon
+          E -> [v-shaped myomeres]
+            g Nectocaris
+            E
+              E Conodonta (total) -> [grasping apparatus]
+                g Teridontus
+                E Conodonta (crown)
+              E
+                E
+                  g Metaspriggina
+                  F Pikaiidae (Walcott 1911) (text places in Acrania)
+                    g Pikaia
+                E
+                  E -> [branchial basket]
+                    E Tunicata
+                      g Typhloesus
+                    E Acrania (Bleeker 1859)
+                  E -> [dermal scales]
+                    E Agnatha
+
 
 -----
 
@@ -2637,7 +2681,7 @@ C Stylophora (total) (Gill & Caster 1960)
           BO Peltocystida
             g Peltocystis
               Peltocystis cornuta
-    
+
 
 C Stylophora
   Ceratocystis perneri
@@ -3360,6 +3404,7 @@ Sumrall, C.D.; Schumacher, G.A.
 2001-09-13-a Primitive deuterostomes from the Chengjiang Lagerstätte (Lower Cambrian, China).pdf
 Shu, D.-G.; Morris, S.C.; Han, J.; Chen, L.; Zhang, X-L.; Liu, H.-Q.; Liu, J.-N.
 
+TREE
 SP Deuterostomia
   P Vetulicolia nov.
     C Vetulicolida (Chen & Zhou 1997)
@@ -3374,7 +3419,357 @@ SP Deuterostomia
         V cuneata
         Vetulicola rectangulata
 
-It is not entirely clear that Pomatrum and Xidazoon 
+-----
+
+2001-11-22-p On being vetulicolian.pdf
+Gee, H.
+
+TREE
+E
+  SP Protostomia
+  SP Deuterostomia (total)
+    E Vetulicolia ? -> [pharyngeal slits]
+    E Deuterostomia (crown) -> [pharyngeal slits of Vet. in crown]
+      E Ambulacraria
+        E Echinodermata -> [loss of pharyngeal slits]
+        E Hemichordata
+      E Chordata (total) -> [endostyle]
+        E Vetulicolia ?
+        E Chordata (total) -> [notochord]
+          E
+            E Tunicata
+            E
+              E Amphioxiformes
+              E Vertebrata
+
+-----
+
+2002-03-00-p Vetulicolians- Are they deuterostomes? chordates?.pdf
+Lacalli, T.C.
+
+TREE
+E Deuterostomia (total)
+  E Vetulicolia ?
+  E Deuterostomia (crown)
+    E Vetulicolia ?
+    E Ambulacraria
+      E Echinodermata
+      E Hemichordata
+    E Chordata (total)
+      E Vetulicolia ?
+      E Chordata (crown)
+        E Tunicata (total)
+          E Vetulicolia ?
+          E Tunicata (crown)
+        E
+          E Amphioxiformes
+          E Vertebrata
+
+-----
+
+2002-10-18-a Head and backbone of the Early Cambrian vertebrate Haikouichthys.pdf
+Shu, D-G.; Conway Morris, S.; Han, J.; Zhang, Z-F.; Yasui, K.; Janvier, P.; Chen, L.; Zhang, X-L.; Liu, J-N.; Li, Y.; Liu, H-Q.
+
+TREE
+E Chordata
+  E Cephalochordata
+  E
+    E
+      M Myxini
+      g Myxinikela
+    E
+      g Haikouichthys
+        Haikouichthys ercaicunensis
+      E
+        E Euconodonta
+        E
+          E Hyperoartia
+          g Mayomyzon
+      E
+        E
+          E Astraspida
+          E Arandaspida
+          E Heterostraci
+        E
+          E
+            g Euphanerops
+            E
+              g Jamoytius
+              E Anaspida
+          E
+            g Loganellia
+            E Galeaspida
+            E
+              E Osteostraci
+              E Gnathostomata
+
+-----
+
+2003-01-22-a A New Species of Yunnanozoan with Implications for Deuterostome Evolution.pdf
+Shu, D.; Conway Morris, S.; Zhang, Z-F.; Lieu, J-N.; Han, J.; Chen, L.; Zhang, X-L.; Yasui, K.; Li, Y.
+
+TREE
+P Vetulicolia ?
+  C Yunnanozoa (Dzik, 1995)
+    F Yunnanozoonidae (Dzik, 1995)
+      g Haikouella (Chen et al. 1999)
+        Haikouella lanceolata (Chen et al. 1999)
+        Haikouella jianshanensis n. sp.
+      g Yunnanozoon
+        Yunnanozoon lividum
+
+-----
+
+2003-02-24-r A paleontological perspective of vertebrate origin.pdf
+Shu, D.
+
+TREE after Schaeffer, B. 1987
+E
+  E Echinodermata
+  E ("Pharyngotrenates")
+    E Hemichordata
+    E Chordata
+      E Urochordata
+      E -> [somitic chordates]
+        E Cephalochordata
+        E Vertebrata
+
+TREE (emphasizing nervous system significance)
+E -> [segmentation]
+  E (segmented protostomes)
+  E -> [pharyngeal slits]
+    E Vetulicolia
+    E -> [dorsal nerve cord]
+      E -> [retaining ventral nerve cord]
+        E Yunnanozoa -> [external gills]
+          F Yunnanozoonidae (Dzik, 1995)
+            g Yunnanozoon
+              Yunnanozoon lividum
+            g Haikouella (Chen et al. 1999)
+              Haikouella lanceolata (Chen et al. 1999)
+              Haikouella jianshanensis n. sp.
+        E -> [segmentation lost]
+          E Echinodermata -> [twisting of embryo]
+          E Hemichordata -> [internal gills]
+      P Chordata -> [pygochord]
+        E Urochordata -> [retaining ventral nerve cord]
+        E -> [notochord extending forward]
+          E Cephalochordata
+          E -> [nerual crest]
+            E -> [cephalolization]
+              BP Vertebrata -> [vertebrae]
+                C Agnatha
+                  O Myllokunmingiida order nov.
+                    F Myllokunmingiidae fam. nov.
+                      g Myllokunminga
+                      g Haikouichthys
+                    F ["uncertain"]
+                      g Zhongjianichthys gen. nov.
+                        Zhongjianichthys rostratus gen. et sp. nov.
+
+TREE (emphasizing basic body-plan significance)
+E -> [segmentation]
+  E (segmented protostomes)
+  E -> [pharyngeal slits]
+    E -> [dorso-ventral separation of the anterior division]
+      E Vetulicolia
+      E Yunnanozoa -> [external gills]
+        F Yunnanozoonidae (Dzik, 1995)
+          g Yunnanozoon
+            Yunnanozoon lividum
+          g Haikouella (Chen et al. 1999)
+            Haikouella lanceolata (Chen et al. 1999)
+            Haikouella jianshanensis n. sp.
+    E -> [internal gills]
+      E -> [segmentation lost]
+        E -> [twisting of embryo]
+          E Echinodermata -> [pharyngeal slits lost]
+        E Hemichordata
+      P Chordata -> [pygochord]
+        E Urochordata -> [segmentation lost]
+        E -> [notochord extending forward]
+          E Cephalochordata
+          E -> [neural crest]
+            E -> [cephalolization]
+              BP Vertebrata -> [vertebrae]
+               C Agnatha
+                 O Myllokunmingiida order nov.
+                   F Myllokunmingiidae fam. nov.
+                     g Myllokunminga
+                     g Haikouichthys
+                   F ["uncertain"]
+                     g Zhongjianichthys gen. nov.
+                       Zhongjianichthys rostratus gen. et sp. nov.
+
+-----
+
+2003-09-00-p A new vetulicolian from the early Cambrian Chengjiang fauna in Yunnan of China.pdf
+Chen, A.; Feng, H.; Zhu, M.; Ma, D.; Li, M.
+
+TREE
+P Vetulicolia (Shu et al. 2001)
+  C ["uncertain"]
+    F ["uncertain"]
+      g Yuyuanozoon gen. nov. (Chen, Feng, & Zhu)
+        Yuyuanozoon magnificissimi sp. nov. (Chen, Feng, & Zhu)
+
+-----
+
+2004-00-00-p The New View of Animal Phylogeny.pdf
+Halanych, K.M.
+
+TREE (traditional, prior to Field et al. 1988)
+
+E
+  E Mesozoa
+  E
+    E Choanoflagellata
+    E Metazoa
+      E Porifera
+        E
+          E Hexactinellida
+          E Demospongiae
+        E Calcerea
+      E Placozoa
+      E
+        E Coelenterata
+          E Cnidaria
+          E Ctenophora
+        E Bilateria
+          E
+            E Gnathostomulida
+            E Nemertea
+            E Platyhelminthes
+          E
+            E Aschelminthes
+              E
+                E Pentastomida
+                E Nematomorpha
+                E Nematoda
+                E Priapulida
+                E
+                  E Loricifera
+                  E Kinorhyncha
+                E Acanthocephala
+                E Rotifera
+                E Gastrotricha
+              E Entoprocta
+            E
+              E Deuterostomia (sensu lato)
+                E
+                  E
+                    E
+                      E Deuterostomia (sensu stricto)
+                        E
+                          E Chordata
+                            E
+                              E Cephalochordata
+                              E Craniata
+                            E Tunicata
+                          E Hemichordata
+                        E Echinodermata
+                      E Chaetognatha
+                      Z Lophophorata
+                    E Phoronida
+                  E Brachiopoda
+                E Bryozoa
+                G Lophophorata
+              E Protostomia
+                E
+                  E Mollusca
+                  E Spincula
+                E
+                  E Echiura
+                  E
+                    E Vestimentifera
+                    E Pogonophora
+                  E Articulata
+                    E Annelida
+                    E
+                      E Onychophora
+                      E Arthropoda
+                        E Chelicerata
+                        E
+                          E Crustacea
+                          E
+                            E Myriapoda
+                            E Hexapoda
+
+TREE (modern, largely based on molecular data)
+E
+  E Choanoflagellata
+  E Metazoa
+    G Porifera
+    E Hexactinellida
+      E Demospongiae
+        E Calcerea
+        Z Porifera
+        E
+          E Ctenophora
+          E Placozoa
+          E
+            E Cnidaria
+            E Bilateria
+              E Acoelomorpha
+              E Myxozoa
+              E Orthonectida
+              E
+                E Deuterostomia
+                  E
+                    E Chordata
+                      E Craniata
+                      E Cephalochordata
+                    E Tunicata
+                  E
+                    E Ambulacraria
+                      E Echinodermata
+                      E Hemichordata
+                    g Xenoturbella
+                E
+                  E Chaetognatha
+                    E
+                      E Lophotrochozoa
+                        E Bryozoa
+                        E
+                          E Myzostomida
+                          E Dicyemida
+                          E Platyzoa
+                            E Gnathifera
+                              E Syndermata (incl. Rotifera & Acanthocephala)
+                              E Micrognathozoa
+                              E Gnathostomulida
+                            E
+                              E Entoprocta
+                              E Cycliophora
+                            E
+                              E Gastrotricha
+                              E Platyhelminthes
+                          E Nemertea
+                          E
+                            E Brachiopoda
+                            E Phoronida
+                          E Mollusca
+                          E Sipuncula
+                          E Annelida (incl. Echiuridae & Siboglinidae)
+                      E Ecdysozoa
+                        E
+                          E Panarthropoda
+                            E Onychophora
+                            E Tardigrada
+                            E Arthropoda
+                              E
+                                E Chelicerata
+                                E Myriapoda
+                              E Pancrustacea (incl. Hexaoda & Pentastomida)
+                          E Nematoida
+                            E Nematomorpha
+                            E Nematoda
+                        E Scalidophora
+                          E Priapulida
+                          E
+                            E Loricifera
+                            E Kinorhyncha
+
 -----
 
 2005-09-20-a On the Phylum Vetulicolia.pdf
