@@ -1469,6 +1469,17 @@ Conclusions:
 
 -----
 
+1991-04-02-a Composition and preservation of the Chengjiang fauna –a Lower Cambrian soft-bodied biota.pdf
+Hou, X-G.; Ramsköld, L.; Bergström, J.
+
+
+TREE
+E Metazoa
+  g Yunnanozoon gen. n.
+    Yunnanozoon lividum sp. n,
+
+-----
+
 1991-03-07-a The Youngest Carpoid- Occurrence, Affinities, And Life Mode Of A Pennsylvanian (Morrowan) Mitrate From Oklahoma.pdf
 Kolata, D.R.; Frest, T.J.; Mapes, R.H.
 
@@ -1645,6 +1656,22 @@ XTREE
 
 -----
 
+1995-08-09-a A possible Early Cambrian chordate.pdf
+Chen, J-Y.; Dzik, J.; Edgecombe, G.D.; Ramsköld, L.; Zhou, G-Q.
+
+TREE
+E Chordata
+  E Cephalochordata (total)
+    g Yunnanozoon
+      Yunnanozoon lividium
+    E
+      g Pikaia (Walcott 1911)
+        Pikaia gracilens (Walcott 1911)
+      E Cephalochordata (crown)
+
+
+-----
+
 1995-11-00-a The first solute which is attached as an adult- a Mid-Cambrian fossil from Utah with echinoderm and chordate affinities.pdf
 Daley, P.E.J.
 
@@ -1735,6 +1762,18 @@ C Edrioasteroidea (Billings 1858)
 
 -----
 
+1996-02-01-a Reinterpretation of Yunnanozoon as the earliest known hemichordate.pdf
+Shu, D.; Zhang, X.; Chen, L.
+
+TREE
+E Hemichordata
+  E Enteropneusta (total)
+    g Yunnanozoon
+      Yunnanozoon lividium
+    E Enteropneusta (crown)
+
+-----
+
 1996-04-09-a Middle Mississippian Disparid Crinoids from the Midcontinental United States.pdf
 Ausich, W.I.; Kammer, T.W.; Myer, D.L.
 
@@ -1805,6 +1844,17 @@ F Calceocrinidae – lots of detail on past and new phylogeny of this family
 
 -----
 
+1996-09-20-a A Pikaia-like chordate from the Lower Cambrian of China.pdf
+Shu, D-G.; Conway Morris, S.; Zhang, X-L.;
+
+TREE
+P Chordata
+  C Cephalochordata
+    g Cathaymyrus gen. nov.
+      Cathaymyrus diadexus gen. et sp. nov.
+
+-----
+
 1996-11-11-a Morphologic Variation within and among Populations of the Camerate Crinoid Agaricocrinus (Lower Mississippian, Kentucky and Tennessee)- Breaking the Spell of the Mushroom.pdf
 Meyer, D.L.; Ausich, W.I.
 
@@ -1824,14 +1874,31 @@ C Crinoidea (Miller 1821)
 1997-00-00-p Biology of the Chengjiang fauna.pdf
 Chen, J.; Zhou, G.
 
-C Vetulicolida n. cl.  (considered related to Arthropoda)
-  g Vetulocola
-    Vetulicola cuneatus (Hou 1987a)
-  g Banffia (Walcott 1911)
-    Banffia constricta (Walcott 1911)
-    Banffia confusa n. gen., n. sp.
+TREE
+E
+  g Facivermis
+    E
+      E Eldonoidea
+      E Phoronida
+      E Brachiopoda
+      E Bryozoa ?
+      g Dinomischus
 
-g Yunnanozoon
+TREE
+P Arthropoda (total)
+  C Vetulicolida n. class
+    g Vetulicola (Hou 1987a)
+      Vetulicola cuneatus (Hou 1987a)
+    g Banffia (Walcott 1911)
+      Banffia constricta (Walcott 1911)
+      Banffia confusa n. sp.
+  P Arthropoda (crown)
+
+TREE
+E Chordata (total)
+  g Yunnanozoon
+  g Cathaymyrus
+  E Chordata (crown)
 
 -----
 
@@ -1938,6 +2005,7 @@ P Echinodermata
 1999-07-02-a A pipiscid-like fossil from the Lower Cambrian of south China.pdf
 Shu, D.; Conway Morris, S.; Zhang, X-L.; Chen, L.; Li, Y.; Han, J.
 
+TREE
 P ["Uncertain"]
   g Xidazoon (Shu, Conway Morris, & Zhang) gen. nov.
     Xidazoon stephanus (Shu, Conway Morris, & Zhang) sp. nov.
@@ -2405,6 +2473,49 @@ Embryology supports a new theory of skeletal homologies for the phylum Echinoder
 
 -----
 
+1999-08-20-a Lower Cambrian vertebrates from south China.pdf
+Shu, D-G.; Luo, H-L.; Conway Morris, S.; Zhang, X-L.; Chen, L.; Han, J.; Zhu, M.; Li, Y.; Chen, L-Z.;
+
+TREE
+P Chordata
+  BP Tunicata
+  BP Cephalochordata
+  BP Vertebrata
+    C Agnatha
+      F Myxinidae
+      E
+        g Myllokunmingia gen. nov. (Shu, Zhang, & Han)
+          Myllokunmingia fengjiaoa sp. nov. (Shu, Zhang, & Han)
+        E
+          E
+            E
+              g Jamoytius
+              O Petromyzontiformes
+            g Haikouichthys gen. nov. (Luo, Hu, & Shu)
+              Haikouichthys ercaicunensis (sp. nov. (Luo, Hu, & Shu)
+          E
+            G Ostracodermi
+            E
+              E
+                E
+                  E Astraspida
+                  E
+                    E Arandaspida
+                    E Heterostraci
+                E Anaspida
+              E Thelodonti
+              E
+                E Galeaspida
+                E
+                  E
+                    E Pituriaspida
+                    E Osteostraci
+                  Z Ostracodermi
+                  E Gnathostomata
+
+
+-----
+
 1998-12-00-p Evolution within a Bizarre Phylum- Homologies of the First Echinoderms.pdf
 Mooi, R.; David, B.
 
@@ -2606,6 +2717,19 @@ Deuterostomes
 Lefebvre, B.
 
 Asserts homologies that prevent the cornute->mitrate inversion required by the calcichordate theory.
+
+-----
+
+1999-09-24-a An early Cambrian craniate-like chordate.pdf
+Chen, J-Y.; Huang, D-Y.; Li, C-W.
+
+TREE
+P Chordata
+  E Craniata
+    g Yunnanozoon ?
+    g Haikouella gen. nov.
+      Haikouella lanceolata gen. et sp. nov.
+    E Vertebrata
 
 -----
 
@@ -3140,6 +3264,18 @@ NON-CLADOGRAM that looks vaguely like:
 
 -----
 
+2001-03-15-a An Early Cambrian tunicate from China.pdf
+Shu, D-G.; Chen, L. Han, J.; Zhang, X-L.;
+
+TREE
+P Chordata
+  UP Urochordata
+    C Ascidiacea
+      g Cheungkongella gen.nov.
+        Cheungkongella ancestralis gen. et sp. nov.
+
+-----
+
 2001-03-17-a Comparison Of Flattened Blastozoan Echinoderms- Insights From The New Early Ordovician Eocrinoid Haimacystis Rozhnovi.pdf
 Sumrall, C.D.; Sprinkle, J.; Guensburg, T.E.
 
@@ -3224,15 +3360,58 @@ Sumrall, C.D.; Schumacher, G.A.
 2001-09-13-a Primitive deuterostomes from the Chengjiang Lagerstätte (Lower Cambrian, China).pdf
 Shu, D.-G.; Morris, S.C.; Han, J.; Chen, L.; Zhang, X-L.; Liu, H.-Q.; Liu, J.-N.
 
-P Vetulicolia nov.
-  C Vetulicolida (Chen & Zhou 1997)
-    F Didazoonidae (Shu & Han fam. nov.)
-      g Didazoon (Shu & Han gen. nov.)
-        Didazoon haoae (Shu & Han sp. nov.)
+SP Deuterostomia
+  P Vetulicolia nov.
+    C Vetulicolida (Chen & Zhou 1997)
+      F Didazoonidae (Shu & Han fam. nov.)
+        g Didazoon (Shu & Han gen. nov.)
+          Didazoon haoae (Shu & Han sp. nov.)
+        g Pomatrum (possibly not in Didazoonidae? text unclear)
+            Pomatrum ventralis
+        g Xidazoon (possibly not in Didazoonidae? text unclear)
+            Xidazoon stephanus
+      g Vetulicola
+        V cuneata
+        Vetulicola rectangulata
+
+It is not entirely clear that Pomatrum and Xidazoon 
+-----
+
+2005-09-20-a On the Phylum Vetulicolia.pdf
+
+E
+  E Choanoflagellata
+  E Metazoa -> [multicellularity; hox genes; apical-abapical axis]
+    E Porifora
+    G Diploblastica
+    E Placozoa
+    E Cnidaria
+    E Ctenophora
+    Z Diploblastica
+    E Bilateria -> [hox gene cluster; antero-posterior axis; first mouth]
+      G Triploblastica
+      G Protostomia
+      E Ecdysozoa
+      E Lophotrochozoa
+      Z Protostomia
+      E Deuterostomia -> [axial complex; second mouth; gill slits]
+        E Vetulicolia
+        E Ambulacraria
+        E Urochordata
+        E Cephalochordata
+        E Vertebrata -> [multiple hox gene clusters; neural crest; tripartite brain]
+          E Tetroblastica
+            g Haikouichthys
+            E Mammalia
+
+
+-----
 
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 -----------------------------------------------------------------
+
+-----
 
 2018-07-20-a A Re-Interpretation Of The Ambulacralsystem Of Eumorphocystis (Blastozoa, Echinodermata) And Its Bearing On Theevolution Of Early Crinoids.pdf
 
@@ -3242,57 +3421,161 @@ C Diploporita (Müller, 1954)
       G Eumorphocystis (Branson & Peck, 1940)
 (conclusion: Crinoids are rooted within Blastozoans, w no relation to Edrioast.)
 
+-----
+
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 -----------------------------------------------------------------
+
+-----
+
+2020-07-27-a Cambrian Tentaculate Worms and the Origin of the Hemichordate Body Plan.pdf
+
+TREE
+E
+  E Cnidaria
+  E
+    E Polychaeta
+    E Sipuncula
+  E Deuterostomia
+    E Ambulcraria
+      E Echinodermata (total)
+        E
+          E Echinodermata (crown)
+            E Crinoidea
+            E
+              E Asteroidea
+              E
+                E Ophiuroidea
+                E
+                  Echinoidea
+                  Holothuroidea
+            g Helicocystis
+          E Soluta
+        g Ctenoimbricata
+      E Hemichordata (total)
+        E Hemichordata (crown)
+          E Pterobranchia
+            g Rhabdopleura
+            g Cephalodiscus
+          E Enteropneusta
+            E
+              E
+                g Protoglossus
+                g Saccoglosus
+                E
+                  g Harrimania
+                  g Stereobalanus
+                g Xenopleura
+                g Saxipendium
+                E
+                  g Spengelia
+                  E
+                    g Schizocardium
+                    E
+                      g Balanoglossus
+                      g Ptychodera
+                      g Glossobalanus
+                g Willeyia
+              g Glandiceps
+            g Spartobranchus
+          g Oesia
+        g Gyaltsenglossus
+    E Chordata
+      E Urochordata
+      E
+        E Cephalochordata
+        E Vertebrata
+
+-----
+
+2020-08-19-a A new species of the deuterostome Herpetogaster from the early Cambrian Chengjiang biota of South China.pdf
+
+TREE
+E Deuterostomia (Grobben 1908)
+  E Ambulacraria (Metschnikoff 1881)
+    E Cambroernida (Carron, Conway Morris, & Shu 2010)
+      g Herpetogaster (Carron, Conway Morris, & Shu 2010)
+        Herpetogaster collinsi (Carron, Conway Morris, & Shu 2010)
+        Herpetogaster haiyanensis n. sp.
+
+-----
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+
+-----
 
 2023-04-19-a Cambrian stem-group ambulacrarians and the nature of the ancestral deuterostome.pdf
 
-Deuterostomia
-  Chordata (total)
-    Vetulicola
-    Pomatrum
-    Ooedigera
-    Chordata (crown)
-      Cephalochordata
-      [Olfactores]
-        Urochordata
-        - Vertebrata
-          Myllokunmingia
-  Ambulacraria (total)
-    [Stem group (Cambroernida)]
-      Herpetogaster
-      - Phlogites
-        - Rotadiscus
-          - Eldonia
-            Pararotadiscus
-    [Crown group]
-      [Echinodermata]
-        Courtessolea
-        - Helicoplacus
-          - Helicocystis
-            - Crinoidea
-              Gogia
-          - Asteroidea
-            - Ophiuroidea
-              - Echinoidea
-                Holothuroidea
-      [Hemichordata]
-        [Pterobranchia]
-          Gyaltsenglossus
-          - Rhabdopleura
-            - Atubaria
-              Cephalogdiscus
-        [Enteropneusta]
-          Spartobranchus
-          Oesia
-          - Saccoglossus
-            - Spengelidae
-              Ptychoderidae
+TREE
+E Deuterostomia -> [non-oral pharyngeal openings]
+  E Chordata (total) -> [if first deut. had hyrovascular tenticals, they are lost here]
+    G Vetulicolia
+    g Vetulicola
+    g Pomatrum
+    g Ooedigera
+    Z Vetulicolia
+    E Chordata (crown) -> [post-anal structure; gill bars]
+      E Cephalochordata
+      E Olfactores
+        E Urochordata
+        E
+          E Vertebrata
+          g Myllokunmingia
+  E Ambulacraria (total) -> [free feeding appendages; more probability of a hydrovascular tentacle system]
+    E Cambroernida
+      g Herpetogaster
+      E
+        g Phlogites
+        E
+          g Rotadiscus
+          E
+            Eldonia eumorpha
+            Eldonia ludwigi
+            g Pararotadiscus
+    E Ambulacraria (crown) -> [possible post-anal structure; possible gill bars]
+      E Echinodermata (total)
+        g Courtessolea
+        E Echinodermata (crown)
+          g Helicoplacus
+          E
+            g Helicocystis
+            E
+              E Crinoidea
+              g Gogia
+          E
+            E Asteroidea
+            E
+              E Ophiuroidea
+              E
+                E Echinoidea
+                E Holothuroidea
+      E Hemichordata -> [post-anal structure, if not already present; possible gill bars]
+        E
+          g Gyaltsenglossus
+          E
+            g Rhabdopleura
+            E
+              g Atubaria
+              g Cephalogdiscus
+        E
+          g Spartobranchus
+          g Oesia
+          E
+            g Saccoglossus
+            E
+              E Spengelidae
+              E Ptychoridae
+
+-----
 
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 -----------------------------------------------------------------
+
+-----
 
 2024-01-02-x Origin and Early Evolution of Echinoderms.pdf
 
