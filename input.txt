@@ -3772,8 +3772,162 @@ E
 
 -----
 
-2005-09-20-a On the Phylum Vetulicolia.pdf
+2004-11-02-a New Vetulicoliids from the Lower Cambrian Guanshan Fauna, Kunming.pdf
+Luo, H.; Fu, X.; Hu, S.; Li, Y.; Chen, L.; You, Ting.; Liu, Qi.;
 
+TREE
+P Vetulicolia (Shu et al. 2001)
+  C Vetulicolida (Chen & Zhou 1997)
+    O Vetulicolida (Hou & Bergström 1997) (sic, same as Class?)
+      F Vetulicolidae (Hou & Bergström 1997)
+        g Vetulicola (Hou 1987)
+          Vetulicola cuneatus (Hou 1987)
+          Vetulicola rectangulata (Luo & Hu 1999)
+          Vetulicola gangtoucunensis sp. nov. (Luo, Fu, & Hu)
+  [Incertae sedis]
+    g Pomatrum (Luo & Hu 1999)
+    g Xidazoon (Shu, Conway Morris, & Zhang 1999)
+    g Didazoon (Shu & Han 2001)
+    g Heteromorphus (Luo & Hu 1999)
+    g Banffia (Walcott 1911)
+    g Yuyuanozoon (Chen, Feng, & Zhu 2003)
+
+-----
+
+2004-07-29-a Bayesian Inference of the Metazoan Phylogeny- A Combined Molecular and Morphological Approach.pdf
+Glenner, H.; Hansen, A.J.; Sørensen, M.V.; Ronquist, Frederik, Huelsenbeck, J.P.; Willerslev, E.
+
+TREE
+E
+  E Choanoflagellata
+  E Metazoa
+    G Porifera
+    Z Porifera
+    E Ctenophora
+    E
+      E
+        E Placozoa
+        E
+          E Anthozoa
+          E Scyphozoa
+      E
+        E Acoela
+        E
+          E Gnathostomulida
+          E
+            E Gastrotricha (pars)
+            E
+              E
+                E
+                  E Polycladida
+                  E
+                    E Monogenea
+                    E Trematoda
+                E
+                  E Nemertodermatida
+                  E
+                    E Tricladida
+                    E Nematoda (pars)
+              E
+                E Gastroicha (pars)
+                E
+                  E
+                    E Entoprocta
+                    E
+                      E Cycliophora
+                      E
+                        G Rotifera
+                        Z Rotifera
+                        E Acanthocephalia
+                  E
+                    E Lophotrochozoa
+                      E
+                        E Echiura
+                        E Nemertini
+                      E
+                        E
+                          E
+                            E Oligochaeta
+                            E Ploychaeta
+                          E
+                            E Phoronida
+                            E Brachiopoda
+                        E
+                          E
+                            E Bivalvia
+                            E Ectoprocta (pars)
+                          E
+                            E Gastropoda
+                            E
+                              E Sipuncula
+                              E Ectoprocta (pars)
+                    E
+                      E Deuterostomia
+                        E Urochordata
+                          E
+                            E Cephalochordata
+                            E Vertebrata
+                          E
+                            E Hemichordata
+                              E Pterobranchia
+                              E Enteropneusta
+                            E Echinodermata
+                      E Ecdysozoa
+                        E
+                          E Priapulida
+                          E Kinorhyncha
+                        E
+                          E
+                            E Nematoda (pars)
+                            E Nematomorpha
+                          E
+                            E
+                              E Crustacea
+                              E
+                                E Chelicerata
+                                E Insecta
+                            E
+                              E Tardigrada
+                              E
+                                E Onychophora
+                                E Chaetognatha
+
+-----
+
+2005-03-25-a A New Metazoan From The Middle Cambrian Of Utah And The Nature Of The Vetulicolia.pdf
+Briggs, D.E.G.; Lieberman, B.S.; Halgedahl, S.L.; Jarrard, R.D.
+
+TREE
+P Vetulicolia ? (Shu et al. 2001)
+  C Vetulicolida ? (Chen & Zhou 1997)
+    g Skeemella gen. nov.
+      Skeemella clavula sp. nov.
+    g Banffia
+    g Didazoon
+    g Pomatrum
+    g Vetulicola
+    g Xidazoon
+    g Yuyuanozoon
+
+-----
+
+2005-06-00-p Banffia constricta, a putative vetulicolid from the Middle Cambrian Burgess Shale
+Caron, J.
+
+(note- paper not available, information from abstract):
+
+TREE
+P Vetulicolia
+  C Banffozoa
+    g Banffia
+      Banffia constricta
+
+-----
+
+2005-09-20-a On the Phylum Vetulicolia.pdf
+Shu, D.
+
+TREE
 E
   E Choanoflagellata
   E Metazoa -> [multicellularity; hox genes; apical-abapical axis]
@@ -3795,10 +3949,103 @@ E
         E Urochordata
         E Cephalochordata
         E Vertebrata -> [multiple hox gene clusters; neural crest; tripartite brain]
-          E Tetroblastica
+          E Tetroblastica -> [mobile neural crest cells]
             g Haikouichthys
             E Mammalia
 
+TREE
+P Vetulicolia (Shu et al. 2001)
+  C Vetulicolida (Chen & Zhou 1997)
+    F Beidazoonidae fam. nov,
+      g Beidazoon gen. nov.
+        Beidazoon venustum gen. nov., sp. nov.
+    g Vetulicola
+    g Xidazoon
+    g Didazoon
+    g Pomatrum
+  C Heteromorphida class nov.
+    g Heteromorphus
+    g ["uncertain"]
+      Form A
+
+TREE
+E -> [segmentation]
+  E -> [gill slits]
+    E -> [five pairs of gill slits]
+      E Vetulicolia
+    E
+      E Ambulacraria
+        E -> [loss of anterior segmentation]
+        E
+          E -> [gut restricted to anterior body]
+            E -> [calcareous stereom]
+              E -> [loss of tail]
+                E -> [loss of gill slit]
+                  E Echinodermata -> [pentaradiality
+              E Homalozoa
+            E Vetulocystida -> [oral/anal cones, with ribs]
+          E
+            E Yunnanozoa ? -> [anterior "skirt"]
+            E -> [loss of posterior segmentation]
+              E -> [tri-coelomic body]
+                E Hemichordata -> [stomochord]
+       E Chordata
+          E
+            E Yunnanozoa ? -> [anterior "skirt"]
+            E -> [urochord]
+              E -> [myomeres]
+                E -> [loss of segmentation]
+                  E Urochordata -> [branchial basket]
+                E
+                  E Cephalochordata -> [full notochord]
+                  E -> [tripartite brain]
+                    E Vertebrata [neural crest]
+
+Note that:
+* Skeemella is excluded from the Vetulicolia
+* Cheungkongella is associated with the Tunicata
+* Phlogites is separated from Cheungkongella
+* Vetulocystis and Dianchicysts are considered probable echinoderm ancestors
+* Myllokunmingia is distinct from Haikouichthys
+
+-----
+
+2006-08-29-a The Systematics And Phylogenetic Relationships Of Vetulicolians.pdf
+Aldridge, R.J.; Hou, X-G.; Siveter, David J.; Siveter, Derek J.; Gabbott, Sarah E.
+
+Tree
+E Vetulicolia
+  C Vetulicolida (Chen & Zhou 1997)
+    O Vetulicolata (Hou & Bergström 1997)
+      F Vetulicoidae (Hou & Bergström 1997)
+        g Vetulicola (Hou 1987)
+          Vetulicola cuneatus (Hou 1987)
+          Vetulicola monile sp. nov.
+          Vetulicola rectangulata (Luo & Hu in Luo et al. 1999)
+          Vetulicola sp.
+        g Bullivetula gen. nov.
+          Bullivetula variola sp. nov
+        g Yuyuanozoon (Chen, Feng, & Zhu in Chen et al. 2003)
+          Yuyuanozoon magnificissimi (Chen, Feng, & Zhu in Chen et al. 2003)
+      F Didazoonidae (Shu & Han in Shu et al. 2001)
+        g Didazoon (Shu & Han in Shu et al. 2001)
+          Didazoon haoae (Shu & Han in Shu et al. 2001)
+          Didazoon sp. ?
+        g Pomatrum (Luo & Hu in Luo et al. 1999) (== Xidazoon)
+          Pomatrum ventralis (Lue & Hu in Luo et al. 1999) (== X. Stephanus)
+  C Banffozoa (Caron 2006)
+    O Banffiata nov.
+      F Banffidae (Caron 2006)
+        g Banffia (Walcott 1911)
+          Banffia constricta (Walcott 1911)
+        g Heteromorphus (Luo & Hu in Luo et al. 1999)
+          Heteromorphus confusus (Chen & Zhou 1997) (== B. conf / H. logicaudatus)
+    [Incertae sedis]
+      g Skeemella (Briggs et al. 2005)
+        Skeemella clavula (Briggs et al. 2005)
+
+
+TODO: MOAR TREES HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 -----
 
