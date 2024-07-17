@@ -3401,6 +3401,15 @@ Sumrall, C.D.; Schumacher, G.A.
 
 -----
 
+2001-06-26-c The Limbless Animal Banffia Constricta From The Burgess Shale (Middle Cambrian, Canada)- A Stem-Group Arthropod? [ABSTRACT].pdf
+Caron, J.
+
+Conference examining Banffia constricta specimens eventually discussed in detail in "2005-05-06 Banffia constricta, a putative vetulicolid from the Middle Cambrian Burgess Shale".
+
+"Affinities with Xidazoon, Vetulicola and Banffia confusa, limbless and problematic fossils from the Lower Cambrian Chengjiang fauna of China, are discussed."
+
+-----
+
 2001-09-13-a Primitive deuterostomes from the Chengjiang Lagerstätte (Lower Cambrian, China).pdf
 Shu, D.-G.; Morris, S.C.; Han, J.; Chen, L.; Zhang, X-L.; Liu, H.-Q.; Liu, J.-N.
 
@@ -3911,16 +3920,16 @@ P Vetulicolia ? (Shu et al. 2001)
 
 -----
 
-2005-06-00-p Banffia constricta, a putative vetulicolid from the Middle Cambrian Burgess Shale
+2005-05-06-a Banffia constricta, a putative vetulicolid from the Middle Cambrian Burgess Shale.pdf
 Caron, J.
 
-(note- paper not available, information from abstract):
 
 TREE
-P Vetulicolia
-  C Banffozoa
-    g Banffia
-      Banffia constricta
+P Vetulicolia (Shu et al. 2001)
+  C Banffozoa class nov.
+    F Banffiidae fam. nov.
+      g Banffia (Walcott 1911)
+        Banffia constricta (Walcott 1911)
 
 -----
 
@@ -4014,7 +4023,7 @@ Note that:
 Aldridge, R.J.; Hou, X-G.; Siveter, David J.; Siveter, Derek J.; Gabbott, Sarah E.
 
 Tree
-E Vetulicolia
+E Vetulicolia (dispute phylum rank until placement is clear)
   C Vetulicolida (Chen & Zhou 1997)
     O Vetulicolata (Hou & Bergström 1997)
       F Vetulicoidae (Hou & Bergström 1997)
@@ -4045,7 +4054,116 @@ E Vetulicolia
         Skeemella clavula (Briggs et al. 2005)
 
 
-TODO: MOAR TREES HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+TREE (single most parsimonious)
+E
+  E
+    E
+      E
+        E
+          E Arthropoda
+          E Anomalocaridida
+        E Onychophora
+      E Annelida
+    E Kinorhyncha
+  E
+    E Echinodermata
+    E
+      E Enteropneusta
+        E
+          E Tunicata
+          E Vetulicolida
+            g Pomatrum
+            g Vetulicola
+
+        E Euchordata
+          E Cephalochordata
+          E Vertebrata
+
+TREE (consensus of 4 trees using appendix data matrix)
+E
+  E
+    E
+      E
+        E
+          E Arthropoda
+          E Anomalocaridida
+        E Onychophora
+      E Annelida
+    E
+      E Vetulicolia
+        G Banffozoa
+        g Skeemella
+        E
+          G Banffiidae
+          g Banffia
+          E
+            g Heteromorphus
+            Z Banffiidae
+            Z Banffozoa
+            C Vetulicolida
+              G Didazoonidae
+              g Didazoon
+              g Pomatrum
+              Z Didazoonidae
+              F Vetulicolidae
+                g Yuyuanozoon
+                E
+                  g Beidazoon (Bullivetula)
+                  g Vetulicola
+      E Kinorhyncha
+  E Deuterostomia
+    E Echinodermata
+    E
+      E Enteropneusta
+      E
+        E Tunicata
+        E Euchordata
+          E Cephalochordata
+          E Vertebrata
+
+TREE (with Vetulicolians scored positive for deuterostome characteristics)
+E
+  E
+    E
+      E
+        E
+          E Arthropoda
+          E Anomalocaridida
+        E Onychophora
+      E Annelida
+    E Kinorhyncha
+  E
+    E Echinodermata
+    E
+      E Enteropneusta
+        E
+          E Tunicata
+          E Vetulicolia
+            g Skeemella
+            G Banffozoa
+            G Banffiidae
+            g Banffia
+            E
+              g Heteromorphus
+              Z Banffiidae
+              Z Banffozoa
+              C Vetulicolida
+                G Didazoonidae
+                g Didazoon
+                g Pomatrum
+                Z Didazoonidae
+                F Vetulicolidae
+                  g Yuyuanozoon
+                  E
+                    g Beidazoon (Bullivetula)
+                    g Vetulicola
+        E Euchordata
+          E Cephalochodata
+          E Vertebrata
+
+TREE (with Vetulicolians scored as having jointed and specialized limbs)
+
+        
 
 -----
 
