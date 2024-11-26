@@ -1,7 +1,7 @@
 {{short description|Extinct Cambrian group of animals}}
 {{Update|inaccurate=yes|date=September 2024|talksection=Inconsistent}}
 {{Automatic taxobox
-| fossil_range = about {{Fossilrange|earliest=545|520|501}} [[Cambrian Stage 3]]—[[Drumian]] 
+| fossil_range = about {{Fossilrange|earliest=545|520|501}} [[Cambrian Stage 3]]—[[Drumian]]
 (Possible [[Ediacaran]] record)<ref name="x773">{{harvnb|Liu|Chen|Li|Tang|2024}}</ref>
 | image = Vetulicola cuneata ウェツリコラ クニエータ 1.jpg
 | image_caption = Fossil of ''[[Vetulicola cuneata]]''
@@ -14,9 +14,26 @@
 * {{extinct}}Vetulicolida
 }}
 
-'''Vetulicolia'''<ref group="note">The taxon name, Vetulicolia, is derived from the type genus, ''[[Vetulicola]]'', which is a compound [[Latin]] word composed of ''vetuli'' "old" and ''cola'' "inhabitant".</ref> is a [[clade]] of [[bilaterian]] [[animal]]s encompassing several [[extinct]] species belonging to the [[Cambrian period]].<ref name="Shu2005">{{harvnb|Shu|2005}}</ref><ref name="McMenamin2019">{{harvnb|McMenamin|2019}}</ref> The clade was created by Degan Shu and his research team in 2001,<ref name="Shu2001">{{harvnb|Shu|Conway Morris|Han|Chen|2001}}</ref> and named after ''[[Vetulicola cuneata]]'', the first species of the phylum described in 1987.<ref name="BriggsFortey2005">{{harvnb|Briggs|Fortey|2005}}</ref>
+'''Vetulicolia''' is a group of [[bilaterian]] [[animal]]s encompassing several [[extinct]] species from the [[Cambrian]],<ref name="Shu2005">{{harvnb|Shu|2005}}</ref><ref name="McMenamin2019">{{harvnb|McMenamin|2019}}</ref> and possibly [[Ediacaran]],<ref>{{harvnb|Liu|Chen|Li|Tang|2024}}</ref> periods.
 
+The clade was created by Degan Shu and his research team in 2001,<ref name="Shu2001">{{harvnb|Shu|Conway Morris|Han|Chen|2001}}</ref> and named after ''[[Vetulicola cuneata]]'', the first species of the phylum described in 1987.<ref name="BriggsFortey2005">{{harvnb|Briggs|Fortey|2005}}</ref>
+
+==Etymolygy==
+The taxon name, Vetulicolia, is derived from the type genus, ''[[Vetulicola]]'', which is a compound [[Latin]] word composed of ''vetuli'' "old" and ''cola'' "inhabitant".
+
+==Description==
 The vetulicolian [[body plan]] comprises two parts: a voluminous [[rostral (anatomical term)|rostral]] ([[anatomical terms of location|anterior]]) forebody, tipped with an anteriorly positioned [[mouth]] and lined with a lateral row of five round to oval-shaped openings on each side, which have been interpreted as [[gill]]s (or at least [[body orifice|orifice]]s in the vicinity of the [[pharynx]]); and a [[caudal (anatomical term)|caudal]] ([[posterior (anatomy)|posterior]]) section that primitively comprises seven [[body segment]]s and functions as a [[tail]]. All vetulicolians lack preserved [[appendage]]s of any kind, having no legs, feelers or even [[simple eye in invertebrates|eye spot]]s.<ref name=Chen2003>{{harvnb|Chen|Feng|Ma|Li|2003}}</ref> The area where the anterior and posterior parts join is constricted.<ref name="McMenamin2019" />
+
+== Ecology and lifestyle ==
+[[File:Skeemella clavula KUMIP 310501.jpg|thumb|Fossil of ''[[Skeemella clavula]]'']]
+
+From their superficially tadpole-like forms, leaf or paddle-shaped tails, and various degrees of streamlining, it is assumed that all vetulicolians discovered to date were swimming animals that spent much, if not all, of their time living in water.<ref name=Aldridge /> Some groups, like the genus ''Vetulicola'', were more streamlined (complete with ventral [[keel]]s) than other groups, such as the tadpole-like Didazoonidae.<ref name=Aldridge />
+
+Because all vetulicolians had mouths which had no features for chewing or grasping, it is assumed that they were not predators.<ref name="Aldridge" /> Since vetulicolians possessed gill slits, many researchers regard these organisms as [[planktivores]]. The sediment infills in the guts of their fossils have caused some to suggest that they were deposit feeders. This idea has been contested, as deposit feeders tend to have straight guts, whereas the hindguts of vetulicolians were spiral-shaped. Some researchers propose that the vetulicolians were "selective deposit-feeders" which actively swam from one region of the seafloor to another, while supplementing their nutrition with filter-feeding.<ref name="Aldridge" />
+
+==Taxonomy and evolution==
+
+Vetulicolians are considered to be to [[Deuterostomes]] due to having pharyngeal openings and [[stem group|stem]]-[[Chordates]] due to having a notochord.
 
 Their [[taxonomic]] affinity has been uncertain; they have been interpreted as [[stem group|stem]]- and [[crown group|crown-group]] [[arthropod]]s, stem-group [[vertebrate]]s,<ref name="Shu2003">{{harvnb|Shu|2003}}</ref> and early [[deuterostome]]s (a group which as a whole includes the vertebrates, other [[invertebrate]] [[chordate]]s, [[echinoderm]]s and [[hemichordate]]s). The general scientific consensus before 2001 considered them early limbless [[arthropod]]s but now considers them early deuterostomes.<ref>Dominguez, Patricio and Jeffries, Richard. (2003). Fossil evidence on the origin of appendicularians. Paper read at International Urochordate Meeting 2003. Abstract at [2] – URL retrieved June 22, 2006.</ref> Vetulicolian fossils examined in 2014 show the presence of [[notochord]]-like structures, and it was concluded that vetulicolians are crown-group [[chordate]]s and probably related to modern [[tunicate]]s.<ref name="Paterson2014">{{cite journal |last1=García-Bellido |first1=Diego C |last2=Paterson |first2=John R |year=2014 |title=A new vetulicolian from Australia and its bearing on the chordate affinities of an enigmatic Cambrian group |journal=BMC Evolutionary Biology |volume=14 |page=214 |doi=10.1186/s12862-014-0214-z |pmc=4203957 |pmid=25273382 |doi-access=free }}</ref> Research from 2017 rather indicates vetulicolians are related to ''[[Saccorhytus]]'', another basal deuterostome group,<ref>{{Cite journal|last1=Han|first1=Jian|last2=Conway Morris|first2=Simon |author2-link=Simon Conway Morris |last3=Ou|first3=Qiang|last4=Shu |first4=Degan|last5=Huang|first5=Hai|title=Meiofaunal deuterostomes from the basal Cambrian of Shaanxi (China)|journal=Nature |volume=542|issue=7640 |pages=228–231 |doi=10.1038/nature21072|pmid=28135722|year=2017 |bibcode=2017Natur.542..228H|s2cid=353780}}</ref> although another study shows the possibility that ''Saccorhytus'' is an [[ecdysozoa]]n instead of a deuterostome.<ref>{{Cite journal |last1=Liu |first1=Yunhuan |last2=Carlisle |first2=Emily |last3=Zhang |first3=Huaqiao |last4=Yang |first4=Ben |last5=Steiner |first5=Michael |last6=Shao |first6=Tiequan |last7=Duan |first7=Baichuan |last8=Marone |first8=Federica |last9=Xiao |first9=Shuhai |last10=Donoghue |first10=Philip C. J. |date=2022-08-17 |title=Saccorhytus is an early ecdysozoan and not the earliest deuterostome |url=https://www.nature.com/articles/s41586-022-05107-z |journal=Nature |volume=609 |issue=7927 |language=en |pages=541–546 |doi=10.1038/s41586-022-05107-z |pmid=35978194 |bibcode=2022Natur.609..541L |s2cid=251646316 |issn=1476-4687|hdl=1983/454e7bec-4cd4-4121-933e-abeab69e96c1 |hdl-access=free }}</ref> A 2024 paper, however, found vetulicolians to be a paraphyletic group at the base of Chordata. <ref name="Mussini2024">{{cite journal |last1=Mussini |first1=G. |last2=Smith |first2=M. P. |last3=Vinther |first3=J. |last4=Rahman |first4=I. A. |last5=Murdock |first5=D. J. E. |last6=Harper |first6=D. A. T. |last7=Dunn |first7=F. S. |title=A new interpretation of ''Pikaia'' reveals the origins of the chordate body plan |journal=Current Biology |date=2024 |volume=34 |issue=13 |pages=2980–2989.e2 |doi=10.1016/j.cub.2024.05.026 |doi-access=free |pmid=38866005 }}</ref> Banffozoa’s inclusion within this group is dubious, due to their lack of gill slits and apparent gut diverticula, and so they may be within Protostomia instead.<ref name=Caron2005>{{cite journal |last1=Caron |first1=Jean-Bernard |title=Banffia constricta , a putative vetulicolid from the Middle Cambrian Burgess Shale |journal=Transactions of the Royal Society of Edinburgh: Earth Sciences |date=June 2005 |volume=96 |issue=2 |pages=95–111 |doi=10.1017/S0263593300001255}}</ref>
 
@@ -73,13 +90,6 @@ A 2024 phylogenetic analysis by Mussini and colleagues found vetulicolians to be
                                  |1=''[[Myllokunmingia]]''
                                  |2=[[Vertebrate|Vertebrata]]
 }} }} }} }} }} }} }} }} }} }} }} }}
-
-== Ecology and lifestyle ==
-[[File:Skeemella clavula KUMIP 310501.jpg|thumb|Fossil of ''[[Skeemella clavula]]'']]
-
-From their superficially tadpole-like forms, leaf or paddle-shaped tails, and various degrees of streamlining, it is assumed that all vetulicolians discovered to date were swimming animals that spent much, if not all, of their time living in water.<ref name=Aldridge /> Some groups, like the genus ''Vetulicola'', were more streamlined (complete with ventral [[keel]]s) than other groups, such as the tadpole-like Didazoonidae.<ref name=Aldridge />
-
-Because all vetulicolians had mouths which had no features for chewing or grasping, it is assumed that they were not predators.<ref name="Aldridge" /> Since vetulicolians possessed gill slits, many researchers regard these organisms as [[planktivores]]. The sediment infills in the guts of their fossils have caused some to suggest that they were deposit feeders. This idea has been contested, as deposit feeders tend to have straight guts, whereas the hindguts of vetulicolians were spiral-shaped. Some researchers propose that the vetulicolians were "selective deposit-feeders" which actively swam from one region of the seafloor to another, while supplementing their nutrition with filter-feeding.<ref name="Aldridge" />
 
 == Classification ==
 * Superphylum '''[[Deuterostomia]]'''
