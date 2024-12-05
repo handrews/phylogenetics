@@ -14,8 +14,7 @@
 * {{extinct}}Vetulicolida
 }}
 
-'''Vetulicolia''' is a group of [[bilaterian]] [[animal]]s encompassing several [[extinct]] species from the [[Cambrian]],<ref name="Shu2005">{{harvnb|Shu|2005}}</ref><ref name="McMenamin2019">{{harvnb|McMenamin|2019}}</ref> and possibly [[Ediacaran]],<ref>{{harvnb|Liu|Chen|Li|Tang|2024}}</ref> periods.  While initially erected as a [[monophyletic]] [[clade]] in 2001<ref name="Shu2001">{{harvnb|Shu|Conway Morris|Han|Chen|2001}}</ref>, more recent research indicates that it is a basal [[evolutionary grade]] within the [[stem group]] of the [[Chordata]].
-
+'''Vetulicolia''' is a group of [[bilaterian]] [[animal]]s encompassing several [[extinct]] species from the [[Cambrian]],<ref name="Shu2005">{{harvnb|Shu|2005}}</ref><ref name="McMenamin2019">{{harvnb|McMenamin|2019}}</ref> and possibly [[Ediacaran]],<ref>{{harvnb|Liu|Chen|Li|Tang|2024}}</ref> periods.  While initially erected as a [[monophyletic]] [[clade]] with the [[taxonomic rank|rank]] of [[phylum]] in 2001<ref name="Shu2001">{{harvnb|Shu|Conway Morris|Han|Chen|2001}}</ref>, more recent research indicates that it is a basal [[evolutionary grade]] within the [[stem group]] of the [[Chordata]].
 
 ==Etymolygy==
 The taxon name, Vetulicolia, is derived from the type genus, ''[[Vetulicola]]'', which is a compound [[Latin]] word composed of ''vetuli'' "old" and ''cola'' "inhabitant".  It was named after ''[[Vetulicola cuneata]]'', the first species of the group described in 1987.<ref name="BriggsFortey2005">{{harvnb|Briggs|Fortey|2005}}</ref>
