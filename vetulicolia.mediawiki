@@ -47,38 +47,44 @@ Dominguez and Jefferies have argued, based on [[morphology (biology)|morphologic
 
 A 2024 phylogenetic analysis by Mussini and colleagues found vetulicolians to be a [[paraphyletic]] group of [[Stem group|stem]]-chordates, lying outside a clade formed by ''[[Yunnanozoon]]'', ''[[Cathaymyrus]]'', ''[[Pikaia]]'' and [[Crown group|crown]]-chordates.<ref name="Mussini2024"/>
 
-{{Clade|style=font-size:75%; line-height:40%
-|label1=[[Chordate|Chordata]]
-|grouplabel1={{Clade labels |top1=30% |color1=indigo |label1=Vetulicolia }}
+{{barlabel|style=font-size:75%; line-height:40%
+|size=22
+|at1=0 |label1=Banffozoa |bar1=darkblue
+|at2=3 |label2=Vetulicolida |bar2=violet
+|at3=6 |label3=Vetulicolidae (Vetulicolida) |bar3=purple
+|at4=14 |label4=Didazoonidae (Vetulicolida) |bar4=indigo
+|cladogram={{Clade
+|label1=[[Chordata]]
 |1={{Clade
-   |1=''[[Banffia]]'' |barbegin1=indigo
-   |2=''[[Heteromorphus]]'' |bar2=indigo
+   |1=''[[Banffia]]'' |barbegin1=darkblue
+   |2=''[[Heteromorphus]]'' |bar2=darkblue
    |3={{Clade
-      |1=''[[Skeemella]]'' |bar1=indigo
+      |1=''[[Skeemella]]'' |barend1=darkblue
       |2={{Clade
-         |1=''[[Nesonektris]]'' |bar1=indigo
+         |1=''[[Nesonektris]]'' |barbegin1=violet
          |2={{Clade
             |1={{Clade
-               |1=''[[Ooedigera]]'' |bar1=indigo
+               |1=''[[Ooedigera]]''
                |2={{Clade
-                  |1=''[[Vetulicola cuneata]]'' |bar1=indigo
-                  |2=''[[Vetulicola gantoucunensis]]'' |bar2=indigo
-                  |3=''[[Vetulicola longbaoshanensis]]'' |bar3=indigo
-                  |4=''[[Vetulicola rectangulata]]'' |bar4=indigo
+                  |1=''[[Vetulicola cuneata]]''
+                  |2=''[[Vetulicola gantoucunensis]]''
+                  |3=''[[Vetulicola longbaoshanensis]]''
+                  |4=''[[Vetulicola rectangulata]]''
                   |5={{Clade
-                     |1=''[[Beidazoon]]'' |bar1=indigo
-                     |2=''[[Vetulicola monile]]'' |bar2=indigo
-               }} }} }}
+                     |1=''[[Vetulicola monile]]''
+                     |2=''[[Beidazoon]]''
+               }} }} }} |barbegin1=purple
             |2={{Clade
-               |1=''[[Didazoon]]'' |bar1=indigo
-               |2=''[[Pomatrum]]'' |bar2=indigo
-               |3=''[[Yuyuanozoon]]'' |barend3=indigo
+               |1=''[[Yuyuanozoon]]'' |barend1=purple
+               |2=''[[Didazoon]]'' |barbegin2=indigo
+               |3=''[[Pomatrum]]'' |barend3=indigo
                |4={{Clade
                   |1=''[[Yunnanozoon]]''
                   |2={{Clade
                      |1=''[[Cathaymyrus]]''
                      |2=''[[Pikaia]]''
-                     |label3=[[Crown group|Crown]]-[[Chordate|Chordata]]
+                     |label3=[[Chordata]]
+                     |sublabel3={{small|([[crown group]])}}
                      |3={{Clade
                         |1=[[Lancelet|Cephalochordata]]
                         |2={{Clade
@@ -89,6 +95,7 @@ A 2024 phylogenetic analysis by Mussini and colleagues found vetulicolians to be
                                  |1=''[[Myllokunmingia]]''
                                  |2=[[Vertebrate|Vertebrata]]
 }} }} }} }} }} }} }} }} }} }} }} }}
+}}
 
 == Classification ==
 * Superphylum '''[[Deuterostomia]]'''
