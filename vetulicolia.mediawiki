@@ -14,12 +14,11 @@
 * {{extinct}}Vetulicolida
 }}
 
-'''Vetulicolia''' is a group of [[bilaterian]] [[animal]]s encompassing several [[extinct]] species from the [[Cambrian]],<ref name="Shu2005">{{harvnb|Shu|2005}}</ref><ref name="McMenamin2019">{{harvnb|McMenamin|2019}}</ref> and possibly [[Ediacaran]],<ref>{{harvnb|Liu|Chen|Li|Tang|2024}}</ref> periods.
+'''Vetulicolia''' is a group of [[bilaterian]] [[animal]]s encompassing several [[extinct]] species from the [[Cambrian]],<ref name="Shu2005">{{harvnb|Shu|2005}}</ref><ref name="McMenamin2019">{{harvnb|McMenamin|2019}}</ref> and possibly [[Ediacaran]],<ref>{{harvnb|Liu|Chen|Li|Tang|2024}}</ref> periods.  While initially erected as a [[monophyletic]] [[clade]] in 2001<ref name="Shu2001">{{harvnb|Shu|Conway Morris|Han|Chen|2001}}</ref>, more recent research indicates that it is a basal [[evolutionary grade]] within the [[stem group]] of the [[Chordata]].
 
-The clade was created by Degan Shu and his research team in 2001,<ref name="Shu2001">{{harvnb|Shu|Conway Morris|Han|Chen|2001}}</ref> and named after ''[[Vetulicola cuneata]]'', the first species of the phylum described in 1987.<ref name="BriggsFortey2005">{{harvnb|Briggs|Fortey|2005}}</ref>
 
 ==Etymolygy==
-The taxon name, Vetulicolia, is derived from the type genus, ''[[Vetulicola]]'', which is a compound [[Latin]] word composed of ''vetuli'' "old" and ''cola'' "inhabitant".
+The taxon name, Vetulicolia, is derived from the type genus, ''[[Vetulicola]]'', which is a compound [[Latin]] word composed of ''vetuli'' "old" and ''cola'' "inhabitant".  It was named after ''[[Vetulicola cuneata]]'', the first species of the phylum described in 1987.<ref name="BriggsFortey2005">{{harvnb|Briggs|Fortey|2005}}</ref>
 
 ==Description==
 The vetulicolian [[body plan]] comprises two parts: a voluminous [[rostral (anatomical term)|rostral]] ([[anatomical terms of location|anterior]]) forebody, tipped with an anteriorly positioned [[mouth]] and lined with a lateral row of five round to oval-shaped openings on each side, which have been interpreted as [[gill]]s (or at least [[body orifice|orifice]]s in the vicinity of the [[pharynx]]); and a [[caudal (anatomical term)|caudal]] ([[posterior (anatomy)|posterior]]) section that primitively comprises seven [[body segment]]s and functions as a [[tail]]. All vetulicolians lack preserved [[appendage]]s of any kind, having no legs, feelers or even [[simple eye in invertebrates|eye spot]]s.<ref name=Chen2003>{{harvnb|Chen|Feng|Ma|Li|2003}}</ref> The area where the anterior and posterior parts join is constricted.<ref name="McMenamin2019" />
