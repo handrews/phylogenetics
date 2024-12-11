@@ -10,7 +10,7 @@
 | type_species = †''[[Vetulicola cuneata]]''
 | type_species_authority = Hou, 1987
 | subdivision_ranks = Classes
-| subdivision = * {{extinct}}Banffozoa?
+| subdivision = * {{extinct}}Banffozoa
 * {{extinct}}Vetulicolida
 }}
 
@@ -32,79 +32,146 @@ Because all vetulicolians had mouths which had no features for chewing or graspi
 
 ==Taxonomy and evolution==
 
-The current consensus view is that vetulicolians are [[stem group]] [[chordates]], although some researchers continue to raise other possibilities.<ref name=Onai2023>{{harvnb|Onai|Aramaki|Takai|Kakiguchi|2023|page=202}}</ref>  The possible identification of an [[endostyle]] bolstered theories of a [[tunicate]] affinity, but was later retracted, while the tentative identification of a [[notochord]] in ''[[Nesonektris]]'' has further supported overall chordate affinities.<ref name=Gee2020 />
+The phylum Vetulicolia was erected in 2001 to group the genera ''Vetulicola'', ''Didazoon'', and ''Xidazoon'' (later deemed a junior synonym of ''Pomatrum'').<ref name=flowering>{{harvnb|Hou|Siveter|Siveter|Aldridge|2017|page=272}}</ref>  Prior to this the [[class (biology)|class]] Vetulicolida had been defined in 1997 to group ''Vetulicola'' with the previously enigmatic genus ''[[Banffia]]'' due to its similar two-part construction, as well as apparent gill slits in a newly discovered specimen.<ref>{{harvnb|Chen|Zhou|1997|pages=95–96}}</ref>  Further work split ''Banffia'' into a separate class, called either Heteromorphida (for the new banffiid that had since been reassigned to a new genus, ''Heteromorphus''), or Banffozoa.  As the [[principle of priority]] only applies to names at the rank of [[family (biology)|family]] and below, some authors have granted precedence to the Heteromorphida (published in 2005),<ref name=Aldridge /> while others continue to use Banffozoa (published in 2006).<ref name=Mussini />
 
-Some workers have questioned the inclusion of Banffozoa within this group, due to their lack of gill slits and apparent gut diverticula, and so they may be within Protostomia instead.<ref name=Caron2005>{{harvnb|Caron|2005}}</ref>
+While subsequent studies supported the [[monophyly]] of Vetulicolia, it has also been noted that this would preclude vetulicolians representing a stepwise development of deuterostome characteristics, as the genus with the most such characteristics, ''Vetulicola'', is one of the most derived in the group.<ref name=flowering />
 
-Recent research has strengthened the arguments for placing vetulicolians, including banffozoans, in the chordate stem lineage rather than near the tunicates.  Like vetulicolians, the [[Cambroernida]] have a terminal anus.  Their placement as stem-group members of [[Ambulacraria]], the siter clade to the chordates, suggests that the last common ancestor of both groups lacked a post-anal tail.  Additionally, ''[[Herpetogaster]]'', the most basal cambroernid, is thought to have non-serialized pores for pharyngial openings.  If banffozoans are the most basal vetulicolians, This could explain why they also lack serialized pharyngeal structures.<ref>{{harvnb|Mussini|Smith|Vinther|Rahman|2024|page=6}}</ref>
+A 2024 phylogenetic analysis by Mussini and colleagues found vetulicolians to be a [[paraphyletic]] group of [[Stem group|stem]]-chordates, lying outside a clade formed by ''[[Yunnanozoon]]'', ''[[Cathaymyrus]]'', ''[[Pikaia]]'' and [[Crown group|crown]]-chordates.  In this arrangement, the genera assigned to class Banffozoa form the earliest part of the grade, with the Vetulicolida forming the remainder.<ref name="Mussini2024"/>  The family Vetulicolidae is labeled based on Li ''et al.'' (2018)<ref name=Li2017>{{harvnb|Li|Williams|Gabbott|Chen|2018|pages=1083–1084}}</ref>, while the three widely accepted members of Didazoonidae<ref>{{cite web|website=Paleobiology Database |url=https://paleobiodb.org/classic/basicTaxonInfo?taxon_no=txn:378668 |accessdate=December 8, 2024}}</ref> are in a [[polytomy]] with the clade of crownward chordates.
 
-The phylum Vetulicolia was erected to group the genera ''Vetulicola'', ''Didazoon'', and ''Xidazoon'' (later deemed a junior synonym of ''Pomatrum'').  While subsequent studies supported the [[monophyly]] of Vetulicolia, it has also been noted that this would preclude vetulicolians representing a stepwise development of deuterostome characteristics, as the genus with the most such characteristics, ''Vetulicola'', is one of the most derived in the group.<ref name=flowering>{{harvnb|Hou|Siveter|Siveter|Aldridge|page=272}}</ref>
-
-As stem chordates, vetulicolians (including banffozoans) are seen as the earliest part of the evolutionary sequence leading to first to more derived stem chordates such as ''[[Yunnanozoon]]'', and then onwards to the crown group chordates:
-
-
-A 2024 phylogenetic analysis by Mussini and colleagues found vetulicolians to be a [[paraphyletic]] group of [[Stem group|stem]]-chordates, lying outside a clade formed by ''[[Yunnanozoon]]'', ''[[Cathaymyrus]]'', ''[[Pikaia]]'' and [[Crown group|crown]]-chordates.  In this arrangement, the genera assigned to class Banffozoa form the earliest part of the grade, with the Vetulicolida forming the remainder.<ref name="Mussini2024"/>
-
-{{barlabel|style=font-size:75%; line-height:40%
-|size=22
-|at1=0 |label1=Banffozoa |bar1=darkblue
-|at2=3 |label2=Vetulicolida |bar2=violet
-|at3=6 |label3=Vetulicolidae (Vetulicolida) |bar3=purple
-|at4=14 |label4=Didazoonidae (Vetulicolida) |bar4=indigo
+The two proposed classes are shown as the earlier (Banffozoa a.k.a. Heteromorphida) and later (Vetulicolida) parts of the vetulicolian grade:
+{{barlabel
+|size=18
 |cladogram={{Clade
-|label1=[[Chordata]]
-|1={{Clade
-   |1=''[[Banffia]]'' |barbegin1=darkblue
-   |2=''[[Heteromorphus]]'' |bar2=darkblue
-   |3={{Clade
-      |1=''[[Skeemella]]'' |barend1=darkblue
+   |1=[[Protostomia]]
+   |label2=[[Deuterostomia]]
+   |2={{Clade
+      |label1=[[Ambulacraria]]
+      |1={{Clade
+         |1=[[Enteropneusta]]
+         |2=[[Echinodermata]]
+      }}
+      |label2=[[Chordata]]
       |2={{Clade
-         |1=''[[Nesonektris]]'' |barbegin1=violet
+         |1=[[Cephalochordata]]
          |2={{Clade
+            |label1=[[Vertebrata]]
+            |sublabel1={{small|([[total group]])}}
             |1={{Clade
-               |1=''[[Ooedigera]]''
+               |1=[[Yunnanozoa]]
                |2={{Clade
-                  |1=''[[Vetulicola cuneata]]''
-                  |2=''[[Vetulicola gantoucunensis]]''
-                  |3=''[[Vetulicola longbaoshanensis]]''
-                  |4=''[[Vetulicola rectangulata]]''
-                  |5={{Clade
-                     |1=''[[Vetulicola monile]]''
-                     |2=''[[Beidazoon]]''
-               }} }} }} |barbegin1=purple
-            |2={{Clade
-               |1=''[[Yuyuanozoon]]'' |barend1=purple
-               |2=''[[Didazoon]]'' |barbegin2=indigo
-               |3=''[[Pomatrum]]'' |barend3=indigo
-               |4={{Clade
-                  |1=''[[Yunnanozoon]]''
+                  |1=''[[Pikaia]]''
                   |2={{Clade
-                     |1=''[[Cathaymyrus]]''
-                     |2=''[[Pikaia]]''
-                     |label3=[[Chordata]]
-                     |sublabel3={{small|([[crown group]])}}
-                     |3={{Clade
-                        |1=[[Lancelet|Cephalochordata]]
+                     |1=[[Conodonta]]
+                     |2=[[Vertebrata]]<br />{{small|([[crown group]])}}
+                  }}
+               }}
+            }}
+            |label2=[[Tunicata]]
+            |sublabel2={{small|([[total group]])}}
+            |2={{Clade
+               |1=[[Tunicata]]<br />{{small|([[crown group]])}}
+               |label2=[[Vetulicolia]]
+               |2={{Clade
+                  |1=''[[Vetulicola]]''
+                  |2=''[[Pomatrum]]'' / ''[[Xidazoon]]''
+                  |3=''[[Didazoon]]''
+                  |4=''[[Beidazoon]]''
+                  |5=''[[Yuyuanozoon]]''
+                  |6=''[[Banffia]]''
+                  |7=''[[Heteromorphus]]''
+                  |8=''[[Ooedigera]]''
+                  |9=''[[Nesonektris]]''
+}} }} }} }} }} }}
+}}
+
+{{barlabel
+|size=22
+|at1=0 |label1=Banffozoa |bar1=indigo
+|at2=6 |label2=Vetulicolida |bar2=purple
+|cladogram={{Clade
+|label1=[[Deuterostomia]]
+|1={{Clade
+   |label1=[[Chordata]]
+   |sublabel1={{small|([[total group]])}}
+   |1={{Clade
+      |label1=? [[Vetulocystida]]
+      |state1=dashed
+      |1={{Clade
+         |1=''[[Thylacocercus]]''
+         |2={{Clade
+            |1=''[[Dianchicystis]]''
+            |2=''[[Vetulocystis]]''
+         }}
+      }}
+      |2={{Clade
+         |1=''[[Banffia]]'' |barbegin1=indigo
+         |2=''[[Heteromorphus]]'' |bar2=indigo
+         |3={{Clade
+            |1=''[[Skeemella]]'' |barend1=indigo
+            |2={{Clade
+               |1=''[[Nesonektris]]'' |barbegin1=purple
+               |2={{Clade
+                  |1={{Clade
+                     |1=''[[Ooedigera]]''
+                     |2={{Clade
+                        |1=''[[Vetulicola cuneata]]''
+                        |2=''[[Vetulicola gantoucunensis]]''
+                        |3=''[[Vetulicola longbaoshanensis]]''
+                        |4=''[[Vetulicola rectangulata]]''
+                        |5={{Clade
+                           |1=''[[Vetulicola monile]]''
+                           |2=''[[Beidazoon]]''
+                     }} }} }} |bar1=purple
+                  |2={{Clade
+                     |1=''[[Didazoon]]'' |bar1=purple
+                     |2=''[[Pomatrum]]'' |bar2=purple
+                     |3=''[[Yuyuanozoon]]'' |barend3=purple
+                     |4={{Clade
+                        |1=''[[Yunnanozoon]]''
                         |2={{Clade
-                           |1=[[Tunicate|Tunicata]]
-                           |2={{Clade
-                              |1=''[[Metaspriggina]]''
+                           |1=''[[Cathaymyrus]]''
+                           |2=''[[Pikaia]]''
+                           |label3=[[Chordata]]
+                           |sublabel3={{small|([[crown group]])}}
+                           |3={{Clade
+                              |1=[[Lancelet|Cephalochordata]]
                               |2={{Clade
-                                 |1=''[[Myllokunmingia]]''
-                                 |2=[[Vertebrate|Vertebrata]]
-}} }} }} }} }} }} }} }} }} }} }} }}
+                                 |1=[[Tunicate|Tunicata]]
+                                 |2={{Clade
+                                    |1=''[[Metaspriggina]]''
+                                    |2={{Clade
+                                       |1=''[[Myllokunmingia]]''
+                                       |2=[[Vertebrate|Vertebrata]]
+   }} }} }} }} }} }} }} }} }} }} }} }}
+   |label2=[[Ambulacraria]]
+   |sublabel2={{small|([[total group]])}}
+   |2={{Clade
+      |label1=[[Cambroernida]]
+      |1={{Clade
+         |1=''[[Herpetogaster]]''
+         |2={{Clade
+            |1=''[[Phlogites]]''
+            |2=[[Eldonioidea]]
+         }}
+      }}
+      |label2=[[Ambulacraria]]
+      |sublabel2={{small|([[crown group]])}}
+      |2={{Clade
+         |1=[[Hemichordata]]
+         |2=[[Echinodermata]]
+}} }} }}
 }}
 
 === Classification ===
 
-The following classification is taken from Li ''et al.'' (2018) except where noted.
+The following classification is taken from Li ''et al.'' (2018)<ref name=Li2018 /> except where noted.
 
 * Phylum '''Vetulicolia''' {{small|Shu ''et al.'' 2001}}<ref name="McMenamin2019" />
 ** Genus ''[[Alienum]]''? {{small|Liu ''et al.'' 2024}}<ref name="Liu2024">{{harvnb|Liu|Chen|Li|Tang|2024}}</ref>
 *** ''A. velamenus'' {{small|Liu ''et al.'' 2024}}
 ** Genus ''[[Shenzianyuloma]]'' {{small|McMenamin 2019}}<ref name="McMenamin2019" />
 *** ''[[Shenzianyuloma|S. yunnanense]]'' {{small|McMenamin 2019}}
-** Class Banffozoa {{small|Caron 2006}} (= Heteromorphida {{small|Shu 2005}})
+** Class Heteromorphida {{small|Shu 2005}} (= Banffozoa {{small|Caron 2006}})
 *** Order Banffiata {{small|Aldridge ''et al.'' 2007}}
 **** Family Banffiidae {{small|Caron 2006}}
 ***** Genus ''[[Banffia]]'' {{small|Walcott 1911}}
@@ -140,43 +207,33 @@ The following classification is taken from Li ''et al.'' (2018) except where not
 
 ===History of identification==
 
+The current consensus view is that vetulicolians are [[stem group]] [[chordates]], although some researchers continue to raise other possibilities.<ref name=Onai2023>{{harvnb|Onai|Aramaki|Takai|Kakiguchi|2023|page=202}}</ref>  The possible identification of an [[endostyle]] bolstered theories of a [[tunicate]] affinity, but was later retracted, while the tentative identification of a [[notochord]] in ''[[Nesonektris]]'' has further supported overall chordate affinities.<ref name=Gee2020 />
+
+Recent research has strengthened the arguments for placing vetulicolians in the chordate stem lineage rather than near the tunicates.  Like vetulicolians, members of the [[basal (phylogenetics)|basal]] [[ambulacrarian]] clade [[Cambroernida]] have a terminal anus rathre than a post-anal tail.  Since Ambulacraria is the sister-group of the chordates within the deuterostomes, this suggests that the last common ancestor of both groups lacked a post-anal tail.<ref name=ancestral>{{harvnb|Mussini|Smith|Vinther|Rahman|2024|page=6}}</ref>
+
+Some workers have questioned the inclusion of Banffozoa within this group due to their lack of gill slits and apparent gut diverticula, and have theorized that they may be within Protostomia instead.<ref name=Caron2005>{{harvnb|Caron|2005}}</ref>  However, ''[[Herpetogaster]]'', the most basal cambroernid, is thought to have non-serialized pores for pharyngial openings.  If banffozoans are the most basal vetulicolians, This could explain why they also lack serialized pharyngeal structures.<ref name=ancestral />
+
 Vetulicolians were thought to be stem [[arthropods]] when ''[[Vetulicola]]'' was first discovered, but around 2001, the focus of most theories shifted towards stem [[deuterostomes]] due to the discovery of pharyngial gill slits (a deuterostome characteristic), as well as the mounting evidence that vetuicolians have no appendages of any kind.<ref name=TreeOfLife>{{harvnb|Giribet|Edgecombe|2020|page=105}}</ref>  A theory grouping both vetulicolians and [[vetulocystida|vetulocystids]] with ''[[Saccorhytus]]'' was disproven when the alleged pharyngial openings of ''[[Saccorhytus]]'' were shown to be remnants of spines that had broken off; the saccorhytids are now considered to be [[ecdysozoans]].<ref>{{harvnb|Liu|Carlisle|Zhang|Yang|2022}}</ref>  
 
 == References ==
 {{Reflist}}
 
+===Works cited===
+{{refbegin}}
 * {{cite journal |last1=Aldridge |first1=Richard J. |last2=Hou |first2=Xian-guang |last3=Siveter |first3=David J. |last4=Siveter |first4=Derek J. |last5=Sarah E. |first5=Gabbott |year=2007 |title=The systematics and phylogenetic relationships of vetulicolians |journal=Palaeontology |volume=50 |pages=131–168 |doi=10.1111/j.1475-4983.2006.00606.x |s2cid=85722738}}
 * {{cite journal |last1=Briggs |first1=Derek E. G. |last2=Fortey |first2=Richard A. |date=2005 |title=Wonderful strife: systematics, stem groups, and the phylogenetic signal of the Cambrian radiation |url=https://www.cambridge.org/core/product/identifier/S0094837300025331/type/journal_article |journal=Paleobiology |language=en |volume=31 |issue=2_Suppl |pages=94–112 |doi=10.1666/0094-8373(2005)031[0094:WSSSGA]2.0.CO;2 |s2cid=44066226 |issn=0094-8373}}
 * {{cite journal|last1=Chen |first1=Ailin |last2=Feng |first2=Hongzhen |last3=Mao |first3=Dongsheng |last4=Li |first4=Ming |year=2003 |title=A New Vetulicolian from the Early Cambrian Chengjiang Fauna in Yunnan of China |journal=Acta Geologica Sinica |volume=77 |issue=3 |pages=281–287 |s2cid=128895860 |doi=10.1111/j.1755-6724.2003.tb00742.x}}
+* {{cite journal|last1=Chen |first1=Junyuan |last2=Zhou |first2=Guiqing |title=Biology of the Chengjiang fauna |journal=Bulletin of the National Museum of Natural Science |volume=10 |year=1997 |pages=11–105}}
 * {{cite journal|last1=García-Bellido |first1=Diego C. |last2=Lee |first2=Michael S. Y. |last3=Edgecombe |first3=Gregory D. |last4=Jago |first4=James B. |last5=Gehling |first5=James G. |last6=Paterson |first6=John R. |year=2014 |title=A new vetulicolian from Australia and its bearing on the chordate affinities of an enigmatic Cambrian group |journal=BMC Evolutionary Biology |volume=14 |page=214 |doi=10.1186/s12862-014-0214-z |pmc=4203957 |pmid=25273382 |doi-access=free }}
 * {{cite book|last1=Gee |first1=Henry |title=Across the Bridge: Understanding the Origin of Vertebrates |date=July 4, 2018 |publisher=University of Chicago Press |isbn=978-0226402864}}
 * {{cite book|last1=Giribet |first1=Gonzalo |last2=Edgecombe |first2=Gregory D. |title=The Invertebrate Tree of Life |publisher=Princeton University Press |date=March 3, 2020 |isbn=978-0691170251}}
+* {{cite book|last1=Hou |first1=Xian-guang |last2=Siveter |first2=David J. |last3=Siveter |first3=Derek J. |last4=Aldridge |first4=Richard J. |last5=Cong |first5=Pei-yun |last6=Gabbott |first6=Sarah |last7=Ma |first7=Xiao-ya |last8=Purnell |first8=Mark A. |last9=Williams |first9=Mark |title=The Cambrian Fossils of Chengjiang, China: The Flowering of Early Animal Life |chapter=Vetulicolians |edition=2 |date=2017 |pages=272–281 |doi=10.1002/9781118896372.ch25}}
+* {{cite journal|last1=Li |first1=Yujing |last2=Williams |first2=Mark |last3=Gabbott |first3=Sarah E. |last4=Chen |first4=Ailen |last5=Cong |first5=Peiyun |last6=Hou |first6=Xianguang |title=The enigmatic metazoan Yuyuanozoon magnificissimi from the early Cambrian Chengjiang Biota, Yunnan Province, South China |journal=Journal of Paleontology |volume=92 |number=6 |year=2018 |pages=1081–1091 |doi=10.1017/jpa.2018.18}}
 * {{cite journal|last1=Liu |first1=Yunhuan |last2=Carlisle |first2=Emily |last3=Zhang |first3=Huaqiao |last4=Yang |first4=Ben |last5=Steiner |first5=Michael |last6=Shao |first6=Tiequan |last7=Duan |first7=Baichuan |last8=Marone |first8=Federica |last9=Xiao |first9=Shuhai |last10=Donoghue |first10=Philip C. J. |title=Saccorhytus is an early ecdysozoan and not the earliest deuterostome |journal=Nature |date=2022 |volume=609 |issue=7927 |pages=541–546 |doi=10.1038/s41586-022-05107-z |pmid=35978194 |bibcode=2022Natur.609..541L |s2cid=251646316 |url=https://research-information.bris.ac.uk/en/publications/454e7bec-4cd4-4121-933e-abeab69e96c1 |hdl=1983/454e7bec-4cd4-4121-933e-abeab69e96c1 |hdl-access=free }}
 * {{cite journal |last=McMenamin |first=Mark A. S. |date=2019 |title=Cambrian Chordates and Vetulicolians |journal=Geosciences |language=en |volume=9 |issue=8 |pages=354 |bibcode=2019Geosc...9..354M |doi=10.3390/geosciences9080354 |issn=2076-3263 |doi-access=free}}
 * {{cite journal |last1=Mussini |first1=G. |last2=Smith |first2=M. P. |last3=Vinther |first3=J. |last4=Rahman |first4=I. A. |last5=Murdock |first5=D. J. E. |last6=Harper |first6=D. A. T. |last7=Dunn |first7=F. S. |title=A new interpretation of ''Pikaia'' reveals the origins of the chordate body plan |journal=Current Biology |date=2024 |volume=34 |issue=13 |pages=2980–2989.e2 |doi=10.1016/j.cub.2024.05.026 |doi-access=free |pmid=38866005 }}
 * {{cite jounral|last1=Onai |first1=Takayuki |last2=Aramaki |first2=Toshihiro |last3=Takai |first3=Akira |last4=Kakiguchi |first4=Kisa |last5=Yonemura |first5=Shigenobu |title=Cranial cartilages: Players in the evolution of the cranium during evolution of the chordates in general and of the vertebrates in particular |journal=Evolution and Development |volume=25 |pages=197–208 |year=2023 |doi=10.1111/ede.12433}}
 * {{cite journal |last1=Shu |first1=D. G. |last2=Conway Morris |first2=S. |last3=Han |first3=J. |last4=Chen |first4=L. |last5=Zhang |first5=X. L. |last6=Zhang |first6=Z. F. |last7=Liu |first7=H. Q. |last8=Li |first8=Y. |last9=Liu |first9=J. N. |date=2001-11-22 |title=Primitive deuterostomes from the Chengjiang Lagerstätte (Lower Cambrian, China) |journal=Nature |volume=414 |issue=6862 |pages=419–424 |bibcode=2001Natur.414..419S |doi=10.1038/35106514 |issn=0028-0836 |pmid=11719797 |s2cid=4345484}}
-
-===Works cited===
-{{refbegin}}
-# {{cite journal |last1=Aldridge |first1=Richard J. |last2=Hou |first2=Xian-guang |last3=Siveter |first3=David J. |last4=Siveter |first4=Derek J. |last5=Sarah E. |first5=Gabbott |year=2007 |title=The systematics and phylogenetic relationships of vetulicolians |journal=Palaeontology |volume=50 |pages=131–168 |doi=10.1111/j.1475-4983.2006.00606.x |s2cid=85722738}}
-* {{cite journal |last1=Briggs |first1=Derek |title=A new metazoan from the Middle Cambrian of Utah and the nature of the Vetulicolia |journal=Palaeontology |volume=48 |issue=4 |pages=681–686 |year=2005 |doi=10.1111/j.1475-4983.2005.00489.x|display-authors=etal|doi-access=free }}
-* {{cite journal |last1=Briggs |first1=Derek E. G. |last2=Fortey |first2=Richard A. |date=2005 |title=Wonderful strife: systematics, stem groups, and the phylogenetic signal of the Cambrian radiation |url=https://www.cambridge.org/core/product/identifier/S0094837300025331/type/journal_article |journal=Paleobiology |language=en |volume=31 |issue=2_Suppl |pages=94–112 |doi=10.1666/0094-8373(2005)031[0094:WSSSGA]2.0.CO;2 |s2cid=44066226 |issn=0094-8373}}
-* {{cite journal |last1=Caron |first1=Jean-Bernard |title=Banffia constricta , a putative vetulicolid from the Middle Cambrian Burgess Shale |journal=Transactions of the Royal Society of Edinburgh: Earth Sciences |date=June 2005 |volume=96 |issue=2 |pages=95–111 |doi=10.1017/S0263593300001255}}
-* {{cite journal|last1=Chen |first1=Ailin |last2=Feng |first2=Hongzhen |last3=Mao |first3=Dongsheng |last4=Li |first4=Ming |year=2003 |title=A New Vetulicolian from the Early Cambrian Chengjiang Fauna in Yunnan of China |journal=Acta Geologica Sinica |volume=77 |issue=3 |pages=281–287 |s2cid=128895860 |doi=10.1111/j.1755-6724.2003.tb00742.x}}
-* {{cite journal |last1=García-Bellido |first1=Diego C. |last2=Lee |first2=Michael S. Y. |last3=Edgecombe |first3=Gregory D. |last4=Jago |first4=James B. |last5=Gehling |first5=James G. |last6=Paterson |first6=John R. |year=2014 |title=A new vetulicolian from Australia and its bearing on the chordate affinities of an enigmatic Cambrian group |journal=BMC Evolutionary Biology |volume=14 |page=214 |doi=10.1186/s12862-014-0214-z |pmc=4203957 |pmid=25273382 |doi-access=free }}
-* {{cite journal|last1=Han|first1=Jian|last2=Conway Morris|first2=Simon |author2-link=Simon Conway Morris |last3=Ou|first3=Qiang|last4=Shu |first4=Degan|last5=Huang|first5=Hai|title=Meiofaunal deuterostomes from the basal Cambrian of Shaanxi (China)|journal=Nature |volume=542|issue=7640 |pages=228–231 |doi=10.1038/nature21072|pmid=28135722|year=2017 |bibcode=2017Natur.542..228H|s2cid=353780}}
-* {{cite journal|last1=Hou |first1=X.-G. |last2=Ramsköld |first2=L. |last3=Bergström |first3=J. |title=Composition and preservation of the Chengjiang fauna — a Lower Cambrian soft-bodied biota |jounral=Zoologica Scripta |volume=20 |number=4 |pages=395–411 |year=1991 |doi=10.1111/j.1463-6409.1991.tb00303.xopen_in_newISSN}}
-* {{cite journal |last=Lacalli |first=Thurston C. |date=2002 |title=Vetulicolians—are they deuterostomes? chordates? |url=https://pubmed.ncbi.nlm.nih.gov/11891757 |journal=BioEssays |volume=24 |issue=3 |pages=208–211 |doi=10.1002/bies.10064 |pmid=11891757}}
-* {{cite journal | last=Liu | first=Junping | last2=Chen | first2=Ailin | last3=Li | first3=Binglin | last4=Tang | first4=Feng | last5=Zhao | first5=Jiangtai | last6=Chen | first6=Ke | title=Problematic Ediacaran sail-shaped fossils from eastern Yunnan, China | journal=Historical Biology | publisher=Informa UK Limited | date=2024-10-06 | issn=0891-2963 | doi=10.1080/08912963.2024.2403588 | pages=1–7}}
-* {{cite journal |last1=Liu |first1=Yunhuan |last2=Carlisle |first2=Emily |last3=Zhang |first3=Huaqiao |last4=Yang |first4=Ben |last5=Steiner |first5=Michael |last6=Shao |first6=Tiequan |last7=Duan |first7=Baichuan |last8=Marone |first8=Federica |last9=Xiao |first9=Shuhai |last10=Donoghue |first10=Philip C. J. |date=2022-08-17 |title=Saccorhytus is an early ecdysozoan and not the earliest deuterostome |url=https://www.nature.com/articles/s41586-022-05107-z |journal=Nature |volume=609 |issue=7927 |language=en |pages=541–546 |doi=10.1038/s41586-022-05107-z |pmid=35978194 |bibcode=2022Natur.609..541L |s2cid=251646316 |issn=1476-4687|hdl=1983/454e7bec-4cd4-4121-933e-abeab69e96c1 |hdl-access=free }}
-* {{cite journal |last=McMenamin |first=Mark A. S. |date=2019 |title=Cambrian Chordates and Vetulicolians |journal=Geosciences |language=en |volume=9 |issue=8 |pages=354 |bibcode=2019Geosc...9..354M |doi=10.3390/geosciences9080354 |issn=2076-3263 |doi-access=free}}
-* {{cite journal |last1=Mussini |first1=G. |last2=Smith |first2=M. P. |last3=Vinther |first3=J. |last4=Rahman |first4=I. A. |last5=Murdock |first5=D. J. E. |last6=Harper |first6=D. A. T. |last7=Dunn |first7=F. S. |title=A new interpretation of ''Pikaia'' reveals the origins of the chordate body plan |journal=Current Biology |date=2024 |volume=34 |issue=13 |pages=2980–2989.e2 |doi=10.1016/j.cub.2024.05.026 |doi-access=free |pmid=38866005 }}
-* {{cite jounral|last1=Onai |first1=Takayuki |last2=Aramaki |first2=Toshihiro |last3=Takai |first3=Akira |last4=Kakiguchi |first4=Kisa |last5=Yonemura |first5=Shigenobu |title=Cranial cartilages: Players in the evolution of the cranium during evolution of the chordates in general and of the vertebrates in particular |journal=Evolution and Development |volume=25 |pages=197–208 |year=2023 |doi=10.1111/ede.12433}}
-* {{cite journal |last=Shu |first=Degan |year=2003 |title=A paleontological perspective of vertebrate origin |journal=Chinese Science Bulletin |volume=48 |issue=8 |pages=725–735 |doi=10.1007/BF03187041|bibcode=2003ChSBu..48..725S |s2cid=85163902 }}
-* {{cite journal |last=Shu |first=Degan |date=2005 |title=On the Phylum Vetulicolia |url=http://link.springer.com/10.1007/BF03183746 |journal=Chinese Science Bulletin |language=en |volume=50 |issue=20 |pages=2342–2354 |doi=10.1007/BF03183746 |bibcode=2005ChSBu..50.2342S |s2cid=86827605 |issn=1001-6538}}
-* {{cite journal |last1=Shu |first1=D. G. |last2=Conway Morris |first2=S. |last3=Han |first3=J. |last4=Chen |first4=L. |last5=Zhang |first5=X. L. |last6=Zhang |first6=Z. F. |last7=Liu |first7=H. Q. |last8=Li |first8=Y. |last9=Liu |first9=J. N. |date=2001-11-22 |title=Primitive deuterostomes from the Chengjiang Lagerstätte (Lower Cambrian, China) |journal=Nature |volume=414 |issue=6862 |pages=419–424 |bibcode=2001Natur.414..419S |doi=10.1038/35106514 |issn=0028-0836 |pmid=11719797 |s2cid=4345484}}
-* {{cite journal | last1 = Vinther | first1 = J. | last2 = Smith | first2 = M. P. | last3 = Harper | first3 = D. A. T. | author-link3 = David Harper (palaeontologist)| doi = 10.1111/j.1475-4983.2011.01034.x | title = Vetulicolians from the Lower Cambrian Sirius Passet Lagerstätte, North Greenland, and the polarity of morphological characters in basal deuterostomes | journal = Palaeontology | volume = 54 | issue = 3 | pages = 711–719 | year = 2011 | s2cid = 85602402 }}
 {{refend}}
 
 == External links ==

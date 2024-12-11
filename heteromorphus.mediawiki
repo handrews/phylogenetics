@@ -1,0 +1,95 @@
+{{Short description|Extinct genus of Cambrian organisms}}
+{{Italic title}}
+{{Automatic taxobox
+| name = ''Heteromorphus''
+| taxon = Heteromorphus
+| fossil_range = {{fossil range|518}} [[Middle Cambrian]]
+| image = Heteromorphus_longicaudatus.jpg
+| image_caption = Artist's reconstruction of ''Heteromorphus longicaudatus''
+| authority = Luo and Hu ''in'' Luo ''et al.'' 1999
+| type_species = {{extinct}}'''''Heteromorphus longicaudatus'''''
+| type_species_authority = Luo and Hu ''in'' Luo ''et al.'' 1999
+| subdivision_ranks = Species
+| subdivision = {{species list|†Heteromorphus confusus|Chen and Zhou, 1997}}
+}}
+
+'''''Heteromorphus''''' is an extinct genus of [[Banffidae|banffid]] from the [[lower Cambrian]] [[Chengjiang lagerstatte]].  It contains one broadly accepted species, ''Heteromorphus confusus'', as well as a proposed junior synonym, ''Heteromorphus longicaudatus'' that may prove to be a separate species as additional specimens are examined.<ref name=Aldridge2007>{{harvnb|Aldridge|Hou|Siveter|Siveter|2007|pages=147–150}}</ref>  A much smaller species labeled "Form A" is allied with ''Heteromorphus'' at the [[class (biology)|class]] level but has not been formally described or assigned to ''Heteromorphus'' itself.<ref>{{harvnb|McMenamin|2019|page=8}}</ref>
+
+==Description==
+
+Like ''Banffia'', ''Heteromorphus'' has a two-part body with a notable constriction between the parts, and a crossover that effectively reverses the dorsal and ventral sides between the anterior and posterior sections.<ref>{{harvnb|Conway Morris|Halgedahl|Selden|Jarrard|2015|pages=3–4}}</ref> The posterior portion is segmented, although the common presence of wrinkling makes counting the segments difficult.  The anterior body shape ranges from torpedo-like to more rectangular, with a near-vertical anterior edge.<ref name=Aldridge2007 />
+
+''Heteromorphus'' is separated from ''Banffia'' by the presence of a lateral groove, similar to that found in the [[Vetulicolida]]. However, while a 2004 description claimed that four gill openings were present in the groove, later workers have not observed them.  The lack of visible gills in banffids has been speculated to indicate a burrowing lifestyle.<ref name=Aldridge2007 /> A partial "twist" has been described in ''Heteromorphus'', compared to the well-developed torsion in ''Banffia''.<ref name=GB2014 />  While the initial description of ''H. confusus'' indicated an anus halfway along the ventral surface of the posterior section,<ref>{{harvnb|Chen|Zhou|1997|page=86|loc=Figure 138 caption}}</ref> later descriptions confirmed the terminal location of the anus.<ref>{{harvnb|Hou|Siveter|Siveter|Aldridge|2017|page=272}}</ref>
+
+==Taxonomy==
+''Heteromorphus'' has been grouped with ''Banffia'' and ''Skeemella'' in the family [[Banffidae]].<ref name=Li2018>{{harvnb|Li|Williams|Gabbott|Chen|2018|pages=1083–1084}}</ref>
+
+The following cladogram is simplified from Mussini ''et al.'' (2024), using the definition of [[Vetulicolidae]] from Li ''et al.'' (2018).  It shows ''Heteromorphus'' as part of the earliest steps, corresponding to the class [[Banffozoa]], in the [[evolutionary grade]] leading to extant [[chordates]].<ref name=MussiniCladogram>{{harvnb|Mussini|Smith|Vinther|Rahman|2024|pages=6–7}}</ref>
+{{barlabel|style=font-size:85%;line-height:85%
+|size=12
+|at1=0 |label1="Banffozoa" |bar1=indigo
+|at2=4 |label2="Vetulicolida" |bar2=purple
+|cladogram={{Clade
+      |label1=[[Chordata]]
+      |sublabel1={{small|([[total group]])}}
+      |1={{Clade
+         |1=''[[Banffia]]''† |barbegin1=indigo
+         |2=''[[Heteromorphus]]''† |bar2=indigo
+         |3={{Clade
+            |1=''[[Skeemella]]''† |barend1=indigo
+            |2={{Clade
+               |1=''[[Nesonektris]]''† |barbegin1=purple
+               |2={{Clade
+                  |1=[[Vetulicolidae]]† |bar1=purple
+                  |2={{Clade
+                     |1=''[[Didazoon]]''† |bar1=purple
+                     |2=''[[Pomatrum]]''† |bar2=purple
+                     |3=''[[Yuyuanozoon]]''† |barend3=purple
+                     |4={{Clade
+                        |1=''[[Yunnanozoon]]''†
+                        |2={{Clade
+                           |1=''[[Cathaymyrus]]''†
+                           |2=''[[Pikaia]]''†
+                           |3=[[Chordata]]<br />{{small|([[crown group]])}}
+}} }} }} }} }} }} }} }} }}
+
+An earlier study in 2014 was unable to resolve any relationships among vetulicolians as a group:<ref name=GB2014>{{harvnb|García-Bellido|Lee|Edgecombe|Jago|2014|page=9}}</ref>
+
+{{Clade|style=font-size:85%;line-height:85%
+   |label1=[[Vetulicolia]]†
+   |1={{Clade
+      |grouplabel7={{clade labels |bar1=indigo |label1="[[Banffidae]]"}}
+      |1=''[[Vetulicola]]''†
+      |2=''[[Beidazoon]]''†
+      |3=''[[Ooedigera]]''†
+      |4=''[[Pomatrum]]''† / ''[[Xidazoon]]''†
+      |5=''[[Didazoon]]''†
+      |6=''[[Yuyuanozoon]]''†
+      |7=''[[Banffia]]''† |barbegin7=indigo
+      |8=''[[Heteromorphus]]''† |barend8=indigo
+      |9=''[[Nesonektris]]''†
+   }} 
+}}
+
+
+===''H. confusus'' vs ''H. longicaudatus''===
+
+''H. confusus'' was originally described as ''[[Banffia]] confusa'' in 1997, while ''H. longicaudatus'' was described and assigned to the new genus ''Heteromorphus'' in 1999.  The discoverers of ''B. confusa'' referred to it as ''H. confusus'' in 2002, accepting its assignment to ''Heteromorphus'' and, according to a comprehensive 2007 review of vetulicolian phylogenetics, indicating that ''H. longicaudatus'' is its junior synonym.  However, the same source also noted substantial variation among ''Heteromorphus'' specimens, and that more species (including a distinct ''H. longicaudatus'') may exist.<ref name=Aldridge2007 />
+
+
+
+==References==
+{{reflist}}
+
+===Works cited===
+{{refbegin}}
+* {{cite journal |last1=Aldridge |first1=Richard J. |last2=Hou |first2=Xian-guang |last3=Siveter |first3=David J. |last4=Siveter |first4=Derek J. |last5=Sarah E. |first5=Gabbott |year=2007 |title=The systematics and phylogenetic relationships of vetulicolians |journal=Palaeontology |volume=50 |pages=131–168 |doi=10.1111/j.1475-4983.2006.00606.x |s2cid=85722738}}
+* {{cite journal|last1=Chen |first1=Junyuan |last2=Zhou |first2=Guiqing |title=Biology of the Chengjiang fauna |journal=Bulletin of the National Museum of Natural Science |volume=10 |year=1997 |pages=11–105}}
+* {{cite journal|last1=Conway Morris |first1=Simon |last2=Halgedahl |first2=Susan L. |last3=Selden |first3=Paul |last4=Jarrard |first4=Richard D. |title=Rare primitive deuterostomes from the Cambrian (Series 3) of Utah |journal=Journal of Paleontology |date=2015 |volume=89 |number=4 |pages=631–636 |doi=10.1017/jpa.2015.40 |url=https://core.ac.uk/download/pdf/51378622.pdf}}
+* {{cite journal|last1=García-Bellido |first1=Diego C. |last2=Lee |first2=Michael S. Y. |last3=Edgecombe |first3=Gregory D. |last4=Jago |first4=James B. |last5=Gehling |first5=James G. |last6=Paterson |first6=John R. |year=2014 |title=A new vetulicolian from Australia and its bearing on the chordate affinities of an enigmatic Cambrian group |journal=BMC Evolutionary Biology |volume=14 |page=214 |doi=10.1186/s12862-014-0214-z |pmc=4203957 |pmid=25273382 |doi-access=free }}
+* {{cite book|last1=Hou |first1=Xian-guang |last2=Siveter |first2=David J. |last3=Siveter |first3=Derek J. |last4=Aldridge |first4=Richard J. |last5=Cong |first5=Pei-yun |last6=Gabbott |first6=Sarah |last7=Ma |first7=Xiao-ya |last8=Purnell |first8=Mark A. |last9=Williams |first9=Mark |title=The Cambrian Fossils of Chengjiang, China: The Flowering of Early Animal Life |chapter=Vetulicolians |edition=2 |date=2017 |pages=272–281 |doi=10.1002/9781118896372.ch25}}
+* {{cite journal|last1=Li |first1=Yujing |last2=Williams |first2=Mark |last3=Gabbott |first3=Sarah E. |last4=Chen |first4=Ailen |last5=Cong |first5=Peiyun |last6=Hou |first6=Xianguang |title=The enigmatic metazoan Yuyuanozoon magnificissimi from the early Cambrian Chengjiang Biota, Yunnan Province, South China |journal=Journal of Paleontology |volume=92 |number=6 |year=2018 |pages=1081–1091 |doi=10.1017/jpa.2018.18}}
+* {{cite journal |last=McMenamin |first=Mark A. S. |date=2019 |title=Cambrian Chordates and Vetulicolians |journal=Geosciences |language=en |volume=9 |issue=8 |pages=354 |bibcode=2019Geosc...9..354M |doi=10.3390/geosciences9080354 |issn=2076-3263 |doi-access=free}}
+* {{cite journal |last1=Mussini |first1=G. |last2=Smith |first2=M. P. |last3=Vinther |first3=J. |last4=Rahman |first4=I. A. |last5=Murdock |first5=D. J. E. |last6=Harper |first6=D. A. T. |last7=Dunn |first7=F. S. |title=A new interpretation of ''Pikaia'' reveals the origins of the chordate body plan |journal=Current Biology |date=2024 |volume=34 |issue=13 |pages=2980–2989.e2 |doi=10.1016/j.cub.2024.05.026 |doi-access=free |pmid=38866005 }}
+* {{cite journal|doi=10.1007/BF03183746|title=On the Phylum Vetulicolia|journal=Chinese Science Bulletin|volume=50|issue=20|pages=2342–2354|year=2005|last1=Shu|first1=Degan|bibcode=2005ChSBu..50.2342S |s2cid=86827605 }}
+{{refend}}

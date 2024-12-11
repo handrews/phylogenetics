@@ -1,0 +1,66 @@
+{{short description|Extinct Cambrian group of animals}}
+{{Automatic taxobox
+| fossil_range = about {{Fossilrange|520|501}} [[Cambrian Stage 3]]—[[Drumian]]
+| image = {{multiple image|direction=vertical|total_width=270
+   | image1 = Banffia constricta Walcott Cambrian Geology and Paleontology II plate 21 (cropped).jpg
+   | caption1  = ''[[Banffia constricta]]'' fossil
+   | image2 = Heteromorphus_longicaudatus.jpg
+   | caption2 = Artist's reconstruction of ''[[Heteromorphus longicaudatus]]''
+   | border = infobox
+   | footer = Restorations and fossils of banffozoans
+}}
+| authority = Caron 2006
+| taxon = Banffozoa
+| type_species = †''[[Banffia constricta]]''
+| type_species_authority = Walcott, 1911
+| subdivision = * {{extinct}}Banffiata
+** {{extinct}}Banffidae
+*** {{extinct}}''Banffia''
+*** {{extinct}}''Heteromorphus''
+* "Form A"
+| synonyms = Heteromorphida {{small|Shu 2005}}
+}}
+
+'''Banffozoa''' is a [[class (biology)|class]] within the phylum [[Vetulicolia]], and the senior synonym of Heteromorphida.<ref>{{harvnb|Harper|Hammarlund|Topper|Nielsen|2019|page=711}}</ref>  It may be [[paraphyletic]] even if Vetulicolia is [[monophyletic]].<ref name=AldridgeBasics>{{harvnb|Aldridge|Hou|Siveter|Siveter|2007|pages=147–148}}</ref>  Banffozoa includes the genera ''Banffia'', ''Heteromorphus'', and ''Skeemella'' in the family Banffidae, order Banffiata,<ref>{{harvnb|Li|Williams|Gabbott|Chen|2018|pages=1083–1084}}</ref> as well as an undescribed ''Heteromorphus''-like species of uncertain placement labeled "Form A."<ref>{{harvnb|Shu|2005|page=2349}}</ref>
+
+==Description==
+
+
+==Taxonomy==
+
+===Precedence of Banffozoa over Heteromorphida===
+
+The question of whether the name Banffozoa or Heteromorphida takes precedence is muddied by two factors:
+# The [[principle of priority]] for animal taxa does not formally apply to names above the rank of [[family (biology)|family]]<ref name="iczn1999">ICZN 1999 (International Code of Zoological Nomenclature, 1999 Ed.).</ref>
+# The relevant publication date for Banffozoa is unclear
+
+Banffozoa {{small|Caron 2006}} was published in a journal issue dated June 2005:
+
+: Earth and Environmental Science Transactions of The Royal Society of Edinburgh , Volume 96 , Issue 2 , June 2005 , pp. 95 - 111<ref>{{cite web|website=Cambridge Core |title=''Banffia constricta'', a putative vetulicolid from the Middle Cambrian Burgess Shale {{!}} Cambridge Core |date=July 26, 2007 |accessdate=December 10, 2024 |url=https://www.cambridge.org/core/journals/earth-and-environmental-science-transactions-of-royal-society-of-edinburgh/article/abs/banffia-constricta-a-putative-vetulicolid-from-the-middle-cambrian-burgess-shale/BE8BE09A5025A6535DBFB1E2A78E4E82}}</ref>
+
+However the article itself carries in-print citation with a formal year of 2006:
+
+: ''Transactions of the Royal Society of Edinburgh: Earth Sciences,'' '''96''', 95–111, 2006 (for 2005)<ref>{{harvnb|Caron|2005|page=95|loc=header text}}</ref>
+
+Online citation databases appear to prefer the 2005 date.<ref>{{cite web|website=Semantic Scholar |title=Banffia constricta, a putative vetulicolid from the Middle Cambrian Burgess Shale {{!}} Semantic Scholar |accessdate=December 10, 2024 |url=https://www.semanticscholar.org/paper/Banffia-constricta%2C-a-putative-vetulicolid-from-the-Caron/e6fac19f8fb8be0006bad4486d08e7d48bafc1de}}</ref><ref>{{cite web|website=Google Scholar |title=Banffia constricta, a putative vetulicolid from the... - Google Scholar |accessdate=December 10, 2024 |url=https://scholar.google.com/scholar?hl{{=}}en&as_sdt{{=}}0%2C5&q{{=}}Banffia+constricta%2C+a+putative+vetulicolid+from+the+Middle+Cambrian+Burgess+Shale&btnG{{=}}}}</ref>
+
+Heteromorphida {{small|Shu 2005}} was published with a date of October 2005.  <ref>{{cite web|website=Springer Nature Link |accessdate=December 10, 2024 |title=On the Phylum Vetulicolia {{!}} Science Bulletin |url=https://link.springer.com/article/10.1007/BF03183746}}</ref>
+
+This appears to have led to some confusion, with Aldridge ''et al.'' (2007) emending Banffozoa to encompass both ''Banffia'' and ''Heteromorphus'', but then adding a note in proof that Heteromorphida appears to have precedence based on comparing the October date to the formal 2006 date of Caron's article.<ref>{{harvnb|Aldridge|Hou|Siveter|Siveter|2007|page=168}}</ref>  However, the October 2005 date is later than the actual June 2005 date of the issue that published the name Banffozoa.
+
+
+
+==References==
+{{reflist}}
+
+===Works cited===
+{{refbegin}}
+* {{cite journal |last1=Aldridge |first1=Richard J. |last2=Hou |first2=Xian-guang |last3=Siveter |first3=David J. |last4=Siveter |first4=Derek J. |last5=Sarah E. |first5=Gabbott |year=2007 |title=The systematics and phylogenetic relationships of vetulicolians |journal=Palaeontology |volume=50 |pages=131–168 |doi=10.1111/j.1475-4983.2006.00606.x |s2cid=85722738}}
+* {{cite journal|last1=Harper |first1=D. A. T. |last2=Hammarlund |first2=E. U. |last3=Topper |first3=T. P. |last4=Nielsen |first4=A. T. |last5=Rasmussen |first5=J. A. |last6=Park |first6=T.-Y. S. |last7=Smith |first7=M. P. |title=The Sirius Passet Lagerstätte of North Greenland: a remote window on the Cambrian Explosion |journal=Journal of the Geological Society |year=2019 |volume=176 |issue=6 |pages=1023–1037 |doi=10.1144/jgs2019-043 |bibcode=2019JGSoc.176.1023H |s2cid=198424068 |url=http://dro.dur.ac.uk/28564/2/28564.pdf}}
+* {{cite journal|last1=Li |first1=Yujing |last2=Williams |first2=Mark |last3=Gabbott |first3=Sarah E. |last4=Chen |first4=Ailen |last5=Cong |first5=Peiyun |last6=Hou |first6=Xianguang |title=The enigmatic metazoan ''Yuyuanozoon magnificissimi'' from the early Cambrian Chengjiang Biota, Yunnan Province, South China |journal=Journal of Paleontology |volume=92 |number=6 |year=2018 |pages=1081–1091 |doi=10.1017/jpa.2018.18}}
+* {{cite journal |last1=Shu |first1=Degan |title=On the Phylum Vetulicolia |journal=Chinese Science Bulletin |date=October 2005 |volume=50 |pages=2342–2354 |doi=10.1007/BF03183746 |url=https://link.springer.com/article/10.1007/BF03183746 |access-date=1 October 2024}}
+{{refend}}
+
+[[Category:Vetulicolia]]
+[[Category:Chordate classes|†]]
+
