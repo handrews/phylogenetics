@@ -1,0 +1,71 @@
+{{Short description|Extinct genus of tunicate}}
+{{Italic title}}
+{{Automatic taxobox
+| name = ''Cheungkongella''
+| fossil_range = [[Cambrian Stage 3]], {{fossil range|518|ref=<ref>{{harvnb|Yang|Li|Zhu|Condon|2018}}</ref>}}
+| image = Cheungkongella ancestralis.jpg
+| image_caption = Restoration of ''C. ancestralis''.
+| taxon = Cheungkongella
+| authority = Shu ''et al.'', 2001
+| type_species = †'''''Cheungkongella ancestralis'''''
+| type_species_authority = Shu ''et al.'', 2001
+| subdivision_ranks = Species
+| subdivision =
+*†'''''C. ancestralis''''' {{small|Shu ''et al.'', 2001}}
+}}
+
+'''''Cheungkongella''''' is a fossil from the [[lower Cambrian]] [[Chengjiang lagerstatte]], the affinity of which has been the subject of debate.  It was announced as the oldest known [[tunicate]], although this affinity was disputed in later paper announcing the discovery of ''[[Shankouclava]]'', also from Chengjiang, as the oldest known tunicate.<ref name=Gee>{{harvnb|Gee|2018|page=99}}</ref>  A third Cambrian tunicate, ''[[Megasiphon]]'', is from the somewhat younger [[Marjum Formation]] of Utah.
+
+
+'''''Shankouclava''''' is an extinct genus of [[tunicate]]s. It represents the oldest candidate member of this group, dating to {{Ma|Chengjiang}}. It has been found in the [[Lower Cambrian]] [[Maotianshan Shale]] at Shankou village, [[Anning, Yunnan|Anning]], near [[Kunming]] ([[South China]]). Each of the eight specimens found and used for description were isolated, suggesting that the genus was [[Solitary animal|solitary]] and not [[Colony (biology)|colonial]].<ref name=Chen2003>{{harvnb|Chen|Huang|Peng|Chi|2003}}</ref>
+
+==Classification==
+
+===Debate over relationship to ''Phlogites''===
+[[File:Cheungkongella and Phlogites.png|thumb|left|Cheungkongella ancestralis (left) and Phlogites (right) fossils for comparison<br />{{small|(BT: branching tentacles; CIS: Complex internal organs; Os: Oral siphon; S: Stem; Sp: Simple pharynx; St: Stomach}})]]
+
+==Morphology==
+''Shankouclava'' had a soft, sac-like body that was elongated and pointed proximally. The body lengths of individuals vary from 2&nbsp;cm (0.8&nbsp;in) to 4&nbsp;cm (1.6&nbsp;in).<ref name=Chen2003 />
+
+Degan Shu asserts that some fossil specimens exhibit tentacles, which would make the genus similar to the [[deuterostome]] ''[[Phlogites]]''.<ref>{{harvnb|Shu|2008}}</ref> Expanding on this idea, Shu and colleagues argue against a [[tunicate]] affinity for ''Shankouclava''.<ref>{{harvnb|Shu|Conway Morris|Zhang|Han|2010}}</ref>
+
+==Etymology==
+The generic name is composed of the fossil locality, Shankou, and the [[Latin]] word ''clava'' (club-shaped).<ref name=Chen2003 />
+
+==XClassification==
+A stem group tunicate affinity for ''Shankouclava'' has been broadly accepted, though some authors have expressed reservations that the evidence in favour of this affinity is not conclusive.<ref>{{harvnb|Conway Morris|2006}}</ref>
+
+Another Cambrian tunicate, ''[[Megasiphon]]'', known from a single specimen, resembles more closely the morphology of surviving tunicates.<ref>{{harvnb|Nanglu|Lerosey-Aubril|Weaver|Ortega-Hernández|2023}}</ref>
+
+==References==
+{{Reflist}}
+
+===Works cited===
+{{refbegin}}
+* {{cite journal|last1=Caron |first1=J. |last2=Conway Morris |first2=S. |last3=Shu |first3=D. |last4=Soares |first4=D. |year=2010 |editor1-last=Soares |editor1-first=Daphne |title=Tentaculate fossils from the Cambrian of Canada (British Columbia) and China (Yunnan) interpreted as primitive deuterostomes |journal=PLOS ONE |volume=5 |issue=3 |pages=e9586 |bibcode=2010PLoSO...5.9586C |doi=10.1371/journal.pone.0009586 |pmc=2833208 |pmid=20221405 |doi-access=free}}
+* {{cite journal|last1=Chen |first1=Jun-Yuan |last2=Huang, |first2=Di-Ying |last3=Peng |first3=Qing-Qing |last4=Chi |first4=Hui-Mei |last5=Wang, |first5=Xiu-Qiang |last6=Feng |first6=Man |year=2003 |title=The first tunicate from the Early Cambrian of South China |journal=Proceedings of the National Academy of Sciences |volume=100 |pmid=12835415 |issue=14 |pages=8314–8318 |pmc=166226  |doi=10.1073/pnas.1431177100 |bibcode=2003PNAS..100.8314C |doi-access=free}}
+* {{cite journal|last1=Conway Morris |first1=Simon |title=Darwin's dilemma: the realities of the Cambrian 'explosion' |journal=Philosophical Transactions of the Royal Society B |volume=361 |pages=1069–1083 |year=2006 |doi=10.1098/rstb.2006.1846
+|pmc=1578734 }}
+* {{cite book|last1=Gee |first1=Henry |date=July 4, 2018 |chapter=Tunicates |title=Across the Bridge: Understanding the Origin of Vertebrates |pages=85–99 |publisher=University of Chicago Press |isbn=978-0226402864}}
+* {{cite book|last1=Hou |first1=Xian-guang |last2=Siveter |first2=David J. |last3=Siveter |first3=Derek J. |last4=Aldridge |first4=Richard J. |last5=Cong |first5=Pei-yun |last6=Gabbott |first6=Sarah |last7=Ma |first7=Xiao-ya |last8=Purnell |first8=Mark A. |last9=Williams |first9=Mark |title=The Cambrian Fossils of Chengjiang, China: The Flowering of Early Animal Life |chapter=Vetulicolians |edition=2 |date=2017 |pages=272–281 |doi=10.1002/9781118896372.ch25}}
+* {{cite journal|last1=Janvier |first1=Philippe |date=April 23, 2015 |title=Facts and fancies about early fossil chordates and vertebrates |journal=Nature |volume=520 |pages=483–89 |doi=10.1038/nature14437}}
+* {{cite journal|last1=Nanglu |first1=Karma |last2=Lerosey-Aubril |first2=Rudy |last3=Weaver |first3=James C. |last4=Ortega-Hernández |first4=Javier |year=2023 |title=A mid-Cambrian tunicate and the deep origin of the ascidiacean body plan |journal=Nature Communications |volume=14 |issue=1 |page=3832 |doi=10.1038/s41467-023-39012-4 |pmid=37414759 |pmc=10325964}}
+* {{cite journal|last1=Northcutt |first1=R. Glenn |date=June 26, 2012 |title=Evolution of centralized nervous systems: Two schools of evolutionary thought |journal=Proceedings of the National Academy of Sciences of the United States of America |volume=109 |issue=Supplement 1: In the Light of Evolution VI: Brain and Behavior |pages=10626–10633 |jstor=41601648}}
+* {{cite journal|last1=Shu |first1=D. |title=Cambrian explosion: Birth of tree of animals |year=2008 |journal= Gondwana Research |volume=14 |issue=1–2 |pages=219–240 |doi=10.1016/j.gr.2007.08.004 |bibcode=2008GondR..14..219S |url=https://www.sciencedirect.com/science/article/abs/pii/S1342937X07001694}}
+* {{cite journal|last1=Shu |first1=D.-G. |last2=Conway Morris |first2=S. |last3=Zhang |first3=Z.-F. |last4=Han |first4=J. |title=The earliest history of the deuterostomes: The importance of the Chengjiang Fossil-Lagerstätte |year=2010 |journal=Proceedings of the Royal Society B: Biological Sciences |volume=277 |issue=1679 |pages=165–174 |pmid=19439437 |pmc=2842668 |doi=10.1098/rspb.2009.0646}}
+* {{cite journal|last1=Yang |first1=C. |last2=Li |first2=X.-H. |last3=Zhu |first3=M. |last4=Condon |first4=D. J. |last5=Chen |first5=J. |date=2018 |title=Geochronological constraint on the Cambrian Chengjiang biota, South China|journal=Journal of the Geological Society |language=en |volume=175 |issue=4 |pages=659–666 |doi=10.1144/jgs2017-103 |bibcode=2018JGSoc.175..659Y |s2cid=135091168 |issn=0016-7649|url=http://nora.nerc.ac.uk/id/eprint/521412/1/2018-JGS-Chuan%20Yang%20et%20al.pdf}}
+* {{cite journal|last1=Yang |first1=Xianfeng |last2=Kimmig |first2=Julie |last3=Lieberman |first3=Bruce S. |last4=Peng |first4=Shanchi |title=A new species of the deuterostome Herpetogaster from the early Cambrian Chengjiang biota of South China |journal=The Science of Nature |year=2020 |volume=107 |number=37 |doi=10.1007/s00114-020-01695-w}}
+{{refend}}
+
+{{Tunicata|F.}}
+{{Taxonbar|from=Q55633006}}
+
+[[Category:Tunicate genera]]
+[[Category:Prehistoric chordate genera]]
+[[Category:Fossil taxa described in 2001]]
+[[Category:Cambrian genus extinctions]]
+
+
+{{tunicata-stub}}
+{{Paleo-deuterostome-stub}}
+
