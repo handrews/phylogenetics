@@ -1,0 +1,61 @@
+@[[User:Mlvluu|Mlvluu]] I'm going to be daring and open this topic, as your current assignment to Bilateria is pegged to Shu 2005.  Here's what I see as the current state of things:
+
+; Briggs, Leiberman, Halgedahl, Jarrard 2005:
+* Phylum ? Vetulicolia
+** Class ? Vetulicolida
+*** ''Skeemella''
+
+This is the only assignment to the class Vetulicolida, but it predates the existence of Banffozoa or Heteromorphida
+
+; Shu 2005
+Argues against ''Skeemella'' as a Vetulicolian, '''''but''''' he only discusses Vetulicolida (''Vetulicola'', ''Beidazoon'', ''Didazoon'', ''Xidazoon'', ''Pomatrum'') and his newly erected Heteromorphida (''Heteromorphus'', "Form A").  Notably, he also excludes ''Banffia'' from Vetulicolia.
+
+His reasons against ''Skeemella'' being vetulicolian are:
+
+# lack of gill slits (five pairs, specifically)
+# lack of a large frontal mouth
+# extremely long segmented posterior section
+
+I think everyone can agree with Shu ejecting ''Skeemella'' from class Vetulicolida, but also excluding ''Banffia'' from phylum Vetulicolia has relevant implications as discussed in...
+
+; Aldridge, Hou, Siveter, Siveter, Gabbott 2007:
+
+* Class ? Banffozoa
+** ''Skeemella'' (placed as the most basal vetulicolian in phyloenetic analysis)
+
+Class Banffozoa as emended here does not require the presence of gill slits, mitigating Shu's objection #1, and does require a many-segmented posterior region, mitigating Shu's objection #3.  However, they "concur with Briggs et al. (2005) that this part of the animal shows characters that are more like those of arthropods than those of deuterostomes."  Ultimately, they concluded:
+
+: Skeemella does appear to be a vetulicolian, and we have provisionally assigned it to the Banffozoa despite its relatively robust exoskeleton. This assignment is based on the apparent absence of lateral pouches and on the very long posterior body with numerous (43) segments.
+
+; Shu, Conway Morris, Zhang, Han 2010
+
+Here, Shu seems to accept "provisional" inclusion in the Vetulicolia:
+
+: The description of Skeemella clavula from the Middle Cambrian of Utah as a putative vetulicolian (Briggs et al. 2005), but which is even more arthropod-like than Vetulicola itself, might serve to support an assignment [of vetulicolians] to [Arthropoda]. Skeemella, however, is only known from a single specimen and its affinities to the vetulicolians must be regarded as provisional (Shu 2005).
+
+; Gee 2018
+
+Treats ''Skeemella'' as vetulicolian, but this is a brief overview in a long book rather than an in-depth assessment.
+
+; Li, Williams, Gabbot, Chen, Cong, Hou 2018
+
+* Class Heteromorphida (=Banffozoa)
+** Order Banffiata
+*** Family Banffidae
+**** ''Skeemella''
+
+(yet notes it as a "possible vetulicolian")
+
+; Kimming, Leibach, Lieberman 2020
+
+* Phylum Vetulicolia
+** Class Banffozoa
+*** Order Banffiata
+**** Family Banffidae
+***** ''Skeemella''
+
+The whole discussion is a rather extensive deconstruction of the arthropod theory.
+
+; Mussini, Smith, Vinther, Rahman, Murdock, Harper, Dunn 2024
+
+Their phylogenetic analysis included every major protostome clade (see supplemental trees) and coded 625 characteristics, and placed ''Skeemella'' with between ''Banffia''+''Heteromorphida'' and Vetulicolida.

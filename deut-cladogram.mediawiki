@@ -1,0 +1,127 @@
+{{User sandbox}}
+<!-- EDIT BELOW THIS LINE -->
+
+=Deuterostome Cladograms=
+
+{{barlabel|style=font-size:85%;line-height:85%
+   |size=48
+   |at1=0 |label1="Banffozoa" |bar1=indigo
+   |at2=13 |label2="Didazoonidae" |bar2=purple
+   |at3=40 |label3="Homalozoa" |bar3=darkgreen
+   |cladogram={{Clade
+      |label1=[[Chordata]]
+      |sublabel1={{small|([[total group]])}}
+      |1={{Clade
+         |1=''[[Banffia]]''† |barbegin1=indigo
+         |2=''[[Heteromorphus]]''† |bar2=indigo
+         |3={{Clade
+            |1=''[[Skeemella]]''† |barend1=indigo
+            |2={{Clade
+               |1=''[[Nesonektris]]''†<br />{{small|([[Vetulicolida]])}}
+               |2={{Clade
+                  |label1=[[Vetulicolidae]]†
+                  |sublabel1={{small|([[Vetulicolida]])}}
+                  |1={{Clade
+                     |1=''[[Ooedigera]]''†
+                     |2={{Clade
+                        |1=''[[Vetulicola cuneata]]''†
+                        |2=''[[Vetulicola gantoucunensis]]''†
+                        |3=''[[Vetulicola longbaoshanensis]]''†
+                        |4=''[[Vetulicola rectangulata]]''†
+                        |5={{Clade
+                           |1=''[[Vetulicola monile]]''†
+                           |2=''[[Beidazoon]]''†
+                     }} }} }}
+                  |2={{Clade
+                     |1=''[[Didazoon]]''† |barbegin1=purple
+                     |2=''[[Pomatrum]]''† |bar2=purple
+                     |3=''[[Yuyuanozoon]]''† |barend3=purple
+                     |4={{Clade
+                        |1=''[[Yunnanozoon]]''†
+                        |2={{Clade
+                           |1=''[[Cathaymyrus]]''†
+                           |2=''[[Pikaia]]''†
+                           |label3=[[Chordata]]
+                           |sublabel3={{small|([[crown group]])}}
+                           |3={{Clade
+                              |1=[[Lancelet|Cephalochordata]]
+                              |2={{Clade
+                                 |1=[[Tunicate|Tunicata]]
+                                 |2={{Clade
+                                    |1=''[[Metaspriggina]]''†
+                                    |2={{Clade
+                                       |label1=[[Myllokunmingiida]]†
+                                       |1={{Clade
+                                          |1=''[[Myllokunmingia]]''†
+                                          |2=''[[Haikouichthys]]''†
+                                          |3=''[[Zongjianichthys]]''†
+                                       }}
+                                       |2=[[Vertebrate|Vertebrata]]
+      }} }} }} }} }} }} }} }} }} }} }}
+      |label2=[[Ambulacraria]]
+      |sublabel2={{small|([[total group]])}}
+      |2={{Clade
+         |label1=[[Vetulocystida]]†
+         |1={{Clade
+            |1=''[[Thylaccocercus]]''†
+            |2={{Clade
+               |1=''[[Vetulocystis]]''†
+               |2=''[[Dianchicystis]]''†
+            }}
+         }}
+         |label2=[[Cambroernida]]†
+         |2={{Clade
+            |1=''[[Herpetogaster]]''†
+            |2={{Clade
+               |1=''[[Phlogites]]''†
+               |label2=[[Eldonioidea]]†
+               |2={{Clade
+                  |1=[[Eldoniidae]]†
+                  |2=[[Rotadiscidae]]†
+                  |3=[[Paropsonema|Paropsonemidae]]†
+               }}
+            }}
+         }}
+         |label3=[[Ambulacraria]]
+         |sublabel3={{small|([[crown group]])}}
+         |3={{Clade
+            |label1=[[Hemichordata]]
+            |1={{Clade
+               |1=[[Enteropneusta]]
+               |2=[[Pterobranchia]]
+            }}
+            |label2=[[Echinodermata]]
+            |sublabel2={{small|([[total group]])}}
+            |2={{Clade
+               |1=''[[Yanjiahella]]''†
+               |2={{Clade
+                  |1=''[[Ctenoimbricata]]''† |barbegin1=darkgreen
+                  |2={{Clade
+                     |1=[[Ctenocystoidea]]† |bar1=darkgreen
+                     |2={{Clade
+                        |1=[[Cincta]]† |bar1=darkgreen
+                        |2={{Clade
+                           |1={{Clade
+                              |1=[[Soluta (echinoderm)|Soluta]]†
+                              |2={{Clade
+                                 |label1=[[Stylophora]]
+                                 |1={{Clade
+                                    |1=''[[Ceratocystis]]''†
+                                    |2=[[Cornuta]]†
+                                    |3=[[Mitrata]]†
+                                 }}
+                              }}
+                           }} |barend1=darkgreen
+                           |2={{Clade
+                              |1=[[Helicoplacoidea]]†
+                              |2={{Clade
+                                 |1=''[[Helicocystis]]†
+                                 |2={{Clade
+                                    |1=[[Pelmatozoa]]†
+                                    |2=[[Eleutherozoa]]†
+                                 }}
+                              }}
+                           }}
+            }} }} }} }} }}
+}} }} }} }}
+
