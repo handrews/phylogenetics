@@ -1,0 +1,32 @@
+{{Short description|Extinct order of marine invertebrates}}
+{{Automatic taxobox
+| fossil_range = {{fossil range|late Early Cambrian|Middle Cambrian}}
+| image = Gogia_ojenai.jpg
+| image_caption = ''[[Gogia]] ojenai''
+| taxon = Gogiida
+| authority = Broadhead 1982
+| subdivision_ranks = Families and genera
+| subdivision =
+* [[Eocrinidae]] {{smallcaps| Jaekel 1918}}
+**''[[Gogia]]'' {{smallcaps|Walcott 1917}}
+* [[Lyracystidae]] {{smallcaps|Sprinkle & Collins 2006}}
+** ''[[Lyracystis]]'' {{smallcaps|Sprinkle & Collins 2006}}
+}}
+
+The '''Gogiida''' are an order of early echinoderms known from late Early<ref name=Durham1978>{{Cite journal| jstor = 1303808| pages = 195–199| title = A Lower Cambrian Eocrinoid| journal = Journal of Paleontology| volume = 52| issue = 1| year = 1978|last1 = Durham | first1 = J. W. }}</ref> to Middle Cambrian<ref name=Robinson1965>{{Cite journal| jstor = 1301709| pages = 355–364| title = Middle Cambrian Eocrinoids from Western North America| journal = Journal of Paleontology| volume = 39| issue = 3| year = 1965| last1 = Robison | first1 = R. A.}}</ref> deposits.
+
+==References==
+{{Reflist}}
+
+{{Taxonbar|from=Q16938484}}
+
+[[Category:Fossil taxa described in 1982]]
+[[Category:Cambrian first appearances]]
+[[Category:Cambrian extinctions]]
+[[Category:Blastozoa]]
+[[Category:Prehistoric animal orders]]
+[[Category:Echinoderm orders]]
+
+
+{{Paleo-echinoderm-stub}}
+

@@ -1,0 +1,226 @@
+{{short description|Class of echinoderms}}
+{{Paraphyletic group
+| name = Eocrinoidea
+| fossil_range = {{fossil range|Cambrian Stage 3|Silurian}}
+| image = Ordovician_hardground_Utah.jpg
+| image_caption = Eocrinoid holdfasts (Middle Ordovician, Utah)
+| image2 = Gogia_ojenai.jpg
+| image2_caption = Colourful reconstruction of ''Gogia ojenai''
+| auto = yes
+| taxon = Eocrinoidea
+| extinct = yes
+| authority = [[Otto Jaekel|Jaekel]], 1899
+| includes_ref = <ref>{{cite web|website=Paleobiology Database |url=https://paleobiodb.org/classic/basicTaxonInfo?taxon_no=31058 |title=†class Eocrinoidea Jaekel 1918 |accessdate=27 November 2024}} 
+ {{small|(Note: order Imbricata was discarded in favor of family Lepidocystoidae in Nardin et al. 2017, and is therefore not shown as a subgroup)}}</ref>
+| includes = 
+* †Ascocystitida
+** †Ascocystitidae
+** †Cambrocystidae<ref>{{harvnb|Parsley|2021|page=975}}</ref>
+** †Rhopalocystidae
+* †[[Gogiida]]
+** †[[Eocrinidae]]
+** †[[Lyracystidae]]
+* †Trachelocrinida
+** †Heckerocrinidae
+** †Trachelocrinidae
+* †Cryptocrinitidae
+* †Felbabkacystidae<ref name=LepFelbTaxo />
+* †[[Lepidocystis|Lepidocystoidae]]<ref name=LepFelbTaxo>{{harvnb|Nardin|Lefebvre|Fatka|Nohejlová|2017|page=674}} {{small|(Note: discards order Imbricata Sprinkle, 1973 in favor of family Lepidocystoidae Durham, 1968)}}</ref>
+* †[[Lichenoides|Lichenoididae]]
+* †Lingulocystidae
+* †Palaeocystitidae
+* †Rhipidocystidae
+* †Ridersiidae
+| excludes =
+* †[[Rhombifera]]<ref name=smith1984>{{harvnb|Smith|1984|page=439}}</ref>
+* †[[Diploporita]]<ref name=smith1984 />
+* †[[Paracrinoidea]]<ref name=smith1984 />
+* †Parablastoidea{{citation needed|date=October 2024}}
+* †[[Blastoidea]]<ref name=smith1984 />
+* †Coronoidea<ref name=paul2024 />
+* [[Crinoidea]] ?<ref name=zs2011 />
+}}
+
+The '''Eocrinoidea''' were an extinct class of [[echinoderm]]s that lived between the Early Cambrian and Late Silurian periods. They are the earliest known group of stalked, brachiole-bearing echinoderms, and were the most common echinoderms during the [[Cambrian]].
+
+The earliest genera had a short [[holdfast (biology)|holdfast]] and irregularly structured plates. Later forms had a fully developed stalk with regular rows of plates. They were benthic suspension feeders, with five ambulacra on the upper surface, surrounding the mouth and extending into a number of narrow arms.<ref>{{harvnb|Prothero|2004|page=324}}</ref><ref name=IZ>{{harvnb|Barnes|1982}}</ref>
+
+==Phylogeny==
+{{see also|List of echinoderm orders}}
+Eocrinoids were a [[paraphyletic]] group that are seen as the basal stock from which all other blastozoan groups evolved.<ref>{{harvnb|Smith|1984|page=439}}</ref>
+
+===Early evolution===
+
+The following cladogram, after Nardin et al. 2017,<ref name=nardin2017>{{harvnb|Nardin|Lefebvre|Fatka|Nohejlová|2017|page=680}}</ref> shows the progression of early eocrinoid families, with all other eocrinoid families (including representatives ''Trachelocrinus'' and ''Ridersia'') grouped with "derived Blastozoans" as their relationships with each other and with other blastozoans are not addressed.
+
+{{Clade|style=font-size:85%;line-height:85%
+   |label1=Lepidocystoidae
+   |1={{Clade
+      |1=''Kinzercystis''
+      |2=''Vyscystis''
+      |3=''[[Lepidocystis]]''
+   }}
+   |2={{Clade
+      |label1=Felbabkacystidae
+      |1=''Felbabkacystis''
+      |2={{Clade
+         |grouplabel1={{Clade labels |bar1=indigo |label1="[[Eocrinidae]]"}}
+         |1=''[[Lyracystis]]''
+         |barbegin1=indigo
+         |2={{Clade
+            |1={{Clade
+               |1=''Akadocrinus''
+               |2=''[[Gogia]]''
+               |3=''Sinoeocrinus''
+               |4=''[[Ubaghsicystis]]''
+            }}
+            |barend1=indigo
+            |2={{Clade
+               |label1=Lichenoidae
+               |1=''[[Lichenoides]]''
+               |2={{Clade
+                  |1=''Trachelocrinus''
+                  |2=''Ridersia''
+                  |3=(derived Blastozoa)
+}} }} }} }} }} }}
+
+Note that some other sources use a more restricted definition of [[Eocrinidae]],<ref>{{cite web|website=Paleobiology Database |url=https://paleobiodb.org/classic/basicTaxonInfo?taxon_no=txn:120077 |title=†family Eocrinidae Jaekel 1918 |accessdate=27 November 2024}}</ref> or use the spelling Lichenoididae in place of Lichenoidae.<ref name=lichen>{{cite web|website=Paleobiology Database |url=https://paleobiodb.org/classic/basicTaxonInfo?taxon_no=txn:371139 |title=†family Lichenoididae Jaekel 1918 |accessdate=27 November 2024}}</ref>
+
+===Relationships to other groups===
+
+Relationships among the eocrinidae and other blastozoan clades are an area of ongoing study.  Below are two of many cladograms showing some aspect of eocrinoid [[paraphyly]] or [[polyphyly]].
+
+{{col-begin|width=auto}}
+{{col-break}}
+
+{{thumb|width=400|content=<div style="text-align:left;">
+{{barlabel|style=font-size:85%;line-height:85%
+|size=14
+|at1=0 |bar1=brown |label1=Lepidocystoids (Eocrinoids)
+|at2=1 |bar2=indigo |label2=Crinoids
+|at3=5 |bar3=brown |label3=Eocrinoids
+|at4=10 |bar4=green |label4=Dibrachicystids (Rhombiferans)
+|at5=12 |bar5=darkgreen |label5=Glyptocystitoids (Rhombiferans)
+|at6=15 |bar6=brown |label6=Eocrinoids
+|cladogram=
+{{clade
+|1={{clade
+   |1=''Kinzercystis'' |barbegin1=brown
+   |2={{clade
+      |1={{clade
+         |1={{clade
+            |1=''Titanocrinus'' |barbegin1=indigo 
+            |2=''[[Aethocrinus]]''|barend2=indigo
+         }}
+         |2=''[[Lyracystis]]'' |bar2=brown
+      }}
+      |2={{clade
+         |1=''[[Gogia]]'' |bar1=brown
+         |2=''Sinoeocrinus'' |bar2=brown
+         |3={{clade
+            |1=''Akadocrinus'' |bar1=brown
+            |2={{clade
+               |1=''Tatonkacystis'' |bar1=brown
+               |2=''[[Ubaghsicystis]]'' |bar2=brown
+               |3={{clade
+                  |1=''[[Dibrachicystis]]'' |barbegin1=green |barend1=green
+                  |2=''[[Pleurocystites]]'' |barbegin2=darkgreen
+                  |3={{clade
+                     |1=''Velieuxicystis'' |bar1=darkgreen
+                     |2={{clade
+                        |1=''Macrocystella''&nbsp;&nbsp; |barend1=darkgreen
+                        |2=''Ridersia'' |barend2=brown
+}} }} }} }} }} }} }} }} }}
+}}
+</div>
+|caption=Stalked Cambrian (and select Ordovician) echinoderms, after Zamora & Smith, 2011.<ref name=zs2011>{{harvnb|Zamora|Smith|2011}}</ref> All genera except those bracketed as "Crinoids" are blastozoans.}}
+
+{{col-break}}
+
+{{thumb|width=400|content=<div style="text-align:left;">
+{{barlabel|style=font-size:85%;line-height:85%
+|size=17
+|at1=0 |label1=Eocrinoids |bar1=brown
+|at2=5 |label2=Glyptocystitoids (Rhombiferans) |bar2=darkgreen
+|at3=12 |label3=Blastoids |bar3=darkblue
+|at4=14 |label4=Eublastoids (Blastoids) |bar4=purple
+|at5=15 |label5=Coronoids (Blastoids) |bar5=indigo
+|at6=17 |label6=Hemicosmitoids (Rhombiferans) |bar6=green
+|cladogram={{Clade
+|1={{Clade
+   |1={{Clade
+      |1=''Akadocrinus''
+      |2=''Cambrocrinus''
+   }} |barbegin1=brown
+   |2=''Ridersia'' |barend2=brown
+   |3=''Sanducystis''
+   |4={{Clade
+      |1={{Clade
+         |1=''Cystobsastus''
+         |2={{Clade
+            |1=''Lepadocystis''
+            |2={{Clade
+               |1=''Echinoencrinites''
+               |2={{Clade
+                  |1=''Cheirocystella''
+                  |2=''Macrocystella''
+               }}
+            }}
+         }}
+      }}
+      |barbegin1=darkgreen
+      |2={{Clade
+         |1={{Clade
+            |1=''Rhombifera''
+            |barend1=darkgreen
+            |2=''Lysocystites'' |barbegin2=indigo
+            |3={{Clade
+               |1=''Macurdablastus''&nbsp;&nbsp;&nbsp; |bar1=indigo
+               |2=''Codaster'' |barbegin2=purple |barend2=purple
+            }}
+            |4=''Stephanocrinus'' |barbegin4=darkblue |barend4=darkblue
+         }}
+         |barbegin2=green |barend2=green
+         |2={{Clade
+            |1=''Thomacystis''
+            |2={{Clade
+               |1=''Caryocrinites''
+               |2=''Hemicosmites''
+            }}
+         }}
+      }}
+   }}
+}} }}
+}}
+</div>
+|caption=This cladogram, after Paul et al. 2024, shows several eocrinoids in a [[polytomy]] with a clade containing several other blastozoan groups.<ref name=paul2024>{{harvnb|Paul|Lefebvre|Nohejlová|Zamora|2024|page=12–13}}  {{small|(Note: The text groups ''Sanducystis'' with eocrinoids as the [[outgroup (cladistics)|outgroup]], but the paper cited classifies it as a glyptocystitoid; it is shown un-bracketed on this page.  Similarly, the text classifies ''Macurdablastus'' as a eublastoid, but the cited paper has it as the sister of Eublastoidea; it is shown outside of Eublastoidea on this page.)}}</ref>
+}}
+{{col-end}}
+
+==References==
+{{reflist}}
+
+==Works cited==
+{{refbegin}}
+* {{cite book |last1=Barnes |first1=Robert D. |year=1982 |title= Invertebrate Zoology |publisher= Holt-Saunders International |location= Philadelphia, PA|pages= 1007–1008|isbn= 978-0-03-056747-6}}
+* {{cite journal|last1=Nardin |first1=Elise |last2=Lefebvre |first2=Bertrand |last3=Fatka |first3=Oldřich |last4=Nohejlová |first4=Martina |last5=Kašička |first5=Libor |last6=Šinágl |first6=Miroslav |last7=Szabad |first7=Michal |title=Evolutionary implications of a new transitional blastozoan echinoderm from the middle Cambrian of the Czech Republic |journal=Journal of Paleontology |volume=91 |number=4 |year=2017 |pages=672–684}}
+* {{cite journal|last1=Parsley |first1=R. L. |title=Evolution, Functional Morphology and Paedomorphism in the Gogiid-Ascocystitid Lineage (Eocrinoidea; Cambrian-Ordovician) |journal=Paleontological Journal |volume=55 |number=9 |year=2021 |pages=966–976 |doi=10.1134/S0031030121090100}}
+* {{cite journal|last1=Paul |first1=Christopher R. C. |last2=Lefebvre |first2=Bertrand |last3=Nohejlová |first3=Martina |last4=Zamora |first4=Samuel |title=''Rhombifera Barrande'', 1867, and the origin of the Blastoidea (Echinodermata, Blastozoa) |journal=Spanish Journal of Palaeontology |volume=39 |year=2024 |doi=10.7203/sjp.28729}}
+* {{cite book|last1=Prothero |first1=D. R. |year=2004 |title=Bringing Fossils to Life; An Introduction to Paleobiology |edition=2 |location=New York |publisher=The McGraw-Hill companies}}
+* {{cite journal|last1=Smith |first1=Andrew B. |title=Classification of the Echinodermata |journal=Palaeontology |volume=27 |number=3 |year=1984 |pages=431–459 }}
+* {{Cite journal|last1=Zamora |first1=Samuel |last2=Smith |first2=A. B. |year=2011 |title=Cambrian stalked echinoderms show unexpected plasticity of arm construction |journal=Proceedings of the Royal Society B |volume=279|issue= 1727|pages= 293–298|doi=10.1098/rspb.2011.0777 |pmid=21653588 |pmc=3223674}}
+{{refend}}
+
+{{Taxonbar|from=Q149514}}
+
+[[Category:Blastozoa]]
+[[Category:Paleozoic echinoderms]]
+[[Category:Cambrian echinoderms]]
+[[Category:Silurian echinoderms]]
+[[Category:Cambrian first appearances]]
+[[Category:Silurian extinctions]]
+[[Category:Paraphyletic groups]]
+
+
+{{paleo-echinoderm-stub}}
+

@@ -1,0 +1,54 @@
+{{Short description|Extinct class of marine invertebrates}}
+{{Distinguish|Blastoid (embryoid)}}
+{{Automatic taxobox
+| name = Blastoids
+| fossil_range = {{fossilrange|Middle Ordovician|Permian|earliest=Middle Cambrian|[[Ordovician]] - [[Permian]]}}
+| image = Fósil de erizo de mar (Pentremites godoni), Waterloo, Illinois, Estados Unidos, 2021-01-18, DD 081-136 FS.jpg
+| image_caption = ''[[Pentremites|Pentremites godoni]]'', a blastoid from the Lower Carboniferous of Illinois.
+| taxon = Blastoidea
+| authority = [[Thomas Say|Say]], 1825
+| subdivision_ranks = Orders
+| subdivision =
+[[Fissiculata]]<br />
+[[Spiraculata]]
+<br />
+''Incertae sedis'':<br />
+†''[[Macurdablastus]]''
+}}
+
+[[Image:Haeckel Blastoidea.jpg|thumb|right|200px|"Blastoidea", from [[Ernst Haeckel]]'s ''[[Kunstformen der Natur|Art Forms of Nature]]'', 1904]]
+
+'''Blastoids''' (class Blastoidea) are an [[extinct]] type of stemmed [[echinoderm]], often referred to as sea buds.<ref>{{cite book |author= Barnes, Robert D. |year=1982 |title= Invertebrate Zoology |publisher= Holt-Saunders International |location= Philadelphia, PA|page= 1010|isbn= 0-03-056747-5}}</ref> They first appear, along with many other echinoderm classes, in the [[Ordovician]] period, and reached their greatest diversity in the [[Mississippian age|Mississippian]] subperiod of the [[Carboniferous]] period. However, blastoids may have originated in the [[Cambrian]]. Blastoids persisted until their [[extinction]] at the [[Permian-Triassic extinction event|end]] of [[Permian]], about 250 million years ago. Although never as diverse as their contemporary relatives, the [[crinoid]]s, blastoids are common fossils, especially in many Mississippian-age rocks.
+
+==Description==
+Like most echinoderms, blastoids were protected by a set of interlocking plates of [[calcium carbonate]], which formed the main body, or ''[[theca]]''. In life, the theca of a typical blastoid was attached to a stalk or column made up of stacked disc-shaped plates. The other end of the column was attached to the ocean floor by a holdfast, very much like stalked [[crinoid]]s. The stalk was usually relatively short, and in some species, was absent, with the holdfast being attached directly to the base of the theca.
+
+The mouth was at the summit of the theca. Radiating like flower petals from the center were five food grooves, or ''[[Ambulacral|ambulacra]]''. Each ambulacrum had many long thin fine structures called ''brachioles'', which were used to trap food particles and bring them to the mouth. Brachioles were delicate structures, and in fossils are not usually preserved in place. A series of five spiracle plates surrounded the star-shaped mouth, which included the [[anus]], mouth and entrances to a set of five complex, folded [[respiration (physiology)|respiratory]] organs known as ''hydrospires''. These spiracles prevented mixing of the various fluids. Waste elimination was through the ''anispiracle'', an opening formed by the fusing of anus and adjacent spiracles.
+[[File:Pentremites Glen Dean Fm KY aboral.jpg|thumb|left|''Pentremites godoni'', a blastoid from the Lower Carboniferous of Illinois; basal view of theca.]]
+[[File:Hyperoblastus.jpg|thumb|left|The Middle [[Devonian]] blastoid ''Hyperoblastus'' from the [[Milwaukee Formation]]; [[Wisconsin]]; lateral view of theca.]]
+Like crinoids, blastoids were high-level stalked suspension feeders (feeding mainly on [[plankton]]ic organisms) that inhabited clear-to-silty, moderately agitated ocean waters from [[Continental shelf|shelf]] to basin. The food gathering system of blastoids consisted of several types of ambulacra. Food entered the brachiolar ambulacra, was transferred to the side ambulacra through the brachiolar pit, then transferred to the main (median) ambulacra, and finally entered the mouth. Each of these ambulacra was roofed by cover plates. The cover plates of the brachiolar groove were movable and could open, allowing food to enter, or close as needed. Other cover plates may also have been movable.
+
+==Taxonomy==
+{{See also|List of echinodermata orders}}
+Blastoids are assumed to have evolved from the [[Cystoids]]. Blastoids are subdivided into two orders: [[Fissiculata]], which are characterized by direct entrance to the individual hydrospires by way of slits; and [[Spiraculata]], which are characterized by indirect entrance to the hydrospires through canals by way of pores. The earliest blastoid yet found, ''Macurdablastus'' from the Middle Ordovician of [[Tennessee]], cannot be classified as either order.
+
+==References==
+{{Reflist}}
+
+==External links==
+*[http://www.ucmp.berkeley.edu/echinodermata/blastoidea.html Blastoids at UC Berkeley Museum of Paleontology]
+*[https://web.archive.org/web/20131224120030/http://palaeos.com/metazoa/echinodermata/blastozoa/blastoidea.htm Palaeos.com article]
+*Drawings and color reconstruction of ''Pentremites godoni'' blastoid at [https://web.archive.org/web/20110710191432/http://www.emilydamstra.com/portfolio2.php?illid=453 www.emilydamstra.com]
+*[http://jpaleontol.geoscienceworld.org/content/84/1/109.abstract Three Dimensional Structure and Fluid Flow though the Hydrospires of the Blastoid Pentremites rusticus]
+
+{{Taxonbar|from=Q1566901}}
+{{Authority control}}
+
+[[Category:Blastozoa]]
+[[Category:Ordovician echinoderms]]
+[[Category:Devonian echinoderms]]
+[[Category:Permian echinoderms]]
+[[Category:Ordovician first appearances]]
+[[Category:Permian extinctions]]
+[[Category:Lopingian extinctions]]
+
