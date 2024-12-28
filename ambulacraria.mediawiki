@@ -1,0 +1,50 @@
+{{Clade
+   |label1=[[Xenambulacraria]]
+   |1={{Clade
+      |1=? [[Xenacoelomorpha]] [[File:Neochildia-fusca-cropped-transparent-background.png|40px]]
+      |state1=dashed
+      |label2='''Ambulacraria'''
+      |sublabel2={{small|([[total group]])}}
+      |2={{Clade
+         |label1=? [[Vetulocystida]] †
+         |1=&nbsp;&nbsp;&nbsp;[[File:Vetulocystis catenata cropped.png|20px]] |state1=dashed
+         |label2=[[Cambroernida]] †
+         |2=&nbsp;&nbsp;&nbsp;[[File:Herpetogaster collinsi reconstruction.png|50px]]
+         |label3=? ''[[Yanjiahella]]'' †
+         |3=&nbsp;&nbsp;&nbsp;[[File:Yanjiahella concept extract.png|50px]] |state3=dashed
+         |label4='''Ambulacraria'''
+         |sublabel4={{small|([[crown group]])}}
+         |4={{Clade
+            |label1=[[Echinodermata]]
+            |sublabel1={{small|([[total group]])}}
+            |1={{Clade
+               |label1=? Vetulocystida †
+               |1=&nbsp;&nbsp;&nbsp;[[File:Vetulocystis catenata cropped.png|20px]] |state1=dashed
+               |label2=? ''Yanjiahella'' †
+               |2=&nbsp;&nbsp;&nbsp;[[File:Yanjiahella concept extract.png|50px]] |state2=dashed
+               |label3=Echinodermata
+               |sublabel3={{small|([[crown group|crownward]])}}
+               |3=&nbsp;&nbsp;&nbsp;[[File:Echinaster serpentarius (USNM E28192) 001.png|50 px]]
+            }}
+            |label2=[[Hemichordata]]
+            |sublabel2={{small|([[total group]])}}
+            |2={{Clade
+               |label1=? ''Yanjiahella'' †
+               |1=&nbsp;&nbsp;&nbsp;[[File:Yanjiahella concept extract.png|50px]] |state1=dashed
+               |label2=Hemichordata
+               |sublabel2={{small|([[crown group|crownward]])}}
+               |2=&nbsp;&nbsp;&nbsp;[[File:Balanoglossus by Spengel 1893.png|45px]]
+            }}
+         }}
+      }}
+   }}
+   |label2=[[Chordata]]
+   |sublabel2={{small|([[total group]])}}
+   |2={{Clade
+      |label1=? Vetulocystida †
+      |1=&nbsp;&nbsp;&nbsp;[[File:Vetulocystis catenata cropped.png|20px]] |state1=dashed
+      |label2=Chordata
+      |sublabel2={{small|([[crown group|crownward]])}}
+      |2=&nbsp;&nbsp;&nbsp;<span style="{{MirrorH}}">[[File:Haikouichthys NT.jpg|50px]]</span>
+   }}
+}}

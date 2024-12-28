@@ -1,0 +1,2418 @@
+{{User sandbox}}
+<!-- EDIT BELOW THIS LINE -->
+
+=Ambulacraria=
+
+Echinoderms are the sister group of the [[Hemichordata]], with which they form the crown group [[Ambulacraria]].<ref>{{cite journal |first1=Gregory D. |last1=Edgecombe |first2=Gonzalo |last2=Giribet |first3=Casey W. |last3=Dunn |first4=Andreas |last4=Hejnol |first5=Reinhardt M. |last5=Kristensen |first6=Ricardo C. |last6=Neves |first7=Greg W. |last7=Rouse |first8=Katrine |last8=Worsaae |first9=Martin V. |last9=Sørensen |doi=10.1007/s13127-011-0044-4 |title=Higher-level metazoan relationships: recent progress and remaining questions |date=June 2011 |journal=Organisms, Diversity & Evolution |volume=11 |issue=2 |pages=151–172 |bibcode=2011ODivE..11..151E |s2cid=32169826 |url=http://nrs.harvard.edu/urn-3:HUL.InstRepos:27755241 }}</ref>  Two taxa of uncertain placement, [[Vetulocystida]] and ''[[Yanjiahella]]'', have each been proposed as either stem-group echinoderms<ref>{{harvnb|Shu|Conway Morris|Han|Zhang|2004|pages=426–427}}</ref><ref>{{harvnb|Topper|Guo|Clausen|Skovsted|Zhang|2019|pages=5–7}}</ref> or stem-group ambulacrarians.<ref>{{harvnb|Conway Morris|Halgedahl|Selden|Jarrard|2015|pages=4–5}}</ref><ref name=yanjiahella-doubts>{{harvnb|Zamora|Wright|Mooi|Lefebvre|Guensburg|Gorzelak|David|Sumrall|Cole|Hunter|Sprinkle|2020|page=2}}</ref>  Vetulocystids have also been tentatively proposed as the basal-most stem-group [[chordates]],<ref>{{harvnb|Mussini|Smith|Vinther|Rahman|Murdock|Harper|Dunn|2024|loc=supplemental data figure S4}}</ref> while ''Yanjiahella'' has also been proposed to be a stem-group hemichordate.<ref name=yanjiahella-doubts />
+
+The following cladogram is based on a simplification of Li et al. 2023,<ref>{{harvnb|Li|Dunn|Murdock|Guo|Rahman|Cong|2023|page=159}}</ref> with the possible placements of uncertain potential ambulacrarian taxa shown with dashed lines and question marks:
+
+{{Clade
+   |label1=[[Xenambulacraria]]
+   |1={{Clade
+      |1=? [[Xenacoelomorpha]] [[File:Neochildia-fusca-cropped-transparent-background.png|40px]]
+      |state1=dashed
+      |label2='''Ambulacraria'''
+      |sublabel2={{small|([[total group]])}}
+      |2={{Clade
+         |label1=? [[Vetulocystida]] †
+         |1=&nbsp;&nbsp;&nbsp;[[File:Vetulocystis catenata cropped.png|20px]] |state1=dashed
+         |label2=[[Cambroernida]] †
+         |2=&nbsp;&nbsp;&nbsp;[[File:Herpetogaster collinsi reconstruction.png|50px]]
+         |label3=? ''[[Yanjiahella]]'' †
+         |3=&nbsp;&nbsp;&nbsp;[[File:Yanjiahella concept extract.png|50px]] |state3=dashed
+         |label4='''Ambulacraria'''
+         |sublabel4={{small|([[crown group]])}}
+         |4={{Clade
+            |label1=[[Echinodermata]]
+            |sublabel1={{small|([[total group]])}}
+            |1={{Clade
+               |label1=? Vetulocystida †
+               |1=&nbsp;&nbsp;&nbsp;[[File:Vetulocystis catenata cropped.png|20px]] |state1=dashed
+               |label2=? ''Yanjiahella'' †
+               |2=&nbsp;&nbsp;&nbsp;[[File:Yanjiahella concept extract.png|50px]] |state2=dashed
+               |label3=Echinodermata
+               |sublabel3={{small|([[crown group|crownward]])}}
+               |3=&nbsp;&nbsp;&nbsp;[[File:Echinaster serpentarius (USNM E28192) 001.png|50 px]]
+            }}
+            |label2=[[Hemichordata]]
+            |sublabel2={{small|([[total group]])}}
+            |2={{Clade
+               |label1=? ''Yanjiahella'' †
+               |1=&nbsp;&nbsp;&nbsp;[[File:Yanjiahella concept extract.png|50px]] |state1=dashed
+               |label2=Hemichordata
+               |sublabel2={{small|([[crown group|crownward]])}}
+               |2=&nbsp;&nbsp;&nbsp;[[File:Balanoglossus by Spengel 1893.png|45px]]
+            }}
+         }}
+      }}
+   }}
+   |label2=[[Chordata]]
+   |sublabel2={{small|([[total group]])}}
+   |2={{Clade
+      |label1=? Vetulocystida †
+      |1=&nbsp;&nbsp;&nbsp;[[File:Vetulocystis catenata cropped.png|20px]] |state1=dashed
+      |label2=Chordata
+      |sublabel2={{small|([[crown group|crownward]])}}
+      |2=&nbsp;&nbsp;&nbsp;<span style="{{MirrorH}}">[[File:Haikouichthys NT.jpg|50px]]</span>
+   }}
+}}
+
+{{barlabel
+|size=18
+|cladogram={{Clade
+   |1=[[Protostomia]]
+   |label2=[[Deuterostomia]]
+   |2={{Clade
+      |label1=[[Ambulacraria]]
+      |1={{Clade
+         |1=[[Enteropneusta]]
+         |2=[[Echinodermata]]
+      }}
+      |label2=[[Chordata]]
+      |2={{Clade
+         |1=[[Cephalochordata]]
+         |2={{Clade
+            |label1=[[Vertebrata]]
+            |sublabel1={{small|([[total group]])}}
+            |1={{Clade
+               |1=[[Yunnanozoa]]
+               |2={{Clade
+                  |1=''[[Pikaia]]''
+                  |2={{Clade
+                     |1=[[Conodonta]]
+                     |2=[[Vertebrata]] {{small|([[crown group]])}}
+                  }}
+               }}
+            }}
+            |label2=[[Tunicata]]
+            |sublabel2={{small|([[total group]])}}
+            |2={{Clade
+               |1=[[Tunicata]] {{small|([[crown group]])}}
+               |label2=[[Vetulicolia]]
+               |2={{Clade
+                  |1=''[[Vetulicola]]''
+                  |2=''[[Pomatrum]]'' / ''[[Xidazoon]]''
+                  |3=''[[Didazoon]]''
+                  |4=''[[Beidazoon]]''
+                  |5=''[[Yuyuanozoon]]''
+                  |6=''[[Banffia]]''
+                  |7=''[[Heteromorphus]]''
+                  |8=''[[Ooedigera]]''
+                  |9=''[[Nesonektris]]''
+}} }} }} }} }} }}
+}}
+
+=Echinoderms=
+==Timeline==
+===simple===
+{{#tag:timeline|
+ImageSize = width:900 height:auto barincrement:20
+PlotArea = left:90 bottom:90 top:5 right:10
+Alignbars = justify
+DateFormat = yyyy
+Period = from:-560 till:0
+TimeAxis = orientation:horizontal format:yyyy
+Legend = orientation:vertical position:bottom columns:3
+ScaleMajor = increment:50 start:-550
+ScaleMinor = increment:25 start:-550
+
+Colors =
+ id:abi     value:yellow2     legend:Bilateral_or_assymmetrical
+ id:tri     value:rgb(0,1,1)  legend:Triradial
+ id:early   value:claret      legend:Early_pseudo-pentaradial
+ id:penta   value:orange      legend:True_pentaradial
+ id:bars    value:gray(0.95)
+
+BackgroundColors = bars:bars
+
+BarData =
+ bar:Arkarua    text:Arkarua ?
+ bar:Yanjiahella     text:Yanjiahella ?
+ bar:Vetulocystida      text:Vetulocystida ?
+ bar:Ctenoimbricata      text:Ctenoimbricata
+ bar:Ctenocystoidea   text:Ctenocystoidea
+ bar:Cincta      text:Cincta
+ bar:Stylophora text:Stylophora
+ bar:Cornuta text: Cornuta
+ bar:Mitrata text: Mitrata
+ bar:Soluta text:Soluta
+ bar:Helicoplacoidea text:Helicoplacoidea
+ bar:Helicocystis     text:Helicocystis
+ bar:Eocrinoidea     text:Eocrinoidea
+ bar:Lepidocystoidae     text:Lepidocystoidae
+ bar:Gogiida    text:Gogiida
+ bar:Ascocystitida   text:Ascocystitida
+ bar:Trachelocrinida   text:Trachelocrinida
+ bar:Rhombifera text:Rhombifera
+ bar:Glyptocystitida text:Glyptocystitida
+ bar:Hemicosmitida text:Hemicosmitida
+ bar:Diploporita text:Diploporita
+ bar:Asteroblastida text:Asteroblastida
+ bar:Glyptosphaeritida text:Glyptosphaeritida
+ bar:Sphaeronitida text:Sphaeronitida
+ bar:Blastoidea text:Blastoidea
+ bar:Coronata text:Coronata
+ bar:Eublastoidea text:Eublastoidea
+ bar:Edrioasteroidea text:Edrioasteroidea
+ bar:Eleutherozoa text:Eleutherozoa
+
+PlotData =
+ width:11
+ bar:Arkarua  from:-555 till:-554 color:orange
+ bar:Yanjiahella from:-539 till:-529 color:abi
+ bar:Vetulocystida from:-541 till:-501 color:abi
+ bar:Ctenoimbricata from:-509 till:-504 color:abi
+ bar:Ctenocystoidea from:-509 till:-453 color:abi
+ bar:Cincta from:-509 till:-494 color:abi
+ bar:Stylophora from:-509 till:-298 color:abi
+ bar:Cornuta from:-509 till:-443 color:abi width:5
+ bar:Mitrata from:-500 till:-360 color:abi width:5
+ bar:Soluta from:-504 till:-393 color:abi
+ bar:Helicoplacoidea from:-521 till:-514 color:tri
+ bar:Helicocystis from:-515 till:-510 color:early
+ bar:Eocrinoidea from:-521 till:-419 color:early
+ bar:Edrioasteroidea from:-515 till:-280 color:early
+ bar:Eleutherozoa from:-485 till:end color:penta
+}}
+
+===complicated===
+{{Graphical timeline
+<!-- Change this to help=on if you need instructions on editing this timeline -->
+|help=off
+
+|title=The Ediacara biota in context
+|disable-arrow-align=true
+|disable-box-align=true
+
+|plot-colour=#ffffff
+
+|from=-655
+|to=-490
+|scale-increment=10
+|width=8
+
+<!--Eras-->
+|legend1=[[Neoproterozoic]]
+<br />(last [[Era (geology)|era]] of the [[Precambrian]])
+|legend1-colour={{period color|neoproterozoic}}
+|bar1-from=-655
+|bar1-to=-538.8
+|bar1-left=.0
+|bar1-right=.1
+|bar1-colour={{period color|neoproterozoic}}
+
+|legend2=[[Palaeozoic]]
+<br />(first era of the [[Phanerozoic]])
+|legend2-colour={{period color|paleozoic}}
+|bar2-from=-538.8
+|bar2-to=-490
+|bar2-left=0
+|bar2-right=.1
+|bar2-colour={{period color|palaeozoic}}
+
+<!--Periods-->
+|bar3-text='''[[Cryogenian]]'''
+|bar3-to=-635
+|bar3-left=.1
+|bar3-colour={{period color|cryogenian}}
+
+<!--Dividing line-->
+|bar23-from=-635.3
+|bar23-to=-634.7
+|bar23-colour=black
+|bar23-left=0.1
+
+|bar4-from=-635
+|bar4-to=-538.8
+|bar4-left=.1
+|bar4-colour={{period color|Ediacaran}}
+|bar4-border-width=.0
+|bar4-text='''[[Ediacaran]]'''
+|bar4-nudge-down=6.7
+
+|bar24-from=-539.0
+|bar24-to=-538.6
+|bar24-colour=black
+
+|bar5-text='''[[Cambrian]]'''
+|bar5-from=-538.8
+|bar5-to=-490
+|bar5-left=.1
+|bar5-colour={{period color|cambrian}}
+
+|bar25-from=-490.3
+|bar25-to=-489.7
+|bar25-colour=black
+|bar25-left=0.09
+
+|bar6-from=-655
+|bar6-to=-490
+|bar6-left=.99
+|bar6-right=1
+|bar6-colour=#000000
+
+<!--17 to overlap 12-->
+|bar17-from=-655
+|bar17-to=-490
+|bar17-left=.09
+|bar17-right=.1
+|bar17-colour=#000000
+
+<!--Organisms-->
+|bar21-from=-610
+|bar21-to=-555
+|bar21-left=0.85
+|bar21-right=0.95
+|bar21-colour=#007777
+|note21=''[[Aspidella]]''<br />discs
+|note21-at=-585
+|note21-colour=#007777
+|note21-remove-arrow=yes
+|note21-nudge-left=5.4
+
+|bar22-from=-575
+|bar22-to=-545
+|bar22-left=0.77
+|bar22-right=.87
+|bar22-colour=#777700
+|note22=''Charnia''
+|note22-at=-560
+|note22-colour=#777700
+|note22-nudge-left=5.5
+|note22-remove-arrow=yes
+
+<!--Notes-->
+|note1=Last Ediacaran communities
+|note1-at=-538.8
+|note1-colour=green
+
+|note2=Last putative Ediacaran
+|note2-at=-500
+|note2-colour=green
+
+|note3=[[Fossil embryos|Embryos]]?
+|note3-at=-632.5
+|note3-nudge-up=0.25
+|note3-colour=green
+
+|note4=Last [[snowball Earth|extensive]] [[glaciation]]
+|note4-at=-635
+|note4-nudge-down=0.5
+
+|note5=First Ediacaran megafossil
+|note5-at=-610
+|note5-colour=green
+
+|note6=[[Gaskiers glaciation (geology)|Gaskiers<br />glaciation]]
+|note6-at=-584.2
+
+|note7=[[Avalon explosion]]
+|note7-at=-575
+
+|caption=Axis scale: million years
+<br />References: Waggoner (1998),<ref name=Waggoner1998t>
+{{cite journal
+ | last = Waggoner | first = Ben
+ | year = 1998
+ | title = Interpreting the earliest Metazoan fossils: What can we learn?
+ | journal = [[Integrative and Comparative Biology]]
+ | volume = 38 | issue = 6 | pages = 975–982
+ | issn = 1540-7063
+ | doi = 10.1093/icb/38.6.975 | doi-access = free
+}}
+</ref> Hofmann, Narbonne, & Aitken (1990)<ref>
+{{cite journal
+ | last1 = Hofmann  | first1 = H.J.
+ | last2 = Narbonne | first2 = G.M.
+ | last3 = Aitken   | first3 = J.D.
+ | year=1990
+ | title=Ediacaran remains from intertillite beds in northwestern Canada
+ | journal=[[Geology (journal)|Geology]]
+ | volume=18  | issue=12  | pages=1199–1202
+ | bibcode = 1990Geo....18.1199H
+ | doi=10.1130/0091-7613(1990)018<1199:ERFIBI>2.3.CO;2
+}}
+</ref>
+}}
+
+
+{{Graphical timeline|
+|from=-{{Period start|Ediacaran}}
+|to=-{{Period end|Triassic}}
+|height=50
+|period1=Triassic
+|period2=Permian
+|period3=Carboniferous
+|period4=Devonian
+|period5=Silurian
+|period6=Ordovician
+|period7=Cambrian
+|period8=Ediacaran
+|bar10-from=450
+|bar10-to=500
+|bar10-color=red
+|bar10-left=0.95
+|bar10-right=1.05
+|bar10-border-width=1
+}}
+{| class="wikitable sortable"
+!Parameter
+! Function
+! Default
+|- 
+| ''null''
+| Names the geological division (e.g. <code>period1=Phanerozoic</code>)
+| {{yes|''Required''}}
+|-
+| -colour (-color)
+| Overrides the division's colour
+| <code>{{tlp|Period color|<''period''>}}</code>
+|-
+| -text
+| Overrides the division's label
+| <code><''period''></code>
+|- 
+| -from<br/>-to
+| Overrides the division's start & end times
+| <code>-{{tlp|Period start|<''period''>}}</code><br/><code>-{{tlp|Period end|<''period''>}}</code>
+|- 
+| -left<br/>-right
+| Positions the left & right edges, as a fraction of the width (<code>0.0 to 1.0</code>)
+| <code>0.0</code><br/><code>1.0</code>
+|-
+| -border-width<br/>-border-colour<br/>-border-style
+| Stylises the top & bottom borders, simultaneously; styles are <code>solid dotted dashed double groove ridge inset outset</code>
+| ''No border''
+|- 
+| -font-size
+| Sizes the central label
+| <code>90%</code>
+|- 
+| -nudge-down<br/>-nudge-up<br/>-nudge-right<br/>-nudge-left
+| Nudges the label around (Units are in [[em (typography)|em]]s). Only enabled if {{para|disable-box-align|1}}
+| <code>0.0</code>
+|-
+|+ Period parameters
+|}
+{{clear}}
+
+==Material for Later==
+
+===Vetulicolia===
+{{barlabel
+|size=22
+|at1=0 |label1="Banffozoa" |bar1=indigo
+|at2=6 |label2="Vetulicolida" |bar2=purple
+|cladogram={{Clade
+|label1=[[Chordata]]
+|sublabel1={{small|([[total group]])}}
+|1={{Clade
+   |1=''[[Banffia]]'' |barbegin1=indigo
+   |2=''[[Heteromorphus]]'' |bar2=indigo
+   |3={{Clade
+      |1=''[[Skeemella]]'' |barend1=indigo
+      |2={{Clade
+         |1=''[[Nesonektris]]'' |barbegin1=purple
+         |2={{Clade
+            |1={{Clade
+               |1=''[[Ooedigera]]''
+               |2={{Clade
+                  |1=''[[Vetulicola cuneata]]''
+                  |2=''[[Vetulicola gantoucunensis]]''
+                  |3=''[[Vetulicola longbaoshanensis]]''
+                  |4=''[[Vetulicola rectangulata]]''
+                  |5={{Clade
+                     |1=''[[Vetulicola monile]]''
+                     |2=''[[Beidazoon]]''
+               }} }} }} |bar1=purple
+            |2={{Clade
+               |1=''[[Didazoon]]'' |bar1=purple
+               |2=''[[Pomatrum]]'' |bar2=purple
+               |3=''[[Yuyuanozoon]]'' |barend3=purple
+               |4={{Clade
+                  |1=''[[Yunnanozoon]]''
+                  |2={{Clade
+                     |1=''[[Cathaymyrus]]''
+                     |2=''[[Pikaia]]''
+                     |label3=[[Chordata]]
+                     |sublabel3={{small|([[crown group]])}}
+                     |3={{Clade
+                        |1=[[Lancelet|Cephalochordata]]
+                        |2={{Clade
+                           |1=[[Tunicate|Tunicata]]
+                           |2={{Clade
+                              |1=''[[Metaspriggina]]''
+                              |2={{Clade
+                                 |1=''[[Myllokunmingia]]''
+                                 |2=[[Vertebrate|Vertebrata]]
+}} }} }} }} }} }} }} }} }} }} }} }}
+}}
+
+{{barlabel
+|size=27
+|at1=0 |label1="Banffozoa" |bar1=indigo
+|at2=6 |label2="Vetulicolida" |bar2=purple
+|cladogram={{Clade
+   |label1=[[Deuterostomia]]
+   |1={{Clade
+      |label1=[[Chordata]]
+      |sublabel1={{small|([[total group]])}}
+      |1={{Clade
+         |1=''[[Banffia]]'' |barbegin1=indigo
+         |2=''[[Heteromorphus]]'' |bar2=indigo
+         |3={{Clade
+            |1=''[[Skeemella]]'' |barend1=indigo
+            |2={{Clade
+               |1=''[[Nesonektris]]'' |barbegin1=purple
+               |2={{Clade
+                  |1={{Clade
+                     |1=''[[Ooedigera]]''
+                     |2={{Clade
+                        |1=''[[Vetulicola cuneata]]''
+                        |2=''[[Vetulicola gantoucunensis]]''
+                        |3=''[[Vetulicola longbaoshanensis]]''
+                        |4=''[[Vetulicola rectangulata]]''
+                        |5={{Clade
+                           |1=''[[Vetulicola monile]]''
+                           |2=''[[Beidazoon]]''
+                     }} }} }} |bar1=purple
+                  |2={{Clade
+                     |1=''[[Didazoon]]'' |bar1=purple
+                     |2=''[[Pomatrum]]'' |bar2=purple
+                     |3=''[[Yuyuanozoon]]'' |barend3=purple
+                     |4={{Clade
+                        |1=''[[Yunnanozoon]]''
+                        |2={{Clade
+                           |1=''[[Cathaymyrus]]''
+                           |2=''[[Pikaia]]''
+                           |label3=[[Chordata]]
+                           |sublabel3={{small|([[crown group]])}}
+                           |3={{Clade
+                              |1=[[Lancelet|Cephalochordata]]
+                              |2={{Clade
+                                 |1=[[Tunicate|Tunicata]]
+                                 |2={{Clade
+                                    |1=''[[Metaspriggina]]''
+                                    |2={{Clade
+                                       |1=''[[Myllokunmingia]]''
+                                       |2=[[Vertebrate|Vertebrata]]
+      }} }} }} }} }} }} }} }} }} }} }}
+      |label2=[[Ambulacraria]]
+      |sublabel2={{small|([[total group]])}}
+      |2={{Clade
+         |label1=[[Cambroernida]]
+         |1={{Clade
+            |1=''[[Herpetogaster]]''
+            |2={{Clade
+               |1=''[[Phlogites]]''
+               |2=[[Eldonioidea]]
+            }}
+         }}
+         |label2=[[Ambulacraria]]
+         |sublabel2={{small|([[crown group]])}}
+         |2={{Clade
+            |1=[[Hemichordata]]
+            |2=[[Echinodermata]]
+}} }} }} }}
+}}
+
+
+{{barlabel
+|size=30
+|at1=2 |label1="Banffozoa" |bar1=indigo
+|at2=6 |label2="Vetulicolida" |bar2=purple
+|cladogram={{Clade
+   |label1=[[Deuterostomia]]
+   |1={{Clade
+      |label1=[[Chordata]]
+      |sublabel1={{small|([[total group]])}}
+      |1={{Clade
+         |label1=? [[Vetulocystida]]
+         |state1=dashed
+         |1={{Clade
+            |1=''[[Thylacocercus]]''
+            |2={{Clade
+               |1=''[[Dianchicystis]]''
+               |2=''[[Vetulocystis]]''
+            }}
+         }}
+         |2={{Clade
+            |1=''[[Banffia]]'' |barbegin1=indigo
+            |2=''[[Heteromorphus]]'' |bar2=indigo
+            |3={{Clade
+               |1=''[[Skeemella]]'' |barend1=indigo
+               |2={{Clade
+                  |1=''[[Nesonektris]]'' |barbegin1=purple
+                  |2={{Clade
+                     |1={{Clade
+                        |1=''[[Ooedigera]]''
+                        |2={{Clade
+                           |1=''[[Vetulicola cuneata]]''
+                           |2=''[[Vetulicola gantoucunensis]]''
+                           |3=''[[Vetulicola longbaoshanensis]]''
+                           |4=''[[Vetulicola rectangulata]]''
+                           |5={{Clade
+                              |1=''[[Vetulicola monile]]''
+                              |2=''[[Beidazoon]]''
+                        }} }} }} |bar1=purple
+                     |2={{Clade
+                        |1=''[[Didazoon]]'' |bar1=purple
+                        |2=''[[Pomatrum]]'' |bar2=purple
+                        |3=''[[Yuyuanozoon]]'' |barend3=purple
+                        |4={{Clade
+                           |1=''[[Yunnanozoon]]''
+                           |2={{Clade
+                              |1=''[[Cathaymyrus]]''
+                              |2=''[[Pikaia]]''
+                              |label3=[[Chordata]]
+                              |sublabel3={{small|([[crown group]])}}
+                              |3={{Clade
+                                 |1=[[Lancelet|Cephalochordata]]
+                                 |2={{Clade
+                                    |1=[[Tunicate|Tunicata]]
+                                    |2={{Clade
+                                       |1=''[[Metaspriggina]]''
+                                       |2={{Clade
+                                          |1=''[[Myllokunmingia]]''
+                                          |2=[[Vertebrate|Vertebrata]]
+      }} }} }} }} }} }} }} }} }} }} }} }}
+      |label2=[[Ambulacraria]]
+      |sublabel2={{small|([[total group]])}}
+      |2={{Clade
+         |label1=[[Cambroernida]]
+         |1={{Clade
+            |1=''[[Herpetogaster]]''
+            |2={{Clade
+               |1=''[[Phlogites]]''
+               |2=[[Eldonioidea]]
+            }}
+         }}
+         |label2=[[Ambulacraria]]
+         |sublabel2={{small|([[crown group]])}}
+         |2={{Clade
+            |1=[[Hemichordata]]
+            |2=[[Echinodermata]]
+}} }} }} }}
+}}
+
+===Asterozoa===
+<ref>{{harvnb|Blake|2024|page=23}}</ref>
+{{barlabel
+|size=22
+|at1=1 |label1=Stenuroidea |bar1=green
+|at2=15 |label2=Ophiuroidea |bar2=darkblue
+|cladogram={{Clade
+   |label1=Somasteroidea
+   |sublabel1=([[outgroup (cladistics)|outgroup]])
+   |1=''Chinianaster''
+   |2={{Clade
+      |1={{Clade
+         |1=''Acinetaster''
+         |2={{Clade
+            |1={{Clade
+               |1={{Clade
+                  |1=''Bdellacoma''
+                  |2=''Embolaster''
+               }}
+               |2=''Rhopalocoma''
+            }}
+            |2={{Clade
+               |1=''Erinaceaster giganteus''
+               |2=''Erinaceaster tenuispinosus''
+               |3={{Clade
+                  |1=''Hystrigaster''
+                  |2=''Stuertzaster''
+                  |3=''Echinasterella''
+               }}
+            }}
+         }}
+         |3=''Palasteriscus''
+         |4=''Kiasmura''
+         |5=''Protasteracanthion''
+      }} |barbegin1=green
+      |2={{Clade
+         |1=''Pradesura'' |barend1=green
+         |2={{Clade
+            |1=''Protaster'' |barbegin1=darkblue
+            |2=''Hallaster'' |bar2=darkblue
+            |3={{Clade
+               |1=''Stenaster'' |bar1=darkblue
+               |2={{Clade
+                  |1=''Encrinaster'' |barend1=darkblue
+                  |label2=Asteroidea
+                  |2={{Clade
+                     |1=''Eukrinaster''
+                     |2={{Clade
+                        |1=''Xenaster''
+                        |2={{Clade
+                           |1=''Hudsonaster''
+                           |2={{Clade
+                              |1=''Petraster''
+                              |2=''Urasterella''
+}} }} }} }} }} }} }} }} }} }}
+}}
+
+<ref>{{harvnb|Blake|Guensburg|2015|page=483}}</ref>
+{{barlabel
+|size=20
+|at1=2 |label1=Somasteroidea |bar1=indigo
+|at2=8 |label2=Stenuroidea |bar2=green
+|cladogram={{Clade
+   |1=''Chinianaster'' |barbegin1=indigo
+   |2={{Clade
+      |1={{Clade
+         |1=''Villebrunaster'' |bar1=indigo
+         |2=''Thoralaster'' |bar2=indigo
+      }}
+      |2={{Clade
+         |1=''Ophioxenikos'' |bar1=indigo
+         |2={{Clade
+            |1={{Clade
+               |1={{Clade
+                  |1={{Clade
+                     |1={{Clade
+                        |1={{Clade
+                           |1={{Clade
+                              |1={{Clade
+                                 |1=''Archegonaster''&nbsp;&nbsp; |barend1=indigo
+                                 |2=''Embolaster'' |barbegin2=green
+                              }}
+                              |2=''Rhopalocoma'' |bar2=green
+                           }}
+                           |2=''Eophiura'' |bar2=green
+                        }}
+                        |2=''Eriniceaster'' |bar2=green
+                     }}
+                     |2=''Pradesura'' |barend2=green
+                  }}
+                  |2={{Clade
+                     |1=''Swataria''
+                     |2={{Clade
+                        |1=''Catervaparmaster''
+                        |2=''Phragmactis''
+                     }}
+                  }}
+               }}
+               |label2=Ophiuroidea
+               |2={{Clade
+                  |1=''Protaster''
+                  |2={{Clade
+                     |1=''Stenaster''
+                     |2=''Encrinaster''
+                  }}
+               }}
+            }}
+            |label2=Asteroidea
+            |2={{Clade
+               |1=''Eukrinaster''
+               |2={{Clade
+                  |1=''Petraster''
+                  |2={{Clade
+                     |1=''Urasterella''
+                     |2=''Hudsonaster''
+                  }}
+               }}
+            }}
+         }}
+      }}
+   }}
+}}
+}}
+
+<ref>{{harvnb|Hunter|Ortega-Hernández|2021|page=3}}</ref>
+{{barlabel
+|size=22
+|at1=1 |label1=Somasteroidea |bar1=indigo
+|at2=8 |label2=Stenuroidea |bar2=green
+|at3=14 |label3=Ophiuroidea |bar3=darkblue
+|at4=22 |label4=Asteroidea |bar4=red
+|cladogram={{Clade
+   |label1='''Asterozoa'''
+   |sublabel1=([[total group]])
+   |1={{Clade
+      |1=''Cantabrigiaster'' |barbegin1=indigo
+      |2={{Clade
+         |1=''Villebrunaster'' |bar1=indigo
+         |2={{Clade
+            |1=''Chinianaster'' |bar1=indigo
+            |2=''Thoralaster'' |bar2=indigo
+         }}
+         |label3='''Asterozoa'''
+         |sublabel3=([[crown group]])
+         |3={{Clade
+            |1=''Ophioxenikos'' |bar1=indigo
+            |2=''Archegonaster'' |barend2=indigo
+            |3={{Clade
+               |1={{Clade
+                  |1=''Phragmactis'' |barbegin1=green
+                  |2=''Rhopalocoma'' |bar2=green
+                  |3=''Maydenia'' |bar3=green
+                  |4={{Clade
+                     |1=''Eriniceaster'' |bar1=green
+                     |2={{Clade
+                        |1=''Pradesura'' |bar1=green
+                        |2=''Eophiura'' |barend2=green
+                        |3={{Clade
+                           |1=''Palaeura'' |barbegin1=darkblue
+                           |2={{Clade
+                              |1=''Protaster'' |bar1=darkblue
+                              |2={{Clade
+                                 |1=''Encrinaster'' |bar1=darkblue
+                                 |2=''Ophiocantabria''&nbsp;&nbsp;&nbsp; |bar2=darkblue
+                              }}
+                           }}
+                        }}
+                     }}
+                  }}
+               }}
+            }}
+            |4={{Clade
+               |1=''Stenaster'' |barend1=darkblue
+               |2=''Urasterella'' |barbegin2=red
+               |3=''Cnemidactis'' |bar3=red
+               |4=''Platanaster'' |bar4=red
+               |5={{Clade
+                  |1=''Hudsonaster'' |bar1=red
+                  |2=''Petraster'' |barend2=red
+               }}
+            }}
+         }}
+      }}
+   }}
+}}
+}}
+
+===Blastozoa===
+====MANY GROUPS Parsley 1981====
+1981-00-00-p Echinoderms from Middle and Upper Ordovician rocks of Kentucky.pdf
+* P Echinodermata
+** BP Homalozoa (Whitehouse 1941)
+*** C Stylophora (Gill and Caster 1960)
+**** O Mitrata (Jaekel 1918)
+***** BO Anomalocystitida (Caster 1952)
+****** F Anomalocystitidae (Bassler 1938)
+******* g ''Enoploura'' (Wetherby 1879)
+******** ''E. punctata'' (Bassler 1932)
+** BP Crinozoa (Matsumoto 1929)
+*** C Cystoidia (von Buch 1846)
+**** O Rhombifera (Zittel 1879)
+***** SF Glyptocystitida (Bather 1899)
+****** F Pleurocystitidae (Neumayr 1899)
+******* g ''Amecystis'' (Ulrich and Kirk 1921)
+******** ''A. ''laevis'' (Raymond 1921)
+** BP Paracrinozoa (Parsley and Mintz 1975)
+*** C Paracrinoidea (Regnéll 1945)
+**** O Comarocystitida (Parsley and Mintz 1975)
+***** F Amygalocystitidae (Jaekel 1900)
+****** g ''Amygdalocystites'' (Billings 1854)
+******* ''A. florealis'' (Bilings 1854)
+*** C Crinoidea (J. S. Miller 1821)
+**** BC Inadunata (Wachsmuth and Springer 1885)
+***** O Hybocrinida (Jaekel 1918)
+****** F Hybocrinidae (Zittel 1879)
+******* g ''Hybocrinus'' (Billings 1857)
+******** ''H. tumidus'' (Billilngs 1857)
+******* g ''Hybocystites'' (Wetherby 1880)
+******** ''H. Problematicus'' (Wetherby 1880)
+****** BO Cyathocrinoidea (Bather 1899)
+******* F Carabocrinidae (Bather 1899)
+******** g ''Carabocrinus'' (Billings 1857)
+********* ''C. sp.''
+***** O Cladida (Moore and Laudon 1943)
+****** BO Dendrocrinina (Bather 1899)
+******* F Dendrocrinidae (Miller 1889)
+******** g ''Cupulocrinus'' (d'Orbigny 1849)
+********* ''C. sp.''
+***** O Disparida (Moore and Laudon 1943)
+****** F Heterocrinidae (Zittel 1879)
+******* g ''Heterocrinus'' (Hall 1872)
+******** ''H. sp.''
+** BP Echinozoa (Matsumoto 1929)
+*** C Cyclocystoidea (Miller and Gurley 1895)
+**** F Cyclocystoididae (Miller 1892)
+***** g ''Cyclocystoides'' (Salter and Billings 1858)
+****** ''C. sp.''
+
+====MANY GROUPS Sprinkle (ed.) 1982====
+1982-07-30-p  Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma.pdf
+
+* P Echinodermata (Bruguiere 1791)
+** BP Crinozoa (Matsumoto 1929)
+*** C Crinoidea (Miller 1821)
+**** BC Inadunata (Wachsmuth and Springer 1885)
+***** O Disparida (Moore and Laudon 1943)
+***** O Hybocrinida (Jaekel 1918)
+***** O Cladida (Moore and Laudon 1943)
+****** BO Dendrocrinina (Bather 1899)
+****** BO Cyathocrinina (Bather 1899)
+******* SF Gasterocomacea (Roemer 1854)
+**** BC Camerata (Wachsmuth and Spring 1885)
+*** C Paracrinoidea (Regnéll)
+** BP Blastozoa (Sprinkle 1973)
+*** C Rhombifera (Zittel 1879, emend. Paul 1968)
+**** O Dichoporita (Jaekel 1899)
+***** SF Glyptocystitida (Bather 1899)
+*** C Diploporita (Müller 1854, nom. transl. Paul 1968)
+*** C Eocrinoidea (Jaekel 1918)
+**** F Palaeocystitidae (Ubaghs 1968)
+** BP &lt;indeterminate&gt;
+*** C Edrioasteroidea (Billing 1858)
+** BP Echinozoa (Zittel 1895)
+*** C Edrioblastoidea (Fay 1962)
+*** C Cyclocystoidea (Miller and Gurly 1895)
+*** C Echinoidea (Leske 1778)
+*** C Holothuroidea
+** BP Asterozoa (Zittel 1895)
+*** C Stelleroidea (Lamarck 1816)
+**** BC Asteroidea (de Blainville 1830)
+** BP Homalozoa (Whitehouse 1941)
+
+====EDRIOASTEROIDEA/CYCLOCYSTOIDEA====
+1985-00-00-p Cambrian and Ordovician echinoderms from eastern Australia.pdf
+
+* Edrioasteroidea
+** Stromatocystitidae (Bassler 1936)
+*** ''Cambraster'' (Cabibel, Ternier & Ternier 1958)
+**** ''Trochocystites cannati'' ?=>? ''C. cannati'' (Miquel 1894)
+**** ''C. tatsuddorum'' n. sp.
+**** ''C. sp.''
+*** ''Edriodiscus'' n. gen.
+**** ''Cyclocystoides primotica'' => ''E. primotica'' (Henderson & Shergold 1971)
+*** ''Stromatocystites'' (Pompeckj 1896)
+**** ''S. pentangularis'' (Pompeckj 1896)
+**** ''S. pompeckj''
+**** ''?S. sp.''
+** Isorophida (Bell 1976)
+* Ctenocystoidea (Robinson & Sprinkle 1969)
+** Ctenocystidae (Robinson & Sprinkle 1978)
+*** ''Ctenocystis'' (Robinson & Sprinkle 1969)
+**** ''C. utahensis'' (Robinson & Sprinkle 1969)
+**** ''C. jagoi'' n. sp.
+* Eocrinoidea
+** Ridersiidae n. f.
+*** ''Ridersia'' n. gen.
+**** ''R. watsonae'' n. sp.
+** Macrocystellidae (Bather 1899)
+*** ''Macrocystella'' (Callaway 1877)
+**** ''M. mariae'' (Callaway 1877)
+* Rhombifera
+** Echinoencrinitidae (Bather 1899)
+*** ''Echinoencrinites'' (von Meyer 1826)
+**** ''E. lahuseni'' (Jaekel 1899)
+**** ''E. angulosus'' (Pander)
+
+Likelihood of ''Ridersia'' being "distantly" related to glyptocystitoid rhombiferans already noted in first description.
+
+====HELICOPLACOIDEA: Wilbur 2006====
+2006-10-16-a Reduction in the number of Early Cambrian helicoplacoid species.pdf
+
+* C Helicoplacoidea
+** O Helicoplacida
+*** F Helicoplacidae
+**** g ''Helicoplacus''
+***** ''H. gilberti''
+***** ''H. everndeni''
+***** ''H. casteri''
+***** ''H. guthi''
+*** F Westgardelliidae
+**** g ''Westgardella''
+***** ''W. curtisi''
+***** ''W. firbyi''
+***** ''W. blancoensis''
+**** g ''Waucobella''
+***** ''W. nelsoni''
+** O Polyplacida
+*** g ''Polyplacus''
+**** ''P. kilmeri''
+
+* C Helicoplacoidea (Durham and Caster 1963)
+** F Helicoplacidae (Durham and Caster 1966)
+*** g ''Helicoplacus'' (Durham and Caster 1963)
+**** ''H. gilberti'' (Durham and Caster 1963)
+*** g ''Waucobella'' (Durham 1967)
+**** ''W. nelsoni'' (Durham 1967)
+*** g ''Polyplacus'' (Durham 1967)
+**** ''P. kilmeri'' (Durham 1967)
+
+====EOCRINOIDEA/CRINOIDEA/RHOMBIFERA: Zamora Smith 2011====
+2011-05-19-a Cambrian stalked echinoderms show unexpected plasticity of arm construction.pdf
+{{barlabel
+|size=14
+|at1=3 |bar1=indigo |label1=Crinoids
+|at2=11 |bar2=green |label2=Dibrachicystids (Rhombifera)
+|at3=13 |bar3=darkgreen |label3=Glyptocystitoids (Rhombifera)
+|cladogram=
+{{clade|
+|label1=[[Blastozoa]]
+|1={{clade
+   |1=''[[Kinzercystis]]''
+   |2={{clade
+      |1={{clade
+         |1=''[[Lyracystis]]''
+         |2={{clade
+            |1=''[[Titanocrinus]]'' |barbegin1=indigo 
+            |2=''[[Aethocrinus]]''|barend2=indigo
+      }} }}
+      |2={{clade
+         |1=''[[Gogia]]''
+         |2=''[[Sinoeocrinus]]''
+         |3={{clade
+            |1=''[[Akadocrinus]]''
+            |2={{clade
+               |1=''[[Tatonkacystis]]''
+               |2=''[[Ubaghsicystis]]''
+               |3={{clade
+                  |1=''[[Dibrachicystis]]'' |barbegin1=green |barend1=green
+                  |2=''[[Pleurocystites]]'' |barbegin2=darkgreen
+                  |3={{clade
+                     |1=''[[Velieuxicystis]]'' |bar1=darkgreen
+                     |2={{clade
+                        |1=''[[Macrocystella]]''&nbsp;&nbsp; |barend1=darkgreen
+                        |2=''[[Ridersia]]''
+}} }} }} }} }} }} }} }} }}
+}}
+
+====BLASTOZOA Sumrall & Waters 2012====
+2012-05-18-a Universal Elemental Homology In Glyptocystitoids, Hemicosmitoids, Coronoids And Blastoids- Steps Toward Echinoderm Phylogenetic Reconstruction In Derived Blastozoa.pdf
+
+{{Clade |1={{Clade
+   |1=''Eurekablastus''
+   |2={{Clade
+      |1={{Clade
+         |1=''Hemicosmites''
+         |2={{Clade
+            |1=''Cheirocystis''
+            |2=''Lepadocystis''
+         }}
+      }}
+      |2={{Clade
+         |1=''Lysocystites''
+         |2={{Clade
+            |1={{Clade
+               |1=''Stephanocrinus''
+               |2=''Cupulocorona''
+            }}
+            |2={{Clade
+               |1=''Troosticrinus''
+               |2={{Clade
+                  |1=''Pentremites''
+                  |2=''Koryschisma''
+}} }} }} }} }} }}
+}}
+
+====EDRIOASTEROIDA/EDRIOBLASTOIDINA====
+2012-01-30-a The first report of South American edrioasteroids and the paleoecology and ontogeny of rhenopyrgid echinoderms.pdf
+
+
+{{barlabel
+|size=8
+|at1=1 |bar1=brown |label1=Edrioasterida
+|cladogram={{Clade
+|label1=Edrioasteroidea
+|1={{Clade
+   |1=''Kailidiscus''
+   |2={{Clade
+      |1={{Clade
+         |1=''Paredriophus'' |barbegin1=darkred
+         |2={{Clade
+            |1=''Lampteroblastus'' {{small|(Edrioblastoidina)}}&nbsp;&nbsp; |bar1=darkred
+            |2=''Rhenopyrgus'' {{small|(Edrioblastoidina)}} |barend2=darkred
+            |3=''Cyathotheca'' {{small|(Cyathocystida)}}
+         }}
+      }}
+      |2={{Clade
+         |1={{Clade
+            |1=''Isorophus'' {{small|(Isorophina)}}
+            |2=''Carneyella'' {{small|(Hemicystitidae}}
+         }}
+         |2=''Argodiscus'' {{small|(Pergocystidae)}}
+}} }} }} }}
+}}
+
+====GLYPTOCYSTITIDA: Zamora, Sumrall, Zhu, Lefebvre 2016====
+2016-01-27 a A new stemmed echinoderm from the Furongian of China and the origin of Glyptocystitida (Blastozoa, Echinodermata).pdf
+
+{{barlabel
+|size=15
+|at1=0 |bar1=gray |label1=[[outgroup (cladistics)|outgroup]]
+|at2=4 |bar2=lightgreen |label2=radial plate circlet
+|at3=9 |bar3=green |label3=pectinirhombs and<br />radial plate circlet
+|cladogram={{Clade
+|1={{Clade
+   |1=''Hemicosmites'' {{small|(Hemicosmitoid Rhombiferan)}} |bar1=gray
+   |2=''Stephanocrinus'' {{small|(Coronate Blastoid)}} |bar2=gray
+   |3={{Clade
+      |1=''Ridersia'' {{small|(Eocrinoid)}}
+      |label2=Glyptocystitida
+      |2={{Clade
+         |1=''Sanducystis nov. gen.''
+         |2={{Clade
+            |1=''Barroubiocystis'' |barbegin1=lightgreen
+            |2=''Velieuxicystis''  |bar2=lightgreen
+            |3={{Clade
+               |1=''Macrocystella'' |bar1=lightgreen
+               |2=''Cuniculocystis'' |bar2=lightgreen
+               |3={{Clade
+                  |1=''Cheirocrinus'' |barbegin1=green
+                  |2={{Clade
+                     |1=''Cheirocystis'' |bar1=green
+                     |2=''Glyptocystites'' |bar2=green
+                     |3={{Clade
+                        |1=''Pleurocystites''
+                        |2={{Clade
+                           |1=''Lepadocystis''
+                           |2=''Scoliocystis''
+                           |3=''Echinoencrinites''&nbsp;&nbsp;
+                        }}
+                     }} |barend3=green
+                  }}
+               }}
+            }}
+         }}
+      }}
+   }}
+}}
+}}
+}}
+
+====EOCRINOIDEA: Nardin et al 2017====
+2016-11-08-a Evolutionary implications of a new transitional blastozoan echinoderm from the middle Cambrian of the Czech Republic.pdf
+{{barlabel
+|size=13
+|at1=6 |bar1=indigo |label1=Eocrinidae
+|cladogram=
+{{Clade
+   |label1=[[Edrioasteroidea]]
+   |sublabel1={{small|([[outgroup (cladistics)|outgroup]])}}
+   |1=''Stromatocystites''
+   |label2=[[Blastozoa]]
+   |2={{Clade
+      |label1=Lepidocystoidae
+      |1={{Clade
+         |1=''Kinzercystis''
+         |2=''Vyscystis''
+         |3=''[[Lepidocystis]]''
+      }}
+      |2={{Clade
+         |label1=Felbabkacystidae
+         |1=''Felbabkacystis''
+         |2={{Clade
+            |1=''[[Lyracystis]]''
+            |barbegin1=indigo
+            |2={{Clade
+               |1={{Clade
+                  |1=''Akadocrinus''
+                  |2=''[[Gogia]]''
+                  |3=''Sinoeocrinus''
+                  |4=''[[Ubaghsicystis]]''
+               }}
+               |barend1=indigo
+               |2={{Clade
+                  |label1=Lichenoidae
+                  |1=''[[Lichenoides]]''
+                  |2={{Clade
+                     |1=''Trachelocrinus''
+                     |2=''Ridersia''
+                     |3=(derived Blastozoa)
+}} }} }} }} }} }} }}
+}}
+
+====DIPLOPORITA: Makhlouf et al. 2017====
+2017-03-06-a The diploporite blastozoan Lepidocalix pulcher from the Middle Ordovician of northern Algeria: Taxonomic revision and palaeoecological implications.pdf
+
+* BP Blastozoa (Sprinkle 1973)
+** C Diploporita (Müller 1854, emend. Paul 1972)
+*** SF Aristocystitoida (Neumayr 1889)
+**** F Aristocystitidae (Neumayr 1889)
+***** BF Calicinae (Termier and Termier 1950b)
+****** g ''Lepidocalyx'' (Termier and Termier 1950a)
+******* ''L. pulcher'' (Termier and Termier 1959a)
+
+====EOCRINOIDEA/CRINOIDEA:  Sheffield & Sumrall 2018====
+2018-07-20-a A Re-Interpretation Of The Ambulacralsystem Of Eumorphocystis (Blastozoa, Echinodermata) And Its Bearing On The Evolution Of Early Crinoids.pdf
+{{thumb|align=left|width=600|content=<div style="text-align:left;">
+{{barlabel|style=font-size:85%;line-height:85%
+|size=11
+|at1=0 |bar1=gray |label1=Edrioasteroids
+|at2=2 |bar2=brown |label2=Gogiid Eocrinoids
+|at3=4 |bar3=darkblue |label3=Coronate Blastoids
+|at4=5 |bar4=green |label4=Hemicosmitoid Rhombiferans
+|at5=6 |bar5=darkgreen |label5=Glytpocystitoid Rhombiferans
+|at6=8 |bar6=blue |label6=Glyptosphaeritid Diploporitans
+|cladogram={{Clade|1={{Clade
+   |1=''Kailidiscus'' |barbegin1=gray
+   |2={{Clade
+      |1=''Edriophus'' |barend1=gray
+      |2={{Clade
+         |1=''Gogia'' |barbegin1=brown |barend1=brown
+         |2={{Clade
+            |1={{Clade
+               |1=''Sephanocrinus'' |barbegin1=darkblue |barend1=darkblue
+               |2={{Clade
+                  |1=''Hemicosmites'' |barbegin1=green |barend1=green
+                  |2=''Cheirocrinus'' |barbegin2=darkgreen |barend2=darkgreen
+               }}
+               |3={{Clade
+                  |1=''Eumorphocystis'' |barbegin1=blue |barend1=blue
+                  |label2=Crinoidea
+                  |2={{Clade
+                     |1={{Clade
+                        |1=''Titanocrinus''
+                        |2=''Gaurocrinus''
+                     }}
+                     |2={{Clade
+                        |1=''Hybocrinus''
+                        |2=''Carabocrinus''
+                     }}
+}} }} }} }} }} }} }} }}
+}}</div>
+}}
+{{clear}}
+
+====EOCRINOIDEA: Nohejlová et al. 2018====
+2018-10-19-a Morphology  palaeoecology and phylogenetic interpretation of the Cambrian echinoderm Vyscystis  Barrandian area  Czech Republic.pdf
+
+{{thumb|align=left|width=600|content=<div style="text-align:left;">
+{{barlabel|style=font-size:85%;line-height:85%
+|size=10
+|at1=5 |bar1=brown |label1=Eocrinoids
+|at2=11 |bar2=darkgreen |label2=Glyptocystitoid Rhombiferans
+|cladogram={{Clade
+   |1={{Clade
+     |label1=Edrioasteroidea
+     |sublabel1={{small|([[outgroup (cladistics)|outgroup]])}}
+     |1=''Stromatocystites''
+     |label2=Blastozoa
+     |2={{Clade
+         |label1=Lepidocistoidae
+         |1={{Clade
+            |1=''Vyscystis''
+            |2={{Clade
+               |1=''Kinzercystis''
+               |2=''Lepidocystis''
+            }}
+         }} |barbegin1=brown
+         |2={{Clade
+            |1=''Felbabkacystis'' |bar1=brown
+            |2={{Clade
+               |1=''Ascocystites'' |bar1=brown
+               |2={{Clade
+                  |1={{Clade
+                     |1=''Gogia''
+                     |2=''Akadocrinus''
+                  }} |bar1=brown
+                  |2={{Clade
+                     |1=''Lichenoides'' |barend1=brown
+                     |2=''Macrocystella''&nbsp;&nbsp; |barbegin2=darkgreen |barend2=darkgreen
+                  }}
+               }}
+            }}
+         }}
+      }}
+   }}
+}}
+}}</div>
+}}
+{{clear}}
+
+====DIPLOPORITA / BLASTOZOA: Lam, Sheffield, & Matzke====
+2020-05-13-a Estimating dispersal and evolutionary dynamics in diploporan blastozoans (Echinodermata) across the great Ordovician biodiversification event.pdf
+=====basic=====
+{{thumb|align=left|width=600|content=<div style="text-align:left;">
+{{Clade|style=font-size:85%;line-height:85%
+|1={{Clade
+   |1=''Gogia spiralis'' {{small|(Gogiida, '''"Eocrinoidea"''')}} 
+   |2={{Clade
+      |1=''Rhopalocystis destombesi'' {{small|(Ascocystitida, '''"Eocrinoidea"''')}}
+      |2={{Clade
+         |1={{Clade
+            |1=''Cheirocystis fultonensis'' {{small|(Glyptocystitioda, '''"Rhombifera"''')}}
+            |2={{Clade
+               |1=''Hemicosmites grandis'' {{small|(Hemicosmitioda, '''"Rhombifera"''')}}
+               |2=''Stephanocrinus angulatus'' {{small|Coronata, '''Blastoidea''')}}
+            }}
+         }}
+         |2={{Clade
+            |1={{Clade
+               |1=''Eurekablastus rozhnovi'' {{small|Blastocystidae, '''Parablastoidea''')}}
+               |2={{Clade
+                  |1={{Clade
+                     |1=''Hybocrinus nitidus'' {{small|(Cladida, '''Crinoidea''')}}
+                     |2=''Eumorphocystis multiporata'' {{small|(Glyptosphaeritida)}} |bar2=indigo
+                  }}
+                  |2=''Asteroblastus stellatus'' {{small|(Asteroblastida)}} |bar2=red
+               }}
+            }}
+            |2={{Clade
+               |1=''Dactylocystis schmidti'' {{small|(Glyptosphaeritida)}} |bar1=indigo
+               |2={{Clade
+                  |1={{Clade
+                     |1={{Clade
+                        |1={{Clade
+|1=''Aristocystites bohemicus'' {{small|(Sphaeronitida)}} |bar1=lightgreen
+|2=''Triamara ventricosa'' {{small|(Sphaeronitida)}} |bar2=lightgreen
+                        }}
+                        |label2=Holocystitidae
+                        |2={{Clade
+                           |1=''Holocystites salmoensis'' {{small|(Sphaeronitida)}}
+                           |2={{Clade
+                              |1={{Clade
+                                 |1=''Holocystites cylindricus'' {{small|(Sphaeronitida)}}
+                                 |2=''Holocystites scutellus'' {{small|(Sphaeronitida)}}
+                              }}
+                              |2={{Clade
+                                 |1={{Clade
+                                    |1=''Paulicystis densus'' {{small|(Sphaeronitida)}}
+                                    |2=''Trematocystis magniporatus'' {{small|(Sphaeronitida)}}&nbsp;&nbsp;
+                                 }}
+                                 |2={{Clade
+                                    |1=''Pentacystis gibsoni'' {{small|(Sphaeronitida)}}
+                                    |2=''Pustulocystis pentax'' {{small|(Sphaeronitida)}}
+                                 }}
+                              }}
+                           }}
+                        }} |bar2=lightgreen
+                     }}
+                     |2={{Clade
+                        |1=''Sphaeronities rossicum'' {{small|(Sphaeronitida)}} |bar1=lightgreen
+                        |2={{Clade
+                           |1=''Haplosphaeronis oblonga'' {{small|(Sphaeronitida)}} |bar1=lightgreen
+                           |2={{Clade
+                              |1=''Eucystis angelini'' {{small|(Sphaeronitida)}} |bar1=lightgreen
+                              |2=''Tristomiocystis globosus'' {{small|(Glyptosphaeritida)}} |bar2=indigo
+                           }}
+                        }}
+                     }}
+                  }}
+                  |2={{Clade
+                     |2={{Clade
+                        |2=''Canadocystis barrandei'' {{small|(Platycystitida, '''Paracrinoidea''')}}
+                        |1=''Glyptosphaerites leuchtenbergi'' {{small|(Glyptosphaeritida)}} |bar1=indigo
+                     }}
+                     |1={{Clade
+                        |1=''Estonocystis antropoffi'' {{small|(Glyptosphaeritida)}}
+                        |2={{Clade
+                           |1=''Fungocystites rarissimus'' {{small|(Glyptosphaeritida)}}
+                           |2=''Gomphocystites indianensis'' {{small|(Glyptosphaeritida)}}
+                        }}
+                     }} |bar1=indigo
+                  }}
+               }}
+            }}
+         }}
+      }}
+   }}
+}}
+}}</div>
+}}
+
+{{clear}}
+=====with colors=====
+{{thumb|align=left|width=600|content=<div style="text-align:left;">
+{{barlabel|style=font-size:85%;line-height:85%
+|size=28
+|at1=-1 |bar1=brown |label1=Eocrinoids
+|at2=1 |bar2=green |label2=Rhombiferans
+|at3=3 |bar3=darkblue |label3=Blastoids
+|at4=4 |bar4=darkred |label4=Parablastoids
+|at5=7 |bar5=black |label5=Crinoids
+|at6=10 |bar6=crimson |label6=Paracrinoids
+|cladogram={{Clade
+|1={{Clade
+   |1=''Gogia spiralis'' {{small|(Gogiida, "Eocrinoidea")}} |barbegin1=brown 
+   |2={{Clade
+      |1=''Rhopalocystis destombesi'' {{small|(Ascocystitida, "Eocrinoidea")}}|barend1=brown
+      |2={{Clade
+         |1={{Clade
+            |1=''Cheirocystis fultonensis'' {{small|(Glyptocystitioda, "Rhombifera")}} |barbegin1=green
+            |2={{Clade
+               |1=''Hemicosmites grandis'' {{small|(Hemicosmitioda, "Rhombifera")}} |barend1=green
+               |2=''Stephanocrinus angulatus'' {{small|Coronata, Blastoidea)}} |barbegin2=darkblue |barend2=darkblue
+            }}
+         }}
+         |2={{Clade
+            |1={{Clade
+               |1=''Eurekablastus rozhnovi'' {{small|Blastocystidae)}} |barbegin1=darkred |barend1=darkred
+               |2={{Clade
+                  |2=''Asteroblastus stellatus'' {{small|(Asteroblastida)}}
+                  |1={{Clade
+                     |1=''Hybocrinus nitidus'' {{small|(Cladida)}} |barbegin1=black |barend1=black
+                     |2=''Eumorphocystis multiporata'' {{small|(Glyptosphaeritida)}}
+                  }}
+               }}
+            }}
+            |2={{Clade
+               |2=''Dactylocystis schmidti'' {{small|(Glyptosphaeritida)}}
+               |1={{Clade
+                  |2={{Clade
+                     |1={{Clade
+                        |1=''Canadocystis barrandei'' {{small|(Platycystitida)}} |barbegin1=crimson |barend1=crimson
+                        |2=''Glyptosphaerites leuchtenbergi'' {{small|(Glyptosphaeritida)}}
+                     }}
+                     |2={{Clade
+                        |1=''Estonocystis antropoffi'' {{small|(Glyptosphaeritida)}}
+                        |2={{Clade
+                           |1=''Fungocystites rarissimus'' {{small|(Glyptosphaeritida)}}
+                           |2=''Gomphocystites indianensis'' {{small|(Glyptosphaeritida)}}
+                        }}
+                     }}
+                  }}
+                  |1={{Clade
+                     |2={{Clade
+                        |2=''Sphaeronities rossicum'' {{small|(Sphaeronitida)}}
+                        |1={{Clade
+                           |2=''Haplosphaeronis oblonga'' {{small|(Sphaeronitida)}}
+                           |1={{Clade
+                              |2=''Eucystis angelini'' {{small|(Sphaeronitida)}}
+                              |1=''Tristomiocystis globosus'' {{small|(Glyptosphaeritida)}}
+                           }}
+                        }}
+                     }}
+                     |1={{Clade
+                        |label2=Holocystitidae
+                        |2={{Clade
+                           |1=''Holocystites salmoensis'' {{small|(Sphaeronitida)}}
+                           |2={{Clade
+                              |1={{Clade
+                                 |1=''Holocystites cylindricus'' {{small|(Sphaeronitida)}}
+                                 |2=''Holocystites scutellus'' {{small|(Sphaeronitida)}}
+                              }}
+                              |2={{Clade
+                                 |1={{Clade
+                                    |1=''Paulicystis densus'' {{small|(Sphaeronitida)}}
+                                    |2=''Trematocystis magniporatus'' {{small|(Sphaeronitida)}}
+                                 }}
+                                 |2={{Clade
+                                    |1=''Pentacystis gibsoni'' {{small|(Sphaeronitida)}}
+                                    |2=''Pustulocystis pentax'' {{small|(Sphaeronitida)}}
+                                 }}
+                              }}
+                           }}
+                        }}
+                        |1={{Clade
+|2=''Triamara ventricosa'' {{small|(Sphaeronitida)}}
+|1=''Aristocystites bohemicus'' {{small|(Sphaeronitida)}}&nbsp;&nbsp;
+
+                        }}
+                     }}
+                  }}
+               }}
+            }}
+         }}
+      }}
+   }}
+}}}}
+}}</div>
+}}
+
+{{clear}}
+
+====BLASTOIDEA: Bauer Waters Sumrall 2019====
+2019-05-02-a Redescription of Macurdablastus and redefinition of Eublastoidea as a clade of Blastoidea.pdf
+
+{{thumb|align=left|width=600|content=<div style="text-align:left;">
+{{barlabel|style=font-size:85%;line-height:85%
+|size=9
+|at1=6 |bar1=indigo |label1="Fissiculata"
+|cladogram={{Clade
+|1={{Clade
+   |label1=Glyptocystitoida
+   |sublabel1={{small|([[outgroup (cladistics)|outgroup]])}}
+   |1=''Chierocystis fultonensis''
+   |label2=Blastoidea
+   |2={{Clade
+      |1=''Lysocystites nodosus''
+      |2={{Clade
+         |label1=Coronata
+         |1={{Clade
+            |1=''Cupulocorona gemmiformis''
+            |2=''Stephanocrinus angulatus''
+         }}
+         |2={{Clade
+            |1=''Macurdablastus uniplicatus''
+            |label2=Eublastoidea
+            |2={{Clade
+               |1=''Decaschisma pulchellus'' |barbegin1=indigo
+               |2={{Clade
+                  |1=''Polydeltoideus enodatus''&nbsp;&nbsp; |barend1=indigo
+                  |label2=Spiraculata
+                  |2={{Clade
+                     |1=''Pentremites godoni''
+                     |2=''Deltoblastus permicus''
+                  }}
+               }}
+            }}
+         }}
+      }}
+   }}
+}}
+}}
+}}</div>
+}}
+{{clear}}
+
+====BLASTOZOA/-CRINOZOA: Guensburg Sprinkle Mooi Lefebvre 2020====
+2020-08-28-a Evolutionary significance of the blastozoan Eumorphocystis and its pseudo-arms.pdf
+
+{{thumb|align=left|width=800|content=<div style="text-align:left;">
+{{barlabel|style=font-size:85%;line-height:85%
+|size=25
+|at1=1 |bar1=gray |label1=Edrioasteroids
+|at2=19 |bar2=brown |label2=Eocrinoids
+|at3=24 |bar3=darkgreen |label3=Glyptocystitoid Rhombiferans
+|at4=25 |bar4=green |label4=Hemicosmitoid Rhombiferans
+|at5=26 |bar5=indigo |label5=Coronate Blastoids
+|at6=27 |bar6=blue |label6=Glyptosphaeritid Diploporitans
+|cladogram={{Clade
+   |1=''Stromatocystites pentangularis'' |barbegin1=gray
+   |2=''Kailidiscus chinensis'' |bar2=gray
+   |3={{Clade
+      |1=''"Totiglobus" lloydi''
+      |2=''Pseudedriophus guensburgi''
+   }} |bar3=gray
+   |4={{Clade
+      |1=''Camptostroma roddyi'' |barend1=gray
+      |label2=Stylophora
+      |2=''Ceratocystis perneri''
+      |label3=Crinoidea
+      |3={{Clade
+         |1=''Titanocrinus simralli''
+         |2=''Glenocrinus globularis''
+         |3={{Clade
+            |1=''Eknomocrinus wahwahensis''
+            |2={{Clade
+               |1=''Apektocrinus ubaghsi''
+               |2={{Clade
+                  |1=''Aethocrinus moorei''
+                  |2={{Clade
+                     |1={{Clade
+                        |1=''Carabocrinus treadwilli''
+                        |2=''Hybocrinus nitidus''
+                     }}
+                     |2={{Clade
+                        |1={{Clade
+                           |1=''Alphacrinus mansfieldi''
+                           |2=''Athenacrinus broweri''
+                        }}
+                        |2={{Clade
+                           |1=''Gaurocrinus nealli''
+                           |2=''Proxenocrinus inyoensis''
+                        }}
+                     }}
+                  }}
+               }}
+            }}
+         }}
+      }}
+      |label5=Blastozoa
+      |5={{Clade
+         |label1=Lepidocystoidae
+         |1={{Clade
+            |1=''Kenzercystis durhami''
+            |2=''Lepidocystis wanneri''
+         }} |barbegin1=brown
+         |2={{Clade
+            |1=''Gogia kitchnerensis'' |bar1=brown
+            |2={{Clade
+               |1=''Rhopalocystis destombesi'' |barend1=brown
+               |2=''Macrocystella mairae''  |barbegin2=darkgreen
+               |3=''Hemicosmites pocillum'' |barend3=green
+               |4=''Stephanocrinus gemmiformis'' |barbegin4=indigo |barend4=indigo
+               |5=''Eumorphocystis multiporata'' |barbegin5=blue |barend5=blue
+            }}
+         }}
+      }}
+   }}
+}}
+}}</div>
+}}
+
+{{clear}}
+
+====EDRIOASTEROIDEA EOCRINOIDEA CRINOIDEA HELICOWHATEVER: Zamora et al. 2022====
+2022-02-04-a Cambrian edrioasteroid reveals new mechanism for secondary reduction of the skeleton in echinoderms.pdf
+
+{{thumb|align=left|width=800|content=<div style="text-align:left;">
+{{barlabel|style=font-size:85%;line-height:85%
+|size=13
+|at1=2 |bar1=gray |label1=Edrioasteroids
+|at2=8 |bar2=brown |label2=Eocrinoids (Blastozoans)
+|at3=13 |bar3=indigo |label3=Crinoids
+|cladogram={{Clade|1={{Clade
+   |1=''Helicoplacus''
+   |2={{Clade
+      |1=''Helicocystis''
+      |2={{Clade
+         |1={{Clade
+            |1={{Clade
+               |1=''Isorophus''
+               |2=''Argodiscus''
+            }}
+            |2={{Clade
+               |1=''Yorkicystis''
+               |2=''Kailidiscus''
+            }}
+         }} |barbegin1=gray
+         |2={{Clade
+            |1=''Stromatocystites''&nbsp;&nbsp; |barend1=gray
+            |2={{Clade
+               |1={{Clade
+                  |1=''Gogia''
+                  |2=''Ridersia''
+                  |3=''Vyscystis''
+                  |4=''Lepidocystis''
+               }} |barbegin1=brown |barend1=brown
+               |2={{Clade
+                  |1=''Apektocrinus''&nbsp;&nbsp;
+                  |2=''Titanocrinus''
+               }} |barbegin2=indigo |barend2=indigo
+            }}
+         }}
+}} }} }} }}
+}}</div>
+}}
+{{clear}}
+
+====STYLOPHORA+BLASTOZOA: Guensburg et al. 2023====
+2023-02-13-a Crinoid calyx origin from stem radial echinoderms.pdf
+
+{{thumb|align=left|width=800|content=<div style="text-align:left;">
+{{barlabel|style=font-size:85%;line-height:85%
+|size=38
+|at1=-1 |bar1=gray |label1=Edrioasteroids
+|at2=34 |bar2=brown |label2=Eocrinoids
+|at3=38 |bar3=blue |label3=Diploporitans
+|at4=40 |bar4=darkgreen |label4=Rhombiferans
+|at5=42 |bar5=indigo |label5=Blastoids
+|cladogram={{Clade|1={{Clade
+|1=''Stromatocystites pentangularis'' |barbegin1=gray
+|2={{Clade
+   |1=''Kailidiscus chinensis'' |bar1=gray
+   |2=''Camptostroma roddyi'' |bar2=gray
+   |3=''Totiglobus lloydi'' |bar3=gray
+   |4=''Psuededriophus guensburgi'' |barend4=gray
+   |label5=Crinoidea
+   |5={{Clade
+      |1=''Apektocrinus ubaghsi''
+      |2=''Eknomocrinus wahwahensis''
+      |3={{Clade
+         |1=''Titanocrinus sumralli''
+         |2=''Glenocrinus globularis''
+      }}
+      |4={{Clade
+         |1=''Aethocrinus moorei''
+         |2={{Clade
+            |1=''Carabocrinus treadwelli''
+            |2=''Cnemecrinus fillmorensis''
+            |3=''Compagicrinus fenestratus''
+            |4=''Elpasocrinus radiatus''
+            |5=''Hybocrinus nitidus''
+            |6=''Parahybocrinus siewersi''
+            |7=''Perittocrinus radiatus''
+            |8=''Quechuacrinus ticsa''
+            |9=''Syndiasmocrinus apokalypto''
+            |10={{Clade
+               |1=''Alphacrinus mansfieldi''
+               |2=''Athenacrinus broweri''
+            }}
+            |11={{Clade
+               |1=''Adelphocrinus fortuitus''
+               |2=''Rameyocrinus vizcainoi''
+               |3=''Schaldichnocrinus ladogensis''
+            }}
+            |12={{Clade
+               |1=''Cellocrinus ubaghsi''
+               |2=''Deocrinus asperatus''
+               |3=''Gaurocrinus nealli''
+               |4=''Proexenocrinus inyoensis''
+               |5=''Trichinocrinus terranovicus''
+            }}
+         }}
+      }}
+   }}
+   |6={{Clade
+      |label1=Stylophora
+      |1=''Ceratocystis perneri''
+      |label2=Blastozoa
+      |2={{Clade
+         |label1=Lepidocystoidae
+         |1={{Clade
+            |1=''Kenzercystis durhami''
+            |2=''Lepidocystis wanneri''
+         }} |barbegin1=brown
+         |2={{Clade
+            |1=''Gogia palmeri'' {{small|(Gogiida)}} |bar1=brown
+            |2={{Clade
+               |1=''Rhopalocystis destombesi'' {{small|(Ascocystitida)}} |barend1=brown
+               |2=''Eumorphocystis multiporata'' {{small|(Glyptosphaeritida)}}&nbsp;&nbsp; |barbegin2=blue |barend2=blue
+               |3={{Clade
+                  |1=''Macrocystella mariae'' {{small|(Glyptocystitoida)}} |barbegin1=darkgreen
+                  |2=''Hemicosmites pocillum'' {{small|(Hemicosmitoida)}} |barend2=green
+                  |3=''Stephanocrinus gemmiformis'' {{small|(Coronata)}} |barbegin3=indigo |barend3=indigo
+               }}
+            }}
+         }}
+      }}
+   }}
+}} }} }}
+}}
+</div>
+|caption=Bonkers stylophorans+blastozoans!}}
+
+{{clear}}
+
+====PARACRINOIDEA: Limbeck Bauer Deline Sumrall 2024====
+2024-01-22-a Initial quantitative assessment of the enigmatic clade Paracrinoidea (Echinodermata).pdf
+
+# five ambulacra with ideal 2-1-2 symmetry, clear oral plating in accordance with Universal Element Homology (UEH)
+# tumid theca, four ambulacra, respiratory structures
+# two peristomes
+# sigmoidal ambulacral system
+# almond-shaped theca, two ambulacra extending from oral surface down the theca
+# variations in ambulacral system among specimens led to incomplete datasets for analysis
+
+Bayesian majority rule consensus
+
+{{Clade|style=font-size:85%;line-height:85%
+   |label1=Glyptocystitoida
+   |sublabel1={{small|([[outgroup (cladistics)|outgroup]])}}
+   |1=''Cheirocystis fultonensis''
+   |label2='''Paracrinoidea'''
+   |2={{Clade
+      |label1=Group 1
+      |1={{Clade
+         |1=''Columbocystis ovata''
+         |2=''Columbocystis typica''
+      }}
+      |2={{Clade
+         |label1=Group 3
+         |1={{Clade
+            |1=''Bistomiacystis globosa''
+            |2=''Bistomiacystis schrantzi''
+         }}
+         |grouplabel2={{Clade labels |bar1=iodigo |label1=Group 4}}
+         |2=''Malocystites muchisoni'' |barbegin2=indigo
+         |3=''Canadocystis emmonsi'' |bar3=indigo
+         |4=''Canadocystis tennesseensis''&nbsp;&nbsp; |barend4=indigo
+      }}
+      |3={{Clade
+         |label1=Group 2
+         |1={{Clade
+            |1=''Comarocystites punctatus''
+            |2=''Comarocystites tribrachius''
+            |3={{Clade
+               |1=''Implicaticystis symmetricus''
+               |2=''Implicaticystis shumardi''
+            }}
+         }}
+         |2=''Sinclairocystis praedicta'' |barbegin2=darkblue
+      }}
+      |grouplabel4={{Clade labels |bar1=darkblue |label1=Group 5}}
+      |4={{Clade
+         |1=''Platycystites faberi''
+         |2=''Globulocystites rotundatus''
+         |3=''Globulocystites cristatus''
+         |4=''Globulocystites infundus''
+      }} |bar4=darkblue |barend5=darkblue
+      |5={{Clade
+         |1={{Clade
+            |1=''Amygdalocystites florealis''
+            |2=''Amygdalocystites radiatus''
+         }}
+         |2=''Oklahomacystis spissus''
+         |3={{Clade
+            |1=''Oklahomacystis trigonsi''
+            |2={{Clade
+               |1=''Oklahomacystis tribrachiatus''
+               |2=''Oklahomacystis bibrachiatus''
+      }} }} }}
+      |label6=Group 6
+      |6=''Wellerocystis kimmswickensis''
+}} }}
+
+Likelihood strict consensus
+
+{{Clade|style=font-size:85%;line-height:85%
+   |label1=Glyptocystitoida
+   |sublabel1={{small|([[outgroup (cladistics)|outgroup]])}}
+   |1=''Cheirocystis fultonensis''
+   |label2='''Paracrinoidea'''
+   |2={{Clade
+      |grouplabel1={{Clade labels |bar1=green |label1=Group 1}}
+      |1=''Columbocystis typica'' |barbegin1=green
+      |2=''Columbocystis ovata'' |barend2=green
+      |3={{Clade
+         |label1=Group 2
+         |1={{Clade
+            |1=''Implicaticystis symmetricus''
+            |2={{Clade
+               |1=''Implicaticystis shumardi''
+               |2=''Comarocystites punctatus''
+               |3=''Comarocystites tribrachius''
+            }}
+         }}
+         |2={{Clade
+            |1={{Clade
+               |label1=Group 3
+               |1={{Clade
+                  |1=''Bistomiacystis globosa''
+                  |2=''Bistomiacystis schrantzi''
+               }}
+               |label2=Group 4
+               |2={{Clade
+                  |1=''Malocystites muchisoni''
+                  |2=''Canadocystis emmonsi''
+                  |3=''Canadocystis tennesseensis''
+               }}
+            }}
+            |2={{Clade
+               |grouplabel1={{Clade labels |bar1=indigo |label1=Group 5}}
+               |barbegin1=indigo
+               |1={{Clade
+                  |1=''Oklahomacystis trigonsi''
+                  |2={{Clade
+                     |1=''Oklahomacystis bibrachiatus''
+                     |2={{Clade
+                        |1=''Oklahomacystis tribrachiatus''
+                        |2={{Clade
+                           |1=''Oklahomacystis spissus''
+                           |2={{Clade
+                              |1=''Amygdalocystites florealis''
+                              |2=''Amygdalocystites radiatus''
+               }} }} }} }} }}
+               |2={{Clade
+                 |barend1=indigo
+                 |1={{Clade
+                    |1=''Globulocystites infundus''
+                    |2={{Clade
+                       |1=''Globulocystites cristatus''
+                       |2=''Globulocystites rotundatus''&nbsp;&nbsp;
+                       |3=''Platycystites faberi''
+                       |4=''Sinclairocystis praedicta''
+                  }} }}
+                  |label2=Group 6
+                  |2=''Wellerocystis kimmswickensis''
+}} }} }} }} }} }}
+
+====EOCRINOIDEA: Wang et al 2024====
+2024-04-09-a First report of lepidocystid echinoderm in the Cambrian of North China- Evolutionary and Palaeobiogeographic implications.pdf
+
+{{Clade
+   |label1=Blastozoa
+   |1={{Clade
+      |1=Lepidocystoidae
+      |2={{Clade
+         |1=Felbabkacystidae
+         |2={{Clade
+            |1=Eocrinidae
+            |2={{Clade
+               |1=Lichenoidae
+               |2=derived Blastozoa
+
+}} }} }} }} }}
+
+====RHOMBIFERA/EOCRINOIDEA/BLASTOIDEA: Paul Lefebvre Noheljová Zamora 2024====
+2024-05-03-a Rhombifera Barrande, 1867, and the origin of the Blastoidea (Echinodermata, Blastozoa).pdf
+
+{{barlabel|style=font-size:85%;line-height:85%
+|size=17
+|at1=0 |label1=Eocrinoids |bar1=brown
+|at2=5 |label2=Glyptocystitoids (Rhombiferans) |bar2=darkgreen
+|at3=12 |label3=Blastoids |bar3=darkblue
+|at4=14 |label4=Eublastoids (Blastoids) |bar4=purple
+|at5=15 |label5=Coronoids (Blastoids) |bar5=indigo
+|at6=17 |label6=Hemicosmitoids (Rhombiferans) |bar6=green
+|cladogram={{Clade
+|1={{Clade
+   |1={{Clade
+      |1=''Akadocrinus''
+      |2=''Cambrocrinus''
+   }} |barbegin1=brown
+   |2=''Ridersia'' |barend2=brown
+   |3=''Sanducystis''
+   |4={{Clade
+      |1={{Clade
+         |1=''Cystobsastus''
+         |2={{Clade
+            |1=''Lepadocystis''
+            |2={{Clade
+               |1=''Echinoencrinites''
+               |2={{Clade
+                  |1=''Cheirocystella''
+                  |2=''Macrocystella''
+               }}
+            }}
+         }}
+      }}
+      |barbegin1=darkgreen
+      |2={{Clade
+         |1={{Clade
+            |1=''Rhombifera''
+            |barend1=darkgreen
+            |2=''Lysocystites'' |barbegin2=indigo
+            |3={{Clade
+               |1=''Macurdablastus''&nbsp;&nbsp;&nbsp; |bar1=indigo
+               |2=''Codaster'' |barbegin2=purple |barend2=purple
+            }}
+            |4=''Stephanocrinus'' |barbegin4=darkblue |barend4=darkblue
+         }}
+         |barbegin2=green |barend2=green
+         |2={{Clade
+            |1=''Thomacystis''
+            |2={{Clade
+               |1=''Caryocrinites''
+               |2=''Hemicosmites''
+            }}
+         }}
+      }}
+   }}
+}} }}
+}}
+
+With higher clade labels:
+
+{{barlabel|style=font-size:85%;line-height:85%
+|size=17
+|at1=5 |label1=Glyptocystitoida |bar1=indigo
+|at2=12 |label2=Blastoida |bar2=green
+|cladogram={{Clade
+   |1={{Clade
+      |label1=Eocrinidae
+      |1=''Akadocrinus''
+      |label2=Cambrocrinidae
+      |2=''Cambrocrinus''
+   }}
+   |2=''Ridersea''
+   |3=''Sanducystis''
+   |4={{Clade
+      |1={{Clade
+         |label1=Cystoblastidae
+         |1=''Cystobsastus''
+         |2={{Clade
+            |label1=Callocystitidae
+            |1=''Lepadocystis''
+            |2={{Clade
+               |label1=Echinoencrinitidae
+               |1=''Echinoencrinites''
+               |2={{Clade
+                  |label1=Cheirocrinidae
+                  |1=''Cheirocystella''&nbsp;&nbsp;&nbsp;
+                  |label2=Macrocystellidae
+                  |2=''Macrocystella''&nbsp;&nbsp;&nbsp;
+               }}
+            }}
+         }}
+      }}
+      |barbegin1=indigo
+      |2={{Clade
+         |1={{Clade
+            |label1=Rhombiferidae
+            |1=''Rhombifera''
+            |barend1=indigo
+            |label2=Coronoidea
+            |2=''Stephanocrinus'' |barbegin2=green
+            |3=''Lysocystites'' |bar3=green
+            |4={{Clade
+               |1=''Macurdablastus''&nbsp;&nbsp;&nbsp;
+               |label2=Eublastoidea
+               |2=''Codaster''
+            }} |barend4=green
+         }}
+         |label2=Hemicosmitoida
+         |2={{Clade
+            |label1=Thomacystidae
+            |1=''Thomacystis''
+            |2={{Clade
+               |label1=Caryocrinitidae
+               |1=''Caryocrinites''
+               |label2=Hemicosmitidae
+               |2=''Hemicosmites''
+            }}
+         }}
+      }}
+   }}
+}}
+}}
+
+===Crinozoa: External phylogeny===
+{{Clade
+   |label1=Echinodermata
+   |1={{Clade
+      |grouplabel1={{Clade labels |top1=30% |color=violet |label1="Homalozoa" ?}}
+      |1=''[[Ctenoimbricata]]'' † |barbegin1=violet
+      |grouplabel2={{Clade labels |top1=90% |color=indigo |label1="[[Homalozoa]]"}}
+      |2=[[Ctenocystoidea]] † |barbegin2=indigo
+      |3={{Clade
+         |1=[[Cincta]] † |bar1=indigo
+         |2={{Clade
+            |1={{Clade
+               |1=[[Soluta (echinoderm)|Soluta]] †
+               |label2=&nbsp;&nbsp;&nbsp;
+               |2=? [[Stylophora]] † |state2=dashed
+            }} |barend1=indigo
+            |2={{Clade
+               |1=[[Helicoplacoidea]] †
+               |2={{Clade
+                  |1=''[[Helicocystis]]'' †
+                  |2={{Clade
+                     |1=[[Edrioasteroidea]] †
+                     |2=[[Eocrinoidea]] †
+                     |grouplabel3='''Crinozoa'''
+                     |3=[[Crinoidea]] |barbegin3=black |barend3=black
+                     |4=[[Eleutherozoa]]
+                  }}       
+               }}       
+            }}       
+         }}       
+      }}       
+   }}
+}}
+
+{{Clade
+   |label1=Echinodermata
+   |1={{Clade
+      |1=? ''[[Arkarua]]'' †
+      |2={{Clade
+         |1=[[Helicoplacoidea]] †
+         |2=[[Edrioasteroidea]] †
+         |3={{Clade
+            |1=[[Blastozoa]] †<br />{{small|(including Ctenocystoidea, Cincta, &amp; Soluta)}}
+            |2={{Clade
+               |label1='''Crinozoa'''
+               |1={{Clade
+                  |1=[[Stylophora]] †
+                  |2=[[Crinoidea]]
+               }}
+               |2=[[Eleutherozoa]]
+            }}
+         }}
+      }}
+   }}
+}}
+
+===probably not===
+Bather also provided a diagram<ref>{{harvnb|Bather|1900|page=37}}</ref> that, together with his statement that "even if all Eleutherozoa descended from one class of Pelmatozoa, they did so at widely differing periods" and in a specific order,<ref>{{harvnb|Bather|1900|pages=33}}</ref> is roughly equivalent to the following cladogram:
+
+{{Clade
+   |label1=Pelmatozoa
+   |1={{Clade
+      |1={{Clade
+         |grouplabel1={{clade labels
+            |label1={{small|(Homalozoans, Eocrinoids, Paracrinoids, Cystoids)}}<ref>{{harvnb|Bather|1900|pages=38–43}}</ref>
+            |top1=30%
+            |color1=indigo
+            }}
+         |1=Cystidea† |barbegin1=indigo |barend1=indigo
+         |2={{Clade
+            |1=Blastoidea†
+            |2=Crinoidea
+         }}
+      }}
+      |4={{Clade
+         |grouplabel1={{clade labels |top1=0% |label1=Edrioasteroidea |color1=orange}}
+         |1=some Edrioasteroids† |barbegin1=orange
+         |grouplabel2={{clade labels |top1=0% |label1=Eleutherozoa |color1=indigo}}
+         |2={{Clade
+            |1=Holothuroidea |bar1=indigo
+            |2={{Clade
+
+               |1=some Edrioasteroids† |bar1=orange
+               |2={{Clade
+                  |1=Echinoidea |bar1=indigo
+                  |2={{Clade
+                     |1=some Edrioasteroids†&nbsp;&nbsp; |bar1=orange
+                     |2=Stelleroidea |barend2=indigo
+                  }}
+               }}
+            }}
+         }}
+      }}
+   }}
+}}
+
+This shows Pelmatozoa and Edrioasteroidea as paraphyletic with respect to a polyphyletic Eleutherozoa
+
+
+
+; Internal phylogeny
+
+{{clade
+|label1='''Echino-'''
+|sublabel1='''dermata'''
+|1={{clade
+   |1=[[Crinoidea]] (feather stars) [[File:202012 Metacrinus rotundus.svg|60 px]]
+   |2={{clade
+      |label1=[[Echinozoa]]
+      |1={{clade
+         |label1=[[Holothuroidea]] 
+         |sublabel1=sea cucumbers
+         |1=[[File:Holothuria parvula.png|80 px]]
+         |label2=[[Echinoidea]] 
+         |sublabel2=sea urchins, etc
+         |2=[[File:Echinometra viridis.png|70 px]]
+         }}
+      |label2=[[Asterozoa]]
+      |2={{clade
+         |label1=[[Ophiuroidea]] 
+         |sublabel1=brittle & basket stars 
+         |1=[[File:Ophiocoma (26150611418).jpg|80 px]]
+         |label2=[[Asteroidea]] 
+         |sublabel2=starfish 
+         |2=[[File:Echinaster serpentarius (USNM E28192) 001.png|70 px]]
+         }}
+      }}
+   }}
+}}
+
+===Fossil history===
+
+====Linnean Taxonomy====
+
+
+
+====Phylogeny====
+
+====David et. al 2000====
+
+The following cladogram is based on David & Mooi (1999)<ref>{{harvnb|David & Mooi|1999|page=100}}</ref> and David, Lefebvre, Mooi, and Parsley (2000):<ref>{{harvnb|David et. al|2000|page=549}}</ref>
+
+{{Clade
+|label1=[[Echinodermata]]
+|1={{Clade
+   |1=? ''[[Arkarua]]''†
+   |2={{Clade
+      |1=[[Helicoplacoidea]]†
+      |2=[[Edrioasteroidea]]†
+      |3={{Clade
+         |label1=[[Blastozoa]]†
+         |1={{Clade
+            |grouplabel1={{Clade labels |top1=30% |color1=indigo |label1=[[Eocrinoidea]]† }}
+            |1=[[Lepidocystis|Lepidocystiodea]]† |barbegin1=indigo
+            |2={{Clade
+               |1=some Eocrinoids† |bar1=indigo
+               |2={{Clade
+                  |2={{Clade
+                     |grouplabel1={{Clade labels |top1=30% |color1=indigo |label1=[[Cystoidea]]† }}
+
+                     |1=[[Diploporita]]† |barbegin1=indigo
+                     |2={{Clade
+                        |1=[[Rhombifera]]† |barend1=indigo
+                        |2=[[Blastoidea]]†
+                     }}
+                  }}
+                  |1={{Clade
+                     |1=some Eocrinoids† |bar1=indigo
+                     |2={{Clade
+                        |1=some Eocrinoids† |barend1=indigo
+                        |2={{Clade
+                           |1=[[Homostelea]]† {{small|(Cincta)}}
+                           |2=Ctenocystoids†
+                        }}
+                     |3=[[Homoiostelea]]† {{small|(Soluta)}}
+                     }}
+                  }}
+               }}
+            }}
+         }}
+         |2={{Clade
+            |label1=[[Crinozoa]]
+            |1={{Clade
+               |1=[[Crinoidea]]
+               |2=[[Stylophora]]†
+            }}
+            |label2=[[Eleutherozoa]]
+            |2={{Clade
+               |label1=[[Asterozoa]]
+               |1={{Clade
+                  |1=[[Ophiuroidea]]
+                  |2=[[Asteroidea]]
+               }}
+               |label2=[[Echinozoa]]
+               |2={{Clade
+                  |1=[[Echinoidea]]
+                  |2={{Clade
+                     |1=[[Ophiocistioidea]]†
+                     |2=[[Holothuroidea]]
+                  }}
+               }}
+            }}
+         }}
+      }}
+   }}
+}}
+}}
+
+Notes:
+* Parablastoidea and [[Paracrinoidea]] are stated to be part of Blastozoa, but are not placed on the cladogram<ref>{{harvnb|David et. al|2000|page=532}}</ref>
+* Edrioblastoidea is not mentioned, and while the sole genus ''Camptostroma'' of Camptostromatoidea is mentioned, it is not explicitly associated with a class
+* ''Helicocystis'', ''Ctenoimbricata'', and ''Yanjiahella'' had not yet been discovered (see next cladogram for their significance)
+* Pelmatozoa is shown to be paraphyletic<ref>{{harvnb|David & Mooi|1999|page=100}}</ref>
+
+====Zamora & Smith 2024====
+
+The following cladogram is based on Rahman & Zamora (2024),<ref>{{harvnb|Rahman & Zamora|2024|page=310}}</ref>, using class names from the cladogram's caption,<ref>{{harvnb|Rahman & Zamora|2024|page=311}}</ref> plus additional subphylum names<ref>{{harvnb|Rahman & Zamora|2024|page=298}}</ref> from the article text.  A dashed line and a question mark indicate uncertain placement:
+
+{{Clade
+   |label1=[[Echinodermata]]
+   |1={{Clade
+         |label1=&nbsp;&nbsp;&nbsp;
+         |1=''[[Ctenoimbricata]]''†
+         |2=[[Ctenocystoidea]]†
+         |3={{Clade
+            |label1=&nbsp;&nbsp;&nbsp;
+            |1=[[Cincta]]† {{small|(Homostelea)}}
+            |2={{Clade
+               |label1=&nbsp;&nbsp;&nbsp;
+               |1={{Clade
+                  |label1=&nbsp;&nbsp;&nbsp;
+                  |1=[[Soluta]]† {{small|(Homoiostelea)}}
+                  |2=[[Stylophora]]† ? |state2=dashed
+               }}
+               |2={{Clade
+                  |label1=&nbsp;&nbsp;&nbsp;
+                  |1=[[Helicoplacoidea]]†
+                  |2={{Clade
+                     |label1=&nbsp;&nbsp;&nbsp;
+                     |1=''[[Helicocystis]]''†
+                     |2={{Clade
+                        |label1=&nbsp;&nbsp;&nbsp;
+                        |1=[[Eocrinoidea]]†
+                        |2=[[Edrioasteroidea]]†
+                        |3=[[Crinoidea]]
+                        |label4=[[Eleutherozoa]]
+                        |4={{Clade
+                           |label1=[[Echinozoa]]
+                           |1={{Clade
+                              |1=[[Echinoidea]]
+                              |2=Holothuroidea
+                           }}
+                           |label2=[[Asterozoa]]
+                           |2={{Clade
+                              |1=[[Asteroidea]]
+                              |2=[[Ophiuroidea]]
+}} }} }} }} }} }} }} }} }}
+
+Notes
+* [[Ophiocistioidea]] is not addressed by this paper, see the previous cladogram above for a typical placement
+* Non-eocrinoid blastozoans are mentioned but not placed on the cladogram
+* ''Arkarua'' is not considered an echinoderm and is intentionally omitted<ref>{{harvnb|Rahman & Zamora|2024|page=300}}</ref>
+
+===Bather 1900===
+{{Clade
+   |label1=Pelmatozoa
+   |1={{Clade
+      |1={{Clade
+         |label1=Cystidea†
+         |1={{Clade
+            |1=some&nbsp;Eocrinoids†
+            |2={{Clade
+               |4=Homoiostelea† {{small|(Soluta)}}
+               |2=Homostelea† {{small|(Cincta)}} + some Cornute Stylophorans†
+               |1=some&nbsp;Eocrinoids† + some Cornute Stylophorans†
+               |3=Mitrate Stylophorans†
+               |grouplabel5={{Clade labels |top1=30% |color1=indigo |label1=Cystoidea† }}
+
+               |5=some&nbsp;Diploporitans†|barbegin5=indigo
+            }}
+            |3=some&nbsp;Diploporitans†|bar3=indigo
+            |4=Rhombifera†|barend4=indigo
+         }}
+         |2={{Clade
+            |1=Blastoidea
+            |2=Crinoidea
+         }}
+      }}
+      |label4=Edrioasteroidea
+      |4={{Clade
+         |1=some Edrioasteroids
+         |label2=Eleutherozoa
+         |2={{Clade
+            |1=Holothuroidea
+            |2={{Clade
+               |1=some Edrioasteroids
+               |2={{Clade
+                  |1=Echinoidea
+                  |2={{Clade
+                     |1=some Edrioasteroids
+                     |label2=Stelleroidea
+                     |2={{Clade
+                        |1=Asteroidea
+                        |2=Ophiuroidea
+                     }}
+                  }}
+               }}
+            }}
+         }}
+      }}
+   }}
+}}
+
+===Smith 1984===
+
+Smith revived the name "Cystoidea" in place of Sprinkle's "Blastozoa", including the traditional Eocrinoidea, Rhombifera, Diploporita, Blastoidea, and Paracrinoidea within it.<ref>{{harvnb|Smith|1984|page=439}}</ref>
+
+{{Clade
+|1="Carpoids" {{small|([[Homalozoa]])}}
+|label2=[[Echinodermata]]<br />{{small|(total)}}
+|2={{Clade
+   |1=[[Helicoplacoidea]]†
+   |label2=Echinodermata<br />{{small|(crown)}}
+   |2={{Clade
+      |1=''[[Camptostroma]]''†
+      |label2=[[Pelmatozoa]]
+      |2={{Clade
+         |1=[[Cystoidea]]† {{small|(Blastozoa)}}
+         |2=[[Crinoidea]]
+      }}
+      |label3=[[Eleutherozoa]]
+      |3={{Clade
+         |1=''[[Stromatocystites]]''
+         |2={{Clade
+            |1=[[Edrioasteroidea]]†
+            |2={{Clade
+               |1=[[Asteroidea]]
+               |label2=[[Cryptosyringida]]
+               |2={{Clade
+                  |1=[[Ophiuroidea]]
+                  |label2=[[Echinozoa]]
+                  |2={{Clade
+                     |1=[[Echinoidea]]
+                     |2=[[Holothuroidea]]
+                  }}
+               }}
+            }}
+         }}
+      }}
+   }}
+}}
+}}
+
+===Existing Text===
+
+The oldest candidate echinoderm [[fossil]] is ''[[Arkarua]]'' from the [[Precambrian]] of Australia. These fossils are disc-like, with radial ridges on the rim and a five-pointed central depression marked with radial lines. However, the fossils have no [[stereom]] or internal structure indicating a water vascular system, so they cannot be conclusively identified.<ref>{{cite web |url=http://www.ucmp.berkeley.edu/vendian/arkarua.html |title=Vendian Animals: ''Arkarua'' |last=Smith |first=Dave |date=28 September 2005 |access-date=2013-03-14}}</ref>
+
+The first universally accepted echinoderms appear in the [[Lower Cambrian]] period; asterozoans appeared in the [[Ordovician]], while the crinoids were a dominant group in the [[Paleozoic]]. Echinoderms left behind an extensive fossil record.<ref name="Waggoner">{{cite web |last=Waggoner |first=Ben |url=http://www.ucmp.berkeley.edu/echinodermata/echinofr.html |title=Echinodermata: Fossil Record |date=16 January 1995 |work=Introduction to the Echinodermata |publisher=Museum of Paleontology: University of California at Berkeley |access-date=14 March 2013}}</ref> It is hypothesised that the ancestor of all echinoderms was a simple, motile, bilaterally symmetrical animal with a mouth, gut and anus. This ancestral organism adopted an attached mode of life with suspension feeding, and developed radial symmetry. Even so, the larvae of all echinoderms are bilaterally symmetrical, and all develop radial symmetry at metamorphosis. Like their ancestor, the starfish and crinoids still attach themselves to the seabed while changing to their adult form.{{sfn|Dorit|Walker|Barnes|1991|pp=792–793}}
+
+The first echinoderms were non-motile,{{sfn|Dorit|Walker|Barnes|1991|pp=792–793}}<!--<ref name="Dornbos Bottjer 2000">{{cite journal |last=Dornbos |first=Stephen Q. |last2=Bottjer |first2=David J. |title=Evolutionary paleoecology of the earliest echinoderms: Helicoplacoids and the Cambrian substrate revolution |journal=Geology |publisher=Geological Society of America |volume=28 |issue=9 |year=2000 |doi=10.1130/0091-7613(2000)28<839:epotee>2.0.co;2 |page=839}}</ref>--> but evolved into animals able to move freely. These soon developed endoskeletal plates with stereom structure, and external ciliary grooves for feeding.<ref>{{cite web |author=UCMP Berkeley |title=Echinodermata: Morphology |url=http://www.ucmp.berkeley.edu/echinodermata/echinomm.html |work=University of California Museum of Paleontology |access-date=21 March 2011}}</ref> The Paleozoic echinoderms were globular, attached to the [[Substrate (biology)|substrate]] and were orientated with their oral surfaces facing upwards. These early echinoderms had [[ambulacral groove]]s extending down the side of the body, fringed on either side by brachioles, like the pinnules of a modern crinoid. Eventually, except for the crinoids, all the classes of echinoderms reversed their orientation to become mouth-downward. Before this happened, the podia probably had a feeding function, as they do in the crinoids today. The locomotor function of the podia came later, when the re-orientation of the mouth brought the podia into contact with the substrate for the first time.{{sfn|Dorit|Walker|Barnes|1991|pp=792–793}}
+
+:Further information: ''[[Dibrachicystis]]''
+
+<gallery mode=packed>
+
+File:EarlyEchinoderms NT.jpg|Early echinoderms ''[[Ctenoimbricata]]'', ''[[Ctenocystoidea|Ctenocystis]]'', ''[[Gogia]]'', ''[[Protocintus]]'' and ''[[Rhenocystis]]''
+File:Echinosphaerites.JPG|The Ordovician cystoid ''[[Echinosphaerites]]'' from northeastern Estonia
+File:fossile-seelilie.jpg|Fossil [[crinoid]] crowns
+File:Hyperoblastus.jpg|Calyx of ''Hyperoblastus'', a [[blastoid]] from the [[Devonian]] of [[Wisconsin]]
+</gallery>
+
+===Alternative echinoderm trees===
+====Rahman & Zamora 2024 genera====
+
+{{Clade
+|label1=[[Ambulacraria]]
+|1={{Clade
+   |1=? ''Yanjiahella''†
+   |label2=[[Hemichordata]]
+   |2={{Clade
+      |1=? ''Yanjiahella''†
+   }}
+   |label3=[[Echinodermata]]
+   |3={{Clade
+      |1=? ''Yanjiahella''†
+      |2={{Clade
+         |1=''Ctenoimbricata''†
+         |2={{Clade
+            |label1=Ctenocystoids†
+            |1={{Clade
+               |1=''Ctenocystis''†
+               |2=''Courtessolea''†
+            }}
+         |3={{Clade
+            |label1=Cinctans†
+            |1={{Clade
+               |1=''Protocinctus''†
+            }}
+            |2={{Clade
+               |1={{Clade
+                  |label1=Solutes†
+                  |1={{Clade
+                     |1=''Coleicarpus''†
+                  }}
+                  |label2=? Stylophorans†
+                  |2={{Clade
+                     |1=''Ceratocystis''
+                  }}
+               }}
+               |2={{Clade
+                  |label1=Helicoplacoids†
+                  |1={{Clade
+                     |1=''Helicoplacus''†
+                  }}
+                  |2={{Clade
+                     |1=''Helicocystis''†
+                     |2={{Clade
+                        |label1=Eocrinoids†
+                        |1={{Clade
+                           |1=''Gogia''†
+                        }}
+                        |label2=Edrioasteroids†
+                        |2={{Clade
+                           |1=''Camptostroma''†
+                        }}
+                        |3=Crinoids
+                        |label4=Eleutherozoans
+                        |4={{Clade
+                           |label1=Echinozoans
+                           |1={{Clade
+                              |1=Echinoidea
+                              |2=Holothuroidea
+                           }}
+                           |label2=Asterozoa
+                           |2={{Clade
+                              |1=Asteroidea
+                              |2=Ophiuroidea
+                           }}
+}} }} }} }} }} }} }} }} }} }} }}
+
+====Yanjiahella====
+2019-02-15-a A stem group echinoderm from the basal Cambrian of China and the origins of Ambulacraria.pdf
+
+
+{{Clade
+|label1=[[Echinodermata]]
+|1={{Clade
+   |1=''Yanjiahella''†
+   |2={{Clade
+      |1=Ctenocystoids†
+      |2={{Clade
+         |1=Cinctans†
+         |2={{Clade
+            |1=Solutes†
+            |2={{Clade
+               |1=''Helicoplacus''†
+               |2={{Clade
+                 |grouplabel1={{Clade labels |top1=30% |color1=indigo |label1=Eleutherozoans }}
+                 |1=''Camptostroma''† |barbegin1=indigo
+                 |2={{Clade
+                    |1=''Stromatocystites''† |barend1=indigo
+                    |2={{Clade
+                       |grouplabel1={{Clade labels |top1=30% |color1=indigo |label1=Blastozoans† }}
+                       |1=''Kinzercystis''† |barbegin1=indigo
+                       |2={{Clade
+                          |1=''Gogia''†     |bar1=indigo
+                          |2={{Clade
+                            |1=''Akadocrinus''† |bar1=indigo
+                            |2={{Clade
+                               |1=''Pleurocystites''† |bar1=indigo
+                               |2=''Ubaghsicystis''†  |bar2=indigo
+                            }}
+                            |3={{Clade
+                               |1=''Macrocystella''†  |barend1=indigo
+                               |2=''Aethocrinus''†
+                            }}
+}} }} }} }} }} }} }} }} }} }}
+}}
+* Up to ''Helicoplacus'' is the stem group
+* ''Aethocrinus'' represents Crinozoans
+* Pelmatozoans was labled spanning Blastozoans and Crinozoans

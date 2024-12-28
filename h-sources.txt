@@ -1,0 +1,172 @@
+------------
+1997-00-00-p Biology of the Chengjiang fauna.pdf
+Chen and Zhou 1997
+
+Class Vetulicolida n. cls.
+''Banffia confusa'' n. gen. et sp.
+
+Close to ''Vetulicola''
+
+# body consisting of two main parts, a spatulate basket and a smaller, segmented trunk
+# presence of a pair of lateral basket slits
+# abdomen telescoped and flattened dorsoventrally
+# terminal segment much longer and semicircular in outline
+
+Figure 138 (page 86): ''Banffia confusa'' sp. nov.; representing a dorsally compacted abdomen, bearing an anus at the mid-length on the ventral surface.
+
+(the supposed anus is not obvious, at least to a lay person, in the photograph)
+
+------------
+2005-05-06-a Banffia constricta, a putative vetulicolid from the Middle Cambrian Burgess Shale.pdf
+Caron 2006 (or 2005? wtf)
+
+> Class Banffozoa, Class nov.
+> Diagnosis. Putative vetulicolian (?). Entire body asymmetrical, twisted dextrally as seen from the front. Gut with simple and non-ramified metameric mid-gut diverticulae. Anterior body section with no lateral groove. Absence of gills.
+> Family Banffiidae, fam. nov.
+> Diagnosis. With the characters of the class Banffozoa.
+
+> The anterior section of Banffia confusa from the Lower Cambrian Chengjiang fauna of China (Chen & Zhou 1997), is perforated with ‘gill slits’ along lateral grooves. Therefore, Banffia confusa is related to the class Vetulicolida, and belongs to another genus than Banffia (possibly Heteromorphus Luo et al., 1999).
+
+Notably, ''Heteromorphus'' is not explicitly assigned to the Banffozoa
+
+------------
+2005-09-20-a On the Phylum Vetulicolia.pdf
+Shu 2005
+
+> Since all vetulicolians share similar characters in their anterior section (pharynx), and on the basis of differences in their posterior section, a new classification system is proposed, with a new class, the Heteromorphida erected. As both the “root” group vetulicolians and the “top” group vertebrates in the early deuterostome lineage, as well as those members in between, such as vetulocystids, yunnanozoans, cephalochordates and urochordates, have been recovered, a relatively complete early deuterostome phylogeny, which is compatible with phylogenies of extant deuterostomes, is nearly mature.
+
+> Based on its hardness, the “shell” can be divided into “hard shell” (e.g., Vetulicola, Beidazoon) and “soft or pliable shell” (e.g., Didazoon, Xidazoon and Heteromorphus).
+
+> 2) Heteromorphus subtype: The tail is not apparently segmented, but covered with numerous wrinkles. It could be either made of a posterior extension of both the dorsal and ventral units of the anterior section (i.e., Heteromorphus) (Fig. 2(h)). or consists of a posterior extension only from the posterior end of the dorsal unit in the anterior section (i.e. new species Form A) (Fig. 3(g)).
+> While all the members in vetulicolians share quite similar basic structures in the anterior section (e.g., separation of the dorsal and ventral units, bearing five pairs of gill slits), their posterior section differs in each (Figs. 2- 5). Thus, on the basis of the characters in the posterior section, the phylum can be divided into two classes: Class Vetulicolida Chen & Zhou 1997 and Class Heteromor phida (new class). The former is distinctly segmented and the latter not, instead with densely-spaced wrinkles (comparing Figs. 2(d)―(g) with Fig. (h)). In both classes, each has both the normal large-sized members and dwarfs.
+
+> Class Heteromorphida class nov.
+> Diagnosis: Vetulicolians possessing an anterior section that is composed of dorsal and ventral units, which are separated by a clear gill region with five gill sacs. The posterior section possesses densely spaced wrinkles.
+> Remarks: The anterior section of the members of this new class is nearly identical to that of Vetulicolida. However, the posterior section of the new class is not apparently segmented, but has typical wrinkles.
+> The class comprises Heteromorphus and new species Form A.
+> New species Form A (Fig. 3(g), 5(c), (d)) Diagnosis: A very small form (c. 10 mm long) with a highly sclerotized shell and a posterior extension of the
+only dorsal unit of the anterior section.
+> Remarks: This unnamed new species Form A differs
+from Heteromorphus in three aspects: (1) the whole body is very small in size (about 10 mm in length); (2) the highly sclerotized “shell”; and (3) the posterior section extends only from the dorsal unit of the anterior section rather than from both the dorsal and ventral units of the anterior section.
+
+Notably, ''Banffia'' was not assigned to the Heteromorphida
+
+> 5.2 Vetulicolians as a root in deuterostome lineage
+...
+> (4) As one of the oldest deuterostomes, vetulicolians retained simple body segmentation derived from an unknown primitive common ancestor of protostomes and deuterostomes, except for a few forms that segmentation had become weak or even lost, e.g. the posterior tail of heteromorphids.
+
+------------
+2005-09-15-a Preliminary notes on soft-bodied fossil concentrations from the Early Cambrian Chengjiang deposits.pdf
+Han, Shu, Zhang, Liu, Zhang and Yao 2006
+
+> Heteromorphus confusa Luo & Hu 1999
+
+The above is in a caption with no further comment.
+
+------------
+2006-08-29-a The Systematics And Phylogenetic Relationships Of Vetulicolians.pdf
+Aldridge et al. 2007
+
+> Class BANFFOZOA Caron, 2006
+> Diagnosis. Anterior body smooth, with or without lateral groove, but lacking lateral pouches. Entire body twisted dextrally in anterior view. Posterior body with numerous segments and perhaps with metameric gut diverticulae. (Amended from Caron 2006, p. 98.)
+> Remarks. The diagnosis given by Caron (2006) states that the anterior section has no lateral groove. While this is accurate for specimens of Banffia from the Burgess Shale, some specimens from Chengjiang formerly referred to this genus do show a lateral groove, although pouches have not been observed. The concept of the Banffozoa is expanded here to incorporate these Chinese specimens, now assigned to the genus Heteromorphus Luo and Hu (in Luo et al. 1999).
+> This class is probably paraphyletic, and, if so, should not be distinguished from the Vetulicolida; however, it is provisionally retained here as the anatomy of several vetulicolians and the phylogeny of the group are still poorly known. The banffozoans are united by the possession of a bipartite vetulicolian body, generally lacking evidence of segmentation of the spatulate anterior body; lateral pouches have not been recognized.
+> Occurrence. Representatives of this class are known from the Chengjiang biota and from the Burgess Shale of Canada (Caron 2006).
+> Order BANFFIATA nov.
+> Diagnosis. As for class Banffozoa.
+> Family BANFFIDAE Caron, 2006
+> Diagnosis. As for class Banffozoa.
+> Remarks. Specimens referred to Banffia and Heteromorphus have a posterior body with numerous narrow segments ⁄ annulations, setting them apart from the Vetulicolidae. The delicate appearance of specimens also suggests that they had a very thin (or absent) toughened body wall. There is no evidence of lateral pouches, distinguishing members of this family from the Didazoonidae. Banffia constricta (Walcott, 1911), type species of the type genus, has recently been fully described by Caron (2006).
+> Genus HETEROMORPHUS Luo and Hu, in Luo et al. 1999
+> Type species. Heteromorphus longicaudatus Luo and Hu, in Luo et al. 1999, by monotypy; subjective junior synonym of Banffia confusa Chen and Zhou, 1997.
+> Diagnosis. Banffid with a lateral groove developed on each side of the anterior body. Terminal segment of posterior body semicircular. (Amended from Luo and Hu in Luo et al., 1999, p. 99.)
+> Remarks. Banffia confusa was named and described by Chen and Zhou (1997). The holotype of Heteromorphus longicaudatus (Luo et al. 1999, pl. 28, fig. 6; Pl. 5, fig. 11) was subsequently refigured by the original authors (in Chen et al. 2002, pl. 12, fig. 6) as Heteromorphus confusus, indicating that they regarded H. longicaudatus to be synonymous with the Chen and Zhou species.
+> Heteromorphus confusus (Chen and Zhou, 1997)
+> Diagnosis. As for genus.
+> Remarks. This species was described by Chen and Zhou (1997), and additional information was provided by Hou et al. (1999, 2004). Specimens are generally poorly preserved and complete specimens are uncommon. Wrinkling along the margin of some specimens (e.g. Pl. 5, fig. 12), is similar to that produced by the compaction of some arthropods in the Chengjiang biota (e.g. Combinivalvula chengjiangensis Hou, 1987; see Hou et al. 2004, fig. 16.32). Specimens are commonly preserved as a reddened film of iron oxide, contrasting with the normal grey preservation of Vetulicola specimens.
+> Although, as noted by Hou et al. (2004, p. 190), the lateral grooves are not clear, they are certainly apparent, if poorly defined, on the anterior body of some specimens, including the holotype (Chen and Zhou 1997, fig. 139a–b) and specimen RCCBYU 10299 (Hou et al. 2004, fig. 18.4). Their apparent absence on other specimens may be preservational or may be the result of dorsoventral, rather than lateral, compaction. There is also clear segmentation ⁄ annulation of the posterior body, although this is often accompanied by wrinkling. The number of segments is difficult to count because of this, but on some specimens it may be of the order of 30.
+> There is considerable variation among the specimens referred to H. confusus, and more than one species may be masquerading under the single name. The anterior body varies in shape from torpedo-like, tapering to a rounded anterior edge, to more rectangular, with a near vertical anterior termination; the anterior end of the holotype is not clear. The posterior body, as in the holotype and other specimens figured by Chen and Zhou (1997), may have parallel edges, lack a defined axis and possess a clearly rounded posterior termination. However, some specimens, including YKLP 10916 (Pl. 5, figs 8–9) appear to have a more tapered shape with a narrower posterior end. The holotype of Heteromorphus longicaudatus (Luo et al. 1999, pl. 28, fig. 6; Pl. 5, fig. 11) is similar, and it may be that the taxon longicaudatus merits retention, but this will only be resolved when larger collections are available. Interestingly, whereas almost all specimens of Banffia have smooth anterior bodies lacking annulation, there is a faint, but definite, annulation apparent on the holotype of H. longicaudatus, comprising gently curved lines, concave caudally and dividing the surface into at least six fields.
+
+> Alimentary canal. An alimentary canal is present axially in the posterior body of many taxa, and, in Vetulicola and Pomatrum at least, continues into the anterior body; we have seen no evidence of gut diverticulae in our material, although Caron (2006) has interpreted their presence in Banffia. The anus appears to be terminal in most genera, with the exception of Heteromorphus, where it is reported to be at mid-length in the terminal segment (Chen and Zhou 1997, fig. 138); its position in Skeemella is unknown.
+
+------------
+2011-01-14-a Vetulicolians From The Lower Cambrian Sirius Passet Lagerstätte, North Greenland, And The Polarity Of Morphological Characters In Basal Deuterostomes.pdf
+Vinther, Smith and Harper 2011
+
+> The other class within the group, the Banffozoa Caron, 2006, (= Heteromorphida sensu Shu, 2005) has a densely annulated flattened tail with a distinct sinistral rotation and appears to have possessed a softer integument than that of the Vetulicolida. Caron (2006) interpreted the anterior body to be dorsoventrally compressed with a lateral groove.
+> Vetulicolians have mostly been described from the LowerCambrianChengjiangLagersta ̈tte,buttheclosely related Banffozoa were originally described from the Middle Cambrian Burgess Shale of Canada. Vetulicolids have also been reported from the Early Cambrian Mural Formation in Jasper National Park, Canada (Balthasar and Butterfield 2009) and an interesting new form from the Lower Cambrian Emu Bay Shale in Australia (García-Bellido et al. 2010). These, however, await formal description. Skeemella Briggs et al., 2005, from Utah is a doubtful vetulicolian (Shu 2005; Aldridge et al. 2007; Shu et al. 2010).
+
+> With regard to a protostome affinity, relating the vetulicolids to kinorhynchs based on the presence of cuticular plates arranged in a near similar number of segments and the presence of a ring of oral plates (Briggs et al. 2005) fails as a hypothesis because banffozoans have a densely annulated tail without articulating segments. The kinorhynchs form part of a larger group of ecdysozoans with an eversible pharynx that bears the oral plates. The oral plates of vetulicolians are sited along the fringe of the oral opening and could not have functioned like the scalids of the eversible pharynx.
+
+> Caron (2001) suggested that the banffozoans and vetulicolids might be basal limbless arthropods with a frontal bivalved carapace and a tail. However, this hypothesis is incongruent with the evidence that the arthropod sister groups are the lobe-limbed tardigrades and onychophorans, and several stem groups demonstrate the gradual transition of these into the arthropods. The bivalved carapace and limbless tail are evidently derived characters in the arthropods, and this hypothesis was later abandoned (Caron 2006).
+
+> Another feature of potential significance in vetulicolians is the presence of a tail that is interpreted here as laterally flexing. Chordates are the only major group of animals with laterally flexing tails and bodies – this is seen elsewhere only in some derived members of other phyla such as opheliid annelids and pterotracheoidean gastropods. A laterally flexing tail may thus be of potential use in determining the phylogenetic position of vetulicolians within deuterostomes, but the significance in relation to deuterostome phylogeny and character acquisition depends on the relationship of vetulicolids to banffozoans. If a monophyletic interpretation of vetulicolians is correct, with banffozoans basal to the vetulicolids (Caron 2006; Aldridge et al. 2007), then the laterally flexing tail of vetulicolians must be independently derived because the tail structure of banffozoans has a significantly different mor-phology and does not appear to have been laterally flexing. Alternatively, if the banffozoans and vetulicolids represent successive paraphyletic lineages, then they may record the acquisition of deuterostome characters. Further study is required to resolve these contrasting phylogenetic inferences.
+
+------------
+2012-10-02-a Evidence for gill slits and a pharynx in Cambrian vetulicolians- implications for the early evolution of deuterostomes.pdf
+Ou et al. 2021
+
+> Figure 6 Evidence for the presence of a pharynx and dorsal/ventral feeding gutters in vetulicolians.
+> (E) Heteromorphus longicaudatus (ELI-SJ1247), showing food remains (arrowed) along the ventral side.
+
+------------
+2014-09-25-a A new vetulicolian from Australia and its bearing on the chordate affinities of an enigmatic Cambrian group.pdf
+G-B et al. 2014
+
+> Unfortunately, the tree shows no resolution inside the vetulicolians (Figure 6). However, some characters may be homologous amongst some taxa and thus suggest particular clades within vetulicolians. Most specimens of Nesonektris are found flat on their sides (Figures 1E,D, 4C), while Figure 1F shows a specimen that is partially rotated along the axis. A partial “twist” has been described in the body of Heteromorphus [e.g., Chen [33], figure Five hundred and seven] and a well-developed torsion is found in Banffia [13], whose posterior region also ends in a notch (as in Nesonektris), but has numerous (>40) segments. Banffia’s cylindrical, anterior region has two “narrow, oblique grooves”, which we consider homologous to the lateral grooves in other vetulicolians, and it also lacks evidence for lateral pouches. A subset of the shortest cladograms positions Nesonektris as an intermediate form between Vetulicola-type (laterally compressed bodies with gill pouches, thickened wall and hepta-segmented posterior region) and Banffia-type morphologies.
+
+> 30. Lateral groove. 0 = absent; 1 = present. This character is only applicable to vetulicolians, and is redefined from Aldridge et al. [6] (char. 32 therein). We have coded ‘?’ for Banffia because the anterior body is divided into two “carapaces” separated by two “narrow, oblique grooves” (Caron [13], Page ninety-nine); which we consider homologous to
+the straight lateral groove of the rest of vetulicolians. These grooves are often labelled as carapace “margins” in Caron’s [13] figures. In Yuyuanozoon we have coded this character as 0 because the groove does not extend the whole length of the
+anterior body (e.g. Aldridge et al. [6], Plate five, Figures three and five), as it does in all other vetulicolians.
+
+> 32. Shape of terminal segment. 0 = not notched; 1 = notched. This character is only applicable to vetulicolians. The end of the posterior body region is generally rounded in most vetulicolians, with the exception of Banffia (Caron [13], Figures four E, eighteen G-I) and Nesonektris (Figures 1A-E,G, 2B-D), which have a caudal notch. This character is redefined and the states inverted from Aldridge et al. [6] (char. 36 therein).
+> 33. Number of segments in posterior region. 0 = seven segments, 1 = twenty or more segments. This character is only applicable to vetulicolians, and no taxa have any other states. Pomatrum (Aldridge et al. [6], Page one hundred and fortyseven), Heteromorphus (Aldridge et al. [6], Page one hundred and fifty) and Banffia [13] all have 20 or more segments. This character is redefined from Aldridge et al. [6] (char. 37 therein).
+
+------------
+2015-07-30-a Rare primitive deuterostomes from the Cambrian (Series 3) of Utah.pdf
+Conway Morris et al. 2015
+
+> Although originally referred to Banffia (Chen and Zhou, 1997, figs. 138–140; also Hou et al., 1999, figs. 192, 193), the related Heteromorphus Luo and Hu in Luo et al., 1999 (we note that we regard H. longicaudatus Luo and Hu in Luo et al., 1999 as a junior synonym of H. confusa (Chen and Zhou, 1997)) (e.g., Chen et al., 2002, pl. 12, figs. 5, 6) is similar in as much as in at least some specimens the segments of the posterior section are somewhat irregular (e.g., Chen et al., 1996, fig. 255). By contrast, while the anterior of this Chinese taxon is not frequently preserved (e.g., Chen, 2004, figs. 507, 508; Hou et al., 2004, fig. 18.4) it is somewhat more similar to B. constricta. In the wider context of vetulicolian evolution, however, H. confusa offers some complementary insights. First, like other banffiids there is a crossover at the anterior-posterior junction (e.g., Chen, 2004, fig. 507). This crossover also has the interesting implication that it is the dorsal and ventral sides that are effectively reversed between the anterior and posterior sections. The presence of this crossover in H. confusa would also support the notion of it being an original feature rather than being taphonomic. In conclusion, although Banffia appears to be a secure generic concept, the variations between the three known species suggest varying ecologies. In addition, and notwithstanding the apparent absence of anterior gills, the banffiids appear to belong within the vetulicolians (cf. Caron, 2006).
+> While the division into posterior and anterior is diagnostic of all vetulicolians, the degree of constriction in the banffiids is more pronounced than in other members of this group. If a burrower, then this constriction may have been instrumental in allowing the posterior to achieve hydrostatic independence of the anterior unit. This inferred mode of life may also explain an obvious difference between the banffiids and other vetulicolians, that is the apparent absence of any gill openings. Chen (2004, fig. 508) depicted four gill openings in his reconstruction of the related Heteromorphus, but these are not obvious in the fossil material (e.g., Hou et al., 2004). Nor have corresponding structures been identified in any other banffiid (Caron, 2006). If they were originally present, the vetulicolian bodyplan indicates that such openings should in principle be located in the shallow grooves on the anterior section that are an extension of the median crossover. In that case, given the narrowness of these grooves, any gill openings would have been very small. This putative absence (or reduction) could be linked to the mode of life of the banffiids, inasmuch as with the exception of the pelagic Vetulicola Hou, 1987 (e.g., Ou et al., 2012), the remaining taxa seem to have been epifaunal (e.g., Shu et al., 2001). It is possible, therefore, that if banffiids were not only benthic but led an infaunal existence then this would have militated against such openings and that respiratory exchange, possibly augmented by peristaltic pumping in the burrow, was principally across the thin cuticle of the anterior section.
+> Preservation of B. episoma is typical of Burgess Shale-type faunas. The fossil films presumably are carbonaceous, but dotted by small nodules (?pyrite), especially near margins. With the exception of the holotype, this contrast between the completeness of the posterior versus the anterior suggests the latter possessed a more delicate body wall and/or had a thinner cuticle, rendering it more vulnerable to decay. Some support for this suggestion comes from the related Heteromorphus. In this Cambrian Series 2 species from the Chengjiang Lagerstätten complete specimens are known, but Chen and Zhou (1997, p. 85) noted that “Most specimens are incomplete, preserving only the abdomen [ = posterior unit]”. In his description of the type species, Caron (2006) was equivocal as to whether the constriction and associated crossover were original or the result of post-mortem twisting. The consistency of the crossover in B. episoma, along with lack of evidence of any torsion in the adjacent posterior region, suggests that this feature is primary rather than the result of taphonomy.
+
+------------
+2017-00-00-p The Cambrian Fossils of Chengjiang, China, 2nd Edition.pdf
+Hou et al. 2017
+
+> Genus Heteromorphus Luo & Hu in Luo, Hu, Chen, Zhang & Tao, 1999
+> Heteromorphus confusus (Chen & Zhou, 1997)
+> This is a fairly common species, with specimens usually preserved as a thin, reddened film. Complete specimens are uncommon, but reach 5.5 cm in length. The anterior body varies from torpedo‐shaped, tapering to a rounded anterior edge, to subrectangular with a straight, vertical anterior end. The posterior end of the anterior body is marked by short angular projections both dorsally and ventrally. Lateral grooves are apparent, though poorly defined, on some specimens. The tail is long, flat, and broad, tapering posteriorly; there is a slight constriction where it attaches to the anterior body. It shows clear segmentation or annulation, often accompanied by wrinkling; the number of segments is difficult to ascertain, but may be about 30. A dark axial line in the tail of some specimens appears to represent the gut, which extends posteriorly to a terminal anus.
+> The streamlined shape suggests that Heteromorphus was nektonic or nektobenthic, propelled by the tail. There is no direct evidence from gut contents to demonstrate how it fed, but it may have been a filter feeder or a nektobenthic consumer, feeding selectively from the sediment surface (Aldridge et al. 2007).
+> Heteromorphus is restricted to the Chengjiang biota, but the related genus Banffia (to which H. confusus was initially assigned) is known from the middle Cambrian Burgess Shale of British Columbia (Walcott 1911b; Caron 2005).
+
+------------
+2018-03-11-a The enigmatic metazoan Yuyuanozoon magnificissimi from the early Cambrian Chengjiang Biota, Yunnan Province, South China.pdf
+Li et al. 2018
+
+Phylogeny including Heteromorphida (= Banffozoa) and Heteromorphus confusus (==Banffia confusa; Heteromorphus longicaudatus)
+
+------------
+2019-08-09-a Cambrian Chordates and Vetulicolians.pdf
+McMenamin 2019
+
+(under 4.1 Banffia)
+> Banffia confusa from Chengjiang has gill slits on its anterior section and is thus securely placed in the Vetulicolia 
+
+> 4.5 Heteromorphus
+> Heteromorphus confusus was originally assigned to Banffia, and the possibility exists that more genera and species will need to be described with ongoing study of these morphologically variable fossils.[50] Heteromorphus is one of the 'soft shell' vetulicolians.[49]
+> 4.6 Heteromorphus Subtype New Species Form A
+> This undescribed form is a 'soft shell' vetulicolian with an apparently unsegmented posterior region ('tail') that is "covered with numerous wrinkles"[49]. The rather thick tail is thought to be either an extension of both the dorsal and ventral partitions of the anterior section, or, more probably, only an extension of the dorsal part of the anterior section.[49]
+
+------------
+2023-08-30-a An enigmatic structure in the tail of vetulicolians from the Cambrian Chengjiang biota, South China.pdf
+Yang et al. 2023
+
+> The body wall of some other less common vetulicolian members, such as Yuyuanozoon magnificissimi and Heteromorphus longicaudatus (Luo et al. 1999; Chen et al. 2003a), are also relatively thin and flexible, and their preservation conditions are similar to those of X. stephanus and D. haoae; hence fossil material of Y. magnificissimi and H. longicaudatus has the potential to preserve the enigmatic structure.
+
+------------
+2024-05-14-a A new interpretation of Pikaia reveals the origins of the chordate body plan.pdf
+Mussini et al. 2024
+
+Includes Heteromorphus in cladogram in polytomy with Banffia and the clade consisting of Skeemella+(clade consiting of everything else).
+

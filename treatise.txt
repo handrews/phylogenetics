@@ -1,0 +1,685 @@
+Treatise on Invertebrate Paleontology
+
+P Echinodermata
+  BP Homalozoa
+    C Stylophora (Gill & Caster 1960)
+      O Cornuta (Jaekel 1901)
+        F Ceratocystidae (Jaekel 1901)
+          g Ceratocystis (Jaekel 1901)
+        F Cothurnocystidae (Bather 1913)
+          g Cothurnocystis (Bather 1913)
+          g Nevadaecystis n. gen. (Ubaghs 1966)
+          g Phyllocystis (Thoral 1935)
+        F Scotiaecystidae n. fam. (Caster & Ubaghs 1966)
+          g Scotiaecystis n. gen. (Caster & Ubaghs 1966)
+          g Bohemiaecystis n. gen. (Caster 1966)
+      O Mitrata (Jaekel 1918)
+        BO Mitrocystitida (Caster 1952)
+          F Mitrocystitidae n. fam. (Ubaghs 1966)
+            g Mitrocystites (Barrande 1887)
+            g Chinianocarpos (Ubaghs 1961)
+            g Mitrocystella (Jaekel 1901)
+          F Paranacystidae (Caster 1954)
+            g Paranacystis (Caster 1954)
+        BO Lagynocystida (Caster 1952)
+          F Peltocystidae n. fam. (Ubaghs 1966)
+            g Peltocystis (Thoral 1935)
+          F Lagynocystidae (Jaekel 1918)
+            g Lagynocystis (Jaekel 1918)
+          F Kirkocystidae (Caster 1952)
+            g Balanocystites (Barrande 1887)
+            g Anatiferocystis (Chauvel 1941)
+        BO Anomalocystitida (Caster 1952)
+          F Anomalocystitidae (Bassler 1938)
+            g Anomalocystites (Hall 1859)
+            g Ateleocystites (Billings 1838)
+            g Basslerocystis (Caster 1952)
+            g Enoploura (Wetherby 1879)
+            g Placosystites (de Koninck 1869)
+            g Rhenocystis (Dehm 1932)
+            g Victoriacystis (Gill & Caster 1960)
+          F Australocystidae (Caster 1954) [1956]
+            g Australocystis (Caster 1954) [1956]
+            g Placocystella (Rennie 1936)
+          F Allanicytidiidae n. fam. (Caster & Gill 1966)
+            g Allanicytidium n. gen. (Caster & Gill 1966)
+        BO _incertae cedis_
+          F _incertae cedis_
+            g Spermacystis nom. subts. (Ubaghs 1966)
+    C Homostelea (Gill & Caster 1960)
+      O Cincta (Jaekel 1918)
+        F Trochocystitidae (Jaekel 1901)
+          g Trochocystites (Barrande 1887)
+          g Trochocystoides (Jaekel 1918)
+        F Gyrocystidae (Jaekel 1918)
+          g Gyrocystis (Jaekel 1918)
+          g Decacystis (Gislén 1927)
+    C Homoiostelea (Gill & Caster 1960)
+      O Soluta (Jaekel 1901)
+        F Minervaecystidae n. fam. (Ubaghs & Caster 1966)
+          g Minervaecystis n. gen. (Ubaghs & Caster 1966)
+        F Dendrocystitidae (Bassler 1938)
+          g Dendrocystites (Barrande 1887)
+          g Dendrocystoides (Jaekel 1918)
+          g Heckericystis (Gill & Caster 1960)
+          g Dehmicystis n. gen. (Caster 1966)
+        F Girvanicystidae n. fam. (Caster 1966)
+          g Girvanicystis n. gen. (Caster 1966)
+        F Rutrocylpediae (Gill & Caster 1960)
+          g Rutroclypeud (Wither 1933)
+        F Syringocrinidae (Parsley & Caster 1965)
+          g Syringocrinus (Billings 1859)
+        F Iowacystidae (Gill & Caster 1960)
+          g Iowacystis (Thomas & Ladd 1926)
+        F Bellemnocystitidae n. fam. (Parsley 1966)
+          g Belemnocystites (Miller & Gurley 1894)
+  BP Echinozoa (Haekel in Zittel 1895)
+    C Helicoplacoidea (Durham & Caster 1963)
+      F Helicoplacidae n. fam. (Durham & Caster)
+        g Helicoplacus (Durham & Caster 1963)
+    C Camptostromatoidea (Durham 1966)
+      F Camptostromatidae n. fam. (Durham 1966)
+        g Camptostroma (Ruedemann 1933)
+    C Edrioasteroidea (Billings 1858)
+      F Stromatocystitidae (Bassler 1936)
+        g Somatocystites (Pompeckj 1896)
+        g Walcottidiscus (Baassler 1935)
+        g Xenocystites (Bassler 1936)
+      F Cyathocystidae (Bather 1899)
+        g Cyathocystis (F. Schmidt 1879)
+        g Cyathotheca (Jaekel 1927)
+      F Hemicystitidae (Bassler 1936)
+        g Hemicystites (Hall 1852)
+        g Anglidiscus (Regnéll 1950)
+        g Bassleridiscus (Fisher 1951)
+        g Carneyella (Foerste 1916)
+        g Cincinnatidiscus (Bassler 1935)
+        g Cystaster (Hall 1871)
+        g Foerstediscus (Bassler 1935)
+        g Lebetodiscus (Bather 1908)
+        g Lepidoconia (Wilson 1946)
+        g Pyrgocystis (Bather 1915)
+        g P.(Pyrgocystis)
+        g P.(Rhynopyrgus) (Dehm 1961)
+        g Streptaster (Hall 1972)
+        g Timeischytes (Ehlers & Kelsing 1958)
+      F Agelacrinitidae (Clarke 1901)
+        g Agelacrinites (Vanuxem 1942)
+        g Cooperidiscus (Bassler 1935)
+        g Discocystis (Gregory 1897)
+        g Isorophus (Foerste 1916)
+        g Isorophusella (Bassler 1935)
+        g Lepidodiscus (Meek & Worthen 1868)
+        g Thresherodiscus (Foerste 1914)
+        g Ulrichidiscus (Bassler 1935)
+      F Edrioasteridae (Bather 1898)
+        g Edrioaster (Billings 1858)
+        g Dinocystis (Bather 1989)
+    C Ophiocistioidea (Sollas 1899)
+      F Eucladiidae (Gregory 1896)
+        g Eucladia (Woodward 1869)
+      F Sollasinidae (Fedotov 1926)
+        g Sollasina (Fedotov 1926)
+        g Euthemon (Sollas 1899)
+      F Volchoviidae (Gekker 1938)
+        g Volchovia (Gekker 1938)
+      F ? Rhenosqamidae (R. Richter 1930)
+        g Rhenosquama (R. Richter 1930)
+    C Cylocystoidea (Miller & Gurley 1895)
+      F Cyclocystoididae (S.A. Miller 1882)
+        g Cyclocystoides (Salter & Billings 1858)
+    C Echinoidea (Leske 1778)
+  BP Crinozoa (Matsumoto 1929)
+    C Cystoidea (von Buch 1846)                     -> X
+      O Rhombifera (Zittel 1879)                    -> to Class
+        SF Glyptocystitida (Bather 1899)
+          F Glyptocystitidae (Bather 1899)
+            g Glyptocystites (Billings 1854)
+          F CystoBlasstidae (Jaekel 1899)
+            g Cytoblastus (Volborth 1867)
+            g Hesperocystis (Sinclair 1945)
+          F Rhombiferidae (Kesling 1962)
+7           g Rhombifera (Barrande 1867)
+          F Cheirocrinidae (Jaekel 1899)
+            g Cheirocrinus (Eichwald 1856)
+            g ? Homocystites (Barrande 1887)
+            g ? Leptocystis (Jaekel 1899)
+          F Echinoencrinitidae (Bather 1899)
+            g Echinoencrinites (von Meyer 1826)
+            g Erinocystis (Jaekel 1899)
+            g ? Eutretocystis (Phleger 1935)
+            g Glaphyrocystis (Jaekel 1899)
+            g Proctocystis (Regnéll 1945)
+            g Prunocystites (Forbes 1848)
+            g Schizocystis (Jaekel 1895)
+            g Scoliocystis (Jaekel 1899)
+          F Pleurocystitidae (Neumayr 1889)
+            g Pleurocystites (Billings 1854)
+            g Amecystis (Ulrigh & Kirk 1921)
+            g Regulaecystis (Dehm 1932)
+          F Callocystitidae (Bernard 1895)
+            BF Callocystitinae (Bernard 1895)
+              g Callocystites (Hall 1852)
+              g Coelocystis (Schuchert 1903)
+              g Sphaerocystites (Hall 1859)
+            BF Apiocystitinae (Jaekel 1899)
+              g Apiocystites (Forbes 1848)
+              g Brockocystus (Foerste 1914)
+              g Hallicystis (Jaekel 1899)
+              g Jaekelocystis (Schuchert 1903)
+6             g Lepadocystis (Carpenter 1891)
+              g Lepocrinites (Conrad 1840)
+              g Lipsanocysti (Ehlers & Leighley 1922)
+              g Lovenicystis (Regnéll 1945)
+              g Strobilocystites (White 1876)
+              g Tetracystis (Schuchert 1904)
+            BF Staurocystinae (Jaekel 1899)
+              g Staurocystis (Haekel 1896)
+              g Pseudocrinites (Pearce 1842)
+        SF Hemicosmitida (Jaekel 1918)
+          F Hemicosmitidae (Jaekel 1918)
+8           g Hemicosmites (von Buch 1840)
+            g Corylocrinus (Koenen 1886)
+            g Tricosmites (Jaekel 1918)
+          F Caryocrinitidae (Bernard 1895)
+9           g Caryocrinites (Say 1825)
+            g Juglandocrinus (Koenen 1886)
+            g Oocystis (Dreyfuss 1939)
+            g Ptychocosmites (Jaekel 1918)
+            g Stribalocystites (S. A. Miller 1891)
+          F Heterocystitidae (Jaekel 1918)
+            g Heterocystites (Hall 1851)
+        SF Polycosmititda (Jaekel 1918)
+          F Polycosmitidae (Jaekel 1918)
+            g Polycosmites (Jaekel 1918)
+          F Stichocystidae (Jaekel 1918)
+            g Stichocystis (Jaekel 1899)
+        SF Caryocystitida (Jaekel 1918)
+          F Caryocystitidae (Jaekel 1918)
+            g Caryocystites (von Buch 1846)
+            g Heliocrinites (Eichwald 1840)
+            g Orrocystites (Barrande 1887)
+            g ? Ulrichocystis (Bassler 1950)
+          F Echinosphaeritidae (Neumayr 1889)
+            g Echinosphaerites (Wahlenberg 1818)
+            g Arachnocystites (Neumayr 1889)
+      O Diploporita (Müller 1854)                   -> Crin or Blast?
+        SF Glyptosphaeritida (Bernard 1895)
+          F Glyptosphaeritidae (Bernard 1895)
+            g Glyptosphaerites (Müller 1854)
+          F Dactylocystidae (Jaekel 1899)
+            g Dactylocystis (Jaekel 1899)
+            g Estonocystis (Jaekel 1918)
+            g Revalocystis (Jaekel 1918)
+          F Protocrinitidae (Bather 1899)
+            g Protocrinites (Eichwald 1840)
+            g Eumorphocystis (Branson & Peck 1940)
+            g Fungocystites (Barrande 1887)
+            g Regnellicystis (Bassler 1950)
+          F Gomphocystitidae (Miller 1889)
+            g Gomphocystites (Hall 1865)
+            g Pyrocystites (Barrande 1887)
+        SF Sphaeronitida (Neumayr 1889)
+          F Sphaeronitidae (Neumayr 1889)
+            g Sphaeronites (Hisinger 1828)
+            g Allocystites (S. A. Miller 1889)
+            g Archegocystis (Jaekel 1899)
+            g ? Barbieria (Termier & Termier 1950)
+            g Bulbocystis (Růžička 1939)
+            g Carpocystites (Oehlert 1887)
+            g Codiacystis (Jaekel 1899)
+            g Eucystis (Angelin 1878)
+            g Haplosphaeronis (Jaekel 1926)
+            g Paleosphaeronites (Prokop 1964)
+            g Proteocystites (Barrande 1887)
+            g Tholocystis (Chauvel 1941)
+          F Aristocystitidae (Neumayr 1889)
+            g Aristocystites (Barrande 1887)
+            g ? Baculocystites (Barrande 1887)
+            g Calix (Rouault 1851)
+            g Campylostoma (Dreyfuss 1939)
+            g Hippocystis (Bather 1919)
+            g Holocystites (Hall 1864)
+            g ? Lepidocalix (Termier & Termier 1950)
+            g Pachycalix (Chauvel 1936)
+            g Pseudaristocystis (Sun 1936)
+            g Sinocystis (Reed 1917)
+            g Trematocystis (Jaekel 1899)
+        SF Asteroblastida (Bather 1900)
+          F Asteroblastidae (Bather 1900)
+            g Asteroblastus (Eichwald 1862)
+            g Asterocystis (Haekel 1896)
+            g Metasterocystis (Jaekel 1918)
+          F Mesocystidae (Bather 1899)
+            g Mesocystis (Bather 1899)
+    C Paracrinoidea (Regnéll 1945)              -> Crinozoa
+      O Varicata (Jaekel 1900)
+        F Malocystitidae (Bather 1899)
+          g Malocystites (Billings 1857)
+          g Wellerocystis (Foerste 1920)
+        F Amygdalocystitidae (Jaekel 1900)
+          g Amygdalocystites (E. Billings 1854)
+          g Canadocystis (Jaekel 1900)
+          g Sinclairocystis (Bassler 1950)
+      O Brachiata (Jaekel 1900)
+        F Comarocystitidae (Bather 1899)
+          g Comarocystites (Billings 1854)
+          g Billingsocystis (Bassler 1950)
+          g Schuchertocystis (Bassler 1950)
+      O _incertae cedis_
+        F _incertae cedis_
+          Achradocystites (von Volborth 1870)
+          Platycystites (Miller 1889)
+    C Edrioblastoidea (Fay 1962)                -> out
+      O Pentaystida (Jaekel 1918)
+        F Astrocystitidae (Bassler 1938)
+          g Astrocystites (Whiteaves 1897)
+    C Parablastoidea (Hudson 1907)              -> +C Meristoschismatidae
+      F Blastocystidae (Jaekel 1918)
+        g Blastocystis (Jaekel 1918)
+        g Blastoidocrinus (Billings 1859)
+    C Blastoidea (Say 1825)
+      O Fissiculata (Jaekel 1918)               -> retained?
+        F Phaenoschismatidae (Etheridge & Carpenter 1886)
+          g Phaenoschisma (Etheridge & Carpenter 1882)
+          g Deltoschsma (Fay 1961)
+          g Dipteroblastus (Wanner 1940)
+          g Hadroblastus (Fay 1962)
+          g Hyperoblastus (Fay 1961)
+          g Microblastus (Eykeren 1942)
+          g Neoschisma (Wanner 1924)
+          g Notoblastus (Brown 1941)
+          g Nymphaeoblastus (von Peetz 1907)
+          g Phaenoblastus (Fay 1961)
+          g Pleuroschism (Reimann 1945)
+          g Polydeltoideus (Reimann & Fay 1961)
+          g Sphaeroschisma (Wanner 1924)
+          g Sundablastus (Wanner 1924)
+          g Thaumatoblastus (Wanner 1924)
+          g Timoroblastus (Wanner 1924)
+        F Brachyschismatidae (Fay 1961)
+          g Brachyschisma (Reimann 1945)
+        F Codasteridae (Etheridge & Carpenter 1886)
+14        g Codaster (M'Coy 1849)
+          g Agmoblastus (Fay 1961)
+          g Angioblastus (Wanner 1931)
+          g Heteroschisma (Wachsmuth 1883)
+          g Indoblastus (Wanner 1924)
+          g Nannoblastus (Wanner 1924)
+          g Paracodaster (Yakovlev 1940)
+          g Pteroblastus (Wanner 1924)
+          g Sagittoblastus (Yakovlev 1937)
+        F Orophocrinidae (Jaekel 1918)
+          g Orophocrinus (von Seebach 1864)
+          g Anthoblastus (Wanner 1924)
+          g Pentablastus (Sieverts-Doreck 1951)
+        F Astrocrinidae (Austin & Austin 1843)
+          g Astrocrinus (Morris 1843)
+          g Ceratoblastus (Wanner 1940)
+          g Cryptoschisma (Etheridge & Carpenter 1886)
+          g ? Pentephyllum (Haughton 1859)
+          g Pentremitidea (d'Orbigny 1850)
+      O Spiraculata (Jaekel 1918)                   -> ??
+        F Troosticrinidae (Bather 1899)
+          g Troosticrinus (Shumard 1866)
+          g Metablastus (Etheridge & Carpenter 1886)
+          g Schizotremites (Reimann 1945)
+          g Tricoelocrinus (Meek & Worthen 1868)
+        F Diploblastidae (Fay 1964)
+          g Diploblastus (Fay 1961)
+          g Nodoblastus (Fay 1963)
+        F Granatocrinidae (Fay 1961)
+          g Granatocrinus (Hall 1862)
+          g Carpenteroblastus (Rowley 1901)
+          g Cribroblastus (Hambach 1903)
+          g Cryptoblastus (Etheridge & Carpenter 1886)
+          g Dentiblastus (Macurda 1964)
+          g Heteroblastus (Etheridge & Carpenter 1886)
+          g Mesoblastus (Etheridge & Carpenter 1886)
+          g Monadoblastus (Fay 1961)
+          g Monoschizoblastus (Cline 1936)
+          g Poroblastus (Fay 1961)
+          g Ptychoblastus (Fay 1960)
+          g Pyramiblastus (Macurda 1964)
+          g Tanaoblastus (Fay 1961)
+        F Schizoblastidae (Etheridge & Carpenter 1886)
+          g Schizoblastus (Etheridge & Carpenter 1882)
+          g Acentrotremites (Etheridge & Carpenter 1883)
+          g Deltoblastus (Fay 1961)
+          g Lophoblastus (Rowley 1901)
+          g Orbiblastus (Macurda 1965)
+          g Strongyloblastus (Fay 1962)
+        F Nucleocrinidae (Bather 1899)
+          g Nucleocrinus (Conrad 1842)
+          g Elaeacrinus (Roemer 1851)
+          g Placoblastus (Fay 1961)
+        F Pentremitidae (d'Orbigny 1851)
+          g Pentremites (Say 1820)
+          g Ambolostoma (Peck 1930)
+          g Belocrinus (Munier-Chalmas 1881)
+          g Calycoblastus (Wanner 1924)
+          g Cordyloblastus (Fay 1961)
+          g Devonoblastus (Reimann 1935)
+          g Eleutherocrinus (Shumard & Yandell 1856)
+          g Pentremoblastus (Fay & Koenic 1963)
+          g Petaloblastus (Fay 1961)
+          g Rhopaloblastus (Wanner 1924)
+        F Orbitremitidae (Bather 1899)
+          g Orbitremites (Austin & Austin 1842)
+          g Ellipticoblastus (Fay 1960)
+          g Globoblastus (Hambach 1903)
+    C Eocrinoidea (Jaekel 1918)
+      F Eocrinidae (Jaekel 1918)                -> O1
+        g Gogia (Walcott 1918)
+1       g Akadocrinus (Prokop 1962)
+      F Lichenoididae (Jaekel 1918)             -> O1
+        g Lichenoides (Barrande 1846)
+      F Rhopalocystidae n. fam. (Ubaghs 1966)   -> O1
+        g Rhopalocystis (Ubaghs 1963)
+      F Palaeocystitidae n. nom. (Ubaghs 1966) (1896)
+        g Palaeocystites (Billings 1858)        -> out F Springerocystidae
+      F Ascocystitidae n. nom. (Ubaghs 1966)    -> O2
+        g Ascocystites (Barrande 1887)
+      F Macrocystellidae (Bather 1899)          -> O2
+5       g Macrocystella (Callaway 1877)
+        g Mimocystites (Barrande 1887)          -> ??
+      F Springerocystidae (Bassler 1950)        -> out
+        g Spriingerocystis (Bassler 1950)
+        g Bockia (Gekker 1938)                  -> O-ind2 F-ind
+        g ? Columbocystis (Bassler 1950)        -> ??
+      F Cryptocrinitidae (Bassler 1938) (1895)  -> O-ind2
+        g Cryptocrinites (von Buch 1840)
+11      g Lysocystites (S. A. Miller 1889)      -> out F Springerocystidae
+      F Rhipidocystidae (Jaekel 1901)           -> O-ind3
+        g Rhipidocystis (Jaekel 1900)
+        g Batherocystis (Bassler 1950)
+      F Lingulocystidae (Ubaghs 1950)           -> O-ind3
+        g Lingulocystis (Thoral 1935)
+      F _incertae cedis_
+        g ? Archaeocystites (Barrande 1887)     -> out F Springerocystidae
+        g Cardiocystites (Barrande 1887)        -> O-ind3 F-ind1
+        g Cigara (Barrande 1887)                -> out
+        g Eocystites (Billings 1868)            -> O2 F-ind2
+        g Lapillocystites (Barrande 1887)       -> ??
+        g Pareocrinus (Yakovlev 1956)           -> O2 F-ind1
+        g Pilocystites (Barrande 1887)          -> ??
+        g Polyptychella (Jaekel 1918)           -> ??
+        g ? Protocystites (Hicks 1872)          -> ??
+        g ? Trachelocrinus (Ulrich 1929)        -> O-ind1 Trachelocrinidae
+    C Lepidocystoidea n. cl. (Durham 1966)      -> X
+      F Lepidocystidae n. fam. (Durham 1966)    -> Eocrinoidea Imbricata
+        g Lepidocystis (Foerste 1938)
+  BP Asterozoa (Zittel 1895)
+    C Stelleroidea (Lamarck 1816)
+      BC Somasteroidea (Spencer 1951)
+        O Goniactinida (Spencer 1951)
+      BC Asteroidea (de Blainville 1830)
+        O Platyasterida (Spencer 1951)
+        O Paxillosida (Perrier 1884)
+          BO Hemizonina (Spencer 1951)
+          BO Diplozonina nov. s.o. (Spencer & Wright 1966)
+          BO Cribellina (Fisher 1911)
+          BO Notomyotina (Ludwig 1910)
+        O Valvatida (Perrier 1884)
+          BO Pustulosina (Spencer 1951)
+            SF Palaaeasteraceae (S. A. Miller 1889)
+            SF Promopalaeasteraceae (Schuchert 1915)
+          BO Tumulosina nov. s.o. (Spencer & Wright 1966)
+          BO Granulosina (Perrier 1894)
+        O Spinulosida (Perrier 1884)
+          BO Eugnathina nov. s.o. (Spencer & Wright 1966)
+          BO Leptognathina nov. s.o. (Spencer & Wright 1966)
+        O Forcipulatida (Perrier 1884)
+          BO Uractinina nov. s.o. (Spencer & Wright 1966)
+          BO Asteriadina (Fisher 1928)
+          BO Brisingina (Fisher 1928)
+      BC Ophiuroidea (Gray 1840)
+        O Stenurida (Spencer 1951)
+          BO Proturina nov. s.o. (Spencer & Wright 1966)
+          BO Parophiurina (Jaekel 1923)
+        O Oegophiurida (Matsumoto 1915)
+          BO Lysophiurina (Gregory 1896)
+          BO Zeugophiurina (Matsumoto 1929)
+        O Phrynophiurida (Matsumoto 1915)
+          BO Ophiomyxina (Fell 1962)
+          BO Euryalina (Lamarck 1816)
+        O Ophiurida (Müller & Troschel 1840)
+          BO Chilophiurina (Matsumoto 1915)
+          BO Laemophiurina (Matsumoto 1915)
+          BO Gnathophiurina (Matsumoto 1915)
+  _incertae cedis_
+    g Cymbionites (Whitehouse 1941)
+    g Peridionites (Whitehouse 1941)
+
+TREE (Summary)
+P Echinodermata
+  BP Homalozoa
+    C Stylophora
+      O Cornuta
+      O Mitrata
+    C Homostelea
+      O Cincta
+    C Homoiostelea
+      O Soluta
+  BP Echinozoa
+    C Helicoplacoidea
+    C Camptostromatoidea
+    C Edrioasteroidea
+    C Ophiocistioidea
+    C Cyclocystoidea
+    C Echinoidea
+    C Holothuroidea
+  BP Asterozoa
+    C Stelleroidea
+      BC Somasteroidea
+        O Goniactinida
+      BC Asteroidea
+        O Platyasterida
+        O Paxillosida
+        O Valvatida
+        O Spinulosida
+        O Forcipulatida
+      BC Ophiuroidea
+        O Stenurida
+        O Oegophiurida
+        O Phrynophiurida
+        O Ophiurida
+  BP Crinozoa
+    C Cystoidea
+      O Rhombifera
+      O Diploporita
+    C Paracrinoidea
+      O Varicata
+      O Brachiata
+    C Edrioblastoidea
+      O Pentaystida
+    C Parablastoidea
+    C Blastoidea
+      O Fissiculata
+      O Spiraculata
+    C Eocrinoidea
+    C Lepidocystoidea
+    C Crinoidea
+
+=====================
+
+1973-00-00-p Morphology and Evolution of Blastozoan Echinoderms.pdf
+Sprinkle, J.
+
+???????? is this from there?
+-
+  BP Echinozoa
+    C Edrioblastoidea
+      O Pentaystida
+    ...
+  BP Crinozoa
+    C Paracrinoidea
+    C Crinoidea
+  BP Blastozoa
+    C Eocrinoidea
+      O Imbricata
+    C Rhombifera
+    C Parablastoidea
+    C Blastoidea
+
+-----
+
+1980-00-00-p An overview of the fossil record.pdf
+Sprinkle
+
+TREE
+P Echinodermata (de Bruguière 1791) 
+  BP Crinozoa (Matsumoto 1929) 
+    C Crinoidea (Miller 1821) 
+    C Paracrinoidea (Regnéll 1945) 
+  BP Blastozoa (Sprinkle 1973) 
+    C Eocrinoidea (Jaekel 1918) 
+    C Rhombifera (Zittel 1879) 
+    C Diploporita (Müller 1854) 
+    C Parablastoidea (Hudson 1907) 
+    C Blastoidea (Say 1825) 
+  BP Asterozoa (Zittel 1895) 
+    C Asteroidea (de Blainville 1830) 
+    C Ophiuroidea (Gray 1840) 
+  BP Echinozoa (Zittel 1895) 
+    C Edrioasteroidea (Billings 1858) 
+    C Cyclocystoidea (Miller & Gurley 1895) 
+    C Helicoplacoidea (Durham & Caster 1963) 
+    C Ophiocistioidea (Sollas 1899) 
+    C Echinoidea (Leske 1778) 
+    C Holothuroidea (de Blainville 1834) 
+  BP Homalozoa (Whitehouse 1941) 
+    C Stylophora (Gill & Caster 1960) 
+    C Homoiostelea (Gill & Caster 1960) 
+    C Homostelea (Gill & Caster 1960) 
+    C Ctenocystoidea (Robison & Sprinkle 1969) 
+P Echinodermata
+  BP Echinozoa
+    C Camptostromatoidea
+    C Edrioasteroidea
+    C Cyclocystoidea
+    C Helicoplacoidea
+    C Ophiocistioidea
+    C Echinoidea
+    C Holothuroidea
+  BP Homalozoa
+    C Stylophora
+    C Homostelea
+    C Homoiostelea
+  BP Asterozoa
+    C Stelleroidea
+  BP Crinozoa
+    C Cystoidea
+    C Paracrinoidea
+    C Edrioblastoidea
+    C Parablastoidea
+    C Blastoidea
+    C Eocrinoidea
+    C Lepidocystoidea
+    C Crinoidea
+
+------
+
+2000-04-06-a Are homalozoans echinoderms? An answer from the extraxial-axial theory.pdf
+David, B.; Lefebvre, B.; Mooi, R.; Parsley, R.
+
+E Deuterostomia
+  SP Chordata
+  [SP Ambulacraria]
+    P Echinodermata
+      g ? Arkarua
+      - [-> stereom]
+        Helicoplacoidea
+        Edrioasteroidea
+        - [-> imperforate extraxial sac]
+          - [-> brachioles]
+            Lepidocystoids
+            - [-> distinct theca + reduct. in #embedded floor plates]
+              Eocrinoids (pars)
+              Blastozoa [-> well-differentiated stem]
+                Eocrinoids (pars)
+                Homoiosteleans
+                - [-> marginal frame? + reduct. stem + lat flat theca]
+                  Eocrinoids (pars)
+                  - [-> stem loss + operculum? + recumbent brachioles?]
+                    Homosteleans
+                    Ctenocystoids
+                - [-> no embedded flooring plates]
+                  Diploporite Cystoids
+                  - [-> enarged contig basal brachiolars + rhombs/hydrospires]
+                    Rhombiferan Cystoids
+                    Blastoids
+          - [-> arms constructed of axial and extraxial elements]
+            Crinozoa [-> flooring plates not calcifid + tegmen]
+              Stylophorans
+              "crownward" Crinoids
+            AOHE
+
+      
+          - []
+The Great Ordovician Biodiversification Event
+
+P Echinodermata
+  BP Crinozoa
+    E Disparida
+    E
+      E Camerata
+        E Monobathrida
+        E Diplobathrida
+        E
+          E Cladida
+            E Flexibila
+          E Hybocrinida
+  BP Blastozoa
+    C Homostelea
+      O Cincta
+    C Homoiostelea
+      O Soluta
+    E
+      E Eocrinoidea
+      E
+        E Paracrinoidea
+        E Rhipidocystida
+      E Diploporita
+      G Rhombifera
+        E Caryocystida
+        E Glyptocystida
+          E Hemicosmitida
+        Z Rhombifera
+        E Parablastoidea
+  BP Echinozoa
+    E Edrioasteroidea
+      C Isorophica
+      E
+        C Edrioasterida
+          E Ophiocistioidea
+            E
+              E Bothriocidarida
+              E Echinoidea
+            E Holothuroidea
+          E ? Cyclocystoidea
+      E Somasteroidea
+        E Ophiuroidea
+        E Asteroidea
+  BP Homalozoa
+    C Stylophora
+      O Cornuta
+      O Mitrata
+
+2024-04-09-a First report of lepidocystid echinoderm in the Cambrian of North China- Evolutionary and Palaeobiogeographic implications.pdf
+
+P Echinodermata (Klein 1734)
+  BP Blastozoa (Sprinkle 1973)
+    G Eocrinoidea
+    F Lepidocystidae (Durham 1968)
+    E
+      E Felbabkacystiae
+      E
+        E Eocrinidae
+        E
+          E Lichinoidae
+          E [derived Blastozoa]
+            ? Trachelocrinidae ?
+            ??
+            Z Eocrinoidea
+
