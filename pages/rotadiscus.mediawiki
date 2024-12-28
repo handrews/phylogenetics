@@ -1,19 +1,25 @@
 {{Short description|Extinct genus of disc-shaped animal}}
 {{For|the genus of snails|Rotadiscus (gastropod)}}
-{{Speciesbox
-| taxon = Rotadiscus grandis
+{{Automatic taxobox
+| taxon = Rotadiscus
 | image = Chengjiang Rotadiscus.jpg
 | image_caption = Fossil of ''Rotadiscus''
 | authority = Sun & Hou, 1987
+| type_species = ''R. grandis''
+| type_species_authority = Sun & Hou, 1987
+| synonyms = {{taxon list|Brzechowia|Dzik,&nbsp;1991}}
+| synonyms_ref = <ref>{{cite journal|last1=Schroeder |first1=Natalie I. |last2=Paterson |first2=John R. |last3=Brock |first3=Glenn A. |date=2018 |title=Eldonioids with associated trace fossils from the lower Cambrian Emu Bay Shale Konservat-Lagerstätte of South Australia |url=https://www.cambridge.org/core/journals/journal-of-paleontology/article/abs/eldonioids-with-associated-trace-fossils-from-the-lower-cambrian-emu-bay-shale-konservatlagerstatte-of-south-australia/05F449A7147B8DB89E74F26E2A443E88 |journal=Journal of Paleontology |language=en |volume=92 |issue=1 |pages=80–86 |doi=10.1017/jpa.2018.6 |bibcode=2018JPal...92...80S |s2cid=197586878 |issn=0022-3360}}</ref>
 | fossil_range = {{fossil range|Early Cambrian | Middle Cambrian | ref =<ref name=Chen1995>{{cite journal
-| author2=M-Y. Zhu|author3= G. Q. Zhou
-| year = 1995 
-| url = http://www.app.pan.pl/archive/published/app40/app40-213.pdf
-| journal= Acta Palaeontologica Polonica
-| pages= 213–244
-| author = Chen, J-Y.
-| title= The early Cambrian medusiform metazoan Eldonia from the Chengjiang Lagerstätte.
-|volume =  40}}</ref>}}
+   |author2=M-Y. Zhu
+   |author3= G. Q. Zhou
+   | year = 1995 
+   | url = http://www.app.pan.pl/archive/published/app40/app40-213.pdf
+   | journal= Acta Palaeontologica Polonica
+   | pages= 213–244
+   | author = Chen, J-Y.
+   | title= The early Cambrian medusiform metazoan Eldonia from the Chengjiang Lagerstätte.
+   |volume =  40
+}}</ref>}}
 |display_parents = 4
 }}
 
