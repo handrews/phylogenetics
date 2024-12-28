@@ -7,13 +7,14 @@
 | image_caption = ''[[Pentremites|Pentremites godoni]]'', a blastoid from the Lower Carboniferous of Illinois.
 | taxon = Blastoidea
 | authority = [[Thomas Say|Say]], 1825
-| subdivision_ranks = Orders
-| subdivision =
-[[Fissiculata]]<br />
-[[Spiraculata]]
-<br />
-''Incertae sedis'':<br />
-†''[[Macurdablastus]]''
+| subdivision_ranks = Subclasses
+| subdivision =* †Coronoidea
+* †Eublastoidea
+** †[[Fissiculata]]
+** †[[Spiraculata]]
+* ''Incertae sedis''
+** †''[[Lysocystites]]''
+** †''[[Macurdablastus]]''
 }}
 
 [[Image:Haeckel Blastoidea.jpg|thumb|right|200px|"Blastoidea", from [[Ernst Haeckel]]'s ''[[Kunstformen der Natur|Art Forms of Nature]]'', 1904]]
@@ -31,6 +32,45 @@ Like crinoids, blastoids were high-level stalked suspension feeders (feeding mai
 ==Taxonomy==
 {{See also|List of echinodermata orders}}
 Blastoids are assumed to have evolved from the [[Cystoids]]. Blastoids are subdivided into two orders: [[Fissiculata]], which are characterized by direct entrance to the individual hydrospires by way of slits; and [[Spiraculata]], which are characterized by indirect entrance to the hydrospires through canals by way of pores. The earliest blastoid yet found, ''Macurdablastus'' from the Middle Ordovician of [[Tennessee]], cannot be classified as either order.
+
+The following cladogram shows the current view of Blastoidea encompassing both the Coronoidea and the Eublastoidea (Blastoidea ''sensu stricto''), with its traditional orders of Fissiculata (which is shown to be paraphyletic) and Spiraculata (which may be monophyletic):<ref>{{cite journal|last1=Bauer |first1=Jennifer R. |last2=Waters |first2=Johnny A. |last3=Sumrall |first3=Colin D. |date=16 July 2019 |title=Redescription of Macurdablastus and redefinition of Eublastoidea as a clade of Blastoidea (Echinodermata) |journal=Palaeontology |volume=62 |issue=6 |pages=1003–1013 |doi=10.1111/pala.12439}}</ref>
+
+{{barlabel
+|size=9
+|at1=3 |bar1=darkblue |label1=Coronoids
+|at2=6 |bar2=indigo |label2=Fissiculates
+|at3=9 |bar3=purple |label3=Spiraculates
+|cladogram={{Clade
+|1={{Clade
+   |label1=(outgroup)
+   |1=''Chierocystis fultonensis''
+   |label2=Blastoidea
+   |2={{Clade
+      |1=''Lysocystites nodosus''
+      |2={{Clade
+         |1={{Clade
+            |1=''Cupulocorona gemmiformis''
+            |2=''Stephanocrinus angulatus''
+         }} |barbegin1=darkblue |barend1=darkblue
+         |2={{Clade
+            |1=''Macurdablastus uniplicatus''
+            |label2=Eublastoidea
+            |2={{Clade
+               |1=''Decaschisma pulchellus'' |barbegin1=indigo
+               |2={{Clade
+                  |1=''Polydeltoideus enodatus''&nbsp;&nbsp; |barend1=indigo
+                  |2={{Clade
+                     |1=''Pentremites godoni''
+                     |2=''Deltoblastus permicus''
+                  }} |barbegin2=purple |barend2=purple
+               }}
+            }}
+         }}
+      }}
+   }}
+}}
+}}
+}}
 
 ==References==
 {{Reflist}}
