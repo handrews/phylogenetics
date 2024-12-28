@@ -1,0 +1,39 @@
+{{Short description|Extinct genus of disc-shaped animal}}
+{{For|the genus of snails|Rotadiscus (gastropod)}}
+{{Speciesbox
+| taxon = Rotadiscus grandis
+| image = Chengjiang Rotadiscus.jpg
+| image_caption = Fossil of ''Rotadiscus''
+| authority = Sun & Hou, 1987
+| fossil_range = {{fossil range|Early Cambrian | Middle Cambrian | ref =<ref name=Chen1995>{{cite journal
+| author2=M-Y. Zhu|author3= G. Q. Zhou
+| year = 1995 
+| url = http://www.app.pan.pl/archive/published/app40/app40-213.pdf
+| journal= Acta Palaeontologica Polonica
+| pages= 213–244
+| author = Chen, J-Y.
+| title= The early Cambrian medusiform metazoan Eldonia from the Chengjiang Lagerstätte.
+|volume =  40}}</ref>}}
+|display_parents = 4
+}}
+
+'''''Rotadiscus''''' is a genus of discoidal animal known from the Cambrian [[Chengjiang biota]]<ref>{{Cite journal| doi = 10.1016/S0016-6995(02)00025-6| title = Révision des animaux discoïdes cambriens Stellostomites eumorphus et Pararotadiscus guizhouensis de Chine du Sud| year = 2002| last1 = Zhu | first1 = M.| last2 = Zhao| first2 = Yuan-Long| last3 = Chen| first3 = Jun-Yuan| journal = Geobios| volume = 35| issue = 2| pages = 165–185}}</ref> and classified with the [[eldonioid]]s.<ref name=Caron2010>{{Cite journal| pages = e9586| issue = 3| volume = 5| pmc = 2833208| journal = PLOS ONE | first4 = D.| last4 = Soares| doi = 10.1371/journal.pone.0009586| title = Tentaculate fossils from the Cambrian of Canada (British Columbia) and China (Yunnan) interpreted as primitive deuterostomes| last1 = Caron| year = 2010| pmid = 20221405 | first3 = D. | first1 = J.| last2 = Conway Morris| last3 = Shu | first2 = S.| editor1-last = Soares| editor1-first = Daphne| bibcode = 2010PLoSO...5.9586C| doi-access = free}}</ref>
+
+As with other eldonioids, it was originally thought to have been pelagic, but is now thought to be benthic.
+
+A 2023 cladistic analysis based on new fossils places ''Rotadiscus'', along with other eldonioids, as stem-group [[ambulacraria]]ns in the clade [[Cambroernida]].<ref name="li2023">{{cite journal |last1=Li |first1=Yujing |last2=Dunn |first2=Frances S. |last3=Murdock |first3=Duncan J.E. |last4=Guo |first4=Jin |last5=Rahman |first5=Imran A. |last6=Cong |first6=Peiyun |title=Cambrian stem-group ambulacrarians and the nature of the ancestral deuterostome |journal=Current Biology |date=May 10, 2023 |doi=10.1016/j.cub.2023.04.048 |url=https://doi.org/10.1016/j.cub.2023.04.048 |access-date=11 May 2023|doi-access=free }}</ref>
+
+==References==
+{{Reflist}}
+
+{{Taxonbar|from=Q124439768}}
+
+[[Category:Cambroernids]]
+[[Category:Fossils of China]]
+[[Category:Fossils of Canada]]
+[[Category:Prehistoric bilaterian genera]]
+[[Category:Cambrian genus extinctions]]
+
+
+{{Cambrian-animal-stub}}
+
