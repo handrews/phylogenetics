@@ -1,0 +1,71 @@
+===Cladograms===
+The following cladograms show two possible placements of ''Ooedigera''.  First, on the left, a monophyletic Vetulicolia is shown as the sister group to [[Tunicata]], but with all internal relationships unresolved.<ref>{{harvnb|García-Bellido|Lee|Edgecombe|Jago|2014|page=9}}</ref>  Next, on the right, ''Ooedigira'' is recovered as the most [[basal (phylogenetics)|basal]] member of a monophyletic Vetulicolidae<ref>{{harvnb|Li|Williams|Gabbott|Chen|2018|pages=1083–1084}} {{small|This definition of Vetulicolidae is used to label the node on the Mussini ''et al.'' 2024 cladogram</ref> within a paraphyletic vetulicolian grade of stem chordates.<ref name=MussiniCladogram>{{harvnb|Mussini|Smith|Vinther|Rahman|2024|pages=6–7}}</ref> 
+
+{{col-float}}
+<!-- barlabel required to vertically align the top of this cladogram with the next one, despite no labels -->
+{{barlabel|style=font-size:85%;line-height:85%
+|cladogram={{Cladogram
+   |title=Simplified from García-Bellido ''et al.'' (2014)
+   |clades={{Clade
+      |label1=[[Tunicata]]
+      |sublabel1={{small|([[total group]])}}
+      |1={{Clade
+         |label1=Vetulicolia†
+         |1={{Clade
+            |1=''[[Vetulicola]]''†
+            |2=''[[Pomatrum]]''† / ''[[Xidazoon]]''†
+            |3=''[[Didazoon]]''†
+            |4=''[[Beidazoon]]''†
+            |5=''[[Yuyuanozoon]]''†
+            |6=''[[Banffia]]''†
+            |7=''[[Heteromorphus]]''†
+            |8=''[[Ooedigera]]''†
+            |9=''[[Nesonektris]]''†
+         }} 
+         |2=[[Tunicata]]<br />{{small|([[crown group]])}}
+}} }} }}
+}}
+{{col-float-break}}
+{{barlabel|style=font-size:85%;line-height:85%
+|size=18
+|at1=0 |label1="Banffozoa" |bar1=indigo
+|at2=6 |label2="Vetulicolida" |bar2=purple
+|cladogram={{cladogram
+   |title=Simplified from Mussini ''et al.'' (2024)
+   |clades={{Clade
+      |label1=[[Chordata]]
+      |sublabel1={{small|([[total group]])}}
+      |1={{Clade
+         |1=''[[Banffia]]''† |barbegin1=indigo
+         |2=''[[Heteromorphus]]''† |bar2=indigo
+         |3={{Clade
+            |1=''[[Skeemella]]''† |barend1=indigo
+            |2={{Clade
+               |1=''[[Nesonektris]]''† |barbegin1=purple
+               |2={{Clade
+                  |label1=[[Vetulicolidae]]†
+                  |1={{Clade
+                     |1=''[[Ooedigera]]''†
+                     |2={{Clade
+                        |1=''[[Vetulicola cuneata]]''†
+                        |2=''[[Vetulicola gantoucunensis]]''†
+                        |3=''[[Vetulicola longbaoshanensis]]''†
+                        |4=''[[Vetulicola rectangulata]]''†
+                        |5={{Clade
+                           |1=''[[Vetulicola monile]]''†
+                           |2=''[[Beidazoon]]''†
+                     }} }} }} |bar1=purple
+                  |2={{Clade
+                     |1=''[[Didazoon]]''† |bar1=purple
+                     |2=''[[Pomatrum]]''† |bar2=purple
+                     |3=''[[Yuyuanozoon]]''† |barend3=purple
+                     |4={{Clade
+                        |1=''[[Yunnanozoon]]''†
+                        |2={{Clade
+                           |1=''[[Cathaymyrus]]''†
+                           |2=''[[Pikaia]]''†
+                           |3=[[Chordata]]<br />{{small|([[crown group]])}}
+}} }} }} }} }} }} }} }} }}
+}}
+{{col-float-end}}
+
