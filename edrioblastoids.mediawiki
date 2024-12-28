@@ -1,0 +1,9 @@
+Edrioblastoids are elongate [[edrioasteroids]]<ref>{{harvnb|Guensburg|Blake|Sprinkle|Mooi|2016|page=257}}</ref>
+
+==References==
+{{reflist}}
+
+===Works cited===
+{{refbegin}}
+* {{cite journal|last1=Guensburg |first1=Thomas E. |last2=Blake |first2=Daniel B. |last3=Sprinkle |first3=James |last4=Mooi |first4=Rich |title=Crinoid ancestry without blastozoans |journal=Acta Paleontologica Polemica |volume=61 |issue=2 |pages=253–266 |year=2016 |doi=10.4202/app.00211.2015}}
+{{refend}}

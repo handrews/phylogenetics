@@ -1,0 +1,7 @@
+==References==
+{{reflist}}
+
+===Works cited===
+{{refbegin}}
+* {{cite journal|last1=Kammer |first1=Thomas W. |last2=Sumrall |first2=Colin D. |last3=Zamora |first3=Samuel |last4=Ausich |first4=William I. |last5=Deline |first5=Bradley |title=Oral Region Homologies in Paleozoic Crinoids and Other Plesiomorphic Pentaradial Echinoderms |journal=PLoS ONE |volume=8 |number=11 |year=2013 |pages=e77989 |doi=10.1371/journal.pone.0077989}}
+{{refend}}

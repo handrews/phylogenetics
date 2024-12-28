@@ -1,0 +1,147 @@
+{{Short description|Extinct family of animals}}
+{{Automatic taxobox
+|fossil_range={{Fossilrange|Cambrian Stage 3}}
+|image=Cathaymyrus diacodexis.jpg
+|image_caption = Reconstruction of 2 specimens of '' Vetulocystis catenata '' (in the lower part), and the chordate ''[[Cathaymyrus diadexus]]''.
+|authority=Shu, ''et al.'', 2004
+|taxon=Vetulocystidae
+|subdivision=* †''[[Vetulocystis]]''
+* †''[[Dianchicystis]]''
+* †''[[Thylacocercus]]''
+}}
+
+'''Vetulocystidae''' is the only [[family (biology)|family]] of the [[taxon]] '''Vetulocystida''', which is a group of extinct [[deuterostome]]s of uncertain [[phylogeny|phylogenetic position]]. Vetulocystidae is made up of the [[genera]] ''[[Vetulocystis]]'', ''[[Dianchicystis]]'' and ''[[Thylacocercus]]''.<ref name=Shu2004>{{harvnb|Shu|Conway Morris|Han|Zhang|2004|pages=422–423}}</ref><ref name=CM2015>{{harvnb|Conway Morris|Halgedahl|Selden|Jarrard|2015|pages=4–5}}</ref>
+
+==Etymology==
+The latin ''vetus'' means "old," while ''cystis'' refers to the organisms' bag-like shape.<ref name=Shu2004 />
+
+==Description==
+The body consists of a voluminous anterior [[theca#zoology|theca]], and a smaller posterior section attached to the substrate.<ref name=Shu2004 />  On ''Vetulocystis'' and ''Dianchicystis'', the anterior section features three structures: an antero-dorsal presumed to be the mouth, a left postero-dorsal cone assumed to be the anus (possibly with additional functions), and a right postero-dorsal lenticular respiratory organ.  These structures are not apparent on ''Thylacocercus'', which could either be due to how the sole fossil of that genus was preserved, or due to the mouth opening having migrated inside the crown of tentacle-like structures, as suggested by markings interpreted as an esophagus, and the anal opening having lost 
+
+The anterior cone-shaped structure is believed to have constituted the mouth, due to its similarity to primitive [[echinoderms]] (such as [[stylophora]]ns and [[blastoid]]s); while the posterior structure (similar to that of the [[cystoid]]s and [[eocrinoid]]s) fulfilled the functions of anus and gonopore.<ref>{{harvnb|Shu|Conway Morris|Han|Zhang|2004|pages=425–426}}</ref> Furthermore, and unlike many other echinoderms, these animals lacked a calcified skeleton.<ref name=NotEchin>{{harvnb|Rahman|Zamora|2024|page=301}}</ref>
+
+==Paleoecology==
+They were probably [[Sessility (motility)|sessile]] and fed by filtration, although it is possible that the part attached to the substrate produced a slow displacement, at least for ''Vetulocystis'' and ''Dianchicystis''.<ref name=Shu2004 />  ''Thylacocercus'' shows evidence of a holdfast at the end of its posterior section.<ref name=CM2015 />
+
+''[[Vetulocystis catenata]]'' specimens have been found in close proximity to specimens of the small [[vetulicolid]] ''[[Beidazoon venustum]]''.<ref>{{harvnb|Han|Shu|Zhang|Liu|2006|page=2487–2488}}</ref>
+
+==Phylogeny==
+The affinities of vetulocystida remain unclear,<ref name=NotEchin /> and the only cladistic analysis of the taxon was done as an extension of work focused on stem-chordates.<ref name=Mussini2024>{{harvnb|Mussini|Smith|Vinther|Rahman|Murdock|Harper|Dunn|2024|loc=supplemental data figure S4}}</ref>
+
+===Internal phylogeny===
+''Thylacocercus'' may be more derived than ''Vetulocystis'' and ''Dianchicystis'', which its higher stratigraphic position would support.<ref name=CM2015 />  The only available phylogenetic analysis of vetulocystids noted that the interpretation of their morphology "remains highly contested," but found weak support for the following arrangement:<ref>{{harvnb|Mussini|Smith|Vinther|Rahman|Murdock|Harper|Dunn|2024|loc=supplemental document "Phylogenetic analyses and character descriptions. Related to the STAR methods and Figures 4 and S2-S4.", page 2}}</ref>
+
+{{clade
+|label1=[[Vetulocystidae]]
+|1={{clade
+   |1={{clade
+      |1=''[[Thylacocercus]]''
+      }}
+   |2={{clade
+      |1=''[[Dianchicystis]]''
+      |2=''[[Vetulocystis]]''
+      }}
+   }}
+}}
+
+===External phylogeny===
+Numerous placements have been proposed for vetulocystids, without any consensus emerging.  These include stem-group ambulacrarians,<ref>{{cite web|title=†unranked clade Vetulocystida Shu et al. 2002 |website=The Paleobiology Database |url=https://paleobiodb.org/classic/basicTaxonInfo?taxon_no=425125 |accessdate=December 20, 2024}}</ref> stem-group echinoderms,<ref name=echin>{{harvnb|Shu|Conway Morris|Han|Zhang|2004|pages=426–427}}</ref> stem-group deuterostomes,<ref>{{harvnb|Naimark|Parkhaev|Demidenko|2006}}</ref> and even a phylogenetic study that found weak support for a placement at the base of the [[chordate]] stem.<ref name=Mussini2024 />  The following cladogram shows each of these placements with respect to well-established clades (other taxa of uncertain placement, including [[Xenacoelomorpha|xenacoelomorphs]], [[cambroernid]]s, and ''[[Yanjiahella]]'', are omitted for simplicity):
+
+{{Clade|style=font-size:85%;line-height:85%
+|label1=[[Deuterostomia]]
+|sublabel1={{small|([[total group]])}}
+|1={{Clade
+   |label1=? '''Vetulocystida †
+   |1=&nbsp;&nbsp;&nbsp;[[File:Vetulocystis catenata cropped.png|15px]]
+   |state1=dashed
+   |label2=[[Deuterostomia]]
+   |sublabel2={{small|([[crown group]])}}
+   |2={{Clade
+      |label1=[[Ambulacraria]]
+      |sublabel1={{small|([[total group]])}}
+      |1={{Clade
+         |label1=? '''Vetulocystida †
+         |1=&nbsp;&nbsp;&nbsp;[[File:Vetulocystis catenata cropped.png|15px]]
+         |state1=dashed
+         |label2=[[Ambulacraria]]
+         |sublabel2={{small|([[crown group]])}}
+         |4={{Clade
+            |label1=[[Echinodermata]]
+            |sublabel1={{small|([[total group]])}}
+            |1={{Clade
+               |label1=? '''Vetulocystida †
+               |1=&nbsp;&nbsp;&nbsp;[[File:Vetulocystis catenata cropped.png|15px]]
+               |state1=dashed
+               |label2=Echinodermata
+               |sublabel2={{small|([[crown group|crownward]])}}
+               |2=&nbsp;&nbsp;&nbsp;[[File:Echinaster serpentarius (USNM E28192) 001.png|30 px]]
+            }}
+            |label2=[[Hemichordata]]
+            |2=[[File:Balanoglossus by Spengel 1893.png|20px]]
+         }}
+      }}
+      |label2=[[Chordata]]
+      |sublabel2={{small|([[total group]])}}
+      |2={{Clade
+         |label1=? '''Vetulocystida †
+         |1=&nbsp;&nbsp;&nbsp;[[File:Vetulocystis catenata cropped.png|15px]] |state1=dashed
+         |label2=Chordata
+         |sublabel2={{small|([[crown group|crownward]])}}
+         |2=&nbsp;&nbsp;&nbsp;<span style="{{MirrorH}}">[[File:Haikouichthys NT.jpg|40px]]</span>
+}} }} }} }}
+
+====Possible relationships to vetulicolians and echinoderms====
+Despite noting certain shared surface characteristics with other taxa (such as [[Tunicata]]), the discovers of the first vetulocytids believed them to belong to the Echinodermata [[stem group]], and also to be related to the taxon [[Vetulicolia]]. Based on this, Vetulocystida would represent the transition from the [[body plan]] of the vetulicolians to one of the echinoderms, as shown by the following cladogram simplified from Shu ''et al.'' (2004):<ref name=echin />
+
+{{clade|style=font-size:85%;line-height:85%
+|label1=[[Deuterostomia]]
+|sublabel1={{small|([[total group]])}}
+|1={{clade
+   |1=[[Vetulicolia]]†
+   |label2=[[Ambulacraria]]
+   |2={{clade
+      |1={{clade
+         |1='''Vetulocystida'''†
+         |label2=[[Echinodermata]]
+         |sublabel2={{small|([[total group]])}}
+         |2={{clade
+            |1=[[Stylophora]]†
+            |2={{clade
+               |1=other [[Homalozoa]]ns†
+               |2=[[Echinodermata]]<br />{{small|([[crown group]])}}
+      }} }} }}
+      |2=[[Hemichordata]]
+}} }} }}
+
+Interpreting the vetulocystids as intermediate between vetulicolians and echinoderms relies on features such as a straight gut, which is seen in the best-preserved specimens as running to the segmented posterior section and a presumed terminal anus, as in vetulicolians.  The presence of a single respiratory structure (and possible gill) rather than paired gills could indicate the sort of asymmetry found in echinoderms.<ref>{{harvnb|Smith|2004|page=412}}</ref>
+
+However, a recent review of theories of echinoderm origins disputed such a placement based on the lack of observable echinoderm [[apomorphies]] in vetulocystids.<ref name=NotEchin />  Another challenge to the above cladogram is the more recent majority view that vetulicolians are stem chordates, rather than being placed as basal deuterostomes.<ref>{{harvnb|Onai|Aramaki|Takai|Kakiguchi|2023|page=202}}</ref>
+
+====Possible relationship to ''Yanjiahella''====
+If vetulocystids are ancestral to echinoderms, then the tentacles of ''Thylacocercus'' could be coleomic structures related to feeding ambulacra.  In this scenario, the proposed stem echinoderm ''[[Yanjiahella]]'' could be interpreted as having characteristics intermediate between ''Thylacocercus'' (as a relatively derived vetulocystid) and echinoderms.<ref name=CM2015 />  While a stem-echinoderm affinity for ''Yanjiahella'' is a matter of some debate, the proposed alternatives are also within stem- or crown-group Ambulacraria.<ref>{{harvnb|Zamora|Wright|Mooi|Lefebvre|2020}}</ref>
+
+====Disproven relationship to ''Saccorhytus''====
+An alternative phylogeny connecting both vetulocystids and vetulicolians with ''[[Saccorhytus]]'', which was initially thought to be an early deuterostome,<ref name=":1">{{harvnb|Han|Conway Morris|Ou|Shu|2017}}</ref> was disproven when ''Saccorhytus'' was shown to be an [[ecdysozoan]] (a [[protostome]]) instead.<ref name="liu">{{harvnb|Liu|Carlisle|Zhang|Yang|2022}}</ref>
+
+==References==
+{{reflist}}
+===Works cited===
+{{refbegin}}
+* {{cite journal|last1=Conway Morris |first1=Simon |last2=Halgedahl |first2=Susan L. |last3=Selden |first3=Paul |last4=Jarrard |first4=Richard D. |date=2015 |title=Rare primitive deuterostomes from the Cambrian (Series 3) of Utah |journal=Journal of Paleontology |volume=89 |number=4 |pages=631–636 |doi=10.1017/jpa.2015.40 |url=https://core.ac.uk/download/pdf/51378622.pdf}}
+* {{Cite journal|last1=Han |first1=Jian |last2=Conway Morris |first2=Simon |last3=Ou |first3=Qiang |last4=Shu |first4=Degan |last5=Huang |first5=Hai |date=2017 |title=Meiofaunal deuterostomes from the basal Cambrian of Shaanxi (China) |journal=Nature |volume=542 |issue=7640 |pages=228–231 |doi=10.1038/nature21072 |pmid=28135722 |bibcode=2017Natur.542..228H |s2cid=353780 |url=https://nature.berkeley.edu/garbelottoat/wp-content/uploads/deut2.pdf}}
+* {{cite journal|last1=Han |first1=Jian |last2=Shu |first2=Degan |last3=Zhang |first3=Zhifei |last4=Liu |first4=Jianni |last5=Zhang |first5=Xingliang |last6=Yao |first6=Yang |year=2006 |title=Preliminary notes on soft-bodied fossil concentrations from the Early Cambrian Chengjiang deposits |journal=Chinese Science Bulletin |volume=51 |number=20 |pages=2482–2492 |doi=10.1007/s11434-005-2151-0}}
+* {{cite journal |last1=Liu |first1=Yunhuan |last2=Carlisle |first2=Emily |last3=Zhang |first3=Huaqiao |last4=Yang |first4=Ben |last5=Steiner |first5=Michael |last6=Shao |first6=Tiequan |last7=Duan |first7=Baichuan |last8=Marone |first8=Federica |last9=Xiao |first9=Shuhai |last10=Donoghue |first10=Philip C. J. |date=2022 |title=Saccorhytus is an early ecdysozoan and not the earliest deuterostome |journal=Nature |volume=609 |issue=7927 |pages=541–546 |doi=10.1038/s41586-022-05107-z |pmid=35978194 |bibcode=2022Natur.609..541L |s2cid=251646316 |url=https://research-information.bris.ac.uk/en/publications/454e7bec-4cd4-4121-933e-abeab69e96c1 |hdl=1983/454e7bec-4cd4-4121-933e-abeab69e96c1 |hdl-access=free }}
+* {{cite journal |last1=Mussini |first1=G. |last2=Smith |first2=M. P. |last3=Vinther |first3=J. |last4=Rahman |first4=I. A. |last5=Murdock |first5=D. J. E. |last6=Harper |first6=D. A. T. |last7=Dunn |first7=F. S. |date=2024 |title=A new interpretation of ''Pikaia'' reveals the origins of the chordate body plan |journal=Current Biology |volume=34 |issue=13 |pages=2980–2989.e2 |doi=10.1016/j.cub.2024.05.026 |doi-access=free |pmid=38866005 }}
+* {{cite journal|last1=Naimark |first1=E. B. |last2=Parkhaev |first2=P. Yu. |last3=Demidenko |first3=Yu. E. |year=2006 |title=The 4th International Symposium on the Cambrian System |journal=Paleontological Journal |volume=40 |number=3 |pages=341–344 |doi=10.1134/S0031030106030178}}
+* {{cite journal|last1=Onai |first1=Takayuki |last2=Aramaki |first2=Toshihiro |last3=Takai |first3=Akira |last4=Kakiguchi |first4=Kisa |last5=Yonemura |first5=Shigenobu |year=2023 |title=Cranial cartilages: Players in the evolution of the cranium during evolution of the chordates in general and of the vertebrates in particular |journal=Evolution and Development |volume=25 |pages=197–208 |doi=10.1111/ede.12433|doi-access=free }}
+* {{cite journal|last1=Rahman |first1=Imran A. |last2=Zamora |first2=Samuel |date=July 2024 |title=Origin and early evolution of echinoderms |journal=Annual Review of Earth and Planetary Sciences |volume=52 |pages=295–320 |issue=1 |doi=10.1146/annurev-earth-031621-113343|bibcode=2024AREPS..52..295R |hdl=10141/623070 |hdl-access=free }}
+* {{Cite journal|last1=Shu |first1=D.-G. |last2=Conway Morris |first2=S.|last3=Han |first3=J. |last4=Zhang |first4=Z.-F. |last5=Liu |first5=J.-N. |date=2004 |title=Ancestral echinoderms from the Chengjiang deposits of China |journal=Nature |volume=430 |number=6998 |pages=422–428 |doi=10.1038/nature02648 |pmid=15269760 |bibcode=2004Natur.430..422S |s2cid=4421182 |url=https://www.nature.com/articles/nature02648}}
+* {{cite journal|last1=Smith |first1=A. B. |title=Echinoderm roots |journal=Nature |volume=430 |pages=411–412 |year=2004 |url= https://www.nature.com/articles/430411a |accessdate=December 21, 2024}}
+* {{cite journal|last1=Zamora |first1=Samuel |last2=Wright |first2=David F. |last3=Mooi |first3=Rich |last4=Lefebvre |first4=Bertrand |last5=Guensburg |first5=Thomas E. |last6=Gorzelak |first6=Przemysław |last7=David |first7=Bruno |last8=Sumrall |first8=Colin D. |last9=Cole |first9=Selina R. |last10=Hunter |first10=Aaron W. |last11=Sprinkle |first11=James |date=September 3, 2020 |title=Re-evaluating the phylogenetic position of the enigmatic early Cambrian deuterostome Yanjiahella |journal=Nature Communications |language=en |volume=11 |issue=1 |pages=1286 |doi=10.1038/s41467-020-14920-x |issn=2041-1723 |pmc=7063041 |pmid=32152310 |bibcode=2020NatCo..11.1286Z}}
+{{refend}}
+
+{{Taxonbar|from1=Q107140948|from2=Q110996073}}
+
+[[Category:Vetulocystidae| ]]
+[[Category:Cambrian animals]]
+

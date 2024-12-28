@@ -1,0 +1,48 @@
+{{Short description|Clade of extinct echinoderms}}
+{{Automatic taxobox
+|fossil_range={{fossil range|Early Ordovician|Early Carboniferous|[[Early Ordovician]] – [[Early Carboniferous]]}}
+|image=Cyclocystoides scammaphoris with false color highlights.png
+|image_caption=''Cyclocystoides scammaphoris'' oral surface with false color highlighting
+|taxon=Cyclocystoidea
+|authority=Miller and Gurley, 1895
+|subdivision_ranks=Families 
+|subdivision_ref=
+|subdivision={{taxon list|†Cyclocystoididae|Miller,&nbsp;1882|†Moroccodiscidae|Reich&nbsp;''et&nbsp;al.'',&nbsp;2017}}
+}}
+
+'''Cyclocystoidea''' is a [[class (biology)|class]] of extinct, flattened, more-or-less circular [[echinoderms]] from the [[Ordovician]] to [[Devonian]] periods.  Much about them remains unclear, including their orientation with respect to the substrate, mode of feeding, and general way of life.
+
+==Etymology==
+
+==Description==
+Cyclocystoids are circular or slightly oval to sub-pentagonal.
+
+* Central disc (one layer (Smith and Paul) or two?)
+* marginal ring of stout perforate ossicles
+* encircling peripheral skirt
+Notes that rings impreforate ossicles are most likley unusual stromatocystitoids
+
+===Orientation and mode of life===
+[[File:Cyclocystoides scammaphoris side diagram.png|thumb|left|Diagram of Cyclocystoides scammaphoris, lateral view with oral-upwards orientation assumed]]
+
+{{clear left}}
+==References==
+{{reflist}}
+
+===Works cited===
+{{refbegin}}
+* {{cite journal|last1=Berg-Madsen |first1=Vivianne |title=A new cyclocystoid from the lower Ordovician of Öland, Sweden |journal=Palaeontology |volume=30 |number=1 |year=1987 |pages=105–116 |url=https://archive.org/details/biostor-165740}}
+* {{cite journal|last1=Boczarowski |first1=Andrzej |title=Isolated sclerites of Devonian non-pelmatozoan Echinoderm |journal=Palaeontological Polonica |volume=59 |date=January 2001 |url=https://www.researchgate.net/publication/303485235_Isolated_sclerites_of_Devonian_non-pelmatozoan_Echinoderms-Part_A-pp-001-062}}
+* {{cite book|last1=Kesling |first1=Robert V. |chapter=Cyclocystoids |editor-last1=Moore |editor-first1=Raymond C. |title=|title=Treatise on Invertebrate Paleontology, Part U: Echinodermata 3 |pages=U188–U210 |publisher=University of Kansas Press |date=1966 |url=https://journals.ku.edu/InvertebratePaleo/issue/view/521 |accessdate=4 December 2024}}
+* {{cite journal|last1=Kolata |first1=Dennis R. |last2=Frank |first2=Terry |last3=Kaplan |first3=Asa |last4=Guensburg |first4=Thomas E. |title=New specimens of Cyclocystoides scammaphoris (Echinodermata) from the Upper Ordovician rocks of the American midcontinent with implications for cyclocystoid functional morphology |journal=Journal of Paleontology |volume=97 |issue=3 |pages=639–665 |date=May 2023 |doi=10.1017/jpa.2023.33}}
+* {{cite book|last1=Parsley |first1=Ronald L. |title=Echinoderms from middle and upper Ordovician rocks of Kentucy |series=Geological Survey Professional Paper |volume=1066-K |publisher=United States Department of the Interior |year=1981 |url=https://permanent.fdlp.gov/gpo91164/report.pdf}}
+* {{cite journal|last1=Reich |first1=Mike |last2=Sprinkle |first2=James |last3=Lefebvre |first3=Bertrand |last4=Rössner |first4=Gertrud E. |last5=Zamora |first5=Samuel |title=The first Ordovician cyclocystoid (Echinodermata) from Gondwana and its morphology, paleoecology, taphonomy, and paleogeography |journal=Journal of Paleontology |volume=91 |issue=4 |year=2017 |pages=735–754 |doi=10.1017/jpa.2017.7}}
+* {{cite journal|last1=Rowe |first1=F. W. E. |last2=Baker |first2=A. N. |last3=Clark |first3=H. E. S. |title=The morphology, development and taxonomic status of ''Xyloplax'' Baker, Rowe, and Clark (1986) (Echinodermata: Concentricycloidea), with the description of a new species |journal=Proceedings of the Royal Society of London |series=B |volume=233 |pages=431–459 |year=1988 |doi=10.1098/rspb.1988.0032}}
+* {{cite journal|last1=Smith |first1=A. B. |last2=Paul |first2=C. R. C. |title=Revision of the class Cyclocystoidea (Echinodermata) |journal=Philosophical Transactions of the Royal Society of London |series=B, Biological Sciences |volume=296 |pages=577–679 |year=1982 |jstor=2395852}}
+* {{cite journal|last1=Smith |first1=Andrew B. |last2=Wilson |first2=Mark A. |title=A new cyclocystoid (Echinodermata) from the late Ordovician of Kentucky, U.S.A. |journal=Journal of Paleontology |volume=69 |number=6 |year=1995 |pages=1186–1187 |doi=10.1017/S002233600003818X}}
+{{refend}}
+
+{{Taxonbar|from=Q17239364}}
+
+[[Category:Echinoderm taxonomy]]
+
