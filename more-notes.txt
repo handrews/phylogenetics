@@ -1,0 +1,203 @@
+# Class Vetulicolida               (Chen & Zhou 1997)
+# Order Vetulicolida               (Hou & Bergström 1997)
+# Order Vetulicolata               (Hou & Bergström 1997)
+# Family Vetulicolidae             (Hou & Bergström 1997)
+Order Vetulicolida               (Hou et al. 1999)
+Family Vetulicolidae             (Hou et al. 1999)
+''Vetulicola''                   (Hou 1987)
+''Vetulicola cuneata''           (Hou 1987)
+''Vetulicola rectangulata''      (Luo & Hu in Luo et al. 1999)
+''Pomatrum''                     (Luo & Hu in Luo et al. 1999)
+''Pomatrum ventralis''           (Luo & Hu in Luo et al. 1999)
+''Heteromorphus''                (Luo & Hu in Luo et al. 1999)
+''Heteromorphus longicaudatus''  (Luo & Hu in Luo et al. 1999)
+# ''Banffia confusa''              (Chen & Zhou 1997)
+-> ''Heteromorphus confusus''    (Chen & Zhou 1997) [renamed in Chen et al. 2002]
+
+''Pomatrum'' (=''Xidazoon'')
+''Pomatrum ventralis'' (=''Xidazoon stephanus'')
+''Beidazoon'' (=''Bullivetula'')
+''Beidazoon venustum'' (=''Bullivetula variola'')
+''Banffozoa'' (=''Heteromorphida'')
+''Heteromorphus confusus'' (=''Banffia confusa'' ''Heteromorphus longicaudatus'')
+
+HOU, X.-G. 1987. Early Cambrian large bivalved arthropods from Chengjiang, eastern Yunnan. Acta Palaeontologica Sinica 26, 286–98.
+
+HOU, X.-G., BERGSTRÖM, J., WANG, H.-F., FENG, X.-F. & CHEN, A.-L. 1999. The Chengjiang Fauna – Exceptionally Well-preserved Animals from 530 Million Years Ago. Kunming: Yunnan Science and Technology Press, 170 pp. (in Chinese with English summary).
+
+LUO, H.L., HU, S.X., CHEN, L.Z., ZHANG, S.S., and TAO, Y.H., 1999, Early Cambrian Chengjiang Fauna from Kunming Region, China: Kunming, Yunnan Science and Technology Press, 129 p. [in Chinese with English summary]
+
+1911-00-00-p [Walcott] NO PDF?
+''Banffia''
+''Banffia constricta''
+
+1987-00-00-p Early Cambrian large bivalved arthropods from Chengjiang, eastern Yunnan NO PDF
+''Vetulicola''
+''Vetulicola cuneata''
+
+1997-00-00-p Biology of the Chengjiang fauna.pdf
+Class Vetulicolida
+''Banffia confusa''
+
+1997-12-22-p Arthropods of the Lower Cambrian Chengjiang fauna, southwest China.pdf
+Order Vetulicolida
+Family Vetulicolidae
+
+1999-07-02-a A pipiscid-like fossil from the Lower Cambrian of south China.pdf
+''Xidazoon''
+''Xidazoon stephanus''
+
+2001-09-13-a Primitive deuterostomes from the Chengjiang Lagerstätte (Lower Cambrian, China).pdf
+Phylum Vetulicolia
+Family Didazoonidae
+''Didazoon''
+''Didazoon haoae''
+
+2003-03-09-a A New Vetulicolian from the Early Cambrian Chengjiang Fauna in Yunnan of China.pdf
+''Yuyuanozoon''
+''Yuyuanozoon magnificissimi''
+
+2004-11-02-a New Vetulicoliids from the Lower Cambrian Guanshan Fauna, Kunming.pdf
+''Vetulicola gangtoucunensis''
+
+2005-03-25-a A New Metazoan From The Middle Cambrian Of Utah And The Nature Of The Vetulicolia.pdf
+''Skeemella''
+''Skeemella clavula''
+
+2005-05-06-a Banffia constricta, a putative vetulicolid from the Middle Cambrian Burgess Shale.pdf
+Class Banffozoa
+Family Banffiidae
+
+2005-09-20-a On the Phylum Vetulicolia.pdf
+Family Beidazoonidae
+''Beidazoon''
+''Beidazoon venustum''
+Class Heteromorphida
+''Heteromorphus Form A''
+
+2006-08-29-a The Systematics And Phylogenetic Relationships Of Vetulicolians.pdf
+''Vetulicola monile''
+''Bullivetula''
+''Bullivetula variola''
+Order Banffiata
+Order Vetulicolata [renamed from Vetulicolida (Hou and Bergström, 1997)
+
+2010-03-00-p A new vetulicoliid from lower Cambrian, Kunming, Yunnan.pdf
+''Vetulicola longbaoshanensis''
+
+2011-01-14-a Vetulicolians From The Lower Cambrian Sirius Passet Lagerstätte, North Greenland, And The Polarity Of Morphological Characters In Basal Deuterostomes.pdf
+''Ooedigera''
+''Ooedigera peeli''
+
+2014-09-25-a A new vetulicolian from Australia and its bearing on the chordate affinities of an enigmatic Cambrian group.pdf
+''Nesonektris''
+''Nesonektris aldridgei''
+
+2015-07-30-a Rare primitive deuterostomes from the Cambrian (Series 3) of Utah.pdf
+''Banffia episoma''
+
+2019-08-09-a Cambrian Chordates and Vetulicolians.pdf
+''Shenzianyuloma''
+''Shenzianyuloma yunnanense''
+
+2024-09-07 a Problematic Ediacaran sail-shaped fossils from eastern Yunnan, China.pdf
+''Alienum''
+''Alienum velamenus''
+
+
+
+------------------------------------------------
+-----------
+2012-10-02-a Evidence for gill slits and a pharynx in Cambrian vetulicolians- implications for the early evolution of deuterostomes.pdf
+
+(new concept paper)
+
+> Despite being widespread and often showing excellent soft-bodied preservation, the enigmatic vetulicolians [6-13] exemplify this difficulty.
+> This group is united by a distinctive bodyplan. This consists of a prominent anterior unit, ranging from oval to quadrate in shape, and possessing a wide oral open- ing. Attached to this unit is a segmented tail with a terminal anus. Despite a strikingly arthropod-like arrangement, none of the known taxa (including Vetuli- cola [6], Ooedigera [13], Pomatrum [14], Xidazoon [15], Didazoon [16], Beidazoon [17], Yuyuanozoon [18], and Banffia [10]) has yielded evidence of either molting or convincing remains of cephalic structures and/or jointed limbs. Nevertheless, vetulicolians continue to be com- pared to ecdysozoans [19] as far flung as the lobopo- dians [20], arthropods [6,10,21], and kinorhynchs [7,22,23]. A radical alternative has been to assign them to the deuterostomes, as either members of a stem group [13,16,17,24] or some sort of tunicate [18,25,26]. The crux of the problem revolves around the nature of prominent lateral structures, but to date there is neither agreement as to their original configuration nor func- tion. Identifications range from midgut glands [27] to respiratory organs, but in the latter case interpretations are as disparate as a direct comparison to crustacean branchial chambers [12,20,21,28] as against pharyngeal gill slits [13,16,17,24]. Resolution of this divergence of interpretations would be possible if exquisitely preserved material were available that would allow not only a complete anatomical description but one that can be combined with a plausible functional analysis. Here, we demonstrate that the lateral structures of Vetulicola form an integrated complex and we present evidence for what we interpret to be a series of five unequivocal openings. We further propose that these served to expel seawater from the interior, which previously had been filtered so as to convey food first to dorsal and ventral gutters and ultimately to the posterior gut.
+
+> To conclude, in our view the demonstration that the anterior lateral structures in Vetulicola not only have a complex configuration but also unequivocally include perforations is consistent with this animal and related taxa belonging to the deuterostomes. So too the identifi- cation of a capacious pharyngeal cavity lined with ventral and dorsal food grooves is consistent with the deuteros- tome bodyplan and the likely origin of the lateral open- ings so as to allow exit of seawater. Deuterostome disparity, both between and within the xenoturbellids, ambulacrarians and chordates, is consider- able. Despite now largely secure molecular phylogenies a stumbling block has been how best to envisage the com- mon ancestor. There seems little evidence to suggest that the vetulicolians can be interpreted as the sister group of any of the major groups of deuterostome. There is, for instance, no evidence that the gill slits emptied into a common atrium or otherwise collected the water and expelled it via a single opening. In this and other respects vetulicolians differ from the tunicates [25]. There is, how- ever, one point of comparison that may be relevant. While nearly all tunicates [50] are suspension feeders, among the pelagic representatives the salps are exceptional in employing a muscular pumping [51]. While this is asso- ciated with a form of jet propulsion [52], the antagonistic system that involves the tunic and the possibility that this pumping system may have originated in the context of fil- tration [53] invites analogies with Vetulicola. This analogy is, of course, with respect to the dynamics of pumping and given the large and evidently propulsive tail there is no suggestion Vetulicola employed any sort of jet propulsion.
+> We suggest that despite uncertainties the anatomical evidence presented is consistent with Vetulicola and its allies as being deuterostomes. While aware that the dis- parity among the crown-group deuterostomes makes comparisons with the vetulicolians problematic, we are unable to identify any character that would secure the place of this Cambrian group within either the ambul- crarians or chordates. We suggest that the vetulicolians are more likely to be members of the stem-group deu- terostomes. If our interpretation of the vetulicolians as being among the earliest deuterostomes is correct then this has a number of important implications. First, it is consistent with the suggestion that such ancestral deu- terostomes were not sessile, but free-living animals [13,16,54,55] with an expanded pharyngeal cavity. We take this feature, along with five pairs of gill slits and dorsal and ventral feeding gutters, to represent the pri- mitive condition, and is consistent with the supposition that a filter-feeding pharynx had evolved in the last common ancestor of all deuterostomes [36,56,57]. In addition, we conclude that at least in Vetulicola active pharyngeal pumping had evolved, and presumably it arose independently of the system seen in the salps and also more advanced gnathostomes.
+> Even making allowances for loss and simplification, as well as once popular comparisons (such as the hemichor- date stomochord to chordate notochord [58]) very few anatomical homologies serve to unite all the deuteros- tomes. In this latter respect the pharyngeal openings are a key character. For example, in his proposal that suspen- sion feeding was a feature to emerge very early in the his- tory of deuterostomes, Cameron [57] remarked how ‘Clearly the evolution of slits in the pharynx is one of the most important events in the evolution of the deuteros- tomes’. In our view their identification in the vetulico- lians supports the idea that they helped to open the doors to deuterostome diversification, first in terms of effectiveness of feeding and subsequently efficiency of respiratory exchange [17]. Elaborations in the form of the gill slits in both the ambulacrarians and chordates are marked by convergences [41], but in their various config- urations they presumably helped to contribute to the suc- cess of this phylum. So too we see evolutionary innovation in terms of the disposal of the water, such as the subsequent development of an atrium, and arrange- ment of food grooves to a single ciliated tract either ven- trally (enteropneusts) or dorsally (amphioxus and tunicates). Much of subsequent deuterostome evolution appears to have been driven by ecologies that either favored sessility, with the reduction (as in the ptero- branchs) or ultimate loss (as in the echinoderms) of gill slits, or increased motility. The latter may have ultimately led to the transformation of the dorsoposterior segmen- tation seen in the yunnanozoans [24,48] into a myotomal arrangement with the corresponding evolution of the notochord in the chordates [45]. In conclusion, calls that more data be collected to help secure phylogenetic argu- ments [4,5] can now be met on the basis of exceptional material. On this basis we argue that the vetulicolians provide an important benchmark in the documentation of the emergence of the deuterostomes.
+
+
+-----------
+2014-09-25-a A new vetulicolian from Australia and its bearing on the chordate affinities of an enigmatic Cambrian group.pdf
+
+(new concept paper – ''Nesonektris'' discovery)
+> In our phylogenetic analysis based on maximum parsi- mony (Figure 5; Methods, Additional files 3–4), taxon sampling, characters and coding largely follow those of Mallatt and Holland [11]. Yunnanozoon has been subject to extreme differences in interpretation of its morpho- logical structures depending on whether it is thought to be allied to vertebrates [11] or to non-deuterostome bila- terians [25]. Repeating the analysis with Yunnanozoon excluded did not affect tree topology, and clade support also remained similar. The analysis was carried out with PAUP* [30] on the new matrix (17 deuterostome taxa and 33 characters) with a molecular scaffold constraining rela- tionships between living taxa to preserve monophyly of Ambulacraria (i.e. echinoderms and enteropneusts) and of Olfactores (tunicates and vertebrates), which are robustly supported by phylogenomic data [31]. Our results show that vetulicolians form a monophyletic group (Figure 6), rejecting the alternative hypothesis that they are a para- phyletic assemblage at the base of some other deutero- stome group [8]. Vetulicolia is resolved as sister group to the tunicates based on the shared presence of a distinctly bipartite body, a stiff cuticle, terminal (rather than ventral) mouth, and a notochord restricted to the posterior region. This hypothesis of a vetulicolian-tunicate clade would be consistent with the cuticle of vetulicolians being homolo- gous with a tunic (char. 6). Also supporting this hypothesis is the observed vestigial gut in the tail of larval tunicates and the dorsal segmentation in the early Cambrian stem- tunicate Shankouclava [32]. More broadly, vetulicolians are united with all other chordates based on the pres- ence of a notochord, segmental muscles [11], and a fu- siform body in at least some part of their life cycle. As such, vetulicolians belong to both crown-group Chordata [22] and crown-group Olfactores (Vertebrata + Urochord- ata) (Figures 5, 6). Inclusion of Nesonektris in the matrix (and thus the presence of a notochord in a vetulicolian) is not critical for resolution of vetulicolians as chordates: the same topology is retrieved without Nesonektris. However, inclusion of this new taxon and coding the presence of a notochord increases support for most clades, e.g. boot- strap support increases by 13%, 5% and 6% for Vetulicolia + Urochordata, Olfactores, and Chordata, respectively, and Bremer support for these nodes increases by 1 or 2. Although tunicate affinities for vetulicolians have pre- viously been considered [6] or endorsed [5], we stress that this is not an inevitable result of coding vetulico- lians as deuterostomes because several other suggested placements within deuterostomes could have been re- trieved (e.g., as stem-group Deuterostomia or stem- group Chordata).
+> Unfortunately, the tree shows no resolution inside the vetulicolians (Figure 6). However, some characters may be homologous amongst some taxa and thus suggest particular clades within vetulicolians. Most specimens of Nesonektris are found flat on their sides (Figures 1E,D, 4C), while Figure 1F shows a specimen that is partially rotated along the axis. A partial “twist” has been de- scribed in the body of Heteromorphus [e.g., Chen [33], figure Five hundred and seven] and a well-developed torsion is found in Banffia [13], whose posterior region also ends in a notch (as in Nesonektris), but has numer- ous (>40) segments. Banffia’s cylindrical, anterior region has two “narrow, oblique grooves”, which we consider homologous to the lateral grooves in other vetulicolians, and it also lacks evidence for lateral pouches. A subset of the shortest cladograms positions Nesonektris as an intermediate form between Vetulicola-type (laterally compressed bodies with gill pouches, thickened wall and hepta-segmented posterior region) and Banffia-type morphologies.
+> In the above analysis, Nesonektris was scored with the notochord characters; other vetulicolians were conserva- tively treated as unknown for these notochord traits. Repeating the analysis with Nesonektris (and thus all vetulicolians) scored as unknown for notochord charac- ters (12, 27, 28) yields the same tree topology, albeit with a slight drop in support values for the two relevant nodes (tunicates + vetulicolians = Bremer 2/bootstrap 65; Olfactores 1/43, crown chordates 3/89). Thus, the inter- pretation of vetulicolians as tunicate relatives (and thus crown chordates) does not hinge on the assumption that they possess a notochord. Rather, this interpretation is supported independently by the derived characters they share with urochordates, and the high position of uro- chordates within chordates revealed by phylogenomic data. Characters that optimise as apomorphic for a tunicate-vetulicolian clade (between node 31 and 27 in Additional file 4) are: distinct anterior and posterior body regions (char. 1); a thick cuticle (char. 6); a non- fusiform body, at least in larval stages (char. 8); terminal position of the mouth (char. 16); absence of pharyngeal bars (char. 19); and a notochord restricted to the poster- ior region of the body (char. 27).
+> Conclusions
+> The phylogenetic affinity between vetulicolians and tuni- cates has significant implications for the ancestral morphology of the Urochordata (tunicates), which has been a continuing conundrum in chordate phylogeny [17]. The Olfactores concept suggests that successive living sister taxa to tunicates are vertebrates and cepha- lochordates [34,35], thus indicating that tunicates are derived from a free-swimming, segmented, amphioxus- like animal with a notochord, neural crest cells (or hom- ologous precursor-cell populations), neural tube, striated heart muscle and segmented lateral muscles, but lacking an atrium [17,31,34,36]. The dorsal segmentation of the tail in the Cambrian Shankouclava [32] points to actively-moving, ascidian-like early tunicates. The com- mon ancestor to the vetulicolian + tunicate clade is in- ferred to have been a pelagic animal with a thick cuticle for protection, a large filter-feeding pharynx in the anter- ior body region, and a segmented, propelling posterior region with a notochord and a terminal anus. If the free- swimming appendicularians are considered basal to all other tunicates [31], the most parsimonious scenario implies that the common ancestor of tunicates also retained all these traits; the benthic sessile adult morph- ology in many tunicates (e.g., ascidians) optimises as a derived specialisation [31,34].
+> The vetulicolians could have filled the ecological niche of medium-large suspension feeders in the Cambrian, supporting the idea that chordates arose as a clade of suspension feeders (as is the case for early vertebrates such as Haikouichthys as well as for yunnanozoans and modern amphioxus, tunicates, and larval lampreys), ra- ther than as predators. They would have been blind and slow moving, but relying on their size and tough cuticle for protection. The interpretation of vetulicolian morph- ology has been fraught with problems [4,6], but mounting evidence, notably the presence of pharyngeal gill slits [9], indicates that they belong to the deuterostome total group [5,10]. Evidence for a possible notochord in vetulicolians provides new support for placing this abundant and di- verse Cambrian group more crownward and, as a conse- quence, substantially increases the diversity, disparity and abundance of Cambrian chordates [26-28,31,32,37].
+
+-----------
+2015-04-23-p Facts and fancies about early fossil chordates and vertebrates.pdf
+Janvier (2015)
+
+(REVIEW)
+
+> Vetulicolans31,32 (Vetuli- cola, Xidazoon, Didazoon and Pomatrum; Fig. 2c) from Chengjiang and the somewhat similar Banffia (Fig. 2d) from the Burgess Shale display a bipartite structure, with a balloon-shaped, cuticle-covered head later- ally pierced by five presumed gill openings, and a flattened segmented tail33. Banffia, however, seems devoid of gill openings and displays mid- gut diverticulae that rather suggest a protostome anatomy33. Again, the vetulicolan’s gill openings might suggest a stem deuterostome, but the purported presence of an endostyle (a gland unique to chordates) sug- gests stem chordate affinity32.
+
+> The vetulicolans Didazoon (c) and Banffia (d) are possible stem chordates, stem deuterostomes or stem protostomes (adapted from refs 31, 33). 
+
+-----------
+2018-00-00-p Across the Bridge — Chapter 14- Some Fossil Forms.pdf
+Gee (2018)
+
+(REVIEW)
+
+> The arrangement of large, anterior mouth; the capacious pharynx; and the biserial perforation of the body wall with slits, are seen nowhere else but in deuterostomes. The interpretation of a dark, ventral strip as an endostyle26 led some to speculate27 that vetulicolians might be akin to chordates, or even tunicates. However, Shu and associates now regard their initial identification of an endostyle as circumstantial at best28 and have always maintained that vetulicolians are akin to deuterostomes in general, but no extant subgroup in particular. Some researchers, however, robustly maintain an alliance between vetulicolians and tunicates, even without evidence of an endostyle: the same researchers interpret a struc- ture in the tail region of the Australian vetulicolian Nesonektris aldridgei as a notochord.29
+> The narrow, dark strip seen in the posterior region of vetulicolians, terminating at the tip, is usually interpreted as a gut trace, terminating in an anus. Although tunicate tadpole larvae do have an endodermal strand in the tail, tunicates (and chordates more generally) do not have a ter- minal anus—a feature more associated with enteropneusts. Evidence for a notochord is much more equivocal. It could be that preservational dif- ferences between sites favor the preservation of guts over notochords, or vice-versa. Perhaps vetulicolians did have notochords that contained more muscle than fibrous connective tissue, and were therefore more prone to decay. After all, notochords in extant forms do vary in composition, and the notochord of the amphioxus contains an appreciable quantity of mus- cle compared with that of either tunicates or vertebrates. It could even be that some vetulicolians had notochords, whereas others did not—in which case the vetulicolians do not represent a natural group so much as an assemblage of primitive deuterostomes, some of which are more closely related to some extant groups than others.
+
+> Although the current consensus is that vetulicolians were probably early offshoots from the deuterostome stem, by virtue of the deuterostome-like pharynx, their phylogenetic position is still an open question.
+
+(Gee then speculates on stem chordate affinities)
+
+-----------
+2018-03-11-a The enigmatic metazoan Yuyuanozoon magnificissimi from the early Cambrian Chengjiang Biota, Yunnan Province, South China.pdf
+Li et al. (2018)
+
+(new concept paper - ''Yuyuanozoon'' deeper study)
+
+> In this paper we have described new material of Yuyuanozoon magnificissimi. We have attempted to develop a unified terminology for the description of vetulicolians that avoids inferring animal relationships or functional morphology. Therefore, terms such as ‘carapace’ (suggesting an arthropod affinity) or ‘oral end’ (suggesting functionality for feeding) have been replaced with purely descriptive terms. We believe that much of the existing terminology applied to vetulicolians cannot be sustained. There is no convincing evidence to show the homology of the anterior part of vetulicolians with the carapace or head shield of arthropods. Furthermore, there is no evidence in Y. magnificissimi to sustain the notion that the anterior opening was ‘oral’ or even that it functioned in food collection. In deconstructing this taxonomically ‘loaded’ terminology we now propose a ‘ground-up’ approach to interpreting these animals that examines their full range of morphological characteristics, without preconception.  New analyses should determine: (1) whether any features are homologous with extant groups of organisms, and (2) whether any features can be accorded a true function according to basic observations of their likely adaptation for different functions. From this deconstructed database we hope that a more realistic picture of the interspecific variation of vetulicolians can be assessed, which will lead to a greater understanding of their wider animal affinities.
+
+-----------
+2019-08-09-a Cambrian Chordates and Vetulicolians.pdf
+McMenamin (2019)
+
+(REVIEW plus new genus/species)
+
+> Phylum Vetulicolia, plus newly recognized early Cambrian chordates, lend weight to the concept of a sudden, rather than muted and long-drawn-out, Cambrian Explosion [5–7].
+
+> Diego García-Bellido and his coauthors [46] concluded that “the common ancestor of the Vetulicolia + Tunicata include distinct anterior and posterior body regions—the former being non-fusiform and used for filter feeding and the latter originally segmented—plus a terminal mouth, absence of pharyngeal bars, the notochord restricted to the posterior body region, and the gut extending to the end of the tail.”
+
+> It is now possible to review the current state of knowledge regarding Cambrian chordates, vetulicolians and their affinities. All of these animals are deuterostomes (i.e., the blastopore becomes the anus during early ontogeny), although of course, other deuterostomes are also known from the early Cambrian (cambroernids, echinoderms and hemichordates).
+> Three groups may be recognized among the Cambrian chordates. Urochordates, characterized by the presence of a branchial basket, are represented by Cheungkongella and Shankouclava. Cephalochordates, characterized by a full notochord, are represented by four genera: Cathaymyrus Pikaia (with question), Zhongjianichthys, and Zhongxiniscus. Vertebrates, characterized by a neural crest, are also represented by four genera: Haikouella, Haikouichthys, Metaspriggina and Myllokunmingia.
+
+> 7. Conclusions
+
+> Taken together, these chordate and vetulicolian genera document an important part of the explosive radiation of deuterostomes at the base of the Cambrian. Although debate is likely to continue, the preponderance of the evidence does suggest that vetulicolians and yunnanozoans are indeed deuterostomes [47,50,52,53,67–71]. Although deuterostomes, the extremely odd character set in vetulicolians also suggests that they may very well represent a higher taxon of phylum rank. Great caution, however, is needed in order to avoid circular reasoning with regard to the use of gross morphology to make such phylogenetic claims. The five pairs of gill structures in vetulicolians could in fact represent mid-gut glands of some sort, although this seems unlikely. The bizarre carpoids, with (like vetulicolians) a bipartite body division are now considered to be regular echinoderms with no gill slits and a feeding arm with a normal water vascular system [72]. Still, the mythical chimaera-like nature of many of the early deuterostomes suggests that the group may very well require the erection of multiple extinct phylum-level taxa to avoid systematic shoehorning.
+> Aldridge et al. [50] note that although the vetulicolians “appear to form a monophyletic clade, it is premature to accord them phylum rank without resolution of their phylogenetic position.” This remains a cogent observation, for indeed, with Shenzianyuloma yunnanense nov. gen. nov. sp. displaying evidence for conical myomeres surrounding a notochord with discs, the possibility that Shenzianyuloma and other vetulicolians represent stem chordates must be seriously considered.
+
+-----------
+2020-00-00-p The Invertebrate Tree of Life — Chapter 14- Deuterostomia.pdf
+
+(BOOK)
+
+> Vetulicolians (fig. 14.1 B) are known from 14 species from various early and middle Cambrian Konservat-Lagerstätten, although their anatomy is best under- stood from species from the Chengjiang biota (Aldridge et al., 2007; Shu et al., 2010). Their bipartite body was originally interpreted in the context of them being arthro- pods with a bivalved carapace and a segmented trunk, but the lack of appendages and the discovery of pharyngeal gill slits in the anterior body region shifted most discussion about their affinities to Deuterostomia (Shu et al., 2001b; Ou et al., 2012a; Smith, 2012a). The bipartite body, with a barrellike anterior part and segmented posterior, has invited particular comparison with tunicates (Lacalli, 2002; García- Bellido et al., 2014), but they have alternatively been assigned to the chordate (Mallatt and Holland, 2013) or deuterostome (Ou et al., 2012a) stem groups. Some investiga- tors have left deuterostome affinities uncertain and made comparisons with pro- tostomes (Aldridge et al., 2007), whereas others explicitly ally them with ecdysozoan protostomes (Chen, 2008; Bergström, 2010).
+
+[note that non-deuterostome proposals are 2010 or earlier)
+
+>  It has been noted that vetulicolians and yunnanozoans are likely related to each other, this argument being used to ally both to deuterostomes (Ou et al., 2012a) or to ecdyozoans, including arguments for ecdysis (Bergström, 2010).
+
+> Vetulocystida (Shu et al., 2004) was established for two species from the Chengji- ang biota (fig. 14.1 A) originally assigned to total-group Ambulacraria but impli- cated in the origin of echinoderms. A representative from the middle Cambrian of Utah was documented subsequently (Conway Morris et al., 2015). Having a bipartite body described as an inflated theca and a tail that may be segmented, these animals depict similarities with vetulicolians, but, more contentiously, ho- mologies have been proposed with asymmetrical stem-group echinoderms. The non-biomineralized theca bears two radial cones, one near the inferred anterior end and the other near the juncture with the theca, presumably housing the mouth and anus, respectively. This interpretation underpinned a claimed homology with echinoderms, restriction of the digestive tract to the anterior part of the body. The lack of definite echinoderm or ambulacrarian autapomorphies in vetulocystids (Swalla and Smith, 2008; Clausen et al., 2010) makes it difficult to assign them more precisely than as likely relatives of vetulicolians.
+
+-----------
+2022-09-28-a Worms and gills, plates and spines- the evolutionary origins and incredible disparity of deuterostomes revealed by fossils, genes, and development.pdf
+Nanlglu et. al (2022)
+
+(REVIEW)
+
+does not come to any conclusion
+

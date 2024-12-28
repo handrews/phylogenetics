@@ -1,0 +1,30 @@
+I'll reply to some of the specific questions in the other thread, but I wanted to take a bit of a step back first.
+
+The goal of a Wikipedia science article is to reflect the sense of the scientific community.  That can be a consensus or a lack of consensus, but can't include opinions from Wikipedia authors about whose science is better or worse.
+
+What we ''do'' need to decide here is which articles give the appropriate sense of the scientific community.  I take three factors into account:
+
+* Reputable secondary sources take precedence over primary sources, where possible
+* Outdated sources should not be relied upon, and in fast-moving areas, "outdated" might mean only a decade old, or even less
+* Primary sources are used to fill in gaps, particularly to show key details that no secondary source includes due to space constraints, or when no secondary source has caught up to emerging information
+
+Per [[WP::SCHOLARSHIP]], secondary sources are preferred, and are defined as:
+
+  Articles should rely on secondary sources whenever possible. For example, a paper reviewing existing research, a review article, monograph, or textbook is often better than a primary research paper. When relying on primary sources, extreme caution is advised. Wikipedians should never interpret the content of primary sources for themselves (see Wikipedia:No original research and [[Wikipedia:Neutral point of view]]).
+
+To me, a secondary source is even more valuable if the authors are not connected to recent primary sources that are advancing new theories.  This is why I put a lot of weight on Onai ''et al.'' (2023).  It was the most recent review article available, and is written by people who were not involved in any phylogenetic theories, but have expertise in related work.
+
+Regarding primary sources, if something got published in a peer-reviewed academic journal, then the appropriate experts have already decided that the work is worthy of consideration.  Not necessarily ''correct'', as the literature is full of arguments back and forth.  But the process, methodology, and writing have been deemed solid enough to be worth the readers' time.
+
+So it's not up to us to decide whether Mussini ''et al.'''s phylogenetic analysis is well-designed or not.  If it's not, I'm more than certain that someone will publish a paper saying so.  It happens regularly, and if and when it does, this article can be updated (assuming it still references Mussini at that point).
+
+Which brings us back to the question of what best shows the current state of science?  Not what shows our favorite theories or creates the most interesting narrative.
+
+Studies of Vetulicolians are moving very quickly.  So while Aldridge ''et al.'' was an excellent review in 2007, and great for foundational information, its theories regarding affinity need to be scrutinized to see if they depend on outdated information.
+
+For example, the "framework cladogram" they use shows Cephalochordata and Vertebrata as sister groups, with Tunicata as the sister to that node.  However, the Olfactores hypothesis of Vertebrata and Tunicata as sister groups is now solidly accepted.  So while that doesn't detract from the ''quality'' of the work, it does mean their phylogenetics are starting from a now-deemed-incorrect base, which throws everything off.  The authors somewhat alude to this with "This cladogram is compatible with relationships commonly recognized using anatomical characters (e.g. Nielsen 2001)." and "Further analysis is restricted by the lack of embryologi- cal and molecular data. These characters are, of course, unavailable for vetulicolians, but, as indicated above for the annelids, recent molecular studies have modified phylogenies that are based on anatomical characters alone." (Olfactores is supported by genetic sequencing).  Later on, they note "In living deuterostomes, segmentation is only recognized in the cephalochordates and vertebrates" which would directly impact how segmentation places anything w.r.t. tunicates ve cephalochordates+vertebrates.
+
+Aldridge ''et al.'' was also written prior to any theories of a notochord in Vetulicolia, and during the period when the presence of an endostyle was considered (a proposal later dropped by its author, documented in secondary source Gee (2018)).  Regarding a stem chordate position, they write: "As noted above, the identification of an endostyle is speculative. Nevertheless, this hypothesis is consistent with segmentation and pharyngeal slits being either prim- itive or derived within the deuterostomes. It also accom- modates the putative circumferential musculature, which is also present in the tunicates, the most primitive of the chordates. However, in this scenario segmentation would have to be secondarily lost in the tunicates."  We now know (to the extent that this stuff is every truly settled) that segmentation, present in cephalochordates and vertebrates, ''was'' lost in tunicates.
+
+
+~~~~
