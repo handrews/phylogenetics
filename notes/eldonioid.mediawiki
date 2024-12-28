@@ -1,0 +1,379 @@
+------------
+Hall, 1847 Paleontology of New York, vol. 1: natural history of New York, part 6
+
+* Genus ''Discophyllum'' [n. gen., I think?]
+** ''D. peltatum'' n. sp.
+
+:Body consisting of a somewhat circular flattened expansion, composed mainly of radiating fibres, which enlarge as they recede from the centre, and terminate in a thickened border.
+:This fossil appears to have consisted, originally, of a semi-hard circular or oval body, with firmer rays, reaching nearly or quite to the margin. The body becomes thicker and apparently harder towards the margin, and the rays are nearly concealed in its substance.  This disc may have been attached by a smaller stipe, proceeding from the lower side, some obscure evidence of such an appendage existing.
+:Two specimens of this peculiar fossil have been found : one in 1822, and the other a few years since, showing that it is an exceedingly rare form. It is quite unlike any other fossil known in our older strata.
+
+------------
+Clarke, 1900 Paropsonema cryptophya: A peculiar echinoderm from the Intumescens-zone (Portage beds) of western New York
+
+* Genus ''Paropsonema'' gen. nov.
+** ''P. cryptophya'' sp. nov.
+
+Notes ambulacral areas, assignes to echinoids.
+
+------------
+Walcott, 1911
+
+* Genus ''Eldonia'' gen. nov.
+** ''E. ludwigi'' sp. nov.
+
+------------
+Chapman, 1926 Proceedings of the Royal Society of Victoria. New series Article: New or little-known fossils in the National Museum. Part XXX. A Silurian jelly-fish
+
+* Class Hydrozoa
+** Sub-Clas Scyphomedusae
+*** Order Discophora
+**** Genus ''Discophyllum (J. Hall 1847)
+***** ''D. peltatum'' ([presumably] J. Hall 1847)
+***** ''D. mirabile'' sp. nov.
+
+------------
+Madsen, 1962 The systematic position of the Middle Cambrian fossil Eldonia
+
+* Phylum Cnidaria
+** Class Hydrozoa
+*** Order Siphonophorida
+**** Suborder Eldoniina n. subord.
+***** Genus ''Eldonia'' (Walcott 1911)
+****** ''E. ludwigi'' (Walcott 1911)
+
+------------
+1973-05-10-r Systematic Position of Eldonia ludwigi Walcott.pdf
+''Eldonia'' is a Holothurian
+
+------------
+Sun and Hou, 1987 1987-00-00-p
+
+* Genus ''Stellostomites''
+** ''S. eumorphus''
+* Genus ''Yunnanomedusa''
+** ''Y. elegans''
+* Genus ''Rotadiscus''
+** ''R. grandis''
+
+------------
+1989-10-20-p Burgess Shale Faunas and the Cambrian Explosion.pdf
+
+------------
+1990-07-26-a A Chondrophorine (Medusoid Hydrozoan) from the Basal Cambrian (Placentian) of Newfoundland.pdf
+Brief mention of Velumbrella
+
+------------
+Dzik, 1991 Is fossil evidence consistent with traditional views of the early metazoan phylogeny? (in The early evolution of Metazoa and the significance of problematic taxa)
+
+* Phylum Tentaculata (=Lophophorata)
+** Class Eldonioidea n. cls.
+*** Order Dinomischida n. ord.
+**** Genus ''Dinomischus''
+*** Order Velumbrellida n. ord.
+**** Family Eldoniidae (Walcott 1911)
+***** Genus ''Eldonia'' (Walcott 1911)
+***** Genus ''Velumbrella'' (Stasińska 1960)
+***** Genus ''Yunnanomedusa'' (Sun and Hou 1987) (=''Stellostomites'' Sun and Hou 1987)
+**** Family Rotadiscidae n. fam.
+***** Genus ''Rotadiscus'' (Sun and Hou 1987)
+
+Eldonioidea:
+
+:characterized by a conical, lobate mantle instead of cylindrical (as in the Bryozoa) or bivalved (as in the Brachiopoda) ones.  This implies that the mantle is a shared derived character of the advanced Tentaculata (lacking, although possibly secondarily lost by, the Phoronoidea).
+
+Dinomischida:
+
+:characterized by long a peduncle and deeply lobate mantle
+
+Velumbrellida:
+
+:with a circular, disc shaped body with reduced peduncle.  Within [Velumbrellida] at least two branches, both showing diverse modes of sclerotization of the disc, can be discerned:
+
+Eldoniidae:
+
+:with radial ribs
+
+Rotadiscidae:
+
+:with almost smooth discs ornamented only b growth lines
+
+'Paropsonema'' noted as "especially worthy of reconsideration" as a "coelenterate."
+
+------------
+Conway Morris, 1993 The fossil record and the early evolution of the Metazoa 
+
+. - - - Dinomischids (Cambrian)
+.     - - Eldoniids (Cambrian)
+.       - Rotadiscids (Cambrian)
+.         Paropsonemids (Cambrian – Devonian)
+.   - Cambroclaves (Cambrian)
+.     Echinoderms (Vendian – Recent)
+. - Hemichordates (Cambrian – Recent)
+.   - Tunicates (Cretaceous – Recent)
+.     - Fish (Ordovician – Recent)
+.       Conodonts (Cambrian – Triassic)
+
+------------
+1993-03-25-a An Enigmatic Bilateral Fossil from the Lower Cambrian of Morocco
+
+* Phylum uncertain
+** Genus ''Microschedia'' n. gen.
+*** ''M. amphitrite'' n. gen. and sp.
+
+:''Velumbrella czarnockii'' Stasińska, 1960, from the Lower Cambrian of Poland, previously interpreted as a chondrophorine float, recently has been revised and is now presumed to represent a skeltal fossil (Fedonkin, 1987; Dzik, 1991).  Supposing it to be a relative of ''Eldonia'' and ''Dinomischus'', Dzik (1991) placed that form in the new lophophorate class Eldonioidea.  ''Velumbrella'' differs clearly from ''Microschedia aphitrite'' in the more or less central apx and much more widely spaced circular ornament.
+
+:Of the few known Cambrian fossils that are usually accepted as chondrophorines, ''Rotadiscus grandis'' Sun and Hou, 1987, from the Chengjiang fauna in Yunnan, China, is easily distinguished by several characters.  It has an almost centrally located apex and its surface is not entirely smooth, due to small pneumatocysts.  As a result, radial structures are insignificant and concentric undulations are much more conspicuous and comparitively regular.  The outline seems to be almost circular and there is no indication of a radial depression as in ''Microschedia''.  It should be noted, however, that the figured specimens (Sun and Hou, 1987, Pl. III) are unlikely to possess a trilete central structure as stated by Sun (1991).  The structure interpreted as the mouth by Sun and Hou (1987) may represent an attachment area, which would support studies in progress by Conway Morris that shift ''Rotadiscus'' to a systematic position close to ''Eldonia'' from the Middle Cambrian Burgess Shale fauna (see Dzik, 1991).
+
+------------
+
+Chen, 1995 The Early Cambrian medusiform metazoan ''Eldonia'' from the Chengjiang Lagerstätte
+
+* Class Eldonioidea (Dzik 1989)
+** Genus ''Eldonia'' (Walcott 1911) [=''Yunnanomedusa'' (Sun and Hou 1987); =''Stellostomites'' Sun and Hou 1987)]
+*** ''E. ludwigi'' (Walcott 1911)
+*** ''E. eumorpha'' (Sun and Hou 1987) [=''Y. eleganta''; =''S. eumorphus''; (Sun and Hou 1987)
+
+Eldonioidea:
+
+:'''Emended diagnosis:''' Medusiform lophophorates with radially-symmetrical disc either soft-bodied or sclerotized. U-shaped alimentary canal coiled subhorizontally. Mouth placed near anus, both facing ventrally. The mouth surrounded by a lophophore. Vascular system consisting of numerous radially-extended sacs, radially-extended vascular canals radiating from central ring canal to periphery.
+
+Eldoniidae:
+
+:'''Emended diagnosis:''' Weakly scleritized, low bell-shaped eldonioids, with convex upper and concave lower surface. Subhorizontally clockwise (from above) coiled sack enclosed alimentary canal. Lophophore bearing at least four elongated tentacles. Vascular system consisting of numerous dorsal radial sacs and ventral canals radiating from the central ring canal. Dorsal radial canals curved to enclose the coiled sac dorsally.
+This might be where the confusion comes in, because Chen didn't bother with Eldoniidae, even though Dzik included it. Chen notes that ''Rotadiscus'' (Sun and Hou, 1987), ''Hullingia'' (Narbonne ''et al.'' 1991), ''Velumbrella'' (Stasińska, 1960), and ''Paropsonema'' (Ruedmann 1916) might be related to ''Eldonia'', and after listing those stated:
+
+"May be related to ''Eldonia'':
+* ''Rotadiscus'' (Sun and Hou 1987)
+* ''Hullingia'' (Narbonne ''et al.'' 1991)
+* ''Velumbrella'' (Stasińska 1960)
+* ''Paropsonema'' (Ruedmann 1916)]
+
+------------
+Dzik, Zhao, and Zhu, 1997 Mode of Life of the Middle Cambrian Eldonioid Lophophorate Rotadiscus
+
+:These are the Eldonioidea (Dzik 1991), Cambrian animals with a U-shaped gut enclosed in a low conical, discoidal body bearing a biramous tentacular apparatus — features shared with some lophophorates and echinoderms.  Unlike echinoderms, the eldonioids do not have any mesodermal calcitic skeleton but, instead, a cuticular cover secreted marginally by a kind of mantle (Dizk 1991).  In some cases this external skeleton, bearing distinct growth lines, was stiff enough to be preserved in coarse sandstones, originating as mass flow sediments (Masiak and Żylińska 1994).
+:In this paper we provide additoinal evidence to that presented by Dzik (1991) for the sedentary mode of life of the eldonioids.  This is offered by new data on a ''Rotadiscus'' species occurring abundantly in the Mid Cambrian Kaili fauna (Zhu and Zhao 1995) in Guizhou Province, China.
+
+* ''Eldonia ludwigi'' (Walcott 1911)
+** Walcott (1911): holothurian
+** A. H. Clark (1912, 1913): holothurian
+** H. L. Clark (1912): holothurian
+** Madsen (1956, 1957, 1962): siphonophore
+** Lemche (1960): coelenterate medusa
+** Durham (1974): holothurian
+* ''Eldonia eumorpha'' (Sun and Hou 1987)
+** provided evidence for more deailed classification of the eldonioids (Dzik 1991; Chen ''et al.'' 1995b)
+* ''Rotadiscus grandis'' (Sun and Hou 1987)
+
+:There are no signs of any pentameral or tetrameral symmetry in the anatomy of ''Eldonia'', nor is there any reason to suppose the presence of a mesodermal calcitic skeleton; so both the holothurian and scyphozoan affinities of this animal are difficult to support.  A U-shaped intestine, lophophore, and an ectodermal, marginally accreted skeleton are features of the lophophorates.  Such an attribution was proposed for the eldonioids (in the rank of class) by Dzik (1991).  The anatomical data on ''R. guizhouensis'' are consistent with those on the Burgess Shale and Chengjiang species, which shows that the body plan of these organisms was rather uniform.  The relatively simple organization of this species, with a strictly U-shaped digestive tract and the disc inferred to be more conical than other species, may reflect its primitiveness with respect to the larger and more complex eldonioids.
+
+:Different morphologies are represented in each of these localilties; but all three-dimensionally preserved eldonioids show growth lines at least on the surface of their discs.  In ''Eldonia'' (Chen ''et al.'' 1995a, 1995b) the disc was probably only lightly sclerotized, but cuticle accretion was clearly marginal at both ventral and dorsal sides of the body.
+:The accretional mode of growth implies a certain stiffness of the cuticle and, even if it was not mineralized and thereby flexible in ''Eldonia'', its elasticity was definitely low. [stuff about how floating around like a jellyfish is unlikely because of this and other features].
+:There is no particular reason to believe that ''Eldonia'' was different in this respect from other genre of the Eldonioidea that have basically the same body form, but differ mostly in the degree of sclerotization (and preservation) of their body cover.  The stiff skeleton of ''Velumbrella'' from Poland fragmented into angular pieces, without any plastic deformation, in a coarse sandstone matrix (Dzik 1991, fig. 3B; Masiak and Żylińska 1994); the Chengjiang ''Rotadiscus'' 'formed cracks on compaction when compared with wrinkling and folding observed in ''Eldonia''' (Chen ''et al.''). [bit about ''R.'' repairing broken disc from predation, unlikley in 'medusoid' way of life].
+
+:''Rotadiscus'' is the most heaviliy sclerotized eldoniod, although its cuticle was probably not mineralized. [stuff about epibionts].
+
+[More about how large epibionts only appeared around the edges, making it likely that the sclerotized convex surface faced down on the substrate, with the soft concave or flat side facing upwards with feeding tentacles].
+
+------------
+Zhu, Zhao, and Chen 2002 Revision of the Cambrian discoidal animals ''Stellostomites eumorphus'' and ''Pararotadiscus guizhouensis'' from South China
+
+The parts of the emended diagnoses discussing the body are interesting here:
+
+* Family Eldoniidae (Walcott, 1911) {{small|("weakly scleritized, disk-like body with convex dorsal and concave ventral surface.")}}
+** Genus ''Stellostomites'' (Sun and Hou, 1987) [=''Yunnanomedusa''] {{small|("soft, round disk-like body")}}
+*** ''S. eumorphus'' [=''Y. eleganta''; =''Eldonia eumorpha'']
+** Genus ''Pararotadiscus'' nov. gen. {{small|("round disk-like body with moderately scleritized convex dorsal surface and soft concave ventral surface... Dorsal surface gradually scleritizes during growth")}}
+*** ''P. guizhouensis'' (Zhao and Zhu, 1984) [=''Rotadiscus guizhouensis'']
+
+"all eldoniids" apparently == ''Eldonia'', ''Stellostomites'', ''Pararotadiscus'', and ''Rotadiscus''
+
+Other related palaeozoic discoidal fossils:
+
+* ''Paropsonema cryptophya'' (Clarke 1900)
+* ''Discophyllum mirabile'' (Chapman 1926)
+* ''Velumbrella''
+* ''Eomedusa''
+
+''Stellostomites'':
+
+:'''Emended diagnosis''': weakly scleritized, disk-like body with convex dorsal and concave ventral surface. The ali- mentary canal enclosed in a dextrally coiled sac with bifurcated tentacles surrounding the mouth, mouth and anus close each other and open to outside through sub-triangular orifice on the ventral surface of the central dome-like cavity. Dorsal radiating canals extend from the disc margin through the upper surface to the top of the central cavity. Ventral lobes radiate from a central ring through the lower surface to the disc margin with auxiliary lobes in between in the out zone of the disc.
+:'''Remarks:''' Stellostomites Sun &amp; Hou differs from El- donia Walcott in arrangement of lobes. In Eldonia, radiating lobes bifurcate at the margin of the disc, giving about 60 slightly projecting rounded lappets, whereas, in Stellosto- mites, the secondary lobation occurs in between the lobes on the margin of the disc. In addition, Eldonia lacks dorsal radiating canals and central cavity as in Stellostomites.
+
+''S. eumorphus'':
+
+:'''Emended diagnosis:''' woft, round disk-like body with convex dorsal and concave ventral surface, faint concentric ornaments on dorsal surface, diameter ranges from 28–110 mm. Dorsal radiating canals 88 in number, ventral lobes 44 in number. Ventral surface with regular pattern of ‘black spots’ arranged in pairs radically on the ventral surface of body.
+
+''Pararotadiscus'':
+
+:'''Emended diagnosis:''' round disk-like body with moderately scleritized convex dorsal surface and soft concave ventral surface, distinct radiating and concentric ornaments on the dorsal surface. Dorsal surface gradually scleritizes during growth. The alimentary canal enclosed in a dextrally coiled sac with bifurcated tentacles surrounding the mouth, mouth and anus close each other. Radiating lobes radiate from a central ring to the disc margin with secondary lobes in the out zone of the disc, the mesenteries separating the lobes septa-like pending on the inner surface of the dorsal disc.
+:'''Remarks:''' Pararotadiscus nov. gen. is similar to Rota- discus Sun &amp; Hou in having scleritized dorsal surface, but differs from latter in having plate-like mesenteries, and in having soft dorsal surface in juveniles and less degree of sclerization of the dorsal surface in adults. In addition, tentacles of Rotadiscus do not show bifurcation. Pararota- discus nov. gen. is similar to Eldonia Walcott, both have similar lobe structures and tentacles, but Eldonia has a very soft dorsal surface of disc.
+
+''P. guizhouensis''
+
+:'''Emended diagnosis:''' round disc-like body, 15–105 mm
+in diameter, with radiating and concentric ornaments on moderately scleritized convex dorsal surface, the ornaments more distinct in the inner zone and outer zone of the disc. About 40 radiating lobes radiate from a central ring to the disc margin with secondary lobes in the out zone of the disc. The mesenteries separating the lobes stiff and plate-like, become soft in the marginal zone of the disc.
+
+------------
+Sepkoski, 2002 A compendium of fossil marine animal genera
+
+* Cnidaria
+** Hydrozoa
+*** Hydroida
+**** Discophyllum (Cn, Hy, Hy)
+**** Veluibrella (=Velumbrella) (Cn, Hy, Hy)
+*** Siphonophorida
+**** Paropsonema (Cn, Hy, Si)
+**** Rotadiscus (Cn, Hy, Si)
+* Problematica
+** Uncertain
+*** Incertae sedis
+**** Eldonia (Pr, Un, In)
+**** Stellastomites (Pr, Un, In)
+**** Yunnanomedusa (Pr, Un, In)
+
+------------
+Steiner, Zhu, Zhao and Erdtmann 2003 Lower Cambrian Burgess Shale-type fossil associations of South China.pdf
+
+:Lower Cambrian (Qiongzhusian) species of Burgess Shale-type faunas known from the upper Yuanshan Formation of East Yunnan or the Niutitang Formation of Guizhou and North Hunan.
+
+* ''Incertae sedis''
+** ? ''Cheungkongella ancestralis''
+** ''Cotyledion tylodes'' (=''Cambrotentactus sanwuia'')
+** ''Dinomischus venustus''
+** ''Phlogites longus''
+** ? ''Phlogites brevis''
+** ''Rotadiscus grandis''
+** ''Shankouclava anningense''
+** ''Stellostomites eumorphus'' (=''Yunnanomedusa eleganta'', =''Eldonia eumorpha'')
+
+------------
+Vannier and Chen J.-Y., 2005 Early Cambrian Food Chain: New Evidence from Fossil Aggregates in the Maotianshan Shale Biota, SW China
+
+:...detailed fossil evidence led Zhu ''et al.'' (2002) to consider the as pelagic, possibly gregarious animals. For example, ''Stellostomites'' had a soft medusiform body with a poorly sclerotized soft disk and radiating lobes that may have functioned as deformable gas chambers analogous to those of modern jellyfishes (Zhu et al., 2002). One of the most conspicuous features of ''Stellostomites'' is a coiled sac that accommodated the alimentary canal of the animal (assumed reniform stomach pouch typically preserved as a black film of organic carbon and iron oxide). The circumoral tentacles of ''Stellostomites'' and ''Pararotadiscus'' suggest that eldoniids were mid-water predators. Eldoniids are not frequent, but form the nucleus of numerous concentric aggregates found exclusively at Shankoucun.
+
+------------
+:Discoidal fossils. ''Stellostomites eumorphus'' SMC occurs in the lower part of the Maotianshan Mudstone Member in the Maotianshan section[32], Shankoucun and the Haoyicun sections of Anning, Dayucun section of Chenggong, Tanglipo section of Dabanqiao as well as the middle part of the Jianshan section of Haikou. Most individuals are preserved roughly parallel to the bedding planes. Most of them are complete adults, but occasionally include a very few smaller ones. ''S. eumorphus'' is rather sparse in other horizons and usually co-occurs with other types of fossils in this section. However, it is very rare in other sections of the Haikou region, such as ''Mafangcun'', ''Ercaicun'', ''Dazicun'', and ''Yunlongsi''. For ''Yunnanomedusa eleganta'', of the same group as ''S. eumorphus'', its SFC has not been found in the Kunming and Chengjiang regions. It should be mentioned that the discoidal fossils ''S. eumorphus'' and ''Pararotadiscus guizhouensis'' from the Middle Cambrian Kaili Fauna, Guizhou Province, China have been interpreted as pelagic gregarious animals[41].
+
+------------
+Conway Morris, 2006 Darwin's Dilemma: The Realities of the Cambrian 'Explosion'
+
+"eldoniid/rotadiscid/paropsonemid group"
+enigmatic forms "include eldonidds (and rotadiscids)
+
+------------
+Caron ''et al.'' 2010
+
+* ?Superphylum Ambulacraria
+** Unranked stem-group Cambroernids nov.
+*** ''Herpetogaster'' gen. nov.
+**** ''H. collinsi'' gen. ''et'' sp. nov.
+*** ''Phlogites'' (Luo and Hu 1999)
+**** ''P. longus'' (Luo and Hu 1999)
+*** ''Conicula'' (Luo and Hu 1999)
+**** ''C. striata'' (Luo and Hu 1999)
+*** Eldoniids
+**** ''Eldonia ludwigi''
+**** ''Stellostomites eumorphus''
+**** ''Rotadiscus grandis''
+**** ''Pararotadiscus guizhouensis''
+
+
+------------
+MacGabhann, 2010 Non-mineralised discoidal fossils from the Ordovician Bardahessiagh Formation, Co. Tyrone, Ireland
+
+* ? Unranked stem group Cambroernids (Caron ''et al.'', 2010)
+** ? Family Rotadiscidae (Dzik, 1991)
+*** Genus ''Seputus'' gen. nov.
+**** ''S. pomeroii'' sp. nov.
+
+:Ovoid disc, characterised by up to 120 radial lines extending from a central ring of diameter 2–3mm. The radial features extend out towards the margin, which is sharp and lacks any form of protrusion or extensions. A concentric ornament, of a more irregular and coarse nature, may also be present; however, this is not thought to necessarily represent the original morphology (of the living organism). The rest of the organism is unknown.
+
+:Without the entire organism, of course, the fossils cannot be assigned to any particular taxonomic group with any degree of confidence. However, we believe that S. pomeroii is best interpreted as a rotadiscid eldonid.
+
+:Interpretation of S. pomeroii as an eldonid is supported by the extremely similar preservation of the eldonid Velumbrella czarnockii as variably oriented discs with radial ornamentation within pebbly sandstone beds in the Middle Cambrian of Poland (Stasinska 1960; Dzik 1991; Masiak and Żylińska 1993).
+
+:Three informal groups can be recognised within the eldonids—the eldoniids, paropsonemids and rotadiscids (Fig. 7). The eldoniids (e.g. Fig. 7a), typified by Eldonia ludwigi from the Burgess Shale (Cambrian, Canada: Walcott 1911; Friend 1995), have a simply ornamented outer integument showing up to 30 primary radial lobes, which bifurcate towards the margin, while the paropsonemids (e.g. Fig. 7b, typified by ''Paropsonema cryptophya'' from the Devonian of New York; Clarke 1900) have a much more complex radial ornamentation consisting of two or three series of primary radially arranged ridges, with secondary ridges perpendicular to the primary set. Both of these morphologies are quite unlike that expressed in ''S. pomeroii''. The rotadiscids (e.g. Fig. 7c), however, show numerous radial lines extending from a central ring, superimposing fine concentric lines. Only two rotadiscid species are known: ''Rotadiscus grandis'' and ''Pararotadiscus guizhouensis'', both from the Lower Cambrian of China (Dzik 1991; Dzik et al. 1997; Zhu et al. 2002).
+:While ''S. pomeroii'' differs from the previously described rotadiscids in both the number of radial lines (generally around 40) and in lacking a fine concentric ornament (which may represent growth rings), the similarity is striking (compare to Zhu et al. 2002, Fig. 7a, reproduced here as a line drawing in Fig. 7c). Moreover, it is entirely possible that the lack of fine concentric structures in ''S. pomeroii'' may be a taphonomic artefact due to the much coarser grain size of the containing sediment, which would likely have been unable to faithfully replicate such minute details, if present.
+Although the available evidence is admittedly equivocal; based on the similarity to ''Pararotadiscus'' and the unlikelihood of most other potential interpretations, we tentatively assign ''S. pomeroii'' to the eldonids as the first known post-Cambrian rotadiscid. However, a relationship with other, enigmatic discoidal fossils cannot be unequivocally discounted, and it is worth exploring some alternative potential interpretations.
+------------
+Lieberman ''et al.'' 2017 Disc-shaped fossils resembling porpitids or eldonids from the early Cambrian (Series 2- Stage 4) of western USA
+
+Rotadiscus (Zhou and Zhu 1994) and Pararotadiscus (Zhu, Zhao and Chen 2002) both "display clear concentric structures and have a dorsal surface which was stiffened."
+
+"Our specimens also differ from the Cambrian Velumbrella (Stasińska 1960) due to the lack of a prominent annulus dividing the inner and outer areas of the disc, and differing style of radial structures; Velumbrella may also have had a stiffened disc surface, as may the potential eldonid ''Seputus'' MacGabhann and Murray, 2010.
+
+:Other eldonids are dominated by radial structures, including internal radial fibers and internal lobes. The Cambrian Eldonia Walcott, 1911, and Stellostomites Sun & Hou, 1987, both display these structures, with post-Cambrian eldonids including Discophyllum Hall, 1847, and Paropsonema Clarke, 1900, displaying radial ridges ornamenting the dorsal surface (MacGabhann, 2012). The radially-arranged features of the Carrara specimens could represent poorly preserved examples of internal lobes or dorsal ornamentation. However, specimens of Eldonia and Stellostomites exhibiting internal lobes universally also preserve the coiled sac even more prominently, with many additional specimens preserving the coiled sac but not the internal lobes (MacGabhann, 2012). It is difficult to envisage how the radial structures in our specimens could represent eldonid internal lobes without also preserving a coiled sac.
+:However, it may be possible that the radial structures (Figs. 2 and 3) could represent dorsal surface ornamentation. Such ornamentation is seen in post-Cambrian eldonids, including Discophyllum peltatum Hall, 1847, originally described from the Ordovician of New York; Parapsonema cryptophya Clarke, 1900 from the Upper Devonian of New York (see also Ruedemann, 1916); and Paropsonema mirabile Chapman, 1926, from the Silurian of Victoria, Australia. All of these display ridges radiating from a central point, with the coiled sac generally only visible where it is preserved with relief from the surface. It is not inconceivable that the Carrara Formation specimens could be preserving eldonid dorsal surface ornamentation without the relief necessary to highlight the coiled sac.
+
+:Both species of Paropsonema show multiple cycles of radial ridges on the surface (MacGabhann, 2012), unlike the specimens described herein. Discophyllum peltatum, however, exhibits only a single cycle of radial ridges extending from the center to the
+margin. Although the ridges of the Carrara Formation specimens appear to be more irregular that those of Discophyllum peltatum, this could simply be a consequence of a different taphonomic style and poor preservation in the Carrara material. The size and semi-ovate shape of the type material of D. peltatum is also similar to the Carrara discs. A relationship therefore cannot be ruled out, and the Carrara discs are certainly more similar to D. peltatum than any other previously described discoidal fossils.
+:Due to the lack of clear diagnostic features of D. peltatum in the Carrara material, and the fact that so far only three specimens have been collected from the Carrara Formation, it seems most prudent to refer the Carrara material to cf. Discophyllum sp. The age differences between the material from the Carrara Formation and the Ordovician of New York State may also suggest they are unlikely to represent the same species.
+
+------------
+Schroeder ''et al.'', 2017
+* Class Eldonioidea (Dzik 1991)
+** Family Eldoniidae (Walcott 1911)
+*** Genus ''Eldonia'' (Walcott 1911)
+**** ''E. ludwigi'' (Walcott 1911)
+**** ''E. eumorpha'' (Sun and Hou 1987)
+**** ''E. berbera'' (Alessandrello and Bracchi 2003)
+** Family Rotadiscidae (Dzik 1991)
+*** Genus ''Rotadiscus'' (Sun and Hou 1987)
+**** ''R. grandis'' (Sun and Hou 1987)
+**** ''R.'' sp. (Dzik 1991)
+*** Genus ''Pararotaduscus''
+**** ''P. guizhouensis'' (Zhao and Zhu 1994)
+**** Emu Bay Shale taxon
+*** ? Genus ''Velumbrella''
+**** ''V. czarnockii'' (Stasińska 1960)
+*** ? Genus ''Seputus'' (MacGabhann and Murray 2010)
+**** ''S. pomeroii'' (MacGabhann and Murray 2010)
+** 'Paropsonemids'
+*** Genus ''Paropsonema''
+**** ''P. cryptophya'' (Clarke 1900)
+**** ''P. mirabile'' (Chapman 1926)
+*** Genus ''Discophyllum''
+**** ''D. peltatum'' (Hall 1847)
+
+* ''Eldonia'' (Walcott 1911)
+** =''Stellostomites'' (Sun and Hou 1987)
+** =''Yunnanomedusa'' (Sun and How 1987)
+* ''Eldonia eumorpha'' (Sun and Hou 1987)
+** =''Stellostomites eumorphus'' (Sun and Hou 1987)
+** =''Yunnanomedusa elegans'' (Sun and Hou 1987)
+* ''Rotadiscus'' sp.
+** ''Brzechowia'' sp. (Dzik 1991)
+** ''Rotadiscus'' sp. (Masiak and Żylińska 1994)
+* ''Pararotadiscus guizhouensis'' (Zhao and Zhu 1994)
+** ''Rotadiscus guizhouensis'' (Zhao and Zhu 1994)
+* ''Paropsonema mirabile'' (Chapman 1926)
+** ''Discophyllum mirabile'' (Chapman 1926)
+
+* Eldonia ludwigi             mꞒ    wLS
+* Eldonia eumporhpa           eꞒ    sC
+* Eldonia berbera             O     wG
+* Rotadisus grandis           eꞒ    sC
+* Rotadiscus sp.              e-mꞒ  B
+* Pararotadiscus guizhouensis mꞒ    sC
+* Emu Bay Shale sp.           eꞒ    eG
+* Velumbrella czarnockii      e-mꞒ  B
+* Seputus pomeroii            O     A?
+* Paropsonema cryptophya      D     A?
+* Paropsonema mirabile        S     eG
+* Discophyllum peltatum       O     A?
+
+--------
+Zhao ''et al.'', 2018 Paleoecological Significance of Complex Fossil Associations of the Eldonioid Pararotadiscus guizhouensis with other Faunal Members of the Kaili Biota (Stage 5, Cambrian, South China)
+
+Eldonoids:
+* ''Eldonia ludwigi'' (Walcott 1911)
+* ''Eldonia eumorpha'' (Sun and Hou 1987)
+* ''Eldonia sp.'' (Ivantsov ''et al.'' 2005) Sinsk biota of Siberia
+* ''Rotadiscus grandis'' (Sun and Hou 1987)
+* ''Pararotadiscus guishouensis'' (Zhao and Zhu 1994)
+
+''Pararotadiscus'':
+
+:"Although numerous specimens exhibit obvious plastic deformation resulting from compaction, folding of discs is rare, indicating that the disc of P. guizhouensis was probably softer than that of Rotadiscus grandis (Zhu et al., 2002)."
