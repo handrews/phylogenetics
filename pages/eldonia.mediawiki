@@ -3,6 +3,8 @@
 | fossil_range = {{fossil range|Cambrian Stage 3|Middle Ordovician}}
 | image = Eldonia_ludwigii.png
 | image_caption = ''Eldonia ludwigii'' from the middle [[Cambrian]] [[Burgess Shale]].
+| image2 = Eldonia ludwigii life restoration.jpg
+| image2_caption = Life restoration
 | display_parents = 4
 | taxon = Eldonia
 | authority = Walcott 1911
