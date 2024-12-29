@@ -13,61 +13,23 @@
 | subdivision_ranks = Species
 | subdivision = * '''''E. ludwigii''''' {{Smallcaps|Walcott 1911}}
 * '''''E. eumorpha''''' {{Smallcaps|Sun & Hou 1987}}
-* '''''E. berbera''''' {{Smallcaps|Alessandrello 2003}}<ref>{{cite journal
-| title=  ''Eldonia berbera'' n. sp., a new species of the enigmatic genus ''Eldonia'' Walcott, 1911 from the Rawtheyan (Upper Ordovician) of little Atlas (Erfoud, Tafilalt, Morocco)
-|place= Milano, ITALIE
-|volume=144
-|pages= 337–358
-|author= ALESSANDRELLO Anna
-|author2= A BRACCHI Giacomo
-|year= 2003
-|issue=2
-|journal= Atti della Società Italiana di Scienze Naturali e del Museo Civico di Storia Naturale in Milano
-| issn = 0037-8844
-|title-link= little Atlas
-}}</ref>
+* '''''E. berbera''''' {{Smallcaps|Alessandrello 2003}}<ref>{{harvnb|Alessandrello|Bracchi|2003}}</ref>
 }}
 
-'''''Eldonia''''' is an extinct soft-bodied [[cambroernid]] animal of unknown affinity,<ref>{{Cite journal | first1 = P. W. | first2 = G. J.| last2 = Vermeij| date = 1 July 1994 | title = The Plankton and the Benthos: Origins and Early History of an Evolving Relationship| last1 = Signor| journal = Paleobiology| volume = 20| issue = 3| pages = 259–406| issn = 0094-8373| jstor = 2401005| doi= 10.1017/s0094837300012793 | bibcode = 1994Pbio...20..297S| s2cid = 87094600}}</ref> best known from the Fossil Ridge outcrops of the [[Burgess Shale]], particularly in the 'Great ''Eldonia'' layer' in the [[Walcott Quarry]].<ref name='Gabbott2008'>{{Cite journal| first1 = S. E.| first2 = J.| first3 = D. | title = Sedimentation of the Phyllopod Bed within the Cambrian Burgess Shale Formation of British Columbia| last1 = Gabbott | journal = Journal of the Geological Society | volume = 165 | issue = 1| pages = 307–318 | year = 2008 | doi = 10.1144/0016-76492007-023| last2 =  Zalasiewicz| last3 =  Collins | bibcode = 2008JGSoc.165..307G| s2cid = 128685811}}</ref> In addition to the 550 collected by Walcott,<ref>{{Cite journal| jstor = 1303225| pages = 750–755| title = Systematic Position of ''Eldonia ludwigi'' Walcott| journal = Journal of Paleontology| volume = 48| issue = 4| year = 1974 | last1 = Durham| first1 = J. W.| bibcode = 1974JPal...48..524M}}</ref> 224 specimens of ''Eldonia'' are known from the Greater [[Phyllopod bed]], where they comprise 0.43% of the community.<ref name=Caron2006>{{cite journal|last1=Caron |first1=Jean-Bernard|last2=Jackson |first2=Donald A.|title=Taphonomy of the Greater Phyllopod Bed community, Burgess Shale|journal=PALAIOS |volume=21 |issue=5 |pages=451–65|date=October 2006|doi=10.2110/palo.2003.P05-070R|jstor=20173022|bibcode=2006Palai..21..451C |s2cid=53646959 }}</ref>  Species also occur in the Chengjiang biota,<ref name=Chen1995>{{cite journal
-| author2=M-Y. ZHU|author3= G. Q. ZHOU
-| year = 1995 
-| url = http://www.app.pan.pl/archive/published/app40/app40-213.pdf
-| journal= Acta Palaeontologica Polonica
-| pages= 213–244
-| author = CHEN, J-Y.
-| title= The early Cambrian medusiform metazoan Eldonia from the Chengjiang Lagerstätte.
-|volume =  40}}</ref> Siberia,<ref>{{cite journal |author1=D. Friend |author2=A. Yu. Zhuravlev |author3=I. A. Solov’ev |name-list-style=amp |year=2002 |title=Middle Cambrian Eldonia from the Siberian Platform |url=http://www.maik.ru/abstract/paleng/2/paleng1_2p20abs.htm |url-status=dead |journal=Paleontological Journal |volume=36 |issue=1 |pages=20–24 |archiveurl=https://web.archive.org/web/20160303191129/http://www.maik.ru/abstract/paleng/2/paleng1_2p20abs.htm |archivedate=2016-03-03}}</ref> and in Upper [[Ordovician]] strata of [[Morocco]].
+'''''Eldonia''''' is an extinct soft-bodied [[cambroernid]] animal of unknown affinity,<ref>{{harvnb|Signor|Vermeij|1994|page=302}}</ref> best known from the Fossil Ridge outcrops of the [[Burgess Shale]], particularly in the 'Great ''Eldonia'' layer' in the [[Walcott Quarry]].<ref name='Gabbott2008'>{{harvnb|Gabbott|Zalasiewicz|Collins|2008|page=311, 316–317}}</ref> In addition to over 550 specimens collected by Walcott,<ref>{{harvnb|Durham|1974|page=752}}</ref> 224 specimens of ''Eldonia'' are known from the Greater [[Phyllopod bed]], where they comprise 0.43% of the community.{{citation needed|date=December 2024 |reason=Previously cited Caron, Jean-Bernard; Jackson, Donald A. (October 2006). "Taphonomy of the Greater Phyllopod Bed community, Burgess Shale". PALAIOS. 21 (5): 451–65. Bibcode:2006Palai..21..451C. doi:10.2110/palo.2003.P05-070R. JSTOR 20173022. S2CID 53646959 https://jackson.eeb.utoronto.ca/files/2012/10/Caron-and-Jackson-2006-Palaois.pdf but I am unable to find this information in the text.}}  Species also occur in the Chengjiang biota,<ref name=Chen1995>{{harvnb|Chen|Zhu|Zhou|1995|page=213}}</ref> Siberia,<ref>{{harvnb|Friend|Zhuravlev|Solov’ev|2002|page=463}}</ref> and in Upper [[Ordovician]] strata of [[Morocco]].
 
-A specimen from the [[Lower Ordovician]] [[Madaoyu Formation]] in [[Hunan]], South China, can be interpreted as the incomplete body of ''Eldonia'' or the similar animal. However, its annulation, the structure of the [[intestine]] and the shape of the body are more similar to those of ''[[Ottoia]]''.<ref name=Fang2022>{{cite journal|author=Xiang Fang, Yingyan Mao, Qi Liu, Wenwei Yuan, Zhongyang Chen, Rongchang Wu, Lixia Li, Yuchen Zhang, Junye Ma, Wenhui Wang, Renbin Zhan, Shanchi Peng, Yuandong Zhang, Diying Huang|year=2022|url=https://www.researchgate.net/publication/361971078|title=The Liexi fauna: a new Lagerstätte from the Lower Ordovician of South China|journal=Proceedings of the Royal Society B|volume=289|issue=1978|page=1—8|doi=10.1098/rspb.2022.1027|language=en|pmc=9277276}}</ref>
+A specimen from the [[Lower Ordovician]] [[Madaoyu Formation]] in [[Hunan]], South China, can be interpreted as the incomplete body of ''Eldonia'' or the similar animal. However, its annulation, the structure of the [[intestine]] and the shape of the body are more similar to those of ''[[Ottoia]]''.<ref name=Fang2022>{{harvnb|Fang|Mao|Liu|Yuan|2022|page=5}}</ref>
 
 == Description ==
-It takes the form of a round, medusoid disk (which originally led to suggestions of a jellyfish affinity)<ref>{{Citation
- | title = The Early Cambrian medusiform metazoan ''Eldonia'' from the Chenjiang Lagerstätte
- | url = http://www.app.pan.pl/archive/published/app40/app40-213.pdf
- | year = 1995
- | journal = Acta Palaeontologica Polonica
- | pages = 213–244
- | volume = 40
- | issue = 3
- | last1 = Jun-yuan	 | first1 =  C.
- | last2 =  Mao-yan	 | first2 =  Z.
- | last3 =  Gui-qing	 | first3 =  Z.
- | last4 =  Signogneau-russell	 | first4 =  D.
- | last5 =  Hahn	 | first5 =  R.
- | last6 =  Koz{l}owska-dawidziuk	 | first6 =  A.
- | last7 =  Stefaniak	 | first7 =  K.
- | access-date = 2009-08-12}}</ref> with a C-shaped gut trace.  The gut is recalcitrant and can be extracted using [[Hydrofluoric acid]].<ref name=Butterfield1990>{{Cite journal| first = N. J.| title = Organic Preservation of Non-Mineralizing Organisms and the Taphonomy of the Burgess Shale| journal = Paleobiology| volume = 16| issue = 3| last = Butterfield| pages = 247–399| date = 1 July 1990 | issn = 0094-8373| doi = 10.1017/s0094837300009994 | jstor =  2400788| bibcode = 1990Pbio...16..272B| s2cid = 133486523}}</ref> 
+It takes the form of a round, medusoid disk (which originally led to suggestions of a jellyfish affinity)<ref name=Chen1995 /> with a C-shaped gut trace.  The gut is recalcitrant and can be extracted using [[Hydrofluoric acid]].<ref name=Butterfield1990>{{harvnb|Butterfield|1990}}</ref> 
 
 == Classification ==
-Walcott's original interpretation as a [[holothurian]] was rapidly disputed.<ref>{{Cite journal| doi = 10.1126/science.35.894.274-a| jstor = 1638409| pages = 274–278| title = Fossil Holothurians| journal = Science| volume = 35| issue = 894| year = 1912 | first1 = H. L.| pmid = 17809248| last1 = Clark| url = https://zenodo.org/record/1448078}}</ref>  Alternative affinities to be suggested, which did not stand the test of time, included the [[siphonophores]]<ref>{{Cite journal| jstor = 1300523| pages = 281–282| title = On Walcott's Supposed Cambrian Holothurians| journal = Journal of Paleontology| volume = 31| issue = 1| year = 1957 | first1 = F. J. |last1=Madsen| bibcode = 1974JPal...48..524M}}</ref><ref>{{cite journal|url=http://2dgf.dk/xpdf/bull-1962-15-1-87-89.pdf
-| author=MADSEN, F. J.|year= 1962 |title=The systematic position of the Middle Cambrian fossil ''Eldonia''|journal= Medd. Dan. Geol. Foren|volume= 15|pages=87–89}}</ref><ref>{{cite journal|author=MADSEN, F. J.|year= 1956 |journal=Videnskabelige Meddelelser Fra Dansk Naturhistorisk Forening I Københaven|pages=7–14|title=''Eldonia'', a Cambrian Siphonophore-formerly interpreted as a Holoturian[sic].|volume=118}}</ref> and a [[Coelenterata|coelenterate]] [[medusa (biology)|medusa]].<ref>{{cite journal|author=Lemche, Henning
-|year= 1960|title= A possible central place for Stenethecoides Resser, 1939 and Cambridium Horny, 1957 (Mollusca Monoplacophora) in invertebrate phylogeny. |journal=Rep. Int. Geol. Congr.
-|volume=XXI Session, Norden |issue=Pt. 22|pages=92–101}}</ref>
+Walcott's original interpretation as a [[holothurian]] was rapidly disputed.<ref>{{harvnb|Clark|1912|pages=276–278}}</ref>  Alternative affinities to be suggested, which did not stand the test of time, included the [[siphonophores]]<ref>{{harvnb|Madsen|1957|page=281}}</ref><ref>{{harvnb|Madsen|1962}}</ref><ref>{{harvnb|Madsen|1956}}</ref> and a [[Coelenterata|coelenterate]] [[medusa (biology)|medusa]].<ref>{{harvnb|Henning|1960}}</ref>
 
-The '''eldoniids''' form a clade that also includes ''[[Paropsonema]]'', ''[[Rotadiscus]]'', and ''[[Stellostomites]]''.<ref>{{Cite journal| volume = 5| title = Tentaculate fossils from the Cambrian of Canada (British Columbia) and China (Yunnan) interpreted as primitive deuterostomes | first4 = D.| issue = 3| pages = e9586| journal = PLOS ONE| pmc = 2833208| doi = 10.1371/journal.pone.0009586| last4 = Soares| last1 = Caron| year = 2010| pmid = 20221405 | first3 = D. | first1 = J.| last2 = Conway Morris| last3 = Shu | first2 = S.| editor1-last = Soares| editor1-first = Daphne| bibcode = 2010PLoSO...5.9586C | doi-access = free }}</ref>
+''Eldonia'' and the other Eldoniidae form a clade, [[Eldonioidea]], with the [[Rotadiscidae]] and the informal group known as the [[paropsonemid]]s.<ref>{{harvnb|Schroeder|Paterson|Brock|2018|page=80–81}}</ref>  The Eldonioidea are, in turn, part of the stem-[[ambulacrarian]] clade [[Cambroernida]].<ref>{{harvnb|Li|Dunn|Murdock|Guo|2023|pages=2362–2364}}</ref>
 
 == Paleoecology ==
-The organism is frequently found in association with the lobopod ''[[Microdictyon]]'', which is presumed to have fed on ''Eldonia''.<ref name='Zhang2007'>{{Cite journal|last1 = Zhang | first1 = X-G| last2 = Hou | first2 = X-G | title = Gravitational Constraints on the Burial of Chengjiang Fossils| journal = PALAIOS| volume = 22| issue = 6| pages = 513–518| date=Dec 2007 | issn = 0172-4622| doi = 10.2110/palo.2006.p06-085r | bibcode = 2007Palai..22..448Z| s2cid = 128830203| type = Submitted manuscript}}</ref>
+The organism is frequently found in association with the lobopod ''[[Microdictyon]]'', which is presumed to have fed on ''Eldonia''.<ref name='Zhang2007'>{{harvnb|Zhang|Hou|2007|pages=448–449}}</ref>
 
 <gallery widths="250px" heights="220px">
 Eldonia berbera.jpg|''Eldonia berbera''
@@ -80,6 +42,26 @@ Eldonia ludwigi, Burgess Shale.jpg|''Eldonia ludwigii, '' Walcott Quarry. About 
 
 ==References==
 {{Reflist}}
+
+===Works cited===
+{{refbegin}}
+* {{cite journal|last1=Alessandrello |first1=Anna |last2=Bracchi |first2=Giacomo |year=2003 |title=''Eldonia berbera'' n. sp., a new species of the enigmatic genus ''Eldonia'' Walcott, 1911 from the Rawtheyan (Upper Ordovician) of little Atlas (Erfoud, Tafilalt, Morocco) |journal=Atti della Società Italiana di Scienze Naturali e del Museo Civico di Storia Naturale in Milano |volume=144 |issue=2 |pages=337–358 |place=Milano |issn=0037-8844 |url=https://dn790008.ca.archive.org/0/items/biostor-266993/biostor-266993.pdf }}
+* {{cite journal|last1=Butterfield |first1=N. J. |date=1 July 1990 |title=Organic Preservation of Non-Mineralizing Organisms and the Taphonomy of the Burgess Shale |journal=Paleobiology |volume=16 |issue=3 |pages=247–399 |issn=0094-8373 |doi=10.1017/s0094837300009994 |jstor=2400788 |bibcode=1990Pbio...16..272B |s2cid=133486523}}
+* {{cite journal|last1=Chen |first1=Jun-yuan |last2=Zhu |first2=Mao-yan |last3=Zhou |first3=Gui-qing |year=1995 |title=The early Cambrian medusiform metazoan Eldonia from the Chengjiang Lagerstätte. |journal=Acta Palaeontologica Polonica |volume=40 |issue=3 |pages=213–244 |url=http://www.app.pan.pl/archive/published/app40/app40-213.pdf }}
+* {{cite journal |last1=Clark |first1=H. L. |year=1912 |title=Fossil Holothurians |journal=Science |volume=35 |issue=894 |pages=274–278 |pmid=17809248 |jstor=1638409 |url=https://archive.org/details/jstor-1638409 |access-date=28 December 2024}}
+* {{cite journal|last1=Durham |first1=J. W. |year=1974 |title=Systematic Position of ''Eldonia ludwigi'' Walcott |journal=Journal of Paleontology |volume=48 |issue=4 |pages=750–755 |jstor=1303225 |bibcode=1974JPal...48..524M}}
+* {{cite journal|author=|last1=Fang |first1=Xiang |last2=Mao |first2=Yingyan |last3=Liu |first3=Qi |last4=Yuan |first4=Wenwei |last5=Chen |first5=Zhongyang |last6=Wu |first6=Rongchang |last7=Li |first7=Lixia |last8=Zhang |first8=Yuchen |last9=Ma |first9=Junye |last10=Wang |first10=Wenhui |last11=Zhan |first11=Renbin |last12=Peng |first12=Shanchi |last13=Zhang |first13=Yuandong |last14=Huang |first14=Diying |year=2022 |title=The Liexi fauna: a new Lagerstätte from the Lower Ordovician of South China |journal=Proceedings of the Royal Society B |volume=289 |issue=1978 |page=1—8 |language=en |doi=10.1098/rspb.2022.1027 |pmc=9277276 |url=https://www.researchgate.net/publication/361971078 |access-date=28 December 2024}}
+* {{cite journal|last1=Friend |first1=D. |last2=Zhuravlev |first2=A. Yu. |last3=Solov’ev |first3=I. A. |year=2002 |title=Middle Cambrian Eldonia from the Siberian Platform |journal=Paleontological Journal |volume=36 |issue=1 |pages=20–24 |url=https://www.researchgate.net/publication/287522296_Middle_Cambrian_Eldonia_from_the_Siberian_Platform |access-date=28 December 2024}}
+* {{cite journal|last1=Gabbott |first1=S. E. |last2=Zalasiewicz |first2=J. |last3=Collins |first3=D. |year=2008 |title=Sedimentation of the Phyllopod Bed within the Cambrian Burgess Shale Formation of British Columbia |journal=Journal of the Geological Society |volume=165 |issue=1 |pages=307–318 |doi=10.1144/0016-76492007-023 |bibcode=2008JGSoc.165..307G |s2cid=128685811}}
+* {{cite journal|last1=Henning |first1=Lemche |year=1960 |title=A possible central place for Stenethecoides Resser, 1939 and Cambridium Horny, 1957 (Mollusca Monoplacophora) in invertebrate phylogeny.  |journal=Rep. Int. Geol. Congr.  |volume=XXI Session, Norden |issue=Pt. 22 |pages=92–101}}
+* {{cite journal|last1=Li |first1=Yujing |last2=Dunn |first2=Frances S. |last3=Murdock |first3=Duncan J.E. |last4=Guo |first4=Jin |last5=Rahman |first5=Imran A. |last6=Cong |first6=Peiyun |date=May 10, 2023 |title=Cambrian stem-group ambulacrarians and the nature of the ancestral deuterostome |journal=Current Biology |doi=10.1016/j.cub.2023.04.048 |url=https://doi.org/10.1016/j.cub.2023.04.048 |access-date=11 May 2023|doi-access=free }}
+* {{cite journal|last1=Madsen |first1=F. J.  |year= 1956 |title=''Eldonia'', a Cambrian Siphonophore-formerly interpreted as a Holoturian[sic].  |journal=Videnskabelige Meddelelser Fra Dansk Naturhistorisk Forening I Københaven |volume=118 |pages=7–14}}
+* {{cite journal|last1=Madsen |first1=F. J. |year=1957 |title=On Walcott's Supposed Cambrian Holothurians |journal=Journal of Paleontology |volume=31 |issue=1 |pages=281–282 |jstor=1300523 |bibcode=1974JPal...48..524M}}
+* {{cite journal|last1=Madsen |first1=F. J. |year=1962 |title=The systematic position of the Middle Cambrian fossil ''Eldonia'' |journal=Medd. Dan. Geol. Foren |volume=15 |pages=87–89 |url=http://2dgf.dk/xpdf/bull-1962-15-1-87-89.pdf}}
+* {{cite journal|last1=Schroeder |first1=Natalie I. |last2=Paterson |first2=John R. |last3=Brock |first3=Glenn A. |date=2018 |title=Eldonioids with associated trace fossils from the lower Cambrian Emu Bay Shale Konservat-Lagerstätte of South Australia |url=https://www.cambridge.org/core/journals/journal-of-paleontology/article/abs/eldonioids-with-associated-trace-fossils-from-the-lower-cambrian-emu-bay-shale-konservatlagerstatte-of-south-australia/05F449A7147B8DB89E74F26E2A443E88 |journal=Journal of Paleontology |language=en |volume=92 |issue=1 |pages=80–86 |doi=10.1017/jpa.2018.6 |bibcode=2018JPal...92...80S |s2cid=197586878 |issn=0022-3360}}
+* {{cite journal|last1=Signor |first1=P. W. |last2=Vermeij |first2=G. J. |date=1 July 1994 |title=The Plankton and the Benthos: Origins and Early History of an Evolving Relationship |journal=Paleobiology |volume=20 |issue=3 |pages=259–406 |issn=0094-8373 |jstor=2401005 |doi=10.1017/s0094837300012793 |bibcode=1994Pbio...20..297S |s2cid=87094600}}
+* {{cite journal|last1=Zhang |first1=X-G |last2=Hou |first2=X-G |date=Dec 2007 |title=Gravitational Constraints on the Burial of Chengjiang Fossils |journal=Palaios |volume=22 |issue=6 |pages=513–518 |issn=0172-4622 |doi=10.2110/palo.2006.p06-085r |bibcode=2007Palai..22..448Z |s2cid=128830203 |url=https://www.researchgate.net/publication/255684157_Gravitational_constraints_on_the_burial_of_Chengjiang_Fossils |access-date=28 December 2024 }}
+{{refend}}
 
 ==External links==
 {{Commons category|Eldonia}}
