@@ -8,14 +8,16 @@
 | type_species = ''R. grandis''
 | type_species_authority = Sun & Hou, 1987
 | synonyms = {{taxon list|Brzechowia|Dzik,&nbsp;1991}}
-| synonyms_ref = <ref>{{harvnb|Schroeder|Paterson|Brock|2018|page=81}}</ref>
-| fossil_range = {{fossil range|Early Cambrian | Middle Cambrian | ref =<ref name=Chen1995>{{harvnb|Chen|Zhu|Zhou|1995|page=240}}</ref>}}
+| synonyms_ref = <ref name=Schroeder2018>{{harvnb|Schroeder|Paterson|Brock|2018|page=81}}</ref>
+| fossil_range = {{fossil range|Early Cambrian | Middle Cambrian | ref =<ref name=Chen1995>{{harvnb|Chen|Zhu|Guo|1995|page=240}}</ref>}}
 |display_parents = 4
 }}
 
 '''''Rotadiscus''''' is a genus of discoidal animal known from the Cambrian [[Chengjiang biota]]<ref>{{harvnb|Zhu|Zhao|Chen|2002}}</ref> and classified with the [[eldonioid]]s.<ref name=Caron2010>{{harvnb|Caron|Conway Morris|Shu|Soares|2010}}</ref>
 
-As with other eldonioids, it was originally thought to have been pelagic, but is now thought to be benthic.
+As with other eldonioids, it was originally thought to have been pelagic, but is now thought to be benthic.<ref>{{harvnb|Dzik|Zhao|Zhu|1997}}</ref>
+
+In addition to the type species ''R. grandis'', two other ''Rotadiscus'' species have been proposed.  The first is known only from one complete juvenile specimen and a few fragments, and was originally described as "''Brzechowia'' sp."  It remains without a formal species name, but has been transferred to ''Rotadiscus''.<ref>{{harvnb|Masiak|Żylińska|1994|pages=336–337}}</ref>  The species initially described as ''R. guizhouensis'' has since been reassigned to the genus ''[[Pararotadiscus]]''.<ref name=Schroeder2018 />
 
 A 2023 cladistic analysis based on new fossils places ''Rotadiscus'', along with other eldonioids, as stem-group [[ambulacraria]]ns in the clade [[Cambroernida]].<ref name="li2023">{{harvnb|Li|Dunn|Murdock|Guo|2023}}</ref>
 
@@ -26,7 +28,9 @@ A 2023 cladistic analysis based on new fossils places ''Rotadiscus'', along with
 {{refbegin}}
 * {{cite journal|last1=Caron |first1=J. |last2=Conway Morris |first2=S. |last3=Shu |first3=D. |last4=Soares |first4=D. |year=2010 |editor1-last=Soares |editor1-first=Daphne |title=Tentaculate fossils from the Cambrian of Canada (British Columbia) and China (Yunnan) interpreted as primitive deuterostomes |journal=PLOS ONE |volume=5 |issue=3 |pages=e9586 |bibcode=2010PLoSO...5.9586C |doi=10.1371/journal.pone.0009586 |pmc=2833208 |pmid=20221405 |doi-access=free}}
 * {{cite journal|last1=Chen |first1=Jun-yuan |last2=Zhu |first2=Mao-yan |last3=Guo |first3=Gui-qing |year=1995 |title=The early Cambrian medusiform metazoan Eldonia from the Chengjiang Lagerstätte. |journal=Acta Palaeontologica Polonica |volume=40 |issue=3 |pages=213–244 |url=http://www.app.pan.pl/archive/published/app40/app40-213.pdf }}
+* {{cite journal|last1=Dzik |first1=Jerzy |last2=Zhao |first2=Yuanlong |last3=Zhu |first3=Maoyan |year=1997 |title=Mode of life of the middle Cambrian eldonioid lophophorate ''Rotadiscus'' |journal=Palaeontology |volume=40 |number=2 |pages=385–396 |url=https://www.palass.org/publications/palaeontology-journal/archive/40/2/article_pp385-396 |access-date=28 December 2024}}
 * {{cite journal|last1=Li |first1=Yujing |last2=Dunn |first2=Frances S. |last3=Murdock |first3=Duncan J.E. |last4=Guo |first4=Jin |last5=Rahman |first5=Imran A. |last6=Cong |first6=Peiyun |date=May 10, 2023 |title=Cambrian stem-group ambulacrarians and the nature of the ancestral deuterostome |journal=Current Biology |doi=10.1016/j.cub.2023.04.048 |url=https://doi.org/10.1016/j.cub.2023.04.048 |access-date=11 May 2023|doi-access=free }}
+* {{cite journal|last1=Masiak |first1=M. |last2=Żylińska |first2=A. |year=1994 |title=Burgess Shale-type fossils in Cambrian sandstones of the Holy Cross Mountains |journal=Acta Palaeontologica Polonica |volume=39 |number=4 |pages=329–340 |url=https://www.app.pan.pl/archive/published/app39/app39-329.PDF |access-date=28 December 2024}}
 * {{cite journal|last1=Schroeder |first1=Natalie I. |last2=Paterson |first2=John R. |last3=Brock |first3=Glenn A. |date=2018 |title=Eldonioids with associated trace fossils from the lower Cambrian Emu Bay Shale Konservat-Lagerstätte of South Australia |url=https://www.cambridge.org/core/journals/journal-of-paleontology/article/abs/eldonioids-with-associated-trace-fossils-from-the-lower-cambrian-emu-bay-shale-konservatlagerstatte-of-south-australia/05F449A7147B8DB89E74F26E2A443E88 |journal=Journal of Paleontology |language=en |volume=92 |issue=1 |pages=80–86 |doi=10.1017/jpa.2018.6 |bibcode=2018JPal...92...80S |s2cid=197586878 |issn=0022-3360}}
 * {{cite journal |last1=Zhu |first1=Mao-Yan |last2=Zhao |first2=Yuan-Long |last3=Chen |first3=Jun-Yuan |date=2002-03-01 |title=Revision of the Cambrian discoidal animals ''Stellostomites eumorphus'' and ''Pararotadiscus guizhouensis'' from South China |url=https://www.sciencedirect.com/science/article/pii/S0016699502000256 |journal=Geobios |language=en |volume=35 |issue=2 |pages=165–185 |doi=10.1016/S0016-6995(02)00025-6 |bibcode=2002Geobi..35..165Z |issn=0016-6995}}
 {{refend}}
