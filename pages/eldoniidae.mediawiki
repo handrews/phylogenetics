@@ -10,13 +10,23 @@
 * ? †''[[Stellostomites]]'' {{small|Sun&nbsp;Hou,&nbsp;1987}}
 }}
 
-'''Eldoniidae''' is an extinct family of [[Cambrian]] to [[Ordovician]] disc-shaped [[cambroernid]]s.<ref name=Li2023>{{harvnb|Li|Dunn|Murdock|Guo|2023}}</ref>  Compared to other families within the class [[Eldonioidea]], the Eldoniidae have more flexible discs with relatively simple radial ornamentation.<ref name=Schroeder2018>{{harvnb|Schroeder|Paterson|Brock|2018}}</ref>  While the term "eldoniid" technically refers only to this family, it has been used informally in a more expansive sense to incorproate all of the Eldonioidea by some authors.<ref name=Caron2010>{{harvnb|Caron|Conway Morris|Shu|Soares|2010}}</ref>
+'''Eldoniidae''' is an extinct family of [[Cambrian]] to [[Ordovician]] disc-shaped [[eldonioids]].  It contains ''Eldonida'', which with over 3000 specimens collected is the most well-known species within the wider Eldonioidea.<ref name=Li2023>{{harvnb|Li|Dunn|Murdock|Guo|2023}}</ref>
 
-''[[Eldonia]]'' is the only uncontested genus within Eldoniidae.  Some authors consider ''[[Stellostomites]]'' to be a distinct genus within the family,<ref name=Caron2010 /> while others consider it to be a junior synonym of ''Eldonia'', with its sole species ''S. eumorphus'' being renamed to ''E. eumorpha''.<ref name=Schroeder2018 />
+==Description==
+Compared to other families within the class [[Eldonioidea]], the Eldoniidae have more flexible discs with relatively simple radial ornamentation.<ref name=Schroeder2018>{{harvnb|Schroeder|Paterson|Brock|2018}}</ref>  While the term "eldoniid" technically refers only to this family, it has been used informally in a more expansive sense to incorproate all of the Eldonioidea by some authors.<ref name=Caron2010>{{harvnb|Caron|Conway Morris|Shu|Soares|2010}}</ref>
 
+==Classification==
+''[[Eldonia]]'' is the only uncontested genus within Eldoniidae.  ''Yunnanomedusa elegans'' is considered to be a junior synonym of ''Stellostomites eumorphus''.  Some authors consider ''[[Stellostomites]]'' to be a distinct genus within the family,<ref name=Caron2010 /> while others consider it to be a junior synonym of ''Eldonia'', with its sole species ''S. eumorphus'' being renamed to ''E. eumorpha''.<ref name=Schroeder2018 />
+
+The taxon Eldoniidae was first erected in 1912 to contain the genus ''Eldonia'', which was at the time seen as one of many enigmatic Cambrian organisms discovered in the [[Burgess Shale]].  In 1991, the class Eldonioidea was erected to contain both the Eldoniidae (emended to encompass discoidal taxa with radial ribs including ''Stellostomites'' (=''Yunnanomedusa'') and ''[[Velumbrella]]'') and a new family, [[Rotadiscidae]], which at the time included only ''[[Rotadiscus]]''.
+
+Later, the discovery of the species ''[[Pararotadiscus guizhouensis]]'' (originally described as ''Rotadiscus guizhouensis'') caused researchers to see similarities among ''Rotadiscus'',''Pararotadiscus'', and ''Velumbrella''.  These genera were grouped under Rotadiscidae, leaving only ''Eldonia'' and its possible junior synonym ''Stellostomites'' within Eldoniidae.
+
+The Eldonioidea have since been determined to be a derived class within the stem-[[ambulacrarian]] clade [[Cambroernida]].
 
 ==References==
 {{Reflist}}
+
 ===Works cited===
 {{refbegin}}
 * {{Cite journal |last1=Caron |first1=J. |last2=Conway Morris |first2=S. |last3=Shu |first3=D. |last4=Soares |first4=D. |year=2010 |editor1-last=Soares |editor1-first=Daphne |title=Tentaculate fossils from the Cambrian of Canada (British Columbia) and China (Yunnan) interpreted as primitive deuterostomes |journal=PLOS ONE |volume=5 |issue=3 |pages=e9586 |bibcode=2010PLoSO...5.9586C |doi=10.1371/journal.pone.0009586 |pmc=2833208 |pmid=20221405 |doi-access=free}}
