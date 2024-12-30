@@ -1,6 +1,7 @@
 {{Short description|Extinct genus of disc-shaped animal}}
 {{For|the genus of snails|Rotadiscus (gastropod)}}
 {{Automatic taxobox
+| fossil_range = {{fossil range|Early Cambrian | Middle Cambrian | ref =<ref name=Chen1995>{{harvnb|Chen|Zhu|Zhou|1995|page=240}}</ref>}}
 | taxon = Rotadiscus
 | image = Chengjiang Rotadiscus.jpg
 | image_caption = Fossil of ''Rotadiscus''
@@ -9,8 +10,7 @@
 | type_species_authority = Sun & Hou, 1987
 | synonyms = {{taxon list|Brzechowia|Dzik,&nbsp;1991}}
 | synonyms_ref = <ref name=Schroeder2018>{{harvnb|Schroeder|Paterson|Brock|2018|pages=80–81}}</ref>
-| fossil_range = {{fossil range|Early Cambrian | Middle Cambrian | ref =<ref name=Chen1995>{{harvnb|Chen|Zhu|Zhou|1995|page=240}}</ref>}}
-|display_parents = 4
+| display_parents = 4
 }}
 
 '''''Rotadiscus''''' is a genus of discoidal animal known from the Cambrian [[Chengjiang biota]]<ref>{{harvnb|Zhu|Zhao|Chen|2002}}</ref> and classified with the [[eldonioid]]s.<ref name=Schroeder2018 />
