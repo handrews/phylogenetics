@@ -83,13 +83,43 @@ OPEN ACCESS
 (OK maybe I'm going overboard here)
 ------------
 Chapman, 1926 Proceedings of the Royal Society of Victoria. New series Article: New or little-known fossils in the National Museum. Part XXX. A Silurian jelly-fish
+PUBLIC DOMAIN
 
+;13
 * Class Hydrozoa
 ** Sub-Clas Scyphomedusae
 *** Order Discophora
-**** Genus ''Discophyllum (J. Hall 1847)
+**** Genus ''Discophyllum'' (J. Hall 1847)
 ***** ''D. peltatum'' ([presumably] J. Hall 1847)
 ***** ''D. mirabile'' sp. nov.
+:The circular form of the umbrella is distinctly shown, and only a little distorted by pressure. The diameter of this portion is 118 mm. The total probable diameter, including the tentacles, is 168 mm., or about 6 1/2 inches.
+:The radials of the umbrella are seen as perfect ridges in the fossil, and therefore there has been the least amount of compres- sion compatible with its preservation. The number of radial ridges on the umbrella is about 56. These are rounded to roundly depressed, and are crossed by strong, concentric ridges that bear a composite undulate ornament. The frilled ribs extend practically to the centre of the umbrella.
+
+------------
+Stasińska 1960
+
+:On the basis of the material studied, it is not possible to make more exact comparisons between the Cambrian jellyfish from Brzechów and contemporary forms. Nevertheless, some structural details provide some indications for assigning this jellyfish to a specific group.
+
+:First, the presence of the velum, which must have been strongly muscular, suggests that VelumbreIla belonged to the velum jellyfish of the class Hydrozoa. The free edge of the umbrella has left a second deep and clear trace. This indicates the presence of a stinging ridge, characteristic of jellyfish belonging to the order Trachylinida. Other structural features of the Medusae of this order can also be observed in the Brzechow prints, e.g. traces of circular muscular filaments, strongly developed in contemporary Trachylinida. The clear traces of the tentacles also indicate that they must have been rather stiff, i.e. full of IDS, without a canal. The endoderm filling the axial part of contemporary Trachylinida forms an axial rod, thus giving the tentacles greater stiffness, which gives them greater chances of preservation in the fossil state. Traces of the gonads are not visible, which suggests that they must have been arranged along the radial canals. For example, in the genus Pan tachogon Maas, 1893 (Russel, 1953) of the family Rhopalonematidae, the gonads are arranged along the entire length of the radial canals. Such an arrangement of the gonads does not allow us to hope that traces will be found on fossil specimens. Other features, characteristic of the Trachyneminae, would also correspond to the Brzechôw jellyfish, the jellyfish belonging to this subfamily being flat and wider than they are high. The mesoglea is not abundant and the subumbrella and velum are strongly muscular. On the other hand, the number of radial canals does not agree, because in the recent Trachyneminae there are only eight. Not only the supposed mode of life of Velumbrella, but probably also the appearance must have evoked those of the contemporary Gonionemus. The genus Gonionemus belongs to the order Limnomedusae created by Kramp (1938). This order includes several genera previously incorporated into the Traohymedusae. These two orders are quite close. The genus Gonionemus has been placed in the family Olindiidae, whose representatives have, in addition to four or six simple or branched radial canals, additional converging canals; thus, for example, the genus Olindias has, in addition to four main canals, numerous additional canals that do not open into the gastro-vascular cavity.  It is not possible to observe how the radial canals end in the genus Velumbrella, because the central part is never preserved to the point of allowing the course of the canals to be followed in their terminal sectors, where they join the central field. It seems rather that they are straight canals ending in the central field and not branched, although this cannot be established with certainty.
+:If we consider the Cambrian Jellyfish, judging from the descriptions in the literature to which I have been able to access, only two genera could be considered: Beluineûa Sprigg and Ediacaria Sprigg from the Lower Cambrian of Australia. Both genera have been conditionally incorporated into the order Traçh ylinida. Beltanella
+differs in the number of radial canals, which are only four, and in
+the gonads arranged between the canals. On the other hand, Ediacaria flindersi
+(Harrington & Moore, 1956, p. 74) seems to have many characters
+in common with the genus Velumbrella. In Edia caria the lower part turned towards the substrate has probably been preserved; therefore,
+The velum could not be imprinted as well as in the genus Velumbrella. The number of radial canals in Ediacaria is also
+significantly greater. Of the canals visible on the imprints
+(Harrington & Moore, 1956, p. 74), only some end in the central part. On the other hand, the shorter furrows between them are probably parts of canals that were below the umbrella.
+This is why the canals are generally arranged irregularly. In
+Velumbrella, in general, the canals are only partially visible; on the other hand, the short furrows, which are probably the trace of the part
+of the canals lying below the umbrella, are rarely marked.
+In sum, it seems that Ediacaria could have about 50 radial
+canals or a smaller number of main canals that branched.
+Their total number was, however, greater than that of the genus Velumbrella.
+
+Following the comparison with contemporary Medusae and the
+descriptions of Cambrian fossil Medusae, it seems that the genera
+Velumbrella and Ediacaria could belong to a single extinct family
+that should be integrated into the order Trachyrnedusae or the neighboring order Limnomedusae.
 
 ------------
 Madsen, 1962 The systematic position of the Middle Cambrian fossil Eldonia
