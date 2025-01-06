@@ -1,0 +1,155 @@
+Chiungchssu =?= Qiongzhusi == Heilinpu
+* '''Cambrian'''
+** '''Terreneuvian'''
+*** '''Fortunian'''
+
+*** '''"Stage 2"'''
+
+
+** '''"Series 2"'''
+*** '''"Stage 3"'''
+**** Chengjiang
+***** Mafang Locality
+****** 1 ''Phlogites longus'' (Zhao ''et al.'' 2016)
+***** Chiungchssu / Heilinpu Fmn
+****** Yu'anshan Member
+******* more than 50 ''R. grandis'' (Schroeder ''et al.'' 2018)
+******* Eoredlichia Zone
+******** more than 2000 ''Eldonia eumorpha'' (Schroeder ''et al.'' 2018)
+******* Haiyan Section
+******** Eoredlichia-Wutingaspis Zone
+********* at least 8 ''Herpetogaster haiyanensis''
+******* Ercaicun section
+******** Eoredlichia Zone
+********* ?? ''Phlogites longus'' (Luo ''et al.'' 1999) n/e
+********* ?? ''Phlogites brevis'' (Luo ''et al.'' 1999) n/e
+********* ?? ''Phlogites longus'' (Chen L-z., Luo?, Hu? 2002) n/e
+********* ?? ''Phlogites brevis'' (Chen L-z., Luo?, Hu? 2002) n/e
+********* 2 ''Phlogites longus'' (Huo ''et al.'' 2006)
+********* 18 (5 nearly complete) ''Phlogites longus''
+**** Spain
+***** Cantabrian Technostratigraphic Zone
+****** Herrería Fmn
+******* ?? ''Eldonia ludwigi'' (Meer Mohr and Okulitch 1967)
+**** Greenland
+***** Sirius Passet
+
+*** '''"Stage 4"'''
+**** South Australia
+***** Emu Bay Shale
+**** Hunan
+***** Balang Fmn
+***** more than 60 ''Herpetogaster collinsi''
+**** Nevada
+***** Ruin Wash Lagerstätte
+****** Pioche Fmn
+******* Comet Shale Member
+******** Nephrolenellus multinodus Zone
+********* 16 ''Herpetogaster collinsi''
+**** California (near Nevada, called Nevada in paper title)
+***** Carrara Fmn
+****** Echo Shale Member
+******* ?Bonnia-Olenellu Biozone? (Dyeran)
+******** 3 cf. ''Discophyllum'' sp. 
+
+** '''Miaolingian'''
+*** '''Wuliuan'''
+**** Kaili Biota
+**** British Columbia
+***** Burgess Shale Fmn (and Stephen Shale Fmn?)
+****** 101 ''Herpetogaster collinsi'' (Caron ''et al.'' 2010)
+***** Burgess Shale Fmn (and ?Duchesnay Fmn?)
+****** more than 1000 ''Eldonia ludwigi'' total (Schroeder ''et al.'' 2018)
+**** Utah
+***** Spence Shale
+****** 1 ''Eldonia ludwigi'' (Schroeder ''et al.'' 2018)
+***** Marjum Fmn
+****** 2 ''Eldonia ludwigi'' (Schroeder ''et al.'' 2018)
+
+*** '''Drumian'''
+
+*** '''Guzhangian'''
+**** Siberia
+***** Anbar Massif
+****** Siligir Fmn
+******* Lejopyge laevigata–Aldanaspis truncata Zone (crowning Mayan Stage)
+******** 1 ''Eldonia ludwigi''
+
+
+** '''Furongian'''
+*** '''Paibian'''
+
+*** '''Jiangshanian'''
+
+*** '''"Stage 10"'''
+
+
+
+* '''Ordovician'''
+** '''Early'''
+*** '''Tremadocian'''
+
+*** '''Floian'''
+
+
+** '''Middle'''
+*** '''Dapingian'''
+
+*** '''Darriwilian'''
+
+
+** '''Late'''
+*** '''Sandbian'''
+
+*** '''Katian'''
+**** Morocco
+
+*** '''Hirnantian'''
+
+
+
+* '''Silurian'''
+** '''Llandovery'''
+*** '''Rhuddanian'''
+
+*** '''Aeronian'''
+
+*** '''Telychian'''
+
+
+** '''Wenlock'''
+*** '''Sheinwoodian'''
+
+*** '''Homerian'''
+
+
+** '''Ludlow'''
+*** '''Gorstian'''
+
+*** '''Ludfordian'''
+
+
+** '''Přídolí'''
+
+
+
+* '''Devonian'''
+** '''Early'''
+*** '''Lochkovian'''
+
+*** '''Pragian'''
+
+*** '''Emsian'''
+
+
+** '''Middle'''
+*** '''Eifelian'''
+
+*** '''Givetian'''
+
+
+** '''Late'''
+*** '''Frasnian'''
+
+*** '''Famennian'''
+

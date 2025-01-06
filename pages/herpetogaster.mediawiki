@@ -1,0 +1,40 @@
+{{Short description|Extinct genus of Cambrian animals}}
+{{Automatic taxobox
+| fossil_range = Early to mid [[Cambrian]]: {{fossil range|Chengjiang|Burgess shale}}
+| image = Herpetogaster collinsi.png
+| image_caption = Specimens and diagram
+| display_parents = 3
+| taxon = Herpetogaster
+| authority = Caron ''et al.'', 2010
+| subdivision_ranks = Species
+| subdivision =  * '''''H. collinsi''''' <small>Caron ''et al.'', 2010</small>
+* '''''H. haiyanensis''''' <small>Yang ''et al.'', 2020</small>
+}}
+
+'''''Herpetogaster''''' is an [[extinct]] [[cambroernid]] [[genus]] of animal from the [[Early Cambrian]] [[Chengjiang biota]] of China, Blang Formation of China, [[Pioche Formation]] of Nevada and [[Middle Cambrian]] [[Burgess Shale]] of Canada containing the species '''''Herpetogaster collinsi''''' and '''''Herpetogaster haiyanensis'''''.<ref name="Caron_2010">{{Cite journal|last1=Caron|first1=Jean-Bernard|last2=Conway Morris|first2=Simon|last3=Shu|first3=Degan|date=2010-03-08|title=Tentaculate Fossils from the Cambrian of Canada (British Columbia) and China (Yunnan) Interpreted as Primitive Deuterostomes|journal=PLOS ONE|volume=5|issue=3|pages=e9586|doi=10.1371/journal.pone.0009586|issn=1932-6203|pmc=2833208|pmid=20221405|bibcode=2010PLoSO...5.9586C|doi-access=free}}</ref><ref>{{Cite journal|last1=Kimmig|first1=Julien|last2=Meyer|first2=Ronald C.|last3=Lieberman|first3=Bruce S.|date=2019-01-01|title=''Herpetogaster'' from the early Cambrian of Nevada (Series 2, Stage 4) and its implications for the evolution of deuterostomes|journal=Geological Magazine|volume=156|issue=1|pages=172–178|doi=10.1017/S0016756818000389|bibcode=2019GeoM..156..172K|s2cid=134642027|issn=1469-5081}}</ref><ref>{{Cite journal|last1=Yang|first1=Xianfeng|last2=Kimmig|first2=Julien|last3=Lieberman|first3=Bruce S.|last4=Peng|first4=Shanchi|date=2020-08-28|title=A new species of the deuterostome ''Herpetogaster'' from the early Cambrian Chengjiang biota of South China|journal=The Science of Nature|volume=107|issue=5|pages=37|doi=10.1007/s00114-020-01695-w|pmid=32857275|pmc=7544619|bibcode=2020SciNa.107...37Y|issn=1432-1904|doi-access=free}}</ref><ref>{{Cite journal |last=Yang |first=Xianfeng |last2=Kimmig |first2=Julien |last3=Schiffbauer |first3=James D. |last4=Peng |first4=Shanchi |date=2023-11-07 |title=Herpetogaster collinsi from the Cambrian of China elucidates the dispersal and palaeogeographic distribution of early deuterostomes and the origin of the ambulacrarian larva |url=https://peerj.com/articles/16385 |journal=PeerJ |language=en |volume=11 |pages=e16385 |doi=10.7717/peerj.16385 |issn=2167-8359|doi-access=free |pmc=10637255 }}</ref> 
+
+==Description==
+[[File:Herpetogaster collinsi reconstruction.png|thumb|left|Restoration]]
+'' H. collinsi'' is known from over 160 specimens. It possessed a pair of branching tentacles and a tough but flexible body that curved helically to the right like a ram's horn and was divided into at least 13 segments. A flexible, extensible [[stolon]] emerged from the body at about the ninth segment and secured the animal to the sea floor, often by attaching to the [[sponge]] ''[[Vauxia]].'' It is not known whether the attachment was permanent.<ref>{{Cite web|url=https://burgess-shale.rom.on.ca/en/fossil-gallery/view-species.php?id=66&m=9&|title=The Burgess Shale|last=Canada|first=Royal Ontario Museum and Parks|date=2011-06-10|website=burgess-shale.rom.on.ca|language=en|access-date=2018-10-27|archive-date=2020-06-16|archive-url=https://web.archive.org/web/20200616112945/https://burgess-shale.rom.on.ca/en/fossil-gallery/view-species.php?id=66&m=9&|url-status=dead}}</ref> 
+
+A mouth opened between the tentacles, leading internally to a pharynx, a large lentil-shaped stomach, a narrower straight intestine, and an anus at the end of the "tail." The tentacles were softer than the body and probably extensible. A dark line running down the center of each tentacle and connecting with the head is tentatively reconstructed as a hydrostatic canal and/or vascular system; if this interpretation is correct, the tentacles might have been controlled by fluid pressure, and individuals could have fed by snaring either small prey or edible particles in the tentacles and bringing the tentacles to the mouth, as in living sea cucumbers. Structures on the back of the head have been noted as potential pharyngeal pores, which suggests a relationship with early echinoderms. The whole animal was 3-4 cm long. They were probably gregarious, as up to eight individuals have been found on the same slab.<ref name="Caron_2010" /> The six specimens of ''Herpetogaster'' are known from the Greater [[Phyllopod bed]], where they comprise less than 0.01% of the community.<ref name=Caron2006>{{Cite journal|last1=Caron |first1=Jean-Bernard|last2=Jackson |first2=Donald A.|title=Taphonomy of the Greater Phyllopod Bed community, Burgess Shale |journal=PALAIOS |volume=21 |issue=5 |pages=451–65|date=October 2006|doi=10.2110/palo.2003.P05-070R|jstor=20173022|bibcode=2006Palai..21..451C|s2cid=53646959}}</ref>
+
+== See also ==
+
+* [[Paleobiota of the Burgess Shale]]
+
+==References==
+{{Reflist}}
+
+== External links ==
+* {{Cite web|date=2011|title=''Herpetogaster collinsi''|work=Burgess Shale Fossil Gallery|publisher=Virtual Museum of Canada|url=http://burgess-shale.rom.on.ca/en/fossil-gallery/view-species.php?id=66|archive-url=https://web.archive.org/web/20201112025257/http://burgess-shale.rom.on.ca/en/fossil-gallery/view-species.php?id=66|archive-date=2020-11-12|url-status=dead|access-date=2023-01-21}}
+
+{{Taxonbar|from=Q5743704}}
+
+[[Category:Cambroernids]]
+[[Category:Burgess Shale fossils]]
+[[Category:Cambrian genus extinctions]]
+[[Category:Fossil taxa described in 2010]]
+
+[[it:Herpetogaster collinsi]]
+

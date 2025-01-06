@@ -13,9 +13,18 @@
 | display_parents = 4
 }}
 
-'''''Rotadiscus''''' is a genus of discoidal animal known from the Cambrian [[Chengjiang biota]]<ref>{{harvnb|Zhu|Zhao|Chen|2002}}</ref> and classified with the [[eldonioid]]s.<ref name=Schroeder2018 />
+'''''Rotadiscus''''' is a genus of [[eldonioid]] [[cambroernid]] known from the Early Cambrian [[Chengjiang biota]]<ref>{{harvnb|Zhu|Zhao|Chen|2002}}</ref> and the Early to Middle Cambrian of Poland.<ref name=Schroeder2018 />
 
+==Description==
+
+==Distribution==
+
+''Rotadiscus'' is primarily known from more than 50 specimens of ''R. grandis'' from the [[Cambrian Stage 3]] [[Maotianshan Shales]] in Chiungchussu Formation of China.  Five additional specimens from the Ociesęki and Słowiec formations of the Holy Cross Mountains of Poland are attributed to an unnamed ''Rotadiscus'' species.<ref name=Schroeder2018 />  This unnamed species was initially described as ''Brzechowia''.<ref>{{harvnb|Masiak|Żylińska|1994|pages=336–337}}</ref>
+
+==Mode of life==
 As with other eldonioids, it was originally thought to have been pelagic, but is now thought to be benthic.<ref>{{harvnb|Dzik|Zhao|Zhu|1997}}</ref>
+
+==Taxonomy==
 
 In addition to the type species ''R. grandis'', two other ''Rotadiscus'' species have been proposed.  The first is known only from one complete juvenile specimen and a few fragments, and was originally described as "''Brzechowia'' sp."  It remains without a formal species name, but has been transferred to ''Rotadiscus''.<ref>{{harvnb|Masiak|Żylińska|1994|pages=336–337}}</ref>  The species initially described as ''R. guizhouensis'' has since been reassigned to the genus ''[[Pararotadiscus]]''.<ref name=Schroeder2018 />
 
