@@ -6,9 +6,10 @@
 | display_parents = 3
 | taxon = Herpetogaster
 | authority = Caron ''et al.'', 2010
+| type_species=†'''''H. collinsi'''''
+| type_species_authority = Caron ''et al.'', 2010
 | subdivision_ranks = Species
-| subdivision =  * '''''H. collinsi''''' <small>Caron ''et al.'', 2010</small>
-* '''''H. haiyanensis''''' <small>Yang ''et al.'', 2020</small>
+| subdivision =  {{species list|†'''''H. collinsi'''''|Caron&nbsp;''et&nbsp;al.'',&nbsp;2010|†'''''H. haiyanensis'''''|Yang&nbsp;''et&nbsp;al.'',&nbsp;2020}}
 }}
 
 '''''Herpetogaster''''' is an [[extinct]] [[cambroernid]] [[genus]] of animal from the [[Early Cambrian]] [[Chengjiang biota]] of China, Blang Formation of China, [[Pioche Formation]] of Nevada and [[Middle Cambrian]] [[Burgess Shale]] of Canada containing the species '''''Herpetogaster collinsi''''' and '''''Herpetogaster haiyanensis'''''.<ref name="Caron_2010">{{harvnb|Caron|Conway Morris|Shu|2010}}</ref><ref>{{harvnb|Kimmig|Meyer|Lieberman|2019}}</ref><ref>{{harvnb|Yang|Kimmig|Lieberman|Peng|2020}}</ref><ref>{{harvnb|Yang|Kimmig|Schiffbauer|Peng|2023}}</ref> 
