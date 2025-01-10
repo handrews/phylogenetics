@@ -1,0 +1,188 @@
+==2010-03-08-p Tentaculate Fossils from the Cambrian of Canada (British Columbia) and China (Yunnan) Interpreted as Primitive Deuterostomes.pdf==
+
+* Etymology
+* ''H. collinsi'' specimens
+** Holotype ROM 58051
+** 100 additional specimens: ROM 57164, 57167, 58022-58090, 58158-58160, 58928-58930, 59850, 59852-59854
+** Stratigraphy:
+*** 11 bed assemblages from the Walcott Quarry
+**** 3 bed assemblages preserve both ''H. collinsi'' and ''E. ludwigi''
+*** 20 bed assemblages from the Raymond Quarry
+*** 2 other localities
+**** Burgess Shale and Stephen Shale Fmns, Middle Cambrian
+***** Yoho and Kootenay National Parks, British Columbia, Canada
+** Description:
+*** segmented body, coiled dextrally
+*** short head bearing...
+**** pharyngeal structures, possibly lateral pores
+**** prominent anterior bilateral dendritic tentacles
+***** fractal-like branching of tentacles
+***** emerge from corners of the head
+***** softer than the rest of the body
+***** appear to arise as a pair on each side, but could be immediately bifurcating
+***** tentacles vary in length within and between pairs
+***** probably extensible
+*** trunk
+**** sub-cylindrical
+**** divided into two subsections [??]
+**** narrowing posteriorly
+**** at least 13 trunk segments, well developed on dorsal anterior
+**** not mineralized but encased in tough but flexible integument
+*** Ventral and contractile adhesive stolon
+**** sometimes with terminal disc
+**** probably extensible
+*** digestive tract
+**** anterior mouth, pharynx, voluminous stomach, narrow intestine, terminal anus
+**** stomach and intestine of sub-equal lengths, un-looped, with triangular mesenterial insertions
+* Mode of life:
+** Sometimes attached to sponge ''Vauxia''
+** gregarious lifestyle (clusters of specimens, up to 8 on the same slab)
+* Evolution
+** narrative of transition through ''Phlogities'' to eldonioids
+** notes lack of segments in ''Phlogites''
+** notes eldonioid radial mesenteries possibly originated from segments
+** notes "broadly similar age" of all cambroernids
+** regarding affinities: "it is important to stress that from a Cambrian perspective the morphological differences between these various alternatives were probably insignificant."
+** notes similarity to dorsal segmentation in truk of yunnanozoans
+** "Thus, one of the key steps in their evolution was arguably the adoption of initially a semi-sessile mode of life. This was marked by acquisition of prominent tentacles for suspension feeding, a reduction of the head region with a corresponding re-organization of the coelomic cavities, and ultimately the loss of segmentation (albeit partially retained in Herpetogaster)."
+
+==2012-00-00-p Earth and Life.pdf==
+Has a general description but as if newly described?  Feels almost plagiarized from ''H. collinsi'' discovery paper (but it's J.-Y. Chen, so... unethical garbage isn't a shock)
+
+==2014-03-15-p Hemichordata (Pterobranchia, Enteropneusta) and the fossil record.pdf==
+Disputes any homologies between ''Herpetogaster'' and hemichordates.
+
+==2015-05-00-p New records of Burgess Shale-type taxa from the middle Cambrian of Utah.pdf==
+Brief note of the cambroernid hypothesis, but nothing worth citing.
+
+==2017-00-00-p The Cambrian Fossils of Chengjiang, China, 2nd Edition.pdf==
+Notes ''Herpetogaster'''s role in building the cambroernid hypothesis, but nothing of specific interest regarding the genus.
+
+==2019-01-00-p Herpetogaster from the early Cambrian of Nevada (Series 2, Stage 4) and its implications for the evolution of deuterostomes.pdf==
+
+* ''H. collinsi'' specimens
+** KUMPI 482878–482893 (16 specimens)
+* stratigraphy
+** Pioche Fmn
+*** Ruin Wash Lagerstätte
+**** Comet Shale Member
+***** ''Nephrolenellus multinodus'' biozone (Cambrian Series 2, Stage 4)
+
+Pretty much the same as Burgess Shale specimens all around, including 4 specimens on one slab indicating gregariousness.
+
+Discusses (and mostly dismisses) a tunicate affinity, apparently because there just wasn't anything new that was really worth saying.
+
+* Deuterostomia (Grobben 1908)
+** ? SP Ambulacraria (Metschnikoff 1881)
+*** Cambroernida (Caron, Conway Morris and Shu 2010)
+**** g ''Herpetogaster'' (Caron, Conway Morris and Shu 2010)
+***** ''H. collinsi'' (Caron, Conway Morris and Shu 2010)
+
+==2020-08-28-p A new species of the deuterostome Herpetogaster from the early Cambrian Chengjiang biota of South China.pdf==
+* Deuterostomia (Grobben 1908)
+** Ambulacraria (Metschnikoff 1881)
+*** Cambroernida (Caron, Conway Morris and Shu 2010)
+**** ''Herpetogater'' (Caron, Conway Morris and Shu 2010)
+***** ''H. haiyanensis'' (Yang, Kimmig, Lieberman and Peng 2020)
+
+* first occurrence of the genus in Gondwana
+* first juvenile specimen
+* oldest specimens to date
+* differs from ''H. collinsi'' by
+** having a stolon separated into an outer and inner layer (or taph?)
+** the segmentation of the body
+** the shape and number of branches of the tentacles
+* closely related to ''Phlogites'' and then successively more distantly related to ''Cotyledon'' [sic] and ''Eldonia''
+* may have fed on hyolithids
+
+* ''H. haiyanensis'' specimens
+** at least 8
+** holotype: YKLP 14404
+** paratypes: YKLP 14405–YKLP 14411
+* stratigraphy: Chengjiang
+** Chiungchussu Fmn
+*** Yu'anshan Member (Cambrian Stage 3)
+**** ''Eoredlichia-Wutingaspis'' biozone
+***** Haiyan section
+****** single 35cm^2 slab
+
+* ''H. collinsi'' specimens (recap)
+** Pioche Fmn
+*** Comet Shale Member (Cambrian Stage 4)
+**** ''Nephrolenellus multinodus'' biozone
+***** Ruin Wash
+** Burgess Shale and Stephen Shale Fmns (Wuliuan)
+*** Yoho and ootenay National Parks, Br. Col., Canada
+
+* ''Herpetogaster'' diagnosis (based on Caron ''et al.'' 2010):
+** segmented body, coiled dextrally
+** short head bearing prominent bilateral anterior dendritic tentacles...
+*** of sub-equal length
+*** in two-by-two arrangement
+*** with pharyngeal structures, possibly lateral pores
+** trunk sub-cylindrical
+*** divided into two sub-sections
+*** narrowing posteriorly
+** ventral and contractile adhesive stolon, with terminal disc
+** digestive tract
+*** anterior mouth
+*** pharynx
+*** large stomach relative to the rest of the digestive tract
+*** narrow intestine
+*** terminal anus
+*** stomach and intestine of sub-equal lengths
+**** un-looped
+**** with trangular mesenterial insertions
+
+* ''H. haiyanensis'' diagnosis
+** bilateral symmetry
+** unevenly segmented body
+*** ranging from curved to discoidal
+*** coiled dextrally
+** slender tentacles emerging from anterior-most segment
+** tentacles branching at base and throughlut length
+*** preserving over 100 branches
+** trunk divided into two sub-sections
+*** tapering towards the posterior
+*** at least 11 segments
+** ventral and contratile adhesive stolon
+*** with terminal holdfast
+** adult specimens 21 to 24mm
+** possible juvenile 3.8mm
+
+* stolon in two layers corresponds to condition in ''Siphusauctum''
+** two layers might be a taphonomic artifact
+
+==2023-06-19-p Cambrian stem-group ambulacrarians and the nature of the ancestral deuterostome.pdf==
+
+* ''Herpetogaster'' is earliest-diverging cambroernid
+** and cambroernids are in the ambulacrarian stem
+* ''Herpetogaster'' and ''Eldonia'' have more plumose tentacles than other cambroernids
+
+* ancestral ambulacrarian
+** equivocal about branched tentacular sytstem (prob. 0.48)
+*** if present, series of free feeding appendages (cambroernids/pterobranches)
+** non-oral pharyngeal openings likely 
+*** lost in tentaculate feeders, enlarged in non-tentaculate
+** serialized body of ''Herpetogaster'' aligns with chordates
+
+* ancestral deuterostome
+** post-anal region not plesiomorphic
+*** might be deep homology of hox genes, but not of expression
+*** notes significant differences in chordate and hemichordate tails
+** pharyngeal openings present (prob. 0.84)
+*** but gill bars were not (prob. 0.06)
+** no U-shaped gut
+reconstruction: bilaterally symmetrical chordate-like animal with a terminal anus and pharyngeal openings, which were most likely used for active suspension feeding, as in extant cephalochordates, urochordates, and enteropneusts.  This argues against the traditional hypothesis of a sessile tentaculate ancestor and is instead more compatible with the mobile filter-feeding worm proposed by Cameron.
+
+==2022-07-00-p The soft-bodied biota of the Cambrian Series 2 Parker Quarry Lagerstätte of northwestern Vermont, USA.pdf==
+
+Single poorly preserved specimen tentatively assigned to ''Herpetogaster'', seems more like ''H. haiyanensis'' than ''H. collinsi'' but really hard to say.
+
+==2023-11-07-p Herpetogaster collinsi from the Cambrian of China elucidates the dispersal and palaeogeographic distribution of early deuterostomes and the origin of the ambulacrarian larva.pdf==
+
+* specimens of ''H. collinsi''
+** more than 60
+
+* tenative tonaria-like larva seen as possible explanation for wide distribution
+
