@@ -1,7 +1,31 @@
+{{Short description|Extinct group of marine invertebrates}}
+'''Pelmatozoa''' is a possible [[clade]] or [[evolutionary grade|grade]] within the phylum [[Echinodermata]].  As originally defined by [[Rudolph Leuckart]]  its earliest form, it was a subphylum including all sedentary echinoderms including non-stalked groups such as [[Edrioasteroidea]].<ref name=bather>{{harvnb|Bather|1900}}</ref>  The definition of the group has changed over time, and recent proponents of Pelmatozoa as a monophyletic clade ***TODO: FINISH***
+
+In [[Francis Arthur Bather|F. A. Bather's]] influential two-subphylum taxonomy published in 1900,<ref>{{harvnb|Smith|1984|pp=433–434}}</ref> Pelmatozoa encompassed all ancestrally sedentary echinoderms including the non-stalked [[Edrioasteroidea]] and [[Homalozoa]].<ref name=bather />  Later taxonomies broke up this grouping in various ways.<ref>{{harvnb|Moore|1966}}</ref><ref>{{harvnb|Ubaghs|1967}}</ref><ref>{{harvnb|Sprinkle|1980a}}</ref><ref>{{harvnb|Sprinkle|1980b}}</ref> As of 2024, both of the major theories of echinoderm phylogenetics could allow for a [[paraphyletic]] Pelmatozoa, depending on which recently-discovered groups are included, and on how certain [[polytomies]] are resolved.<ref>{{harvnb|David|Mooi|1999|p=100}}</ref><ref>{{harvnb|David|Lefebvre|Mooi|Parsley|2000|p=549}}</ref><ref name=overview>{{harvnb|Rahman|Zamora|2024|p=310}}</ref>  The [[Crinoidea]] are the only extant pelmatozoan group.<ref name=bather />
+
 ==References==
 {{reflist}}
 
 ===Works cited===
 {{refbegin}}
+* <ref name=Ausich2015>{{cite journal |author1=Ausich, William I. |author2=Kammer, Thomas W. |author3=Rhenberg, Elizabeth C. |author4=Wright, David F. |year=2015 |title= Early phylogeny of crinoids within the pelmatozoan clade |journal= Palaeontology |volume= 58 |issue= 6 |pages= 937–952 |doi=10.1111/pala.12204|doi-access=free |bibcode=2015Palgy..58..937A }}</ref>
+* {{cite book|last1=Bather |first1=F. A. |year=1900 |chapter=Chapter VIII: General Description of the Echinoderma |editor-last1=Lankester |editor-first1=E. Ray |title=A Treatise on Zoology, Part III: The Echinoderma |location=London |publisher=Adam & Charles Black |volume=6 |issue=33 |pages=1–37 |doi=10.1080/00222930008678384|url=https://www.biodiversitylibrary.org/part/59435 }}
+* {{cite journal|last1=David |first1=Bruno |last2=Lefebvre |first2=Bertrand |last3=Mooi |first3=Rich |last4=Parsley |first4=Ronald |date=December 2000 |title=Are homalozoans echinoderms? An answer from the extraxial-axial theory |journal=Paleobiology |volume=26 |issue=4 |pages=520–555 |doi=10.1666/0094-8373(2000)026<0529:AHEAAF>2.0.CO;2|bibcode=2000Pbio...26..529D }}
+* {{cite journal|last1=David |first1=Bruno |last2=Mooi |first2=Rich |date=January 1999 |title= Contributions of the extraxial-axial theory to understanding the echinoderms |journal=Bulletin de la Société Géologique de France |volume=170 |issue=1 |pages=91–101 |url=https://www.researchgate.net/publication/285704419 |accessdate=28 October 2024}}
 * {{cite journal|last1=Kammer |first1=Thomas W. |last2=Sumrall |first2=Colin D. |last3=Zamora |first3=Samuel |last4=Ausich |first4=William I. |last5=Deline |first5=Bradley |title=Oral Region Homologies in Paleozoic Crinoids and Other Plesiomorphic Pentaradial Echinoderms |journal=PLoS ONE |volume=8 |number=11 |year=2013 |pages=e77989 |doi=10.1371/journal.pone.0077989}}
+* {{cite book|last1=Moore |first1=Raymond C. |year=1966 |chapter=Introduction |editor-last1=Moore |editor-first1=Raymond C. |title=Treatise on Invertebrate Paleontology, Part U: Echinodermata 3 |volume=1 |pages=U1–U3 |publisher=University of Kansas Press |url=https://journals.ku.edu/InvertebratePaleo/issue/view/521 |accessdate=28 October 2024}}
+* {{cite journal|last1=Rahman |first1=Imran A. |last2=Zamora |first2=Samuel |date=July 2024 |title=Origin and early evolution of echinoderms |journal=Annual Review of Earth and Planetary Sciences |volume=52 |pages=295–320 |issue=1 |doi=10.1146/annurev-earth-031621-113343|bibcode=2024AREPS..52..295R |hdl=10141/623070 |url=http://zaguan.unizar.es/record/145576 |hdl-access=free }}
+* {{cite journal|last1=Smith |first1=Andrew B. |year=1984 |title=Classification of the Echinodermata |journal=Palaeontology |volume=27 |number=3 |pages=431–459 |url=https://www.palass.org/sites/default/files/media/publications/palaeontology/volume_27/vol27_part3_pp431-459.pdf |accessdate=28 October 2024}}
+* {{cite journal|last1=Sprinkle |first1=James |year=1980a |title=Origin of blastoids: new look at an old problem (Abst.) |journal=Geological Society of America Abstracts with Programs |volume=12 |issue=7 |page=528}}
+* {{cite journal|last=Sprinkle |first=J. |year=1980b |title=An Overview of the Fossil Record |journal=Notes for a Short Course: Studies in Geology |volume=3 |pages=15–26 |doi=10.1017/S0271164800000063}}
+* {{cite book|last1=Ubaghs |first1=Georges |date=1967 |chapter=General Characters of Echinodermata |editor-last1=Moore |editor-first1=Raymond C. |title=Treatise on Invertebrate Paleontology, Part S: Echinodermata 1 |volume=1 |pages=S3–S60 |publisher=University of Kansas Press |url=https://journals.ku.edu/InvertebratePaleo/issue/view/519 |accessdate=29 October 2024}}
+
 {{refend}}
+
+{{Authority control}}
+
+[[Category:Echinoderm taxonomy]]
+[[Category:Obsolete animal taxa]]
+
+{{echinoderm-stub}}
+
