@@ -1,7 +1,25 @@
 {{Short description|Extinct group of marine invertebrates}}
-'''Pelmatozoa''' is a possible [[clade]] or [[evolutionary grade|grade]] within the phylum [[Echinodermata]].  As originally defined by [[Rudolph Leuckart]]  its earliest form, it was a subphylum including all sedentary echinoderms including non-stalked groups such as [[Edrioasteroidea]].<ref name=bather>{{harvnb|Bather|1900}}</ref>  The definition of the group has changed over time, and recent proponents of Pelmatozoa as a monophyletic clade ***TODO: FINISH***
+'''Pelmatozoa''' is a possible [[clade]] or [[evolutionary grade|grade]] within the phylum [[Echinodermata]], which in most definitions, including its original description by [[Rudolph Leuckart]] in 1848, encompasses all stalked echinoderms and their non-stalked descendents such as the [[Comatulida]].  Using this definition, a 2015 study argued in favor of Pelmatozoa as a monophyletic clade, with [[Crinoidea]] emerging from within [[Blastozoa]].
+
+
+As originally defined by [[Rudolph Leuckart]]  its earliest form, it was a subphylum including all sedentary echinoderms including non-stalked groups such as [[Edrioasteroidea]].<ref name=bather>{{harvnb|Bather|1900}}</ref>  The definition of the group has changed over time, and recent proponents of Pelmatozoa as a monophyletic clade ***TODO: FINISH***
 
 In [[Francis Arthur Bather|F. A. Bather's]] influential two-subphylum taxonomy published in 1900,<ref>{{harvnb|Smith|1984|pp=433–434}}</ref> Pelmatozoa encompassed all ancestrally sedentary echinoderms including the non-stalked [[Edrioasteroidea]] and [[Homalozoa]].<ref name=bather />  Later taxonomies broke up this grouping in various ways.<ref>{{harvnb|Moore|1966}}</ref><ref>{{harvnb|Ubaghs|1967}}</ref><ref>{{harvnb|Sprinkle|1980a}}</ref><ref>{{harvnb|Sprinkle|1980b}}</ref> As of 2024, both of the major theories of echinoderm phylogenetics could allow for a [[paraphyletic]] Pelmatozoa, depending on which recently-discovered groups are included, and on how certain [[polytomies]] are resolved.<ref>{{harvnb|David|Mooi|1999|p=100}}</ref><ref>{{harvnb|David|Lefebvre|Mooi|Parsley|2000|p=549}}</ref><ref name=overview>{{harvnb|Rahman|Zamora|2024|p=310}}</ref>  The [[Crinoidea]] are the only extant pelmatozoan group.<ref name=bather />
+
+==Classification==
+
+===History===
+[[File:Bather-1900-phylogeny.png|thumb|left|F. A. Bather's diagram of Echinoderm phylogeny from ''A Treatise on Zoology, Part III: The Echinoderma" (1900)]]
+
+Pelmatozoa was originally defined by [[Rudolph Leuckart]] in 1848 to encompass stalked echinoderms, but 1900 had come to encompass all echinoderms where the oral pole is upwards, regardless of whether the aboral surface was fixed to the substrate either directly or via a stalk. In his 1900 two-subphylum taxonomy, [[Francis Arthur Bather|F. A. Bather]] viewed the Pelmatozoa as a paraphyletic grade from which the Eleutherozoa emerged. Bather considered it likely that Eleutherozoa was polyphyletic, with the different classes emerging from different Pelmatozoan groups, or emerging from the same class but at widely different times.<ref>{{harvnb|Bather|1900|p=33}</ref> 
+
+In 1966–7, the ''[[Treatise on Invertebrate Paleontology]]'' adopted a four-subphylum system to replace Bather's system, in part because of the belief that Eleutherozoa was polyphyletic, although it retained "pelmatozoic" and "eleutherozoic" as descriptions of attached and free-living modes of life, respectively.  This classification moved the non-stalked [[Edrioasteroidea]] (including ''[[Camptostroma]]'', then seen as its own class) into the otherwise eleutherozoan group [[Echinozoa]]. The sessile, newly-discovered [[Helicoplacoidea]] were also included in the Echinozoa, along with the poorly-known [[Cyclocystoidea]], whose mode of life remains under debate.  However, most Pelmatozoan groups were assigned to either [[Crinozoa]] or [[Homalozoa]].
+
+
+[[Asterozoa]] and [[Echinozoa]] as subphyla.  However, this version of Echinozoa was much more expansive than its modern sense, and included all non-stalked classes that were assigned to neither Asterozoa nor [[Homalozoa]].<ref name=treatise />
+
+With the advent of [[cladistics]], the taxonomy of echinoderms was re-evaluated, finding new support for both Pelmatozoa (in its original sense, per [[Rudolf Leuckart|Leuckart]], encompassing only stalked forms) and Eleutherozoa, with Echinozoa now having its modern contents of [[Echinoidea]] as the sister to a clade containing [[Holothuroidea]] and the extinct (and possibly paraphyletic) [[Ophiocistioidea]].  However, [[Edrioasteroidea]] was also included in this version of Eleutherozoa.<ref>{{harvnb|Smith|1984|pages=453–457}}</ref>
+
 
 ==References==
 {{reflist}}
