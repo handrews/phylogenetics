@@ -1,0 +1,190 @@
+researchers:
+- &lefebvre
+  last: Lefebvre
+  first: Bertrand
+- &smith
+  last: Smith
+  first: A. B.
+- &sumrall
+  last: Sumrall
+  first: Colin D.
+- &zamora
+  last: Zamora
+  first: Samuel
+- &zhu-x-j
+  last: Zhu
+  first: Xue-Jian
+journals:
+- &geomag Geological Magazine
+- &procrsocb Proceedings of the Royal Society B
+taxon:
+- &barroubiocystis
+  name: Barroubiocystis
+  auth: [Ubaghs]
+  year: 1999
+- &blastozoa
+  name: Blastozoa
+  rank: Subphylum
+  auth: [Sprinkle]
+  year: 1973
+- &cheirocrinus
+  name: Cheirocrinus
+  auth: [Eichwald]
+  year: 1856
+- &cheirocystis
+  name: Cheirocystis
+  auth: [Paul]
+  year: 1972
+- &crinoidea
+  name: Crinoidea
+  rank: Class
+  auth: [Miller]
+  year: 1821
+- &crinozoa
+  name: Crinozoa
+  rank: Subphylum
+  auth: [Matsumoto]
+  year: 1929
+- &cuniculocystis
+  name: Cuniculocystis
+  auth: [Sprinkle, Wahlman]
+  year: 1994
+- &echinoencrinites
+  name: Echinoencrinites
+  auth: [von Meyer]
+  year: 1826
+- &echinodermata
+  name: Echinodermata
+  rank: Phylum
+  status: monophyletic
+  auth: [Bruguière]
+  year: 1791
+  ex:
+    auth: [Klein]
+    year: 1743
+- &glyptocystites
+  name: Glyptocystites
+  auth: [Billings]
+  year: 1854
+- &glyptocystitida
+  name: Glyptocystitida
+  rank: Order
+  auth: [Bather]
+  year: 1899
+- &hemicosmites
+  name: Hemicosmites
+  auth: [Buch]
+  year: 1840
+- &lepadocystis
+  name: Lepadocystis
+  auth: [Carpenter]
+  year: 1891
+- &macrocystella
+  name: Macrocystella
+  auth: [Callaway]
+  year: 1877
+- &pelmatozoa
+  name: Pelmatozoa
+  rank: Subphylum
+  status: informal
+  auth: [Leuckart]
+  year: 1848
+- &pleurocystites
+  name: Pleurocystites
+  auth: [Neumayr]
+  year: 1899
+- &rhombifera
+  name: Rhombifera
+  rank: class
+  status: informal
+  auth: [Zittel]
+  year: 1870
+- &ridersia
+  name: Ridersia
+  auth: [Jell, Burrett, Banks]
+  year: 1985
+- &sanducystis
+  name: Sanducystis
+  auth: [Zamora, Sumrall, Zhu, Lefebvre]
+  year: 2017
+- &scoliocystis
+  name: Scoliocystis
+  auth: [Jaekel]
+  year: 1899
+- &stephanocrinus
+  name: Stephanocrinus
+  auth: [Conrad]
+  year: 1842
+- &velieuxicystis
+  name: Velieuxicystis
+  auth: [Ubaghs]
+  year: 1999
+articles:
+- title: A new stemmed echinoderm from the Furongian of China and the origin of Glyptocystitida (Blastozoa, Echinodermata)
+  dates:
+    received: 2015-11-17
+    accepted: 2016-01-27
+    online: 2016-03-03
+  journal:
+    name: *geomag
+    volume: 154
+    number: 3
+    pubdate: 2017
+    pages:
+    - 465
+    - 475
+  doi: 10.1017/S001675681600011X
+  authors:
+  - *zamora
+  - *sumrall
+  - *zhu-x-j
+  - *lefebvre
+  taxonomy:
+    definitions:
+    - - *echinodermata
+      - *blastozoa
+      - *glyptocystitida
+      - *sanducystis
+  phylogeny:
+  - children:
+    - bracket: *glyptocystitida
+      children:
+      - taxon: *ridersia
+      - children:
+        - taxon: *sanducystis
+        - children:
+          - children:
+            - taxon: *macrocystella
+            - taxon: *cuniculocystis
+            - children:
+              - children:
+                - children:
+                  - taxon: *pleurocystites
+                  - children:
+                    - taxon: *lepadocystis
+                    - taxon: *scoliocystis
+                    - taxon: *echinoencrinites
+                - taxon: *cheirocystis
+                - taxon: *glyptocystites
+              - taxon: *cheirocrinus
+          - taxon: *barroubiocystis
+          - taxon: *velieuxicystis
+    - taxon: *stephanocrinus
+    - taxon: *hemicosmites
+- title: Cambrian stalked echinoderms show unexpected plasticity of arm construction
+  dates:
+    received: 2011-04-13
+    accepted: 2011-05-19
+    online: 2011-06-08
+  journal:
+    name: *procrsocb
+    volume: 279
+    pubdate: 2012
+    pages:
+    - 293
+    - 298
+  doi: 10.1098/rspb.2011.0777
+  authors:
+  - *zamora
+  - *smith
+  
