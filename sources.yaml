@@ -1,30 +1,50 @@
 researchers:
+- &conway-morris
+  family: Conway Morris
+  given: Simon
 - &lefebvre
-  last: Lefebvre
-  first: Bertrand
+  family: Lefebvre
+  given: Bertrand
+- &parsley
+  family: Parsley
+  given: Ronald
 - &smith
-  last: Smith
-  first: A. B.
+  family: Smith
+  given: A. B.
 - &sumrall
-  last: Sumrall
-  first: Colin D.
+  family: Sumrall
+  given: Colin D.
 - &zamora
-  last: Zamora
-  first: Samuel
+  family: Zamora
+  given: Samuel
+- &zhao-y-l
+  family: Zhao
+  given: Yuanlong
 - &zhu-x-j
-  last: Zhu
-  first: Xue-Jian
+  family: Zhu
+  given: Xue-Jian
 journals:
 - &geomag Geological Magazine
+- &jofpaleo Journal of Paleontology
 - &procrsocb Proceedings of the Royal Society B
 rocks:
-- &murero-fmtn
-  name: Murero Formation
-  place: [Purujosa, Moncayo National Park, Spain]
-  local: [Caesaraugustan, Lower Languedocian]
 - &coulouma
   name: Coulouma
   place: [Montagne Noir, France]
+  local: [[Caesaraugustan, Lower Languedocian]]
+- &jince-fmtn
+  name: Jince Formation
+  place: [Prague Basin, Bohemia]
+  time: [Middle Cambrian, Cambrian]
+- &kaili-fmtn
+  name: Kaili Formation
+  place: [Miaobapo Quarry, Jianhe County, Guizhou Province, China]
+  landmass: South China
+  time: [Stage 4, Miaolingian, Cambrian]
+  notes: '"middle third" of the formation, basal Middle Cambrian'
+- &murero-fmtn
+  name: Murero Formation
+  place: [Purujosa, Moncayo National Park, Spain]
   local: [Caesaraugustan, Lower Languedocian]
 - &sandu-fmtn
   name: Sandu Formation
@@ -93,6 +113,12 @@ taxon:
   ex:
     auth: [Klein]
     year: 1743
+- &eocrinoidea
+  name: Eocrinoidea
+  rank: Class
+  status: informal
+  auth: [Jaekel]
+  year: 1918
 - &eocystites
   name: Eocystites
   auth: [Billings]
@@ -110,10 +136,19 @@ taxon:
   name: Gogia
   auth: [Walcott]
   year: 1917
+- &gogiida
+  name: Gogiida
+  rank: Order
+  auth: [Broadhead]
+  year: 1982
 - &hemicosmites
   name: Hemicosmites
   auth: [Buch]
   year: 1840
+- &inflatus
+  name: inflatus
+  auth: [Parsley, Zhao]
+  year: 2010
 - &kinzercystis
   name: Kinzercystis
   auth: [Sprinkle]
@@ -190,6 +225,14 @@ taxon:
   name: Titanocrinus
   auth: [Guensburg, Sprinkle]
   year: 2003
+- &turbanicystidae
+  name: Turbanicystidae
+  auth: [Parsley, Zhao]
+  year: 2010
+- &turbanicystis
+  name: Turbanicystis
+  auth: [Parsley, Zhao]
+  year: 2010
 - &ubaghsicystis
   name: Ubaghsicystis
   auth: [Gil Cid, Domínguez]
@@ -218,7 +261,7 @@ articles:
     name: *geomag
     volume: 154
     number: 3
-    pubdate: 2017
+    year: 2017
     pages:
     - 465
     - 475
@@ -230,32 +273,32 @@ articles:
   - *lefebvre
   taxonomy:
     definitions:
-    - - taxon: *echinodermata
+    - taxon: *echinodermata
+      children:
+      - taxon: *blastozoa
         children:
-        - taxon: *blastozoa
+        - taxon: *rhombifera
+          quoted: true
           children:
-          - taxon: *rhombifera
-            quoted: true
+          - taxon: *glyptocystitida
             children:
-            - taxon: *glyptocystitida
+            - taxon: *sanducystis
+              new: true
               children:
-              - taxon: *sanducystis
+              - taxon: *sinensis
                 new: true
-                children:
-                - taxon: *sinensis
-                  new: true
-                  place: *sandu-fmtn
+                place: *sandu-fmtn
     inferences:
-    - - taxon: *echinodermata
+    - taxon: *echinodermata
+      children:
+      - taxon: *blastozoa
         children:
-        - taxon: *blastozoa
+        - taxon: *rhombifera
+          quoted: true
           children:
-          - taxon: *rhombifera
-            quoted: true
+          - taxon: *glyptocystitida
             children:
-            - taxon: *glyptocystitida
-              children:
-              - taxon: *ridersia
+            - taxon: *ridersia
   phylogeny:
   - children:
     - bracket: *glyptocystitida
@@ -282,6 +325,38 @@ articles:
           - taxon: *velieuxicystis
     - taxon: *stephanocrinus
     - taxon: *hemicosmites
+- title: A New Turban-Shaped Gogiid Eocrinoid From The Kaili Formation (Kaili Biota), Balang, Jianhe County, Guizhou Province, China
+  dates:
+    accepted: 2009-11-29
+  journal:
+    name: *jofpaleo
+    volume: 84
+    number: 3
+    year: 2010
+    month: 5
+    pages:
+    - 549
+    - 553
+  jstor: 40605503
+  taxonomy:
+    definitions:
+    - taxon: *echinodermata
+      children:
+      - taxon: *blastozoa
+        children:
+        - taxon: *eocrinoidea
+          children:
+          - taxon: *gogiida
+            children:
+            - taxon: *turbanicystidae
+              new: true
+              children:
+              - taxon: *turbanicystis
+                new: true
+                children:
+                - taxon: *inflatus
+                  new: true
+                  place: *kaili-fmtn
 - title: Cambrian stalked echinoderms show unexpected plasticity of arm construction
   dates:
     received: 2011-04-13
@@ -290,7 +365,7 @@ articles:
   journal:
     name: *procrsocb
     volume: 279
-    pubdate: 2012
+    year: 2012
     pages:
     - 293
     - 298
@@ -300,28 +375,28 @@ articles:
   - *smith
   taxonomy:
     definitions:
-    - - taxon: *echinodermata
+    - taxon: *echinodermata
+      children:
+      - taxon: *rhombifera
+        rank: Plesion
         children:
-        - taxon: *rhombifera
-          rank: Plesion
+        - taxon: *dibrachycystidae
+          new: true
           children:
-          - taxon: *dibrachycystidae
+          - taxon: *dibrachycystis
             new: true
             children:
-            - taxon: *dibrachycystis
+            - taxon: *purujoensis
               new: true
-              children:
-              - taxon: *purujoensis
-                new: true
-                place: *murero-fmtn
-            - taxon: *vizcainoia
+              place: *murero-fmtn
+          - taxon: *vizcainoia
+            new: true
+            children:
+            - taxon: *languedocianus
+              place: *murero-fmtn
+            - taxon: *moncaiensis
               new: true
-              children:
-              - taxon: *languedocianus
-                place: *murero-fmtn
-              - taxon: *moncaiensis
-                new: true
-                place: *coulouma
+              place: *coulouma
   phylogeny:
   - taxon: *kinzercystis
     children:
