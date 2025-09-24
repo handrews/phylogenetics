@@ -4,19 +4,38 @@
 | image = Gogia_ojenai.jpg
 | image_caption = ''[[Gogia]] ojenai''
 | taxon = Gogiida
-| authority = Broadhead 1982
-| subdivision_ranks = Families and genera
+| authority = Broadhead, 1982
+| subdivision_rank = Families
 | subdivision =
-* [[Eocrinidae]] {{smallcaps| Jaekel 1918}}
-**''[[Gogia]]'' {{smallcaps|Walcott 1917}}
-* [[Lyracystidae]] {{smallcaps|Sprinkle & Collins 2006}}
-** ''[[Lyracystis]]'' {{smallcaps|Sprinkle & Collins 2006}}
+* [[Eocrinidae]] {{small|Jaekel, 1918}}
+* [[Lyracystidae]] {{small|Sprinkle and Collins, 2006}}
 }}
 
-The '''Gogiida''' are an order of early echinoderms known from late Early<ref name=Durham1978>{{Cite journal| jstor = 1303808| pages = 195–199| title = A Lower Cambrian Eocrinoid| journal = Journal of Paleontology| volume = 52| issue = 1| year = 1978|last1 = Durham | first1 = J. W. }}</ref> to Middle Cambrian<ref name=Robinson1965>{{Cite journal| jstor = 1301709| pages = 355–364| title = Middle Cambrian Eocrinoids from Western North America| journal = Journal of Paleontology| volume = 39| issue = 3| year = 1965| last1 = Robison | first1 = R. A.}}</ref> deposits.
+The '''Gogiida''' are an order of early echinoderms known from late Early<ref name=Durham1978>{{harvnb|Durham|1978}}</ref> to Middle Cambrian<ref name=Robinson1965>{{harvnb|Robinson|1965}}</ref> deposits.
+The order is likely [[paraphyletic]] with all or some members of [[Eocrinidae]] closer to more derived eocrinoids than to [[Lyracystidae]].
+
+The order includes the families [[Eocrinida]], which includes ''[[Eocrinus]]'', ''[[Gogia]]'' and several of their relatives, and [[Lyracystidae]], wihch contains only the genera ''[[Lyracystis]]'' and ''[[Balangicystis]]''.<ref>{{harvnb|Sprinkle|Parsley|Zhao|Peng|2011|p=253}}</ref>
+
+* Subphylum [[Blastozoa]] {{small|Sprinkle, 1973}}
+** Class [[Eocrinoidea]] {{small|Jaekel, 1918}}
+*** Order [[Gogiida]] {{small|Broadhead, 1982}}
+**** Family [[Lyracystidae]] {{small|Sprinkle and Collins, 2006}}
+***** [[''Lyracystis'']] {{small|Sprinkle and Collins, 2006}}
+***** [[''Balangicystis'']] {{small|Parsley and Zhao, 2006}}
+**** Family [[Eodcrinidae]]
+***** [[''Eocrinus'']]
+***** [[''Gogia'']]
+
 
 ==References==
-{{Reflist}}
+{{reflist}}
+
+===Works cited===
+{{refbegin}}
+* {{cite journal|last1=Durham  |first1=J. W. |year=1978 |title=A Lower Cambrian Eocrinoid |journal=Journal of Paleontology |volume=52 |issue=1 |pages=195–199 |jstor=1303808}}
+* {{cite journal|last1=Robison  |first1=R. A. |year=1965 |title=Middle Cambrian Eocrinoids from Western North America |journal=Journal of Paleontology |volume=39 |issue=3 |pages=355–364 |jstor=1301709}}
+* {{cite journal |last1=Sprinkle |first1=James |last2=Parsley |first2=Ronald L. |last3=Zhao |first3=Yuanlong |last4=Peng |first4=Jin |year=2011 |title=Revision of Lyracystid Eocrinoids from the middle Cambrian of South China and western Laurentia |journal=The Paleontological Society |volume=85 |issue=2 |pages=250–255 |doi=10.1666/10-072.1}
+{{refend}}
 
 {{Taxonbar|from=Q16938484}}
 

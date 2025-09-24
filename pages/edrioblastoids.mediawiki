@@ -1,5 +1,186 @@
 Edrioblastoids are a clade of elongate [[edrioasteroids]]<ref>{{harvnb|Guensburg|Blake|Sprinkle|Mooi|2016|page=257}}</ref>  Older taxonomies assigned them the rank of class (Edrioblastoidea {{small|Fay 1962}}), although they have more recently been considered an order (Edrioblastida) within the [[Edrioasteroidea]],<ref>{{Zhu|Zamora|Lefebvre|2014|page=921}}</ref> or a sub-order (Edrioblastina) within the order Edrioasterida.<ref>{{Sumrall|Heredia|Rodríguez|Mestre|2013|page=773}}</ref>
 
+* History
+** Edrioblastoidea
+** Edrioasteroidea::Edrioblastida
+** Edrioasteroidea::Edrioasterida::Edrioblastina
+* Morphology
+** Elongate
+** Short stem?
+* Families and Genera
+** Astrocystitidae (Bassler 1935, emend.)
+** Cyathocystidae (Bather 1899, emend.) [added by Guensburg, Sprinkle 1994]
+*** Cyathocystinae (Bather 1899, nom. transl., emend.)
+*** Rhenopyrginae (Holloway and Jell 1983, nom. transl., emend.)
+
+From Guensburg and Sprinkle, 1994, unless later or otherwise noted.
+
+Note that Sumrall (and others?) makes significant revisions: 1996-01-24-a Late Paleozoic Edrioasteroids (Echinodermata) From The North American Midcontinent.pdf
+
+Parakrama IRMNG
+Postibulla
+Parapostibulla
+Eopostibulla IRMNG
+Pyrgopostibulla
+Torquerisediscus
+Clavidiscus
+Hypsiclavus
+Giganticlavus
+
+IRMNG awaiting allocation
+Camptostroma
+Edriophus
+Eopostibulla (Müller and Hahn, 2010)
+Parakrama (Müller and Hahn, 2010)
+Walcottidiscus
+Argodiscus ?
+Floridiscus ?
+Hadrodiscus ?
+Quadrocystis (Sprinkle, 1982) ? [Rhombiferan per PBDB]
+Rieversidiscus (Dehm, 1967) ? [Hemicystites?]
+Staltodiscus ?
+
+IRMNG Edrioasterida awaiting allocation
+Astrocystites
+Cyathocystis
+Cyathotheca (Jaekel, 1927; apparently considered Cyathocystis by G and S 1994)
+Lampteroblastus
+Paredriophus
+Steganoblastus (Whiteaves, 1898) (not in PBDB, alt for Asterocystites?)
+Totiglobus
+
+* Edrioasteroidea (Billings, 1858)
+** Camptostromatoida (Durham, 1966)
+*** Camptostromatidae (Durham, 1968)
+**** ''Camptostroma'' (Ruedemann, 1933)
+** Stromatocystitida (Bell, 1980)
+*** Stromatocystitidae (Bassler, 1935)
+**** ''Stromatocystites'' (Pompeckj, 1896)
+** Yorkicystitidae (Zamora et al., 2022) [no family in IRMNG]
+*** ''Yorkicystis'' (Zamora et al., 2022)
+** [O. uncertain]
+*** [F. uncertain]
+**** ''Cambraster'' (Cabibel, Termier, and Termier, 1958) ?Stromatocystitid?
+**** ''Walcottidiscus'' (Bassler, 1935)
+**** ''Parsleya'' (Deshmukh, 2022) (=''Kailidiscus'' (Zhao ''et al.'', 2010)) IRMNG
+**** ''Sprinkleoglobus'' (Zhao ''et al.'', 2022) IRMNG
+** Isorophida (Bell, 1976)
+*** [F. uncertain]
+**** ''Edriodiscus'' (Smith, 1985)
+**** ''"Stromatocystites" walcotti'' (Schuchurt, 1919)
+*** Agelacrinitidae (Chapman, 1860, emend.)
+**** ''Agelicrinites'' (Vanuxem, 1842)                            A
+**** ''Bostryclavus'' (Sumrall, 1996)                             ADisc
+**** ''Clavidiscus'' (Sumrall, 1996)                              ADisc
+**** ''Cooperidiscus'' (Bassler, 1935)                            A
+**** ''Curvitriordo'' (Bell, 1976)
+**** ''Deltadiscus'' (Guensburg and Sprinkle, 1994)
+**** ''Dinocystis'' (Bather, 1898)                                ADisc
+**** ''Discocystis'' (Gregory, 1897)                              ADisc
+**** ''Eopostibulla'' (Müller and Hahn, 2010)                     AP MH 10
+**** ''Hadrochthus'' (Bell, 1976)
+**** ''Hemicystites'' (Hall, 1842)
+**** ''Hyspiclavus'' (Sumrall, 1996)                              ADisc
+**** ''Hystrichopsydrax'' (Guensburg, 1988)
+**** ''Isorophus'' (Foerste, 1917)                                I Sumrall 94
+**** ''Isorophusella'' (Bassler, 1935)                            I Sumrall 94
+**** ''Krama'' (Bell, 1976)                                       A, AA MH 10
+**** ''Lepidodiscus'' (Meek and Worthen, 1868)                    A
+**** ''Lispidecodus'' (Kesling, 1967)                             ADisc
+**** ''Neoisorophusella'' (Kammer, Tissue, and Wilson, 1987)      I Sumrall 94
+**** ''Parakrama'' (Müller and Hahn, 2010)                        AA MH 10
+**** ''Parapostibulla'' (Sumrall, Garbisch, and Pope, 2000)       AP SGP 00
+**** ''Postibulla'' (Bell, 1967)                                  AP SGP 00
+**** ''Pyrgopostibulla'' (Sumrall, Bretts, and Cornell, 2006)     AP MH 10
+**** ''Rectitriordo'' (Bell, 1967)
+**** ''Savagella'' (Foerste, 1920)
+**** ''Seifenia'' (Müller and Hahn, 2020)                         AA MH 20
+**** ''Spiraclavus'' (Sumrall, 1992)                              ADisc
+**** ''Stalticodiscus'' (Smith, 1983)                             A
+**** ''Torquerisediscus'' (Sumrall, 2001)                         A Sum 01
+**** ''Thresherodiscus'' (Foerste, 1914)
+**** ''Timeischytes'' (Ehlers and Kesling, 1958)
+**** ''Ulrichidiscus'' (Bassler, 1935)                            A
+*** Lebetodiscidae (Bell, 1976, nomen transl., emend.)            Lebetodiscina SZ 11
+**** Lebetodiscinae (Bell, 1976, nomen transl., emend.)
+***** ''Argodiscus'' (Prokop, 1975)                               Pyrgocystidae SZ 11
+***** ''Belochthos'' (Bell, 1976)                                 Pyrgocystidae SZ 11
+***** ''Chatsworthia'' (Smith and Jell, 1990)
+***** ''Cystaster'' (Hall, 1871)
+***** ''Euhydrodiskos'' (Guensburg, 1988)
+***** ''Floridiscus'' (Smith, 1980)
+***** ''Foerstediscus'' (Bassler 1935)                            Not Isorophina Sum 94
+***** ''Hadrodiscus'' (Smith and Jell, 1990)
+***** ''Lebetodiscus'' (Bather, 1908)
+***** ''Streptaster'' (Hall, 1872)                                Pyrgocystidae SZ 11
+**** Carneyellinae (Bell, 1976, nomen transl., emend.)            Isorophina Sumrall 94
+***** ''Carneyella'' (Foerste, 1917)
+***** ''Cryptogoleus'' (Bell, 1976)
+**** Pyrgocystinae (Kesling, 1976, nomen transl., emend.)         und Isorophida SZ 11
+***** ''Archaepyrgus'' (Guensburg and Sprinkle, 1994)
+***** ''Epipaston'' (Holloway and Jell, 1983)
+***** ''Fanulodiscus'' (Guensburg and Sprinkle, 1994)
+***** ''Pyrgocystis'' (Bather, 1915)
+** Edrioasterida (Bell, 1976, emend.)
+*** Edrioasterina (Bather, 1898, nomen transl., emend.)
+**** Totiglobidae (Bell and Sprinkle, 1978)
+***** ''Totiglobus'' (Bell and Sprinkle, 1978)
+***** ''"Totiglobus" lloydi'' (Sprinkle, 1985)
+**** Edrioasteridae (Bather, 1899)
+***** ''Edrioaster'' (Billings, 1858)
+***** ''Edriophus'' (Bell, 1976)
+***** ''Paredriophus'' (Guensburg and Sprinkle, 1994)
+***** ''Pseudedriophus'' (Sprinkle and Sumrall, 2015)
+*** Edrioblastoidina (Fay, 1962, nomen transl., emend.)
+**** Astrocystitidae (Bassler, 1935)
+***** ''Astrocystites'' (Whiteaves, 1897)
+***** ''Cambroblastus'' (Smith and Jell, 1990) [under Edrioblastoida]
+***** ''Lampteroblastus'' (Guensburg and Sprinkle, 1994)
+***** ''Porosublastus'' (Sprinkle and Sumrall, 2015)
+**** Cyathocystidae (Bather, 1899, emend.) [added by Guensburg, Sprinkle 1994]
+***** Cyathocystinae (Bather, 1899, nomen transl., emend.)
+***** ''Cyathocystis'' (Schmidt, 1879)
+***** Rhenopyrginae (Holloway, and Jell 1983, nomen transl., emend.)
+***** ''Rhenopyrgus'' (Dehm, 1961)
+
+(can't quite fit)
+* Pyrgocystidae
+** ''Moroccopyrgus'' (Sumrall and Zamora, 2011)
+
+Outdated PDBD (Sprinkle, 1982)
+* Echinodermata
+** Crinozoa
+*** Crinoidea
+**** Inadunata
+***** Disparida
+***** Hybocrinida
+***** Cladida
+****** Cyathocrinina
+******* Gasterocomacea
+**** Camerata
+*** Paracrinoidea
+** Blastozoa
+*** Rhombifera
+**** Dichoporita
+***** Glyptocystitida [superfamily, why not -toidae?]
+*** Diploporita
+*** Eocrinoidea
+**** Palaeocystitidae
+** ''[indeterminate]''
+** Echinozoa
+*** Edrioblastoidea
+**** Pentacystida
+***** Steganoblastidae
+****** ''Astrocystites''
+*** Cyclocystoidea
+*** Echinoidea
+*** Holothuroidea
+** Asterozoa
+*** Stelleroidea
+**** Asteroidea
+** Homalozoa
+
+
 ==References==
 {{reflist}}
 

@@ -17,7 +17,29 @@ researchers:
 journals:
 - &geomag Geological Magazine
 - &procrsocb Proceedings of the Royal Society B
+rocks:
+- &murero-fmtn
+  name: Murero Formation
+  place: [Purujosa, Moncayo National Park, Spain]
+  local: [Caesaraugustan, Lower Languedocian]
+- &coulouma
+  name: Coulouma
+  place: [Montagne Noir, France]
+  local: [Caesaraugustan, Lower Languedocian]
+- &sandu-fmtn
+  name: Sandu Formation
+  place: [Guole Town, Jingxi County, Guangxi Province, China]
+  landmass: South China
+  time: [Stage 9, Furongian, Cambrian]
 taxon:
+- &aethocrinus
+  name: Aethocrinus
+  auth: [Ubaghs]
+  year: 1969
+- &akadocrinus
+  name: Akadocrinus
+  auth: [Prokop]
+  year: 1962
 - &barroubiocystis
   name: Barroubiocystis
   auth: [Ubaghs]
@@ -49,6 +71,15 @@ taxon:
   name: Cuniculocystis
   auth: [Sprinkle, Wahlman]
   year: 1994
+- &dibrachycystidae
+  name: Dibrachycystidae
+  rank: Family
+  auth: [Zamora, Smith]
+  year: 2012
+- &dibrachycystis
+  name: Dibrachycystis
+  auth: [Zamora, Smith]
+  year: 2012
 - &echinoencrinites
   name: Echinoencrinites
   auth: [von Meyer]
@@ -62,6 +93,10 @@ taxon:
   ex:
     auth: [Klein]
     year: 1743
+- &eocystites
+  name: Eocystites
+  auth: [Billings]
+  year: 1868
 - &glyptocystites
   name: Glyptocystites
   auth: [Billings]
@@ -71,18 +106,38 @@ taxon:
   rank: Order
   auth: [Bather]
   year: 1899
+- &gogia
+  name: Gogia
+  auth: [Walcott]
+  year: 1917
 - &hemicosmites
   name: Hemicosmites
   auth: [Buch]
   year: 1840
+- &kinzercystis
+  name: Kinzercystis
+  auth: [Sprinkle]
+  year: 1973
+- &languedocianus
+  name: languedocianus
+  auth: [Ubaghs]
+  year: 1987
 - &lepadocystis
   name: Lepadocystis
   auth: [Carpenter]
   year: 1891
+- &lyracystis
+  name: Lyracystis
+  auth: [Sprinkle, Collins]
+  year: 2006
 - &macrocystella
   name: Macrocystella
   auth: [Callaway]
   year: 1877
+- &moncaiensis
+  name: moncaiensis
+  auth: [Zamora, Smith]
+  year: 2012
 - &pelmatozoa
   name: Pelmatozoa
   rank: Subphylum
@@ -93,6 +148,10 @@ taxon:
   name: Pleurocystites
   auth: [Neumayr]
   year: 1899
+- &purujoensis
+  name: purujoensis
+  auth: [Zamora, Smith]
+  year: 2012
 - &rhombifera
   name: Rhombifera
   rank: class
@@ -111,14 +170,44 @@ taxon:
   name: Scoliocystis
   auth: [Jaekel]
   year: 1899
+- &sinensis
+  name: sinensis
+  auth: [Zamora, Sumrall, Zhu, Lefebvre]
+  year: 2017
+- &sinoeocrinus
+  name: Sinoeocrinus
+  auth: [Zhao, Huang, Gong]
+  year: 1994
 - &stephanocrinus
   name: Stephanocrinus
   auth: [Conrad]
   year: 1842
+- &tatonkacystis
+  name: Tatonkacystis
+  auth: [Sumrall, Sprinkle, Guensburg]
+  year: 1997
+- &titanocrinus
+  name: Titanocrinus
+  auth: [Guensburg, Sprinkle]
+  year: 2003
+- &ubaghsicystis
+  name: Ubaghsicystis
+  auth: [Gil Cid, Domínguez]
+  year: 2002
 - &velieuxicystis
   name: Velieuxicystis
   auth: [Ubaghs]
   year: 1999
+- &vizcainoia
+  name: Vizcainoia
+  auth: [Zamora, Smith]
+  year: 2012
+synonyms:
+- &eocrinus
+  name: Eocrinus
+  auth: [Jaekel]
+  year: 1918
+  synonym: *gogia
 articles:
 - title: A new stemmed echinoderm from the Furongian of China and the origin of Glyptocystitida (Blastozoa, Echinodermata)
   dates:
@@ -141,10 +230,32 @@ articles:
   - *lefebvre
   taxonomy:
     definitions:
-    - - *echinodermata
-      - *blastozoa
-      - *glyptocystitida
-      - *sanducystis
+    - - taxon: *echinodermata
+        children:
+        - taxon: *blastozoa
+          children:
+          - taxon: *rhombifera
+            quoted: true
+            children:
+            - taxon: *glyptocystitida
+              children:
+              - taxon: *sanducystis
+                new: true
+                children:
+                - taxon: *sinensis
+                  new: true
+                  place: *sandu-fmtn
+    inferences:
+    - - taxon: *echinodermata
+        children:
+        - taxon: *blastozoa
+          children:
+          - taxon: *rhombifera
+            quoted: true
+            children:
+            - taxon: *glyptocystitida
+              children:
+              - taxon: *ridersia
   phylogeny:
   - children:
     - bracket: *glyptocystitida
@@ -187,4 +298,48 @@ articles:
   authors:
   - *zamora
   - *smith
-  
+  taxonomy:
+    definitions:
+    - - taxon: *echinodermata
+        children:
+        - taxon: *rhombifera
+          rank: Plesion
+          children:
+          - taxon: *dibrachycystidae
+            new: true
+            children:
+            - taxon: *dibrachycystis
+              new: true
+              children:
+              - taxon: *purujoensis
+                new: true
+                place: *murero-fmtn
+            - taxon: *vizcainoia
+              new: true
+              children:
+              - taxon: *languedocianus
+                place: *murero-fmtn
+              - taxon: *moncaiensis
+                new: true
+                place: *coulouma
+  phylogeny:
+  - taxon: *kinzercystis
+    children:
+    - children:
+      - taxon: *gogia
+      - taxon: *sinoeocrinus
+      - children:
+        - children:
+          - children:
+            - children:
+              - taxon: *ridersia
+              - taxon: *macrocystella
+            - taxon: *velieuxicystis
+          - taxon: *pleurocystites
+          - taxon: *dibrachycystis
+        - taxon: *akadocrinus
+    - children:
+      - taxon: *lyracystis
+        children:
+        - *titanocrinus
+        - *aethocrinus
