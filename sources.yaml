@@ -1,7 +1,4 @@
 researchers:
-- &conway-morris
-  family: Conway Morris
-  given: Simon
 - &gibson
   family: Gibson
   given: Adam P.
@@ -16,7 +13,7 @@ researchers:
   given: Imran A.
 - &smith
   family: Smith
-  given: A. B.
+  given: Andrew B.
 - &sumrall
   family: Sumrall
   given: Colin D.
@@ -41,6 +38,9 @@ rocks:
   name: Coulouma
   place: [Montagne Noir, France]
   local: [[Caesaraugustan, Lower Languedocian]]
+- &jbel-wawrmast-fmtn
+  name: Jbel Wawrmast Formation
+  place: [Alnif region, eastern Anti-Atlas mountains, Morocco]
 - &jince-fmtn
   name: Jince Formation
   place: [Prague Basin, Bohemia]
@@ -65,6 +65,14 @@ rocks:
   place: [Guole Town, Jingxi County, Guangxi Province, China]
   landmass: South China
   time: [Stage 9, Furongian, Cambrian]
+- &breche-a-micmacca-member
+  name: Brèche à Micmacca Member
+  time: [517MA, Stage 3, Series 2, Cambrian]
+  formation: *jbel-wawrmast-fmtn
+- &tarhoucht-member
+  name: Tarhoucht Member
+  time: [[515MA, 510MA], Stage 4, Series 2, Cambrian]
+  formation: *jbel-wawrmast-fmtn
 - &emmigsville-member
   name: Emmigsville Member
   formation: *kinzers-fmtn
@@ -85,6 +93,10 @@ taxon:
   name: Argodiscus
   auth: [Prokop]
   year: 1965
+- &asturicystis
+  name: Asturicystis
+  auth: [Sdzuy]
+  year: 1993
 - &barroubiocystis
   name: Barroubiocystis
   auth: [Ubaghs]
@@ -92,8 +104,17 @@ taxon:
 - &blastozoa
   name: Blastozoa
   rank: Subphylum
+  bracket: Blastozoans
   auth: [Sprinkle]
   year: 1973
+- &camptostroma
+  name: Camptostroma
+  auth: [Ruedemann]
+  year: 1933
+- &castericystis
+  name: Castericystis
+  auth: [Ubaghs, Robison]
+  year: 1985
 - &cheirocrinus
   name: Cheirocrinus
   auth: [Eichwald]
@@ -102,6 +123,10 @@ taxon:
   name: Cheirocystis
   auth: [Paul]
   year: 1972
+- &courtessolea
+  name: Courtessolea
+  auth: [Domínguez-Alonso]
+  year: 1989
 - &crinoidea
   name: Crinoidea
   rank: Class
@@ -251,6 +276,10 @@ taxon:
   name: moncaiensis
   auth: [Zamora, Smith]
   year: 2012
+- &moroccoensis
+  name: moroccoensis
+  auth: [Smith, Zamora]
+  year: 2013
 - &parsleya
   name: Parsleya
   auth: [Deshmukh]
@@ -548,6 +577,53 @@ articles:
     - taxon: *helicoplacus
       bracket: *helicoplacoidea
       outgroup: true
+- title: Cambrian spiral-plated echinoderms from Gondwana reveal the earliest pentaradial body plan
+  dates:
+    received: 2013-05-13
+    accepted: 2013-06-04
+    online: 2013-08-22
+  journal:
+    name: *procrsocb
+    volume: 280
+    year: 2013
+    article: 20131197
+  doi: 10.1098/rspb.2013.1197
+  authors:
+  - *smith
+  - *zamora
+  taxonomies:
+  - taxon: *echinodermata
+    stem: true
+    children:
+    - taxon: *helicocystitidae
+      new: true
+      children:
+      - taxon: *helicocystis
+        new: true
+        children:
+        - taxon: *moroccoensis
+          new: true
+          place: *jbel-wawrmast-fmtn
+          time: [[515MA, 510MA], Stage 4, Series 2, Cambrian]
+  phylogeny:
+  - type: Evolutionary tree of Cambrian echinoderms
+    children:
+    - taxon: *courtessolea
+    - children:
+      - taxon: *asturicystis
+      - children:
+        - taxon: *castericystis
+        - children:
+          - taxon: *helicoplacus
+          - children:
+            - taxon: *helicocystis
+            - children:
+              - taxon: *camptostroma
+              - children:
+                - children:
+                  - taxon: *lepidocystis
+                  - taxon: *gogia
+                - taxon: *stromatocystites
 - title: Cambrian stalked echinoderms show unexpected plasticity of arm construction
   dates:
     received: 2011-04-13
