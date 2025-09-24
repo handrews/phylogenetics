@@ -2,18 +2,27 @@ researchers:
 - &conway-morris
   family: Conway Morris
   given: Simon
+- &gibson
+  family: Gibson
+  given: Adam P.
 - &lefebvre
   family: Lefebvre
   given: Bertrand
 - &parsley
   family: Parsley
   given: Ronald
+- &rahman
+  family: Rahman
+  given: Imran A.
 - &smith
   family: Smith
   given: A. B.
 - &sumrall
   family: Sumrall
   given: Colin D.
+- &thompson
+  family: Thompson
+  given: Jeffrey R.
 - &zamora
   family: Zamora
   given: Samuel
@@ -42,6 +51,11 @@ rocks:
   landmass: South China
   time: [Stage 4, Miaolingian, Cambrian]
   notes: '"middle third" of the formation, basal Middle Cambrian'
+- &kinzers-fmtn
+  name: Kinzers Formation
+  place: [York, Pennsylvania, United States]
+  local: [[middle Dyeran Stage, Delemaran Stage]]
+  time: [Stage 4, Miaolingian, Cambrian]
 - &murero-fmtn
   name: Murero Formation
   place: [Purujosa, Moncayo National Park, Spain]
@@ -51,6 +65,9 @@ rocks:
   place: [Guole Town, Jingxi County, Guangxi Province, China]
   landmass: South China
   time: [Stage 9, Furongian, Cambrian]
+- &emmigsville-member
+  name: Emmigsville Member
+  formation: *kinzers-fmtn
 taxon:
 - &aethocrinus
   name: Aethocrinus
@@ -60,6 +77,14 @@ taxon:
   name: Akadocrinus
   auth: [Prokop]
   year: 1962
+- &apektocrinus
+  name: Apektocrinus
+  auth: [Guensburg, Sprinkle]
+  year: 2009
+- &argodiscus
+  name: Argodiscus
+  auth: [Prokop]
+  year: 1965
 - &barroubiocystis
   name: Barroubiocystis
   auth: [Ubaghs]
@@ -113,9 +138,16 @@ taxon:
   ex:
     auth: [Klein]
     year: 1743
+- &edrioasteroidea
+  name: Edrioasteroidea
+  rank: Class
+  bracket: Edrioasteroids
+  auth: [Billings]
+  year: 1858
 - &eocrinoidea
   name: Eocrinoidea
   rank: Class
+  bracket: Eocrinoids
   status: informal
   auth: [Jaekel]
   year: 1918
@@ -129,6 +161,7 @@ taxon:
   year: 1854
 - &glyptocystitida
   name: Glyptocystitida
+  bracket: Glyptocystitids
   rank: Order
   auth: [Bather]
   year: 1899
@@ -138,9 +171,45 @@ taxon:
   year: 1917
 - &gogiida
   name: Gogiida
+  bracket: Gogiids
   rank: Order
   auth: [Broadhead]
   year: 1982
+- &haefneri
+  name: haefneri
+  auth: [Zamora, Rahman, Sumrall, Gibson, Thompson]
+  year: 2022
+- &helicocystoidea
+  name: Helicocystoidea
+  bracket: Helicocystoids
+  rank: Class
+  status: unregistered
+  notes: |
+    "Helicocystoids" often mentioned, including by Zamora, and some authors
+    mention "Helicocystoidea" credited to Smith and Zamora 2013, but the paper
+    only defines the family, genus, and species, and no formal class definition
+    has been found.
+  auth: [Smith, Zamora]
+  year: 2013
+- &helicocystitidae
+  name: Helicocystitidae
+  rank: Family
+  auth: [Smith, Zamora]
+  year: 2013
+- &helicocystis
+  name: Helicocystis
+  auth: [Smith, Zamora]
+  year: 2013
+- &helicoplacoidea
+  name: Helicoplacoidea
+  bracket: Helicoplacoids
+  rank: Class
+  auth: [Durham, Caster]
+  year: 1963
+- &helicoplacus
+  name: Helicoplacus
+  auth: [Durham, Caster]
+  year: 1963
 - &hemicosmites
   name: Hemicosmites
   auth: [Buch]
@@ -149,6 +218,10 @@ taxon:
   name: inflatus
   auth: [Parsley, Zhao]
   year: 2010
+- &isorophus
+  name: Isorophus
+  auth: [Foerste]
+  year: 1916
 - &kinzercystis
   name: Kinzercystis
   auth: [Sprinkle]
@@ -161,6 +234,11 @@ taxon:
   name: Lepadocystis
   auth: [Carpenter]
   year: 1891
+- &lepidocystis
+  name: Lepidocystis
+  auth: [Foerste]
+  in: [Resser, Howell]
+  year: 1938
 - &lyracystis
   name: Lyracystis
   auth: [Sprinkle, Collins]
@@ -173,8 +251,13 @@ taxon:
   name: moncaiensis
   auth: [Zamora, Smith]
   year: 2012
+- &parsleya
+  name: Parsleya
+  auth: [Deshmukh]
+  year: 2022
 - &pelmatozoa
   name: Pelmatozoa
+  bracket: Pelmatozoans
   rank: Subphylum
   status: informal
   auth: [Leuckart]
@@ -189,6 +272,7 @@ taxon:
   year: 2012
 - &rhombifera
   name: Rhombifera
+  bracket: Rhombiferans
   rank: class
   status: informal
   auth: [Zittel]
@@ -217,6 +301,10 @@ taxon:
   name: Stephanocrinus
   auth: [Conrad]
   year: 1842
+- &stromatocystites
+  name: Stromatocystites
+  auth: [Pompeckj]
+  year: 1896
 - &tatonkacystis
   name: Tatonkacystis
   auth: [Sumrall, Sprinkle, Guensburg]
@@ -245,12 +333,30 @@ taxon:
   name: Vizcainoia
   auth: [Zamora, Smith]
   year: 2012
+- &vyscystis
+  name: Vyscystis
+  auth: [Fatka, Kordule]
+  year: 1990
+- &yorkicystitidae
+  name: Yorkicystitidae
+  rank: Family
+  auth: [Zamora, Rahman, Sumrall, Gibson, Thompson]
+  year: 2022
+- &yorkicystis
+  name: Yorkicystis
+  auth: [Zamora, Rahman, Sumrall, Gibson, Thompson]
+  year: 2022
 synonyms:
 - &eocrinus
   name: Eocrinus
   auth: [Jaekel]
   year: 1918
   synonym: *gogia
+- &kailidiscus
+  name: Kailidiscus
+  auth: [Zhao, Sumrall, Parsley, Peng]
+  year: 2010
+  synonym: *parsleya
 articles:
 - title: A new stemmed echinoderm from the Furongian of China and the origin of Glyptocystitida (Blastozoa, Echinodermata)
   dates:
@@ -324,7 +430,9 @@ articles:
           - taxon: *barroubiocystis
           - taxon: *velieuxicystis
     - taxon: *stephanocrinus
+      outgroup: true
     - taxon: *hemicosmites
+      outgroup: true
 - title: A New Turban-Shaped Gogiid Eocrinoid From The Kaili Formation (Kaili Biota), Balang, Jianhe County, Guizhou Province, China
   dates:
     accepted: 2009-11-29
@@ -357,6 +465,89 @@ articles:
                 - taxon: *inflatus
                   new: true
                   place: *kaili-fmtn
+- title: Cambrian edrioasteroid reveals new mechanism for secondary reduction of the skeleton in echinoderms
+  dates:
+    received: 2021-12-17
+    accepted: 2022-02-04
+  journal:
+    name: *procrsocb
+    volume: 289
+    year: 2022
+    article: 20212733
+  doi: 10.1098/rspb.2021.2733
+  authors:
+  - *zamora
+  - *rahman
+  - *sumrall
+  - *gibson
+  - *thompson
+  taxonomy:
+  - taxon: *echinodermata
+    children:
+    - taxon: *edrioasteroidea
+      children:
+      - taxon: *yorkicystitidae
+        new: true
+        children:
+        - taxon: *yorkicystis
+          new: true
+          children:
+          - taxon: *haefneri
+            new: true
+            place: *emmigsville-member
+  phylogeny:
+  - type: 50% majority-rule consenus Bayesian
+    children:
+    - children:
+      - taxon: *helicocystis
+      - children:
+        - taxon: *lepidocystis
+        - taxon: *vyscystis
+        - children:
+          - taxon: *titanocrinus
+          - taxon: *apektocrinus
+        - taxon: *ridersia
+        - taxon: *gogia
+        - taxon: *stromatocystites
+        - children:
+          - taxon: *kailidiscus
+          - taxon: *yorkicystis
+          - children:
+            - taxon: *argodiscus
+            - taxon: *isorophus
+    - taxon: *helicoplacus
+      outgroup: true
+  - type: strict consensus of four most parsimonious trees parsimony analysis
+    children:
+    - children:
+      - children:
+        - bracket: *edrioasteroidea
+          children:
+          - children:
+            - taxon: *kailidiscus
+            - taxon: *yorkicystis
+          - children:
+            - taxon: *argodiscus
+            - taxon: *isorophus
+        - children:
+          - children:
+            - bracket: *blastozoa
+              children:
+              - taxon: *lepidocystis
+              - taxon: *vyscystis
+              - taxon: *ridersia
+              - taxon: *gogia
+            - bracket: *crinoidea
+              children:
+              - taxon: *titanocrinus
+              - taxon: *apektocrinus
+          - taxon: *stromatocystites
+            bracket: *edrioasteroidea
+      - taxon: *helicocystis
+        bracket: *helicocystoidea
+    - taxon: *helicoplacus
+      bracket: *helicoplacoidea
+      outgroup: true
 - title: Cambrian stalked echinoderms show unexpected plasticity of arm construction
   dates:
     received: 2011-04-13
@@ -399,6 +590,7 @@ articles:
               place: *coulouma
   phylogeny:
   - taxon: *kinzercystis
+    outgroup: true
     children:
     - children:
       - taxon: *gogia
