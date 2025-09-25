@@ -20,12 +20,18 @@ researchers:
 - &guensburg
   family: Guensburg
   given: Thomas E.
+- &hahn
+  family: Hahn
+  given: Gerhard
 - &lefebvre
   family: Lefebvre
   given: Bertrand
 - &mooi
   family: Mooi
   given: Rich
+- &muller
+  family: Müller
+  given: Peter
 - &parsley
   family: Parsley
   given: Ronald
@@ -74,19 +80,38 @@ journals:
 - &jofpaleo Journal of Paleontology
 - &papersinpalaeo Papers in Palaeontology
 - &procrsocb Proceedings of the Royal Society B
-taxon:
+taxa:
+######################## A
 - &aethocrinus
   name: Aethocrinus
   auth: [Ubaghs]
   year: 1969
+- &agelacrinitidae
+  name: Agelacrinitidae
+  rank: Family
+  auth: [Chapman]
+  year: 1860
+- &agelacrinitinae
+  name: Agelacrinitinae
+  rank: Subfamily
+  auth: [Smith, Arbizui]
+  year: 1987
 - &akadocrinus
   name: Akadocrinus
   auth: [Prokop]
   year: 1962
+- &alabamensis
+  name: alabamensis
+  auth: [Sumrall, Garbisch, Pope]
+  year: 2000
 - &alphacrinus
   name: alphacrinus
   auth: [Guensburg]
   year: 2010
+- &alpinensis
+  name: alpinensis
+  auth: [Bassler]
+  year: 1936
 - &apektocrinus
   name: Apektocrinus
   auth: [Guensburg, Sprinkle]
@@ -108,10 +133,15 @@ taxon:
   name: Athenacrinus
   auth: [Guensburg, Sprinkle, Mooi, Lefebvre, David, Roux, Derstler]
   year: 2020
+######################## B
 - &barroubiocystis
   name: Barroubiocystis
   auth: [Ubaghs]
   year: 1999
+- &belli
+  name: belli
+  auth: [Sumrall, Brett, Cornell]
+  year: 2006
 - &blastozoa
   name: Blastozoa
   rank: Subphylum
@@ -122,6 +152,7 @@ taxon:
   name: broweri
   auth: [Guensburg, Sprinkle, Mooi, Lefebvre, David, Roux, Derstler]
   year: 2020
+######################## C
 - &camptostroma
   name: Camptostroma
   auth: [Ruedemann]
@@ -168,6 +199,7 @@ taxon:
   name: Cuniculocystis
   auth: [Sprinkle, Wahlman]
   year: 1994
+######################## D
 - &destombesi
   name: destombesi
   auth: [Ubaghs]
@@ -190,6 +222,7 @@ taxon:
   name: durhami
   auth: [Sprinkle]
   year: 1973
+######################## E
 - &echinoencrinites
   name: Echinoencrinites
   auth: [von Meyer]
@@ -234,6 +267,10 @@ taxon:
   name: Eocystites
   auth: [Billings]
   year: 1868
+- &eopostibulla
+  name: Eopostibulla
+  auth: [Müller, Hahn]
+  year: 2010
 - &eumorphocystis
   name: Eumorphocystis
   auth: [Branson, Peck]
@@ -242,6 +279,8 @@ taxon:
   name: extenuatus
   auth: [Zhao, Rahman, Zamora, Chen, Cong]
   year: 2022
+######################## F
+######################## G
 - &glenocrinus
   name: Glenocrinus
   auth: [Guensburg, Sprinkle]
@@ -270,10 +309,15 @@ taxon:
   rank: Order
   auth: [Broadhead]
   year: 1982
+- &graysoni
+  name: graysoni
+  auth: [Sumrall, Sprinkle, Bonem]
+  year: 2006
 - &guensburgi
   name: guensburgi
   auth: [Sprinkle, Sumrall]
   year: 2015
+######################## H
 - &haefneri
   name: haefneri
   auth: [Zamora, Rahman, Sumrall, Gibson, Thompson]
@@ -317,14 +361,34 @@ taxon:
   name: Hybocrinus
   auth: [Billings]
   year: 1857
+- &hybolopus
+  name: hybolopus
+  auth: [Fraunfelder, Utgaard]
+  year: 1970
+######################## I
 - &inflatus
   name: inflatus
   auth: [Parsley, Zhao]
   year: 2010
+- &isorophida
+  name: Isorophida
+  rank: Order
+  auth: [Bell]
+  year: 1976
 - &isorophus
   name: Isorophus
   auth: [Foerste]
   year: 1916
+######################## J
+- &jasperensis
+  name: jasperensis
+  auth: [Harker]
+  year: 1953
+######################## K
+- &keslingi
+  name: keslingi
+  auth: [Bell]
+  year: 1976
 - &kinzercystis
   name: Kinzercystis
   auth: [Sprinkle]
@@ -332,10 +396,15 @@ taxon:
 - &kitchnerensis
   auth: [Sprinkle]
   year: 1973
+######################## L
 - &languedocianus
   name: languedocianus
   auth: [Ubaghs]
   year: 1987
+- &legrandensis
+  name: legrandensis
+  auth: [Miller, Gurley]
+  year: 1894
 - &lepadocystis
   name: Lepadocystis
   auth: [Carpenter]
@@ -349,10 +418,15 @@ taxon:
   name: lloydi
   auth: [Sprinkle]
   year: 1985
+- &lukei
+  name: lukei
+  auth: [Bell, Petersen]
+  year: 1976
 - &lyracystis
   name: Lyracystis
   auth: [Sprinkle, Collins]
   year: 2006
+######################## M
 - &macrocystella
   name: Macrocystella
   auth: [Callaway]
@@ -381,6 +455,15 @@ taxon:
   name: multiporata
   auth: [Branson, Peck]
   year: 1940
+- &murphyi
+  name: murphyi
+  auth: [Sumrall, Garbisch, Pope]
+  year: 2000
+######################## N
+- &neglecta
+  name: neglecta
+  auth: [Smith]
+  year: 1983
 - &nimius
   name: nimius
   auth: [Bell, Sprinkle]
@@ -389,6 +472,12 @@ taxon:
   name: nitidus
   auth: [Sinclair]
   year: 1945
+######################## O
+######################## P
+- &parapostibulla
+  name: Parapostibulla
+  auth: [Sumrall, Garbisch, Pope]
+  year: 2000
 - &parsleya
   name: Parsleya
   auth: [Deshmukh]
@@ -412,6 +501,23 @@ taxon:
   name: Pleurocystites
   auth: [Neumayr]
   year: 1899
+- &postibulla
+  name: Postibulla
+  auth: [Bell]
+  year: 1976
+- &postibullinae
+  name: Postibullinae
+  rank: Subfamily
+  auth: [Sumrall, Garbisch, Pope]
+  year: 2000
+- &postpetalus
+  name: postpetalus
+  auth: [Müller, Hahn]
+  year: 2010
+- &pustulata
+  name: pustulata
+  auth: [Müller, Hahn]
+  year: 2010
 - &pseudedriophus
   name: Pseudedriophus
   auth: [Sprinkle, Sumrall]
@@ -420,6 +526,20 @@ taxon:
   name: purujoensis
   auth: [Zamora, Smith]
   year: 2012
+- &pyrgocystidae
+  name: Pyrgocystidea
+  rank: Family
+  auth: [Kesling]
+  year: 1967
+- &pyrgocystis
+  name: Pyrgocystis
+  auth: [Bather]
+  year: 1915
+- &pyrgopostibulla
+  name: Pyrgopostibulla
+  auth: [Sumrall, Brett, Cornell]
+  year: 2006
+######################## R
 - &rhombifera
   name: Rhombifera
   bracket: Rhombiferans
@@ -444,6 +564,7 @@ taxon:
   name: roddyi
   auth: [Ruedemann]
   year: 1933
+######################## S
 - &sanducystis
   name: Sanducystis
   auth: [Zamora, Sumrall, Zhu, Lefebvre]
@@ -480,6 +601,7 @@ taxon:
   name: sumralli
   auth: [Guensburg, Sprinkle]
   year: 2003
+######################## T
 - &tatonkacystis
   name: Tatonkacystis
   auth: [Sumrall, Sprinkle, Guensburg]
@@ -508,6 +630,7 @@ taxon:
   name: Turbanicystis
   auth: [Parsley, Zhao]
   year: 2010
+######################## U
 - &ubaghsi
   name: ubaghsi
   auth: [Guensburg, Sprinkle]
@@ -516,6 +639,7 @@ taxon:
   name: Ubaghsicystis
   auth: [Gil Cid, Domínguez]
   year: 2002
+######################## V
 - &velieuxicystis
   name: Velieuxicystis
   auth: [Ubaghs]
@@ -528,6 +652,7 @@ taxon:
   name: Vyscystis
   auth: [Fatka, Kordule]
   year: 1990
+######################## W
 - &wahwahensis
   name: wahwahensis
   auth: [Guensburg, Sprinkle]
@@ -536,6 +661,12 @@ taxon:
   name: wanneri
   auth: [Foerste]
   year: 1938
+- &westgardi
+  name: westgardi
+  auth: [Sumrall, Sprinkle, Bonem]
+  year: 2006
+######################## X
+######################## Y
 - &yorkicystitidae
   name: Yorkicystitidae
   rank: Family
@@ -545,6 +676,7 @@ taxon:
   name: Yorkicystis
   auth: [Zamora, Rahman, Sumrall, Gibson, Thompson]
   year: 2022
+######################## Z
 synonyms:
 - &eocrinus
   name: Eocrinus
@@ -556,6 +688,7 @@ synonyms:
   auth: [Zhao, Sumrall, Parsley, Peng]
   year: 2010
   synonym: *parsleya
+  reason: homonym
 articles:
 - title: A new stemmed echinoderm from the Furongian of China and the origin of Glyptocystitida (Blastozoa, Echinodermata)
   journal:
@@ -1090,6 +1223,75 @@ articles:
         children:
         - *titanocrinus
         - *aethocrinus
+- title: Edrioasteroidea aus den Seifen-Schichten im Westerwald, Rheinisches Schiefer-Gebirge (Unter-Devon, Deutschland), Teil 1
+  journal:
+    name: Geologica et Palaeontologica
+    volume: 43
+    year: 2010
+    month: 3
+    day: 30
+    pages:
+    - 9
+    - 47
+    authors:
+    - *muller
+    - *hahn
+  quotes:
+  - |
+    Bell (1976) established the order Isorophida with
+    the two suborders Lebedocystina and Isorophina.
+    The Isorophina are further subdivided into
+    Isorophidae (Bell, 1976) [correct name Hemicystidae,
+    provided the genus Hemicystitides (Hall, 1852) is included
+    in this family) for the original, Ordovician-Silurian
+    genera, and Agelacrinitidae (Chapman, 1860) for
+    the advanced Devonian-Carboniferous genera.
+    The Pyrgocystidae (Kesling, 1967) with the genus
+    Pergocystis (Bather, 1915) and the Carboniferous
+    Lispidecodidae (Kesling, 1967) with
+    Lispidecodus (Kesling, 1967) are not mentioned in Bell.
+  - |
+    Holloway and Jell (1983) established the Rhenopyrgidae
+    with the genus Rhenopyrgus (Dehm, 1961). They left the
+    assignment of this family to an order open.
+  - |
+    Smith and Arbizu (1987) combine all taxa of the Isorophina
+    into the subfamily Agelacrinitinae and present their phylogeny.
+  - |
+    Sumrall (1993) again uses the families Isorophidae and
+    Agelacrinitidae in the sense of Bell.
+  - |
+    Sumrall, Garbisch and Pope (2000) establish the subfamily
+    Postibullinae within the Agelacrinitidae
+  - |
+    Guensburg and Sprinkle (1994) subdivide the Isorophida
+    into only two families without subdivision into
+    suborders — Agelacrinitidae (incl. the Hemicystitidae)
+    and the ebetodiscidae (incl. the Pyrgocystidae).
+  - |
+    Here, we follow the classification by
+    Guensburg & Sprinkle (1994), but classify the Hemicystitidae
+    and the Pyrgocystidae as independent families. This now
+    provides three families and three subfamilies for the
+    Devonian-Carboniferous forms — the Agelacrinitidae
+    (with the Agelacrinitinae, Discocystinae, and Postibullinae),
+    the Pyrgocystidae, and the Rhenopyrgidae. With the exception
+    of the Discocystinae (only documented from the Upper Devonian
+    onward), all of these families and subfamilies occur in the
+    German Lower Devonian; however, the Rhenopyrgidae are not
+    discussed in this study. The systematic classification of
+    the Agelacrinitidae is essentially based on Sumrall (1996, 2000).
+  taxonomy:
+  - taxon: *isorophida
+    children:
+    - taxon: *agelecrinitidae
+      children:
+      - taxon: *postibullinae
+      - taxon: *agelacrinitinae
+      - taxon: *discocystinae
+    - taxon: *pyrgocystidae
+    - taxon: *hemicystitidae
+    - taxon: *rhenopyrgidae
 - title: Kailidiscus, A New Plesiomorphic Edrioasteroid From The Basal Middle Cambrian Kaili Biota Of Guizhou Province, China
   journal:
     name: *jofpaleo
