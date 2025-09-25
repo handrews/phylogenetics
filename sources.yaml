@@ -96,6 +96,10 @@ taxa:
   rank: Subfamily
   auth: [Smith, Arbizui]
   year: 1987
+- &agelacrinites
+  name: Agelacrinites
+  auth: [Vanuxem]
+  year: 1842
 - &akadocrinus
   name: Akadocrinus
   auth: [Prokop]
@@ -142,6 +146,10 @@ taxa:
   name: belli
   auth: [Sumrall, Brett, Cornell]
   year: 2006
+- &blairi
+  name: blairi
+  auth: [Miller]
+  year: 1894
 - &blastozoa
   name: Blastozoa
   rank: Subphylum
@@ -199,11 +207,19 @@ taxa:
   name: Cuniculocystis
   auth: [Sprinkle, Wahlman]
   year: 1994
+- &curvatus
+  name: curvatus
+  auth: [Grigo]
+  year: 1995
 ######################## D
 - &destombesi
   name: destombesi
   auth: [Ubaghs]
   year: 1963
+- &devonica
+  name: devonica
+  auth: [Bassler]
+  year: 1936
 - &dibrachycystidae
   name: Dibrachycystidae
   rank: Family
@@ -213,6 +229,11 @@ taxa:
   name: Dibrachycystis
   auth: [Zamora, Smith]
   year: 2012
+- &discocystinae
+  name: Discocystinae
+  rank: Subfamily
+  auth: [Sumrall]
+  year: 1996
 - &disparida
   name: Disparida
   rank: Subclass
@@ -281,6 +302,10 @@ taxa:
   year: 2022
 ######################## F
 ######################## G
+- &germanica
+  name: germanica
+  auth: [Müller, Hahn]
+  year: 2010
 - &glenocrinus
   name: Glenocrinus
   auth: [Guensburg, Sprinkle]
@@ -313,6 +338,10 @@ taxa:
   name: graysoni
   auth: [Sumrall, Sprinkle, Bonem]
   year: 2006
+- &grebelae
+  name: grebelae
+  auth: [Müller, Hahn]
+  year: 2010
 - &guensburgi
   name: guensburgi
   auth: [Sprinkle, Sumrall]
@@ -322,6 +351,10 @@ taxa:
   name: haefneri
   auth: [Zamora, Rahman, Sumrall, Gibson, Thompson]
   year: 2022
+- &hamiltonensis
+  name: hamiltonensis
+  auth: [Vanuxem]
+  year: 1842
 - &helicocystoidea
   name: Helicocystoidea
   bracket: Helicocystoids
@@ -357,6 +390,19 @@ taxa:
   name: Hemicosmites
   auth: [Buch]
   year: 1840
+- &hemicystitidae
+  name: Hemicystitidae
+  rank: Family
+  auth: [Bassler]
+  year: 1936
+- &hemicystitides
+  name: Hemicystitides
+  auth: [Hall]
+  year: 1852
+- &hispanica
+  name: hispanica
+  auth: [Müller, Hahn]
+  year: 2010
 - &hybocrinus
   name: Hybocrinus
   auth: [Billings]
@@ -373,6 +419,16 @@ taxa:
 - &isorophida
   name: Isorophida
   rank: Order
+  auth: [Bell]
+  year: 1976
+- &isorophidae
+  name: Isorophidae
+  rank: Family
+  auth: [Bell]
+  year: 1976
+- &isorophina
+  name: Isorophina
+  rank: Suborder
   auth: [Bell]
   year: 1976
 - &isorophus
@@ -394,13 +450,23 @@ taxa:
   auth: [Sprinkle]
   year: 1973
 - &kitchnerensis
+  name: kitchnerensis
   auth: [Sprinkle]
   year: 1973
+- &krama
+  name: Krama
+  auth: [Bell]
+  year: 1976
 ######################## L
 - &languedocianus
   name: languedocianus
   auth: [Ubaghs]
   year: 1987
+- &lebetodiscidae
+  name: Lebetodiscidae
+  rank: Family
+  auth: [Guensburg, Sprinkle]
+  year: 1994
 - &legrandensis
   name: legrandensis
   auth: [Miller, Gurley]
@@ -414,6 +480,15 @@ taxa:
   auth: [Foerste]
   in: [Resser, Howell]
   year: 1938
+- &lispidecodidae
+  name: Lispidecodidae
+  rank: Family
+  auth: [Kesling]
+  year: 1967
+- &lispidecodus
+  name: Lispidecodus
+  auth: [Kesling]
+  year: 1967
 - &lloydi
   name: lloydi
   auth: [Sprinkle]
@@ -473,7 +548,19 @@ taxa:
   auth: [Sinclair]
   year: 1945
 ######################## O
+- &octogona
+  name: octogona
+  auth: [Richter]
+  year: 1930
+- &odin
+  name: odin
+  auth: [Müller, Hahn]
+  year: 2010
 ######################## P
+- &parakrama
+  name: Parakrama
+  auth: [Müller, Hahn]
+  year: 2010
 - &parapostibulla
   name: Parapostibulla
   auth: [Sumrall, Garbisch, Pope]
@@ -497,6 +584,10 @@ taxa:
   name: perneri
   auth: [Jaekel]
   year: 1901
+- &petalus
+  name: petalus
+  auth: [Holloway, Jell]
+  year: 1983
 - &pleurocystites
   name: Pleurocystites
   auth: [Neumayr]
@@ -540,10 +631,23 @@ taxa:
   auth: [Sumrall, Brett, Cornell]
   year: 2006
 ######################## R
+- &rhenanus
+  name: rhenanus
+  auth: [Roemer]
+  year: 1851
+- &rhenopyrgidae
+  name: Rhenopyrgidae
+  rank: Family
+  auth: [Holloway, Jell]
+  year: 1983
+- &rhenopyrgus
+  name: Rhenopyrgus
+  auth: [Dehm]
+  year: 1961
 - &rhombifera
   name: Rhombifera
   bracket: Rhombiferans
-  rank: class
+  rank: Class
   status: informal
   auth: [Zittel]
   year: 1870
@@ -569,6 +673,10 @@ taxa:
   name: Sanducystis
   auth: [Zamora, Sumrall, Zhu, Lefebvre]
   year: 2017
+- &sardesoni
+  name: sardesoni
+  auth: [Bather]
+  year: 1915
 - &scoliocystis
   name: Scoliocystis
   auth: [Jaekel]
@@ -606,6 +714,14 @@ taxa:
   name: Tatonkacystis
   auth: [Sumrall, Sprinkle, Guensburg]
   year: 1997
+- &taunicus
+  name: taunicus
+  auth: [Rösler]
+  year: 1953
+- &thor
+  name: thor
+  auth: [Müller, Hahn]
+  year: 2010
 - &titanocrinus
   name: Titanocrinus
   auth: [Guensburg, Sprinkle]
@@ -648,6 +764,10 @@ taxa:
   name: Vizcainoia
   auth: [Zamora, Smith]
   year: 2012
+- &volborthi
+  name: volborthi
+  auth: [Hecker]
+  year: 1939
 - &vyscystis
   name: Vyscystis
   auth: [Fatka, Kordule]
@@ -661,8 +781,8 @@ taxa:
   name: wanneri
   auth: [Foerste]
   year: 1938
-- &westgardi
-  name: westgardi
+- &westergardi
+  name: westergardi
   auth: [Sumrall, Sprinkle, Bonem]
   year: 2006
 ######################## X
@@ -678,6 +798,12 @@ taxa:
   year: 2022
 ######################## Z
 synonyms:
+- &devonicus
+  name: devonicus
+  auth: [Bassler]
+  year: 1936
+  synonym: *devonica
+  reason: Unclear, needs verification
 - &eocrinus
   name: Eocrinus
   auth: [Jaekel]
@@ -1281,15 +1407,182 @@ articles:
     German Lower Devonian; however, the Rhenopyrgidae are not
     discussed in this study. The systematic classification of
     the Agelacrinitidae is essentially based on Sumrall (1996, 2000).
+  - |
+    Pyrgocystidae
+    In the past, about a dozen taxa have been described under
+    Pyrgocystis, of which only the scale tube is present
+    (Bather 1915; Richter 1930; Hecker 1939; Regnéll 1945).
+    According to Holloway & Jell (1983), only forms whose
+    penduncular zone is not composed of vertically arranged
+    rows of plates belong to Pyrgocystis, so they only include
+    the type species P. sardesoni (Bather, 1915), and, with
+    reservations, P. volborthi (Hecker, 1939) and P.? petalus
+    (Holloway & Jell, 1938) from the Ludlovian of Australia.
+    Klug et al. (2008) also classify Rhenopyrgus octogona
+    (Richter, 1930) as Pyrgocystis. Since the scale tube of
+    this species consists of vertical keeled rows, we consider
+    an assignment to Pyrgocystis unlikely.
+    According to Holloway & Jell (1983), the Ordovician type
+    species is based on only one specimen (see Regnéll 1966,
+    Fig. 127-2a-b), which only poorly reveals the structure
+    of the adoral region. Therefore, the assignment of
+    P.? petalus to this genus is uncertain, which
+    Holloway & Jell (1983) express by adding a question mark
+    to P.? petalus. We follow this example here with
+    P.? postpetalus n. sp. from the Lower Devonian of Germany.
+  - |
+    On the position of P. neglecta — Smith, 1983, places
+    the species within Postibulla; this assignment is adopted
+    by Sumrall et al. (2000). However, the genus differs from
+    Postibulla in one essential characteristic—a posterior
+    oral protrusion is not developed, which is why it is
+    placed here within Parapostibulla.
+  - |
+    The key difference between Agelacrinites and Krama lies
+    in the structure of the ambulacra. While these are
+    biserial in Agelacrinites, they are triserial to multiserial
+    in Krama. The genus was established by Bell (1965) as
+    a monotypic genus with the species K. devonica (Bassler, 1936)
+    based on material from the Middle Devonian of North America.
+    Smith & Arbizui (1987) described a specimen from the
+    Lower Devonian of Spain, which they placed under
+    Krama devonica. According to current knowledge, this is
+    a representative of a separate species (K. hispanica n. sp.).
+    In addition, two new species from the Lower Devonian of
+    Germany were described. The main differences between these
+    four species relate to the structure of the oral region,
+    the course of the ambulacrum D, the thecal type, the
+    number of plate rows between the ambulacrum C and the
+    periprocete, the structure of the upper ring, and the
+    appearance of sculpture in the form of a granulated plate
+    surface. Table 4 summarizes the differences between the
+    four species.
   taxonomy:
   - taxon: *isorophida
     children:
-    - taxon: *agelecrinitidae
+    - taxon: *pyrgocystidae
+      children:
+      - taxon: *pyrgocystis
+        type: true
+        children:
+        - taxon: *sardesoni
+          type: true
+        - taxon: *volborthi
+          provisional: true # with reservations
+        - taxon: *petalus
+          provisional: true # uncertain
+        - taxon: *postpetalus
+          provisional: true # following convention of petalus
+          new: true
+          specimens:
+            holotype: PWL 2009/5016sub1-LS
+            paratypes:
+            - PWL 2009/5017-LS # 517 but surely a typo
+            - PWL 2009/5018-LS
+    - taxon: *agelacrinitidae
       children:
       - taxon: *postibullinae
+        children:
+        - taxon: *postibulla
+          type: true
+          children:
+          - taxon: *legrandensis
+          - taxon: *lukei
+          - taxon: *alabamensis
+          - taxon: *westergardi
+          - taxon: *jasperensis
+            provisional: true
+          - taxon: *alpinensis
+            provisional: true
+        - taxon: *parapostibulla
+          children:
+          - taxon: *murphyi
+          - taxon: *hybolopus
+          - taxon: *neglecta
+            moved: true
+            from: *postibulla
+          - taxon: *graysoni
+        - taxon: *pyrgopostibulla
+          children:
+          - taxon: *belli
+        - taxon: *eopostibulla
+          new: true
+          children:
+          - taxon: *pustulata
+            type: true
+            new: true
+            specimens:
+              holotype: PWL 2009/5022-LS
+              paratypes:
+              - PWL 2009/5019-LS
+              - PWL 2009/5020-LS
+              - PWL 2009/5021-LS
       - taxon: *agelacrinitinae
+        type: true  # Agelacrinites is given as type of Agelacrinitidae as well
+        children:
+        - taxon: *agelacrinites
+          type: true
+          children:
+          - taxon: *hamiltonensis
+            type: true
+          - taxon: *blairi
+          - taxon: *curvatus
+          - taxon: *rhenanus
+            provisional: true
+          - taxon: *taunicus
+          - taxon: *thor
+            new: true
+            specimens:
+              holotype: PWL 2009/5023-LS
+        - taxon: *krama
+          children:
+          - taxon: *devonica
+            type: true
+          - taxon: *hispanica
+            new: true
+            specimens:
+              holotype: DPO 14001
+          - taxon: *germanica
+            new: true
+            specimens:
+              holotype: PWL 2009/5024-LS
+              paratypes:
+              - PWL 2009/5025-LS
+              - PWL 2009/5026-LS
+              - PWL 2009/5027-LS
+              - PWL 2009/5028a-LS
+              - PWL 2009/5028b-LS
+              - PWL 2009/5029-LS
+              - PWL 2009/5030-LS
+              - PWL 2009/5031-LS
+              - PWL 2009/5032-LS
+              - RS 21
+              - M 2514
+          - taxon: *odin
+            new: true
+            specimens:
+              holotype: PWL 2009/5033sub1-LS
+              paratypes:
+              - PWL 2009/5033sub2-LS
+        - taxon: *parakrama
+          new: true
+          children:
+          - taxon: *grebelae
+            type: true
+            new: true
+            specimens:
+              holotype: PWL 2009/5040-LS
+              paratypes:
+              - PWL 2009/5034-LS
+              - PWL 2009/5035-LS
+              - PWL 2009/5016sub2-LS
+              - PWL 2009/5036-LS
+              - PWL 2009/5037-LS
+              - PWL 2009/5038-LS
+              - PWL 2009/5039-LS
+              - PWL 2009/5041-LS
+              - PWL 2009/5042-LS
       - taxon: *discocystinae
-    - taxon: *pyrgocystidae
     - taxon: *hemicystitidae
     - taxon: *rhenopyrgidae
 - title: Kailidiscus, A New Plesiomorphic Edrioasteroid From The Basal Middle Cambrian Kaili Biota Of Guizhou Province, China
@@ -1431,6 +1724,7 @@ articles:
             type: true
           - taxon: *spencensis
             moved: true
+            from: *totiglobus
             modifier: n. comb.
             specimens:
               paratypes:
@@ -1468,6 +1762,7 @@ articles:
           - taxon: *lloydi
             type: true
             moved: true
+            from: *totiglobus
           - taxon: *extenuatus
             new: true
             specimens:
