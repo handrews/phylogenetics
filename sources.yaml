@@ -769,7 +769,120 @@ articles:
     children:
     - taxon: *lloydi
       provisional: true
-
+  phylogeny:
+  - type: strict consensus
+    children:
+    - taxon: *pentangularis
+      outgroup: true
+    - taxon: *chinensis
+    - children:
+      - taxon: *roddyi
+      - taxon: *perneri
+      - children:
+        - children:
+          - children:
+            - children:
+              - taxon: *moorei
+              - children:
+                - children:
+                  - taxon: *mansfieldi
+                  - taxon: *broweri
+                - children:
+                  - taxon: *treadwelli
+                  - taxon: *nitidus
+            - taxon: *ubaghsi
+          - taxon: *wahwahensis
+        - taxon: *globularis
+        - taxon: *sumralli
+    - children:
+      - taxon: *lloydi
+      - taxon: *guensburgi
+    - children:
+      - taxon: *durhami
+      - taxon: *wanneri
+      - children:
+        - taxon: *kitchnerensis
+        - children:
+          - taxon: *destombesi
+          - taxon: *mariae
+          - taxon: *multiporata
+  - type: 50% majority rule consensus
+    children:
+    - taxon: *pentangularis
+      outgroup: true
+    - children:
+      - taxon: *chinensis
+      - children:
+        - taxon: *lloydi
+        - taxon: *guensburgi
+    - children:
+      - taxon: *roddyi
+      - taxon: *perneri
+      - children:
+        - children:
+          - children:
+            - children:
+              - taxon: *moorei
+              - children:
+                - children:
+                  - taxon: *mansfieldi
+                  - taxon: *broweri
+                - children:
+                  - taxon: *treadwelli
+                  - taxon: *nitidus
+            - taxon: *ubaghsi
+          - taxon: *wahwahensis
+        - children:
+          - taxon: *globularis
+          - taxon: *sumralli
+    - children:
+      - taxon: *durhami
+      - taxon: *wanneri
+      - children:
+        - taxon: *kitchnerensis
+        - children:
+          - taxon: *destombesi
+          - taxon: *mariae
+          - taxon: *multiporata
+  - type: evolutionary tree
+    children:
+    - taxon: *stromatocystites
+      outgroup: true
+    - taxon: *kailidiscus
+    - children:
+      - taxon: *camptostroma
+      - taxon: *ceratocystis
+      - bracket: *crinoidea
+        children:
+          - children:
+            - children:
+              - children:
+                - taxon: *aethocrinus
+                - children:
+                  - children:
+                    - taxon: *alphacrinus
+                    - taxon: *athenacrinus
+                  - children:
+                    - taxon: *carabocrinus
+                    - taxon: *hybocrinus
+              - taxon: *apektocrinus
+            - taxon: *eknomocrinus
+          - taxon: *glenocrinus
+          - taxon: *titanocrinus
+    - children:
+      - taxon: *sprinkleoglobus
+        as: *totiglobus
+      - taxon: *pseudedriophus
+    - bracket: *blastozoa
+      children:
+      - taxon: *kinzercystis
+      - taxon: *lepidocystis
+      - children:
+        - taxon: *gogia
+        - children:
+          - taxon: *rhopalocystis
+          - taxon: *macrocystella
+          - taxon: *eumorphocystis
 - title: Cambrian edrioasteroid reveals new mechanism for secondary reduction of the skeleton in echinoderms
   journal:
     name: *procrsocb
