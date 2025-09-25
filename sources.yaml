@@ -1,28 +1,67 @@
 researchers:
+- &babcock
+  family: Babcock
+  given: Loren E.
+- &chen-a-l
+  family: Chen
+  given: Ailin
+- &cong-p-y
+  family: Cong
+  given: Peiyun
+- &david
+  family: David
+  given: Bruno
+- &derstler
+  family: Derstler
+  given: Kraig
 - &gibson
   family: Gibson
   given: Adam P.
+- &guensburg
+  family: Guensburg
+  given: Thomas E.
 - &lefebvre
   family: Lefebvre
   given: Bertrand
+- &mooi
+  family: Mooi
+  given: Rich
 - &parsley
   family: Parsley
   given: Ronald
+- &peng-j
+  family: Peng
+  given: Jin
 - &rahman
   family: Rahman
   given: Imran A.
+- &robison
+  family: Robison
+  given: Richard A.
+- &roux
+  family: Roux
+  given: Michel
 - &smith
   family: Smith
   given: Andrew B.
+- &sprinkle
+  family: Sprinkle
+  given: James
 - &sumrall
   family: Sumrall
   given: Colin D.
 - &thompson
   family: Thompson
   given: Jeffrey R.
+- &wen-r-q
+  family: Ren
+  given: Rongqin
 - &zamora
   family: Zamora
   given: Samuel
+- &zhao-j
+  family: Zhao
+  given: Jun
 - &zhao-y-l
   family: Zhao
   given: Yuanlong
@@ -30,52 +69,11 @@ researchers:
   family: Zhu
   given: Xue-Jian
 journals:
+- &bullgeo Bulletins of Geosciences
 - &geomag Geological Magazine
 - &jofpaleo Journal of Paleontology
+- &papersinpalaeo Papers in Palaeontology
 - &procrsocb Proceedings of the Royal Society B
-rocks:
-- &coulouma
-  name: Coulouma
-  place: [Montagne Noir, France]
-  local: [[Caesaraugustan, Lower Languedocian]]
-- &jbel-wawrmast-fmtn
-  name: Jbel Wawrmast Formation
-  place: [Alnif region, eastern Anti-Atlas mountains, Morocco]
-- &jince-fmtn
-  name: Jince Formation
-  place: [Prague Basin, Bohemia]
-  time: [Middle Cambrian, Cambrian]
-- &kaili-fmtn
-  name: Kaili Formation
-  place: [Miaobapo Quarry, Jianhe County, Guizhou Province, China]
-  landmass: South China
-  time: [Stage 4, Miaolingian, Cambrian]
-  notes: '"middle third" of the formation, basal Middle Cambrian'
-- &kinzers-fmtn
-  name: Kinzers Formation
-  place: [York, Pennsylvania, United States]
-  local: [[middle Dyeran Stage, Delemaran Stage]]
-  time: [Stage 4, Miaolingian, Cambrian]
-- &murero-fmtn
-  name: Murero Formation
-  place: [Purujosa, Moncayo National Park, Spain]
-  local: [Caesaraugustan, Lower Languedocian]
-- &sandu-fmtn
-  name: Sandu Formation
-  place: [Guole Town, Jingxi County, Guangxi Province, China]
-  landmass: South China
-  time: [Stage 9, Furongian, Cambrian]
-- &breche-a-micmacca-member
-  name: Brèche à Micmacca Member
-  time: [517MA, Stage 3, Series 2, Cambrian]
-  formation: *jbel-wawrmast-fmtn
-- &tarhoucht-member
-  name: Tarhoucht Member
-  time: [[515MA, 510MA], Stage 4, Series 2, Cambrian]
-  formation: *jbel-wawrmast-fmtn
-- &emmigsville-member
-  name: Emmigsville Member
-  formation: *kinzers-fmtn
 taxon:
 - &aethocrinus
   name: Aethocrinus
@@ -85,6 +83,10 @@ taxon:
   name: Akadocrinus
   auth: [Prokop]
   year: 1962
+- &alphacrinus
+  name: alphacrinus
+  auth: [Guensburg]
+  year: 2010
 - &apektocrinus
   name: Apektocrinus
   auth: [Guensburg, Sprinkle]
@@ -97,6 +99,15 @@ taxon:
   name: Asturicystis
   auth: [Sdzuy]
   year: 1993
+- &athenacrinidae
+  name: Athenacrinidae
+  rank: Family
+  auth: [Guensburg, Sprinkle, Mooi, Lefebvre, David, Roux, Derstler]
+  year: 2020
+- &athenacrinus
+  name: Athenacrinus
+  auth: [Guensburg, Sprinkle, Mooi, Lefebvre, David, Roux, Derstler]
+  year: 2020
 - &barroubiocystis
   name: Barroubiocystis
   auth: [Ubaghs]
@@ -123,6 +134,10 @@ taxon:
   name: Cheirocystis
   auth: [Paul]
   year: 1972
+- &chinensis
+  name: chinensis
+  auth: [Zhao, Sumrall, Parsley, Peng]
+  year: 2010
 - &courtessolea
   name: Courtessolea
   auth: [Domínguez-Alonso]
@@ -141,6 +156,10 @@ taxon:
   name: Cuniculocystis
   auth: [Sprinkle, Wahlman]
   year: 1994
+- &destombesi
+  name: destombesi
+  auth: [Ubaghs]
+  year: 1963
 - &dibrachycystidae
   name: Dibrachycystidae
   rank: Family
@@ -150,6 +169,15 @@ taxon:
   name: Dibrachycystis
   auth: [Zamora, Smith]
   year: 2012
+- &disparida
+  name: Disparida
+  rank: Subclass
+  auth: [Moore, Laudon]
+  year: 1943
+- &durhami
+  name: durhami
+  auth: [Sprinkle]
+  year: 1973
 - &echinoencrinites
   name: Echinoencrinites
   auth: [von Meyer]
@@ -163,12 +191,26 @@ taxon:
   ex:
     auth: [Klein]
     year: 1743
+- &echinozoa
+  name: Echinozoa
+  rank: Subphylum
+  auth: [von Zittel]
+  year: 1895
+- &edrioasterida
+  name: Edrioasterida
+  rank: Order
+  auth: [Bather]
+  year: 1898
 - &edrioasteroidea
   name: Edrioasteroidea
   rank: Class
   bracket: Edrioasteroids
   auth: [Billings]
   year: 1858
+- &eknomocrinus
+  name: Eknomocrinus
+  auth: [Guensburg, Sprinkle]
+  year: 2003
 - &eocrinoidea
   name: Eocrinoidea
   rank: Class
@@ -180,6 +222,14 @@ taxon:
   name: Eocystites
   auth: [Billings]
   year: 1868
+- &extenuatus
+  name: extenuatus
+  auth: [Zhao, Rahman, Zamora, Chen, Cong]
+  year: 2022
+- &glenocrinus
+  name: Glenocrinus
+  auth: [Guensburg, Sprinkle]
+  year: 2003
 - &glyptocystites
   name: Glyptocystites
   auth: [Billings]
@@ -190,6 +240,10 @@ taxon:
   rank: Order
   auth: [Bather]
   year: 1899
+- &guensburgi
+  name: guensburgi
+  auth: [Sprinkle, Sumrall]
+  year: 2015
 - &gogia
   name: Gogia
   auth: [Walcott]
@@ -251,6 +305,9 @@ taxon:
   name: Kinzercystis
   auth: [Sprinkle]
   year: 1973
+- &kitchnerensis
+  auth: [Sprinkle]
+  year: 1973
 - &languedocianus
   name: languedocianus
   auth: [Ubaghs]
@@ -264,6 +321,10 @@ taxon:
   auth: [Foerste]
   in: [Resser, Howell]
   year: 1938
+- &lloydi
+  name: lloydi
+  auth: [Sprinkle]
+  year: 1985
 - &lyracystis
   name: Lyracystis
   auth: [Sprinkle, Collins]
@@ -280,6 +341,10 @@ taxon:
   name: moroccoensis
   auth: [Smith, Zamora]
   year: 2013
+- &nimius
+  name: nimius
+  auth: [Bell, Sprinkle]
+  year: 1978
 - &parsleya
   name: Parsleya
   auth: [Deshmukh]
@@ -291,6 +356,10 @@ taxon:
   status: informal
   auth: [Leuckart]
   year: 1848
+- &pentangularis
+  name: pentangularis
+  auth: [Pompeckj]
+  year: 1896
 - &pleurocystites
   name: Pleurocystites
   auth: [Neumayr]
@@ -310,6 +379,15 @@ taxon:
   name: Ridersia
   auth: [Jell, Burrett, Banks]
   year: 1985
+- &ridersiidae
+  name: Ridersiidae
+  rank: Family
+  auth: [Jell, Burrett, Banks]
+  year: 1985
+- &roddyi
+  name: roddyi
+  auth: [Ruedemann]
+  year: 1933
 - &sanducystis
   name: Sanducystis
   auth: [Zamora, Sumrall, Zhu, Lefebvre]
@@ -326,6 +404,14 @@ taxon:
   name: Sinoeocrinus
   auth: [Zhao, Huang, Gong]
   year: 1994
+- &spencensis
+  name: spencensis
+  auth: [Wen, Babcock, Peng, Robison]
+  year: 2019
+- &sprinkleoglobus
+  name: Sprinkleoglobus
+  auth: [Zamora, Guensburg, Sprinkle]
+  year: 2024
 - &stephanocrinus
   name: Stephanocrinus
   auth: [Conrad]
@@ -342,6 +428,14 @@ taxon:
   name: Titanocrinus
   auth: [Guensburg, Sprinkle]
   year: 2003
+- &totiglobidae
+  name: Totiglobidae
+  auth: [Bell, Sprinkle]
+  year: 1978
+- &totiglobus
+  name: Totiglobus
+  auth: [Bell, Sprinkle]
+  year: 1978
 - &turbanicystidae
   name: Turbanicystidae
   auth: [Parsley, Zhao]
@@ -366,6 +460,10 @@ taxon:
   name: Vyscystis
   auth: [Fatka, Kordule]
   year: 1990
+- &wanneri
+  name: wanneri
+  auth: [Foerste]
+  year: 1938
 - &yorkicystitidae
   name: Yorkicystitidae
   rank: Family
@@ -388,10 +486,6 @@ synonyms:
   synonym: *parsleya
 articles:
 - title: A new stemmed echinoderm from the Furongian of China and the origin of Glyptocystitida (Blastozoa, Echinodermata)
-  dates:
-    received: 2015-11-17
-    accepted: 2016-01-27
-    online: 2016-03-03
   journal:
     name: *geomag
     volume: 154
@@ -400,6 +494,10 @@ articles:
     pages:
     - 465
     - 475
+    dates:
+      received: 2015-11-17
+      accepted: 2016-01-27
+      online: 2016-03-03
   doi: 10.1017/S001675681600011X
   authors:
   - *zamora
@@ -422,7 +520,12 @@ articles:
               children:
               - taxon: *sinensis
                 new: true
-                place: *sandu-fmtn
+                type: true
+                specimens:
+                  holotype: NIGPAS163198
+                  paratypes:
+                  - NIGPAS163199
+                  - NIGPAS163210
     inferences:
     - taxon: *echinodermata
       children:
@@ -433,7 +536,9 @@ articles:
           children:
           - taxon: *glyptocystitida
             children:
-            - taxon: *ridersia
+            - taxon: *ridersiidae
+              children:
+              - taxon: *ridersia
   phylogeny:
   - children:
     - bracket: *glyptocystitida
@@ -463,8 +568,6 @@ articles:
     - taxon: *hemicosmites
       outgroup: true
 - title: A New Turban-Shaped Gogiid Eocrinoid From The Kaili Formation (Kaili Biota), Balang, Jianhe County, Guizhou Province, China
-  dates:
-    accepted: 2009-11-29
   journal:
     name: *jofpaleo
     volume: 84
@@ -474,35 +577,116 @@ articles:
     pages:
     - 549
     - 553
+    dates:
+      accepted: 2009-11-29
   jstor: 40605503
   taxonomy:
     definitions:
-    - taxon: *echinodermata
+    - taxon: *blastozoa
       children:
-      - taxon: *blastozoa
+      - taxon: *eocrinoidea
         children:
-        - taxon: *eocrinoidea
+        - taxon: *gogiida
           children:
-          - taxon: *gogiida
+          - taxon: *turbanicystidae
+            new: true
             children:
-            - taxon: *turbanicystidae
+            - taxon: *turbanicystis
               new: true
               children:
-              - taxon: *turbanicystis
+              - taxon: *inflatus
                 new: true
-                children:
-                - taxon: *inflatus
-                  new: true
-                  place: *kaili-fmtn
+                type: true
+                specimens:
+                  holotype: GM 9-5-2 165b
+                  paratypes:
+                  - GM 9-3-887
+                  - GM 9-5-3235b
+                  - GM 10-3-2000
+                  - GM 9-5-2165a
+# - title: Athenacrinus n. gen. and other early echinoderm taxa inform crinoid origin and arm evolution
+#   journal:
+#     name: *jofpaleo
+#     volume: 94
+#     number: 2
+#     year: 2020
+#     pages:
+#     - 311
+#     - 333
+#     dates:
+#       accepted: 2019-10-03
+#   doi: 10.1017/jpa.2019.87
+#   taxonomy:
+#   - taxon: *crinoidea
+#     children:
+#     - taxon: *disparida
+#       children:
+#       - taxon: *athenacrinidae
+#         new: true
+#         children:
+#         - taxon: *athenacrinus
+#           new: true
+#           children:
+#           - taxon: *broweri
+#   assumptions:
+#   - taxon: *eknomocrimus
+#     children:
+#     - taxon: *wahwahensis
+#   - taxon: *glenocrinus
+#     children:
+#     - taxon: *globularis
+#   - taxon: *titanocrinus
+#     children:
+#     - taxon: *sumralli
+#   - taxon: *aethocrinus
+#     children:
+#     - taxon: *moorei
+#   - taxon: *apektocrinus
+#     children:
+#     - taxon: *ubaghsi
+#   - taxon: *compagicrinus
+#     children:
+#     - taxon: *fenestratus
+#   - taxon: *alphacrinus
+#     children:
+#     - taxon: *mansfieldi
+#   - taxon: *archaeocrinus
+#     children:
+#     - taxon: *subovalis
+#   - taxon: *stromatocystites
+#     children:
+#     - taxon: *pentangularis
+#   - taxon: *kailidiscus
+#     children:
+#     - taxon: *chinensis
+#   - taxon: *camptostroma
+#     children:
+#     - taxon: *roddyi
+#   - taxon: *not-totiglobus
+#     children:
+#     - taxon: *lloydi
+#   - taxon: *pseudedriophus
+#     children:
+#     - taxon: *guensburgi
+#   - taxon: *kinzercystis
+#     children:
+#     - taxon: *durhami
+#   - taxon: *lepidocystis
+#     children:
+#     - taxon: *wanneri
+#   - taxon: *gogia
+#     children:
+#     - taxon: *kitchnerensis
+
 - title: Cambrian edrioasteroid reveals new mechanism for secondary reduction of the skeleton in echinoderms
-  dates:
-    received: 2021-12-17
-    accepted: 2022-02-04
   journal:
     name: *procrsocb
     volume: 289
     year: 2022
     article: 20212733
+    dates:
+      received: 2021-12-17
+      accepted: 2022-02-04
   doi: 10.1098/rspb.2021.2733
   authors:
   - *zamora
@@ -523,7 +707,11 @@ articles:
           children:
           - taxon: *haefneri
             new: true
-            place: *emmigsville-member
+            type: true
+            specimens:
+              holotype: NHMUK EE 1659
+              paratypes:
+              - NHMUK EE 1660
   phylogeny:
   - type: 50% majority-rule consenus Bayesian
     children:
@@ -578,15 +766,15 @@ articles:
       bracket: *helicoplacoidea
       outgroup: true
 - title: Cambrian spiral-plated echinoderms from Gondwana reveal the earliest pentaradial body plan
-  dates:
-    received: 2013-05-13
-    accepted: 2013-06-04
-    online: 2013-08-22
   journal:
     name: *procrsocb
     volume: 280
     year: 2013
     article: 20131197
+    dates:
+      received: 2013-05-13
+      accepted: 2013-06-04
+      online: 2013-08-22
   doi: 10.1098/rspb.2013.1197
   authors:
   - *smith
@@ -603,8 +791,14 @@ articles:
         children:
         - taxon: *moroccoensis
           new: true
-          place: *jbel-wawrmast-fmtn
-          time: [[515MA, 510MA], Stage 4, Series 2, Cambrian]
+          type: true
+          specimens:
+            holotype: NHM UK EE15373
+            paratypes:
+            - [EE15374, EE15376]
+            - EE14847
+            - EE14848
+            - EE15329
   phylogeny:
   - type: Evolutionary tree of Cambrian echinoderms
     children:
@@ -625,10 +819,6 @@ articles:
                   - taxon: *gogia
                 - taxon: *stromatocystites
 - title: Cambrian stalked echinoderms show unexpected plasticity of arm construction
-  dates:
-    received: 2011-04-13
-    accepted: 2011-05-19
-    online: 2011-06-08
   journal:
     name: *procrsocb
     volume: 279
@@ -636,6 +826,10 @@ articles:
     pages:
     - 293
     - 298
+    dates:
+      received: 2011-04-13
+      accepted: 2011-05-19
+      online: 2011-06-08
   doi: 10.1098/rspb.2011.0777
   authors:
   - *zamora
@@ -655,15 +849,20 @@ articles:
             children:
             - taxon: *purujoensis
               new: true
-              place: *murero-fmtn
+              type: true
+              specimens:
+                holotype: MPZ2009/1230
+                paratypes:
+                - [MPZ2011/2, MPZ2011/6]
           - taxon: *vizcainoia
             new: true
             children:
             - taxon: *languedocianus
-              place: *murero-fmtn
+              type: true
             - taxon: *moncaiensis
               new: true
-              place: *coulouma
+              specimens:
+                holotype: MPZ2011/7
   phylogeny:
   - taxon: *kinzercystis
     outgroup: true
@@ -686,3 +885,185 @@ articles:
         children:
         - *titanocrinus
         - *aethocrinus
+- title: Kailidiscus, A New Plesiomorphic Edrioasteroid From The Basal Middle Cambrian Kaili Biota Of Guizhou Province, China
+  journal:
+    name: *jofpaleo
+    volume: 84
+    number: 5
+    year: 2010
+    pages:
+    - 668
+    - 680
+    authors:
+    - *zhao-y-l
+    - *sumrall
+    - *parsley
+    - *peng-j
+    taxonomy:
+    - taxon: *edrioasteroidea
+      children:
+      - taxon: (order uncertain)
+        children:
+        - taxon: (family uncertain)
+          children:
+          - taxon: *kailidiscus
+            new: true
+            children:
+            - taxon: *chinensis
+              type: true
+              new: true
+              specimens:
+                holotype: GM 3428 
+                paratypes:
+                - GM 70
+                - GM 746
+                - GM 1331
+                - GM 1670
+                - GM 1898
+                - GM 2013
+                - GM 2146
+                - GM 3295a
+                - GM 3295b
+                - GM 3295c
+                - GM 3035
+                - GM 3600
+                - GM 3665
+                - GM 8052
+                - GM 9292
+- title: "New edrioasteroid (Echinodermata) from the Spence Shale (Cambrian), Idaho, USA: further evidence of attachment in the early evolutionary history of edrioasteroids"
+  journal:
+    name: *bullgeo
+    volume: 94
+    number: 1
+    year: 2019
+    pages:
+    - 115
+    - 124
+    authors:
+    - *wen-r-q
+    - *babcock
+    - *peng-j
+    - *robison
+    dates:
+      received: 2018-10-30
+      acceptedRevised: 2019-03-05
+      online: 2019-03-21
+      issued: 2019-03-31
+  taxonomy:
+  - taxon: *edrioasteroidea
+    children:
+    - taxon: *edrioasterida
+      children:
+      - taxon: *totiglobidae
+        children:
+        - taxon: *totiglobus
+          children:
+          - taxon: *nimius
+            type: true
+          - taxon: *spencensis
+            new: true
+            specimens:
+              holotype: [KUMIP 49294A, KUMIP 49294B]
+              paratypes:
+- title: New edrioasteroid from the Middle Cambrian of western Utah
+  journal:
+    name: The University of Kansas Paleontological Contributions
+    number: 116
+    year: 1985
+    month: 9
+    day: 12
+  authors:
+  - *sprinkle
+  taxonomy:
+  - taxon: *echinozoa
+    children:
+    - taxon: *edrioasteroidea
+      children:
+      - taxon: *edrioasterida
+        children:
+        - taxon: *totiglobidae
+          children:
+          - taxon: *totiglobus
+            children:
+            - taxon: *nimius
+              type: true
+            - taxon: *lloydi
+              provisional: true
+              new: true
+              specimens:
+                holotype: USNM 172047
+- title: Redescription of the Cambrian edrioasteroid Sprinkleoglobus spencensis n. comb. (Wen et al., 2019) from the Spence Shale (Utah, USA)
+  journal:
+    name: *jofpaleo
+    volume: 98
+    year: 2024
+    pages:
+    - 952
+    - 958
+    authors:
+    - *zamora
+    - *guensburg
+    - *sprinkle
+    dates:
+      received: 2024-03-27
+      revised: 2024-05-03
+      accepted: 2024-05-13
+      online: 2025-03-21
+  doi: 10.1017/jpa.2024.44
+  taxonomy:
+  - taxon: *echinodermata
+    children:
+    - taxon: *edrioasteroidea
+      children: 
+      - taxon: *edrioasterida
+        children:
+        - taxon: *sprinkleoglobus
+          provisional: true
+          children:
+          - taxon: *lloydi
+            type: true
+          - taxon: *spencensis
+            moved: true
+            modifier: n. comb.
+            specimens:
+              paratypes:
+              - PE 93415
+- title: The first edrioasteroid echinoderm from the lower Cambrian Chengjiang biota of Yunnan Province, China
+  journal:
+    name: *papersinpalaeo
+    number: 8
+    article: e1465
+    year: 2022
+    month: 8
+    day: 27
+    authors:
+    - *zhao-j
+    - *rahman
+    - *zamora
+    - *chen-a-l
+    - *cong-p-y
+    dates:
+      recieved: 2022-01-21
+      acceptedRevised: 2022-06-07
+      online: 2022-08-07
+  doi: 10.1002/spp2.1465
+  taxonomy:
+  - taxon: *echinodermata
+    children:
+    - taxon: *edrioasteroidea
+      children:
+      - taxon: *edrioasterida
+        children:
+        - taxon: *sprinkleoglobus
+          provisional: true
+          new: true
+          children:
+          - taxon: *lloydi
+            type: true
+            moved: true
+          - taxon: *extenuatus
+            new: true
+            specimens:
+              holotype: YKLP 13397
+              paratypes:
+              - YKLP 13553
