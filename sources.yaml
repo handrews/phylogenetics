@@ -118,14 +118,26 @@ taxon:
   bracket: Blastozoans
   auth: [Sprinkle]
   year: 1973
+- &broweri
+  name: broweri
+  auth: [Guensburg, Sprinkle, Mooi, Lefebvre, David, Roux, Derstler]
+  year: 2020
 - &camptostroma
   name: Camptostroma
   auth: [Ruedemann]
   year: 1933
+- &carabocrinus
+  name: Carabocrinus
+  auth: [Billings]
+  year: 1857
 - &castericystis
   name: Castericystis
   auth: [Ubaghs, Robison]
   year: 1985
+- &ceratocystis
+  name: Ceratocystis
+  auth: [Jaekel]
+  year: 1901
 - &cheirocrinus
   name: Cheirocrinus
   auth: [Eichwald]
@@ -222,12 +234,20 @@ taxon:
   name: Eocystites
   auth: [Billings]
   year: 1868
+- &eumorphocystis
+  name: Eumorphocystis
+  auth: [Branson, Peck]
+  year: 1940
 - &extenuatus
   name: extenuatus
   auth: [Zhao, Rahman, Zamora, Chen, Cong]
   year: 2022
 - &glenocrinus
   name: Glenocrinus
+  auth: [Guensburg, Sprinkle]
+  year: 2003
+- &globularis
+  name: globularis
   auth: [Guensburg, Sprinkle]
   year: 2003
 - &glyptocystites
@@ -240,10 +260,6 @@ taxon:
   rank: Order
   auth: [Bather]
   year: 1899
-- &guensburgi
-  name: guensburgi
-  auth: [Sprinkle, Sumrall]
-  year: 2015
 - &gogia
   name: Gogia
   auth: [Walcott]
@@ -254,6 +270,10 @@ taxon:
   rank: Order
   auth: [Broadhead]
   year: 1982
+- &guensburgi
+  name: guensburgi
+  auth: [Sprinkle, Sumrall]
+  year: 2015
 - &haefneri
   name: haefneri
   auth: [Zamora, Rahman, Sumrall, Gibson, Thompson]
@@ -293,6 +313,10 @@ taxon:
   name: Hemicosmites
   auth: [Buch]
   year: 1840
+- &hybocrinus
+  name: Hybocrinus
+  auth: [Billings]
+  year: 1857
 - &inflatus
   name: inflatus
   auth: [Parsley, Zhao]
@@ -333,18 +357,38 @@ taxon:
   name: Macrocystella
   auth: [Callaway]
   year: 1877
+- &mariae
+  name: mariae
+  auth: [Callaway]
+  year: 1877
+- &mansfieldi
+  name: mansfieldi
+  auth: [Guensburg]
+  year: 2010
 - &moncaiensis
   name: moncaiensis
   auth: [Zamora, Smith]
   year: 2012
+- &moorei
+  name: moorei
+  auth: [Ubaghs]
+  year: 1969
 - &moroccoensis
   name: moroccoensis
   auth: [Smith, Zamora]
   year: 2013
+- &multiporata
+  name: multiporata
+  auth: [Branson, Peck]
+  year: 1940
 - &nimius
   name: nimius
   auth: [Bell, Sprinkle]
   year: 1978
+- &nitidus
+  name: nitidus
+  auth: [Sinclair]
+  year: 1945
 - &parsleya
   name: Parsleya
   auth: [Deshmukh]
@@ -360,10 +404,18 @@ taxon:
   name: pentangularis
   auth: [Pompeckj]
   year: 1896
+- &perneri
+  name: perneri
+  auth: [Jaekel]
+  year: 1901
 - &pleurocystites
   name: Pleurocystites
   auth: [Neumayr]
   year: 1899
+- &pseudedriophus
+  name: Pseudedriophus
+  auth: [Sprinkle, Sumrall]
+  year: 2015
 - &purujoensis
   name: purujoensis
   auth: [Zamora, Smith]
@@ -375,6 +427,10 @@ taxon:
   status: informal
   auth: [Zittel]
   year: 1870
+- &rhopalocystis
+  name: Rhopalocystis
+  auth: [Ubaghs]
+  year: 1963
 - &ridersia
   name: Ridersia
   auth: [Jell, Burrett, Banks]
@@ -420,6 +476,10 @@ taxon:
   name: Stromatocystites
   auth: [Pompeckj]
   year: 1896
+- &sumralli
+  name: sumralli
+  auth: [Guensburg, Sprinkle]
+  year: 2003
 - &tatonkacystis
   name: Tatonkacystis
   auth: [Sumrall, Sprinkle, Guensburg]
@@ -436,6 +496,10 @@ taxon:
   name: Totiglobus
   auth: [Bell, Sprinkle]
   year: 1978
+- &treadwelli
+  name: treadwelli
+  auth: [Sinclair]
+  year: 1945
 - &turbanicystidae
   name: Turbanicystidae
   auth: [Parsley, Zhao]
@@ -444,6 +508,10 @@ taxon:
   name: Turbanicystis
   auth: [Parsley, Zhao]
   year: 2010
+- &ubaghsi
+  name: ubaghsi
+  auth: [Guensburg, Sprinkle]
+  year: 2009
 - &ubaghsicystis
   name: Ubaghsicystis
   auth: [Gil Cid, Domínguez]
@@ -460,6 +528,10 @@ taxon:
   name: Vyscystis
   auth: [Fatka, Kordule]
   year: 1990
+- &wahwahensis
+  name: wahwahensis
+  auth: [Guensburg, Sprinkle]
+  year: 2003
 - &wanneri
   name: wanneri
   auth: [Foerste]
@@ -604,79 +676,99 @@ articles:
                   - GM 9-5-3235b
                   - GM 10-3-2000
                   - GM 9-5-2165a
-# - title: Athenacrinus n. gen. and other early echinoderm taxa inform crinoid origin and arm evolution
-#   journal:
-#     name: *jofpaleo
-#     volume: 94
-#     number: 2
-#     year: 2020
-#     pages:
-#     - 311
-#     - 333
-#     dates:
-#       accepted: 2019-10-03
-#   doi: 10.1017/jpa.2019.87
-#   taxonomy:
-#   - taxon: *crinoidea
-#     children:
-#     - taxon: *disparida
-#       children:
-#       - taxon: *athenacrinidae
-#         new: true
-#         children:
-#         - taxon: *athenacrinus
-#           new: true
-#           children:
-#           - taxon: *broweri
-#   assumptions:
-#   - taxon: *eknomocrimus
-#     children:
-#     - taxon: *wahwahensis
-#   - taxon: *glenocrinus
-#     children:
-#     - taxon: *globularis
-#   - taxon: *titanocrinus
-#     children:
-#     - taxon: *sumralli
-#   - taxon: *aethocrinus
-#     children:
-#     - taxon: *moorei
-#   - taxon: *apektocrinus
-#     children:
-#     - taxon: *ubaghsi
-#   - taxon: *compagicrinus
-#     children:
-#     - taxon: *fenestratus
-#   - taxon: *alphacrinus
-#     children:
-#     - taxon: *mansfieldi
-#   - taxon: *archaeocrinus
-#     children:
-#     - taxon: *subovalis
-#   - taxon: *stromatocystites
-#     children:
-#     - taxon: *pentangularis
-#   - taxon: *kailidiscus
-#     children:
-#     - taxon: *chinensis
-#   - taxon: *camptostroma
-#     children:
-#     - taxon: *roddyi
-#   - taxon: *not-totiglobus
-#     children:
-#     - taxon: *lloydi
-#   - taxon: *pseudedriophus
-#     children:
-#     - taxon: *guensburgi
-#   - taxon: *kinzercystis
-#     children:
-#     - taxon: *durhami
-#   - taxon: *lepidocystis
-#     children:
-#     - taxon: *wanneri
-#   - taxon: *gogia
-#     children:
-#     - taxon: *kitchnerensis
+- title: Athenacrinus n. gen. and other early echinoderm taxa inform crinoid origin and arm evolution
+  journal:
+    name: *jofpaleo
+    volume: 94
+    number: 2
+    year: 2020
+    pages:
+    - 311
+    - 333
+    dates:
+      accepted: 2019-10-03
+  doi: 10.1017/jpa.2019.87
+  taxonomy:
+  - taxon: *crinoidea
+    children:
+    - taxon: *disparida
+      children:
+      - taxon: *athenacrinidae
+        new: true
+        children:
+        - taxon: *athenacrinus
+          new: true
+          children:
+          - taxon: *broweri
+            new: true
+            type: true
+            specimens:
+              holotype: PE 52742
+              paratypes:
+              - [PE 52750, PE 52753]
+              - USNM 165237
+  assumptions:
+  - taxon: *aethocrinus
+    children:
+    - taxon: *moorei
+  - taxon: *alphacrinus
+    children:
+    - taxon: *mansfieldi
+  - taxon: *apektocrinus
+    children:
+    - taxon: *ubaghsi
+  - taxon: *camptostroma
+    children:
+    - taxon: *roddyi
+  - taxon: *carabocrinus
+    children:
+    - taxon: *treadwelli
+  - taxon: *ceratocystis
+    children:
+    - taxon: *perneri
+  - taxon: *eknomocrinus
+    children:
+    - taxon: *wahwahensis
+  - taxon: *eumorphocystis
+    children:
+    - taxon: *multiporata
+  - taxon: *glenocrinus
+    children:
+    - taxon: *globularis
+  - taxon: *gogia
+    children:
+    - taxon: *kitchnerensis
+  - taxon: *hybocrinus
+    children:
+    - taxon: *nitidus
+  - taxon: *kailidiscus
+    children:
+    - taxon: *chinensis
+  - taxon: *kinzercystis
+    children:
+    - taxon: *durhami
+  - taxon: *lepidocystis
+    children:
+    - taxon: *wanneri
+  - taxon: *macrocystella
+    children:
+    - taxon: *mariae
+  - taxon: *pseudedriophus
+    children:
+    - taxon: *guensburgi
+  - taxon: *rhopalocystis
+    children:
+    - taxon: *destombesi
+  - taxon: *stromatocystites
+    children:
+    - taxon: *pentangularis
+  - taxon: *titanocrinus
+    children:
+    - taxon: *sumralli
+  - taxon: *totiglobus
+    children:
+    - taxon: *lloydi
+      provisional: true
 
 - title: Cambrian edrioasteroid reveals new mechanism for secondary reduction of the skeleton in echinoderms
   journal:
