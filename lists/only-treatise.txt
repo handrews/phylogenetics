@@ -4,80 +4,131 @@ P Echinodermata
       O Cornuta (Jaekel 1901)
         F Ceratocystidae (Jaekel 1901)
           g Ceratocystis (Jaekel 1901)
+            s perneri (Jaekel 1901) T
         F Cothurnocystidae (Bather 1913)
           g Cothurnocystis (Bather 1913)
-          g Nevadaecystis n. (Ubaghs 1966)
+            s elizae (Bather 1913) T
+          g Nevadaecystis (Ubaghs 1966) N
+            s americana (Ubaghs 1963) T     # Moved from Cothurnocystis
           g Phyllocystis (Thoral 1935)
-        F Scotiaecystidae n. (Caster & Ubaghs 1966)
-          g Scotiaecystis n. (Caster & Ubaghs 1966)
-          g Bohemiaecystis n. (Caster 1966)
+            s blayaci (Thoral 1935) T
+        F Scotiaecystidae (Caster & Ubaghs 1966) N
+          g Scotiaecystis (Caster & Ubaghs 1966) N
+            s curvata (Bather 1913) T       # Moved from Cothurnocystis
+          g Bohemiaecystis (Caster 1966) N
+            s bouceki (Caster 1966) NT
       O Mitrata (Jaekel 1918)
         BO Mitrocystitida (Caster 1952)
-          F Mitrocystitidae n. (Ubaghs 1966)
+          F Mitrocystitidae (Ubaghs 1966) N # R fm Mitrocystidae Jaekel 1901
             g Mitrocystites (Barrande 1887)
+              s mitra (Barrande 1887) T
             g Chinianocarpos (Ubaghs 1961)
+              s thorali (Ubaghs 1961) T
             g Mitrocystella (Jaekel 1901)
+              s incipiens (Barrande 1887) T
+              s barrandei (Jaekel 1901)
           F Paranacystidae (Caster 1954)
             g Paranacystis (Caster 1954)
+              p petrii (Caster 1954) T
         BO Lagynocystida (Caster 1952)
-          F Peltocystidae n. (Ubaghs 1966)
+          F Peltocystidae (Ubaghs 1966) N
             g Peltocystis (Thoral 1935)
+              s cornuta (Thoral 1935) T
           F Lagynocystidae (Jaekel 1918)
             g Lagynocystis (Jaekel 1918)
+              s pyramidalis (Barrande 1887) T
           F Kirkocystidae (Caster 1952)
             g Balanocystites (Barrande 1887)
+              s lagenula (Barrande 1887) T
             g Anatiferocystis (Chauvel 1941)
-        BO Anomalocystitida (Caster 1952)
+              s barrandei (Chauvel 1941) T
+        BO Anomalocystitida (Caster 1952) # Nom corr Ubaghs 1966 Anomalcytida
           F Anomalocystitidae (Bassler 1938)
             g Anomalocystites (Hall 1859)
+              s cornutus (S.A. Miller 1889) T
             g Ateleocystites (Billings 1838)
+              s huxleyi (Billings 1938) T
             g Basslerocystis (Caster 1952)
+              s disparilis (Hall 1859) T
             g Enoploura (Wetherby 1879)
+              s balanoides (Meek 1872) T
+              s popei (Caster 1952)
             g Placosystites (de Koninck 1869)
+              s forbesianus (de Koninck 1869) T
             g Rhenocystis (Dehm 1932)
+              s latipedunculata (Dehm 1932) T
             g Victoriacystis (Gill & Caster 1960)
+              s wilkinsi (Gill & Caster 1960) T
           F Australocystidae (Caster 1954) [1956]
             g Australocystis (Caster 1954) [1956]
+              s langei (Caster 1954) T
             g Placocystella (Rennie 1936)
-          F Allanicytidiidae n. (Caster & Gill 1966)
-            g Allanicytidium n. (Caster & Gill 1966)
+              s capensis (Rennie 1939) T
+          F Allanicytidiidae (Caster & Gill 1966) N
+            g Allanicytidium (Caster & Gill 1966) N
+              s flemingi (Caster & Gill 1966) N
         BO _incertae cedis_
           F _incertae cedis_
-            g Spermacystis nom. subts. (Ubaghs 1966)
+            g Dalejocystis (Prokop 1963)
+              s casteri (Prokop 1963) T
+            g Spermacystis (Ubaghs 1966) N # Nom subs Anomocystis Jaekel 1918
+              s ensifer (Barrande 1887) T
     C Homostelea (Gill & Caster 1960)
       O Cincta (Jaekel 1918)
         F Trochocystitidae (Jaekel 1901)
           g Trochocystites (Barrande 1887)
+            s bohemicus (Barrande 1887) T
           g Trochocystoides (Jaekel 1918)
+            s parvus (Jaekel 1918) T
         F Gyrocystidae (Jaekel 1918)
           g Gyrocystis (Jaekel 1918)
+            s barrandei (Munier-Chalmas & Bergeron 1889) T
           g Decacystis (Gislén 1927)
+            s hispanica (Gislén 1927) T
     C Homoiostelea (Gill & Caster 1960)
       O Soluta (Jaekel 1901)
-        F Minervaecystidae n. (Ubaghs & Caster 1966)
-          g Minervaecystis n. (Ubaghs & Caster 1966)
+        F Minervaecystidae (Ubaghs & Caster 1966) N
+          g Minervaecystis (Ubaghs & Caster 1966) N
+            s vidali (Thoral 1935) T # moved from Dendrocystites
         F Dendrocystitidae (Bassler 1938)
           g Dendrocystites (Barrande 1887)
+            s sedgwiki (Barrande 1867) T
+            s barrandei (Bather 1913)
           g Dendrocystoides (Jaekel 1918)
+            s scoticus (Bather 1913) T
           g Heckericystis (Gill & Caster 1960)
-          g Dehmicystis n. (Caster 1966)
-        F Girvanicystidae n. (Caster 1966)
-          g Girvanicystis n. (Caster 1966)
+            s kuckersiana (Gekker 1940) T # [Hecker] after Gekker?
+          g Dehmicystis (Caster 1966) N
+            s globulus (Dehm 1934) T # M from Dendrocystites (oides?)
+        F Girvanicystidae (Caster 1966) N
+          g Girvanicystis (Caster 1966) N
+            s batheri (Caster 1966) NT
         F Rutrocylpediae (Gill & Caster 1960)
-          g Rutroclypeud (Wither 1933)
+          g Rutroclypeus (Wither 1933)
+            s junori (Wither 1933) T
+            s withersi (Gill & Caster 1960)
+            s victoriae (Gill & Caster 1960)
+            s wilkinsi (Gill & Caster 1960)
         F Syringocrinidae (Parsley & Caster 1965)
           g Syringocrinus (Billings 1859)
+            s paradoxicus (Billings 1859) T
+            s sinclairi (Parsley & Caster 1965)
         F Iowacystidae (Gill & Caster 1960)
           g Iowacystis (Thomas & Ladd 1926)
+            s sagittaria (Thomas & Ladd 1926) T
         F Bellemnocystitidae n. (Parsley 1966)
           g Belemnocystites (Miller & Gurley 1894)
+            s wetherbyi (Miller & Gurley 1894) T
   BP Echinozoa (Haekel in Zittel 1895)
     C Helicoplacoidea (Durham & Caster 1963)
-      F Helicoplacidae n. (Durham & Caster)
+      F Helicoplacidae (Durham & Caster 1966) N
         g Helicoplacus (Durham & Caster 1963)
-    C Camptostromatoidea (Durham 1966)
-      F Camptostromatidae n. (Durham 1966)
+          s gilberti (Durham & Caster 1963) T
+          s curtisi (Durham & Caster 1963)
+    C Camptostromatoidea (Durham 1966) # N corr fm Camptostromoidea Durham 1966
+      F Camptostromatidae (Durham 1966) N
         g Camptostroma (Ruedemann 1933)
+          s roddyi (Ruedemann 1933) T
     C Edrioasteroidea (Billings 1858)
       F Stromatocystitidae (Bassler 1936)
         g Somatocystites (Pompeckj 1896)
@@ -119,8 +170,8 @@ P Echinodermata
       F Sollasinidae (Fedotov 1926)
         g Sollasina (Fedotov 1926)
         g Euthemon (Sollas 1899)
-      F Volchoviidae (Gekker 1938)
-        g Volchovia (Gekker 1938)
+      F Volchoviidae (Gekker 1938)  # Hecker
+        g Volchovia (Gekker 1938)  # Hecker
       F Rhenosqamidae (R. Richter 1930) ?
         g Rhenosquama (R. Richter 1930)
     C Cylocystoidea (Miller & Gurley 1895)
@@ -369,44 +420,79 @@ P Echinodermata
     C Eocrinoidea (Jaekel 1918)
       F Eocrinidae (Jaekel 1918)
         g Gogia (Walcott 1918)
+          s prolifica (Walcott 1918) T
+          s spiralis (Robison 1965)
+        g Acanthocystites (Barrande 1887)
+          s briareus (Barrande 1887) T
         g Akadocrinus (Prokop 1962)
+          s jani (Prokop 1962) T
+          s nuntius (Prokop 1962)
       F Lichenoididae (Jaekel 1918)
         g Lichenoides (Barrande 1846)
-      F Rhopalocystidae n. (Ubaghs 1966)
+          s priscus (Barrande 1846) T
+      F Rhopalocystidae (Ubaghs 1966) N
         g Rhopalocystis (Ubaghs 1963)
-      F Palaeocystitidae n. (Ubaghs 1966)
+          s destombesis (Ubaghs 1963) T
+      F Palaeocystitidae (Ubaghs 1966) N # R fm Palaeocystida Haekel 1896
         g Palaeocystites (Billings 1858)
-      F Ascocystitidae n. (Ubaghs 1966)
+          s tenuiradiatus (Hall 1847) T
+          s dawsoni (Billings 1858)
+      F Ascocystitidae (Ubaghs 1966) N # R fm Ascocystida Haekel 1896, Ascocystidae Jaekel 1918
         g Ascocystites (Barrande 1887)
+          s drabowensis (Barrande 1887) T
       F Macrocystellidae (Bather 1899)
         g Macrocystella (Callaway 1877)
+          s mariae (Callaway 1877) T
         g Mimocystites (Barrande 1887)
+          s bohemicus (Barrande 1887) T
+          s azaisi (Thoral 1935)
       F Springerocystidae (Bassler 1950)
         g Spriingerocystis (Bassler 1950)
-        g Bockia (Gekker 1938)
+          s longicollis (Bassler 1950) T
+        g Bockia (Gekker 1938)            # Hecker
+          s neglecta (Gekker 1940) T      # Hecker
         g Columbocystis (Bassler 1950) ?
+          s typica (Bassler 1950) T
+        g Foerstecystis (Bassler 1950) ?
+          s obliqua (Bassler 1950) T
       F Cryptocrinitidae (Bassler 1938) (1895)
         g Cryptocrinites (von Buch 1840)
+          s laevis (Pander 1830) T
         g Lysocystites (S. A. Miller 1889)
+          s nodosus (Hall 1864) T
+          s sculptus (S. A. Miller 1889)
       F Rhipidocystidae (Jaekel 1901)
         g Rhipidocystis (Jaekel 1900)
+          s gigas (Bather 1913) T
+          s baltica (Jaekel 1900)
+          s oepiki (Gekker 1938)          # Hecker
         g Batherocystis (Bassler 1950)
+          s appressa (Bassler 1950) T
       F Lingulocystidae (Ubaghs 1950)
         g Lingulocystis (Thoral 1935)
+          s elongata (Thoral 1935) T
       F _incertae cedis_
-        g Archaeocystites (Barrande 1887) ?
+        g Archaeocystites (Barrande 1887) X # No species listed
         g Cardiocystites (Barrande 1887)
+          s bohemicus (Barrande 1887) T
         g Cigara (Barrande 1887)
+          s dusli (Barrande 1887) T
         g Eocystites (Billings 1868)
+          s primaevus (Billings 1868) T
         g Lapillocystites (Barrande 1887)
+          s fragilis (Barrande 1887) T
         g Pareocrinus (Yakovlev 1956)
+          s ljubzovi (Yakovlev 1956) T
         g Pilocystites (Barrande 1887)
+          s primitivus (Barrande 1887) T
         g Polyptychella (Jaekel 1918)
-        g Protocystites (Hicks 1872) ?
-        g Trachelocrinus (Ulrich 1929) ?
-    C Lepidocystoidea n. (Durham 1966)
-      F Lepidocystidae n. (Durham 1966)
+          s esthona (Jaekel 1918) T
+        g Protocystites (Hicks 1872) X # No species listed
+        g Trachelocrinus (Ulrich 1929) X # No species listed
+    C Lepidocystoidea (Durham 1966) N
+      F Lepidocystidae (Durham 1966) N
         g Lepidocystis (Foerste 1938)
+          s wanneri (Foerste 1938) T
   BP Asterozoa (Zittel 1895)
     C Stelleroidea (Lamarck 1816)
       BC Somasteroidea (Spencer 1951)
