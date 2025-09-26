@@ -97,7 +97,7 @@ P Echinodermata
           g Dendrocystoides (Jaekel 1918)
             s scoticus (Bather 1913) T
           g Heckericystis (Gill & Caster 1960)
-            s kuckersiana (Gekker 1940) T # [Hecker] after Gekker?
+            s kuckersiana (Hecker 1940) T
           g Dehmicystis (Caster 1966) N
             s globulus (Dehm 1934) T # M from Dendrocystites (oides?)
         F Girvanicystidae (Caster 1966) N
@@ -170,8 +170,8 @@ P Echinodermata
       F Sollasinidae (Fedotov 1926)
         g Sollasina (Fedotov 1926)
         g Euthemon (Sollas 1899)
-      F Volchoviidae (Gekker 1938)  # Hecker
-        g Volchovia (Gekker 1938)  # Hecker
+      F Volchoviidae (Hecker 1938)
+        g Volchovia (Hecker 1938)
       F Rhenosqamidae (R. Richter 1930) ?
         g Rhenosquama (R. Richter 1930)
     C Cylocystoidea (Miller & Gurley 1895)
@@ -331,43 +331,91 @@ P Echinodermata
       O Fissiculata (Jaekel 1918)
         F Phaenoschismatidae (Etheridge & Carpenter 1886)
           g Phaenoschisma (Etheridge & Carpenter 1882)
+            s acutum (Sowerby) T
+            s laeviusculum (Rowley 1900)
+          g Decaschisma (Fay 1961)
+            s pentalobus (Hall 1879) T
+            s pulchellum (Miller & Dyer 1878)
           g Deltoschsma (Fay 1961)
+            s archiaci (Etheridge & Carpenter 1882) T
           g Dipteroblastus (Wanner 1940)
+            s permicus (Wanner 1940) T
           g Hadroblastus (Fay 1962)
+            s convexus (Fay 1962) T
           g Hyperoblastus (Fay 1961)
+            s preciosus (Reimann 1945) T
+            s filosus (Whiteaves 1889)
           g Microblastus (Eykeren 1942)
+            s pocilloformis (Eykeren 1942) T
           g Neoschisma (Wanner 1924)
+            s verrucosum (Wanner 1924) T
+            s timorense (Wanner 1924)
           g Notoblastus (Brown 1941)
+            s brevispinus (Brown 1941) T
           g Nymphaeoblastus (von Peetz 1907)
+            s miljukovi (von Peetz 1907) T
+            s anossofi (Yakovlev 1926) T
           g Phaenoblastus (Fay 1961)
-          g Pleuroschism (Reimann 1945)
+            s caryophyllatus (de Koninck & LeHon 1854) T
+          g Pleuroschisma (Reimann 1945)
+            s lycorias (Hall 1862) T
+            s ontario (Reimann 1945)
           g Polydeltoideus (Reimann & Fay 1961)
+            s enodatus (Reimann & Fay 1961) T
           g Sphaeroschisma (Wanner 1924)
+            s somoholense (Wanner 1924) T
           g Sundablastus (Wanner 1924)
+            s weberi (Wanner 1924) T
           g Thaumatoblastus (Wanner 1924)
+            s longiramus (Wanner 1924) T
           g Timoroblastus (Wanner 1924)
+            s coronatus (Wanner 1924) T
+              bs typus (Wanner 1924) T
+              bs tesselatus (Wnner 1924)
         F Brachyschismatidae (Fay 1961)
           g Brachyschisma (Reimann 1945)
+            s corrugatum (Reimann 1935) T
         F Codasteridae (Etheridge & Carpenter 1886)
-          g Codaster (M'Coy 1849)
+          g Codaster (McCoy 1849)
+            s acutus (McCoy 1849) T
           g Agmoblastus (Fay 1961)
+            s dotti (Moore & Strimple 1942) T
           g Angioblastus (Wanner 1931)
+            s varibilis (Wanner 1931) T
           g Heteroschisma (Wachsmuth 1883)
+            s gracile (Wachsmuth 1883) T
+            s subtruncatus (Hall 1858)
+            s pyramidatus (Shumard 1858) # Year uncertain
+            s canadense (Billings 1869)
           g Indoblastus (Wanner 1924)
+            s granulatus (Wanner 1924) T
           g Nannoblastus (Wanner 1924)
+            s pyramidatus (Wanner 1924) T
           g Paracodaster (Yakovlev 1940)
+            s miloradovitschi (Yakovlev 1940) T
           g Pteroblastus (Wanner 1924)
+            s gracilis (Wanner 1924) T
           g Sagittoblastus (Yakovlev 1937)
+            s wanneri (Yakovlev 1926) T
         F Orophocrinidae (Jaekel 1918)
           g Orophocrinus (von Seebach 1864)
+            s stelliformis (Owen & Shumard 1850) T
           g Anthoblastus (Wanner 1924)
+            s brouweri (Wanner 1924) T
           g Pentablastus (Sieverts-Doreck 1951)
+            s supracarbonicus (Sieverts-Doreck 1951) T
         F Astrocrinidae (Austin & Austin 1843)
           g Astrocrinus (Morris 1843)
+            s tetragonus (Morris 1843) T
+            s benniei (Etheridge 1878)
           g Ceratoblastus (Wanner 1940)
+            s nanus (Wanner 1940) T
           g Cryptoschisma (Etheridge & Carpenter 1886)
+            s schultzii (de Verneuil & d'Archiac 1845) T
           g Pentephyllum (Haughton 1859) ?
+            s adarense (Haughton 1859) T
           g Pentremitidea (d'Orbigny 1850)
+            s pailletti (de Verneuil 1844) T
       O Spiraculata (Jaekel 1918)
         F Troosticrinidae (Bather 1899)
           g Troosticrinus (Shumard 1866)
@@ -449,8 +497,8 @@ P Echinodermata
       F Springerocystidae (Bassler 1950)
         g Spriingerocystis (Bassler 1950)
           s longicollis (Bassler 1950) T
-        g Bockia (Gekker 1938)            # Hecker
-          s neglecta (Gekker 1940) T      # Hecker
+        g Bockia (Hecker 1938)
+          s neglecta (Hecker 1940) T
         g Columbocystis (Bassler 1950) ?
           s typica (Bassler 1950) T
         g Foerstecystis (Bassler 1950) ?
@@ -465,7 +513,7 @@ P Echinodermata
         g Rhipidocystis (Jaekel 1900)
           s gigas (Bather 1913) T
           s baltica (Jaekel 1900)
-          s oepiki (Gekker 1938)          # Hecker
+          s oepiki (Hecker 1938)
         g Batherocystis (Bassler 1950)
           s appressa (Bassler 1950) T
       F Lingulocystidae (Ubaghs 1950)
@@ -540,7 +588,7 @@ P Echinodermata
               g Devonistella (Spencer 1927)
                 s filiciformis (Woodward 1874) T
             F Palasterinidae (Gregory 1899)
-              g Palasterina (M'Coy 1851)
+              g Palasterina (McCoy 1851)
                 s primaevus (Forbes 1848) T
                 s antiqua (Hisinger 1837)
               g Palaeosolaster (Stürtz 1899)
