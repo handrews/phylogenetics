@@ -385,7 +385,7 @@ P Echinodermata
           g Heteroschisma (Wachsmuth 1883)
             s gracile (Wachsmuth 1883) T
             s subtruncatus (Hall 1858)
-            s pyramidatus (Shumard 1858) # Year uncertain
+            s pyramidatus (Shumard 1858)
             s canadense (Billings 1869)
           g Indoblastus (Wanner 1924)
             s granulatus (Wanner 1924) T
@@ -419,52 +419,111 @@ P Echinodermata
       O Spiraculata (Jaekel 1918)
         F Troosticrinidae (Bather 1899)
           g Troosticrinus (Shumard 1866)
+            s reinwardti (Troost 1835) T
           g Metablastus (Etheridge & Carpenter 1886)
+            s lineatus (Shumard 1858) T
+            s wachsmuthi (Gurley 1884)
+            s wortheni (Hall 1858)
           g Schizotremites (Reimann 1945)
+            s kopfi (Reimann 1945) T
           g Tricoelocrinus (Meek & Worthen 1868)
+            s woodmani (Meek & Worthen 1868) T
+            s obliquatus (Roemer 1851)
         F Diploblastidae (Fay 1964)
           g Diploblastus (Fay 1961)
+            s glaber (Meek & Worthen 1868) T
           g Nodoblastus (Fay 1963)
+            s librovitchi (Yakovlev 1941) T
         F Granatocrinidae (Fay 1961)
           g Granatocrinus (Hall 1862)
+            s granulatus (Roemer 1851) T
+            s kentuckyensis (Conkink 1957) # Year uncertain
           g Carpenteroblastus (Rowley 1901)
+            s magnibasis (Rowley 1895) T
           g Cribroblastus (Hambach 1903)
+            s cornutus (Meek & Worthen 1862) T
           g Cryptoblastus (Etheridge & Carpenter 1886)
+            s melo (Owen & Shumard 1850) T
           g Dentiblastus (Macurda 1964)
+            s sirius (White 1865) T
           g Heteroblastus (Etheridge & Carpenter 1886)
+            s cumberlandi (Etheridge & Carpenter 1886) T
           g Mesoblastus (Etheridge & Carpenter 1886)
+            s crenulatus (Roemer 1851) T
+            s angulatus (Sowerby 1828)
           g Monadoblastus (Fay 1961)
+            s granulosus (Fay 1961) T
           g Monoschizoblastus (Cline 1936)
+            s rofei (Etheridge & Carpenter 1882) T
           g Poroblastus (Fay 1961)
+            s granulosus (Meek & Worthen 1865) T
           g Ptychoblastus (Fay 1960)
+            s pustulosus (Fay 1960) T
           g Pyramiblastus (Macurda 1964)
+            s fusiformis (Wachsmuth & Springer 1888) T
           g Tanaoblastus (Fay 1961)
+            s roemeri (Shumard 1855) T
+            s concinnulus (Rowley & Hare 1891)
         F Schizoblastidae (Etheridge & Carpenter 1886)
           g Schizoblastus (Etheridge & Carpenter 1882)
+            s sayi (Shumard 1855) T
           g Acentrotremites (Etheridge & Carpenter 1883)
+            s ellipticus (Cumberland 1826) T
+          g Auloblastus (Beaver 1961)
+            s clinei (Beaver 1961) T
           g Deltoblastus (Fay 1961)
+            s elongatus (Wanner 1924) T
+            s permicus (Wanner 1924)
+            s timorensis (Bather 1908) # Year uncertain
           g Lophoblastus (Rowley 1901)
+            s inopinatus (Rowley & Hare 1891) T
           g Orbiblastus (Macurda 1965)
+            s hoskynae (Macurda 1965) T
           g Strongyloblastus (Fay 1962)
+            s petalus (Fay 1962) T
         F Nucleocrinidae (Bather 1899)
           g Nucleocrinus (Conrad 1842)
+            s elegans (Conrad 1842) T
+            s meloniformis (Barris 1862)
           g Elaeacrinus (Roemer 1851)
+            s verneuili (Roemer 1851) T
+            s venustus (Miller & Gurley 1893)
           g Placoblastus (Fay 1961)
         F Pentremitidae (d'Orbigny 1851)
           g Pentremites (Say 1820)
+            s godoni (Defrance 1819) T
+            s sulcatus (Roemer 1851)
           g Ambolostoma (Peck 1930)
+            s baileyi (Peck 1930) T
           g Belocrinus (Munier-Chalmas 1881)
+            s cottaldi (Munier-Chalmas 1876) T
           g Calycoblastus (Wanner 1924)
+            s tricavatus (Wanner 1924) T
           g Cordyloblastus (Fay 1961)
+            s actangulus (Schultze 1886) T
+            s eifelensis (Roemer 1855)
           g Devonoblastus (Reimann 1935)
+            s leda (Hall 1862) T
+            s whiteavesi (Reimann 1925)
           g Eleutherocrinus (Shumard & Yandell 1856)
-          g Pentremoblastus (Fay & Koenic 1963)
+            s cassedayi (Shumard & Yandell 1856) T
+          g Pentremoblastus (Fay & Koenig 1963)
+            s conicus (Fay & Koenig 1963) T
           g Petaloblastus (Fay 1961)
+            s ovalis (Goldfuss 1829) T
+            s boletus (Schmidt 1930)
           g Rhopaloblastus (Wanner 1924)
+            s timoricus (Wanner 1924) T
         F Orbitremitidae (Bather 1899)
           g Orbitremites (Austin & Austin 1842)
+            s derbiensis (Sowerby 1825) T
+            s ellipticus (Sowerby 1825)
+          g Doryblastus (Fay 1961)
+            s melonianus (Schmidt 1930) T
           g Ellipticoblastus (Fay 1960)
+            s orbicularis (Sowerby 1834) T
           g Globoblastus (Hambach 1903)
+            s norwoodi (Owen & Shumard 1850) T
     C Eocrinoidea (Jaekel 1918)
       F Eocrinidae (Jaekel 1918)
         g Gogia (Walcott 1918)
