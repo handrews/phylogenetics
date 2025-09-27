@@ -658,28 +658,49 @@ P Echinodermata
       O Varicata (Jaekel 1900)
         F Malocystitidae (Bather 1899)
           g Malocystites (Billings 1857)
+            s murchisoni (Billings 1857) T
           g Wellerocystis (Foerste 1920)
+            s kimmswickensis (Foerste 1920) T
         F Amygdalocystitidae (Jaekel 1900)
           g Amygdalocystites (E. Billings 1854)
+            s florealis (E. Billings 1854) T
+            s laevis (W. R. Billings 1993)
+            s radiatus (Billings)
+            s tenuistriatus (Billings)
           g Canadocystis (Jaekel 1900)
+            s barrandei (Billings 1858) T
+            s emmonsi (Hudson)
           g Sinclairocystis (Bassler 1950)
+            s praedicta (Bassler 1950) T
+            s angulata (Strimple)
+            s sulphurensis (Strimple)
       O Brachiata (Jaekel 1900)
         F Comarocystitidae (Bather 1899)
           g Comarocystites (Billings 1854)
+            s punctatus (Billings 1854) T
+            s chumardi (Meek & Worthen)
+            s obconicus (Meek & Worthen)
           g Billingsocystis (Bassler 1950)
+            s invaginata (Bassler 1950) T
           g Schuchertocystis (Bassler 1950)
+            s radiata (Bassler 1950) T
       O _incertae cedis_
         F _incertae cedis_
-          Achradocystites (von Volborth 1870)
-          Platycystites (Miller 1889)
+          g Achradocystites (von Volborth 1870)
+            s grewingkii (von Volborth 1870) T
+          g Platycystites (Miller 1889)
+            s faberi (Miller 1889) T
     C Edrioblastoidea (Fay 1962)
-      O Pentaystida (Jaekel 1918)
+      O Pentacystida (Jaekel 1918)
         F Astrocystitidae (Bassler 1938)
           g Astrocystites (Whiteaves 1897)
+            s ottawaensis (Whiteaves 1897) T
     C Parablastoidea (Hudson 1907)
       F Blastocystidae (Jaekel 1918)
         g Blastocystis (Jaekel 1918)
+          s rossica (Jaekel 1918) T
         g Blastoidocrinus (Billings 1859)
+          s carchariaedens (Billings 1859) T
     C Blastoidea (Say 1825)
       O Fissiculata (Jaekel 1918)
         F Phaenoschismatidae (Etheridge & Carpenter 1886)
