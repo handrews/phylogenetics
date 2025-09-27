@@ -444,12 +444,12 @@ P Echinodermata
           F Echinosphaeritidae (Neumayr 1889)
             g Echinosphaerites (Wahlenberg 1818)
               s aurantium (Gyllenhaal 1772) T
-              s barrandei (Jaekel)
+              s barrandei (Jaekel 1899)
               s ellipticus (Eichwald)
-              s difformis (Jaekel)
+              s difformis (Jaekel 1899)
               s globosus (Jaekel)
                 bs anglicus (Jaekel)
-              s grandis (Jaekel)
+              s grandis (Jaekel 1899)
               s granulatus (McCoy)
               s gyllenhahli (Quenstedt)
               s kloedeni (Jaekel)
@@ -462,67 +462,69 @@ P Echinodermata
         SF Glyptosphaeritida (Bernard 1895)
           F Glyptosphaeritidae (Bernard 1895)
             g Glyptosphaerites (Müller 1854)
+              s leuchtenbergi (Volborth 1846) T
               s ferrigenus (Barrande)
-              s leuchtenbergi (Volborth)
               s mariae (Jaekel)
               s suecicus (Angelin)
           F Dactylocystidae (Jaekel 1899)
             g Dactylocystis (Jaekel 1899)
-              s schmidti (Jaekel 1899)
+              s schmidti (Jaekel 1899) T
             g Estonocystis (Jaekel 1918)
-              s antropoffi (Jaekel 1918)
+              s antropoffi (Jaekel 1918) T
             g Revalocystis (Jaekel 1918)
-              s mickwitzi (Jaekel 1918)
+              s mickwitzi (Jaekel 1899) T
           F Protocrinitidae (Bather 1899)
             g Protocrinites (Eichwald 1840)
+              s oviformis (Eichwald 1840) T
               s fragum (Eichwald)
-              s oviformis (Eichwald)
               s sparsiporus (Bather)
             g Eumorphocystis (Branson & Peck 1940)
-              s multiporata (Branson & Peck)
+              s multiporata (Branson & Peck 1940) T
             g Fungocystites (Barrande 1887)
-              s rarissimus (Barrande 1887)
+              s rarissimus (Barrande 1887) T
               s solitarius (Barrande 1887)
             g Regnellicystis (Bassler 1950)
-              s typicalus (Bassler 1950)
+              s typicalus (Bassler 1950) T
           F Gomphocystitidae (Miller 1889)
             g Gomphocystites (Hall 1865)
+              s glans (Hall 1864) T
               s bownockeri (Foerste)
               s californicus (Stauffer) ?
               s clavus (Hall)
-              s glans (Hall)
               s gotlandicus (Angelin)
               s indianensis (Miller)
               s tenax (Hall)
             g Pyrocystites (Barrande 1887)
+              s pirum (Barande 1887) T
               s incertus (Barrande)
               s orientalis (Reed)
               s patulus (Barrande)
         SF Sphaeronitida (Neumayr 1889)
           F Sphaeronitidae (Neumayr 1889)
             g Sphaeronites (Hisinger 1828)
+              s pomum (Gyllenhaal 1772) T
               s dalecarlicus (Angelin)
               s globulus (Angelin)
               s pentactaeus (Haeckel)
-              s pomum (Gyllenhaal)
               s punctatus (Forbes)
               s pyriformis (Forbes)
               s shihtiensis (Reed)
               s stelluliferus (Salter)
               s tesselatus (Phillips)
             g Allocystites (S. A. Miller 1889)
-              s hammelli (S. A. Miller)
+              s hammelli (S. A. Miller 1889) T
             g Archegocystis (Jaekel 1899)
-              s desideratus (Barrande)
-            g Barbieria (Termier & Termier 1950) ?
+              s desideratus (Barrande 1887) T
+            g Barbieria (Termier & Termier 1950) Q
+              s stitensis (Termier & Termier 1950) T
             g Bulbocystis (Růžička 1939)
-              s mira (Růžička) ?
+              s mira (Růžička 1939) T ?
             g Carpocystites (Oehlert 1887)
-              s soyei (Oehlert)
+              s soyei (Oehlert 1887) T
             g Codiacystis (Jaekel 1899)
+              s bohemica (Barrande 1887) T
               s absens (Barrande)
               s applanata (Barrande)
-              s bohemica (Barrande)
               s consobrina (Barrande)
               s docens (Barrande)
               s embryo (Barrande)
@@ -538,45 +540,46 @@ P Echinodermata
               s surgens (Barrande)
               s tecta (Barrande)
             g Eucystis (Angelin 1878)
+              s raripuncta (Angelin 1878) T
               s acuminata (Regnéll)
               s angelini (Regnéll)
               s hercynica (Jaekel) ?
               s litchi (Forbes)
               s quadrangularis (Regnéll)
-              s raripuncta (Reed)     # wtf dub
-              s raripuncta (Angelin)  # wtf dup
             g Haplosphaeronis (Jaekel 1926)
-              s kiaeri (Jaekel)
+              s kiaeri (Jaekel 1926) T
                 bs norvegica (Jaekel)
               s lobifera (Reed)
               s oblonga (Angelin)
               s proiciens (Regnéll)
             g Paleosphaeronites (Prokop 1964)
+              s crateriformis (Růžička 1927)
             g Proteocystites (Barrande 1887)
+              s flavus (Barrande 1887) T
               s barrandenus (Haeckel) ?
-              s flavus (Barrande)
             g Tholocystis (Chauvel 1941)
-              s kolihai (Chauvel)
+              s kolihai (Chauvel 1941) T
           F Aristocystitidae (Neumayr 1889)
-            g Amphaoracystis (XXX TDDO WTF???)
-              s irregularis (Barrande)
             g Aristocystites (Barrande 1887)
-              s bohemicus (Barrande)
+              s bohemicus (Barrande 1887) T
               s desideratus (Barrande)
               s regularis (Termier & Termier)
               s rudis (Barrande)
               s sinicus (Sun)
+            g Amphoracystis (Haeckel 1896)
+              s irregularis (Barrande 1887) T
             g Baculocystites (Barrande 1887) Q
-              s simplex (Barrande)
+              s simplex (Barrande 1887)
             g Calix (Rouault 1851)
+              s sedgewicki (Rouault 1851) T
               s lebesconti (Chauvel)
               s rouaulti (Chauvel)
-              s sedgewicki (Rouault)
             g Campylostoma (Dreyfuss 1939)
-              s grandis (Dreyfuss)
+              s grandis (Dreyfuss 1939) T
             g Hippocystis (Bather 1919)
-              s subcylindrica (Barrande)
+              s subcylindrica (Barrande 1887) T
             g Holocystites (Hall 1864)
+              s cylindricus (Hall 1861) T
               s abnormis (Hall)
               s adipatus (S. A. Miller)
               s affinis (Miller & Faber)
@@ -587,7 +590,6 @@ P Echinodermata
               s canneus (S. A. Miller)
               s colletti (S. A. Miller)
               s commodus (S. A. Miller)
-              s cylindricus (Hall)
               s dyeri (S. A. Miller)
               s elegans (S. A. Miller)
               s faberi (S. A. Miller)
@@ -622,36 +624,36 @@ P Echinodermata
               s winchelli (Hall)
               s wykoffi (S. A. Miller)
             g Lepidocalix (Termier & Termier 1950) Q
-              s pulchrum (Termier & Termier)
+              s pulchrum (Termier & Termier 1950) T
             g Pachycalix (Chauvel 1936)
-              s halli (Rouault)
+              s halli (Rouault 1851) T
               s pachytheca (Termier & Termier)
             g Pseudaristocystis (Sun 1936)
-              s dagon (Bather)
+              s dagon (Bather 1906) T
             g Sinocystis (Reed 1917)
-              s loczyi (Reed)
+              s loczyi (Bather 1918) T
               s mansuyi (Reed)
               s segaudi (Termier & Termier)
               s yunnanensis (Reed)
             g Trematocystis (Jaekel 1899)
+              s subglobosa (Miller 1889) T
               s hammelli (Miller)
-              s subglobosa (Miller)
         SF Asteroblastida (Bather 1900)
           F Asteroblastidae (Bather 1900)
             g Asteroblastus (Eichwald 1862)
-              s foveolatus (Eichwald)
+              s foveolatus (Eichwald 1862) T
               s regularis (Jaekel)
               s sublaevis (Jaekel)
               s volborthi (Schmidt)
             g Asterocystis (Haekel 1896)
+              s tuberculatus (Schmidt 1874) T
               s globulus (Jaekel)
-              s tuberculatus (Schmidt)
             g Metasterocystis (Jaekel 1918)
-              s micropelta (Jaekel)
+              s micropelta (Jaekel 1918) T
           F Mesocystidae (Bather 1899)
             g Mesocystis (Bather 1899)
+              s pusirefskii (Hoffman 1866) T
               s jaekeli (Yakovlev)
-              s pusirefskii (Hoffman)
     C Paracrinoidea (Regnéll 1945)
       O Varicata (Jaekel 1900)
         F Malocystitidae (Bather 1899)
