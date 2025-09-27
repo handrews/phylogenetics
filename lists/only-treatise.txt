@@ -132,38 +132,82 @@ P Echinodermata
     C Edrioasteroidea (Billings 1858)
       F Stromatocystitidae (Bassler 1936)
         g Somatocystites (Pompeckj 1896)
+          s pentangularis (Pompeckj 1896) T
         g Walcottidiscus (Baassler 1935)
+          s typicalis (Bassler 1935) T
         g Xenocystites (Bassler 1936)
+          s carteri (Bassler 1936) T
       F Cyathocystidae (Bather 1899)
         g Cyathocystis (F. Schmidt 1879)
+          s plautinae (Haeckel 1896) T
         g Cyathotheca (Jaekel 1927)
+          s suecica (Jaekel 1927) T
       F Hemicystitidae (Bassler 1936)
         g Hemicystites (Hall 1852)
+          s parasiticus (Hall 1852) T
+          s chapmani (Raymond)
+          s devonicus
+          s multibrachiatus
+          s paulianus
+          s rectiradiatus (Shideler)
         g Anglidiscus (Regnéll 1950)
+          s fistulosus (Anderson 1939) T
         g Bassleridiscus (Fisher 1951)
+          s mohawkensis (Fisher 1951) T
         g Carneyella (Foerste 1916)
+          s pileus (Hall 1866) T
+          s cincinnatiensis (Hall)
+          s ulrichi
+          s vetusta
         g Cincinnatidiscus (Bassler 1935)
+          s stellatus (Hall 1866) T
         g Cystaster (Hall 1871)
+          s granulatus (Hall 1871) T
         g Foerstediscus (Bassler 1935)
+          s grandis (Bassler 1935) T
+          s splendens (Bassler)
         g Lebetodiscus (Bather 1908)
+          s dicksoni (Billings 1857) T
+          s buttsi
         g Lepidoconia (Wilson 1946)
+          s loriformis (Raymond 1915) T
         g Pyrgocystis (Bather 1915)
-        g P.(Pyrgocystis)
-        g P.(Rhynopyrgus) (Dehm 1961)
-        g Streptaster (Hall 1972)
+          s sardesoni (Bather 1915) T
+          bg Pyrgocystis
+            s sardesoni             # Same as no-subgenus?
+            s sulcata (Arivillius)
+          bg Rhynopyrgus (Dehm 1961)
+            s coronaeformis (Rievers 1961) T
+        g Streptaster (Hall 1872)
+          s vorticellatus (Hall 1866) T
+          s septembrachiatus
         g Timeischytes (Ehlers & Kelsing 1958)
+          s megapinacotus (Ehlers & Kesling 1958) T
       F Agelacrinitidae (Clarke 1901)
         g Agelacrinites (Vanuxem 1942)
+          s hamiltonensis (Vanuxem 1942) T
         g Cooperidiscus (Bassler 1935)
+          s alleganius (Clarke 1901) T
         g Discocystis (Gregory 1897)
+          s kaskaskiensis (Hall 1858) T
+          s laudoni (Bassler 1936)
         g Isorophus (Foerste 1916)
+          s cincinnatiensis (Roemer 1851) T
+          s austini (Foerste)
         g Isorophusella (Bassler 1935)
         g Lepidodiscus (Meek & Worthen 1868)
+          s squamosus (Meek & Worthen 1868) T
+          s ephraemovianus
+          s lebouri
         g Thresherodiscus (Foerste 1914)
+          s ramosus (Foerste 1914) T
         g Ulrichidiscus (Bassler 1935)
+          s pulaskiensis (Miller & Gurley 1894) T
       F Edrioasteridae (Bather 1898)
         g Edrioaster (Billings 1858)
-        g Dinocystis (Bather 1989)
+          s bigsbyi (Billings 1857) T
+        g Dinocystis (Bather 1898)
+          s barroisi (Bather 1898) T
     C Ophiocistioidea (Sollas 1899)
       F Eucladiidae (Gregory 1896)
         g Eucladia (Woodward 1869)
