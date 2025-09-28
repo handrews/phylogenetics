@@ -211,13 +211,18 @@ P Echinodermata
     C Ophiocistioidea (Sollas 1899)
       F Eucladiidae (Gregory 1896)
         g Eucladia (Woodward 1869)
+          s johnsoni (Woodward 1869) T
       F Sollasinidae (Fedotov 1926)
         g Sollasina (Fedotov 1926)
+          s oodwardi (Sollas 1899) T
         g Euthemon (Sollas 1899)
-      F Volchoviidae (Hecker 1938)
+          s ignera (Sollas 1899) T
+      F Volchoviidae (Hecker 1938) ?
         g Volchovia (Hecker 1938)
+          s mobilis (Hecker 1940) T
       F Rhenosqamidae (R. Richter 1930) ?
         g Rhenosquama (R. Richter 1930)
+          s westfalica (R. Richter 1930) T
     C Cylocystoidea (Miller & Gurley 1895)
       F Cyclocystoididae (S.A. Miller 1882)
         g Cyclocystoides (Salter & Billings 1858)
