@@ -145,42 +145,41 @@ P Echinodermata
       F Hemicystitidae (Bassler 1936)
         g Hemicystites (Hall 1852)
           s parasiticus (Hall 1852) T
-          s chapmani (Raymond)
-          s devonicus
-          s multibrachiatus
-          s paulianus
-          s rectiradiatus (Shideler)
+          s chapmani (Raymond 1921)
+          s devonicus (Bassler 1936)
+          s multibrachiatus (Raymond 1915)
+          s paulianus (Bassler 1936)
+          s rectiradiatus (Shideler 1918)
         g Anglidiscus (Regnéll 1950)
           s fistulosus (Anderson 1939) T
         g Bassleridiscus (Fisher 1951)
           s mohawkensis (Fisher 1951) T
         g Carneyella (Foerste 1916)
           s pileus (Hall 1866) T
-          s cincinnatiensis (Hall)
-          s ulrichi
-          s vetusta
+          s cincinnatiensis (Hall)      # Or Bassler? No date?
+          s ulrichi (Bassler & Shideler 1936)
+          s vetusta (Foerste 1914)
         g Cincinnatidiscus (Bassler 1935)
           s stellatus (Hall 1866) T
         g Cystaster (Hall 1871)
           s granulatus (Hall 1871) T
         g Foerstediscus (Bassler 1935)
           s grandis (Bassler 1935) T
-          s splendens (Bassler)
+          s splendens (Bassler 1936)
         g Lebetodiscus (Bather 1908)
           s dicksoni (Billings 1857) T
-          s buttsi
+          s buttsi (Bassler 1936)
         g Lepidoconia (Wilson 1946)
           s loriformis (Raymond 1915) T
         g Pyrgocystis (Bather 1915)
-          s sardesoni (Bather 1915) T
           bg Pyrgocystis
-            s sardesoni             # Same as no-subgenus?
-            s sulcata (Arivillius)
+            s sardesoni (Bather 1915) T
+            s sulcata (Arivillius 1892)
           bg Rhynopyrgus (Dehm 1961)
             s coronaeformis (Rievers 1961) T
         g Streptaster (Hall 1872)
           s vorticellatus (Hall 1866) T
-          s septembrachiatus
+          s septembrachiatus (Miller & Dyer 1878)
         g Timeischytes (Ehlers & Kelsing 1958)
           s megapinacotus (Ehlers & Kesling 1958) T
       F Agelacrinitidae (Clarke 1901)
@@ -193,12 +192,13 @@ P Echinodermata
           s laudoni (Bassler 1936)
         g Isorophus (Foerste 1916)
           s cincinnatiensis (Roemer 1851) T
-          s austini (Foerste)
+          s austini (Foerste 1914)
         g Isorophusella (Bassler 1935)
+          s incondita (Raymond 1915) T
         g Lepidodiscus (Meek & Worthen 1868)
           s squamosus (Meek & Worthen 1868) T
-          s ephraemovianus
-          s lebouri
+          s ephraemovianus (Bogolubov) # No date? Bogoljubov? ly?
+          s lebouri (Sladen 1879)
         g Thresherodiscus (Foerste 1914)
           s ramosus (Foerste 1914) T
         g Ulrichidiscus (Bassler 1935)
@@ -245,70 +245,70 @@ P Echinodermata
           F Cheirocrinidae (Jaekel 1899)
             g Cheirocrinus (Eichwald 1856)
               s penniger (Eicwald 1842) T
-              s dilatus (Regnéll)
-              s granulatus (Jaekel)
-              s holmi (Regnéll)
-              s hyperboreus (Regnéll)
-              s interruptus (Bather)
-              s leuchtenbergi (Angelin)
-              s nodosus (Jaekel)
-              s ornatus (Eichwald)
-              s penniger (Eichwald)
+              s dilatus (Regnéll 1951)
+              s granulatus (Jaekel 1899)
+              s holmi (Regnéll 1945)
+              s hyperboreus (Regnéll 1948)
+              s interruptus (Jaekel 1899)
+              s leuchtenbergi (Angelin 1878)
+              s nodosus (Jaekel 1899)
+              s ornatus (Eichwald 1860)
+              s penniger (Eichwald 1842)
               s radiatus (Jaekel 1899)
               s hyperboreus (Regnéll 1948)
-              s volborthi (Schmidt)
+              s volborthi (Schmidt 1874)
             g Homocystites (Barrande 1887) Q
               s alter (Barrande 1887) T
-              s angulatus (Wood)
-              s antiformis (Hall)
-              s degener (Jaekel)
-              s forbesi (Billings)
-              s insignis (Jaekel)
-              s sculptus (Schmidt)
-              s striatus (Jaekel)
-              s walcotti (Jaekel)
+              s angulatus (Wood)  # No date at all
+              s anatiformis (Hall 1847)
+              s degener (Jaekel 1899)
+              s forbesi (Billings 1858)
+              s insignis (Jaekel 1899)
+              s sculptus (Schmidt 1874)
+              s striatus (Jaekel 1899)
+              s walcotti (Jaekel 1899)  # guessing 1899 b/c common
             g Leptocystis (Jaekel 1899) Q
               s tertia (Barrande 1887) T
               s atava (Jaekel 1899)
               s constricta (Bather 1918)  # year uncertain
-              s gigantea (Leuchtenberg)
+              s gigantea (Leuchtenberg)   # no date or confirmation
           F Echinoencrinitidae (Bather 1899)
             g Echinoencrinites (von Meyer 1826)
               s senckenbergii (von Meye 1826) T
                 bs acutangulatus (Regnéll 1948)
               s angulosus (Pander 1830)
-                bs comptus (Jaekel)
-                bs quadratus (Jaekel)
-              s fenestratus (Leuchtenberg)
-              s interlaevigatus (Jaekel)
-              s laevigatus (Jaekel)
+                bs comptus (Jaekel 1899)
+                bs quadratus (Jaekel 1899)
+              s fenestratus (Troost 1850)
+              s interlaevigatus (Jaekel 1899)
+              s laevigatus (Jaekel 1899)
               s lahuseni (Jaekel 1899)
               s reticulatus (Jaekel 1899)
-              s seckenbergii (Meyer)
+              s seckenbergii (Meyer 1826)
                 bs acutangulus (Regnéll)
-              s simplicatus (Phleger)
-              s striatus (Pander)
-              s sphaeroidalis (Phleger)
+              s simplicatus (Phleger 1935)
+              s striatus (Jaekel 1899)
+              s sphaeroidalis (Phleger 1935)
             g Erinocystis (Jaekel 1899)
               s sculpta (Jaekel 1899) T
-              s angulata (Jaekel)
+              s angulata (Jaekel 1899)
               s broeggeri (Regnéll 1948)
               s volborthi (Jaekel 1899)
               s angulata (Jaekel 1899)
             g Eutretocystis (Phleger 1935) Q
               s similis (Phleger 1935) T
-              s acutirostris (Phleger)
+              s acutirostris (Phleger 1935)
             g Glaphyrocystis (Jaekel 1899)
               s woehrmanni (Jaekel 1899) T
-              s compressa (Jaekel)
+              s compressa (Jaekel 1899)
             g Proctocystis (Regnéll 1945)
               s monstruosa (Regnéll 1945) T
               s rossica (Regnéll)
             g Prunocystites (Forbes 1848)
               s fletcheri (Forbes 1848) T
-              s baccatus (Forbes)
+              s baccatus (Forbes 1848)    # year uncertain
             g Schizocystis (Jaekel 1895)
-              s armata (Forbed 1848) T
+              s armata (Forbes 1848) T
             g Scoliocystis (Jaekel 1899)
               s pumilis (Eichwald 1860) T
               s thersites (Jaekel 1899)
@@ -455,11 +455,11 @@ P Echinodermata
           F Caryocystitidae (Jaekel 1918)
             g Caryocystites (von Buch 1846)
               s angelini (Haeckel 1896) T
-              s bicompressus (Reed)
-              s davisi (McCoy)
-              s esthoniae (Jaekel)
-              s laevis (Hecker)
-              s lagenalis (Regnéll)
+              s bicompressus (Reed)           # no confirmation
+              s davisi (McCoy in Forbes 1848)
+              s esthoniae (Jaekel 1899)
+              s laevis (Hecker 1923)
+              s lagenalis (Regnéll 1945)
             g Heliocrinites (Eichwald 1840)
               s balticus (Eichwald 1929) T
               s araneus (von Schlotheim)
@@ -467,17 +467,17 @@ P Echinodermata
               s confortatus (Barrande)
               s echinoides (Leuchtenberg)
               s fiscellus (Bather)
-              s granatum (Wahlenberg)
-              s guttaeformis (Regnéll)
+              s granatum (Wahlenberg 1821)
+              s guttaeformis (Regnéll 1945)
               s kweichouensis (Sun)
-              s malaisei (Regnéll)
-              s ovum (von Schlotheim)
-              s prominens (Angelin)
-              s radiatus (Eichwald)
-              s rouvillei (Koenen)
+              s malaisei (Regnéll 1951)
+              s ovum (von Schlotheim 1826)
+              s prominens (Angelin 1878)
+              s radiatus (Eichwald 1840)
+              s rouvillei (Koenen 1886)
               s rugatus (Bather)
               s subovalis (Reed)
-              s stellatus (Regnéll)
+              s stellatus (Regnéll 1945)
               s tenuistriatus (Angelin)
               s variabilis (Regnéll)
             g Orrocystites (Barrande 1887)
