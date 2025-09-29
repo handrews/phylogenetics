@@ -250,6 +250,275 @@ P Echinodermata
           s salteri (Hall)
           s wrighti (Begg)
     C Echinoidea (Leske 1778)
+      BC Perischoechinoidea (McCoy 1849)
+        O Bothriocidaroida (Zittel 1879)
+          F Bothriocidaridae (Klem 1904)
+            g Bothriocidaris (Eichwald 1859)
+              s globulus (Lambert & Thiéry 1910) T
+        O Echinocystitoida (Jackso 1912)
+          F Echinocystitidae (Gregory 1897)
+            g Echinocystites (Thomson 1861)
+              s pomum (Gregory 1897) T
+            g Pronechinus (Kier 1965)
+              s anatoliensis (Kier 1965) T
+            g Perischocidaris (Neumayr 1881)
+              s harteiana (Bailey 1874) T
+            g Proteroidaris (de Koninck 1882)
+              s giganteus (de Koninckk 1882) T
+            g Rhenechinus (Dehm 1953)
+              s hopstatteri (Dehm 1953) T
+          F Lepidesthidae (Jackson 1896)
+            g lepidsthes (Meek & Worthen 1868)
+              s coreyi (Meek & Worthn 1868) T
+            g Meekechinus (Jackson 1912)
+              s elegans (Jackson 1912) T
+          F Lepidocentridae (Lovén 1874)
+            g Lepidocentrus (Müller 1857)
+              s eifelianus (Müller 1857) T
+              s muelleri (Schultze 1866)
+            g Albertechinus (Stearn 1956)
+              s montanus (Stearn 1956) T
+            g Aulechinus (Bather & Spencer 1934)
+              s grayae (Bather & Spencer 1934) T
+            g Deneechinus (Jackson 1929)
+              s tenuisponus (Jackson 1929) T
+            g Ectinechinus (MacBride & Spencer 1938)
+              s lamonti (MacBride & Spencer 1938)
+            g Eothuria (MacBride & Spencer 1938)
+              s beggi (MacBride & Spencer 1938) T   # Prev cons Holothurian
+            g Hyattechinus (Jackson 1912)
+              s beecheri (Jackson 1912) T
+            g Koninckocidaris (Dollo & Buisseret 1888)
+              s cotteaui (Dollo & Buisseret 1888) T
+              s silurica (Jackson 1912)
+            g Lepidechinoides (Olsson 1912)
+              s ithacensis (Olsson 1912) T
+            g Lepidechinus (Hall 1861)
+              s imbricatus (Hall 1861) T
+            g Myriasiches (Sollas 1899)
+              s gigas (Sollas 1899) T
+            g Palaeodiscus (Salter 1857)
+              s ferox (Salter 1857) T
+            g Perischodomus (McCoy 1849)
+              s biserialis (McCoy 1849) T
+            g Pholidechinus (Jackson 1912)
+              s brauni (Jackson 1912) T
+            g Pholidocidaris (Meek & Worthen 1869)
+              s irregularis (Meek & Worthen 1869) T
+            g Porechinus (Dehm 1961)
+              s porosus (Dehm 1961) T
+          F _incertae cedis_
+            g Devonocidaris (Thomas 1920)
+              s jacksoni (Thomas 1924) T
+            g Tornquistellus (Berg 1899)
+              s gracilis (Tornquist 1897) T
+        O Palaechinoida (Haeckel 1866)
+          F Palaechinidae (McCoy 1849)
+            g Palaechinus (McCoy 1844)
+              s ellipticus (Lambert & Thiéry 1910) T
+              s canadensis (Kier 1953)
+            g Lovenechinus (Jackson 1912)
+              s missouriensis (Jackson 1896) T
+            g Maccoya (Pomel 1869)
+              s gigas (McCoy 1844) T
+              s sphaerica (McCoy 1844)
+            g Melonechinus (Meek & Worthen 1861)
+              s multiporus (Owen & Norwood 1846) T
+            g Oligoporus (Meek & Worthen 1862)
+              s danae (Meek & Worthen 1866) T
+          F Cravenechinidae (Hawkins 1946)
+            g Cravenechinus (Hawkins 1946)
+              s uniserialis (Hawkins 1946)
+            g Gotlandechinus (Regnéll 1956)
+              s balticus (Regnéll 1956) T
+            g Xenechinus (Kier 1958)
+              s parvus (Kier 1958) T
+          F _incertae cedis_
+            g Wrightia (Pomel (1869) # "Wrighthia (sic)" instead of corrected?
+              s phillipsiae (Forbes 1848) T
+            g Xysteria (Pomel 1883)
+              s konigii (McCoy 1844) T
+        O Cidaroida (Claus 1880)
+          F Archaeocidaridae (McCoy 1844)
+            g Archaeocidaris (McCoy 1844)
+              s urii (Fleming 1828) T
+              s aliquantula (Kier 1958)
+              s immanis (Kier 1958)
+              s rossica (von Buch 1842)
+            g Lepidocidaris (Meek & Worthen 1873)
+              s squamosa (Meek & Worthen 1873) T
+            g Nortonechinus (Thomas 1920)
+              s welleri (Thomas 1920) T
+            g Polytaxicidaris (Kier 1958)
+              s dyeri (Kier 1958) T
+            g Silurocidaris (Regnéll 1956) Q
+              s clavata (Regnéll 1956)
+            g Xenocidaris (Schultze 1866) Q
+              s clavigera (Schultze 1866) T
+          F Miocidaridae (Durham & Melville 1957)
+            g Miocidaris (Döderlein 1887)
+              s cassiani (Bather 1909) T
+              s keyserlingi (Geinitz 1848)
+              s pakistanensis (Kinck 1955)
+            g Anaulocidaris (Zittel 1879)
+              s buchi (Münster 1843) T
+              s testudo (Bather 1909)
+            g Aplocidaris (Lambert & Thiéry 1909) ?
+              s helenae (de Regny 1903) T
+              s planus (Bather 1909)
+              s lorioli (Lambert & Thiéry 1909)
+            g Dicyclocidaris (Fell 1950)
+              s denticulata (Fell 1950) T
+            g Mikrocidaris (Döderlein 1887) ?
+              s pentagona (Münster 1843) T
+              s venusta (Münster 1841)
+            g Pachycidaris (Thiéry 1928)
+              s thieryi (Collignon & Lambert 1928) T
+            g Triadocidaris (Döderlein 1887)
+              s subsimilis (Münster 1843) T
+              s persimilis (Bather 1909)
+          F Cidaridae (Gray 1825)
+            BF Histocidarinae (Mortensen 1928)
+              g Histocidaris (Mortensen 1903)
+                s elegans (A. Agassiz 1879) T
+                s mackayi (Fell 1954)
+              g Polycidaris (Quenstedt 1858)
+                s multicepts (Quenstedt 1858) T
+                s legayi (Sauvage & Rigaux 1873)
+                s spinulosa (Roemer 1836)
+              g Poriocidaris (Mortensen 1909)
+                s purpurata (Wyville Thomson 1874) T
+              g Procidaris (Pomel 1883)
+                s edwardsi (Wright 1855) T
+            BF Ctenocidarinae (Mortensen 1928)
+              g Ctenocidaris (Morrensen 1910)
+                s speciosa (Mortensen 1910) T
+              g Aporocidaris (Agassiz & Clark 1907)
+                s milleri (A. Agassiz 1898) T
+              g Austrocidaris (H. L. Clark 1907)
+                s canaliculata (A. Aggassiz 1863) T
+              g Eurocidaris (Mortensen 1909)
+                s nutrix (Wyville Thomson 1876) T
+              g Homalocidaris (Mortensen 1928)
+                s gigantea (H. L. Clark 1925) T
+              g Notocidaris (Mortensen 1909)
+                s mortenseni (Koehler 1900) T
+              g Ogmocidaris (Mortensen 1921)
+                s benhami (Mortensen 1921) T
+              g Rhynchocidaris (Mortensen 1909)
+                s triplopora (Mortensen 1909) T
+            BF Goniocidarinae (Mortensen 1929)
+              g Goniocidaris (Desor in Agassiz & Desor)
+                bg Goniocidaris (Desor 1846)
+                  s tubaria (Lamarck 1816) T
+                bg Aspidocidaris (Mortensen 1928)
+                  s alba (Mortensen 1928) T
+                bg Cyrtocidaris (Mortensen 1927)
+                  s tenuispina (Mortensen 1927) T
+                bg Discocidaris (Döderlein 1885)
+                  s mikado (Döderlein 1885) T
+                bg Petalocidaris (Mortensen 1903)
+                  s florigera (A. Agassiz 1879) T
+              g Psilocidaris (Mortensen 1927)
+                s echinulata (Mortensen 1927) T
+              g Rhopalocidaris (Mortensen 1927)
+                s hirsutispinus (de Meijere 1904) T
+              g Schizocidaris (Mortensen 1903)
+                s assimilis (Mortensen 1903) T
+            BF Stereocidarinae (Lambert 1900)
+              g Stereocidaris (Pomel 1883)
+                s cretosa (Mantell 1835) T
+              g Compsocidaris (Ikeda 1939)
+                s pyrsacantha (Ikeda 1939) T
+              g Sinaecidaris (Fourtau 1921)
+                s gauthieri (Fourtau 1921) T
+              g Temnocidaris (Cotteau 1863)
+                s magnifica (A. Agassiz 1863) T
+            BF Rhabdocidarinae (Lambert 1900)
+              g Rhabdocidaris (Desor 1855)
+                s orbignyana (L. Agassiz 1910) T
+              g Actinocidaris (Mortensen 1928)
+                s thomasi (A. Agassiz & H. L. Clark 1907)
+              g Chondrocidaris (A. Agassiz 1863)
+                s gigantea (A. Agassiz 1863) T
+              g Megacidaris (Thiéry 1928)
+                s horrida (Merian 1880) T
+              g Parhabdocidaris (Thiéry 1928)
+                s varusensis (Cotteau 1880) T
+              g Phyllacanthus (Brandt 1835)
+                s dubia (Brandt 1835) T
+              g Plococidaris (Mortensen 1909)
+                s verticillata (Lamarck 1816) T
+              g Porocidaris (Desor 1855)
+                s chmidelii (Münster 1843) T
+              g Prionocidaris (A. Agassiz 1863)
+                s pistillaris (Lamarck 1816) T
+            BF Cidarinae (Gray 1825)
+              g Cidaris (Leske 1778)
+                s cidaris (Linné 1758) T
+              g Alpicidaris (Lambert 1910)
+                s cureti (Lambert 1910) T
+              g Balanocidaris (Lambert 1910)
+                s glandifera (Münster 1843) T
+              g Calocidaris (H. L. Clark 1907)
+                s micans (Mortensen 1903) T
+              g Centrocidaris (A. Agassiz 1904)
+                s doederleini (A. Agassiz 1898) T
+              g Cyathocidaris (Lambert 1910)
+                s cyathifera (Desmoulins 1837) T
+              g Eucidaris (Pomel 1883)
+                s metularia (Lamarck 1816) T
+              g Hesperocidaris (Mortensen 1928)
+                s panamensis (A. Aggasiz 1898) T
+              g Kionocidaris (Mortensen 1932)
+                s striata (Mortensen 1932) T
+              g Lissocidaris (Mortensen 1939)
+                s fusca (Mortensen 1939) T
+              g Paracidaris (Pomel 1883)
+                s florigemma (Phillips 1829) T
+              g Plegiocidaris (Pomel 1883)
+                s coronatus (von Schlotheim 1820) T
+              g Stylocidaris (Mortensen 1909)
+                s affinis (Philippi 1845) T
+              g Tretocidaris (Mortensen 1903)
+                s bartletti (A. Agassiz 1880) T
+          F Psychocidaridae (Ikeda 1936)
+            g Psychocidaris (Ikeda 1935)
+              s ohshimai (Ikeda 1935) T
+            g Anisocidaris (Thiéry 1928)
+              s bajocensis (Cotteau 1880) T
+            g Caenocidaris (Thiéry 1928)
+              s cucumifera (L. Agassiz) T # date unknown, 18??
+            g Merocidaris (Thiéry 1928)
+              s honorinae (Cotteau 1880) T
+            g Sardocidaris (Lambert 1907)
+              s piae (Lambert 1907) T
+            g Tylocidaris (Pomel 1838)
+              s clavigera (König 1820) T
+          F Diplocidaridae (Gregory 1900)
+            g Diplocidaris (Desor 1855)
+              s gigantea (L. Agassiz) T # date unknown, 18??
+            g Tetracidaris (Cotteau 1872)
+              s reynesi (Cotteau 1872) T
+        O _incertae cedis_
+          F _incertae cedis_
+            g Lanternarius (Regnéll 1956)
+              s latens (Regnéll 1956) T
+      BC Euechinoidea (Bronn 1860)
+    C Holothuroidea (de Blainvill 1834)
+      O Arthrochirotida (Seilacher 1961)
+        F Palaeocucumariidae (Frizzel & Exline 1967) N
+          g Palaeocucumaria (Lehmann 1958)
+            s hunsrueckiana (Lehmann 1958) T
+      O Aspidochirotida (Brandt 1835) Q
+        F Holothuriidae (Ludwig 1894)
+          g Protholothuria (Giebel 1857)
+            s armata (Frizzel & Exline 1967) N
+      O Dendrochirotida (Brandt 1835) # No complete fossils
+      O Apodida (Brandt 1835)
+        F Synaptidae (Burmeister 1837)
+          g Pseudocaudina (Broili 1926)
+            s brachyura (Broili 1926) T
   BP Crinozoa (Matsumoto 1929)
     C Cystoidea (von Buch 1846)
       O Rhombifera (Zittel 1879)
@@ -1185,16 +1454,332 @@ P Echinodermata
           BO Brisingina (Fisher 1928)
       BC Ophiuroidea (Gray 1840)
         O Stenurida (Spencer 1951)
-          BO Proturina n. (Spencer & Wright 1966)
+          BO Proturina (Spencer & Wright 1966) N
+            F Pradesuridae (Spencer 1951)
+              g Pradesura (Spencer 1951)
+                s jacobi (Thoral 1935) T
+              g Stuertzaster (Etheridge 1899)
+                s marstoni (Salter 1857) T
+            F Phragmactinidae (Spencer 1951)
+              g Phragmactis (Spencer 1940)
+                s grayae (Spencer 1940) T
+            F Rhopalocomidae (Spencer & Wright 1966) N
+              g Rhopalocoma (Salter 1857)
+                s pyrotecnica (Salter 1857) T
+              g Ptilonaster (Hall 1868)
+                s princeps (Hall 1868) T
+            F Bdellacomidae (Spencer & Wright 1966) N
+              g Bdellacoma (Salter 1857)
+                s vermiformis (Salter 1857) T
           BO Parophiurina (Jaekel 1923)
+            F Eophiuriade (Schöndorf 1910)
+              g Eophiura (Jaekel 1903)
+                s bohemica (Schuchert 1914) T
+            F Palaeuridae (Spencer 1951)
+              g Palaeura (Jaekel 1903)
+                s neglecta (Schuchert 1914) T
+              g Medusaster (Stürtz 1890)
+                s rhenanus (Stürtz 1890) T
+            F Stenasteridae (Schuchert 1914)
+              g Stenaster (Billings 1858)
+                s obtusus (Forbed 1848) T
         O Oegophiurida (Matsumoto 1915)
           BO Lysophiurina (Gregory 1896)
+            F Encrinasteridae (Schuchert 1914)
+              g Encrinaster (Haekel 1866)
+                s arnoldi (Goldfuss 1848) T
+              g Cheiropteraster (Stürtz 1890)
+                s giganteus (Stürtz 1890) T
+              g Cripidosoma (Spencer 1930)
+                s wenlocki (Spencer 1930) T
+              g Euzonosoma (Spencer 1930)
+                s orbitoides (Spencer 1930) T
+              g Loriolaster (Stürtz 1886)
+                s mirabilis (Stürtz 1886) T
+              g Mastigactis (Spencer 1930)
+                s aranea (Ruedemann 1916) T
+              g Urosoma (Spencer 1930)
+                s hirudo (Forbes 1848) T
+            F Protasteridae (S.A. Miller 1889)
+              g Protaster (Forbes 1849)
+                s sedgwickii (Forbes 1849) T
+              g Aulactis (Spencer 1930)
+                s orthopaeda (Spencer 1930) T
+              g Bohemura (Jaekel 1903)
+                s jahni (Jaekel 1903) T
+              g Drepanaster (Whidborne 1898)
+                s scabrosus (Whidborne 1896) T
+              g Inyoaster (Phleger 1936) Q
+                s bradleyi (Phleger 1936) TQ
+              g Mastigophiura (Lehmann 1957)
+                s grandis (Lehmann 1957) T
+              g Palaeophiura (Stürtz 1890)
+                s simplex (Stürtz 1890) T
+              g Taeniaster (Billings 1858)
+                s spinosus (Billings 1857) T
           BO Zeugophiurina (Matsumoto 1929)
+            F Lapworthuridae (Gregory 1897)
+              g Lapworthura (Gregory 1897)
+                s miltoni (Salter 1857) T
+              g Hallaster (Stürtz 1886)
+                s cylindricus (Billings 1857) T
+              g Miospondylus (Gregory 1897)
+                s rhenanus (Stürtz 1893) T
+            F Furcasteridae (Stürtz 1900)
+              g Furcaster (Stürtz 1886)
+                s leptosoma (Salter 1857) T
+              g Tremataster (Worthen & Miller 1883)
+                s difficilis (Worthen & Miller 1883) T
+            F Klasmuridae (Spencer 1925)
+              g Klasmura (Ruedemann 1916)
+                s mirabilis (Ruedemann 1916) T
+            F Ophiocanopidae (Mortensen 1933)
+              g Ophiocanops (Koehler 1922)
+                s fugiens (Koehler 1922) T
         O Phrynophiurida (Matsumoto 1915)
           BO Ophiomyxina (Fell 1962)
+            F Ophiomyxidae (Ljungman 1866)
+              BF Ophiomyxinae (Ljungman 1866)
+                g Ophiomyxa (Müller & Troschel 1840)
+                  s pentagona (Lamarck 1816) T
+                g Astrogeron (Verrill 1899)
+                  s supinus (Lyman 1883) T
+                g Neoplax (Bell 1884)
+                  s supinus (Lyman 1883) T
+                g Ophiodera (Verrill 1899)
+                  s serpentaria (Lyman 1883) T
+                g Ophiogeron (Lyman 1878)
+                  s edentulus (Lyman 1878) T
+                g Ophiohelus (Lyman 1880)
+                  s umbella (Lyman 1880) T
+                g Ophiohyalus (Matsumoto 1915)
+                  s gotoi (Matsumoto 1915) T
+                g Ophiohymen (H. L. Clark 1911)
+                  s gymnodiscus (H. L. Clark 1911) T
+                g Ophioleptoplax (H. L. Clark 1911)
+                  s o megapora (H. L. Clark 1911 T
+                g Ophiolycus (Mortensen 1933)
+                  s inermis (Mortensen 1933) T
+                g Ophiomora (Koehler 1907)
+                  s elegans (Koehler 1907) T
+                g Ophiosciasma (Lyman 1878)
+                  s attenuatum (Lyman 1878) T
+                g Ophioscolex (Müller & Troschel 1842)
+                  s glacialis (Müller & Troschel 1842) T
+                g Ophiostiba (Matsumoto 1915)
+                  s hidekii (Matsumoto 1915) T
+                g Ophiostyracium (H. L. Clark 1911)
+                  s trachyacanthum (H. L. Clark 1911) T
+                g Ophiosyzygus (H. L. Clark 1911)
+                  s disacanthus (H. L. Clark 1911) T
+              BF Ophiobyrsinae (Matsumoto 1915)
+                g Ophiobyrsa (Lyman 1878)
+                  s rudis (Lyman 1878) T
+                g Astrogymnotes (H. L. Clark 1914)
+                  s catastica (H. L. Clark 1914) T
+                g Ophiobrachion (Lyman 1883)
+                  s uncinatus (Lyman 1883) T
+                g Ophiobyrsella (Verrill 1899)
+                  s serpens (Lyman 1883) T
+                g Ophiophrixus (H. L. Clark 1911)
+                  s acanthinus (H. L. Clark 1911) T
+                g Ophioschiza (H. L. Clark 1911)
+                  s monocantha (H. L. Clark 1911) T
+                g Ophiosmilax (Matsumoto 1915)
+                  s mirabilis (Matsumoto 1915) T
           BO Euryalina (Lamarck 1816)
+            F Eospndylidae (Spencer & Wright 1966) N
+              g Eospondylus (Gregory 1897)
+                s primigenius (Stürtz 1886) T
+              g Kentrospondylus (Lehmann 1957)
+                s decadactylus (Lehmann 1957) T
+            F Onychasteridae (Miller 1889)
+              g Onychaster (Meek & Worthen 1868)
+                s flexilis (Meek & Worthen 1868) T
+            F Asteronychidae (Müller & Troschel 1842)
+              g Asteronyx (Müller & Troschel 1842)
+                s loveni (Müller & Troschel 1842) T
+              g Astrodia (Verrill 1899)
+                s tenuispina (Verrill 1899) T
+            F Asteroschematidae (Verrill 1899)
+              g Asteroschema (Oersted & Lütken 1856)
+                s oligactes (Pallas 1788) T
+              g Astrobrachion (Döderlein 1927)
+                s constrictus (Farquar 1900) T
+              g Astrocharis (Koehler 1904)
+                s virgo (Koehler 1904) T
+              g Astroscolex (Mortensen 1933)
+                s adhaerens (Studer 1884) T
+              g Ophiocreas (Lyman 1879)
+                s lumbricus (Lyman 1879) T
+              g Ophiuropsis (Studer 1884)
+                s lymani (Studer 1884) T
+            F Gorgonocephalidae (Ljungman 1867)
+              g Gorgonocephalus (Leach 1815)
+                s caputmedusae (Linné 1758) T
+              g Asteroporpa (Oersted & Lütken 1856)
+                s annulata (Lütken 1856) T
+              g Astracme (Döderlein 1927)
+                s mucronatum (Lyman 1856) T
+              g Astroba (Döderlein 1911)
+                s clavatum (Lyman 1861) T
+              g Astrocaneum (Döderlein 1911)
+                s spinosum (Lyman 1875) T
+              g Astrochalcis (Koehler 1905)
+                s tuberculosus (Koehler 1905) T
+              g Astrochele (Verrill 1878)
+                s lymani (Verrill 1878) T
+              g Astrochlamys (Koehler 1911)
+                s verrucosum (Lamarck 1816) T
+              g Astroclon (Lyman 1879)
+                s propugnatoris (Lyman 1879) T
+              g Astrocnida (Lyman 1872)
+                s propugnatoris (Lyman 1872) T
+              g Astroconus (Döderlein 1911)
+                s australe (Verrill 1876) T
+              g Astrocrius (Döderlein 1911)
+                s sobrinus (Matsumoto 1912) T
+              g Astrocyclus (Döderlein 1911)
+                s caecilia (Lütken 1856) T
+              g Astrodendrum (Döderlein 1911)
+                s sagaminus (Döderlein 1902) T
+              g Astrodictyum (Döderlein 1927)
+                s panamense (Verrill 1867) T
+              g Astroglymna (Döderlein 1927)
+                s sculptum (Döderlein 1896) T
+              g Astrogomphus (Lyman 1869)
+                s vallatus (Lyman 1869) T
+              g Astrogordius (Döderlein 1911)
+                s cacaoticum (Lyman 1874) T
+              g Astrohamma (Döderlein 1930)
+                s tuberculatus (Koehler 1923) T
+              g Astrohelix (Döderlein 1930)
+                s bellator (Koehler 1904) T
+              g Astrophyton (Fleming 1828)
+                s muricatum (Lamarck 1816) T
+              g Astroplegma (Döderlein 1928)
+                s expansum (Döderlein 1928) T
+              g Astrospartus (Döderlein 1911)
+                s mediterraneus (Risso 1826) T
+              g Astrostephanus (Döderlein 1930)
+                s vecors (Koehler 1904) T
+              g Astrothamnus (Matsumoto 1915)
+                s echinacea (Matsumoto 1912) T
+              g Astrothorax (Döderlein 1911)
+                s misakiensis (Döderlein 1911) T
+              g Astrothrombus (H. L. Clark 1909)
+                s rugosus (H. L. Clark 1909) T
+              g Astrotoma (Lyman 1875)
+                s agassizii (Lyman 1876) T
+              g Astrozona (Döderlein 1930)
+                s munitus (Koheler 1904) T
+              g Conocladus (H. L. Clark 1909)
+                s oxyconus (H. L. Clark 1909) T
+              g Ophiocrene (Bell 1894)
+                s oenigma (Bell 1894) T
+              g Schizostella (A. H. Clark 1952)
+                s bifurcata (A. H. Clark 1952) T
+            F Euryalidae (Gray 1840)
+              g Euryale (Oken 1815)
+                s asperum (Lamarck 1816) T
+              g Asteromorpha (Lütken 1869)
+                s rousseaui (Michelin 1862) T
+              g Asterostegus (Mortensen 1933)
+                s tuberculatus (Mortensen 1933) T
+              g Asteroceras (Lyman 1879)
+                s pergamena (Lyman 1879) T
+              g Sthenocephalus (Koehler 1898)
+                s indicus (Koehler 1898) T
+              g Trichaster (Agassiz 1836)
+                s palmiferum (Lamarck 1816) T
         O Ophiurida (Müller & Troschel 1840)
           BO Chilophiurina (Matsumoto 1915)
+            F Ophiurinidae (Gregory 1897)
+              g Ophiurina (Stürtz 1890)
+                s lymani (Stürtz 1890) T
+              g Argentinaster (Ruedemann 1916)
+                s bodenbenderi (Ruedemann 1916) T
+              g Ophiaulzx (Ubaghs 1941)
+                s decheni (Dewalque 1881 T
+              g Silesiaster (Schwarzbach & Zimmermann 1936)
+                s longivertebralis (Schwarzbach & Zimmermann 1936) T
+              g Stephanoura (Ubaghs 1941)
+                s belgica (Ubaghs 1941) T
+            F Ophiuridae (Lyman 1865)
+              BF Aganasterinae (Stürtz 1900)
+                g Aganaster (Miller & Gurley 1890)
+                  s gregarius (Meek & Worthen 1869) T
+              BF Ophiurinae (Lyman 1865)
+                g Ophiura (Lamarck 1801)
+                  s ophiura (Linné 1758) T
+                g Amphiophiura (Matsumoto 1915)
+                  s bullata (Wyville-Thomson 1873) T
+                g Anophiura (H. L. Clark 1939)
+                  s simplex (H. L. Clark 1939) T
+                g Anthophiura (H. L. Clark 1911)
+                  s anxiologa (H. L. Clark 1911)
+                g Aplocoma (d'Orbigny 1852)
+                  s agassizi (Münster 1831) T
+                g Aspidophiura (Matsumoto 1915)
+                  s watasei (Matsumoto 1915) T
+                g Aspidura (Agassiz 1835)
+                  s loricata (Goldfuss 1826) T
+                g Astrophiura (Sladen 1879)
+                  s permira (Sladen 1879) T
+                g Cholaster (Worthen & Miller 1883)
+                  s peculiaris (Worthen & Miller 1883) T
+                g Dictenophiura (H. L. Clark 1923)
+                  s carnea (Lütken 1858) T
+                g Euvondria (Fell 1961)
+                  s floretta (Fell 1961) T
+                g Geocoma (d'Orbigny 1850)
+                  s carinata (Münster in Goldfuss 1833) T
+                g Gymnophiura (Lütken & Mortensen 1897)
+                  s mollis (Lütken & Mortensen 1897)
+                g Haplophiura (Matsumoto 1915)
+                  s gymnopora (H. L. Clark 1909) T
+                g Homalophiura (H. L. Clark 1915)
+                  s inornata (Lymany 1878) T
+                g Ophiochalcis (Koehler 1931)
+                  s aspera (Koehler 1931)
+                g Ophiochorus (H. L. Clark 1939)
+                  s granulatus (H. L. Clark 1939) T
+                g Ophiochrysis (Koehler 1904)
+                  s ornata (Koehler 1904) T
+                g Ophiocrossota (H. L. Clark 1928)
+                  s multispina (Ljungman 1867) T
+                g Ophiocten (Lütken 1955)
+                  s sericea (Forbes 1852) T
+                g Ophiogona (Studer 1876)
+                  s laevigata (Studer 1876) T
+                g Ophiomastus (Lyman 1878)
+                  s tegulitius (Lyman 1878) T
+                g Ophiomisidium (Koehler 1914)
+                  s speciosum (Koehler 1914) T
+                g Ophionotus (Bell 1902)
+                  s victoriae (Bell 1902) T
+                g Ophiophycis (Koehler 1901)
+                  s mirabilis (Koehler 1901) T
+                g Ophioplinthus (Lyman 1878)
+                  s medusa (Lyman 1878) T
+                g Ophiopyrgoides (H. L. Clark 1939)
+                  s trispinosus (Koehler 1904) T
+                g Ophiosteira (Bell 1902)
+                  s antarctica (Bell 1902) T
+                g Ophiotjalfa (Mortensen 1915)
+                  s vivipara (Mortensen 1915) T
+                g Ophiotypa (Koehler 1897)
+                  s simplex (Koehler 1897) T
+                g Ophiuraster (H. L. Clark 1897)
+                  s perissus (H. L. Clark 1897) T
+                g Ophiuroglypha (Hertz 1926)
+                  s lymani (Ljungman 1870) T
+                g Ophiurolepis (Matsumoto 1915)
+                  s carinata (Studer 1876) T
+                g Stegophiura (Matsumoto 1915)
+                  s nodosa (Lütken 1855) T
+                g Theodoria (Fell 1961)
+                  s relegata (Koehler 1922) T
           BO Laemophiurina (Matsumoto 1915)
           BO Gnathophiurina (Matsumoto 1915)
   _incertae cedis_
