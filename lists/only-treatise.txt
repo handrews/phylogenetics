@@ -1438,13 +1438,324 @@ P Echinodermata
                 g Craspidaster (Sladen 1889)
                   s hesperus (Müller & Troschel 1840) T
           BO Cribellina (Fisher 1911)
+            F Goniopectinidae (Verrill 1889)
+              BF Ctenodiscinae (Sladen 1889)
+                g Ctenodiscus (Müller & Troschel 1842)
+                  s crispatus (Retzius 1805) T
+                g Pectinidiscus (Ludwig 1900)
+                  s annae (Ludwig 1900) T
+            F Porcellanasteridae (Sladen 1883)
+              g Porcellanaster (Wyville-Thomson 1877)
+                s cerulens (Wyville-Thomson 1877) T
+              g Abyssaster (Madsen 1961)
+                s tara (Mason & Alcock 1891) T
+              g Benthogenia (Fisher 1911)
+                s cribellosa (Fisher 1911) T
+              g Eremicaster (Fisher 1905)
+                s gracilis (Sladen 1883) T
+              g Hyphalaster (Sladen 1883)
+                s inermis (Sladen 1883) T
+              g Lysaster (Bell 1909)
+                s lorioli (Bell 1909) T
+              g Sidonaster (Koehler 1909)
+                s vaneyi (Masden 1961) T
+              g Styracaster (Sladen 1883)
+                s horridus (Madsen 1961) T
+              g Thoracaster (Sladen 1883)
+                s cylindratus (Sladen 1883) T
           BO Notomyotina (Ludwig 1910)
+            F Benthopectinidae (Verrill 1894)
+              g Benthopecten (Verrill 1884)
+                s spinosus (Verrill 1884) T
+              g Acontiaster (Döderlein 1921)
+                s bandanus (Döderlein 1921) T
+              g Cheiraster (Studer 1883)
+                s gazellae (Studer 1883) T
+              g Gaussaster (Ludwig 1910)
+                s vanhofleni (Ludwig 1910) T
+              g Luidiaster (Studer 1883)
+                s hirsutus (Studer 1883) T
+              g Myonotus (Fisher 1911)
+                s intermedius (Fisher 1900) T
+              g Nearchaster (Fisher 1911)
+                s aciculosus (Fisher 1910) T
+              g Pectinaster (Perrier 1885)
+                s filholi (Perrier 1885) T
+              g Pontaster (Sladen 1885)
+                s tenuispinus (Düben & Koren 1846) T
         O Valvatida (Perrier 1884)
           BO Pustulosina (Spencer 1951)
             SF Palaaeasteraceae (S. A. Miller 1889)
+              F Palaeasteridae (S. A. Miller 1889)
+                g Palaeaster (Hall 1852)
+                  s niagarensis (Hall 1852) T
+                g Australaster (Schuchert 1914) ?
+                  s giganteus (Etheridge 1892) T
+              F Hudsonasteridae (Schuchert 1914)
+                BF Hudsonasterinae (Schuchert 1914)
+                  g Hudsonaster (Stürtz 1900)
+                    s rugosa (Billings 1857) T
+                  g Girvanaster (Spencer 1916)
+                    s sculptus (Spencer 1916) T
+                  g Protopalaeaster (Hudson 1912)
+                    s narrawayi (Fedotov 1936) T
+                  g Macroporaster (Raymond 1921) Q
+                    s matutinus (Hall 1847) T
+                BF Coccasterinae (Spencer & Wright 1966) N
+                  g Coccaster (Spencer 1916)
+                    s bulbiferus (Spencer 1916) T
+                BF Silurasterinae (Spencer & Wright 1966) N
+                  g Siluraster (Jaekel 1903)
+                    s perfectus (Jaekel 1903) T
+              F Neopalaeasteridae (Schuchert 1915)
+                g Neopalaeaster (Schuchert 1915)
+                  s crawfordsvillensis (S. A. Miller 1880) T
+              F Mesopalaeasteridae (Schuchert 1914) N
+                BF Mesopalaeasterinae (Schuchert 1915)
+                  g Mesopalaeaster (Schuchert 1914)
+                    s shafferi (Hall 1868) T
+                  g Arisaigaster (Spencer 1953)
+                    s parviusculus (Billings 1860) T
+                  g Devonaster (Schuchert 1914)
+                    s eucharis (Hall 1868) T
+                BF Lepidactininae (Spencer 1918)
+                  g Lepidactis (Spencer 1918)
+                    s wenlocki (Spencer 1918) T
+                  g Spaniaster (Schöndorf 1907)
+                    s latiscutatus (Sandberger 1855) T
+                BF Clarkeasterinae (Spencer & Wright 1966) N
+                  g Carkeaster (Ruedemann 1916)
+                    s clarki (Clarke & Swartz 1913) T
+              F Xenasteridae (Gregory 1899)
+                g Xenaster (Simonovitsch 1871)
+                  s margaritatus (Simonovitsch 1871) T
+                g Agalmaster (Scöndorf 1909)
+                  s miellensis (Schuchert 1914) T
+                g Palaeostella (Stürtz 1890)
+                  s follmanni (Schöndorf 1909) T
+                g Rhenaster (Schöndorf 1909)
+                  s schwerdi (Schöndorf 1909) T
+                g Trimeraster (Schöndorf 1909)
+                  s parvulus (Schöndorf 1909) T
+              F _uncertain_
+                BF _uncertain_
+                  g Eostella (Lehmann 1957)
+                    s hunsrueckiana (Lehmann 1957) T
+                  g Hunsrueckaster (Lehmann 1957)
+                    s peregrinus (Lehmann 1957) T
             SF Promopalaeasteraceae (Schuchert 1915)
-          BO Tumulosina n. (Spencer & Wright 1966)
+              F Promopalaeasteridae (Schuchert 1914)
+                g Promopalaeaster (Schuchert 1914)
+                  s speciosus (Meek 1872) T
+                g Anorthaster (Schuchert 1914)
+                  s miamiensis (S. A. Miller 1880) T
+                g Kyraster (Lehmann 1957) ?
+                  s inermis (Lehmann 1957) T
+              F Eoactinidae (Spencer 1919)
+                g Eoactis (Spencer 1914)
+                  s simplex (Spencer 1914) T
+                g Yarravaster (Spencer 1950)
+                  s yarraensis (Withers & Keeble 1934) T
+          BO Tumulosina (Spencer & Wright 1966) N
+            F Monasteridae (Schuchert 1915)
+              g Monaster (Etheridge 1892)
+                s clarkei (de Kononck 1877) T
+            F Stauranderasteridae (Spencer 1913)
+              g Stauranderaster (Spencer 1907)
+                s boysii (Forbes 1848) T
+              g Aspidaster (de Loriol 1884)
+                s delgadoi (de Loriol 1884) T
+              g Hadranderaster (Spencer 1907)
+                s simplex (Geinitz 1871) T
+            F Sphaerasteridae (Schöndorf 1906)
+              g Sphaeraster (Quenstedt 1875)
+                s punctatus (Quenstedt 1852) T
+              g Podosphaeraster (A. M. Clark 1962)
+                s polyplax (A. M. Clark 1962) T
+              g Valettaster (Lambert 1914)
+                s ocellatus (Forbes 1848) T
           BO Granulosina (Perrier 1894)
+            F Odontasteridae (Verrill 1889)
+              g Odontaster (Verrill 1880)
+                s hispidus (Verrill 1880) T
+              g Acodontaster (Verrill 1899)
+                s elongatus (Sladen 1889) T
+              g Asterodon (Perrier 1891)
+                s singularis (Müller & Troschel 1842) T
+              g Eurygonias (Farquar 1913)
+                s hylacanthus (Farquar 1913) T
+              g Hoplaster (Perrier 1882)
+                s spinosus (Perrier 1882) T
+            F Chaetasteridae (Sladen 1889)
+              g Chaetaster (Müller & Troschel 1840)
+                s longipes (Retzius 1805) T
+            F Archasteridae (Viguier 1878)
+              g Archaster (Müller & Troschel 1840)
+                s typicus (Müller & Troschel 1840) T
+            F Goniasteridae (Forbes 1841)
+              BF Goniasterinae (Forbes 1841)
+                g Goniaster (Agassiz 1835)
+                  s tesselatus (Lamarck 1816) T
+                g Ceramaster (Verrill 1899)
+                  s granularis (Retzius 1783) T
+                g Metopaster (Sladen 1893)
+                  s parkinsoni (Forbes 1848) T
+                g Recurvaster (Brünnich-Nielsen 1943)
+                  s radiatus (Spencer 1913) T
+                g Spenceria (Fourteau 1914)
+                  s teilhardi (de Loriol 1908) T
+                g Sphaeriodiscus (Fisher 1910)
+                  s bourgueti (Perrier 1894) T
+                g Cladaster (Verrill 1899)
+                  s rudie (Verrill 1899) T
+                g Iconaster (Sladen 1889)
+                  bg Iconaster (Sladen 1889)
+                    s longimanum (Möbius 1859) T
+                  bg Glyphodiscus (Fisher 1917)
+                    s periectus (Fisher 1913) T
+                g Pentagonaster (Gray 1840)
+                  s pulchellus (Gray 1840) T
+                g Pergamaster (Koehler 1920)
+                  s tessellatus (Koehler 1920) T
+                g Plinthaster (Verrill 1899)
+                  s perrieri (Sladen 1889) T
+                g Pontioceramus (Fisher 1911)
+                  s grandis (Fisher 1911) T
+                g Tesselaster (H. L. Clark 1941)
+                  s notabilis (H. L. Clark 1941) T
+                g Toraster (A. M. Clark 1952)
+                  s tuberculatum (Gray 1847) T
+                g Tosia (Gray 1840)
+                  s australis (Gray 1840) T
+                g Tosiaster (Verrill 1914)
+                  s arcticus (Verrill 1909) T
+              BF Chitonasterinae (Fisher 1911)
+                g Chitonaster (Sladen 1889)
+                  s cataphractus (1889) T
+              BF Anthenoidinae (Fisher 1919)
+                g Anthenoides (Perrier 1881)
+                  s peircei (Perrier 1881) T
+                g Atelorias (Fisher 1911)
+                  s anacanthus (Fisher 1911) T
+                g Ogmaster (von Martens 1865)
+                  s capella (Müller & Troschel 1842) T
+                g Siraster (H. L. Clark 1915)
+                  s tuberculatus (H. L. Clark 1915) T
+                g Stellaster (Gray 1840)
+                  s equestris (Retzius 1805) T
+              BF Hippasteriinae (Verrill 1899)
+                g Hippasteria (Gray 1840)
+                  bg Hippasteria (Gray 1840)
+                    s phrygiana (Parelius 1768) T
+                  bg Nehippasteria (Dons 1938)
+                    s insignis (Dons 1938) T
+                g Cryptopeltaster (Fisher 1904)
+                  s lepidonotus (Fisher 1904)
+                g Evoplosoma (Fisher 1906)
+                  s forcipifera (Fisher 1906) T
+              BF Nectriinae (Perrier 1894)
+                g Nectria (Gray 1840)
+                  s ocellifera (Lamarck 1816) T
+                g Nectriaster (H. L. Clark 1946)
+                  s monacanthus (H. L. Clark 1916) T
+              BF Pseudarchasterinae (Sladen 1889)
+                g Pseudarchaster (Sladen 1889)
+                  s discus (Fisher 1911) T
+                g Aphroditaster (Sladen 1889) Q
+                  s gracilis (Fisher 1919) T
+                g Paragonaster (Sladen 1889)
+                  s ctenipes (Fisher 1919) T
+                g Perissogonaster (Fisher 1913)
+                  s insignis (Fisher 1913) T
+              BF Pycinasterinae (Spencer & Wright 1966) N
+                g Pycinaster (Spencer 1907)
+                  s angustatus (Forbes 1848) T
+                g Phocidaster (Spencer 1913) Q
+                  s grandis (Spencer 1913) T
+            F _uncertain_
+              BF _uncertain_
+                g Calliaster (Gray 1840)
+                  s childreni (Gray 1849) T
+                g Calliderma (Gray 1847)
+                  s emma (Gray 1847) T
+                g Cenomanaster (Wright 1951)
+                  s cenomanensis (Mercier 1935) T
+                g Chomataster (Spencer 1913)
+                  s acules (Spencer 1913) T
+                g Comptonia (Gray 1840)
+                  s elegans (Gray 1840) T
+                g Cottreauaster (Wright 1951)
+                  s lamarei (Cottreau 1929) T
+                g Crateraster (Spencer 1913)
+                  s quinqueloba (Goldfuss 1822) T
+                g Forbesiaster (de Loriol 1909)
+                  s wrighti (de Loriol 1909) T
+                g Indiaster (Rao 1957)
+                  s krishna (Rao 1957) T
+                g Leptogonium (Pomel 1887) Q
+                  s mauritanicum (Pomel 1887)
+                g Mastaster (Mercier 1935)
+                  s villersensis (Mercier 1935) T
+                g Mediaster (Stimpson 1857)
+                  s aequalis (Stimpson 1857) T
+                g Miopentagonaster (Mercier 1935)
+                  calloviensis (Mercier 1935) T
+                g Noviaster (Valette 1929)
+                  s lissajousi (Valett 1929) T
+                g Nymphaster (Sladen 1889)
+                  s arenatus (Perrier 1881) T
+                g Ophryaster (Spencer 1913)
+                  s oligoplax (Sladen 1891) T
+                g Pachyaster (de Loriol 1909)
+                  s aegyptiacus (de Loriol 1909) T
+                g Spenceraster (Lambert 1913)
+                  s rugosus (1907) T
+                g Teichaster (Spencer 1913)
+                  s favosus (Spencer 1913) T
+                g Tylasteria (Valette 1930)
+                  s jurensis (Goldfuss 1822) T
+                g Ampiaster (Verrill 1868)
+                  s insignis (Verrill 1868) T
+                g Astroceramus (Fisher 1906)
+                  s callimorphus (Fisher 1906) T
+                g Astrothauma (Fisher 1913)
+                  s euphylacteum (Fisher 1913) T
+                g Circeaster (Koehler 1909)
+                  s marcelli (Koehler 1909) T
+                g Eugoniaster (Verrill 1899)
+                  s investigatoris (Alcock 1893) T
+                g Gigantaster (Döderlein 1924)
+                  s weberi (Döderlein 1924) T
+                g Gilbertaster (Fisher 1906)
+                  s anacanthus (Fisher 1906) T
+                g Johannaster (Koehler 1909)
+                  s superbus (Koehler 1909) T
+                g Lithosoma (Fisher 1911)
+                  s actinometra (Fisher 1911) T
+                g Litonotaster (Verrill 1889)
+                  s intermedius (Perrier 1884) T
+                g Lydiaster (Koehler 1909)
+                  s johannae (Koehler 1909) T
+                g Mahabissaster (Macan 1938)
+                  s zengi (Macan 1938) T
+                g Mariaster (A. H. Clark 1916)
+                  s giganteus (Goto 1914) T
+                g Milteliphaster (Alcock 1893)
+                  s woodmasonii (Alcock 1893) T
+                g Notioceramus (Fisher 1940)
+                  s anomalus (Fisher 1940) T
+                g Peltaster (Verrill 1899)
+                  s nidarosiensis (Storm 1881) T
+                g Progoniaster (Döderlein 1924)
+                  s atavus (Döderlein 1924) T
+                g Pseudogoniodiscaster (Livingstone 1930)
+                  s wardi (Livingstone 1930) T
+                g Rosaster (Perrier 1894)
+                  s alexandri (Perrier 1881) T
+                g Sibogaster (Döderlein 1924)
+                  s digitatus (Döderlein 1924)
+                g Styphlaster (H. L. Clark 1938)
+                  s notabilis (H. L. Clark 1938) T
         O Spinulosida (Perrier 1884)
           BO Eugnathina n. (Spencer & Wright 1966)
           BO Leptognathina n. (Spencer & Wright 1966)
@@ -1780,6 +2091,97 @@ P Echinodermata
                   s nodosa (Lütken 1855) T
                 g Theodoria (Fell 1961)
                   s relegata (Koehler 1922) T
+              BF Ophiolepidinae (Ljungman 1867)
+                g Ophiolepis (Müller & Troschel 1840)
+                  s annulosa (de Blainville 1834) T
+                g Amphipholizona (H. L. Clark 1915)
+                  s delicata (H. L. Clark 1915) T
+                g Ophioceramis (Lyman 1865)
+                  s januarii (Lütken 1856) T
+                g Ophioceres (Koehler 1904)
+                  s incipiens (Koehler 1922) T
+                g Ophiocrates (Koehler 1904)
+                  s lenta (Koehler 1904) T
+                g Ophiocypris (Koehler 1931)
+                  s tuberculosus (Koehler 1931) T
+                g Ophiolebella (Mortensen 1936) T
+                  s biscutifer (E. A. Smith 1879) T
+                g Ophiolipus (Lyman 1878)
+                  s agassizii (Lyman 1878) T
+                g Ophiomidas (Koehler 1904)
+                  s alatus (Koehler 1904) T
+                g Ophiomusium (Lyman 1869)
+                  s eburneum (Miller 1958) T
+                g Ophiopenia (H. L. Clark 1911)
+                  s disacantha (H. L. Clark 1911) T
+                g Ophiophyllum (Lyman 1878)
+                  s petilu (Lyman 1878) T
+                g Ophioplocus (Lyman 1861)
+                  s imbricata (Müller & Troschel) T
+                g Ophiosphalma (H. L. Clark 1941)
+                  s planum (Lyman 1878) T
+                g Ophioteichus (H. L. Clark 1938)
+                  s parvispinum (H. L. Clark 1938) T
+                g Ophiothyreus (Ljungman 1871)
+                  s goesi (Ljungman 1871) T
+                g Ophiotitanos (Spencer 1907)
+                  s tenuis (Spencer 1907) T
+                g Ophiozona (Lyman 1865)
+                  s impressa (Lütken 1859) T
+                g Ophiozonella (Matsumoto 1915)
+                  s longispina (H. L. Clark 1908) T
+                g Ophiozonoida (H. L. Clark 1915)
+                  s picta (H. L. Clark 1915) T
+            F Ophioleucidae (Matsumoto 1915)
+              g Ophioleuce (Koehler 1904)
+                s seminudum (Koehler 1904) T
+              g Amphitarsus (H. L. Clark 1941)
+                s mirabilis (H. L. Clark 1941) T
+              g Ophiernus (Lyman 1878)
+                s vallincola (Lyman 1878) T
+              g Ophiocirce (Koehler 1904)
+                s inutilis (Koehler 1904) T
+              g Ophiopallas (Koehler 1904)
+                s paradoxa (Koehler 1904) T
+              g Ophioperla (Koehler 1912)
+                s koehleri (Bell 1908) T
+              g Ophiopyren (Lyman 1878)
+                s longispinus (Lyman 1878) T
+              g Ophiotrochus (Lyman 1878)
+                s panniculus (Lyman 1878) T
+            F Ophiocomidae (Ljungman 1867)
+              g Ophiocoma (Agassiz 1836)
+                s echinata (Lamarck 1816) T
+              g Ophiarthrum (Peters 1851)
+                s elegans (Peters 1851) T
+              g Ophiocomella (A. H. Clark 1939)
+                s caribbaea (A. H. Clark 1939) T
+              g Ophiocomina (Koehler 1920)
+                g nigra (Abildgaard 1789) T
+              g Ophiomastix (Müller & Troschel 1842)
+                s annulosa (Lamarck 1816) T
+              g Ophiopsila (Forbes 1843)
+                s aranea (Forbes 1843) T
+              g Ophiopteris (E. A. Smith 1877)
+                s antipodum (E. A. Smith 1877) T
+            F Ophionereididae (Ljungman 1867) # Moved from Ophionereidinae
+              g Ophionereis (Lütken 1859)
+                bg Ophionereis (Lütken 1859)
+                  s reticulata (Say 1825) T
+                bg Ophiotriton (Döderlein 1896)
+                  s semoni (Döderlein 1896) T
+                bg Ophiocrasis (H. L. Clark 1911)
+                  s dictydisca (H. L. Clark 1911) T
+              g Ophiochiton (Lyman 1878)
+                s fastigatus (Lyman 1878) T
+              g Ophiodesmus (Ziesenhenne 1940)
+                s amphilogus (Ziesenhenne 1940) T
+              g Ophiodoris Koehler 1904)
+                s malignus (Koehler 1904) T
+              g Ophioplax (Lyman 1878)
+                s ljungmani (Lyman 1878) T
+            F Ophiodermatidae (Ljungman 1867)
+
           BO Laemophiurina (Matsumoto 1915)
           BO Gnathophiurina (Matsumoto 1915)
   _incertae cedis_
