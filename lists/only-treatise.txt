@@ -1849,10 +1849,212 @@ P Echinodermata
               g Gephyriaster (Fisher 1910)
                 s swifti (Fisher 1905) T
         O Spinulosida (Perrier 1884)
-          BO Eugnathina n. (Spencer & Wright 1966)
-          BO Leptognathina n. (Spencer & Wright 1966)
+          BO Eugnathina (Spencer & Wright 1966) N
+            F Taeniactinidae (Spencer 1927)
+              g Taeniactis (Spencer 1927)
+                s wenlocki (Spencer 1927) T
+              g Baliactis (Spencer 1922)
+                s ordovicus (Spencer 1922) T
+              g Calyptactis (Spencer 1930)
+                s spinosus (Spencer 1930) T
+              g Lepidasterella (Schuchert 1914)
+                s gyalum (Clarke 1908) T
+            F Lepyriactinidae (Spencer & Wright 1966) N
+              g Lepyriactis (Spencer 1927)
+                s nudus (Spencer 1927) T
+            F Schuchertiidae (Schuchert 1915)
+              g Schuchertia (Gregory 1899)
+                s stellata (Billings 1858) T
+            F Helianthasteridae (Gregory 1899)
+              g Helianthaster (Roemer 1863)
+                s rhenanus (Roemer 1863) T
+              g Echinasterella (Stürtz 1890)
+                s sladeni (Stürtz 1890) T
+              g Hystrigaster (Lehmann 1957)
+                s horridus (Lehmann 1957) T
+            F Solasteridae (Perrier 1884)
+              g Solaster (Forbes 1839)
+                s endeca (Linné 1771) T
+              g Crossaster (Müller & Troschel 1840)
+                s papposus (Linné 1767) T
+              g Cuenotaster (Thiéry 1920)
+                s involutus (Koehler 1912) T
+              g Heterozonias (Fisher 1910)
+                s alternatus (Fisher 1906) T
+              g Laetmaster (Fisher 1908)
+                s spectabilis (Perrier 1881) T
+              g Lophaster (Verrill 1878)
+                s jurcifer (Düben & Koren 1884) T
+              g Paralophaster (Fisher 1940)
+                s godefroyi (Koehler 1912) T
+              g Rhipidaster (Sladen 1889)
+                s vannipes (Slade 1889)
+              g Xenorias (Fisher 1913)
+                s polyctemis (Fisher 1913) T
+            F Tropidasteridae (Wright 1880)
+              g Tropidaster (Forbes 1850)
+                s pectinatus (Forbes 1850) T
+              g Plumaster (Wright 1861) ?
+                s ophiuroides (Wright 1861)
+            F Korethrasteridae (Danielsson & Koren 1884)
+              g Korethraster (Thomson 1873)
+                s hispidus (Thomson 1873) T
+              g Anareaster (Fell & H. E. S. Clark 1959)
+                s ganymede (Fell & H. E. S. Clark 1959) T
+              g Peribolaster (Sladen 1889)
+                s folliculatus (Sladen 1889) T
+              g Remaster (Perrier 1894)
+                s palmatus (Perrier 1894) T
+            F Pythonasteridae (Sladen 1889)
+              BF Pythonasterinae (Sladen 1889)
+                g Pythonaster (Sladen 1889)
+                  s murrayi (Sladen 1889) T
+              BF Myxasterinae (Perrier 1894)
+                g Myxaster (Perrier 1885)
+                  s sol (Perrier 1885) T
+                g Asthenactis (Fisher 1906)
+                  s papyraceus (Fisher 1906) T
+            F Pterasteridae (Perrier 1875)
+              g Pteraster (Müller & Troschel 1842)
+                bg Pteraster (Müller & Troschel 1842)
+                  s militaris (O. F. Müller 1776) T
+                bg Retaster (Perrier 1878) T
+                  s capensis (Gray 1874) T
+                bg Apterodon (Fisher 1940)
+                  s stellifer (Sladen 1882) T
+              g Benthaster (Sladen 1882)
+                s wyvillethomsoni (Sladen 1882) T
+              g Calyptraster (Sladen 1882)
+                s coa (Sladen 1882) T
+              g Cryptaster (Perrier 1885)
+                s personatus (Perrier 1885) T
+              g Diplopteraster (Verrill 1880)
+                s multipes (Sars 1877) T
+              g Euretaster (Fisher 1940)
+                s insignis (Sladen 1882) T
+              g Hymenaster (Thomson 1873)
+                s pellucidus (Thomson 1873) T
+              g Hymenasterides (Fisher 1911)
+                s zenognathus (Fisher 1911) T
+              g Marsipaster (Sladen 1882)
+                s spinosissimus (Sladen 1882) T
+          BO Leptognathina (Spencer & Wright 1966) N
+            F Asterinidae (Gray 1840)
+              BF Asterininae (Gray 1840)
+                g Asterina (Nardo 1834)
+                  s gibbosa (Pennant 1777) T
+                g Allopatiria (Verrill 1913)
+                  s ocellifera (Gray 1840) T
+                g Asterinopsis (Verrill 1914)
+                  s penicillaris (Lamarck 1816) T
+                g Desmopatiria (Verrill 1914)
+                  s flexilis (Verrill 1914) T
+                g Disasterina (Perrier 1875)
+                  s abnormalis (Perrier 1875) T
+                g Manasterina (H. L. Clark 1938)
+                  s longispina (H. L. Clark 1938) T
+                g Nepanthia (Gray 1840)
+                  s maculata (Gray 1940) T
+                g Paranepanthia (Fisher 1917)
+                  s platydisca (Fisher 1917) T
+                g Patiria (Gray 1840)
+                  s miniata (Brandt 1835) T
+                g Patiriella (Verrill 1914)
+                  s regularis (Verrill 1867) T
+                g Pseudonepanthia (A. H. Clark 1916)
+                  s gotoi (A. H. Clark 1916) T
+                g Tegulaster (Livington (1933)
+                  s emburyi (Livingstone 1933) T
+                g Socomia (Gray 1840) X  # no species
+              BF Anseropodinae (Fisher 1903)
+                g Anseropoda (Nardo 1834)
+                  s placenta (Pennant 1777) T
+                g Kampylaster (Koehler 1920)
+                  s incurvatus (Koehler 1920) T
+                g Mirastrella (Fisher 1940)
+                  s biradialis (Fisher 1940) T
+              BF Tremasterinae (Fisher 1903)
+                g Tremaster (Verrill 1879)
+                  s mirabilis (Verrill 1879) T
+                g Stegnaster (Sladen 1889)
+                  s inflatus (Hutton 1872) T
+            F Ganeriidae (Sladen 1889)
+              g Ganeria (Gray 1847)
+                s falklandica (Gray 1847) T
+              g Aleutiaster (A. H. Clark 1939)
+                s schafferi (A. H. Clark 1939) T
+              g Cycethra (Bell 1881)
+                s verrucosus (Philippi 1857) T
+              g Leilater (A. H. Clark 1938)
+                s radians (Perrier 1881) T
+              g Magdalenaster (Koehler 1907)
+                s arcticus (Koehler 1907) T
+              g Perknaster (Sladen 1889)
+                s fuscus (Sladen 1889)
+              g Scotiaster (Koehler 1908)
+                s inornatus (Koehler 1808) T
+              g Tarachaster (Fisher 1913)
+                s tenuis (Fisher 1913) T
+            F Poraniidae (Perrier 1894)
+              g Porania (Gray 1840)
+                s pulvillus (O. F. Müller 1788) T
+              g Asteropsis (Müller & Troschel 1840)
+                s carinifera (Lamarck 1816) T
+              g Chondraster (Verrill 1895)
+                s grandis (Verrill 1878) T
+              g Dermasterias (Perrier 1875)
+                s imbricata (Grube 1857) T
+              g Marginaster (Perrier 1881)
+                s pectinatus (Perrier 1881) T
+              g Petricia (Gray 1847)
+                s vernicina (Lamarck 1816) T
+              g Poraniella (Verrill 1914)
+                s regularis (Verrill 1914) T
+              g Poraniomorpha (Danielsson & Koren 1881)
+                s rosea (Danielsson & Koren 1881)
+              g Poranisca (Verrill 1914)
+                s lepida (Verrill 1914) T
+              g Pseudoporania (Dons 1936)
+                s stormi (Dons 1936) T
+              g Sphaeriaster (Dons 1939)
+                s berthae (Dons 1938) T
+              g Spoladaster (Fisher 1940)
+                s brachyactis (H. L. Clark 1923) T
+              g Tylaster (Danielsson & Koren 1881)
+                s willei (Danielsson & Koren 1881) T
+            F Echinasteridae (Verrill 1867)
+              g Echinaster (Müller & Troschel 1840)
+                s sagena (Retzius 1805) T
+              g Cribraster (Perrier 1891)
+                s sladeni (Perrier 1891) T
+              g Dictyaster (Wood-Mason & Alcock 1891)
+                s xeonphilus (Wood-Mason & Alcock 1891) T
+              g Henricia (Gray 1840)
+                s sanguinolenta (O. F. Müller 1776) T
+              g Plectaster (Sladen 1889)
+                s decanus (Müller & Troschel 1843) T
+              g Poraniopsis (Perrier 1891)
+                s echinaster (Perrier 1891) T
+              g Rhopiella (Fisher 1940)
+                s koehleri (Fisher 1940) T
+              g Thyraster (Ives 1890)
+                s serpentarius (Müller & Troschel 1842) T
+            F Valvasteridae (Viguier 1878)
+              g Valvaster (Perrier 1876)
+                s striata (Lamarck 1816) T
+              g Diclidaster (de Loriol 1897)
+                s gevreyi (de Loriol 1897) T              
+            F Acanthasteridae (Sladen 1889)
+              g Acanthaster (Gervais 1841)
+                s planci (Linné 1758) T
+            F Mithrodiidae (Viguier 1879)
+              g Mithrodia (Gray 1840)
+                s clavigera (Lamarck 1816) T
+            F Metrodiridae (Sladen 1889)
+              g Metrodira (Gray 1840)
+                s subulata (Gray 1840) T
         O Forcipulatida (Perrier 1884)
-          BO Uractinina n. (Spencer & Wright 1966)
+          BO Uractinina (Spencer & Wright 1966) N
           BO Asteriadina (Fisher 1928)
           BO Brisingina (Fisher 1928)
       BC Ophiuroidea (Gray 1840)
