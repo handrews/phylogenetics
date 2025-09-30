@@ -2707,8 +2707,137 @@ P Echinodermata
               g Ophioplax (Lyman 1878)
                 s ljungmani (Lyman 1878) T
             F Ophiodermatidae (Ljungman 1867)
-
+              g Ophioderma (Müller & Troschel 1840)
+                s longicauda (Retzius 1805) T
+              g Bathypectinura (H. L. Clark 1909)
+                s lacertosa (Lyman 1883) T
+              g Cryptopelta (H. L. Clark 1909)
+                s aster (Lyman 1879) T
+              g Diopederman (h. L. Clark 1912)
+                s daniana (Verrill 1867) T
+              g Distichopis (Ely 1942)
+                s clarki (Ely 1942) T
+              g Ophiarachna (Müller & Troschel 1842)
+                s incrassata (Lamarck 1816) T
+              g Ophiarachnella (Ljungman 1872)
+                s gorognia (Müller & Troschel 1842) T
+              g Ophiochaeta (Lütken 1869)
+                s hirsuta (Lütken 1869) T
+              g Ophiochasma (Grube 1868)
+                s stellata (Ljungman 1867) T
+              g Ophioclastus (Murakami 1943)
+                s hataii (Murakami 1943) T
+              g Ophioconis (Lütken 1869)
+                s forbesi (Heller 1862) T
+              g Ophiocormus (H. L. Clark 1915)
+                s notabilis (H. L. Clark 1915) T
+              g Ophiocryptus (H. L. Clark 1915)
+                s maculosus (H. L. Clark 1915) T
+              g Ophioncus (Ives 1889)
+                s granulosus (Ives 1889) T
+              g Ophiopaepale (Ljungman 1871)
+                s goesiana (Ljungman 1871) T
+              g Ophiopetra (Hess 1962) ?
+                s lithographica (Hess 1962) T
+              g Ophiopeza (Peters 1851)
+                s fallax (Peters 1851) T
+              g Ophiopezella (Ljungman 1871)
+                s spinosa (Ljungman 1867) T
+              g Ophiurochaeta (Matsumoto 1915)
+                s mixta (Lyman 1878) T
+              g Ophiuroconis (Matsumoto 1915)
+                s monolepis (Matsomoto 1915) T
+              g Ophiurodon (Matsumoto 1915)
+                s grandisquama (Koehler 1904) T
+              g Palaeocoma (d'Orbigny 1850)
+                s milleri (Phillips 1829) T
+              g Pectinura (Forbes 1843)
+                s vestita (Forbes 1843) T
+              g Schizoderma (Nielsen 1932)
+                s diplax (Nielsen 1932) T
+              g Toporkovia (Djakonov 1954)
+                s fragilis (Djakonov 1954) T
           BO Laemophiurina (Matsumoto 1915)
+            F Ophiacanthidae (Perrier 1891)
+              g Ophiacantha (Müller & Troschel 1842)
+                s bidentata (Retzius 1805) T
+              g Amphipsila (Verrill 1899)
+                s maculata (Verrill 1899) T
+              g Glaciacantha (Fell 1961)
+                s jason (Fell 1961) T
+              g Microphiura (Mortensen 1911)
+                s decipiens (Mortensen 1911) T
+              g Ophiacanthella (Verrill 1899)
+                s troscheli (Lyman 1878) T
+              g Ophialcaea (Verrill 1899)
+                s tuberculosa (Lyman 1878) T
+              g Ophiambix (Lyman 1880)
+                s aculeatus (Lyman 1880) T
+              g Ophientrema (Verrill 1899)
+                s scolopendrica (Lyman 1883) T
+              g Ophioblenna (Lütken 1859)
+                s antillensis (Lütken 1859) T
+              g Ophiocamax (Lyman 1878)
+                s vitrea (Lyman 1878) T
+              g Ophiochondrella (Verrill 1899)
+                s squamosus (Lyman 1883) T
+              g Ophiocopa (Lyman 1883)
+                s spatula (Lyman 1883) T
+              g Ophiocymbium (Lyman 1880)
+                s cavernosum (Lyman 1880) T
+              g Ophiodaces (Koehler 1922)
+                s inanis (Koehler 1922) T
+              g Ophiodelos (Koehler 1931)
+                s insignis (Koehler 1931) T
+              g Ophiodictys (Koehler 1922)
+                s uncinatus (Koehler 1922) T
+              g Ophiogema (Koehler 1922)
+                s punctata (Koehler 1922) T
+              g Ophioglyphoida (Chapman 1934) Q
+                s fosteri (Chapman 1934)
+              g Ophiolebes (Lyman 1878)
+                s scorteus (Lyman 1878) T
+              g Ophiolimna (Verrill 1899)
+                s bairdi (Lyman 1883) T
+              g Ophiologimnus (H. L. Clark 1911)
+                s hexactis (H. L. Clark 1911) T
+              g Ophiomedea (Koehler 1906)
+                s duplicata (Koehler 1906) T
+              g Ophiomelina (Koehler 1922)
+                s placida (Koehler 1904) T
+              g Ophiomitra (Lyman 1869)
+                s valida (Lyman 1869) T
+              g Ophiomitrella (Verrill 1899)
+                s laevipellis (Lyman 1883) T
+              g Ophiomyces (Lyman 1869)
+                s frutectosus (Lyman 1869) T
+              g Ophiomytis (Koehler 1904)
+                s weberi (Koehler 1904) T
+              g Ophiophrura (H. L. Clark 1911)
+                s liodisca (H. L. Clark 1911) T
+              g Ophiophthalmus (Matsumoto 1917)
+                s cataleimmoida (H. L. Clark 1911) T
+              g Ophiopinna (Hess 1960)
+                s elegans (Heller 1858) T
+              g Ophioplinthaca (Verrill 1899)
+                s dipsacos (Lyman 1878) T
+              g Ophioprium (H. L. Clark 1915)
+                s curvicornis (Lyman 1883) T
+              g Ophioripa (Koehler 1922)
+                s marginata (Koehler 1922) T
+              g Ophiosparte (Koehler 1922)
+                s gigas (Koehler 1922) T
+              g Ophiothamnus (Lyman 1869)
+                s vicarius (Lyman 1869) T
+              g Ophiothauma (Lyman 1880)
+                s supplicans (Lyman 1880) T
+              g Ophiotoma (Lyman 1883)
+                s coriacea (Lyman 1883) T
+              g Ophiotrema (Koehler 1896)
+                s alberti (Koehler 1896) T
+              g Ophiurothamnus (Matsumoto 1917)
+                s dicyla (H. L. Clark 1911) T
+            F Hemieuryalidae (Verrill 1899)
           BO Gnathophiurina (Matsumoto 1915)
   _incertae cedis_
     g Cymbionites (Whitehouse 1941)
