@@ -2838,7 +2838,120 @@ P Echinodermata
               g Ophiurothamnus (Matsumoto 1917)
                 s dicyla (H. L. Clark 1911) T
             F Hemieuryalidae (Verrill 1899)
+              g Hemieuryale (von Martens 1867)
+                s pustulata (von Martens 1867) T
+              g Ophiochondrus (Lyman 1869)
+                s convolutus (Lyman 1869) T
+              g Amphigyptis (Nielsen 1933)
+                s perplexa (Nielsen 1933) T
+              g Ophiogyptis (Koehler 1905)
+                s nodosa (Koehler 1905) T
+              g Ophioholcus (H. L. Clark 1949)
+                s sexradiata (Koehler 1914) T
+              g Ophioleila (A. H. Clark 1949)
+                s elegans (A. H. Clark 1949) T
+              g Ophiomoeris (Koehler 1904)
+                s spinosa (Koehler 1904) T
+              g Ophioplus (Verrill 1899)
+                s tuberculosa (Lyman 1833) T
+              g Quironia (A. H. Clark 1934)
+                s johnsoni (A. H. Clark 1934) T
+              g Sigsbeia (Lyman 1878)
+                s murrhina (Lyman 1878) T
           BO Gnathophiurina (Matsumoto 1915)
+            F Amphilepididae (Matsumoto 1915)
+              g Amphilepis (Ljungman 1866)
+                s norvegica (Ljungman 1864) T
+              g Ophiochytra (Lyman 1880)
+                s epigrus (Lyman 1880) T
+            F Ophiactidae (Matsumoto 1915)
+              g Ophiactis (Lütken 1856)
+                s savignyi (Müller & Troschel 1842) T
+              g Hemipholis (Lyman 1865)
+                s elongata (Say 1825) T
+              g Ophiodaphne (Koehler 1931)
+                s materna (Koehler 1931) T
+              g Ophiopholis (Müller & Troschel 1840)
+                s aculeatus (Retzius 1738) T
+              g Ophiopus (Ljungman 1866)
+                s arcticus (Ljungman 1866) T
+            F Amphiuridae (Ljungman 1867)
+              g Amphiura (Forbes 1843)
+                s chiajii (Fprbes 1843) T
+              g Acrocnida (Gislén 1926)
+                s brachiata (Montague 1804) T
+              g Ailsaria (Fell 1962)
+                s echinulatus (Mortensen 1940) T
+              g Amphiacantha (Matsumoto 1917)
+                s acanthinus (H. L. Clark 1911) T
+              g Amphichilus (Matsumoto 1917)
+                s trichoides (Matsumoto 1917) T
+              g Amphichondrius (Nielsen 1933)
+                s granulosus (Neilsen 1933) T
+              g Amphicontus (Hill 1940)
+                s minutus (Hill 1940) T
+              g Amphilimna (Verrill 1899)
+                s olivacea (Lyman 1869) T
+              g Amphilycus (Mortensen 1933)
+                s androphorus (Mortensen 1933) T
+              g Amphinephthys (Fell 1962)
+                s crossota (Murakami 1943) T
+              g Amphiocnida (Verrill 1899)
+                s putnami (Lyman 1871) T
+              g Amphiodia (Verrill 1899)
+                s pulchella (Lyman 1869) T
+              g Amphiomya (H. L. Clark 1939)
+                s notabilis (H. L. Clark 1939) T
+              g Amphioncus (H. L. Clark 1939)
+                s platydiscus (H. L. Clark 1939) T
+              g Amphipholis (Ljungman 1866)
+                s gracillima (Stimpson 1852) T
+              g Amphioplus (Verrill 1899)
+                s tumida (Lyman 1899) T
+              g Anamphiura (H. L. Clark 1939)
+                s valida (H. L. Clark 1939) T
+              g Ctenamphiura (Verrill 1899)
+                s maxima (Lyman 1879) T
+              g Diamphiodia (Fell 1962)
+                s violacea (Lütken 1856) T
+              g Gymnodia (Fell 1962)
+                s tabogae (Nielsen 1932) T
+              g Icalia (Fell 1962)
+                s denticulata (Koehler 1896) T
+              g Monamphiura (Fell 1962)
+                s alba (Mortensen 1924) T
+              g Monopholis (Fell 1962)
+                s vitax (Koehler 1904) T
+              g Nannophiura (Mortensen 1933)
+                s lagani (Mortensen 1933) T
+              g Nullamphiura (Fell 1962)
+                s psiopora (H. L. Clark 1911) T
+              g Nullopholis (Fell 1962)
+                s nudipora (Koehler 1944) T
+              g Ophiocentrus (Ljungman 1867)
+                s aculeatus (Ljungman 1867) T
+              g Ophiocnida (Lyman 1865)
+                s hispida (LeConte 1851) T
+              g Ophiomonas (Djakonov 1952)
+                s bathybia (Djakonov 1952) T
+              g Ophionema (Lütken 1869)
+                s intricata (Lütken 1869) T
+              g Ophionephthys (Lütken 1869)
+                s limicola (Lütken 1869) T
+              g Ophiophragmus (Lyman 1865)
+                s wurdemanii (Lyman 1860) T
+              g Ophiostigman (Lütken 1856)
+                s tenue (Lütken 1856) T
+              g Pandelia (Fell 1962)
+                s hinemoae (Mortensen 1924) T
+              g Paracrocnida (Mortensen 1940)
+                s oersica (Mortensen 1940) T
+              g Paramphiura (Koehler 1895)
+                s punctata (Forbes 1841) T
+              g Silax (Fell 1962)
+                s verrilli (Lyman 1879) T
+              g Unioplus (Fell 1962)
+                s falcatus (Mortensen 1933) T
   _incertae cedis_
     g Cymbionites (Whitehouse 1941)
     g Peridionites (Whitehouse 1941)
