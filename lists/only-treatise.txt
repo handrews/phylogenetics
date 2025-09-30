@@ -2212,7 +2212,83 @@ P Echinodermata
                   s granifera (Lamarck 1816) T
                 g Urasterias (Verrill 1909)
                   s linckii (Müller & Troschel 1842) T
+              BF Pedicellasterinae (Fisher 1918)
+                g Pedicellaster (Sars 1861)
+                  s typicus (Sars 1861)
+                g Ampheraster (Fisher 1923)
+                  s marianus (Ludwig 1905) T
+                g Anteliaster (Fisher 1923)
+                  s coscinactis (Fisher 1923) T
+                g Hydrasterias (Sladen 1889)
+                  s ophidion (Sladen 1889) T
+                g Peranaster (Fisher 1923)
+                  s chirophorus (Fisher 1917) T
+                g Tarsaster (Sladen 1889)
+                  s stoichoides (Sladen 1889) T
+              BF Labidiasterinae (Verrill 1914)
+                g Labidiaster (Lütcken 1871)
+                  s radiosus (Studer 1884) T
+                g Coronaster (Perrier 1885)
+                  s parfaiti (Perrier 1885) T
+                g Plazaster (Fisher 1941)
+                  s borealis (Uchida 1938) T
+                g Rathbunaster (Fisher 1906)
+                  s californicus (Fisher 1906) T
+              BF Pycnopodiinae (Stimpson 1862)
+                g Pycnopodia (Stimpson 1862)
+                  s helianthoides (Brandt 1835) T
+                g Lysastroma (Fisher 1922)
+                  s anthosticta (Fisher 1922) T
+              BF Neomorphasterinae (Fisher 1923)
+                g Neomorphaster (Sladen 1889)
+                  s eustichus (Sladen 1889) T
           BO Brisingina (Fisher 1928)
+            F Brisingidae (Sars 1875)
+              g Brisinga (Asbjornsen 1856)
+                s endecacnemos (Asbjornsen 1856) T
+              g Astrocles (Fisher 1917)
+                s actinodetus (Fisher 1917) T
+              g Astrolirus (Fisher 1917)
+                s panamensis (Ludwig 1905) T
+              g Astrostephane (Fisher 1917)
+                s moluccana (Fisher 1916) T
+              g Belgicella (Ludwig 1903)
+                s racowitzana (Ludwig 1903) T
+              g Brisingaster (de Loriol 1883)
+                s robillardi (de Loriol 1883) T
+              g Brisingella (Fisher 1917)
+                s fragilis (Fisher 1906) T
+              g Brisingenes (Fisher 1917)
+                s mimica (Fisher 1916) T
+              g Colpaster (Sladen 1889)
+                s scutigerulus (Sladen 1889) T
+              g Craterobrisinga (Fisher 1916)
+                s panopla (Fisher 1906) T
+              g Freyella (Perrier 1885)
+                s spinosa (Perrier 1885) T
+              g Freyellaster (Fisher 1918)
+                s fecunda (Fisher 1905) T
+              g Hymenodiscus (Perrier 1884)
+                s agassizi (Perrier 1884) T
+              g Odinia (Perrier 1885)
+                s semicoronata (Perrier 1885) T
+              g Odinella (Fisher 1940)
+                s nutrix (Fisher 1940) T
+              g Parabrisinga (Hayashi 1948)
+                s pellucida (Hayashi 1948) T
+              g Stegnobrisinga (Fisher 1916)
+                s placoderma (Fisher 1916) T
+        O _uncertain_
+          F _uncertain_
+            g Coelaster (Agassiz 1836)
+              s couloni (Agassiz 1836) T
+            g Cribellites (Tate 1864)
+              s carbonarius (Tate 1864) T
+            g Cupulater (Fritsch 1893)
+              s pauper (Fritsch 1893) T
+            g Palmasterias (Savi & Meneghini 1851) X # no species
+            g Rumanaster (Popescu-Voitesti 1911)
+              s uhligi (Popescu-Voitesti) T
       BC Ophiuroidea (Gray 1840)
         O Stenurida (Spencer 1951)
           BO Proturina (Spencer & Wright 1966) N
