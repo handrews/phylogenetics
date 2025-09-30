@@ -2055,7 +2055,163 @@ P Echinodermata
                 s subulata (Gray 1840) T
         O Forcipulatida (Perrier 1884)
           BO Uractinina (Spencer & Wright 1966) N
+            F Cnemidactinidae (Spencer 1918)
+              g Cnemidactis (Spencer 1918)
+                s girvanensis (Schuchert 1914) T
+            F Urasterellidae (Schuchert 1914)
+              g Urasterella (McCoy 1851)
+                s ruthveni (Forbes 1858) T
+              g Bohemaster (Jaekel 1923)
+                s primula (Jaekel 1923) T
+              g Phillipsaster (Spencer 1950)
+                s coronella (Salter 1857) T
+              g Salteraster (Stürtz 1893)
+                s asperrima (Salter 1857) T
+              g Ulrichaster (Spencer 1950)
+                s ulrichi (Schuchert 1915) T
+            F Calliasterellidae (Schöndorf 1910)
+              BF Protarthrasterinae (Spencer 1918)
+                g Protarthraster (Spencer 1918)
+                  s longimanus (Whidborne 1896) T
+              BF Calliasterellinae (Schöndorf 1910)
+                g Calliasterella (Schuchert 1914)
+                  s mirus (Trautschold 1879) T
+              BF Arthrasterinae (Spencer 1918)
+                g Arthraster (Forbes 1848)
+                  s dixoni (Forbes 1848) T
+            F Compsasteridae (Schuchert 1914)
+              g Compsaster (Worthen & Miller 1883)
+                s formosus (Worthen & Miller 1883) T
           BO Asteriadina (Fisher 1928)
+            F Heliasteridae (Viguier 1878)
+              g Heliaster (Gray 1840)
+                s helianthus (Lamarck 1816) T
+            F Zoroasteridae (Sladen 1889)
+              g Zoroaster (Wyville Thomson 1873)
+                s fulgens (Wyville Thomson 1873) T
+              g Bythiolophus (Fisher 1916)
+                s acanthinus (Fisher 1916) T
+              g Cnemidaster (Sladen 1889)
+                s wyvillei (Sladen 1889) T
+              g Mammaster (Perrier 1894)
+                s sigsbeei (Perrier 1881) T
+              g Myxoderma (Fisher 1905)
+                s sacculatus (Fisher 1905) T
+              g Pholidaster (Sladen 1889)
+                s squamatus (Fisher 1919) T
+              g Prognaster (Perrier 1891)
+                s grimaldii (Perrier 1891) T
+            F Asteriidae (Gray 1840)
+              BF Asteriinae (Gray 1840)
+                g Asterias (Linné 1758)
+                  s rubens (Linné 1858) T
+                g Adelasterias (Koehler 1914)
+                  s papillosa (Koehler 1906) T
+                g Allostichaster (Verrill 1914)
+                  s polyplax (Müller & Troschel 1844) T
+                g Anasterias (Perrier 1875)
+                  bg Anasterias (Perrier 1875)
+                    s minuta (Perrier 1875) T
+                  bg Sporasterias (Perrier 1894)
+                    s antarcticum (Lütken 1856) T
+                  bg Kalyptasterias (Koehler 1923)
+                    s conferta (Koehler 1923) T
+                g Aphanasterias (Fisher 1923)
+                  s pycnopodia (Fisher 1923) T
+                g Aphelasterias (Fisher 1923)
+                  s japonica (Bell 1881) T
+                g Astrometis (Fisher 1923)
+                  s sertulifera (Xantus 1860) T
+                g Astrostole (Fisher 1923)
+                  s scaber (Htton 1872) T
+                g Australiaster (Fisher 1923)
+                  s dubia (H. L. Clark 1909) T
+                g Caimanaster (A. M. Clark 1962)
+                  s acutus (A. M. Clark 1962) T
+                g Carlasterias (da Costa 1952)
+                  s lusitanica (da Costa 1941) T
+                g Calvasterias (Perrier 1875)
+                  s asterinoides (Perrier 1875) T
+                g Coscinasterias (Verrill 1867)
+                  bg Coscinasterias (Verrill 1867)
+                    s muricata (Verrill 1867) T
+                  bg Stolasterias (Sladen 1889)
+                    s tenuispina (Lamarck 1816) T
+                g Cosmasterias (Slaedn 1889)
+                  s luridum (Philippi 1858) T
+                g Cryptasterias (Verrill 1914)
+                  s turqueti (Koehler 1906) T
+                g Displasterias (Perrier 1888)
+                  s brandti (Bell 1881) T
+                g Distolasterias (Perrier 1896)
+                  s stichantha (Sladen 1889) T
+                g Evasterias (Verrill 1914)
+                  s troscheli (Stimpson 1862) T
+                g Gastraster (Perrier 1894)
+                  s margaritaceus (Perrier 1882) T
+                g Granaster (Perrier 1894)
+                  s nutrix (Studer 1885) T
+                g Icasterias (Fisher 1923)
+                  s panopla (Stuxberg 1878) T
+                g Kenrickaster (A. M. Clark 1962)
+                  s pedicellaris (A. M. Clark 1962) T
+                g Leptasterias (Verrill 1866)
+                  bg Leptasterias (Verrill 1866)
+                    s muelleri (Sars 1844) T
+                  bg Endogenasterias (Djakonov 1938)
+                    s groenlandicum (Steenstrup 1857) T
+                  bg Eoleptasterias (Djakonov 1938)
+                    s ochetense (Brandt 1835) T
+                  bg Hexasterias (Fisher 1930)
+                    s polaris (Müller & Troschel 1842) T
+                  bg Nesasterias (Fisher 1930)
+                    s stolacantha (Fisher 1930) T
+                g Lethasterias (Fisher 1923)
+                  s nanimensis (Verrill 1914) T
+                g Lysasterias (Fisher 1908)
+                  s perrieri (Studer 1885) T
+                g Marthasterias (Jullien 1878)
+                  s glacialis (Linné 1758) T
+                g Meyenaster (Verrill 1913)
+                  s gelatinosus (Meyen 1834) T
+                g Neosmilaster (Fisher 1930)
+                  s georgianus (Studer 1885) T
+                g Notasterias (Koehler 1911)
+                  s armata (Koehler 1911) T
+                g Orthasterias (Verrill 1914)
+                  s koehleri (de Loriol 1897) T
+                g Perissasterias (H. L. Clark 1923)
+                  s polyacantha (H. L. Clark 1923) T
+                g Pisaster (Müller & Troschel 1840)
+                  s ochraceus (Brandt 1835) T
+                g Psalidaster (Fisher 1940)
+                  s mordax (Fisher 1940) T
+                g Pseudechinaster (H. E. S. Clark 1962)
+                  s rubens (H. E. S. Clark 1962) T
+                g Saliasterias (Koehler 1920)
+                  s bracheata (Koehler 1920) T
+                g Sclerasterias (Perrier 1891)
+                  s guernei (Perrier 1891) T
+                g Smilasterias (Sladen 1889)
+                  s scalprifera (Sladen 1889) T
+                g Stenasterias (Verrill 1914)
+                  s macropora (Verrill 1909) T
+                g Stephanasterias (Verrill 1871)
+                  s albulus (Stimpson 1853) T
+                g Stichaster (Müller & Troschel 1840)
+                  s aurantiaca (Meyen 1834) T
+                g Stichastrella (Verrill 1914)
+                  s rosea (O. F. Müller 1776) T
+                g Stylasterias (Verrill 1914)
+                  s forreri (de Loriol 1887) T
+                g Tarsastrocles (Fisher 1923)
+                  s verrelli (Fisher 1903) T
+                g Triplasterias (Engels & Schroevers 1961)
+                  s mercatoris (Engels & Schroevers 1961) T
+                g Uniophora (Gray 1840)
+                  s granifera (Lamarck 1816) T
+                g Urasterias (Verrill 1909)
+                  s linckii (Müller & Troschel 1842) T
           BO Brisingina (Fisher 1928)
       BC Ophiuroidea (Gray 1840)
         O Stenurida (Spencer 1951)
