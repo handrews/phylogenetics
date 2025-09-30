@@ -2952,6 +2952,76 @@ P Echinodermata
                 s verrilli (Lyman 1879) T
               g Unioplus (Fell 1962)
                 s falcatus (Mortensen 1933) T
-  _incertae cedis_
-    g Cymbionites (Whitehouse 1941)
-    g Peridionites (Whitehouse 1941)
+            F Ophiothricidae (Ljungman 1866)
+              g Ophiothrix (Müller & Troschel 1840)
+                s pentaphylla (Pennant 1777) T
+              g Amphiophiothrix (H. L. Clark 1946)
+                s demessa (Lyman 1861) T
+              g Gymnolophus (Brock 1888)
+                s holdsworthi (E. A. Smith 1878) T
+              g Lissophiothrix (H. L. Clark 1938)
+                s delicata (H. L. Clark 1938) T
+              g Macrophiothrix (H. L. Clark 1938)
+                s longipeda (Lamarck 1816) T
+              g Ophioaethiops (Brock 1888)
+                s unicolor (Brock 1888) T
+              g Ophiocnemis (Müller & Troschel 1842)
+                s marmorata (Lamarck 1816) T
+              g Ophiogymna (Ljungman 1866)
+                s elegans (Ljungman 1866) T
+              g Ophiolophus (Marktanner-Turneretscher 1887)
+                s novarae (Marktanner-Turneretscher 1887) T
+              g Ophiomaza (Lyman 1871)
+                s cacaotica (Lyman 1871) T
+              g Ophiopeltis (Düben & Koren 1846)
+                s securigera (Düben & Koren 1846) T
+              g Ophiophthirius (Döderlein 1898)
+                s actinometrae (Döderlein 1898) T
+              g Ophiopsammium (Lyman 1874)
+                s semperi (Lyman 1874) T
+              g Ophiopteron (Ludwig 1888)
+                s elegans (Ludwig 1888) T
+              g Ophiosphaera (Brock 1888)
+                s insignis (Brock 1888) T
+              g Ophiothela (Verrill 1867)
+                s mirabilis (Verrill 1867) T
+              g Ophiotrichoides (Ludwig 1882)
+                s lymani (Ludwig 1882) T
+      O _uncertain_
+        F _uncertain_
+          g Acroura (Agassiz 1836)
+            s prisca (Münster in Goldfuss 1831) T
+          g Ataxaster (Jaekel 1903)
+            s pygmaeus (Jaekel 1903) T
+          g Ephipiellum (Lomnicki 1899)
+            s symmetricum (Lomnicki 1899) T
+          g Dolicharthra (Berry 1938)
+            s bemelenica (Berry 1938) T
+          g Ophiaxina (Müller 1950)
+            s intercarinata (Müller 1950) T
+          g Ophioma (Pomel 1887)
+            s juliensis (Pomel 1887) T
+          g Ophiotrigonum (Hess 1960)
+            s oxfordiense (Hell 1960) T
+          g Ophiurella (Agassiz 1836)
+            s speciosa (Münster in Goldfuss 1831) T
+          s Ophiuriocoma (Valette 1929)
+            s mazenoti (Valette 1929) T
+          s Platyarthra (Berry 1938)
+            s jekerica (Berry 1938) T
+          g Pseudaspidura (Kolosváry 1941)
+            s hungarica (Kolosváry 1941) T
+          g Schizospondylus (Müller 1950)
+            s jasmundiana (Müller 1950) T
+          g Transspondylus (Müller 1950)
+            s bubnoffi (Müller 1950) T
+          g Xenura (Schöndorf 1938)
+            s kobuldi (Schöndorf 1938) T
+  BP _incertae cedis_
+    C _uncertain_
+      O _uncertain_
+        F _uncertain_
+          g Cymbionites (Whitehouse 1941) # Later deemed eocrinoid?
+            s craticula (Whitehouse 1941) T
+          g Peridionites (Whitehouse 1941) # Later deemed eocrinoid?
+            s navicula (Whitehouse 1941) T
