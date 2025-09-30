@@ -1672,7 +1672,6 @@ P Echinodermata
                   s angustatus (Forbes 1848) T
                 g Phocidaster (Spencer 1913) Q
                   s grandis (Spencer 1913) T
-            F _uncertain_
               BF _uncertain_
                 g Calliaster (Gray 1840)
                   s childreni (Gray 1849) T
@@ -1756,6 +1755,99 @@ P Echinodermata
                   s digitatus (Döderlein 1924)
                 g Styphlaster (H. L. Clark 1938)
                   s notabilis (H. L. Clark 1938) T
+            F Oreasteridae (Fisher 1911)
+              g Oreaster (Müller & Troschel 1842)
+                s reticulatus (Linné 1758) T
+              g Anthaster (Döderlein 1915)
+                s valvulatus (Müller & Troschel 1843)
+              g Anthenea (Gray 1840)
+                s pentagonula (Lamarck 1816) T
+              g Asterodiscus (Gray 1847)
+                s elegans (Gray 1847) T
+              g Bothriaster (Döderlein 1916)
+                s primigenius (Döderlein 1916) T
+              g Choriaster (Lütken 1869)
+                s granulatus (Lütken 1869) T
+              g Calcita (Agassiz 1836)
+                s schmideliana (Retzius 1805) T
+              g Goniodiscaster (H. L. Clark 1909)
+                s pleyadella (Lamarck 1816) T
+              g Gymnanthenea (H. L. Clark 1938)
+                s globigera (Döderlein 1916) T
+              g Halityle (Fisher 1913)
+                s regularis (Fisher 1913) T
+              g Monachaster (Döderlein 1916)
+                s sanderi (Meissner 1893) T
+              g Nidorellia (Gray 1840)
+                s armatus (Gray 1840) T
+              g Paulia (Gray 1840)
+                s horrida (Gray 1840) T
+              g Pentaceraster (Döderlein 1916)
+                s mamillatus (Audouin 1827) T
+              g Pentaster (Döderlein 1935)
+                s obtusata (Bory de Saint Vencent 1827) T
+              g Poraster (Döderlein 1916)
+                s productus (Bell 1884) T
+              g Protoreaster (Döderlein 1916)
+                s nodosa (Linné 1758) T
+              g Pseudanthenea (Döderlein 1916)
+                s grayi (Perrier 1876) T
+              g Pseudoreaster (Verrill 1899)
+                s obtusangulus (Lamarck 1816) T
+              g Stellasteropsis (Dollfus 1936)
+                s fouadi (Dollfus 1936) T
+            F Ophidiasteridae (Verrill 1867)
+              g Ophidiaster (Agassiz 1835)
+                s ophidianus (Lamarck 1816) T
+              g Austrofromia (H. L. Clark 1921)
+                s polypora (H. L. Clark 1916) T
+              g Bunaster (Döderlein 1896)
+                s ritteri (Döderlein 1896) T
+              g Certonardoa (H. L. Clark 1921)
+                s semiregularis (Müller & Troschel 1842) T
+              g Chariaster (de Loriol 1909)
+                s elegans (de Loriol 1909) T
+              g Cistina (Gray 1840)
+                s columbiae (Gray 1840) T
+              g Copidaster (A. H. Clark 1948)
+                s lymani (A. H. Clark 1948) T
+              g Dactylosaster (Gray 1840)
+                s cylindrica (Lamarck 1816) T
+              g Dissogenes (Fisher 1913)
+                s styracia (Fisher 1913) T
+              g Ferdina (Gray 1840)
+                s flavescens (Gray 1840) T
+              g Fromia (Gray 1840)
+                s milleporella (Lamarck 1816) T
+              g Gomophia (Gray 1840)
+                s egyptiaca (Gray 1840) T
+              g Hacelia (Gray 1840)
+                s attenuatus (Gray 1840) T
+              g Leiaster (Peters 1852)
+                s coriaceus (Peters 1852) T
+              g Linckia (Nardo 1834)
+                s laevigatus (Linné 1758) T
+              g Nardoa (Gray 1840)
+                s variolata (Retzius 1805) T
+              g Narcissia (Gray 1840)
+                s canariensis (d'Orbigny 1839) T
+              g Neoferdina (Livingstone 1931)
+                s cumingi (Gray 1840) T
+              g Pharia (Gray 1840)
+                s pyramidatus (Gray 1840) T
+              g Phataria (Gray 1840)
+                s unifascialis (Gray 1840) T
+              g Plenardoa (H. L. Clark 1921)
+                s semiseriata (Martens 1865) T
+              g Pseudophidiaster (H. L. Clark 1916)
+                s rhysus (H. L. Clark 1916) T
+              g Sladenia (de Loriol 1909)
+                s fouorteaui (de Loriol 1904) T
+            F Radiasteridae (Fisher 1916)
+              g Radiaster (Perrier 1881)
+                s elegans (Perrier 1881) T
+              g Gephyriaster (Fisher 1910)
+                s swifti (Fisher 1905) T
         O Spinulosida (Perrier 1884)
           BO Eugnathina n. (Spencer & Wright 1966)
           BO Leptognathina n. (Spencer & Wright 1966)
