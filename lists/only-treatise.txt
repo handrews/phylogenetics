@@ -505,7 +505,39 @@ P Echinodermata
             g Lanternarius (Regnéll 1956)
               s latens (Regnéll 1956) T
       BC Euechinoidea (Bronn 1860)
-    C Holothuroidea (de Blainvill 1834)
+        SO Diadematacea (Duncan 1889)
+          O Echinothuroidea (Claus 1880)
+          O Diadematoida (Duncan 1889)
+          O Pedinoida (Mortensen 1939)
+          O Pygasteroida (Durham & Melville 1957)
+        SO Echinacea (Claus 1876)
+          O Salenioida (Delage & Hérouard 1903)
+          O Hemicidaroida (Beurlen 1937)
+          O Phymosomatoida (Mortensen 1904)
+          O Arbacioida (Gregory 1900)
+          O Temnopleuroida (Mortensen 1942)
+          O Echinoida (Claus 1876)
+          O Plesiocidaroida (Duncan 1889)
+        SO _uncertain_
+          O Orthopsida (Mortensen 1942)
+        SO Gnathostomata (Zittel 1879)
+          O Holectypoida (Duncan 1889)
+            BO Holectipina (Duncan 1889)
+            BO Echinoneina (H. L. Clark 1925)
+            BO Conoclypina (Haeckel 1896)
+          O Clypeasteroida (A. Agassiz 1872)
+            BO Clypeasterina (A. Agassiz 1872)
+            BO Laganina (Mortensen 1948)
+            BO Scutellina (Haeckel 1896)
+            BO Rotulina (Durham 1955)
+        SO Atelostomata (Zittel 1879)
+          O Cassiduloida (Claus 1880)
+          O Holasteroida (Durham & Melville 1957)
+          O Spatangoida (Claus 1876)
+            BO Toxasterina (Fischer 1966) N
+            BO Hemiasterina (Fisher 1966) N
+            BO Micrasterina (Fischer 1
+    C Holothuroidea (de Blainvill 1834) # Complete fossil genera only
       O Arthrochirotida (Seilacher 1961)
         F Palaeocucumariidae (Frizzel & Exline 1967) N
           g Palaeocucumaria (Lehmann 1958)
@@ -514,7 +546,6 @@ P Echinodermata
         F Holothuriidae (Ludwig 1894)
           g Protholothuria (Giebel 1857)
             s armata (Frizzel & Exline 1967) N
-      O Dendrochirotida (Brandt 1835) # No complete fossils
       O Apodida (Brandt 1835)
         F Synaptidae (Burmeister 1837)
           g Pseudocaudina (Broili 1926)
