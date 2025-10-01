@@ -1,5 +1,5 @@
-P Echinodermata
-  BP Homalozoa
+P Echinodermata (Bruguiére 1789)
+  BP Homalozoa (Whitehouse 1941)
     C Stylophora (Gill & Caster 1960)
       O Cornuta (Jaekel 1901)
         F Ceratocystidae (Jaekel 1901)
@@ -29,7 +29,7 @@ P Echinodermata
               s barrandei (Jaekel 1901)
           F Paranacystidae (Caster 1954)
             g Paranacystis (Caster 1954)
-              p petrii (Caster 1954) T
+              s petrii (Caster 1954) T
         BO Lagynocystida (Caster 1952)
           F Peltocystidae (Ubaghs 1966) N
             g Peltocystis (Thoral 1935)
@@ -45,7 +45,7 @@ P Echinodermata
         BO Anomalocystitida (Caster 1952) # Nom corr Ubaghs 1966 Anomalcytida
           F Anomalocystitidae (Bassler 1938)
             g Anomalocystites (Hall 1859)
-              s cornutus (S.A. Miller 1889) T
+              s cornutus (S. A. Miller 1889) T
             g Ateleocystites (Billings 1838)
               s huxleyi (Billings 1938) T
             g Basslerocystis (Caster 1952)
@@ -59,16 +59,16 @@ P Echinodermata
               s latipedunculata (Dehm 1932) T
             g Victoriacystis (Gill & Caster 1960)
               s wilkinsi (Gill & Caster 1960) T
-          F Australocystidae (Caster 1954) [1956]
-            g Australocystis (Caster 1954) [1956]
+          F Australocystidae (Caster 1954) # [1956]
+            g Australocystis (Caster 1954) # [1956]
               s langei (Caster 1954) T
             g Placocystella (Rennie 1936)
               s capensis (Rennie 1939) T
           F Allanicytidiidae (Caster & Gill 1966) N
             g Allanicytidium (Caster & Gill 1966) N
               s flemingi (Caster & Gill 1966) N
-        BO _incertae cedis_
-          F _incertae cedis_
+        BO _uncertain_
+          F _uncertain_
             g Dalejocystis (Prokop 1963)
               s casteri (Prokop 1963) T
             g Spermacystis (Ubaghs 1966) N # Nom subs Anomocystis Jaekel 1918
@@ -116,7 +116,7 @@ P Echinodermata
         F Iowacystidae (Gill & Caster 1960)
           g Iowacystis (Thomas & Ladd 1926)
             s sagittaria (Thomas & Ladd 1926) T
-        F Bellemnocystitidae n. (Parsley 1966)
+        F Bellemnocystitidae (Parsley 1966) N
           g Belemnocystites (Miller & Gurley 1894)
             s wetherbyi (Miller & Gurley 1894) T
   BP Echinozoa (Haekel in Zittel 1895)
@@ -156,7 +156,7 @@ P Echinodermata
           s mohawkensis (Fisher 1951) T
         g Carneyella (Foerste 1916)
           s pileus (Hall 1866) T
-          s cincinnatiensis (Hall)      # Or Bassler? No date?
+          s cincinnatiensis (Hall ????)      # Or Bassler? No date?
           s ulrichi (Bassler & Shideler 1936)
           s vetusta (Foerste 1914)
         g Cincinnatidiscus (Bassler 1935)
@@ -172,7 +172,7 @@ P Echinodermata
         g Lepidoconia (Wilson 1946)
           s loriformis (Raymond 1915) T
         g Pyrgocystis (Bather 1915)
-          bg Pyrgocystis
+          bg Pyrgocystis (Bather 1915)
             s sardesoni (Bather 1915) T
             s sulcata (Arivillius 1892)
           bg Rhynopyrgus (Dehm 1961)
@@ -197,7 +197,7 @@ P Echinodermata
           s incondita (Raymond 1915) T
         g Lepidodiscus (Meek & Worthen 1868)
           s squamosus (Meek & Worthen 1868) T
-          s ephraemovianus (Bogolubov) # No date? Bogoljubov? ly?
+          s ephraemovianus (Bogolubov ????) # No date? Bogoljubov? ly?
           s lebouri (Sladen 1879)
         g Thresherodiscus (Foerste 1914)
           s ramosus (Foerste 1914) T
@@ -224,31 +224,31 @@ P Echinodermata
         g Rhenosquama (R. Richter 1930)
           s westfalica (R. Richter 1930) T
     C Cylocystoidea (Miller & Gurley 1895)
-      F Cyclocystoididae (S.A. Miller 1882)
+      F Cyclocystoididae (S. A. Miller 1882)
         g Cyclocystoides (Salter & Billings 1858)
           s halli (Billings 1858) T
-          s anteceptus (Hall)
-          s bellulus (Miller & Dyer)
+          s anteceptus (Hall ????)
+          s bellulus (Miller & Dyer ????)
           s billingsi (Wilson 1946)
-          s caractaci (Salter)
+          s caractaci (Salter ????)
           s cincinnatiensis (Miller & Faber 1892)
-          s davisii (Salter)
-          s decussatus (Begg)
-          s devonicus (Sieverts-Doreck)
-          s huronensis (Billings)
+          s davisii (Salter 1858)
+          s decussatus (Begg ????)
+          s devonicus (Sieverts-Doreck 1951)
+          s huronensis (Billings 1865)
           s illinoisensis (Miller & Gurley 1895)
-          s insularis (Regnéll)
-          s lindstroemi (Regnéll)
-          s magnus (Miller & Dyer)
-          s marstoni (Salter)
-          s minor (Miller & Dyer)
-          s mundulus (Miller & Dyer)
-          s nitidus (Faber)
+          s insularis (Regnéll 1945)
+          s lindstroemi (Regnéll 1945)
+          s magnus (Miller & Dyer 1878)
+          s marstoni (Salter 1865)
+          s minor (Miller & Dyer ????)
+          s mundulus (Miller & Dyer ????)
+          s nitidus (Faber 1886)
           s ornatus (Savage 1917)
-          s parvus (Miller & Dyer)
-          s raymondi (Foerste)
-          s salteri (Hall)
-          s wrighti (Begg)
+          s parvus (Miller & Dyer ????)
+          s raymondi (Foerste 1920)
+          s salteri (Hall 1866)
+          s wrighti (Begg 1939)
     C Echinoidea (Leske 1778)
       BC Perischoechinoidea (McCoy 1849)
         O Bothriocidaroida (Zittel 1879)
@@ -307,7 +307,7 @@ P Echinodermata
               s irregularis (Meek & Worthen 1869) T
             g Porechinus (Dehm 1961)
               s porosus (Dehm 1961) T
-          F _incertae cedis_
+          F _uncertain_
             g Devonocidaris (Thomas 1920)
               s jacksoni (Thomas 1924) T
             g Tornquistellus (Berg 1899)
@@ -333,7 +333,7 @@ P Echinodermata
               s balticus (Regnéll 1956) T
             g Xenechinus (Kier 1958)
               s parvus (Kier 1958) T
-          F _incertae cedis_
+          F _uncertain_
             g Wrightia (Pomel (1869) # "Wrighthia (sic)" instead of corrected?
               s phillipsiae (Forbes 1848) T
             g Xysteria (Pomel 1883)
@@ -408,7 +408,7 @@ P Echinodermata
               g Rhynchocidaris (Mortensen 1909)
                 s triplopora (Mortensen 1909) T
             BF Goniocidarinae (Mortensen 1929)
-              g Goniocidaris (Desor in Agassiz & Desor)
+              g Goniocidaris (Desor in Agassiz & Desor 1846)
                 bg Goniocidaris (Desor 1846)
                   s tubaria (Lamarck 1816) T
                 bg Aspidocidaris (Mortensen 1928)
@@ -488,7 +488,7 @@ P Echinodermata
             g Anisocidaris (Thiéry 1928)
               s bajocensis (Cotteau 1880) T
             g Caenocidaris (Thiéry 1928)
-              s cucumifera (L. Agassiz) T # date unknown, 18??
+              s cucumifera (L. Agassiz ????) T # date unknown, 18??
             g Merocidaris (Thiéry 1928)
               s honorinae (Cotteau 1880) T
             g Sardocidaris (Lambert 1907)
@@ -497,47 +497,155 @@ P Echinodermata
               s clavigera (König 1820) T
           F Diplocidaridae (Gregory 1900)
             g Diplocidaris (Desor 1855)
-              s gigantea (L. Agassiz) T # date unknown, 18??
+              s gigantea (L. Agassiz ????) T # date unknown, 18??
             g Tetracidaris (Cotteau 1872)
               s reynesi (Cotteau 1872) T
-        O _incertae cedis_
-          F _incertae cedis_
+        O _uncertain_
+          F _uncertain_
             g Lanternarius (Regnéll 1956)
               s latens (Regnéll 1956) T
       BC Euechinoidea (Bronn 1860)
         SO Diadematacea (Duncan 1889)
           O Echinothuroidea (Claus 1880)
+            F Echinothuriidae (Thomson 1872)
+              BF Echinothuriinae (Thomson 1872)
+              BF Phormosomatinae (Mortensen 1934)
+              BF Pelanechininae (Groom 1887)
           O Diadematoida (Duncan 1889)
+            F Diadematidae (Gray 1855)
+            F Lissodiadematidae (Fell 1966) N
+            F Micropygidae (Mortensen 1904)
+            F Aspidodiadematidae (Duncan 1889)
+            F _uncertain_
           O Pedinoida (Mortensen 1939)
+            F Pedinidae (Pomel 1883)
+            F _uncertain_
           O Pygasteroida (Durham & Melville 1957)
+            F Pygasteridae (Lambert 1900)
+          O _uncertain_
+            F Heterocidaridae (Mortensen 1934)
+            F _uncertain_
         SO Echinacea (Claus 1876)
           O Salenioida (Delage & Hérouard 1903)
+            F Acrosaleniidae (Gregory 1900)
+            F Saleniidae (L. Agassiz 1838)
+              BF Saleniinae (L. Agassiz 1838)
+              BF Hyposaleniinae (Mortensen 1934)
           O Hemicidaroida (Beurlen 1937)
+            F Hemicidaridae (Wright 1857)
+            F Pseudodiadematidae (Pomel 1883)
+            F _uncertain_
           O Phymosomatoida (Mortensen 1904)
+            F Phymosomatidae (Pomel 1883)
+            F Stomechinidae (Pomel 1883)
+            F _uncertain_
           O Arbacioida (Gregory 1900)
+            F Arbaciidae (Gray 1855)
           O Temnopleuroida (Mortensen 1942)
+            F Glyphocyphidae (Duncan 1889)
+            F Temnopleuridae (A. Agassiz 1872)
+            F Toxopneustidae (Troschel 1872)
+            F _uncertain_
           O Echinoida (Claus 1876)
+            F Echinidae (Gray 1825)
+            F Echinometridae (Gray 1825)
+            F Strongylocentrotidae (Gregory 1900)
+            F Parasaleniidae (Mortensen 1903)
+            F _uncertain_
           O Plesiocidaroida (Duncan 1889)
-        SO _uncertain_
+            F Tiarechinidae (Gregory 1896)
+        SO _uncertain_ # Echinacea or Diadematacea
           O Orthopsida (Mortensen 1942)
+            F Orthopsidae (Duncan 1889)
         SO Gnathostomata (Zittel 1879)
           O Holectypoida (Duncan 1889)
             BO Holectipina (Duncan 1889)
+              F Holectypidae (Lambert 1899)
+              F Anorthopygidae (Wagner & Durham 1966) N
+              F Discoididae (Lambert 1899)
             BO Echinoneina (H. L. Clark 1925)
+              F Echinoneidae (Agassiz & Desor 1847)
+              F Conulidae (Lambert 1911)
+              F Galeritidae (Gray 1825)
+              F _uncertain_
             BO Conoclypina (Haeckel 1896)
+              F Conoclypidae (Zittel 1879)
+              F Oligopygidae (Duncan 1889)
+            BO _uncertain_
+              F _uncertain_
           O Clypeasteroida (A. Agassiz 1872)
             BO Clypeasterina (A. Agassiz 1872)
+              F Clypeasteridae (L. Agassiz 1835)
+              F Arachnoididae (Duncan 1889)
+                BF Arachnoidinae (Duncan 1889)
+                BF Ammotrophinae (Durham 1955)
+                BF _uncertain_
             BO Laganina (Mortensen 1948)
+              F Fibulariidae (Gray 1855)
+              F Laganidae (A. Agassiz 1873)
+              F Neolaganidae (Durham 1954)
             BO Scutellina (Haeckel 1896)
+              F Scutellidae (Gray 1825)
+              F Protoscutellidae (Durham 1955)
+              F Eoscutellidea (Durham 1955)
+              F Dendrasteridae (Lambert 1889)
+              F Echinarachniidae (Lambert 1914)
+              F Monophorasteridae (Lahille 1896)
+              F Mellitidae (Stefanini 1911)
+              F Astriclypeidae (Stefanini 1911)
+              F Abertellidae (Durham 1955)
+              F Scutasteridae (Durham 1955)
+              F _uncertain_
             BO Rotulina (Durham 1955)
+              F Rotulidea (Gray 1855)
+            BO _uncertain_
+              F _uncertain_
         SO Atelostomata (Zittel 1879)
           O Cassiduloida (Claus 1880)
+            F Galeropygidae (Lambert 1911)
+            F Clypeidae (Lambert 1898)
+            F Nucleolitidae (L. Agassiz & Desor 1847)
+            F Echinolampadidae (Gray 1851)
+            F Faujasiidae (Lambert 1905)
+            F Archiaciidae (Cotteau & Triger 1869)
+            F Cassidulidae (L. Agassiz & Desor 1847)
+            F Clypeolampadidae (Kier 1962)
+            F Pliolampadidae (Kier 1962)
+            F Apatopygidae (Kier 1962)
+            F _uncertain_
           O Holasteroida (Durham & Melville 1957)
+            F Collyritidae (d'Orbigny 1853)
+            F Disasteridae (A. Gras 1848)
+            F Holasteridae (Pictet 1857)
+            F Urechinidae (Duncan 1889)
+            F Calymnidae (Mortensen 1907)
+            F Pourtalesiidae (A. Agassiz 1881)
+            F Stenonasteridae (Lambert 1922)
+            F Somaliasteridae (Wagner & Durham 1966) N
+            F _uncertain_
           O Spatangoida (Claus 1876)
             BO Toxasterina (Fischer 1966) N
+              F Toxasteridae (Lambert 1920)
             BO Hemiasterina (Fisher 1966) N
-            BO Micrasterina (Fischer 1
-    C Holothuroidea (de Blainvill 1834) # Complete fossil genera only
+              F Hemiasteridae (Clark 1917)
+              F Palaeostomatidae (Lovén 1867)
+              F Pericosmidae (Lambert 1905)
+              F Schizasteridae (Lambert 1905)
+              F Aeropsidae (Lambert 1896)
+            BO Micrasterina (A. G. Fischer 1966) N
+              F Micrasteridae (Lambert 1920)
+              F Brissidae (Gray 1855)
+              F Spatangidae (Gray 1825)
+              F Loveniidea (Lambert 1905)
+            BO Asterostomatina (A. G. Fischer 1966) N
+              F Asterostomatidae (Pictet 1857)
+            BO _uncertain_
+              F _uncertain_
+          O Neolampadoida (Phhilip 1963)
+            F Neolampadidae (Lambert 1918)
+          O _uncertain_ # Gnathostomata or Atelostomata)
+            F _uncertain_
+    C Holothuroidea (de Blainvill 1834) # Taxonomy of complete fossils only
       O Arthrochirotida (Seilacher 1961)
         F Palaeocucumariidae (Frizzel & Exline 1967) N
           g Palaeocucumaria (Lehmann 1958)
@@ -587,7 +695,7 @@ P Echinodermata
               s volborthi (Schmidt 1874)
             g Homocystites (Barrande 1887) Q
               s alter (Barrande 1887) T
-              s angulatus (Wood)  # No date at all
+              s angulatus (Wood ????)  # No date at all
               s anatiformis (Hall 1847)
               s degener (Jaekel 1899)
               s forbesi (Billings 1858)
@@ -599,7 +707,7 @@ P Echinodermata
               s tertia (Barrande 1887) T
               s atava (Jaekel 1899)
               s constricta (Bather 1918)  # year uncertain
-              s gigantea (Leuchtenberg)   # no date or confirmation
+              s gigantea (Leuchtenberg ????)   # no date or confirmation
           F Echinoencrinitidae (Bather 1899)
             g Echinoencrinites (von Meyer 1826)
               s senckenbergii (von Meye 1826) T
@@ -613,7 +721,7 @@ P Echinodermata
               s lahuseni (Jaekel 1899)
               s reticulatus (Jaekel 1899)
               s seckenbergii (Meyer 1826)
-                bs acutangulus (Regnéll)
+                bs acutangulus (Regnéll ????)
               s simplicatus (Phleger 1935)
               s striatus (Jaekel 1899)
               s sphaeroidalis (Phleger 1935)
@@ -631,7 +739,7 @@ P Echinodermata
               s compressa (Jaekel 1899)
             g Proctocystis (Regnéll 1945)
               s monstruosa (Regnéll 1945) T
-              s rossica (Regnéll)
+              s rossica (Regnéll ????)
             g Prunocystites (Forbes 1848)
               s fletcheri (Forbes 1848) T
               s baccatus (Forbes 1848)    # year uncertain
@@ -644,24 +752,24 @@ P Echinodermata
             g Pleurocystites (Billings 1854)
               s squamosus (S. A. Miller 1899) T
               s anglicus (Jaekel 1899)
-              s anticostiensis (Billings)
-              s bassleri (Sun) Q
-              s beckeri (Foerste)
-              s clermontensis (Foerste)
+              s anticostiensis (Billings ????)
+              s bassleri (Sun ????) Q
+              s beckeri (Foerste ????)
+              s clermontensis (Foerste ????)
               s elegans (Billings 1857)     # year uncertain
-              s exornatus (Billings)
+              s exornatus (Billings ????)
               s filitextus (Billings 1854)
               s foriolus (Bather 1913)
-              s gibbus (Bather)
-              s quadratus (Bather)
-              s matutinus (Ruedemann)
-              s mercerensis (Miller & Gurley)
-              s multistriatus (Ulrich & Kirk)
+              s gibbus (Bather ????)
+              s quadratus (Bather ????)
+              s matutinus (Ruedemann ????)
+              s mercerensis (Miller & Gurley ????)
+              s multistriatus (Ulrich & Kirk ????)
               s quadratus (Bather 1913)
-              s robustus (Billings)
-              s rugeri (Salter) # or Bather? 1913? contradiction in text
-              s slocomi (Foerste)
-              s watkinsi (Strimple)
+              s robustus (Billings ????)
+              s rugeri (Salter ????) # or Bather? 1913? contradiction in text
+              s slocomi (Foerste ????)
+              s watkinsi (Strimple ????)
             g Amecystis (Ulrich & Kirk 1921)
               s laevis (Raymond 1921) T
             g Regulaecystis (Dehm 1932)
@@ -671,7 +779,7 @@ P Echinodermata
               g Callocystites (Hall 1852)
                 s jewetti (Hall 1852) T
                   bs elongatus (Foerste 1920) # year uncertain, 1919?
-                s canadensis (Billings)
+                s canadensis (Billings ????)
               g Coelocystis (Schuchert 1903)
                 s subglobosa (Hall 1867) T
               g Sphaerocystites (Hall 1859)
@@ -680,32 +788,32 @@ P Echinodermata
             BF Apiocystitinae (Jaekel 1899)
               g Apiocystites (Forbes 1848)
                 s pentrematoides (Forbes 1848) T
-                s anna (Safford)
-                s elegans (Hall)
+                s anna (Safford ????)
+                s elegans (Hall ????)
               g Brockocystis (Foerste 1914)
                 s tecumsethi (Billings 1866) T
-                s huronensis (Billings)
+                s huronensis (Billings ????)
                 s nodosaria (Foerste 1919)
               g Hallicystis (Jaekel 1899)
                 s imago (Hall 1864) T
               g Jaekelocystis (Schuchert 1903)
                 s hartleyi (Schuchert 1903) T
-                s avellana (Schuchert)
-                s papillata (Schuchert)
+                s avellana (Schuchert ????)
+                s papillata (Schuchert ????)
               g Lepadocystis (Carpenter 1891)
                 s moorei (Meek 1871) T
               g Lepocrinites (Conrad 1840)
                 s gebhardii (Conrad 1840) T
                 s manlius (Schuchert 1904)
-                s oblongus (Forbes)
+                s oblongus (Forbes ????)
               g Lipsanocystis (Ehlers & Leighley 1922)    # More species?
                 s traversensis (Ehlers & Leighley 1922) T
               g Lovenicystis (Regnéll 1945)
                 s angelini (Jaekel 1899) T
               g Strobilocystites (White 1876)
                 s calvini (White 1876) T
-                s polleyi (Calvin)
-                s schucherti (Thomas)
+                s polleyi (Calvin ????)
+                s schucherti (Thomas ????)
               g Tetracystis (Schuchert 1904)
                 s fenestratus (Schuchert 1904) T
                 s chrysalis (Schuchert 1904)
@@ -723,53 +831,53 @@ P Echinodermata
               s pyriformis (von Buch 1840) T
               s altus (Jaekel 1918)
               s extraneus (Eichwald 1840)
-              s grandis (Jaekel)
-              s jaekeli (Sun)
-              s laevior (Jaekel)
-              s oblongus (Pander)
-              s oelandicus (Regnéll)
-              s pocillus (Jaekel)
-              s porosus (Eichwald)
+              s grandis (Jaekel ????)
+              s jaekeli (Sun ????)
+              s laevior (Jaekel ????)
+              s oblongus (Pander ????)
+              s oelandicus (Regnéll ????)
+              s pocillus (Jaekel ????)
+              s porosus (Eichwald ????)
               s pulcherrimus (Jaekel 1899)
-              s rudis (Jaekel)
-              s squamosus (Forbes)
+              s rudis (Jaekel ????)
+              s squamosus (Forbes ????)
               s verrucosus (Eichwald 1856)
             g Corylocrinus (Koenen 1886)
-              s carnicus (Bather)
+              s carnicus (Bather ????)
               s europaeus (Quenstedt 1874) T
-              s elongatus (Jaekel)
-              s occidentalis (Jaekel)
-              s olli (Yakovlev)
+              s elongatus (Jaekel ????)
+              s occidentalis (Jaekel ????)
+              s olli (Yakovlev ????)
             g Tricosmites (Jaekel 1918)
               s tricornis (Jaekel 1899) T
           F Caryocrinitidae (Bernard 1895)
             g Caryocrinites (Say 1825)
               s ornatus (Say 1825) T
-                bs europaeus (Quenstedt)
-              s aurorus (Bather) # 11
-              s avellanus (Bather)
-              s gorbyi (Miller & Gurley)
-              s indianensis (Miller)
-              s milliganae (Miller & Gurley)
-              s missouriensis (Rowley)
-              s persculptus (Springer)
-              s septentrionalis (Regnéll)
-              s turbo (Bather)
+                bs europaeus (Quenstedt ????)
+              s aurorus (Bather ????) # 11
+              s avellanus (Bather ????)
+              s gorbyi (Miller & Gurley ????)
+              s indianensis (Miller ????)
+              s milliganae (Miller & Gurley ????)
+              s missouriensis (Rowley ????)
+              s persculptus (Springer ????)
+              s septentrionalis (Regnéll ????)
+              s turbo (Bather ????)
             g Juglandocrinus (Koenen 1886)
               s crassus (Koenen 1886) T
             g Oocystis (Dreyfuss 1939)
               s vulgaris (Dreyfuss 1939) T
                 bs subsphaeroidallis (Dreyfus 1939) # year uncertain
-              s major (Dreyfuss)
+              s major (Dreyfuss ????)
               s rugata (Forbes 1948)                # year uncertain
             g Ptychocosmites (Jaekel 1918)
               s sardinicus (Jaekel 1918) T
             g Stribalocystites (S. A. Miller 1891)
               s tumidus (S. A. Miller 1891) T
-              s bulbulus (Miller & Gurley)
-              s elongatus (Rowley)
-              s kentuckiensis (Miller & Gurley)
-              s sphaeroidalis (Miller & Gurley)
+              s bulbulus (Miller & Gurley ????)
+              s elongatus (Rowley ????)
+              s kentuckiensis (Miller & Gurley ????)
+              s sphaeroidalis (Miller & Gurley ????)
           F Heterocystitidae (Jaekel 1918)
             g Heterocystites (Hall 1851)
         SF Polycosmititda (Jaekel 1918)
@@ -778,56 +886,56 @@ P Echinodermata
               s boehemicus (Jaekel 1918) T
           F Stichocystidae (Jaekel 1918)
             g Stichocystis (Jaekel 1899)
-              s geometrica (Angelin) T
+              s geometrica (Angelin ????) T
         SF Caryocystitida (Jaekel 1918)
           F Caryocystitidae (Jaekel 1918)
             g Caryocystites (von Buch 1846)
               s angelini (Haeckel 1896) T
-              s bicompressus (Reed)           # no confirmation
+              s bicompressus (Reed ????)           # no confirmation
               s davisi (McCoy in Forbes 1848)
               s esthoniae (Jaekel 1899)
               s laevis (Hecker 1923)
               s lagenalis (Regnéll 1945)
             g Heliocrinites (Eichwald 1840)
               s balticus (Eichwald 1929) T
-              s araneus (von Schlotheim)
-              s burdigalensis (Jaekel)
-              s confortatus (Barrande)
-              s echinoides (Leuchtenberg)
-              s fiscellus (Bather)
+              s araneus (von Schlotheim ????)
+              s burdigalensis (Jaekel ????)
+              s confortatus (Barrande ????)
+              s echinoides (Leuchtenberg ????)
+              s fiscellus (Bather ????)
               s granatum (Wahlenberg 1821)
               s guttaeformis (Regnéll 1945)
-              s kweichouensis (Sun)
+              s kweichouensis (Sun ????)
               s malaisei (Regnéll 1951)
               s ovum (von Schlotheim 1826)
               s prominens (Angelin 1878)
               s radiatus (Eichwald 1840)
               s rouvillei (Koenen 1886)
-              s rugatus (Bather)
-              s subovalis (Reed)
+              s rugatus (Bather ????)
+              s subovalis (Reed ????)
               s stellatus (Regnéll 1945)
-              s tenuistriatus (Angelin)
-              s variabilis (Regnéll)
+              s tenuistriatus (Angelin ????)
+              s variabilis (Regnéll ????)
             g Orrocystites (Barrande 1887)
               s helmhackeri (Barrande 1887) T
-                bs thuringae (Jaekel)
+                bs thuringae (Jaekel ????)
             g Ulrichocystis (Bassler 1950) Q
               s eximia (Bassler 1950) T
           F Echinosphaeritidae (Neumayr 1889)
             g Echinosphaerites (Wahlenberg 1818)
               s aurantium (Gyllenhaal 1772) T
               s barrandei (Jaekel 1899)
-              s ellipticus (Eichwald)
+              s ellipticus (Eichwald ????)
               s difformis (Jaekel 1899)
-              s globosus (Jaekel)
-                bs anglicus (Jaekel)
+              s globosus (Jaekel ????)
+                bs anglicus (Jaekel ????)
               s grandis (Jaekel 1899)
-              s granulatus (McCoy)
-              s gyllenhahli (Quenstedt)
-              s kloedeni (Jaekel)
-              s pirum (Jaekel)
-              s pogrebowi (Heckler)
-              s sinensis (Reed)
+              s granulatus (McCoy ????)
+              s gyllenhahli (Quenstedt ????)
+              s kloedeni (Jaekel ????)
+              s pirum (Jaekel ????)
+              s pogrebowi (Heckler ????)
+              s sinensis (Reed ????)
             g Arachnocystites (Neumayr 1889)
               s infaustus (Barrande 1887) T
       O Diploporita (Müller 1854)
@@ -835,9 +943,9 @@ P Echinodermata
           F Glyptosphaeritidae (Bernard 1895)
             g Glyptosphaerites (Müller 1854)
               s leuchtenbergi (Volborth 1846) T
-              s ferrigenus (Barrande)
-              s mariae (Jaekel)
-              s suecicus (Angelin)
+              s ferrigenus (Barrande ????)
+              s mariae (Jaekel ????)
+              s suecicus (Angelin ????)
           F Dactylocystidae (Jaekel 1899)
             g Dactylocystis (Jaekel 1899)
               s schmidti (Jaekel 1899) T
@@ -848,8 +956,8 @@ P Echinodermata
           F Protocrinitidae (Bather 1899)
             g Protocrinites (Eichwald 1840)
               s oviformis (Eichwald 1840) T
-              s fragum (Eichwald)
-              s sparsiporus (Bather)
+              s fragum (Eichwald ????)
+              s sparsiporus (Bather ????)
             g Eumorphocystis (Branson & Peck 1940)
               s multiporata (Branson & Peck 1940) T
             g Fungocystites (Barrande 1887)
@@ -860,29 +968,29 @@ P Echinodermata
           F Gomphocystitidae (Miller 1889)
             g Gomphocystites (Hall 1865)
               s glans (Hall 1864) T
-              s bownockeri (Foerste)
-              s californicus (Stauffer) ?
-              s clavus (Hall)
-              s gotlandicus (Angelin)
-              s indianensis (Miller)
-              s tenax (Hall)
+              s bownockeri (Foerste ????)
+              s californicus (Stauffer ????) ?
+              s clavus (Hall ????)
+              s gotlandicus (Angelin ????)
+              s indianensis (Miller ????)
+              s tenax (Hall ????)
             g Pyrocystites (Barrande 1887)
               s pirum (Barande 1887) T
-              s incertus (Barrande)
-              s orientalis (Reed)
-              s patulus (Barrande)
+              s incertus (Barrande ????)
+              s orientalis (Reed ????)
+              s patulus (Barrande ????)
         SF Sphaeronitida (Neumayr 1889)
           F Sphaeronitidae (Neumayr 1889)
             g Sphaeronites (Hisinger 1828)
               s pomum (Gyllenhaal 1772) T
-              s dalecarlicus (Angelin)
-              s globulus (Angelin)
-              s pentactaeus (Haeckel)
-              s punctatus (Forbes)
-              s pyriformis (Forbes)
-              s shihtiensis (Reed)
-              s stelluliferus (Salter)
-              s tesselatus (Phillips)
+              s dalecarlicus (Angelin ????)
+              s globulus (Angelin ????)
+              s pentactaeus (Haeckel ????)
+              s punctatus (Forbes ????)
+              s pyriformis (Forbes ????)
+              s shihtiensis (Reed ????)
+              s stelluliferus (Salter ????)
+              s tesselatus (Phillips ????)
             g Allocystites (S. A. Miller 1889)
               s hammelli (S. A. Miller 1889) T
             g Archegocystis (Jaekel 1899)
@@ -895,137 +1003,137 @@ P Echinodermata
               s soyei (Oehlert 1887) T
             g Codiacystis (Jaekel 1899)
               s bohemica (Barrande 1887) T
-              s absens (Barrande)
-              s applanata (Barrande)
-              s consobrina (Barrande)
-              s docens (Barrande)
-              s embryo (Barrande)
-              s excavata (Barrande)
-                bs intermedia (Barrande)
-              s idealis (Barrande)
-              s infundibulum (Barrande)
-              s modica (Barrande)
-              s oneta (Barrande)
-              s potens (Barrande)
-              s sculptus (Barrande)
-              s simulans (Barrande)
-              s surgens (Barrande)
-              s tecta (Barrande)
+              s absens (Barrande ????)
+              s applanata (Barrande ????)
+              s consobrina (Barrande ????)
+              s docens (Barrande ????)
+              s embryo (Barrande ????)
+              s excavata (Barrande ????)
+                bs intermedia (Barrande ????)
+              s idealis (Barrande ????)
+              s infundibulum (Barrande ????)
+              s modica (Barrande ????)
+              s oneta (Barrande ????)
+              s potens (Barrande ????)
+              s sculptus (Barrande ????)
+              s simulans (Barrande ????)
+              s surgens (Barrande ????)
+              s tecta (Barrande ????)
             g Eucystis (Angelin 1878)
               s raripuncta (Angelin 1878) T
-              s acuminata (Regnéll)
-              s angelini (Regnéll)
-              s hercynica (Jaekel) ?
-              s litchi (Forbes)
-              s quadrangularis (Regnéll)
+              s acuminata (Regnéll ????)
+              s angelini (Regnéll ????)
+              s hercynica (Jaekel ????) ?
+              s litchi (Forbes ????)
+              s quadrangularis (Regnéll ????)
             g Haplosphaeronis (Jaekel 1926)
               s kiaeri (Jaekel 1926) T
-                bs norvegica (Jaekel)
-              s lobifera (Reed)
-              s oblonga (Angelin)
-              s proiciens (Regnéll)
+                bs norvegica (Jaekel ????)
+              s lobifera (Reed ????)
+              s oblonga (Angelin ????)
+              s proiciens (Regnéll ????)
             g Paleosphaeronites (Prokop 1964)
               s crateriformis (Růžička 1927)
             g Proteocystites (Barrande 1887)
               s flavus (Barrande 1887) T
-              s barrandenus (Haeckel) ?
+              s barrandenus (Haeckel ????) ?
             g Tholocystis (Chauvel 1941)
               s kolihai (Chauvel 1941) T
           F Aristocystitidae (Neumayr 1889)
             g Aristocystites (Barrande 1887)
               s bohemicus (Barrande 1887) T
-              s desideratus (Barrande)
-              s regularis (Termier & Termier)
-              s rudis (Barrande)
-              s sinicus (Sun)
+              s desideratus (Barrande ????)
+              s regularis (Termier & Termier ????)
+              s rudis (Barrande ????)
+              s sinicus (Sun ????)
             g Amphoracystis (Haeckel 1896)
               s irregularis (Barrande 1887) T
             g Baculocystites (Barrande 1887) Q
               s simplex (Barrande 1887)
             g Calix (Rouault 1851)
               s sedgewicki (Rouault 1851) T
-              s lebesconti (Chauvel)
-              s rouaulti (Chauvel)
+              s lebesconti (Chauvel ????)
+              s rouaulti (Chauvel ????)
             g Campylostoma (Dreyfuss 1939)
               s grandis (Dreyfuss 1939) T
             g Hippocystis (Bather 1919)
               s subcylindrica (Barrande 1887) T
             g Holocystites (Hall 1864)
               s cylindricus (Hall 1861) T
-              s abnormis (Hall)
-              s adipatus (S. A. Miller)
-              s affinis (Miller & Faber)
-              s amplus (S. A. Miller)
-              s baculus (S. A. Miller)
-              s benedicti (S. A. Miller)
-              s brauni (S. A. Miller)
-              s canneus (S. A. Miller)
-              s colletti (S. A. Miller)
-              s commodus (S. A. Miller)
-              s dyeri (S. A. Miller)
-              s elegans (S. A. Miller)
-              s faberi (S. A. Miller)
-              s globosus (S. A. Miller)
-              s gorbyi (S. A. Miller)
-              s greenvillensis (Foerste)
-              s gyrinus (Miller & Gurley)
-              s indianensis (S. A. Miller)
-              s madisonensis (S. A. Miller)
-              s ornatissimus (S. A. Miller)
-              s ornatus (S. A. Miller)
-              s ovalis (Angelin)
-              s papulosus (S. A. Miller)
-              s parvulus (S. A. Miller)
-              s parvus (S. A. Miller)
-              s perlongus (S. A. Miller)
-              s plenus (S. A. Miller)
-              s pustulosus (S. A. Miller)
-              s rotundus (S. A. Miller)
-              s scitulus (S. A. Miller)
-              s scutellatus (Hall)
-              s spangleri (S. A. Miller)
-              s sphaericus (Winchell & Marcy)
-              s sphaeroidalis (Miller & Gurley)
-              s splendens (Miller & Gurley)
-              s subovatus (S. A. Miller)
-              s subrotundus (S. A. Miller)
-              s tumidus (S. A. Miller)
-              s turbinatus (S. A. Miller)
-              s ventricusus (S. A. Miller)
-              s wetherbyi (S. A. Miller)
-              s winchelli (Hall)
-              s wykoffi (S. A. Miller)
+              s abnormis (Hall ????)
+              s adipatus (S. A. Miller ????)
+              s affinis (Miller & Faber ????)
+              s amplus (S. A. Miller ????)
+              s baculus (S. A. Miller ????)
+              s benedicti (S. A. Miller ????)
+              s brauni (S. A. Miller ????)
+              s canneus (S. A. Miller ????)
+              s colletti (S. A. Miller ????)
+              s commodus (S. A. Miller ????)
+              s dyeri (S. A. Miller ????)
+              s elegans (S. A. Miller ????)
+              s faberi (S. A. Miller ????)
+              s globosus (S. A. Miller ????)
+              s gorbyi (S. A. Miller ????)
+              s greenvillensis (Foerste ????)
+              s gyrinus (Miller & Gurley ????)
+              s indianensis (S. A. Miller ????)
+              s madisonensis (S. A. Miller ????)
+              s ornatissimus (S. A. Miller ????)
+              s ornatus (S. A. Miller ????)
+              s ovalis (Angelin ????)
+              s papulosus (S. A. Miller ????)
+              s parvulus (S. A. Miller ????)
+              s parvus (S. A. Miller ????)
+              s perlongus (S. A. Miller ????)
+              s plenus (S. A. Miller ????)
+              s pustulosus (S. A. Miller ????)
+              s rotundus (S. A. Miller ????)
+              s scitulus (S. A. Miller ????)
+              s scutellatus (Hall ????)
+              s spangleri (S. A. Miller ????)
+              s sphaericus (Winchell & Marcy ????)
+              s sphaeroidalis (Miller & Gurley ????)
+              s splendens (Miller & Gurley ????)
+              s subovatus (S. A. Miller ????)
+              s subrotundus (S. A. Miller ????)
+              s tumidus (S. A. Miller ????)
+              s turbinatus (S. A. Miller ????)
+              s ventricusus (S. A. Miller ????)
+              s wetherbyi (S. A. Miller ????)
+              s winchelli (Hall ????)
+              s wykoffi (S. A. Miller ????)
             g Lepidocalix (Termier & Termier 1950) Q
               s pulchrum (Termier & Termier 1950) T
             g Pachycalix (Chauvel 1936)
               s halli (Rouault 1851) T
-              s pachytheca (Termier & Termier)
+              s pachytheca (Termier & Termier ????)
             g Pseudaristocystis (Sun 1936)
               s dagon (Bather 1906) T
             g Sinocystis (Reed 1917)
               s loczyi (Bather 1918) T
-              s mansuyi (Reed)
-              s segaudi (Termier & Termier)
-              s yunnanensis (Reed)
+              s mansuyi (Reed ????)
+              s segaudi (Termier & Termier ????)
+              s yunnanensis (Reed ????)
             g Trematocystis (Jaekel 1899)
               s subglobosa (Miller 1889) T
-              s hammelli (Miller)
+              s hammelli (Miller ????)
         SF Asteroblastida (Bather 1900)
           F Asteroblastidae (Bather 1900)
             g Asteroblastus (Eichwald 1862)
               s foveolatus (Eichwald 1862) T
-              s regularis (Jaekel)
-              s sublaevis (Jaekel)
-              s volborthi (Schmidt)
+              s regularis (Jaekel ????)
+              s sublaevis (Jaekel ????)
+              s volborthi (Schmidt ????)
             g Asterocystis (Haekel 1896)
               s tuberculatus (Schmidt 1874) T
-              s globulus (Jaekel)
+              s globulus (Jaekel ????)
             g Metasterocystis (Jaekel 1918)
               s micropelta (Jaekel 1918) T
           F Mesocystidae (Bather 1899)
             g Mesocystis (Bather 1899)
               s pusirefskii (Hoffman 1866) T
-              s jaekeli (Yakovlev)
+              s jaekeli (Yakovlev ????)
     C Paracrinoidea (Regnéll 1945)
       O Varicata (Jaekel 1900)
         F Malocystitidae (Bather 1899)
@@ -1037,27 +1145,27 @@ P Echinodermata
           g Amygdalocystites (E. Billings 1854)
             s florealis (E. Billings 1854) T
             s laevis (W. R. Billings 1993)
-            s radiatus (Billings)
-            s tenuistriatus (Billings)
+            s radiatus (Billings ????)
+            s tenuistriatus (Billings ????)
           g Canadocystis (Jaekel 1900)
             s barrandei (Billings 1858) T
-            s emmonsi (Hudson)
+            s emmonsi (Hudson ????)
           g Sinclairocystis (Bassler 1950)
             s praedicta (Bassler 1950) T
-            s angulata (Strimple)
-            s sulphurensis (Strimple)
+            s angulata (Strimple ????)
+            s sulphurensis (Strimple ????)
       O Brachiata (Jaekel 1900)
         F Comarocystitidae (Bather 1899)
           g Comarocystites (Billings 1854)
             s punctatus (Billings 1854) T
-            s chumardi (Meek & Worthen)
-            s obconicus (Meek & Worthen)
+            s chumardi (Meek & Worthen ????)
+            s obconicus (Meek & Worthen ????)
           g Billingsocystis (Bassler 1950)
             s invaginata (Bassler 1950) T
           g Schuchertocystis (Bassler 1950)
             s radiata (Bassler 1950) T
-      O _incertae cedis_
-        F _incertae cedis_
+      O _uncertain_
+        F _uncertain_
           g Achradocystites (von Volborth 1870)
             s grewingkii (von Volborth 1870) T
           g Platycystites (Miller 1889)
@@ -1077,7 +1185,7 @@ P Echinodermata
       O Fissiculata (Jaekel 1918)
         F Phaenoschismatidae (Etheridge & Carpenter 1886)
           g Phaenoschisma (Etheridge & Carpenter 1882)
-            s acutum (Sowerby) T
+            s acutum (Sowerby ????) T
             s laeviusculum (Rowley 1900)
           g Decaschisma (Fay 1961)
             s pentalobus (Hall 1879) T
@@ -1308,7 +1416,7 @@ P Echinodermata
           s typica (Bassler 1950) T
         g Foerstecystis (Bassler 1950) ?
           s obliqua (Bassler 1950) T
-      F Cryptocrinitidae (Bassler 1938) (1895)
+      F Cryptocrinitidae (Bassler 1938) # (1895?)
         g Cryptocrinites (von Buch 1840)
           s laevis (Pander 1830) T
         g Lysocystites (S. A. Miller 1889)
@@ -1324,7 +1432,7 @@ P Echinodermata
       F Lingulocystidae (Ubaghs 1950)
         g Lingulocystis (Thoral 1935)
           s elongata (Thoral 1935) T
-      F _incertae cedis_
+      F _uncertain_
         g Archaeocystites (Barrande 1887) X # No species listed
         g Cardiocystites (Barrande 1887)
           s bohemicus (Barrande 1887) T
@@ -1400,7 +1508,7 @@ P Echinodermata
                 s gregoryi (Stürtz 1899) T
               g Trichasteropsis (Eck 1879)
                 s weissmanni (Münster 1843) T
-          BO Diplozonina n. (Spencer & Wright 1966)
+          BO Diplozonina (Spencer & Wright 1966) N
             F Astropectinidae (Gray 1840)
               BF Astropectininae (Gray 1840)
                 g Astropecten (Gray 1840) T
@@ -1447,7 +1555,7 @@ P Echinodermata
                     s almus (Fisher 1917) T
                 g Lonchotaster (Sladen 1889)
                   s tartareus (Fisher 1919) T
-                g Macroptychaster (H.E.S. Clark 1962)
+                g Macroptychaster (H. E. S. Clark 1962)
                   s accrescens (Koehler 1920) T
                 g Mimastrella (Fisher 1916)
                   s cognatus (Sladen 1889) T
@@ -1729,7 +1837,7 @@ P Echinodermata
                 g Mediaster (Stimpson 1857)
                   s aequalis (Stimpson 1857) T
                 g Miopentagonaster (Mercier 1935)
-                  calloviensis (Mercier 1935) T
+                  s calloviensis (Mercier 1935) T
                 g Noviaster (Valette 1929)
                   s lissajousi (Valett 1929) T
                 g Nymphaster (Sladen 1889)
@@ -2319,7 +2427,7 @@ P Echinodermata
               s pauper (Fritsch 1893) T
             g Palmasterias (Savi & Meneghini 1851) X # no species
             g Rumanaster (Popescu-Voitesti 1911)
-              s uhligi (Popescu-Voitesti) T
+              s uhligi (Popescu-Voitesti ????) T
       BC Ophiuroidea (Gray 1840)
         O Stenurida (Spencer 1951)
           BO Proturina (Spencer & Wright 1966) N
@@ -2368,7 +2476,7 @@ P Echinodermata
                 s aranea (Ruedemann 1916) T
               g Urosoma (Spencer 1930)
                 s hirudo (Forbes 1848) T
-            F Protasteridae (S.A. Miller 1889)
+            F Protasteridae (S. A. Miller 1889)
               g Protaster (Forbes 1849)
                 s sedgwickii (Forbes 1849) T
               g Aulactis (Spencer 1930)
@@ -2425,7 +2533,7 @@ P Echinodermata
                 g Ophiohymen (H. L. Clark 1911)
                   s gymnodiscus (H. L. Clark 1911) T
                 g Ophioleptoplax (H. L. Clark 1911)
-                  s o megapora (H. L. Clark 1911 T
+                  s megapora (H. L. Clark 1911) T
                 g Ophiolycus (Mortensen 1933)
                   s inermis (Mortensen 1933) T
                 g Ophiomora (Koehler 1907)
@@ -2568,7 +2676,7 @@ P Echinodermata
               g Argentinaster (Ruedemann 1916)
                 s bodenbenderi (Ruedemann 1916) T
               g Ophiaulzx (Ubaghs 1941)
-                s decheni (Dewalque 1881 T
+                s decheni (Dewalque 1881) T
               g Silesiaster (Schwarzbach & Zimmermann 1936)
                 s longivertebralis (Schwarzbach & Zimmermann 1936) T
               g Stephanoura (Ubaghs 1941)
@@ -2674,7 +2782,7 @@ P Echinodermata
                 g Ophiophyllum (Lyman 1878)
                   s petilu (Lyman 1878) T
                 g Ophioplocus (Lyman 1861)
-                  s imbricata (Müller & Troschel) T
+                  s imbricata (Müller & Troschel ????) T
                 g Ophiosphalma (H. L. Clark 1941)
                   s planum (Lyman 1878) T
                 g Ophioteichus (H. L. Clark 1938)
@@ -2733,7 +2841,7 @@ P Echinodermata
                 s fastigatus (Lyman 1878) T
               g Ophiodesmus (Ziesenhenne 1940)
                 s amphilogus (Ziesenhenne 1940) T
-              g Ophiodoris Koehler 1904)
+              g Ophiodoris (Koehler 1904)
                 s malignus (Koehler 1904) T
               g Ophioplax (Lyman 1878)
                 s ljungmani (Lyman 1878) T
@@ -3048,7 +3156,7 @@ P Echinodermata
             s bubnoffi (Müller 1950) T
           g Xenura (Schöndorf 1938)
             s kobuldi (Schöndorf 1938) T
-  BP _incertae cedis_
+  BP _uncertain_
     C _uncertain_
       O _uncertain_
         F _uncertain_
