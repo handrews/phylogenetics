@@ -31,7 +31,44 @@ It appears the right [[Ambulacrum (zoology)|ambulacrum]] was completely lost ear
 
 ==Classification==
 
-===Relationships===
+===External Relationships===
+
+Ctenocystoids have been recovered as basal to other echinoderms in multiple analyses.  
+{{barlabel|style=font-size:85%;line-height:85%
+  |size=14
+  |at1=4 |bar1=indigo |label1='''Ctenocystoids'''
+  |cladogram=
+  {{clade
+    |label1=[[Ambulacraria]]
+    |1={{clade
+      |1=[[Hemichordata]]
+      |label2=[[Echinodermata]]
+      |sublabel2={{small|[[total group]]}}
+      |2={{clade
+        |1=''[[Ctenoimbricata]]'' |barbegin1=indigo
+        |2={{clade
+          |1=''[[Altacystis]]'' |bar1=indigo
+          |2={{clade
+            |1=''Ctenocystis'' |barend1=indigo
+            |2={{clade
+              |1=''Trochocystites'' {{small|(a [[Cincta|cinctan]])}}
+              |2={{clade
+                |1=''[[Protocinctus]]'' {{small|(a [[Cincta|cinctan]])}}
+                |2={{clade
+                  |1=''Coleicarpus'' {{small|(a [[Soluta (echinoderm)|solute]])}}
+                  |2={{clade
+                    |1=''[[Helicoplacus]]''
+                    |label2=[[Echinodermata]]
+                    |sublabel2={{small|[[crown group]]}}
+                    |2={{clade
+                      |1=[[Eleutherozoa]]ns
+                      |2={{clade
+                        |1=[[Edrioasteroidea|Edrioasteroids]]
+                        |2=[[Pelmatozoa]]ns
+  }} }} }} }} }} }} }} }} }} }} }}
+}}
+
+===Internal Relationships===
 
 {{cladogram | caption = Phylogenetic relationships within Ctenocystoidea<ref name=Dominguez1999/> | clades = 
 {{clade
