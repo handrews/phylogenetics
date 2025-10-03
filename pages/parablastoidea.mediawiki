@@ -1,0 +1,85 @@
+{{Short description|Class of marine invertebrates}}
+{{Automatic taxobox
+| fossil_range =  {{fossil range|Floian|Katian}}
+| image = Haeckel Blastoidea.jpg
+| image_caption = [[blastoidea|Blastoids]], an example of a single group of blastozoans.
+| taxon = Parablastoidea
+| authority = Hudson, 1907
+| subdivision_ranks = Families
+| subdivision = * Family [[Astroblastocystidae]] {{small|Sałamatin and Kaczmarek, 2022}} (= Blastocystidae {{small|Jaekel, 1918}})
+* Family [[Meristoschismatidae]] {{small|Sprinkle, 1973}}
+}}
+
+'''Parablastoidea''' is a small class of [[blastozoan]] [[echinoderm]]s restricted to the [[Ordovician]] period ([[Floian]] to [[Katian]]).  Like all traditinal blastozoan classes, the parablastoids are distinguished by their respiratory structures, which in this group are known as ''cataspires''.  While many traditional blastozoan classes have proven [[paraphyletic]] or [[polyphyletic]], no evidence has emerged to challenge the view of this small class as [[monophyletic]].
+
+==Description==
+
+===Respiratory structures===
+
+==Phylogeny and Taxonomy==
+
+Blastozoan phylogeny is an active area of research with little consensus regarding the monophyly of or relationships among the traditional Linnaean classes.  However, recent research suggests that the parablastoids are the sister group to the [[Asteroblastida]], one of the three traditional orders within the polypheletic traditional class [[Diploporita]] as shown in the following cladogram simplified from Sheffield and Sumrall (2019):
+
+{{clade
+      |1=''Gogia spiralus'' ([[Gogiida|Gogiid Eocrinoid]])
+      |2={{clade
+         |1=''Rhopalocystis destombesi'' ([[Ascocystitida|Ascocystitid Eocrinoid]])
+         |2={{clade
+            |1={{clade
+               |1={{clade
+                  |1={{clade
+                     |1=''Eurekablastus rozhnovi'' ('''[[Parablastoidea|Parablastoid]]''')
+                     |2=''Asteroblastus stellatus'' ([[Asteroblastida|Asteroblastid Diploporitan]])
+                  }}
+                  |2={{clade
+                     |1=''Hybocrinus nitidus'' ([[Crinoid]])
+                     |2=''Eumorphocystis multiporata'' ([[Glyptosphaeritid Diploporitan]])
+                  }}
+               }}
+               |2=(some Glyptocystitid and Hemicosmitid Rhombiferans, Coronate Blastoids)
+            |2=''Canadocystis barrandei'' ([[Paracrinoid]])
+            |3=(some [[Diploporita|Glytposphaeritid Diploporitans]])
+            |4={{clade
+               |1=''Tristomiocystis globossus'' ([[Diploporita|Glyptosphaeritid Diploporitan]])
+               |2=[[Sphaeronitida]] (Diploporita)
+}} }} }} }} }}
+
+
+
+* Blastozoa {{small|Sprinkle, 1973}}
+** Parablastoidea {{small|Hudson, 1907}}
+*** Astroblastocystidae {{small|Sałamatin and Kaczmarek, 2022}} (=Blastocystidae {{small|Jaekel, 1918}})
+**** ''Blastoidocrinus'' {{small|Billings, 1859}}
+**** ''Astroblastocystis'' {{small|Sałamatin and Kaczmarek, 2022}} (=''Blastocystis'' {{small|Jaekel, 1918}})
+**** ''Eurekablastus'' {{small|Sprinkle and Sumrall, 2008}}
+**** ''Kosachenkoastrus'' {{small|Rozhnov, 2013}}
+**** ''Parabolablastus'' {{small|Sprinkle and Sumrall, 2008}}
+*** Meristoschismatidae {{small|Sprinkle, 1973}}
+**** ''Meristoschisma'' {{small|Sprinkle, 1973}}
+
+==References==
+{{reflist}}
+
+Late Early Ordovician (Sprinkle|1973) to Late? Ordovician
+===Works cited===
+{{refbegin}}
+* {{cite book |last1=Sheffield |first1=Sarah L. |last2=Limbeck |first2=Maggie R. |last3=Bauer |first3=Jennifer E. |last4=Hill |first4=Stephen A. |last5=Nohejlová |first5=Martina |editor-last1=Sumrall |editor-first1=Colin D. |year=2022 |title=A Review of Blastozoan Echinoderm Respiratory Structures |series=Elements of Paleontology |publisher=Cambridge University Press |place=Cambridge |doi=10.1017/9781108881821 |isbn=9781108794725}}
+* {{cite journal|last1=Rozhnov |first1=S. V. |year=2013 |title=A new genus of Parablastoidea (Echinodermata) from the Middle Ordovician of Lagoda Glint on the Volkhov river (Ladoga region) |journal=Paleontological Journal |volume=47 |number=2 |pages=154–161}}
+* {{cite journal|last1=Sałamatin |first1=Rusłan |last2=Kaczmarek |first2=Adam |year=2022 |title=Astroblastocystis nom. nov. – a new replacement name for Blastocystis Jaekel, 1918 (Echinodermata, Parablastoidea) |journal=Annals of Parasitology |volume=68 |number=1 |pages=195-196 |doi=10.17420/ap6801.425}}
+* {{cite journal|last1=Sprinkle |first1=James |title=Morphology and evolution of blastozoan echinoderms |journal=Special Publication of the Museum of Comparative Zoology, Harvard University |year=1973 |url=https://archive.org/details/morphologyevolut00spri/mode/2up |accessdate=29 October 2024}}
+* {{cite journal|last1=Sprinkle |first1=James |date=March 1976 |title=Classification and Phylogeny of “Pelmatozoan” Echinoderms |journal=Systematic Zoology |volume=25 |issue=1 |pages=83–91 |doi=10.2307/2412783 |jstor=2412783}}
+* {{cite journal|last1=Sprinkle |first1=James |last2=Sumrall |first2=Colin D. |date=1 December 2008 |title=New Parablastoids from the western United States |journal=Univerity of Kansas Paleontological Contributions (new series) |number=14 |doi=10.17161/PCNS.1808.7950}}
+
+{{refend}}
+
+1967-00-00-p Treatise on Invertebrate Paleontology — Part S- Echinodermata 1.pdf
+1973-00-00-p Morphology and Evolution of Blastozoan Echinoderms.pdf
+1976-03-01-p Classification and Phylogeny of “Pelmatozoan” Echinoderms.pdf
+2008-12-01-p New parablastoids from the western United States.pdf
+2004-04-14-p The Great Ordovician Biodiversification Event — Crinozoan, Blastozoan, Echinozoan, Asterozoan, and Homalozoan Echinoderms.pdf
+2013-00-00-p Palaeobiogeography of Ordovician echinoderms.pdf
+2020-12-09-a New insights into the origin and relationships of blastoid echinoderms.pdf
+2019-02-28-p The phylogeny of the Diploporita- a polyphyletic assemblage of blastozoan echinoderms.pdf
+2022-00-00-p A Review of Blastozoan echinoderm Respiratory Structures.pdf
+
+TO DOWNLOAD: 1997-10-00-p The role of fossils in the phylogenetic reconstruction of Echinodermata
