@@ -399,11 +399,34 @@ P Echinodermata (Klein 1734)
             PT MCZ 602b
     C Rhombiera (Zittel 1879)
     C Blastoidea (Say 1825)
-      O ? Fissiculata (Jaekel 1918)
   BP Crinozoa (Matsumoto 1929)
     C Crinoidea (Miller 1821)
+      BC Inadunata
+      BC Camerata
+      BC Flexibilia
+      BC Articulata Q # polyphyletic?
+      BC _indeterminate_
+        O _indeterminate_
+          F Echmatocrinidae (Sprinkle 1973) N
+            g Echmatocrinus (Sprinkle 1973) N
+              s brachiatus (Sprinkle 1973) TN
+                HT GSC 25962
+                PT USNM 165405
+                PT USNM 165406
+                PT USNM 165407
+                PT USNM 165408
+                PT USNM 165426
+                PT USNM 165427 ?
     C Paracrinoidea (Regnell 1945)
-  BP _indeterminate_ (Crinozoa / Blastozoa)
+      # See Kesling in Treatise, plus:
+      g Columbocystis
+      g Springerocystis
+      g Foerstecystis
+      g Ulrichocystis ?
+      g Palaeocystites ?
+      g Allocystites (Miller 1889) ?
+  BP _indeterminate_ # (Crinozoa / Blastozoa)
     C Diploporita (Müller 1854)
-  BP _elsewhere_
+  BP Echinozoa
     C Edrioblastoidea (Fay 1962)
+      g Astrocystites (Whiteaves 1897)
