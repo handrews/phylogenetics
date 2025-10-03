@@ -1,60 +1,402 @@
 P Echinodermata (Klein 1734)
-  BP Blastozoa n. s.p. (Sprinkle 1973)
+  BP Blastozoa (Sprinkle 1973) N
     C Eocrinoidea (Jaekel 1918)
-      O Imbricata n. o. (Sprinkle 1973) [= C Lepidocystoidea (Durham 1967)]
+      O Imbricata (Sprinkle 1973) N # [= C Lepidocystoidea (Durham 1967)]
         F Lepidocystidae (Durham 1967)
           g Lepidocystis (Foerste 1938)
-          g Kinzercystis n. gen. (Sprinkle 1973)
-      O _unnamed_
+            s wanneri (Foerste 1938) T
+              HT USNM 90773 # two counterparts
+              PT USNM 90773A # two counterparts
+              PT USNM 90773B
+              PT USNM 90773C1
+              PT USNM 90773C2
+              PT USNM 90773C3
+              PT MCZ 591  # ten specimens from SH-1
+              PT MCZ 592  # three specimens from EM-1
+              PT MCZ 593  # many new unstudied specimens from SH-2
+            s cf. wanneri (Foerst 1938)
+              UT MCZ 628A
+              UT MCZ 628B
+              UT MCZ 629A
+              UT MCZ 629B
+              UT PE-199
+              UT PE-199-A
+          g Kinzercystis (Sprinkle 1973) N
+            s durhami (Sprinkle 1973) NT
+              HT MCZ 581 # two counterparts
+              PT MCZ 582
+              PT MCZ 583
+              PT MCZ 584
+              PT MCZ 585
+              PT MCZ 586
+              PT MCZ 587
+              PT MCZ 729
+      O _unnamed_one_ (Sprinkle 1973) QN
         F Eocrinidae (Jaekel 1918)
           g Gogia (Walcott 1917)
+            s prolifica (Walcott 1917) T
+              LT USNM 64350  # Lectotype
+              ST MCZ 656     # Plesiotype
+              ST MCZ 657
+              ST MCZ 658
+              ST MCZ 659
+              ST MCZ 660
+              ST MCZ 661
+              ST MCZ 662
+              ST MCZ 663
+              ST MCZ 664
+              ST MCZ 665
+              ST MCZ 668
+              ST NYSM 12758
+              ST NYSM 12759
+            s longidactylus (Walcott 1886)
+              LT USNM 15315
+              YT USNM 15315  # syntype
+              ST AMNH 20001
+              ST AMNH 20002
+              ST AMNH 20003
+              ST MCZ 691
+              ST MCZ 692
+              ST MCZ 693
+              ST MCZ 694
+              ST MCZ 695
+              ST MCZ 696
+              ST MCZ 697
+              ST MCZ 698
+              ST MCZ 699
+              ST MCZ 700
+              ST MCZ 700
+              ST MCZ 701
+              ST MCZ 702
+              ST MCZ 703
+              ST MCZ 704
+              ST MCZ 705
+              ST GCM 2641
+              ST E-3340 # cast MCZ 669
+              ST MCZ 669
+              ST MCZ 670
+            s multibrachiatus (Kirk 1945)
+              HT USNM 108556a # two counterparts
+              PT USNM 108556b # two counterparts
+              OT USNM 165425  # topotype?  (? mark in orig text)
+            s spiralis (Robison 1965)
+              HT USNM 139550
+              PT USNM 139551
+              PT USNM 139552
+              PT USNM 139553
+              PT USNM 139554
+              PT USNM 139555
+              PT USNM 139556
+              PT USNM 139557
+              PT USNM 139558
+              PT USNM 139559
+              PT USNM 139560
+              PT USNM 139561
+              PT USNM 139562
+              PT USNM 139563
+              PT USNM 139564
+              PT USNM 139565
+              ST MCZ 706
+              ST MCZ 707
+              ST MCZ 708
+              ST MCZ 709
+              ST MCZ 710
+              ST MCZ 711
+              ST MCZ 712
+              ST MCZ 713
+              ST MCZ 714
+              ST MCZ 715
+              ST MCZ 716
+              ST MCZ 717
+              ST MCZ 730
+            s granulosa (Robison 1965)
+              HT UU 1001
+              ST MCZ 732
+              ST MCZ 733
+              ST MCZ 734
+              ST MCZ 735
+              ST MCZ 736
+              ST MCZ 737
+              ST MCZ 738
+              ST UU 1010p
+              ST UU 1010w
+              ST UU 1010x
+              ST UU 1011d
+              ST UU 1040p
+              ST USNM 165433
+              ST USNM 165434
+              ST USNM 165435
+              ST USNM 165436
+              ST PE 214
+              ST ISU 1440
+              ST MCZ 739
+            s palmeri (Sprinkle 1973) N
+              HT USNM 165418A
+              HT USNM 165418B
+              PT USNM 165414
+              PT USNM 165415
+              PT USNM 165416
+              PT USNM 165417
+              PT USNM 165419
+              PT USNM 165420
+              PT MCZ 676
+              PT MCZ 677
+              PT MCZ 678
+              PT MCZ 679
+              PT MCZ 680
+              PT MCZ 681
+              PT MCZ 682
+              PT MCZ 683
+              PT MCZ 684
+              PT MCZ 685
+              PT MCZ 686
+              PT MCZ 687
+              PT MCZ 688
+              PT MCZ 689
+              PT MCZ 690
+            s guntheri (Sprinkle 1973) N
+              HT UU 1010a
+              PT UU 1010c
+              PT UU 1010t
+              PT UU 1019b
+              PT UU 1019h
+              PT UU 1019s
+              PT UU 1040b
+              PT UU 1040f
+              PT MCZ 739
+              PT MCZ 740
+              PT MCZ 741
+            s kitchnerensis (Sprinkle 1973) N
+              HT GSC 25934
+              PT GSC 25935
+              PT GSC 25936
+              PT GSC 25937
+              PT GSC 25938
+              PT GSC 25939
+              PT GSC 25940
+              PT GSC 25941
+              PT GSC 25942
+              PT GSC 25943
+              PT GSC 25944
+              PT GSC 25945
+              PT GSC 25946
+              PT GSC 25947
+              PT GSC 25948
+              PT GSC 25949
+              PT GSC 25950
+              PT GSC 25951
+              PT GSC 25952
+              PT GSC 25953
+              PT GSC 25954
+              PT GSC 25955
+              PT GSC 25956
+              PT GSC 25957
+              PT GSC 25958
+              PT GSC 25959
+              PT GSC 25960
+              PT GSC 25961
+              PT GSC 10088a
+              PT GSC 10088b
+              PT GSC 10088c
+              PT GSC 10088d
+              PT GSC 10088e
+              PT GSC 10088f
+              PT GSC 10088g
+              PT GSC 10088h
+              PT UC 24691
+            s hobbsi (Sprinkle 1973) N
+              HT MCZ 631
+              PT MCZ 632
+              PT MCZ 633
+              PT MCZ 634
+              PT MCZ 635
+              PT MCZ 636
+              PT MCZ 637
+              Pk MCZ 638
+              PT MCZ 639
+              PT MCZ 640
+              PT MCZ 641
+              PT MCZ 642
+              PT MCZ 643
+            s radiata (Sprinkle 1973) ?N
+              HT USNM 165399
+              PT USNM 165400
+              PT USNM 165401
+              PT USNM 165402
+              PT USNM 165403 ?
+              PT USNM 165404 ?
+              PT GSC 25954
+            s sp.1 (Robison 1965)
+              HT USNM 165411
+            s sp.2 (Walcott 1917a) ?
+              HT USNM 63712
           g Acanthocystites (Barrande 1887)
+            s briareus (Barrande 1887) T
           g Akadocrinus (Prokop 1962)
+            s jani (Prokop 1962) T # (= A. nuntius (Prokop 1962))
+              LC E62  # latex cast, but others were also? type unclear
+              LC E40
+              LC E41
         F Lichenoididae (Jaekel 1918)
           g Lichenoides (Barrande 1846)
+            s priscus (Barrande 1846) T
+              LC E 11
+              LC E 12
+              LC E 17
+              LC E 21
+              LC E 25
+              LC E 26
+              LC E 27
+              LC E 66
+              LC E 70A
+              LC BC 141A
         F Rhopalocystidae (Ubaghs 1967)
           g Rhopalocystis (Ubaghs 1963)
-      O _unnamed_
-        F _indeterminate_
-          g Pareocrinus (Yavkovlev 1956)
-          g Eustypocystis n. gen. (Sprinkle 1973)
-          g Nolichuckia n. gen (Sprinkle 1973)
+            s destombesi (Ubaghs 1963) T
+      O _unnamed_two_ (Sprinkle 1973) N
+        F _indeterminate_one_
+          g Pareocrinus (Yakovlev 1956)
+            s ljubzovi (Yakovlev 1956) T
+          g Eustypocystis (Sprinkle 1973) N
+            s minor (Sprinkle 1973) NT
+              HT MCZ 719
+              PT MCZ 720
+              PT MCZ 721
+              PT MCZ 722
+              PT MCZ 723
+              PT MCZ 724
+              PT MCZ 725
+              PT MCZ 726
+              PT MCZ 727
+              PT MCZ 728
+              PT USNM 165423
+              PT USNM 165424
+          g Nolichuckia (Sprinkle 1973) N?  # Eocrinoids?
+            s casteri (Sprinkle 1973) NT
+              HT MCZ 616
+              PT MCZ 617
+              PT MCZ 618
+              PT MCZ 619
+              PT USNM 165410
         F Ascocystitidae (Ubaghs 1967)
           g Ascocystites (Barrande 1887)
-        F _indeterminate_
-          g Cambrocrinus (Orlowski 1968)
-          g Eocystites (Billings 1868)
-        F Macrocystellidae (Bather 1899)
-          g Macrocystella (Callaway 1877)
-      O _indeterminate_
-        F Trachelocrinidae n. fam. (Sprinkle 1973)
+            s drabowensis (Barrande 1887) T
+        F Macrocystellidae (Bather 1899) ?
+          g Macrocystella (Callaway 1877) # Direct ancest to Rhomb Cheirocrinus?
+            s mariae (Callaway 1877) T
+        F _indeterminate_two_
+          g Cambrocrinus (Orlowski 1968) ? # Eocrinoids?
+            s regularis (Orlowski 1968) T
+          g Eocystites (Billings 1868) ? # Eocrinoids?
+            s primaevus (Billings 1868) T
+      O _indeterminate_one_
+        F Trachelocrinidae (Sprinkle 1973) N? # Eocrinoids?
           g Trachelocrinus (Ulrich 1929)
-      O _indeterminate_
-        F ? Cryptocrinitidae (Bassler 1938)
+            s resseri Ulrich 1929
+              HT USNM 80490
+      O _indeterminate_two_
+        F Cryptocrinitidae (Bassler 1938) ? # Eocrinoids?
           g Cryptocrinites (von Buch 1840)
+            s laevis (Pander 1830) T
         F _indeterminate_
-          g ? Bockia (Gekker 1938)
-      O _indeterminate
+          g Bockia (Hecker 1938)
+            s neglecta (Hecker 1938) T
+      O _indeterminate_three_
         F Lingulocystidae (Ubaghs 1960)
-          g Lingulocystis (Thoral)
-        F _indeterminate_
-          g Cardiocystites (Barrande)
+          g Lingulocystis (Thoral 1935)
+            s elongata (Thoral 1935) T
+        F _indeterminate_three_
+          g Cardiocystites (Barrande 1887)
+            s bohemicus (Barrande 1887) T
+              TT EE 39 # casts of two known type specimens- what kind of type?
+              TT EE 51 # casts of two known type specimens- what kind of type?
         F Rhipidocystidae (Jaekel 1901)
           g Rhipidocystis (Jaekel 1901)
+            s gigas (Jaekal 1901) T
           g Batherocystis (Bassler 1950)
-          g Petalocystites n. gen. (Sprinkle 1973)
-    _provionally or definitely not eocrinoids_
-      g Cigaria (Barrande 1887)
+            s appressa (Bassler 1950) T
+          g Petalocystites (Sprinkle 1973) N
+            s ikecanensis (Sprinkle 1973) TN
+              HT MCZ 646
+              PT MCZ 647
+              PT MCZ 648
+              PT MCZ 649
+    _class_indeterminate_ # not, or probably not, eocrinoids
+      g Cigara (Barrande 1887)  # Spelled Cigaria throughout, but only here
+        s dusli (Barrande 1887) T
+          LC E 35
       F Springerocystidae (Bassler 1950)
-        g Archaeocystites (Barrande 1887)
-        g Palaeocystites (Billings 1859)
+        g Archaeocystites (Barrande 1887) # Paracrinoid or Diploporitan?
+          s medusa (Barrande 1887) T
+        g Palaeocystites (Billings 1859) # could go pretty much anywhere
+          s dawsoni (Billings 1859) T
         g Lysocystites (Miller 1889)
+          s nodosus (Hall 1864) T # unclear, unusual theca, no appendages seen yet
+            ST S3163a
+            ST S3163b
+            ST S3163c
+            ST S3163d
     C Parablastoidea (Hudson 1907)
       F Blastocystidae (Jaekel 1918)
         g Blastoidocrinus (Billings 1859)
+          s charcariaedens (Billing 1859) T
+            HT GSG 1016
+            ST UC 26022
+            ST AMNH 25068
+          s rossi (Sprinkle 1973) ?N
+            HT USNM 165378
+            PT USNM 165379
+            PT USNM 165380
+            PT USNM 165381
+            PT USNM 165382
+            PT USNM 165383
+            PT USNM 165384
+            PT USNM 165385
+            PT USNM 165386
+            PT USNM 165387
+            PT USNM 165388
+            PT USNM 165389
+            PT USNM 165390
+            PT USNM 165391
+            PT USNM 165392
+            PT USNM 165393
+            PT USNM 165394
+            PT USNM 165395
+            PT USNM 165396
+            PT USNM 165397
+            PT USNM 165398
+          s nevadensis (Sprinkle 1973) ?N
+            HT MCZ 613
+            PT MCZ 614
+            PT MCZ 615
+            PT MCZ 643
+            PT MCZ 644
+          s elongatus (Sprinkle 1973) ?N # "very questionably referred to [genus]"
+            HT 610
+            PT 611a
+            PT 611b
+            PT 611c
         g Blastocystis (Jaekel 1918)
-      F Meristoschismatidae n. fam. (Sprinkle 1973)
-        g Meristoschisma n. gen. (Sprinkle 1973)
+          s rossica (Jaekel 1918) T
+      F Meristoschismatidae (Sprinkle 1973) N
+        g Meristoschisma (Sprinkle 1973) N
+          s hudsoni (Sprinkle 1973) TN
+            HT MCZ 594
+            PT MCZ 595
+            PT MCZ 596
+            PT MCZ 597
+            PT MCZ 598
+            PT MCZ 599
+            PT MCZ 560
+            PT MCZ 561
+            PT MCZ 644
+            PT MCZ 645
+          s fayi (Sprinkle 1973) N
+            HT MCZ 602-D1
+            PT MCZ 602-D2-3
+            PT MCZ 602-RO-5
+            PT MCZ 602a
+            PT MCZ 602b
     C Rhombiera (Zittel 1879)
     C Blastoidea (Say 1825)
       O ? Fissiculata (Jaekel 1918)
