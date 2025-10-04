@@ -14,13 +14,13 @@ P Echinodermata (Klein 1734)
               PT MCZ 591  # ten specimens from SH-1
               PT MCZ 592  # three specimens from EM-1
               PT MCZ 593  # many new unstudied specimens from SH-2
-            s cf. wanneri (Foerst 1938)
-              UT MCZ 628A
-              UT MCZ 628B
-              UT MCZ 629A
-              UT MCZ 629B
-              UT PE-199
-              UT PE-199-A
+#           s cf. wanneri (Foerst 1938)
+#             UT MCZ 628A
+#             UT MCZ 628B
+#             UT MCZ 629A
+#             UT MCZ 629B
+#             UT PE-199
+#             UT PE-199-A
           g Kinzercystis (Sprinkle 1973) N
             s durhami (Sprinkle 1973) NT
               HT MCZ 581 # two counterparts
@@ -212,7 +212,7 @@ P Echinodermata (Klein 1734)
               PT MCZ 635
               PT MCZ 636
               PT MCZ 637
-              Pk MCZ 638
+              PT MCZ 638
               PT MCZ 639
               PT MCZ 640
               PT MCZ 641
@@ -226,10 +226,10 @@ P Echinodermata (Klein 1734)
               PT USNM 165403 ?
               PT USNM 165404 ?
               PT GSC 25954
-            s sp.1 (Robison 1965)
-              HT USNM 165411
-            s sp.2 (Walcott 1917a) ?
-              HT USNM 63712
+#           s sp.1 (Robison 1965)
+#             HT USNM 165411
+#           s sp.2 (Walcott 1917a) ?
+#             HT USNM 63712
           g Acanthocystites (Barrande 1887)
             s briareus (Barrande 1887) T
           g Akadocrinus (Prokop 1962)
@@ -292,7 +292,7 @@ P Echinodermata (Klein 1734)
       O _indeterminate_one_
         F Trachelocrinidae (Sprinkle 1973) N? # Eocrinoids?
           g Trachelocrinus (Ulrich 1929)
-            s resseri Ulrich 1929
+            s resseri (Ulrich 1929)
               HT USNM 80490
       O _indeterminate_two_
         F Cryptocrinitidae (Bassler 1938) ? # Eocrinoids?
@@ -321,7 +321,7 @@ P Echinodermata (Klein 1734)
               PT MCZ 647
               PT MCZ 648
               PT MCZ 649
-    _class_indeterminate_ # not, or probably not, eocrinoids
+    C _indeterminate_ # not, or probably not, eocrinoids
       g Cigara (Barrande 1887)  # Spelled Cigaria throughout, but only here
         s dusli (Barrande 1887) T
           LC E 35
@@ -401,10 +401,10 @@ P Echinodermata (Klein 1734)
     C Blastoidea (Say 1825)
   BP Crinozoa (Matsumoto 1929)
     C Crinoidea (Miller 1821)
-      BC Inadunata
-      BC Camerata
-      BC Flexibilia
-      BC Articulata Q # polyphyletic?
+      BC Inadunata (Wachsmuth & Springer 1897)
+      BC Camerata (Wachsmuth & Springer 1885)
+      BC Flexibilia (Zittel 1895)
+      BC Articulata (Zittel 1879) Q # polyphyletic? Miller 1821?
       BC _indeterminate_
         O _indeterminate_
           F Echmatocrinidae (Sprinkle 1973) N
@@ -418,15 +418,14 @@ P Echinodermata (Klein 1734)
                 PT USNM 165426
                 PT USNM 165427 ?
     C Paracrinoidea (Regnell 1945)
-      # See Kesling in Treatise, plus:
-      g Columbocystis
-      g Springerocystis
-      g Foerstecystis
-      g Ulrichocystis ?
-      g Palaeocystites ?
+      g Columbocystis (Bassler 1950)
+      g Springerocystis (Bassler 1950)
+      g Foerstecystis (Bassler 1950)
+      g Ulrichocystis (Bassler 1950) ?
+      g Palaeocystites (Billings 1858) ?
       g Allocystites (Miller 1889) ?
   BP _indeterminate_ # (Crinozoa / Blastozoa)
     C Diploporita (Müller 1854)
-  BP Echinozoa
+  BP Echinozoa (Haekel in Zittel 1895)
     C Edrioblastoidea (Fay 1962)
       g Astrocystites (Whiteaves 1897)
