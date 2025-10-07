@@ -1,0 +1,93 @@
+- &babcock
+  family: Babcock
+  given: Loren E.
+- &banks
+  family: Banks
+  given: M. R.
+- &burrett
+  family: Burrett
+  given: C. F.
+- &chen-a-l
+  family: Chen
+  given: Ailin
+- &cong-p-y
+  family: Cong
+  given: Peiyun
+- &david
+  family: David
+  given: Bruno
+- &derstler
+  family: Derstler
+  given: Kraig
+- &fatka
+  family: Fatka
+  given: Oldřich
+- &jell
+  family: Jell
+  given: P. A.
+- &gibson
+  family: Gibson
+  given: Adam P.
+- &guensburg
+  family: Guensburg
+  given: Thomas E.
+- &hahn
+  family: Hahn
+  given: Gerhard
+- &kordule
+  family: Kordule
+  given: Vratislav
+- &lefebvre
+  family: Lefebvre
+  given: Bertrand
+- &mooi
+  family: Mooi
+  given: Rich
+- &muller
+  family: Müller
+  given: Peter
+- &parsley
+  family: Parsley
+  given: Ronald
+- &peng-j
+  family: Peng
+  given: Jin
+- &rahman
+  family: Rahman
+  given: Imran A.
+- &robison
+  family: Robison
+  given: Richard A.
+- &roux
+  family: Roux
+  given: Michel
+- &smith
+  family: Smith
+  given: Andrew B.
+- &sprinkle
+  family: Sprinkle
+  given: James
+- &sumrall
+  family: Sumrall
+  given: Colin D.
+- &thompson
+  family: Thompson
+  given: Jeffrey R.
+- &webby
+  family: Webby
+  given: B. D.
+- &wen-r-q
+  family: Ren
+  given: Rongqin
+- &zamora
+  family: Zamora
+  given: Samuel
+- &zhao-j
+  family: Zhao
+  given: Jun
+- &zhao-y-l
+  family: Zhao
+  given: Yuanlong
+- &zhu-x-j
+  family: Zhu
+  given: Xue-Jian
