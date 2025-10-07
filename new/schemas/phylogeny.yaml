@@ -6,7 +6,7 @@ $defs:
     type: object
     minProperties: 1
     propertyNames:
-      pattern: ^[a-z][-a-z]*$
+      pattern: ^[a-z][_a-z]*$
     additionalProperties:
       $ref: "#/$defs/person"
   sources:
@@ -16,14 +16,14 @@ $defs:
         type: object
         minProperties: 1
         propertyNames:
-          pattern: ^[a-z][-a-z]*$
+          pattern: ^[a-z][_a-z]*$
         additionalProperties:
           $ref: "#/$defs/publication"
       articles:
         type: object
         minProperties: 1
         propertyNames:
-          pattern:  ^[a-z][-a-z]*-[12][7890]\d\d$
+          pattern: ^[a-z][_a-z]*_[12][7890]\d\d$
         additionalProperties:
           $ref: "#/$defs/article"
   trees:
@@ -46,7 +46,7 @@ $defs:
           properties:
             source:
               type: string
-              pattern: ^.*$
+              pattern: ^[a-z][_a-z]*_[12][7890]\d\d$
             taxonomies:
               type: array
               items:
@@ -167,7 +167,7 @@ $defs:
     properties:
       name:
         type: string
-        pattern: ^[A-Za-z]+$
+        pattern: ^[A-Za-z][a-z]*$
       rank:
         type: string
         enum:
@@ -291,7 +291,7 @@ $defs:
     type: object
   simpleDate:
     type: string
-    pattern: ^\d\d\d\d-\d\d-\d\d$ # ^[12][7890][\d\d]-[01]\d-[0123]\d$
+    pattern: ^[12][7890]\d\d-[01]\d-[0123]\d$
   modularDate:
     type: object
     required: [year]

@@ -75,8 +75,8 @@ if __name__ == '__main__':
 
       if filename == 'sources.yaml':
         for ref_id, article in data['articles'].items():
-          authors = '-'.join([a.split('-')[0] for a in article['authors']])
-          expected = authors + f"-{article['pubDate']['year']}"
+          authors = '_'.join([a.split('_')[0] for a in article['authors']])
+          expected = authors + f"_{article['pubDate']['year']}"
           if ref_id != expected:
             printe(f'*** ERROR: Expected "{ref_id}" to be "{expected}"')
     except KeyError as e:

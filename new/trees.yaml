@@ -904,7 +904,7 @@ synonyms:
     synonym: parsleya
     reason: homonym
 opinions:
-- source: zamora-sumrall-zhu-lefebvre-2017
+- source: zamora_sumrall_zhu_lefebvre_2017
   taxonomies:
     - taxon: echinodermata
       children:
@@ -967,7 +967,7 @@ opinions:
         outgroup: true
       - taxon: hemicosmites
         outgroup: true
-- source: parsley-zhao-2010
+- source: parsley_zhao_2010
   taxonomies:
     - taxon: blastozoa
       children:
@@ -991,7 +991,7 @@ opinions:
                   - GM 9-5-3235b
                   - GM 10-3-2000
                   - GM 9-5-2165a
-- source: webby-1968
+- source: webby_1968
   taxonomies:
   - taxon: pelmatozoa
     children:
@@ -1017,7 +1017,7 @@ opinions:
               - USGD 2311
               - USGD 2312
               - USGD 3303
-- source: guensburg-sprinkle-mooi-lefebvre-david-roux-derstler-2020
+- source: guensburg_sprinkle_mooi_lefebvre_david_roux_derstler_2020
   taxonomies:
   - taxon: crinoidea
     children:
@@ -1216,7 +1216,7 @@ opinions:
             - taxon: rhopalocystis
             - taxon: macrocystella
             - taxon: eumorphocystis
-- source: jell-burrett-banks-2008
+- source: jell_burrett_banks_2008
   taxonomies:
   - taxon: edrioasteroidea
     children:
@@ -1323,7 +1323,7 @@ opinions:
             - NMVP107491
             - NMVP107492
             - NMVP108991
-- source: zamora-rahman-sumrall-gibson-thompson-2022
+- source: zamora_rahman_sumrall_gibson_thompson_2022
   taxonomies:
   - taxon: echinodermata
     children:
@@ -1397,7 +1397,7 @@ opinions:
       - taxon: helicoplacus
         bracket: helicoplacoidea
         outgroup: true
-- source: smith-zamora-2013
+- source: smith_zamora_2013
   taxonomies:
   - taxon: echinodermata
     stem: true
@@ -1438,7 +1438,7 @@ opinions:
                     - taxon: lepidocystis
                     - taxon: gogia
                   - taxon: stromatocystites
-- source: zamora-smith-2012
+- source: zamora_smith_2012
   taxonomies:
     - taxon: echinodermata
       children:
@@ -1490,7 +1490,7 @@ opinions:
           children:
           - taxon: titanocrinus
           - taxon: aethocrinus
-- source: robison-sprinkle-1969
+- source: robison_sprinkle_1969
   taxonomies:
   - taxon: echinodermata
     children:
@@ -1513,7 +1513,7 @@ opinions:
               - USNM 163255
               - USNM 163256
               - USNM 163257
-- source: muller-hahn-2010
+- source: muller_hahn_2010
   taxonomies:
   - taxon: isorophida
     children:
@@ -1642,7 +1642,7 @@ opinions:
       - taxon: discocystinae
     - taxon: hemicystitidae
     - taxon: rhenopyrgidae
-- source: fatka-kordule-1985
+- source: fatka_kordule_1985
   taxonomies:
   - taxon: ctenocystoidea
     children:
@@ -1657,7 +1657,7 @@ opinions:
           - taxon: briareus
         specimens:
           holotype: OF 002
-- source: zhao-sumrall-parsley-peng-2010
+- source: zhao_sumrall_parsley_peng_2010
   taxonomies:
   - taxon: edrioasteroidea
     children:
@@ -1689,7 +1689,7 @@ opinions:
               - GM 3665
               - GM 8052
               - GM 9292
-- source: wen-babcock-peng-robison-2019
+- source: wen_babcock_peng_robison_2019
   taxonomies:
   - taxon: edrioasteroidea
     children:
@@ -1706,7 +1706,7 @@ opinions:
             specimens:
               holotype: [KUMIP 49294A, KUMIP 49294B]
               paratypes:
-- source: sprinkle-1985
+- source: sprinkle_1985
   taxonomies:
   - taxon: echinozoa
     children:
@@ -1725,7 +1725,7 @@ opinions:
               new: true
               specimens:
                 holotype: USNM 172047
-- source: zamora-guensburg-sprinkle-2024
+- source: zamora_guensburg_sprinkle_2024
   taxonomies:
   - taxon: echinodermata
     children:
@@ -1745,7 +1745,7 @@ opinions:
             specimens:
               paratypes:
               - PE 93415
-- source: zhao-rahman-zamora-chen-cong-2022
+- source: zhao_rahman_zamora_chen_cong_2022
   taxonomies:
   - taxon: echinodermata
     children:
@@ -1767,7 +1767,7 @@ opinions:
               holotype: YKLP 13397
               paratypes:
               - YKLP 13553
-- source: ubaghs-robison-1988
+- source: ubaghs_robison_1988
   taxonomies:
   - taxon: homalozoa
     children:

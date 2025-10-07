@@ -10,10 +10,10 @@ banks:
 burrett:
   family: Burrett
   given: C. F.
-chen-a-l:
+chen_a_l:
   family: Chen
   given: Ailin
-cong-p-y:
+cong_p_y:
   family: Cong
   given: Peiyun
 david:
@@ -55,7 +55,7 @@ muller:
 parsley:
   family: Parsley
   given: Ronald
-peng-j:
+peng_j:
   family: Peng
   given: Jin
 rahman:
@@ -85,7 +85,7 @@ thompson:
 webby:
   family: Webby
   given: B. D.
-wen-r-q:
+wen_r_q:
   family: Ren
   given: Rongqin
 wright:
@@ -94,12 +94,12 @@ wright:
 zamora:
   family: Zamora
   given: Samuel
-zhao-j:
+zhao_j:
   family: Zhao
   given: Jun
-zhao-y-l:
+zhao_y_l:
   family: Zhao
   given: Yuanlong
-zhu-x-j:
+zhu_x_j:
   family: Zhu
   given: Xue-Jian
