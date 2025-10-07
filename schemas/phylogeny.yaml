@@ -1,4 +1,6 @@
 $schema: https://json-schema.org/draft/2020-12/schema
+$id: phylogeny
+
 type: object
 properties:
   publications:
@@ -69,10 +71,10 @@ $defs:
         type: string
       pages:
         type: array
-          items:
-            type: [integer, string]
-          minItems: 2
-          maxItems: 2
+        items:
+          type: [integer, string]
+        minItems: 2
+        maxItems: 2
       title:
         type: string
       authors:
@@ -141,8 +143,8 @@ $defs:
     properties:
       specimens:
         type: array
-          items:
-            $ref: "#/$defs/specimen"
+        items:
+          $ref: "phylogeny#/$defs/specimen"
     unevaluatedProperties: false
   phylogeny:
     type: object
@@ -164,6 +166,8 @@ $defs:
         type: array
         items:
           type: string
+  specimen:
+    type: object
   simpleDate:
     type: string
     pattern: ^[12][7890][\d\d]-[01]\d-[0123]\d$
