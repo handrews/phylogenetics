@@ -72,6 +72,10 @@ taxa:
   name: belli
   auth: [Sumrall, Brett, Cornell]
   year: 2006
+- &bifida
+  name: bifida
+  auth: [Ubaghs, Robison]
+  year: 1988
 - &blairi
   name: blairi
   auth: [Miller]
@@ -127,6 +131,34 @@ taxa:
   name: chinensis
   auth: [Zhao, Sumrall, Parsley, Peng]
   year: 2010
+- &cincta-class
+  name: Cincta
+  rank: Class
+  auth: [Jaekel]
+  year: 1918
+- &cincta-order
+  name: Cincta
+  rank: Order
+  auth: [Jaekel]
+  year: 1918
+- &colodon
+  name: colodon
+  auth: [Ubaghs, Robison]
+  yaer: 1988
+- &cornuta
+  name: Cornuta
+  rank: Order
+  auth: [Jaekel]
+  year: 1901
+- &cothurnocystidae
+  name: Cothurnocystidae
+  rank: Family
+  auth: [Bather]
+  year: 1913
+- &cothurnocystis
+  name: Cothurnocystis
+  auth: [Bather]
+  year: 1913
 - &courtessolea
   name: Courtessolea
   auth: [Domínguez-Alonso]
@@ -141,6 +173,11 @@ taxa:
   rank: Subphylum
   auth: [Matsumoto]
   year: 1929
+- &ctenocystida
+  name: Ctenocystida
+  rank: Order
+  auth: [Ubaghs, Robison]
+  year: 1988
 - &ctenocystidae
   name: Ctenocystidae
   rank: Family
@@ -242,6 +279,10 @@ taxa:
   name: Eknomocrinus
   auth: [Guensburg, Sprinkle]
   year: 2003
+- &elizae
+  name: elizae
+  auth: [Bather]
+  year: 1913
 - &eocrinoidea
   name: Eocrinoidea
   rank: Class
@@ -377,6 +418,16 @@ taxa:
   rank: Subphylum
   auth: [Whitehouse]
   year: 1941
+- &homostelea
+  name: Homostelea
+  rank: Class
+  auth: [Gill, Caster]
+  year: 1960
+- &homoiostelea
+  name: Homoiostelea
+  rank: Class
+  auth: [Gill, Caster]
+  year: 1960
 - &hybocrinus
   name: Hybocrinus
   auth: [Billings]
@@ -492,6 +543,11 @@ taxa:
   name: mansfieldi
   auth: [Guensburg]
   year: 2010
+- &mitrata
+  name: Mitrata
+  rank: Order
+  auth: [Jaekel]
+  year: 1918
 - &moncaiensis
   name: moncaiensis
   auth: [Zamora, Smith]
@@ -675,10 +731,24 @@ taxa:
   name: Sinoeocrinus
   auth: [Zhao, Huang, Gong]
   year: 1994
+- &soluta-class
+  name: Soluta
+  rank: Class
+  auth: [Jaekel]
+  year: 1901
+- &soluta-order
+  name: Soluta
+  rank: Order
+  auth: [Jaekel]
+  year: 1901
 - &spencensis
   name: spencensis
   auth: [Wen, Babcock, Peng, Robison]
   year: 2019
+- &sprinklei
+  name: sprinklei
+  auth: [Ubaghs, Robison]
+  yaer: 1988
 - &sprinkleoglobus
   name: Sprinkleoglobus
   auth: [Zamora, Guensburg, Sprinkle]
@@ -701,6 +771,11 @@ taxa:
   name: Stromatocystites
   auth: [Pompeckj]
   year: 1896
+- &stylophora
+  name: Stylophora
+  rank: Class
+  auth: [Gill, Caster]
+  year: 1960
 - &sumralli
   name: sumralli
   auth: [Guensburg, Sprinkle]
@@ -1688,3 +1763,49 @@ articles:
               holotype: YKLP 13397
               paratypes:
               - YKLP 13553
+- source: ubaghs-robison-1988
+  taxonomy:
+  - taxon: *homalozoa
+    children:
+    - taxon: *ctenocystoidea
+      children:
+      - taxon: *ctenocystida
+        new: true
+        children:
+        - taxon: *ctenocystidae
+          children:
+          - taxon: *ctenocystis
+            children:
+            - taxon: *colodon
+              new: true
+              specimens:
+                holotype: USNM 423874
+      - taxon: *homoiostelea
+        children:
+        - taxon: *soluta-order
+          children:
+          - taxon: _indeterminate_
+            rank: Family
+            children:
+            - taxon: *castericystis
+              children:
+              - taxon: *sprinklei
+                provisional: true
+                new: true
+                specimens:
+                  holotype: USNM 423877
+      - taxon: *stylophora
+        children:
+        - taxon: *cornuta
+          children:
+          - taxon: *cothurnocystidae
+            children:
+            - taxon: *cothurnocystis
+              children:
+              - taxon: *elizae
+                type: true
+              - taxon: *bifida
+                provisional: true
+                new: true
+                specimens:
+                  holotype: USNM 415804

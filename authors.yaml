@@ -1,93 +1,105 @@
-- &babcock
+ausich:
+  family: Ausich
+  given: William I.
+babcock:
   family: Babcock
   given: Loren E.
-- &banks
+banks:
   family: Banks
   given: M. R.
-- &burrett
+burrett:
   family: Burrett
   given: C. F.
-- &chen-a-l
+chen-a-l:
   family: Chen
   given: Ailin
-- &cong-p-y
+cong-p-y:
   family: Cong
   given: Peiyun
-- &david
+david:
   family: David
   given: Bruno
-- &derstler
+derstler:
   family: Derstler
   given: Kraig
-- &fatka
+fatka:
   family: Fatka
   given: Oldřich
-- &jell
+jell:
   family: Jell
   given: P. A.
-- &gibson
+gibson:
   family: Gibson
   given: Adam P.
-- &guensburg
+guensburg:
   family: Guensburg
   given: Thomas E.
-- &hahn
+hahn:
   family: Hahn
   given: Gerhard
-- &kordule
+kammer:
+  family: Kammer
+  given: Thomas W.
+kordule:
   family: Kordule
   given: Vratislav
-- &lefebvre
+lefebvre:
   family: Lefebvre
   given: Bertrand
-- &mooi
+mooi:
   family: Mooi
   given: Rich
-- &muller
+muller:
   family: Müller
   given: Peter
-- &parsley
+parsley:
   family: Parsley
   given: Ronald
-- &peng-j
+peng-j:
   family: Peng
   given: Jin
-- &rahman
+rahman:
   family: Rahman
   given: Imran A.
-- &robison
+rhenberg:
+  family: Rhenberg
+  given: Elizabeth C.
+robison:
   family: Robison
   given: Richard A.
-- &roux
+roux:
   family: Roux
   given: Michel
-- &smith
+smith:
   family: Smith
   given: Andrew B.
-- &sprinkle
+sprinkle:
   family: Sprinkle
   given: James
-- &sumrall
+sumrall:
   family: Sumrall
   given: Colin D.
-- &thompson
+thompson:
   family: Thompson
   given: Jeffrey R.
-- &webby
+webby:
   family: Webby
   given: B. D.
-- &wen-r-q
+wen-r-q:
   family: Ren
   given: Rongqin
-- &zamora
+wright:
+  family: Wright
+  given: David F.
+zamora:
   family: Zamora
   given: Samuel
-- &zhao-j
+zhao-j:
   family: Zhao
   given: Jun
-- &zhao-y-l
+zhao-y-l:
   family: Zhao
   given: Yuanlong
-- &zhu-x-j
+zhu-x-j:
   family: Zhu
   given: Xue-Jian

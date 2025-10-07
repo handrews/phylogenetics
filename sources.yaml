@@ -22,26 +22,47 @@ publications:
 - id: vestnik
   name: Věstník Ústředního ústavu geologického
 articles:
+- id: ausich-kammer-rhenberg-wright-20115
+  title: Early phylogeny of crinoids within the pelmatozoan clade
+  journal: palaeontology
+  volume: 58
+  number: 6
+  pages:
+  - 937
+  - 952
+  authors:
+  - ausich
+  - kammer
+  - rhenberg
+  - wright
+  pubDate:
+    year: 2015
+    month: 10
+  processDates:
+    received: 2015-06-02
+    revised: 2015-08-24
+    accepted: 2015-08-24
+  identifiers:
+    doi: 10.1111/pala.12204
 - id: fatka-kordule-1985
   title: Etoctenocystis bohemica gen. et sp. nov. - new Ctenocystoid from Czechoslovakia (Echinodermata, Middle Cambrian)
-  journal:
-    name: vestnik
-    volume: 60
-    number: 4
-    pages:
-    - 225
-    - 230
-    pubDate:
-      year: 1985
-      month: 1
-    processDates:
-    - submitted: 1984-10-02
-    - received: 1985-02-05
-    authors:
-    - fatka
-    - kordule
-    identifiers:
-      url: https://www.researchgate.net/publication/277013746_Etoctenocystis_bohemica_gen_et_sp_nov_-_new_Ctenocystoid_from_Czechoslovakia_Echinodermata_Middle_Cambrian#fullTextFileContent
+  journal: vestnik
+  volume: 60
+  number: 4
+  pages:
+  - 225
+  - 230
+  pubDate:
+    year: 1985
+    month: 1
+  processDates:
+  - submitted: 1984-10-02
+  - received: 1985-02-05
+  authors:
+  - fatka
+  - kordule
+  identifiers:
+    url: https://www.researchgate.net/publication/277013746_Etoctenocystis_bohemica_gen_et_sp_nov_-_new_Ctenocystoid_from_Czechoslovakia_Echinodermata_Middle_Cambrian#fullTextFileContent
 - id: guensburg-sprinkle-mooi-lefebvre-david-roux-derstler-2020
   title: Athenacrinus n. gen. and other early echinoderm taxa inform crinoid origin and arm evolution
   journal: jofpaleo
@@ -249,6 +270,21 @@ articles:
   - sprinkle
   identifiers:
     url: https://kuscholarworks.ku.edu/entities/publication/de425cc9-1319-41f5-b1b4-0c6a6e13757a
+- id: ubaghs-robison-1988
+  title: Homalozoan echinoderms of the Wheeler Formation (Middle Cambrian) of Western Utah
+  journal: kansas
+  number: 129
+  pubDate:
+    year: 1988
+    month: 7
+    day: 14
+  processDates:
+    received: 1987-11-15
+  authors:
+  - ubaghs
+  - robison
+  identifiers:
+    url: https://www.researchgate.net/publication/239588179_Homalozoan_echinoderms_of_the_Wheeler_Formation_Middle_Cambrian_of_Western_Utah
 - id: webby-1968
   title: Astrocystites distans sp. nov., an edrioblastoid from the Ordovician of eastern Australia
   journal: palaeontology
@@ -328,9 +364,9 @@ articles:
   title: Cambrian stalked echinoderms show unexpected plasticity of arm construction
   journal: procrsocb
   volume: 279
-    pages:
-    - 293
-    - 298
+  pages:
+  - 293
+  - 298
   pubDate:
     year: 2012
   processDates:
@@ -368,6 +404,7 @@ articles:
   journal: papersinpalaeo
   number: 8
   article: e1465
+  pubDate:
     year: 2022
     month: 8
     day: 27
