@@ -1,4 +1,6 @@
 import sys
+import pathlib
+
 import yaml
 import jschon
 
@@ -51,29 +53,24 @@ def load_yaml(filename, debug=True):
       return yaml.safe_load(fd)
 
 if __name__ == '__main__':
-  schema = jschon.JSONSchema(load_yaml('schemas/phylogeny.yaml'))
-  r = schema.validate()
-  assert r.valid
+  schema_library = jschon.JSONSchema(load_yaml('schemas/phylogeny.yaml'))
+  r = schema_library.validate()
+  if not r.valid:
+    printe("Schema not valid against metaschema!")
+    printe(yaml.safe_dump(r.output('detailed')))
+
   printe("Schema is valid.")
-  defs = schema['$defs']
+  defs = schema_library['$defs']
+  schema = None
 
   for filename in sys.argv[1:]:
-    printe(f'Safe-loading "{filename}"')
-    load_yaml(filename, debug=False)
-    printe(f'Loading "{filename}"')
     data = load_yaml(filename)
-
-    if filename == 'authors.yaml':
-      r = defs['authors'].evaluate(jschon.JSON(data))
+    try:
+      schema = defs[pathlib.Path(filename).stem]
+      r = schema.evaluate(jschon.JSON(data))
       if not r.valid:
         printe(yaml.safe_dump(r.output('detailed')))
       else:
         printe(f'"{filename}" is valid.')
-    elif filename == 'sources.yaml':
-      r = defs['sources'].evaluate(jschon.JSON(data))
-      if not r.valid:
-        printe(yaml.safe_dump(r.output('detailed')))
-      else:
-        printe(f'"{filename}" is valid.')
-    else:
-      printe(f'Unrecognized filename "{filename}"')
+    except KeyError as e:
+      printe(repr(e))

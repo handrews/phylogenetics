@@ -6,7 +6,7 @@ $defs:
     type: object
     minProperties: 1
     propertyNames:
-      pattern: ^.*$ # ^[^a-z][-a-z]*$
+      pattern: ^[a-z][-a-z]*$
     additionalProperties:
       $ref: "#/$defs/person"
   sources:
@@ -16,16 +16,45 @@ $defs:
         type: object
         minProperties: 1
         propertyNames:
-          pattern: ^.*$ # ^[^a-z][-a-z]*$
+          pattern: ^[a-z][-a-z]*$
         additionalProperties:
           $ref: "#/$defs/publication"
       articles:
         type: object
         minProperties: 1
         propertyNames:
-          pattern: ^.*$ # ^[^a-z][-a-z]*-[12][7890]\d\d$
+          pattern:  ^[a-z][-a-z]*-[12][7890]\d\d$
         additionalProperties:
           $ref: "#/$defs/article"
+  trees:
+    type: object
+    required: [taxa, opinions]
+    additionalProperties: false
+    properties:
+      taxa:
+        type: object
+        additionalProperties:
+          $ref: "#/$defs/taxon"
+      synonyms:
+        type: object
+        additionalProperties:
+          $ref: "#/$defs/taxonSynonym"
+      opinions:
+        type: array
+        items:
+          type: object
+          properties:
+            source:
+              type: string
+              pattern: ^.*$
+            taxonomies:
+              type: array
+              items:
+                $ref: "#/$defs/taxonomyTree"
+            phylogenies:
+              type: array
+              items:
+                $ref: "#/$defs/phylogeny"
   person:
     type: object
     anyOf:
@@ -132,6 +161,76 @@ $defs:
           type: string
       notes:
         type: string
+  taxonBasic:
+    type: object
+    required: [name, auth]
+    properties:
+      name:
+        type: string
+        pattern: ^[A-Za-z]+$
+      rank:
+        type: string
+        enum:
+        - Phylum
+        - Subphylum
+        - Superclass
+        - Class
+        - Subclass
+        - Superorder
+        - Order
+        - Suborder
+        - Superfamily
+        - Family
+        - Subfamily
+        - genus
+        - subgenus
+        - species
+        - subspecies
+      auth:
+        type: array
+        minItems: 1
+        items:
+          type: string
+      year:
+        type: integer
+        minimum: 1700
+        maximum: 2030 # Fragile!  But helpful for now.  Apologies to the future.
+      bracket:
+        ### TODO: Replace this property name
+        type: string
+      status:
+        type: string
+      in:
+        type: array
+        items:
+          type: string
+      ex:
+        type: object
+        requird: [auth]
+        properties:
+          auth:
+            type: array
+            minItems: 1
+            items:
+              type: string
+          year:
+            type: integer
+            minimum: 1700
+            maximum: 2030 # Fragile!  But helpful for now.  Apologies to the future.
+      notes:
+        type: string
+  taxon:
+    $ref: "#/$defs/taxonBasic"
+    unevaluatedProperties: false
+  taxonSynonym:
+    $ref: "#/$defs/taxonBasic"
+    required: [synonym]
+    unevaluatedProperties: false
+    properties:
+      synonym:
+        type: string
+      reason:
+        type: string
   tree:
     $id: tree
     $dynamicAnchor: tree
@@ -149,13 +248,14 @@ $defs:
         type: array
         items:
           $dynamicRef: tree
-  taxonomy:
-    $ref: taxonomyTree
   taxonomyTree:
     $id: taxonomyTree
     $dynamicAnchor: tree
     $ref: tree
     properties:
+      stem:
+        type: boolean
+        default: false
       specimens:
         type: array
         items:
@@ -163,16 +263,21 @@ $defs:
     unevaluatedProperties: false
   phylogeny:
     type: object
+    required: [tree]
+    additionalProperties: false
     properties:
-      type:
+      treeType:
         type: string  # Enum?  Meh.
       tree:
-        $ref: tree
+        $ref: phylogenyTree
   phylogenyTree:
     $id: phylogenyTree
     $dynamicAnchor: tree
     $ref: tree
     properties:
+      outgroup:
+        type: boolean
+        default: false
       data:
         type: object
         additionalProperties:
@@ -181,6 +286,7 @@ $defs:
         type: array
         items:
           type: string
+    unevaluatedProperties: false
   specimen:
     type: object
   simpleDate:
