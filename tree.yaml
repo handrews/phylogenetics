@@ -829,7 +829,7 @@ synonyms:
   synonym: *parsleya
   reason: homonym
 articles:
-- id: zamora-sumrall-zhu-lefebvre-2017
+- source: zamora-sumrall-zhu-lefebvre-2017
   taxonomy:
     definitions:
     - taxon: *echinodermata
@@ -893,7 +893,7 @@ articles:
       outgroup: true
     - taxon: *hemicosmites
       outgroup: true
-- id: parsley-zhao-2010
+- source: parsley-zhao-2010
   taxonomy:
     definitions:
     - taxon: *blastozoa
@@ -918,7 +918,7 @@ articles:
                   - GM 9-5-3235b
                   - GM 10-3-2000
                   - GM 9-5-2165a
-- id: webby-1968
+- source: webby-1968
   taxonomy:
   - taxon: *pelmatozoa
     children:
@@ -944,7 +944,7 @@ articles:
               - USGD 2311
               - USGD 2312
               - USGD 3303
-- id: guensburg-sprinkle-mooi-lefebvre-david-roux-derstler-2020
+- source: guensburg-sprinkle-mooi-lefebvre-david-roux-derstler-2020
   taxonomy:
   - taxon: *crinoidea
     children:
@@ -1140,7 +1140,7 @@ articles:
           - taxon: *rhopalocystis
           - taxon: *macrocystella
           - taxon: *eumorphocystis
-- id: jell-burrett-banks-2008
+- source: jell-burrett-banks-2008
   taxonomy:
   - taxon: *edrioasteroidea
     children:
@@ -1247,7 +1247,7 @@ articles:
             - NMVP107491
             - NMVP107492
             - NMVP108991
-- id: zamora-rahman-sumrall-gibson-thompson-2022
+- source: zamora-rahman-sumrall-gibson-thompson-2022
   taxonomy:
   - taxon: *echinodermata
     children:
@@ -1319,7 +1319,7 @@ articles:
     - taxon: *helicoplacus
       bracket: *helicoplacoidea
       outgroup: true
-- id: smith-zamora-2013
+- source: smith-zamora-2013
   taxonomies:
   - taxon: *echinodermata
     stem: true
@@ -1359,7 +1359,7 @@ articles:
                   - taxon: *lepidocystis
                   - taxon: *gogia
                 - taxon: *stromatocystites
-- id: zamora-smith-2012
+- source: zamora-smith-2012
   taxonomy:
     definitions:
     - taxon: *echinodermata
@@ -1411,7 +1411,7 @@ articles:
         children:
         - *titanocrinus
         - *aethocrinus
-- id: robison-sprinkle-1969
+- source: robison-sprinkle-1969
   taxonomy:
   - taxon: *echinodermata
     children:
@@ -1434,7 +1434,7 @@ articles:
               - USNM 163255
               - USNM 163256
               - USNM 163257
-- id: muller-hahn-2010
+- source: muller-hahn-2010
   taxonomy:
   - taxon: *isorophida
     children:
@@ -1563,7 +1563,7 @@ articles:
       - taxon: *discocystinae
     - taxon: *hemicystitidae
     - taxon: *rhenopyrgidae
-- id: fatka-kordule-1985
+- source: fatka-kordule-1985
   taxonomy:
   - taxon: *ctenocystoidea
     children:
@@ -1578,7 +1578,7 @@ articles:
           - *briareus
         specimens:
           holotype: OF 002
-- id: zhao-sumrall-parsley-peng-2010
+- source: zhao-sumrall-parsley-peng-2010
   taxonomy:
   - taxon: *edrioasteroidea
     children:
@@ -1610,7 +1610,7 @@ articles:
               - GM 3665
               - GM 8052
               - GM 9292
-- id: wen-babcock-peng-robison-2019
+- source: wen-babcock-peng-robison-2019
   taxonomy:
   - taxon: *edrioasteroidea
     children:
@@ -1627,7 +1627,7 @@ articles:
             specimens:
               holotype: [KUMIP 49294A, KUMIP 49294B]
               paratypes:
-- id: sprinkle-1985
+- source: sprinkle-1985
   taxonomy:
   - taxon: *echinozoa
     children:
@@ -1646,7 +1646,7 @@ articles:
               new: true
               specimens:
                 holotype: USNM 172047
-- id: zamora-guensburg-sprinkle-2024
+- source: zamora-guensburg-sprinkle-2024
   taxonomy:
   - taxon: *echinodermata
     children:
@@ -1666,7 +1666,7 @@ articles:
             specimens:
               paratypes:
               - PE 93415
-- id: zhao-rahman-zamora-chen-cong-2022
+- source: zhao-rahman-zamora-chen-cong-2022
   taxonomy:
   - taxon: *echinodermata
     children:
