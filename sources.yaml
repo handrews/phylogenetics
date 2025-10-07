@@ -1,442 +1,450 @@
 publications:
-- id: alcheringa
-  name: Alcheringa
-- id: bullgeo
-  name: Bulletins of Geosciences
-- id: geomag
-  name: Geological Magazine
-- id: geo-et-palaeo
-  name: Geologica et Palaeontologica
-- id: jofpaleo
-  name: Journal of Paleontology
-- id: palaeontology
-  name: Palaeontology
-- id: papersinpalaeo
-  name: Papers in Palaeontology
-- id: procrsocb
-  name: Proceedings of the Royal Society B
-- id: science-new-series
-  name: Science (New Series)
-- id: kansas
-  name: The University of Kansas Paleontological Contributions
-- id: vestnik
-  name: Věstník Ústředního ústavu geologického
+  alcheringa:
+    name: Alcheringa
+  bullgeo:
+    name: Bulletins of Geosciences
+  geomag:
+    name: Geological Magazine
+  geo-et-palaeo:
+    name: Geologica et Palaeontologica
+  jofpaleo:
+    name: Journal of Paleontology
+  palaeontology:
+    name: Palaeontology
+  papersinpalaeo:
+    name: Papers in Palaeontology
+  procrsocb:
+    name: Proceedings of the Royal Society B
+  science-new-series:
+    name: Science (New Series)
+  kansas:
+    name: The University of Kansas Paleontological Contributions
+  vestnik:
+    name: Věstník Ústředního ústavu geologického
 articles:
-- id: ausich-kammer-rhenberg-wright-20115
-  title: Early phylogeny of crinoids within the pelmatozoan clade
-  journal: palaeontology
-  volume: 58
-  number: 6
-  pages:
-  - 937
-  - 952
-  authors:
-  - ausich
-  - kammer
-  - rhenberg
-  - wright
-  pubDate:
-    year: 2015
-    month: 10
-  processDates:
-    received: 2015-06-02
-    revised: 2015-08-24
-    accepted: 2015-08-24
-  identifiers:
-    doi: 10.1111/pala.12204
-- id: fatka-kordule-1985
-  title: Etoctenocystis bohemica gen. et sp. nov. - new Ctenocystoid from Czechoslovakia (Echinodermata, Middle Cambrian)
-  journal: vestnik
-  volume: 60
-  number: 4
-  pages:
-  - 225
-  - 230
-  pubDate:
-    year: 1985
-    month: 1
-  processDates:
-  - submitted: 1984-10-02
-  - received: 1985-02-05
-  authors:
-  - fatka
-  - kordule
-  identifiers:
-    url: https://www.researchgate.net/publication/277013746_Etoctenocystis_bohemica_gen_et_sp_nov_-_new_Ctenocystoid_from_Czechoslovakia_Echinodermata_Middle_Cambrian#fullTextFileContent
-- id: guensburg-sprinkle-mooi-lefebvre-david-roux-derstler-2020
-  title: Athenacrinus n. gen. and other early echinoderm taxa inform crinoid origin and arm evolution
-  journal: jofpaleo
-  volume: 94
-  number: 2
-  pubDate:
-    year: 2020
-  pages:
-  - 311
-  - 333
-  processDates:
-    accepted: 2019-10-03
-  identifiers:
-    doi: 10.1017/jpa.2019.87
-- id: jell-burrett-banks-2008
-  title: Cambrian and Ordovician echinoderms from eastern Australia
-  journal: alcheringa 
-  volume: 9
-  issue: 3
-  pages:
-  - 183
-  - 208
-  authors:
-  - jell
-  - burrett
-  - banks
-  pubDate:
-    year: 1985
-  processDates:
-    received: 1984-11-22
-    online: 2008-11-27
-  identifiers:
-    doi: 10.1080/03115518508618967
-- id: muller-hahn-2010
-  title: Edrioasteroidea aus den Seifen-Schichten im Westerwald, Rheinisches Schiefer-Gebirge (Unter-Devon, Deutschland), Teil 1
-  journal: geo-et-palaeo
-  volume: 43
-  pubDate:
-    year: 2010
-    month: 3
-    day: 30
-  pages:
-  - 9
-  - 47
-  authors:
-  - muller
-  - hahn
-  quotes:
-  - |
-    Bell (1976) established the order Isorophida with
-    the two suborders Lebedocystina and Isorophina.
-    The Isorophina are further subdivided into
-    Isorophidae (Bell, 1976) [correct name Hemicystidae,
-    provided the genus Hemicystitides (Hall, 1852) is included
-    in this family) for the original, Ordovician-Silurian
-    genera, and Agelacrinitidae (Chapman, 1860) for
-    the advanced Devonian-Carboniferous genera.
-    The Pyrgocystidae (Kesling, 1967) with the genus
-    Pergocystis (Bather, 1915) and the Carboniferous
-    Lispidecodidae (Kesling, 1967) with
-    Lispidecodus (Kesling, 1967) are not mentioned in Bell.
-  - |
-    Holloway and Jell (1983) established the Rhenopyrgidae
-    with the genus Rhenopyrgus (Dehm, 1961). They left the
-    assignment of this family to an order open.
-  - |
-    Smith and Arbizu (1987) combine all taxa of the Isorophina
-    into the subfamily Agelacrinitinae and present their phylogeny.
-  - |
-    Sumrall (1993) again uses the families Isorophidae and
-    Agelacrinitidae in the sense of Bell.
-  - |
-    Sumrall, Garbisch and Pope (2000) establish the subfamily
-    Postibullinae within the Agelacrinitidae
-  - |
-    Guensburg and Sprinkle (1994) subdivide the Isorophida
-    into only two families without subdivision into
-    suborders — Agelacrinitidae (incl. the Hemicystitidae)
-    and the ebetodiscidae (incl. the Pyrgocystidae).
-  - |
-    Here, we follow the classification by
-    Guensburg & Sprinkle (1994), but classify the Hemicystitidae
-    and the Pyrgocystidae as independent families. This now
-    provides three families and three subfamilies for the
-    Devonian-Carboniferous forms — the Agelacrinitidae
-    (with the Agelacrinitinae, Discocystinae, and Postibullinae),
-    the Pyrgocystidae, and the Rhenopyrgidae. With the exception
-    of the Discocystinae (only documented from the Upper Devonian
-    onward), all of these families and subfamilies occur in the
-    German Lower Devonian; however, the Rhenopyrgidae are not
-    discussed in this study. The systematic classification of
-    the Agelacrinitidae is essentially based on Sumrall (1996, 2000).
-  - |
-    Pyrgocystidae
-    In the past, about a dozen taxa have been described under
-    Pyrgocystis, of which only the scale tube is present
-    (Bather 1915; Richter 1930; Hecker 1939; Regnéll 1945).
-    According to Holloway & Jell (1983), only forms whose
-    penduncular zone is not composed of vertically arranged
-    rows of plates belong to Pyrgocystis, so they only include
-    the type species P. sardesoni (Bather, 1915), and, with
-    reservations, P. volborthi (Hecker, 1939) and P.? petalus
-    (Holloway & Jell, 1938) from the Ludlovian of Australia.
-    Klug et al. (2008) also classify Rhenopyrgus octogona
-    (Richter, 1930) as Pyrgocystis. Since the scale tube of
-    this species consists of vertical keeled rows, we consider
-    an assignment to Pyrgocystis unlikely.
-    According to Holloway & Jell (1983), the Ordovician type
-    species is based on only one specimen (see Regnéll 1966,
-    Fig. 127-2a-b), which only poorly reveals the structure
-    of the adoral region. Therefore, the assignment of
-    P.? petalus to this genus is uncertain, which
-    Holloway & Jell (1983) express by adding a question mark
-    to P.? petalus. We follow this example here with
-    P.? postpetalus n. sp. from the Lower Devonian of Germany.
-  - |
-    On the position of P. neglecta — Smith, 1983, places
-    the species within Postibulla; this assignment is adopted
-    by Sumrall et al. (2000). However, the genus differs from
-    Postibulla in one essential characteristic—a posterior
-    oral protrusion is not developed, which is why it is
-    placed here within Parapostibulla.
-  - |
-    The key difference between Agelacrinites and Krama lies
-    in the structure of the ambulacra. While these are
-    biserial in Agelacrinites, they are triserial to multiserial
-    in Krama. The genus was established by Bell (1965) as
-    a monotypic genus with the species K. devonica (Bassler, 1936)
-    based on material from the Middle Devonian of North America.
-    Smith & Arbizui (1987) described a specimen from the
-    Lower Devonian of Spain, which they placed under
-    Krama devonica. According to current knowledge, this is
-    a representative of a separate species (K. hispanica n. sp.).
-    In addition, two new species from the Lower Devonian of
-    Germany were described. The main differences between these
-    four species relate to the structure of the oral region,
-    the course of the ambulacrum D, the thecal type, the
-    number of plate rows between the ambulacrum C and the
-    periprocete, the structure of the upper ring, and the
-    appearance of sculpture in the form of a granulated plate
-    surface. Table 4 summarizes the differences between the
-    four species.
-- id: parsley-zhao-2010
-  title: A New Turban-Shaped Gogiid Eocrinoid From The Kaili Formation (Kaili Biota), Balang, Jianhe County, Guizhou Province, China
-  journal: jofpaleo
-  volume: 84
-  number: 3
-  pages:
-  - 549
-  - 553
-  authors:
-  - parsley
-  - zhao-y-l
-  pubDate:
-    year: 2010
-    month: 5
-  procesDates:
-    accepted: 2009-11-29
-  identifiers:
-    jstor: 40605503
-- id: robison-sprinkle-1969
-  title: "Ctenocystoidea: New Class of Primitive Echinoderms"
-  journal: science-new-series
-  volume: 166
-  number: 3912
-  pages:
-  - 1512
-  - 1514
-  authors:
-  - robison
-  - sprinkle
-  pubDate:
-    year: 1969
-    month: 12
-    day: 19
-  identifiers:
-    jstor: 1727422
-- id: smith-zamora-2013
-  title: Cambrian spiral-plated echinoderms from Gondwana reveal the earliest pentaradial body plan
-  journal: procrsocb
-  volume: 280
-  article: 20131197
-  pubDate:
-    year: 2013
-  processDates:
-    received: 2013-05-13
-    accepted: 2013-06-04
-    online: 2013-08-22
-  identifiers:
-    doi: 10.1098/rspb.2013.1197
-  authors:
-  - smith
-  - zamora
-- id: sprinkle-1985
-  title: New edrioasteroid from the Middle Cambrian of western Utah
-  journal: kansas
-  number: 116
-  pubDate:
-    year: 1985
-    month: 9
-    day: 12
-  processDates:
-    received: 1984-07-26
-  authors:
-  - sprinkle
-  identifiers:
-    url: https://kuscholarworks.ku.edu/entities/publication/de425cc9-1319-41f5-b1b4-0c6a6e13757a
-- id: ubaghs-robison-1988
-  title: Homalozoan echinoderms of the Wheeler Formation (Middle Cambrian) of Western Utah
-  journal: kansas
-  number: 129
-  pubDate:
-    year: 1988
-    month: 7
-    day: 14
-  processDates:
-    received: 1987-11-15
-  authors:
-  - ubaghs
-  - robison
-  identifiers:
-    url: https://www.researchgate.net/publication/239588179_Homalozoan_echinoderms_of_the_Wheeler_Formation_Middle_Cambrian_of_Western_Utah
-- id: webby-1968
-  title: Astrocystites distans sp. nov., an edrioblastoid from the Ordovician of eastern Australia
-  journal: palaeontology
-  volume: 11
-  number: 4
-  authors:
-  - webby
-  pubDate:
-    year: 1968
-  pages:
-  - 513
-  - 525
-  identifiers:
-    url: https://archive.org/details/biostor-164880
-- id: wen-babcock-peng-robison-2019
-  title: "New edrioasteroid (Echinodermata) from the Spence Shale (Cambrian), Idaho, USA: further evidence of attachment in the early evolutionary history of edrioasteroids"
-  journal: bullgeo
-  volume: 94
-  number: 1
-  pages:
-  - 115
-  - 124
-  authors:
-  - wen-r-q
-  - babcock
-  - peng-j
-  - robison
-  pubDate:
-    year: 2019
-  processDates:
-    received: 2018-10-30
-    revised: 2019-03-05
-    accepted: 2019-03-05
-    online: 2019-03-21
-    issued: 2019-03-31
-  identifiers:
-    doi: 10.3140/bull.geosci.1730
-- id: zamora-guensburg-sprinkle-2024
-  title: Redescription of the Cambrian edrioasteroid Sprinkleoglobus spencensis n. comb. (Wen et al., 2019) from the Spence Shale (Utah, USA)
-  journal: jofpaleo
-  volume: 98
-  pubDate:
-    year: 2024
-  pages:
-  - 952
-  - 958
-  authors:
-  - zamora
-  - guensburg
-  - sprinkle
-  dates:
-    received: 2024-03-27
-    revised: 2024-05-03
-    accepted: 2024-05-13
-    online: 2025-03-21
-  identifiers:
-    doi: 10.1017/jpa.2024.44
-- id: zamora-rahman-sumrall-gibson-thomas-2022
-  title: Cambrian edrioasteroid reveals new mechanism for secondary reduction of the skeleton in echinoderms
-  journal: procrsocb
-  volume: 289
-  article: 20212733
-  pubDate:
-    year: 2022
-  processDates:
-    received: 2021-12-17
-    accepted: 2022-02-04
-  authors:
-  - zamora
-  - rahman
-  - sumrall
-  - gibson
-  - thompson
-  identifiers:
-    doi: 10.1098/rspb.2021.2733
-- id: zamora-smith-2012
-  title: Cambrian stalked echinoderms show unexpected plasticity of arm construction
-  journal: procrsocb
-  volume: 279
-  pages:
-  - 293
-  - 298
-  pubDate:
-    year: 2012
-  processDates:
-    received: 2011-04-13
-    accepted: 2011-05-19
-    online: 2011-06-08
-  identifiers:
-    doi: 10.1098/rspb.2011.0777
-  authors:
-  - zamora
-  - smith
-- id: zamora-sumrall-zhu-lefebvre-2017
-  title: A new stemmed echinoderm from the Furongian of China and the origin of Glyptocystitida (Blastozoa, Echinodermata)
-  journal: geomag
-  volume: 154
-  number: 3
-  pages:
-  - 465
-  - 475
-  pubDate:
-    year: 2017
-  processDates:
-    received: 2015-11-17
-    accepted: 2016-01-27
-    online: 2016-03-03
-  identifiers:
-    doi: 10.1017/S001675681600011X
-  authors:
-  - zamora
-  - sumrall
-  - zhu-x-j
-  - lefebvre
-- id: zhao-rahman-zamora-chen-cong-2022
-  title: The first edrioasteroid echinoderm from the lower Cambrian Chengjiang biota of Yunnan Province, China
-  journal: papersinpalaeo
-  number: 8
-  article: e1465
-  pubDate:
-    year: 2022
-    month: 8
-    day: 27
-  authors:
-  - zhao-j
-  - rahman
-  - zamora
-  - chen-a-l
-  - cong-p-y
-  processDates:
-    recieved: 2022-01-21
-    revised: 2022-06-07
-    accepted: 2022-06-07
-    online: 2022-08-07
-  identifiers:
-    doi: 10.1002/spp2.1465
-- id: zhao-sumrall-parsley-peng-2010
-  title: Kailidiscus, A New Plesiomorphic Edrioasteroid From The Basal Middle Cambrian Kaili Biota Of Guizhou Province, China
-  journal: jofpaleo
-  volume: 84
-  number: 5
-  pages:
-  - 668
-  - 680
-  authors:
-  - zhao-y-l
-  - sumrall
-  - parsley
-  - peng-j
-  pubDate:
-    year: 2010
-  processDates:
-    accepted: 2010-03-20
-  identifiers:
-    doi: 10.1666/09-159.1
+  ausich-kammer-rhenberg-wright-20115:
+    title: Early phylogeny of crinoids within the pelmatozoan clade
+    journal: palaeontology
+    volume: 58
+    number: 6
+    pages:
+    - 937
+    - 952
+    authors:
+    - ausich
+    - kammer
+    - rhenberg
+    - wright
+    pubDate:
+      year: 2015
+      month: 10
+    processDates:
+      received: 2015-06-02
+      revised: 2015-08-24
+      accepted: 2015-08-24
+    identifiers:
+      doi: 10.1111/pala.12204
+  fatka-kordule-1985:
+    title: Etoctenocystis bohemica gen. et sp. nov. - new Ctenocystoid from Czechoslovakia (Echinodermata, Middle Cambrian)
+    journal: vestnik
+    volume: 60
+    number: 4
+    pages:
+    - 225
+    - 230
+    pubDate:
+      year: 1985
+      month: 1
+    processDates:
+      submitted: 1984-10-02
+      received: 1985-02-05
+    authors:
+    - fatka
+    - kordule
+    identifiers:
+      url: https://www.researchgate.net/publication/277013746_Etoctenocystis_bohemica_gen_et_sp_nov_-_new_Ctenocystoid_from_Czechoslovakia_Echinodermata_Middle_Cambrian#fullTextFileContent
+  guensburg-sprinkle-mooi-lefebvre-david-roux-derstler-2020:
+    title: Athenacrinus n. gen. and other early echinoderm taxa inform crinoid origin and arm evolution
+    journal: jofpaleo
+    volume: 94
+    number: 2
+    pubDate:
+      year: 2020
+    pages:
+    - 311
+    - 333
+    processDates:
+      accepted: 2019-10-03
+    identifiers:
+      doi: 10.1017/jpa.2019.87
+    authors:
+    - guensburg
+    - sprinkle
+    - mooi
+    - lefebvre
+    - david
+    - roux
+    - derstler
+  jell-burrett-banks-2008:
+    title: Cambrian and Ordovician echinoderms from eastern Australia
+    journal: alcheringa 
+    volume: 9
+    number: 3
+    pages:
+    - 183
+    - 208
+    authors:
+    - jell
+    - burrett
+    - banks
+    pubDate:
+      year: 1985
+    processDates:
+      received: 1984-11-22
+      online: 2008-11-27
+    identifiers:
+      doi: 10.1080/03115518508618967
+  muller-hahn-2010:
+    title: Edrioasteroidea aus den Seifen-Schichten im Westerwald, Rheinisches Schiefer-Gebirge (Unter-Devon, Deutschland), Teil 1
+    journal: geo-et-palaeo
+    volume: 43
+    pubDate:
+      year: 2010
+      month: 3
+      day: 30
+    pages:
+    - 9
+    - 47
+    authors:
+    - muller
+    - hahn
+    quotes:
+    - |
+      Bell (1976) established the order Isorophida with
+      the two suborders Lebedocystina and Isorophina.
+      The Isorophina are further subdivided into
+      Isorophidae (Bell, 1976) [correct name Hemicystidae,
+      provided the genus Hemicystitides (Hall, 1852) is included
+      in this family) for the original, Ordovician-Silurian
+      genera, and Agelacrinitidae (Chapman, 1860) for
+      the advanced Devonian-Carboniferous genera.
+      The Pyrgocystidae (Kesling, 1967) with the genus
+      Pergocystis (Bather, 1915) and the Carboniferous
+      Lispidecodidae (Kesling, 1967) with
+      Lispidecodus (Kesling, 1967) are not mentioned in Bell.
+    - |
+      Holloway and Jell (1983) established the Rhenopyrgidae
+      with the genus Rhenopyrgus (Dehm, 1961). They left the
+      assignment of this family to an order open.
+    - |
+      Smith and Arbizu (1987) combine all taxa of the Isorophina
+      into the subfamily Agelacrinitinae and present their phylogeny.
+    - |
+      Sumrall (1993) again uses the families Isorophidae and
+      Agelacrinitidae in the sense of Bell.
+    - |
+      Sumrall, Garbisch and Pope (2000) establish the subfamily
+      Postibullinae within the Agelacrinitidae
+    - |
+      Guensburg and Sprinkle (1994) subdivide the Isorophida
+      into only two families without subdivision into
+      suborders — Agelacrinitidae (incl. the Hemicystitidae)
+      and the ebetodiscidae (incl. the Pyrgocystidae).
+    - |
+      Here, we follow the classification by
+      Guensburg & Sprinkle (1994), but classify the Hemicystitidae
+      and the Pyrgocystidae as independent families. This now
+      provides three families and three subfamilies for the
+      Devonian-Carboniferous forms — the Agelacrinitidae
+      (with the Agelacrinitinae, Discocystinae, and Postibullinae),
+      the Pyrgocystidae, and the Rhenopyrgidae. With the exception
+      of the Discocystinae (only documented from the Upper Devonian
+      onward), all of these families and subfamilies occur in the
+      German Lower Devonian; however, the Rhenopyrgidae are not
+      discussed in this study. The systematic classification of
+      the Agelacrinitidae is essentially based on Sumrall (1996, 2000).
+    - |
+      Pyrgocystidae
+      In the past, about a dozen taxa have been described under
+      Pyrgocystis, of which only the scale tube is present
+      (Bather 1915; Richter 1930; Hecker 1939; Regnéll 1945).
+      According to Holloway & Jell (1983), only forms whose
+      penduncular zone is not composed of vertically arranged
+      rows of plates belong to Pyrgocystis, so they only include
+      the type species P. sardesoni (Bather, 1915), and, with
+      reservations, P. volborthi (Hecker, 1939) and P.? petalus
+      (Holloway & Jell, 1938) from the Ludlovian of Australia.
+      Klug et al. (2008) also classify Rhenopyrgus octogona
+      (Richter, 1930) as Pyrgocystis. Since the scale tube of
+      this species consists of vertical keeled rows, we consider
+      an assignment to Pyrgocystis unlikely.
+      According to Holloway & Jell (1983), the Ordovician type
+      species is based on only one specimen (see Regnéll 1966,
+      Fig. 127-2a-b), which only poorly reveals the structure
+      of the adoral region. Therefore, the assignment of
+      P.? petalus to this genus is uncertain, which
+      Holloway & Jell (1983) express by adding a question mark
+      to P.? petalus. We follow this example here with
+      P.? postpetalus n. sp. from the Lower Devonian of Germany.
+    - |
+      On the position of P. neglecta — Smith, 1983, places
+      the species within Postibulla; this assignment is adopted
+      by Sumrall et al. (2000). However, the genus differs from
+      Postibulla in one essential characteristic—a posterior
+      oral protrusion is not developed, which is why it is
+      placed here within Parapostibulla.
+    - |
+      The key difference between Agelacrinites and Krama lies
+      in the structure of the ambulacra. While these are
+      biserial in Agelacrinites, they are triserial to multiserial
+      in Krama. The genus was established by Bell (1965) as
+      a monotypic genus with the species K. devonica (Bassler, 1936)
+      based on material from the Middle Devonian of North America.
+      Smith & Arbizui (1987) described a specimen from the
+      Lower Devonian of Spain, which they placed under
+      Krama devonica. According to current knowledge, this is
+      a representative of a separate species (K. hispanica n. sp.).
+      In addition, two new species from the Lower Devonian of
+      Germany were described. The main differences between these
+      four species relate to the structure of the oral region,
+      the course of the ambulacrum D, the thecal type, the
+      number of plate rows between the ambulacrum C and the
+      periprocete, the structure of the upper ring, and the
+      appearance of sculpture in the form of a granulated plate
+      surface. Table 4 summarizes the differences between the
+      four species.
+  parsley-zhao-2010:
+    title: A New Turban-Shaped Gogiid Eocrinoid From The Kaili Formation (Kaili Biota), Balang, Jianhe County, Guizhou Province, China
+    journal: jofpaleo
+    volume: 84
+    number: 3
+    pages:
+    - 549
+    - 553
+    authors:
+    - parsley
+    - zhao-y-l
+    pubDate:
+      year: 2010
+      month: 5
+    processDates:
+      accepted: 2009-11-29
+    identifiers:
+      jstor: 40605503
+  robison-sprinkle-1969:
+    title: "Ctenocystoidea: New Class of Primitive Echinoderms"
+    journal: science-new-series
+    volume: 166
+    number: 3912
+    pages:
+    - 1512
+    - 1514
+    authors:
+    - robison
+    - sprinkle
+    pubDate:
+      year: 1969
+      month: 12
+      day: 19
+    identifiers:
+      jstor: 1727422
+  smith-zamora-2013:
+    title: Cambrian spiral-plated echinoderms from Gondwana reveal the earliest pentaradial body plan
+    journal: procrsocb
+    volume: 280
+    article: 20131197
+    pubDate:
+      year: 2013
+    processDates:
+      received: 2013-05-13
+      accepted: 2013-06-04
+      online: 2013-08-22
+    identifiers:
+      doi: 10.1098/rspb.2013.1197
+    authors:
+    - smith
+    - zamora
+  sprinkle-1985:
+    title: New edrioasteroid from the Middle Cambrian of western Utah
+    journal: kansas
+    number: 116
+    pubDate:
+      year: 1985
+      month: 9
+      day: 12
+    processDates:
+      received: 1984-07-26
+    authors:
+    - sprinkle
+    identifiers:
+      url: https://kuscholarworks.ku.edu/entities/publication/de425cc9-1319-41f5-b1b4-0c6a6e13757a
+  ubaghs-robison-1988:
+    title: Homalozoan echinoderms of the Wheeler Formation (Middle Cambrian) of Western Utah
+    journal: kansas
+    number: 129
+    pubDate:
+      year: 1988
+      month: 7
+      day: 14
+    processDates:
+      received: 1987-11-15
+    authors:
+    - ubaghs
+    - robison
+    identifiers:
+      url: https://www.researchgate.net/publication/239588179_Homalozoan_echinoderms_of_the_Wheeler_Formation_Middle_Cambrian_of_Western_Utah
+  webby-1968:
+    title: Astrocystites distans sp. nov., an edrioblastoid from the Ordovician of eastern Australia
+    journal: palaeontology
+    volume: 11
+    number: 4
+    authors:
+    - webby
+    pubDate:
+      year: 1968
+    pages:
+    - 513
+    - 525
+    identifiers:
+      url: https://archive.org/details/biostor-164880
+  wen-babcock-peng-robison-2019:
+    title: "New edrioasteroid (Echinodermata) from the Spence Shale (Cambrian), Idaho, USA: further evidence of attachment in the early evolutionary history of edrioasteroids"
+    journal: bullgeo
+    volume: 94
+    number: 1
+    pages:
+    - 115
+    - 124
+    authors:
+    - wen-r-q
+    - babcock
+    - peng-j
+    - robison
+    pubDate:
+      year: 2019
+    processDates:
+      received: 2018-10-30
+      revised: 2019-03-05
+      accepted: 2019-03-05
+      online: 2019-03-21
+      issued: 2019-03-31
+    identifiers:
+      doi: 10.3140/bull.geosci.1730
+  zamora-guensburg-sprinkle-2024:
+    title: Redescription of the Cambrian edrioasteroid Sprinkleoglobus spencensis n. comb. (Wen et al., 2019) from the Spence Shale (Utah, USA)
+    journal: jofpaleo
+    volume: 98
+    pubDate:
+      year: 2024
+    pages:
+    - 952
+    - 958
+    authors:
+    - zamora
+    - guensburg
+    - sprinkle
+    processDates:
+      received: 2024-03-27
+      revised: 2024-05-03
+      accepted: 2024-05-13
+      online: 2025-03-21
+    identifiers:
+      doi: 10.1017/jpa.2024.44
+  zamora-rahman-sumrall-gibson-thomas-2022:
+    title: Cambrian edrioasteroid reveals new mechanism for secondary reduction of the skeleton in echinoderms
+    journal: procrsocb
+    volume: 289
+    article: 20212733
+    pubDate:
+      year: 2022
+    processDates:
+      received: 2021-12-17
+      accepted: 2022-02-04
+    authors:
+    - zamora
+    - rahman
+    - sumrall
+    - gibson
+    - thompson
+    identifiers:
+      doi: 10.1098/rspb.2021.2733
+  zamora-smith-2012:
+    title: Cambrian stalked echinoderms show unexpected plasticity of arm construction
+    journal: procrsocb
+    volume: 279
+    pages:
+    - 293
+    - 298
+    pubDate:
+      year: 2012
+    processDates:
+      received: 2011-04-13
+      accepted: 2011-05-19
+      online: 2011-06-08
+    identifiers:
+      doi: 10.1098/rspb.2011.0777
+    authors:
+    - zamora
+    - smith
+  zamora-sumrall-zhu-lefebvre-2017:
+    title: A new stemmed echinoderm from the Furongian of China and the origin of Glyptocystitida (Blastozoa, Echinodermata)
+    journal: geomag
+    volume: 154
+    number: 3
+    pages:
+    - 465
+    - 475
+    pubDate:
+      year: 2017
+    processDates:
+      received: 2015-11-17
+      accepted: 2016-01-27
+      online: 2016-03-03
+    identifiers:
+      doi: 10.1017/S001675681600011X
+    authors:
+    - zamora
+    - sumrall
+    - zhu-x-j
+    - lefebvre
+  zhao-rahman-zamora-chen-cong-2022:
+    title: The first edrioasteroid echinoderm from the lower Cambrian Chengjiang biota of Yunnan Province, China
+    journal: papersinpalaeo
+    number: 8
+    article: e1465
+    pubDate:
+      year: 2022
+      month: 8
+      day: 27
+    authors:
+    - zhao-j
+    - rahman
+    - zamora
+    - chen-a-l
+    - cong-p-y
+    processDates:
+      received: 2022-01-21
+      revised: 2022-06-07
+      accepted: 2022-06-07
+      online: 2022-08-07
+    identifiers:
+      doi: 10.1002/spp2.1465
+  zhao-sumrall-parsley-peng-2010:
+    title: Kailidiscus, A New Plesiomorphic Edrioasteroid From The Basal Middle Cambrian Kaili Biota Of Guizhou Province, China
+    journal: jofpaleo
+    volume: 84
+    number: 5
+    pages:
+    - 668
+    - 680
+    authors:
+    - zhao-y-l
+    - sumrall
+    - parsley
+    - peng-j
+    pubDate:
+      year: 2010
+    processDates:
+      accepted: 2010-03-20
+    identifiers:
+      doi: 10.1666/09-159.1

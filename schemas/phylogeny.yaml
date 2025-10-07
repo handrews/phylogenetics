@@ -1,26 +1,37 @@
 $schema: https://json-schema.org/draft/2020-12/schema
 $id: phylogeny
 
-type: object
-properties:
-  publications:
-    type: array
-    items:
-      $ref: "#/$defs/publication"
-  articles:
-    type: array
-    items:
-      $ref: "#/$defs/article"
 $defs:
+  authors:
+    type: object
+    minProperties: 1
+    propertyNames:
+      pattern: ^.*$ # ^[^a-z][-a-z]*$
+    additionalProperties:
+      $ref: "#/$defs/person"
+  sources:
+    type: object
+    properties:
+      publications:
+        type: object
+        minProperties: 1
+        propertyNames:
+          pattern: ^.*$ # ^[^a-z][-a-z]*$
+        additionalProperties:
+          $ref: "#/$defs/publication"
+      articles:
+        type: object
+        minProperties: 1
+        propertyNames:
+          pattern: ^.*$ # ^[^a-z][-a-z]*-[12][7890]\d\d$
+        additionalProperties:
+          $ref: "#/$defs/article"
   person:
     type: object
-    required: [id]
     anyOf:
     - required: [family]
     - required: [given]
     properties:
-      id:
-        type: string
       family:
         type: string
       given:
@@ -35,11 +46,9 @@ $defs:
         - type: "null"
   publication:
     type: object
-    required: [id, name]
+    required: [name]
     unevaluatedProperties: false
     properties:
-      id:
-        type: string
       type:
         type: string
         enum:
@@ -54,21 +63,25 @@ $defs:
         type: string
   article:
     type: object
-    required: [id, pubId, authorids, title]
+    required: [authors, title]
+    oneOf:
+    - required: [journal]
+    - required: [book]
     unevaluatedProperties: false
     properties:
-      id:
-        type: string
       journal:
         type: string
       book:
         type: string
       volume:
-        type: number
-      issue:
-        type: number
+        type: [integer, string]
+        minimum: 1
+      number:
+        type: [integer, string]
+        minimum: 1
       article:
-        type: string
+        type: [integer, string]
+        minimum: 1
       pages:
         type: array
         items:
@@ -98,6 +111,8 @@ $defs:
           accepted:
             $ref: "#/$defs/simpleDate"
           online:
+            $ref: "#/$defs/simpleDate"
+          issued:
             $ref: "#/$defs/simpleDate"
       identifiers:
         type: object
@@ -170,7 +185,7 @@ $defs:
     type: object
   simpleDate:
     type: string
-    pattern: ^[12][7890][\d\d]-[01]\d-[0123]\d$
+    pattern: ^\d\d\d\d-\d\d-\d\d$ # ^[12][7890][\d\d]-[01]\d-[0123]\d$
   modularDate:
     type: object
     required: [year]
@@ -186,30 +201,34 @@ $defs:
       day:
         type: integer
         minimum: 1
-    oneOf:
-    - properties:
-        month:
-          const: 2
-        day:
-          maximum: 28
-    - properties:
-        month:
-          anyOf:
-          - const: 4
-          - const: 6
-          - const: 9
-          - const: 11
-        day:
-          maximum: 30
-    - properties:
-        month:
-          anyOf:
-          - const: 1
-          - const: 3
-          - const: 5
-          - const: 7
-          - const: 8
-          - const: 10
-          - const: 12
-        day:
-          maximum: 31
+    if:
+      required: [day]
+    then:
+      required: [month]
+      oneOf:
+      - properties:
+          month:
+            const: 2
+          day:
+            maximum: 28
+      - properties:
+          month:
+            anyOf:
+            - const: 4
+            - const: 6
+            - const: 9
+            - const: 11
+          day:
+            maximum: 30
+      - properties:
+          month:
+            anyOf:
+            - const: 1
+            - const: 3
+            - const: 5
+            - const: 7
+            - const: 8
+            - const: 10
+            - const: 12
+          day:
+            maximum: 31
