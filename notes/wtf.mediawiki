@@ -1,0 +1,148 @@
+* '''Ambulacraria''' ancestor
+** bilaterally symmetrical
+** stalked attached?
+** soft body
+** tentacles to either side of mouth, likely branched
+** pharyngeal basket-feeder?
+** straight-(ish)? gut?
+* ''Yanjiahella'':
+** bilaterally symmetrical
+** stalked attached
+** plated (stereom?) theca
+** free-moving (coelemic? water vascular?) tentacle on each side of a central mouth
+** pharyngeal basket-feeder?
+** straight gut
+* ''Ctenoimbricata'':
+** bilaterally symmetrical
+** ground-dwelling
+** stereom-plated theca
+** recumbant (coelemic? water vascular? tentacles on each side of a central mouth
+** ctenidium around mouth and lateral tentacle grooves
+** pharyngeal basket-feeder
+** straight gut
+** '''Ctenocystoidea''':
+*** near-bilaterally symmetrical
+*** ground-dwelling
+*** stereom-plated theca
+*** ambulacra on either side of a central mouth
+*** ctenidum around ambulacra, articulated
+*** pharyngeal basket-feeder
+*** straight gut
+** '''Cincta''':
+*** asymmetrical, torsion during ontogeny
+*** ground-dwelling, rigid stele-anchored
+*** stereom-plated theca
+*** ambulacra always on left, sometimes also present but shorter on right
+*** labrum and operculum 
+*** u-shaped gut
+*** '''Soluta''':
+**** asymmetrical, variable torsion during ontogeny
+**** stalked, initially attahed then ground-dwelling w/muscular stele
+**** stereom-plated theca
+**** single free-moving ambulacrum covering the mouth, left coleom
+**** ambulacral feeder, brachiole-style (but not actual brachiole)
+**** straight-ish gut
+*** '''Stylophora''':
+**** asymmetrical, torsion during ontogeny
+**** ground-dwelling, rigid posterior appendages for positioning
+**** stereom-plated theca
+**** single free-moving ambulacrum leading to mouth, left coleom
+**** ambulacral feeder, arm-style (but perhaps not actual crinoid arm)
+**** u-shaped gut
+*** '''Helicoplacoidea'''
+**** spiral tri-radial symmetry, of a sort, torsion lateral mouth, apical anus
+**** ground-dwelling, likely attached
+**** stereom-plated theca
+**** left ambulacrum has triplicated (A, B-C, D-E), anus between B-C and D-E
+**** ambulacral feeder, mouth at center of three ambulacra
+**** u-shaped gut
+**** ''Helicocystis''
+***** spiral 1-2-2 pentaradial symmetry, torsion apical mouth, far lateral anus
+***** stalked (short) attached
+***** stereom-plated theca
+***** B-C and D-E ambulacra now split, anus between C and D
+***** ambulacral feeder, mouth at center of A, B-C, D-E
+***** u-shaped gut
+**** '''Eocrinoidea'''
+***** 1-2-2 crypto-helical pentaradial symmetry, torsion apical mouth, anus
+***** stalked attached
+***** stereom-plated theca
+***** B-C and D-E ambulacra split, anus between C and D
+***** ambulacral feeder, mouth at center of A, B-C, D-E
+***** u-shaped gut
+**** '''Edrioasteroidea'''
+***** 1-2-2 pentaradial symmetry, torsion apical mouth, anus on same surface
+***** flat-to-short-stalked attached
+***** stereom-plated theca
+***** B-C and D-E ambulacra split, anus between C and D
+***** ambulacral feeder, mouth at center of A, B-C, D-E
+***** u-shaped gut
+***** ''Camptostroma''
+***** 1-2-2 pentaradial symmetry, torsion apical mouth, anus on same surface
+***** flat attached, cupcake walls
+***** stereom-plated theca
+***** B-C and D-E ambulacra split, anus between C and D
+***** ambulacral feeder, mouth at center of A, B-C, D-E
+***** u-shaped gut
+
+
+* Deuterostomia
+** Vetulocystida?
+*** Ambulacraria/stem
+**** Cambroernida
+***** ''Herpetogaster''
+****** ''Phlogites''
+******* Eldonioidea
+******** Edloniidae
+******** Rotadiscidae
+******** Paropsonemidae
+**** Ambulacraria/crown
+***** Hemichordata
+****** Pterobranchia
+****** ''Gyaltsenglossus''
+******* Enteropneusta
+***** Echinodermata/stem
+****** ''Yanjiahella''
+******* ''Ctenoimbricata''
+******** ''Atlacystis''
+********* Ctenocystoidea
+********* Cincta
+********** Soluta
+********** Stylophora
+********** Helicoplacoidea
+*********** ''Helicocystis''
+************ Blastozoa
+************* Lepidocystoidea
+************* Gogiida
+************** Lichenoidea
+************** Ridersiidae
+*************** Glyptocystitida (minus ''Rhombifera'')
+*************** ''Rhombifera''
+**************** Blastoidea
+***************** ''Lysocystites''
+****************** Coronoidea
+****************** ''Macurdablastus''
+****************** Eublastoidea 
+************* Ascocystitida
+************** Paracrinoidea
+*************** Parablastoidea
+*************** Asteroblastida
+************** Glyptosphaeritida
+*************** Sphaeronitida
+*********** Edrioasteroidea
+************ ''Camptostroma''
+************* Crinoidea
+************* Eleutherozoa?
+************* Cyclocystoidea?
+*** Chordata/stem
+**** ''Alienum''
+***** Banffozoa
+****** Vetulicolida
+******* Vetulicoidae
+******* Didazoonidae
+******** Yunnanozoa
+********* Chordata
+********** Cephalochordata
+********** Olfactores
+*********** Tunicata
+*********** Vertebrata
