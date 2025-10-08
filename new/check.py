@@ -63,21 +63,40 @@ if __name__ == '__main__':
   defs = schema_library['$defs']
   schema = None
 
+  data = {
+    'authors': {},
+    'sources': {},
+    'trees': {},
+  }
   for filename in sys.argv[1:]:
-    data = load_yaml(filename)
+    name = pathlib.Path(filename).stem
+    data[name] = load_yaml(filename)
     try:
-      schema = defs[pathlib.Path(filename).stem]
-      r = schema.evaluate(jschon.JSON(data))
+      schema = defs[name]
+      r = schema.evaluate(jschon.JSON(data[name]))
       if not r.valid:
         printe(yaml.safe_dump(r.output('detailed')))
       else:
         printe(f'"{filename}" is valid.')
-
-      if filename == 'sources.yaml':
-        for ref_id, article in data['articles'].items():
-          authors = '_'.join([a.split('_')[0] for a in article['authors']])
-          expected = authors + f"_{article['pubDate']['year']}"
-          if ref_id != expected:
-            printe(f'*** ERROR: Expected "{ref_id}" to be "{expected}"')
     except KeyError as e:
       printe(repr(e))
+
+  for ref_id, article in data['sources']['articles'].items():
+    source_type = 'journal' if 'journal' in article else 'book'
+    if article[source_type] not in data['sources']['publications']:
+      printe(f"*** ERROR: {source_type} \"{article['publications']}\"")
+
+    expected_id = ''
+    for author in article['authors']:
+      if author not in data['authors']:
+        printe(f'*** ERROR: Author "{author}" not found!')
+      if expected_id:
+        expected_id += '_'
+      expected_id += author.split('_')[0]
+    expected_id += f"_{article['pubDate']['year']}"
+
+    if ref_id != expected_id:
+      printe(f'*** ERROR: Expected "{expected_id}" but found "{ref_id}"')
+
+    if ref_id not in data['sources']['articles']:
+      printe(f'*** ERROR: Source "{ref_id}" not found!')
