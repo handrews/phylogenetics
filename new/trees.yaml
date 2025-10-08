@@ -36,7 +36,7 @@
         - taxon: ctenocystis
           new: true
           children:
-          - taxon: utahensis
+          - taxon: utahensis-r-s-1969
             new: true
             type: true
             specimens:
@@ -115,7 +115,7 @@
       children:
       - taxon: ctenocystis
         children:
-        - taxon: utahensis
+        - taxon: utahensis-r-s-1969
           type: true
         - taxon: jagoi
           new: true
@@ -595,6 +595,32 @@
         outgroup: true
       - taxon: hemicosmites
         outgroup: true
+2018_lefebvre_lerosey-aubril:
+  taxonomies:
+  - taxon: echinodermata
+    children:
+    - taxon: blastozoa
+      children:
+      - taxon: soluta-class
+        children:
+        - taxon: syringocrinida
+          children:
+          - taxon: pahvanticystis
+            new: true
+            children:
+            - taxon: utahensis-l-l-2018
+              new: true
+              type: true
+              specimens:
+                holotype: UU05072.02_01
+                paratypes:
+                - UU05072.01_01
+                - UU05072.01_02
+                - UU05072.02_02
+                - UU05072.03
+                additional:
+                - USNM 393393
+                - USNM 393394
 2019_wen_babcock_peng_robison:
   taxonomies:
   - taxon: edrioasteroidea

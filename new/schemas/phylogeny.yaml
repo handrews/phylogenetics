@@ -4,12 +4,12 @@ $id: phylogeny
 $defs:
   sourceId:
     type: string
-    pattern: ^[12][7890]\d\d_[a-z][_a-z]+$
+    pattern: ^[12][7890]\d\d_[a-z][-_a-z]+$
   authors:
     type: object
     minProperties: 1
     propertyNames:
-      pattern: ^[a-z][_a-z]*$
+      pattern: ^[a-z][-_a-z]*$
     additionalProperties:
       $ref: "#/$defs/person"
   sources:
@@ -275,9 +275,7 @@ $defs:
         type: boolean
         default: false
       specimens:
-        type: array
-        items:
-          $ref: "phylogeny#/$defs/specimen"
+        $ref: "phylogeny#/$defs/specimen"
     unevaluatedProperties: false
   phylogeny:
     type: object
@@ -307,6 +305,30 @@ $defs:
     unevaluatedProperties: false
   specimen:
     type: object
+    properties:
+      holotype:
+        type: string
+      allotype:
+        type: string
+      lectotype:
+        type: string
+      neotype:
+        type: string
+    additionalProperties:
+      type: array
+      items:
+        type: string
+    propertyNames:
+      enum:
+      - hypotypes
+      - kleptotypes
+      - paralectotypes
+      - paratypes
+      - plesiotypes
+      - syntypes
+      - topotypes
+      - additional
+      - unknown
   simpleDate:
     type: string
     pattern: ^[12][7890]\d\d-[01]\d-[0123]\d$

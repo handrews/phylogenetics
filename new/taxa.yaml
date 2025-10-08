@@ -618,6 +618,10 @@ ottawaensis:
   auth: [Whiteaves]
   year: 1897
 ###################### P
+pahvanticystis:
+  name: Pahvanticystis
+  auth: [Lefebvre, Lerosey-Aubril]
+  year: 2018
 parakrama:
   name: Parakrama
   auth: [Müller, Hahn]
@@ -807,6 +811,11 @@ sumralli:
   name: sumralli
   auth: [Guensburg, Sprinkle]
   year: 2003
+syringocrinida:
+  name: Syringocrinida
+  rank: Order
+  auth: [parsley, Caster]
+  year: 1965
 ###################### T
 tastudorum:
   name: tastudorum
@@ -857,10 +866,14 @@ ubaghsicystis:
   name: Ubaghsicystis
   auth: [Gil Cid, Domínguez]
   year: 2002
-utahensis:
+utahensis-r-s-1969:
   name: utahensis
   auth: [Robison, Sprinkle]
   year: 1969
+utahensis-l-l-2018:
+  name: utahensis
+  auth: [Lefebvre, Lerosey-Aubril]
+  year: 2018
 ###################### V
 velieuxicystis:
   name: Velieuxicystis

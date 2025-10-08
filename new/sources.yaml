@@ -388,6 +388,28 @@ articles:
     - sumrall
     - zhu_x_j
     - lefebvre
+  2018_lefebvre_lerosey-aubril:
+    title: "Laurentian origin of solutan echinoderms: new evidence from the Guzhangian (Cambrian Series 3) Weeks Formation of Utah, USA"
+    complete:
+      named: true
+      history: false
+    journal: geomag
+    volume: 155
+    number: 5
+    pages:
+    - 1190
+    - 1204
+    pubDate:
+      year: 2018
+    processDates:
+      received: 2016-09-19
+      accepted: 2017-02-08
+      online: 2017-03-13
+    identifiers:
+      doi: 10.1017/S0016756817000152
+    authors:
+    - lefebvre
+    - lerosey-aubril
   2019_wen_babcock_peng_robison:
     title: "New edrioasteroid (Echinodermata) from the Spence Shale (Cambrian), Idaho, USA: further evidence of attachment in the early evolutionary history of edrioasteroids"
     journal: bullgeo

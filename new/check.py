@@ -179,16 +179,29 @@ if __name__ == '__main__':
 
   logger.info(f"Processing {len(data['taxa'])} taxa...")
   for taxon_id, taxon in data['taxa'].items():
-    logger.debug(f'  Processing taxon "{taxon}"')
     expected = taxon['name'].lower()
-    if (
-      taxon_id != expected and
-      not taxon_id.startswith('uncertain') and
-      taxon_id != f"{expected}-{taxon['rank'].lower()}"
-    ):
+    logger.debug(f'  Processing taxon "{taxon_id}"...')
+    if not (rank := taxon.get('rank')):
+      rank = 'genus' if taxon['name'][0].isupper() else 'species'
+
+    ranked_expected = expected
+    alt_expected = expected
+    expected_set = {expected}
+    if taxon_id != expected and taxon_id.startswith(f'{expected}'):
+      logger.debug(f'Creating alt taxon_id expectations for "{taxon_id}"')
+      ranked_expected += f"-{rank.lower()}"
+      for author_id in taxon['auth']:
+        logger.debug(f'Adding author "{author_id}" for taxon_id "{taxon_id}"')
+        alt_expected += f'-{author_id.lower()[0]}'
+      alt_expected += f"-{taxon['year']}"
+      expected_set = {ranked_expected, alt_expected}
+
+    logger.debug(f'Expected set: {expected_set}')
+    if taxon_id not in expected_set:
       logger.error(
-        f"Taxon id \"{taxon_id}\" and name \"{taxon['name']}\" do not match"
+        f"Taxon id \"{taxon_id}\" and name(s) \"{taxon['name']}\" do not match"
       )
+
     for author_id in taxon['auth']:
       logger.debug('    Processing authority "{author_id}"')
       # This won't work with multi-token names, but good enough for now
