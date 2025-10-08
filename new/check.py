@@ -7,6 +7,12 @@ import yaml
 import jschon
 
 FUTURE = 2030
+FILES = (
+  'authors.yaml',
+  'sources.yaml',
+  'taxa.yaml',
+  'trees.yaml',
+)
 
 # AI code
 class LevelCountHandler(logging.StreamHandler):
@@ -104,7 +110,7 @@ def _check_node(n, parent=[]):
   if 'taxon' in n:
     current = parent + [n['taxon']]
     logger.debug(f'checking {current}')
-    if not (taxon := data['trees']['taxa'].get(n['taxon'])):
+    if not (taxon := data['taxa'].get(n['taxon'])):
       logger.error(f"Taxon \"{n['taxon']}\" not found!")
     if n.get('new'):
       # TODO: Figure this out
@@ -131,9 +137,10 @@ if __name__ == '__main__':
   data = {
     'authors': {},
     'sources': {},
+    'taxa': {},
     'trees': {},
   }
-  for filename in sys.argv[1:]:
+  for filename in FILES:
     logger.info(f'Checking "{filename}"...')
     name = pathlib.Path(filename).stem
     data[name] = load_yaml(filename)
@@ -170,8 +177,8 @@ if __name__ == '__main__':
     if ref_id not in data['sources']['articles']:
       logger.error(f'Source "{ref_id}" not found!')
 
-  logger.info(f"Processing {len(data['trees']['taxa'])} taxa...")
-  for taxon_id, taxon in data['trees']['taxa'].items():
+  logger.info(f"Processing {len(data['taxa'])} taxa...")
+  for taxon_id, taxon in data['taxa'].items():
     logger.debug(f'  Processing taxon "{taxon}"')
     expected = taxon['name'].lower()
     if (
@@ -207,9 +214,9 @@ if __name__ == '__main__':
 
   logger.info(f"...taxa processed.")
 
-  logger.info(f"Processing {len(data['trees']['opinions'])} opinions...")
+  logger.info(f"Processing {len(data['trees'])} opinions...")
   opinions = set()
-  for ref_id, opinion in data['trees']['opinions'].items():
+  for ref_id, opinion in data['trees'].items():
     opinions.add(ref_id)
     logger.debug(f'Processing opinions from "{ref_id}"')
     if ref_id not in data['sources']['articles']:

@@ -29,31 +29,27 @@ $defs:
           $ref: "#/$defs/sourceId"
         additionalProperties:
           $ref: "#/$defs/article"
+  taxa:
+    type: object
+    additionalProperties:
+      $ref: "#/$defs/taxon"
   trees:
     type: object
-    required: [taxa, opinions]
-    additionalProperties: false
-    properties:
-      taxa:
-        type: object
-        additionalProperties:
-          $ref: "#/$defs/taxon"
-      opinions:
-        type: object
-        patternProperties:
-          ^[12][7890]\d\d_[a-z][_a-z]*$:
-            type: object
-            properties:
-              source:
-                $ref: "#/$defs/sourceId"
-              taxonomies:
-                type: array
-                items:
-                  $ref: "#/$defs/taxonomyTree"
-              phylogenies:
-                type: array
-                items:
-                  $ref: "#/$defs/phylogeny"
+    propertyNames:
+      $ref: "#/$defs/sourceId"
+    additionalProperties:
+      type: object
+      properties:
+        source:
+          $ref: "#/$defs/sourceId"
+        taxonomies:
+          type: array
+          items:
+            $ref: "#/$defs/taxonomyTree"
+        phylogenies:
+          type: array
+          items:
+            $ref: "#/$defs/phylogeny"
   person:
     type: object
     anyOf:
