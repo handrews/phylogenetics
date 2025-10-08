@@ -1,11 +1,56 @@
 import sys
 import pathlib
 import logging
+import collections
 
 import yaml
 import jschon
 
+FUTURE = 2030
+
+# AI code
+class LevelCountHandler(logging.StreamHandler):
+  """
+  A custom logging handler that counts log messages by level.
+  """
+  def __init__(self, *args, **kwargs):
+    super().__init__(*args, **kwargs)
+    self.counts = collections.defaultdict(int)
+
+  def emit(self, record):
+    """
+    Increments the count for the given log record's level.
+    """
+    self.counts[record.levelname] += 1
+
+  def get_counts(self):
+    """
+    Returns a dictionary of log level counts.
+    """
+    return dict(self.counts)
+
+LEVEL = logging.INFO
+log_counter = LevelCountHandler()
+log_counter.setLevel(LEVEL)
 logger = logging.getLogger(__name__)
+logger.setLevel(LEVEL)
+logger.addHandler(log_counter)
+logger.setLevel(LEVEL)
+
+class L():
+  error_count = 0
+  def error(self, message):
+    self.error_count += 1
+    if LEVEL <= logging.ERROR:
+      print(f'*** ERROR: {message}')
+  def info(self, message):
+    if LEVEL <= logging.INFO:
+      print(f'*** INFO: {message}')
+  def debug(self, message):
+    if LEVEL <= logging.DEBUG:
+      print(f'*** DEBUG: {message}')
+
+logger = L()
 schema_catalog = jschon.create_catalog('2020-12')
 """The default shared ``jschon`` schema loader and cache"""
 
@@ -48,9 +93,12 @@ def load_yaml(filename, debug=True):
   with open(filename) as fd:
     if debug:
       logger.debug(f'Loading "{filename}" with duplication prevention...')
-      return yaml.load(fd, Loader=UniqueKeyNoDatesLoader)
+      data = yaml.load(fd, Loader=UniqueKeyNoDatesLoader)
     else:
-      return yaml.safe_load(fd)
+      logger.debug(f'Loading "{filename}" with safe_load()...')
+      data = yaml.safe_load(fd)
+    logger.debug(f'...loaded "{filename}"')
+    return data
 
 def _check_node(n, parent=[]):
   if 'taxon' in n:
@@ -68,6 +116,7 @@ def _check_node(n, parent=[]):
     _check_node(c, current)
 
 if __name__ == '__main__':
+  logger.info("Checking schema...")
   schema_library = jschon.JSONSchema(load_yaml('schemas/phylogeny.yaml'))
   r = schema_library.validate()
   if not r.valid:
@@ -85,6 +134,7 @@ if __name__ == '__main__':
     'trees': {},
   }
   for filename in sys.argv[1:]:
+    logger.info(f'Checking "{filename}"...')
     name = pathlib.Path(filename).stem
     data[name] = load_yaml(filename)
     try:
@@ -99,20 +149,18 @@ if __name__ == '__main__':
     except KeyError as e:
       logger.error(repr(e))
 
+  logger.info("Checking sources...")
   for ref_id, article in data['sources']['articles'].items():
     logger.info(f'Processing article "{ref_id}"')
     source_type = 'journal' if 'journal' in article else 'book'
     if article[source_type] not in data['sources']['publications']:
       logger.error(f'{source_type} "{article[source_type]}" not found!')
 
-    expected_id = ''
+    expected_id = f"{article['pubDate']['year']}"
     for author in article['authors']:
       if author not in data['authors']:
         logger.error(f'Author "{author}" not found!')
-      if expected_id:
-        expected_id += '_'
-      expected_id += author.split('_')[0]
-    expected_id += f"_{article['pubDate']['year']}"
+      expected_id += '_' + author.split('_')[0]
 
     if ref_id != expected_id:
       logger.error(f'Expected "{expected_id}" but found "{ref_id}"')
@@ -120,6 +168,44 @@ if __name__ == '__main__':
     if ref_id not in data['sources']['articles']:
       logger.error(f'Source "{ref_id}" not found!')
 
+  logger.info(f"Processing {len(data['trees']['taxa'])} taxa...")
+  for taxon_id, taxon in data['trees']['taxa'].items():
+    logger.debug(f'  Processing taxon "{taxon}"')
+    expected = taxon['name'].lower()
+    if (
+      taxon_id != expected and
+      not taxon_id.startswith('uncertain') and
+      taxon_id != f"{expected}-{taxon['rank'].lower()}"
+    ):
+      logger.error(
+        f"Taxon id \"{taxon_id}\" and name \"{taxon['name']}\" do not match"
+      )
+    for author_id in taxon['auth']:
+      logger.debug('    Processing authority "{author_id}"')
+      # This won't work with multi-token names, but good enough for now
+      if author_id != author_id.lower():
+        continue
+
+      if not (author := data['authors'][author_id]):
+        logger.error(
+          f'Unrecognized author "{author}" in authority for "{taxon_id}"'
+        )
+        continue
+
+      if (year := taxon.get('year')):
+        # 15 pretty arbitrary, no clue if there's a kid genius paleontologist
+        if 'birth' in author and year < (author['birth'] + 15):
+          birth = author['birth']
+          logger.error(f'"{author_id}" born {birth} as authority in {year}?')
+        # plus 5 for Barrande 1887
+        if 'death' in author and year > (author['death'] + 5):
+          death = author['death']
+          logger.error(f'"{author_id}" died {death} as authority in {year}?')
+    logger.debug(f'    ...all authorities for "{taxon_id}" processed')
+
+  logger.info(f"...taxa processed.")
+
+  logger.info(f"Processing {len(data['trees']['opinions'])} opinions...")
   for ref_id, opinion in data['trees']['opinions'].items():
     logger.info(f'Processing opinions from "{ref_id}"')
     if ref_id not in data['sources']['articles']:
@@ -133,3 +219,11 @@ if __name__ == '__main__':
     logger.info(f'Found {num_phy} phylogenetic trees')
     for t in trees:
       _check_node(t)
+  logger.info(f"...opinions processed.")
+
+#   logged_errors = log_counter.get_counts()[logging.ERROR]
+#   if logged_errors:
+  logged_errors = logger.error_count
+  if logged_errors:
+    logger.error(f'Encounterd {logged_errors} errors!')
+    sys.exit(-1)

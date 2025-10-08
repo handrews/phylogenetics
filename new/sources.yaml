@@ -24,7 +24,7 @@ publications:
   vestnik:
     name: Věstník Ústředního ústavu geologického
 articles:
-  ausich_kammer_rhenberg_wright_2015:
+  2015_ausich_kammer_rhenberg_wright:
     title: Early phylogeny of crinoids within the pelmatozoan clade
     journal: palaeontology
     volume: 58
@@ -46,7 +46,7 @@ articles:
       accepted: 2015-08-24
     identifiers:
       doi: 10.1111/pala.12204
-  fatka_kordule_1985:
+  1985_fatka_kordule:
     title: Etoctenocystis bohemica gen. et sp. nov. - new Ctenocystoid from Czechoslovakia (Echinodermata, Middle Cambrian)
     complete:
       named: true
@@ -72,7 +72,7 @@ articles:
     - kordule
     identifiers:
       url: https://www.researchgate.net/publication/277013746_Etoctenocystis_bohemica_gen_et_sp_nov_-_new_Ctenocystoid_from_Czechoslovakia_Echinodermata_Middle_Cambrian#fullTextFileContent
-  guensburg_sprinkle_mooi_lefebvre_david_roux_derstler_2020:
+  2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler:
     title: Athenacrinus n. gen. and other early echinoderm taxa inform crinoid origin and arm evolution
     journal: jofpaleo
     volume: 94
@@ -94,7 +94,7 @@ articles:
     - david
     - roux
     - derstler
-  jell_burrett_banks_1985:
+  1985_jell_burrett_banks:
     title: Cambrian and Ordovician echinoderms from eastern Australia
     complete:
       named: true
@@ -120,7 +120,7 @@ articles:
       online: 2008-11-27
     identifiers:
       doi: 10.1080/03115518508618967
-  muller_hahn_2010:
+  2010_muller_hahn:
     title: Edrioasteroidea aus den Seifen-Schichten im Westerwald, Rheinisches Schiefer-Gebirge (Unter-Devon, Deutschland), Teil 1
     journal: geo_et_palaeo
     volume: 43
@@ -229,7 +229,7 @@ articles:
       appearance of sculpture in the form of a granulated plate
       surface. Table 4 summarizes the differences between the
       four species.
-  parsley_zhao_2010:
+  2010_parsley_zhao:
     title: A New Turban-Shaped Gogiid Eocrinoid From The Kaili Formation (Kaili Biota), Balang, Jianhe County, Guizhou Province, China
     journal: jofpaleo
     volume: 84
@@ -247,7 +247,7 @@ articles:
       accepted: 2009-11-29
     identifiers:
       jstor: 40605503
-  robison_sprinkle_1969:
+  1969_robison_sprinkle:
     title: "Ctenocystoidea: New Class of Primitive Echinoderms"
     complete:
       named: true
@@ -271,7 +271,7 @@ articles:
       day: 19
     identifiers:
       jstor: 1727422
-  smith_zamora_2013:
+  2013_smith_zamora:
     title: Cambrian spiral-plated echinoderms from Gondwana reveal the earliest pentaradial body plan
     journal: procrsocb
     volume: 280
@@ -287,7 +287,7 @@ articles:
     authors:
     - smith
     - zamora
-  sprinkle_1985:
+  1985_sprinkle:
     title: New edrioasteroid from the Middle Cambrian of western Utah
     journal: kansas
     number: 116
@@ -301,7 +301,7 @@ articles:
     - sprinkle
     identifiers:
       url: https://kuscholarworks.ku.edu/entities/publication/de425cc9-1319-41f5-b1b4-0c6a6e13757a
-  ubaghs_robison_1988:
+  1988_ubaghs_robison:
     title: Homalozoan echinoderms of the Wheeler Formation (Middle Cambrian) of Western Utah
     complete:
       named: true
@@ -323,9 +323,10 @@ articles:
     - robison
     identifiers:
       url: https://www.researchgate.net/publication/239588179_Homalozoan_echinoderms_of_the_Wheeler_Formation_Middle_Cambrian_of_Western_Utah
-  ubaghs_1987:
+  1987_ubaghs:
     title: Echinodermes nouveaux du Cambrien moyen de la Montagne Noire (France)
     journal: annals
+    seen: false
     volume: 73
     number: 1
     pubDate:
@@ -337,7 +338,7 @@ articles:
     - ubaghs
     identifiers:
       url: "https://eurekamag.com/research/020/905/020905946.php?srsltid=AfmBOopSCziNxG2P7g_GYIehW28l_W04c4LXptNYESzBhP6ZiraKuipf"
-  webby_1968:
+  1968_webby:
     title: Astrocystites distans sp. nov., an edrioblastoid from the Ordovician of eastern Australia
     journal: palaeontology
     volume: 11
@@ -351,7 +352,7 @@ articles:
     - 525
     identifiers:
       url: https://archive.org/details/biostor-164880
-  wen_babcock_peng_robison_2019:
+  2019_wen_babcock_peng_robison:
     title: "New edrioasteroid (Echinodermata) from the Spence Shale (Cambrian), Idaho, USA: further evidence of attachment in the early evolutionary history of edrioasteroids"
     journal: bullgeo
     volume: 94
@@ -374,7 +375,7 @@ articles:
       issued: 2019-03-31
     identifiers:
       doi: 10.3140/bull.geosci.1730
-  zamora_guensburg_sprinkle_2024:
+  2024_zamora_guensburg_sprinkle:
     title: Redescription of the Cambrian edrioasteroid Sprinkleoglobus spencensis n. comb. (Wen et al., 2019) from the Spence Shale (Utah, USA)
     journal: jofpaleo
     volume: 98
@@ -394,7 +395,7 @@ articles:
       online: 2025-03-21
     identifiers:
       doi: 10.1017/jpa.2024.44
-  zamora_rahman_sumrall_gibson_thompson_2022:
+  2022_zamora_rahman_sumrall_gibson_thompson:
     title: Cambrian edrioasteroid reveals new mechanism for secondary reduction of the skeleton in echinoderms
     journal: procrsocb
     volume: 289
@@ -412,7 +413,7 @@ articles:
     - thompson
     identifiers:
       doi: 10.1098/rspb.2021.2733
-  zamora_smith_2012:
+  2012_zamora_smith:
     title: Cambrian stalked echinoderms show unexpected plasticity of arm construction
     journal: procrsocb
     volume: 279
@@ -430,7 +431,7 @@ articles:
     authors:
     - zamora
     - smith
-  zamora_sumrall_zhu_lefebvre_2017:
+  2017_zamora_sumrall_zhu_lefebvre:
     title: A new stemmed echinoderm from the Furongian of China and the origin of Glyptocystitida (Blastozoa, Echinodermata)
     journal: geomag
     volume: 154
@@ -451,7 +452,7 @@ articles:
     - sumrall
     - zhu_x_j
     - lefebvre
-  zhao_rahman_zamora_chen_cong_2022:
+  2022_zhao_rahman_zamora_chen_cong:
     title: The first edrioasteroid echinoderm from the lower Cambrian Chengjiang biota of Yunnan Province, China
     journal: papersinpalaeo
     number: 8
@@ -473,7 +474,7 @@ articles:
       online: 2022-08-07
     identifiers:
       doi: 10.1002/spp2.1465
-  zhao_sumrall_parsley_peng_2010:
+  2010_zhao_sumrall_parsley_peng:
     title: Kailidiscus, A New Plesiomorphic Edrioasteroid From The Basal Middle Cambrian Kaili Biota Of Guizhou Province, China
     journal: jofpaleo
     volume: 84

@@ -2,31 +2,31 @@ taxa:
   uncertain-phylum:
     name: Uncertain
     rank: Phylum
-    auth: [Linnaeus]
+    auth: [linnaeus]
     year: 1758
   uncertain-class:
     name: Uncertain
     rank: Class
-    auth: [Linnaeus]
+    auth: [linnaeus]
     year: 1758
   uncertain-order:
     name: Uncertain
     rank: Order
-    auth: [Linnaeus]
+    auth: [linnaeus]
     year: 1758
   uncertain-family:
     name: Uncertain
     rank: Family
-    auth: [Linnaeus]
+    auth: [linnaeus]
     year: 1758
 ######################## A
   aethocrinus:
     name: Aethocrinus
-    auth: [Ubaghs]
+    auth: [ubaghs]
     year: 1969
   acanthocystites:
     name: Acanthocystites
-    auth: [Barrande]
+    auth: [barrande]
     year: 1887
   agelacrinitidae:
     name: Agelacrinitidae
@@ -48,19 +48,19 @@ taxa:
     year: 1962
   alabamensis:
     name: alabamensis
-    auth: [Sumrall, Garbisch, Pope]
+    auth: [sumrall, Garbisch, Pope]
     year: 2000
   alphacrinus:
     name: alphacrinus
-    auth: [Guensburg]
+    auth: [guensburg]
     year: 2010
   alpinensis:
     name: alpinensis
-    auth: [Bassler]
+    auth: [bassler]
     year: 1936
   apektocrinus:
     name: Apektocrinus
-    auth: [Guensburg, Sprinkle]
+    auth: [guensburg, sprinkle]
     year: 2009
   argodiscus:
     name: Argodiscus
@@ -77,20 +77,20 @@ taxa:
   athenacrinidae:
     name: Athenacrinidae
     rank: Family
-    auth: [Guensburg, Sprinkle, Mooi, Lefebvre, David, Roux, Derstler]
+    auth: [guensburg, sprinkle, mooi, lefebvre, david, roux, derstler]
     year: 2020
   athenacrinus:
     name: Athenacrinus
-    auth: [Guensburg, Sprinkle, Mooi, Lefebvre, David, Roux, Derstler]
+    auth: [guensburg, sprinkle, mooi, lefebvre, david, roux, derstler]
     year: 2020
 ######################## B
   barroubiocystis:
     name: Barroubiocystis
-    auth: [Ubaghs]
+    auth: [ubaghs]
     year: 1999
   belli:
     name: belli
-    auth: [Sumrall, Brett, Cornell]
+    auth: [sumrall, Brett, Cornell]
     year: 2006
   bifida:
     name: bifida
@@ -684,7 +684,7 @@ taxa:
     auth: [Zamora, Smith]
     year: 2012
   pyrgocystidae:
-    name: Pyrgocystidea
+    name: Pyrgocystidae
     rank: Family
     auth: [Kesling]
     year: 1967
@@ -936,7 +936,7 @@ taxa:
     synonym: parsleya
     reason: homonym
 opinions:
-  zamora_sumrall_zhu_lefebvre_2017:
+  2017_zamora_sumrall_zhu_lefebvre:
     taxonomies:
       - taxon: echinodermata
         children:
@@ -999,7 +999,7 @@ opinions:
           outgroup: true
         - taxon: hemicosmites
           outgroup: true
-  parsley_zhao_2010:
+  2010_parsley_zhao:
     taxonomies:
       - taxon: blastozoa
         children:
@@ -1023,7 +1023,7 @@ opinions:
                     - GM 9-5-3235b
                     - GM 10-3-2000
                     - GM 9-5-2165a
-  webby_1968:
+  1968_webby:
     taxonomies:
     - taxon: pelmatozoa
       children:
@@ -1049,7 +1049,7 @@ opinions:
                 - USGD 2311
                 - USGD 2312
                 - USGD 3303
-  guensburg_sprinkle_mooi_lefebvre_david_roux_derstler_2020:
+  2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler:
     taxonomies:
     - taxon: crinoidea
       children:
@@ -1248,7 +1248,7 @@ opinions:
               - taxon: rhopalocystis
               - taxon: macrocystella
               - taxon: eumorphocystis
-  jell_burrett_banks_1985:
+  1985_jell_burrett_banks:
     taxonomies:
     - taxon: edrioasteroidea
       children:
@@ -1355,7 +1355,7 @@ opinions:
               - NMVP107491
               - NMVP107492
               - NMVP108991
-  zamora_rahman_sumrall_gibson_thompson_2022:
+  2022_zamora_rahman_sumrall_gibson_thompson:
     taxonomies:
     - taxon: echinodermata
       children:
@@ -1429,7 +1429,7 @@ opinions:
         - taxon: helicoplacus
           bracket: helicoplacoidea
           outgroup: true
-  smith_zamora_2013:
+  2013_smith_zamora:
     taxonomies:
     - taxon: echinodermata
       stem: true
@@ -1470,7 +1470,7 @@ opinions:
                       - taxon: lepidocystis
                       - taxon: gogia
                     - taxon: stromatocystites
-  zamora_smith_2012:
+  2012_zamora_smith:
     taxonomies:
       - taxon: echinodermata
         children:
@@ -1522,7 +1522,7 @@ opinions:
             children:
             - taxon: titanocrinus
             - taxon: aethocrinus
-  robison_sprinkle_1969:
+  1969_robison_sprinkle:
     taxonomies:
     - taxon: echinodermata
       children:
@@ -1545,7 +1545,7 @@ opinions:
                 - USNM 163255
                 - USNM 163256
                 - USNM 163257
-  muller_hahn_2010:
+  2010_muller_hahn:
     taxonomies:
     - taxon: isorophida
       children:
@@ -1674,7 +1674,7 @@ opinions:
         - taxon: discocystinae
       - taxon: hemicystitidae
       - taxon: rhenopyrgidae
-  fatka_kordule_1985:
+  1985_fatka_kordule:
     taxonomies:
     - taxon: ctenocystoidea
       children:
@@ -1689,7 +1689,7 @@ opinions:
             - taxon: briareus
           specimens:
             holotype: OF 002
-  zhao_sumrall_parsley_peng_2010:
+  2010_zhao_sumrall_parsley_peng:
     taxonomies:
     - taxon: edrioasteroidea
       children:
@@ -1721,7 +1721,7 @@ opinions:
                 - GM 3665
                 - GM 8052
                 - GM 9292
-  wen_babcock_peng_robison_2019:
+  2019_wen_babcock_peng_robison:
     taxonomies:
     - taxon: edrioasteroidea
       children:
@@ -1738,7 +1738,7 @@ opinions:
               specimens:
                 holotype: [KUMIP 49294A, KUMIP 49294B]
                 paratypes:
-  sprinkle_1985:
+  1985_sprinkle:
     taxonomies:
     - taxon: echinozoa
       children:
@@ -1757,7 +1757,7 @@ opinions:
                 new: true
                 specimens:
                   holotype: USNM 172047
-  zamora_guensburg_sprinkle_2024:
+  2024_zamora_guensburg_sprinkle:
     taxonomies:
     - taxon: echinodermata
       children:
@@ -1777,7 +1777,7 @@ opinions:
               specimens:
                 paratypes:
                 - PE 93415
-  zhao_rahman_zamora_chen_cong_2022:
+  2022_zhao_rahman_zamora_chen_cong:
     taxonomies:
     - taxon: echinodermata
       children:
@@ -1799,7 +1799,7 @@ opinions:
                 holotype: YKLP 13397
                 paratypes:
                 - YKLP 13553
-  ubaghs_1987:
+  1987_ubaghs:
     notes: |
       Only summary publicly available, and details are only in French
     taxonomies:
@@ -1820,7 +1820,7 @@ opinions:
       - taxon: languedocianus
         provisional: true
         new: true
-  ubaghs_robison_1988:
+  1988_ubaghs_robison:
     taxonomies:
     - taxon: homalozoa
       children:

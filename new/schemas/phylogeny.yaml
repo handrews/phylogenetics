@@ -2,6 +2,9 @@ $schema: https://json-schema.org/draft/2020-12/schema
 $id: phylogeny
 
 $defs:
+  sourceId:
+    type: string
+    pattern: ^[12][7890]\d\d_[a-z][_a-z]+$
   authors:
     type: object
     minProperties: 1
@@ -23,7 +26,7 @@ $defs:
         type: object
         minProperties: 1
         propertyNames:
-          pattern: ^[a-z][_a-z]*_[12][7890]\d\d$
+          $ref: "#/$defs/sourceId"
         additionalProperties:
           $ref: "#/$defs/article"
   trees:
@@ -38,12 +41,11 @@ $defs:
       opinions:
         type: object
         patternProperties:
-          ^[a-z][_a-z]*_[12][7890]\d\d$:
+          ^[12][7890]\d\d_[a-z][_a-z]*$:
             type: object
             properties:
               source:
-                type: string
-                pattern: ^[a-z][_a-z]*_[12][7890]\d\d$
+                $ref: "#/$defs/sourceId"
               taxonomies:
                 type: array
                 items:
@@ -65,11 +67,13 @@ $defs:
       suffix:
         type: string
       birth:
-        $ref: "#/$defs/modularDate"
+        type: integer
+        minimum: 1700
+        maximum: 2100
       death:
-        oneOf:
-        - $ref: "#/$defs/modularDate"
-        - type: "null"
+        type: [integer, "null"]
+        minimum: 1700
+        maximum: 2100
   publication:
     type: object
     required: [name]
@@ -95,6 +99,9 @@ $defs:
     - required: [book]
     unevaluatedProperties: false
     properties:
+      seen:
+        type: boolean
+        default: true
       complete:
         type: object
         properties:

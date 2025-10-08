@@ -7,6 +7,21 @@ babcock:
 banks:
   family: Banks
   given: M. R.
+barrande:
+  family: Barrande
+  given: Joachim
+  birth: 1799
+  death: 1883
+bassler:
+  family: Bassler
+  given: R. S.
+  birth: 1878
+  death: 1961
+bather:
+  family: Bather
+  given: F. A.
+  birth: 1863
+  death: 1934
 burrett:
   family: Burrett
   given: C. F.
@@ -22,21 +37,34 @@ david:
 derstler:
   family: Derstler
   given: Kraig
+dzik:
+  family: Dzik
+  given: Jerzy
 fatka:
   family: Fatka
   given: Oldřich
-jell:
-  family: Jell
-  given: P. A.
 gibson:
   family: Gibson
   given: Adam P.
 guensburg:
   family: Guensburg
   given: Thomas E.
+haekel:
+  family: Haekel
+  given: Ernst
+  birth: 1834
+  death: 1919
 hahn:
   family: Hahn
   given: Gerhard
+jaekel:
+  family: Jaekel
+  given: Otto
+  birth: 1863
+  death: 1929
+jell:
+  family: Jell
+  given: P. A.
 kammer:
   family: Kammer
   given: Thomas W.
@@ -46,6 +74,11 @@ kordule:
 lefebvre:
   family: Lefebvre
   given: Bertrand
+linnaeus:
+  family: Linnaeus
+  given: Carl
+  birth: 1707
+  death: 1778
 mooi:
   family: Mooi
   given: Rich
@@ -85,6 +118,8 @@ thompson:
 ubaghs:
   family: Ubaghs
   given: Georges
+  birth: 1916
+  death: 2005
 webby:
   family: Webby
   given: B. D.
