@@ -1,5 +1,5 @@
 publications:
-  acta_p_polonica:
+  acta-p-polonica:
     name: Acta Palaeontologica Polonica
   alcheringa:
     name: Alcheringa
@@ -9,7 +9,7 @@ publications:
     name: Bulletins of Geosciences
   geomag:
     name: Geological Magazine
-  geo_et_palaeo:
+  geo-et-palaeo:
     name: Geologica et Palaeontologica
   jofpaleo:
     name: Journal of Paleontology
@@ -19,12 +19,18 @@ publications:
     name: Papers in Palaeontology
   procrsocb:
     name: Proceedings of the Royal Society B
-  science_new_series:
+  science-new-series:
     name: Science (New Series)
   kansas:
     name: The University of Kansas Paleontological Contributions
   vestnik:
     name: Věstník Ústředního ústavu geologického
+  e-research-1998:
+    name: Echinoderm Research 1998
+    notes: Conference proceedings
+    editors:
+    - candia carnevali
+    - bonosoro
 articles:
   1968_webby:
     title: Astrocystites distans sp. nov., an edrioblastoid from the Ordovician of eastern Australia
@@ -49,7 +55,7 @@ articles:
       specimens:
         basic: true
         all: false
-    journal: science_new_series
+    journal: science-new-series
     volume: 166
     number: 3912
     pages:
@@ -180,9 +186,20 @@ articles:
     authors:
     - dzik
     - orłowski
+  1999_domínguez alonso:
+    title: "The early evolution of echinoderms: the class Ctenocystoidea and its closest relatives revisited"
+    book: e-research-1998
+    seen: false
+    pubDate:
+      year: 1999
+    pages:
+    - 263
+    - 268
+    authors:
+    - domínguez alonso
   2010_muller_hahn:
     title: Edrioasteroidea aus den Seifen-Schichten im Westerwald, Rheinisches Schiefer-Gebirge (Unter-Devon, Deutschland), Teil 1
-    journal: geo_et_palaeo
+    journal: geo-et-palaeo
     volume: 43
     pubDate:
       year: 2010
@@ -382,6 +399,33 @@ articles:
       accepted: 2015-08-24
     identifiers:
       doi: 10.1111/pala.12204
+  2015_rahman_stewart_zamora:
+    title: The youngest ctenocystoids from the Upper Ordovician of the United Kingdom and the evolution of the bilateral body plan in echinoderms
+    complete:
+      named: true
+      open: null
+      history: null
+      specimens:
+        basic: true
+        all: true
+    journal: acta-p-polonica
+    volume: 60
+    number: 1
+    pages:
+    - 39
+    - 48
+    authors:
+    - rahman
+    - stewart
+    - zamora
+    pubDate:
+      year: 2015
+    processDates:
+      received: 2013-12-04
+      accepted: 2014-03-20
+      online: 2014-03-24
+    identifiers:
+      doi: 10.4202/app.00048.2013
   2017_zamora_sumrall_zhu_lefebvre:
     title: A new stemmed echinoderm from the Furongian of China and the origin of Glyptocystitida (Blastozoa, Echinodermata)
     journal: geomag
@@ -535,7 +579,7 @@ articles:
     notes: |
       Involves moving Castericystis sp. nov. (unknown source)
       to Pahvanticystis cf. utahensis
-    journal: acta_p_polonica
+    journal: acta-p-polonica
     volume: 70
     number: 1
     pages:

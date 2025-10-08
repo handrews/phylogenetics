@@ -570,40 +570,72 @@
                     - taxon: lepidocystis
                     - taxon: gogia
                   - taxon: stromatocystites
+2015_rahman_stewart_zamora:
+  taxonomies:
+  - taxon: echinodermata
+    children:
+    - taxon: ctenocystoidea
+      children:
+      - taxon: conollia
+        children:
+        - taxon: staffordi
+          type: true
+        - taxon: sporranoides
+          new: true
+          specimens:
+            holotype: GLAHM 131255/2
+            paratypes:
+            - GLAHM 131255/1
+            - GLAHM 131255/3
+            - GLAHM 131255/4
+            - GLAHM 131255/5
+            - GLAHM 131255/6
+            - GLAHM 131255/7
+            - GLAHM 131255/8
+            - GLAHM 131255/9
+            - GLAHM 131255/10
+            - GLAHM 131255/11
+            - GLAHM 131255/12
+            - GLAHM 131255/13
+            - GLAHM 131255/14
+            - GLAHM 131255/15
+            - GLAHM 131255/16
+            - GLAHM 131255/17
+            - GLAHM 131255/18
+            - GLAHM 131255/19
+            - GLAHM 131255/20
+            - GLAHM 131255/21
+            - GLAHM 131255/22
+            - GLAHM 131255/23
+            - GLAHM 131255/24
+            - GLAHM 131255/25
+            - GLAHM 131255/26
+            - GLAHM 131255/27
 2017_zamora_sumrall_zhu_lefebvre:
   taxonomies:
-    - taxon: echinodermata
+  - taxon: echinodermata
+    children:
+    - taxon: blastozoa
       children:
-      - taxon: blastozoa
+      - taxon: rhombifera
+        quoted: true
         children:
-        - taxon: rhombifera
-          quoted: true
+        - taxon: glyptocystitida
           children:
-          - taxon: glyptocystitida
+          - taxon: sanducystis
+            new: true
             children:
-            - taxon: sanducystis
+            - taxon: sinensis
               new: true
-              children:
-              - taxon: sinensis
-                new: true
-                type: true
-                specimens:
-                  holotype: NIGPAS163198
-                  paratypes:
-                  - NIGPAS163199
-                  - NIGPAS163210
-    - taxon: echinodermata
-      children:
-      - taxon: blastozoa
-        children:
-        - taxon: rhombifera
-          quoted: true
-          children:
-          - taxon: glyptocystitida
+              type: true
+              specimens:
+                holotype: NIGPAS163198
+                paratypes:
+                - NIGPAS163199
+                - NIGPAS163210
+          - taxon: ridersiidae
             children:
-            - taxon: ridersiidae
-              children:
-              - taxon: ridersia
+            - taxon: ridersia
   phylogenies:
   - tree:
       children:

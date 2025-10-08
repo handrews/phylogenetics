@@ -168,6 +168,10 @@ colodon:
   name: colodon
   auth: [Ubaghs, Robison]
   year: 1988
+conollia:
+  name: Conollia
+  auth: [Domínguez Alonso]
+  year: 2004
 cornuta:
   name: Cornuta
   rank: Order
@@ -789,6 +793,10 @@ spencensis:
   name: spencensis
   auth: [Wen, Babcock, Peng, Robison]
   year: 2019
+sporranoides:
+  name: sporranoides
+  auth: [rahman, stewart, zamora]
+  year: 2015
 sprinklei:
   name: sprinklei
   auth: [Ubaghs, Robison]
@@ -797,6 +805,10 @@ sprinkleoglobus:
   name: Sprinkleoglobus
   auth: [Zamora, Guensburg, Sprinkle]
   year: 2024
+staffordi:
+  name: staffordi
+  auth: [Domínguez Alonso]
+  year: 2004
 steganoblastidae:
   name: Steganoblastidae
   rank: Family

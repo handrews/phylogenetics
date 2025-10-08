@@ -22,9 +22,15 @@ bather:
   given: F. A.
   birth: 1863
   death: 1934
+bonasoro:
+  family: Bonasoro
+  given: F.
 burrett:
   family: Burrett
   given: C. F.
+candia carnevali:
+  family: Candia Carnevali
+  given: M. D.
 chen_a_l:
   family: Chen
   given: Ailin
@@ -37,6 +43,9 @@ david:
 derstler:
   family: Derstler
   given: Kraig
+domínguez alonso:
+  family: Domînguez Alonso
+  given: Patricio
 dzik:
   family: Dzik
   given: Jerzy
@@ -118,6 +127,9 @@ smith:
 sprinkle:
   family: Sprinkle
   given: James
+stewart:
+  family: Stewart
+  given: Sarah E.
 sumrall:
   family: Sumrall
   given: Colin D.
