@@ -150,8 +150,10 @@ if __name__ == '__main__':
       logger.error(repr(e))
 
   logger.info("Checking sources...")
+  sources = set()
   for ref_id, article in data['sources']['articles'].items():
-    logger.info(f'Processing article "{ref_id}"')
+    sources.add(ref_id)
+    logger.debug(f'Processing article "{ref_id}"')
     source_type = 'journal' if 'journal' in article else 'book'
     if article[source_type] not in data['sources']['publications']:
       logger.error(f'{source_type} "{article[source_type]}" not found!')
@@ -206,21 +208,25 @@ if __name__ == '__main__':
   logger.info(f"...taxa processed.")
 
   logger.info(f"Processing {len(data['trees']['opinions'])} opinions...")
+  opinions = set()
   for ref_id, opinion in data['trees']['opinions'].items():
-    logger.info(f'Processing opinions from "{ref_id}"')
+    opinions.add(ref_id)
+    logger.debug(f'Processing opinions from "{ref_id}"')
     if ref_id not in data['sources']['articles']:
       logger.error(f'Tree citation "{ref_id}" not found!')
 
     trees = [t for t in opinion.get('taxonomies', {})]
     num_tax = len(trees)
-    logger.info(f'Found {num_tax} taxonomic trees')
+    logger.debug(f'Found {num_tax} taxonomic trees')
     trees.extend([p['tree'] for p in opinion.get('phylogenies', {})])
     num_phy = len(trees) - num_tax
-    logger.info(f'Found {num_phy} phylogenetic trees')
+    logger.debug(f'Found {num_phy} phylogenetic trees')
     for t in trees:
       _check_node(t)
   logger.info(f"...opinions processed.")
 
+  if (difference := sources - opinions):
+    logger.error(f"Missing opinions from {difference}")
 #   logged_errors = log_counter.get_counts()[logging.ERROR]
 #   if logged_errors:
   logged_errors = logger.error_count

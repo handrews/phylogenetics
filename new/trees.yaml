@@ -936,6 +936,540 @@ taxa:
     synonym: parsleya
     reason: homonym
 opinions:
+  1968_webby:
+    taxonomies:
+    - taxon: pelmatozoa
+      children:
+      - taxon: edrioblastoidea
+        children:
+        - taxon: steganoblastidae
+          children:
+          - taxon: astrocystites
+            children:
+            - taxon: ottawaensis
+              type: true
+            - taxon: distans
+              new: true
+              specimens:
+                holotype: USGD 2302
+                paratypes:
+                - USGD 2303
+                - USGD 2304
+                - USGD 2305
+                - USGD 2306
+                - USGD 2309
+                - USGD 2310
+                - USGD 2311
+                - USGD 2312
+                - USGD 3303
+  1969_robison_sprinkle:
+    taxonomies:
+    - taxon: echinodermata
+      children:
+      - taxon: homalozoa
+        children:
+        - taxon: ctenocystoidea
+          new: true
+          children:
+          - taxon: ctenocystis
+            new: true
+            children:
+            - taxon: utahensis
+              new: true
+              type: true
+              specimens:
+                holotype: USNM 163252
+                paratypes:
+                - USNM 163253
+                - USNM 163254
+                - USNM 163255
+                - USNM 163256
+                - USNM 163257
+  1985_fatka_kordule:
+    taxonomies:
+    - taxon: ctenocystoidea
+      children:
+      - taxon: etoctenocystis
+        new: true
+        children:
+        - taxon: bohemica
+          type: true
+          new: true
+          synonyms:
+          - - taxon: acanthocystites
+            - taxon: briareus
+          specimens:
+            holotype: OF 002
+  1985_jell_burrett_banks:
+    taxonomies:
+    - taxon: edrioasteroidea
+      children:
+      - taxon: stromatocystitidae
+        children:
+        - taxon: cambraster
+          children:
+          - taxon: cannati
+            type: true
+          - taxon: tastudorum
+            new: true
+            specimens:
+              holotype: UTGD122593
+              paratypes:
+              - UTGD122226
+              - UTGD122231
+              - UTGD122233
+              - NMVP107053
+              - NMVP107054
+              - NMVP107055
+              - NMVP107056
+              - NMVP107057
+              - NMVP107059
+              - NMVP107060
+              - NMVP107061
+              - NMVP107062
+              - NMVP107063
+              - NMVP107064
+              - NMVP107065
+              - NMVP107066
+              - NMVP107067
+              - NMVP107068
+              - NMVP107069
+              - NMVP107070
+              - NMVP107071
+              - NMVP107072
+        - taxon: edriodiscus
+          new: true
+          children:
+          - taxon: primotica
+            type: true
+            specimens:
+              holotype: CPCl1395
+              paratypes:
+              - CPCl1396
+              - NMVP107479
+    - taxon: ctenocystoidea
+      children:
+      - taxon: ctenocystidae
+        children:
+        - taxon: ctenocystis
+          children:
+          - taxon: utahensis
+            type: true
+          - taxon: jagoi
+            new: true
+            specimens:
+              holotype: UTGD122594
+              paratypes:
+              - NMVP107073
+              - NMVP107075
+              - NMVP107076
+    - taxon: eocrinoidea
+      children:
+      - taxon: ridersiidae
+        new: true
+        children:
+        - taxon: ridersia
+          new: true
+          children:
+          - taxon: watsonae
+            type: true
+            new: true
+            specimens:
+              holotype: NMVP107112
+              paratypes:
+              - NMVP107113
+              - NMVP107114
+              - NMVP107115
+              - NMVP107116
+              - NMVP107117
+              - NMVP107118
+              - NMVP107119
+              - NMVP107120
+              - NMVP107121
+              - NMVP107122
+              - NMVP107123
+              - NMVP107124
+              - NMVP107125
+              - NMVP107126
+              - NMVP107127
+              - NMVP107128
+              - NMVP107480
+              - NMVP107481
+              - NMVP107482
+              - NMVP107483
+              - NMVP107484
+              - NMVP107485
+              - NMVP107486
+              - NMVP107487
+              - NMVP107488
+              - NMVP107489
+              - NMVP107490
+              - NMVP107491
+              - NMVP107492
+              - NMVP108991
+  1985_sprinkle:
+    taxonomies:
+    - taxon: echinozoa
+      children:
+      - taxon: edrioasteroidea
+        children:
+        - taxon: edrioasterida
+          children:
+          - taxon: totiglobidae
+            children:
+            - taxon: totiglobus
+              children:
+              - taxon: nimius
+                type: true
+              - taxon: lloydi
+                provisional: true
+                new: true
+                specimens:
+                  holotype: USNM 172047
+  1987_ubaghs:
+    notes: |
+      Only summary publicly available, and details are only in French
+    taxonomies:
+    - taxon: ctenocystis
+      children:
+      - taxon: smithi
+        new: true
+    - taxon: ceratocystis
+      children:
+      - taxon: vizcainoi
+        new: true
+    - taxon: gogia
+      children:
+      - taxon: gondi
+        new: true
+    - taxon: eocystites # with angle quotes?
+      children:
+      - taxon: languedocianus
+        provisional: true
+        new: true
+  1988_ubaghs_robison:
+    taxonomies:
+    - taxon: homalozoa
+      children:
+      - taxon: ctenocystoidea
+        children:
+        - taxon: ctenocystida
+          new: true
+          children:
+          - taxon: ctenocystidae
+            children:
+            - taxon: ctenocystis
+              children:
+              - taxon: colodon
+                new: true
+                specimens:
+                  holotype: USNM 423874
+        - taxon: homoiostelea
+          children:
+          - taxon: soluta-order
+            children:
+            - taxon: uncertain-family  # "indeterminate"
+              children:
+              - taxon: castericystis
+                children:
+                - taxon: sprinklei
+                  provisional: true
+                  new: true
+                  specimens:
+                    holotype: USNM 423877
+        - taxon: stylophora
+          children:
+          - taxon: cornuta
+            children:
+            - taxon: cothurnocystidae
+              children:
+              - taxon: cothurnocystis
+                children:
+                - taxon: elizae
+                  type: true
+                - taxon: bifida
+                  provisional: true
+                  new: true
+                  specimens:
+                    holotype: USNM 415804
+  2010_muller_hahn:
+    taxonomies:
+    - taxon: isorophida
+      children:
+      - taxon: pyrgocystidae
+        children:
+        - taxon: pyrgocystis
+          type: true
+          children:
+          - taxon: sardesoni
+            type: true
+          - taxon: volborthi
+            provisional: true # with reservations
+          - taxon: petalus
+            provisional: true # uncertain
+          - taxon: postpetalus
+            provisional: true # following convention of petalus
+            new: true
+            specimens:
+              holotype: PWL 2009/5016sub1-LS
+              paratypes:
+              - PWL 2009/5017-LS # 517 but surely a typo
+              - PWL 2009/5018-LS
+      - taxon: agelacrinitidae
+        children:
+        - taxon: postibullinae
+          children:
+          - taxon: postibulla
+            type: true
+            children:
+            - taxon: legrandensis
+            - taxon: lukei
+            - taxon: alabamensis
+            - taxon: westergardi
+            - taxon: jasperensis
+              provisional: true
+            - taxon: alpinensis
+              provisional: true
+          - taxon: parapostibulla
+            children:
+            - taxon: murphyi
+            - taxon: hybolopus
+            - taxon: neglecta
+              moved: true
+              from: postibulla
+            - taxon: graysoni
+          - taxon: pyrgopostibulla
+            children:
+            - taxon: belli
+          - taxon: eopostibulla
+            new: true
+            children:
+            - taxon: pustulata
+              type: true
+              new: true
+              specimens:
+                holotype: PWL 2009/5022-LS
+                paratypes:
+                - PWL 2009/5019-LS
+                - PWL 2009/5020-LS
+                - PWL 2009/5021-LS
+        - taxon: agelacrinitinae
+          type: true  # Agelacrinites is given as type of Agelacrinitidae as well
+          children:
+          - taxon: agelacrinites
+            type: true
+            children:
+            - taxon: hamiltonensis
+              type: true
+            - taxon: blairi
+            - taxon: curvatus
+            - taxon: rhenanus
+              provisional: true
+            - taxon: taunicus
+            - taxon: thor
+              new: true
+              specimens:
+                holotype: PWL 2009/5023-LS
+          - taxon: krama
+            children:
+            - taxon: devonica
+              type: true
+            - taxon: hispanica
+              new: true
+              specimens:
+                holotype: DPO 14001
+            - taxon: germanica
+              new: true
+              specimens:
+                holotype: PWL 2009/5024-LS
+                paratypes:
+                - PWL 2009/5025-LS
+                - PWL 2009/5026-LS
+                - PWL 2009/5027-LS
+                - PWL 2009/5028a-LS
+                - PWL 2009/5028b-LS
+                - PWL 2009/5029-LS
+                - PWL 2009/5030-LS
+                - PWL 2009/5031-LS
+                - PWL 2009/5032-LS
+                - RS 21
+                - M 2514
+            - taxon: odin
+              new: true
+              specimens:
+                holotype: PWL 2009/5033sub1-LS
+                paratypes:
+                - PWL 2009/5033sub2-LS
+          - taxon: parakrama
+            new: true
+            children:
+            - taxon: grebelae
+              type: true
+              new: true
+              specimens:
+                holotype: PWL 2009/5040-LS
+                paratypes:
+                - PWL 2009/5034-LS
+                - PWL 2009/5035-LS
+                - PWL 2009/5016sub2-LS
+                - PWL 2009/5036-LS
+                - PWL 2009/5037-LS
+                - PWL 2009/5038-LS
+                - PWL 2009/5039-LS
+                - PWL 2009/5041-LS
+                - PWL 2009/5042-LS
+        - taxon: discocystinae
+      - taxon: hemicystitidae
+      - taxon: rhenopyrgidae
+  2010_parsley_zhao:
+    taxonomies:
+      - taxon: blastozoa
+        children:
+        - taxon: eocrinoidea
+          children:
+          - taxon: gogiida
+            children:
+            - taxon: turbanicystidae
+              new: true
+              children:
+              - taxon: turbanicystis
+                new: true
+                children:
+                - taxon: inflatus
+                  new: true
+                  type: true
+                  specimens:
+                    holotype: GM 9-5-2 165b
+                    paratypes:
+                    - GM 9-3-887
+                    - GM 9-5-3235b
+                    - GM 10-3-2000
+                    - GM 9-5-2165a
+  2010_zhao_sumrall_parsley_peng:
+    taxonomies:
+    - taxon: edrioasteroidea
+      children:
+      - taxon: uncertain-order
+        children:
+        - taxon: uncertain-family
+          children:
+          - taxon: kailidiscus
+            new: true
+            children:
+            - taxon: chinensis
+              type: true
+              new: true
+              specimens:
+                holotype: GM 3428 
+                paratypes:
+                - GM 70
+                - GM 746
+                - GM 1331
+                - GM 1670
+                - GM 1898
+                - GM 2013
+                - GM 2146
+                - GM 3295a
+                - GM 3295b
+                - GM 3295c
+                - GM 3035
+                - GM 3600
+                - GM 3665
+                - GM 8052
+                - GM 9292
+  2012_zamora_smith:
+    taxonomies:
+      - taxon: echinodermata
+        children:
+        - taxon: rhombifera
+          rank: Plesion
+          children:
+          - taxon: dibrachycystidae
+            new: true
+            children:
+            - taxon: dibrachycystis
+              new: true
+              children:
+              - taxon: purujoensis
+                new: true
+                type: true
+                specimens:
+                  holotype: MPZ2009/1230
+                  paratypes:
+                  - [MPZ2011/2, MPZ2011/6]
+            - taxon: vizcainoia
+              new: true
+              children:
+              - taxon: languedocianus
+                type: true
+              - taxon: moncaiensis
+                new: true
+                specimens:
+                  holotype: MPZ2011/7
+    phylogenies:
+    - tree:
+        taxon: kinzercystis
+        outgroup: true
+        children:
+        - children:
+          - taxon: gogia
+          - taxon: sinoeocrinus
+          - children:
+            - children:
+              - children:
+                - children:
+                  - taxon: ridersia
+                  - taxon: macrocystella
+                - taxon: velieuxicystis
+              - taxon: pleurocystites
+              - taxon: dibrachycystis
+            - taxon: akadocrinus
+        - children:
+          - taxon: lyracystis
+            children:
+            - taxon: titanocrinus
+            - taxon: aethocrinus
+  2013_smith_zamora:
+    taxonomies:
+    - taxon: echinodermata
+      stem: true
+      children:
+      - taxon: helicocystitidae
+        new: true
+        children:
+        - taxon: helicocystis
+          new: true
+          children:
+          - taxon: moroccoensis
+            new: true
+            type: true
+            specimens:
+              holotype: NHM UK EE15373
+              paratypes:
+              - [EE15374, EE15376]
+              - EE14847
+              - EE14848
+              - EE15329
+    phylogenies:
+    - treeType: Evolutionary tree of Cambrian echinoderms
+      tree:
+        children:
+        - taxon: courtessolea
+        - children:
+          - taxon: asturicystis
+          - children:
+            - taxon: castericystis
+            - children:
+              - taxon: helicoplacus
+              - children:
+                - taxon: helicocystis
+                - children:
+                  - taxon: camptostroma
+                  - children:
+                    - children:
+                      - taxon: lepidocystis
+                      - taxon: gogia
+                    - taxon: stromatocystites
   2017_zamora_sumrall_zhu_lefebvre:
     taxonomies:
       - taxon: echinodermata
@@ -999,56 +1533,23 @@ opinions:
           outgroup: true
         - taxon: hemicosmites
           outgroup: true
-  2010_parsley_zhao:
+  2019_wen_babcock_peng_robison:
     taxonomies:
-      - taxon: blastozoa
-        children:
-        - taxon: eocrinoidea
-          children:
-          - taxon: gogiida
-            children:
-            - taxon: turbanicystidae
-              new: true
-              children:
-              - taxon: turbanicystis
-                new: true
-                children:
-                - taxon: inflatus
-                  new: true
-                  type: true
-                  specimens:
-                    holotype: GM 9-5-2 165b
-                    paratypes:
-                    - GM 9-3-887
-                    - GM 9-5-3235b
-                    - GM 10-3-2000
-                    - GM 9-5-2165a
-  1968_webby:
-    taxonomies:
-    - taxon: pelmatozoa
+    - taxon: edrioasteroidea
       children:
-      - taxon: edrioblastoidea
+      - taxon: edrioasterida
         children:
-        - taxon: steganoblastidae
+        - taxon: totiglobidae
           children:
-          - taxon: astrocystites
+          - taxon: totiglobus
             children:
-            - taxon: ottawaensis
+            - taxon: nimius
               type: true
-            - taxon: distans
+            - taxon: spencensis
               new: true
               specimens:
-                holotype: USGD 2302
+                holotype: [KUMIP 49294A, KUMIP 49294B]
                 paratypes:
-                - USGD 2303
-                - USGD 2304
-                - USGD 2305
-                - USGD 2306
-                - USGD 2309
-                - USGD 2310
-                - USGD 2311
-                - USGD 2312
-                - USGD 3303
   2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler:
     taxonomies:
     - taxon: crinoidea
@@ -1248,113 +1749,6 @@ opinions:
               - taxon: rhopalocystis
               - taxon: macrocystella
               - taxon: eumorphocystis
-  1985_jell_burrett_banks:
-    taxonomies:
-    - taxon: edrioasteroidea
-      children:
-      - taxon: stromatocystitidae
-        children:
-        - taxon: cambraster
-          children:
-          - taxon: cannati
-            type: true
-          - taxon: tastudorum
-            new: true
-            specimens:
-              holotype: UTGD122593
-              paratypes:
-              - UTGD122226
-              - UTGD122231
-              - UTGD122233
-              - NMVP107053
-              - NMVP107054
-              - NMVP107055
-              - NMVP107056
-              - NMVP107057
-              - NMVP107059
-              - NMVP107060
-              - NMVP107061
-              - NMVP107062
-              - NMVP107063
-              - NMVP107064
-              - NMVP107065
-              - NMVP107066
-              - NMVP107067
-              - NMVP107068
-              - NMVP107069
-              - NMVP107070
-              - NMVP107071
-              - NMVP107072
-        - taxon: edriodiscus
-          new: true
-          children:
-          - taxon: primotica
-            type: true
-            specimens:
-              holotype: CPCl1395
-              paratypes:
-              - CPCl1396
-              - NMVP107479
-    - taxon: ctenocystoidea
-      children:
-      - taxon: ctenocystidae
-        children:
-        - taxon: ctenocystis
-          children:
-          - taxon: utahensis
-            type: true
-          - taxon: jagoi
-            new: true
-            specimens:
-              holotype: UTGD122594
-              paratypes:
-              - NMVP107073
-              - NMVP107075
-              - NMVP107076
-    - taxon: eocrinoidea
-      children:
-      - taxon: ridersiidae
-        new: true
-        children:
-        - taxon: ridersia
-          new: true
-          children:
-          - taxon: watsonae
-            type: true
-            new: true
-            specimens:
-              holotype: NMVP107112
-              paratypes:
-              - NMVP107113
-              - NMVP107114
-              - NMVP107115
-              - NMVP107116
-              - NMVP107117
-              - NMVP107118
-              - NMVP107119
-              - NMVP107120
-              - NMVP107121
-              - NMVP107122
-              - NMVP107123
-              - NMVP107124
-              - NMVP107125
-              - NMVP107126
-              - NMVP107127
-              - NMVP107128
-              - NMVP107480
-              - NMVP107481
-              - NMVP107482
-              - NMVP107483
-              - NMVP107484
-              - NMVP107485
-              - NMVP107486
-              - NMVP107487
-              - NMVP107488
-              - NMVP107489
-              - NMVP107490
-              - NMVP107491
-              - NMVP107492
-              - NMVP108991
   2022_zamora_rahman_sumrall_gibson_thompson:
     taxonomies:
     - taxon: echinodermata
@@ -1429,354 +1823,6 @@ opinions:
         - taxon: helicoplacus
           bracket: helicoplacoidea
           outgroup: true
-  2013_smith_zamora:
-    taxonomies:
-    - taxon: echinodermata
-      stem: true
-      children:
-      - taxon: helicocystitidae
-        new: true
-        children:
-        - taxon: helicocystis
-          new: true
-          children:
-          - taxon: moroccoensis
-            new: true
-            type: true
-            specimens:
-              holotype: NHM UK EE15373
-              paratypes:
-              - [EE15374, EE15376]
-              - EE14847
-              - EE14848
-              - EE15329
-    phylogenies:
-    - treeType: Evolutionary tree of Cambrian echinoderms
-      tree:
-        children:
-        - taxon: courtessolea
-        - children:
-          - taxon: asturicystis
-          - children:
-            - taxon: castericystis
-            - children:
-              - taxon: helicoplacus
-              - children:
-                - taxon: helicocystis
-                - children:
-                  - taxon: camptostroma
-                  - children:
-                    - children:
-                      - taxon: lepidocystis
-                      - taxon: gogia
-                    - taxon: stromatocystites
-  2012_zamora_smith:
-    taxonomies:
-      - taxon: echinodermata
-        children:
-        - taxon: rhombifera
-          rank: Plesion
-          children:
-          - taxon: dibrachycystidae
-            new: true
-            children:
-            - taxon: dibrachycystis
-              new: true
-              children:
-              - taxon: purujoensis
-                new: true
-                type: true
-                specimens:
-                  holotype: MPZ2009/1230
-                  paratypes:
-                  - [MPZ2011/2, MPZ2011/6]
-            - taxon: vizcainoia
-              new: true
-              children:
-              - taxon: languedocianus
-                type: true
-              - taxon: moncaiensis
-                new: true
-                specimens:
-                  holotype: MPZ2011/7
-    phylogenies:
-    - tree:
-        taxon: kinzercystis
-        outgroup: true
-        children:
-        - children:
-          - taxon: gogia
-          - taxon: sinoeocrinus
-          - children:
-            - children:
-              - children:
-                - children:
-                  - taxon: ridersia
-                  - taxon: macrocystella
-                - taxon: velieuxicystis
-              - taxon: pleurocystites
-              - taxon: dibrachycystis
-            - taxon: akadocrinus
-        - children:
-          - taxon: lyracystis
-            children:
-            - taxon: titanocrinus
-            - taxon: aethocrinus
-  1969_robison_sprinkle:
-    taxonomies:
-    - taxon: echinodermata
-      children:
-      - taxon: homalozoa
-        children:
-        - taxon: ctenocystoidea
-          new: true
-          children:
-          - taxon: ctenocystis
-            new: true
-            children:
-            - taxon: utahensis
-              new: true
-              type: true
-              specimens:
-                holotype: USNM 163252
-                paratypes:
-                - USNM 163253
-                - USNM 163254
-                - USNM 163255
-                - USNM 163256
-                - USNM 163257
-  2010_muller_hahn:
-    taxonomies:
-    - taxon: isorophida
-      children:
-      - taxon: pyrgocystidae
-        children:
-        - taxon: pyrgocystis
-          type: true
-          children:
-          - taxon: sardesoni
-            type: true
-          - taxon: volborthi
-            provisional: true # with reservations
-          - taxon: petalus
-            provisional: true # uncertain
-          - taxon: postpetalus
-            provisional: true # following convention of petalus
-            new: true
-            specimens:
-              holotype: PWL 2009/5016sub1-LS
-              paratypes:
-              - PWL 2009/5017-LS # 517 but surely a typo
-              - PWL 2009/5018-LS
-      - taxon: agelacrinitidae
-        children:
-        - taxon: postibullinae
-          children:
-          - taxon: postibulla
-            type: true
-            children:
-            - taxon: legrandensis
-            - taxon: lukei
-            - taxon: alabamensis
-            - taxon: westergardi
-            - taxon: jasperensis
-              provisional: true
-            - taxon: alpinensis
-              provisional: true
-          - taxon: parapostibulla
-            children:
-            - taxon: murphyi
-            - taxon: hybolopus
-            - taxon: neglecta
-              moved: true
-              from: postibulla
-            - taxon: graysoni
-          - taxon: pyrgopostibulla
-            children:
-            - taxon: belli
-          - taxon: eopostibulla
-            new: true
-            children:
-            - taxon: pustulata
-              type: true
-              new: true
-              specimens:
-                holotype: PWL 2009/5022-LS
-                paratypes:
-                - PWL 2009/5019-LS
-                - PWL 2009/5020-LS
-                - PWL 2009/5021-LS
-        - taxon: agelacrinitinae
-          type: true  # Agelacrinites is given as type of Agelacrinitidae as well
-          children:
-          - taxon: agelacrinites
-            type: true
-            children:
-            - taxon: hamiltonensis
-              type: true
-            - taxon: blairi
-            - taxon: curvatus
-            - taxon: rhenanus
-              provisional: true
-            - taxon: taunicus
-            - taxon: thor
-              new: true
-              specimens:
-                holotype: PWL 2009/5023-LS
-          - taxon: krama
-            children:
-            - taxon: devonica
-              type: true
-            - taxon: hispanica
-              new: true
-              specimens:
-                holotype: DPO 14001
-            - taxon: germanica
-              new: true
-              specimens:
-                holotype: PWL 2009/5024-LS
-                paratypes:
-                - PWL 2009/5025-LS
-                - PWL 2009/5026-LS
-                - PWL 2009/5027-LS
-                - PWL 2009/5028a-LS
-                - PWL 2009/5028b-LS
-                - PWL 2009/5029-LS
-                - PWL 2009/5030-LS
-                - PWL 2009/5031-LS
-                - PWL 2009/5032-LS
-                - RS 21
-                - M 2514
-            - taxon: odin
-              new: true
-              specimens:
-                holotype: PWL 2009/5033sub1-LS
-                paratypes:
-                - PWL 2009/5033sub2-LS
-          - taxon: parakrama
-            new: true
-            children:
-            - taxon: grebelae
-              type: true
-              new: true
-              specimens:
-                holotype: PWL 2009/5040-LS
-                paratypes:
-                - PWL 2009/5034-LS
-                - PWL 2009/5035-LS
-                - PWL 2009/5016sub2-LS
-                - PWL 2009/5036-LS
-                - PWL 2009/5037-LS
-                - PWL 2009/5038-LS
-                - PWL 2009/5039-LS
-                - PWL 2009/5041-LS
-                - PWL 2009/5042-LS
-        - taxon: discocystinae
-      - taxon: hemicystitidae
-      - taxon: rhenopyrgidae
-  1985_fatka_kordule:
-    taxonomies:
-    - taxon: ctenocystoidea
-      children:
-      - taxon: etoctenocystis
-        new: true
-        children:
-        - taxon: bohemica
-          type: true
-          new: true
-          synonyms:
-          - - taxon: acanthocystites
-            - taxon: briareus
-          specimens:
-            holotype: OF 002
-  2010_zhao_sumrall_parsley_peng:
-    taxonomies:
-    - taxon: edrioasteroidea
-      children:
-      - taxon: uncertain-order
-        children:
-        - taxon: uncertain-family
-          children:
-          - taxon: kailidiscus
-            new: true
-            children:
-            - taxon: chinensis
-              type: true
-              new: true
-              specimens:
-                holotype: GM 3428 
-                paratypes:
-                - GM 70
-                - GM 746
-                - GM 1331
-                - GM 1670
-                - GM 1898
-                - GM 2013
-                - GM 2146
-                - GM 3295a
-                - GM 3295b
-                - GM 3295c
-                - GM 3035
-                - GM 3600
-                - GM 3665
-                - GM 8052
-                - GM 9292
-  2019_wen_babcock_peng_robison:
-    taxonomies:
-    - taxon: edrioasteroidea
-      children:
-      - taxon: edrioasterida
-        children:
-        - taxon: totiglobidae
-          children:
-          - taxon: totiglobus
-            children:
-            - taxon: nimius
-              type: true
-            - taxon: spencensis
-              new: true
-              specimens:
-                holotype: [KUMIP 49294A, KUMIP 49294B]
-                paratypes:
-  1985_sprinkle:
-    taxonomies:
-    - taxon: echinozoa
-      children:
-      - taxon: edrioasteroidea
-        children:
-        - taxon: edrioasterida
-          children:
-          - taxon: totiglobidae
-            children:
-            - taxon: totiglobus
-              children:
-              - taxon: nimius
-                type: true
-              - taxon: lloydi
-                provisional: true
-                new: true
-                specimens:
-                  holotype: USNM 172047
-  2024_zamora_guensburg_sprinkle:
-    taxonomies:
-    - taxon: echinodermata
-      children:
-      - taxon: edrioasteroidea
-        children: 
-        - taxon: edrioasterida
-          children:
-          - taxon: sprinkleoglobus
-            provisional: true
-            children:
-            - taxon: lloydi
-              type: true
-            - taxon: spencensis
-              moved: true
-              from: totiglobus
-              modifier: n. comb.
-              specimens:
-                paratypes:
-                - PE 93415
   2022_zhao_rahman_zamora_chen_cong:
     taxonomies:
     - taxon: echinodermata
@@ -1799,69 +1845,23 @@ opinions:
                 holotype: YKLP 13397
                 paratypes:
                 - YKLP 13553
-  1987_ubaghs:
-    notes: |
-      Only summary publicly available, and details are only in French
+  2024_zamora_guensburg_sprinkle:
     taxonomies:
-    - taxon: ctenocystis
+    - taxon: echinodermata
       children:
-      - taxon: smithi
-        new: true
-    - taxon: ceratocystis
-      children:
-      - taxon: vizcainoi
-        new: true
-    - taxon: gogia
-      children:
-      - taxon: gondi
-        new: true
-    - taxon: eocystites # with angle quotes?
-      children:
-      - taxon: languedocianus
-        provisional: true
-        new: true
-  1988_ubaghs_robison:
-    taxonomies:
-    - taxon: homalozoa
-      children:
-      - taxon: ctenocystoidea
-        children:
-        - taxon: ctenocystida
-          new: true
+      - taxon: edrioasteroidea
+        children: 
+        - taxon: edrioasterida
           children:
-          - taxon: ctenocystidae
+          - taxon: sprinkleoglobus
+            provisional: true
             children:
-            - taxon: ctenocystis
-              children:
-              - taxon: colodon
-                new: true
-                specimens:
-                  holotype: USNM 423874
-        - taxon: homoiostelea
-          children:
-          - taxon: soluta-order
-            children:
-            - taxon: uncertain-family  # "indeterminate"
-              children:
-              - taxon: castericystis
-                children:
-                - taxon: sprinklei
-                  provisional: true
-                  new: true
-                  specimens:
-                    holotype: USNM 423877
-        - taxon: stylophora
-          children:
-          - taxon: cornuta
-            children:
-            - taxon: cothurnocystidae
-              children:
-              - taxon: cothurnocystis
-                children:
-                - taxon: elizae
-                  type: true
-                - taxon: bifida
-                  provisional: true
-                  new: true
-                  specimens:
-                    holotype: USNM 415804
+            - taxon: lloydi
+              type: true
+            - taxon: spencensis
+              moved: true
+              from: totiglobus
+              modifier: n. comb.
+              specimens:
+                paratypes:
+                - PE 93415
