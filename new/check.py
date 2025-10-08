@@ -1,14 +1,14 @@
 import sys
 import pathlib
+import logging
 
 import yaml
 import jschon
 
+logger = logging.getLogger(__name__)
 schema_catalog = jschon.create_catalog('2020-12')
 """The default shared ``jschon`` schema loader and cache"""
 
-def printe(data, *args, **kwargs):
-  return sys.stderr.write(str(data) + '\n')
 
 class UniqueKeyNoDatesLoader(yaml.SafeLoader):
   # and https://stackoverflow.com/questions/34667108/ignore-dates-and-times-while-parsing-yaml
@@ -47,19 +47,35 @@ def load_yaml(filename, debug=True):
   UniqueKeyNoDatesLoader.remove_implicit_resolver('tag:yaml.org,2002:timestamp')
   with open(filename) as fd:
     if debug:
-      printe(f'Loading "{filename}" with duplication prevention...')
+      logger.debug(f'Loading "{filename}" with duplication prevention...')
       return yaml.load(fd, Loader=UniqueKeyNoDatesLoader)
     else:
       return yaml.safe_load(fd)
+
+def _check_node(n, parent=[]):
+  if 'taxon' in n:
+    current = parent + [n['taxon']]
+    logger.debug(f'checking {current}')
+    if not (taxon := data['trees']['taxa'].get(n['taxon'])):
+      logger.error(f"Taxon \"{n['taxon']}\" not found!")
+    if n.get('new'):
+      # TODO: Figure this out
+      pass
+  else:
+    current = parent + ['_anon_']
+    logger.debug(f'Descending through {current}')
+  for c in n.get('children', {}):
+    _check_node(c, current)
 
 if __name__ == '__main__':
   schema_library = jschon.JSONSchema(load_yaml('schemas/phylogeny.yaml'))
   r = schema_library.validate()
   if not r.valid:
-    printe("Schema not valid against metaschema!")
-    printe(yaml.safe_dump(r.output('detailed')))
+    logger.error("Schema not valid against metaschema!")
+    logger.error(yaml.safe_dump(r.output('detailed')))
+    sys.exit(-1)
 
-  printe("Schema is valid.")
+  logger.debug("Schema is valid.")
   defs = schema_library['$defs']
   schema = None
 
@@ -75,28 +91,45 @@ if __name__ == '__main__':
       schema = defs[name]
       r = schema.evaluate(jschon.JSON(data[name]))
       if not r.valid:
-        printe(yaml.safe_dump(r.output('detailed')))
+        logger.error(f'File "{filename}" is not valid.')
+        logger.error(yaml.safe_dump(r.output('detailed')))
+        sys.exit(-1)
       else:
-        printe(f'"{filename}" is valid.')
+        logger.debug(f'"{filename}" is valid.')
     except KeyError as e:
-      printe(repr(e))
+      logger.error(repr(e))
 
   for ref_id, article in data['sources']['articles'].items():
+    logger.info(f'Processing article "{ref_id}"')
     source_type = 'journal' if 'journal' in article else 'book'
     if article[source_type] not in data['sources']['publications']:
-      printe(f"*** ERROR: {source_type} \"{article['publications']}\"")
+      logger.error(f'{source_type} "{article[source_type]}" not found!')
 
     expected_id = ''
     for author in article['authors']:
       if author not in data['authors']:
-        printe(f'*** ERROR: Author "{author}" not found!')
+        logger.error(f'Author "{author}" not found!')
       if expected_id:
         expected_id += '_'
       expected_id += author.split('_')[0]
     expected_id += f"_{article['pubDate']['year']}"
 
     if ref_id != expected_id:
-      printe(f'*** ERROR: Expected "{expected_id}" but found "{ref_id}"')
+      logger.error(f'Expected "{expected_id}" but found "{ref_id}"')
 
     if ref_id not in data['sources']['articles']:
-      printe(f'*** ERROR: Source "{ref_id}" not found!')
+      logger.error(f'Source "{ref_id}" not found!')
+
+  for ref_id, opinion in data['trees']['opinions'].items():
+    logger.info(f'Processing opinions from "{ref_id}"')
+    if ref_id not in data['sources']['articles']:
+      logger.error(f'Tree citation "{ref_id}" not found!')
+
+    trees = [t for t in opinion.get('taxonomies', {})]
+    num_tax = len(trees)
+    logger.info(f'Found {num_tax} taxonomic trees')
+    trees.extend([p['tree'] for p in opinion.get('phylogenies', {})])
+    num_phy = len(trees) - num_tax
+    logger.info(f'Found {num_phy} phylogenetic trees')
+    for t in trees:
+      _check_node(t)

@@ -35,26 +35,23 @@ $defs:
         type: object
         additionalProperties:
           $ref: "#/$defs/taxon"
-      synonyms:
-        type: object
-        additionalProperties:
-          $ref: "#/$defs/taxonSynonym"
       opinions:
-        type: array
-        items:
-          type: object
-          properties:
-            source:
-              type: string
-              pattern: ^[a-z][_a-z]*_[12][7890]\d\d$
-            taxonomies:
-              type: array
-              items:
-                $ref: "#/$defs/taxonomyTree"
-            phylogenies:
-              type: array
-              items:
-                $ref: "#/$defs/phylogeny"
+        type: object
+        patternProperties:
+          ^[a-z][_a-z]*_[12][7890]\d\d$:
+            type: object
+            properties:
+              source:
+                type: string
+                pattern: ^[a-z][_a-z]*_[12][7890]\d\d$
+              taxonomies:
+                type: array
+                items:
+                  $ref: "#/$defs/taxonomyTree"
+              phylogenies:
+                type: array
+                items:
+                  $ref: "#/$defs/phylogeny"
   person:
     type: object
     anyOf:
@@ -222,10 +219,7 @@ $defs:
   taxon:
     $ref: "#/$defs/taxonBasic"
     unevaluatedProperties: false
-  taxonSynonym:
-    $ref: "#/$defs/taxonBasic"
-    required: [synonym]
-    unevaluatedProperties: false
+    # These extra properties might not be extra now.
     properties:
       synonym:
         type: string
