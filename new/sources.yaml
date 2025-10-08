@@ -1,6 +1,8 @@
 publications:
   alcheringa:
     name: Alcheringa
+  annals:
+    name: Annales de Paleontologie
   bullgeo:
     name: Bulletins of Geosciences
   geomag:
@@ -46,6 +48,13 @@ articles:
       doi: 10.1111/pala.12204
   fatka_kordule_1985:
     title: Etoctenocystis bohemica gen. et sp. nov. - new Ctenocystoid from Czechoslovakia (Echinodermata, Middle Cambrian)
+    complete:
+      named: true
+      open: false
+      history: false
+      specimens:
+        basic: true
+        all: false
     journal: vestnik
     volume: 60
     number: 4
@@ -87,6 +96,13 @@ articles:
     - derstler
   jell_burrett_banks_1985:
     title: Cambrian and Ordovician echinoderms from eastern Australia
+    complete:
+      named: true
+      open: false
+      history: false
+      specimens:
+        basic: false
+        all: false
     journal: alcheringa 
     volume: 9
     number: 3
@@ -233,6 +249,13 @@ articles:
       jstor: 40605503
   robison_sprinkle_1969:
     title: "Ctenocystoidea: New Class of Primitive Echinoderms"
+    complete:
+      named: true
+      open: null
+      history: null
+      specimens:
+        basic: true
+        all: false
     journal: science_new_series
     volume: 166
     number: 3912
@@ -280,6 +303,13 @@ articles:
       url: https://kuscholarworks.ku.edu/entities/publication/de425cc9-1319-41f5-b1b4-0c6a6e13757a
   ubaghs_robison_1988:
     title: Homalozoan echinoderms of the Wheeler Formation (Middle Cambrian) of Western Utah
+    complete:
+      named: true
+      open: null
+      history: null
+      specimens:
+        basic: true
+        all: false
     journal: kansas
     number: 129
     pubDate:
@@ -293,6 +323,20 @@ articles:
     - robison
     identifiers:
       url: https://www.researchgate.net/publication/239588179_Homalozoan_echinoderms_of_the_Wheeler_Formation_Middle_Cambrian_of_Western_Utah
+  ubaghs_1987:
+    title: Echinodermes nouveaux du Cambrien moyen de la Montagne Noire (France)
+    journal: annals
+    volume: 73
+    number: 1
+    pubDate:
+      year: 1987
+    pages:
+    - 1
+    - 27
+    authors:
+    - ubaghs
+    identifiers:
+      url: "https://eurekamag.com/research/020/905/020905946.php?srsltid=AfmBOopSCziNxG2P7g_GYIehW28l_W04c4LXptNYESzBhP6ZiraKuipf"
   webby_1968:
     title: Astrocystites distans sp. nov., an edrioblastoid from the Ordovician of eastern Australia
     journal: palaeontology

@@ -364,6 +364,10 @@ taxa:
     rank: Order
     auth: [Broadhead]
     year: 1982
+  gondi:
+    name: gondi
+    auth: [Ubaghs]
+    year: 1987
   graysoni:
     name: graysoni
     auth: [Sumrall, Sprinkle, Bonem]
@@ -751,6 +755,10 @@ taxa:
     name: Sinoeocrinus
     auth: [Zhao, Huang, Gong]
     year: 1994
+  smithi:
+    name: smithi
+    auth: [Ubaghs]
+    year: 1987
   soluta-class:
     name: Soluta
     rank: Class
@@ -859,6 +867,10 @@ taxa:
     name: Velieuxicystis
     auth: [Ubaghs]
     year: 1999
+  vizcainoi:
+    name: vizcainoi
+    auth: [Ubaghs]
+    year: 1987
   vizcainoia:
     name: Vizcainoia
     auth: [Zamora, Smith]
@@ -1787,6 +1799,27 @@ opinions:
                 holotype: YKLP 13397
                 paratypes:
                 - YKLP 13553
+  ubaghs_1987:
+    notes: |
+      Only summary publicly available, and details are only in French
+    taxonomies:
+    - taxon: ctenocystis
+      children:
+      - taxon: smithi
+        new: true
+    - taxon: ceratocystis
+      children:
+      - taxon: vizcainoi
+        new: true
+    - taxon: gogia
+      children:
+      - taxon: gondi
+        new: true
+    - taxon: eocystites # with angle quotes?
+      children:
+      - taxon: languedocianus
+        provisional: true
+        new: true
   ubaghs_robison_1988:
     taxonomies:
     - taxon: homalozoa

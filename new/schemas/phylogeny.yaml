@@ -95,6 +95,27 @@ $defs:
     - required: [book]
     unevaluatedProperties: false
     properties:
+      complete:
+        type: object
+        properties:
+          named:
+            type: [boolean, "null"]
+            default: false
+          open:
+            type: [boolean, "null"]
+            default: false
+          history:
+            type: [boolean, "null"]
+            default: false
+          specimens:
+            type: object
+            properties:
+              basic:
+                type: [boolean, "null"]
+                default: false
+              all:
+                type: [boolean, "null"]
+                default: false
       journal:
         type: string
       book:
