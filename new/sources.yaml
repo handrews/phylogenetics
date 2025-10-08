@@ -1,4 +1,6 @@
 publications:
+  acta_p_polonica:
+    name: Acta Palaeontologica Polonica
   alcheringa:
     name: Alcheringa
   annals:
@@ -130,8 +132,8 @@ articles:
       url: https://kuscholarworks.ku.edu/entities/publication/de425cc9-1319-41f5-b1b4-0c6a6e13757a
   1987_ubaghs:
     title: Echinodermes nouveaux du Cambrien moyen de la Montagne Noire (France)
-    journal: annals
     seen: false
+    journal: annals
     volume: 73
     number: 1
     pubDate:
@@ -165,6 +167,19 @@ articles:
     - robison
     identifiers:
       url: https://www.researchgate.net/publication/239588179_Homalozoan_echinoderms_of_the_Wheeler_Formation_Middle_Cambrian_of_Western_Utah
+  1995_dzik_orłowski:
+    title: Primitive ctenocystoid echinoderm from the earliest Middle Cambrian of Poland
+    seen: false
+    journal: annals
+    volume: 81
+    pages:
+    - 17
+    - 35
+    pubDate:
+      year: 1995
+    authors:
+    - dzik
+    - orłowski
   2010_muller_hahn:
     title: Edrioasteroidea aus den Seifen-Schichten im Westerwald, Rheinisches Schiefer-Gebirge (Unter-Devon, Deutschland), Teil 1
     journal: geo_et_palaeo
@@ -515,3 +530,25 @@ articles:
       online: 2025-03-21
     identifiers:
       doi: 10.1017/jpa.2024.44
+  2025_savage_rahman:
+    title: First evidence of attached juveniles in the solutan echinoderm Pahvanticystis from the middle Cambrian Weeks Formation (Utah, USA)
+    notes: |
+      Involves moving Castericystis sp. nov. (unknown source)
+      to Pahvanticystis cf. utahensis
+    journal: acta_p_polonica
+    volume: 70
+    number: 1
+    pages:
+    - 175
+    - 178
+    pubDate:
+      year: 2025
+    processDates:
+      received: 2024-12-04
+      accepted: 2025-02-15
+      online: 2025-03-24
+    authors:
+    - savage
+    - rahman
+    identifiers:
+      doi: 10.4202/app.01228.2024

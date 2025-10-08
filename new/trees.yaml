@@ -192,23 +192,45 @@
   notes: |
     Only summary publicly available, and details are only in French
   taxonomies:
-  - taxon: ctenocystis
+  - taxon: ctenocystoidea
+    notes: Unclear if higher tree present
     children:
-    - taxon: smithi
-      new: true
-  - taxon: ceratocystis
+    - taxon: ctenocystida
+      notes: Unclear if used or omitted
+      children:
+      - taxon: ctenocystidae
+        notes: Unclear if used or omitted
+        children:
+        - taxon: ctenocystis
+          children:
+          - taxon: smithi
+            new: true
+  - taxon: stylophora
+    notes: Unclear if higher tree present
     children:
-    - taxon: vizcainoi
-      new: true
-  - taxon: gogia
+    - taxon: ceratocystis
+      notes: Unclear if intervening taxa present
+      children:
+      - taxon: vizcainoi
+        new: true
+  - taxon: eocrinoidea
+    notes: Unclear if higher tree present
     children:
-    - taxon: gondi
-      new: true
-  - taxon: eocystites # with angle quotes?
+    - taxon: gogia
+      notes: Unclear if intervening taxa present
+      children:
+      - taxon: gondi
+        new: true
+  - taxon: glyptocystitida
+    notes: Unclear if higher tree present
     children:
-    - taxon: languedocianus
+    - taxon: eocystites # with angle quotes?
+      notes: Unclear if intervening taxa present
       provisional: true
-      new: true
+      children:
+      - taxon: languedocianus
+        provisional: true
+        new: true
 1988_ubaghs_robison:
   taxonomies:
   - taxon: homalozoa
@@ -254,6 +276,22 @@
                 new: true
                 specimens:
                   holotype: USNM 415804
+1995_dzik_orłowski:
+  taxonomies:
+  - taxon: ctenocystoidea
+    children:
+    - taxon: jugoszoviidae
+      notes: |
+        As paper is not available, direct  assignment to ctenocystoidea
+        is likely but not certain, while it is unknown whether ctenocystoidea
+        was placed or used as the root for the paper.
+      children:
+      - taxon: jugoszovia
+        new: true
+        children:
+        - taxon: archaeocyathoides
+          type: true
+          new: true
 2010_muller_hahn:
   taxonomies:
   - taxon: isorophida

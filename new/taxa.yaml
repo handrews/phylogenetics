@@ -61,6 +61,10 @@ apektocrinus:
   name: Apektocrinus
   auth: [guensburg, sprinkle]
   year: 2009
+archaeocyathoides:
+  name: archaeocyathoides
+  auth: [dzik, orłowski]
+  year: 1995
 argodiscus:
   name: Argodiscus
   auth: [Prokop]
@@ -492,6 +496,15 @@ jasperensis:
   name: jasperensis
   auth: [Harker]
   year: 1953
+jugoszovia:
+  name: Jugoszovia
+  auth: [dzik, orłowski]
+  year: 1995
+jugoszoviidae:
+  name: Jugoszoviidae
+  rank: Family
+  auth: [dzik, orłowski]
+  year: 1995
 ###################### K
 keslingi:
   name: keslingi

@@ -88,6 +88,9 @@ mooi:
 muller:
   family: Müller
   given: Peter
+orłowski:
+  family: Orłowski
+  given: S.
 parsley:
   family: Parsley
   given: Ronald
@@ -106,6 +109,9 @@ robison:
 roux:
   family: Roux
   given: Michel
+savage:
+  family: Savage
+  given: Harry J.
 smith:
   family: Smith
   given: Andrew B.

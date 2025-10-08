@@ -4,12 +4,12 @@ $id: phylogeny
 $defs:
   sourceId:
     type: string
-    pattern: ^[12][7890]\d\d_[a-z][-_a-z]+$
+    pattern: ^[12][7890]\d\d_[a-z][\w_-]+$
   authors:
     type: object
     minProperties: 1
     propertyNames:
-      pattern: ^[a-z][-_a-z]*$
+      pattern: ^[a-z][\w_-]*$
     additionalProperties:
       $ref: "#/$defs/person"
   sources:
@@ -266,6 +266,8 @@ $defs:
         type: array
         items:
           $dynamicRef: tree
+      notes:
+        type: string
   taxonomyTree:
     $id: taxonomyTree
     $dynamicAnchor: tree
