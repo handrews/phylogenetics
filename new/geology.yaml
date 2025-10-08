@@ -1,0 +1,239 @@
+biozones:
+- &albertella
+  name: Albertella
+- &bolaspidella
+  name: Bolaspidella
+- &eccaparadoxides-brach-beds
+  name: Eccaparadoxides brachyrachis
+  type: beds
+- &eccaparadoxides-ins
+  name: Eccaparadoxides insularis
+- &eccaparadoxides-pinus
+  name: Eccaparadoxides pinus
+- &eccaparadoxiades-pu
+  naem: Eccaparadoxiades pusillus
+- &glossopleura
+  name: Glossopleura
+- &glossopleura-w
+  name: Glossopleura walcotti
+- &kaili-biota
+  name: Kaili biota
+- &morocconus-not
+  name: Morocconus notabilis
+- &olenellus
+  name: Olenellus
+- &oryctocephalus
+  name: Oryctocephalus
+- &oryctocephalus-ind
+  name: Oryctocephalus indicus
+- &ovatoryctocara-gran-bath
+  name: Ovatoryctocara granulata – Bathynotus kuichouensis
+- &paradoxides-med
+  name: Paradoxides mediterraneus
+- &paradoxides-grac-lower
+  name: lower part of the Paradoxides gracilis
+- &paradoxides-paradox
+  name: Paradoxides paradoxissimus
+- &peichiashania-sec
+  name: Peichiashania secunda
+- &peich-proch
+  name: Peichiashania secunda - Prochuangia glabella
+  type: assemblage
+- &peronopsis-bonn
+  name: Peronopsis bonnerensis
+- &peronopsis-taij
+  name: Peronopsis taijiangensis
+- &probinacunapsis-peichiashania
+  name: Probinacunaspis nasalis – Peichiashania hunanensis
+- &prochuangia-glab
+  name: Prochuangia glabella
+- &ptychagnostus-prae
+  name: Ptychagnostus praecurrens
+- &ptychagnostus-punct
+  name: Ptychagnostus punctuosus
+- &solenopleuropsist-th-age
+  name: Solenopleuropsis thorali
+  type: age
+- &solenopleuropsis-verd-plus-s-riberoi
+  name: Solenopleuropsis verdiagana + S. riberoi
+- &velieuxicystis
+  name: Velieuxicystis
+  type: level
+formations:
+- &blacksmith
+  name: Blacksmith Formation
+- &bloomington
+  name: Bloomington Formation
+- &jbel-wawrmast
+  name: Jbel Wawrmast
+  members:
+  - &tarhoucht-member
+    name: Tarhoucht Member
+  - &breche-a-micmacca-member
+    name: Brèche à Micmacca Member
+- &kaili
+  name: Kaili Formation
+  biozones:
+  - *kaili-biota
+- &kinzers
+  name: Kinzers Formation
+  members:
+  - &emmigsville
+    name: Emmigsville
+- &langston
+  name: Langston Formation
+  members:
+  - &high-creek-limestone
+    name: High Creek Limestone
+    biozones:
+    - *glossopleura-w
+  - &spence-shale
+    name: Spence Shale
+    biozones:
+    - *glossopleura-w
+    - *albertella
+  - &naomi-peak-limestone
+    name: Naomi Peak Limestone
+    biozones:
+    - *albertella
+- &marjum
+  name: Marjum Formation
+- &sandu
+  name: Sandu Formation
+- &ute
+  name: Ute Formation
+repositories:
+- &field-museum
+  name: Field Museum
+  place: Chicago, USA
+- &guizhou-u
+  name: Museum of Paleontology, Guizhou University
+  place: Guiyang, China
+- &kumip
+  name: University of Kansas Museum of Invertebrate Paleontology
+- &nhmuk
+  name: Natural History Museum of London, UK
+- &nigpas
+  name: Nanjing Institute of Geology and Palaeontology, Chinese Academy of Sci- ences, China (NIGPAS)
+- &usnm
+  name: U.S. National Museum of Natural History
+specimens:
+- &kumip-49294
+  id: KUMIP 49294
+  part: KUMIP 49294A
+  counterpart: KUMIP 49294B
+  repo: *kumip
+  member: *spence-shale
+  assigned:
+  - Totiglobus spencensis
+  - Sprinkleoglobus spencensis
+  holotype: true
+- &pe-93415
+  id: PE 93415
+  repo: *field-museum
+  coord:
+    n: 41°58′ 20.55′′
+    w: 111°42′ 03.93′′
+  member: *spence-shale
+  biozones:
+  - - *glossopleura-w
+  stage: Wuliuan
+  height: 2-3 meters below top of member
+  assigned:
+  - Sprinkleoglobus spencensis
+- &usnm-172047
+  id: USNM 172047
+  repo: *usnm
+  formation: *marjum
+  biozones:
+  - - *ptychagnostus-punct
+  height: middle (190m above the base of the formation)
+  locality: number 811 of R. A. Robison
+  assigned:
+  - Totiglobus? lloydi
+  - Sprinkleoglobus lloydi
+  holotype: true
+- &gm-3428
+  id: GM 3428
+  repo: *guizhou-u
+  formation: *kaili
+  biozones:
+  - - *oryctocephalus-ind
+  - - *kaili-biota
+  locality: Miaobanpo (fossil) Quarry
+  height: mid-third, basal lower Middle Cambrian
+  time: Lower Middle Cambrian
+  assigned:
+  - Kailidiscus chinensis
+  - Parsleya chinensis
+  holotype: true
+  additional:
+  - GM 70
+  - GM 746
+  - GM 1331
+  - GM 1670
+  - GM 1898
+  - GM 2013
+  - GM 2146
+  - GM 3295a
+  - GM 3295b
+  - GM 3295c
+  - GM 3035
+  - GM 3600
+  - GM 3665
+  - GM 8052
+  - GM 9292
+- &nigpas163198
+  id: NIGPAS163198
+  repo: *nigpas
+  formation: *sandu
+  biozones:
+  - - probinacunapsis-peichiashania
+  locality: Guole Town, Jingxi County, Guangxi Province, SW China
+  assigned:
+  - Sanducystis sinensis
+  additional:
+  - [NIGPAS163199, NIGPAS163210]
+- &gm-9-5-2-165b
+  id: GM 9-5-2 165b
+  formation: *kaili
+  locality: |
+    Miaobanpo (fossil) Quarry, about 2km north of
+    Balang, Jianhe County, Guizhou Province, China
+  biozones:
+  - - *kaili-biota
+  height: near the base of the Kaili Biota
+  assigned:
+  - Turbanicystis inflatus
+  additional:
+  - GM 9-3-887
+  - GM 9-5-3235b
+  - GM 10-3-2000
+  - GM 9-5-2165a
+- &nhmuk-ee-1659
+  id: NHMUK EE 1659
+  repo: *nhmuk
+  biozones:
+  - [Wanneria walcottana, Olenellus roddyi]
+  time: Stage 4
+  localtime: [middle Dyerian, Delmaran]
+  coordinates:
+    n: 39.9842302
+    w: 76.7644671
+  holotype: true
+  assigned:
+  - Yorkicystis haefneri
+  additional:
+  - NHMUK EE 1660
+- &nhm-uk-ee15373
+  id: NHM UK EE15373
+  repo: *nhmuk
+  biozones:
+  - Cephalopyge notabilis to Ornamentaspis frequens
+  height: base of Miaolingian
+  time: 515–510MA, Miaolingian
+  additional:
+  - [NHM UK EE15374, NHM UK EE15376]
+  - NHM UK EE14847
+  - NHM UK EE14848
+  - NHM UK EE15329
