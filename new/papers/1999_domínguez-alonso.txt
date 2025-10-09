@@ -472,10 +472,348 @@ P. 60 / P. 61
 
 P. 61 / P. 62
 
+4.- Topographical Nomenclature
 
+The complete list of ossicles designated by the acronym system for Ctenocystoids of the Dizonida morphological group is as follows:
 
+P. 62 /
 
-... / P. 86
+- MARGINAL SYSTEM:
+- - UPPER CYCLE:
+- - - Frontal area
+- - - - Left Suprafrontal Plate
+- - - - Right Suprafrontal Plate
+- - - Lateral area:
+- - - - Left Supralateral Plate
+- - - - Right Supralateral Plate
+- - - Posterior area
+- - - - Left Supraposterior Plate
+- - - - Right Supraposterior Plate
+- - LOWER CYCLE:
+- - - Frontal area (part of the rastrellum):
+- - - - Left Infrafrontal Plate
+- - - - Right Infrafrontal Plate
+- - - Lateral area:
+- - - - Left Infralateral Plate
+- - - Posterior area:
+- - - - IPI: Infraposterior Plate Left
+- - - - IPD: Right Infraposterior Plate
+- - Dorsal and Ventral Integuments
+- - - - SCT: The set of ossicles of the superior or supracentral integument
+- - - - ICT: The set of ossicles of the infracentral or inferior integument.
+- Ctenioial Apparatus
+- - Ctenidium
+- - - Supporting Plates:
+- - - - SOC: Central Supraoral Plate
+- - - - SOD: Right Supraoral Plate
+- - - - SOI: Left Supraoral Plate
+- - - Otenidial Plates:
+- - - - Ct: Ctenidial ossicle (one). They are numbered with ordinals starting from the SOC plate.
+- - - - CtD: Right battery of ctenidiate ossicles (all those located to the right of the SOC).
+- - - - CtI: Left battery of ctenidial ossicles (all those located to the left of the SOC).
+- - - - CtLI: Right lateral ctenidial plate. (Also known as Ct [Ordinal])
+- - - - CtLD: Left lateral ctenidial plate (Also known as Ct [Ordinal])
+- - RASTRELLUM
+- - - Central area
+- - - - ICI: Left infracentral plate
+- - - - ICD: Right infracentral plate
+- - - Marginal area (part of the marginal system):
+- - - - IFI: Left infrafrontal plate
+- - - - DIP: Right infrafrontal plate
+
+/ P. 63
+
+No Dizonida was found with the Right Infralateral (RLL) plaque, which is why it has not been included in the list above.
+
+An additional advantage would be the ability to use wildcards (., *) and precisely designate a set of ossicles.
+
+P. 63  / P. 64
+
+Other anatomical terms
+
+In addition to this nomenclature, anatomical terms must be used to designate each specific organ, system, or anatomical element. This proposed terminology is described below:
+
+Ctenidium: a group formed by both series or batteries of ctenidial ossicles (Ctl+CtD) and the supporting plates SOD, SOC, and SOL. It is an automorphism of the Class Ctenocystoidea.
+
+Rastrellum: a group formed by the four ossicles arranged below the ctenidium. It consists of the frontal ossicles of the lower frame (IFI+DIP) and the middle ossicles of this same frame (ICI+ICD). The term comes from Latin and alludes to the rake-like shape of these four ossicles that form the floor and lower lip of the mouth. It is an autopomorphy of the Class Ctenocystoidea.
+
+Ctenidial apparatus: A complex consisting of the ctenidium and the rastrellum. It is an autopomorphy of the Class Ctenocystoidea.
+
+Lateral processes: Protuberances of the IFI and ICD plates that form the sides and part of the floor of the mouth.
+
+Commissure: A narrow, dorso-ventral area that forms the lateral portion of the mouth; it is located above the base of the lateral processes of the IFO and IFI plates and next to the superior processes of these same plates.
+
+P. 64 / P. 65
+
+Superior processes: Vertical, upwardly directed processes of the IFI and IFD plates. The SF1 and SF0 plates articulate at their upper end, and the external plates of the ctenidium may articulate at their front-lateral surface.
+
+Rolum: A horseshoe-shaped, rounded structure or projection that appears on the lateral and frontal edges of the lower surface of the marginal framework, especially in Dizonida.
+
+Grollet: A constriction that appears at the base of the ctenidium in Azonida.
+
+Siphon: A conical structure composed of acicular ossicles, previously referred to as the "anal pyramid" (Robison and Sprinkle, 1969). The new anatomical and functional interpretation of Ctenocystoids requires the use of this term, which appropriately defines this structure.
+
+Siphonal foramen [in Dizonida]: A window-shaped space located between the upper and lower marginal frameworks at the posterior end of the animal. This space represents the exit of the siphon through the marginal complex.
+
+Siphonal notch: The same, but in Monozonida, it represents a space where the siphon is located.
+
+Spines:
+
+1. [= spiniform processes]: processes present on the posterior edge of the theca, mainly on the margin of the lower framework (IPI and IPO plates).
+
+2. Acicular or filiform external processes of the integumentary plates of Azonida.
+
+Multiple: an epithet indicating that a given "plate" is subdivided into several independent ossicles; it is the opposite of simple.
+
+P. 65 / P. 66
+
+Simple: an epithet indicating that a given "plate" is formed by a single ossicle rather than several, regardless of whether the structures are fused or not. It is the opposite of multiple or compound.
+
+Compound: see multiple.
+
+Fins: Same as above, but in a laminar and horizontal form.
+
+Shoulder: An inflection or notch located at the anterior end of the outer margin of the IFI and IFO plates, which accommodates the last ctenidial plate(s).
+
+Arm [in Pembrocystidae]: An elongated, bent, oblong basal portion of the outer ctenidial plate of Pembrocystidae.
+
+Tongues [posterior]: The posterior portion of the central plates of the rastrellum (ICl and ICD). These plates are flattened, more or less extensive, and resemble a spatula or tongue, embedded in the infracentral integument.
+
+Lateral canal: A large groove-like structure on the side of the body of Dizonida, running along its entire length. It is interpreted as an exhalation canal.
+
+Longitudinal bar: Referring to the marginal frameworks, each of the IFD-IPD, IFI-ILI, SFI-SLI-SPI, and SFD-SLD-SPD plate assemblies, which form rigid, elongated structures.
+
+Rostrum: Anterior lamellar prolongation or extension of the SOC plate.
+
+Body [of a plate]: The massive part of a plate.
+
+Ram: The elongated and distinguishable portion of the body of a plate.
+
+P. 66 / P. 67
+
+Lamella: A thin, laminar portion with a rounded or racket-shaped contour of a ctenidial plate.
+
+Condyle: The articular portion of a ctenidial plate containing a condylar notch, an inferior process, and an upper process. The latter may be very small or absent.
+
+Marginal framework: A semi-rigid, strap-like structure that forms the lateral walls of the body walls.
+
+Infracentral [or supracentral] field: The space between the plates of the marginal framework, which closes the body cavity on its ventral [or dorsal] surface.
+
+Ala:
+* [1] Lateral expansions of the inferior process of the base of the ctenidial plates of Azonidae.
+* [2] Lateral, thinned parts of the body of the SOC plate
+
+P. 67 / P. 68
+
+TOPOGRAPHIC ANATOMY OF THE SKELETON
+
+Introduction
+
+Although the skeleton of Ctenocystoids constitutes a unit from both the histological and organological perspectives, descriptive reasons compel us to subdivide it into large, well-differentiated body regions that are adapted to very different functions. The most characteristic skeletal portion of Ctenocystoids is the ctenidial apparatus, which is located at the front end of the animal and is related to nutrient capture. The ctenidial apparatus can be divided into two distinguishable parts: the ctenidium and the rastrellum; the latter is linked to the lower framework of marginal plates. The ctenidial apparatus is a structure that, with variations, appears throughout the Class Ctenocystoidea. However, other skeletal structures or fractions show significant variations between different groups, which is why we have described four morphological types. These morphological patterns specifically address the overall body shape, but the most conspicuous difference is the marginal structure of the theca, which delimits the dorsal and ventral integumentary laminae. Based on this characteristic, we define the following morphological patterns: Monozonate, Pleurozonate, Azonate, and Dizonate. Of these patterns, the Dizonate pattern is the most complex, and although it is an apomorphic pattern (see the Phylogeny chapter), we will consider it as the basis for defining the concept of Ctenocystoids.
+
+Topographic Anatomy of the Dizonida
+
+In the Dizonate morphological pattern, we find two overlapping marginal frameworks, the lower one being part of the ctenidial apparatus and the upper one posterior to it. The lower framework forms a rigid structure and forms the structural base of the Ctenocystoid body, supporting other structures.
+
+P. 68 / P. 69
+
+CTENIDIAL APPARATUS (perioral skeleton)
+
+The ctenidial apparatus is made up of a series of ossicles probably related to food capture and ingestion and is a perioral structure with bilateral symmetry. Initially, we can divide it into two distinct portions, one dorsal and the other ventral. The ventral structure is made up of four ossicles, collectively known as the rastrellum, which, due to its special connection with the lower marginal framework, will be described in that section. The dorsal portion of the ctenidial apparatus is made up of the ctenidium, which can be divided into two distinct parts: the set of ctenidial plates and a system that supports them. We will now describe the ctenidium and its parts. The rastrellum will be described after the heading "lower marginal framework s.l."
+
+All these structures are reflected in the following figure:
+
+[diagram]
+
+P. 69 / P. 70
+
+The Ctenidium
+
+The set of ctenidial plates, together with other adjacent plates (SOC, IFD, IFI, ICD, and ICI), form the ctenidium, the most characteristic structure of these organisms. This structure exhibits a high degree of bilaterality, with the SOC plate located in the plane of axial symmetry. On both sides of the SOC plate, there are separate batteries of ctenidial plates interlocked on the wings of the SOC plate, on the anterior edge of the SOD and SOL plates, and on the upper processes of the IFI and IFO plates. Considering the left battery (the one on the right is equivalent and mirror-like), an increase in both size and robustness is observed toward the lateral portions, where the plates even display ornamentation on their outer edge and a right-handed twist of the lamella. The medial packs (those located near the SOC plate) are much smaller and are arranged on the wings of the SOC plate. Between these and the lateral plates, there is a group of ctenidial plates in which we can distinguish a large number of anatomical details.
+
+Supporting Plates
+
+The system of supporting plates of the ctenidial plates is formed, from right to left, by the SOD, SOC, and S1 plates. The S1 and SOD plates are symmetrical and usually oval in outline. The SOC plate is located in the animal's midline, and its anterior end has a vertical iamellar structure.
+
+SOC Plate
+
+The SOC plate is located dorsally and frontally on the animal's midline; it is present in all Ctenocystoids and, together with the ctenidial plates, forms the most significant element of the Ctenocystoids.
+
+The SOC plate forms the roof of the mouth and lies anterior to it. It is divided into two clearly distinguishable portions: the body and the rostrum. The body of this plate is a massive structure, often prismatic and solid in appearance. The face, on the other hand, is a vertical laminar structure and, compared to the body, has a graceful appearance; its apex forms the anterior end of the animal.
+
+P. 70 / P. 71
+
+The body of the SOC plate is thick and normally has a trapezoidal outline dorsally. It articulates laterally with the 500 and 51 ossicles; occasionally, its posterior edge articulates with the anterior ends of the SFD and SFI plates. Its posterior end articulates directly with the dorsal (supracentral) integument. This plate forms the roof of the mouth and is considered homologous to the supraoral plate of Cincta and perhaps the result of a fusion of the supraoral plate with a ctenidial ossicle. In this case, the body of the plate could be homologous to the supraoral plate of Cincta, and the rostrum homologous to a plate of the labrum. Its maximum thickness is present in the medial portions, being somewhat thinner in the lateral portions.
+
+The anterior border of the body forms a step that differentiates the ornamented dorsal surface from a smooth, curved, articular frontal surface on which the medial ctenidial plates are arranged, usually the first two or three of each plate. The anterior border of the body may be almost straight or arched, but usually both sides form an angle.
+
+The rostrum is located in the midline, projecting forward. Dorsally, the rostrum usually has a triangular appearance, with the flanks converging toward the apex, and its dorsal surface is a continuation of the dorsal surface of the body of this plate. The insertion of the rostrum into the body may be gradual or abrupt, but in either case, there is continuity in the skeletal surface texture. The rostrum has a triangular cross-section, with well-defined vertices, and a flat or convex (transverse) dorsal surface. The lateral surfaces are plano-concave, and ventrally, it tends to extend into a flat axial plate.
+
+P. 71 / 
+
+Normally laterally, the rostrum is hatchet-shaped with a basal constriction or thinning. The lower edge of this constriction is rounded both transversely and axially, and the lamella of the rostrum develops immediately in front of it. This is the normal condition in Cytenocystoids, but in Pembrocystis, in this position, a thin, transverse spatula-shaped ventral lamella appears with its apex pointing forward (deflector lamella). Immediately anterior to the base of this lamella are two poorly developed structures or tubercles.
+
+/ P. 72
+
+SOI and SOD Plates
+
+The SOD and SOI plates are small and located on either side of the SOC plate. They have an oval or subrectangular appearance and, when viewed frontally, may appear somewhat arched. These plates are of moderate thickness and usually taper toward the lateral margins. The anterior border is a continuation of the anterior edges of the SOC plate and is rounded. Most of the ctenidia plates articulate around it. The anterior border is very smooth, with a small step-like projection running along the entire anterior margin, delimiting the dorsal surface, which is ornamented, from the smooth frontal surface.
+
+On the posterior border, there is a linear articulation located at the lower edge of the posterior border. The boundary between the posterior border and the upper surface is abrupt and forms an angle of approximately 90°.
+
+Ctenidial Plates
+
+The ctenidial plates present a very consistent general structure among the Monozonate, Pleurozonate, and Dizonate morphological types; however, the Azonate type presents severe modifications that require a specific description.
+
+To describe a typical ctenidial plate, we will use an intermediate plate of Pembrocystis. From this basic model, we will describe the variations found in other taxa, as well as those existing between ctenidial plates within the same battery.
+
+P. 72 / P. 73
+
+The typical ctenidial plate has a hatchet-like appearance, with a thick basal portion, a distal lamellar portion, and a transitional portion connecting the two. The basal portion begins with a hemispherical condylar depression with two lip-shaped processes, one dorsal and one inferior, each of which has a subrectangular outline. The upper dorsal process has an external surface that is a continuation of the external surface of the ctenidium plates and is continued anteriorly by rounded ridges that form the upper margin of the lamella. The ventral process also projects forward, running upwards around the condylar notch until it reaches the marginal ridge, with which it joins at an angle. The condylar notch is a hemispherical depression with very smooth surfaces. The transition zone between the basal and lamellar zones presents a ventral notch that delimits a neck thickened transversely by ridges extending anteriorly from the processes.
+
+The amella has a thickened external surface that gives it a characteristic triangular or "T"-shaped profile. This external surface is usually convex transversely and frequently ornamented. The external dorsal surface has an arcuate curve, increasing its curvature toward the apex, where it ends at the apical angle. From this point, it recedes downward, then bends upward, reaching the ventral notch. The amella has its minimum thickness at the ventral edge. Near the base, at least in Pembrocystis, two elongated tuberosities can be found on either side of the lamella. These tuberosities were possibly associated with ligaments involved in the closing movements of the ctenidium.
+
+P. 73 /
+
+This basic model of a ctenidia plate undergoes modifications within a battery of plates; the previously described model corresponded to an intermediate plate in each battery. The plates located in a more medial position tend toward a general simplification concomitant with a reduction in size. On the other hand, the plates located in a more external position tend toward an increase in size, robustness, and, especially, torsion. The difference in size between the innermost or medial plate (Ct 1~a) and the outermost plate is characteristic of the taxa and can vary between 1.2 and 5. These differences in size affect thickness to varying degrees. The outermost plates are usually much more robust and also present much coarser ornamentation than the inner plates and even those located in intermediate positions.
+
+/ P. 74
+
+The torsion experienced by the outermost plates can reach a difference of 90° between the basal articular plane and the distal lamellar surface. This is because the joint is located on the animal's back, although the joint of the last plate can be located on the animal's lateral surface, and the apex of the lamella tends to be positioned radiating with respect to the mouth.
+
+Among the variations between taxa, the reduction of the dorsal condylar process in most species stands out, and even its disappearance, with the exception of Pembrocystis. In cases where it is not completely absent, this process appears as a projection located near, but below, the base of the outer edge of the plate (e.g., Ctenocystis colodon).
+
+In Pembrocystis, the outermost ctenidia plate has a characteristic club-like shape (in fact, it is an apomorphy). In this ossicle, we distinguish three distinct portions:
+
+* Proximal arm: cylindrical, slightly bent, with a basal condylar joint with two very poorly developed processes, inserted into the body of the plate in a superior lateral position.
+* Body: thick, ogival with the apex oriented posteriorly, with an oblong quadrangular section.
+* Lamella: very thin, subrectangular in outline, somewhat wider than the body, oriented according to the portion of the arm that inserts into the body (distal).
+
+P. 74 / P. 75
+
+In the case of Pembrocystis, the ctenidia plate does not insert onto the corresponding SOD or SOI plate, but rather onto the superior process of the IFI or DIP plates, as appropriate.
+
+BODY SKELETON
+
+Formed by a double framework of marginal plates, dorsal and ventral integuments, and a posterior siphon. The ctenidial apparatus articulates at its anterior end.
+
+Marginal System
+
+The marginal system is a framework of plates that is stronger than other body plates in Ctenocystoids. This framework forms the sides of the body and serves as a semi-rigid scaffold for supporting other structures. Enclosing this framework on its upper and lower surfaces are integumentary plates formed by much smaller ossicles. The structure of this framework is different for each of the morphological types we described for Ctenocystoids. Thus, the body of the Ctenocystoids is formed by a marginal system composed of two marginal frameworks (Dizonate and Pleurozonate morphological pattern), by one (Monozonate) or they lack this structure (Azonate). In the dizonate and pleurozonate forms there are two superimposed marginal frameworks, of which the lower one is homologous to the framework presented by the monozonate forms and the Cincta. The monomarginate forms have a thick marginal framework, with a triangular section and solid appearance. The pleurozonate forms have two superimposed frameworks of relatively small and oblong ossicles separated by a lateral band of acicular ossicles. In the dizonate forms both frameworks are in contact by means of a rectilinear and thin joint, the ossicles are shaped like a "T" and leave, on their lateral face, a conspicuous longitudinal canal.
+
+P. 75 / P. 76
+
+Lower framework (s.l.)
+
+In the lower framework, we find two distinct structures: the lower framework (s.l.), which forms the structural framework of the body, and the rastrellum, which is linked to the ctenidial apparatus. The distinction between the two structures is evident in pleurozonates and monozonates; however, in dizonates, the difference is more functional than physical; for this reason, the rastrellum has been included in this section and not, as would initially be more logical, in the section corresponding to the ctenidial apparatus.
+
+Rastrellum
+
+A notable part of the lower framework is the rastrellum, which is present in all Ctenocystoids, although its structure is characteristic of each group. In dizonate forms, the rastrellum is an intrinsic part of the lower framework, constituting slightly more than the anterior half.
+
+The rastrellum is formed by four bilaterally similar plates (IFI, DIP, ICI, and CDI). The ICI and ICD plates occupy a medial position, and the DIP and IIF plates are located laterally with respect to the former and form slightly more than half of the anterior marginal framework. The rastreum forms the floor of the mouth and has four plowshare-shaped teeth anteriorly.
+
+P. 76 /
+
+The ICI and ICD plates are similar in size and shape and are bilaterally symmetrical to each other. In these plates, we distinguish three distinct anteroposterior regions: tooth, body, and tongue. The body of these plates usually resembles an oblong parallelepiped, as tall as it is long and several times wider than the plate itself. This portion is part of or a structural continuation of the marginal framework, as it reinforces it anteriorly and keeps the DIP and IIF plates separate. The external (lower) surface is part of the marginal ridge and displays the same ornamentation as it. The upper surface is rounded and forms the floor of the mouth or its lower lip.
+
+/ P. 77
+
+The posterior tongues are located behind the body; these structures are plate-shaped, usually as wide as the body of the plate (Gilcidia, Fembrocystis) or much thinner (Etoctenocystis). The apex can be acute (Gilcidia, Etoctenocystis) or rounded (Pembrocystis), and relative to their length, they can be long (Gilcidia, Etoctenocystis, and Pembrocystis) or residual (Ctenocystis). Another characteristic is the presence of cordate medial carinae in Pembrocystis, which are absent in other species.
+
+The anterior teeth vary in length, usually as wide as they are long, and are often similar to those found on the FI and DIF plates. In dizonates, they have an inverted "V" shape at the base and a "U" shape in the middle portions, as they tend to form a sloping lamella with the lower edge facing laterally and the upper edge facing medially. These teeth have a laminar structure and could be the result of the fusion of ossicles of the labrum to the lower marginal plates. In the most primitive forms, such as the Monozonida and Pleurozonida, the teeth are relatively thick (transverse) and vertical, and could represent this fusion. The "V" shape in the Dizonida could in fact be an apomorphy.
+
+P. 77 /
+
+In dizonate Ctenocystoids, the lateral plates of the rastrelum (IFI and IFO) are also part of the lower marginal framework, occupying its anterior half. These plates contain two distinct portions: the body and the tooth. The body of these plates can, in turn, be divided into a longitudinal and a transverse branch. While the ctenidia apparatus is almost bilateral, symmetrical, it is precisely in these two plates where the asymmetries that stand out in the posterior end of the animal appear. The asymmetries referred to do not affect the shape of these plates but rather the length of their body since the IFI plate is slightly shorter than the IFD. The anterior tooth of these plates is similar to those already described for the ICI and ICD plates. The body is Y-shaped with a short frontal branch and a long longitudinal one that forms part of the lateral part of the theca. In the frontal portion we distinguish three parts that from the outside to the middle portions are an inflection zone, the tooth insertion zone and an internal lobe. The tooth insertion zone is similar to the body of the ICI or ICD plate but much higher (about double), its lower part forms part of the lower ridge, the upper part forms the commissure and the lateral portion of the floor of the mouth and continues towards the sides without solution of continuity with the transition zone. From the upper part of this median zone, a medial lobe extends over the body of the ICI and ICD plates, covering it to varying degrees, as this is a character of taxonomic interest. Specifically, in Ctenocystis, it is short and barely insinuated; in Gilcidia and Pembrocystis, it is intermediate, and in Etoctenocystis, it completely covers them, making contact with the body midline and thus forming an internal bridge in the floor of the mouth.
+
+/ P. 78
+
+P. 78 /
+
+The transition zone between the transverse and longitudinal rami of the body is, in lateral view, indistinct from the longitudinal ramus, but its lower and upper surfaces present two important characteristics. On the upper edge is a thin, vertical, almost spiny process that forms the lateral border of the corner of the mouth; the lateral border of this process forms a sharp crest that descends laterally and is continuous with the dorsal articular crest of the longitudinal ramus. This process has its apex in the ventral fossa of the SFI and SFD plates. On the outer edge of the ventral surface is the shoulder, an almost rectilinear area that partially houses the outer surface of the lamella of the external Ctenidial plates. The rectilinear shoulder is characteristic of the Ctenocystoidae, among which it houses only the last ctenidia plate, except in Ctenocystis colodon, which houses two. The shoulder in Pembrocystis is rounded and arched. This is a diagnostic characteristic.
+
+/ P. 79
+
+The lateral branches of the body plates (IFI and IFO) will be described below in the section on the marginal framework s. s., because although the ossicle belongs to the rastrellum, due to its structure and function, it is appropriate to discuss it in that section.
+
+Inferior framework s. s.
+
+In dizone forms, the inferior framework is formed by the IPI, IPD, and ILI plates and by the longitudinal branches of the IFI and IFD plates. Normally ventral, the inferior framework is oval-shaped, with differences between species: some are actually oval (Ctenocystis utahensis) and others are trapezoidal (Pembrocystis gallica). In this standard, the crest is prominent, a horseshoe-shaped structure with the apices oriented posteriorly. The labrum has an oblong, rounded section and is a projection that runs along the set of marginal plates from the right side to the left, passing through the front (bodies of the LH and DH plates). The labrum holds the infracentral integument slightly above the animal's resting plane, leaving a space between it and the marginal surface on the posterior edge.
+
+In the superior aspect, an ongiline articular facet can be seen running along both sides, ending anteriorly at the superior process of the LH and DH plates and posteriorly at the notch where the siphon is inserted. The internal cavity is very smooth, although several faint structures of interest are found.
+
+P. 79 / P. 80
+
+Longitudinal branch of the IFI and IFD plates
+
+Both branches appear to be very similar; their details are best appreciated in a cross section. In this section, we find a medial iliac portion, as thin as the infracentral tegument of which it appears to be a continuation; from this iliac portion outward, we find a sudden thickening coinciding with the position of the labrum. The change between the concave medial portion and the inferior surface of the labrum occurs through an abrupt change (approximately 100°); on the external edge, a progressive increase in the degree of curvature is observed up to the external edge, above which we find the lower half of the lateral canal, which is uniformly concave. The upper edge of this plate is very thin, and in some specimens, a median longitudinal canal can be seen along the entire articular surface. The internal surface is uniformly concave, although at the base, near the base of the internal lateral side of this plate, a longitudinal canaliculus can be seen running along it. This canaliculi is clearly visible in both plates of Pembrocystis gallica.
+
+These two plates articulate posteriorly with the IPD and ILI plates. These joints are transverse to the longitudinal axis of the plate, and their articular facets are flat, without depressions or protrusions.
+
+IPI and ILI Plates
+
+P. 80 /
+
+The structure described above for the longitudinal branches of the IFI and DIP plates is similar to that of the ILI, IPI, and IPD plates, at least in their longitudinal portions. Of note among the ILI and IPD plates is the structure of their joint. In Pembrocystis, the IPI-ILI joint is similar to the IFI-ILI joint; in fact, the ILI plate is indistinguishable from the longitudinal branch of the IFI plate. However, in Ctenocystidae, this joint is oblique, with the articular plane elevated anteriorly so that the ILI plate lies below the IPI plate. In this group, the ILI plate has an anterior structure similar to that of the longitudinal branch of the IFI plate, but the posterior one is convex, slightly globose, and wide. In Ctenocystidae, this plate actually forms the lateral margin of the theca; while in Pembrocystidae, the IPI plate also forms the lateral margin of the theca. In Ctenocystidae, the ILI-IPI articular facet is oval, while in Pembrocystidae it is similar to the section described for the IFI plate.
+
+/ P. 81
+
+The ILI plate of Ctenocys utahensis (BMNH model) presents, on its inner surface, a small oblique ridge with a blunt contour. On its upper and inner surface, the IPI plate presents a concave beveled posterior end at the posterior end of the dorsal articular ridge, where the siphon pyramid is located.
+
+IPD Plate
+
+The PD plate forms the right posterior angle of the inferior marginal frame; it is J-shaped with a longitudinal and a transverse branch. The anterior part of the longitudinal branch has characteristics similar to those described for the DIP plate, of which it is a continuation. The DIP-DIP joint is rigid, perpendicular to the anteroposterior axis of the animal, and the articular facets are smooth, without cavities or protrusions. On the lower surface, the end of the right branch of the labrum can be seen, usually tapering gradually and smoothly. The transverse branch on its underside is located at the same level as the infracentral tegument and is a smooth surface that may be rounded (Etoctenocystis, Gilcidia) or extended posteriorly with spine-like structures (Ctenocystis) or fins (Pembrocystis).
+
+P. 81 / P. 82
+
+The superior surface of this plate presents interesting structures. The longitudinal ramus has a dorsal articular crest that separates the lateral (external) canal from the body cavity. This crest is capped at its posterior end by an oblique and concave bevel similar to that of the IPI plate. On the inner surface of the dorsal articular crest, there is an oblique crest with its medial edge pointing forward. This crest is relatively poorly developed and has been observed in Gilcidia smithi, Pembrocystis gallica, Etoctenocystis bohemica, and Ctenocystis utahensis. The orientation of this crest coincides with that observed on the inner surface of the dorsal articular crest of the ILI plate.
+
+The IPI and IPD plates have a very thin joint, with ellipsoidal articular facets; this joint can be vertical but is more commonly oblique, with the underlying IPI plate. We must bear in mind that due to the absence of a labrum on the inferior surface of this area and the presence of the siphon foramen on its superior surface, the thickness of these plates is minimal, and their oblique arrangement maximizes the articular area.
+
+UPPER FRAMEWORK
+
+In dizones, the upper frame is formed by a relatively fixed number of marginal plates, since the posterior ossicles (SPD and SPI) can be subdivided into two subossicles. This peculiarity appears to be interindividual, as specimens from the same population have a different number of posterior ossicles (two, three, or four plates).
+
+SFI and SFD Plates
+
+P. 82 /
+
+On the upper surface of the animal, immediately behind the ctenidium, are the SFI and SFD plates. These plates are practically symmetrical to each other and sickle-shaped. Regarding their position, orientation, and function, they can be divided into two branches: one longitudinal and the other transverse. The longitudinal branch forms part of the upper lateral margin of the theca; the transverse branch has an oblique trajectory, oriented toward the posterolateral angles of the SOC plate. The anterior apex of these plates is located in medial portions and can be very acute (Pembrocystis); acute (Ctenocystis utahensis, Gilcidia smithi, Etoctenocystis), or blunt (Gilcidia agoii).
+
+/ P. 83
+
+On the medial surface of the SFD plate, in its middle portion, is the hydropore-gonopore notch. It is small, cylindrical, and can have a distinct contour (Ctenocystis utahensis, Gicidia jagoi) or a diffuse contour (Pembrocystis, Ctenocystis colodon). The anterior edge of the transverse ramus has a raised projection on its lower edge, through which it articulates with the SOD and SOI plates.
+
+The longitudinal ramus has a "T"-shaped section. The upper part of the "T" forms the body of the plate and has a concave upper surface. The vertical part of the "T" forms a poorly developed articular ridge. These plates articulate posteriorly with the SLI and SLD plates by a flat, vertical, and transverse joint with respect to the main axis of the animal, lacking projections or depressions.
+
+SLI and SLD Plates
+
+These two plates form the medial-lateral part of the upper marginal framework. Both are usually similar in shape and size, although they often differ, especially in their external stereomic texture. They are usually restilinear, two to four times longer than they are wide, and are a structural continuation of the longitudinal branch of the SFI and SFD plates.
+
+P. 83 / P. 84
+
+SPI and SPD Plates
+
+The posterior part of the upper marginal framework has a variable number of ossicles, as the SPI and SPD ossicles can be subdivided (SPD into SPDa and SPDb; SPI into SPLa and SPLb). This peculiarity appears to be individual, as specimens from the same population have different numbers of posterior ossicles (two, three, or four plates). For example, fossils of Ctenocystis utahensis are often found associated in the same sample and stratification plane (demonstrating their contemporaneity). Samples of this type are known from different localities and/or stratigraphic levels. In each sample, specimens can be found with two (SPI, SPD), three (SPLa, SPLb, SPD or SPI, SPDa, SPDb), and four (SPIa, SPLb, SPDa, SPDb) posterior marginal plates. In Etoctenocystis bohemica (a single population), there are specimens with three (SPla, SPlb, SPD) and two (SPI, SPD). However, in Pembrocystis (from the same paleocommunity), no specimens with two marginal plates have been found, and their number seems to be limited to three (SPIa, SPIb, SPD). The problem with this species is the high degree of disarticulation of its specimens, which has prevented positive identification of many of the ossicles. In Gilcidia agoi (in the holotype), we observed an incision in the SPI plate that suggests the possibility of subdivision in some specimens.
+
+Dorsal and Ventral Integuments
+
+P. 84 /
+
+The dorsal and ventral integuments of the body of dizonid ctenocystoids have similar characteristics that allow them to be grouped under a single heading. The ossicles are thick and oval or tapered in outline. In Pembrocystis, the ossicles of the ventral integument are oblong and very rounded, while in Ctenocystis they have a pointed edge, with the center of the external surface depressed. The ossicles are well separated from each other, and these interossicular spaces must have been filled with integument. The lateral surfaces of the ossicles are concave, giving them a pulley-like appearance. The groove of this pulley must have served as an insertion point for integumentary muscle masses.
+
+/ P. 85
+
+Generally, the ossicles of the lower integument are somewhat or much larger than those of the upper integument. The same is true of the interossicular spaces. Occasionally, as in Etoctenocystis, the ossicles of the dorsal integument are so close together that they form a semi-rigid integument, at least in the anterior half of the animal's body.
+
+Siphon
+
+It is located at the posterior end of the body,
+approximately along the animal's midline. This structure is cone-shaped, with the siphon itself at its apex. The walls of the cone are formed by a variable number of acicular ossicles, oblong in section and somewhat thicker at the base than at the apex. The base of this cone is located in the window or foramen formed by the IP1, IPD, SPD, and SPI plates (the latter two,
+as already mentioned, are usually subdivided) at the posterior end of the body. The siphonal cone does not fit perfectly into the foramen, so there must have been unskeletonized integument between the two structures. The siphon appears to be extensible, transforming its shape from a cone at rest to a subcylindrical or truncated cone.
+
+P. 85 / P. 86
 
 Topographic anatomy in other morphological planes
 
