@@ -292,6 +292,75 @@
         - taxon: archaeocyathoides
           type: true
           new: true
+1999_domínguez alonso:
+  taxonomies:
+  - taxon: ctenocystoidea
+    children:
+    - taxon: monozonida
+      new: true
+      children:
+      - taxon: courtessoleidae
+        new: true
+        children:
+        - taxon: courtessolea
+          new: true
+          children:
+          - taxon: moncereti
+            type: true
+            new: true
+    - taxon: pleurozonida
+      new: true
+      children:
+      - taxon: jugoszoviidae
+        children:
+        - taxon: jugoszovia
+          children:
+          - taxon: archaeocyathoides
+            type: true
+    - taxon: azonida
+      new: true
+      children:
+      - taxon: conolliidae
+        new: true
+        children:
+        - taxon: conollia
+          new: true
+          chilren:
+          - taxon: staffordi
+            type: true
+            new: true
+    - taxon: dizonida
+      new: true
+      children:
+      - taxon: pembrocystidae
+        new: true
+        children:
+        - taxon: pembrocystis
+          new: true
+          children:
+          - taxon: gallica
+            type: true
+            new: true
+      - taxon: ctenocystidae
+        children:
+        - taxon: etoctenocystis
+          children:
+          - taxon: bohemica
+            type: true
+        - taxon: gilcidia
+          new: true
+          children:
+          - taxon: smithi
+            moved: true
+          - taxon: jagoi
+            moved: true
+          - taxon: viviannae
+            new: true
+        - taxon: ctenocystis
+          children:
+          - taxon: utahensis-r-s-1969
+            type: true
+          - taxon: colodon
 2010_müller_hahn:
   taxonomies:
   - taxon: isorophida
