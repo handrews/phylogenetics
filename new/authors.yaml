@@ -31,10 +31,10 @@ burrett:
 candia carnevali:
   family: Candia Carnevali
   given: M. D.
-chen_a_l:
+chen.a:
   family: Chen
   given: Ailin
-cong_p_y:
+cong.p:
   family: Cong
   given: Peiyun
 david:
@@ -44,7 +44,7 @@ derstler:
   family: Derstler
   given: Kraig
 domínguez alonso:
-  family: Domînguez Alonso
+  family: Domínguez Alonso
   given: Patricio
 dzik:
   family: Dzik
@@ -94,7 +94,7 @@ linnaeus:
 mooi:
   family: Mooi
   given: Rich
-muller:
+müller:
   family: Müller
   given: Peter
 orłowski:
@@ -106,7 +106,7 @@ owen:
 parsley:
   family: Parsley
   given: Ronald
-peng_j:
+peng.j:
   family: Peng
   given: Jin
 rahman:
@@ -124,7 +124,7 @@ roux:
 savage:
   family: Savage
   given: Harry J.
-smith-a-b:
+smith.a.b:
   family: Smith
   given: Andrew B.
 sprinkle:
@@ -147,8 +147,8 @@ ubaghs:
 webby:
   family: Webby
   given: B. D.
-wen_r_q:
-  family: Ren
+wen.r:
+  family: Wen
   given: Rongqin
 wright:
   family: Wright
@@ -156,12 +156,12 @@ wright:
 zamora:
   family: Zamora
   given: Samuel
-zhao_j:
+zhao.j:
   family: Zhao
   given: Jun
-zhao_y_l:
+zhao.y:
   family: Zhao
   given: Yuanlong
-zhu_x_j:
+zhu.x:
   family: Zhu
   given: Xue-Jian

@@ -221,7 +221,7 @@ ctenocystis:
   year: 1969
 ctenoimbricata:
   name: Ctenoimbricata
-  auth: [zamora, rahman, smith-a-b]
+  auth: [zamora, rahman, smith.a.b]
   year: 2012
 cuniculocystis:
   name: Cuniculocystis
@@ -243,11 +243,11 @@ devonica:
 dibrachycystidae:
   name: Dibrachycystidae
   rank: Family
-  auth: [zamora, smith-a-b]
+  auth: [zamora, smith.a.b]
   year: 2012
 dibrachycystis:
   name: Dibrachycystis
-  auth: [zamora, smith-a-b]
+  auth: [zamora, smith.a.b]
   year: 2012
 discocystinae:
   name: Discocystinae
@@ -339,7 +339,7 @@ eumorphocystis:
   year: 1940
 extenuatus:
   name: extenuatus
-  auth: [zhao_j, rahman, zamora, chen_a_l, cong_p_y]
+  auth: [zhao.j, rahman, zamora, chen.a, cong.p]
   year: 2022
 ###################### F
 ###################### G
@@ -799,7 +799,7 @@ spencensis:
   year: 2019
 spinosa:
   name: spinosa
-  auth: [zamora, rahman, smith-a-b]
+  auth: [zamora, rahman, smith.a.b]
   year: 2012
 sporranoides:
   name: sporranoides

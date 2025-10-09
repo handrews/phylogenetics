@@ -279,12 +279,12 @@
 1995_dzik_orłowski:
   taxonomies:
   - taxon: ctenocystoidea
+    notes: Unclear if higher tree present
     children:
     - taxon: jugoszoviidae
       notes: |
-        As paper is not available, direct  assignment to ctenocystoidea
-        is likely but not certain, while it is unknown whether ctenocystoidea
-        was placed or used as the root for the paper.
+        Direct assignment to class (not order) in this paper
+        described by Domínguez Alonso (1999).
       children:
       - taxon: jugoszovia
         new: true
@@ -292,7 +292,7 @@
         - taxon: archaeocyathoides
           type: true
           new: true
-2010_muller_hahn:
+2010_müller_hahn:
   taxonomies:
   - taxon: isorophida
     children:
@@ -421,7 +421,7 @@
       - taxon: discocystinae
     - taxon: hemicystitidae
     - taxon: rhenopyrgidae
-2010_parsley_zhao:
+2010_parsley_zhao.y:
   taxonomies:
     - taxon: blastozoa
       children:
@@ -445,7 +445,7 @@
                   - GM 9-5-3235b
                   - GM 10-3-2000
                   - GM 9-5-2165a
-2010_zhao_sumrall_parsley_peng:
+2010_zhao.y_sumrall_parsley_peng.j:
   taxonomies:
   - taxon: edrioasteroidea
     children:
@@ -477,7 +477,7 @@
               - GM 3665
               - GM 8052
               - GM 9292
-2012_zamora_smith-a-b:
+2012_zamora_smith.a.b:
   taxonomies:
     - taxon: echinodermata
       children:
@@ -529,7 +529,7 @@
           children:
           - taxon: titanocrinus
           - taxon: aethocrinus
-2013_smith-a-b_zamora:
+2013_smith.a.b_zamora:
   taxonomies:
   - taxon: echinodermata
     stem: true
@@ -611,7 +611,7 @@
             - GLAHM 131255/25
             - GLAHM 131255/26
             - GLAHM 131255/27
-2017_zamora_sumrall_zhu_lefebvre:
+2017_zamora_sumrall_zhu.x_lefebvre:
   taxonomies:
   - taxon: echinodermata
     children:
@@ -691,7 +691,7 @@
                 additional:
                 - USNM 393393
                 - USNM 393394
-2019_wen_babcock_peng_robison:
+2019_wen.r_babcock_peng.j_robison:
   taxonomies:
   - taxon: edrioasteroidea
     children:
@@ -981,7 +981,7 @@
       - taxon: helicoplacus
         bracket: helicoplacoidea
         outgroup: true
-2022_zhao_rahman_zamora_chen_cong:
+2022_zhao.j_rahman_zamora_chen.a_cong.p:
   taxonomies:
   - taxon: echinodermata
     children:

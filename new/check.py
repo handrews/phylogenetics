@@ -94,6 +94,7 @@ class UniqueKeyNoDatesLoader(yaml.SafeLoader):
       mapping.add(key)
     return super().construct_mapping(node, deep)
 
+
 def load_yaml(filename, debug=True):
   UniqueKeyNoDatesLoader.remove_implicit_resolver('tag:yaml.org,2002:timestamp')
   with open(filename) as fd:
@@ -106,7 +107,8 @@ def load_yaml(filename, debug=True):
     logger.debug(f'...loaded "{filename}"')
     return data
 
-def _check_node(n, data, parent=[]):
+
+def check_node(n, data, parent=[]):
   if 'taxon' in n:
     current = parent + [n['taxon']]
     logger.debug(f'checking {current}')
@@ -119,7 +121,8 @@ def _check_node(n, data, parent=[]):
     current = parent + ['_anon_']
     logger.debug(f'Descending through {current}')
   for c in n.get('children', {}):
-    _check_node(c, data, current)
+    check_node(c, data, current)
+
 
 def load_files():
   logger.info("Checking schema...")
@@ -157,6 +160,64 @@ def load_files():
       logger.error(repr(e))
   return data
 
+
+def build_expected_author(expected, author):
+  new_expected = f'{expected}.' + '.'.join(
+    [name[0].lower() for name in author['given'].split(' ')]
+  )
+  return {new_expected}
+
+
+def build_expected_taxon(expected, taxon):
+  if not (rank := taxon.get('rank')):
+    rank = 'genus' if taxon['name'][0].isupper() else 'species'
+
+  ranked_expected = expected
+  alt_expected = expected
+  expected_set = {expected}
+
+  logger.debug(f'Creating alt taxon_id expectations for "{taxon}"')
+  ranked_expected += f"-{rank.lower()}"
+  for author_id in taxon['auth']:
+    logger.debug(f'Adding author "{author_id}" for taxon_id "{taxon}"')
+    alt_expected += f'-{author_id.lower()[0]}'
+  alt_expected += f"-{taxon['year']}"
+
+  return {ranked_expected, alt_expected}
+
+
+def check_expectation(
+  actual_id,
+  expected,
+  build_expected_set=None,
+  *args,
+  **kwargs,
+):
+  if actual_id == expected:
+    return True, {expected}
+
+  if build_expected_set is None or not actual_id.startswith(expected):
+    return False, {expected}
+
+  expected_set = build_expected_set(expected, *args, **kwargs)
+  if actual_id in expected_set:
+    return True, expected_set
+  return False, expected_set
+
+
+def check_authors(data):
+  for author_id, author in data['authors'].items():
+    expected = author['family'].lower()
+    valid, expected_set = check_expectation(
+      author_id,
+      expected,
+      build_expected_author,
+      author,
+    )
+    if not valid:
+      logger.error(f'"{author_id}" not in expected set: {expected_set}')
+
+
 def check_sources(data):
   logger.info("Checking sources...")
   sources = set()
@@ -180,31 +241,21 @@ def check_sources(data):
       logger.error(f'Source "{ref_id}" not found!')
   return sources
 
+
 def check_taxa(data):
   logger.info(f"Processing {len(data['taxa'])} taxa...")
   for taxon_id, taxon in data['taxa'].items():
     expected = taxon['name'].lower()
     logger.debug(f'  Processing taxon "{taxon_id}"...')
-    if not (rank := taxon.get('rank')):
-      rank = 'genus' if taxon['name'][0].isupper() else 'species'
 
-    ranked_expected = expected
-    alt_expected = expected
-    expected_set = {expected}
-    if taxon_id != expected and taxon_id.startswith(f'{expected}'):
-      logger.debug(f'Creating alt taxon_id expectations for "{taxon_id}"')
-      ranked_expected += f"-{rank.lower()}"
-      for author_id in taxon['auth']:
-        logger.debug(f'Adding author "{author_id}" for taxon_id "{taxon_id}"')
-        alt_expected += f'-{author_id.lower()[0]}'
-      alt_expected += f"-{taxon['year']}"
-      expected_set = {ranked_expected, alt_expected}
-
-    logger.debug(f'Expected set: {expected_set}')
-    if taxon_id not in expected_set:
-      logger.error(
-        f"Taxon id \"{taxon_id}\" and name(s) \"{taxon['name']}\" do not match"
-      )
+    valid, valid_set = check_expectation(
+      taxon_id,
+      expected,
+      build_expected_taxon,
+      taxon,
+    )
+    if not valid:
+      logger.error(f'"{taxon_id}" not in expected set: {expected_set}')
 
     for author_id in taxon['auth']:
       logger.debug('    Processing authority "{author_id}"')
@@ -231,6 +282,7 @@ def check_taxa(data):
 
   logger.info(f"...taxa processed.")
 
+
 def check_trees(data, sources):
   logger.info(f"Processing {len(data['trees'])} opinions...")
   opinions = set()
@@ -247,16 +299,17 @@ def check_trees(data, sources):
     num_phy = len(trees) - num_tax
     logger.debug(f'Found {num_phy} phylogenetic trees')
     for t in trees:
-      _check_node(t, data)
+      check_node(t, data)
   logger.info(f"...opinions processed.")
 
   if (difference := sources - opinions):
     logger.error(f"Missing opinions from {difference}")
 
+
 def main():
 
   data = load_files()
-  # check_authors(data)
+  check_authors(data)
   sources = check_sources(data)
   check_taxa(data)
   check_trees(data, sources)
@@ -267,6 +320,7 @@ def main():
   if logged_errors:
     logger.error(f'Encounterd {logged_errors} errors!')
     sys.exit(-1)
+
 
 if __name__ == '__main__':
   main()

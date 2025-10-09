@@ -227,7 +227,7 @@ articles:
     - owen
     identifiers:
       doi: 10.1111/j.1502-3931.2008.00117.x
-  2010_muller_hahn:
+  2010_müller_hahn:
     title: Edrioasteroidea aus den Seifen-Schichten im Westerwald, Rheinisches Schiefer-Gebirge (Unter-Devon, Deutschland), Teil 1
     journal: geo-et-palaeo
     volume: 43
@@ -239,7 +239,7 @@ articles:
     - 9
     - 47
     authors:
-    - muller
+    - müller
     - hahn
     quotes:
     - |
@@ -336,7 +336,7 @@ articles:
       appearance of sculpture in the form of a granulated plate
       surface. Table 4 summarizes the differences between the
       four species.
-  2010_parsley_zhao:
+  2010_parsley_zhao.y:
     title: A New Turban-Shaped Gogiid Eocrinoid From The Kaili Formation (Kaili Biota), Balang, Jianhe County, Guizhou Province, China
     journal: jofpaleo
     volume: 84
@@ -346,7 +346,7 @@ articles:
     - 553
     authors:
     - parsley
-    - zhao_y_l
+    - zhao.y
     pubDate:
       year: 2010
       month: 5
@@ -354,7 +354,7 @@ articles:
       accepted: 2009-11-29
     identifiers:
       jstor: 40605503
-  2010_zhao_sumrall_parsley_peng:
+  2010_zhao.y_sumrall_parsley_peng.j:
     title: Kailidiscus, A New Plesiomorphic Edrioasteroid From The Basal Middle Cambrian Kaili Biota Of Guizhou Province, China
     journal: jofpaleo
     volume: 84
@@ -363,17 +363,17 @@ articles:
     - 668
     - 680
     authors:
-    - zhao_y_l
+    - zhao.y
     - sumrall
     - parsley
-    - peng_j
+    - peng.j
     pubDate:
       year: 2010
     processDates:
       accepted: 2010-03-20
     identifiers:
       doi: 10.1666/09-159.1
-  2012_zamora_rahman_smith-a-b:
+  2012_zamora_rahman_smith.a.b:
     title: Plated Cambrian Bilaterians Reveal the Earliest Stages of Echinoderm Evolution
     journal: plos-one
     volume: 7
@@ -389,10 +389,10 @@ articles:
     authors:
     - zamora
     - rahman
-    - smith-a-b
+    - smith.a.b
     identifiers:
       doi: 10.1371/journal.pone.0038296
-  2012_zamora_smith-a-b:
+  2012_zamora_smith.a.b:
     title: Cambrian stalked echinoderms show unexpected plasticity of arm construction
     journal: procrsocb
     volume: 279
@@ -409,8 +409,8 @@ articles:
       doi: 10.1098/rspb.2011.0777
     authors:
     - zamora
-    - smith-a-b
-  2013_smith-a-b_zamora:
+    - smith.a.b
+  2013_smith.a.b_zamora:
     title: Cambrian spiral-plated echinoderms from Gondwana reveal the earliest pentaradial body plan
     journal: procrsocb
     volume: 280
@@ -424,7 +424,7 @@ articles:
     identifiers:
       doi: 10.1098/rspb.2013.1197
     authors:
-    - smith-a-b
+    - smith.a.b
     - zamora
   2015_ausich_kammer_rhenberg_wright:
     title: Early phylogeny of crinoids within the pelmatozoan clade
@@ -475,7 +475,7 @@ articles:
       online: 2014-03-24
     identifiers:
       doi: 10.4202/app.00048.2013
-  2017_zamora_sumrall_zhu_lefebvre:
+  2017_zamora_sumrall_zhu.x_lefebvre:
     title: A new stemmed echinoderm from the Furongian of China and the origin of Glyptocystitida (Blastozoa, Echinodermata)
     journal: geomag
     volume: 154
@@ -494,7 +494,7 @@ articles:
     authors:
     - zamora
     - sumrall
-    - zhu_x_j
+    - zhu.x
     - lefebvre
   2018_lefebvre_lerosey-aubril:
     title: "Laurentian origin of solutan echinoderms: new evidence from the Guzhangian (Cambrian Series 3) Weeks Formation of Utah, USA"
@@ -518,7 +518,7 @@ articles:
     authors:
     - lefebvre
     - lerosey-aubril
-  2019_wen_babcock_peng_robison:
+  2019_wen.r_babcock_peng.j_robison:
     title: "New edrioasteroid (Echinodermata) from the Spence Shale (Cambrian), Idaho, USA: further evidence of attachment in the early evolutionary history of edrioasteroids"
     journal: bullgeo
     volume: 94
@@ -527,9 +527,9 @@ articles:
     - 115
     - 124
     authors:
-    - wen_r_q
+    - wen.r
     - babcock
-    - peng_j
+    - peng.j
     - robison
     pubDate:
       year: 2019
@@ -581,7 +581,7 @@ articles:
     - thompson
     identifiers:
       doi: 10.1098/rspb.2021.2733
-  2022_zhao_rahman_zamora_chen_cong:
+  2022_zhao.j_rahman_zamora_chen.a_cong.p:
     title: The first edrioasteroid echinoderm from the lower Cambrian Chengjiang biota of Yunnan Province, China
     journal: papersinpalaeo
     number: 8
@@ -591,11 +591,11 @@ articles:
       month: 8
       day: 27
     authors:
-    - zhao_j
+    - zhao.j
     - rahman
     - zamora
-    - chen_a_l
-    - cong_p_y
+    - chen.a
+    - cong.p
     processDates:
       received: 2022-01-21
       revised: 2022-06-07
