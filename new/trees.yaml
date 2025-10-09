@@ -477,7 +477,7 @@
               - GM 3665
               - GM 8052
               - GM 9292
-2012_zamora_smith:
+2012_zamora_smith-a-b:
   taxonomies:
     - taxon: echinodermata
       children:
@@ -529,7 +529,7 @@
           children:
           - taxon: titanocrinus
           - taxon: aethocrinus
-2013_smith_zamora:
+2013_smith-a-b_zamora:
   taxonomies:
   - taxon: echinodermata
     stem: true

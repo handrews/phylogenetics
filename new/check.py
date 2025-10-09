@@ -106,7 +106,7 @@ def load_yaml(filename, debug=True):
     logger.debug(f'...loaded "{filename}"')
     return data
 
-def _check_node(n, parent=[]):
+def _check_node(n, data, parent=[]):
   if 'taxon' in n:
     current = parent + [n['taxon']]
     logger.debug(f'checking {current}')
@@ -119,9 +119,9 @@ def _check_node(n, parent=[]):
     current = parent + ['_anon_']
     logger.debug(f'Descending through {current}')
   for c in n.get('children', {}):
-    _check_node(c, current)
+    _check_node(c, data, current)
 
-if __name__ == '__main__':
+def load_files():
   logger.info("Checking schema...")
   schema_library = jschon.JSONSchema(load_yaml('schemas/phylogeny.yaml'))
   r = schema_library.validate()
@@ -132,8 +132,8 @@ if __name__ == '__main__':
 
   logger.debug("Schema is valid.")
   defs = schema_library['$defs']
-  schema = None
 
+  schema = None
   data = {
     'authors': {},
     'sources': {},
@@ -155,7 +155,9 @@ if __name__ == '__main__':
         logger.debug(f'"{filename}" is valid.')
     except KeyError as e:
       logger.error(repr(e))
+  return data
 
+def check_sources(data):
   logger.info("Checking sources...")
   sources = set()
   for ref_id, article in data['sources']['articles'].items():
@@ -176,7 +178,9 @@ if __name__ == '__main__':
 
     if ref_id not in data['sources']['articles']:
       logger.error(f'Source "{ref_id}" not found!')
+  return sources
 
+def check_taxa(data):
   logger.info(f"Processing {len(data['taxa'])} taxa...")
   for taxon_id, taxon in data['taxa'].items():
     expected = taxon['name'].lower()
@@ -227,6 +231,7 @@ if __name__ == '__main__':
 
   logger.info(f"...taxa processed.")
 
+def check_trees(data, sources):
   logger.info(f"Processing {len(data['trees'])} opinions...")
   opinions = set()
   for ref_id, opinion in data['trees'].items():
@@ -242,14 +247,26 @@ if __name__ == '__main__':
     num_phy = len(trees) - num_tax
     logger.debug(f'Found {num_phy} phylogenetic trees')
     for t in trees:
-      _check_node(t)
+      _check_node(t, data)
   logger.info(f"...opinions processed.")
 
   if (difference := sources - opinions):
     logger.error(f"Missing opinions from {difference}")
+
+def main():
+
+  data = load_files()
+  # check_authors(data)
+  sources = check_sources(data)
+  check_taxa(data)
+  check_trees(data, sources)
+
 #   logged_errors = log_counter.get_counts()[logging.ERROR]
 #   if logged_errors:
   logged_errors = logger.error_count
   if logged_errors:
     logger.error(f'Encounterd {logged_errors} errors!')
     sys.exit(-1)
+
+if __name__ == '__main__':
+  main()

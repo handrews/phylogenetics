@@ -7,30 +7,36 @@ publications:
     name: Annales de Paleontologie
   bullgeo:
     name: Bulletins of Geosciences
-  geomag:
-    name: Geological Magazine
-  geo-et-palaeo:
-    name: Geologica et Palaeontologica
-  jofpaleo:
-    name: Journal of Paleontology
-  palaeontology:
-    name: Palaeontology
-  papersinpalaeo:
-    name: Papers in Palaeontology
-  procrsocb:
-    name: Proceedings of the Royal Society B
-  science-new-series:
-    name: Science (New Series)
-  kansas:
-    name: The University of Kansas Paleontological Contributions
-  vestnik:
-    name: Věstník Ústředního ústavu geologického
   e-research-1998:
     name: Echinoderm Research 1998
     notes: Conference proceedings
     editors:
     - candia carnevali
     - bonosoro
+  geo-et-palaeo:
+    name: Geologica et Palaeontologica
+  geomag:
+    name: Geological Magazine
+  jofpaleo:
+    name: Journal of Paleontology
+  kansas:
+    name: The University of Kansas Paleontological Contributions
+  lethaia:
+    name: Lethaia
+  palaeontology:
+    name: Palaeontology
+  papersinpalaeo:
+    name: Papers in Palaeontology
+  plos-one:
+    name: PLoS ONE
+  procrsocb:
+    name: Proceedings of the Royal Society B
+  science-new-series:
+    name: Science (New Series)
+  treatise-t:
+    name: Treatise on Invertebrate Paleontology, Part T
+  vestnik:
+    name: Věstník Ústředního ústavu geologického
 articles:
   1968_webby:
     title: Astrocystites distans sp. nov., an edrioblastoid from the Ordovician of eastern Australia
@@ -190,13 +196,37 @@ articles:
     title: "The early evolution of echinoderms: the class Ctenocystoidea and its closest relatives revisited"
     book: e-research-1998
     seen: false
-    pubDate:
-      year: 1999
     pages:
     - 263
     - 268
+    pubDate:
+      year: 1999
     authors:
     - domínguez alonso
+  2008_stewart_owen:
+    title: "Probing the deep shelf: a Lagerstätte from the Upper Ordovician of Girvan, southwestern Scotland"
+    journal: lethaia
+    complete:
+      named: null
+      open: false
+      history: null
+      specimens:
+        basic: false
+        all: false
+    volume: 41
+    pages:
+    - 139
+    - 146
+    pubDate:
+      year: 2008
+    processDates:
+      received: 2006-08-10
+      accepted: 2007-12-16
+    authors:
+    - stewart
+    - owen
+    identifiers:
+      doi: 10.1111/j.1502-3931.2008.00117.x
   2010_muller_hahn:
     title: Edrioasteroidea aus den Seifen-Schichten im Westerwald, Rheinisches Schiefer-Gebirge (Unter-Devon, Deutschland), Teil 1
     journal: geo-et-palaeo
@@ -343,7 +373,26 @@ articles:
       accepted: 2010-03-20
     identifiers:
       doi: 10.1666/09-159.1
-  2012_zamora_smith:
+  2012_zamora_rahman_smith-a-b:
+    title: Plated Cambrian Bilaterians Reveal the Earliest Stages of Echinoderm Evolution
+    journal: plos-one
+    volume: 7
+    number: 6
+    article: e38296
+    pubDate:
+      year: 2012
+      month: 6
+      day: 6
+    processDates:
+      received: 2012-03-23
+      accepted: 2012-05-01
+    authors:
+    - zamora
+    - rahman
+    - smith-a-b
+    identifiers:
+      doi: 10.1371/journal.pone.0038296
+  2012_zamora_smith-a-b:
     title: Cambrian stalked echinoderms show unexpected plasticity of arm construction
     journal: procrsocb
     volume: 279
@@ -360,8 +409,8 @@ articles:
       doi: 10.1098/rspb.2011.0777
     authors:
     - zamora
-    - smith
-  2013_smith_zamora:
+    - smith-a-b
+  2013_smith-a-b_zamora:
     title: Cambrian spiral-plated echinoderms from Gondwana reveal the earliest pentaradial body plan
     journal: procrsocb
     volume: 280
@@ -375,7 +424,7 @@ articles:
     identifiers:
       doi: 10.1098/rspb.2013.1197
     authors:
-    - smith
+    - smith-a-b
     - zamora
   2015_ausich_kammer_rhenberg_wright:
     title: Early phylogeny of crinoids within the pelmatozoan clade

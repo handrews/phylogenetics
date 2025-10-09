@@ -166,29 +166,29 @@ cincta-order:
   year: 1918
 colodon:
   name: colodon
-  auth: [Ubaghs, Robison]
+  auth: [ubaghs, robison]
   year: 1988
 conollia:
   name: Conollia
-  auth: [Domínguez Alonso]
+  auth: [domínguez alonso]
   year: 2004
 cornuta:
   name: Cornuta
   rank: Order
-  auth: [Jaekel]
+  auth: [jaekel]
   year: 1901
 cothurnocystidae:
   name: Cothurnocystidae
   rank: Family
-  auth: [Bather]
+  auth: [bather]
   year: 1913
 cothurnocystis:
   name: Cothurnocystis
-  auth: [Bather]
+  auth: [bather]
   year: 1913
 courtessolea:
   name: Courtessolea
-  auth: [Domínguez-Alonso]
+  auth: [domínguez alonso]
   year: 1989
 crinoidea:
   name: Crinoidea
@@ -203,25 +203,29 @@ crinozoa:
 ctenocystida:
   name: Ctenocystida
   rank: Order
-  auth: [Ubaghs, Robison]
+  auth: [ubaghs, robison]
   year: 1988
 ctenocystidae:
   name: Ctenocystidae
   rank: Family
-  auth: [Sprinkle, Robison]
+  auth: [sprinkle, robison]
   year: 1978
 ctenocystoidea:
   name: Ctenocystoidea
   rank: Class
-  auth: [Robison, Sprinkle]
+  auth: [robison, sprinkle]
   year: 1969
 ctenocystis:
   name: Ctenocystis
-  auth: [Robison, Sprinkle]
+  auth: [robison, sprinkle]
   year: 1969
+ctenoimbricata:
+  name: Ctenoimbricata
+  auth: [zamora, rahman, smith-a-b]
+  year: 2012
 cuniculocystis:
   name: Cuniculocystis
-  auth: [Sprinkle, Wahlman]
+  auth: [sprinkle, Wahlman]
   year: 1994
 curvatus:
   name: curvatus
@@ -230,25 +234,25 @@ curvatus:
 ###################### D
 destombesi:
   name: destombesi
-  auth: [Ubaghs]
+  auth: [ubaghs]
   year: 1963
 devonica:
   name: devonica
-  auth: [Bassler]
+  auth: [bassler]
   year: 1936
 dibrachycystidae:
   name: Dibrachycystidae
   rank: Family
-  auth: [Zamora, Smith]
+  auth: [zamora, smith-a-b]
   year: 2012
 dibrachycystis:
   name: Dibrachycystis
-  auth: [Zamora, Smith]
+  auth: [zamora, smith-a-b]
   year: 2012
 discocystinae:
   name: Discocystinae
   rank: Subfamily
-  auth: [Sumrall]
+  auth: [sumrall]
   year: 1996
 disparida:
   name: Disparida
@@ -257,11 +261,11 @@ disparida:
   year: 1943
 distans:
   name: distans
-  auth: [Webby]
+  auth: [webby]
   year: 1968
 durhami:
   name: durhami
-  auth: [Sprinkle]
+  auth: [sprinkle]
   year: 1973
 ###################### E
 echinoencrinites:
@@ -285,7 +289,7 @@ echinozoa:
 edrioasterida:
   name: Edrioasterida
   rank: Order
-  auth: [Bather]
+  auth: [bather]
   year: 1898
 edrioasteroidea:
   name: Edrioasteroidea
@@ -300,22 +304,22 @@ edrioblastoidea:
   year: 1962
 edriodiscus:
   name: Edriodiscus
-  auth: [Jell, Burrett, Banks]
+  auth: [jell, burrett, banks]
   year: 1985
 eknomocrinus:
   name: Eknomocrinus
-  auth: [Guensburg, Sprinkle]
+  auth: [guensburg, sprinkle]
   year: 2003
 elizae:
   name: elizae
-  auth: [Bather]
+  auth: [bather]
   year: 1913
 eocrinoidea:
   name: Eocrinoidea
   rank: Class
   bracket: Eocrinoids
   status: informal
-  auth: [Jaekel]
+  auth: [jaekel]
   year: 1918
 eocystites:
   name: Eocystites
@@ -327,7 +331,7 @@ eopostibulla:
   year: 2010
 etoctenocystis:
   name: Etoctenocystis
-  auth: [Fatka, Kordule]
+  auth: [fatka, kordule]
   year: 1985
 eumorphocystis:
   name: Eumorphocystis
@@ -335,7 +339,7 @@ eumorphocystis:
   year: 1940
 extenuatus:
   name: extenuatus
-  auth: [Zhao, Rahman, Zamora, Chen, Cong]
+  auth: [zhao_j, rahman, zamora, chen_a_l, cong_p_y]
   year: 2022
 ###################### F
 ###################### G
@@ -793,6 +797,10 @@ spencensis:
   name: spencensis
   auth: [Wen, Babcock, Peng, Robison]
   year: 2019
+spinosa:
+  name: spinosa
+  auth: [zamora, rahman, smith-a-b]
+  year: 2012
 sporranoides:
   name: sporranoides
   auth: [rahman, stewart, zamora]

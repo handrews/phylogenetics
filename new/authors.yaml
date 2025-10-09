@@ -100,6 +100,9 @@ muller:
 orłowski:
   family: Orłowski
   given: S.
+owen:
+  family: Owen
+  given: Alan W.
 parsley:
   family: Parsley
   given: Ronald
@@ -121,7 +124,7 @@ roux:
 savage:
   family: Savage
   given: Harry J.
-smith:
+smith-a-b:
   family: Smith
   given: Andrew B.
 sprinkle:
