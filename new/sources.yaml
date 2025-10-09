@@ -182,6 +182,8 @@ articles:
   1995_dzik_orłowski:
     title: Primitive ctenocystoid echinoderm from the earliest Middle Cambrian of Poland
     seen: false
+    complete:
+      history: false # the named species was previously in open nomenclature(s)
     journal: annals
     volume: 81
     pages:
