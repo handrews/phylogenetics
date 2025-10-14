@@ -1,0 +1,231 @@
+{{cite journal
+  |year = 1969
+  |title = Ctenocystoidea: New Class of Primitive Echinoderms
+  |last1 = Robison
+  |first1 = R. A.
+  |last2 = Sprinkle
+  |first2 = J.
+  |journal = Science
+  |volume = 166 
+  |issue = 3912
+  |pages = 1512–1514
+  |pmid = 17742852 
+  |doi = 10.1126/science.166.3912.1512 
+  |bibcode = 1969Sci...166.1512R 
+  |s2cid = 26730941
+}}
+
+{{cite thesis 
+  |date = 1999 
+  |last = Domínguez Alonso 
+  |first = Patricio 
+  |title = Sistemática, anatomía, estructura y función de Ctenocystoidea (Echinodermata, Carpoidea) del Paleozoico Inferior 
+  |publisher = Universidad Complutense de Madrid 
+  |type = PhD 
+  |isbn = 84-669-2421-3 
+  |url = https://eprints.ucm.es/5270/
+}}
+
+{{cite journal
+  |date = 2000
+  |title = Are homalozoans echinoderms? An answer from the extraxial-axial theory
+  |last1 = David
+  |first1 = Bruno
+  |last2 = Lefebvre
+  |first2 = Bertrand
+  |last3 = Mooi
+  |first3 = Rich
+  |last4 = Parsley
+  |first4 = Ronald
+  |journal = Paleobiology
+  |volume = 26
+  |issue = 4
+  |pages = 529–555
+  |bibcode = 2000Pbio...26..529D
+  |doi = 10.1666/0094-8373(2000)026<0529:AHEAAF>2.0.CO;2
+}}
+
+{{cite journal
+  |date = 2002
+  |title = An annotated check-list of genera and species of carpoids
+  |last1 = Domínguez Alnoso
+  |first1 = Patricio
+  |last2 = Jefferies
+  |first2 = Richard P. S.
+  |last3 = Gil Cid
+  |first3 = Dolores
+  |journal = Coloquios de Paleontología
+  |volume = 53
+  |pages = 33–68
+  |issn = 1132-1660
+  |url = http://eprints.ucm.es/10963/
+}}
+
+{{cite conference 
+  |date = September 2005 
+  |title = A cladogram for the Deuterostomia based on molecular-biological and fossil evidence 
+  |last1 = Dominguez-Alonso 
+  |first1 = Patricio 
+  |last2 = Jefferies 
+  |first2 = Richard 
+  |conference = Symposium of Vertebrate Palaeontology and Comparative Anatomy 
+  |pages = 30 
+  |location = London 
+  |url = http://www.svpca.org/years/2005_london/abstracts.pdf
+}}
+
+{{cite journal
+  |date = 2009 
+  |title = Re-evaluating the palaeobiology and affinities of the Ctenocystoidea (Echinodermata)
+  |last1 = Rahman
+  |first1 = Imran A.
+  |last2 = Clausen
+  |first2 = Sébastien
+  |journal = Journal of Systematic Palaeontology
+  |volume = 7
+  |issue = 4
+  |pages = 413–426
+  |doi = 10.1017/S1477201909990046
+  |bibcode = 2009JSPal...7..413R
+  |s2cid = 129093037
+}}
+
+{{cite journal
+  |date = 2009
+  |title = Making sense of carpoids
+  |last = Rahman
+  |first = Imran A.
+  |journal = Geology Today
+  |volume = 25
+  |issue = 1
+  |pages = 34–38
+  |bibcode = 2009GeolT..25...34R
+  |doi = 10.1111/j.1365-2451.2009.00703.x
+}}
+
+{{cite journal
+  |date = 2012-06-06
+  |title = Plated Cambrian bilaterians reveal the earliest stages of echinoderm evolution
+  |last1 = Zamora
+  |first1 = Samuel
+  |last2 = Rahman
+  |first2 = Imran A.
+  |last3 = Smith
+  |first3 = Andrew B.
+  |others = Keith A. Crandall (ed.)
+  |journal = PLOS ONE
+  |volume = 7
+  |issue = 6
+  |pages = –38296
+  |pmid = 22701623
+  |pmc = 3368939
+  |doi = 10.1371/journal.pone.0038296
+  |doi-access = free
+  |issn = 1932-6203
+  |bibcode = 2012PLoSO...738296Z
+}}
+
+{{cite journal
+  |date = 2013
+  |title = The oldest echinoderm faunas from Gondwana show that echinoderm body plan diversification was rapid
+  |last1 = Smith
+  |first1 = Andrew B.
+  |last2 = Zamora
+  |first2 = Samuel
+  |last3 = Álvaro
+  |first3 = J. Javier
+  |journal = Nature Communications
+  |volume = 4
+  |issue = 1
+  |page = 1385
+  |pmid = 23340425
+  |doi = 10.1038/ncomms2391
+  |doi-access = free
+  |issn = 2041-1723
+  |bibcode = 2013NatCo...4.1385S
+}}
+
+{{cite journal
+  |date = 2013
+  |title = Cambrian echinoderm diversity and palaeobiogeography
+  |last1 = Zamora
+  |first1 = Samuel
+  |last2 = Lefebvre
+  |first2 = Bertrand
+  |last3 = Javier Álvaro
+  |first3 = J.
+  |last4 = Clausen
+  |first4 = Sébastien
+  |last5 = Elicki
+  |first5 = Olaf
+  |last6 = Fatka
+  |first6 = Oldrich
+  |last7 = Jell
+  |first7 = Peter
+  |last8 = Kouchinsky
+  |first8 = Artem
+  |last9 = Lin
+  |first9 = Jih-Pai
+  |last10 = Nardin
+  |first10 = Elise
+  |last11 = Parsley
+  |first11 = Ronald
+  |last12 = Rozhnov
+  |first12 = Sergei
+  |last13 = Sprinkle
+  |first13 = James
+  |last14 = Sumrall
+  |first14 = Colin D.
+  |last15 = Vizcaïno
+  |first15 = Daniel
+  |last16 = Smith
+  |first16 = Andrew B.
+  |journal = Geological Society, London, Memoirs
+  |volume = 38
+  |issue = 1
+  |pages = 157–171
+  |s2cid = 130481550
+  |doi = 10.1144/M38.13
+}}
+
+{{cite journal
+  |date = 2015
+  |title = The youngest ctenocystoids from the Upper Ordovician of the United Kingdom and the evolution of the bilateral body plan in echinoderms
+  |last1 = Rahman
+  |first1 = Imran A.
+  |last2 = Stewart
+  |first2 = Sarah E.
+  |last3 = Zamora
+  |first3 = Samuel
+  |journal = Acta Palaeontologica Polonica
+  |volume = 60
+  |issue = 1
+  |pages = 39–48
+  |accessdate = 2020-04-02
+  |doi = 10.4202/app.00048.2013
+  |issn = 0567-7920
+  |url = http://www.app.pan.pl/article/item/app000482013.html
+  |doi-access = free
+  |hdl = 1983/6531d6a6-2b00-43d0-8f2d-0a8d5df836d0
+  |hdl-access = free
+}}
+
+{{cite journal
+  |date = 2015
+  |title = Deciphering the early evolution of echinoderms with Cambrian fossils
+  |last1 = Zamora
+  |first1 = Samuel
+  |last2 = Rahman
+  |first2 = Imran A.
+  |others = Andrew Smith (ed.)
+  |journal = Palaeontology
+  |volume = 57
+  |issue = 6
+  |pages = 1105–1119
+  |doi = 10.1111/pala.12138
+  |doi-access = free
+  |issn = 0031-0239
+  |hdl = 1983/951cc086-7ed1-469b-98ac-2cc338c4e823
+  |hdl-access = free
+  |url = https://research-information.bris.ac.uk/en/publications/deciphering-the-early-evolution-of-echinoderms-with-cambrian-fossils(951cc086-7ed1-469b-98ac-2cc338c4e823).html
+}}

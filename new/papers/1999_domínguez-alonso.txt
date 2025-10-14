@@ -1133,26 +1133,196 @@ Of the four morphological types described, the Dizonate type is the best represe
 
 The Order Ctenocystida (UBAGHS and ROBISON, 1987) was proposed to complete the taxonomic hierarchy that previously existed for Ctenocystoidea (UBAGHs and ROBISON, 1987, p. 4), grouping all Ctenocystoidea species. It was therefore an Order coextensive with the concept of Class Ctenocystoidea. The International Code of Zoological Nomenclature, 39th Edition (ICZN 1985) regulates the nomenclature of low-ranking taxa (from infrasubspecies to superfamily). Proposals were made in the Copenhagen Decisions on Zoological Nomenclature (1953, articles 59-69) and in the Colloquium on Zoological Nomenclature of the XV International Congress of Zoology (1958) to regulate the nomenclature of high-ranking taxa (those referring to orders or phyla). However, these proposals were never binding and were not included in either the current edition of the ICZN (3rd ed., 1985), the draft of the 49th edition (which will enter into force on January 1, 2000), or the Biocode proposals (GREUTER et al. 1996). Currently, there is no regulation for high-ranking taxa, and they are subject to the discretion of taxonomists (M. A. Zarazaga, personal comm., 1997). The discovery and description of new forms of Ctenocystoids that expand the spectrum of the Class to four distinct morphological patterns makes it advisable to propose new high-ranking taxa. Thus, we propose four new Orders, which reflect the characteristics previously described in this work for each of the morphological patterns proposed in the previous chapters on Morphology and Anatomy. The diagnostic criteria for these new Orders are diverse, but the essence of their differences lies in the construction of the body skeleton, and more specifically in the existence, shape, and arrangement of the skeletal ossicles that shape the body of these animals. For this reason, we propose mnemonic, euphonious, and short names that capture the essence of the concept of the proposed taxa in relation to the marginal plate framework. For these names, we have selected Greek terms, preferring those most commonly used in other related groups in order to easily differentiate them from those already proposed for these groups. Thus, we will use the root term zone (from the Greek t&vr¡, belt, girdle, girdle) in reference to the frame of marginal plates. Modifying this root, we will use the prefixes Pleuro- (from the Greek nXnp&, side), A- (from the Greek &, privative, lacking), Mono- (from the Greek llevo-, a compositional element meaning "unique" or "one"), and Di- (from the Greek 61;, a compositional element meaning "two"). Finally, we will use the ending -ida because it is the most commonly used among the orders described in the related Classes.
 
-The new taxonomic catalog (Linnaean and phylogenetic) and identification keys for the Class Ctenocystoidea are proposed below. The systematic phylogenetic catalog is based on the results presented in the Phylogeny chapter.
+--------
+
+P. 187 / P. 188
+
+However, a defined and formally accepted plesion can be subdivided into two or more plesions as autapomorphies not previously considered or taken into account are discovered, with one being closer to the apex group than the other. The division procedure is based on the search for characters shared with the terminal group, but not with others (JEFFERIES, LEWIS, and DoNovAN 1987); however, that characteristic does not necessarily have to be shared with all members of the terminal group, as it may have been secondarily lost. A character shared with more apex plesions that were subsequently lost and, therefore, absent in the nodal group of the terminal group could be used.
+
+Sometimes, the specific position of the collateral branches of a plesion is unknown. GAUTHIER 1986 established the concept of metataxon to designate precisely this type of grouping of taxa in which we cannot distinguish monophyly or paraphyly. The metataxon is, by definition,
+a real area of uncertainty in a phylogenetic hypothesis in which several
+branches converge at a single point (polytomy) because the existing relationships
+between the taxa involved are ignored. This concept is closely related to the concept of soft-polytomies of Madison and Madison (1991), which we will describe later in the chapter "Phylogeny."
+
+Furthermore, a plesion can also be defined by two nested monophyletic groups, including the larger and the smaller. Thus, a plesion is defined as the difference between the two monophyletic groups. CRASKE
+and JEFFERIES (1989) proposed the term "scion" to name these nested monophyletic groups, such that a scion is composed of partially extant and partially extinct monophylies. A scion is named after the contained plesion furthest from the terminal group.
+
+P. 188 /
+
+This situation becomes more complicated when establishing phylogenies of the collateral branches of a plesion. By definition, a plesion (in the sense of Jefferies, Lewis, and Donovan 1987, not Patterson and Rosen 1977) will include a segment of the basal lineage plus all the collateral branches branching off from that segment. These collateral branches can harbor single species in the most basic case, but in complex cases, we can find truly complicated partial trees. In this sense, Craske and Jefferies 1989 proposed a system for subdividing the portions of a plesion. In one of these collateral trees, we can distinguish a main axis containing the largest number of segments (internodes), at whose end two species will be found. This pair of species will form a monophyletic group that we will call the first-order apical group of the plesion, the lineage that joins the basal node of this second-order. The process of subdivision of paraplesions is an iterative process in which the order number of the differentiated branches (or subtrees) increases. The criteria for selecting an apical group may not be objective; we will generally use the pair of species that, in terms of internodes, is furthest from the basal lineage. The discovery of new extinct taxa will alter the topology of a tree; therefore, as CRASKE and JEFFERIES (1989) point out, this pair of species will constitute a provisional first-order apical group. Occasionally, other more operational criteria may be used, such as the selection of an emblematic species, such as the type species of a higher-ranking taxon (genus, family, etc.).
+
+/ P. 189
+
+P. 189 /
+
+This chapter combines the criteria used in classical or Linnaean taxonomy with cladistic classification, which designates monophyletic and paraphyletic groups according to the previously described terminology. Thus, systematic paleontology will follow a cladistic framework consistent with the phylogenetic hypothesis proposed in the Phylogeny chapter. This systematic approach has recently been used in some chapters of "The Fossil Record 2" (BENTON 1993), including the one devoted to the basal deuterostomes, which include the various carpoids (BENTON in BENTON 1993, pp. 529-535).
+
+/ P. 190
+
+There is currently a widespread view among taxonomists that the only valid criterion for defining a taxon is that of a natural group (=monophyletic). In our opinion, this would be desirable. However, in practice, the positive identification of monophyletic groups will not always be possible, so there will be areas of uncertainty in the proposed phylogenetic hypotheses (= phylogenetic trees). Among these, two are of particular interest to us, and we have previously referred to them as metataxa and plesion (or paraplesion).
+
+In the specific case of plesions, they were originally proposed by PATTERSON and ROSEN (1977) as monophyletic groups. However, from an operational point of view, for paleontological studies, the concept proposed by JEFFERIES, LEWIS, and DONOvAN (1987) is more appropriate, provided that we follow the criterion of assigning apical positions on the branches to each species, excluding, as a matter of principle, anagenesis from the general phylogenetic hypothesis. This same criterion extends to paraplesions, which are topologically similar in structure to plesions.
+
+This taxonomic study includes the description of the plesion Ctenocystoidea. For the subdivisions of this plesion, we will follow the terminology developed by CRASKE and JEFFERIES (1989). For this purpose, we will designate the genus Ctenocystis as the first-order apical group. The selection of Ctenocystis over its sister group Gilcidia gen. nov., responded to the emblematic species criterion previously cited. The recent discovery of Gilcidia viviannae gen. nov. sp. nov. (May 1998) has increased the number of Gilcidia gen. nov. taxa to three. However, the phylogenetic relationships among the three species will remain unresolved until the discovery of additional G. viviannae material.
+
+P. 190 / P. 191
+
+On the other hand, since the phylogenetic relationships of Pleurozonida and Dizonida do not seem to have been properly established, we will use the metataxon concept of GAUTHIER 1986.
+
+P. 191 / P. 192
+
+[blank]
+
+P. 192 / P. 193
+
+Class CTENOCYSTOIDEA Robison and Sprinkle, 1969
+
+(Basal group of Echinodermata
+Plesion Ctenocystoidea)
+
+Diagnosis: Carpoid echinoderms with a high degree of bilaterality. The mouth is located at the anterior end of the body, surrounded by a perioral ring composed of lamellar ossicles (the ctenidium). At the posterior end is a medial siphon-anus. (Amended)
+
+Distribution: Regions located between latitudes 10° North and 50° South during the Late Cambrian-Ordovician according to the paleogeographic reconstructions of McKERROW and SCOTESE (1990) and between latitudes 20° North and 35° South according to maps by GILBERT SMITH et al. (1973). Ctenocystoid fossils have been collected from various sites in North America (Utah, Idaho), Europe (Bohemia, Southern France, Wales, Scandinavia), and Australia (Tasmania).
+
+Description: Ctenocystoidea are carpoids with bodies that are longer than they are wide or tall; they are oval, trapezoidal, or elongated in outline and have a variable cross-section, from very depressed to cylindrical. Their sizes range from small to very small. They exhibit a high degree of bilateral symmetry, especially evident at the anterior end of the body, where the mouth is located.
+It is frontal, slightly inferior, and medially positioned. Above the mouth, in the animal's midline, is a large central plate (COP). At the posterior end is the exhalant siphon (anus).
+
+The most characteristic structure of this group is the ctenidium, which consists of two series of bilaterally symmetrical lamellar plates (the ctenidial plates) and a system of supporting plates. The ctenidial plates are located on both sides of the COP plate, surrounding the mouth superiorly and laterally, extending to the corners of the mouth. The ctenidial plates are racket- or hatchet-shaped, with a basal attachment zone and an anterior lamellar zone perpendicular to the mouth.
+
+P. 193 / P. 194
+
+At the posterior end of the body and located on the animal's midline, there is a conical siphon formed by a set of acicular plates. A third body opening located dorsally at the anterior right end is interpreted as a hydropore or hydroporo-gonopore.
+
+Based on the general structural characteristics of the body, such as the presence or absence of a system of marginal plates, as well as their structure and arrangement, the shape of the perioral structures, the structure of the dorsal and ventral integumentary endoskeleton, and the overall body shape, we distinguished four distinct morphological types that were discussed in the chapter "Anatomy from an Anatomical-Morphological Perspective." However, it is important to consider them in this section because they represent substantial structural variations within the Class Ctenocystoidea. These morphotypes are described below:
+
+Monozonate Morphological Type:
+
+This morphological type is exclusive to the genus Courtessolea. The body shape is very depressed, broad, and robust. The marginal plates have a triangular section and are homologous to the marginal plates of Cincta. The rastrellum is broad and conspicuous, with the four plates (IFI, ICI, ICD, and IED) clearly differentiated and does not reach the lateral margin of the theca. The ctenidium surrounds the mouth, and its plates even insert on the underside. The exhalant area of the ctenidium is peripheral and dorsolateral. These forms are adapted to an epibiont lifestyle.
+
+P. 194 / P. 195
+
+Pleurozonate Morphological Type:
+
+This morphological type is exclusive to the genus Jugoszovia. The body has a depressed shape, much
+wider at the anterior end than at the posterior.
+The ctenidium is subannular, very depressed, kidney-shaped, and similar in appearance to the
+Monozonate Morphological Type. It has two frames
+of very small, residual marginal plates. The
+dorsal and ventral integumentary plates are laminar, polygonal in outline, and maintain contact
+with the adjacent plates. As in the previous morphological type, the exhalant area is peripheral and dorsolateral.
+These forms are believed to be adapted to an epibiont lifestyle.
+
+Azonate Morphological Type:
+
+This morphological type is exclusive to the genus Conollia.
+The body shape is cylindrical, elongated, and without a distinct marginal frame. The ctenidium forms a hemispherical anterior cap with a neck at its base. The exhalant area is probably located at the base of the ctenidium, just above the neck. The plates of the rastrellum differ only in size and position from those of the ctenidium. The SOC plate has a residual body and a hypertrophied rostrum. The body integument is very light, with very thin laminar plates formed by a retiform stereoma and armed with thin spiniform external processes. We attribute a semi-infaunal lifestyle.
+
+P. 195 / P. 196
+
+Dizonate morphological type:
+
+This morphological type includes the genera Ctenocystis, Pembrocystis, Etoctenocystis, and Gilcidia. They are moderately depressed forms with conspicuous upper and lower marginal frames. The section of the marginal plates is T-shaped. The insertion of the ctenidial plates is dorsolateral, never inferior. The rastrellum constitutes the anterior half of the lower marginal frame. The dorsal and ventral integumentary plates are small in diameter, very thick, and widely separated from each other. Representatives of this morphological type have a lateral body canal that acts as an exhalation area. They are forms adapted to an epibiont lifestyle, presumably active.
+
+Of the four morphological types described, the Dizonate type is the best represented. This morphological group has the largest number of known species (four genera and six species) as well as a relatively high number of collected specimens (more than 3,000 specimens of Ctenocystis utahensis and more than 300 of Etoctenocystis bohemica). In contrast, each of the other morphological types is represented by a single species each. These circumstances, in principle, presuppose a differential understanding of each of the four morphotypes and, therefore, of their internal evolutionary tendencies. However, the structural differences found between each of the described morphotypes are much greater than those found between species of the Dizonate morphological group, which is the best known. The internal differences found between species in this morphological group basically affect proportions and ornamentation of body parts, which are perfectly correlated between the different species of this morphological group. Thus, the differences between the four morphological types prove to be efficient taxonomic markers that justify the creation of new high-ranking taxa, for which reason we propose new Orders.
+
+
+P. 196 / P. 197
+
+The Order Ctenocystida (UBAGHS and ROBISON, 1987) was proposed to complete the previously existing taxonomic hierarchy for Ctenocystoidea (UBAGHs and ROBISON, 1987, p. 4), grouping together all Ctenocystoidea species. It was therefore an order coextensive with the concept of Class Ctenocystoidea.
+
+The International Code of Zoological Nomenclature, 39th Edition (ICZN 1985), regulates the nomenclature of lower-ranking taxa (from infrasubspecies to superfamily). Proposals were made in the Copenhagen Decisions on Zoological Nomenclature (1953, articles 59-69) and in the Colloquium on Zoological Nomenclature of the XV International Congress of Zoology (1958) to regulate the nomenclature of high-ranking taxa (those referring to orders or phyla). However, these proposals were never binding and were not included in either the current edition of the ICZN (3rd ed., 1985), the draft of the 49th edition (which will enter into force on January 1, 2000), or the Biocode proposals (GREUTER et al. 1996). Currently, there is no regulation for high-ranking taxa, and they are subject to the discretion of taxonomists (M. A. Zarazaga, personal communication, 1997).
+
+The discovery and description of new forms of Ctenocystoidea, which broaden the spectrum of the Class to four distinct morphological patterns, makes it advisable to propose new high-ranking taxa. Thus, we propose four new Orders, which incorporate the characteristics previously described in this work for each of the morphological patterns proposed in the previous chapters on Morphology and Anatomy.
+
+P. 197 /
+
+The diagnostic criteria for these new orders are diverse, but the essence of their differences lies in the construction of the body skeleton, and more specifically in the existence, shape, and arrangement of the skeletal ossicles that shape the bodies of these animals. For this reason, we propose mnemonic, euphonious, and short names that capture the essence of the proposed taxa's concept in relation to the marginal plate framework. For these names, we have selected Greek terms, preferring those most commonly used in other related groups in order to easily differentiate them from those already proposed for these groups. Thus, we will use the root term "zone" (from the Greek t&vr¡, meaning belt, girdle, girdle) in reference to the marginal plate framework. Modifying this root we will use as prefixes Pleuro- (from the Greek nXnp&, side), A- (from the Greek &, privative, lacking), Mono- (from the Greek llevo-, a compositional element meaning “unique” or “one”) and Di- (from the Greek 61;, a compositional element meaning “two”). Finally, we will use the ending -ida because it is the most common one among the orders described in the related Classes.
+
+/ P. 198
+
+[diagram]
+
+P. 198 / P. 199
+
+The new taxonomic catalog (Linnaean and phylogenetic) and identification keys for the Class Ctenocystoidea are proposed below. The phylogenetic systematic catalog is based on the results presented in the Phylogeny chapter.
 
 Linnaean Taxonomic Catalog
 
-Class Ctenocystoidea Robison and Sprinkle, 1969.
-MISSING
-Order Dizonida ord. nov.
-Family Pembrocystidae Fam. nov.
-Genus Pembrocystis gen. nov.
-Pembrocystis gallica sp. nov.
-Family Ctenocystidae Sprinkle and Robison, 1978.
-Genus Etoctenocystis Fatka and Kordule, 1985.
-Etoctenocystis bohemica Fatka and Kordule, 1985.
-Genus Gilcidia gen. nov.
-Gilcidia smithi<Ubaghs, 1987) comb. nov. 
-Gilcidia jagoi (dell, Burret and Banks, 1985) comb. nov. 
-Gilcidia viviannae sp. nov. 
-Genus Ctenocystis Robison and Sprinkle, 1969. 
-Ctenocystis utahensis Robison and Sprinkle, 1969. 
-Ctenocystis colodon Ubaghs and Robison, 1988.
+- Class Ctenocystoidea Robison and Sprinkle, 1969.
+- - Order Monozonida Order nov.
+- - - Family Courtessoleidae Fam. nov.
+- - - - Genus Courtessolea gen. nov.
+- - - - - Courtessolea moncereti nov. sp.
+- - Order Pleurozonida Order nov.
+- - - Family Jugoszovidae Dzik and Ortowski, 1995
+- - - - Genus Jugoszovia Dzik and Ortowski, 1995
+- - - - - Jugoszovia archaeocyathoides Dzik and Ortowski, 1995.
+- - Azonida Order Nov. Order
+- - - Family Conolliidae Fam. nov.
+- - - - Genus Conollia gen. nov.
+- - - - - Conollia staffordi sp. nov.
+- - Dizonida Order ord. nov.
+- - - Family Pembrocystidae Fam. nov.
+- - - - Genus Pembrocystis gen. nov.
+- - - - - Pembrocystis gallica sp. nov.
+- - - Family Ctenocystidae Sprinkle and Robison, 1978.
+- - - - Genus Etoctenocystis Fatka and Kordule, 1985.
+- - - - - Etoctenocystis bohemica Fatka and Kordule, 1985.
+- - - - Genus Gilcidia gen. nov.
+- - - - - Gilcidia smithi<Ubaghs, 1987) comb. nov.
+- - - - - Gilcidia jagoi (dell, Burret and Banks, 1985) comb. nov.
+- - - - - Gilcidia viviannae sp. nov.
+- - - - Genus Ctenocystis Robison and Sprinkle, 1969.
+- - - - - Ctenocystis utahensis Robison and Sprinkle, 1969.
+- - - - - Ctenocystis colodon Ubaghs and Robison, 1988.
+
+P. 199 / P. 200
+
+Phylogenetic Taxonomic Catalog
+
+- Plesion (Class) Ctenocystoidea
+- - First-order Paraplesion (Order) Monozonida/Courtessolea moncereti
+- - - First-order Paraplesion (Family) Courtessoleidaei
+- - - - First-order Paraplesion (Genus) Courtessolea / Courtessolea moncereti
+- - - - - First-order Paraplesion Courtessolea moncereti
+- - First-order Paraplesion (Metataxon Pleurozonida / Jugoszovia archaeocyathoides — Azonida / Conoilia staffordí)
+- - - Order Pleurozonida
+- - - - Family Jugoszovidae
+- - - - - Genus Jugoszovia
+- - - - - - Jugoszovia archaeocyathoides
+- - - Order Azonida
+- - - - Family Conolliidae
+- - - - - Genus Conollia
+- - - - - - Conollia staffordi
+- - First order parascion (Order) Dizonida/Pembrocystis gallica
+- - - Paraplesion of the first order (Family) Pembrocystidae / Pembrocystis gallica
+- - - - Paraplesion of the first order (genus) Pembrocystis / Pembrocystis gallica
+- - - - - Paraplesion of the first order (species) Pembrocystis gallica
+- - - First order parascion (Family) Ctenocystidae / Etoctenocyst¡s bohemica
+- - - - Paraplesion of the first order (species) Etoctenocystis bohemíca
+- - - - Paraplesion of the first order (genus) Gilcidia
+- - - - - Gilcidia smithi
+- - - - - Gilcidia jagoi
+- - - - - Gicidia viviannae
+- - - - First-order apical group (genus) Ctenocystis / Ctenocystis utahensis — Ctenocystis colodon
+- - - - - Ctenocystis utahensis
+- - - - - Ctenocystis colodon
+
+P. 200 / P. 201
+
+Practical keys for the identification of taxa in the Class Ctenocystoidea.
+1- Presence of a distinct marginal plate system and rastrellum (2)
+- Absent marginal plate system, rastrellum plates indistinct or similar to the ctenidium plates. Order AZONIDA. Order nav.
+(monospecific, Conollia staffordi gen. nov. sp. nov.)
+
+2- Marginal plate system formed by two frames, one upper and one lower (3).
+- Marginal plate system formed by a lower frame, the upper one absent. Order MonozoNIDA. Order nov.
+(monospecific, Courtessolea moncereti gen. nov. sp. nov.)
+
+3- Upper frame articulated directly on the lower frame. Lateral plates of the rastrellum are incorporated into the lower marginal framework, which is now composed of five plates (FI, PI, PO, IL, and FO). Order DizoNIDA, Ord. nov. (4).
+- Upper and lower frameworks separated by a wide band of acicular ossicles. Rastrellum plates are clearly separated from the marginal plate system, which is composed of numerous small ossicles, numbering more than ten. Order PLEUROZONIDA, Ord. nov. (monospecific, Jugoszovia archaeocyathoides, Dzik and Ortowski, 1995).
+
+P. 201 / P. 202
 
 ====
 SOD and SOl plates are oval, twice as wide as they are long. The posterior edge of the SOC plate is rounded. The posterior tabs of the ¡Cl and ¡CD plates are very wide. The supracentral plates are regularly distributed, while the infracentral plates are orthogonal. Genus Gilcidia gen. nov. (8)
