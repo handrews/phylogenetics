@@ -76,7 +76,7 @@ def load_files(*files):
 
   logger.info("Checking schema...")
   schema_library = jschon.JSONSchema(load_yaml(
-    pathlib.Path(__file__).parent / '..' / 'new' / 'schemas' / 'phylogeny.yaml'
+    pathlib.Path(__file__).parent / '..' / 'schemas' / 'phylogeny.yaml'
   ))
   r = schema_library.validate()
   if not r.valid:
