@@ -6,25 +6,7 @@ import collections
 import yaml
 import jschon
 
-from .main import L
-
-class L():
-  error_count = 0
-  warn_count = 0
-  def error(self, message):
-    self.error_count += 1
-    if LEVEL <= logging.ERROR:
-      print(f'*** ERROR: {message}')
-  def warn(self, message):
-    self.warn_count += 1
-    if LEVEL <= logging.WARNING:
-      print(f'*** WARNING: {message}')
-  def info(self, message):
-    if LEVEL <= logging.INFO:
-      print(f'*** INFO: {message}')
-  def debug(self, message):
-    if LEVEL <= logging.DEBUG:
-      print(f'*** DEBUG: {message}')
+from . import L
 
 logger = L()
 
@@ -43,43 +25,6 @@ def check_node(n, data, parent=[]):
     logger.debug(f'Descending through {current}')
   for c in n.get('children', {}):
     check_node(c, data, current)
-
-
-def load_files():
-  logger.info("Checking schema...")
-  schema_library = jschon.JSONSchema(load_yaml('schemas/phylogeny.yaml'))
-  r = schema_library.validate()
-  if not r.valid:
-    logger.error("Schema not valid against metaschema!")
-    logger.error(yaml.safe_dump(r.output('detailed')))
-    sys.exit(-1)
-
-  logger.debug("Schema is valid.")
-  defs = schema_library['$defs']
-
-  schema = None
-  data = {
-    'authors': {},
-    'sources': {},
-    'taxa': {},
-    'trees': {},
-  }
-  for filename in FILES:
-    logger.info(f'Checking "{filename}"...')
-    name = pathlib.Path(filename).stem
-    data[name] = load_yaml(filename)
-    try:
-      schema = defs[name]
-      r = schema.evaluate(jschon.JSON(data[name]))
-      if not r.valid:
-        logger.error(f'File "{filename}" is not valid.')
-        logger.error(yaml.safe_dump(r.output('detailed')))
-        sys.exit(-1)
-      else:
-        logger.debug(f'"{filename}" is valid.')
-    except KeyError as e:
-      logger.error(repr(e))
-  return data
 
 
 def build_expected_author(expected, author):
@@ -127,6 +72,7 @@ def check_expectation(
 
 
 def check_authors(data):
+  logger.info(f"Checking {len(data['authors'])} authors...")
   for author_id, author in data['authors'].items():
     expected = author['family'].lower()
     valid, expected_set = check_expectation(
@@ -137,10 +83,11 @@ def check_authors(data):
     )
     if not valid:
       logger.error(f'"{author_id}" not in expected set: {expected_set}')
+  logger.info('...authors checked.')
 
 
 def check_sources(data):
-  logger.info("Checking sources...")
+  logger.info(f"Checking {len(data['sources']['articles'])} sources...")
   sources = set()
   for ref_id, article in data['sources']['articles'].items():
     sources.add(ref_id)
@@ -160,6 +107,8 @@ def check_sources(data):
 
     if ref_id not in data['sources']['articles']:
       logger.error(f'Source "{ref_id}" not found!')
+
+  logger.info('...sources checked.')
   return sources
 
 

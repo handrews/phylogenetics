@@ -5,6 +5,9 @@ description = ""
 authors = ["Henry H. Andrews <andrews_henry@yahoo.com>"]
 readme = "README.md"
 
+[tool.poetry.scripts]
+phylohist = 'phylohist.main:main'
+
 [tool.poetry.dependencies]
 python = "^3.8"
 

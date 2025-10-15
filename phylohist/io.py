@@ -6,13 +6,13 @@ import collections
 import yaml
 import jschon
 
-from .main import L
+from . import L
 
 # logger.get
 logger = L()
 
 
-FILEDIR = pathlib.Path(__file__) / .. / 'new'
+FILEDIR = pathlib.Path(__file__).parent / '..' / 'new'
 FILES = (
   FILEDIR / 'authors.yaml',
   FILEDIR / 'sources.yaml',
@@ -70,12 +70,14 @@ def load_yaml(filename, debug=True):
 
 def load_files(*files):
   if files:
-    files = [pathlib.Path(f) for f in files)
+    files = [pathlib.Path(f) for f in files]
   else:
-    files = FILES.copy()
+    files = FILES
 
   logger.info("Checking schema...")
-  schema_library = jschon.JSONSchema(load_yaml('schemas/phylogeny.yaml'))
+  schema_library = jschon.JSONSchema(load_yaml(
+    pathlib.Path(__file__).parent / '..' / 'new' / 'schemas' / 'phylogeny.yaml'
+  ))
   r = schema_library.validate()
   if not r.valid:
     logger.error("Schema not valid against metaschema!")

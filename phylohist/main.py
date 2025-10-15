@@ -6,57 +6,9 @@ import collections
 import yaml
 import jschon
 
+from . import L
 from .io import load_files
-from .check import check_authors, check_sources, check_data, check_trees
-
-FUTURE = 2030
-
-# AI code
-class LevelCountHandler(logging.StreamHandler):
-  """
-  A custom logging handler that counts log messages by level.
-  """
-  def __init__(self, *args, **kwargs):
-    super().__init__(*args, **kwargs)
-    self.counts = collections.defaultdict(int)
-
-  def emit(self, record):
-    """
-    Increments the count for the given log record's level.
-    """
-    self.counts[record.levelname] += 1
-
-  def get_counts(self):
-    """
-    Returns a dictionary of log level counts.
-    """
-    return dict(self.counts)
-
-LEVEL = logging.INFO
-log_counter = LevelCountHandler()
-log_counter.setLevel(LEVEL)
-logger = logging.getLogger(__name__)
-logger.setLevel(LEVEL)
-logger.addHandler(log_counter)
-logger.setLevel(LEVEL)
-
-class L():
-  error_count = 0
-  warn_count = 0
-  def error(self, message):
-    self.error_count += 1
-    if LEVEL <= logging.ERROR:
-      print(f'*** ERROR: {message}')
-  def warn(self, message):
-    self.warn_count += 1
-    if LEVEL <= logging.WARNING:
-      print(f'*** WARNING: {message}')
-  def info(self, message):
-    if LEVEL <= logging.INFO:
-      print(f'*** INFO: {message}')
-  def debug(self, message):
-    if LEVEL <= logging.DEBUG:
-      print(f'*** DEBUG: {message}')
+from .check import check_authors, check_sources, check_taxa, check_trees
 
 logger = L()
 schema_catalog = jschon.create_catalog('2020-12')
@@ -84,7 +36,3 @@ def main():
     logger.warn(f'Encountered {logged_warnings} warnings.')
   else:
     logger.info(f'Success!')
-
-
-if __name__ == '__main__':
-  main()
