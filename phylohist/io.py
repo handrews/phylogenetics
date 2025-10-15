@@ -12,7 +12,7 @@ from . import L
 logger = L()
 
 
-FILEDIR = pathlib.Path(__file__).parent / '..' / 'new'
+FILEDIR = pathlib.Path(__file__).parent / '..' / 'data'
 FILES = (
   FILEDIR / 'authors.yaml',
   FILEDIR / 'sources.yaml',
