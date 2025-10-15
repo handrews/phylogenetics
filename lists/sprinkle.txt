@@ -31,7 +31,7 @@ P Echinodermata (Klein 1734)
               PT MCZ 586
               PT MCZ 587
               PT MCZ 729
-      O _unnamed_one_ (Sprinkle 1973) QN
+      O _unnamed_one_ (Sprinkle 1973) QN  (=Gogiida Broadhead 1982)
         F Eocrinidae (Jaekel 1918)
           g Gogia (Walcott 1917)
             s prolifica (Walcott 1917) T
@@ -253,7 +253,7 @@ P Echinodermata (Klein 1734)
         F Rhopalocystidae (Ubaghs 1967)
           g Rhopalocystis (Ubaghs 1963)
             s destombesi (Ubaghs 1963) T
-      O _unnamed_two_ (Sprinkle 1973) N
+      O _unnamed_two_ (Sprinkle 1973) N # (=Ascocystitida Broadhead 1982? =Trachelocrinida Sumrall et al. 1997?)
         F _indeterminate_one_
           g Pareocrinus (Yakovlev 1956)
             s ljubzovi (Yakovlev 1956) T
