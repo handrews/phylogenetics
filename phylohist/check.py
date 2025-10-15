@@ -6,42 +6,7 @@ import collections
 import yaml
 import jschon
 
-FUTURE = 2030
-FILES = (
-  'authors.yaml',
-  'sources.yaml',
-  'taxa.yaml',
-  'trees.yaml',
-)
-
-# AI code
-class LevelCountHandler(logging.StreamHandler):
-  """
-  A custom logging handler that counts log messages by level.
-  """
-  def __init__(self, *args, **kwargs):
-    super().__init__(*args, **kwargs)
-    self.counts = collections.defaultdict(int)
-
-  def emit(self, record):
-    """
-    Increments the count for the given log record's level.
-    """
-    self.counts[record.levelname] += 1
-
-  def get_counts(self):
-    """
-    Returns a dictionary of log level counts.
-    """
-    return dict(self.counts)
-
-LEVEL = logging.INFO
-log_counter = LevelCountHandler()
-log_counter.setLevel(LEVEL)
-logger = logging.getLogger(__name__)
-logger.setLevel(LEVEL)
-logger.addHandler(log_counter)
-logger.setLevel(LEVEL)
+from .main import L
 
 class L():
   error_count = 0
@@ -62,55 +27,6 @@ class L():
       print(f'*** DEBUG: {message}')
 
 logger = L()
-schema_catalog = jschon.create_catalog('2020-12')
-"""The default shared ``jschon`` schema loader and cache"""
-
-
-class UniqueKeyNoDatesLoader(yaml.SafeLoader):
-  # and https://stackoverflow.com/questions/34667108/ignore-dates-and-times-while-parsing-yaml
-  @classmethod
-  def remove_implicit_resolver(cls, tag_to_remove):
-    """
-    Remove implicit resolvers for a particular tag
-
-    Takes care not to modify resolvers in super classes.
-
-    We want to load datetimes as strings, not dates, because we
-    go on to serialise as json which doesn't have the advanced types
-    of yaml, and leads to incompatibilities down the track.
-    """
-    if not 'yaml_implicit_resolvers' in cls.__dict__:
-      cls.yaml_implicit_resolvers = cls.yaml_implicit_resolvers.copy()
-
-    for first_letter, mappings in cls.yaml_implicit_resolvers.items():
-      cls.yaml_implicit_resolvers[first_letter] = [(tag, regexp)
-                                                   for tag, regexp in mappings
-                                                   if tag != tag_to_remove]
-
-  # from https://gist.github.com/pypt/94d747fe5180851196eb?permalink_comment_id=4653474#gistcomment-4653474
-  def construct_mapping(self, node, deep=False):
-    mapping = set()
-    for key_node, value_node in node.value:
-      if ':merge' in key_node.tag:
-        continue
-      key = self.construct_object(key_node, deep=deep)
-      if key in mapping:
-        raise ValueError(f"Duplicate {key!r} key found in YAML.")
-      mapping.add(key)
-    return super().construct_mapping(node, deep)
-
-
-def load_yaml(filename, debug=True):
-  UniqueKeyNoDatesLoader.remove_implicit_resolver('tag:yaml.org,2002:timestamp')
-  with open(filename) as fd:
-    if debug:
-      logger.debug(f'Loading "{filename}" with duplication prevention...')
-      data = yaml.load(fd, Loader=UniqueKeyNoDatesLoader)
-    else:
-      logger.debug(f'Loading "{filename}" with safe_load()...')
-      data = yaml.safe_load(fd)
-    logger.debug(f'...loaded "{filename}"')
-    return data
 
 
 def check_node(n, data, parent=[]):
@@ -309,30 +225,3 @@ def check_trees(data, sources):
 
   if (difference := sources - opinions):
     logger.warn(f"Missing opinions from {difference}")
-
-
-def main():
-
-  data = load_files()
-  check_authors(data)
-  sources = check_sources(data)
-  check_taxa(data)
-  check_trees(data, sources)
-
-#   logged_errors = log_counter.get_counts()[logging.ERROR]
-#   if logged_errors:
-  logged_errors = logger.error_count
-  logged_warnings = logger.warn_count
-  if logged_errors:
-    logger.error(
-      f'Encounterd {logged_errors} errors ({logged_warnings} warnings)!'
-    )
-    sys.exit(-1)
-  elif logged_warnings:
-    logger.warn(f'Encountered {logged_warnings} warnings.')
-  else:
-    logger.info(f'Success!')
-
-
-if __name__ == '__main__':
-  main()
