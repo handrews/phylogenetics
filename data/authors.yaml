@@ -22,6 +22,11 @@ bather:
   given: F. A.
   birth: 1863
   death: 1934
+billings:
+  family: Billings
+  given: Elkahna
+  birth: 1820
+  death: 1876
 bonasoro:
   family: Bonasoro
   given: F.
@@ -31,6 +36,9 @@ burrett:
 candia carnevali:
   family: Candia Carnevali
   given: M. D.
+caster:
+  family: Caster
+  given: Kenneth E.
 chen.a:
   family: Chen
   given: Ailin
@@ -46,12 +54,30 @@ derstler:
 domínguez alonso:
   family: Domínguez Alonso
   given: Patricio
+durham:
+  family: Durham
+  given: J. Wyatt
 dzik:
   family: Dzik
   given: Jerzy
+exline:
+  family: Exline
+  given: Harriet
 fatka:
   family: Fatka
   given: Oldřich
+fay:
+  family: Fay
+  given: Robert O.
+fell:
+  family: Fell
+  given: H. Barraclough
+fischer:
+  family: Fischer
+  given: A. G.
+frizzell:
+  family: Frizzell
+  given: Don L.
 gibson:
   family: Gibson
   given: Adam P.
@@ -77,6 +103,12 @@ jell:
 kammer:
   family: Kammer
   given: Thomas W.
+kesling:
+  family: Kesling
+  given: Robert V.
+kier:
+  family: Kier
+  given: P. M.
 kordule:
   family: Kordule
   given: Vratislav
@@ -91,9 +123,15 @@ linnaeus:
   given: Carl
   birth: 1707
   death: 1778
+melville:
+  family: Melville
+  given: R. V.
 mooi:
   family: Mooi
   given: Rich
+moore:
+  family: Moore
+  given: Raymond C.
 müller:
   family: Müller
   given: Peter
@@ -106,12 +144,18 @@ owen:
 parsley:
   family: Parsley
   given: Ronald
+pawson:
+  family: Pawson
+  given: D. L.
 peng.j:
   family: Peng
   given: Jin
 rahman:
   family: Rahman
   given: Imran A.
+regnéll:
+  family: Regnéll
+  given: Gerhard
 rhenberg:
   family: Rhenberg
   given: Elizabeth C.
@@ -124,9 +168,15 @@ roux:
 savage:
   family: Savage
   given: Harry J.
+say:
+  family: Say
+  given: Thomas
 smith.a.b:
   family: Smith
   given: Andrew B.
+spencer:
+  family: Spencer
+  given: W. K.
 sprinkle:
   family: Sprinkle
   given: James
@@ -144,13 +194,22 @@ ubaghs:
   given: Georges
   birth: 1916
   death: 2005
+wagner:
+  family: Wagner
+  given: Carol D.
+wanner:
+  family: Wanner
+  given: Johannes
 webby:
   family: Webby
   given: B. D.
 wen.r:
   family: Wen
   given: Rongqin
-wright:
+wright.c.w:
+  family: Wright
+  given: C. W.
+wright.d.f:
   family: Wright
   given: David F.
 zamora:

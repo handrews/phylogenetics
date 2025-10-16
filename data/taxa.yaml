@@ -69,6 +69,16 @@ argodiscus:
   name: Argodiscus
   auth: [Prokop]
   year: 1965
+asteroidea:
+  name: Asteroidea
+  rank: Class
+  auth: [de Blainville]
+  year: 1830
+asterozoa:
+  name: Asterozoa
+  rank: Subphylum
+  auth: [von Zittel]
+  year: 1895
 astrocystites:
   name: Astrocystites
   auth: [Whiteaves]
@@ -108,6 +118,11 @@ blairi:
   name: blairi
   auth: [Miller]
   year: 1894
+blastoidea:
+  name: Blastoidea
+  rank: Class
+  auth: [say]
+  year: 1825
 blastozoa:
   name: Blastozoa
   rank: Subphylum
@@ -131,13 +146,17 @@ camptostroma:
   name: Camptostroma
   auth: [Ruedemann]
   year: 1933
+camptostromatoidea:
+  name: Camptostromatoidea
+  auth: [durham]
+  year: 1967
 cannati:
   name: cannati
   auth: [Miquel]
   year: 1894
 carabocrinus:
   name: Carabocrinus
-  auth: [Billings]
+  auth: [billings]
   year: 1857
 castericystis:
   name: Castericystis
@@ -246,6 +265,16 @@ curvatus:
   name: curvatus
   auth: [Grigo]
   year: 1995
+cyclocystoidea:
+  name: Cyclocystoidea
+  rank: Class
+  auth: [Miller, Gurley]
+  year: 1895
+cystoidea:
+  name: Cystoidea
+  rank: Class
+  auth: [von Buch]
+  year: 1846
 ###################### D
 destombesi:
   name: destombesi
@@ -288,10 +317,6 @@ durhami:
   auth: [sprinkle]
   year: 1973
 ###################### E
-echinoencrinites:
-  name: Echinoencrinites
-  auth: [von Meyer]
-  year: 1826
 echinodermata:
   name: Echinodermata
   rank: Phylum
@@ -301,6 +326,15 @@ echinodermata:
   ex:
     auth: [Klein]
     year: 1743
+echinoencrinites:
+  name: Echinoencrinites
+  auth: [von Meyer]
+  year: 1826
+echinoidea:
+  name: Echinoidea
+  rank: Class
+  auth: [Leske]
+  year: 1778
 echinozoa:
   name: Echinozoa
   rank: Subphylum
@@ -315,12 +349,12 @@ edrioasteroidea:
   name: Edrioasteroidea
   rank: Class
   bracket: Edrioasteroids
-  auth: [Billings]
+  auth: [billings]
   year: 1858
 edrioblastoidea:
   name: Edrioblastoidea
   rank: Class
-  auth: [Fay]
+  auth: [fay]
   year: 1962
 edriodiscus:
   name: Edriodiscus
@@ -343,7 +377,7 @@ eocrinoidea:
   year: 1918
 eocystites:
   name: Eocystites
-  auth: [Billings]
+  auth: [billings]
   year: 1868
 eopostibulla:
   name: Eopostibulla
@@ -385,7 +419,7 @@ globularis:
   year: 2003
 glyptocystites:
   name: Glyptocystites
-  auth: [Billings]
+  auth: [billings]
   year: 1854
 glyptocystitida:
   name: Glyptocystitida
@@ -476,6 +510,11 @@ hispanica:
   name: hispanica
   auth: [müller, hahn]
   year: 2010
+holothuroidea:
+  name: Holothuroidea
+  rank: Class
+  auth: [de Blainville]
+  year: 1834
 homalozoa:
   name: Homalozoa
   rank: Subphylum
@@ -493,13 +532,18 @@ homoiostelea:
   year: 1960
 hybocrinus:
   name: Hybocrinus
-  auth: [Billings]
+  auth: [billings]
   year: 1857
 hybolopus:
   name: hybolopus
   auth: [Fraunfelder, Utgaard]
   year: 1970
 ###################### I
+imbricata:
+  name: Imbricata
+  rank: Order
+  auth: [sprinkle]
+  year: 1973
 inflatus:
   name: inflatus
   auth: [parsley, Zhao]
@@ -576,6 +620,16 @@ lepadocystis:
   name: Lepadocystis
   auth: [Carpenter]
   year: 1891
+lepidocystidae:
+  name: Lepidocystidae
+  rank: Family
+  auth: [durham]
+  year: 1967
+lepidocystoidea:
+  name: Lepidocystoidea
+  rank: Class
+  auth: [durham]
+  year: 1967
 lepidocystis:
   name: Lepidocystis
   auth: [Foerste]
@@ -671,6 +725,14 @@ odin:
   name: odin
   auth: [müller, hahn]
   year: 2010
+ophiocistioidea:
+  name: Ophiocistioidea
+  auth: [Sollas]
+  year: 1899
+ophiuroidea:
+  name: Ophiuroidea
+  auth: [Gray]
+  year: 1840
 ottawaensis:
   name: ottawaensis
   auth: [Whiteaves]
@@ -680,6 +742,16 @@ pahvanticystis:
   name: Pahvanticystis
   auth: [Lefebvre, Lerosey-Aubril]
   year: 2018
+parablastoidea:
+  name: Parablastoidea
+  rank: Class
+  auth: [Hudson]
+  year: 1907
+paracrinoidea:
+  name: Paracrinoidea
+  rank: Class
+  auth: [regnéll]
+  year: 1945
 parakrama:
   name: Parakrama
   auth: [müller, hahn]
@@ -844,6 +916,11 @@ soluta-order:
   rank: Order
   auth: [jaekel]
   year: 1901
+somasteroidea:
+  name: Somasteroidea
+  rank: Class
+  auth: [spencer]
+  year: 1941
 spencensis:
   name: spencensis
   auth: [Wen, Babcock, Peng, Robison]
@@ -873,6 +950,11 @@ steganoblastidae:
   rank: Family
   auth: [Bather]
   year: 1900
+stenuroidea:
+  name: Stenuroidea
+  rank: Class
+  auth: [spencer]
+  year: 1941
 stephanocrinus:
   name: Stephanocrinus
   auth: [Conrad]

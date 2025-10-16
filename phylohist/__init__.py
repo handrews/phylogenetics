@@ -22,13 +22,15 @@ class LevelCountHandler(logging.StreamHandler):
     """
     return dict(self.counts)
 
+
 LEVEL = logging.INFO
-log_counter = LevelCountHandler()
-log_counter.setLevel(LEVEL)
-logger = logging.getLogger(__name__)
-logger.setLevel(LEVEL)
-logger.addHandler(log_counter)
-logger.setLevel(LEVEL)
+# log_counter = LevelCountHandler()
+# log_counter.setLevel(LEVEL)
+# logger = logging.getLogger(__name__)
+# logger.setLevel(LEVEL)
+# logger.addHandler(log_counter)
+# logger.setLevel(LEVEL)
+
 
 class L():
   error_count = 0
@@ -47,3 +49,6 @@ class L():
   def debug(self, message):
     if LEVEL <= logging.DEBUG:
       print(f'*** DEBUG: {message}')
+
+
+logger = L()

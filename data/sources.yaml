@@ -33,11 +33,304 @@ publications:
     name: Proceedings of the Royal Society B
   science-new-series:
     name: Science (New Series)
+  treatise-s:
+    name: "Treatise on Invertebrate Paleontology, Part S: Echinodermata 1"
   treatise-t:
-    name: Treatise on Invertebrate Paleontology, Part T
+    name: "Treatise on Invertebrate Paleontology, Part T: Echinodermata 2"
+  treatise-u:
+    name: "Treatise on Invertebrate Paleontology, Part U: Echinodermata 3"
   vestnik:
     name: Věstník Ústředního ústavu geologického
 articles:
+  1966_spencer_wright.c.w:
+    title: Asterozoans
+    book: treatise-u
+    pubDate:
+      year: 1966
+    authors:
+    - spencer
+    - wright.c.w
+    pages:
+    - U4
+    - U107
+    identifiers:
+      url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
+  1966_durham_caster:
+    title: Helicoplacoids
+    book: treatise-u
+    pubDate:
+      year: 1966
+    authors:
+    - durham
+    - caster
+    editors:
+    - moore
+    pages:
+    - U131
+    - U136
+    identifiers:
+      url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
+  1966_regnéll:
+    title: Edrioasteroids
+    book: treatise-u
+    pubDate:
+      year: 1966
+    authors:
+    - regnéll
+    editors:
+    - moore
+    pages:
+    - U136
+    - U173
+    identifiers:
+      url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
+  1966_ubaghs:
+    title: Ophiocistioids
+    book: treatise-u
+    pubDate:
+      year: 1966
+    authors:
+    - ubaghs
+    editors:
+    - moore
+    pages:
+    - U174
+    - U188
+    identifiers:
+      url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
+  1966_kesling:
+    title: Cyclocystoids
+    book: treatise-u
+    pubDate:
+      year: 1966
+    authors:
+    - kesling
+    editors:
+    - moore
+    pages:
+    - U188
+    - U210
+    identifiers:
+      url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
+  1966_durham_fell_fischer_kier_melville_pawson_wagner:
+    title: Echinoids
+    book: treatise-u
+    pubDate:
+      year: 1966
+    authors:
+    - durham
+    - fell
+    - fischer
+    - kier
+    - melville
+    - pawson
+    - wagner
+    editors:
+    - moore
+    pages:
+    - U211
+    - U640
+    identifiers:
+      url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
+  1966_frizzell_exline_pawson:
+    title: Holothurians
+    book: treatise-u
+    pubDate:
+      year: 1966
+    authors:
+    - frizzell
+    - exline
+    - pawson
+    editors:
+    - moore
+    pages:
+    - U641
+    - U672
+    identifiers:
+      url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
+  1967a_ubaghs:
+    title: General Characters of Echinodermata
+    book: treatise-s
+    pubDate:
+      year: 1967
+    authors:
+    - ubaghs
+    editors:
+    - moore
+    pages:
+    - S3
+    - S60
+    identifiers:
+      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+  1967a_kesling:
+    title: Cystoids
+    book: treatise-s
+    pubDate:
+      year: 1967
+    authors:
+    - kesling
+    editors:
+    - moore
+    pages:
+    - S85
+    - S267
+    identifiers:
+      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+  1967b_kesling:
+    title: Paracrinoids
+    book: treatise-s
+    pubDate:
+      year: 1967
+    authors:
+    - kesling
+    editors:
+    - moore
+    pages:
+    - S268
+    - S288
+    identifiers:
+      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+  1967a_fay:
+    title: Edrioblastoids
+    book: treatise-s
+    pubDate:
+      year: 1967
+    authors:
+    - fay
+    editors:
+    - moore
+    pages:
+    - S289
+    - S292
+    identifiers:
+      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+  1967b_fay:
+    title: Parablastoids
+    book: treatise-s
+    pubDate:
+      year: 1967
+    authors:
+    - fay
+    editors:
+    - moore
+    pages:
+    - S293
+    - S296
+    identifiers:
+      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+  1967_fay_wanner:
+    title: "Blastoids: Systematic Descriptions"
+    book: treatise-s
+    pubDate:
+      year: 1967
+    authors:
+    - fay
+    - wanner
+    editors:
+    - moore
+    pages:
+    - S396
+    - S455
+    identifiers:
+      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+  1967b_ubaghs:
+    title: Eocrinoidea
+    book: treatise-s
+    pubDate:
+      year: 1967
+    authors:
+    - ubaghs
+    editors:
+    - moore
+    pages:
+    - S455
+    - S495
+    identifiers:
+      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+  1967c_ubaghs:
+    title: Stylophora
+    book: treatise-s
+    pubDate:
+      year: 1967
+    authors:
+    - ubaghs
+    editors:
+    - moore
+    pages:
+    - S495
+    - S565
+    identifiers:
+      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+  1967d_ubaghs:
+    title: Homostelea
+    book: treatise-s
+    pubDate:
+      year: 1967
+    authors:
+    - ubaghs
+    editors:
+    - moore
+    pages:
+    - S565
+    - S581
+    identifiers:
+      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+  1967_caster:
+    title: Homoiostelea
+    book: treatise-s
+    pubDate:
+      year: 1967
+    authors:
+    - caster
+    editors:
+    - moore
+    pages:
+    - S581
+    - S627
+    identifiers:
+      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+  1967a_durham:
+    title: Camptostromatoids
+    book: treatise-s
+    pubDate:
+      year: 1967
+    authors:
+    - durham
+    editors:
+    - moore
+    pages:
+    - S627
+    - S631
+    identifiers:
+      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+  1967b_durham:
+    title: Lepidocystoidea
+    book: treatise-s
+    pubDate:
+      year: 1967
+    authors:
+    - durham
+    editors:
+    - moore
+    pages:
+    - S631
+    - S634
+    identifiers:
+      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+  1967e_ubaghs:
+    title: Cymbionites and Peridionites—Unclassified Middle Cambrian Echinoderms
+    book: treatise-s
+    pubDate:
+      year: 1967
+    authors:
+    - ubaghs
+    editors:
+    - moore
+    pages:
+    - S634
+    - S637
+    identifiers:
+      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
   1968_webby:
     title: Astrocystites distans sp. nov., an edrioblastoid from the Ordovician of eastern Australia
     journal: palaeontology
@@ -111,7 +404,7 @@ articles:
       specimens:
         basic: false
         all: false
-    journal: alcheringa 
+    journal: alcheringa
     volume: 9
     number: 3
     pages:
@@ -428,7 +721,7 @@ articles:
     authors:
     - smith.a.b
     - zamora
-  2015_ausich_kammer_rhenberg_wright:
+  2015_ausich_kammer_rhenberg_wright.d.f:
     title: Early phylogeny of crinoids within the pelmatozoan clade
     journal: palaeontology
     volume: 58
@@ -440,7 +733,7 @@ articles:
     - ausich
     - kammer
     - rhenberg
-    - wright
+    - wright.d.f
     pubDate:
       year: 2015
       month: 10

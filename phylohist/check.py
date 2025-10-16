@@ -6,10 +6,7 @@ import collections
 import yaml
 import jschon
 
-from . import L
-
-logger = L()
-
+from . import logger
 
 def check_node(n, data, parent=[]):
   if 'taxon' in n:
@@ -97,10 +94,17 @@ def check_sources(data):
       logger.error(f'{source_type} "{article[source_type]}" not found!')
 
     expected_id = f"{article['pubDate']['year']}"
+    if ref_id[4] != '_':
+      # There's a disambiguation letter, just assume it is correct.
+      expected_id += ref_id[4]
+
     for author in article['authors']:
       if author not in data['authors']:
         logger.error(f'Author "{author}" not found!')
       expected_id += '_' + author.split('_')[0]
+    for editor in article.get('editors', ()):
+      if editor not in data['authors']:
+        logger.error(f'Editor "{editor}" not found!')
 
     if ref_id != expected_id:
       logger.error(f'Expected "{expected_id}" but found "{ref_id}"')

@@ -1,3 +1,36 @@
+1967a_ubaghs:
+  taxonomies:
+  - taxon: echinodermata
+    children:
+    - taxon: homalozoa
+      children:
+      - taxon: homostelea
+      - taxon: homoiostelea
+      - taxon: stylophora
+    - taxon: crinozoa
+      children:
+      - taxon: eocrinoidea
+      - taxon: paracrinoidea
+      - taxon: cystoidea
+      - taxon: blastoidea
+      - taxon: parablastoidea
+      - taxon: edrioblastoidea
+      - taxon: lepidocystoidea
+      - taxon: crinoidea
+    - taxon: asterozoa
+      children:
+      - taxon: asteroidea
+      - taxon: ophiuroidea
+      - taxon: somasteroidea
+    - taxon: echinozoa
+      children:
+      - taxon: helicoplacoidea
+      - taxon: holothuroidea
+      - taxon: ophiocistioidea
+      - taxon: cyclocystoidea
+      - taxon: edrioasteroidea
+      - taxon: camptostromatoidea
+      - taxon: echinoidea
 1968_webby:
   taxonomies:
   - taxon: pelmatozoa

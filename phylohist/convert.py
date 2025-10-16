@@ -77,13 +77,17 @@ def _parse_authority(authority, year=None):
   return first, second, year
 
 def convert(*files):
-  if files:
-    files = [pathlib.Path(f) for f in files]
-  else:
-    files = [
-      LIST_DIR / 'only-treatise.txt',
-      LIST_DIR / 'sprinkle.txt',
-    ]
+  data = {
+    'authors': {},
+    'sources': {},
+    'taxa': {},
+    'trees': {},
+  }
+
+  files = [
+    LIST_DIR / 'only-treatise.txt',
+    LIST_DIR / 'sprinkle.txt',
+  ]
 
   for filename in files:
     print(filename)

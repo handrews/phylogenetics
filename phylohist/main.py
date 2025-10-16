@@ -6,18 +6,18 @@ import collections
 import yaml
 import jschon
 
-from . import L
 from .io import load_files
 from .check import check_authors, check_sources, check_taxa, check_trees
-from .read import convert
+from .convert import convert
 
-logger = L()
+from . import logger
+
 schema_catalog = jschon.create_catalog('2020-12')
 """The default shared ``jschon`` schema loader and cache"""
 
 
 def main():
-  if sys.argv[1] == 'convert':
+  if len(sys.argv) > 1 and sys.argv[1] == 'convert':
     return convert()
 
   data = load_files()
