@@ -1,5 +1,8 @@
 import re
 import datetime
+import pathlib
+
+LIST_DIR = pathlib.Path(__file__).parent / '..' / 'notes' / 'lists'
 
 RANKS = {
   'P': 'Phylum',
@@ -73,79 +76,85 @@ def _parse_authority(authority, year=None):
 
   return first, second, year
 
-for filename in (
-  'lists/only-treatise.txt',
-  'lists/sprinkle.txt',
-):
-  print(filename)
-  for line in (open(filename)):
-    if line[0] == '#':
-      continue
+def convert(*files):
+  if files:
+    files = [pathlib.Path(f) for f in files]
+  else:
+    files = [
+      LIST_DIR / 'only-treatise.txt',
+      LIST_DIR / 'sprinkle.txt',
+    ]
 
-    if '#' in line:
-      line, comment = line.split('#')
-      comment = comment.strip()
-    line = line.strip()
+  for filename in files:
+    print(filename)
+    for line in (open(filename)):
+      if line[0] == '#':
+        continue
 
-    indentation = re.match('( *)', line).group(0)
-    print(len(indentation))
-    line = line[len(indentation):]
+      if '#' in line:
+        line, comment = line.split('#')
+        comment = comment.strip()
+      line = line.strip()
 
-    rank, line = _parse_to_delim(line, ' ', [1, 2])
-    print(f'rank or specimen: {rank}')
-    if rank in SPECIMENS:
-      continue
-    assert rank in RANKS, rank
-    print(f'"{RANKS[rank]}"')
+      indentation = re.match('( *)', line).group(0)
+      print(len(indentation))
+      line = line[len(indentation):]
 
-    flags = ''
-    if ' ' in line:
-      name, line = _parse_to_delim(line, ' ')
-      assert line[0] == '('
-      line = line[1:]
-      if line.index(')') == len(line) - 1:
-        authority = line[:-1]
+      rank, line = _parse_to_delim(line, ' ', [1, 2])
+      print(f'rank or specimen: {rank}')
+      if rank in SPECIMENS:
+        continue
+      assert rank in RANKS, rank
+      print(f'"{RANKS[rank]}"')
+
+      flags = ''
+      if ' ' in line:
+        name, line = _parse_to_delim(line, ' ')
+        assert line[0] == '('
+        line = line[1:]
+        if line.index(')') == len(line) - 1:
+          authority = line[:-1]
+        else:
+          authority, flags = line.split(')')
+          flags = flags.strip()
+          print(f'flags: "{flags}"')
+
+        assert ')' not in authority
+        # Currently, "in" and "ex" never appear together
+        in_first, in_second, in_year = None, None, None
+        if ' in ' in authority:
+          authority, in_publication = authority.split(' in ')
+          in_first, in_second, in_year = _parse_authority(
+            in_publication.strip()
+          )
+        ex_first, ex_second, ex_year = None, None, None
+        if ' ex ' in authority:
+          authority, ex_authority = authority.split(' ex ')
+          ex_first, ex_second, ex_year = _parse_authority(
+            ex_authority.strip()
+          )
+        first, second, year = _parse_authority(authority.strip(), in_year)
+        print(f'First author: "{first}"')
+        if second:
+          print(f'Second author: "{second}"')
+        print(f'Year: {year}')
+        if in_first:
+          print('  in:')
+          print(f'    First author: "{in_first}"')
+          if in_second:
+            print(f'    Second author: "{in_second}"')
+          print(f'   Year: {in_year}')
+        if ex_first:
+          print('  ex:')
+          print(f'    First author: "{ex_first}"')
+          if ex_second:
+            print(f'    Second author: "{ex_second}"')
+          print(f'   Year: {ex_year}')
+
       else:
-        authority, flags = line.split(')')
-        flags = flags.strip()
-        print(f'flags: "{flags}"')
-
-      assert ')' not in authority
-      # Currently, "in" and "ex" never appear together
-      in_first, in_second, in_year = None, None, None
-      if ' in ' in authority:
-        authority, in_publication = authority.split(' in ')
-        in_first, in_second, in_year = _parse_authority(
-          in_publication.strip()
-        )
-      ex_first, ex_second, ex_year = None, None, None
-      if ' ex ' in authority:
-        authority, ex_authority = authority.split(' ex ')
-        ex_first, ex_second, ex_year = _parse_authority(
-          ex_authority.strip()
-        )
-      first, second, year = _parse_authority(authority.strip(), in_year)
-      print(f'First author: "{first}"')
-      if second:
-        print(f'Second author: "{second}"')
-      print(f'Year: {year}')
-      if in_first:
-        print('  in:')
-        print(f'    First author: "{in_first}"')
-        if in_second:
-          print(f'    Second author: "{in_second}"')
-        print(f'   Year: {in_year}')
-      if ex_first:
-        print('  ex:')
-        print(f'    First author: "{ex_first}"')
-        if ex_second:
-          print(f'    Second author: "{ex_second}"')
-        print(f'   Year: {ex_year}')
-
-    else:
-      assert (line[0], line[-1]) == ('_', '_')
-      name = None
-    print(f'"{name}"')
+        assert (line[0], line[-1]) == ('_', '_')
+        name = None
+      print(f'"{name}"')
+      print('')
+    print('------------------------------------------------')
     print('')
-  print('------------------------------------------------')
-  print('')

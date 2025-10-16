@@ -9,6 +9,7 @@ import jschon
 from . import L
 from .io import load_files
 from .check import check_authors, check_sources, check_taxa, check_trees
+from .read import convert
 
 logger = L()
 schema_catalog = jschon.create_catalog('2020-12')
@@ -16,6 +17,8 @@ schema_catalog = jschon.create_catalog('2020-12')
 
 
 def main():
+  if sys.argv[1] == 'convert':
+    return convert()
 
   data = load_files()
   check_authors(data)
