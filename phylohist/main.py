@@ -30,6 +30,7 @@ def main():
 #   if logged_errors:
   logged_errors = logger.error_count
   logged_warnings = logger.warn_count
+  print()
   if logged_errors:
     logger.error(
       f'Encounterd {logged_errors} errors ({logged_warnings} warnings)!'

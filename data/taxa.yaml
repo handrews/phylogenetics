@@ -18,6 +18,16 @@ uncertain-family:
   rank: Family
   auth: [linnaeus]
   year: 1758
+unnamed-order-one:
+  name: null
+  rank: Order
+  auth: [sprinkle]
+  year: 1973
+unnamed-order-two:
+  name: null
+  rank: Order
+  auth: [sprinkle]
+  year: 1973
 ###################### A
 aethocrinus:
   name: Aethocrinus
@@ -45,15 +55,15 @@ akadocrinus:
   name: Akadocrinus
   auth: [Prokop]
   year: 1962
-alabamensis:
+alabamensis_sumrall_garbisch_pope_2000:
   name: alabamensis
   auth: [sumrall, Garbisch, Pope]
   year: 2000
 alphacrinus:
-  name: alphacrinus
+  name: Alphacrinus
   auth: [guensburg]
   year: 2010
-alpinensis:
+alpinensis_bassler_1936:
   name: alpinensis
   auth: [bassler]
   year: 1936
@@ -61,7 +71,7 @@ apektocrinus:
   name: Apektocrinus
   auth: [guensburg, sprinkle]
   year: 2009
-archaeocyathoides:
+archaeocyathoides_dzik_orłowski_1995:
   name: archaeocyathoides
   auth: [dzik, orłowski]
   year: 1995
@@ -106,15 +116,15 @@ barroubiocystis:
   name: Barroubiocystis
   auth: [ubaghs]
   year: 1999
-belli:
+belli_sumrall_brett_cornell_2006:
   name: belli
   auth: [sumrall, Brett, Cornell]
   year: 2006
-bifida:
+bifida_ubaghs_robison_1988:
   name: bifida
   auth: [ubaghs, robison]
   year: 1988
-blairi:
+blairi_miller_1894:
   name: blairi
   auth: [Miller]
   year: 1894
@@ -129,11 +139,11 @@ blastozoa:
   bracket: Blastozoans
   auth: [sprinkle]
   year: 1973
-bohemica:
+bohemica_fatka_kordule_1985:
   name: bohemica
   auth: [Fatka, Kordule]
   year: 1985
-broweri:
+broweri_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler_2020:
   name: broweri
   auth: [Guensburg, sprinkle, Mooi, Lefebvre, David, Roux, Derstler]
   year: 2020
@@ -150,7 +160,7 @@ camptostromatoidea:
   name: Camptostromatoidea
   auth: [durham]
   year: 1967
-cannati:
+cannati_miquel_1894:
   name: cannati
   auth: [Miquel]
   year: 1894
@@ -174,9 +184,9 @@ cheirocystis:
   name: Cheirocystis
   auth: [Paul]
   year: 1972
-chinensis:
+chinensis_zhao.y_sumrall_parsley_peng.j_2010:
   name: chinensis
-  auth: [Zhao, sumrall, parsley, Peng]
+  auth: [zhao.y, sumrall, parsley, peng.j]
   year: 2010
 cincta-class:
   name: Cincta
@@ -188,7 +198,7 @@ cincta-order:
   rank: Order
   auth: [jaekel]
   year: 1918
-colodon:
+colodon_ubaghs_robison_1988:
   name: colodon
   auth: [ubaghs, robison]
   year: 1988
@@ -261,7 +271,7 @@ cuniculocystis:
   name: Cuniculocystis
   auth: [sprinkle, Wahlman]
   year: 1994
-curvatus:
+curvatus_grigo_1995:
   name: curvatus
   auth: [Grigo]
   year: 1995
@@ -276,11 +286,11 @@ cystoidea:
   auth: [von Buch]
   year: 1846
 ###################### D
-destombesi:
+destombesi_ubaghs_1963:
   name: destombesi
   auth: [ubaghs]
   year: 1963
-devonica:
+devonica_bassler_1936:
   name: devonica
   auth: [bassler]
   year: 1936
@@ -303,7 +313,7 @@ disparida:
   rank: Subclass
   auth: [Moore, Laudon]
   year: 1943
-distans:
+distans_webby_1968:
   name: distans
   auth: [webby]
   year: 1968
@@ -312,7 +322,7 @@ dizonida:
   rank: Order
   auth: [domínguez alonso]
   year: 1999
-durhami:
+durhami_sprinkle_1973:
   name: durhami
   auth: [sprinkle]
   year: 1973
@@ -364,7 +374,7 @@ eknomocrinus:
   name: Eknomocrinus
   auth: [guensburg, sprinkle]
   year: 2003
-elizae:
+elizae_bather_1913:
   name: elizae
   auth: [bather]
   year: 1913
@@ -391,17 +401,17 @@ eumorphocystis:
   name: Eumorphocystis
   auth: [Branson, Peck]
   year: 1940
-extenuatus:
+extenuatus_zhao.j_rahman_zamora_chen.a_cong.p_2022:
   name: extenuatus
   auth: [zhao.j, rahman, zamora, chen.a, cong.p]
   year: 2022
 ###################### F
 ###################### G
-gallica:
+gallica_domínguez alonso_1999:
   name: gallica
   auth: [domínguez alonso]
   year: 1999
-germanica:
+germanica_müller_hahn_2010:
   name: germanica
   auth: [müller, hahn]
   year: 2010
@@ -413,9 +423,9 @@ glenocrinus:
   name: Glenocrinus
   auth: [Guensburg, sprinkle]
   year: 2003
-globularis:
+globularis_guensburg_sprinkle_2003:
   name: globularis
-  auth: [Guensburg, sprinkle]
+  auth: [guensburg, sprinkle]
   year: 2003
 glyptocystites:
   name: Glyptocystites
@@ -437,28 +447,28 @@ gogiida:
   rank: Order
   auth: [Broadhead]
   year: 1982
-gondi:
+gondi_ubaghs_1987:
   name: gondi
   auth: [ubaghs]
   year: 1987
-graysoni:
+graysoni_sumrall_sprinkle_bonem_2006:
   name: graysoni
   auth: [sumrall, sprinkle, Bonem]
   year: 2006
-grebelae:
+grebelae_müller_hahn_2010:
   name: grebelae
   auth: [müller, hahn]
   year: 2010
-guensburgi:
+guensburgi_sprinkle_sumrall_2015:
   name: guensburgi
   auth: [sprinkle, sumrall]
   year: 2015
 ###################### H
-haefneri:
+haefneri_zamora_rahman_sumrall_gibson_thompson_2022:
   name: haefneri
-  auth: [Zamora, Rahman, sumrall, Gibson, Thompson]
+  auth: [zamora, rahman, sumrall, gibson, thompson]
   year: 2022
-hamiltonensis:
+hamiltonensis_vanuxem_1842:
   name: hamiltonensis
   auth: [Vanuxem]
   year: 1842
@@ -506,7 +516,7 @@ hemicystitides:
   name: Hemicystitides
   auth: [Hall]
   year: 1852
-hispanica:
+hispanica_müller_hahn_2010:
   name: hispanica
   auth: [müller, hahn]
   year: 2010
@@ -534,7 +544,7 @@ hybocrinus:
   name: Hybocrinus
   auth: [billings]
   year: 1857
-hybolopus:
+hybolopus_fraunfelder_utgaard_1970:
   name: hybolopus
   auth: [Fraunfelder, Utgaard]
   year: 1970
@@ -544,9 +554,9 @@ imbricata:
   rank: Order
   auth: [sprinkle]
   year: 1973
-inflatus:
+inflatus_parsley_zhao.y_2010:
   name: inflatus
-  auth: [parsley, Zhao]
+  auth: [parsley, zhao.y]
   year: 2010
 isorophida:
   name: Isorophida
@@ -568,11 +578,11 @@ isorophus:
   auth: [Foerste]
   year: 1916
 ###################### J
-jagoi:
+jagoi_jell_burrett_banks_1985:
   name: jagoi
-  auth: [Jell, Burrett, Banks]
+  auth: [jell, burrett, banks]
   year: 1985
-jasperensis:
+jasperensis_harker_1953:
   name: jasperensis
   auth: [Harker]
   year: 1953
@@ -586,7 +596,7 @@ jugoszoviidae:
   auth: [dzik, orłowski]
   year: 1995
 ###################### K
-keslingi:
+keslingi_bell_1976:
   name: keslingi
   auth: [Bell]
   year: 1976
@@ -594,7 +604,7 @@ kinzercystis:
   name: Kinzercystis
   auth: [sprinkle]
   year: 1973
-kitchnerensis:
+kitchnerensis_sprinkle_1973:
   name: kitchnerensis
   auth: [sprinkle]
   year: 1973
@@ -603,7 +613,7 @@ krama:
   auth: [Bell]
   year: 1976
 ###################### L
-languedocianus:
+languedocianus_ubaghs_1987:
   name: languedocianus
   auth: [ubaghs]
   year: 1987
@@ -612,7 +622,7 @@ lebetodiscidae:
   rank: Family
   auth: [Guensburg, sprinkle]
   year: 1994
-legrandensis:
+legrandensis_miller_gurley_1894:
   name: legrandensis
   auth: [Miller, Gurley]
   year: 1894
@@ -644,11 +654,15 @@ lispidecodus:
   name: Lispidecodus
   auth: [Kesling]
   year: 1967
-lloydi:
+lloydi_sprinkle_1985:
   name: lloydi
   auth: [sprinkle]
   year: 1985
-lukei:
+longidactylus_walcott_1886:
+  name: longidactylus
+  auth: [walcott]
+  year: 1886
+lukei_bell_petersen_1976:
   name: lukei
   auth: [Bell, Petersen]
   year: 1976
@@ -661,11 +675,11 @@ macrocystella:
   name: Macrocystella
   auth: [Callaway]
   year: 1877
-mariae:
+mariae_callaway_1877:
   name: mariae
   auth: [Callaway]
   year: 1877
-mansfieldi:
+mansfieldi_guensburg_2010:
   name: mansfieldi
   auth: [Guensburg]
   year: 2010
@@ -674,11 +688,11 @@ mitrata:
   rank: Order
   auth: [jaekel]
   year: 1918
-moncaiensis:
+moncaiensis_zamora_smith.a.b_2012:
   name: moncaiensis
-  auth: [Zamora, Smith]
+  auth: [zamora, smith.a.b]
   year: 2012
-moncereti:
+moncereti_domínguez alonso_1999:
   name: moncereti
   auth: [domínguez alonso]
   year: 1999
@@ -687,41 +701,45 @@ monozonida:
   rank: Order
   auth: [domínguez alonso]
   year: 1999
-moorei:
+moorei_ubaghs_1969:
   name: moorei
   auth: [ubaghs]
   year: 1969
-moroccoensis:
+moroccoensis_smith.a.b_zamora_2013:
   name: moroccoensis
-  auth: [Smith, Zamora]
+  auth: [smith.a.b, zamora]
   year: 2013
-multiporata:
+multibrachiatus_kirk_1945:
+  name: multibrachiatus
+  auth: [Kirk]
+  year: 1945
+multiporata_branson_peck_1940:
   name: multiporata
   auth: [Branson, Peck]
   year: 1940
-murphyi:
+murphyi_sumrall_garbisch_pope_2000:
   name: murphyi
   auth: [sumrall, Garbisch, Pope]
   year: 2000
 ###################### N
-neglecta:
+neglecta_smith.a.b_1983:
   name: neglecta
-  auth: [Smith]
+  auth: [smith.a.b]
   year: 1983
-nimius:
+nimius_bell_sprinkle_1978:
   name: nimius
   auth: [Bell, sprinkle]
   year: 1978
-nitidus:
+nitidus_sinclair_1945:
   name: nitidus
   auth: [Sinclair]
   year: 1945
 ###################### O
-octogona:
+octogona_richter_1930:
   name: octogona
   auth: [Richter]
   year: 1930
-odin:
+odin_müller_hahn_2010:
   name: odin
   auth: [müller, hahn]
   year: 2010
@@ -733,7 +751,7 @@ ophiuroidea:
   name: Ophiuroidea
   auth: [Gray]
   year: 1840
-ottawaensis:
+ottawaensis_whiteaves_1897:
   name: ottawaensis
   auth: [Whiteaves]
   year: 1897
@@ -760,7 +778,7 @@ parapostibulla:
   name: Parapostibulla
   auth: [sumrall, Garbisch, Pope]
   year: 2000
-parsleya:
+parsleya_deshmukh_2022:
   name: parsleya
   auth: [Deshmukh]
   year: 2022
@@ -780,17 +798,17 @@ pembrocystis:
   name: Pembrocystis
   auth: [domínguez alonso]
   year: 1999
-pentangularis:
+pentangularis_pompeckj_1896:
   name: pentangularis
   auth: [Pompeckj]
   year: 1896
-perneri:
+perneri_jaekel_1901:
   name: perneri
   auth: [jaekel]
   year: 1901
-petalus:
+petalus_holloway_jell_1983:
   name: petalus
-  auth: [Holloway, Jell]
+  auth: [Holloway, jell]
   year: 1983
 pleurocystites:
   name: Pleurocystites
@@ -810,15 +828,19 @@ postibullinae:
   rank: Subfamily
   auth: [sumrall, Garbisch, Pope]
   year: 2000
-postpetalus:
+postpetalus_müller_hahn_2010:
   name: postpetalus
   auth: [müller, hahn]
   year: 2010
-primotica:
+primotica_henderson_shergold_1971:
   name: primotica
   auth: [Henderson, Shergold]
   year: 1971
-pustulata:
+prolifica_walcott_1917:
+  name: prolifica
+  auth: [walcott]
+  year: 1917
+pustulata_müller_hahn_2010:
   name: pustulata
   auth: [müller, hahn]
   year: 2010
@@ -826,25 +848,25 @@ pseudedriophus:
   name: Pseudedriophus
   auth: [sprinkle, sumrall]
   year: 2015
-purujoensis:
+purujoensis_zamora_smith.a.b_2012:
   name: purujoensis
-  auth: [Zamora, Smith]
+  auth: [zamora, smith.a.b]
   year: 2012
 pyrgocystidae:
   name: Pyrgocystidae
   rank: Family
-  auth: [Kesling]
+  auth: [kesling]
   year: 1967
 pyrgocystis:
   name: Pyrgocystis
-  auth: [Bather]
+  auth: [bather]
   year: 1915
 pyrgopostibulla:
   name: Pyrgopostibulla
   auth: [sumrall, Brett, Cornell]
   year: 2006
 ###################### R
-rhenanus:
+rhenanus_roemer_1851:
   name: rhenanus
   auth: [Roemer]
   year: 1851
@@ -857,7 +879,18 @@ rhenopyrgus:
   name: Rhenopyrgus
   auth: [Dehm]
   year: 1961
-rhombifera:
+rhombifera-genus:
+  name: Rhombifera
+  auth: [Barrande]
+  year: 1967
+rhombifera-order:
+  name: Rhombifera
+  bracket: Rhombiferans
+  rank: Order
+  status: informal
+  auth: [Zittel]
+  year: 1870
+rhombifera-class:
   name: Rhombifera
   bracket: Rhombiferans
   rank: Class
@@ -877,32 +910,32 @@ ridersiidae:
   rank: Family
   auth: [Jell, Burrett, Banks]
   year: 1985
-roddyi:
+roddyi_ruedemann_1933:
   name: roddyi
   auth: [Ruedemann]
   year: 1933
 ###################### S
 sanducystis:
   name: Sanducystis
-  auth: [Zamora, sumrall, Zhu, Lefebvre]
+  auth: [zamora, sumrall, zhu.x, lefebvre]
   year: 2017
-sardesoni:
+sardesoni_bather_1915:
   name: sardesoni
-  auth: [Bather]
+  auth: [bather]
   year: 1915
 scoliocystis:
   name: Scoliocystis
   auth: [jaekel]
   year: 1899
-sinensis:
+sinensis_zamora_sumrall_zhu.x_lefebvre_2017:
   name: sinensis
-  auth: [Zamora, sumrall, Zhu, Lefebvre]
+  auth: [zamora, sumrall, zhu.x, lefebvre]
   year: 2017
 sinoeocrinus:
   name: Sinoeocrinus
   auth: [Zhao, Huang, Gong]
   year: 1994
-smithi:
+smithi_ubaghs_1987:
   name: smithi
   auth: [ubaghs]
   year: 1987
@@ -921,34 +954,38 @@ somasteroidea:
   rank: Class
   auth: [spencer]
   year: 1941
-spencensis:
+spencensis_wen.r_babcock_peng.j_robison_2019:
   name: spencensis
-  auth: [Wen, Babcock, Peng, Robison]
+  auth: [wen.r, babcock, peng.j, robison]
   year: 2019
-spinosa:
+spinosa_zamora_rahman_smith.a.b_2012:
   name: spinosa
   auth: [zamora, rahman, smith.a.b]
   year: 2012
-sporranoides:
+spiralis_robison_1965:
+  name: spiralis
+  auth: [robison]
+  year: 1965
+sporranoides_rahman_stewart_zamora_2015:
   name: sporranoides
   auth: [rahman, stewart, zamora]
   year: 2015
-sprinklei:
+sprinklei_ubaghs_robison_1988:
   name: sprinklei
   auth: [ubaghs, robison]
   year: 1988
 sprinkleoglobus:
-  name: sprinkleoglobus
-  auth: [Zamora, Guensburg, sprinkle]
+  name: Sprinkleoglobus
+  auth: [zamora, guensburg, sprinkle]
   year: 2024
-staffordi:
+staffordi_domínguez alonso_1999:
   name: staffordi
   auth: [domínguez alonso]
   year: 1999
 steganoblastidae:
   name: Steganoblastidae
   rank: Family
-  auth: [Bather]
+  auth: [bather]
   year: 1900
 stenuroidea:
   name: Stenuroidea
@@ -962,7 +999,7 @@ stephanocrinus:
 stromatocystitidae:
   name: Stromatocystitidae
   rank: Family
-  auth: [Bassler]
+  auth: [bassler]
   year: 1936
 stromatocystites:
   name: Stromatocystites
@@ -973,17 +1010,17 @@ stylophora:
   rank: Class
   auth: [Gill, Caster]
   year: 1960
-sumralli:
+sumralli_guensburg_sprinkle_2003:
   name: sumralli
-  auth: [Guensburg, sprinkle]
+  auth: [guensburg, sprinkle]
   year: 2003
 syringocrinida:
   name: Syringocrinida
   rank: Order
-  auth: [parsley, Caster]
+  auth: [parsley, caster]
   year: 1965
 ###################### T
-tastudorum:
+tastudorum_jell_burrett_banks_1985:
   name: tastudorum
   auth: [jell, burrett, banks]
   year: 1985
@@ -991,11 +1028,11 @@ tatonkacystis:
   name: Tatonkacystis
   auth: [sumrall, sprinkle, Guensburg]
   year: 1997
-taunicus:
+taunicus_rösler_1953:
   name: taunicus
   auth: [Rösler]
   year: 1953
-thor:
+thor_müller_hahn_2010:
   name: thor
   auth: [müller, hahn]
   year: 2010
@@ -1011,7 +1048,7 @@ totiglobus:
   name: Totiglobus
   auth: [Bell, sprinkle]
   year: 1978
-treadwelli:
+treadwelli_sinclair_1945:
   name: treadwelli
   auth: [Sinclair]
   year: 1945
@@ -1024,7 +1061,7 @@ turbanicystis:
   auth: [parsley, zhao.y]
   year: 2010
 ###################### U
-ubaghsi:
+ubaghsi_guensburg_sprinkle_2009:
   name: ubaghsi
   auth: [guensburg, sprinkle]
   year: 2009
@@ -1032,24 +1069,24 @@ ubaghsicystis:
   name: Ubaghsicystis
   auth: [Gil Cid, Domínguez]
   year: 2002
-utahensis-r-s-1969:
-  name: utahensis
-  auth: [robison, sprinkle]
-  year: 1969
-utahensis-l-l-2018:
+utahensis_lefebvre_lerosey-aubril_2018:
   name: utahensis
   auth: [lefebvre, lerosey-aubril]
   year: 2018
+utahensis_robison_sprinkle_1969:
+  name: utahensis
+  auth: [robison, sprinkle]
+  year: 1969
 ###################### V
 velieuxicystis:
   name: Velieuxicystis
   auth: [ubaghs]
   year: 1999
-viviannae:
+viviannae_domínguez alonso_1999:
   name: viviannae
   auth: [domínguez alonso]
   year: 1999
-vizcainoi:
+vizcainoi_ubaghs_1987:
   name: vizcainoi
   auth: [ubaghs]
   year: 1987
@@ -1057,7 +1094,7 @@ vizcainoia:
   name: Vizcainoia
   auth: [zamora, smith.a.b]
   year: 2012
-volborthi:
+volborthi_hecker_1939:
   name: volborthi
   auth: [Hecker]
   year: 1939
@@ -1066,19 +1103,19 @@ vyscystis:
   auth: [fatka, kordule]
   year: 1990
 ###################### W
-wahwahensis:
+wahwahensis_guensburg_sprinkle_2003:
   name: wahwahensis
   auth: [guensburg, sprinkle]
   year: 2003
-wanneri:
+wanneri_foerste_1938:
   name: wanneri
   auth: [Foerste]
   year: 1938
-watsonae:
+watsonae_jell_burrett_banks_1985:
   name: watsonae
   auth: [jell, burrett, banks]
   year: 1985
-westergardi:
+westergardi_sumrall_sprinkle_bonem_2006:
   name: westergardi
   auth: [sumrall, sprinkle, Bonem]
   year: 2006
@@ -1095,12 +1132,12 @@ yorkicystis:
   year: 2022
 ###################### Z
 # synonyms:
-briareus:
+briareus_barrande_1887:
   name: briareus
   auth: [Barrande]
   year: 1887
-  synonym: bohemica
-devonicus:
+  synonym: bohemica_fatka_kordule_1985
+devonicus_bassler_1936:
   name: devonicus
   auth: [Bassler]
   year: 1936
@@ -1113,7 +1150,7 @@ eocrinus:
   synonym: gogia
 kailidiscus:
   name: Kailidiscus
-  auth: [Zhao, sumrall, parsley, Peng]
+  auth: [zhao.y, sumrall, parsley, peng.j]
   year: 2010
   synonym: parsleya
   reason: homonym

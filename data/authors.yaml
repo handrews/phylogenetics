@@ -30,6 +30,9 @@ billings:
 bonasoro:
   family: Bonasoro
   given: F.
+broadhead:
+  family: Broadhead
+  given: Thomas W.
 burrett:
   family: Burrett
   given: C. F.
@@ -112,6 +115,9 @@ kier:
 kordule:
   family: Kordule
   given: Vratislav
+lawrence:
+  family: Lawrence
+  given: John M.
 lefebvre:
   family: Lefebvre
   given: Bertrand
@@ -197,6 +203,9 @@ ubaghs:
 wagner:
   family: Wagner
   given: Carol D.
+walcott:
+  family: Walcott
+  given: Charles Doolittle
 wanner:
   family: Wanner
   given: Johannes

@@ -33,20 +33,34 @@ def build_expected_author(expected, author):
 
 def build_expected_taxon(expected, taxon):
   if not (rank := taxon.get('rank')):
+    if taxon['name'] is None:
+      logger.error(f"Unnamed, unrakned taxon {expected}!")
+      # Let the second check fail normally.
+      return {expected}
+
     rank = 'genus' if taxon['name'][0].isupper() else 'species'
 
+  if rank in ('species', 'subspecies'):
+    species_expected = expected
+    logger.debug(f'Building species id for {expected}...')
+    for author_id in taxon['auth']:
+      species_expected += f"_{author_id.lower()}"
+    species_expected += f"_{taxon['year']}"
+    logger.debug(f'...built {species_expected}')
+    return {species_expected}
+
   ranked_expected = expected
-  alt_expected = expected
+  # alt_expected = expected
   expected_set = {expected}
 
   logger.debug(f'Creating alt taxon_id expectations for "{taxon}"')
   ranked_expected += f"-{rank.lower()}"
-  for author_id in taxon['auth']:
-    logger.debug(f'Adding author "{author_id}" for taxon_id "{taxon}"')
-    alt_expected += f'-{author_id.lower()[0]}'
-  alt_expected += f"-{taxon['year']}"
+  # for author_id in taxon['auth']:
+    # logger.debug(f'Adding author "{author_id}" for taxon_id "{taxon}"')
+    # alt_expected += f'-{author_id.lower()[0]}'
+  # alt_expected += f"-{taxon['year']}"
 
-  return {ranked_expected, alt_expected}
+  return {ranked_expected} #, alt_expected}
 
 
 def check_expectation(
@@ -86,6 +100,11 @@ def check_authors(data):
 def check_sources(data):
   logger.info(f"Checking {len(data['sources']['articles'])} sources...")
   sources = set()
+  for pub_id, publication in data['sources']['publications'].items():
+    for editor in publication.get('editors', ()):
+      if editor not in data['authors']:
+        logger.error(f'Editor "{editor}" not found for publication {pub_id}!')
+
   for ref_id, article in data['sources']['articles'].items():
     sources.add(ref_id)
     logger.debug(f'Processing article "{ref_id}"')
@@ -100,11 +119,11 @@ def check_sources(data):
 
     for author in article['authors']:
       if author not in data['authors']:
-        logger.error(f'Author "{author}" not found!')
+        logger.error(f'Author "{author}" not found for source {ref_id}!')
       expected_id += '_' + author.split('_')[0]
     for editor in article.get('editors', ()):
       if editor not in data['authors']:
-        logger.error(f'Editor "{editor}" not found!')
+        logger.error(f'Editor "{editor}" not found for source {ref_id}!')
 
     if ref_id != expected_id:
       logger.error(f'Expected "{expected_id}" but found "{ref_id}"')
@@ -119,17 +138,18 @@ def check_sources(data):
 def check_taxa(data):
   logger.info(f"Processing {len(data['taxa'])} taxa...")
   for taxon_id, taxon in data['taxa'].items():
-    expected = taxon['name'].lower()
-    logger.debug(f'  Processing taxon "{taxon_id}"...')
+    if taxon['name'] is not None:
+      expected = taxon['name'].lower()
+      logger.debug(f'  Processing taxon "{taxon_id}"...')
 
-    valid, valid_set = check_expectation(
-      taxon_id,
-      expected,
-      build_expected_taxon,
-      taxon,
-    )
-    if not valid:
-      logger.error(f'"{taxon_id}" not in expected set: {expected_set}')
+      valid, valid_set = check_expectation(
+        taxon_id,
+        expected,
+        build_expected_taxon,
+        taxon,
+      )
+      if not valid:
+        logger.error(f'"{taxon_id}" not in expected set: {valid_set}')
 
     for author_id in taxon['auth']:
       logger.debug('    Processing authority "{author_id}"')
@@ -177,4 +197,4 @@ def check_trees(data, sources):
   logger.info(f"...opinions processed.")
 
   if (difference := sources - opinions):
-    logger.warn(f"Missing opinions from {difference}")
+    logger.warn("Missing opinions from:\n    " + '\n    '.join(difference))

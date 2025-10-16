@@ -88,6 +88,8 @@ $defs:
         type: string
       publisher:
         type: string
+      place:
+        type: string
       notes:
         type: string
       editors:
@@ -177,6 +179,10 @@ $defs:
             $ref: "#/$defs/simpleDate"
           issued:
             $ref: "#/$defs/simpleDate"
+          conferenceStart:
+            $ref: "#/$defs/simpleDate"
+          conferenceEnd:
+            $ref: "#/$defs/simpleDate"
       identifiers:
         type: object
         additionalProperties: false
@@ -200,7 +206,7 @@ $defs:
     required: [name, auth]
     properties:
       name:
-        type: string
+        type: [string, "null"]
         pattern: ^[A-Za-z][a-z]*$
       rank:
         type: string
@@ -291,6 +297,8 @@ $defs:
         default: false
       specimens:
         $ref: "phylogeny#/$defs/specimen"
+      moved:
+        $ref: taxonomyTree
     unevaluatedProperties: false
   phylogeny:
     type: object

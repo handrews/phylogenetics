@@ -12,7 +12,13 @@ publications:
     notes: Conference proceedings
     editors:
     - candia carnevali
-    - bonosoro
+    - bonasoro
+  e-tampa-bay:
+    name: "Echinoderms: Proceedings of the International Conference, Tampa Bay"
+    editors:
+    - lawrence
+    publisher: A.A.Balkema
+    place: Rotterdam
   geo-et-palaeo:
     name: Geologica et Palaeontologica
   geomag:
@@ -33,12 +39,20 @@ publications:
     name: Proceedings of the Royal Society B
   science-new-series:
     name: Science (New Series)
+  sp-pub-harvard:
+    name: Special Publication of the Museum of Comparative Zoology, Harvard University
   treatise-s:
     name: "Treatise on Invertebrate Paleontology, Part S: Echinodermata 1"
+    editors:
+    - moore
   treatise-t:
     name: "Treatise on Invertebrate Paleontology, Part T: Echinodermata 2"
+    editors:
+    - moore
   treatise-u:
     name: "Treatise on Invertebrate Paleontology, Part U: Echinodermata 3"
+    editors:
+    - moore
   vestnik:
     name: Věstník Ústředního ústavu geologického
 articles:
@@ -63,8 +77,6 @@ articles:
     authors:
     - durham
     - caster
-    editors:
-    - moore
     pages:
     - U131
     - U136
@@ -77,8 +89,6 @@ articles:
       year: 1966
     authors:
     - regnéll
-    editors:
-    - moore
     pages:
     - U136
     - U173
@@ -91,8 +101,6 @@ articles:
       year: 1966
     authors:
     - ubaghs
-    editors:
-    - moore
     pages:
     - U174
     - U188
@@ -105,8 +113,6 @@ articles:
       year: 1966
     authors:
     - kesling
-    editors:
-    - moore
     pages:
     - U188
     - U210
@@ -125,8 +131,6 @@ articles:
     - melville
     - pawson
     - wagner
-    editors:
-    - moore
     pages:
     - U211
     - U640
@@ -141,8 +145,6 @@ articles:
     - frizzell
     - exline
     - pawson
-    editors:
-    - moore
     pages:
     - U641
     - U672
@@ -155,8 +157,6 @@ articles:
       year: 1967
     authors:
     - ubaghs
-    editors:
-    - moore
     pages:
     - S3
     - S60
@@ -169,8 +169,6 @@ articles:
       year: 1967
     authors:
     - kesling
-    editors:
-    - moore
     pages:
     - S85
     - S267
@@ -183,8 +181,6 @@ articles:
       year: 1967
     authors:
     - kesling
-    editors:
-    - moore
     pages:
     - S268
     - S288
@@ -197,8 +193,6 @@ articles:
       year: 1967
     authors:
     - fay
-    editors:
-    - moore
     pages:
     - S289
     - S292
@@ -211,8 +205,6 @@ articles:
       year: 1967
     authors:
     - fay
-    editors:
-    - moore
     pages:
     - S293
     - S296
@@ -226,8 +218,6 @@ articles:
     authors:
     - fay
     - wanner
-    editors:
-    - moore
     pages:
     - S396
     - S455
@@ -240,8 +230,6 @@ articles:
       year: 1967
     authors:
     - ubaghs
-    editors:
-    - moore
     pages:
     - S455
     - S495
@@ -254,8 +242,6 @@ articles:
       year: 1967
     authors:
     - ubaghs
-    editors:
-    - moore
     pages:
     - S495
     - S565
@@ -268,8 +254,6 @@ articles:
       year: 1967
     authors:
     - ubaghs
-    editors:
-    - moore
     pages:
     - S565
     - S581
@@ -282,8 +266,6 @@ articles:
       year: 1967
     authors:
     - caster
-    editors:
-    - moore
     pages:
     - S581
     - S627
@@ -296,8 +278,6 @@ articles:
       year: 1967
     authors:
     - durham
-    editors:
-    - moore
     pages:
     - S627
     - S631
@@ -310,8 +290,6 @@ articles:
       year: 1967
     authors:
     - durham
-    editors:
-    - moore
     pages:
     - S631
     - S634
@@ -324,8 +302,6 @@ articles:
       year: 1967
     authors:
     - ubaghs
-    editors:
-    - moore
     pages:
     - S634
     - S637
@@ -369,6 +345,30 @@ articles:
       day: 19
     identifiers:
       jstor: 1727422
+  1973_sprinkle:
+    title: Morphology and Evolution of Blastozoan Echinoderms
+    journal: sp-pub-harvard
+    authors:
+    - sprinkle
+    pubDate:
+      year: 1973
+    identifiers:
+      url: https://archive.org/details/morphologyevolut00spri/mode/2up
+  1982_broadhead:
+    title: Reappraisal of Class Eocrinoidea (Echinodermata)
+    book: e-tampa-bay
+    authors:
+    - broadhead
+    pubDate:
+      year: 1982
+    processDates:
+      conferenceStart: 1981-09-14
+      conferenceEnd: 1981-09-17
+    pages:
+    - 125
+    - 131
+    identifiers:
+      url: https://www.google.com/books/edition/Echinoderms/Vw9mCCLAMtQC?hl=en&gbpv=1
   1985_fatka_kordule:
     title: Etoctenocystis bohemica gen. et sp. nov. - new Ctenocystoid from Czechoslovakia (Echinodermata, Middle Cambrian)
     complete:

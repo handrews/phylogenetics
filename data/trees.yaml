@@ -41,9 +41,9 @@
         children:
         - taxon: astrocystites
           children:
-          - taxon: ottawaensis
+          - taxon: ottawaensis_whiteaves_1897
             type: true
-          - taxon: distans
+          - taxon: distans_webby_1968
             new: true
             specimens:
               holotype: USGD 2302
@@ -69,7 +69,7 @@
         - taxon: ctenocystis
           new: true
           children:
-          - taxon: utahensis-r-s-1969
+          - taxon: utahensis_robison_sprinkle_1969
             new: true
             type: true
             specimens:
@@ -87,12 +87,12 @@
     - taxon: etoctenocystis
       new: true
       children:
-      - taxon: bohemica
+      - taxon: bohemica_fatka_kordule_1985
         type: true
         new: true
         synonyms:
         - - taxon: acanthocystites
-          - taxon: briareus
+          - taxon: briareus_barrande_1887
         specimens:
           holotype: OF 002
 1985_jell_burrett_banks:
@@ -103,9 +103,9 @@
       children:
       - taxon: cambraster
         children:
-        - taxon: cannati
+        - taxon: cannati_miquel_1894
           type: true
-        - taxon: tastudorum
+        - taxon: tastudorum_jell_burrett_banks_1985
           new: true
           specimens:
             holotype: UTGD122593
@@ -135,7 +135,7 @@
       - taxon: edriodiscus
         new: true
         children:
-        - taxon: primotica
+        - taxon: primotica_henderson_shergold_1971
           type: true
           specimens:
             holotype: CPCl1395
@@ -148,9 +148,9 @@
       children:
       - taxon: ctenocystis
         children:
-        - taxon: utahensis-r-s-1969
+        - taxon: utahensis_robison_sprinkle_1969
           type: true
-        - taxon: jagoi
+        - taxon: jagoi_jell_burrett_banks_1985
           new: true
           specimens:
             holotype: UTGD122594
@@ -166,7 +166,7 @@
       - taxon: ridersia
         new: true
         children:
-        - taxon: watsonae
+        - taxon: watsonae_jell_burrett_banks_1985
           type: true
           new: true
           specimens:
@@ -214,9 +214,9 @@
           children:
           - taxon: totiglobus
             children:
-            - taxon: nimius
+            - taxon: nimius_bell_sprinkle_1978
               type: true
-            - taxon: lloydi
+            - taxon: lloydi_sprinkle_1985
               provisional: true
               new: true
               specimens:
@@ -236,7 +236,7 @@
         children:
         - taxon: ctenocystis
           children:
-          - taxon: smithi
+          - taxon: smithi_ubaghs_1987
             new: true
   - taxon: stylophora
     notes: Unclear if higher tree present
@@ -244,7 +244,7 @@
     - taxon: ceratocystis
       notes: Unclear if intervening taxa present
       children:
-      - taxon: vizcainoi
+      - taxon: vizcainoi_ubaghs_1987
         new: true
   - taxon: eocrinoidea
     notes: Unclear if higher tree present
@@ -252,7 +252,7 @@
     - taxon: gogia
       notes: Unclear if intervening taxa present
       children:
-      - taxon: gondi
+      - taxon: gondi_ubaghs_1987
         new: true
   - taxon: glyptocystitida
     notes: Unclear if higher tree present
@@ -261,7 +261,7 @@
       notes: Unclear if intervening taxa present
       provisional: true
       children:
-      - taxon: languedocianus
+      - taxon: languedocianus_ubaghs_1987
         provisional: true
         new: true
 1988_ubaghs_robison:
@@ -277,7 +277,7 @@
           children:
           - taxon: ctenocystis
             children:
-            - taxon: colodon
+            - taxon: colodon_ubaghs_robison_1988
               new: true
               specimens:
                 holotype: USNM 423874
@@ -289,7 +289,7 @@
             children:
             - taxon: castericystis
               children:
-              - taxon: sprinklei
+              - taxon: sprinklei_ubaghs_robison_1988
                 provisional: true
                 new: true
                 specimens:
@@ -302,9 +302,9 @@
             children:
             - taxon: cothurnocystis
               children:
-              - taxon: elizae
+              - taxon: elizae_bather_1913
                 type: true
-              - taxon: bifida
+              - taxon: bifida_ubaghs_robison_1988
                 provisional: true
                 new: true
                 specimens:
@@ -322,7 +322,7 @@
       - taxon: jugoszovia
         new: true
         children:
-        - taxon: archaeocyathoides
+        - taxon: archaeocyathoides_dzik_orłowski_1995
           type: true
           new: true
 1999_domínguez alonso:
@@ -338,7 +338,7 @@
         - taxon: courtessolea
           new: true
           children:
-          - taxon: moncereti
+          - taxon: moncereti_domínguez alonso_1999
             type: true
             new: true
     - taxon: pleurozonida
@@ -348,7 +348,7 @@
         children:
         - taxon: jugoszovia
           children:
-          - taxon: archaeocyathoides
+          - taxon: archaeocyathoides_dzik_orłowski_1995
             type: true
     - taxon: azonida
       new: true
@@ -359,7 +359,7 @@
         - taxon: conollia
           new: true
           chilren:
-          - taxon: staffordi
+          - taxon: staffordi_domínguez alonso_1999
             type: true
             new: true
     - taxon: dizonida
@@ -371,29 +371,31 @@
         - taxon: pembrocystis
           new: true
           children:
-          - taxon: gallica
+          - taxon: gallica_domínguez alonso_1999
             type: true
             new: true
       - taxon: ctenocystidae
         children:
         - taxon: etoctenocystis
           children:
-          - taxon: bohemica
+          - taxon: bohemica_fatka_kordule_1985
             type: true
         - taxon: gilcidia
           new: true
           children:
-          - taxon: smithi
-            moved: true
-          - taxon: jagoi
-            moved: true
-          - taxon: viviannae
+          - taxon: smithi_ubaghs_1987
+            moved:
+              taxon: ctenocystis
+          - taxon: jagoi_jell_burrett_banks_1985
+            moved:
+              taxon: ctenocystis
+          - taxon: viviannae_domínguez alonso_1999
             new: true
         - taxon: ctenocystis
           children:
-          - taxon: utahensis-r-s-1969
+          - taxon: utahensis_robison_sprinkle_1969
             type: true
-          - taxon: colodon
+          - taxon: colodon_ubaghs_robison_1988
 2010_müller_hahn:
   taxonomies:
   - taxon: isorophida
@@ -403,13 +405,13 @@
       - taxon: pyrgocystis
         type: true
         children:
-        - taxon: sardesoni
+        - taxon: sardesoni_bather_1915
           type: true
-        - taxon: volborthi
+        - taxon: volborthi_hecker_1939
           provisional: true # with reservations
-        - taxon: petalus
+        - taxon: petalus_holloway_jell_1983
           provisional: true # uncertain
-        - taxon: postpetalus
+        - taxon: postpetalus_müller_hahn_2010
           provisional: true # following convention of petalus
           new: true
           specimens:
@@ -424,29 +426,29 @@
         - taxon: postibulla
           type: true
           children:
-          - taxon: legrandensis
-          - taxon: lukei
-          - taxon: alabamensis
-          - taxon: westergardi
-          - taxon: jasperensis
+          - taxon: legrandensis_miller_gurley_1894
+          - taxon: lukei_bell_petersen_1976
+          - taxon: alabamensis_sumrall_garbisch_pope_2000
+          - taxon: westergardi_sumrall_sprinkle_bonem_2006
+          - taxon: jasperensis_harker_1953
             provisional: true
-          - taxon: alpinensis
+          - taxon: alpinensis_bassler_1936
             provisional: true
         - taxon: parapostibulla
           children:
-          - taxon: murphyi
-          - taxon: hybolopus
-          - taxon: neglecta
-            moved: true
-            from: postibulla
-          - taxon: graysoni
+          - taxon: murphyi_sumrall_garbisch_pope_2000
+          - taxon: hybolopus_fraunfelder_utgaard_1970
+          - taxon: neglecta_smith.a.b_1983
+            moved:
+              taxon: postibulla
+          - taxon: graysoni_sumrall_sprinkle_bonem_2006
         - taxon: pyrgopostibulla
           children:
-          - taxon: belli
+          - taxon: belli_sumrall_brett_cornell_2006
         - taxon: eopostibulla
           new: true
           children:
-          - taxon: pustulata
+          - taxon: pustulata_müller_hahn_2010
             type: true
             new: true
             specimens:
@@ -461,26 +463,26 @@
         - taxon: agelacrinites
           type: true
           children:
-          - taxon: hamiltonensis
+          - taxon: hamiltonensis_vanuxem_1842
             type: true
-          - taxon: blairi
-          - taxon: curvatus
-          - taxon: rhenanus
+          - taxon: blairi_miller_1894
+          - taxon: curvatus_grigo_1995
+          - taxon: rhenanus_roemer_1851
             provisional: true
-          - taxon: taunicus
-          - taxon: thor
+          - taxon: taunicus_rösler_1953
+          - taxon: thor_müller_hahn_2010
             new: true
             specimens:
               holotype: PWL 2009/5023-LS
         - taxon: krama
           children:
-          - taxon: devonica
+          - taxon: devonica_bassler_1936
             type: true
-          - taxon: hispanica
+          - taxon: hispanica_müller_hahn_2010
             new: true
             specimens:
               holotype: DPO 14001
-          - taxon: germanica
+          - taxon: germanica_müller_hahn_2010
             new: true
             specimens:
               holotype: PWL 2009/5024-LS
@@ -496,7 +498,7 @@
               - PWL 2009/5032-LS
               - RS 21
               - M 2514
-          - taxon: odin
+          - taxon: odin_müller_hahn_2010
             new: true
             specimens:
               holotype: PWL 2009/5033sub1-LS
@@ -505,7 +507,7 @@
         - taxon: parakrama
           new: true
           children:
-          - taxon: grebelae
+          - taxon: grebelae_müller_hahn_2010
             type: true
             new: true
             specimens:
@@ -537,7 +539,7 @@
             - taxon: turbanicystis
               new: true
               children:
-              - taxon: inflatus
+              - taxon: inflatus_parsley_zhao.y_2010
                 new: true
                 type: true
                 specimens:
@@ -558,7 +560,7 @@
         - taxon: kailidiscus
           new: true
           children:
-          - taxon: chinensis
+          - taxon: chinensis_zhao.y_sumrall_parsley_peng.j_2010
             type: true
             new: true
             specimens:
@@ -583,7 +585,7 @@
   taxonomies:
     - taxon: echinodermata
       children:
-      - taxon: rhombifera
+      - taxon: rhombifera-class
         rank: Plesion
         children:
         - taxon: dibrachycystidae
@@ -592,7 +594,7 @@
           - taxon: dibrachycystis
             new: true
             children:
-            - taxon: purujoensis
+            - taxon: purujoensis_zamora_smith.a.b_2012
               new: true
               type: true
               specimens:
@@ -602,9 +604,9 @@
           - taxon: vizcainoia
             new: true
             children:
-            - taxon: languedocianus
+            - taxon: languedocianus_ubaghs_1987
               type: true
-            - taxon: moncaiensis
+            - taxon: moncaiensis_zamora_smith.a.b_2012
               new: true
               specimens:
                 holotype: MPZ2011/7
@@ -642,7 +644,7 @@
       - taxon: helicocystis
         new: true
         children:
-        - taxon: moroccoensis
+        - taxon: moroccoensis_smith.a.b_zamora_2013
           new: true
           type: true
           specimens:
@@ -680,9 +682,9 @@
       children:
       - taxon: conollia
         children:
-        - taxon: staffordi
+        - taxon: staffordi_domínguez alonso_1999
           type: true
-        - taxon: sporranoides
+        - taxon: sporranoides_rahman_stewart_zamora_2015
           new: true
           specimens:
             holotype: GLAHM 131255/2
@@ -719,7 +721,7 @@
     children:
     - taxon: blastozoa
       children:
-      - taxon: rhombifera
+      - taxon: rhombifera-class
         quoted: true
         children:
         - taxon: glyptocystitida
@@ -727,7 +729,7 @@
           - taxon: sanducystis
             new: true
             children:
-            - taxon: sinensis
+            - taxon: sinensis_zamora_sumrall_zhu.x_lefebvre_2017
               new: true
               type: true
               specimens:
@@ -780,7 +782,7 @@
           - taxon: pahvanticystis
             new: true
             children:
-            - taxon: utahensis-l-l-2018
+            - taxon: utahensis_lefebvre_lerosey-aubril_2018
               new: true
               type: true
               specimens:
@@ -803,9 +805,9 @@
         children:
         - taxon: totiglobus
           children:
-          - taxon: nimius
+          - taxon: nimius_bell_sprinkle_1978
             type: true
-          - taxon: spencensis
+          - taxon: spencensis_wen.r_babcock_peng.j_robison_2019
             new: true
             specimens:
               holotype: [KUMIP 49294A, KUMIP 49294B]
@@ -822,7 +824,7 @@
         - taxon: athenacrinus
           new: true
           children:
-          - taxon: broweri
+          - taxon: broweri_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler_2020
             new: true
             type: true
             specimens:
@@ -833,142 +835,143 @@
   assumptions:
   - taxon: aethocrinus
     children:
-    - taxon: moorei
+    - taxon: moorei_ubaghs_1969
   - taxon: alphacrinus
     children:
-    - taxon: mansfieldi
+    - taxon: mansfieldi_guensburg_2010
   - taxon: apektocrinus
     children:
-    - taxon: ubaghsi
+    - taxon: ubaghsi_guensburg_sprinkle_2009
   - taxon: camptostroma
     children:
-    - taxon: roddyi
+    - taxon: roddyi_ruedemann_1933
   - taxon: carabocrinus
     children:
-    - taxon: treadwelli
+    - taxon: treadwelli_sinclair_1945
   - taxon: ceratocystis
     children:
-    - taxon: perneri
+    - taxon: perneri_jaekel_1901
   - taxon: eknomocrinus
     children:
-    - taxon: wahwahensis
+    - taxon: wahwahensis_guensburg_sprinkle_2003
   - taxon: eumorphocystis
     children:
-    - taxon: multiporata
+    - taxon: multiporata_branson_peck_1940
   - taxon: glenocrinus
     children:
-    - taxon: globularis
+    - taxon: globularis_guensburg_sprinkle_2003
   - taxon: gogia
     children:
-    - taxon: kitchnerensis
+    - taxon: kitchnerensis_sprinkle_1973
   - taxon: hybocrinus
     children:
-    - taxon: nitidus
+    - taxon: nitidus_sinclair_1945
   - taxon: kailidiscus
     children:
-    - taxon: chinensis
+    - taxon: chinensis_zhao.y_sumrall_parsley_peng.j_2010
   - taxon: kinzercystis
     children:
-    - taxon: durhami
+    - taxon: durhami_sprinkle_1973
   - taxon: lepidocystis
     children:
-    - taxon: wanneri
+    - taxon: wanneri_foerste_1938
   - taxon: macrocystella
     children:
-    - taxon: mariae
+    - taxon: mariae_callaway_1877
   - taxon: pseudedriophus
     children:
-    - taxon: guensburgi
+    - taxon: guensburgi_sprinkle_sumrall_2015
   - taxon: rhopalocystis
     children:
-    - taxon: destombesi
+    - taxon: destombesi_ubaghs_1963
   - taxon: stromatocystites
     children:
-    - taxon: pentangularis
+    - taxon: pentangularis_pompeckj_1896
   - taxon: titanocrinus
     children:
-    - taxon: sumralli
+    - taxon: sumralli_guensburg_sprinkle_2003
   - taxon: totiglobus
+    quoted: true
     children:
-    - taxon: lloydi
+    - taxon: lloydi_sprinkle_1985
       provisional: true
   phylogenies:
   - treeType: strict consensus
     tree:
       children:
-      - taxon: pentangularis
+      - taxon: pentangularis_pompeckj_1896
         outgroup: true
-      - taxon: chinensis
+      - taxon: chinensis_zhao.y_sumrall_parsley_peng.j_2010
       - children:
-        - taxon: roddyi
-        - taxon: perneri
+        - taxon: roddyi_ruedemann_1933
+        - taxon: perneri_jaekel_1901
         - children:
           - children:
             - children:
               - children:
-                - taxon: moorei
+                - taxon: moorei_ubaghs_1969
                 - children:
                   - children:
-                    - taxon: mansfieldi
-                    - taxon: broweri
+                    - taxon: mansfieldi_guensburg_2010
+                    - taxon: broweri_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler_2020
                   - children:
-                    - taxon: treadwelli
-                    - taxon: nitidus
-              - taxon: ubaghsi
-            - taxon: wahwahensis
-          - taxon: globularis
-          - taxon: sumralli
+                    - taxon: treadwelli_sinclair_1945
+                    - taxon: nitidus_sinclair_1945
+              - taxon: ubaghsi_guensburg_sprinkle_2009
+            - taxon: wahwahensis_guensburg_sprinkle_2003
+          - taxon: globularis_guensburg_sprinkle_2003
+          - taxon: sumralli_guensburg_sprinkle_2003
       - children:
-        - taxon: lloydi
-        - taxon: guensburgi
+        - taxon: lloydi_sprinkle_1985
+        - taxon: guensburgi_sprinkle_sumrall_2015
       - children:
-        - taxon: durhami
-        - taxon: wanneri
+        - taxon: durhami_sprinkle_1973
+        - taxon: wanneri_foerste_1938
         - children:
-          - taxon: kitchnerensis
+          - taxon: kitchnerensis_sprinkle_1973
           - children:
-            - taxon: destombesi
-            - taxon: mariae
-            - taxon: multiporata
+            - taxon: destombesi_ubaghs_1963
+            - taxon: mariae_callaway_1877
+            - taxon: multiporata_branson_peck_1940
   - treeType: 50% majority rule consensus
     tree:
       children:
-      - taxon: pentangularis
+      - taxon: pentangularis_pompeckj_1896
         outgroup: true
       - children:
-        - taxon: chinensis
+        - taxon: chinensis_zhao.y_sumrall_parsley_peng.j_2010
         - children:
-          - taxon: lloydi
-          - taxon: guensburgi
+          - taxon: lloydi_sprinkle_1985
+          - taxon: guensburgi_sprinkle_sumrall_2015
       - children:
-        - taxon: roddyi
-        - taxon: perneri
+        - taxon: roddyi_ruedemann_1933
+        - taxon: perneri_jaekel_1901
         - children:
           - children:
             - children:
               - children:
-                - taxon: moorei
+                - taxon: moorei_ubaghs_1969
                 - children:
                   - children:
-                    - taxon: mansfieldi
-                    - taxon: broweri
+                    - taxon: mansfieldi_guensburg_2010
+                    - taxon: broweri_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler_2020
                   - children:
-                    - taxon: treadwelli
-                    - taxon: nitidus
-              - taxon: ubaghsi
-            - taxon: wahwahensis
+                    - taxon: treadwelli_sinclair_1945
+                    - taxon: nitidus_sinclair_1945
+              - taxon: ubaghsi_guensburg_sprinkle_2009
+            - taxon: wahwahensis_guensburg_sprinkle_2003
           - children:
-            - taxon: globularis
-            - taxon: sumralli
+            - taxon: globularis_guensburg_sprinkle_2003
+            - taxon: sumralli_guensburg_sprinkle_2003
       - children:
-        - taxon: durhami
-        - taxon: wanneri
+        - taxon: durhami_sprinkle_1973
+        - taxon: wanneri_foerste_1938
         - children:
-          - taxon: kitchnerensis
+          - taxon: kitchnerensis_sprinkle_1973
           - children:
-            - taxon: destombesi
-            - taxon: mariae
-            - taxon: multiporata
+            - taxon: destombesi_ubaghs_1963
+            - taxon: mariae_callaway_1877
+            - taxon: multiporata_branson_peck_1940
   - treeType: evolutionary tree
     tree:
       children:
@@ -996,7 +999,7 @@
             - taxon: glenocrinus
             - taxon: titanocrinus
       - children:
-        - taxon: sprinkleoglobus
+        - taxon: lloydi_sprinkle_1985
           as: totiglobus
         - taxon: pseudedriophus
       - bracket: blastozoa
@@ -1021,7 +1024,7 @@
         - taxon: yorkicystis
           new: true
           children:
-          - taxon: haefneri
+          - taxon: haefneri_zamora_rahman_sumrall_gibson_thompson_2022
             new: true
             type: true
             specimens:
@@ -1095,11 +1098,12 @@
           provisional: true
           new: true
           children:
-          - taxon: lloydi
+          - taxon: lloydi_sprinkle_1985
             type: true
-            moved: true
-            from: totiglobus
-          - taxon: extenuatus
+            moved:
+              taxon: totiglobus
+              quoted: true
+          - taxon: extenuatus_zhao.j_rahman_zamora_chen.a_cong.p_2022
             new: true
             specimens:
               holotype: YKLP 13397
@@ -1116,11 +1120,11 @@
         - taxon: sprinkleoglobus
           provisional: true
           children:
-          - taxon: lloydi
+          - taxon: lloydi_sprinkle_1985
             type: true
-          - taxon: spencensis
-            moved: true
-            from: totiglobus
+          - taxon: spencensis_wen.r_babcock_peng.j_robison_2019
+            moved:
+              taxon: totiglobus
             modifier: n. comb.
             specimens:
               paratypes:
