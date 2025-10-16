@@ -258,7 +258,7 @@ P Echinodermata (Klein 1734)
           g Pareocrinus (Yakovlev 1956)
             s ljubzovi (Yakovlev 1956) T
           g Eustypocystis (Sprinkle 1973) N
-            s minor (Sprinkle 1973) NT
+            s mthree_inor (Sprinkle 1973) NT
               HT MCZ 719
               PT MCZ 720
               PT MCZ 721
@@ -292,27 +292,27 @@ P Echinodermata (Klein 1734)
       O _indeterminate_one_
         F Trachelocrinidae (Sprinkle 1973) N? # Eocrinoids?
           g Trachelocrinus (Ulrich 1929)
-            s resseri (Ulrich 1929)
+            s resseri (Ulrich 1929) T
               HT USNM 80490
       O _indeterminate_two_
         F Cryptocrinitidae (Bassler 1938) ? # Eocrinoids?
           g Cryptocrinites (von Buch 1840)
             s laevis (Pander 1830) T
-        F _indeterminate_
+        F _indeterminate_three_
           g Bockia (Hecker 1938)
             s neglecta (Hecker 1938) T
       O _indeterminate_three_
         F Lingulocystidae (Ubaghs 1960)
           g Lingulocystis (Thoral 1935)
             s elongata (Thoral 1935) T
-        F _indeterminate_three_
+        F _indeterminate_four_
           g Cardiocystites (Barrande 1887)
             s bohemicus (Barrande 1887) T
               TT EE 39 # casts of two known type specimens- what kind of type?
               TT EE 51 # casts of two known type specimens- what kind of type?
         F Rhipidocystidae (Jaekel 1901)
           g Rhipidocystis (Jaekel 1901)
-            s gigas (Jaekal 1901) T
+            s gigas (Jaekel 1901) T
           g Batherocystis (Bassler 1950)
             s appressa (Bassler 1950) T
           g Petalocystites (Sprinkle 1973) N

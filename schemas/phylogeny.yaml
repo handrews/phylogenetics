@@ -299,6 +299,21 @@ $defs:
         $ref: "phylogeny#/$defs/specimen"
       moved:
         $ref: taxonomyTree
+      cfTaxon:
+        type: string
+      openTaxon:
+        type: string
+      auth:
+        $comment: overrides taxon field
+        type: array
+        minItems: 1
+        items:
+          type: string
+      year:
+        $comment: overrides taxon field
+        type: integer
+        minimum: 1700
+        maximum: 2030 # Fragile!  But helpful for now.  Apologies to the future.
     unevaluatedProperties: false
   phylogeny:
     type: object

@@ -80,6 +80,465 @@
               - USNM 163255
               - USNM 163256
               - USNM 163257
+1973_sprinkle:
+  taxonomies:
+  - taxon: echinodermata
+    auth: [Klein]
+    year: 1734
+    children:
+    - taxon: blastozoa
+      new: true
+      children:
+      - taxon: eocrinoidea
+        children:
+        - taxon: imbricata
+          new: true
+          synonyms:
+          - taxon: lepidocystoidea
+            reason: re-ranked
+          children:
+          - taxon: lepidocystis
+            children:
+            - taxon: wanneri_foerste_1938
+              type: true
+              specimens:
+                holotype: USNM 90773 # two counterparts
+                paratypes:
+                - USNM 90773A # two counterparts
+                - USNM 90773B
+                - USNM 90773C1
+                - USNM 90773C2
+                - USNM 90773C3
+                - MCZ 591  # ten specimens from SH-1
+                - MCZ 592  # three specimens from EM-1
+                - MCZ 593  # many new unstudied specimens from SH-2
+            - cfTaxoon: wanneri_foerste_1938
+              new: true
+              specimens:
+                unknowntypes:
+                - MCZ 628A
+                - MCZ 628B
+                - MCZ 629A
+                - MCZ 629B
+                - PE-199
+                - PE-199-A
+          - taxon: kinzercystis
+            new: true
+            children:
+            - taxon: durhami_sprinkle_1973
+              type: true
+              new: true
+              specimens:
+                holotype: MCZ 581 # two counterparts
+                paratypes:
+                - MCZ 582
+                - MCZ 583
+                - MCZ 584
+                - MCZ 585
+                - MCZ 586
+                - MCZ 587
+                - MCZ 729
+        - openTaxon: unnamed-order-1_sprinkle_1973
+          children:
+          - taxon: eocrinidae
+            children:
+            - taxon: gogia
+              children:
+              - taxon: prolifica_walcott_1917
+                type: true
+                specimens:
+                  lectotype: USNM 64350
+                  plesiotypes:
+                  - MCZ 656
+                  - MCZ 657
+                  - MCZ 658
+                  - MCZ 659
+                  - MCZ 660
+                  - MCZ 661
+                  - MCZ 662
+                  - MCZ 663
+                  - MCZ 664
+                  - MCZ 665
+                  - MCZ 668
+                  - NYSM 12758
+                  - NYSM 12759
+              - taxon: longidactylus_walcott_1886
+                specimens:
+                  lectotype: USNM 15315
+                  syntype: USNM 15315
+                  plesiotypes:
+                  - AMNH 20001
+                  - AMNH 20002
+                  - AMNH 20003
+                  - MCZ 691
+                  - MCZ 692
+                  - MCZ 693
+                  - MCZ 694
+                  - MCZ 695
+                  - MCZ 696
+                  - MCZ 697
+                  - MCZ 698
+                  - MCZ 699
+                  - MCZ 700
+                  - MCZ 700
+                  - MCZ 701
+                  - MCZ 702
+                  - MCZ 703
+                  - MCZ 704
+                  - MCZ 705
+                  - GCM 2641
+                  - E-3340 # cast MCZ 669
+                  - MCZ 669
+                  - MCZ 670
+              - taxon: multibrachiatus_kirk_1945
+                specimens:
+                  holotype: USNM 108556a # two counterparts
+                  paratypes:
+                  -  USNM 108556b # two counterparts
+                  topotypes:
+                  - USNM 165425  # topotype?  (? mark in orig text)
+              - taxon: spiralis_robison_1965
+                specimens:
+                  holotype: USNM 139550
+                  paratypes:
+                  - USNM 139551
+                  - USNM 139552
+                  - USNM 139553
+                  - USNM 139554
+                  - USNM 139555
+                  - USNM 139556
+                  - USNM 139557
+                  - USNM 139558
+                  - USNM 139559
+                  - USNM 139560
+                  - USNM 139561
+                  - USNM 139562
+                  - USNM 139563
+                  - USNM 139564
+                  - USNM 139565
+                  plesiotypes:
+                  - MCZ 706
+                  - MCZ 707
+                  - MCZ 708
+                  - MCZ 709
+                  - MCZ 710
+                  - MCZ 711
+                  - MCZ 712
+                  - MCZ 713
+                  - MCZ 714
+                  - MCZ 715
+                  - MCZ 716
+                  - MCZ 717
+                  - MCZ 730
+              - taxon: granulosa_robison_1965
+                specimens:
+                  holotype: UU 1001
+                  plesiotypes:
+                  - MCZ 732
+                  - MCZ 733
+                  - MCZ 734
+                  - MCZ 735
+                  - MCZ 736
+                  - MCZ 737
+                  - MCZ 738
+                  - UU 1010p
+                  - UU 1010w
+                  - UU 1010x
+                  - UU 1011d
+                  - UU 1040p
+                  - USNM 165433
+                  - USNM 165434 
+                  - USNM 165435
+                  - USNM 165436
+                  - PE 214
+                  - ISU 1440
+                  - MCZ 739
+              - taxon: palmeri_sprinkle_1973
+                new: true
+                specimens:
+                  holotype: USNM 165418 # (USNM 165418A and USNM 165418B)
+                  paratypes:
+                  - USNM 165414
+                  - USNM 165415
+                  - USNM 165416
+                  - USNM 165417
+                  - USNM 165419
+                  - USNM 165420
+                  - MCZ 676
+                  - MCZ 677
+                  - MCZ 678
+                  - MCZ 679
+                  - MCZ 680
+                  - MCZ 681
+                  - MCZ 682
+                  - MCZ 683
+                  - MCZ 684
+                  - MCZ 685
+                  - MCZ 686
+                  - MCZ 687
+                  - MCZ 688
+                  - MCZ 689
+                  - MCZ 690
+              - taxon: guntheri_sprinkle_1973
+                new: true
+                specimens:
+                  holotype: UU 1010a
+                  paratypes:
+                  - UU 1010c
+                  - UU 1010t
+                  - UU 1019b
+                  - UU 1019h
+                  - UU 1019s
+                  - UU 1040b
+                  - UU 1040f
+                  - MCZ 739
+                  - MCZ 740
+                  - MCZ 741
+              - taxon: kitchnerensis_sprinkle_1973
+                new: true
+                specimens:
+                  holotype: GSC 25934
+                  paratypes:
+                  - GSC 25935
+                  - GSC 25936
+                  - GSC 25937
+                  - GSC 25938
+                  - GSC 25939
+                  - GSC 25940
+                  - GSC 25941
+                  - GSC 25942
+                  - GSC 25943
+                  - GSC 25944
+                  - GSC 25945
+                  - GSC 25946
+                  - GSC 25947
+                  - GSC 25948
+                  - GSC 25949
+                  - GSC 25950
+                  - GSC 25951
+                  - GSC 25952
+                  - GSC 25953
+                  - GSC 25954
+                  - GSC 25955
+                  - GSC 25956
+                  - GSC 25957
+                  - GSC 25958
+                  - GSC 25959
+                  - GSC 25960
+                  - GSC 25961
+                  - GSC 10088a
+                  - GSC 10088b
+                  - GSC 10088c
+                  - GSC 10088d
+                  - GSC 10088e
+                  - GSC 10088f
+                  - GSC 10088g
+                  - GSC 10088h
+                  - UC 24691
+              - taxon: hobbsi_sprinkle_1973
+                new: true
+                specimens:
+                  holotype: MCZ 631
+                  paratypes:
+                  - MCZ 632
+                  - MCZ 633
+                  - MCZ 634
+                  - MCZ 635
+                  - MCZ 636
+                  - MCZ 637
+                  - MCZ 638
+                  - MCZ 639
+                  - MCZ 640
+                  - MCZ 641
+                  - MCZ 642
+                  - MCZ 643
+              - taxon: radiata_sprinkle_1973
+                new: true
+                provisional: true
+                specimens:
+                  holotype: USNM 165399
+                  paratypes:
+                  - USNM 165400
+                  - USNM 165401
+                  - USNM 165402
+                  - USNM 165403 # ?
+                  - USNM 165404 # ?
+                  - GSC 25954
+              - openTaxon: sp-1_sprinkle_1973
+                specimens:
+                  holotype: USNM 165411
+              - openTaxon: sp-2_sprinkle_1973
+                specimens:
+                  holotype: USNM 63712
+            - taxon: acanthocystites
+              children:
+              - taxon: briareus_barrande_1887
+                type: true
+            - taxon: akadocrinus
+              children:
+              - taxon: jani_prokop_1962
+                synonyms:
+                - taxon: nuntius
+                  note: A. nuntius
+                specimens:
+                  unknowntypes:
+                  - E62
+                  - E40
+                  - E41
+          - taxon: lichenoididae
+            children:
+            - taxon: lichenoides
+              children:
+              - taxon: priscus_barrande_1846
+                type: true
+                specimens:
+                  unknowntypes:
+                  - E 11
+                  - E 12
+                  - E 17
+                  - E 21
+                  - E 25
+                  - E 26
+                  - E 27
+                  - E 66
+                  - E 70A
+                  - BC 141A
+          - taxon: rhopalocystidae
+            children:
+            - taxon: rhopalocystis
+              children:
+              - taxon: destombesi_ubaghs_1963
+                type: true
+        - openTaxon: unnamed-order-2_sprinkle_1973
+          children:
+          - openTaxon: indeterminate-family-1_sprinkle_1973
+            children:
+            - taxon: pareocrinus
+              children:
+              - taxon: ljubzovi_yakovlev_1956
+                type: true
+            - taxon: eustypocystis
+              new: true
+              children:
+              - taxon: minor_sprinkle_1973
+                type: true
+                new: true
+                specimens:
+                  holotype: MCZ 719
+                  paratypes:
+                  - MCZ 720
+                  - MCZ 721
+                  - MCZ 722
+                  - MCZ 723
+                  - MCZ 724
+                  - MCZ 725
+                  - MCZ 726
+                  - MCZ 727
+                  - MCZ 728
+                  - USNM 165423
+                  - USNM 165424
+            - taxon: nolichuckia
+              provisional: true
+              new: true
+              children:
+              - taxon: casteri_sprinkle_1973
+                type: true
+                new: true
+                specimens:
+                  holotype: MCZ 616
+                  paratypes:
+                  - MCZ 617
+                  - MCZ 618
+                  - MCZ 619
+                  - USNM 165410
+          - taxon: ascocystitidae
+            children:
+            - taxon: ascocystites
+              children:
+              - taxon: drawbowensis_barrande_1887
+                type: true
+          - taxon: macrocystellidae
+            children:
+            - taxon: macrocystella
+              children:
+              - taxon: mariae_callaway_1877
+                type: true
+          - openTaxon: indeterminate-family-2_sprinkle_1973
+            children:
+            - taxon: cambrocrinus
+              children:
+              - taxon: regularis_orłowski_1968
+                type: true
+            - taxon: eocystites
+              children:
+              - taxon: primaevus_billings_1868
+                type: true
+        - openTaxon: indeterminate-order-1_sprinkle_1973
+          provisional: true
+          children:
+          - taxon: trachelocrinidae
+            new: true
+            children:
+            - taxon: trachelocrinus
+              children:
+              - taxon: resseri_ulrich_1929
+                type: true
+                specimens:
+                  holotype: USNM 80490
+        - openTaxon: indeterminate-order-2_sprinkle_1973
+          children:
+          - taxon: cryptocrinitidae
+            children:
+            - taxon: cryptocrinites
+              children:
+              - taxon: laevis_pander_1830
+                type: true
+          - openTaxon: indeterminate-family-3_sprinkle_1973
+            children:
+            - taxon: bockia
+              children:
+              - taxon: neglecta_hecker_1938
+                type: true
+        - openTaxon: indeterminate-order-3_sprinkle_1973
+          children:
+          - taxon: lingulocystidae
+            children:
+            - taxon: lingulocystis
+              children:
+              - taxon: elongata_thoral_1935
+                type: true
+          - openTaxon: indeterminate-family-4_sprinkle_1973
+            children:
+            - taxon: cardiocystites
+              chidren:
+              - taxon: bohemicus_barrande_1887
+                type: true
+                specimens:
+                  unknowntypes:
+                  - EE 39 # casts of two known type specimen
+                  - EE 51 # casts of two known type specimen
+          - taxon: rhipidocystidae
+            children:
+            - taxon: rhipidocystis
+              children:
+              - taxon: gigas_jaekel_1901
+                type: true
+            - taxon: batherocystis
+              children:
+              - taxon: appressa_bassler_1950
+                type: true
+            - taxon: petalocystites
+              new: true
+              children:
+              - taxon: ikecanensis_sprinkle_1973
+                type: true
+                new: true
+                specimens:
+                  holotype: MCZ 646
+                  paratypes:
+                  - MCZ 647
+                  - MCZ 648
+                  - MCZ 649
 1985_fatka_kordule:
   taxonomies:
   - taxon: ctenocystoidea

@@ -8,20 +8,36 @@ import jschon
 
 from . import logger
 
-def check_node(n, data, parent=[]):
-  if 'taxon' in n:
-    current = parent + [n['taxon']]
+def check_node(node, data, parent=[]):
+  taxon_fields = {'taxon', 'cfTaxon', 'openTaxon'} & node.keys()
+  if len(taxon_fields) > 1:
+    logger.error(
+      f'Found {len(taxon_fields)} taxon fields ({taxon_fields}), expected one!'
+    )
+
+  elif len(taxon_fields) == 1:
+    taxon_type = taxon_fields.pop()
+
+    taxon_id = node[taxon_type]
+    current = parent + [taxon_id]
     logger.debug(f'checking {current}')
-    if not (taxon := data['taxa'].get(n['taxon'])):
-      logger.error(f"Taxon \"{n['taxon']}\" not found!")
-    if n.get('new'):
+    if not (taxon := data['taxa'].get(taxon_id)):
+      logger.error(f'Taxon "{taxon_id}" not found!')
+
+    elif taxon_type == 'taxon' and taxon['name'] is None:
+      logger.error(f'Taxon "{taxon_id}" expected to have a name!')
+    elif taxon_type != 'taxon' and taxon['name'] is not None:
+      logger.error(f'Taxon "{taxon_id}" NOT expected to have a name!')
+
+    if node.get('new'):
       # TODO: Figure this out
       pass
   else:
     current = parent + ['_anon_']
     logger.debug(f'Descending through {current}')
-  for c in n.get('children', {}):
-    check_node(c, data, current)
+
+  for child in node.get('children', {}):
+    check_node(child, data, current)
 
 
 def build_expected_author(expected, author):
@@ -157,9 +173,9 @@ def check_taxa(data):
       if author_id != author_id.lower():
         continue
 
-      if not (author := data['authors'][author_id]):
+      if not (author := data['authors'].get(author_id)):
         logger.error(
-          f'Unrecognized author "{author}" in authority for "{taxon_id}"'
+          f'Unrecognized author "{author_id}" in authority for "{taxon_id}"'
         )
         continue
 
