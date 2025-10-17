@@ -539,6 +539,35 @@
                   - MCZ 647
                   - MCZ 648
                   - MCZ 649
+      - openTaxon: indeterminate-class_sprinkle_1973
+        children:
+        - taxon: cigara
+          children:
+          - taxon: dusli_barrande_1887
+            type: true
+            specimens:
+              unknowntypes:
+              - E 35
+        - taxon: springerocystidae
+          children:
+          - taxon: archaeocystites
+            children:
+            - taxon: medusa_barrande_1887
+              type: true
+          - taxon: palaeocystites
+            children:
+            - taxon: dawsoni_billings_1859
+              type: true
+          - taxon: lysocystites
+            children:
+            - taxon: nodosus_hall_1864
+              type: true
+              specimens:
+                plesiotypes:
+                - S3163a
+                - S3163b
+                - S3163c
+                - S3163d
 1985_fatka_kordule:
   taxonomies:
   - taxon: ctenocystoidea
