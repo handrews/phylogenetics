@@ -240,6 +240,10 @@ $defs:
         type: string
       status:
         type: string
+      originalParent:
+        type: string
+      modifier:
+        type: string
       in:
         type: array
         items:
@@ -292,6 +296,9 @@ $defs:
     $dynamicAnchor: tree
     $ref: tree
     properties:
+      # TODO: Something is off here, dup field?
+      modifier:
+        type: string
       stem:
         type: boolean
         default: false

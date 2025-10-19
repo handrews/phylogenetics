@@ -1,5 +1,5 @@
 P Echinodermata (Bruguiére 1789)
-  BP Homalozoa (Whitehouse 1941)
+ BP Homalozoa (Whitehouse 1941)
     C Stylophora (Gill & Caster 1960)
       O Cornuta (Jaekel 1901)
         F Ceratocystidae (Jaekel 1901)
@@ -67,8 +67,8 @@ P Echinodermata (Bruguiére 1789)
           F Allanicytidiidae (Caster & Gill 1966) N
             g Allanicytidium (Caster & Gill 1966) N
               s flemingi (Caster & Gill 1966) N
-        BO _uncertain_
-          F _uncertain_
+        BO uncertain-mitrata-suborder-1
+          F uncertain-mitrata-family-1
             g Dalejocystis (Prokop 1963)
               s casteri (Prokop 1963) T
             g Spermacystis (Ubaghs 1966) N # Nom subs Anomocystis Jaekel 1918
@@ -307,7 +307,7 @@ P Echinodermata (Bruguiére 1789)
               s irregularis (Meek & Worthen 1869) T
             g Porechinus (Dehm 1961)
               s porosus (Dehm 1961) T
-          F _uncertain_
+          F uncertain-echinocystitoida-family-1
             g Devonocidaris (Thomas 1920)
               s jacksoni (Thomas 1924) T
             g Tornquistellus (Berg 1899)
@@ -333,7 +333,7 @@ P Echinodermata (Bruguiére 1789)
               s balticus (Regnéll 1956) T
             g Xenechinus (Kier 1958)
               s parvus (Kier 1958) T
-          F _uncertain_
+          F uncertain-palaechinoida-family-1
             g Wrightia (Pomel (1869) # "Wrighthia (sic)" instead of corrected?
               s phillipsiae (Forbes 1848) T
             g Xysteria (Pomel 1883)
@@ -500,8 +500,8 @@ P Echinodermata (Bruguiére 1789)
               s gigantea (L. Agassiz ????) T # date unknown, 18??
             g Tetracidaris (Cotteau 1872)
               s reynesi (Cotteau 1872) T
-        O _uncertain_
-          F _uncertain_
+        O uncertain-perischoechinoidea-order-1
+          F uncertain-perischoechinoidea-family-1
             g Lanternarius (Regnéll 1956)
               s latens (Regnéll 1956) T
       BC Euechinoidea (Bronn 1860)
@@ -516,15 +516,15 @@ P Echinodermata (Bruguiére 1789)
             F Lissodiadematidae (Fell 1966) N
             F Micropygidae (Mortensen 1904)
             F Aspidodiadematidae (Duncan 1889)
-            F _uncertain_
+            F uncertain-diadematoida-family-1
           O Pedinoida (Mortensen 1939)
             F Pedinidae (Pomel 1883)
-            F _uncertain_
+            F uncertain-pedinoida-family-1
           O Pygasteroida (Durham & Melville 1957)
             F Pygasteridae (Lambert 1900)
-          O _uncertain_
+          O uncertain-diadematacea-order-1
             F Heterocidaridae (Mortensen 1934)
-            F _uncertain_
+            F uncertain-diadematacea-family-1
         SO Echinacea (Claus 1876)
           O Salenioida (Delage & Hérouard 1903)
             F Acrosaleniidae (Gregory 1900)
@@ -534,27 +534,27 @@ P Echinodermata (Bruguiére 1789)
           O Hemicidaroida (Beurlen 1937)
             F Hemicidaridae (Wright 1857)
             F Pseudodiadematidae (Pomel 1883)
-            F _uncertain_
+            F uncertain-hemicidaroida-family-1
           O Phymosomatoida (Mortensen 1904)
             F Phymosomatidae (Pomel 1883)
             F Stomechinidae (Pomel 1883)
-            F _uncertain_
+            F uncertain-phymosomatoida-family-1
           O Arbacioida (Gregory 1900)
             F Arbaciidae (Gray 1855)
           O Temnopleuroida (Mortensen 1942)
             F Glyphocyphidae (Duncan 1889)
             F Temnopleuridae (A. Agassiz 1872)
             F Toxopneustidae (Troschel 1872)
-            F _uncertain_
+            F uncertain-temnopleuroida-family-1
           O Echinoida (Claus 1876)
             F Echinidae (Gray 1825)
             F Echinometridae (Gray 1825)
             F Strongylocentrotidae (Gregory 1900)
             F Parasaleniidae (Mortensen 1903)
-            F _uncertain_
+            F uncertain-echinoida-family-1
           O Plesiocidaroida (Duncan 1889)
             F Tiarechinidae (Gregory 1896)
-        SO _uncertain_ # Echinacea or Diadematacea
+        SO echinacea-or-diadematacea
           O Orthopsida (Mortensen 1942)
             F Orthopsidae (Duncan 1889)
         SO Gnathostomata (Zittel 1879)

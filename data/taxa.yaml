@@ -18,6 +18,11 @@ uncertain-family:
   rank: Family
   auth: [linnaeus]
   year: 1758
+uncertain-eocrinoid-family_ubaghs_1967b:
+  name: null
+  rank: Family
+  auth: [ubaghs]
+  year: 1967
 blastozoa-or-crinozoa:
   name: null
   rank: Subphylum
@@ -83,6 +88,22 @@ indeterminate-family-4_sprinkle_1973:
   rank: Family
   auth: [sprinkle]
   year: 1973
+sp-1_caster_pope_1960:
+  name: null
+  rank: species
+  auth: [Caster, Pope]
+  year: 1960
+sp-1_palmer_1968:
+  name: null
+  rank: species
+  auth: [Palmer]
+  year: 1968
+  in: [Hobbs, Hays, Ross]
+sp-1_robison_1965:
+  name: null
+  rank: species
+  auth: [robison]
+  year: 1965
 sp-1_sprinkle_1973:
   name: null
   rank: species
@@ -93,6 +114,11 @@ sp-2_sprinkle_1973:
   rank: species
   auth: [sprinkle]
   year: 1973
+sp-1-walcott_1917:
+  name: null
+  rank: species
+  auth: [walcott]
+  year: 1917
 ###################### A
 aethocrinus:
   name: Aethocrinus
@@ -260,7 +286,13 @@ bohemica_fatka_kordule_1985:
   name: bohemica
   auth: [Fatka, Kordule]
   year: 1985
-bohemicus_barrande_1887:
+bohemicus_barrande_1887_cardiocystites:
+  originalParent: cardiocystites
+  name: bohemicus
+  auth: [barrande]
+  year: 1887
+bohemicus_barrande_1887_mimocystites:
+  originalParent: mimocystites
   name: bohemicus
   auth: [barrande]
   year: 1887
@@ -268,6 +300,10 @@ brachiatus_sprinkle_1973:
   name: brachiatus
   auth: [sprinkle]
   year: 1973
+bromidocystis:
+  name: Bromidocystis
+  auth: [sprinkle]
+  year: 1982
 broweri_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler_2020:
   name: broweri
   auth: [Guensburg, sprinkle, Mooi, Lefebvre, David, Roux, Derstler]
@@ -988,6 +1024,10 @@ meristoschismatidae:
   name: Meristoschismatidae
   auth: [sprinkle]
   year: 1973
+mimocystites:
+  name: Mimocystites
+  auth: [barrande]
+  year: 1887
 minor_sprinkle_1973:
   name: minor
   auth: [sprinkle]
@@ -1093,6 +1133,11 @@ palaeocystites:
   name: Palaeocystites
   auth: [billings]
   year: 1859
+palaeocystitidae:
+  name: Palaeocystitidae
+  rank: Family
+  auth: [ubaghs]
+  year: 1967
 palmeri_sprinkle_1973:
   name: palmeri
   auth: [sprinkle]
@@ -1309,6 +1354,10 @@ sardesoni_bather_1915:
   name: sardesoni
   auth: [bather]
   year: 1915
+schuchertocystis:
+  name: Schuchertocystis
+  auth: [bassler]
+  year: 1950
 scoliocystis:
   name: Scoliocystis
   auth: [jaekel]
@@ -1542,12 +1591,12 @@ yorkicystis:
 # synonyms:
 briareus_barrande_1887:
   name: briareus
-  auth: [Barrande]
+  auth: [barrande]
   year: 1887
   synonym: bohemica_fatka_kordule_1985
 devonicus_bassler_1936:
   name: devonicus
-  auth: [Bassler]
+  auth: [bassler]
   year: 1936
   synonym: devonica
   reason: Unclear, needs verification

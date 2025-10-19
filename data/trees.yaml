@@ -80,6 +80,10 @@
               - USNM 163255
               - USNM 163256
               - USNM 163257
+1972_paul:
+  taxonomies:
+  - taxon: diploporita-class
+    modifier: nom. transl.
 1973_sprinkle:
   taxonomies:
   - taxon: echinodermata
@@ -90,6 +94,8 @@
       new: true
       children:
       - taxon: eocrinoidea
+        moved:
+          taxon: crinozoa
         children:
         - taxon: imbricata
           new: true
@@ -141,6 +147,8 @@
         - openTaxon: unnamed-order-1_sprinkle_1973
           children:
           - taxon: eocrinidae
+            moved:
+              taxon: eocrinoidea
             children:
             - taxon: gogia
               children:
@@ -163,6 +171,24 @@
                   - NYSM 12758
                   - NYSM 12759
               - taxon: longidactylus_walcott_1886
+                synonyms:
+                - taxon: longidactylus_walcott_1886
+                  parent: eocystites
+                  provisional: true
+                  auth: [walcott]
+                  year: 1886
+                - taxon: longidactylus_walcott_1886
+                  parent: eocystis
+                  auth: [bather]
+                  year: 1900
+                - taxon: longidactylus_walcott_1886
+                  parent: eocrinus
+                  auth: [jaekel]
+                  year: 1980
+                - cfTaxon: longidactylus_walcott_1886
+                  parent: gogia
+                  auth: [robison]
+                  year: 1965
                 specimens:
                   lectotype: USNM 15315
                   syntype: USNM 15315
@@ -191,6 +217,11 @@
                   - MCZ 669
                   - MCZ 670
               - taxon: multibrachiatus_kirk_1945
+                synonyms:
+                - taxon: multibrachiatus_kirk_1945
+                  parent: eocrinus
+                  auth: [kirk]
+                  year: 1945
                 specimens:
                   holotype: USNM 108556a # two counterparts
                   paratypes:
@@ -231,6 +262,13 @@
                   - MCZ 717
                   - MCZ 730
               - taxon: granulosa_robison_1965
+                synonyms:
+                - taxon: longidactylus_walcott_1886
+                  parent: eocrinus
+                  note: specimen provisionally assigned to this species
+                  pars: true
+                  auth: [Ressler]
+                  year: 1939
                 specimens:
                   holotype: UU 1001
                   plesiotypes:
@@ -295,6 +333,15 @@
                   - MCZ 740
                   - MCZ 741
               - taxon: kitchnerensis_sprinkle_1973
+                synonyms:
+                - taxon: prolifica_walcott_1917
+                  parent: gogia
+                  pars: true
+                  auth: [Harker, Hutchinson]
+                  year: 1953
+                - openTaxon: sp_caster_pope_1840
+                  parent: eocrinus
+                  provisional: true
                 new: true
                 specimens:
                   holotype: GSC 25934
@@ -337,6 +384,9 @@
                   - UC 24691
               - taxon: hobbsi_sprinkle_1973
                 new: true
+                synonyms:
+                - taxon: sp-1_palmer_1968
+                  parent: gogia
                 specimens:
                   holotype: MCZ 631
                   paratypes:
@@ -365,9 +415,16 @@
                   - USNM 165404 # ?
                   - GSC 25954
               - openTaxon: sp-1_sprinkle_1973
+                synonyms:
+                - openTaxon: sp-1_robison_1965
+                  parent: gogia
                 specimens:
                   holotype: USNM 165411
               - openTaxon: sp-2_sprinkle_1973
+                synonyms:
+                - openTaxon: sp-1_walcott_1917
+                  parent: eocystites
+                  provisional: true
                 specimens:
                   holotype: USNM 63712
             - taxon: acanthocystites
@@ -386,6 +443,8 @@
                   - E40
                   - E41
           - taxon: lichenoididae
+            moved:
+              taxon: eocrinoidea
             children:
             - taxon: lichenoides
               children:
@@ -404,6 +463,9 @@
                   - E 70A
                   - BC 141A
           - taxon: rhopalocystidae
+            provisional: true
+            moved:
+              taxon: eocrinoidea
             children:
             - taxon: rhopalocystis
               children:
@@ -414,6 +476,8 @@
           - openTaxon: indeterminate-family-1_sprinkle_1973
             children:
             - taxon: pareocrinus
+              moved:
+                taxon: uncertain-eocrinoid-family_ubaghs_1967b
               children:
               - taxon: ljubzovi_yakovlev_1956
                 type: true
@@ -452,12 +516,16 @@
                   - MCZ 619
                   - USNM 165410
           - taxon: ascocystitidae
+            moved:
+              taxon: eocrinoidea
             children:
             - taxon: ascocystites
               children:
               - taxon: drawbowensis_barrande_1887
                 type: true
           - taxon: macrocystellidae
+            moved:
+              taxon: rhombifera-class
             children:
             - taxon: macrocystella
               children:
@@ -466,10 +534,13 @@
           - openTaxon: indeterminate-family-2_sprinkle_1973
             children:
             - taxon: cambrocrinus
+              note: Initially assigned to Eocrinidae, details unclear
               children:
               - taxon: regularis_orłowski_1968
                 type: true
             - taxon: eocystites
+              moved:
+                taxon: uncertain-eocrinoid-family_ubaghs_1967b
               children:
               - taxon: primaevus_billings_1868
                 type: true
@@ -480,6 +551,8 @@
             new: true
             children:
             - taxon: trachelocrinus
+              moved:
+                taxon: uncertain-eocrinoid-family_ubaghs_1967b
               children:
               - taxon: resseri_ulrich_1929
                 type: true
@@ -488,6 +561,8 @@
         - openTaxon: indeterminate-order-2_sprinkle_1973
           children:
           - taxon: cryptocrinitidae
+            moved:
+              taxon: eocrinoidea
             children:
             - taxon: cryptocrinites
               children:
@@ -496,12 +571,16 @@
           - openTaxon: indeterminate-family-3_sprinkle_1973
             children:
             - taxon: bockia
+              moved:
+                taxon: springerocystidae
               children:
               - taxon: neglecta_hecker_1938
                 type: true
         - openTaxon: indeterminate-order-3_sprinkle_1973
           children:
           - taxon: lingulocystidae
+            moved:
+              taxon: eocrinoidea
             children:
             - taxon: lingulocystis
               children:
@@ -510,8 +589,10 @@
           - openTaxon: indeterminate-family-4_sprinkle_1973
             children:
             - taxon: cardiocystites
+              moved:
+                taxon: uncertain-eocrinoid-family_ubaghs_1967b
               chidren:
-              - taxon: bohemicus_barrande_1887
+              - taxon: bohemicus_barrande_1887_cardiocystites
                 type: true
                 specimens:
                   unknowntypes:
@@ -542,32 +623,232 @@
       - openTaxon: indeterminate-class_sprinkle_1973
         children:
         - taxon: cigara
+          moved:
+            taxon: uncertain-eocrinoid-family_ubaghs_1967b
+          notes: Misspelled "cigaria" throughout Sprinkle 1973
           children:
           - taxon: dusli_barrande_1887
             type: true
             specimens:
               unknowntypes:
               - E 35
-        - taxon: springerocystidae
+        - taxon: archaeocystites
+          moved:
+            taxon: uncertain-eocrinoid-family_ubaghs_1967b
           children:
-          - taxon: archaeocystites
+          - taxon: medusa_barrande_1887
+            type: true
+        - taxon: palaeocystites
+          children:
+          - taxon: dawsoni_billings_1859
+            type: true
+        - taxon: lysocystites
+          children:
+          - taxon: nodosus_hall_1864
+            type: true
+            specimens:
+              plesiotypes:
+              - S3163a
+              - S3163b
+              - S3163c
+              - S3163d
+      - taxon: parablastoidea
+        moved:
+          taxon: crinozoa
+        children:
+        - taxon: blastocystidae
+          children:
+          - taxon: blastoidocrinus
             children:
-            - taxon: medusa_barrande_1887
-              type: true
-          - taxon: palaeocystites
-            children:
-            - taxon: dawsoni_billings_1859
-              type: true
-          - taxon: lysocystites
-            children:
-            - taxon: nodosus_hall_1864
+            - taxon: charcariaedens_billings_1859
               type: true
               specimens:
+                holotype: GSG 1016
                 plesiotypes:
-                - S3163a
-                - S3163b
-                - S3163c
-                - S3163d
+                - UC 26022
+                - AMNH 25068
+            - taxon: rossi_sprinkle_1973
+              new: true
+              specimens:
+                holotype: USNM 165378
+                paratypes:
+                - USNM 165379
+                - USNM 165380
+                - USNM 165381
+                - USNM 165382
+                - USNM 165383
+                - USNM 165384
+                - USNM 165385
+                - USNM 165386
+                - USNM 165387
+                - USNM 165388
+                - USNM 165389
+                - USNM 165390
+                - USNM 165391
+                - USNM 165392
+                - USNM 165393
+                - USNM 165394
+                - USNM 165395
+                - USNM 165396
+                - USNM 165397
+                - USNM 165398
+            - taxon: nevadensis_sprinkle_1973
+              provisional: true
+              new: true
+              specimens:
+                holotype: MCZ 613
+                paratypes:
+                - MCZ 614
+                - MCZ 615
+                - MCZ 643
+                - MCZ 644
+            - taxon: elongatus_sprinkle_1973
+              provisional: true
+              notes: "very questionably referred to Blastoidocrinus"
+              specimens:
+                holotype: 610
+                paratypes:
+                - 611a
+                - 611b
+                - 611c
+          - taxon: blastocystis
+            children:
+            - taxon: rossica_jaekel_1918
+              type: true
+        - taxon: meristoschismatidae
+          new: true
+          children:
+          - taxon: meristoschisma
+            new: true
+            children:
+            - taxon: hudsoni_sprinkle_1973
+              type: true
+              new: true
+              specimens:
+                holotype: MCZ 594
+                paratypes:
+                - MCZ 595
+                - MCZ 596
+                - MCZ 597
+                - MCZ 598
+                - MCZ 599
+                - MCZ 560
+                - MCZ 561
+                - MCZ 644
+                - MCZ 645
+            - taxon: fayi_sprinkle_1973
+              new: true
+              specimens:
+                holotype: MCZ 602-D1
+                paratypes:
+                - MCZ 602-D2-3
+                - MCZ 602-RO-5
+                - MCZ 602a
+                - MCZ 602b
+      - taxon: rhombifera-class
+        moved:
+          taxon: crinozoa
+      - taxon: blastoidea
+        moved:
+          taxon: crinozoa
+    - taxon: crinozoa
+      children:
+      - taxon: crinoidea
+        children:
+        - taxon: inadunata
+        - taxon: camerata
+        - taxon: flexibilia
+        - taxon: articulata
+        - openTaxon: indeterminate-subclass_sprinkle_1973
+          children:
+          - openTaxon: indeterminate-order-4_sprinkle_1973
+            children:
+            - taxon: echmatocrinidae
+              new: true
+              children:
+              - taxon: echmatocrinus
+                new: true
+                children:
+                - taxon: brachiatus_sprinkle_1973
+                  type: true
+                  new: true
+                  specimens:
+                    holotype: GSC 25962
+                    paratypes:
+                    - USNM 165405
+                    - USNM 165406
+                    - USNM 165407
+                    - USNM 165408
+                    - USNM 165426
+                    - USNM 165427 # ?
+      - taxon: paracrinoidea
+        children:
+        - taxon: springerocystidae
+          children:
+          - taxon: springerocystis
+        - taxon: columbocystis
+        - taxon: foerstecystis
+        - taxon: ulrichocystis
+          provisional: true
+        - taxon: palaeocystites
+          provisional: true
+        - taxon: allocystites
+          provisional: true
+    - openTaxon: blastozoa-or-crinozoa
+      children:
+      - taxon: diploporita-class
+        moved:
+          taxon: crinozoa
+    - echinozoa:
+      children:
+      - taxon: edrioblastoidea
+        moved:
+          taxon: crinozoa
+        children:
+        - taxon: astrocystites
+1982_broadhead:
+  taxonomies:
+  - taxon: eocrinoidea
+    children:
+    - taxon: imbricata
+    - taxon: gogiida
+      new: true
+      synonyms:
+      - openTaxon: unnamed-order-1_sprinkle_1973
+      children:
+      - taxon: eocrinidae
+        children:
+        - taxon: gogia
+        - taxon: acanthocystites
+        - taxon: akadocrinus
+        - taxon: nolichuckia
+      - taxon: lichenoididae
+        children:
+        - taxon: lichenoides
+      - taxon: rhopalocystidae
+        children:
+        - taxon: rhopalocystis
+      - taxon: palaeocystitidae
+        children:
+        - taxon: palaeocystites
+        - taxon: schuchertocystis
+        - taxon: ulrichocystis
+        - taxon: bromidocystis
+    - taxon: ascocystitida
+      new: true
+      synonyms:
+      - openTaxon: unnamed-order-2_sprinkle_1973
+      children:
+      - taxon: ascocystitidae
+        children:
+        - taxon: ascocystites
+      - taxon: macrocystellidae
+        children:
+        - taxon: macrocystella
+      - openTaxon: indeterminate-family-2_sprinkle_1973
+        children:
+        - taxon: cambrocrinus
+        - taxon: eocystites
 1985_fatka_kordule:
   taxonomies:
   - taxon: ctenocystoidea

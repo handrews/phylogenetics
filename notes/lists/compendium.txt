@@ -1,36 +1,36 @@
-Ph Echinodermata
-   Cl Camptostromoidea
-      Or Camptostromatoida
+P Echinodermata
+   C Camptostromoidea
+      O Camptostromatoida
          Camptostroma
-   Cl Edrioasteroidea
-      Or Isorophida
-      Or Edrioasterida
-      Or Stromatocystitida
+   C Edrioasteroidea
+      O Isorophida
+      O Edrioasterida
+      O Stromatocystitida
          Stromatocystites
-      Or <uncertain>
+      O <uncertain>
          Cambraster
          Walcottidiscus
-   Cl Helicoplacoidea
+   C Helicoplacoidea
       Helicoplacus
       Polyplacus
       Westgardella
-   Cl Blastoidea
-      Or Fissiculata
-      Or Spiraculata
-      Or <uncertain>
+   C Blastoidea
+      O Fissiculata
+      O Spiraculata
+      O <uncertain>
          Macurdablastus
-   Cl Parablastoidea
+   C Parablastoidea
       Blastocystis
       Blastoidocrinus
       Cambroblastus
       Meristoschisma
-   Cl Rhombifera
-   Cl Diploporita
-   Cl Eocrinoidea
-      Or Imbricata = Lepidocystoidea
+   C Rhombifera
+   C Diploporita
+   C Eocrinoidea
+      O Imbricata = Lepidocystoidea
          Kinzercystis
          Lepidocystis
-      Or Gogiida = "Order number 1"
+      O Gogiida = "Order number 1"
          Acanthocystites
          Akadocrinus
          Curteocrinus
@@ -38,7 +38,7 @@ Ph Echinodermata
          Palaeocystites
          Paragogia
          Rhopalocystis
-      Or Ascocystitida = "Order number 2"
+      O Ascocystitida = "Order number 2"
          Ascocystites
          Cambrocrinus
          ?Eocystites
@@ -46,9 +46,9 @@ Ph Echinodermata
          Nolichuckia
          Pareocrinus
          Ridersia
-      Or Trachelocrinida
+      O Trachelocrinida
          Trachelocrinus
-      Or <uncertain>
+      O <uncertain>
          Batherocystis
          Bockia
          ?Bolboporites
@@ -68,15 +68,15 @@ Ph Echinodermata
          Polyptychella
          Sinoeocrinus
          Tatonkacystis
-   Cl Coronoida (=? Coronata)
+   C Coronoida (=? Coronata)
       Cupulocorona
       Mespilocystites
       Paracystis
       Stephanoblastus
       Stephanocrinus
       Tormoblastus
-   Cl Paracrinoidea
-      Or Comarocystitida
+   C Paracrinoidea
+      O Comarocystitida
          Achradocystites
          Amygdalocystites
          Billingsocystis
@@ -87,48 +87,48 @@ Ph Echinodermata
          Ovulocystites
          Schuchertocystis
          Sinclairocystis
-      Or Platycystitida
+      O Platycystitida
          Globulocystites
          Malocystites
          Platycystites
          Wellerocystis
-      Or <uncertain>
+      O <uncertain>
          Bistomiacystis
          ?Colubocystis
          ?Foerstecystis
          Springerocystis
-   Cl Ctenocystoidea
+   C Ctenocystoidea
       Ctenocystis
       Etoctenocystis
-   Cl Homostelea
-      Or Cincta
+   C Homostelea
+      O Cincta
          Decacystis
          Gyrocystis
          Trochocystites
          Trochcystoides
-   Cl Homoidstelea
-      Or Soluta
-   Cl Stylophora
-      Or Cornuta
-      Or Mitrata
-   Cl Ophiocistioidea
+   C Homoidstelea
+      O Soluta
+   C Stylophora
+      O Cornuta
+      O Mitrata
+   C Ophiocistioidea
       Cardioserra
       Eucladia
       Euthemon
       Rotasaccus
       Sollasina (+ Rhenosquama)
       Volchovia
-   Cl Holothuroidea
-      Or Dendrochirotida
-      Or Aspidochirotida
-      Or Elasipodida
-      Or Apodida
-      Or Molpadiida
-      Or Arthrochirotida
-      Or Dactylochirotida
-      Or <uncertain>
-   Cl Somasteroidea
-      Or Goniactinida
+   C Holothuroidea
+      O Dendrochirotida
+      O Aspidochirotida
+      O Elasipodida
+      O Apodida
+      O Molpadiida
+      O Arthrochirotida
+      O Dactylochirotida
+      O <uncertain>
+   C Somasteroidea
+      O Goniactinida
          Ampullaster
          Archegonaster
          Archophiactis
@@ -137,20 +137,20 @@ Ph Echinodermata
          Ophioxenikos
          Stuertzura
          Villebrunaster
-   Cl Asteroidea
-      Or Platyasterida
-      Or Pustulosida
-      Or Hemizonida
-      Or Uractinida
-      Or Trichasteropsida
-      Or Forcipulatida
-      Or Valvatida
-      Or Notomyotida
-      Or Paxillosida
-      Or Spnulosida
-      Or <uncertain>
-   Cl Ophiuroidea
-      Or Stenurida
+   C Asteroidea
+      O Platyasterida
+      O Pustulosida
+      O Hemizonida
+      O Uractinida
+      O Trichasteropsida
+      O Forcipulatida
+      O Valvatida
+      O Notomyotida
+      O Paxillosida
+      O Spnulosida
+      O <uncertain>
+   C Ophiuroidea
+      O Stenurida
          Acinetaster
          Antiquaster
          Bdellacoma
@@ -164,56 +164,56 @@ Ph Echinodermata
          Rhopalocoma
          Stenaster
          Stuertzaster
-      Or Oegophiurida
-      Or Phrynophiurida
-      Or Ophiurida
-      Or <uncertain>
-   Cl Crinoidea
-      Or Echmatocrinida
-      Or Diplobathrida
-      Or Monobathrida
-      Or Disparida
-      Or Hybocrinida
-      Or Cladida
-      Or ?Hemistreptocrinia (?Cl Hemistreptocrinoidea)
+      O Oegophiurida
+      O Phrynophiurida
+      O Ophiurida
+      O <uncertain>
+   C Crinoidea
+      O Echmatocrinida
+      O Diplobathrida
+      O Monobathrida
+      O Disparida
+      O Hybocrinida
+      O Cladida
+      O ?Hemistreptocrinia (?Cl Hemistreptocrinoidea)
          Hemistreptocrinus
          Nonparactocrinus
          Paractocrinus
          Parorthocrinus
          Tetractocrinus
-      Or Taxocrinda
-      Or Sagenocrinda
-      Or Millericrinida
-      Or Cyrtocrinida
-      Or Bourgueticrinida
-      Or Isocrinida
-      Or Comatulida
-      Or Uintacrinida
-      Or Roveacrinida
-      Or Encrinda
-      Or <uncertain>
-   Cl Echinoidea
-      Or Bothriocidaroida
-      Or Echinocystitoida
-      Or Cidaroida
-      Or Echinothuroida
-      Or Diadematoida
-      Or Pedinoidea
-      Or Pygasteroida
-      Or Salenioida (=  Calycina)
-      Or Hemicidaroida
-      Or Phymosomatoida
-      Or Temnopleuroida
-      Or Echinoida
-      Or Plesiocidaroida
+      O Taxocrinda
+      O Sagenocrinda
+      O Millericrinida
+      O Cyrtocrinida
+      O Bourgueticrinida
+      O Isocrinida
+      O Comatulida
+      O Uintacrinida
+      O Roveacrinida
+      O Encrinda
+      O <uncertain>
+   C Echinoidea
+      O Bothriocidaroida
+      O Echinocystitoida
+      O Cidaroida
+      O Echinothuroida
+      O Diadematoida
+      O Pedinoidea
+      O Pygasteroida
+      O Salenioida (=  Calycina)
+      O Hemicidaroida
+      O Phymosomatoida
+      O Temnopleuroida
+      O Echinoida
+      O Plesiocidaroida
          Tiarechinus
-      Or Orthopsida
-      Or Holectypoida
-      Or Oligopygoida
-      Or Cassiduloida
-      Or Disasteroida
-      Or Holasteroida
-      Or Spatangoida
-      Or Neolampadoida
-      Or <uncertain>
+      O Orthopsida
+      O Holectypoida
+      O Oligopygoida
+      O Cassiduloida
+      O Disasteroida
+      O Holasteroida
+      O Spatangoida
+      O Neolampadoida
+      O <uncertain>
  

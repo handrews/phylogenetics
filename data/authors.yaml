@@ -95,14 +95,32 @@ haekel:
 hahn:
   family: Hahn
   given: Gerhard
+harland:
+  family: Harland
+  given: W. B.
+holland:
+  family: Holland
+  given: C. H.
+house:
+  family: House
+  given: M. R.
+hughes:
+  family: Hughes
+  given: N. F.
 jaekel:
   family: Jaekel
   given: Otto
   birth: 1863
   death: 1929
+jeffries:
+  family: Jeffries
+  given: R. P. S.
 jell:
   family: Jell
   given: P. A.
+joysey:
+  family: Joysey
+  given: K. A.
 kammer:
   family: Kammer
   given: Thomas W.
@@ -150,6 +168,9 @@ owen:
 parsley:
   family: Parsley
   given: Ronald
+paul:
+  family: Paul
+  given: C. R. C.
 pawson:
   family: Pawson
   given: D. L.
@@ -159,9 +180,15 @@ peng.j:
 rahman:
   family: Rahman
   given: Imran A.
+ramsbottom:
+  family: Ramsbottom
+  given: W. H. C.
 regnéll:
   family: Regnéll
   given: Gerhard
+reynolds:
+  family: Reynolds
+  given: A. B.
 rhenberg:
   family: Rhenberg
   given: Elizabeth C.
@@ -171,6 +198,12 @@ robison:
 roux:
   family: Roux
   given: Michel
+rudwick:
+  family: Rudwick
+  given: M. J. S.
+satterthwaite:
+  family: Satterthwaite
+  given: G. E.
 savage:
   family: Savage
   given: Harry J.
@@ -192,6 +225,9 @@ stewart:
 sumrall:
   family: Sumrall
   given: Colin D.
+tarlo:
+  family: Tarlo
+  given: L. B. H.
 thompson:
   family: Thompson
   given: Jeffrey R.
@@ -215,6 +251,9 @@ webby:
 wen.r:
   family: Wen
   given: Rongqin
+wiley:
+  family: Wiley
+  given: E. C.
 wright.c.w:
   family: Wright
   given: C. W.

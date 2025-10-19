@@ -19,6 +19,20 @@ publications:
     - lawrence
     publisher: A.A.Balkema
     place: Rotterdam
+  fossil-record:
+    name: The Fossil Record
+    editors:
+    - harland
+    - holland
+    - house
+    - hughes
+    - reynolds
+    - rudwick
+    - satterthwaite
+    - tarlo
+    - wiley
+    publisher: Geological Society of London
+    place: London
   geo-et-palaeo:
     name: Geologica et Palaeontologica
   geomag:
@@ -307,6 +321,36 @@ articles:
     - S637
     identifiers:
       url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+  1967_jeffries_joysey_paul_ramsbottom:
+    title: "Chapter 21: Echinodermata: Pelmatozoa"
+    book: fossil-record
+    pages:
+    - 565
+    - 581
+    pubDate:
+      year: 1967
+    authors:
+    - jeffries
+    - joysey
+    - paul
+    - ramsbottom
+    identifiers:
+      url: https://archive.org/details/fossilrecord0000wbha/mode/2up
+  1968_paul:
+    title: Macrocystella Callaway, the earliest glyptocystitid cystoid
+    journal: palaeontology
+    volume: 11
+    number: 4
+    pubDate:
+      year: 1968
+    pages:
+    - 580
+    - 600
+    authors:
+    - paul
+    identifiers:
+      # alternate: https://zenodo.org/records/16064129
+      url: https://www.biodiversitylibrary.org/page/49633102#page/356/mode/1up
   1968_webby:
     title: Astrocystites distans sp. nov., an edrioblastoid from the Ordovician of eastern Australia
     journal: palaeontology
@@ -345,6 +389,20 @@ articles:
       day: 19
     identifiers:
       jstor: 1727422
+  1972_paul:
+    title: Morphology and function of exothecal pore-structures in Cystoids
+    journal: palaeontology
+    volume: 15
+    number: 1
+    pages:
+    - 1
+    - 28
+    pubDate:
+      year: 1972
+    authors:
+    - paul
+    processDates:
+      revised: 1971-05-06
   1973_sprinkle:
     title: Morphology and Evolution of Blastozoan Echinoderms
     journal: sp-pub-harvard
