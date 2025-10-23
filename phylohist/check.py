@@ -59,9 +59,15 @@ def build_expected_taxon(expected, taxon):
   if rank in ('species', 'subspecies'):
     species_expected = expected
     logger.debug(f'Building species id for {expected}...')
-    for author_id in taxon['auth']:
-      species_expected += f"_{author_id.lower()}"
-    species_expected += f"_{taxon['year']}"
+    if 'auth' in taxon:
+      for author_id in taxon['auth']:
+        species_expected += f"_{author_id.lower()}"
+      species_expected += f"_{taxon['year']}"
+    else:
+      source_id = taxon['authority']['source']
+      species_expected += f'_{source_id[5:]}_{source_id[:4]}'
+    if 'originalParent' in taxon:
+      species_expected += f"_{taxon['originalParent']}"
     logger.debug(f'...built {species_expected}')
     return {species_expected}
 
@@ -167,27 +173,31 @@ def check_taxa(data):
       if not valid:
         logger.error(f'"{taxon_id}" not in expected set: {valid_set}')
 
-    for author_id in taxon['auth']:
-      logger.debug('    Processing authority "{author_id}"')
-      # This won't work with multi-token names, but good enough for now
-      if author_id != author_id.lower():
-        continue
+    if (authority := taxon.get('authority')):
+      if (source := authority['source']) not in data['sources']['articles']:
+        logger.error(f'Authority source "{source}" not recognized')
+    else:
+      for author_id in taxon['auth']:
+        logger.debug('    Processing authority "{author_id}"')
+        # This won't work with multi-token names, but good enough for now
+        if author_id != author_id.lower():
+          continue
 
-      if not (author := data['authors'].get(author_id)):
-        logger.error(
-          f'Unrecognized author "{author_id}" in authority for "{taxon_id}"'
-        )
-        continue
+        if not (author := data['authors'].get(author_id)):
+          logger.error(
+            f'Unrecognized author "{author_id}" in authority for "{taxon_id}"'
+          )
+          continue
 
-      if (year := taxon.get('year')):
-        # 15 pretty arbitrary, no clue if there's a kid genius paleontologist
-        if 'birth' in author and year < (author['birth'] + 15):
-          birth = author['birth']
-          logger.error(f'"{author_id}" born {birth} as authority in {year}?')
-        # plus 5 for Barrande 1887
-        if 'death' in author and year > (author['death'] + 5):
-          death = author['death']
-          logger.error(f'"{author_id}" died {death} as authority in {year}?')
+        if (year := taxon.get('year')):
+          # 15 pretty arbitrary, no clue if there's a kid genius paleontologist
+          if 'birth' in author and year < (author['birth'] + 15):
+            birth = author['birth']
+            logger.error(f'"{author_id}" born {birth} as authority in {year}?')
+          # plus 5 for Barrande 1887
+          if (death := author.get('death', 3000)) and  year > (death + 5):
+            death = author['death']
+            logger.error(f'"{author_id}" died {death} as authority in {year}?')
     logger.debug(f'    ...all authorities for "{taxon_id}" processed')
 
   logger.info(f"...taxa processed.")

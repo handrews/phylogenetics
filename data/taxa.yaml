@@ -182,6 +182,16 @@ argodiscus:
   name: Argodiscus
   auth: [Prokop]
   year: 1965
+aristocystitidae:
+  name: Aristocystitidae
+  rank: Family
+  auth: [neumayr]
+  year: 1889
+aristocystitidae-superfamily:
+  name: Aristocystitidae
+  rank: Superfamily
+  auth: [neumayr]
+  year: 1889
 articulata:
   name: Articulata
   rank: Subclass
@@ -342,6 +352,11 @@ cardiocystites:
   name: Cardiocystites
   auth: [barrande]
   year: 1887
+carpoidea:
+  name: Carpoidea
+  rank: Class
+  auth: [jaekel]
+  year: 1900
 casteri_sprinkle_1973:
   name: casteri
   auth: [sprinkle]
@@ -424,6 +439,10 @@ courtessoleidae:
   rank: Family
   auth: [domínguez alonso]
   year: 1999
+craticula_whitehouse_1941:
+  name: craticula
+  authority:
+    source: 1941_whitehouse
 crinoidea:
   name: Crinoidea
   rank: Class
@@ -474,16 +493,35 @@ curvatus_grigo_1995:
   name: curvatus
   auth: [Grigo]
   year: 1995
+cyamoidea:
+  name: Cyamoidea
+  rank: Class
+  authority:
+    source: 1941_whitehouse
 cyclocystoidea:
   name: Cyclocystoidea
   rank: Class
   auth: [Miller, Gurley]
   year: 1895
+cycloidea:
+  name: Cycloidea
+  rank: Class
+  authority:
+    source: 1941_whitehouse
 cystoidea:
   name: Cystoidea
   rank: Class
   auth: [von Buch]
   year: 1846
+cymbionites:
+  name: Cymbionites
+  authority:
+    source: 1941_whitehouse
+cymbionitidae:
+  name: Cymbionitidae
+  rank: Family
+  authority:
+    source: 1941_whitehouse
 ###################### D
 dawsoni_billings_1859:
   name: dawsoni
@@ -751,6 +789,11 @@ hamiltonensis_vanuxem_1842:
   name: hamiltonensis
   auth: [Vanuxem]
   year: 1842
+haplozoa:
+  name: Haplozoa
+  rank: Subphylum
+  authority:
+    source: 1941_whitehouse
 helicocystoidea:
   name: Helicocystoidea
   bracket: Helicocystoids
@@ -811,8 +854,8 @@ holothuroidea:
 homalozoa:
   name: Homalozoa
   rank: Subphylum
-  auth: [Whitehouse]
-  year: 1941
+  authority:
+    source: 1941_whitehouse
 homostelea:
   name: Homostelea
   rank: Class
@@ -1001,6 +1044,11 @@ lysocystites:
   auth: [Miller]
   year: 1889
 ###################### M
+machaeridia:
+  name: Machaeridia
+  rank: Class
+  auth: [Withers]
+  year: 1929
 macrocystella:
   name: Macrocystella
   auth: [Callaway]
@@ -1077,6 +1125,10 @@ murphyi_sumrall_garbisch_pope_2000:
   auth: [sumrall, Garbisch, Pope]
   year: 2000
 ###################### N
+navicula_whitehouse_1941:
+  name: navicula
+  authority:
+    source: 1941_whitehouse
 neglecta_hecker_1938:
   name: neglecta
   auth: [Hecker]
@@ -1194,6 +1246,15 @@ pentangularis_pompeckj_1896:
   name: pentangularis
   auth: [Pompeckj]
   year: 1896
+peridionites:
+  name: Peridionites
+  authority:
+    source: 1941_whitehouse
+peridionitidae:
+  name: Peridionitidae
+  rank: Family
+  authority:
+    source: 1941_whitehouse
 perneri_jaekel_1901:
   name: perneri
   auth: [jaekel]

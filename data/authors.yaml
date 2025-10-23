@@ -30,6 +30,11 @@ billings:
 bonasoro:
   family: Bonasoro
   given: F.
+bruguière:
+  family: Bruguière
+  given: Jean Guillaume
+  birth: 1749
+  death: 1798
 broadhead:
   family: Broadhead
   given: Thomas W.
@@ -42,6 +47,8 @@ candia carnevali:
 caster:
   family: Caster
   given: Kenneth E.
+  birth: 1908
+  death: 1992
 chen.a:
   family: Chen
   given: Ailin
@@ -60,6 +67,8 @@ domínguez alonso:
 durham:
   family: Durham
   given: J. Wyatt
+  birth: 1907
+  death: 1996
 dzik:
   family: Dzik
   given: Jerzy
@@ -72,6 +81,7 @@ fatka:
 fay:
   family: Fay
   given: Robert O.
+  birth: 1927
 fell:
   family: Fell
   given: H. Barraclough
@@ -127,6 +137,8 @@ kammer:
 kesling:
   family: Kesling
   given: Robert V.
+  birth: 1917
+  death: 2005
 kier:
   family: Kier
   given: P. M.
@@ -147,18 +159,35 @@ linnaeus:
   given: Carl
   birth: 1707
   death: 1778
+longman:
+  family: Longman
+  given: H. A.
 melville:
   family: Melville
-  given: R. V.
+  given: Richard Valentine
+  birth: 1914
+  death: 1993
+miller.s.a:
+  family: Miller
+  given: Samuel Almond
+  birth: 1836
+  death: 1897
 mooi:
   family: Mooi
   given: Rich
 moore:
   family: Moore
   given: Raymond C.
+  birth: 1892
+  death: 1974
 müller:
   family: Müller
   given: Peter
+neumayr:
+  family: Neumayr
+  given: Melchior
+  birth: 1845
+  death: 1890
 orłowski:
   family: Orłowski
   given: S.
@@ -186,6 +215,8 @@ ramsbottom:
 regnéll:
   family: Regnéll
   given: Gerhard
+  birth: 1915
+  death: 2002
 reynolds:
   family: Reynolds
   given: A. B.
@@ -195,6 +226,8 @@ rhenberg:
 robison:
   family: Robison
   given: Richard A.
+  birth: 1933
+  death: null
 roux:
   family: Roux
   given: Michel
@@ -210,12 +243,16 @@ savage:
 say:
   family: Say
   given: Thomas
+  birth: 1787
+  death: 1834
 smith.a.b:
   family: Smith
   given: Andrew B.
 spencer:
   family: Spencer
   given: W. K.
+  birth: 1878
+  death: 1955
 sprinkle:
   family: Sprinkle
   given: James
@@ -242,6 +279,8 @@ wagner:
 walcott:
   family: Walcott
   given: Charles Doolittle
+  birth: 1850
+  death: 1927
 wanner:
   family: Wanner
   given: Johannes
@@ -251,12 +290,19 @@ webby:
 wen.r:
   family: Wen
   given: Rongqin
+whitehouse:
+  family: Whitehouse
+  given: Frederick William
+  birth: 1900
+  death: 1973
 wiley:
   family: Wiley
   given: E. C.
 wright.c.w:
   family: Wright
-  given: C. W.
+  given: Claud William
+  birth: 1917
+  death: 2010
 wright.d.f:
   family: Wright
   given: David F.

@@ -45,6 +45,8 @@ publications:
     name: The University of Kansas Paleontological Contributions
   lethaia:
     name: Lethaia
+  mem-q:
+    name: Memoirs of the Queensland Museum
   palaeontology:
     name: Palaeontology
   papersinpalaeo:
@@ -72,6 +74,24 @@ publications:
   vestnik:
     name: Věstník Ústředního ústavu geologického
 articles:
+  1941_whitehouse:
+    title: "The Cambrian faunas of north-eastern Australia, Part 4: Early Cambrian echinoderms similar to the larval stages of Recent forms"
+    journal: mem-q
+    volume: 12
+    number: 1
+    pages:
+    - 1
+    - 28
+    authors:
+    - whitehouse
+    editors:
+    - longman
+    pubDate:
+      year: 1941
+      month: 6
+      day: 13
+    identifiers:
+      url: https://www.biodiversitylibrary.org/item/189697#page/38/mode/1up
   1966_spencer_wright.c.w:
     title: Asterozoans
     book: treatise-u
@@ -395,6 +415,8 @@ articles:
     title: Revision of the Holocystites fauna (Diploporita) of North America
     journal: fieldiana
     volume: 24
+    authors:
+    - paul
     pubDate:
       year: 1971
       month: 9
