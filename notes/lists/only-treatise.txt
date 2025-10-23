@@ -880,7 +880,7 @@ P Echinodermata (Bruguiére 1789)
               s sphaeroidalis (Miller & Gurley ????)
           F Heterocystitidae (Jaekel 1918)
             g Heterocystites (Hall 1851)
-        SF Polycosmititda (Jaekel 1918)
+        SF Polycosmitida (Jaekel 1918)
           F Polycosmitidae (Jaekel 1918)
             g Polycosmites (Jaekel 1918)
               s boehemicus (Jaekel 1918) T
