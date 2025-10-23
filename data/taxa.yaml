@@ -1,20 +1,20 @@
 uncertain-phylum:
-  name: Uncertain
+  name: null
   rank: Phylum
   auth: [linnaeus]
   year: 1758
 uncertain-class:
-  name: Uncertain
+  name: null
   rank: Class
   auth: [linnaeus]
   year: 1758
 uncertain-order:
-  name: Uncertain
+  name: null
   rank: Order
   auth: [linnaeus]
   year: 1758
 uncertain-family:
-  name: Uncertain
+  name: null
   rank: Family
   auth: [linnaeus]
   year: 1758
@@ -696,7 +696,13 @@ glyptocystites:
   name: Glyptocystites
   auth: [billings]
   year: 1854
-glyptocystitida:
+glyptocystitida-superfamily:
+  name: Glyptocystitida
+  bracket: Glyptocystitids
+  rank: Superfamily
+  auth: [Bather]
+  year: 1899
+glyptocystitida-order:
   name: Glyptocystitida
   bracket: Glyptocystitids
   rank: Order

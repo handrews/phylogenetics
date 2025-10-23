@@ -19,6 +19,8 @@ publications:
     - lawrence
     publisher: A.A.Balkema
     place: Rotterdam
+  fieldiana:
+    name: Fieldiana, Geology
   fossil-record:
     name: The Fossil Record
     editors:
@@ -389,6 +391,16 @@ articles:
       day: 19
     identifiers:
       jstor: 1727422
+  1971_paul:
+    title: Revision of the Holocystites fauna (Diploporita) of North America
+    journal: fieldiana
+    volume: 24
+    pubDate:
+      year: 1971
+      month: 9
+      day: 29
+    identifiers:
+      url: https://www.biodiversitylibrary.org/bibliography/3412
   1972_paul:
     title: Morphology and function of exothecal pore-structures in Cystoids
     journal: palaeontology
@@ -495,7 +507,6 @@ articles:
       url: https://kuscholarworks.ku.edu/entities/publication/de425cc9-1319-41f5-b1b4-0c6a6e13757a
   1987_ubaghs:
     title: Echinodermes nouveaux du Cambrien moyen de la Montagne Noire (France)
-    seen: false
     journal: annals
     volume: 73
     number: 1

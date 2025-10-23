@@ -80,6 +80,13 @@
               - USNM 163255
               - USNM 163256
               - USNM 163257
+1971_paul:
+  taxonomies:
+  - taxon: diploporita-class
+    children:
+    - taxon: aristocystitidae-superfamily
+      modifier: nom. transl.
+      notes: Should have been modified to Aristocystitida (not -dae)
 1972_paul:
   taxonomies:
   - taxon: diploporita-class
@@ -477,7 +484,7 @@
             children:
             - taxon: pareocrinus
               moved:
-                taxon: uncertain-eocrinoid-family_ubaghs_1967b
+                openTaxon: uncertain-eocrinoid-family_ubaghs_1967b
               children:
               - taxon: ljubzovi_yakovlev_1956
                 type: true
@@ -540,7 +547,7 @@
                 type: true
             - taxon: eocystites
               moved:
-                taxon: uncertain-eocrinoid-family_ubaghs_1967b
+                openTaxon: uncertain-eocrinoid-family_ubaghs_1967b
               children:
               - taxon: primaevus_billings_1868
                 type: true
@@ -552,7 +559,7 @@
             children:
             - taxon: trachelocrinus
               moved:
-                taxon: uncertain-eocrinoid-family_ubaghs_1967b
+                openTaxon: uncertain-eocrinoid-family_ubaghs_1967b
               children:
               - taxon: resseri_ulrich_1929
                 type: true
@@ -590,7 +597,7 @@
             children:
             - taxon: cardiocystites
               moved:
-                taxon: uncertain-eocrinoid-family_ubaghs_1967b
+                openTaxon: uncertain-eocrinoid-family_ubaghs_1967b
               chidren:
               - taxon: bohemicus_barrande_1887_cardiocystites
                 type: true
@@ -624,7 +631,7 @@
         children:
         - taxon: cigara
           moved:
-            taxon: uncertain-eocrinoid-family_ubaghs_1967b
+            openTaxon: uncertain-eocrinoid-family_ubaghs_1967b
           notes: Misspelled "cigaria" throughout Sprinkle 1973
           children:
           - taxon: dusli_barrande_1887
@@ -634,7 +641,7 @@
               - E 35
         - taxon: archaeocystites
           moved:
-            taxon: uncertain-eocrinoid-family_ubaghs_1967b
+            openTaxon: uncertain-eocrinoid-family_ubaghs_1967b
           children:
           - taxon: medusa_barrande_1887
             type: true
@@ -1023,8 +1030,8 @@
       children:
       - taxon: gondi_ubaghs_1987
         new: true
-  - taxon: glyptocystitida
-    notes: Unclear if higher tree present
+  - taxon: glyptocystitida-superfamily
+    notes: Unclear if higher tree present, unclera if supefamily or order.
     children:
     - taxon: eocystites # with angle quotes?
       notes: Unclear if intervening taxa present
@@ -1054,7 +1061,7 @@
         children:
         - taxon: soluta-order
           children:
-          - taxon: uncertain-family  # "indeterminate"
+          - openTaxon: uncertain-family  # "indeterminate"
             children:
             - taxon: castericystis
               children:
@@ -1322,9 +1329,9 @@
   taxonomies:
   - taxon: edrioasteroidea
     children:
-    - taxon: uncertain-order
+    - openTaxon: uncertain-order
       children:
-      - taxon: uncertain-family
+      - openTaxon: uncertain-family
         children:
         - taxon: kailidiscus
           new: true
@@ -1493,7 +1500,7 @@
       - taxon: rhombifera-class
         quoted: true
         children:
-        - taxon: glyptocystitida
+        - taxon: glyptocystitida-order
           children:
           - taxon: sanducystis
             new: true
@@ -1512,7 +1519,7 @@
   phylogenies:
   - tree:
       children:
-      - bracket: glyptocystitida
+      - bracket: glyptocystitida-order
         children:
         - taxon: ridersia
         - children:
