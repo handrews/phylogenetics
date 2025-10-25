@@ -73,6 +73,102 @@
               children:
               - taxon: eleutherozoa
           - taxon: homalozoa
+1960_gill_caster:
+  taxonomies:
+  - taxon: echinodermatum
+    children:
+    - taxon: pelmatozoa
+      children:
+      - taxon: carpoidea
+        synonyms:
+        - taxon: heterostelea
+        children:
+        - taxon: homostelea-subclass
+          new: true
+          children:
+          - taxon: cincta-order
+          - taxon: digitata
+        - taxon: homoiostelea-subclass
+          new: true
+          children:
+          - taxon: stylophora-superorder
+            new: true
+            children:
+            - taxon: cornuta
+            - taxon: mitrata
+              children:
+              - taxon: placocystida
+                children:
+                - taxon: placocystitidae
+                  new: true
+                  replacesName:
+                    taxon: placocystidae
+                  children:
+                  - taxon: placocystitinae
+                    new: true
+                    replacesName:
+                      taxon: placocystinae
+                    children:
+                    - taxon: placocystites
+                  - taxon: victoriacystis
+                    new: true
+                    children:
+                    - taxon: wilkinsi_gill_caster_1960
+                      type: true
+                      new: true
+                    - affTaxon: wilkinsi_gill_caster_1960
+                      new: true
+                    - affTaxon: wilkinsi_gill_caster_1960
+                      new: true
+                  - taxon: rhenocystis
+                  - taxon: placocystella
+                  - taxon: australocystinae
+                    children:
+                    - taxon: australocystis
+          - taxon: astylophora
+            new: true
+            children:
+            - taxon: soluta-order
+              notes: emend. 1921
+              children:
+              - taxon: dendrocystitidae
+                children:
+                - taxon: dendrocystites
+                - taxon: dendrocystoides
+                - taxon: heckericystis
+                  new: true
+                  children:
+                  - taxon: kukersiana_hecker_1940
+                    type: true
+                - taxon: syringocrinus
+                  children:
+                  - taxon: paradoxicus_billings_1859
+                    type: true
+              - taxon: iowacystidae
+                new: true
+                children:
+                - taxon: iowacystis
+                  children:
+                  - taxon: sagittaria_thomas_ladd_1926
+                    type: true
+              - taxon: rutroclypeidae
+                new: true
+                children:
+                - taxon: rutroclypeus
+                  notes: emend. Gill and Caster
+                  children:
+                  - taxon: junori_withers_1933
+                    type: true
+                  - taxon: victoriae_gill_caster_1960
+                    new: true
+                  - taxon: withersi_gill_caster_1960
+                    provisional: true
+                    new: true
+                - rutroclypeus:
+                  quoted: true
+                  children:
+                  - taxon: globulus_dehm_1934
+                    provisional: true
 1967a_ubaghs:
   taxonomies:
   - taxon: echinodermata

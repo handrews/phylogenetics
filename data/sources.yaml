@@ -5,6 +5,8 @@ publications:
     name: Alcheringa
   annals:
     name: Annales de Paleontologie
+  bullamp:
+    name: Bulletins of American Paleontology
   bullgeo:
     name: Bulletins of Geosciences
   e-research-1998:
@@ -47,6 +49,10 @@ publications:
     name: Lethaia
   mem-q:
     name: Memoirs of the Queensland Museum
+  methodique:
+    name: Encyclopédie Méthodique. Histoire Naturelle des Vers. Tome Premier
+  nat-disp-ech:
+    name: Naturalis Dispositio Echinodermatum
   palaeontology:
     name: Palaeontology
   papersinpalaeo:
@@ -57,8 +63,12 @@ publications:
     name: Proceedings of the Royal Society B
   science-new-series:
     name: Science (New Series)
+  soc-sci-nat-phys-maroc:
+    name: Bulletin de la Société des sciences naturelles du Maroc
   sp-pub-harvard:
     name: Special Publication of the Museum of Comparative Zoology, Harvard University
+  tableau:
+    name: Tableau Encyclopédique et Méthodique des Trois Règnes de la Nature. Contenant l’Helminthologie, ou les Vers Infusoires, les Vers Intestins, les Vers Mollusques
   treatise-s:
     name: "Treatise on Invertebrate Paleontology, Part S: Echinodermata 1"
     editors:
@@ -74,6 +84,53 @@ publications:
   vestnik:
     name: Věstník Ústředního ústavu geologického
 articles:
+  1734_klein:
+    title: Accesserunt Lucubratiuncula De Aculeis Echinorum Marinorum, cum Specilegio de Belemnitis
+    book: nat-disp-ech
+    pubDate:
+      year: 1734
+    authors:
+    - klein
+    notes: Establishiment of Echinodermata (for echinoids), pre-Code rules
+    identifiers:
+      doi: 10.5962/bhl.title.65731
+      url: https://www.biodiversitylibrary.org/bibliography/65731
+  1778_klein:
+    title: Accessit Lucubratiuncula de Aculeis Echinorum Marinorum et Specilegium de Belemnitis. Edita et Descriptionibus Novisque Inventis et Synonymis Auctorum Auca a Nathanaele Godofredo Leske
+    book: nat-disp-ech
+    seen: false
+    pubDate:
+      year: 1778
+    authors:
+    - klein
+    notes: |
+      Some argue that this use of Echinodermata should result in an attribution
+      of "Echinodermata (Klein 1778)" as the only reason it was excluded was
+      inconsistent usage, but that rule does not apply above the Family level.
+      (The URL might be for a wor containing this one, it's a bit unclear.)
+    identifiers:
+      url: https://www.biodiversitylibrary.org/bibliography/11571
+  1789_bruguière:
+    title: Encyclopédie Méthodique. Histoire Naturelle des Vers. Tome Premier
+    book: methodique
+    pubDate:
+      year: 1789
+    authors:
+    - bruguière
+    notes:
+      Order 'Vers échinodermes' references Klein's taxon but in the vernacular
+    identifiers:
+      url: https://archive.org/details/histoirenaturell3488brug/page/n1/mode/2up
+  1791_bruguière:
+    title: Tableau Encyclopédique et Méthodique des Trois Règnes de la Nature. Contenant l’Helminthologie, ou les Vers Infusoires, les Vers Intestins, les Vers Mollusques
+    book: tableau
+    pubDate:
+      year: 1791
+    authors:
+    - bruguière
+    notes: Officially recognized use of "Echinodermata" (in Latin), revived from Klein
+    identifiers:
+      url: https://www.biodiversitylibrary.org/bibliography/64072
   1941_whitehouse:
     title: "The Cambrian faunas of north-eastern Australia, Part 4: Early Cambrian echinoderms similar to the larval stages of Recent forms"
     journal: mem-q
@@ -92,6 +149,23 @@ articles:
       day: 13
     identifiers:
       url: https://www.biodiversitylibrary.org/item/189697#page/38/mode/1up
+  1960_gill_caster:
+    title: Carpoid echinoderms from the Silurian and Devonian of Australia
+    journal: bullamp
+    volume: 41
+    number: 185
+    pages:
+    - 1
+    - 72
+    pubDate:
+      year: 1960
+      month: 3
+      day: 1
+    authors:
+    - gill
+    - caster
+    identifiers:
+      url: https://www.biodiversitylibrary.org/page/10654670
   1966_spencer_wright.c.w:
     title: Asterozoans
     book: treatise-u
@@ -589,6 +663,19 @@ articles:
       year: 1999
     authors:
     - domínguez alonso
+  2003_guensburg_sprinkle:
+    title: The oldest known crinoids (Early Ordovician, Utah) and a new crinoid plate homology system
+    journal: bullamp
+    number: 364
+    pubDate:
+      year: 2003
+      month: 7
+      day: 10
+    authors:
+    - guensburg
+    - sprinkle
+    identifiers:
+      url: https://www.biodiversitylibrary.org/page/27980785
   2008_stewart_owen:
     title: "Probing the deep shelf: a Lagerstätte from the Upper Ordovician of Girvan, southwestern Scotland"
     journal: lethaia

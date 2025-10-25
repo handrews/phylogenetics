@@ -229,6 +229,20 @@ asturicystis:
   name: Asturicystis
   auth: [Sdzuy]
   year: 1993
+astylophora:
+  name: Astylophora
+  rank: Superorder
+  authority:
+    source: 1960_gill_caster
+australocystinae:
+  name: Australocystinae
+  rank: Subfamily
+  auth: [caster]
+  year: 1955
+australocystis:
+  name: Australocystis
+  auth: [caster]
+  year: 1955
 athenacrinidae:
   name: Athenacrinidae
   rank: Family
@@ -527,6 +541,19 @@ dawsoni_billings_1859:
   name: dawsoni
   auth: [billings]
   year: 1859
+dendrocystites:
+  name: Dendrocystites
+  auth: [barrande]
+  year: 1887
+dendrocystoides:
+  name: Dendrocystoides
+  auth: [jaekel]
+  year: 1921
+dendrocystitidae:
+  name: Dendrocystitidae
+  rank: Family
+  auth: [bassler]
+  year: 1938
 destombesi_ubaghs_1963:
   name: destombesi
   auth: [ubaghs]
@@ -544,6 +571,11 @@ dibrachycystis:
   name: Dibrachycystis
   auth: [zamora, smith.a.b]
   year: 2012
+digitata:
+  name: Digitata
+  rank: Order
+  auth: [Hecker]
+  year: 1940
 diploporita-class:
   name: Diploporita
   rank: Class
@@ -587,14 +619,21 @@ dusli_barrande_1887:
   year: 1887
 ###################### E
 echinodermata:
+  # or Bruguière 1789
+  # Encyclopédie Méthodique. Histoire Naturelle des Vers. Tome Premier
   name: Echinodermata
   rank: Phylum
   status: monophyletic
-  auth: [Bruguière]
-  year: 1791
-  ex:
-    auth: [Klein]
-    year: 1743
+  authority:
+    source: 1791_bruguière
+    ex:
+      source: 1734_klein
+echinodermatum:
+  name: Echinodermatum
+  rank: Phylum
+  authority:
+    source: 1734_klein
+  altSpellingOf: echinodermata
 echinoencrinites:
   name: Echinoencrinites
   auth: [von Meyer]
@@ -730,6 +769,10 @@ globularis_guensburg_sprinkle_2003:
   name: globularis
   auth: [guensburg, sprinkle]
   year: 2003
+globulus_dehm_1934:
+  name: globulus
+  auth: [Dehm]
+  year: 1934
 glyptocystites:
   name: Glyptocystites
   auth: [billings]
@@ -794,6 +837,10 @@ haplozoa:
   rank: Subphylum
   authority:
     source: 1941_whitehouse
+heckericystis:
+  name: Heckericystis
+  authority:
+    source: 1960_gill_caster
 helicocystoidea:
   name: Helicocystoidea
   bracket: Helicocystoids
@@ -838,6 +885,11 @@ hemicystitides:
   name: Hemicystitides
   auth: [Hall]
   year: 1852
+heterostelea:
+  name: Heterostelea
+  rank: Order
+  auth: [jaekel]
+  year: 1900
 hispanica_müller_hahn_2010:
   name: hispanica
   auth: [müller, hahn]
@@ -861,9 +913,19 @@ homostelea:
   rank: Class
   auth: [Gill, Caster]
   year: 1960
+homostelea-subclass:
+  name: Homostelea
+  rank: Subclass
+  auth: [Gill, Caster]
+  year: 1960
 homoiostelea:
   name: Homoiostelea
   rank: Class
+  auth: [Gill, Caster]
+  year: 1960
+homoiostelea-subclass:
+  name: Homoiostelea
+  rank: Subclass
   auth: [Gill, Caster]
   year: 1960
 hudsoni_sprinkle_1973:
@@ -897,6 +959,15 @@ inflatus_parsley_zhao.y_2010:
   name: inflatus
   auth: [parsley, zhao.y]
   year: 2010
+iowacystidae:
+  name: Iowacystidae
+  rank: Family
+  authority:
+    source: 1960_gill_caster
+iowacystis:
+  name: Iowacystis
+  auth: [Thomas, Ladd]
+  year: 1926
 isorophida:
   name: Isorophida
   rank: Order
@@ -938,6 +1009,10 @@ jugoszoviidae:
   rank: Family
   auth: [dzik, orłowski]
   year: 1995
+junori_withers_1933:
+  name: junori
+  auth: [Withers]
+  year: 1933
 ###################### K
 keslingi_bell_1976:
   name: keslingi
@@ -955,6 +1030,10 @@ krama:
   name: Krama
   auth: [Bell]
   year: 1976
+kukersiana_hecker_1940:
+  name: kukersiana
+  auth: [Hecker]
+  year: 1940
 ###################### L
 laevis_pander_1830:
   name: laevis
@@ -1210,6 +1289,10 @@ paracrinoidea:
   rank: Class
   auth: [regnéll]
   year: 1945
+paradoxicus_billings_1859:
+  name: paradoxicus
+  auth: [billings]
+  year: 1859
 parakrama:
   name: Parakrama
   auth: [müller, hahn]
@@ -1267,6 +1350,39 @@ petalus_holloway_jell_1983:
   name: petalus
   auth: [Holloway, jell]
   year: 1983
+placocystella:
+  name: Placocystella
+  auth: [Rennie]
+  year: 1936
+placocystida:
+  name: Placocystida
+  rank: Suborder
+  auth: [Haekel]
+  year: 1896
+placocystidae:
+  name: Placocystidae
+  rank: Family
+  auth: [caster]
+  year: 1952
+placocystinae:
+  name: Placocystinae
+  rank: Subfamily
+  auth: [caster]
+  year: 1952
+placocystites:
+  name: Placocystites
+  auth: [de Koninck]
+  year: 1869
+placocystitidae:
+  name: Placocystitidae
+  rank: Family
+  authority:
+    source: 1960_gill_caster
+placocystitinae:
+  name: Placocystitinae
+  rank: Subfamily
+  authority:
+    source: 1960_gill_caster
 pleurocystites:
   name: Pleurocystites
   auth: [Neumayr]
@@ -1347,6 +1463,10 @@ rhenanus_roemer_1851:
   name: rhenanus
   auth: [Roemer]
   year: 1851
+rhenocystis:
+  name: Rhenocystis
+  auth: [Dehm]
+  year: 1933
 rhenopyrgidae:
   name: Rhenopyrgidae
   rank: Family
@@ -1412,7 +1532,20 @@ rossica_jaekel_1918:
   name: rossica
   auth: [jaekel]
   year: 1918
+rutroclypeidae:
+  name: Rutroclypeidae
+  rank: Family
+  authority:
+    source: 1960_gill_caster
+rutroclypeus:
+  name: Rutroclypeus
+  auth: [Withers]
+  year: 1933
 ###################### S
+sagittaria_thomas_ladd_1926:
+  name: sagittaria
+  auth: [Thomas, Ladd]
+  year: 1926
 sanducystis:
   name: Sanducystis
   auth: [zamora, sumrall, zhu.x, lefebvre]
@@ -1521,6 +1654,11 @@ stylophora:
   rank: Class
   auth: [Gill, Caster]
   year: 1960
+stylophora-superorder:
+  name: Stylophora
+  rank: Superorder
+  auth: [Gill, Caster]
+  year: 1960
 sumralli_guensburg_sprinkle_2003:
   name: sumralli
   auth: [guensburg, sprinkle]
@@ -1530,6 +1668,10 @@ syringocrinida:
   rank: Order
   auth: [parsley, caster]
   year: 1965
+syringocrinus:
+  name: Syringocrinus
+  auth: [billings]
+  year: 1850
 ###################### T
 tastudorum_jell_burrett_banks_1985:
   name: tastudorum
@@ -1606,6 +1748,14 @@ velieuxicystis:
   name: Velieuxicystis
   auth: [ubaghs]
   year: 1999
+victoriacystis:
+  name: Victoriacystis
+  authority:
+    source: 1960_gill_caster
+victoriae_gill_caster_1960:
+  name: victoriae
+  authority:
+    source: 1960_gill_caster
 viviannae_domínguez alonso_1999:
   name: viviannae
   auth: [domínguez alonso]
@@ -1643,6 +1793,14 @@ westergardi_sumrall_sprinkle_bonem_2006:
   name: westergardi
   auth: [sumrall, sprinkle, Bonem]
   year: 2006
+wilkinsi_gill_caster_1960:
+  name: wilkinsi
+  authority:
+    source: 1960_gill_caster
+withersi_gill_caster_1960:
+  name: withersi
+  authority:
+    source: 1960_gill_caster
 ###################### X
 ###################### Y
 yorkicystitidae:

@@ -67,7 +67,7 @@ $defs:
         type: string
       birth:
         type: integer
-        minimum: 1700
+        minimum: 1600
         maximum: 2100
       death:
         type: [integer, "null"]
@@ -201,6 +201,18 @@ $defs:
           type: string
       notes:
         type: string
+  authority:
+    type: object
+    required:
+    - source
+    unevaluatedProperties: false
+    properties:
+      source:
+        type: string
+      in:
+        $ref: "#/$defs/authority"
+      ex:
+        $ref: "#/$defs/authority"
   taxonBasic:
     type: object
     required: [name]
@@ -230,13 +242,7 @@ $defs:
         - species
         - subspecies
       authority:
-        type: object
-        required:
-        - source
-        additionalProperties: false
-        properties:
-          source:
-            type: string
+        $ref: "#/$defs/authority"
       auth:
         type: array
         minItems: 1
@@ -259,19 +265,8 @@ $defs:
         type: array
         items:
           type: string
-      ex:
-        type: object
-        requird: [auth]
-        properties:
-          auth:
-            type: array
-            minItems: 1
-            items:
-              type: string
-          year:
-            type: integer
-            minimum: 1700
-            maximum: 2030 # Fragile!  But helpful for now.  Apologies to the future.
+      altSpellingOf:
+        type: string
       notes:
         type: string
   taxon:
@@ -317,6 +312,10 @@ $defs:
         $ref: "phylogeny#/$defs/specimen"
       moved:
         $ref: taxonomyTree
+      replacesName:
+        $ref: taxonomyTree
+      affTaxon:
+        type: string
       cfTaxon:
         type: string
       openTaxon:

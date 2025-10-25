@@ -94,6 +94,9 @@ frizzell:
 gibson:
   family: Gibson
   given: Adam P.
+gill:
+  family: Gill
+  given: Edmund D.
 guensburg:
   family: Guensburg
   given: Thomas E.
@@ -142,6 +145,11 @@ kesling:
 kier:
   family: Kier
   given: P. M.
+klein:
+  family: Klein
+  given: Jacob Theodor
+  birth: 1685
+  death: 1759
 kordule:
   family: Kordule
   given: Vratislav
