@@ -23,6 +23,11 @@ uncertain-eocrinoid-family_ubaghs_1967b:
   rank: Family
   auth: [ubaghs]
   year: 1967
+uncertain-monobathrid-family_guensburg_sprinkle_2003:
+  name: null
+  rank: Family
+  authority:
+    source: 2003_guensburg_sprinkle
 blastozoa-or-crinozoa:
   name: null
   rank: Subphylum
@@ -119,7 +124,16 @@ sp-1-walcott_1917:
   rank: species
   auth: [walcott]
   year: 1917
+sp-1-guensburg_sprinkle_2003:
+  name: null
+  rank: species
+  authority:
+    source: 2003_guensburg_sprinkle
 ###################### A
+adelphicrinus:
+  name: Adelphicrinus
+  authority:
+    source: 2003_guensburg_sprinkle
 aethocrinus:
   name: Aethocrinus
   auth: [ubaghs]
@@ -413,6 +427,10 @@ cincta-order:
   rank: Order
   auth: [jaekel]
   year: 1918
+cnemecrinus:
+  name: Cnemecrinus
+  authority:
+    source: 2003_guensburg_sprinkle
 colodon_ubaghs_robison_1988:
   name: colodon
   auth: [ubaghs, robison]
@@ -576,6 +594,11 @@ digitata:
   rank: Order
   auth: [Hecker]
   year: 1940
+diplobathrida:
+  name: Diplobathrida
+  rank: Order
+  auth: [Wachsmuth, Springer]
+  year: 1885
 diploporita-class:
   name: Diploporita
   rank: Class
@@ -677,10 +700,15 @@ edriodiscus:
   name: Edriodiscus
   auth: [jell, burrett, banks]
   year: 1985
+eknomocrinidae:
+  name: Eknomocrinidae
+  rank: Family
+  authority:
+    source: 2003_guensburg_sprinkle
 eknomocrinus:
   name: Eknomocrinus
-  auth: [guensburg, sprinkle]
-  year: 2003
+  authority:
+    source: 2003_guensburg_sprinkle
 elizae_bather_1913:
   name: elizae
   auth: [bather]
@@ -735,6 +763,10 @@ fayi_sprinkle_1973:
   name: fayi
   auth: [sprinkle]
   year: 1973
+fillmorensis_guensburg_sprinkle_2003:
+  name: fillmorensis
+  authority:
+    source: 2003_guensburg_sprinkle
 flexibilia:
   name: Flexibilia
   rank: Subclass
@@ -744,6 +776,10 @@ foerstecystis:
   name: Foerstecystis
   auth: [bassler]
   year: 1950
+fortuitus_guensburg_sprinkle_2003:
+  name: fortuitus
+  authority:
+    source: 2003_guensburg_sprinkle
 ###################### G
 gallica_domínguez alonso_1999:
   name: gallica
@@ -763,12 +799,12 @@ gilcidia:
   year: 1999
 glenocrinus:
   name: Glenocrinus
-  auth: [Guensburg, sprinkle]
-  year: 2003
+  authority:
+    source: 2003_guensburg_sprinkle
 globularis_guensburg_sprinkle_2003:
   name: globularis
-  auth: [guensburg, sprinkle]
-  year: 2003
+  authority:
+    source: 2003_guensburg_sprinkle
 globulus_dehm_1934:
   name: globulus
   auth: [Dehm]
@@ -824,6 +860,15 @@ guntheri_sprinkle_1973:
   auth: [sprinkle]
   year: 1973
 ###################### H
+habrotecrinidae:
+  name: Habrotecrinidae
+  rank: Family
+  authority:
+    source: 2003_guensburg_sprinkle
+habrotecrinus:
+  name: Habrotecrinus
+  authority:
+    source: 2003_guensburg_sprinkle
 haefneri_zamora_rahman_sumrall_gibson_thompson_2022:
   name: haefneri
   auth: [zamora, rahman, sumrall, gibson, thompson]
@@ -941,6 +986,10 @@ hybolopus_fraunfelder_utgaard_1970:
   auth: [Fraunfelder, Utgaard]
   year: 1970
 ###################### I
+ibexensis_guensburg_sprinkle_2003:
+  name: ibexensis
+  authority:
+    source: 2003_guensburg_sprinkle
 ikecanensis_sprinkle_1973:
   name: ikecanensis
   auth: [sprinkle]
@@ -1178,6 +1227,11 @@ moncereti_domínguez alonso_1999:
   name: moncereti
   auth: [domínguez alonso]
   year: 1999
+monobathrida:
+  name: Monobathrida
+  rank: Order
+  auth: [Moore, Loudon]
+  year: 1943
 monozonida:
   name: Monozonida
   rank: Order
@@ -1421,6 +1475,12 @@ prolifica_walcott_1917:
   name: prolifica
   auth: [walcott]
   year: 1917
+protocrinoida:
+  name: Protocrinoida
+  rank: Order
+  notes: Order (Plesion) in original definition
+  authority:
+    source: 2003_guensburg_sprinkle
 pustulata_müller_hahn_2010:
   name: pustulata
   auth: [müller, hahn]
@@ -1459,6 +1519,11 @@ resseri_ulrich_1929:
   name: resseri
   auth: [Ulrich]
   year: 1929
+reteocrinidae:
+  name: Reteocrinidae
+  rank: Family
+  auth: [Wachsmuth, Springer]
+  year: 1885
 rhenanus_roemer_1851:
   name: rhenanus
   auth: [Roemer]
@@ -1661,8 +1726,8 @@ stylophora-superorder:
   year: 1960
 sumralli_guensburg_sprinkle_2003:
   name: sumralli
-  auth: [guensburg, sprinkle]
-  year: 2003
+  authority:
+    source: 2003_guensburg_sprinkle
 syringocrinida:
   name: Syringocrinida
   rank: Order
@@ -1689,10 +1754,15 @@ thor_müller_hahn_2010:
   name: thor
   auth: [müller, hahn]
   year: 2010
+titanocrinidae:
+  name: Titanocrinidae
+  rank: Family
+  authority:
+    source: 2003_guensburg_sprinkle
 titanocrinus:
   name: Titanocrinus
-  auth: [guensburg, sprinkle]
-  year: 2003
+  authority:
+    source: 2003_guensburg_sprinkle
 totiglobidae:
   name: Totiglobidae
   auth: [Bell, sprinkle]
@@ -1779,8 +1849,8 @@ vyscystis:
 ###################### W
 wahwahensis_guensburg_sprinkle_2003:
   name: wahwahensis
-  auth: [guensburg, sprinkle]
-  year: 2003
+  authority:
+    source: 2003_guensburg_sprinkle
 wanneri_foerste_1938:
   name: wanneri
   auth: [Foerste]

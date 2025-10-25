@@ -463,7 +463,7 @@
                   - UU 1011d
                   - UU 1040p
                   - USNM 165433
-                  - USNM 165434 
+                  - USNM 165434
                   - USNM 165435
                   - USNM 165436
                   - PE 214
@@ -1343,6 +1343,77 @@
           - taxon: utahensis_robison_sprinkle_1969
             type: true
           - taxon: colodon_ubaghs_robison_1988
+2003_guensburg_sprinkle:
+  taxonomies:
+  - taxon: crinozoa
+    children:
+    - taxon: crinoidea
+      children:
+      - taxon: protocrinoida
+        modifier: (Plesion)
+        new: true
+        children:
+        - taxon: titanocrinidae
+          new: true
+          children:
+          - taxon: titanocrinus
+            new: true
+            children:
+            - taxon: sumralli_guensburg_sprinkle_2003
+              type: true
+              new: true
+            - openTaxon: sp-1-guensburg_sprinkle_2003
+              new: true
+          - taxon: glenocrinus
+            new: true
+            children:
+            - taxon: globularis_guensburg_sprinkle_2003
+              type: true
+              new: true
+      - taxon: camerata
+        children:
+        - taxon: diplobathrida
+          questionable: true
+          children:
+          - taxon: reteocrinidae
+            notes: diagnosis emended
+            children:
+            - taxon: cnemecrinus
+              new: true
+              children:
+              - taxon: fillmorensis_guensburg_sprinkle_2003
+                type: true
+                new: true
+        - taxon: monobathrida
+          questionable: true
+          children:
+          - taxon: eknomocrinidae
+            new: true
+            children:
+            - taxon: eknomocrinus
+              new: true
+              children:
+              - taxon: wahwahensis_guensburg_sprinkle_2003
+                type: true
+                new: true
+          - openTaxon: uncertain-monobathrid-family_guensburg_sprinkle_2003
+            new: true
+            children:
+            - taxon: adelphicrinus
+              new: true
+              children:
+              - taxon: fortuitus_guensburg_sprinkle_2003
+                type: true
+                new: true
+          - taxon: habrotecrinidae
+            new: true
+            children:
+            - taxon: habrotecrinus
+              new: true
+              children:
+              - taxon: ibexensis_guensburg_sprinkle_2003
+                type: true
+                new: true
 2010_müller_hahn:
   taxonomies:
   - taxon: isorophida
