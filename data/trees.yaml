@@ -1,3 +1,36 @@
+1900_bather:
+  taxonomies:
+  - taxon: animalia
+    children:
+    - taxon: protozoa-grade
+      children:
+      - taxon: metazoa-grade
+        children:
+        - taxon: parazoa-branch
+        - taxon: enterozoa-branch
+          children:
+          - taxon: enterocoela-grade
+            synonyms:
+            - taxon: coelentera-grade
+            children:
+            - taxon: coelomocoela-grade
+              synonyms:
+              - taxon: coelomata-grade
+              children:
+              - taxon: echinoderma
+                children:
+                - taxon: pelmatozoa-grade
+                  children:
+                  - taxon: cystidea
+                  - taxon: blastoidea
+                  - taxon: crinoidea
+                  - taxon: edrioasteroidea
+                  - taxon: eleutherozoa-grade
+                    children:
+                    - taxon: holothuroidea
+                    - taxon: stelleroidea
+                    - taxon: echinoidea
+
 1941_whitehouse:
   taxonomies:
   - taxon: echinodermata

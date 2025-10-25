@@ -176,6 +176,11 @@ alpinensis_bassler_1936:
   name: alpinensis
   auth: [bassler]
   year: 1936
+animalia:
+  name: Animalia
+  rank: Kingdom
+  auth: [linnaeus]
+  year: 1758
 apektocrinus:
   name: Apektocrinus
   auth: [guensburg, sprinkle]
@@ -431,6 +436,19 @@ cnemecrinus:
   name: Cnemecrinus
   authority:
     source: 2003_guensburg_sprinkle
+coelentera-grade:
+  name: Coelentera
+  rank: Grade
+  auth: []
+coelomata-grade:
+  name: Coelomata
+  rank: Grade
+  auth: []
+coelomocoela-grade:
+  name: Coelomocoela
+  rank: Grade
+  auth: [lankester]
+  year: 1900
 colodon_ubaghs_robison_1988:
   name: colodon
   auth: [ubaghs, robison]
@@ -540,6 +558,11 @@ cycloidea:
   rank: Class
   authority:
     source: 1941_whitehouse
+cystidea:
+  name: Cystidea
+  rank: Class
+  auth: [von Buch]
+  year: 1844
 cystoidea:
   name: Cystoidea
   rank: Class
@@ -641,6 +664,13 @@ dusli_barrande_1887:
   auth: [barrande]
   year: 1887
 ###################### E
+echinoderma:
+  name: Echinoderma
+  rank: Phylum
+  authority:
+    source: 1778_klein
+    notes: Authority interpreted from text, not given directly
+  altSpellingOf: echinodermata
 echinodermata:
   # or Bruguière 1789
   # Encyclopédie Méthodique. Histoire Naturelle des Vers. Tome Premier
@@ -709,6 +739,16 @@ eknomocrinus:
   name: Eknomocrinus
   authority:
     source: 2003_guensburg_sprinkle
+eleutherozoa:
+  name: Eleutherozoa
+  rank: Subphylum
+  auth: [Bell]
+  year: 1891
+eleutherozoa-grade:
+  name: Eleutherozoa
+  rank: Grade
+  auth: [Bell]
+  year: 1891
 elizae_bather_1913:
   name: elizae
   auth: [bather]
@@ -721,6 +761,16 @@ elongatus_sprinkle_1973:
   name: elongatus
   auth: [sprinkle]
   year: 1973
+enterocoela-grade:
+  name: Enterocoela
+  rank: Grade
+  auth: []
+enterozoa-branch:
+  name: Enterozoa
+  rank: Branch
+  auth: [lankester]
+  year: 1877
+  notes: Subkingdom? "emend. Beklemishev 1944" on Wikipedia
 eocrinidae:
   name: Eocrinidae
   rank: Family
@@ -1206,6 +1256,16 @@ meristoschismatidae:
   name: Meristoschismatidae
   auth: [sprinkle]
   year: 1973
+metazoa:
+  name: Metazoa
+  rank: Subkingdom
+  auth: [Haekel]
+  year: 1874
+metazoa-grade:
+  name: Metazoa
+  rank: Grade
+  auth: [Haekel]
+  year: 1874
 mimocystites:
   name: Mimocystites
   auth: [barrande]
@@ -1355,6 +1415,16 @@ parapostibulla:
   name: Parapostibulla
   auth: [sumrall, Garbisch, Pope]
   year: 2000
+parazoa-branch:
+  name: Parazoa
+  rank: Branch
+  auth: [Grant, Todd]
+  year: 1883
+parazoa-subkingdom:
+  name: Parazoa
+  rank: Subkingdom
+  auth: [Grant, Todd]
+  year: 1883
 pareocrinus:
   name: Pareocrinus
   auth: [Yakovlev]
@@ -1368,6 +1438,11 @@ pelmatozoa:
   bracket: Pelmatozoans
   rank: Subphylum
   status: informal
+  auth: [Leuckart]
+  year: 1848
+pelmatozoa-grade:
+  name: Pelmatozoa
+  rank: Grade
   auth: [Leuckart]
   year: 1848
 pembrocystidae:
@@ -1481,6 +1556,16 @@ protocrinoida:
   notes: Order (Plesion) in original definition
   authority:
     source: 2003_guensburg_sprinkle
+protozoa-class:
+  name: Protozoa
+  rank: Class
+  auth: [goldfuss]
+  year: 1818
+protozoa-grade:
+  name: Protozoa
+  rank: Grade
+  auth: [goldfuss]
+  year: 1818
 pustulata_müller_hahn_2010:
   name: pustulata
   auth: [müller, hahn]
@@ -1696,6 +1781,12 @@ steganoblastidae:
   rank: Family
   auth: [bather]
   year: 1900
+stelleroidea:
+  name: Stelleroidea
+  rank: Class
+  auth: [Lamarck]
+  year: 1816
+  notes: "Lamarck, 1816 [nom. transl. et correct. Gregory, 1900 (pro les Stellerides Lamarck, 1816)]"
 stenuroidea:
   name: Stenuroidea
   rank: Class

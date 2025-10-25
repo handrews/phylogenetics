@@ -213,6 +213,8 @@ $defs:
         $ref: "#/$defs/authority"
       ex:
         $ref: "#/$defs/authority"
+      notes:
+        type: string
   taxonBasic:
     type: object
     required: [name]
@@ -226,11 +228,17 @@ $defs:
       rank:
         type: string
         enum:
+        - Domain
+        - Kingdom
+        - Subkingdom
+        - Superphylum
         - Phylum
         - Subphylum
+        - Infraphylum
         - Superclass
         - Class
         - Subclass
+        - Infraclass
         - Superorder
         - Order
         - Suborder
@@ -241,11 +249,15 @@ $defs:
         - subgenus
         - species
         - subspecies
+        - Branch
+        - Grade
+        - Clade
+        - Plesion
+        - Scion
       authority:
         $ref: "#/$defs/authority"
       auth:
         type: array
-        minItems: 1
         items:
           type: string
       year:

@@ -81,6 +81,12 @@ publications:
     name: "Treatise on Invertebrate Paleontology, Part U: Echinodermata 3"
     editors:
     - moore
+  treatise-zoo:
+    name: A Treatise on Zoology
+    editors:
+    - lankester
+    publisher: Adam & Charles Black
+    place: London
   vestnik:
     name: Věstník Ústředního ústavu geologického
 articles:
@@ -131,6 +137,15 @@ articles:
     notes: Officially recognized use of "Echinodermata" (in Latin), revived from Klein
     identifiers:
       url: https://www.biodiversitylibrary.org/bibliography/64072
+  1900_bather:
+    title: Part III — The Echinoderma"
+    book: treatise-zoo
+    pubDate:
+      year: 1900
+    authors:
+    - bather
+    identifiers:
+      url: https://archive.org/details/treatiseonzoolog03lank/page/n5/mode/2up
   1941_whitehouse:
     title: "The Cambrian faunas of north-eastern Australia, Part 4: Early Cambrian echinoderms similar to the larval stages of Recent forms"
     journal: mem-q

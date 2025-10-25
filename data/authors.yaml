@@ -97,6 +97,9 @@ gibson:
 gill:
   family: Gill
   given: Edmund D.
+goldfuss:
+  family: Goldfuss
+  given: Georg
 guensburg:
   family: Guensburg
   given: Thomas E.
@@ -153,6 +156,9 @@ klein:
 kordule:
   family: Kordule
   given: Vratislav
+lankester:
+  family: Lankester
+  given: E. Ray
 lawrence:
   family: Lawrence
   given: John M.
