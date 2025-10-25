@@ -22,9 +22,60 @@
                 - taxon: pelmatozoa-grade
                   children:
                   - taxon: cystidea
+                    children:
+                    - taxon: amphorida
+                      note: "Haekel (1896, pars)"
+                      children:
+                      - taxon: aristocystidae
+                      - taxon: dendrocystidae
+                      - taxon: eocystidae
+                        new: true
+                      - taxon: anomalocystidae
+                    - taxon: rhombifera-order
+                      children:
+                      - taxon: echinosphaeridae
+                      - taxon: comarocystidae
+                      - taxon: macrocystellidae
+                      - taxon: tiaracrinidae
+                        new: true
+                      - taxon: malocystidae
+                      - taxon: glyptocystidae
+                        children:
+                        - taxon: echinoencrininae
+                        - taxon: callocystinae
+                        - taxon: glyptocystinae
+                      - taxon: caryocrinidae
+                    - taxon: aporita
+                      note: "Zittel (1879, restr.)"
+                      children:
+                      - taxon: cryptocrinidae
+                    - taxon: diploporita-order
+                      note: "Zittel (1879, emend.)"
+                      children:
+                      - taxon: sphaeronidae
+                      - taxon: glyptosphaeridae
+                      - taxon: protocrinidae
+                      - taxon: mesocystidae
+                      - taxon: gomphocystidae
                   - taxon: blastoidea
+                    notes: |
+                      Their line of evolution, though in some respects
+                      parallel to those of the Callocystinae and
+                      Edrioasteroidea, was independently derived through
+                      the Diploporita from the primitive Amphoridea.
                   - taxon: crinoidea
                   - taxon: edrioasteroidea
+                    synonyms:
+                    - taxon: thyroida
+                    - taxon: agelacrinoidea
+                    - taxon: cystasteroidea
+                    - taxon: thecoidea
+                    children:
+                    - taxon: agelacrinidae
+                    - taxon: cyathocystidae
+                    - taxon: edrioasteridae
+                    - taxon: steganoblastidae
+                      new: true
                   - taxon: eleutherozoa-grade
                     children:
                     - taxon: holothuroidea
@@ -833,10 +884,10 @@
                   - MCZ 649
       - openTaxon: indeterminate-class_sprinkle_1973
         children:
-        - taxon: cigara
+        - taxon: cigaria
           moved:
             openTaxon: uncertain-eocrinoid-family_ubaghs_1967b
-          notes: Misspelled "cigaria" throughout Sprinkle 1973
+          notes: Proper spelling is "Cigara", not "Cigaria"
           children:
           - taxon: dusli_barrande_1887
             type: true
@@ -1447,6 +1498,42 @@
               - taxon: ibexensis_guensburg_sprinkle_2003
                 type: true
                 new: true
+  phylogenies:
+  - treeType: cladogram
+    tree:
+      children:
+      - taxon: titanocrinus
+        bracket: protocrinoida
+      - taxon: glenocrinus
+        bracket: protocrinoida
+      - children:
+        - openTaxon: genus-a-guensburg_sprinkle_2003
+        - children:
+          - taxon: cnemecrinus
+            bracket: camerata
+          - children:
+            - taxon: adelphicrinus
+              bracket: camerata
+            - taxon: eknomocrinus
+              bracket: camerata
+            - bracket: camerata
+              children:
+              - taxon: habrotecrinus
+              - taxon: celtocrinus
+              - taxon: proexenocrinus
+            - children:
+              - bracket: disparida
+                children:
+                - taxon: ramseyocrinus
+                - taxon: pariocrinus
+                - taxon: ibexocrinus
+              - bracket: cladida
+                children:
+                - taxon: perittocrinus
+                - children:
+                  - taxon: aethocrinus
+                  - taxon: elpasocrinus
+                  - taxon: hybocrinus
 2010_müller_hahn:
   taxonomies:
   - taxon: isorophida
