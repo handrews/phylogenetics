@@ -93,11 +93,21 @@ indeterminate-family-4_sprinkle_1973:
   rank: Family
   authority:
     source: 1973_sprinkle
+genus-a_guensburg_sprinkle_2003:
+  name: null
+  rank: genus
+  authority:
+    source: 2003_guensburg_sprinkle
 sp-1_caster_pope_1960:
   name: null
   rank: species
   auth: [Caster, Pope]
   year: 1960
+sp-1_guensburg_sprinkle_2003:
+  name: null
+  rank: species
+  authority:
+    source: 2003_guensburg_sprinkle
 sp-1_palmer_1968:
   name: null
   rank: species
@@ -119,21 +129,20 @@ sp-2_sprinkle_1973:
   rank: species
   authority:
     source: 1973_sprinkle
-sp-1-walcott_1917:
+sp-1_walcott_1917:
   name: null
   rank: species
   auth: [walcott]
   year: 1917
-sp-1-guensburg_sprinkle_2003:
+sp-1_webby_1968:
   name: null
   rank: species
+  notes: |
+    "[The specimen] probably represents a species of Astrocystites
+    comparable with A. distans , but until more material is found
+    closer comparisons cannot be made."
   authority:
-    source: 2003_guensburg_sprinkle
-genus-a-guensburg_sprinkle_2003:
-  name: null
-  rank: genus
-  authority:
-    source: 2003_guensburg_sprinkle
+    source: 1968_webby
 ###################### A
 adelphicrinus:
   name: Adelphicrinus
@@ -442,10 +451,22 @@ camptostroma:
   name: Camptostroma
   auth: [Ruedemann]
   year: 1933
-camptostromatoidea:
-  name: Camptostromatoidea
+camptostromatidae:
+  name: Camptostromatidae
+  rank: Family
   auth: [durham]
   year: 1967
+camptostromatoidea:
+  name: Camptostromatoidea
+  rank: Class
+  auth: [durham]
+  year: 1966
+camptostromoidea:
+  name: Camptostromoidea
+  rank: Class
+  auth: [durham]
+  year: 1966
+  altSpellingOf: camptostromatoidea
 cannati_miquel_1894:
   name: cannati
   auth: [Miquel]
@@ -533,10 +554,16 @@ cnemecrinus:
   name: Cnemecrinus
   authority:
     source: 2003_guensburg_sprinkle
+coelentera:
+  name: Coelentera
+  rank: Phylum
+  auth: [Frey, Leuckart]
+  year: 1847
 coelentera-grade:
   name: Coelentera
   rank: Grade
-  auth: []
+  auth: [Frey, Leuckart]
+  year: 1847
 coelomata-grade:
   name: Coelomata
   rank: Grade
@@ -546,6 +573,17 @@ coelomocoela-grade:
   rank: Grade
   auth: [lankester]
   year: 1900
+collaspidae:
+  name: Collaspidae
+  rank: Family
+  auth: [Haekel]
+  year: 1889
+  altSpellingOf: collaspididae
+collaspididae:
+  name: Collaspididae
+  rank: Family
+  auth: [Haekel]
+  year: 1889
 colodon_ubaghs_robison_1988:
   name: colodon
   auth: [ubaghs, robison]

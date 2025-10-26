@@ -267,7 +267,29 @@
       - taxon: ottawaensis_whiteaves_1897
         type: true
         specimens:
-          holotype: Canadian Geological Survey 752
+          syntypes:
+          - Canadian Geological Survey 752
+1967a_durham:
+  taxonomies:
+  - taxon: echinodermata
+    children:
+    - taxon: echinozoa
+      children:
+      - taxon: camptostromatoidea
+        correct:
+        - taxon: camptostromoidea
+        children:
+        - taxon: camptostromatidae
+          new: true
+          children:
+          - taxon: camptostroma
+            moved:
+              taxon: collaspididae
+              provisional: true
+              notes: Species other than roddyi not actually Camptostroma
+            children:
+            - taxon: roddyi_ruedemann_1933
+              type: true
 1967a_fay:
   taxonomies:
   - taxon: echinodermata
@@ -348,6 +370,8 @@
       - taxon: steganoblastidae
         children:
         - taxon: astrocystites
+          synonyms:
+          - taxon: steganoblastus
           children:
           - taxon: ottawaensis_whiteaves_1897
             type: true
@@ -365,6 +389,9 @@
               - USGD 2311
               - USGD 2312
               - USGD 3303
+          - openTaxon: sp-1_webby_1968
+            specimens:
+              unknowntype: USGD 3304
 1969_robison_sprinkle:
   taxonomies:
   - taxon: echinodermata
@@ -388,6 +415,23 @@
               - USNM 163255
               - USNM 163256
               - USNM 163257
+1970_mintz:
+  taxonomies:
+  - taxon: crinozoa
+    children:
+    - taxon: edrioblastoidea
+      children:
+      - taxon: astrocystitidae
+        synonyms:
+        - taxon: steganoblastidae
+        children:
+        - taxon: astrocystites
+          synonyms:
+          - steganoblastus
+          children:
+          - taxon: ottawaensis_whiteaves_1897
+            type: true
+          - taxon: distans_webby_1968
 1971_paul:
   taxonomies:
   - taxon: diploporita-class
@@ -1499,7 +1543,7 @@
             - taxon: sumralli_guensburg_sprinkle_2003
               type: true
               new: true
-            - openTaxon: sp-1-guensburg_sprinkle_2003
+            - openTaxon: sp-1_guensburg_sprinkle_2003
               new: true
           - taxon: glenocrinus
             new: true
@@ -1560,7 +1604,7 @@
       - taxon: glenocrinus
         bracket: protocrinoida
       - children:
-        - openTaxon: genus-a-guensburg_sprinkle_2003
+        - openTaxon: genus-a_guensburg_sprinkle_2003
         - children:
           - taxon: cnemecrinus
             bracket: camerata

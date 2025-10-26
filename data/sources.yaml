@@ -434,6 +434,13 @@ articles:
       url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
   1967a_durham:
     title: Camptostromatoids
+    complete:
+      named: true
+      open: null
+      history: true
+      specimens:
+        basic: null
+        all: null
     book: treatise-s
     pubDate:
       year: 1967
@@ -500,6 +507,13 @@ articles:
       url: https://www.biodiversitylibrary.org/page/49633102#page/356/mode/1up
   1968_webby:
     title: Astrocystites distans sp. nov., an edrioblastoid from the Ordovician of eastern Australia
+    complete:
+      named: true
+      open: true
+      history: true
+      specimens:
+        basic: true
+        all: true
     journal: palaeontology
     volume: 11
     number: 4
@@ -536,6 +550,23 @@ articles:
       day: 19
     identifiers:
       jstor: 1727422
+  1970_mintz:
+    title: "The Edrioblastoidea: Re-Evaluation Based on a New Specimen of Astrocystites from the Middle Ordovician of Ontario"
+    journal: jofpaleo
+    volume: 44
+    number: 5
+    pages:
+    - 872
+    - 880
+    pubDate:
+      year: 1970
+      month: 9
+    processDates:
+      received: 1969-11-04
+    authors:
+    - mintz
+    identifiers:
+      jstor: 1302721
   1971_paul:
     title: Revision of the Holocystites fauna (Diploporita) of North America
     journal: fieldiana
