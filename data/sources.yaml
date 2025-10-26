@@ -453,6 +453,13 @@ articles:
       url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
   1967b_durham:
     title: Lepidocystoidea
+    complete:
+      named: true
+      open: null
+      history: null
+      specimens:
+        basic: null
+        all: null
     book: treatise-s
     pubDate:
       year: 1967
