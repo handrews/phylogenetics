@@ -253,6 +253,17 @@
                   children:
                   - taxon: globulus_dehm_1934
                     provisional: true
+1962_fay:
+  taxonomies:
+  - taxon: edrioblastoidea
+    new: true
+    children:
+    - taxon: astrocystites
+      moved:
+        taxon: edrioasteroidea
+      children:
+      - taxon: ottawaensis_whiteaves_1897
+        type: true
 1967a_ubaghs:
   taxonomies:
   - taxon: echinodermata

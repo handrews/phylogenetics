@@ -181,6 +181,21 @@ articles:
     - caster
     identifiers:
       url: https://www.biodiversitylibrary.org/page/10654670
+  1962_fay:
+    title: Edrioblastoidea, a new class of Echinodermata
+    journal: jofpaleo
+    volume: 36
+    number: 2
+    pages:
+    - 201
+    - 205
+    pubDate:
+      year: 1962
+      month: 3
+    authors:
+    - fay
+    identifiers:
+      jstor: 13011100
   1966_spencer_wright.c.w:
     title: Asterozoans
     book: treatise-u
