@@ -297,6 +297,11 @@ astrocystites:
   name: Astrocystites
   auth: [Whiteaves]
   year: 1897
+astrocystitidae:
+  name: Astrocystitidae
+  rank: Family
+  auth: [bassler]
+  year: 1938
 asturicystis:
   name: Asturicystis
   auth: [Sdzuy]
@@ -449,6 +454,10 @@ carabocrinus:
   name: Carabocrinus
   auth: [billings]
   year: 1857
+carchariaedens_billings_1859:
+  name: carchariaedens
+  auth: [billings]
+  year: 1859
 cardiocystites:
   name: Cardiocystites
   auth: [barrande]
@@ -1674,6 +1683,11 @@ pembrocystis:
   name: Pembrocystis
   auth: [domínguez alonso]
   year: 1999
+pentacystida:
+  name: Pentacystida
+  rank: Order
+  auth: [jaekel]
+  year: 1918
 pentangularis_pompeckj_1896:
   name: pentangularis
   auth: [Pompeckj]

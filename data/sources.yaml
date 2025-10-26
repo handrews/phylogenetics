@@ -183,6 +183,13 @@ articles:
       url: https://www.biodiversitylibrary.org/page/10654670
   1962_fay:
     title: Edrioblastoidea, a new class of Echinodermata
+    complete:
+      named: true
+      open: null
+      history: true
+      specimens:
+        basic: true
+        all: true
     journal: jofpaleo
     volume: 36
     number: 2
@@ -328,6 +335,13 @@ articles:
       url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
   1967a_fay:
     title: Edrioblastoids
+    complete:
+      named: true
+      open: null
+      history: true
+      specimens:
+        basic: null
+        all: null
     book: treatise-s
     pubDate:
       year: 1967
@@ -340,6 +354,13 @@ articles:
       url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
   1967b_fay:
     title: Parablastoids
+    complete:
+      named: true
+      open: null
+      history: null
+      specimens:
+        basic: null
+        all: null
     book: treatise-s
     pubDate:
       year: 1967
