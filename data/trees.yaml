@@ -377,6 +377,24 @@
       - taxon: edrioasteroidea
       - taxon: camptostromatoidea
       - taxon: echinoidea
+1967e_ubaghs:
+  taxonomies:
+  - taxon: echinodermata
+    children:
+    - openTaxon: incertae-sedis-echinodermata
+      children:
+      - taxon: cymbionites
+        moved:
+          taxon: cymmbionitidae
+        children:
+        - taxon: craticula_whitehouse_1941
+          type: true
+      - taxon: peridionites
+        moved:
+          taxon: peridionitidae
+        children:
+        - taxon: navicula_whitehouse_1941
+          type: true
 1968_webby:
   taxonomies:
   - taxon: pelmatozoa

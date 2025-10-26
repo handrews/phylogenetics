@@ -33,6 +33,11 @@ blastozoa-or-crinozoa:
   rank: Subphylum
   authority:
     source: 1973_sprinkle
+incertae-sedis-echinodermata:
+  name: null
+  rank: Class
+  authority:
+    source: 1967e_ubaghs
 indeterminate-class_sprinkle_1973:
   name: null
   rank: Class

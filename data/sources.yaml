@@ -472,6 +472,13 @@ articles:
       url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
   1967e_ubaghs:
     title: Cymbionites and Peridionites—Unclassified Middle Cambrian Echinoderms
+    complete:
+      named: true
+      open: true
+      history: true
+      specimens:
+        basic: null
+        all: null
     book: treatise-s
     pubDate:
       year: 1967
