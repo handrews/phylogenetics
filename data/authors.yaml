@@ -97,6 +97,11 @@ fell:
 fischer:
   family: Fischer
   given: A. G.
+foerste:
+  family: Foerste
+  given: August
+  birth: 1862
+  death: 1936
 frizzell:
   family: Frizzell
   given: Don L.
@@ -260,6 +265,11 @@ roux:
 rudwick:
   family: Rudwick
   given: M. J. S.
+ruedemann:
+  family: Ruedemann
+  given: Rudolph
+  bitth: 1864
+  death: 1956
 satterthwaite:
   family: Satterthwaite
   given: G. E.

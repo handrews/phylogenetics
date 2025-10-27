@@ -120,11 +120,134 @@
         - taxon: thecocystis
         children:
         - taxon: granulatus_hall_1871
+          type: true
           synonyms:
           - taxon: granulatus_hall_1871
             parents:
             - taxon: cystaster-subgenus
             - taxon: hemicystites
+      - taxon: cincinnatidiscus
+        synonyms:
+        - taxon: hemicystites
+          pars: true
+          notes: given as "Hemicystites of authors not Hall"
+        children:
+        - taxon: stellatus_hall_1866
+          type: true
+          synonyms:
+          - taxon: stellatus_hall_1866
+            parents:
+            - taxon: hemicystites-subgenus
+            - taxon: agelacrinus
+        - taxon: carnensis_foerste_1914
+      - taxon: carneyella
+        children:
+        - taxon: pileus_hall_1866
+          type: true
+          synonyms:
+          - taxon: pileus_hall_1866
+            notes: the Treatise does not list the subgenus
+            parents:
+            - taxon: lepidodiscus-subgenus
+            - taxon: agelacrinus
+        - taxon: vetusta_foerste_1914
+        - taxon: valcourensis_clark_1920
+          provisional: true
+        - taxon: cincinnatiensis_bassler_1935
+          new: true
+          notes: |
+            Claimed as new sp. but synonymized with the same species name
+            from Hall?  The Treatise credits to Hall, and does not list
+            the subgenus which also appears to pre-date (if credited to
+            Hall 1866) the genus Lepidodiscus from Meek and Worthen 1868
+            (per PBDB and Treaties) or 1869 (per IRMNG).
+          synonyms:
+          - taxon: cincinnatiensis_hall_1866
+            parents:
+            - taxon: lepidodiscus-subgenus
+            - taxon: agelacrinus
+      - taxon: isorophus
+        children:
+        - taxon: cincinnatiensis_roemer_1851
+          type: true
+          synonyms:
+          - taxon: cincinnatiensis_roemer_1851
+            parents:
+            - taxon: agelacrinus
+        - taxon: austini_foerste_1914
+          synonyms:
+          - taxon: austini_foerste_1914
+            parents:
+            - taxon: agelacrinus
+        - taxon: faberi_miller_1894
+          synonyms:
+          - taxon: faberi_miller_1894
+            parents:
+            - taxon: agelacrinus
+        - taxon: warrenensis_james_1883
+          synonyms:
+          - taxon: warrenensis_james_1883
+            parents:
+            - taxon: agelacrinus
+        - taxon: holbrooki_james_1878
+          synonyms:
+          - taxon: holbrooki_james_1878
+            parents:
+            - taxon: agelacrinus
+      - taxon: isorophusella
+        new: true
+        children:
+        - taxon: inconditus_raymond_1915
+          type: true
+          synonyms:
+          - taxon: inconditus_raymond_1915
+            parents:
+            - taxon: lebetodiscus
+      - taxon: streptaster
+        children:
+        - taxon: vorticellatus_hall_1866
+          type: true
+          synonyms:
+          - taxon: vorticellatus_hall_1866
+            parents:
+            - taxon: agelacrinus
+        - taxon: reversatus_foerste_1914
+        - taxon: septembrachiatus_miller_dyer_1878
+      - taxon: lebetodiscus
+        children:
+        - taxon: dicksoni_billings_1857
+          type: true
+          synonyms:
+          - taxon: dicksoni_billings_1857
+            parents:
+            - taxon: agelacrinites
+        - taxon: loriformis_raymond_1915
+      - taxon: foerstediscus
+        new: true
+        children:
+        - taxon: grandis_bassler_1935
+          type: true
+          new: true
+      - taxon: pyrgocystis
+        children:
+        - taxon: sardesoni_bather_1915
+          type: true
+        - taxon: sulcatum_aurivillius_1892
+          synonyms:
+          - taxon: sulcatum_aurivillius_1892
+            parent: scalpellum
+        - taxon: procerum_aurivillius_1892
+          synonyms:
+          - taxon: procerum_aurivillius_1892
+            parent: scalpellum
+        - taxon: cylindricum_aurivillius_1892
+          synonyms:
+          - taxon: cylindricum_aurivillius_1892
+            parent: scalpellum
+        - taxon: octogona_richter_1930
+        - taxon: grayae_bather_1915
+        - taxon: ansticei_bather_1915
+        - taxon: batheri_ruedemann_1925
 1941_whitehouse:
   taxonomies:
   - taxon: echinodermata

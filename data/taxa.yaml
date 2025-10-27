@@ -217,6 +217,11 @@ agelacrinites:
   name: Agelacrinites
   auth: [Vanuxem]
   year: 1842
+agelacrinus:
+  name: Agelacrinus
+  auth: [Hall]
+  year: 1858
+  notes: Accepted as Agelacrinites (Vanuxem, 1842)
 agelacrinoidea:
   name: Agelacrinoidea
   rank: Order
@@ -264,6 +269,10 @@ anomalocystitidae:
   rank: Family
   auth: [bassler]
   year: 1938
+ansticei_bather_1915:
+  name: ansticei
+  auth: [bather]
+  year: 1915
 apektocrinus:
   name: Apektocrinus
   auth: [guensburg, sprinkle]
@@ -384,6 +393,10 @@ athenacrinus:
   name: Athenacrinus
   auth: [guensburg, sprinkle, mooi, lefebvre, david, roux, derstler]
   year: 2020
+austini_foerste_1914:
+  name: austini
+  auth: [foerste]
+  year: 1914
 azonida:
   name: Azonida
   rank: Order
@@ -398,6 +411,10 @@ barroubiocystis:
   name: Barroubiocystis
   auth: [ubaghs]
   year: 1999
+batheri_ruedemann_1925:
+  name: batheri
+  auth: [ruedemann]
+  year: 1925
 batherocystis:
   name: Batherocystis
   auth: [bassler]
@@ -547,6 +564,14 @@ cardiocystites:
   name: Cardiocystites
   auth: [barrande]
   year: 1887
+carnensis_foerste_1914:
+  name: carnensis
+  auth: [foerste]
+  year: 1914
+carneyella:
+  name: Carneyella
+  auth: [foerste]
+  year: 1916
 carpoidea:
   name: Carpoidea
   rank: Class
@@ -596,6 +621,27 @@ cigaria:
   auth: [barrande]
   year: 1887
   altSpellingOf: cigara
+cincinnatidiscus:
+  name: Cincinnatidiscus
+  authority:
+    source: 1935_bassler
+cincinnatiensis_bassler_1935:
+  name: cincinnatiensis
+  authority:
+    source: 1935_bassler
+  notes: |
+    Probably an error of some sort, meaning cincinnatiensis_hall_1866
+cincinnatiensis_hall_1866:
+  name: cincinnatiensis
+  auth: [Hall]
+  year: 1866
+  notes: |
+    Probably correct version of cincinnatiensis_bassler_1935,
+    not to be confused with cincinnatiensis_roemer_1851
+cincinnatiensis_roemer_1851:
+  name: cincinnatiensis
+  auth: [Roemer]
+  year: 1851
 charcariaedens_billings_1859:
   name: charcariaedens
   auth: [billings]
@@ -783,6 +829,10 @@ cycloidea:
   rank: Class
   authority:
     source: 1941_whitehouse
+cylindricum_aurivillius_1892:
+  name: cylindricum
+  auth: [Aurivillius]
+  year: 1892
 cystaster:
   name: Cystaster
   auth: [Hall]
@@ -867,6 +917,10 @@ dibrachycystis:
   name: Dibrachycystis
   auth: [zamora, smith.a.b]
   year: 2012
+dicksoni_billings_1857:
+  name: dicksoni
+  auth: [billings]
+  year: 1857
 digitata:
   name: Digitata
   rank: Order
@@ -1127,6 +1181,10 @@ extenuatus_zhao.j_rahman_zamora_chen.a_cong.p_2022:
   auth: [zhao.j, rahman, zamora, chen.a, cong.p]
   year: 2022
 ###################### F
+faberi_miller_1894:
+  name: faberi
+  auth: [Miller]
+  year: 1894
 fayi_sprinkle_1973:
   name: fayi
   authority:
@@ -1141,9 +1199,13 @@ flexibilia:
   auth: [Zittel]
   year: 1895
 foerstecystis:
-  name: Foerstecystis
+  name: foerstecystis
   auth: [bassler]
   year: 1950
+foerstediscus:
+  name: foerstediscus
+  authority:
+    source: 1935_bassler
 fortuitus_guensburg_sprinkle_2003:
   name: fortuitus
   authority:
@@ -1246,6 +1308,10 @@ gondi_ubaghs_1987:
   name: gondi
   auth: [ubaghs]
   year: 1987
+grandis_bassler_1935:
+  name: grandis
+  authority:
+    source: 1935_bassler
 granulatus_hall_1871:
   name: granulatus
   auth: [Hall]
@@ -1254,6 +1320,10 @@ granulosa_robison_1965:
   name: granulosa
   auth: [robison]
   year: 1965
+grayae_bather_1915:
+  name: grayae
+  auth: [bather]
+  year: 1915
 graysoni_sumrall_sprinkle_bonem_2006:
   name: graysoni
   auth: [sumrall, sprinkle, Bonem]
@@ -1336,6 +1406,11 @@ hemicosmites:
   name: Hemicosmites
   auth: [Buch]
   year: 1840
+hemicystites-subgenus:
+  name: Hemicystites
+  rank: subgenus
+  auth: [Hall]
+  year: 1852
 hemicystites:
   name: Hemicystites
   auth: [Hall]
@@ -1366,6 +1441,10 @@ hoeferia:
   name: Hoeferia
   auth: [Redlich]
   year: 1899
+holbrooki_james_1878:
+  name: holbrooki
+  auth: [James]
+  year: 1878
 holothuroidea:
   name: Holothuroidea
   rank: Class
@@ -1435,6 +1514,10 @@ inadunata:
   rank: Subclass
   auth: [Wachsmuth, Springer]
   year: 1897
+inconditus_raymond_1915:
+  name: inconditus
+  auth: [Raymond]
+  year: 1915
 inflatus_parsley_zhao.y_2010:
   name: inflatus
   authority:
@@ -1465,8 +1548,12 @@ isorophina:
   year: 1976
 isorophus:
   name: Isorophus
-  auth: [Foerste]
+  auth: [foerste]
   year: 1916
+isorophusella:
+  name: Isorophusella
+  authority:
+    source: 1935_bassler
 ###################### J
 jagoi_jell_burrett_banks_1985:
   name: jagoi
@@ -1528,6 +1615,10 @@ lebetodiscidae:
   rank: Family
   auth: [Guensburg, sprinkle]
   year: 1994
+lebetodiscus:
+  name: Lebetodiscus
+  auth: [bather]
+  year: 1908
 legrandensis_miller_gurley_1894:
   name: legrandensis
   auth: [Miller, Gurley]
@@ -1548,9 +1639,23 @@ lepidocystoidea:
   year: 1967
 lepidocystis:
   name: Lepidocystis
-  auth: [Foerste]
+  auth: [foerste]
   in: [Resser, Howell]
   year: 1938
+lepidodiscus:
+  name: Lepidodiscus
+  auth: [Meek, Worthen]
+  year: 1868
+  notes: IRMNG says 1869
+lepidodiscus-subgenus:
+  name: Lepidodiscus
+  rank: subgenus
+  auth: [Hall]
+  year: 1866
+  notes: |
+    Bassler indicates this as subgenus as synonym for type species of
+    Carneyella (foerste), but Treatise does not, and as a genus its
+    authority is two years later.
 lichenoides:
   name: Lichenoides
   auth: [barrande]
@@ -1590,6 +1695,10 @@ longidactylus_walcott_1886:
   name: longidactylus
   auth: [walcott]
   year: 1886
+loriformis_raymond_1915:
+  name: loriformis
+  auth: [Raymond]
+  year: 1915
 lukei_bell_petersen_1976:
   name: lukei
   auth: [Bell, Petersen]
@@ -1913,6 +2022,10 @@ petalus_holloway_jell_1983:
   name: petalus
   auth: [Holloway, jell]
   year: 1983
+pileus_hall_1866:
+  name: pileus
+  auth: [Hall]
+  year: 1866
 placocystella:
   name: Placocystella
   auth: [Rennie]
@@ -1980,6 +2093,10 @@ priscus_barrande_1846:
   name: priscus
   auth: [barrande]
   year: 1846
+procerum_aurivillius_1892:
+  name: procerum
+  auth: [Aurivillius]
+  year: 1892
 proexenocrinus:
   name: Proexenocrinus
   auth: [Strimple, McGinnis]
@@ -2087,6 +2204,10 @@ reteocrinidae:
   rank: Family
   auth: [Wachsmuth, Springer]
   year: 1885
+reversatus_foerste_1914:
+  name: reversatus
+  auth: [foerste]
+  year: 1914
 rhenanus_roemer_1851:
   name: rhenanus
   auth: [Roemer]
@@ -2182,6 +2303,11 @@ sardesoni_bather_1915:
   name: sardesoni
   auth: [bather]
   year: 1915
+scalpellum:
+  name: Scalpellum
+  auth: [Leach]
+  year: 1818
+  notes: Mindat has 1817
 schuchertocystis:
   name: Schuchertocystis
   auth: [bassler]
@@ -2190,6 +2316,14 @@ scoliocystis:
   name: Scoliocystis
   auth: [jaekel]
   year: 1899
+sulcatum_aurivillius_1892:
+  name: sulcatum
+  auth: [Aurivillius]
+  year: 1892
+septembrachiatus_miller_dyer_1878:
+  name: septembrachiatus
+  auth: [Miller, Dyer]
+  year: 1878
 sinensis_zamora_sumrall_zhu.x_lefebvre_2017:
   name: sinensis
   auth: [zamora, sumrall, zhu.x, lefebvre]
@@ -2265,6 +2399,10 @@ steganoblastus:
   name: Steganoblastus
   auth: [Whiteaves]
   year: 1899
+stellatus_hall_1866:
+  name: stellatus
+  auth: [Hall]
+  year: 1866
 staffordi_domínguez alonso_1999:
   name: staffordi
   auth: [domínguez alonso]
@@ -2289,6 +2427,10 @@ stephanocrinus:
   name: Stephanocrinus
   auth: [Conrad]
   year: 1842
+streptaster:
+  name: Streptaster
+  auth: [Hall]
+  year: 1866
 stromatocystitida:
   name: Stromatocystitida
   rank: Order
@@ -2472,10 +2614,18 @@ utahensis_robison_sprinkle_1969:
   auth: [robison, sprinkle]
   year: 1969
 ###################### V
+valcourensis_clark_1920:
+  name: valcourensis
+  auth: [Clark]
+  year: 1920
 velieuxicystis:
   name: Velieuxicystis
   auth: [ubaghs]
   year: 1999
+vetusta_foerste_1914:
+  name: vetusta
+  auth: [foerste]
+  year: 1914
 victoriacystis:
   name: Victoriacystis
   authority:
@@ -2500,6 +2650,10 @@ volborthi_hecker_1939:
   name: volborthi
   auth: [Hecker]
   year: 1939
+vorticellatus_hall_1866:
+  name: vorticellatus
+  auth: [Hall]
+  year: 1866
 vyscystis:
   name: Vyscystis
   auth: [fatka, kordule]
@@ -2519,8 +2673,12 @@ walcottidiscus:
     source: 1935_bassler
 wanneri_foerste_1938:
   name: wanneri
-  auth: [Foerste]
+  auth: [foerste]
   year: 1938
+warrenensis_james_1883:
+  name: warrenensis
+  auth: [James]
+  year: 1883
 watsonae_jell_burrett_banks_1985:
   name: watsonae
   auth: [jell, burrett, banks]
