@@ -209,6 +209,30 @@ articles:
     - fay
     identifiers:
       jstor: 13011100
+  1966_durham:
+    title: Camptostroma, an Early Cambrian Supposed Scyphozoan, Referable to Echinodermata
+    complete:
+      named: true
+      open: null
+      history: true
+      specimens:
+        basic: true
+        all: true
+    journal: jofpaleo
+    volume: 40
+    number: 5
+    pages:
+    - 1216
+    - 1220
+    pubDate:
+      year: 1966
+      month: 9
+    processDates:
+      received: 1966-01-04
+    authors:
+    - durham
+    identifiers:
+      jstor: 1301996
   1966_spencer_wright.c.w:
     title: Asterozoans
     book: treatise-u
@@ -1190,6 +1214,14 @@ articles:
     - derstler
   2021_jell_sprinkle:
     title: Revision of Whitehouse’s eocrinoids Peridionites and Cymbionites, with description of the associated fauna including two new echinoderm genera, lower Middle Cambrian Thorntonia Limestone, northwestern Queensland
+    complete:
+      notes: Non-echinoderm trees not captured
+      named: true
+      open: true
+      history: true
+      specimens:
+        basic: true
+        all: true
     journal: alcheringa
     volume: 45
     number: 1

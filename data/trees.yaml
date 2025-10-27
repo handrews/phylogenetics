@@ -269,6 +269,26 @@
         specimens:
           syntypes:
           - Canadian Geological Survey 752
+1966_durham:
+  taxonomies:
+  - taxon: echinozoa
+    children:
+    - taxon: camptostromoidea
+      new: true
+      children:
+      - taxon: camptostroma
+        moved:
+          taxon: collaspididae
+          provisional: true
+        children:
+        - taxon: roddyi_ruedemann_1933
+          type: true
+          specimens:
+            holotype: USNM85181
+            hypotypes:
+            - USNM153758
+            - USNM153759
+            - USNM153760
 1967a_durham:
   taxonomies:
   - taxon: echinodermata
@@ -283,10 +303,7 @@
           new: true
           children:
           - taxon: camptostroma
-            moved:
-              taxon: collaspididae
-              provisional: true
-              notes: Species other than roddyi not actually Camptostroma
+            notes: Species other than roddyi not actually Camptostroma
             children:
             - taxon: roddyi_ruedemann_1933
               type: true

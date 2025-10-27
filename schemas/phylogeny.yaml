@@ -129,6 +129,8 @@ $defs:
               all:
                 type: [boolean, "null"]
                 default: false
+          notes:
+            type: string
       journal:
         type: string
       book:
