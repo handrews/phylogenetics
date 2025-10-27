@@ -7,7 +7,7 @@ $defs:
     pattern: ^[12][7890]\d\d[a-z]?_[a-z][\w._ -]+$
   authorId:
     type: string
-    pattern: ^[a-z][\w._ -]*$
+    pattern: ^[\w][\w._ -]*$
   authors:
     type: object
     minProperties: 1
@@ -176,6 +176,8 @@ $defs:
           accepted:
             $ref: "#/$defs/simpleDate"
           online:
+            $ref: "#/$defs/simpleDate"
+          published:
             $ref: "#/$defs/simpleDate"
           issued:
             $ref: "#/$defs/simpleDate"

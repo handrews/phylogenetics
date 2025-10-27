@@ -8,8 +8,12 @@ import jschon
 
 from . import logger
 
+NAMED_TAXON_FIELDS = {'taxon', 'cfTaxon', 'affTaxon'}
 def check_node(node, data, parent=[]):
-  taxon_fields = {'taxon', 'cfTaxon', 'openTaxon'} & node.keys()
+  if isinstance(node, str):
+    logger.error(f"STRING? '{node}'")
+    return
+  taxon_fields = (NAMED_TAXON_FIELDS | {'openTaxon'}) & node.keys()
   if len(taxon_fields) > 1:
     logger.error(
       f'Found {len(taxon_fields)} taxon fields ({taxon_fields}), expected one!'
@@ -17,26 +21,32 @@ def check_node(node, data, parent=[]):
 
   elif len(taxon_fields) == 1:
     taxon_type = taxon_fields.pop()
-
     taxon_id = node[taxon_type]
     current = parent + [taxon_id]
+
     logger.debug(f'checking {current}')
     if not (taxon := data['taxa'].get(taxon_id)):
       logger.error(f'Taxon "{taxon_id}" not found!')
 
-    elif taxon_type == 'taxon' and taxon['name'] is None:
+    elif taxon_type in NAMED_TAXON_FIELDS and taxon['name'] is None:
       logger.error(f'Taxon "{taxon_id}" expected to have a name!')
-    elif taxon_type != 'taxon' and taxon['name'] is not None:
+    elif taxon_type not in NAMED_TAXON_FIELDS and taxon['name'] is not None:
       logger.error(f'Taxon "{taxon_id}" NOT expected to have a name!')
 
     if node.get('new'):
-      # TODO: Figure this out
+      # TODO: Check taxon authority is this paper
       pass
   else:
     current = parent + ['_anon_']
     logger.debug(f'Descending through {current}')
 
-  for child in node.get('children', {}):
+  for index, synonym in enumerate(node.get('synonyms', [])):
+    check_node(synonym, data, current + ['synonym', str(index)])
+  if (moved := node.get('moved')):
+    check_node(moved, data, current + ['moved'])
+  if (parent := node.get('parent')):
+    check_node(parent, data, current + ['parent'])
+  for child in node.get('children', []):
     check_node(child, data, current)
 
 
@@ -71,18 +81,20 @@ def build_expected_taxon(expected, taxon):
     logger.debug(f'...built {species_expected}')
     return {species_expected}
 
-  ranked_expected = expected
-  # alt_expected = expected
   expected_set = {expected}
 
+  # TODO: fix duplicate code
+  if 'originalParent' in taxon:
+    expected_set.add(f"{expected}_{taxon['originalParent'].lower()}")
+
   logger.debug(f'Creating alt taxon_id expectations for "{taxon}"')
-  ranked_expected += f"-{rank.lower()}"
+  expected_set.add(f"{expected}-{rank.lower()}")
   # for author_id in taxon['auth']:
     # logger.debug(f'Adding author "{author_id}" for taxon_id "{taxon}"')
     # alt_expected += f'-{author_id.lower()[0]}'
   # alt_expected += f"-{taxon['year']}"
 
-  return {ranked_expected} #, alt_expected}
+  return expected_set
 
 
 def check_expectation(

@@ -385,7 +385,7 @@
       children:
       - taxon: cymbionites
         moved:
-          taxon: cymmbionitidae
+          taxon: cymbionitidae
         children:
         - taxon: craticula_whitehouse_1941
           type: true
@@ -423,7 +423,7 @@
               - USGD 2311
               - USGD 2312
               - USGD 3303
-          - openTaxon: sp-1_webby_1968
+          - openTaxon: astrocystites-sp_webby_1968
             specimens:
               unknowntype: USGD 3304
 1969_robison_sprinkle:
@@ -461,7 +461,7 @@
         children:
         - taxon: astrocystites
           synonyms:
-          - steganoblastus
+          - taxon: steganoblastus
           children:
           - taxon: ottawaensis_whiteaves_1897
             type: true
@@ -566,20 +566,24 @@
               - taxon: longidactylus_walcott_1886
                 synonyms:
                 - taxon: longidactylus_walcott_1886
-                  parent: eocystites
+                  parent:
+                    taxon: eocystites
                   provisional: true
                   auth: [walcott]
                   year: 1886
                 - taxon: longidactylus_walcott_1886
-                  parent: eocystis
+                  parent:
+                    taxon: eocystis
                   auth: [bather]
                   year: 1900
                 - taxon: longidactylus_walcott_1886
-                  parent: eocrinus
+                  parent:
+                    taxon: eocrinus
                   auth: [jaekel]
                   year: 1980
                 - cfTaxon: longidactylus_walcott_1886
-                  parent: gogia
+                  parent:
+                    taxon: gogia
                   auth: [robison]
                   year: 1965
                 specimens:
@@ -612,7 +616,8 @@
               - taxon: multibrachiatus_kirk_1945
                 synonyms:
                 - taxon: multibrachiatus_kirk_1945
-                  parent: eocrinus
+                  parent:
+                    taxon: eocrinus
                   auth: [kirk]
                   year: 1945
                 specimens:
@@ -657,7 +662,8 @@
               - taxon: granulosa_robison_1965
                 synonyms:
                 - taxon: longidactylus_walcott_1886
-                  parent: eocrinus
+                  parent:
+                    taxon: eocrinus
                   note: specimen provisionally assigned to this species
                   pars: true
                   auth: [Ressler]
@@ -728,12 +734,14 @@
               - taxon: kitchnerensis_sprinkle_1973
                 synonyms:
                 - taxon: prolifica_walcott_1917
-                  parent: gogia
+                  parent:
+                    taxon: gogia
                   pars: true
                   auth: [Harker, Hutchinson]
                   year: 1953
-                - openTaxon: sp_caster_pope_1840
-                  parent: eocrinus
+                - openTaxon: eocrinus?-sp_caster_pope_1960
+                  parent:
+                    taxon: eocrinus
                   provisional: true
                 new: true
                 specimens:
@@ -778,8 +786,9 @@
               - taxon: hobbsi_sprinkle_1973
                 new: true
                 synonyms:
-                - taxon: sp-1_palmer_1968
-                  parent: gogia
+                - openTaxon: gogia-sp_palmer_1968
+                  parent:
+                    taxon: gogia
                 specimens:
                   holotype: MCZ 631
                   paratypes:
@@ -807,16 +816,18 @@
                   - USNM 165403 # ?
                   - USNM 165404 # ?
                   - GSC 25954
-              - openTaxon: sp-1_sprinkle_1973
+              - openTaxon: gogia-sp-1_sprinkle_1973
                 synonyms:
-                - openTaxon: sp-1_robison_1965
-                  parent: gogia
+                - openTaxon: gogia-sp_robison_1965
+                  parent:
+                    taxon: gogia
                 specimens:
                   holotype: USNM 165411
-              - openTaxon: sp-2_sprinkle_1973
+              - openTaxon: gogia-sp-2_sprinkle_1973
                 synonyms:
-                - openTaxon: sp-1_walcott_1917
-                  parent: eocystites
+                - openTaxon: eocystites?-sp_walcott_1917
+                  parent:
+                    taxon: eocystites
                   provisional: true
                 specimens:
                   holotype: USNM 63712
@@ -828,8 +839,7 @@
               children:
               - taxon: jani_prokop_1962
                 synonyms:
-                - taxon: nuntius
-                  note: A. nuntius
+                - taxon: nuntius_prokop_1962
                 specimens:
                   unknowntypes:
                   - E62
@@ -1253,8 +1263,8 @@
         type: true
         new: true
         synonyms:
-        - - taxon: acanthocystites
-          - taxon: briareus_barrande_1887
+        - taxon: acanthocystites
+        - taxon: briareus_barrande_1887
         specimens:
           holotype: OF 002
 1985_jell_burrett_banks:
@@ -1577,7 +1587,7 @@
             - taxon: sumralli_guensburg_sprinkle_2003
               type: true
               new: true
-            - openTaxon: sp-1_guensburg_sprinkle_2003
+            - openTaxon: titanocrinus-sp_guensburg_sprinkle_2003
               new: true
           - taxon: glenocrinus
             new: true
@@ -2281,6 +2291,217 @@
             - taxon: rhopalocystis
             - taxon: macrocystella
             - taxon: eumorphocystis
+2021_jell_sprinkle:
+  taxonomies:
+  - taxon: echinodermata
+    auth: [brugiére]
+    year: 1791
+    children:
+    - taxon: blastozoa
+      children:
+      - taxon: eocrinoidea
+        children:
+        - taxon: gogiida
+          children:
+          - taxon: lichenoididae
+            synonyms:
+            - taxon: haplozoa
+            - taxon: cyamoidea
+            - taxon: cycloidea
+            - taxon: peridionitidae
+            - taxon: cymbionitidae
+            children:
+            - taxon: peridionites
+              children:
+              - taxon: navicula_whitehouse_1941
+                type: true
+                specimens:
+                  holotype: UQF5404
+                  paratypes:
+                  - UQF5398
+                  - UQF5399
+                  - UQF5400
+                  - UQF5401
+                  - UQF5402
+                  - UQF5403
+                  - UQF5405
+                  - UQF5406
+                  - UQF5407
+                  topotypes:
+                  - QMF59034
+                  - ... # the whole range is over 200 specimens
+                  - QMF59220
+            - taxon: cymbionites
+              children:
+              - taxon: craticula_whitehouse_1941
+                type: true
+                specimens:
+                  holotype: UQF5409
+                  paratypes:
+                  - UQF5408
+                  - UQF5410
+                  - ...
+                  - UQF5431
+                  - UQF5433
+                  - UQF5434
+                  - UQF5435
+                  topotypes:
+                  - QMF59221
+                  - ...
+                  - QMF59373
+            - taxon: lichenoides
+          - taxon: thorntonitidae
+            new: true
+            children:
+            - taxon: thorntonites
+              new: true
+              children:
+              - taxon: dowlingi_jell_sprinkle_2021
+                type: true
+                new: true
+                specimens:
+                  holotype: QMF59526
+                  paratypes:
+                  - QMF59374
+                  - ...
+                  - QMF59525
+                  - QMF59527
+                  - ...
+                  - QMF59586
+              - openTaxon: lichenoididae-gen_smith.a.b_zamora_álvaro_2013
+                provisional: true
+                children:
+                - openTaxon: lichenoididae-gen-sp_smith.a.b_zamora_álvaro_2013
+                  synonyms:
+                  - openTaxon: lichenoides-sp_zamora_deline_álvaro_rahman_2017
+    - taxon: echinozoa
+      children:
+      - taxon: edrioasteroidea
+        children:
+        - taxon: edrioblastoida
+          children:
+          - taxon: ikerus
+            new: true
+            children:
+            - taxon: edgari_jell_sprinkle_2021
+              type: true
+              new: true
+              specimens:
+                holotype: QMF59588
+                paratypes:
+                - QMF59587
+                - ...
+                - QMF59646
+      - taxon: stromatocystitida
+        children:
+        - taxon: stromatocystitidae
+          children:
+          - taxon: cambraster
+            children:
+            - taxon: cannati_miquel_1894
+              type: true
+            - openTaxon: cambraster-sp_jell_sprinkle_2021
+              new: true
+              specimens:
+                unknowntype:
+                - QMF59647
+                - ...
+                - QMF59653
+        - openTaxon: stromatocystitida-incertae-sedis
+          children:
+          - taxon: kailidiscus
+            children:
+            - taxon: chinensis_zhao.y_sumrall_parsley_peng.j_2010
+              type: true
+            - openTaxon: kailidiscus-sp_jell_sprinkle_2021
+              new: true
+              specimens:
+                unknowntype:
+                - QMF59654
+                - ...
+                - QMF59668
+  - taxon: arthropoda
+    children:
+    - taxon: trilobita
+      children:
+      - taxon: redlichiida
+        children:
+        - taxon: redlichiidae
+          children:
+          - taxon: redlichia
+            children:
+            - taxon: noetlingi_redlich_1899
+              synonyms:
+              - taxon: noetlingi_redlich_1899
+                parent:
+                  taxon: hoeferia
+              type: true
+            - openTaxon: redlichia-spp_jell_sprinkle_2021
+              new: true
+              specimens:
+                unknowntype:
+                - QMF59752
+                - QMF59753
+                - QMF59754
+        - taxon: xystriduridae
+          children:
+          - taxon: xystridura
+            children:
+            - taxon: templetonensis_chapman_1929
+              synonyms:
+              - taxon: templetonensis_chapman_1929
+                parent:
+                  taxon: milesia_paradoxididae
+              type: true
+            - cfTaxon: negrina_öpik_1975
+              new: true
+              specimens:
+                unknowntypes:
+                - QMF59764
+            - taxon: hamosa_öpik_1975
+              specimens:
+                holotype: Commonwealth Palaeontological Collection 10378
+                unknowntypes:
+                - QMF59767
+                - ...
+                - QMF59785
+      - taxon: ptychopariida
+        children:
+        - taxon: ptychopariidae
+          children:
+          - taxon: xingrenaspis
+            synonyms:
+            - taxon: tongshania
+            children:
+            - taxon: xingrenensis
+              type: true
+            - cfTaxon: tongshanensis
+              new: true
+              specimens:
+                unknowntypes:
+                - QMF59755
+                - ...
+                - QMF59761
+  - taxon: brachiopoda
+    children:
+    - taxon: orthida
+      children:
+      - taxon: bohemiellidae
+        children:
+        - taxon: diraphora
+          children:
+          - taxon: bellicostata_walcott_1924
+            type: true
+            synonyms:
+            - taxon: bellicostata_walcott_1924
+              parent: eoorthis
+          - taxon: dyunin_kruse_1990
+            specimens:
+              holotype: P88207
+              unknowntypes:
+              - QMF59786
+              - ...
+              - QMF59792
 2022_zamora_rahman_sumrall_gibson_thompson:
   taxonomies:
   - taxon: echinodermata

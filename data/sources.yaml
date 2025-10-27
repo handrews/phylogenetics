@@ -21,6 +21,8 @@ publications:
     - lawrence
     publisher: A.A.Balkema
     place: Rotterdam
+  es-rev:
+    name: Earth-Science Reviews
   fieldiana:
     name: Fieldiana, Geology
   fossil-record:
@@ -51,6 +53,10 @@ publications:
     name: Memoirs of the Queensland Museum
   methodique:
     name: Encyclopédie Méthodique. Histoire Naturelle des Vers. Tome Premier
+  nature:
+    name: Nature
+  nat-com:
+    name: Nature Communications
   nat-disp-ech:
     name: Naturalis Dispositio Echinodermatum
   palaeontology:
@@ -995,6 +1001,30 @@ articles:
     authors:
     - smith.a.b
     - zamora
+  2013_smith.a.b_zamora_álvaro:
+    title: The oldest echinoderm faunas from Gondwana show that echinoderm body plan diversification was rapid
+    complete:
+      named: null
+      open: null
+      history: null
+      specimens:
+        basic: null
+        all: null
+    journal: nat-com
+    volume: 4
+    article: 1385
+    pubDate:
+      year: 2013
+    processDates:
+      received: 2012-08-08
+      accepted: 2012-12-14
+      published: 2013-01-22
+    authors:
+    - smith.a.b
+    - zamora
+    - álvaro
+    identifiers:
+      doi: 10.1038/ncomms2391
   2015_ausich_kammer_rhenberg_wright.d.f:
     title: Early phylogeny of crinoids within the pelmatozoan clade
     journal: palaeontology
@@ -1044,6 +1074,32 @@ articles:
       online: 2014-03-24
     identifiers:
       doi: 10.4202/app.00048.2013
+  2017_zamora_deline_álvaro_rahman:
+    title: The Cambrian Substrate Revolution and the early evolution of attachment in suspension-feeding echinoderms
+    complete:
+      named: null
+      open: null
+      history: null
+      specimens:
+        basic: null
+        all: null
+    journal: es-rev
+    volume: 171
+    pages:
+    - 478
+    - 491
+    pubDate:
+      year: 2017
+    processDates:
+      received: 2017-03-07
+      revised: 2017-06-30
+      accepted: 2017-06-30
+      online: 2017-07-01
+    authors:
+    - zamora
+    - deline
+    - álvaro
+    - rahman
   2017_zamora_sumrall_zhu.x_lefebvre:
     title: A new stemmed echinoderm from the Furongian of China and the origin of Glyptocystitida (Blastozoa, Echinodermata)
     journal: geomag
@@ -1132,6 +1188,26 @@ articles:
     - david
     - roux
     - derstler
+  2021_jell_sprinkle:
+    title: Revision of Whitehouse’s eocrinoids Peridionites and Cymbionites, with description of the associated fauna including two new echinoderm genera, lower Middle Cambrian Thorntonia Limestone, northwestern Queensland
+    journal: alcheringa
+    volume: 45
+    number: 1
+    pages:
+    - 1
+    - 55
+    pubDate:
+      year: 2021
+    processDates:
+      received: 2020-07-03
+      revised: 2020-11-22
+      accepted: 2021-01-04
+      online: 2021-06-02
+    authors:
+    - jell
+    - sprinkle
+    identifiers:
+      doi: 10.1080/03115518.2021.1913512
   2022_zamora_rahman_sumrall_gibson_thompson:
     title: Cambrian edrioasteroid reveals new mechanism for secondary reduction of the skeleton in echinoderms
     journal: procrsocb

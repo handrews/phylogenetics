@@ -103,43 +103,7 @@ genus-a_guensburg_sprinkle_2003:
   rank: genus
   authority:
     source: 2003_guensburg_sprinkle
-sp-1_caster_pope_1960:
-  name: null
-  rank: species
-  auth: [Caster, Pope]
-  year: 1960
-sp-1_guensburg_sprinkle_2003:
-  name: null
-  rank: species
-  authority:
-    source: 2003_guensburg_sprinkle
-sp-1_palmer_1968:
-  name: null
-  rank: species
-  auth: [Palmer]
-  year: 1968
-  in: [Hobbs, Hays, Ross]
-sp-1_robison_1965:
-  name: null
-  rank: species
-  auth: [robison]
-  year: 1965
-sp-1_sprinkle_1973:
-  name: null
-  rank: species
-  authority:
-    source: 1973_sprinkle
-sp-2_sprinkle_1973:
-  name: null
-  rank: species
-  authority:
-    source: 1973_sprinkle
-sp-1_walcott_1917:
-  name: null
-  rank: species
-  auth: [walcott]
-  year: 1917
-sp-1_webby_1968:
+astrocystites-sp_webby_1968:
   name: null
   rank: species
   notes: |
@@ -148,6 +112,78 @@ sp-1_webby_1968:
     closer comparisons cannot be made."
   authority:
     source: 1968_webby
+cambraster-sp_jell_sprinkle_2021:
+  name: null
+  rank: species
+  authority:
+    source: 2021_jell_sprinkle
+eocrinus?-sp_caster_pope_1960:
+  name: null
+  rank: species
+  auth: [Caster, Pope]
+  year: 1960
+eocystites?-sp_walcott_1917:
+  name: null
+  rank: species
+  auth: [walcott]
+  year: 1917
+gogia-sp_palmer_1968:
+  name: null
+  rank: species
+  auth: [Palmer]
+  year: 1968
+  in: [Hobbs, Hays, Ross]
+gogia-sp_robison_1965:
+  name: null
+  rank: species
+  auth: [robison]
+  year: 1965
+gogia-sp-1_sprinkle_1973:
+  name: null
+  rank: species
+  authority:
+    source: 1973_sprinkle
+gogia-sp-2_sprinkle_1973:
+  name: null
+  rank: species
+  authority:
+    source: 1973_sprinkle
+kailidiscus-sp_jell_sprinkle_2021:
+  name: null
+  rank: species
+  authority:
+    source: 2021_jell_sprinkle
+lichenoides-sp_zamora_deline_álvaro_rahman_2017:
+  name: null
+  rank: species
+  authority:
+    source: 2017_zamora_deline_álvaro_rahman
+lichenoididae-gen_smith.a.b_zamora_álvaro_2013:
+  name: null
+  rank: genus
+  authority:
+    source: 2013_smith.a.b_zamora_álvaro
+lichenoididae-gen-sp_smith.a.b_zamora_álvaro_2013:
+  name: null
+  rank: species
+  authority:
+    source: 2013_smith.a.b_zamora_álvaro
+redlichia-spp_jell_sprinkle_2021:
+  name: null
+  rank: species
+  authority:
+    source: 2021_jell_sprinkle
+  notes: '"spp" seems to mean possibly multiple species?'
+titanocrinus-sp_guensburg_sprinkle_2003:
+  name: null
+  rank: species
+  authority:
+    source: 2003_guensburg_sprinkle
+stromatocystitida-incertae-sedis:
+  name: null
+  rank: Family
+  auth: [linnaeus]
+  year: 1758
 ###################### A
 adelphicrinus:
   name: Adelphicrinus
@@ -278,6 +314,11 @@ aristocystites:
   name: Aristocystites
   auth: [barrande]
   year: 1887
+arthropoda:
+  name: Arthropoda
+  rank: Phylum
+  auth: [von Siebold]
+  year: 1848
 articulata:
   name: Articulata
   rank: Subclass
@@ -361,6 +402,10 @@ belli_sumrall_brett_cornell_2006:
   name: belli
   auth: [sumrall, Brett, Cornell]
   year: 2006
+bellicostata_walcott_1924:
+  name: bellicostata
+  auth: [walcott]
+  year: 1924
 bifida_ubaghs_robison_1988:
   name: bifida
   auth: [ubaghs, robison]
@@ -411,10 +456,20 @@ bohemicus_barrande_1887_mimocystites:
   name: bohemicus
   auth: [barrande]
   year: 1887
+bohemiellidae:
+  name: Bohemiellidae
+  rank: Family
+  auth: [Havliček]
+  year: 1977
 brachiatus_sprinkle_1973:
   name: brachiatus
   authority:
     source: 1973_sprinkle
+brachiopoda:
+  name: Brachiopoda
+  rank: Phylum
+  auth: [Dumeril]
+  year: 1806
 bromidocystis:
   name: Bromidocystis
   auth: [sprinkle]
@@ -810,6 +865,10 @@ diploporita-order:
   rank: Order
   auth: [Müller]
   year: 1854
+diraphora_bell_1941:
+  name: diraphora
+  auth: [Bell]
+  year: 1941
 discocystinae:
   name: Discocystinae
   rank: Subfamily
@@ -829,6 +888,10 @@ dizonida:
   rank: Order
   auth: [domínguez alonso]
   year: 1999
+dowlingi_jell_sprinkle_2021:
+  name: dowlingi
+  authority:
+    source: 2021_jell_sprinkle
 drawbowensis_barrande_1887:
   name: drawbowensis
   auth: [barrande]
@@ -841,6 +904,10 @@ dusli_barrande_1887:
   name: dusli
   auth: [barrande]
   year: 1887
+dyunin_kruse_1990:
+  name: dyunin
+  auth: [Kruse]
+  year: 1990
 ###################### E
 echinoderma:
   name: Echinoderma
@@ -904,6 +971,10 @@ echmatocrinus:
   name: Echmatocrinus
   authority:
     source: 1973_sprinkle
+edgari_jell_sprinkle_2021:
+  name: edgari
+  authority:
+    source: 2021_jell_sprinkle
 edrioasterida:
   name: Edrioasterida
   rank: Order
@@ -920,15 +991,29 @@ edrioasteroidea:
   bracket: Edrioasteroids
   auth: [billings]
   year: 1858
+edrioblastoida:
+  name: Edrioblastoida
+  rank: Order
+  auth: [fay]
+  year: 1962
 edrioblastoidea:
   name: Edrioblastoidea
   rank: Class
+  auth: [fay]
+  year: 1962
+edrioblastoidina:
+  name: Edrioblastoidina
+  rank: Suborder
   auth: [fay]
   year: 1962
 edriodiscus:
   name: Edriodiscus
   auth: [jell, burrett, banks]
   year: 1985
+eoorthis:
+  name: Eoorthis
+  auth: [walcott]
+  year: 1908
 eknomocrinidae:
   name: Eknomocrinidae
   rank: Family
@@ -995,8 +1080,10 @@ eocystidae:
   notes: "in no way corresponds to Haekel's Eocystida"
 eocystites:
   name: Eocystites
-  auth: [billings]
-  year: 1868
+  auth: [Hart]
+  in: [Dawson]
+  year: 1869
+  notes: PBDB auth Billings 1868, IRMNG and others Hart in Dawson 1869
 eopostibulla:
   name: Eopostibulla
   authority:
@@ -1175,6 +1262,10 @@ hamiltonensis_vanuxem_1842:
   name: hamiltonensis
   auth: [Vanuxem]
   year: 1842
+hamosa_öpik_1975:
+  name: hamosa
+  auth: [Öpik]
+  year: 1975
 haplozoa:
   name: Haplozoa
   rank: Subphylum
@@ -1241,6 +1332,10 @@ hobbsi_sprinkle_1973:
   name: hobbsi
   authority:
     source: 1973_sprinkle
+hoeferia:
+  name: Hoeferia
+  auth: [Redlich]
+  year: 1899
 holothuroidea:
   name: Holothuroidea
   rank: Class
@@ -1296,6 +1391,10 @@ ikecanensis_sprinkle_1973:
   name: ikecanensis
   authority:
     source: 1973_sprinkle
+ikerus:
+  name: Ikerus
+  authority:
+    source: 2021_jell_sprinkle
 imbricata:
   name: Imbricata
   rank: Order
@@ -1534,6 +1633,12 @@ metazoa-grade:
   rank: Grade
   auth: [Haekel]
   year: 1874
+milesia_paradoxididae:
+  name: Milesia
+  auth: [Chapman]
+  year: 1929
+  originalParent: Paradoxididae
+  notes: Junior homonym of an insect genus.
 mimocystites:
   name: Mimocystites
   auth: [barrande]
@@ -1598,6 +1703,10 @@ neglecta_smith.a.b_1983:
   name: neglecta
   auth: [smith.a.b]
   year: 1983
+negrina_öpik_1975:
+  name: negrina
+  auth: [Öpik]
+  year: 1975
 nevadensis_sprinkle_1973:
   name: nevadensis
   authority:
@@ -1614,6 +1723,10 @@ nodosus_hall_1864:
   name: nodosus
   auth: [Hall]
   year: 1864
+noetlingi_redlich_1899:
+  name: noetlingi
+  auth: [Redlich]
+  year: 1899
 nolichuckia:
   name: Nolichuckia
   authority:
@@ -1639,6 +1752,11 @@ ophiuroidea:
   name: Ophiuroidea
   auth: [Gray]
   year: 1840
+orthida:
+  name: Orthida
+  rank: Order
+  auth: [Schuchert, Cooper]
+  year: 1932
 ottawaensis_whiteaves_1897:
   name: ottawaensis
   auth: [Whiteaves]
@@ -1870,6 +1988,16 @@ pseudedriophus:
   name: Pseudedriophus
   auth: [sprinkle, sumrall]
   year: 2015
+ptychopariida:
+  name: Ptychopariida
+  rank: Order
+  auth: [Swinnerton]
+  year: 1915
+ptychopariidae:
+  name: Ptychopariidae
+  rank: Family
+  auth: [Matthew]
+  year: 1887
 purujoensis_zamora_smith.a.b_2012:
   name: purujoensis
   auth: [zamora, smith.a.b]
@@ -1887,6 +2015,7 @@ pyrgopostibulla:
   name: Pyrgopostibulla
   auth: [sumrall, Brett, Cornell]
   year: 2006
+###################### Q
 ###################### R
 radiata_sprinkle_1973:
   name: radiata
@@ -1896,6 +2025,20 @@ ramseyocrinus:
   name: Ramseyocrinus
   auth: [Bates]
   year: 1968
+redlichia:
+  name: Redlichia
+  auth: [Cossman]
+  year: 1902
+redlichiida:
+  name: Redlichiida
+  rank: Order
+  auth: [Richter]
+  year: 1932
+redlichiidae:
+  name: Redlichiidae
+  rank: Family
+  auth: [Poulson]
+  year: 1927
 regularis_orłowski_1968:
   name: regularis
   auth: [orłowski]
@@ -2083,6 +2226,10 @@ sprinkleoglobus:
   name: Sprinkleoglobus
   auth: [zamora, guensburg, sprinkle]
   year: 2024
+steganoblastus:
+  name: Steganoblastus
+  auth: [Whiteaves]
+  year: 1899
 staffordi_domínguez alonso_1999:
   name: staffordi
   auth: [domínguez alonso]
@@ -2107,6 +2254,11 @@ stephanocrinus:
   name: Stephanocrinus
   auth: [Conrad]
   year: 1842
+stromatocystitida:
+  name: Stromatocystitida
+  rank: Order
+  auth: [Bell]
+  year: 1980
 stromatocystitidae:
   name: Stromatocystitidae
   rank: Family
@@ -2152,6 +2304,10 @@ taunicus_rösler_1953:
   name: taunicus
   auth: [Rösler]
   year: 1953
+templetonensis_chapman_1929:
+  name: templetonensis
+  auth: [Chapman]
+  year: 1929
 thecoidea:
   name: Thecoidea
   rank: Class
@@ -2161,6 +2317,15 @@ thor_müller_hahn_2010:
   name: thor
   authority:
     source: 2010_müller_hahn
+thorntonites:
+  name: Thorntonites
+  authority:
+    source: 2021_jell_sprinkle
+thorntonitidae:
+  rank: Family
+  name: Thorntonitidae
+  authority:
+    source: 2021_jell_sprinkle
 thyroida:
   name: Thyroida
   rank: Order
@@ -2181,6 +2346,16 @@ titanocrinus:
   name: Titanocrinus
   authority:
     source: 2003_guensburg_sprinkle
+tongshania:
+  name: Tongshania
+  auth: [Qiu, Lin]
+  in: [Qiu, 'et al.']
+  year: 1983
+tongshanensis_qiu_lin_1983:
+  name: tongshanensis
+  auth: [Qiu, Lin]
+  in: [Qiu, 'et al.']
+  year: 1983
 totiglobidae:
   name: Totiglobidae
   auth: [Bell, sprinkle]
@@ -2202,6 +2377,11 @@ treadwelli_sinclair_1945:
   name: treadwelli
   auth: [Sinclair]
   year: 1945
+trilobita:
+  name: Trilobita
+  rank: Class
+  auth: [Walch]
+  year: 1771
 turbanicystidae:
   name: Turbanicystidae
   authority:
@@ -2290,6 +2470,25 @@ withersi_gill_caster_1960:
   authority:
     source: 1960_gill_caster
 ###################### X
+xingrenaspis:
+  name: Xingrenaspis
+  auth: [Yuan, Zhao]
+  in: [Zhang, 'et al.']
+  year: 1980
+xingrenensis_yuan_zhao_1980:
+  name: xingrenensis
+  auth: [Yuan, Zhao]
+  in: [Zhang, 'et al.']
+  year: 1980
+xystridura:
+  name: Xystridura
+  auth: [whitehouse]
+  year: 1936
+xystriduridae:
+  name: Xystriduridae
+  rank: Family
+  auth: [whitehouse]
+  year: 1939
 ###################### Y
 yorkicystitidae:
   name: Yorkicystitidae
@@ -2318,6 +2517,11 @@ eocrinus:
   auth: [jaekel]
   year: 1918
   synonym: gogia
+eocystis:
+  name: Eocystis
+  authority:
+    source: 1900_bather
+  notes: Junior synonym of Eocystites (instead of alternate spelling?)
 kailidiscus:
   name: Kailidiscus
   auth: [zhao.y, sumrall, parsley, peng.j]
