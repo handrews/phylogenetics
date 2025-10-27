@@ -69,6 +69,8 @@ publications:
     name: Proceedings of the Royal Society B
   science-new-series:
     name: Science (New Series)
+  smith-misc:
+    name: Smithsonian Miscellaneous Collections
   soc-sci-nat-phys-maroc:
     name: Bulletin de la Société des sciences naturelles du Maroc
   sp-pub-harvard:
@@ -170,6 +172,17 @@ articles:
       day: 13
     identifiers:
       url: https://www.biodiversitylibrary.org/item/189697#page/38/mode/1up
+  1935_bassler:
+    title: The Classification of the Edrioasteroidea
+    journal: smith-misc
+    volume: 93
+    number: 8
+    pubDate:
+      year: 1935
+      month: 4
+      day: 4
+    authors:
+    - bassler
   1960_gill_caster:
     title: Carpoid echinoderms from the Silurian and Devonian of Australia
     journal: bullamp

@@ -42,10 +42,12 @@ def check_node(node, data, parent=[]):
 
   for index, synonym in enumerate(node.get('synonyms', [])):
     check_node(synonym, data, current + ['synonym', str(index)])
+  for index, parent in enumerate(node.get('parents', [])):
+    check_node(parent, data, current + ['parent', str(index)])
   if (moved := node.get('moved')):
     check_node(moved, data, current + ['moved'])
-  if (parent := node.get('parent')):
-    check_node(parent, data, current + ['parent'])
+  if (corrected := node.get('corrected')):
+    check_node(corrected, data, current + ['corrected'])
   for child in node.get('children', []):
     check_node(child, data, current)
 
@@ -66,7 +68,7 @@ def build_expected_taxon(expected, taxon):
 
     rank = 'genus' if taxon['name'][0].isupper() else 'species'
 
-  if rank in ('species', 'subspecies'):
+  if rank in ('species', 'subspecies', 'variety'):
     species_expected = expected
     logger.debug(f'Building species id for {expected}...')
     if 'auth' in taxon:
@@ -235,4 +237,4 @@ def check_trees(data, sources):
   logger.info(f"...opinions processed.")
 
   if (difference := sources - opinions):
-    logger.warn("Missing opinions from:\n    " + '\n    '.join(difference))
+    logger.warn("Missing opinions from:\n    " + '\n    '.join(sorted(difference)))

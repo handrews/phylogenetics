@@ -82,6 +82,49 @@
                     - taxon: stelleroidea
                     - taxon: echinoidea
 
+1935_bassler:
+  taxonomies:
+  - taxon: edrioasteroidea
+    synonyms:
+    - taxon: thyroidea
+    - taxon: agelacrinoidea
+    - taxon: cystasteroidea
+    - taxon: thecoidea
+    - taxon: cystostellaroidea
+    children:
+    - taxon: agelacrinitidae
+      corrected:
+        taxon: agelacrinidae
+      synonyms:
+      - taxon: thecocystidae
+      children:
+      - taxon: stromatocystites
+        synonyms:
+        - taxon: stromatocystis
+          notes: post-dates correct Stromatocystites
+        children:
+        - taxon: pentangularis_pompeckj_1896
+          type: true
+        - taxon: balticus_jaekel_1899
+        - taxon: walcotti_schuchert_1919
+          children:
+          - taxon: minor_schuchert_1919
+      - taxon: walcottidiscus
+        new: true
+        children:
+        - taxon: typicalis_bassler_1935
+          type: true
+          new: true
+      - taxon: cystaster
+        synonyms:
+        - taxon: thecocystis
+        children:
+        - taxon: granulatus_hall_1871
+          synonyms:
+          - taxon: granulatus_hall_1871
+            parents:
+            - taxon: cystaster-subgenus
+            - taxon: hemicystites
 1941_whitehouse:
   taxonomies:
   - taxon: echinodermata
@@ -185,12 +228,12 @@
                 children:
                 - taxon: placocystitidae
                   new: true
-                  replacesName:
+                  corrected:
                     taxon: placocystidae
                   children:
                   - taxon: placocystitinae
                     new: true
-                    replacesName:
+                    corrected:
                       taxon: placocystinae
                     children:
                     - taxon: placocystites
@@ -583,24 +626,24 @@
               - taxon: longidactylus_walcott_1886
                 synonyms:
                 - taxon: longidactylus_walcott_1886
-                  parent:
-                    taxon: eocystites
+                  parents:
+                  - taxon: eocystites
                   provisional: true
                   auth: [walcott]
                   year: 1886
                 - taxon: longidactylus_walcott_1886
-                  parent:
-                    taxon: eocystis
+                  parents:
+                  - taxon: eocystis
                   auth: [bather]
                   year: 1900
                 - taxon: longidactylus_walcott_1886
-                  parent:
-                    taxon: eocrinus
+                  parents:
+                  - taxon: eocrinus
                   auth: [jaekel]
                   year: 1980
                 - cfTaxon: longidactylus_walcott_1886
-                  parent:
-                    taxon: gogia
+                  parents:
+                  - taxon: gogia
                   auth: [robison]
                   year: 1965
                 specimens:
@@ -633,8 +676,8 @@
               - taxon: multibrachiatus_kirk_1945
                 synonyms:
                 - taxon: multibrachiatus_kirk_1945
-                  parent:
-                    taxon: eocrinus
+                  parents:
+                  - taxon: eocrinus
                   auth: [kirk]
                   year: 1945
                 specimens:
@@ -679,8 +722,8 @@
               - taxon: granulosa_robison_1965
                 synonyms:
                 - taxon: longidactylus_walcott_1886
-                  parent:
-                    taxon: eocrinus
+                  parents:
+                  - taxon: eocrinus
                   note: specimen provisionally assigned to this species
                   pars: true
                   auth: [Ressler]
@@ -751,14 +794,14 @@
               - taxon: kitchnerensis_sprinkle_1973
                 synonyms:
                 - taxon: prolifica_walcott_1917
-                  parent:
-                    taxon: gogia
+                  parents:
+                  - taxon: gogia
                   pars: true
                   auth: [Harker, Hutchinson]
                   year: 1953
                 - openTaxon: eocrinus?-sp_caster_pope_1960
-                  parent:
-                    taxon: eocrinus
+                  parents:
+                  - taxon: eocrinus
                   provisional: true
                 new: true
                 specimens:
@@ -804,8 +847,8 @@
                 new: true
                 synonyms:
                 - openTaxon: gogia-sp_palmer_1968
-                  parent:
-                    taxon: gogia
+                  parents:
+                  - taxon: gogia
                 specimens:
                   holotype: MCZ 631
                   paratypes:
@@ -836,15 +879,15 @@
               - openTaxon: gogia-sp-1_sprinkle_1973
                 synonyms:
                 - openTaxon: gogia-sp_robison_1965
-                  parent:
-                    taxon: gogia
+                  parents:
+                  - taxon: gogia
                 specimens:
                   holotype: USNM 165411
               - openTaxon: gogia-sp-2_sprinkle_1973
                 synonyms:
                 - openTaxon: eocystites?-sp_walcott_1917
-                  parent:
-                    taxon: eocystites
+                  parents:
+                  - taxon: eocystites
                   provisional: true
                 specimens:
                   holotype: USNM 63712

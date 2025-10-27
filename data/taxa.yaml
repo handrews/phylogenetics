@@ -390,6 +390,10 @@ azonida:
   auth: [domínguez alonso]
   year: 1999
 ###################### B
+balticus_jaekel_1899:
+  name: balticus
+  auth: [jaekel]
+  year: 1899
 barroubiocystis:
   name: Barroubiocystis
   auth: [ubaghs]
@@ -779,12 +783,21 @@ cycloidea:
   rank: Class
   authority:
     source: 1941_whitehouse
+cystaster:
+  name: Cystaster
+  auth: [Hall]
+  year: 1871
+cystaster-subgenus:
+  name: Cystaster
+  rank: subgenus
+  auth: [Hall]
+  year: 1871
 cystasteroidea:
   name: Cystasteroidea
-  rank: Class
+  rank: Order
   auth: [Steinmann]
   year: 1888
-  notes: Rank needs confirmation, could be order?
+  notes: Actually "Gruppe" (3rd group of class Cystoidea)
 cystidea:
   name: Cystidea
   rank: Class
@@ -795,6 +808,15 @@ cystoidea:
   rank: Class
   auth: [von Buch]
   year: 1846
+cystostellaroidea:
+  name: Cystostellaroidea
+  rank: Order
+  auth: [Steinmann]
+  year: 1904
+  notes: |
+    Name reported secondhand, Bell (1974) examined the supposed 1903
+    source and did not find the name.  Bassler (1935) gives the year
+    as 1904.  Assumed Order (or Gruppe) by analogy with Cystasteroidea.
 cymbionites:
   name: Cymbionites
   authority:
@@ -1224,6 +1246,10 @@ gondi_ubaghs_1987:
   name: gondi
   auth: [ubaghs]
   year: 1987
+granulatus_hall_1871:
+  name: granulatus
+  auth: [Hall]
+  year: 1871
 granulosa_robison_1965:
   name: granulosa
   auth: [robison]
@@ -1310,6 +1336,10 @@ hemicosmites:
   name: Hemicosmites
   auth: [Buch]
   year: 1840
+hemicystites:
+  name: Hemicystites
+  auth: [Hall]
+  year: 1852
 hemicystitidae:
   name: Hemicystitidae
   rank: Family
@@ -1643,6 +1673,11 @@ mimocystites:
   name: Mimocystites
   auth: [barrande]
   year: 1887
+minor_schuchert_1919:
+  name: minor
+  rank: variety
+  auth: [Schuchert]
+  year: 1919
 minor_sprinkle_1973:
   name: minor
   authority:
@@ -2264,6 +2299,12 @@ stromatocystitidae:
   rank: Family
   auth: [bassler]
   year: 1936
+stromatocystis:
+  name: Stromatocystis
+  auth: [Pompeckj]
+  year: 1896
+  altSpellingOf: stromatocystites
+  notes: Used by Bather (1900)
 stromatocystites:
   name: Stromatocystites
   auth: [Pompeckj]
@@ -2308,6 +2349,15 @@ templetonensis_chapman_1929:
   name: templetonensis
   auth: [Chapman]
   year: 1929
+thecocystidae:
+  name: Thecocystidae
+  rank: Family
+  auth: [jaekel]
+  year: 1899
+thecocystis:
+  name: Thecocystis
+  auth: [jaekel]
+  year: 1899
 thecoidea:
   name: Thecoidea
   rank: Class
@@ -2331,7 +2381,13 @@ thyroida:
   rank: Order
   auth: [Chapman]
   year: 1860
-  notes: Rank needs confirmation, could be class?
+  notes: Some sources list order Thyroidea, Thyroida is probably an error
+  altSpellingOf: Thyroidea
+thyroidea:
+  name: Thyroidea
+  rank: Order
+  auth: [Chapman]
+  year: 1860
 tiaracrinidae:
   name: Tiaracrinidae
   rank: Family
@@ -2390,6 +2446,10 @@ turbanicystis:
   name: Turbanicystis
   authority:
     source: 2010_parsley_zhao.y
+typicalis_bassler_1935:
+  name: typicalis
+  authority:
+    source: 1935_bassler
 ###################### U
 ubaghsi_guensburg_sprinkle_2009:
   name: ubaghsi
@@ -2449,6 +2509,14 @@ wahwahensis_guensburg_sprinkle_2003:
   name: wahwahensis
   authority:
     source: 2003_guensburg_sprinkle
+walcotti_schuchert_1919:
+  name: walcotti
+  auth: [Schuchert]
+  year: 1919
+walcottidiscus:
+  name: Walcottidiscus
+  authority:
+    source: 1935_bassler
 wanneri_foerste_1938:
   name: wanneri
   auth: [Foerste]

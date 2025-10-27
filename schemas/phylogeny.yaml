@@ -253,6 +253,7 @@ $defs:
         - subgenus
         - species
         - subspecies
+        - variety
         - Branch
         - Grade
         - Clade
@@ -326,9 +327,17 @@ $defs:
         default: false
       specimens:
         $ref: "phylogeny#/$defs/specimen"
+      parents:
+        type: array
+        items:
+          $ref: taxonomyTree
+      synonyms:
+        type: array
+        items:
+          $ref: taxonomyTree
       moved:
         $ref: taxonomyTree
-      replacesName:
+      corrected:
         $ref: taxonomyTree
       affTaxon:
         type: string
