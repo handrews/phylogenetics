@@ -427,10 +427,18 @@ bellicostata_walcott_1924:
   name: bellicostata
   auth: [walcott]
   year: 1924
+bellulus_barrande_1887:
+  name: bellulus
+  auth: [barrande]
+  year: 1887
 bifida_ubaghs_robison_1988:
   name: bifida
   auth: [ubaghs, robison]
   year: 1988
+billingsi_chapman_1860:
+  name: billingsi
+  auth: [Chapman]
+  year: 1860
 blairi_miller_1894:
   name: blairi
   auth: [Miller]
@@ -467,6 +475,11 @@ bohemica_fatka_kordule_1985:
   name: bohemica
   auth: [Fatka, Kordule]
   year: 1985
+bohemicus_barrande_1887_agelacrinites:
+  originalParent: agelacrinites
+  name: bohemicus
+  auth: [barrande]
+  year: 1887
 bohemicus_barrande_1887_cardiocystites:
   originalParent: cardiocystites
   name: bohemicus
@@ -604,6 +617,10 @@ ceratocystis:
   name: Ceratocystis
   auth: [jaekel]
   year: 1901
+chapmani_raymond_1915:
+  name: chapmani
+  auth: [Raymond]
+  year: 1915
 cheirocrinus:
   name: Cheirocrinus
   auth: [Eichwald]
@@ -713,6 +730,10 @@ comarocystitidae:
   rank: Family
   auth: [bather]
   year: 1899
+confertus_barrande_1887:
+  name: confertus
+  auth: [barrande]
+  year: 1887
 conollia:
   name: Conollia
   auth: [domínguez alonso]
@@ -1424,6 +1445,10 @@ hemicystitides:
   name: Hemicystitides
   auth: [Hall]
   year: 1852
+hemicystis:
+  name: Hemicystis
+  auth: [Haekel]
+  year: 1896
 heterostelea:
   name: Heterostelea
   rank: Order
@@ -1610,6 +1635,10 @@ languedocianus_ubaghs_1987:
   name: languedocianus
   auth: [ubaghs]
   year: 1987
+latiusculus_barrande_1887:
+  name: latiusculus
+  auth: [barrande]
+  year: 1887
 lebetodiscidae:
   name: Lebetodiscidae
   rank: Family
@@ -1945,6 +1974,10 @@ parapostibulla:
   name: Parapostibulla
   auth: [sumrall, Garbisch, Pope]
   year: 2000
+parasitica_hall_1852:
+  name: parasitica
+  auth: [Hall]
+  year: 1852
 parazoa-branch:
   name: Parazoa
   rank: Branch
@@ -2177,6 +2210,10 @@ ramseyocrinus:
   name: Ramseyocrinus
   auth: [Bates]
   year: 1968
+rectiradiatus_shideler_1918:
+  name: rectiradiatus
+  auth: [Shideler]
+  year: 1918
 redlichia:
   name: Redlichia
   auth: [Cossman]
@@ -2324,6 +2361,10 @@ septembrachiatus_miller_dyer_1878:
   name: septembrachiatus
   auth: [Miller, Dyer]
   year: 1878
+simplex_barrande_1887:
+  name: simplex
+  auth: [barrande]
+  year: 1887
 sinensis_zamora_sumrall_zhu.x_lefebvre_2017:
   name: sinensis
   auth: [zamora, sumrall, zhu.x, lefebvre]
@@ -2491,6 +2532,10 @@ templetonensis_chapman_1929:
   name: templetonensis
   auth: [Chapman]
   year: 1929
+tener_barrande_1887:
+  name: tener
+  auth: [barrande]
+  year: 1887
 thecocystidae:
   name: Thecocystidae
   rank: Family
@@ -2622,6 +2667,10 @@ velieuxicystis:
   name: Velieuxicystis
   auth: [ubaghs]
   year: 1999
+velatus_barrande_1887:
+  name: velatus
+  auth: [barrande]
+  year: 1887
 vetusta_foerste_1914:
   name: vetusta
   auth: [foerste]
@@ -2725,6 +2774,10 @@ yorkicystis:
   name: Yorkicystis
   auth: [Zamora, Rahman, sumrall, Gibson, Thompson]
   year: 2022
+youngi_raymond_1915:
+  name: youngi
+  auth: [Raymond]
+  year: 1915
 ###################### Z
 # synonyms:
 briareus_barrande_1887:

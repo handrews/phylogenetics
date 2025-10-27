@@ -248,6 +248,67 @@
         - taxon: grayae_bather_1915
         - taxon: ansticei_bather_1915
         - taxon: batheri_ruedemann_1925
+      - taxon: hemicystites
+        synonyms:
+        - taxon: hemicystis
+        children:
+        - taxon: parasitica_hall_1852
+          type: true
+        - taxon: bellulus_barrande_1887
+          synonyms:
+          - taxon: bellulus_barrande_1887
+            parents:
+            - taxon: agelacrinites
+        - taxon: bohemicus_barrande_1887_agelacrinites
+          synonyms:
+          - taxon: bohemicus_barrande_1887_agelacrinites
+            parents:
+            - taxon: agelacrinites
+        - taxon: confertus_barrande_1887
+          synonyms:
+          - taxon: confertus_barrande_1887
+            parents:
+            - taxon: agelacrinites
+        - taxon: latiusculus_barrande_1887
+          synonyms:
+          - taxon: latiusculus_barrande_1887
+            parents:
+            - taxon: agelacrinites
+        - taxon: simplex_barrande_1887
+          synonyms:
+          - taxon: simplex_barrande_1887
+            parents:
+            - taxon: agelacrinites
+        - taxon: tener_barrande_1887
+          synonyms:
+          - taxon: tener_barrande_1887
+            parents:
+            - taxon: agelacrinites
+        - taxon: velatus_barrande_1887
+          synonyms:
+          - taxon: velatus_barrande_1887
+            parents:
+            - taxon: agelacrinites
+        - taxon: rectiradiatus_shideler_1918
+          synonyms:
+          - taxon: rectiradiatus_shideler_1918
+            parents:
+            - taxon: agelacrinites
+        - taxon: billingsi_chapman_1860
+          synonyms:
+          - taxon: billingsi_chapman_1860
+            parents:
+            - taxon: agelacrinus
+        - taxon: youngi_raymond_1915
+          synonyms:
+          - taxon: youngi_raymond_1915
+            parents:
+            - taxon: lebetodiscus
+        - taxon: chapmani_raymond_1915
+          synonyms:
+          - taxon: chapmani_raymond_1915
+            parents:
+            - taxon: lebetodiscus
 1941_whitehouse:
   taxonomies:
   - taxon: echinodermata
