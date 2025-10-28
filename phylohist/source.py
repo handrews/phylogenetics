@@ -2,7 +2,10 @@ from pathlib import Path
 from collections import defaultdict
 import re
 import sys
+import logging
 import yaml
+
+logger = logging.getLogger(__name__)
 
 DTYPES = {
     'e': 'erratum',

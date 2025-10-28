@@ -1,6 +1,9 @@
 import re
 import datetime
 import pathlib
+import logging
+
+logger = logging.getLogger(__name__)
 
 LIST_DIR = pathlib.Path(__file__).parent / '..' / 'notes' / 'lists'
 

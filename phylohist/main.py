@@ -10,7 +10,7 @@ from .io import load_files
 from .check import check_authors, check_sources, check_taxa, check_trees
 from .convert import convert
 
-from . import logger
+logger = logging.getLogger(__name__)
 
 schema_catalog = jschon.create_catalog('2020-12')
 """The default shared ``jschon`` schema loader and cache"""
@@ -26,11 +26,10 @@ def main():
   check_taxa(data)
   check_trees(data, sources)
 
-#   logged_errors = log_counter.get_counts()[logging.ERROR]
-#   if logged_errors:
-  logged_errors = logger.error_count
-  logged_warnings = logger.warn_count
-  print()
+  # TODO: Obviously this is fragile, fix it!
+  handler = logger.parent.handlers[0]
+  logged_errors = handler.get_count(logging.ERROR)
+  logged_warnings = handler.get_count(logging.WARN)
   if logged_errors:
     logger.error(
       f'Encounterd {logged_errors} errors ({logged_warnings} warnings)!'

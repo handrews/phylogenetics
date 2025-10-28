@@ -1,7 +1,11 @@
-import logging
+import sys
+import os
 import collections
 
-# AI code
+import logging
+import coloredlog
+
+
 class LevelCountHandler(logging.StreamHandler):
   """
   A custom logging handler that counts log messages by level.
@@ -15,40 +19,30 @@ class LevelCountHandler(logging.StreamHandler):
     Increments the count for the given log record's level.
     """
     self.counts[record.levelname] += 1
+    super().emit(record)
 
-  def get_counts(self):
+  def get_count(self, level):
     """
     Returns a dictionary of log level counts.
     """
-    return dict(self.counts)
+    return self.counts[level]
 
 
-LEVEL = logging.INFO
-# log_counter = LevelCountHandler()
-# log_counter.setLevel(LEVEL)
-# logger = logging.getLogger(__name__)
-# logger.setLevel(LEVEL)
-# logger.addHandler(log_counter)
-# logger.setLevel(LEVEL)
+class ColoredLevelCountHandler(coloredlog.ConsoleHandler, LevelCountHandler):
+  pass
 
 
-class L():
-  error_count = 0
-  warn_count = 0
-  def error(self, message):
-    self.error_count += 1
-    if LEVEL <= logging.ERROR:
-      print(f'*** ERROR: {message}')
-  def warn(self, message):
-    self.warn_count += 1
-    if LEVEL <= logging.WARNING:
-      print(f'*** WARNING: {message}')
-  def info(self, message):
-    if LEVEL <= logging.INFO:
-      print(f'*** INFO: {message}')
-  def debug(self, message):
-    if LEVEL <= logging.DEBUG:
-      print(f'*** DEBUG: {message}')
+_phylohist_logger = logging.getLogger(__name__)
+_log_formatter = logging.Formatter(
+    '%(asctime)s %(filename)s:%(lineno)d [%(levelname)s] %(message)s',
+)
+_log_handler = (
+    ColoredLevelCountHandler(stream=sys.stderr)
+    if sys.stderr.isatty() or os.getenv('PHYLOHIST_COLOR') == '1'
+    else LevelCountHandler()
+)
+_log_handler.setFormatter(_log_formatter)
+_phylohist_logger.addHandler(_log_handler)
+_phylohist_logger.setLevel(logging.INFO)
 
-
-logger = L()
+logger = _phylohist_logger

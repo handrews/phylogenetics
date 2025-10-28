@@ -6,7 +6,7 @@ import collections
 import yaml
 import jschon
 
-from . import logger
+logger = logging.getLogger(__name__)
 
 NAMED_TAXON_FIELDS = {'taxon', 'cfTaxon', 'affTaxon'}
 def check_node(node, data, parent=[]):

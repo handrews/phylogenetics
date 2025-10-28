@@ -6,7 +6,7 @@ import collections
 import yaml
 import jschon
 
-from . import logger
+logger = logging.getLogger(__name__)
 
 
 FILEDIR = pathlib.Path(__file__).parent / '..' / 'data'
