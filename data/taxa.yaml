@@ -294,7 +294,7 @@ alpinensis_bassler_1936:
 amphorida:
   name: Amphorida
   rank: Order
-  auth: [Haekel]
+  auth: [haekel]
   year: 1896
 animalia:
   name: Animalia
@@ -767,13 +767,13 @@ coelomocoela-grade:
 collaspidae:
   name: Collaspidae
   rank: Family
-  auth: [Haekel]
+  auth: [haekel]
   year: 1889
   altSpellingOf: collaspididae
 collaspididae:
   name: Collaspididae
   rank: Family
-  auth: [Haekel]
+  auth: [haekel]
   year: 1889
 colodon_ubaghs_robison_1988:
   name: colodon
@@ -1225,7 +1225,7 @@ edrioblastoidina:
   year: 1962
 edriocystis:
   name: Edriocystis
-  auth: [Haekel]
+  auth: [haekel]
   year: 1896
 edriodiscus:
   name: Edriodiscus
@@ -1356,11 +1356,11 @@ flexibilia:
   auth: [Zittel]
   year: 1895
 foerstecystis:
-  name: foerstecystis
+  name: Foerstecystis
   auth: [bassler]
   year: 1950
 foerstediscus:
-  name: foerstediscus
+  name: Foerstediscus
   authority:
     source: 1935_bassler
 fortuitus_guensburg_sprinkle_2003:
@@ -1609,7 +1609,7 @@ hemicystitides:
   year: 1852
 hemicystis:
   name: Hemicystis
-  auth: [Haekel]
+  auth: [haekel]
   year: 1896
 heterostelea:
   name: Heterostelea
@@ -1972,12 +1972,12 @@ mesocystidae:
 metazoa:
   name: Metazoa
   rank: Subkingdom
-  auth: [Haekel]
+  auth: [haekel]
   year: 1874
 metazoa-grade:
   name: Metazoa
   rank: Grade
-  auth: [Haekel]
+  auth: [haekel]
   year: 1874
 milesia_paradoxididae:
   name: Milesia
@@ -2260,7 +2260,7 @@ placocystella:
 placocystida:
   name: Placocystida
   rank: Suborder
-  auth: [Haekel]
+  auth: [haekel]
   year: 1896
 placocystidae:
   name: Placocystidae
