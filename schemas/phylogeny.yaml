@@ -187,6 +187,8 @@ $defs:
             $ref: "#/$defs/simpleDate"
           conferenceEnd:
             $ref: "#/$defs/simpleDate"
+          unknown:
+            $ref: "#/$defs/simpleDate"
       identifiers:
         type: object
         additionalProperties: false

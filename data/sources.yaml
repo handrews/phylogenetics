@@ -154,26 +154,15 @@ articles:
     - bather
     identifiers:
       url: https://archive.org/details/treatiseonzoolog03lank/page/n5/mode/2up
-  1941_whitehouse:
-    title: "The Cambrian faunas of north-eastern Australia, Part 4: Early Cambrian echinoderms similar to the larval stages of Recent forms"
-    journal: mem-q
-    volume: 12
-    number: 1
-    pages:
-    - 1
-    - 28
-    authors:
-    - whitehouse
-    editors:
-    - longman
-    pubDate:
-      year: 1941
-      month: 6
-      day: 13
-    identifiers:
-      url: https://www.biodiversitylibrary.org/item/189697#page/38/mode/1up
   1935_bassler:
     title: The Classification of the Edrioasteroidea
+    complete:
+      named: true
+      open: true
+      history: true
+      specimens:
+        basic: null
+        all: null
     journal: smith-misc
     volume: 93
     number: 8
@@ -200,6 +189,24 @@ articles:
     - caster
     identifiers:
       url: https://www.biodiversitylibrary.org/page/10654670
+  1941_whitehouse:
+    title: "The Cambrian faunas of north-eastern Australia, Part 4: Early Cambrian echinoderms similar to the larval stages of Recent forms"
+    journal: mem-q
+    volume: 12
+    number: 1
+    pages:
+    - 1
+    - 28
+    authors:
+    - whitehouse
+    editors:
+    - longman
+    pubDate:
+      year: 1941
+      month: 6
+      day: 13
+    identifiers:
+      url: https://www.biodiversitylibrary.org/item/189697#page/38/mode/1up
   1962_fay:
     title: Edrioblastoidea, a new class of Echinodermata
     complete:
@@ -222,6 +229,29 @@ articles:
     - fay
     identifiers:
       jstor: 13011100
+  1963_durham_caster:
+    title: "Helicoplacoidea: A New Class of Echinoderms"
+    complete:
+      named: true
+      open: null
+      history: null
+      specimens:
+        basic: true
+        all: true
+    journal: science-new-series
+    volume: 149
+    number: 3568
+    pubDate:
+      year: 1963
+      month: 5
+      day: 17
+    processDates:
+      unknown: 1963-02-15
+    authors:
+    - durham
+    - caster
+    identifiers:
+      jstor: 1711312
   1966_durham:
     title: Camptostroma, an Early Cambrian Supposed Scyphozoan, Referable to Echinodermata
     complete:
@@ -261,6 +291,13 @@ articles:
       url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
   1966_durham_caster:
     title: Helicoplacoids
+    complete:
+      named: true
+      open: true
+      history: true
+      specimens:
+        basic: null
+        all: null
     book: treatise-u
     pubDate:
       year: 1966

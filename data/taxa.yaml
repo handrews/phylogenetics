@@ -153,6 +153,11 @@ gogia-sp-2_sprinkle_1973:
   rank: species
   authority:
     source: 1973_sprinkle
+helicoplacus-sp_durham_caster_1966:
+  name: null
+  rank: species
+  authority:
+    source: 1966_durham_caster
 kailidiscus-sp_jell_sprinkle_2021:
   name: null
   rank: species
@@ -889,6 +894,10 @@ cuniculocystis:
   name: Cuniculocystis
   auth: [sprinkle, Wahlman]
   year: 1994
+curtisi_durham_caster_1963:
+  name: curtisi
+  authority:
+    source: 1963_durham_caster
 curvatus_grigo_1995:
   name: curvatus
   auth: [Grigo]
@@ -1363,6 +1372,10 @@ gigas_jaekel_1901:
   name: gigas
   auth: [jaekel]
   year: 1901
+gilberti_durham_caster_1963:
+  name: gilberti
+  authority:
+    source: 1963_durham_caster
 gilcidia:
   name: Gilcidia
   auth: [domínguez alonso]
@@ -1544,6 +1557,11 @@ helicocystis:
   name: Helicocystis
   auth: [Smith, Zamora]
   year: 2013
+helicoplacidae:
+  name: Helicoplacidae
+  rank: Family
+  authority:
+    source: 1966_durham_caster
 helicoplacoidea:
   name: Helicoplacoidea
   bracket: Helicoplacoids

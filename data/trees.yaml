@@ -429,6 +429,7 @@
         - taxon: suecica_jaekel_1927
           type: true
     - taxon: astrocystitidae
+      new: true
       provisional: true
       alternateParents:
       - taxon: blastoidea
@@ -663,6 +664,46 @@
             - USNM153758
             - USNM153759
             - USNM153760
+1963_durham_caster:
+  taxonomies:
+  - taxon: echinozoa
+    children:
+    - taxon: helicoplacoidea
+      new: true
+      children:
+      - taxon: helicoplacus
+        new: true
+        children:
+        - taxon: gilberti_durham_caster_1963
+          type: true
+          new: true
+          specimens:
+            holotype: 37847
+            paratypes:
+            - 37849
+            - 37854
+        - taxon: curtisi_durham_caster_1963
+          new: true
+          specimens:
+            holotype: 37844
+1966_durham_caster:
+  taxonomies:
+  - taxon: echinodermata
+    children:
+    - taxon: echinozoa
+      children:
+      - taxon: helicoplacoidea
+        children:
+        - taxon: helicoplacidae
+          new: true
+          children:
+          - taxon: helicoplacus
+            children:
+            - taxon: gilberti_durham_caster_1963
+              type: true
+            - taxon: curtisi_durham_caster_1963
+            - openTaxon: helicoplacus-sp_durham_caster_1966
+              new: true
 1967a_durham:
   taxonomies:
   - taxon: echinodermata
