@@ -68,7 +68,7 @@ def build_expected_taxon(expected, taxon):
 
     rank = 'genus' if taxon['name'][0].isupper() else 'species'
 
-  if rank in ('species', 'subspecies', 'variety'):
+  if taxon.get('homonym') or rank in ('species', 'subspecies', 'variety'):
     species_expected = expected
     logger.debug(f'Building species id for {expected}...')
     if 'auth' in taxon:

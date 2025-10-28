@@ -291,6 +291,9 @@ $defs:
     unevaluatedProperties: false
     # These extra properties might not be extra now.
     properties:
+      homonym:
+        type: boolean
+        default: false
       synonym:
         type: string
       reason:
