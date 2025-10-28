@@ -1325,6 +1325,10 @@ eustypocystis:
   name: Eustypocystis
   authority:
     source: 1973_sprinkle
+everndeni_durham_1967:
+  name: everndeni
+  authority:
+    source: 1967c_durham
 extenuatus_zhao.j_rahman_zamora_chen.a_cong.p_2022:
   name: extenuatus
   auth: [zhao.j, rahman, zamora, chen.a, cong.p]
@@ -1342,6 +1346,10 @@ fillmorensis_guensburg_sprinkle_2003:
   name: fillmorensis
   authority:
     source: 2003_guensburg_sprinkle
+firbyi_durham_1967:
+  name: firbyi
+  authority:
+    source: 1967c_durham
 flexibilia:
   name: Flexibilia
   rank: Subclass
@@ -1557,6 +1565,11 @@ helicocystis:
   name: Helicocystis
   auth: [Smith, Zamora]
   year: 2013
+helicoplacida:
+  name: Helicoplacida
+  rank: Subclass
+  authority:
+    source: 1967c_durham
 helicoplacidae:
   name: Helicoplacidae
   rank: Family
@@ -1763,6 +1776,10 @@ keslingi_bell_1976:
   name: keslingi
   auth: [Bell]
   year: 1976
+kilmeri_durham_1967:
+  name: kilmeri
+  authority:
+    source: 1967c_durham
 kinzercystis:
   name: Kinzercystis
   authority:
@@ -2049,6 +2066,10 @@ negrina_öpik_1975:
   name: negrina
   auth: [Öpik]
   year: 1975
+nelsoni_durham_1967:
+  name: nelsoni
+  authority:
+    source: 1967c_durham
 nevadensis_sprinkle_1973:
   name: nevadensis
   authority:
@@ -2278,6 +2299,15 @@ pleurozonida:
   rank: Order
   auth: [domínguez alonso]
   year: 1999
+polyplacida:
+  name: Polyplacida
+  rank: Subclass
+  authority:
+    source: 1967c_durham
+polyplacus:
+  name: Polyplacus
+  authority:
+    source: 1967c_durham
 postibulla:
   name: Postibulla
   auth: [Bell]
@@ -2949,6 +2979,10 @@ watsonae_jell_burrett_banks_1985:
   name: watsonae
   auth: [jell, burrett, banks]
   year: 1985
+waucobella:
+  name: Waucobella
+  authority:
+    source: 1967c_durham
 westergardi_sumrall_sprinkle_bonem_2006:
   name: westergardi
   auth: [sumrall, sprinkle, Bonem]

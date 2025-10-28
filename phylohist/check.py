@@ -77,7 +77,8 @@ def build_expected_taxon(expected, taxon):
       species_expected += f"_{taxon['year']}"
     else:
       source_id = taxon['authority']['source']
-      species_expected += f'_{source_id[5:]}_{source_id[:4]}'
+      idx = source_id.index('_')
+      species_expected += f'_{source_id[idx+1:]}_{source_id[:4]}'
     if 'originalParent' in taxon:
       species_expected += f"_{taxon['originalParent']}"
     logger.debug(f'...built {species_expected}')

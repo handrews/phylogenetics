@@ -69,6 +69,8 @@ publications:
     name: Proceedings of the Royal Society B
   science-new-series:
     name: Science (New Series)
+  short-2nd-cambrian:
+    name: Short Papers for the Second International Symposium on the Cambrian System, 1981
   smith-misc:
     name: Smithsonian Miscellaneous Collections
   soc-sci-nat-phys-maroc:
@@ -569,6 +571,30 @@ articles:
     - S637
     identifiers:
       url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+  1967c_durham:
+    title: Notes on the Helicoplacoidea and Early Echinoderms
+    complete:
+      named: true
+      open: null
+      history: true
+      specimens:
+        basic: true
+        all: true
+    journal: jofpaleo
+    volume: 41
+    number: 1
+    pages:
+    - 97
+    - 102
+    pubDate:
+      year: 1967
+      month: 1
+    processDates:
+      received: 1966-06-03
+    authors:
+    - durham
+    identifiers:
+      jstor: 1301905
   1967_jeffries_joysey_paul_ramsbottom:
     title: "Chapter 21: Echinodermata: Pelmatozoa"
     book: fossil-record
@@ -696,6 +722,21 @@ articles:
       year: 1973
     identifiers:
       url: https://archive.org/details/morphologyevolut00spri/mode/2up
+  1981_derstler:
+    title: Morphological diversity of early Cambrian echinoderms
+    book: short-2nd-cambrian
+    pages:
+    - 71
+    - 75
+    pubDate:
+      year: 1981
+    processDates:
+      conferenceStart: 1981-08-09
+      conferenceEnd: 1981-08-13
+    authors:
+    - derstler
+    identifiers:
+      url: https://pubs.usgs.gov/of/1981/0743/report.pdf
   1982_broadhead:
     title: Reappraisal of Class Eocrinoidea (Echinodermata)
     book: e-tampa-bay

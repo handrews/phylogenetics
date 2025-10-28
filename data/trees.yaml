@@ -678,14 +678,14 @@
           type: true
           new: true
           specimens:
-            holotype: 37847
+            holotype: UCMP 37847
             paratypes:
-            - 37849
-            - 37854
+            - UCMP 37849
+            - UCMP 37854
         - taxon: curtisi_durham_caster_1963
           new: true
           specimens:
-            holotype: 37844
+            holotype: UCMP 37844
 1966_durham_caster:
   taxonomies:
   - taxon: echinodermata
@@ -738,6 +738,50 @@
             children:
             - taxon: wanneri_foerste_1938
               type: true
+1967c_durham:
+  taxonomies:
+  - taxon: helicoplacoidea
+    children:
+    - taxon: helicoplacida
+      new: true
+      children:
+      - taxon: helicoplacus
+        children:
+        - taxon: gilberti_durham_caster_1963
+          type: true
+        - taxon: curtisi_durham_caster_1963
+        - taxon: everndeni_durham_1967
+          new: true
+          synonyms:
+          - taxon: curtisi_durham_caster_1963
+            pars: true
+          specimens:
+            holotype: UCMP 14770
+        - taxon: firbyi_durham_1967
+          new: true
+          specimens:
+            holotype: UCMP 30143
+      - taxon: waucobella
+        new: true
+        children:
+        - taxon: nelsoni_durham_1967
+          type: true
+          new: true
+          specimens:
+            holotype: UCMP 14769
+    - taxon: polyplacida
+      new: true
+      children:
+      - taxon: polyplacus
+        new: true
+        children:
+        - taxon: kilmeri_durham_1967
+          type: true
+          new: true
+          specimens:
+            holotype: UCMP 14767
+            paratypes:
+            - UCMP 14768
 1967a_fay:
   taxonomies:
   - taxon: echinodermata
@@ -1641,6 +1685,36 @@
           taxon: crinozoa
         children:
         - taxon: astrocystites
+1981_derstler:
+  phylogenies:
+  - treeType: evolutionary schematic
+    tree:
+      taxon: echinodermata
+      children:
+      - notes: early cambrian
+        children:
+        - taxon: edrioasteroidea
+        - taxon: helicoplacoidea
+        - taxon: blastozoa
+      - notes: early cambrian
+        taxon: soluta-class
+      - notes: middle cambrian
+        taxon: cincta-class
+      - notes: middle cambrian
+        taxon: ctenocystoidea
+      - notes: middle cambrian
+        taxon: stylophora
+      - notes: middle cambrian
+        taxon: cyclocystoidea
+        provisional: true
+        alternateParents:
+        - taxon: edrioasteroidea
+      - notes: middle cambrian or upper cambrian
+        taxon: crinoidea
+      - notes: ordovician
+        taxon: asterozoa
+      - notes: ordovician
+        taxon: echinozoa
 1982_broadhead:
   taxonomies:
   - taxon: eocrinoidea
