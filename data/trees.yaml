@@ -644,26 +644,6 @@
         specimens:
           syntypes:
           - Canadian Geological Survey 752
-1966_durham:
-  taxonomies:
-  - taxon: echinozoa
-    children:
-    - taxon: camptostromoidea
-      new: true
-      children:
-      - taxon: camptostroma
-        moved:
-          taxon: collaspididae
-          provisional: true
-        children:
-        - taxon: roddyi_ruedemann_1933
-          type: true
-          specimens:
-            holotype: USNM85181
-            hypotypes:
-            - USNM153758
-            - USNM153759
-            - USNM153760
 1963_durham_caster:
   taxonomies:
   - taxon: echinozoa
@@ -686,6 +666,55 @@
           new: true
           specimens:
             holotype: UCMP 37844
+1965_fell:
+  taxonomies:
+  - taxon: echinodermata
+    children:
+    - taxon: homalozoa
+      children:
+      - taxon: carpoidea
+    - taxon: crinozoa
+      children:
+      - taxon: cystoidea
+      - taxon: eocrinoidea
+      - taxon: paracrinoidea
+      - taxon: blastoidea
+      - taxon: edrioblastoidea
+      - taxon: crinoidea
+    - taxon: echinozoa
+      children:
+      - taxon: helicoplacoidea
+      - taxon: edrioasteroidea
+      - taxon: ophiocistioidea
+      - taxon: echinoidea
+      - taxon: holothuroidea
+    - taxon: asterozoa
+      children:
+      - taxon: stelleroidea
+        children:
+        - taxon: somasteroidea
+        - taxon: asteroidea
+        - taxon: ophiuroidea
+1966_durham:
+  taxonomies:
+  - taxon: echinozoa
+    children:
+    - taxon: camptostromoidea
+      new: true
+      children:
+      - taxon: camptostroma
+        moved:
+          taxon: collaspididae
+          provisional: true
+        children:
+        - taxon: roddyi_ruedemann_1933
+          type: true
+          specimens:
+            holotype: USNM85181
+            hypotypes:
+            - USNM153758
+            - USNM153759
+            - USNM153760
 1966_durham_caster:
   taxonomies:
   - taxon: echinodermata

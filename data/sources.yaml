@@ -5,6 +5,8 @@ publications:
     name: Alcheringa
   annals:
     name: Annales de Paleontologie
+  breviora:
+    name: Breviora
   bullamp:
     name: Bulletins of American Paleontology
   bullgeo:
@@ -254,6 +256,21 @@ articles:
     - caster
     identifiers:
       jstor: 1711312
+  1965_fell:
+    title: The Early Evolution of the Echinozoa
+    journal: breviora
+    number: 219
+    pubDate:
+      year: 1965
+      month: 5
+      day: 7
+    pages:
+    - 1
+    - 17
+    authors:
+    - fell
+    identifiers:
+      url: https://www.biodiversitylibrary.org/page/4312670
   1966_durham:
     title: Camptostroma, an Early Cambrian Supposed Scyphozoan, Referable to Echinodermata
     complete:

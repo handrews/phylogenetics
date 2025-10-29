@@ -1116,10 +1116,8 @@ dyunin_kruse_1990:
 echinoderma:
   name: Echinoderma
   rank: Phylum
-  authority:
-    source: 1778_klein
-    notes: Authority interpreted from text, not given directly
-  altSpellingOf: echinodermata
+  auth: [Latrelle]
+  year: 1825
 echinodermata:
   # or Bruguière 1789
   # Encyclopédie Méthodique. Histoire Naturelle des Vers. Tome Premier
