@@ -81,7 +81,6 @@
                     - taxon: holothuroidea
                     - taxon: stelleroidea
                     - taxon: echinoidea
-
 1935_bassler:
   taxonomies:
   - taxon: edrioasteroidea
@@ -457,6 +456,70 @@
         - taxon: cyclocystoides
         - taxon: narrawayella
         - taxon: savagella
+1936_bassler:
+  taxonomies:
+  - taxon: pelmatozoa
+    children:
+    - taxon: edrioasteroidea
+      children:
+      - taxon: stromatocystitidae
+        new: true
+        children:
+        - taxon: walcottidiscus
+          children:
+          - taxon: typicalis_bassler_1935
+            type: true
+          - openTaxon: walcottidiscus-sp_bassler_1936
+            new: true
+          - taxon: magister_bassler_1936
+            new: true
+            specimens:
+              holotype: USNM 90755
+        - taxon: stromatocystites
+          children:
+          - taxon: pentangularis_pompeckj_1896
+            type: true
+        - taxon: xenocystites
+          new: true
+          children:
+          - taxon: carteri_bassler_1936
+            type: true
+            new: true
+            specimens:
+              holotype: Collection New York State Museum
+      - taxon: hemicystitidae
+        new: true
+        children:
+        - taxon: cystaster
+          children:
+          - taxon: granulatus_hall_1871
+            synonyms:
+            - taxon: granulatus_hall_1871
+              notes: |
+                Given as "C. (Hemicystite) granulatus", but this is assumed
+                to be an error as it reverses both Bassler (1935) and
+                the Treatise (1966) and other sources noting that Cysaster
+                was originally defined as a subgenus.
+              parents:
+              - taxon: cystaster-subgenus
+              - taxon: hemicystites
+          - taxon: ulrichi_bassler_1936
+            new: true
+            specimens:
+              holotype: USNM 42138
+        - taxon: cincinnatidiscus
+          children:
+          - taxon: hemicystites-subgenus
+            children:
+            - taxon: stellatus_hall_1866
+              type: true
+            - taxon: carnensis_foerste_1914
+          - taxon: turgidus_bassler_1936
+            new: true
+          - taxon: edenensis_bassler_1936
+            new: true
+        - taxon: carneyella
+          # TODO:  FINISH!!!
 1941_whitehouse:
   taxonomies:
   - taxon: echinodermata
@@ -733,6 +796,20 @@
             - taxon: curtisi_durham_caster_1963
             - openTaxon: helicoplacus-sp_durham_caster_1966
               new: true
+1966_regnéll:
+  taxonomies:
+  - taxon: echinodermata
+    children:
+    - taxon: echinozoa
+      children:
+      - taxon: edrioasteroidea
+        children:
+        - taxon: stromatocystitidae
+        - taxon: cyathocystidae
+        - taxon: hemicystitidae
+        - taxon: agelacrinitidae
+        - taxon: edrioasteridae
+        # TODO:  FINISH!!!
 1967a_durham:
   taxonomies:
   - taxon: echinodermata

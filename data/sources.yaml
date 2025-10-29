@@ -5,6 +5,8 @@ publications:
     name: Alcheringa
   annals:
     name: Annales de Paleontologie
+  annual-ny:
+    name: Annual Report of the New York State Museum of Natural History
   breviora:
     name: Breviora
   bullamp:
@@ -149,6 +151,143 @@ articles:
     notes: Officially recognized use of "Echinodermata" (in Latin), revived from Klein
     identifiers:
       url: https://www.biodiversitylibrary.org/bibliography/64072
+  1858a_hall:
+    title: Palaeontology of lowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857
+    journal: paleontology
+    volume: 1
+    number: 2
+    chapter: Crinoideae of the Hamilton Group
+    pages:
+    - 479
+    - 485
+    pubDate:
+      year: 1958
+    authors:
+    - hall
+  1858b_hall:
+    title: Palaeontology of lowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857
+    journal: paleontology
+    volume: 1
+    number: 2
+    chapter: Fossils of the Burlington Limestone. Crinoideae
+    pages:
+    - 524
+    - 596
+    pubDate:
+      year: 1958
+    authors:
+    - hall
+  1858c_hall:
+    title: Palaeontology of lowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857
+    journal: paleontology
+    volume: 1
+    number: 2
+    chapter: Crinoideae and other Echniodermata of the Warsaw Limestone
+    pages:
+    - 654
+    - 656
+    pubDate:
+      year: 1958
+    authors:
+    - hall
+  1858d_hall:
+    title: Palaeontology of lowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857
+    journal: paleontology
+    volume: 1
+    number: 2
+    chapter: Crinoideae of the Keokuk Limestone
+    pages:
+    - 606
+    - 634
+    pubDate:
+      year: 1958
+    authors:
+    - hall
+  1858e_hall:
+    title: Palaeontology of lowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857
+    journal: paleontology
+    volume: 1
+    number: 2
+    chapter: Crinoideae of the St. Louis Limestone
+    pages:
+    - 669
+    - 673
+    pubDate:
+      year: 1958
+    authors:
+    - hall
+  1858f_hall:
+    title: Palaeontology of lowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857
+    journal: paleontology
+    volume: 1
+    number: 2
+    chapter: Crinoideae and other Echinodermata of the Kaskaskia Limestone
+    pages:
+    - 678
+    - 701
+    pubDate:
+      year: 1958
+    authors:
+    - hall
+  1866_hall:
+    title: Descriptions of some new species of Crinoidea and other Fossils from the Lower Silurian strata, principally of the age of the Hudson-river group.
+    journal: annual-ny
+    volume: 20
+    number: Adv. Pr.
+    pages:
+    - 1
+    - 17
+    pubDate:
+      year: 1866
+    authors:
+    - hall
+  1872a_hall:
+    title: Descriptions of new species of fossils from the vicinity of Louisville, Kentucky, and the Falls of the Ohio
+    journal: annual-ny
+    volume: 24
+    pages:
+    - 181
+    - 200
+    - 200a # Supplement tipped in after page 200
+    - 200a
+    - 233 # Errata
+    - 233
+    pubDate:
+      year: 1872
+    processDates:
+      transmitted: 1871-04-18
+    authors:
+    - hall
+  1872b_hall:
+    title: Description of new species of Crinoidea and other fossils from strata of the age of the Hudson-River Group and Trenton Limestone
+    journal: annual-ny
+    volume: 24
+    pages:
+    - 205
+    - 224
+    - 233 # Errata
+    - 233
+    pubDate:
+      year: 1872
+    processDates:
+      transmitted: 1871-04-18
+    authors:
+    - hall
+  1872c_hall:
+    title: Description of new species of fossils from the Hudson River Group, in the vicinity of Cincinnati, Ohio
+    journal: annual-ny
+    volume: 24
+    pages:
+    - 225
+    - 232
+    - 233 # Errata for multiple articles
+    - 233
+    pubDate:
+      year: 1872
+    processDates:
+      transmitted: 1871-04-18
+    authors:
+    - hall
   1900_bather:
     title: Part III — The Echinoderma"
     book: treatise-zoo
@@ -176,6 +315,17 @@ articles:
       day: 4
     authors:
     - bassler
+  1936_bassler:
+    title: New Species of American Edrioasteroidea
+    journal: smith-misc
+    volume: 95
+    number: 6
+    pubDate:
+      year: 1936
+      month: 5
+      day: 4
+    authors:
+    - basler
   1960_gill_caster:
     title: Carpoid echinoderms from the Silurian and Devonian of Australia
     journal: bullamp
@@ -1085,7 +1235,7 @@ articles:
     journal: plos-one
     volume: 7
     number: 6
-    article: e38296
+    articleNumber: e38296
     pubDate:
       year: 2012
       month: 6
@@ -1121,7 +1271,7 @@ articles:
     title: Cambrian spiral-plated echinoderms from Gondwana reveal the earliest pentaradial body plan
     journal: procrsocb
     volume: 280
-    article: 20131197
+    articleNumber: 20131197
     pubDate:
       year: 2013
     processDates:
@@ -1144,7 +1294,7 @@ articles:
         all: null
     journal: nat-com
     volume: 4
-    article: 1385
+    articleNumber: 1385
     pubDate:
       year: 2013
     processDates:
@@ -1352,7 +1502,7 @@ articles:
     title: Cambrian edrioasteroid reveals new mechanism for secondary reduction of the skeleton in echinoderms
     journal: procrsocb
     volume: 289
-    article: 20212733
+    articleNumber: 20212733
     pubDate:
       year: 2022
     processDates:
@@ -1370,7 +1520,7 @@ articles:
     title: The first edrioasteroid echinoderm from the lower Cambrian Chengjiang biota of Yunnan Province, China
     journal: papersinpalaeo
     number: 8
-    article: e1465
+    articleNumber: e1465
     pubDate:
       year: 2022
       month: 8

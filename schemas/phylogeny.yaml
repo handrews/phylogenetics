@@ -141,15 +141,17 @@ $defs:
       number:
         type: [integer, string]
         minimum: 1
-      article:
+      articleNumber:
         type: [integer, string]
         minimum: 1
+      chapter:
+        type: [integer, string]
       pages:
+        $comment: Page numbers alternate start and end of ranges.
         type: array
         items:
           type: [integer, string]
         minItems: 2
-        maxItems: 2
       title:
         type: string
       authors:
@@ -176,6 +178,8 @@ $defs:
           revised:
             $ref: "#/$defs/simpleDate"
           accepted:
+            $ref: "#/$defs/simpleDate"
+          transmitted:
             $ref: "#/$defs/simpleDate"
           online:
             $ref: "#/$defs/simpleDate"
