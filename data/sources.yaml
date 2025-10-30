@@ -151,6 +151,46 @@ articles:
     notes: Officially recognized use of "Echinodermata" (in Latin), revived from Klein
     identifiers:
       url: https://www.biodiversitylibrary.org/bibliography/64072
+  1858a_billings:
+    title: On the Cystideæ of the Lower Silurian Rocks of Canada
+    journal: fig-desc-can
+    volume: III
+    pages:
+    - 9
+    - 74
+    pubDate:
+      year: 1958
+    authors:
+    - billings
+    identifiers:
+      url: https://www.biodiversitylibrary.org/page/14985785
+  1858b_billings:
+    title: On the Asteriadæ of the Lower Silurian Rocks of Canada
+    journal: fig-desc-can
+    volume: III
+    pages:
+    - 75
+    - 85
+    pubDate:
+      year: 1958
+    authors:
+    - billings
+    identifiers:
+      url: https://www.biodiversitylibrary.org/page/14985851
+  1858c_billings:
+    title: On Cyclocystoides, a new genus of Echinodermata from the Lower and Middle Silurian Rocks
+    journal: fig-desc-can
+    volume: III
+    pages:
+    - 86
+    - 90
+    pubDate:
+      year: 1958
+    authors:
+    - salter
+    - billings
+    identifiers:
+      url: https://www.biodiversitylibrary.org/page/14985862
   1858a_hall:
     title: Palaeontology of lowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857
     journal: paleontology

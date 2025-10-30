@@ -272,6 +272,11 @@ ruedemann:
   given: Rudolph
   bitth: 1864
   death: 1956
+salter:
+  family: Salter
+  given: John William
+  birth: 1820
+  death: 1869
 satterthwaite:
   family: Satterthwaite
   given: G. E.
