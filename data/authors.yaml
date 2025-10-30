@@ -63,6 +63,35 @@ caster:
 chen.a:
   family: Chen
   given: Ailin
+clark.a.h:
+  family: Clark
+  given: Austin Hobart
+  birth: 1880
+  death: 1954
+clark.a.m:
+  family: Clark
+  given: Ailsa McGown
+  birth: 1926
+  death: 2014
+clark.b.l:
+  family: Clark
+  given: Bruce L.
+clark.h.e.s:
+  family: Clark
+  given: Helen Elizabeth Shearburn
+  notes: Married name Rotman but retained Clark professionally.
+  birth: 1936
+  death: 2014
+clark.h.l:
+  family: Clark
+  given: Hubert Lyman
+  birth: 1870
+  death: 1947
+clark.j.m:
+  family: Clark
+  given: John Mason
+  birth: 1857
+  death: 1925
 cong.p:
   family: Cong
   given: Peiyun
@@ -124,6 +153,12 @@ goldfuss:
 guensburg:
   family: Guensburg
   given: Thomas E.
+gurley:
+  family: Gurley
+  given: William Franklin Eugene
+  birth: 1854
+  death: 1943
+  notes: Born William Franklin Eugene Reed, adopted by stepfather Gurley.
 haekel:
   family: Haekel
   given: Ernst
@@ -212,6 +247,12 @@ melville:
   given: Richard Valentine
   birth: 1914
   death: 1993
+miller.j.s:
+  family: Miller
+  given: John S.
+  birth: 1715
+  death: 1792
+  notes: Year of death uncertain.
 miller.s.a:
   family: Miller
   given: Samuel Almond
@@ -316,6 +357,11 @@ spencer:
   given: W. K.
   birth: 1878
   death: 1955
+springer:
+  family: Springer
+  given: Frank
+  birth: 1848
+  death: 1927
 sprinkle:
   family: Sprinkle
   given: James
@@ -352,6 +398,8 @@ walcott:
 wanner:
   family: Wanner
   given: Johannes
+  birth: 1878
+  death: 1956
 webby:
   family: Webby
   given: B. D.
@@ -366,6 +414,11 @@ whitehouse:
 wiley:
   family: Wiley
   given: E. C.
+worthen:
+  family: Worthen
+  given: Amos Henry
+  birth: 1813
+  death: 1888
 wright.c.w:
   family: Wright
   given: Claud William
