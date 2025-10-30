@@ -29,6 +29,8 @@ publications:
     name: Earth-Science Reviews
   fieldiana:
     name: Fieldiana, Geology
+  fig-desc-can:
+    name: Figures and descriptions of Canadian organic remains
   fossil-record:
     name: The Fossil Record
     editors:
@@ -159,7 +161,7 @@ articles:
     - 9
     - 74
     pubDate:
-      year: 1958
+      year: 1858
     authors:
     - billings
     identifiers:
@@ -172,12 +174,12 @@ articles:
     - 75
     - 85
     pubDate:
-      year: 1958
+      year: 1858
     authors:
     - billings
     identifiers:
       url: https://www.biodiversitylibrary.org/page/14985851
-  1858c_billings:
+  1858_salter_billings:
     title: On Cyclocystoides, a new genus of Echinodermata from the Lower and Middle Silurian Rocks
     journal: fig-desc-can
     volume: III
