@@ -17,7 +17,7 @@ barrande:
   death: 1883
 bassler:
   family: Bassler
-  given: R. S.
+  given: Ray S.
   birth: 1878
   death: 1961
 bather:
@@ -25,6 +25,11 @@ bather:
   given: F. A.
   birth: 1863
   death: 1934
+beecher:
+  family: Beecher
+  given: Charles Emerson
+  birth: 1856
+  death: 1904
 billings:
   family: Billings
   given: Elkahna
@@ -127,6 +132,11 @@ haekel:
 hahn:
   family: Hahn
   given: Gerhard
+hall:
+  family: Hall
+  given: James
+  birth: 1811
+  death: 1898
 harland:
   family: Harland
   given: W. B.
@@ -192,6 +202,11 @@ linnaeus:
 longman:
   family: Longman
   given: H. A.
+meek:
+  family: Meek
+  given: Fielding Bradford
+  birth: 1817
+  death: 1876
 melville:
   family: Melville
   given: Richard Valentine
@@ -288,6 +303,11 @@ say:
   given: Thomas
   birth: 1787
   death: 1834
+schuchert:
+  family: Schuchert
+  given: Charles
+  birth: 1858
+  death: 1942
 smith.a.b:
   family: Smith
   given: Andrew B.
@@ -316,6 +336,11 @@ ubaghs:
   given: Georges
   birth: 1916
   death: 2005
+ulrich:
+  family: Ulrich
+  given: Edward Oscar
+  birth: 1857
+  death: 1944
 wagner:
   family: Wagner
   given: Carol D.
