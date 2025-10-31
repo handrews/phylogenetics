@@ -99,9 +99,9 @@ $defs:
           $ref: "#/$defs/authorId"
   article:
     type: object
-    required: [authors, title, pubDate]
+    required: [authors, pubDate]
     oneOf:
-    - required: [journal]
+    - required: [journal, title]
     - required: [book]
     unevaluatedProperties: false
     properties:

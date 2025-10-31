@@ -194,6 +194,10 @@ stromatocystitida-incertae-sedis:
   rank: Family
   auth: [linnaeus]
   year: 1758
+walcottidiscus-sp_bassler_1936:
+  name: null
+  authority:
+    source: 1936_bassler
 ###################### A
 adelphicrinus:
   name: Adelphicrinus
@@ -654,6 +658,10 @@ carpoidea:
   rank: Class
   auth: [jaekel]
   year: 1900
+carteri_bassler_1936:
+  name: carteri
+  authority:
+    source: 1936_bassler
 caryocrinidae:
   name: Caryocrinidae
   rank: Family
@@ -1182,6 +1190,10 @@ echmatocrinus:
   name: Echmatocrinus
   authority:
     source: 1973_sprinkle
+edenensis_bassler_1936:
+  name: edenensis
+  authority:
+    source: 1936_bassler
 edgari_jell_sprinkle_2021:
   name: edgari
   authority:
@@ -1931,6 +1943,10 @@ macrocystellidae:
   rank: Family
   auth: [bather]
   year: 1899
+magister_bassler_1936:
+  name: magister
+  authority:
+    source: 1936_bassler
 malocystidae:
   name: Malocystidae
   rank: Family
@@ -2874,6 +2890,10 @@ turbanicystis:
   name: Turbanicystis
   authority:
     source: 2010_parsley_zhao.y
+turgidus_bassler_1936:
+  name: turgidus
+  authority:
+    source: 1936_bassler
 typicalis_bassler_1935:
   name: typicalis
   authority:
@@ -2887,6 +2907,10 @@ ubaghsicystis:
   name: Ubaghsicystis
   auth: [Gil Cid, Domínguez]
   year: 2002
+ulrichi_bassler_1936:
+  name: ulrichi
+  authority:
+    source: 1936_bassler
 ulrichidiscus:
   name: Ulrichidiscus
   authority:
@@ -2994,6 +3018,10 @@ withersi_gill_caster_1960:
   authority:
     source: 1960_gill_caster
 ###################### X
+xenocystites:
+  name: Xenocystites
+  authority:
+    source: 1936_bassler
 xingrenaspis:
   name: Xingrenaspis
   auth: [Yuan, Zhao]

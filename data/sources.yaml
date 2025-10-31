@@ -64,7 +64,13 @@ publications:
   nat-com:
     name: Nature Communications
   nat-disp-ech:
-    name: Naturalis Dispositio Echinodermatum
+    name: Naturalis Dispositio Echinodermatum. Accessit Lucubratiuncula de Aculeis Echinorum Marinorum, cum Specilegio de Belemnitis
+  nat-disp-ech-1778:
+    name: Naturalis Dispositio Echinodermatum. Accessit Lucubratiuncula de Aculeis Echinorum Marinorum et Specilegium de Belemnitis. Edita et Descriptionibus Novisque Inventis et Synonymis Auctorum Auca a Nathanaele Godofredo Leske
+    editors:
+    - leske
+  p-of-iowa:
+    name: Palaeontology of Iowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857
   palaeontology:
     name: Palaeontology
   papersinpalaeo:
@@ -107,7 +113,6 @@ publications:
     name: Věstník Ústředního ústavu geologického
 articles:
   1734_klein:
-    title: Accesserunt Lucubratiuncula De Aculeis Echinorum Marinorum, cum Specilegio de Belemnitis
     book: nat-disp-ech
     pubDate:
       year: 1734
@@ -118,8 +123,7 @@ articles:
       doi: 10.5962/bhl.title.65731
       url: https://www.biodiversitylibrary.org/bibliography/65731
   1778_klein:
-    title: Accessit Lucubratiuncula de Aculeis Echinorum Marinorum et Specilegium de Belemnitis. Edita et Descriptionibus Novisque Inventis et Synonymis Auctorum Auca a Nathanaele Godofredo Leske
-    book: nat-disp-ech
+    book: nat-disp-ech-1778
     seen: false
     pubDate:
       year: 1778
@@ -129,11 +133,9 @@ articles:
       Some argue that this use of Echinodermata should result in an attribution
       of "Echinodermata (Klein 1778)" as the only reason it was excluded was
       inconsistent usage, but that rule does not apply above the Family level.
-      (The URL might be for a wor containing this one, it's a bit unclear.)
     identifiers:
       url: https://www.biodiversitylibrary.org/bibliography/11571
   1789_bruguière:
-    title: Encyclopédie Méthodique. Histoire Naturelle des Vers. Tome Premier
     book: methodique
     pubDate:
       year: 1789
@@ -144,7 +146,6 @@ articles:
     identifiers:
       url: https://archive.org/details/histoirenaturell3488brug/page/n1/mode/2up
   1791_bruguière:
-    title: Tableau Encyclopédique et Méthodique des Trois Règnes de la Nature. Contenant l’Helminthologie, ou les Vers Infusoires, les Vers Intestins, les Vers Mollusques
     book: tableau
     pubDate:
       year: 1791
@@ -187,88 +188,82 @@ articles:
     - 86
     - 90
     pubDate:
-      year: 1958
+      year: 1858
     authors:
     - salter
     - billings
     identifiers:
       url: https://www.biodiversitylibrary.org/page/14985862
   1858a_hall:
-    title: Palaeontology of lowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857
-    journal: paleontology
+    title: Crinoideae of the Hamilton Group
+    journal: p-of-iowa
     volume: 1
     number: 2
-    chapter: Crinoideae of the Hamilton Group
     pages:
     - 479
     - 485
     pubDate:
-      year: 1958
+      year: 1858
     authors:
     - hall
   1858b_hall:
-    title: Palaeontology of lowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857
-    journal: paleontology
+    title: Fossils of the Burlington Limestone. Crinoideae
+    journal: p-of-iowa
     volume: 1
     number: 2
-    chapter: Fossils of the Burlington Limestone. Crinoideae
     pages:
     - 524
     - 596
     pubDate:
-      year: 1958
+      year: 1858
     authors:
     - hall
   1858c_hall:
-    title: Palaeontology of lowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857
-    journal: paleontology
+    title: Crinoideae and other Echniodermata of the Warsaw Limestone
+    journal: p-of-iowa
     volume: 1
     number: 2
-    chapter: Crinoideae and other Echniodermata of the Warsaw Limestone
     pages:
     - 654
     - 656
     pubDate:
-      year: 1958
+      year: 1858
     authors:
     - hall
   1858d_hall:
-    title: Palaeontology of lowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857
-    journal: paleontology
+    title: Crinoideae of the Keokuk Limestone
+    journal: p-of-iowa
     volume: 1
     number: 2
-    chapter: Crinoideae of the Keokuk Limestone
     pages:
     - 606
     - 634
     pubDate:
-      year: 1958
+      year: 1858
     authors:
     - hall
   1858e_hall:
-    title: Palaeontology of lowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857
-    journal: paleontology
+    title: Crinoideae of the St. Louis Limestone
+    journal: p-of-iowa
     volume: 1
     number: 2
-    chapter: Crinoideae of the St. Louis Limestone
     pages:
     - 669
     - 673
     pubDate:
-      year: 1958
+      year: 1858
     authors:
     - hall
   1858f_hall:
-    title: Palaeontology of lowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857
-    journal: paleontology
+    title: Crinoideae and other Echinodermata of the Kaskaskia Limestone
+    journal: p-of-iowa
     volume: 1
     number: 2
-    chapter: Crinoideae and other Echinodermata of the Kaskaskia Limestone
     pages:
     - 678
     - 701
     pubDate:
-      year: 1958
+      year: 1858
     authors:
     - hall
   1866_hall:
@@ -367,7 +362,7 @@ articles:
       month: 5
       day: 4
     authors:
-    - basler
+    - bassler
   1960_gill_caster:
     title: Carpoid echinoderms from the Silurian and Devonian of Australia
     journal: bullamp
