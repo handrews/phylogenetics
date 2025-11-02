@@ -46,6 +46,12 @@ bruguière:
 broadhead:
   family: Broadhead
   given: Thomas W.
+buch:
+  family: Buch
+  given: Christian Leopold von
+  birth: 1774
+  death: 1853
+  notes: Usually cited as Leopold von Buch, von Buch, or just Buch
 burrett:
   family: Burrett
   given: C. F.
@@ -95,6 +101,11 @@ clark.j.m:
 cong.p:
   family: Cong
   given: Peiyun
+cooper:
+  family: Cooper
+  given: G. Arthur
+  birth: 1902
+  death: 2000
 david:
   family: David
   given: Bruno
@@ -159,6 +170,11 @@ gurley:
   birth: 1854
   death: 1943
   notes: Born William Franklin Eugene Reed, adopted by stepfather Gurley.
+gyllenhaal:
+  family: Gyllenhaal
+  given: Johan Abraham
+  birth: 1750
+  death: 1788
 haekel:
   family: Haekel
   given: Ernst
@@ -175,6 +191,11 @@ hall:
 harland:
   family: Harland
   given: W. B.
+hisinger:
+  family: Hisinger
+  given: Wilhelm
+  birth: 1766
+  death: 1852
 holland:
   family: Holland
   given: C. H.
@@ -242,6 +263,17 @@ linnaeus:
 longman:
   family: Longman
   given: H. A.
+matsumoto:
+  family: Matsumoto
+  given: Hikoshichirō
+  birth: 1887
+  death: 1975
+mccoy:
+  family: McCoy
+  given: Frederick
+  birth: 1817
+  death: 1899
+  notes: Sources differ on "McCoy" vs "M'Coy", some say 1823 for birth.
 meek:
   family: Meek
   given: Fielding Bradford
@@ -254,10 +286,9 @@ melville:
   death: 1993
 miller.j.s:
   family: Miller
-  given: John S.
-  birth: 1715
-  death: 1792
-  notes: Year of death uncertain.
+  given: J. S.
+  birth: 1779
+  death: 1830
 miller.s.a:
   family: Miller
   given: Samuel Almond
@@ -274,7 +305,10 @@ moore:
   given: Raymond C.
   birth: 1892
   death: 1974
-müller:
+müller.j.p:
+  family: Müller
+  given: Johannes Peter
+müller.p:
   family: Müller
   given: Peter
 neumayr:

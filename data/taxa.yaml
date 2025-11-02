@@ -117,6 +117,24 @@ cambraster-sp_jell_sprinkle_2021:
   rank: species
   authority:
     source: 2021_jell_sprinkle
+cystideæ-unnamed-group_müller.j.p_1854:
+  name: null
+  rank: Unranked
+  authority:
+    source: 1854_müller.j.p
+  notes: Rhombifera, no rank given but Diploporita defined as suborder
+cystideæ-unnamed-subgroup-1_müller.j.p_1854:
+  name: null
+  rank: Unranked
+  authority:
+    source: 1854_müller.j.p
+  notes: Hemicosmitida; rank unstated
+cystideæ-unnamed-subgroup-2_müller.j.p_1854:
+  name: null
+  rank: Unranked
+  authority:
+    source: 1854_müller.j.p
+  notes: Glyptocystitida; rank unstated
 edrioasteroidea-order-uncertain_bassler_1935:
   name: null
   rank: Order
@@ -205,7 +223,7 @@ adelphicrinus:
     source: 2003_guensburg_sprinkle
 aesiocystis:
   name: Aesiocystis
-  auth: [Miller, Gurley]
+  auth: [miller.s.a, gurley]
   year: 1894
   altSpellingOf: aesiocystites
   notes: |
@@ -213,7 +231,7 @@ aesiocystis:
     credits it to Miller and Gurley (1894)
 aesiocystites:
   name: Aesiocystites
-  auth: [Miller, Gurley]
+  auth: [miller.s.a, gurley]
   year: 1894
 aethocrinus:
   name: Aethocrinus
@@ -423,6 +441,10 @@ astylophora:
   rank: Superorder
   authority:
     source: 1960_gill_caster
+aurantium_gyllenhaal_1772:
+  name: aurantium
+  auth: [gyllenhaal]
+  year: 1772
 australocystinae:
   name: Australocystinae
   rank: Subfamily
@@ -607,7 +629,7 @@ cambrocrinus:
 camerata:
   name: Camerata
   rank: Subclass
-  auth: [Wachsmuth, Springer]
+  auth: [Wachsmuth, springer]
   year: 1885
 camptostroma:
   name: Camptostroma
@@ -850,11 +872,23 @@ craticula_whitehouse_1941:
   name: craticula
   authority:
     source: 1941_whitehouse
+crinoidea-family:
+  name: Crinoidea
+  rank: Family
+  auth: [miller.j.s]
+  year: 1821
+  notes: Original rank as declared by Miller in 1821
 crinoidea:
   name: Crinoidea
   rank: Class
-  auth: [Miller]
+  auth: [miller.j.s]
   year: 1821
+crinoideæ:
+  name: Crinoideæ
+  rank: Class
+  auth: [miller.j.s]
+  year: 1821
+  altSpellingOf: crinoidea
 crinozoa:
   name: Crinozoa
   rank: Subphylum
@@ -946,7 +980,7 @@ cyclocystitoididae:
 cyclocystoidea:
   name: Cyclocystoidea
   rank: Class
-  auth: [Miller, Gurley]
+  auth: [miller.s.a, gurley]
   year: 1895
 cyclocystoides:
   name: Cyclocystoides
@@ -981,6 +1015,18 @@ cystidea:
   rank: Class
   auth: [von Buch]
   year: 1844
+cystidea-family:
+  name: Cystidea
+  rank: Family
+  auth: [von Buch]
+  year: 1844
+  notes: Original rank as defined in 1844 (via translation in 1846)
+cystideæ:
+  name: Cystideæ
+  rank: Order
+  auth: [von Buch]
+  year: 1844
+  altSpellingOf: cystidea
 cystoidea:
   name: Cystoidea
   rank: Class
@@ -1061,18 +1107,32 @@ dinocystis:
 diplobathrida:
   name: Diplobathrida
   rank: Order
-  auth: [Wachsmuth, Springer]
+  auth: [Wachsmuth, springer]
   year: 1885
 diploporita-class:
   name: Diploporita
   rank: Class
-  auth: [Müller]
+  auth: [müller.j.p]
   year: 1854
 diploporita-order:
   name: Diploporita
   rank: Order
-  auth: [Müller]
+  auth: [müller.j.p]
   year: 1854
+diploporiten:
+  name: Diploporiten
+  rank: Suborder
+  auth: [müller.j.p]
+  year: 1854
+  notes: Rank not entirely clear, just called a "small group"
+  altSpellingOf: diploporita-order
+diploporitidæ:
+  name: diploporitidæ
+  rank: Suborder
+  auth: [müller.j.p]
+  year: 1854
+  notes: Rank not entirely clear, just called a "small group"
+  altSpellingOf: diploporita-order
 diraphora_bell_1941:
   name: diraphora
   auth: [Bell]
@@ -1160,6 +1220,15 @@ echinoencrinites:
   name: Echinoencrinites
   auth: [von Meyer]
   year: 1826
+echinoencrinus:
+  name: Echinoencrinus
+  auth: [Volborth]
+  year: 1842
+echino-encrinus:
+  name: Echino-encrinus
+  auth: [Volborth]
+  year: 1842
+  altSpellingOf: echinoencrinus
 echinoidea:
   name: Echinoidea
   rank: Class
@@ -1176,11 +1245,29 @@ echinosphaeritidae:
   rank: Family
   auth: [neumayr]
   year: 1889
+echinosphaerites:
+  name: Echinosphaerites
+  auth: [Wahlenberg]
+  year: 1821
+echinosphaerites-subgenus:
+  name: Echinosphaerites
+  rank: subgenus
+  auth: [Wahlenberg]
+  year: 1821
+echinosphærites:
+  name: Echinosphærites
+  auth: [Wahlenberg]
+  year: 1821
+  altSpellingOf: echinosphaerites
 echinozoa:
   name: Echinozoa
   rank: Subphylum
   auth: [von Zittel]
   year: 1895
+echinus:
+  name: Echinus
+  auth: [linnaeus]
+  year: 1758
 echmatocrinidae:
   name: Echmatocrinidae
   rank: Family
@@ -1318,11 +1405,15 @@ eocystites:
 eopostibulla:
   name: Eopostibulla
   authority:
-    source: 2010_müller_hahn
+    source: 2010_müller.p_hahn
 ephraemovianus_bogolubov_1926:
   name: ephraemovianus
   auth: [Bogolubov]
   year: 1926
+esculentus_linnaeus_1758:
+  name: esculentus
+  auth: [linnaeus]
+  year: 1758
 etoctenocystis:
   name: Etoctenocystis
   auth: [fatka, kordule]
@@ -1382,10 +1473,10 @@ gallica_domínguez alonso_1999:
   name: gallica
   auth: [domínguez alonso]
   year: 1999
-germanica_müller_hahn_2010:
+germanica_müller.p_hahn_2010:
   name: germanica
   authority:
-    source: 2010_müller_hahn
+    source: 2010_müller.p_hahn
 gigas_jaekel_1901:
   name: gigas
   auth: [jaekel]
@@ -1479,6 +1570,14 @@ gondi_ubaghs_1987:
   name: gondi
   auth: [ubaghs]
   year: 1987
+granatum_mccoy_1846:
+  name: granatum
+  auth: [mccoy]
+  year: 1846
+granatum_wahlenberg_1821:
+  name: granatum
+  auth: [Wahlenberg]
+  year: 1821
 grandis_bassler_1935:
   name: grandis
   authority:
@@ -1499,10 +1598,10 @@ graysoni_sumrall_sprinkle_bonem_2006:
   name: graysoni
   auth: [sumrall, sprinkle, Bonem]
   year: 2006
-grebelae_müller_hahn_2010:
+grebelae_müller.p_hahn_2010:
   name: grebelae
   authority:
-    source: 2010_müller_hahn
+    source: 2010_müller.p_hahn
 guensburgi_sprinkle_sumrall_2015:
   name: guensburgi
   auth: [sprinkle, sumrall]
@@ -1626,10 +1725,10 @@ heterostelea:
   rank: Order
   auth: [jaekel]
   year: 1900
-hispanica_müller_hahn_2010:
+hispanica_müller.p_hahn_2010:
   name: hispanica
   authority:
-    source: 2010_müller_hahn
+    source: 2010_müller.p_hahn
 hobbsi_sprinkle_1973:
   name: hobbsi
   authority:
@@ -1709,7 +1808,7 @@ imbricata:
 inadunata:
   name: Inadunata
   rank: Subclass
-  auth: [Wachsmuth, Springer]
+  auth: [Wachsmuth, springer]
   year: 1897
 inconditus_raymond_1915:
   name: inconditus
@@ -1832,9 +1931,9 @@ lebouri_sladen_1879:
   name: lebouri
   auth: [Sladen]
   year: 1879
-legrandensis_miller_gurley_1894:
+legrandensis_miller.s.a_gurley_1894:
   name: legrandensis
-  auth: [Miller, Gurley]
+  auth: [miller.s.a, gurley]
   year: 1894
 lepadocystis:
   name: Lepadocystis
@@ -2010,7 +2109,7 @@ mimocystites:
 minor_schuchert_1919:
   name: minor
   rank: variety
-  auth: [Schuchert]
+  auth: [schuchert]
   year: 1919
 minor_sprinkle_1973:
   name: minor
@@ -2117,10 +2216,10 @@ octogona_richter_1930:
   name: octogona
   auth: [Richter]
   year: 1930
-odin_müller_hahn_2010:
+odin_müller.p_hahn_2010:
   name: odin
   authority:
-    source: 2010_müller_hahn
+    source: 2010_müller.p_hahn
 ophiocistioidea:
   name: Ophiocistioidea
   auth: [Sollas]
@@ -2136,7 +2235,7 @@ optatus_worthen_miller_1883:
 orthida:
   name: Orthida
   rank: Order
-  auth: [Schuchert, Cooper]
+  auth: [schuchert, cooper]
   year: 1932
 ottawaensis_whiteaves_1897:
   name: ottawaensis
@@ -2177,7 +2276,7 @@ paradoxicus_billings_1859:
 parakrama:
   name: Parakrama
   authority:
-    source: 2010_müller_hahn
+    source: 2010_müller.p_hahn
 parapostibulla:
   name: Parapostibulla
   auth: [sumrall, Garbisch, Pope]
@@ -2331,10 +2430,10 @@ postibullinae:
   rank: Subfamily
   auth: [sumrall, Garbisch, Pope]
   year: 2000
-postpetalus_müller_hahn_2010:
+postpetalus_müller.p_hahn_2010:
   name: postpetalus
   authority:
-    source: 2010_müller_hahn
+    source: 2010_müller.p_hahn
 primaevus_billings_1868:
   name: primaevus
   auth: [billings]
@@ -2347,9 +2446,9 @@ priscus_barrande_1846:
   name: priscus
   auth: [barrande]
   year: 1846
-priscus_miller_gurley_1894:
+priscus_miller.s.a_gurley_1894:
   name: priscus
-  auth: [Miller, Gurley]
+  auth: [miller.s.a, gurley]
   year: 1894
 procerum_aurivillius_1892:
   name: procerum
@@ -2390,14 +2489,14 @@ protozoa-grade:
   rank: Grade
   auth: [goldfuss]
   year: 1818
-pulaskiensis_miller_gurley_1894:
+pulaskiensis_miller.s.a_gurley_1894:
   name: pulaskiensis
-  auth: [Miller, Gurley]
+  auth: [miller.s.a, gurley]
   year: 1894
-pustulata_müller_hahn_2010:
+pustulata_müller.p_hahn_2010:
   name: pustulata
   authority:
-    source: 2010_müller_hahn
+    source: 2010_müller.p_hahn
 pseudedriophus:
   name: Pseudedriophus
   auth: [sprinkle, sumrall]
@@ -2472,7 +2571,7 @@ resseri_ulrich_1929:
 reteocrinidae:
   name: Reteocrinidae
   rank: Family
-  auth: [Wachsmuth, Springer]
+  auth: [Wachsmuth, springer]
   year: 1885
 reversatus_foerste_1914:
   name: reversatus
@@ -2803,10 +2902,10 @@ thecoidea:
   rank: Class
   auth: [jaekel]
   year: 1895
-thor_müller_hahn_2010:
+thor_müller.p_hahn_2010:
   name: thor
   authority:
-    source: 2010_müller_hahn
+    source: 2010_müller.p_hahn
 thorntonites:
   name: Thorntonites
   authority:
@@ -2983,7 +3082,7 @@ wahwahensis_guensburg_sprinkle_2003:
     source: 2003_guensburg_sprinkle
 walcotti_schuchert_1919:
   name: walcotti
-  auth: [Schuchert]
+  auth: [schuchert]
   year: 1919
 walcottidiscus:
   name: Walcottidiscus

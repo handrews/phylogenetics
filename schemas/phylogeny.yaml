@@ -152,6 +152,12 @@ $defs:
         items:
           type: [integer, string]
         minItems: 2
+      plates:
+        $comment: Plate numbers alternate start and end of ranges.
+        type: array
+        items:
+          type: [integer, string]
+        minItems: 2
       title:
         type: string
       authors:
@@ -234,7 +240,7 @@ $defs:
     properties:
       name:
         type: [string, "null"]
-        pattern: ^[A-Za-z][a-z]*$
+        pattern: ^[A-Za-z][a-zæ-]*$
       rank:
         type: string
         enum:
@@ -265,6 +271,7 @@ $defs:
         - Clade
         - Plesion
         - Scion
+        - Unranked
       authority:
         $ref: "#/$defs/authority"
       auth:

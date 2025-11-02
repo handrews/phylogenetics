@@ -379,10 +379,10 @@
       - taxon: ulrichidiscus
         new: true
         children:
-        - taxon: pulaskiensis_miller_gurley_1894
+        - taxon: pulaskiensis_miller.s.a_gurley_1894
           type: true
           synonyms:
-          - taxon: pulaskiensis_miller_gurley_1894
+          - taxon: pulaskiensis_miller.s.a_gurley_1894
             parents:
             - taxon: agelacrinus
     - taxon: edrioasteridae
@@ -408,9 +408,9 @@
             - taxon: agelacrinites_forbes_1848
         - taxon: levis_bather_1914
         - taxon: saratogensis_ruedemann_1912
-        - taxon: priscus_miller_gurley_1894
+        - taxon: priscus_miller.s.a_gurley_1894
           synonyms:
-          - taxon: priscus_miller_gurley_1894
+          - taxon: priscus_miller.s.a_gurley_1894
             parents:
             - taxon: aesiocystites
       - taxon: dinocystis
@@ -2287,7 +2287,7 @@
                   - taxon: aethocrinus
                   - taxon: elpasocrinus
                   - taxon: hybocrinus
-2010_müller_hahn:
+2010_müller.p_hahn:
   taxonomies:
   - taxon: isorophida
     children:
@@ -2302,7 +2302,7 @@
           provisional: true # with reservations
         - taxon: petalus_holloway_jell_1983
           provisional: true # uncertain
-        - taxon: postpetalus_müller_hahn_2010
+        - taxon: postpetalus_müller.p_hahn_2010
           provisional: true # following convention of petalus
           new: true
           specimens:
@@ -2317,7 +2317,7 @@
         - taxon: postibulla
           type: true
           children:
-          - taxon: legrandensis_miller_gurley_1894
+          - taxon: legrandensis_miller.s.a_gurley_1894
           - taxon: lukei_bell_petersen_1976
           - taxon: alabamensis_sumrall_garbisch_pope_2000
           - taxon: westergardi_sumrall_sprinkle_bonem_2006
@@ -2339,7 +2339,7 @@
         - taxon: eopostibulla
           new: true
           children:
-          - taxon: pustulata_müller_hahn_2010
+          - taxon: pustulata_müller.p_hahn_2010
             type: true
             new: true
             specimens:
@@ -2361,7 +2361,7 @@
           - taxon: rhenanus_roemer_1851
             provisional: true
           - taxon: taunicus_rösler_1953
-          - taxon: thor_müller_hahn_2010
+          - taxon: thor_müller.p_hahn_2010
             new: true
             specimens:
               holotype: PWL 2009/5023-LS
@@ -2369,11 +2369,11 @@
           children:
           - taxon: devonica_bassler_1936
             type: true
-          - taxon: hispanica_müller_hahn_2010
+          - taxon: hispanica_müller.p_hahn_2010
             new: true
             specimens:
               holotype: DPO 14001
-          - taxon: germanica_müller_hahn_2010
+          - taxon: germanica_müller.p_hahn_2010
             new: true
             specimens:
               holotype: PWL 2009/5024-LS
@@ -2389,7 +2389,7 @@
               - PWL 2009/5032-LS
               - RS 21
               - M 2514
-          - taxon: odin_müller_hahn_2010
+          - taxon: odin_müller.p_hahn_2010
             new: true
             specimens:
               holotype: PWL 2009/5033sub1-LS
@@ -2398,7 +2398,7 @@
         - taxon: parakrama
           new: true
           children:
-          - taxon: grebelae_müller_hahn_2010
+          - taxon: grebelae_müller.p_hahn_2010
             type: true
             new: true
             specimens:
