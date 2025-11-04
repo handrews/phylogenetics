@@ -1,0 +1,133 @@
+1791_bruguiére:
+- Class Vermium:
+  - Order Infusoria: {}
+  - Order Intestina: {}
+  - Order Mollusca: {}
+    - Ascidia: Plates 62 – 66
+    - Pedicellaria: Plate 66
+    - Hydra: Plates 66 – 69
+    - Coryne: Plate 69
+    - Actinia: Plates 70 – 74
+    - Biphora: Plates 74 – 75
+    - Clio: Plate 75
+    - Sepia: Plates 76 – 77
+    - Mixine: Plate 78
+    - Lærnea: Plate 78
+    - Fasciola: Plates 79 – 80
+    - Planaria: Plates 80 – 81
+    - Tethys: Plate 81
+    - Doris: Plates 82 – 83
+    - Laplysia: Plates 83 – 84
+    - Limax: Plates 84 – 85
+    - Triton: Plate 85
+    - Cavolina: Plate 85
+    - Holothuria: Plates 85 – 87      # Holothuroidea
+    - Firola: Plate 88
+    - Thalia: Plates 88 – 89
+    - Gleba: Plate 89
+    - Physsophora: Plate 89
+    - Lucernaria: Plate 89
+    - Beroe: Plate 90
+    - Medusa: Plates 90 – 95
+  - Order Echinodermata:
+    - Asterias: Plates 96 – 130       # Asterozoa
+    - Echinus: Plates 131 – 159, 198  # Echinoidea
+  - Order Testacea: {}
+    - Chiton: Plates 160 – 163
+    - Balanus: Plates 164 – 165
+    - Anatifa: Plate 166
+    - Teredo: Plate 167
+    - Fistulana: Plate 167
+    - Pholas: Plates 168 – 170
+    - Gioena: Plate 170
+    - Anomia: Plates 170 – 171
+    - Crania: Plate 171
+    - Acardo: Plates 172 – 173
+    - Placuna: Plates 173 - 175
+    - Perna: Plates 175 – 176
+    - Avicula: Plate 177, 198
+    - Pedum: Plate 178
+    - Ostrea: Plates 178 – 189
+    - Spondylus: Plates 190 – 195
+    - Pinna: Plate 196 – 200
+    - Anodontites: Plates 201 - 205
+    - Lima: Plate 206
+    - Pecten: Plates 207 – 214
+    - Mylilus: Plates 215 – 221
+    - Solen: Plates 222 – 228
+    - Mya: Plate 229
+    - Corbula: Plate 230
+    - Capsa: Plate 231
+    - Cardita: Plates 232 – 234
+    - Tridacna: Plates 235 – 236
+    - Trigonia: Plates 237 – 238
+    - Terebratula: Plates 239 – 246
+    - Unio: Plates 247 – 249
+    - Lingula: Plate 250
+    - Pandora: Plate 250
+    - Galatea: Plate 250
+    - Mactra: Plates 251 – 259
+    - Donax: Plates 260 – 262
+    - Venus: Plates 263 – 283
+    - Lucona: Plates 285 – 286
+    - Tellina: Plates 287 – 292
+    - Cardium: Plates 292 – 300
+    - Cyclas: Plates 301 – 302
+    - Arca: Plates 303 – 311
+  - Order Zoophyta: {}
+1792_lamarck:
+url: https://www.biodiversitylibrary.org/page/8891996
+tree:
+- Des Vers:
+  - Ordre I; Les Vers infusiores:
+    - Section I; Sans organs extérieurs:
+      - Le corps épais.:
+        - Genre 1; Monade: Monas. Le corps semblable á un point.
+        - Genre 2; Protée: Proetus. Le corps d'une forme variable. (a)
+        - Genre 3; Volvoce: Volvox. Le corps spherique.
+        - Genre 4; Enchelide: Enchelis. Le corps cylindrique.
+        - Genre 5; Vibrion: Vibrio. Le corps filiformes.
+      - "Le corps mince & membraneux":
+        - Genre 6; Cyclide: Cyclidium. Le corps ovale.
+        - Genre 7; Paramece: Paramæcium. Le corps oblong.
+        - Genre 8; Kolpode: Kolpoda. Le corps de sinueux.
+        - Genre 9; Gone: Gonium. Le corps anguleux.
+        - Genre 10; Bursaire: Bursaria. Le corps concave.
+    - Section II; Avec des organes extériurs:
+      - 
+  - Ordre II; Les Vers intestins:
+  - Ordre III; Les Vers mollusques:
+  - Ordre IV; Les Vers echinodermes:
+  - Ordre V; Les Vers testacés:
+  - Ordre VI; Les Vers zoophytes:
+Lamarck:
+  taxonomy:
+  - taxon: animalia
+    children: # classes
+    - taxon: infusoria
+    - taxon: polypi
+      children: # orders
+      - taxon: ciliati
+      - taxon: denudati
+      - taxon: vaginati
+        children:
+        - taxon: sertularia
+        - taxon: gorgonia
+      - taxon: tubiferi
+      - taxon: natantes
+        children:
+        - taxon: pennatula
+        - taxon: virgularia
+        - taxon: umbellularia
+        - taxon: encrinus
+          children:
+          - taxon: encrinies moniliformis
+          - taxon: pentacrinus caputmedusæ
+  - taxon: echinodermata-order
+    children:
+    - taxon: stelleridaæ
+      children:
+      - taxon: comatula
+      - taxon: euryale
+      - taxon: ophiura
+      - taxon: asteria

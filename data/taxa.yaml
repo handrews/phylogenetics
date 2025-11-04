@@ -873,21 +873,17 @@ craticula_whitehouse_1941:
   authority:
     source: 1941_whitehouse
 crinoidea-family:
-  name: Crinoidea
+  altRankOf: crinoidea
   rank: Family
-  auth: [miller.j.s]
-  year: 1821
   notes: Original rank as declared by Miller in 1821
 crinoidea:
   name: Crinoidea
   rank: Class
-  auth: [miller.j.s]
-  year: 1821
+  authority:
+    source: 1821_miller.j.s
+    page: 7
 crinoideæ:
   name: Crinoideæ
-  rank: Class
-  auth: [miller.j.s]
-  year: 1821
   altSpellingOf: crinoidea
 crinozoa:
   name: Crinozoa

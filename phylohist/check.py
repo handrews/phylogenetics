@@ -145,7 +145,7 @@ def check_sources(data):
   for ref_id, article in data['sources']['articles'].items():
     sources.add(ref_id)
     logger.debug(f'Processing article "{ref_id}"')
-    source_type = 'journal' if 'journal' in article else 'book'
+    source_type = (article.keys & {'journal', 'book', 'reading'}).pop()
     if article[source_type] not in data['sources']['publications']:
       logger.error(f'{source_type} "{article[source_type]}" not found!')
 
@@ -168,6 +168,13 @@ def check_sources(data):
     if ref_id not in data['sources']['articles']:
       logger.error(f'Source "{ref_id}" not found!')
 
+    if (
+      (trans_of := data['sources']['articles'][ref_id].get('translationOf')) and
+      trans_of not in data['sources']['articles']
+    ):
+      logger.error(
+        f'Translation source "{trans_of}" for "{ref_id}" not found!'
+      )
   logger.info('...sources checked.')
   return sources
 

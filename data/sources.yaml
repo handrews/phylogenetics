@@ -1,6 +1,10 @@
 publications:
+  abh-k-akad-wiss-berlin:
+    name: Abhandlungen der Königlichen Akademie der Wissenschaften zu Berlin
   acta-p-polonica:
     name: Acta Palaeontologica Polonica
+  akademie:
+    name: Akademie der Wissenschaften
   alcheringa:
     name: Alcheringa
   amph-und-cyst:
@@ -174,7 +178,27 @@ articles:
     - miller.j.s
     identifiers:
       url: https://www.biodiversitylibrary.org/bibliography/178175
+  1844_buch:
+    title: Über Cystideen eingeleitet durch die Entwicklung der Eigenthümlichkeiten von Caryocrinus ornatus
+    reading: akademie
+    notes: Some sources incorrectly give May 3rd instead of March 3rd due to an early typo.
+    pubDate:
+      year: 1844
+      month: 3
+      day: 3
+    authors:
+    - buch
   1846a_buch:
+    title: Über Cystideen eingeleitet durch die Entwicklung der Eigenthümlichkeiten von Caryocrinus ornatus SAY
+    journal: abh-k-akad-wiss-berlin
+    pubDate:
+      year: 1846
+    pages:
+    - 89
+    - 116
+    authors:
+    - buch
+  1846b_buch:
     title: Notice of a New Family of Crinoidal Animals, called Cystidea
     journal: jofgeol-london
     volume: 2
@@ -188,8 +212,9 @@ articles:
     - buch
     identifiers:
       url: https://www.biodiversitylibrary.org/page/35336362
-  1846b_buch:
+  1846c_buch:
     title: On the Cystidea (a new family of radiated animals), introduced by Account of the Caryocrinus ornatus, Say
+    translationOf: 1846a_buch
     journal: jofgeol-london
     volume: 2
     number: Part 2

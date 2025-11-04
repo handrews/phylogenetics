@@ -103,6 +103,7 @@ $defs:
     oneOf:
     - required: [journal, title]
     - required: [book]
+    - required: [reading, title]
     unevaluatedProperties: false
     properties:
       seen:
@@ -134,6 +135,8 @@ $defs:
       journal:
         type: string
       book:
+        type: string
+      reading:
         type: string
       volume:
         type: [integer, string]
@@ -199,6 +202,8 @@ $defs:
             $ref: "#/$defs/simpleDate"
           unknown:
             $ref: "#/$defs/simpleDate"
+      translationOf:
+        type: string
       identifiers:
         type: object
         additionalProperties: false
@@ -233,10 +238,14 @@ $defs:
         type: string
   taxonBasic:
     type: object
-    required: [name]
-    oneOf:
-    - required: [auth]
-    - required: [authority]
+    allOf:
+    - oneOf:
+      - required: [name]
+      - required: [altRankOf, rank]
+      - required: [altSpellingOf, name]
+    - oneOf:
+      - required: [auth]
+      - required: [authority]
     properties:
       name:
         type: [string, "null"]
