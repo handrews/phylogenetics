@@ -1,3 +1,49 @@
+1847_hall:
+  taxonomies:
+  - taxon: zoophyta
+    children:
+    - taxon: graptolithus
+    - taxon: intricaria
+    - taxon: gorgonia
+    - taxon: retepora
+    - taxon: stictopora
+    - taxon: escharopora
+    - taxon: aulophora
+    - taxon: alecto
+    - taxon: chætes
+    - taxon: stromatocerium
+    - taxon: porites
+    - taxon: favistella
+    - taxon: columnaria
+    - taxon: streptoplasma
+    - taxon: discophyllum
+      new: true
+      children:
+      - taxon: peltatum_hall_1847
+        type: true
+        new: true
+    - taxon: stellipora
+    - taxon: receptaculites
+    - openTaxon: zoophyta-genus-undetermined_hall_1847
+1898_walcott:
+  taxonomies:
+  - taxon: acraspeda
+    children:
+    - taxon: discophyllum
+      provisional: true
+      children:
+      - taxon: peltatum_hall_1847
+1900_clarke.j.m:
+  taxonomies:
+  - taxon: echinoidea
+    children:
+    - taxon: paropsonema
+      provisional: true
+      new: true
+      children:
+      - taxon: cryptophya_clarke.j.m_1900
+        type: true
+        new: true
 1900_bather:
   taxonomies:
   - taxon: animalia
@@ -81,6 +127,230 @@
                     - taxon: holothuroidea
                     - taxon: stelleroidea
                     - taxon: echinoidea
+1911b_walcott:
+  taxonomies:
+  - taxon: holothurioides
+    children:
+    - taxon: actinopoda
+      children:
+      - taxon: eldoniidae
+        new: true
+        children:
+        - taxon: eldonia
+          new: true
+          children:
+          - taxon: ludwigi_walcott_1911
+            type: true
+            new: true
+      - taxon: holothuriidæ
+        children:
+        - taxon: laggania
+          new: true
+          children:
+          - taxon: cambria_walcott_1911
+            type: true
+            new: true
+        - taxon: louisella
+          new: true
+          children:
+          - taxon: pedunculata_walcott_1911
+      - taxon: synaptidæ
+        children:
+        - taxon: mackenzia
+          new: true
+          children:
+          - taxon: costalis_walcott_1911
+            type: true
+            new: true
+  - taxon: scyphonmedusæ
+    children:
+    - taxon: rhizostomæ
+      children:
+      - taxon: rhizostomæ-family-undetermined_walcott_1911
+        children:
+        - taxon: peytoia
+          new: true
+          children:
+          - taxon: nathorsti_walcott_1911
+            type: true
+            new: true
+1911d_walcott:
+  taxonomies:
+  - taxon: annelida
+    notes: heading "Annulata", but Annelida mention in text
+    children:
+    - taxon: chætognatha
+      children:
+      - taxon: amiskwidæ
+        new: true
+        children:
+        - taxon: amiskwia
+          new: true
+          children:
+          - taxon: sagittiformis_walcott_1911
+            type: true
+            new: true
+    - taxon: chætopoda
+      children:
+      - taxon: polychæta
+        children:
+        - taxon: miskoa
+          new: true
+          children:
+          - taxon: miskoidæ
+            new: true
+            children:
+            - taxon: miskoia
+              new: true
+              children:
+              - taxon: preciosa_walcott_1911
+                type: true
+                new: true
+          - taxon: aysheaidæ
+            children:
+            - taxon: aysheaia
+              new: true
+              children:
+              - taxon: pedunculata_walcott_1911
+                type: true
+                new: true
+          - taxon: candidæ
+            new: true
+            children:
+            - taxon: canadia
+              new: true
+              children:
+              - taxon: spinosa_walcott_1911
+                type: true
+                new: true
+              - taxon: setigera_walcott_1911
+                new: true
+              - taxon: sparsa_walcott_1911
+                new: true
+              - taxon: dubia_walcott_1911
+                new: true
+              - taxon: irregularis_walcott_1911
+                new: true
+            - taxon: selkirkia
+              new: true
+              children:
+              - taxon: major_walcott_1908
+                type: true
+              - taxon: fragilis_walcott_1911
+                new: true
+              - taxon: gracilis_walcott_1911
+                new: true
+          - taxon: wiwaxidæ
+            new: true
+            children:
+            - taxon: wiwaxia
+              new: true
+              children:
+              - taxon: corrugata_matthew_1899
+                type: true
+                synonyms:
+                - taxon: corrugata_matthew_1899
+                  parents:
+                  - taxon: orotheca
+                - taxon: corrugata_walcott_1908 # re-statement
+                  parents:
+                  - taxon: orotheca
+            - taxon: pollingera
+              new: true
+              children:
+              - taxon: grandis_walcott_1911
+                type: true
+                new: true
+            - taxon: worthenella
+              new: true
+              children:
+              - taxon: cambria_walcott_1911
+                type: true
+                new: true
+    - taxon: gephyrea
+      children:
+      - openTaxon: gephyrea-indeterminate-order_walcott_1911
+        new: true
+        children:
+        - taxon: ottoidæ
+          provisional: true
+          new: true
+          children:
+          - taxon: ottoia
+            new: true
+            children:
+            - taxon: prolifica_walcott_1911
+              type: true
+              new: true
+            - taxon: minor_walcott_1911
+              new: true
+            - taxon: tenuis_walcott_1911
+              new: true
+          - taxon: banffia
+            provisional: true
+            new: true
+            children:
+            - taxon: constricta_walcott_1911
+              type: true
+              new: true
+        - taxon: pikaidæ
+          new: true
+          children:
+          - taxon: pikaie
+            new: true
+            children:
+            - taxon: gracilens_walcott_1911
+              type: true
+              new: true
+          - taxon: oesia
+            new: true
+            children:
+            - taxon: disjuncta_walcott_1911
+              type: true
+              new: true
+1912_clark.h.l:
+  taxonomies:
+  - taxon: cœlenterata
+    children:
+    - taxon: eldonia
+      provisional: true
+      alternateParents:
+      - taxon: animalia-unknown-phylum_clark.h.l_1912
+  - taxon: animalia-unknown-phylum_clark.h.l_1912
+    children:
+    - taxon: eldonia
+      provisional: true
+      alternateParents:
+      - taxon: cœlenterata
+1913_clark.a.h:
+  taxonomies:
+  - taxon: holothuroidea
+    children:
+    - taxon: elpidiidae
+      children:
+      - taxon: laggania
+      - taxon: louisella
+    - taxon: eldoniidae
+      notes: Near the Elpidiidae
+      children:
+      - taxon: eldonia
+  - taxon: zoantharia
+    children:
+    - taxon: edwardsiidae
+      children:
+      - taxon: mackenzia
+1926_chapman:
+  taxonomies:
+  - taxon: hydrozoa
+    children:
+    - taxon: scyphomedusae
+      children:
+      - taxon: discophora
+        children:
+        - taxon: discophyllum
+          children:
+          - taxon: mirabile_chapman_1926
+            new: true
 1935_bassler:
   taxonomies:
   - taxon: edrioasteroidea

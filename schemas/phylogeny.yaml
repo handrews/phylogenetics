@@ -230,6 +230,8 @@ $defs:
     properties:
       source:
         type: string
+      page:
+        type: [number, string]
       in:
         $ref: "#/$defs/authority"
       ex:
@@ -238,14 +240,17 @@ $defs:
         type: string
   taxonBasic:
     type: object
-    allOf:
-    - oneOf:
-      - required: [name]
-      - required: [altRankOf, rank]
-      - required: [altSpellingOf, name]
-    - oneOf:
-      - required: [auth]
-      - required: [authority]
+#     allOf:
+#     - oneOf:
+#       - required: [altRankOf, rank]
+#       - required: [name]
+#         oneOf:
+#         - required: [auth]
+#         - required: [authority]
+#       - required: [altSpellingOf]
+    dependentRequired:
+      altNameOf: [name]
+      altRankOf: [rank]
     properties:
       name:
         type: [string, "null"]
@@ -305,6 +310,8 @@ $defs:
         items:
           type: string
       altSpellingOf:
+        type: string
+      altRankOf:
         type: string
       notes:
         type: string
