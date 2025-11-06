@@ -7,6 +7,8 @@ publications:
     name: Akademie der Wissenschaften
   alcheringa:
     name: Alcheringa
+  am-nat:
+    name: The American Naturalist
   amph-und-cyst:
     name: "Die Amphorideen und Cystoideen: beiträge zur Morphologie und Phylogenie der Echinodermen"
   annals:
@@ -69,6 +71,8 @@ publications:
     name: Memoirs of the Queensland Museum
   methodique:
     name: Encyclopédie Méthodique. Histoire Naturelle des Vers. Tome Premier
+  monographs-usgs:
+    name: Monographs of the United States Geological Survey
   nature:
     name: Nature
   nat-com:
@@ -432,6 +436,14 @@ articles:
     - haekel
     identifiers:
       url: https://www.biodiversitylibrary.org/page/11808822
+  1898_walcott:
+    title: Fossile Medusæ
+    journal: monographs-usgs
+    volume: 30
+    pubDate:
+      year: 1898
+    authors:
+    - walcott
   1900_bather:
     title: Part III — The Echinoderma"
     book: treatise-zoo
@@ -441,6 +453,63 @@ articles:
     - bather
     identifiers:
       url: https://archive.org/details/treatiseonzoolog03lank/page/n5/mode/2up
+  1911b_walcott:
+    title: Middle Cambrian Holothurians and Medusaæ
+    journal: smith-misc
+    volume: 57
+    number: 3
+    pubDate:
+      year: 1911
+      month: 6
+      day: 13
+    authors:
+    - walcott
+    identifiers:
+      url: https://www.biodiversitylibrary.org/page/9263071
+  1911d_walcott:
+    title: Middle Cambrian Annelids
+    journal: smith-misc
+    volume: 57
+    number: 5
+    pubDate:
+      year: 1811
+      month: 9
+      day: 4
+    authors:
+    - walcott
+    identifiers:
+      url: https://www.biodiversitylibrary.org/page/9263165
+  1912_clark.h.l:
+    title: Fossil Holothurians
+    journal: science-new-series
+    volume: 35
+    number: 894
+    pages:
+    - 274
+    - 278
+    pubDate:
+      year: 1912
+      month: 2
+      day: 16
+    authors:
+    - clark.h.l
+    identifiers:
+      url: https://www.biodiversitylibrary.org/page/31090005
+  1913_clark.a.h:
+    title: Cambrian Holothurians
+    journal: am-nat
+    volume: 47
+    number: 560
+    pages:
+    - 488
+    - 507
+    pubDate:
+      year: 1913
+      month: 8
+    authors:
+    - clark.a.h
+    identifiers:
+      url: https://www.biodiversitylibrary.org/page/43433793
   1929_matsumoto:
     title: Outline of a classification of Echinoermata
     journal: tohoku
