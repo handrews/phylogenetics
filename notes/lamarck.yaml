@@ -1,3 +1,19 @@
+# Hyman: https://www.biodiversitylibrary.org/creator/1238#/titles
+
+# Linnaeus 1735: https://www.biodiversitylibrary.org/bibliography/877
+# Linnaeus https://www.biodiversitylibrary.org/search?searchTerm=&tinc=A&searchCat=T&stype=C&lname=Linnaeus&ninc=&vol=&yr=&subj=&sinc=&lang=&col=&nt=&ntinc=A&txt=&txinc=A&ppage=1&apage=1&kpage=1&npage=1&psort=da&facet=FacetItemAuthors_Linne%CC%81,%20Carl%20von,&facet=FacetItemAuthors_Linn%C3%A9,%20Carl%20von,#/titles
+
+# Lamarck Systême des animaux sans vertèbres; ou, Tableau général des classes, des classes, des orres et des genres de ces animaux
+# https://www.biodiversitylibrary.org/item/49776#page/6/mode/1up
+#
+# Lamarck Histoire naturelle des animaux sans vertèbres
+# https://www.biodiversitylibrary.org/bibliography/63986
+# ^not sure if these are where any of the below comes from
+
+# Bruguiere History naturelle des vers
+# https://www.biodiversitylibrary.org/bibliography/8638
+# ^not sure if this is where any of the below comes from
+
 1791_bruguiére:
 - Class Vermium:
   - Order Infusoria: {}
