@@ -364,17 +364,17 @@ argodiscus:
   name: Argodiscus
   auth: [Prokop]
   year: 1965
-aristocystidae:
-  name: Aristocystidae
-  rank: Family
-  auth: [neumayr]
-  year: 1889
-  altSpellingOf: Aristocystitidae
 aristocystitidae:
   name: Aristocystitidae
   rank: Family
   auth: [neumayr]
   year: 1889
+aristocystidae:
+  name: Aristocystidae
+  rank: Family
+  auth: [neumayr]
+  year: 1889
+  altSpellingOf: aristocystitidae
 aristocystitidae-superfamily:
   name: Aristocystitidae
   rank: Superfamily
@@ -684,17 +684,17 @@ carteri_bassler_1936:
   name: carteri
   authority:
     source: 1936_bassler
-caryocrinidae:
-  name: Caryocrinidae
-  rank: Family
-  auth: [Bernard]
-  year: 1895
-  altSpellingOf: Caryocrinitidae
 caryocrinitidae:
   name: Caryocrinitidae
   rank: Family
   auth: [Bernard]
   year: 1895
+caryocrinidae:
+  name: Caryocrinidae
+  rank: Family
+  auth: [Bernard]
+  year: 1895
+  altSpellingOf: caryocrinitidae
 casteri_sprinkle_1973:
   name: casteri
   authority:
@@ -881,7 +881,8 @@ crinoidea:
   rank: Class
   authority:
     source: 1821_miller.j.s
-    page: 7
+    pages:
+    - 7
 crinoideæ:
   name: Crinoideæ
   altSpellingOf: crinoidea
@@ -2915,18 +2916,18 @@ thresherodiscus:
   name: Thresherodiscus
   auth: [Foerste]
   year: 1914
+thyroidea:
+  name: Thyroidea
+  rank: Order
+  auth: [Chapman]
+  year: 1860
 thyroida:
   name: Thyroida
   rank: Order
   auth: [Chapman]
   year: 1860
   notes: Some sources list order Thyroidea, Thyroida is probably an error
-  altSpellingOf: Thyroidea
-thyroidea:
-  name: Thyroidea
-  rank: Order
-  auth: [Chapman]
-  year: 1860
+  altSpellingOf: thyroidea
 tiaracrinidae:
   name: Tiaracrinidae
   rank: Family

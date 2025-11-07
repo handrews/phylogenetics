@@ -15,6 +15,8 @@ publications:
     name: Annales de Paleontologie
   annals-and-mag:
     name: The Annals and Magazine of Natural History
+  anteck:
+    name: Anteckningar i Physik och Geognosi under resor uti Sverige och Norrige
   annual-ny:
     name: Annual Report of the New York State Museum of Natural History
   breviora:
@@ -59,6 +61,8 @@ publications:
     name: Geologica et Palaeontologica
   geomag:
     name: Geological Magazine
+  invertebrates:
+    name: The Invertebrates
   jofpaleo:
     name: Journal of Paleontology
   jofgeol-london:
@@ -85,6 +89,8 @@ publications:
     - leske
   nat-hist-crinoidea:
     name: A Natural History of the Crinoidea, or Lily-Shaped Animals
+  outlines-of-oryctology:
+    name: "Outlines of Oryctology: An introduction to the study of fossil remains; especially those found in the British strata"
   p-of-iowa:
     name: Palaeontology of Iowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857
   palaeontology:
@@ -107,6 +113,8 @@ publications:
     name: Special Publication of the Museum of Comparative Zoology, Harvard University
   tableau:
     name: Tableau Encyclopédique et Méthodique des Trois Règnes de la Nature. Contenant l’Helminthologie, ou les Vers Infusoires, les Vers Intestins, les Vers Mollusques
+  tableau-cuvier:
+    name: Tableau élémentaire de l'histoire naturelle des animaux
   tohoku:
     name: Tohoku Imperial University.Science Reports, 2nd Series, (geology)
   treatise-s:
@@ -174,6 +182,36 @@ articles:
     notes: Officially recognized use of "Echinodermata" (in Latin), revived from Klein
     identifiers:
       url: https://www.biodiversitylibrary.org/bibliography/64072
+  1798a_cuvier:
+    book: tableau-cuvier
+    volume: 1
+    notes: Date may be 1797 or 1798
+    pubDate:
+      year: 1798
+    authors:
+    - cuvier
+    identifiers:
+      url: https://www.biodiversitylibrary.org/item/42906
+  1798b_cuvier:
+    book: tableau-cuvier
+    volume: 2
+    notes: Date may be 1797 or 1798
+    pubDate:
+      year: 1798
+    authors:
+    - cuvier
+    identifiers:
+      url: https://www.biodiversitylibrary.org/item/87284
+  1798c_cuvier:
+    book: tableau-cuvier
+    volume: 3
+    notes: Date may be 1797 or 1798
+    pubDate:
+      year: 1798
+    authors:
+    - cuvier
+    identifiers:
+      url: https://www.biodiversitylibrary.org/item/99338
   1821_miller.j.s:
     book: nat-hist-crinoidea
     pubDate:
@@ -182,6 +220,23 @@ articles:
     - miller.j.s
     identifiers:
       url: https://www.biodiversitylibrary.org/bibliography/178175
+  1822_parkinson:
+    book: outlines-of-oryctology
+    pubDate:
+      year: 1822
+    authors:
+    - parkinson
+    identifiers:
+      url: https://darwin-online.org.uk/converted/pdf/1822_fossil_CUL-DAR.LIB.490.pdf
+  1828_hisinger:
+    book: anteck
+    volume: 4
+    pubDate:
+      year: 1828
+    authors:
+    - hisinger
+    identifiers:
+      url: https://www.google.com/books/edition/Anteckningar_i_Physik_och_Geognosi_under/LotfAAAAcAAJ?hl=en
   1844_buch:
     title: Über Cystideen eingeleitet durch die Entwicklung der Eigenthümlichkeiten von Caryocrinus ornatus
     reading: akademie
@@ -354,6 +409,19 @@ articles:
       year: 1858
     authors:
     - hall
+  1865_norman:
+    title: XIII.—On the genera and species of British Echinodermata
+    journal: annals-and-mag
+    volume: 15
+    pages:
+    - 98
+    - 129
+    pubDate:
+      year: 1865
+    authors:
+    - norman
+    identifiers:
+      url: https://archive.org/details/biostor-91146/page/n1/mode/2up
   1866_hall:
     title: Descriptions of some new species of Crinoidea and other Fossils from the Lower Silurian strata, principally of the age of the Hudson-river group.
     journal: annual-ny
@@ -444,6 +512,8 @@ articles:
       year: 1898
     authors:
     - walcott
+    identifiers:
+      url: https://www.biodiversitylibrary.org/page/2056780
   1900_bather:
     title: Part III — The Echinoderma"
     book: treatise-zoo
@@ -472,7 +542,7 @@ articles:
     volume: 57
     number: 5
     pubDate:
-      year: 1811
+      year: 1911
       month: 9
       day: 4
     authors:
@@ -588,6 +658,16 @@ articles:
       day: 13
     identifiers:
       url: https://www.biodiversitylibrary.org/item/189697#page/38/mode/1up
+  1955_hyman:
+    title: Enchinodermata, the Coelomate Bilateria
+    book: invertebrates
+    volume: 4
+    pubDate:
+      year: 1955
+    authors:
+    - hyman
+    identifiers:
+      url: https://archive.org/details/in.ernet.dli.2015.260496/page/n5/mode/2up
   1962_fay:
     title: Edrioblastoidea, a new class of Echinodermata
     complete:

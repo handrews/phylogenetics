@@ -234,18 +234,28 @@ $defs:
         $ref: "#/$defs/authority"
       ex:
         $ref: "#/$defs/authority"
+      pages:
+        type: array
+        items:
+          type: [number, string]
+      plates:
+        type: array
+        items:
+          type: [number, string]
       notes:
         type: string
   taxonBasic:
     type: object
-    allOf:
-    - oneOf:
-      - required: [name]
-      - required: [altRankOf, rank]
-      - required: [altSpellingOf, name]
-    - oneOf:
+    if:
+      oneOf:
       - required: [auth]
       - required: [authority]
+    then:
+      required: [name]
+    else:
+      oneOf:
+      - required: [altRankOf, rank]
+      - required: [altSpellingOf, name]
     properties:
       name:
         type: [string, "null"]
@@ -304,6 +314,8 @@ $defs:
         type: array
         items:
           type: string
+      altRankOf:
+        type: string
       altSpellingOf:
         type: string
       notes:
@@ -333,6 +345,14 @@ $defs:
       new:
         type: boolean
         default: false
+      pages:
+        type: array
+        items:
+          type: [number, string]
+      plates:
+        type: array
+        items:
+          type: [number, string]
       children:
         type: array
         items:

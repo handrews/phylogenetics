@@ -145,7 +145,7 @@ def check_sources(data):
   for ref_id, article in data['sources']['articles'].items():
     sources.add(ref_id)
     logger.debug(f'Processing article "{ref_id}"')
-    source_type = (article.keys & {'journal', 'book', 'reading'}).pop()
+    source_type = (article.keys() & {'journal', 'book', 'reading'}).pop()
     if article[source_type] not in data['sources']['publications']:
       logger.error(f'{source_type} "{article[source_type]}" not found!')
 
@@ -182,9 +182,17 @@ def check_sources(data):
 def check_taxa(data):
   logger.info(f"Processing {len(data['taxa'])} taxa...")
   for taxon_id, taxon in data['taxa'].items():
+    logger.debug(f'  Processing taxon "{taxon_id}"...')
+
+    if 'altSpellingOf' in taxon or 'altRankOf' in taxon:
+      if (alt := taxon.get('altSpellingOf')) and alt not in data['taxa']:
+        logger.error(f'Taxon {taxon_id} alt spelling of unknown {alt}')
+      if (alt := taxon.get('altRankOf')) and alt not in data['taxa']:
+        logger.error(f'Taxon {taxon_id} alt rank of unknown {alt}')
+      continue
+
     if taxon['name'] is not None:
       expected = taxon['name'].lower()
-      logger.debug(f'  Processing taxon "{taxon_id}"...')
 
       valid, valid_set = check_expectation(
         taxon_id,

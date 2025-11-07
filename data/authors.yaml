@@ -106,6 +106,11 @@ cooper:
   given: G. Arthur
   birth: 1902
   death: 2000
+cuvier:
+  family: Cuvier
+  given: Georges
+  birth: 1769
+  death: 1832
 david:
   family: David
   given: Bruno
@@ -205,6 +210,11 @@ house:
 hughes:
   family: Hughes
   given: N. F.
+hyman:
+  family: Hyman
+  given: Libbie Henrietta
+  birth: 1888
+  death: 1969
 jaekel:
   family: Jaekel
   given: Otto
@@ -316,12 +326,18 @@ neumayr:
   given: Melchior
   birth: 1845
   death: 1890
+norman:
+  family: Norman
+  given: Alfred Merle
 orłowski:
   family: Orłowski
   given: S.
 owen:
   family: Owen
   given: Alan W.
+parkinson:
+  family: Parkinson
+  given: James
 parsley:
   family: Parsley
   given: Ronald
