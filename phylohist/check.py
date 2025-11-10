@@ -47,6 +47,10 @@ def check_node(node, data, parent=[]):
     check_node(synonym, data, current + ['synonym', str(index)])
   for index, parent in enumerate(node.get('parents', [])):
     check_node(parent, data, current + ['parent', str(index)])
+  for index, altPlacement in enumerate(node.get('altPlacements', [])):
+    check_node(altPlacement, data, current + ['altPlacement', str(index)])
+  for index, vel_or in enumerate(node.get('or', [])):
+    check_node(vel_or, data, current + ['or', str(index)])
   if (moved := node.get('moved')):
     check_node(moved, data, current + ['moved'])
   if (corrected := node.get('corrected')):

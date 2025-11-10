@@ -384,6 +384,10 @@ $defs:
         $ref: taxonomyTree
       corrected:
         $ref: taxonomyTree
+      or:
+        type: array
+        items:
+          $ref: taxonomyTree
       affTaxon:
         type: string
       cfTaxon:

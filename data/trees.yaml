@@ -76,6 +76,8 @@
         children:
         - taxon: angulosus_buch_1844
           new: true
+          or:
+          - taxon: seckenbergii_meyer_1826
           synonyms:
           - taxon: seckenbergii_meyer_1826
             parents:
