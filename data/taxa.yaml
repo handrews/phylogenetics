@@ -135,6 +135,11 @@ cystideæ-unnamed-subgroup-2_müller.j.p_1854:
   authority:
     source: 1854_müller.j.p
   notes: Glyptocystitida; rank unstated
+echinodermata-indeterminate-family_hisinger_1828:
+  name: null
+  rank: Family
+  authority:
+    source: 1828_hisinger
 edrioasteroidea-order-uncertain_bassler_1935:
   name: null
   rank: Order
@@ -1195,10 +1200,15 @@ echinodermata:
       source: 1734_klein
 echinodermatum:
   name: Echinodermatum
-  rank: Phylum
   authority:
     source: 1734_klein
   altSpellingOf: echinodermata
+echinodermata-class:
+  rank: Class
+  altRankOf: echinodermata
+echinodermata-order:
+  rank: Order
+  altRankOf: echinodermata
 echinodiscus:
   name: Echinodiscus
   auth: [Leske]
@@ -1247,14 +1257,10 @@ echinosphaerites:
   auth: [Wahlenberg]
   year: 1821
 echinosphaerites-subgenus:
-  name: Echinosphaerites
   rank: subgenus
-  auth: [Wahlenberg]
-  year: 1821
+  altRankOf: echinosphaerites
 echinosphærites:
   name: Echinosphærites
-  auth: [Wahlenberg]
-  year: 1821
   altSpellingOf: echinosphaerites
 echinozoa:
   name: Echinozoa
@@ -2418,6 +2424,10 @@ polyplacus:
   name: Polyplacus
   authority:
     source: 1967c_durham
+pomum_wahlenberg_1821:
+  name: pomum
+  auth: [Wahlenberg]
+  year: 1821
 postibulla:
   name: Postibulla
   auth: [Bell]
@@ -2747,6 +2757,16 @@ sphaeronidae:
   auth: [neumayr]
   year: 1889
   altSpellingOf: sphaeronitidae
+sphaeronites:
+  name: Sphaeronites
+  authority:
+    source: 1828_hisinger
+    pages:
+    - 195
+    notes: The 1967 Treatise incorrectly cites page 185.
+sphæronites:
+  name: Sphæronites
+  altSpellingOf: sphaeronites
 sphaeronitidae:
   name: Sphaeronitidae
   rank: Family

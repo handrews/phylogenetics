@@ -1,5 +1,32 @@
 # Phylogenetic Browser
 
+* Capture everythign as-is
+  * Things that could connect sometimes won't — need to handle this gracefully
+  * Adding sources whenever possible is preferred, but need to handle otherwise
+  * Errors will be present that can't be verified (Sphaeronites page number error)
+  * Errors will be corrected in later publications and need to be handled
+  * Imprecise prose may be the only available data source
+  * _We have to handle each paper as if it is the only thing in existence_
+  * Connection is a conceptual layer on top of data capture, _not_ an integral part of it
+  * May need to support some duct-taping to bridge gaps (2nd-/3rd-hand knowledge)
+  * Duct-taping should be obvious, and should be (automatically?) removed when possible
+
+* Three-layred system
+  * Data capture
+  * Data-driven connection
+  * Human-driven connection, analysis, and visualization
+
+* Business model?
+  * Data entry, connection, and visualization of those two layers is free
+  * Sell ads on visualization site?
+  * Sell API access to build apps?
+
+* Identity is hard
+  * For sources, a hash of normalized info?  Plus citation-specific info?
+    * Alternatively, always work to build out the source graph
+    * Should be easy to add journals, volumes, issues, books, publishers?
+  * For taxa... it will have to be a traversal query, I think.
+
 * Capture all taxonomic / phylogenetic data
   * Systematic Paleontology (Linnaean taxonomy)
   * Cladograms, including brackets, including nesting or overlapping

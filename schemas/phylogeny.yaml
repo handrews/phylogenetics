@@ -401,6 +401,8 @@ $defs:
         type: integer
         minimum: 1700
         maximum: 2030 # Fragile!  But helpful for now.  Apologies to the future.
+      authority:
+        $ref: "phylogeny#/$defs/authority"
     unevaluatedProperties: false
   phylogeny:
     type: object

@@ -1,3 +1,71 @@
+1828_hisinger:
+  taxonomies:
+  - taxon: echinodermata-order
+    auth: [cuvier]
+    children:
+    - openTaxon: echinodermata-indeterminate-family_hisinger_1828
+      notes: "between the Encrinite and Echinite families"
+      children:
+      - taxon: sphæronites
+        pages:
+        - 195
+        notes: |
+          The 1967 Treatise incorrectly gives the page as 185.
+          The synonyms may not be quite right due to the need for
+          automatic translation and the imprecise nature of the prose
+        new: true
+        children:
+        - taxon: pomum_wahlenberg_1821
+          synonyms:
+          - taxon: pomum_wahlenberg_1821
+            parents:
+            - taxon: echinosphærites
+        - taxon: aurantium_gyllenhaal_1772
+          synonyms:
+          - taxon: aurantium_gyllenhaal_1772
+            parents:
+            - taxon: echinus
+        - taxon: granatum_wahlenberg_1821
+          synonyms:
+          - taxon: granatum_wahlenberg_1821
+            parents:
+            - taxon: echinospærites
+1844_buch:
+  taxonomies:
+  - taxon: echinodermata-order
+    children:
+    - taxon: crinoidea-family
+    - taxon: cystidea-family
+      new: true
+1846c_buch:
+  taxonomies:
+  - taxon: echinodermata-order
+    children:
+    - taxon: crinoidea-family
+    - taxon: cystidea-family
+      children:
+      - taxon: sphæronites
+        type: true
+        children:
+        - taxon: aurantium_gyllenhaal_1772
+          synonyms:
+          - taxon: aurantium_gyllenhaal_1772
+            parents:
+            - taxon: echinus
+        - taxon: pomum_wahlenberg_1821
+          synonyms:
+          - taxon: pomum_wahlenberg_1821
+            parents:
+            - taxon: echinosphærites
+      - taxon: caryocystites
+        children:
+        - taxon: granatum_wahlenberg_
+        - taxon: testudinarius_hisinger_
+      - taxon: hemicosmites
+        children:
+        - taxon: pyriformis_buch_
+      - taxon: scycocystites
+        # TODO: Finish!
 1900_bather:
   taxonomies:
   - taxon: animalia
@@ -597,7 +665,14 @@
           - taxon: homalozoa
 1960_gill_caster:
   taxonomies:
-  - taxon: echinodermatum
+  - taxon: echinodermata
+    authority:
+      source: 1734_klein
+    corrected:
+      notes: |
+        Says "as Echinodermatum", but Klein 1734 at least sometimes
+        used "Echinodermata"
+      taxon: echinodermatum
     children:
     - taxon: pelmatozoa
       children:
