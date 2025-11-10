@@ -390,6 +390,10 @@ $defs:
         type: string
       openTaxon:
         type: string
+      altPlacements:
+        type: array
+        items:
+          $ref: taxonomyTree
       auth:
         $comment: overrides taxon field
         type: array

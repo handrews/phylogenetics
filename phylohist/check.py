@@ -28,7 +28,10 @@ def check_node(node, data, parent=[]):
     if not (taxon := data['taxa'].get(taxon_id)):
       logger.error(f'Taxon "{taxon_id}" not found!')
 
-    elif taxon_type in NAMED_TAXON_FIELDS and taxon.get('name') is None:
+    elif (
+      taxon_type in NAMED_TAXON_FIELDS and 'altRankOf' not in taxon and
+      taxon.get('name') is None
+    ):
       logger.error(f'Taxon "{taxon_id}" expected to have a name!')
     elif taxon_type not in NAMED_TAXON_FIELDS and taxon['name'] is not None:
       logger.error(f'Taxon "{taxon_id}" NOT expected to have a name!')
@@ -253,4 +256,5 @@ def check_trees(data, sources):
   logger.info(f"...opinions processed.")
 
   if (difference := sources - opinions):
-    logger.warn("Missing opinions from:\n    " + '\n    '.join(sorted(difference)))
+    # logger.warn("Missing opinions from:\n    " + '\n    '.join(sorted(difference)))
+    logger.warn(f"Missing opinions from {len(difference)} papers!")

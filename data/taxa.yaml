@@ -1,226 +1,3 @@
-uncertain-phylum:
-  name: null
-  rank: Phylum
-  auth: [linnaeus]
-  year: 1758
-uncertain-class:
-  name: null
-  rank: Class
-  auth: [linnaeus]
-  year: 1758
-uncertain-order:
-  name: null
-  rank: Order
-  auth: [linnaeus]
-  year: 1758
-uncertain-family:
-  name: null
-  rank: Family
-  auth: [linnaeus]
-  year: 1758
-uncertain-eocrinoid-family_ubaghs_1967b:
-  name: null
-  rank: Family
-  auth: [ubaghs]
-  year: 1967
-uncertain-monobathrid-family_guensburg_sprinkle_2003:
-  name: null
-  rank: Family
-  authority:
-    source: 2003_guensburg_sprinkle
-blastozoa-or-crinozoa:
-  name: null
-  rank: Subphylum
-  authority:
-    source: 1973_sprinkle
-incertae-sedis-echinodermata:
-  name: null
-  rank: Class
-  authority:
-    source: 1967e_ubaghs
-indeterminate-class_sprinkle_1973:
-  name: null
-  rank: Class
-  authority:
-    source: 1973_sprinkle
-indeterminate-subclass_sprinkle_1973:
-  name: null
-  rank: Subclass
-  authority:
-    source: 1973_sprinkle
-unnamed-order-1_sprinkle_1973:
-  name: null
-  rank: Order
-  authority:
-    source: 1973_sprinkle
-unnamed-order-2_sprinkle_1973:
-  name: null
-  rank: Order
-  authority:
-    source: 1973_sprinkle
-indeterminate-order-1_sprinkle_1973:
-  name: null
-  rank: Order
-  authority:
-    source: 1973_sprinkle
-indeterminate-order-2_sprinkle_1973:
-  name: null
-  rank: Order
-  authority:
-    source: 1973_sprinkle
-indeterminate-order-3_sprinkle_1973:
-  name: null
-  rank: Order
-  authority:
-    source: 1973_sprinkle
-indeterminate-order-4_sprinkle_1973:
-  name: null
-  rank: Order
-  authority:
-    source: 1973_sprinkle
-indeterminate-family-1_sprinkle_1973:
-  name: null
-  rank: Family
-  authority:
-    source: 1973_sprinkle
-indeterminate-family-2_sprinkle_1973:
-  name: null
-  rank: Family
-  authority:
-    source: 1973_sprinkle
-indeterminate-family-3_sprinkle_1973:
-  name: null
-  rank: Family
-  authority:
-    source: 1973_sprinkle
-indeterminate-family-4_sprinkle_1973:
-  name: null
-  rank: Family
-  authority:
-    source: 1973_sprinkle
-genus-a_guensburg_sprinkle_2003:
-  name: null
-  rank: genus
-  authority:
-    source: 2003_guensburg_sprinkle
-astrocystites-sp_webby_1968:
-  name: null
-  rank: species
-  notes: |
-    "[The specimen] probably represents a species of Astrocystites
-    comparable with A. distans , but until more material is found
-    closer comparisons cannot be made."
-  authority:
-    source: 1968_webby
-cambraster-sp_jell_sprinkle_2021:
-  name: null
-  rank: species
-  authority:
-    source: 2021_jell_sprinkle
-cystideæ-unnamed-group_müller.j.p_1854:
-  name: null
-  rank: Unranked
-  authority:
-    source: 1854_müller.j.p
-  notes: Rhombifera, no rank given but Diploporita defined as suborder
-cystideæ-unnamed-subgroup-1_müller.j.p_1854:
-  name: null
-  rank: Unranked
-  authority:
-    source: 1854_müller.j.p
-  notes: Hemicosmitida; rank unstated
-cystideæ-unnamed-subgroup-2_müller.j.p_1854:
-  name: null
-  rank: Unranked
-  authority:
-    source: 1854_müller.j.p
-  notes: Glyptocystitida; rank unstated
-echinodermata-indeterminate-family_hisinger_1828:
-  name: null
-  rank: Family
-  authority:
-    source: 1828_hisinger
-edrioasteroidea-order-uncertain_bassler_1935:
-  name: null
-  rank: Order
-  authority:
-    source: 1935_bassler
-eocrinus?-sp_caster_pope_1960:
-  name: null
-  rank: species
-  auth: [Caster, Pope]
-  year: 1960
-eocystites?-sp_walcott_1917:
-  name: null
-  rank: species
-  auth: [walcott]
-  year: 1917
-gogia-sp_palmer_1968:
-  name: null
-  rank: species
-  auth: [Palmer]
-  year: 1968
-  in: [Hobbs, Hays, Ross]
-gogia-sp_robison_1965:
-  name: null
-  rank: species
-  auth: [robison]
-  year: 1965
-gogia-sp-1_sprinkle_1973:
-  name: null
-  rank: species
-  authority:
-    source: 1973_sprinkle
-gogia-sp-2_sprinkle_1973:
-  name: null
-  rank: species
-  authority:
-    source: 1973_sprinkle
-helicoplacus-sp_durham_caster_1966:
-  name: null
-  rank: species
-  authority:
-    source: 1966_durham_caster
-kailidiscus-sp_jell_sprinkle_2021:
-  name: null
-  rank: species
-  authority:
-    source: 2021_jell_sprinkle
-lichenoides-sp_zamora_deline_álvaro_rahman_2017:
-  name: null
-  rank: species
-  authority:
-    source: 2017_zamora_deline_álvaro_rahman
-lichenoididae-gen_smith.a.b_zamora_álvaro_2013:
-  name: null
-  rank: genus
-  authority:
-    source: 2013_smith.a.b_zamora_álvaro
-lichenoididae-gen-sp_smith.a.b_zamora_álvaro_2013:
-  name: null
-  rank: species
-  authority:
-    source: 2013_smith.a.b_zamora_álvaro
-redlichia-spp_jell_sprinkle_2021:
-  name: null
-  rank: species
-  authority:
-    source: 2021_jell_sprinkle
-  notes: '"spp" seems to mean possibly multiple species?'
-titanocrinus-sp_guensburg_sprinkle_2003:
-  name: null
-  rank: species
-  authority:
-    source: 2003_guensburg_sprinkle
-stromatocystitida-incertae-sedis:
-  name: null
-  rank: Family
-  auth: [linnaeus]
-  year: 1758
-walcottidiscus-sp_bassler_1936:
-  name: null
-  authority:
-    source: 1936_bassler
 ###################### A
 adelphicrinus:
   name: Adelphicrinus
@@ -323,6 +100,18 @@ amphorida:
   rank: Order
   auth: [haekel]
   year: 1896
+anapeptamenus_austen_1843:
+  name: anapeptamenus
+  auth: [Austen]
+  year: 1843
+angulosa_pander_1830:
+  name: angulosa
+  auth: [Pander]
+  year: 1830
+angulosus_buch_1844:
+  name: angulosus
+  authority:
+    source: 1844_buch
 animalia:
   name: Animalia
   rank: Kingdom
@@ -432,6 +221,15 @@ astrocystites:
   name: Astrocystites
   auth: [Whiteaves]
   year: 1897
+astrocystites-sp_webby_1968:
+  name: null
+  rank: species
+  notes: |
+    "[The specimen] probably represents a species of Astrocystites
+    comparable with A. distans , but until more material is found
+    closer comparisons cannot be made."
+  authority:
+    source: 1968_webby
 astrocystitidae:
   name: Astrocystitidae
   rank: Family
@@ -514,6 +312,10 @@ bellulus_barrande_1887:
   name: bellulus
   auth: [barrande]
   year: 1887
+bicopuladigiti_garnet_1844:
+  name: bicopuladigiti
+  auth: [Garnet]
+  year: 1844
 bifida_ubaghs_robison_1988:
   name: bifida
   auth: [ubaghs, robison]
@@ -554,6 +356,11 @@ blastozoa:
   bracket: Blastozoans
   authority:
     source: 1973_sprinkle
+blastozoa-indeterminate-class_sprinkle_1973:
+  name: null
+  rank: Class
+  authority:
+    source: 1973_sprinkle
 bockia:
   name: Bockia
   auth: [Hecker]
@@ -591,6 +398,11 @@ brachiopoda:
   rank: Phylum
   auth: [Dumeril]
   year: 1806
+briareus_barrande_1887:
+  name: briareus
+  auth: [barrande]
+  year: 1887
+  notes: Junior synonym of bohemica_fatka_kordule_1985
 bromidocystis:
   name: Bromidocystis
   auth: [sprinkle]
@@ -627,6 +439,11 @@ cambraster:
   name: Cambraster
   auth: [jaekel]
   year: 1923
+cambraster-sp_jell_sprinkle_2021:
+  name: null
+  rank: species
+  authority:
+    source: 2021_jell_sprinkle
 cambrocrinus:
   name: Cambrocrinus
   auth: [orłowski]
@@ -700,6 +517,10 @@ caryocrinidae:
   auth: [Bernard]
   year: 1895
   altSpellingOf: caryocrinitidae
+caryocystites:
+  name: Caryocystites
+  authority:
+    source: 1844_buch
 casteri_sprinkle_1973:
   name: casteri
   authority:
@@ -712,6 +533,10 @@ celtocrinus:
   name: Celtocrinus
   auth: [Donovan, Cope]
   year: 1989
+cerasus_buch_1840:
+  name: cerasus
+  auth: [buch]
+  year: 1840
 ceratocystis:
   name: Ceratocystis
   auth: [jaekel]
@@ -776,6 +601,10 @@ cincta-order:
   rank: Order
   auth: [jaekel]
   year: 1918
+clausus_austen_1843:
+  name: clausus
+  auth: [Austen]
+  year: 1843
 cnemecrinus:
   name: Cnemecrinus
   authority:
@@ -877,10 +706,6 @@ craticula_whitehouse_1941:
   name: craticula
   authority:
     source: 1941_whitehouse
-crinoidea-family:
-  altRankOf: crinoidea
-  rank: Family
-  notes: Original rank as declared by Miller in 1821
 crinoidea:
   name: Crinoidea
   rank: Class
@@ -891,6 +716,37 @@ crinoidea:
 crinoideæ:
   name: Crinoideæ
   altSpellingOf: crinoidea
+crinoidea-family:
+  altRankOf: crinoidea
+  rank: Family
+  notes: Original rank as declared by Miller in 1821
+crinoidea-indeterminate-subclass_sprinkle_1973:
+  name: null
+  rank: Subclass
+  authority:
+    source: 1973_sprinkle
+crinoidea-indeterminate-order_sprinkle_1973:
+  name: null
+  rank: Order
+  authority:
+    source: 1973_sprinkle
+crinoidea-genus-a_guensburg_sprinkle_2003:
+  name: null
+  rank: genus
+  authority:
+    source: 2003_guensburg_sprinkle
+crinoidea-secondhand-genus_sowerby_1833:
+  name: null
+  rank: genus
+  auth: [Sowerby]
+  year: 1933 # Uncertain, guess by journal name and year
+  notes: Refernced without name or parent taxon in 1944_buch/1046b_buch
+crinoidea-secondhand-sp_sowerby_1833:
+  name: null
+  rank: species
+  auth: [Sowerby]
+  year: 1933 # Uncertain, guess by journal name and year
+  notes: Refernced without name or higher taxa in 1944_buch/1046b_buch
 crinozoa:
   name: Crinozoa
   rank: Subphylum
@@ -898,8 +754,8 @@ crinozoa:
   year: 1929
 cryptocrinites:
   name: Cryptocrinites
-  auth: [von Buch]
-  year: 1940
+  auth: [buch]
+  year: 1840
 cryptocrinidae:
   name: Cryptocrinidae
   rank: Family
@@ -1015,24 +871,47 @@ cystasteroidea:
 cystidea:
   name: Cystidea
   rank: Class
-  auth: [von Buch]
+  auth: [buch]
   year: 1844
 cystidea-family:
   name: Cystidea
   rank: Family
-  auth: [von Buch]
+  auth: [buch]
   year: 1844
   notes: Original rank as defined in 1844 (via translation in 1846)
+cystidea-sp_buch_1944:
+  name: null
+  rank: species
+  authority:
+    source: 1844_buch
 cystideæ:
   name: Cystideæ
   rank: Order
-  auth: [von Buch]
+  auth: [buch]
   year: 1844
   altSpellingOf: cystidea
+cystideæ-unnamed-group_müller.j.p_1854:
+  name: null
+  rank: Unranked
+  authority:
+    source: 1854_müller.j.p
+  notes: Rhombifera, no rank given but Diploporita defined as suborder
+cystideæ-unnamed-subgroup-1_müller.j.p_1854:
+  name: null
+  rank: Unranked
+  authority:
+    source: 1854_müller.j.p
+  notes: Hemicosmitida; rank unstated
+cystideæ-unnamed-subgroup-2_müller.j.p_1854:
+  name: null
+  rank: Unranked
+  authority:
+    source: 1854_müller.j.p
+  notes: Glyptocystitida; rank unstated
 cystoidea:
   name: Cystoidea
   rank: Class
-  auth: [von Buch]
+  auth: [buch]
   year: 1846
 cystostellaroidea:
   name: Cystostellaroidea
@@ -1084,6 +963,11 @@ devonica_bassler_1936:
   name: devonica
   auth: [bassler]
   year: 1936
+devonicus_bassler_1936:
+  name: devonicus
+  auth: [bassler]
+  year: 1936
+  notes: Synonym or alt (gender-agreement) spelling of devonica?
 dibrachycystidae:
   name: Dibrachycystidae
   rank: Family
@@ -1209,6 +1093,16 @@ echinodermata-class:
 echinodermata-order:
   rank: Order
   altRankOf: echinodermata
+echinodermata-indeterminate-family_hisinger_1828:
+  name: null
+  rank: Family
+  authority:
+    source: 1828_hisinger
+echinodermata-incertae-sedis:
+  name: null
+  rank: Class
+  authority:
+    source: 1967e_ubaghs
 echinodiscus:
   name: Echinodiscus
   auth: [Leske]
@@ -1308,6 +1202,21 @@ edrioasteroidea:
   bracket: Edrioasteroids
   auth: [billings]
   year: 1858
+edrioasteroidea-order-uncertain_bassler_1935:
+  name: null
+  rank: Order
+  authority:
+    source: 1935_bassler
+edrioasteroidea-order-uncertain_zhao.y_sumrall_parsley_peng.j_2010:
+  name: null
+  rank: Order
+  authority:
+    source: 2010_zhao.y_sumrall_parsley_peng.j
+edrioasteroidea-family-uncertain_zhao.y_sumrall_parsley_peng.j_2010:
+  name: null
+  rank: Family
+  authority:
+    source: 2010_zhao.y_sumrall_parsley_peng.j
 edrioblastoida:
   name: Edrioblastoida
   rank: Order
@@ -1393,6 +1302,66 @@ eocrinoidea:
   status: informal
   auth: [jaekel]
   year: 1918
+eocrinoidea-unnamed-order-1_sprinkle_1973:
+  name: null
+  rank: Order
+  authority:
+    source: 1973_sprinkle
+eocrinoidea-unnamed-order-2_sprinkle_1973:
+  name: null
+  rank: Order
+  authority:
+    source: 1973_sprinkle
+eocrinoidea-indeterminate-order-1_sprinkle_1973:
+  name: null
+  rank: Order
+  authority:
+    source: 1973_sprinkle
+eocrinoidea-indeterminate-order-2_sprinkle_1973:
+  name: null
+  rank: Order
+  authority:
+    source: 1973_sprinkle
+eocrinoidea-indeterminate-order-3_sprinkle_1973:
+  name: null
+  rank: Order
+  authority:
+    source: 1973_sprinkle
+eocrinoidea-indeterminate-family-1_sprinkle_1973:
+  name: null
+  rank: Family
+  authority:
+    source: 1973_sprinkle
+eocrinoidea-indeterminate-family-2_sprinkle_1973:
+  name: null
+  rank: Family
+  authority:
+    source: 1973_sprinkle
+eocrinoidea-indeterminate-family-3_sprinkle_1973:
+  name: null
+  rank: Family
+  authority:
+    source: 1973_sprinkle
+eocrinoidea-indeterminate-family-4_sprinkle_1973:
+  name: null
+  rank: Family
+  authority:
+    source: 1973_sprinkle
+eocrinoidea-uncertain-family_ubaghs_1967b:
+  name: null
+  rank: Family
+  auth: [ubaghs]
+  year: 1967
+eocrinus:
+  name: Eocrinus
+  auth: [jaekel]
+  year: 1918
+  notes: Junior synonym of Gogia, yet type genus of Eocrinidae
+eocrinus?-sp_caster_pope_1960:
+  name: null
+  rank: species
+  auth: [Caster, Pope]
+  year: 1960
 eocystidae:
   name: Eocystidae
   rank: Family
@@ -1405,6 +1374,16 @@ eocystites:
   in: [Dawson]
   year: 1869
   notes: PBDB auth Billings 1868, IRMNG and others Hart in Dawson 1869
+eocystites?-sp_walcott_1917:
+  name: null
+  rank: species
+  auth: [walcott]
+  year: 1917
+eocystis:
+  name: Eocystis
+  authority:
+    source: 1900_bather
+  notes: Junior synonym of Eocystites (instead of alternate spelling?)
 eopostibulla:
   name: Eopostibulla
   authority:
@@ -1552,6 +1531,27 @@ gogia:
   name: Gogia
   auth: [Walcott]
   year: 1917
+gogia-sp_palmer_1968:
+  name: null
+  rank: species
+  auth: [Palmer]
+  year: 1968
+  in: [Hobbs, Hays, Ross]
+gogia-sp_robison_1965:
+  name: null
+  rank: species
+  auth: [robison]
+  year: 1965
+gogia-sp-1_sprinkle_1973:
+  name: null
+  rank: species
+  authority:
+    source: 1973_sprinkle
+gogia-sp-2_sprinkle_1973:
+  name: null
+  rank: species
+  authority:
+    source: 1973_sprinkle
 gogiida:
   name: Gogiida
   bracket: Gogiids
@@ -1697,6 +1697,11 @@ helicoplacus:
   name: Helicoplacus
   auth: [Durham, Caster]
   year: 1963
+helicoplacus-sp_durham_caster_1966:
+  name: null
+  rank: species
+  authority:
+    source: 1966_durham_caster
 hemicosmites:
   name: Hemicosmites
   auth: [Buch]
@@ -1774,6 +1779,11 @@ homoiostelea-subclass:
   rank: Subclass
   auth: [Gill, Caster]
   year: 1960
+homoiostelea-indeterminate-family_ubaghs_robison_1988:
+  name: null
+  rank: Family
+  authority:
+    source: 1988_ubaghs_robison
 hudsoni_sprinkle_1973:
   name: hudsoni
   authority:
@@ -1854,6 +1864,10 @@ isorophusella:
   authority:
     source: 1935_bassler
 ###################### J
+jacksoni_austen_1843:
+  name: jacksoni
+  auth: [Austen]
+  year: 1843
 jagoi_jell_burrett_banks_1985:
   name: jagoi
   auth: [jell, burrett, banks]
@@ -1880,6 +1894,17 @@ junori_withers_1933:
   auth: [Withers]
   year: 1933
 ###################### K
+kailidiscus:
+  name: Kailidiscus
+  auth: [zhao.y, sumrall, parsley, peng.j]
+  year: 2010
+  synonym: parsleya
+  reason: homonym
+kailidiscus-sp_jell_sprinkle_2021:
+  name: null
+  rank: species
+  authority:
+    source: 2021_jell_sprinkle
 kaskaskiensis_hall_1858:
   name: kaskaskiensis
   auth: [Hall]
@@ -1913,6 +1938,9 @@ laevis_pander_1830:
   name: laevis
   auth: [Pander]
   year: 1830
+lævis_pander_1830:
+  name: lævis
+  altSpellingOf: laevis_pander_1830
 languedocianus_ubaghs_1987:
   name: languedocianus
   auth: [ubaghs]
@@ -1979,11 +2007,26 @@ lichenoides:
   name: Lichenoides
   auth: [barrande]
   year: 1846
+lichenoides-sp_zamora_deline_álvaro_rahman_2017:
+  name: null
+  rank: species
+  authority:
+    source: 2017_zamora_deline_álvaro_rahman
 lichenoididae:
   name: Lichenoididae
   rank: Family
   auth: [jaekel]
   year: 1918
+lichenoididae-gen_smith.a.b_zamora_álvaro_2013:
+  name: null
+  rank: genus
+  authority:
+    source: 2013_smith.a.b_zamora_álvaro
+lichenoididae-gen-sp_smith.a.b_zamora_álvaro_2013:
+  name: null
+  rank: species
+  authority:
+    source: 2013_smith.a.b_zamora_álvaro
 lingulocystidae:
   name: Lingulocystidae
   rank: Family
@@ -2060,6 +2103,10 @@ malocystitidae:
   rank: Family
   auth: [bather]
   year: 1899
+malum_pander_1830:
+  name: malum
+  auth: [Pander]
+  year: 1830
 mariae_callaway_1877:
   name: mariae
   auth: [Callaway]
@@ -2136,6 +2183,11 @@ monobathrida:
   rank: Order
   auth: [Moore, Loudon]
   year: 1943
+monobathrida-uncertain-family_guensburg_sprinkle_2003:
+  name: null
+  rank: Family
+  authority:
+    source: 2003_guensburg_sprinkle
 monozonida:
   name: Monozonida
   rank: Order
@@ -2508,6 +2560,10 @@ pseudedriophus:
   name: Pseudedriophus
   auth: [sprinkle, sumrall]
   year: 2015
+pseudocrinites:
+  name: Pseudocrinites
+  auth: [Pearce]
+  year: 1843
 ptychopariida:
   name: Ptychopariida
   rank: Order
@@ -2535,6 +2591,10 @@ pyrgopostibulla:
   name: Pyrgopostibulla
   auth: [sumrall, Brett, Cornell]
   year: 2006
+pyriformis_buch_1840:
+  name: pyriformis
+  auth: [buch]
+  year: 1840
 ###################### Q
 ###################### R
 radiata_sprinkle_1973:
@@ -2557,6 +2617,12 @@ redlichia:
   name: Redlichia
   auth: [Cossman]
   year: 1902
+redlichia-spp_jell_sprinkle_2021:
+  name: null
+  rank: species
+  authority:
+    source: 2021_jell_sprinkle
+  notes: '"spp" seems to mean possibly multiple species?'
 redlichiida:
   name: Redlichiida
   rank: Order
@@ -2704,6 +2770,14 @@ scoliocystis:
   name: Scoliocystis
   auth: [jaekel]
   year: 1899
+seckenbergii_meyer_1826:
+  name: seckenbergii
+  auth: [Meyer]
+  year: 1826
+septembrachiatus_miller_dyer_1878:
+  name: septembrachiatus
+  auth: [Miller, Dyer]
+  year: 1878
 suecica_jaekel_1927:
   name: suecica
   auth: [jaekel]
@@ -2712,10 +2786,6 @@ sulcatum_aurivillius_1892:
   name: sulcatum
   auth: [Aurivillius]
   year: 1892
-septembrachiatus_miller_dyer_1878:
-  name: septembrachiatus
-  auth: [Miller, Dyer]
-  year: 1878
 simplex_barrande_1887:
   name: simplex
   auth: [barrande]
@@ -2841,11 +2911,20 @@ streptaster:
   name: Streptaster
   auth: [Hall]
   year: 1866
+striata_pander_1830:
+  name: striata
+  auth: [Pander]
+  year: 1830
 stromatocystitida:
   name: Stromatocystitida
   rank: Order
   auth: [Bell]
   year: 1980
+stromatocystitida-incertae-sedis:
+  name: null
+  rank: Family
+  auth: [linnaeus]
+  year: 1758
 stromatocystitidae:
   name: Stromatocystitidae
   rank: Family
@@ -2875,6 +2954,14 @@ sumralli_guensburg_sprinkle_2003:
   name: sumralli
   authority:
     source: 2003_guensburg_sprinkle
+sycocrinites:
+  name: Sycocrinites
+  auth: [Austen]
+  year: 1842
+sycocystites:
+  name: Sycocystites
+  authority:
+    source: 1844_buch
 syringocrinida:
   name: Syringocrinida
   rank: Order
@@ -2905,6 +2992,10 @@ tener_barrande_1887:
   name: tener
   auth: [barrande]
   year: 1887
+testudinarius_hisinger_1837:
+  name: testudinarius
+  auth: [hisinger]
+  year: 1837
 thecocystidae:
   name: Thecocystidae
   rank: Family
@@ -2960,6 +3051,11 @@ titanocrinidae:
     source: 2003_guensburg_sprinkle
 titanocrinus:
   name: Titanocrinus
+  authority:
+    source: 2003_guensburg_sprinkle
+titanocrinus-sp_guensburg_sprinkle_2003:
+  name: null
+  rank: species
   authority:
     source: 2003_guensburg_sprinkle
 tongshania:
@@ -3105,6 +3201,10 @@ walcottidiscus:
   name: Walcottidiscus
   authority:
     source: 1935_bassler
+walcottidiscus-sp_bassler_1936:
+  name: null
+  authority:
+    source: 1936_bassler
 wanneri_foerste_1938:
   name: wanneri
   auth: [foerste]
@@ -3172,31 +3272,3 @@ youngi_raymond_1915:
   auth: [Raymond]
   year: 1915
 ###################### Z
-# synonyms:
-briareus_barrande_1887:
-  name: briareus
-  auth: [barrande]
-  year: 1887
-  synonym: bohemica_fatka_kordule_1985
-devonicus_bassler_1936:
-  name: devonicus
-  auth: [bassler]
-  year: 1936
-  synonym: devonica
-  reason: Unclear, needs verification
-eocrinus:
-  name: Eocrinus
-  auth: [jaekel]
-  year: 1918
-  synonym: gogia
-eocystis:
-  name: Eocystis
-  authority:
-    source: 1900_bather
-  notes: Junior synonym of Eocystites (instead of alternate spelling?)
-kailidiscus:
-  name: Kailidiscus
-  auth: [zhao.y, sumrall, parsley, peng.j]
-  year: 2010
-  synonym: parsleya
-  reason: homonym

@@ -29,7 +29,7 @@
           synonyms:
           - taxon: granatum_wahlenberg_1821
             parents:
-            - taxon: echinospærites
+            - taxon: echinosphærites
 1844_buch:
   taxonomies:
   - taxon: echinodermata-order
@@ -37,12 +37,6 @@
     - taxon: crinoidea-family
     - taxon: cystidea-family
       new: true
-1846c_buch:
-  taxonomies:
-  - taxon: echinodermata-order
-    children:
-    - taxon: crinoidea-family
-    - taxon: cystidea-family
       children:
       - taxon: sphæronites
         type: true
@@ -58,14 +52,72 @@
             parents:
             - taxon: echinosphærites
       - taxon: caryocystites
+        new: true
         children:
-        - taxon: granatum_wahlenberg_
-        - taxon: testudinarius_hisinger_
+        - taxon: granatum_wahlenberg_1821
+          synonyms:
+          - taxon: granatum_wahlenberg_1821
+            parents:
+            - taxon: echinosphærites
+        - taxon: testudinarius_hisinger_1837
+          synonyms:
+          - taxon: testudinarius_hisinger_1837
+            parents:
+            - taxon: sphæronites
       - taxon: hemicosmites
         children:
-        - taxon: pyriformis_buch_
-      - taxon: scycocystites
-        # TODO: Finish!
+        - taxon: pyriformis_buch_1840
+          synonyms:
+          - taxon: malum_pander_1830
+            parents:
+            - taxon: echinosphærites
+      - taxon: sycocystites
+        new: true
+        children:
+        - taxon: angulosus_buch_1844
+          new: true
+          synonyms:
+          - taxon: seckenbergii_meyer_1826
+            parents:
+            - taxon: echino-encrinus
+          - taxon: angulosa_pander_1830
+            parents:
+            - taxon: echinosphærites
+          - taxon: striata_pander_1830
+            parents:
+            - taxon: echinosphærites
+      - taxon: cryptocrinites
+        children:
+        - taxon: cerasus_buch_1840 # date uncertain?
+          synonyms:
+          - taxon: lævis_pander_1830
+            parents:
+            - taxon: echinosphærites
+          - taxon: jacksoni_austen_1843
+            parents:
+            - taxon: sycocrinites
+          - taxon: anapeptamenus_austen_1843
+            parents:
+            - taxon: sycocrinites
+      - taxon: sycocrinites
+        children:
+        - taxon: clausus_austen_1843
+      - affTaxon: caryocystites
+        children:
+        - taxon: bicopuladigiti_garnet_1844
+          synonyms:
+          - taxon: bicopuladigiti_garnet_1844
+            parents:
+            - taxon: pseudocrinites
+      - affTaxon: sphæronites
+        synonyms:
+        - openTaxon: crinoidea-secondhand-genus_sowerby_1833 # date uncertain!
+        children:
+        - openTaxon: cystidea-sp_buch_1944
+          synonyms:
+          - openTaxon: crinoidea-secondhand-sp_sowerby_1833 # date uncertain!
+            parents:
+            - openTaxon: crinoidea-secondhand-genus_sowerby_1833
 1900_bather:
   taxonomies:
   - taxon: animalia
@@ -498,7 +550,7 @@
     - taxon: astrocystitidae
       new: true
       provisional: true
-      alternateParents:
+      altPlacements:
       - taxon: blastoidea
       notes: |
         given as "new name" and only Steganoblastidae is mentioned as
@@ -1038,7 +1090,7 @@
   taxonomies:
   - taxon: echinodermata
     children:
-    - openTaxon: incertae-sedis-echinodermata
+    - openTaxon: echinodermata-incertae-sedis
       children:
       - taxon: cymbionites
         moved:
@@ -1194,7 +1246,7 @@
                 - MCZ 586
                 - MCZ 587
                 - MCZ 729
-        - openTaxon: unnamed-order-1_sprinkle_1973
+        - openTaxon: eocrinoidea-unnamed-order-1_sprinkle_1973
           children:
           - taxon: eocrinidae
             moved:
@@ -1531,13 +1583,13 @@
               children:
               - taxon: destombesi_ubaghs_1963
                 type: true
-        - openTaxon: unnamed-order-2_sprinkle_1973
+        - openTaxon: eocrinoidea-unnamed-order-2_sprinkle_1973
           children:
-          - openTaxon: indeterminate-family-1_sprinkle_1973
+          - openTaxon: eocrinoidea-indeterminate-family-1_sprinkle_1973
             children:
             - taxon: pareocrinus
               moved:
-                openTaxon: uncertain-eocrinoid-family_ubaghs_1967b
+                openTaxon: eocrinoidea-uncertain-family_ubaghs_1967b
               children:
               - taxon: ljubzovi_yakovlev_1956
                 type: true
@@ -1591,7 +1643,7 @@
               children:
               - taxon: mariae_callaway_1877
                 type: true
-          - openTaxon: indeterminate-family-2_sprinkle_1973
+          - openTaxon: eocrinoidea-indeterminate-family-2_sprinkle_1973
             children:
             - taxon: cambrocrinus
               note: Initially assigned to Eocrinidae, details unclear
@@ -1600,11 +1652,11 @@
                 type: true
             - taxon: eocystites
               moved:
-                openTaxon: uncertain-eocrinoid-family_ubaghs_1967b
+                openTaxon: eocrinoidea-uncertain-family_ubaghs_1967b
               children:
               - taxon: primaevus_billings_1868
                 type: true
-        - openTaxon: indeterminate-order-1_sprinkle_1973
+        - openTaxon: eocrinoidea-indeterminate-order-1_sprinkle_1973
           provisional: true
           children:
           - taxon: trachelocrinidae
@@ -1612,13 +1664,13 @@
             children:
             - taxon: trachelocrinus
               moved:
-                openTaxon: uncertain-eocrinoid-family_ubaghs_1967b
+                openTaxon: eocrinoidea-uncertain-family_ubaghs_1967b
               children:
               - taxon: resseri_ulrich_1929
                 type: true
                 specimens:
                   holotype: USNM 80490
-        - openTaxon: indeterminate-order-2_sprinkle_1973
+        - openTaxon: eocrinoidea-indeterminate-order-2_sprinkle_1973
           children:
           - taxon: cryptocrinitidae
             moved:
@@ -1628,7 +1680,7 @@
               children:
               - taxon: laevis_pander_1830
                 type: true
-          - openTaxon: indeterminate-family-3_sprinkle_1973
+          - openTaxon: eocrinoidea-indeterminate-family-3_sprinkle_1973
             children:
             - taxon: bockia
               moved:
@@ -1636,7 +1688,7 @@
               children:
               - taxon: neglecta_hecker_1938
                 type: true
-        - openTaxon: indeterminate-order-3_sprinkle_1973
+        - openTaxon: eocrinoidea-indeterminate-order-3_sprinkle_1973
           children:
           - taxon: lingulocystidae
             moved:
@@ -1646,11 +1698,11 @@
               children:
               - taxon: elongata_thoral_1935
                 type: true
-          - openTaxon: indeterminate-family-4_sprinkle_1973
+          - openTaxon: eocrinoidea-indeterminate-family-4_sprinkle_1973
             children:
             - taxon: cardiocystites
               moved:
-                openTaxon: uncertain-eocrinoid-family_ubaghs_1967b
+                openTaxon: eocrinoidea-uncertain-family_ubaghs_1967b
               chidren:
               - taxon: bohemicus_barrande_1887_cardiocystites
                 type: true
@@ -1680,11 +1732,11 @@
                   - MCZ 647
                   - MCZ 648
                   - MCZ 649
-      - openTaxon: indeterminate-class_sprinkle_1973
+      - openTaxon: blastozoa-indeterminate-class_sprinkle_1973
         children:
         - taxon: cigaria
           moved:
-            openTaxon: uncertain-eocrinoid-family_ubaghs_1967b
+            openTaxon: eocrinoidea-uncertain-family_ubaghs_1967b
           notes: Proper spelling is "Cigara", not "Cigaria"
           children:
           - taxon: dusli_barrande_1887
@@ -1694,7 +1746,7 @@
               - E 35
         - taxon: archaeocystites
           moved:
-            openTaxon: uncertain-eocrinoid-family_ubaghs_1967b
+            openTaxon: eocrinoidea-uncertain-family_ubaghs_1967b
           children:
           - taxon: medusa_barrande_1887
             type: true
@@ -1811,6 +1863,10 @@
       - taxon: blastoidea
         moved:
           taxon: crinozoa
+      - taxon: diploporita-class
+        provisional: true
+        altPlacements:
+        - taxon: crinozoa
     - taxon: crinozoa
       children:
       - taxon: crinoidea
@@ -1819,9 +1875,9 @@
         - taxon: camerata
         - taxon: flexibilia
         - taxon: articulata
-        - openTaxon: indeterminate-subclass_sprinkle_1973
+        - openTaxon: crinoidea-indeterminate-subclass_sprinkle_1973
           children:
-          - openTaxon: indeterminate-order-4_sprinkle_1973
+          - openTaxon: crinoidea-indeterminate-order_sprinkle_1973
             children:
             - taxon: echmatocrinidae
               new: true
@@ -1854,11 +1910,10 @@
           provisional: true
         - taxon: allocystites
           provisional: true
-    - openTaxon: blastozoa-or-crinozoa
-      children:
       - taxon: diploporita-class
-        moved:
-          taxon: crinozoa
+        provisional: true
+        altPlacements:
+        - taxon: blastozoa
     - echinozoa:
       children:
       - taxon: edrioblastoidea
@@ -1888,7 +1943,7 @@
       - notes: middle cambrian
         taxon: cyclocystoidea
         provisional: true
-        alternateParents:
+        altPlacements:
         - taxon: edrioasteroidea
       - notes: middle cambrian or upper cambrian
         taxon: crinoidea
@@ -1904,7 +1959,7 @@
     - taxon: gogiida
       new: true
       synonyms:
-      - openTaxon: unnamed-order-1_sprinkle_1973
+      - openTaxon: eocrinoidea-unnamed-order-1_sprinkle_1973
       children:
       - taxon: eocrinidae
         children:
@@ -1927,7 +1982,7 @@
     - taxon: ascocystitida
       new: true
       synonyms:
-      - openTaxon: unnamed-order-2_sprinkle_1973
+      - openTaxon: eocrinoidea-unnamed-order-2_sprinkle_1973
       children:
       - taxon: ascocystitidae
         children:
@@ -1935,7 +1990,7 @@
       - taxon: macrocystellidae
         children:
         - taxon: macrocystella
-      - openTaxon: indeterminate-family-2_sprinkle_1973
+      - openTaxon: eocrinoidea-indeterminate-family-2_sprinkle_1973
         children:
         - taxon: cambrocrinus
         - taxon: eocystites
@@ -2144,7 +2199,7 @@
         children:
         - taxon: soluta-order
           children:
-          - openTaxon: uncertain-family  # "indeterminate"
+          - openTaxon: homoiostelea-indeterminate-family_ubaghs_robison_1988
             children:
             - taxon: castericystis
               children:
@@ -2308,7 +2363,7 @@
               - taxon: wahwahensis_guensburg_sprinkle_2003
                 type: true
                 new: true
-          - openTaxon: uncertain-monobathrid-family_guensburg_sprinkle_2003
+          - openTaxon: monobathrida-uncertain-family_guensburg_sprinkle_2003
             new: true
             children:
             - taxon: adelphicrinus
@@ -2335,7 +2390,7 @@
       - taxon: glenocrinus
         bracket: protocrinoida
       - children:
-        - openTaxon: genus-a_guensburg_sprinkle_2003
+        - openTaxon: crinoidea-genus-a_guensburg_sprinkle_2003
         - children:
           - taxon: cnemecrinus
             bracket: camerata
@@ -2519,9 +2574,11 @@
   taxonomies:
   - taxon: edrioasteroidea
     children:
-    - openTaxon: uncertain-order
+    - openTaxon:
+        edrioasteroidea-order-uncertain_zhao.y_sumrall_parsley_peng.j_2010
       children:
-      - openTaxon: uncertain-family
+      - openTaxon:
+          edrioasteroidea-family-uncertain_zhao.y_sumrall_parsley_peng.j_2010
         children:
         - taxon: kailidiscus
           new: true
