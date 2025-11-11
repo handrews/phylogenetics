@@ -1923,6 +1923,76 @@
           taxon: crinozoa
         children:
         - taxon: astrocystites
+1976_bell.b.m:
+  taxonomies:
+  - taxon: edrioasteroidea
+    diagnosis: |
+      Polyplated, thecate, sedentary Echinodermata with: initially triradiate
+      and subsequently pentaradiate symmetry; five (±) endothecal ambulacra
+      radiating from central oral structure of covering orals and underlying
+      oral frame; ambulacral system formed by two sets of thecal elements -
+      coverplates and floorplates; sutural passageways present or absent,
+      associated with ambulacra; hydropore opening in or near right posterior
+      part of oral area, posterior to midline of ambulacrum V; interambulacra
+      irregularly polyplated; anal structure on upper oral surface in
+      posterior interambulacrum, periproctal or valvular; theca domal, clavate
+      or globose (without stalk).
+    children:
+    - taxon: isorophida
+      diagnosis: |
+        Edrioasteroidea with: domal or clavate theca, ambu- lacra commonly
+        limited to upper oral surface; oral frame formed by five enlarged,
+        proximal ambulacral floorplates, with or without intrathecal
+        extensions from primary orals; hydropore structure in or posterior
+        to right posterior margin of oral area, opening along junctions
+        between plates, elongate parallel to plate margins; ambulacra formed
+        by biserial or cyclic sets of coverplates, with intra-ambulacral
+        and/or intrathecal extensions, and uni- serial floorplates;
+        ambulacral coverplate passageways present in some; margin of oral
+        surface a peripheral rim.
+      new: true
+      children:
+      - taxon: lebetodiscina
+        diagnosis: |
+          Isorophida with: center of oral area farmed by three primary orals;
+          ambulacral coverplates forming single, alternating biseries,
+          coverplates with both intra-ambulacral and intrathecal extensions;
+          ambulacral coverplate passageways present; ambulacral floorplates
+          imbricate; anal area a periproct.
+        new: true
+        children:
+        - taxon: lebetodiscidae
+          diagnosis: |
+            Lebetodiscina with: oral area including at least two pairs of
+            shared coverplates, secondary orals frequently present; hydropore
+            structure distal to oral area, opening along adradial suture line
+            of proximal, posterior part of ambulacrum V, composed of ambulacral
+            coverplates and interambulacral elements; ambulacra forming high,
+            pronounced ridges on thecal surface, amhulacral coverplates large,
+            extremely thick (perpendicular to the thecal surface) and wide
+            (perpendicular to ambulacral axis); ambulacral tunnel narrow and
+            high; coverplate passage- ways nearly vertical; peripheral rim
+            plates squamose.
+            new: true
+            children:
+            - taxon: lebetodiscus
+              diagnosis: |
+                Lehetodiscidae with: domal theca, oral surface highly convex;
+                oral region with secondary oral plates; hydropmre structure
+                formed by enlarged adradial end of second prox· imal posterior
+                coverplate of ambulacrum V and two or three modified
+                interambulacrals; amhulacra curve contrasolarly; eoverplate
+                passageways large, lateral depression series present.
+              children:
+              - taxon: dicksoni_billings_1857
+                diagnosis: |
+                  A Lebetodiscus with: oral region having four secondary oral
+                  plates which lie between perradial parts of primary orals
+                  and shared coverplates; hydropore structure formed by second
+                  proximal posterior coverplate of ambulacrum V and three
+                  (two r ) modified interambulacral plates; interambulacral
+                  plates large, thick, and bearing one or two rows of
+                  depressions along distal extremity of external part of plates.
 1981_derstler:
   phylogenies:
   - treeType: evolutionary schematic

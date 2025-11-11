@@ -372,6 +372,8 @@ $defs:
         default: false
       specimens:
         $ref: "phylogeny#/$defs/specimen"
+      diagnosis:
+        type: string
       parents:
         type: array
         items:

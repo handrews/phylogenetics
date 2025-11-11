@@ -89,6 +89,8 @@ publications:
     - leske
   nat-hist-crinoidea:
     name: A Natural History of the Crinoidea, or Lily-Shaped Animals
+  nysm:
+    name: New York State Museum and Science Service Memoirs
   outlines-of-oryctology:
     name: "Outlines of Oryctology: An introduction to the study of fossil remains; especially those found in the British strata"
   p-of-iowa:
@@ -1196,6 +1198,15 @@ articles:
       year: 1973
     identifiers:
       url: https://archive.org/details/morphologyevolut00spri/mode/2up
+  1976_bell.b.m:
+    title: A Study of North American Edrioasteroidea
+    journal: nysm
+    volume: 21
+    pubDate:
+      year: 1976
+      month: 2
+    authors:
+    - bell.b.m
   1981_derstler:
     title: Morphological diversity of early Cambrian echinoderms
     book: short-2nd-cambrian

@@ -1843,18 +1843,18 @@ iowacystis:
 isorophida:
   name: Isorophida
   rank: Order
-  auth: [Bell]
-  year: 1976
+  authority:
+    source: 1976_bell.b.m
 isorophidae:
   name: Isorophidae
   rank: Family
-  auth: [Bell]
-  year: 1976
+  authority:
+    source: 1976_bell.b.m
 isorophina:
   name: Isorophina
   rank: Suborder
-  auth: [Bell]
-  year: 1976
+  authority:
+    source: 1976_bell.b.m
 isorophus:
   name: Isorophus
   auth: [foerste]
@@ -1909,10 +1909,10 @@ kaskaskiensis_hall_1858:
   name: kaskaskiensis
   auth: [Hall]
   year: 1858
-keslingi_bell_1976:
+keslingi_bell.b.m_1976:
   name: keslingi
-  auth: [Bell]
-  year: 1976
+  authority:
+    source: 1976_bell.b.m
 kilmeri_durham_1967:
   name: kilmeri
   authority:
@@ -1927,8 +1927,8 @@ kitchnerensis_sprinkle_1973:
     source: 1973_sprinkle
 krama:
   name: Krama
-  auth: [Bell]
-  year: 1976
+  authority:
+    source: 1976_bell.b.m
 kukersiana_hecker_1940:
   name: kukersiana
   auth: [Hecker]
@@ -1952,8 +1952,13 @@ latiusculus_barrande_1887:
 lebetodiscidae:
   name: Lebetodiscidae
   rank: Family
-  auth: [Guensburg, sprinkle]
-  year: 1994
+  authority:
+    source: 1976_bell.b.m
+lebetodiscina:
+  name: Lebetodiscina
+  rank: Suborder
+  authority:
+    source: 1976_bell.b.m
 lebetodiscus:
   name: Lebetodiscus
   auth: [bather]
@@ -2482,8 +2487,8 @@ pomum_wahlenberg_1821:
   year: 1821
 postibulla:
   name: Postibulla
-  auth: [Bell]
-  year: 1976
+  authority:
+    source: 1976_bell.b.m
 postibullinae:
   name: Postibullinae
   rank: Subfamily
