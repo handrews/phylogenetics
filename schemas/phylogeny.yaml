@@ -382,6 +382,10 @@ $defs:
         type: array
         items:
           $ref: taxonomyTree
+      non:
+        type: array
+        items:
+          $ref: taxonomyTree
       moved:
         $ref: taxonomyTree
       corrected:

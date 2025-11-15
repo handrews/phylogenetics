@@ -41,6 +41,9 @@ billings:
 bonasoro:
   family: Bonasoro
   given: F.
+brett:
+  family: Brett
+  given: C. E.
 bruguière:
   family: Bruguière
   given: Jean Guillaume
@@ -96,8 +99,8 @@ clark.h.l:
   given: Hubert Lyman
   birth: 1870
   death: 1947
-clark.j.m:
-  family: Clark
+clarke.j.m:
+  family: Clarke
   given: John Mason
   birth: 1857
   death: 1925
@@ -157,6 +160,9 @@ foerste:
   given: August
   birth: 1862
   death: 1936
+frest:
+  family: Frest
+  given: T. J.
 frizzell:
   family: Frizzell
   given: Don L.
@@ -169,6 +175,9 @@ gill:
 goldfuss:
   family: Goldfuss
   given: Georg
+grant:
+  family: Grant
+  given: J. A.
 guensburg:
   family: Guensburg
   given: Thomas E.
@@ -445,6 +454,11 @@ ulrich:
   given: Edward Oscar
   birth: 1857
   death: 1944
+vanuxem:
+  family: Vanuxem
+  given: Lardner
+  birth: 1792
+  death: 1848
 wagner:
   family: Wagner
   given: Carol D.
@@ -464,6 +478,9 @@ webby:
 wen.r:
   family: Wen
   given: Rongqin
+witzke:
+  family: Witzke
+  given: B. J.
 whitehouse:
   family: Whitehouse
   given: Frederick William

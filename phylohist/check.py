@@ -45,6 +45,8 @@ def check_node(node, data, parent=[]):
 
   for index, synonym in enumerate(node.get('synonyms', [])):
     check_node(synonym, data, current + ['synonym', str(index)])
+  for index, non in enumerate(node.get('non', [])):
+    check_node(non, data, current + ['non', str(index)])
   for index, parent in enumerate(node.get('parents', [])):
     check_node(parent, data, current + ['parent', str(index)])
   for index, altPlacement in enumerate(node.get('altPlacements', [])):

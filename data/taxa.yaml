@@ -58,6 +58,10 @@ agelacrinus-subgenus:
   rank: subgenus
   auth: [Hall]
   year: 1858
+agelacrinus_vanuxem_1842:
+  homonym: true # I think?  Haekel used "Agelacrinus Vanuxuem" in place of "Agelacrinites"
+  name: Agelacrinus
+  altSpellingOf: agelacrinites
 agelacrinoidea:
   name: Agelacrinoidea
   rank: Order
@@ -95,6 +99,15 @@ alpinensis_bassler_1936:
   name: alpinensis
   auth: [bassler]
   year: 1936
+ampheristocystidae:
+  name: Ampheristocystidae
+  rank: Family
+  authority:
+    source: 2005_frest
+ampheristocystis:
+  name: Ampheristocystis
+  authority:
+    source: 2005_frest
 amphorida:
   name: Amphorida
   rank: Order
@@ -312,6 +325,10 @@ bellulus_barrande_1887:
   name: bellulus
   auth: [barrande]
   year: 1887
+belochthus:
+  name: Belochthus
+  authority:
+    source: 1976_bell.b.m
 bicopuladigiti_garnet_1844:
   name: bicopuladigiti
   auth: [Garnet]
@@ -448,6 +465,18 @@ cambrocrinus:
   name: Cambrocrinus
   auth: [orłowski]
   year: 1968
+cambrocrinidae:
+  name: Cambrocrinidae
+  auth: [dzik, orłowski]
+  year: 1993
+cambrocystidae:
+  name: Cambrocystidae
+  altSpellingOf: cambrocrinidae
+  notes: Introduced in 2021_parsley in error
+cambrocystitidae:
+  name: Cambrocystitidae
+  altSpellingOf: cambrocrinidae
+  notes: Introduced in 2021_parsley in error
 camerata:
   name: Camerata
   rank: Subclass
@@ -658,6 +687,10 @@ comarocystitidae:
   rank: Family
   auth: [bather]
   year: 1899
+concentricus_frest_2005:
+  name: concentricus
+  authority:
+    source: 2005_frest
 confertus_barrande_1887:
   name: confertus
   auth: [barrande]
@@ -1295,6 +1328,9 @@ eocrinidae:
   bracket: Eocrinids
   auth: [jaekel]
   year: 1918
+eocrinoidae:
+  name: Eocrinoidae
+  altSpellingOf: eocrinidae
 eocrinoidea:
   name: Eocrinoidea
   rank: Class
@@ -1475,6 +1511,10 @@ glenocrinus:
   name: Glenocrinus
   authority:
     source: 2003_guensburg_sprinkle
+globoeocrinus:
+  name: Globoeocrinus
+  auth: [zhao.y, parsley, peng.j]
+  year: 2008
 globularis_guensburg_sprinkle_2003:
   name: globularis
   authority:
@@ -1556,8 +1596,14 @@ gogiida:
   name: Gogiida
   bracket: Gogiids
   rank: Order
-  auth: [Broadhead]
+  auth: [broadhead]
   year: 1982
+gogiida-subclass:
+  name: Gogiida
+  bracket: Gogiids
+  rank: Subclass
+  authority:
+    source: 2021_parsley
 gomphocystidae:
   name: Gomphocystidae
   rank: Family
@@ -1609,6 +1655,10 @@ guensburgi_sprinkle_sumrall_2015:
   name: guensburgi
   auth: [sprinkle, sumrall]
   year: 2015
+guizhoueocrinus:
+  name: Guizhoueocrinus
+  auth: [zhao.y, parsley, peng.j]
+  year: 2007
 guntheri_sprinkle_1973:
   name: guntheri
   authority:
@@ -2297,6 +2347,10 @@ orthida:
   rank: Order
   auth: [schuchert, cooper]
   year: 1932
+orthokolus_bell.b.m_1976:
+  name: orthokolus
+  authority:
+    source: 1976_bell.b.m
 ottawaensis_whiteaves_1897:
   name: ottawaensis
   auth: [Whiteaves]
@@ -2703,6 +2757,13 @@ rhopalocystidae:
   name: Rhopalocystidae
   auth: [ubaghs]
   year: 1967
+rhopalocystitidae:
+  name: Rhopalocystitidae
+  altSpellingOf: rhopalocystidae
+  notes: |
+    From 2021_parsley, credited to Frest (2005), but the Frest (2005)
+    paper in the references does not support this.  Rhopalocystis is
+    discussed in depth, but no corrsponding family is mentioned at all.
 rhopalocystis:
   name: Rhopalocystis
   auth: [ubaghs]
@@ -2855,6 +2916,14 @@ spiralis_robison_1965:
   name: spiralis
   auth: [robison]
   year: 1965
+splendens_bassler_1936:
+  name: splendens
+  auth: [bassler]
+  year: 1936
+solitarius_bell.b.m_1976:
+  name: solitarius
+  authority:
+    source: 1976_bell.b.m
 sporranoides_rahman_stewart_zamora_2015:
   name: sporranoides
   auth: [rahman, stewart, zamora]
@@ -3185,10 +3254,13 @@ volborthi_hecker_1939:
   name: volborthi
   auth: [Hecker]
   year: 1939
-vorticellatus_hall_1866:
-  name: vorticellatus
+vorticellata_hall_1866:
+  name: vorticellata
   auth: [Hall]
   year: 1866
+vorticellatus_hall_1866:
+  name: vorticellatus
+  altSpellingOf: vorticellata_hall_1866
 vyscystis:
   name: Vyscystis
   auth: [fatka, kordule]

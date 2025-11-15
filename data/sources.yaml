@@ -59,6 +59,8 @@ publications:
     place: London
   geo-et-palaeo:
     name: Geologica et Palaeontologica
+  geo-j:
+    name: Geological Journal
   geomag:
     name: Geological Magazine
   invertebrates:
@@ -97,6 +99,8 @@ publications:
     name: Palaeontology of Iowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857
   palaeontology:
     name: Palaeontology
+  paleo-j:
+    name: Paleontological Journal
   papersinpalaeo:
     name: Papers in Palaeontology
   plos-one:
@@ -1378,6 +1382,19 @@ articles:
     - sprinkle
     identifiers:
       url: https://www.biodiversitylibrary.org/page/27980785
+  2005_frest:
+    title: Ampheristocystis, a Silurian (Lower Wenlock) eocrinoid (Echinodermata, Blastozoa) from Indiana
+    journal: geo-j
+    volume: 40
+    pages:
+    - 301
+    - 329
+    pubDate:
+      year: 2005
+    authors:
+    - frest
+    identifiers:
+      doi: 10.1002/gj.1017
   2008_stewart_owen:
     title: "Probing the deep shelf: a Lagerstätte from the Upper Ordovician of Girvan, southwestern Scotland"
     journal: lethaia
@@ -1816,6 +1833,20 @@ articles:
     - sprinkle
     identifiers:
       doi: 10.1080/03115518.2021.1913512
+  2021_parsley:
+    title: Evolution, Functional Morphology and Paedomorphism in the Gogiid-Ascocystitid Lineage (Eocrinoidea; Cambrian-Ordovician)
+    journal: paleo-j
+    volume: 55
+    number: 9
+    pages:
+    - 966
+    - 976
+    pubDate:
+      year: 2021
+    authors:
+    - parsley
+    identifiers:
+      doi: 10.1134/S0031030121090100
   2022_zamora_rahman_sumrall_gibson_thompson:
     title: Cambrian edrioasteroid reveals new mechanism for secondary reduction of the skeleton in echinoderms
     journal: procrsocb
