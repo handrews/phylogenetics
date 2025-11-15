@@ -1394,6 +1394,11 @@ eocrinoidea-uncertain-family_ubaghs_1967b:
   rank: Family
   auth: [ubaghs]
   year: 1967
+eocrinoidea-family-uncertain_sumrall_zamora_2015:
+  name: null
+  rank: Family
+  authority:
+    source: 2015_sumrall_zamora
 eocrinus:
   name: Eocrinus
   auth: [jaekel]
@@ -2846,6 +2851,10 @@ seckenbergii_meyer_1826:
   name: seckenbergii
   auth: [Meyer]
   year: 1826
+segurae_gil cid_domínguez alonso_2002:
+  name: segurae
+  authority:
+    source: 2002_gil cid_domínguez alonso
 septembrachiatus_miller_dyer_1878:
   name: septembrachiatus
   auth: [Miller, Dyer]
@@ -3199,6 +3208,11 @@ ubaghsicystis:
   name: Ubaghsicystis
   auth: [Gil Cid, Domínguez]
   year: 2002
+ubaghsicystis-sp_sumrall_zamora_2015:
+  name: null
+  rank: species
+  authority:
+    source: 2015_sumrall_zamora
 ulrichi_bassler_1936:
   name: ulrichi
   authority:

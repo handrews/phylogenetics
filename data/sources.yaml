@@ -25,6 +25,8 @@ publications:
     name: Bulletins of American Paleontology
   bullgeo:
     name: Bulletins of Geosciences
+  coloquios:
+    name: Coloquios de Paleontología
   e-research-1998:
     name: Echinoderm Research 1998
     notes: Conference proceedings
@@ -1382,6 +1384,24 @@ articles:
       year: 1999
     authors:
     - domínguez alonso
+  2002_gil cid_domínguez alonso:
+    title: |
+      "Ubaghsicystis segurae nov. gen. y sp., nuevo Eocrinoide
+      (Echinodermata) del Cámbrico Medio del Norte de España"
+    translations:
+      en: |
+        "Ubaghsicystis segurae nov. gen. and sp., a new Eocrinoid
+        (Echinoderniata) of Middle Cambrian from Northern Spain"
+    journal: coloquios
+    volume: 53
+    pages:
+    - 21
+    - 32
+    pubDate:
+      year: 2002
+    authors:
+    - gil cid
+    - domínguez alonso
   2003_guensburg_sprinkle:
     title: The oldest known crinoids (Early Ordovician, Utah) and a new crinoid plate homology system
     journal: bullamp
@@ -1704,6 +1724,24 @@ articles:
       online: 2014-03-24
     identifiers:
       doi: 10.4202/app.00048.2013
+  2015_sumrall_zamora:
+    title: A columnal-bearing eocrinoid from the Cambrian Burgess Shale (British Columbia, Canada)
+    journal: jofpaleo
+    volume: 89
+    number: 2
+    pages:
+    - 366
+    - 368
+    pubDate:
+      year: 2015
+      month: 3
+    processDates:
+      accepted: 2014-09-28
+    authors:
+    - sumrall
+    - zamora
+    identifiers:
+      doi: 10.1017/jpa.2014.54
   2017_zamora_deline_álvaro_rahman:
     title: The Cambrian Substrate Revolution and the early evolution of attachment in suspension-feeding echinoderms
     complete:

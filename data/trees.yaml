@@ -2563,6 +2563,27 @@
           - taxon: utahensis_robison_sprinkle_1969
             type: true
           - taxon: colodon_ubaghs_robison_1988
+2002_gil cid_domínguez alonso:
+  taxonomies:
+  - taxon: eocrinoidea
+    notes: (Grupo Nodal de Pelmatozoa)
+    children:
+    - taxon: ubaghsicystis
+      new: true
+      diagnosis: |
+        unas 40 placas. Epispiras presentes en la mitad superior de la teca
+        y ausentes en la inferior. Pirámide anal en posición lateral por
+        encima de la línea ecuatorial de la teca. Pedúnculo largo, homeomorfo,
+        holomérito y con un disco de fijación distal. Columnares de sección
+        circular, lumen estrecho y sin crenulaciones articulares. Brazos
+        delgados, biseriales, con placas coberteras y sin braquiolas.
+      children:
+      - taxon: segurae_gil cid_domínguez alonso_2002
+        type: true
+        new: true
+        diagnosis: |
+          por tratarse de un género monoespecífico, la diagnosis de la
+          especie coincide con la dada para el género
 2003_guensburg_sprinkle:
   taxonomies:
   - taxon: crinozoa
@@ -3070,6 +3091,20 @@
             - GLAHM 131255/25
             - GLAHM 131255/26
             - GLAHM 131255/27
+2015_sumrall_zamora:
+  taxonomies:
+  - taxon: blastozoa
+    children:
+    - taxon: eocrinoidea
+      children:
+      - openTaxon: eocrinoidea-family-uncertain_sumrall_zamora_2015
+        children:
+        - taxon: ubaghsicystis
+          children:
+          - taxon: segurae_gil cid_domínguez alonso_2002
+            type: true
+          - openTaxon: ubaghsicystis-sp_sumrall_zamora_2015
+            new: true
 2017_zamora_sumrall_zhu.x_lefebvre:
   taxonomies:
   - taxon: echinodermata

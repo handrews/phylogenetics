@@ -163,6 +163,9 @@ $defs:
         minItems: 2
       title:
         type: string
+      translations:
+        additionalProperties:
+          type: string
       authors:
         type: array
         minItems: 1
