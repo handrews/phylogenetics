@@ -2,7 +2,11 @@ Echinodermata
   Edrioasteroidea
     Stromatacystitida
     Isorophida
+      Isorophina
+      Lebetodiscina
     Edrioasterida
+      Edrioasterina
+      Edrioblastoidina
     Helicoplacoidea
     Hemicystitida
     Blastozoa
@@ -10,7 +14,6 @@ Echinodermata
         Imbricata
         Gogiida
         Ascocystitida
-        Trachelocrinida
         Rhombifera
           Dichoporita
             Hemicosmitida
@@ -26,7 +29,10 @@ Echinodermata
           Sphaeronitida
           Asteroblastida
           Parablastoidea
+        Trachelocrinida
         Paracrinoidea
+          Comarocystitida
+          Platycystitida
         Ctenoimbricatoidea
           Ctenocystoidea
           Cincta
@@ -131,3 +137,53 @@ Echinodermata
               Apodida
             Arthrochirotacea
               Arthrochirotida
+
+
+Echinodermata
+  Edrioasteroidea
+    Camptostromatoida
+    Stromatocystitida
+    Isorophida
+      Isorophina
+      Lebetodiscina
+    Edrioasterida
+      Edrioasterina
+      Edrioblastoidina
+    Eocrinoidea
+      Imbricata
+        Lepidocystidae
+        Felbabkacystidae
+      Gogiida
+        Lyracystidae
+        Eocrinidae
+        Turbanicystidae
+        Lichenoididae
+        Thorntonitidae
+      Ascocystitida
+        Ascocystitidae
+        Cambrocystidae
+        Rhopalocystidae
+      Trachelocrinida
+        Trachelocrinidae
+        Heckerocrinidae
+      Cryptocrinitidae
+      Paracrinoidea
+      Lingulocystidae
+      Palaeocystitidae
+      Rhipidocystidae
+      Ridersiidae
+      Rhombifera
+        Dichoporita
+          Hemicosmitida
+          Glyptocystitida
+            Blastoidea
+              Coronata
+              Eublastoidea
+                Fissiculata
+                Spiraculata
+        Caryocystitida
+      Diploporita
+        Glyptosphaeritida
+        Sphaeronitida
+        Asteroblastida
+        Parablastoidea
