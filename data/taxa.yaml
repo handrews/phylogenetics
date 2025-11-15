@@ -1322,6 +1322,12 @@ enterozoa-branch:
   auth: [lankester]
   year: 1877
   notes: Subkingdom? "emend. Beklemishev 1944" on Wikipedia
+eocrinida:
+  name: Eocrinida
+  rank: Order
+  auth: [jaekel]
+  year: 1918
+  notes: Probably nom. transl. to Class Eocrinoidea by Regnéll, 1945
 eocrinidae:
   name: Eocrinidae
   rank: Family

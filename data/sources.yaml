@@ -1343,6 +1343,19 @@ articles:
     - robison
     identifiers:
       url: https://www.researchgate.net/publication/239588179_Homalozoan_echinoderms_of_the_Wheeler_Formation_Middle_Cambrian_of_Western_Utah
+  1993_dzik_orłowski:
+    title: The Late Cambrian eocrinoid Cambrocrinus
+    journal: acta-p-polonica
+    volume: 38
+    number: 1/2
+    pages:
+    - 21
+    - 34
+    pubDate:
+      year: 1993
+    authors:
+    - dzik
+    - orłowski
   1995_dzik_orłowski:
     title: Primitive ctenocystoid echinoderm from the earliest Middle Cambrian of Poland
     seen: false
