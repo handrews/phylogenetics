@@ -1714,6 +1714,25 @@ articles:
       accepted: 2009-11-29
     identifiers:
       jstor: 40605503
+  2011_sprinkle_parsley_zhao.y.l_peng.j:
+    title:  Revision Of Lyracystid Eocrinoids From The Middle Cambrian Of South China And Western Laurentia
+    journal: jofpaleo
+    volume: 25
+    number: 2
+    pages:
+    - 250
+    - 255
+    pubDate:
+      year: 2011
+    processDates:
+      accepted: 2010-09-15
+    authors:
+    - sprinkle
+    - parsley
+    - zhao.y.l
+    - peng.j
+    identifiers:
+      doi: 10.1666/10-072.1
   2010_zhao.y.l_sumrall_parsley_peng.j:
     title: Kailidiscus, A New Plesiomorphic Edrioasteroid From The Basal Middle Cambrian Kaili Biota Of Guizhou Province, China
     journal: jofpaleo
