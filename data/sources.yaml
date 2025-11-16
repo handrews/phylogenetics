@@ -1452,6 +1452,23 @@ articles:
     - owen
     identifiers:
       doi: 10.1111/j.1502-3931.2008.00117.x
+  2008_zhao.y_parsley_peng.j:
+    title: "Basal Middle Cambrian Short-Stalked Eocrinoids from the Kaili Biota: Guizhou Province, China"
+    journal: jofpaleo
+    volume: 82
+    number: 2
+    pages:
+    - 415
+    - 422
+    pubDate:
+      year: 2008
+      month: 3
+    authors:
+    - zhao.y
+    - parsley
+    - peng.j
+    identifiers:
+      jstor: 20144206
   2010_müller.p_hahn:
     title: Edrioasteroidea aus den Seifen-Schichten im Westerwald, Rheinisches Schiefer-Gebirge (Unter-Devon, Deutschland), Teil 1
     journal: geo-et-palaeo

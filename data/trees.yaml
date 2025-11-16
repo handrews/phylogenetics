@@ -2770,6 +2770,51 @@
                   Cambridge University Press: Cambridge; 638–783."
                 content: pp. 729
               notes: Also cites Frest & Strimple, but unclear what paper.
+2008_zhao.y_parsley_peng.j:
+  taxonomies:
+  - taxon: blastozoa
+    children:
+    - taxon: eocrinoidea
+      children:
+      - taxon: gogiida
+        children:
+        - taxon: eocrinidae
+          emended: true
+          children:
+          - taxon: globoeocrinus
+            new: true
+            diagnosis: |
+              Gogiids with globose theca, subcircular to slightly pyriform
+              in thecal profile, broadly oval in transverse cross section.
+              Five to seven, rarely eight, irregular circlets of variously
+              polyg onal thecal plates that are commonly, increasingly
+              disrupted by intercalates and sutural pores during ontogeny.
+              Emplacement of thecal sutural pores ontogenetically ranges from
+              none, to pores at distal ends of plates under transverse
+              ambulacral grooves, to pores over entire theca or with
+              a probable posterior patch of non-pored plates, to large
+              well-formed pores on all thecal plates on large mature specimens.
+              Pores just distal to food grooves unusually large and acquire
+              mature morephology by late juvenile stage. Periproct protruding
+              vertically from bulged posterior side, composed of lath-like
+              platelets. Four helically coiled brachioles arranged in
+              a 2-0-2 pattern in small juvenile specimens, to five in a 2-1-2
+              pattern in more mature juvenile specimens, to ten, each of the
+              brachiole bases splitting and essentially retaining the same
+              2-1-2 pattern. Stalk sharply differentiated from thecal plates,
+              thick, of variable length (30 to 50% thecal height), and composed
+              of small circular to slightly faceted platelets. Attachment disc
+              broad and flattened.
+            children:
+            - taxon: globulus_zhao.y_parsley_peng.j_2008
+              type: true
+              new: true
+              diagnosis: Same as for genus.
+              synonyms:
+              - openTaxon: globus_zhao.y_et.al_1999
+                modifier: nomen nudum
+                parents:
+                - taxon: sinoeocrinus
 2010_müller.p_hahn:
   taxonomies:
   - taxon: isorophida

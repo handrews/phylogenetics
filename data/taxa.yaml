@@ -1534,6 +1534,14 @@ globulus_dehm_1934:
   name: globulus
   auth: [Dehm]
   year: 1934
+globulus_zhao.y_parsley_peng.j_2008:
+  name: globulus
+  authority:
+    source: 2008_zhao.y_parsley_peng.j
+globus_zhao.y_et.al_1999:
+  name: null
+  auth: [Zhao, Et al.]
+  year: 1999
 glyptocystidae:
   name: Glyptocystidae
   rank: Family
