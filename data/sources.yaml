@@ -1212,6 +1212,17 @@ articles:
       year: 1973
     identifiers:
       url: https://archive.org/details/morphologyevolut00spri/mode/2up
+  1973b_sprinkle:
+    title: New occurrence of the Ordovician eocrinoid Lingulocystis from Bolivia, South America
+    journal: jofpaleo
+    volume: 47
+    pages:
+    - 1113
+    - 1116
+    pubDate:
+      year: 1973
+    authors:
+    - sprinkle
   1976_bell.b.m:
     title: A Study of North American Edrioasteroidea
     journal: nysm
@@ -1529,6 +1540,21 @@ articles:
     - collins.d
     identifiers:
       doi: 10.1139/E05-107
+  2007_nardin:
+    title: "New specimens of Lingulocystis Thoral, 1935 (Eocrinoidea, Blastozoa) from the Arenig (Lower Ordovician) of Montagne noire (southern France): Intraspecific morphological variability, stratigraphic, and palaeoecological implications"
+    journal: annals
+    volume: 93
+    pages:
+    - 199
+    - 214
+    pubDate:
+      year: 2007
+    processDates:
+      online: 2007-08-14
+    authors:
+    - nardin
+    identifiers:
+      doi: 10.1016/j.annpal.2007.06.004
   2007_zhao.y.l_parsley_peng.j:
     title: Early Cambrian eocrinoids from Guizhou Province, South China
     journal: ppp

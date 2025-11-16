@@ -2978,6 +2978,22 @@
               parents:
               - taxon: gogia
                 provisional: true
+2007_nardin:
+  taxonomies:
+  - taxon: blastozoa
+    children:
+    - taxon: eocrinoidea
+      children:
+      - taxon: lingulocystidae
+        children:
+        - taxon: lingulocystis
+          children:
+          - taxon: elongata_thoral_1935
+            type: true
+          - taxon: boliviensis_sprinkle_1973
+          - taxon: deani_ubaghs_1994
+          - affTaxon: deani_ubaghs_1994
+            new: true
 2007_zhao.y.l_parsley_peng.j:
   taxonomies:
   - taxon: blastozoa

@@ -410,6 +410,10 @@ bohemiellidae:
   rank: Family
   auth: [Havliček]
   year: 1977
+boliviensis_sprinkle_1973:
+  name: boliviensis
+  authority:
+    source: 1973b_sprinkle
 brachiatus_sprinkle_1973:
   name: brachiatus
   authority:
@@ -991,6 +995,10 @@ dawsoni_billings_1859:
   name: dawsoni
   auth: [billings]
   year: 1859
+deani_ubaghs_1994:
+  name: deani
+  auth: [ubaghs]
+  year: 1994
 dendrocystites:
   name: Dendrocystites
   auth: [barrande]
