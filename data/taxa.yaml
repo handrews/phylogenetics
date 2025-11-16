@@ -289,6 +289,10 @@ azonida:
   auth: [domínguez alonso]
   year: 1999
 ###################### B
+balangicystis:
+  name: Balangicystis
+  authority:
+    source: 2006_parsley_zhao.y.l
 balticus_jaekel_1899:
   name: balticus
   auth: [jaekel]
@@ -616,9 +620,9 @@ charcariaedens_billings_1859:
   name: charcariaedens
   auth: [billings]
   year: 1859
-chinensis_zhao.y_sumrall_parsley_peng.j_2010:
+chinensis_zhao.y.l_sumrall_parsley_peng.j_2010:
   name: chinensis
-  auth: [zhao.y, sumrall, parsley, peng.j]
+  auth: [zhao.y.l, sumrall, parsley, peng.j]
   year: 2010
 cincta-class:
   name: Cincta
@@ -785,6 +789,16 @@ crinozoa:
   rank: Subphylum
   auth: [Matsumoto]
   year: 1929
+crinozoa-genus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999:
+  name: null
+  rank: genus
+  authority:
+    source: 1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y
+crinozoa-sp_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999:
+  name: null
+  rank: species
+  authority:
+    source: 1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y
 cryptocrinites:
   name: Cryptocrinites
   auth: [buch]
@@ -827,10 +841,18 @@ cuniculocystis:
   name: Cuniculocystis
   auth: [sprinkle, Wahlman]
   year: 1994
+curteocrinus:
+  name: Curteocrinus
+  authority:
+    source: 1994_zhao.y.l_huang.y.z_gong.x.y
 curtisi_durham_caster_1963:
   name: curtisi
   authority:
     source: 1963_durham_caster
+curtobrachiolus_zhao.y.l_huang.y.z_gong.x.y_1994:
+  name: curtobrachiolus
+  authority:
+    source: 1994_zhao.y.l_huang.y.z_gong.x.y
 curvatus_grigo_1995:
   name: curvatus
   auth: [Grigo]
@@ -1240,16 +1262,26 @@ edrioasteroidea-order-uncertain_bassler_1935:
   rank: Order
   authority:
     source: 1935_bassler
-edrioasteroidea-order-uncertain_zhao.y_sumrall_parsley_peng.j_2010:
+edrioasteroidea-order-uncertain_zhao.y.l_sumrall_parsley_peng.j_2010:
   name: null
   rank: Order
   authority:
-    source: 2010_zhao.y_sumrall_parsley_peng.j
-edrioasteroidea-family-uncertain_zhao.y_sumrall_parsley_peng.j_2010:
+    source: 2010_zhao.y.l_sumrall_parsley_peng.j
+edrioasteroidea-family-uncertain_zhao.y.l_sumrall_parsley_peng.j_2010:
   name: null
   rank: Family
   authority:
-    source: 2010_zhao.y_sumrall_parsley_peng.j
+    source: 2010_zhao.y.l_sumrall_parsley_peng.j
+edrioasteroidea-genus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999:
+  name: null
+  rank: genus
+  authority:
+    source: 1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y
+edrioasteroidea-sp_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999:
+  name: null
+  rank: species
+  authority:
+    source: 1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y
 edrioblastoida:
   name: Edrioblastoida
   rank: Order
@@ -1389,6 +1421,16 @@ eocrinoidea-indeterminate-family-4_sprinkle_1973:
   rank: Family
   authority:
     source: 1973_sprinkle
+eocrinoidea-uncertain-order_parsley_zhao.y.l_2006:
+  name: null
+  rank: Order
+  authority:
+    source: 2006_parsley_zhao.y.l
+eocrinoidea-uncertain-family_parsley_zhao.y.l_2006:
+  name: null
+  rank: Family
+  authority:
+    source: 2006_parsley_zhao.y.l
 eocrinoidea-uncertain-family_ubaghs_1967b:
   name: null
   rank: Family
@@ -1524,8 +1566,12 @@ glenocrinus:
     source: 2003_guensburg_sprinkle
 globoeocrinus:
   name: Globoeocrinus
-  auth: [zhao.y, parsley, peng.j]
+  auth: [zhao.y.l, parsley, peng.j]
   year: 2008
+globosa_zhao.y.l_huang.y.z_gong.x.y_1994:
+  name: globosa
+  authority:
+    source: 1994_zhao.y.l_huang.y.z_gong.x.y
 globularis_guensburg_sprinkle_2003:
   name: globularis
   authority:
@@ -1534,14 +1580,15 @@ globulus_dehm_1934:
   name: globulus
   auth: [Dehm]
   year: 1934
-globulus_zhao.y_parsley_peng.j_2008:
+globulus_zhao.y.l_parsley_peng.j_2008:
   name: globulus
   authority:
-    source: 2008_zhao.y_parsley_peng.j
-globus_zhao.y_et.al_1999:
-  name: null
-  auth: [Zhao, Et al.]
-  year: 1999
+    source: 2008_zhao.y.l_parsley_peng.j
+globus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999:
+  name: globus
+  notes: nomen nudum
+  authority:
+    source: 1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y
 glyptocystidae:
   name: Glyptocystidae
   rank: Family
@@ -1674,9 +1721,13 @@ guensburgi_sprinkle_sumrall_2015:
   name: guensburgi
   auth: [sprinkle, sumrall]
   year: 2015
+guizhouensis_zhao.y.l_huang.y.z_gong.x.y_1994:
+  name: guizhouensis
+  authority:
+    source: 1994_zhao.y.l_huang.y.z_gong.x.y
 guizhoueocrinus:
   name: Guizhoueocrinus
-  auth: [zhao.y, parsley, peng.j]
+  auth: [zhao.y.l, parsley, peng.j]
   year: 2007
 guntheri_sprinkle_1973:
   name: guntheri
@@ -1823,6 +1874,16 @@ holothuroidea:
   rank: Class
   auth: [de Blainville]
   year: 1834
+holothuroidea-genus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999:
+  name: null
+  rank: genus
+  authority:
+    source: 1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y
+holothuroidea-sp_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999:
+  name: null
+  rank: species
+  authority:
+    source: 1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y
 homalozoa:
   name: Homalozoa
   rank: Subphylum
@@ -1896,10 +1957,10 @@ inconditus_raymond_1915:
   name: inconditus
   auth: [Raymond]
   year: 1915
-inflatus_parsley_zhao.y_2010:
+inflatus_parsley_zhao.y.l_2010:
   name: inflatus
   authority:
-    source: 2010_parsley_zhao.y
+    source: 2010_parsley_zhao.y.l
 iowacystidae:
   name: Iowacystidae
   rank: Family
@@ -1965,7 +2026,7 @@ junori_withers_1933:
 ###################### K
 kailidiscus:
   name: Kailidiscus
-  auth: [zhao.y, sumrall, parsley, peng.j]
+  auth: [zhao.y.l, sumrall, parsley, peng.j]
   year: 2010
   synonym: parsleya
   reason: homonym
@@ -2073,6 +2134,10 @@ lepidodiscus-subgenus:
     Bassler indicates this as subgenus as synonym for type species of
     Carneyella (foerste), but Treatise does not, and as a genus its
     authority is two years later.
+lepidus_zhao.y.l_huang.y.z_gong.x.y_1994:
+  name: lepidus
+  authority:
+    source: 1994_zhao.y.l_huang.y.z_gong.x.y
 levis_bather_1914:
   name: levis
   auth: [bather]
@@ -2131,10 +2196,18 @@ longidactylus_walcott_1886:
   name: longidactylus
   auth: [walcott]
   year: 1886
+longus_zhao.y.l_huang.y.z_gong.x.y_1994:
+  name: longus
+  authority:
+    source: 1994_zhao.y.l_huang.y.z_gong.x.y
 loriformis_raymond_1915:
   name: loriformis
   auth: [Raymond]
   year: 1915
+lui_zhao.y.l_huang.y.z_gong.x.y_1994:
+  name: lui
+  authority:
+    source: 1994_zhao.y.l_huang.y.z_gong.x.y
 lukei_bell_petersen_1976:
   name: lukei
   auth: [Bell, Petersen]
@@ -2244,6 +2317,10 @@ minor_sprinkle_1973:
   name: minor
   authority:
     source: 1973_sprinkle
+minus_zhao.y.l_huang.y.z_gong.x.y_1994:
+  name: minus
+  authority:
+    source: 1994_zhao.y.l_huang.y.z_gong.x.y
 mitrata:
   name: Mitrata
   rank: Order
@@ -2411,6 +2488,10 @@ paradoxicus_billings_1859:
   name: paradoxicus
   auth: [billings]
   year: 1859
+paragogia:
+  name: Paragogia
+  authority:
+    source: 1994_zhao.y.l_huang.y.z_gong.x.y
 parakrama:
   name: Parakrama
   authority:
@@ -2419,6 +2500,23 @@ parapostibulla:
   name: Parapostibulla
   auth: [sumrall, Garbisch, Pope]
   year: 2000
+pararotadiscus:
+  name: Pararotadiscus
+  authority:
+    source: 2002_zhu.m.y_zhao.y.l_chen.j.y
+pararotadiscus_zhao.y.l_zhu.m.y_1994:
+  name: Pararotadiscus
+  needsQualification: true
+  rank: genus
+  notes: |
+    All online sources use Pararotadiscus (Zhu M.-Y., Zhao Y.-L., Chen J.-Y. 2002),
+    but a 1999 paper in Acta Geological Sinica credits (Zhao Y.-L., Zhu M.-Y. 1994).
+    This may have been Rotadiscus guizhouensis or similar, with a "nomen nudum"?
+    Or possibly the 1999 paper was the first using Pararotadiscus, and doing so
+    as a "nomen nudum" as no description was provided?  But the species was also different
+    (tainjiangensis instead of guizhouensis).
+  authority:
+    source: 1994_zhao.y.l_zhu.m.y
 parasitica_hall_1852:
   name: parasitica
   auth: [Hall]
@@ -2817,6 +2915,10 @@ rossica_jaekel_1918:
   name: rossica
   auth: [jaekel]
   year: 1918
+rotundus_parsley_zhao.y.l_2006:
+  name: rotundus
+  authority:
+    source: 2006_parsley_zhao.y.l
 rutroclypeidae:
   name: Rutroclypeidae
   rank: Family
@@ -2837,7 +2939,7 @@ sampsoni_miller_1891:
   year: 1891
 sanducystis:
   name: Sanducystis
-  auth: [zamora, sumrall, zhu.x, lefebvre]
+  auth: [zamora, sumrall, zhu.x.j, lefebvre]
   year: 2017
 saratogensis_ruedemann_1912:
   name: saratogensis
@@ -2888,14 +2990,19 @@ simplex_barrande_1887:
   name: simplex
   auth: [barrande]
   year: 1887
-sinensis_zamora_sumrall_zhu.x_lefebvre_2017:
+sinensis_zamora_sumrall_zhu.x.j_lefebvre_2017:
   name: sinensis
-  auth: [zamora, sumrall, zhu.x, lefebvre]
+  auth: [zamora, sumrall, zhu.x.j, lefebvre]
   year: 2017
+sinoeocrinidae:
+  name: Sinoeocrinidae
+  rank: Family
+  authority:
+    source: 1994_zhao.y.l_huang.y.z_gong.x.y
 sinoeocrinus:
   name: Sinoeocrinus
-  auth: [Zhao, Huang, Gong]
-  year: 1994
+  authority:
+    source: 1994_zhao.y.l_huang.y.z_gong.x.y
 smithi_ubaghs_1987:
   name: smithi
   auth: [ubaghs]
@@ -3082,6 +3189,10 @@ syringocrinus:
   auth: [billings]
   year: 1850
 ###################### T
+taijiangensis_zhao.y.l_zhu.m.y_1994:
+  name: taijiangensis
+  authority:
+    source: 1994_zhao.y.l_zhu.m.y
 tastudorum_jell_burrett_banks_1985:
   name: tastudorum
   auth: [jell, burrett, banks]
@@ -3207,11 +3318,11 @@ trilobita:
 turbanicystidae:
   name: Turbanicystidae
   authority:
-    source: 2010_parsley_zhao.y
+    source: 2010_parsley_zhao.y.l
 turbanicystis:
   name: Turbanicystis
   authority:
-    source: 2010_parsley_zhao.y
+    source: 2010_parsley_zhao.y.l
 turgidus_bassler_1936:
   name: turgidus
   authority:
@@ -3389,8 +3500,8 @@ youngi_raymond_1915:
   name: youngi
   auth: [Raymond]
   year: 1915
-yui_zhao.y_parsley_peng.j_2007:
+yui_zhao.y.l_parsley_peng.j_2007:
   name: yui
   authority:
-    source: 2007_zhao.y_parsley_peng.j
+    source: 2007_zhao.y.l_parsley_peng.j
 ###################### Z

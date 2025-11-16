@@ -75,6 +75,9 @@ caster:
 chen.a:
   family: Chen
   given: Ailin
+chen.j.y:
+  family: Chen
+  given: Jun-Yuan
 clark.a.h:
   family: Clark
   given: Austin Hobart
@@ -181,12 +184,18 @@ gill:
 goldfuss:
   family: Goldfuss
   given: Georg
+gong.x.y:
+  family: Gong
+  given: X.-Y.
 grant:
   family: Grant
   given: J. A.
 guensburg:
   family: Guensburg
   given: Thomas E.
+guo.q.j:
+  family: Guo
+  given: Qing-Jun
 gurley:
   family: Gurley
   given: William Franklin Eugene
@@ -225,6 +234,12 @@ holland:
 house:
   family: House
   given: M. R.
+huang.y.l:
+  family: Huang
+  given: Y.-L.
+huang.y.z:
+  family: Huang
+  given: You-Zhuang
 hughes:
   family: Hughes
   given: N. F.
@@ -353,6 +368,9 @@ orłowski:
 owen:
   family: Owen
   given: Alan W.
+pan.y:
+  family: Pan
+  given: Yu
 parkinson:
   family: Parkinson
   given: James
@@ -368,6 +386,9 @@ pawson:
 peng.j:
   family: Peng
   given: Jin
+qian.y:
+  family: Qian
+  given: Yi
 rahman:
   family: Rahman
   given: Imran A.
@@ -508,15 +529,24 @@ wright.c.w:
 wright.d.f:
   family: Wright
   given: David F.
+yang.r.d:
+  family: Yang
+  given: Rui-Dong
+yuan.j.l:
+  family: Yuan
+  given: Jin-Liang
 zamora:
   family: Zamora
   given: Samuel
 zhao.j:
   family: Zhao
   given: Jun
-zhao.y:
+zhao.y.l:
   family: Zhao
-  given: Yuanlong
-zhu.x:
+  given: Yuan-Long
+zhu.m.y:
+  family: Zhu
+  given: Mao-Yan
+zhu.x.j:
   family: Zhu
   given: Xue-Jian

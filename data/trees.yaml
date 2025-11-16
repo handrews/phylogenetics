@@ -2563,6 +2563,44 @@
           - taxon: utahensis_robison_sprinkle_1969
             type: true
           - taxon: colodon_ubaghs_robison_1988
+1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y:
+  notes: Only echinoderms and cambroernids added here so far, many others defined
+  taxonomies:
+  - taxon: sinoeocrinus
+    children:
+    - taxon: minus_zhao.y.l_huang.y.z_gong.x.y_1994
+    - taxon: globus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
+      new: true
+      diagnosis: null
+  - taxon: edrioasteroidea
+    children:
+    - openTaxon: edrioasteroidea-genus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
+      new: true
+      children:
+      - openTaxon: edrioasteroidea-sp_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
+        new: true
+  - taxon: crinozoa
+    children:
+    - openTaxon: crinozoa-genus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
+      new: true
+      children:
+      - openTaxon: crinozoa-sp_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
+        new: true
+  - taxon: holothuroidea
+    children:
+    - openTaxon: holothuroidea-genus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
+      provisional: true
+      new: true
+      children:
+      - openTaxon: holothuroidea-sp_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
+        new: true
+  - taxon: pararotadiscus_zhao.y.l_zhu.m.y_1994
+    notes: |
+      Pararotadiscus generally credited to Zhu, Zhao, & Chen (2002).
+      This may be a "nomen nudum" for Pararotadiscus.
+    children:
+    - taxon: taijiangensis_zhao.y.l_zhu.m.y_1994
+      notes: Possibly a nomen nudum renamed Rotadiscus guizhouensis?
 2002_gil cid_domínguez alonso:
   taxonomies:
   - taxon: eocrinoidea
@@ -2770,6 +2808,96 @@
                   Cambridge University Press: Cambridge; 638–783."
                 content: pp. 729
               notes: Also cites Frest & Strimple, but unclear what paper.
+2006_parsley_zhao.y.l:
+  taxonomies:
+  - taxon: blastozoa
+    children:
+    - taxon: eocrinoidea
+      children:
+      - taxon: gogiida
+        emended: true
+        diagnosis: |
+          Emended from Sprinkle, 1973. Eocrinoids with at tachment disk and
+          stalklike structure ranging from poorly organized holdfast to column
+          with essentially holomeric elements, transverse ambulacral system
+          on the upper face of theca (probably with 2-1-2 branching in mature
+          specimens), and loosely organized theca (regular series of plates are
+          present in adult Sinoeocrinus with almost all plates having
+          well-developed sutural pores. Brachioles of typical construction;
+          straight or variously twisted or coiled, and commonly have tall
+          covering plates over food grooves.
+        synonyms:
+        - openTaxon: eocrinoidea-unnamed-order-1_sprinkle_1973
+        children:
+        - tacon: eocrinidae
+          emended: true
+          diagnosis: |
+            Calyx plates numerous, commonly irregularly arranged, but in very
+            small juveniles at least three or more well-defined series are
+            developed under ambulacrum; thecal plates  have epispires that
+            morphologically vary considerably in ontogeny. Ambulacral system
+            confined to upper (or oral) thecal surface, consisting of three
+            to five simple ambulacral grooves leading to exothecal brachioles.
+            Brachioles may be straight, twisted, or coiled. Holdfast, variable
+            in length, irregularly multiplated with distal flattened,
+            multiplated attachment disk. Lower to Middle Cambrian (modified
+            from Sprinkle, 1973).
+          synonyms:
+          - taxon: sinoeocrinidae
+            pars: true
+          - taxon: lichenoididae
+            notes: "=Lichenoididae Jaekel, 1918, Zhao et al., 1994 (pars)"
+            pars: true
+          children:
+          - taxon: gogia
+          - taxon: acanthocystites
+          - taxon: akadocrinus
+          - taxon: sinoeocrinus
+            synonyms:
+            - taxon: paragogia
+            - taxon: curteocrinus
+            children:
+            - taxon: lui_zhao.y.l_huang.y.z_gong.x.y_1994
+              type: true
+              notes: Page numbers from English translation, which is 2nd half of paper
+              synonyms:
+              - taxon: curtobrachiolus_zhao.y.l_huang.y.z_gong.x.y_1994
+              - taxon: lepidus_zhao.y.l_huang.y.z_gong.x.y_1994
+              - taxon: longus_zhao.y.l_huang.y.z_gong.x.y_1994
+              - taxon: minus_zhao.y.l_huang.y.z_gong.x.y_1994
+              - taxon: globosa_zhao.y.l_huang.y.z_gong.x.y_1994
+                parents:
+                - taxon: paragogia
+              - taxon: guizhouensis_zhao.y.l_huang.y.z_gong.x.y_1994
+                parents:
+                - taxon: curteocrinus
+      - openTaxon: eocrinoidea-uncertain-order_parsley_zhao.y.l_2006
+        children:
+        - openTaxon: eocrinoidea-uncertain-family_parsley_zhao.y.l_2006
+          children:
+          - taxon: balangicystis
+            new: true
+            diagnosis: |
+              Eocrinoid with ?five wedge-shaped basals above which in adult specimens
+              at least six irregular circlets of polygonal plates with commonly five
+              raised, flat-topped rays extend from plate center to plate angles.
+              Sutural pores between thecal plates absent. Ten or 15 brachioles in
+              an essentially transversely elongated 2-1 -2 pattern across upper face
+              of the theca. Brachioles longer than height of theca and robust
+              relative to thecal size. Tall cover plates present. Holdfast composed
+              of short circlets of five or six platelets, some with prominent
+              circular boss. At least 40 holdfast circlets present in juvenile
+              and adult specimens.
+            children:
+            - taxon: rotundus_parsley_zhao.y.l_2006
+              type: true
+              new: true
+              diagnosis: |
+                Species is monotypic and its diagnosis is the same as for genus.
+              synonyms:
+              - openTaxon: crinozoa-sp_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
+                parents:
+                - openTaxon: crinozoa-genus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
 2006_sprinkle_collins.d:
   taxonomies:
   - taxon: blastozoa
@@ -2850,7 +2978,7 @@
               parents:
               - taxon: gogia
                 provisional: true
-2007_zhao.y_parsley_peng.j:
+2007_zhao.y.l_parsley_peng.j:
   taxonomies:
   - taxon: blastozoa
     children:
@@ -2873,11 +3001,11 @@
               than distal end of stalk. Mature specimens with ten long paired
               coiled brachioles in 2-1-2 primary ambulacral split configuration.
             children:
-            - taxon: yui_zhao.y_parsley_peng.j_2007
+            - taxon: yui_zhao.y.l_parsley_peng.j_2007
               type: true
               new: true
               diagnosis: Same as for genus.
-2008_zhao.y_parsley_peng.j:
+2008_zhao.y.l_parsley_peng.j:
   taxonomies:
   - taxon: blastozoa
     children:
@@ -2913,12 +3041,12 @@
               of small circular to slightly faceted platelets. Attachment disc
               broad and flattened.
             children:
-            - taxon: globulus_zhao.y_parsley_peng.j_2008
+            - taxon: globulus_zhao.y.l_parsley_peng.j_2008
               type: true
               new: true
               diagnosis: Same as for genus.
               synonyms:
-              - openTaxon: globus_zhao.y_et.al_1999
+              - taxon: globus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
                 modifier: nomen nudum
                 parents:
                 - taxon: sinoeocrinus
@@ -3051,7 +3179,7 @@
       - taxon: discocystinae
     - taxon: hemicystitidae
     - taxon: rhenopyrgidae
-2010_parsley_zhao.y:
+2010_parsley_zhao.y.l:
   taxonomies:
     - taxon: blastozoa
       children:
@@ -3065,7 +3193,7 @@
             - taxon: turbanicystis
               new: true
               children:
-              - taxon: inflatus_parsley_zhao.y_2010
+              - taxon: inflatus_parsley_zhao.y.l_2010
                 new: true
                 type: true
                 specimens:
@@ -3075,20 +3203,20 @@
                   - GM 9-5-3235b
                   - GM 10-3-2000
                   - GM 9-5-2165a
-2010_zhao.y_sumrall_parsley_peng.j:
+2010_zhao.y.l_sumrall_parsley_peng.j:
   taxonomies:
   - taxon: edrioasteroidea
     children:
     - openTaxon:
-        edrioasteroidea-order-uncertain_zhao.y_sumrall_parsley_peng.j_2010
+        edrioasteroidea-order-uncertain_zhao.y.l_sumrall_parsley_peng.j_2010
       children:
       - openTaxon:
-          edrioasteroidea-family-uncertain_zhao.y_sumrall_parsley_peng.j_2010
+          edrioasteroidea-family-uncertain_zhao.y.l_sumrall_parsley_peng.j_2010
         children:
         - taxon: kailidiscus
           new: true
           children:
-          - taxon: chinensis_zhao.y_sumrall_parsley_peng.j_2010
+          - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
             type: true
             new: true
             specimens:
@@ -3257,7 +3385,7 @@
             type: true
           - openTaxon: ubaghsicystis-sp_sumrall_zamora_2015
             new: true
-2017_zamora_sumrall_zhu.x_lefebvre:
+2017_zamora_sumrall_zhu.x.j_lefebvre:
   taxonomies:
   - taxon: echinodermata
     children:
@@ -3271,7 +3399,7 @@
           - taxon: sanducystis
             new: true
             children:
-            - taxon: sinensis_zamora_sumrall_zhu.x_lefebvre_2017
+            - taxon: sinensis_zamora_sumrall_zhu.x.j_lefebvre_2017
               new: true
               type: true
               specimens:
@@ -3410,7 +3538,7 @@
     - taxon: nitidus_sinclair_1945
   - taxon: kailidiscus
     children:
-    - taxon: chinensis_zhao.y_sumrall_parsley_peng.j_2010
+    - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
   - taxon: kinzercystis
     children:
     - taxon: durhami_sprinkle_1973
@@ -3443,7 +3571,7 @@
       children:
       - taxon: pentangularis_pompeckj_1896
         outgroup: true
-      - taxon: chinensis_zhao.y_sumrall_parsley_peng.j_2010
+      - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
       - children:
         - taxon: roddyi_ruedemann_1933
         - taxon: perneri_jaekel_1901
@@ -3481,7 +3609,7 @@
       - taxon: pentangularis_pompeckj_1896
         outgroup: true
       - children:
-        - taxon: chinensis_zhao.y_sumrall_parsley_peng.j_2010
+        - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
         - children:
           - taxon: lloydi_sprinkle_1985
           - taxon: guensburgi_sprinkle_sumrall_2015
@@ -3674,7 +3802,7 @@
           children:
           - taxon: kailidiscus
             children:
-            - taxon: chinensis_zhao.y_sumrall_parsley_peng.j_2010
+            - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
               type: true
             - openTaxon: kailidiscus-sp_jell_sprinkle_2021
               new: true

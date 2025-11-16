@@ -62,9 +62,10 @@ def check_node(node, data, parent=[]):
 
 
 def build_expected_author(expected, author):
-  new_expected = f'{expected}.' + '.'.join(
-    [name[0].lower() for name in author['given'].split(' ')]
-  )
+  givens = author['given'].split(' ')
+  if len(givens) == 1:
+    givens = givens[0].split('-')
+  new_expected = f'{expected}.' + '.'.join([name[0].lower() for name in givens])
   return {new_expected}
 
 
@@ -77,7 +78,11 @@ def build_expected_taxon(expected, taxon):
 
     rank = 'genus' if taxon['name'][0].isupper() else 'species'
 
-  if taxon.get('homonym') or rank in ('species', 'subspecies', 'variety'):
+  if (
+    taxon.get('homonym') or
+    taxon.get('needsQualification') or
+    rank in ('species', 'subspecies', 'variety')
+  ):
     species_expected = expected
     logger.debug(f'Building species id for {expected}...')
     if 'auth' in taxon:

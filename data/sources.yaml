@@ -3,6 +3,8 @@ publications:
     name: Abhandlungen der Königlichen Akademie der Wissenschaften zu Berlin
   acta-p-polonica:
     name: Acta Palaeontologica Polonica
+  acta-p-sinica:
+    name: Acta Palaeontologica Sinica
   akademie:
     name: Akademie der Wissenschaften
   alcheringa:
@@ -61,6 +63,8 @@ publications:
     - wiley
     publisher: Geological Society of London
     place: London
+  geobios:
+    name: Geobios
   geo-et-palaeo:
     name: Geologica et Palaeontologica
   geo-j:
@@ -1362,6 +1366,31 @@ articles:
     authors:
     - dzik
     - orłowski
+  1994_zhao.y.l_huang.y.z_gong.x.y:
+    title: The middle Cambrian Kaili Formation of southwestern China
+    journal: acta-p-sinica
+    volume: 33
+    pages:
+    - 305
+    - 324
+    pubDate:
+      year: 1994
+    authors:
+    - zhao.y.l
+    - huang.y.z
+    - gong.x.y
+  1994_zhao.y.l_zhu.m.y:
+    title: Medusiform fossils of Kaili Fauna from Taijiang, Guizhou
+    journal: acta-p-sinica
+    volume: 33
+    pages:
+    - 350
+    - 358
+    pubDate:
+      year: 1994
+    authors:
+    - zhao.y.l
+    - zhu.m.y
   1995_dzik_orłowski:
     title: Primitive ctenocystoid echinoderm from the earliest Middle Cambrian of Poland
     seen: false
@@ -1388,6 +1417,25 @@ articles:
       year: 1999
     authors:
     - domínguez alonso
+  1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y:
+    title: A progress report on research on the early Middle Cambrian Kaili Biota, Guizhou, PRC
+    journal: acta-p-sinica
+    volume: 38
+    number: Supplement
+    pubDate:
+      year: 1999
+      month: 12
+    authors:
+    - zhao.y.l
+    - yuan.j.l
+    - zhu.m.y
+    - yang.r.d
+    - guo.q.j
+    - qian.y
+    - huang.y.z
+    - pan.y
+    identifiers:
+      url: https://www.researchgate.net/publication/284507301_A_progress_report_on_research_on_the_early_Middle_Cambrian_Kaili_Biota_Guizhou_PRC
   2002_gil cid_domínguez alonso:
     title: |
       "Ubaghsicystis segurae nov. gen. y sp., nuevo Eocrinoide
@@ -1406,6 +1454,22 @@ articles:
     authors:
     - gil cid
     - domínguez alonso
+  2002_zhu.m.y_zhao.y.l_chen.j.y:
+    title: Revision of the Cambrian discoidal animals Stellostomites eumorphus and Pararotadiscus guizhouensis from South China
+    journal: geobios
+    volume: 35
+    pages:
+    - 165
+    - 185
+    pubDate:
+      year: 2002
+    processDates:
+      received: 2001-04-02
+      accepted: 2001-09-24
+    authors:
+    - zhu.m.y
+    - zhao.y.l
+    - chen.j.y
   2003_guensburg_sprinkle:
     title: The oldest known crinoids (Early Ordovician, Utah) and a new crinoid plate homology system
     journal: bullamp
@@ -1432,6 +1496,23 @@ articles:
     - frest
     identifiers:
       doi: 10.1002/gj.1017
+  2006_parsley_zhao.y.l:
+    title: Long stalked eocrinoids in the basal Middle Cambrian Kaili Biota, Taijiang County, Guizhou Province, China
+    journal: jofpaleo
+    volume: 80
+    number: 6
+    pages:
+    - 1058
+    - 1071
+    pubDate:
+      year: 2006
+    processDates:
+      accepted: 2006-07-21
+    authors:
+    - parsley
+    - zhao.y.l
+    identifiers:
+      doi: 10.1666/0022-3360(2006)80[1058:LSEITB]2.0.CO;2
   2006_sprinkle_collins.d:
     title: New eocrinoids from the Burgess Shale, southern British Columbia, Canada, and the Spence Shale, northern Utah, USA
     journal: can-j-earth-sci
@@ -1448,7 +1529,7 @@ articles:
     - collins.d
     identifiers:
       doi: 10.1139/E05-107
-  2007_zhao.y_parsley_peng.j:
+  2007_zhao.y.l_parsley_peng.j:
     title: Early Cambrian eocrinoids from Guizhou Province, South China
     journal: ppp
     volume: 254
@@ -1460,7 +1541,7 @@ articles:
     processDates:
       accepted: 2007-03-05
     authors:
-    - zhao.y
+    - zhao.y.l
     - parsley
     - peng.j
     identifiers:
@@ -1489,7 +1570,7 @@ articles:
     - owen
     identifiers:
       doi: 10.1111/j.1502-3931.2008.00117.x
-  2008_zhao.y_parsley_peng.j:
+  2008_zhao.y.l_parsley_peng.j:
     title: "Basal Middle Cambrian Short-Stalked Eocrinoids from the Kaili Biota: Guizhou Province, China"
     journal: jofpaleo
     volume: 82
@@ -1501,7 +1582,7 @@ articles:
       year: 2008
       month: 3
     authors:
-    - zhao.y
+    - zhao.y.l
     - parsley
     - peng.j
     identifiers:
@@ -1615,7 +1696,7 @@ articles:
       appearance of sculpture in the form of a granulated plate
       surface. Table 4 summarizes the differences between the
       four species.
-  2010_parsley_zhao.y:
+  2010_parsley_zhao.y.l:
     title: A New Turban-Shaped Gogiid Eocrinoid From The Kaili Formation (Kaili Biota), Balang, Jianhe County, Guizhou Province, China
     journal: jofpaleo
     volume: 84
@@ -1625,7 +1706,7 @@ articles:
     - 553
     authors:
     - parsley
-    - zhao.y
+    - zhao.y.l
     pubDate:
       year: 2010
       month: 5
@@ -1633,7 +1714,7 @@ articles:
       accepted: 2009-11-29
     identifiers:
       jstor: 40605503
-  2010_zhao.y_sumrall_parsley_peng.j:
+  2010_zhao.y.l_sumrall_parsley_peng.j:
     title: Kailidiscus, A New Plesiomorphic Edrioasteroid From The Basal Middle Cambrian Kaili Biota Of Guizhou Province, China
     journal: jofpaleo
     volume: 84
@@ -1642,7 +1723,7 @@ articles:
     - 668
     - 680
     authors:
-    - zhao.y
+    - zhao.y.l
     - sumrall
     - parsley
     - peng.j
@@ -1822,7 +1903,7 @@ articles:
     - deline
     - álvaro
     - rahman
-  2017_zamora_sumrall_zhu.x_lefebvre:
+  2017_zamora_sumrall_zhu.x.j_lefebvre:
     title: A new stemmed echinoderm from the Furongian of China and the origin of Glyptocystitida (Blastozoa, Echinodermata)
     journal: geomag
     volume: 154
@@ -1841,7 +1922,7 @@ articles:
     authors:
     - zamora
     - sumrall
-    - zhu.x
+    - zhu.x.j
     - lefebvre
   2018_lefebvre_lerosey-aubril:
     title: "Laurentian origin of solutan echinoderms: new evidence from the Guzhangian (Cambrian Series 3) Weeks Formation of Utah, USA"

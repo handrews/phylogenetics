@@ -321,6 +321,9 @@ $defs:
         type: string
       altSpellingOf:
         type: string
+      needsQualification:
+        type: boolean
+        default: false
       notes:
         type: string
   taxon:
@@ -376,7 +379,7 @@ $defs:
       specimens:
         $ref: "phylogeny#/$defs/specimen"
       diagnosis:
-        type: string
+        type: [string, "null"]
       emended:
         type: [boolean,"null"]
         default: null
