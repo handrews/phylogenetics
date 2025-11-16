@@ -25,6 +25,8 @@ publications:
     name: Bulletins of American Paleontology
   bullgeo:
     name: Bulletins of Geosciences
+  can-j-earth-sci:
+    name: Canadian Journal of Earth Sciences
   coloquios:
     name: Coloquios de Paleontología
   e-research-1998:
@@ -107,6 +109,8 @@ publications:
     name: Papers in Palaeontology
   plos-one:
     name: PLoS ONE
+  ppp:
+    name: Palaeogeography, Palaeoclimatology, Palaeoecology
   procrsocb:
     name: Proceedings of the Royal Society B
   science-new-series:
@@ -1428,6 +1432,39 @@ articles:
     - frest
     identifiers:
       doi: 10.1002/gj.1017
+  2006_sprinkle_collins.d:
+    title: New eocrinoids from the Burgess Shale, southern British Columbia, Canada, and the Spence Shale, northern Utah, USA
+    journal: can-j-earth-sci
+    volume: 43
+    number: 3
+    pages:
+    - 303
+    - 322
+    pubDate:
+      year: 2006
+      month: 3
+    authors:
+    - sprinkle
+    - collins.d
+    identifiers:
+      doi: 10.1139/E05-107
+  2007_zhao.y_parsley_peng.j:
+    title: Early Cambrian eocrinoids from Guizhou Province, South China
+    journal: ppp
+    volume: 254
+    pages:
+    - 317
+    - 327
+    pubDate:
+      year: 2007
+    processDates:
+      accepted: 2007-03-05
+    authors:
+    - zhao.y
+    - parsley
+    - peng.j
+    identifiers:
+      doi: 10.1016/j.palaeo.2007.03.020
   2008_stewart_owen:
     title: "Probing the deep shelf: a Lagerstätte from the Upper Ordovician of Girvan, southwestern Scotland"
     journal: lethaia

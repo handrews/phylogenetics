@@ -2770,6 +2770,113 @@
                   Cambridge University Press: Cambridge; 638–783."
                 content: pp. 729
               notes: Also cites Frest & Strimple, but unclear what paper.
+2006_sprinkle_collins.d:
+  taxonomies:
+  - taxon: blastozoa
+    children:
+    - taxon: eocrinoidea
+      children:
+      - taxon: gogiida
+        children:
+        - taxon: lyracystidae
+          new: true
+          diagnosis: |
+            Eocrinoids having numerous, irregular, ridged thecal plates
+            bearing epispires; three large distinctive lyre-shaped arms with
+            numerous long, straight brachioles attached in central V; and
+            a long multiplated stalk for attachment with domed, ridged,
+            or spiny small plates.
+          children:
+          - taxon: lyracystis
+            type: true
+            new: true
+            diagnosis: |
+              Large eocrinoids with globular to rounded conical theca having
+              numerous, irregular, ridge- and epispire-bearing thecal plates;
+              three large lyre-shaped arms with biserial-to-triserial lateral
+              trunks and numerous long straight brachioles in central V; and
+              very long, thin, multiplated stalk for attach- ment with domed,
+              ridged, or spiny small plates.
+            children:
+            - taxon: radiata_sprinkle_1973
+              type: true
+              diagnosis: |
+                Globular to ellipsoidal theca with heavily ridged, larger
+                primary plates and smaller secondary plates, both bearing
+                scattered epispires, 4–5? wide, thick basals, summit probably
+                domed with numerous small plates bearing epispires, central
+                mouth, and lateral anal pyramid in wider (CD) interray; very
+                long, thin stalk with domed proximal plates in diagonal whorls
+                and slightly spiny medial and distal plating; and apparently
+                three long lyre-shaped arms attached to edge of summit with up
+                to 43 long, stiff brachioles in heart-shaped array between
+                heavier V-shaped arm trunks.
+              synonyms:
+              - taxon: radiata_sprinkle_1973
+                pars: true
+                parents:
+                - taxon: gogia
+                  provisional: true
+            - taxon: reesei_sprinkle_collins.d_2006
+              new: true
+              diagnosis: |
+                Theca rounded conical, slightly longer than wide with domed
+                summit, having about 60 primary and smaller secondary plates
+                with scattered epispires on best side, 5–7 vertical ridges
+                extending up from four basals, intersecting low horizontal
+                ridge in mid-theca; only proximal segments of two lyre-shaped?
+                biserial arms with smaller brachioles preserved; multiplated
+                stalk very long, thin, slowly tapering away from thecal
+                attachment, ridged proximally and spiny medially, distal
+                attachment holdfast inferred but not preserved.
+        - taxon: eocrinidae
+          children:
+          - taxon: gogia
+            children:
+            - taxon: prolifica_walcott_1917
+              type: true
+            - taxon: stephenensis_sprinkle_collins.d_2006
+              new: true
+              diagnosis: |
+                Gogia with an ellipsoidal to rounded conical theca with
+                moderate number of large and small plates, many elliptical
+                epispires on larger thecal plates all over theca, relatively
+                short thin stalk with many small plates, often flared distally
+                into an enlarged circular structure, and 10–12 long, mostly
+                straight brachioles that rarely spiral and may branch.
+            synonyms:
+            - taxon: radiata_sprinkle_1973
+              pars: true
+              parents:
+              - taxon: gogia
+                provisional: true
+2007_zhao.y_parsley_peng.j:
+  taxonomies:
+  - taxon: blastozoa
+    children:
+    - taxon: eocrinoidea
+      children:
+      - taxon: gogiida
+        children:
+        - taxon: eocrinidae
+          emended: true
+          children:
+          - taxon: guizhoueocrinus
+            new: true
+            diagnosis: |
+              Gogiid with clavate theca, 11 to 13 irregular circlets of
+              variously polygonal plates. Sutural pores variable in number,
+              more common on upper thecal plates, circular to elliptical,
+              relatively small and with well-defined rims. Stalk conical,
+              long, intercalates commonly form rosettes around older stem
+              plates. Attachment disk, flattened and only slightly wider
+              than distal end of stalk. Mature specimens with ten long paired
+              coiled brachioles in 2-1-2 primary ambulacral split configuration.
+            children:
+            - taxon: yui_zhao.y_parsley_peng.j_2007
+              type: true
+              new: true
+              diagnosis: Same as for genus.
 2008_zhao.y_parsley_peng.j:
   taxonomies:
   - taxon: blastozoa

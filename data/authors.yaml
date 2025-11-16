@@ -104,6 +104,9 @@ clarke.j.m:
   given: John Mason
   birth: 1857
   death: 1925
+collins.d:
+  family: Collins
+  given: Desmond
 cong.p:
   family: Cong
   given: Peiyun

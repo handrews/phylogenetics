@@ -2139,10 +2139,15 @@ lukei_bell_petersen_1976:
   name: lukei
   auth: [Bell, Petersen]
   year: 1976
+lyracystidae:
+  name: Lyracystidae
+  rank: Family
+  authority:
+    source: 2006_sprinkle_collins.d
 lyracystis:
   name: Lyracystis
-  auth: [sprinkle, Collins]
-  year: 2006
+  authority:
+    source: 2006_sprinkle_collins.d
 lysocystites:
   name: Lysocystites
   auth: [Miller]
@@ -2711,6 +2716,10 @@ redlichiidae:
   rank: Family
   auth: [Poulson]
   year: 1927
+reesei_sprinkle_collins.d_2006:
+  name: reesei
+  authority:
+    source: 2006_sprinkle_collins.d
 regularis_orłowski_1968:
   name: regularis
   auth: [orłowski]
@@ -3004,6 +3013,10 @@ stephanocrinus:
   name: Stephanocrinus
   auth: [Conrad]
   year: 1842
+stephenensis_sprinkle_collins.d_2006:
+  name: stephenensis
+  authority:
+    source: 2006_sprinkle_collins.d
 streptaster:
   name: Streptaster
   auth: [Hall]
@@ -3376,4 +3389,8 @@ youngi_raymond_1915:
   name: youngi
   auth: [Raymond]
   year: 1915
+yui_zhao.y_parsley_peng.j_2007:
+  name: yui
+  authority:
+    source: 2007_zhao.y_parsley_peng.j
 ###################### Z
