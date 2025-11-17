@@ -186,9 +186,6 @@ aristocystitidae:
   year: 1889
 aristocystidae:
   name: Aristocystidae
-  rank: Family
-  auth: [neumayr]
-  year: 1889
   altSpellingOf: aristocystitidae
 aristocystitidae-superfamily:
   name: Aristocystitidae
@@ -309,10 +306,15 @@ barroisi_bather_1898:
   name: barroisi
   auth: [bather]
   year: 1898
+barroubiocystidae:
+  name: Barroubiocystidae
+  rank: Family
+  authority:
+    source: 1999_ubaghs
 barroubiocystis:
   name: Barroubiocystis
-  auth: [ubaghs]
-  year: 1999
+  authority:
+    source: 1999_ubaghs
 batheri_ruedemann_1925:
   name: batheri
   auth: [ruedemann]
@@ -461,17 +463,14 @@ calix:
   name: Calix
   auth: [Rouault]
   year: 1851
-callocystinae:
-  name: Callocystinae
-  rank: Subfamily
-  auth: [Bernard]
-  year: 1895
-  altSpellingOf: callocystitinae
 callocystitinae:
   name: Callocystitinae
   rank: Family
   auth: [Bernard]
   year: 1895
+callocystinae:
+  name: Callocystinae
+  altSpellingOf: callocystitinae
 cambraster:
   name: Cambraster
   auth: [jaekel]
@@ -481,6 +480,10 @@ cambraster-sp_jell_sprinkle_2021:
   rank: species
   authority:
     source: 2021_jell_sprinkle
+cambriensis_ubaghs_1999:
+  name: cambriensis
+  authority:
+    source: 1999_ubaghs
 cambrocrinus:
   name: Cambrocrinus
   auth: [orłowski]
@@ -737,6 +740,15 @@ cornuta:
   rank: Order
   auth: [jaekel]
   year: 1901
+cornuta-incertae-sedis_ubaghs_1999:
+  name: null
+  authority:
+    source: 1999_ubaghs
+cornuta-sp_ubaghs_1999:
+  name: null
+  rank: species
+  authority:
+    source: 1999_ubaghs
 cothurnocystidae:
   name: Cothurnocystidae
   rank: Family
@@ -1183,9 +1195,12 @@ echinodermata-indeterminate-family_hisinger_1828:
     source: 1828_hisinger
 echinodermata-incertae-sedis:
   name: null
-  rank: Class
   authority:
     source: 1967e_ubaghs
+echinodermata-incertae-sedis_ubaghs_1999:
+  name: null
+  authority:
+    source: 1999_ubaghs
 echinodiscus:
   name: Echinodiscus
   auth: [Leske]
@@ -1419,6 +1434,14 @@ eocrinoidea:
   status: informal
   auth: [jaekel]
   year: 1918
+eocrinoidae-class:
+  name: Eocrinoidae
+  altSpellingOf: eocrinoidea
+eocrinoidea-incertae-sedis_smith.a.b_1982:
+  name: null
+  rank: genus
+  authority:
+    source: 1982_smith.a.b
 eocrinoidea-unnamed-order-1_sprinkle_1973:
   name: null
   rank: Order
@@ -2132,6 +2155,10 @@ kitchnerensis_sprinkle_1973:
   name: kitchnerensis
   authority:
     source: 1973_sprinkle
+knizeki_fatka_1991:
+  name: knizeki
+  authority:
+    source: 1991_fatka
 krama:
   name: Krama
   authority:
@@ -2269,6 +2296,10 @@ lloydi_sprinkle_1985:
   name: lloydi
   auth: [sprinkle]
   year: 1985
+lobocarpus:
+  name: Lobocarpus
+  authority:
+    source: 1999_ubaghs
 longidactylus_walcott_1886:
   name: longidactylus
   auth: [walcott]
@@ -2536,6 +2567,10 @@ optatus_worthen_miller_1883:
   name: optatus
   auth: [Worthen, Miller]
   year: 1883
+ornata_ubaghs_1999:
+  name: ornata
+  authority:
+    source: 1999_ubaghs
 orthida:
   name: Orthida
   rank: Order
@@ -2691,6 +2726,11 @@ petalus_holloway_jell_1983:
   name: petalus
   auth: [Holloway, jell]
   year: 1983
+phyllocystidae:
+  name: Phyllocystidae
+  rank: Family
+  auth: [Derstler]
+  year: 1979
 pileus_hall_1866:
   name: pileus
   auth: [Hall]
@@ -2875,6 +2915,10 @@ radiata_sprinkle_1973:
   name: radiata
   authority:
     source: 1973_sprinkle
+radiata_ubaghs_1999:
+  name: radiata
+  authority:
+    source: 1999_ubaghs
 ramosus_foerste_1914:
   name: ramosus
   auth: [foerste]
@@ -3063,6 +3107,10 @@ scoliocystis:
   name: Scoliocystis
   auth: [jaekel]
   year: 1899
+scoteinocystis:
+  name: Scoteinocystis
+  authority:
+    source: 1999_ubaghs
 scotiaecystidae:
   name: Scotiaecystidae
   rank: Family
@@ -3259,16 +3307,19 @@ stromatocystitidae:
   rank: Family
   auth: [bassler]
   year: 1936
-stromatocystis:
-  name: Stromatocystis
-  auth: [Pompeckj]
-  year: 1896
-  altSpellingOf: stromatocystites
-  notes: Used by Bather (1900)
 stromatocystites:
   name: Stromatocystites
   auth: [Pompeckj]
   year: 1896
+stromatocystis:
+  name: Stromatocystis
+  altSpellingOf: stromatocystites
+  notes: Used by Bather (1900)
+stromatocystites-sp_ubaghs_1999:
+  name: null
+  rank: species
+  authority:
+    source: 1999_ubaghs
 stylophora:
   name: Stylophora
   rank: Class
@@ -3525,6 +3576,10 @@ vizcainoi_ubaghs_1987:
   name: vizcainoi
   auth: [ubaghs]
   year: 1987
+vizcainoi_ubaghs_1999:
+  name: vizcainoi
+  authority:
+    source: 1999_ubaghs
 vizcainoia:
   name: Vizcainoia
   auth: [zamora, smith.a.b]

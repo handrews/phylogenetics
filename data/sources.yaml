@@ -1262,6 +1262,22 @@ articles:
     - 131
     identifiers:
       url: https://www.google.com/books/edition/Echinoderms/Vw9mCCLAMtQC?hl=en&gbpv=1
+  1982_smith.a.b:
+    title: The affinities of the Middle Cambrian Haplozoa (Echinodermata)
+    journal: alcheringa
+    volume: 6
+    number: 2
+    pages:
+    - 93
+    - 99
+    pubDate:
+      year: 1982
+    processDates:
+      received: 1981-02-04
+    authors:
+    - smith.a.b
+    identifiers:
+      doi: 10.1080/03115518208566989
   1985_fatka_kordule:
     title: Etoctenocystis bohemica gen. et sp. nov. - new Ctenocystoid from Czechoslovakia (Echinodermata, Middle Cambrian)
     complete:
@@ -1364,6 +1380,15 @@ articles:
     - robison
     identifiers:
       url: https://www.researchgate.net/publication/239588179_Homalozoan_echinoderms_of_the_Wheeler_Formation_Middle_Cambrian_of_Western_Utah
+  1991_fatka:
+    title: Akadocrinus knizeki sp.nov., gogiid eocrinoid from Czechoslovakia (Echinodermata, Middle Cambrian)
+    journal: vestnik
+    volume: 66
+    number: 4
+    pubDate:
+      year: 1991
+    authors:
+    - fatka
   1993_dzik_orłowski:
     title: The Late Cambrian eocrinoid Cambrocrinus
     journal: acta-p-polonica
@@ -1447,6 +1472,21 @@ articles:
       year: 1999
     authors:
     - domínguez alonso
+  1999_ubaghs:
+    title: Échinodermes nouveaux du Cambrien supérieur de la Montagne Noire (France méridionale)
+    journal: geobios
+    volume: 31
+    number: 6
+    pages:
+    - 809
+    - 829
+    pubDate:
+      year: 1999
+    processDates:
+      received: 1997-12-01
+      accepted: 1998-01-26
+    authors:
+    - ubaghs
   1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y:
     title: A progress report on research on the early Middle Cambrian Kaili Biota, Guizhou, PRC
     journal: acta-p-sinica
