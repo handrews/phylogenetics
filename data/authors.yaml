@@ -187,6 +187,9 @@ goldfuss:
 gong.x.y:
   family: Gong
   given: X.-Y.
+gozalo:
+  family: Gozalo
+  given: Rodolfo
 grant:
   family: Grant
   given: J. A.
@@ -298,6 +301,9 @@ leske:
   given: Nathanael Gottfried
   birth: 1751
   death: 1786
+liñán:
+  family: Liñán
+  given: Eladio
 linnaeus:
   family: Linnaeus
   given: Carl

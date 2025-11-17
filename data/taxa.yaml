@@ -1724,6 +1724,12 @@ gogia-sp-2_sprinkle_1973:
   rank: species
   authority:
     source: 1973_sprinkle
+gogia-sp_zamora_gozalo_liñán_2009:
+  name: null
+  rank: species
+  auth: [zamora]
+  in: [zamora, gozalo, liñán]
+  year: 2009
 gogiida:
   name: Gogiida
   bracket: Gogiids
@@ -2671,6 +2677,11 @@ parsleya_deshmukh_2022:
   name: parsleya
   auth: [Deshmukh]
   year: 2022
+parsleyi_zamora_2009:
+  name: parsleyi
+  auth: [zamora]
+  in: [zamora, gozalo, liñán]
+  year: 2009
 pelmatozoa:
   name: Pelmatozoa
   bracket: Pelmatozoans

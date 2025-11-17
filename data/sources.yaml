@@ -1672,6 +1672,22 @@ articles:
     - peng.j
     identifiers:
       jstor: 20144206
+  2009_zamora_gozalo_liñán:
+    title: "Middle Cambrian gogiid echinoderms from Northeast Spain: Taxonomy, palaeoecology, and palaeogeographic implications"
+    journal: acta-p-polonica
+    volume: 54
+    number: 2
+    pages:
+    - 253
+    - 264
+    pubDate:
+      year: 2009
+    authors:
+    - zamora
+    - gozalo
+    - liñán
+    identifiers:
+      doi: 10.4202/app.2008.0010
   2010_müller.p_hahn:
     title: Edrioasteroidea aus den Seifen-Schichten im Westerwald, Rheinisches Schiefer-Gebirge (Unter-Devon, Deutschland), Teil 1
     journal: geo-et-palaeo
