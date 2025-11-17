@@ -1417,6 +1417,25 @@ articles:
     authors:
     - dzik
     - orłowski
+  1997_sumrall_sprinkle_guensburg:
+    title: Systematics And Paleoecology Of Late Cambrian Echinoderms From The Western United States
+    journal: jofpaleo
+    volume: 71
+    number: 6
+    pages:
+    - 1091
+    - 1109
+    pubDate:
+      year: 1997
+      month: 11
+    processDates:
+      accepted: 1997-02-21
+    authors:
+    - sumrall
+    - sprinkle
+    - guensburg
+    identifiers:
+      doi: 10.1017/S0022336000036052
   1999_domínguez alonso:
     title: "The early evolution of echinoderms: the class Ctenocystoidea and its closest relatives revisited"
     book: e-research-1998

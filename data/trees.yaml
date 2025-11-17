@@ -2492,6 +2492,144 @@
         - taxon: archaeocyathoides_dzik_orłowski_1995
           type: true
           new: true
+1997_sumrall_sprinkle_guensburg:
+  taxonomies:
+  - taxon: stylophora
+    children:
+    - taxon: cornuta
+      children:
+      - taxon: cothurnocystidae
+        children:
+        - taxon: acuticarpus
+          new: true
+          diagnosis: |
+            Cothurnocystid with triangular outline, anterior end of theca
+            with slight concavity, M' series with a wide flange on the outer
+            edge of marginals, lacking spines on outer margin.
+          children:
+          - taxon: delticus_sumrall_sprinkle_guensburg_1997
+            type: true
+            new: true
+            diagnosis: |
+              Acuticarpus with sharply angular M'2 of nearly 90 degrees, thin
+              anterior portion, and large flange on left edge; seven sets of
+              tectals and inferolaterals in proximal aulacophore.
+          - taxon: republicensis_sumrall_sprinkle_guensburg_1997
+            provisional: true
+            new: true
+            diagnosis: |
+              Large Acuticarpus? with thin M'2 without lateral flange and
+              angle of greater than 90 degrees, with five pair of tectals
+              and inferolaterals in proximal aulacophore.
+        - taxon: archaeocothurnis
+          new: true
+          diagnosis: |
+            Boot-shaped cothurnocystid with very wide marginals, spinal
+            process formed by M3, large glossal; small nodes present on
+            inferior surface of M2 and M'2
+          children:
+          - taxon: bifida_ubaghs_robison_1988
+            type: true
+            synonyms:
+            - taxon: bifida_ubaghs_robison_1988
+              parents:
+              - taxon: cothurnocystis
+                provisional: true
+          - taxon: goshutensis_sumrall_sprinkle_guensburg_1997
+            new: true
+            diagnosis: |
+              Archaeocothurnus with two spines, one large, other small,
+              moderate medial concavity, extremely wide marginals, M'4
+              sharing inner margin on ventral side, and strong invagination
+              along M5 margin.
+      - taxon: scotiaecystidae
+        children:
+        - taxon: scotiaecystis
+          children:
+          - openTaxon: scotiaecystis-sp_sumrall_sprinkle_guensburg_1997
+            new: true
+    - openTaxon: stylophora-sp-indeterminate_sumrall_sprinkle_guensburg_1997
+  - taxon: homoiostelea
+    children:
+    - taxon: soluta-order
+      children:
+      - taxon: minervaecystidae
+        children:
+        - taxon: minervaecystis
+          children:
+          - openTaxon: minervaecystis-sp_sumrall_sprinkle_guensburg_1997
+  - taxon: eocrinoidea
+    children:
+    - taxon: trachelocrinida
+      new: true
+      diagnosis: |
+        Eocrinoid-grade stalked echinoderms with few to many thecal plates
+        without respiratory structures, holomeric stem, oral area raised
+        into low wide spout, five erect ambulacra forming arm-like structures
+        bearing brachioles.
+      children:
+      - taxon: trachelocrinidae
+        emended: true
+        diagnosis: |
+          Trachelocrinida with plates in proximal theca arranged into columns,
+          apparently five basals, arms bearing brachioles from every third arm
+          plate, and occasional incorporation of lowest brachiolar plate into
+          arm plating.
+        children:
+        - taxon: trachelocrinus
+          emended: true
+          diagnosis: |
+            Trachelocrinids with about 25 hexagonal smooth thecal plates per
+            side below spout, aligned in columns; thecal plates without
+            epispires; summit developed into constricted spout with three
+            sets of plates aligned into columns, columns alternate with
+            five "oral" plates bearing five large biserial arms that branch
+            off smaller brachioles every third to fourth plate; stem long,
+            holomeric, with columnals bearing about 12 spines.
+          children:
+          - taxon: resseri_ulrich_1929
+            type: true
+          - openTaxon: trachelocrinus-sp_sumrall_sprinkle_guensburg_1997
+        - taxon: tatonkacystis
+          new: true
+          diagnosis: |
+            Theca elongate, nearly twice as long as wide; bearing about
+            65 hexagonal ridged thecal plates per side; thecal plates
+            without epispires, aligned in columns, wider than long; summit
+            developed into constricted spout with five large biserial arms
+            bearing smaller brachioles every third to fourth plate; stem long,
+            holomeric, enlarged, nodal every 16-18 columnals.
+          children:
+          - taxon: codyensis_sumrall_sprinkle_guensburg_1997
+            type: true
+            new: true
+            diagnosis: |
+              Because the genus is monotypic at present, specific diagnosis
+              is the same as generic diagnosis above.
+      - taxon: bockiidae
+    - taxon: gogiida
+      children:
+      - openTaxon: gogiida-indeterminate-family-1_sumrall_sprinkle_guensburg_1997
+        children:
+        - openTaxon: gogiida-indeterminate-genus-1_sumrall_sprinkle_guensburg_1997
+          children:
+          - openTaxon: gogiida-sp-1_sumrall_sprinkle_guensburg_1997
+            new: true
+      - openTaxon: gogiida-indeterminate-family-2_sumrall_sprinkle_guensburg_1997
+        children:
+        - openTaxon: gogiida-indeterminate-genus-2_sumrall_sprinkle_guensburg_1997
+          children:
+          - openTaxon: gogiida-sp-2_sumrall_sprinkle_guensburg_1997
+            new: true
+    - taxon: edrioasteroidea
+      children:
+      - taxon: edrioasterida
+        children:
+        - openTaxon: edrioasterida-indeterminate-family_sumrall_sprinkle_guensburg_1997
+          children:
+          - openTaxon: edrioasterida-indeterminate-genus_sumrall_sprinkle_guensburg_1997
+            children:
+            - openTaxon: edrioasterida-sp_sumrall_sprinkle_guensburg_1997
 1999_domínguez alonso:
   taxonomies:
   - taxon: ctenocystoidea

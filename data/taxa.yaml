@@ -1,4 +1,8 @@
 ###################### A
+acuticarpus:
+  name: Acuticarpus
+  authority:
+    source: 1997_sumrall_sprinkle_guensburg
 adelphicrinus:
   name: Adelphicrinus
   authority:
@@ -159,6 +163,10 @@ appressa_bassler_1950:
   name: appressa
   auth: [bassler]
   year: 1950
+archaeocothurnis:
+  name: Archaeocothurnis
+  authority:
+    source: 1997_sumrall_sprinkle_guensburg
 archaeocyathoides_dzik_orłowski_1995:
   name: archaeocyathoides
   auth: [dzik, orłowski]
@@ -386,6 +394,10 @@ bockia:
   name: Bockia
   auth: [Hecker]
   year: 1938
+bockiidae:
+  name: Bockiidae
+  auth: [ubaghs]
+  year: 1972
 bohemica_fatka_kordule_1985:
   name: bohemica
   auth: [Fatka, Kordule]
@@ -646,6 +658,10 @@ cnemecrinus:
   name: Cnemecrinus
   authority:
     source: 2003_guensburg_sprinkle
+codyensis_sumrall_sprinkle_guensburg_1997:
+  name: codyensis
+  authority:
+    source: 1997_sumrall_sprinkle_guensburg
 coelentera:
   name: Coelentera
   rank: Phylum
@@ -999,6 +1015,10 @@ deani_ubaghs_1994:
   name: deani
   auth: [ubaghs]
   year: 1994
+delticus_sumrall_sprinkle_guensburg_1997:
+  name: delticus
+  authority:
+    source: 1997_sumrall_sprinkle_guensburg
 dendrocystites:
   name: Dendrocystites
   auth: [barrande]
@@ -1254,6 +1274,21 @@ edrioasterida:
   rank: Order
   auth: [bather]
   year: 1898
+edrioasterida-indeterminate-family_sumrall_sprinkle_guensburg_1997:
+  name: null
+  rank: Family
+  authority:
+    source: 1997_sumrall_sprinkle_guensburg
+edrioasterida-indeterminate-genus_sumrall_sprinkle_guensburg_1997:
+  name: null
+  rank: genus
+  authority:
+    source: 1997_sumrall_sprinkle_guensburg
+edrioasterida-sp_sumrall_sprinkle_guensburg_1997:
+  name: null
+  rank: species
+  authority:
+    source: 1997_sumrall_sprinkle_guensburg
 edrioasteridae:
   name: Edrioasteridae
   rank: Family
@@ -1678,6 +1713,36 @@ gogiida-subclass:
   rank: Subclass
   authority:
     source: 2021_parsley
+gogiida-indeterminate-family-1_sumrall_sprinkle_guensburg_1997:
+  name: null
+  rank: Family
+  authority:
+    source: 1997_sumrall_sprinkle_guensburg
+gogiida-indeterminate-family-2_sumrall_sprinkle_guensburg_1997:
+  name: null
+  rank: Family
+  authority:
+    source: 1997_sumrall_sprinkle_guensburg
+gogiida-indeterminate-genus-1_sumrall_sprinkle_guensburg_1997:
+  name: null
+  rank: genus
+  authority:
+    source: 1997_sumrall_sprinkle_guensburg
+gogiida-indeterminate-genus-2_sumrall_sprinkle_guensburg_1997:
+  name: null
+  rank: genus
+  authority:
+    source: 1997_sumrall_sprinkle_guensburg
+gogiida-sp-1_sumrall_sprinkle_guensburg_1997:
+  name: null
+  rank: species
+  authority:
+    source: 1997_sumrall_sprinkle_guensburg
+gogiida-sp-2_sumrall_sprinkle_guensburg_1997:
+  name: null
+  rank: species
+  authority:
+    source: 1997_sumrall_sprinkle_guensburg
 gomphocystidae:
   name: Gomphocystidae
   rank: Family
@@ -1693,6 +1758,10 @@ gondi_ubaghs_1987:
   name: gondi
   auth: [ubaghs]
   year: 1987
+goshutensis_sumrall_sprinkle_guensburg_1997:
+  name: goshutensis
+  authority:
+    source: 1997_sumrall_sprinkle_guensburg
 granatum_mccoy_1846:
   name: granatum
   auth: [mccoy]
@@ -2316,6 +2385,22 @@ mimocystites:
   name: Mimocystites
   auth: [barrande]
   year: 1887
+minervaecystidae:
+  name: Minervaecystidae
+  rank: Family
+  auth: [ubaghs, caster]
+  in: [caster]
+  year: 1968
+minervaecystis:
+  name: Minervaecystis
+  auth: [ubaghs, caster]
+  in: [caster]
+  year: 1968
+minervaecystis-sp_sumrall_sprinkle_guensburg_1997:
+  name: null
+  rank: species
+  authority:
+    source: 1997_sumrall_sprinkle_guensburg
 minor_schuchert_1919:
   name: minor
   rank: variety
@@ -2830,6 +2915,10 @@ regularis_orłowski_1968:
   name: regularis
   auth: [orłowski]
   year: 1968
+republicensis_sumrall_sprinkle_guensburg_1997:
+  name: republicensis
+  authority:
+    source: 1997_sumrall_sprinkle_guensburg
 resseri_ulrich_1929:
   name: resseri
   auth: [Ulrich]
@@ -2974,6 +3063,21 @@ scoliocystis:
   name: Scoliocystis
   auth: [jaekel]
   year: 1899
+scotiaecystidae:
+  name: Scotiaecystidae
+  rank: Family
+  auth: [caster, ubaghs]
+  in: [ubaghs]
+  year: 1968
+scotiaecystis:
+  name: Scotiaecystis
+  auth: [caster, ubaghs]
+  in: [ubaghs]
+  year: 1968
+scotiaecystis-sp_sumrall_sprinkle_guensburg_1997:
+  name: null
+  authority:
+    source: 1997_sumrall_sprinkle_guensburg
 seckenbergii_meyer_1826:
   name: seckenbergii
   auth: [Meyer]
@@ -3175,6 +3279,11 @@ stylophora-superorder:
   rank: Superorder
   auth: [Gill, Caster]
   year: 1960
+stylophora-sp-indeterminate_sumrall_sprinkle_guensburg_1997:
+  name: null
+  rank: species
+  authority:
+    source: 1997_sumrall_sprinkle_guensburg
 sumralli_guensburg_sprinkle_2003:
   name: sumralli
   authority:
@@ -3305,6 +3414,11 @@ totiglobus:
   name: Totiglobus
   auth: [Bell, sprinkle]
   year: 1978
+trachelocrinida:
+  name: Trachelocrinida
+  rank: Order
+  authority:
+    source: 1997_sumrall_sprinkle_guensburg
 trachelocrinidae:
   name: Trachelocrinidae
   rank: Family
@@ -3314,6 +3428,11 @@ trachelocrinus:
   name: Trachelocrinus
   auth: [Ulrich]
   year: 1929
+trachelocrinus-sp_sumrall_sprinkle_guensburg_1997:
+  name: null
+  rank: species
+  authority:
+    source: 1997_sumrall_sprinkle_guensburg
 treadwelli_sinclair_1945:
   name: treadwelli
   auth: [Sinclair]
