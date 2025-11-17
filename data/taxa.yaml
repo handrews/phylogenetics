@@ -87,6 +87,13 @@ alabamensis_sumrall_garbisch_pope_2000:
   name: alabamensis
   auth: [sumrall, Garbisch, Pope]
   year: 2000
+alanisicystis:
+  name: alanisicystis
+  authority:
+    source: 1990_ubaghs_vizcaïno
+alanisicystis-subgenus:
+  rank: subgenus
+  altRankOf: alanisicystis
 alphacrinus:
   name: Alphacrinus
   auth: [guensburg]
@@ -121,6 +128,10 @@ anapeptamenus_austen_1843:
   name: anapeptamenus
   auth: [Austen]
   year: 1843
+andalusiae_ubaghs_vizcaïno_1990:
+  name: andalusiae
+  authority:
+    source: 1990_ubaghs_vizcaïno
 angulosa_pander_1830:
   name: angulosa
   auth: [Pander]

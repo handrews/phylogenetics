@@ -1380,6 +1380,19 @@ articles:
     - robison
     identifiers:
       url: https://www.researchgate.net/publication/239588179_Homalozoan_echinoderms_of_the_Wheeler_Formation_Middle_Cambrian_of_Western_Utah
+  1990_ubaghs_vizcaïno:
+    title: A new eocrinoid from the Lower Cambrian of Spain
+    journal: palaeontology
+    volume: 33
+    number: 1
+    pages:
+    - 249
+    - 256
+    pubDate:
+      year: 1990
+    authors:
+    - ubaghs
+    - vizcaïno
   1991_fatka:
     title: Akadocrinus knizeki sp.nov., gogiid eocrinoid from Czechoslovakia (Echinodermata, Middle Cambrian)
     journal: vestnik

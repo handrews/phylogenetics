@@ -373,6 +373,9 @@ $defs:
       # TODO: Something is off here, dup field?
       modifier:
         type: string
+      quoted:
+        type: boolean
+        default: false
       stem:
         type: boolean
         default: false

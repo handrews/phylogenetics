@@ -2454,6 +2454,32 @@
                 new: true
                 specimens:
                   holotype: USNM 415804
+1990_ubaghs_vizcaïno:
+  taxonomies:
+  - taxon: eocrinoidea
+    quoted: true
+    children:
+    - taxon: eocrinidae
+      children:
+      - taxon: gogia
+        children:
+        - taxon: alanisicystis-subgenus
+          new: true
+          diagnosis: |
+            A subgenus of Gogia, characterized by single or partitioned
+            epispires provided with external dome-like stereomic cover.
+          children:
+          - taxon: andalusiae_ubaghs_vizcaïno_1990
+            type: true
+            new: true 
+            diagnosis: |
+              A species of Alanisicystis with calyx probably globos; thecal
+              plates relatively large and thick; showing pustulose and low
+              ridged exterior ornament, epispires all over calyx or part
+              of it, up to 12 per plate in large specimens; holdfast relatively
+              short and distally inflated composed of numerous small,
+              unornamented plates; transition from calyx to holdfast abrupt;
+              at least 6 or 7 brachioles, spiralled in right hand direction.
 1991_fatka:
   taxonomies:
   - taxon: eocrinoidae-class
