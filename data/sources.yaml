@@ -45,6 +45,10 @@ publications:
     place: Rotterdam
   es-rev:
     name: Earth-Science Reviews
+  e-faunas-bromide:
+    name: Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma
+    editors:
+    - sprinkle
   fieldiana:
     name: Fieldiana, Geology
   fig-desc-can:
@@ -1247,6 +1251,16 @@ articles:
     - derstler
     identifiers:
       url: https://pubs.usgs.gov/of/1981/0743/report.pdf
+  1982_bell.b.m:
+    title: Edrioasteroids
+    book: e-faunas-bromide
+    pages:
+    - 297
+    - 306
+    pubDate:
+      year: 1982
+    authors:
+    - bell.b.m
   1982_broadhead:
     title: Reappraisal of Class Eocrinoidea (Echinodermata)
     book: e-tampa-bay
@@ -1262,6 +1276,56 @@ articles:
     - 131
     identifiers:
       url: https://www.google.com/books/edition/Echinoderms/Vw9mCCLAMtQC?hl=en&gbpv=1
+  1982_kolata:
+    title: Cyclocystoids
+    book: e-faunas-bromide
+    pages:
+    - 309
+    - 309
+    pubDate:
+      year: 1982
+    authors:
+    - kolata
+  1982a_parsley:
+    title: Paracrinoids
+    book: e-faunas-bromide
+    pages:
+    - 212
+    - 223
+    pubDate:
+      year: 1982
+    authors:
+    - parsley
+  1982b_parsley:
+    title: Pleurocystitids
+    book: e-faunas-bromide
+    pages:
+    - 274
+    - 279
+    pubDate:
+      year: 1982
+    authors:
+    - parsley
+  1982c_parsley:
+    title: Eumorphocystis
+    book: e-faunas-bromide
+    pages:
+    - 280
+    - 288
+    pubDate:
+      year: 1982
+    authors:
+    - parsley
+  1982d_parsley:
+    title: Homalozoans
+    book: e-faunas-bromide
+    pages:
+    - 322
+    - 323
+    pubDate:
+      year: 1982
+    authors:
+    - parsley
   1982_smith.a.b:
     title: The affinities of the Middle Cambrian Haplozoa (Echinodermata)
     journal: alcheringa
@@ -1278,6 +1342,47 @@ articles:
     - smith.a.b
     identifiers:
       doi: 10.1080/03115518208566989
+  1982g_sprinkle:
+    title: Cylcindrical and Globular Rhombiferans
+    book: e-faunas-bromide
+    pages:
+    - 231
+    - 273
+    pubDate:
+      year: 1982
+    authors:
+    - sprinkle
+  1982h_sprinkle:
+    title: Palaeocystitids
+    book: e-faunas-bromide
+    pages:
+    - 289
+    - 296
+    pubDate:
+      year: 1982
+    authors:
+    - sprinkle
+  1982i_sprinkle:
+    title: Astrocystites
+    book: e-faunas-bromide
+    pages:
+    - 307
+    - 308
+    pubDate:
+      year: 1982
+    authors:
+    - sprinkle
+  1982_sprinkle_parsley:
+    title: '"Golf-Ball" Paracrinoid'
+    book: e-faunas-bromide
+    pages:
+    - 224
+    - 230
+    pubDate:
+      year: 1982
+    authors:
+    - sprinkle
+    - parsley
   1985_fatka_kordule:
     title: Etoctenocystis bohemica gen. et sp. nov. - new Ctenocystoid from Czechoslovakia (Echinodermata, Middle Cambrian)
     complete:

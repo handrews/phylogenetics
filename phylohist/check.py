@@ -9,11 +9,14 @@ import jschon
 logger = logging.getLogger(__name__)
 
 NAMED_TAXON_FIELDS = {'taxon', 'cfTaxon', 'affTaxon'}
-def check_node(node, data, parent=[]):
+
+def check_node(node, data, parent=[], tree_info=None):
   if isinstance(node, str):
     logger.error(f"STRING? '{node}'")
     return
+
   taxon_fields = (NAMED_TAXON_FIELDS | {'openTaxon'}) & node.keys()
+
   if len(taxon_fields) > 1:
     logger.error(
       f'Found {len(taxon_fields)} taxon fields ({taxon_fields}), expected one!'
@@ -36,9 +39,20 @@ def check_node(node, data, parent=[]):
     elif taxon_type not in NAMED_TAXON_FIELDS and taxon['name'] is not None:
       logger.error(f'Taxon "{taxon_id}" NOT expected to have a name!')
 
-    if node.get('new'):
-      # TODO: Check taxon authority is this paper
-      pass
+    if (
+      node.get('new') and
+      tree_info is not None and
+      (source := taxon.get('authority', {}).get('source')) and
+      source != tree_info[1]
+    ):
+      logger.error(
+        f'Expected source {tree_info[1]} for new taxon, got source {source}'
+      )
+
+    name = taxon.get('name')
+    if name and tree_info is not None:
+      data['index'][name].add(tree_info)
+
   else:
     current = parent + ['_anon_']
     logger.debug(f'Descending through {current}')
@@ -58,7 +72,7 @@ def check_node(node, data, parent=[]):
   if (corrected := node.get('corrected')):
     check_node(corrected, data, current + ['corrected'])
   for child in node.get('children', []):
-    check_node(child, data, current)
+    check_node(child, data, current, tree_info)
 
 
 def build_expected_author(expected, author):
@@ -247,9 +261,30 @@ def check_taxa(data):
   logger.info(f"...taxa processed.")
 
 
-def check_trees(data, sources):
+def print_tree(node, data, tree_info, indent=''):
+  if not indent:
+    print(f'PAPER: {tree_info[1]}')
+  if (taxon_id := node.get('taxon')):
+    taxon = data['taxa'][taxon_id]
+    if not (name := taxon.get('name')):
+      if (alt := taxon.get('altRankOf')):
+        name = data['taxa'][alt]['name']
+      else:
+        name = '[]'
+  else:
+    name = '[*]'
+  print(f'{indent}{name}')
+  new_indent = indent + '  '
+  for child in node.get('children', []):
+    print_tree(child, data, tree_info, new_indent)
+
+def check_trees(data, sources, taxon=None):
   logger.info(f"Processing {len(data['trees'])} opinions...")
+  logger.info(f'...searching for taxon "{taxon}"')
   opinions = set()
+  tree_index = 0
+  tree_lookup = {}
+  data['index'] = collections.defaultdict(set)
   for ref_id, opinion in data['trees'].items():
     opinions.add(ref_id)
     logger.debug(f'Processing opinions from "{ref_id}"')
@@ -262,10 +297,24 @@ def check_trees(data, sources):
     trees.extend([p['tree'] for p in opinion.get('phylogenies', {})])
     num_phy = len(trees) - num_tax
     logger.debug(f'Found {num_phy} phylogenetic trees')
-    for t in trees:
-      check_node(t, data)
+
+    for i, t in enumerate(trees):
+      tree_lookup[tree_index] = t
+      check_node(t, data, tree_info=(tree_index, ref_id))
+      tree_index += 1
   logger.info(f"...opinions processed.")
+
+  if taxon:
+    found_trees = data['index'].get(taxon, [])
+    logger.info(
+      f'Found {len(found_trees)} trees, searching for taxon {taxon}...'
+    )
+
+    for tree in sorted(found_trees):
+      print_tree(tree_lookup[tree[0]], data, tree)
+      print()
 
   if (difference := sources - opinions):
     # logger.warn("Missing opinions from:\n    " + '\n    '.join(sorted(difference)))
     logger.warn(f"Missing opinions from {len(difference)} papers!")
+  return data
