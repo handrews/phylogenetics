@@ -2702,34 +2702,34 @@
               new: true
               specimens:
                 holotype: USNM 423874
-      - taxon: homoiostelea
+    - taxon: homoiostelea
+      children:
+      - taxon: soluta-order
         children:
-        - taxon: soluta-order
+        - openTaxon: homoiostelea-indeterminate-family_ubaghs_robison_1988
           children:
-          - openTaxon: homoiostelea-indeterminate-family_ubaghs_robison_1988
+          - taxon: castericystis
             children:
-            - taxon: castericystis
-              children:
-              - taxon: sprinklei_ubaghs_robison_1988
-                provisional: true
-                new: true
-                specimens:
-                  holotype: USNM 423877
-      - taxon: stylophora
+            - taxon: sprinklei_ubaghs_robison_1988
+              provisional: true
+              new: true
+              specimens:
+                holotype: USNM 423877
+    - taxon: stylophora
+      children:
+      - taxon: cornuta
         children:
-        - taxon: cornuta
+        - taxon: cothurnocystidae
           children:
-          - taxon: cothurnocystidae
+          - taxon: cothurnocystis
             children:
-            - taxon: cothurnocystis
-              children:
-              - taxon: elizae_bather_1913
-                type: true
-              - taxon: bifida_ubaghs_robison_1988
-                provisional: true
-                new: true
-                specimens:
-                  holotype: USNM 415804
+            - taxon: elizae_bather_1913
+              type: true
+            - taxon: bifida_ubaghs_robison_1988
+              provisional: true
+              new: true
+              specimens:
+                holotype: USNM 415804
 1990_ubaghs_vizcaïno:
   taxonomies:
   - taxon: eocrinoidea
@@ -4412,12 +4412,12 @@
                   - QMF59527
                   - ...
                   - QMF59586
-              - openTaxon: lichenoididae-gen_smith.a.b_zamora_álvaro_2013
-                provisional: true
-                children:
-                - openTaxon: lichenoididae-gen-sp_smith.a.b_zamora_álvaro_2013
-                  synonyms:
-                  - openTaxon: lichenoides-sp_zamora_deline_álvaro_rahman_2017
+            - openTaxon: lichenoididae-gen_smith.a.b_zamora_álvaro_2013
+              provisional: true
+              children:
+              - openTaxon: lichenoididae-gen-sp_smith.a.b_zamora_álvaro_2013
+                synonyms:
+                - openTaxon: lichenoides-sp_zamora_deline_álvaro_rahman_2017
     - taxon: echinozoa
       children:
       - taxon: edrioasteroidea
