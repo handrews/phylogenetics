@@ -297,12 +297,16 @@ def print_tree(node, data, tree_info, indent='', on=True, top=None, bottom=None)
 
   if node.get('new'):
     name += '*'
+  if node.get('questionable'):
+    name += ' ?'
 
   logger.debug(f'found name "{found_name}"')
   if top is not None and found_name == top:
     on = True
 
   new_indent = indent
+  if node.get('provisional'):
+    indent = indent[:-2] + '?' + ' '
   if on:
     print(f'{indent}{name}')
   new_indent += '  '

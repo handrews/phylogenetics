@@ -3423,6 +3423,10 @@ sphaeronitidae:
   rank: Family
   auth: [neumayr]
   year: 1889
+spinosa_wang.d.z_nohejlová_sun.z.x_zeng.h_lefebvre_yang.x.l_zhao.f.c_2024:
+  name: spinosa
+  authority:
+    source: 2024_wang.d.z_nohejlová_sun.z.x_zeng.h_lefebvre_yang.x.l_zhao.f.c
 spinosa_zamora_rahman_smith.a.b_2012:
   name: spinosa
   auth: [zamora, rahman, smith.a.b]
@@ -3754,6 +3758,10 @@ typicalis_bassler_1950:
   auth: [bassler]
   year: 1950
 ###################### U
+ubaghsi_fatka_kordule_1990:
+  name: ubaghsi
+  authority:
+    source: 1990_fatka_kordule
 ubaghsi_guensburg_sprinkle_2009:
   name: ubaghsi
   auth: [guensburg, sprinkle]

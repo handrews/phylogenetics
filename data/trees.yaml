@@ -1211,47 +1211,49 @@
           - taxon: lepidocystoidea
             notes: re-ranked
           children:
-          - taxon: lepidocystis
+          - taxon: lepidocystidae
             children:
-            - taxon: wanneri_foerste_1938
-              type: true
-              specimens:
-                holotype: USNM 90773 # two counterparts
-                paratypes:
-                - USNM 90773A # two counterparts
-                - USNM 90773B
-                - USNM 90773C1
-                - USNM 90773C2
-                - USNM 90773C3
-                - MCZ 591  # ten specimens from SH-1
-                - MCZ 592  # three specimens from EM-1
-                - MCZ 593  # many new unstudied specimens from SH-2
-            - cfTaxon: wanneri_foerste_1938
+            - taxon: lepidocystis
+              children:
+              - taxon: wanneri_foerste_1938
+                type: true
+                specimens:
+                  holotype: USNM 90773 # two counterparts
+                  paratypes:
+                  - USNM 90773A # two counterparts
+                  - USNM 90773B
+                  - USNM 90773C1
+                  - USNM 90773C2
+                  - USNM 90773C3
+                  - MCZ 591  # ten specimens from SH-1
+                  - MCZ 592  # three specimens from EM-1
+                  - MCZ 593  # many new unstudied specimens from SH-2
+              - cfTaxon: wanneri_foerste_1938
+                new: true
+                specimens:
+                  unknowntypes:
+                  - MCZ 628A
+                  - MCZ 628B
+                  - MCZ 629A
+                  - MCZ 629B
+                  - PE-199
+                  - PE-199-A
+            - taxon: kinzercystis
               new: true
-              specimens:
-                unknowntypes:
-                - MCZ 628A
-                - MCZ 628B
-                - MCZ 629A
-                - MCZ 629B
-                - PE-199
-                - PE-199-A
-          - taxon: kinzercystis
-            new: true
-            children:
-            - taxon: durhami_sprinkle_1973
-              type: true
-              new: true
-              specimens:
-                holotype: MCZ 581 # two counterparts
-                paratypes:
-                - MCZ 582
-                - MCZ 583
-                - MCZ 584
-                - MCZ 585
-                - MCZ 586
-                - MCZ 587
-                - MCZ 729
+              children:
+              - taxon: durhami_sprinkle_1973
+                type: true
+                new: true
+                specimens:
+                  holotype: MCZ 581 # two counterparts
+                  paratypes:
+                  - MCZ 582
+                  - MCZ 583
+                  - MCZ 584
+                  - MCZ 585
+                  - MCZ 586
+                  - MCZ 587
+                  - MCZ 729
         - openTaxon: eocrinoidea-unnamed-order-1_sprinkle_1973
           children:
           - taxon: eocrinidae
@@ -2730,6 +2732,20 @@
               new: true
               specimens:
                 holotype: USNM 415804
+1990_fatka_kordule:
+  taxonomies:
+  - taxon: eocrinoidea
+    children:
+    - taxon: imbricata
+      children:
+      - taxon: lepidocystidae
+        children:
+        - taxon: vyscystis
+          new: true
+          children:
+          - taxon: ubaghsi_fatka_kordule_1990
+            type: true
+            new: true
 1990_ubaghs_vizcaïno:
   taxonomies:
   - taxon: eocrinoidea
@@ -4635,6 +4651,24 @@
               holotype: YKLP 13397
               paratypes:
               - YKLP 13553
+2024_wang.d.z_nohejlová_sun.z.x_zeng.h_lefebvre_yang.x.l_zhao.f.c:
+  taxonomies:
+  - taxon: echinodermata
+    authority:
+      source: 1778_klein
+    children:
+    - taxon: blastozoa
+      children:
+      - taxon: lepidocystidae
+        children:
+        - taxon: vyscystis
+          emended: true
+          children:
+          - taxon: ubaghsi_fatka_kordule_1990
+            type: true
+          - taxon: spinosa_wang.d.z_nohejlová_sun.z.x_zeng.h_lefebvre_yang.x.l_zhao.f.c_2024
+            provisional: true
+            new: true
 2024_zamora_guensburg_sprinkle:
   taxonomies:
   - taxon: echinodermata

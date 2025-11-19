@@ -377,6 +377,9 @@ neumayr:
   given: Melchior
   birth: 1845
   death: 1890
+nohejlová:
+  family: Nohejlová
+  given: Martina
 norman:
   family: Norman
   given: Alfred Merle
@@ -486,6 +489,9 @@ stewart:
 sumrall:
   family: Sumrall
   given: Colin D.
+sun.z.x:
+  family: Sun
+  given: Zhi-Xin
 tarlo:
   family: Tarlo
   given: L. B. H.
@@ -518,6 +524,9 @@ walcott:
   given: Charles Doolittle
   birth: 1850
   death: 1927
+wang.d.z:
+  family: Wang
+  given: De-Zhi
 wanner:
   family: Wanner
   given: Johannes
@@ -556,12 +565,21 @@ wright.d.f:
 yang.r.d:
   family: Yang
   given: Rui-Dong
+yang.x.l:
+  family: Yang
+  given: Xing-Lian
 yuan.j.l:
   family: Yuan
   given: Jin-Liang
 zamora:
   family: Zamora
   given: Samuel
+zeng:
+  family: Zeng
+  given: Han
+zhao.f.c:
+  family: Zhao
+  given: Fang-Chen
 zhao.j:
   family: Zhao
   given: Jun
