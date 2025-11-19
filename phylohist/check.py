@@ -275,9 +275,20 @@ def print_tree(node, data, tree_info, indent=''):
       if (alt := taxon.get('altRankOf')):
         name = data['taxa'][alt]['name']
       else:
-        name = '[]'
+        name = '[** altRank of no taxon ***]'
   else:
-    name = '[*]'
+    if (taxon_id := node.get('openTaxon')):
+      name = f'[{taxon_id}]'
+    elif (taxon_id := node.get('cfTaxon')):
+      name = f'[cf. {taxon_id}]'
+    elif (taxon_id := node.get('affTaxon')):
+      name = f'[aff. {taxon_id}]'
+    else:
+      name = '[]'
+
+  if node.get('new'):
+    name += '*'
+
   print(f'{indent}{name}')
   new_indent = indent + '  '
   for child in node.get('children', []):

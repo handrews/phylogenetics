@@ -146,7 +146,7 @@
                   - taxon: cystidea
                     children:
                     - taxon: amphorida
-                      note: "Haekel (1896, pars)"
+                      notes: "Haekel (1896, pars)"
                       children:
                       - taxon: aristocystidae
                       - taxon: dendrocystidae
@@ -168,11 +168,11 @@
                         - taxon: glyptocystinae
                       - taxon: caryocrinidae
                     - taxon: aporita
-                      note: "Zittel (1879, restr.)"
+                      notes: "Zittel (1879, restr.)"
                       children:
                       - taxon: cryptocrinidae
                     - taxon: diploporita-order
-                      note: "Zittel (1879, emend.)"
+                      notes: "Zittel (1879, emend.)"
                       children:
                       - taxon: sphaeronidae
                       - taxon: glyptosphaeridae
@@ -359,15 +359,18 @@
         - taxon: sulcatum_aurivillius_1892
           synonyms:
           - taxon: sulcatum_aurivillius_1892
-            parent: scalpellum
+            parents:
+            - taxon: scalpellum
         - taxon: procerum_aurivillius_1892
           synonyms:
           - taxon: procerum_aurivillius_1892
-            parent: scalpellum
+            parents:
+            - taxon: scalpellum
         - taxon: cylindricum_aurivillius_1892
           synonyms:
           - taxon: cylindricum_aurivillius_1892
-            parent: scalpellum
+            parents:
+            - taxon: scalpellum
         - taxon: octogona_richter_1930
         - taxon: grayae_bather_1915
         - taxon: ansticei_bather_1915
@@ -519,7 +522,7 @@
         children:
         - taxon: bigsbyi_billings_1857
           type: true
-          synonyns:
+          synonyms:
           - taxon: bigsbyi_billings_1857
             parents:
             - taxon: cyclaster_billings_1857
@@ -708,7 +711,7 @@
       taxon: echinodermata
       children:
       - taxon: haplozoa
-        chldren:
+        children:
         - taxon: cyamoidea
           children:
           - children:
@@ -815,7 +818,7 @@
                   - taxon: withersi_gill_caster_1960
                     provisional: true
                     new: true
-                - rutroclypeus:
+                - taxon: rutroclypeus
                   quoted: true
                   children:
                   - taxon: globulus_dehm_1934
@@ -946,8 +949,8 @@
     - taxon: echinozoa
       children:
       - taxon: camptostromatoidea
-        correct:
-        - taxon: camptostromoidea
+        corrected:
+          taxon: camptostromoidea
         children:
         - taxon: camptostromatidae
           new: true
@@ -1136,7 +1139,8 @@
               - USGD 3303
           - openTaxon: astrocystites-sp_webby_1968
             specimens:
-              unknowntype: USGD 3304
+              unknowntypes:
+              - USGD 3304
 1969_robison_sprinkle:
   taxonomies:
   - taxon: echinodermata
@@ -1205,7 +1209,7 @@
           new: true
           synonyms:
           - taxon: lepidocystoidea
-            reason: re-ranked
+            notes: re-ranked
           children:
           - taxon: lepidocystis
             children:
@@ -1222,7 +1226,7 @@
                 - MCZ 591  # ten specimens from SH-1
                 - MCZ 592  # three specimens from EM-1
                 - MCZ 593  # many new unstudied specimens from SH-2
-            - cfTaxoon: wanneri_foerste_1938
+            - cfTaxon: wanneri_foerste_1938
               new: true
               specimens:
                 unknowntypes:
@@ -1375,7 +1379,7 @@
                 - taxon: longidactylus_walcott_1886
                   parents:
                   - taxon: eocrinus
-                  note: specimen provisionally assigned to this species
+                  notes: specimen provisionally assigned to this species
                   pars: true
                   auth: [Ressler]
                   year: 1939
@@ -1648,7 +1652,7 @@
           - openTaxon: eocrinoidea-indeterminate-family-2_sprinkle_1973
             children:
             - taxon: cambrocrinus
-              note: Initially assigned to Eocrinidae, details unclear
+              notes: Initially assigned to Eocrinidae, details unclear
               children:
               - taxon: regularis_orłowski_1968
                 type: true
@@ -1705,7 +1709,7 @@
             - taxon: cardiocystites
               moved:
                 openTaxon: eocrinoidea-uncertain-family_ubaghs_1967b
-              chidren:
+              children:
               - taxon: bohemicus_barrande_1887_cardiocystites
                 type: true
                 specimens:
@@ -1820,7 +1824,7 @@
               provisional: true
               notes: "very questionably referred to Blastoidocrinus"
               specimens:
-                holotype: 610
+                holotype: "610"
                 paratypes:
                 - 611a
                 - 611b
@@ -1916,7 +1920,7 @@
         provisional: true
         altPlacements:
         - taxon: blastozoa
-    - echinozoa:
+    - taxon: echinozoa
       children:
       - taxon: edrioblastoidea
         moved:
@@ -2984,7 +2988,7 @@
         children:
         - taxon: conollia
           new: true
-          chilren:
+          children:
           - taxon: staffordi_domínguez alonso_1999
             type: true
             new: true
@@ -3323,7 +3327,7 @@
           new: true
           synonyms:
           - taxon: ampheristocystis
-            modifiers: nomen nudum
+            modifier: nomen nudum
             citation:
               authors:
               - frest
@@ -3333,18 +3337,19 @@
                 International B44
               content: 2097
           - taxon: ampheristocystis
-            modifiers: nomen nudum
+            modifier: nomen nudum
             citation:
-            - frest
-            - brett
-            - witzke
-            year: 1999
-            source: |
-              "Caradocian-Gedinnian echinoderm associations of central and
-              eastern North America. In Paleocommunity Analysis: A
-              Silurian-Lower Devonian Example, Boucot AJ, Lawson JD (eds).
-              Cambridge University Press: Cambridge; 638–783."
-            content: pp. 728, 729
+              authors:
+              - frest
+              - brett
+              - witzke
+              year: 1999
+              source: |
+                "Caradocian-Gedinnian echinoderm associations of central and
+                eastern North America. In Paleocommunity Analysis: A
+                Silurian-Lower Devonian Example, Boucot AJ, Lawson JD (eds).
+                Cambridge University Press: Cambridge; 638–783."
+              content: pp. 728, 729
           children:
           - taxon: concentricus_frest_2005
             diagnosis: |
@@ -3387,7 +3392,7 @@
         synonyms:
         - openTaxon: eocrinoidea-unnamed-order-1_sprinkle_1973
         children:
-        - tacon: eocrinidae
+        - taxon: eocrinidae
           emended: true
           diagnosis: |
             Calyx plates numerous, commonly irregularly arranged, but in very
@@ -4128,9 +4133,9 @@
             type: true
           - taxon: spencensis_wen.r_babcock_peng.j_robison_2019
             new: true
-            specimens:
-              holotype: [KUMIP 49294A, KUMIP 49294B]
-              paratypes:
+            # specimens:
+              # holotype: [KUMIP 49294A, KUMIP 49294B]
+              # paratypes:
 2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler:
   taxonomies:
   - taxon: crinoidea
@@ -4318,8 +4323,7 @@
             - taxon: glenocrinus
             - taxon: titanocrinus
       - children:
-        - taxon: lloydi_sprinkle_1985
-          as: totiglobus
+        - taxon: lloydi_sprinkle_1985 # As "totiglobus"
         - taxon: pseudedriophus
       - bracket: blastozoa
         children:
@@ -4443,7 +4447,7 @@
             - openTaxon: cambraster-sp_jell_sprinkle_2021
               new: true
               specimens:
-                unknowntype:
+                unknowntypes:
                 - QMF59647
                 - ...
                 - QMF59653
@@ -4456,7 +4460,7 @@
             - openTaxon: kailidiscus-sp_jell_sprinkle_2021
               new: true
               specimens:
-                unknowntype:
+                unknowntypes:
                 - QMF59654
                 - ...
                 - QMF59668
@@ -4511,7 +4515,7 @@
             children:
             - taxon: cambrocrinus
           - taxon: ascocystitidae
-            childern:
+            children:
             - taxon: ascocystites
 2022_zamora_rahman_sumrall_gibson_thompson:
   taxonomies:

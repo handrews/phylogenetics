@@ -48,7 +48,7 @@ $defs:
         taxonomies:
           type: array
           items:
-            $ref: "#/$defs/taxonomyTree"
+            $ref: "#/$defs/tree"
         phylogenies:
           type: array
           items:
@@ -264,36 +264,7 @@ $defs:
         type: [string, "null"]
         pattern: ^[A-Za-z][a-zæ-]*$
       rank:
-        type: string
-        enum:
-        - Domain
-        - Kingdom
-        - Subkingdom
-        - Superphylum
-        - Phylum
-        - Subphylum
-        - Infraphylum
-        - Superclass
-        - Class
-        - Subclass
-        - Infraclass
-        - Superorder
-        - Order
-        - Suborder
-        - Superfamily
-        - Family
-        - Subfamily
-        - genus
-        - subgenus
-        - species
-        - subspecies
-        - variety
-        - Branch
-        - Grade
-        - Clade
-        - Plesion
-        - Scion
-        - Unranked
+        $ref: phylogeny#/$defs/rank
       authority:
         $ref: "#/$defs/authority"
       auth:
@@ -326,6 +297,37 @@ $defs:
         default: false
       notes:
         type: string
+  rank:
+    type: string
+    enum:
+    - Domain
+    - Kingdom
+    - Subkingdom
+    - Superphylum
+    - Phylum
+    - Subphylum
+    - Infraphylum
+    - Superclass
+    - Class
+    - Subclass
+    - Infraclass
+    - Superorder
+    - Order
+    - Suborder
+    - Superfamily
+    - Family
+    - Subfamily
+    - genus
+    - subgenus
+    - species
+    - subspecies
+    - variety
+    - Branch
+    - Grade
+    - Clade
+    - Plesion
+    - Scion
+    - Unranked
   taxon:
     $ref: "#/$defs/taxonBasic"
     unevaluatedProperties: false
@@ -337,6 +339,8 @@ $defs:
       synonym:
         type: string
       reason:
+        type: string
+      bracket:
         type: string
   tree:
     $id: tree
@@ -351,6 +355,15 @@ $defs:
       new:
         type: boolean
         default: false
+      pars:
+        type: boolean
+        default: false
+      provisional:
+        type: boolean
+        default: false
+      questionable:
+        type: boolean
+        default: false
       pages:
         type: array
         items:
@@ -362,17 +375,29 @@ $defs:
       children:
         type: array
         items:
-          $dynamicRef: tree
-      notes:
+          $ref: tree
+      bracket:
         type: string
-  taxonomyTree:
-    $id: taxonomyTree
-    $dynamicAnchor: tree
-    $ref: tree
-    properties:
-      # TODO: Something is off here, dup field?
       modifier:
         type: string
+      citation:
+        type: object
+        required: [source]
+        properties:
+          authors:
+            type: array
+            items:
+              type: string
+          source:
+            type: string
+          year:
+            type: number
+          content:
+            type: [number, string]
+        additionalProperties: false
+      notes:
+        type: string
+      # TODO: Something is off here, dup field?
       quoted:
         type: boolean
         default: false
@@ -389,23 +414,23 @@ $defs:
       parents:
         type: array
         items:
-          $ref: taxonomyTree
+          $ref: tree
       synonyms:
         type: array
         items:
-          $ref: taxonomyTree
+          $ref: tree
       non:
         type: array
         items:
-          $ref: taxonomyTree
+          $ref: tree
       moved:
-        $ref: taxonomyTree
+        $ref: tree
       corrected:
-        $ref: taxonomyTree
+        $ref: tree
       or:
         type: array
         items:
-          $ref: taxonomyTree
+          $ref: tree
       affTaxon:
         type: string
       cfTaxon:
@@ -415,7 +440,9 @@ $defs:
       altPlacements:
         type: array
         items:
-          $ref: taxonomyTree
+          $ref: tree
+      rank:
+        $ref: phylogeny#/$defs/rank
       auth:
         $comment: overrides taxon field
         type: array
@@ -429,21 +456,6 @@ $defs:
         maximum: 2030 # Fragile!  But helpful for now.  Apologies to the future.
       authority:
         $ref: "phylogeny#/$defs/authority"
-    unevaluatedProperties: false
-  phylogeny:
-    type: object
-    required: [tree]
-    additionalProperties: false
-    properties:
-      treeType:
-        type: string  # Enum?  Meh.
-      tree:
-        $ref: phylogenyTree
-  phylogenyTree:
-    $id: phylogenyTree
-    $dynamicAnchor: tree
-    $ref: tree
-    properties:
       outgroup:
         type: boolean
         default: false
@@ -456,6 +468,15 @@ $defs:
         items:
           type: string
     unevaluatedProperties: false
+  phylogeny:
+    type: object
+    required: [tree]
+    additionalProperties: false
+    properties:
+      treeType:
+        type: string  # Enum?  Meh.
+      tree:
+        $ref: tree
   specimen:
     type: object
     properties:
@@ -467,12 +488,21 @@ $defs:
         type: string
       neotype:
         type: string
+      syntype:
+        type: string
     additionalProperties:
       type: array
       items:
-        type: string
+        type: [string, array]
+        items:
+          type: string
     propertyNames:
       enum:
+      - holotype
+      - allotype
+      - lectotype
+      - neotype
+      - syntype
       - hypotypes
       - kleptotypes
       - paralectotypes
@@ -481,7 +511,7 @@ $defs:
       - syntypes
       - topotypes
       - additional
-      - unknown
+      - unknowntypes
   simpleDate:
     type: string
     pattern: ^[12][7890]\d\d-[01]\d-[0123]\d$
