@@ -340,6 +340,14 @@ barroubiocystis:
   name: Barroubiocystis
   authority:
     source: 1999_ubaghs
+bassleri_sprinkle_1982g:
+  name: bassleri
+  authority:
+    source: 1982g_sprinkle
+bassleri_sprinkle_1982h:
+  name: bassleri
+  authority:
+    source: 1982h_sprinkle
 batheri_ruedemann_1925:
   name: batheri
   auth: [ruedemann]
@@ -775,6 +783,10 @@ conolliidae:
   rank: Family
   auth: [domínguez alonso]
   year: 1999
+cooki_sprinkle_1982:
+  name: cooki
+  authority:
+    source: 1982g_sprinkle
 cooperdiscus:
   name: Cooperdiscus
   authority:
@@ -1075,6 +1087,10 @@ deani_ubaghs_1994:
   name: deani
   auth: [ubaghs]
   year: 1994
+deckeri_sinclair_1945:
+  name: deckeri
+  auth: [Sinclair]
+  year: 1945
 delticus_sumrall_sprinkle_guensburg_1997:
   name: delticus
   authority:
@@ -1120,6 +1136,11 @@ dibrachycystis:
   name: Dibrachycystis
   auth: [zamora, smith.a.b]
   year: 2012
+dichoporita:
+  name: Dichoporita
+  rank: Order
+  authority:
+    source: 1899_jaekel
 dicksoni_billings_1857:
   name: dicksoni
   auth: [billings]
@@ -1607,6 +1628,17 @@ eumorphocystis:
   name: Eumorphocystis
   auth: [Branson, Peck]
   year: 1940
+eumorphocystidae:
+  name: Eumorphocystidae
+  rank: Family
+  auth: [Branson, Peck]
+  year: 1940
+eumorphocystoidea:
+  name: Eumorphocystoidea
+  rank: Superfamily
+  auth: [Branson, Peck]
+  year: 1940
+  notes: nom. transl., possibly in 1982_sprinkle(ed)?
 eustypocystis:
   name: Eustypocystis
   authority:
@@ -1632,6 +1664,10 @@ fayi_sprinkle_1973:
   name: fayi
   authority:
     source: 1973_sprinkle
+fayi_sprinkle_1982:
+  name: fayi
+  authority:
+    source: 1982g_sprinkle
 fillmorensis_guensburg_sprinkle_2003:
   name: fillmorensis
   authority:
@@ -1719,6 +1755,10 @@ globus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999:
   notes: nomen nudum
   authority:
     source: 1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y
+glyptocystella:
+  name: Glyptocystella
+  auth: [paul.c.r.c]
+  year: 1972
 glyptocystidae:
   name: Glyptocystidae
   rank: Family
@@ -1855,6 +1895,10 @@ goshutensis_sumrall_sprinkle_guensburg_1997:
   name: goshutensis
   authority:
     source: 1997_sumrall_sprinkle_guensburg
+graffhami_sprinkle_1982:
+  name: graffhami
+  authority:
+    source: 1982g_sprinkle
 granatum_mccoy_1846:
   name: granatum
   auth: [mccoy]
@@ -2018,6 +2062,10 @@ hemicystis:
   name: Hemicystis
   auth: [haekel]
   year: 1896
+hesperocystis:
+  name: Hesperocystis
+  auth: [Sinclair]
+  year: 1945
 heterostelea:
   name: Heterostelea
   rank: Order
@@ -2378,6 +2426,10 @@ lobocarpus:
   name: Lobocarpus
   authority:
     source: 1999_ubaghs
+loeblichi_bassler_1943:
+  name: loeblichi
+  auth: [bassler]
+  year: 1943
 longidactylus_walcott_1886:
   name: longidactylus
   auth: [walcott]
@@ -2612,6 +2664,10 @@ nodosus_hall_1864:
   name: nodosus
   auth: [Hall]
   year: 1864
+nodosus_westphal_1974:
+  name: nodosus
+  auth: [Westphal]
+  year: 1974
 noetlingi_redlich_1899:
   name: noetlingi
   auth: [Redlich]
@@ -2637,6 +2693,10 @@ oklahomacystis:
   name: Oklahomacystis
   auth: [parsley, Mintz]
   year: 1975
+oklahomensis_bassler_1950:
+  name: oklahomensis
+  auth: [bassler]
+  year: 1950
 ophiocistioidea:
   name: Ophiocistioidea
   auth: [Sollas]
@@ -2653,6 +2713,10 @@ ornata_ubaghs_1999:
   name: ornata
   authority:
     source: 1999_ubaghs
+ornatus_bassler_1943:
+  name: ornatus
+  auth: [bassler]
+  year: 1943
 orthida:
   name: Orthida
   rank: Order
@@ -2822,6 +2886,10 @@ pileus_hall_1866:
   name: pileus
   auth: [Hall]
   year: 1866
+pirocystella:
+  name: Pirocystella
+  authority:
+    source: 1982g_sprinkle
 placocystella:
   name: Placocystella
   auth: [Rennie]
@@ -2881,6 +2949,11 @@ pleurocystites:
   name: Pleurocystites
   auth: [Neumayr]
   year: 1899
+pleurocystitidae:
+  name: Pleurocystitidae
+  rank: Family
+  auth: [neumayr]
+  year: 1889
 pleurozonida:
   name: Pleurozonida
   rank: Order
@@ -2916,6 +2989,10 @@ praedicta_bassler_1950:
   name: praedicta
   auth: [bassler]
   year: 1950
+praepleurocystis:
+  name: Praepleurocystis
+  auth: [paul.c.r.c]
+  year: 1967
 primaevus_billings_1868:
   name: primaevus
   auth: [billings]
@@ -3025,6 +3102,10 @@ pyriformis_parsley_sprinkle_1982:
   year: 1982
   notes: in 1982a_parsley
 ###################### Q
+quadrocystis:
+  name: Quadrocystis
+  authority:
+    source: 1982g_sprinkle
 ###################### R
 radiata_sprinkle_1973:
   name: radiata
@@ -3070,6 +3151,10 @@ reesei_sprinkle_collins.d_2006:
   name: reesei
   authority:
     source: 2006_sprinkle_collins.d
+regnellicystis:
+  name: Regnellicystis
+  auth: [bassler]
+  year: 1950
 regularis_orłowski_1968:
   name: regularis
   auth: [orłowski]
@@ -3265,6 +3350,10 @@ simplex_barrande_1887:
   name: simplex
   auth: [barrande]
   year: 1887
+sinclairi_sprinkle_1982:
+  name: sinclairi
+  authority:
+    source: 1982g_sprinkle
 sinclairocystis:
   name: Sinclairocystis
   auth: [bassler]
@@ -3363,6 +3452,10 @@ sprinkleoglobus:
   name: Sprinkleoglobus
   auth: [zamora, guensburg, sprinkle]
   year: 2024
+squamosus_billings_1854:
+  name: squamosus
+  auth: [billings]
+  year: 1854
 squamosus_meek_worthen_1868:
   name: squamosus
   auth: [Meek, Worthen]
@@ -3403,6 +3496,10 @@ stephenensis_sprinkle_collins.d_2006:
   name: stephenensis
   authority:
     source: 2006_sprinkle_collins.d
+strabocystis:
+  name: Strabocystis
+  authority:
+    source: 1982g_sprinkle
 streptaster:
   name: Streptaster
   auth: [Hall]
@@ -3411,6 +3508,14 @@ striata_pander_1830:
   name: striata
   auth: [Pander]
   year: 1830
+strimplecystis:
+  name: Strimplecystis
+  auth: [bassler]
+  year: 1950
+strimplei_sprinkle_1982:
+  name: strimplei
+  authority:
+    source: 1982g_sprinkle
 stromatocystitida:
   name: Stromatocystitida
   rank: Order
@@ -3480,6 +3585,10 @@ taijiangensis_zhao.y.l_zhu.m.y_1994:
   name: taijiangensis
   authority:
     source: 1994_zhao.y.l_zhu.m.y
+tanaocystis:
+  name: Tanaocystis
+  authority:
+    source: 1982g_sprinkle
 tastudorum_jell_burrett_banks_1985:
   name: tastudorum
   auth: [jell, burrett, banks]
@@ -3632,6 +3741,10 @@ typicalis_bassler_1935:
   name: typicalis
   authority:
     source: 1935_bassler
+typicalis_bassler_1950:
+  name: typicalis
+  auth: [bassler]
+  year: 1950
 ###################### U
 ubaghsi_guensburg_sprinkle_2009:
   name: ubaghsi
@@ -3747,6 +3860,14 @@ warrenensis_james_1883:
   name: warrenensis
   auth: [James]
   year: 1883
+watkinsi_sprinkle_1982:
+  name: watkinsi
+  authority:
+    source: 1982g_sprinkle
+watkinsi_strimple_1948:
+  name: watkinsi
+  auth: [Strimple]
+  year: 1948
 watsonae_jell_burrett_banks_1985:
   name: watsonae
   auth: [jell, burrett, banks]

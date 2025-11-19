@@ -131,6 +131,8 @@ publications:
     name: Bulletin de la Société des sciences naturelles du Maroc
   sp-pub-harvard:
     name: Special Publication of the Museum of Comparative Zoology, Harvard University
+  stamm:
+    name: Stammesgeschichte der Pelmatozoen
   tableau:
     name: Tableau Encyclopédique et Méthodique des Trois Règnes de la Nature. Contenant l’Helminthologie, ou les Vers Infusoires, les Vers Intestins, les Vers Mollusques
   tableau-cuvier:
@@ -534,6 +536,14 @@ articles:
     - walcott
     identifiers:
       url: https://www.biodiversitylibrary.org/page/2056780
+  1899_jaekel:
+    book: stamm
+    pubDate:
+      year: 1899
+    authors:
+    - jaekel
+    identifiers:
+      url: https://www.google.com/books/edition/Stammesgeschichte_der_Pelmatozoen/cvdaAAAAQAAJ
   1900_bather:
     title: Part III — The Echinoderma"
     book: treatise-zoo
@@ -1089,7 +1099,7 @@ articles:
     - durham
     identifiers:
       jstor: 1301905
-  1967_jeffries_joysey_paul_ramsbottom:
+  1967_jeffries_joysey_paul.c.r.c_ramsbottom:
     title: "Chapter 21: Echinodermata: Pelmatozoa"
     book: fossil-record
     pages:
@@ -1100,11 +1110,11 @@ articles:
     authors:
     - jeffries
     - joysey
-    - paul
+    - paul.c.r.c
     - ramsbottom
     identifiers:
       url: https://archive.org/details/fossilrecord0000wbha/mode/2up
-  1968_paul:
+  1968_paul.c.r.c:
     title: Macrocystella Callaway, the earliest glyptocystitid cystoid
     journal: palaeontology
     volume: 11
@@ -1115,7 +1125,7 @@ articles:
     - 580
     - 600
     authors:
-    - paul
+    - paul.c.r.c
     identifiers:
       # alternate: https://zenodo.org/records/16064129
       url: https://www.biodiversitylibrary.org/page/49633102#page/356/mode/1up
@@ -1181,19 +1191,19 @@ articles:
     - mintz
     identifiers:
       jstor: 1302721
-  1971_paul:
+  1971_paul.c.r.c:
     title: Revision of the Holocystites fauna (Diploporita) of North America
     journal: fieldiana
     volume: 24
     authors:
-    - paul
+    - paul.c.r.c
     pubDate:
       year: 1971
       month: 9
       day: 29
     identifiers:
       url: https://www.biodiversitylibrary.org/bibliography/3412
-  1972_paul:
+  1972_paul.c.r.c:
     title: Morphology and function of exothecal pore-structures in Cystoids
     journal: palaeontology
     volume: 15
@@ -1204,7 +1214,7 @@ articles:
     pubDate:
       year: 1972
     authors:
-    - paul
+    - paul.c.r.c
     processDates:
       revised: 1971-05-06
   1973_sprinkle:

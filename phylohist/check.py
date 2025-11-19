@@ -28,7 +28,7 @@ def check_node(node, data, parent=[], tree_info=None):
     current = parent + [taxon_id]
 
     logger.debug(f'checking {current}')
-    if not (taxon := data['taxa'].get(taxon_id)):
+    if not (taxon := data['taxa'].get(taxon_id, {})):
       logger.error(f'Taxon "{taxon_id}" not found!')
 
     elif (
@@ -103,14 +103,19 @@ def build_expected_taxon(expected, taxon):
       for author_id in taxon['auth']:
         species_expected += f"_{author_id.lower()}"
       species_expected += f"_{taxon['year']}"
+      expected_set = {species_expected}
     else:
       source_id = taxon['authority']['source']
       idx = source_id.index('_')
       species_expected += f'_{source_id[idx+1:]}_{source_id[:4]}'
+      expected_set = {species_expected}
+      if idx == 5:
+        expected_set.add(species_expected + source_id[idx - 1])
+
     if 'originalParent' in taxon:
-      species_expected += f"_{taxon['originalParent']}"
-    logger.debug(f'...built {species_expected}')
-    return {species_expected}
+      expected_set = {e + f"_{taxon['originalParent']}" for e in expected_set}
+    logger.debug(f'...built {expected_set}')
+    return expected_set
 
   expected_set = {expected}
 
