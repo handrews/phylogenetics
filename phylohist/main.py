@@ -19,13 +19,28 @@ schema_catalog = jschon.create_catalog('2020-12')
 def main():
   # if len(sys.argv) > 1 and sys.argv[1] == 'convert':
   #   return convert()
+  top = None
+  bottom = None
+  try:
+    flag = sys.argv[2]
+    if flag == '-t':
+      top = sys.argv[3]
+    if flag == '-b':
+      bottom = sys.argv[3]
+    flag = sys.argv[4]
+    if flag == '-t':
+      top = sys.argv[5]
+    if flag == '-b':
+      bottom = sys.argv[5]
+  except (IndexError):
+    pass
 
   data = load_files()
   check_authors(data)
   sources = check_sources(data)
   check_taxa(data)
   if len(sys.argv) > 1:
-    check_trees(data, sources, sys.argv[1])
+    check_trees(data, sources, sys.argv[1], top=top, bottom=bottom)
   else:
     check_trees(data, sources)
 

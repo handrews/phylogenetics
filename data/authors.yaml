@@ -110,9 +110,9 @@ clarke.j.m:
 collins.d:
   family: Collins
   given: Desmond
-cong.p:
+cong.p.y:
   family: Cong
-  given: Peiyun
+  given: Pei-Yun
 cooper:
   family: Cooper
   given: G. Arthur
@@ -196,6 +196,9 @@ grant:
 guensburg:
   family: Guensburg
   given: Thomas E.
+guo.j:
+  family: Guo
+  given: Jin
 guo.q.j:
   family: Guo
   given: Qing-Jun
@@ -304,6 +307,9 @@ leske:
   given: Nathanael Gottfried
   birth: 1751
   death: 1786
+li.y.j:
+  family: Li
+  given: Yu-Jing
 liñán:
   family: Liñán
   given: Eladio
@@ -455,6 +461,9 @@ schuchert:
   given: Charles
   birth: 1858
   death: 1942
+selden:
+  family: Selden
+  given: Paul A.
 smith.a.b:
   family: Smith
   given: Andrew B.

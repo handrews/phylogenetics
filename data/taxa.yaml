@@ -933,6 +933,10 @@ cuniculocystis:
   name: Cuniculocystis
   auth: [sprinkle, Wahlman]
   year: 1994
+cupuliformis_zhao.j_guo.j_selden_cong.p.y_li.y.j_2022:
+  name: cupuliformis
+  authority:
+    source: 2022_zhao.j_guo.j_selden_cong.p.y_li.y.j
 curteocrinus:
   name: Curteocrinus
   authority:
@@ -1647,9 +1651,9 @@ everndeni_durham_1967:
   name: everndeni
   authority:
     source: 1967c_durham
-extenuatus_zhao.j_rahman_zamora_chen.a_cong.p_2022:
+extenuatus_zhao.j_rahman_zamora_chen.a_cong.p.y_2022:
   name: extenuatus
-  auth: [zhao.j, rahman, zamora, chen.a, cong.p]
+  auth: [zhao.j, rahman, zamora, chen.a, cong.p.y]
   year: 2022
 ###################### F
 faberi_miller.s.a_1894:
@@ -2289,6 +2293,10 @@ kukersiana_hecker_1940:
   name: kukersiana
   auth: [Hecker]
   year: 1940
+kunmingeocrinus:
+  name: Kunmingeocrinus
+  authority:
+    source: 2022_zhao.j_guo.j_selden_cong.p.y_li.y.j
 ###################### L
 laevis_pander_1830:
   name: laevis

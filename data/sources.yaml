@@ -121,6 +121,8 @@ publications:
     name: Palaeogeography, Palaeoclimatology, Palaeoecology
   procrsocb:
     name: Proceedings of the Royal Society B
+  pworld:
+    name: Palaeoworld
   science-new-series:
     name: Science (New Series)
   short-2nd-cambrian:
@@ -1861,7 +1863,7 @@ articles:
       Guensburg and Sprinkle (1994) subdivide the Isorophida
       into only two families without subdivision into
       suborders — Agelacrinitidae (incl. the Hemicystitidae)
-      and the ebetodiscidae (incl. the Pyrgocystidae).
+      and the Lebetodiscidae (incl. the Pyrgocystidae).
     - |
       Here, we follow the classification by
       Guensburg & Sprinkle (1994), but classify the Hemicystitidae
@@ -2299,7 +2301,27 @@ articles:
     - thompson
     identifiers:
       doi: 10.1098/rspb.2021.2733
-  2022_zhao.j_rahman_zamora_chen.a_cong.p:
+  2022_zhao.j_guo.j_selden_cong.p.y_li.y.j:
+    title: A new eocrinoid from the Guanshan Biota (Cambrian Series 2, Stage 4), with implication of the development of different attachment modes in early Cambrian
+    journal: pworld
+    volume: 31
+    pages:
+    - 185
+    - 193
+    pubDate:
+      year: 2022
+    processDates:
+      received: 2021-02-26
+      revised: 2021-07-29
+      accepted: 2021-08-04
+      online: 2021-08-12
+    authors:
+    - zhao.j
+    - guo.j
+    - selden
+    - cong.p.y
+    - li.y.j
+  2022_zhao.j_rahman_zamora_chen.a_cong.p.y:
     title: The first edrioasteroid echinoderm from the lower Cambrian Chengjiang biota of Yunnan Province, China
     journal: papersinpalaeo
     number: 8
@@ -2313,7 +2335,7 @@ articles:
     - rahman
     - zamora
     - chen.a
-    - cong.p
+    - cong.p.y
     processDates:
       received: 2022-01-21
       revised: 2022-06-07

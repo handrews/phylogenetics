@@ -266,9 +266,14 @@ def check_taxa(data):
   logger.info(f"...taxa processed.")
 
 
-def print_tree(node, data, tree_info, indent=''):
+def print_tree(node, data, tree_info, indent='', on=True, top=None, bottom=None):
   if not indent:
     print(f'PAPER: {tree_info[1]}')
+    if top is not None:
+      on = False
+
+  logger.debug(f'top "{top}" bottom "{bottom}"')
+  found_name = None
   if (taxon_id := node.get('taxon')):
     taxon = data['taxa'][taxon_id]
     if not (name := taxon.get('name')):
@@ -276,6 +281,10 @@ def print_tree(node, data, tree_info, indent=''):
         name = data['taxa'][alt]['name']
       else:
         name = '[** altRank of no taxon ***]'
+    else:
+      found_name = name
+    if name is not None and taxon.get('rank') == 'subgenus':
+      name = f'({name})'
   else:
     if (taxon_id := node.get('openTaxon')):
       name = f'[{taxon_id}]'
@@ -289,12 +298,27 @@ def print_tree(node, data, tree_info, indent=''):
   if node.get('new'):
     name += '*'
 
-  print(f'{indent}{name}')
-  new_indent = indent + '  '
-  for child in node.get('children', []):
-    print_tree(child, data, tree_info, new_indent)
+  logger.debug(f'found name "{found_name}"')
+  if top is not None and found_name == top:
+    on = True
 
-def check_trees(data, sources, taxon=None):
+  new_indent = indent
+  if on:
+    print(f'{indent}{name}')
+  new_indent += '  '
+
+  if bottom is not None and found_name == bottom:
+    on = False
+
+  for child in node.get('children', []):
+    print_tree(child, data, tree_info, new_indent, top=top, bottom=bottom, on=on)
+
+  if bottom is not None and found_name == bottom:
+    on = True
+  if top is not None and found_name == top:
+    on = False
+
+def check_trees(data, sources, taxon=None, top=None, bottom=None):
   logger.info(f"Processing {len(data['trees'])} opinions...")
   logger.info(f'...searching for taxon "{taxon}"')
   opinions = set()
@@ -327,7 +351,7 @@ def check_trees(data, sources, taxon=None):
     )
 
     for tree in sorted(found_trees):
-      print_tree(tree_lookup[tree[0]], data, tree)
+      print_tree(tree_lookup[tree[0]], data, tree, top=top, bottom=bottom)
       print()
 
   if (difference := sources - opinions):

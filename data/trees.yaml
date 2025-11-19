@@ -4591,7 +4591,28 @@
       - taxon: helicoplacus
         bracket: helicoplacoidea
         outgroup: true
-2022_zhao.j_rahman_zamora_chen.a_cong.p:
+2022_zhao.j_guo.j_selden_cong.p.y_li.y.j:
+  taxonomies:
+  - taxon: echinodermata
+    authority:
+      source: 1734_klein
+    children:
+    - taxon: blastozoa
+      children:
+      - taxon: eocrinoidea
+        children:
+        - taxon: gogiida
+          children:
+          - taxon: eocrinidae
+            emended: true
+            children:
+            - taxon: kunmingeocrinus
+              new: true
+              children:
+              - taxon: cupuliformis_zhao.j_guo.j_selden_cong.p.y_li.y.j_2022
+                type: true
+                new: true
+2022_zhao.j_rahman_zamora_chen.a_cong.p.y:
   taxonomies:
   - taxon: echinodermata
     children:
@@ -4608,7 +4629,7 @@
             moved:
               taxon: totiglobus
               quoted: true
-          - taxon: extenuatus_zhao.j_rahman_zamora_chen.a_cong.p_2022
+          - taxon: extenuatus_zhao.j_rahman_zamora_chen.a_cong.p.y_2022
             new: true
             specimens:
               holotype: YKLP 13397
