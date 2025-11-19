@@ -392,6 +392,8 @@ $defs:
             type: string
           year:
             type: number
+          disambiguator:
+            type: string
           content:
             type: [number, string]
         additionalProperties: false

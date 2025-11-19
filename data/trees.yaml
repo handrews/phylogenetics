@@ -1977,177 +1977,177 @@
             (perpendicular to ambulacral axis); ambulacral tunnel narrow and
             high; coverplate passage- ways nearly vertical; peripheral rim
             plates squamose.
-            new: true
-            children:
+          new: true
+          children:
+          - taxon: lebetodiscus
+            non:
+            - taxon: agelacrinites
+              citation:
+                year: 1842
+                authors:
+                - vanuxem
+                source: Nat. Hist. New York, pt. IV, Geology, 3:158
+                content: p. 158 fig. 80
+            synonyms:
+            - taxon: agelacrinites
+              citation:
+                year: 1857
+                authors:
+                - billings
+                source: "Geol. Surv, Canada, Rept. Prog. 1853-1856: 294-295"
+            - taxon: agelacrinites
+              citation:
+                year: 1858
+                disambiguator: b
+                authors:
+                - billings
+                source: Geol. Surv. Canada, Fig. and Descriptions of Canadian Organic Remains, dec. 3:84
+                content: p. 84, pl. 8, fig. 3, 3a, 4, 4a.
+            - taxon: agelacrinites
+              citation:
+                year: 1881
+                authors:
+                - grant
+                source: Ottawa Field Naturalists' Club, Trans. 2
+                content: pl. 1, fig. 9.
+            - taxon: agelacrinites
+              pars: true # partim
+              citation:
+                year: 1887
+                authors:
+                - barrande
+                source: Systeme Silurien du centre de la Boheme, Prague, pt. 1, 7(1)
+                content: 55, 83
+            - taxon: agelacrinus_vanuxem_1842
+              citation:
+                year: 1896
+                authors:
+                - haekel
+                source: Die Amphorideen und Cystoideen, Leipzig, 1
+                content: pl. 3 fig. 29
+            - taxon: agelacrinites
+              pars: true # partim
+              citation:
+                year: 1899
+                authors:
+                - jaekel
+                source: Starnmes- geschichte der Pelmatozoen, Bd. 1, Thecoidea und Cys- toidea, Berlin
+                content: 50, pl. 2 fig. 2
+            - taxon: agelacrinites
+              citation:
+                year: 1901
+                authors:
+                - clarke.j.m
+                source: New York State Mus. Bull. 49(2)
+                content: 191, text fig. 3
             - taxon: lebetodiscus
-              non:
-              - taxon: agelacrinites
-                citation:
-                  year: 1842
-                  authors:
-                  - vanuxem
-                  source: Nat. Hist. New York, pt. IV, Geology, 3:158
-                  content: p. 158 fig. 80
-              synonyms:
-              - taxon: agelacrinites
-                citation:
-                  year: 1857
-                  authors:
-                  - billings
-                  source: Geol. Surv, Canada, Rept. Prog. 1853-1856: 294-295
-              - taxon: agelacrinites
-                citation:
-                  year: 1858
-                  disambiguator: b
-                  authors:
-                  - billings
-                  source: Geol. Surv. Canada, Fig. and Descriptions of Canadian Organic Remains, dec. 3:84
-                  content: p. 84, pl. 8, fig. 3, 3a, 4, 4a.
-              - taxon: agelacrinites
-                citation:
-                  year: 1881
-                  authors:
-                  - grant
-                  source: Ottawa Field Naturalists' Club, Trans. 2
-                  content: pl. 1, fig. 9.
-              - taxon: agelacrinites
-                pars: true # partim
-                citation:
-                  year: 1887
-                  authors:
-                  - barrande
-                  source: Systeme Silurien du centre de la Boheme, Prague, pt. 1, 7(1)
-                  content: 55, 83
-              - taxon: agelacrinus_vanuxem_1842
-                citation:
-                  year: 1896
-                  authors:
-                  - haekel
-                  source: Die Amphorideen und Cystoideen, Leipzig, 1
-                  content: pl. 3 fig. 29
-              - taxon: agelacrinites
-                pars: true # partim
-                citation:
-                  year: 1899
-                  authors:
-                  - jaekel
-                  source: Starnmes- geschichte der Pelmatozoen, Bd. 1, Thecoidea und Cys- toidea, Berlin
-                  content: 50, pl. 2 fig. 2
-              - taxon: agelacrinites
-                citation:
-                  year: 1901
-                  authors:
-                  - clarke.j.m
-                  source: New York State Mus. Bull. 49(2)
-                  content: 191, text fig. 3
-              - taxon: lebetodiscus
-                new: true
-                citation:
-                  year: 1901
-                  authors:
-                  - bather
-                  source: GeoI. Mag. (n.s.) , dec. 5, 5:
-                  content: 543·550, pl. 25, fig. 1
+              new: true
+              citation:
+                year: 1901
+                authors:
+                - bather
+                source: GeoI. Mag. (n.s.) , dec. 5, 5
+                content: 543·550, pl. 25, fig. 1
+            diagnosis: |
+              Lehetodiscidae with: domal theca, oral surface highly convex;
+              oral region with secondary oral plates; hydropmre structure
+              formed by enlarged adradial end of second prox· imal posterior
+              coverplate of ambulacrum V and two or three modified
+              interambulacrals; amhulacra curve contrasolarly; eoverplate
+              passageways large, lateral depression series present.
+            children:
+            - taxon: dicksoni_billings_1857
+              type: true
               diagnosis: |
-                Lehetodiscidae with: domal theca, oral surface highly convex;
-                oral region with secondary oral plates; hydropmre structure
-                formed by enlarged adradial end of second prox· imal posterior
-                coverplate of ambulacrum V and two or three modified
-                interambulacrals; amhulacra curve contrasolarly; eoverplate
-                passageways large, lateral depression series present.
-              children:
-              - taxon: dicksoni_billings_1857
-                type: true
-                diagnosis: |
-                  "A Lebetodiscus with: oral region having four secondary oral
-                  plates which lie between perradial parts of primary orals
-                  and shared coverplates; hydropore structure formed by second
-                  proximal posterior coverplate of ambulacrum V and three
-                  (two r ) modified interambulacral plates; interambulacral
-                  plates large, thick, and bearing one or two rows of
-                  depressions along distal extremity of external part of
-                  plates."
-            - taxon: foerstediscus
+                "A Lebetodiscus with: oral region having four secondary oral
+                plates which lie between perradial parts of primary orals
+                and shared coverplates; hydropore structure formed by second
+                proximal posterior coverplate of ambulacrum V and three
+                (two r ) modified interambulacral plates; interambulacral
+                plates large, thick, and bearing one or two rows of
+                depressions along distal extremity of external part of
+                plates."
+          - taxon: foerstediscus
+            diagnosis: |
+              "Lebetodiscidae with: highly convex domal theca; oral area
+              with several secondary orals; hydropore structure formed by
+              first three coverplates of ambulacrum Y and one or more
+              modified interambulacral plates; ambulacra curved, I·Y solar;
+              coverplate passageways large, external foramina elliptical;
+              coverplate lateral depression series present."
+            children:
+            - taxon: grandis_bassler_1935
+              type: true
               diagnosis: |
-                "Lebetodiscidae with: highly convex domal theca; oral area
-                with several secondary orals; hydropore structure formed by
-                first three coverplates of ambulacrum Y and one or more
-                modified interambulacral plates; ambulacra curved, I·Y solar;
-                coverplate passageways large, external foramina elliptical;
-                coverplate lateral depression series present."
-              children:
-              - taxon: grandis_bassler_1935
-                type: true
-                diagnosis: |
-                  "A Foerstediscus with: several secondary oral plates;
-                  hydropore structure formed primarily by four plates;
-                  anus near center of interambulacrum 5; thecal plates
-                  covered with large nodes."
-              - taxon: splendens_bassler_1936
-                diagnosis: |
-                  "A Foerstediscus with: oral region including 12 secondary
-                  orals; hydropore formed by three ambulacral and four
-                  interambulacral elements; thecal plates smooth."
-              - taxon: solitarius_bell.b.m_1976
-                new: true
-                diagnosis: |
-                  "A Foerstediscus with: four or more secondary oral plates;
-                  hydropore structure formed by four plates; peri. proet near
-                  the oral area in proximal part of mteramhu. lacrum 5;
-                  thecal plates smooth,"
-            - taxon: belochthus
+                "A Foerstediscus with: several secondary oral plates;
+                hydropore structure formed primarily by four plates;
+                anus near center of interambulacrum 5; thecal plates
+                covered with large nodes."
+            - taxon: splendens_bassler_1936
+              diagnosis: |
+                "A Foerstediscus with: oral region including 12 secondary
+                orals; hydropore formed by three ambulacral and four
+                interambulacral elements; thecal plates smooth."
+            - taxon: solitarius_bell.b.m_1976
               new: true
               diagnosis: |
-                "Lebetodiscidae with: domal theca; oral area with at least
-                several large secondary oral plates; large primary oral plates
-                externally sagittate; hydropore structure in- eluding at least
-                two ambulacrals and one enlarged inter- ambulacral plate;
-                ambulacra straight; coverplate passage- ways oblique,
-                elliptical external foramina narrow."
-              children:
-              - taxon: orthokolus_bell.b.m_1976
-                type: true
-                new: true
-                diagnosis: |
-                  "A Belochthus with: oral area with three large secondary
-                  oral plates; ambulacra moderately short, wide, and straight
-                  distally separated from proximal margin of peripheral rim
-                  by numerous interambulacral plates; interambulacral areas
-                  large; periproct near center of posterior interambulacrum;
-                  thecal plates smooth."
-            - taxon: streptaster
+                "A Foerstediscus with: four or more secondary oral plates;
+                hydropore structure formed by four plates; peri. proet near
+                the oral area in proximal part of mteramhu. lacrum 5;
+                thecal plates smooth,"
+          - taxon: belochthus
+            new: true
+            diagnosis: |
+              "Lebetodiscidae with: domal theca; oral area with at least
+              several large secondary oral plates; large primary oral plates
+              externally sagittate; hydropore structure in- eluding at least
+              two ambulacrals and one enlarged inter- ambulacral plate;
+              ambulacra straight; coverplate passage- ways oblique,
+              elliptical external foramina narrow."
+            children:
+            - taxon: orthokolus_bell.b.m_1976
+              type: true
+              new: true
               diagnosis: |
-                "Lebetodiscidae with: domal theca, convex oral surface
-                dominated by high ambulacral ridges; oral region including
-                secondary oral plates; hydropore structure formed by one large
-                interambulacral plate and two ambulacral coverplates;
-                amhulacra contrasolarly curved, long, wide, and high;
-                coverplates columnar, forming high, steep·sided ambulacral
-                ridges which commonly obscure all other ex· ternal thecal
-                structures; large conical spines mounted in basins atop
-                ambulacral coverplates; coverplate passageways open externally
-                along most of their length; interambulacrals squamose and
-                imbricate; periproct plates elongate, possibly hearing spines."
-              children:
-              - taxon: vorticellatus_hall_1866
-                type: true
-                diagnosis: |
-                  "A Streptaster with: secondary oral plates apparently
-                  variable; hydropore structure formed by second and third
-                  proximal posterior coverplates of ambulacrum V and one large
-                  interambulacral; ambulacra highly curved, distal tips near
-                  adjacent ambulacra; spines atop ambulacral coverplates
-                  varying in size independently of variations in diameter of
-                  underlying columnar coverplates; spine basins developed on
-                  upper ends of coverplates; interambulacral plates varying
-                  in shape, each with large external node; peripheral rim
-                  commonly reflexed under upper side of theca: interambulacrals
-                  and rim plates having external nodes or protuberances which
-                  vary in shape, size, and frequency."
-                syononyms:
-                - taxon: vorticellata_hall_1866
-                  parents:
-                  - taxon: agelacrinus_hall_1866
+                "A Belochthus with: oral area with three large secondary
+                oral plates; ambulacra moderately short, wide, and straight
+                distally separated from proximal margin of peripheral rim
+                by numerous interambulacral plates; interambulacral areas
+                large; periproct near center of posterior interambulacrum;
+                thecal plates smooth."
+          - taxon: streptaster
+            diagnosis: |
+              "Lebetodiscidae with: domal theca, convex oral surface
+              dominated by high ambulacral ridges; oral region including
+              secondary oral plates; hydropore structure formed by one large
+              interambulacral plate and two ambulacral coverplates;
+              amhulacra contrasolarly curved, long, wide, and high;
+              coverplates columnar, forming high, steep·sided ambulacral
+              ridges which commonly obscure all other ex· ternal thecal
+              structures; large conical spines mounted in basins atop
+              ambulacral coverplates; coverplate passageways open externally
+              along most of their length; interambulacrals squamose and
+              imbricate; periproct plates elongate, possibly hearing spines."
+            children:
+            - taxon: vorticellatus_hall_1866
+              type: true
+              diagnosis: |
+                "A Streptaster with: secondary oral plates apparently
+                variable; hydropore structure formed by second and third
+                proximal posterior coverplates of ambulacrum V and one large
+                interambulacral; ambulacra highly curved, distal tips near
+                adjacent ambulacra; spines atop ambulacral coverplates
+                varying in size independently of variations in diameter of
+                underlying columnar coverplates; spine basins developed on
+                upper ends of coverplates; interambulacral plates varying
+                in shape, each with large external node; peripheral rim
+                commonly reflexed under upper side of theca: interambulacrals
+                and rim plates having external nodes or protuberances which
+                vary in shape, size, and frequency."
+              synonyms:
+              - taxon: vorticellata_hall_1866
+                parents:
+                - taxon: agelacrinus_hall_1866
 1981_derstler:
   phylogenies:
   - treeType: evolutionary schematic
