@@ -52,25 +52,21 @@ agelacrinites_forbes_1848:
   name: Agelacrinites
   auth: [Forbes]
   year: 1848
-agelacrinus:
-  name: Agelacrinus
-  auth: [Hall]
-  year: 1858
-  notes: Mostly == Isorophus, although one source says == Agelacrinites
 agelacrinus-subgenus:
   name: Agelacrinus
   rank: subgenus
   auth: [Hall]
   year: 1858
-agelacrinus_vanuxem_1842:
-  homonym: true # I think?  Haekel used "Agelacrinus Vanuxuem" in place of "Agelacrinites"
-  name: Agelacrinus
-  altSpellingOf: agelacrinites
 agelacrinoidea:
   name: Agelacrinoidea
   rank: Order
   auth: [S. A. Miller]
   year: 1877
+agelacrinus:
+  notes: |
+    According to Bell (1976), "Agelacrinites" was commonly misspelled as this.
+  name: Agelacrinus
+  altSpellingOf: agelacrinites
 agelacystis:
   name: Agelacystis
   auth: [Haeckel]
@@ -110,6 +106,10 @@ alpinensis_bassler_1936:
   name: alpinensis
   auth: [bassler]
   year: 1936
+americana_zamora_sprinkle_sumrall_2020:
+  name: americana
+  authority:
+    source: 2020_zamora_sprinkle_sumrall
 ampheristocystidae:
   name: Ampheristocystidae
   rank: Family
@@ -1214,6 +1214,10 @@ dizonida:
   rank: Order
   auth: [domínguez alonso]
   year: 1999
+dockeryi_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley_1987:
+  name: dockeryi
+  authority:
+    source: 1987_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley
 dowlingi_jell_sprinkle_2021:
   name: dowlingi
   authority:
@@ -1226,6 +1230,10 @@ durhami_sprinkle_1973:
   name: durhami
   authority:
     source: 1973_sprinkle
+durhamicystis:
+  name: Durhamicystis
+  authority:
+    source: 2020_zamora_sprinkle_sumrall
 dusli_barrande_1887:
   name: dusli
   auth: [barrande]
@@ -1525,6 +1533,11 @@ eocrinoidea-unnamed-order-2_sprinkle_1973:
   rank: Order
   authority:
     source: 1973_sprinkle
+eocrinoidea-uncertain-order_sumrall_sprinkle_guensburg_2001:
+  name: null
+  rank: Order
+  authority:
+    source: 2001_sumrall_sprinkle_guensburg
 eocrinoidea-indeterminate-order-1_sprinkle_1973:
   name: null
   rank: Order
@@ -1570,6 +1583,11 @@ eocrinoidea-uncertain-family_parsley_zhao.y.l_2006:
   rank: Family
   authority:
     source: 2006_parsley_zhao.y.l
+eocrinoidea-uncertain-family_sumrall_sprinkle_guensburg_2001:
+  name: null
+  rank: Family
+  authority:
+    source: 2001_sumrall_sprinkle_guensburg
 eocrinoidea-uncertain-family_ubaghs_1967b:
   name: null
   rank: Family
@@ -1965,6 +1983,10 @@ haefneri_zamora_rahman_sumrall_gibson_thompson_2022:
   name: haefneri
   auth: [zamora, rahman, sumrall, gibson, thompson]
   year: 2022
+haimacystis:
+  name: Haimacystis
+  authority:
+    source: 2001_sumrall_sprinkle_guensburg
 hamiltonensis_vanuxem_1842:
   name: hamiltonensis
   auth: [Vanuxem]
@@ -2505,6 +2527,10 @@ malum_pander_1830:
   name: malum
   auth: [Pander]
   year: 1830
+mandalacystis:
+  name: Mandalacystis
+  authority:
+    source: 1987_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley
 mariae_callaway_1877:
   name: mariae
   auth: [Callaway]
@@ -2656,6 +2682,10 @@ nelsoni_durham_1967:
   name: nelsoni
   authority:
     source: 1967c_durham
+neorhipidocystis:
+  name: Neorhipidocystis
+  auth: [Rozhnov]
+  year: 1989
 nevadensis_sprinkle_1973:
   name: nevadensis
   authority:
@@ -3268,6 +3298,10 @@ rotundus_parsley_zhao.y.l_2006:
   name: rotundus
   authority:
     source: 2006_parsley_zhao.y.l
+rozhnovi_sumrall_sprinkle_guensburg_2001:
+  name: rozhnovi
+  authority:
+    source: 2001_sumrall_sprinkle_guensburg
 rutroclypeidae:
   name: Rutroclypeidae
   rank: Family

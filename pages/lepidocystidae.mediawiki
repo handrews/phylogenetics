@@ -12,15 +12,15 @@
 * ''Vyscystis'' {{small|Fatka & Kordule 1990}}
 }}
 
-The '''Lepidocystidae''' (sometimes misspelled '''Lepidocyst''o''idae''', not to be confused with the class Lepidocystoid''ea'' that was proposed at the same time but later abandoned) are an extinct family that constitue the most [[basal (phylogenetics)|basal]] known group within the [[paraphyletic]] class "[[Eocrinoidea]]", and therefore within the subphylum [[Blastozoa]] as a whole.  Its members are also informally known as "imbricates" or "imbricate Eocrinoids"<ref>{{harvnb|Mooie|Lefebvre|Guensburg|Nohejovlá|Dupichaud|2024}}</ref>
+The '''Lepidocystidae''' (sometimes misspelled '''Lepidocyst''o''idae''', not to be confused with the class Lepidocystoid''ea'' that was proposed at the same time but later abandoned) are an extinct family that constitue the most [[basal (phylogenetics)|basal]] known group within the [[paraphyletic]] class "[[Eocrinoidea]]", and therefore within the subphylum [[Blastozoa]] as a whole.  Its members are also informally known as "imbricates" or "imbricate Eocrinoids"<ref>{{harvnb|Mooie|Lefebvre|Guensburg|Nohejovlá|Dupichaud|2024}}</ref> after the order Imbricata 
 
 ==Classification==
 
 ===History===
 
-''Lepidocystis wanneri'' from the [[Kinzers Formation]] ([[Cambrian Stage 4]]) was described by [[August Foerste]] in a posthumous publication in 1938 and assigned to the class Eocrinoidea.  In the 1967 [[Treatise on Invertebrate Paleontology]], Durham noted differences between ''Lepidocystis'' and other Eocrinoides, as well as a few similarities to Edrioasteroides, and deemed it sufficiently distinctive to erect the family Lepidocystidae and the class Lepidocystoidea.<ref>{{harvnb|Durham|1967}}</ref>
+''Lepidocystis wanneri'' from the [[Kinzers Formation]] ([[Cambrian Stage 4]]) was described by [[August Foerste]] in a posthumous publication in 1938 and assigned to the class Eocrinoidea.  In the 1967 [[Treatise on Invertebrate Paleontology]], Durham noted differences between ''Lepidocystis'' and other Eocrinoidea, as well as a few similarities to the Edrioasteroidea, and deemed it sufficiently distinctive to erect the family Lepidocystidae and the class Lepidocystoidea.<ref>{{harvnb|Durham|1967}}</ref>
 
-While erecting the subphylum Blastozoa in 1973, James Sprinkle examined additional, more complete specimens of both ''Lepidocystis'' and a newly described genus and species, ''Kinzercystis durhami'', all also from the Kinzers Formation.  These specimens demonstrated more affiliation with other eocrinoids than had been apparent in the specimens available to Durham, so Sprinkle rejected Lepidocystoidea and returned Lepidocystidae, now containing both ''Lepidocystis'' and ''Kinzercysits'', to Eocrinoidea, placing it a the only family in his newly-erected order Imbricata.
+While erecting the subphylum Blastozoa in 1973, James Sprinkle examined additional, more complete specimens of both ''Lepidocystis'' and a newly described genus and species, ''Kinzercystis durhami'', all also from the Kinzers Formation.  These specimens demonstrated more affiliation with other eocrinoids than had been apparent in the specimens available to Durham, so Sprinkle rejected Lepidocystoidea and replaced it with the eocystoid order Imbricata, returning the expanded Lepidocystidae to the Eocrinoidea.
 
 In 1990, Fatka and Kordule described the new genus and species ''Vyscystis ubaghsi'' to the Lepidocydtidae, without changing Sprinkle's class- and order-level assignments.  [TODO: Nardin ''et al.'' dispense with Eocrinoidea and Imbricata].  However, when reviewing the phylogentic sygnificance of ''Vyscystis'' in 2019, Nohejlová ''et al.'' [TODO: they just accepted Nardin ''et al.'']
 
@@ -71,6 +71,15 @@ Lists Durham's distinctions as:
 ** '''only remaining distinction'''
 * restriction of epispire-bearing are to the oral surface
 ** ''Kinzercystis'' epispire surface much like Gogiid calyx
+
+===Fatka (Vyscystis)===
+
+* Eocrinoids with irregular multiplated cylindrical to conical theca
+* aboral portion of theca (= calyx and holdfast) composed of adorally imbricate plates without epispires
+* oral surface composed of adjacent plates bearing large epispires
+* Ambulacral system confined to oral surface, composed of unbranched biserial brachioles, probably five in number
+
+
 ** ''Lepidocysts'' more different but only because oral surface is smaller
 * free-living or embedded in sediment rather than attached by a stem
 ** "distinctive" cylindrical holdfast discovered in additional specimens

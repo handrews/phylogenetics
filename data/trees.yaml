@@ -2020,7 +2020,7 @@
                 - barrande
                 source: Systeme Silurien du centre de la Boheme, Prague, pt. 1, 7(1)
                 content: 55, 83
-            - taxon: agelacrinus_vanuxem_1842
+            - taxon: agelacrinus
               citation:
                 year: 1896
                 authors:
@@ -2149,7 +2149,7 @@
               synonyms:
               - taxon: vorticellata_hall_1866
                 parents:
-                - taxon: agelacrinus_hall_1866
+                - taxon: agelacrinus
 1981_derstler:
   phylogenies:
   - treeType: evolutionary schematic
@@ -2644,6 +2644,26 @@
               new: true
               specimens:
                 holotype: USNM 172047
+1987_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley:
+  taxonomies:
+  - taxon: echinodermata
+    authority:
+      source: 1789_bruguiére
+    children:
+    - taxon: blastozoa
+      children:
+      - taxon: eocrinoidea
+        children:
+        - taxon: digitata
+          children:
+          - taxon: rhipidocystidae
+            children:
+            - taxon: mandalacystis
+              new: true
+              children:
+              - taxon: dockeryi_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley_1987
+                type: true
+                new: true
 1987_ubaghs:
   notes: |
     Only summary publicly available, and details are only in French
@@ -3179,6 +3199,20 @@
     children:
     - taxon: taijiangensis_zhao.y.l_zhu.m.y_1994
       notes: Possibly a nomen nudum renamed Rotadiscus guizhouensis?
+2001_sumrall_sprinkle_guensburg:
+  taxonomies:
+  - taxon: eocrinoidea
+    children:
+    - openTaxon: eocrinoidea-uncertain-order_sumrall_sprinkle_guensburg_2001
+      children:
+      - openTaxon: eocrinoidea-uncertain-family_sumrall_sprinkle_guensburg_2001
+        children:
+        - taxon: haimacystis
+          new: true
+          children:
+          - taxon: rozhnovi_sumrall_sprinkle_guensburg_2001
+            type: true
+            new: true
 2002_gil cid_domínguez alonso:
   taxonomies:
   - taxon: eocrinoidea
@@ -3557,7 +3591,7 @@
               parents:
               - taxon: gogia
                 provisional: true
-2007_nardin:
+2007a_nardin:
   taxonomies:
   - taxon: blastozoa
     children:
@@ -3573,6 +3607,16 @@
           - taxon: deani_ubaghs_1994
           - affTaxon: deani_ubaghs_1994
             new: true
+2007b_nardin:
+  taxonomies:
+  - taxon: blastozoa
+    children:
+    - taxon: eocrinoidea
+      children:
+      - taxon: cardiocystites
+        children:
+        - taxon: bohemicus_barrande_1887_cardiocystites
+          type: true
 2007_zhao.y.l_parsley_peng.j:
   taxonomies:
   - taxon: blastozoa
@@ -4339,7 +4383,10 @@
             - taxon: glenocrinus
             - taxon: titanocrinus
       - children:
-        - taxon: lloydi_sprinkle_1985 # As "totiglobus"
+        - taxon: totiglobus
+          quoted: true
+          children:
+          - taxon: lloydi_sprinkle_1985 # As "totiglobus"
         - taxon: pseudedriophus
       - bracket: blastozoa
         children:
@@ -4351,6 +4398,29 @@
             - taxon: rhopalocystis
             - taxon: macrocystella
             - taxon: eumorphocystis
+2020_zamora_sprinkle_sumrall:
+  taxonomies:
+  - taxon: echinodermata
+    children:
+    - taxon: blastozoa
+      children:
+      - taxon: eocrinoidea
+        children:
+        - taxon: digitata
+          children:
+          - taxon: rhipidocystidae
+            children:
+            - taxon: rhipidocystis
+            - taxon: batherocystis
+            - taxon: petalocystites
+            - taxon: mandalacystis
+            - taxon: neorhipidocystis
+            - taxon: durhamicystis
+              new: true
+              children:
+              - taxon: americana_zamora_sprinkle_sumrall_2020
+                type: true
+                new: true
 2021_jell_sprinkle:
   taxonomies:
   - taxon: echinodermata

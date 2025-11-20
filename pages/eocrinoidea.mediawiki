@@ -56,7 +56,7 @@ The earliest genera had a short [[holdfast (biology)|holdfast]] and irregularly 
 {{see also|List of echinoderm orders}}
 Eocrinoids were a [[paraphyletic]] group that are seen as the basal stock from which all other blastozoan groups evolved.<ref>{{harvnb|Smith|1984|page=439}}</ref>
 
-===Early evolution===
+===Early evolution: Imbricata and Gogiida===
 
 The following cladogram, after Nardin et al. 2017 with slight modifications,<ref name=nardin2017>{{harvnb|Nardin|Lefebvre|Fatka|Nohejlová|2017|page=680}} {{small|(Note: This source misspells "Lichenoididae" as "Lichenoidae", contrary to the [[Treatise on Invertebrate Paleontology]], [https://journals.ku.edu/InvertebratePaleo/issue/view/519 Part S, Echinodermata 1], and incorrectly (per [[Paleobiology Database|PBDB]]) and [[Interim Register of Marine and Nonmarine Genera |IRMNG]]) includes ''Lyracystis'' in Eocrinidae instead of Lyracystidae; this cladogram shows the more common spellings and placements.)}}</ref> shows the progression of early eocrinoid families, with all other eocrinoid families (including representatives ''Trachelocrinus'' and ''Ridersia'') grouped with "derived Blastozoans" as their relationships with each other and with other blastozoans are not addressed.
 
@@ -95,6 +95,30 @@ The following cladogram, after Nardin et al. 2017 with slight modifications,<ref
                   |2=''Ridersia''
                   |3=(derived Blastozoa)
 }} }} }} }} }} }}
+
+Imbricata
+   Lepidocystidae
+   Felbabkacystidae
+Gogiida
+   Lyracystidae
+   Eocrinidae
+   Turbanicystidae
+   Thorntonocystidae
+   Lichenoididae
+
+===Ascocystitida and ???===
+
+===Trachelocrinda and Hemicosmitida (Rhombifera)===
+
+===Flattened Eocrinoids and Paracrinoidea===
+
+Cryptocrinidae
+Rhipidocystidae (and Paracrinoidea)
+Lingulocystidae
+Ubaghsicystis
+Haimacystis
+
+===Ridersiidae and Glypticystitida (Rhombifera)===
 
 ===Relationships to other groups===
 

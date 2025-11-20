@@ -7,6 +7,9 @@ ausich:
 babcock:
   family: Babcock
   given: Loren E.
+bailey.j.b:
+  family: Bailey
+  given: J. Bowman
 banks:
   family: Banks
   given: M. R.
@@ -307,6 +310,9 @@ leske:
   given: Nathanael Gottfried
   birth: 1751
   death: 1786
+lewis.r.d:
+  family: Lewis
+  given: Ronald D.
 li.y.j:
   family: Li
   given: Yu-Jing
@@ -355,6 +361,9 @@ miller.s.a:
 mintz:
   family: Mintz
   given: Leigh W.
+moffit.j:
+  family: Moffit
+  given: John
 mooi:
   family: Mooi
   given: Rich
@@ -574,7 +583,7 @@ yuan.j.l:
 zamora:
   family: Zamora
   given: Samuel
-zeng:
+zeng.h:
   family: Zeng
   given: Han
 zhao.f.c:

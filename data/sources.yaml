@@ -1461,6 +1461,27 @@ articles:
     - sprinkle
     identifiers:
       url: https://kuscholarworks.ku.edu/entities/publication/de425cc9-1319-41f5-b1b4-0c6a6e13757a
+  1987_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley:
+    title: Mandalacystis, a New Rhipidocystid Eocrinoid from the Whiterockian Stage (Ordovician) in Oklahoma and Nevada.pdf
+    journal: jofpaleo
+    volume: 61
+    number: 6
+    pages:
+    - 1222
+    - 1235
+    pubDate:
+      year: 1987
+      month: 11
+    processDates:
+      received: 1987-05-28
+    authors:
+    - lewis.r.d
+    - sprinkle
+    - bailey.j.b
+    - moffit.j
+    - parsley
+    identifiers:
+      jstor: 1395209
   1987_ubaghs:
     title: Echinodermes nouveaux du Cambrien moyen de la Montagne Noire (France)
     journal: annals
@@ -1657,6 +1678,41 @@ articles:
     - pan.y
     identifiers:
       url: https://www.researchgate.net/publication/284507301_A_progress_report_on_research_on_the_early_Middle_Cambrian_Kaili_Biota_Guizhou_PRC
+  2020_zamora_sprinkle_sumrall:
+    title: A revaluation of rhipidocystid echinoderms based on a new flattened blastozoan from the Upper Ordovician of Maryland, USA
+    journal: acta-p-polonica
+    volume: 65
+    number: 3
+    pages:
+    - 455
+    - 465
+    pubDate:
+      year: 2020
+    authors:
+    - zamora
+    - sprinkle
+    - sumrall
+    identifiers:
+      doi: 10.4202/app.00718.2019
+      url: https://www.app.pan.pl/article/item/app007182019.html
+  2001_sumrall_sprinkle_guensburg:
+    title: "Comparison Of Flattened Blastozoan Echinoderms: Insights From The New Early Ordovician Eocrinoid Haimacystis Rozhnovi"
+    journal: jofpaleo
+    volume: 75
+    number: 5
+    pages:
+    - 985
+    - 992
+    pubDate:
+      year: 2001
+    processDates:
+      accepted: 2001-03-17
+    authors:
+    - sumrall
+    - sprinkle
+    - guensburg
+    identifiers:
+      doi: 10.1666/0022-3360(2001)075<0985:COFBEI>2.0.CO;2
   2002_gil cid_domínguez alonso:
     title: |
       "Ubaghsicystis segurae nov. gen. y sp., nuevo Eocrinoide
@@ -1750,7 +1806,7 @@ articles:
     - collins.d
     identifiers:
       doi: 10.1139/E05-107
-  2007_nardin:
+  2007a_nardin:
     title: "New specimens of Lingulocystis Thoral, 1935 (Eocrinoidea, Blastozoa) from the Arenig (Lower Ordovician) of Montagne noire (southern France): Intraspecific morphological variability, stratigraphic, and palaeoecological implications"
     journal: annals
     volume: 93
@@ -1765,6 +1821,20 @@ articles:
     - nardin
     identifiers:
       doi: 10.1016/j.annpal.2007.06.004
+  2007b_nardin:
+    title: "New occurrence of the Ordovician eocrinoid Cardiocystites: Palaeogeographical and palaeoecological implications"
+    journal: acta-p-polonica
+    volume: 42
+    number: 1
+    pages:
+    - 17
+    - 26
+    pubDate:
+      year: 2007
+    authors:
+    - nardin
+    identifiers:
+      url: https://www.app.pan.pl/article/item/app52-017.html
   2007_zhao.y.l_parsley_peng.j:
     title: Early Cambrian eocrinoids from Guizhou Province, South China
     journal: ppp

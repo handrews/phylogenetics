@@ -275,7 +275,8 @@ def print_tree(node, data, tree_info, indent='', on=True, top=None, bottom=None)
   logger.debug(f'top "{top}" bottom "{bottom}"')
   found_name = None
   if (taxon_id := node.get('taxon')):
-    taxon = data['taxa'][taxon_id]
+    if not (taxon := data['taxa'].get(taxon_id)):
+      raise ValueError(f'No taxon data for id {taxon_id}')
     if not (name := taxon.get('name')):
       if (alt := taxon.get('altRankOf')):
         name = data['taxa'][alt]['name']
@@ -295,6 +296,8 @@ def print_tree(node, data, tree_info, indent='', on=True, top=None, bottom=None)
     else:
       name = '[]'
 
+  if node.get('quoted'):
+    name = f'"{name}"'
   if node.get('new'):
     name += '*'
   if node.get('questionable'):
