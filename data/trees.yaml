@@ -77,9 +77,9 @@
         - taxon: angulosus_buch_1844
           new: true
           or:
-          - taxon: seckenbergii_meyer_1826
+          - taxon: senckenbergii_meyer_1826
           synonyms:
-          - taxon: seckenbergii_meyer_1826
+          - taxon: senckenbergii_meyer_1826
             parents:
             - taxon: echino-encrinus
           - taxon: angulosa_pander_1830
@@ -1058,6 +1058,55 @@
             children:
             - taxon: carchariaedens_billings_1859
               type: true
+1967_paul.c.r.c:
+  taxonomies:
+  - taxon: glyptocystitida-superfamily
+    children:
+    - taxon: callocystitidae
+      children:
+      - taxon: staurocystinae
+        children:
+        - taxon: staurocystis
+          children:
+          - taxon: quadrifasciatus_pearce_1843
+            type: true
+        - taxon: pseudocrinites
+          children:
+          - taxon: bifasciatus_pearce_1843
+            type: true
+          - taxon: pyriformis_paul.c.r.c_1967
+            new: true
+        - taxon: tetracystis
+          children:
+          - taxon: chrysalis_schuchert_1904
+            type: true
+          - taxon: oblongus_forbes_1848
+        - taxon: prunocystites
+          children:
+          - taxon: fletcheri_forbes_1848
+            type: true
+      - taxon: apiocystitinae
+        children:
+        - taxon: apiocystites
+          children:
+          - taxon: pentrematoides_forbes_1848
+            type: true
+    - taxon: echinoencrinitidae
+      children:
+      - taxon: echinoencrinitinae
+        new: true
+      - taxon: scoliocystinae
+        emended: true
+        children:
+        - taxon: glansicystis
+          new: true
+          children:
+          - taxon: baccata_forbes_1848
+            type: true
+        - taxon: schizocystis
+          children:
+          - taxon: armata_forbes_1848
+            type: true
 1967a_ubaghs:
   taxonomies:
   - taxon: echinodermata
@@ -1168,35 +1217,35 @@
           children:
           - taxon: macrocystella
             children:
-            - taxon: mariae_callaway_
-            - taxon: bohemicus_barrande_
-            - taxon: azaisei_thoral_
+            - taxon: mariae_callaway_1877
+            - taxon: bohemicus_barrande_1887_mimocystites
+            - taxon: azaisei_thoral_1935
         - taxon: cheirocrinidae
           children:
           - taxon: cheirocrinus
             children:
             - openTaxon: cheirocrinus-sp-1_paul.c.r.c_1968
-            - taxon: atavus_jaekel_
-            - taxon: giganteus_leuchtenberg_
+            - taxon: atavus_jaekel_1899
+            - taxon: giganteus_leuchtenberg_1943
             - taxon: languedocianus_thoral_
-            - taxon: granulatus_jaekel_
+            - taxon: granulatus_jaekel_1899
             - taxon: anatiformis_hall_
             - openTaxon: cheirocrinus-sp-2_paul.c.r.c_1968
               new: true
             - openTaxon: cheirocrinus-sp-3_paul.c.r.c_1968
-            - taxon: interruptus_jaekel_
+            - taxon: interruptus_jaekel_1899
             - taxon: jamesi_mccoy_
           - taxon: homocystites
             children:
-            - taxon: alter_barrande_
+            - taxon: alter_barrande_1887
             - taxon: constrictus_bather_
         - taxon: echinoencrinitidae
           children:
           - taxon: echinoencrinitinae
             children:
-            - taxon: angulosus_pander_
-            - taxon: senckenbergii_meyer_
-            - taxon: reticulatus_jaekel_
+            - taxon: angulosus_pander_1830
+            - taxon: senckenbergii_meyer_1826
+            - taxon: reticulatus_jaekel_1899
           - taxon: erinocystis
             children:
             - openTaxon: erinocystis-sp_paul.c.r.c_1968
@@ -1205,28 +1254,28 @@
             children:
             - taxon: schizocystis
               children:
-              - taxon: armata_forbes_
+              - taxon: armata_forbes_1848
             - taxon: glansicystis
               children:
-              - taxon: baccata_forbes_
+              - taxon: baccata_forbes_1848
             - taxon: osculocystis
               children:
-              - taxon: monobrachiolata_paul.c.r.c_
+              - taxon: monobrachiolata_paul.c.r.c_1967
         - taxon: rhombiferidae
           children:
           - taxon: rhombifera
             children:
-            - taxon: bohemica_
+            - taxon: bohemica_barrande_1867
         - taxon: pleurocystitidae
           children:
           - taxon: amecystis
             children:
-            - taxon: laevis_raymond_
-            - openTaxon: amecystis-sp_paul.c.r.c_
+            - taxon: laevis_raymond_1921
+            - openTaxon: amecystis-sp_paul.c.r.c_1968
               new: true
           - taxon: praepleurocystis
             children:
-            - taxon: watkinsi_strimple_
+            - taxon: watkinsi_strimple_1948
           - taxon: pleurocystites
             children:
             - taxon: elegans_billings_
@@ -2221,7 +2270,7 @@
               citation:
                 year: 1896
                 authors:
-                - haekel
+                - haeckel
                 source: Die Amphorideen und Cystoideen, Leipzig, 1
                 content: pl. 3 fig. 29
             - taxon: agelacrinites
@@ -3348,6 +3397,144 @@
         - openTaxon: edrioasterida-indeterminate-genus_sumrall_sprinkle_guensburg_1997
           children:
           - openTaxon: edrioasterida-sp_sumrall_sprinkle_guensburg_1997
+1998_dean.j_smith.a.b:
+  taxonomies:
+  - taxon: rhipidocystidae
+    children:
+    - taxon: cardiocystites
+      children:
+      - taxon: bohemicus_barrande_1887_cardiocystites
+        type: true
+      - taxon: pleuricostatus_dean.j_smith.a.b_1998
+        new: true
+  phylogenies:
+  - treeType: single most parsimonious cladogram
+    characteristics:
+    - thecal form:
+        globular to ovate: 0
+        strongly flattened in one plane: 1
+    - stem columnals:
+        polyplated: 0
+        holomeric: 1
+    - stem:
+        homeomorphic: 0
+        heteromorphic, with large and small columnals alternating: 1
+        reduced to a few large elements: 2
+    - stem attachement to theca:
+        attaches equally to two basals: 0
+        attaches to three basals: 1
+        attaches to four basals: 2
+        attaches to five basals: 3
+    - marginal frame plates:
+        undifferentiated: 0
+        present: 1
+    - marginal plates with internal flanges:
+        absent: 0
+        present: 1
+    - marginal frame plates:
+        double, at least distally: 0
+        single: 1
+    - number of plates forming lateral and distal margin of theca:
+        more than ten: 0
+        seven or eight: 1
+    - centrals:
+        tessalate: 0
+        imbricate: 1
+    - number of centrals:
+        more than six: 0
+        three or four: 1
+    - transverse strutting:
+        absent: 0
+        present: 1
+    - arms:
+        absent (oral frame plates give rise to brachioles directly): 0
+        present: 1
+    - oral area and arms:
+        basically pentaradial: 0
+        strongly bilateral: 1
+    - brachioles:
+        biserial: 0
+        uniserial: 1
+    - brachioles:
+        contiguous forming filtration net: 0
+        in scattered clumps: 1
+    - oral area:
+        narrow, not stretching across entire proximal face: 0
+        wide, occupying the entire width of theca proximally: 1
+    - oral area:
+        flush: 0
+        depressed, below horn-like processes of the theca: 1
+    - periproct:
+        lateral, half-way down theca: 0
+        in upper corner of theca close to peristome: 1
+        on oral surface: 2
+    tree:
+      children:
+      - taxon: akadocrinus
+        outgroup: true
+        matrix: [
+          0, 1, 0, 3, 0,
+          0, "?", 0, 0, 0,
+          0, 0, 0, 0, 0,
+          0, 0, 2,
+        ]
+      - children:
+        - taxon: balantiocystis
+          outgroup: true
+          matrix: [
+            0, 1, 1, 1, 0,
+            0, "?", 0, 0, 0,
+            0, 0, 0, 0, 0,
+            0, 0, 0,
+          ]
+        - children:
+          - taxon: lingulocystis
+            bracket: lingulocystidae
+            matrix: [
+              1, 1, 1, 2, 1,
+              0, 1, 0, 1, 0,
+              1, 0, 1, 0, 0,
+              0, 0, 0,
+            ]
+          - bracket: rhipidocystidae
+            children:
+            - children:
+              - taxon: mandalacystis
+                matrix: [
+                  1, 1, 0, 1, 1,
+                  1, 0, 1, 0, 1,
+                  0, 1, 1, 0, 1,
+                  1, 1, 1,
+                ]
+              - taxon: cardiocystites
+                matrix: [
+                  1, 1, 1, 0, 1,
+                  1, 0, 1, 0, 1,
+                  1, 1, 0, 0, 1,
+                  0, 1, 1,
+                ]
+            - children:
+              - taxon: petalocystis
+                matrix: [
+                  1, 1, 2, 0, 1,
+                  1, 0, 1, 0, 1,
+                  0, 0, 1, 0, 0,
+                  0, 0, 1,
+                ]
+              - taxon: batherocystis
+                matrix: [
+                  1, 1, 2, 0, 1,
+                  1, 0, 1, 0, 1,
+                  0, 0, "?", "?", "?",
+                  0, 0, 1,
+                ]
+              - taxon: rhipidocystis
+                matrix: [
+                  1, 1, 2, 0, 1,
+                  1, 0, 1, 0, 1,
+                  0, 0, 1, 1, 0,
+                  1, 0, 1,
+                ]
 1999_domínguez alonso:
   taxonomies:
   - taxon: ctenocystoidea

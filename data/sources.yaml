@@ -25,6 +25,8 @@ publications:
     name: Breviora
   bullamp:
     name: Bulletins of American Paleontology
+  bullbrgeo:
+    name: Bulletin of the British Museum (Natural History) Geology
   bullgeo:
     name: Bulletins of Geosciences
   can-j-earth-sci:
@@ -89,6 +91,8 @@ publications:
     name: Memoirs of the Queensland Museum
   methodique:
     name: Encyclopédie Méthodique. Histoire Naturelle des Vers. Tome Premier
+  monograph-palaeo:
+    name: Monograph of the Palaeontological Society
   monographs-usgs:
     name: Monographs of the United States Geological Survey
   nature:
@@ -520,12 +524,12 @@ articles:
       transmitted: 1871-04-18
     authors:
     - hall
-  1896_haekel:
+  1896_haeckel:
     book: amph-und-cyst
     pubDate:
       year: 1896
     authors:
-    - haekel
+    - haeckel
     identifiers:
       url: https://www.biodiversitylibrary.org/page/11808822
   1898_walcott:
@@ -885,6 +889,25 @@ articles:
     - U672
     identifiers:
       url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
+  1967_paul.c.r.c:
+    title: British Silurian Cystoids
+    journal: bullbrgeo
+    volume: 13
+    number: 6
+    pages:
+    - 297
+    - 344
+    plates:
+    - 1
+    - 10
+    pubDate:
+      year: 1967
+      month: 1
+      day: 11
+    authors:
+    - paul.c.r.c
+    identifiers:
+      url: https://www.biodiversitylibrary.org/page/2286554
   1967a_ubaghs:
     title: General Characters of Echinodermata
     book: treatise-s
@@ -1647,6 +1670,18 @@ articles:
     authors:
     - dzik
     - orłowski
+  1997_paul.c.r.c:
+    title: British Ordovician Cystoids, Part 3
+    journal: monograph-palaeo
+    volume: 151
+    number: 604
+    pubDate:
+      year: 1997
+      month: 12
+    authors:
+    - paul.c.r.c
+    identifiers:
+      doi: 10.1080/25761900.2022.12131785
   1997_sumrall_sprinkle_guensburg:
     title: Systematics And Paleoecology Of Late Cambrian Echinoderms From The Western United States
     journal: jofpaleo
@@ -1666,6 +1701,25 @@ articles:
     - guensburg
     identifiers:
       doi: 10.1017/S0022336000036052
+  1998_dean.j_smith.a.b:
+    title: Palaeobiology of the primitive Ordovician pelmatozoan echinoderm Cardiocystites
+    journal: palaeontology 
+    volume: 41
+    number: 6
+    pages:
+    - 1183
+    - 1194
+    pubDate:
+      year: 1998
+      month: 12
+    processDates:
+      received: 1997-09-10
+      revised: 1997-11-20
+    authors:
+    - dean.j
+    - smith.a.b
+    identifiers:
+      url: https://www.biodiversitylibrary.org/page/49772430
   1999_domínguez alonso:
     title: "The early evolution of echinoderms: the class Ctenocystoidea and its closest relatives revisited"
     book: e-research-1998
@@ -2107,6 +2161,9 @@ articles:
       accepted: 2010-03-20
     identifiers:
       doi: 10.1666/09-159.1
+  # 2012_doweld:
+  #   title: "Heckerocrinus, a new substitute generic name for fossil crinoid Bockia Hecker 1940 (Echinodermata: Crinoidea) non Reisinger 1924 (Vermes: Turbellaria)"
+    
   2012_zamora_rahman_smith.a.b:
     title: Plated Cambrian Bilaterians Reveal the Earliest Stages of Echinoderm Evolution
     journal: plos-one

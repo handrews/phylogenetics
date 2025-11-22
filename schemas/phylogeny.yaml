@@ -378,6 +378,10 @@ $defs:
           $ref: tree
       bracket:
         type: string
+      matrix:
+        type: array
+        items:
+          type: [number, string]
       modifier:
         type: string
       citation:
@@ -479,6 +483,14 @@ $defs:
         type: string  # Enum?  Meh.
       tree:
         $ref: tree
+      characteristics:
+        type: array
+        items:
+          type: object
+          additionalProperties:
+            type: object
+            additionalProperties:
+              type: [number, string]
   specimen:
     type: object
     properties:

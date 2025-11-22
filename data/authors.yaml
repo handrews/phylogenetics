@@ -132,6 +132,9 @@ cuvier:
 david:
   family: David
   given: Bruno
+dean.j:
+  family: Dean
+  given: Juliette
 deline:
   family: Deline
   given: Bradley
@@ -141,6 +144,9 @@ derstler:
 domínguez alonso:
   family: Domínguez Alonso
   given: Patricio
+doweld:
+  family: Doweld
+  given: Alexander B.
 durham:
   family: Durham
   given: J. Wyatt
@@ -219,8 +225,8 @@ gyllenhaal:
   given: Johan Abraham
   birth: 1750
   death: 1788
-haekel:
-  family: Haekel
+haeckel:
+  family: Haeckel
   given: Ernst
   birth: 1834
   death: 1919
@@ -412,7 +418,7 @@ parsley:
   given: Ronald
 paul.c.r.c:
   family: Paul
-  given: C. R. C.
+  given: Christopher Ronald Charles
 pawson:
   family: Pawson
   given: D. L.
