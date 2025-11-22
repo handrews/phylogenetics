@@ -1116,7 +1116,7 @@ articles:
     - ramsbottom
     identifiers:
       url: https://archive.org/details/fossilrecord0000wbha/mode/2up
-  1968_paul.c.r.c:
+  1968a_paul.c.r.c:
     title: Macrocystella Callaway, the earliest glyptocystitid cystoid
     journal: palaeontology
     volume: 11
@@ -1131,6 +1131,21 @@ articles:
     identifiers:
       # alternate: https://zenodo.org/records/16064129
       url: https://www.biodiversitylibrary.org/page/49633102#page/356/mode/1up
+  1968b_paul.c.r.c:
+    title: Morphology and function of dichoporite pore-structures in cystoids
+    journal: palaeontology
+    volume: 11
+    number: 5
+    pages:
+    - 697
+    - 730
+    plates:
+    - 134
+    - 140
+    pubDate:
+      year: 1968
+    authors:
+    - paul.c.r.c
   1968_webby:
     title: Astrocystites distans sp. nov., an edrioblastoid from the Ordovician of eastern Australia
     complete:
@@ -1395,6 +1410,24 @@ articles:
     authors:
     - sprinkle
     - parsley
+  1983_brett_frest_sprinkle_clement.c.r:
+    title: "Coronoidea: A New Class of Blastozoan Echinoderms Based on Taxonomic Reevaluation of Stephanocrinus"
+    journal: jofpaleo
+    volume: 57
+    number: 4
+    pages:
+    - 627
+    - 651
+    pubDate:
+      year: 1983
+      month: 7
+    authors:
+    - brett
+    - frest
+    - sprinkle
+    - clement.c.r
+    identifiers:
+      jstor: 1304625
   1985_fatka_kordule:
     title: Etoctenocystis bohemica gen. et sp. nov. - new Ctenocystoid from Czechoslovakia (Echinodermata, Middle Cambrian)
     complete:
