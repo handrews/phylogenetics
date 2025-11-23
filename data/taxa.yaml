@@ -2430,6 +2430,18 @@ hemicystis:
   name: Hemicystis
   auth: [haeckel]
   year: 1896
+henicocystidae:
+  name: Henicocystidae
+  authority:
+    source: 1983_jell
+henicocystinae:
+  name: Henicocystinae
+  authority:
+    source: 1983_jell
+henicocystis:
+  name: Henicocystis
+  authority:
+    source: 1983_jell
 hesperocystis:
   name: Hesperocystis
   auth: [Sinclair]
@@ -2439,6 +2451,25 @@ heterostelea:
   rank: Order
   auth: [jaekel]
   year: 1900
+hillocystida-order:
+  name: Hillocystida
+  rank: Order
+  authority:
+    source: 1983_jell
+hillocystidae:
+  name: Hillocystidae
+  rank: Family
+  authority:
+    source: 1983_jell
+hillocystinae:
+  name: Hillocystinae
+  rank: Subfamily
+  authority:
+    source: 1983_jell
+hillocystis:
+  name: Hillocystis
+  authority:
+    source: 1983_jell
 hispanica_müller.p_hahn_2010:
   name: hispanica
   authority:
@@ -3456,13 +3487,24 @@ pleuricostatus_dean.j_smith.a.b_1998:
     source: 1998_dean.j_smith.a.b
 pleurocystites:
   name: Pleurocystites
-  auth: [Neumayr]
-  year: 1899
+  auth: [billings]
+  year: 1854
+pleurocystitida-order:
+  name: Pleurocystitida
+  rank: Order
+  auth: [neumayr]
+  year: 1889
+  notes: Unclear if this should be Jell 1938 (nom. transl. vs new order?)
 pleurocystitidae:
   name: Pleurocystitidae
   rank: Family
   auth: [neumayr]
   year: 1889
+pleurocystitinae:
+  name: Pleurocystitinae
+  rank: Subfamily
+  auth: [Ulrich, Kirk]
+  year: 1911
 pleurozonida:
   name: Pleurozonida
   rank: Order

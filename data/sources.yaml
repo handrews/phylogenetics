@@ -87,6 +87,8 @@ publications:
     name: The University of Kansas Paleontological Contributions
   lethaia:
     name: Lethaia
+  mem-aust:
+    name: Memoirs of the Association of the Australian Palaeontologists
   mem-q:
     name: Memoirs of the Queensland Museum
   methodique:
@@ -1469,6 +1471,18 @@ articles:
     - clement.c.r
     identifiers:
       jstor: 1304625
+  1983_jell:
+    title: Early Devonian echinoderms from Victoria (Rhombifera, Blastoidea and Ophiocistioidea)
+    seen: false
+    journal: mem-aust
+    volume: 1
+    pages:
+    - 209
+    - 235
+    pubDate:
+      year: 1983
+    authors:
+    - jell
   1985_fatka_kordule:
     title: Etoctenocystis bohemica gen. et sp. nov. - new Ctenocystoid from Czechoslovakia (Echinodermata, Middle Cambrian)
     complete:

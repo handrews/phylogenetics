@@ -2785,6 +2785,26 @@
               type: true
             - taxon: gemmiformis_hall_1852
               provisional: true
+1983_jell:
+  notes: Secondhand from 2013_nardin_bohatý
+  taxonomies:
+  - taxon: rhombifera-class
+    children:
+    - taxon: pleurocystitida-order
+      modifier: nom. transl.?
+      children:
+      - taxon: henicocystidae
+        new: true
+        children:
+        - taxon: henicocystis
+    - taxon: hillocystida-order
+      new: true
+      children:
+      - taxon: hillocystidae
+        new: true
+        children:
+        - taxon: hillocystis
+          new: true
 1985_fatka_kordule:
   taxonomies:
   - taxon: ctenocystoidea
