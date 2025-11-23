@@ -2446,6 +2446,11 @@
   - taxon: eocrinoidea
     children:
     - taxon: imbricata
+      children:
+      - taxon: lepidocystidae
+        children:
+        - taxon: lepidocystis
+        - taxon: kinzercystis
     - taxon: gogiida
       new: true
       synonyms:
@@ -3409,6 +3414,8 @@
               Because the genus is monotypic at present, specific diagnosis
               is the same as generic diagnosis above.
       - taxon: bockiidae
+        children:
+        - taxon: bockia
     - taxon: gogiida
       children:
       - openTaxon: gogiida-indeterminate-family-1_sumrall_sprinkle_guensburg_1997
