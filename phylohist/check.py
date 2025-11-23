@@ -281,12 +281,16 @@ def check_trees(data, sources, taxon, args):
     if ref_id not in data['sources']['articles']:
       logger.error(f'Tree citation "{ref_id}" not found!')
 
-    trees = [t for t in opinion.get('taxonomies', {})]
-    num_tax = len(trees)
-    logger.debug(f'Found {num_tax} taxonomic trees')
-    trees.extend([p['tree'] for p in opinion.get('phylogenies', {})])
-    num_phy = len(trees) - num_tax
-    logger.debug(f'Found {num_phy} phylogenetic trees')
+    trees = []
+    num_tax = 0
+    if args.type == 'x':
+      trees.extend([t for t in opinion.get('taxonomies', {})])
+      num_tax = len(trees)
+      logger.debug(f'Found {num_tax} taxonomic trees')
+    if args.type == 'p':
+      trees.extend([p['tree'] for p in opinion.get('phylogenies', {})])
+      num_phy = len(trees) - num_tax
+      logger.debug(f'Found {num_phy} phylogenetic trees')
 
     for i, t in enumerate(trees):
       tree_lookup[tree_index] = t
