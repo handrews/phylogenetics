@@ -10,10 +10,12 @@ logger = logging.getLogger(__name__)
 
 NAMED_TAXON_FIELDS = {'taxon', 'cfTaxon', 'affTaxon'}
 
-def print_tree(node, data, tree_info, args, indent='', on=True):
+def print_tree(node, data, tree_info, args, indent='', on=True, buffer=''):
+  root = args.root if args.root else args.branch
+
   if not indent:
     print(f'PAPER: {tree_info[1]}')
-    if args.root is not None:
+    if root is not None:
       on = False
 
   logger.debug(f'root "{args.root}" leaf "{args.leaf}" branch "{args.branch}"')
@@ -48,23 +50,31 @@ def print_tree(node, data, tree_info, args, indent='', on=True):
     name += ' ?'
 
   logger.debug(f'found name "{found_name}"')
-  if args.root is not None and found_name == args.root:
+  if root is not None and found_name == root:
     on = True
 
   new_indent = indent
   if node.get('provisional'):
     indent = indent[:-2] + '?' + ' '
+
+  output = f'{indent}{name}'
   if on:
-    print(f'{indent}{name}')
+    if args.branch == found_name:
+      # Strip off final newline as print() always adds one.
+      print(buffer[:-1])
+      buffer = ''
+    print(output)
+  else:
+    buffer += f'{output}\n'
   new_indent += '  '
 
   if args.leaf is not None and found_name == args.leaf:
     on = False
 
   for child in node.get('children', []):
-    print_tree(child, data, tree_info, args, indent=new_indent, on=on)
+    print_tree(child, data, tree_info, args, indent=new_indent, on=on, buffer=buffer)
 
   if args.leaf is not None and found_name == args.leaf:
     on = True
-  if args.root is not None and found_name == args.root:
+  if root is not None and found_name == root:
     on = False
