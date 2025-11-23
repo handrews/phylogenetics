@@ -266,13 +266,13 @@ def check_taxa(data):
   logger.info(f"...taxa processed.")
 
 
-def print_tree(node, data, tree_info, indent='', on=True, top=None, bottom=None):
+def print_tree(node, data, tree_info, args, indent='', on=True):
   if not indent:
     print(f'PAPER: {tree_info[1]}')
-    if top is not None:
+    if args.root is not None:
       on = False
 
-  logger.debug(f'top "{top}" bottom "{bottom}"')
+  logger.debug(f'root "{args.root}" leaf "{args.leaf}" branch "{args.branch}"')
   found_name = None
   if (taxon_id := node.get('taxon')):
     if not (taxon := data['taxa'].get(taxon_id)):
@@ -304,7 +304,7 @@ def print_tree(node, data, tree_info, indent='', on=True, top=None, bottom=None)
     name += ' ?'
 
   logger.debug(f'found name "{found_name}"')
-  if top is not None and found_name == top:
+  if args.root is not None and found_name == args.root:
     on = True
 
   new_indent = indent
@@ -314,18 +314,18 @@ def print_tree(node, data, tree_info, indent='', on=True, top=None, bottom=None)
     print(f'{indent}{name}')
   new_indent += '  '
 
-  if bottom is not None and found_name == bottom:
+  if args.leaf is not None and found_name == args.leaf:
     on = False
 
   for child in node.get('children', []):
-    print_tree(child, data, tree_info, new_indent, top=top, bottom=bottom, on=on)
+    print_tree(child, data, tree_info, args, indent=new_indent, on=on)
 
-  if bottom is not None and found_name == bottom:
+  if args.leaf is not None and found_name == args.leaf:
     on = True
-  if top is not None and found_name == top:
+  if args.root is not None and found_name == args.root:
     on = False
 
-def check_trees(data, sources, taxon=None, top=None, bottom=None):
+def check_trees(data, sources, taxon, args):
   logger.info(f"Processing {len(data['trees'])} opinions...")
   logger.info(f'...searching for taxon "{taxon}"')
   opinions = set()
@@ -358,8 +358,7 @@ def check_trees(data, sources, taxon=None, top=None, bottom=None):
     )
 
     for tree in sorted(found_trees):
-      print_tree(tree_lookup[tree[0]], data, tree, top=top, bottom=bottom)
-      print()
+      print_tree(tree_lookup[tree[0]], data, tree, args)
 
   if (difference := sources - opinions):
     # logger.warn("Missing opinions from:\n    " + '\n    '.join(sorted(difference)))
