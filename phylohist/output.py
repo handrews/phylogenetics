@@ -10,6 +10,17 @@ logger = logging.getLogger(__name__)
 
 NAMED_TAXON_FIELDS = {'taxon', 'cfTaxon', 'affTaxon'}
 
+
+def print_taxon(taxon, data, tree_lookup, args):
+  found_trees = data['index'].get(taxon, [])
+  logger.info(
+    f'Found {len(found_trees)} trees, searching for taxon {taxon}...'
+  )
+
+  for tree in sorted(found_trees):
+    print_tree(tree_lookup[tree[0]], data, tree, args)
+
+
 def print_tree(node, data, tree_info, args, indent='', on=True, buffer=''):
   root = args.root if args.root else args.branch
 
