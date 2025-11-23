@@ -27,6 +27,10 @@ acanthocystites:
   name: Acanthocystites
   auth: [barrande]
   year: 1887
+acanthalepis:
+  name: Acanthalepis
+  auth: [mccoy]
+  year: 1846
 agelacrinidae:
   name: Agelacrinidae
   rank: Family
@@ -114,6 +118,11 @@ amecystis:
   name: Amecystis
   auth: [Ulrich, Kirk]
   year: 1921
+amecystis-sp_paul.c.r.c_1968:
+  name: null
+  rank: species
+  authority:
+    source: 1968b_paul.c.r.c
 americana_zamora_sprinkle_sumrall_2020:
   name: americana
   authority:
@@ -148,6 +157,14 @@ andalusiae_ubaghs_vizcaïno_1990:
   name: andalusiae
   authority:
     source: 1990_ubaghs_vizcaïno
+angelini_jaekel_1899:
+  name: angelini
+  auth: [jaekel]
+  year: 1899
+angulatus_conrad_1842:
+  name: angulatus
+  auth: [Conrad]
+  year: 1842
 angulosa_pander_1830:
   name: angulosa
   auth: [Pander]
@@ -202,6 +219,10 @@ appressa_bassler_1950:
   name: appressa
   auth: [bassler]
   year: 1950
+arachnoideus_forbes_1848:
+  name: arachnoideus
+  auth: [Forbes]
+  year: 1848
 arbucklecystis:
   name: Arbucklecystis
   auth: [parsley, sprinkle]
@@ -220,10 +241,19 @@ archaeocystites:
   name: Archaeocystites
   auth: [barrande]
   year: 1887
+archegocystis:
+  name: Archegocystis
+  auth: [jaekel]
+  year: 1899
 argodiscus:
   name: Argodiscus
   auth: [Prokop]
   year: 1965
+aristocystitida-superfamily:
+  name: Aristocystitida
+  rank: Superfamily
+  auth: [neumayr]
+  year: 1889
 aristocystitidae:
   name: Aristocystitidae
   rank: Family
@@ -368,10 +398,18 @@ balangicystis:
   name: Balangicystis
   authority:
     source: 2006_parsley_zhao.y.l
+balantiocystis:
+  name: Balantiocystis
+  auth: [Chauvel]
+  year: 1966
 balticus_jaekel_1899:
   name: balticus
   auth: [jaekel]
   year: 1899
+balticus_eichwald_1829:
+  name: balticus
+  auth: [Eichwald]
+  year: 1829
 barroisi_bather_1898:
   name: barroisi
   auth: [bather]
@@ -397,6 +435,10 @@ batheri_ruedemann_1925:
   name: batheri
   auth: [ruedemann]
   year: 1925
+batheri_sinclair_1948:
+  name: batheri
+  auth: [Sinclair]
+  year: 1948
 batherocystis:
   name: Batherocystis
   auth: [bassler]
@@ -541,6 +583,14 @@ briareus_barrande_1887:
   auth: [barrande]
   year: 1887
   notes: Junior synonym of bohemica_fatka_kordule_1985
+brightonicystis:
+  name: Brightonicystis
+  auth: [paul.c.r.c]
+  year: 1971
+brockocystis:
+  name: Brockocystis
+  auth: [foerste]
+  year: 1914
 bromidensis_bassler_1943:
   name: bromidensis
   auth: [bassler]
@@ -566,6 +616,10 @@ calix:
   name: Calix
   auth: [Rouault]
   year: 1851
+callocystites:
+  name: Callocystites
+  auth: [hall]
+  year: 1852
 callocystitidae:
   name: Callocystitidae
   rank: Family
@@ -579,6 +633,10 @@ callocystitinae:
 callocystinae:
   name: Callocystinae
   altSpellingOf: callocystitinae
+calvini_white_1876:
+  name: calvini
+  auth: [White]
+  year: 1876
 cambraster:
   name: Cambraster
   auth: [jaekel]
@@ -633,6 +691,10 @@ camptostromoidea:
   auth: [durham]
   year: 1966
   altSpellingOf: camptostromatoidea
+canadensis_billings_1866:
+  name: canadensis
+  auth: [billings]
+  year: 1866
 cannati_miquel_1894:
   name: cannati
   auth: [Miquel]
@@ -666,6 +728,10 @@ carteri_bassler_1936:
   name: carteri
   authority:
     source: 1936_bassler
+caryocrinites:
+  name: Caryocrinites
+  auth: [Say]
+  year: 1825
 caryocrinitidae:
   name: Caryocrinitidae
   rank: Family
@@ -677,6 +743,16 @@ caryocrinidae:
   auth: [Bernard]
   year: 1895
   altSpellingOf: caryocrinitidae
+caryocystitida-superfamily:
+  name: Caryocystitida
+  rank: Superfamily
+  auth: [jaekel]
+  year: 1918
+caryocystitidae:
+  name: Caryocystitidae
+  rank: Family
+  auth: [jaekel]
+  year: 1918
 caryocystites:
   name: Caryocystites
   authority:
@@ -710,20 +786,27 @@ cheirocrinidae:
   rank: Family
   auth: [jaekel]
   year: 1899
+cheirocrinitidae:
+  name: Cheirocrinitidae
+  altSpellingOf: cheirocrinidae
+  notes: Unclear if this is really alt spelling, need Br. Ord. Cystoids pt. 2
 cheirocrinus:
   name: Cheirocrinus
   auth: [Eichwald]
   year: 1856
 cheirocrinus-sp-1_paul.c.r.c_1968:
   name: null
+  rank: species
   authority:
     source: 1968b_paul.c.r.c
 cheirocrinus-sp-2_paul.c.r.c_1968:
   name: null
+  rank: species
   authority:
     source: 1968b_paul.c.r.c
 cheirocrinus-sp-3_paul.c.r.c_1968:
   name: null
+  rank: species
   authority:
     source: 1968b_paul.c.r.c
 cheirocystis:
@@ -877,6 +960,7 @@ cornuta:
   year: 1901
 cornuta-incertae-sedis_ubaghs_1999:
   name: null
+  rank: genus
   authority:
     source: 1999_ubaghs
 cornuta-sp_ubaghs_1999:
@@ -884,6 +968,20 @@ cornuta-sp_ubaghs_1999:
   rank: species
   authority:
     source: 1999_ubaghs
+coronocystis:
+  name: Coronocystis
+  auth: [paul.c.r.c]
+  year: 1972
+coronoidea:
+  name: Coronoidea
+  rank: Class
+  authority:
+    source: 1983_brett_frest_sprinkle_clement.c.r
+coronata:
+  name: Coronata
+  rank: Order
+  auth: [jaekel]
+  year: 1918
 cothurnocystidae:
   name: Cothurnocystidae
   rank: Family
@@ -902,6 +1000,10 @@ courtessoleidae:
   rank: Family
   auth: [domínguez alonso]
   year: 1999
+coxi_paul.c.r.c_1997:
+  name: coxi
+  authority:
+    source: 1997_paul.c.r.c
 craterina:
   name: Craterina
   auth: [barrande]
@@ -1162,6 +1264,10 @@ cymbionitidae:
   authority:
     source: 1941_whitehouse
 ###################### D
+davisii_mccoy_1848:
+  name: davisii
+  auth: [mccoy]
+  year: 1848
 dawsoni_billings_1859:
   name: dawsoni
   auth: [billings]
@@ -1252,6 +1358,16 @@ diploporita-order:
   rank: Order
   auth: [müller.j.p]
   year: 1854
+diploporita-incertae-sedis:
+  name: null
+  rank: Superfamily
+  authority:
+    source: 1997_paul.c.r.c
+diploporita-sp-e_paul.c.r.c_1997:
+  name: null
+  rank: species
+  authority:
+    source: 1997_paul.c.r.c
 diploporiten:
   name: Diploporiten
   rank: Suborder
@@ -1266,6 +1382,14 @@ diploporitidæ:
   year: 1854
   notes: Rank not entirely clear, just called a "small group"
   altSpellingOf: diploporita-order
+diplosphaeroninae:
+  name: Diplosphaeroninae
+  authority:
+    source: 1997_paul.c.r.c
+diplosphaeronis:
+  name: Diplosphaeronis
+  auth: [paul.c.r.c]
+  year: 1973
 diraphora_bell_1941:
   name: diraphora
   auth: [Bell]
@@ -1305,6 +1429,10 @@ drawbowensis_barrande_1887:
   name: drawbowensis
   auth: [barrande]
   year: 1887
+dubius_angelin_1878:
+  name: dubius
+  auth: [Angelin]
+  year: 1878
 durhami_sprinkle_1973:
   name: durhami
   authority:
@@ -1355,10 +1483,12 @@ echinodermata-indeterminate-family_hisinger_1828:
     source: 1828_hisinger
 echinodermata-incertae-sedis:
   name: null
+  rank: Class
   authority:
     source: 1967e_ubaghs
 echinodermata-incertae-sedis_ubaghs_1999:
   name: null
+  rank: Class
   authority:
     source: 1999_ubaghs
 echinodiscus:
@@ -1419,6 +1549,11 @@ echinosphaerites:
 echinosphaerites-subgenus:
   rank: subgenus
   altRankOf: echinosphaerites
+echinosphaerites-sp_paul.c.r.c_1997:
+  name: null
+  rank: species
+  authority:
+    source: 1997_paul.c.r.c
 echinosphærites:
   name: Echinosphærites
   altSpellingOf: echinosphaerites
@@ -1731,6 +1866,7 @@ erinocystis:
   year: 1899
 erinocystis-sp_paul.c.r.c_1968:
   name: null
+  rank: species
   authority:
     source: 1968b_paul.c.r.c
 esculentus_linnaeus_1758:
@@ -1741,6 +1877,10 @@ etoctenocystis:
   name: Etoctenocystis
   auth: [fatka, kordule]
   year: 1985
+eucystis:
+  name: Eucystis
+  auth: [Angelin]
+  year: 1878
 eumorphocystis:
   name: Eumorphocystis
   auth: [Branson, Peck]
@@ -1785,6 +1925,10 @@ fayi_sprinkle_1982:
   name: fayi
   authority:
     source: 1982g_sprinkle
+filitextus_billings_1854:
+  name: filitextus
+  auth: [billings]
+  year: 1854
 fillmorensis_guensburg_sprinkle_2003:
   name: fillmorensis
   authority:
@@ -1797,6 +1941,11 @@ firbyi_durham_1967:
   name: firbyi
   authority:
     source: 1967c_durham
+fistuliporita:
+  name: Fistuliporita
+  rank: Order
+  authority:
+    source: 1968b_paul.c.r.c
 fletcheri_forbes_1848:
   name: fletcheri
   auth: [Forbes]
@@ -1823,6 +1972,10 @@ gallica_domínguez alonso_1999:
   name: gallica
   auth: [domínguez alonso]
   year: 1999
+gemmiformis_hall_1852:
+  name: gemmiformis
+  auth: [hall]
+  year: 1852
 germanica_müller.p_hahn_2010:
   name: germanica
   authority:
@@ -2005,17 +2158,19 @@ gogiida-sp-2_sumrall_sprinkle_guensburg_1997:
   rank: species
   authority:
     source: 1997_sumrall_sprinkle_guensburg
-gomphocystidae:
-  name: Gomphocystidae
-  rank: Family
-  auth: [Miller]
-  year: 1889
-  altSpellingOf: gomphocystitidae
+gomphocystites:
+  name: Gomphocystites
+  auth: [hall]
+  year: 1865
 gomphocystitidae:
   name: Gomphocystitidae
   rank: Family
-  auth: [bassler]
-  year: 1938
+  auth: [miller.s.a]
+  year: 1889
+  notes: Some sources give bassler 1938, possibly nom. correct.?
+gomphocystidae:
+  name: Gomphocystidae
+  altSpellingOf: gomphocystitidae
 gondi_ubaghs_1987:
   name: gondi
   auth: [ubaghs]
@@ -2036,6 +2191,14 @@ granatum_wahlenberg_1821:
   name: granatum
   auth: [Wahlenberg]
   year: 1821
+granulatus_jaekel_1899:
+  name: granulatus
+  auth: [jaekel]
+  year: 1899
+granulatus_mccoy_1846:
+  name: granulatus
+  auth: [mccoy]
+  year: 1846
 grandis_bassler_1935:
   name: grandis
   authority:
@@ -2086,6 +2249,10 @@ habrotecrinus:
   name: Habrotecrinus
   authority:
     source: 2003_guensburg_sprinkle
+hadrocystis:
+  name: Hadrocystis
+  auth: [sprinkle]
+  year: 1974
 haefneri_zamora_rahman_sumrall_gibson_thompson_2022:
   name: haefneri
   auth: [zamora, rahman, sumrall, gibson, thompson]
@@ -2094,6 +2261,10 @@ haimacystis:
   name: Haimacystis
   authority:
     source: 2001_sumrall_sprinkle_guensburg
+hallicystis:
+  name: Hallicystis
+  auth: [jaekel]
+  year: 1899
 hamiltonensis_vanuxem_1842:
   name: hamiltonensis
   auth: [Vanuxem]
@@ -2114,6 +2285,10 @@ haplocystites:
   name: Haplocystites
   auth: [Roemer]
   year: 1852
+haplosphaeronis:
+  name: Haplosphaeronis
+  auth: [jaekel]
+  year: 1926
 haplozoa:
   name: Haplozoa
   rank: Subphylum
@@ -2123,6 +2298,30 @@ heckericystis:
   name: Heckericystis
   authority:
     source: 1960_gill_caster
+heliocrinites:
+  name: Heliocrinites
+  auth: [Eichwald]
+  year: 1840
+heliocrinites-sp-a_paul.c.r.c_1997:
+  name: null
+  rank: species
+  authority:
+    source: 1997_paul.c.r.c
+heliocrinites-sp-b_paul.c.r.c_1997:
+  name: null
+  rank: species
+  authority:
+    source: 1997_paul.c.r.c
+heliocrinites-sp-c_paul.c.r.c_1997:
+  name: null
+  rank: species
+  authority:
+    source: 1997_paul.c.r.c
+heliocrinites-sp_paul.c.r.c_1997:
+  name: null
+  rank: species
+  authority:
+    source: 1997_paul.c.r.c
 helicocystoidea:
   name: Helicocystoidea
   bracket: Helicocystoids
@@ -2173,11 +2372,47 @@ hemicosmites:
   name: Hemicosmites
   auth: [Buch]
   year: 1840
+hemicosmites-sp-1_paul.c.r.c_1968:
+  name: null
+  rank: species
+  authority:
+    source: 1968b_paul.c.r.c
+hemicosmites-sp-2_paul.c.r.c_1968:
+  name: null
+  rank: species
+  authority:
+    source: 1968b_paul.c.r.c
+hemicosmites-sp-3_paul.c.r.c_1968:
+  name: null
+  rank: species
+  authority:
+    source: 1968b_paul.c.r.c
 hemicystites-subgenus:
   name: Hemicystites
   rank: subgenus
   auth: [Hall]
   year: 1852
+hemicosmitida-order:
+  name: Hemicosmitida
+  rank: Order
+  auth: [jaekel]
+  year: 1918
+hemicosmitoida-order:
+  name: Hemicosmidoida
+  altSpellingOf: hemicosmitoida-superfamily
+hemicosmitida-superfamily:
+  name: Hemicosmitida
+  rank: Superfamily
+  auth: [jaekel]
+  year: 1918
+hemicosmitoida-superfamily:
+  name: Hemicosmidoida
+  altSpellingOf: hemicosmitoida-superfamily
+hemicosmitidae:
+  name: Hemicosmitidae
+  rank: Family
+  auth: [jaekel]
+  year: 1918
 hemicystites:
   name: Hemicystites
   auth: [Hall]
@@ -2220,6 +2455,11 @@ holbrooki_james_1878:
   name: holbrooki
   auth: [James]
   year: 1878
+holocystitidae:
+  name: Holocystitidae
+  rank: Family
+  auth: [miller.s.a]
+  year: 1889
 holothuroidea:
   name: Holothuroidea
   rank: Class
@@ -2312,6 +2552,14 @@ inconditus_raymond_1915:
   name: inconditus
   auth: [Raymond]
   year: 1915
+inexplicata_paul.c.r.c_1997:
+  name: inexplicata
+  authority:
+    source: 1997_paul.c.r.c
+inexplicatus_paul.c.r.c_1973:
+  name: inexplicatus
+  auth: [paul.c.r.c]
+  year: 1973
 inflatus_parsley_zhao.y.l_2010:
   name: inflatus
   authority:
@@ -2320,6 +2568,10 @@ infundus_frest_strimple_mcginnis_1976:
   name: infundus
   auth: [frest, Strimple, McGinnis]
   year: 1976
+interruptus_jaekel_1899:
+  name: interruptus
+  auth: [jaekel]
+  year: 1899
 iowacystidae:
   name: Iowacystidae
   rank: Family
@@ -2357,6 +2609,10 @@ jacksoni_austen_1843:
   name: jacksoni
   auth: [Austen]
   year: 1843
+jaekelocystis:
+  name: Jaekelocystis
+  auth: [schuchert]
+  year: 1903
 jagoi_jell_burrett_banks_1985:
   name: jagoi
   auth: [jell, burrett, banks]
@@ -2369,6 +2625,10 @@ jasperensis_harker_1953:
   name: jasperensis
   auth: [Harker]
   year: 1953
+jewetti_hall_1852:
+  name: jewetti
+  auth: [hall]
+  year: 1852
 jugoszovia:
   name: Jugoszovia
   auth: [dzik, orłowski]
@@ -2402,6 +2662,10 @@ keslingi_bell.b.m_1976:
   name: keslingi
   authority:
     source: 1976_bell.b.m
+kildarensis_paul.c.r.c_1997:
+  name: kildarensis
+  authority:
+    source: 1997_paul.c.r.c
 kilmeri_durham_1967:
   name: kilmeri
   authority:
@@ -2438,10 +2702,22 @@ laevis_pander_1830:
 lævis_pander_1830:
   name: lævis
   altSpellingOf: laevis_pander_1830
+laevis_paul.c.r.c_1973:
+  name: laevis
+  auth: [paul.c.r.c]
+  year: 1973
+laevis_paul.c.r.c_1997:
+  name: laevis
+  authority:
+    source: 1997_paul.c.r.c
 laevis_raymond_1921:
   name: laevis
   auth: [Raymond]
   year: 1921
+lagenallis_regnéll_1945:
+  name: lagenallis
+  auth: [regnéll]
+  year: 1945
 languedocianus_ubaghs_1987:
   name: languedocianus
   auth: [ubaghs]
@@ -2472,6 +2748,10 @@ legrandensis_miller.s.a_gurley_1894:
   name: legrandensis
   auth: [miller.s.a, gurley]
   year: 1894
+lepocrinites:
+  name: Lepocrinites
+  auth: [Conrad]
+  year: 1840
 lepadocystis:
   name: Lepadocystis
   auth: [Carpenter]
@@ -2550,14 +2830,18 @@ lingulocystis:
   name: Lingulocystis
   auth: [Thoral]
   year: 1935
+lipsanocystis:
+  name: Lipsanocystis
+  auth: [Ehlers, Leighley]
+  year: 1922
 lispidecodidae:
   name: Lispidecodidae
   rank: Family
-  auth: [Kesling]
+  auth: [kesling]
   year: 1967
 lispidecodus:
   name: Lispidecodus
-  auth: [Kesling]
+  auth: [kesling]
   year: 1967
 ljubzovi_yakovlev_1956:
   name: ljubzovi
@@ -2583,10 +2867,18 @@ longus_zhao.y.l_huang.y.z_gong.x.y_1994:
   name: longus
   authority:
     source: 1994_zhao.y.l_huang.y.z_gong.x.y
+lophotocystis:
+  name: Lophotocystis
+  auth: [paul.c.r.c]
+  year: 1972
 loriformis_raymond_1915:
   name: loriformis
   auth: [Raymond]
   year: 1915
+lovenicystis:
+  name: Lovenicystis
+  auth: [regnéll]
+  year: 1945
 lui_zhao.y.l_huang.y.z_gong.x.y_1994:
   name: lui
   authority:
@@ -2627,6 +2919,10 @@ magister_bassler_1936:
   name: magister
   authority:
     source: 1936_bassler
+malaisei_regnéll_1951:
+  name: malaisei
+  auth: [regnéll]
+  year: 1951
 malocystidae:
   name: Malocystidae
   rank: Family
@@ -2671,6 +2967,10 @@ mesocystidae:
   rank: Family
   auth: [bather]
   year: 1899
+mespilocystites:
+  name: Mespilocystites
+  auth: [barrande]
+  year: 1887
 metazoa:
   name: Metazoa
   rank: Subkingdom
@@ -2747,8 +3047,8 @@ monobathrida-uncertain-family_guensburg_sprinkle_2003:
   rank: Family
   authority:
     source: 2003_guensburg_sprinkle
-monobrachiata_paul.c.r.c_1967:
-  name: monobrachiata
+monobrachiolata_paul.c.r.c_1967:
+  name: monobrachiolata
   auth: [paul.c.r.c]
   year: 1967  # Not the current 1967_paul.c.r.c
 monozonida:
@@ -2756,6 +3056,10 @@ monozonida:
   rank: Order
   auth: [domínguez alonso]
   year: 1999
+moorei_meek_1871:
+  name: moorei
+  auth: [Meek]
+  year: 1871
 moorei_ubaghs_1969:
   name: moorei
   auth: [ubaghs]
@@ -2768,6 +3072,17 @@ multibrachiatus_kirk_1945:
   name: multibrachiatus
   auth: [Kirk]
   year: 1945
+multifasciatus_hall_1859:
+  name: multifasciatus
+  auth: [hall]
+  year: 1859
+multipora_billings_1854:
+  name: multipora
+  auth: [billings]
+  year: 1854
+multiporus_billings_1854:
+  name: multiporus
+  altSpellingOf: multipora_billings_1854
 multiporata_branson_peck_1940:
   name: multiporata
   auth: [Branson, Peck]
@@ -2817,6 +3132,10 @@ nitidus_sinclair_1945:
   name: nitidus
   auth: [Sinclair]
   year: 1945
+nodosaria_foerste_1919:
+  name: nodosaria
+  auth: [foerste]
+  year: 1919
 nodosus_hall_1864:
   name: nodosus
   auth: [Hall]
@@ -2878,6 +3197,10 @@ ornatus_bassler_1943:
   name: ornatus
   auth: [bassler]
   year: 1943
+ornatus_say_1825:
+  name: ornatus
+  auth: [Say]
+  year: 1825
 orthida:
   name: Orthida
   rank: Order
@@ -2923,6 +3246,10 @@ paracrinoidea:
   rank: Class
   auth: [regnéll]
   year: 1945
+paracystis:
+  name: Paracystis
+  auth: [Sjöberg]
+  year: 1915
 paradoxicus_billings_1859:
   name: paradoxicus
   auth: [billings]
@@ -3030,6 +3357,11 @@ peridionitidae:
   rank: Family
   authority:
     source: 1941_whitehouse
+peritaphros-subgenus:
+  name: Peritaphros
+  rank: subgenus
+  auth: [paul.c.r.c]
+  year: 1973
 perittocrinus:
   name: Perittocrinus
   auth: [jaekel]
@@ -3042,6 +3374,9 @@ petalocystites:
   name: Petalocystites
   authority:
     source: 1973_sprinkle
+petalocystis:
+  name: Petalocystis
+  altSpellingOf: petalocystites
 petalus_holloway_jell_1983:
   name: petalus
   auth: [Holloway, jell]
@@ -3098,6 +3433,7 @@ platycystites:
   year: 1899
 platycystites-sp_frest_strimple_coney_1979:
   name: null
+  rank: species
   auth: [frest, Strimple, Coney]
   year: 1979
 platycystitida:
@@ -3114,6 +3450,10 @@ plantini_schmidt_1880:
   name: plantini
   auth: [Schmidt]
   year: 1880
+pleuricostatus_dean.j_smith.a.b_1998:
+  name: pleuricostatus
+  authority:
+    source: 1998_dean.j_smith.a.b
 pleurocystites:
   name: Pleurocystites
   auth: [Neumayr]
@@ -3178,6 +3518,10 @@ priscus_miller.s.a_gurley_1894:
   name: priscus
   auth: [miller.s.a, gurley]
   year: 1894
+proboscisphaeronis:
+  name: Proboscisphaeronis
+  authority:
+    source: 1997_paul.c.r.c
 procerum_aurivillius_1892:
   name: procerum
   auth: [Aurivillius]
@@ -3196,6 +3540,11 @@ protocrinidae:
   auth: [bather]
   year: 1899
   altSpellingOf: protocrinitidae
+protocrinitida:
+  name: Protocrinitida
+  rank: Superfamily
+  auth: [bather]
+  year: 1899
 protocrinitidae:
   name: Protocrinitidae
   rank: Family
@@ -3237,6 +3586,10 @@ pseudocrinites:
   name: Pseudocrinites
   auth: [Pearce]
   year: 1843
+pseudogranatus_paul.c.r.c_1997:
+  name: pseudogranatus
+  authority:
+    source: 1997_paul.c.r.c
 ptychopariida:
   name: Ptychopariida
   rank: Order
@@ -3251,6 +3604,10 @@ purujoensis_zamora_smith.a.b_2012:
   name: purujoensis
   auth: [zamora, smith.a.b]
   year: 2012
+pygecystis:
+  name: Pygecystis
+  auth: [paul.c.r.c]
+  year: 1984
 pyrgocystidae:
   name: Pyrgocystidae
   rank: Family
@@ -3304,6 +3661,10 @@ ramseyocrinus:
   name: Ramseyocrinus
   auth: [Bates]
   year: 1968
+raripunctata_angelin_1878:
+  name: raripunctata
+  auth: [Angelin]
+  year: 1878
 rectiradiatus_shideler_1918:
   name: rectiradiatus
   auth: [Shideler]
@@ -3332,10 +3693,18 @@ reesei_sprinkle_collins.d_2006:
   name: reesei
   authority:
     source: 2006_sprinkle_collins.d
+regnelli_sinclair_1948:
+  name: regnelli
+  auth: [Sinclair]
+  year: 1948
 regnellicystis:
   name: Regnellicystis
   auth: [bassler]
   year: 1950
+regulaecystis:
+  name: Regulaecystis
+  auth: [Dehm]
+  year: 1932
 regularis_orłowski_1968:
   name: regularis
   auth: [orłowski]
@@ -3405,6 +3774,10 @@ rhombifera-class:
   status: informal
   auth: [Zittel]
   year: 1870
+rhombiferidae:
+  name: Rhombiferidae
+  auth: [kesling]
+  year: 1962
 rhopalocystidae:
   name: Rhopalocystidae
   auth: [ubaghs]
@@ -3521,6 +3894,7 @@ scotiaecystis:
   year: 1968
 scotiaecystis-sp_sumrall_sprinkle_guensburg_1997:
   name: null
+  rank: species
   authority:
     source: 1997_sumrall_sprinkle_guensburg
 senckenbergii_meyer_1826:
@@ -3535,6 +3909,14 @@ septembrachiatus_miller_dyer_1878:
   name: septembrachiatus
   auth: [Miller, Dyer]
   year: 1878
+septentrionallis_regnéll_1945:
+  name: septentrionallis
+  auth: [regnéll]
+  year: 1945
+subglobosus_hall_1862:
+  name: subglobosus
+  auth: [hall]
+  year: 1862
 suecica_jaekel_1927:
   name: suecica
   auth: [jaekel]
@@ -3591,12 +3973,10 @@ spencensis_wen.r_babcock_peng.j_robison_2019:
   name: spencensis
   auth: [wen.r, babcock, peng.j, robison]
   year: 2019
-sphaeronidae:
-  name: Sphaeronidae
-  rank: Family
-  auth: [neumayr]
-  year: 1889
-  altSpellingOf: sphaeronitidae
+sphaerocystites:
+  name: Sphaerocystites
+  auth: [hall]
+  year: 1859
 sphaeronites:
   name: Sphaeronites
   authority:
@@ -3607,11 +3987,24 @@ sphaeronites:
 sphæronites:
   name: Sphæronites
   altSpellingOf: sphaeronites
+sphaeronitida-superfamily:
+  name: Sphaeronitida
+  rank: Superfamily
+  auth: [neumayr]
+  year: 1889
 sphaeronitidae:
   name: Sphaeronitidae
   rank: Family
   auth: [neumayr]
   year: 1889
+sphaeronidae:
+  name: Sphaeronidae
+  altSpellingOf: sphaeronitidae
+sphaeronitinae:
+  name: Sphaeronitinae
+  rank: Subfamily
+  authority:
+    source: 1997_paul.c.r.c
 spinosa_wang.d.z_nohejlová_sun.z.x_zeng.h_lefebvre_yang.x.l_zhao.f.c_2024:
   name: spinosa
   authority:
@@ -3698,6 +4091,15 @@ stenuroidea:
   rank: Class
   auth: [spencer]
   year: 1941
+stephanoblastus:
+  name: Stephanoblastus
+  auth: [jaekel]
+  year: 1918
+stephanocrinidae:
+  name: Stephanocrinidae
+  rank: Family
+  auth: [Wachsmuth, Springer]
+  year: 1886
 stephanocrinus:
   name: Stephanocrinus
   auth: [Conrad]
@@ -3718,6 +4120,11 @@ striata_pander_1830:
   name: striata
   auth: [Pander]
   year: 1830
+striatosphaerites-subgenus:
+  name: Striatosphaerites
+  rank: subgenus
+  authority:
+    source: 1997_paul.c.r.c
 strimplecystis:
   name: Strimplecystis
   auth: [bassler]
@@ -3726,6 +4133,10 @@ strimplei_sprinkle_1982:
   name: strimplei
   authority:
     source: 1982g_sprinkle
+strobilocystites:
+  name: Strobilocystites
+  auth: [White]
+  year: 1876
 stromatocystitida:
   name: Stromatocystitida
   rank: Order
@@ -3841,6 +4252,15 @@ thecoidea:
   rank: Class
   auth: [jaekel]
   year: 1895
+thomacystidae:
+  name: Thomacystidae
+  rank: Family
+  auth: [paul.c.r.c]
+  year: 1969
+thomacystis:
+  name: Thomacystis
+  auth: [paul.c.r.c]
+  year: 1969
 thor_müller.p_hahn_2010:
   name: thor
   authority:
@@ -3899,6 +4319,10 @@ tongshanensis_qiu_lin_1983:
   auth: [Qiu, Lin]
   in: [Qiu, 'et al.']
   year: 1983
+tormoblastus:
+  name: Tormoblastus
+  auth: [jaekel]
+  year: 1927
 totiglobidae:
   name: Totiglobidae
   auth: [Bell, sprinkle]
@@ -3930,6 +4354,10 @@ treadwelli_sinclair_1945:
   name: treadwelli
   auth: [Sinclair]
   year: 1945
+triangulatus_paul.c.r.c_1997:
+  name: triangulatus
+  authority:
+    source: 1997_paul.c.r.c
 tribrachiatus_bassler_1943:
   name: tribrachiatus
   auth: [bassler]
@@ -4068,6 +4496,7 @@ walcottidiscus:
     source: 1935_bassler
 walcottidiscus-sp_bassler_1936:
   name: null
+  rank: species
   authority:
     source: 1936_bassler
 wanneri_foerste_1938:
@@ -4106,6 +4535,10 @@ withersi_gill_caster_1960:
   name: withersi
   authority:
     source: 1960_gill_caster
+woodi_broadhead_strimple_1975:
+  name: woodi
+  authority:
+    source: 1975_broadhead_strimple
 ###################### X
 xenocystites:
   name: Xenocystites

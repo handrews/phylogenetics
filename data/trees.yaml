@@ -1227,18 +1227,18 @@
             - openTaxon: cheirocrinus-sp-1_paul.c.r.c_1968
             - taxon: atavus_jaekel_1899
             - taxon: giganteus_leuchtenberg_1943
-            - taxon: languedocianus_thoral_
+            # - taxon: languedocianus_thoral_
             - taxon: granulatus_jaekel_1899
-            - taxon: anatiformis_hall_
+            # - taxon: anatiformis_hall_
             - openTaxon: cheirocrinus-sp-2_paul.c.r.c_1968
               new: true
             - openTaxon: cheirocrinus-sp-3_paul.c.r.c_1968
             - taxon: interruptus_jaekel_1899
-            - taxon: jamesi_mccoy_
+            # - taxon: jamesi_mccoy_
           - taxon: homocystites
             children:
             - taxon: alter_barrande_1887
-            - taxon: constrictus_bather_
+            # - taxon: constrictus_bather_
         - taxon: echinoencrinitidae
           children:
           - taxon: echinoencrinitinae
@@ -1278,112 +1278,113 @@
             - taxon: watkinsi_strimple_1948
           - taxon: pleurocystites
             children:
-            - taxon: elegans_billings_
-            - taxon: filitextus_billings_
-            - taxon: squamosus_billings_
-            - taxon: rugeri_salter_
-            - taxon: quadratus_bather_
-            - taxon: gibbus_bather_
+            # - taxon: elegans_billings_
+            - taxon: filitextus_billings_1854
+            - taxon: squamosus_billings_1854
+            # - taxon: rugeri_salter_
+            # - taxon: quadratus_bather_
+            # - taxon: gibbus_bather_
           - taxon: regulaecystis
-            children:
-            - taxon: pleurocystoides_dehm_
+            # children:
+            # ??? could be subgenus ???
+            # - taxon: pleurocystoides_dehm_
         - taxon: glyptocystitidae
           children:
           - taxon: glyptocystites
             children:
-            - taxon: ehlersi_kesling_
-            - taxon: multiporus_billings_
-            - taxon: regnelli_sinclair_
-            - taxon: batheri_sinclair_
+            # - taxon: ehlersi_kesling_
+            - taxon: multiporus_billings_1854
+            - taxon: regnelli_sinclair_1948
+            - taxon: batheri_sinclair_1948
         - taxon: callocystitidae
           children:
           - taxon: callocystites
             children:
-            - taxon: jewetti_hall_
-            - taxon: canadensis_billings_
-            - taxon: subglobosus_hall_
+            - taxon: jewetti_hall_1852
+            - taxon: canadensis_billings_1866
+            - taxon: subglobosus_hall_1862
           - taxon: sphaerocystites
             children:
-            - taxon: multifasciatus_hall_
-            - taxon: bloomfieldensis_schuchert_
+            - taxon: multifasciatus_hall_1859
+            # - taxon: bloomfieldensis_schuchert_
           - taxon: hallicystis
-            children:
-            - taxon: imago_hall_
-            - taxon: elongata_jaekel_
-            - taxon: attenuata_paul.c.r.c_
+            # children:
+            # - taxon: imago_hall_
+            # - taxon: elongata_jaekel_
+            # - taxon: attenuata_paul.c.r.c_
           - taxon: lepadocystis
             children:
-            - taxon: moorei_meek_
+            - taxon: moorei_meek_1871
           - taxon: brockocystis
-            children:
-            - taxon: tecumseh_billings_
+            # children:
+            # - taxon: tecumseh_billings_
           - taxon: jaekelocystis
-            children:
-            - taxon: hartleyi_schuchert_
+            # children:
+            # - taxon: hartleyi_schuchert_
           - taxon: lovenicystis
             children:
-            - taxon: angelini_haeckel_
+            - taxon: angelini_jaekel_1899
           - taxon: apiocystites
-            children:
-            - taxon: pentrematoides_forbes_
+            # children:
+            # - taxon: pentrematoides_forbes_
           - taxon: lepocrinites
-            children:
-            - taxon: gebhardii_conrad_
+            # children:
+            # - taxon: gebhardii_conrad_
           - taxon: prunocystites
-            children:
-            - taxon: fletcheri_forbes_
+            # children:
+            # - taxon: fletcheri_forbes_
           - taxon: lipsanocystis
-            children:
-            - taxon: traversensis_ehlers_leighley_
-            - taxon: magnus_stumm_
+            # children:
+            # - taxon: traversensis_ehlers_leighley_
+            # - taxon: magnus_stumm_
           - taxon: tetracystis
-            children:
-            - taxon: fenestratus_troost_
-            - taxon: chrysalis_schuchert_
-            - taxon: oblongus_forbes_
-            - taxon: elegans_hall_
+            # children:
+            # - taxon: fenestratus_troost_
+            # - taxon: chrysalis_schuchert_
+            # - taxon: oblongus_forbes_
+            # - taxon: elegans_hall_
           - taxon: strobilocystites
             children:
-            - taxon: calvini_white_
+            - taxon: calvini_white_1876
           - taxon: staurocystis
             children:
-            - taxon: quadrifasciautus_pearce_
+            - taxon: quadrifasciatus_pearce_1843
           - taxon: pseudocrinites
             children:
-            - taxon: bifasciatus_pearce_
-            - taxon: pyriformis_paul.c.r.c_
-            - taxon: gordoni_schuchert_
-            - taxon: perdewi_schuchert_
-            - taxon: stellatus_schuchert_
-            - taxon: clarki_schuchert_
+            - taxon: bifasciatus_pearce_1843
+            - taxon: pyriformis_paul.c.r.c_1967
+            # - taxon: gordoni_schuchert_
+            # - taxon: perdewi_schuchert_
+            # - taxon: stellatus_schuchert_
+            # - taxon: clarki_schuchert_
       - taxon: hemicosmitida-superfamily
         children:
         - taxon: hemicosmitidae
           children:
           - taxon: hemicosmites
             children:
-            - taxon: pyriformis_buch_
-            - taxon: extraneus_eichwald_
+            - taxon: pyriformis_buch_1840
+            # - taxon: extraneus_eichwald_
             - openTaxon: hemicosmites-sp-1_paul.c.r.c_1968
               new: true
-            - taxon: malum_pander_
-            - cfTaxon: verrucosus_eichwald_
+            # - taxon: malum_pander_
+            # - cfTaxon: verrucosus_eichwald_
             - openTaxon: hemicosmites-sp-2_paul.c.r.c_1968
             - openTaxon: hemicosmites-sp-3_paul.c.r.c_1968
         - taxon: caryocrinitidae
           children:
           - taxon: caryocrinites
             children:
-            - taxon: ornatus_say_
-            - taxon: roemeri_jaekel_
-            - taxon: septentrionallis_regnéll_
-            - taxon: elongatus_rowley_
-        - taxon: thomacystiae
+            - taxon: ornatus_say_1825
+            # - taxon: roemeri_jaekel_
+            - taxon: septentrionallis_regnéll_1945
+            # - taxon: elongatus_rowley_
+        - taxon: thomacystidae
           children:
           - taxon: thomacystis
-            children:
-            - taxon: tuberculata_paul.c.r.c_
-    - taxon: fistuliporata
+            # children:
+            # - taxon: tuberculata_paul.c.r.c_
+    - taxon: fistuliporita
       new: true
       children:
       - taxon: caryocystitida-superfamily
@@ -2175,6 +2176,20 @@
           taxon: crinozoa
         children:
         - taxon: astrocystites
+1975_broadhead_strimple:
+  taxonomies:
+  - taxon: rhombifera-class
+    children:
+    - taxon: glyptocystitida-order
+      children:
+      - taxon: pleurocystitidae
+        children:
+        - taxon: amecystis
+          children:
+          - taxon: laevis_raymond_1921
+            type: true
+          - taxon: woodi_broadhead_strimple_1975
+            new: true
 1976_bell.b.m:
   taxonomies:
   - taxon: edrioasteroidea
@@ -3122,7 +3137,7 @@
           new: true
 1997_paul.c.r.c:
   taxonomies:
-  - taxon: diplorporita-class
+  - taxon: diploporita-class
     children:
     - taxon: sphaeronitida-superfamily
       children:
@@ -3150,7 +3165,7 @@
       - taxon: holocystitidae
         children:
         - taxon: brightonicystis
-    - taxon: aristocystitida
+    - taxon: aristocystitida-superfamily
       children:
       - taxon: aristocystidae
     - taxon: protocrinitida
@@ -3166,9 +3181,9 @@
             type: true
           - taxon: coxi_paul.c.r.c_1997
             new: true
-    - taxon: diploporita-incertae-sedis
+    - openTaxon: diploporita-incertae-sedis
       children:
-      - taxon: sp-e_paul.c.r.c_1997
+      - openTaxon: diploporita-sp-e_paul.c.r.c_1997
   - taxon: rhombifera-class
     children:
     - taxon: dichoporita
@@ -3212,7 +3227,7 @@
               new: true
           - taxon: heliocrinites
             children:
-            - taxon: balticus_eichwald_1929
+            - taxon: balticus_eichwald_1829
               type: true
             - taxon: triangulatus_paul.c.r.c_1997
               new: true
@@ -3694,7 +3709,7 @@
     - taxon: scoteinocystis
       new: true
       diagnosis: |
-        Echinoderme de petite taille, de con- tour subcirculaire ou subovale
+        Echinoderme de petite taille, de contour subcirculaire ou subovale
         face dorsale (seule conserv6e) convexe, formic de plaques calcitiques
         polygonales, étroitement jointives, disposées de manière irrégulière,
         en nombre variable; épispires nombreuses, ne s'ouvrant que du côté

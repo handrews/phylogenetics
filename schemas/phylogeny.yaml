@@ -544,6 +544,9 @@ $defs:
       day:
         type: integer
         minimum: 1
+      season:
+        type: string
+        enum: [spring, summer, fall, autumn, winter]
     if:
       required: [day]
     then:
