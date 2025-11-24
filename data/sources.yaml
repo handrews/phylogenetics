@@ -2233,6 +2233,23 @@ articles:
     authors:
     - zamora
     - smith.a.b
+  2013_nardin_bohatý:
+    title: A new pleurocystitid blastozoan from the Middle Devonian of the Eifel (Germany) and its phylogenetic importance
+    journal: acta-p-polonica
+    volume: 58
+    number: 3
+    pages:
+    - 533
+    - 544
+    pubDate:
+      year: 2013
+    processDates:
+      received: 2011-08-06
+      accepted: 2012-01-20
+      online: 2012-04-20
+    authors:
+    - nardin
+    - bohatý
   2013_smith.a.b_zamora:
     title: Cambrian spiral-plated echinoderms from Gondwana reveal the earliest pentaradial body plan
     journal: procrsocb

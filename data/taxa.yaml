@@ -953,6 +953,10 @@ cooperdiscus:
   name: Cooperdiscus
   authority:
     source: 1935_bassler
+coopericystis:
+  name: Coopericystis
+  auth: [parsley]
+  year: 1970
 cornuta:
   name: Cornuta
   rank: Order
@@ -3500,11 +3504,26 @@ pleurocystitidae:
   rank: Family
   auth: [neumayr]
   year: 1889
+pleurocystitidae-indeterminate-genus_nardin_bohatý_2013:
+  name: null
+  rank: genus
+  authority:
+    source: 2013_nardin_bohatý
+pleurocystitidae-sp_nardin_bohatý_2013:
+  name: null
+  rank: species
+  authority:
+    source: 2013_nardin_bohatý
 pleurocystitinae:
   name: Pleurocystitinae
   rank: Subfamily
   auth: [Ulrich, Kirk]
   year: 1911
+pleurocystoides_dehm_1932:
+  # Species, despite sounding like a genus
+  name: pleurocystoides
+  auth: [Dehm]
+  year: 1932
 pleurozonida:
   name: Pleurozonida
   rank: Order
@@ -4276,6 +4295,10 @@ testudinarius_hisinger_1837:
   name: testudinarius
   auth: [hisinger]
   year: 1837
+testudineus_nardin_bohatý_2013:
+  name: testudineus
+  authority:
+    source: 2013_nardin_bohatý
 tetracystis:
   name: Tetracystis
   auth: [schuchert]

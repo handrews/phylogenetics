@@ -1285,9 +1285,8 @@
             # - taxon: quadratus_bather_
             # - taxon: gibbus_bather_
           - taxon: regulaecystis
-            # children:
-            # ??? could be subgenus ???
-            # - taxon: pleurocystoides_dehm_
+            children:
+            - taxon: pleurocystoides_dehm_1932
         - taxon: glyptocystitidae
           children:
           - taxon: glyptocystites
@@ -4589,6 +4588,35 @@
           children:
           - taxon: titanocrinus
           - taxon: aethocrinus
+2013_nardin_bohatý:
+  taxonomies:
+  - taxon: blastozoa
+    children:
+    - taxon: rhombifera
+      emended: true
+      notes: Emended Paul, 1968
+      children:
+      - taxon: dichoporita
+        children:
+        - taxon: glyptocystitida-superfamily
+          children:
+          - taxon: pleurocystitidae
+            children:
+            - taxon: henicocystinae
+              emended: true
+              modifier: nom. transl.?
+              children:
+              - taxon: henicocystis
+              - taxon: coopericystis
+              - taxon: regulaecystis
+                children:
+                - taxon: pleurocystoides_dehm_1932
+                  type: true
+                - taxon: testudineus_nardin_bohatý_2013
+                  new: true
+          - openTaxon: pleurocystitidae-indeterminate-genus_nardin_bohatý_2013
+            children:
+            - openTaxon: pleurocystitidae-sp_nardin_bohatý_2013
 2013_smith.a.b_zamora:
   taxonomies:
   - taxon: echinodermata
