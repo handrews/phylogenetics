@@ -118,6 +118,26 @@ Lingulocystidae
 Ubaghsicystis
 Haimacystis
 
+lateral BC/DE compessed parallel to polar axis
+   Rhipidocystidae*
+      Rhipidocystis
+
+anterior-posterior A-CD compressed parallel to BC/DE and polar axes
+   Lingulocystis
+   Cardiocystites
+   Haimacystis
+   Rhipidocystidae*
+      Neorhipidocystis
+      Patalocystites
+      Durhamicystis
+   most lens-shaped Paracrinoidea
+
+dorsal-ventral
+   Asterozoa
+   Echinoidea (pars)
+   Edrioasteroidea (Isorophida, possibly others?)
+   Cyclocystoidea
+
 ===Ridersiidae and Glypticystitida (Rhombifera)===
 
 ===Relationships to other groups===

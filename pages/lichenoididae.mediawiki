@@ -18,7 +18,8 @@
 * Cymbionitidae {{small|Whitehouse, 1941}}
 }}
 
-'''Lichenoididae''' (sometimes misspelled ''Lichenoidae'') is a small extinct family of [[eocrinoid]] [[echinoderm]]s. It is best known from the type genus ''Lichenoides'', which unlike most other eocrinoids does not have a stalk.
+'''Lichenoididae''' (sometimes misspelled ''Lichenoidae'') is a small extinct family of stemless [[eocrinoid]] [[echinoderm]]s. It is best known from the type genus ''Lichenoides'', from the [[Middle Cambrian]] of [[West Gondwana]] (now Bohemia and Spain).  Two additional genera, ''Peridionites'' and ''Cymbionites'', are known from the Lower Middle Cambrian of [[East Gondwana]] (Australia) in the form of mostly-disarticulated plates.
+
 
 In 2021, the enigmatic ''Cymbionites'' and ''Peridionnities'', known only from fragmentary material, were assigned to the family after examination of thousands of disarticulated plates allowed sufficient reconstruction of the animals.  These genera had previously been considered so distinct that they were placed in their own families and orders in their own subphylum, Haplozoa, none of which were ever widely recognized, and all of which are now seen as synonyms of Lichenoididae.
 
@@ -26,16 +27,16 @@ At least one possible additional genus has been identified based on the presence
 
 The genus ''Curtoeocrinus'' (Zhao ''et al.'' 1994) was initially assigned to this family, but was later determined to be a developmental variant of the [[eocrinidae|eocrinid]] ''Sinoeocrinus''.<ref>{{harvnb|Parsley|Zhao|2006}}</ref>
 
-The following taxonomy is adapted from Jell and Sprinkle (2021), with the ''Lichenoides'' species (which were omitted in that taxonomy) added from Parsley and Prokop (2004):
+The following taxonomy is adapted from Jell and Sprinkle (2021), with ''L. vadosus'' added from Parsley and Prokop (2004):
 
-* Phylum Echinodermata {{small|Bruguière, 1791 [ex Klein, 1734]}}
-** Subphylum Blastozoa {{small|Sprinkle, 1973}}
-*** Class Eocrinoidea {{small|Jaekel, 1918}}
-**** Order Gogiida {{small|Broadhead, 1982}}
-***** Family Lichenoididae {{small|Jaekel, 1918}}
-****** ''Lichenoides'' {{small|Barrande, 1846}}
-******* ''L. priscus'' {{small|Barrande, 1846}}
-******* ''L. vadosus'' {{small|Parsley & Prokop, 2004}}
+* Phylum [[Echinodermata]] {{small|Bruguière, 1791 [ex Klein, 1734]}}
+** Subphylum [[Blastozoa]] {{small|Sprinkle, 1973}}
+*** Class [[Eocrinoidea]] {{small|Jaekel, 1918}}
+**** Order [[Gogiida]] {{small|Broadhead, 1982}}
+***** Family '''Lichenoididae''' {{small|Jaekel, 1918}}
+****** ''[[Lichenoides]]'' {{small|Barrande, 1846}}
+******* ''L. priscus'' {{small|Barrande, 1846}} (Drumian of Bohemia)
+******* ''L. vadosus'' {{small|Parsley & Prokop, 2004}} (Drumian of Bohemia)
 ****** ''Peridionites'' {{small|Whitehouse, 1941}}
 ******* ''P. navicula'' {{small|Whitehouse, 1941}}
 ****** ''Cymbionites'' {{small|Whitehouse, 1941}}
