@@ -25,6 +25,7 @@ def print_tree(node, data, tree_info, args, indent='', on=True, buffer=''):
   root = args.root if args.root else args.branch
 
   if not indent:
+    print()
     print(f'PAPER: {tree_info[1]}')
     if root is not None:
       on = False
@@ -70,7 +71,7 @@ def print_tree(node, data, tree_info, args, indent='', on=True, buffer=''):
 
   output = f'{indent}{name}'
   if on:
-    if args.branch == found_name:
+    if args.branch == found_name and buffer:
       # Strip off final newline as print() always adds one.
       print(buffer[:-1])
       buffer = ''
