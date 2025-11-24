@@ -311,6 +311,7 @@ $defs:
     - Class
     - Subclass
     - Infraclass
+    - Parvclass
     - Superorder
     - Order
     - Suborder

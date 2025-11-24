@@ -809,9 +809,13 @@ cheirocrinus-sp-3_paul.c.r.c_1968:
   rank: species
   authority:
     source: 1968b_paul.c.r.c
+cheirocystella:
+  name: Cheirocystella
+  auth: [paul.c.r.c]
+  year: 1972
 cheirocystis:
   name: Cheirocystis
-  auth: [Paul]
+  auth: [paul.c.r.c]
   year: 1972
 chrysalis_schuchert_1904:
   name: chrysalis
@@ -865,6 +869,11 @@ cincta-order:
   rank: Order
   auth: [jaekel]
   year: 1918
+cladida:
+  name: Cladida
+  rank: Parvclass
+  auth: [Moore, Laudon]
+  year: 1943
 clausus_austen_1843:
   name: clausus
   auth: [Austen]
@@ -1284,6 +1293,14 @@ deckeri_sinclair_1945:
   name: deckeri
   auth: [Sinclair]
   year: 1945
+deltacystinae:
+  name: Deltacystinae
+  auth: [sumrall, sprinkle]
+  year: 1995
+deltacystis:
+  name: Deltacystis
+  auth: [sprinkle]
+  year: 1974
 delticus_sumrall_sprinkle_guensburg_1997:
   name: delticus
   authority:
@@ -3485,6 +3502,10 @@ plantini_schmidt_1880:
   name: plantini
   auth: [Schmidt]
   year: 1880
+plethoschisma:
+  name: Plethoschisma
+  auth: [sprinkle]
+  year: 1974
 pleuricostatus_dean.j_smith.a.b_1998:
   name: pleuricostatus
   authority:
@@ -4440,6 +4461,10 @@ turbanicystis:
   name: Turbanicystis
   authority:
     source: 2010_parsley_zhao.y.l
+turgidacystis:
+  name: Turgidacystis
+  auth: [parsley, sumrall]
+  year: 2007
 turgidus_bassler_1936:
   name: turgidus
   authority:

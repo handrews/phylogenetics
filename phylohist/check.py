@@ -59,6 +59,10 @@ def check_node(node, data, parent=[], tree_info=None):
     current = parent + ['_anon_']
     logger.debug(f'Descending through {current}')
 
+  if (bracket := node.get('bracket')):
+    if bracket not in data['taxa']:
+      logger.error(f'Bracket taxa {bracket} not found!')
+
   for index, synonym in enumerate(node.get('synonyms', [])):
     check_node(synonym, data, current + ['synonym', str(index)])
   for index, non in enumerate(node.get('non', [])):
