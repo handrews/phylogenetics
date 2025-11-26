@@ -263,11 +263,10 @@
         - taxon: carnensis_foerste_1914
       - taxon: carneyella
         children:
-        - taxon: pileus_hall_1866
+        - taxon: pilea_hall_1866
           type: true
           synonyms:
           - taxon: pileus_hall_1866
-            notes: the Treatise does not list the subgenus
             parents:
             - taxon: lepidodiscus-subgenus
             - taxon: agelacrinus
@@ -336,7 +335,7 @@
             parents:
             - taxon: agelacrinus
         - taxon: reversatus_foerste_1914
-        - taxon: septembrachiatus_miller_dyer_1878
+        - taxon: septembrachiatus_miller.s.a_dyer_1878
       - taxon: lebetodiscus
         children:
         - taxon: dicksoni_billings_1857
@@ -644,7 +643,39 @@
           - taxon: edenensis_bassler_1936
             new: true
         - taxon: carneyella
-          # TODO:  FINISH!!!
+          children:
+          - taxon: agelacrinus-subgenus
+            children:
+            - taxon: pileus_hall_1866
+              type: true
+            - taxon: vetusta_foerste_1914
+            - taxon: faberi_miller.s.a_1894
+          - taxon: nicklesi_bassler_1936
+          - taxon: ulrichi_bassler_shideler_1936
+        - taxon: streptaster
+          children:
+          - taxon: agelacrinus-subgenus_streptaster
+            children:
+            - taxon: septembrachiata_miller.s.a_dyer_1878
+        - taxon: lebetodiscus
+          children:
+          - taxon: dicksoni_billings_1857
+            type: true
+            synonyms:
+            - taxon: dicksoni_billings_1857
+              parents:
+              - taxon: agelacrinites
+          - taxon: loriformis_raymond_1915
+        - taxon: foerstediscus
+          children:
+          - taxon: splendens_bassler_1936
+            new: true
+          - taxon: parvus_bassler_1936
+            new: true
+      - taxon: pyrgocystis
+      - taxon: hemicystites
+        children:
+        - taxon: parasiticus_hall_1852
 1941_whitehouse:
   taxonomies:
   - taxon: echinodermata
@@ -2410,6 +2441,22 @@
               - taxon: vorticellata_hall_1866
                 parents:
                 - taxon: agelacrinus
+          - taxon: cystaster
+            children:
+            - taxon: granulatus_hall_1871
+              type: true
+            - taxon: stellatus_hall_1866
+        - taxon: carneyellidae
+          new: true
+          children:
+          - taxon: carneyella
+            children:
+            - taxon: pilea_hall_1866
+              type: true
+            - taxon: faberi_miller.s.a_1894
+            - taxon: ulrichi_bassler_shideler_1936
+            - taxon: valcourensis_clark_1920
+            
 1981_derstler:
   phylogenies:
   - treeType: evolutionary schematic

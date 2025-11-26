@@ -89,6 +89,14 @@ def build_expected_author(expected, author):
   return {new_expected}
 
 
+def check_extras(taxon, rank, expected_set, expected):
+    expected_set.add(f"{expected}-{rank.lower()}")
+    if 'originalParent' in taxon:
+      expected_set = {
+        e + f"_{taxon['originalParent'].lower()}" for e in expected_set
+      }
+    return expected_set
+
 def build_expected_taxon(expected, taxon):
   if not (rank := taxon.get('rank')):
     if taxon['name'] is None:
@@ -118,19 +126,12 @@ def build_expected_taxon(expected, taxon):
       if idx == 5:
         expected_set.add(species_expected + source_id[idx - 1])
 
-    if 'originalParent' in taxon:
-      expected_set = {e + f"_{taxon['originalParent']}" for e in expected_set}
+    expected_set = check_extras(taxon, rank, expected_set, expected)
     logger.debug(f'...built {expected_set}')
     return expected_set
 
-  expected_set = {expected}
+  expected_set = check_extras(taxon, rank, {expected}, expected)
 
-  # TODO: fix duplicate code
-  if 'originalParent' in taxon:
-    expected_set.add(f"{expected}_{taxon['originalParent'].lower()}")
-
-  logger.debug(f'Creating alt taxon_id expectations for "{taxon}"')
-  expected_set.add(f"{expected}-{rank.lower()}")
   # for author_id in taxon['auth']:
     # logger.debug(f'Adding author "{author_id}" for taxon_id "{taxon}"')
     # alt_expected += f'-{author_id.lower()[0]}'

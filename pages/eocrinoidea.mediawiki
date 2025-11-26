@@ -106,7 +106,16 @@ Gogiida
    Thorntonocystidae
    Lichenoididae
 
+{| class="wikitable"
+|+ Eocrinoid groups
+|-
+! Group !! status !! theca !! oral !! aboral !! stalk !! ambulacra !! brachioles 
+|-
+| Imbricata || paraphyletic || || tesselate || imbricate || unorganized || recumbent || ??
+
 ===Ascocystitida and ???===
+
+THe Ascocystitida,encompassing the Ascocystitidae, Macrocystellidae, and Cambrocrinidae, have numerous closely-spaced brachioles on short recument ambulacra.
 
 ===Trachelocrinda and Hemicosmitida (Rhombifera)===
 

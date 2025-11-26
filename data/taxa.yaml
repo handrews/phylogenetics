@@ -61,6 +61,13 @@ agelacrinus-subgenus:
   rank: subgenus
   auth: [Hall]
   year: 1858
+agelacrinus-subgenus_streptaster:
+  notes: Unclear what to do about this vs Carneyella (Agelacrinus)
+  originalParent: streptaster
+  name: Agelacrinus
+  rank: subgenus
+  auth: [Hall]
+  year: 1858
 agelacrinoidea:
   name: Agelacrinoidea
   rank: Order
@@ -719,6 +726,11 @@ carneyella:
   name: Carneyella
   auth: [foerste]
   year: 1916
+carneyellidae:
+  name: Carneyellidae
+  rank: Family
+  authority:
+    source: 1976_bell.b.m
 carpoidea:
   name: Carpoidea
   rank: Class
@@ -1933,6 +1945,7 @@ extenuatus_zhao.j_rahman_zamora_chen.a_cong.p.y_2022:
 faberi_miller.s.a_1894:
   name: faberi
   auth: [miller.s.a]
+  in: [miller.s.a, Faber]
   year: 1894
 faberi_miller.s.a_1899:
   name: faberi
@@ -1984,6 +1997,12 @@ foerstediscus:
   name: Foerstediscus
   authority:
     source: 1935_bassler
+foerstei_bassler_shideler_1936:
+  name: foerstei
+  auth: [bassler, Shideler]
+  in: [bassler]
+  year: 1936
+  notes: 1936_bassler (but 'in' doesn't support this form yet)
 fortuitus_guensburg_sprinkle_2003:
   name: fortuitus
   authority:
@@ -2408,11 +2427,6 @@ hemicosmites-sp-3_paul.c.r.c_1968:
   rank: species
   authority:
     source: 1968b_paul.c.r.c
-hemicystites-subgenus:
-  name: Hemicystites
-  rank: subgenus
-  auth: [Hall]
-  year: 1852
 hemicosmitida-order:
   name: Hemicosmitida
   rank: Order
@@ -2436,16 +2450,21 @@ hemicosmitidae:
   year: 1918
 hemicystites:
   name: Hemicystites
-  auth: [Hall]
+  auth: [hall]
+  year: 1852
+hemicystites-subgenus:
+  name: Hemicystites
+  rank: subgenus
+  auth: [hall]
   year: 1852
 hemicystitidae:
   name: Hemicystitidae
   rank: Family
-  auth: [Bassler]
+  auth: [bassler]
   year: 1936
 hemicystitides:
   name: Hemicystitides
-  auth: [Hall]
+  auth: [hall]
   year: 1852
 hemicystis:
   name: Hemicystis
@@ -3176,6 +3195,10 @@ nevadensis_sprinkle_1973:
   name: nevadensis
   authority:
     source: 1973_sprinkle
+nicklesi_bassler_1936:
+  name: nicklesi
+  authority:
+    source: 1936_bassler
 nimius_bell_sprinkle_1978:
   name: nimius
   auth: [Bell, sprinkle]
@@ -3339,6 +3362,9 @@ parasitica_hall_1852:
   name: parasitica
   auth: [Hall]
   year: 1852
+parasiticus_hall_1852:
+  name: parasiticus
+  altSpellingOf: parasitica_hall_1852
 parazoa-branch:
   name: Parazoa
   rank: Branch
@@ -3366,6 +3392,10 @@ parsleyi_zamora_2009:
   auth: [zamora]
   in: [zamora, gozalo, liñán]
   year: 2009
+parvus_bassler_1936:
+  name: parvus
+  authority:
+    source: 1936_bassler
 pelmatozoa:
   name: Pelmatozoa
   bracket: Pelmatozoans
@@ -3438,10 +3468,13 @@ phyllocystidae:
   rank: Family
   auth: [Derstler]
   year: 1979
-pileus_hall_1866:
-  name: pileus
+pilea_hall_1866:
+  name: pilea
   auth: [Hall]
   year: 1866
+pileus_hall_1866:
+  name: pileus
+  altSpellingOf: pilea_hall_1866
 pirocystella:
   name: Pirocystella
   authority:
@@ -3987,10 +4020,13 @@ segurae_gil cid_domínguez alonso_2002:
   name: segurae
   authority:
     source: 2002_gil cid_domínguez alonso
-septembrachiatus_miller_dyer_1878:
-  name: septembrachiatus
-  auth: [Miller, Dyer]
+septembrachiata_miller.s.a_dyer_1878:
+  name: septembrachiata
+  auth: [miller.s.a, Dyer]
   year: 1878
+septembrachiatus_miller.s.a_dyer_1878:
+  name: septembrachiatus
+  altSpellingOf: septembrachiata_miller.s.a_dyer_1878
 septentrionallis_regnéll_1945:
   name: septentrionallis
   auth: [regnéll]
@@ -4499,6 +4535,12 @@ ulrichi_bassler_1936:
   name: ulrichi
   authority:
     source: 1936_bassler
+ulrichi_bassler_shideler_1936:
+  name: ulrichi
+  auth: [bassler, Shideler]
+  in: [bassler]
+  year: 1936
+  notes: 1936_bassler (but 'in' doesn't support this form yet)
 ulrichidiscus:
   name: Ulrichidiscus
   authority:

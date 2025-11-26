@@ -38,9 +38,9 @@ The following taxonomy is adapted from Jell and Sprinkle (2021), with ''L. vados
 ******* ''L. priscus'' {{small|Barrande, 1846}} (Drumian of Bohemia)
 ******* ''L. vadosus'' {{small|Parsley & Prokop, 2004}} (Drumian of Bohemia)
 ****** ''Peridionites'' {{small|Whitehouse, 1941}}
-******* ''P. navicula'' {{small|Whitehouse, 1941}}
+******* ''P. navicula'' {{small|Whitehouse, 1941}} (Stage 4 – Wuliuan of NE Australia)
 ****** ''Cymbionites'' {{small|Whitehouse, 1941}}
-******* ''C. craticula'' {{small|Whitehouse, 1941}}
+******* ''C. craticula'' {{small|Whitehouse, 1941}} (Stage 4 – Wuliuan of NE Australia)
 
 
 ==Description==
