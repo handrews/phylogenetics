@@ -25,8 +25,17 @@ def print_tree(node, data, tree_info, args, indent='', on=True, buffer=''):
   root = args.root if args.root else args.branch
 
   if not indent:
+    paper = data["sources"]["articles"][tree_info[1]]
+    year = tree_info[1][:4] # paper['pubDate']#['year']
+    authors = '; '.join(
+      [
+        f"{a['family']}, {a['given']}" for a in [
+          data['authors'][a_id] for a_id in paper['authors']
+        ]
+      ]
+    )
     print()
-    print(f'PAPER: {tree_info[1]}')
+    print(f'PAPER: {year} {authors}\n  {paper["title"]}')
     if root is not None:
       on = False
 
