@@ -1,35 +1,45 @@
 {{Short description|Extinct genus of echinoderms}}
 {{Automatic taxobox
-| image = Lepidocystis (upper portion).png
-| image_caption = A diagram of the upper portion of the echinoderm Lepidocystis
-| fossil_range = Cambrian Series 2
-| taxon = Lepidocystis     
+ |fossil_range={{fossil range|Cambrian Stage 4|Drumian|earliest=Cambrian Stage 3}}
+ |image=Lepidocystis (upper portion).png
+ |image_caption=A diagram of the upper portion of the echinoderm Lepidocystis
+ |fossil_range=Cambrian Series 2
+ |taxon=Lepidocystis
+ |authority=Foerste, 1938
+ |type_species=†'''''L. wanneri'''''
+ |type_species_authority=Foerste, 1938
+ |subdivision_ranks=Species
+ |subdivision =
+* †''L. wanneri''
+* †''cf. L. wanneri''<ref>{{havnb|Sprinkle|1973|pages=66–68}}</ref>
+* ? †''cf. L. sp.''
 }}
 
-'''''Lepidocystis''''' is a Palaeozoic genus of imbricate lepidocystoid [[eocrinoid]], closely related to ''[[Kinzercystis]]'',<ref>{{Cite journal | doi = 10.1111/j.1469-185x.1984.tb00411.x| title = The Early Radiation and Phylogeny of Echinoderms| year = 1984| last1 = Paul| first1 = C. R. C.| last2 = Smith| first2 = A. B.| journal = Biological Reviews| volume = 59| issue = 4| pages = 443–481| s2cid = 86572427}}</ref><ref>{{Cite journal | doi=10.1098/rspb.2013.1197 | title=Cambrian spiral-plated echinoderms from Gondwana reveal the earliest pentaradial body plan | year=2013 | last1=Smith | first1=Andrew B. | last2=Zamora | first2=Samuel | journal=Proceedings of the Royal Society B: Biological Sciences | volume=280 | issue=1765 | pmid=23804624 | pmc=3712455 }}</ref> It bore a stalk, with which it attached to firm substrates;<ref>{{Cite journal | url =https://doi.org/10.1016/j.earscirev.2017.06.018
-| doi =10.1016/j.earscirev.2017.06.018
-| title =The Cambrian Substrate Revolution and the early evolution of attachment in suspension-feeding echinoderms
-| year =2017
-| last1 =Zamora
-| first1 =Samuel
-| last2 =Deline
-| first2 =Bradley
-| last3 =Javier Álvaro
-| first3 =J.
-| last4 =Rahman
-| first4 =Imran A.
-| journal =Earth-Science Reviews
-| volume =171
-| pages =478–491
-| bibcode =2017ESRv..171..478Z
-| s2cid =134049725
-| url-access =subscription
-}}</ref> and [[brachioles]] arising as lateral branches from its arms.<ref>{{cite journal | doi = 10.1111/j.1469-185X.1984.tb00411.x| title = The Early Radiation and Phylogeny of Echinoderms| year = 1984| last1 = Paul| first1 = C. R. C.| last2 = Smith| first2 = A. B.| journal = Biological Reviews| volume = 59| issue = 4| pages = 443–481| s2cid = 86572427}}</ref>
+'''''Lepidocystis''''' is the type genus of the family [[Lepidocystidae]], the most [[basal]] known group of [[Blastozoa]]ns.
 
-It is only known from the late Botomian = [[Cambrian Series 2]] Kinzers Formation.<ref>{{Cite journal | doi = 10.1080/14772019.2018.1541485| title = Morphology, palaeoecology and phylogenetic interpretation of the Cambrian echinoderm ''Vyscystis'' (Barrandian area, Czech Republic)| year = 2019| last1 = Nohejlová| first1 = Martina| last2 = Nardin| first2 = Elise| last3 = Fatka| first3 = Oldřich| last4 = Kašička| first4 = Libor| last5 = Szabad| first5 = Michal| journal = Journal of Systematic Palaeontology| volume = 17| issue = 19| pages = 1619–1634| s2cid = 92231073}}</ref>
+==Morphology==
+
+
+a Palaeozoic genus of imbricate lepidocystoid [[eocrinoid]], closely related to ''[[Kinzercystis]]'',<ref>{{harvnb|Paul|Smith|1984}}</ref><ref>{{harvnb|Smith|Zamora|2013}}</ref> It bore a stalk, with which it attached to firm substrates;<ref>{{harvnb|Zamora|Deline|Álvaro|Rahman|2017}}</ref> and [[brachioles]] arising as lateral branches from its arms.<ref>{{harvnb|Paul|1984}}</ref>
+
+It is only known from the late Botomian=[[Cambrian Series 2]] Kinzers Formation.<ref>{{harvnb|Nohejlová|Nardin|Fatka|Kašička|Sabad|2019}}</ref>
 
 ==References==
 {{Reflist}}
+
+===Works cited===
+{{refbegin}}
+* {{cite journal|last1=Guensburg |first1=Thomas E. |last2=Mooi |first2=Rich |last3=Mongiardino Koch |first3=Nicolás |year=2023 |title=Crinoid calyx origin from stem radial echinoderms |journal=Journal of Paleontology |volume=97 |issue=5 |pages=1092–1115 |doi=10.1017/jpa.2023.14}} <!-- open access creative commons -->
+* {{cite journal|last1=Nardin |first1=Elise |last2=Lefebvre |first2=Bertrand |last3=Fatka |first3=Oldřich |last4=Nohejlová |first4=Martina |last5=Kašička |first5=Libor |last6=Šinágl |first6=Miroslav |last7=Szabad |first7=Michal |year=2017 |title=Evolutionary implications of a new transitional blastozoan echinoderm from the middle Cambrian of the Czech Republic |journal=Journal of Paleontology |volume=91 |number=4 |pages=672–684|doi=10.1017/jpa.2016.157 |bibcode=2017JPal...91..672N }}
+* {{cite journal|last1=Nohejlová |first1=Martina |last2=Nardin |first2=Elise |last3=Fatka |first3=Oldřich |last4=Kašička |first4=Libor |last5=Szabad |first5=Michal |year=2019 |title=Morphology, palaeoecology and phylogenetic interpretation of the Cambrian echinoderm ''Vyscystis'' (Barrandian area, Czech Republic) |journal=Journal of Systematic Palaeontology |volume=17 |issue=19 |pages=1619–1634 |doi=10.1080/14772019.2018.1541485 |s2cid=92231073}}
+* {{cite journal|last1=Paul |first1=C. R. C. |last2=Smith |first2=A. B. |year=1984 |title=The Early Radiation and Phylogeny of Echinoderms |journal=Biological Reviews |volume=59 |issue=4 |pages=443–481 |doi=10.1111/j.1469-185X.1984.tb00411.x |s2cid=86572427}}
+* {{cite journal|last1=Paul |first1=C. R. C. |last2=Smith |first2=A. B. |year=1984 |title=The Early Radiation and Phylogeny of Echinoderms |journal=Biological Reviews |volume=59 |issue=4 |pages=443–481 |doi=10.1111/j.1469-185x.1984.tb00411.x |s2cid=86572427}}
+* {{cite journal|last1=Smith |first1=Andrew B. |last2=Zamora |first2=Samuel |year=2013 |title=Cambrian spiral-plated echinoderms from Gondwana reveal the earliest pentaradial body plan |journal=Proceedings of the Royal Society B: Biological Sciences |volume=280 |issue=1765 |doi=10.1098/rspb.2013.1197 |pmid=23804624 |pmc=3712455}}
+* {{cite journal|last1=Smith |first1=Andrew B. |last2=Zamora |first2=Samuel |last3=Álvaro |first3=J. Javier |year=2013 |title=The oldest echinoderm faunas from Gondwana show that echinoderm body plan diversification was rapid |journal=Nature Communications |volume=4 |article-id=1385 |doi=10.1038/ncomms2391}}
+* {{cite journal|last1=Sprinkle |first1=James |year=1973 |title=Morphology and evolution of blastozoan echinoderms |journal=Special Publication of the Museum of Comparative Zoology, Harvard University |url=https://archive.org/details/morphologyevolut00spri/mode/2up |accessdate=29 October 2024}}
+* {{cite journal|last1=Wang |first1=DeZhi |last2=Nohejlová |first2=Martina |alast3=Sun |first3=ZhiXin |last4=Zeng |first4=Han |last5=Lefebvre |first5=Bertrand |last6=Yang |first6=XingLian |last6=Zhao |first7=FangChen |year=2024 |title=First report of lepidocystid echinoderm in the Cambrian of North China: Evolutionary and Palaeobiogeographic implications |journal=Palaeogeography, Palaeoclimatology, Palaeoecology |volume=644 |article-id=112194 |doi=10.1016/j.palaeo.2024.112194}}
+* {{cite journal |last1=Zamora |first1=Samuel |last2=Deline |first2=Bradley |last3=Álvaro |first3=J. Javier |last4=Rahman |first4=Imran A.  |year=2017 |title=The Cambrian Substrate Revolution and the early evolution of attachment in suspension-feeding echinoderms |journal=Earth-Science Reviews |volume=171 |pages=478–491 |bibcode=2017ESRv..171..478Z |s2cid=134049725 |doi=10.1016/j.earscirev.2017.06.018 |url=https://doi.org/10.1016/j.earscirev.2017.06.018 |url-access=subscription}}
+{{refend}}
 
 {{Taxonbar|from=Q120395525}}
 
