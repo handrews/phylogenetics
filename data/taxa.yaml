@@ -1142,6 +1142,10 @@ cryptocrinitidae:
   rank: Family
   auth: [bassler]
   year: 1938
+cryptogoleus:
+  name: Cryptogoleus
+  authority:
+    source: 1976_bell.b.m
 ctenocystida:
   name: Ctenocystida
   rank: Order
@@ -2662,10 +2666,13 @@ inadunata:
   rank: Subclass
   auth: [Wachsmuth, springer]
   year: 1897
-inconditus_raymond_1915:
-  name: inconditus
+incondita_raymond_1915:
+  name: incondita
   auth: [Raymond]
   year: 1915
+inconditus_raymond_1915:
+  name: inconditus
+  altSpellingOf: incondita_raymond_1915
 inexplicata_paul.c.r.c_1997:
   name: inexplicata
   authority:
@@ -2792,6 +2799,10 @@ kinzercystis:
   name: Kinzercystis
   authority:
     source: 1973_sprinkle
+kirkfieldensis_bell.b.m_1976:
+  name: kirkfieldensis
+  authority:
+    source: 1976_bell.b.m
 kitchnerensis_sprinkle_1973:
   name: kitchnerensis
   authority:
@@ -3601,10 +3612,18 @@ platycystitidae:
   rank: Family
   auth: [parsley, Mintz]
   year: 1975
+platys_raymond_1915:
+  name: platys
+  auth: [Raymond]
+  year: 1915
 plantini_schmidt_1880:
   name: plantini
   auth: [Schmidt]
   year: 1880
+pleiadae_sinclair_bolton_1965:
+  name: pleiadae
+  auth: [Sinclair, Bolton]
+  year: 1965
 plethoschisma:
   name: Plethoschisma
   auth: [sprinkle]
@@ -3859,6 +3878,10 @@ rectiradiatus_shideler_1918:
   name: rectiradiatus
   auth: [Shideler]
   year: 1918
+rectitriordo:
+  name: Rectitriordo
+  authority:
+    source: 1976_bell.b.m
 redlichia:
   name: Redlichia
   auth: [Cossman]
@@ -3912,6 +3935,10 @@ reteocrinidae:
   rank: Family
   auth: [Wachsmuth, springer]
   year: 1885
+reticulatus_bell.b.m_1976:
+  name: reticulatus
+  authority:
+    source: 1976_bell.b.m
 reticulatus_jaekel_1899:
   name: reticulatus
   auth: [jaekel]
