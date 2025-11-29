@@ -51,16 +51,38 @@ agelacrinites:
   name: Agelacrinites
   auth: [Vanuxem]
   year: 1842
+agelacrinites-subgenus:
+  name: Agelacrinites
+  rank: subgenus
+  auth: [Vanuxem]
+  year: 1842
+  notes: Copied auth/year from genus, unsure if correct.
 agelacrinites_forbes_1848:
   homonym: true
   name: Agelacrinites
   auth: [Forbes]
   year: 1848
-agelacrinus-subgenus:
+agelacrinus-subgenus_carneyella:
   name: Agelacrinus
+  originalParent: carneyella
   rank: subgenus
   auth: [Hall]
   year: 1858
+  notes: Copied auth/year from genus, unsure if correct.
+agelacrinus-subgenus_discocystis:
+  name: Agelacrinus
+  originalParent: discocystis
+  rank: subgenus
+  auth: [Hall]
+  year: 1858
+  notes: Copied auth/year from genus, unsure if correct.
+agelacrinus-subgenus_isorophus:
+  name: Agelacrinus
+  originalParent: isorophus
+  rank: subgenus
+  auth: [Hall]
+  year: 1858
+  notes: Copied auth/year from genus, unsure if correct.
 agelacrinus-subgenus_streptaster:
   notes: Unclear what to do about this vs Carneyella (Agelacrinus)
   originalParent: streptaster
@@ -113,10 +135,10 @@ allocystites:
   name: Allocystites
   auth: [Miller]
   year: 1889
-alpinensis_bassler_1936:
-  name: alpinensis
-  auth: [bassler]
-  year: 1936
+alpenensis_bassler_1936:
+  name: alpenensis
+  authority: 
+    source: 1936_bassler
 alter_barrande_1887:
   name: alter
   auth: [barrande]
@@ -134,6 +156,10 @@ americana_zamora_sprinkle_sumrall_2020:
   name: americana
   authority:
     source: 2020_zamora_sprinkle_sumrall
+americanus_bassler_1936:
+  name: americanus
+  authority:
+    source: 1936_bassler
 ampheristocystidae:
   name: Ampheristocystidae
   rank: Family
@@ -710,6 +736,10 @@ carabocrinus:
   name: Carabocrinus
   auth: [billings]
   year: 1857
+carbonarius_bassler_1936:
+  name: carbonarius
+  authority:
+    source: 1936_bassler
 carchariaedens_billings_1859:
   name: carchariaedens
   auth: [billings]
@@ -970,8 +1000,8 @@ cooki_sprinkle_1982:
   name: cooki
   authority:
     source: 1982g_sprinkle
-cooperdiscus:
-  name: Cooperdiscus
+cooperidiscus:
+  name: Cooperidiscus
   authority:
     source: 1935_bassler
 coopericystis:
@@ -1155,6 +1185,10 @@ curtobrachiolus_zhao.y.l_huang.y.z_gong.x.y_1994:
   name: curtobrachiolus
   authority:
     source: 1994_zhao.y.l_huang.y.z_gong.x.y
+curtus_bassler_1936:
+  name: curtus
+  authority:
+    source: 1936_bassler
 curvatus_grigo_1995:
   name: curvatus
   auth: [Grigo]
@@ -1169,6 +1203,7 @@ cyathocystidae:
   rank: Family
   auth: [bather]
   year: 1899
+  notes: In Bassler (1936), Bassler gives himself as authority, with no year.
 cyathocystis:
   name: Cyathocystis
   auth: [Schmidt]
@@ -1187,8 +1222,8 @@ cyclaster_billings_1857:
   name: Cyclaster
   auth: [Billings]
   year: 1857
-cyclocystitoididae:
-  name: Cyclocystitoididae
+cyclocystoididae:
+  name: Cyclocystoididae
   rank: Family
   auth: [S. A. Miller]
   year: 1889
@@ -1342,13 +1377,11 @@ destombesi_ubaghs_1963:
   year: 1963
 devonica_bassler_1936:
   name: devonica
-  auth: [bassler]
-  year: 1936
+  authority:
+    source: 1936_bassler
 devonicus_bassler_1936:
   name: devonicus
-  auth: [bassler]
-  year: 1936
-  notes: Synonym or alt (gender-agreement) spelling of devonica?
+  altSpellingOf: devonica_bassler_1936
 dibrachycystidae:
   name: Dibrachycystidae
   rank: Family
@@ -2020,6 +2053,16 @@ germanica_müller.p_hahn_2010:
   name: germanica
   authority:
     source: 2010_müller.p_hahn
+germanus_bassler_1936_hemicystites:
+  originalParent: hemicystites
+  name: germanus
+  authority:
+    source: 1936_bassler
+germanus_bassler_1936_isorophus:
+  originalParent: isorophus
+  name: germanus
+  authority:
+    source: 1936_bassler
 giganteus_leuchtenberg_1943:
   name: giganteus
   auth: [Leuchtenberg]
@@ -2729,6 +2772,10 @@ kaskaskiensis_hall_1858:
   name: kaskaskiensis
   auth: [Hall]
   year: 1858
+kentuckyensis_bassler_1936:
+  name: kentuckyensis
+  authority:
+    source: 1936_bassler
 keslingi_bell.b.m_1976:
   name: keslingi
   authority:
@@ -2797,6 +2844,10 @@ latiusculus_barrande_1887:
   name: latiusculus
   auth: [barrande]
   year: 1887
+laudoni_bassler_1936:
+  name: laudoni
+  authority:
+    source: 1936_bassler
 lebetodiscidae:
   name: Lebetodiscidae
   rank: Family
@@ -2811,6 +2862,12 @@ lebetodiscus:
   name: Lebetodiscus
   auth: [bather]
   year: 1908
+lebetodiscus-subgenus:
+  name: Lebetodiscus
+  rank: subgenus
+  auth: [bather]
+  year: 1908
+  notes: Copied Bather 1908 from genus entry, unsure if it makes sense
 lebouri_sladen_1879:
   name: lebouri
   auth: [Sladen]
@@ -3143,6 +3200,10 @@ multibrachiatus_kirk_1945:
   name: multibrachiatus
   auth: [Kirk]
   year: 1945
+multibrachiatus_raymond_1915:
+  name: multibrachiatus
+  auth: [Raymond]
+  year: 1915
 multifasciatus_hall_1859:
   name: multifasciatus
   auth: [hall]
@@ -3396,6 +3457,10 @@ parvus_bassler_1936:
   name: parvus
   authority:
     source: 1936_bassler
+paulianus_bassler_1936:
+  name: paulianus
+  authority:
+    source: 1936_bassler
 pelmatozoa:
   name: Pelmatozoa
   bracket: Pelmatozoans
@@ -3408,6 +3473,11 @@ pelmatozoa-grade:
   rank: Grade
   auth: [Leuckart]
   year: 1848
+pelmatozoa-incertae-sedis:
+  name: null
+  rank: Order
+  auth: [linnaeus]
+  year: 1758
 pembrocystidae:
   name: Pembrocystidae
   rank: Family
@@ -3649,6 +3719,11 @@ prolifica_walcott_1917:
   name: prolifica
   auth: [walcott]
   year: 1917
+protoblastoidea:
+  name: Protoblastoidea
+  rank: Grade
+  auth: [bather]
+  year: 1899
 protocrinidae:
   name: Protocrinidae
   rank: Family
@@ -3908,6 +3983,10 @@ rhopalocystis:
   name: Rhopalocystis
   auth: [ubaghs]
   year: 1963
+richmondensis_bassler_1936:
+  name: richmondensis
+  authority:
+    source: 1936_bassler
 ridersia:
   name: Ridersia
   auth: [Jell, Burrett, Banks]
@@ -4031,18 +4110,10 @@ septentrionallis_regnéll_1945:
   name: septentrionallis
   auth: [regnéll]
   year: 1945
-subglobosus_hall_1862:
-  name: subglobosus
-  auth: [hall]
-  year: 1862
-suecica_jaekel_1927:
-  name: suecica
-  auth: [jaekel]
-  year: 1927
-sulcatum_aurivillius_1892:
-  name: sulcatum
-  auth: [Aurivillius]
-  year: 1892
+shideleri_bassler_1936:
+  name: shideleri
+  authority:
+    source: 1936_bassler
 simplex_barrande_1887:
   name: simplex
   auth: [barrande]
@@ -4087,6 +4158,10 @@ somasteroidea:
   rank: Class
   auth: [spencer]
   year: 1941
+southworthi_bassler_1936:
+  name: southworthi
+  authority:
+    source: 1936_bassler
 spencensis_wen.r_babcock_peng.j_robison_2019:
   name: spencensis
   auth: [wen.r, babcock, peng.j, robison]
@@ -4298,6 +4373,18 @@ stylophora-sp-indeterminate_sumrall_sprinkle_guensburg_1997:
   rank: species
   authority:
     source: 1997_sumrall_sprinkle_guensburg
+subglobosus_hall_1862:
+  name: subglobosus
+  auth: [hall]
+  year: 1862
+suecica_jaekel_1927:
+  name: suecica
+  auth: [jaekel]
+  year: 1927
+sulcatum_aurivillius_1892:
+  name: sulcatum
+  auth: [Aurivillius]
+  year: 1892
 sumralli_guensburg_sprinkle_2003:
   name: sumralli
   authority:
@@ -4348,6 +4435,10 @@ tener_barrande_1887:
   name: tener
   auth: [barrande]
   year: 1887
+tennesseensis_bassler_1936:
+  name: tennesseensis
+  authority:
+    source: 1936_bassler
 testudinarius_hisinger_1837:
   name: testudinarius
   auth: [hisinger]
@@ -4476,6 +4567,10 @@ treadwelli_sinclair_1945:
   name: treadwelli
   auth: [Sinclair]
   year: 1945
+trentonensis_bassler_1936:
+  name: trentonensis
+  authority:
+    source: 1936_bassler
 triangulatus_paul.c.r.c_1997:
   name: triangulatus
   authority:
