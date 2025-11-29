@@ -42,6 +42,16 @@ agelacrinitidae:
   rank: Family
   auth: [Chapman]
   year: 1860
+agelacrinitidae-uncertain-genus_bell.b.m_1976:
+  name: null
+  rank: genus
+  authority:
+    source: 1976_bell.b.m
+agelacrinitidae-sp_bell.b.m_1976:
+  name: null
+  rank: species
+  authority:
+    source: 1976_bell.b.m
 agelacrinitinae:
   name: Agelacrinitinae
   rank: Subfamily
@@ -979,6 +989,10 @@ comarocystitidae:
 comarocystidae:
   name: Comarocystidae
   altSpellingOf: comarocystitidae
+commensalus_bell.b.m_1976:
+  name: commensalus
+  authority:
+    source: 1976_bell.b.m
 concentricus_frest_2005:
   name: concentricus
   authority:
@@ -1197,6 +1211,10 @@ curvatus_grigo_1995:
   name: curvatus
   auth: [Grigo]
   year: 1995
+curvitriordo:
+  name: Curvitriordo
+  authority:
+    source: 1976_bell.b.m
 cyamoidea:
   name: Cyamoidea
   rank: Class
@@ -1383,6 +1401,9 @@ devonica_bassler_1936:
   name: devonica
   authority:
     source: 1936_bassler
+devonicum_bassler_1936:
+  name: devonicum
+  altSpellingOf: devonica_bassler_1936
 devonicus_bassler_1936:
   name: devonicus
   altSpellingOf: devonica_bassler_1936
@@ -2336,6 +2357,10 @@ habrotecrinus:
   name: Habrotecrinus
   authority:
     source: 2003_guensburg_sprinkle
+hadrochthus:
+  name: Hadrochthus
+  authority:
+    source: 1976_bell.b.m
 hadrocystis:
   name: Hadrocystis
   auth: [sprinkle]
@@ -2504,6 +2529,12 @@ hemicystites-subgenus:
   rank: subgenus
   auth: [hall]
   year: 1852
+hemicystites-questionable_bell.b.m_1976:
+  name: null
+  rank: genus
+  notes: Used when otherwise Hemicystites would appear in two places.
+  authority:
+    source: 1976_bell.b.m
 hemicystitidae:
   name: Hemicystitidae
   rank: Family
@@ -2707,6 +2738,16 @@ isorophida:
   rank: Order
   authority:
     source: 1976_bell.b.m
+isorophida-uncertain-suborder_bell.b.m_1976:
+  name: null
+  rank: Suborder
+  authority:
+    source: 1976_bell.b.m
+isorophida-uncertain-family_bell.b.m_1976:
+  name: null
+  rank: Family
+  authority:
+    source: 1976_bell.b.m
 isorophidae:
   name: Isorophidae
   rank: Family
@@ -2715,6 +2756,11 @@ isorophidae:
 isorophina:
   name: Isorophina
   rank: Suborder
+  authority:
+    source: 1976_bell.b.m
+isorophina-uncertain-family_bell.b.m_1976:
+  name: null
+  rank: Family
   authority:
     source: 1976_bell.b.m
 isorophus:
@@ -2918,12 +2964,13 @@ lepidodiscus:
 lepidodiscus-subgenus:
   name: Lepidodiscus
   rank: subgenus
-  auth: [Hall]
-  year: 1866
+  auth: [Meek, Worthen]
+  year: 1868
   notes: |
     Bassler indicates this as subgenus as synonym for type species of
     Carneyella (foerste), but Treatise does not, and as a genus its
-    authority is two years later.
+    authority is two years later.  Bell gives it as for Agelacrintes
+    by Meek and Worthen, 1868.
 lepidus_zhao.y.l_huang.y.z_gong.x.y_1994:
   name: lepidus
   authority:
@@ -4057,9 +4104,9 @@ sagittaria_thomas_ladd_1926:
   name: sagittaria
   auth: [Thomas, Ladd]
   year: 1926
-sampsoni_miller_1891:
+sampsoni_miller.s.a_1891:
   name: sampsoni
-  auth: [Miller]
+  auth: [miller.s.a]
   year: 1891
 sanducystis:
   name: Sanducystis
