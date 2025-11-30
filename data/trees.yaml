@@ -2710,6 +2710,82 @@
                 - taxon: edrioaster
             - taxon: saratogensis_ruedemann_1912
               provisional: true
+1980_bell.b.m:
+  taxonomies:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: stromatocystitida
+      new: true
+      children:
+      - taxon: stromatocystitidae
+        children:
+        - taxon: stromatocystites
+        - taxon: camptostroma
+        - taxon: walcottidiscus
+    - taxon: edrioasterida
+      children:
+      - taxon: edrioasteridae
+        children:
+        - taxon: edrioaster
+        - taxon: edriophus
+      - taxon: totiglobidae
+        children:
+        - taxon: totiglobus
+        - taxon: aepyaster
+    - taxon: isorophida
+      children:
+      - taxon: lebetodiscina
+        children:
+        - taxon: lebetodiscidae
+          children:
+          - taxon: lebetodiscus
+          - taxon: belochthus
+          - taxon: cystaster
+          - taxon: foerstediscus
+          - taxon: pyrgocystis
+            provisional: true
+          - taxon: streptaster
+        - taxon: carneyellidae
+          children:
+          - taxon: carneyella
+          - taxon: cryptogoleus
+      - taxon: isorophina
+        children:
+        - taxon: isorophidae
+          children:
+          - taxon: isorophus
+          - taxon: curvitriordo
+          - taxon: hemicystites
+          - taxon: isorophusella
+          - taxon: rectitriordo
+        - taxon: agelacrinitidae
+          children:
+          - taxon: agelacrinites
+          - taxon: anglidiscus
+          - taxon: cooperidiscus
+          - taxon: dinocystis
+          - taxon: discocystis
+          - taxon: krama
+          - taxon: lepidodiscus
+          - taxon: lispidecodus
+          - taxon: postibulla
+          - taxon: thresherodiscus
+          - taxon: ulrichidiscus
+          - taxon: xenocystites
+      - taxon: cyathocystina
+        children:
+        - taxon: cyathocystidae
+          children:
+          - taxon: cyathocystis
+          - taxon: cyathotheca
+          - taxon: hadrochthus
+            provisional: true
+          - taxon: timeischytes
+  - taxon: edrioblastoidea
+    children:
+    - taxon: astrocystitidae
+      children:
+      - taxon: astrocystites
 1981_derstler:
   phylogenies:
   - treeType: evolutionary schematic

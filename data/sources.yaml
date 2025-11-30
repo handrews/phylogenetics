@@ -131,6 +131,8 @@ publications:
     name: Proceedings of the Royal Society B
   pworld:
     name: Palaeoworld
+  series-geol:
+    name: Series in Geology, Notes for a Short Course
   science-new-series:
     name: Science (New Series)
   short-2nd-cambrian:
@@ -1306,6 +1308,19 @@ articles:
       month: 2
     authors:
     - bell.b.m
+  1980_bell.b.m:
+    title: Edrioasteroidea and Edrioblastoidea
+    journal: series-geol
+    volume: "3: Echinoderms: Notes for a Short Course"
+    pages:
+    - 158
+    - 174
+    pubDate:
+      year: 1980
+    authors:
+    - bell.b.m
+    identifiers:
+      doi: 10.1017/S027116480000018X
   1981_derstler:
     title: Morphological diversity of early Cambrian echinoderms
     book: short-2nd-cambrian

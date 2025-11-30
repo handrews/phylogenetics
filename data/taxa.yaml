@@ -7,6 +7,12 @@ adelphicrinus:
   name: Adelphicrinus
   authority:
     source: 2003_guensburg_sprinkle
+aepyaster:
+  name: Aepyaster
+  auth: [sprinkle, strimple]
+  in: [bell.b.m]
+  year: 1980
+  notes: noted as "in prep" per Bell (1980), need to confirm actual source
 aesiocystis:
   name: Aesiocystis
   auth: [miller.s.a, gurley]
@@ -204,6 +210,10 @@ angelini_jaekel_1899:
   name: angelini
   auth: [jaekel]
   year: 1899
+anglidiscus:
+  name: Anglidiscus
+  auth: [regnéll]
+  year: 1950
 angulatus_conrad_1842:
   name: angulatus
   auth: [Conrad]
@@ -1220,6 +1230,11 @@ cyamoidea:
   rank: Class
   authority:
     source: 1941_whitehouse
+cyathocystina:
+  name: Cyathocystina
+  rank: Suborder
+  auth: [bell.b.m]
+  year: 1975
 cyathocystidae:
   name: Cyathocystidae
   rank: Family
@@ -4411,8 +4426,8 @@ strobilocystites:
 stromatocystitida:
   name: Stromatocystitida
   rank: Order
-  auth: [Bell]
-  year: 1980
+  authority:
+    source: 1980_bell.b.m
 stromatocystitida-incertae-sedis:
   name: null
   rank: Family
@@ -4586,6 +4601,10 @@ tiaracrinidae:
   rank: Family
   authority:
     source: 1900_bather
+timeischytes:
+  name: Timeischytes
+  auth: [Ehlers, kesling]
+  year: 1958
 titanocrinidae:
   name: Titanocrinidae
   rank: Family
