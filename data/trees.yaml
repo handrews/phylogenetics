@@ -3307,6 +3307,67 @@
             - NMVP107491
             - NMVP107492
             - NMVP108991
+1985_smith.a.b:
+  taxonomies:
+  - notes: |
+      Traditional classification (based on Bell 1980, but with later additions)
+    taxon: edrioasteroidea
+    children:
+    - taxon: stromatocystitida
+      notes: Termier and Termier 1969 instead of Bell 1980
+      children:
+      - taxon: stromatocystitidae
+      - taxon: cambrasteridae
+    - taxon: edrioasterida
+      children:
+      - taxon: edrioasteridae
+      - taxon: totiglobidae
+    - taxon: isorophida
+      children:
+      - taxon: lebetodiscina
+        children:
+        - taxon: lebetodiscidae
+        - taxon: carneyellidae
+      - taxon: isorophina
+        children:
+        - taxon: hemicystitidae
+          synonyms:
+          - taxon: isorophidae
+        - taxon: agelacrinitidae
+      - openTaxon: isorophida-uncertain-suborder_bell.b.m_1976
+        children:
+        - taxon: pyrgocystidae
+        - taxon: lispidecodidae
+        - taxon: rhenocystidae
+      - taxon: cyathocystida
+        notes: Bockelie and Paul, 1983, instead of Bell 1975
+        children:
+        - taxon: cyathocystidae
+  - notes: Revised classification (A. B. Smith 1985)
+    children:
+    - taxon: stromatocystites
+    - taxon: edrioasteroidea
+      rank: Plesion
+      children:
+      - taxon: edrioasterida
+        children:
+        - taxon: totiglobidae
+        - taxon: edrioasteridae
+      - taxon: isorophida
+        children:
+        - taxon: cambraster
+        - taxon: edriodiscus
+        - taxon: cyclocystoididae
+        - taxon: agelacrinitidae
+          children:
+          - taxon: isorophinae
+          - taxon: lebetodiscinae
+      - taxon: cyathocystida
+        emended: true
+        notes: sedis mutabilis
+        children:
+        - taxon: pyrgocystidae
+        - taxon: cyathocystidae
 1985_sprinkle:
   taxonomies:
   - taxon: echinozoa

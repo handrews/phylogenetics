@@ -1550,6 +1550,23 @@ articles:
       online: 2008-11-27
     identifiers:
       doi: 10.1080/03115518508618967
+  1985_smith.a.b:
+    title: Cambrian Eleutherozoan Echinoderms and the Early Diversification of Edrioasteroids
+    journal: palaeontology
+    volume: 28
+    number: 4
+    pages:
+    - 715
+    - 756
+    pubDate:
+      year: 1985
+    processDates:
+      received: 1984-10-07
+      revised: 1985-03-25
+    authors:
+    - smith.a.b
+    identifiers:
+      url: https://palass.org/sites/default/files/media/publications/palaeontology/volume_28/vol28_part4_pp715-756.pdf
   1985_sprinkle:
     title: New edrioasteroid from the Middle Cambrian of western Utah
     journal: kansas
