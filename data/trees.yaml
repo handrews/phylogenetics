@@ -2687,6 +2687,29 @@
               children:
               - taxon: carbonarius_bassler_1936
                 provisional: true
+      - taxon: edrioasterida
+        children:
+        - taxon: edrioasteridae
+          children:
+          - taxon: edrioaster
+            children:
+            - taxon: bigsbyi_billings_1857
+              type: true
+              synonyms:
+              - taxon: bigsbyi_billings_1857
+                parents:
+                - taxon: cyclaster
+            - taxon: priscus_miller.s.a_gurley_1894
+          - taxon: edriophus
+            children:
+            - taxon: levis_bather_1914
+              type: true
+              synonyms:
+              - taxon: levis_bather_1914
+                parents:
+                - taxon: edrioaster
+            - taxon: saratogensis_ruedemann_1912
+              provisional: true
 1981_derstler:
   phylogenies:
   - treeType: evolutionary schematic

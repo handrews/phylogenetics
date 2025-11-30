@@ -1757,6 +1757,10 @@ edriodiscus:
   name: Edriodiscus
   auth: [jell, burrett, banks]
   year: 1985
+edriophus:
+  name: Edriophus
+  authority:
+    source: 1976_bell.b.m
 eoorthis:
   name: Eoorthis
   auth: [walcott]
