@@ -484,6 +484,10 @@ bassleri_sprinkle_1982h:
   name: bassleri
   authority:
     source: 1982h_sprinkle
+bassleridiscus:
+  name: Bassleridiscus
+  auth: [Fisher]
+  year: 1951
 batheri_ruedemann_1925:
   name: batheri
   auth: [ruedemann]
@@ -1052,6 +1056,10 @@ cornuta-sp_ubaghs_1999:
   rank: species
   authority:
     source: 1999_ubaghs
+coronaeformis_rievers_1961:
+  name: coronaeformis
+  auth: [Rievers]
+  year: 1961
 coronocystis:
   name: Coronocystis
   auth: [paul.c.r.c]
@@ -1251,6 +1259,10 @@ cyathocystidae:
   auth: [bather]
   year: 1899
   notes: In Bassler (1936), Bassler gives himself as authority, with no year.
+cyathothecidae:
+  name: Cyathothecidae
+  altSpellingOf: cyathocystidae
+  notes: By error in Regnéll (1945)
 cyathocystis:
   name: Cyathocystis
   auth: [Schmidt]
@@ -2067,6 +2079,10 @@ fistuliporita:
   rank: Order
   authority:
     source: 1968b_paul.c.r.c
+fistulosus_anderson_1939:
+  name: fistulosus
+  auth: [Anderson]
+  year: 1939
 fletcheri_forbes_1848:
   name: fletcheri
   auth: [Forbes]
@@ -2980,6 +2996,10 @@ lepadocystis:
   name: Lepadocystis
   auth: [Carpenter]
   year: 1891
+lepidoconia:
+  name: Lepidoconia
+  auth: [Wilson]
+  year: 1946
 lepidocystidae:
   name: Lepidocystidae
   rank: Family
@@ -3179,6 +3199,10 @@ medusa_barrande_1887:
   name: medusa
   auth: [barrande]
   year: 1887
+megapinacotus_ehlers_kesling_1958:
+  name: megapinacotus
+  auth: [Ehlers, kesling]
+  year: 1958
 meristoschisma:
   name: Meristoschisma
   authority:
@@ -3254,6 +3278,10 @@ mitrata:
   rank: Order
   auth: [jaekel]
   year: 1918
+mohawkensis_fisher_1951:
+  name: mohawkensis
+  auth: [Fisher]
+  year: 1951
 moncaiensis_zamora_smith.a.b_2012:
   name: moncaiensis
   auth: [zamora, smith.a.b]
@@ -3706,6 +3734,10 @@ plantini_schmidt_1880:
   name: plantini
   auth: [Schmidt]
   year: 1880
+plautinae_schmidt_1879:
+  name: plautinae
+  auth: [Schmidt]
+  year: 1879
 pleiadae_sinclair_bolton_1965:
   name: pleiadae
   auth: [Sinclair, Bolton]
@@ -3912,6 +3944,11 @@ pyrgocystis:
   name: Pyrgocystis
   auth: [bather]
   year: 1915
+pyrgocystis-subgenus:
+  name: Pyrgocystis
+  rank: subgenus
+  auth: [bather]
+  year: 1915
 pyrgopostibulla:
   name: Pyrgopostibulla
   auth: [sumrall, Brett, Cornell]
@@ -4053,6 +4090,11 @@ rhenopyrgidae:
   year: 1983
 rhenopyrgus:
   name: Rhenopyrgus
+  auth: [Dehm]
+  year: 1961
+rhenopyrgus-subgenus:
+  name: Rhenopyrgus
+  rank: subgenus
   auth: [Dehm]
   year: 1961
 rhipidocystidae:
@@ -4499,10 +4541,13 @@ suecica_jaekel_1927:
   name: suecica
   auth: [jaekel]
   year: 1927
-sulcatum_aurivillius_1892:
-  name: sulcatum
+sulcata_aurivillius_1892:
+  name: sulcata
   auth: [Aurivillius]
   year: 1892
+sulcatum_aurivillius_1892:
+  name: sulcatum
+  altSpellingOf: sulcata_aurivillius_1892
 sumralli_guensburg_sprinkle_2003:
   name: sumralli
   authority:
