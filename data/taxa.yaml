@@ -48,16 +48,16 @@ agelacrinitidae:
   rank: Family
   auth: [Chapman]
   year: 1860
-agelacrinitidae-uncertain-genus_bell.b.m_1976:
+agelacrinitidae-uncertain-genus_bell.b.m_1974:
   name: null
   rank: genus
   authority:
-    source: 1976_bell.b.m
-agelacrinitidae-sp_bell.b.m_1976:
+    source: 1974_bell.b.m
+agelacrinitidae-sp_bell.b.m_1974:
   name: null
   rank: species
   authority:
-    source: 1976_bell.b.m
+    source: 1974_bell.b.m
 agelacrinitinae:
   name: Agelacrinitinae
   rank: Subfamily
@@ -515,7 +515,7 @@ bellulus_barrande_1887:
 belochthus:
   name: Belochthus
   authority:
-    source: 1976_bell.b.m
+    source: 1974_bell.b.m
 bibrachiatus_parsley_1982:
   name: bibrachiatus
   authority:
@@ -694,6 +694,11 @@ cambraster:
   name: Cambraster
   auth: [jaekel]
   year: 1923
+cambrasteridae:
+  name: Cambrasteridae
+  rank: Family
+  auth: [Termier, Termier]
+  year: 1969
 cambraster-sp_jell_sprinkle_2021:
   name: null
   rank: species
@@ -780,7 +785,7 @@ carneyellidae:
   name: Carneyellidae
   rank: Family
   authority:
-    source: 1976_bell.b.m
+    source: 1974_bell.b.m
 carpoidea:
   name: Carpoidea
   rank: Class
@@ -999,10 +1004,10 @@ comarocystitidae:
 comarocystidae:
   name: Comarocystidae
   altSpellingOf: comarocystitidae
-commensalus_bell.b.m_1976:
+commensalus_bell.b.m_1974:
   name: commensalus
   authority:
-    source: 1976_bell.b.m
+    source: 1974_bell.b.m
 concentricus_frest_2005:
   name: concentricus
   authority:
@@ -1169,7 +1174,7 @@ cryptocrinitidae:
 cryptogoleus:
   name: Cryptogoleus
   authority:
-    source: 1976_bell.b.m
+    source: 1974_bell.b.m
 ctenocystida:
   name: Ctenocystida
   rank: Order
@@ -1224,7 +1229,7 @@ curvatus_grigo_1995:
 curvitriordo:
   name: Curvitriordo
   authority:
-    source: 1976_bell.b.m
+    source: 1974_bell.b.m
 cyamoidea:
   name: Cyamoidea
   rank: Class
@@ -1235,6 +1240,11 @@ cyathocystina:
   rank: Suborder
   auth: [bell.b.m]
   year: 1975
+cyathocystida:
+  name: Cyathocystida
+  rank: Order
+  auth: [Bockelie, paul.c.r.c]
+  year: 1983
 cyathocystidae:
   name: Cyathocystidae
   rank: Family
@@ -1775,7 +1785,7 @@ edriodiscus:
 edriophus:
   name: Edriophus
   authority:
-    source: 1976_bell.b.m
+    source: 1974_bell.b.m
 eoorthis:
   name: Eoorthis
   auth: [walcott]
@@ -2379,7 +2389,7 @@ habrotecrinus:
 hadrochthus:
   name: Hadrochthus
   authority:
-    source: 1976_bell.b.m
+    source: 1974_bell.b.m
 hadrocystis:
   name: Hadrocystis
   auth: [sprinkle]
@@ -2548,12 +2558,12 @@ hemicystites-subgenus:
   rank: subgenus
   auth: [hall]
   year: 1852
-hemicystites-questionable_bell.b.m_1976:
+hemicystites-questionable_bell.b.m_1974:
   name: null
   rank: genus
   notes: Used when otherwise Hemicystites would appear in two places.
   authority:
-    source: 1976_bell.b.m
+    source: 1974_bell.b.m
 hemicystitidae:
   name: Hemicystitidae
   rank: Family
@@ -2756,32 +2766,37 @@ isorophida:
   name: Isorophida
   rank: Order
   authority:
-    source: 1976_bell.b.m
-isorophida-uncertain-suborder_bell.b.m_1976:
+    source: 1974_bell.b.m
+isorophida-uncertain-suborder_bell.b.m_1974:
   name: null
   rank: Suborder
   authority:
-    source: 1976_bell.b.m
-isorophida-uncertain-family_bell.b.m_1976:
+    source: 1974_bell.b.m
+isorophida-uncertain-family_bell.b.m_1974:
   name: null
   rank: Family
   authority:
-    source: 1976_bell.b.m
+    source: 1974_bell.b.m
 isorophidae:
   name: Isorophidae
   rank: Family
   authority:
-    source: 1976_bell.b.m
+    source: 1974_bell.b.m
 isorophina:
   name: Isorophina
   rank: Suborder
   authority:
-    source: 1976_bell.b.m
-isorophina-uncertain-family_bell.b.m_1976:
+    source: 1974_bell.b.m
+isorophina-uncertain-family_bell.b.m_1974:
   name: null
   rank: Family
   authority:
-    source: 1976_bell.b.m
+    source: 1974_bell.b.m
+isorophinae:
+  name: Isorophinae
+  rank: Subfamily
+  authority:
+    source: 1974_bell.b.m
 isorophus:
   name: Isorophus
   auth: [foerste]
@@ -2848,10 +2863,10 @@ kentuckyensis_bassler_1936:
   name: kentuckyensis
   authority:
     source: 1936_bassler
-keslingi_bell.b.m_1976:
+keslingi_bell.b.m_1974:
   name: keslingi
   authority:
-    source: 1976_bell.b.m
+    source: 1974_bell.b.m
 kildarensis_paul.c.r.c_1997:
   name: kildarensis
   authority:
@@ -2864,10 +2879,10 @@ kinzercystis:
   name: Kinzercystis
   authority:
     source: 1973_sprinkle
-kirkfieldensis_bell.b.m_1976:
+kirkfieldensis_bell.b.m_1974:
   name: kirkfieldensis
   authority:
-    source: 1976_bell.b.m
+    source: 1974_bell.b.m
 kitchnerensis_sprinkle_1973:
   name: kitchnerensis
   authority:
@@ -2879,7 +2894,7 @@ knizeki_fatka_1991:
 krama:
   name: Krama
   authority:
-    source: 1976_bell.b.m
+    source: 1974_bell.b.m
 kukersiana_hecker_1940:
   name: kukersiana
   auth: [Hecker]
@@ -2928,12 +2943,17 @@ lebetodiscidae:
   name: Lebetodiscidae
   rank: Family
   authority:
-    source: 1976_bell.b.m
+    source: 1974_bell.b.m
 lebetodiscina:
   name: Lebetodiscina
   rank: Suborder
   authority:
-    source: 1976_bell.b.m
+    source: 1974_bell.b.m
+lebetodiscinae:
+  name: Lebetodiscinae
+  rank: Subfamily
+  authority:
+    source: 1974_bell.b.m
 lebetodiscus:
   name: Lebetodiscus
   auth: [bather]
@@ -3419,10 +3439,10 @@ orthida:
   rank: Order
   auth: [schuchert, cooper]
   year: 1932
-orthokolus_bell.b.m_1976:
+orthokolus_bell.b.m_1974:
   name: orthokolus
   authority:
-    source: 1976_bell.b.m
+    source: 1974_bell.b.m
 osculocystis:
   name: Osculocystis
   auth: [paul.c.r.c]
@@ -3754,7 +3774,7 @@ pomum_wahlenberg_1821:
 postibulla:
   name: Postibulla
   authority:
-    source: 1976_bell.b.m
+    source: 1974_bell.b.m
 postibullinae:
   name: Postibullinae
   rank: Subfamily
@@ -3947,7 +3967,7 @@ rectiradiatus_shideler_1918:
 rectitriordo:
   name: Rectitriordo
   authority:
-    source: 1976_bell.b.m
+    source: 1974_bell.b.m
 redlichia:
   name: Redlichia
   auth: [Cossman]
@@ -4001,10 +4021,10 @@ reteocrinidae:
   rank: Family
   auth: [Wachsmuth, springer]
   year: 1885
-reticulatus_bell.b.m_1976:
+reticulatus_bell.b.m_1974:
   name: reticulatus
   authority:
-    source: 1976_bell.b.m
+    source: 1974_bell.b.m
 reticulatus_jaekel_1899:
   name: reticulatus
   auth: [jaekel]
@@ -4017,6 +4037,11 @@ rhenanus_roemer_1851:
   name: rhenanus
   auth: [Roemer]
   year: 1851
+rhenocystidae:
+  name: Rhenocystidae
+  rank: Family
+  auth: [Holloway, jell]
+  year: 1984
 rhenocystis:
   name: Rhenocystis
   auth: [Dehm]
@@ -4307,10 +4332,10 @@ splendens_bassler_1936:
   name: splendens
   auth: [bassler]
   year: 1936
-solitarius_bell.b.m_1976:
+solitarius_bell.b.m_1974:
   name: solitarius
   authority:
-    source: 1976_bell.b.m
+    source: 1974_bell.b.m
 sporranoides_rahman_stewart_zamora_2015:
   name: sporranoides
   auth: [rahman, stewart, zamora]

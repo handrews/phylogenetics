@@ -2303,7 +2303,7 @@
             type: true
           - taxon: woodi_broadhead_strimple_1975
             new: true
-1976_bell.b.m:
+1974_bell.b.m:
   taxonomies:
   - taxon: edrioasteroidea
     diagnosis: |
@@ -2464,7 +2464,7 @@
                 "A Foerstediscus with: oral region including 12 secondary
                 orals; hydropore formed by three ambulacral and four
                 interambulacral elements; thecal plates smooth."
-            - taxon: solitarius_bell.b.m_1976
+            - taxon: solitarius_bell.b.m_1974
               new: true
               diagnosis: |
                 "A Foerstediscus with: four or more secondary oral plates;
@@ -2481,7 +2481,7 @@
               ambulacra straight; coverplate passage- ways oblique,
               elliptical external foramina narrow."
             children:
-            - taxon: orthokolus_bell.b.m_1976
+            - taxon: orthokolus_bell.b.m_1974
               type: true
               new: true
               diagnosis: |
@@ -2552,7 +2552,7 @@
               - taxon: chapmani_raymond_1915
                 parents:
                 - taxon: lebetodiscus
-            - taxon: reticulatus_bell.b.m_1976
+            - taxon: reticulatus_bell.b.m_1974
               new: true
             - taxon: multibrachiatus_raymond_1915
             - taxon: youngi_raymond_1915
@@ -2591,7 +2591,7 @@
             - taxon: rectitriordo
               new: true
               children:
-              - taxon: kirkfieldensis_bell.b.m_1976
+              - taxon: kirkfieldensis_bell.b.m_1974
                 type: true
                 new: true
             - taxon: curvitriordo
@@ -2624,7 +2624,7 @@
                 - taxon: legrandensis_miller.s.a_gurley_1894
                   parents:
                   - taxon: agelacrinus
-              - taxon: keslingi_bell.b.m_1976
+              - taxon: keslingi_bell.b.m_1974
                 new: true
               - taxon: jasperensis_harker_1953
                 provisional: true
@@ -2668,22 +2668,22 @@
                 - taxon: alleganius_clarke_1901
                   parents:
                   - taxon: lepidodiscus
-            - openTaxon: agelacrinitidae-uncertain-genus_bell.b.m_1976
+            - openTaxon: agelacrinitidae-uncertain-genus_bell.b.m_1974
               children:
-              - openTaxon: agelacrinitidae-sp_bell.b.m_1976
-          - openTaxon: isorophina-uncertain-family_bell.b.m_1976
+              - openTaxon: agelacrinitidae-sp_bell.b.m_1974
+          - openTaxon: isorophina-uncertain-family_bell.b.m_1974
             children:
             - taxon: hadrochthus
               new: true
               children:
-              - taxon: commensalus_bell.b.m_1976
+              - taxon: commensalus_bell.b.m_1974
                 type: true
                 new: true
-        - openTaxon: isorophida-uncertain-suborder_bell.b.m_1976
+        - openTaxon: isorophida-uncertain-suborder_bell.b.m_1974
           children:
-          - openTaxon: isorophida-uncertain-family_bell.b.m_1976
+          - openTaxon: isorophida-uncertain-family_bell.b.m_1974
             children:
-            - openTaxon: hemicystites-questionable_bell.b.m_1976
+            - openTaxon: hemicystites-questionable_bell.b.m_1974
               children:
               - taxon: carbonarius_bassler_1936
                 provisional: true
@@ -3334,7 +3334,7 @@
           synonyms:
           - taxon: isorophidae
         - taxon: agelacrinitidae
-      - openTaxon: isorophida-uncertain-suborder_bell.b.m_1976
+      - openTaxon: isorophida-uncertain-suborder_bell.b.m_1974
         children:
         - taxon: pyrgocystidae
         - taxon: lispidecodidae

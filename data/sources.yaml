@@ -1283,6 +1283,14 @@ articles:
       year: 1973
     authors:
     - sprinkle
+  1974_bell.b.m:
+    title: A Study of North American Edrioasteroidea
+    journal: nysm
+    volume: 21
+    pubDate:
+      year: 1974
+    authors:
+    - bell.b.m
   1975_broadhead_strimple:
     title: Respiration in a Vagrant Ordovician Cystoid, Amecystis
     journal: paleobiology
@@ -1299,15 +1307,6 @@ articles:
     - strimple
     identifiers:
       jstor: 2400371
-  1976_bell.b.m:
-    title: A Study of North American Edrioasteroidea
-    journal: nysm
-    volume: 21
-    pubDate:
-      year: 1976
-      month: 2
-    authors:
-    - bell.b.m
   1980_bell.b.m:
     title: Edrioasteroidea and Edrioblastoidea
     journal: series-geol
