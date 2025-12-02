@@ -6,7 +6,7 @@ import collections
 import yaml
 import jschon
 
-from .output import print_taxon
+from .output import print_taxa
 
 logger = logging.getLogger(__name__)
 
@@ -273,9 +273,9 @@ def check_taxa(data):
   logger.info(f"...taxa processed.")
 
 
-def check_trees(data, sources, taxon, args):
+def check_trees(data, sources, taxa, args):
   logger.info(f"Processing {len(data['trees'])} opinions...")
-  logger.info(f'...searching for taxon "{taxon}"')
+  logger.info(f'...searching for taxon "{taxa}"')
   opinions = set()
   tree_index = 0
   tree_lookup = {}
@@ -303,8 +303,8 @@ def check_trees(data, sources, taxon, args):
       tree_index += 1
   logger.info(f"...opinions processed.")
 
-  if taxon:
-    print_taxon(taxon, data, tree_lookup, args)
+  if taxa:
+    print_taxa(taxa, data, tree_lookup, args)
 
   if (difference := sources - opinions):
     # logger.warn("Missing opinions from:\n    " + '\n    '.join(sorted(difference)))

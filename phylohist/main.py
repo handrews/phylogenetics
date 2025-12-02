@@ -22,13 +22,14 @@ def main():
     prog='phylohist',
   )
   parser.add_argument('-t', '--type', default='x')
-  parser.add_argument('-r', '--root', default=None)
-  parser.add_argument('-l', '--leaf', default=None)
-  parser.add_argument('-b', '--branch', default=None)
-  parser.add_argument('-f', '--find', default=None)
+  parser.add_argument('-r', '--root', nargs='+', action='extend', default=[])
+  parser.add_argument('-l', '--leaf', nargs='+', action='extend', default=[])
+  parser.add_argument('-b', '--branch', nargs='+', action='extend', default=[])
+  parser.add_argument('-f', '--find', nargs='+', action='extend', default=[])
+  parser.add_argument('-m', '--match', default=False, action='store_true')
   args = parser.parse_args()
 
-  taxon = (
+  taxa = frozenset(
     args.find if args.find else (
       args.branch if args.branch else (
         args.root if args.root else args.leaf
@@ -40,7 +41,7 @@ def main():
   check_authors(data)
   sources = check_sources(data)
   check_taxa(data)
-  check_trees(data, sources, taxon, args)
+  check_trees(data, sources, taxa, args)
 
   # TODO: Obviously this is fragile, fix it!
   handler = logger.parent.handlers[0]

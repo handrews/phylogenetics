@@ -11,17 +11,19 @@ logger = logging.getLogger(__name__)
 NAMED_TAXON_FIELDS = {'taxon', 'cfTaxon', 'affTaxon'}
 
 
-def print_taxon(taxon, data, tree_lookup, args):
-  found_trees = data['index'].get(taxon, [])
+def print_taxa(taxa, data, tree_lookup, args):
+  found_trees = set()
+  for t in taxa:
+    found_trees |= set((data['index'].get(t, [])))
   logger.info(
-    f'Found {len(found_trees)} trees, searching for taxon {taxon}...'
+    f'Found {len(found_trees)} trees, searching for taxa {taxa}...'
   )
 
   for tree in sorted(found_trees):
     print_tree(tree_lookup[tree[0]], data, tree, args)
 
 
-def print_tree(node, data, tree_info, args, indent='', on=True, buffer=''):
+def print_tree(node, data, tree_info, args, indent='', on=1, buffer=''):
   root = args.root if args.root else args.branch
 
   if not indent:
@@ -36,8 +38,8 @@ def print_tree(node, data, tree_info, args, indent='', on=True, buffer=''):
     )
     print()
     print(f'PAPER: {year} {authors}\n  {paper["title"]}')
-    if root is not None:
-      on = False
+    if root:
+      on = 0
 
   logger.debug(f'root "{args.root}" leaf "{args.leaf}" branch "{args.branch}"')
   found_name = None
@@ -71,8 +73,8 @@ def print_tree(node, data, tree_info, args, indent='', on=True, buffer=''):
     name += ' ?'
 
   logger.debug(f'found name "{found_name}"')
-  if root is not None and found_name == root:
-    on = True
+  if root and found_name in root:
+    on += 1
 
   new_indent = indent
   if node.get('provisional'):
@@ -80,7 +82,7 @@ def print_tree(node, data, tree_info, args, indent='', on=True, buffer=''):
 
   output = f'{indent}{name}'
   if on:
-    if args.branch == found_name and buffer:
+    if args.branch and found_name in args.branch and buffer:
       # Strip off final newline as print() always adds one.
       print(buffer[:-1])
       buffer = ''
@@ -89,13 +91,14 @@ def print_tree(node, data, tree_info, args, indent='', on=True, buffer=''):
     buffer += f'{output}\n'
   new_indent += '  '
 
-  if args.leaf is not None and found_name == args.leaf:
-    on = False
+  old_on = on
+  if args.leaf and found_name in args.leaf:
+    on = 0
 
   for child in node.get('children', []):
     print_tree(child, data, tree_info, args, indent=new_indent, on=on, buffer=buffer)
 
-  if args.leaf is not None and found_name == args.leaf:
-    on = True
-  if root is not None and found_name == root:
-    on = False
+  if args.leaf and found_name in args.leaf:
+    on = old_on
+  if root and found_name in root:
+    on -= 1
