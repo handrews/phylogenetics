@@ -383,6 +383,16 @@ astrocystites-sp_webby_1968:
     closer comparisons cannot be made."
   authority:
     source: 1968_webby
+astrocystites-sp-a_sprinle_1982i:
+  name: null
+  rank: species
+  authority:
+    source: 1982i_sprinkle
+astrocystites-sp-b_sprinle_1982i:
+  name: null
+  rank: species
+  authority:
+    source: 1982i_sprinkle
 astrocystitidae:
   name: Astrocystitidae
   rank: Family
@@ -1295,6 +1305,11 @@ cyclocystoides:
   name: Cyclocystoides
   auth: [Billings, Salter]
   year: 1858
+cyclocystoides-sp_kolata_1982:
+  name: null
+  rank: species
+  authority:
+    source: 1982_kolata
 cycloidea:
   name: Cycloidea
   rank: Class
@@ -1604,6 +1619,11 @@ echinodermata-class:
 echinodermata-order:
   rank: Order
   altRankOf: echinodermata
+echinodermata-indeterminate-subphylum_bell.b.m_1982:
+  name: null
+  rank: Subphylum
+  authority:
+    source: 1982_bell.b.m
 echinodermata-indeterminate-family_hisinger_1828:
   name: null
   rank: Family
@@ -2418,6 +2438,10 @@ haimacystis:
   name: Haimacystis
   authority:
     source: 2001_sumrall_sprinkle_guensburg
+halli_salter_billings_1858:
+  name: halli
+  auth: [Salter, billings]
+  year: 1858
 hallicystis:
   name: Hallicystis
   auth: [jaekel]
@@ -2920,6 +2944,10 @@ kunmingeocrinus:
   authority:
     source: 2022_zhao.j_guo.j_selden_cong.p.y_li.y.j
 ###################### L
+laevis_bather_1914:
+  name: laevis
+  auth: [bather]
+  year: 1914
 laevis_pander_1830:
   name: laevis
   auth: [Pander]
@@ -3949,6 +3977,16 @@ pyrgocystis-subgenus:
   rank: subgenus
   auth: [bather]
   year: 1915
+pyrgocystis-sp-a_bell.b.m_1982:
+  name: null
+  rank: species
+  authority:
+    source: 1982_bell.b.m
+pyrgocystis-sp-b_bell.b.m_1982:
+  name: null
+  rank: species
+  authority:
+    source: 1982_bell.b.m
 pyrgopostibulla:
   name: Pyrgopostibulla
   auth: [sumrall, Brett, Cornell]
@@ -4278,10 +4316,10 @@ simplex_barrande_1887:
   name: simplex
   auth: [barrande]
   year: 1887
-sinclairi_sprinkle_1982:
+sinclairi_sprinkle_1982h:
   name: sinclairi
   authority:
-    source: 1982g_sprinkle
+    source: 1982h_sprinkle
 sinclairocystis:
   name: Sinclairocystis
   auth: [bassler]

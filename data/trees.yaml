@@ -2940,6 +2940,43 @@
         taxon: asterozoa
       - notes: ordovician
         taxon: echinozoa
+1982_bell.b.m:
+  taxonomies:
+  - taxon: echinodermata
+    auth: [bruguiére]
+    year: 1791
+    children:
+    - openTaxon: echinodermata-indeterminate-subphylum_bell.b.m_1982
+      children:
+      - taxon: edrioasteroidea
+        children:
+        - taxon: edrioasterida
+          children:
+          - taxon: edriophus
+            children:
+            - cfTaxon: laevis_bather_1914
+        - taxon: isorophida
+          children:
+          - taxon: lebetodiscina
+            children:
+            - taxon: lebetodiscidae
+              children:
+              - taxon: foerstediscus
+                children:
+                - taxon: splendens_bassler_1936
+              - taxon: pyrgocystis
+                children:
+                - taxon: sardesoni_bather_1915
+                  type: true
+                - openTaxon: pyrgocystis-sp-a_bell.b.m_1982
+                - openTaxon: pyrgocystis-sp-b_bell.b.m_1982
+          - taxon: cyathocystina
+            children:
+            - taxon: cyathocystidae
+              children:
+              - taxon: cyathocystis
+                children:
+                - taxon: americanus_bassler_1936
 1982_broadhead:
   taxonomies:
   - taxon: eocrinoidea
@@ -2988,6 +3025,23 @@
         children:
         - taxon: cambrocrinus
         - taxon: eocystites
+1982_kolata:
+  taxonomies:
+  - taxon: echinodermata
+    auth: [bruguiére]
+    year: 1791
+    children:
+    - taxon: echinozoa
+      children:
+      - taxon: cyclocystoidea
+        children:
+        - taxon: cyclocystoididae
+          children:
+          - taxon: cyclocystoides
+            children:
+            - taxon: halli_salter_billings_1858
+              type: true
+            - openTaxon: cyclocystoides-sp_kolata_1982
 1982a_parsley:
   taxonomies:
   - taxon: echinodermata
@@ -3267,7 +3321,28 @@
             - taxon: bassleri_sprinkle_1982h
               type: true
               new: true
-            - taxon: sinclairi_sprinkle_1982
+            - taxon: sinclairi_sprinkle_1982h
+              new: true
+1982i_sprinkle:
+  taxonomies:
+  - taxon: echinodermata
+    auth: [bruguiére]
+    year: 1791
+    children:
+    - taxon: echinozoa
+      children:
+      - taxon: edrioblastoidea
+        children:
+        - taxon: pentacystida
+          children:
+          - taxon: steganoblastidae
+            children:
+            - taxon: astrocystites
+              children:
+              - taxon: ottawaensis_whiteaves_1897
+                type: true
+              - openTaxon: astrocystites-sp-a_sprinle_1982i
+              - openTaxon: astrocystites-sp-b_sprinle_1982i
 1983_brett_frest_sprinkle_clement.c.r:
   taxonomies:
   - taxon: blastozoa

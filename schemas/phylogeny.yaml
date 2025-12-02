@@ -42,6 +42,7 @@ $defs:
       $ref: "#/$defs/sourceId"
     additionalProperties:
       type: object
+      additionalProperties: false
       properties:
         source:
           $ref: "#/$defs/sourceId"
@@ -53,6 +54,12 @@ $defs:
           type: array
           items:
             $ref: "#/$defs/phylogeny"
+        assumptions:
+          type: array
+          items:
+            $ref: "#/$defs/tree"
+        notes:
+          type: string
   person:
     type: object
     anyOf:
