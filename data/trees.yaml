@@ -2682,158 +2682,158 @@
             - taxon: youngi_raymond_1915
             - taxon: platys_raymond_1915
             - taxon: billingsi_chapman_1860
-        - taxon: isorophina
+      - taxon: isorophina
+        new: true
+        children:
+        - taxon: isorophidae
           new: true
           children:
-          - taxon: isorophidae
+          - taxon: isorophus
+            children:
+            - taxon: cincinnatiensis_roemer_1851
+              type: true
+              synonyms:
+              - taxon: cincinnatiensis_roemer_1851
+                parents:
+                - taxon: agelacrinus
+            - taxon: austini_foerste_1914
+            - taxon: warrenensis_james_1883
+          - taxon: isorophusella
+            children:
+            - taxon: incondita_raymond_1915
+              type: true
+              synonyms:
+              - taxon: inconditus_raymond_1915
+                parents:
+                - taxon: lebetodiscus
+            - taxon: trentonensis_bassler_1936
+            - taxon: pleiadae_sinclair_bolton_1965
+          - taxon: hemicystites
+            children:
+            - taxon: parasiticus_hall_1852
+              type: true
+          - taxon: rectitriordo
             new: true
             children:
-            - taxon: isorophus
-              children:
-              - taxon: cincinnatiensis_roemer_1851
-                type: true
-                synonyms:
-                - taxon: cincinnatiensis_roemer_1851
-                  parents:
-                  - taxon: agelacrinus
-              - taxon: austini_foerste_1914
-              - taxon: warrenensis_james_1883
-            - taxon: isorophusella
-              children:
-              - taxon: incondita_raymond_1915
-                type: true
-                synonyms:
-                - taxon: inconditus_raymond_1915
-                  parents:
-                  - taxon: lebetodiscus
-              - taxon: trentonensis_bassler_1936
-              - taxon: pleiadae_sinclair_bolton_1965
-            - taxon: hemicystites
-              children:
-              - taxon: parasiticus_hall_1852
-                type: true
-            - taxon: rectitriordo
+            - taxon: kirkfieldensis_bell.b.m_1974
+              type: true
               new: true
-              children:
-              - taxon: kirkfieldensis_bell.b.m_1974
-                type: true
-                new: true
-            - taxon: curvitriordo
-              new: true
-              children:
+          - taxon: curvitriordo
+            new: true
+            children:
+            - taxon: kentuckyensis_bassler_1936
+              type: true
+              synonyms:
               - taxon: kentuckyensis_bassler_1936
-                type: true
-                synonyms:
-                - taxon: kentuckyensis_bassler_1936
-                  parents:
-                  - taxon: isorophus
-              - taxon: shideleri_bassler_1936
-          - taxon: agelacrinitidae
+                parents:
+                - taxon: isorophus
+            - taxon: shideleri_bassler_1936
+        - taxon: agelacrinitidae
+          children:
+          - taxon: agelacrinites
             children:
-            - taxon: agelacrinites
-              children:
-              - taxon: hamiltonensis_vanuxem_1842
-                type: true
-            - taxon: krama
-              new: true
-              children:
-              - taxon: devonicum_bassler_1936
-                type: true
-            - taxon: postibulla
-              new: true
-              children:
+            - taxon: hamiltonensis_vanuxem_1842
+              type: true
+          - taxon: krama
+            new: true
+            children:
+            - taxon: devonicum_bassler_1936
+              type: true
+          - taxon: postibulla
+            new: true
+            children:
+            - taxon: legrandensis_miller.s.a_gurley_1894
+              type: true
+              synonyms:
               - taxon: legrandensis_miller.s.a_gurley_1894
-                type: true
-                synonyms:
-                - taxon: legrandensis_miller.s.a_gurley_1894
-                  parents:
-                  - taxon: agelacrinus
-              - taxon: keslingi_bell.b.m_1974
-                new: true
-              - taxon: jasperensis_harker_1953
-                provisional: true
-              - taxon: alpenensis_bassler_1936
-                provisional: true
-            - taxon: discocystis
-              children:
-              - taxon: kaskaskiensis_hall_1858
-                type: true
-                synonyms:
-                - taxon: kaskaskiensis_hall_1858
-                  parents:
-                  - taxon: agelacrinus
-                - taxon: optatus_worthen_miller_1883
-                  parents:
-                  - taxon: echinodiscus
-            - taxon: lepidodiscus
-              children:
-              - taxon: squamosus_meek_worthen_1868
-                type: true
-                synonyms:
-                - taxon: squamosus_meek_worthen_1868
-                  parents:
-                  - taxon: lepidodiscus-subgenus
-                  - taxon: agelacrinites
-              - taxon: laudoni_bassler_1936
-              - taxon: sampsoni_miller.s.a_1891
-            - taxon: ulrichidiscus
-              children:
-              - taxon: pulaskiensis_miller.s.a_gurley_1894
-                type: true
-                synonyms:
-                - taxon: pulaskiensis_miller.s.a_gurley_1894
-                  parents:
-                  - taxon: agelacrinus
-            - taxon: cooperidiscus
-              children:
-              - taxon: alleganius_clarke_1901
-                type: true
-                synonyms:
-                - taxon: alleganius_clarke_1901
-                  parents:
-                  - taxon: lepidodiscus
-            - openTaxon: agelacrinitidae-uncertain-genus_bell.b.m_1974
-              children:
-              - openTaxon: agelacrinitidae-sp_bell.b.m_1974
-          - openTaxon: isorophina-uncertain-family_bell.b.m_1974
-            children:
-            - taxon: hadrochthus
+                parents:
+                - taxon: agelacrinus
+            - taxon: keslingi_bell.b.m_1974
               new: true
-              children:
-              - taxon: commensalus_bell.b.m_1974
-                type: true
-                new: true
-        - openTaxon: isorophida-uncertain-suborder_bell.b.m_1974
-          children:
-          - openTaxon: isorophida-uncertain-family_bell.b.m_1974
-            children:
-            - openTaxon: hemicystites-questionable_bell.b.m_1974
-              children:
-              - taxon: carbonarius_bassler_1936
-                provisional: true
-      - taxon: edrioasterida
-        children:
-        - taxon: edrioasteridae
-          children:
-          - taxon: edrioaster
-            children:
-            - taxon: bigsbyi_billings_1857
-              type: true
-              synonyms:
-              - taxon: bigsbyi_billings_1857
-                parents:
-                - taxon: cyclaster
-            - taxon: priscus_miller.s.a_gurley_1894
-          - taxon: edriophus
-            children:
-            - taxon: levis_bather_1914
-              type: true
-              synonyms:
-              - taxon: levis_bather_1914
-                parents:
-                - taxon: edrioaster
-            - taxon: saratogensis_ruedemann_1912
+            - taxon: jasperensis_harker_1953
               provisional: true
+            - taxon: alpenensis_bassler_1936
+              provisional: true
+          - taxon: discocystis
+            children:
+            - taxon: kaskaskiensis_hall_1858
+              type: true
+              synonyms:
+              - taxon: kaskaskiensis_hall_1858
+                parents:
+                - taxon: agelacrinus
+              - taxon: optatus_worthen_miller_1883
+                parents:
+                - taxon: echinodiscus
+          - taxon: lepidodiscus
+            children:
+            - taxon: squamosus_meek_worthen_1868
+              type: true
+              synonyms:
+              - taxon: squamosus_meek_worthen_1868
+                parents:
+                - taxon: lepidodiscus-subgenus
+                - taxon: agelacrinites
+            - taxon: laudoni_bassler_1936
+            - taxon: sampsoni_miller.s.a_1891
+          - taxon: ulrichidiscus
+            children:
+            - taxon: pulaskiensis_miller.s.a_gurley_1894
+              type: true
+              synonyms:
+              - taxon: pulaskiensis_miller.s.a_gurley_1894
+                parents:
+                - taxon: agelacrinus
+          - taxon: cooperidiscus
+            children:
+            - taxon: alleganius_clarke_1901
+              type: true
+              synonyms:
+              - taxon: alleganius_clarke_1901
+                parents:
+                - taxon: lepidodiscus
+          - openTaxon: agelacrinitidae-uncertain-genus_bell.b.m_1974
+            children:
+            - openTaxon: agelacrinitidae-sp_bell.b.m_1974
+        - openTaxon: isorophina-uncertain-family_bell.b.m_1974
+          children:
+          - taxon: hadrochthus
+            new: true
+            children:
+            - taxon: commensalus_bell.b.m_1974
+              type: true
+              new: true
+      - openTaxon: isorophida-uncertain-suborder_bell.b.m_1974
+        children:
+        - openTaxon: isorophida-uncertain-family_bell.b.m_1974
+          children:
+          - openTaxon: hemicystites-questionable_bell.b.m_1974
+            children:
+            - taxon: carbonarius_bassler_1936
+              provisional: true
+    - taxon: edrioasterida
+      children:
+      - taxon: edrioasteridae
+        children:
+        - taxon: edrioaster
+          children:
+          - taxon: bigsbyi_billings_1857
+            type: true
+            synonyms:
+            - taxon: bigsbyi_billings_1857
+              parents:
+              - taxon: cyclaster
+          - taxon: priscus_miller.s.a_gurley_1894
+        - taxon: edriophus
+          children:
+          - taxon: levis_bather_1914
+            type: true
+            synonyms:
+            - taxon: levis_bather_1914
+              parents:
+              - taxon: edrioaster
+          - taxon: saratogensis_ruedemann_1912
+            provisional: true
 1980_bell.b.m:
   taxonomies:
   - taxon: edrioasteroidea
