@@ -48,7 +48,7 @@ def check_node(node, data, parent=[], tree_info=None):
       source != tree_info[1]
     ):
       logger.error(
-        f'Expected source {tree_info[1]} for new taxon, got source {source}'
+        f'Expected source {tree_info[1]} for new taxon {taxon}, got source {source}'
       )
 
     name = taxon.get('name')

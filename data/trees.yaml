@@ -120,6 +120,115 @@
           - openTaxon: crinoidea-secondhand-sp_sowerby_1833 # date uncertain!
             parents:
             - openTaxon: crinoidea-secondhand-genus_sowerby_1833
+1848b_forbes:
+  taxonomies:
+  - taxon: cystidea-order
+    children:
+    - taxon: pseudocrinites
+      emended: true
+      children:
+      - taxon: bifasciatus_pearce_1843
+      - taxon: magnificus_forbes_1848
+        new: true
+      - taxon: quadrifasciatus_pearce_1843
+      - taxon: oblongus_forbes_1848
+        new: true
+    - taxon: apiocystites
+      new: true
+      children:
+      - taxon: pentrematoides_forbes_1848
+        new: true
+    - taxon: prunocystites
+      new: true
+      children:
+      - taxon: fletcheri_forbes_1848
+        new: true
+    - taxon: echino-encrinus
+      notes: |
+        The names "Echino-encrinus" and "Echino-encrinites" are used
+        more-or-less interchangeably but with the definitions using
+        "Echino-encrinus" and the commentary "Echino-encrinites."
+      synonyms:
+      - taxon: echino-encrinites
+      - taxon: gonocrinites
+      - taxon: sycocystites
+      children:
+      - taxon: baccatus_forbes_1848
+        new: true
+      - taxon: armatus_forbes_1848
+        new: true
+    - taxon: hemicosmites
+      children:
+      - taxon: squamosus_forbes_1848
+        provisional: true
+        new: true
+      - taxon: pyriformis_buch_1840
+        synonyms:
+        - taxon: malum_pander_1830
+          parents:
+          - taxon: echinosphærites
+      - taxon: oblongus_pander_1830
+        provisional: true
+        synonyms:
+        - taxon: oblongus_pander_1830
+          parents:
+          - taxon: echinosphærites
+    - taxon: caryocystites
+      children:
+      - taxon: granatum_wahlenberg_1821
+        synonyms:
+        - taxon: granatum_wahlenberg_1821
+          parents:
+          - taxon: echinosphærites
+        - taxon: testudinarius_hisinger_1837
+          parents:
+          - taxon: sphæronites
+      - taxon: davisii_mccoy_1848
+      - taxon: litchi_forbes_1848
+        new: true
+      - taxon: pyriformis_forbes_1848
+        new: true
+      - taxon: munitus_forbes_1848
+        provisional: true
+        new: true
+    - taxon: sphæronites
+      or:
+      - taxon: echino-sphærites
+      children:
+      - taxon: aurantium_gyllenhaal_1772
+        synonyms:
+        - taxon: aurantium_gyllenhaal_1772
+          parents:
+          - taxon: echinus
+        - taxon: aurantium_gyllenhaal_1772
+          parents:
+          - taxon: echino-sphærites
+        - taxon: strangwaysii_koenig_1825
+          parents:
+          - taxon: leucopthalmus
+        - taxon: citrus_hisinger_1837
+      - taxon: arachnoideus_forbes_1848
+        new: true
+      - taxon: balticus_eichwald_1829
+        synonyms:
+        - taxon: balticus_eichwald_1829
+          parents:
+          - taxon: echino-sphærites
+        - taxon: balticus_eichwald_1829
+          parents:
+          - taxon: heliocrinites
+        - taxon: aranea_schlotheim_1826
+          notes: says Volborth with no date, but cannot find any citation for it
+          parents:
+          - taxon: echino-sphærites
+      - taxon: punctatus_forbes_1848
+        provisional: true
+        new: true
+      - taxon: agelacrinites
+        children:
+        - taxon: hamiltonensis_vanuxem_1842
+        - taxon: buchianus_forbes_1848
+          new: true
 1900_bather:
   taxonomies:
   - taxon: animalia
@@ -514,7 +623,6 @@
       - taxon: edrioaster
         synonyms:
         - taxon: cyclaster_billings_1857
-        - taxon: agelacrinites_forbes_1848
         - taxon: edriocystis
         - taxon: aesiocystites
         - taxon: aesiocystis
@@ -529,7 +637,7 @@
           synonyms:
           - taxon: buchianus_forbes_1848
             parents:
-            - taxon: agelacrinites_forbes_1848
+            - taxon: agelacrinites
         - taxon: levis_bather_1914
         - taxon: saratogensis_ruedemann_1912
         - taxon: priscus_miller.s.a_gurley_1894
@@ -1604,7 +1712,7 @@
             # - taxon: extraneus_eichwald_
             - openTaxon: hemicosmites-sp-1_paul.c.r.c_1968
               new: true
-            # - taxon: malum_pander_
+            - taxon: malum_pander_1830
             # - cfTaxon: verrucosus_eichwald_
             - openTaxon: hemicosmites-sp-2_paul.c.r.c_1968
             - openTaxon: hemicosmites-sp-3_paul.c.r.c_1968
@@ -3933,7 +4041,6 @@
               - taxon: arachnoideus_forbes_1848
                 type: true
               - cfTaxon: arachnoideus_forbes_1848
-                new: true
 1997_sumrall_sprinkle_guensburg:
   taxonomies:
   - taxon: stylophora

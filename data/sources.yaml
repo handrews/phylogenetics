@@ -89,6 +89,8 @@ publications:
     name: Lethaia
   mem-aust:
     name: Memoirs of the Association of the Australian Palaeontologists
+  mem-geol-gb:
+    name: Memoirs of the Geological Survey of Great Britain, and of the Museum of Practical Geology in London
   mem-q:
     name: Memoirs of the Queensland Museum
   methodique:
@@ -323,6 +325,37 @@ articles:
     - buch
     identifiers:
       url: https://www.biodiversitylibrary.org/page/35336917
+  1848a_forbes:
+    title: On the Asteriadæ found Fossil in British Strata
+    journal: mem-geol-gb
+    volume: 2
+    number: 2
+    pages:
+    - 457
+    - 482
+    pubDate:
+      year: 1848
+    authors:
+    - forbes
+    identifiers:
+      url: https://www.google.com/books/edition/Memoirs_of_the_Geological_Survey_of_Grea/WcNAAAAAcAAJ?hl=en&gbpv=1
+  1848b_forbes:
+    title: On the Cystideæ of the Silurian Rocks of the British Islands.pdf
+    journal: mem-geol-gb
+    volume: 2
+    number: 2
+    pages:
+    - 483
+    - 538
+    plates:
+    - 11
+    - 23
+    pubDate:
+      year: 1848
+    authors:
+    - forbes
+    identifiers:
+      url: https://www.google.com/books/edition/Memoirs_of_the_Geological_Survey_of_Grea/WcNAAAAAcAAJ?hl=en&gbpv=1
   1854_müller.j.p:
     book: uber-den-bau
     pubDate:

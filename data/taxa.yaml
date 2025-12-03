@@ -73,11 +73,6 @@ agelacrinites-subgenus:
   auth: [Vanuxem]
   year: 1842
   notes: Copied auth/year from genus, unsure if correct.
-agelacrinites_forbes_1848:
-  homonym: true
-  name: Agelacrinites
-  auth: [Forbes]
-  year: 1848
 agelacrinus-subgenus_carneyella:
   name: Agelacrinus
   originalParent: carneyella
@@ -153,7 +148,7 @@ allocystites:
   year: 1889
 alpenensis_bassler_1936:
   name: alpenensis
-  authority: 
+  authority:
     source: 1936_bassler
 alter_barrande_1887:
   name: alter
@@ -256,8 +251,8 @@ apektocrinus:
   year: 2009
 apiocystites:
   name: Apiocystites
-  auth: [Forbes]
-  year: 1848
+  authority:
+    source: 1848b_forbes
 apiocystitinae:
   name: Apiocystitinae
   rank: Subfamily
@@ -274,8 +269,12 @@ appressa_bassler_1950:
   year: 1950
 arachnoideus_forbes_1848:
   name: arachnoideus
-  auth: [Forbes]
-  year: 1848
+  authority:
+    source: 1848b_forbes
+aranea_schlotheim_1826:
+  name: aranea
+  auth: [Schlotheim]
+  year: 1826
 arbucklecystis:
   name: Arbucklecystis
   auth: [parsley, sprinkle]
@@ -331,8 +330,8 @@ aristocystites:
   year: 1887
 armata_forbes_1848:
   name: armata
-  auth: [Forbes]
-  year: 1848
+  authority:
+    source: 1848b_forbes
 armatus_forbes_1848:
   name: armatus
   altSpellingOf: armata_forbes_1848
@@ -452,8 +451,8 @@ azonida:
 ###################### B
 baccata_forbes_1848:
   name: baccata
-  auth: [Forbes]
-  year: 1848
+  authority:
+    source: 1848b_forbes
 baccatus_forbes_1848:
   name: baccatus
   altSpellingOf: baccata_forbes_1848
@@ -672,8 +671,8 @@ broweri_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler_2020:
   year: 2020
 buchianus_forbes_1848:
   name: buchianus
-  auth: [Forbes]
-  year: 1848
+  authority:
+    source: 1848b_forbes
 buttsi_clarke_1901:
   name: buttsi
   auth: [Clarke]
@@ -950,6 +949,10 @@ cincta-order:
   rank: Order
   auth: [jaekel]
   year: 1918
+citrus_hisinger_1837:
+  name: citrus
+  auth: [Hisinger]
+  year: 1837
 cladida:
   name: Cladida
   rank: Parvclass
@@ -1339,6 +1342,11 @@ cystidea:
   rank: Class
   auth: [buch]
   year: 1844
+cystidea-order:
+  name: Cystidea
+  rank: Order
+  auth: [buch]
+  year: 1844
 cystidea-family:
   name: Cystidea
   rank: Family
@@ -1665,6 +1673,9 @@ echinoencrinites:
   name: Echinoencrinites
   auth: [von Meyer]
   year: 1826
+echino-encrinites:
+  name: Echino-encrinites
+  altSpellingOf: echinoencrinites
 echinoencrinus:
   name: Echinoencrinus
   auth: [Volborth]
@@ -1704,6 +1715,9 @@ echinosphaerites-sp_paul.c.r.c_1997:
     source: 1997_paul.c.r.c
 echinosphærites:
   name: Echinosphærites
+  altSpellingOf: echinosphaerites
+echino-sphærites:
+  name: Echino-sphærites
   altSpellingOf: echinosphaerites
 echinozoa:
   name: Echinozoa
@@ -2105,8 +2119,8 @@ fistulosus_anderson_1939:
   year: 1939
 fletcheri_forbes_1848:
   name: fletcheri
-  auth: [Forbes]
-  year: 1848
+  authority:
+    source: 1848b_forbes
 flexibilia:
   name: Flexibilia
   rank: Subclass
@@ -2171,8 +2185,8 @@ gilcidia:
   year: 1999
 glansicystis:
   name: Glansicystis
-  auth: [Forbes]
-  year: 1848
+  authority:
+    source: 1967_paul.c.r.c
 glenocrinus:
   name: Glenocrinus
   authority:
@@ -2348,6 +2362,10 @@ gondi_ubaghs_1987:
   name: gondi
   auth: [ubaghs]
   year: 1987
+gonocrinites:
+  name: Gonocrinites
+  auth: [Eichwald]
+  year: 1840
 goshutensis_sumrall_sprinkle_guensburg_1997:
   name: goshutensis
   authority:
@@ -3062,6 +3080,11 @@ lepidus_zhao.y.l_huang.y.z_gong.x.y_1994:
   name: lepidus
   authority:
     source: 1994_zhao.y.l_huang.y.z_gong.x.y
+leucopthalmus:
+  name: Leucopthalmus
+  auth: [Koenig]
+  year: 1825
+  notes: Authority based on species strangwaysii
 levatus_bassler_1943:
   name: levatus
   auth: [bassler]
@@ -3094,6 +3117,10 @@ lichenoididae-gen-sp_smith.a.b_zamora_álvaro_2013:
   rank: species
   authority:
     source: 2013_smith.a.b_zamora_álvaro
+litchi_forbes_1848:
+  name: litchi
+  authority:
+    source: 1848b_forbes
 lingulocystidae:
   name: Lingulocystidae
   rank: Family
@@ -3192,6 +3219,10 @@ magister_bassler_1936:
   name: magister
   authority:
     source: 1936_bassler
+magnificus_forbes_1848:
+  name: magnificus
+  authority:
+    source: 1848b_forbes
 malaisei_regnéll_1951:
   name: malaisei
   auth: [regnéll]
@@ -3372,6 +3403,10 @@ multiporata_branson_peck_1940:
   name: multiporata
   auth: [Branson, Peck]
   year: 1940
+munitus_forbes_1848:
+  name: munitus
+  authority:
+    source: 1848b_forbes
 murphyi_sumrall_garbisch_pope_2000:
   name: murphyi
   auth: [sumrall, Garbisch, Pope]
@@ -3448,8 +3483,12 @@ nuntius_prokop_1962:
 ###################### O
 oblongus_forbes_1848:
   name: oblongus
-  auth: [Forbes]
-  year: 1848
+  authority:
+    source: 1848b_forbes
+oblongus_pander_1830:
+  name: oblongus
+  auth: [Pander]
+  year: 1830
 octogona_richter_1930:
   name: octogona
   auth: [Richter]
@@ -3651,8 +3690,8 @@ pentangularis_pompeckj_1896:
   year: 1896
 pentrematoides_forbes_1848:
   name: pentrematoides
-  auth: [Forbes]
-  year: 1848
+  authority:
+    source: 1848b_forbes
 peridionites:
   name: Peridionites
   authority:
@@ -3923,12 +3962,16 @@ protozoa-grade:
   year: 1818
 prunocystites:
   name: Prunocystites
-  auth: [Forbes]
-  year: 1848
+  authority:
+    source: 1848b_forbes
 pulaskiensis_miller.s.a_gurley_1894:
   name: pulaskiensis
   auth: [miller.s.a, gurley]
   year: 1894
+punctatus_forbes_1848:
+  name: punctatus
+  authority:
+    source: 1848b_forbes
 pustulata_müller.p_hahn_2010:
   name: pustulata
   authority:
@@ -3995,6 +4038,10 @@ pyriformis_buch_1840:
   name: pyriformis
   auth: [buch]
   year: 1840
+pyriformis_forbes_1848:
+  name: pyriformis
+  authority:
+    source: 1848b_forbes
 pyriformis_parsley_sprinkle_1982:
   name: pyriformis
   auth: [parsley, sprinkle]
@@ -4441,6 +4488,10 @@ squamosus_billings_1854:
   name: squamosus
   auth: [billings]
   year: 1854
+squamosus_forbes_1848:
+  name: squamosus
+  authority:
+    source: 1848b_forbes
 squamosus_meek_worthen_1868:
   name: squamosus
   auth: [Meek, Worthen]
@@ -4503,6 +4554,10 @@ strabocystis:
   name: Strabocystis
   authority:
     source: 1982g_sprinkle
+strangwaysii_koenig_1825:
+  name: strangwaysii
+  auth: [Koenig]
+  year: 1825
 streptaster:
   name: Streptaster
   auth: [Hall]

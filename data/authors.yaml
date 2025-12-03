@@ -181,6 +181,11 @@ foerste:
   given: August
   birth: 1862
   death: 1936
+forbes:
+  family: Forbes
+  given: Edward
+  birth: 1815
+  death: 1854
 frest:
   family: Frest
   given: T. J.
