@@ -1054,6 +1054,10 @@ coopericystis:
   name: Coopericystis
   auth: [parsley]
   year: 1970
+corallum_jaekel_1918:
+  name: corallum
+  auth: [jaekel]
+  year: 1918
 cornuta:
   name: Cornuta
   rank: Order
@@ -3497,6 +3501,10 @@ odin_müller.p_hahn_2010:
   name: odin
   authority:
     source: 2010_müller.p_hahn
+oklahomae_strimple_graffham_1955:
+  name: oklahomae
+  auth: [Strimple, Graffham]
+  year: 1955
 oklahomacystis:
   name: Oklahomacystis
   auth: [parsley, Mintz]
@@ -4191,10 +4199,14 @@ rhipidocystis:
   name: Rhipidocystis
   auth: [jaekel]
   year: 1901
+rhizophora_schmidt_1889:
+  name: rhizophora
+  auth: [Schmidt]
+  year: 1889
 rhombifera:
   name: Rhombifera
-  auth: [Barrande]
-  year: 1967
+  auth: [barrande]
+  year: 1867
 rhombifera-order:
   name: Rhombifera
   bracket: Rhombiferans

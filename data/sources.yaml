@@ -590,7 +590,7 @@ articles:
     identifiers:
       url: https://www.google.com/books/edition/Stammesgeschichte_der_Pelmatozoen/cvdaAAAAQAAJ
   1900_bather:
-    title: Part III — The Echinoderma"
+    title: Part III — The Echinoderma
     book: treatise-zoo
     pubDate:
       year: 1900
@@ -1324,6 +1324,17 @@ articles:
       year: 1974
     authors:
     - bell.b.m
+  1975_bell.b.m:
+    title: "Ontogeny and systematics of Timeischytes casteri n. sp.: an enigmatic Devonian edrioasteroid"
+    journal: bullamp
+    volume: 67
+    number: 287
+    pubDate:
+      year: 1975
+    authors:
+    - bell.b.m
+    identifiers:
+      url: https://www.biodiversitylibrary.org/page/10896154
   1975_broadhead_strimple:
     title: Respiration in a Vagrant Ordovician Cystoid, Amecystis
     journal: paleobiology
