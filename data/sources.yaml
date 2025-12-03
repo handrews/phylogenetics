@@ -131,6 +131,8 @@ publications:
     name: Palaeogeography, Palaeoclimatology, Palaeoecology
   procrsocb:
     name: Proceedings of the Royal Society B
+  proclinn-nsw:
+    name: Proceddings of the Linnaean Society of New South Wales
   pworld:
     name: Palaeoworld
   series-geol:
@@ -698,23 +700,6 @@ articles:
       day: 4
     authors:
     - bassler
-  1960_gill_caster:
-    title: Carpoid echinoderms from the Silurian and Devonian of Australia
-    journal: bullamp
-    volume: 41
-    number: 185
-    pages:
-    - 1
-    - 72
-    pubDate:
-      year: 1960
-      month: 3
-      day: 1
-    authors:
-    - gill
-    - caster
-    identifiers:
-      url: https://www.biodiversitylibrary.org/page/10654670
   1941_whitehouse:
     title: "The Cambrian faunas of north-eastern Australia, Part 4: Early Cambrian echinoderms similar to the larval stages of Recent forms"
     journal: mem-q
@@ -743,6 +728,23 @@ articles:
     - hyman
     identifiers:
       url: https://archive.org/details/in.ernet.dli.2015.260496/page/n5/mode/2up
+  1960_gill_caster:
+    title: Carpoid echinoderms from the Silurian and Devonian of Australia
+    journal: bullamp
+    volume: 41
+    number: 185
+    pages:
+    - 1
+    - 72
+    pubDate:
+      year: 1960
+      month: 3
+      day: 1
+    authors:
+    - gill
+    - caster
+    identifiers:
+      url: https://www.biodiversitylibrary.org/page/10654670
   1962_fay:
     title: Edrioblastoidea, a new class of Echinodermata
     complete:
@@ -765,6 +767,18 @@ articles:
     - fay
     identifiers:
       jstor: 13011100
+  1963_brown.i.a:
+    title: A new cystoid (Pelmatozoa, Echinodermata) from the Silurian of New South Wales
+    journal: proclinn-nsw
+    volume: 88
+    number: 3
+    pubDate:
+      year: 1963
+    processDates:
+      read: 1963-11-27
+      issued: 1964-04-10
+    authors:
+    - brown.i.a
   1963_durham_caster:
     title: "Helicoplacoidea: A New Class of Echinoderms"
     complete:

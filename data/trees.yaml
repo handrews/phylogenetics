@@ -1061,6 +1061,24 @@
         specimens:
           syntypes:
           - Canadian Geological Survey 752
+1963_brown.i.a:
+  taxonomies:
+  - taxon: echinodermata
+    children:
+    - taxon: pelmatozoa
+      children:
+      - taxon: cystoidea
+        children:
+        - taxon: diploporita-order
+          children:
+          - taxon: sphaeronitidae
+            children:
+            - taxon: austrocystites
+              new: true
+              children:
+              - taxon: branagani_brown.i.a_1963
+                type: true
+                new: true
 1963_durham_caster:
   taxonomies:
   - taxon: echinozoa
@@ -2521,52 +2539,6 @@
           taxon: crinozoa
         children:
         - taxon: astrocystites
-1975_bell.b.m:
-  taxonomies:
-  - taxon: edrioasteroidea
-    children:
-    - taxon: isorophida
-      children:
-      - taxon: cyathocystina
-        new: true
-        children:
-        - taxon: cyathocystidae
-          children:
-          - taxon: cyathocystis
-            children:
-            - taxon: plautinae_schmidt_1879
-              notes: Given as "Schmidt 1880" but other sources say 1879
-            - taxon: rhizophora_schmidt_1889
-            - taxon: americanus_bassler_1936
-            - taxon: oklahomae_strimple_graffham_1955
-          - taxon: cyathotheca
-            children:
-            - taxon: suecica_jaekel_1927
-            - taxon: corallum_jaekel_1918
-          - taxon: hadrochthus
-            provisional: true
-            children:
-            - taxon: commensalus_bell.b.m_1974
-          - taxon: timeischytes
-            provisional: true
-        - taxon: postibulla
-          provisional: true
-          children:
-          - taxon: jasperensis_harker_1953
-1975_broadhead_strimple:
-  taxonomies:
-  - taxon: rhombifera-class
-    children:
-    - taxon: glyptocystitida-order
-      children:
-      - taxon: pleurocystitidae
-        children:
-        - taxon: amecystis
-          children:
-          - taxon: laevis_raymond_1921
-            type: true
-          - taxon: woodi_broadhead_strimple_1975
-            new: true
 1974_bell.b.m:
   taxonomies:
   - taxon: edrioasteroidea
@@ -2974,6 +2946,52 @@
               - taxon: edrioaster
           - taxon: saratogensis_ruedemann_1912
             provisional: true
+1975_bell.b.m:
+  taxonomies:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: isorophida
+      children:
+      - taxon: cyathocystina
+        new: true
+        children:
+        - taxon: cyathocystidae
+          children:
+          - taxon: cyathocystis
+            children:
+            - taxon: plautinae_schmidt_1879
+              notes: Given as "Schmidt 1880" but other sources say 1879
+            - taxon: rhizophora_schmidt_1889
+            - taxon: americanus_bassler_1936
+            - taxon: oklahomae_strimple_graffham_1955
+          - taxon: cyathotheca
+            children:
+            - taxon: suecica_jaekel_1927
+            - taxon: corallum_jaekel_1918
+          - taxon: hadrochthus
+            provisional: true
+            children:
+            - taxon: commensalus_bell.b.m_1974
+          - taxon: timeischytes
+            provisional: true
+        - taxon: postibulla
+          provisional: true
+          children:
+          - taxon: jasperensis_harker_1953
+1975_broadhead_strimple:
+  taxonomies:
+  - taxon: rhombifera-class
+    children:
+    - taxon: glyptocystitida-order
+      children:
+      - taxon: pleurocystitidae
+        children:
+        - taxon: amecystis
+          children:
+          - taxon: laevis_raymond_1921
+            type: true
+          - taxon: woodi_broadhead_strimple_1975
+            new: true
 1980_bell.b.m:
   taxonomies:
   - taxon: edrioasteroidea

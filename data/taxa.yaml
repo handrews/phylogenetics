@@ -436,6 +436,10 @@ austini_foerste_1914:
   name: austini
   auth: [foerste]
   year: 1914
+austrocystites:
+  name: Austrocystites
+  authority:
+    source: 1963_brown.i.a
 azaisei_thoral_1935:
   name: azaisei
   auth: [Thoral]
@@ -644,6 +648,10 @@ brachiopoda:
   rank: Phylum
   auth: [Dumeril]
   year: 1806
+branagani_brown.i.a_1963:
+  name: branagani
+  authority:
+    source: 1963_brown.i.a
 briareus_barrande_1887:
   name: briareus
   auth: [barrande]

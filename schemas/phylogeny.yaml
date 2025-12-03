@@ -206,6 +206,8 @@ $defs:
             $ref: "#/$defs/simpleDate"
           issued:
             $ref: "#/$defs/simpleDate"
+          read:
+            $ref: "#/$defs/simpleDate"
           conferenceStart:
             $ref: "#/$defs/simpleDate"
           conferenceEnd:
