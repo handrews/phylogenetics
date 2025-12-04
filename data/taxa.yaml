@@ -538,6 +538,10 @@ bellulus_barrande_1887:
   name: bellulus
   auth: [barrande]
   year: 1887
+bellulus_miller.s.a_dyer_1878:
+  name: bellulus
+  auth: [miller.s.a, Dyer]
+  year: 1878
 belochthus:
   name: Belochthus
   authority:
@@ -566,6 +570,10 @@ billingsi_chapman_1860:
   name: billingsi
   auth: [Chapman]
   year: 1860
+billingsi_wilson_1946:
+  name: billingsi
+  auth: [Wilson]
+  year: 1946
 bistomiacystidae:
   name: Bistomiacystidae
   rank: Family
@@ -944,6 +952,10 @@ cincinnatiensis_hall_1866:
   notes: |
     Probably correct version of cincinnatiensis_bassler_1935,
     not to be confused with cincinnatiensis_roemer_1851
+cincinnatiensis_miller.s.a_faber_1892:
+  name: cincinnatiensis
+  auth: [miller.s.a, Faber]
+  year: 1892
 cincinnatiensis_roemer_1851:
   name: cincinnatiensis
   auth: [Roemer]
@@ -1448,6 +1460,13 @@ deckeri_sinclair_1945:
   name: deckeri
   auth: [Sinclair]
   year: 1945
+decussatum_begg_1934:
+  name: decussatum
+  auth: [Begg]
+  year: 1934
+decussatus_begg_1934:
+  name: decussatus
+  altSpellingOf: decussatum_begg_1934
 deltacystinae:
   name: Deltacystinae
   auth: [sumrall, sprinkle]
@@ -1493,6 +1512,13 @@ devonicum_bassler_1936:
 devonicus_bassler_1936:
   name: devonicus
   altSpellingOf: devonica_bassler_1936
+devonica_sieverts-doreck_1951:
+  name: devonica
+  auth: [Sieverts-Doreck]
+  year: 1951
+devonicus_sieverts-doreck_1951:
+  name: devonicus
+  altSpellingOf: devonica_sieverts-doreck_1951
 dibrachycystidae:
   name: Dibrachycystidae
   rank: Family
@@ -2776,6 +2802,10 @@ hudsoni_sprinkle_1973:
   name: hudsoni
   authority:
     source: 1973_sprinkle
+huronensis_billings_1865:
+  name: huronensis
+  auth: [billings]
+  year: 1865
 hybocrinus:
   name: Hybocrinus
   auth: [billings]
@@ -2834,6 +2864,10 @@ infundus_frest_strimple_mcginnis_1976:
   name: infundus
   auth: [frest, Strimple, McGinnis]
   year: 1976
+insularis_regnéll_1945:
+  name: insularis
+  auth: [regnéll]
+  year: 1945
 interruptus_jaekel_1899:
   name: interruptus
   auth: [jaekel]
@@ -3144,10 +3178,10 @@ lichenoididae-gen-sp_smith.a.b_zamora_álvaro_2013:
   rank: species
   authority:
     source: 2013_smith.a.b_zamora_álvaro
-litchi_forbes_1848:
-  name: litchi
-  authority:
-    source: 1848b_forbes
+lindstroemi_regnéll_1945:
+  name: lindstroemi
+  auth: [regnéll]
+  year: 1945
 lingulocystidae:
   name: Lingulocystidae
   rank: Family
@@ -3170,6 +3204,10 @@ lispidecodus:
   name: Lispidecodus
   auth: [kesling]
   year: 1967
+litchi_forbes_1848:
+  name: litchi
+  authority:
+    source: 1848b_forbes
 ljubzovi_yakovlev_1956:
   name: ljubzovi
   auth: [Yakovlev]
@@ -3250,6 +3288,10 @@ magnificus_forbes_1848:
   name: magnificus
   authority:
     source: 1848b_forbes
+magnus_miller.s.a_dyer_1878:
+  name: magnus
+  auth: [miller.s.a, Dyer]
+  year: 1878
 malaisei_regnéll_1951:
   name: malaisei
   auth: [regnéll]
@@ -3556,6 +3598,10 @@ ornatus_bassler_1943:
   name: ornatus
   auth: [bassler]
   year: 1943
+ornatus_savage_1917:
+  name: ornatus
+  auth: [Savage]
+  year: 1917
 ornatus_say_1825:
   name: ornatus
   auth: [Say]
@@ -4113,6 +4159,10 @@ raripunctata_angelin_1878:
   name: raripunctata
   auth: [Angelin]
   year: 1878
+raymondi_foerste_1920:
+  name: raymondi
+  auth: [foerste]
+  year: 1920
 rectiradiatus_shideler_1918:
   name: rectiradiatus
   auth: [Shideler]
@@ -4310,6 +4360,10 @@ sagittaria_thomas_ladd_1926:
   name: sagittaria
   auth: [Thomas, Ladd]
   year: 1926
+salteri_hall_1866:
+  name: salteri
+  auth: [hall]
+  year: 1866
 sampsoni_miller.s.a_1891:
   name: sampsoni
   auth: [miller.s.a]
@@ -5061,6 +5115,10 @@ woodi_broadhead_strimple_1975:
   name: woodi
   authority:
     source: 1975_broadhead_strimple
+wrighti_begg_1939:
+  name: wrighti
+  auth: [Begg]
+  year: 1939
 ###################### X
 xenocystites:
   name: Xenocystites
