@@ -229,6 +229,20 @@
         - taxon: hamiltonensis_vanuxem_1842
         - taxon: buchianus_forbes_1848
           new: true
+1858_salter_billings:
+  taxonomies:
+  - taxon: cystideæ
+    children:
+    - taxon: cyclocystoides
+      provisional: true
+      altPlacements:
+      - taxon: asteriadæ
+      new: true
+      children:
+      - taxon: halli_billings_1858
+        new: true
+      - taxon: davisii_salter_1858
+        new: true
 1900_bather:
   taxonomies:
   - taxon: animalia
@@ -866,7 +880,6 @@
       - taxon: cyclocystoididae
         children:
           - taxon: cyclocystoides
-            provisional: true
 1941_whitehouse:
   taxonomies:
   - taxon: echinodermata
@@ -3197,7 +3210,7 @@
           children:
           - taxon: cyclocystoides
             children:
-            - taxon: halli_salter_billings_1858
+            - taxon: halli_billings_1858
               type: true
             - openTaxon: cyclocystoides-sp_kolata_1982
 1982a_parsley:

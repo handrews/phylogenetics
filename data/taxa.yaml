@@ -359,6 +359,15 @@ ascocystitidae:
   rank: Family
   auth: [ubaghs]
   year: 1967
+asteriadæ:
+  name: Asteriadæ
+  rank: Order
+  auth: [Gray]
+  year: 1840
+  notes: |
+    There is some confusion about this taxon as order vs family, and whether
+    it was re-ranked to the modern similarly-spelled family, or re-spelled
+    to Asteroidea, although that is always credited to de Blainville.
 asteroidea:
   name: Asteroidea
   rank: Class
@@ -1318,7 +1327,7 @@ cyclocystoidea:
   year: 1895
 cyclocystoides:
   name: Cyclocystoides
-  auth: [Billings, Salter]
+  auth: [billings, salter]
   year: 1858
 cyclocystoides-sp_kolata_1982:
   name: null
@@ -1422,6 +1431,11 @@ davisii_mccoy_1848:
   name: davisii
   auth: [mccoy]
   year: 1848
+davisii_salter_1858:
+  name: davisii
+  auth: [salter]
+  in: [salter, billings]
+  year: 1858
 dawsoni_billings_1859:
   name: dawsoni
   auth: [billings]
@@ -2468,9 +2482,10 @@ haimacystis:
   name: Haimacystis
   authority:
     source: 2001_sumrall_sprinkle_guensburg
-halli_salter_billings_1858:
+halli_billings_1858:
   name: halli
-  auth: [Salter, billings]
+  auth: [billings]
+  in: [salter, billings]
   year: 1858
 hallicystis:
   name: Hallicystis
