@@ -213,6 +213,10 @@ angulatus_conrad_1842:
   name: angulatus
   auth: [Conrad]
   year: 1842
+angulatus_wood_1909:
+  name: angulatus
+  auth: [Wood]
+  year: 1909
 angulosa_pander_1830:
   name: angulosa
   auth: [Pander]
@@ -245,6 +249,10 @@ ansticei_bather_1915:
   name: ansticei
   auth: [bather]
   year: 1915
+anulocrinus:
+  name: Anulocrinus
+  auth: [Ramsbottom]
+  year: 1961
 apektocrinus:
   name: Apektocrinus
   auth: [guensburg, sprinkle]
@@ -297,6 +305,10 @@ archegocystis:
   name: Archegocystis
   auth: [jaekel]
   year: 1899
+arctus_sardeson_1928:
+  name: arctus
+  auth: [Sardeson]
+  year: 1928
 argodiscus:
   name: Argodiscus
   auth: [Prokop]
@@ -526,6 +538,12 @@ beecheri_clarke_1901:
   name: beecheri
   auth: [Clarke]
   year: 1901
+belemnocystitidae:
+  name: Belemnocystitidae
+  rank: Family
+  auth: [parsley]
+  in: [caster]
+  year: 1968
 belli_sumrall_brett_cornell_2006:
   name: belli
   auth: [sumrall, Brett, Cornell]
@@ -703,6 +721,16 @@ buttsi_clarke_1901:
   auth: [Clarke]
   year: 1901
 ###################### C
+calceocrinacea:
+  name: Calceocrinacea
+  rank: Superfamily
+  auth: [meek, worthen]
+  year: 1869
+calceocrinidae:
+  name: Calceocrinidae
+  rank: Family
+  auth: [meek, worthen]
+  year: 1869
 calix:
   name: Calix
   auth: [Rouault]
@@ -1150,6 +1178,15 @@ craticula_whitehouse_1941:
   name: craticula
   authority:
     source: 1941_whitehouse
+cremacrinus:
+  name: Cremacrinus
+  auth: [Ulrich]
+  year: 1886
+cremacrinus-sp_kolata_1975:
+  name: null
+  rank: species
+  authority:
+    source: 1975_kolata
 crinoidea:
   name: Crinoidea
   rank: Class
@@ -1636,6 +1673,10 @@ dubius_angelin_1878:
   name: dubius
   auth: [Angelin]
   year: 1878
+durandensis_kolata_1975:
+  name: durandensis
+  authority:
+    source: 1975_kolata
 durhami_sprinkle_1973:
   name: durhami
   authority:
@@ -2192,6 +2233,10 @@ foerstei_bassler_shideler_1936:
   in: [bassler]
   year: 1936
   notes: 1936_bassler (but 'in' doesn't support this form yet)
+forrestonensis_kolata_1975:
+  name: forrestonensis
+  authority:
+    source: 1975_kolata
 fortuitus_guensburg_sprinkle_2003:
   name: fortuitus
   authority:
@@ -2482,6 +2527,10 @@ guntheri_sprinkle_1973:
   name: guntheri
   authority:
     source: 1973_sprinkle
+guttenbergensis_kolata_1975:
+  name: guttenbergensis
+  authority:
+    source: 1975_kolata
 ###################### H
 habrotecrinidae:
   name: Habrotecrinidae
@@ -2704,6 +2753,20 @@ hesperocystis:
   name: Hesperocystis
   auth: [Sinclair]
   year: 1945
+heterocrinacea:
+  name: Heterocrinacea
+  rank: Superfamily
+  auth: [Zittel]
+  year: 1879
+heterocrinidae:
+  name: Heterocrindae
+  rank: Family
+  auth: [Zittel]
+  year: 1879
+heterocrinus:
+  name: Heterocrinus
+  auth: [hall]
+  year: 1847
 heterostelea:
   name: Heterostelea
   rank: Order
@@ -2924,6 +2987,10 @@ isorophusella:
   name: Isorophusella
   authority:
     source: 1935_bassler
+isotomocrinus:
+  name: Isotomocrinus
+  auth: [Ulrich]
+  year: 1924
 ###################### J
 jacksoni_austen_1843:
   name: jacksoni
@@ -3401,6 +3468,10 @@ minus_zhao.y.l_huang.y.z_gong.x.y_1994:
   name: minus
   authority:
     source: 1994_zhao.y.l_huang.y.z_gong.x.y
+minutus_kolata_1975:
+  name: minutus
+  authority:
+    source: 1975_kolata
 mitrata:
   name: Mitrata
   rank: Order
@@ -3480,11 +3551,19 @@ murphyi_sumrall_garbisch_pope_2000:
   name: murphyi
   auth: [sumrall, Garbisch, Pope]
   year: 2000
+myeinocystites:
+  name: Myeinocystites
+  auth: [strimple]
+  year: 1953
 ###################### N
 narrawayella:
   name: Narrawayella
-  auth: [Foerste]
+  auth: [foerste]
   year: 1920
+natus_strimple_1953:
+  name: natus
+  auth: [strimple]
+  year: 1953
 navicula_whitehouse_1941:
   name: navicula
   authority:
@@ -3623,6 +3702,10 @@ ottawaensis_whiteaves_1897:
   name: ottawaensis
   auth: [Whiteaves]
   year: 1897
+ottawacrinus:
+  name: Ottawacrinus
+  auth: [billings]
+  year: 1887
 ###################### P
 pahvanticystis:
   name: Pahvanticystis
@@ -3968,6 +4051,11 @@ praepleurocystis:
   name: Praepleurocystis
   auth: [paul.c.r.c]
   year: 1967
+praepleurocystis-sp_kolata_1975:
+  name: null
+  rank: species
+  authority:
+    source: 1975_kolata
 primaevus_billings_1868:
   name: primaevus
   auth: [billings]
@@ -4049,6 +4137,10 @@ punctatus_forbes_1848:
   name: punctatus
   authority:
     source: 1848b_forbes
+punctatus_ulrich_1886:
+  name: punctatus
+  auth: [Ulrich]
+  year: 1886
 pustulata_müller.p_hahn_2010:
   name: pustulata
   authority:
@@ -4784,6 +4876,10 @@ tennesseensis_bassler_1936:
   name: tennesseensis
   authority:
     source: 1936_bassler
+tenuis_billings_1857:
+  name: tenuis
+  auth: [billings]
+  year: 1857
 testudinarius_hisinger_1837:
   name: testudinarius
   auth: [hisinger]
@@ -4832,6 +4928,10 @@ thorntonitidae:
   name: Thorntonitidae
   authority:
     source: 2021_jell_sprinkle
+thraivensis_ramsbottom_1961:
+  name: thraivensis
+  auth: [Ramsbottom]
+  year: 1961
 thresherodiscus:
   name: Thresherodiscus
   auth: [Foerste]
@@ -4957,6 +5057,10 @@ typicalis_bassler_1950:
   name: typicalis
   auth: [bassler]
   year: 1950
+typus_ulrich_1924:
+  name: typus
+  auth: [Ulrich]
+  year: 1924
 ###################### U
 ubaghsi_fatka_kordule_1990:
   name: ubaghsi

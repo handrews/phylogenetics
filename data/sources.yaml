@@ -123,6 +123,8 @@ publications:
     name: Palaeontology
   paleo-j:
     name: Paleontological Journal
+  paleo-memoir:
+    name: Paleontological Society Memoir
   papersinpalaeo:
     name: Papers in Palaeontology
   plos-one:
@@ -1365,6 +1367,16 @@ articles:
     - strimple
     identifiers:
       jstor: 2400371
+  1975_kolata:
+    title: Middle Ordovician echinoderms from northern Illinois and southern Wisconsin
+    journal: paleo-memoir
+    volume: 7
+    pubDate:
+      year: 1975
+    authors:
+    - kolata
+    identifiers:
+      doi: 10.1017/S0022336000061734
   1980_bell.b.m:
     title: Edrioasteroidea and Edrioblastoidea
     journal: series-geol
