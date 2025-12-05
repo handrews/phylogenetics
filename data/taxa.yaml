@@ -731,6 +731,10 @@ calceocrinidae:
   rank: Family
   auth: [meek, worthen]
   year: 1869
+calceocrinus:
+  name: Calceocrinus
+  auth: [hall]
+  year: 1852
 calix:
   name: Calix
   auth: [Rouault]
@@ -1516,6 +1520,33 @@ delticus_sumrall_sprinkle_guensburg_1997:
   name: delticus
   authority:
     source: 1997_sumrall_sprinkle_guensburg
+dendrocrinacea:
+  name: Dendrocrinacea
+  rank: Superfamily
+  auth: [Wachsmuth, springer]
+  year: 1886
+dendrocrinidae:
+  name: Dendrocrinidae
+  rank: Family
+  auth: [Wachsmuth, springer]
+  year: 1886
+dendrocrinina:
+  name: Dendrocrinina
+  rank: Suborder
+  auth: [bather]
+  year: 1899
+dendrocrinus:
+  name: Dendrocrinus
+  auth: [hall]
+  year: 1852
+dendrocrinus-sp-a_kolata_1975:
+  name: null
+  authority:
+    source: 1975_kolata
+dendrocrinus-sp-b_kolata_1975:
+  name: null
+  authority:
+    source: 1975_kolata
 dendrocystites:
   name: Dendrocystites
   auth: [barrande]
@@ -2241,6 +2272,10 @@ fortuitus_guensburg_sprinkle_2003:
   name: fortuitus
   authority:
     source: 2003_guensburg_sprinkle
+furcillatus_billings.w.r_1887:
+  name: furcillatus
+  authority:
+    source: 1887_billings.w.r
 ###################### G
 gallica_domínguez alonso_1999:
   name: gallica
@@ -2759,7 +2794,7 @@ heterocrinacea:
   auth: [Zittel]
   year: 1879
 heterocrinidae:
-  name: Heterocrindae
+  name: Heterocrinidae
   rank: Family
   auth: [Zittel]
   year: 1879
@@ -3291,6 +3326,10 @@ loeblichi_bassler_1943:
   name: loeblichi
   auth: [bassler]
   year: 1943
+longidactylus_hall_1852:
+  name: longidactylus
+  auth: [hall]
+  year: 1852
 longidactylus_walcott_1886:
   name: longidactylus
   auth: [walcott]
@@ -3406,6 +3445,20 @@ meristoschismatidae:
   name: Meristoschismatidae
   authority:
     source: 1973_sprinkle
+merocrinacea:
+  name: Merocrinacea
+  rank: Superfamily
+  auth: [miller.s.a]
+  year: 1890
+merocrinidae:
+  name: Merocrinidae
+  rank: Family
+  auth: [miller.s.a]
+  year: 1890
+merocrinus:
+  name: Merocrinus
+  auth: [walcott]
+  year: 1884
 mesocystidae:
   name: Mesocystidae
   rank: Family
@@ -3704,8 +3757,8 @@ ottawaensis_whiteaves_1897:
   year: 1897
 ottawacrinus:
   name: Ottawacrinus
-  auth: [billings]
-  year: 1887
+  authority: 
+    source: 1887_billings.w.r
 ###################### P
 pahvanticystis:
   name: Pahvanticystis
@@ -4072,6 +4125,10 @@ priscus_miller.s.a_gurley_1894:
   name: priscus
   auth: [miller.s.a, gurley]
   year: 1894
+proboscidiatus_billings_1857:
+  name: proboscidiatus
+  auth: [billings]
+  year: 1857
 proboscisphaeronis:
   name: Proboscisphaeronis
   authority:
@@ -4438,6 +4495,10 @@ rozhnovi_sumrall_sprinkle_guensburg_2001:
   name: rozhnovi
   authority:
     source: 2001_sumrall_sprinkle_guensburg
+rugosus_billings.w.r_1887:
+  name: rugosus
+  authority:
+    source: 1887_billings.w.r
 rutroclypeidae:
   name: Rutroclypeidae
   rank: Family
@@ -4648,6 +4709,10 @@ sporranoides_rahman_stewart_zamora_2015:
   name: sporranoides
   auth: [rahman, stewart, zamora]
   year: 2015
+springeri_kolata_1975:
+  name: springeri
+  authority:
+    source: 1975_kolata
 springerocystidae:
   name: Springerocystidae
   rank: Family
@@ -5057,6 +5122,10 @@ typicalis_bassler_1950:
   name: typicalis
   auth: [bassler]
   year: 1950
+typus_billings.w.r_1887:
+  name: typus
+  authority:
+    source: 1887_billings.w.r
 typus_ulrich_1924:
   name: typus
   auth: [Ulrich]

@@ -41,6 +41,9 @@ billings:
   given: Elkahna
   birth: 1820
   death: 1876
+billings.w.r:
+  family: Billings
+  given: Walter R.
 bohatý:
   family: Bohatý
   given: Jan

@@ -113,6 +113,8 @@ publications:
     name: A Natural History of the Crinoidea, or Lily-Shaped Animals
   nysm:
     name: New York State Museum and Science Service Memoirs
+  ottawa-naturalist:
+    name: The Ottawa Naturalist
   outlines-of-oryctology:
     name: "Outlines of Oryctology: An introduction to the study of fossil remains; especially those found in the British strata"
   paleobiology:
@@ -567,6 +569,17 @@ articles:
       transmitted: 1871-04-18
     authors:
     - hall
+  1887_billings.w.r:
+    title: A new genus and three new species of crinoids from the Trenton Formation with notes on a large specimen of Dendrocrinus proboscidiatus
+    journal: ottawa-naturalist
+    volume: 1
+    number: 3
+    pubDate:
+      year: 1887
+    authors:
+    - billings.w.r
+    identifiers:
+      url: https://www.biodiversitylibrary.org/page/30200108
   1896_haeckel:
     book: amph-und-cyst
     pubDate:
