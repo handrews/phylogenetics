@@ -1094,6 +1094,20 @@ confertus_barrande_1887:
   name: confertus
   auth: [barrande]
   year: 1887
+conicus_billings_1857_hybocrinus:
+  originalParent: hybocrinus
+  name: conicus
+  auth: [billings]
+  year: 1857
+conicus_billings_1857_porocrinus:
+  originalParent: porocrinus
+  name: conicus
+  auth: [billings]
+  year: 1857
+conjugans_billings_1859:
+  name: conjugans
+  auth: [billings]
+  year: 1859
 conollia:
   name: Conollia
   auth: [domínguez alonso]
@@ -1301,6 +1315,15 @@ cupuliformis_zhao.j_guo.j_selden_cong.p.y_li.y.j_2022:
   name: cupuliformis
   authority:
     source: 2022_zhao.j_guo.j_selden_cong.p.y_li.y.j
+cupulocrinidae:
+  name: Cupulocrinidae
+  rank: Family
+  auth: [Moore, Laudon]
+  year: 1943
+cupulocrinus:
+  name: Cupulocrinus
+  auth: [d'Orbigny]
+  year: 1849
 curteocrinus:
   name: Curteocrinus
   authority:
@@ -2502,6 +2525,10 @@ goshutensis_sumrall_sprinkle_guensburg_1997:
   name: goshutensis
   authority:
     source: 1997_sumrall_sprinkle_guensburg
+gracilis_hall_1847:
+  name: gracilis
+  auth: [hall]
+  year: 1847
 graffhami_sprinkle_1982:
   name: graffhami
   authority:
@@ -2900,10 +2927,29 @@ hudsoni_sprinkle_1973:
   name: hudsoni
   authority:
     source: 1973_sprinkle
+humilis_billings_1857:
+  name: humilis
+  auth: [billings]
+  year: 1857
 huronensis_billings_1865:
   name: huronensis
   auth: [billings]
   year: 1865
+hybocrinida:
+  name: Hybocrinida
+  rank: Order
+  auth: [jaekel]
+  year: 1918
+hybocrinacea:
+  name: Hybocrinacea
+  rank: Superfamily
+  auth: [Zittel]
+  year: 1879
+hybocrinidae:
+  name: Hybocrinidae
+  rank: Family
+  auth: [Zittel]
+  year: 1879
 hybocrinus:
   name: Hybocrinus
   auth: [billings]
@@ -3047,6 +3093,10 @@ jasperensis_harker_1953:
   name: jasperensis
   auth: [Harker]
   year: 1953
+jewetti_billings_1859:
+  name: jewetti
+  auth: [billings]
+  year: 1859
 jewetti_hall_1852:
   name: jewetti
   auth: [hall]
@@ -3534,6 +3584,10 @@ mohawkensis_fisher_1951:
   name: mohawkensis
   auth: [Fisher]
   year: 1951
+molanderi_kolata_1975:
+  name: molanderi
+  authority:
+    source: 1975_kolata
 moncaiensis_zamora_smith.a.b_2012:
   name: moncaiensis
   auth: [zamora, smith.a.b]
@@ -3987,6 +4041,10 @@ placocystitinae:
   rank: Subfamily
   authority:
     source: 1960_gill_caster
+plattevillensis_kolata_1975:
+  name: plattevillensis
+  authority:
+    source: 1975_kolata
 platycystites:
   name: Platycystites
   auth: [miller.s.a]

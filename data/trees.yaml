@@ -3213,7 +3213,7 @@
                       type: true
                     - taxon: britonensis_kolata_1975
                       new: true
-                - taxon: cupulorinidae
+                - taxon: cupulocrinidae
                   children:
                   - taxon: cupulocrinus
                     children:
