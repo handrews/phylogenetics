@@ -1596,6 +1596,22 @@ articles:
     authors:
     - sprinkle
     - parsley
+  1983_bockelie_paul.c.r.c:
+    title: Cyathotheca suecica and its bearing on the evolution of the Edrioasteroidea
+    journal: lethaia
+    volume: 16
+    number: 4
+    pubDate:
+      year: 1983
+      month: 10
+    pages:
+    - 257
+    - 264
+    authors:
+    - bockelie
+    - paul.c.r.c
+    identifiers:
+      doi: 10.1111/j.1502-3931.1983.tb02006.x
   1983_brett_frest_sprinkle_clement.c.r:
     title: "Coronoidea: A New Class of Blastozoan Echinoderms Based on Taxonomic Reevaluation of Stephanocrinus"
     journal: jofpaleo

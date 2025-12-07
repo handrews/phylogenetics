@@ -44,6 +44,9 @@ billings:
 billings.w.r:
   family: Billings
   given: Walter R.
+bockelie:
+  family: Bockelie
+  given: Johan Fredrik
 bohatý:
   family: Bohatý
   given: Jan

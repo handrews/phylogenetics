@@ -3160,6 +3160,16 @@ isorophida-uncertain-family_bell.b.m_1974:
   rank: Family
   authority:
     source: 1974_bell.b.m
+isorophida-indeterminate-suborder_bockelie_paul.c.r.c_1983:
+  name: null
+  rank: Suborder
+  authority:
+    source: 1983_bockelie_paul.c.r.c
+isorophida-indenterminate_family_bockelie_paul.c.r._1983:
+  name: null
+  rank: Family
+  authority:
+    source: 1983_bockelie_paul.c.r.c
 isorophidae:
   name: Isorophidae
   rank: Family
