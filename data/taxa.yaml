@@ -3091,6 +3091,10 @@ ikerus:
   name: Ikerus
   authority:
     source: 2021_jell_sprinkle
+illinoisensis_miller.s.a_gurley_1895:
+  name: illinoisensis
+  auth: [miller.s.a, gurley]
+  year: 1895
 imbricata:
   name: Imbricata
   rank: Order

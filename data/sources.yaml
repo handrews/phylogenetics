@@ -77,6 +77,8 @@ publications:
     name: Geological Journal
   geomag:
     name: Geological Magazine
+  geo-soc-am-abs-prog:
+    name: Geological Society of America, Abstracts With Programs
   invertebrates:
     name: The Invertebrates
   jofpaleo:
@@ -1422,6 +1424,18 @@ articles:
     - sprinkle
     identifiers:
       jstor: 1303701
+  1979_guensburg:
+    title: Cyclocystoid-like edrioasteroids from the Orchard Creek Shale (U. Ord.) in southern Illinois
+    journal: geo-soc-am-abs-prog
+    volume: 11
+    pages:
+    - 74
+    - 74
+    pubDate:
+      year: 1979
+    authors:
+    - guensburg
+    notes: Literally just an abstract?  Unclear if there is a long form.
   1980_bell.b.m:
     title: Edrioasteroidea and Edrioblastoidea
     journal: series-geol
