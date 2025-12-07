@@ -3178,7 +3178,7 @@
                     - taxon: conicus_billings_1857_porocrinus
                       type: true
                     - taxon: pentagonius_meek_worthen_1865
-                    - cfTaxon: smith_grant_1881
+                    - cfTaxon: smithi_grant_1881
                 - taxon: carabocrinidae
                   children:
                   - taxon: carabocrinus
@@ -3190,7 +3190,7 @@
                     - openTaxon: carabocrinus-sp_kolata_1975
             - taxon: dendrocrinina
               children:
-              - taxon: dendrocinacea
+              - taxon: dendrocrinacea
                 children:
                 - taxon: dendrocrinidae
                   children:

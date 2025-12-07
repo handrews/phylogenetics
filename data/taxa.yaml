@@ -238,7 +238,7 @@ anomalocystidae:
   rank: Family
   auth: [Hall]
   year: 1859
-  notes: Other sources (Zittel) credit Meek?
+  notes: Other sources (zittel) credit Meek?
   altSpellingOf: anomalocystitidae
 anomalocystitidae:
   name: Anomalocystitidae
@@ -269,7 +269,7 @@ apiocystitinae:
 aporita:
   name: Aporita
   rank: Order
-  auth: [Zittel]
+  auth: [zittel]
   year: 1879
 appressa_bassler_1950:
   name: appressa
@@ -355,7 +355,7 @@ arthropoda:
 articulata:
   name: Articulata
   rank: Subclass
-  auth: [Zittel]
+  auth: [zittel]
   year: 1879
 ascocystites:
   name: Ascocystites
@@ -388,7 +388,7 @@ asteroidea:
 asterozoa:
   name: Asterozoa
   rank: Subphylum
-  auth: [von Zittel]
+  auth: [zittel]
   year: 1895
 astrocystites:
   name: Astrocystites
@@ -696,6 +696,10 @@ brightonicystis:
   name: Brightonicystis
   auth: [paul.c.r.c]
   year: 1971
+britonensis_kolata_1975:
+  name: britonensis
+  authority:
+    source: 1975_kolata
 brockocystis:
   name: Brockocystis
   auth: [foerste]
@@ -827,10 +831,20 @@ cannati_miquel_1894:
   name: cannati
   auth: [Miquel]
   year: 1894
+carabocrinidae:
+  name: Carabocrinidae
+  rank: Family
+  auth: [bather]
+  year: 1899
 carabocrinus:
   name: Carabocrinus
   auth: [billings]
   year: 1857
+carabocrinus-sp_kolata_1975:
+  name: null
+  rank: species
+  authority:
+    source: 1975_kolata
 carbonarius_bassler_1936:
   name: carbonarius
   authority:
@@ -1353,6 +1367,11 @@ cyamoidea:
   rank: Class
   authority:
     source: 1941_whitehouse
+cyathocrinina:
+  name: Cyathocrinina
+  rank: Suborder
+  auth: [bather]
+  year: 1899
 cyathocystina:
   name: Cyathocystina
   rank: Suborder
@@ -1869,7 +1888,7 @@ echino-sphærites:
 echinozoa:
   name: Echinozoa
   rank: Subphylum
-  auth: [von Zittel]
+  auth: [zittel]
   year: 1895
 echinus:
   name: Echinus
@@ -2271,7 +2290,7 @@ fletcheri_forbes_1848:
 flexibilia:
   name: Flexibilia
   rank: Subclass
-  auth: [Zittel]
+  auth: [zittel]
   year: 1895
 foerstecystis:
   name: Foerstecystis
@@ -2304,6 +2323,11 @@ gallica_domínguez alonso_1999:
   name: gallica
   auth: [domínguez alonso]
   year: 1999
+gasterocomacea:
+  name: Gasterocomacea
+  rank: Superfamily
+  auth: [Roemer]
+  year: 1854
 gemmiformis_hall_1852:
   name: gemmiformis
   auth: [hall]
@@ -2815,15 +2839,19 @@ hesperocystis:
   name: Hesperocystis
   auth: [Sinclair]
   year: 1945
+heterocostalis_hall_1847:
+  name: heterocostalis
+  auth: [hall]
+  year: 1847
 heterocrinacea:
   name: Heterocrinacea
   rank: Superfamily
-  auth: [Zittel]
+  auth: [zittel]
   year: 1879
 heterocrinidae:
   name: Heterocrinidae
   rank: Family
-  auth: [Zittel]
+  auth: [zittel]
   year: 1879
 heterocrinus:
   name: Heterocrinus
@@ -2943,12 +2971,12 @@ hybocrinida:
 hybocrinacea:
   name: Hybocrinacea
   rank: Superfamily
-  auth: [Zittel]
+  auth: [zittel]
   year: 1879
 hybocrinidae:
   name: Hybocrinidae
   rank: Family
-  auth: [Zittel]
+  auth: [zittel]
   year: 1879
 hybocrinus:
   name: Hybocrinus
@@ -3764,6 +3792,10 @@ oklahomensis_bassler_1950:
   name: oklahomensis
   auth: [bassler]
   year: 1950
+oogyi_kolata_1975:
+  name: oogyi
+  authority:
+    source: 1975_kolata
 ophiocistioidea:
   name: Ophiocistioidea
   auth: [Sollas]
@@ -3951,6 +3983,10 @@ pentacystida:
   rank: Order
   auth: [jaekel]
   year: 1918
+pentagonius_meek_worthen_1865:
+  name: pentagonius
+  auth: [meek, worthen]
+  year: 1865
 pentangularis_pompeckj_1896:
   name: pentangularis
   auth: [Pompeckj]
@@ -4141,6 +4177,15 @@ pomum_wahlenberg_1821:
   name: pomum
   auth: [Wahlenberg]
   year: 1821
+porocrinidae:
+  name: Porocrinidae
+  rank: Family
+  auth: [miller.s.a, gurley]
+  year: 1894
+porocrinus:
+  name: Porocrinus
+  auth: [billings]
+  year: 1857
 postibulla:
   name: Postibulla
   authority:
@@ -4154,6 +4199,10 @@ postpetalus_müller.p_hahn_2010:
   name: postpetalus
   authority:
     source: 2010_müller.p_hahn
+poteriocrinus:
+  name: Poteriocrinus
+  auth: [Agassiz]
+  year: 1836
 praedicta_bassler_1950:
   name: praedicta
   auth: [bassler]
@@ -4354,6 +4403,10 @@ radiata_ubaghs_1999:
   name: radiata
   authority:
     source: 1999_ubaghs
+radiatus_billings_1857:
+  name: radiatus
+  auth: [billings]
+  year: 1857
 ramosus_foerste_1914:
   name: ramosus
   auth: [foerste]
@@ -4492,14 +4545,14 @@ rhombifera-order:
   bracket: Rhombiferans
   rank: Order
   status: informal
-  auth: [Zittel]
+  auth: [zittel]
   year: 1870
 rhombifera-class:
   name: Rhombifera
   bracket: Rhombiferans
   rank: Class
   status: informal
-  auth: [Zittel]
+  auth: [zittel]
   year: 1870
 rhombiferidae:
   name: Rhombiferidae
@@ -4636,6 +4689,10 @@ scotiaecystis-sp_sumrall_sprinkle_guensburg_1997:
   rank: species
   authority:
     source: 1997_sumrall_sprinkle_guensburg
+scyphocrinus:
+  name: Scyphocrinus
+  auth: [hall]
+  year: 1847
 senckenbergii_meyer_1826:
   name: senckenbergii
   auth: [Meyer]
@@ -4684,6 +4741,10 @@ sinoeocrinus:
   name: Sinoeocrinus
   authority:
     source: 1994_zhao.y.l_huang.y.z_gong.x.y
+smithi_grant_1881:
+  name: smithi
+  auth: [Grant]
+  year: 1881
 smithi_ubaghs_1987:
   name: smithi
   auth: [ubaghs]
@@ -5188,6 +5249,10 @@ typus_ulrich_1924:
   name: typus
   auth: [Ulrich]
   year: 1924
+typus_walcott_1884:
+  name: typus
+  auth: [walcott]
+  year: 1884
 ###################### U
 ubaghsi_fatka_kordule_1990:
   name: ubaghsi
