@@ -385,6 +385,9 @@ asteroidea:
   rank: Class
   auth: [de Blainville]
   year: 1830
+asteroidea-subclass:
+  rank: Subclass
+  altRankOf: asteroidea
 asterozoa:
   name: Asterozoa
   rank: Subphylum
@@ -3798,12 +3801,17 @@ oogyi_kolata_1975:
     source: 1975_kolata
 ophiocistioidea:
   name: Ophiocistioidea
+  rank: Class
   auth: [Sollas]
   year: 1899
 ophiuroidea:
   name: Ophiuroidea
+  rank: Class
   auth: [Gray]
   year: 1840
+ophiuroidea-subclass:
+  rank: Subclass
+  altRankOf: ophiuroidea
 optatus_worthen_miller_1883:
   name: optatus
   auth: [Worthen, Miller]
@@ -4764,6 +4772,9 @@ somasteroidea:
   rank: Class
   auth: [spencer]
   year: 1941
+somasteroidea-subclass:
+  rank: Subclass
+  altRankOf: somasteroidea
 southworthi_bassler_1936:
   name: southworthi
   authority:
