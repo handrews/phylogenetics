@@ -3520,9 +3520,9 @@ lui_zhao.y.l_huang.y.z_gong.x.y_1994:
   name: lui
   authority:
     source: 1994_zhao.y.l_huang.y.z_gong.x.y
-lukei_bell_petersen_1976:
+lukei_bell.b.m_petersen.m.s_1976:
   name: lukei
-  auth: [Bell, Petersen]
+  auth: [bell.b.m, petersen.m.s]
   year: 1976
 lyracystidae:
   name: Lyracystidae

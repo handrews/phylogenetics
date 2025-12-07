@@ -1390,6 +1390,22 @@ articles:
     - kolata
     identifiers:
       doi: 10.1017/S0022336000061734
+  1976_bell.b.m_petersen.m.s:
+    title: An Edrioasteroid from the Guilmette Formation at Wendover, Utah-Nevada
+    journal: jofpaleo
+    volume: 50
+    number: 4
+    pages:
+    - 577
+    - 589
+    pubDate:
+      year: 1976
+      month: 7
+    authors:
+    - bell.b.m
+    - petersen.m.s
+    identifiers:
+      jstor: 1303658
   1980_bell.b.m:
     title: Edrioasteroidea and Edrioblastoidea
     journal: series-geol
