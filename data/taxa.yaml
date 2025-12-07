@@ -3834,9 +3834,9 @@ nicklesi_bassler_1936:
   name: nicklesi
   authority:
     source: 1936_bassler
-nimius_bell_sprinkle_1978:
+nimius_bell.b.m_sprinkle_1978:
   name: nimius
-  auth: [Bell, sprinkle]
+  auth: [bell.b.m, sprinkle]
   year: 1978
 nitidus_sinclair_1945:
   name: nitidus

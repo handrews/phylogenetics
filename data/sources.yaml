@@ -1406,6 +1406,22 @@ articles:
     - petersen.m.s
     identifiers:
       jstor: 1303658
+  1978_bell.b.m_sprinkle:
+    title: Totiglobus, an Unusual New Edrioasteroid from the Middle Cambrian of Nevada
+    journal: jofpaleo
+    volume: 52
+    number: 2
+    pages:
+    - 243
+    - 266
+    pubDate:
+      year: 1978
+      month: 3
+    authors:
+    - bell.b.m
+    - sprinkle
+    identifiers:
+      jstor: 1303701
   1980_bell.b.m:
     title: Edrioasteroidea and Edrioblastoidea
     journal: series-geol

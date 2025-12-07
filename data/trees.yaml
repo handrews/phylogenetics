@@ -3423,6 +3423,24 @@
               type: true
             - taxon: lukei_bell.b.m_petersen.m.s_1976
               new: true
+1978_bell.b.m_sprinkle:
+  taxonomies:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: edrioasterida
+      emended: true
+      children:
+      - taxon: edrioasteridae
+        emended: true
+      - taxon: totiglobidae
+        new: true
+        children:
+        - taxon: totiglobus
+          new: true
+          children:
+          - taxon: nimius_bell.b.m_sprinkle_1978
+            type: true
+            new: true
 1980_bell.b.m:
   taxonomies:
   - taxon: edrioasteroidea
@@ -4168,7 +4186,7 @@
           children:
           - taxon: totiglobus
             children:
-            - taxon: nimius_bell_sprinkle_1978
+            - taxon: nimius_bell.b.m_sprinkle_1978
               type: true
             - taxon: lloydi_sprinkle_1985
               provisional: true
@@ -6060,7 +6078,7 @@
         children:
         - taxon: totiglobus
           children:
-          - taxon: nimius_bell_sprinkle_1978
+          - taxon: nimius_bell.b.m_sprinkle_1978
             type: true
           - taxon: spencensis_wen.r_babcock_peng.j_robison_2019
             new: true
