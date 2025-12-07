@@ -293,6 +293,11 @@ archaeocothurnis:
   name: Archaeocothurnis
   authority:
     source: 1997_sumrall_sprinkle_guensburg
+archaeocrinidae:
+  name: Archaeocrinidae
+  rank: Family
+  auth: [Moore, Laudon]
+  year: 1943
 archaeocyathoides_dzik_orłowski_1995:
   name: archaeocyathoides
   auth: [dzik, orłowski]
@@ -677,6 +682,30 @@ boliviensis_sprinkle_1973:
   name: boliviensis
   authority:
     source: 1973b_sprinkle
+bothriocidaridae:
+  name: Bothriocidaridae
+  rank: Family
+  auth: [Klem]
+  year: 1904
+bothriocidaridae-unknown-genus_kolata_1975:
+  name: null
+  rank: genus
+  authority:
+    source: 1975_kolata
+bothriocidaridae-sp_kolata_1975:
+  name: null
+  rank: species
+  authority:
+    source: 1975_kolata
+bothriocidaris:
+  name: Bothriocidaris
+  auth: [Eichwald]
+  year: 1860
+bothriocidaroida:
+  name: Bothriocidaroida
+  rank: Order
+  auth: [zittel]
+  year: 1879
 brachiatus_sprinkle_1973:
   name: brachiatus
   authority:
@@ -723,6 +752,10 @@ buchianus_forbes_1848:
   name: buchianus
   authority:
     source: 1848b_forbes
+buckleyi_kolata_1975:
+  name: buckleyi
+  authority:
+    source: 1975_kolata
 buttsi_clarke_1901:
   name: buttsi
   auth: [Clarke]
@@ -935,6 +968,10 @@ chapmani_raymond_1915:
   name: chapmani
   auth: [Raymond]
   year: 1915
+charltoni_kolata_1975:
+  name: charltoni
+  authority:
+    source: 1975_kolata
 cheirocrinidae:
   name: Cheirocrinidae
   rank: Family
@@ -1427,6 +1464,11 @@ cyclocystoides:
   name: Cyclocystoides
   auth: [billings, salter]
   year: 1858
+cyclocystoides-sp_kolata_1975:
+  name: null
+  rank: species
+  authority:
+    source: 1975_kolata
 cyclocystoides-sp_kolata_1982:
   name: null
   rank: species
@@ -1542,6 +1584,10 @@ deani_ubaghs_1994:
   name: deani
   auth: [ubaghs]
   year: 1994
+decadactylus_hall_1847:
+  name: decadactylus
+  auth: [hall]
+  year: 1847
 deckeri_sinclair_1945:
   name: deckeri
   auth: [Sinclair]
@@ -1662,8 +1708,11 @@ dinocystis:
 diplobathrida:
   name: Diplobathrida
   rank: Order
-  auth: [Wachsmuth, springer]
-  year: 1885
+  auth: [Moore, Laudon]
+  year: 1943
+diplobathra:
+  name: Diplobathra
+  altSpellingOf: diplobathrida
 diploporita-class:
   name: Diploporita
   rank: Class
@@ -2309,6 +2358,11 @@ foerstei_bassler_shideler_1936:
   in: [bassler]
   year: 1936
   notes: 1936_bassler (but 'in' doesn't support this form yet)
+forcipulatida:
+  name: Forcipulatida
+  rank: Order
+  auth: [Perrier]
+  year: 1884
 forrestonensis_kolata_1975:
   name: forrestonensis
   authority:
@@ -2397,6 +2451,10 @@ globulus_dehm_1934:
   name: globulus
   auth: [Dehm]
   year: 1934
+globulus_eichwald_1860:
+  name: globulus
+  auth: [Eichwald]
+  year: 1860
 globulus_zhao.y.l_parsley_peng.j_2008:
   name: globulus
   authority:
@@ -2406,6 +2464,20 @@ globus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999:
   notes: nomen nudum
   authority:
     source: 1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y
+glyptocrinidae:
+  name: Glyptocrinidae
+  rank: Family
+  auth: [zittel]
+  year: 1879
+glyptocrinus:
+  name: Glyptocrinus
+  auth: [hall]
+  year: 1847
+glyptocrinus-sp_kolata_1975:
+  name: null
+  rank: species
+  authority:
+    source: 1975_kolata
 glyptocystella:
   name: Glyptocystella
   auth: [paul.c.r.c]
@@ -2576,6 +2648,10 @@ granulatus_mccoy_1846:
   name: granulatus
   auth: [mccoy]
   year: 1846
+granulosus_meek_1872:
+  name: granulosus
+  auth: [meek]
+  year: 1872
 grandis_bassler_1935:
   name: grandis
   authority:
@@ -2954,6 +3030,15 @@ homoiostelea-indeterminate-family_ubaghs_robison_1988:
   rank: Family
   authority:
     source: 1988_ubaghs_robison
+hudsonaster:
+  name: Hudsonaster
+  auth: [Sturtz]
+  year: 1900
+hudsonasteridae:
+  name: Hudsonasteridae
+  rank: Family
+  auth: [schuchert]
+  year: 1914
 hudsoni_sprinkle_1973:
   name: hudsoni
   authority:
@@ -3479,6 +3564,10 @@ magnus_miller.s.a_dyer_1878:
   name: magnus
   auth: [miller.s.a, Dyer]
   year: 1878
+mahlburgi_kolata_1975:
+  name: mahlburgi
+  authority:
+    source: 1975_kolata
 malaisei_regnéll_1951:
   name: malaisei
   auth: [regnéll]
@@ -3632,6 +3721,9 @@ monobathrida:
   rank: Order
   auth: [Moore, Loudon]
   year: 1943
+monobathra:
+  name: Monobathra
+  altSpellingOf: monobathrida
 monobathrida-uncertain-family_guensburg_sprinkle_2003:
   name: null
   rank: Family
@@ -3722,6 +3814,14 @@ nelsoni_durham_1967:
   name: nelsoni
   authority:
     source: 1967c_durham
+neobothriocidaris:
+  name: Neobothriocidaris
+  auth: [paul.c.r.c]
+  year: 1967
+neobothriocidaris-sp_kolata_1975:
+  name: null
+  authority:
+    source: 1975_kolata
 neorhipidocystis:
   name: Neorhipidocystis
   auth: [Rozhnov]
@@ -3858,6 +3958,15 @@ pahvanticystis:
   name: Pahvanticystis
   auth: [Lefebvre, Lerosey-Aubril]
   year: 2018
+palaeaster:
+  name: Palaeaster
+  auth: [hall]
+  year: 1852
+palaeasteraceae:
+  name: Palaeasteraceae
+  rank: Superfamily
+  auth: [miller.s.a]
+  year: 1889
 palaeocystites:
   name: Palaeocystites
   auth: [billings]
@@ -3867,6 +3976,10 @@ palaeocystitidae:
   rank: Family
   auth: [ubaghs]
   year: 1967
+palasterina:
+  name: Palasterina
+  auth: [mccoy]
+  year: 1851
 palmeri_sprinkle_1973:
   name: palmeri
   authority:
@@ -3960,6 +4073,10 @@ paulianus_bassler_1936:
   name: paulianus
   authority:
     source: 1936_bassler
+peculiaris_paul.c.r.c_1967:
+  name: peculiaris
+  auth: [paul.c.r.c]
+  year: 1967
 pelmatozoa:
   name: Pelmatozoa
   bracket: Pelmatozoans
@@ -4012,6 +4129,11 @@ peridionitidae:
   rank: Family
   authority:
     source: 1941_whitehouse
+perishoechinoidea:
+  name: Perishoechinoidea
+  rank: Subclass
+  auth: [mccoy]
+  year: 1849
 peritaphros-subgenus:
   name: Peritaphros
   rank: subgenus
@@ -4260,6 +4382,20 @@ prolifica_walcott_1917:
   name: prolifica
   auth: [walcott]
   year: 1917
+promopalaeaster:
+  name: Promopalaeaster
+  auth: [schuchert]
+  year: 1914
+promopalaeasteraceae:
+  name: Promopalaeasteraceae
+  rank: Superfamily
+  auth: [schuchert]
+  year: 1914
+promopalaeasteridae:
+  name: Promopalaeasteridae
+  rank: Family
+  auth: [schuchert]
+  year: 1914
 protoblastoidea:
   name: Protoblastoidea
   rank: Grade
@@ -4317,6 +4453,15 @@ pustulata_müller.p_hahn_2010:
   name: pustulata
   authority:
     source: 2010_müller.p_hahn
+pustulosina:
+  name: Pustulosina
+  rank: Suborder
+  auth: [Spencer]
+  year: 1951
+pustulosis_kolata_1975:
+  name: pustulosis
+  authority:
+    source: 1975_kolata
 pseudedriophus:
   name: Pseudedriophus
   auth: [sprinkle, sumrall]
@@ -4423,6 +4568,10 @@ ramseyocrinus:
   name: Ramseyocrinus
   auth: [Bates]
   year: 1968
+raphanocrinus:
+  name: Raphanocrinus
+  auth: [Wachsmuth, springer]
+  year: 1885
 raripunctata_angelin_1878:
   name: raripunctata
   auth: [Angelin]
@@ -4492,6 +4641,10 @@ reteocrinidae:
   rank: Family
   auth: [Wachsmuth, springer]
   year: 1885
+reteocrinus:
+  name: Reteocrinus
+  auth: [billings]
+  year: 1859
 reticulatus_bell.b.m_1974:
   name: reticulatus
   authority:
@@ -4594,6 +4747,10 @@ ridersiidae:
   rank: Family
   auth: [jell, burrett, banks]
   year: 1985
+rocktonensis_kolata_1975:
+  name: rocktonensis
+  authority:
+    source: 1975_kolata
 roddyi_ruedemann_1933:
   name: roddyi
   auth: [ruedemann]
@@ -4614,10 +4771,20 @@ rozhnovi_sumrall_sprinkle_guensburg_2001:
   name: rozhnovi
   authority:
     source: 2001_sumrall_sprinkle_guensburg
+rugosus_billings_1857:
+  name: rugosus
+  auth: [billings]
+  year: 1857
+  notes: Type species of Hudsonaster, original parent Palasterina
 rugosus_billings.w.r_1887:
   name: rugosus
   authority:
     source: 1887_billings.w.r
+  notes: original parent Calceocrinus
+ruthveni_mccoy_1851:
+  name: ruthveni
+  auth: [mccoy]
+  year: 1851
 rutroclypeidae:
   name: Rutroclypeidae
   rank: Family
@@ -4757,6 +4924,10 @@ smithi_ubaghs_1987:
   name: smithi
   auth: [ubaghs]
   year: 1987
+solemni_kolata_1975:
+  name: solemni
+  authority:
+    source: 1975_kolata
 soluta-class:
   name: Soluta
   rank: Class
@@ -4823,6 +4994,10 @@ spinosa_zamora_rahman_smith.a.b_2012:
   name: spinosa
   auth: [zamora, rahman, smith.a.b]
   year: 2012
+spinosus_kolata_1975:
+  name: spinosus
+  authority:
+    source: 1975_kolata
 spiralis_robison_1965:
   name: spiralis
   auth: [robison]
@@ -4876,6 +5051,10 @@ steganoblastus:
   name: Steganoblastus
   auth: [Whiteaves]
   year: 1899
+stellaris_billings_1859:
+  name: stellaris
+  auth: [billings]
+  year: 1859
 stellatus_hall_1866:
   name: stellatus
   auth: [Hall]
@@ -5006,6 +5185,10 @@ subglobosus_hall_1862:
   name: subglobosus
   auth: [hall]
   year: 1862
+subnodosus_walcott_1884:
+  name: subnodosus
+  auth: [walcott]
+  year: 1884
 suecica_jaekel_1927:
   name: suecica
   auth: [jaekel]
@@ -5063,6 +5246,10 @@ templetonensis_chapman_1929:
   name: templetonensis
   auth: [Chapman]
   year: 1929
+templetoni_kolata_1975:
+  name: templetoni
+  authority:
+    source: 1975_kolata
 tener_barrande_1887:
   name: tener
   auth: [barrande]
@@ -5207,6 +5394,10 @@ trachelocrinus-sp_sumrall_sprinkle_guensburg_1997:
   rank: species
   authority:
     source: 1997_sumrall_sprinkle_guensburg
+traskocrinus:
+  name: Traskocrinus
+  authority:
+    source: 1975_kolata
 treadwelli_sinclair_1945:
   name: treadwelli
   auth: [Sinclair]
@@ -5300,6 +5491,25 @@ ulrichocystis:
   name: Ulrichocystis
   auth: [bassler]
   year: 1950
+uractinina:
+  name: Uractinina
+  rank: Suborder
+  auth: [Spencer, wright.c.w]  # Need exception for much-posthumous Spencer pub
+  year: 1966
+urasterella:
+  name: Urasterella
+  auth: [mccoy]
+  year: 1851
+urasterella-sp_kolata_1975:
+  name: null
+  rank: species
+  authority:
+    source: 1975_kolata
+urasterellidae:
+  name: Urasterellidae
+  rank: Family
+  auth: [schuchert]
+  year: 1914
 utahensis_lefebvre_lerosey-aubril_2018:
   name: utahensis
   auth: [lefebvre, lerosey-aubril]
@@ -5313,6 +5523,11 @@ valcourensis_clark_1920:
   name: valcourensis
   auth: [Clark]
   year: 1920
+valvatida:
+  name: Valvatida
+  rank: Order
+  auth: [Perrier]
+  year: 1884
 velieuxicystis:
   name: Velieuxicystis
   auth: [ubaghs]
@@ -5414,6 +5629,10 @@ wilkinsi_gill_caster_1960:
   name: wilkinsi
   authority:
     source: 1960_gill_caster
+wilsoni_raymond_1912:
+  name: wilsoni
+  auth: [Raymond]
+  year: 1912
 withersi_gill_caster_1960:
   name: withersi
   authority:

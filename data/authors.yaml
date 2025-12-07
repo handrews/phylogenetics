@@ -592,7 +592,7 @@ worthen:
   death: 1888
 wright.c.w:
   family: Wright
-  given: Claud William
+  given: Claud William  # Yes, Claud with no "e"
   birth: 1917
   death: 2010
 wright.d.f:

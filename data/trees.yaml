@@ -3249,7 +3249,7 @@
                         - taxon: dendrocrinus
                     - taxon: molanderi_kolata_1975
                       new: true
-                    - taxon: plattvillensis_kolata_1975
+                    - taxon: plattevillensis_kolata_1975
                       new: true
         - taxon: camerata
           children:
@@ -3335,7 +3335,13 @@
                       parents:
                       - taxon: palasterina
                   - cfTaxon: rugosus_billings_1857
-                  # TODO: FINISH!!!!  Complex synonyms for cfTaxon, etc.
+                    synonyms:
+                    - taxon: rugosus_billings_1857
+                      parents:
+                      - taxon: palasterina
+                    - taxon: rugosus_billings_1857
+                      parents:
+                      - taxon: hudsonaster
 1980_bell.b.m:
   taxonomies:
   - taxon: edrioasteroidea
