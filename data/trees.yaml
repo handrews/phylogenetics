@@ -3342,6 +3342,71 @@
                     - taxon: rugosus_billings_1857
                       parents:
                       - taxon: hudsonaster
+        - taxon: forcipulatida
+          children:
+          - taxon: uractinina
+            children:
+            - taxon: urasterellidae
+              children:
+              - taxon: urasterella
+                children:
+                - taxon: ruthveni_mccoy_1851
+                  type: true
+                - openTaxon: urasterella-sp_kolata_1975
+                  provisional: true
+    - taxon: edrioasteroidea
+      children:
+      - taxon: edrioasteridae
+        children:
+        - taxon: edrioaster
+          children:
+          - taxon: bigsbyi_billings_1857
+            type: true
+          - cfTaxon: bigsbyi_billings_1857
+            synonyms:
+            - taxon: bigsbyi_billings_1857
+              parents:
+              - taxon: cyclaster
+            - taxon: bigsbyi_billings_1857
+    - taxon: cyclocystoidea
+      children:
+      - taxon: cyclocystoididae
+        children:
+        - taxon: cyclocystoides
+          children:
+          - taxon: halli_billings_1858
+            type: true
+          - affTaxon: halli_billings_1858
+            synonyms:
+            - taxon: halli_billings_1858
+            - taxon: halli_billings_1858
+              parents:
+              - taxon: narrawayella
+          - openTaxon: cyclocystoides-sp_kolata_1975
+    - taxon: echinoidea
+      children:
+      - taxon: perishoechinoidea
+        children:
+        - taxon: bothriocidaroida
+          children:
+          - taxon: bothriocidaridae
+            children:
+            - taxon: bothriocidaris
+              children:
+              - taxon: globulus_eichwald_1860
+                type: true
+              - taxon: solemni_kolata_1975
+                new: true
+            - taxon: neobothriocidaris
+              children:
+              - taxon: peculiaris_paul.c.r.c_1967
+                type: true
+              - taxon: templetoni_kolata_1975
+                new: true
+              - openTaxon: neobothriocidaris-sp_kolata_1975
+            - openTaxon: bothriocidaridae-unknown-genus_kolata_1975
+              children:
+              - openTaxon: bothriocidaridae-sp_kolata_1975
 1980_bell.b.m:
   taxonomies:
   - taxon: edrioasteroidea
