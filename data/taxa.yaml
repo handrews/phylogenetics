@@ -1420,8 +1420,8 @@ cyathocystina:
 cyathocystida:
   name: Cyathocystida
   rank: Order
-  auth: [Bockelie, paul.c.r.c]
-  year: 1983
+  authority:
+    source: 1975_bell.b.m
 cyathocystidae:
   name: Cyathocystidae
   rank: Family

@@ -4030,6 +4030,15 @@
           children:
           - taxon: timeischytes
           - taxon: hadrochthus
+  phylogenies:
+  - treeType: Ordinal diagram of Edrioasteroidea
+    tree:
+      taxon: stromatocystitida
+      children:
+      - taxon: cyathocystida
+      - taxon: edrioasterida
+        children:
+        - taxon: isorophida
 1983_jell:
   notes: Secondhand from 2013_nardin_bohatý
   taxonomies:
@@ -4204,10 +4213,13 @@
         - taxon: pyrgocystidae
         - taxon: lispidecodidae
         - taxon: rhenocystidae
-      - taxon: cyathocystida
-        notes: Bockelie and Paul, 1983, instead of Bell 1975
-        children:
-        - taxon: cyathocystidae
+    - taxon: cyathocystida
+      notes: |
+        Credits Bockelie and Paul (1983), but they credit Bell based on
+        establishment of suborder Cyathocystina, which they translated
+        to an order.
+      children:
+      - taxon: cyathocystidae
   - notes: Revised classification (A. B. Smith 1985)
     children:
     - taxon: stromatocystites
