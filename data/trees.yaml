@@ -4449,6 +4449,50 @@
           - taxon: ubaghsi_fatka_kordule_1990
             type: true
             new: true
+1990_smith.a.b_jell:
+  taxonomies:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: stromatocystites
+      children:
+      - taxon: pentangularis_pompeckj_1896
+        type: true
+      - taxon: walcotti_schuchert_1919
+      - taxon: reduncus_smith.a.b_jell_1990
+        new: true
+    - taxon: edriodiscus
+      children:
+      - taxon: primotica_henderson_shergold_1971
+        type: true
+    - taxon: isorophida
+      children:
+      - taxon: hadrodiscus
+        new: true
+        children:
+        - taxon: parma_smith.a.b_jell_1990
+          type: true
+          new: true
+      - taxon: chatsworthia
+        new: true
+        children:
+        - taxon: spinosa_smith.a.b_jell_1990
+          type: true
+          new: true
+    - taxon: edrioblastoida
+      children:
+      - taxon: astrocystitidae
+        children:
+        - taxon: astrocystites
+          children:
+          - taxon: ottawaensis_whiteaves_1897
+            type: true
+          - taxon: distans_webby_1968
+        - taxon: cambroblastus
+          new: true
+          children:
+          - taxon: enubilatus_smith.a.b_jell_1990
+            type: true
+            new: true
 1990_ubaghs_vizcaïno:
   taxonomies:
   - taxon: eocrinoidea

@@ -2099,6 +2099,10 @@ enterozoa-branch:
   auth: [lankester]
   year: 1877
   notes: Subkingdom? "emend. Beklemishev 1944" on Wikipedia
+enubilatus_smith.a.b_jell_1990:
+  name: enubilatus
+  authority:
+    source: 1990_smith.a.b_jell
 eocrinida:
   name: Eocrinida
   rank: Order
@@ -5000,6 +5004,10 @@ sphaeronitinae:
   rank: Subfamily
   authority:
     source: 1997_paul.c.r.c
+spinosa_smith.a.b_jell_1990:
+  name: spinosa
+  authority:
+    source: 1990_smith.a.b_jell
 spinosa_wang.d.z_nohejlová_sun.z.x_zeng.h_lefebvre_yang.x.l_zhao.f.c_2024:
   name: spinosa
   authority:
