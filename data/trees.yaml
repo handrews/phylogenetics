@@ -4188,7 +4188,9 @@
     taxon: edrioasteroidea
     children:
     - taxon: stromatocystitida
-      notes: Termier and Termier 1969 instead of Bell 1980
+      notes: |
+        Termier and Termier 1969 instead of Bell 1980, but AFAICT without
+        seeing the full paper, it did not erect the formal latin taxon.
       children:
       - taxon: stromatocystitidae
       - taxon: cambrasteridae
@@ -4245,6 +4247,67 @@
         children:
         - taxon: pyrgocystidae
         - taxon: cyathocystidae
+  - notes: Systematic paleontology, no higher taxa given.
+    children:
+    - taxon: stromatocystites
+      children:
+      - taxon: pentangularis_pompeckj_1896
+        type: true
+      - taxon: walcotti_schuchert_1919
+      - taxon: balticus_jaekel_1899
+        notes: Recommend treating as nomen dubium due to lost specimens.
+    - taxon: walcottidiscus
+      children:
+      - taxon: typicalis_bassler_1935
+        type: true
+        synonyms:
+        - taxon: magister_bassler_1936
+    - taxon: totiglobus
+      children:
+      - taxon: nimius_bell.b.m_sprinkle_1978
+        type: true
+    - taxon: cambraster
+      children:
+      - taxon: cannati_miquel_1894
+        type: true
+      - taxon: tastudorum_jell_burrett_banks_1985
+    - taxon: edriodiscus
+      children:
+      - taxon: primotica_henderson_shergold_1971
+        type: true
+  phylogenies:
+  - treeType: cladogram
+    tree:
+      children:
+      - taxon: stromatocystites
+      - bracket: edrioasteroidea
+        children:
+        - bracket: edrioasaterida
+          children:
+          - bracket: edrioasteridae
+            children:
+            - children:
+              - taxon: edriophus
+              - taxon: edrioaster
+            - taxon: walcottidiscus
+          - taxon: totiglobus
+        - bracket: cyathocystida
+          children:
+          - taxon: cyathocystidae
+          - taxon: pyrgocystidae
+        - bracket: isorophida
+          children:
+          - taxon: cambraster
+          - children:
+            - taxon: edriodiscus
+              children:
+              - taxon: cyclocystoididae
+                children:
+                - bracket: agelacrinitidae
+                  taxon: savagella
+                  children:
+                  - taxon: isorophinae
+                  - taxon: lebetodiscinae
 1985_sprinkle:
   taxonomies:
   - taxon: echinozoa
