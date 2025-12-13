@@ -4493,6 +4493,122 @@
           - taxon: enubilatus_smith.a.b_jell_1990
             type: true
             new: true
+  phylogenies:
+  - treeType: cladogram
+    tree:
+      children:
+      - taxon: camptostroma
+        outgroup: true
+      - children:
+        - children:
+          - taxon: reduncus_smith.a.b_jell_1990
+            parents:
+            - taxon: stromatocystites
+          - taxon: pentangularis_pompeckj_1892
+            parents:
+            - taxon: stromatocystites
+          - children:
+            - taxon: cambraster
+            - children:
+              - taxon: walcotti_schuchert_1919
+                parents:
+                - taxon: stromatocystites
+              - children:
+                - taxon: edriodiscus
+                - taxon: archegonaster
+        - children:
+          - children:
+            - taxon: totiglobus
+            - children:
+              - taxon: lloydi_sprinkle_1985
+                provisional: true
+                parents:
+                - taxon: totiglobus
+              - taxon: rhenopyrgus
+              - taxon: cambroblastus
+          - children:
+            - children:
+              - taxon: walcottidiscus
+              - taxon: edriophus
+            - children:
+              - taxon: hadrodiscus
+              - children:
+                - taxon: chatsworthia
+                - taxon: foerstediscus
+  - treeType: evolutionary timeline
+    tree:
+      children:
+      - taxon: camptostroma
+      - children:
+        - taxon: walcotti_schuchert_1919
+          parents:
+          - taxon: stromatocystites
+          children:
+          - taxon: cambraster
+          - taxon: edriodiscus
+            children:
+            - taxon: ophiuroids
+            - taxon: archegonaster
+            - taxon: asteroids
+        - taxon: pentangularis_pompeckj_1892
+          parents:
+          - taxon: stromatocystites
+          children:
+          - taxon: reduncus_smith.a.b_jell_1990
+            parents:
+            - taxon: stromatocystites
+          - children:
+            - taxon: nimius_bell.b.m_sprinle_1978
+              parents:
+              - taxon: totiglobus
+            - children:
+              - taxon: walcottidiscus
+                children:
+                - children:
+                  - taxon: chatsworthia
+                    children:
+                    - taxon: foerstidiscus
+                  - taxon: hadrodiscus
+                - taxon: edriophus
+              - taxon: lloydi_sprinkle_1985
+                provisional: true
+                parents:
+                - taxon: totiglobus
+                children:
+                - taxon: rhenopyrgus
+                  children:
+                  - taxon: cyathocystis
+                    provisional: true
+                    altPlacements:
+                    - taxon: astrocystites
+                - taxon: astrocystites
+                  children:
+                  - taxon: cyathocystis
+                    provisional: true
+                    altPlacements:
+                    - taxon: rhenopyrgus
+  - treeType: evolutionary diagram
+    tree:
+      taxon: arkarua
+      children:
+      - taxon: camptostroma
+        children:
+        - taxon: pelmatozoans
+      - taxon: stromatocystites
+        children:
+        - children:
+          - children:
+            - taxon: rhenopyrgids
+            - taxon: cyathocystids
+            - taxon: edrioblastoids
+          - taxon: totiglobus
+            children:
+            - taxon: edrioasterids
+        - children:
+          - taxon: isorophids
+          - taxon: edriodiscus
+            children:
+            - taxon: archegonaster
 1990_ubaghs_vizcaïno:
   taxonomies:
   - taxon: eocrinoidea

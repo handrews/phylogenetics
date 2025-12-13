@@ -393,6 +393,11 @@ asteroidea:
 asteroidea-subclass:
   rank: Subclass
   altRankOf: asteroidea
+asteroids:
+  name: Asteroids
+  rank: Group
+  auth: [de Blainville]
+  year: 1830
 asterozoa:
   name: Asterozoa
   rank: Subphylum
@@ -1423,8 +1428,8 @@ cyathocrinina:
 cyathocystina:
   name: Cyathocystina
   rank: Suborder
-  auth: [bell.b.m]
-  year: 1975
+  authority:
+    source: 1975_bell.b.m
 cyathocystida:
   name: Cyathocystida
   rank: Order
@@ -1436,6 +1441,11 @@ cyathocystidae:
   auth: [bather]
   year: 1899
   notes: In Bassler (1936), Bassler gives himself as authority, with no year.
+cyathocystids:
+  name: Cyathocystids
+  rank: Group
+  authority:
+    source: 1975_bell.b.m
 cyathothecidae:
   name: Cyathothecidae
   altSpellingOf: cyathocystidae
@@ -2000,6 +2010,11 @@ edrioasteridae:
   rank: Family
   auth: [bather]
   year: 1898
+edrioasterids:
+  name: Edrioasterids
+  rank: Group
+  auth: [bather]
+  year: 1898
 edrioasteroidea:
   name: Edrioasteroidea
   rank: Class
@@ -2044,6 +2059,11 @@ edrioblastoidea:
 edrioblastoidina:
   name: Edrioblastoidina
   rank: Suborder
+  auth: [fay]
+  year: 1962
+edrioblastoids:
+  name: Edrioblastoids
+  rank: Group
   auth: [fay]
   year: 1962
 edriocystis:
@@ -3191,6 +3211,11 @@ isorophidae:
   rank: Family
   authority:
     source: 1974_bell.b.m
+isorophids:
+  name: Isorophids
+  rank: Group
+  authority:
+    source: 1974_bell.b.m
 isorophina:
   name: Isorophina
   rank: Suborder
@@ -3942,6 +3967,11 @@ ophiuroidea:
 ophiuroidea-subclass:
   rank: Subclass
   altRankOf: ophiuroidea
+ophiuroids:
+  name: Ophiuroids
+  rank: Group
+  auth: [Gray]
+  year: 1840
 optatus_worthen_miller_1883:
   name: optatus
   auth: [Worthen, Miller]
@@ -4128,6 +4158,11 @@ pelmatozoa-incertae-sedis:
   rank: Order
   auth: [linnaeus]
   year: 1758
+pelmatozoans:
+  name: Pelmatozoans
+  rank: Group
+  auth: [Leuckart]
+  year: 1848
 pembrocystidae:
   name: Pembrocystidae
   rank: Family
@@ -4711,6 +4746,11 @@ rhenocystis:
 rhenopyrgidae:
   name: Rhenopyrgidae
   rank: Family
+  auth: [Holloway, Jell]
+  year: 1983
+rhenopyrgids:
+  name: Rhenopyrgids
+  rank: Group
   auth: [Holloway, Jell]
   year: 1983
 rhenopyrgus:
