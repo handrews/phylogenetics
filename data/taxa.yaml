@@ -818,6 +818,10 @@ cambriensis_ubaghs_1999:
   name: cambriensis
   authority:
     source: 1999_ubaghs
+cambroblastus:
+  name: Cambroblastus
+  authority:
+    source: 1990_smith.a.b_jell
 cambrocrinus:
   name: Cambrocrinus
   auth: [orłowski]
@@ -972,6 +976,10 @@ charltoni_kolata_1975:
   name: charltoni
   authority:
     source: 1975_kolata
+chatsworthia:
+  name: Chatsworthia
+  authority:
+    source: 1990_smith.a.b_jell
 cheirocrinidae:
   name: Cheirocrinidae
   rank: Family
@@ -2718,6 +2726,10 @@ hadrocystis:
   name: Hadrocystis
   auth: [sprinkle]
   year: 1974
+hadrodiscus:
+  name: Hadrodiscus
+  authority:
+    source: 1990_smith.a.b_jell
 haefneri_zamora_rahman_sumrall_gibson_thompson_2022:
   name: haefneri
   auth: [zamora, rahman, sumrall, gibson, thompson]
@@ -4074,6 +4086,10 @@ pariocrinus:
   name: Pariocrinus
   auth: [Eckert]
   year: 1984
+parma_smith.a.b_jell_1990:
+  name: parma
+  authority:
+    source: 1990_smith.a.b_jell
 parsleya_deshmukh_2022:
   name: parsleya
   auth: [Deshmukh]
@@ -4626,6 +4642,10 @@ redlichiidae:
   rank: Family
   auth: [Poulson]
   year: 1927
+reduncus_smith.a.b_jell_1990:
+  name: reduncus
+  authority:
+    source: 1990_smith.a.b_jell
 reesei_sprinkle_collins.d_2006:
   name: reesei
   authority:
