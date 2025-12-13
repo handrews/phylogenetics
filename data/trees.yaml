@@ -4347,6 +4347,81 @@
               - taxon: dockeryi_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley_1987
                 type: true
                 new: true
+1987_smith.a.b_arbizu:
+  taxonomies:
+  - taxon: isorophida
+    children:
+    - taxon: agelacrinitidae
+      children:
+      - taxon: agelacrinitinae
+        synonyms:
+        - taxon: isorophinae
+          notes: |
+            Smith in this paper notes that his previous use
+            of Isorophinae disregarded the naming rules based on the
+            inclusion of Agelacrinites, the type genus of the parent
+            family Agelacrinitidae.
+        children:
+        - taxon: krama
+          children:
+          - taxon: devonica_bassler_1936
+  phylogenies:
+  - treeType: cladogram
+    tree:
+      taxon: agelacrinitinae
+      children:
+      - taxon: isorophusella
+      - children:
+        - children:
+          - taxon: isorophus
+          - taxon: hemicystis
+          - children:
+            - taxon: curvitriordo
+            - taxon: rectitriordo
+        - children:
+          - taxon: agelacrinites
+          - children:
+            - taxon: krama
+            - children:
+              - taxon: postibulla
+              - children:
+                - children:
+                  - taxon: discocystis
+                  - taxon: lispidecodus
+                - children:
+                  - taxon: stalticodiscus
+                  - children:
+                    - taxon: lepidodiscus
+                    - taxon: ulrichodiscus
+  - treeType: evolutionary timeline
+    tree:
+      taxon: isorophusella
+      children:
+      - children:
+        - taxon: rectitriordo
+        - taxon: curvitriordo
+      - taxon: isorophus
+        children:
+        - taxon: hemicystites
+          children:
+          - taxon: agelacrinites
+            children:
+            - taxon: krama
+              children:
+              - taxon: postibulla
+              - notes: |
+                  The genus 'Lepidodiscus' ephraemovianus (Bogolubov) is too
+                  poorly known to definitively assign to either Lepidodiscus
+                  (sensu stricto) or Stalticodiscus.
+                children:
+                - children:
+                  - taxon: discocystis
+                  - taxon: lispidecodus
+                - taxon: stalticodiscus
+                - children:
+                  - taxon: lepidodiscus
+                    children:
+                    - taxon: ulrichodiscus
 1987_ubaghs:
   notes: |
     Only summary publicly available, and details are only in French

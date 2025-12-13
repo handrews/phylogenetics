@@ -1746,6 +1746,19 @@ articles:
     - parsley
     identifiers:
       jstor: 1395209
+  1987_smith.a.b_arbizu:
+    title: Inverse larval development in a Devonian edrioasteroid from Spain and the phylogeny of Agelacrinitinae
+    journal: lethaia
+    volume: 20
+    number: 1
+    pubDate:
+      year: 1987
+    pages:
+    - 49
+    - 62
+    authors:
+    - smith.a.b
+    - arbizu
   1987_ubaghs:
     title: Echinodermes nouveaux du Cambrien moyen de la Montagne Noire (France)
     journal: annals
