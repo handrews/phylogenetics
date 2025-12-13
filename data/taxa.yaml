@@ -1719,6 +1719,10 @@ digitata:
   rank: Order
   auth: [Hecker]
   year: 1940
+diktyotos_guensburg_1988:
+  name: diktyotos
+  authority:
+    source: 1988_guensburg
 dinocystis:
   name: Dinocystis
   auth: [bather]
@@ -2026,6 +2030,11 @@ edrioasteroidea-order-uncertain_bassler_1935:
   rank: Order
   authority:
     source: 1935_bassler
+edrioasteroidea-order-uncertain_guensburg_1988:
+  name: null
+  rank: Order
+  authority:
+    source: 1988_guensburg
 edrioasteroidea-order-uncertain_zhao.y.l_sumrall_parsley_peng.j_2010:
   name: null
   rank: Order
@@ -2297,6 +2306,10 @@ eucystis:
   name: Eucystis
   auth: [Angelin]
   year: 1878
+euhydrodiskos:
+  name: Euhydrodiskos
+  authority:
+    source: 1988_guensburg
 eumorphocystis:
   name: Eumorphocystis
   auth: [Branson, Peck]
@@ -3110,6 +3123,10 @@ hybolopus_fraunfelder_utgaard_1970:
   name: hybolopus
   auth: [Fraunfelder, Utgaard]
   year: 1970
+hystrichopsydrax:
+  name: Hystrichopsydrax
+  authority:
+    source: 1988_guensburg
 ###################### I
 ibexensis_guensburg_sprinkle_2003:
   name: ibexensis
@@ -3235,6 +3252,11 @@ isorophus:
   name: Isorophus
   auth: [foerste]
   year: 1916
+isorophus-sp_guensburg_1988:
+  name: null
+  rank: species
+  authority:
+    source: 1988_guensburg
 isorophusella:
   name: Isorophusella
   authority:
@@ -4585,6 +4607,11 @@ pyrgocystis-sp-b_bell.b.m_1982:
   rank: species
   authority:
     source: 1982_bell.b.m
+pyrgocystis-sp_guensburg_1988:
+  name: null
+  rank: species
+  authority:
+    source: 1988_guensburg
 pyrgopostibulla:
   name: Pyrgopostibulla
   auth: [sumrall, Brett, Cornell]
@@ -4885,6 +4912,10 @@ sampsoni_miller.s.a_1891:
   name: sampsoni
   auth: [miller.s.a]
   year: 1891
+sandersi_guensburg_1988:
+  name: sandersi
+  authority:
+    source: 1988_guensburg
 sanducystis:
   name: Sanducystis
   auth: [zamora, sumrall, zhu.x.j, lefebvre]

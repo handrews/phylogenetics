@@ -4465,6 +4465,52 @@
       - taxon: languedocianus_ubaghs_1987
         provisional: true
         new: true
+1988_guensburg:
+  taxonomies:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: isorophida
+      children:
+      - taxon: agelacrinitidae
+        children:
+        - taxon: savagella
+          children:
+          - taxon: illinoisensis_miller.s.a_gurley_1895
+            synonyms:
+            - taxon: illinoisensis_miller.s.a_gurley_1895
+              parents:
+              - taxon: cyclocystoides
+            - taxon: ornatus_savage_1917
+              notes: Savagella ornatus
+            - taxon: ornatus_savage_1917
+              parents:
+              - taxon: cyclocystoides
+        - taxon: isorophus
+          children:
+          - openTaxon: isorophus-sp_guensburg_1988
+            provisional: true
+        - taxon: hystrichopsydrax
+          new: true
+          children:
+          - taxon: sandersi_guensburg_1988
+            type: true
+            new: true
+      - taxon: lebetodiscidae
+        children:
+        - taxon: euhydrodiskos
+          new: true
+          children:
+          - taxon: diktyotos_guensburg_1988
+            type: true
+            new: true
+    - openTaxon: edrioasteroidea-order-uncertain_guensburg_1988
+      children:
+      - taxon: pyrgocystidae
+        children:
+        - taxon: pyrgocystis
+          children:
+          - openTaxon: pyrgocystis-sp_guensburg_1988
+            provisional: true
 1988_ubaghs_robison:
   taxonomies:
   - taxon: homalozoa

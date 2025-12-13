@@ -1773,6 +1773,21 @@ articles:
     - ubaghs
     identifiers:
       url: "https://eurekamag.com/research/020/905/020905946.php?srsltid=AfmBOopSCziNxG2P7g_GYIehW28l_W04c4LXptNYESzBhP6ZiraKuipf"
+  1988_guensburg:
+    title: Systematics, Functional Morphology, and Life Modes of Late Ordovician Edrioasteroids, Orchard Creek Shale, Southern Illinois
+    journal: jofpaleo
+    volume: 62
+    number: 1
+    pubDate:
+      year: 1988
+      month: 1
+    pages:
+    - 110
+    - 126
+    authors:
+    - guensburg
+    identifiers:
+      jstor: 1305262
   1988_ubaghs_robison:
     title: Homalozoan echinoderms of the Wheeler Formation (Middle Cambrian) of Western Utah
     complete:
