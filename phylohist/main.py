@@ -27,6 +27,8 @@ def main():
   parser.add_argument('-b', '--branch', nargs='+', action='extend', default=[])
   parser.add_argument('-f', '--find', nargs='+', action='extend', default=[])
   parser.add_argument('-m', '--match', default=False, action='store_true')
+  parser.add_argument('-i', '--highest')
+  parser.add_argument('-w', '--lowest')
   args = parser.parse_args()
 
   taxa = frozenset(
