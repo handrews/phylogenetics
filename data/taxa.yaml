@@ -857,6 +857,11 @@ camptostromatidae:
   rank: Family
   auth: [durham]
   year: 1967
+camptostromatoida:
+  name: Camptostromatoida
+  rank: Order
+  auth: [durham]
+  year: 1966
 camptostromatoidea:
   name: Camptostromatoidea
   rank: Class
@@ -913,6 +918,11 @@ carneyella:
 carneyellidae:
   name: Carneyellidae
   rank: Family
+  authority:
+    source: 1974_bell.b.m
+carneyellinae:
+  name: Carneyellinae
+  rank: Subfamily
   authority:
     source: 1974_bell.b.m
 carpoidea:
@@ -1446,6 +1456,11 @@ cyathocystids:
   rank: Group
   authority:
     source: 1975_bell.b.m
+cyathocystinae:
+  name: Cyathocystinae
+  rank: Subfamily
+  auth: [bather]
+  year: 1899
 cyathothecidae:
   name: Cyathothecidae
   altSpellingOf: cyathocystidae
@@ -2017,6 +2032,11 @@ edrioasteridae:
 edrioasterids:
   name: Edrioasterids
   rank: Group
+  auth: [bather]
+  year: 1898
+edrioasterina:
+  name: Edrioasterina
+  rank: Subfamily
   auth: [bather]
   year: 1898
 edrioasteroidea:
@@ -4588,6 +4608,11 @@ pyrgocystidae:
   rank: Family
   auth: [kesling]
   year: 1967
+pyrgocystinae:
+  name: Pyrgocystinae
+  rank: Subfamily
+  auth: [kesling]
+  year: 1967
 pyrgocystis:
   name: Pyrgocystis
   auth: [bather]
@@ -4778,6 +4803,11 @@ rhenopyrgidae:
 rhenopyrgids:
   name: Rhenopyrgids
   rank: Group
+  auth: [Holloway, Jell]
+  year: 1983
+rhenopyrginae:
+  name: Rhenopyrginae
+  rank: Subfamily
   auth: [Holloway, Jell]
   year: 1983
 rhenopyrgus:
