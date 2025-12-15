@@ -5123,6 +5123,68 @@
         - taxon: archaeocyathoides_dzik_orłowski_1995
           type: true
           new: true
+1996_sumrall:
+  taxonomies:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: isorophida
+      children:
+      - taxon: isorophina
+        children:
+        - taxon: agelacrinitidae
+          children:
+          - taxon: lepidodiscus
+            children:
+            - taxon: squamosus_meek_worthen_1868
+              type: true
+            - openTaxon: lepidodiscus-sp-1_sumrall_1996
+              provisional: true
+            - openTaxon: lepidodiscus-sp-2_sumrall_1996
+              provisional: true
+          - taxon: discocystinae
+            new: true
+            children:
+            - taxon: discocystis
+              children:
+              - taxon: kaskaskiensis_hall_1858
+                type: true
+            - taxon: clavidiscus
+              new: true
+              children:
+              - taxon: laudoni_bassler_1936
+                type: true
+                synonyms:
+                - taxon: laudoni_bassler_1936
+                  parents:
+                  - taxon: discocystis
+            - taxon: hypsiclavus
+              new: true
+              children:
+              - taxon: huntsvillensis_sumrall_1996
+                type: true
+                new: true
+              - taxon: priesti_strimple_1968
+              - taxon: kinsleyi_sumrall_1996
+                new: true
+              - taxon: guensburgi_sumrall_1996
+                new: true
+            - taxon: bostryclavus
+              new: true
+              children:
+              - taxon: sampsoni_miller.s.a_1891
+                synonyms:
+                - taxon: sampsoni_miller.s.a_1891
+                  parents:
+                  - taxon: echinodiscus
+                - taxon: sampsoni_miller.s.a_1891
+                  parents:
+                  - taxon: lepidodiscus
+            - taxon: spiraclavus
+              children:
+              - taxon: nacoensis_sumrall_1992
+                type: true
+            - taxon: dinocystis
+            - taxon: lispidecodus
 1997_paul.c.r.c:
   taxonomies:
   - taxon: diploporita-class

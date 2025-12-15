@@ -1932,6 +1932,22 @@ articles:
     authors:
     - dzik
     - orłowski
+  1996_sumrall:
+    title: Late Paleozoic Edrioasteroids (Echinodermata) From The North American Midcontinent
+    journal: jofpaleo
+    volume: 70
+    number: 6
+    pubDate:
+      year: 1996
+    processDates:
+      accepted: 1996-01-24
+    pages:
+    - 969
+    - 985
+    authors:
+    - sumrall
+    identifiers:
+      doi: 10.1017/S0022336000038671
   1997_paul.c.r.c:
     title: British Ordovician Cystoids, Part 3
     journal: monograph-palaeo
