@@ -4962,6 +4962,151 @@
               emended: true
               children:
               - taxon: rhenopyrgus
+  phylogenies:
+  - treeType: cladogram, preferred parsimony A
+    tree:
+      taxon: edrioasteroidea
+      children:
+      - children:
+        - taxon: stromatocystites
+        - children:
+          - children:
+            - children:
+              - taxon: cambraster
+              - children:
+                - taxon: edriodiscus
+                - children:
+                  - children:
+                    - children:
+                      - taxon: pyrgocystinae
+                      - taxon: lebetodiscinae
+                    - taxon: chatsworthia
+                  - taxon: agelacrinitidae
+            - taxon: walcotti_schuchert_1919
+              provisional: true
+              parents:
+              - taxon: stromatocystites
+          - children:
+            - children:
+              - taxon: totiglobus
+              - children:
+                - taxon: edrioasteridae
+                - children:
+                  - taxon: astrocystitidae
+                  - children:
+                    - taxon: rhenopyrgus
+                    - taxon: cyathocystis
+            - taxon: lloydi_sprinkle_1985
+              provisional: true
+              parents:
+              - taxon: totiglobus
+      - taxon: camptostroma
+  - treeType: cladogram, preferred parsimony B
+    tree:
+      taxon: edrioasteroidea
+      children:
+      - children:
+        - children:
+          - taxon: stromatocystites
+          - children:
+            - children:
+              - taxon: cambraster
+              - children:
+                - taxon: edriodiscus
+                - children:
+                  - children:
+                    - children:
+                      - taxon: pyrgocystinae
+                      - taxon: lebetodiscinae
+                    - taxon: chatsworthia
+                  - taxon: agelacrinitidae
+            - taxon: walcotti_schuchert_1919
+              provisional: true
+              parents:
+              - taxon: stromatocystites
+        - children:
+          - children:
+            - taxon: totiglobus
+            - children:
+              - taxon: edrioasteridae
+              - children:
+                - taxon: astrocystitidae
+                - children:
+                  - taxon: rhenopyrgus
+                  - taxon: cyathocystis
+          - taxon: lloydi_sprinkle_1985
+            provisional: true
+            parents:
+            - taxon: totiglobus
+      - taxon: camptostroma
+  - treeType: cladogram, Adams
+    tree:
+      taxon: edrioasteroidea
+      children:
+      - children:
+        - taxon: stromatocystites
+        - children:
+          - taxon: cambraster
+          - children:
+            - taxon: edriodiscus
+            - children:
+              - children:
+                - taxon: pyrgocystinae
+                - taxon: lebetodiscinae
+              - taxon: chatsworthia
+              - taxon: agelacrinitidae
+        - children:
+          - children:
+            - taxon: totiglobus
+            - children:
+              - taxon: edrioasteridae
+              - children:
+                - taxon: astrocystitidae
+                - taxon: rhenopyrgus
+                - taxon: cyathocystis
+          - taxon: lloydi_sprinkle_1985
+            provisional: true
+            parents:
+            - taxon: totiglobus
+        - taxon: walcotti_schuchert_1919
+          provisional: true
+          parents:
+          - taxon: stromatocystites
+      - taxon: camptostroma
+  - treeType: cladogram, strict consensus
+    tree:
+      taxon: edrioasteroidea
+      children:
+      - children:
+        - taxon: stromatocystites
+        - children:
+          - children:
+            - taxon: cambraster
+            - children:
+              - taxon: edriodiscus
+              - children:
+                - children:
+                  - taxon: pyrgocystinae
+                  - taxon: lebetodiscinae
+                - taxon: chatsworthia
+                - taxon: agelacrinitidae
+          - taxon: walcotti_schuchert_1919
+            provisional: true
+            parents:
+            - taxon: stromatocystites
+        - children:
+          - children:
+            - taxon: totiglobus
+            - children:
+              - taxon: edrioasteridae
+              - children:
+                - taxon: astrocystitidae
+                - taxon: rhenopyrgus
+                - taxon: cyathocystis
+          - taxon: lloydi_sprinkle_1985
+            provisional: true
+            parents:
+            - taxon: stromatocystites
 1995_dzik_orłowski:
   taxonomies:
   - taxon: ctenocystoidea
