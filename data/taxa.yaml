@@ -228,6 +228,10 @@ angulosus_buch_1844:
   name: angulosus
   authority:
     source: 1844_buch
+anitae_guensburg_sprinkle_1994:
+  name: anitae
+  authority:
+    source: 1994_guensburg_sprinkle
 animalia:
   name: Animalia
   rank: Kingdom
@@ -310,6 +314,10 @@ archegocystis:
   name: Archegocystis
   auth: [jaekel]
   year: 1899
+archaepyrgus:
+  name: Archaepyrgus
+  authority:
+    source: 1994_guensburg_sprinkle
 arctus_sardeson_1928:
   name: arctus
   auth: [Sardeson]
@@ -577,6 +585,9 @@ belochthus:
   name: Belochthus
   authority:
     source: 1974_bell.b.m
+belochthos:
+  name: Belochthos
+  altSpellingOf: belochthus
 bibrachiatus_parsley_1982:
   name: bibrachiatus
   authority:
@@ -1361,6 +1372,10 @@ cryptogoleus:
   name: Cryptogoleus
   authority:
     source: 1974_bell.b.m
+crystalensis_guensburg_sprinkle_1994:
+  name: crystalensis
+  authority:
+    source: 1994_guensburg_sprinkle
 ctenocystida:
   name: Ctenocystida
   rank: Order
@@ -1640,6 +1655,10 @@ deltacystis:
   name: Deltacystis
   auth: [sprinkle]
   year: 1974
+deltadiscus:
+  name: Deltadiscus
+  authority:
+    source: 1994_guensburg_sprinkle
 delticus_sumrall_sprinkle_guensburg_1997:
   name: delticus
   authority:
@@ -2036,7 +2055,7 @@ edrioasterids:
   year: 1898
 edrioasterina:
   name: Edrioasterina
-  rank: Subfamily
+  rank: Suborder
   auth: [bather]
   year: 1898
 edrioasteroidea:
@@ -2055,11 +2074,21 @@ edrioasteroidea-order-uncertain_guensburg_1988:
   rank: Order
   authority:
     source: 1988_guensburg
+edrioasteroidea-order-uncertain_guensburg_sprinkle_1994:
+  name: null
+  rank: Order
+  authority:
+    source: 1994_guensburg_sprinkle
 edrioasteroidea-order-uncertain_zhao.y.l_sumrall_parsley_peng.j_2010:
   name: null
   rank: Order
   authority:
     source: 2010_zhao.y.l_sumrall_parsley_peng.j
+edrioasteroidea-family-uncertain_guensburg_sprinkle_1994:
+  name: null
+  rank: Family
+  authority:
+    source: 1994_guensburg_sprinkle
 edrioasteroidea-family-uncertain_zhao.y.l_sumrall_parsley_peng.j_2010:
   name: null
   rank: Family
@@ -2138,6 +2167,10 @@ elongata_thoral_1935:
   name: elongata
   auth: [Thoral]
   year: 1935
+elongatus_guensburg_sprinkle_1994:
+  name: elongatus
+  authority:
+    source: 1994_guensburg_sprinkle
 elongatus_sprinkle_1973:
   name: elongatus
   authority:
@@ -2305,6 +2338,10 @@ ephraemovianus_bogolubov_1926:
   name: ephraemovianus
   auth: [Bogolubov]
   year: 1926
+epipaston:
+  name: Epipaston
+  auth: [Holloway, jell]
+  year: 1983
 erinocystis:
   name: Erinocystis
   auth: [jaekel]
@@ -2367,6 +2404,10 @@ faberi_miller.s.a_1899:
   name: faberi
   auth: [miller.s.a]
   year: 1899
+fanulodiscus:
+  name: Fanulodiscus
+  authority:
+    source: 1994_guensburg_sprinkle
 fayi_sprinkle_1973:
   name: fayi
   authority:
@@ -2409,6 +2450,10 @@ flexibilia:
   rank: Subclass
   auth: [zittel]
   year: 1895
+floridiscus:
+  name: Floridiscus
+  auth: [Smith]
+  year: 1980
 foerstecystis:
   name: Foerstecystis
   auth: [bassler]
@@ -3029,6 +3074,10 @@ hillocystis:
   name: Hillocystis
   authority:
     source: 1983_jell
+hintzei_guensburg_sprinkle_1994:
+  name: hintzei
+  authority:
+    source: 1994_guensburg_sprinkle
 hispanica_müller.p_hahn_2010:
   name: hispanica
   authority:
@@ -3233,6 +3282,11 @@ isorophida-uncertain-family_bell.b.m_1974:
   rank: Family
   authority:
     source: 1974_bell.b.m
+isorophida-family-uncertain_guensburg_sprinkle_1994:
+  name: null
+  rank: Family
+  authority:
+    source: 1994_guensburg_sprinkle
 isorophida-indeterminate-suborder_bockelie_paul.c.r.c_1983:
   name: null
   rank: Suborder
@@ -3415,6 +3469,10 @@ lagenallis_regnéll_1945:
   name: lagenallis
   auth: [regnéll]
   year: 1945
+lampteroblastus:
+  name: Lampteroblastus
+  authority:
+    source: 1994_guensburg_sprinkle
 languedocianus_ubaghs_1987:
   name: languedocianus
   auth: [ubaghs]
@@ -3919,6 +3977,10 @@ neobothriocidaris-sp_kolata_1975:
   name: null
   authority:
     source: 1975_kolata
+neoisorophusella:
+  name: Neoisorophusella
+  auth: [Kammer, Tissue, Wilson]
+  year: 1987
 neorhipidocystis:
   name: Neorhipidocystis
   auth: [Rozhnov]
@@ -4150,6 +4212,10 @@ parazoa-subkingdom:
   rank: Subkingdom
   auth: [Grant, Todd]
   year: 1883
+paredriophus:
+  name: Paredriophus
+  authority:
+    source: 1994_guensburg_sprinkle
 pareocrinus:
   name: Pareocrinus
   auth: [Yakovlev]
@@ -5141,6 +5207,10 @@ spinosus_kolata_1975:
   name: spinosus
   authority:
     source: 1975_kolata
+spiraclavus:
+  name: Spiraclavus
+  auth: [sumrall]
+  year: 1992
 spiralis_robison_1965:
   name: spiralis
   auth: [robison]
@@ -5190,6 +5260,10 @@ squamosus_meek_worthen_1868:
   name: squamosus
   auth: [Meek, Worthen]
   year: 1868
+stalticodiscus:
+  name: Stalticodiscus
+  auth: [Smith]
+  year: 1983
 steganoblastus:
   name: Steganoblastus
   auth: [Whiteaves]
@@ -5347,6 +5421,10 @@ sumralli_guensburg_sprinkle_2003:
   name: sumralli
   authority:
     source: 2003_guensburg_sprinkle
+superbus_guensburg_sprinkle_1994:
+  name: superbus
+  authority:
+    source: 1994_guensburg_sprinkle
 sycocrinites:
   name: Sycocrinites
   auth: [Austen]
@@ -5512,6 +5590,7 @@ tormoblastus:
   year: 1927
 totiglobidae:
   name: Totiglobidae
+  rank: Family
   auth: [Bell, sprinkle]
   year: 1978
 totiglobus:
