@@ -5809,6 +5809,41 @@
     children:
     - taxon: taijiangensis_zhao.y.l_zhu.m.y_1994
       notes: Possibly a nomen nudum renamed Rotadiscus guizhouensis?
+2000_sumrall_garbisch_pope:
+  taxonomies:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: isorophida
+      children:
+      - taxon: isorophina
+        children:
+        - taxon: agelacrinitidae
+          children:
+          - taxon: postibullinae
+            new: true
+            children:
+            - taxon: postibulla
+              notes: |
+                The species P.? jasperensis and P. alpenensis are
+                left unassigned
+              children:
+              - taxon: keslingi_bell.b.m_1974
+              - taxon: legrandensis_miller.s.a_gurley_1894
+              - taxon: lukei_bell.b.m_petersen.m.s_1976
+              - taxon: neglecta_smith.a.b_1983
+              - taxon: alabamensis_sumrall_garbisch_pope_2000
+                new: true
+            - taxon: parapostibulla
+              new: true
+              children:
+              - taxon: murphyi_sumrall_garbisch_pope_2000
+                new: true
+              - taxon: hybolopus_fraunfelter_utgaard_1970
+              - cfTaxon: hybolopus_fraunfelter_utgaard_1970
+              - openTaxon: parapostibulla-sp-a_sumrall_garbisch_pope_2000
+                provisional: true
+              - openTaxon: parapostibulls-sp-indeterminate_sumrall_garbisch_pope_2000
+                provisional: true
 2001_sumrall_sprinkle_guensburg:
   taxonomies:
   - taxon: eocrinoidea
@@ -6369,7 +6404,7 @@
         - taxon: parapostibulla
           children:
           - taxon: murphyi_sumrall_garbisch_pope_2000
-          - taxon: hybolopus_fraunfelder_utgaard_1970
+          - taxon: hybolopus_fraunfelter_utgaard_1970
           - taxon: neglecta_smith.a.b_1983
             moved:
               taxon: postibulla

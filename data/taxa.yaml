@@ -3204,9 +3204,9 @@ hybocrinus:
   name: Hybocrinus
   auth: [billings]
   year: 1857
-hybolopus_fraunfelder_utgaard_1970:
+hybolopus_fraunfelter_utgaard_1970:
   name: hybolopus
-  auth: [Fraunfelder, Utgaard]
+  auth: [Fraunfelter, Utgaard]
   year: 1970
 hypsiclavus:
   name: Hypsiclavus
@@ -4212,8 +4212,18 @@ parakrama:
     source: 2010_müller.p_hahn
 parapostibulla:
   name: Parapostibulla
-  auth: [sumrall, Garbisch, Pope]
-  year: 2000
+  authority:
+    source: 2000_sumrall_garbisch_pope
+parapostibulla-sp-a_sumrall_garbisch_pope_2000:
+  name: null
+  rank: species
+  authority:
+    source: 2000_sumrall_garbisch_pope
+parapostibulls-sp-indeterminate_sumrall_garbisch_pope_2000:
+  name: null
+  rank: species
+  authority:
+    source: 2000_sumrall_garbisch_pope
 pararotadiscus:
   name: Pararotadiscus
   authority:
@@ -4536,8 +4546,8 @@ postibulla:
 postibullinae:
   name: Postibullinae
   rank: Subfamily
-  auth: [sumrall, Garbisch, Pope]
-  year: 2000
+  authority:
+    source: 2000_sumrall_garbisch_pope
 postpetalus_müller.p_hahn_2010:
   name: postpetalus
   authority:
