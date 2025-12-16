@@ -205,6 +205,9 @@ frest:
 frizzell:
   family: Frizzell
   given: Don L.
+garbisch:
+  family: Garbisch
+  given: Jon
 gibson:
   family: Gibson
   given: Adam P.
@@ -449,6 +452,9 @@ peng.j:
 petersen.m.s:
   family: Petersen
   given: Morris S.
+pope:
+  family: Pope
+  given: John Paul
 qian.y:
   family: Qian
   given: Yi

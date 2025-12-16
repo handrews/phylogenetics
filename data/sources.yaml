@@ -2043,23 +2043,23 @@ articles:
     - pan.y
     identifiers:
       url: https://www.researchgate.net/publication/284507301_A_progress_report_on_research_on_the_early_Middle_Cambrian_Kaili_Biota_Guizhou_PRC
-  2020_zamora_sprinkle_sumrall:
-    title: A revaluation of rhipidocystid echinoderms based on a new flattened blastozoan from the Upper Ordovician of Maryland, USA
-    journal: acta-p-polonica
-    volume: 65
-    number: 3
-    pages:
-    - 455
-    - 465
+  2000_sumrall_garbisch_pope:
+    title: The Systematics of Postibullinid Edrioasteroids
+    journal: jofpaleo
+    volume: 74
+    number: 1
     pubDate:
-      year: 2020
+      year: 2000
+      month: 1
+    pages:
+    - 72
+    - 83
     authors:
-    - zamora
-    - sprinkle
     - sumrall
+    - garbisch
+    - pope
     identifiers:
-      doi: 10.4202/app.00718.2019
-      url: https://www.app.pan.pl/article/item/app007182019.html
+      jstor: 1306885
   2001_sumrall_sprinkle_guensburg:
     title: "Comparison Of Flattened Blastozoan Echinoderms: Insights From The New Early Ordovician Eocrinoid Haimacystis Rozhnovi"
     journal: jofpaleo
@@ -2717,6 +2717,23 @@ articles:
     - david
     - roux
     - derstler
+  2020_zamora_sprinkle_sumrall:
+    title: A revaluation of rhipidocystid echinoderms based on a new flattened blastozoan from the Upper Ordovician of Maryland, USA
+    journal: acta-p-polonica
+    volume: 65
+    number: 3
+    pages:
+    - 455
+    - 465
+    pubDate:
+      year: 2020
+    authors:
+    - zamora
+    - sprinkle
+    - sumrall
+    identifiers:
+      doi: 10.4202/app.00718.2019
+      url: https://www.app.pan.pl/article/item/app007182019.html
   2021_jell_sprinkle:
     title: Revision of Whitehouse’s eocrinoids Peridionites and Cymbionites, with description of the associated fauna including two new echinoderm genera, lower Middle Cambrian Thorntonia Limestone, northwestern Queensland
     complete:
