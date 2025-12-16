@@ -1,0 +1,184 @@
+abh-k-akad-wiss-berlin:
+  name: Abhandlungen der Königlichen Akademie der Wissenschaften zu Berlin
+acta-p-polonica:
+  name: Acta Palaeontologica Polonica
+acta-p-sinica:
+  name: Acta Palaeontologica Sinica
+akademie:
+  name: Akademie der Wissenschaften
+alcheringa:
+  name: Alcheringa
+am-nat:
+  name: The American Naturalist
+amph-und-cyst:
+  name: "Die Amphorideen und Cystoideen: beiträge zur Morphologie und Phylogenie der Echinodermen"
+annals:
+  name: Annales de Paleontologie
+annals-and-mag:
+  name: The Annals and Magazine of Natural History
+anteck:
+  name: Anteckningar i Physik och Geognosi under resor uti Sverige och Norrige
+annual-ny:
+  name: Annual Report of the New York State Museum of Natural History
+breviora:
+  name: Breviora
+bullamp:
+  name: Bulletins of American Paleontology
+bullbrgeo:
+  name: Bulletin of the British Museum (Natural History) Geology
+bullgeo:
+  name: Bulletins of Geosciences
+can-j-earth-sci:
+  name: Canadian Journal of Earth Sciences
+coloquios:
+  name: Coloquios de Paleontología
+e-research-1998:
+  name: Echinoderm Research 1998
+  notes: Conference proceedings
+  editors:
+  - candia carnevali
+  - bonasoro
+e-tampa-bay:
+  name: "Echinoderms: Proceedings of the International Conference, Tampa Bay"
+  editors:
+  - lawrence
+  publisher: A.A.Balkema
+  place: Rotterdam
+es-rev:
+  name: Earth-Science Reviews
+e-faunas-bromide:
+  name: Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma
+  editors:
+  - sprinkle
+fieldiana:
+  name: Fieldiana, Geology
+fig-desc-can:
+  name: Figures and descriptions of Canadian organic remains
+fossil-record:
+  name: The Fossil Record
+  editors:
+  - harland
+  - holland
+  - house
+  - hughes
+  - reynolds
+  - rudwick
+  - satterthwaite
+  - tarlo
+  - wiley
+  publisher: Geological Society of London
+  place: London
+geobios:
+  name: Geobios
+geo-et-palaeo:
+  name: Geologica et Palaeontologica
+geo-j:
+  name: Geological Journal
+geomag:
+  name: Geological Magazine
+geo-soc-am-abs-prog:
+  name: Geological Society of America, Abstracts With Programs
+invertebrates:
+  name: The Invertebrates
+jofpaleo:
+  name: Journal of Paleontology
+jofgeol-london:
+  name: The Quarterly Journal of the Geological Society of London
+kansas:
+  name: The University of Kansas Paleontological Contributions
+lethaia:
+  name: Lethaia
+mem-aust:
+  name: Memoirs of the Association of the Australian Palaeontologists
+mem-geol-gb:
+  name: Memoirs of the Geological Survey of Great Britain, and of the Museum of Practical Geology in London
+mem-q:
+  name: Memoirs of the Queensland Museum
+methodique:
+  name: Encyclopédie Méthodique. Histoire Naturelle des Vers. Tome Premier
+monograph-palaeo:
+  name: Monograph of the Palaeontological Society
+monographs-usgs:
+  name: Monographs of the United States Geological Survey
+nature:
+  name: Nature
+nat-com:
+  name: Nature Communications
+nat-disp-ech:
+  name: Naturalis Dispositio Echinodermatum. Accessit Lucubratiuncula de Aculeis Echinorum Marinorum, cum Specilegio de Belemnitis
+nat-disp-ech-1778:
+  name: Naturalis Dispositio Echinodermatum. Accessit Lucubratiuncula de Aculeis Echinorum Marinorum et Specilegium de Belemnitis. Edita et Descriptionibus Novisque Inventis et Synonymis Auctorum Auca a Nathanaele Godofredo Leske
+  editors:
+  - leske
+nat-hist-crinoidea:
+  name: A Natural History of the Crinoidea, or Lily-Shaped Animals
+nysm:
+  name: New York State Museum and Science Service Memoirs
+ottawa-naturalist:
+  name: The Ottawa Naturalist
+outlines-of-oryctology:
+  name: "Outlines of Oryctology: An introduction to the study of fossil remains; especially those found in the British strata"
+paleobiology:
+  name: Paleobiology
+p-of-iowa:
+  name: Palaeontology of Iowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857
+palaeontology:
+  name: Palaeontology
+paleo-j:
+  name: Paleontological Journal
+paleo-memoir:
+  name: Paleontological Society Memoir
+papersinpalaeo:
+  name: Papers in Palaeontology
+plos-one:
+  name: PLoS ONE
+ppp:
+  name: Palaeogeography, Palaeoclimatology, Palaeoecology
+procrsocb:
+  name: Proceedings of the Royal Society B
+proclinn-nsw:
+  name: Proceddings of the Linnaean Society of New South Wales
+pworld:
+  name: Palaeoworld
+series-geol:
+  name: Series in Geology, Notes for a Short Course
+science-new-series:
+  name: Science (New Series)
+short-2nd-cambrian:
+  name: Short Papers for the Second International Symposium on the Cambrian System, 1981
+smith-misc:
+  name: Smithsonian Miscellaneous Collections
+soc-sci-nat-phys-maroc:
+  name: Bulletin de la Société des sciences naturelles du Maroc
+sp-pub-harvard:
+  name: Special Publication of the Museum of Comparative Zoology, Harvard University
+stamm:
+  name: Stammesgeschichte der Pelmatozoen
+tableau:
+  name: Tableau Encyclopédique et Méthodique des Trois Règnes de la Nature. Contenant l’Helminthologie, ou les Vers Infusoires, les Vers Intestins, les Vers Mollusques
+tableau-cuvier:
+  name: Tableau élémentaire de l'histoire naturelle des animaux
+tohoku:
+  name: Tohoku Imperial University.Science Reports, 2nd Series, (geology)
+treatise-s:
+  name: "Treatise on Invertebrate Paleontology, Part S: Echinodermata 1"
+  editors:
+  - moore
+treatise-t:
+  name: "Treatise on Invertebrate Paleontology, Part T: Echinodermata 2"
+  editors:
+  - moore
+treatise-u:
+  name: "Treatise on Invertebrate Paleontology, Part U: Echinodermata 3"
+  editors:
+  - moore
+treatise-zoo:
+  name: A Treatise on Zoology
+  editors:
+  - lankester
+  publisher: Adam & Charles Black
+  place: London
+uber-den-bau:
+  name: Über den Bau der Echinodermen
+vestnik:
+  name: Věstník Ústředního ústavu geologického

@@ -12,6 +12,7 @@ logger = logging.getLogger(__name__)
 FILEDIR = pathlib.Path(__file__).parent / '..' / 'data'
 FILES = (
   FILEDIR / 'authors.yaml',
+  FILEDIR / 'publications.yaml',
   FILEDIR / 'sources.yaml',
   FILEDIR / 'taxa.yaml',
   FILEDIR / 'trees.yaml',
@@ -87,6 +88,7 @@ def load_files(*files):
   schema = None
   data = {
     'authors': {},
+    'publications': {},
     'sources': {},
     'taxa': {},
     'trees': {},

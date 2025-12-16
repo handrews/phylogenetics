@@ -175,18 +175,18 @@ def check_authors(data):
 
 
 def check_sources(data):
-  logger.info(f"Checking {len(data['sources']['articles'])} sources...")
+  logger.info(f"Checking {len(data['sources'])} sources...")
   sources = set()
-  for pub_id, publication in data['sources']['publications'].items():
+  for pub_id, publication in data['publications'].items():
     for editor in publication.get('editors', ()):
       if editor not in data['authors']:
         logger.error(f'Editor "{editor}" not found for publication {pub_id}!')
 
-  for ref_id, article in data['sources']['articles'].items():
+  for ref_id, article in data['sources'].items():
     sources.add(ref_id)
     logger.debug(f'Processing article "{ref_id}"')
     source_type = (article.keys() & {'journal', 'book', 'reading'}).pop()
-    if article[source_type] not in data['sources']['publications']:
+    if article[source_type] not in data['publications']:
       logger.error(f'{source_type} "{article[source_type]}" not found!')
 
     expected_id = f"{article['pubDate']['year']}"
@@ -205,12 +205,12 @@ def check_sources(data):
     if ref_id != expected_id:
       logger.error(f'Expected "{expected_id}" but found "{ref_id}"')
 
-    if ref_id not in data['sources']['articles']:
+    if ref_id not in data['sources']:
       logger.error(f'Source "{ref_id}" not found!')
 
     if (
-      (trans_of := data['sources']['articles'][ref_id].get('translationOf')) and
-      trans_of not in data['sources']['articles']
+      (trans_of := data['sources'][ref_id].get('translationOf')) and
+      trans_of not in data['sources']
     ):
       logger.error(
         f'Translation source "{trans_of}" for "{ref_id}" not found!'
@@ -244,7 +244,7 @@ def check_taxa(data):
         logger.error(f'"{taxon_id}" not in expected set: {valid_set}')
 
     if (authority := taxon.get('authority')):
-      if (source := authority['source']) not in data['sources']['articles']:
+      if (source := authority['source']) not in data['sources']:
         logger.error(f'Authority source "{source}" not recognized')
     else:
       for author_id in taxon['auth']:
@@ -283,7 +283,7 @@ def check_trees(data, sources, taxa, args):
   for ref_id, opinion in data['trees'].items():
     opinions.add(ref_id)
     logger.debug(f'Processing opinions from "{ref_id}"')
-    if ref_id not in data['sources']['articles']:
+    if ref_id not in data['sources']:
       logger.error(f'Tree citation "{ref_id}" not found!')
 
     trees = []

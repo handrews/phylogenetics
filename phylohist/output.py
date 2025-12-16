@@ -74,7 +74,7 @@ def print_tree(node, data, tree_info, args, indent='', on=1, buffer='', first=Fa
     lowest = RANKS[group[-1]]
 
   if first:
-    paper = data["sources"]["articles"][tree_info[1]]
+    paper = data["sources"][tree_info[1]]
     year = tree_info[1][:4] # paper['pubDate']#['year']
     authors = '; '.join(
       [

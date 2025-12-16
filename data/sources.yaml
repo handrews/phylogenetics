@@ -1,2902 +1,2716 @@
-publications:
-  abh-k-akad-wiss-berlin:
-    name: Abhandlungen der Königlichen Akademie der Wissenschaften zu Berlin
-  acta-p-polonica:
-    name: Acta Palaeontologica Polonica
-  acta-p-sinica:
-    name: Acta Palaeontologica Sinica
-  akademie:
-    name: Akademie der Wissenschaften
-  alcheringa:
-    name: Alcheringa
-  am-nat:
-    name: The American Naturalist
-  amph-und-cyst:
-    name: "Die Amphorideen und Cystoideen: beiträge zur Morphologie und Phylogenie der Echinodermen"
-  annals:
-    name: Annales de Paleontologie
-  annals-and-mag:
-    name: The Annals and Magazine of Natural History
-  anteck:
-    name: Anteckningar i Physik och Geognosi under resor uti Sverige och Norrige
-  annual-ny:
-    name: Annual Report of the New York State Museum of Natural History
-  breviora:
-    name: Breviora
-  bullamp:
-    name: Bulletins of American Paleontology
-  bullbrgeo:
-    name: Bulletin of the British Museum (Natural History) Geology
-  bullgeo:
-    name: Bulletins of Geosciences
-  can-j-earth-sci:
-    name: Canadian Journal of Earth Sciences
-  coloquios:
-    name: Coloquios de Paleontología
-  e-research-1998:
-    name: Echinoderm Research 1998
-    notes: Conference proceedings
-    editors:
-    - candia carnevali
-    - bonasoro
-  e-tampa-bay:
-    name: "Echinoderms: Proceedings of the International Conference, Tampa Bay"
-    editors:
-    - lawrence
-    publisher: A.A.Balkema
-    place: Rotterdam
-  es-rev:
-    name: Earth-Science Reviews
-  e-faunas-bromide:
-    name: Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma
-    editors:
-    - sprinkle
-  fieldiana:
-    name: Fieldiana, Geology
-  fig-desc-can:
-    name: Figures and descriptions of Canadian organic remains
-  fossil-record:
-    name: The Fossil Record
-    editors:
-    - harland
-    - holland
-    - house
-    - hughes
-    - reynolds
-    - rudwick
-    - satterthwaite
-    - tarlo
-    - wiley
-    publisher: Geological Society of London
-    place: London
-  geobios:
-    name: Geobios
-  geo-et-palaeo:
-    name: Geologica et Palaeontologica
-  geo-j:
-    name: Geological Journal
-  geomag:
-    name: Geological Magazine
-  geo-soc-am-abs-prog:
-    name: Geological Society of America, Abstracts With Programs
-  invertebrates:
-    name: The Invertebrates
-  jofpaleo:
-    name: Journal of Paleontology
-  jofgeol-london:
-    name: The Quarterly Journal of the Geological Society of London
-  kansas:
-    name: The University of Kansas Paleontological Contributions
-  lethaia:
-    name: Lethaia
-  mem-aust:
-    name: Memoirs of the Association of the Australian Palaeontologists
-  mem-geol-gb:
-    name: Memoirs of the Geological Survey of Great Britain, and of the Museum of Practical Geology in London
-  mem-q:
-    name: Memoirs of the Queensland Museum
-  methodique:
-    name: Encyclopédie Méthodique. Histoire Naturelle des Vers. Tome Premier
-  monograph-palaeo:
-    name: Monograph of the Palaeontological Society
-  monographs-usgs:
-    name: Monographs of the United States Geological Survey
-  nature:
-    name: Nature
-  nat-com:
-    name: Nature Communications
-  nat-disp-ech:
-    name: Naturalis Dispositio Echinodermatum. Accessit Lucubratiuncula de Aculeis Echinorum Marinorum, cum Specilegio de Belemnitis
-  nat-disp-ech-1778:
-    name: Naturalis Dispositio Echinodermatum. Accessit Lucubratiuncula de Aculeis Echinorum Marinorum et Specilegium de Belemnitis. Edita et Descriptionibus Novisque Inventis et Synonymis Auctorum Auca a Nathanaele Godofredo Leske
-    editors:
-    - leske
-  nat-hist-crinoidea:
-    name: A Natural History of the Crinoidea, or Lily-Shaped Animals
-  nysm:
-    name: New York State Museum and Science Service Memoirs
-  ottawa-naturalist:
-    name: The Ottawa Naturalist
-  outlines-of-oryctology:
-    name: "Outlines of Oryctology: An introduction to the study of fossil remains; especially those found in the British strata"
-  paleobiology:
-    name: Paleobiology
-  p-of-iowa:
-    name: Palaeontology of Iowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857
-  palaeontology:
-    name: Palaeontology
-  paleo-j:
-    name: Paleontological Journal
-  paleo-memoir:
-    name: Paleontological Society Memoir
-  papersinpalaeo:
-    name: Papers in Palaeontology
-  plos-one:
-    name: PLoS ONE
-  ppp:
-    name: Palaeogeography, Palaeoclimatology, Palaeoecology
-  procrsocb:
-    name: Proceedings of the Royal Society B
-  proclinn-nsw:
-    name: Proceddings of the Linnaean Society of New South Wales
-  pworld:
-    name: Palaeoworld
-  series-geol:
-    name: Series in Geology, Notes for a Short Course
-  science-new-series:
-    name: Science (New Series)
-  short-2nd-cambrian:
-    name: Short Papers for the Second International Symposium on the Cambrian System, 1981
-  smith-misc:
-    name: Smithsonian Miscellaneous Collections
-  soc-sci-nat-phys-maroc:
-    name: Bulletin de la Société des sciences naturelles du Maroc
-  sp-pub-harvard:
-    name: Special Publication of the Museum of Comparative Zoology, Harvard University
-  stamm:
-    name: Stammesgeschichte der Pelmatozoen
-  tableau:
-    name: Tableau Encyclopédique et Méthodique des Trois Règnes de la Nature. Contenant l’Helminthologie, ou les Vers Infusoires, les Vers Intestins, les Vers Mollusques
-  tableau-cuvier:
-    name: Tableau élémentaire de l'histoire naturelle des animaux
-  tohoku:
-    name: Tohoku Imperial University.Science Reports, 2nd Series, (geology)
-  treatise-s:
-    name: "Treatise on Invertebrate Paleontology, Part S: Echinodermata 1"
-    editors:
-    - moore
-  treatise-t:
-    name: "Treatise on Invertebrate Paleontology, Part T: Echinodermata 2"
-    editors:
-    - moore
-  treatise-u:
-    name: "Treatise on Invertebrate Paleontology, Part U: Echinodermata 3"
-    editors:
-    - moore
-  treatise-zoo:
-    name: A Treatise on Zoology
-    editors:
-    - lankester
-    publisher: Adam & Charles Black
-    place: London
-  uber-den-bau:
-    name: Über den Bau der Echinodermen
-  vestnik:
-    name: Věstník Ústředního ústavu geologického
-articles:
-  1734_klein:
-    book: nat-disp-ech
-    pubDate:
-      year: 1734
-    authors:
-    - klein
-    notes: Establishiment of Echinodermata (for echinoids), pre-Code rules
-    identifiers:
-      doi: 10.5962/bhl.title.65731
-      url: https://www.biodiversitylibrary.org/bibliography/65731
-  1778_klein:
-    book: nat-disp-ech-1778
-    seen: false
-    pubDate:
-      year: 1778
-    authors:
-    - klein
-    notes: |
-      Some argue that this use of Echinodermata should result in an attribution
-      of "Echinodermata (Klein 1778)" as the only reason it was excluded was
-      inconsistent usage, but that rule does not apply above the Family level.
-    identifiers:
-      url: https://www.biodiversitylibrary.org/bibliography/11571
-  1789_bruguière:
-    book: methodique
-    pubDate:
-      year: 1789
-    authors:
-    - bruguière
-    notes:
-      Order 'Vers échinodermes' references Klein's taxon but in the vernacular
-    identifiers:
-      url: https://archive.org/details/histoirenaturell3488brug/page/n1/mode/2up
-  1791_bruguière:
-    book: tableau
-    pubDate:
-      year: 1791
-    authors:
-    - bruguière
-    notes: Officially recognized use of "Echinodermata" (in Latin), revived from Klein
-    identifiers:
-      url: https://www.biodiversitylibrary.org/bibliography/64072
-  1798a_cuvier:
-    book: tableau-cuvier
-    volume: 1
-    notes: Date may be 1797 or 1798
-    pubDate:
-      year: 1798
-    authors:
-    - cuvier
-    identifiers:
-      url: https://www.biodiversitylibrary.org/item/42906
-  1798b_cuvier:
-    book: tableau-cuvier
-    volume: 2
-    notes: Date may be 1797 or 1798
-    pubDate:
-      year: 1798
-    authors:
-    - cuvier
-    identifiers:
-      url: https://www.biodiversitylibrary.org/item/87284
-  1798c_cuvier:
-    book: tableau-cuvier
-    volume: 3
-    notes: Date may be 1797 or 1798
-    pubDate:
-      year: 1798
-    authors:
-    - cuvier
-    identifiers:
-      url: https://www.biodiversitylibrary.org/item/99338
-  1821_miller.j.s:
-    book: nat-hist-crinoidea
-    pubDate:
-      year: 1821
-    authors:
-    - miller.j.s
-    identifiers:
-      url: https://www.biodiversitylibrary.org/bibliography/178175
-  1822_parkinson:
-    book: outlines-of-oryctology
-    pubDate:
-      year: 1822
-    authors:
-    - parkinson
-    identifiers:
-      url: https://darwin-online.org.uk/converted/pdf/1822_fossil_CUL-DAR.LIB.490.pdf
-  1828_hisinger:
-    book: anteck
-    volume: 4
-    pubDate:
-      year: 1828
-    authors:
-    - hisinger
-    identifiers:
-      url: https://www.google.com/books/edition/Anteckningar_i_Physik_och_Geognosi_under/LotfAAAAcAAJ?hl=en
-  1844_buch:
-    title: Über Cystideen eingeleitet durch die Entwicklung der Eigenthümlichkeiten von Caryocrinus ornatus
-    reading: akademie
-    notes: Some sources incorrectly give May 3rd instead of March 3rd due to an early typo.
-    pubDate:
-      year: 1844
-      month: 3
-      day: 3
-    authors:
-    - buch
-  1846a_buch:
-    title: Über Cystideen eingeleitet durch die Entwicklung der Eigenthümlichkeiten von Caryocrinus ornatus SAY
-    journal: abh-k-akad-wiss-berlin
-    pubDate:
-      year: 1846
-    pages:
-    - 89
-    - 116
-    authors:
-    - buch
-  1846b_buch:
-    title: Notice of a New Family of Crinoidal Animals, called Cystidea
-    journal: jofgeol-london
-    volume: 2
-    number: Part 1
-    pages:
-    - 11
-    - 12
-    pubDate:
-      year: 1846
-    authors:
-    - buch
-    identifiers:
-      url: https://www.biodiversitylibrary.org/page/35336362
-  1846c_buch:
-    title: On the Cystidea (a new family of radiated animals), introduced by Account of the Caryocrinus ornatus, Say
-    translationOf: 1846a_buch
-    journal: jofgeol-london
-    volume: 2
-    number: Part 2
-    pages:
-    - 20
-    - 42
-    plates:
-    - 3
-    - 4
-    pubDate:
-      year: 1846
-    authors:
-    - buch
-    identifiers:
-      url: https://www.biodiversitylibrary.org/page/35336917
-  1848a_forbes:
-    title: On the Asteriadæ found Fossil in British Strata
-    journal: mem-geol-gb
-    volume: 2
-    number: 2
-    pages:
-    - 457
-    - 482
-    pubDate:
-      year: 1848
-    authors:
-    - forbes
-    identifiers:
-      url: https://www.google.com/books/edition/Memoirs_of_the_Geological_Survey_of_Grea/WcNAAAAAcAAJ?hl=en&gbpv=1
-  1848b_forbes:
-    title: On the Cystideæ of the Silurian Rocks of the British Islands.pdf
-    journal: mem-geol-gb
-    volume: 2
-    number: 2
-    pages:
-    - 483
-    - 538
-    plates:
-    - 11
-    - 23
-    pubDate:
-      year: 1848
-    authors:
-    - forbes
-    identifiers:
-      url: https://www.google.com/books/edition/Memoirs_of_the_Geological_Survey_of_Grea/WcNAAAAAcAAJ?hl=en&gbpv=1
-  1854_müller.j.p:
-    book: uber-den-bau
-    pubDate:
-      year: 1854
-    authors:
-    - müller.j.p
-    identifiers:
-      url: https://www.google.com/books/edition/_/JOlAAAAAcAAJ
-  1858a_billings:
-    title: On the Cystideæ of the Lower Silurian Rocks of Canada
-    journal: fig-desc-can
-    volume: III
-    pages:
-    - 9
-    - 74
-    pubDate:
-      year: 1858
-    authors:
-    - billings
-    identifiers:
-      url: https://www.biodiversitylibrary.org/page/14985785
-  1858b_billings:
-    title: On the Asteriadæ of the Lower Silurian Rocks of Canada
-    journal: fig-desc-can
-    volume: III
-    pages:
-    - 75
-    - 85
-    pubDate:
-      year: 1858
-    authors:
-    - billings
-    identifiers:
-      url: https://www.biodiversitylibrary.org/page/14985851
-  1858_salter_billings:
-    title: On Cyclocystoides, a new genus of Echinodermata from the Lower and Middle Silurian Rocks
-    journal: fig-desc-can
-    volume: III
-    pages:
-    - 86
-    - 90
-    pubDate:
-      year: 1858
-    authors:
-    - salter
-    - billings
-    identifiers:
-      url: https://www.biodiversitylibrary.org/page/14985862
-  1858a_hall:
-    title: Crinoideae of the Hamilton Group
-    journal: p-of-iowa
-    volume: 1
-    number: 2
-    pages:
-    - 479
-    - 485
-    pubDate:
-      year: 1858
-    authors:
-    - hall
-  1858b_hall:
-    title: Fossils of the Burlington Limestone. Crinoideae
-    journal: p-of-iowa
-    volume: 1
-    number: 2
-    pages:
-    - 524
-    - 596
-    pubDate:
-      year: 1858
-    authors:
-    - hall
-  1858c_hall:
-    title: Crinoideae and other Echniodermata of the Warsaw Limestone
-    journal: p-of-iowa
-    volume: 1
-    number: 2
-    pages:
-    - 654
-    - 656
-    pubDate:
-      year: 1858
-    authors:
-    - hall
-  1858d_hall:
-    title: Crinoideae of the Keokuk Limestone
-    journal: p-of-iowa
-    volume: 1
-    number: 2
-    pages:
-    - 606
-    - 634
-    pubDate:
-      year: 1858
-    authors:
-    - hall
-  1858e_hall:
-    title: Crinoideae of the St. Louis Limestone
-    journal: p-of-iowa
-    volume: 1
-    number: 2
-    pages:
-    - 669
-    - 673
-    pubDate:
-      year: 1858
-    authors:
-    - hall
-  1858f_hall:
-    title: Crinoideae and other Echinodermata of the Kaskaskia Limestone
-    journal: p-of-iowa
-    volume: 1
-    number: 2
-    pages:
-    - 678
-    - 701
-    pubDate:
-      year: 1858
-    authors:
-    - hall
-  1865_norman:
-    title: XIII.—On the genera and species of British Echinodermata
-    journal: annals-and-mag
-    volume: 15
-    pages:
-    - 98
-    - 129
-    pubDate:
-      year: 1865
-    authors:
-    - norman
-    identifiers:
-      url: https://archive.org/details/biostor-91146/page/n1/mode/2up
-  1866_hall:
-    title: Descriptions of some new species of Crinoidea and other Fossils from the Lower Silurian strata, principally of the age of the Hudson-river group.
-    journal: annual-ny
-    volume: 20
-    number: Adv. Pr.
-    pages:
-    - 1
-    - 17
-    pubDate:
-      year: 1866
-    authors:
-    - hall
-  1870_billings:
-    title: Notes on the Structure of the Crinoidea, Cystidea, and Blastoidea
-    journal: annals-and-mag
-    volume: 4th Series
-    number: 28
-    pubDate:
-      year: 1870
-      month: 4
-    pages:
-    - 251
-    - 266
-    authors:
-    - billings
-    identifiers:
-      url: https://www.biodiversitylibrary.org/page/19266657
-  1872a_hall:
-    title: Descriptions of new species of fossils from the vicinity of Louisville, Kentucky, and the Falls of the Ohio
-    journal: annual-ny
-    volume: 24
-    pages:
-    - 181
-    - 200
-    - 200a # Supplement tipped in after page 200
-    - 200a
-    - 233 # Errata
-    - 233
-    pubDate:
-      year: 1872
-    processDates:
-      transmitted: 1871-04-18
-    authors:
-    - hall
-  1872b_hall:
-    title: Description of new species of Crinoidea and other fossils from strata of the age of the Hudson-River Group and Trenton Limestone
-    journal: annual-ny
-    volume: 24
-    pages:
-    - 205
-    - 224
-    - 233 # Errata
-    - 233
-    pubDate:
-      year: 1872
-    processDates:
-      transmitted: 1871-04-18
-    authors:
-    - hall
-  1872c_hall:
-    title: Description of new species of fossils from the Hudson River Group, in the vicinity of Cincinnati, Ohio
-    journal: annual-ny
-    volume: 24
-    pages:
-    - 225
-    - 232
-    - 233 # Errata for multiple articles
-    - 233
-    pubDate:
-      year: 1872
-    processDates:
-      transmitted: 1871-04-18
-    authors:
-    - hall
-  1887_billings.w.r:
-    title: A new genus and three new species of crinoids from the Trenton Formation with notes on a large specimen of Dendrocrinus proboscidiatus
-    journal: ottawa-naturalist
-    volume: 1
-    number: 3
-    pubDate:
-      year: 1887
-    authors:
-    - billings.w.r
-    identifiers:
-      url: https://www.biodiversitylibrary.org/page/30200108
-  1896_haeckel:
-    book: amph-und-cyst
-    pubDate:
-      year: 1896
-    authors:
-    - haeckel
-    identifiers:
-      url: https://www.biodiversitylibrary.org/page/11808822
-  1898_walcott:
-    title: Fossile Medusæ
-    journal: monographs-usgs
-    volume: 30
-    pubDate:
-      year: 1898
-    authors:
-    - walcott
-    identifiers:
-      url: https://www.biodiversitylibrary.org/page/2056780
-  1899_jaekel:
-    book: stamm
-    pubDate:
-      year: 1899
-    authors:
-    - jaekel
-    identifiers:
-      url: https://www.google.com/books/edition/Stammesgeschichte_der_Pelmatozoen/cvdaAAAAQAAJ
-  1900_bather:
-    title: Part III — The Echinoderma
-    book: treatise-zoo
-    pubDate:
-      year: 1900
-    authors:
-    - bather
-    identifiers:
-      url: https://archive.org/details/treatiseonzoolog03lank/page/n5/mode/2up
-  1911b_walcott:
-    title: Middle Cambrian Holothurians and Medusaæ
-    journal: smith-misc
-    volume: 57
-    number: 3
-    pubDate:
-      year: 1911
-      month: 6
-      day: 13
-    authors:
-    - walcott
-    identifiers:
-      url: https://www.biodiversitylibrary.org/page/9263071
-  1911d_walcott:
-    title: Middle Cambrian Annelids
-    journal: smith-misc
-    volume: 57
-    number: 5
-    pubDate:
-      year: 1911
-      month: 9
-      day: 4
-    authors:
-    - walcott
-    identifiers:
-      url: https://www.biodiversitylibrary.org/page/9263165
-  1912_clark.h.l:
-    title: Fossil Holothurians
-    journal: science-new-series
-    volume: 35
-    number: 894
-    pages:
-    - 274
-    - 278
-    pubDate:
-      year: 1912
-      month: 2
-      day: 16
-    authors:
-    - clark.h.l
-    identifiers:
-      url: https://www.biodiversitylibrary.org/page/31090005
-  1913_clark.a.h:
-    title: Cambrian Holothurians
-    journal: am-nat
-    volume: 47
-    number: 560
-    pages:
-    - 488
-    - 507
-    pubDate:
-      year: 1913
-      month: 8
-    authors:
-    - clark.a.h
-    identifiers:
-      url: https://www.biodiversitylibrary.org/page/43433793
-  1929_matsumoto:
-    title: Outline of a classification of Echinoermata
-    journal: tohoku
-    volume: 13
-    number: 2
-    pages:
-    - 27
-    - 22
-    authors:
-    - matsumoto
-    pubDate:
-      year: 1929
-    identifiers:
-      url: https://files.core.ac.uk/download/pdf/235749176.pdf
-  1935_bassler:
-    title: The Classification of the Edrioasteroidea
-    complete:
-      named: true
-      open: true
-      history: true
-      specimens:
-        basic: null
-        all: null
-    journal: smith-misc
-    volume: 93
-    number: 8
-    pubDate:
-      year: 1935
-      month: 4
-      day: 4
-    authors:
-    - bassler
-  1936_bassler:
-    title: New Species of American Edrioasteroidea
-    journal: smith-misc
-    volume: 95
-    number: 6
-    pubDate:
-      year: 1936
-      month: 5
-      day: 4
-    authors:
-    - bassler
-  1941_whitehouse:
-    title: "The Cambrian faunas of north-eastern Australia, Part 4: Early Cambrian echinoderms similar to the larval stages of Recent forms"
-    journal: mem-q
-    volume: 12
-    number: 1
-    pages:
-    - 1
-    - 28
-    authors:
-    - whitehouse
-    editors:
-    - longman
-    pubDate:
-      year: 1941
-      month: 6
-      day: 13
-    identifiers:
-      url: https://www.biodiversitylibrary.org/item/189697#page/38/mode/1up
-  1955_hyman:
-    title: Enchinodermata, the Coelomate Bilateria
-    book: invertebrates
-    volume: 4
-    pubDate:
-      year: 1955
-    authors:
-    - hyman
-    identifiers:
-      url: https://archive.org/details/in.ernet.dli.2015.260496/page/n5/mode/2up
-  1960_gill_caster:
-    title: Carpoid echinoderms from the Silurian and Devonian of Australia
-    journal: bullamp
-    volume: 41
-    number: 185
-    pages:
-    - 1
-    - 72
-    pubDate:
-      year: 1960
-      month: 3
-      day: 1
-    authors:
-    - gill
-    - caster
-    identifiers:
-      url: https://www.biodiversitylibrary.org/page/10654670
-  1962_fay:
-    title: Edrioblastoidea, a new class of Echinodermata
-    complete:
-      named: true
-      open: null
-      history: true
-      specimens:
-        basic: true
-        all: true
-    journal: jofpaleo
-    volume: 36
-    number: 2
-    pages:
-    - 201
-    - 205
-    pubDate:
-      year: 1962
-      month: 3
-    authors:
-    - fay
-    identifiers:
-      jstor: 13011100
-  1963_brown.i.a:
-    title: A new cystoid (Pelmatozoa, Echinodermata) from the Silurian of New South Wales
-    journal: proclinn-nsw
-    volume: 88
-    number: 3
-    pubDate:
-      year: 1963
-    processDates:
-      read: 1963-11-27
-      issued: 1964-04-10
-    authors:
-    - brown.i.a
-  1963_durham_caster:
-    title: "Helicoplacoidea: A New Class of Echinoderms"
-    complete:
-      named: true
-      open: null
-      history: null
-      specimens:
-        basic: true
-        all: true
-    journal: science-new-series
-    volume: 149
-    number: 3568
-    pubDate:
-      year: 1963
-      month: 5
-      day: 17
-    processDates:
-      unknown: 1963-02-15
-    authors:
-    - durham
-    - caster
-    identifiers:
-      jstor: 1711312
-  1965_fell:
-    title: The Early Evolution of the Echinozoa
-    journal: breviora
-    number: 219
-    pubDate:
-      year: 1965
-      month: 5
-      day: 7
-    pages:
-    - 1
-    - 17
-    authors:
-    - fell
-    identifiers:
-      url: https://www.biodiversitylibrary.org/page/4312670
-  1966_durham:
-    title: Camptostroma, an Early Cambrian Supposed Scyphozoan, Referable to Echinodermata
-    complete:
-      named: true
-      open: null
-      history: true
-      specimens:
-        basic: true
-        all: true
-    journal: jofpaleo
-    volume: 40
-    number: 5
-    pages:
-    - 1216
-    - 1220
-    pubDate:
-      year: 1966
-      month: 9
-    processDates:
-      received: 1966-01-04
-    authors:
-    - durham
-    identifiers:
-      jstor: 1301996
-  1966_spencer_wright.c.w:
-    title: Asterozoans
-    book: treatise-u
-    pubDate:
-      year: 1966
-    authors:
-    - spencer
-    - wright.c.w
-    pages:
-    - U4
-    - U107
-    identifiers:
-      url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
-  1966_durham_caster:
-    title: Helicoplacoids
-    complete:
-      named: true
-      open: true
-      history: true
-      specimens:
-        basic: null
-        all: null
-    book: treatise-u
-    pubDate:
-      year: 1966
-    authors:
-    - durham
-    - caster
-    pages:
-    - U131
-    - U136
-    identifiers:
-      url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
-  1966_regnéll:
-    title: Edrioasteroids
-    book: treatise-u
-    pubDate:
-      year: 1966
-    authors:
-    - regnéll
-    pages:
-    - U136
-    - U173
-    identifiers:
-      url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
-  1966_ubaghs:
-    title: Ophiocistioids
-    book: treatise-u
-    pubDate:
-      year: 1966
-    authors:
-    - ubaghs
-    pages:
-    - U174
-    - U188
-    identifiers:
-      url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
-  1966_kesling:
-    title: Cyclocystoids
-    book: treatise-u
-    pubDate:
-      year: 1966
-    authors:
-    - kesling
-    pages:
-    - U188
-    - U210
-    identifiers:
-      url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
-  1966_durham_fell_fischer_kier_melville_pawson_wagner:
-    title: Echinoids
-    book: treatise-u
-    pubDate:
-      year: 1966
-    authors:
-    - durham
-    - fell
-    - fischer
-    - kier
-    - melville
-    - pawson
-    - wagner
-    pages:
-    - U211
-    - U640
-    identifiers:
-      url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
-  1966_frizzell_exline_pawson:
-    title: Holothurians
-    book: treatise-u
-    pubDate:
-      year: 1966
-    authors:
-    - frizzell
-    - exline
-    - pawson
-    pages:
-    - U641
-    - U672
-    identifiers:
-      url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
-  1967_paul.c.r.c:
-    title: British Silurian Cystoids
-    journal: bullbrgeo
-    volume: 13
-    number: 6
-    pages:
-    - 297
-    - 344
-    plates:
-    - 1
-    - 10
-    pubDate:
-      year: 1967
-      month: 1
-      day: 11
-    authors:
-    - paul.c.r.c
-    identifiers:
-      url: https://www.biodiversitylibrary.org/page/2286554
-  1967a_ubaghs:
-    title: General Characters of Echinodermata
-    book: treatise-s
-    pubDate:
-      year: 1967
-    authors:
-    - ubaghs
-    pages:
-    - S3
-    - S60
-    identifiers:
-      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
-  1967a_kesling:
-    title: Cystoids
-    book: treatise-s
-    pubDate:
-      year: 1967
-    authors:
-    - kesling
-    pages:
-    - S85
-    - S267
-    identifiers:
-      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
-  1967b_kesling:
-    title: Paracrinoids
-    book: treatise-s
-    pubDate:
-      year: 1967
-    authors:
-    - kesling
-    pages:
-    - S268
-    - S288
-    identifiers:
-      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
-  1967a_fay:
-    title: Edrioblastoids
-    complete:
-      named: true
-      open: null
-      history: true
-      specimens:
-        basic: null
-        all: null
-    book: treatise-s
-    pubDate:
-      year: 1967
-    authors:
-    - fay
-    pages:
-    - S289
-    - S292
-    identifiers:
-      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
-  1967b_fay:
-    title: Parablastoids
-    complete:
-      named: true
-      open: null
-      history: null
-      specimens:
-        basic: null
-        all: null
-    book: treatise-s
-    pubDate:
-      year: 1967
-    authors:
-    - fay
-    pages:
-    - S293
-    - S296
-    identifiers:
-      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
-  1967_fay_wanner:
-    title: "Blastoids: Systematic Descriptions"
-    book: treatise-s
-    pubDate:
-      year: 1967
-    authors:
-    - fay
-    - wanner
-    pages:
-    - S396
-    - S455
-    identifiers:
-      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
-  1967b_ubaghs:
-    title: Eocrinoidea
-    book: treatise-s
-    pubDate:
-      year: 1967
-    authors:
-    - ubaghs
-    pages:
-    - S455
-    - S495
-    identifiers:
-      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
-  1967c_ubaghs:
-    title: Stylophora
-    book: treatise-s
-    pubDate:
-      year: 1967
-    authors:
-    - ubaghs
-    pages:
-    - S495
-    - S565
-    identifiers:
-      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
-  1967d_ubaghs:
-    title: Homostelea
-    book: treatise-s
-    pubDate:
-      year: 1967
-    authors:
-    - ubaghs
-    pages:
-    - S565
-    - S581
-    identifiers:
-      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
-  1967_caster:
-    title: Homoiostelea
-    book: treatise-s
-    pubDate:
-      year: 1967
-    authors:
-    - caster
-    pages:
-    - S581
-    - S627
-    identifiers:
-      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
-  1967a_durham:
-    title: Camptostromatoids
-    complete:
-      named: true
-      open: null
-      history: true
-      specimens:
-        basic: null
-        all: null
-    book: treatise-s
-    pubDate:
-      year: 1967
-    authors:
-    - durham
-    pages:
-    - S627
-    - S631
-    identifiers:
-      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
-  1967b_durham:
-    title: Lepidocystoidea
-    complete:
-      named: true
-      open: null
-      history: null
-      specimens:
-        basic: null
-        all: null
-    book: treatise-s
-    pubDate:
-      year: 1967
-    authors:
-    - durham
-    pages:
-    - S631
-    - S634
-    identifiers:
-      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
-  1967e_ubaghs:
-    title: Cymbionites and Peridionites—Unclassified Middle Cambrian Echinoderms
-    complete:
-      named: true
-      open: true
-      history: true
-      specimens:
-        basic: null
-        all: null
-    book: treatise-s
-    pubDate:
-      year: 1967
-    authors:
-    - ubaghs
-    pages:
-    - S634
-    - S637
-    identifiers:
-      url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
-  1967c_durham:
-    title: Notes on the Helicoplacoidea and Early Echinoderms
-    complete:
-      named: true
-      open: null
-      history: true
-      specimens:
-        basic: true
-        all: true
-    journal: jofpaleo
-    volume: 41
-    number: 1
-    pages:
-    - 97
-    - 102
-    pubDate:
-      year: 1967
-      month: 1
-    processDates:
-      received: 1966-06-03
-    authors:
-    - durham
-    identifiers:
-      jstor: 1301905
-  1967_jeffries_joysey_paul.c.r.c_ramsbottom:
-    title: "Chapter 21: Echinodermata: Pelmatozoa"
-    book: fossil-record
-    pages:
-    - 565
-    - 581
-    pubDate:
-      year: 1967
-    authors:
-    - jeffries
-    - joysey
-    - paul.c.r.c
-    - ramsbottom
-    identifiers:
-      url: https://archive.org/details/fossilrecord0000wbha/mode/2up
-  1968a_paul.c.r.c:
-    title: Macrocystella Callaway, the earliest glyptocystitid cystoid
-    journal: palaeontology
-    volume: 11
-    number: 4
-    pubDate:
-      year: 1968
-    pages:
-    - 580
-    - 600
-    authors:
-    - paul.c.r.c
-    identifiers:
-      # alternate: https://zenodo.org/records/16064129
-      url: https://www.biodiversitylibrary.org/page/49633102#page/356/mode/1up
-  1968b_paul.c.r.c:
-    title: Morphology and function of dichoporite pore-structures in cystoids
-    journal: palaeontology
-    volume: 11
-    number: 5
-    pages:
-    - 697
-    - 730
-    plates:
-    - 134
-    - 140
-    pubDate:
-      year: 1968
-    authors:
-    - paul.c.r.c
-  1968_webby:
-    title: Astrocystites distans sp. nov., an edrioblastoid from the Ordovician of eastern Australia
-    complete:
-      named: true
-      open: true
-      history: true
-      specimens:
-        basic: true
-        all: true
-    journal: palaeontology
-    volume: 11
-    number: 4
-    authors:
-    - webby
-    pubDate:
-      year: 1968
-    pages:
-    - 513
-    - 525
-    identifiers:
-      url: https://archive.org/details/biostor-164880
-  1969_robison_sprinkle:
-    title: "Ctenocystoidea: New Class of Primitive Echinoderms"
-    complete:
-      named: true
-      open: null
-      history: null
-      specimens:
-        basic: true
-        all: false
-    journal: science-new-series
-    volume: 166
-    number: 3912
-    pages:
-    - 1512
-    - 1514
-    authors:
-    - robison
-    - sprinkle
-    pubDate:
-      year: 1969
-      month: 12
-      day: 19
-    identifiers:
-      jstor: 1727422
-  1970_mintz:
-    title: "The Edrioblastoidea: Re-Evaluation Based on a New Specimen of Astrocystites from the Middle Ordovician of Ontario"
-    journal: jofpaleo
-    volume: 44
-    number: 5
-    pages:
-    - 872
-    - 880
-    pubDate:
-      year: 1970
-      month: 9
-    processDates:
-      received: 1969-11-04
-    authors:
-    - mintz
-    identifiers:
-      jstor: 1302721
-  1971_paul.c.r.c:
-    title: Revision of the Holocystites fauna (Diploporita) of North America
-    journal: fieldiana
-    volume: 24
-    authors:
-    - paul.c.r.c
-    pubDate:
-      year: 1971
-      month: 9
-      day: 29
-    identifiers:
-      url: https://www.biodiversitylibrary.org/bibliography/3412
-  1972_paul.c.r.c:
-    title: Morphology and function of exothecal pore-structures in Cystoids
-    journal: palaeontology
-    volume: 15
-    number: 1
-    pages:
-    - 1
-    - 28
-    pubDate:
-      year: 1972
-    authors:
-    - paul.c.r.c
-    processDates:
-      revised: 1971-05-06
-  1973_sprinkle:
-    title: Morphology and Evolution of Blastozoan Echinoderms
-    journal: sp-pub-harvard
-    authors:
-    - sprinkle
-    pubDate:
-      year: 1973
-    identifiers:
-      url: https://archive.org/details/morphologyevolut00spri/mode/2up
-  1973b_sprinkle:
-    title: New occurrence of the Ordovician eocrinoid Lingulocystis from Bolivia, South America
-    journal: jofpaleo
-    volume: 47
-    pages:
-    - 1113
-    - 1116
-    pubDate:
-      year: 1973
-    authors:
-    - sprinkle
-  1974_bell.b.m:
-    title: A Study of North American Edrioasteroidea
-    journal: nysm
-    volume: 21
-    pubDate:
-      year: 1974
-    authors:
-    - bell.b.m
-  1975_bell.b.m:
-    title: "Ontogeny and systematics of Timeischytes casteri n. sp.: an enigmatic Devonian edrioasteroid"
-    journal: bullamp
-    volume: 67
-    number: 287
-    pubDate:
-      year: 1975
-    authors:
-    - bell.b.m
-    identifiers:
-      url: https://www.biodiversitylibrary.org/page/10896154
-  1975_broadhead_strimple:
-    title: Respiration in a Vagrant Ordovician Cystoid, Amecystis
-    journal: paleobiology
-    volume: 1
-    number: 3
-    pages:
-    - 312
-    - 319
-    pubDate:
-      year: 1975
-      season: summer
-    authors:
-    - broadhead
-    - strimple
-    identifiers:
-      jstor: 2400371
-  1975_kolata:
-    title: Middle Ordovician echinoderms from northern Illinois and southern Wisconsin
-    journal: paleo-memoir
-    volume: 7
-    pubDate:
-      year: 1975
-    authors:
-    - kolata
-    identifiers:
-      doi: 10.1017/S0022336000061734
-  1976_bell.b.m_petersen.m.s:
-    title: An Edrioasteroid from the Guilmette Formation at Wendover, Utah-Nevada
-    journal: jofpaleo
-    volume: 50
-    number: 4
-    pages:
-    - 577
-    - 589
-    pubDate:
-      year: 1976
-      month: 7
-    authors:
-    - bell.b.m
-    - petersen.m.s
-    identifiers:
-      jstor: 1303658
-  1978_bell.b.m_sprinkle:
-    title: Totiglobus, an Unusual New Edrioasteroid from the Middle Cambrian of Nevada
-    journal: jofpaleo
-    volume: 52
-    number: 2
-    pages:
-    - 243
-    - 266
-    pubDate:
-      year: 1978
-      month: 3
-    authors:
-    - bell.b.m
-    - sprinkle
-    identifiers:
-      jstor: 1303701
-  1979_guensburg:
-    title: Cyclocystoid-like edrioasteroids from the Orchard Creek Shale (U. Ord.) in southern Illinois
-    journal: geo-soc-am-abs-prog
-    volume: 11
-    pages:
-    - 74
-    - 74
-    pubDate:
-      year: 1979
-    authors:
-    - guensburg
-    notes: Literally just an abstract?  Unclear if there is a long form.
-  1980_bell.b.m:
-    title: Edrioasteroidea and Edrioblastoidea
-    journal: series-geol
-    volume: "3: Echinoderms: Notes for a Short Course"
-    pages:
-    - 158
-    - 174
-    pubDate:
-      year: 1980
-    authors:
-    - bell.b.m
-    identifiers:
-      doi: 10.1017/S027116480000018X
-  1981_derstler:
-    title: Morphological diversity of early Cambrian echinoderms
-    book: short-2nd-cambrian
-    pages:
-    - 71
-    - 75
-    pubDate:
-      year: 1981
-    processDates:
-      conferenceStart: 1981-08-09
-      conferenceEnd: 1981-08-13
-    authors:
-    - derstler
-    identifiers:
-      url: https://pubs.usgs.gov/of/1981/0743/report.pdf
-  1982_bell.b.m:
-    title: Edrioasteroids
-    book: e-faunas-bromide
-    pages:
-    - 297
-    - 306
-    pubDate:
-      year: 1982
-    authors:
-    - bell.b.m
-  1982_broadhead:
-    title: Reappraisal of Class Eocrinoidea (Echinodermata)
-    book: e-tampa-bay
-    authors:
-    - broadhead
-    pubDate:
-      year: 1982
-    processDates:
-      conferenceStart: 1981-09-14
-      conferenceEnd: 1981-09-17
-    pages:
-    - 125
-    - 131
-    identifiers:
-      url: https://www.google.com/books/edition/Echinoderms/Vw9mCCLAMtQC?hl=en&gbpv=1
-  1982_kolata:
-    title: Cyclocystoids
-    book: e-faunas-bromide
-    pages:
-    - 309
-    - 309
-    pubDate:
-      year: 1982
-    authors:
-    - kolata
-  1982a_parsley:
-    title: Paracrinoids
-    book: e-faunas-bromide
-    pages:
-    - 212
-    - 223
-    pubDate:
-      year: 1982
-    authors:
-    - parsley
-  1982b_parsley:
-    title: Pleurocystitids
-    book: e-faunas-bromide
-    pages:
-    - 274
-    - 279
-    pubDate:
-      year: 1982
-    authors:
-    - parsley
-  1982c_parsley:
-    title: Eumorphocystis
-    book: e-faunas-bromide
-    pages:
-    - 280
-    - 288
-    pubDate:
-      year: 1982
-    authors:
-    - parsley
-  1982d_parsley:
-    title: Homalozoans
-    book: e-faunas-bromide
-    pages:
-    - 322
-    - 323
-    pubDate:
-      year: 1982
-    authors:
-    - parsley
-  1982_smith.a.b:
-    title: The affinities of the Middle Cambrian Haplozoa (Echinodermata)
-    journal: alcheringa
-    volume: 6
-    number: 2
-    pages:
-    - 93
-    - 99
-    pubDate:
-      year: 1982
-    processDates:
-      received: 1981-02-04
-    authors:
-    - smith.a.b
-    identifiers:
-      doi: 10.1080/03115518208566989
-  1982g_sprinkle:
-    title: Cylcindrical and Globular Rhombiferans
-    book: e-faunas-bromide
-    pages:
-    - 231
-    - 273
-    pubDate:
-      year: 1982
-    authors:
-    - sprinkle
-  1982h_sprinkle:
-    title: Palaeocystitids
-    book: e-faunas-bromide
-    pages:
-    - 289
-    - 296
-    pubDate:
-      year: 1982
-    authors:
-    - sprinkle
-  1982i_sprinkle:
-    title: Astrocystites
-    book: e-faunas-bromide
-    pages:
-    - 307
-    - 308
-    pubDate:
-      year: 1982
-    authors:
-    - sprinkle
-  1982_sprinkle_parsley:
-    title: '"Golf-Ball" Paracrinoid'
-    book: e-faunas-bromide
-    pages:
-    - 224
-    - 230
-    pubDate:
-      year: 1982
-    authors:
-    - sprinkle
-    - parsley
-  1983_bockelie_paul.c.r.c:
-    title: Cyathotheca suecica and its bearing on the evolution of the Edrioasteroidea
-    journal: lethaia
-    volume: 16
-    number: 4
-    pubDate:
-      year: 1983
-      month: 10
-    pages:
-    - 257
-    - 264
-    authors:
-    - bockelie
-    - paul.c.r.c
-    identifiers:
-      doi: 10.1111/j.1502-3931.1983.tb02006.x
-  1983_brett_frest_sprinkle_clement.c.r:
-    title: "Coronoidea: A New Class of Blastozoan Echinoderms Based on Taxonomic Reevaluation of Stephanocrinus"
-    journal: jofpaleo
-    volume: 57
-    number: 4
-    pages:
-    - 627
-    - 651
-    pubDate:
-      year: 1983
-      month: 7
-    authors:
-    - brett
-    - frest
-    - sprinkle
-    - clement.c.r
-    identifiers:
-      jstor: 1304625
-  1983_jell:
-    title: Early Devonian echinoderms from Victoria (Rhombifera, Blastoidea and Ophiocistioidea)
-    seen: false
-    journal: mem-aust
-    volume: 1
-    pages:
-    - 209
-    - 235
-    pubDate:
-      year: 1983
-    authors:
-    - jell
-  1985_fatka_kordule:
-    title: Etoctenocystis bohemica gen. et sp. nov. - new Ctenocystoid from Czechoslovakia (Echinodermata, Middle Cambrian)
-    complete:
-      named: true
-      open: false
-      history: false
-      specimens:
-        basic: true
-        all: false
-    journal: vestnik
-    volume: 60
-    number: 4
-    pages:
-    - 225
-    - 230
-    pubDate:
-      year: 1985
-      month: 1
-    processDates:
-      submitted: 1984-10-02
-      received: 1985-02-05
-    authors:
-    - fatka
-    - kordule
-    identifiers:
-      url: https://www.researchgate.net/publication/277013746_Etoctenocystis_bohemica_gen_et_sp_nov_-_new_Ctenocystoid_from_Czechoslovakia_Echinodermata_Middle_Cambrian#fullTextFileContent
-  1985_jell_burrett_banks:
-    title: Cambrian and Ordovician echinoderms from eastern Australia
-    complete:
-      named: true
-      open: false
-      history: false
-      specimens:
-        basic: false
-        all: false
-    journal: alcheringa
-    volume: 9
-    number: 3
-    pages:
-    - 183
-    - 208
-    authors:
-    - jell
-    - burrett
-    - banks
-    pubDate:
-      year: 1985
-    processDates:
-      received: 1984-11-22
-      online: 2008-11-27
-    identifiers:
-      doi: 10.1080/03115518508618967
-  1985_smith.a.b:
-    title: Cambrian Eleutherozoan Echinoderms and the Early Diversification of Edrioasteroids
-    journal: palaeontology
-    volume: 28
-    number: 4
-    pages:
-    - 715
-    - 756
-    pubDate:
-      year: 1985
-    processDates:
-      received: 1984-10-07
-      revised: 1985-03-25
-    authors:
-    - smith.a.b
-    identifiers:
-      url: https://palass.org/sites/default/files/media/publications/palaeontology/volume_28/vol28_part4_pp715-756.pdf
-  1985_sprinkle:
-    title: New edrioasteroid from the Middle Cambrian of western Utah
-    journal: kansas
-    number: 116
-    pubDate:
-      year: 1985
-      month: 9
-      day: 12
-    processDates:
-      received: 1984-07-26
-    authors:
-    - sprinkle
-    identifiers:
-      url: https://kuscholarworks.ku.edu/entities/publication/de425cc9-1319-41f5-b1b4-0c6a6e13757a
-  1987_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley:
-    title: Mandalacystis, a New Rhipidocystid Eocrinoid from the Whiterockian Stage (Ordovician) in Oklahoma and Nevada.pdf
-    journal: jofpaleo
-    volume: 61
-    number: 6
-    pages:
-    - 1222
-    - 1235
-    pubDate:
-      year: 1987
-      month: 11
-    processDates:
-      received: 1987-05-28
-    authors:
-    - lewis.r.d
-    - sprinkle
-    - bailey.j.b
-    - moffit.j
-    - parsley
-    identifiers:
-      jstor: 1395209
-  1987_smith.a.b_arbizu:
-    title: Inverse larval development in a Devonian edrioasteroid from Spain and the phylogeny of Agelacrinitinae
-    journal: lethaia
-    volume: 20
-    number: 1
-    pubDate:
-      year: 1987
-    pages:
-    - 49
-    - 62
-    authors:
-    - smith.a.b
-    - arbizu
-  1987_ubaghs:
-    title: Echinodermes nouveaux du Cambrien moyen de la Montagne Noire (France)
-    journal: annals
-    volume: 73
-    number: 1
-    pubDate:
-      year: 1987
-    pages:
-    - 1
-    - 27
-    authors:
-    - ubaghs
-    identifiers:
-      url: "https://eurekamag.com/research/020/905/020905946.php?srsltid=AfmBOopSCziNxG2P7g_GYIehW28l_W04c4LXptNYESzBhP6ZiraKuipf"
-  1988_guensburg:
-    title: Systematics, Functional Morphology, and Life Modes of Late Ordovician Edrioasteroids, Orchard Creek Shale, Southern Illinois
-    journal: jofpaleo
-    volume: 62
-    number: 1
-    pubDate:
-      year: 1988
-      month: 1
-    pages:
-    - 110
-    - 126
-    authors:
-    - guensburg
-    identifiers:
-      jstor: 1305262
-  1988_ubaghs_robison:
-    title: Homalozoan echinoderms of the Wheeler Formation (Middle Cambrian) of Western Utah
-    complete:
-      named: true
-      open: null
-      history: null
-      specimens:
-        basic: true
-        all: false
-    journal: kansas
-    number: 129
-    pubDate:
-      year: 1988
-      month: 7
-      day: 14
-    processDates:
-      received: 1987-11-15
-    authors:
-    - ubaghs
-    - robison
-    identifiers:
-      url: https://www.researchgate.net/publication/239588179_Homalozoan_echinoderms_of_the_Wheeler_Formation_Middle_Cambrian_of_Western_Utah
-  1990_fatka_kordule:
-    title: Vyscystis ubaghsi gen. et sp.nov., imbricate eocrinoid from Czechoslovakia
-    journal: vestnik
-    volume: 65
-    number: 5
-    pages:
-    - 315
-    - 319
-    plates:
-    - I
-    - II
-    pubDate:
-      year: 1990
-    processDates:
-      received: 1990-02-06
-      accepted: 1990-04-11
-    authors:
-    - fatka
-    - kordule
-    identifiers:
-      url: https://www.researchgate.net/publication/292218537
-  1990_smith.a.b_jell:
-    title: Cambrian edrioasteroids from Australia and the origin of starfishes
-    journal: mem-q
-    volume: 28
-    number: 2
-    authors:
-    - smith.a.b
-    - jell
-    pubDate:
-      year: 1990
-      month: 8
-      day: 31
-    identifiers:
-      url: https://www.biodiversitylibrary.org/page/40655037
-  1990_ubaghs_vizcaïno:
-    title: A new eocrinoid from the Lower Cambrian of Spain
-    journal: palaeontology
-    volume: 33
-    number: 1
-    pages:
-    - 249
-    - 256
-    pubDate:
-      year: 1990
-    authors:
-    - ubaghs
-    - vizcaïno
-  1991_fatka:
-    title: Akadocrinus knizeki sp.nov., gogiid eocrinoid from Czechoslovakia (Echinodermata, Middle Cambrian)
-    journal: vestnik
-    volume: 66
-    number: 4
-    pubDate:
-      year: 1991
-    authors:
-    - fatka
-  1993_dzik_orłowski:
-    title: The Late Cambrian eocrinoid Cambrocrinus
-    journal: acta-p-polonica
-    volume: 38
-    number: 1/2
-    pages:
-    - 21
-    - 34
-    pubDate:
-      year: 1993
-    authors:
-    - dzik
-    - orłowski
-  1994_guensburg_sprinkle:
-    title: Revised phylogeny and functional interpretation of the Edrioasteroidea based on new taxa from the Early and Middle Ordovician of western Utah
-    journal: fieldiana
-    volume: New Series
-    number: 29
-    pubDate:
-      year: 1994
-      month: 12
-      day: 30
-    authors:
-    - guensburg
-    - sprinkle
-  1994_zhao.y.l_huang.y.z_gong.x.y:
-    title: The middle Cambrian Kaili Formation of southwestern China
-    journal: acta-p-sinica
-    volume: 33
-    pages:
-    - 305
-    - 324
-    pubDate:
-      year: 1994
-    authors:
-    - zhao.y.l
-    - huang.y.z
-    - gong.x.y
-  1994_zhao.y.l_zhu.m.y:
-    title: Medusiform fossils of Kaili Fauna from Taijiang, Guizhou
-    journal: acta-p-sinica
-    volume: 33
-    pages:
-    - 350
-    - 358
-    pubDate:
-      year: 1994
-    authors:
-    - zhao.y.l
-    - zhu.m.y
-  1995_dzik_orłowski:
-    title: Primitive ctenocystoid echinoderm from the earliest Middle Cambrian of Poland
-    seen: false
-    complete:
-      history: false # the named species was previously in open nomenclature(s)
-    journal: annals
-    volume: 81
-    pages:
-    - 17
-    - 35
-    pubDate:
-      year: 1995
-    authors:
-    - dzik
-    - orłowski
-  1996_sumrall:
-    title: Late Paleozoic Edrioasteroids (Echinodermata) From The North American Midcontinent
-    journal: jofpaleo
-    volume: 70
-    number: 6
-    pubDate:
-      year: 1996
-    processDates:
-      accepted: 1996-01-24
-    pages:
-    - 969
-    - 985
-    authors:
-    - sumrall
-    identifiers:
-      doi: 10.1017/S0022336000038671
-  1997_paul.c.r.c:
-    title: British Ordovician Cystoids, Part 3
-    journal: monograph-palaeo
-    volume: 151
-    number: 604
-    pubDate:
-      year: 1997
-      month: 12
-    authors:
-    - paul.c.r.c
-    identifiers:
-      doi: 10.1080/25761900.2022.12131785
-  1997_sumrall_sprinkle_guensburg:
-    title: Systematics And Paleoecology Of Late Cambrian Echinoderms From The Western United States
-    journal: jofpaleo
-    volume: 71
-    number: 6
-    pages:
-    - 1091
-    - 1109
-    pubDate:
-      year: 1997
-      month: 11
-    processDates:
-      accepted: 1997-02-21
-    authors:
-    - sumrall
-    - sprinkle
-    - guensburg
-    identifiers:
-      doi: 10.1017/S0022336000036052
-  1998_dean.j_smith.a.b:
-    title: Palaeobiology of the primitive Ordovician pelmatozoan echinoderm Cardiocystites
-    journal: palaeontology 
-    volume: 41
-    number: 6
-    pages:
-    - 1183
-    - 1194
-    pubDate:
-      year: 1998
-      month: 12
-    processDates:
-      received: 1997-09-10
-      revised: 1997-11-20
-    authors:
-    - dean.j
-    - smith.a.b
-    identifiers:
-      url: https://www.biodiversitylibrary.org/page/49772430
-  1999_domínguez alonso:
-    title: "The early evolution of echinoderms: the class Ctenocystoidea and its closest relatives revisited"
-    book: e-research-1998
-    seen: false
-    pages:
-    - 263
-    - 268
-    pubDate:
-      year: 1999
-    authors:
-    - domínguez alonso
-  1999_ubaghs:
-    title: Échinodermes nouveaux du Cambrien supérieur de la Montagne Noire (France méridionale)
-    journal: geobios
-    volume: 31
-    number: 6
-    pages:
-    - 809
-    - 829
-    pubDate:
-      year: 1999
-    processDates:
-      received: 1997-12-01
-      accepted: 1998-01-26
-    authors:
-    - ubaghs
-  1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y:
-    title: A progress report on research on the early Middle Cambrian Kaili Biota, Guizhou, PRC
-    journal: acta-p-sinica
-    volume: 38
-    number: Supplement
-    pubDate:
-      year: 1999
-      month: 12
-    authors:
-    - zhao.y.l
-    - yuan.j.l
-    - zhu.m.y
-    - yang.r.d
-    - guo.q.j
-    - qian.y
-    - huang.y.z
-    - pan.y
-    identifiers:
-      url: https://www.researchgate.net/publication/284507301_A_progress_report_on_research_on_the_early_Middle_Cambrian_Kaili_Biota_Guizhou_PRC
-  2000_sumrall_garbisch_pope:
-    title: The Systematics of Postibullinid Edrioasteroids
-    journal: jofpaleo
-    volume: 74
-    number: 1
-    pubDate:
-      year: 2000
-      month: 1
-    pages:
-    - 72
-    - 83
-    authors:
-    - sumrall
-    - garbisch
-    - pope
-    identifiers:
-      jstor: 1306885
-  2001_sumrall_sprinkle_guensburg:
-    title: "Comparison Of Flattened Blastozoan Echinoderms: Insights From The New Early Ordovician Eocrinoid Haimacystis Rozhnovi"
-    journal: jofpaleo
-    volume: 75
-    number: 5
-    pages:
-    - 985
-    - 992
-    pubDate:
-      year: 2001
-    processDates:
-      accepted: 2001-03-17
-    authors:
-    - sumrall
-    - sprinkle
-    - guensburg
-    identifiers:
-      doi: 10.1666/0022-3360(2001)075<0985:COFBEI>2.0.CO;2
-  2002_gil cid_domínguez alonso:
-    title: |
-      "Ubaghsicystis segurae nov. gen. y sp., nuevo Eocrinoide
-      (Echinodermata) del Cámbrico Medio del Norte de España"
-    translations:
-      en: |
-        "Ubaghsicystis segurae nov. gen. and sp., a new Eocrinoid
-        (Echinoderniata) of Middle Cambrian from Northern Spain"
-    journal: coloquios
-    volume: 53
-    pages:
-    - 21
-    - 32
-    pubDate:
-      year: 2002
-    authors:
-    - gil cid
-    - domínguez alonso
-  2002_zhu.m.y_zhao.y.l_chen.j.y:
-    title: Revision of the Cambrian discoidal animals Stellostomites eumorphus and Pararotadiscus guizhouensis from South China
-    journal: geobios
-    volume: 35
-    pages:
-    - 165
-    - 185
-    pubDate:
-      year: 2002
-    processDates:
-      received: 2001-04-02
-      accepted: 2001-09-24
-    authors:
-    - zhu.m.y
-    - zhao.y.l
-    - chen.j.y
-  2003_guensburg_sprinkle:
-    title: The oldest known crinoids (Early Ordovician, Utah) and a new crinoid plate homology system
-    journal: bullamp
-    number: 364
-    pubDate:
-      year: 2003
-      month: 7
-      day: 10
-    authors:
-    - guensburg
-    - sprinkle
-    identifiers:
-      url: https://www.biodiversitylibrary.org/page/27980785
-  2005_frest:
-    title: Ampheristocystis, a Silurian (Lower Wenlock) eocrinoid (Echinodermata, Blastozoa) from Indiana
-    journal: geo-j
-    volume: 40
-    pages:
-    - 301
-    - 329
-    pubDate:
-      year: 2005
-    authors:
-    - frest
-    identifiers:
-      doi: 10.1002/gj.1017
-  2006_parsley_zhao.y.l:
-    title: Long stalked eocrinoids in the basal Middle Cambrian Kaili Biota, Taijiang County, Guizhou Province, China
-    journal: jofpaleo
-    volume: 80
-    number: 6
-    pages:
-    - 1058
-    - 1071
-    pubDate:
-      year: 2006
-    processDates:
-      accepted: 2006-07-21
-    authors:
-    - parsley
-    - zhao.y.l
-    identifiers:
-      doi: 10.1666/0022-3360(2006)80[1058:LSEITB]2.0.CO;2
-  2006_sprinkle_collins.d:
-    title: New eocrinoids from the Burgess Shale, southern British Columbia, Canada, and the Spence Shale, northern Utah, USA
-    journal: can-j-earth-sci
-    volume: 43
-    number: 3
-    pages:
-    - 303
-    - 322
-    pubDate:
-      year: 2006
-      month: 3
-    authors:
-    - sprinkle
-    - collins.d
-    identifiers:
-      doi: 10.1139/E05-107
-  2007a_nardin:
-    title: "New specimens of Lingulocystis Thoral, 1935 (Eocrinoidea, Blastozoa) from the Arenig (Lower Ordovician) of Montagne noire (southern France): Intraspecific morphological variability, stratigraphic, and palaeoecological implications"
-    journal: annals
-    volume: 93
-    pages:
-    - 199
-    - 214
-    pubDate:
-      year: 2007
-    processDates:
-      online: 2007-08-14
-    authors:
-    - nardin
-    identifiers:
-      doi: 10.1016/j.annpal.2007.06.004
-  2007b_nardin:
-    title: "New occurrence of the Ordovician eocrinoid Cardiocystites: Palaeogeographical and palaeoecological implications"
-    journal: acta-p-polonica
-    volume: 42
-    number: 1
-    pages:
-    - 17
-    - 26
-    pubDate:
-      year: 2007
-    authors:
-    - nardin
-    identifiers:
-      url: https://www.app.pan.pl/article/item/app52-017.html
-  2007_zhao.y.l_parsley_peng.j:
-    title: Early Cambrian eocrinoids from Guizhou Province, South China
-    journal: ppp
-    volume: 254
-    pages:
-    - 317
-    - 327
-    pubDate:
-      year: 2007
-    processDates:
-      accepted: 2007-03-05
-    authors:
-    - zhao.y.l
-    - parsley
-    - peng.j
-    identifiers:
-      doi: 10.1016/j.palaeo.2007.03.020
-  2008_stewart_owen:
-    title: "Probing the deep shelf: a Lagerstätte from the Upper Ordovician of Girvan, southwestern Scotland"
-    journal: lethaia
-    complete:
-      named: null
-      open: false
-      history: null
-      specimens:
-        basic: false
-        all: false
-    volume: 41
-    pages:
-    - 139
-    - 146
-    pubDate:
-      year: 2008
-    processDates:
-      received: 2006-08-10
-      accepted: 2007-12-16
-    authors:
-    - stewart
-    - owen
-    identifiers:
-      doi: 10.1111/j.1502-3931.2008.00117.x
-  2008_zhao.y.l_parsley_peng.j:
-    title: "Basal Middle Cambrian Short-Stalked Eocrinoids from the Kaili Biota: Guizhou Province, China"
-    journal: jofpaleo
-    volume: 82
-    number: 2
-    pages:
-    - 415
-    - 422
-    pubDate:
-      year: 2008
-      month: 3
-    authors:
-    - zhao.y.l
-    - parsley
-    - peng.j
-    identifiers:
-      jstor: 20144206
-  2009_zamora_gozalo_liñán:
-    title: "Middle Cambrian gogiid echinoderms from Northeast Spain: Taxonomy, palaeoecology, and palaeogeographic implications"
-    journal: acta-p-polonica
-    volume: 54
-    number: 2
-    pages:
-    - 253
-    - 264
-    pubDate:
-      year: 2009
-    authors:
-    - zamora
-    - gozalo
-    - liñán
-    identifiers:
-      doi: 10.4202/app.2008.0010
-  2010_müller.p_hahn:
-    title: Edrioasteroidea aus den Seifen-Schichten im Westerwald, Rheinisches Schiefer-Gebirge (Unter-Devon, Deutschland), Teil 1
-    journal: geo-et-palaeo
-    volume: 43
-    pubDate:
-      year: 2010
-      month: 3
-      day: 30
-    pages:
-    - 9
-    - 47
-    authors:
-    - müller.p
-    - hahn
-    quotes:
-    - |
-      Bell (1976) established the order Isorophida with
-      the two suborders Lebedocystina and Isorophina.
-      The Isorophina are further subdivided into
-      Isorophidae (Bell, 1976) [correct name Hemicystidae,
-      provided the genus Hemicystitides (Hall, 1852) is included
-      in this family) for the original, Ordovician-Silurian
-      genera, and Agelacrinitidae (Chapman, 1860) for
-      the advanced Devonian-Carboniferous genera.
-      The Pyrgocystidae (Kesling, 1967) with the genus
-      Pergocystis (Bather, 1915) and the Carboniferous
-      Lispidecodidae (Kesling, 1967) with
-      Lispidecodus (Kesling, 1967) are not mentioned in Bell.
-    - |
-      Holloway and Jell (1983) established the Rhenopyrgidae
-      with the genus Rhenopyrgus (Dehm, 1961). They left the
-      assignment of this family to an order open.
-    - |
-      Smith and Arbizu (1987) combine all taxa of the Isorophina
-      into the subfamily Agelacrinitinae and present their phylogeny.
-    - |
-      Sumrall (1993) again uses the families Isorophidae and
-      Agelacrinitidae in the sense of Bell.
-    - |
-      Sumrall, Garbisch and Pope (2000) establish the subfamily
-      Postibullinae within the Agelacrinitidae
-    - |
-      Guensburg and Sprinkle (1994) subdivide the Isorophida
-      into only two families without subdivision into
-      suborders — Agelacrinitidae (incl. the Hemicystitidae)
-      and the Lebetodiscidae (incl. the Pyrgocystidae).
-    - |
-      Here, we follow the classification by
-      Guensburg & Sprinkle (1994), but classify the Hemicystitidae
-      and the Pyrgocystidae as independent families. This now
-      provides three families and three subfamilies for the
-      Devonian-Carboniferous forms — the Agelacrinitidae
-      (with the Agelacrinitinae, Discocystinae, and Postibullinae),
-      the Pyrgocystidae, and the Rhenopyrgidae. With the exception
-      of the Discocystinae (only documented from the Upper Devonian
-      onward), all of these families and subfamilies occur in the
-      German Lower Devonian; however, the Rhenopyrgidae are not
-      discussed in this study. The systematic classification of
-      the Agelacrinitidae is essentially based on Sumrall (1996, 2000).
-    - |
-      Pyrgocystidae
-      In the past, about a dozen taxa have been described under
-      Pyrgocystis, of which only the scale tube is present
-      (Bather 1915; Richter 1930; Hecker 1939; Regnéll 1945).
-      According to Holloway & Jell (1983), only forms whose
-      penduncular zone is not composed of vertically arranged
-      rows of plates belong to Pyrgocystis, so they only include
-      the type species P. sardesoni (Bather, 1915), and, with
-      reservations, P. volborthi (Hecker, 1939) and P.? petalus
-      (Holloway & Jell, 1938) from the Ludlovian of Australia.
-      Klug et al. (2008) also classify Rhenopyrgus octogona
-      (Richter, 1930) as Pyrgocystis. Since the scale tube of
-      this species consists of vertical keeled rows, we consider
-      an assignment to Pyrgocystis unlikely.
-      According to Holloway & Jell (1983), the Ordovician type
-      species is based on only one specimen (see Regnéll 1966,
-      Fig. 127-2a-b), which only poorly reveals the structure
-      of the adoral region. Therefore, the assignment of
-      P.? petalus to this genus is uncertain, which
-      Holloway & Jell (1983) express by adding a question mark
-      to P.? petalus. We follow this example here with
-      P.? postpetalus n. sp. from the Lower Devonian of Germany.
-    - |
-      On the position of P. neglecta — Smith, 1983, places
-      the species within Postibulla; this assignment is adopted
-      by Sumrall et al. (2000). However, the genus differs from
-      Postibulla in one essential characteristic—a posterior
-      oral protrusion is not developed, which is why it is
-      placed here within Parapostibulla.
-    - |
-      The key difference between Agelacrinites and Krama lies
-      in the structure of the ambulacra. While these are
-      biserial in Agelacrinites, they are triserial to multiserial
-      in Krama. The genus was established by Bell (1965) as
-      a monotypic genus with the species K. devonica (Bassler, 1936)
-      based on material from the Middle Devonian of North America.
-      Smith & Arbizui (1987) described a specimen from the
-      Lower Devonian of Spain, which they placed under
-      Krama devonica. According to current knowledge, this is
-      a representative of a separate species (K. hispanica n. sp.).
-      In addition, two new species from the Lower Devonian of
-      Germany were described. The main differences between these
-      four species relate to the structure of the oral region,
-      the course of the ambulacrum D, the thecal type, the
-      number of plate rows between the ambulacrum C and the
-      periprocete, the structure of the upper ring, and the
-      appearance of sculpture in the form of a granulated plate
-      surface. Table 4 summarizes the differences between the
-      four species.
-  2010_parsley_zhao.y.l:
-    title: A New Turban-Shaped Gogiid Eocrinoid From The Kaili Formation (Kaili Biota), Balang, Jianhe County, Guizhou Province, China
-    journal: jofpaleo
-    volume: 84
-    number: 3
-    pages:
-    - 549
-    - 553
-    authors:
-    - parsley
-    - zhao.y.l
-    pubDate:
-      year: 2010
-      month: 5
-    processDates:
-      accepted: 2009-11-29
-    identifiers:
-      jstor: 40605503
-  2011_sprinkle_parsley_zhao.y.l_peng.j:
-    title:  Revision Of Lyracystid Eocrinoids From The Middle Cambrian Of South China And Western Laurentia
-    journal: jofpaleo
-    volume: 25
-    number: 2
-    pages:
-    - 250
-    - 255
-    pubDate:
-      year: 2011
-    processDates:
-      accepted: 2010-09-15
-    authors:
-    - sprinkle
-    - parsley
-    - zhao.y.l
-    - peng.j
-    identifiers:
-      doi: 10.1666/10-072.1
-  2010_zhao.y.l_sumrall_parsley_peng.j:
-    title: Kailidiscus, A New Plesiomorphic Edrioasteroid From The Basal Middle Cambrian Kaili Biota Of Guizhou Province, China
-    journal: jofpaleo
-    volume: 84
-    number: 5
-    pages:
-    - 668
-    - 680
-    authors:
-    - zhao.y.l
-    - sumrall
-    - parsley
-    - peng.j
-    pubDate:
-      year: 2010
-    processDates:
-      accepted: 2010-03-20
-    identifiers:
-      doi: 10.1666/09-159.1
-  # 2012_doweld:
-  #   title: "Heckerocrinus, a new substitute generic name for fossil crinoid Bockia Hecker 1940 (Echinodermata: Crinoidea) non Reisinger 1924 (Vermes: Turbellaria)"
-    
-  2012_zamora_rahman_smith.a.b:
-    title: Plated Cambrian Bilaterians Reveal the Earliest Stages of Echinoderm Evolution
-    journal: plos-one
-    volume: 7
-    number: 6
-    articleNumber: e38296
-    pubDate:
-      year: 2012
-      month: 6
-      day: 6
-    processDates:
-      received: 2012-03-23
-      accepted: 2012-05-01
-    authors:
-    - zamora
-    - rahman
-    - smith.a.b
-    identifiers:
-      doi: 10.1371/journal.pone.0038296
-  2012_zamora_smith.a.b:
-    title: Cambrian stalked echinoderms show unexpected plasticity of arm construction
-    journal: procrsocb
-    volume: 279
-    pages:
-    - 293
-    - 298
-    pubDate:
-      year: 2012
-    processDates:
-      received: 2011-04-13
-      accepted: 2011-05-19
-      online: 2011-06-08
-    identifiers:
-      doi: 10.1098/rspb.2011.0777
-    authors:
-    - zamora
-    - smith.a.b
-  2013_nardin_bohatý:
-    title: A new pleurocystitid blastozoan from the Middle Devonian of the Eifel (Germany) and its phylogenetic importance
-    journal: acta-p-polonica
-    volume: 58
-    number: 3
-    pages:
-    - 533
-    - 544
-    pubDate:
-      year: 2013
-    processDates:
-      received: 2011-08-06
-      accepted: 2012-01-20
-      online: 2012-04-20
-    authors:
-    - nardin
-    - bohatý
-  2013_smith.a.b_zamora:
-    title: Cambrian spiral-plated echinoderms from Gondwana reveal the earliest pentaradial body plan
-    journal: procrsocb
-    volume: 280
-    articleNumber: 20131197
-    pubDate:
-      year: 2013
-    processDates:
-      received: 2013-05-13
-      accepted: 2013-06-04
-      online: 2013-08-22
-    identifiers:
-      doi: 10.1098/rspb.2013.1197
-    authors:
-    - smith.a.b
-    - zamora
-  2013_smith.a.b_zamora_álvaro:
-    title: The oldest echinoderm faunas from Gondwana show that echinoderm body plan diversification was rapid
-    complete:
-      named: null
-      open: null
-      history: null
-      specimens:
-        basic: null
-        all: null
-    journal: nat-com
-    volume: 4
-    articleNumber: 1385
-    pubDate:
-      year: 2013
-    processDates:
-      received: 2012-08-08
-      accepted: 2012-12-14
-      published: 2013-01-22
-    authors:
-    - smith.a.b
-    - zamora
-    - álvaro
-    identifiers:
-      doi: 10.1038/ncomms2391
-  2015_ausich_kammer_rhenberg_wright.d.f:
-    title: Early phylogeny of crinoids within the pelmatozoan clade
-    journal: palaeontology
-    volume: 58
-    number: 6
-    pages:
-    - 937
-    - 952
-    authors:
-    - ausich
-    - kammer
-    - rhenberg
-    - wright.d.f
-    pubDate:
-      year: 2015
-      month: 10
-    processDates:
-      received: 2015-06-02
-      revised: 2015-08-24
-      accepted: 2015-08-24
-    identifiers:
-      doi: 10.1111/pala.12204
-  2015_rahman_stewart_zamora:
-    title: The youngest ctenocystoids from the Upper Ordovician of the United Kingdom and the evolution of the bilateral body plan in echinoderms
-    complete:
-      named: true
-      open: null
-      history: null
-      specimens:
-        basic: true
-        all: true
-    journal: acta-p-polonica
-    volume: 60
-    number: 1
-    pages:
-    - 39
-    - 48
-    authors:
-    - rahman
-    - stewart
-    - zamora
-    pubDate:
-      year: 2015
-    processDates:
-      received: 2013-12-04
-      accepted: 2014-03-20
-      online: 2014-03-24
-    identifiers:
-      doi: 10.4202/app.00048.2013
-  2015_sumrall_zamora:
-    title: A columnal-bearing eocrinoid from the Cambrian Burgess Shale (British Columbia, Canada)
-    journal: jofpaleo
-    volume: 89
-    number: 2
-    pages:
-    - 366
-    - 368
-    pubDate:
-      year: 2015
-      month: 3
-    processDates:
-      accepted: 2014-09-28
-    authors:
-    - sumrall
-    - zamora
-    identifiers:
-      doi: 10.1017/jpa.2014.54
-  2017_zamora_deline_álvaro_rahman:
-    title: The Cambrian Substrate Revolution and the early evolution of attachment in suspension-feeding echinoderms
-    complete:
-      named: null
-      open: null
-      history: null
-      specimens:
-        basic: null
-        all: null
-    journal: es-rev
-    volume: 171
-    pages:
-    - 478
-    - 491
-    pubDate:
-      year: 2017
-    processDates:
-      received: 2017-03-07
-      revised: 2017-06-30
-      accepted: 2017-06-30
-      online: 2017-07-01
-    authors:
-    - zamora
-    - deline
-    - álvaro
-    - rahman
-  2017_zamora_sumrall_zhu.x.j_lefebvre:
-    title: A new stemmed echinoderm from the Furongian of China and the origin of Glyptocystitida (Blastozoa, Echinodermata)
-    journal: geomag
-    volume: 154
-    number: 3
-    pages:
-    - 465
-    - 475
-    pubDate:
-      year: 2017
-    processDates:
-      received: 2015-11-17
-      accepted: 2016-01-27
-      online: 2016-03-03
-    identifiers:
-      doi: 10.1017/S001675681600011X
-    authors:
-    - zamora
-    - sumrall
-    - zhu.x.j
-    - lefebvre
-  2018_lefebvre_lerosey-aubril:
-    title: "Laurentian origin of solutan echinoderms: new evidence from the Guzhangian (Cambrian Series 3) Weeks Formation of Utah, USA"
-    complete:
-      named: true
-      history: false
-    journal: geomag
-    volume: 155
-    number: 5
-    pages:
-    - 1190
-    - 1204
-    pubDate:
-      year: 2018
-    processDates:
-      received: 2016-09-19
-      accepted: 2017-02-08
-      online: 2017-03-13
-    identifiers:
-      doi: 10.1017/S0016756817000152
-    authors:
-    - lefebvre
-    - lerosey-aubril
-  2019_wen.r_babcock_peng.j_robison:
-    title: "New edrioasteroid (Echinodermata) from the Spence Shale (Cambrian), Idaho, USA: further evidence of attachment in the early evolutionary history of edrioasteroids"
-    journal: bullgeo
-    volume: 94
-    number: 1
-    pages:
-    - 115
-    - 124
-    authors:
-    - wen.r
-    - babcock
-    - peng.j
-    - robison
-    pubDate:
-      year: 2019
-    processDates:
-      received: 2018-10-30
-      revised: 2019-03-05
-      accepted: 2019-03-05
-      online: 2019-03-21
-      issued: 2019-03-31
-    identifiers:
-      doi: 10.3140/bull.geosci.1730
-  2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler:
-    title: Athenacrinus n. gen. and other early echinoderm taxa inform crinoid origin and arm evolution
-    journal: jofpaleo
-    volume: 94
-    number: 2
-    pubDate:
-      year: 2020
-    pages:
-    - 311
-    - 333
-    processDates:
-      accepted: 2019-10-03
-    identifiers:
-      doi: 10.1017/jpa.2019.87
-    authors:
-    - guensburg
-    - sprinkle
-    - mooi
-    - lefebvre
-    - david
-    - roux
-    - derstler
-  2020_zamora_sprinkle_sumrall:
-    title: A revaluation of rhipidocystid echinoderms based on a new flattened blastozoan from the Upper Ordovician of Maryland, USA
-    journal: acta-p-polonica
-    volume: 65
-    number: 3
-    pages:
-    - 455
-    - 465
-    pubDate:
-      year: 2020
-    authors:
-    - zamora
-    - sprinkle
-    - sumrall
-    identifiers:
-      doi: 10.4202/app.00718.2019
-      url: https://www.app.pan.pl/article/item/app007182019.html
-  2021_jell_sprinkle:
-    title: Revision of Whitehouse’s eocrinoids Peridionites and Cymbionites, with description of the associated fauna including two new echinoderm genera, lower Middle Cambrian Thorntonia Limestone, northwestern Queensland
-    complete:
-      notes: Non-echinoderm trees not captured
-      named: true
-      open: true
-      history: true
-      specimens:
-        basic: true
-        all: true
-    journal: alcheringa
-    volume: 45
-    number: 1
-    pages:
-    - 1
-    - 55
-    pubDate:
-      year: 2021
-    processDates:
-      received: 2020-07-03
-      revised: 2020-11-22
-      accepted: 2021-01-04
-      online: 2021-06-02
-    authors:
-    - jell
-    - sprinkle
-    identifiers:
-      doi: 10.1080/03115518.2021.1913512
-  2021_parsley:
-    title: Evolution, Functional Morphology and Paedomorphism in the Gogiid-Ascocystitid Lineage (Eocrinoidea; Cambrian-Ordovician)
-    journal: paleo-j
-    volume: 55
-    number: 9
-    pages:
-    - 966
-    - 976
-    pubDate:
-      year: 2021
-    authors:
-    - parsley
-    identifiers:
-      doi: 10.1134/S0031030121090100
-  2022_zamora_rahman_sumrall_gibson_thompson:
-    title: Cambrian edrioasteroid reveals new mechanism for secondary reduction of the skeleton in echinoderms
-    journal: procrsocb
-    volume: 289
-    articleNumber: 20212733
-    pubDate:
-      year: 2022
-    processDates:
-      received: 2021-12-17
-      accepted: 2022-02-04
-    authors:
-    - zamora
-    - rahman
-    - sumrall
-    - gibson
-    - thompson
-    identifiers:
-      doi: 10.1098/rspb.2021.2733
-  2022_zhao.j_guo.j_selden_cong.p.y_li.y.j:
-    title: A new eocrinoid from the Guanshan Biota (Cambrian Series 2, Stage 4), with implication of the development of different attachment modes in early Cambrian
-    journal: pworld
-    volume: 31
-    pages:
-    - 185
-    - 193
-    pubDate:
-      year: 2022
-    processDates:
-      received: 2021-02-26
-      revised: 2021-07-29
-      accepted: 2021-08-04
-      online: 2021-08-12
-    authors:
-    - zhao.j
-    - guo.j
-    - selden
-    - cong.p.y
-    - li.y.j
-  2022_zhao.j_rahman_zamora_chen.a_cong.p.y:
-    title: The first edrioasteroid echinoderm from the lower Cambrian Chengjiang biota of Yunnan Province, China
-    journal: papersinpalaeo
-    number: 8
-    articleNumber: e1465
-    pubDate:
-      year: 2022
-      month: 8
-      day: 27
-    authors:
-    - zhao.j
-    - rahman
-    - zamora
-    - chen.a
-    - cong.p.y
-    processDates:
-      received: 2022-01-21
-      revised: 2022-06-07
-      accepted: 2022-06-07
-      online: 2022-08-07
-    identifiers:
-      doi: 10.1002/spp2.1465
-  2024_wang.d.z_nohejlová_sun.z.x_zeng.h_lefebvre_yang.x.l_zhao.f.c:
-    title: First report of lepidocystid echinoderm in the Cambrian of North China- Evolutionary and Palaeobiogeographic implications
-    journal: ppp
-    volume: 644
-    articleNumber: 112194
-    pubDate:
-      year: 2024
-    processDates:
-      received: 2024-02-21
-      revised: 2024-04-07
-      accepted: 2024-04-09
-      online: 2024-04-16
-    authors:
-    - wang.d.z
-    - nohejlová
-    - sun.z.x
-    - zeng.h
-    - lefebvre
-    - yang.x.l
-    - zhao.f.c
-    identifiers:
-      doi: 10.1016/j.palaeo.2024.112194
-  2024_zamora_guensburg_sprinkle:
-    title: Redescription of the Cambrian edrioasteroid Sprinkleoglobus spencensis n. comb. (Wen et al., 2019) from the Spence Shale (Utah, USA)
-    journal: jofpaleo
-    volume: 98
-    pubDate:
-      year: 2024
-    pages:
-    - 952
-    - 958
-    authors:
-    - zamora
-    - guensburg
-    - sprinkle
-    processDates:
-      received: 2024-03-27
-      revised: 2024-05-03
-      accepted: 2024-05-13
-      online: 2025-03-21
-    identifiers:
-      doi: 10.1017/jpa.2024.44
-  2025_savage_rahman:
-    title: First evidence of attached juveniles in the solutan echinoderm Pahvanticystis from the middle Cambrian Weeks Formation (Utah, USA)
-    notes: |
-      Involves moving Castericystis sp. nov. (unknown source)
-      to Pahvanticystis cf. utahensis
-    journal: acta-p-polonica
-    volume: 70
-    number: 1
-    pages:
-    - 175
-    - 178
-    pubDate:
-      year: 2025
-    processDates:
-      received: 2024-12-04
-      accepted: 2025-02-15
-      online: 2025-03-24
-    authors:
-    - savage
-    - rahman
-    identifiers:
-      doi: 10.4202/app.01228.2024
+1734_klein:
+  book: nat-disp-ech
+  pubDate:
+    year: 1734
+  authors:
+  - klein
+  notes: Establishiment of Echinodermata (for echinoids), pre-Code rules
+  identifiers:
+    doi: 10.5962/bhl.title.65731
+    url: https://www.biodiversitylibrary.org/bibliography/65731
+1778_klein:
+  book: nat-disp-ech-1778
+  seen: false
+  pubDate:
+    year: 1778
+  authors:
+  - klein
+  notes: |
+    Some argue that this use of Echinodermata should result in an attribution
+    of "Echinodermata (Klein 1778)" as the only reason it was excluded was
+    inconsistent usage, but that rule does not apply above the Family level.
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/11571
+1789_bruguière:
+  book: methodique
+  pubDate:
+    year: 1789
+  authors:
+  - bruguière
+  notes:
+    Order 'Vers échinodermes' references Klein's taxon but in the vernacular
+  identifiers:
+    url: https://archive.org/details/histoirenaturell3488brug/page/n1/mode/2up
+1791_bruguière:
+  book: tableau
+  pubDate:
+    year: 1791
+  authors:
+  - bruguière
+  notes: Officially recognized use of "Echinodermata" (in Latin), revived from Klein
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/64072
+1798a_cuvier:
+  book: tableau-cuvier
+  volume: 1
+  notes: Date may be 1797 or 1798
+  pubDate:
+    year: 1798
+  authors:
+  - cuvier
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/42906
+1798b_cuvier:
+  book: tableau-cuvier
+  volume: 2
+  notes: Date may be 1797 or 1798
+  pubDate:
+    year: 1798
+  authors:
+  - cuvier
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/87284
+1798c_cuvier:
+  book: tableau-cuvier
+  volume: 3
+  notes: Date may be 1797 or 1798
+  pubDate:
+    year: 1798
+  authors:
+  - cuvier
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/99338
+1821_miller.j.s:
+  book: nat-hist-crinoidea
+  pubDate:
+    year: 1821
+  authors:
+  - miller.j.s
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/178175
+1822_parkinson:
+  book: outlines-of-oryctology
+  pubDate:
+    year: 1822
+  authors:
+  - parkinson
+  identifiers:
+    url: https://darwin-online.org.uk/converted/pdf/1822_fossil_CUL-DAR.LIB.490.pdf
+1828_hisinger:
+  book: anteck
+  volume: 4
+  pubDate:
+    year: 1828
+  authors:
+  - hisinger
+  identifiers:
+    url: https://www.google.com/books/edition/Anteckningar_i_Physik_och_Geognosi_under/LotfAAAAcAAJ?hl=en
+1844_buch:
+  title: Über Cystideen eingeleitet durch die Entwicklung der Eigenthümlichkeiten von Caryocrinus ornatus
+  reading: akademie
+  notes: Some sources incorrectly give May 3rd instead of March 3rd due to an early typo.
+  pubDate:
+    year: 1844
+    month: 3
+    day: 3
+  authors:
+  - buch
+1846a_buch:
+  title: Über Cystideen eingeleitet durch die Entwicklung der Eigenthümlichkeiten von Caryocrinus ornatus SAY
+  journal: abh-k-akad-wiss-berlin
+  pubDate:
+    year: 1846
+  pages:
+  - 89
+  - 116
+  authors:
+  - buch
+1846b_buch:
+  title: Notice of a New Family of Crinoidal Animals, called Cystidea
+  journal: jofgeol-london
+  volume: 2
+  number: Part 1
+  pages:
+  - 11
+  - 12
+  pubDate:
+    year: 1846
+  authors:
+  - buch
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/35336362
+1846c_buch:
+  title: On the Cystidea (a new family of radiated animals), introduced by Account of the Caryocrinus ornatus, Say
+  translationOf: 1846a_buch
+  journal: jofgeol-london
+  volume: 2
+  number: Part 2
+  pages:
+  - 20
+  - 42
+  plates:
+  - 3
+  - 4
+  pubDate:
+    year: 1846
+  authors:
+  - buch
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/35336917
+1848a_forbes:
+  title: On the Asteriadæ found Fossil in British Strata
+  journal: mem-geol-gb
+  volume: 2
+  number: 2
+  pages:
+  - 457
+  - 482
+  pubDate:
+    year: 1848
+  authors:
+  - forbes
+  identifiers:
+    url: https://www.google.com/books/edition/Memoirs_of_the_Geological_Survey_of_Grea/WcNAAAAAcAAJ?hl=en&gbpv=1
+1848b_forbes:
+  title: On the Cystideæ of the Silurian Rocks of the British Islands.pdf
+  journal: mem-geol-gb
+  volume: 2
+  number: 2
+  pages:
+  - 483
+  - 538
+  plates:
+  - 11
+  - 23
+  pubDate:
+    year: 1848
+  authors:
+  - forbes
+  identifiers:
+    url: https://www.google.com/books/edition/Memoirs_of_the_Geological_Survey_of_Grea/WcNAAAAAcAAJ?hl=en&gbpv=1
+1854_müller.j.p:
+  book: uber-den-bau
+  pubDate:
+    year: 1854
+  authors:
+  - müller.j.p
+  identifiers:
+    url: https://www.google.com/books/edition/_/JOlAAAAAcAAJ
+1858a_billings:
+  title: On the Cystideæ of the Lower Silurian Rocks of Canada
+  journal: fig-desc-can
+  volume: III
+  pages:
+  - 9
+  - 74
+  pubDate:
+    year: 1858
+  authors:
+  - billings
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/14985785
+1858b_billings:
+  title: On the Asteriadæ of the Lower Silurian Rocks of Canada
+  journal: fig-desc-can
+  volume: III
+  pages:
+  - 75
+  - 85
+  pubDate:
+    year: 1858
+  authors:
+  - billings
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/14985851
+1858_salter_billings:
+  title: On Cyclocystoides, a new genus of Echinodermata from the Lower and Middle Silurian Rocks
+  journal: fig-desc-can
+  volume: III
+  pages:
+  - 86
+  - 90
+  pubDate:
+    year: 1858
+  authors:
+  - salter
+  - billings
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/14985862
+1858a_hall:
+  title: Crinoideae of the Hamilton Group
+  journal: p-of-iowa
+  volume: 1
+  number: 2
+  pages:
+  - 479
+  - 485
+  pubDate:
+    year: 1858
+  authors:
+  - hall
+1858b_hall:
+  title: Fossils of the Burlington Limestone. Crinoideae
+  journal: p-of-iowa
+  volume: 1
+  number: 2
+  pages:
+  - 524
+  - 596
+  pubDate:
+    year: 1858
+  authors:
+  - hall
+1858c_hall:
+  title: Crinoideae and other Echniodermata of the Warsaw Limestone
+  journal: p-of-iowa
+  volume: 1
+  number: 2
+  pages:
+  - 654
+  - 656
+  pubDate:
+    year: 1858
+  authors:
+  - hall
+1858d_hall:
+  title: Crinoideae of the Keokuk Limestone
+  journal: p-of-iowa
+  volume: 1
+  number: 2
+  pages:
+  - 606
+  - 634
+  pubDate:
+    year: 1858
+  authors:
+  - hall
+1858e_hall:
+  title: Crinoideae of the St. Louis Limestone
+  journal: p-of-iowa
+  volume: 1
+  number: 2
+  pages:
+  - 669
+  - 673
+  pubDate:
+    year: 1858
+  authors:
+  - hall
+1858f_hall:
+  title: Crinoideae and other Echinodermata of the Kaskaskia Limestone
+  journal: p-of-iowa
+  volume: 1
+  number: 2
+  pages:
+  - 678
+  - 701
+  pubDate:
+    year: 1858
+  authors:
+  - hall
+1865_norman:
+  title: XIII.—On the genera and species of British Echinodermata
+  journal: annals-and-mag
+  volume: 15
+  pages:
+  - 98
+  - 129
+  pubDate:
+    year: 1865
+  authors:
+  - norman
+  identifiers:
+    url: https://archive.org/details/biostor-91146/page/n1/mode/2up
+1866_hall:
+  title: Descriptions of some new species of Crinoidea and other Fossils from the Lower Silurian strata, principally of the age of the Hudson-river group.
+  journal: annual-ny
+  volume: 20
+  number: Adv. Pr.
+  pages:
+  - 1
+  - 17
+  pubDate:
+    year: 1866
+  authors:
+  - hall
+1870_billings:
+  title: Notes on the Structure of the Crinoidea, Cystidea, and Blastoidea
+  journal: annals-and-mag
+  volume: 4th Series
+  number: 28
+  pubDate:
+    year: 1870
+    month: 4
+  pages:
+  - 251
+  - 266
+  authors:
+  - billings
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/19266657
+1872a_hall:
+  title: Descriptions of new species of fossils from the vicinity of Louisville, Kentucky, and the Falls of the Ohio
+  journal: annual-ny
+  volume: 24
+  pages:
+  - 181
+  - 200
+  - 200a # Supplement tipped in after page 200
+  - 200a
+  - 233 # Errata
+  - 233
+  pubDate:
+    year: 1872
+  processDates:
+    transmitted: 1871-04-18
+  authors:
+  - hall
+1872b_hall:
+  title: Description of new species of Crinoidea and other fossils from strata of the age of the Hudson-River Group and Trenton Limestone
+  journal: annual-ny
+  volume: 24
+  pages:
+  - 205
+  - 224
+  - 233 # Errata
+  - 233
+  pubDate:
+    year: 1872
+  processDates:
+    transmitted: 1871-04-18
+  authors:
+  - hall
+1872c_hall:
+  title: Description of new species of fossils from the Hudson River Group, in the vicinity of Cincinnati, Ohio
+  journal: annual-ny
+  volume: 24
+  pages:
+  - 225
+  - 232
+  - 233 # Errata for multiple articles
+  - 233
+  pubDate:
+    year: 1872
+  processDates:
+    transmitted: 1871-04-18
+  authors:
+  - hall
+1887_billings.w.r:
+  title: A new genus and three new species of crinoids from the Trenton Formation with notes on a large specimen of Dendrocrinus proboscidiatus
+  journal: ottawa-naturalist
+  volume: 1
+  number: 3
+  pubDate:
+    year: 1887
+  authors:
+  - billings.w.r
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/30200108
+1896_haeckel:
+  book: amph-und-cyst
+  pubDate:
+    year: 1896
+  authors:
+  - haeckel
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/11808822
+1898_walcott:
+  title: Fossile Medusæ
+  journal: monographs-usgs
+  volume: 30
+  pubDate:
+    year: 1898
+  authors:
+  - walcott
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/2056780
+1899_jaekel:
+  book: stamm
+  pubDate:
+    year: 1899
+  authors:
+  - jaekel
+  identifiers:
+    url: https://www.google.com/books/edition/Stammesgeschichte_der_Pelmatozoen/cvdaAAAAQAAJ
+1900_bather:
+  title: Part III — The Echinoderma
+  book: treatise-zoo
+  pubDate:
+    year: 1900
+  authors:
+  - bather
+  identifiers:
+    url: https://archive.org/details/treatiseonzoolog03lank/page/n5/mode/2up
+1911b_walcott:
+  title: Middle Cambrian Holothurians and Medusaæ
+  journal: smith-misc
+  volume: 57
+  number: 3
+  pubDate:
+    year: 1911
+    month: 6
+    day: 13
+  authors:
+  - walcott
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/9263071
+1911d_walcott:
+  title: Middle Cambrian Annelids
+  journal: smith-misc
+  volume: 57
+  number: 5
+  pubDate:
+    year: 1911
+    month: 9
+    day: 4
+  authors:
+  - walcott
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/9263165
+1912_clark.h.l:
+  title: Fossil Holothurians
+  journal: science-new-series
+  volume: 35
+  number: 894
+  pages:
+  - 274
+  - 278
+  pubDate:
+    year: 1912
+    month: 2
+    day: 16
+  authors:
+  - clark.h.l
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/31090005
+1913_clark.a.h:
+  title: Cambrian Holothurians
+  journal: am-nat
+  volume: 47
+  number: 560
+  pages:
+  - 488
+  - 507
+  pubDate:
+    year: 1913
+    month: 8
+  authors:
+  - clark.a.h
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/43433793
+1929_matsumoto:
+  title: Outline of a classification of Echinoermata
+  journal: tohoku
+  volume: 13
+  number: 2
+  pages:
+  - 27
+  - 22
+  authors:
+  - matsumoto
+  pubDate:
+    year: 1929
+  identifiers:
+    url: https://files.core.ac.uk/download/pdf/235749176.pdf
+1935_bassler:
+  title: The Classification of the Edrioasteroidea
+  complete:
+    named: true
+    open: true
+    history: true
+    specimens:
+      basic: null
+      all: null
+  journal: smith-misc
+  volume: 93
+  number: 8
+  pubDate:
+    year: 1935
+    month: 4
+    day: 4
+  authors:
+  - bassler
+1936_bassler:
+  title: New Species of American Edrioasteroidea
+  journal: smith-misc
+  volume: 95
+  number: 6
+  pubDate:
+    year: 1936
+    month: 5
+    day: 4
+  authors:
+  - bassler
+1941_whitehouse:
+  title: "The Cambrian faunas of north-eastern Australia, Part 4: Early Cambrian echinoderms similar to the larval stages of Recent forms"
+  journal: mem-q
+  volume: 12
+  number: 1
+  pages:
+  - 1
+  - 28
+  authors:
+  - whitehouse
+  editors:
+  - longman
+  pubDate:
+    year: 1941
+    month: 6
+    day: 13
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/189697#page/38/mode/1up
+1955_hyman:
+  title: Enchinodermata, the Coelomate Bilateria
+  book: invertebrates
+  volume: 4
+  pubDate:
+    year: 1955
+  authors:
+  - hyman
+  identifiers:
+    url: https://archive.org/details/in.ernet.dli.2015.260496/page/n5/mode/2up
+1960_gill_caster:
+  title: Carpoid echinoderms from the Silurian and Devonian of Australia
+  journal: bullamp
+  volume: 41
+  number: 185
+  pages:
+  - 1
+  - 72
+  pubDate:
+    year: 1960
+    month: 3
+    day: 1
+  authors:
+  - gill
+  - caster
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/10654670
+1962_fay:
+  title: Edrioblastoidea, a new class of Echinodermata
+  complete:
+    named: true
+    open: null
+    history: true
+    specimens:
+      basic: true
+      all: true
+  journal: jofpaleo
+  volume: 36
+  number: 2
+  pages:
+  - 201
+  - 205
+  pubDate:
+    year: 1962
+    month: 3
+  authors:
+  - fay
+  identifiers:
+    jstor: 13011100
+1963_brown.i.a:
+  title: A new cystoid (Pelmatozoa, Echinodermata) from the Silurian of New South Wales
+  journal: proclinn-nsw
+  volume: 88
+  number: 3
+  pubDate:
+    year: 1963
+  processDates:
+    read: 1963-11-27
+    issued: 1964-04-10
+  authors:
+  - brown.i.a
+1963_durham_caster:
+  title: "Helicoplacoidea: A New Class of Echinoderms"
+  complete:
+    named: true
+    open: null
+    history: null
+    specimens:
+      basic: true
+      all: true
+  journal: science-new-series
+  volume: 149
+  number: 3568
+  pubDate:
+    year: 1963
+    month: 5
+    day: 17
+  processDates:
+    unknown: 1963-02-15
+  authors:
+  - durham
+  - caster
+  identifiers:
+    jstor: 1711312
+1965_fell:
+  title: The Early Evolution of the Echinozoa
+  journal: breviora
+  number: 219
+  pubDate:
+    year: 1965
+    month: 5
+    day: 7
+  pages:
+  - 1
+  - 17
+  authors:
+  - fell
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/4312670
+1966_durham:
+  title: Camptostroma, an Early Cambrian Supposed Scyphozoan, Referable to Echinodermata
+  complete:
+    named: true
+    open: null
+    history: true
+    specimens:
+      basic: true
+      all: true
+  journal: jofpaleo
+  volume: 40
+  number: 5
+  pages:
+  - 1216
+  - 1220
+  pubDate:
+    year: 1966
+    month: 9
+  processDates:
+    received: 1966-01-04
+  authors:
+  - durham
+  identifiers:
+    jstor: 1301996
+1966_spencer_wright.c.w:
+  title: Asterozoans
+  book: treatise-u
+  pubDate:
+    year: 1966
+  authors:
+  - spencer
+  - wright.c.w
+  pages:
+  - U4
+  - U107
+  identifiers:
+    url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
+1966_durham_caster:
+  title: Helicoplacoids
+  complete:
+    named: true
+    open: true
+    history: true
+    specimens:
+      basic: null
+      all: null
+  book: treatise-u
+  pubDate:
+    year: 1966
+  authors:
+  - durham
+  - caster
+  pages:
+  - U131
+  - U136
+  identifiers:
+    url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
+1966_regnéll:
+  title: Edrioasteroids
+  book: treatise-u
+  pubDate:
+    year: 1966
+  authors:
+  - regnéll
+  pages:
+  - U136
+  - U173
+  identifiers:
+    url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
+1966_ubaghs:
+  title: Ophiocistioids
+  book: treatise-u
+  pubDate:
+    year: 1966
+  authors:
+  - ubaghs
+  pages:
+  - U174
+  - U188
+  identifiers:
+    url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
+1966_kesling:
+  title: Cyclocystoids
+  book: treatise-u
+  pubDate:
+    year: 1966
+  authors:
+  - kesling
+  pages:
+  - U188
+  - U210
+  identifiers:
+    url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
+1966_durham_fell_fischer_kier_melville_pawson_wagner:
+  title: Echinoids
+  book: treatise-u
+  pubDate:
+    year: 1966
+  authors:
+  - durham
+  - fell
+  - fischer
+  - kier
+  - melville
+  - pawson
+  - wagner
+  pages:
+  - U211
+  - U640
+  identifiers:
+    url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
+1966_frizzell_exline_pawson:
+  title: Holothurians
+  book: treatise-u
+  pubDate:
+    year: 1966
+  authors:
+  - frizzell
+  - exline
+  - pawson
+  pages:
+  - U641
+  - U672
+  identifiers:
+    url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
+1967_paul.c.r.c:
+  title: British Silurian Cystoids
+  journal: bullbrgeo
+  volume: 13
+  number: 6
+  pages:
+  - 297
+  - 344
+  plates:
+  - 1
+  - 10
+  pubDate:
+    year: 1967
+    month: 1
+    day: 11
+  authors:
+  - paul.c.r.c
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/2286554
+1967a_ubaghs:
+  title: General Characters of Echinodermata
+  book: treatise-s
+  pubDate:
+    year: 1967
+  authors:
+  - ubaghs
+  pages:
+  - S3
+  - S60
+  identifiers:
+    url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+1967a_kesling:
+  title: Cystoids
+  book: treatise-s
+  pubDate:
+    year: 1967
+  authors:
+  - kesling
+  pages:
+  - S85
+  - S267
+  identifiers:
+    url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+1967b_kesling:
+  title: Paracrinoids
+  book: treatise-s
+  pubDate:
+    year: 1967
+  authors:
+  - kesling
+  pages:
+  - S268
+  - S288
+  identifiers:
+    url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+1967a_fay:
+  title: Edrioblastoids
+  complete:
+    named: true
+    open: null
+    history: true
+    specimens:
+      basic: null
+      all: null
+  book: treatise-s
+  pubDate:
+    year: 1967
+  authors:
+  - fay
+  pages:
+  - S289
+  - S292
+  identifiers:
+    url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+1967b_fay:
+  title: Parablastoids
+  complete:
+    named: true
+    open: null
+    history: null
+    specimens:
+      basic: null
+      all: null
+  book: treatise-s
+  pubDate:
+    year: 1967
+  authors:
+  - fay
+  pages:
+  - S293
+  - S296
+  identifiers:
+    url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+1967_fay_wanner:
+  title: "Blastoids: Systematic Descriptions"
+  book: treatise-s
+  pubDate:
+    year: 1967
+  authors:
+  - fay
+  - wanner
+  pages:
+  - S396
+  - S455
+  identifiers:
+    url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+1967b_ubaghs:
+  title: Eocrinoidea
+  book: treatise-s
+  pubDate:
+    year: 1967
+  authors:
+  - ubaghs
+  pages:
+  - S455
+  - S495
+  identifiers:
+    url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+1967c_ubaghs:
+  title: Stylophora
+  book: treatise-s
+  pubDate:
+    year: 1967
+  authors:
+  - ubaghs
+  pages:
+  - S495
+  - S565
+  identifiers:
+    url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+1967d_ubaghs:
+  title: Homostelea
+  book: treatise-s
+  pubDate:
+    year: 1967
+  authors:
+  - ubaghs
+  pages:
+  - S565
+  - S581
+  identifiers:
+    url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+1967_caster:
+  title: Homoiostelea
+  book: treatise-s
+  pubDate:
+    year: 1967
+  authors:
+  - caster
+  pages:
+  - S581
+  - S627
+  identifiers:
+    url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+1967a_durham:
+  title: Camptostromatoids
+  complete:
+    named: true
+    open: null
+    history: true
+    specimens:
+      basic: null
+      all: null
+  book: treatise-s
+  pubDate:
+    year: 1967
+  authors:
+  - durham
+  pages:
+  - S627
+  - S631
+  identifiers:
+    url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+1967b_durham:
+  title: Lepidocystoidea
+  complete:
+    named: true
+    open: null
+    history: null
+    specimens:
+      basic: null
+      all: null
+  book: treatise-s
+  pubDate:
+    year: 1967
+  authors:
+  - durham
+  pages:
+  - S631
+  - S634
+  identifiers:
+    url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+1967e_ubaghs:
+  title: Cymbionites and Peridionites—Unclassified Middle Cambrian Echinoderms
+  complete:
+    named: true
+    open: true
+    history: true
+    specimens:
+      basic: null
+      all: null
+  book: treatise-s
+  pubDate:
+    year: 1967
+  authors:
+  - ubaghs
+  pages:
+  - S634
+  - S637
+  identifiers:
+    url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
+1967c_durham:
+  title: Notes on the Helicoplacoidea and Early Echinoderms
+  complete:
+    named: true
+    open: null
+    history: true
+    specimens:
+      basic: true
+      all: true
+  journal: jofpaleo
+  volume: 41
+  number: 1
+  pages:
+  - 97
+  - 102
+  pubDate:
+    year: 1967
+    month: 1
+  processDates:
+    received: 1966-06-03
+  authors:
+  - durham
+  identifiers:
+    jstor: 1301905
+1967_jeffries_joysey_paul.c.r.c_ramsbottom:
+  title: "Chapter 21: Echinodermata: Pelmatozoa"
+  book: fossil-record
+  pages:
+  - 565
+  - 581
+  pubDate:
+    year: 1967
+  authors:
+  - jeffries
+  - joysey
+  - paul.c.r.c
+  - ramsbottom
+  identifiers:
+    url: https://archive.org/details/fossilrecord0000wbha/mode/2up
+1968a_paul.c.r.c:
+  title: Macrocystella Callaway, the earliest glyptocystitid cystoid
+  journal: palaeontology
+  volume: 11
+  number: 4
+  pubDate:
+    year: 1968
+  pages:
+  - 580
+  - 600
+  authors:
+  - paul.c.r.c
+  identifiers:
+    # alternate: https://zenodo.org/records/16064129
+    url: https://www.biodiversitylibrary.org/page/49633102#page/356/mode/1up
+1968b_paul.c.r.c:
+  title: Morphology and function of dichoporite pore-structures in cystoids
+  journal: palaeontology
+  volume: 11
+  number: 5
+  pages:
+  - 697
+  - 730
+  plates:
+  - 134
+  - 140
+  pubDate:
+    year: 1968
+  authors:
+  - paul.c.r.c
+1968_webby:
+  title: Astrocystites distans sp. nov., an edrioblastoid from the Ordovician of eastern Australia
+  complete:
+    named: true
+    open: true
+    history: true
+    specimens:
+      basic: true
+      all: true
+  journal: palaeontology
+  volume: 11
+  number: 4
+  authors:
+  - webby
+  pubDate:
+    year: 1968
+  pages:
+  - 513
+  - 525
+  identifiers:
+    url: https://archive.org/details/biostor-164880
+1969_robison_sprinkle:
+  title: "Ctenocystoidea: New Class of Primitive Echinoderms"
+  complete:
+    named: true
+    open: null
+    history: null
+    specimens:
+      basic: true
+      all: false
+  journal: science-new-series
+  volume: 166
+  number: 3912
+  pages:
+  - 1512
+  - 1514
+  authors:
+  - robison
+  - sprinkle
+  pubDate:
+    year: 1969
+    month: 12
+    day: 19
+  identifiers:
+    jstor: 1727422
+1970_mintz:
+  title: "The Edrioblastoidea: Re-Evaluation Based on a New Specimen of Astrocystites from the Middle Ordovician of Ontario"
+  journal: jofpaleo
+  volume: 44
+  number: 5
+  pages:
+  - 872
+  - 880
+  pubDate:
+    year: 1970
+    month: 9
+  processDates:
+    received: 1969-11-04
+  authors:
+  - mintz
+  identifiers:
+    jstor: 1302721
+1971_paul.c.r.c:
+  title: Revision of the Holocystites fauna (Diploporita) of North America
+  journal: fieldiana
+  volume: 24
+  authors:
+  - paul.c.r.c
+  pubDate:
+    year: 1971
+    month: 9
+    day: 29
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/3412
+1972_paul.c.r.c:
+  title: Morphology and function of exothecal pore-structures in Cystoids
+  journal: palaeontology
+  volume: 15
+  number: 1
+  pages:
+  - 1
+  - 28
+  pubDate:
+    year: 1972
+  authors:
+  - paul.c.r.c
+  processDates:
+    revised: 1971-05-06
+1973_sprinkle:
+  title: Morphology and Evolution of Blastozoan Echinoderms
+  journal: sp-pub-harvard
+  authors:
+  - sprinkle
+  pubDate:
+    year: 1973
+  identifiers:
+    url: https://archive.org/details/morphologyevolut00spri/mode/2up
+1973b_sprinkle:
+  title: New occurrence of the Ordovician eocrinoid Lingulocystis from Bolivia, South America
+  journal: jofpaleo
+  volume: 47
+  pages:
+  - 1113
+  - 1116
+  pubDate:
+    year: 1973
+  authors:
+  - sprinkle
+1974_bell.b.m:
+  title: A Study of North American Edrioasteroidea
+  journal: nysm
+  volume: 21
+  pubDate:
+    year: 1974
+  authors:
+  - bell.b.m
+1975_bell.b.m:
+  title: "Ontogeny and systematics of Timeischytes casteri n. sp.: an enigmatic Devonian edrioasteroid"
+  journal: bullamp
+  volume: 67
+  number: 287
+  pubDate:
+    year: 1975
+  authors:
+  - bell.b.m
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/10896154
+1975_broadhead_strimple:
+  title: Respiration in a Vagrant Ordovician Cystoid, Amecystis
+  journal: paleobiology
+  volume: 1
+  number: 3
+  pages:
+  - 312
+  - 319
+  pubDate:
+    year: 1975
+    season: summer
+  authors:
+  - broadhead
+  - strimple
+  identifiers:
+    jstor: 2400371
+1975_kolata:
+  title: Middle Ordovician echinoderms from northern Illinois and southern Wisconsin
+  journal: paleo-memoir
+  volume: 7
+  pubDate:
+    year: 1975
+  authors:
+  - kolata
+  identifiers:
+    doi: 10.1017/S0022336000061734
+1976_bell.b.m_petersen.m.s:
+  title: An Edrioasteroid from the Guilmette Formation at Wendover, Utah-Nevada
+  journal: jofpaleo
+  volume: 50
+  number: 4
+  pages:
+  - 577
+  - 589
+  pubDate:
+    year: 1976
+    month: 7
+  authors:
+  - bell.b.m
+  - petersen.m.s
+  identifiers:
+    jstor: 1303658
+1978_bell.b.m_sprinkle:
+  title: Totiglobus, an Unusual New Edrioasteroid from the Middle Cambrian of Nevada
+  journal: jofpaleo
+  volume: 52
+  number: 2
+  pages:
+  - 243
+  - 266
+  pubDate:
+    year: 1978
+    month: 3
+  authors:
+  - bell.b.m
+  - sprinkle
+  identifiers:
+    jstor: 1303701
+1979_guensburg:
+  title: Cyclocystoid-like edrioasteroids from the Orchard Creek Shale (U. Ord.) in southern Illinois
+  journal: geo-soc-am-abs-prog
+  volume: 11
+  pages:
+  - 74
+  - 74
+  pubDate:
+    year: 1979
+  authors:
+  - guensburg
+  notes: Literally just an abstract?  Unclear if there is a long form.
+1980_bell.b.m:
+  title: Edrioasteroidea and Edrioblastoidea
+  journal: series-geol
+  volume: "3: Echinoderms: Notes for a Short Course"
+  pages:
+  - 158
+  - 174
+  pubDate:
+    year: 1980
+  authors:
+  - bell.b.m
+  identifiers:
+    doi: 10.1017/S027116480000018X
+1981_derstler:
+  title: Morphological diversity of early Cambrian echinoderms
+  book: short-2nd-cambrian
+  pages:
+  - 71
+  - 75
+  pubDate:
+    year: 1981
+  processDates:
+    conferenceStart: 1981-08-09
+    conferenceEnd: 1981-08-13
+  authors:
+  - derstler
+  identifiers:
+    url: https://pubs.usgs.gov/of/1981/0743/report.pdf
+1982_bell.b.m:
+  title: Edrioasteroids
+  book: e-faunas-bromide
+  pages:
+  - 297
+  - 306
+  pubDate:
+    year: 1982
+  authors:
+  - bell.b.m
+1982_broadhead:
+  title: Reappraisal of Class Eocrinoidea (Echinodermata)
+  book: e-tampa-bay
+  authors:
+  - broadhead
+  pubDate:
+    year: 1982
+  processDates:
+    conferenceStart: 1981-09-14
+    conferenceEnd: 1981-09-17
+  pages:
+  - 125
+  - 131
+  identifiers:
+    url: https://www.google.com/books/edition/Echinoderms/Vw9mCCLAMtQC?hl=en&gbpv=1
+1982_kolata:
+  title: Cyclocystoids
+  book: e-faunas-bromide
+  pages:
+  - 309
+  - 309
+  pubDate:
+    year: 1982
+  authors:
+  - kolata
+1982a_parsley:
+  title: Paracrinoids
+  book: e-faunas-bromide
+  pages:
+  - 212
+  - 223
+  pubDate:
+    year: 1982
+  authors:
+  - parsley
+1982b_parsley:
+  title: Pleurocystitids
+  book: e-faunas-bromide
+  pages:
+  - 274
+  - 279
+  pubDate:
+    year: 1982
+  authors:
+  - parsley
+1982c_parsley:
+  title: Eumorphocystis
+  book: e-faunas-bromide
+  pages:
+  - 280
+  - 288
+  pubDate:
+    year: 1982
+  authors:
+  - parsley
+1982d_parsley:
+  title: Homalozoans
+  book: e-faunas-bromide
+  pages:
+  - 322
+  - 323
+  pubDate:
+    year: 1982
+  authors:
+  - parsley
+1982_smith.a.b:
+  title: The affinities of the Middle Cambrian Haplozoa (Echinodermata)
+  journal: alcheringa
+  volume: 6
+  number: 2
+  pages:
+  - 93
+  - 99
+  pubDate:
+    year: 1982
+  processDates:
+    received: 1981-02-04
+  authors:
+  - smith.a.b
+  identifiers:
+    doi: 10.1080/03115518208566989
+1982g_sprinkle:
+  title: Cylcindrical and Globular Rhombiferans
+  book: e-faunas-bromide
+  pages:
+  - 231
+  - 273
+  pubDate:
+    year: 1982
+  authors:
+  - sprinkle
+1982h_sprinkle:
+  title: Palaeocystitids
+  book: e-faunas-bromide
+  pages:
+  - 289
+  - 296
+  pubDate:
+    year: 1982
+  authors:
+  - sprinkle
+1982i_sprinkle:
+  title: Astrocystites
+  book: e-faunas-bromide
+  pages:
+  - 307
+  - 308
+  pubDate:
+    year: 1982
+  authors:
+  - sprinkle
+1982_sprinkle_parsley:
+  title: '"Golf-Ball" Paracrinoid'
+  book: e-faunas-bromide
+  pages:
+  - 224
+  - 230
+  pubDate:
+    year: 1982
+  authors:
+  - sprinkle
+  - parsley
+1983_bockelie_paul.c.r.c:
+  title: Cyathotheca suecica and its bearing on the evolution of the Edrioasteroidea
+  journal: lethaia
+  volume: 16
+  number: 4
+  pubDate:
+    year: 1983
+    month: 10
+  pages:
+  - 257
+  - 264
+  authors:
+  - bockelie
+  - paul.c.r.c
+  identifiers:
+    doi: 10.1111/j.1502-3931.1983.tb02006.x
+1983_brett_frest_sprinkle_clement.c.r:
+  title: "Coronoidea: A New Class of Blastozoan Echinoderms Based on Taxonomic Reevaluation of Stephanocrinus"
+  journal: jofpaleo
+  volume: 57
+  number: 4
+  pages:
+  - 627
+  - 651
+  pubDate:
+    year: 1983
+    month: 7
+  authors:
+  - brett
+  - frest
+  - sprinkle
+  - clement.c.r
+  identifiers:
+    jstor: 1304625
+1983_jell:
+  title: Early Devonian echinoderms from Victoria (Rhombifera, Blastoidea and Ophiocistioidea)
+  seen: false
+  journal: mem-aust
+  volume: 1
+  pages:
+  - 209
+  - 235
+  pubDate:
+    year: 1983
+  authors:
+  - jell
+1985_fatka_kordule:
+  title: Etoctenocystis bohemica gen. et sp. nov. - new Ctenocystoid from Czechoslovakia (Echinodermata, Middle Cambrian)
+  complete:
+    named: true
+    open: false
+    history: false
+    specimens:
+      basic: true
+      all: false
+  journal: vestnik
+  volume: 60
+  number: 4
+  pages:
+  - 225
+  - 230
+  pubDate:
+    year: 1985
+    month: 1
+  processDates:
+    submitted: 1984-10-02
+    received: 1985-02-05
+  authors:
+  - fatka
+  - kordule
+  identifiers:
+    url: https://www.researchgate.net/publication/277013746_Etoctenocystis_bohemica_gen_et_sp_nov_-_new_Ctenocystoid_from_Czechoslovakia_Echinodermata_Middle_Cambrian#fullTextFileContent
+1985_jell_burrett_banks:
+  title: Cambrian and Ordovician echinoderms from eastern Australia
+  complete:
+    named: true
+    open: false
+    history: false
+    specimens:
+      basic: false
+      all: false
+  journal: alcheringa
+  volume: 9
+  number: 3
+  pages:
+  - 183
+  - 208
+  authors:
+  - jell
+  - burrett
+  - banks
+  pubDate:
+    year: 1985
+  processDates:
+    received: 1984-11-22
+    online: 2008-11-27
+  identifiers:
+    doi: 10.1080/03115518508618967
+1985_smith.a.b:
+  title: Cambrian Eleutherozoan Echinoderms and the Early Diversification of Edrioasteroids
+  journal: palaeontology
+  volume: 28
+  number: 4
+  pages:
+  - 715
+  - 756
+  pubDate:
+    year: 1985
+  processDates:
+    received: 1984-10-07
+    revised: 1985-03-25
+  authors:
+  - smith.a.b
+  identifiers:
+    url: https://palass.org/sites/default/files/media/publications/palaeontology/volume_28/vol28_part4_pp715-756.pdf
+1985_sprinkle:
+  title: New edrioasteroid from the Middle Cambrian of western Utah
+  journal: kansas
+  number: 116
+  pubDate:
+    year: 1985
+    month: 9
+    day: 12
+  processDates:
+    received: 1984-07-26
+  authors:
+  - sprinkle
+  identifiers:
+    url: https://kuscholarworks.ku.edu/entities/publication/de425cc9-1319-41f5-b1b4-0c6a6e13757a
+1987_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley:
+  title: Mandalacystis, a New Rhipidocystid Eocrinoid from the Whiterockian Stage (Ordovician) in Oklahoma and Nevada.pdf
+  journal: jofpaleo
+  volume: 61
+  number: 6
+  pages:
+  - 1222
+  - 1235
+  pubDate:
+    year: 1987
+    month: 11
+  processDates:
+    received: 1987-05-28
+  authors:
+  - lewis.r.d
+  - sprinkle
+  - bailey.j.b
+  - moffit.j
+  - parsley
+  identifiers:
+    jstor: 1395209
+1987_smith.a.b_arbizu:
+  title: Inverse larval development in a Devonian edrioasteroid from Spain and the phylogeny of Agelacrinitinae
+  journal: lethaia
+  volume: 20
+  number: 1
+  pubDate:
+    year: 1987
+  pages:
+  - 49
+  - 62
+  authors:
+  - smith.a.b
+  - arbizu
+1987_ubaghs:
+  title: Echinodermes nouveaux du Cambrien moyen de la Montagne Noire (France)
+  journal: annals
+  volume: 73
+  number: 1
+  pubDate:
+    year: 1987
+  pages:
+  - 1
+  - 27
+  authors:
+  - ubaghs
+  identifiers:
+    url: "https://eurekamag.com/research/020/905/020905946.php?srsltid=AfmBOopSCziNxG2P7g_GYIehW28l_W04c4LXptNYESzBhP6ZiraKuipf"
+1988_guensburg:
+  title: Systematics, Functional Morphology, and Life Modes of Late Ordovician Edrioasteroids, Orchard Creek Shale, Southern Illinois
+  journal: jofpaleo
+  volume: 62
+  number: 1
+  pubDate:
+    year: 1988
+    month: 1
+  pages:
+  - 110
+  - 126
+  authors:
+  - guensburg
+  identifiers:
+    jstor: 1305262
+1988_ubaghs_robison:
+  title: Homalozoan echinoderms of the Wheeler Formation (Middle Cambrian) of Western Utah
+  complete:
+    named: true
+    open: null
+    history: null
+    specimens:
+      basic: true
+      all: false
+  journal: kansas
+  number: 129
+  pubDate:
+    year: 1988
+    month: 7
+    day: 14
+  processDates:
+    received: 1987-11-15
+  authors:
+  - ubaghs
+  - robison
+  identifiers:
+    url: https://www.researchgate.net/publication/239588179_Homalozoan_echinoderms_of_the_Wheeler_Formation_Middle_Cambrian_of_Western_Utah
+1990_fatka_kordule:
+  title: Vyscystis ubaghsi gen. et sp.nov., imbricate eocrinoid from Czechoslovakia
+  journal: vestnik
+  volume: 65
+  number: 5
+  pages:
+  - 315
+  - 319
+  plates:
+  - I
+  - II
+  pubDate:
+    year: 1990
+  processDates:
+    received: 1990-02-06
+    accepted: 1990-04-11
+  authors:
+  - fatka
+  - kordule
+  identifiers:
+    url: https://www.researchgate.net/publication/292218537
+1990_smith.a.b_jell:
+  title: Cambrian edrioasteroids from Australia and the origin of starfishes
+  journal: mem-q
+  volume: 28
+  number: 2
+  authors:
+  - smith.a.b
+  - jell
+  pubDate:
+    year: 1990
+    month: 8
+    day: 31
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/40655037
+1990_ubaghs_vizcaïno:
+  title: A new eocrinoid from the Lower Cambrian of Spain
+  journal: palaeontology
+  volume: 33
+  number: 1
+  pages:
+  - 249
+  - 256
+  pubDate:
+    year: 1990
+  authors:
+  - ubaghs
+  - vizcaïno
+1991_fatka:
+  title: Akadocrinus knizeki sp.nov., gogiid eocrinoid from Czechoslovakia (Echinodermata, Middle Cambrian)
+  journal: vestnik
+  volume: 66
+  number: 4
+  pubDate:
+    year: 1991
+  authors:
+  - fatka
+1993_dzik_orłowski:
+  title: The Late Cambrian eocrinoid Cambrocrinus
+  journal: acta-p-polonica
+  volume: 38
+  number: 1/2
+  pages:
+  - 21
+  - 34
+  pubDate:
+    year: 1993
+  authors:
+  - dzik
+  - orłowski
+1994_guensburg_sprinkle:
+  title: Revised phylogeny and functional interpretation of the Edrioasteroidea based on new taxa from the Early and Middle Ordovician of western Utah
+  journal: fieldiana
+  volume: New Series
+  number: 29
+  pubDate:
+    year: 1994
+    month: 12
+    day: 30
+  authors:
+  - guensburg
+  - sprinkle
+1994_zhao.y.l_huang.y.z_gong.x.y:
+  title: The middle Cambrian Kaili Formation of southwestern China
+  journal: acta-p-sinica
+  volume: 33
+  pages:
+  - 305
+  - 324
+  pubDate:
+    year: 1994
+  authors:
+  - zhao.y.l
+  - huang.y.z
+  - gong.x.y
+1994_zhao.y.l_zhu.m.y:
+  title: Medusiform fossils of Kaili Fauna from Taijiang, Guizhou
+  journal: acta-p-sinica
+  volume: 33
+  pages:
+  - 350
+  - 358
+  pubDate:
+    year: 1994
+  authors:
+  - zhao.y.l
+  - zhu.m.y
+1995_dzik_orłowski:
+  title: Primitive ctenocystoid echinoderm from the earliest Middle Cambrian of Poland
+  seen: false
+  complete:
+    history: false # the named species was previously in open nomenclature(s)
+  journal: annals
+  volume: 81
+  pages:
+  - 17
+  - 35
+  pubDate:
+    year: 1995
+  authors:
+  - dzik
+  - orłowski
+1996_sumrall:
+  title: Late Paleozoic Edrioasteroids (Echinodermata) From The North American Midcontinent
+  journal: jofpaleo
+  volume: 70
+  number: 6
+  pubDate:
+    year: 1996
+  processDates:
+    accepted: 1996-01-24
+  pages:
+  - 969
+  - 985
+  authors:
+  - sumrall
+  identifiers:
+    doi: 10.1017/S0022336000038671
+1997_paul.c.r.c:
+  title: British Ordovician Cystoids, Part 3
+  journal: monograph-palaeo
+  volume: 151
+  number: 604
+  pubDate:
+    year: 1997
+    month: 12
+  authors:
+  - paul.c.r.c
+  identifiers:
+    doi: 10.1080/25761900.2022.12131785
+1997_sumrall_sprinkle_guensburg:
+  title: Systematics And Paleoecology Of Late Cambrian Echinoderms From The Western United States
+  journal: jofpaleo
+  volume: 71
+  number: 6
+  pages:
+  - 1091
+  - 1109
+  pubDate:
+    year: 1997
+    month: 11
+  processDates:
+    accepted: 1997-02-21
+  authors:
+  - sumrall
+  - sprinkle
+  - guensburg
+  identifiers:
+    doi: 10.1017/S0022336000036052
+1998_dean.j_smith.a.b:
+  title: Palaeobiology of the primitive Ordovician pelmatozoan echinoderm Cardiocystites
+  journal: palaeontology 
+  volume: 41
+  number: 6
+  pages:
+  - 1183
+  - 1194
+  pubDate:
+    year: 1998
+    month: 12
+  processDates:
+    received: 1997-09-10
+    revised: 1997-11-20
+  authors:
+  - dean.j
+  - smith.a.b
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/49772430
+1999_domínguez alonso:
+  title: "The early evolution of echinoderms: the class Ctenocystoidea and its closest relatives revisited"
+  book: e-research-1998
+  seen: false
+  pages:
+  - 263
+  - 268
+  pubDate:
+    year: 1999
+  authors:
+  - domínguez alonso
+1999_ubaghs:
+  title: Échinodermes nouveaux du Cambrien supérieur de la Montagne Noire (France méridionale)
+  journal: geobios
+  volume: 31
+  number: 6
+  pages:
+  - 809
+  - 829
+  pubDate:
+    year: 1999
+  processDates:
+    received: 1997-12-01
+    accepted: 1998-01-26
+  authors:
+  - ubaghs
+1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y:
+  title: A progress report on research on the early Middle Cambrian Kaili Biota, Guizhou, PRC
+  journal: acta-p-sinica
+  volume: 38
+  number: Supplement
+  pubDate:
+    year: 1999
+    month: 12
+  authors:
+  - zhao.y.l
+  - yuan.j.l
+  - zhu.m.y
+  - yang.r.d
+  - guo.q.j
+  - qian.y
+  - huang.y.z
+  - pan.y
+  identifiers:
+    url: https://www.researchgate.net/publication/284507301_A_progress_report_on_research_on_the_early_Middle_Cambrian_Kaili_Biota_Guizhou_PRC
+2000_sumrall_garbisch_pope:
+  title: The Systematics of Postibullinid Edrioasteroids
+  journal: jofpaleo
+  volume: 74
+  number: 1
+  pubDate:
+    year: 2000
+    month: 1
+  pages:
+  - 72
+  - 83
+  authors:
+  - sumrall
+  - garbisch
+  - pope
+  identifiers:
+    jstor: 1306885
+2001_sumrall_sprinkle_guensburg:
+  title: "Comparison Of Flattened Blastozoan Echinoderms: Insights From The New Early Ordovician Eocrinoid Haimacystis Rozhnovi"
+  journal: jofpaleo
+  volume: 75
+  number: 5
+  pages:
+  - 985
+  - 992
+  pubDate:
+    year: 2001
+  processDates:
+    accepted: 2001-03-17
+  authors:
+  - sumrall
+  - sprinkle
+  - guensburg
+  identifiers:
+    doi: 10.1666/0022-3360(2001)075<0985:COFBEI>2.0.CO;2
+2002_gil cid_domínguez alonso:
+  title: |
+    "Ubaghsicystis segurae nov. gen. y sp., nuevo Eocrinoide
+    (Echinodermata) del Cámbrico Medio del Norte de España"
+  translations:
+    en: |
+      "Ubaghsicystis segurae nov. gen. and sp., a new Eocrinoid
+      (Echinoderniata) of Middle Cambrian from Northern Spain"
+  journal: coloquios
+  volume: 53
+  pages:
+  - 21
+  - 32
+  pubDate:
+    year: 2002
+  authors:
+  - gil cid
+  - domínguez alonso
+2002_zhu.m.y_zhao.y.l_chen.j.y:
+  title: Revision of the Cambrian discoidal animals Stellostomites eumorphus and Pararotadiscus guizhouensis from South China
+  journal: geobios
+  volume: 35
+  pages:
+  - 165
+  - 185
+  pubDate:
+    year: 2002
+  processDates:
+    received: 2001-04-02
+    accepted: 2001-09-24
+  authors:
+  - zhu.m.y
+  - zhao.y.l
+  - chen.j.y
+2003_guensburg_sprinkle:
+  title: The oldest known crinoids (Early Ordovician, Utah) and a new crinoid plate homology system
+  journal: bullamp
+  number: 364
+  pubDate:
+    year: 2003
+    month: 7
+    day: 10
+  authors:
+  - guensburg
+  - sprinkle
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/27980785
+2005_frest:
+  title: Ampheristocystis, a Silurian (Lower Wenlock) eocrinoid (Echinodermata, Blastozoa) from Indiana
+  journal: geo-j
+  volume: 40
+  pages:
+  - 301
+  - 329
+  pubDate:
+    year: 2005
+  authors:
+  - frest
+  identifiers:
+    doi: 10.1002/gj.1017
+2006_parsley_zhao.y.l:
+  title: Long stalked eocrinoids in the basal Middle Cambrian Kaili Biota, Taijiang County, Guizhou Province, China
+  journal: jofpaleo
+  volume: 80
+  number: 6
+  pages:
+  - 1058
+  - 1071
+  pubDate:
+    year: 2006
+  processDates:
+    accepted: 2006-07-21
+  authors:
+  - parsley
+  - zhao.y.l
+  identifiers:
+    doi: 10.1666/0022-3360(2006)80[1058:LSEITB]2.0.CO;2
+2006_sprinkle_collins.d:
+  title: New eocrinoids from the Burgess Shale, southern British Columbia, Canada, and the Spence Shale, northern Utah, USA
+  journal: can-j-earth-sci
+  volume: 43
+  number: 3
+  pages:
+  - 303
+  - 322
+  pubDate:
+    year: 2006
+    month: 3
+  authors:
+  - sprinkle
+  - collins.d
+  identifiers:
+    doi: 10.1139/E05-107
+2007a_nardin:
+  title: "New specimens of Lingulocystis Thoral, 1935 (Eocrinoidea, Blastozoa) from the Arenig (Lower Ordovician) of Montagne noire (southern France): Intraspecific morphological variability, stratigraphic, and palaeoecological implications"
+  journal: annals
+  volume: 93
+  pages:
+  - 199
+  - 214
+  pubDate:
+    year: 2007
+  processDates:
+    online: 2007-08-14
+  authors:
+  - nardin
+  identifiers:
+    doi: 10.1016/j.annpal.2007.06.004
+2007b_nardin:
+  title: "New occurrence of the Ordovician eocrinoid Cardiocystites: Palaeogeographical and palaeoecological implications"
+  journal: acta-p-polonica
+  volume: 42
+  number: 1
+  pages:
+  - 17
+  - 26
+  pubDate:
+    year: 2007
+  authors:
+  - nardin
+  identifiers:
+    url: https://www.app.pan.pl/article/item/app52-017.html
+2007_zhao.y.l_parsley_peng.j:
+  title: Early Cambrian eocrinoids from Guizhou Province, South China
+  journal: ppp
+  volume: 254
+  pages:
+  - 317
+  - 327
+  pubDate:
+    year: 2007
+  processDates:
+    accepted: 2007-03-05
+  authors:
+  - zhao.y.l
+  - parsley
+  - peng.j
+  identifiers:
+    doi: 10.1016/j.palaeo.2007.03.020
+2008_stewart_owen:
+  title: "Probing the deep shelf: a Lagerstätte from the Upper Ordovician of Girvan, southwestern Scotland"
+  journal: lethaia
+  complete:
+    named: null
+    open: false
+    history: null
+    specimens:
+      basic: false
+      all: false
+  volume: 41
+  pages:
+  - 139
+  - 146
+  pubDate:
+    year: 2008
+  processDates:
+    received: 2006-08-10
+    accepted: 2007-12-16
+  authors:
+  - stewart
+  - owen
+  identifiers:
+    doi: 10.1111/j.1502-3931.2008.00117.x
+2008_zhao.y.l_parsley_peng.j:
+  title: "Basal Middle Cambrian Short-Stalked Eocrinoids from the Kaili Biota: Guizhou Province, China"
+  journal: jofpaleo
+  volume: 82
+  number: 2
+  pages:
+  - 415
+  - 422
+  pubDate:
+    year: 2008
+    month: 3
+  authors:
+  - zhao.y.l
+  - parsley
+  - peng.j
+  identifiers:
+    jstor: 20144206
+2009_zamora_gozalo_liñán:
+  title: "Middle Cambrian gogiid echinoderms from Northeast Spain: Taxonomy, palaeoecology, and palaeogeographic implications"
+  journal: acta-p-polonica
+  volume: 54
+  number: 2
+  pages:
+  - 253
+  - 264
+  pubDate:
+    year: 2009
+  authors:
+  - zamora
+  - gozalo
+  - liñán
+  identifiers:
+    doi: 10.4202/app.2008.0010
+2010_müller.p_hahn:
+  title: Edrioasteroidea aus den Seifen-Schichten im Westerwald, Rheinisches Schiefer-Gebirge (Unter-Devon, Deutschland), Teil 1
+  journal: geo-et-palaeo
+  volume: 43
+  pubDate:
+    year: 2010
+    month: 3
+    day: 30
+  pages:
+  - 9
+  - 47
+  authors:
+  - müller.p
+  - hahn
+  quotes:
+  - |
+    Bell (1976) established the order Isorophida with
+    the two suborders Lebedocystina and Isorophina.
+    The Isorophina are further subdivided into
+    Isorophidae (Bell, 1976) [correct name Hemicystidae,
+    provided the genus Hemicystitides (Hall, 1852) is included
+    in this family) for the original, Ordovician-Silurian
+    genera, and Agelacrinitidae (Chapman, 1860) for
+    the advanced Devonian-Carboniferous genera.
+    The Pyrgocystidae (Kesling, 1967) with the genus
+    Pergocystis (Bather, 1915) and the Carboniferous
+    Lispidecodidae (Kesling, 1967) with
+    Lispidecodus (Kesling, 1967) are not mentioned in Bell.
+  - |
+    Holloway and Jell (1983) established the Rhenopyrgidae
+    with the genus Rhenopyrgus (Dehm, 1961). They left the
+    assignment of this family to an order open.
+  - |
+    Smith and Arbizu (1987) combine all taxa of the Isorophina
+    into the subfamily Agelacrinitinae and present their phylogeny.
+  - |
+    Sumrall (1993) again uses the families Isorophidae and
+    Agelacrinitidae in the sense of Bell.
+  - |
+    Sumrall, Garbisch and Pope (2000) establish the subfamily
+    Postibullinae within the Agelacrinitidae
+  - |
+    Guensburg and Sprinkle (1994) subdivide the Isorophida
+    into only two families without subdivision into
+    suborders — Agelacrinitidae (incl. the Hemicystitidae)
+    and the Lebetodiscidae (incl. the Pyrgocystidae).
+  - |
+    Here, we follow the classification by
+    Guensburg & Sprinkle (1994), but classify the Hemicystitidae
+    and the Pyrgocystidae as independent families. This now
+    provides three families and three subfamilies for the
+    Devonian-Carboniferous forms — the Agelacrinitidae
+    (with the Agelacrinitinae, Discocystinae, and Postibullinae),
+    the Pyrgocystidae, and the Rhenopyrgidae. With the exception
+    of the Discocystinae (only documented from the Upper Devonian
+    onward), all of these families and subfamilies occur in the
+    German Lower Devonian; however, the Rhenopyrgidae are not
+    discussed in this study. The systematic classification of
+    the Agelacrinitidae is essentially based on Sumrall (1996, 2000).
+  - |
+    Pyrgocystidae
+    In the past, about a dozen taxa have been described under
+    Pyrgocystis, of which only the scale tube is present
+    (Bather 1915; Richter 1930; Hecker 1939; Regnéll 1945).
+    According to Holloway & Jell (1983), only forms whose
+    penduncular zone is not composed of vertically arranged
+    rows of plates belong to Pyrgocystis, so they only include
+    the type species P. sardesoni (Bather, 1915), and, with
+    reservations, P. volborthi (Hecker, 1939) and P.? petalus
+    (Holloway & Jell, 1938) from the Ludlovian of Australia.
+    Klug et al. (2008) also classify Rhenopyrgus octogona
+    (Richter, 1930) as Pyrgocystis. Since the scale tube of
+    this species consists of vertical keeled rows, we consider
+    an assignment to Pyrgocystis unlikely.
+    According to Holloway & Jell (1983), the Ordovician type
+    species is based on only one specimen (see Regnéll 1966,
+    Fig. 127-2a-b), which only poorly reveals the structure
+    of the adoral region. Therefore, the assignment of
+    P.? petalus to this genus is uncertain, which
+    Holloway & Jell (1983) express by adding a question mark
+    to P.? petalus. We follow this example here with
+    P.? postpetalus n. sp. from the Lower Devonian of Germany.
+  - |
+    On the position of P. neglecta — Smith, 1983, places
+    the species within Postibulla; this assignment is adopted
+    by Sumrall et al. (2000). However, the genus differs from
+    Postibulla in one essential characteristic—a posterior
+    oral protrusion is not developed, which is why it is
+    placed here within Parapostibulla.
+  - |
+    The key difference between Agelacrinites and Krama lies
+    in the structure of the ambulacra. While these are
+    biserial in Agelacrinites, they are triserial to multiserial
+    in Krama. The genus was established by Bell (1965) as
+    a monotypic genus with the species K. devonica (Bassler, 1936)
+    based on material from the Middle Devonian of North America.
+    Smith & Arbizui (1987) described a specimen from the
+    Lower Devonian of Spain, which they placed under
+    Krama devonica. According to current knowledge, this is
+    a representative of a separate species (K. hispanica n. sp.).
+    In addition, two new species from the Lower Devonian of
+    Germany were described. The main differences between these
+    four species relate to the structure of the oral region,
+    the course of the ambulacrum D, the thecal type, the
+    number of plate rows between the ambulacrum C and the
+    periprocete, the structure of the upper ring, and the
+    appearance of sculpture in the form of a granulated plate
+    surface. Table 4 summarizes the differences between the
+    four species.
+2010_parsley_zhao.y.l:
+  title: A New Turban-Shaped Gogiid Eocrinoid From The Kaili Formation (Kaili Biota), Balang, Jianhe County, Guizhou Province, China
+  journal: jofpaleo
+  volume: 84
+  number: 3
+  pages:
+  - 549
+  - 553
+  authors:
+  - parsley
+  - zhao.y.l
+  pubDate:
+    year: 2010
+    month: 5
+  processDates:
+    accepted: 2009-11-29
+  identifiers:
+    jstor: 40605503
+2011_sprinkle_parsley_zhao.y.l_peng.j:
+  title:  Revision Of Lyracystid Eocrinoids From The Middle Cambrian Of South China And Western Laurentia
+  journal: jofpaleo
+  volume: 25
+  number: 2
+  pages:
+  - 250
+  - 255
+  pubDate:
+    year: 2011
+  processDates:
+    accepted: 2010-09-15
+  authors:
+  - sprinkle
+  - parsley
+  - zhao.y.l
+  - peng.j
+  identifiers:
+    doi: 10.1666/10-072.1
+2010_zhao.y.l_sumrall_parsley_peng.j:
+  title: Kailidiscus, A New Plesiomorphic Edrioasteroid From The Basal Middle Cambrian Kaili Biota Of Guizhou Province, China
+  journal: jofpaleo
+  volume: 84
+  number: 5
+  pages:
+  - 668
+  - 680
+  authors:
+  - zhao.y.l
+  - sumrall
+  - parsley
+  - peng.j
+  pubDate:
+    year: 2010
+  processDates:
+    accepted: 2010-03-20
+  identifiers:
+    doi: 10.1666/09-159.1
+# 2012_doweld:
+#   title: "Heckerocrinus, a new substitute generic name for fossil crinoid Bockia Hecker 1940 (Echinodermata: Crinoidea) non Reisinger 1924 (Vermes: Turbellaria)"
+  
+2012_zamora_rahman_smith.a.b:
+  title: Plated Cambrian Bilaterians Reveal the Earliest Stages of Echinoderm Evolution
+  journal: plos-one
+  volume: 7
+  number: 6
+  articleNumber: e38296
+  pubDate:
+    year: 2012
+    month: 6
+    day: 6
+  processDates:
+    received: 2012-03-23
+    accepted: 2012-05-01
+  authors:
+  - zamora
+  - rahman
+  - smith.a.b
+  identifiers:
+    doi: 10.1371/journal.pone.0038296
+2012_zamora_smith.a.b:
+  title: Cambrian stalked echinoderms show unexpected plasticity of arm construction
+  journal: procrsocb
+  volume: 279
+  pages:
+  - 293
+  - 298
+  pubDate:
+    year: 2012
+  processDates:
+    received: 2011-04-13
+    accepted: 2011-05-19
+    online: 2011-06-08
+  identifiers:
+    doi: 10.1098/rspb.2011.0777
+  authors:
+  - zamora
+  - smith.a.b
+2013_nardin_bohatý:
+  title: A new pleurocystitid blastozoan from the Middle Devonian of the Eifel (Germany) and its phylogenetic importance
+  journal: acta-p-polonica
+  volume: 58
+  number: 3
+  pages:
+  - 533
+  - 544
+  pubDate:
+    year: 2013
+  processDates:
+    received: 2011-08-06
+    accepted: 2012-01-20
+    online: 2012-04-20
+  authors:
+  - nardin
+  - bohatý
+2013_smith.a.b_zamora:
+  title: Cambrian spiral-plated echinoderms from Gondwana reveal the earliest pentaradial body plan
+  journal: procrsocb
+  volume: 280
+  articleNumber: 20131197
+  pubDate:
+    year: 2013
+  processDates:
+    received: 2013-05-13
+    accepted: 2013-06-04
+    online: 2013-08-22
+  identifiers:
+    doi: 10.1098/rspb.2013.1197
+  authors:
+  - smith.a.b
+  - zamora
+2013_smith.a.b_zamora_álvaro:
+  title: The oldest echinoderm faunas from Gondwana show that echinoderm body plan diversification was rapid
+  complete:
+    named: null
+    open: null
+    history: null
+    specimens:
+      basic: null
+      all: null
+  journal: nat-com
+  volume: 4
+  articleNumber: 1385
+  pubDate:
+    year: 2013
+  processDates:
+    received: 2012-08-08
+    accepted: 2012-12-14
+    published: 2013-01-22
+  authors:
+  - smith.a.b
+  - zamora
+  - álvaro
+  identifiers:
+    doi: 10.1038/ncomms2391
+2015_ausich_kammer_rhenberg_wright.d.f:
+  title: Early phylogeny of crinoids within the pelmatozoan clade
+  journal: palaeontology
+  volume: 58
+  number: 6
+  pages:
+  - 937
+  - 952
+  authors:
+  - ausich
+  - kammer
+  - rhenberg
+  - wright.d.f
+  pubDate:
+    year: 2015
+    month: 10
+  processDates:
+    received: 2015-06-02
+    revised: 2015-08-24
+    accepted: 2015-08-24
+  identifiers:
+    doi: 10.1111/pala.12204
+2015_rahman_stewart_zamora:
+  title: The youngest ctenocystoids from the Upper Ordovician of the United Kingdom and the evolution of the bilateral body plan in echinoderms
+  complete:
+    named: true
+    open: null
+    history: null
+    specimens:
+      basic: true
+      all: true
+  journal: acta-p-polonica
+  volume: 60
+  number: 1
+  pages:
+  - 39
+  - 48
+  authors:
+  - rahman
+  - stewart
+  - zamora
+  pubDate:
+    year: 2015
+  processDates:
+    received: 2013-12-04
+    accepted: 2014-03-20
+    online: 2014-03-24
+  identifiers:
+    doi: 10.4202/app.00048.2013
+2015_sumrall_zamora:
+  title: A columnal-bearing eocrinoid from the Cambrian Burgess Shale (British Columbia, Canada)
+  journal: jofpaleo
+  volume: 89
+  number: 2
+  pages:
+  - 366
+  - 368
+  pubDate:
+    year: 2015
+    month: 3
+  processDates:
+    accepted: 2014-09-28
+  authors:
+  - sumrall
+  - zamora
+  identifiers:
+    doi: 10.1017/jpa.2014.54
+2017_zamora_deline_álvaro_rahman:
+  title: The Cambrian Substrate Revolution and the early evolution of attachment in suspension-feeding echinoderms
+  complete:
+    named: null
+    open: null
+    history: null
+    specimens:
+      basic: null
+      all: null
+  journal: es-rev
+  volume: 171
+  pages:
+  - 478
+  - 491
+  pubDate:
+    year: 2017
+  processDates:
+    received: 2017-03-07
+    revised: 2017-06-30
+    accepted: 2017-06-30
+    online: 2017-07-01
+  authors:
+  - zamora
+  - deline
+  - álvaro
+  - rahman
+2017_zamora_sumrall_zhu.x.j_lefebvre:
+  title: A new stemmed echinoderm from the Furongian of China and the origin of Glyptocystitida (Blastozoa, Echinodermata)
+  journal: geomag
+  volume: 154
+  number: 3
+  pages:
+  - 465
+  - 475
+  pubDate:
+    year: 2017
+  processDates:
+    received: 2015-11-17
+    accepted: 2016-01-27
+    online: 2016-03-03
+  identifiers:
+    doi: 10.1017/S001675681600011X
+  authors:
+  - zamora
+  - sumrall
+  - zhu.x.j
+  - lefebvre
+2018_lefebvre_lerosey-aubril:
+  title: "Laurentian origin of solutan echinoderms: new evidence from the Guzhangian (Cambrian Series 3) Weeks Formation of Utah, USA"
+  complete:
+    named: true
+    history: false
+  journal: geomag
+  volume: 155
+  number: 5
+  pages:
+  - 1190
+  - 1204
+  pubDate:
+    year: 2018
+  processDates:
+    received: 2016-09-19
+    accepted: 2017-02-08
+    online: 2017-03-13
+  identifiers:
+    doi: 10.1017/S0016756817000152
+  authors:
+  - lefebvre
+  - lerosey-aubril
+2019_wen.r_babcock_peng.j_robison:
+  title: "New edrioasteroid (Echinodermata) from the Spence Shale (Cambrian), Idaho, USA: further evidence of attachment in the early evolutionary history of edrioasteroids"
+  journal: bullgeo
+  volume: 94
+  number: 1
+  pages:
+  - 115
+  - 124
+  authors:
+  - wen.r
+  - babcock
+  - peng.j
+  - robison
+  pubDate:
+    year: 2019
+  processDates:
+    received: 2018-10-30
+    revised: 2019-03-05
+    accepted: 2019-03-05
+    online: 2019-03-21
+    issued: 2019-03-31
+  identifiers:
+    doi: 10.3140/bull.geosci.1730
+2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler:
+  title: Athenacrinus n. gen. and other early echinoderm taxa inform crinoid origin and arm evolution
+  journal: jofpaleo
+  volume: 94
+  number: 2
+  pubDate:
+    year: 2020
+  pages:
+  - 311
+  - 333
+  processDates:
+    accepted: 2019-10-03
+  identifiers:
+    doi: 10.1017/jpa.2019.87
+  authors:
+  - guensburg
+  - sprinkle
+  - mooi
+  - lefebvre
+  - david
+  - roux
+  - derstler
+2020_zamora_sprinkle_sumrall:
+  title: A revaluation of rhipidocystid echinoderms based on a new flattened blastozoan from the Upper Ordovician of Maryland, USA
+  journal: acta-p-polonica
+  volume: 65
+  number: 3
+  pages:
+  - 455
+  - 465
+  pubDate:
+    year: 2020
+  authors:
+  - zamora
+  - sprinkle
+  - sumrall
+  identifiers:
+    doi: 10.4202/app.00718.2019
+    url: https://www.app.pan.pl/article/item/app007182019.html
+2021_jell_sprinkle:
+  title: Revision of Whitehouse’s eocrinoids Peridionites and Cymbionites, with description of the associated fauna including two new echinoderm genera, lower Middle Cambrian Thorntonia Limestone, northwestern Queensland
+  complete:
+    notes: Non-echinoderm trees not captured
+    named: true
+    open: true
+    history: true
+    specimens:
+      basic: true
+      all: true
+  journal: alcheringa
+  volume: 45
+  number: 1
+  pages:
+  - 1
+  - 55
+  pubDate:
+    year: 2021
+  processDates:
+    received: 2020-07-03
+    revised: 2020-11-22
+    accepted: 2021-01-04
+    online: 2021-06-02
+  authors:
+  - jell
+  - sprinkle
+  identifiers:
+    doi: 10.1080/03115518.2021.1913512
+2021_parsley:
+  title: Evolution, Functional Morphology and Paedomorphism in the Gogiid-Ascocystitid Lineage (Eocrinoidea; Cambrian-Ordovician)
+  journal: paleo-j
+  volume: 55
+  number: 9
+  pages:
+  - 966
+  - 976
+  pubDate:
+    year: 2021
+  authors:
+  - parsley
+  identifiers:
+    doi: 10.1134/S0031030121090100
+2022_zamora_rahman_sumrall_gibson_thompson:
+  title: Cambrian edrioasteroid reveals new mechanism for secondary reduction of the skeleton in echinoderms
+  journal: procrsocb
+  volume: 289
+  articleNumber: 20212733
+  pubDate:
+    year: 2022
+  processDates:
+    received: 2021-12-17
+    accepted: 2022-02-04
+  authors:
+  - zamora
+  - rahman
+  - sumrall
+  - gibson
+  - thompson
+  identifiers:
+    doi: 10.1098/rspb.2021.2733
+2022_zhao.j_guo.j_selden_cong.p.y_li.y.j:
+  title: A new eocrinoid from the Guanshan Biota (Cambrian Series 2, Stage 4), with implication of the development of different attachment modes in early Cambrian
+  journal: pworld
+  volume: 31
+  pages:
+  - 185
+  - 193
+  pubDate:
+    year: 2022
+  processDates:
+    received: 2021-02-26
+    revised: 2021-07-29
+    accepted: 2021-08-04
+    online: 2021-08-12
+  authors:
+  - zhao.j
+  - guo.j
+  - selden
+  - cong.p.y
+  - li.y.j
+2022_zhao.j_rahman_zamora_chen.a_cong.p.y:
+  title: The first edrioasteroid echinoderm from the lower Cambrian Chengjiang biota of Yunnan Province, China
+  journal: papersinpalaeo
+  number: 8
+  articleNumber: e1465
+  pubDate:
+    year: 2022
+    month: 8
+    day: 27
+  authors:
+  - zhao.j
+  - rahman
+  - zamora
+  - chen.a
+  - cong.p.y
+  processDates:
+    received: 2022-01-21
+    revised: 2022-06-07
+    accepted: 2022-06-07
+    online: 2022-08-07
+  identifiers:
+    doi: 10.1002/spp2.1465
+2024_wang.d.z_nohejlová_sun.z.x_zeng.h_lefebvre_yang.x.l_zhao.f.c:
+  title: First report of lepidocystid echinoderm in the Cambrian of North China- Evolutionary and Palaeobiogeographic implications
+  journal: ppp
+  volume: 644
+  articleNumber: 112194
+  pubDate:
+    year: 2024
+  processDates:
+    received: 2024-02-21
+    revised: 2024-04-07
+    accepted: 2024-04-09
+    online: 2024-04-16
+  authors:
+  - wang.d.z
+  - nohejlová
+  - sun.z.x
+  - zeng.h
+  - lefebvre
+  - yang.x.l
+  - zhao.f.c
+  identifiers:
+    doi: 10.1016/j.palaeo.2024.112194
+2024_zamora_guensburg_sprinkle:
+  title: Redescription of the Cambrian edrioasteroid Sprinkleoglobus spencensis n. comb. (Wen et al., 2019) from the Spence Shale (Utah, USA)
+  journal: jofpaleo
+  volume: 98
+  pubDate:
+    year: 2024
+  pages:
+  - 952
+  - 958
+  authors:
+  - zamora
+  - guensburg
+  - sprinkle
+  processDates:
+    received: 2024-03-27
+    revised: 2024-05-03
+    accepted: 2024-05-13
+    online: 2025-03-21
+  identifiers:
+    doi: 10.1017/jpa.2024.44
+2025_savage_rahman:
+  title: First evidence of attached juveniles in the solutan echinoderm Pahvanticystis from the middle Cambrian Weeks Formation (Utah, USA)
+  notes: |
+    Involves moving Castericystis sp. nov. (unknown source)
+    to Pahvanticystis cf. utahensis
+  journal: acta-p-polonica
+  volume: 70
+  number: 1
+  pages:
+  - 175
+  - 178
+  pubDate:
+    year: 2025
+  processDates:
+    received: 2024-12-04
+    accepted: 2025-02-15
+    online: 2025-03-24
+  authors:
+  - savage
+  - rahman
+  identifiers:
+    doi: 10.4202/app.01228.2024
