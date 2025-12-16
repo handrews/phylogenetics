@@ -698,6 +698,10 @@ boliviensis_sprinkle_1973:
   name: boliviensis
   authority:
     source: 1973b_sprinkle
+bostryclavus:
+  name: Bostryclavus
+  authority:
+    source: 1996_sumrall
 bothriocidaridae:
   name: Bothriocidaridae
   rank: Family
@@ -1111,6 +1115,10 @@ clausus_austen_1843:
   name: clausus
   auth: [Austen]
   year: 1843
+clavidiscus:
+  name: Clavidiscus
+  authority:
+    source: 1996_sumrall
 cnemecrinus:
   name: Cnemecrinus
   authority:
@@ -2790,6 +2798,10 @@ guensburgi_sprinkle_sumrall_2015:
   name: guensburgi
   auth: [sprinkle, sumrall]
   year: 2015
+guensburgi_sumrall_1996:
+  name: guensburgi
+  authority:
+    source: 1996_sumrall
 guizhouensis_zhao.y.l_huang.y.z_gong.x.y_1994:
   name: guizhouensis
   authority:
@@ -3165,6 +3177,10 @@ humilis_billings_1857:
   name: humilis
   auth: [billings]
   year: 1857
+huntsvillensis_sumrall_1996:
+  name: huntsvillensis
+  authority:
+    source: 1996_sumrall
 huronensis_billings_1865:
   name: huronensis
   auth: [billings]
@@ -3192,6 +3208,10 @@ hybolopus_fraunfelder_utgaard_1970:
   name: hybolopus
   auth: [Fraunfelder, Utgaard]
   year: 1970
+hypsiclavus:
+  name: Hypsiclavus
+  authority:
+    source: 1996_sumrall
 hystrichopsydrax:
   name: Hystrichopsydrax
   authority:
@@ -3413,6 +3433,10 @@ kilmeri_durham_1967:
   name: kilmeri
   authority:
     source: 1967c_durham
+kinsleyi_sumrall_1996:
+  name: kinsleyi
+  authority:
+    source: 1996_sumrall
 kinzercystis:
   name: Kinzercystis
   authority:
@@ -3560,6 +3584,14 @@ lepidodiscus-subgenus:
     Carneyella (foerste), but Treatise does not, and as a genus its
     authority is two years later.  Bell gives it as for Agelacrintes
     by Meek and Worthen, 1868.
+lepidodiscus-sp-1_sumrall_1996:
+  name: null
+  authority:
+    source: 1996_sumrall
+lepidodiscus-sp-2_sumrall_1996:
+  name: null
+  authority:
+    source: 1996_sumrall
 lepidus_zhao.y.l_huang.y.z_gong.x.y_1994:
   name: lepidus
   authority:
@@ -3941,6 +3973,10 @@ myeinocystites:
   auth: [strimple]
   year: 1953
 ###################### N
+nacoensis_sumrall_1992:
+  name: nacoensis
+  auth: [sumral]
+  year: 1992
 narrawayella:
   name: Narrawayella
   auth: [foerste]
@@ -4523,6 +4559,10 @@ praepleurocystis-sp_kolata_1975:
   rank: species
   authority:
     source: 1975_kolata
+priesti_strimple_1968:
+  name: priesti
+  auth: [strimple]
+  year: 1968
 primaevus_billings_1868:
   name: primaevus
   auth: [billings]

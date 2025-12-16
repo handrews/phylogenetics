@@ -4982,10 +4982,10 @@
                       - taxon: lebetodiscinae
                     - taxon: chatsworthia
                   - taxon: agelacrinitidae
-            - taxon: walcotti_schuchert_1919
-              provisional: true
-              parents:
-              - taxon: stromatocystites
+            - taxon: stromatocystites
+              quoted: true
+              children:
+              - taxon: walcotti_schuchert_1919
           - children:
             - children:
               - taxon: totiglobus
@@ -4996,10 +4996,10 @@
                   - children:
                     - taxon: rhenopyrgus
                     - taxon: cyathocystis
-            - taxon: lloydi_sprinkle_1985
-              provisional: true
-              parents:
-              - taxon: totiglobus
+            - taxon: totiglobus
+              quoted: true
+              children:
+              - taxon: lloydi_sprinkle_1985
       - taxon: camptostroma
   - treeType: cladogram, preferred parsimony B
     tree:
@@ -5020,10 +5020,10 @@
                       - taxon: lebetodiscinae
                     - taxon: chatsworthia
                   - taxon: agelacrinitidae
-            - taxon: walcotti_schuchert_1919
-              provisional: true
-              parents:
-              - taxon: stromatocystites
+            - taxon: stromatocystites
+              quoted: true
+              children:
+              - taxon: walcotti_schuchert_1919
         - children:
           - children:
             - taxon: totiglobus
@@ -5034,10 +5034,10 @@
                 - children:
                   - taxon: rhenopyrgus
                   - taxon: cyathocystis
-          - taxon: lloydi_sprinkle_1985
-            provisional: true
-            parents:
-            - taxon: totiglobus
+          - taxon: totiglobus
+            quoted: true
+            children:
+            - taxon: lloydi_sprinkle_1985
       - taxon: camptostroma
   - treeType: cladogram, Adams
     tree:
@@ -5064,14 +5064,14 @@
                 - taxon: astrocystitidae
                 - taxon: rhenopyrgus
                 - taxon: cyathocystis
-          - taxon: lloydi_sprinkle_1985
-            provisional: true
-            parents:
-            - taxon: totiglobus
-        - taxon: walcotti_schuchert_1919
-          provisional: true
-          parents:
-          - taxon: stromatocystites
+          - taxon: totiglobus
+            quoted: true
+            children:
+            - taxon: lloydi_sprinkle_1985
+        - taxon: stromatocystites
+          quoted: true
+          children:
+          - taxon: walcotti_schuchert_1919
       - taxon: camptostroma
   - treeType: cladogram, strict consensus
     tree:
@@ -5090,10 +5090,10 @@
                   - taxon: lebetodiscinae
                 - taxon: chatsworthia
                 - taxon: agelacrinitidae
-          - taxon: walcotti_schuchert_1919
-            provisional: true
-            parents:
-            - taxon: stromatocystites
+          - taxon: stromatocystites
+            quoted: true
+            children:
+            - taxon: walcotti_schuchert_1919
         - children:
           - children:
             - taxon: totiglobus
@@ -5103,10 +5103,10 @@
                 - taxon: astrocystitidae
                 - taxon: rhenopyrgus
                 - taxon: cyathocystis
-          - taxon: lloydi_sprinkle_1985
-            provisional: true
-            parents:
-            - taxon: stromatocystites
+          - taxon: totiglobus
+            quoted: true
+            children:
+            - taxon: lloydi_sprinkle_1985
 1995_dzik_orłowski:
   taxonomies:
   - taxon: ctenocystoidea
