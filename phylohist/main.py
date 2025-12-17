@@ -29,6 +29,7 @@ def main():
   parser.add_argument('-m', '--match', default=False, action='store_true')
   parser.add_argument('-i', '--highest')
   parser.add_argument('-w', '--lowest')
+  parser.add_argument('-a', '--author', nargs='+', action='extend', default=[])
   args = parser.parse_args()
 
   taxa = frozenset(

@@ -75,6 +75,8 @@ def print_tree(node, data, tree_info, args, indent='', on=1, buffer='', first=Fa
 
   if first:
     paper = data["sources"][tree_info[1]]
+    if args.author and not (set(args.author) & set(paper['authors'])):
+      return
     year = tree_info[1][:4] # paper['pubDate']#['year']
     authors = '; '.join(
       [
