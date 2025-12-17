@@ -3,6 +3,10 @@ acuticarpus:
   name: Acuticarpus
   authority:
     source: 1997_sumrall_sprinkle_guensburg
+adami_gehling_1987:
+  name: adami
+  authority:
+    source: 1987_gehling
 adelphicrinus:
   name: Adelphicrinus
   authority:
@@ -318,6 +322,10 @@ archaepyrgus:
   name: Archaepyrgus
   authority:
     source: 1994_guensburg_sprinkle
+archegonaster:
+  name: Archegonaster
+  auth: [jaekel]
+  year: 1923
 arctus_sardeson_1928:
   name: arctus
   auth: [Sardeson]
@@ -353,6 +361,10 @@ aristocystites:
   name: Aristocystites
   auth: [barrande]
   year: 1887
+arkarua:
+  name: Arkarua
+  authority:
+    source: 1987_gehling
 armata_forbes_1848:
   name: armata
   authority:
@@ -424,12 +436,12 @@ astrocystites-sp_webby_1968:
     closer comparisons cannot be made."
   authority:
     source: 1968_webby
-astrocystites-sp-a_sprinle_1982i:
+astrocystites-sp-a_sprinkle_1982i:
   name: null
   rank: species
   authority:
     source: 1982i_sprinkle
-astrocystites-sp-b_sprinle_1982i:
+astrocystites-sp-b_sprinkle_1982i:
   name: null
   rank: species
   authority:

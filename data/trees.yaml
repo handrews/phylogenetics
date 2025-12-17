@@ -3975,8 +3975,8 @@
               children:
               - taxon: ottawaensis_whiteaves_1897
                 type: true
-              - openTaxon: astrocystites-sp-a_sprinle_1982i
-              - openTaxon: astrocystites-sp-b_sprinle_1982i
+              - openTaxon: astrocystites-sp-a_sprinkle_1982i
+              - openTaxon: astrocystites-sp-b_sprinkle_1982i
 1983_brett_frest_sprinkle_clement.c.r:
   taxonomies:
   - taxon: blastozoa
@@ -4282,7 +4282,7 @@
       - taxon: stromatocystites
       - bracket: edrioasteroidea
         children:
-        - bracket: edrioasaterida
+        - bracket: edrioasterida
           children:
           - bracket: edrioasteridae
             children:
@@ -4327,6 +4327,29 @@
               new: true
               specimens:
                 holotype: USNM 172047
+1987_gehling:
+  taxonomies:
+  - taxon: echinodermata
+    children:
+    - taxon: edrioasteroidea
+      children:
+      - taxon: arkarua
+        provisional: true
+        new: true
+        children:
+        - taxon: adami_gehling_1987
+          type: true
+          new: true
+          specimens:
+            holotype: SAMP26768
+            paratypes:
+            - SAMP26769
+            - SAMP26770
+            - SAMP26771
+            - SAMP26772
+            - SAMP26773
+            - SAMP26774
+            - SAMP26775
 1987_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley:
   taxonomies:
   - taxon: echinodermata
@@ -4392,7 +4415,7 @@
                   - taxon: stalticodiscus
                   - children:
                     - taxon: lepidodiscus
-                    - taxon: ulrichodiscus
+                    - taxon: ulrichidiscus
   - treeType: evolutionary timeline
     tree:
       taxon: isorophusella
@@ -4421,7 +4444,7 @@
                 - children:
                   - taxon: lepidodiscus
                     children:
-                    - taxon: ulrichodiscus
+                    - taxon: ulrichidiscus
 1987_ubaghs:
   notes: |
     Only summary publicly available, and details are only in French
@@ -4625,7 +4648,7 @@
           - taxon: reduncus_smith.a.b_jell_1990
             parents:
             - taxon: stromatocystites
-          - taxon: pentangularis_pompeckj_1892
+          - taxon: pentangularis_pompeckj_1896
             parents:
             - taxon: stromatocystites
           - children:
@@ -4671,7 +4694,7 @@
             - taxon: ophiuroids
             - taxon: archegonaster
             - taxon: asteroids
-        - taxon: pentangularis_pompeckj_1892
+        - taxon: pentangularis_pompeckj_1896
           parents:
           - taxon: stromatocystites
           children:
@@ -4679,7 +4702,7 @@
             parents:
             - taxon: stromatocystites
           - children:
-            - taxon: nimius_bell.b.m_sprinle_1978
+            - taxon: nimius_bell.b.m_sprinkle_1978
               parents:
               - taxon: totiglobus
             - children:
@@ -4688,7 +4711,7 @@
                 - children:
                   - taxon: chatsworthia
                     children:
-                    - taxon: foerstidiscus
+                    - taxon: foerstediscus
                   - taxon: hadrodiscus
                 - taxon: edriophus
               - taxon: lloydi_sprinkle_1985
@@ -5844,6 +5867,35 @@
                 provisional: true
               - openTaxon: parapostibulls-sp-indeterminate_sumrall_garbisch_pope_2000
                 provisional: true
+  phylogenies:
+  - treeType: cladogram, strict consensus of three most parsimonius trees
+    tree:
+      children:
+      - children:
+        - taxon: agelacrinites
+          outgroup: true
+          children:
+          - taxon: hamiltonensis_vanuxem_1842
+            outgroup: true
+        - taxon: krama
+          outgroup: true
+          children:
+          - taxon: devonicum_bassler_1936
+            outgroup: true
+      - taxon: postibullinae
+        children:
+        - taxon: postibulla
+          children:
+          - children:
+            - taxon: alabamensis_sumrall_garbisch_pope_2000
+            - taxon: legrandensis_miller.s.a_gurley_1894
+            - children:
+              - taxon: lukei_bell.b.m_petersen.m.s_1976
+              - taxon: keslingi_bell.b.m_1974
+        - taxon: parapostibulla
+          children:
+          - taxon: hybolopus_fraunfelter_utgaard_1970
+          - taxon: murphyi_sumrall_garbisch_pope_2000
 2001_sumrall_sprinkle_guensburg:
   taxonomies:
   - taxon: eocrinoidea

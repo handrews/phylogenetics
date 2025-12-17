@@ -1539,6 +1539,20 @@
   - sprinkle
   identifiers:
     url: https://kuscholarworks.ku.edu/entities/publication/de425cc9-1319-41f5-b1b4-0c6a6e13757a
+1987_gehling:
+  title: Earliest known echinoderm — a new Ediacaran fossil from the Pound Subgroup of South Australia
+  journal: alcheringa
+  volume: 11
+  number: 4
+  pubDate:
+    year: 1987
+  pages:
+  - 337
+  - 345
+  authors:
+  - gehling
+  identifiers:
+    doi: 10.1080/03115518708619143
 1987_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley:
   title: Mandalacystis, a New Rhipidocystid Eocrinoid from the Whiterockian Stage (Ordovician) in Oklahoma and Nevada.pdf
   journal: jofpaleo
