@@ -2095,6 +2095,25 @@
   - gahn
   identifiers:
     doi: 10.1139/E05-114
+2006_sumrall_sprinkle_bonem:
+  title: An Edrioasteroid-Dominated Echinoderm Assemblage from a Lower Pennsylvanian Marine Conglomerate in Oklahoma
+  journal: jofpaleo
+  volume: 80
+  number: 2
+  pubDate:
+    year: 2006
+    month: 3
+  processDates:
+    accepted: 2005-02-03
+  pages:
+  - 229
+  - 244
+  authors:
+  - sumrall
+  - sprinkle
+  - bonem
+  identifiers:
+    jstor: 4095122
 2007a_nardin:
   title: "New specimens of Lingulocystis Thoral, 1935 (Eocrinoidea, Blastozoa) from the Arenig (Lower Ordovician) of Montagne noire (southern France): Intraspecific morphological variability, stratigraphic, and palaeoecological implications"
   journal: annals

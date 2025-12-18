@@ -6457,6 +6457,47 @@
                   - taxon: lispidecodus
                   - taxon: giganticlavus
                   - taxon: hypsiclavus
+2006_sumrall_sprinkle_bonem:
+  taxonomies:
+  - notes: No ranks
+    taxon: crinoidea
+    children:
+    - taxon: cladida
+      children:
+      - taxon: ampelocrinidae
+        children:
+        - taxon: paragassizocrininae
+          children:
+          - taxon: paragassizocrinus
+            children:
+            - taxon: tarri_strimple_1938
+  - notes: no ranks
+    taxon: edrioasteroidea
+    children:
+    - taxon: isorophida
+      children:
+      - taxon: isorophina
+        children:
+        - taxon: agelacrinitidae
+          children:
+          - taxon: neoisorophusella
+            children:
+            - taxon: whitesidei_sumrall_sprinkle_bonem_2006
+              new: true
+          - taxon: ulrichidiscus
+            children:
+            - taxon: forbesi_sumrall_sprinkle_bonem_2006
+              new: true
+          - taxon: postibullinae
+            children:
+            - taxon: postibulla
+              children:
+              - taxon: westergaardi_sumrall_sprinkle_bonem_2006
+                new: true
+            - taxon: parapostibulla
+              children:
+              - taxon: graysoni_sumrall_sprinkle_bonem_2006
+                new: true
 2007a_nardin:
   taxonomies:
   - taxon: blastozoa
@@ -6617,7 +6658,7 @@
           - taxon: legrandensis_miller.s.a_gurley_1894
           - taxon: lukei_bell.b.m_petersen.m.s_1976
           - taxon: alabamensis_sumrall_garbisch_pope_2000
-          - taxon: westergardi_sumrall_sprinkle_bonem_2006
+          - taxon: westergaardi_sumrall_sprinkle_bonem_2006
           - taxon: jasperensis_harker_1953
             provisional: true
           - taxon: alpenensis_bassler_1936

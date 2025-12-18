@@ -175,6 +175,11 @@ americanus_bassler_1936:
   name: americanus
   authority:
     source: 1936_bassler
+ampelocrinidae:
+  name: Ampelocrinidae
+  rank: Family
+  auth: [Kirk]
+  year: 1942
 ampheristocystidae:
   name: Ampheristocystidae
   rank: Family
@@ -2492,6 +2497,11 @@ foerstei_bassler_shideler_1936:
   in: [bassler]
   year: 1936
   notes: 1936_bassler (but 'in' doesn't support this form yet)
+forbesi_sumrall_sprinkle_bonem_2006:
+  name: forbesi
+  authority:
+    source: 2006_sumrall_sprinkle_bonem
+  notes: Named for the late Joe Forbes, who owned the ranch locality.
 forcipulatida:
   name: Forcipulatida
   rank: Order
@@ -2812,8 +2822,8 @@ grayae_bather_1915:
   year: 1915
 graysoni_sumrall_sprinkle_bonem_2006:
   name: graysoni
-  auth: [sumrall, sprinkle, Bonem]
-  year: 2006
+  authority:
+    source: 2006_sumrall_sprinkle_bonem
 grebelae_müller.p_hahn_2010:
   name: grebelae
   authority:
@@ -4230,6 +4240,15 @@ paradoxicus_billings_1859:
   name: paradoxicus
   auth: [billings]
   year: 1859
+paragassizocrininae:
+  name: Paragassizocrininae
+  rank: Subfamily
+  auth: [strimple, Watkins]
+  year: 1969
+paragassizocrinus:
+  name: Paragassizocrinus
+  auth: [Moore, Plummer]
+  year: 1940
 paragogia:
   name: Paragogia
   authority:
@@ -5537,6 +5556,10 @@ tanaocystis:
   name: Tanaocystis
   authority:
     source: 1982g_sprinkle
+tarri_strimple_1938:
+  name: tarri
+  auth: [strimple]
+  year: 1938
 tastudorum_jell_burrett_banks_1985:
   name: tastudorum
   auth: [jell, burrett, banks]
@@ -5933,10 +5956,14 @@ waucobella:
   name: Waucobella
   authority:
     source: 1967c_durham
-westergardi_sumrall_sprinkle_bonem_2006:
-  name: westergardi
-  auth: [sumrall, sprinkle, Bonem]
-  year: 2006
+westergaardi_sumrall_sprinkle_bonem_2006:
+  name: westergaardi
+  authority:
+    source: 2006_sumrall_sprinkle_bonem
+whitesidei_sumrall_sprinkle_bonem_2006:
+  name: whitesidei
+  authority:
+    source: 2006_sumrall_sprinkle_bonem
 wilkinsi_gill_caster_1960:
   name: wilkinsi
   authority:
