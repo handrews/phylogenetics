@@ -579,8 +579,8 @@ belemnocystitidae:
   year: 1968
 belli_sumrall_brett_cornell_2006:
   name: belli
-  auth: [sumrall, Brett, Cornell]
-  year: 2006
+  authority:
+    source: 2006_sumrall_brett_cornell
 bellicostata_walcott_1924:
   name: bellicostata
   auth: [walcott]
@@ -4787,8 +4787,8 @@ pyrgocystis-sp_guensburg_1988:
     source: 1988_guensburg
 pyrgopostibulla:
   name: Pyrgopostibulla
-  auth: [sumrall, Brett, Cornell]
-  year: 2006
+  authority:
+    source: 2006_sumrall_brett_cornell
 pyriformis_buch_1840:
   name: pyriformis
   auth: [buch]

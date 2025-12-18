@@ -61,7 +61,7 @@ bowsher:
   given: Arthur L.
 brett:
   family: Brett
-  given: C. E.
+  given: Carlton E.
 bruguière:
   family: Bruguière
   given: Jean Guillaume
@@ -143,6 +143,9 @@ cooper:
   given: G. Arthur
   birth: 1902
   death: 2000
+cornell:
+  family: Cornell
+  given: Sean R.
 cuvier:
   family: Cuvier
   given: Georges
