@@ -5830,6 +5830,13 @@ trilobita:
   rank: Class
   auth: [Walch]
   year: 1771
+trochocystites:
+  name: Trochocystites
+  auth: [barrande]
+  year: 1859
+  notes: |
+    Nomen nudum, used (or re-defined?) for T. cannati, which is actually
+    an edrioasteroide, Cambraser cannati.
 turbanicystidae:
   name: Turbanicystidae
   authority:
