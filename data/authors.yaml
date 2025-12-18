@@ -386,6 +386,9 @@ mccoy:
   birth: 1817
   death: 1899
   notes: Sources differ on "McCoy" vs "M'Coy", some say 1823 for birth.
+mckinney:
+  family: McKinney
+  given: Michael L.
 meek:
   family: Meek
   given: Fielding Bradford

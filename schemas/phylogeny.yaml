@@ -201,6 +201,8 @@ $defs:
             $ref: "#/$defs/simpleDate"
           published:
             $ref: "#/$defs/simpleDate"
+          printed:
+            $ref: "#/$defs/simpleDate"
           issued:
             $ref: "#/$defs/simpleDate"
           read:

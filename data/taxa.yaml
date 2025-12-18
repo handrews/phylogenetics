@@ -1,4 +1,8 @@
 ###################### A
+acanthalepis:
+  name: Acanthalepis
+  auth: [mccoy]
+  year: 1846
 acuticarpus:
   name: Acuticarpus
   authority:
@@ -37,10 +41,10 @@ acanthocystites:
   name: Acanthocystites
   auth: [barrande]
   year: 1887
-acanthalepis:
-  name: Acanthalepis
-  auth: [mccoy]
-  year: 1846
+africanus_sumrall_zamora_2011:
+  name: africanus
+  authority:
+    source: 2011_sumrall_zamora
 agelacrinidae:
   name: Agelacrinidae
   rank: Family
@@ -210,6 +214,10 @@ andalusiae_ubaghs_vizcaïno_1990:
   name: andalusiae
   authority:
     source: 1990_ubaghs_vizcaïno
+anedriophus:
+  name: Anedriophus
+  authority:
+    source: 2011_sumrall_zamora
 angelini_jaekel_1899:
   name: angelini
   auth: [jaekel]
@@ -1031,6 +1039,10 @@ chatsworthia:
   name: Chatsworthia
   authority:
     source: 1990_smith.a.b_jell
+chauveli_sumrall_zamora_2011:
+  name: chauveli
+  authority:
+    source: 2011_sumrall_zamora
 cheirocrinidae:
   name: Cheirocrinidae
   rank: Family
@@ -2367,6 +2379,10 @@ ephraemovianus_bogolubov_1926:
   name: ephraemovianus
   auth: [Bogolubov]
   year: 1926
+epilezorum_sumrall_zamora_2011:
+  name: epilezorum
+  authority:
+    source: 2011_sumrall_zamora
 epipaston:
   name: Epipaston
   auth: [Holloway, jell]
@@ -2411,6 +2427,10 @@ eumorphocystoidea:
   auth: [Branson, Peck]
   year: 1940
   notes: nom. transl., possibly in 1982_sprinkle(ed)?
+euryeschatia:
+  name: Euryeschatia
+  authority:
+    source: 2011_sumrall_zamora
 eustypocystis:
   name: Eustypocystis
   authority:
@@ -2848,6 +2868,10 @@ guntheri_sprinkle_1973:
   name: guntheri
   authority:
     source: 1973_sprinkle
+gutii_sumrall_zamora_2011:
+  name: gutii
+  authority:
+    source: 2011_sumrall_zamora
 guttenbergensis_kolata_1975:
   name: guttenbergensis
   authority:
@@ -3101,6 +3125,10 @@ heterostelea:
   rank: Order
   auth: [jaekel]
   year: 1900
+hexedriocystis:
+  name: Hexedriocystis
+  authority:
+    source: 2011_sumrall_zamora
 hillocystida-order:
   name: Hillocystida
   rank: Order
@@ -3288,6 +3316,10 @@ incondita_raymond_1915:
 inconditus_raymond_1915:
   name: inconditus
   altSpellingOf: incondita_raymond_1915
+inexpectatus_sumrall_zamora_2011:
+  name: inexpectatus
+  authority:
+    source: 2011_sumrall_zamora
 inexplicata_paul.c.r.c_1997:
   name: inexplicata
   authority:
@@ -3376,6 +3408,10 @@ isorophinae:
   rank: Subfamily
   authority:
     source: 1974_bell.b.m
+isorophinid-incertae-sedis_sumrall_zamora_2011:
+  name: null
+  authority:
+    source: 2011_sumrall_zamora
 isorophus:
   name: Isorophus
   auth: [foerste]
@@ -3816,14 +3852,30 @@ mandalacystis:
   name: Mandalacystis
   authority:
     source: 1987_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley
-mariae_callaway_1877:
-  name: mariae
-  auth: [Callaway]
-  year: 1877
 mansfieldi_guensburg_2010:
   name: mansfieldi
   auth: [guensburg]
   year: 2010
+mariae_callaway_1877:
+  name: mariae
+  auth: [Callaway]
+  year: 1877
+maslennikovi_sumrall_2009:
+  name: maslennikovi
+  authority:
+    source: 2009_sumrall
+matacarros_sumrall_zamora_2011:
+  name: matacarros
+  authority:
+    source: 2011_sumrall_zamora
+mimus_sumrall_zamora_2011:
+  name: mimus
+  authority:
+    source: 2011_sumrall_zamora
+mckenziensis_sumrall_brett_mckinney_2009:
+  name: mckenziensis
+  authority:
+    source: 2009_sumrall_brett_mckinney
 medusa_barrande_1887:
   name: medusa
   auth: [barrande]
@@ -3975,6 +4027,14 @@ moroccoensis_smith.a.b_zamora_2013:
   name: moroccoensis
   auth: [smith.a.b, zamora]
   year: 2013
+moroccoensis_sumrall_zamora_2011:
+  name: moroccoensis
+  authority:
+    source: 2011_sumrall_zamora
+moroccopyrgus:
+  name: Moroccopyrgus
+  authority:
+    source: 2011_sumrall_zamora
 multibrachiatus_kirk_1945:
   name: multibrachiatus
   auth: [Kirk]
@@ -3987,6 +4047,10 @@ multifasciatus_hall_1859:
   name: multifasciatus
   auth: [hall]
   year: 1859
+multiplexidiscus:
+  name: Multiplexidiscus
+  authority:
+    source: 2009_sumrall_brett_mckinney
 multipora_billings_1854:
   name: multipora
   auth: [billings]
@@ -4083,6 +4147,10 @@ nodosus_hall_1864:
   name: nodosus
   auth: [Hall]
   year: 1864
+nodosus_sumrall_zamora_2011:
+  name: nodosus
+  authority:
+    source: 2011_sumrall_zamora
 nodosus_westphal_1974:
   name: nodosus
   auth: [Westphal]
@@ -4868,6 +4936,10 @@ raymondi_foerste_1920:
   name: raymondi
   auth: [foerste]
   year: 1920
+reboulorum_sumrall_zamora_2011:
+  name: reboulorum
+  authority:
+    source: 2011_sumrall_zamora
 rectiradiatus_shideler_1918:
   name: rectiradiatus
   auth: [Shideler]
@@ -5365,10 +5437,32 @@ squamosus_meek_worthen_1868:
   name: squamosus
   auth: [Meek, Worthen]
   year: 1868
+staffordi_domínguez alonso_1999:
+  name: staffordi
+  auth: [domínguez alonso]
+  year: 1999
 stalticodiscus:
   name: Stalticodiscus
   auth: [Smith]
   year: 1983
+staurocystinae:
+  name: Staurocystinae
+  rank: Subfamily
+  auth: [jaekel]
+  year: 1899
+staurocystis:
+  name: Staurocystis
+  auth: [haeckel]
+  year: 1896
+stecki_sumrall_2010:
+  name: stecki
+  authority:
+    source: 2010_sumrall
+steganoblastidae:
+  name: Steganoblastidae
+  rank: Family
+  authority:
+    source: 1900_bather
 steganoblastus:
   name: Steganoblastus
   auth: [Whiteaves]
@@ -5381,24 +5475,6 @@ stellatus_hall_1866:
   name: stellatus
   auth: [Hall]
   year: 1866
-staffordi_domínguez alonso_1999:
-  name: staffordi
-  auth: [domínguez alonso]
-  year: 1999
-staurocystinae:
-  name: Staurocystinae
-  rank: Subfamily
-  auth: [jaekel]
-  year: 1899
-staurocystis:
-  name: Staurocystis
-  auth: [haeckel]
-  year: 1896
-steganoblastidae:
-  name: Steganoblastidae
-  rank: Family
-  authority:
-    source: 1900_bather
 stelleroidea:
   name: Stelleroidea
   rank: Class
