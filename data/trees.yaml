@@ -6360,6 +6360,82 @@
               parents:
               - taxon: gogia
                 provisional: true
+2006_sumrall_gahn:
+  taxonomies:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: isorophida
+      children:
+      - taxon: agelacrinitidae
+        children:
+        - taxon: thresherodiscus
+          provisional: true
+          children:
+          - taxon: ramosus_foerste_1914
+        - taxon: discocystinae
+          children:
+          - taxon: lispidecodus
+            children:
+            - taxon: plinthotus_kesling_1967
+  phylogenies:
+  - treeType: cladogram, strict consensus of 27 most parsimonious trees
+    tree:
+      children:
+      - children:
+        - taxon: carneyella
+        - taxon: foerstediscus
+      - children:
+        - taxon: isorophus
+        - taxon: isorophusella
+        - children:
+          - taxon: agelacrinites
+          - taxon: thresherodiscus
+          - children:
+            - taxon: neoisorophusella
+            - children:
+              - taxon: postibulla
+              - children:
+                - taxon: lepidodiscus
+                - taxon: ulrichidiscus
+                - children:
+                  - taxon: cooperidiscus
+                  - children:
+                    - taxon: clavidiscus
+                    - children:
+                      - taxon: lispidecodus
+                      - taxon: giganticlavus
+                      - taxon: hypsiclavus
+  - treeType: cladogram, bootstrap analysis
+    tree:
+      children:
+      - children:
+        - taxon: carneyella
+        - taxon: foerstediscus
+      - bootstrap: 86
+        children:
+        - taxon: isorophus
+        - taxon: isorophusella
+        - bootstrap: 91
+          children:
+          - taxon: agelacrinites
+          - taxon: thresherodiscus
+          - taxon: neoisorophusella
+          - taxon: postibulla
+          - bootstrap: 84
+            children:
+            - taxon: lepidodiscus
+            - taxon: ulrichidiscus
+            - bootstrap: 72
+              children:
+              - taxon: cooperidiscus
+              - bootstrap: 84
+                children:
+                - taxon: clavidiscus
+                - bootstrap: 84
+                  children:
+                  - taxon: lispidecodus
+                  - taxon: giganticlavus
+                  - taxon: hypsiclavus
 2007a_nardin:
   taxonomies:
   - taxon: blastozoa

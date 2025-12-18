@@ -2058,6 +2058,24 @@
   - collins.d
   identifiers:
     doi: 10.1139/E05-107
+2006_sumrall_gahn:
+  title: Morphological and systematic reinterpretation of two enigmatic edrioasteroids (Echinodermata) from Canada
+  journal: can-j-earth-sci
+  volume: 43
+  pubDate:
+    year: 2006
+  processDates:
+    received: 2005-07-12
+    accepted: 2005-11-22
+    online: 2006-05-16
+  pages:
+  - 497
+  - 507
+  authors:
+  - sumrall
+  - gahn
+  identifiers:
+    doi: 10.1139/E05-114
 2007a_nardin:
   title: "New specimens of Lingulocystis Thoral, 1935 (Eocrinoidea, Blastozoa) from the Arenig (Lower Ordovician) of Montagne noire (southern France): Intraspecific morphological variability, stratigraphic, and palaeoecological implications"
   journal: annals

@@ -390,6 +390,8 @@ $defs:
         type: array
         items:
           type: [number, string]
+      bootstrap:
+        type: integer
       modifier:
         type: string
       citation:
