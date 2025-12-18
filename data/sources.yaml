@@ -1695,6 +1695,17 @@
     year: 1991
   authors:
   - fatka
+1992_sumrall:
+  title: Spiraclavus nacoensis, a new species of clavate agelacrinitid edrioasteroid from central Arizona
+  journal: jofpaleo
+  volume: 66
+  number: 1
+  pubDate:
+    year: 1992
+  processDates:
+    accepted: 1991-03-20
+  authors:
+  - sumrall
 1993_dzik_orłowski:
   title: The Late Cambrian eocrinoid Cambrocrinus
   journal: acta-p-polonica
@@ -1776,6 +1787,24 @@
   - sumrall
   identifiers:
     doi: 10.1017/S0022336000038671
+1996_sumrall_bowsher:
+  title: Giganticlavus, a new genus of Pennsylvanian edrioasteroid from North America
+  journal: jofpaleo
+  volume: 70
+  number: 6
+  pubDate:
+    year: 1996
+    month: 11
+  processDates:
+    accepted: 1996-03-04
+  pages:
+  - 986
+  - 993
+  authors:
+  - sumrall
+  - bowsher
+  identifiers:
+    doi: 10.1017/S0022336000038683
 1997_paul.c.r.c:
   title: British Ordovician Cystoids, Part 3
   journal: monograph-palaeo
@@ -1896,6 +1925,8 @@
   pubDate:
     year: 2001
     month: 1
+  processDates:
+    accepted: 2000-07-03
   pages:
   - 135
   - 146
@@ -1968,6 +1999,19 @@
   - sprinkle
   identifiers:
     url: https://www.biodiversitylibrary.org/page/27980785
+2003_sumrall_parsley:
+  title: Morphology and biomechanical implications of isolated discocystinid plates
+  journal: palaeontology
+  volume: 46
+  number: 1
+  pubDate:
+    year: 2003
+  processDates:
+    received: 2001-05-08
+    revised: 2001-11-07
+  authors:
+  - sumrall
+  - parsley
 2005_frest:
   title: Ampheristocystis, a Silurian (Lower Wenlock) eocrinoid (Echinodermata, Blastozoa) from Indiana
   journal: geo-j

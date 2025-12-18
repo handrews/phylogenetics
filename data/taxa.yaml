@@ -600,6 +600,10 @@ belochthus:
 belochthos:
   name: Belochthos
   altSpellingOf: belochthus
+bennisoni_sumrall_bowsher_1996:
+  name: bennisoni
+  authority:
+    source: 1996_sumrall_bowsher
 bibrachiatus_parsley_1982:
   name: bibrachiatus
   authority:
@@ -2519,6 +2523,10 @@ gemmiformis_hall_1852:
   name: gemmiformis
   auth: [hall]
   year: 1852
+gelasinus_sumrall_bowsher_1996:
+  name: gelasinus
+  authority:
+    source: 1996_sumrall_bowsher
 germanica_müller.p_hahn_2010:
   name: germanica
   authority:
@@ -2537,6 +2545,10 @@ giganteus_leuchtenberg_1943:
   name: giganteus
   auth: [Leuchtenberg]
   year: 1943
+giganticlavus:
+  name: Giganticlavus
+  authority:
+    source: 1996_sumrall_bowsher
 gigas_jaekel_1901:
   name: gigas
   auth: [jaekel]

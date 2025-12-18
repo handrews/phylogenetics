@@ -4794,6 +4794,22 @@
           - taxon: knizeki_fatka_1991
             new: true
             notes: There is a "Description" but no "Diagnosis"
+1992_sumrall:
+  taxonomies:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: isorophida
+      children:
+      - taxon: isorophina
+        children:
+        - taxon: agelacrinitidae
+          children:
+          - taxon: spiraclavus
+            new: true
+            children:
+            - taxon: nacoensis_sumrall_1992
+              type: true
+              new: true
 1993_dzik_orłowski:
   taxonomies:
   - taxon: cystoidea
@@ -5208,6 +5224,25 @@
                 type: true
             - taxon: dinocystis
             - taxon: lispidecodus
+1996_sumrall_bowsher:
+  taxonomies:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: isorophida
+      children:
+      - taxon: isorophina
+        children:
+        - taxon: agelacrinitidae
+          children:
+          - taxon: giganticlavus
+            new: true
+            children:
+            - taxon: bennisoni_sumrall_bowsher_1996
+              type: true
+              new: true
+            - cfTaxon: bennisoni_sumrall_bowsher_1996
+            - taxon: gelasinus_sumrall_bowsher_1996
+              new: true
 1997_paul.c.r.c:
   taxonomies:
   - taxon: diploporita-class
@@ -6059,6 +6094,22 @@
                   - taxon: aethocrinus
                   - taxon: elpasocrinus
                   - taxon: hybocrinus
+2003_sumrall_parsley:
+  phylogenies:
+  - treeType: cladogram, character acquisition
+    tree:
+      notes: Development of floor plate lateral extensions
+      children:
+      - taxon: ulrichidiscus
+      - children:
+        - taxon: clavidiscus
+        - notes: Development of interambulacral plate extensions
+          children:
+          - taxon: hypsiclavus
+          - children:
+            - taxon: spiraclavus
+            - notes: Thickening of interambulacral plates
+              taxon: giganticlavus
 2005_frest:
   taxonomies:
   - taxon: blastozoa
