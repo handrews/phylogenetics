@@ -5896,6 +5896,27 @@
           children:
           - taxon: hybolopus_fraunfelter_utgaard_1970
           - taxon: murphyi_sumrall_garbisch_pope_2000
+2001_sumrall:
+  taxonomies:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: isorophida
+      children:
+      - taxon: isorophina
+        children:
+        - taxon: agelacrinitidae
+          children:
+          - taxon: torquerisediscus
+            new: true
+            children:
+            - taxon: kypsi_sumrall_2001
+              type: true
+              new: true
+          - taxon: ulrichidiscus
+            children:
+            - affTaxon: pulaskiensis_miller.s.a_gurley_1894
+            - taxon: spinosus_sumrall_2001
+              new: true
 2001_sumrall_sprinkle_guensburg:
   taxonomies:
   - taxon: eocrinoidea

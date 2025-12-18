@@ -3477,6 +3477,10 @@ kunmingeocrinus:
   name: Kunmingeocrinus
   authority:
     source: 2022_zhao.j_guo.j_selden_cong.p.y_li.y.j
+kypsi_sumrall_2001:
+  name: kypsi
+  authority:
+    source: 2001_sumrall
 ###################### L
 laevis_bather_1914:
   name: laevis
@@ -5269,6 +5273,10 @@ spinosus_kolata_1975:
   name: spinosus
   authority:
     source: 1975_kolata
+spinosus_sumrall_2001:
+  name: spinosus
+  authority:
+    source: 2001_sumrall
 spiraclavus:
   name: Spiraclavus
   auth: [sumrall]
@@ -5655,6 +5663,10 @@ totiglobidae:
   rank: Family
   auth: [Bell, sprinkle]
   year: 1978
+torquerisediscus:
+  name: Torquerisediscus
+  authority:
+    source: 2001_sumrall
 totiglobus:
   name: Totiglobus
   auth: [Bell, sprinkle]
