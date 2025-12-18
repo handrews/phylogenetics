@@ -303,7 +303,7 @@ def check_trees(data, sources, taxa, args):
       tree_index += 1
   logger.info(f"...opinions processed.")
 
-  if taxa:
+  if taxa or args.author:
     print_taxa(taxa, data, tree_lookup, args)
 
   if (difference := sources - opinions):

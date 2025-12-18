@@ -47,8 +47,12 @@ RANK_GROUPS = {
 
 def print_taxa(taxa, data, tree_lookup, args):
   found_trees = set()
-  for t in taxa:
-    found_trees |= set((data['index'].get(t, [])))
+  if taxa:
+    for t in taxa:
+      found_trees |= set((data['index'].get(t, [])))
+  elif args.author:
+    for v in data['index'].values():
+      found_trees |= v
   logger.info(
     f'Found {len(found_trees)} trees, searching for taxa {taxa}...'
   )
