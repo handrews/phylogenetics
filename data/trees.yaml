@@ -4101,7 +4101,7 @@
         - openTaxon: isorophida-sp_holloway_jell_1983
 1983_jell:
   taxonomies:
-  - notes: Paper not seen, taxonomy believed complete from PBDB
+  - notes: From abstract and PBDB
     taxon: blastoidea
     children:
     - taxon: fissiculata
@@ -4114,7 +4114,7 @@
           - taxon: adectus_jell_1983
             type: true
             new: true
-  - notes: Second-hand from Nardin and Bohatý (2013); PBDB record incomplete
+  - notes: From abstract and 2nd-hand from Nardin and Bohatý (2013)
     taxon: rhombifera-class
     children:
     - taxon: hillocystida
@@ -4132,6 +4132,7 @@
     - taxon: pleurocystitida
       new: true
       children:
+      - taxon: pleurocystitidae
       - taxon: henicocystidae
         new: true
         children:
@@ -4141,7 +4142,7 @@
           - taxon: darraghi_jell_1983
             type: true
             new: true
-  - notes: Paper not seen, taxonomy believed completed per PBDB
+  - notes: From abstract and PBDB
     taxon: echinozoa
     children:
     - taxon: ophiocistioidea
