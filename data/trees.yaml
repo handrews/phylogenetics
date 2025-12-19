@@ -7179,6 +7179,70 @@
                     - taxon: lepidocystis
                     - taxon: gogia
                   - taxon: stromatocystites
+2013_sumrall_heredia_rodríguez.c.m_mestre:
+  taxonomies:
+  - taxon: echinodermata
+    children:
+    - taxon: edrioasteroidea
+      children:
+      - taxon: edrioasterida
+        notes: sensu Guensburg and Sprinkle (1994)
+        children:
+        - taxon: edrioblastoidina
+          children:
+          - taxon: rhenopyrgidae
+            emended: true
+            children:
+            - taxon: rhenopyrgus
+              emended: true
+              children:
+              - taxon: coronaeformis_rievers_1961
+                type: true
+                synonyms:
+                - taxon: coronaeformis_rievers_1961
+                  parents:
+                  - taxon: rhenopyrgus-subgenus
+                  - taxon: pyrgocystis
+              - taxon: piojoensis_sumrall_heredia_rodríguez.c.m_mestre_2013
+                new: true
+              - taxon: whitei_holloway_jell_1983
+              - taxon: flos_klug_krüger_korn_rücklin_schemm-gregory_debates_mapes_2008
+  phylogenies:
+  - treeType: cladogram, strict consensus of two most parsimonious trees
+    tree:
+      children:
+      - taxon: kailidiscus
+      - children:
+        - children:
+          - taxon: paredriophus
+          - children:
+            - taxon: cyathotheca
+            - taxon: lampteroblastus
+            - taxon: rhenopyrgus
+        - children:
+          - children:
+            - taxon: isorophus
+            - taxon: carneyella
+          - taxon: argodiscus
+  - treeType: |
+      cladogram, most parsimonious constrained to place Rhenopyrgus and
+      Argodiscus as sister taxa
+    tree:
+      children:
+      - taxon: kailidiscus
+      - children:
+        - children:
+          - taxon: paredriophus
+          - children:
+            - taxon: cyathotheca
+            - taxon: lampteroblastus
+        - children:
+          - children:
+            - taxon: isorophus
+            - taxon: carneyella
+          - children:
+            - taxon: argodiscus
+            - taxon: rhenopyrgus
 2013_zamora_sumrall_vizcaïno:
   taxonomies:
   - taxon: echinodermata

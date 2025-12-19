@@ -280,6 +280,9 @@ hall:
 harland:
   family: Harland
   given: W. B.
+heredia:
+  family: Heredia
+  given: S
 hisinger:
   family: Hisinger
   given: Wilhelm
@@ -399,6 +402,9 @@ melville:
   given: Richard Valentine
   birth: 1914
   death: 1993
+mestre:
+  family: Mestre
+  given: Ana I.
 miller.j.s:
   family: Miller
   given: J. S.
@@ -498,6 +504,9 @@ robison:
   given: Richard A.
   birth: 1933
   death: null
+rodríguez.c.m:
+  family: Rodríguez
+  given: Cecilia M.
 roux:
   family: Roux
   given: Michel

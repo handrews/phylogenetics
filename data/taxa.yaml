@@ -2503,6 +2503,10 @@ floridiscus:
   name: Floridiscus
   auth: [Smith]
   year: 1980
+flos_klug_krüger_korn_rücklin_schemm-gregory_debates_mapes_2008:
+  name: flos
+  auth: [Klug, Krüger, Korn, Rücklin, Schemm-Gregory, DeBates, Mapes]
+  year: 2008
 foerstecystis:
   name: Foerstecystis
   auth: [bassler]
@@ -4508,6 +4512,10 @@ pilea_hall_1866:
 pileus_hall_1866:
   name: pileus
   altSpellingOf: pilea_hall_1866
+piojoensis_sumrall_heredia_rodríguez.c.m_mestre_2013:
+  name: piojoensis
+  authority:
+    source: 2013_sumrall_heredia_rodríguez.c.m_mestre
 pirocystella:
   name: Pirocystella
   authority:
@@ -6043,6 +6051,10 @@ westergaardi_sumrall_sprinkle_bonem_2006:
   name: westergaardi
   authority:
     source: 2006_sumrall_sprinkle_bonem
+whitei_holloway_jell_1983:
+  name: whitei
+  auth: [Holloway, jell]
+  year: 1983
 whitesidei_sumrall_sprinkle_bonem_2006:
   name: whitesidei
   authority:
