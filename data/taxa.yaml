@@ -300,6 +300,10 @@ arachnoideus_forbes_1848:
   name: arachnoideus
   authority:
     source: 1848b_forbes
+aragocystites:
+  name: Aragocystites
+  authority:
+    source: 2013_zamora
 aranea_schlotheim_1826:
   name: aranea
   auth: [Schlotheim]
@@ -594,6 +598,10 @@ belli_sumrall_brett_cornell_2006:
   name: belli
   authority:
     source: 2006_sumrall_brett_cornell
+belli_zamora_2013:
+  name: belli
+  authority:
+    source: 2013_zamora
 bellicostata_walcott_1924:
   name: bellicostata
   auth: [walcott]
@@ -3160,6 +3168,10 @@ hispanica_müller.p_hahn_2010:
   name: hispanica
   authority:
     source: 2010_müller.p_hahn
+hispanicus_zamora_smith.a.b_2010:
+  name: hispanicus
+  authority:
+    source: 2010_zamora_smith.a.b
 hobbsi_sprinkle_1973:
   name: hobbsi
   authority:
@@ -3387,6 +3399,16 @@ isorophida-indenterminate_family_bockelie_paul.c.r._1983:
   rank: Family
   authority:
     source: 1983_bockelie_paul.c.r.c
+isorophida-genus-indeterminate_zamora_smith.a.b_2010:
+  name: null
+  rank: genus
+  authority:
+    source: 2010_zamora_smith.a.b
+isorophida-sp_zamora_smith.a.b_2010:
+  name: null
+  rank: species
+  authority:
+    source: 2010_zamora_smith.a.b
 isorophidae:
   name: Isorophidae
   rank: Family
@@ -4777,6 +4799,10 @@ protocrinoida:
   notes: Order (Plesion) in original definition
   authority:
     source: 2003_guensburg_sprinkle
+protorophus:
+  name: protorophus
+  authority:
+    source: 2010_zamora_smith.a.b
 protozoa-class:
   name: Protozoa
   rank: Class

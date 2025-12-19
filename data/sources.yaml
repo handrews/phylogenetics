@@ -2397,6 +2397,25 @@
   - sumrall
   identifiers:
     jstor: 40802050
+2010_zamora_smith.a.b:
+  title: The oldest isorophid edrioasteroid (Echinodermata) and the evolution of attachment strategies in Cambrian edrioasteroids
+  journal: acta-p-polonica
+  volume: 55
+  number: 3
+  pubDate:
+    year: 2010
+  processDates:
+    received: 2010-01-27
+    accepted: 2010-04-20
+    online: 2010-04-27
+  pages:
+  - 487
+  - 494
+  authors:
+  - zamora
+  - smith.a.b
+  identifiers:
+    doi: 10.4202/app.2010.0012
 2010_zhao.y.l_sumrall_parsley_peng.j:
   title: Kailidiscus, A New Plesiomorphic Edrioasteroid From The Basal Middle Cambrian Kaili Biota Of Guizhou Province, China
   journal: jofpaleo
@@ -2570,6 +2589,24 @@
   - heredia
   - rodríguez.c.m
   - mestre
+2013_zamora:
+  title: Morphology and phylogenetic interpretation of a new Cambrian edrioasteroid  Echinodermata
+  journal: palaeontology
+  volume: 56
+  number: 2
+  pubDate:
+    year: 2013
+  processDates:
+    received: 2013-03-12
+    revised: 2012-09-11
+    accepted: 2012-09-11
+  pages:
+  - 421
+  - 431
+  authors:
+  - zamora
+  identifiers:
+    doi: 10.1111/j.1475-4983.2012.01209.x
 2013_zamora_sumrall_vizcaïno:
   title: Morphology and ontogeny of the Cambrian edrioasteroid echinoderm Cambraster cannati from western Gondwana
   journal: acta-p-polonica

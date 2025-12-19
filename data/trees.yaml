@@ -6838,6 +6838,23 @@
             children:
             - taxon: stecki_sumrall_2010
               new: true
+2010_zamora_smith.a.b:
+  taxonomies:
+  - taxon: echinodermata
+    children:
+    - taxon: edrioasteroidea
+      children:
+      - taxon: isorophida
+        children:
+        - taxon: protorophus
+          new: true
+          children:
+          - taxon: hispanicus_zamora_smith.a.b_2010
+            type: true
+            new: true
+        - openTaxon: isorophida-genus-indeterminate_zamora_smith.a.b_2010
+          children:
+          - openTaxon: isorophida-sp_zamora_smith.a.b_2010
 2010_zhao.y.l_sumrall_parsley_peng.j:
   taxonomies:
   - taxon: edrioasteroidea
@@ -7243,6 +7260,46 @@
           - children:
             - taxon: argodiscus
             - taxon: rhenopyrgus
+2013_zamora:
+  taxonomies:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: aragocystites
+      new: true
+      children:
+      - taxon: belli_zamora_2013
+        type: true
+        new: true
+  phylogenies:
+  - treeType: cladogram, one most parsimonious tree
+    tree:
+      children:
+      - taxon: camptostroma
+      - children:
+        - children:
+          - taxon: edrioaster
+          - children:
+            - children:
+              - taxon: kailidiscus
+              - taxon: argodiscus
+            - children:
+              - taxon: hadrodiscus
+              - taxon: chatsworthia
+              - taxon: protorophus
+        - children:
+          - taxon: reduncus_smith.a.b_jell_1990
+            parents:
+            - taxon: stromatocystites
+          - children:
+            - taxon: pentangularis_pompeckj_1896
+              parents:
+              - taxon: stromatocystites
+            - taxon: totiglobus
+            - children:
+              - taxon: aragocystites
+                children:
+                - taxon: edriodiscus
+                - taxon: cambraster
 2013_zamora_sumrall_vizcaïno:
   taxonomies:
   - taxon: echinodermata
