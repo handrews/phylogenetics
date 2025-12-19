@@ -1,0 +1,75 @@
+Traditional, primarily after Bell (1980) with several modifications summarized in Smith (1985), plus the addition of Edrioblastoida in Smith and Jell (1990):
+
+Class Edrioasteroidea
+  Order Stromatocystitida
+    Family Stromatocystitidae
+    Family Cambrasteridae
+  Order Edrioasterida
+    Family Edrioasteridae
+    Family Totiglobidae
+  Order Edrioblastoida
+    Family Astrocystitidae
+  Order Cyathocystitida
+    Family Cyathocystitidae
+  Order Isorophida
+    Suborder Lebetodiscina
+      Family Lebetodiscidae
+      Family Carneyellidae
+    Suborder Isorophina
+      Family Hemicystitidae (=Isorophidae)
+      Family Agelacrinitidae
+    Family Pyrgocystidae
+    Family Lispidecodidae
+    Family Rhenocystidae
+
+Guensburg and Sprinkle
+
+Class Edrioasteroidea
+  Order Camptostromatoida
+    Family Camptostromatidae
+  Order Stromatocystitida
+    Family Stromatocystitidae
+  Order Edrioasterida
+    Suborder Edrioasterina
+      Family Edrioasteridae
+      Family Totiglobidae
+    Suborder Edrioblastoidina
+      Family Astrocytitidae
+      Family Cyathocystitidae
+        Subfamily Cyathocystitinae
+        Subfamily Rhenopyrginae
+  Order Isorophida
+    Family Agelacrinitidae
+      [subfamilies not yet assigned]
+    Family Lebetodiscidae
+      Subfamily Lebetodiscinae
+      Subfamily Carneyellinae
+      Subfamily Pyrgocystinae
+
+Sumrall, with additional paraphyletic taxa from Müller and ???
+
+Class Edrioasteroidea
+? Order Camptostromatoida
+    Family Camptostromatidae
+  Order Stromatocystitida
+    Family Stromatocystitidae
+  Order Edrioasterida
+    Suborder Edrioasterina
+      Family Edrioasteridae
+      Family Totiglobidae
+    Suborder Edroblastoidina
+      Family Astrocystitidae
+      Family Cyathocystidae
+      Family Rhenopyrgidae
+  Order Isorophida
+    Suborder Isorophina
+      Family Isorophidae
+      Family Agelacrinitidae
+        Subfamily Agelacrinitinae
+        Subfamily Discocystinae
+        Subfamily Postibullinae
+    Suborder Lebetodiscina
+      Family Lebetodiscidae
+      Family Carneyellidae
+    Family Pyrgocystidae
+    Family Yorkicystidae
