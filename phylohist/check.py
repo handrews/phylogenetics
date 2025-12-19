@@ -6,7 +6,7 @@ import collections
 import yaml
 import jschon
 
-from .output import print_taxa
+from .taxa import print_taxa
 
 logger = logging.getLogger(__name__)
 
