@@ -7139,17 +7139,17 @@
             - taxon: moroccoensis_sumrall_zamora_2011
               type: true
               new: true
-    - taxon: eocrinoidea
+  - taxon: eocrinoidea
+    children:
+    - taxon: hexedriocystis
+      provisional: true
+      new: true
       children:
-      - taxon: hexedriocystis
-        provisional: true
+      - taxon: inexpectatus_sumrall_zamora_2011
+        type: true
         new: true
-        children:
-        - taxon: inexpectatus_sumrall_zamora_2011
-          type: true
-          new: true
-        - taxon: mimus_sumrall_zamora_2011
-          new: true
+      - taxon: mimus_sumrall_zamora_2011
+        new: true
   phylogenies:
   - treeType: cladogram, strict consensus of three most parsimonious trees
     tree:
