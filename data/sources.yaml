@@ -1738,6 +1738,20 @@
   authors:
   - dzik
   - orłowski
+1993_sumrall:
+  title: 1993-12-00-p Thecal designs in isorophinid edrioasteroids.pdf
+  journal: lethaia
+  volume: 26
+  pubDate:
+    year: 1993
+  processDates:
+    received: 1992-08-29
+    revised: 1993-09-13
+  pages:
+  - 289
+  - 302
+  authors:
+  - sumrall
 1994_guensburg_sprinkle:
   title: Revised phylogeny and functional interpretation of the Edrioasteroidea based on new taxa from the Early and Middle Ordovician of western Utah
   journal: fieldiana

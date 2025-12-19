@@ -3649,6 +3649,10 @@ laudoni_bassler_1936:
   name: laudoni
   authority:
     source: 1936_bassler
+laudoni-chester-l_sumrall_1993:
+  name: null
+  authority:
+    source: 1993_sumrall
 lebetodiscidae:
   name: Lebetodiscidae
   rank: Family
