@@ -93,13 +93,9 @@ def check_authors(data):
   logger.info(f"Checking {len(data['authors'])} authors...")
   for author_id, author in data['authors'].items():
     expected = author['family'].lower()
-    valid, expected_set = check_expectation(
-      author_id,
-      expected,
-      build_expected_author,
-      author,
-    )
-    if not valid:
+    expected_set = build_expected_author(expected, author)
+    expected_set.add(expected)
+    if author_id not in expected_set:
       logger.error(f'"{author_id}" not in expected set: {expected_set}')
   logger.info('...authors checked.')
 
