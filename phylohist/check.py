@@ -6,79 +6,9 @@ import collections
 import yaml
 import jschon
 
-from .taxa import print_taxa
+from .taxa import check_node, print_taxa
 
 logger = logging.getLogger(__name__)
-
-NAMED_TAXON_FIELDS = {'taxon', 'cfTaxon', 'affTaxon'}
-
-def check_node(node, data, parent=[], tree_info=None):
-  if isinstance(node, str):
-    logger.error(f"STRING? '{node}'")
-    return
-
-  taxon_fields = (NAMED_TAXON_FIELDS | {'openTaxon'}) & node.keys()
-
-  if len(taxon_fields) > 1:
-    logger.error(
-      f'Found {len(taxon_fields)} taxon fields ({taxon_fields}), expected one!'
-    )
-
-  elif len(taxon_fields) == 1:
-    taxon_type = taxon_fields.pop()
-    taxon_id = node[taxon_type]
-    current = parent + [taxon_id]
-
-    logger.debug(f'checking {current}')
-    if not (taxon := data['taxa'].get(taxon_id, {})):
-      logger.error(f'Taxon "{taxon_id}" not found!')
-
-    elif (
-      taxon_type in NAMED_TAXON_FIELDS and 'altRankOf' not in taxon and
-      taxon.get('name') is None
-    ):
-      logger.error(f'Taxon "{taxon_id}" expected to have a name!')
-    elif taxon_type not in NAMED_TAXON_FIELDS and taxon['name'] is not None:
-      logger.error(f'Taxon "{taxon_id}" NOT expected to have a name!')
-
-    if (
-      node.get('new') and
-      tree_info is not None and
-      (source := taxon.get('authority', {}).get('source')) and
-      source != tree_info[1]
-    ):
-      logger.error(
-        f'Expected source {tree_info[1]} for new taxon {taxon}, got source {source}'
-      )
-
-    name = taxon.get('name')
-    if name and tree_info is not None:
-      data['index'][name].add(tree_info)
-
-  else:
-    current = parent + ['_anon_']
-    logger.debug(f'Descending through {current}')
-
-  if (bracket := node.get('bracket')):
-    if bracket not in data['taxa']:
-      logger.error(f'Bracket taxa {bracket} not found!')
-
-  for index, synonym in enumerate(node.get('synonyms', [])):
-    check_node(synonym, data, current + ['synonym', str(index)])
-  for index, non in enumerate(node.get('non', [])):
-    check_node(non, data, current + ['non', str(index)])
-  for index, parent in enumerate(node.get('parents', [])):
-    check_node(parent, data, current + ['parent', str(index)])
-  for index, altPlacement in enumerate(node.get('altPlacements', [])):
-    check_node(altPlacement, data, current + ['altPlacement', str(index)])
-  for index, vel_or in enumerate(node.get('or', [])):
-    check_node(vel_or, data, current + ['or', str(index)])
-  if (moved := node.get('moved')):
-    check_node(moved, data, current + ['moved'])
-  if (corrected := node.get('corrected')):
-    check_node(corrected, data, current + ['corrected'])
-  for child in node.get('children', []):
-    check_node(child, data, current, tree_info)
 
 
 def build_expected_author(expected, author):
