@@ -1444,6 +1444,25 @@
   - clement.c.r
   identifiers:
     jstor: 1304625
+1983_holloway_jell:
+  title: Silurian and Devonian edrioasteroids from Australia
+  journal: jofpaleo
+  volume: 57
+  number: 5
+  pubDate:
+    year: 1983
+    month: 9
+  processDates:
+    received: 1981-11-06
+    revised: 1982-03-22
+  pages:
+  - 1001
+  - 1016
+  authors:
+  - holloway
+  - jell
+  identifiers:
+    jstor: 1304766
 1983_jell:
   title: Early Devonian echinoderms from Victoria (Rhombifera, Blastoidea and Ophiocistioidea)
   seen: false

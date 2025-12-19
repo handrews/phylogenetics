@@ -2140,6 +2140,11 @@ edrioasteroidea-order-uncertain_guensburg_sprinkle_1994:
   rank: Order
   authority:
     source: 1994_guensburg_sprinkle
+edrioasteroidea-order-uncertain_holloway_jell_1983:
+  name: null
+  rank: Order
+  authority:
+    source: 1983_holloway_jell
 edrioasteroidea-order-uncertain_zhao.y.l_sumrall_parsley_peng.j_2010:
   name: null
   rank: Order
@@ -2405,8 +2410,8 @@ epilezorum_sumrall_zamora_2011:
     source: 2011_sumrall_zamora
 epipaston:
   name: Epipaston
-  auth: [Holloway, jell]
-  year: 1983
+  authority:
+    source: 1983_holloway_jell
 erinocystis:
   name: Erinocystis
   auth: [jaekel]
@@ -3420,11 +3425,21 @@ isorophida-indenterminate_family_bockelie_paul.c.r._1983:
   rank: Family
   authority:
     source: 1983_bockelie_paul.c.r.c
+isorophida-genus-indeterminate_holloway_jell_1983:
+  name: null
+  rank: genus
+  authority:
+    source: 1983_holloway_jell
 isorophida-genus-indeterminate_zamora_smith.a.b_2010:
   name: null
   rank: genus
   authority:
     source: 2010_zamora_smith.a.b
+isorophida-sp_holloway_jell_1983:
+  name: null
+  rank: species
+  authority:
+    source: 1983_holloway_jell
 isorophida-sp_zamora_smith.a.b_2010:
   name: null
   rank: species
@@ -3476,6 +3491,10 @@ isotomocrinus:
   name: Isotomocrinus
   auth: [Ulrich]
   year: 1924
+ixine_holloway_jell_1983:
+  name: ixine
+  authority:
+    source: 1983_holloway_jell
 ###################### J
 jacksoni_austen_1843:
   name: jacksoni
@@ -4337,6 +4356,10 @@ palmeri_sprinkle_1973:
   name: palmeri
   authority:
     source: 1973_sprinkle
+pannosus_holloway_jell_1983:
+  name: pannosus
+  authority:
+    source: 1983_holloway_jell
 parablastoidea:
   name: Parablastoidea
   rank: Class
@@ -4541,8 +4564,8 @@ petalocystis:
   altSpellingOf: petalocystites
 petalus_holloway_jell_1983:
   name: petalus
-  auth: [Holloway, jell]
-  year: 1983
+  authority:
+    source: 1983_holloway_jell
 phaenoschismatidae:
   name: Phaenoschismatidae
   rank: Family
@@ -6116,8 +6139,8 @@ westergaardi_sumrall_sprinkle_bonem_2006:
     source: 2006_sumrall_sprinkle_bonem
 whitei_holloway_jell_1983:
   name: whitei
-  auth: [Holloway, jell]
-  year: 1983
+  authority:
+    source: 1983_holloway_jell
 whitesidei_sumrall_sprinkle_bonem_2006:
   name: whitesidei
   authority:
