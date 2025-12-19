@@ -4040,24 +4040,59 @@
         children:
         - taxon: isorophida
 1983_jell:
-  notes: Secondhand from 2013_nardin_bohatý
   taxonomies:
-  - taxon: rhombifera-class
+  - notes: Paper not seen, taxonomy believed complete from PBDB
+    taxon: blastoidea
     children:
-    - taxon: pleurocystitida-order
-      modifier: nom. transl.?
+    - taxon: fissiculata
       children:
-      - taxon: henicocystidae
-        new: true
+      - taxon: phaenoschismatidae
         children:
-        - taxon: henicocystis
-    - taxon: hillocystida-order
+        - taxon: sphagoblastus
+          new: true
+          children:
+          - taxon: adectus_jell_1983
+            type: true
+            new: true
+  - notes: Second-hand from Nardin and Bohatý (2013); PBDB record incomplete
+    taxon: rhombifera-class
+    children:
+    - taxon: hillocystida
       new: true
       children:
       - taxon: hillocystidae
         new: true
         children:
         - taxon: hillocystis
+          new: true
+          children:
+          - taxon: atracta_jell_1983
+            type: true
+            new: true
+    - taxon: pleurocystitida
+      new: true
+      children:
+      - taxon: henicocystidae
+        new: true
+        children:
+        - taxon: henicocystis
+          new: true
+          children:
+          - taxon: darraghi_jell_1983
+            type: true
+            new: true
+  - notes: Paper not seen, taxonomy believed completed per PBDB
+    taxon: echinozoa
+    children:
+    - taxon: ophiocistioidea
+      children:
+      - taxon: gillocystis
+        new: true
+        children:
+        - taxon: polypoda_jell_1983
+          type: true
+          new: true
+        - taxon: runcinata_jell_1983
           new: true
 1985_fatka_kordule:
   taxonomies:

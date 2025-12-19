@@ -11,6 +11,10 @@ adami_gehling_1987:
   name: adami
   authority:
     source: 1987_gehling
+adectus_jell_1983:
+  name: adectus
+  authority:
+    source: 1983_jell
 adelphicrinus:
   name: Adelphicrinus
   authority:
@@ -503,6 +507,10 @@ athenacrinus:
   name: Athenacrinus
   auth: [guensburg, sprinkle, mooi, lefebvre, david, roux, derstler]
   year: 2020
+atracta_jell_1983:
+  name: atracta
+  authority:
+    source: 1983_jell
 austini_foerste_1914:
   name: austini
   auth: [foerste]
@@ -1664,6 +1672,10 @@ cymbionitidae:
   authority:
     source: 1941_whitehouse
 ###################### D
+darraghi_jell_1983:
+  name: darraghi
+  authority:
+    source: 1983_jell
 davisii_mccoy_1848:
   name: davisii
   auth: [mccoy]
@@ -2489,6 +2501,11 @@ firbyi_durham_1967:
   name: firbyi
   authority:
     source: 1967c_durham
+fissiculata:
+  name: Fissiculata
+  rank: Order
+  auth: [jaekel]
+  year: 1918
 fistuliporita:
   name: Fistuliporita
   rank: Order
@@ -2603,6 +2620,10 @@ gilcidia:
   name: Gilcidia
   auth: [domínguez alonso]
   year: 1999
+gillocystis:
+  name: Gillocystis
+  authority:
+    source: 1983_jell
 glansicystis:
   name: Glansicystis
   authority:
@@ -3141,7 +3162,7 @@ hexedriocystis:
   name: Hexedriocystis
   authority:
     source: 2011_sumrall_zamora
-hillocystida-order:
+hillocystida:
   name: Hillocystida
   rank: Order
   authority:
@@ -4522,6 +4543,11 @@ petalus_holloway_jell_1983:
   name: petalus
   auth: [Holloway, jell]
   year: 1983
+phaenoschismatidae:
+  name: Phaenoschismatidae
+  rank: Family
+  auth: [Etheridge Jr., Carpenter]
+  year: 1886
 phyllocystidae:
   name: Phyllocystidae
   rank: Family
@@ -4626,12 +4652,11 @@ pleurocystites:
   name: Pleurocystites
   auth: [billings]
   year: 1854
-pleurocystitida-order:
+pleurocystitida:
   name: Pleurocystitida
   rank: Order
-  auth: [neumayr]
-  year: 1889
-  notes: Unclear if this should be Jell 1938 (nom. transl. vs new order?)
+  authority:
+    source: 1983_jell
 pleurocystitidae:
   name: Pleurocystitidae
   rank: Family
@@ -4675,6 +4700,10 @@ polyplacus:
   name: Polyplacus
   authority:
     source: 1967c_durham
+polypoda_jell_1983:
+  name: polypoda
+  authority:
+    source: 1983_jell
 pomum_wahlenberg_1821:
   name: pomum
   auth: [Wahlenberg]
@@ -5189,6 +5218,10 @@ rugosus_billings.w.r_1887:
   authority:
     source: 1887_billings.w.r
   notes: original parent Calceocrinus
+runcinata_jell_1983:
+  name: runcinata
+  authority:
+    source: 1983_jell
 ruthveni_mccoy_1851:
   name: ruthveni
   auth: [mccoy]
@@ -5398,6 +5431,10 @@ sphaeronitinae:
   rank: Subfamily
   authority:
     source: 1997_paul.c.r.c
+sphagoblastus:
+  name: Sphagoblastus
+  authority:
+    source: 1983_jell
 spinosa_smith.a.b_jell_1990:
   name: spinosa
   authority:
