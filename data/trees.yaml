@@ -3048,7 +3048,13 @@
             children:
             - taxon: commensalus_bell.b.m_1974
           - taxon: timeischytes
+            emended: true
             provisional: true
+            children:
+            - taxon: megapinacotus_ehlers_kesling_1958
+              type: true
+            - taxon: casteri_bell.b.m_1975
+              new: true
         - taxon: postibulla
           provisional: true
           children:
@@ -7236,6 +7242,36 @@
           children:
           - taxon: titanocrinus
           - taxon: aethocrinus
+2013_müller.p_hahn_bohatý:
+  taxonomies:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: isorophida
+      children:
+      - taxon: agelacrinitidae
+        children:
+        - taxon: timeischytes
+          quoted: true
+          children:
+          - taxon: megapinacotus_ehlers_kesling_1958
+            type: true
+          - taxon: casteri_bell.b.m_1975
+          - taxon: leuniseni_grigo_2000
+          - taxon: prescheri_grigo_2000
+        - taxon: bellastrella
+          new: true
+          children:
+          - taxon: eifeliana_müller.p_hahn_bohatý_2013
+            type: true
+            new: true
+        - taxon: krama
+          children:
+          - taxon: devonica_bassler_1936
+            synonyms:
+            - taxon: devonicus_bassler_1936
+              parents:
+              - taxon: hemicystites
+          - openTaxon: krama-sp_müller.p_hahn_bohatý_2013
 2013_nardin_bohatý:
   taxonomies:
   - taxon: blastozoa

@@ -2546,6 +2546,25 @@
   authors:
   - zamora
   - smith.a.b
+2013_müller.p_hahn_bohatý:
+  title: Agelacrinitid Edrioasteroidea (Echinodermata) from the Middle Devonian of the Eifel (Rhenish Massif, Germany)
+  journal: p-z
+  volume: 87
+  pubDate:
+    year: 2013
+  processDates:
+    received: 2012-05-06
+    accepted: 2013-01-21
+    online: 2013-03-23
+  pages:
+  - 455
+  - 472
+  authors:
+  - müller.p
+  - hahn
+  - bohatý
+  identifiers:
+    doi: 10.1007/s12542-013-0170-8
 2013_nardin_bohatý:
   title: A new pleurocystitid blastozoan from the Middle Devonian of the Eifel (Germany) and its phylogenetic importance
   journal: acta-p-polonica

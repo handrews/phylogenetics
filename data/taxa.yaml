@@ -602,6 +602,10 @@ belemnocystitidae:
   auth: [parsley]
   in: [caster]
   year: 1968
+bellastrella:
+  name: Bellastrella
+  authority:
+    source: 2013_müller.p_hahn_bohatý
 belli_sumrall_brett_cornell_2006:
   name: belli
   authority:
@@ -1023,6 +1027,10 @@ caryocystites:
   name: Caryocystites
   authority:
     source: 1844_buch
+casteri_bell.b.m_1975:
+  name: casteri
+  authority:
+    source: 1975_bell.b.m
 casteri_sprinkle_1973:
   name: casteri
   authority:
@@ -2202,10 +2210,10 @@ edriophus:
   name: Edriophus
   authority:
     source: 1974_bell.b.m
-eoorthis:
-  name: Eoorthis
-  auth: [walcott]
-  year: 1908
+eifeliana_müller.p_hahn_bohatý_2013:
+  name: eifeliana
+  authority:
+    source: 2013_müller.p_hahn_bohatý
 eknomocrinidae:
   name: Eknomocrinidae
   rank: Family
@@ -2396,6 +2404,10 @@ eocystis:
   authority:
     source: 1900_bather
   notes: Junior synonym of Eocystites (instead of alternate spelling?)
+eoorthis:
+  name: Eoorthis
+  auth: [walcott]
+  year: 1908
 eopostibulla:
   name: Eopostibulla
   authority:
@@ -3593,6 +3605,11 @@ krama:
   name: Krama
   authority:
     source: 1974_bell.b.m
+krama-sp_müller.p_hahn_bohatý_2013:
+  name: null
+  rank: species
+  authority:
+    source: 2013_müller.p_hahn_bohatý
 kukersiana_hecker_1940:
   name: kukersiana
   auth: [Hecker]
@@ -3753,6 +3770,10 @@ levis_bather_1914:
   name: levis
   auth: [bather]
   year: 1914
+leuniseni_grigo_2000:
+  name: leuniseni
+  auth: [Grigo]
+  year: 2000
 lichenoides:
   name: Lichenoides
   auth: [barrande]
@@ -4774,6 +4795,10 @@ praepleurocystis-sp_kolata_1975:
   rank: species
   authority:
     source: 1975_kolata
+prescheri_grigo_2000:
+  name: prescheri
+  auth: [Grigo]
+  year: 2000
 priesti_strimple_1968:
   name: priesti
   auth: [strimple]
