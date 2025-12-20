@@ -2900,8 +2900,8 @@ grebelae_müller.p_hahn_2010:
     source: 2010_müller.p_hahn
 guensburgi_sprinkle_sumrall_2015:
   name: guensburgi
-  auth: [sprinkle, sumrall]
-  year: 2015
+  authority:
+    source: 2015_sprinkle_sumrall
 guensburgi_sumrall_1996:
   name: guensburgi
   authority:
@@ -2918,6 +2918,10 @@ guntheri_sprinkle_1973:
   name: guntheri
   authority:
     source: 1973_sprinkle
+guolensis_zhu.x.j_zamora_lefebvre_2014:
+  name: guolensis
+  authority:
+    source: 2014_zhu.x.j_zamora_lefebvre
 gutii_sumrall_zamora_2011:
   name: gutii
   authority:
@@ -3370,6 +3374,10 @@ incondita_raymond_1915:
 inconditus_raymond_1915:
   name: inconditus
   altSpellingOf: incondita_raymond_1915
+inexpectus_sprinkle_sumrall_2015:
+  name: inexpectus
+  authority:
+    source: 2015_sprinkle_sumrall
 inexpectatus_sumrall_zamora_2011:
   name: inexpectatus
   authority:
@@ -4765,6 +4773,10 @@ porocrinus:
   name: Porocrinus
   auth: [billings]
   year: 1857
+porosublastus:
+  name: Porosublastus
+  authority:
+    source: 2015_sprinkle_sumrall
 postibulla:
   name: Postibulla
   authority:
@@ -4925,8 +4937,8 @@ pustulosis_kolata_1975:
     source: 1975_kolata
 pseudedriophus:
   name: Pseudedriophus
-  auth: [sprinkle, sumrall]
-  year: 2015
+  authority:
+    source: 2015_sprinkle_sumrall
 pseudocrinites:
   name: Pseudocrinites
   auth: [Pearce]

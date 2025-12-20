@@ -2748,6 +2748,23 @@
     online: 2014-03-24
   identifiers:
     doi: 10.4202/app.00048.2013
+2015_sprinkle_sumrall:
+  title: "New edrioasterine and astrocystitid (Echinodermata: Edrioasteroidea) from the Ninemile Shale (Lower Ordovician), central Nevada"
+  journal: jofpaleo
+  volume: 89
+  number: 2
+  pubDate:
+    year: 2015
+  processDates:
+    accepted: 2014-07-13
+  pages:
+  - 346
+  - 352
+  authors:
+  - sprinkle
+  - sumrall
+  identifiers:
+    doi: 10.1017/jpa.2014.29
 2015_sumrall_zamora:
   title: A columnal-bearing eocrinoid from the Cambrian Burgess Shale (British Columbia, Canada)
   journal: jofpaleo
