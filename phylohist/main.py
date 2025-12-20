@@ -8,7 +8,7 @@ import yaml
 import jschon
 
 from .io import load_files
-from .check import check_authors, check_sources
+from .research import check_authors, check_sources
 from .taxa import  check_taxa, check_trees
 from .convert import convert
 
