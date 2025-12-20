@@ -7498,6 +7498,20 @@
               - taxon: cannati_miquel_1894
                 parents:
                 - taxon: trochocystites
+2014_zhu.x.j_zamora_lefebvre:
+  taxonomies:
+  - taxon: echinodermata
+    children:
+    - taxon: edrioasteroidea
+      children:
+      - taxon: edrioblastoida
+        children:
+        - taxon: cambroblastus
+          children:
+          - taxon: enubilatus_smith.a.b_jell_1990
+            type: true
+          - taxon: guolensis_zhu.x.j_zamora_lefebvre_2024
+            new: true
 2015_rahman_stewart_zamora:
   taxonomies:
   - taxon: echinodermata
