@@ -6,6 +6,9 @@ import collections
 import yaml
 import jschon
 
+from .research import Author, Source
+
+
 logger = logging.getLogger(__name__)
 
 NAMED_TAXON_FIELDS = {'taxon', 'cfTaxon', 'affTaxon'}
@@ -142,30 +145,28 @@ def check_taxa(data):
         logger.error(f'"{taxon_id}" not in expected set: {valid_set}')
 
     if (authority := taxon.get('authority')):
-      if (source := authority['source']) not in data['sources']:
+      if Source.get((source := authority['source'])) is None:
         logger.error(f'Authority source "{source}" not recognized')
     else:
       for author_id in taxon['auth']:
         logger.debug('    Processing authority "{author_id}"')
+
+        # WTF is this?
         # This won't work with multi-token names, but good enough for now
         if author_id != author_id.lower():
           continue
 
-        if not (author := data['authors'].get(author_id)):
+        if not (author := Author.get(author_id)):
           logger.error(
             f'Unrecognized author "{author_id}" in authority for "{taxon_id}"'
           )
           continue
 
-        if (year := taxon.get('year')):
-          # 15 pretty arbitrary, no clue if there's a kid genius paleontologist
-          if 'birth' in author and year < (author['birth'] + 15):
-            birth = author['birth']
-            logger.error(f'"{author_id}" born {birth} as authority in {year}?')
-          # plus 5 for Barrande 1887
-          if (death := author.get('death', 3000)) and  year > (death + 5):
-            death = author['death']
-            logger.error(f'"{author_id}" died {death} as authority in {year}?')
+        if (year := taxon.get('year')) and not author.could_publish_in(year):
+          logger.error(
+            f'Source {source_id} year {year} too far outside of '
+            f'{author} lifespan!',
+          )
     logger.debug(f'    ...all authorities for "{taxon_id}" processed')
 
   logger.info(f"...taxa processed.")
@@ -240,7 +241,7 @@ def check_node(node, data, parent=[], tree_info=None):
     check_node(child, data, current, tree_info)
 
 
-def check_trees(data, sources, taxa, args):
+def check_trees(data, taxa, args):
   logger.info(f"Processing {len(data['trees'])} opinions...")
   logger.info(f'...searching for taxon "{taxa}"')
   opinions = set()
@@ -273,9 +274,9 @@ def check_trees(data, sources, taxa, args):
   if taxa or args.author:
     print_taxa(taxa, data, tree_lookup, args)
 
-  if (difference := sources - opinions):
+  if (difference := Source.count() - len(opinions)):
     # logger.warn("Missing opinions from:\n    " + '\n    '.join(sorted(difference)))
-    logger.warn(f"Missing opinions from {len(difference)} papers!")
+    logger.warn(f"Missing opinions from {difference} papers!")
   return data
 
 def print_taxa(taxa, data, tree_lookup, args):

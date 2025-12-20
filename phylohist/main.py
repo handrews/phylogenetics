@@ -43,9 +43,9 @@ def main():
 
   data = load_files()
   check_authors(data)
-  sources = check_sources(data)
+  check_sources(data)
   check_taxa(data)
-  check_trees(data, sources, taxa, args)
+  check_trees(data, taxa, args)
 
   # TODO: Obviously this is fragile, fix it!
   handler = logger.parent.handlers[0]
