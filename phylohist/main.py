@@ -8,7 +8,8 @@ import yaml
 import jschon
 
 from .io import load_files
-from .check import check_authors, check_sources, check_taxa, check_trees
+from .check import check_authors, check_sources
+from .taxa import  check_taxa, check_trees
 from .convert import convert
 
 logger = logging.getLogger(__name__)
