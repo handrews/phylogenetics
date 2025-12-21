@@ -8,7 +8,7 @@ import yaml
 import jschon
 
 from .io import load_files
-from .research import check_authors, check_sources
+from .research import Author, Publication, Source
 from .taxa import  check_taxa, check_trees
 from .convert import convert
 
@@ -42,8 +42,20 @@ def main():
   )
 
   data = load_files()
-  check_authors(data)
-  check_sources(data)
+
+  logger.info(f"Checking {len(data['authors'])} authors...")
+  for author_key, author in data['authors'].items():
+    Author.add(author, author_key)
+  logger.info('...authors checked.')
+
+  for pub_key, publication in data['publications'].items():
+    Publication.add(publication, pub_key)
+
+  logger.info(f"Checking {len(data['sources'])} sources...")
+  for ref_key, source in data['sources'].items():
+    Source.add(source, ref_key)
+  logger.info('...sources checked.')
+
   check_taxa(data)
   check_trees(data, taxa, args)
 

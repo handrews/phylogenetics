@@ -69,13 +69,6 @@ class Author:
     return True
 
 
-def check_authors(data):
-  logger.info(f"Checking {len(data['authors'])} authors...")
-  for author_key, author in data['authors'].items():
-    Author.add(author, author_key)
-  logger.info('...authors checked.')
-
-
 class Publication:
   _publications = {}
 
@@ -157,14 +150,3 @@ class Source:
   @classmethod
   def count(cls):
     return len(cls._sources)
-
-
-def check_sources(data):
-  logger.info(f"Checking {len(data['sources'])} sources...")
-
-  for pub_key, publication in data['publications'].items():
-    Publication.add(publication, pub_key)
-
-  for ref_key, source in data['sources'].items():
-    Source.add(source, ref_key)
-  logger.info('...sources checked.')
