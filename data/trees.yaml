@@ -8016,34 +8016,34 @@
                 - QMF59587
                 - ...
                 - QMF59646
-      - taxon: stromatocystitida
-        children:
-        - taxon: stromatocystitidae
+        - taxon: stromatocystitida
           children:
-          - taxon: cambraster
+          - taxon: stromatocystitidae
             children:
-            - taxon: cannati_miquel_1894
-              type: true
-            - openTaxon: cambraster-sp_jell_sprinkle_2021
-              new: true
-              specimens:
-                unknowntypes:
-                - QMF59647
-                - ...
-                - QMF59653
-        - openTaxon: stromatocystitida-incertae-sedis
-          children:
-          - taxon: kailidiscus
+            - taxon: cambraster
+              children:
+              - taxon: cannati_miquel_1894
+                type: true
+              - openTaxon: cambraster-sp_jell_sprinkle_2021
+                new: true
+                specimens:
+                  unknowntypes:
+                  - QMF59647
+                  - ...
+                  - QMF59653
+          - openTaxon: stromatocystitida-incertae-sedis
             children:
-            - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
-              type: true
-            - openTaxon: kailidiscus-sp_jell_sprinkle_2021
-              new: true
-              specimens:
-                unknowntypes:
-                - QMF59654
-                - ...
-                - QMF59668
+            - taxon: kailidiscus
+              children:
+              - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
+                type: true
+              - openTaxon: kailidiscus-sp_jell_sprinkle_2021
+                new: true
+                specimens:
+                  unknowntypes:
+                  - QMF59654
+                  - ...
+                  - QMF59668
 2021_parsley:
   taxonomies:
   - taxon: blastozoa
