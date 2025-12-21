@@ -2,6 +2,15 @@ Traditional, primarily after Bell (1980) with several modifications summarized i
 
 Class Edrioasteroidea
   Order Stromatocystitida
+  Order Edrioasterida
+  Order Edrioblastoida
+  Order Cyathocystitida
+  Order Isorophida
+    Suborder Isorophina
+    Suporder Lebetodiscina
+
+Class Edrioasteroidea
+  Order Stromatocystitida
     Family Stromatocystitidae
     Family Cambrasteridae
   Order Edrioasterida
@@ -26,6 +35,14 @@ Guensburg and Sprinkle
 
 Class Edrioasteroidea
   Order Camptostromatoida
+  Order Stromatocystitida
+  Order Edrioasterida
+    Suborder Edrioasterina
+    Suborder Edroblastoidina
+  Order Isorophida
+
+Class Edrioasteroidea
+  Order Camptostromatoida
     Family Camptostromatidae
   Order Stromatocystitida
     Family Stromatocystitidae
@@ -47,6 +64,16 @@ Class Edrioasteroidea
       Subfamily Pyrgocystinae
 
 Sumrall, with additional paraphyletic taxa from Müller and ???
+
+Class Edrioasteroidea
+? Order Camptostromatoida
+  Order Stromatocystitida
+  Order Edrioasterida
+    Suborder Edrioasterina
+    Suborder Edrioblastoidina
+  Order Isorophida
+    Order Isorophina
+    Order Lebetodiscina
 
 Class Edrioasteroidea
 ? Order Camptostromatoida
