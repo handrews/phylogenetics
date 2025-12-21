@@ -50,20 +50,20 @@ RANK_GROUPS = {
 
 
 def check_expectation(
-  actual_id,
+  actual_key,
   expected,
   build_expected_set=None,
   *args,
   **kwargs,
 ):
-  if actual_id == expected:
+  if actual_key == expected:
     return True, {expected}
 
-  if build_expected_set is None or not actual_id.startswith(expected):
+  if build_expected_set is None or not actual_key.startswith(expected):
     return False, {expected}
 
   expected_set = build_expected_set(expected, *args, **kwargs)
-  if actual_id in expected_set:
+  if actual_key in expected_set:
     return True, expected_set
   return False, expected_set
 
@@ -94,17 +94,17 @@ def build_expected_taxon(expected, taxon):
     species_expected = expected
     logger.debug(f'Building species id for {expected}...')
     if 'auth' in taxon:
-      for author_id in taxon['auth']:
-        species_expected += f"_{author_id.lower()}"
+      for author_key in taxon['auth']:
+        species_expected += f"_{author_key.lower()}"
       species_expected += f"_{taxon['year']}"
       expected_set = {species_expected}
     else:
-      source_id = taxon['authority']['source']
-      idx = source_id.index('_')
-      species_expected += f'_{source_id[idx+1:]}_{source_id[:4]}'
+      source_key = taxon['authority']['source']
+      idx = source_key.index('_')
+      species_expected += f'_{source_key[idx+1:]}_{source_key[:4]}'
       expected_set = {species_expected}
       if idx == 5:
-        expected_set.add(species_expected + source_id[idx - 1])
+        expected_set.add(species_expected + source_key[idx - 1])
 
     expected_set = check_extras(taxon, rank, expected_set, expected)
     logger.debug(f'...built {expected_set}')
@@ -112,9 +112,9 @@ def build_expected_taxon(expected, taxon):
 
   expected_set = check_extras(taxon, rank, {expected}, expected)
 
-  # for author_id in taxon['auth']:
-    # logger.debug(f'Adding author "{author_id}" for taxon_id "{taxon}"')
-    # alt_expected += f'-{author_id.lower()[0]}'
+  # for author_key in taxon['auth']:
+    # logger.debug(f'Adding author "{author_key}" for taxon_key "{taxon}"')
+    # alt_expected += f'-{author_key.lower()[0]}'
   # alt_expected += f"-{taxon['year']}"
 
   return expected_set
@@ -122,52 +122,52 @@ def build_expected_taxon(expected, taxon):
 
 def check_taxa(data):
   logger.info(f"Processing {len(data['taxa'])} taxa...")
-  for taxon_id, taxon in data['taxa'].items():
-    logger.debug(f'  Processing taxon "{taxon_id}"...')
+  for taxon_key, taxon in data['taxa'].items():
+    logger.debug(f'  Processing taxon "{taxon_key}"...')
 
     if 'altSpellingOf' in taxon or 'altRankOf' in taxon:
       if (alt := taxon.get('altSpellingOf')) and alt not in data['taxa']:
-        logger.error(f'Taxon {taxon_id} alt spelling of unknown {alt}')
+        logger.error(f'Taxon {taxon_key} alt spelling of unknown {alt}')
       if (alt := taxon.get('altRankOf')) and alt not in data['taxa']:
-        logger.error(f'Taxon {taxon_id} alt rank of unknown {alt}')
+        logger.error(f'Taxon {taxon_key} alt rank of unknown {alt}')
       continue
 
     if taxon['name'] is not None:
       expected = taxon['name'].lower()
 
       valid, valid_set = check_expectation(
-        taxon_id,
+        taxon_key,
         expected,
         build_expected_taxon,
         taxon,
       )
       if not valid:
-        logger.error(f'"{taxon_id}" not in expected set: {valid_set}')
+        logger.error(f'"{taxon_key}" not in expected set: {valid_set}')
 
     if (authority := taxon.get('authority')):
       if Source.get((source := authority['source'])) is None:
         logger.error(f'Authority source "{source}" not recognized')
     else:
-      for author_id in taxon['auth']:
-        logger.debug('    Processing authority "{author_id}"')
+      for author_key in taxon['auth']:
+        logger.debug('    Processing authority "{author_key}"')
 
         # WTF is this?
         # This won't work with multi-token names, but good enough for now
-        if author_id != author_id.lower():
+        if author_key != author_key.lower():
           continue
 
-        if not (author := Author.get(author_id)):
+        if not (author := Author.get(author_key)):
           logger.error(
-            f'Unrecognized author "{author_id}" in authority for "{taxon_id}"'
+            f'Unrecognized author "{author_key}" in authority for "{taxon_key}"'
           )
           continue
 
         if (year := taxon.get('year')) and not author.could_publish_in(year):
           logger.error(
-            f'Source {source_id} year {year} too far outside of '
+            f'Source {source_key} year {year} too far outside of '
             f'{author} lifespan!',
           )
-    logger.debug(f'    ...all authorities for "{taxon_id}" processed')
+    logger.debug(f'    ...all authorities for "{taxon_key}" processed')
 
   logger.info(f"...taxa processed.")
 
@@ -186,20 +186,20 @@ def check_node(node, data, parent=[], tree_info=None):
 
   elif len(taxon_fields) == 1:
     taxon_type = taxon_fields.pop()
-    taxon_id = node[taxon_type]
-    current = parent + [taxon_id]
+    taxon_key = node[taxon_type]
+    current = parent + [taxon_key]
 
     logger.debug(f'checking {current}')
-    if not (taxon := data['taxa'].get(taxon_id, {})):
-      logger.error(f'Taxon "{taxon_id}" not found!')
+    if not (taxon := data['taxa'].get(taxon_key, {})):
+      logger.error(f'Taxon "{taxon_key}" not found!')
 
     elif (
       taxon_type in NAMED_TAXON_FIELDS and 'altRankOf' not in taxon and
       taxon.get('name') is None
     ):
-      logger.error(f'Taxon "{taxon_id}" expected to have a name!')
+      logger.error(f'Taxon "{taxon_key}" expected to have a name!')
     elif taxon_type not in NAMED_TAXON_FIELDS and taxon['name'] is not None:
-      logger.error(f'Taxon "{taxon_id}" NOT expected to have a name!')
+      logger.error(f'Taxon "{taxon_key}" NOT expected to have a name!')
 
     if (
       node.get('new') and
@@ -248,11 +248,11 @@ def check_trees(data, taxa, args):
   tree_index = 0
   tree_lookup = {}
   data['index'] = collections.defaultdict(set)
-  for ref_id, opinion in data['trees'].items():
-    opinions.add(ref_id)
-    logger.debug(f'Processing opinions from "{ref_id}"')
-    if ref_id not in data['sources']:
-      logger.error(f'Tree citation "{ref_id}" not found!')
+  for ref_key, opinion in data['trees'].items():
+    opinions.add(ref_key)
+    logger.debug(f'Processing opinions from "{ref_key}"')
+    if ref_key not in data['sources']:
+      logger.error(f'Tree citation "{ref_key}" not found!')
 
     trees = []
     num_tax = 0
@@ -267,7 +267,7 @@ def check_trees(data, taxa, args):
 
     for i, t in enumerate(trees):
       tree_lookup[tree_index] = t
-      check_node(t, data, tree_info=(tree_index, ref_id))
+      check_node(t, data, tree_info=(tree_index, ref_key))
       tree_index += 1
   logger.info(f"...opinions processed.")
 
@@ -319,7 +319,7 @@ def print_tree(node, data, tree_info, args, indent='', on=1, buffer='', first=Fa
     authors = '; '.join(
       [
         f"{a['family']}, {a['given']}" for a in [
-          data['authors'][a_id] for a_id in paper['authors']
+          data['authors'][a_key] for a_key in paper['authors']
         ]
       ]
     )
@@ -331,9 +331,9 @@ def print_tree(node, data, tree_info, args, indent='', on=1, buffer='', first=Fa
   found_name = None
   rank = None
   rank_level = None
-  if (taxon_id := node.get('taxon')):
-    if not (taxon := data['taxa'].get(taxon_id)):
-      raise ValueError(f'No taxon data for id {taxon_id}')
+  if (taxon_key := node.get('taxon')):
+    if not (taxon := data['taxa'].get(taxon_key)):
+      raise ValueError(f'No taxon data for id {taxon_key}')
     if not (name := taxon.get('name')):
       if (alt := taxon.get('altRankOf')):
         name = data['taxa'][alt]['name']
@@ -347,12 +347,12 @@ def print_tree(node, data, tree_info, args, indent='', on=1, buffer='', first=Fa
     if name is not None and taxon.get('rank') == 'subgenus':
       name = f'({name})'
   else:
-    if (taxon_id := node.get('openTaxon')):
-      name = f'[{taxon_id}]'
-    elif (taxon_id := node.get('cfTaxon')):
-      name = f'[cf. {taxon_id}]'
-    elif (taxon_id := node.get('affTaxon')):
-      name = f'[aff. {taxon_id}]'
+    if (taxon_key := node.get('openTaxon')):
+      name = f'[{taxon_key}]'
+    elif (taxon_key := node.get('cfTaxon')):
+      name = f'[cf. {taxon_key}]'
+    elif (taxon_key := node.get('affTaxon')):
+      name = f'[aff. {taxon_key}]'
     else:
       name = '[]'
 
