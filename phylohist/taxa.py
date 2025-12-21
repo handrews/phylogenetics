@@ -120,54 +120,82 @@ def build_expected_taxon(expected, taxon):
   return expected_set
 
 
-def check_taxa(data):
-  logger.info(f"Processing {len(data['taxa'])} taxa...")
-  for taxon_key, taxon in data['taxa'].items():
+class Taxon:
+  _taxa = {}
+
+  @classmethod
+  def add(cls, taxon_data, taxon_key):
+    cls._taxa[taxon_key] = Taxon(taxon_data, taxon_key)
+
+  @classmethod
+  def get(cls, taxon_key):
+    return cls._taxa.get(taxon_key)
+
+  def __init__(self, taxon_data, taxon_key):
+    self._data = taxon_data
+    self._key = taxon_key
+
     logger.debug(f'  Processing taxon "{taxon_key}"...')
 
-    if 'altSpellingOf' in taxon or 'altRankOf' in taxon:
-      if (alt := taxon.get('altSpellingOf')) and alt not in data['taxa']:
+    if 'altSpellingOf' in taxon_data or 'altRankOf' in taxon_data:
+      if (alt := taxon_data.get('altSpellingOf')) and not Taxon.get(alt):
         logger.error(f'Taxon {taxon_key} alt spelling of unknown {alt}')
-      if (alt := taxon.get('altRankOf')) and alt not in data['taxa']:
+      if (alt := taxon_data.get('altRankOf')) and not Taxon.get(alt):
         logger.error(f'Taxon {taxon_key} alt rank of unknown {alt}')
-      continue
+      return
 
-    if taxon['name'] is not None:
-      expected = taxon['name'].lower()
+    if taxon_data['name'] is not None:
+      expected = taxon_data['name'].lower()
 
       valid, valid_set = check_expectation(
         taxon_key,
         expected,
         build_expected_taxon,
-        taxon,
+        taxon_data,
       )
       if not valid:
         logger.error(f'"{taxon_key}" not in expected set: {valid_set}')
 
-    if (authority := taxon.get('authority')):
+    if (authority := taxon_data.get('authority')):
       if Source.get((source := authority['source'])) is None:
         logger.error(f'Authority source "{source}" not recognized')
     else:
-      for author_key in taxon['auth']:
+      for author_key in taxon_data['auth']:
         logger.debug('    Processing authority "{author_key}"')
 
         # WTF is this?
         # This won't work with multi-token names, but good enough for now
         if author_key != author_key.lower():
-          continue
+          return
 
         if not (author := Author.get(author_key)):
           logger.error(
             f'Unrecognized author "{author_key}" in authority for "{taxon_key}"'
           )
-          continue
+          return
 
-        if (year := taxon.get('year')) and not author.could_publish_in(year):
+        if (year := taxon_data.get('year')) and not author.could_publish_in(year):
           logger.error(
             f'Source {source_key} year {year} too far outside of '
             f'{author} lifespan!',
           )
     logger.debug(f'    ...all authorities for "{taxon_key}" processed')
+
+  @property
+  def key(self):
+    return self._key
+
+
+def check_taxa(data):
+  logger.info(f"Processing {len(data['taxa'])} taxa...")
+  deferred = []
+  for taxon_key, taxon_data in data['taxa'].items():
+    if taxon_data.keys() & {'altRankOf', 'altSpellingOf'}:
+      deferred.append((taxon_key, taxon_data))
+      continue
+    Taxon.add(taxon_data, taxon_key)
+  for taxon_key, taxon_data in deferred:
+    Taxon.add(taxon_data, taxon_key)
 
   logger.info(f"...taxa processed.")
 

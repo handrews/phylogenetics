@@ -73,8 +73,8 @@ class Publication:
   _publications = {}
 
   @classmethod
-  def add(cls, pub, pub_key):
-    cls._publications[pub_key] = Publication(pub, pub_key)
+  def add(cls, pub_data, pub_key):
+    cls._publications[pub_key] = Publication(pub_data, pub_key)
 
   @classmethod
   def get(cls, pub_key):
@@ -97,8 +97,8 @@ class Source:
   _sources = {}
 
   @classmethod
-  def add(cls, source, source_key):
-    cls._sources[source_key] = Source(source, source_key)
+  def add(cls, source_data, source_key):
+    cls._sources[source_key] = Source(source_data, source_key)
 
   @classmethod
   def get(cls, source_key):

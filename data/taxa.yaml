@@ -3097,16 +3097,16 @@ hemicosmitida-order:
   auth: [jaekel]
   year: 1918
 hemicosmitoida-order:
-  name: Hemicosmidoida
-  altSpellingOf: hemicosmitoida-superfamily
+  name: Hemicosmitoida
+  altSpellingOf: hemicosmitida-order
 hemicosmitida-superfamily:
   name: Hemicosmitida
   rank: Superfamily
   auth: [jaekel]
   year: 1918
 hemicosmitoida-superfamily:
-  name: Hemicosmidoida
-  altSpellingOf: hemicosmitoida-superfamily
+  name: Hemicosmitoida
+  altSpellingOf: hemicosmitida-superfamily
 hemicosmitidae:
   name: Hemicosmitidae
   rank: Family
