@@ -4,7 +4,7 @@ $id: phylogeny
 $defs:
   sourceId:
     type: string
-    pattern: ^[12][7890]\d\d[a-z]?_[a-z][\w._ -]+$
+    pattern: ^([12][7890]\d\d[a-z]?|inprep)_[a-z][\w._ -]+$
   authorId:
     type: string
     pattern: ^[\w][\w._ -]*$
@@ -103,16 +103,23 @@ $defs:
           $ref: "#/$defs/authorId"
   article:
     type: object
-    required: [authors, pubDate]
+    required: [authors]
     oneOf:
-    - required: [journal, title]
-    - required: [book]
-    - required: [reading, title]
+    - required: [journal, title, pubDate]
+    - required: [book, pubDate]
+    - required: [reading, title, pubDate]
+    - required: [inPrep]  # Allow for a never-published untitled source
     unevaluatedProperties: false
     properties:
       seen:
         type: boolean
         default: true
+      inPrep:
+        description: |
+          Indicates that the authority is an unpublished "in-preparation"
+          paper; any names are nomen nudum unless/until publication.
+        type: boolean
+        default: false
       complete:
         type: object
         properties:

@@ -25,6 +25,10 @@ class Author:
     self._data = author_data
     self._key = author_key
 
+    # Unregistered authors can lack a key
+    if not self._key:
+      return
+
     family_only = author_data['family'].lower()
     givens = author_data['given'].split(' ')
     if len(givens) == 1:
@@ -109,15 +113,18 @@ class Source:
     self._key = source_key
 
     logger.debug(f'Processing source "{source_key}"')
-    source_type = (source_data.keys() & {'journal', 'book', 'reading'}).pop()
-    if Publication.get(source_data[source_type]) is None:
-      logger.error(f'{source_type} "{source_data[source_type]}" not found!')
 
-    expected_key = f"{source_data['pubDate']['year']}"
-    if source_key[4] != '_':
-      # There's a disambiguation letter, just assume it is correct.
-      # TODO: figure out something better for disambiguation letters.
-      expected_key += source_key[4]
+    if source_data.get('inPrep'):
+      expected_key = 'inprep'
+    else:
+      source_type = (source_data.keys() & {'journal', 'book', 'reading'}).pop()
+      if Publication.get(source_data[source_type]) is None:
+        logger.error(f'{source_type} "{source_data[source_type]}" not found!')
+      expected_key = f"{source_data['pubDate']['year']}"
+      if source_key[4] != '_':
+        # There's a disambiguation letter, just assume it is correct.
+        # TODO: figure out something better for disambiguation letters.
+        expected_key += source_key[4]
 
     for author_key in source_data['authors']:
       if (author := Author.get(author_key)) is None:

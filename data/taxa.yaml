@@ -21,10 +21,9 @@ adelphicrinus:
     source: 2003_guensburg_sprinkle
 aepyaster:
   name: Aepyaster
-  auth: [sprinkle, strimple]
-  in: [bell.b.m]
-  year: 1980
-  notes: noted as "in prep" per Bell (1980), need to confirm actual source
+  authority:
+    source: inprep_sprinkle_strimple
+  notes: noted as "in prep" per Bell (1980), never published so nomen nudum
 aesiocystis:
   name: Aesiocystis
   auth: [miller.s.a, gurley]
@@ -89,21 +88,21 @@ agelacrinus-subgenus_carneyella:
   name: Agelacrinus
   originalParent: carneyella
   rank: subgenus
-  auth: [Hall]
+  auth: [hall]
   year: 1858
   notes: Copied auth/year from genus, unsure if correct.
 agelacrinus-subgenus_discocystis:
   name: Agelacrinus
   originalParent: discocystis
   rank: subgenus
-  auth: [Hall]
+  auth: [hall]
   year: 1858
   notes: Copied auth/year from genus, unsure if correct.
 agelacrinus-subgenus_isorophus:
   name: Agelacrinus
   originalParent: isorophus
   rank: subgenus
-  auth: [Hall]
+  auth: [hall]
   year: 1858
   notes: Copied auth/year from genus, unsure if correct.
 agelacrinus-subgenus_streptaster:
@@ -111,12 +110,12 @@ agelacrinus-subgenus_streptaster:
   originalParent: streptaster
   name: Agelacrinus
   rank: subgenus
-  auth: [Hall]
+  auth: [hall]
   year: 1858
 agelacrinoidea:
   name: Agelacrinoidea
   rank: Order
-  auth: [S. A. Miller]
+  auth: [miller.s.a]
   year: 1877
 agelacrinus:
   notes: |

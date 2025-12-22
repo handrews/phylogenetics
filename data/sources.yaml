@@ -1263,6 +1263,12 @@
   - bell.b.m
   identifiers:
     doi: 10.1017/S027116480000018X
+inprep_sprinkle_strimple:
+  inPrep: true
+  authors:
+  - sprinkle
+  - strimple
+  notes: Cited in 1980_bell.b.m
 1981_derstler:
   title: Morphological diversity of early Cambrian echinoderms
   book: short-2nd-cambrian
