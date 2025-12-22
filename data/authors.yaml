@@ -1,6 +1,9 @@
 álvaro:
   family: Álvaro
   given: J. Javier
+andreae:
+  family: Andreae
+  given: Johann Gerhard Reinhard
 arbizu:
   family: Arbizu
   given: M. A.
@@ -350,6 +353,11 @@ kolata:
 kordule:
   family: Kordule
   given: Vratislav
+lamarck:
+  family: Lamarck
+  given: Jean-Baptiste
+  birth: 1744
+  death: 1829
 lankester:
   family: Lankester
   given: E. Ray
@@ -384,6 +392,12 @@ linnaeus:
 longman:
   family: Longman
   given: H. A.
+mantell:
+  family: Mantell
+  given: Gideon
+martin.w:
+  family: Martin
+  given: William
 matsumoto:
   family: Matsumoto
   given: Hikoshichirō
@@ -485,6 +499,9 @@ peng.j:
 petersen.m.s:
   family: Petersen
   given: Morris S.
+phillips.j:
+  family: Phillips
+  given: John
 pope:
   family: Pope
   given: John Paul

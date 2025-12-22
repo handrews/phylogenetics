@@ -114,6 +114,15 @@
   - vanuxem
   identifiers:
     url: https://www.biodiversitylibrary.org/page/55172030
+1843_hall:
+  title: Geology of New-York. Part IV. Comprising the Survey of the Fourth Geological District
+  book: nat-hist-ny
+  pubDate:
+    year: 1843
+  authors:
+  - hall
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/55361977
 1844_buch:
   title: Über Cystideen eingeleitet durch die Entwicklung der Eigenthümlichkeiten von Caryocrinus ornatus
   reading: akademie

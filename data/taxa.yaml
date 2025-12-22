@@ -3,6 +3,10 @@ acanthalepis:
   name: Acanthalepis
   auth: [mccoy]
   year: 1846
+actinocrinites:
+  name: Actinocrinites
+  authority:
+    source: 1821_miller.j.s
 acuticarpus:
   name: Acuticarpus
   authority:
@@ -282,6 +286,10 @@ apektocrinus:
   name: Apektocrinus
   auth: [guensburg, sprinkle]
   year: 2009
+apiocrinites:
+  name: Apiocrinites
+  authority:
+    source: 1821_miller.j.s
 apiocystites:
   name: Apiocystites
   authority:
@@ -401,8 +409,14 @@ arthropoda:
 articulata:
   name: Articulata
   rank: Subclass
-  auth: [zittel]
-  year: 1879
+  authority:
+    source: 1821_miller.j.s
+  notes: Sometimes attributed to Zittel (1879) when used as a subclass
+articulata-division:
+  name: Articulata
+  rank: Division
+  authority:
+    source: 1821_miller.j.s
 ascocystites:
   name: Ascocystites
   auth: [barrande]
@@ -417,6 +431,10 @@ ascocystitidae:
   rank: Family
   auth: [ubaghs]
   year: 1967
+asteria:
+  name: Asteria
+  auth: [linnaeus]
+  year: 1767
 asteriadæ:
   name: Asteriadæ
   rank: Order
@@ -568,6 +586,10 @@ barroubiocystis:
   name: Barroubiocystis
   authority:
     source: 1999_ubaghs
+basaltiformis_miller.j.s_1821:
+  name: basaltiformis
+  authority:
+    source: 1821_miller.j.s
 bassleri_sprinkle_1982g:
   name: bassleri
   authority:
@@ -793,7 +815,10 @@ briareus_barrande_1887:
   name: briareus
   auth: [barrande]
   year: 1887
-  notes: Junior synonym of bohemica_fatka_kordule_1985
+briareus_miller.j.s_1821:
+  name: briareus
+  authority:
+    source: 1821_miller.j.s
 brightonicystis:
   name: Brightonicystis
   auth: [paul.c.r.c]
@@ -947,6 +972,10 @@ cannati_miquel_1894:
   name: cannati
   auth: [Miquel]
   year: 1894
+caput medusæ_lamarck_1801:
+  name: caput medusæ
+  auth: [lamarck]
+  year: 1801
 carabocrinidae:
   name: Carabocrinidae
   rank: Family
@@ -1182,6 +1211,11 @@ cnemecrinus:
   name: Cnemecrinus
   authority:
     source: 2003_guensburg_sprinkle
+coadunata:
+  name: Coadunata
+  rank: Division
+  authority:
+    source: 1821_miller.j.s
 codyensis_sumrall_sprinkle_guensburg_1997:
   name: codyensis
   authority:
@@ -1237,6 +1271,10 @@ comarocystitidae:
 comarocystidae:
   name: Comarocystidae
   altSpellingOf: comarocystitidae
+comatula:
+  name: Comatula
+  auth: [lamarck]
+  year: 1815
 commensalus_bell.b.m_1974:
   name: commensalus
   authority:
@@ -1343,6 +1381,10 @@ coxi_paul.c.r.c_1997:
   name: coxi
   authority:
     source: 1997_paul.c.r.c
+crassus_miller.j.s_1821:
+  name: crassus
+  authority:
+    source: 1821_miller.j.s
 craterina:
   name: Craterina
   auth: [barrande]
@@ -1517,6 +1559,10 @@ cyathocrinina:
   rank: Suborder
   auth: [bather]
   year: 1899
+cyathocrinites:
+  name: Cyathocrinites
+  authority:
+    source: 1821_miller.j.s
 cyathocystina:
   name: Cyathocystina
   rank: Suborder
@@ -2243,6 +2289,10 @@ elizae_bather_1913:
   name: elizae
   auth: [bather]
   year: 1913
+ellipticus_miller.j.s_1821:
+  name: ellipticus
+  authority:
+    source: 1821_miller.j.s
 elongata_thoral_1935:
   name: elongata
   auth: [Thoral]
@@ -2251,6 +2301,10 @@ elongatus_guensburg_sprinkle_1994:
   name: elongatus
   authority:
     source: 1994_guensburg_sprinkle
+elongatus_miller.j.s_1821:
+  name: elongatus
+  authority:
+    source: 1821_miller.j.s
 elongatus_sprinkle_1973:
   name: elongatus
   authority:
@@ -2259,6 +2313,24 @@ elpasocrinus:
   name: Elpasocrinus
   auth: [sprinkle, Wahlm]
   year: 1994
+encrinites:
+  name: Encrinites
+  altSpellingOf: encrinus
+  notes: |
+    It's a bit unclear if "alt spelling" is correct; if not, the authority
+    varies including Blumenbach 1802 (or 1803?), J.S. Miller 1821, or
+    Gray 1840.  The term was also used for crinoid fragment rocks in general.
+encrinus:
+  name: Encrinus
+  auth: [lamarck]
+  year: 1801
+  notes: |
+    Andreae (1764) credit suppressed by ICZN ruling —
+    International Commission on Zoological Nomenclature. Opinion 636
+    Encrinus Lamarck, 1801 (Grinoidea); validation under the Plenary Powers
+    in its accustomed sense.
+    Bulletin of Zoological Nomenclature 19, 262-265 (1962) -
+    via Official Lists and Indexes of Names in Zoology
 enterocoela-grade:
   name: Enterocoela
   rank: Grade
@@ -2451,6 +2523,10 @@ eucystis:
   name: Eucystis
   auth: [Angelin]
   year: 1878
+eugeniacrinites:
+  name: Eugeniacrinites
+  authority:
+    source: 1821_miller.j.s
 euhydrodiskos:
   name: Euhydrodiskos
   authority:
@@ -2470,6 +2546,10 @@ eumorphocystoidea:
   auth: [Branson, Peck]
   year: 1940
   notes: nom. transl., possibly in 1982_sprinkle(ed)?
+euryale:
+  name: Euryale
+  auth: [Oken]
+  year: 1815
 euryeschatia:
   name: Euryeschatia
   authority:
@@ -2516,6 +2596,10 @@ fillmorensis_guensburg_sprinkle_2003:
   name: fillmorensis
   authority:
     source: 2003_guensburg_sprinkle
+fimbriata_miller.j.s_1821:
+  name: fimbriata
+  authority:
+    source: 1821_miller.j.s
 fimbriatus_bassler_1943:
   name: fimbriatus
   auth: [bassler]
@@ -2854,6 +2938,11 @@ gondi_ubaghs_1987:
   name: gondi
   auth: [ubaghs]
   year: 1987
+goniodactylus_phillips.j_1839:
+  name: goniodactylus
+  authority:
+    authors: [phillips.j]
+    source: 1839_murchison
 gonocrinites:
   name: Gonocrinites
   auth: [Eichwald]
@@ -2886,6 +2975,10 @@ granulatus_mccoy_1846:
   name: granulatus
   auth: [mccoy]
   year: 1846
+granulatus_miller.j.s_1821:
+  name: granulatus
+  authority:
+    source: 1821_miller.j.s
 granulosus_meek_1872:
   name: granulosus
   auth: [meek]
@@ -2985,7 +3078,7 @@ hallii_conrad.t.a_1842:
   name: hallii
   authority:
     authors: [conrad.t.a]
-    in: 1842_vanuxem
+    source: 1842_vanuxem
 hallicystis:
   name: Hallicystis
   auth: [jaekel]
@@ -3393,6 +3486,11 @@ inadunata:
   rank: Subclass
   auth: [Wachsmuth, springer]
   year: 1897
+inarticulata:
+  name: Inarticulata
+  rank: Division
+  authority:
+    source: 1821_miller.j.s
 incondita_raymond_1915:
   name: incondita
   auth: [Raymond]
@@ -3662,6 +3760,10 @@ laevis_bather_1914:
   name: laevis
   auth: [bather]
   year: 1914
+lævis_miller.j.s_1821:
+  name: lævis
+  authority:
+    source: 1821_miller.j.s
 laevis_pander_1830:
   name: laevis
   auth: [Pander]
@@ -3991,6 +4093,12 @@ mariae_callaway_1877:
   name: mariae
   auth: [Callaway]
   year: 1877
+marsupites:
+  name: Marsupites
+  authority:
+    authors: [mantell]
+    source: 1821_miller.j.s
+  notes: Given as from source in prep, unclear if ever published.
 maslennikovi_sumrall_2009:
   name: maslennikovi
   authority:
@@ -4125,6 +4233,10 @@ moncereti_domínguez alonso_1999:
   name: moncereti
   auth: [domínguez alonso]
   year: 1999
+moniliformis_miller.j.s_1821:
+  name: moniliformis
+  authority:
+    source: 1821_miller.j.s
 monobathrida:
   name: Monobathrida
   rank: Order
@@ -4300,7 +4412,7 @@ nucleocrinus:
   name: Nucleocrinus
   authority:
     authors: [conrad.t.a]
-    in: 1842_vanuxem
+    source: 1842_vanuxem
 nuntius_prokop_1962:
   name: nuntius
   auth: [Prokop]
@@ -4343,6 +4455,10 @@ ophiocistioidea:
   rank: Class
   auth: [Sollas]
   year: 1899
+ophiura:
+  name: Ophiura
+  auth: [Lamarck]
+  year: 1801
 ophiuroidea:
   name: Ophiuroidea
   rank: Class
@@ -4368,6 +4484,10 @@ ornatus_bassler_1943:
   name: ornatus
   auth: [bassler]
   year: 1943
+ornatus_miller.j.s_1821:
+  name: ornatus
+  authority:
+    source: 1821_miller.j.s
 ornatus_savage_1917:
   name: ornatus
   auth: [Savage]
@@ -4587,6 +4707,9 @@ pentacrinites:
   name: Pentacrinites
   auth: [Blumenbach]
   year: 1804
+pentacrinus:
+  name: Pentacrinus
+  altSpellingOf: pentacrinites
 pentacystida:
   name: Pentacystida
   rank: Order
@@ -4596,6 +4719,10 @@ pentagonius_meek_worthen_1865:
   name: pentagonius
   auth: [meek, worthen]
   year: 1865
+pentangularis_miller.j.s_1821:
+  name: pentangularis
+  authority:
+    source: 1821_miller.j.s
 pentangularis_pompeckj_1896:
   name: pentangularis
   auth: [Pompeckj]
@@ -4703,10 +4830,18 @@ placocystitinae:
   rank: Subfamily
   authority:
     source: 1960_gill_caster
+planus_miller.j.s_1821:
+  name: planus
+  authority:
+    source: 1821_miller.j.s
 plattevillensis_kolata_1975:
   name: plattevillensis
   authority:
     source: 1975_kolata
+platycrinites:
+  name: Platycrinites
+  authority:
+    source: 1821_miller.j.s
 platycystites:
   name: Platycystites
   auth: [miller.s.a]
@@ -4793,6 +4928,10 @@ plinthotus_kesling_1967:
   name: plinthotus
   auth: [kesling]
   year: 1967
+polydactylus_miller.j.s_1821:
+  name: polydactylus
+  authority:
+    source: 1821_miller.j.s
 polyplacida:
   name: Polyplacida
   rank: Subclass
@@ -4836,6 +4975,10 @@ postpetalus_müller.p_hahn_2010:
   name: postpetalus
   authority:
     source: 2010_müller.p_hahn
+poteriocrinites:
+  name: Poteriocrinites
+  authority:
+    source: 1821_miller.j.s
 poteriocrinus:
   name: Poteriocrinus
   auth: [Agassiz]
@@ -5076,6 +5219,16 @@ quadrocystis:
   name: Quadrocystis
   authority:
     source: 1982g_sprinkle
+quinquangularis_miller.j.s_1821_cyathocrinites:
+  name: quinquangularis
+  originalParent: cyathocrinites
+  authority:
+    source: 1821_miller.j.s
+quinquangularis_miller.j.s_1821_eugeniacrinites:
+  name: quinquangularis
+  originalParent: eugeniacrinites
+  authority:
+    source: 1821_miller.j.s
 ###################### R
 radiata_sprinkle_1973:
   name: radiata
@@ -5244,6 +5397,10 @@ rhizophora_schmidt_1889:
   name: rhizophora
   auth: [Schmidt]
   year: 1889
+rhodocrinites:
+  name: Rhodocrinites
+  authority:
+    source: 1821_miller.j.s
 rhombifera:
   name: Rhombifera
   auth: [barrande]
@@ -5312,6 +5469,10 @@ rossica_jaekel_1918:
   name: rossica
   auth: [jaekel]
   year: 1918
+rotundus_miller.j.s_1821:
+  name: rotundus
+  authority:
+    source: 1821_miller.j.s
 rotundus_parsley_zhao.y.l_2006:
   name: rotundus
   authority:
@@ -5330,6 +5491,16 @@ rugosus_billings.w.r_1887:
   authority:
     source: 1887_billings.w.r
   notes: original parent Calceocrinus
+rugosus_miller.j.s_1821_platycrinites:
+  name: rugosus
+  originalParent: platycrinites
+  authority:
+    source: 1821_miller.j.s
+rugosus_miller.j.s_1821_cyathocrinites:
+  name: rugosus
+  originalParent: cyathocrinites
+  authority:
+    source: 1821_miller.j.s
 runcinata_jell_1983:
   name: runcinata
   authority:
@@ -5426,6 +5597,11 @@ scyphocrinus:
   name: Scyphocrinus
   auth: [hall]
   year: 1847
+semiarticulata:
+  name: Semiarticulata
+  rank: Division
+  authority:
+    source: 1821_miller.j.s
 senckenbergii_meyer_1826:
   name: senckenbergii
   auth: [Meyer]
@@ -5659,6 +5835,11 @@ stellatus_hall_1866:
   name: stellatus
   auth: [Hall]
   year: 1866
+stelleridæ:
+  name: Stelleridæ
+  rank: Family
+  auth: [Lamarck]
+  year: 1816
 stelleroidea:
   name: Stelleroidea
   rank: Class
@@ -5708,6 +5889,10 @@ striatosphaerites-subgenus:
   rank: subgenus
   authority:
     source: 1997_paul.c.r.c
+striatus_miller.j.s_1821:
+  name: striatus
+  authority:
+    source: 1821_miller.j.s
 strimplecystis:
   name: Strimplecystis
   auth: [bassler]
@@ -5748,6 +5933,10 @@ stromatocystites-sp_ubaghs_1999:
   rank: species
   authority:
     source: 1999_ubaghs
+stylastritæ:
+  name: Stylastritæ
+  auth: [martin.w]
+  year: 1809
 stylophora:
   name: Stylophora
   rank: Class
@@ -5763,6 +5952,14 @@ stylophora-sp-indeterminate_sumrall_sprinkle_guensburg_1997:
   rank: species
   authority:
     source: 1997_sumrall_sprinkle_guensburg
+subangularis_miller.j.s_1821:
+  name: subangularis
+  authority:
+    source: 1821_miller.j.s
+subbasaltiformis_miller.j.s_1821:
+  name: subbasaltiformis
+  authority:
+    source: 1821_miller.j.s
 subglobosus_hall_1862:
   name: subglobosus
   auth: [hall]
@@ -5852,6 +6049,10 @@ tenuis_billings_1857:
   name: tenuis
   auth: [billings]
   year: 1857
+tenuis_miller.j.s_1821:
+  name: tenuis
+  authority:
+    source: 1821_miller.j.s
 testudinarius_hisinger_1837:
   name: testudinarius
   auth: [hisinger]
@@ -6001,6 +6202,10 @@ trentonensis_bassler_1936:
   name: trentonensis
   authority:
     source: 1936_bassler
+triacontadactylus_miller.j.s_1821:
+  name: triacontadactylus
+  authority:
+    source: 1821_miller.j.s
 triangulatus_paul.c.r.c_1997:
   name: triangulatus
   authority:
@@ -6021,6 +6226,21 @@ trochocystites:
   notes: |
     Nomen nudum, used (or re-defined?) for T. cannati, which is actually
     an edrioasteroide, Cambraser cannati.
+tuberculatus_miller.j.s_1821_pentacrinites:
+  name: tuberculatus
+  originalParent: pentacrinites
+  authority:
+    source: 1821_miller.j.s
+tuberculatus_miller.j.s_1821_platycrinites:
+  name: tuberculatus
+  originalParent: platycrinites
+  authority:
+    source: 1821_miller.j.s
+tuberculatus_miller.j.s_1821_cyathocrinites:
+  name: tuberculatus
+  originalParent: cyathocrinites
+  authority:
+    source: 1821_miller.j.s
 turbanicystidae:
   name: Turbanicystidae
   rank: Family
@@ -6139,6 +6359,10 @@ velatus_barrande_1887:
   name: velatus
   auth: [barrande]
   year: 1887
+verus_miller.j.s_1821:
+  name: verus
+  authority:
+    source: 1821_miller.j.s
 vetusta_foerste_1914:
   name: vetusta
   auth: [foerste]

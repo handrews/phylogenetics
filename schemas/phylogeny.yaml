@@ -284,7 +284,7 @@ $defs:
     properties:
       name:
         type: [string, "null"]
-        pattern: ^[A-Za-z][a-zæ- ]*$
+        pattern: ^[\w][\w._ -]*$
       rank:
         $ref: phylogeny#/$defs/rank
       authority:
@@ -345,6 +345,7 @@ $defs:
     - species
     - subspecies
     - variety
+    - Division
     - Branch
     - Group
     - Grade
@@ -426,6 +427,18 @@ $defs:
             type: string
           content:
             type: [number, string]
+          pages:
+            type: array
+            items:
+              type: [integer, string]
+          plates:
+            type: array
+            items:
+              type: [integer, string]
+          figures:
+            type: array
+            items:
+              type: [integer, string]
         additionalProperties: false
       notes:
         type: string

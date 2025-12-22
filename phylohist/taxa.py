@@ -66,18 +66,16 @@ class Authority:
     self._source = None
 
     if (a := data.get('authority' )):
-      if not (source_key := a.get('source')):
-        source_key = a['in']
-
+      source_key = a['source']
       self._source = Source.get(source_key)
       if not self._source:
         raise KeyError(f'Authority source "{source_key}" not recognized')
 
-      if 'in' in a and 'authors' in a:
+      self._source_authors = self._source.authors
+      if 'authors' in a:
         self._authors = self._find_authors(a['authors'])
       else:
         self._authors = None
-      self._source_authors = self._source.authors
 
       if self._source.in_preparation:
         self._year = None
@@ -282,6 +280,8 @@ class Taxon:
           f'{self.name} with suffix "{suffix}" expected to have rank of {rank}',
         )
       if self.rank == rank and not self.name.endswith(suffix):
+        if suffix == 'idae' and self.name.endswith('idæ'):
+          continue
         logger.warn(
           f'{self.name} of rank {rank} expected to end with suffix "{suffix}"',
         )
