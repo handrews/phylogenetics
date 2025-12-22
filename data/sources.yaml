@@ -95,6 +95,15 @@
   - hisinger
   identifiers:
     url: https://www.google.com/books/edition/Anteckningar_i_Physik_och_Geognosi_under/LotfAAAAcAAJ?hl=en
+1842_vanuxem:
+  title: Geology of New-York. Part III. Comprising the Survey of the Third Geological District
+  book: nat-hist-ny
+  pubDate:
+    year: 1842
+  authors:
+  - vanuxem
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/55172030
 1844_buch:
   title: Über Cystideen eingeleitet durch die Entwicklung der Eigenthümlichkeiten von Caryocrinus ornatus
   reading: akademie

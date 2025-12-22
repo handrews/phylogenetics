@@ -30,6 +30,16 @@
           - taxon: granatum_wahlenberg_1821
             parents:
             - taxon: echinosphærites
+1842_vanuxem:
+  taxonomies:
+  - notes: No formal systematics, taken from prose page 158.
+    taxon: crinoidea-family
+    children:
+    - taxon: agelacrinites
+      new: true
+      children:
+      - taxon: hamiltonensis_vanuxem_1842
+        new: true
 1844_buch:
   taxonomies:
   - taxon: echinodermata-order
