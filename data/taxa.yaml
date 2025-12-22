@@ -903,6 +903,10 @@ atropos_lamarck_1816:
   name: atropos
   authority:
     source: 1816b_lamarck
+auranea_schlotheim_1826:
+  name: auranea
+  auth: [Schlotheim]
+  year: 1826
 aurantium_gyllenhaal_1772:
   name: aurantium
   auth: [gyllenhaal]
@@ -2367,6 +2371,10 @@ crinoidea-family:
   altRankOf: crinoidea
   rank: Family
   notes: Original rank as declared by Miller in 1821
+crinoiden:
+  name: Crinoiden
+  lang: DE
+  vulgarSpellingOf: crinoidea-family
 crinoidea-indeterminate-subclass_sprinkle_1973:
   name: null
   rank: Subclass
@@ -2722,6 +2730,10 @@ cystidea-family:
   auth: [buch]
   year: 1844
   notes: Original rank as defined in 1844 (via translation in 1846)
+cystideen:
+  name: Cystideen
+  lang: DE
+  vulgarSpellingOf: cystidea-family
 cystidea-sp_buch_1944:
   name: null
   rank: species
@@ -3025,13 +3037,14 @@ diplobathra:
 diploporita-class:
   name: Diploporita
   rank: Class
-  auth: [müller.j.p]
-  year: 1854
+  authority:
+    source: 1854_müller.j.p
 diploporita-order:
-  name: Diploporita
   rank: Order
-  auth: [müller.j.p]
-  year: 1854
+  altRankOf: diploporita-class
+diploporita-suborder:
+  rank: Suborder
+  altRankOf: diploporita-class
 diploporita-incertae-sedis:
   name: null
   rank: Superfamily
@@ -3044,14 +3057,14 @@ diploporita-sp-e_paul.c.r.c_1997:
     source: 1997_paul.c.r.c
 diploporiten:
   name: Diploporiten
-  rank: Suborder
-  auth: [müller.j.p]
-  year: 1854
+  vulgarSpellingOf: diploporita-suborder
+  lang: DE
   notes: Rank not entirely clear, just called a "small group"
-  altSpellingOf: diploporita-order
 diploporitidæ:
   name: diploporitidæ
   rank: Suborder
+  authority:
+    source: 1854_müller.j.p
   auth: [müller.j.p]
   year: 1854
   notes: Rank not entirely clear, just called a "small group"
@@ -3315,6 +3328,10 @@ echinodermata-incertae-sedis_ubaghs_1999:
   rank: Class
   authority:
     source: 1999_ubaghs
+echinodermen:
+  name: Echinodermen
+  lang: DE
+  vulgarSpellingOf: echinodermata-order # maybe?  Rank not at all clear
 échinodermes-order:
   name: Échinodermes
   vulgarSpellingOf: echinodermata-order
@@ -4509,6 +4526,13 @@ glyptosphaeridae:
   auth: [Bernard]
   year: 1895
   altSpellingOf: glyptosphaeritidae
+glyptosphaerites:
+  name: Glyptosphaerites
+  authority:
+    source: 1854_müller.j.p
+glyptosphærites:
+  name: Glyptosphærites
+  altSpellingOf: glyptosphaerites
 glyptosphaeritidae:
   name: Glyptosphaeritidae
   rank: Family
@@ -4645,6 +4669,11 @@ granatum_wahlenberg_1821:
   name: granatum
   auth: [Wahlenberg]
   year: 1821
+granatum_volborth_1842:
+  name: granatum
+  auth: [Volborth]
+  year: 1842
+  notes: Very uncertain of date or even attribution.
 granifera_lamarck_1816:
   name: granifera
   authority:
@@ -5997,6 +6026,10 @@ lærnea:
   name: Lærnea
   altSpellingOf: lernaea
   notes: IRMNG has as unaccepted taxon but Brug. 1791 instead of 1789?
+leuchtenbergii_volborth_1846:
+  name: leuchtenbergii
+  auth: [Volborth]
+  year: 1846
 leucopthalmus:
   name: Leucopthalmus
   auth: [Koenig]
@@ -6096,6 +6129,9 @@ litchi_forbes_1848:
   name: litchi
   authority:
     source: 1848b_forbes
+litchii_forbes_1848:
+  name: litchii
+  altSpellingOf: litchi_forbes_1848
 lithophyta:
   name: Lithophyta
   rank: Order
@@ -7264,6 +7300,10 @@ ovatus_leske_1778_spatangus_leske_1778:
   originalParent: spatangus_leske_1778
   authority:
     source: 1778_leske
+oviformis_eichwald_1840:
+  name: oviformis
+  auth: [Eichwald]
+  year: 1840
 oviformis_gmelin_1791:
   name: oviformis
   auth: [Gmelin]
@@ -8015,6 +8055,10 @@ polyzonalis_lamarck_1816:
   name: polyzonalis
   authority:
     source: 1816b_lamarck
+pomum_leuchtenberg_1843:
+  name: pomum
+  auth: [Leuchtenberg]
+  year: 1843
 pomum_wahlenberg_1821:
   name: pomum
   auth: [Wahlenberg]
@@ -8168,6 +8212,10 @@ protocrinidae:
   auth: [bather]
   year: 1899
   altSpellingOf: protocrinitidae
+protocrinites:
+  name: Protocrinites
+  auth: [Eichwald]
+  year: 1840
 protocrinitida:
   name: Protocrinitida
   rank: Superfamily
@@ -9645,6 +9693,9 @@ striata_pander_1830:
   name: striata
   auth: [Pander]
   year: 1830
+striatus_pander_1830:
+  name: striatus
+  altSpellingOf: striata_pander_1830
 striato radiatus_leske_1778:
   name: striato radiatus
   authority:

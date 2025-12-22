@@ -296,6 +296,8 @@ class Taxon:
     for suffix, rank, exceptions in (
       ('inae', 'Subfamily', frozenset()),
       ('idae', 'Family', frozenset({
+        'Crinoiden',
+        'Cystideen',
         'Échinides',
         'Echinides',
         'Stellérides',

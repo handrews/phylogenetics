@@ -1,5 +1,7 @@
 ## Principles
 
+[quote from von Buch]
+
 Science Moves.
 
 There is no need for a database, just language.
@@ -13,6 +15,21 @@ AI is needed to query and visualize.
 A database serialization may be better for verificaton and some use cases.
 
 A database might be needed for the historical edit/audit trail.
+
+The AI is like a very enthusiastic, over-confident, inexperienced grad student.  But one who never gets bored and has perfect memory.  It's important to have a check on such a contributor, but it's equally important to ensure that the check is in the right place.
+
+You would not send a single student of this sort to both find all the data and report on it (without documenting intermediate steps) because if the report came back in an unexpected way, there wouldn't be a way to debug it.  This is equivalent to having the AI gather its own training data and train itself: you have no idea if it got the right data, much less understood it correctly.  You also have no way of correcting errors in the data.
+
+You can use an AI to gather data, but know that there are many sources of errors, particularly OCR errors, which are very common in older documents with confusing typography.  Plus actual errors in the content.
+
+### Two systems?
+
+* One model is trained on finding data and producing a standardized form
+  * Humans can also provide data in the standardized form
+  * Humans can review the model's standardized data output against its sources
+* One model is trained using the standardized forms to produce reports
+
+### Older Thoughts on Principles
 
 * Plan for everything, even if it will not be done anytime soon if ever
 	* This does not mean nail down every detail of everything

@@ -1,0 +1,9 @@
+In the article "{title}", in [{issue-label} {issue}, ]{volume-label} {volume} of journal {journal}, authors {author-list} made the following statements:
+
+  * note: Need template for when a statement is credited to others
+
+The article's title indicates that it is about {...}
+
+  * This provides context for the trees
+
+

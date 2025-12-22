@@ -3783,6 +3783,91 @@
       - taxon: hamiltonensis_vanuxem_1842
       - taxon: buchianus_forbes_1848
         new: true
+1854_müller.j.p:
+  taxonomies:
+  - notes: Partially based on the translation in 1958a_billings
+    taxon: echinodermen
+    children:
+    - taxon: crinoiden
+      children:
+      - taxon: cystideen
+        children:
+        - notes: Rhombifera, but not named.
+          openTaxon: cystideæ-unnamed-group_müller.j.p_1854
+          children:
+          - notes: Hemicosmitida, but not named.
+            openTaxon: cystideæ-unnamed-subgroup-1_müller.j.p_1854
+            children:
+            - taxon: hemicosmites
+            - taxon: caryocrinus
+          - taxon: echinosphærites
+            notes: Caryocystitida, but only one genus at this point.
+            children:
+            - taxon: granatum_wahlenberg_1821
+              synonyms:
+              - taxon: granatum_wahlenberg_1821
+                parents:
+                - taxon: caryocystites
+            - affTaxon: granatum_wahlenberg_1821
+            - taxon: aurantium_gyllenhaal_1772
+            - taxon: auranea_schlotheim_1826
+            - taxon: testudinarius_hisinger_1837
+              synonyms:
+              - taxon: testudinarius_hisinger_1837
+                parents:
+                - taxon: caryocystites
+          - notes: Glyptocystitida, but not named.
+            openTaxon: cystideæ-unnamed-subgroup-2_müller.j.p_1854
+            children:
+            - taxon: echinoencrinus
+              children:
+              - taxon: angulosus_pander_1830
+                synonyms:
+                - taxon: granatum_volborth_1842
+                  notes: |
+                    Could be Volborth 1846, or Schlotheim 1826, or
+                    Wahlenberg 1821?
+              - taxon: striatus_pander_1830
+            - taxon: pseudocrinites
+            - taxon: apiocystites
+            - taxon: prunocystites
+        - taxon: diploporiten
+          new: true
+          children:
+          - taxon: sphæronites
+            children:
+            - taxon: pomum_wahlenberg_1821 # Or gyllenhaal 1772?
+              type: true
+            - taxon: litchii_forbes_1848  # litchi in original
+              provisional: true
+              notes: allied to S. pomum requiring further investigation
+              synonyms:
+              - taxon: litchii_forbes_1848
+                parents:
+                - taxon: caryocystites
+            - taxon: pyriformis_forbes_1848
+              provisional: true
+              notes: allied to S. pomum requiring further investigation
+              synonyms:
+              - taxon: pyriformis_forbes_1848
+                parents:
+                - taxon: caryocystites
+            - taxon: munitus_forbes_1848
+              provisional: true
+              notes: allied to S. pomum requiring further investigation
+              synonyms:
+              - taxon: munitus_forbes_1848
+                parents:
+                - taxon: caryocystites
+          - taxon: protocrinites
+            children:
+            - taxon: oviformis_eichwald_1840
+          - taxon: glyptosphærites
+            new: true
+            children:
+            - taxon: leuchtenbergii_volborth_1846
+              type: true
+            - taxon: pomum_leuchtenberg_1843 # actually non?
 1858_salter_billings:
   taxonomies:
   - taxon: cystideæ

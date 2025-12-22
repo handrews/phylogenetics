@@ -506,6 +506,19 @@
   - buch
   identifiers:
     url: https://www.biodiversitylibrary.org/page/35336917
+1848_austin.t:
+  title: Observations on the Cystidea of M. von Buch, and the Crinoidea generally
+  journal: quart-jour-geol-soc
+  volume: 4
+  number: 1–2
+  pubDate:
+    year: 1848
+    month: 2
+  authors:
+  - austin.t
+  identifiers:
+    url: https://www.lyellcollection.org/doi/abs/10.1144/GSL.JGS.1848.004.01-02.39
+  notes: Actually much more about Crinoidea
 1848a_forbes:
   title: On the Asteriadæ found Fossil in British Strata
   journal: mem-geol-gb
