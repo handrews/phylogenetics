@@ -332,6 +332,13 @@
     year: 1866
   authors:
   - hall
+  notes: |
+    Original 17 pages of the paper eventually published as 1872b_hall.
+    See https://www.biodiversitylibrary.org/page/35612723, note also
+    that there was a revised edition with its own difficult-to-locate
+    preprint.  See https://www.biodiversitylibrary.org/page/36348222
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/35839940
 1870_billings:
   title: Notes on the Structure of the Crinoidea, Cystidea, and Blastoidea
   journal: annals-and-mag
@@ -379,6 +386,9 @@
     transmitted: 1871-04-18
   authors:
   - hall
+  notes: Possibly should be 1871_hall, proper date a bit unclear
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/35612725
 1872c_hall:
   title: Description of new species of fossils from the Hudson River Group, in the vicinity of Cincinnati, Ohio
   journal: annual-ny
