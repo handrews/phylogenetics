@@ -2601,6 +2601,16 @@ gasterocomacea:
   rank: Superfamily
   auth: [Roemer]
   year: 1854
+gebhardi_conrad.t.a_1840:
+  name: gebhardi
+  auth: [conrad.t.a]
+  in: [vanuxem]
+  year: 1840
+  notes: 4th annual report geol survey of new york
+gebhardii_conrad.t.a_1840:
+  name: gebhardii
+  altSpellingOf: gebhardi_conrad.t.a_1840
+  notes: original spelling
 gemmiformis_hall_1852:
   name: gemmiformis
   auth: [hall]
@@ -2971,6 +2981,11 @@ halli_billings_1858:
   auth: [billings]
   in: [salter, billings]
   year: 1858
+hallii_conrad.t.a_1842:
+  name: hallii
+  authority:
+    authors: [conrad.t.a]
+    in: 1842_vanuxem
 hallicystis:
   name: Hallicystis
   auth: [jaekel]
@@ -2983,6 +2998,9 @@ hamosa_öpik_1975:
   name: hamosa
   auth: [Öpik]
   year: 1975
+hamptonii_unknown:
+  name: hamptonii
+  auth: []
 hanoveri_thomas_1924:
   name: hanoveri
   auth: [Thomas]
@@ -3723,8 +3741,10 @@ legrandensis_miller.s.a_gurley_1894:
   year: 1894
 lepocrinites:
   name: Lepocrinites
-  auth: [Conrad]
+  auth: [conrad.t.a]
+  in: [vanuxem]
   year: 1840
+  notes: 4th annual report geol survey of new york
 lepadocystis:
   name: Lepadocystis
   auth: [Carpenter]
@@ -4276,6 +4296,11 @@ nolichuckia:
   name: Nolichuckia
   authority:
     source: 1973_sprinkle
+nucleocrinus:
+  name: Nucleocrinus
+  authority:
+    authors: [conrad.t.a]
+    in: 1842_vanuxem
 nuntius_prokop_1962:
   name: nuntius
   auth: [Prokop]
@@ -4558,6 +4583,10 @@ pembrocystis:
   name: Pembrocystis
   auth: [domínguez alonso]
   year: 1999
+pentacrinites:
+  name: Pentacrinites
+  auth: [Blumenbach]
+  year: 1804
 pentacystida:
   name: Pentacystida
   rank: Order

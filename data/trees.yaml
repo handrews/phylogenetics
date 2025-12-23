@@ -32,14 +32,45 @@
             - taxon: echinosphærites
 1842_vanuxem:
   taxonomies:
-  - notes: No formal systematics, taken from prose page 158.
+  - notes: |
+      No formal systematics, only echinoderm taxa included as best as could
+      be found by searching/skimming the taxt; could not find species
+      authority info for possible species Pentacrinites hamptonii,
+      Encrinites lævis, or E. triciclas; Echinus drydenensis was tentatively
+      proposed but seems to have been a nomen nudum.
     taxon: crinoidea-family
     children:
     - taxon: agelacrinites
       new: true
+      notes: Description on page 158
       children:
       - taxon: hamiltonensis_vanuxem_1842
         new: true
+        specimens:
+          holotype:
+            figures:
+            - page: 306
+              plate: 80
+              collectedFrom: |
+                Hamilton group, Madison County, West-Hamilton village,
+                upper quarry
+              notes: |
+                Six organisms on the slab, but only one complete.  Three
+                full-size, including the complete fossil, two small, and
+                one in between.  The small are in the angle between two
+                of the large, with the mid-sized adjacent to one large and
+                the third large ont he other side of the first two.
+    - taxon: nucleocrinus
+      new: true
+      children:
+      - taxon: hallii_conrad.t.a_1842
+        new: true
+    - taxon: pentacrinites
+      children:
+      - taxon: hamptonii_unknown
+    - taxon: lepocrinites
+      children:
+      - taxon: gebhardi_conrad.t.a_1840
 1844_buch:
   taxonomies:
   - taxon: echinodermata-order

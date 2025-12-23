@@ -242,14 +242,21 @@ $defs:
         type: string
   authority:
     type: object
-    required:
-    - source
+    oneOf:
+    - required:
+      - source
+    - required:
+      - in
     unevaluatedProperties: false
     properties:
       source:
         type: string
+      authors:
+        type: array
+        items:
+          type: string
       in:
-        $ref: "#/$defs/authority"
+        $ref: "#/$defs/sourceId"
       ex:
         $ref: "#/$defs/authority"
       pages:
@@ -430,7 +437,7 @@ $defs:
         type: boolean
         default: false
       specimens:
-        $ref: "phylogeny#/$defs/specimen"
+        $ref: "phylogeny#/$defs/specimens"
       diagnosis:
         type: [string, "null"]
       emended:
@@ -520,24 +527,52 @@ $defs:
             additionalProperties:
               type: [number, string]
   specimen:
+    oneOf:
+    - type: string
+    - type: object
+      properties:
+        repository:
+          type: string
+        id:
+          type: [integer, string]
+        figures:
+          type: array
+          items:
+            type: object
+            properties:
+              source:
+                $ref: "#/$defs/sourceId"
+              plate:
+                type: integer
+              page:
+                type: integer
+              location:
+                type: [integer, string]
+              collectedFrom:
+                type: string
+              notes:
+                type: string
+  specimens:
     type: object
     properties:
+      repository:
+        type: string
       holotype:
-        type: string
+        $ref: "#/$defs/specimen"
       allotype:
-        type: string
+        $ref: "#/$defs/specimen"
       lectotype:
-        type: string
+        $ref: "#/$defs/specimen"
       neotype:
-        type: string
+        $ref: "#/$defs/specimen"
       syntype:
-        type: string
+        $ref: "#/$defs/specimen"
     additionalProperties:
       type: array
       items:
         type: [string, array]
         items:
-          type: string
+          $ref: "#/$defs/specimen"
     propertyNames:
       enum:
       - holotype
