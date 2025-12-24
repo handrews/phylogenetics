@@ -9,7 +9,7 @@ import jschon
 
 from .io import load_files
 from .research import Author, Publication, Source
-from .taxa import  check_taxa, check_trees
+from .taxa import Taxon, check_trees
 from .convert import convert
 
 logger = logging.getLogger(__name__)
@@ -56,9 +56,18 @@ def main():
     Source.add(source, ref_key)
   logger.info('...sources checked.')
 
-  check_taxa(data)
-  check_trees(data, taxa, args)
+  logger.info(f"Processing {len(data['taxa'])} taxa...")
+  deferred = []
+  for taxon_key, taxon_data in data['taxa'].items():
+    if taxon_data.keys() & {'altRankOf', 'altSpellingOf'}:
+      deferred.append((taxon_key, taxon_data))
+      continue
+    Taxon.add(taxon_data, taxon_key)
+  for taxon_key, taxon_data in deferred:
+    Taxon.add(taxon_data, taxon_key)
+  logger.info(f"...taxa processed.")
 
+  check_trees(data, taxa, args)
   # TODO: Obviously this is fragile, fix it!
   handler = logger.parent.handlers[0]
   logged_errors = handler.get_count(logging.ERROR)

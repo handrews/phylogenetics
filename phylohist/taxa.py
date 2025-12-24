@@ -246,19 +246,6 @@ class Taxon:
   def authority(self):
     return self._authority
 
-def check_taxa(data):
-  logger.info(f"Processing {len(data['taxa'])} taxa...")
-  deferred = []
-  for taxon_key, taxon_data in data['taxa'].items():
-    if taxon_data.keys() & {'altRankOf', 'altSpellingOf'}:
-      deferred.append((taxon_key, taxon_data))
-      continue
-    Taxon.add(taxon_data, taxon_key)
-  for taxon_key, taxon_data in deferred:
-    Taxon.add(taxon_data, taxon_key)
-
-  logger.info(f"...taxa processed.")
-
 
 def check_node(node, data, parent=[], tree_info=None):
   if isinstance(node, str):
