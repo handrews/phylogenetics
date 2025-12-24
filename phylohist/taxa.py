@@ -50,35 +50,6 @@ RANK_GROUPS = {
 }
 
 
-def check_expectation(
-  actual_key,
-  expected,
-  build_expected_set=None,
-  *args,
-  **kwargs,
-):
-  if actual_key == expected:
-    return True, {expected}
-
-  if build_expected_set is None or not actual_key.startswith(expected):
-    return False, {expected}
-
-  expected_set = build_expected_set(expected, *args, **kwargs)
-  if actual_key in expected_set:
-    return True, expected_set
-  return False, expected_set
-
-
-def check_extras(taxon, rank, expected_set, expected):
-    expected_set.add(f"{expected}-{rank.lower()}")
-    if 'originalParent' in taxon:
-      expected_set = {
-        e + f"_{taxon['originalParent'].lower()}" for e in expected_set
-      }
-    return expected_set
-
-
-
 class Authority:
   def __init__(self, data):
     self._source = None
@@ -211,17 +182,18 @@ class Taxon:
     if self._name is not None:
       expected = self._name.lower()
 
-      valid, valid_set = check_expectation(
-        taxon_key,
-        expected,
-        self._build_expected_taxon,
-      )
+      valid, valid_set = self._check_expected_taxon(expected)
       if not valid:
         logger.error(f'"{taxon_key}" not in expected set: {valid_set}')
 
     logger.debug(f'    ...all authorities for "{taxon_key}" processed')
 
-  def _build_expected_taxon(self, expected):
+  def _check_expected_taxon(self, expected):
+    if self._key == expected:
+      return True, {expected}
+
+    if not self._key.startswith(expected):
+      return False, {expected}
 
     if (
       self._data.get('homonym') or
@@ -235,9 +207,15 @@ class Taxon:
     else:
       expected_set = {expected}
 
-    expected_set = check_extras(self._data, self.rank, expected_set, expected)
+    expected_set.add(f"{expected}-{self.rank.lower()}")
+    if (op := self._data.get('originalParent')):
+      expected_set = {e + f"_{op.lower()}" for e in expected_set}
+
     logger.debug(f'...built {expected_set}')
-    return expected_set
+
+    if self._key in expected_set:
+      return True, expected_set
+    return False, expected_set
 
   @property
   def key(self):
