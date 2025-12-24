@@ -68,16 +68,3 @@ def main():
   logger.info(f"...taxa processed.")
 
   check_trees(data, taxa, args)
-  # TODO: Obviously this is fragile, fix it!
-  handler = logger.parent.handlers[0]
-  logged_errors = handler.get_count(logging.ERROR)
-  logged_warnings = handler.get_count(logging.WARN)
-  if logged_errors:
-    logger.error(
-      f'Encounterd {logged_errors} errors ({logged_warnings} warnings)!'
-    )
-    sys.exit(-1)
-  elif logged_warnings:
-    logger.warn(f'Encountered {logged_warnings} warnings.')
-  else:
-    logger.info(f'Success!')
