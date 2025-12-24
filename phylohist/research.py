@@ -3,6 +3,7 @@ import pathlib
 import logging
 import collections
 from functools import cached_property
+import calendar
 
 import yaml
 import jschon
@@ -21,7 +22,7 @@ class Author:
   def get(cls, author_key):
     return cls._authors.get(author_key, None)
 
-  def __init__(self, author_data, author_key):
+  def __init__(self, author_data, author_key=None):
     self._data = author_data
     self._key = author_key
 
@@ -52,6 +53,14 @@ class Author:
   @property
   def key(self):
     return self._key
+
+  @cached_property
+  def family(self):
+    return self._data.get('family')
+
+  @cached_property
+  def given(self):
+    return self._data.get('given')
 
   @cached_property
   def birth(self):
@@ -97,6 +106,33 @@ class Publication:
     return self._key
 
 
+class PublicationDate:
+  def __init__(self, pub_date):
+    self._year = pub_date['year']
+    self._month = pub_date.get('month')
+    self._day = pub_date.get('day')
+
+  def __str__(self):
+    string = self._year
+    if self._month:
+      string = f'{calendar.month_name[self._month]} {string}'
+      if self._day:
+        string = f'{self._day} {string}'
+    return string
+
+  @property
+  def year(self):
+    return self._year
+
+  @property
+  def month(self):
+    return self._month
+
+  @property
+  def day(self):
+    return self._day
+
+
 class Source:
   _sources = {}
 
@@ -108,9 +144,22 @@ class Source:
   def get(cls, source_key):
     return cls._sources.get(source_key)
 
+  @classmethod
+  def count(cls):
+    return len(cls._sources)
+
   def __init__(self, source_data, source_key):
     self._data = source_data
     self._key = source_key
+
+    self._author_keys = tuple(self._data['authors'])
+    self._authors = []
+    self._editors = []
+
+    if self.in_preparation:
+      self._pub_date = None
+    else:
+      self._pub_date = PublicationDate(self._data['pubDate'])
 
     logger.debug(f'Processing source "{source_key}"')
 
@@ -126,18 +175,22 @@ class Source:
         # TODO: figure out something better for disambiguation letters.
         expected_key += source_key[4]
 
-    for author_key in source_data['authors']:
+    for author_key in self._author_keys:
       if (author := Author.get(author_key)) is None:
         logger.error(
           f'Author "{author_key}" not found for source_data {source_key}!',
         )
+      self._authors.append(author)
       expected_key += '_' + author.key
+    self._authors = tuple(self._authors)
 
     for editor_key in source_data.get('editors', ()):
-      if Author.get(editor_key) is None:
+      if (editor := Author.get(editor_key)) is None:
         logger.error(
           f'Editor "{editor_key}" not found for source_data {source_key}!',
         )
+      self._editors.append(editor)
+    self._editors = tuple(self._editors)
 
     if source_key != expected_key:
       logger.error(f'Expected "{expected_key}" but found "{source_key}"')
@@ -154,6 +207,28 @@ class Source:
   def key(self):
     return self._key
 
-  @classmethod
-  def count(cls):
-    return len(cls._sources)
+  @property
+  def publication_date(self):
+    return self._pub_date
+
+  @property
+  def year(self):
+    return self._pub_date.year
+
+  @property
+  def disambiguator(self):
+    if self._key[4] != '_':
+      return self._key[4]
+    return ''
+
+  @property
+  def authors(self):
+    return self._authors
+
+  @property
+  def author_keys_string(self):
+    return '_'.join(self._author_keys)
+
+  @property
+  def in_preparation(self):
+    return self._data.get('inPrep', False)

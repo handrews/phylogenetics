@@ -2,6 +2,7 @@ import sys
 import pathlib
 import logging
 import collections
+from functools import cached_property
 
 import yaml
 import jschon
@@ -77,47 +78,91 @@ def check_extras(taxon, rank, expected_set, expected):
     return expected_set
 
 
-def build_expected_taxon(expected, taxon):
-  if not (rank := taxon.get('rank')):
-    if taxon['name'] is None:
-      logger.error(f"Unnamed, unrakned taxon {expected}!")
-      # Let the second check fail normally.
-      return {expected}
 
-    rank = 'genus' if taxon['name'][0].isupper() else 'species'
+class Authority:
+  def __init__(self, data):
+    self._source = None
 
-  if (
-    taxon.get('homonym') or
-    taxon.get('needsQualification') or
-    rank in ('species', 'subspecies', 'variety')
-  ):
-    species_expected = expected
-    logger.debug(f'Building species id for {expected}...')
-    if 'auth' in taxon:
-      for author_key in taxon['auth']:
-        species_expected += f"_{author_key.lower()}"
-      species_expected += f"_{taxon['year']}"
-      expected_set = {species_expected}
+    if (a := data.get('authority' )):
+      self._source = Source.get(a['source'])
+
+      if not self._source:
+        raise KeyError(f'Authority source "{source}" not recognized')
+
+      if 'authors' in a:
+        self._authors = self._find_authors(a['authors'])
+        self._in = self._source.authors
+      else:
+        self._authors = self._source.authors
+        self._in = None
+
+      if self._source.in_preparation:
+        self._year = None
+      else:
+        self._year = self.source.year
+        self._disambiguator = self.source.disambiguator
+
+      if 'ex' in a:
+        self._ex = Authority({'authority': a['ex']})
+      else:
+        self._ex = None
+
     else:
-      source_key = taxon['authority']['source']
-      idx = source_key.index('_')
-      species_expected += f'_{source_key[idx+1:]}_{source_key[:4]}'
-      expected_set = {species_expected}
-      if idx == 5:
-        expected_set.add(species_expected + source_key[idx - 1])
+      self._authors = self._find_authors(data['auth'])
+      self._year = data.get('year')
+      self._in = self._find_authors(data['in']) if 'in' in data else None
 
-    expected_set = check_extras(taxon, rank, expected_set, expected)
-    logger.debug(f'...built {expected_set}')
-    return expected_set
+      assert 'ex' not in data, "TODO: 'ex' outside of 'authority'"
+      self._ex = None
 
-  expected_set = check_extras(taxon, rank, {expected}, expected)
+    if self._year:
+      for a in self._authors:
+        if not a.could_publish_in(self._year):
+          raise ValueError(
+            f'Source {source_key} year {year} too far outside of '
+            f'{author} lifespan!',
+          )
 
-  # for author_key in taxon['auth']:
-    # logger.debug(f'Adding author "{author_key}" for taxon_key "{taxon}"')
-    # alt_expected += f'-{author_key.lower()[0]}'
-  # alt_expected += f"-{taxon['year']}"
+  def __str__(self):
+    # TODO: Figure out when/how to add disambiguating intitials.
+    string = ', '.join([a.family for a in self._authors])
+    if self._in:
+      string += ' in ' + ', '.join([a.family for a in self._in])
+    if self._year:
+      string = f'{string} {self._year}'
+    return string
 
-  return expected_set
+  def _find_authors(self, author_strings):
+    authors = []
+    for author_string in author_strings:
+      if author_string == 'et al.':
+        continue
+
+      if author_string.lower() != author_string:
+        # Currently, we do not have unregistered authors with given names.
+        authors.append(Author({'family': author_string}))
+      else:
+        if not (author := Author.get(author_string)):
+          raise KeyError(f'Author for author key {author_string} not found!')
+        authors.append(author)
+    return tuple(authors)
+
+  @property
+  def source(self):
+    return self._source
+
+  @property
+  def authors(self):
+    return self._authors
+
+  @property
+  def taxon_suffix(self):
+    if self._source:
+      return f'{self._source.author_keys_string}_{self._year}'
+    return '_'.join([
+        (a.key if a.key else a.family.lower())
+        for a in self.authors
+    ]) + f'_{self._year}'
 
 
 class Taxon:
@@ -134,57 +179,94 @@ class Taxon:
   def __init__(self, taxon_data, taxon_key):
     self._data = taxon_data
     self._key = taxon_key
+    self._name = self._data.get('name')
+    self._rank = self._data.get('rank')
+
+    if not self._rank:
+      if self.name is None:
+        raise ValueError(f"Unnamed, unranked taxon {taxon_key}!")
+
+      self._rank = 'species' if self._name.islower() else 'genus'
 
     logger.debug(f'  Processing taxon "{taxon_key}"...')
 
-    if 'altSpellingOf' in taxon_data or 'altRankOf' in taxon_data:
-      if (alt := taxon_data.get('altSpellingOf')) and not Taxon.get(alt):
-        logger.error(f'Taxon {taxon_key} alt spelling of unknown {alt}')
-      if (alt := taxon_data.get('altRankOf')) and not Taxon.get(alt):
-        logger.error(f'Taxon {taxon_key} alt rank of unknown {alt}')
-      return
+    if (alt_key := taxon_data.get('altSpellingOf')):
+      if not (alt := Taxon.get(alt_key)):
+        raise KeyError(f'Taxon {taxon_key} alt spelling of unknown {alt_key}')
+      self._alt = alt
+      self._rank = alt.rank
+      self._authority = alt.authority
 
-    if taxon_data['name'] is not None:
-      expected = taxon_data['name'].lower()
+    elif (alt_key := taxon_data.get('altRankOf')):
+      if not (alt := Taxon.get(alt_key)):
+        raise KeyError(f'Taxon {taxon_key} alt rank of unknown {alt_key}')
+      self._alt = alt
+      self._name = alt.name
+      self._authority = alt.authority
+
+    else:
+      self._alt = None
+      self._authority = Authority(taxon_data)
+
+    if self._name is not None:
+      expected = self._name.lower()
 
       valid, valid_set = check_expectation(
         taxon_key,
         expected,
-        build_expected_taxon,
-        taxon_data,
+        self._build_expected_taxon,
       )
       if not valid:
         logger.error(f'"{taxon_key}" not in expected set: {valid_set}')
 
-    if (authority := taxon_data.get('authority')):
-      if Source.get((source := authority['source'])) is None:
-        logger.error(f'Authority source "{source}" not recognized')
-    else:
-      for author_key in taxon_data['auth']:
-        logger.debug('    Processing authority "{author_key}"')
-
-        # WTF is this?
-        # This won't work with multi-token names, but good enough for now
-        if author_key != author_key.lower():
-          return
-
-        if not (author := Author.get(author_key)):
-          logger.error(
-            f'Unrecognized author "{author_key}" in authority for "{taxon_key}"'
-          )
-          return
-
-        if (year := taxon_data.get('year')) and not author.could_publish_in(year):
-          logger.error(
-            f'Source {source_key} year {year} too far outside of '
-            f'{author} lifespan!',
-          )
     logger.debug(f'    ...all authorities for "{taxon_key}" processed')
+
+  def _build_expected_taxon(self, expected):
+
+    if (
+      self._data.get('homonym') or
+      self._data.get('needsQualification') or
+      self.rank in ('species', 'subspecies', 'variety')
+    ):
+      suffix_expected = expected + '_' + self.authority.taxon_suffix
+      expected_set = {suffix_expected}
+      if self.authority.source:
+        expected_set.add(suffix_expected + self.authority.source.disambiguator)
+    else:
+      expected_set = {expected}
+
+    expected_set = check_extras(self._data, self.rank, expected_set, expected)
+    logger.debug(f'...built {expected_set}')
+    return expected_set
 
   @property
   def key(self):
     return self._key
 
+  @property
+  def name(self):
+    return self._data['name']
+
+  @cached_property
+  def canonical_name(self):
+    # The canonical name is:
+    # * nomen correct. if one exists, or...
+    # * the normalized spelling of the originally defined name
+    # If a name is the result of a re-ranking that has been
+    # done both with and without translation, the translation is preferred.
+    # TODO: Align with ICZN wherever possible.
+    if (alt := self._data.get('altSpellingOf')):
+      return Taxon.get(alt).name
+    return self.name
+
+  @property
+  def rank(self):
+    # TODO: Handle this properly, it's more complex than it looks
+    return self._rank
+
+  @property
+  def authority(self):
+    return self._authority
 
 def check_taxa(data):
   logger.info(f"Processing {len(data['taxa'])} taxa...")
