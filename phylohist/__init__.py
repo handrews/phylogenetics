@@ -13,7 +13,7 @@ _log_formatter = logging.Formatter(
 _log_handler = (
     coloredlog.ConsoleHandler(stream=sys.stderr)
     if sys.stderr.isatty() or os.getenv('PHYLOHIST_COLOR') == '1'
-    else LevelCountHandler()
+    else logging.StreamHandler()
 )
 _log_handler.setFormatter(_log_formatter)
 _phylohist_logger.addHandler(_log_handler)
