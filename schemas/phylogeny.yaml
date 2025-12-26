@@ -495,13 +495,22 @@ $defs:
     unevaluatedProperties: false
   phylogeny:
     type: object
-    required: [tree]
+    required: [tree, treeType]
     additionalProperties: false
     properties:
       treeType:
-        type: string  # Enum?  Meh.
+        type: string
+        enum:
+        - taxonomy
+        - cladogram
+        - diagram
+        - other
       tree:
         $ref: tree
+      notes:
+        type: string
+      methodology:
+        type: string
       characteristics:
         type: array
         items:

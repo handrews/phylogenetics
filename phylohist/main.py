@@ -9,7 +9,7 @@ import jschon
 
 from .io import load_files
 from .research import Author, Publication, Source
-from .taxa import Taxon, check_trees
+from .taxa import Taxon, check_trees, print_taxa
 from .convert import convert
 
 logger = logging.getLogger(__name__)
@@ -68,3 +68,6 @@ def main():
   logger.info(f"...taxa processed.")
 
   check_trees(data, taxa, args)
+
+  if taxa or args.author:
+    print_taxa(taxa, data, tree_lookup, args)

@@ -2,7 +2,7 @@ import sys
 import pathlib
 import logging
 import collections
-from functools import cached_property
+from functools import cached_property, reduce
 
 import yaml
 import jschon
@@ -11,8 +11,6 @@ from .research import Author, Source
 
 
 logger = logging.getLogger(__name__)
-
-NAMED_TAXON_FIELDS = {'taxon', 'cfTaxon', 'affTaxon'}
 
 RANKS = {
   'superphylum': 57,
@@ -137,6 +135,7 @@ class Authority:
 
 
 class Taxon:
+
   _taxa = {}
 
   @classmethod
@@ -154,7 +153,7 @@ class Taxon:
     self._rank = self._data.get('rank')
 
     if not self._rank:
-      if self.name is None:
+      if self._name is None:
         raise ValueError(f"Unnamed, unranked taxon {taxon_key}!")
 
       self._rank = 'species' if self._name.islower() else 'genus'
@@ -217,13 +216,22 @@ class Taxon:
       return True, expected_set
     return False, expected_set
 
+  def __str__(self):
+    if self._name:
+      string = self._name
+      if self._data.get('quoted'):
+        string = f'"{string}"'
+    else:
+      string = f'[{self._key}]'
+    return f'{string} ({self._authority})'
+
   @property
   def key(self):
     return self._key
 
   @property
   def name(self):
-    return self._data['name']
+    return self._name
 
   @cached_property
   def canonical_name(self):
@@ -247,111 +255,279 @@ class Taxon:
     return self._authority
 
 
-def check_node(node, data, parent=[], tree_info=None):
-  if isinstance(node, str):
-    logger.error(f"STRING? '{node}'")
-    return
+class ProxyTaxon(Taxon):
+  def __init__(self, taxon, proxy_type, source):
+    self._data = {}
+    self._name = None
+    self._source = source
+    self._proxied = taxon
+    self._proxy_type = proxy_type
+    self._authority = Authority({'authority': {'source': source.key}})
 
-  taxon_fields = (NAMED_TAXON_FIELDS | {'openTaxon'}) & node.keys()
+  def __str__(self):
+    return f'{self._proxy_type} {self._proxied} ({self._authority})'
 
-  if len(taxon_fields) > 1:
-    logger.error(
-      f'Found {len(taxon_fields)} taxon fields ({taxon_fields}), expected one!'
-    )
+  @property
+  def key(self):
+    return None
 
-  elif len(taxon_fields) == 1:
-    taxon_type = taxon_fields.pop()
-    taxon_key = node[taxon_type]
-    current = parent + [taxon_key]
+  @property
+  def rank(self):
+    return self._proxied.rank
 
-    logger.debug(f'checking {current}')
-    if not (taxon := data['taxa'].get(taxon_key, {})):
-      logger.error(f'Taxon "{taxon_key}" not found!')
 
-    elif (
-      taxon_type in NAMED_TAXON_FIELDS and 'altRankOf' not in taxon and
-      taxon.get('name') is None
-    ):
-      logger.error(f'Taxon "{taxon_key}" expected to have a name!')
-    elif taxon_type not in NAMED_TAXON_FIELDS and taxon['name'] is not None:
-      logger.error(f'Taxon "{taxon_key}" NOT expected to have a name!')
+class Tree:
+  _NAMED_FIELDS = {'taxon'}
+  _PROXY_FIELDS = {'cfTaxon', 'affTaxon'}
+  _UNNAMED_FIELDS = {'openTaxon'}
+  _ALL_TAXON_FIELDS = _NAMED_FIELDS | _PROXY_FIELDS | _UNNAMED_FIELDS
 
-    if (
-      node.get('new') and
-      tree_info is not None and
-      (source := taxon.get('authority', {}).get('source')) and
-      source != tree_info[1]
-    ):
-      logger.error(
-        f'Expected source {tree_info[1]} for new taxon {taxon}, got source {source}'
+  TYPE_TAXONOMY = 'taxonomy'
+  TYPE_CLADOGRAM = 'cladogram'
+  TYPE_DIAGRAM = 'diagram'
+  TYPE_OTHER = 'other'
+  TYPES = {
+    TYPE_TAXONOMY,
+    TYPE_CLADOGRAM,
+    TYPE_DIAGRAM,
+    TYPE_OTHER,
+  }
+
+  RELATED_SINGULAR = (
+    'moved',
+    'corrected',
+  )
+  RELATED_LIST = (
+    'or',
+    'synonyms',
+    'non',
+    'children',
+    'parents',
+  )
+
+  _taxon_index = collections.defaultdict(list)
+  _type_index = {
+    TYPE_TAXONOMY: [],
+    TYPE_CLADOGRAM: [],
+    TYPE_DIAGRAM: [],
+    TYPE_OTHER: [],
+  }
+
+  def __init__(
+    self,
+    tree_data,
+    tree_metadata=None,
+    parent=None,
+    relpath=(),
+  ):
+    if ((tree_metadata, parent) == (None, None) or
+        (tree_metadata is not None and parent is not None)):
+      raise ValueError(
+        'Tree nodes must have either a parent or metadata, but not both!',
+      )
+    if parent is not None and relpath == ():
+      raise ValueError('Non-root nodes must have a non-root relative path')
+
+    self._data = tree_data
+    self._metadata = tree_metadata
+    self._parent = parent
+    self._taxon = None
+    self._relpath = relpath
+
+    self._or = []
+    self._synonyms = []
+    self._non = []
+    self._alt_placements = []
+    self._parents = []
+    self._children = []
+
+    self._check_metadata()
+
+    self._check_primary_taxon()
+    self._bracket = self._check_taxon('bracket')
+    self._moved = Tree(self._data['moved'], parent=self, relpath=('moved',)) \
+      if 'moved' in self._data else None
+    self._corrected = Tree(
+      self._data['corrected'], parent=self, relpath=('corrected',)
+    ) if 'corrected' in self._data else None
+
+    for index, vel_or in enumerate(self._data.get('or', ())):
+      self._or.append(Tree(vel_or, parent=self, relpath=('or', index)))
+    for index, syn in enumerate(self._data.get('synonyms', ())):
+      self._synonyms.append(Tree(syn, parent=self, relpath=('synonyms', index)))
+    for index, non in enumerate(self._data.get('non', ())):
+      self._non.append(Tree(non, parent=self, relpath=('non', index)))
+    for index, relparent in enumerate(self._data.get('parents', ())):
+      self._parents.append(
+        Tree(relparent, parent=self, relpath=('parents', index))
+      )
+    for index, placement in enumerate(self._data.get('altPlacements', ())):
+      self._alt_placements.append(
+        Tree(placement, parent=self, relpath=('altPlacements', index))
+      )
+    for index, child in enumerate(self._data.get('children', ())):
+      self._children.append(
+        Tree(child, parent=self, relpath=('children', index))
       )
 
-    name = taxon.get('name')
-    if name and tree_info is not None:
-      data['index'][name].add(tree_info)
+    if self._taxon and self._taxon.name:
+      Tree._taxon_index[self._taxon.name].append(self.root)
 
-  else:
-    current = parent + ['_anon_']
-    logger.debug(f'Descending through {current}')
+    if self._parent is None:
+      Tree._type_index[self._type].append(self)
 
-  if (bracket := node.get('bracket')):
-    if bracket not in data['taxa']:
-      logger.error(f'Bracket taxa {bracket} not found!')
+  def _check_metadata(self):
+    if self._metadata:
+      self._source = Source.get(self._metadata['source_key'])
+      if self._source is None:
+        raise KeyError(f'Tree source {source_key} not reognized!')
 
-  for index, synonym in enumerate(node.get('synonyms', [])):
-    check_node(synonym, data, current + ['synonym', str(index)])
-  for index, non in enumerate(node.get('non', [])):
-    check_node(non, data, current + ['non', str(index)])
-  for index, parent in enumerate(node.get('parents', [])):
-    check_node(parent, data, current + ['parent', str(index)])
-  for index, altPlacement in enumerate(node.get('altPlacements', [])):
-    check_node(altPlacement, data, current + ['altPlacement', str(index)])
-  for index, vel_or in enumerate(node.get('or', [])):
-    check_node(vel_or, data, current + ['or', str(index)])
-  if (moved := node.get('moved')):
-    check_node(moved, data, current + ['moved'])
-  if (corrected := node.get('corrected')):
-    check_node(corrected, data, current + ['corrected'])
-  for child in node.get('children', []):
-    check_node(child, data, current, tree_info)
+      self._type = self._metadata['type']
+      if self._type not in Tree._type_index:
+        raise ValueError(f'Unrecognized tree type {self._type}')
+
+      self._position = self._metadata['position']
+
+    else:
+      self._source = self._parent._source
+      self._type = self._parent._type
+      self._position = self._parent._position
+
+  def _check_taxon(self, field, index=None):
+    if index is None:
+      taxon_key = self._data.get(field)
+    else:
+      taxon_key = self._data['field'][index]
+
+    if taxon_key:
+      if field in self._PROXY_FIELDS:
+        taxon = ProxyTaxon(
+          Taxon.get(taxon_key),
+          field[:-len('Taxon')] + '.',
+          self._source,
+        )
+      else:
+        taxon = Taxon.get(taxon_key)
+        if taxon is None:
+          # TODO: Is this error message right?
+          raise KeyError(f'Unrecognized tree {field} {taxon_key} for {self}')
+
+      unnamed = self._UNNAMED_FIELDS | self._PROXY_FIELDS
+      if field not in unnamed and not taxon.name:
+        raise ValueError(
+          f'Taxon {taxon} at {self}/{field} expected to be named.',
+        )
+      if field in unnamed and taxon.name:
+        raise ValueError(
+          f'Taxon {self._taxon} at {self}/{taxon_field} expected '
+          'to not be named.',
+        )
+      return taxon
+    return None
+
+  def _check_primary_taxon(self):
+    taxon_fields = self._ALL_TAXON_FIELDS & self._data.keys()
+    if len(taxon_fields) > 1:
+      raise ValueError(
+        f'Found {len(taxon_fields)} taxon fields '
+        f'({taxon_fields}), expected at most one!',
+      )
+
+    if len(taxon_fields) == 1:
+      taxon_field = taxon_fields.pop()
+
+      self._taxon = self._check_taxon(taxon_field)
+
+      if (
+        self._type == self.TYPE_TAXONOMY and
+        self.is_primary and
+        taxon_field in self._NAMED_FIELDS and
+        self._taxon._authority.source
+      ):
+        is_new = self._data.get('new')
+        tsource = self._taxon._authority.source
+
+        if is_new and self._source != tsource:
+          raise ValueError(
+            f'Expected source {self._source} for new taxon {self._taxon}, '
+            f'got source {tsource}',
+          )
+        elif not is_new and self._source == tsource:
+          raise ValueError(
+            f'Taxon {self._taxon} at {self}, field "{taxon_field}", lists '
+            f'this source as its authority, but is not marked as new.',
+          )
+
+  def __str__(self):
+    return f'Tree {self._source}[{self._position}]{self.pointer}'
+
+  @cached_property
+  def path(self):
+    if self._parent is None:
+      return []
+    p = self._parent.path
+    p.extend(self._relpath)
+    return p
+
+  @cached_property
+  def is_primary(self):
+    return reduce(
+      lambda tf, p: tf and (type(p) is int or p == 'children'),
+      self.path,
+      True,
+    )
+
+  @cached_property
+  def pointer(self):
+    # Field names do not contain '/' or '~', so there
+    # is no need to worry about escaping.  Note that
+    # this is a plain JSON Pointer, not a URI fragment.
+    return '/' + '/'.join([str(p) for p in self.path])
+
+  @cached_property
+  def root(self):
+    if self._parent is None:
+      return self
+    return self._parent.root
 
 
 def check_trees(data, taxa, args):
   logger.info(f"Processing {len(data['trees'])} opinions...")
   logger.info(f'...searching for taxon "{taxa}"')
-  opinions = set()
-  tree_index = 0
-  tree_lookup = {}
-  data['index'] = collections.defaultdict(set)
+
   for ref_key, opinion in data['trees'].items():
-    opinions.add(ref_key)
     logger.debug(f'Processing opinions from "{ref_key}"')
-    if ref_key not in data['sources']:
-      logger.error(f'Tree citation "{ref_key}" not found!')
 
-    trees = []
-    num_tax = 0
-    if args.type == 'x':
-      trees.extend([t for t in opinion.get('taxonomies', {})])
-      num_tax = len(trees)
-      logger.debug(f'Found {num_tax} taxonomic trees')
-    if args.type == 'p':
-      trees.extend([p['tree'] for p in opinion.get('phylogenies', {})])
-      num_phy = len(trees) - num_tax
-      logger.debug(f'Found {num_phy} phylogenetic trees')
+    position = 0
+    for tax_tree in opinion.get('taxonomies', {}):
+      metadata = {
+        'source_key': ref_key,
+        'position': position,
+        'type': Tree.TYPE_TAXONOMY,
+      }
+      position += 1
 
-    for i, t in enumerate(trees):
-      tree_lookup[tree_index] = t
-      check_node(t, data, tree_info=(tree_index, ref_key))
-      tree_index += 1
+      t = Tree(tax_tree, metadata)
+      logger.debug(f'Processed tree {t}')
+
+    for phy_tree in opinion.get('phylogenies', {}):
+      metadata = {
+        'source_key': ref_key,
+        'position': position,
+      }
+      position += 1
+
+      if (tree_type := phy_tree.get('treeType', '').lower()) not in Tree.TYPES:
+        raise ValueError(f'Unknown tree type {tree_type}')
+      metadata['type'] = tree_type
+
+      if 'characteristics' in phy_tree:
+        metadata['characteristics'] = phy_tree['characteristics']
+
+      t = Tree(phy_tree['tree'], metadata)
+        
   logger.info(f"...opinions processed.")
 
-  if taxa or args.author:
-    print_taxa(taxa, data, tree_lookup, args)
-
-  if (difference := Source.count() - len(opinions)):
-    # logger.warn("Missing opinions from:\n    " + '\n    '.join(sorted(difference)))
-    logger.warn(f"Missing opinions from {difference} papers!")
   return data
 
 def print_taxa(taxa, data, tree_lookup, args):

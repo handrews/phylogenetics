@@ -402,6 +402,7 @@
             - taxon: cystaster-subgenus
             - taxon: hemicystites
       - taxon: cincinnatidiscus
+        new: true
         synonyms:
         - taxon: hemicystites
           pars: true
@@ -804,6 +805,7 @@
             - taxon: vetusta_foerste_1914
             - taxon: faberi_miller.s.a_1894
           - taxon: nicklesi_bassler_1936
+            new: true
           - taxon: ulrichi_bassler_shideler_1936
         - taxon: streptaster
           children:
@@ -900,6 +902,7 @@
         - taxon: cyathocystis
           children:
           - taxon: americanus_bassler_1936
+            new: true
     - taxon: blastoidea
       children:
       - taxon: protoblastoidea
@@ -972,7 +975,7 @@
       - taxon: carpoidea
       - taxon: machaeridia
   phylogenies:
-  - treeType: evolutionary diagram
+  - treeType: diagram
     tree:
       taxon: echinodermata
       children:
@@ -2519,6 +2522,7 @@
                 - MCZ 644
             - taxon: elongatus_sprinkle_1973
               provisional: true
+              new: true
               notes: "very questionably referred to Blastoidocrinus"
               specimens:
                 holotype: "610"
@@ -3562,7 +3566,7 @@
       - taxon: astrocystites
 1981_derstler:
   phylogenies:
-  - treeType: evolutionary schematic
+  - treeType: diagram
     tree:
       taxon: echinodermata
       children:
@@ -4047,7 +4051,8 @@
           - taxon: timeischytes
           - taxon: hadrochthus
   phylogenies:
-  - treeType: Ordinal diagram of Edrioasteroidea
+  - treeType: diagram
+    notes: Ordinal diagram of Edrioasteroidea
     tree:
       taxon: stromatocystitida
       children:
@@ -4528,7 +4533,8 @@
                   - children:
                     - taxon: lepidodiscus
                     - taxon: ulrichidiscus
-  - treeType: evolutionary timeline
+  - treeType: diagram
+    notes: evolutionary timeline
     tree:
       taxon: isorophusella
       children:
@@ -4791,7 +4797,8 @@
               - children:
                 - taxon: chatsworthia
                 - taxon: foerstediscus
-  - treeType: evolutionary timeline
+  - treeType: diagram
+    notes: evolutionary timeline
     tree:
       children:
       - taxon: camptostroma
@@ -4843,7 +4850,7 @@
                     provisional: true
                     altPlacements:
                     - taxon: rhenopyrgus
-  - treeType: evolutionary diagram
+  - treeType: diagram
     tree:
       taxon: arkarua
       children:
@@ -4954,7 +4961,8 @@
         - taxon: eocystites
 1993_sumrall:
   phylogenies:
-  - treeType: cladogram, Adams consensus of the eight most parsimonious trees
+  - treeType: cladogram
+    methodology: Adams consensus of the eight most parsimonious trees
     tree:
       taxon: isorophida
       notes: subclavate
@@ -5161,7 +5169,8 @@
               children:
               - taxon: rhenopyrgus
   phylogenies:
-  - treeType: cladogram, preferred parsimony A
+  - treeType: cladogram
+    methodology: preferred parsimony A
     tree:
       taxon: edrioasteroidea
       children:
@@ -5199,7 +5208,8 @@
               children:
               - taxon: lloydi_sprinkle_1985
       - taxon: camptostroma
-  - treeType: cladogram, preferred parsimony B
+  - treeType: cladogram
+    methodology: preferred parsimony B
     tree:
       taxon: edrioasteroidea
       children:
@@ -5237,7 +5247,8 @@
             children:
             - taxon: lloydi_sprinkle_1985
       - taxon: camptostroma
-  - treeType: cladogram, Adams
+  - treeType: cladogram
+    methodology: Adams
     tree:
       taxon: edrioasteroidea
       children:
@@ -5271,7 +5282,8 @@
           children:
           - taxon: walcotti_schuchert_1919
       - taxon: camptostroma
-  - treeType: cladogram, strict consensus
+  - treeType: cladogram
+    methodology: strict consensus
     tree:
       taxon: edrioasteroidea
       children:
@@ -5428,7 +5440,9 @@
           - taxon: proboscisphaeronis
             new: true
             children:
-            - taxon: inexplicata_paul.c.r.c_1997
+            - taxon: inexpectata_paul.c.r.c_1997
+              type: true
+              new: true
       - taxon: holocystitidae
         children:
         - taxon: brightonicystis
@@ -5691,7 +5705,8 @@
       - taxon: pleuricostatus_dean.j_smith.a.b_1998
         new: true
   phylogenies:
-  - treeType: single most parsimonious cladogram
+  - treeType: cladogram
+    methodology: single most parsimonious cladogram
     characteristics:
     - thecal form:
         globular to ovate: 0
@@ -6062,7 +6077,8 @@
               - openTaxon: parapostibulls-sp-indeterminate_sumrall_garbisch_pope_2000
                 provisional: true
   phylogenies:
-  - treeType: cladogram, strict consensus of three most parsimonius trees
+  - treeType: cladogram
+    methodology: strict consensus of three most parsimonius trees
     tree:
       children:
       - children:
@@ -6255,7 +6271,8 @@
                   - taxon: hybocrinus
 2003_sumrall_parsley:
   phylogenies:
-  - treeType: cladogram, character acquisition
+  - treeType: cladogram
+    notes: character acquisition
     tree:
       notes: Development of floor plate lateral extensions
       children:
@@ -6558,7 +6575,8 @@
             children:
             - taxon: plinthotus_kesling_1967
   phylogenies:
-  - treeType: cladogram, strict consensus of 27 most parsimonious trees
+  - treeType: cladogram
+    methodology: strict consensus of 27 most parsimonious trees
     tree:
       children:
       - children:
@@ -6585,7 +6603,8 @@
                       - taxon: lispidecodus
                       - taxon: giganticlavus
                       - taxon: hypsiclavus
-  - treeType: cladogram, bootstrap analysis
+  - treeType: cladogram
+    methodology: bootstrap analysis
     tree:
       children:
       - children:
@@ -7167,7 +7186,8 @@
       - taxon: mimus_sumrall_zamora_2011
         new: true
   phylogenies:
-  - treeType: cladogram, strict consensus of three most parsimonious trees
+  - treeType: cladogram
+    methodology: strict consensus of three most parsimonious trees
     tree:
       children:
       - taxon: cambraster
@@ -7230,7 +7250,8 @@
             specimens:
               holotype: MPZ2011/7
   phylogenies:
-  - tree:
+  - treeType: cladogram
+    tree:
       taxon: kinzercystis
       outgroup: true
       children:
@@ -7312,7 +7333,8 @@
             children:
             - openTaxon: pleurocystitidae-sp_nardin_bohatý_2013
   phylogenies:
-  - treeType: cladogram, strict consensus of 4 shortest trees (45 steps)
+  - treeType: cladogram
+    methodology: strict consensus of 4 shortest trees (45 steps)
     tree:
       children:
       - taxon: cuniculocystis
@@ -7366,7 +7388,8 @@
             - EE14848
             - EE15329
   phylogenies:
-  - treeType: Evolutionary tree of Cambrian echinoderms
+  - treeType: diagram
+    notes: Evolutionary tree of Cambrian echinoderms
     tree:
       children:
       - taxon: courtessolea
@@ -7414,7 +7437,8 @@
               - taxon: whitei_holloway_jell_1983
               - taxon: flos_klug_krüger_korn_rücklin_schemm-gregory_debates_mapes_2008
   phylogenies:
-  - treeType: cladogram, strict consensus of two most parsimonious trees
+  - treeType: cladogram
+    methodology: strict consensus of two most parsimonious trees
     tree:
       children:
       - taxon: kailidiscus
@@ -7430,8 +7454,9 @@
             - taxon: isorophus
             - taxon: carneyella
           - taxon: argodiscus
-  - treeType: |
-      cladogram, most parsimonious constrained to place Rhenopyrgus and
+  - treeType: cladogram
+    methodology: |
+      most parsimonious constrained to place Rhenopyrgus and
       Argodiscus as sister taxa
     tree:
       children:
@@ -7460,7 +7485,8 @@
         type: true
         new: true
   phylogenies:
-  - treeType: cladogram, one most parsimonious tree
+  - treeType: cladogram
+    methodology: single most parsimonious tree
     tree:
       children:
       - taxon: camptostroma
@@ -7629,7 +7655,8 @@
             children:
             - taxon: ridersia
   phylogenies:
-  - tree:
+  - treeType: cladogram
+    tree:
       children:
       - bracket: glyptocystitida-order
         children:
@@ -7784,7 +7811,8 @@
     - taxon: lloydi_sprinkle_1985
       provisional: true
   phylogenies:
-  - treeType: strict consensus
+  - treeType: cladogram
+    methodology: strict consensus
     tree:
       children:
       - taxon: pentangularis_pompeckj_1896
@@ -7821,7 +7849,8 @@
             - taxon: destombesi_ubaghs_1963
             - taxon: mariae_callaway_1877
             - taxon: multiporata_branson_peck_1940
-  - treeType: 50% majority rule consensus
+  - treeType: cladogram
+    methodology: 50% majority rule consensus
     tree:
       children:
       - taxon: pentangularis_pompeckj_1896
@@ -7860,7 +7889,8 @@
             - taxon: destombesi_ubaghs_1963
             - taxon: mariae_callaway_1877
             - taxon: multiporata_branson_peck_1940
-  - treeType: evolutionary tree
+  - treeType: diagram
+    notes: evolutionary tree
     tree:
       children:
       - taxon: stromatocystites
@@ -8127,7 +8157,8 @@
               paratypes:
               - NHMUK EE 1660
   phylogenies:
-  - treeType: 50% majority-rule consenus Bayesian
+  - treeType: cladogram
+    methodology: 50% majority-rule consenus Bayesian
     tree:
       children:
       - children:
@@ -8149,7 +8180,8 @@
               - taxon: isorophus
       - taxon: helicoplacus
         outgroup: true
-  - treeType: strict consensus of four most parsimonious trees parsimony analysis
+  - treeType: cladogram
+    methodology: strict consensus of four most parsimonious trees parsimony analysis
     tree:
       children:
       - children:

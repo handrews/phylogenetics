@@ -42,9 +42,11 @@ class Author:
       logger.error(f'"{author_key}" not in expected set: {expected_set}')
 
   def __str__(self):
-    string = f'{family}, {given}'
+    string = f'{self.family}'
+    if self.given:
+      string += f', {self.given}'
     if self.birth:
-      string += f'({self.birth} – '
+      string += f' ({self.birth} – '
       if self.death:
         string += str(self.death)
       string += ')'
@@ -202,6 +204,9 @@ class Source:
       logger.error(
         f'Translation source "{trans_of}" for "{source_key}" not found!'
       )
+
+  def __str__(self):
+    return ', '.join([a.family for a in self.authors]) + f' ({self.year})'
 
   @property
   def key(self):
