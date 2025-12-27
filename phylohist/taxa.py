@@ -411,7 +411,7 @@ class Tree:
       # their unique keys.  TODO: Better options.
       if self._taxon.authority.source:
         for author in self._taxon.authority.source.authors:
-          Tree._author_index[author.key].add(self)
+          Tree._author_index[author.key].add(self.root)
 
     if self._parent is None:
       Tree._type_index[self._type].add(self)
