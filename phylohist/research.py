@@ -237,3 +237,10 @@ class Source:
   @property
   def in_preparation(self):
     return self._data.get('inPrep', False)
+
+  @cached_property
+  def title(self):
+    try:
+      return self._data['title']
+    except KeyError:
+      return Publication.get(self._data['book'])['name']

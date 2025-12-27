@@ -81,7 +81,7 @@ def main():
   parser = argparse.ArgumentParser(
     prog='phylohist',
   )
-  parser.add_argument('-t', '--type', default='x')
+  parser.add_argument('-t', '--type', nargs='+', action='extend', default=['x'])
   parser.add_argument('-r', '--root', nargs='+', action='extend', default=[])
   parser.add_argument('-l', '--leaf', nargs='+', action='extend', default=[])
   parser.add_argument('-b', '--branch', nargs='+', action='extend', default=[])
@@ -100,6 +100,20 @@ def main():
     )
   )
 
+  tree_types = set()
+  # If 'a' is present, leave set empty to indicate all types.
+  if 'a' not in args.type:
+    if 'x' in args.type:
+      tree_types.add(Tree.TYPE_TAXONOMY)
+    if 't' in args.type:
+      tree_types.add(Tree.TYPE_TABLE)
+    if 'c' in args.type:
+      tree_types.add(Tree.TYPE_CLADOGRAM)
+    if 'd' in args.type:
+      tree_types.add(Tree.TYPE_DIAGRAM)
+    if 'o' in args.type:
+      tree_types.add(Tree.TYPE_OTHER)
+
   data = load_files()
 
   for field, cls in (
@@ -117,4 +131,13 @@ def main():
       logger.info(f'...searching for taxon "{taxa}"')
     else:
       logger.info(f'...searching for opinions by "{args.author}"')
-    print_taxa(taxa, data, tree_lookup, args)
+    print_taxa(
+      taxa=taxa,
+      authors=args.author,
+      tree_types=tree_types,
+      root=args.root if args.root else args.branch,
+      leaf=args.leaf,
+      branch=args.branch,
+      highest=args.highest,
+      lowest=args.lowest,
+    )

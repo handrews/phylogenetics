@@ -217,13 +217,7 @@ class Taxon:
     return False, expected_set
 
   def __str__(self):
-    if self._name:
-      string = self._name
-      if self._data.get('quoted'):
-        string = f'"{string}"'
-    else:
-      string = f'[{self._key}]'
-    return f'{string} ({self._authority})'
+    return f'{self.display_name} ({self._authority})'
 
   @property
   def key(self):
@@ -232,6 +226,18 @@ class Taxon:
   @property
   def name(self):
     return self._name
+
+  @cached_property
+  def display_name(self):
+    if self._name:
+      string = self._name
+      if self._data.get('quoted'):
+        string = f'"{string}"'
+      if self.rank == 'subgenus':
+        string = f'({string})'
+    else:
+      string = f'[{self._key}]'
+    return string
 
   @cached_property
   def canonical_name(self):
@@ -257,23 +263,15 @@ class Taxon:
 
 class ProxyTaxon(Taxon):
   def __init__(self, taxon, proxy_type, source):
-    self._data = {}
+    super().__init__(taxon._data, taxon.key)
     self._name = None
-    self._source = source
-    self._proxied = taxon
     self._proxy_type = proxy_type
+    self._proxied_authority = self._authority
     self._authority = Authority({'authority': {'source': source.key}})
 
-  def __str__(self):
-    return f'{self._proxy_type} {self._proxied} ({self._authority})'
-
   @property
-  def key(self):
-    return None
-
-  @property
-  def rank(self):
-    return self._proxied.rank
+  def display_name(self):
+    return f'{self._proxy_type} ' + super().display_name
 
 
 class Tree:
@@ -283,6 +281,7 @@ class Tree:
   _ALL_TAXON_FIELDS = _NAMED_FIELDS | _PROXY_FIELDS | _UNNAMED_FIELDS
 
   TYPE_TAXONOMY = 'taxonomy'
+  TYPE_TABLE = 'table'
   TYPE_CLADOGRAM = 'cladogram'
   TYPE_DIAGRAM = 'diagram'
   TYPE_OTHER = 'other'
@@ -305,13 +304,47 @@ class Tree:
     'parents',
   )
 
-  _taxon_index = collections.defaultdict(list)
+  _taxon_index = collections.defaultdict(set)
+  _author_index = collections.defaultdict(set)
   _type_index = {
-    TYPE_TAXONOMY: [],
-    TYPE_CLADOGRAM: [],
-    TYPE_DIAGRAM: [],
-    TYPE_OTHER: [],
+    TYPE_TAXONOMY: set(),
+    TYPE_CLADOGRAM: set(),
+    TYPE_DIAGRAM: set(),
+    TYPE_OTHER: set(),
   }
+
+  @classmethod
+  def find(
+    cls,
+    taxa=frozenset(),
+    authors=frozenset(),
+    tree_types=frozenset(),
+  ):
+    if not taxa and not authors:
+      return frozenset()
+
+    trees = set()
+    if tree_types:
+      for t in cls._type_index.keys() & tree_types:
+        trees |= cls._type_index[t]
+    else:
+      for typed_set in cls._type_index.items():
+        trees |= typed_set
+
+    if taxa:
+      taxa_trees = set()
+      for k in cls._taxon_index.keys() & taxa:
+        taxa_trees |= cls._taxon_index[k]
+      trees &= taxa_trees
+
+    if authors:
+      author_trees = set()
+      for k in cls._author_index.keys() & authors:
+        author_trees |= cls._author_index[k]
+      trees &= author_trees
+
+    return trees
+
 
   def __init__(
     self,
@@ -370,11 +403,18 @@ class Tree:
         Tree(child, parent=self, relpath=('children', index))
       )
 
-    if self._taxon and self._taxon.name:
-      Tree._taxon_index[self._taxon.name].append(self.root)
+    if self._taxon:
+      if self._taxon.name:
+        Tree._taxon_index[self._taxon.name].add(self.root)
+
+      # For now, only registered authors are supported in order to use
+      # their unique keys.  TODO: Better options.
+      if self._taxon.authority.source:
+        for author in self._taxon.authority.source.authors:
+          Tree._author_index[author.key].add(self)
 
     if self._parent is None:
-      Tree._type_index[self._type].append(self)
+      Tree._type_index[self._type].add(self)
 
   def _check_metadata(self):
     if self._metadata:
@@ -419,7 +459,7 @@ class Tree:
         )
       if field in unnamed and taxon.name:
         raise ValueError(
-          f'Taxon {self._taxon} at {self}/{taxon_field} expected '
+          f'Taxon {self._taxon} at {self}/{field} expected '
           'to not be named.',
         )
       return taxon
@@ -461,6 +501,14 @@ class Tree:
   def __str__(self):
     return f'Tree {self._source}[{self._position}]{self.pointer}'
 
+  @property
+  def source(self):
+    return self._source
+
+  @property
+  def taxon(self):
+    return self._taxon
+
   @cached_property
   def path(self):
     if self._parent is None:
@@ -490,106 +538,119 @@ class Tree:
       return self
     return self._parent.root
 
+  @property
+  def children(self):
+    return tuple(self._children)
 
-def print_taxa(taxa, data, tree_lookup, args):
-  found_trees = set()
-  if taxa:
-    for t in taxa:
-      found_trees |= set((data['index'].get(t, [])))
-  elif args.author:
-    for v in data['index'].values():
-      found_trees |= v
+  @property
+  def is_new(self):
+    return self._data.get('new', False)
+
+  @property
+  def is_provisional(self):
+    return self._data.get('provisional', False)
+
+  @property
+  def is_questionable(self):
+    return self._data.get('questionable', False)
+
+def print_taxa(
+  taxa,
+  authors,
+  tree_types,
+  root=None,
+  branch=None,
+  leaf=None,
+  highest=None,
+  lowest=None,
+):
+  found_trees = Tree.find(taxa, authors, tree_types)
   logger.info(
-    f'Found {len(found_trees)} trees, searching for taxa {taxa}...'
+    f'Found {len(found_trees)} trees, searching criteria:'
+    f'\n\ttaxa: {taxa}'
+    f'\n\tauthors: {authors}'
+    f'\n\ttype: {tree_types}'
   )
 
-  for tree in sorted(found_trees):
-    print_tree(tree_lookup[tree[0]], data, tree, args, first=True)
+  for tree in sorted(
+    found_trees,
+    key=lambda t: t.source.key,
+  ):
+    print_tree(
+      tree=tree,
+      root=root,
+      leaf=leaf,
+      branch=branch,
+      highest=highest,
+      lowest=lowest,
+      first=True,
+    )
 
 
-def print_tree(node, data, tree_info, args, indent='', on=1, buffer='', first=False, header=None):
-  root = args.root if args.root else args.branch
-
+def print_tree(
+  tree,
+  root,
+  leaf,
+  branch,
+  highest,
+  lowest,
+  indent='',
+  on=1,
+  buffer='',
+  first=False,
+  header=None,
+):
   filter_levels = False
-  highest = 1000
-  if args.highest:
+  num_highest = 1000
+  if highest:
     filter_levels = True
-    group = RANK_GROUPS[args.highest.lower()]
-    highest = RANKS[group[0]]
+    group = RANK_GROUPS[highest.lower()]
+    num_highest = RANKS[group[0]]
 
-  lowest = 1
-  if args.lowest:
+  num_lowest = 1
+  if lowest:
     filter_levels = True
-    group = RANK_GROUPS[args.lowest.lower()]
-    lowest = RANKS[group[-1]]
+    group = RANK_GROUPS[lowest.lower()]
+    num_lowest = RANKS[group[-1]]
 
   if first:
-    paper = data["sources"][tree_info[1]]
-    if args.author and not (set(args.author) & set(paper['authors'])):
-      return
-    year = tree_info[1][:4] # paper['pubDate']#['year']
-    authors = '; '.join(
-      [
-        f"{a['family']}, {a['given']}" for a in [
-          data['authors'][a_key] for a_key in paper['authors']
-        ]
-      ]
-    )
-    header = f'\nPAPER: {year} {authors}\n  _{paper["title"]}_'
+    paper = tree.source
+    year = str(paper.year)
+    authors = '; '.join([f'{a.family}, {a.given}' for a in paper.authors])
+    header = f'\nPAPER: {year} {authors}\n  _{paper.title}_'
     if root:
       on = 0
 
-  logger.debug(f'root "{args.root}" leaf "{args.leaf}" branch "{args.branch}"')
+  # TODO: This used to show the literal root, not the fallback-to-branch
+  logger.debug(f'root "{root}" leaf "{leaf}" branch "{branch}"')
   found_name = None
   rank = None
   rank_level = None
-  if (taxon_key := node.get('taxon')):
-    if not (taxon := data['taxa'].get(taxon_key)):
-      raise ValueError(f'No taxon data for id {taxon_key}')
-    if not (name := taxon.get('name')):
-      if (alt := taxon.get('altRankOf')):
-        name = data['taxa'][alt]['name']
-      else:
-        name = '[** altRank of no taxon ***]'
-    else:
-      found_name = name
-      if (rank := taxon.get('rank')):
-        rank_level = RANKS.get(rank.lower(), None)
-
-    if name is not None and taxon.get('rank') == 'subgenus':
-      name = f'({name})'
+  if tree.taxon:
+    found_name = tree.taxon.name
+    display_name = tree.taxon.display_name
+    if tree.taxon.rank:
+      rank_level = RANKS.get(tree.taxon.rank.lower(), None)
+    if tree.is_new:
+      display_name += '*'
+    if tree.is_questionable:
+      display_name += ' ?'
+    if root and tree.taxon.name in root:
+      on += 1
   else:
-    if (taxon_key := node.get('openTaxon')):
-      name = f'[{taxon_key}]'
-    elif (taxon_key := node.get('cfTaxon')):
-      name = f'[cf. {taxon_key}]'
-    elif (taxon_key := node.get('affTaxon')):
-      name = f'[aff. {taxon_key}]'
-    else:
-      name = '[]'
-
-  if node.get('quoted'):
-    name = f'"{name}"'
-  if node.get('new'):
-    name += '*'
-  if node.get('questionable'):
-    name += ' ?'
-
-  logger.debug(f'found name "{found_name}"')
-  if root and found_name in root:
-    on += 1
+    display_name = '[]'
 
   new_indent = indent
-  if node.get('provisional'):
+  if tree.is_provisional:
     indent = indent[:-2] + '?' + ' '
 
-  output = f'{indent}{name}'
+  output = f'{indent}{display_name}'
   printable_rank = True
   if filter_levels:
     printable_rank = (
       rank_level is not None and
-      rank_level <= highest and
-      rank_level >= lowest
+      rank_level <= num_highest and
+      rank_level >= num_lowest
     )
 
   if printable_rank:
@@ -597,7 +658,7 @@ def print_tree(node, data, tree_info, args, indent='', on=1, buffer='', first=Fa
       if header:
         print(header)
         header = None
-      if args.branch and found_name in args.branch and buffer:
+      if branch and found_name in branch and buffer:
         # Strip off final newline as print() always adds one.
         print(buffer[:-1])
         buffer = ''
@@ -607,13 +668,24 @@ def print_tree(node, data, tree_info, args, indent='', on=1, buffer='', first=Fa
     new_indent += '  '
 
   old_on = on
-  if args.leaf and found_name in args.leaf:
+  if leaf and found_name in leaf:
     on = 0
 
-  for child in node.get('children', []):
-    print_tree(child, data, tree_info, args, indent=new_indent, on=on, buffer=buffer, header=header)
+  for child in tree.children:
+    print_tree(
+      tree=child,
+      root=root,
+      leaf=leaf,
+      branch=branch,
+      highest=highest,
+      lowest=lowest,
+      indent=new_indent,
+      on=on,
+      buffer=buffer,
+      header=header,
+    )
 
-  if args.leaf and found_name in args.leaf:
+  if leaf and found_name in args.leaf:
     on = old_on
   if root and found_name in root:
     on -= 1
