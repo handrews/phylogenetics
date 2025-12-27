@@ -3026,6 +3026,7 @@
               - taxon: cyclaster
           - taxon: priscus_miller.s.a_gurley_1894
         - taxon: edriophus
+          new: true
           children:
           - taxon: levis_bather_1914
             type: true

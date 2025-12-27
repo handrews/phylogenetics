@@ -491,45 +491,6 @@ class Tree:
     return self._parent.root
 
 
-def check_trees(data, taxa, args):
-  logger.info(f"Processing {len(data['trees'])} opinions...")
-  logger.info(f'...searching for taxon "{taxa}"')
-
-  for ref_key, opinion in data['trees'].items():
-    logger.debug(f'Processing opinions from "{ref_key}"')
-
-    position = 0
-    for tax_tree in opinion.get('taxonomies', {}):
-      metadata = {
-        'source_key': ref_key,
-        'position': position,
-        'type': Tree.TYPE_TAXONOMY,
-      }
-      position += 1
-
-      t = Tree(tax_tree, metadata)
-      logger.debug(f'Processed tree {t}')
-
-    for phy_tree in opinion.get('phylogenies', {}):
-      metadata = {
-        'source_key': ref_key,
-        'position': position,
-      }
-      position += 1
-
-      if (tree_type := phy_tree.get('treeType', '').lower()) not in Tree.TYPES:
-        raise ValueError(f'Unknown tree type {tree_type}')
-      metadata['type'] = tree_type
-
-      if 'characteristics' in phy_tree:
-        metadata['characteristics'] = phy_tree['characteristics']
-
-      t = Tree(phy_tree['tree'], metadata)
-        
-  logger.info(f"...opinions processed.")
-
-  return data
-
 def print_taxa(taxa, data, tree_lookup, args):
   found_trees = set()
   if taxa:
