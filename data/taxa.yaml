@@ -207,6 +207,7 @@ amygdalocystites:
   year: 1854
 amygdalocystitidae:
   name: Amygdalocystitidae
+  rank: Family
   auth: [jaekel]
   year: 1900
 anapeptamenus_austen_1843:
@@ -712,6 +713,7 @@ bockia:
   year: 1938
 bockiidae:
   name: Bockiidae
+  rank: Family
   auth: [ubaghs]
   year: 1972
 bohemica_barrande_1867:
@@ -896,6 +898,7 @@ cambrocrinus:
   year: 1968
 cambrocrinidae:
   name: Cambrocrinidae
+  rank: Family
   auth: [dzik, orłowski]
   year: 1993
 cambrocystidae:
@@ -1717,6 +1720,7 @@ decussatus_begg_1934:
   altSpellingOf: decussatum_begg_1934
 deltacystinae:
   name: Deltacystinae
+  rank: Subfamily
   auth: [sumrall, sprinkle]
   year: 1995
 deltacystis:
@@ -1875,6 +1879,7 @@ diploporitidæ:
   altSpellingOf: diploporita-order
 diplosphaeroninae:
   name: Diplosphaeroninae
+  rank: Subfamily
   authority:
     source: 1997_paul.c.r.c
 diplosphaeronis:
@@ -3143,10 +3148,12 @@ hemicystis:
   year: 1896
 henicocystidae:
   name: Henicocystidae
+  rank: Family
   authority:
     source: 1983_jell
 henicocystinae:
   name: Henicocystinae
+  rank: Subfamily
   authority:
     source: 1983_jell
 henicocystis:
@@ -3994,6 +4001,7 @@ meristoschisma:
     source: 1973_sprinkle
 meristoschismatidae:
   name: Meristoschismatidae
+  rank: Family
   authority:
     source: 1973_sprinkle
 merocrinacea:
@@ -5224,10 +5232,12 @@ rhombifera-class:
   year: 1870
 rhombiferidae:
   name: Rhombiferidae
+  rank: Family
   auth: [kesling]
   year: 1962
 rhopalocystidae:
   name: Rhopalocystidae
+  rank: Family
   auth: [ubaghs]
   year: 1967
 rhopalocystitidae:
@@ -5353,6 +5363,7 @@ schuchertocystis:
   year: 1950
 scoliocystinae:
   name: Scoliocystinae
+  rank: Subfamily
   auth: [jaekel]
   year: 1899
 scoliocystis:
@@ -5980,6 +5991,7 @@ trochocystites:
     an edrioasteroide, Cambraser cannati.
 turbanicystidae:
   name: Turbanicystidae
+  rank: Family
   authority:
     source: 2010_parsley_zhao.y.l
 turbanicystis:

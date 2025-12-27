@@ -133,11 +133,11 @@ def main():
       logger.info(f'...searching for opinions by "{args.author}"')
     print_taxa(
       taxa=taxa,
-      authors=args.author,
-      tree_types=tree_types,
-      root=args.root if args.root else args.branch,
-      leaf=args.leaf,
-      branch=args.branch,
+      authors=frozenset(args.author),
+      tree_types=frozenset(tree_types),
+      root=frozenset(args.root if args.root else args.branch),
+      leaf=frozenset(args.leaf),
+      branch=frozenset(args.branch),
       highest=args.highest,
       lowest=args.lowest,
     )

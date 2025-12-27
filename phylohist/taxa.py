@@ -13,6 +13,12 @@ from .research import Author, Source
 logger = logging.getLogger(__name__)
 
 RANKS = {
+  'superdomain': 77,
+  'domain': 75,
+  'subdomain': 74,
+  'superkingdom': 67,
+  'kingdom': 65,
+  'subkingdom': 64,
   'superphylum': 57,
   'phylum': 55,
   'subphylum': 54,
@@ -35,6 +41,13 @@ RANKS = {
   'species': 5,
   'subspecies': 3,
   'variety': 5,
+}
+
+NON_RANKS = {
+  'Grade',
+  'Branch',
+  'Group',
+  'Plesion',
 }
 
 RANK_GROUPS = {
@@ -185,6 +198,8 @@ class Taxon:
       if not valid:
         logger.error(f'"{taxon_key}" not in expected set: {valid_set}')
 
+      self._check_rank()
+
     logger.debug(f'    ...all authorities for "{taxon_key}" processed')
 
   def _check_expected_taxon(self, expected):
@@ -215,6 +230,59 @@ class Taxon:
     if self._key in expected_set:
       return True, expected_set
     return False, expected_set
+
+  def _check_rank(self):
+    if (
+      self.rank in NON_RANKS or
+      self.name.lower() == self.name or
+      self.key.endswith('-' + self.rank.lower())
+    ):
+      return
+
+    for suffix, rank in (
+      ('inae', 'Subfamily'),
+      ('idae', 'Family'),
+    ):
+      if self.name.endswith (suffix) and self.rank != rank:
+        logger.warn(
+          f'{self.name} with suffix "{suffix}" expected to have rank of {rank}',
+        )
+      if self.rank == rank and not self.name.endswith(suffix):
+        logger.warn(
+          f'{self.name} of rank {rank} expected to end with suffix "{suffix}"',
+        )
+
+    # TODO: Verify that each exception is the expected rank
+    ida_subclasses = frozenset({'Disparida', 'Helicoplacida', 'Polyplacida'})
+    ida_parvclasses = frozenset({'Cladida'})
+    ida_suborders = frozenset({'Placocystida'})
+    ida_superfamilies = frozenset({'Protocrinitida'})
+    ida_exceptions = \
+      ida_subclasses | ida_parvclasses | ida_suborders | ida_superfamilies
+
+    ina_genera = frozenset({'Craterina', 'Palasterina'})
+
+    for suffix, ranks, exceptions in (
+      ('acea', ('Superfamily',), frozenset()),
+      ('ina', ('Suborder',), ina_genera),
+      ('ida', ('Order',), ida_exceptions),
+      (
+        'zoa',
+        ('Class', 'Subphylum', 'Phylum', 'Subkingdom', 'Kingdom'),
+        frozenset(),
+      ),
+    ):
+      if (
+        self.name.endswith(suffix) and
+        self.rank not in ranks and
+        self.name not in exceptions
+      ):
+        logger.warn(
+          f'{self.name} with suffix "{suffix}" expected to have one of ranks '
+          f'{ranks} but has rank {self.rank}',
+        )
+
+    # TODO: More ranks, but they get increasingly inconsistent.
 
   def __str__(self):
     return f'{self.display_name} ({self._authority})'
@@ -498,8 +566,28 @@ class Tree:
             f'this source as its authority, but is not marked as new.',
           )
 
+  def _hash_key(self):
+    return (self._source.key, self._position, self.path)
+
   def __str__(self):
     return f'Tree {self._source}[{self._position}]{self.pointer}'
+
+  def __repr__(self):
+    return repr(self._hash_key())
+
+  def __hash__(self):
+    return hash(self._hash_key())
+
+  def __eq__(self, other):
+    if not isinstance(other, Tree):
+      return False
+    return self._hash_key() == other._hash_key()
+
+  def __lt__(self, other):
+    return self._hash_key() < other._hash_key()
+
+  def __gt__(self, other):
+    return self._hash_key() > other._hash_key()
 
   @property
   def source(self):
@@ -509,13 +597,17 @@ class Tree:
   def taxon(self):
     return self._taxon
 
-  @cached_property
-  def path(self):
+  @property
+  def _path_list(self):
     if self._parent is None:
       return []
-    p = self._parent.path
+    p = self._parent._path_list
     p.extend(self._relpath)
     return p
+
+  @cached_property
+  def path(self):
+    return tuple(self._path_list)
 
   @cached_property
   def is_primary(self):
