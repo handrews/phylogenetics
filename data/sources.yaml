@@ -95,6 +95,16 @@
   - hisinger
   identifiers:
     url: https://www.google.com/books/edition/Anteckningar_i_Physik_och_Geognosi_under/LotfAAAAcAAJ?hl=en
+1839_murchison:
+  title: Organic Remains
+  book: silurian-system
+  volume: 2
+  pubDate:
+    year: 1839
+  authors:
+  - murchison
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/165542#page/7/mode/1up
 1842_vanuxem:
   title: Geology of New-York. Part III. Comprising the Survey of the Third Geological District
   book: nat-hist-ny
