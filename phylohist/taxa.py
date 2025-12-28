@@ -66,17 +66,18 @@ class Authority:
     self._source = None
 
     if (a := data.get('authority' )):
-      self._source = Source.get(a['source'])
+      if not (source_key := a.get('source')):
+        source_key = a['in']
 
+      self._source = Source.get(source_key)
       if not self._source:
-        raise KeyError(f'Authority source "{source}" not recognized')
+        raise KeyError(f'Authority source "{source_key}" not recognized')
 
-      if 'authors' in a:
+      if 'in' in a and 'authors' in a:
         self._authors = self._find_authors(a['authors'])
-        self._in = self._source.authors
       else:
-        self._authors = self._source.authors
-        self._in = None
+        self._authors = None
+      self._source_authors = self._source.authors
 
       if self._source.in_preparation:
         self._year = None
@@ -90,15 +91,20 @@ class Authority:
         self._ex = None
 
     else:
-      self._authors = self._find_authors(data['auth'])
+      auth_authors = self._find_authors(data['auth'])
+      if 'in' in data:
+        self._source_authors = self._find_authors(data['in'])
+        self._authors = auth_authors
+      else:
+        self._source_authors = auth_authors
+        self._authors = None
       self._year = data.get('year')
-      self._in = self._find_authors(data['in']) if 'in' in data else None
 
       assert 'ex' not in data, "TODO: 'ex' outside of 'authority'"
       self._ex = None
 
     if self._year:
-      for a in self._authors:
+      for a in self._source_authors:
         if not a.could_publish_in(self._year):
           raise ValueError(
             f'Source {source_key} year {year} too far outside of '
@@ -107,9 +113,9 @@ class Authority:
 
   def __str__(self):
     # TODO: Figure out when/how to add disambiguating intitials.
-    string = ', '.join([a.family for a in self._authors])
-    if self._in:
-      string += ' in ' + ', '.join([a.family for a in self._in])
+    string = ', '.join([a.family for a in self.authors])
+    if self.attribution_differs_from_source:
+      string += ' in ' + ', '.join([a.family for a in self.source_authors])
     if self._year:
       string = f'{string} {self._year}'
     return string
@@ -135,11 +141,23 @@ class Authority:
 
   @property
   def authors(self):
-    return self._authors
+    return (
+      self._authors if self.attribution_differs_from_source
+      else self._source_authors
+    )
+
+  @property
+  def source_authors(self):
+    return self._source_authors
+
+  @property
+  def attribution_differs_from_source(self):
+    return self._authors is not None
 
   @property
   def taxon_suffix(self):
-    if self._source:
+    # TODO: This string-building should not live in two classes, probably.
+    if self._source and not self.attribution_differs_from_source:
       return f'{self._source.author_keys_string}_{self._year}'
     return '_'.join([
         (a.key if a.key else a.family.lower())

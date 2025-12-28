@@ -41,7 +41,7 @@ class Author:
     if author_key not in expected_set:
       logger.error(f'"{author_key}" not in expected set: {expected_set}')
 
-  def __str__(self):
+  def __repr__(self):
     string = f'{self.family}'
     if self.given:
       string += f', {self.given}'
@@ -51,6 +51,9 @@ class Author:
         string += str(self.death)
       string += ')'
     return string
+
+  def __str__(self):
+    return repr(self)
 
   @property
   def key(self):
