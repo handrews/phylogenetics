@@ -91,17 +91,23 @@ class Authority:
         self._ex = None
 
     else:
-      auth_authors = self._find_authors(data['auth'])
-      if 'in' in data:
-        self._source_authors = self._find_authors(data['in'])
-        self._authors = auth_authors
-      else:
-        self._source_authors = auth_authors
+      if not data['auth']:
+        self._source_authors = None
         self._authors = None
-      self._year = data.get('year')
+      else:
+        auth_authors = self._find_authors(data['auth'])
+        if 'in' in data:
+          self._source_authors = self._find_authors(data['in'])
+          self._authors = auth_authors
+        else:
+          self._source_authors = auth_authors
+          self._authors = None
+        self._year = data.get('year')
 
-      assert 'ex' not in data, "TODO: 'ex' outside of 'authority'"
-      self._ex = None
+        assert 'ex' not in data, "TODO: 'ex' outside of 'authority'"
+        self._ex = None
+
+      self._year = data.get('year')
 
     if self._year:
       for a in self._source_authors:
@@ -140,6 +146,10 @@ class Authority:
     return self._source
 
   @property
+  def year(self):
+    return self._year
+
+  @property
   def authors(self):
     return (
       self._authors if self.attribution_differs_from_source
@@ -158,11 +168,17 @@ class Authority:
   def taxon_suffix(self):
     # TODO: This string-building should not live in two classes, probably.
     if self._source and not self.attribution_differs_from_source:
-      return f'{self._source.author_keys_string}_{self._year}'
-    return '_'.join([
+      string = f'{self._source.author_keys_string}'
+    elif self.authors is None:
+      string = 'unknown'
+    else:
+      string = '_'.join([
         (a.key if a.key else a.family.lower())
         for a in self.authors
-    ]) + f'_{self._year}'
+      ])
+    if self.year:
+      return f'{string}_{self._year}'
+    return string
 
 
 class Taxon:
