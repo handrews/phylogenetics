@@ -1688,7 +1688,7 @@
         - taxon: mariae_callaway_1877
 1968b_paul.c.r.c:
   taxonomies:
-  - taxon: rhombifera
+  - taxon: rhombifera-class
     children:
     - taxon: dichoporita
       emended: true

@@ -110,6 +110,10 @@ class Publication:
   def key(self):
     return self._key
 
+  @property
+  def name(self):
+    return self._data['name']
+
 
 class PublicationDate:
   def __init__(self, pub_date):
@@ -246,4 +250,4 @@ class Source:
     try:
       return self._data['title']
     except KeyError:
-      return Publication.get(self._data['book'])['name']
+      return Publication.get(self._data['book']).name

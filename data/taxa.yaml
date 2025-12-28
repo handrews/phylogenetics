@@ -4613,11 +4613,14 @@ peridionitidae:
   rank: Family
   authority:
     source: 1941_whitehouse
-perishoechinoidea:
-  name: Perishoechinoidea
+perischoechinoidea:
+  name: Perischoechinoidea
   rank: Subclass
   auth: [mccoy]
   year: 1849
+perishoechinoidea:
+  name: Perishoechinoidea
+  altSpellingOf: perischoechinoidea
 peritaphros-subgenus:
   name: Peritaphros
   rank: subgenus
