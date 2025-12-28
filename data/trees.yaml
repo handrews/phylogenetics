@@ -1,3 +1,53 @@
+1821_miller.j.s:
+  taxonomies:
+  - taxon: echinodermata
+    children:
+    - taxon: crinoidea-family
+      new: true
+      synonyms:
+      - taxon: stylastritæ
+      children:
+      - taxon: articulata
+        rank: Division
+        new: true
+        children:
+        - taxon: apiocrinites
+          children:
+          - taxon: rotundus_miller.j.s_1821
+          - taxon: elongatus_miller.j.s_1821 # Possible nomen nudum?
+          - taxon: ellipticus_miller.j.s_1821
+        - taxon: encrinites
+          children:
+          - taxon: moniliformis_miller.j.s_1821
+            synonyms:
+            - taxon: liliiformis_lamarck_1816
+              parents:
+              - taxon: encrinus
+            # plus other synonyms I can't entirely parse
+        - taxon: pentacrinites
+          or:
+          - taxon: pentacrinus
+          children:
+          - taxon: caput medusæ_lamarck_1801
+            synonums:
+            - taxon: caput medusæ_lamarck_1801
+              parents:
+              - taxon: encrinus
+            - taxon: asteria_linnaeus
+             parents:
+              - taxon: isis
+          - taxon: briareus_miller.j.s_1821
+            new: true
+          - taxon: subangularis_miller.j.s_1821
+            new: true
+          - taxon: baaltiformis_miller.j.s_1821
+            new: true
+          - taxon: tuberculatus_miller.j.s_1821
+            new: true
+      - taxon: semiarticulata
+            new: true
+        rank: Division
+                
 1828_hisinger:
   taxonomies:
   - taxon: echinodermata-order

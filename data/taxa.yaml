@@ -2259,6 +2259,10 @@ elpasocrinus:
   name: Elpasocrinus
   auth: [sprinkle, Wahlm]
   year: 1994
+encrinus:
+  name: Encrinus
+  auth: [lamarck]
+  year: 1801
 enterocoela-grade:
   name: Enterocoela
   rank: Grade
@@ -5745,6 +5749,10 @@ stromatocystites-sp_ubaghs_1999:
   rank: species
   authority:
     source: 1999_ubaghs
+stylastitræ:
+  name: Stylastitræ
+  auth: [martin.w]
+  year: 1809
 stylophora:
   name: Stylophora
   rank: Class
