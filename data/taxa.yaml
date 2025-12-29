@@ -401,6 +401,11 @@ armata_forbes_1848:
 armatus_forbes_1848:
   name: armatus
   altSpellingOf: armata_forbes_1848
+arthriticus_phillips.j_1839:
+  name: arthriticus
+  authority:
+    authors: [phillips.j]
+    source: 1839_murchison
 arthropoda:
   name: Arthropoda
   rank: Phylum
@@ -972,6 +977,11 @@ cannati_miquel_1894:
   name: cannati
   auth: [Miquel]
   year: 1894
+capillaris_phillips.j_1839:
+  name: capillaris
+  authority:
+    authors: [phillips.j]
+    source: 1839_murchison
 caput medusæ_lamarck_1801:
   name: caput medusæ
   auth: [lamarck]
@@ -1070,6 +1080,11 @@ castericystis:
   name: Castericystis
   auth: [ubaghs, robison]
   year: 1985
+cælatus_phillips.j_1839:
+  name: cælatus
+  authority:
+    authors: [phillips.j]
+    source: 1839_murchison
 celtocrinus:
   name: Celtocrinus
   auth: [Donovan, Cope]
@@ -1753,10 +1768,20 @@ decadactylus_hall_1847:
   name: decadactylus
   auth: [hall]
   year: 1847
+decadactylus_phillips.j_1839:
+  name: decadactylus
+  authority:
+    authors: [phillips.j]
+    source: 1839_murchison
 deckeri_sinclair_1945:
   name: deckeri
   auth: [Sinclair]
   year: 1945
+decorus_phillips.j_1839:
+  name: decorus
+  authority:
+    authors: [phillips.j]
+    source: 1839_murchison
 decussatum_begg_1934:
   name: decussatum
   auth: [Begg]
@@ -1877,6 +1902,12 @@ diktyotos_guensburg_1988:
   name: diktyotos
   authority:
     source: 1988_guensburg
+dimerocrinites-subgenus:
+  name: dimerocrinites
+  rank: subgenus
+  authority:
+    authors: [phillips.j]
+    source: 1839_murchison
 dinocystis:
   name: Dinocystis
   auth: [bather]
@@ -2562,6 +2593,11 @@ everndeni_durham_1967:
   name: everndeni
   authority:
     source: 1967c_durham
+expansus_phillips.j_1839:
+  name: expansus
+  authority:
+    authors: [phillips.j]
+    source: 1839_murchison
 extenuatus_zhao.j_rahman_zamora_chen.a_cong.p.y_2022:
   name: extenuatus
   auth: [zhao.j, rahman, zamora, chen.a, cong.p.y]
@@ -3447,6 +3483,11 @@ hybolopus_fraunfelter_utgaard_1970:
   name: hybolopus
   auth: [Fraunfelter, Utgaard]
   year: 1970
+hypanthocrinites:
+  name: Hypanthocrinites
+  authority:
+    authors: [phillips.j]
+    source: 1839_murchison
 hypsiclavus:
   name: Hypsiclavus
   authority:
@@ -3464,6 +3505,11 @@ ibexocrinus:
   name: Ibexocrinus
   auth: [Lane]
   year: 1970
+icosidactylus_phillips.j_1839:
+  name: icosidactylus
+  authority:
+    authors: [phillips.j]
+    source: 1839_murchison
 ikecanensis_sprinkle_1973:
   name: ikecanensis
   authority:
@@ -4093,6 +4139,11 @@ mariae_callaway_1877:
   name: mariae
   auth: [Callaway]
   year: 1877
+marsupiocrinites:
+  name: Marsupiocrinites
+  authority:
+    authors: [phillips.j]
+    source: 1839_murchison
 marsupites:
   name: Marsupites
   authority:
@@ -5210,6 +5261,11 @@ pyriformis_paul.c.r.c_1967:
   name: pyriformis
   authority:
     source: 1967_paul.c.r.c
+pyriformis_phillips.j_1839:
+  name: pyriformis
+  authority:
+    authors: [phillips.j]
+    source: 1839_murchison
 ###################### Q
 quadrifasciatus_pearce_1843:
   name: quadrifasciatus
@@ -5331,6 +5387,11 @@ reteocrinidae:
   rank: Family
   auth: [Wachsmuth, springer]
   year: 1885
+retiarius_phillips.j_1839:
+  name: retiarius
+  authority:
+    authors: [phillips.j]
+    source: 1839_murchison
 reteocrinus:
   name: Reteocrinus
   auth: [billings]
@@ -5629,6 +5690,11 @@ simplex_barrande_1887:
   name: simplex
   auth: [barrande]
   year: 1887
+simplex_phillips.j_1839:
+  name: simplex
+  authority:
+    authors: [phillips.j]
+    source: 1839_murchison
 sinclairi_sprinkle_1982h:
   name: sinclairi
   authority:
