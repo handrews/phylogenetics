@@ -3536,6 +3536,54 @@
     - taxon: lepocrinites
       children:
       - taxon: gebhardi_conrad.t.a_1840
+1843_hall:
+  taxonomies:
+  - notes: Clinton group (only echinoderms are noted here)
+    taxon: actinocrinus
+    children:
+    - taxon: plumosus_hall_1843
+      provisional: true
+      new: true
+  - notes: Niagra group (only echinoderms are noted here)
+    taxon: crinoidea-family
+    children:
+    - taxon: caryocrinus
+      children:
+      - taxon: ornatus_say_1825
+      - taxon: loricatus_say_1825
+        notes: Suggested to be ornatus but with some damage/regeneration
+    - taxon: cyathocrinites
+      children:
+      - taxon: pyriformis_phillips.j_1839
+        synonyms:
+        - taxon: lævis_conrad.t.a_1842
+          parents:
+          - taxon: ichthyocrinus
+    - taxon: hypanthocrinites
+      children:
+      - taxon: cælatus_hall_1843
+        new: true
+        notes: |
+          Also referred to Eucalyptocrinites Goldfuss, but species synonym
+          not given, and not clearly synonymized at the genus level.
+          Appears to be an "oe" ligature œ in the text (and some other sources)
+          and an "ae" ligature æ in the figure caption?  "ae" seems accepted.
+      - taxon: decorus_phillips.j_1839
+    - taxon: marsupiocrinites
+      children:
+      - taxon: dactylus_hall_1843
+        provisional: true
+        new: true
+  - notes: Portage group (only echinoderms are noted here)
+    taxon: cyathocrinus
+    children:
+    - taxon: ornatissimus_hall_1843
+      new: true
+  - notes: No formal systematics, taken from plate descriptions
+    taxon: lepocrinites
+    children:
+    - taxon: gebhardii_conrad.t.a_1840
+      notes: Some sources credit Hall for this species, as new here.
 1844_buch:
   taxonomies:
   - taxon: echinodermata-order

@@ -61,6 +61,10 @@ actinocrinites:
   name: Actinocrinites
   authority:
     source: 1821_miller.j.s
+actinocrinus:
+  name: Actinocrinus
+  auth: [Agassiz]
+  year: 1836
 acutus_lamarck_1816:
   name: acutus
   authority:
@@ -1390,6 +1394,10 @@ buttsi_clarke_1901:
   auth: [Clarke]
   year: 1901
 ###################### C
+cælatus_hall_1843:
+  name: cælatus
+  authority:
+    source: 1843_hall
 calamaria_pallas_1774:
   name: calamaria
   altSpellingOf: calamaris_pallas_1774
@@ -1650,6 +1658,10 @@ carychium:
   authority:
     source: 1774b_müller.o.f
   notes: Some sources say 1773_müller.o.f despite no full description.
+caryocrinus:
+  name: Caryocrinus
+  auth: [Agassiz]
+  year: 1836
 caryocrinites:
   name: Caryocrinites
   authority:
@@ -2560,6 +2572,9 @@ cyathocrinites:
   name: Cyathocrinites
   authority:
     source: 1821_miller.j.s
+cyathocrinus:
+  name: Cyathocrinus
+  altSpellingOf: cyathocrinites
 cyathocystina:
   name: Cyathocystina
   rank: Suborder
@@ -2760,6 +2775,10 @@ cymbionitidae:
   authority:
     source: 1941_whitehouse
 ###################### D
+dactylus_hall_1843:
+  name: dactylus
+  authority:
+    source: 1843_hall
 darraghi_jell_1983:
   name: darraghi
   authority:
@@ -5263,6 +5282,10 @@ ibexocrinus:
   name: Ibexocrinus
   auth: [Lane]
   year: 1970
+ichthyocrinus:
+  name: Ichthyocrinus
+  auth: [conrad.t.a]
+  year: 1842
 icosidactylus_phillips.j_1839:
   name: icosidactylus
   authority:
@@ -5762,6 +5785,10 @@ laevis_leske_1778:
   rank: variety
   authority:
     source: 1778_leske
+lævis_conrad.t.a_1842:
+  name: lævis
+  auth: [conrad.t.a]
+  year: 1842
 lævis_miller.j.s_1821:
   name: lævis
   authority:
@@ -7125,6 +7152,10 @@ ornata_ubaghs_1999:
   name: ornata
   authority:
     source: 1999_ubaghs
+ornatissimus_hall_1843:
+  name: ornatissimus
+  authority:
+    source: 1843_hall
 ornatus_bassler_1943:
   name: ornatus
   auth: [bassler]
@@ -7916,6 +7947,10 @@ plumosa_müller.o.f_1776:
   name: plumosa
   authority:
     source: 1776_müller.o.f
+plumosus_hall_1843:
+  name: plumosus
+  authority:
+    source: 1843_hall
 poissons:
   name: Poissons
   vulgarSpellingOf: pisces
