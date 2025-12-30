@@ -70,6 +70,34 @@
   - cuvier
   identifiers:
     url: https://www.biodiversitylibrary.org/item/99338
+1819_say:
+  title: "Observation on some Species of Zoophytes, Shells, &c. principally Fossil (part 1)"
+  journal: am-j-sci-c
+  volume: 1
+  number: 4
+  pubDate:
+    year: 1819
+  pages:
+  - 381
+  - 387
+  authors:
+  - say
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/30962636
+1820_say:
+  title: "Observation on some Species of Zoophytes, Shells, &c. principally Fossil (part 2)"
+  journal: am-j-sci-arts
+  volume: 2
+  number: 1
+  pages:
+  - 34
+  - 45
+  pubDate:
+    year: 1820
+  authors:
+  - say
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/14905893
 1821_miller.j.s:
   book: nat-hist-crinoidea
   pubDate:
@@ -86,6 +114,51 @@
   - parkinson
   identifiers:
     url: https://darwin-online.org.uk/converted/pdf/1822_fossil_CUL-DAR.LIB.490.pdf
+1825a_say:
+  title: On two genera and several species of Crinoidea
+  journal: jofacnatsci-philadelphia
+  volume: 4
+  number: 2
+  pages:
+  - 289
+  - 296
+  pubDate:
+    year: 1825
+  processDates:
+    read: 1825-03-01
+  authors:
+  - say
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/24655407
+1825b_say:
+  title: On the species of the Linnean genus Asterias, inhabiting the coast of the United States
+  journal: jofacnatsci-philadelphia
+  volume: 5
+  number: 1
+  pages:
+  - 141
+  - 154
+  pubDate:
+    year: 1825
+  processDates:
+    read: 1825-11-01
+  authors:
+  - say
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/24657187
+1827_say:
+  title: On the species of the Linnean genus Echinus, inhabiting the coast of the United States
+  journal: jofacnatsci-philadelphia
+  volume: 5
+  number: 2
+  pubDate:
+    year: 1827
+  processDates:
+    read: 1825-11-08
+  authors:
+  - say
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/24657283
 1828_hisinger:
   book: anteck
   volume: 4

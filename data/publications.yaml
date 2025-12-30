@@ -8,6 +8,10 @@ akademie:
   name: Akademie der Wissenschaften
 alcheringa:
   name: Alcheringa
+am-j-sci-arts:
+  name: The American Journal of Science, and Arts
+am-j-sci-c:
+  name: "The American Journal of Science, &c."
 am-nat:
   name: The American Naturalist
 amph-und-cyst:
@@ -80,6 +84,8 @@ geo-soc-am-abs-prog:
   name: Geological Society of America, Abstracts With Programs
 invertebrates:
   name: The Invertebrates
+jofacnatsci-philadelphia:
+  name: Journal of the Academy of Natural Sciences of Philadelphia
 jofpaleo:
   name: Journal of Paleontology
 jofgeol-london:

@@ -1,3 +1,10 @@
+1820_say:
+  taxonomies:
+  - taxon: pentacrinus
+    children:
+    - taxon: caput medusæ_lamarck_1801
+  - taxon: pentremite
+    new: true
 1821_miller.j.s:
   taxonomies:
   - taxon: echinodermata
@@ -120,6 +127,38 @@
         children:
         - taxon: ornatus_miller.j.s_1821
           new: true
+1825a_say:
+  taxonomies:
+  - children:
+    # - taxon: stelleridica
+    - taxon: crinoidea-family
+      children:
+      - taxon: inarticulata
+        children:
+        - taxon: cyathocrinites
+        - taxon: caryocrinites
+          new: true
+          children:
+          - taxon: ornatus_say_1825
+            new: true
+          - taxon: loricatus_say_1825
+            new: true
+        - taxon: actinocrinites
+    - taxon: blastoidea-family
+      new: true
+      children:
+      - taxon: pentremite
+        children:
+        - taxon: globosa_say_1825
+          new: true
+        - taxon: pyriformis_say_1825
+          new: true
+        - taxon: florealis_schlotheim_1820
+          synonyms:
+          - taxon: florealis_schlotheim_1820
+            parents:
+            - taxon: encrinites
+    # - taxon: echinidea-family
 1828_hisinger:
   taxonomies:
   - taxon: echinodermata-order

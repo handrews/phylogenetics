@@ -717,8 +717,11 @@ blastocystis:
 blastoidea:
   name: Blastoidea
   rank: Class
-  auth: [say]
-  year: 1825
+  authority:
+    source: 1825a_say
+blastoidea-family:
+  rank: Family
+  altRankOf: blastoidea
 blastoidocrinus:
   name: Blastoidocrinus
   auth: [billings]
@@ -1041,8 +1044,8 @@ carteri_bassler_1936:
     source: 1936_bassler
 caryocrinites:
   name: Caryocrinites
-  auth: [Say]
-  year: 1825
+  authority:
+    source: 1825a_say
 caryocrinitidae:
   name: Caryocrinitidae
   rank: Family
@@ -2027,6 +2030,11 @@ dyunin_kruse_1990:
   auth: [Kruse]
   year: 1990
 ###################### E
+# See 1825a_say; unclear if this is even a real spelling
+# Not to be confused with Echinidea (Kroh & Smith 2010)
+# echinidea-family:
+#   name: Echinidea
+#   rank: Family
 echinoderma:
   name: Echinoderma
   rank: Phylum
@@ -2667,6 +2675,11 @@ flexibilia:
   rank: Subclass
   auth: [zittel]
   year: 1895
+florealis_schlotheim_1820:
+  name: florealis
+  auth: [Schlotheim] # Baron von
+  year: 1820
+  notes: As quoted in Miller (1821)
 floridiscus:
   name: Floridiscus
   auth: [Smith]
@@ -2789,6 +2802,10 @@ globoeocrinus:
   name: Globoeocrinus
   auth: [zhao.y.l, parsley, peng.j]
   year: 2008
+globosa_say_1825:
+  name: globosa
+  authority:
+    source: 1825a_say
 globosa_sprinkle_parsley_1982:
   name: globosa
   authority:
@@ -4048,6 +4065,10 @@ lophotocystis:
   name: Lophotocystis
   auth: [paul.c.r.c]
   year: 1972
+loricatus_say_1825:
+  name: loricatus
+  authority:
+    source: 1825a_say
 loriformis_raymond_1915:
   name: loriformis
   auth: [Raymond]
@@ -4545,8 +4566,8 @@ ornatus_savage_1917:
   year: 1917
 ornatus_say_1825:
   name: ornatus
-  auth: [Say]
-  year: 1825
+  authority:
+    source: 1825a_say
 orthida:
   name: Orthida
   rank: Order
@@ -4782,6 +4803,10 @@ pentrematoides_forbes_1848:
   name: pentrematoides
   authority:
     source: 1848b_forbes
+pentremite:
+  name: Pentremite
+  authority:
+    source: 1820_say
 peridionites:
   name: Peridionites
   authority:
@@ -5266,6 +5291,10 @@ pyriformis_phillips.j_1839:
   authority:
     authors: [phillips.j]
     source: 1839_murchison
+pyriformis_say_1825:
+  name: pyriformis
+  authority:
+    source: 1825a_say
 ###################### Q
 quadrifasciatus_pearce_1843:
   name: quadrifasciatus
@@ -5891,7 +5920,7 @@ steganoblastidae:
     source: 1900_bather
 steganoblastus:
   name: Steganoblastus
-  auth: [Whiteaves]
+  auth: [whiteaves]
   year: 1899
 stellaris_billings_1859:
   name: stellaris
@@ -5899,17 +5928,21 @@ stellaris_billings_1859:
   year: 1859
 stellatus_hall_1866:
   name: stellatus
-  auth: [Hall]
+  auth: [hall]
   year: 1866
 stelleridæ:
   name: Stelleridæ
   rank: Family
-  auth: [Lamarck]
+  auth: [lamarck]
   year: 1816
+# See 1825a_say; unclear if this is even a real spelling
+# stelleridica:
+#   name: Stelleridica
+#   altSpellingOf: stelleridæ
 stelleroidea:
   name: Stelleroidea
   rank: Class
-  auth: [Lamarck]
+  auth: [lamarck]
   year: 1816
   notes: "Lamarck, 1816 [nom. transl. et correct. Gregory, 1900 (pro les Stellerides Lamarck, 1816)]"
 stenuroidea:
