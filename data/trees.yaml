@@ -1,3 +1,131 @@
+1758_linnaeus:
+  taxonomies:
+  - taxon: animalia
+    new: true
+    children:
+    - taxon: mammalia
+      new: true
+    - taxon: aves
+      new: true
+    - taxon: amphibia_linnaeus_1758
+      new: true
+    - taxon: pisces
+      new: true
+    - taxon: insecta
+      new: true
+    - taxon: vermes
+      new: true
+      children:
+      - taxon: intestina-order
+        new: true
+      - taxon: mollusca-order
+        new: true
+        children:
+        - taxon: limax
+          new: true
+        - taxon: doris
+          new: true
+        - taxon: tethys
+          new: true
+        - taxon: nereis
+          new: true
+        - taxon: aphrodita
+          new: true
+        - taxon: lernæa
+          new: true
+        - taxon: priapus
+          new: true
+        - taxon: scyllæa
+          new: true
+        - taxon: holothuria_linnaeus_1758
+          new: true
+          children:
+          - taxon: physalis_linnaeus_1758
+            new: true
+          - taxon: thalia_linnaeus_1758
+            new: true
+          - taxon: caudata_linnaeus_1758
+            new: true
+          - taxon: denudata_linnaeus_1758
+            new: true
+        - taxon: triton
+          new: true
+        - taxon: sepia
+          new: true
+        - taxon: medusa
+          new: true
+        - taxon: asterias
+          new: true
+          children:
+          - taxon: luna_linnaeus_1758
+            new: true
+          - taxon: rubens_linnaeus_1758
+            new: true
+          - taxon: glacialis_linnaeus_1758
+            new: true
+          - taxon: reticulata_linnaeus_1758
+            new: true
+          - taxon: nodosa_linnaeus_1758
+            new: true
+          - taxon: aranciaca_linnaeus_1758
+            new: true
+          - taxon: equestris_linnaeus_1758
+            new: true
+          - taxon: lævigata_linnaeus_1758
+            new: true
+          - taxon: planci_linnaeus_1758
+            new: true
+          - taxon: ophiura_linnaeus_1758
+            new: true
+          - taxon: pectinata_linnaeus_1758
+            new: true
+          - taxon: multiradiata_linnaeus_1758
+            new: true
+          - taxon: caput medusæ_linnaeus_1758
+            new: true
+        - taxon: echinus
+          new: true
+          children:
+          - taxon: esculentus_linnaeus_1758
+            new: true
+          - taxon: globulus_linnaeus_1758
+            new: true
+          - taxon: sphæroides_linnaeus_1758
+            new: true
+          - taxon: gratilla_linnaeus_1758
+            new: true
+          - taxon: lixula_linnaeus_1758
+            new: true
+          - taxon: saxatilis_linnaeus_1758
+            new: true
+          - taxon: diadema_linnaeus_1758
+            new: true
+          - taxon: cidaris_linnaeus_1758
+            new: true
+          - taxon: mamillatus_linnaeus_1758
+            new: true
+          - taxon: lucunter_linnaeus_1758
+            new: true
+          - taxon: atratus_linnaeus_1758
+            new: true
+          - taxon: spatagus_linnaeus_1758
+            new: true
+          - taxon: lacunosus_linnaeus_1758
+            new: true
+          - taxon: rosaceus_linnaeus_1758
+            new: true
+          - taxon: reticulatus_linnaeus_1758
+            new: true
+          - taxon: placenta_linnaeus_1758
+            new: true
+          - taxon: orbiculus_linnaeus_1758
+            new: true
+      - taxon: testacea-order
+        new: true
+      - taxon: lithophyta
+        new: true
+      - taxon: zoophyta
+        new: true
 1820_say:
   taxonomies:
   - taxon: pentacrinus

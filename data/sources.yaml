@@ -8,6 +8,14 @@
   identifiers:
     doi: 10.5962/bhl.title.65731
     url: https://www.biodiversitylibrary.org/bibliography/65731
+1758_linnaeus:
+  title: Regnum Animalia
+  book: systema-naturae-10th-ed
+  volume: 1
+  pubDate:
+    year: 1758
+  authors:
+  - linnaeus
 1778_klein:
   book: nat-disp-ech-1778
   seen: false
