@@ -64,7 +64,7 @@ def _load_trees(data):
       position += 1
 
       if (tree_type := phy_tree.get('treeType', '').lower()) not in Tree.TYPES:
-        raise ValueError(f'Unknown tree type {tree_type}')
+        logger.error(f'Unknown tree type {tree_type}')
       metadata['type'] = tree_type
 
       if 'characteristics' in phy_tree:

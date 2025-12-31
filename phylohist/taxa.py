@@ -69,7 +69,7 @@ class Authority:
       source_key = a['source']
       self._source = Source.get(source_key)
       if not self._source:
-        raise KeyError(f'Authority source "{source_key}" not recognized')
+        logger.error(f'Authority source "{source_key}" not recognized')
 
       self._source_authors = self._source.authors
       if 'authors' in a:
@@ -110,7 +110,7 @@ class Authority:
     if self._year:
       for a in self._source_authors:
         if not a.could_publish_in(self._year):
-          raise ValueError(
+          logger.error(
             f'Source {source_key} year {year} too far outside of '
             f'{author} lifespan!',
           )
@@ -135,7 +135,7 @@ class Authority:
         authors.append(Author({'family': author_string}))
       else:
         if not (author := Author.get(author_string)):
-          raise KeyError(f'Author for author key {author_string} not found!')
+          logger.error(f'Author for author key {author_string} not found!')
         authors.append(author)
     return tuple(authors)
 
@@ -199,7 +199,7 @@ class Taxon:
 
     if not self._rank:
       if self._name is None:
-        raise ValueError(f"Unnamed, unranked taxon {taxon_key}!")
+        logger.error(f"Unnamed, unranked taxon {taxon_key}!")
 
       self._rank = 'species' if self._name.islower() else 'genus'
 
@@ -207,14 +207,14 @@ class Taxon:
 
     if (alt_key := taxon_data.get('altSpellingOf')):
       if not (alt := Taxon.get(alt_key)):
-        raise KeyError(f'Taxon {taxon_key} alt spelling of unknown {alt_key}')
+        logger.error(f'Taxon {taxon_key} alt spelling of unknown {alt_key}')
       self._alt = alt
       self._rank = alt.rank
       self._authority = alt.authority
 
     elif (alt_key := taxon_data.get('altRankOf')):
       if not (alt := Taxon.get(alt_key)):
-        raise KeyError(f'Taxon {taxon_key} alt rank of unknown {alt_key}')
+        logger.error(f'Taxon {taxon_key} alt rank of unknown {alt_key}')
       self._alt = alt
       self._name = alt.name
       self._authority = alt.authority
@@ -457,11 +457,11 @@ class Tree:
   ):
     if ((tree_metadata, parent) == (None, None) or
         (tree_metadata is not None and parent is not None)):
-      raise ValueError(
+      logger.error(
         'Tree nodes must have either a parent or metadata, but not both!',
       )
     if parent is not None and relpath == ():
-      raise ValueError('Non-root nodes must have a non-root relative path')
+      logger.error('Non-root nodes must have a non-root relative path')
 
     self._data = tree_data
     self._metadata = tree_metadata
@@ -522,11 +522,11 @@ class Tree:
     if self._metadata:
       self._source = Source.get(self._metadata['source_key'])
       if self._source is None:
-        raise KeyError(f'Tree source {source_key} not reognized!')
+        logger.error(f'Tree source {source_key} not reognized!')
 
       self._type = self._metadata['type']
       if self._type not in Tree._type_index:
-        raise ValueError(f'Unrecognized tree type {self._type}')
+        logger.error(f'Unrecognized tree type {self._type}')
 
       self._position = self._metadata['position']
 
@@ -552,15 +552,15 @@ class Tree:
         taxon = Taxon.get(taxon_key)
         if taxon is None:
           # TODO: Is this error message right?
-          raise KeyError(f'Unrecognized tree {field} {taxon_key} for {self}')
+          logger.error(f'Unrecognized tree {field} {taxon_key} for {self}')
 
       unnamed = self._UNNAMED_FIELDS | self._PROXY_FIELDS
       if field not in unnamed and not taxon.name:
-        raise ValueError(
+        logger.error(
           f'Taxon {taxon} at {self}/{field} expected to be named.',
         )
       if field in unnamed and taxon.name:
-        raise ValueError(
+        logger.error(
           f'Taxon {self._taxon} at {self}/{field} expected '
           'to not be named.',
         )
@@ -570,7 +570,7 @@ class Tree:
   def _check_primary_taxon(self):
     taxon_fields = self._ALL_TAXON_FIELDS & self._data.keys()
     if len(taxon_fields) > 1:
-      raise ValueError(
+      logger.error(
         f'Found {len(taxon_fields)} taxon fields '
         f'({taxon_fields}), expected at most one!',
       )
@@ -590,12 +590,12 @@ class Tree:
         tsource = self._taxon._authority.source
 
         if is_new and self._source != tsource:
-          raise ValueError(
+          logger.error(
             f'Expected source {self._source} for new taxon {self._taxon}, '
             f'got source {tsource}',
           )
         elif not is_new and self._source == tsource:
-          raise ValueError(
+          logger.error(
             f'Taxon {self._taxon} at {self}, field "{taxon_field}", lists '
             f'this source as its authority, but is not marked as new.',
           )
