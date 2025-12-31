@@ -109,7 +109,10 @@ class Authority:
 
     if self._year:
       for a in self._source_authors:
-        if not a.could_publish_in(self._year):
+        if (
+          not a.could_publish_in(self._year) and
+          not (a.family == 'Klein' and self._year == 1778)
+        ):
           logger.error(
             f'Source {source_key} year {year} too far outside of '
             f'{author} lifespan!',
@@ -553,6 +556,7 @@ class Tree:
         if taxon is None:
           # TODO: Is this error message right?
           logger.error(f'Unrecognized tree {field} {taxon_key} for {self}')
+          return None
 
       unnamed = self._UNNAMED_FIELDS | self._PROXY_FIELDS
       if field not in unnamed and not taxon.name:
@@ -579,12 +583,15 @@ class Tree:
       taxon_field = taxon_fields.pop()
 
       self._taxon = self._check_taxon(taxon_field)
+      if self._taxon is None:
+        # TODO: Fix this symptom of weird exception vs logging error handling.
+        return
 
       if (
         self._type == self.TYPE_TAXONOMY and
         self.is_primary and
         taxon_field in self._NAMED_FIELDS and
-        self._taxon._authority.source
+        self._taxon.authority.source
       ):
         is_new = self._data.get('new')
         tsource = self._taxon._authority.source
