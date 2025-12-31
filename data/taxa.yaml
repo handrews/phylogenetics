@@ -1199,6 +1199,10 @@ chrysalis_schuchert_1904:
   name: chrysalis
   auth: [schuchert]
   year: 1904
+cidaris:
+  name: Cidaris
+  authority:
+    source: 1778_leske
 cidaris_linnaeus_1758:
   name: cidaris
   authority:
@@ -1272,6 +1276,10 @@ clavidiscus:
   name: Clavidiscus
   authority:
     source: 1996_sumrall
+clypeus:
+  name: Clypeus
+  authority:
+    source: 1778_leske
 cnemecrinus:
   name: Cnemecrinus
   authority:
@@ -1375,6 +1383,13 @@ conolliidae:
   rank: Family
   auth: [domínguez alonso]
   year: 1999
+conulus:
+  name: Conulus
+  notes: Leske credits this genus, and only this one, to Klein in his summary.
+  authority:
+    source: 1778_leske
+    ex:
+      source: 1734_klein
 cooki_sprinkle_1982:
   name: cooki
   authority:
@@ -2089,6 +2104,23 @@ dyunin_kruse_1990:
   auth: [Kruse]
   year: 1990
 ###################### E
+echinanthus:
+  name: Echinanthus
+  authority:
+    source: 1778_leske
+echinarachnius_leske_1778:
+  name: Echinarachnius
+  homonym: true
+  authority:
+    source: 1778_leske
+echinocorys:
+  name: Echinocorys
+  authority:
+    source: 1778_leske
+echinocyamus:
+  name: Echinocyamus
+  auth: [van phelsum]
+  year: 1774
 # See 1825a_say; unclear if this is even a real spelling
 # Not to be confused with Echinidea (Kroh & Smith 2010)
 # echinidea-family:
@@ -2109,6 +2141,11 @@ echinodermata:
     source: 1791_bruguière
     ex:
       source: 1734_klein
+echinodermata_klein_1778:
+  name: Echinodermata
+  needsQualification: true
+  authority:
+    source: 1778_klein
 echinodermatum:
   name: Echinodermatum
   authority:
@@ -2142,8 +2179,8 @@ echinodermata-incertae-sedis_ubaghs_1999:
     source: 1999_ubaghs
 echinodiscus:
   name: Echinodiscus
-  auth: [Leske]
-  year: 1778
+  authority:
+    source: 1778_leske
 echinodiscus_worthen_miller_1883:
   homonym: true
   name: Echinodiscus
@@ -2181,8 +2218,13 @@ echino-encrinus:
 echinoidea:
   name: Echinoidea
   rank: Class
-  auth: [Leske]
-  year: 1778
+  authority:
+    source: 1778_leske
+  notes: Originally appeared as Order Echinus
+echinoneus:
+  name: Echinoneus
+  authority:
+    source: 1778_leske
 echinosphaeridae:
   name: Echinosphaeridae
   rank: Family
@@ -2221,6 +2263,12 @@ echinus:
   name: Echinus
   authority:
     source: 1758_linnaeus
+echinus-order:
+  name: Echinus
+  rank: Order
+  authority:
+    source: 1778_leske
+  notes: Eventually translated to Class Echinoidea
 echmatocrinidae:
   name: Echmatocrinidae
   rank: Family
@@ -6007,6 +6055,11 @@ spatagus_linnaeus_1758:
   name: spatagus
   authority:
     source: 1758_linnaeus
+spatangus_leske_1778:
+  name: Spatangus
+  homonym: true
+  authority:
+    source: 1778_leske
 spencensis_wen.r_babcock_peng.j_robison_2019:
   name: spencensis
   auth: [wen.r, babcock, peng.j, robison]

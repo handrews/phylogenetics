@@ -126,6 +126,44 @@
         new: true
       - taxon: zoophyta
         new: true
+1778_klein:
+  taxonomies:
+  - taxon: echinodermata_klein_1778
+    new: true
+    notes: |
+      The intende rank is unclear.  It might have been Order, but the
+      subgroups were called Classes, although perhaps the ranks were not
+      settled at the time.  Phylum seems unlikely, if it was even in use.
+      No other taxa defined in this (reprinted from 1734) work are
+      available per ICZN rules.
+1778_leske:
+  notes: |
+    Goes to species, varieties, and a sub-species consept of family,
+    but only order and genus captured here so far as the others are
+    rather confusing.
+  taxonomies:
+  - taxon: echinus-order
+    new: true
+    children:
+    - taxon: cidaris
+      new: true
+    - taxon: clypeus
+      new: true
+    - taxon: conulus
+      new: true
+    - taxon: echinoneus
+      new: true
+    - taxon: echinocorys
+      new: true
+    - taxon: echinanthus
+      new: true
+    - taxon: echinodiscus
+      new: true
+    - taxon: echinocyamus
+    - taxon: echinarachnius_leske_1778
+      new: true
+    - taxon: spatangus_leske_1778
+      new: true
 1820_say:
   taxonomies:
   - taxon: pentacrinus
@@ -8634,9 +8672,7 @@
               - YKLP 13553
 2024_wang.d.z_nohejlová_sun.z.x_zeng.h_lefebvre_yang.x.l_zhao.f.c:
   taxonomies:
-  - taxon: echinodermata
-    authority:
-      source: 1778_klein
+  - taxon: echinodermata_klein_1778
     children:
     - taxon: blastozoa
       children:

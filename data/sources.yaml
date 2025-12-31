@@ -29,6 +29,12 @@
     inconsistent usage, but that rule does not apply above the Family level.
   identifiers:
     url: https://www.biodiversitylibrary.org/bibliography/11571
+1778_leske:
+  book: additamenta-klein
+  pubDate:
+    year: 1778
+  authors:
+  - leske
 1789_bruguière:
   book: methodique
   pubDate:
