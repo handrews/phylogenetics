@@ -3770,6 +3770,11 @@ infundus_frest_strimple_mcginnis_1976:
   name: infundus
   auth: [frest, Strimple, McGinnis]
   year: 1976
+infusoria-order:
+  name: Infusoria
+  rank: Order
+  auth: [Ledermüller]
+  year: 1763
 insecta:
   name: Insecta
   rank: Class
