@@ -346,6 +346,7 @@ $defs:
     - subspecies
     - variety
     - Division
+    - section
     - Branch
     - Group
     - Grade
@@ -617,9 +618,16 @@ $defs:
         type: integer
         minimum: 1
         maximum: 12
+      months:
+        type: array
+        items:
+          type: integer
+          minimum: 1
+          maximum: 12
       day:
         type: integer
         minimum: 1
+        maximum: 31
       season:
         type: string
         enum: [spring, summer, fall, autumn, winter]

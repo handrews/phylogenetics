@@ -3,10 +3,24 @@ acanthalepis:
   name: Acanthalepis
   auth: [mccoy]
   year: 1846
+actinia:
+  name: Actinia
+  authority:
+    source: 1767_linnaeus
+  notes: possibly 1767_gunnerus?
 actinocrinites:
   name: Actinocrinites
   authority:
     source: 1821_miller.j.s
+aculeata_linnaeus_1767:
+  name: aculeata
+  authority:
+    source: 1767_linnaeus
+aculeata_pennant_1777:
+  name: aculeata
+  auth: [Pennant]
+  year: 1777
+  notes: Probably not the same as aculeata_linnaeus_1767
 acuticarpus:
   name: Acuticarpus
   authority:
@@ -203,7 +217,7 @@ ampheristocystis:
 amphibia_linnaeus_1758:
   name: Amphibia
   rank: Class
-  homonym: true
+  needsQualification: true
   authority:
     source: 1758_linnaeus
 amphibia:
@@ -317,6 +331,10 @@ apiocystitinae:
   rank: Subfamily
   auth: [jaekel]
   year: 1899
+aplysia:
+  name: Aplysia
+  authority:
+    source: 1767_linnaeus
 aporita:
   name: Aporita
   rank: Order
@@ -444,6 +462,10 @@ articulata-division:
   rank: Division
   authority:
     source: 1821_miller.j.s
+ascidia:
+  name: Ascidia
+  authority:
+    source: 1767_linnaeus
 ascocystites:
   name: Ascocystites
   auth: [barrande]
@@ -460,8 +482,9 @@ ascocystitidae:
   year: 1967
 asteria:
   name: Asteria
-  auth: [linnaeus]
-  year: 1767
+  authority:
+    source: 1767_linnaeus
+  notes: IRMNG shows this separate from and synonymized with Asterias (1758)
 asterias:
   name: Asterias
   authority:
@@ -1026,6 +1049,9 @@ caput medusæ_lamarck_1801:
   year: 1801
 caput medusæ_linnaeus_1758:
   name: caput medusæ
+  altSpellingOf: caput medusae_linnaeus_1758
+caput medusae_linnaeus_1758:
+  name: caput medusae
   authority:
     source: 1758_linnaeus
 carabocrinidae:
@@ -1216,6 +1242,10 @@ cigaria:
   auth: [barrande]
   year: 1887
   altSpellingOf: cigara
+ciliaris_linnaeus_1767:
+  name: ciliaris
+  authority:
+    source: 1767_linnaeus
 cincinnatidiscus:
   name: Cincinnatidiscus
   authority:
@@ -1276,6 +1306,10 @@ clavidiscus:
   name: Clavidiscus
   authority:
     source: 1996_sumrall
+clio:
+  name: Clio
+  authority:
+    source: 1767_linnaeus
 clypeus:
   name: Clypeus
   authority:
@@ -2110,17 +2144,21 @@ echinanthus:
     source: 1778_leske
 echinarachnius_leske_1778:
   name: Echinarachnius
-  homonym: true
+  needsQualification: true
   authority:
     source: 1778_leske
+echinata_linnaeus_1767:
+  name: echinata
+  authority:
+    source: 1767_linnaeus
 echinocorys:
   name: Echinocorys
   authority:
     source: 1778_leske
 echinocyamus:
   name: Echinocyamus
-  auth: [van phelsum]
-  year: 1774
+  authority:
+    source: 1774_van phelsum
 # See 1825a_say; unclear if this is even a real spelling
 # Not to be confused with Echinidea (Kroh & Smith 2010)
 # echinidea-family:
@@ -2225,6 +2263,12 @@ echinoneus:
   name: Echinoneus
   authority:
     source: 1778_leske
+echinoneus_van phelsum_1774:
+  name: Echinoneus
+  needsQualification: true
+  authority:
+    source: 1774_van phelsum
+  notes: Not consisently binomial, so Leske (1778) given priority.
 echinosphaeridae:
   name: Echinosphaeridae
   rank: Family
@@ -2831,6 +2875,10 @@ fortuitus_guensburg_sprinkle_2003:
   name: fortuitus
   authority:
     source: 2003_guensburg_sprinkle
+frondosa_gunnerus_1767:
+  name: frondosa
+  authority:
+    source: 1767_gunnerus
 furcillatus_billings.w.r_1887:
   name: furcillatus
   authority:
@@ -2863,6 +2911,10 @@ gelasinus_sumrall_bowsher_1996:
   name: gelasinus
   authority:
     source: 1996_sumrall_bowsher
+gelatinosum_linnaeus_1767:
+  name: gelatinosum
+  authority:
+    source: 1767_linnaeus
 germanica_müller.p_hahn_2010:
   name: germanica
   authority:
@@ -3528,14 +3580,14 @@ holocystitidae:
   year: 1889
 holothuria_linnaeus_1758:
   name: Holothuria
-  homonym: true
+  needsQualification: true
   authority:
     source: 1758_linnaeus
+  notes: Completely different contents from the later Holothuria
 holothuria:
   name: Holothuria
-  auth: [linnaeus]
-  year: 1767
-  notes: Systema Naturae, 12th Edition
+  authority:
+    source: 1767_linnaeus
 holothuroidea:
   name: Holothuroidea
   rank: Class
@@ -3727,11 +3779,20 @@ insularis_regnéll_1945:
   name: insularis
   auth: [regnéll]
   year: 1945
+integra:
+  name: Integra
+  rank: section
+  authority:
+    source: 1758_linnaeus
 intestina-order:
   name: Intestina
   rank: Order
   authority:
     source: 1758_linnaeus
+intestinalis_linnaeus_1767:
+  name: intestinalis
+  authority:
+    source: 1767_linnaeus
 interruptus_jaekel_1899:
   name: interruptus
   auth: [jaekel]
@@ -3745,6 +3806,11 @@ iowacystis:
   name: Iowacystis
   auth: [Thomas, Ladd]
   year: 1926
+irregulares:
+  name: Irregulares
+  rank: section
+  authority:
+    source: 1758_linnaeus
 isorophida:
   name: Isorophida
   rank: Order
@@ -3894,7 +3960,7 @@ kailidiscus:
   auth: [zhao.y.l, sumrall, parsley, peng.j]
   year: 2010
   synonym: parsleya
-  reason: homonym
+  reason: needsQualification
 kailidiscus-sp_jell_sprinkle_2021:
   name: null
   rank: species
@@ -3966,6 +4032,13 @@ lacunosus_linnaeus_1758:
   name: lacunosus
   authority:
     source: 1758_linnaeus
+laevigata_linnaeus_1758:
+  name: laevigata
+  authority:
+    source: 1758_linnaeus
+lævigata_linnaeus_1758:
+  name: lævigata
+  altSpellingOf: laevigata_linnaeus_1758
 laevis_bather_1914:
   name: laevis
   auth: [bather]
@@ -3993,10 +4066,6 @@ laevis_raymond_1921:
   name: laevis
   auth: [Raymond]
   year: 1921
-lævigata_linnaeus_1758:
-  name: lævigata
-  authority:
-    source: 1758_linnaeus
 lagenallis_regnéll_1945:
   name: lagenallis
   auth: [regnéll]
@@ -4113,10 +4182,13 @@ lepidus_zhao.y.l_huang.y.z_gong.x.y_1994:
   name: lepidus
   authority:
     source: 1994_zhao.y.l_huang.y.z_gong.x.y
-lernæa:
-  name: Lernæa
+lernaea:
+  name: Lernaea
   authority:
     source: 1758_linnaeus
+lernæa:
+  name: Lernæa
+  altSpellingOf: lernaea
 leucopthalmus:
   name: Leucopthalmus
   auth: [Koenig]
@@ -4469,6 +4541,10 @@ minus_zhao.y.l_huang.y.z_gong.x.y_1994:
   name: minus
   authority:
     source: 1994_zhao.y.l_huang.y.z_gong.x.y
+minuta_linnaeus_1761:
+  name: minuta
+  auth: [linnaeus]
+  year: 1761
 minutus_kolata_1975:
   name: minutus
   authority:
@@ -4841,6 +4917,14 @@ pannosus_holloway_jell_1983:
   name: pannosus
   authority:
     source: 1983_holloway_jell
+papilliosum_linnaeus_1767:
+  name: papilliosum
+  authority:
+    source: 1767_linnaeus
+papposa_linnaeus_1767:
+  name: papposa
+  authority:
+    source: 1767_linnaeus
 parablastoidea:
   name: Parablastoidea
   rank: Class
@@ -5003,6 +5087,10 @@ pentacrinites:
 pentacrinus:
   name: Pentacrinus
   altSpellingOf: pentacrinites
+pentactes_linnaeus_1767:
+  name: pentactes
+  authority:
+    source: 1767_linnaeus
 pentacystida:
   name: Pentacystida
   rank: Order
@@ -5074,6 +5162,10 @@ phaenoschismatidae:
   rank: Family
   auth: [Etheridge Jr., Carpenter]
   year: 1886
+phantapus_linnaeus_1767:
+  name: phantapus
+  authority:
+    source: 1767_linnaeus
 phyllocystidae:
   name: Phyllocystidae
   rank: Family
@@ -5318,6 +5410,10 @@ priapus:
   name: Priapus
   authority:
     source: 1758_linnaeus
+priapus_linnaeus_1767:
+  name: priapus
+  authority:
+    source: 1767_linnaeus
 priesti_strimple_1968:
   name: priesti
   auth: [strimple]
@@ -5538,6 +5634,10 @@ pyriformis_say_1825:
   authority:
     source: 1825a_say
 ###################### Q
+quadridentata_linnaeus_1767:
+  name: quadridentata
+  authority:
+    source: 1767_linnaeus
 quadrifasciatus_pearce_1843:
   name: quadrifasciatus
   auth: [Pearce]
@@ -5565,6 +5665,14 @@ radiata_ubaghs_1999:
   name: radiata
   authority:
     source: 1999_ubaghs
+radiatae:
+  name: Radiatae
+  rank: section
+  authority:
+    source: 1758_linnaeus
+radiatæ:
+  name: Radiatæ
+  altSpellingOf: radiatae
 radiatus_billings_1857:
   name: radiatus
   auth: [billings]
@@ -5641,6 +5749,11 @@ regulaecystis:
   name: Regulaecystis
   auth: [Dehm]
   year: 1932
+regulares:
+  name: Regulares
+  rank: section
+  authority:
+    source: 1758_linnaeus
 regularis_orłowski_1968:
   name: regularis
   auth: [orłowski]
@@ -5855,6 +5968,10 @@ runcinata_jell_1983:
   name: runcinata
   authority:
     source: 1983_jell
+rustica_linnaeus_1767:
+  name: rustica
+  authority:
+    source: 1767_linnaeus
 ruthveni_mccoy_1851:
   name: ruthveni
   auth: [mccoy]
@@ -5947,10 +6064,13 @@ scotiaecystis-sp_sumrall_sprinkle_guensburg_1997:
   rank: species
   authority:
     source: 1997_sumrall_sprinkle_guensburg
-scyllæa:
-  name: Scyllæa
+scyllaea:
+  name: Scyllaea
   authority:
     source: 1758_linnaeus
+scyllæa:
+  name: Scyllæa
+  altSpellingOf: scyllaea
 scyphocrinus:
   name: Scyphocrinus
   auth: [hall]
@@ -5968,6 +6088,11 @@ senckenbergii_meyer_1826:
   name: senckenbergii
   auth: [Meyer]
   year: 1826
+senilis_linnaeus_1767:
+  name: senilis
+  authority:
+    source: 1767_linnaeus
+  notes: possibly 1767_gunnerus?
 sepia:
   name: Sepia
   authority:
@@ -6057,7 +6182,7 @@ spatagus_linnaeus_1758:
     source: 1758_linnaeus
 spatangus_leske_1778:
   name: Spatangus
-  homonym: true
+  needsQualification: true
   authority:
     source: 1778_leske
 spencensis_wen.r_babcock_peng.j_robison_2019:
@@ -6068,10 +6193,13 @@ sphaerocystites:
   name: Sphaerocystites
   auth: [hall]
   year: 1859
-sphæroides_linnaeus_1758:
-  name: sphæroides
+sphaeroides_linnaeus_1758:
+  name: sphaeroides
   authority:
     source: 1758_linnaeus
+sphæroides_linnaeus_1758:
+  name: sphæroides
+  altSpellingOf: sphaeroides_linnaeus_1758
 sphaeronites:
   name: Sphaeronites
   authority:
@@ -6211,6 +6339,14 @@ stellaris_billings_1859:
   name: stellaris
   auth: [billings]
   year: 1859
+stellatae:
+  name: Stellatae
+  rank: section
+  authority:
+    source: 1758_linnaeus
+stellatæ:
+  name: Stellatæ
+  altSpellingOf: stellatae
 stellatus_hall_1866:
   name: stellatus
   auth: [hall]
@@ -6437,6 +6573,10 @@ tenuis_miller.j.s_1821:
   name: tenuis
   authority:
     source: 1821_miller.j.s
+terebella:
+  name: Terebella
+  authority:
+    source: 1767_linnaeus
 testacea-order:
   name: Testacea
   rank: Order
@@ -6454,6 +6594,10 @@ tethys:
   name: Tethys
   authority:
     source: 1758_linnaeus
+tethis:
+  name: Tethis
+  altSpellingOf: tethys
+  notes: Not treated as separate from Tethys in IRMNG, unlike Asteria/s
 tetracystis:
   name: Tetracystis
   auth: [schuchert]
@@ -6595,6 +6739,11 @@ treadwelli_sinclair_1945:
   name: treadwelli
   auth: [Sinclair]
   year: 1945
+tremula_linnaeus_1767:
+  name: tremula
+  authority:
+    source: 1767_linnaeus
+  notes: Possibly 1767_gunnerus?
 trentonensis_bassler_1936:
   name: trentonensis
   authority:

@@ -57,81 +57,344 @@
         - taxon: asterias
           new: true
           children:
-          - taxon: luna_linnaeus_1758
+          - taxon: integra
             new: true
-          - taxon: rubens_linnaeus_1758
+            children:
+            - taxon: luna_linnaeus_1758
+              new: true
+          - taxon: stellatæ
             new: true
-          - taxon: glacialis_linnaeus_1758
+            children:
+            - taxon: rubens_linnaeus_1758
+              new: true
+            - taxon: glacialis_linnaeus_1758
+              new: true
+            - taxon: reticulata_linnaeus_1758
+              new: true
+            - taxon: nodosa_linnaeus_1758
+              new: true
+            - taxon: aranciaca_linnaeus_1758
+              new: true
+            - taxon: equestris_linnaeus_1758
+              new: true
+            - taxon: lævigata_linnaeus_1758
+              new: true
+          - taxon: radiatæ
             new: true
-          - taxon: reticulata_linnaeus_1758
-            new: true
-          - taxon: nodosa_linnaeus_1758
-            new: true
-          - taxon: aranciaca_linnaeus_1758
-            new: true
-          - taxon: equestris_linnaeus_1758
-            new: true
-          - taxon: lævigata_linnaeus_1758
-            new: true
-          - taxon: planci_linnaeus_1758
-            new: true
-          - taxon: ophiura_linnaeus_1758
-            new: true
-          - taxon: pectinata_linnaeus_1758
-            new: true
-          - taxon: multiradiata_linnaeus_1758
-            new: true
-          - taxon: caput medusæ_linnaeus_1758
-            new: true
+            children:
+            - taxon: planci_linnaeus_1758
+              new: true
+            - taxon: ophiura_linnaeus_1758
+              new: true
+            - taxon: pectinata_linnaeus_1758
+              new: true
+            - taxon: multiradiata_linnaeus_1758
+              new: true
+            - taxon: caput medusæ_linnaeus_1758
+              new: true
         - taxon: echinus
           new: true
           children:
-          - taxon: esculentus_linnaeus_1758
+          - taxon: regulares
             new: true
-          - taxon: globulus_linnaeus_1758
+            children:
+            - taxon: esculentus_linnaeus_1758
+              new: true
+            - taxon: globulus_linnaeus_1758
+              new: true
+            - taxon: sphæroides_linnaeus_1758
+              new: true
+            - taxon: gratilla_linnaeus_1758
+              new: true
+            - taxon: lixula_linnaeus_1758
+              new: true
+            - taxon: saxatilis_linnaeus_1758
+              new: true
+            - taxon: diadema_linnaeus_1758
+              new: true
+            - taxon: cidaris_linnaeus_1758
+              new: true
+            - taxon: mamillatus_linnaeus_1758
+              new: true
+            - taxon: lucunter_linnaeus_1758
+              new: true
+            - taxon: atratus_linnaeus_1758
+              new: true
+          - taxon: irregulares
             new: true
-          - taxon: sphæroides_linnaeus_1758
-            new: true
-          - taxon: gratilla_linnaeus_1758
-            new: true
-          - taxon: lixula_linnaeus_1758
-            new: true
-          - taxon: saxatilis_linnaeus_1758
-            new: true
-          - taxon: diadema_linnaeus_1758
-            new: true
-          - taxon: cidaris_linnaeus_1758
-            new: true
-          - taxon: mamillatus_linnaeus_1758
-            new: true
-          - taxon: lucunter_linnaeus_1758
-            new: true
-          - taxon: atratus_linnaeus_1758
-            new: true
-          - taxon: spatagus_linnaeus_1758
-            new: true
-          - taxon: lacunosus_linnaeus_1758
-            new: true
-          - taxon: rosaceus_linnaeus_1758
-            new: true
-          - taxon: reticulatus_linnaeus_1758
-            new: true
-          - taxon: placenta_linnaeus_1758
-            new: true
-          - taxon: orbiculus_linnaeus_1758
-            new: true
+            children:
+            - taxon: spatagus_linnaeus_1758
+              new: true
+            - taxon: lacunosus_linnaeus_1758
+              new: true
+            - taxon: rosaceus_linnaeus_1758
+              new: true
+            - taxon: reticulatus_linnaeus_1758
+              new: true
+            - taxon: placenta_linnaeus_1758
+              new: true
+            - taxon: orbiculus_linnaeus_1758
+              new: true
       - taxon: testacea-order
         new: true
       - taxon: lithophyta
         new: true
       - taxon: zoophyta
         new: true
+1760a_linnaeus:
+  notes: Part I has only vertebrates and the high-level classification
+  taxonomies:
+  - taxon: animalia
+    children:
+    - taxon: mammalia
+    - taxon: aves
+    - taxon: amphibia_linnaeus_1758
+    - taxon: pisces
+    - taxon: insecta
+    - taxon: vermes
+1760b_linnaeus:
+  notes: Part II has invertebrates
+  taxonomies:
+  - taxon: animalia
+    children:
+    - taxon: insecta
+    - taxon: vermes
+      children:
+      - taxon: intestina-order
+      - taxon: mollusca-order
+        children:
+        - taxon: limax
+        - taxon: doris
+        - taxon: tethys
+        - taxon: nereis
+        - taxon: aphrodita
+        - taxon: lernaea
+        - taxon: priapus
+        - taxon: scyllaea
+        - taxon: holothuria_linnaeus_1758
+          children:
+          - taxon: physalis_linnaeus_1758
+          - taxon: thalia_linnaeus_1758
+          - taxon: caudata_linnaeus_1758
+          - taxon: denudata_linnaeus_1758
+        - taxon: triton
+        - taxon: sepia
+        - taxon: medusa
+        - taxon: asterias
+          children:
+          - taxon: integra
+            children:
+            - taxon: luna_linnaeus_1758
+          - taxon: stellatae
+            children:
+            - taxon: rubens_linnaeus_1758
+            - taxon: glacialis_linnaeus_1758
+            - taxon: reticulata_linnaeus_1758
+            - taxon: nodosa_linnaeus_1758
+            - taxon: aranciaca_linnaeus_1758
+            - taxon: equestris_linnaeus_1758
+            - taxon: laevigata_linnaeus_1758
+          - taxon: radiatae
+            children:
+            - taxon: planci_linnaeus_1758
+              notes: |
+                Relegated to the appendix.  Unclear if this is where accidental
+                omissions ended up or if it has other meaning.
+            - taxon: ophiura_linnaeus_1758
+            - taxon: pectinata_linnaeus_1758
+            - taxon: multiradiata_linnaeus_1758
+            - taxon: caput medusae_linnaeus_1758
+        - taxon: echinus
+          children:
+          - taxon: regulares
+            children:
+            - taxon: esculentus_linnaeus_1758
+            - taxon: globulus_linnaeus_1758
+            - taxon: sphaeroides_linnaeus_1758
+            - taxon: gratilla_linnaeus_1758
+            - taxon: lixula_linnaeus_1758
+            - taxon: saxatilis_linnaeus_1758
+            - taxon: diadema_linnaeus_1758
+            - taxon: cidaris_linnaeus_1758
+            - taxon: mamillatus_linnaeus_1758
+            - taxon: lucunter_linnaeus_1758
+            - taxon: atratus_linnaeus_1758
+          - taxon: irregulares
+            children:
+            - taxon: spatagus_linnaeus_1758
+            - taxon: lacunosus_linnaeus_1758
+            - taxon: rosaceus_linnaeus_1758
+            - taxon: reticulatus_linnaeus_1758
+            - taxon: placenta_linnaeus_1758
+            - taxon: orbiculus_linnaeus_1758
+      - taxon: testacea-order
+      - taxon: lithophyta
+      - taxon: zoophyta
+1766_linnaeus:
+  notes: Only the vertabrates are covered in detail in this part.
+  taxonomies:
+  - taxon: animalia
+    children:
+    - taxon: mammalia
+    - taxon: aves
+    - taxon: amphibia_linnaeus_1758
+    - taxon: pisces
+    - taxon: insecta
+    - taxon: vermes
+1767_gunnerus:
+  notes: |
+    Some confusion regarding date of this vs 12th ed. of Linnaeus.
+    Holothuria in the sense of sea cucumbers, as well as all of the
+    other names, are all new either here or in Linnaeus 12th edition,
+    depending on publication order.  The consensus seems to be to
+    credit frondosa to Gunnerus and everything else to Linnaeus, although
+    I cannot figure out why.  For that reason, the Holothuria here is
+    treated as Holothuria (Linnaeus 1767) instead of (Linnaeus 1758).
+  taxonomies:
+  - taxon: holothuria
+    children:
+    - taxon: frondosa_gunnerus_1767
+      new: true
+    - taxon: tremula_linnaeus_1767
+  - taxon: actinia
+    children:
+    - taxon: senilis_linnaeus_1767
+1767_linnaeus:
+  notes: Second part, covering only invertebrates.
+  taxonomies:
+  - taxon: animalia
+    children:
+    - taxon: insecta
+    - taxon: vermes
+      children:
+      - taxon: intestina-order
+      - taxon: mollusca-order
+        children:
+        - taxon: limax
+        - taxon: aplysia
+          new: true
+        - taxon: doris
+        - taxon: aphrodita
+        - taxon: nereis
+        - taxon: ascidia
+          new: true
+          children:
+          - taxon: papilliosum_linnaeus_1767
+            new: true
+          - taxon: gelatinosum_linnaeus_1767
+            new: true
+          - taxon: intestinalis_linnaeus_1767
+            new: true
+          - taxon: quadridentata_linnaeus_1767
+            new: true
+          - taxon: rustica_linnaeus_1767
+            new: true
+          - taxon: echinata_linnaeus_1767
+            new: true
+        - taxon: actinia
+          new: true
+        - taxon: tethis
+          notes: Not shown as separate in IRMNG, unlike Asteria/s
+          synonyms:
+          - taxon: tethys
+        - taxon: holothuria
+          new: true
+          children:
+          - taxon: frondosa_gunnerus_1767
+          - taxon: phantapus_linnaeus_1767
+            new: true
+          - taxon: tremula_linnaeus_1767
+            new: true
+          - taxon: physalis_linnaeus_1758
+          - taxon: thalia_linnaeus_1758
+          - taxon: caudata_linnaeus_1758
+          - taxon: denudata_linnaeus_1758
+          - taxon: pentactes_linnaeus_1767
+            new: true
+          - taxon: priapus_linnaeus_1767
+            new: true
+        - taxon: terebella
+          new: true
+        - taxon: triton
+        - taxon: lernæa
+        - taxon: scyllæa
+        - taxon: clio
+          new: true
+        - taxon: sepia
+        - taxon: medusa
+        - taxon: asteria
+          new: true
+          synonyms:
+          - taxon: asterias
+          children:
+          - taxon: integra
+            children:
+            - taxon: luna_linnaeus_1758
+          - taxon: stellatae
+            children:
+            - taxon: papposa_linnaeus_1767
+              new: true
+            - taxon: rubens_linnaeus_1758
+            - taxon: minuta_linnaeus_1761
+            - taxon: glacialis_linnaeus_1758
+            - taxon: reticulata_linnaeus_1758
+            - taxon: nodosa_linnaeus_1758
+            - taxon: aranciaca_linnaeus_1758
+            - taxon: equestris_linnaeus_1758
+            - taxon: laevigata_linnaeus_1758
+          - taxon: radiatae
+            children:
+            - taxon: ophiura_linnaeus_1758
+            - taxon: aculeata_linnaeus_1767 # non pennant_1777
+              new: true
+            - taxon: ciliaris_linnaeus_1767
+              new: true
+            - taxon: pectinata_linnaeus_1758
+            - taxon: multiradiata_linnaeus_1758
+            - taxon: caput medusae_linnaeus_1758
+        - taxon: echinus
+          children:
+          - taxon: regulares
+            children:
+            - taxon: esculentus_linnaeus_1758
+            - taxon: globulus_linnaeus_1758
+            - taxon: sphaeroides_linnaeus_1758
+            - taxon: gratilla_linnaeus_1758
+            - taxon: lixula_linnaeus_1758
+            - taxon: saxatilis_linnaeus_1758
+            - taxon: diadema_linnaeus_1758
+            - taxon: cidaris_linnaeus_1758
+            - taxon: mamillatus_linnaeus_1758
+            - taxon: lucunter_linnaeus_1758
+            - taxon: atratus_linnaeus_1758
+          - taxon: irregulares
+            children:
+            - taxon: spatagus_linnaeus_1758
+            - taxon: lacunosus_linnaeus_1758
+            - taxon: rosaceus_linnaeus_1758
+            - taxon: reticulatus_linnaeus_1758
+            - taxon: placenta_linnaeus_1758
+            - taxon: orbiculus_linnaeus_1758
+      - taxon: testacea-order
+      - taxon: lithophyta
+      - taxon: zoophyta
+1774_van phelsum:
+  notes: |
+    It's unclear if any species were defined.  Presumably yes for Echinocyamus
+    as the ICZN accepts it, but suppresses Echinoneus in favor of Leske (1778)
+    on the grounds of inconsistent binomial usage. But I can't make heads or
+    tails of the text, so just the genera are recorded here.
+  taxonomies:
+  - taxon: echinocyamus
+    new: true
+  - taxon: echinoneus_van phelsum_1774
+    new: true
 1778_klein:
   taxonomies:
   - taxon: echinodermata_klein_1778
     new: true
     notes: |
-      The intende rank is unclear.  It might have been Order, but the
+      The intended rank is unclear.  It might have been Order, but the
       subgroups were called Classes, although perhaps the ranks were not
       settled at the time.  Phylum seems unlikely, if it was even in use.
       No other taxa defined in this (reprinted from 1734) work are

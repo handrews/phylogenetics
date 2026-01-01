@@ -16,6 +16,75 @@
     year: 1758
   authors:
   - linnaeus
+  notes: URL is for a fascimily reprint from the 1800s
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/80764#page/3/mode/1up
+1760a_linnaeus:
+  book: systema-naturae-11th-ed
+  volume: 1
+  number: 1
+  pubDate:
+    year: 1760
+  authors:
+  - linnaeus
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/31224#page/5/mode/1up
+1760b_linnaeus:
+  book: systema-naturae-11th-ed
+  volume: 1
+  number: 2
+  pubDate:
+    year: 1760
+  authors:
+  - linnaeus
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/31242#page/7/mode/1up
+1766_linnaeus:
+  book: systema-naturae-12th-ed
+  volume: 1
+  number: 1
+  pubDate:
+    year: 1766
+  authors:
+  - linnaeus
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/137337#page/5/mode/1up
+1767_gunnerus:
+  title: Beskrifning på trenne Norrska sjö-kräk, sjö-pungar kallade
+  journal: konglinga
+  volume: 28
+  number: 2  # No clear number, but 1st issue Jan, Feb, Mar, this Apr, May, Jun
+  pages:
+  - 114
+  - 124
+  pubDate:
+    year: 1767
+    months:
+    - 4
+    - 5
+    - 6
+  authors:
+  - gunnerus
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/46723000
+1767_linnaeus:
+  book: systema-naturae-12th-ed
+  volume: 1
+  number: 2
+  pubDate:
+    year: 1767
+  authors:
+  - linnaeus
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/137240#page/5/mode/1up
+1774_van phelsum:
+  book: brief-we
+  pubDate:
+    year: 1774
+  authors:
+  - van phelsum
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/263054#page/5/mode/1up
 1778_klein:
   book: nat-disp-ech-1778
   seen: false
@@ -98,6 +167,14 @@
   - say
   identifiers:
     url: https://www.biodiversitylibrary.org/page/30962636
+1819_macleay:
+  book: horae
+  volume: 1
+  number: 1
+  pubDate:
+    year: 1819
+  authors:
+  - macleay
 1820_say:
   title: "Observation on some Species of Zoophytes, Shells, &c. principally Fossil (part 2)"
   journal: am-j-sci-arts
@@ -112,6 +189,14 @@
   - say
   identifiers:
     url: https://www.biodiversitylibrary.org/page/14905893
+1821_macleay:
+  book: horae
+  volume: 1
+  number: 2
+  pubDate:
+    year: 1821
+  authors:
+  - macleay
 1821_miller.j.s:
   book: nat-hist-crinoidea
   pubDate:

@@ -26,6 +26,8 @@ anteck:
   name: Anteckningar i Physik och Geognosi under resor uti Sverige och Norrige
 annual-ny:
   name: Annual Report of the New York State Museum of Natural History
+brief-we:
+  name: Brief aan den Wel-Eerwaardigen en zeer geleerden Heere Cornelius Nozeman
 breviora:
   name: Breviora
 bullamp:
@@ -84,6 +86,8 @@ geomag:
   name: Geological Magazine
 geo-soc-am-abs-prog:
   name: Geological Society of America, Abstracts With Programs
+horae:
+  name: Horae Entomologicae, or Essays on the annulose animals
 invertebrates:
   name: The Invertebrates
 jofacnatsci-philadelphia:
@@ -96,6 +100,8 @@ jofsystp:
   name: Journal of Systematic Palaeontology
 kansas:
   name: The University of Kansas Paleontological Contributions
+konglinga:
+  name: Kongliga Vetenskaps Academiens Handlingar
 lethaia:
   name: Lethaia
 mem-aust:
@@ -171,7 +177,11 @@ sp-pub-harvard:
 stamm:
   name: Stammesgeschichte der Pelmatozoen
 systema-naturae-10th-ed:
-  name: Systema Naturæ, Editio Decima
+  name: Systema Naturæ, Editio Decima, reformata
+systema-naturae-11th-ed:
+  name: Systema Naturae, Ad editionem decimam reformatam
+systema-naturae-12th-ed:
+  name: Systema Naturæ, Editio Duodecima, reformata
 tableau:
   name: Tableau Encyclopédique et Méthodique des Trois Règnes de la Nature. Contenant l’Helminthologie, ou les Vers Infusoires, les Vers Intestins, les Vers Mollusques
 tableau-cuvier:

@@ -253,6 +253,9 @@ grant:
 guensburg:
   family: Guensburg
   given: Thomas E.
+gunnerus:
+  family: Gunnerus
+  given: Johan Ernst
 guo.j:
   family: Guo
   given: Jin
@@ -392,6 +395,12 @@ linnaeus:
 longman:
   family: Longman
   given: H. A.
+macleay:
+  family: Macleay
+  given: William Sharp
+  birth: 1792
+  death: 1865
+  notes: Alternate spelling/capitalization McLeay
 mantell:
   family: Mantell
   given: Gideon
