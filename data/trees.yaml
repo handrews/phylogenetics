@@ -532,7 +532,41 @@
     - taxon: vermes
       children:
       - taxon: infusoria-order
+        children:
+        - openTaxon: infusoria-unnamed-section-1_müller.o.f_1776
+          children:
+          - taxon: monas
+          - taxon: volvox
+        - taxon: opacæ
+          children:
+          - taxon: echelis
+        - taxon: gelatinofi
+          children:
+          - taxon: vibrio
+          - taxon: cyclidium
+          - taxon: paramæcium
+          - taxon: kolpoda
+          - taxon: gonium
+          - taxon: bursaria
+        - taxon: teretes
+          children:
+          - taxon: cercaria
+        - taxon: caudatæ
+          children:
+          - taxon: trichoda
+        - openTaxon: infusoria-unnamed-section-2_müller.o.f_1776
+          children:
+          - taxon: vorticella
+          - taxon: brachionus
       - taxon: helminthica-order
+        children:
+        - taxon: helminthica-unnamed-section-1_müller.o.f_1776
+          - taxon: gordius
+          - taxon: ascaris
+          - taxon: echinorynchus
+        - taxon: lumbricus
+        - taxon: amphitrite
+        - taxon: neries
       - taxon: mollusca-order
         children:
         - taxon: planaria
@@ -652,7 +686,7 @@
             children:
             - taxon: rosea_müller.o.f_1776
               new: true
-            - taxon: glacialis_linnaeus_1767
+            - taxon: glacialis_linnaeus_1758
             - taxon: pertusa_müller.o.f_1776
               new: true
             - taxon: ophiura_linnaeus_1758
