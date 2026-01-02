@@ -182,6 +182,8 @@ systema-naturae-11th-ed:
   name: Systema Naturae, Ad editionem decimam reformatam
 systema-naturae-12th-ed:
   name: Systema Naturæ, Editio Duodecima, reformata
+systeme-sans-vertebres:
+  name: Systéme des Animaux sans Vertèbres
 tableau:
   name: Tableau Encyclopédique et Méthodique des Trois Règnes de la Nature. Contenant l’Helminthologie, ou les Vers Infusoires, les Vers Intestins, les Vers Mollusques
 tableau-cuvier:
@@ -210,3 +212,5 @@ uber-den-bau:
   name: Über den Bau der Echinodermen
 vestnik:
   name: Věstník Ústředního ústavu geologického
+zoo-dan:
+  name: Zoologiæ Danicæ prodromus, seu animalium Daniæ et Norvegiæ indigenarum characteres, nomina, et synonyma imprimis popularium

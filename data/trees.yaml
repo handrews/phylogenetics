@@ -18,6 +18,26 @@
       children:
       - taxon: intestina-order
         new: true
+        children:
+        - taxon: gordius
+          new: true
+        - taxon: furia
+          new: true
+        - taxon: lumbricus
+          new: true
+        - taxon: ascaris
+          new: true
+        - taxon: fasciola
+          new: true
+        - taxon: hirudo
+          new: true
+        - taxon: myxine
+          new: true
+          children:
+          - taxon: glutinosa_linnaeus_1758
+            new: true
+        - taxon: teredo
+          new: true
       - taxon: mollusca-order
         new: true
         children:
@@ -137,10 +157,121 @@
               new: true
       - taxon: testacea-order
         new: true
+        children:
+        - openTaxon: testacea-unnamed-section-1_linnaeus_1758
+          notes: Multivalvia
+          children:
+          - taxon: chiton
+            new: true
+          - taxon: lepas
+            new: true
+        - taxon: conchæ
+          new: true
+          notes: Bivalvia
+          children:
+          - taxon: pholas
+            new: true
+          - taxon: mya
+            new: true
+          - taxon: solen
+            new: true
+          - taxon: tellina
+            new: true
+          - taxon: cardium
+            new: true
+          - taxon: donax
+            new: true
+          - taxon: venus
+            new: true
+          - taxon: spondylus
+            new: true
+          - taxon: chama
+            new: true
+          - taxon: arca
+            new: true
+          - taxon: ostrea
+            new: true
+          - taxon: anomia
+            new: true
+          - taxon: mytilus
+            new: true
+          - taxon: pinna
+            new: true
+        - taxon: cochleæ
+          new: true
+          notes: Univalvia
+          children:
+          - taxon: argonauta
+            new: true
+          - taxon: nautilus
+            new: true
+          - taxon: conus
+            new: true
+          - taxon: cypræa
+            new: true
+          - taxon: bulla
+            new: true
+          - taxon: voluta
+            new: true
+          - taxon: buccinum
+            new: true
+          - taxon: strombus
+            new: true
+          - taxon: murex
+            new: true
+          - taxon: trochus
+            new: true
+          - taxon: turbo
+            new: true
+          - taxon: helix
+            new: true
+          - taxon: nerita
+            new: true
+          - taxon: haliotis
+            new: true
+        - openTaxon: testacea-unnamed-section-2_linnaeus_1758
+          notes: Univalvia absque spira regulari
+          children:
+          - taxon: patella
+            new: true
+          - taxon: dentalium
+            new: true
+          - taxon: serpula
+            new: true
       - taxon: lithophyta
         new: true
+        children:
+        - taxon: tubipora
+          new: true
+        - taxon: millepora
+          new: true
+        - taxon: madrepora
+          new: true
       - taxon: zoophyta
         new: true
+        children:
+        - taxon: isis
+          new: true
+        - taxon: gorgonia
+          new: true
+        - taxon: alcyonium
+          new: true
+        - taxon: tubularia
+          new: true
+        - taxon: eschara
+          new: true
+        - taxon: corallina
+          new: true
+        - taxon: sertularia
+          new: true
+        - taxon: hydra
+          new: true
+        - taxon: pennatula
+          new: true
+        - taxon: tænia
+          new: true
+        - taxon: volvox
+          new: true
 1760a_linnaeus:
   notes: Part I has only vertebrates and the high-level classification
   taxonomies:
@@ -389,6 +520,205 @@
     new: true
   - taxon: echinoneus_van phelsum_1774
     new: true
+1776_müller.o.f:
+  taxonomies:
+  - taxon: animalia
+    children:
+    - taxon: mammalia
+    - taxon: aves
+    - taxon: amphibia_linnaeus_1758
+    - taxon: pisces
+    - taxon: insecta
+    - taxon: vermes
+      children:
+      - taxon: infusoria-order
+      - taxon: helminthica-order
+      - taxon: mollusca-order
+        children:
+        - taxon: planaria
+        - taxon: fasciola
+        - taxon: mammaria
+        - taxon: ascidia
+          children:
+          - taxon: rustica_linnaeus_1767
+          - taxon: quadridentata_linnaeus_1767
+          - taxon: echinata_linnaeus_1767
+          - taxon: gelatina_müller.o.f_1776
+            new: true
+          - taxon: mentula_müller.o.f_1776
+            new: true
+          - taxon: crystallina_müller.o.f_1776
+            new: true
+          - taxon: scabra_müller.o.f_1776
+            new: true
+          - taxon: conchilega_müller.o.f_1776
+            new: true
+          - taxon: aspersa_müller.o.f_1776
+            new: true
+          - taxon: patula_müller.o.f_1776
+            new: true
+          - taxon: prunum_müller.o.f_1776
+            new: true
+          - taxon: octodentata_gunnerus_1770
+          - taxon: virgenea_müller.o.f_1776
+            new: true
+          - taxon: intestinalis_linnaeus_1767
+          - taxon: canina_müller.o.f_1776
+            new: true
+          - taxon: corrugata_müller.o.f_1776
+            new: true
+          - taxon: venosa_müller.o.f_1776
+            new: true
+          - taxon: parallelogramma_müller.o.f_1776
+            new: true
+          - taxon: lepadiformis_müller.o.f_1776
+            new: true
+          - taxon: patelliformis_müller.o.f_1776
+            new: true
+          - taxon: clavata_müller.o.f_1776
+            new: true
+        - taxon: lobaria
+        - taxon: clio
+        - taxon: lernæa
+        - taxon: lucernaria
+        - taxon: myxine
+          children:
+          - taxon: glutinosa_linnaeus_1758
+        - taxon: limax
+        - taxon: doris
+        - taxon: pedicellaria
+        - taxon: hydra
+        - taxon: actnia
+        - taxon: holothuria
+          children:
+          - taxon: frondosa_gunnerus_1767
+          - taxon: phantapus_linnaeus_1767
+          - taxon: elegans_müller.o.f_1776
+            new: true
+            synonyms:
+            - taxon: tremula_linnaeus_1767
+          - taxon: denudata_linnaeus_1758
+            provisional: true
+          - taxon: pentates_linnaeus_1767
+          - taxon: priapus_linnaeus_1767
+          - taxon: penicillus_müller.o.f_1776
+            new: true
+          - taxon: fusus_müller.o.f_1776
+            new: true
+          - taxon: squamata_müller.o.f_1776
+            new: true
+          - taxon: inhærens_müller.o.f_1776
+            new: true
+          # Cannot find a reference for this at all.
+          # - taxon: lagenam_
+          #   provisional: true
+          #   notes: Not italicized, noted "Hardly Holothuria, rather Ascidia?"
+        - taxon: sepia
+        - taxon: beroe
+          new: true
+          children:
+          - taxon: infundibulum_müller.o.f_1776
+            new: true
+            synonyms:
+            - taxon: beroe_linnaeus_1758
+              parents:
+              - taxon: volvox
+        - taxon: medusa
+        - taxon: asterias
+          children:
+          - taxon: lunatæ
+            new: true
+            notes: Not entirely clear if this is really new.
+            children:
+            - taxon: equestris_linnaeus_1758
+            - taxon: pulvillis_müller.o.f_1776
+              new: true
+            - taxon: militaris_müller.o.f_1776
+              new: true
+          - taxon: stellatæ
+            children:
+            - taxon: phrygiana_
+            - taxon: rubens_linnaeus_1758
+            - taxon: aranciaca_linnaeus_1758
+            - taxon: papposa_linnaeus_1767
+            - taxon: aspera_müller.o.f_1776
+              new: true
+            - taxon: perforata_müller.o.f_1776
+              new: true
+            - taxon: minuta_linnaeus_1761
+            - taxon: sanguinolenta_müller.o.f_1776
+              new: true
+          - taxon: radiatæ
+            children:
+            - taxon: rosea_müller.o.f_1776
+              new: true
+            - taxon: glacialis_linnaeus_1767
+            - taxon: pertusa_müller.o.f_1776
+              new: true
+            - taxon: ophiura_linnaeus_1758
+            - taxon: aculeata_linnaeus_1767
+            - taxon: ciliata_müller.o.f_1776
+              new: true
+            - taxon: filiformis_müller.o.f_1776
+              new: true
+            - taxon: caput medusæ_linnaeus_1758
+      - taxon: testacea-order
+        children:
+        - taxon: echinus
+          children:
+          - taxon: sphæra_müller.o.f_1776
+            new: true
+          - taxon: dröbachiensis_müller.o.f_1776
+            new: true
+          - taxon: saxatilis_linnaeus_1758
+          # No information can be found about the following taxon.
+          # - taxon: spinis obtusis_
+          #   notes: Not italicized, dubious?
+        - taxon: spatagus
+          new: true
+          children:
+          - taxon: flavescens_müller.o.f_1776
+            new: true
+          - taxon: purpureus_müller.o.f_1776
+            new: true
+          - taxon: pusillus_müller.o.f_1776
+            new: true
+        - taxon: dentalium
+        - taxon: serpula
+        - taxon: ancylus
+        - taxon: patella
+        - taxon: haliotis
+        - taxon: argonauta
+        - taxon: planorbis
+        - taxon: valvata
+        - taxon: helix
+        - taxon: vertigo
+        - taxon: carychium
+        - taxon: akera
+        - taxon: bulla
+        - taxon: trochus
+        - taxon: turbo
+        - taxon: buccinum
+        - taxon: tritonium
+        - taxon: nerita
+        - taxon: solen
+        - taxon: mya
+        - taxon: tellina
+        - taxon: cardium
+        - taxon: mactra
+        - taxon: donax
+        - taxon: venus
+        - taxon: chama
+        - taxon: arca
+        - taxon: ostrea
+        - taxon: pecten
+        - taxon: anomia
+        - taxon: terebratula
+        - taxon: mytilus
+        - taxon: chiton
+        - taxon: lepas
+        - taxon: pholas
+      - taxon: cellulana-order
 1778_klein:
   taxonomies:
   - taxon: echinodermata_klein_1778
@@ -451,6 +781,152 @@
       - taxon: echinus
     - taxon: testacea-order
     - taxon: zoophyta
+# 1798a_cuvier:
+#   taxonomies:
+#   - taxon: animalia
+#     notes: des animaux
+#     children:
+#     - taxon: mammalia
+#       notes: des mammifères
+#     - taxon: aves
+#       notes: des oiseaux
+#     - taxon: amphibia_linnaeus_1758
+#       notes: des reptiles, explicitly synnonomized with Linnaeus's Amphibia
+#     - taxon: pisces
+#       notes: des poissons
+#     - taxon: mollusca-class
+#       notes: des mollusques
+#     - taxon: insecta
+#       notes: des insectes
+#     - taxon: vermes
+#       notes: des vers
+#       children:
+#       - notes: |
+#           VERS pourvus d’épines ou de soies pour s’aider dans leurs mouvemens.
+#           (Worms equipped with spines or bristles to assist them in their
+#           movements.)
+#         children:
+#         - taxon: aphrodita
+#           notes: I
+#         - taxon: terebella
+#           notes: II
+#         - taxon: amphitrite
+#           notes: III
+#         - taxon: serpula
+#           notes: IV
+#         - taxon: penicillus # Linn. Serpula penicillata
+#         - taxon: dentalium
+#           notes: V
+#         - taxon: nereis
+#           notes: VI
+#         - taxon: nais
+#           notes: VII
+#         - taxon: lumbricus
+#           notes: VIII
+#         - taxon: furia
+#           notes: IX
+#         - taxon: hirudo
+#           notes: X
+#         - taxon: planaria
+#           notes: XI
+#       - taxon: intestina
+#         children:
+#         - taxon: fasciola
+#           notes: XII
+#         - taxon: ligula
+#         - taxon: lenguatula
+#         - taxon: tænia
+#           notes: XIII
+#         - taxon: ascaris
+#           notes: XIV
+#         - taxon: trichocephalus
+#         - taxon: echinorhynichus
+#         - taxon: hæruca
+#         - taxon: strongylus
+#         - taxon: uncinaria
+#         - taxon: proboscidea
+#         - taxon: cucullanus
+#         - taxon: scollex
+#         - taxon: caryophyllæus
+#         - taxon: gordius
+#           notes: XV
+#     - taxon: zoophyta
+#       notes: des zoophytes
+#       children:
+#       - taxon: echinodermata-order
+#         notes: |
+#           Chapter II, Des Zoophytes qui ont une enveloppe cortace ou calcaire,
+#           un organe respiratoire intérieur distinct,etsouvent despieds
+#           rétracuiles nombreux; ou des ÉCHINODERMES.
+#           (These are zoophytes that have a leathery or calcareous outer 
+#           overing, a distinct internal respiratory organ, and often numerous
+#           retractable feet; or Echinoderms.)
+#         children:
+#         - taxon: holothuria
+#           notes: I les holothuries
+#           children:
+#           - taxon: timide_
+#             synonyms:
+#             - taxon: tubulosa_linnaeus_
+#           - taxon: pentacta_
+#         - taxon: asterias
+#           notes: II les astéries
+#           children:
+#           - taxon: rubens_linnaeus_1758
+#           - taxon: caput medusæ_linnaeus_1758
+#           - taxon: membranacea_
+#           - taxon: papposa_linnaeus_1767
+#         - taxon: echinus
+#           notes: III les oursins
+#           children:
+#           - notes: les oursins (again)
+#             children:
+#             - taxon: esculentus_linnaeus_1758
+#             - taxon: cidaris_linnaeus_1758
+#             - taxon: atratus_linnaeus_1758
+#             - taxon: rosaceus_linnaeus_1758
+#             - taxon: hexaporus_
+#           - notes: les spatagues
+#             children:
+#             - taxon: lacunosus_linnaeus_1758
+#       - notes: |
+#           Chapter III, Des Zoophytes mous dans lesquels on ne voit point
+#           d’organe respiratoire, et qui n’ont point de pieds rérraciiles.
+#           (Soft zoophytes in which no respiratory organs are visible,
+#           and which have no retractable feet.)
+#         children:
+#         - notes: |
+#             A. Les grands, dans lesquels on apperçoit des fibres et des
+#             intestins, vulgairement ORTIES DE MER.
+#             (The larger ones, in which fibers and intestines can be seen,
+#             commonly known as SEA NETTLES.)
+#           children:
+#           - taxon: medusa
+#             notes: I les méduses
+#           - taxon: beroe
+#             synonyms:
+#             - taxon: pileus_müller.o.f_1776
+#           - taxon: actinia
+#         - notes: |
+#             B. Ceux qui n’ont qu’un corps gelatineux, sans orgurisaiton
+#             apparente, et croissent par bourgeons, vulgairement POLYPES.
+#             (Those that have only a gelatinous body, without any apparent
+#             organization, and grow by budding, are commonly called POLYPS.)
+#           children:
+#           - taxon: hydra
+#           - taxon: botryllus
+#           - taxon: corine
+#           - taxon: cristatella
+#           - taxon: vorticella
+#         - taxon: infusoria-order
+#           notes: |
+#             Les trèspetits isolés, appelés vulgairement ANIMAUX INFUSOIRES.
+#             (These very small, isolated organisms are commonly called
+#             INFUSORIAL ANIMALS.)
+#           children:
+#           - taxon: rotifer
+#           - taxon: brachionus
+#           # TODO: FINISH!
 1820_say:
   taxonomies:
   - taxon: pentacrinus

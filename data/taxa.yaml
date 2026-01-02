@@ -163,6 +163,10 @@ alanisicystis:
 alanisicystis-subgenus:
   rank: subgenus
   altRankOf: alanisicystis
+alcyonium:
+  name: Alcyonium
+  authority:
+    source: 1758_linnaeus
 alphacrinus:
   name: Alphacrinus
   auth: [guensburg]
@@ -262,6 +266,10 @@ anglidiscus:
   name: Anglidiscus
   auth: [regnéll]
   year: 1950
+anomia:
+  name: Anomia
+  authority:
+    source: 1758_linnaeus
 angulatus_conrad_1842:
   name: angulatus
   auth: [Conrad]
@@ -366,6 +374,10 @@ arbucklecystis:
   in: [parsley]
   year: 1982
   notes: in 1982a_parsley
+arca:
+  name: Arca
+  authority:
+    source: 1758_linnaeus
 archaeocothurnis:
   name: Archaeocothurnis
   authority:
@@ -403,6 +415,10 @@ argodiscus:
   name: Argodiscus
   auth: [Prokop]
   year: 1965
+argonauta:
+  name: Argonauta
+  authority:
+    source: 1758_linnaeus
 aristocystitida-superfamily:
   name: Aristocystitida
   rank: Superfamily
@@ -462,6 +478,10 @@ articulata-division:
   rank: Division
   authority:
     source: 1821_miller.j.s
+ascaris:
+  name: Ascaris
+  authority:
+    source: 1758_linnaeus
 ascidia:
   name: Ascidia
   authority:
@@ -909,6 +929,10 @@ broweri_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler_2020:
   name: broweri
   auth: [Guensburg, sprinkle, Mooi, Lefebvre, David, Roux, Derstler]
   year: 2020
+buccinum:
+  name: Buccinum
+  authority:
+    source: 1758_linnaeus
 buchianus_forbes_1848:
   name: buchianus
   authority:
@@ -917,6 +941,10 @@ buckleyi_kolata_1975:
   name: buckleyi
   authority:
     source: 1975_kolata
+bulla:
+  name: Bulla
+  authority:
+    source: 1758_linnaeus
 buttsi_clarke_1901:
   name: buttsi
   auth: [Clarke]
@@ -1080,6 +1108,10 @@ cardiocystites:
   name: Cardiocystites
   auth: [barrande]
   year: 1887
+cardium:
+  name: Cardium
+  authority:
+    source: 1758_linnaeus
 carnensis_foerste_1914:
   name: carnensis
   auth: [foerste]
@@ -1169,6 +1201,10 @@ ceratocystis:
   name: Ceratocystis
   auth: [jaekel]
   year: 1901
+chama:
+  name: Chama
+  authority:
+    source: 1758_linnaeus
 chapmani_raymond_1915:
   name: chapmani
   auth: [Raymond]
@@ -1279,6 +1315,10 @@ chinensis_zhao.y.l_sumrall_parsley_peng.j_2010:
   name: chinensis
   auth: [zhao.y.l, sumrall, parsley, peng.j]
   year: 2010
+chiton:
+  name: Chiton
+  authority:
+    source: 1758_linnaeus
 cincta-class:
   name: Cincta
   rank: Class
@@ -1323,6 +1363,11 @@ coadunata:
   rank: Division
   authority:
     source: 1821_miller.j.s
+cochleæ:
+  name: Cochleæ
+  rank: section
+  authority:
+    source: 1758_linnaeus
 codyensis_sumrall_sprinkle_guensburg_1997:
   name: codyensis
   authority:
@@ -1390,6 +1435,11 @@ concentricus_frest_2005:
   name: concentricus
   authority:
     source: 2005_frest
+conchæ:
+  name: Conchæ
+  rank: section
+  authority:
+    source: 1758_linnaeus
 confertus_barrande_1887:
   name: confertus
   auth: [barrande]
@@ -1424,6 +1474,10 @@ conulus:
     source: 1778_leske
     ex:
       source: 1734_klein
+conus:
+  name: Conus
+  authority:
+    source: 1758_linnaeus
 cooki_sprinkle_1982:
   name: cooki
   authority:
@@ -1436,6 +1490,10 @@ coopericystis:
   name: Coopericystis
   auth: [parsley]
   year: 1970
+corallina:
+  name: Corallina
+  authority:
+    source: 1758_linnaeus
 corallum_jaekel_1918:
   name: corallum
   auth: [jaekel]
@@ -1758,6 +1816,10 @@ cylindricum_aurivillius_1892:
   name: cylindricum
   auth: [Aurivillius]
   year: 1892
+cypræa:
+  name: Cypræa
+  authority:
+    source: 1758_linnaeus
 cystaster:
   name: Cystaster
   auth: [Hall]
@@ -1953,6 +2015,10 @@ dendrocystitidae:
   rank: Family
   auth: [bassler]
   year: 1938
+dentalium:
+  name: Dentalium
+  authority:
+    source: 1758_linnaeus
 denudata_linnaeus_1758:
   name: denudata
   authority:
@@ -2101,6 +2167,10 @@ dockeryi_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley_1987:
   name: dockeryi
   authority:
     source: 1987_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley
+donax:
+  name: Donax
+  authority:
+    source: 1758_linnaeus
 doris:
   name: Doris
   authority:
@@ -2705,6 +2775,10 @@ erinocystis-sp_paul.c.r.c_1968:
   rank: species
   authority:
     source: 1968b_paul.c.r.c
+eschara:
+  name: Eschara
+  authority:
+    source: 1758_linnaeus
 esculentus_linnaeus_1758:
   name: esculentus
   authority:
@@ -2779,6 +2853,10 @@ fanulodiscus:
   name: Fanulodiscus
   authority:
     source: 1994_guensburg_sprinkle
+fasciola:
+  name: Fasciola
+  authority:
+    source: 1758_linnaeus
 fayi_sprinkle_1973:
   name: fayi
   authority:
@@ -2879,6 +2957,10 @@ frondosa_gunnerus_1767:
   name: frondosa
   authority:
     source: 1767_gunnerus
+furia:
+  name: Furia
+  authority:
+    source: 1758_linnaeus
 furcillatus_billings.w.r_1887:
   name: furcillatus
   authority:
@@ -3010,6 +3092,10 @@ globus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999:
   notes: nomen nudum
   authority:
     source: 1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y
+glutinosa_linnaeus_1758:
+  name: glutinosa
+  authority:
+    source: 1758_linnaeus
 glyptocrinidae:
   name: Glyptocrinidae
   rank: Family
@@ -3171,6 +3257,14 @@ gonocrinites:
   name: Gonocrinites
   auth: [Eichwald]
   year: 1840
+gordius:
+  name: Gordius
+  authority:
+    source: 1758_linnaeus
+gorgonia:
+  name: Gorgonia
+  authority:
+    source: 1758_linnaeus
 goshutensis_sumrall_sprinkle_guensburg_1997:
   name: goshutensis
   authority:
@@ -3297,6 +3391,10 @@ haimacystis:
   name: Haimacystis
   authority:
     source: 2001_sumrall_sprinkle_guensburg
+haliotis:
+  name: Haliotis
+  authority:
+    source: 1758_linnaeus
 halli_billings_1858:
   name: halli
   auth: [billings]
@@ -3417,6 +3515,10 @@ helicoplacus-sp_durham_caster_1966:
   rank: species
   authority:
     source: 1966_durham_caster
+helix:
+  name: Helix
+  authority:
+    source: 1758_linnaeus
 hemicosmites:
   name: Hemicosmites
   auth: [Buch]
@@ -3553,6 +3655,10 @@ hintzei_guensburg_sprinkle_1994:
   name: hintzei
   authority:
     source: 1994_guensburg_sprinkle
+hirudo:
+  name: Hirudo
+  authority:
+    source: 1758_linnaeus
 hispanica_müller.p_hahn_2010:
   name: hispanica
   authority:
@@ -3685,6 +3791,10 @@ hybolopus_fraunfelter_utgaard_1970:
   name: hybolopus
   auth: [Fraunfelter, Utgaard]
   year: 1970
+hydra:
+  name: Hydra
+  authority:
+    source: 1758_linnaeus
 hypanthocrinites:
   name: Hypanthocrinites
   authority:
@@ -3814,6 +3924,10 @@ iowacystis:
 irregulares:
   name: Irregulares
   rank: section
+  authority:
+    source: 1758_linnaeus
+isis:
+  name: Isis
   authority:
     source: 1758_linnaeus
 isorophida:
@@ -4139,6 +4253,10 @@ lepadocystis:
   name: Lepadocystis
   auth: [Carpenter]
   year: 1891
+lepas:
+  name: Lepas
+  authority:
+    source: 1758_linnaeus
 lepidoconia:
   name: Lepidoconia
   auth: [Wilson]
@@ -4334,10 +4452,22 @@ lukei_bell.b.m_petersen.m.s_1976:
   name: lukei
   auth: [bell.b.m, petersen.m.s]
   year: 1976
+lumbricus:
+  name: Lumbricus
+  authority:
+    source: 1758_linnaeus
 luna_linnaeus_1758:
   name: luna
   authority:
     source: 1758_linnaeus
+lunatæ:
+  name: Lunatæ
+  rank: section
+  authority:
+    source: 1776_müller.o.f
+  notes: |
+    Unclear if this is truly new in the given paper, or if it should
+    be treated as a nomen transl. of the species luna (Linn. 1785).
 lyracystidae:
   name: Lyracystidae
   rank: Family
@@ -4366,6 +4496,10 @@ macrocystellidae:
   rank: Family
   auth: [bather]
   year: 1899
+madrepora:
+  name: Madrepora
+  authority:
+    source: 1758_linnaeus
 magister_bassler_1936:
   name: magister
   authority:
@@ -4503,6 +4637,10 @@ metazoa-grade:
   rank: Grade
   auth: [haeckel]
   year: 1874
+millepora:
+  name: Millepora
+  authority:
+    source: 1758_linnaeus
 milesia_paradoxididae:
   name: Milesia
   auth: [Chapman]
@@ -4572,6 +4710,9 @@ mollusca:
   rank: Phylum
   authority:
     source: 1758_linnaeus
+mollusca-class:
+  rank: Class
+  altRankOf: mollusca
 mollusca-order:
   rank: Order
   altRankOf: mollusca
@@ -4664,14 +4805,30 @@ munitus_forbes_1848:
   name: munitus
   authority:
     source: 1848b_forbes
+murex:
+  name: Murex
+  authority:
+    source: 1758_linnaeus
 murphyi_sumrall_garbisch_pope_2000:
   name: murphyi
   auth: [sumrall, Garbisch, Pope]
   year: 2000
+mya:
+  name: Mya
+  authority:
+    source: 1758_linnaeus
 myeinocystites:
   name: Myeinocystites
   auth: [strimple]
   year: 1953
+mytilus:
+  name: Mytilus
+  authority:
+    source: 1758_linnaeus
+myxine:
+  name: Myxine
+  authority:
+    source: 1758_linnaeus
 ###################### N
 nacoensis_sumrall_1992:
   name: nacoensis
@@ -4685,6 +4842,10 @@ natus_strimple_1953:
   name: natus
   auth: [strimple]
   year: 1953
+nautilus:
+  name: Nautilus
+  authority:
+    source: 1758_linnaeus
 navicula_whitehouse_1941:
   name: navicula
   authority:
@@ -4724,6 +4885,10 @@ neorhipidocystis:
   year: 1989
 nereis:
   name: Nereis
+  authority:
+    source: 1758_linnaeus
+nerita:
+  name: Nerita
   authority:
     source: 1758_linnaeus
 nevadensis_sprinkle_1973:
@@ -4879,6 +5044,10 @@ osculocystis:
   name: Osculocystis
   auth: [paul.c.r.c]
   year: 1967  # Not the current 1967_paul.c.r.c
+ostrea:
+  name: Ostrea
+  authority:
+    source: 1758_linnaeus
 ottawaensis_whiteaves_1897:
   name: ottawaensis
   auth: [Whiteaves]
@@ -5042,6 +5211,10 @@ parvus_bassler_1936:
   name: parvus
   authority:
     source: 1936_bassler
+patella:
+  name: Patella
+  authority:
+    source: 1758_linnaeus
 paulianus_bassler_1936:
   name: paulianus
   authority:
@@ -5085,6 +5258,10 @@ pembrocystis:
   name: Pembrocystis
   auth: [domínguez alonso]
   year: 1999
+pennatula:
+  name: Pennatula
+  authority:
+    source: 1758_linnaeus
 pentacrinites:
   name: Pentacrinites
   auth: [Blumenbach]
@@ -5171,6 +5348,10 @@ phantapus_linnaeus_1767:
   name: phantapus
   authority:
     source: 1767_linnaeus
+pholas:
+  name: Pholas
+  authority:
+    source: 1758_linnaeus
 phyllocystidae:
   name: Phyllocystidae
   rank: Family
@@ -5187,6 +5368,10 @@ pilea_hall_1866:
 pileus_hall_1866:
   name: pileus
   altSpellingOf: pilea_hall_1866
+pinna:
+  name: Pinna
+  authority:
+    source: 1758_linnaeus
 piojoensis_sumrall_heredia_rodríguez.c.m_mestre_2013:
   name: piojoensis
   authority:
@@ -6113,6 +6298,14 @@ septentrionallis_regnéll_1945:
   name: septentrionallis
   auth: [regnéll]
   year: 1945
+serpula:
+  name: Serpula
+  authority:
+    source: 1758_linnaeus
+sertularia:
+  name: Sertularia
+  authority:
+    source: 1758_linnaeus
 shideleri_bassler_1936:
   name: shideleri
   authority:
@@ -6159,6 +6352,10 @@ solemni_kolata_1975:
   name: solemni
   authority:
     source: 1975_kolata
+solen:
+  name: Solen
+  authority:
+    source: 1758_linnaeus
 soluta-class:
   name: Soluta
   rank: Class
@@ -6273,6 +6470,10 @@ solitarius_bell.b.m_1974:
   name: solitarius
   authority:
     source: 1974_bell.b.m
+spondylus:
+  name: Spondylus
+  authority:
+    source: 1758_linnaeus
 sporranoides_rahman_stewart_zamora_2015:
   name: sporranoides
   auth: [rahman, stewart, zamora]
@@ -6458,6 +6659,10 @@ stromatocystites-sp_ubaghs_1999:
   rank: species
   authority:
     source: 1999_ubaghs
+strombus:
+  name: Strombus
+  authority:
+    source: 1758_linnaeus
 stylastritæ:
   name: Stylastritæ
   auth: [martin.w]
@@ -6538,6 +6743,10 @@ tanaocystis:
   name: Tanaocystis
   authority:
     source: 1982g_sprinkle
+tænia:
+  name: Tænia
+  authority:
+    source: 1758_linnaeus
 tarri_strimple_1938:
   name: tarri
   auth: [strimple]
@@ -6554,6 +6763,10 @@ taunicus_rösler_1953:
   name: taunicus
   auth: [Rösler]
   year: 1953
+tellina:
+  name: Tellina
+  authority:
+    source: 1758_linnaeus
 templetonensis_chapman_1929:
   name: templetonensis
   auth: [Chapman]
@@ -6582,9 +6795,23 @@ terebella:
   name: Terebella
   authority:
     source: 1767_linnaeus
+teredo:
+  name: Teredo
+  authority:
+    source: 1758_linnaeus
 testacea-order:
   name: Testacea
   rank: Order
+  authority:
+    source: 1758_linnaeus
+testacea-unnamed-section-1_linnaeus_1758:
+  name: null
+  rank: section
+  authority:
+    source: 1758_linnaeus
+testacea-unnamed-section-2_linnaeus_1758:
+  name: null
+  rank: section
   authority:
     source: 1758_linnaeus
 testudinarius_hisinger_1837:
@@ -6781,6 +7008,10 @@ trochocystites:
   notes: |
     Nomen nudum, used (or re-defined?) for T. cannati, which is actually
     an edrioasteroide, Cambraser cannati.
+trochus:
+  name: Trochus
+  authority:
+    source: 1758_linnaeus
 tuberculatus_miller.j.s_1821_pentacrinites:
   name: tuberculatus
   originalParent: pentacrinites
@@ -6796,6 +7027,14 @@ tuberculatus_miller.j.s_1821_cyathocrinites:
   originalParent: cyathocrinites
   authority:
     source: 1821_miller.j.s
+tubipora:
+  name: Tubipora
+  authority:
+    source: 1758_linnaeus
+tubularia:
+  name: Tubularia
+  authority:
+    source: 1758_linnaeus
 turbanicystidae:
   name: Turbanicystidae
   rank: Family
@@ -6805,6 +7044,10 @@ turbanicystis:
   name: Turbanicystis
   authority:
     source: 2010_parsley_zhao.y.l
+turbo:
+  name: Turbo
+  authority:
+    source: 1758_linnaeus
 turgidacystis:
   name: Turgidacystis
   auth: [parsley, sumrall]
@@ -6914,6 +7157,10 @@ velatus_barrande_1887:
   name: velatus
   auth: [barrande]
   year: 1887
+venus:
+  name: Venus
+  authority:
+    source: 1758_linnaeus
 vermes:
   name: Vermes
   rank: Class
@@ -6955,6 +7202,14 @@ volborthi_hecker_1939:
   name: volborthi
   auth: [Hecker]
   year: 1939
+voluta:
+  name: Voluta
+  authority:
+    source: 1758_linnaeus
+volvox:
+  name: Volvox
+  authority:
+    source: 1758_linnaeus
 vorticellata_hall_1866:
   name: vorticellata
   auth: [Hall]

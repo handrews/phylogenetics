@@ -297,11 +297,16 @@ class Taxon:
     ida_exceptions = \
       ida_subclasses | ida_parvclasses | ida_suborders | ida_superfamilies
 
-    ina_genera = frozenset({'Craterina', 'Palasterina'})
+    ina_exceptions = frozenset({
+      'Corallina',
+      'Craterina',
+      'Palasterina',
+      'Tellina',
+    })
 
     for suffix, ranks, exceptions in (
       ('acea', ('Superfamily',), frozenset()),
-      ('ina', ('Suborder',), ina_genera),
+      ('ina', ('Suborder',), ina_exceptions),
       ('ida', ('Order',), ida_exceptions),
       (
         'zoa',
