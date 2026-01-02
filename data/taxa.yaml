@@ -1233,6 +1233,10 @@ cælatus_phillips.j_1839:
   authority:
     authors: [phillips.j]
     source: 1839_murchison
+cellepora:
+  name: Cellepora
+  authority:
+    source: 1767_linnaeus
 cellulana-order:
   name: Cellulana
   rank: Order
@@ -1259,6 +1263,10 @@ chama:
   name: Chama
   authority:
     source: 1758_linnaeus
+chaos:
+  name: Chaos
+  authority:
+    source: 1767_linnaeus
 chapmani_raymond_1915:
   name: chapmani
   auth: [Raymond]
@@ -3029,6 +3037,10 @@ flos_klug_krüger_korn_rücklin_schemm-gregory_debates_mapes_2008:
   name: flos
   auth: [Klug, Krüger, Korn, Rücklin, Schemm-Gregory, DeBates, Mapes]
   year: 2008
+flustra:
+  name: Flustra
+  auth: [linnaeus]
+  year: 1761
 foerstecystis:
   name: Foerstecystis
   auth: [bassler]
@@ -6740,6 +6752,10 @@ spondylus:
   name: Spondylus
   authority:
     source: 1758_linnaeus
+spongia:
+  name: Spongia
+  auth: [linnaeus]
+  year: 1759
 sporranoides_rahman_stewart_zamora_2015:
   name: sporranoides
   auth: [rahman, stewart, zamora]
