@@ -533,45 +533,34 @@
       children:
       - taxon: infusoria-order
         children:
-        - openTaxon: infusoria-unnamed-section-1_müller.o.f_1776
-          children:
-          - taxon: monas
-          - taxon: volvox
-        - taxon: opacæ
-          children:
-          - taxon: echelis
-        - taxon: gelatinofi
-          children:
-          - taxon: vibrio
-          - taxon: cyclidium
-          - taxon: paramæcium
-          - taxon: kolpoda
-          - taxon: gonium
-          - taxon: bursaria
-        - taxon: teretes
-          children:
-          - taxon: cercaria
-        - taxon: caudatæ
-          children:
-          - taxon: trichoda
-        - openTaxon: infusoria-unnamed-section-2_müller.o.f_1776
-          children:
-          - taxon: vorticella
-          - taxon: brachionus
+        - taxon: monas
+        - taxon: volvox
+        - taxon: enchelis
+        - taxon: vibrio
+        - taxon: cyclidium
+        - taxon: paramæcium
+        - taxon: kolpoda
+        - taxon: gonium
+        - taxon: bursaria
+        - taxon: cercaria
+        - taxon: trichoda
+        - taxon: vorticella
+        - taxon: brachionus
       - taxon: helminthica-order
         children:
-        - taxon: helminthica-unnamed-section-1_müller.o.f_1776
-          - taxon: gordius
-          - taxon: ascaris
-          - taxon: echinorynchus
+        - taxon: gordius
+        - taxon: ascaris
+        - taxon: echinorynchus
         - taxon: lumbricus
         - taxon: amphitrite
-        - taxon: neries
+        - taxon: nereis
       - taxon: mollusca-order
         children:
         - taxon: planaria
+          new: true
         - taxon: fasciola
         - taxon: mammaria
+          new: true
         - taxon: ascidia
           children:
           - taxon: rustica_linnaeus_1767
@@ -612,17 +601,20 @@
           - taxon: clavata_müller.o.f_1776
             new: true
         - taxon: lobaria
+          new: true
         - taxon: clio
         - taxon: lernæa
         - taxon: lucernaria
+          new: true
         - taxon: myxine
           children:
           - taxon: glutinosa_linnaeus_1758
         - taxon: limax
         - taxon: doris
         - taxon: pedicellaria
+          new: true
         - taxon: hydra
-        - taxon: actnia
+        - taxon: actinia
         - taxon: holothuria
           children:
           - taxon: frondosa_gunnerus_1767
@@ -633,7 +625,7 @@
             - taxon: tremula_linnaeus_1767
           - taxon: denudata_linnaeus_1758
             provisional: true
-          - taxon: pentates_linnaeus_1767
+          - taxon: pentactes_linnaeus_1767
           - taxon: priapus_linnaeus_1767
           - taxon: penicillus_müller.o.f_1776
             new: true
@@ -671,7 +663,7 @@
               new: true
           - taxon: stellatæ
             children:
-            - taxon: phrygiana_
+            - taxon: phrygiana_parelius_1768
             - taxon: rubens_linnaeus_1758
             - taxon: aranciaca_linnaeus_1758
             - taxon: papposa_linnaeus_1767
@@ -720,6 +712,7 @@
         - taxon: dentalium
         - taxon: serpula
         - taxon: ancylus
+          new: true
         - taxon: patella
         - taxon: haliotis
         - taxon: argonauta
@@ -729,11 +722,13 @@
         - taxon: vertigo
         - taxon: carychium
         - taxon: akera
+          new: true
         - taxon: bulla
         - taxon: trochus
         - taxon: turbo
         - taxon: buccinum
         - taxon: tritonium
+          new: true
         - taxon: nerita
         - taxon: solen
         - taxon: mya
@@ -746,13 +741,16 @@
         - taxon: arca
         - taxon: ostrea
         - taxon: pecten
+          new: true
         - taxon: anomia
         - taxon: terebratula
+          new: true
         - taxon: mytilus
         - taxon: chiton
         - taxon: lepas
         - taxon: pholas
       - taxon: cellulana-order
+        new: true
 1778_klein:
   taxonomies:
   - taxon: echinodermata_klein_1778

@@ -152,6 +152,10 @@ akadocrinus:
   name: Akadocrinus
   auth: [Prokop]
   year: 1962
+akera:
+  name: Akera
+  authority:
+    source: 1776_müller.o.f
 alabamensis_sumrall_garbisch_pope_2000:
   name: alabamensis
   auth: [sumrall, Garbisch, Pope]
@@ -232,6 +236,10 @@ amphibia:
   notes: |
     Defined substantially differently from Linnaeus, see also
     de Blainville (1816) for another possibility
+amphitrite:
+  name: Amphitrite
+  auth: [müller.o.f]
+  year: 1771
 amphorida:
   name: Amphorida
   rank: Order
@@ -250,6 +258,10 @@ anapeptamenus_austen_1843:
   name: anapeptamenus
   auth: [Austen]
   year: 1843
+ancylus:
+  name: Ancylus
+  authority:
+    source: 1776_müller.o.f
 andalusiae_ubaghs_vizcaïno_1990:
   name: andalusiae
   authority:
@@ -500,6 +512,14 @@ ascocystitidae:
   rank: Family
   auth: [ubaghs]
   year: 1967
+aspera_müller.o.f_1776:
+  name: aspera
+  authority:
+    source: 1776_müller.o.f
+aspersa_müller.o.f_1776:
+  name: aspersa
+  authority:
+    source: 1776_müller.o.f
 asteria:
   name: Asteria
   authority:
@@ -742,6 +762,14 @@ bennisoni_sumrall_bowsher_1996:
   name: bennisoni
   authority:
     source: 1996_sumrall_bowsher
+beroe:
+  name: Beroe
+  authority:
+    source: 1776_müller.o.f
+beroe_linnaeus_1758:
+  name: beroe
+  authority:
+    source: 1758_linnaeus
 bibrachiatus_parsley_1982:
   name: bibrachiatus
   authority:
@@ -888,6 +916,10 @@ brachiatus_sprinkle_1973:
   name: brachiatus
   authority:
     source: 1973_sprinkle
+brachionus:
+  name: Brachionus
+  auth: [Pallas]
+  year: 1766
 brachiopoda:
   name: Brachiopoda
   rank: Phylum
@@ -945,6 +977,10 @@ bulla:
   name: Bulla
   authority:
     source: 1758_linnaeus
+bursaria:
+  name: Bursaria
+  auth: [müller.o.f]
+  year: 1773
 buttsi_clarke_1901:
   name: buttsi
   auth: [Clarke]
@@ -1062,6 +1098,10 @@ canadensis_billings_1866:
   name: canadensis
   auth: [billings]
   year: 1866
+canina_müller.o.f_1776:
+  name: canina
+  authority:
+    source: 1776_müller.o.f
 cannati_miquel_1894:
   name: cannati
   auth: [Miquel]
@@ -1139,6 +1179,10 @@ carteri_bassler_1936:
   name: carteri
   authority:
     source: 1936_bassler
+carychium:
+  name: Carychium
+  auth: [müller.o.f]
+  year: 1773
 caryocrinites:
   name: Caryocrinites
   authority:
@@ -1189,6 +1233,12 @@ cælatus_phillips.j_1839:
   authority:
     authors: [phillips.j]
     source: 1839_murchison
+cellulana-order:
+  name: Cellulana
+  rank: Order
+  authority:
+    source: 1776_müller.o.f
+  notes: authority unclear
 celtocrinus:
   name: Celtocrinus
   auth: [Donovan, Cope]
@@ -1201,6 +1251,10 @@ ceratocystis:
   name: Ceratocystis
   auth: [jaekel]
   year: 1901
+cercaria:
+  name: Cercaria
+  auth: [müller.o.f]
+  year: 1773
 chama:
   name: Chama
   authority:
@@ -1282,6 +1336,10 @@ ciliaris_linnaeus_1767:
   name: ciliaris
   authority:
     source: 1767_linnaeus
+ciliata_müller.o.f_1776:
+  name: ciliata
+  authority:
+    source: 1776_müller.o.f
 cincinnatidiscus:
   name: Cincinnatidiscus
   authority:
@@ -1342,6 +1400,10 @@ clausus_austen_1843:
   name: clausus
   auth: [Austen]
   year: 1843
+clavata_müller.o.f_1776:
+  name: clavata
+  authority:
+    source: 1776_müller.o.f
 clavidiscus:
   name: Clavidiscus
   authority:
@@ -1440,6 +1502,10 @@ conchæ:
   rank: section
   authority:
     source: 1758_linnaeus
+conchilega_müller.o.f_1776:
+  name: conchilega
+  authority:
+    source: 1776_müller.o.f
 confertus_barrande_1887:
   name: confertus
   auth: [barrande]
@@ -1531,6 +1597,10 @@ coronata:
   rank: Order
   auth: [jaekel]
   year: 1918
+corrugata_müller.o.f_1776:
+  name: corrugata
+  authority:
+    source: 1776_müller.o.f
 cothurnocystidae:
   name: Cothurnocystidae
   rank: Family
@@ -1657,6 +1727,10 @@ crystalensis_guensburg_sprinkle_1994:
   name: crystalensis
   authority:
     source: 1994_guensburg_sprinkle
+crystallina_müller.o.f_1776:
+  name: crystallina
+  authority:
+    source: 1776_müller.o.f
 ctenocystida:
   name: Ctenocystida
   rank: Order
@@ -1783,6 +1857,10 @@ cyclaster_billings_1857:
   name: Cyclaster
   auth: [billings]
   year: 1857
+cyclidium:
+  name: Cyclidium
+  auth: [müller.o.f]
+  year: 1773
 cyclocystoididae:
   name: Cyclocystoididae
   rank: Family
@@ -2183,6 +2261,13 @@ drawbowensis_barrande_1887:
   name: drawbowensis
   auth: [barrande]
   year: 1887
+dröbachiensis_müller.o.f_1776:
+  name: dröbachiensis
+  altSpellingOf: droebachiensis_müller.o.f_1776
+droebachiensis_müller.o.f_1776:
+  name: droebachiensis
+  authority:
+    source: 1776_müller.o.f
 dubius_angelin_1878:
   name: dubius
   auth: [Angelin]
@@ -2339,6 +2424,13 @@ echinoneus_van phelsum_1774:
   authority:
     source: 1774_van phelsum
   notes: Not consisently binomial, so Leske (1778) given priority.
+echinorhynchus:
+  name: Echinorhynchus
+  auth: [müller.o.f]
+  year: 1773
+echinorynchus:
+  name: Echinorynchus
+  altSpellingOf: echinorhynchus
 echinosphaeridae:
   name: Echinosphaeridae
   rank: Family
@@ -2535,6 +2627,10 @@ eknomocrinus:
   name: Eknomocrinus
   authority:
     source: 2003_guensburg_sprinkle
+elegans_müller.o.f_1776:
+  name: elegans
+  authority:
+    source: 1776_müller.o.f
 eleutherozoa:
   name: Eleutherozoa
   rank: Subphylum
@@ -2573,6 +2669,10 @@ elpasocrinus:
   name: Elpasocrinus
   auth: [sprinkle, Wahlm]
   year: 1994
+enchelis:
+  name: Enchelis
+  auth: [müller.o.f]
+  year: 1773
 encrinites:
   name: Encrinites
   altSpellingOf: encrinus
@@ -2865,6 +2965,10 @@ fayi_sprinkle_1982:
   name: fayi
   authority:
     source: 1982g_sprinkle
+filiformis_müller.o.f_1776:
+  name: filiformis
+  authority:
+    source: 1776_müller.o.f
 filitextus_billings_1854:
   name: filitextus
   auth: [billings]
@@ -2899,6 +3003,10 @@ fistulosus_anderson_1939:
   name: fistulosus
   auth: [Anderson]
   year: 1939
+flavescens_müller.o.f_1776:
+  name: flavescens
+  authority:
+    source: 1776_müller.o.f
 fletcheri_forbes_1848:
   name: fletcheri
   authority:
@@ -2965,6 +3073,10 @@ furcillatus_billings.w.r_1887:
   name: furcillatus
   authority:
     source: 1887_billings.w.r
+fusus_müller.o.f_1776:
+  name: fusus
+  authority:
+    source: 1776_müller.o.f
 ###################### G
 gallica_domínguez alonso_1999:
   name: gallica
@@ -2993,6 +3105,10 @@ gelasinus_sumrall_bowsher_1996:
   name: gelasinus
   authority:
     source: 1996_sumrall_bowsher
+gelatina_müller.o.f_1776:
+  name: gelatina
+  authority:
+    source: 1776_müller.o.f
 gelatinosum_linnaeus_1767:
   name: gelatinosum
   authority:
@@ -3253,6 +3369,10 @@ goniodactylus_phillips.j_1839:
   authority:
     authors: [phillips.j]
     source: 1839_murchison
+gonium:
+  name: Gonium
+  auth: [müller.o.f]
+  year: 1773
 gonocrinites:
   name: Gonocrinites
   auth: [Eichwald]
@@ -3519,6 +3639,12 @@ helix:
   name: Helix
   authority:
     source: 1758_linnaeus
+helminthica-order:
+  name: Helminthica
+  rank: Order
+  auth: [müller.o.f]
+  year: 1773
+  notes: Authority uncertain
 hemicosmites:
   name: Hemicosmites
   auth: [Buch]
@@ -3876,6 +4002,10 @@ inflatus_parsley_zhao.y.l_2010:
   name: inflatus
   authority:
     source: 2010_parsley_zhao.y.l
+infundibulum_müller.o.f_1776:
+  name: infundibulum
+  authority:
+    source: 1776_müller.o.f
 infundus_frest_strimple_mcginnis_1976:
   name: infundus
   auth: [frest, Strimple, McGinnis]
@@ -3885,6 +4015,10 @@ infusoria-order:
   rank: Order
   auth: [Ledermüller]
   year: 1763
+inhærens_müller.o.f_1776:
+  name: inhærens
+  authority:
+    source: 1776_müller.o.f
 insecta:
   name: Insecta
   rank: Class
@@ -4125,6 +4259,10 @@ knizeki_fatka_1991:
   name: knizeki
   authority:
     source: 1991_fatka
+kolpoda:
+  name: Kolpoda
+  auth: [müller.o.f]
+  year: 1773
 krama:
   name: Krama
   authority:
@@ -4249,6 +4387,10 @@ lepocrinites:
   in: [vanuxem]
   year: 1840
   notes: 4th annual report geol survey of new york
+lepadiformis_müller.o.f_1776:
+  name: lepadiformis
+  authority:
+    source: 1776_müller.o.f
 lepadocystis:
   name: Lepadocystis
   auth: [Carpenter]
@@ -4404,6 +4546,10 @@ lloydi_sprinkle_1985:
   name: lloydi
   auth: [sprinkle]
   year: 1985
+lobaria:
+  name: Lobaria
+  authority:
+    source: 1776_müller.o.f
 lobocarpus:
   name: Lobocarpus
   authority:
@@ -4440,6 +4586,10 @@ lovenicystis:
   name: Lovenicystis
   auth: [regnéll]
   year: 1945
+lucernaria:
+  name: Lucernaria
+  authority:
+    source: 1776_müller.o.f
 lucunter_linnaeus_1758:
   name: lucunter
   authority:
@@ -4496,6 +4646,10 @@ macrocystellidae:
   rank: Family
   auth: [bather]
   year: 1899
+mactra:
+  name: Mactra
+  authority:
+    source: 1767_linnaeus
 madrepora:
   name: Madrepora
   authority:
@@ -4535,15 +4689,19 @@ malum_pander_1830:
   name: malum
   auth: [Pander]
   year: 1830
+mamillatus_linnaeus_1758:
+  name: mamillatus
+  authority:
+    source: 1758_linnaeus
 mammalia:
   name: Mammalia
   rank: Class
   authority:
     source: 1758_linnaeus
-mamillatus_linnaeus_1758:
-  name: mamillatus
+mammaria:
+  name: Mammaria
   authority:
-    source: 1758_linnaeus
+    source: 1776_müller.o.f
 mandalacystis:
   name: Mandalacystis
   authority:
@@ -4595,6 +4753,10 @@ megapinacotus_ehlers_kesling_1958:
   name: megapinacotus
   auth: [Ehlers, kesling]
   year: 1958
+mentula_müller.o.f_1776:
+  name: mentula
+  authority:
+    source: 1776_müller.o.f
 meristoschisma:
   name: Meristoschisma
   authority:
@@ -4637,6 +4799,10 @@ metazoa-grade:
   rank: Grade
   auth: [haeckel]
   year: 1874
+militaris_müller.o.f_1776:
+  name: militaris
+  authority:
+    source: 1776_müller.o.f
 millepora:
   name: Millepora
   authority:
@@ -4716,6 +4882,10 @@ mollusca-class:
 mollusca-order:
   rank: Order
   altRankOf: mollusca
+monas:
+  name: Monas
+  auth: [müller.o.f]
+  year: 1773
 moncaiensis_zamora_smith.a.b_2012:
   name: moncaiensis
   auth: [zamora, smith.a.b]
@@ -4953,6 +5123,10 @@ oblongus_pander_1830:
   name: oblongus
   auth: [Pander]
   year: 1830
+octodentata_gunnerus_1770:
+  name: octodentata
+  auth: [gunnerus]
+  year: 1770
 octogona_richter_1930:
   name: octogona
   auth: [Richter]
@@ -5134,6 +5308,14 @@ parakrama:
   name: Parakrama
   authority:
     source: 2010_müller.p_hahn
+parallelogramma_müller.o.f_1776:
+  name: parallelogramma
+  authority:
+    source: 1776_müller.o.f
+paramæcium:
+  name: Paramæcium
+  auth: [müller.o.f]
+  year: 1773
 parapostibulla:
   name: Parapostibulla
   authority:
@@ -5215,10 +5397,22 @@ patella:
   name: Patella
   authority:
     source: 1758_linnaeus
+patelliformis_müller.o.f_1776:
+  name: patelliformis
+  authority:
+    source: 1776_müller.o.f
+patula_müller.o.f_1776:
+  name: patula
+  authority:
+    source: 1776_müller.o.f
 paulianus_bassler_1936:
   name: paulianus
   authority:
     source: 1936_bassler
+pecten:
+  name: Pecten
+  authority:
+    source: 1776_müller.o.f
 peculiaris_paul.c.r.c_1967:
   name: peculiaris
   auth: [paul.c.r.c]
@@ -5227,6 +5421,10 @@ pectinata_linnaeus_1758:
   name: pectinata
   authority:
     source: 1758_linnaeus
+pedicellaria:
+  name: Pedicellaria
+  authority:
+    source: 1776_müller.o.f
 pelmatozoa:
   name: Pelmatozoa
   bracket: Pelmatozoans
@@ -5258,6 +5456,10 @@ pembrocystis:
   name: Pembrocystis
   auth: [domínguez alonso]
   year: 1999
+penicillus_müller.o.f_1776:
+  name: penicillus
+  authority:
+    source: 1776_müller.o.f
 pennatula:
   name: Pennatula
   authority:
@@ -5298,6 +5500,10 @@ pentremite:
   name: Pentremite
   authority:
     source: 1820_say
+perforata_müller.o.f_1776:
+  name: perforata
+  authority:
+    source: 1776_müller.o.f
 peridionites:
   name: Peridionites
   authority:
@@ -5328,6 +5534,10 @@ perneri_jaekel_1901:
   name: perneri
   auth: [jaekel]
   year: 1901
+pertusa_müller.o.f_1776:
+  name: pertusa
+  authority:
+    source: 1776_müller.o.f
 petalocystites:
   name: Petalocystites
   authority:
@@ -5352,6 +5562,10 @@ pholas:
   name: Pholas
   authority:
     source: 1758_linnaeus
+phrygiana_parelius_1768:
+  name: phrygiana
+  auth: [Parelius]
+  year: 1768
 phyllocystidae:
   name: Phyllocystidae
   rank: Family
@@ -5426,6 +5640,14 @@ planci_linnaeus_1758:
   name: planci
   authority:
     source: 1758_linnaeus
+planaria:
+  name: Planaria
+  authority:
+    source: 1776_müller.o.f
+planorbis:
+  name: Planorbis
+  auth: [müller.o.f]
+  year: 1773
 planus_miller.j.s_1821:
   name: planus
   authority:
@@ -5703,10 +5925,18 @@ prunocystites:
   name: Prunocystites
   authority:
     source: 1848b_forbes
+prunum_müller.o.f_1776:
+  name: prunum
+  authority:
+    source: 1776_müller.o.f
 pulaskiensis_miller.s.a_gurley_1894:
   name: pulaskiensis
   auth: [miller.s.a, gurley]
   year: 1894
+pulvillis_müller.o.f_1776:
+  name: pulvillis
+  authority:
+    source: 1776_müller.o.f
 punctatus_forbes_1848:
   name: punctatus
   authority:
@@ -5715,6 +5945,14 @@ punctatus_ulrich_1886:
   name: punctatus
   auth: [Ulrich]
   year: 1886
+purpureus_müller.o.f_1776:
+  name: purpureus
+  authority:
+    source: 1776_müller.o.f
+pusillus_müller.o.f_1776:
+  name: pusillus
+  authority:
+    source: 1776_müller.o.f
 pustulata_müller.p_hahn_2010:
   name: pustulata
   authority:
@@ -6110,6 +6348,10 @@ rosaceus_linnaeus_1758:
   name: rosaceus
   authority:
     source: 1758_linnaeus
+rosea_müller.o.f_1776:
+  name: rosea
+  authority:
+    source: 1776_müller.o.f
 rossi_sprinkle_1973:
   name: rossi
   authority:
@@ -6196,6 +6438,10 @@ sanducystis:
   name: Sanducystis
   auth: [zamora, sumrall, zhu.x.j, lefebvre]
   year: 2017
+sanguinolenta_müller.o.f_1776:
+  name: sanguinolenta
+  authority:
+    source: 1776_müller.o.f
 saratogensis_ruedemann_1912:
   name: saratogensis
   auth: [ruedemann]
@@ -6212,6 +6458,10 @@ saxatilis_linnaeus_1758:
   name: saxatilis
   authority:
     source: 1758_linnaeus
+scabra_müller.o.f_1776:
+  name: scabra
+  authority:
+    source: 1776_müller.o.f
 scalpellum:
   name: Scalpellum
   auth: [Leach]
@@ -6378,6 +6628,10 @@ southworthi_bassler_1936:
   name: southworthi
   authority:
     source: 1936_bassler
+spatagus:
+  name: Spatagus
+  authority:
+    source: 1776_müller.o.f
 spatagus_linnaeus_1758:
   name: spatagus
   authority:
@@ -6391,6 +6645,10 @@ spencensis_wen.r_babcock_peng.j_robison_2019:
   name: spencensis
   auth: [wen.r, babcock, peng.j, robison]
   year: 2019
+sphæra_müller.o.f_1776:
+  name: sphæra
+  authority:
+    source: 1776_müller.o.f
 sphaerocystites:
   name: Sphaerocystites
   auth: [hall]
@@ -6499,6 +6757,10 @@ sprinkleoglobus:
   name: Sprinkleoglobus
   auth: [zamora, guensburg, sprinkle]
   year: 2024
+squamata_müller.o.f_1776:
+  name: squamata
+  authority:
+    source: 1776_müller.o.f
 squamosus_billings_1854:
   name: squamosus
   auth: [billings]
@@ -6795,6 +7057,10 @@ terebella:
   name: Terebella
   authority:
     source: 1767_linnaeus
+terebratula:
+  name: Terebratula
+  authority:
+    source: 1776_müller.o.f
 teredo:
   name: Teredo
   authority:
@@ -6992,6 +7258,10 @@ tribrachiatus_bassler_1943:
   name: tribrachiatus
   auth: [bassler]
   year: 1943
+trichoda:
+  name: Trichoda
+  auth: [müller.o.f]
+  year: 1773
 trilobita:
   name: Trilobita
   rank: Class
@@ -7001,6 +7271,10 @@ triton:
   name: Triton
   authority:
     source: 1758_linnaeus
+tritonium:
+  name: Tritonium
+  authority:
+    source: 1776_müller.o.f
 trochocystites:
   name: Trochocystites
   auth: [barrande]
@@ -7144,6 +7418,10 @@ valcourensis_clark_1920:
   name: valcourensis
   auth: [Clark]
   year: 1920
+valvata:
+  name: Valvata
+  auth: [müller.o.f]
+  year: 1773
 valvatida:
   name: Valvatida
   rank: Order
@@ -7157,6 +7435,10 @@ velatus_barrande_1887:
   name: velatus
   auth: [barrande]
   year: 1887
+venosa_müller.o.f_1776:
+  name: venosa
+  authority:
+    source: 1776_müller.o.f
 venus:
   name: Venus
   authority:
@@ -7166,6 +7448,10 @@ vermes:
   rank: Class
   authority:
     source: 1758_linnaeus
+vertigo:
+  name: Vertigo
+  auth: [müller.o.f]
+  year: 1773
 verus_miller.j.s_1821:
   name: verus
   authority:
@@ -7174,6 +7460,10 @@ vetusta_foerste_1914:
   name: vetusta
   auth: [foerste]
   year: 1914
+vibrio:
+  name: Vibrio
+  auth: [müller.o.f]
+  year: 1773
 victoriacystis:
   name: Victoriacystis
   authority:
@@ -7182,6 +7472,10 @@ victoriae_gill_caster_1960:
   name: victoriae
   authority:
     source: 1960_gill_caster
+virgenea_müller.o.f_1776:
+  name: virgenea
+  authority:
+    source: 1776_müller.o.f
 viviannae_domínguez alonso_1999:
   name: viviannae
   auth: [domínguez alonso]
@@ -7210,6 +7504,10 @@ volvox:
   name: Volvox
   authority:
     source: 1758_linnaeus
+vorticella:
+  name: Vorticella
+  authority:
+    source: 1767_linnaeus
 vorticellata_hall_1866:
   name: vorticellata
   auth: [Hall]
