@@ -6418,6 +6418,10 @@ rutroclypeus:
   auth: [Withers]
   year: 1933
 ###################### S
+sabella:
+  name: Sabella
+  authority:
+    source: 1767_linnaeus
 sagittaria_thomas_ladd_1926:
   name: sagittaria
   auth: [Thomas, Ladd]

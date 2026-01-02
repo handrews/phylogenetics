@@ -518,6 +518,45 @@
             - taxon: placenta_linnaeus_1758
             - taxon: orbiculus_linnaeus_1758
       - taxon: testacea-order
+        children:
+        - taxon: chiton
+        - taxon: lepas
+        - taxon: pholas
+        - taxon: mya
+        - taxon: solen
+        - taxon: tellina
+        - taxon: cardium
+        - taxon: mactra
+          new: true
+        - taxon: donax
+        - taxon: venus
+        - taxon: spondylus
+        - taxon: chama
+        - taxon: arca
+        - taxon: ostrea
+        - taxon: anomia
+        - taxon: mytilus
+        - taxon: pinna
+        - taxon: argonauta
+        - taxon: nautilus
+        - taxon: conus
+        - taxon: cypræa
+        - taxon: bulla
+        - taxon: voluta
+        - taxon: buccinum
+        - taxon: strombus
+        - taxon: murex
+        - taxon: trochus
+        - taxon: turbo
+        - taxon: helix
+        - taxon: nerita
+        - taxon: haliotis
+        - taxon: patella
+        - taxon: dentalium
+        - taxon: serpula
+        - taxon: teredo
+        - taxon: sabella
+          new: true
       - taxon: lithophyta
       - taxon: zoophyta
 1774_van phelsum:
