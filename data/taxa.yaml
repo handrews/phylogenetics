@@ -6590,6 +6590,10 @@ sinoeocrinus:
   name: Sinoeocrinus
   authority:
     source: 1994_zhao.y.l_huang.y.z_gong.x.y
+sipunculus:
+  name: Sipunculus
+  authority:
+    source: 1767_linnaeus
 smithi_grant_1881:
   name: smithi
   auth: [Grant]

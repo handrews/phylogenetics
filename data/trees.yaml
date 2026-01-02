@@ -399,6 +399,17 @@
     - taxon: vermes
       children:
       - taxon: intestina-order
+        children:
+        - taxon: gordius
+        - taxon: ascaris
+        - taxon: lumbricus
+        - taxon: fasciola
+        - taxon: sipunculus
+          new: true
+        - taxon: hirudo
+        - taxon: myxine
+          children:
+          - taxon: glutinosa_linnaeus_1758
       - taxon: mollusca-order
         children:
         - taxon: limax
