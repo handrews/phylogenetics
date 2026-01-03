@@ -261,7 +261,8 @@ anapeptamenus_austen_1843:
 ancylus:
   name: Ancylus
   authority:
-    source: 1776_müller.o.f
+    source: 1774b_müller.o.f
+  notes: PBDB 1774b, IRMNG 1773
 andalusiae_ubaghs_vizcaïno_1990:
   name: andalusiae
   authority:
@@ -1182,7 +1183,8 @@ carteri_bassler_1936:
 carychium:
   name: Carychium
   authority:
-    source: 1773_müller.o.f
+    source: 1774b_müller.o.f
+  notes: Some sources say 1773_müller.o.f despite no full description.
 caryocrinites:
   name: Caryocrinites
   authority:
@@ -5669,7 +5671,7 @@ planaria:
 planorbis:
   name: Planorbis
   authority:
-    source: 1773_müller.o.f
+    source: 1774b_müller.o.f
 planus_miller.j.s_1821:
   name: planus
   authority:
@@ -7455,7 +7457,7 @@ valcourensis_clark_1920:
 valvata:
   name: Valvata
   authority:
-    source: 1773_müller.o.f
+    source: 1774b_müller.o.f
 valvatida:
   name: Valvatida
   rank: Order
@@ -7485,7 +7487,7 @@ vermes:
 vertigo:
   name: Vertigo
   authority:
-    source: 1773_müller.o.f
+    source: 1774b_müller.o.f
 verus_miller.j.s_1821:
   name: verus
   authority:

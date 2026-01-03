@@ -639,6 +639,26 @@
     - taxon: infusoria-order
     - taxon: helminthica-order
     - taxon: testacea-order
+      children:
+      - taxon: limax
+      - taxon: helix
+      - taxon: vertigo
+        new: true
+      - taxon: carychium
+        new: true
+        notes: Some sources say Müller 1773 for this, but 1774 for others?
+      - taxon: buccinum
+      - taxon: planorbis
+        new: true
+      - taxon: nerita
+      - taxon: valvata
+        new: true
+      - taxon: ancylus
+        new: true
+        notes: PBDB 1774, IRMNG 1773
+      - taxon: tellina
+      - taxon: mytilus
+      - taxon: mya
 1774_van phelsum:
   notes: |
     It's unclear if any species were defined.  Presumably yes for Echinocyamus
@@ -842,7 +862,6 @@
         - taxon: dentalium
         - taxon: serpula
         - taxon: ancylus
-          new: true
         - taxon: patella
         - taxon: haliotis
         - taxon: argonauta
