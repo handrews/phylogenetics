@@ -583,6 +583,62 @@
         - taxon: furia
         - taxon: chaos
           new: true
+1773_müller.o.f:
+  taxonomies:
+  - taxon: vermes
+    children:
+    - taxon: infusoria-order
+      children:
+      - taxon: monas
+        new: true
+      - taxon: volvox
+      - taxon: enchelis
+        new: true
+      - taxon: vibrio
+        new: true
+      - taxon: cyclidium
+        new: true
+      - taxon: paramæcium
+        new: true
+      - taxon: kolpoda
+        new: true
+      - taxon: gonium
+        new: true
+      - taxon: bursaria
+        new: true
+      - taxon: cercaria
+        new: true
+      - taxon: trichoda
+        new: true
+      - taxon: vorticella
+      - taxon: brachionus
+    - taxon: helminthica-order
+      new: true
+    - taxon: testacea-order
+1774a_müller.o.f:
+  taxonomies:
+  - taxon: vermes
+    children:
+    - taxon: infusoria-order
+    - taxon: helminthica-order
+      children:
+      - taxon: hydra
+      - taxon: tubularia
+      - taxon: nais
+        new: true
+      - taxon: lumbricus
+      - taxon: gordius
+      - taxon: ascaris
+      - taxon: hirudo
+      - taxon: fasciola
+    - taxon: testacea-order
+1774b_müller.o.f:
+  taxonomies:
+  - taxon: vermes
+    children:
+    - taxon: infusoria-order
+    - taxon: helminthica-order
+    - taxon: testacea-order
 1774_van phelsum:
   notes: |
     It's unclear if any species were defined.  Presumably yes for Echinocyamus

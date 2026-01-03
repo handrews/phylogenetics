@@ -76,6 +76,36 @@
   - linnaeus
   identifiers:
     url: https://www.biodiversitylibrary.org/item/137240#page/5/mode/1up
+1773_müller.o.f:
+  book: vermium-t-e-f
+  volume: 1
+  number: 1
+  pubDate:
+    year: 1773
+  authors:
+  - müller.o.f
+  notes: URL contains vol 1 and part 1 of vol 2
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/32208274
+1774a_müller.o.f:
+  book: vermium-t-e-f
+  volume: 1
+  number: 2
+  pubDate:
+    year: 1774
+  authors:
+  - müller.o.f
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/32208382
+1774b_müller.o.f:
+  book: vermium-t-e-f
+  volume: 2
+  pubDate:
+    year: 1774
+  authors:
+  - müller.o.f
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/100154#page/5/mode/1up
 1774_van phelsum:
   book: brief-we
   pubDate:

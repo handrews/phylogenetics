@@ -979,8 +979,8 @@ bulla:
     source: 1758_linnaeus
 bursaria:
   name: Bursaria
-  auth: [müller.o.f]
-  year: 1773
+  authority:
+    source: 1773_müller.o.f
 buttsi_clarke_1901:
   name: buttsi
   auth: [Clarke]
@@ -1181,8 +1181,8 @@ carteri_bassler_1936:
     source: 1936_bassler
 carychium:
   name: Carychium
-  auth: [müller.o.f]
-  year: 1773
+  authority:
+    source: 1773_müller.o.f
 caryocrinites:
   name: Caryocrinites
   authority:
@@ -1257,8 +1257,8 @@ ceratocystis:
   year: 1901
 cercaria:
   name: Cercaria
-  auth: [müller.o.f]
-  year: 1773
+  authority:
+    source: 1773_müller.o.f
 chama:
   name: Chama
   authority:
@@ -1867,8 +1867,8 @@ cyclaster_billings_1857:
   year: 1857
 cyclidium:
   name: Cyclidium
-  auth: [müller.o.f]
-  year: 1773
+  authority:
+    source: 1773_müller.o.f
 cyclocystoididae:
   name: Cyclocystoididae
   rank: Family
@@ -2434,8 +2434,8 @@ echinoneus_van phelsum_1774:
   notes: Not consisently binomial, so Leske (1778) given priority.
 echinorhynchus:
   name: Echinorhynchus
-  auth: [müller.o.f]
-  year: 1773
+  authority:
+    source: 1773_müller.o.f
 echinorynchus:
   name: Echinorynchus
   altSpellingOf: echinorhynchus
@@ -2679,8 +2679,8 @@ elpasocrinus:
   year: 1994
 enchelis:
   name: Enchelis
-  auth: [müller.o.f]
-  year: 1773
+  authority:
+    source: 1773_müller.o.f
 encrinites:
   name: Encrinites
   altSpellingOf: encrinus
@@ -3383,8 +3383,8 @@ goniodactylus_phillips.j_1839:
     source: 1839_murchison
 gonium:
   name: Gonium
-  auth: [müller.o.f]
-  year: 1773
+  authority:
+    source: 1773_müller.o.f
 gonocrinites:
   name: Gonocrinites
   auth: [Eichwald]
@@ -3654,8 +3654,8 @@ helix:
 helminthica-order:
   name: Helminthica
   rank: Order
-  auth: [müller.o.f]
-  year: 1773
+  authority:
+    source: 1773_müller.o.f
   notes: Authority uncertain
 hemicosmites:
   name: Hemicosmites
@@ -4273,8 +4273,8 @@ knizeki_fatka_1991:
     source: 1991_fatka
 kolpoda:
   name: Kolpoda
-  auth: [müller.o.f]
-  year: 1773
+  authority:
+    source: 1773_müller.o.f
 krama:
   name: Krama
   authority:
@@ -4896,8 +4896,8 @@ mollusca-order:
   altRankOf: mollusca
 monas:
   name: Monas
-  auth: [müller.o.f]
-  year: 1773
+  authority:
+    source: 1773_müller.o.f
 moncaiensis_zamora_smith.a.b_2012:
   name: moncaiensis
   auth: [zamora, smith.a.b]
@@ -5016,6 +5016,16 @@ nacoensis_sumrall_1992:
   name: nacoensis
   auth: [sumrall]
   year: 1992
+nais:
+  name: Nais
+  authority:
+    source: 1774a_müller.o.f
+  notes: IRMNG treats this as separate/synonymized from Naïs (Müller 1771)
+naïs:
+  name: Naïs
+  auth: [müller.o.f]
+  year: 1771
+  notes: IRMNG treats this separately as wrong spelling from Nais (Müller 1774)
 narrawayella:
   name: Narrawayella
   auth: [foerste]
@@ -5326,8 +5336,8 @@ parallelogramma_müller.o.f_1776:
     source: 1776_müller.o.f
 paramæcium:
   name: Paramæcium
-  auth: [müller.o.f]
-  year: 1773
+  authority:
+    source: 1773_müller.o.f
 parapostibulla:
   name: Parapostibulla
   authority:
@@ -5658,8 +5668,8 @@ planaria:
     source: 1776_müller.o.f
 planorbis:
   name: Planorbis
-  auth: [müller.o.f]
-  year: 1773
+  authority:
+    source: 1773_müller.o.f
 planus_miller.j.s_1821:
   name: planus
   authority:
@@ -7284,8 +7294,8 @@ tribrachiatus_bassler_1943:
   year: 1943
 trichoda:
   name: Trichoda
-  auth: [müller.o.f]
-  year: 1773
+  authority:
+    source: 1773_müller.o.f
 trilobita:
   name: Trilobita
   rank: Class
@@ -7444,8 +7454,8 @@ valcourensis_clark_1920:
   year: 1920
 valvata:
   name: Valvata
-  auth: [müller.o.f]
-  year: 1773
+  authority:
+    source: 1773_müller.o.f
 valvatida:
   name: Valvatida
   rank: Order
@@ -7474,8 +7484,8 @@ vermes:
     source: 1758_linnaeus
 vertigo:
   name: Vertigo
-  auth: [müller.o.f]
-  year: 1773
+  authority:
+    source: 1773_müller.o.f
 verus_miller.j.s_1821:
   name: verus
   authority:
@@ -7486,8 +7496,8 @@ vetusta_foerste_1914:
   year: 1914
 vibrio:
   name: Vibrio
-  auth: [müller.o.f]
-  year: 1773
+  authority:
+    source: 1773_müller.o.f
 victoriacystis:
   name: Victoriacystis
   authority:
