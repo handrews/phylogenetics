@@ -215,6 +215,13 @@ class Taxon:
       self._rank = alt.rank
       self._authority = alt.authority
 
+    elif (latin_key := taxon_data.get('vulgarSpellingOf')):
+      if not (latin := Taxon.get(latin_key)):
+        logger.error(f'Taxon {taxon_key} vulgar spelling of unknown {alt_key}')
+      self._alt = latin
+      self._rank = latin.rank
+      self._authority = latin.authority
+
     elif (alt_key := taxon_data.get('altRankOf')):
       if not (alt := Taxon.get(alt_key)):
         logger.error(f'Taxon {taxon_key} alt rank of unknown {alt_key}')
@@ -298,6 +305,7 @@ class Taxon:
       ida_subclasses | ida_parvclasses | ida_suborders | ida_superfamilies
 
     ina_exceptions = frozenset({
+      'Carallina',
       'Corallina',
       'Craterina',
       'Palasterina',
@@ -598,7 +606,11 @@ class Tree:
         taxon_field in self._NAMED_FIELDS and
         self._taxon.authority.source
       ):
-        is_new = self._data.get('new')
+        is_new = (
+          self._data.get('new') and
+          # TODO: Don't reach inside _taxon?
+          not self._taxon._data.get('vulgarSpellingOf')
+        )
         tsource = self._taxon._authority.source
 
         if is_new and self._source != tsource:

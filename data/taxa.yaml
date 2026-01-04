@@ -236,6 +236,10 @@ amphibia:
   notes: |
     Defined substantially differently from Linnaeus, see also
     de Blainville (1816) for another possibility
+amphinome:
+  name: Amphinome
+  authority:
+    source: 1789_bruguière
 amphitrite:
   name: Amphitrite
   auth: [müller.o.f]
@@ -327,6 +331,10 @@ ansticei_bather_1915:
   name: ansticei
   auth: [bather]
   year: 1915
+antipathes:
+  name: Antipathes
+  auth: [Pallas]
+  year: 1766
 anulocrinus:
   name: Anulocrinus
   auth: [Ramsbottom]
@@ -799,6 +807,10 @@ billingsi_wilson_1946:
   name: billingsi
   auth: [Wilson]
   year: 1946
+biphora:
+  name: Biphora
+  authority:
+    source: 1789_bruguière
 bistomiacystidae:
   name: Bistomiacystidae
   rank: Family
@@ -913,6 +925,10 @@ bothriocidaroida:
   rank: Order
   auth: [zittel]
   year: 1879
+botryllus:
+  name: Botryllus
+  auth: [Gaertner]
+  year: 1774
 brachiatus_sprinkle_1973:
   name: brachiatus
   authority:
@@ -1137,6 +1153,10 @@ carabocrinus-sp_kolata_1975:
   rank: species
   authority:
     source: 1975_kolata
+carallina:
+  name: Carallina
+  altSpellingOf: corallina
+  notes: Apparent misspelling?  In Bruguiere 1789.
 carbonarius_bassler_1936:
   name: carbonarius
   authority:
@@ -1235,6 +1255,10 @@ cælatus_phillips.j_1839:
   authority:
     authors: [phillips.j]
     source: 1839_murchison
+cellaria:
+  name: Cellaria
+  auth: [Ellis, Solander]
+  year: 1786
 cellepora:
   name: Cellepora
   authority:
@@ -1764,6 +1788,10 @@ ctenoimbricata:
   name: Ctenoimbricata
   auth: [zamora, rahman, smith.a.b]
   year: 2012
+cuculanus:
+  name: Cuculanus
+  auth: [Bloch]
+  year: 1782
 cuniculocystis:
   name: Cuniculocystis
   auth: [sprinkle, Wahlman]
@@ -2380,6 +2408,9 @@ echinodermata-incertae-sedis_ubaghs_1999:
   rank: Class
   authority:
     source: 1999_ubaghs
+échinodermes:
+  name: Échinodermes
+  vulgarSpellingOf: echinodermata-order
 echinodiscus:
   name: Echinodiscus
   authority:
@@ -2485,6 +2516,15 @@ echinus-order:
   authority:
     source: 1778_leske
   notes: Eventually translated to Class Echinoidea
+echynorhynchus:
+  name: Echynorhynchus
+  auth: [Zoega]
+  in: [müller.o.f]
+  year: 1776
+echynorynchus:
+  name: Echynorynchus
+  altSpellingOf: echynorhynchus
+  notes: IRMNG has this as rejected, but Bruguiére 1792?  Not 1789?
 echmatocrinidae:
   name: Echmatocrinidae
   rank: Family
@@ -3803,6 +3843,11 @@ hispanica_müller.p_hahn_2010:
   name: hispanica
   authority:
     source: 2010_müller.p_hahn
+himantopus_müller.o.f_1786:
+  name: Himantopus
+  homonym: true
+  auth: [müller.o.f]
+  year: 1786
 hispanicus_zamora_smith.a.b_2010:
   name: hispanicus
   authority:
@@ -4029,6 +4074,9 @@ infusoria-order:
   rank: Order
   auth: [Ledermüller]
   year: 1763
+infusoires:
+  name: Infusoires
+  vulgarSpellingOf: infusoria-order
 inhærens_müller.o.f_1776:
   name: inhærens
   authority:
@@ -4056,6 +4104,9 @@ intestinalis_linnaeus_1767:
   name: intestinalis
   authority:
     source: 1767_linnaeus
+intestins:
+  name: Intestins
+  vulgarSpellingOf: intestina-order
 interruptus_jaekel_1899:
   name: interruptus
   auth: [jaekel]
@@ -4241,6 +4292,11 @@ kentuckyensis_bassler_1936:
   name: kentuckyensis
   authority:
     source: 1936_bassler
+kerona_müller.o.f_1786:
+  name: Kerona
+  homonym: true
+  auth: [müller.o.f]
+  year: 1786
 keslingi_bell.b.m_1974:
   name: keslingi
   authority:
@@ -4349,6 +4405,10 @@ languedocianus_ubaghs_1987:
   name: languedocianus
   auth: [ubaghs]
   year: 1987
+laplysia:
+  name: Laplysia
+  altSpellingOf: aplysia
+  notes: IRMNG deems this an alternate spelling
 latiusculus_barrande_1887:
   name: latiusculus
   auth: [barrande]
@@ -4468,6 +4528,10 @@ lernaea:
 lernæa:
   name: Lernæa
   altSpellingOf: lernaea
+lærnea:
+  name: Lærnea
+  altSpellingOf: lernaea
+  notes: IRMNG has as unaccepted taxon but Brug. 1791 instead of 1789?
 leucopthalmus:
   name: Leucopthalmus
   auth: [Koenig]
@@ -4668,6 +4732,11 @@ madrepora:
   name: Madrepora
   authority:
     source: 1758_linnaeus
+mæandrites:
+  name: Mæandrites
+  authority:
+    source: 1789_bruguière
+  notes: IRMNG says misspelling, but not of waht
 magister_bassler_1936:
   name: magister
   authority:
@@ -4896,6 +4965,9 @@ mollusca-class:
 mollusca-order:
   rank: Order
   altRankOf: mollusca
+mollusques:
+  name: Mollusques
+  vulgarSpellingOf: mollusca-order
 monas:
   name: Monas
   authority:
@@ -5599,6 +5671,10 @@ physalis_linnaeus_1758:
   name: physalis
   authority:
     source: 1758_linnaeus
+physsophora:
+  name: Physsophora
+  auth: [Forskål]
+  year: 1775
 pilea_hall_1866:
   name: pilea
   auth: [Hall]
@@ -5904,6 +5980,11 @@ promopalaeasteridae:
   rank: Family
   auth: [schuchert]
   year: 1914
+proteus_müller.o.f_1786:
+  name: Proteus
+  homonym: true
+  auth: [müller.o.f]
+  year: 1786
 protoblastoidea:
   name: Protoblastoidea
   rank: Grade
@@ -6470,6 +6551,10 @@ sanguinolenta_müller.o.f_1776:
   name: sanguinolenta
   authority:
     source: 1776_müller.o.f
+sanguisuga:
+  name: Sanguisuga
+  authority:
+    source: 1789_bruguière
 saratogensis_ruedemann_1912:
   name: saratogensis
   auth: [ruedemann]
@@ -6961,6 +7046,10 @@ strombus:
   name: Strombus
   authority:
     source: 1758_linnaeus
+strongylus:
+  name: Strongylus
+  auth: [müller.o.f]
+  year: 1780
 stylastritæ:
   name: Stylastritæ
   auth: [martin.w]
@@ -7116,6 +7205,9 @@ testacea-unnamed-section-2_linnaeus_1758:
   rank: section
   authority:
     source: 1758_linnaeus
+testacés:
+  name: Testacés
+  vulgarSpellingOf: testacea-order
 testudinarius_hisinger_1837:
   name: testudinarius
   auth: [hisinger]
@@ -7484,6 +7576,9 @@ vermes:
   rank: Class
   authority:
     source: 1758_linnaeus
+vers:
+  name: Vers
+  vulgarSpellingOf: vermes
 vertigo:
   name: Vertigo
   authority:
@@ -7672,6 +7767,9 @@ yui_zhao.y.l_parsley_peng.j_2007:
   authority:
     source: 2007_zhao.y.l_parsley_peng.j
 ###################### Z
+zoophites:
+  name: Zoophites
+  vulgarSpellingOf: zoophyta
 zoophyta:
   name: Zoophyta
   rank: Order

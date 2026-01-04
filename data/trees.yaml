@@ -938,6 +938,94 @@
       new: true
     - taxon: spatangus_leske_1778
       new: true
+1789_bruguière:
+  notes: Only genera in latin AFAICT.  First grouping of Asterias and Echinus.
+  taxonomies:
+  - taxon: vers
+    children:
+    - taxon: infusoires
+      children:
+      - taxon: monas
+      - taxon: proteus_müller.o.f_1786
+      - taxon: volvox
+      - taxon: enchelis
+      - taxon: vibrio
+      - taxon: cyclidium
+      - taxon: paramæcium
+      - taxon: kolpoda
+      - taxon: gonium
+      - taxon: bursaria
+      - taxon: cercaria
+      - taxon: trichoda
+      - taxon: kerona_müller.o.f_1786
+      - taxon: himantopus_müller.o.f_1786
+      - taxon: vorticella
+      - taxon: brachionus
+    - taxon: intestins
+      children:
+      - taxon: gordius
+      - taxon: cuculanus
+      - taxon: ascaris
+      - taxon: echynorynchus
+      - taxon: sanguisuga
+        new: true
+      - taxon: tænia
+      - taxon: strongylus
+      - taxon: lumbricus
+      - taxon: nereis
+      - taxon: nais
+      - taxon: amphitrite
+      - taxon: amphinome
+        new: true
+      - taxon: aphrodita
+    - taxon: mollusques
+      children:
+      - taxon: mammaria
+      - taxon: ascidia
+      - taxon: pedicellaria
+      - taxon: planaria
+      - taxon: fasciola
+      - taxon: tethys
+      - taxon: lærnea
+      - taxon: biphora # Salp
+        new: true
+      - taxon: actinia
+      - taxon: hydra
+      - taxon: holothuria
+      - taxon: sepia
+      - taxon: clio
+      - taxon: doris
+      - taxon: laplysia
+      - taxon: limax
+      - taxon: myxine
+      - taxon: physsophora
+      - taxon: beroe
+      - taxon: medusa
+    - taxon: échinodermes
+      new: true
+      children:
+      - taxon: asterias
+      - taxon: echinus
+    - taxon: testacés
+    - taxon: zoophites
+      children:
+      - taxon: tubipora
+      - taxon: madrepora
+      - taxon: mæandrites
+        new: true
+      - taxon: millepora
+      - taxon: flustra
+      - taxon: cellaria
+      - taxon: carallina
+      - taxon: isis
+      - taxon: gorgonia
+      - taxon: antipathes
+      - taxon: sertularia
+      - taxon: tubularia
+      - taxon: botryllus # Sea Squirt
+      - taxon: alcyonium
+      - taxon: pennatula
+      - taxon: spongia
 1791_bruguière:
   notes: |
     While Echinodermata is defined, there is no clear assigment of genera

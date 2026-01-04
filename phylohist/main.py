@@ -28,8 +28,13 @@ def _basic_load(data, field, cls):
 def _load_taxa(data):
   logger.info(f"Processing {len(data['taxa'])} taxa...")
   deferred = []
+  deferring_fields = frozenset({
+    'altRankOf',
+    'altSpellingOf',
+    'vulgarSpellingOf',
+  })
   for taxon_key, taxon_data in data['taxa'].items():
-    if taxon_data.keys() & {'altRankOf', 'altSpellingOf'}:
+    if taxon_data.keys() & deferring_fields:
       deferred.append((taxon_key, taxon_data))
       continue
     Taxon.add(taxon_data, taxon_key)

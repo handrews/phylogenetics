@@ -141,6 +141,8 @@
   - leske
 1789_bruguière:
   book: methodique
+  volume: 1
+  number: 1
   pubDate:
     year: 1789
   authors:
@@ -148,7 +150,7 @@
   notes:
     Order 'Vers échinodermes' references Klein's taxon but in the vernacular
   identifiers:
-    url: https://archive.org/details/histoirenaturell3488brug/page/n1/mode/2up
+    url: https://www.google.com/books/edition/Histoire_naturelle_des_vers/Mu48AAAAcAAJ
 1791_bruguière:
   book: tableau
   pubDate:
