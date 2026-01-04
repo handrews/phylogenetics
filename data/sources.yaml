@@ -1422,6 +1422,7 @@
     year: 1974
   authors:
   - bell.b.m
+  notes: This printing cited in 1975_bell, but usually cited as 1976 seen below.
 1975_bell.b.m:
   title: "Ontogeny and systematics of Timeischytes casteri n. sp.: an enigmatic Devonian edrioasteroid"
   journal: bullamp
@@ -1459,6 +1460,16 @@
   - kolata
   identifiers:
     doi: 10.1017/S0022336000061734
+1976_bell.b.m:
+  title: A Study of North American Edrioasteroidea
+  journal: nysm
+  volume: 21
+  pubDate:
+    year: 1976
+    month: 2
+  authors:
+  - bell.b.m
+  notes: Either a reprint, or a misprinted cover that has been cited ever since.
 1976_bell.b.m_petersen.m.s:
   title: An Edrioasteroid from the Guilmette Formation at Wendover, Utah-Nevada
   journal: jofpaleo

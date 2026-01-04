@@ -4086,7 +4086,7 @@
       posterior interambulacrum, periproctal or valvular; theca domal, clavate
       or globose (without stalk).
     children:
-    - taxon: isorophida
+    - taxon: isorophida_bell.b.m_1974
       diagnosis: |
         Edrioasteroidea with: domal or clavate theca, ambu- lacra commonly
         limited to upper oral surface; oral frame formed by five enlarged,
@@ -4100,7 +4100,7 @@
         surface a peripheral rim.
       new: true
       children:
-      - taxon: lebetodiscina
+      - taxon: lebetodiscina_bell.b.m_1974
         diagnosis: |
           Isorophida with: center of oral area farmed by three primary orals;
           ambulacral coverplates forming single, alternating biseries,
@@ -4109,7 +4109,7 @@
           imbricate; anal area a periproct.
         new: true
         children:
-        - taxon: lebetodiscidae
+        - taxon: lebetodiscidae_bell.b.m_1974
           diagnosis: |
             Lebetodiscina with: oral area including at least two pairs of
             shared coverplates, secondary orals frequently present; hydropore
@@ -4239,7 +4239,7 @@
                 hydropore structure formed by four plates; peri. proet near
                 the oral area in proximal part of mteramhu. lacrum 5;
                 thecal plates smooth,"
-          - taxon: belochthus
+          - taxon: belochthus_bell.b.m_1974
             new: true
             diagnosis: |
               "Lebetodiscidae with: domal theca; oral area with at least
@@ -4297,7 +4297,7 @@
             - taxon: granulatus_hall_1871
               type: true
             - taxon: stellatus_hall_1866
-        - taxon: carneyellidae
+        - taxon: carneyellidae_bell.b.m_1974
           new: true
           children:
           - taxon: carneyella
@@ -4311,7 +4311,7 @@
             - taxon: faberi_miller.s.a_1894
             - taxon: ulrichi_bassler_shideler_1936
             - taxon: valcourensis_clark_1920
-          - taxon: cryptogoleus
+          - taxon: cryptogoleus_bell.b.m_1974
             new: true
             children:
             - taxon: chapmani_raymond_1915
@@ -4326,10 +4326,10 @@
             - taxon: youngi_raymond_1915
             - taxon: platys_raymond_1915
             - taxon: billingsi_chapman_1860
-      - taxon: isorophina
+      - taxon: isorophina_bell.b.m_1974
         new: true
         children:
-        - taxon: isorophidae
+        - taxon: isorophidae_bell.b.m_1974
           new: true
           children:
           - taxon: isorophus
@@ -4356,13 +4356,13 @@
             children:
             - taxon: parasiticus_hall_1852
               type: true
-          - taxon: rectitriordo
+          - taxon: rectitriordo_bell.b.m_1974
             new: true
             children:
             - taxon: kirkfieldensis_bell.b.m_1974
               type: true
               new: true
-          - taxon: curvitriordo
+          - taxon: curvitriordo_bell.b.m_1974
             new: true
             children:
             - taxon: kentuckyensis_bassler_1936
@@ -4378,12 +4378,12 @@
             children:
             - taxon: hamiltonensis_vanuxem_1842
               type: true
-          - taxon: krama
+          - taxon: krama_bell.b.m_1974
             new: true
             children:
             - taxon: devonicum_bassler_1936
               type: true
-          - taxon: postibulla
+          - taxon: postibulla_bell.b.m_1974
             new: true
             children:
             - taxon: legrandensis_miller.s.a_gurley_1894
@@ -4441,7 +4441,7 @@
             - openTaxon: agelacrinitidae-sp_bell.b.m_1974
         - openTaxon: isorophina-uncertain-family_bell.b.m_1974
           children:
-          - taxon: hadrochthus
+          - taxon: hadrochthus_bell.b.m_1974
             new: true
             children:
             - taxon: commensalus_bell.b.m_1974
@@ -4468,7 +4468,7 @@
               parents:
               - taxon: cyclaster
           - taxon: priscus_miller.s.a_gurley_1894
-        - taxon: edriophus
+        - taxon: edriophus_bell.b.m_1974
           new: true
           children:
           - taxon: levis_bather_1914
@@ -4871,6 +4871,229 @@
             - openTaxon: bothriocidaridae-unknown-genus_kolata_1975
               children:
               - openTaxon: bothriocidaridae-sp_kolata_1975
+1976_bell.b.m:
+  taxonomies:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: isorophida
+      new: true
+      synonyms:
+      - taxon: isorophida_bell.b.m_1974
+      children:
+      - taxon: lebetodiscina
+        new: true
+        synonyms:
+        - taxon: lebetodiscina_bell.b.m_1974
+        children:
+        - taxon: lebetodiscidae
+          new: true
+          synonyms:
+          - taxon: lebetodiscidae_bell.b.m_1974
+          children:
+          - taxon: lebetodiscus
+            children:
+            - taxon: dicksoni_billings_1857
+              type: true
+          - taxon: foerstediscus
+            children:
+            - taxon: grandis_bassler_1935
+              type: true
+            - taxon: splendens_bassler_1936
+            - taxon: solitarius_bell.b.m_1976
+              new: true
+              synonyms:
+              - taxon: solitarius_bell.b.m_1974
+          - taxon: belochthus
+            new: true
+            synonyms:
+            - taxon: belochthus_bell.b.m_1974
+            children:
+            - taxon: orthokolus_bell.b.m_1976
+              type: true
+              new: true
+              synonyms:
+              - taxon: orthokolus_bell.b.m_1974
+          - taxon: streptaster
+            children:
+            - taxon: vorticellatus_hall_1866
+              type: true
+          - taxon: cystaster
+            children:
+            - taxon: granulatus_hall_1871
+              type: true
+            - taxon: stellatus_hall_1866
+        - taxon: carneyellidae
+          new: true
+          synonyms:
+          - taxon: carneyellidae_bell.b.m_1974
+          children:
+          - taxon: carneyella
+            children:
+            - taxon: pilea_hall_1866
+              type: true
+            - taxon: faberi_miller.s.a_1894
+            - taxon: ulrichi_bassler_shideler_1936
+            - taxon: valcourensis_clark_1920
+          - taxon: cryptogoleus
+            new: true
+            synonyms:
+            - taxon: cryptogoleus_bell.b.m_1974
+            children:
+            - taxon: chapmani_raymond_1915
+              type: true
+              synonyms:
+              - taxon: chapmani_raymond_1915
+            - taxon: reticulatus_bell.b.m_1976
+              new: true
+              synonyms:
+              - taxon: reticulatus_bell.b.m_1974
+            - taxon: multibrachiatus_raymond_1915
+            - taxon: youngi_raymond_1915
+            - taxon: platys_raymond_1915
+            - taxon: billingsi_chapman_1860
+      - taxon: isorophina
+        new: true
+        synonyms:
+        - taxon: isorophina_bell.b.m_1974
+        children:
+        - taxon: isorophidae
+          new: true
+          synonyms:
+          - taxon: isorophidae_bell.b.m_1974
+          children:
+          - taxon: isorophus
+            children:
+            - taxon: cincinnatiensis_roemer_1851
+              type: true
+            - taxon: austini_foerste_1914
+            - taxon: warrenensis_james_1883
+          - taxon: isorophusella
+            children:
+            - taxon: incondita_raymond_1915
+              type: true
+            - taxon: trentonensis_bassler_1936
+            - taxon: pleiadae_sinclair_bolton_1965
+          - taxon: hemicystites
+            children:
+            - taxon: parasiticus_hall_1852
+              type: true
+          - taxon: rectitriordo
+            new: true
+            synonyms:
+            - taxon: rectitriordo_bell.b.m_1974
+            children:
+            - taxon: kirkfieldensis_bell.b.m_1976
+              type: true
+              new: true
+              synonyms:
+              - taxon: kirkfieldensis_bell.b.m_1974
+          - taxon: curvitriordo
+            new: true
+            synonyms:
+            - taxon: curvitriordo_bell.b.m_1974
+            children:
+            - taxon: kentuckyensis_bassler_1936
+              type: true
+            - taxon: shideleri_bassler_1936
+        - taxon: agelacrinitidae
+          children:
+          - taxon: agelacrinites
+            children:
+            - taxon: hamiltonensis_vanuxem_1842
+              type: true
+          - taxon: krama
+            new: true
+            synonyms:
+            - taxon: krama_bell.b.m_1974
+            children:
+            - taxon: devonicum_bassler_1936
+              type: true
+          - taxon: postibulla
+            new: true
+            synonyms:
+            - taxon: postibulla_bell.b.m_1974
+            children:
+            - taxon: legrandensis_miller.s.a_gurley_1894
+              type: true
+            - taxon: keslingi_bell.b.m_1976
+              new: true
+              synonyms:
+              - taxon: keslingi_bell.b.m_1974
+            - taxon: jasperensis_harker_1953
+              provisional: true
+            - taxon: alpenensis_bassler_1936
+              provisional: true
+          - taxon: discocystis
+            children:
+            - taxon: kaskaskiensis_hall_1858
+              type: true
+          - taxon: lepidodiscus
+            children:
+            - taxon: squamosus_meek_worthen_1868
+              type: true
+            - taxon: laudoni_bassler_1936
+            - taxon: sampsoni_miller.s.a_1891
+          - taxon: ulrichidiscus
+            children:
+            - taxon: pulaskiensis_miller.s.a_gurley_1894
+              type: true
+          - taxon: cooperidiscus
+            children:
+            - taxon: alleganius_clarke_1901
+              type: true
+          - openTaxon: agelacrinitidae-uncertain-genus_bell.b.m_1976
+            synonyms:
+            - openTaxon: agelacrinitidae-uncertain-genus_bell.b.m_1974
+            children:
+            - openTaxon: agelacrinitidae-sp_bell.b.m_1976
+              synonyms:
+              - openTaxon: agelacrinitidae-sp_bell.b.m_1974
+        - openTaxon: isorophina-uncertain-family_bell.b.m_1976
+          synonyms:
+          - openTaxon: isorophina-uncertain-family_bell.b.m_1974
+          children:
+          - taxon: hadrochthus
+            new: true
+            synonyms:
+            - taxon: hadrochthus_bell.b.m_1974
+            children:
+            - taxon: commensalus_bell.b.m_1976
+              type: true
+              new: true
+              synonyms:
+              - taxon: commensalus_bell.b.m_1974
+      - openTaxon: isorophida-uncertain-suborder_bell.b.m_1976
+        synonyms:
+        - openTaxon: isorophida-uncertain-suborder_bell.b.m_1974
+        children:
+        - openTaxon: isorophida-uncertain-family_bell.b.m_1976
+          synonyms:
+          - openTaxon: isorophida-uncertain-family_bell.b.m_1974
+          children:
+          - openTaxon: hemicystites-questionable_bell.b.m_1976
+            synonyms:
+            - openTaxon: hemicystites-questionable_bell.b.m_1974
+            children:
+            - taxon: carbonarius_bassler_1936
+              provisional: true
+    - taxon: edrioasterida
+      children:
+      - taxon: edrioasteridae
+        children:
+        - taxon: edrioaster
+          children:
+          - taxon: bigsbyi_billings_1857
+            type: true
+          - taxon: priscus_miller.s.a_gurley_1894
+        - taxon: edriophus
+          new: true
+          synonyms:
+          - taxon: edriophus_bell.b.m_1974
+          children:
+          - taxon: levis_bather_1914
+            type: true
+          - taxon: saratogensis_ruedemann_1912
+            provisional: true
 1976_bell.b.m_petersen.m.s:
   taxonomies:
   - taxon: edrioasteroidea
@@ -5772,7 +5995,7 @@
           synonyms:
           - taxon: isorophidae
         - taxon: agelacrinitidae
-      - openTaxon: isorophida-uncertain-suborder_bell.b.m_1974
+      - openTaxon: isorophida-uncertain-suborder_bell.b.m_1976
         children:
         - taxon: pyrgocystidae
         - taxon: lispidecodidae
@@ -7504,7 +7727,7 @@
                 The species P.? jasperensis and P. alpenensis are
                 left unassigned
               children:
-              - taxon: keslingi_bell.b.m_1974
+              - taxon: keslingi_bell.b.m_1976
               - taxon: legrandensis_miller.s.a_gurley_1894
               - taxon: lukei_bell.b.m_petersen.m.s_1976
               - taxon: neglecta_smith.a.b_1983
@@ -7546,7 +7769,7 @@
             - taxon: legrandensis_miller.s.a_gurley_1894
             - children:
               - taxon: lukei_bell.b.m_petersen.m.s_1976
-              - taxon: keslingi_bell.b.m_1974
+              - taxon: keslingi_bell.b.m_1976
         - taxon: parapostibulla
           children:
           - taxon: hybolopus_fraunfelter_utgaard_1970
