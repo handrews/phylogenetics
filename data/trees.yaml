@@ -1677,11 +1677,11 @@
       - taxon: punctatus_forbes_1848
         provisional: true
         new: true
-      - taxon: agelacrinites
-        children:
-        - taxon: hamiltonensis_vanuxem_1842
-        - taxon: buchianus_forbes_1848
-          new: true
+    - taxon: agelacrinites
+      children:
+      - taxon: hamiltonensis_vanuxem_1842
+      - taxon: buchianus_forbes_1848
+        new: true
 1858_salter_billings:
   taxonomies:
   - taxon: cystideæ
