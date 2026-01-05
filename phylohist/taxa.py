@@ -298,12 +298,18 @@ class Taxon:
         )
 
     # TODO: Verify that each exception is the expected rank
+    ida_classes = frozenset({'Arachnida'})
     ida_subclasses = frozenset({'Disparida', 'Helicoplacida', 'Polyplacida'})
     ida_parvclasses = frozenset({'Cladida'})
     ida_suborders = frozenset({'Placocystida'})
     ida_superfamilies = frozenset({'Protocrinitida'})
-    ida_exceptions = \
-      ida_subclasses | ida_parvclasses | ida_suborders | ida_superfamilies
+    ida_exceptions = (
+      ida_classes |
+      ida_subclasses |
+      ida_parvclasses |
+      ida_suborders |
+      ida_superfamilies
+    )
 
     ina_exceptions = frozenset({
       'Carallina',
@@ -314,7 +320,7 @@ class Taxon:
     })
 
     for suffix, ranks, exceptions in (
-      ('acea', ('Superfamily',), frozenset()),
+      ('acea', ('Superfamily',), frozenset({'Crustacea'})),
       ('ina', ('Suborder',), ina_exceptions),
       ('ida', ('Order',), ida_exceptions),
       (

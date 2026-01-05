@@ -79,7 +79,7 @@ def load_files(*files):
   r = schema_library.validate()
   if not r.valid:
     logger.error("Schema not valid against metaschema!")
-    logger.error(yaml.safe_dump(r.output('detailed')))
+    log_schema_errors(r)
     sys.exit(-1)
 
   logger.debug("Schema is valid.")
@@ -102,10 +102,26 @@ def load_files(*files):
       r = schema.evaluate(jschon.JSON(data[name]))
       if not r.valid:
         logger.error(f'File "{filename}" is not valid.')
-        logger.error(yaml.safe_dump(r.output('detailed')))
+        log_schema_errors(r)
         sys.exit(-1)
       else:
         logger.debug(f'"{filename}" is valid.')
     except KeyError as e:
       logger.error(repr(e))
   return data
+
+
+def log_error_node(error):
+  if isinstance(error, list):
+    for e in error:
+      log_error_node(e)
+  else:
+    to_log = error
+    if 'errors' in error:
+      log_error_node(error['errors'])
+      to_log = {k: v for k, v in error.items() if k != 'errors'}
+    logger.error('\n' + yaml.safe_dump(to_log))
+
+def log_schema_errors(result):
+  for error in result.output('detailed').get('errors', []):
+    log_error_node(error)
