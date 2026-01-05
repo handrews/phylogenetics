@@ -799,6 +799,8 @@
             - taxon: beroe_linnaeus_1758
               parents:
               - taxon: volvox
+          - taxon: pileus_müller.o.f_1776
+            new: true
         - taxon: medusa
         - taxon: asterias
           children:
@@ -1050,152 +1052,265 @@
       - taxon: echinus
     - taxon: testacea-order
     - taxon: zoophyta
-# 1798a_cuvier:
-#   taxonomies:
-#   - taxon: animalia
-#     notes: des animaux
-#     children:
-#     - taxon: mammalia
-#       notes: des mammifères
-#     - taxon: aves
-#       notes: des oiseaux
-#     - taxon: amphibia_linnaeus_1758
-#       notes: des reptiles, explicitly synnonomized with Linnaeus's Amphibia
-#     - taxon: pisces
-#       notes: des poissons
-#     - taxon: mollusca-class
-#       notes: des mollusques
-#     - taxon: insecta
-#       notes: des insectes
-#     - taxon: vermes
-#       notes: des vers
-#       children:
-#       - notes: |
-#           VERS pourvus d’épines ou de soies pour s’aider dans leurs mouvemens.
-#           (Worms equipped with spines or bristles to assist them in their
-#           movements.)
-#         children:
-#         - taxon: aphrodita
-#           notes: I
-#         - taxon: terebella
-#           notes: II
-#         - taxon: amphitrite
-#           notes: III
-#         - taxon: serpula
-#           notes: IV
-#         - taxon: penicillus # Linn. Serpula penicillata
-#         - taxon: dentalium
-#           notes: V
-#         - taxon: nereis
-#           notes: VI
-#         - taxon: nais
-#           notes: VII
-#         - taxon: lumbricus
-#           notes: VIII
-#         - taxon: furia
-#           notes: IX
-#         - taxon: hirudo
-#           notes: X
-#         - taxon: planaria
-#           notes: XI
-#       - taxon: intestina
-#         children:
-#         - taxon: fasciola
-#           notes: XII
-#         - taxon: ligula
-#         - taxon: lenguatula
-#         - taxon: tænia
-#           notes: XIII
-#         - taxon: ascaris
-#           notes: XIV
-#         - taxon: trichocephalus
-#         - taxon: echinorhynichus
-#         - taxon: hæruca
-#         - taxon: strongylus
-#         - taxon: uncinaria
-#         - taxon: proboscidea
-#         - taxon: cucullanus
-#         - taxon: scollex
-#         - taxon: caryophyllæus
-#         - taxon: gordius
-#           notes: XV
-#     - taxon: zoophyta
-#       notes: des zoophytes
-#       children:
-#       - taxon: echinodermata-order
-#         notes: |
-#           Chapter II, Des Zoophytes qui ont une enveloppe cortace ou calcaire,
-#           un organe respiratoire intérieur distinct,etsouvent despieds
-#           rétracuiles nombreux; ou des ÉCHINODERMES.
-#           (These are zoophytes that have a leathery or calcareous outer 
-#           overing, a distinct internal respiratory organ, and often numerous
-#           retractable feet; or Echinoderms.)
-#         children:
-#         - taxon: holothuria
-#           notes: I les holothuries
-#           children:
-#           - taxon: timide_
-#             synonyms:
-#             - taxon: tubulosa_linnaeus_
-#           - taxon: pentacta_
-#         - taxon: asterias
-#           notes: II les astéries
-#           children:
-#           - taxon: rubens_linnaeus_1758
-#           - taxon: caput medusæ_linnaeus_1758
-#           - taxon: membranacea_
-#           - taxon: papposa_linnaeus_1767
-#         - taxon: echinus
-#           notes: III les oursins
-#           children:
-#           - notes: les oursins (again)
-#             children:
-#             - taxon: esculentus_linnaeus_1758
-#             - taxon: cidaris_linnaeus_1758
-#             - taxon: atratus_linnaeus_1758
-#             - taxon: rosaceus_linnaeus_1758
-#             - taxon: hexaporus_
-#           - notes: les spatagues
-#             children:
-#             - taxon: lacunosus_linnaeus_1758
-#       - notes: |
-#           Chapter III, Des Zoophytes mous dans lesquels on ne voit point
-#           d’organe respiratoire, et qui n’ont point de pieds rérraciiles.
-#           (Soft zoophytes in which no respiratory organs are visible,
-#           and which have no retractable feet.)
-#         children:
-#         - notes: |
-#             A. Les grands, dans lesquels on apperçoit des fibres et des
-#             intestins, vulgairement ORTIES DE MER.
-#             (The larger ones, in which fibers and intestines can be seen,
-#             commonly known as SEA NETTLES.)
-#           children:
-#           - taxon: medusa
-#             notes: I les méduses
-#           - taxon: beroe
-#             synonyms:
-#             - taxon: pileus_müller.o.f_1776
-#           - taxon: actinia
-#         - notes: |
-#             B. Ceux qui n’ont qu’un corps gelatineux, sans orgurisaiton
-#             apparente, et croissent par bourgeons, vulgairement POLYPES.
-#             (Those that have only a gelatinous body, without any apparent
-#             organization, and grow by budding, are commonly called POLYPS.)
-#           children:
-#           - taxon: hydra
-#           - taxon: botryllus
-#           - taxon: corine
-#           - taxon: cristatella
-#           - taxon: vorticella
-#         - taxon: infusoria-order
-#           notes: |
-#             Les trèspetits isolés, appelés vulgairement ANIMAUX INFUSOIRES.
-#             (These very small, isolated organisms are commonly called
-#             INFUSORIAL ANIMALS.)
-#           children:
-#           - taxon: rotifer
-#           - taxon: brachionus
-#           # TODO: FINISH!
+1798a_cuvier:
+  taxonomies:
+  - taxon: animalia
+    notes: des animaux
+    children:
+    - taxon: mammalia
+      notes: des mammifères
+    - taxon: aves
+      notes: des oiseaux
+    - taxon: amphibia_linnaeus_1758
+      notes: des reptiles, explicitly synnonomized with Linnaeus's Amphibia
+    - taxon: pisces
+      notes: des poissons
+    - taxon: mollusca-class
+      notes: des mollusques
+    - taxon: insecta
+      notes: des insectes
+    - taxon: vers
+      notes: vermes
+      children:
+      - notes: |
+          VERS pourvus d’épines ou de soies pour s’aider dans leurs mouvemens.
+          (Worms equipped with spines or bristles to assist them in their
+          movements.)
+        children:
+        - taxon: aphrodita
+          notes: I
+        - taxon: terebella
+          notes: II
+        - taxon: amphitrite
+          notes: III
+        - taxon: serpula
+          notes: IV
+        - taxon: penicillus_bruguière_1789
+        - taxon: dentalium
+          notes: V
+        - taxon: nereis
+          notes: VI
+        - taxon: nais
+          notes: VII
+        - taxon: lumbricus
+          notes: VIII
+        - taxon: furia
+          notes: IX
+        - taxon: hirudo
+          notes: X
+        - taxon: planaria
+          notes: XI
+      - taxon: intestins
+        notes: intestina
+        children:
+        - taxon: fasciola
+          notes: XII
+        - taxon: ligula_cuvier_1798
+          new: true
+        - taxon: linguatula_frölich_1789
+        - taxon: tænia
+          notes: XIII
+        - taxon: ascaris
+          notes: XIV
+        - taxon: trichocephalus
+        - taxon: echinorhynchus
+        - taxon: hæruca
+        - taxon: strongylus
+        - taxon: uncinaria
+        - taxon: proboscidea_bruguière_1791
+        - taxon: cucullanus
+        - taxon: scolex
+        - taxon: caryophyllœus
+          new: true
+        - taxon: gordius
+          notes: XV
+    - taxon: zoophytes-class
+      notes: zoophyta-class
+      children:
+      - taxon: échinodermes
+        notes: |
+          echinodermata-order
+          Chapter II, Des Zoophytes qui ont une enveloppe cortace ou calcaire,
+          un organe respiratoire intérieur distinct,etsouvent despieds
+          rétracuiles nombreux; ou des ÉCHINODERMES.
+          (These are zoophytes that have a leathery or calcareous outer 
+          overing, a distinct internal respiratory organ, and often numerous
+          retractable feet; or Echinoderms.)
+        children:
+        - taxon: holothuria
+          notes: I les holothuries
+          children:
+          - taxon: tubulosa_gmelin_1791
+            notes: L'holothurie timide (H. tubulosa. Lin.)
+          - taxon: pentacta_gmelin_1791
+            notes: |
+              Le concombre de mer. (H. pentacta.)
+              Translation — "The sea cucumbre."
+        - taxon: asterias
+          notes: II les astéries
+          children:
+          - taxon: rubens_linnaeus_1758
+            notes: L’évoile de mer commune. ( A. rubens.)
+          - taxon: caput medusæ_linnaeus_1758
+            notes: La tête de Méduse. (A. caput Medusæ.)
+          - taxon: membranacea_retzius_1783
+            notes: La patte d'oie. ( A. membranacea.)
+          - taxon: papposa_linnaeus_1767
+            notes: Le soleil, ( A. papposa.)
+        - taxon: echinus
+          notes: III les oursins
+          children:
+          - notes: les oursins (again)
+            children:
+            - taxon: esculentus_linnaeus_1758
+              notes: L’oursin mangeable. (Echinus esculentus.)
+            - taxon: cidaris_linnaeus_1758
+              notes: Le turban. (Echinus cidaris.)
+            - taxon: atratus_linnaeus_1758
+              notes: L’oursin violer, (Echinüs atratus.)
+            - taxon: rosaceus_linnaeus_1758
+              notes: La rosace. (Echinus rosaceus.)
+            - taxon: hexaporus_gmelin_1791
+              notes: Le gâteau. (Echinus hexaporus.)
+          - notes: les spatagues
+            children:
+            - taxon: lacunosus_linnaeus_1758
+              notes: Le spatague cœur. (Echinus lacunosus. )
+      - notes: |
+          Chapter III, Des Zoophytes mous dans lesquels on ne voit point
+          d’organe respiratoire, et qui n’ont point de pieds rérraciiles.
+          (Soft zoophytes in which no respiratory organs are visible,
+          and which have no retractable feet.)
+        children:
+        - taxon: orties de mer
+          new: true  # Probably.  If this is even really a taxon.
+          notes: |
+            A. Les grands, dans lesquels on apperçoit des fibres et des
+            intestins, vulgairement ORTIES DE MER.
+            (The larger ones, in which fibers and intestines can be seen,
+            commonly known as SEA NETTLES.)
+          children:
+          - taxon: medusa
+            notes: I les méduses
+            children:
+            - taxon: aurita_linnaeus_1758
+              notes: La méduse bleue. (Medusa aurita.)
+            - taxon: pileus_müller.o.f_1776
+              notes: |
+                Le Beroë globuleux. ( Medusa pileus.)
+                grouped under Beroe, perhaps as a subgenus? with text
+                Müller and Bruguières separate from the jellyfish.
+                THE BEROE. (BEROE.)
+                Which have a gelatinous body, of oval shape, divided by furrows
+                into ribs, like a melon. At one of the extremities is an
+                opening that serves as a mouth, from which, in some species,
+                two more or less long and divided tentacles emerge. The ribs
+                are ciliated. They use these cilia to propel themselves through
+                the water, swimming in a rotating motion. They are
+                phosphorescent and emit a bright glow at night.
+          - taxon: actinia
+        - taxon: polypes
+          new: true  # Probably.  If this is even really a taxon.
+          notes: |
+            B. Ceux qui n’ont qu’un corps gelatineux, sans orgurisaiton
+            apparente, et croissent par bourgeons, vulgairement POLYPES.
+            (Those that have only a gelatinous body, without any apparent
+            organization, and grow by budding, are commonly called POLYPS.)
+          children:
+          - taxon: hydra
+          - taxon: botryllus
+            notes: Les botrylles.
+            children:
+            - taxon: conglomeratus_gaertner_1774
+              notes: Le botrylle conglomére. (B. conglomeratus.)
+            - taxon: stellatus_gaertner_1774
+              notes: Le botrylle évoilé. (B. stellatus.)
+          - taxon: corine
+            new: true
+          - taxon: cristatella
+            new: true
+          - taxon: vorticella
+        - taxon: infusoires-section
+          notes: |
+            Les trèspetits isolés, appelés vulgairement ANIMAUX INFUSOIRES.
+            (These very small, isolated organisms are commonly called
+            INFUSORIAL ANIMALS.)
+          children:
+          - taxon: rotifer
+            new: true
+          - taxon: brachionus
+          - taxon: vibrio
+          - taxon: volvox
+          - taxon: monas
+      - taxon: zoophytes
+        notes: |
+          Chapter IV
+          Des zoophytes dans lesquels la substance animale craverse
+          l'axe de la substance cornee qui lui Sert d’enveloppe,
+          et a chacun de ses rameaux |temmine enpolype; ou des ZOOPHYTES
+          proprement dits.
+          (Zoophytes in which the animal substance traverses the axis
+          of the horny substance that serves as its covering, and each
+          of its branches terminates in a polyp; or zoophytes properly
+          so called.)
+        children:
+        - taxon: floscularia
+          new: true
+        - taxon: tubularia
+        - taxon: capsularia
+        - taxon: sertularia
+      - taxon: escares
+        new: true  # probably?  If this is even truly a taxon?
+        notes: |
+          Chapter V
+          Des zoophytes dont cheque polype.est adherent dans une cellule
+          cornée ou calcaire, à parois; ou des Escares.
+          (These are neophytes in which each polyp is attached within a horny
+          or calcareous cell with walls; or they are eschars.)
+        children:
+        - taxon: cellularia
+        - taxon: flustra
+        - taxon: corallina
+      - taxon: cératophytes
+        new: true  # probably?  If this is even truly a taxon?
+        notes: |
+          Chapter VI
+          Des zoophytes qui ont un axe de substance solide, recouvert par-tout
+          d’une chair sensible, des creux de laquelle sortent des polypes;
+          ou des Cératophytes.
+          (Zoophytes that have an axis of solid substance, covered all over
+          with sensitive flesh, from the cavities of which polyps emerge;
+          or Ceratophytes.)
+        children:
+        - taxon: antipathes
+        - taxon: gorgonia
+        - taxon: isis
+        - taxon: pennatula
+        - taxon: veretillum
+          new: true
+        - taxon: ombellula
+      - taxon: lithophytes
+        notes: |
+          Chapter VII
+          Des zoophytes qui ont un axe OU une base de substance prerreuse;
+          dans laquelle sont Creuses les réceptacles des polypes;
+          ou des Lithophytes
+          (Zoophytes that have an axis OR a base of stony substance; in which
+          the receptacles of the polyps are hollowed out; or Lithophytes)
+        children:
+        - taxon: madrepora
+        - taxon: millepora
+      - notes: |
+          Chapter VIII
+          Des zoophytes qui ont pour base une substance spongieuse,
+          freable ou fbreuse, enduite d'une croûte sensible, contenant
+          quelquefois des polypes.
+          (Zoophytes that have a base made of a spongy, friable, or fibrous
+          substance, coated with a sensitive crust, sometimes containing
+          polyps.)
+        children:
+        - taxon: alcyonium
+        - taxon: spongia
 1820_say:
   taxonomies:
   - taxon: pentacrinus

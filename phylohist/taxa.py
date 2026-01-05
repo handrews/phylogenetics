@@ -111,11 +111,12 @@ class Authority:
       for a in self._source_authors:
         if (
           not a.could_publish_in(self._year) and
-          not (a.family == 'Klein' and self._year == 1778)
+          not (a.family == 'Klein' and self._year == 1778) and
+          not (a.family == 'Linnaeus' and self._year == 1790)
         ):
           logger.error(
-            f'Source {source_key} year {year} too far outside of '
-            f'{author} lifespan!',
+            f'Source {self} year {self._year} too far '
+            f'outside of {a} lifespan!',
           )
 
   def __str__(self):

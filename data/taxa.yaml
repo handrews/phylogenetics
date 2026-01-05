@@ -616,6 +616,10 @@ aurantium_gyllenhaal_1772:
   name: aurantium
   auth: [gyllenhaal]
   year: 1772
+aurita_linnaeus_1758:
+  name: aurita
+  authority:
+    source: 1758_linnaeus
 australocystinae:
   name: Australocystinae
   rank: Subfamily
@@ -1143,6 +1147,10 @@ capillaris_phillips.j_1839:
   authority:
     authors: [phillips.j]
     source: 1839_murchison
+capsularia:
+  name: Capsularia
+  auth: [Modeer]
+  year: 1793
 caput medusæ_lamarck_1801:
   name: caput medusæ
   auth: [lamarck]
@@ -1255,6 +1263,11 @@ caryocystites:
   name: Caryocystites
   authority:
     source: 1844_buch
+caryophyllœus:
+  name: Caryophyllœus
+  authority:
+    source: 1798a_cuvier
+  notes: Accepted as Caryophyllæus (Müller, 1878), note different ligature.
 casteri_bell.b.m_1975:
   name: casteri
   authority:
@@ -1290,6 +1303,10 @@ cellulana-order:
   authority:
     source: 1776_müller.o.f
   notes: authority unclear
+cellularia:
+  name: Cellularia
+  auth: [Pallas]
+  year: 1766
 celtocrinus:
   name: Celtocrinus
   auth: [Donovan, Cope]
@@ -1302,6 +1319,12 @@ ceratocystis:
   name: Ceratocystis
   auth: [jaekel]
   year: 1901
+cératophytes:
+  name: Cératophytes
+  rank: Order
+  authority:
+    source: 1798a_cuvier
+  notes: In French. Authority uncertain.
 cercaria:
   name: Cercaria
   authority:
@@ -1569,6 +1592,10 @@ confertus_barrande_1887:
   name: confertus
   auth: [barrande]
   year: 1887
+conglomeratus_gaertner_1774:
+  name: conglomeratus
+  auth: [Gaertner]
+  year: 1774
 conicus_billings_1857_hybocrinus:
   originalParent: hybocrinus
   name: conicus
@@ -1623,6 +1650,10 @@ corallum_jaekel_1918:
   name: corallum
   auth: [jaekel]
   year: 1918
+corine:
+  name: Corine
+  authority:
+    source: 1798a_cuvier
 cornuta:
   name: Cornuta
   rank: Order
@@ -1759,6 +1790,10 @@ crinozoa-sp_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_19
   rank: species
   authority:
     source: 1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y
+cristatella:
+  name: Cristatella
+  authority:
+    source: 1798a_cuvier
 cristatus_bassler_1943:
   name: cristatus
   auth: [bassler]
@@ -1822,6 +1857,11 @@ cuculanus:
   name: Cuculanus
   auth: [Bloch]
   year: 1782
+  notes: Accepted as Cucullanus (Müller 1777)
+cucullanus:
+  name: Cucullanus
+  auth: [müller.o.f]
+  year: 1777
 cuniculocystis:
   name: Cuniculocystis
   auth: [sprinkle, Wahlman]
@@ -2965,6 +3005,12 @@ erinocystis-sp_paul.c.r.c_1968:
   rank: species
   authority:
     source: 1968b_paul.c.r.c
+escares:
+  name: Escares
+  rank: Order
+  authority:
+    source: 1798a_cuvier
+  notes: In French.  Authority uncertain.
 eschara:
   name: Eschara
   authority:
@@ -3119,6 +3165,10 @@ flos_klug_krüger_korn_rücklin_schemm-gregory_debates_mapes_2008:
   name: flos
   auth: [Klug, Krüger, Korn, Rücklin, Schemm-Gregory, DeBates, Mapes]
   year: 2008
+floscularia:
+  name: Floscularia
+  authority:
+    source: 1798a_cuvier
 flustra:
   name: Flustra
   auth: [linnaeus]
@@ -3602,6 +3652,11 @@ hadrodiscus:
   name: Hadrodiscus
   authority:
     source: 1990_smith.a.b_jell
+hæruca:
+  name: Hæruca
+  auth: [Gmelin]
+  in: [linnaeus]
+  year: 1790
 haefneri_zamora_rahman_sumrall_gibson_thompson_2022:
   name: haefneri
   auth: [zamora, rahman, sumrall, gibson, thompson]
@@ -3859,6 +3914,10 @@ heterostelea:
   rank: Order
   auth: [jaekel]
   year: 1900
+hexaporus_gmelin_1791:
+  name: hexaporus
+  auth: [Gmelin]
+  year: 1791
 hexedriocystis:
   name: Hexedriocystis
   authority:
@@ -4125,9 +4184,17 @@ infusoria-order:
   rank: Order
   auth: [Ledermüller]
   year: 1763
+infusoria-section:
+  name: Infusoria
+  rank: section
+  auth: [Ledermüller]
+  year: 1763
 infusoires:
   name: Infusoires
   vulgarSpellingOf: infusoria-order
+infusoires-section:
+  name: Infusoires
+  vulgarSpellingOf: infusoria-section
 inhærens_müller.o.f_1776:
   name: inhærens
   authority:
@@ -4695,6 +4762,12 @@ lichenoididae-gen-sp_smith.a.b_zamora_álvaro_2013:
   rank: species
   authority:
     source: 2013_smith.a.b_zamora_álvaro
+ligula_cuvier_1798:
+  name: Ligula
+  needsQualification: true
+  authority:
+    source: 1798a_cuvier
+  notes: Accepted as Lingula (Brug. 1797) per IRMNG, non Bloch (1782)
 limax:
   name: Limax
   authority:
@@ -4703,6 +4776,20 @@ lindstroemi_regnéll_1945:
   name: lindstroemi
   auth: [regnéll]
   year: 1945
+linguatula_frölich_1789:
+  name: Linguatula
+  needsQualification: true
+  auth: [Frölich]
+  year: 1789
+linguatula_schrank_1796:
+  name: Linguatula
+  needsQualification: true
+  auth: [Schrank]
+  year: 1796
+lingula:
+  name: Lingula
+  auth: [bruguière]
+  year: 1797
 lingulocystidae:
   name: Lingulocystidae
   rank: Family
@@ -4734,6 +4821,9 @@ lithophyta:
   rank: Order
   authority:
     source: 1758_linnaeus
+lithophytes:
+  name: Lithophytes
+  vulgarSpellingOf: lithophyta
 lixula_linnaeus_1758:
   name: lixula
   authority:
@@ -4958,6 +5048,10 @@ megapinacotus_ehlers_kesling_1958:
   name: megapinacotus
   auth: [Ehlers, kesling]
   year: 1958
+membranacea_retzius_1783:
+  name: membranacea
+  auth: [Retzius]
+  year: 1783
 mentula_müller.o.f_1776:
   name: mentula
   authority:
@@ -5365,6 +5459,10 @@ oklahomensis_bassler_1950:
   name: oklahomensis
   auth: [bassler]
   year: 1950
+ombellula:
+  name: Ombellula
+  auth: [cuvier]
+  year: 1797
 oogyi_kolata_1975:
   name: oogyi
   authority:
@@ -5436,6 +5534,12 @@ orthokolus_bell.b.m_1976:
   name: orthokolus
   authority:
     source: 1976_bell.b.m
+orties de mer:
+  name: Orties de mer
+  rank: section
+  authority:
+    source: 1798a_cuvier
+  notes:  In French.  Authority unclear.
 osculocystis:
   name: Osculocystis
   auth: [paul.c.r.c]
@@ -5678,6 +5782,11 @@ pembrocystis:
   name: Pembrocystis
   auth: [domínguez alonso]
   year: 1999
+penicillus_bruguière_1789:
+  name: Penicillus
+  homonym: true
+  authority:
+    source: 1789_bruguière
 penicillus_müller.o.f_1776:
   name: penicillus
   authority:
@@ -5693,6 +5802,10 @@ pentacrinites:
 pentacrinus:
   name: Pentacrinus
   altSpellingOf: pentacrinites
+pentacta_gmelin_1791:
+  name: pentacta
+  auth: [Gmelin]
+  year: 1791
 pentactes_linnaeus_1767:
   name: pentactes
   authority:
@@ -5808,6 +5921,10 @@ pilea_hall_1866:
 pileus_hall_1866:
   name: pileus
   altSpellingOf: pilea_hall_1866
+pileus_müller.o.f_1776:
+  name: pileus
+  authority:
+    source: 1776_müller.o.f
 pinna:
   name: Pinna
   authority:
@@ -5976,6 +6093,12 @@ polydactylus_miller.j.s_1821:
   name: polydactylus
   authority:
     source: 1821_miller.j.s
+polypes:
+  name: Polypes
+  rank: section
+  authority:
+    source: 1798a_cuvier
+  notes: In French.  Authority uncertain.
 polyplacida:
   name: Polyplacida
   rank: Subclass
@@ -6077,6 +6200,11 @@ priscus_miller.s.a_gurley_1894:
   name: priscus
   auth: [miller.s.a, gurley]
   year: 1894
+proboscidea_bruguière_1791:
+  name: Proboscidea
+  needsQualification: true
+  authority:
+    source: 1791_bruguière
 proboscidiatus_billings_1857:
   name: proboscidiatus
   auth: [billings]
@@ -6605,6 +6733,10 @@ rossica_jaekel_1918:
   name: rossica
   auth: [jaekel]
   year: 1918
+rotifer:
+  name: Rotifer
+  authority:
+    source: 1798a_cuvier
 rotundus_miller.j.s_1821:
   name: rotundus
   authority:
@@ -6737,6 +6869,10 @@ scoliocystis:
   name: Scoliocystis
   auth: [jaekel]
   year: 1899
+scolex:
+  name: Scolex
+  auth: [müller.o.f]
+  year: 1781
 scoteinocystis:
   name: Scoteinocystis
   authority:
@@ -7080,6 +7216,10 @@ stellatae:
 stellatæ:
   name: Stellatæ
   altSpellingOf: stellatae
+stellatus_gaertner_1774:
+  name: stellatus
+  auth: [Gaertner]
+  year: 1774
 stellatus_hall_1866:
   name: stellatus
   auth: [hall]
@@ -7534,6 +7674,10 @@ trichoda:
   name: Trichoda
   authority:
     source: 1773_müller.o.f
+trichocephalus:
+  name: Trichocephalus
+  auth: [müller.o.f]
+  year: 1787
 trilobita:
   name: Trilobita
   rank: Class
@@ -7581,6 +7725,10 @@ tubularia:
   name: Tubularia
   authority:
     source: 1758_linnaeus
+tubulosa_gmelin_1791:
+  name: tubulosa
+  auth: [Gmelin]
+  year: 1791
 turbanicystidae:
   name: Turbanicystidae
   rank: Family
@@ -7658,6 +7806,10 @@ ulrichocystis:
   name: Ulrichocystis
   auth: [bassler]
   year: 1950
+uncinaria:
+  name: Uncinaria
+  auth: [Frölich]
+  year: 1789
 uractinina:
   name: Uractinina
   rank: Suborder
@@ -7715,6 +7867,10 @@ venus:
   name: Venus
   authority:
     source: 1758_linnaeus
+veretillum:
+  name: Veretillum
+  authority:
+    source: 1798a_cuvier
 vermes:
   name: Vermes
   rank: Class
@@ -7914,8 +8070,20 @@ yui_zhao.y.l_parsley_peng.j_2007:
 zoophites:
   name: Zoophites
   vulgarSpellingOf: zoophyta
+zoophytes:
+  name: Zoophytes
+  vulgarSpellingOf: zoophyta
 zoophyta:
   name: Zoophyta
   rank: Order
   authority:
     source: 1758_linnaeus
+zoophytes-class:
+  name: Zoophytes
+  vulgarSpellingOf: zoophyta-class
+zoophyta-class:
+  name: Zoophyta
+  rank: Class
+  authority:
+    source: 1758_linnaeus
+  notes: Possibly nomen transl. or new 1798a_cuvier
