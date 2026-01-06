@@ -2900,7 +2900,8 @@ encrinites:
     Gray 1840.  The term was also used for crinoid fragment rocks in general.
 encrinus:
   name: Encrinus
-  auth: [lamarck]
+  authority:
+    source: 1801_lamarck
   year: 1801
   notes: |
     Andreae (1764) credit suppressed by ICZN ruling —
@@ -2909,6 +2910,16 @@ encrinus:
     in its accustomed sense.
     Bulletin of Zoological Nomenclature 19, 262-265 (1962) -
     via Official Lists and Indexes of Names in Zoology
+encrinus_andraea_1764:
+  name: Encrinus
+  homonym: true
+  auth: [andraea]
+  year: 1764
+encrinus_blumenbach_1779:
+  name: Encrinus
+  homonym: true
+  auth: [Blumenbach]
+  year: 1779
 enterocoela-grade:
   name: Enterocoela
   rank: Grade

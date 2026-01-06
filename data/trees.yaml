@@ -996,6 +996,16 @@
       - taxon: lærnea
       - taxon: biphora # Salp
         new: true
+        children:
+        - taxon: maxima_forsk?_
+        - taxon: pinnata_forsk?_
+        - taxon: democratica_forsk?_
+        - taxon: macronata_forsk?_
+        - taxon: punctata_forsk?_
+        - taxon: confederata_forsk?_
+        - taxon: fasciata_forsk?_
+        - taxon: africans_forsk?_
+        - taxon: polycratica_forsk?_
       - taxon: actinia
       - taxon: hydra
       - taxon: holothuria
@@ -1007,6 +1017,10 @@
       - taxon: myxine
       - taxon: physsophora
       - taxon: beroe
+        children:
+        - taxon: ovatus_
+        - taxon: pileus_müller.o.f_
+        - taxon: hexagonus_
       - taxon: medusa
     - taxon: échinodermes
       new: true
@@ -1030,6 +1044,11 @@
       - taxon: sertularia
       - taxon: tubularia
       - taxon: botryllus # Sea Squirt
+        children:
+        - taxon: stellatus_gaertner_1774
+          notes: Le botrylle étoilé. (B. stellatus.)
+        - taxon: conglomeratus_gaertner_1774
+          notes: Botrylle fasciculé
       - taxon: alcyonium
       - taxon: pennatula
       - taxon: spongia
@@ -1294,6 +1313,8 @@
         - taxon: antipathes
         - taxon: gorgonia
         - taxon: isis
+          children:
+          - taxon: hippuris_linnaeus_1758
         - taxon: pennatula
         - taxon: veretillum
           new: true
@@ -1425,12 +1446,80 @@
         children:
         - taxon: nus
           new: true
+          children:
+          - taxon: actinia
+          - taxon: zoantha
+          - taxon: hydra
+          - taxon: coryne
+          - taxon: pedicelleria
         - taxon: coralligènes
+          synonyms:
+          - taxon: zoophytes
           new: true
+          children:
+          - taxon: cyclolites
+          - taxon: fungia
+          - taxon: caryophyllia
+          - taxon: madrepora
+          - taxon: astrea
+          - taxon: meandrina
+          - taxon: pavona
+          - taxon: agaricia
+          - taxon: millepora
+          - taxon: nullipora
+          - taxon: retepora
+          - taxon: eschara
+          - taxon: alveolites
+          - taxon: orbitolites
+          - taxon: siderolites
+          - taxon: tubipora
+          - taxon: isis
+            children:
+            - taxon: hippuris_linnaeus_1758
+          - taxon: corallium
+          - taxon: gorgonia
+          - taxon: antipathes
+          - taxon: encrinus
+            new: true
+            children:
+            - taxon: caput medusæ_lamarck_1801
+              new: true
+              synonyms:
+              - taxon: asteria_linnaeus_1767
+            - taxon: liliiformis_lamarck_1801
+              new: true
+          - taxon: umbellularia
+          - taxon: pennatula
+          - taxon: veretillum
+          - taxon: corallina
+          - taxon: tubularia
+          - taxon: sertularia
+          - taxon: cellaria
+          - taxon: flustra
+          - taxon: cellepora
+          - taxon: botryllus
+            children:
+            - taxon: stellatus_gaertner_1774
+          - taxon: alcyonium
+          - taxon: spongia
+          - taxon: cristatella
       - taxon: rotifères
         new: true
+        children:
+        - taxon: vorticella
+        - taxon: urceolaria
+        - taxon: brachionus
       - taxon: amorphes
         new: true
+        children:
+        - taxon: trichoda
+        - taxon: trichocerca
+        - taxon: cercaria
+        - taxon: colpoda
+        - taxon: vibrio
+        - taxon: proteus
+        - taxon: volvox
+        - taxon: monas
 1820_say:
   taxonomies:
   - taxon: pentacrinus
