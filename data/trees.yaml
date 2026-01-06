@@ -927,6 +927,11 @@
       new: true
     - taxon: conulus
       new: true
+      notes: Leske names this per Klein but gives it his own name, Echinites
+    - taxon: echinites
+      new: true
+      synonyms:
+      - taxon: conulus
     - taxon: echinoneus
       new: true
     - taxon: echinocorys
@@ -980,7 +985,7 @@
       - taxon: amphinome
         new: true
       - taxon: aphrodita
-    - taxon: mollusques
+    - taxon: mollusques-order
       children:
       - taxon: mammaria
       - taxon: ascidia
@@ -1053,6 +1058,10 @@
     - taxon: testacea-order
     - taxon: zoophyta
 1798a_cuvier:
+  notes: |
+    This text is very hard to map to Linnaean taxonomies, with various
+    groupings of an unclear nature, some grouping some species of one
+    genus with another and other confusing arrangements.
   taxonomies:
   - taxon: animalia
     notes: des animaux
@@ -1209,7 +1218,7 @@
                 the water, swimming in a rotating motion. They are
                 phosphorescent and emit a bright glow at night.
           - taxon: actinia
-        - taxon: polypes
+        - taxon: polypes-section
           new: true  # Probably.  If this is even really a taxon.
           notes: |
             B. Ceux qui n’ont qu’un corps gelatineux, sans orgurisaiton
@@ -1311,6 +1320,105 @@
         children:
         - taxon: alcyonium
         - taxon: spongia
+1801_lamarck:
+  taxonomies:
+  - taxon: animaux
+    children:
+    - taxon: mammaux
+    - taxon: oiseaux
+    - taxon: reptiles
+    - taxon: poissons
+    - taxon: mollusques-class
+    - taxon: crustacés-order
+    - taxon: arachnides
+      new: true
+    - taxon: insectes
+    - taxon: vers
+      children:
+      - taxon: externes
+        new: true
+      - taxon: intestins
+    - taxon: radiares
+      new: true
+      children:
+      - taxon: échinodermes
+        children:
+        - taxon: échinides
+          new: true
+          children:
+          - taxon: echinus
+            children:
+            - taxon: esculentus_linnaeus_1758
+          - taxon: galerites
+            new: true
+            children:
+            - taxon: vulgaris_leske_1778
+          - taxon: echinoneus
+            children:
+            - taxon: cyclostomus_leske_1778
+          - taxon: nucleolites
+            new: true
+            children:
+            - taxon: oviformis_lamarck_1801
+              new: true
+            - taxon: clypeatus_lamarck_1801
+              new: true
+          - taxon: ananchites
+            new: true
+            children:
+            - taxon: ovatus_gmelin_1791
+              notes: It's possible this should be leske_1778.
+          - taxon: spatangus_leske_1778
+            children:
+            - taxon: vulgaris_lamarck_1801
+              new: true
+          - taxon: cassidulus
+            new: true
+            children:
+            - taxon: caribœarum_lamarck_1801
+              new: true
+            - taxon: scutellatus_lamarck_1801
+              new: true
+            - taxon: belgicus_lamarck_1801
+              new: true
+          - taxon: clypeaster
+            new: true
+            children:
+            - taxon: rosaceus_linnaeus_1758
+            - taxon: pentaporus_gmelin_1791
+        - taxon: stellerides
+          new: true
+          children:
+          - taxon: asterias
+            children:
+            - taxon: rubens_linnaeus_1758
+          - taxon: ophiura
+            new: true
+            children:
+            - taxon: lacertosa_lamarck_1801
+              new: true
+              synonyms:
+              - taxon: ophiura_linnaeus_1758
+                parents:
+                - taxon: asterias
+            - taxon: caput medusæ_linnaeus_1758
+              synonyms:
+              - taxon: caput medusæ_linnaeus_1758
+                parents:
+                - taxon: asterias
+        - taxon: fistulides
+          new: true
+          children:
+          - taxon: holothuria
+            children:
+            - taxon: tubulosa_gmelin_1791
+          - taxon: sipunculus
+            children:
+            - taxon: nudus_linnaeus_1767
+      - taxon: molasses
+        new: true
+    - taxon: polypes-class
+      new: true
 1820_say:
   taxonomies:
   - taxon: pentacrinus

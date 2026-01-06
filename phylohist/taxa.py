@@ -221,7 +221,10 @@ class Taxon:
         logger.error(f'Taxon {taxon_key} vulgar spelling of unknown {alt_key}')
       self._alt = latin
       self._rank = latin.rank
-      self._authority = latin.authority
+      if 'auth' in self._data or 'authority' in self._data:
+        self._authority = Authority(taxon_data)
+      else:
+        self._authority = latin.authority
 
     elif (alt_key := taxon_data.get('altRankOf')):
       if not (alt := Taxon.get(alt_key)):
@@ -282,15 +285,23 @@ class Taxon:
     ):
       return
 
-    for suffix, rank in (
-      ('inae', 'Subfamily'),
-      ('idae', 'Family'),
+    for suffix, rank, exceptions in (
+      ('inae', 'Subfamily', frozenset()),
+      ('idae', 'Family', frozenset({
+        'Échinides',
+        'Stellerides',
+        'Fistulides',
+      })),
     ):
       if self.name.endswith (suffix) and self.rank != rank:
         logger.warn(
           f'{self.name} with suffix "{suffix}" expected to have rank of {rank}',
         )
-      if self.rank == rank and not self.name.endswith(suffix):
+      if (
+        self.rank == rank and
+        not self.name.endswith(suffix) and
+        not self.name in exceptions
+      ):
         if suffix == 'idae' and self.name.endswith('idæ'):
           continue
         logger.warn(
@@ -614,9 +625,7 @@ class Tree:
         self._taxon.authority.source
       ):
         is_new = (
-          self._data.get('new') and
-          # TODO: Don't reach inside _taxon?
-          not self._taxon._data.get('vulgarSpellingOf')
+          self._data.get('new')
         )
         tsource = self._taxon._authority.source
 
@@ -628,7 +637,8 @@ class Tree:
         elif not is_new and self._source == tsource:
           logger.error(
             f'Taxon {self._taxon} at {self}, field "{taxon_field}", lists '
-            f'this source as its authority, but is not marked as new.',
+            f'this source as its authority, but is not marked as new.'
+            f'\n{self._data}',
           )
 
   def _hash_key(self):

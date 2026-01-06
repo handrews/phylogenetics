@@ -268,6 +268,10 @@ amygdalocystitidae:
   rank: Family
   auth: [jaekel]
   year: 1900
+ananchites:
+  name: Ananchites
+  authority:
+    source: 1801_lamarck
 anapeptamenus_austen_1843:
   name: anapeptamenus
   auth: [Austen]
@@ -325,6 +329,9 @@ animalia:
   rank: Kingdom
   authority:
     source: 1758_linnaeus
+animaux:
+  name: Animaux
+  vulgarSpellingOf: animalia
 anomalocystidae:
   name: Anomalocystidae
   rank: Family
@@ -383,6 +390,15 @@ appressa_bassler_1950:
   name: appressa
   auth: [bassler]
   year: 1950
+arachnida:
+  name: Arachnida
+  rank: Class
+  authority:
+    source: 1801_lamarck
+  notes: Lamarck (1801) universally cited but Latin usage unclear.
+arachnides:
+  name: Arachnides
+  vulgarSpellingOf: arachnida
 arachnoideus_forbes_1848:
   name: arachnoideus
   authority:
@@ -750,6 +766,11 @@ belemnocystitidae:
   auth: [parsley]
   in: [caster]
   year: 1968
+belgicus_lamarck_1801:
+  name: belgicus
+  authority:
+    source: 1801_lamarck
+  notes: No other source on authority, newly described species assumed.
 bellastrella:
   name: Bellastrella
   authority:
@@ -1153,8 +1174,8 @@ capsularia:
   year: 1793
 caput medusæ_lamarck_1801:
   name: caput medusæ
-  auth: [lamarck]
-  year: 1801
+  authority:
+    source: 1801_lamarck
 caput medusæ_linnaeus_1758:
   name: caput medusæ
   altSpellingOf: caput medusae_linnaeus_1758
@@ -1196,6 +1217,16 @@ cardium:
   name: Cardium
   authority:
     source: 1758_linnaeus
+caribœarum_lamarck_1801:
+  name: caribœarum
+  altSpellingOf: caribaearum_lamarck_1801
+  notes: |
+    Oritinal spelling, but inadevertent misspelling of caribæarum
+    per ICZN ruling.
+caribaearum_lamarck_1801:
+  name: caribaearum
+  authority:
+    source: 1801_lamarck
 carnensis_foerste_1914:
   name: carnensis
   auth: [foerste]
@@ -1268,6 +1299,10 @@ caryophyllœus:
   authority:
     source: 1798a_cuvier
   notes: Accepted as Caryophyllæus (Müller, 1878), note different ligature.
+cassidulus:
+  name: Cassidulus
+  authority:
+    source: 1801_lamarck
 casteri_bell.b.m_1975:
   name: casteri
   authority:
@@ -1490,6 +1525,14 @@ clio:
   name: Clio
   authority:
     source: 1767_linnaeus
+clypeaster:
+  name: Clypeaster
+  authority:
+    source: 1801_lamarck
+clypeatus_lamarck_1801:
+  name: clypeatus
+  authority:
+    source: 1801_lamarck
 clypeus:
   name: Clypeus
   authority:
@@ -1798,6 +1841,19 @@ cristatus_bassler_1943:
   name: cristatus
   auth: [bassler]
   year: 1943
+crustacea:
+  name: Crustacea
+  rank: Subphylum
+  auth: [Brünnich]
+  year: 1772
+crustacea-order:
+  name: Crustacea
+  rank: Order
+  auth: [Brünnich]
+  year: 1772
+crustacés-order:
+  name: Crustacés
+  vulgarSpellingOf: crustacea-order
 cryptocrinites:
   name: Cryptocrinites
   auth: [buch]
@@ -2003,6 +2059,10 @@ cycloidea:
   rank: Class
   authority:
     source: 1941_whitehouse
+cyclostomus_leske_1778:
+  name: cyclostomus
+  authority:
+    source: 1778_leske
 cylindricum_aurivillius_1892:
   name: cylindricum
   auth: [Aurivillius]
@@ -2419,6 +2479,20 @@ echinata_linnaeus_1767:
   name: echinata
   authority:
     source: 1767_linnaeus
+echinidae:
+  name: Echinidae
+  rank: Family
+  auth: [Gray]
+  year: 1825
+échinides:
+  name: Échinides
+  rank: Family
+  authority:
+    source: 1801_lamarck
+echinites:
+  name: Echinites
+  authority:
+    source: 1778_leske
 echinocorys:
   name: Echinocorys
   authority:
@@ -2486,6 +2560,8 @@ echinodermata-incertae-sedis_ubaghs_1999:
 échinodermes:
   name: Échinodermes
   vulgarSpellingOf: echinodermata-order
+  authority:
+    source: 1789_bruguière
 echinodiscus:
   name: Echinodiscus
   authority:
@@ -3075,6 +3151,12 @@ extenuatus_zhao.j_rahman_zamora_chen.a_cong.p.y_2022:
   name: extenuatus
   auth: [zhao.j, rahman, zamora, chen.a, cong.p.y]
   year: 2022
+externes:
+  name: Externes
+  rank: Order
+  authority:
+    source: 1801_lamarck
+  notes: In French.
 ###################### F
 faberi_miller.s.a_1894:
   name: faberi
@@ -3130,6 +3212,11 @@ fissiculata:
   rank: Order
   auth: [jaekel]
   year: 1918
+fistulides:
+  name: Fistulides
+  rank: Family
+  authority:
+    source: 1801_lamarck
 fistuliporita:
   name: Fistuliporita
   rank: Order
@@ -3257,6 +3344,10 @@ gelatinosum_linnaeus_1767:
   name: gelatinosum
   authority:
     source: 1767_linnaeus
+galerites:
+  name: Galerites
+  authority:
+    source: 1801_lamarck
 germanica_müller.p_hahn_2010:
   name: germanica
   authority:
@@ -4204,6 +4295,9 @@ insecta:
   rank: Class
   authority:
     source: 1758_linnaeus
+insectes:
+  name: Insectes
+  vulgarSpellingOf: insecta
 insularis_regnéll_1945:
   name: insularis
   auth: [regnéll]
@@ -4531,6 +4625,10 @@ kypsi_sumrall_2001:
   authority:
     source: 2001_sumrall
 ###################### L
+lacertosa_lamarck_1801:
+  name: lacertosa
+  authority:
+    source: 1801_lamarck
 lacunosus_linnaeus_1758:
   name: lacunosus
   authority:
@@ -4993,6 +5091,9 @@ mammalia:
   rank: Class
   authority:
     source: 1758_linnaeus
+mammaux:
+  name: Mammaux
+  vulgarSpellingOf: mammalia
 mammaria:
   name: Mammaria
   authority:
@@ -5170,6 +5271,12 @@ molanderi_kolata_1975:
   name: molanderi
   authority:
     source: 1975_kolata
+molasses:
+  name: Molasses
+  rank: Order
+  authority:
+    source: 1801_lamarck
+  notes: In French.
 mollusca:
   name: Mollusca
   rank: Phylum
@@ -5178,10 +5285,13 @@ mollusca:
 mollusca-class:
   rank: Class
   altRankOf: mollusca
+mollusques-class:
+  name: Mollusques
+  vulgarSpellingOf: mollusca-class
 mollusca-order:
   rank: Order
   altRankOf: mollusca
-mollusques:
+mollusques-order:
   name: Mollusques
   vulgarSpellingOf: mollusca-order
 monas:
@@ -5422,6 +5532,14 @@ nucleocrinus:
   authority:
     authors: [conrad.t.a]
     source: 1842_vanuxem
+nucleolites:
+  name: Nucleolites
+  authority:
+    source: 1801_lamarck
+nudus_linnaeus_1767:
+  name: nudus
+  authority:
+    source: 1767_linnaeus
 nuntius_prokop_1962:
   name: nuntius
   auth: [Prokop]
@@ -5447,6 +5565,9 @@ odin_müller.p_hahn_2010:
   name: odin
   authority:
     source: 2010_müller.p_hahn
+oiseaux:
+  name: Oiseaux
+  vulgarSpellingOf: aves
 oklahomae_strimple_graffham_1955:
   name: oklahomae
   auth: [Strimple, Graffham]
@@ -5474,8 +5595,8 @@ ophiocistioidea:
   year: 1899
 ophiura:
   name: Ophiura
-  auth: [Lamarck]
-  year: 1801
+  authority:
+    source: 1801_lamarck
 ophiura_linnaeus_1758:
   name: ophiura
   authority:
@@ -5556,6 +5677,18 @@ ottawacrinus:
   name: Ottawacrinus
   authority: 
     source: 1887_billings.w.r
+ovatus_gmelin_1791:
+  name: ovatus
+  auth: [Gmelin]
+  year: 1791
+ovatus_leske_1778:
+  name: ovatus
+  authority:
+    source: 1778_leske
+oviformis_lamarck_1801:
+  name: oviformis
+  authority:
+    source: 1801_lamarck
 ###################### P
 pahvanticystis:
   name: Pahvanticystis
@@ -5827,6 +5960,10 @@ pentangularis_pompeckj_1896:
   name: pentangularis
   auth: [Pompeckj]
   year: 1896
+pentaporus_gmelin_1791:
+  name: pentaporus
+  auth: [Gmelin]
+  year: 1791
 pentrematoides_forbes_1848:
   name: pentrematoides
   authority:
@@ -6089,11 +6226,20 @@ plinthotus_kesling_1967:
   name: plinthotus
   auth: [kesling]
   year: 1967
+poissons:
+  name: Poissons
+  vulgarSpellingOf: pisces
 polydactylus_miller.j.s_1821:
   name: polydactylus
   authority:
     source: 1821_miller.j.s
-polypes:
+polypes-class:
+  name: Polypes
+  rank: Class
+  authority:
+    source: 1801_lamarck
+  notes: Or nomen trans. from 1798a_cuvier?  Unclear.
+polypes-section:
   name: Polypes
   rank: section
   authority:
@@ -6449,6 +6595,15 @@ quinquangularis_miller.j.s_1821_eugeniacrinites:
   authority:
     source: 1821_miller.j.s
 ###################### R
+radiata:
+  name: Radiata
+  rank: Class
+  authority:
+    source: 1801_lamarck
+  notes: Authority not in latin, but I can't find another option or source.
+radiares:
+  name: Radiares
+  vulgarSpellingOf: radiata
 radiata_sprinkle_1973:
   name: radiata
   authority:
@@ -6555,6 +6710,14 @@ regularis_orłowski_1968:
   name: regularis
   auth: [orłowski]
   year: 1968
+reptilia:
+  name: Reptilia
+  rank: Class
+  auth: [Laurenti]
+  year: 1768
+reptiles:
+  name: Reptiles
+  vulgarSpellingOf: reptilia
 republicensis_sumrall_sprinkle_guensburg_1997:
   name: republicensis
   authority:
@@ -6893,6 +7056,11 @@ scotiaecystis-sp_sumrall_sprinkle_guensburg_1997:
   rank: species
   authority:
     source: 1997_sumrall_sprinkle_guensburg
+scutellatus_lamarck_1801:
+  name: scutellatus
+  authority:
+    source: 1801_lamarck
+  notes: No other source on authority, newly described species assumed.
 scyllaea:
   name: Scyllaea
   authority:
@@ -7229,6 +7397,11 @@ stelleridæ:
   rank: Family
   auth: [lamarck]
   year: 1816
+stellerides:
+  name: Stellerides
+  vulgarSpellingOf: stelleridæ
+  authority:
+    source: 1801_lamarck
 # See 1825a_say; unclear if this is even a real spelling
 # stelleridica:
 #   name: Stelleridica
@@ -7946,6 +8119,14 @@ vorticellata_hall_1866:
 vorticellatus_hall_1866:
   name: vorticellatus
   altSpellingOf: vorticellata_hall_1866
+vulgaris_lamarck_1801:
+  name: vulgaris
+  authority:
+    source: 1801_lamarck
+vulgaris_leske_1778:
+  name: vulgaris
+  authority:
+    source: 1778_leske
 vyscystis:
   name: Vyscystis
   auth: [fatka, kordule]
