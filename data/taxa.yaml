@@ -218,6 +218,12 @@ americanus_bassler_1936:
   name: americanus
   authority:
     source: 1936_bassler
+amorphes:
+  name: Amorphes
+  rank: Order
+  authority:
+    source: 1801_lamarck
+  notes: In French.
 ampelocrinidae:
   name: Ampelocrinidae
   rank: Family
@@ -1685,6 +1691,12 @@ coopericystis:
   name: Coopericystis
   auth: [parsley]
   year: 1970
+coralligènes:
+  name: Coralligènes
+  rank: section
+  authority:
+    source: 1801_lamarck
+  notes: In French.
 corallina:
   name: Corallina
   authority:
@@ -5544,6 +5556,12 @@ nuntius_prokop_1962:
   name: nuntius
   auth: [Prokop]
   year: 1962
+nus:
+  name: Nus
+  rank: section
+  authority:
+    source: 1801_lamarck
+  notes: In French.
 ###################### O
 oblongus_forbes_1848:
   name: oblongus
@@ -6644,6 +6662,12 @@ raymondi_foerste_1920:
   name: raymondi
   auth: [foerste]
   year: 1920
+rayons:
+  name: Rayons
+  rank: Order
+  authority:
+    source: 1801_lamarck
+  notes: In French.
 reboulorum_sumrall_zamora_2011:
   name: reboulorum
   authority:
@@ -6900,6 +6924,12 @@ rotifer:
   name: Rotifer
   authority:
     source: 1798a_cuvier
+rotifères:
+  name: Rotifères
+  rank: Order
+  authority:
+    source: 1801_lamarck
+  notes: In French.
 rotundus_miller.j.s_1821:
   name: rotundus
   authority:

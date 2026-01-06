@@ -1419,6 +1419,18 @@
         new: true
     - taxon: polypes-class
       new: true
+      children:
+      - taxon: rayons
+        new: true
+        children:
+        - taxon: nus
+          new: true
+        - taxon: coralligènes
+          new: true
+      - taxon: rotifères
+        new: true
+      - taxon: amorphes
+        new: true
 1820_say:
   taxonomies:
   - taxon: pentacrinus
