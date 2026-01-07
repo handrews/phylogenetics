@@ -465,7 +465,7 @@ class Tree:
       for t in cls._type_index.keys() & tree_types:
         trees |= cls._type_index[t]
     else:
-      for typed_set in cls._type_index.items():
+      for typed_set in cls._type_index.values():
         trees |= typed_set
 
     if taxa:
