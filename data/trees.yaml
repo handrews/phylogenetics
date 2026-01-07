@@ -252,6 +252,17 @@
         children:
         - taxon: isis
           new: true
+          children:
+          - taxon: hippuris_linnaeus_1758
+            new: true
+          - taxon: dichotoma_linnaeus_1758
+            new: true
+          - taxon: ocracea_linnaeus_1758
+            new: true
+          - taxon: anastacia_linnaeus_1758
+            new: true
+          - taxon: encrinus_linnaeus_1758  # A coral, not a crinoid
+            new: true
         - taxon: gorgonia
           new: true
         - taxon: alcyonium
@@ -421,7 +432,7 @@
         - taxon: ascidia
           new: true
           children:
-          - taxon: papilliosum_linnaeus_1767
+          - taxon: papillosum_linnaeus_1767
             new: true
           - taxon: gelatinosum_linnaeus_1767
             new: true
@@ -567,6 +578,16 @@
       - taxon: zoophyta
         children:
         - taxon: isis
+          children:
+          - taxon: hippuris_linnaeus_1758
+          - taxon: dichotoma_linnaeus_1758
+          - taxon: ochracea_linnaeus_1758
+          - taxon: entrocha_linnaeus_1767
+            new: true
+          - taxon: asteria_linnaeus_1767
+            new: true
+          - taxon: nobilis_linnaeus_1767
+            new: true
         - taxon: gorgonia
         - taxon: alcyonium
         - taxon: spongia
@@ -946,7 +967,11 @@
     - taxon: spatangus_leske_1778
       new: true
 1789_bruguière:
-  notes: Only genera in latin AFAICT.  First grouping of Asterias and Echinus.
+  notes: |
+    Latin species names are only in the detailed entries, and only the first
+    of three volumes of this 1789 edition (through genera starting with BU)
+    is available online.  All three of the later 1791-92 edition are available,
+    but the changes between editions are unclear.
   taxonomies:
   - taxon: vers
     children:
@@ -989,23 +1014,68 @@
       children:
       - taxon: mammaria
       - taxon: ascidia
+        children:
+        - taxon: mammillaris_pallas_1774
+        - taxon: mentula_müller.o.f_1776
+        - taxon: scabra_müller.o.f_1776
+        - taxon: patula_müller.o.f_1776
+        - taxon: rustica_linnaeus_1767
+        - taxon: papillosa_linnaeus_1767
+        - taxon: echinata_linnaeus_1767
+        - taxon: conchilega_müller.o.f_1776
+        - taxon: villosa_fabricius_1780
+        - taxon: ampulla_bruguière_1789
+          new: true
+        - taxon: tuberculum_fabricius_1780
+        - taxon: pedunculata_bruguière_1789
+          new: true
+        - taxon: rapa_bruguière_1789
+          new: true
+        - taxon: aspersa_müller.o.f_1776
+        - taxon: complanata_fabricius_1780
+        - taxon: corrugata_müller.o.f_1776
+        - taxon: ramosa_bruguière_1789
+          new: true
+        - taxon: clavata_müller.o.f_1776
+        - taxon: lepadiformis_müller.o.f_1776
+        - taxon: canina_müller.o.f_1776
+        - taxon: viridescens_bruguière_1789
+          new: true
+        - taxon: solitaria_bruguière_1789
+          new: true
+        - taxon: sypho_forskål_1775               # Salpa
+        - taxon: parallelogramma_müller.o.f_1776
+        - taxon: orbicularis_müller.o.f_1784
+        - taxon: venosa_müller.o.f_1776
+        - taxon: intestinalis_linnaeus_1767
+        - taxon: octodentata_gunnerus_1770
+        - taxon: gelatinosa_linnaeus_1767
+        - taxon: quadridentata_linnaeus_1767
+        - taxon: virgenea_müller.o.f_1776
+        - taxon: prunum_müller.o.f_1776
+        # "Species that are insufficiently known"
+        # - taxon: gelatina_müller.o.f_1776
+        # - taxon: crystallina_müller.o.f_1776
+        # - taxon: patelliformis_müller.o.f_1776
       - taxon: pedicellaria
       - taxon: planaria
       - taxon: fasciola
       - taxon: tethys
       - taxon: lærnea
-      - taxon: biphora # Salp
+      - taxon: biphora                            # Salpa
+        synonyms:
+        - taxon: salpa
         new: true
         children:
-        - taxon: maxima_forsk?_
-        - taxon: pinnata_forsk?_
-        - taxon: democratica_forsk?_
-        - taxon: macronata_forsk?_
-        - taxon: punctata_forsk?_
-        - taxon: confederata_forsk?_
-        - taxon: fasciata_forsk?_
-        - taxon: africans_forsk?_
-        - taxon: polycratica_forsk?_
+        - taxon: maxima_forskål_1775
+        - taxon: pinnata_forskål_1775
+        - taxon: democratica_forskål_1775
+        - taxon: macronata_forskål_1775
+        - taxon: punctata_forskål_1775
+        - taxon: confœderata_forskål_1775
+        - taxon: fasciata_forskål_1775
+        - taxon: africana_forskål_1775
+        - taxon: polycratica_forskål_1775
       - taxon: actinia
       - taxon: hydra
       - taxon: holothuria
@@ -1018,9 +1088,10 @@
       - taxon: physsophora
       - taxon: beroe
         children:
-        - taxon: ovatus_
-        - taxon: pileus_müller.o.f_
-        - taxon: hexagonus_
+        - taxon: ovatus_bruguière_1789
+          new: true
+        - taxon: pileus_müller.o.f_1776
+        - taxon: hexagonus_modeer_1790
       - taxon: medusa
     - taxon: échinodermes
       new: true
@@ -1449,29 +1520,42 @@
           children:
           - taxon: actinia
           - taxon: zoantha
+            new: true
           - taxon: hydra
           - taxon: coryne
-          - taxon: pedicelleria
+          - taxon: pedicellaria
         - taxon: coralligènes
           synonyms:
           - taxon: zoophytes
           new: true
           children:
           - taxon: cyclolites
+            new: true
           - taxon: fungia
+            new: true
           - taxon: caryophyllia
+            new: true
           - taxon: madrepora
           - taxon: astrea
+            new: true
           - taxon: meandrina
+            new: true
           - taxon: pavona
+            new: true
           - taxon: agaricia
+            new: true
           - taxon: millepora
           - taxon: nullipora
+            new: true
           - taxon: retepora
+            new: true
           - taxon: eschara
           - taxon: alveolites
+            new: true
           - taxon: orbitolites
+            new: true
           - taxon: siderolites
+            new: true
           - taxon: tubipora
           - taxon: isis
             children:
@@ -1488,7 +1572,8 @@
               - taxon: asteria_linnaeus_1767
             - taxon: liliiformis_lamarck_1801
               new: true
-          - taxon: umbellularia
+          - taxon: umbellularia_lamarck_1801
+            new: true
           - taxon: pennatula
           - taxon: veretillum
           - taxon: corallina
@@ -1507,17 +1592,19 @@
         new: true
         children:
         - taxon: vorticella
-        - taxon: urceolaria
+        - taxon: urceolaria_lamarck_1801
+          new: true
         - taxon: brachionus
       - taxon: amorphes
         new: true
         children:
         - taxon: trichoda
         - taxon: trichocerca
+          new: true
         - taxon: cercaria
         - taxon: colpoda
         - taxon: vibrio
-        - taxon: proteus
+        - taxon: proteus_müller.o.f_1786
         - taxon: volvox
         - taxon: monas
 1820_say:

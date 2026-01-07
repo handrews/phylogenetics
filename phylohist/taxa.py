@@ -326,6 +326,7 @@ class Taxon:
       'Carallina',
       'Corallina',
       'Craterina',
+      'Meandrina',
       'Palasterina',
       'Tellina',
     })
