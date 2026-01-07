@@ -5170,9 +5170,11 @@ madrepora:
     source: 1758_linnaeus
 mæandrites:
   name: Mæandrites
-  authority:
-    source: 1789a_bruguière
-  notes: IRMNG says misspelling, but not of waht
+  auth: [Guettard]
+  year: 1770
+  notes: |
+    Auth per AnimalBase; Worms says Houttuyn 1772, IRMNG says Brug. 1789 as
+    a misspelling, but not of what.
 magister_bassler_1936:
   name: magister
   authority:

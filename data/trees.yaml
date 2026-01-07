@@ -1097,19 +1097,21 @@
       new: true
       children:
       - taxon: asterias
+        notes: Volume 2 not available for species (filed under Étoile).
       - taxon: echinus
+        notes: Volume 2/3 not available for species (filed under Oursin).
     - taxon: testacés
     - taxon: zoophites
       children:
       - taxon: tubipora
       - taxon: madrepora
       - taxon: mæandrites
-        new: true
       - taxon: millepora
       - taxon: flustra
       - taxon: cellaria
       - taxon: carallina
       - taxon: isis
+        notes: Volume 2/3 not available for species
       - taxon: gorgonia
       - taxon: antipathes
       - taxon: sertularia
