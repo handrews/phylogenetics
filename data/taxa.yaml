@@ -267,7 +267,7 @@ amphibia:
 amphinome:
   name: Amphinome
   authority:
-    source: 1789_bruguière
+    source: 1789a_bruguière
 amphitrite:
   name: Amphitrite
   auth: [müller.o.f]
@@ -280,7 +280,7 @@ amphorida:
 ampulla_bruguière_1789:
   name: ampulla
   authority:
-    source: 1789_bruguière
+    source: 1789a_bruguière
 amygdalocystites:
   name: Amygdalocystites
   auth: [billings]
@@ -885,7 +885,7 @@ billingsi_wilson_1946:
 biphora:
   name: Biphora
   authority:
-    source: 1789_bruguière
+    source: 1789a_bruguière
 bistomiacystidae:
   name: Bistomiacystidae
   rank: Family
@@ -2639,7 +2639,7 @@ echinodermata-incertae-sedis_ubaghs_1999:
   name: Échinodermes
   vulgarSpellingOf: echinodermata-order
   authority:
-    source: 1789_bruguière
+    source: 1789a_bruguière
 echinodiscus:
   name: Echinodiscus
   authority:
@@ -5171,7 +5171,7 @@ madrepora:
 mæandrites:
   name: Mæandrites
   authority:
-    source: 1789_bruguière
+    source: 1789a_bruguière
   notes: IRMNG says misspelling, but not of waht
 magister_bassler_1936:
   name: magister
@@ -5231,7 +5231,7 @@ mamillaris_pallas_1774:
 mammillaris_pallas_1774:
   name: mammillaris
   altSpellingOf: mamillaris_pallas_1774
-  notes: Misspelled in 1789_bruguière
+  notes: Misspelled in 1789a_bruguière
 mandalacystis:
   name: Mandalacystis
   authority:
@@ -5852,7 +5852,7 @@ ottawacrinus:
 ovatus_bruguière_1789:
   name: ovatus
   authority:
-    source: 1789_bruguière
+    source: 1789a_bruguière
 ovatus_gmelin_1791:
   name: ovatus
   auth: [Gmelin]
@@ -6070,7 +6070,7 @@ pedicellaria:
 pedunculata_bruguière_1789:
   name: pedunculata
   authority:
-    source: 1789_bruguière
+    source: 1789a_bruguière
 pelmatozoa:
   name: Pelmatozoa
   bracket: Pelmatozoans
@@ -6106,7 +6106,7 @@ penicillus_bruguière_1789:
   name: Penicillus
   homonym: true
   authority:
-    source: 1789_bruguière
+    source: 1789a_bruguière
 penicillus_müller.o.f_1776:
   name: penicillus
   authority:
@@ -6826,7 +6826,7 @@ radiatus_billings_1857:
 ramosa_bruguière_1789:
   name: ramosa
   authority:
-    source: 1789_bruguière
+    source: 1789a_bruguière
 ramosus_foerste_1914:
   name: ramosus
   auth: [foerste]
@@ -6838,7 +6838,7 @@ ramseyocrinus:
 rapa_bruguière_1789:
   name: rapa
   authority:
-    source: 1789_bruguière
+    source: 1789a_bruguière
 raphanocrinus:
   name: Raphanocrinus
   auth: [Wachsmuth, springer]
@@ -7216,7 +7216,7 @@ sanguinolenta_müller.o.f_1776:
 sanguisuga:
   name: Sanguisuga
   authority:
-    source: 1789_bruguière
+    source: 1789a_bruguière
 saratogensis_ruedemann_1912:
   name: saratogensis
   auth: [ruedemann]
@@ -7519,7 +7519,7 @@ splendens_bassler_1936:
 solitaria_bruguière_1789:
   name: solitaria
   authority:
-    source: 1789_bruguière
+    source: 1789a_bruguière
 solitarius_bell.b.m_1974:
   name: solitarius
   authority:
@@ -8345,7 +8345,7 @@ virgenea_müller.o.f_1776:
 viridescens_bruguière_1789:
   name: viridescens
   authority:
-    source: 1789_bruguière
+    source: 1789a_bruguière
 viviannae_domínguez alonso_1999:
   name: viviannae
   auth: [domínguez alonso]
