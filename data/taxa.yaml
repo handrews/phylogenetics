@@ -62,9 +62,9 @@ acanthocystites:
   name: Acanthocystites
   auth: [barrande]
   year: 1887
-africana_forskål_1775:
+africana_forsskål_1775:
   name: africana
-  auth: [Forskål]
+  auth: [Forsskål]
   year: 1775
 africanus_sumrall_zamora_2011:
   name: africanus
@@ -193,7 +193,7 @@ alcyonium_pallas_1766:
   name: Alcyonium
   homonym: true
   auth: [Pallas]
-  year: 1774
+  year: 1766
   notes: Ascidian tunicates (instead of Linnaeus's octocorals)
 alphacrinus:
   name: Alphacrinus
@@ -1680,9 +1680,9 @@ conchilega_müller.o.f_1776:
   name: conchilega
   authority:
     source: 1776_müller.o.f
-confœderata_forskål_1775:
+confœderata_forsskål_1775:
   name: confœderata
-  auth: [Forskål]
+  auth: [Forsskål]
   year: 1775
 confertus_barrande_1887:
   name: confertus
@@ -2294,9 +2294,9 @@ delticus_sumrall_sprinkle_guensburg_1997:
   name: delticus
   authority:
     source: 1997_sumrall_sprinkle_guensburg
-democratica_forskål_1775:
+democratica_forsskål_1775:
   name: democratica
-  auth: [Forskål]
+  auth: [Forsskål]
   year: 1775
 dendrocrinacea:
   name: Dendrocrinacea
@@ -3275,9 +3275,9 @@ fanulodiscus:
   name: Fanulodiscus
   authority:
     source: 1994_guensburg_sprinkle
-fasciata_forskål_1775:
+fasciata_forsskål_1775:
   name: fasciata
-  auth: [Forskål]
+  auth: [Forsskål]
   year: 1775
 fasciola:
   name: Fasciola
@@ -3320,6 +3320,14 @@ fissiculata:
   rank: Order
   auth: [jaekel]
   year: 1918
+fistularia_forsskål_1775:
+  name: Fistularia
+  homonym: true
+  auth: [Forsskål]
+  year: 1775
+  notes: |
+    Fistularia (Linnaeus 1758) is a ray-finned fish.
+    Fistularia (Müller 1776), another homonym, is a cnidarian.
 fistulides:
   name: Fistulides
   rank: Family
@@ -5162,9 +5170,9 @@ macrocystellidae:
   rank: Family
   auth: [bather]
   year: 1899
-macronata_forskål_1775:
+macronata_forsskål_1775:
   name: macronata
-  auth: [Forskål]
+  auth: [Forsskål]
   year: 1775
 mactra:
   name: Mactra
@@ -5271,9 +5279,9 @@ matacarros_sumrall_zamora_2011:
   name: matacarros
   authority:
     source: 2011_sumrall_zamora
-maxima_forskål_1775:
+maxima_forsskål_1775:
   name: maxima
-  auth: [Forskål]
+  auth: [Forsskål]
   year: 1775
 mimus_sumrall_zamora_2011:
   name: mimus
@@ -6221,10 +6229,10 @@ phaenoschismatidae:
   rank: Family
   auth: [Etheridge Jr., Carpenter]
   year: 1886
-phantapus_linnaeus_1767:
+phantapus_strussenfelt_1765:
   name: phantapus
-  authority:
-    source: 1767_linnaeus
+  auth: [Strussenfelt]
+  year: 1765
 pholas:
   name: Pholas
   authority:
@@ -6244,7 +6252,7 @@ physalis_linnaeus_1758:
     source: 1758_linnaeus
 physsophora:
   name: Physsophora
-  auth: [Forskål]
+  auth: [Forsskål]
   year: 1775
 pilea_hall_1866:
   name: pilea
@@ -6261,9 +6269,9 @@ pinna:
   name: Pinna
   authority:
     source: 1758_linnaeus
-pinnata_forskål_1775:
+pinnata_forsskål_1775:
   name: pinnata
-  auth: [Forskål]
+  auth: [Forsskål]
   year: 1775
 piojoensis_sumrall_heredia_rodríguez.c.m_mestre_2013:
   name: piojoensis
@@ -6428,9 +6436,9 @@ plinthotus_kesling_1967:
 poissons:
   name: Poissons
   vulgarSpellingOf: pisces
-polycratica_forskål_1775:
+polycratica_forsskål_1775:
   name: polycratica
-  auth: [Forskål]
+  auth: [Forsskål]
   year: 1775
 polydactylus_miller.j.s_1821:
   name: polydactylus
@@ -6655,9 +6663,9 @@ pulvillis_müller.o.f_1776:
   name: pulvillis
   authority:
     source: 1776_müller.o.f
-punctata_forskål_1775:
+punctata_forsskål_1775:
   name: punctata
-  auth: [Forskål]
+  auth: [Forsskål]
   year: 1775
 punctatus_forbes_1848:
   name: punctatus
@@ -7204,7 +7212,7 @@ sagittaria_thomas_ladd_1926:
   year: 1926
 salpa:
   name: Salpa
-  auth: [Forskål]
+  auth: [Forsskål]
   year: 1775
 salteri_hall_1866:
   name: salteri
@@ -7817,9 +7825,9 @@ sycocystites:
   name: Sycocystites
   authority:
     source: 1844_buch
-sypho_forskål_1775:
+sypho_forsskål_1775:
   name: sypho
-  auth: [Forskål]
+  auth: [Forsskål]
   year: 1775
 syringocrinida:
   name: Syringocrinida
