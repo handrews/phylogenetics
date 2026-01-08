@@ -1609,6 +1609,274 @@
         - taxon: proteus_müller.o.f_1786
         - taxon: volvox
         - taxon: monas
+1815_lamarck:
+  taxonomies:
+  - taxon: animaux
+    children:
+    - taxon: infusoires
+    - taxon: polypes-class
+    - taxon: radiares
+    - taxon: vers
+1816a_lamarck:
+  taxonomies:
+  - taxon: animaux
+    children:
+    - taxon: infusoires
+    - taxon: polypes-class
+      children:
+      - taxon: ciliati
+      - taxon: denudati
+      - taxon: vaginati
+      - taxon: natantes
+        children:
+        - taxon: veretillum
+        - taxon: funiculina
+        - taxon: pennatula
+        - taxon: renilla
+        - taxon: virgularia
+        - taxon: encrinus
+          children:
+          - taxon: caput medusæ_lamarck_1801
+          - taxon: liliiformis_lamarck_1801
+        - taxon: umbellularia
+    - taxon: radiares
+      children:
+      - taxon: mollasses
+        children:
+        - taxon: anomales
+          children:
+          - taxon: stephanomia
+          - taxon: cestum
+            notes: Ctenophore
+            children:
+            - taxon: veneris_lesueur_1813
+          - taxon: callianira
+            notes: Ctenophore
+            new: true
+            children:
+            - taxon: triploptera_lamarck_1816
+              new: true
+            - taxon: diploptera_lamarck_1816
+              new: true
+            - taxon: 
+          - taxon: beroe
+            notes: Ctenophore
+            children:
+            - taxon: cylindricus_lamarck_1816
+              new: true
+            - taxon: ovatus_bruguière_1789
+            - taxon: pileus_müller.o.f_1776
+          - taxon: noctiluca
+          - taxon: lucernaria
+          - taxon: physsophora
+          - taxon: rhizophysa
+          - taxon: physalia
+          - taxon: velella
+          - taxon: porpita
+        - taxon: médusaires
+      - taxon: échinodermes
+        children:
+        - taxon: stellérides
+          children:
+          - taxon: comatula
+            new: true
+            children:
+            - taxon: solaris_lamarck_1816
+              new: true
+            - taxon: multiradiata_lamarck_1816
+              new: true
+            - taxon: rotalaria_lamarck_1816
+              new: true
+            - taxon: fimbriata_lamarck_1816
+              new: true
+            - taxon: carinata_lamarck_1816
+              new: true
+            - taxon: mediterranea_lamarck_1816
+              new: true
+            - taxon: adeonæ_lamarck_1816
+              new: true
+            - taxon: brachiolata_lamarck_1816
+              new: true
+          - taxon: euryale
+            new: true
+            children:
+            - taxon: verrucosum_lamarck_1816
+              new: true
+            - taxon: costosum_
+            - taxon: asperum_lamarck_1816
+              new: true
+            - taxon: exiguum_lamarck_1816
+              new: true
+            - taxon: palmiferum_1816
+              new: true
+          - taxon: ophiura
+            children:
+            - taxon: texturata_lamarck_1816
+              new: true
+            - taxon: lacertosa_lamarck_1801
+            - taxon: incrassata_lamarck_1816
+              new: true
+            - taxon: annulosa_lamarck_1816
+              new: true
+            - taxon: marmorata_lamarck_1816
+              new: true
+            - taxon: echinata_lamarck_1816
+              new: true
+            - taxon: scolopendrina_lamarck_1816
+              new: true
+            - taxon: longipeda_lamarck_1816
+              new: true
+            - taxon: nereidina_lamarck_1816
+              new: true
+            - taxon: ciliaris_lamarck_1816
+              new: true
+            - taxon: squamata_lamarck_1816
+              new: true
+            - taxon: fragilis_grube_
+            # "Species that I have not seen"
+            # - taxon: rosularia_
+            # - taxon: pentagona_lamarck_1816
+            #   new: true
+            # - taxon: filiformis_
+            # - taxon: tricolor_
+            # - taxon: lombricalis_
+            # - taxon: cuspidifera_
+          - taxon: asterias
+            children:
+            - taxon: tessellata_lamarck_1816
+              new: true
+            - taxon: punctata_lamarck_1816
+              new: true
+            - taxon: cuspidata_lamarck_1816
+              new: true
+            - taxon: pleyadella_lamarck_1816
+              new: true
+            - taxon: ocellifera_lamarck_1816
+              new: true
+            - taxon: vernicina_lamarck_1816
+              new: true
+            - taxon: discoidea_lamarck_1816
+              new: true
+            - taxon: exigua_lamarck_1816
+              new: true
+            - taxon: pentagonula_lamarck_1816
+              new: true
+            - taxon: pulvillus_müller.o.f_1776
+            - taxon: penicillaris_lamarck_1816
+              new: true
+            - taxon: equestris_linnaeus_1758
+            - taxon: carinifera_lamarck_1816
+              new: true
+            - taxon: obtusangula_lamarck_1816
+              new: true
+            - taxon: reticulata_linnaeus_1758
+            - taxon: nodosa_linnaeus_1758
+            - taxon: calcar_lamarck_1816
+              new: true
+            - taxon: membranacea_retzius_1783
+            - taxon: rosacea_lamarck_1816
+              new: true
+            - taxon: helianthus_lamarck_1816
+              new: true
+            - taxon: echinites_ellis_solander_1786
+            - taxon: papposa_linnaeus_1767
+            - taxon: endeca_linnaeus_1771
+            - taxon: granifera_lamarck_1816
+              new: true
+            - taxon: echinophora_lamarck_1816
+              new: true
+            - taxon: glacialis_linnaeus_1758
+            - taxon: tenuispina_lamarck_1816
+              new: true
+            - taxon: rubens_linnaeus_1758
+            - taxon: clavigera_lamarck_1816
+              new: true
+            - taxon: seposita_retzius_1783
+            - taxon: aranciaca_linnaeus_1758
+            - taxon: calcitrapa_lamarck_1816
+              new: true
+            - taxon: acuminata_
+            - taxon: striata_lamarck_1816
+              new: true
+            - taxon: milleporella_lamarck_1816
+              new: true
+            - taxon: variolata_bruzelius_1805
+            - taxon: multifora_lamarck_1816
+              new: true
+            - taxon: bicolor_lamarck_1816
+              new: true
+            - taxon: lævigata_linnaeus_1758
+            - taxon: arenata_lamarck_1816
+              new: true
+            - taxon: cylindrica_lamarck_1816
+              new: true
+            - taxon: senegalensis_lamarck_1816
+              new: true
+            - taxon: ophidiana_lamarck_1816
+              new: true
+            - taxon: subulata_lamarck_1816
+              new: true
+        - taxon: échinides
+          children:
+          - taxon: scutella
+          - taxon: clypeaster
+          - taxon: fibularia
+          - taxon: echinoneus
+          - taxon: galerites
+          - taxon: ananchytes
+          - taxon: spatangus
+          - taxon: cassidulus
+          - taxon: nucleoites
+          - taxon: echinus
+          - taxon: cidarites
+        - taxon: fistulides
+          children:
+          - taxon: tentaculées
+            children:
+            - taxon: actinia_pallas_1766
+            - taxon: holothuria
+              children:
+              - taxon: frondosa_
+              - taxon: phantapus_
+              - taxon: pentata_
+              - taxon: doliolum_
+              - taxon: fusus_
+              - taxon: inhærens_
+              - taxon: glutinosa_
+              - taxon: vittata_
+              - taxon: squamata_
+              - taxon: penicillus_
+            - taxon: fistularia
+              children:
+              - taxon: elegans_
+              - taxon: tubulosa_
+              - taxon: impatiens_
+              - taxon: maxima_
+              - taxon: digitata_
+          - taxon: nues
+            children:
+            - taxon: priapulus
+              children:
+              - taxon: caudatus_
+            - taxon: sipunculus
+              children:
+              - taxon: nudus_
+              - taxon: saccatus_
+              - taxon: edulis_
+    - taxon: tunicata
+      children:
+      - taxon: botryllaires
+      - taxon: ascidiens
+    - taxon: vers
+      children:
+      - taxon: mollasses_vers
+        children:
+        - taxon: vésiculaires
+        - taxon: planulaires
+        - taxon: hétéromorphes
+      - taxon: rigidules
+      - taxon: hispides
+
 1820_say:
   taxonomies:
   - taxon: pentacrinus

@@ -189,6 +189,12 @@ alcyonium:
   name: Alcyonium
   authority:
     source: 1758_linnaeus
+alcyonium_pallas_1766:
+  name: Alcyonium
+  homonym: true
+  auth: [Pallas]
+  year: 1774
+  notes: Ascidian tunicates (instead of Linnaeus's octocorals)
 alphacrinus:
   name: Alphacrinus
   auth: [guensburg]
@@ -6432,7 +6438,7 @@ polydactylus_miller.j.s_1821:
     source: 1821_miller.j.s
 polypes-class:
   name: Polypes
-  rank: Class
+  vulgarSpellingOf: polypi
   authority:
     source: 1801_lamarck
   notes: Or nomen trans. from 1798a_cuvier?  Unclear.
@@ -6442,6 +6448,11 @@ polypes-section:
   authority:
     source: 1798a_cuvier
   notes: In French.  Authority uncertain.
+polypi:
+  name: Polypi
+  rank: Class
+  authority:
+    source: 1815_lamarck
 polyplacida:
   name: Polyplacida
   rank: Subclass

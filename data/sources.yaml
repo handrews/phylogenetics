@@ -220,6 +220,69 @@
     year: 1801
   authors:
   - lamarck
+1815_lamarck:
+  book: hist-sans-vert
+  volume: 1
+  pubDate:
+    year: 1815
+  authors:
+  - lamarck
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/89352
+1816a_lamarck:
+  book: hist-sans-vert
+  volume: 2
+  pubDate:
+    year: 1816
+  authors:
+  - lamarck
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/89354
+1816b_lamarck:
+  book: hist-sans-vert
+  volume: 3
+  pubDate:
+    year: 1816
+  authors:
+  - lamarck
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/89345
+1817_lamarck:
+  book: hist-sans-vert
+  volume: 4
+  pubDate:
+    year: 1817
+  authors:
+  - lamarck
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/89218
+1818_lamarck:
+  book: hist-sans-vert
+  volume: 5
+  pubDate:
+    year: 1818
+  authors:
+  - lamarck
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/89220
+1819_lamarck:
+  book: hist-sans-vert
+  volume: 6
+  number: 1
+  pubDate:
+    year: 1819
+  authors:
+  - lamarck
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/89219
+1819_macleay:
+  book: horae
+  volume: 1
+  number: 1
+  pubDate:
+    year: 1819
+  authors:
+  - macleay
 1819_say:
   title: "Observation on some Species of Zoophytes, Shells, &c. principally Fossil (part 1)"
   journal: am-j-sci-c
@@ -234,14 +297,6 @@
   - say
   identifiers:
     url: https://www.biodiversitylibrary.org/page/30962636
-1819_macleay:
-  book: horae
-  volume: 1
-  number: 1
-  pubDate:
-    year: 1819
-  authors:
-  - macleay
 1820_say:
   title: "Observation on some Species of Zoophytes, Shells, &c. principally Fossil (part 2)"
   journal: am-j-sci-arts
@@ -272,6 +327,26 @@
   - miller.j.s
   identifiers:
     url: https://www.biodiversitylibrary.org/bibliography/178175
+1822a_lamarck:
+  book: hist-sans-vert
+  volume: 6
+  number: 2
+  pubDate:
+    year: 1822
+  authors:
+  - lamarck
+  notes: Parts 1 and 2 bound in the same book on BDL
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/89219
+1822b_lamarck:
+  book: hist-sans-vert
+  volume: 7
+  pubDate:
+    year: 1822
+  authors:
+  - lamarck
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/89350
 1822_parkinson:
   book: outlines-of-oryctology
   pubDate:
