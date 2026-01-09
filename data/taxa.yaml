@@ -3575,6 +3575,11 @@ fortuitus_guensburg_sprinkle_2003:
   name: fortuitus
   authority:
     source: 2003_guensburg_sprinkle
+fragilis_abildgaard_1789:
+  name: fragilis
+  auth: [Abildgaard]
+  in: [müller.o.f]
+  year: 1789
 frondosa_gunnerus_1767:
   name: frondosa
   authority:
@@ -3583,6 +3588,10 @@ fungia:
   name: Fungia
   authority:
     source: 1801_lamarck
+funiculina:
+  name: Funiculina
+  authority:
+    source: 1816a_lamarck
 furia:
   name: Furia
   authority:
@@ -4541,6 +4550,10 @@ incondita_raymond_1915:
 inconditus_raymond_1915:
   name: inconditus
   altSpellingOf: incondita_raymond_1915
+incrassata_lamarck_1816:
+  name: incrassata
+  authority:
+    source: 1816a_lamarck
 inexpectus_sprinkle_sumrall_2015:
   name: inexpectus
   authority:
@@ -5262,6 +5275,10 @@ longidactylus_walcott_1886:
   name: longidactylus
   auth: [walcott]
   year: 1886
+longipeda_lamarck_1816:
+  name: longipeda
+  authority:
+    source: 1816a_lamarck
 longus_zhao.y.l_huang.y.z_gong.x.y_1994:
   name: longus
   authority:
@@ -5433,6 +5450,10 @@ mariae_callaway_1877:
   name: mariae
   auth: [Callaway]
   year: 1877
+marmorata_lamarck_1816:
+  name: marmorata
+  authority:
+    source: 1816a_lamarck
 marsupiocrinites:
   name: Marsupiocrinites
   authority:
@@ -5468,6 +5489,10 @@ meandrina:
   name: Meandrina
   authority:
     source: 1801_lamarck
+mediterranea_lamarck_1816:
+  name: mediterranea
+  authority:
+    source: 1816a_lamarck
 medusa_barrande_1887:
   name: medusa
   auth: [barrande]
@@ -5476,6 +5501,12 @@ medusa:
   name: Medusa
   authority:
     source: 1758_linnaeus
+médusaires:
+  name: Médusaires
+  rank: section
+  authority:
+    source: 1816a_lamarck
+  lang: FR
 megapinacotus_ehlers_kesling_1958:
   name: megapinacotus
   auth: [Ehlers, kesling]
@@ -5712,6 +5743,10 @@ multiplexidiscus:
   name: Multiplexidiscus
   authority:
     source: 2009_sumrall_brett_mckinney
+multiradiata_lamarck_1816:
+  name: multiradiata
+  authority:
+    source: 1816a_lamarck
 multipora_billings_1854:
   name: multipora
   auth: [billings]
@@ -5774,7 +5809,7 @@ narrawayella:
   name: Narrawayella
   auth: [foerste]
   year: 1920
-natante:
+natantes:
   name: Natantes
   rank: Order
   authority:
@@ -5824,6 +5859,10 @@ neorhipidocystis:
   name: Neorhipidocystis
   auth: [Rozhnov]
   year: 1989
+nereidina_lamarck_1816:
+  name: nereidina
+  authority:
+    source: 1816a_lamarck
 nereis:
   name: Nereis
   authority:
@@ -5857,6 +5896,16 @@ nobilis_linnaeus_1767:
   name: nobilis
   authority:
     source: 1767_linnaeus
+noctiluca:
+  name: Noctiluca
+  authority:
+    authors: [Suriray]
+    source: 1816a_lamarck
+  notes: |
+    Most sources give Suriray 1836, but Lamarck 1816a credits Suriray
+    in a paper read at "the institute", without giving a year.  I'm
+    treating Lamarck's publication as establishing the name, as it is
+    clearly listed just as any other genus name.
 nodosa_linnaeus_1758:
   name: nodosa
   authority:
@@ -6110,6 +6159,10 @@ palmeri_sprinkle_1973:
   name: palmeri
   authority:
     source: 1973_sprinkle
+palmiferum_lamarck_1816:
+  name: palmiferum
+  authority:
+    source: 1816a_lamarck
 pannosus_holloway_jell_1983:
   name: pannosus
   authority:
@@ -6444,6 +6497,10 @@ phyllocystidae:
   rank: Family
   auth: [Derstler]
   year: 1979
+physalia:
+  name: Physalia
+  authority:
+    source: 1801_lamarck
 physalis_linnaeus_1758:
   name: physalis
   authority:
@@ -6692,6 +6749,10 @@ porosublastus:
   name: Porosublastus
   authority:
     source: 2015_sprinkle_sumrall
+porpita:
+  name: Porpita
+  authority:
+    source: 1801_lamarck
 postibulla:
   name: Postibulla
   authority:
@@ -7146,6 +7207,10 @@ regularis_orłowski_1968:
   name: regularis
   auth: [orłowski]
   year: 1968
+renilla:
+  name: Renilla
+  authority:
+    source: 1816a_lamarck
 reptilia:
   name: Reptilia
   rank: Class
@@ -7257,6 +7322,10 @@ rhizophora_schmidt_1889:
   name: rhizophora
   auth: [Schmidt]
   year: 1889
+rhizophysa:
+  name: Rhizophysa
+  auth: [Péron, Lesuer]
+  year: 1807
 rhodocrinites:
   name: Rhodocrinites
   authority:
@@ -7337,6 +7406,10 @@ rossica_jaekel_1918:
   name: rossica
   auth: [jaekel]
   year: 1918
+rotalaria_lamarck_1816:
+  name: rotalaria
+  authority:
+    source: 1816a_lamarck
 rotifer:
   name: Rotifer
   authority:
@@ -7474,6 +7547,10 @@ schuchertocystis:
   name: Schuchertocystis
   auth: [bassler]
   year: 1950
+scolex:
+  name: Scolex
+  auth: [müller.o.f]
+  year: 1781
 scoliocystinae:
   name: Scoliocystinae
   rank: Subfamily
@@ -7483,10 +7560,10 @@ scoliocystis:
   name: Scoliocystis
   auth: [jaekel]
   year: 1899
-scolex:
-  name: Scolex
-  auth: [müller.o.f]
-  year: 1781
+scolopendrina_lamarck_1816:
+  name: scolopendrina
+  authority:
+    source: 1816a_lamarck
 scoteinocystis:
   name: Scoteinocystis
   authority:
@@ -7614,6 +7691,10 @@ smithi_ubaghs_1987:
   name: smithi
   auth: [ubaghs]
   year: 1987
+solaris_lamarck_1816:
+  name: solaris
+  authority:
+    source: 1816a_lamarck
 solemni_kolata_1975:
   name: solemni
   authority:
@@ -7785,6 +7866,10 @@ sprinkleoglobus:
   name: Sprinkleoglobus
   auth: [zamora, guensburg, sprinkle]
   year: 2024
+squamata_lamarck_1816:
+  name: squamata
+  authority:
+    source: 1816a_lamarck
 squamata_müller.o.f_1776:
   name: squamata
   authority:
@@ -7856,8 +7941,8 @@ stelleridæ:
   rank: Family
   auth: [lamarck]
   year: 1816
-stellerides:
-  name: Stellerides
+stellérides:
+  name: Stellérides
   vulgarSpellingOf: stelleridæ
   lang: FR
   authority:
@@ -7890,6 +7975,10 @@ stephanocrinus:
   name: Stephanocrinus
   auth: [Conrad]
   year: 1842
+stephanomia:
+  name: Stephanomia
+  auth: [Lesueur, Petit]
+  year: 1807
 stephenensis_sprinkle_collins.d_2006:
   name: stephenensis
   authority:
@@ -8087,6 +8176,10 @@ tener_barrande_1887:
   name: tener
   auth: [barrande]
   year: 1887
+tenella_retzius_1783:
+  name: tenella
+  auth: [Retzius]
+  year: 1783
 tennesseensis_bassler_1936:
   name: tennesseensis
   authority:
@@ -8150,6 +8243,10 @@ tetracystis:
   name: Tetracystis
   auth: [schuchert]
   year: 1904
+texturata_lamarck_1816:
+  name: texturata
+  authority:
+    source: 1816a_lamarck
 thalia_linnaeus_1758:
   name: thalia
   authority:
@@ -8525,6 +8622,14 @@ velatus_barrande_1887:
   name: velatus
   auth: [barrande]
   year: 1887
+velella:
+  name: Velella
+  authority:
+    source: 1801_lamarck
+veneris_lesueur_1813:
+  name: veneris
+  auth: [Lesueur]
+  year: 1813
 venosa_müller.o.f_1776:
   name: venosa
   authority:
@@ -8542,6 +8647,10 @@ vermes:
   rank: Class
   authority:
     source: 1758_linnaeus
+verrucosum_lamarck_1816:
+  name: verrucosum
+  authority:
+    source: 1816a_lamarck
 vers:
   name: Vers
   vulgarSpellingOf: vermes
@@ -8578,6 +8687,10 @@ virgenea_müller.o.f_1776:
   name: virgenea
   authority:
     source: 1776_müller.o.f
+virgularia:
+  name: Virgularia
+  authority:
+    source: 1816a_lamarck
 viridescens_bruguière_1789:
   name: viridescens
   authority:

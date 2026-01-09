@@ -290,7 +290,7 @@ class Taxon:
       ('inae', 'Subfamily', frozenset()),
       ('idae', 'Family', frozenset({
         'Échinides',
-        'Stellerides',
+        'Stellérides',
         'Fistulides',
       })),
     ):
@@ -327,6 +327,7 @@ class Taxon:
       'Carallina',
       'Corallina',
       'Craterina',
+      'Funiculina',
       'Meandrina',
       'Palasterina',
       'Tellina',

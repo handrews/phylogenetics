@@ -1480,7 +1480,7 @@
             children:
             - taxon: rosaceus_linnaeus_1758
             - taxon: pentaporus_gmelin_1791
-        - taxon: stellerides
+        - taxon: stellérides
           new: true
           children:
           - taxon: asterias
@@ -1637,9 +1637,12 @@
         children:
         - taxon: veretillum
         - taxon: funiculina
+          new: true
         - taxon: pennatula
         - taxon: renilla
+          new: true
         - taxon: virgularia
+          new: true
         - taxon: encrinus
           children:
           - taxon: caput medusæ_lamarck_1801
@@ -1648,7 +1651,7 @@
               parents:
               - taxon: isis
           - taxon: liliiformis_lamarck_1801
-        - taxon: umbellularia
+        - taxon: umbellularia_lamarck_1801
     - taxon: radiares
       children:
       - taxon: mollasses_radiares
@@ -1677,6 +1680,7 @@
             - taxon: ovatus_bruguière_1789
             - taxon: pileus_müller.o.f_1776
           - taxon: noctiluca
+            new: true
           - taxon: lucernaria
           - taxon: physsophora
           - taxon: rhizophysa
@@ -1684,6 +1688,7 @@
           - taxon: velella
           - taxon: porpita
         - taxon: médusaires
+          new: true
       - taxon: échinodermes
         children:
         - taxon: stellérides
@@ -1738,7 +1743,7 @@
             - taxon: asperum_müller.o.f_1776
             - taxon: exiguum_lamarck_1816
               new: true
-            - taxon: palmiferum_1816
+            - taxon: palmiferum_lamarck_1816
               new: true
           - taxon: ophiura
             children:
@@ -1785,84 +1790,6 @@
             # - taxon: lombricalis_
             # - taxon: cuspidifera_
           - taxon: asterias
-            children:
-            - taxon: tessellata_lamarck_1816
-              new: true
-            - taxon: punctata_lamarck_1816
-              new: true
-            - taxon: cuspidata_lamarck_1816
-              new: true
-            - taxon: pleyadella_lamarck_1816
-              new: true
-            - taxon: ocellifera_lamarck_1816
-              new: true
-            - taxon: vernicina_lamarck_1816
-              new: true
-            - taxon: discoidea_lamarck_1816
-              new: true
-            - taxon: exigua_lamarck_1816
-              new: true
-            - taxon: pentagonula_lamarck_1816
-              new: true
-            - taxon: pulvillus_müller.o.f_1776
-            - taxon: penicillaris_lamarck_1816
-              new: true
-            - taxon: equestris_linnaeus_1758
-            - taxon: carinifera_lamarck_1816
-              new: true
-            - taxon: obtusangula_lamarck_1816
-              new: true
-            - taxon: reticulata_linnaeus_1758
-            - taxon: nodosa_linnaeus_1758
-            - taxon: calcar_lamarck_1816
-              new: true
-            - taxon: membranacea_retzius_1783
-            - taxon: rosacea_lamarck_1816
-              new: true
-            - taxon: helianthus_lamarck_1816
-              new: true
-            - taxon: echinites_ellis_solander_1786
-            - taxon: papposa_linnaeus_1767
-            - taxon: endeca_linnaeus_1771
-            - taxon: granifera_lamarck_1816
-              new: true
-            - taxon: echinophora_lamarck_1816
-              new: true
-            - taxon: glacialis_linnaeus_1758
-            - taxon: tenuispina_lamarck_1816
-              new: true
-            - taxon: rubens_linnaeus_1758
-            - taxon: clavigera_lamarck_1816
-              new: true
-            - taxon: seposita_retzius_1783
-            - taxon: aranciaca_linnaeus_1758
-            - taxon: calcitrapa_lamarck_1816
-              new: true
-            - taxon: acuminata_lamarck_1816
-              new: true
-              notes: |
-                No info on this species to be found, no citation,
-                therefore credited to Lamarck by default.
-            - taxon: striata_lamarck_1816
-              new: true
-            - taxon: milleporella_lamarck_1816
-              new: true
-            - taxon: variolata_bruzelius_1805
-            - taxon: multifora_lamarck_1816
-              new: true
-            - taxon: bicolor_lamarck_1816
-              new: true
-            - taxon: lævigata_linnaeus_1758
-            - taxon: arenata_lamarck_1816
-              new: true
-            - taxon: cylindrica_lamarck_1816
-              new: true
-            - taxon: senegalensis_lamarck_1816
-              new: true
-            - taxon: ophidiana_lamarck_1816
-              new: true
-            - taxon: subulata_lamarck_1816
-              new: true
 # 1816b_lamarck:
 #   taxonomies:
 #   - taxon: animaux
