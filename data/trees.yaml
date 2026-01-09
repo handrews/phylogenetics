@@ -1619,6 +1619,60 @@
     - taxon: polypes-class
     - taxon: radiares
     - taxon: vers
+  phylogenies:
+  - treeType: diagram
+    tree:
+    - taxon: animaux
+      children:
+      - taxon: inarticulés
+        children:
+        - taxon: infusoires
+          bracket: apathetiques
+          children:
+          - taxon: polypes
+              bracket: apathetiques
+            children:
+            - taxon: ascidens
+              bracket: apathetiques
+              children:
+              - taxon: acéphales
+                bracket: sensibles
+                children:
+                - taxon: mollusques
+                  bracket: sensibles
+            - taxon: radiares
+              bracket: apathetiques
+      - taxon: articulés
+        children:
+        - taxon: vers
+          bracket: apathetiques
+          children:
+          - taxon: annelides
+            bracket: apathetiques
+          - taxon: epizoares
+            bracket: apathetiques
+            children:
+            - taxon: insectes
+              bracket: sensibles
+              children:
+              - taxon: crustacés
+                bracket: sensibles
+                children:
+                - taxon: cirrhipédes
+                  bracket: sensibles
+              - taxon: arachnides
+                bracket: sensibles
+        - taxon: poissons
+          bracket: intelligens
+          children:
+          - taxon: reptiles
+            bracket: intelligens
+            children:
+            - taxon: oiseaux
+              bracket: intelligens
+              children:
+              - taxon: mammiféres
+                bracket: intelligens
 1816a_lamarck:
   taxonomies:
   - taxon: animaux
