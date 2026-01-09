@@ -8,6 +8,12 @@ actinia:
   authority:
     source: 1767_linnaeus
   notes: possibly 1767_gunnerus?
+actinia_pallas_1766:
+  name: Actinia
+  homonym: true
+  auth: [Pallas]
+  year: 1766
+  notes: Holothuroidea instead of a coral like the accepted genus Actinia
 actinocrinites:
   name: Actinocrinites
   authority:
@@ -37,6 +43,10 @@ adelphicrinus:
   name: Adelphicrinus
   authority:
     source: 2003_guensburg_sprinkle
+adeonæ_lamarck_1816:
+  name: adeonæ
+  authority:
+    source: 1816a_lamarck
 aepyaster:
   name: Aepyaster
   authority:
@@ -62,9 +72,13 @@ acanthocystites:
   name: Acanthocystites
   auth: [barrande]
   year: 1887
+acuminata_lamarck_1816:
+  name: acuminata
+  authority:
+    source: 1816a_lamarck
 africana_forsskål_1775:
   name: africana
-  auth: [Forsskål]
+  auth: [forsskål]
   year: 1775
 africanus_sumrall_zamora_2011:
   name: africanus
@@ -185,6 +199,13 @@ alanisicystis:
 alanisicystis-subgenus:
   rank: subgenus
   altRankOf: alanisicystis
+alba_forsskål_1775:
+  name: alba
+  altSpellingOf: albus_forsskål_1775
+albus_forsskål_1775:
+  name: albus
+  auth: [forsskål]
+  year: 1775
 alcyonium:
   name: Alcyonium
   authority:
@@ -241,7 +262,7 @@ amorphes:
   rank: Order
   authority:
     source: 1801_lamarck
-  notes: In French.
+  lang: FR
 ampelocrinidae:
   name: Ampelocrinidae
   rank: Family
@@ -321,6 +342,10 @@ anedriophus:
   name: Anedriophus
   authority:
     source: 2011_sumrall_zamora
+anemone_ellis_1768:
+  name: anemone
+  auth: [Ellis]
+  year: 1768
 angelini_jaekel_1899:
   name: angelini
   auth: [jaekel]
@@ -364,6 +389,17 @@ animalia:
 animaux:
   name: Animaux
   vulgarSpellingOf: animalia
+  lang: FR
+annulosa_lamarck_1816:
+  name: annulosa
+  authority:
+    source: 1816a_lamarck
+anomales:
+  name: Anomales
+  rank: section
+  authority:
+    source: 1816a_lamarck
+  lang: FR
 anomalocystidae:
   name: Anomalocystidae
   rank: Family
@@ -431,6 +467,7 @@ arachnida:
 arachnides:
   name: Arachnides
   vulgarSpellingOf: arachnida
+  lang: FR
 arachnoideus_forbes_1848:
   name: arachnoideus
   authority:
@@ -490,6 +527,10 @@ arctus_sardeson_1928:
   name: arctus
   auth: [Sardeson]
   year: 1928
+arenata_lamarck_1816:
+  name: arenata
+  authority:
+    source: 1816a_lamarck
 argodiscus:
   name: Argodiscus
   auth: [Prokop]
@@ -583,6 +624,9 @@ aspera_müller.o.f_1776:
   name: aspera
   authority:
     source: 1776_müller.o.f
+asperum_müller.o.f_1776:
+  name: asperum
+  altSpellingOf: aspera_müller.o.f_1776
 aspersa_müller.o.f_1776:
   name: aspersa
   authority:
@@ -864,6 +908,10 @@ bibrachiatus_parsley_1982:
   name: bibrachiatus
   authority:
     source: 1982a_parsley
+bicolor_lamarck_1816:
+  name: bicolor
+  authority:
+    source: 1816a_lamarck
 bicopuladigiti_garnet_1844:
   name: bicopuladigiti
   auth: [Garnet]
@@ -1014,6 +1062,10 @@ brachiatus_sprinkle_1973:
   name: brachiatus
   authority:
     source: 1973_sprinkle
+brachiolata_lamarck_1816:
+  name: brachiolata
+  authority:
+    source: 1816a_lamarck
 brachionus:
   name: Brachionus
   auth: [Pallas]
@@ -1084,6 +1136,10 @@ buttsi_clarke_1901:
   auth: [Clarke]
   year: 1901
 ###################### C
+calcar_lamarck_1816:
+  name: calcar
+  authority:
+    source: 1816a_lamarck
 calceocrinacea:
   name: Calceocrinacea
   rank: Superfamily
@@ -1098,10 +1154,18 @@ calceocrinus:
   name: Calceocrinus
   auth: [hall]
   year: 1852
+calcitrapa_lamarck_1816:
+  name: calcitrapa
+  authority:
+    source: 1816a_lamarck
 calix:
   name: Calix
   auth: [Rouault]
   year: 1851
+callianira:
+  name: Callianira
+  authority:
+    source: 1816a_lamarck
 callocystites:
   name: Callocystites
   auth: [hall]
@@ -1268,6 +1332,14 @@ caribaearum_lamarck_1801:
   name: caribaearum
   authority:
     source: 1801_lamarck
+carinata_lamarck_1816:
+  name: carinata
+  authority:
+    source: 1816a_lamarck
+carinifera_lamarck_1816:
+  name: carinifera
+  authority:
+    source: 1816a_lamarck
 carnensis_foerste_1914:
   name: carnensis
   auth: [foerste]
@@ -1404,11 +1476,16 @@ cératophytes:
   rank: Order
   authority:
     source: 1798a_cuvier
-  notes: In French. Authority uncertain.
+  lang: FR
+  notes: Authority uncertain.
 cercaria:
   name: Cercaria
   authority:
     source: 1773_müller.o.f
+cestum:
+  name: Cestum
+  auth: [Lesueur]
+  year: 1813
 chama:
   name: Chama
   authority:
@@ -1490,6 +1567,12 @@ cigaria:
   auth: [barrande]
   year: 1887
   altSpellingOf: cigara
+ciliaris_lamarck_1816:
+  name: ciliaris
+  authority:
+    source: 1816a_lamarck
+  notes: |
+    Actually distinct from ciliaris (L. 1767) despite Lamarck synonomyzing them.
 ciliaris_linnaeus_1767:
   name: ciliaris
   authority:
@@ -1498,6 +1581,11 @@ ciliata_müller.o.f_1776:
   name: ciliata
   authority:
     source: 1776_müller.o.f
+ciliati:
+  name: Ciliati
+  rank: Order
+  authority:
+    source: 1816a_lamarck
 cincinnatidiscus:
   name: Cincinnatidiscus
   authority:
@@ -1566,6 +1654,10 @@ clavidiscus:
   name: Clavidiscus
   authority:
     source: 1996_sumrall
+clavigera_lamarck_1816:
+  name: clavigera
+  authority:
+    source: 1816a_lamarck
 clio:
   name: Clio
   authority:
@@ -1682,7 +1774,7 @@ conchilega_müller.o.f_1776:
     source: 1776_müller.o.f
 confœderata_forsskål_1775:
   name: confœderata
-  auth: [Forsskål]
+  auth: [forsskål]
   year: 1775
 confertus_barrande_1887:
   name: confertus
@@ -1747,7 +1839,7 @@ coralligènes:
   rank: section
   authority:
     source: 1801_lamarck
-  notes: In French.
+  lang: FR
 corallina:
   name: Corallina
   authority:
@@ -1806,6 +1898,11 @@ coryne:
   auth: [Gaertner]
   in: [Pallas]
   year: 1774
+costosum_lamarck_1816:
+  name: costosum
+  authority:
+    source: 1816a_lamarck
+  notes: No info available, credited to Lamarck as a guess.
 cothurnocystidae:
   name: Cothurnocystidae
   rank: Family
@@ -1926,6 +2023,7 @@ crustacea-order:
 crustacés-order:
   name: Crustacés
   vulgarSpellingOf: crustacea-order
+  lang: FR
 cryptocrinites:
   name: Cryptocrinites
   auth: [buch]
@@ -2036,6 +2134,10 @@ curvitriordo_bell.b.m_1974:
   needsQualification: true
   authority:
     source: 1974_bell.b.m
+cuspidata_lamarck_1816:
+  name: cuspidata
+  authority:
+    source: 1816a_lamarck
 cyamoidea:
   name: Cyamoidea
   rank: Class
@@ -2139,10 +2241,18 @@ cyclostomus_leske_1778:
   name: cyclostomus
   authority:
     source: 1778_leske
+cylindrica_lamarck_1816:
+  name: cylindrica
+  authority:
+    source: 1816a_lamarck
 cylindricum_aurivillius_1892:
   name: cylindricum
   auth: [Aurivillius]
   year: 1892
+cylindricus_lamarck_1816:
+  name: cylindricus
+  authority:
+    source: 1816a_lamarck
 cypræa:
   name: Cypræa
   authority:
@@ -2296,7 +2406,7 @@ delticus_sumrall_sprinkle_guensburg_1997:
     source: 1997_sumrall_sprinkle_guensburg
 democratica_forsskål_1775:
   name: democratica
-  auth: [Forsskål]
+  auth: [forsskål]
   year: 1775
 dendrocrinacea:
   name: Dendrocrinacea
@@ -2354,6 +2464,11 @@ denudata_linnaeus_1758:
   name: denudata
   authority:
     source: 1758_linnaeus
+denudati:
+  name: Denudati
+  rank: Order
+  authority:
+    source: 1816a_lamarck
 destombesi_ubaghs_1963:
   name: destombesi
   auth: [ubaghs]
@@ -2462,6 +2577,10 @@ diploporitidæ:
   year: 1854
   notes: Rank not entirely clear, just called a "small group"
   altSpellingOf: diploporita-order
+diploptera_lamarck_1816:
+  name: diploptera
+  authority:
+    source: 1816a_lamarck
 diplosphaeroninae:
   name: Diplosphaeroninae
   rank: Subfamily
@@ -2484,6 +2603,10 @@ discocystis:
   name: Discocystis
   auth: [Gregory]
   year: 1897
+discoidea_lamarck_1816:
+  name: discoidea
+  authority:
+    source: 1816a_lamarck
 disparida:
   name: Disparida
   rank: Subclass
@@ -2559,10 +2682,16 @@ echinarachnius_leske_1778:
   needsQualification: true
   authority:
     source: 1778_leske
+echinata_lamarck_1816:
+  name: echinata
+  authority:
+    source: 1816a_lamarck
+  notes: Ophiuroid
 echinata_linnaeus_1767:
   name: echinata
   authority:
     source: 1767_linnaeus
+  notes: Ascidian
 echinidae:
   name: Echinidae
   rank: Family
@@ -2577,6 +2706,10 @@ echinites:
   name: Echinites
   authority:
     source: 1778_leske
+echinites_ellis_solander_1786:
+  name: echinites
+  auth: [Ellis, Solander]
+  year: 1786
 echinocorys:
   name: Echinocorys
   authority:
@@ -2644,6 +2777,7 @@ echinodermata-incertae-sedis_ubaghs_1999:
 échinodermes:
   name: Échinodermes
   vulgarSpellingOf: echinodermata-order
+  lang: FR
   authority:
     source: 1789a_bruguière
 echinodiscus:
@@ -2700,6 +2834,10 @@ echinoneus_van phelsum_1774:
   authority:
     source: 1774_van phelsum
   notes: Not consisently binomial, so Leske (1778) given priority.
+echinophora_lamarck_1816:
+  name: echinophora
+  authority:
+    source: 1816a_lamarck
 echinorhynchus:
   name: Echinorhynchus
   authority:
@@ -2997,6 +3135,10 @@ encrinus_linnaeus_1758:
   authority:
     source: 1758_linnaeus
   notes: Isis encrinus -> Vorticella encrinus (a coral, not a crinoid)
+endeca_linnaeus_1771:
+  name: endeca
+  auth: [linnaeus]
+  year: 1771
 enterocoela-grade:
   name: Enterocoela
   rank: Grade
@@ -3190,7 +3332,8 @@ escares:
   rank: Order
   authority:
     source: 1798a_cuvier
-  notes: In French.  Authority uncertain.
+  lang: FR
+  notes: Authority uncertain.
 eschara:
   name: Eschara
   authority:
@@ -3232,8 +3375,18 @@ eumorphocystoidea:
   notes: nom. transl., possibly in 1982_sprinkle(ed)?
 euryale:
   name: Euryale
-  auth: [Oken]
-  year: 1815
+  authority:
+    source: 1816a_lamarck
+  notes: |
+    PBDB says Oken (1815) "Lechbuch Naturgeschichte. (3) Zoologie.",
+    but this seems to refer to Lehrbuch der Naturgeschichte, volume 3
+    of which does cover zoology but was published in 1816.  It also
+    does not list Euryale in its index. Fistularia is the only potentially
+    echinoderm-related genus listed. IRMNG and WoRMS say Lamarck (1816).
+euryale_retzius_1783:
+  name: euryale
+  auth: [Retzius]
+  year: 1783
 euryeschatia:
   name: Euryeschatia
   authority:
@@ -3246,6 +3399,16 @@ everndeni_durham_1967:
   name: everndeni
   authority:
     source: 1967c_durham
+exigua_lamarck_1816:
+  name: exigua
+  authority:
+    source: 1816a_lamarck
+  notes: Asterias
+exiguum_lamarck_1816:
+  name: exiguum
+  authority:
+    source: 1816a_lamarck
+  notes: Euryale
 expansus_phillips.j_1839:
   name: expansus
   authority:
@@ -3260,7 +3423,7 @@ externes:
   rank: Order
   authority:
     source: 1801_lamarck
-  notes: In French.
+  lang: FR
 ###################### F
 faberi_miller.s.a_1894:
   name: faberi
@@ -3277,7 +3440,7 @@ fanulodiscus:
     source: 1994_guensburg_sprinkle
 fasciata_forsskål_1775:
   name: fasciata
-  auth: [Forsskål]
+  auth: [forsskål]
   year: 1775
 fasciola:
   name: Fasciola
@@ -3303,6 +3466,10 @@ fillmorensis_guensburg_sprinkle_2003:
   name: fillmorensis
   authority:
     source: 2003_guensburg_sprinkle
+fimbriata_lamarck_1816:
+  name: fimbriata
+  authority:
+    source: 1816a_lamarck
 fimbriata_miller.j.s_1821:
   name: fimbriata
   authority:
@@ -3323,7 +3490,7 @@ fissiculata:
 fistularia_forsskål_1775:
   name: Fistularia
   homonym: true
-  auth: [Forsskål]
+  auth: [forsskål]
   year: 1775
   notes: |
     Fistularia (Linnaeus 1758) is a ray-finned fish.
@@ -4415,9 +4582,11 @@ infusoria-section:
 infusoires:
   name: Infusoires
   vulgarSpellingOf: infusoria-order
+  lang: FR
 infusoires-section:
   name: Infusoires
   vulgarSpellingOf: infusoria-section
+  lang: FR
 inhærens_müller.o.f_1776:
   name: inhærens
   authority:
@@ -4430,6 +4599,7 @@ insecta:
 insectes:
   name: Insectes
   vulgarSpellingOf: insecta
+  lang: FR
 insularis_regnéll_1945:
   name: insularis
   auth: [regnéll]
@@ -4451,6 +4621,7 @@ intestinalis_linnaeus_1767:
 intestins:
   name: Intestins
   vulgarSpellingOf: intestina-order
+  lang: FR
 interruptus_jaekel_1899:
   name: interruptus
   auth: [jaekel]
@@ -5058,6 +5229,7 @@ lithophyta:
 lithophytes:
   name: Lithophytes
   vulgarSpellingOf: lithophyta
+  lang: FR
 lixula_linnaeus_1758:
   name: lixula
   authority:
@@ -5172,7 +5344,7 @@ macrocystellidae:
   year: 1899
 macronata_forsskål_1775:
   name: macronata
-  auth: [Forsskål]
+  auth: [forsskål]
   year: 1775
 mactra:
   name: Mactra
@@ -5236,6 +5408,7 @@ mammalia:
 mammaux:
   name: Mammaux
   vulgarSpellingOf: mammalia
+  lang: FR
 mammaria:
   name: Mammaria
   authority:
@@ -5281,7 +5454,7 @@ matacarros_sumrall_zamora_2011:
     source: 2011_sumrall_zamora
 maxima_forsskål_1775:
   name: maxima
-  auth: [Forsskål]
+  auth: [forsskål]
   year: 1775
 mimus_sumrall_zamora_2011:
   name: mimus
@@ -5429,12 +5602,23 @@ molanderi_kolata_1975:
   name: molanderi
   authority:
     source: 1975_kolata
-molasses:
+molasses_radiares:
   name: Molasses
+  originalParent: radiares
+  altSpellingOf: mollasses_radiares
+mollasses_radiares:
+  name: Mollasses
   rank: Order
+  originalParent: radiares
   authority:
     source: 1801_lamarck
-  notes: In French.
+  lang: FR
+mollasses_vers:
+  name: Mollasses
+  rank: Order
+  originalParent: vers
+  authority:
+    source: 1816a_lamarck
 mollusca:
   name: Mollusca
   rank: Phylum
@@ -5446,12 +5630,14 @@ mollusca-class:
 mollusques-class:
   name: Mollusques
   vulgarSpellingOf: mollusca-class
+  lang: FR
 mollusca-order:
   rank: Order
   altRankOf: mollusca
 mollusques-order:
   name: Mollusques
   vulgarSpellingOf: mollusca-order
+  lang: FR
 monas:
   name: Monas
   authority:
@@ -5588,6 +5774,11 @@ narrawayella:
   name: Narrawayella
   auth: [foerste]
   year: 1920
+natante:
+  name: Natantes
+  rank: Order
+  authority:
+    source: 1816a_lamarck
 natus_strimple_1953:
   name: natus
   auth: [strimple]
@@ -5649,6 +5840,11 @@ nicklesi_bassler_1936:
   name: nicklesi
   authority:
     source: 1936_bassler
+nigra_abildgaard_1789:
+  name: nigra
+  auth: [Abildgaard]
+  in: [müller.o.f]
+  year: 1789
 nimius_bell.b.m_sprinkle_1978:
   name: nimius
   auth: [bell.b.m, sprinkle]
@@ -5715,7 +5911,7 @@ nus:
   rank: section
   authority:
     source: 1801_lamarck
-  notes: In French.
+  lang: FR
 ###################### O
 oblongus_forbes_1848:
   name: oblongus
@@ -5748,6 +5944,7 @@ odin_müller.p_hahn_2010:
 oiseaux:
   name: Oiseaux
   vulgarSpellingOf: aves
+  lang: FR
 oklahomae_strimple_graffham_1955:
   name: oklahomae
   auth: [Strimple, Graffham]
@@ -5848,7 +6045,8 @@ orties de mer:
   rank: section
   authority:
     source: 1798a_cuvier
-  notes:  In French.  Authority unclear.
+  lang: FR
+  notes: Authority unclear.
 osculocystis:
   name: Osculocystis
   auth: [paul.c.r.c]
@@ -6252,7 +6450,7 @@ physalis_linnaeus_1758:
     source: 1758_linnaeus
 physsophora:
   name: Physsophora
-  auth: [Forsskål]
+  auth: [forsskål]
   year: 1775
 pilea_hall_1866:
   name: pilea
@@ -6271,7 +6469,7 @@ pinna:
     source: 1758_linnaeus
 pinnata_forsskål_1775:
   name: pinnata
-  auth: [Forsskål]
+  auth: [forsskål]
   year: 1775
 piojoensis_sumrall_heredia_rodríguez.c.m_mestre_2013:
   name: piojoensis
@@ -6436,9 +6634,10 @@ plinthotus_kesling_1967:
 poissons:
   name: Poissons
   vulgarSpellingOf: pisces
+  lang: FR
 polycratica_forsskål_1775:
   name: polycratica
-  auth: [Forsskål]
+  auth: [forsskål]
   year: 1775
 polydactylus_miller.j.s_1821:
   name: polydactylus
@@ -6447,6 +6646,7 @@ polydactylus_miller.j.s_1821:
 polypes-class:
   name: Polypes
   vulgarSpellingOf: polypi
+  lang: FR
   authority:
     source: 1801_lamarck
   notes: Or nomen trans. from 1798a_cuvier?  Unclear.
@@ -6455,7 +6655,8 @@ polypes-section:
   rank: section
   authority:
     source: 1798a_cuvier
-  notes: In French.  Authority uncertain.
+  lang: FR
+  notes: Authority uncertain.
 polypi:
   name: Polypi
   rank: Class
@@ -6665,7 +6866,7 @@ pulvillis_müller.o.f_1776:
     source: 1776_müller.o.f
 punctata_forsskål_1775:
   name: punctata
-  auth: [Forsskål]
+  auth: [forsskål]
   year: 1775
 punctatus_forbes_1848:
   name: punctatus
@@ -6824,6 +7025,7 @@ radiata:
 radiares:
   name: Radiares
   vulgarSpellingOf: radiata
+  lang: FR
 radiata_sprinkle_1973:
   name: radiata
   authority:
@@ -6877,7 +7079,7 @@ rayons:
   rank: Order
   authority:
     source: 1801_lamarck
-  notes: In French.
+  lang: FR
 reboulorum_sumrall_zamora_2011:
   name: reboulorum
   authority:
@@ -6952,6 +7154,7 @@ reptilia:
 reptiles:
   name: Reptiles
   vulgarSpellingOf: reptilia
+  lang: FR
 republicensis_sumrall_sprinkle_guensburg_1997:
   name: republicensis
   authority:
@@ -7143,7 +7346,7 @@ rotifères:
   rank: Order
   authority:
     source: 1801_lamarck
-  notes: In French.
+  lang: FR
 rotundus_miller.j.s_1821:
   name: rotundus
   authority:
@@ -7212,7 +7415,7 @@ sagittaria_thomas_ladd_1926:
   year: 1926
 salpa:
   name: Salpa
-  auth: [Forsskål]
+  auth: [forsskål]
   year: 1775
 salteri_hall_1866:
   name: salteri
@@ -7656,6 +7859,7 @@ stelleridæ:
 stellerides:
   name: Stellerides
   vulgarSpellingOf: stelleridæ
+  lang: FR
   authority:
     source: 1801_lamarck
 # See 1825a_say; unclear if this is even a real spelling
@@ -7827,7 +8031,7 @@ sycocystites:
     source: 1844_buch
 sypho_forsskål_1775:
   name: sypho
-  auth: [Forsskål]
+  auth: [forsskål]
   year: 1775
 syringocrinida:
   name: Syringocrinida
@@ -7925,6 +8129,7 @@ testacea-unnamed-section-2_linnaeus_1758:
 testacés:
   name: Testacés
   vulgarSpellingOf: testacea-order
+  lang: FR
 testudinarius_hisinger_1837:
   name: testudinarius
   auth: [hisinger]
@@ -8120,6 +8325,10 @@ trilobita:
   rank: Class
   auth: [Walch]
   year: 1771
+triploptera_lamarck_1816:
+  name: triploptera
+  authority:
+    source: 1816a_lamarck
 triton:
   name: Triton
   authority:
@@ -8290,6 +8499,11 @@ utahensis_robison_sprinkle_1969:
   auth: [robison, sprinkle]
   year: 1969
 ###################### V
+vaginati:
+  name: Vaginati
+  rank: Order
+  authority:
+    source: 1816a_lamarck
 valcourensis_clark_1920:
   name: valcourensis
   auth: [Clark]
@@ -8331,6 +8545,7 @@ vermes:
 vers:
   name: Vers
   vulgarSpellingOf: vermes
+  lang: FR
 vertigo:
   name: Vertigo
   authority:
@@ -8542,9 +8757,11 @@ zoantha:
 zoophites:
   name: Zoophites
   vulgarSpellingOf: zoophyta
+  lang: FR
 zoophytes:
   name: Zoophytes
   vulgarSpellingOf: zoophyta
+  lang: FR
 zoophyta:
   name: Zoophyta
   rank: Order
@@ -8553,6 +8770,7 @@ zoophyta:
 zoophytes-class:
   name: Zoophytes
   vulgarSpellingOf: zoophyta-class
+  lang: FR
 zoophyta-class:
   name: Zoophyta
   rank: Class

@@ -317,6 +317,10 @@ $defs:
         type: string
       vulgarSpellingOf:
         type: string
+      lang:
+        type: string
+        minLength: 2
+        maxLength: 2
       needsQualification:
         type: boolean
         default: false
@@ -388,11 +392,17 @@ $defs:
         type: boolean
         default: false
       provisional:
+        $comment: The assignment to parent taxon is provisional
         type: boolean
         default: false
       questionable:
+        $comment: The current taxon is questionable
         type: boolean
         default: false
+      tentative:
+        $comment: For synonyms / non
+        type: boolean
+        default: true
       pages:
         type: array
         items:

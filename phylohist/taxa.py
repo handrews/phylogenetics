@@ -112,7 +112,8 @@ class Authority:
         if (
           not a.could_publish_in(self._year) and
           not (a.family == 'Klein' and self._year == 1778) and
-          not (a.family == 'Linnaeus' and self._year == 1790)
+          not (a.family == 'Linnaeus' and self._year == 1790) and
+          not (a.family == 'Forsskål' and self._year == 1775)
         ):
           logger.error(
             f'Source {self} year {self._year} too far '
