@@ -321,6 +321,9 @@ ananchites:
   name: Ananchites
   authority:
     source: 1801_lamarck
+ananchytes:
+  name: Ananchytes
+  altSpellingOf: ananchites
 anapeptamenus_austen_1843:
   name: anapeptamenus
   auth: [Austen]
@@ -606,6 +609,16 @@ ascidia:
   name: Ascidia
   authority:
     source: 1767_linnaeus
+ascidiens:
+  name: Ascidiens
+  rank: Order
+  authority:
+    source: 1816b_lamarck
+  lang: FR
+  notes: |
+    Included in a table in the final supplement to Lamarck (1815), but
+    rank unclear as it is discussed with classes and ends up being an order.
+    As it is not formally declared, using Lamarck (1816b) as the authority.
 ascocystites:
   name: Ascocystites
   auth: [barrande]
@@ -631,6 +644,10 @@ aspersa_müller.o.f_1776:
   name: aspersa
   authority:
     source: 1776_müller.o.f
+aster_ellis_1768:
+  name: aster
+  auth: [Ellis]
+  year: 1768
 asteria:
   name: Asteria
   authority:
@@ -1054,6 +1071,12 @@ bothriocidaroida:
   rank: Order
   auth: [zittel]
   year: 1879
+botryllaires:
+  name: Botryllaires
+  rank: Order
+  authority:
+    source: 1816b_lamarck
+  lang: FR
 botryllus:
   name: Botryllus
   auth: [Gaertner]
@@ -1436,6 +1459,14 @@ caudata_linnaeus_1758:
   name: caudata
   authority:
     source: 1758_linnaeus
+caudatus_lamarck_1816:
+  name: caudatus
+  authority:
+    source: 1816b_lamarck
+cavernata_bosc_1802:
+  name: cavernata
+  auth: [Bosc]
+  year: 1802
 cælatus_phillips.j_1839:
   name: cælatus
   authority:
@@ -1550,6 +1581,10 @@ chrysalis_schuchert_1904:
   name: chrysalis
   auth: [schuchert]
   year: 1904
+cidarites:
+  name: Cidarites
+  authority:
+    source: 1816b_lamarck
 cidaris:
   name: Cidaris
   authority:
@@ -1683,6 +1718,10 @@ coadunata:
   rank: Division
   authority:
     source: 1821_miller.j.s
+coccinia_müller.o.f_1776:
+  name: coccinia
+  authority:
+    source: 1776_müller.o.f
 cochleæ:
   name: Cochleæ
   rank: section
@@ -1925,6 +1964,10 @@ coxi_paul.c.r.c_1997:
   name: coxi
   authority:
     source: 1997_paul.c.r.c
+crassicornis_müller.o.f_1776:
+  name: crassicornis
+  authority:
+    source: 1776_müller.o.f
 crassus_miller.j.s_1821:
   name: crassus
   authority:
@@ -2521,6 +2564,10 @@ digitata:
   rank: Order
   auth: [Hecker]
   year: 1940
+digitata_montagu_1815:
+  name: digitata
+  auth: [Montagu]
+  year: 1815
 diktyotos_guensburg_1988:
   name: diktyotos
   authority:
@@ -2625,6 +2672,10 @@ dockeryi_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley_1987:
   name: dockeryi
   authority:
     source: 1987_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley
+doliolum_pallas_1766:
+  name: doliolum
+  auth: [Pallas]
+  year: 1766
 donax:
   name: Donax
   authority:
@@ -3042,6 +3093,10 @@ edriophus_bell.b.m_1974:
   needsQualification: true
   authority:
     source: 1974_bell.b.m
+edulis_pallas_1774:
+  name: edulis
+  auth: [Pallas]
+  year: 1774
 eifeliana_müller.p_hahn_bohatý_2013:
   name: eifeliana
   authority:
@@ -8476,6 +8531,14 @@ tubulosa_gmelin_1791:
   name: tubulosa
   auth: [Gmelin]
   year: 1791
+tunicata-class:
+  rank: Class
+  altRankOf: tunicata
+tunicata:
+  name: Tunicata
+  rank: Subphylum
+  authority:
+    source: 1816b_lamarck
 turbanicystidae:
   name: Turbanicystidae
   rank: Family

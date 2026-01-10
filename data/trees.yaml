@@ -1790,151 +1790,150 @@
             # - taxon: lombricalis_
             # - taxon: cuspidifera_
           - taxon: asterias
-# 1816b_lamarck:
-#   taxonomies:
-#   - taxon: animaux
-#     children:
-#     - taxon: radiares
-#       children:
-#         - taxon: échinides
-#           children:
-#           - taxon: scutella
-#           - taxon: clypeaster
-#           - taxon: fibularia
-#           - taxon: echinoneus
-#           - taxon: galerites
-#           - taxon: ananchytes
-#           - taxon: spatangus
-#           - taxon: cassidulus
-#           - taxon: nucleoites
-#           - taxon: echinus
-#           - taxon: cidarites
-#         - taxon: fistulides
-#           children:
-#           - taxon: tentaculées
-#             children:
-#             - taxon: actinia_pallas_1766
-#               notes: |
-#                 Actinia (Pallas 1766) was a genus of holothuroideans,
-#                 while Actinia (Linnaeus 1767) is a genus of corals.
-#                 Lamarck seems to have conflated them, along with
-#                 a smattering of priapulids, here.  Since this genus
-#                 is grouped with Holothuria (Linnaeus 1767) and
-#                 Fistularia (Forsskål 1775), it is treated nas
-#                 Actinia (Pallas 1766).
-#               children:
-#               - taxon: rufa_müller.o.f_1776
-#               - taxon: crassicornis_müller.o.f_1776
-#               - taxon: plumosa_müller.o.f_1776
-#               - taxon: coccinia_müller.o.f_1776
-#               - taxon: judaica_linnaues_1761
-#               - taxon: viduata_müller.o.f_1776
-#               - taxon: effœta_linnaues_1767
-#               - taxon: senilis_linnaeus_1767
-#               - taxon: undata_müller.o.f_1778
-#               - taxon: sulcata_pennant_1777
-#               - taxon: gigas_bruguière_1798
-#               - taxon: rubra_forsskål_1775
-#                 synonyms:
-#                 - taxon: ruber_forsskål_1775
-#                   parents:
-#                   - taxon: priapus
-#               - taxon: viridis_forsskål_1775
-#                 synonyms:
-#                 - taxon: viridis_forsskål_1775
-#                   parents:
-#                   - taxon: priapus
-#               - taxon: maculata_adams_1800
-#                 notes: Unclear why this coral was synonomized w/Priapus
-#                 synonyms:
-#                 - taxon: polyus_forsskål_1775
-#                   parents:
-#                   - taxon: priapus
-#               - taxon: alba_forsskål_1775
-#                 synonyms:
-#                 - taxon: albus_forsskål_1775
-#                   parents:
-#                   - taxon: fistularia_forsskål_1775
-#               - taxon: cavernata_bosc_1802
-#               - taxon: reclinata_bosc_1802
-#               - taxon: pedunculata_pennant_1777
-#               - taxon: squamosa_bruguière_1798
-#               - taxon: verrucosa_pennant_1777
-#               - taxon: quadrangularis_bruguière_1798
-#               - taxon: pentapetala_pennant_1777
-#               - taxon: aster_ellis_1768
-#               - taxon: anemone_ellis_1768
-#               - taxon: helianthus_ellis_1768
-#             - taxon: holothuria
-#               children:
-#               - taxon: frondosa_gunnerus_1767
-#               - taxon: phantapus_strussenffelt_1765
-#               - taxon: pentacta_gmelin_1791
-#               - taxon: doliolum_pallas_1766
-#                 synonyms:
-#                 - taxon: doliolum_pallas_1766
-#                   parents:
-#                   - taxon: actinia
-#               - taxon: fusus_müller.o.f_1776
-#               - taxon: inhærens_müller.o.f_1776
-#               - taxon: glutinosa_lamarck_1816
-#                 new: true
-#                 synonyms:
-#                 - taxon: reciprocans_forsskål_1775
-#                   parents:
-#                   - taxon: fistularia_forsskål_1775
-#               - taxon: vittata_forsskål_1775
-#                 synonyms:
-#                 - taxon: vittata_forsskål_1775
-#                   parents:
-#                   - taxon: fistularia_forsskål_1775
-#               - taxon: squamata_müller.o.f_1776
-#               - taxon: penicillus_müller.o.f_1776
-#             - taxon: fistularia_forsskål_1775
-#               children:
-#               - taxon: elegans_müller.o.f_1776
-#                 synonyms:
-#                 - taxon: elegans_müller.o.f_1776
-#                   parents:
-#                   - taxon: holothuria
-#               - taxon: tubulosa_müller.o.f_1776
-#                 synonyms:
-#                 - taxon: tremula_gunnerus_1767
-#                   parents:
-#                   - taxon: holothuria
-#               - taxon: impatiens_forsskål_1775
-#               - taxon: maxima_forsskål_1775
-#               - taxon: digitata_montagu_1815
-#           - taxon: nues
-#             children:
-#             - taxon: priapulus
-#               new: true
-#               children:
-#               - taxon: caudatus_lamarck_1816
-#                 new: true
-#                 synonyms:
-#                 - taxon: priapus_linnaeus_1767
-#                   parents:
-#                   - taxon: holothuria
-#             - taxon: sipunculus
-#               children:
-#               - taxon: nudus_linnaeus_1767
-#               - taxon: saccatus_linnaeus_1767
-#               - taxon: edulis_pallas_1774
-#     - taxon: tunicata
-#       children:
-#       - taxon: botryllaires
-#       - taxon: ascidiens
-#     - taxon: vers
-#       children:
-#       - taxon: mollasses_vers
-#         children:
-#         - taxon: vésiculaires
-#         - taxon: planulaires
-#         - taxon: hétéromorphes
-#       - taxon: rigidules
-#       - taxon: hispides
-
+1816b_lamarck:
+  taxonomies:
+  - taxon: animaux
+    children:
+    - taxon: radiares
+      children:
+        - taxon: échinides
+          children:
+          - taxon: scutella
+          - taxon: clypeaster
+          - taxon: fibularia
+          - taxon: echinoneus
+          - taxon: galerites
+          - taxon: ananchytes
+          - taxon: spatangus
+          - taxon: cassidulus
+          - taxon: nucleoites
+          - taxon: echinus
+          - taxon: cidarites
+        - taxon: fistulides
+          children:
+          - taxon: tentaculées
+            children:
+            - taxon: actinia_pallas_1766
+              notes: |
+                Actinia (Pallas 1766) was a genus of holothuroideans,
+                while Actinia (Linnaeus 1767) is a genus of corals.
+                Lamarck seems to have conflated them, along with
+                a smattering of priapulids, here.  Since this genus
+                is grouped with Holothuria (Linnaeus 1767) and
+                Fistularia (Forsskål 1775), it is treated nas
+                Actinia (Pallas 1766).
+              children:
+              - taxon: rufa_müller.o.f_1776
+              - taxon: crassicornis_müller.o.f_1776
+              - taxon: plumosa_müller.o.f_1776
+              - taxon: coccinia_müller.o.f_1776
+              - taxon: judaica_linnaues_1761
+              - taxon: viduata_müller.o.f_1776
+              - taxon: effœta_linnaues_1767
+              - taxon: senilis_linnaeus_1767
+              - taxon: undata_müller.o.f_1778
+              - taxon: sulcata_pennant_1777
+              - taxon: gigas_bruguière_1798
+              - taxon: rubra_forsskål_1775
+                synonyms:
+                - taxon: ruber_forsskål_1775
+                  parents:
+                  - taxon: priapus
+              - taxon: viridis_forsskål_1775
+                synonyms:
+                - taxon: viridis_forsskål_1775
+                  parents:
+                  - taxon: priapus
+              - taxon: maculata_adams_1800
+                notes: Unclear why this coral was synonomized w/Priapus
+                synonyms:
+                - taxon: polyus_forsskål_1775
+                  parents:
+                  - taxon: priapus
+              - taxon: alba_forsskål_1775
+                synonyms:
+                - taxon: albus_forsskål_1775
+                  parents:
+                  - taxon: fistularia_forsskål_1775
+              - taxon: cavernata_bosc_1802
+              - taxon: reclinata_bosc_1802
+              - taxon: pedunculata_pennant_1777
+              - taxon: squamosa_bruguière_1798
+              - taxon: verrucosa_pennant_1777
+              - taxon: quadrangularis_bruguière_1798
+              - taxon: pentapetala_pennant_1777
+              - taxon: aster_ellis_1768
+              - taxon: anemone_ellis_1768
+              - taxon: helianthus_ellis_1768
+            - taxon: holothuria
+              children:
+              - taxon: frondosa_gunnerus_1767
+              - taxon: phantapus_strussenffelt_1765
+              - taxon: pentacta_gmelin_1791
+              - taxon: doliolum_pallas_1766
+                synonyms:
+                - taxon: doliolum_pallas_1766
+                  parents:
+                  - taxon: actinia
+              - taxon: fusus_müller.o.f_1776
+              - taxon: inhærens_müller.o.f_1776
+              - taxon: glutinosa_lamarck_1816
+                new: true
+                synonyms:
+                - taxon: reciprocans_forsskål_1775
+                  parents:
+                  - taxon: fistularia_forsskål_1775
+              - taxon: vittata_forsskål_1775
+                synonyms:
+                - taxon: vittata_forsskål_1775
+                  parents:
+                  - taxon: fistularia_forsskål_1775
+              - taxon: squamata_müller.o.f_1776
+              - taxon: penicillus_müller.o.f_1776
+            - taxon: fistularia_forsskål_1775
+              children:
+              - taxon: elegans_müller.o.f_1776
+                synonyms:
+                - taxon: elegans_müller.o.f_1776
+                  parents:
+                  - taxon: holothuria
+              - taxon: tubulosa_müller.o.f_1776
+                synonyms:
+                - taxon: tremula_gunnerus_1767
+                  parents:
+                  - taxon: holothuria
+              - taxon: impatiens_forsskål_1775
+              - taxon: maxima_forsskål_1775
+              - taxon: digitata_montagu_1815
+          - taxon: nues
+            children:
+            - taxon: priapulus
+              new: true
+              children:
+              - taxon: caudatus_lamarck_1816
+                new: true
+                synonyms:
+                - taxon: priapus_linnaeus_1767
+                  parents:
+                  - taxon: holothuria
+            - taxon: sipunculus
+              children:
+              - taxon: nudus_linnaeus_1767
+              - taxon: saccatus_linnaeus_1767
+              - taxon: edulis_pallas_1774
+    - taxon: tunicata
+      children:
+      - taxon: botryllaires
+      - taxon: ascidiens
+    - taxon: vers
+      children:
+      - taxon: mollasses_vers
+        children:
+        - taxon: vésiculaires
+        - taxon: planulaires
+        - taxon: hétéromorphes
+      - taxon: rigidules
+      - taxon: hispides
 1820_say:
   taxonomies:
   - taxon: pentacrinus
