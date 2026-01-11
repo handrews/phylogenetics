@@ -3786,6 +3786,10 @@ germanus_bassler_1936_isorophus:
   name: germanus
   authority:
     source: 1936_bassler
+gibbosus_lamarck_1816:
+  name: gibbosus
+  authority:
+    source: 1816b_lamarck
 giganteus_leuchtenberg_1943:
   name: giganteus
   auth: [Leuchtenberg]
@@ -5799,6 +5803,10 @@ minervaecystis-sp_sumrall_sprinkle_guensburg_1997:
   rank: species
   authority:
     source: 1997_sumrall_sprinkle_guensburg
+minor_leske_1778:
+  name: minor
+  authority:
+    source: 1778_leske
 minor_schuchert_1919:
   name: minor
   rank: variety
@@ -6365,6 +6373,10 @@ oviformis_lamarck_1801:
   name: oviformis
   authority:
     source: 1801_lamarck
+ovulum_lamarck_1816:
+  name: ovulum
+  authority:
+    source: 1816b_lamarck
 ###################### P
 pahvanticystis:
   name: Pahvanticystis
@@ -7970,6 +7982,10 @@ semiarticulata:
   rank: Division
   authority:
     source: 1821_miller.j.s
+semilunaris_gmelin_1791:
+  name: semilunaris
+  auth: [Gmelin]
+  year: 1791
 senckenbergii_meyer_1826:
   name: senckenbergii
   auth: [Meyer]
@@ -8552,6 +8568,10 @@ tænia:
   name: Tænia
   authority:
     source: 1758_linnaeus
+tarentina_lamarck_1816:
+  name: tarentina
+  authority:
+    source: 1816b_lamarck
 tarri_strimple_1938:
   name: tarri
   auth: [strimple]
@@ -8848,6 +8868,10 @@ trichoda:
   name: Trichoda
   authority:
     source: 1773_müller.o.f
+trigona_lamarck_1816:
+  name: trigona
+  authority:
+    source: 1816b_lamarck
 trilobita:
   name: Trilobita
   rank: Class

@@ -2028,7 +2028,25 @@
               new: true
           - taxon: fibularia
             new: true
+            children:
+            - taxon: trigona_lamarck_1816
+              new: true
+            - taxon: ovulum_lamarck_1816
+              new: true
+            - taxon: tarentina_lamarck_1816
+              new: true
           - taxon: echinoneus
+            children:
+            - taxon: cyclostomus_leske_1778
+              synonyms:
+              - taxon: cyclostomus_leske_1778
+                parents:
+                - taxon: echinus
+            - taxon: semilunaris_gmelin_1791
+              synonyms:
+              - taxon: minor_leske_1778
+            - taxon: gibbosus_lamarck_1816
+              new: true
           - taxon: galerites
           - taxon: ananchytes
           - taxon: spatangus_leske_1778
