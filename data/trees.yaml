@@ -1983,6 +1983,48 @@
             - taxon: ambigena_lamarck_1816
               new: true
           - taxon: clypeaster
+            children:
+            - taxon: rosaceus_linnaeus_1758
+              synonyms:
+              - taxon: rosaceus_linnaeus_1758
+                parents:
+                - taxon: echinus
+              - taxon: humilis_leske_1778
+                parents:
+                - taxon: echinanthus
+            - taxon: altus_leske_1778
+              synonyms:
+              - taxon: altus_leske_1778
+                parents:
+                - taxon: echinus
+              - taxon: altus_leske_1778
+                parents:
+                - taxon: echinanthus
+            - taxon: marginatus_lamarck_1816
+              new: true
+            - taxon: scutiformis_lamarck_1816
+              new: true
+              notes: Synonym Echinus planus scutiformis Seba mns. 3. tab. 15.
+            - taxon: laganum_leske_1778
+              synonyms:
+              - taxon: laganum_leske_1778
+                parents:
+                - taxon: echinodiscus
+            - taxon: excentricus_  # agassiz 1816?  Lamarck?
+            - taxon: oviformis_gmelin_1791
+              synonyms:
+              - taxon: oviformis_gmelin_1791
+                parents:
+                - taxon: echinus
+              - taxon: ovatus_leske_1778
+                parents:
+                - taxon: echinanthus
+            - taxon: politus_lamarck_1816
+              new: true
+            - taxon: hemisphæricus_lamarck_1816
+              new: true
+            - taxon: stelliferus_lamarck_1816
+              new: true
           - taxon: fibularia
             new: true
           - taxon: echinoneus
