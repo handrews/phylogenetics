@@ -935,7 +935,7 @@
       available per ICZN rules.
 1778_leske:
   notes: |
-    Goes to species, varieties, and a sub-species consept of family,
+    Goes to species, varieties, and a sub-species concept of family,
     but only order and genus captured here so far as the others are
     rather confusing.
   taxonomies:
@@ -1878,6 +1878,110 @@
           children:
           - taxon: scutella
             new: true
+            children:
+            - taxon: dentata_leske_1778
+              synonyms:
+              - taxon: orbiculus_linnaeus_1758
+                notes: credited to Gmel.
+                parents:
+                - taxon: echinus
+              - taxon: dentata_leske_1778
+                parents:
+                - taxon: echinodiscus
+            - taxon: digitata_lamarck_1816
+              new: true
+              synonyms:
+              - taxon: decadactylos_gmelin_1791
+                parents:
+                - taxon: echinus
+              - taxon: decies digitatus_leske_1778
+                parents:
+                - taxon: echinodiscus
+              - taxon: octodactylos_gmelin_1791
+                parents:
+                - taxon: echinus
+              - taxon: octies digitatus_leske_1778
+                parents:
+                - taxon: echinodiscus
+            - taxon: emarginata_leske_1778
+              synonyms:
+              - taxon: emarginata_leske_1778
+                parents:
+                - taxon: echinodiscus
+            - taxon: sexforis_lamarck_1816
+              new: true
+              synonyms:
+              - taxon: hexaporus_gmelin_1791
+                parents:
+                - taxon: echinus
+              - taxon: sexies perforatus_leske_1778
+                parents:
+                - taxon: echinodiscus
+            - taxon: quinquefora_lamarck_1816
+              new: true
+              synonyms:
+              - taxon: pentaphorus_gmelin_1791
+                notes: Proper spelling "pentaporus"
+                parents:
+                - taxon: echinus
+              - taxon: quinquies perforatus_leske_1778
+                parents:
+                - taxon: echinodiscus
+            - taxon: quadrifora_lamarck_1816
+              new: true
+              synonyms:
+              - taxon: tetraporus_gmelin_1791
+                parents:
+                - taxon: echinus
+              - taxon: quater perforatus_leske_1778
+                parents:
+                - taxon: echinodiscus
+            - taxon: bifora_gmelin_1791
+              synonyms:
+              - taxon: biforis_gmelin_1791
+                parents:
+                - taxon: echinus
+              - taxon: biperforatus_leske_1778
+                parents:
+                - taxon: echinodiscus
+            - taxon: bifissa_gmelin_1791
+              synonyms:
+              - taxon: inauritus_gmelin_1791
+                parents:
+                - taxon: echinus
+              - taxon: auritus_leske_1778
+                parents:
+                - taxon: echinus
+            - taxon: lenticularis_lamarck_1816
+              new: true
+            - taxon: orbicularis_gmelin_1791
+              synonyms:
+              - taxon: orbicularis_gmelin_1791
+                parents:
+                - taxon: echinus
+            - taxon: fibularis_lamarck_1816
+              new: true
+              notes: No info available, assuming new taxon.
+            - taxon: placenta_linnaeus_1758
+              notes: |
+                Synonymized with Echinarachnus (Leske ex Klein) but no species?
+              synonyms:
+              - taxon: placenta_linnaeus_1758
+                parents:
+                - taxon: echinus
+            - taxon: parma_lamarck_1816
+              new: true
+            - taxon: subrotunda_leske_1778
+              synonyms:
+              - taxon: subrotundus_leske_1778
+                parents:
+                - taxon: echinodiscus
+            - taxon: placunaria_lamarck_1816
+              new: true
+            - taxon: latissima_lamarck_1816
+              new: true
+            - taxon: ambigena_lamarck_1816
+              new: true
           - taxon: clypeaster
           - taxon: fibularia
             new: true

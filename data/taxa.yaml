@@ -244,6 +244,10 @@ alveolites:
   name: Alveolites
   authority:
     source: 1801_lamarck
+ambigena_lamarck_1816:
+  name: ambigena
+  authority:
+    source: 1816b_lamarck
 amecystis:
   name: Amecystis
   auth: [Ulrich, Kirk]
@@ -772,6 +776,10 @@ atratus_linnaeus_1758:
   name: atratus
   authority:
     source: 1758_linnaeus
+auritus_leske_1778:
+  name: auritus
+  authority:
+    source: 1778_leske
 austini_foerste_1914:
   name: austini
   auth: [foerste]
@@ -945,6 +953,18 @@ bifida_ubaghs_robison_1988:
   name: bifida
   auth: [ubaghs, robison]
   year: 1988
+bifissa_gmelin_1791:
+  name: bifissa
+  auth: [Gmelin]
+  year: 1791
+bifora_gmelin_1791:
+  name: bifora
+  auth: [Gmelin]
+  year: 1791
+biforis_gmelin_1791:
+  name: biforis
+  auth: [Gmelin]
+  year: 1791
 bigsbyi_billings_1857:
   name: bigsbyi
   auth: [billings]
@@ -957,6 +977,10 @@ billingsi_wilson_1946:
   name: billingsi
   auth: [Wilson]
   year: 1946
+biperforatus_leske_1778:
+  name: biperforatus
+  authority:
+    source: 1778_leske
 biphora:
   name: Biphora
   authority:
@@ -2409,6 +2433,10 @@ deani_ubaghs_1994:
   name: deani
   auth: [ubaghs]
   year: 1994
+decadactylos_gmelin_1791:
+  name: decadactylos
+  auth: [Gmelin]
+  year: 1791
 decadactylus_hall_1847:
   name: decadactylus
   auth: [hall]
@@ -2418,6 +2446,10 @@ decadactylus_phillips.j_1839:
   authority:
     authors: [phillips.j]
     source: 1839_murchison
+decies digitatus_leske_1778:
+  name: decies digitatus
+  authority:
+    source: 1778_leske
 deckeri_sinclair_1945:
   name: deckeri
   auth: [Sinclair]
@@ -2507,6 +2539,10 @@ dentalium:
   name: Dentalium
   authority:
     source: 1758_linnaeus
+dentata_leske_1778:
+  name: dentata
+  authority:
+    source: 1778_leske
 denudata_linnaeus_1758:
   name: denudata
   authority:
@@ -2568,6 +2604,10 @@ digitata:
   rank: Order
   auth: [Hecker]
   year: 1940
+digitata_lamarck_1816:
+  name: digitata
+  authority:
+    source: 1816b_lamarck
 digitata_montagu_1815:
   name: digitata
   auth: [Montagu]
@@ -3160,6 +3200,10 @@ elpasocrinus:
   name: Elpasocrinus
   auth: [sprinkle, Wahlm]
   year: 1994
+emarginata_leske_1778:
+  name: emarginata
+  authority:
+    source: 1778_leske
 enchelis:
   name: Enchelis
   authority:
@@ -3521,6 +3565,11 @@ fibularia:
   name: Fibularia
   authority:
     source: 1816b_lamarck
+fibularis_lamarck_1816:
+  name: fibularis
+  authority:
+    source: 1816b_lamarck
+  notes: No info on this species anywhere, assuming new in Lamarck 1816b.
 filiformis_müller.o.f_1776:
   name: filiformis
   authority:
@@ -4646,6 +4695,10 @@ inarticulata:
   rank: Division
   authority:
     source: 1821_miller.j.s
+inauritus_gmelin_1791:
+  name: inauritus
+  auth: [Gmelin]
+  year: 1791
 incondita_raymond_1915:
   name: incondita
   auth: [Raymond]
@@ -5106,6 +5159,10 @@ laplysia:
   name: Laplysia
   altSpellingOf: aplysia
   notes: IRMNG deems this an alternate spelling
+latissima_lamarck_1816:
+  name: latissima
+  authority:
+    source: 1816b_lamarck
 latiusculus_barrande_1887:
   name: latiusculus
   auth: [barrande]
@@ -5165,6 +5222,10 @@ legrandensis_miller.s.a_gurley_1894:
   name: legrandensis
   auth: [miller.s.a, gurley]
   year: 1894
+lenticularis_lamarck_1816:
+  name: lenticularis
+  authority:
+    source: 1816b_lamarck
 lepocrinites:
   name: Lepocrinites
   auth: [conrad.t.a]
@@ -6110,6 +6171,14 @@ ochracea_linnaeus_1758:
   authority:
     source: 1758_linnaeus
   notes: Incorrectly spelled ocracea originally
+octies digitatus_leske_1778:
+  name: octies digitatus
+  authority:
+    source: 1778_leske
+octodactylos_gmelin_1791:
+  name: octodactylos
+  auth: [Gmelin]
+  year: 1791
 octodentata_gunnerus_1770:
   name: octodentata
   auth: [gunnerus]
@@ -6180,6 +6249,10 @@ optatus_worthen_miller_1883:
   name: optatus
   auth: [Worthen, Miller]
   year: 1883
+orbicularis_gmelin_1791:
+  name: orbicularis
+  auth: [Gmelin]
+  year: 1791
 orbicularis_müller.o.f_1784:
   name: orbicularis
   auth: [müller.o.f]
@@ -6417,6 +6490,10 @@ pariocrinus:
   name: Pariocrinus
   auth: [Eckert]
   year: 1984
+parma_lamarck_1816:
+  name: parma
+  authority:
+    source: 1816b_lamarck
 parma_smith.a.b_jell_1990:
   name: parma
   authority:
@@ -6566,6 +6643,9 @@ pentapetala_pennant_1777:
   name: pentapetala
   auth: [Pennant]
   year: 1777
+pentaphorus_gmelin_1791:
+  name: pentaphorus
+  altSpellingOf: pentaporus_gmelin_1791
 pentaporus_gmelin_1791:
   name: pentaporus
   auth: [Gmelin]
@@ -6730,6 +6810,10 @@ placocystitinae:
   rank: Subfamily
   authority:
     source: 1960_gill_caster
+placunaria_lamarck_1816:
+  name: placunaria
+  authority:
+    source: 1816b_lamarck
 planci_linnaeus_1758:
   name: planci
   authority:
@@ -7246,10 +7330,18 @@ quadrifasciatus_pearce_1843:
   name: quadrifasciatus
   auth: [Pearce]
   year: 1843
+quadrifora_lamarck_1816:
+  name: quadrifora
+  authority:
+    source: 1816b_lamarck
 quadrocystis:
   name: Quadrocystis
   authority:
     source: 1982g_sprinkle
+quater perforatus_leske_1778:
+  name: quater perforatus
+  authority:
+    source: 1778_leske
 quinquangularis_miller.j.s_1821_cyathocrinites:
   name: quinquangularis
   originalParent: cyathocrinites
@@ -7260,6 +7352,14 @@ quinquangularis_miller.j.s_1821_eugeniacrinites:
   originalParent: eugeniacrinites
   authority:
     source: 1821_miller.j.s
+quinquefora_lamarck_1816:
+  name: quinquefora
+  authority:
+    source: 1816b_lamarck
+quinquies perforatus_leske_1778:
+  name: quinquies perforatus
+  authority:
+    source: 1778_leske
 ###################### R
 radiata:
   name: Radiata
@@ -7874,6 +7974,14 @@ sertularia:
   name: Sertularia
   authority:
     source: 1758_linnaeus
+sexforis_lamarck_1816:
+  name: sexforis
+  authority:
+    source: 1816b_lamarck
+sexies perforatus_leske_1778:
+  name: sexies perforatus
+  authority:
+    source: 1778_leske
 shideleri_bassler_1936:
   name: shideleri
   authority:
@@ -8333,6 +8441,14 @@ subnodosus_walcott_1884:
   name: subnodosus
   auth: [walcott]
   year: 1884
+subrotunda_leske_1778:
+  name: subrotunda
+  authority:
+    source: 1778_leske
+subrotundus_leske_1778:
+  name: subrotundus
+  authority:
+    source: 1778_leske
 subulata_lamarck_1816:
   name: subulata
   authority:
@@ -8507,6 +8623,10 @@ tetracystis:
   name: Tetracystis
   auth: [schuchert]
   year: 1904
+tetraporus_gmelin_1791:
+  name: tetraporus
+  auth: [Gmelin]
+  year: 1791
 texturata_lamarck_1816:
   name: texturata
   authority:
