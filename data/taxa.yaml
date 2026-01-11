@@ -4015,6 +4015,10 @@ granatum_wahlenberg_1821:
   name: granatum
   auth: [Wahlenberg]
   year: 1821
+granifera_lamarck_1816:
+  name: granifera
+  authority:
+    source: 1816a_lamarck
 granulatus_jaekel_1899:
   name: granulatus
   auth: [jaekel]
@@ -4189,6 +4193,10 @@ helianthus_ellis_1768:
   name: helianthus
   auth: [Ellis]
   year: 1768
+helianthus_lamarck_1816:
+  name: helianthus
+  authority:
+    source: 1816a_lamarck
 heliocrinites:
   name: Heliocrinites
   auth: [Eichwald]
@@ -5672,6 +5680,10 @@ millepora:
   name: Millepora
   authority:
     source: 1758_linnaeus
+milleporella_lamarck_1816:
+  name: milleporella
+  authority:
+    source: 1816a_lamarck
 milesia_paradoxididae:
   name: Milesia
   auth: [Chapman]
@@ -5842,6 +5854,10 @@ multifasciatus_hall_1859:
   name: multifasciatus
   auth: [hall]
   year: 1859
+multifora_lamarck_1816:
+  name: multifora
+  authority:
+    source: 1816a_lamarck
 multiplexidiscus:
   name: Multiplexidiscus
   authority:
@@ -6078,6 +6094,14 @@ oblongus_pander_1830:
   name: oblongus
   auth: [Pander]
   year: 1830
+obtusangula_lamarck_1816:
+  name: obtusangula
+  authority:
+    source: 1816a_lamarck
+ocellifera_lamarck_1816:
+  name: ocellifera
+  authority:
+    source: 1816a_lamarck
 ocracea_linnaeus_1758:
   name: ocracea
   altSpellingOf: ochracea_linnaeus_1758
@@ -6122,6 +6146,10 @@ oogyi_kolata_1975:
   name: oogyi
   authority:
     source: 1975_kolata
+ophidiana_lamarck_1816:
+  name: ophidiana
+  authority:
+    source: 1816a_lamarck
 ophiocistioidea:
   name: Ophiocistioidea
   rank: Class
@@ -6481,6 +6509,10 @@ pembrocystis:
   name: Pembrocystis
   auth: [domínguez alonso]
   year: 1999
+penicillaris_lamarck_1816:
+  name: penicillaris
+  authority:
+    source: 1816a_lamarck
 penicillus_bruguière_1789:
   name: Penicillus
   homonym: true
@@ -6518,6 +6550,10 @@ pentagonius_meek_worthen_1865:
   name: pentagonius
   auth: [meek, worthen]
   year: 1865
+pentagonula_lamarck_1816:
+  name: pentagonula
+  authority:
+    source: 1816a_lamarck
 pentangularis_miller.j.s_1821:
   name: pentangularis
   authority:
@@ -6806,6 +6842,10 @@ pleurozonida:
   rank: Order
   auth: [domínguez alonso]
   year: 1999
+pleyadella_lamarck_1816:
+  name: pleyadella
+  authority:
+    source: 1816a_lamarck
 plinthotus_kesling_1967:
   name: plinthotus
   auth: [kesling]
@@ -7057,14 +7097,18 @@ pulaskiensis_miller.s.a_gurley_1894:
   name: pulaskiensis
   auth: [miller.s.a, gurley]
   year: 1894
-pulvillis_müller.o.f_1776:
-  name: pulvillis
+pulvillus_müller.o.f_1776:
+  name: pulvillus
   authority:
     source: 1776_müller.o.f
 punctata_forsskål_1775:
   name: punctata
   auth: [forsskål]
   year: 1775
+punctata_lamarck_1816:
+  name: punctata
+  authority:
+    source: 1816a_lamarck
 punctatus_forbes_1848:
   name: punctatus
   authority:
@@ -7544,6 +7588,10 @@ roddyi_ruedemann_1933:
   name: roddyi
   auth: [ruedemann]
   year: 1933
+rosacea_lamarck_1816:
+  name: rosacea
+  authority:
+    source: 1816a_lamarck
 rosaceus_linnaeus_1758:
   name: rosaceus
   authority:
@@ -7790,6 +7838,10 @@ senckenbergii_meyer_1826:
   name: senckenbergii
   auth: [Meyer]
   year: 1826
+senegalensis_lamarck_1816:
+  name: senegalensis
+  authority:
+    source: 1816a_lamarck
 senilis_linnaeus_1767:
   name: senilis
   authority:
@@ -7799,6 +7851,10 @@ sepia:
   name: Sepia
   authority:
     source: 1758_linnaeus
+seposita_retzius_1783:
+  name: seposita
+  auth: [Retzius]
+  year: 1783
 septembrachiata_miller.s.a_dyer_1878:
   name: septembrachiata
   auth: [miller.s.a, Dyer]
@@ -8177,6 +8233,10 @@ streptaster:
   name: Streptaster
   auth: [Hall]
   year: 1866
+striata_lamarck_1816:
+  name: striata
+  authority:
+    source: 1816a_lamarck
 striata_pander_1830:
   name: striata
   auth: [Pander]
@@ -8273,6 +8333,10 @@ subnodosus_walcott_1884:
   name: subnodosus
   auth: [walcott]
   year: 1884
+subulata_lamarck_1816:
+  name: subulata
+  authority:
+    source: 1816a_lamarck
 suecica_jaekel_1927:
   name: suecica
   auth: [jaekel]
@@ -8384,6 +8448,10 @@ tenuis_miller.j.s_1821:
   name: tenuis
   authority:
     source: 1821_miller.j.s
+tenuispina_lamarck_1816:
+  name: tenuispina
+  authority:
+    source: 1816a_lamarck
 terebella:
   name: Terebella
   authority:
@@ -8396,6 +8464,10 @@ teredo:
   name: Teredo
   authority:
     source: 1758_linnaeus
+tessellata_lamarck_1816:
+  name: tessellata
+  authority:
+    source: 1816a_lamarck
 testacea-order:
   name: Testacea
   rank: Order
@@ -8831,6 +8903,10 @@ valvatida:
   rank: Order
   auth: [Perrier]
   year: 1884
+variolata_bruzelius_1805:
+  name: variolata
+  auth: [Bruzelius]
+  year: 1805
 velieuxicystis:
   name: Velieuxicystis
   auth: [ubaghs]
@@ -8864,6 +8940,10 @@ vermes:
   rank: Class
   authority:
     source: 1758_linnaeus
+vernicina_lamarck_1816:
+  name: vernicina
+  authority:
+    source: 1816a_lamarck
 verrucosa_pennant_1777:
   name: verrucosa
   auth: [Pennant]
