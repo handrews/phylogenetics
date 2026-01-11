@@ -2010,7 +2010,8 @@
               - taxon: laganum_leske_1778
                 parents:
                 - taxon: echinodiscus
-            - taxon: excentricus_  # agassiz 1816?  Lamarck?
+            - taxon: excentricus_lamarck_1816
+              new: true
             - taxon: oviformis_gmelin_1791
               synonyms:
               - taxon: oviformis_gmelin_1791

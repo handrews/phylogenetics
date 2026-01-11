@@ -240,6 +240,10 @@ alter_barrande_1887:
   name: alter
   auth: [barrande]
   year: 1887
+altus_leske_1778:
+  name: altus
+  authority:
+    source: 1778_leske
 alveolites:
   name: Alveolites
   authority:
@@ -3511,6 +3515,10 @@ exigua_lamarck_1816:
   authority:
     source: 1816a_lamarck
   notes: Asterias
+excentricus_lamarck_1816:
+  name: excentricus
+  authority:
+    source: 1816b_lamarck
 exiguum_lamarck_1816:
   name: exiguum
   authority:
@@ -4400,6 +4408,10 @@ hemicystis:
   name: Hemicystis
   auth: [haeckel]
   year: 1896
+hemisphæricus_lamarck_1816:
+  name: hemisphæricus
+  authority:
+    source: 1816b_lamarck
 henicocystidae:
   name: Henicocystidae
   rank: Family
@@ -4602,6 +4614,10 @@ humilis_billings_1857:
   name: humilis
   auth: [billings]
   year: 1857
+humilis_leske_1778:
+  name: humilis
+  authority:
+    source: 1778_leske
 huntsvillensis_sumrall_1996:
   name: huntsvillensis
   authority:
@@ -5143,6 +5159,10 @@ laevis_raymond_1921:
   name: laevis
   auth: [Raymond]
   year: 1921
+laganum_leske_1778:
+  name: laganum
+  authority:
+    source: 1778_leske
 lagenallis_regnéll_1945:
   name: lagenallis
   auth: [regnéll]
@@ -5618,6 +5638,10 @@ mansfieldi_guensburg_2010:
   name: mansfieldi
   auth: [guensburg]
   year: 2010
+marginatus_lamarck_1816:
+  name: marginatus
+  authority:
+    source: 1816b_lamarck
 mariae_callaway_1877:
   name: mariae
   auth: [Callaway]
@@ -6333,6 +6357,10 @@ ovatus_leske_1778:
   name: ovatus
   authority:
     source: 1778_leske
+oviformis_gmelin_1791:
+  name: oviformis
+  auth: [Gmelin]
+  year: 1791
 oviformis_lamarck_1801:
   name: oviformis
   authority:
@@ -6942,6 +6970,10 @@ poissons:
   name: Poissons
   vulgarSpellingOf: pisces
   lang: FR
+politus_lamarck_1816:
+  name: politus
+  authority:
+    source: 1816b_lamarck
 polycratica_forsskål_1775:
   name: polycratica
   auth: [forsskål]
@@ -7914,6 +7946,10 @@ scutellatus_lamarck_1801:
   authority:
     source: 1801_lamarck
   notes: No other source on authority, newly described species assumed.
+scutiformis_lamarck_1816:
+  name: scutiformis
+  authority:
+    source: 1816b_lamarck
 scyllaea:
   name: Scyllaea
   authority:
@@ -8302,7 +8338,13 @@ stelleroidea:
   rank: Class
   auth: [lamarck]
   year: 1816
-  notes: "Lamarck, 1816 [nom. transl. et correct. Gregory, 1900 (pro les Stellerides Lamarck, 1816)]"
+  notes: |
+    "Lamarck, 1816 [nom. transl. et correct. Gregory, 1900
+    (pro les Stellerides Lamarck, 1816)]"
+stelliferus_lamarck_1816:
+  name: stelliferus
+  authority:
+    source: 1816b_lamarck
 stenuroidea:
   name: Stenuroidea
   rank: Class
