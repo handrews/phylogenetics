@@ -514,8 +514,8 @@ class Tree:
     self._children = []
 
     self._check_metadata()
-
     self._check_primary_taxon()
+
     self._bracket = self._check_taxon('bracket')
     self._moved = Tree(self._data['moved'], parent=self, relpath=('moved',)) \
       if 'moved' in self._data else None
@@ -648,7 +648,7 @@ class Tree:
     return (self._source.key, self._position, self.path)
 
   def __str__(self):
-    return f'Tree {self._source}[{self._position}]{self.pointer}'
+    return f'{self._source}[{self._position}]{self.taxon_path}'
 
   def __repr__(self):
     return repr(self._hash_key())
@@ -701,6 +701,18 @@ class Tree:
     # is no need to worry about escaping.  Note that
     # this is a plain JSON Pointer, not a URI fragment.
     return '/' + '/'.join([str(p) for p in self.path])
+
+  @cached_property
+  def taxon_path(self):
+    # logger.warn(str(id(self)) + ' ' + str(self.taxon))
+    path = f'/{self.taxon.key}' if self.taxon else ''
+    # logger.warn(f'{path} ... {self._relpath}')
+    for segment in self._relpath:
+      if segment != 'children':
+        path = f'/{segment}{path}'
+    if self._parent is not None:
+      path = f'{self._parent.taxon_path}{path}'
+    return path
 
   @cached_property
   def root(self):
