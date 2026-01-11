@@ -1799,19 +1799,23 @@
         - taxon: échinides
           children:
           - taxon: scutella
+            new: true
           - taxon: clypeaster
           - taxon: fibularia
+            new: true
           - taxon: echinoneus
           - taxon: galerites
           - taxon: ananchytes
-          - taxon: spatangus
+          - taxon: spatangus_leske_1778
           - taxon: cassidulus
-          - taxon: nucleoites
+          - taxon: nucleolites
           - taxon: echinus
           - taxon: cidarites
+            new: true
         - taxon: fistulides
           children:
           - taxon: tentaculées
+            new: true
             children:
             - taxon: actinia_pallas_1766
               notes: |
@@ -1827,11 +1831,11 @@
               - taxon: crassicornis_müller.o.f_1776
               - taxon: plumosa_müller.o.f_1776
               - taxon: coccinia_müller.o.f_1776
-              - taxon: judaica_linnaues_1761
+              - taxon: judaica_linnaeus_1761
               - taxon: viduata_müller.o.f_1776
-              - taxon: effœta_linnaues_1767
+              - taxon: effœta_linnaeus_1767
               - taxon: senilis_linnaeus_1767
-              - taxon: undata_müller.o.f_1778
+              - taxon: undata_müller.o.f_1784
               - taxon: sulcata_pennant_1777
               - taxon: gigas_bruguière_1798
               - taxon: rubra_forsskål_1775
@@ -1868,7 +1872,7 @@
             - taxon: holothuria
               children:
               - taxon: frondosa_gunnerus_1767
-              - taxon: phantapus_strussenffelt_1765
+              - taxon: phantapus_strussenfelt_1765
               - taxon: pentacta_gmelin_1791
               - taxon: doliolum_pallas_1766
                 synonyms:
@@ -1906,6 +1910,7 @@
               - taxon: maxima_forsskål_1775
               - taxon: digitata_montagu_1815
           - taxon: nues
+            new: true
             children:
             - taxon: priapulus
               new: true
@@ -1922,18 +1927,26 @@
               - taxon: saccatus_linnaeus_1767
               - taxon: edulis_pallas_1774
     - taxon: tunicata
+      new: true
       children:
       - taxon: botryllaires
+        new: true
       - taxon: ascidiens
+        new: true
     - taxon: vers
       children:
       - taxon: mollasses_vers
         children:
         - taxon: vésiculaires
+          new: true
         - taxon: planulaires
+          new: true
         - taxon: hétéromorphes
+          new: true
       - taxon: rigidules
+        new: true
       - taxon: hispides
+        new: true
 1820_say:
   taxonomies:
   - taxon: pentacrinus

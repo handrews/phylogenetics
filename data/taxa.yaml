@@ -7,13 +7,17 @@ actinia:
   name: Actinia
   authority:
     source: 1767_linnaeus
-  notes: possibly 1767_gunnerus?
+  notes: |
+    Possibly 1767_gunnerus?  But ICZN Opinion 1295 suppressing 
+    Actinia (Pallas) does not mention Gunnerus.
 actinia_pallas_1766:
   name: Actinia
   homonym: true
   auth: [Pallas]
   year: 1766
-  notes: Holothuroidea instead of a coral like the accepted genus Actinia
+  notes: |
+    Holothuroidea instead of a coral like the accepted genus Actinia.
+    Suppressed by ICZN Opinion 1295, replaced by Pentacta (Goldfuss 1820)
 actinocrinites:
   name: Actinocrinites
   authority:
@@ -3097,6 +3101,10 @@ edulis_pallas_1774:
   name: edulis
   auth: [Pallas]
   year: 1774
+effœta_linnaeus_1767:
+  name: effœta
+  authority:
+    source: 1767_linnaeus
 eifeliana_müller.p_hahn_bohatý_2013:
   name: eifeliana
   authority:
@@ -3509,6 +3517,10 @@ fayi_sprinkle_1982:
   name: fayi
   authority:
     source: 1982g_sprinkle
+fibularia:
+  name: Fibularia
+  authority:
+    source: 1816b_lamarck
 filiformis_müller.o.f_1776:
   name: filiformis
   authority:
@@ -3725,6 +3737,10 @@ giganticlavus:
   name: Giganticlavus
   authority:
     source: 1996_sumrall_bowsher
+gigas_bruguière_1798:
+  name: gigas
+  auth: [bruguière]
+  year: 1798
 gigas_jaekel_1901:
   name: gigas
   auth: [jaekel]
@@ -3798,6 +3814,10 @@ globus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999:
   notes: nomen nudum
   authority:
     source: 1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y
+glutinosa_lamarck_1816:
+  name: glutinosa
+  authority:
+    source: 1816b_lamarck
 glutinosa_linnaeus_1758:
   name: glutinosa
   authority:
@@ -4165,6 +4185,10 @@ heckericystis:
   name: Heckericystis
   authority:
     source: 1960_gill_caster
+helianthus_ellis_1768:
+  name: helianthus
+  auth: [Ellis]
+  year: 1768
 heliocrinites:
   name: Heliocrinites
   auth: [Eichwald]
@@ -4355,6 +4379,12 @@ heterocrinus:
   name: Heterocrinus
   auth: [hall]
   year: 1847
+hétéromorphes:
+  name: Hétéromorphes
+  rank: section
+  lang: FR
+  authority:
+    source: 1816b_lamarck
 heterostelea:
   name: Heterostelea
   rank: Order
@@ -4399,6 +4429,12 @@ hippuris_linnaeus_1758:
   name: hippuris
   authority:
     source: 1758_linnaeus
+hispides:
+  name: Hispides
+  rank: Order
+  lang: FR
+  authority:
+    source: 1816b_lamarck
 hirudo:
   name: Hirudo
   authority:
@@ -4588,6 +4624,10 @@ imbricata:
   rank: Order
   authority:
     source: 1973_sprinkle
+impatiens_forsskål_1775:
+  name: impatiens
+  auth: [forsskål]
+  year: 1775
 inadunata:
   name: Inadunata
   rank: Subclass
@@ -4887,6 +4927,10 @@ jewetti_hall_1852:
   name: jewetti
   auth: [hall]
   year: 1852
+judaica_linnaeus_1761:
+  name: judaica
+  auth: [linnaeus]
+  year: 1761
 jugoszovia:
   name: Jugoszovia
   auth: [dzik, orłowski]
@@ -5422,6 +5466,10 @@ mactra:
   name: Mactra
   authority:
     source: 1767_linnaeus
+maculata_adams_1800:
+  name: maculata
+  auth: [Adams]
+  year: 1800
 madrepora:
   name: Madrepora
   authority:
@@ -5998,6 +6046,11 @@ nucleolites:
   name: Nucleolites
   authority:
     source: 1801_lamarck
+nues:
+  name: Nues
+  rank: section
+  authority:
+    source: 1816b_lamarck
 nudus_linnaeus_1767:
   name: nudus
   authority:
@@ -6393,6 +6446,10 @@ pedunculata_bruguière_1789:
   name: pedunculata
   authority:
     source: 1789a_bruguière
+pedunculata_pennant_1777:
+  name: pedunculata
+  auth: [Pennant]
+  year: 1777
 pelmatozoa:
   name: Pelmatozoa
   bracket: Pelmatozoans
@@ -6469,6 +6526,10 @@ pentangularis_pompeckj_1896:
   name: pentangularis
   auth: [Pompeckj]
   year: 1896
+pentapetala_pennant_1777:
+  name: pentapetala
+  auth: [Pennant]
+  year: 1777
 pentaporus_gmelin_1791:
   name: pentaporus
   auth: [Gmelin]
@@ -6645,6 +6706,12 @@ planorbis:
   name: Planorbis
   authority:
     source: 1774b_müller.o.f
+planulaires:
+  name: Planulaires
+  rank: section
+  lang: FR
+  authority:
+    source: 1816b_lamarck
 planus_miller.j.s_1821:
   name: planus
   authority:
@@ -6743,6 +6810,10 @@ plinthotus_kesling_1967:
   name: plinthotus
   auth: [kesling]
   year: 1967
+plumosa_müller.o.f_1776:
+  name: plumosa
+  authority:
+    source: 1776_müller.o.f
 poissons:
   name: Poissons
   vulgarSpellingOf: pisces
@@ -6787,6 +6858,10 @@ polypoda_jell_1983:
   name: polypoda
   authority:
     source: 1983_jell
+polyus_forsskål_1775:
+  name: polyus
+  auth: [forsskål]
+  year: 1775
 pomum_wahlenberg_1821:
   name: pomum
   auth: [Wahlenberg]
@@ -6851,14 +6926,20 @@ prescheri_grigo_2000:
   name: prescheri
   auth: [Grigo]
   year: 2000
+priapulus:
+  name: Priapulus
+  authority:
+    source: 1816b_lamarck
 priapus:
   name: Priapus
   authority:
     source: 1758_linnaeus
+  notes: Suppressed by ICZN Opinion 1295, replaced by Actinia (Linnaeus 1767)
 priapus_linnaeus_1767:
   name: priapus
   authority:
     source: 1767_linnaeus
+  notes: Described as a species of Holothuria, actually a Priapulid.
 priesti_strimple_1968:
   name: priesti
   auth: [strimple]
@@ -7109,6 +7190,10 @@ pyriformis_say_1825:
   authority:
     source: 1825a_say
 ###################### Q
+quadrangularis_bruguière_1798:
+  name: quadrangularis
+  auth: [bruguière]
+  year: 1798
 quadridentata_linnaeus_1767:
   name: quadridentata
   authority:
@@ -7200,6 +7285,14 @@ reboulorum_sumrall_zamora_2011:
   name: reboulorum
   authority:
     source: 2011_sumrall_zamora
+reciprocans_forsskål_1775:
+  name: reciprocans
+  auth: [forsskål]
+  year: 1775
+reclinata_bosc_1802:
+  name: reclinata
+  auth: [Bosc]
+  year: 1802
 rectiradiatus_shideler_1918:
   name: rectiradiatus
   auth: [Shideler]
@@ -7437,6 +7530,12 @@ ridersiidae:
   rank: Family
   auth: [jell, burrett, banks]
   year: 1985
+rigidules:
+  name: Rigidules
+  rank: Order
+  lang: FR
+  authority:
+    source: 1816b_lamarck
 rocktonensis_kolata_1975:
   name: rocktonensis
   authority:
@@ -7491,6 +7590,21 @@ rubens_linnaeus_1758:
   name: rubens
   authority:
     source: 1758_linnaeus
+rubra_forsskål_1775:
+  name: rubra
+  auth: [forsskål]
+  year: 1775
+  notes: |
+    Synonymized with ruber?  Gender change due to genus change?  Should
+    this be marked as an alternate spelling?
+ruber_forsskål_1775:
+  name: ruber
+  auth: [forsskål]
+  year: 1775
+rufa_müller.o.f_1776:
+  name: rufa
+  authority:
+    source: 1776_müller.o.f
 rugosus_billings_1857:
   name: rugosus
   auth: [billings]
@@ -7535,6 +7649,10 @@ rutroclypeus:
 ###################### S
 sabella:
   name: Sabella
+  authority:
+    source: 1767_linnaeus
+saccatus_linnaeus_1767:
+  name: saccatus
   authority:
     source: 1767_linnaeus
 sagittaria_thomas_ladd_1926:
@@ -7639,6 +7757,10 @@ scotiaecystis-sp_sumrall_sprinkle_guensburg_1997:
   rank: species
   authority:
     source: 1997_sumrall_sprinkle_guensburg
+scutella:
+  name: Scutella
+  authority:
+    source: 1816b_lamarck
 scutellatus_lamarck_1801:
   name: scutellatus
   authority:
@@ -7793,6 +7915,7 @@ spatangus_leske_1778:
   needsQualification: true
   authority:
     source: 1778_leske
+  notes: ICZN suppressed
 spencensis_wen.r_babcock_peng.j_robison_2019:
   name: spencensis
   auth: [wen.r, babcock, peng.j, robison]
@@ -7929,6 +8052,10 @@ squamata_müller.o.f_1776:
   name: squamata
   authority:
     source: 1776_müller.o.f
+squamosa_bruguière_1798:
+  name: squamosa
+  auth: [bruguière]
+  year: 1798
 squamosus_billings_1854:
   name: squamosus
   auth: [billings]
@@ -8157,6 +8284,10 @@ sulcata_aurivillius_1892:
 sulcatum_aurivillius_1892:
   name: sulcatum
   altSpellingOf: sulcata_aurivillius_1892
+sulcata_pennant_1777:
+  name: sulcata
+  auth: [Pennant]
+  year: 1777
 sumralli_guensburg_sprinkle_2003:
   name: sumralli
   authority:
@@ -8239,6 +8370,12 @@ tennesseensis_bassler_1936:
   name: tennesseensis
   authority:
     source: 1936_bassler
+tentaculées:
+  name: Tentaculées
+  rank: section
+  lang: FR
+  authority:
+    source: 1816b_lamarck
 tenuis_billings_1857:
   name: tenuis
   auth: [billings]
@@ -8443,7 +8580,12 @@ tremula_linnaeus_1767:
   name: tremula
   authority:
     source: 1767_linnaeus
-  notes: Possibly 1767_gunnerus?
+  notes: Possibly 1767_gunnerus was first?
+tremula_gunnerus_1767:
+  name: tremula
+  auth: [gunnerus]
+  year: 1767
+  notes: Possibly 1767_linnaeus was first?
 trentonensis_bassler_1936:
   name: trentonensis
   authority:
@@ -8531,6 +8673,10 @@ tubulosa_gmelin_1791:
   name: tubulosa
   auth: [Gmelin]
   year: 1791
+tubulosa_müller.o.f_1776:
+  name: tubulosa
+  authority:
+    source: 1776_müller.o.f
 tunicata-class:
   rank: Class
   altRankOf: tunicata
@@ -8626,6 +8772,14 @@ uncinaria:
   name: Uncinaria
   auth: [Frölich]
   year: 1789
+undata_müller.o.f_1784:
+  name: undata
+  auth: [müller.o.f]
+  year: 1784
+  notes: |
+    WoRMS incorrectly cites 1778, which it uses as the date of volume 1 of the
+    source (although the correct date ia 1779).  However, this species is
+    described in volume 2, published in 1784.
 uractinina:
   name: Uractinina
   rank: Suborder
@@ -8710,6 +8864,10 @@ vermes:
   rank: Class
   authority:
     source: 1758_linnaeus
+verrucosa_pennant_1777:
+  name: verrucosa
+  auth: [Pennant]
+  year: 1777
 verrucosum_lamarck_1816:
   name: verrucosum
   authority:
@@ -8726,6 +8884,12 @@ verus_miller.j.s_1821:
   name: verus
   authority:
     source: 1821_miller.j.s
+vésiculaires:
+  name: Vésiculaires
+  rank: section
+  lang: FR
+  authority:
+    source: 1816b_lamarck
 vetusta_foerste_1914:
   name: vetusta
   auth: [foerste]
@@ -8742,6 +8906,10 @@ victoriae_gill_caster_1960:
   name: victoriae
   authority:
     source: 1960_gill_caster
+viduata_müller.o.f_1776:
+  name: viduata
+  authority:
+    source: 1776_müller.o.f
 villosa_fabricius_1780:
   name: villosa
   auth: [Fabricius]
@@ -8758,6 +8926,14 @@ viridescens_bruguière_1789:
   name: viridescens
   authority:
     source: 1789a_bruguière
+viridis_forsskål_1775:
+  name: viridis
+  auth: [forsskål]
+  year: 1775
+vittata_forsskål_1775:
+  name: vittata
+  auth: [forsskål]
+  year: 1775
 viviannae_domínguez alonso_1999:
   name: viviannae
   auth: [domínguez alonso]
