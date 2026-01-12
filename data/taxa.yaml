@@ -1,4 +1,8 @@
 ###################### A
+abbreviatus_lamarck_1816:
+  name: abbreviatus
+  authority:
+    source: 1816b_lamarck
 acanthalepis:
   name: Acanthalepis
   auth: [mccoy]
@@ -206,6 +210,10 @@ alanisicystis-subgenus:
 alba_forsskål_1775:
   name: alba
   altSpellingOf: albus_forsskål_1775
+albo-galerus_leske_1778:
+  name: albo-galerus
+  authority:
+    source: 1778_leske
 albus_forsskål_1775:
   name: albus
   auth: [forsskål]
@@ -1869,6 +1877,10 @@ conjugans_billings_1859:
   name: conjugans
   auth: [billings]
   year: 1859
+conoideus_lamarck_1816:
+  name: conoideus
+  authority:
+    source: 1816b_lamarck
 conollia:
   name: Conollia
   auth: [domínguez alonso]
@@ -2320,14 +2332,21 @@ cylindrica_lamarck_1816:
   name: cylindrica
   authority:
     source: 1816a_lamarck
+  notes: Asterias
 cylindricum_aurivillius_1892:
   name: cylindricum
   auth: [Aurivillius]
   year: 1892
-cylindricus_lamarck_1816:
+cylindricus_lamarck_1816_beroe:
   name: cylindricus
+  originalParent: beroe
   authority:
     source: 1816a_lamarck
+cylindricus_lamarck_1816_galerites:
+  name: cylindricus
+  originalParent: galerites
+  authority:
+    source: 1816b_lamarck
 cypræa:
   name: Cypræa
   authority:
@@ -2556,6 +2575,10 @@ denudati:
   rank: Order
   authority:
     source: 1816a_lamarck
+depressus_leske_1778:
+  name: depressus
+  authority:
+    source: 1778_leske
 destombesi_ubaghs_1963:
   name: destombesi
   auth: [ubaghs]
@@ -3018,11 +3041,17 @@ edrioaster:
   name: Edrioaster
   auth: [billings]
   year: 1858
+edrioasterida_bell.b.m_1974:
+  name: Edrioasterida
+  rank: Order
+  needsQualification: true
+  authority:
+    source: 1974_bell.b.m
 edrioasterida:
   name: Edrioasterida
   rank: Order
-  auth: [bather]
-  year: 1898
+  authority:
+    source: 1976_bell.b.m
 edrioasterida-indeterminate-family_sumrall_sprinkle_guensburg_1997:
   name: null
   rank: Family
@@ -3515,8 +3544,14 @@ exigua_lamarck_1816:
   authority:
     source: 1816a_lamarck
   notes: Asterias
-excentricus_lamarck_1816:
+excentricus_lamarck_1816_clypeaster:
   name: excentricus
+  originalParent: clypeaster
+  authority:
+    source: 1816b_lamarck
+excentricus_lamarck_1816_galerites:
+  name: excentricus
+  originalParent: galerites
   authority:
     source: 1816b_lamarck
 exiguum_lamarck_1816:
@@ -3611,6 +3646,10 @@ fissiculata:
   rank: Order
   auth: [jaekel]
   year: 1918
+fissuratus_lamarck_1816:
+  name: fissuratus
+  authority:
+    source: 1816b_lamarck
 fistularia_forsskål_1775:
   name: Fistularia
   homonym: true
@@ -4412,8 +4451,14 @@ hemicystis:
   name: Hemicystis
   auth: [haeckel]
   year: 1896
-hemisphæricus_lamarck_1816:
+hemisphæricus_lamarck_1816_clypeaster:
   name: hemisphæricus
+  originalParent: clypeaster
+  authority:
+    source: 1816b_lamarck
+hemisphæricus_lamarck_1816_galerites:
+  name: hemisphæricus
+  originalParent: galerites
   authority:
     source: 1816b_lamarck
 henicocystidae:
@@ -6361,6 +6406,10 @@ ovatus_gmelin_1791:
   name: ovatus
   auth: [Gmelin]
   year: 1791
+ovatus_lamarck_1816:
+  name: ovatus
+  authority:
+    source: 1816b_lamarck
 ovatus_leske_1778:
   name: ovatus
   authority:
@@ -6555,6 +6604,10 @@ patella:
   name: Patella
   authority:
     source: 1758_linnaeus
+patella_lamarck_1816:
+  name: patella
+  authority:
+    source: 1816b_lamarck
 patelliformis_müller.o.f_1776:
   name: patelliformis
   authority:
@@ -7766,6 +7819,10 @@ rotifères:
   authority:
     source: 1801_lamarck
   lang: FR
+rotularis_lamarck_1816:
+  name: rotularis
+  authority:
+    source: 1816b_lamarck
 rotundus_miller.j.s_1821:
   name: rotundus
   authority:
@@ -7982,6 +8039,10 @@ semiarticulata:
   rank: Division
   authority:
     source: 1821_miller.j.s
+semi-globus_lamarck_1816:
+  name: semi-globus
+  authority:
+    source: 1816b_lamarck
 semilunaris_gmelin_1791:
   name: semilunaris
   auth: [Gmelin]
@@ -8026,10 +8087,18 @@ sertularia:
   name: Sertularia
   authority:
     source: 1758_linnaeus
+sexfasciatus_gmelin_1791:
+  name: sexfasciatus
+  auth: [Gmelin]
+  year: 1791
 sexforis_lamarck_1816:
   name: sexforis
   authority:
     source: 1816b_lamarck
+sexies fasciculatus_leske_1778:
+  name: sexies fasciculatus
+  authority:
+    source: 1778_leske
 sexies perforatus_leske_1778:
   name: sexies perforatus
   authority:
@@ -8072,6 +8141,10 @@ sinoeocrinus:
   name: Sinoeocrinus
   authority:
     source: 1994_zhao.y.l_huang.y.z_gong.x.y
+sinuatus_leske_1778:
+  name: sinuatus
+  authority:
+    source: 1778_leske
 sipunculus:
   name: Sipunculus
   authority:
@@ -8505,6 +8578,10 @@ subrotunda_leske_1778:
     source: 1778_leske
 subrotundus_leske_1778:
   name: subrotundus
+  authority:
+    source: 1778_leske
+subuculus_leske_1778:
+  name: subuculus
   authority:
     source: 1778_leske
 subulata_lamarck_1816:
@@ -9026,6 +9103,10 @@ umbellularia_lamarck_1801:
   authority:
     source: 1801_lamarck
   notes: Junior synonym of Umbellula, Umbellularia later used elsewhere.
+umbrella_lamarck_1816:
+  name: umbrella
+  authority:
+    source: 1816b_lamarck
 uncinaria:
   name: Uncinaria
   auth: [Frölich]

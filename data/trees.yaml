@@ -1675,7 +1675,7 @@
           - taxon: beroe
             notes: Ctenophore
             children:
-            - taxon: cylindricus_lamarck_1816
+            - taxon: cylindricus_lamarck_1816_beroe
               new: true
             - taxon: ovatus_bruguière_1789
             - taxon: pileus_müller.o.f_1776
@@ -2010,7 +2010,7 @@
               - taxon: laganum_leske_1778
                 parents:
                 - taxon: echinodiscus
-            - taxon: excentricus_lamarck_1816
+            - taxon: excentricus_lamarck_1816_clypeaster
               new: true
             - taxon: oviformis_gmelin_1791
               synonyms:
@@ -2022,7 +2022,7 @@
                 - taxon: echinanthus
             - taxon: politus_lamarck_1816
               new: true
-            - taxon: hemisphæricus_lamarck_1816
+            - taxon: hemisphæricus_lamarck_1816_clypeaster
               new: true
             - taxon: stelliferus_lamarck_1816
               new: true
@@ -2048,6 +2048,75 @@
             - taxon: gibbosus_lamarck_1816
               new: true
           - taxon: galerites
+            children:
+            - taxon: albo-galerus_leske_1778
+              synonyms:
+              - taxon: albo-galerus_leske_1778
+                parents:
+                - taxon: echinus
+              - taxon: albo-galerus_leske_1778
+                parents:
+                - taxon: conulus
+            - taxon: vulgaris_leske_1778
+              synonyms:
+              - taxon: vulgaris_leske_1778
+                parents:
+                - taxon: echinus
+              - taxon: vulgaris_leske_1778
+                parents:
+                - taxon: echinites
+            - taxon: abbreviatus_lamarck_1816
+              new: true
+            - taxon: sexfasciatus_gmelin_1791
+              synonyms:
+              - taxon: sexfasciatus_gmelin_1791
+                parents:
+                - taxon: echinus
+              - taxon: sexies fasciculatus_leske_1778
+                parents:
+                - taxon: echinites
+            - taxon: fissuratus_lamarck_1816
+              new: true
+            - taxon: hemisphæricus_lamarck_1816_galerites
+              new: true
+            - taxon: depressus_leske_1778
+              synonyms:
+              - taxon: depressus_leske_1778
+                parents:
+                - taxon: echinus
+              - taxon: depressus_leske_1778
+                parents:
+                - taxon: echinites
+            - taxon: rotularis_lamarck_1816
+              new: true
+              synonyms:
+              - taxon: subuculus_leske_1778
+                parents:
+                - taxon: echinus
+              - taxon: subuculus_leske_1778
+                parents:
+                - taxon: echinites
+            - taxon: conoideus_lamarck_1816
+              new: true
+            - taxon: scutiformis_lamarck_1816
+              new: true
+            - taxon: ovatus_lamarck_1816
+              new: true
+            - taxon: semi-globus_lamarck_1816
+              new: true
+            - taxon: cylindricus_lamarck_1816_galerites
+              new: true
+            - taxon: patella_lamarck_1816
+              new: true
+            - taxon: umbrella_lamarck_1816
+              new: true
+              synonyms:
+              - tentative: true
+                taxon: sinuatus_leske_1778
+                parents:
+                - taxon: clypeus
+            - taxon: excentricus_lamarck_1816_galerites
+              new: true
           - taxon: ananchytes
           - taxon: spatangus_leske_1778
           - taxon: cassidulus
@@ -5452,7 +5521,8 @@
             children:
             - taxon: carbonarius_bassler_1936
               provisional: true
-    - taxon: edrioasterida
+    - taxon: edrioasterida_bell.b.m_1974
+      new: true
       children:
       - taxon: edrioasteridae
         children:
@@ -6074,6 +6144,7 @@
             - taxon: carbonarius_bassler_1936
               provisional: true
     - taxon: edrioasterida
+      new: true
       children:
       - taxon: edrioasteridae
         children:
