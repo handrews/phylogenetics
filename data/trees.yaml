@@ -2017,7 +2017,7 @@
               - taxon: oviformis_gmelin_1791
                 parents:
                 - taxon: echinus
-              - taxon: ovatus_leske_1778
+              - taxon: ovatus_leske_1778_echinanthus
                 parents:
                 - taxon: echinanthus
             - taxon: politus_lamarck_1816
@@ -2102,7 +2102,7 @@
               new: true
             - taxon: ovatus_lamarck_1816
               new: true
-            - taxon: semi-globus_lamarck_1816
+            - taxon: semi-globus_lamarck_1816_galerites
               new: true
             - taxon: cylindricus_lamarck_1816_galerites
               new: true
@@ -2118,6 +2118,81 @@
             - taxon: excentricus_lamarck_1816_galerites
               new: true
           - taxon: ananchytes
+            children:
+            - taxon: ovata_leske_1778_echinocorytes
+              synonyms:
+              - taxon: ovatus_leske_1778_echinocorytes
+                parents:
+                - taxon: echinocorytes
+            - taxon: striata_lamarck_1816
+              new: true
+              notes: |
+                Synonymized with Echinocorytes Leske but no species?
+                Assuming a new taxon here as no other info to be found.
+            - taxon: gibba_lamarck_1816
+              synonyms:
+              - tentative: true
+                taxon: scutatus_leske_1778
+                parents:
+                - taxon: echinocorys
+              - tentative: true
+                taxon: scutatus_leske_1778
+                parents:
+                - taxon: echinus
+            - taxon: pustulosa_leske_1778
+              synonyms:
+              - taxon: pustulosa_leske_1778
+                parents:
+                - taxon: echinocorytes
+            - taxon: bicordata_leske_1778
+              synonyms:
+              - taxon: bicordatus_leske_1778
+                parents:
+                - taxon: spatangites
+              - taxon: bicordatus_leske_1778
+                parents:
+                - taxon: echinus
+            - taxon: carinata_leskse_1778
+              synonyms:
+              - taxon: carinatus_leskse_1778
+                parents:
+                - taxon: spatangites
+              - taxon: carinatus_leskse_1778
+                parents:
+                - taxon: echinus
+            - taxon: elliptica_lamarck_1816
+              new: true
+            - taxon: cordata_lamarck_1816
+              new: true
+              synonyms:
+              - tentative: true
+                taxon: ananchytis_leske_1778
+                parents:
+                - taxon: spatangus
+            - taxon: spatangus_lamarck_1816
+              new: true
+            - taxon: semi-globus_lamarck_1816_ananchytes
+              new: true
+              synonyms:
+              - taxon: minor_leske_1778
+                parents:
+                - taxon: echinocorytes
+              - taxon: minor_leske_1778
+                parents:
+                - taxon: echinus
+            - taxon: pillula_lamarck_1816
+              new: true
+            - taxon: cor avium_lamarck_1816
+              new: true
+              synonyms:
+              - tentative: true
+                taxon: teres_gmelin_1791
+                parents:
+                - taxon: echinus
+              - tentative: true
+                taxon: ovatus_leske_1778_spatangus
+                parents:
+                - taxon: spatangus
           - taxon: spatangus_leske_1778
           - taxon: cassidulus
           - taxon: nucleolites
