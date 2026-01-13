@@ -1848,7 +1848,7 @@
               notes: |
                 No info on this species to be found, no citation,
                 therefore credited to Lamarck by default.
-            - taxon: striata_lamarck_1816
+            - taxon: striata_lamarck_1816_asterias
               new: true
             - taxon: milleporella_lamarck_1816
               new: true
@@ -2124,12 +2124,13 @@
               - taxon: ovatus_leske_1778_echinocorytes
                 parents:
                 - taxon: echinocorytes
-            - taxon: striata_lamarck_1816
+            - taxon: striata_lamarck_1816_ananchytes
               new: true
               notes: |
                 Synonymized with Echinocorytes Leske but no species?
                 Assuming a new taxon here as no other info to be found.
             - taxon: gibba_lamarck_1816
+              new: true
               synonyms:
               - tentative: true
                 taxon: scutatus_leske_1778
@@ -2152,12 +2153,12 @@
               - taxon: bicordatus_leske_1778
                 parents:
                 - taxon: echinus
-            - taxon: carinata_leskse_1778
+            - taxon: carinata_leske_1778
               synonyms:
-              - taxon: carinatus_leskse_1778
+              - taxon: carinatus_leske_1778
                 parents:
                 - taxon: spatangites
-              - taxon: carinatus_leskse_1778
+              - taxon: carinatus_leske_1778
                 parents:
                 - taxon: echinus
             - taxon: elliptica_lamarck_1816
@@ -2168,7 +2169,7 @@
               - tentative: true
                 taxon: ananchytis_leske_1778
                 parents:
-                - taxon: spatangus
+                - taxon: spatangus_leske_1778
             - taxon: spatangus_lamarck_1816
               new: true
             - taxon: semi-globus_lamarck_1816_ananchytes
@@ -2192,7 +2193,7 @@
               - tentative: true
                 taxon: ovatus_leske_1778_spatangus
                 parents:
-                - taxon: spatangus
+                - taxon: spatangus_leske_1778
           - taxon: spatangus_leske_1778
           - taxon: cassidulus
           - taxon: nucleolites

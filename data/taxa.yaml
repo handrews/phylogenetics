@@ -344,6 +344,13 @@ ananchites:
 ananchytes:
   name: Ananchytes
   altSpellingOf: ananchites
+ananchytes_leske_1778:
+  name: ananchytes
+  authority:
+    source: 1778_leske
+ananchytis_leske_1778:
+  name: ananchytis
+  altSpellingOf: ananchytes_leske_1778
 anapeptamenus_austen_1843:
   name: anapeptamenus
   auth: [Austen]
@@ -957,6 +964,13 @@ bicopuladigiti_garnet_1844:
   name: bicopuladigiti
   auth: [Garnet]
   year: 1844
+bicordata_leske_1778:
+  name: bicordata
+  authority:
+    source: 1778_leske
+bicordatus_leske_1778:
+  name: bicordatus
+  altSpellingOf: bicordata_leske_1778
 bifasciatus_pearce_1843:
   name: bifasciatus
   auth: [Pearce]
@@ -1399,6 +1413,13 @@ carinata_lamarck_1816:
   name: carinata
   authority:
     source: 1816a_lamarck
+carinata_leske_1778:
+  name: carinata
+  authority:
+    source: 1778_leske
+carinatus_leske_1778:
+  name: carinatus
+  altSpellingOf: carinata_leske_1778
 carinifera_lamarck_1816:
   name: carinifera
   authority:
@@ -1917,6 +1938,10 @@ complanata_fabricius_1780:
   name: complanata
   auth: [Fabricius]
   year: 1780
+cor avium_lamarck_1816:
+  name: cor avium
+  authority:
+    source: 1816b_lamarck
 coralligènes:
   name: Coralligènes
   rank: section
@@ -1935,6 +1960,10 @@ corallum_jaekel_1918:
   name: corallum
   auth: [jaekel]
   year: 1918
+cordata_lamarck_1816:
+  name: cordata
+  authority:
+    source: 1816b_lamarck
 corine:
   name: Corine
   authority:
@@ -2836,6 +2865,9 @@ echinocorys:
   name: Echinocorys
   authority:
     source: 1778_leske
+echinocorytes:
+  name: Echinocorytes
+  altSpellingOf: echinocorys
 echinocyamus:
   name: Echinocyamus
   authority:
@@ -3209,6 +3241,10 @@ elizae_bather_1913:
   name: elizae
   auth: [bather]
   year: 1913
+elliptica_lamarck_1816:
+  name: elliptica
+  authority:
+    source: 1816b_lamarck
 ellipticus_miller.j.s_1821:
   name: ellipticus
   authority:
@@ -3825,6 +3861,10 @@ germanus_bassler_1936_isorophus:
   name: germanus
   authority:
     source: 1936_bassler
+gibba_lamarck_1816:
+  name: gibba
+  authority:
+    source: 1816b_lamarck
 gibbosus_lamarck_1816:
   name: gibbosus
   authority:
@@ -6398,6 +6438,10 @@ ottawacrinus:
   name: Ottawacrinus
   authority: 
     source: 1887_billings.w.r
+ovata_leske_1778_echinocorytes:
+  name: ovata
+  originalParent: echinocorytes
+  altSpellingOf: ovatus_leske_1778_echinocorytes
 ovatus_bruguière_1789:
   name: ovatus
   authority:
@@ -6410,8 +6454,19 @@ ovatus_lamarck_1816:
   name: ovatus
   authority:
     source: 1816b_lamarck
-ovatus_leske_1778:
+ovatus_leske_1778_echinanthus:
   name: ovatus
+  originalParent: echinanthus
+  authority:
+    source: 1778_leske
+ovatus_leske_1778_echinocorytes:
+  name: ovatus
+  originalParent: echinocorytes
+  authority:
+    source: 1778_leske
+ovatus_leske_1778_spatangus:
+  name: ovatus
+  originalParent: spatangus
   authority:
     source: 1778_leske
 oviformis_gmelin_1791:
@@ -6845,6 +6900,10 @@ pileus_müller.o.f_1776:
   name: pileus
   authority:
     source: 1776_müller.o.f
+pillula_lamarck_1816:
+  name: pillula
+  authority:
+    source: 1816b_lamarck
 pinna:
   name: Pinna
   authority:
@@ -7310,6 +7369,10 @@ pustulata_müller.p_hahn_2010:
   name: pustulata
   authority:
     source: 2010_müller.p_hahn
+pustulosa_leske_1778:
+  name: pustulosa
+  authority:
+    source: 1778_leske
 pustulosina:
   name: Pustulosina
   rank: Suborder
@@ -8006,6 +8069,10 @@ scotiaecystis-sp_sumrall_sprinkle_guensburg_1997:
   rank: species
   authority:
     source: 1997_sumrall_sprinkle_guensburg
+scutatus_leske_1778:
+  name: scutatus
+  authority:
+    source: 1778_leske
 scutella:
   name: Scutella
   authority:
@@ -8039,8 +8106,14 @@ semiarticulata:
   rank: Division
   authority:
     source: 1821_miller.j.s
-semi-globus_lamarck_1816:
+semi-globus_lamarck_1816_ananchytes:
   name: semi-globus
+  originalParent: ananchytes
+  authority:
+    source: 1816b_lamarck
+semi-globus_lamarck_1816_galerites:
+  name: semi-globus
+  originalParent: galerites
   authority:
     source: 1816b_lamarck
 semilunaris_gmelin_1791:
@@ -8199,6 +8272,13 @@ spatagus_linnaeus_1758:
   name: spatagus
   authority:
     source: 1758_linnaeus
+spatangites:
+  name: Spatangites
+  altSpellingOf: spatangus_leske_1778
+spatangus_lamarck_1816:
+  name: spatangus
+  authority:
+    source: 1816b_lamarck
 spatangus_leske_1778:
   name: Spatangus
   needsQualification: true
@@ -8472,8 +8552,14 @@ streptaster:
   name: Streptaster
   auth: [Hall]
   year: 1866
-striata_lamarck_1816:
+striata_lamarck_1816_ananchytes:
   name: striata
+  originalParent: ananchytes
+  authority:
+    source: 1816b_lamarck
+striata_lamarck_1816_asterias:
+  name: striata
+  originalParent: asterias
   authority:
     source: 1816a_lamarck
 striata_pander_1830:
@@ -8719,6 +8805,10 @@ teredo:
   name: Teredo
   authority:
     source: 1758_linnaeus
+teres_gmelin_1791:
+  name: teres
+  auth: [Gmelin]
+  year: 1791
 tessellata_lamarck_1816:
   name: tessellata
   authority:
