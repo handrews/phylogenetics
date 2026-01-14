@@ -399,8 +399,14 @@ angulatus_wood_1909:
   name: angulatus
   auth: [Wood]
   year: 1909
-angulosa_leske_1778:
+angulosa_leske_1778_cidaris:
   name: angulosa
+  originalParent: cidaris
+  authority:
+    source: 1778_leske
+angulosus_leske_1778_echinocyamus:
+  name: angulosus
+  originalParent: echinocyamus
   authority:
     source: 1778_leske
 angulosa_pander_1830:
@@ -1577,6 +1583,10 @@ celtocrinus:
   name: Celtocrinus
   auth: [Donovan, Cope]
   year: 1989
+cerasi_leske_1778:
+  name: cerasi
+  authority:
+    source: 1778_leske
 cerasus_buch_1840:
   name: cerasus
   auth: [buch]
@@ -2039,6 +2049,10 @@ coronata:
   rank: Order
   auth: [jaekel]
   year: 1918
+corraninum_leske_1778:
+  name: corraninum
+  authority:
+    source: 1778_leske
 corrugata_müller.o.f_1776:
   name: corrugata
   authority:
@@ -2075,6 +2089,10 @@ coxi_paul.c.r.c_1997:
   name: coxi
   authority:
     source: 1997_paul.c.r.c
+craniolaris_leske_1778:
+  name: craniolaris
+  authority:
+    source: 1778_leske
 crassicornis_müller.o.f_1776:
   name: crassicornis
   authority:
@@ -2927,6 +2945,11 @@ echinocyamus:
   name: Echinocyamus
   authority:
     source: 1774_van phelsum
+echinocyamus-sp_leske_1778:
+  name: null
+  rank: species
+  authority:
+    source: 1778_leske
 # See 1825a_say; unclear if this is even a real spelling
 # Not to be confused with Echinidea (Kroh & Smith 2010)
 # echinidea-family:
@@ -3552,6 +3575,10 @@ equestris_linnaeus_1758:
   name: equestris
   authority:
     source: 1758_linnaeus
+equinus_leske_1778:
+  name: equinus
+  authority:
+    source: 1778_leske
 erinocystis:
   name: Erinocystis
   auth: [jaekel]
@@ -3561,6 +3588,10 @@ erinocystis-sp_paul.c.r.c_1968:
   rank: species
   authority:
     source: 1968b_paul.c.r.c
+ervum_leske_1778:
+  name: ervum
+  authority:
+    source: 1778_leske
 escares:
   name: Escares
   rank: Order
@@ -4884,6 +4915,10 @@ inadunata:
   rank: Subclass
   auth: [Wachsmuth, springer]
   year: 1897
+inaequalis_leske_1778:
+  name: inaequalis
+  authority:
+    source: 1778_leske
 inarticulata:
   name: Inarticulata
   rank: Division
@@ -5365,6 +5400,10 @@ laplysia:
   name: Laplysia
   altSpellingOf: aplysia
   notes: IRMNG deems this an alternate spelling
+lathyrus_leske_1778:
+  name: lathyrus
+  authority:
+    source: 1778_leske
 latissima_lamarck_1816:
   name: latissima
   authority:
@@ -6569,6 +6608,10 @@ ottawacrinus:
   name: Ottawacrinus
   authority: 
     source: 1887_billings.w.r
+ovalis_leske_1778:
+  name: ovalis
+  authority:
+    source: 1778_leske
 ovata_leske_1778_echinocorys:
   name: ovata
   originalParent: echinocorys
@@ -6595,9 +6638,14 @@ ovatus_leske_1778_echinocorys:
   originalParent: echinocorys
   authority:
     source: 1778_leske
-ovatus_leske_1778_spatangus:
+ovatus_leske_1778_echinocyamus:
   name: ovatus
-  originalParent: spatangus
+  originalParent: echinocyamus
+  authority:
+    source: 1778_leske
+ovatus_leske_1778_spatangus_leske_1778:
+  name: ovatus
+  originalParent: spatangus_leske_1778
   authority:
     source: 1778_leske
 oviformis_gmelin_1791:
@@ -9355,6 +9403,10 @@ turgidus_bassler_1936:
   name: turgidus
   authority:
     source: 1936_bassler
+turcicus_leske_1778:
+  name: turcicus
+  authority:
+    source: 1778_leske
 typicalis_bassler_1935:
   name: typicalis
   authority:
@@ -9541,6 +9593,10 @@ vers:
   name: Vers
   vulgarSpellingOf: vermes
   lang: FR
+verticecentrali_leske_1778:
+  name: verticecentrali
+  authority:
+    source: 1778_leske
 vertigo:
   name: Vertigo
   authority:
@@ -9563,6 +9619,10 @@ vibrio:
   name: Vibrio
   authority:
     source: 1773_müller.o.f
+vicia_leske_1778:
+  name: vicia
+  authority:
+    source: 1778_leske
 victoriacystis:
   name: Victoriacystis
   authority:

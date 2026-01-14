@@ -971,7 +971,7 @@
         notes: Not synonymized with Linnaeus so treating as new?
       - taxon: hemisphærica_leske_1778
         new: true
-      - taxon: angulosa_leske_1778
+      - taxon: angulosa_leske_1778_cidaris
         new: true
       - taxon: excavatus_leske_1778
         new: true
@@ -1162,7 +1162,41 @@
       - taxon: dentatus_leske_1778
         new: true
     - taxon: echinocyamus
+      notes: |
+        I am unable to determine species from Van Phelsum where this genus
+        was established, so unclear if any should be credited to Van Phelsum.
+      children:
+      - taxon: cerasi_leske_1778
+        new: true
+      - taxon: verticecentrali_leske_1778
+        new: true
+      - taxon: ervum_leske_1778
+        new: true
+      - taxon: craniolaris_leske_1778
+        new: true
+      - taxon: turcicus_leske_1778
+        new: true
+      - taxon: vicia_leske_1778
+        new: true
+      - taxon: ovatus_leske_1778_echinocyamus
+        new: true
+      - taxon: lathyrus_leske_1778
+        new: true
+      - taxon: equinus_leske_1778
+        new: true
+      - taxon: angulosus_leske_1778_echinocyamus
+        new: true
+      - taxon: ovalis_leske_1778
+        new: true
+      - taxon: inaequalis_leske_1778
+        new: true
+      - taxon: corraninum_leske_1778
+        notes: Not given a number?  But not "species dubia"?
+        new: true
+      - openTaxon: echinocyamus-sp_leske_1778
+        notes: also not given a number, and _not_ "species dubia"?
     - taxon: echinarachnius_leske_1778
+      notes: No species defined?
       new: true
     - taxon: spatangus_leske_1778
       new: true
@@ -2399,7 +2433,7 @@
                 parents:
                 - taxon: echinus
               - tentative: true
-                taxon: ovatus_leske_1778_spatangus
+                taxon: ovatus_leske_1778_spatangus_leske_1778
                 parents:
                 - taxon: spatangus_leske_1778
           - taxon: spatangus_leske_1778
