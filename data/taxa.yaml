@@ -396,6 +396,10 @@ angulatus_wood_1909:
   name: angulatus
   auth: [Wood]
   year: 1909
+angulosa_leske_1778:
+  name: angulosa
+  authority:
+    source: 1778_leske
 angulosa_pander_1830:
   name: angulosa
   auth: [Pander]
@@ -514,6 +518,10 @@ aranea_schlotheim_1826:
   name: aranea
   auth: [Schlotheim]
   year: 1826
+araneiformis_leske_1778:
+  name: araneiformis
+  authority:
+    source: 1778_leske
 arbucklecystis:
   name: Arbucklecystis
   auth: [parsley, sprinkle]
@@ -1131,6 +1139,10 @@ botryllaires:
   authority:
     source: 1816b_lamarck
   lang: FR
+botryoides_leske_1778:
+  name: botryoides
+  authority:
+    source: 1778_leske
 botryllus:
   name: Botryllus
   auth: [Gaertner]
@@ -1213,6 +1225,10 @@ buttsi_clarke_1901:
   auth: [Clarke]
   year: 1901
 ###################### C
+calamaris_leske_1778:
+  name: calamaris
+  authority:
+    source: 1778_leske
 calcar_lamarck_1816:
   name: calcar
   authority:
@@ -1645,7 +1661,7 @@ chrysalis_schuchert_1904:
 cidarites:
   name: Cidarites
   authority:
-    source: 1816b_lamarck
+    source: 1778_leske
 cidaris:
   name: Cidaris
   authority:
@@ -1729,6 +1745,10 @@ cincta-order:
   rank: Order
   auth: [jaekel]
   year: 1918
+circinnatus_leske_1778:
+  name: circinnatus
+  authority:
+    source: 1778_leske
 citrus_hisinger_1837:
   name: citrus
   auth: [Hisinger]
@@ -1983,10 +2003,18 @@ cornuta-sp_ubaghs_1999:
   rank: species
   authority:
     source: 1999_ubaghs
+corollaris_leske_1778:
+  name: corollaris
+  authority:
+    source: 1778_leske
 coronaeformis_rievers_1961:
   name: coronaeformis
   auth: [Rievers]
   year: 1961
+coronalis_leske_1778:
+  name: coronalis
+  authority:
+    source: 1778_leske
 coronocystis:
   name: Coronocystis
   auth: [paul.c.r.c]
@@ -2629,6 +2657,11 @@ devonica_sieverts-doreck_1951:
 devonicus_sieverts-doreck_1951:
   name: devonicus
   altSpellingOf: devonica_sieverts-doreck_1951
+diadema_leske_1778:
+  name: diadema
+  authority:
+    source: 1778_leske
+  notes: Relationship to diadema Linnaeus 1758 unclear.
 diadema_linnaeus_1758:
   name: diadema
   authority:
@@ -3518,6 +3551,10 @@ esculentus_linnaeus_1758:
   name: esculentus
   authority:
     source: 1758_linnaeus
+esculenta_leske_1778:
+  name: esculenta
+  authority:
+    source: 1778_leske
 etoctenocystis:
   name: Etoctenocystis
   auth: [fatka, kordule]
@@ -3580,6 +3617,10 @@ exigua_lamarck_1816:
   authority:
     source: 1816a_lamarck
   notes: Asterias
+excavatus_leske_1778:
+  name: excavatus
+  authority:
+    source: 1778_leske
 excentricus_lamarck_1816_clypeaster:
   name: excentricus
   originalParent: clypeaster
@@ -3640,6 +3681,10 @@ fayi_sprinkle_1982:
   name: fayi
   authority:
     source: 1982g_sprinkle
+fenestrata_leske_1778:
+  name: fenestrata
+  authority:
+    source: 1778_leske
 fibularia:
   name: Fibularia
   authority:
@@ -3708,6 +3753,10 @@ fistulosus_anderson_1939:
   name: fistulosus
   auth: [Anderson]
   year: 1939
+flammea_leske_1778:
+  name: flammea
+  authority:
+    source: 1778_leske
 flavescens_müller.o.f_1776:
   name: flavescens
   authority:
@@ -4159,6 +4208,10 @@ granifera_lamarck_1816:
   name: granifera
   authority:
     source: 1816a_lamarck
+granulata_leske_1778:
+  name: granulata
+  authority:
+    source: 1778_leske
 granulatus_jaekel_1899:
   name: granulatus
   auth: [jaekel]
@@ -4491,6 +4544,10 @@ hemicystis:
   name: Hemicystis
   auth: [haeckel]
   year: 1896
+hemisphærica_leske_1778:
+  name: hemisphærica
+  authority:
+    source: 1778_leske
 hemisphæricus_lamarck_1816_clypeaster:
   name: hemisphæricus
   originalParent: clypeaster
@@ -5580,6 +5637,11 @@ lucernaria:
   name: Lucernaria
   authority:
     source: 1776_müller.o.f
+lucunter_leske_1778:
+  name: lucunter
+  authority:
+    source: 1778_leske
+  notes: Seems to be separate from lucunter Linn. 1758 but unclear?
 lucunter_linnaeus_1758:
   name: lucunter
   authority:
@@ -5694,6 +5756,11 @@ malum_pander_1830:
   name: malum
   auth: [Pander]
   year: 1830
+mammillata_leske_1778:
+  name: mammillata
+  authority:
+    source: 1778_leske
+  notes: Relation to mammillatus Linn. 1758 unclear.
 mamillatus_linnaeus_1758:
   name: mamillatus
   authority:
@@ -6304,6 +6371,14 @@ octogona_richter_1930:
   name: octogona
   auth: [Richter]
   year: 1930
+oculus:
+  name: Oculus
+  authority:
+    source: 1778_leske
+  notes: |
+    Imported by Leske a synonym from Georg Eberhard Rumph (1705)
+    https://www.biodiversitylibrary.org/bibliography/70350
+    doi:10.5962/bhl.title.70350 https://lccn.loc.gov/06004038
 odin_müller.p_hahn_2010:
   name: odin
   authority:
@@ -6481,6 +6556,10 @@ ovulum_lamarck_1816:
   name: ovulum
   authority:
     source: 1816b_lamarck
+ovarius_leske_1778:
+  name: ovarius
+  authority:
+    source: 1778_leske
 ###################### P
 pahvanticystis:
   name: Pahvanticystis
@@ -6520,6 +6599,10 @@ pannosus_holloway_jell_1983:
   name: pannosus
   authority:
     source: 1983_holloway_jell
+papillata_leske_1778:
+  name: papillata
+  authority:
+    source: 1778_leske
 papillosa_linnaeus_1767:
   name: papillosa
   altSpellingOf: papillosum_linnaeus_1767
@@ -7120,6 +7203,14 @@ polypes-section:
     source: 1798a_cuvier
   lang: FR
   notes: Authority uncertain.
+polyphemi_leske_1778:
+  name: polyphemi
+  authority:
+    source: 1778_leske
+  notes: |
+    Imported by Leske a synonym from Georg Eberhard Rumph (1705)
+    https://www.biodiversitylibrary.org/bibliography/70350
+    doi:10.5962/bhl.title.70350 https://lccn.loc.gov/06004038
 polypi:
   name: Polypi
   rank: Class
@@ -7527,6 +7618,10 @@ radiata:
   authority:
     source: 1801_lamarck
   notes: Authority not in latin, but I can't find another option or source.
+radiata_leske_1778:
+  name: radiata
+  authority:
+    source: 1778_leske
 radiares:
   name: Radiares
   vulgarSpellingOf: radiata
@@ -7941,6 +8036,10 @@ runcinata_jell_1983:
   name: runcinata
   authority:
     source: 1983_jell
+rupestris_leske_1778:
+  name: rupestris
+  authority:
+    source: 1778_leske
 rustica_linnaeus_1767:
   name: rustica
   authority:
@@ -8007,10 +8106,19 @@ sardesoni_bather_1915:
   name: sardesoni
   auth: [bather]
   year: 1915
+sardica_leske_1778:
+  name: sardica
+  authority:
+    source: 1778_leske
 savagella:
   name: Savagella
   auth: [Foerste]
   year: 1920
+saxatilis_leske_1778:
+  name: saxatilis
+  authority:
+    source: 1778_leske
+  notes: Appears to be different from Linnaeus 1758, but unclear.
 saxatilis_linnaeus_1758:
   name: saxatilis
   authority:
@@ -8471,6 +8579,10 @@ stellaris_billings_1859:
   name: stellaris
   auth: [billings]
   year: 1859
+stellata_leske_1778:
+  name: stellata
+  authority:
+    source: 1778_leske
 stellatae:
   name: Stellatae
   rank: section
@@ -8642,6 +8754,10 @@ stylophora-sp-indeterminate_sumrall_sprinkle_guensburg_1997:
   rank: species
   authority:
     source: 1997_sumrall_sprinkle_guensburg
+subangularis_leske_1778:
+  name: subangularis
+  authority:
+    source: 1778_leske
 subangularis_miller.j.s_1821:
   name: subangularis
   authority:
@@ -8813,6 +8929,12 @@ tessellata_lamarck_1816:
   name: tessellata
   authority:
     source: 1816a_lamarck
+  notes: Asterias
+tessellata_leske_1778:
+  name: tessellata
+  authority:
+    source: 1778_leske
+  notes: Cidaris
 testacea-order:
   name: Testacea
   rank: Order
@@ -8953,6 +9075,10 @@ tongshanensis_qiu_lin_1983:
   auth: [Qiu, Lin]
   in: [Qiu, 'et al.']
   year: 1983
+toreumatica_leske_1778:
+  name: toreumatica
+  authority:
+    source: 1778_leske
 tormoblastus:
   name: Tormoblastus
   auth: [jaekel]
@@ -9260,6 +9386,10 @@ valvatida:
   rank: Order
   auth: [Perrier]
   year: 1884
+variegata_leske_1778:
+  name: variegata
+  authority:
+    source: 1778_leske
 variolata_bruzelius_1805:
   name: variolata
   auth: [Bruzelius]
@@ -9351,6 +9481,10 @@ villosa_fabricius_1780:
   name: villosa
   auth: [Fabricius]
   year: 1780
+violacea_leske_1778:
+  name: violacea
+  authority:
+    source: 1778_leske
 virgenea_müller.o.f_1776:
   name: virgenea
   authority:

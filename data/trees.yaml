@@ -942,8 +942,132 @@
   - taxon: echinus-order
     new: true
     children:
+#             - taxon: esculentus_linnaeus_1758
+#             - taxon: globulus_linnaeus_1758
+#             - taxon: sphaeroides_linnaeus_1758
+#             - taxon: gratilla_linnaeus_1758
+#             - taxon: lixula_linnaeus_1758
+#             - taxon: saxatilis_linnaeus_1758
+#             - taxon: diadema_linnaeus_1758
+#             - taxon: cidaris_linnaeus_1758
+#             - taxon: mamillatus_linnaeus_1758
+#             - taxon: lucunter_linnaeus_1758
+#             - taxon: atratus_linnaeus_1758
+#           - taxon: irregulares
+#             children:
+#             - taxon: spatagus_linnaeus_1758
+#             - taxon: lacunosus_linnaeus_1758
+#             - taxon: rosaceus_linnaeus_1758
+#             - taxon: reticulatus_linnaeus_1758
+#             - taxon: placenta_linnaeus_1758
+#             - taxon: orbiculus_linnaeus_1758
+    - taxon: oculus
+      new: true
+      notes: |
+        Imported as a synonym from Georg Eberhard Rumph (1705)
+        https://www.biodiversitylibrary.org/bibliography/70350
+        doi:10.5962/bhl.title.70350 https://lccn.loc.gov/06004038
+      children:
+      - taxon: polyphemi_leske_1778
+        new: true
+        notes: Representing Leske's import of polyphemi_rumph_1705
+    - taxon: cidarites
+      new: true
+      notes: Some Cidaris species are listed as Cidarites?
     - taxon: cidaris
       new: true
+      children:
+      - taxon: esculenta_leske_1778
+        new: true
+        notes: |
+          Definitely different from E. esculentus Linn., although it may
+          have been intended to be the same.  IRMNG assignes
+          Cidaris esculenta (Linnaeus, 1758) (with recomb. parens) to
+          Tripneustes esculentus (Leske, 1778) while leaving E. esculentus
+          alone.
+      - taxon: saxatilis_leske_1778
+        new: true
+        notes: Not synonymized with Linnaeus so treating as new?
+      - taxon: hemisphærica_leske_1778
+        new: true
+      - taxon: angulosa_leske_1778
+        new: true
+      - taxon: excavatus_leske_1778
+        new: true
+        parents:
+        - taxon: cidarites
+        synonyms:
+        - taxon: globulus_linnaeus_1758
+          parents:
+          - taxon: echinus
+        - taxon: sphæroides_linnaeus_1758
+          parents:
+          - taxon: echinus
+        - taxon: gratilla_linnaeus_1758
+          parents:
+          - taxon: echinus
+        - taxon: lixula_linnaeus_1758
+          parents:
+          - taxon: echinus
+        - taxon: polyphemi_leske_1778
+          parents:
+          - taxon: oculus
+      - taxon: diadema_leske_1778
+        new: true
+        notes: Not synonymized with Linnaeus so treating as new?
+      - taxon: ovarius_leske_1778
+        new: true
+      - taxon: subangularis_leske_1778
+        new: true
+      - taxon: fenestrata_leske_1778
+        new: true
+      - taxon: lucunter_leske_1778
+        new: true
+        notes: If I am reading the text right, this is different from Linnaeus?
+      - taxon: rupestris_leske_1778
+        new: true
+      - taxon: calamaris_leske_1778
+        new: true
+      - taxon: araneiformis_leske_1778
+        new: true
+      - taxon: stellata_leske_1778
+        new: true
+      - taxon: radiata_leske_1778
+        new: true
+      - taxon: violacea_leske_1778
+        new: true
+      - taxon: circinnatus_leske_1778
+        new: true
+        parents:
+        - taxon: cidarites
+      - taxon: mammillata_leske_1778
+        new: true
+      - taxon: papillata_leske_1778
+        new: true
+      - taxon: coronalis_leske_1778
+        new: true
+        parents:
+        - taxon: cidarites
+      - taxon: corollaris_leske_1778
+        new: true
+        parents:
+        - taxon: cidarites
+      - taxon: sardica_leske_1778
+        new: true
+      - taxon: flammea_leske_1778
+        new: true
+      - taxon: variegata_leske_1778
+        new: true
+      - taxon: pustulosa_leske_1778
+        new: true
+      - taxon: granulata_leske_1778
+        new: true
+      - taxon: tessellata_leske_1778
+        new: true
+      - taxon: botryoides_leske_1778
+        new: true
+      - taxon: toreumatica_leske_1778
+        new: true
     - taxon: clypeus
       new: true
     - taxon: conulus
@@ -2199,7 +2323,6 @@
           - taxon: nucleolites
           - taxon: echinus
           - taxon: cidarites
-            new: true
         - taxon: fistulides
           children:
           - taxon: tentaculées
