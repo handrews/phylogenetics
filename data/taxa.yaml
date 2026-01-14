@@ -1188,6 +1188,14 @@ briareus_miller.j.s_1821:
   name: briareus
   authority:
     source: 1821_miller.j.s
+brissus_leske_1778:
+  name: brissus
+  authority:
+    source: 1778_leske
+brissoides_leske_1778:
+  name: brissoides
+  authority:
+    source: 1778_leske
 brightonicystis:
   name: Brightonicystis
   auth: [paul.c.r.c]
@@ -1978,6 +1986,10 @@ complanata_fabricius_1780:
   name: complanata
   auth: [Fabricius]
   year: 1780
+cor anguinum_leske_1778:
+  name: cor anguinum
+  authority:
+    source: 1778_leske
 cor avium_lamarck_1816:
   name: cor avium
   authority:
@@ -2901,6 +2913,10 @@ echinarachnius_leske_1778:
   needsQualification: true
   authority:
     source: 1778_leske
+  notes: |
+    Leske credits 1774_van phelsum in the text, but I cannot
+    decipher Van Phelsum enough to know if there are any
+    species or if the usage is properly binomial. IRMNG credits Leske.
 echinata_lamarck_1816:
   name: echinata
   authority:
@@ -5396,6 +5412,10 @@ languedocianus_ubaghs_1987:
   name: languedocianus
   auth: [ubaghs]
   year: 1987
+lapis cancri_leske_1778:
+  name: lapis cancri
+  authority:
+    source: 1778_leske
 laplysia:
   name: Laplysia
   altSpellingOf: aplysia
@@ -6044,6 +6064,11 @@ minor_leske_1778_echinoneus:
   originalParent: echinoneus
   authority:
     source: 1778_leske
+minor_leske_1778_spatangus_leske_1778:
+  name: minor
+  originalParent: spatangus_leske_1778
+  authority:
+    source: 1778_leske
 minor_schuchert_1919:
   name: minor
   rank: variety
@@ -6608,8 +6633,14 @@ ottawacrinus:
   name: Ottawacrinus
   authority: 
     source: 1887_billings.w.r
-ovalis_leske_1778:
+ovalis_leske_1778_echinocyamus:
   name: ovalis
+  originalParent: echinocyamus
+  authority:
+    source: 1778_leske
+ovalis_leske_1778_spatangus_leske_1778:
+  name: ovalis
+  originalParent: spatangus_leske_1778
   authority:
     source: 1778_leske
 ovata_leske_1778_echinocorys:
@@ -6850,6 +6881,10 @@ patella_lamarck_1816:
   name: patella
   authority:
     source: 1816b_lamarck
+patellaris_leske_1778:
+  name: patellaris
+  authority:
+    source: 1778_leske
 patelliformis_müller.o.f_1776:
   name: patelliformis
   authority:
@@ -7664,6 +7699,10 @@ pyriformis_forbes_1848:
   name: pyriformis
   authority:
     source: 1848b_forbes
+pyriformis_leske_1778:
+  name: pyriformis
+  authority:
+    source: 1778_leske
 pyriformis_parsley_sprinkle_1982:
   name: pyriformis
   auth: [parsley, sprinkle]
@@ -8824,6 +8863,10 @@ striata_pander_1830:
   name: striata
   auth: [Pander]
   year: 1830
+striato_leske_1778:
+  name: striato
+  authority:
+    source: 1778_leske
 striatosphaerites-subgenus:
   name: Striatosphaerites
   rank: subgenus
@@ -8916,6 +8959,10 @@ subglobosus_hall_1862:
   name: subglobosus
   auth: [hall]
   year: 1862
+subglobosus_leske_1778:
+  name: subglobosus
+  authority:
+    source: 1778_leske
 subnodosus_walcott_1884:
   name: subnodosus
   auth: [walcott]

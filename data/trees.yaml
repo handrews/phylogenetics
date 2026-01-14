@@ -1186,7 +1186,7 @@
         new: true
       - taxon: angulosus_leske_1778_echinocyamus
         new: true
-      - taxon: ovalis_leske_1778
+      - taxon: ovalis_leske_1778_echinocyamus
         new: true
       - taxon: inaequalis_leske_1778
         new: true
@@ -1196,10 +1196,56 @@
       - openTaxon: echinocyamus-sp_leske_1778
         notes: also not given a number, and _not_ "species dubia"?
     - taxon: echinarachnius_leske_1778
-      notes: No species defined?
+      notes: Leske credits 1774_van phelsum but all deatails are unclear.
       new: true
     - taxon: spatangus_leske_1778
       new: true
+      children:
+      - taxon: cor anguinum_leske_1778
+        new: true
+      - taxon: lacunosus_linnaeus_1758
+        notes: possibly a distinct species to be credited to Leske?
+      - taxon: pusillus_müller.o.f_1776
+        notes: possibly a distinct species to be credited to Leske?
+      - taxon: striato_leske_1778
+        new: true
+      - taxon: purpureus_müller.o.f_1776
+        notes: possibly a distinct species to be credited to Leske?
+      - taxon: depressus_leske_1778
+        new: true
+      - taxon: subglobosus_leske_1778
+        new: true
+      - taxon: ananchytis_leske_1778
+        new: true
+      - taxon: bicordatus_leske_1778
+        new: true
+      - taxon: carinatus_leske_1778
+        new: true
+      - taxon: brissus_leske_1778
+        new: true
+      - taxon: brissoides_leske_1778
+        new: true
+      - taxon: ovatus_leske_1778_spatangus_leske_1778
+        new: true
+      - taxon: minor_leske_1778_spatangus_leske_1778
+        new: true
+      - taxon: ovalis_leske_1778_spatangus_leske_1778
+        new: true
+      - taxon: pyriformis_leske_1778
+        parents:
+        - taxon: echinites
+        notes: Unclear why this was written as Echinites underneath Spatangus.
+        new: true
+      - taxon: lapis cancri_leske_1778
+        parents:
+        - taxon: echinites
+        notes: Unclear why this was written as Echinites underneath Spatangus.
+        new: true
+      - taxon: patellaris_leske_1778
+        parents:
+        - taxon: echinites
+        notes: Unclear why this was written as Echinites underneath Spatangus.
+        new: true
 1789a_bruguière:
   notes: |
     Latin species names are only in the detailed entries, and only the first
