@@ -942,25 +942,6 @@
   - taxon: echinus-order
     new: true
     children:
-#             - taxon: esculentus_linnaeus_1758
-#             - taxon: globulus_linnaeus_1758
-#             - taxon: sphaeroides_linnaeus_1758
-#             - taxon: gratilla_linnaeus_1758
-#             - taxon: lixula_linnaeus_1758
-#             - taxon: saxatilis_linnaeus_1758
-#             - taxon: diadema_linnaeus_1758
-#             - taxon: cidaris_linnaeus_1758
-#             - taxon: mamillatus_linnaeus_1758
-#             - taxon: lucunter_linnaeus_1758
-#             - taxon: atratus_linnaeus_1758
-#           - taxon: irregulares
-#             children:
-#             - taxon: spatagus_linnaeus_1758
-#             - taxon: lacunosus_linnaeus_1758
-#             - taxon: rosaceus_linnaeus_1758
-#             - taxon: reticulatus_linnaeus_1758
-#             - taxon: placenta_linnaeus_1758
-#             - taxon: orbiculus_linnaeus_1758
     - taxon: oculus
       new: true
       notes: |
@@ -1058,7 +1039,7 @@
         new: true
       - taxon: variegata_leske_1778
         new: true
-      - taxon: pustulosa_leske_1778
+      - taxon: pustulosa_leske_1778_cidaris
         new: true
       - taxon: granulata_leske_1778
         new: true
@@ -1100,12 +1081,86 @@
         new: true
     - taxon: echinoneus
       new: true
+      children:
+      - taxon: cyclostomus_leske_1778
+        new: true
+      - taxon: minor_leske_1778_echinoneus
+        new: true
+      - taxon: scutiformis_scilla_1759
+    - taxon: echinocorytes
+      new: true
+      notes: All species listed under Echinocorys listed as Echinocorytes?
     - taxon: echinocorys
       new: true
+      children:
+      - taxon: scutatus_leske_1778
+        parents:
+        - taxon: echinocorytes
+        new: true
+      - taxon: ovatus_leske_1778_echinocorys
+        parents:
+        - taxon: echinocorytes
+        new: true
+      - taxon: pustulosus_leske_1778_echinocorys
+        parents:
+        - taxon: echinocorytes
+        new: true
+      - taxon: quaterradius_leske_1778
+        parents:
+        - taxon: echinocorytes
+        new: true
+      - taxon: minor_leske_1778_echinocorys
+        parents:
+        - taxon: echinocorytes
+        new: true
+      - openTaxon: echinocorys-sp_leske_1778
+        notes: species dubia
     - taxon: echinanthus
       new: true
+      children:
+      - taxon: humilis_leske_1778
+        new: true
+      - taxon: altus_leske_1778
+        new: true
+      - taxon: ovatus_leske_1778_echinanthus
+        new: true
+      - taxon: orbiculatus_leske_1778
+        new: true
+        notes: |
+          Species dubia; unnumbered, unlike even the unnamed echinocorys dubia?
     - taxon: echinodiscus
       new: true
+      children:
+      - taxon: bis perforatus_leske_1778
+        new: true
+      - taxon: quinquies perforatus_leske_1778
+        new: true
+      - taxon: sexies perforatus_leske_1778
+        new: true
+      - taxon: emarginatus_leske_1778
+        new: true
+      - taxon: auritus_leske_1778
+        new: true
+      - taxon: inauritus_leske_1778
+        new: true
+      - taxon: quater perforatus_leske_1778
+        new: true
+      - taxon: laganum_leske_1778
+        new: true
+      - taxon: subrotundus_leske_1778
+        new: true
+      - taxon: reticulatus_leske_1778
+        new: true
+      - taxon: orbicularis_leske_1778
+        new: true
+      - taxon: rosaceus_leske_1778
+        new: true
+      - taxon: decies digitatus_leske_1778
+        new: true
+      - taxon: octies digitatus_leske_1778
+        new: true
+      - taxon: dentatus_leske_1778
+        new: true
     - taxon: echinocyamus
     - taxon: echinarachnius_leske_1778
       new: true
@@ -2095,6 +2150,9 @@
                 parents:
                 - taxon: echinus
               - taxon: auritus_leske_1778
+                notes: |
+                  Unclear what inauritus Gmelin and auritus Leske when there
+                  ia also an inauritus Leske?
                 parents:
                 - taxon: echinus
             - taxon: lenticularis_lamarck_1816
@@ -2189,7 +2247,7 @@
                 - taxon: echinus
             - taxon: semilunaris_gmelin_1791
               synonyms:
-              - taxon: minor_leske_1778
+              - taxon: minor_leske_1778_echinoneus
             - taxon: gibbosus_lamarck_1816
               new: true
           - taxon: galerites
@@ -2264,11 +2322,12 @@
               new: true
           - taxon: ananchytes
             children:
-            - taxon: ovata_leske_1778_echinocorytes
+            - taxon: ovata_leske_1778_echinocorys
               synonyms:
-              - taxon: ovatus_leske_1778_echinocorytes
+              - taxon: ovatus_leske_1778_echinocorys
                 parents:
                 - taxon: echinocorytes
+                  notes: Written under Echinocorys, but as Echinocorytes ovatus
             - taxon: striata_lamarck_1816_ananchytes
               new: true
               notes: |
@@ -2285,9 +2344,9 @@
                 taxon: scutatus_leske_1778
                 parents:
                 - taxon: echinus
-            - taxon: pustulosa_leske_1778
+            - taxon: pustulosa_leske_1778_ananchytes
               synonyms:
-              - taxon: pustulosa_leske_1778
+              - taxon: pustulosa_leske_1778_ananchytes
                 parents:
                 - taxon: echinocorytes
             - taxon: bicordata_leske_1778
@@ -2320,10 +2379,14 @@
             - taxon: semi-globus_lamarck_1816_ananchytes
               new: true
               synonyms:
-              - taxon: minor_leske_1778
+              - taxon: minor_leske_1778_echinocorys
+                notes: |
+                  Leske wrote the genus heading Echinocorys, but wrote each
+                  species as Echinocorytes ...; Echinocorys is deemed senior.
                 parents:
                 - taxon: echinocorytes
-              - taxon: minor_leske_1778
+                  notes: Echinocorytes used in Lamarck so shown as parent here.
+              - taxon: minor_leske_1778_echinocorys
                 parents:
                 - taxon: echinus
             - taxon: pillula_lamarck_1816

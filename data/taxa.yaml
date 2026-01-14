@@ -1018,6 +1018,9 @@ biperforatus_leske_1778:
   name: biperforatus
   authority:
     source: 1778_leske
+bis perforatus_leske_1778:
+  name: bis perforatus
+  altSpellingOf: biperforatus_leske_1778
 biphora:
   name: Biphora
   authority:
@@ -2379,6 +2382,10 @@ cyclocystoides-sp_kolata_1982:
   rank: species
   authority:
     source: 1982_kolata
+cyclostoma_leske_1778:
+  name: cyclostoma
+  authority:
+    source: 1778_leske
 cycloidea:
   name: Cycloidea
   rank: Class
@@ -2630,6 +2637,9 @@ dentata_leske_1778:
   name: dentata
   authority:
     source: 1778_leske
+dentatus_leske_1778:
+  name: dentatus
+  altSpellingOf: dentata_leske_1778
 denudata_linnaeus_1758:
   name: denudata
   authority:
@@ -2903,6 +2913,11 @@ echinites_ellis_solander_1786:
   year: 1786
 echinocorys:
   name: Echinocorys
+  authority:
+    source: 1778_leske
+echinocorys-sp_leske_1778:
+  name: null
+  rank: species
   authority:
     source: 1778_leske
 echinocorytes:
@@ -3313,6 +3328,9 @@ emarginata_leske_1778:
   name: emarginata
   authority:
     source: 1778_leske
+emarginatus_leske_1778:
+  name: emarginatus
+  altSpellingOf: emarginata_leske_1778
 enchelis:
   name: Enchelis
   authority:
@@ -4875,6 +4893,14 @@ inauritus_gmelin_1791:
   name: inauritus
   auth: [Gmelin]
   year: 1791
+inauritus_leske_1778:
+  name: inauritus
+  authority:
+    source: 1778_leske
+  notes: |
+    Relationship to inauritus Gmelin unclear, particularly as
+    Lamarck synonymized inauritus Gmelin and auritus Leske
+    (*not* inauritus Leske) with Scutella bifissa (Gmelin).
 incondita_raymond_1915:
   name: incondita
   auth: [Raymond]
@@ -5969,8 +5995,14 @@ minervaecystis-sp_sumrall_sprinkle_guensburg_1997:
   rank: species
   authority:
     source: 1997_sumrall_sprinkle_guensburg
-minor_leske_1778:
+minor_leske_1778_echinocorys:
   name: minor
+  originalParent: echinocorys
+  authority:
+    source: 1778_leske
+minor_leske_1778_echinoneus:
+  name: minor
+  originalParent: echinoneus
   authority:
     source: 1778_leske
 minor_schuchert_1919:
@@ -6459,10 +6491,20 @@ orbicularis_gmelin_1791:
   name: orbicularis
   auth: [Gmelin]
   year: 1791
+orbicularis_leske_1778:
+  name: orbicularis
+  authority:
+    source: 1778_leske
+  notes: Relationship to Gmelin 1791 unclear
 orbicularis_müller.o.f_1784:
   name: orbicularis
   auth: [müller.o.f]
   year: 1784
+  notes: Ascidia
+orbiculatus_leske_1778:
+  name: orbiculatus
+  authority:
+    source: 1778_leske
 orbiculus_linnaeus_1758:
   name: orbiculus
   authority:
@@ -6527,10 +6569,10 @@ ottawacrinus:
   name: Ottawacrinus
   authority: 
     source: 1887_billings.w.r
-ovata_leske_1778_echinocorytes:
+ovata_leske_1778_echinocorys:
   name: ovata
-  originalParent: echinocorytes
-  altSpellingOf: ovatus_leske_1778_echinocorytes
+  originalParent: echinocorys
+  altSpellingOf: ovatus_leske_1778_echinocorys
 ovatus_bruguière_1789:
   name: ovatus
   authority:
@@ -6548,9 +6590,9 @@ ovatus_leske_1778_echinanthus:
   originalParent: echinanthus
   authority:
     source: 1778_leske
-ovatus_leske_1778_echinocorytes:
+ovatus_leske_1778_echinocorys:
   name: ovatus
-  originalParent: echinocorytes
+  originalParent: echinocorys
   authority:
     source: 1778_leske
 ovatus_leske_1778_spatangus:
@@ -7474,8 +7516,19 @@ pustulata_müller.p_hahn_2010:
   name: pustulata
   authority:
     source: 2010_müller.p_hahn
-pustulosa_leske_1778:
+pustulosa_leske_1778_ananchytes:
   name: pustulosa
+  originalParent: ananchytes
+  authority:
+    source: 1778_leske
+pustulosa_leske_1778_cidaris:
+  name: pustulosa
+  originalParent: cidaris
+  authority:
+    source: 1778_leske
+pustulosus_leske_1778_echinocorys:
+  name: pustulosus
+  originalParent: echinocorys
   authority:
     source: 1778_leske
 pustulosina:
@@ -7609,6 +7662,10 @@ quater fasciatus_leske_1778:
     source: 1778_leske
 quater perforatus_leske_1778:
   name: quater perforatus
+  authority:
+    source: 1778_leske
+quaterradius_leske_1778:
+  name: quaterradius
   authority:
     source: 1778_leske
 quinquangularis_miller.j.s_1821_cyathocrinites:
@@ -7819,7 +7876,7 @@ reticulata_linnaeus_1758:
   name: reticulata
   authority:
     source: 1758_linnaeus
-  notes: Distinct from riticulatus_linnaeus_1758
+  notes: Asterias; Distinct from reticulatus_linnaeus_1758
 reticulatus_bell.b.m_1974:
   name: reticulatus
   authority:
@@ -7836,7 +7893,12 @@ reticulatus_linnaeus_1758:
   name: reticulatus
   authority:
     source: 1758_linnaeus
-  notes: Distinct from reticulata_linnaeus_1758
+  notes: Echinus; Distinct from reticulata_linnaeus_1758
+reticulatus_leske_1778:
+  name: reticulatus
+  authority:
+    source: 1778_leske
+  notes: Relationship to Linnaeuse 1758 unclear.
 reversatus_foerste_1914:
   name: reversatus
   auth: [foerste]
@@ -7969,6 +8031,10 @@ rosacea_lamarck_1816:
   name: rosacea
   authority:
     source: 1816a_lamarck
+rosaceus_leske_1778:
+  name: rosaceus
+  authority:
+    source: 1778_leske
 rosaceus_linnaeus_1758:
   name: rosaceus
   authority:
@@ -8212,6 +8278,13 @@ scutellatus_lamarck_1801:
   authority:
     source: 1801_lamarck
   notes: No other source on authority, newly described species assumed.
+scutiformis_scilla_1759:
+  name: scutiformis
+  auth: [Scilla]
+  year: 1759
+  notes: |
+    Possibly not a valid Linnaean source, so perhaps this should
+    be scutiformis_leske_1759; Seems different from Lamarck 1816?
 scutiformis_lamarck_1816:
   name: scutiformis
   authority:
