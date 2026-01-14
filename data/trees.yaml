@@ -1070,6 +1070,16 @@
         new: true
     - taxon: clypeus
       new: true
+      children:
+      - taxon: sinuatus_leske_1778
+        new: true
+      - taxon: hemisphæricus_leske_1778
+        new: true
+      - taxon: quinquelabiatus_leske_1778
+        notes: species dubia
+        new: true
+      - taxon: conoideus_leske_1778
+        new: true
     - taxon: conulus
       new: true
       notes: Leske names this per Klein but gives it his own name, Echinites
@@ -1077,6 +1087,17 @@
       new: true
       synonyms:
       - taxon: conulus
+      children:
+      - taxon: albogalerus_leske_1778
+        new: true
+      - taxon: vulgaris_leske_1778
+        new: true
+      - taxon: quater fasciatus_leske_1778
+        new: true
+      - taxon: sexies fasciatus_leske_1778
+        new: true
+      - taxon: subuculus_leske_1778
+        new: true
     - taxon: echinoneus
       new: true
     - taxon: echinocorys

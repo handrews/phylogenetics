@@ -210,10 +210,13 @@ alanisicystis-subgenus:
 alba_forsskål_1775:
   name: alba
   altSpellingOf: albus_forsskål_1775
-albo-galerus_leske_1778:
-  name: albo-galerus
+albogalerus_leske_1778:
+  name: albogalerus
   authority:
     source: 1778_leske
+albo-galerus_leske_1778:
+  name: albo-galerus
+  altSpellingOf: albogalerus_leske_1778
 albus_forsskål_1775:
   name: albus
   auth: [forsskål]
@@ -1922,6 +1925,10 @@ conoideus_lamarck_1816:
   name: conoideus
   authority:
     source: 1816b_lamarck
+conoideus_leske_1778:
+  name: conoideus
+  authority:
+    source: 1778_leske
 conollia:
   name: Conollia
   auth: [domínguez alonso]
@@ -4548,11 +4555,18 @@ hemisphærica_leske_1778:
   name: hemisphærica
   authority:
     source: 1778_leske
+  notes: Cidaris
+hemisphæricus_leske_1778:
+  name: hemisphæricus
+  authority:
+    source: 1778_leske
+  notes: Clypeus (not Clypeaster)
 hemisphæricus_lamarck_1816_clypeaster:
   name: hemisphæricus
   originalParent: clypeaster
   authority:
     source: 1816b_lamarck
+  notes: Note that Clypeaster is distinct from Clypeus
 hemisphæricus_lamarck_1816_galerites:
   name: hemisphæricus
   originalParent: galerites
@@ -7589,6 +7603,10 @@ quadrocystis:
   name: Quadrocystis
   authority:
     source: 1982g_sprinkle
+quater fasciatus_leske_1778:
+  name: quater fasciatus
+  authority:
+    source: 1778_leske
 quater perforatus_leske_1778:
   name: quater perforatus
   authority:
@@ -7607,6 +7625,10 @@ quinquefora_lamarck_1816:
   name: quinquefora
   authority:
     source: 1816b_lamarck
+quinquelabiatus_leske_1778:
+  name: quinquelabiatus
+  authority:
+    source: 1778_leske
 quinquies perforatus_leske_1778:
   name: quinquies perforatus
   authority:
@@ -8276,10 +8298,13 @@ sexforis_lamarck_1816:
   name: sexforis
   authority:
     source: 1816b_lamarck
-sexies fasciculatus_leske_1778:
-  name: sexies fasciculatus
+sexies fasciatus_leske_1778:
+  name: sexies fasciatus
   authority:
     source: 1778_leske
+sexies fasciculatus_leske_1778:
+  name: sexies fasciculatus
+  altSpellingOf: sexies fasciatus_leske_1778
 sexies perforatus_leske_1778:
   name: sexies perforatus
   authority:
