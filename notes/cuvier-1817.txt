@@ -13,12 +13,52 @@ Kingdom Animalia (Animaux)
         Family Holothuria
       Order (Sans Pédicellerés)
 
+FOURTH AND LAST PHYLUM OR GREAT DIVISION OF ANIMALS.
+
+THE ZOOPHYTES or Radiate Animals.
+
+They comprise a considerable number of beings, whose organization, always demonstrably simpler than that of the four preceding phyla, also presents more degrees of complexity than that of each of them, and seems to agree only in this respect: that the parts are arranged around an axis, and on two or more radii, or on
+two or more lines running from one pole to the other; the intestinal worms themselves have at least two tendinous lines or two nerve filaments originating from a collar around their mouth; several of them have four suckers around a proboscis-shaped prominence; in short, despite some irregularities, traces of the
+radiate form are always found, very marked in the large number of these animals, such as starfish, sea urchins, and the countless polyps.
+
+The nervous system is never very evident; when traces of it were thought to have been seen, they were also arranged in rays; but most often there is not the slightest appearance of one.
+
+There is also never a true circulatory system; holothurians have two vascular systems; one connected to the intestines,
+and corresponding to the respiratory organs; the other serving only for the inflation of the organs that serve as feet. Only the latter appears distinctly in sea urchins and starfish. Through the gelatinous substance of jellyfish, one sees more or less complicated canals that branch off from the intestinal cavity; all this offers
+no possibility of general circulation; and in the vast majority of zoophytes, it is easy to be convinced that there are no
+vessels at all.
+
+Some genera, such as holothurians, sea urchins, and several intestinal worms, have a mouth and an anus with a distinct intestinal canal; others have an intestinal sac, but with a single opening serving as both mouth and anus; in most of them there is only a hollow cavity in the very substance of the body, which sometimes opens through several pores; Finally, there are many in which no mouth is visible, and which can scarcely nourish themselves except by absorption through their pores.
+
+Sexes are observed among several intestinal worms. The greater number of other zoophytes are hermaphroditic and oviparous; several have no genital organs and reproduce by budding or division.
+
+Compound animals, of which we have already seen some examples among the last mollusks, are very numerous among the zoophytes, and their aggregations form trunks and expansions of all sorts of shapes. This circumstance, combined with the simplicity of organization of most species, and the radial arrangement of their organs, which recall the petals of flowers, is what earned them the name of zoophytes or plant-animals, a name intended only to indicate these apparent similarities; for zoophytes, possessing sensitivity, voluntary movement, and feeding, for the most part, on substances that they swallow or suck and digest in an internal cavity, are certainly animals in every respect.
+
+The greater or lesser complexity of zoophytes has given rise to their division into classes; but since all parts of their organization are not yet perfectly known, these classes could not be characterized with as much precision as those of the preceding branches. Sea urchins and starfish, to which the spines that usually cover them led Bruguière to give the name Echinoderms, have a distinct intestine, floating in a large cavity, and accompanied by several other organs for reproduction, respiration, and partial circulation. It was necessary to include the holothurians with them, which have an analogous internal organization, perhaps even more complex, although they do not have spines on their skin.
+
+The Intestinal Worms, which form the second class, have neither vessels, even for partial circulation, nor respiratory organs; their bodies are generally elongated or flattened, and their organs are arranged longitudinally; the differences in their digestive system will probably lead to their division into two classes one day, which we already indicate by establishing two orders within this class; indeed, in some there is a distinct canal, which is absent in others.
+
+The third class comprises the Acalephes or Sea Nettles. They also have neither truly circulatory vessels nor respiratory organs; their form is circular and radial; generally, their mouth serves as an anus. They differ from polyps only by a greater development in the tissue of their organs.
+
+The hydrostatic acalephes, which we place at the end of this class, may one day constitute a separate class when they are better known; but it is still only by conjecture that we judge the functions of their singular organs.
+
+The Polyps, which compose the fourth class, are all those small gelatinous animals whose mouth, surrounded by tentacles, leads to a stomach, sometimes simple, sometimes followed by intestines in the form of vessels; it is in this class that we find those innumerable compound animals with a fixed and solid stem, which were long considered marine plants.
+
+Finally, the Infusoria, or the fifth and last class of Zoophytes, are those small creatures that have only been discovered with the microscope, and which swarm in stagnant waters. Most show only a gelatinous body without viscera; however, some more complex species are assigned to this class, possessing visible organs of movement and a stomach; these may also one day form a separate class.
+
+FIRST CLASS OF ZOOPHYTES. THE ECHINODERMS.
+
+Echinoderms are the most complex animals in this phylum. Covered with a well-organized skin, often supported by a kind of skeleton and armed with spines, or articulated and mobile thorns, they have an internal cavity where distinct viscera float. A kind of vascular system, which, it is true, does not extend throughout the entire body, maintains communication with various parts of the intestine and with the respiratory organs, which are also usually quite distinct. In several species, we even observe filaments that could perform nervous functions, but which are never distributed with the regularity and in the fixed order of the other two invertebrate phyla.
+
+We divide the echinoderms into two orders: those that have feet, or at least vesicular organs to which this name has been given because they serve the same purpose, and those that lack them.
+
+FIRST ORDER OF ECHINODERMS. THE PEDICELLATES.
+
 They are distinguished by their unique organs of movement. Their outer covering is perforated by a large number of small holes arranged in very regular series, through which pass cylindrical membranous tentacles, each terminating in a small disc that acts as a suction cup. The part of these tentacles that remains inside the body is vesicular; a fluid is released into their entire cavity and, at the animal's will, flows into the outer cylindrical part, extending it, or it retracts into the inner vesicular part, and then the outer part collapses. It is by thus lengthening or shortening their hundreds of small feet or tentacles, and by attaching them with the suction cups at their ends, that these animals perform their progressive movements. Vessels originating from these small feet lead to trunks that correspond to their rows and terminate near the mouth. They form a system distinct from that of the intestinal vessels observed in some species.
 
 Linnaeus describes three very natural, but quite numerous, genera, comprising species varied enough to be considered three families.
 
 The Asterias (Asterias. L.), commonly known as starfish.
-FIRST ORDER OF ECHINODERMS. THE PEDICELLATES.
 
 In the true Asterias (Asterias. Lam.), each ray has a longitudinal groove on its underside, in which all the small holes that allow the feet to pass through are located.
 
