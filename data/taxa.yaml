@@ -579,6 +579,10 @@ arctus_sardeson_1928:
   name: arctus
   auth: [Sardeson]
   year: 1928
+arcuarius_lamarck_1816:
+  name: arcuarius
+  authority:
+    source: 1816b_lamarck
 arenata_lamarck_1816:
   name: arenata
   authority:
@@ -783,23 +787,6 @@ astylophora:
   rank: Superorder
   authority:
     source: 1960_gill_caster
-aurantium_gyllenhaal_1772:
-  name: aurantium
-  auth: [gyllenhaal]
-  year: 1772
-aurita_linnaeus_1758:
-  name: aurita
-  authority:
-    source: 1758_linnaeus
-australocystinae:
-  name: Australocystinae
-  rank: Subfamily
-  auth: [caster]
-  year: 1955
-australocystis:
-  name: Australocystis
-  auth: [caster]
-  year: 1955
 atavus_jaekel_1899:
   name: atavus
   auth: [jaekel]
@@ -821,6 +808,18 @@ atratus_linnaeus_1758:
   name: atratus
   authority:
     source: 1758_linnaeus
+atropos_lamarck_1816:
+  name: atropos
+  authority:
+    source: 1816b_lamarck
+aurantium_gyllenhaal_1772:
+  name: aurantium
+  auth: [gyllenhaal]
+  year: 1772
+aurita_linnaeus_1758:
+  name: aurita
+  authority:
+    source: 1758_linnaeus
 auritus_leske_1778:
   name: auritus
   authority:
@@ -833,6 +832,15 @@ austrocystites:
   name: Austrocystites
   authority:
     source: 1963_brown.i.a
+australocystinae:
+  name: Australocystinae
+  rank: Subfamily
+  auth: [caster]
+  year: 1955
+australocystis:
+  name: Australocystis
+  auth: [caster]
+  year: 1955
 aves:
   name: Aves
   rank: Class
@@ -1197,6 +1205,10 @@ briareus_miller.j.s_1821:
   name: briareus
   authority:
     source: 1821_miller.j.s
+brissus:
+  name: Brissus
+  authority:
+    source: 1816b_lamarck
 brissus_leske_1778:
   name: brissus
   authority:
@@ -1386,6 +1398,10 @@ canadensis_billings_1866:
   name: canadensis
   auth: [billings]
   year: 1866
+canaliferus_lamarck_1816:
+  name: canaliferus
+  authority:
+    source: 1816b_lamarck
 canina_müller.o.f_1776:
   name: canina
   authority:
@@ -1887,6 +1903,10 @@ colpoda:
   name: Colpoda
   authority:
     source: 1773_müller.o.f
+columbaris_lamarck_1816:
+  name: columbaris
+  authority:
+    source: 1816b_lamarck
 columbocystis:
   name: Columbocystis
   auth: [bassler]
@@ -1916,6 +1936,10 @@ commensalus_bell.b.m_1976:
   name: commensalus
   authority:
     source: 1976_bell.b.m
+compressus_lamarck_1816:
+  name: compressus
+  authority:
+    source: 1816b_lamarck
 concentricus_frest_2005:
   name: concentricus
   authority:
@@ -1999,6 +2023,12 @@ complanata_fabricius_1780:
   name: complanata
   auth: [Fabricius]
   year: 1780
+  notes: Ascidia
+complanatus_gmelin_1791:
+  name: complanatus
+  auth: [Gmelin]
+  year: 1791
+  notes: an echinoid
 cor anguinum_leske_1778:
   name: cor anguinum
   authority:
@@ -2221,6 +2251,10 @@ crustacés-order:
   name: Crustacés
   vulgarSpellingOf: crustacea-order
   lang: FR
+crux andraæ_lamarck_1816:
+  name: crux andraæ
+  authority:
+    source: 1816b_lamarck
 cryptocrinites:
   name: Cryptocrinites
   auth: [buch]
@@ -4014,10 +4048,16 @@ gibba_lamarck_1816:
   name: gibba
   authority:
     source: 1816b_lamarck
+  notes: Ananchyte
 gibbosus_lamarck_1816:
   name: gibbosus
   authority:
     source: 1816b_lamarck
+gibbus_lamarck_1816:
+  name: gibbus
+  authority:
+    source: 1816b_lamarck
+  notes: Spatangus (Leske)
 giganteus_leuchtenberg_1943:
   name: giganteus
   auth: [Leuchtenberg]
@@ -6970,6 +7010,10 @@ pecten:
   name: Pecten
   authority:
     source: 1776_müller.o.f
+pectoralis_lamarck_1816:
+  name: pectoralis
+  authority:
+    source: 1816b_lamarck
 peculiaris_paul.c.r.c_1967:
   name: peculiaris
   auth: [paul.c.r.c]
@@ -7274,6 +7318,10 @@ planulaires:
   name: Planulaires
   rank: section
   lang: FR
+  authority:
+    source: 1816b_lamarck
+planulatus_lamarck_1816:
+  name: planulatus
   authority:
     source: 1816b_lamarck
 planus_miller.j.s_1821:
@@ -7625,6 +7673,10 @@ protozoa-grade:
   rank: Grade
   auth: [goldfuss]
   year: 1818
+prunella_lamarck_1816:
+  name: prunella
+  authority:
+    source: 1816b_lamarck
 prunocystites:
   name: Prunocystites
   authority:
@@ -7649,6 +7701,12 @@ punctata_lamarck_1816:
   name: punctata
   authority:
     source: 1816a_lamarck
+  notes: Asterias
+punctatus_lamarck_1816:
+  name: punctatus
+  authority:
+    source: 1816b_lamarck
+  notes: an echinoid
 punctatus_forbes_1848:
   name: punctatus
   authority:
@@ -7858,6 +7916,10 @@ radiata_leske_1778:
   name: radiata
   authority:
     source: 1778_leske
+radiatus_gmelin_1791:
+  name: radiatus
+  auth: [Gmelin]
+  year: 1791
 radiares:
   name: Radiares
   vulgarSpellingOf: radiata
@@ -8056,6 +8118,10 @@ reticulatus_leske_1778:
   authority:
     source: 1778_leske
   notes: Relationship to Linnaeuse 1758 unclear.
+retusus_lamarck_1816:
+  name: retusus
+  authority:
+    source: 1816b_lamarck
 reversatus_foerste_1914:
   name: reversatus
   auth: [foerste]
@@ -8911,6 +8977,10 @@ stephenensis_sprinkle_collins.d_2006:
   name: stephenensis
   authority:
     source: 2006_sprinkle_collins.d
+sternalis_lamarck_1816:
+  name: sternalis
+  authority:
+    source: 1816b_lamarck
 strabocystis:
   name: Strabocystis
   authority:
@@ -8937,10 +9007,13 @@ striata_pander_1830:
   name: striata
   auth: [Pander]
   year: 1830
-striato_leske_1778:
-  name: striato
+striato radiatus_leske_1778:
+  name: striato radiatus
   authority:
     source: 1778_leske
+striato-radiatus_leske_1778:
+  name: striato-radiatus
+  altSpellingOf: striato radiatus_leske_1778
 striatosphaerites-subgenus:
   name: Striatosphaerites
   rank: subgenus
@@ -9700,6 +9773,10 @@ venosa_müller.o.f_1776:
   name: venosa
   authority:
     source: 1776_müller.o.f
+ventricosus_lamarck_1816:
+  name: ventricosus
+  authority:
+    source: 1816b_lamarck
 venus:
   name: Venus
   authority:

@@ -1252,7 +1252,7 @@
         notes: possibly a distinct species to be credited to Leske?
       - taxon: pusillus_müller.o.f_1776
         notes: possibly a distinct species to be credited to Leske?
-      - taxon: striato_leske_1778
+      - taxon: striato radiatus_leske_1778
         new: true
       - taxon: purpureus_müller.o.f_1776
         notes: possibly a distinct species to be credited to Leske?
@@ -2536,6 +2536,88 @@
                 taxon: ovatus_leske_1778_spatangus_leske_1778
                 parents:
                 - taxon: spatangus_leske_1778
+          - taxon: spatangus_leske_1778
+            children:
+            - taxon: pectoralis_lamarck_1816
+              new: true
+            - taxon: ventricosus_lamarck_1816
+              new: true
+              notes: |
+                Synonymized with "Brissus ventricosus Leske ad Klein"
+                but the cited pages aren't correct and the closest
+                I can find is a footnote saying "Echinus Spatagus,
+                inportu Meffanae captus: videtur varietatem maculosam
+                ventricosam siftere," which is a purely descriptive usage.
+                Note that Brissus (capitalized) is a "Familia" (but in the
+                position of a subgenus) and it is unclear if it is an actual
+                taxon.  Lowercase it is a species, with varieties, but none
+                of the varieties are called ventricosus.
+            - taxon: purpureus_müller.o.f_1776
+              synonyms:
+              - taxon: purpureus_müller.o.f_1776
+                parents:
+                - taxon: echinus
+            - taxon: ovatus_leske_1778_spatangus_leske_1778
+              notes: Not entirely clear if this is correct ovatus given syn?
+              synonyms:
+              - taxon: unicolor_leske_1778
+                parents:
+                - taxon: brissus_leske_1778
+                - taxon: spatangus_leske_1778
+            - taxon: carinatus_leske_1778
+              synonyms:
+              - taxon: late carinatus_leske_1778
+                parents:
+                - taxon: brissus_leske_1778
+                - taxon: spatangus_leske_1778
+            - taxon: columbaris_lamarck_1816
+              new: true
+            - taxon: compressus_lamarck_1816
+              new: true
+            - taxon: crux andraæ_lamarck_1816
+              new: true
+            - taxon: sternalis_lamarck_1816
+              new: true
+            - taxon: planulatus_lamarck_1816
+              new: true
+            - taxon: canaliferus_lamarck_1816
+              new: true
+            - taxon: atropos_lamarck_1816
+              new: true
+            - taxon: arcuarius_lamarck_1816
+              new: true
+              synonyms:
+              - taxon: pusillus_müller.o.f_1776
+                notes: |
+                  Synonymized as Leske apud Klein, but that seems to be
+                  Müller's credit (although it is not entirely clear).
+            - taxon: punctatus_lamarck_1816
+              notes: attribution uncertain
+              new: true
+              synonyms:
+              - tentative: true
+                taxon: cor anguinum_leske_1778
+            - taxon: cor anguinum_leske_1778
+            - taxon: retusus_lamarck_1816
+              notes: attribution uncertain
+              new: true
+              synonyms:
+              - taxon: complanatus_gmelin_1791
+                parents:
+                - taxon: echinus
+            - taxon: subglobosus_leske_1778
+            - taxon: gibbus_lamarck_1816
+              notes: attribution uncertain
+              new: true
+            - taxon: prunella_lamarck_1816
+              notes: attribution uncertain
+              new: true
+            - taxon: radiatus_gmelin_1791
+              synonyms:
+              - taxon: striato-radiatus_leske_1778
+              - taxon: radiatus_gmelin_1791
+                parents:
+                - taxon: echinus
           - taxon: cassidulus
           - taxon: nucleolites
           - taxon: echinus
