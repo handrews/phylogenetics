@@ -331,6 +331,10 @@ ampulla_bruguière_1789:
   name: ampulla
   authority:
     source: 1789a_bruguière
+amygdala_lamarck_1816:
+  name: amygdala
+  authority:
+    source: 1816b_lamarck
 amygdalocystites:
   name: Amygdalocystites
   auth: [billings]
@@ -1907,6 +1911,10 @@ colpoda:
   name: Colpoda
   authority:
     source: 1773_müller.o.f
+columbaria_lamarck_1816:
+  name: columbaria
+  authority:
+    source: 1816b_lamarck
 columbaris_lamarck_1816:
   name: columbaris
   authority:
@@ -6796,8 +6804,14 @@ oviformis_lamarck_1801:
   name: oviformis
   authority:
     source: 1801_lamarck
-ovulum_lamarck_1816:
+ovulum_lamarck_1816_fibularia:
   name: ovulum
+  originalParent: fibularia
+  authority:
+    source: 1816b_lamarck
+ovulum_lamarck_1816_nucleolites:
+  name: ovulum
+  originalParent: nucleolites
   authority:
     source: 1816b_lamarck
 ovarius_leske_1778:
@@ -8526,6 +8540,10 @@ scutiformis_scilla_1759:
   notes: |
     Possibly not a valid Linnaean source, so perhaps this should
     be scutiformis_leske_1759; Seems different from Lamarck 1816?
+scutata_lamarck_1816:
+  name: scutata
+  authority:
+    source: 1816b_lamarck
 scutiformis_lamarck_1816:
   name: scutiformis
   authority:

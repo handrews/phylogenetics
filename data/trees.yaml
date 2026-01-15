@@ -2368,7 +2368,7 @@
             children:
             - taxon: trigona_lamarck_1816
               new: true
-            - taxon: ovulum_lamarck_1816
+            - taxon: ovulum_lamarck_1816_fibularia
               new: true
             - taxon: tarentina_lamarck_1816
               new: true
@@ -2635,6 +2635,19 @@
             - taxon: complanatus_lamarck_1816
               new: true
           - taxon: nucleolites
+            children:
+            - taxon: scutata_lamarck_1816
+              new: true
+              synonyms:
+              - taxon: depressus_leske_1778
+                parents:
+                - taxon: spatangus_leske_1778
+            - taxon: columbaria_lamarck_1816
+              new: true
+            - taxon: ovulum_lamarck_1816_nucleolites
+              new: true
+            - taxon: amygdala_lamarck_1816
+              new: true
           - taxon: echinus
           - taxon: cidarites
         - taxon: fistulides
