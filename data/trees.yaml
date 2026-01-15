@@ -952,6 +952,12 @@
       - taxon: polyphemi_leske_1778
         new: true
         notes: Representing Leske's import of polyphemi_rumph_1705
+    - taxon: brontias
+      new: true
+      notes: defined as a synonym with "icon vid in titulo"
+      children:
+      - taxon: savogineus_leske_1778
+        new: true
     - taxon: cidarites
       new: true
       notes: Some Cidaris species are listed as Cidarites?
@@ -966,6 +972,15 @@
           Cidaris esculenta (Linnaeus, 1758) (with recomb. parens) to
           Tripneustes esculentus (Leske, 1778) while leaving E. esculentus
           alone.
+        children:
+        - taxon: fulcis brevibus_leske_1778
+          new: true
+        - taxon: fulcis longis_leske_1778
+          new: true
+        - taxon: topasina_leske_1778
+          new: true
+        - taxon: decem radiata_leske_1778
+          new: true
       - taxon: saxatilis_leske_1778
         new: true
         notes: Not synonymized with Linnaeus so treating as new?
@@ -1025,14 +1040,22 @@
         new: true
       - taxon: papillata_leske_1778
         new: true
-      - taxon: coronalis_leske_1778
-        new: true
-        parents:
-        - taxon: cidarites
       - taxon: corollaris_leske_1778
         new: true
         parents:
         - taxon: cidarites
+      - taxon: coronalis_leske_1778
+        new: true
+        parents:
+        - taxon: cidarites
+      - taxon: asterizans_leske_1778
+        new: true
+        synonyms:
+        - taxon: corollaris_leske_1778
+        - taxon: asterizans_leske_1778
+        - taxon: savogineus_leske_1778
+          parents:
+          - taxon: brontias
       - taxon: sardica_leske_1778
         new: true
       - taxon: flammea_leske_1778
@@ -1082,11 +1105,13 @@
     - taxon: echinoneus
       new: true
       children:
-      - taxon: cyclostomus_leske_1778
-        new: true
       - taxon: minor_leske_1778_echinoneus
         new: true
-      - taxon: scutiformis_scilla_1759
+      - taxon: cyclostomus_leske_1778
+        new: true
+        synonyms:
+        - taxon: minor_leske_1778_echinoneus
+        - taxon: scutiformis_scilla_1759
     - taxon: echinocorytes
       new: true
       notes: All species listed under Echinocorys listed as Echinocorytes?
@@ -1113,6 +1138,13 @@
         parents:
         - taxon: echinocorytes
         new: true
+        children:
+        - taxon: papillosa_leske_1778
+          new: true
+        - taxon: vudosa_leske_1778
+          new: true
+        - taxon: laevis_leske_1778
+          new: true
       - openTaxon: echinocorys-sp_leske_1778
         notes: species dubia
     - taxon: echinanthus
@@ -1120,14 +1152,17 @@
       children:
       - taxon: humilis_leske_1778
         new: true
+        children:
+        - taxon: petalis acutis_leske_1778
+          new: true
       - taxon: altus_leske_1778
-        new: true
-      - taxon: ovatus_leske_1778_echinanthus
         new: true
       - taxon: orbiculatus_leske_1778
         new: true
-        notes: |
-          Species dubia; unnumbered, unlike even the unnamed echinocorys dubia?
+      - taxon: ovatus_leske_1778_echinanthus
+        new: true
+        synonyms:
+        - taxon: orbiculatus_leske_1778
     - taxon: echinodiscus
       new: true
       children:
@@ -1161,6 +1196,9 @@
         new: true
       - taxon: dentatus_leske_1778
         new: true
+        children:
+        - taxon: minor_leske_1778_dentatus_leske_1778
+          new: true
     - taxon: echinocyamus
       notes: |
         I am unable to determine species from Van Phelsum where this genus
@@ -1203,6 +1241,13 @@
       children:
       - taxon: cor anguinum_leske_1778
         new: true
+        children:
+        - taxon: anglicum_leske_1778
+          new: true
+        - taxon: sucis crispis_leske_1778
+          new: true
+        - taxon: norvagicum_leske_1778
+          new: true
       - taxon: lacunosus_linnaeus_1758
         notes: possibly a distinct species to be credited to Leske?
       - taxon: pusillus_müller.o.f_1776
@@ -1223,6 +1268,15 @@
         new: true
       - taxon: brissus_leske_1778
         new: true
+        children:
+        - taxon: maculosus_leske_1778
+          new: true
+        - taxon: unicolor_leske_1778
+          new: true
+        - taxon: ovatus_leske_1778_brissus_leske_1778
+          new: true
+        - taxon: late carinatus_leske_1778
+          new: true
       - taxon: brissoides_leske_1778
         new: true
       - taxon: ovatus_leske_1778_spatangus_leske_1778
@@ -2482,7 +2536,6 @@
                 taxon: ovatus_leske_1778_spatangus_leske_1778
                 parents:
                 - taxon: spatangus_leske_1778
-          - taxon: spatangus_leske_1778
           - taxon: cassidulus
           - taxon: nucleolites
           - taxon: echinus

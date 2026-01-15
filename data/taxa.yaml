@@ -383,6 +383,11 @@ angelini_jaekel_1899:
   name: angelini
   auth: [jaekel]
   year: 1899
+anglicum_leske_1778:
+  name: anglicum
+  rank: variety
+  authority:
+    source: 1778_leske
 anglidiscus:
   name: Anglidiscus
   auth: [regnéll]
@@ -715,6 +720,10 @@ asteriadæ:
     There is some confusion about this taxon as order vs family, and whether
     it was re-ranked to the modern similarly-spelled family, or re-spelled
     to Asteroidea, although that is always credited to de Blainville.
+asterizans_leske_1778:
+  name: asterizans
+  authority:
+    source: 1778_leske
 asteroidea:
   name: Asteroidea
   rank: Class
@@ -1216,6 +1225,10 @@ bromidocystis:
   name: Bromidocystis
   auth: [sprinkle]
   year: 1982
+brontias:
+  name: Brontias
+  authority:
+    source: 1778_leske
 broweri_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler_2020:
   name: broweri
   auth: [Guensburg, sprinkle, Mooi, Lefebvre, David, Roux, Derstler]
@@ -2570,6 +2583,11 @@ decadactylus_phillips.j_1839:
   authority:
     authors: [phillips.j]
     source: 1839_murchison
+decem radiata_leske_1778:
+  name: decem radiata
+  rank: variety
+  authority:
+    source: 1778_leske
 decies digitatus_leske_1778:
   name: decies digitatus
   authority:
@@ -3904,6 +3922,16 @@ frondosa_gunnerus_1767:
   name: frondosa
   authority:
     source: 1767_gunnerus
+fulcis brevibus_leske_1778:
+  name: fulcis brevibus
+  rank: variety
+  authority:
+    source: 1778_leske
+fulcis longis_leske_1778:
+  name: fulcis longis
+  rank: variety
+  authority:
+    source: 1778_leske
 fungia:
   name: Fungia
   authority:
@@ -5373,6 +5401,11 @@ laevis_bather_1914:
   name: laevis
   auth: [bather]
   year: 1914
+laevis_leske_1778:
+  name: laevis
+  rank: variety
+  authority:
+    source: 1778_leske
 lævis_miller.j.s_1821:
   name: lævis
   authority:
@@ -5420,6 +5453,11 @@ laplysia:
   name: Laplysia
   altSpellingOf: aplysia
   notes: IRMNG deems this an alternate spelling
+late carinatus_leske_1778:
+  name: late carinatus
+  rank: variety
+  authority:
+    source: 1778_leske
 lathyrus_leske_1778:
   name: lathyrus
   authority:
@@ -5809,6 +5847,11 @@ maculata_adams_1800:
   name: maculata
   auth: [Adams]
   year: 1800
+maculosus_leske_1778:
+  name: maculosus
+  rank: variety
+  authority:
+    source: 1778_leske
 madrepora:
   name: Madrepora
   authority:
@@ -6054,6 +6097,12 @@ minervaecystis-sp_sumrall_sprinkle_guensburg_1997:
   rank: species
   authority:
     source: 1997_sumrall_sprinkle_guensburg
+minor_leske_1778_dentatus_leske_1778:
+  name: minor
+  rank: variety
+  originalParent: dentatus_leske_1778
+  authority:
+    source: 1778_leske
 minor_leske_1778_echinocorys:
   name: minor
   originalParent: echinocorys
@@ -6408,6 +6457,11 @@ nolichuckia:
   name: Nolichuckia
   authority:
     source: 1973_sprinkle
+norvagicum_leske_1778:
+  name: norvagicum
+  rank: variety
+  authority:
+    source: 1778_leske
 nucleocrinus:
   name: Nucleocrinus
   authority:
@@ -6647,6 +6701,12 @@ ovata_leske_1778_echinocorys:
   name: ovata
   originalParent: echinocorys
   altSpellingOf: ovatus_leske_1778_echinocorys
+ovatus_leske_1778_brissus_leske_1778:
+  name: ovatus
+  rank: variety
+  originalParent: brissus_leske_1778
+  authority:
+    source: 1778_leske
 ovatus_bruguière_1789:
   name: ovatus
   authority:
@@ -6736,6 +6796,11 @@ pannosus_holloway_jell_1983:
     source: 1983_holloway_jell
 papillata_leske_1778:
   name: papillata
+  authority:
+    source: 1778_leske
+papillosa_leske_1778:
+  name: papillosa
+  rank: variety
   authority:
     source: 1778_leske
 papillosa_linnaeus_1767:
@@ -7066,6 +7131,11 @@ pertusa_müller.o.f_1776:
   name: pertusa
   authority:
     source: 1776_müller.o.f
+petalis acutis_leske_1778:
+  name: petalis acutis
+  rank: variety
+  authority:
+    source: 1778_leske
 petalocystites:
   name: Petalocystites
   authority:
@@ -8289,6 +8359,10 @@ savagella:
   name: Savagella
   auth: [Foerste]
   year: 1920
+savogineus_leske_1778:
+  name: savogineus
+  authority:
+    source: 1778_leske
 saxatilis_leske_1778:
   name: saxatilis
   authority:
@@ -8983,6 +9057,11 @@ subulata_lamarck_1816:
   name: subulata
   authority:
     source: 1816a_lamarck
+sucis crispis_leske_1778:
+  name: sucis crispis
+  rank: variety
+  authority:
+    source: 1778_leske
 suecica_jaekel_1927:
   name: suecica
   auth: [jaekel]
@@ -9268,6 +9347,11 @@ tongshanensis_qiu_lin_1983:
   auth: [Qiu, Lin]
   in: [Qiu, 'et al.']
   year: 1983
+topasina_leske_1778:
+  name: topasina
+  rank: variety
+  authority:
+    source: 1778_leske
 toreumatica_leske_1778:
   name: toreumatica
   authority:
@@ -9532,6 +9616,11 @@ undata_müller.o.f_1784:
     WoRMS incorrectly cites 1778, which it uses as the date of volume 1 of the
     source (although the correct date ia 1779).  However, this species is
     described in volume 2, published in 1784.
+unicolor_leske_1778:
+  name: unicolor
+  rank: variety
+  authority:
+    source: 1778_leske
 uractinina:
   name: Uractinina
   rank: Suborder
@@ -9749,6 +9838,11 @@ vorticellata_hall_1866:
 vorticellatus_hall_1866:
   name: vorticellatus
   altSpellingOf: vorticellata_hall_1866
+vudosa_leske_1778:
+  name: vudosa
+  rank: variety
+  authority:
+    source: 1778_leske
 vulgaris_lamarck_1801:
   name: vulgaris
   authority:
