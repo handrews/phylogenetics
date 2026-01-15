@@ -1,3 +1,18 @@
+Kingdom Animalia (Animaux)
+  Branch Zoophyta (Zoophytes)
+    Class Echinodermata (Échinoderms)
+      Order (Pédicellerés)
+        Family Asterias
+          Asterias
+          Ophiura
+          Euryale
+          Comatula
+        Family Encrinus
+        Family Echinus
+          ...
+        Family Holothuria
+      Order (Sans Pédicellerés)
+
 They are distinguished by their unique organs of movement. Their outer covering is perforated by a large number of small holes arranged in very regular series, through which pass cylindrical membranous tentacles, each terminating in a small disc that acts as a suction cup. The part of these tentacles that remains inside the body is vesicular; a fluid is released into their entire cavity and, at the animal's will, flows into the outer cylindrical part, extending it, or it retracts into the inner vesicular part, and then the outer part collapses. It is by thus lengthening or shortening their hundreds of small feet or tentacles, and by attaching them with the suction cups at their ends, that these animals perform their progressive movements. Vessels originating from these small feet lead to trunks that correspond to their rows and terminate near the mouth. They form a system distinct from that of the intestinal vessels observed in some species.
 
 Linnaeus describes three very natural, but quite numerous, genera, comprising species varied enough to be considered three families.
@@ -48,6 +63,7 @@ which they seize with their feet. Their movements are very slow. The inside of t
 Sea urchins are divided into regular and irregular types. Regular sea urchins,
 
 Sea urchins proper, Lam. (Cidaris. Klein.)
+
 Have their mouth in the middle of their lower surface and the anus directly opposite. The small pores are arranged in ten bands, grouped in pairs, which extend regularly from the mouth to the anus, like meridians on a globe. Almost all are spherical.
 
 Some species have large, thick spines of very diverse shapes, borne on large tubercles of their test, and whose bases are surrounded by other smaller spines (1).
@@ -55,3 +71,120 @@ Some species have large, thick spines of very diverse shapes, borne on large tub
 It is among these species that, as Messrs. Deluc discovered, those whose olive-shaped spines are quite often found petrified in chalk or other ancient formations, and have received the name of Jewish stones (2).
 
 The most numerous species, and especially those of our coasts, have only thin spines articulated on much more numerous small tubercles. Such is
+
+The common sea urchin (Echinus esculentus. Lin.) Klein.
+Lesk. I, A, B, Encycl. 132, is the size and shape of an apple, entirely covered with short, stiff spines, usually violet in color. In the spring, its ovaries, which are reddish and have a rather pleasant taste, are eaten raw.
+
+The related species are quite difficult to distinguish, due to the greater or lesser proximity of the rows of pores, the equality or inequality of the tubercles, etc. (1).
+
+Some round and flattened sea urchins lose their regularity due to a wide furrow that is grooved into one side (2).
+
+There are also sea urchins with opposite mouth and anus, which, instead of a spheroidal shape on a circular plane, are transversely oval, that is, one of their diameters is larger than the other.
+
+They also differ from each other in the equality or inequality of the spines.
+
+And by the relative proportions of the tubercles (3).
+One species should be distinguished:
+
+(Echinus atratus. L.) Encycl. 140, I 4 or ^ The spines, which are broad, truncated, and angular at their extremities, touch each other like paving stones. Those on the edge are elongated and flattened.
+
+We called all sea urchins irregular in which the anus is not
+opposite the mouth. It appears that they are furnished only with short and slender spines, almost like hairs. Among them, some still have the mouth in the middle of the base. They can be subdivided according to the extent of the bands of pores for the tube feet; sometimes they extend, as in the preceding ones, from the mouth to a point directly opposite, where they meet after having encompassed the entire test; and in these,
+
+The Echinons. Phelsum and Leske.
+
+Have the round or oval shape of certain irregular sea urchins, the mouth in the middle of the base, and the anus between the mouth and the edge or near the edge, but underneath (i).
+
+The Nucleolites. Lam.
+
+Have, with these same characteristics, the anus near the edge, but on the upper side.
+Others,
+
+The Galerites. Lam. (Conulus. Kl.)
+
+Have a flat base on which their body rises in a cone or a semi-ellipsoid. The mouth is in the middle of the base, and the anus near its edge.
+
+They are very common in stony layers, but no living ones are known.
+
+The most widespread is Echinus vulgaris. L. Encycl. 153, 6-7; Klein, d.Fr. VII, D.G. (1).
+
+Some do not have their bands of pores distributed in a quinary number (2).
+
+The Scutelles. Lam.
+
+Have the anus between the mouth and the edge, the test excessively depressed, flat underneath, of a shape approaching the orbicular.
+Some have it entire and without other holes than the small pores that are seen in other sea urchins. (3).
+
+Others also have the test without holes, but cut with two notches.
+Others have it entire and pierced through and through by some
+large holes that do not penetrate into its cavity (5). Still others have it notched and pierced with these large
+holes.
+
+Finally, there are some (the Rotula. Kl.) where a part of the posterior edge is scalloped, like a toothed wheel; and these are further divided according to whether they have large holes (7) or
+lack them (8).
+
+The Cassidules. Lam.
+
+Are oval and have the anus above the edge, like the Nucleolites, from which they differ by their incomplete pore bands forming a star (i).
+
+Other irregular sea urchins do not have the mouth in the center
+of their base, but it is towards one side, opening transversely and directed obliquely; the anus is towards the other side. They are also subdivided according to the extent of their rows of holes.
+
+Thus the Ananchites, Lam. (Galeæ: Klein.) have
+approximately the shape of the Galerites and their bands are complete; their greatest difference lies in the position of
+their mouth. Only fossil specimens are known.
+
+Such is Echinus ovatus L., a species found in countless numbers in the chalk formations of our region (2).
+Some have bands in a quaternary number (3).
+A particular subgenus could be made of certain species where the four lateral bands are arranged in pairs and do not meet at the same point (4).
+
+At other times, these irregular sea urchins with a central mouth have pore bands that do not extend to the mouth, but form a kind of rosette on their back. Such are
+
+The Clypeasters. Lam. (Echinanthus. Klein.)
+
+These have the anus near the edge, and their body is depressed, with an oval base, concave underneath. They sometimes have a slightly angular outline (1).
+
+Sometimes their back is raised in the middle (2).
+
+There are also some whose outline is not angular (3).
+
+And even some where it is almost orbicular (the Laganum. Klein.) (4).
+
+The Tabulars. Lam. (Echinocyamus. Leske.)
+
+These, like the Clypeasters, have a rosette of pores, a nearly globulous body, and the mouth and anus close together in the middle of the underside. They are usually very small (5).
+
+On the contrary, the Spatangus. Lam. (Spatangus. Kl.) have, like the Ananchites, a lateral mouth, incomplete pore bands, forming a rosette on the back. There are usually only four; the one directed towards the mouth is obliterated.
+
+Some (the Brissods. Kl.) have an oval test, without furrows (6).
+
+Others have a more or less marked furrow in the direction of the obliterated band (1). When they otherwise retain the oval shape, they are the Brissus. Kl.; but sometimes this furrow deepens, and the test, widening at the same time on that side, takes the shape of a heart (2).
+
+We have specimens of these last two forms in our seas. Branched tentacles, like those of holothurians, have been observed around their mouth.
+
+Sea Cucumbers (Holothuria. L.)
+
+They have an oblong, leathery body, open at both ends. At the anterior extremity is the mouth, surrounded by very complex, branched tentacles, which can be completely retracted; at the opposite extremity, a cloaca opens, into which the rectum and the respiratory organ, in the form of a hollow, highly branched tree, empty. This organ fills with or empties of water at the animal's will. The mouth has no teeth and is only lined with a circle of bony pieces; pocket-shaped appendages secrete saliva into it. The intestine is very long, variously folded, and attached to the sides of the body by a kind of mesentery; a kind of partial circulation takes place in a very complicated double system of vessels, solely related to the intestinal canal, and in a part of whose network one of the two respiratory trees we have just mentioned is intertwined. The ovary is composed of a multitude of blind vessels, partly branched, all leading to the mouth through a small common oviduct; during gestation, they undergo prodigious expansion and then fill with a red, granular substance, which appears to be the eggs. Extremely extensible cords attached near the anus, and which develop at the same time, appear to be the male organs. These animals would therefore be hermaphroditic. When disturbed, they often contract with such force that they tear and expel their intestines.
+
+Sea cucumbers can be divided according to the distribution of their feet.
+
+In some, they are all located in the middle of the underside of the body, which forms a softer disc on which the animal crawls, raising the two extremities where the head and anus are located, and which narrow more than the middle. The anus, in particular, ends almost in a point. Their tentacles are very large when they develop.
+
+We have one in our seas whose covering is almost scaly (Hol. phantapus, L.), Müller, Zool. Dan. CXII, CXIII, Mem. de Stok. 1767. The feet of its ventral disc are in three series.
+
+Others have the lower surface completely flat and soft, covered with an infinite number of feet, and the upper surface convex, even supported by bony scales, and pierced at the front by a star-shaped opening which is the mouth, from which the tentacles emerge, and at the back by a round hole which is the anus.
+
+We have a small one (Hol. squamata. Müller, Zool. Dan. X, I); but there are quite large ones in warmer seas (1).
+
+Others have a cartilaginous body, flattened horizontally, sharp at the edges; the mouth and feet are on the lower surface, and the anus at the posterior extremity. Such is, in the Mediterranean,
+
+The Pudendian regale. Fab. Columu. Aquat. XXVI, I;
+a species more than a foot long, three to four inches wide, crenellated all around.
+
+Still others have a cylindrical body, capable of swelling in all directions by the absorption of water; the entire underside is covered with feet, and the rest of the surface is variously bristly.
+
+Our seas, especially the Mediterranean, produce abundantly one of a blackish color, which is more than a foot long when fully extended; its back is covered with conical and soft spines; its mouth is furnished with twenty branched tentacles: this is Holothuria tremula. Gm., Bohatsch. Anim. mar. VI and VII (2). Its mouth is slightly open, and the feet are arranged in five rows, which extend like melon ribs from the mouth, leading to them being called sea cucumbers.  Such is the case in our seas with
+
+Holothuria frondosa, L. Gunner. Mem. of Stockholm, 1767, and under the name Pentacta, Abildg. Zool. Dan. CVII, 1, 2, and GXXIV, which has a brown body, a foot or more long (3).
+
+Finally, there are some whose bodies are also covered with feet all around (1).
