@@ -2589,8 +2589,8 @@
               synonyms:
               - taxon: pusillus_müller.o.f_1776
                 notes: |
-                  Synonymized as Leske apud Klein, but that seems to be
-                  Müller's credit (although it is not entirely clear).
+                  Synonymized as Leske apud Klein, but that seems to be properly
+                  credited to Müller (although it is not entirely clear).
             - taxon: punctatus_lamarck_1816
               notes: attribution uncertain
               new: true
@@ -2619,6 +2619,21 @@
                 parents:
                 - taxon: echinus
           - taxon: cassidulus
+            children:
+            - taxon: scutella_lamarck_1816
+              new: true
+            - taxon: australis_lamarck_1816
+              new: true
+            - taxon: lapis cancri_leske_1778
+              synonyms:
+              - taxon: lapis cancri_leske_1778
+                parents:
+                - taxon: echinites
+              - taxon: lapis cancri_leske_1778
+                parents:
+                - taxon: echinus
+            - taxon: complanatus_lamarck_1816
+              new: true
           - taxon: nucleolites
           - taxon: echinus
           - taxon: cidarites

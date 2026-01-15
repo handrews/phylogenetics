@@ -832,6 +832,10 @@ austrocystites:
   name: Austrocystites
   authority:
     source: 1963_brown.i.a
+australis_lamarck_1816:
+  name: australis
+  authority:
+    source: 1816b_lamarck
 australocystinae:
   name: Australocystinae
   rank: Subfamily
@@ -2028,7 +2032,12 @@ complanatus_gmelin_1791:
   name: complanatus
   auth: [Gmelin]
   year: 1791
-  notes: an echinoid
+  notes: Spatangus (Leske)
+complanatus_lamarck_1816:
+  name: complanatus
+  authority:
+    source: 1816b_lamarck
+  notes: Cassidulus
 cor anguinum_leske_1778:
   name: cor anguinum
   authority:
@@ -8500,6 +8509,11 @@ scutella:
   name: Scutella
   authority:
     source: 1816b_lamarck
+scutella_lamarck_1816:
+  name: scutella
+  authority:
+    source: 1816b_lamarck
+  notes: Cassidulus scutella, not Scutella
 scutellatus_lamarck_1801:
   name: scutellatus
   authority:
