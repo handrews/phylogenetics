@@ -7,6 +7,10 @@ acanthalepis:
   name: Acanthalepis
   auth: [mccoy]
   year: 1846
+acanthocystites:
+  name: Acanthocystites
+  auth: [barrande]
+  year: 1887
 actinia:
   name: Actinia
   authority:
@@ -26,6 +30,10 @@ actinocrinites:
   name: Actinocrinites
   authority:
     source: 1821_miller.j.s
+acutus_lamarck_1816:
+  name: acutus
+  authority:
+    source: 1816b_lamarck
 aculeata_linnaeus_1767:
   name: aculeata
   authority:
@@ -35,6 +43,10 @@ aculeata_pennant_1777:
   auth: [Pennant]
   year: 1777
   notes: Probably not the same as aculeata_linnaeus_1767
+acuminata_lamarck_1816:
+  name: acuminata
+  authority:
+    source: 1816a_lamarck
 acuticarpus:
   name: Acuticarpus
   authority:
@@ -76,14 +88,6 @@ aethocrinus:
   name: Aethocrinus
   auth: [ubaghs]
   year: 1969
-acanthocystites:
-  name: Acanthocystites
-  auth: [barrande]
-  year: 1887
-acuminata_lamarck_1816:
-  name: acuminata
-  authority:
-    source: 1816a_lamarck
 africana_forsskål_1775:
   name: africana
   auth: [forsskål]
@@ -591,6 +595,12 @@ arenata_lamarck_1816:
   name: arenata
   authority:
     source: 1816a_lamarck
+  notes: Asterias
+arenatus_lamarck_1816:
+  name: arenatus
+  authority:
+    source: 1816b_lamarck
+  notes: Echinus
 argodiscus:
   name: Argodiscus
   auth: [Prokop]
@@ -874,6 +884,9 @@ baccata_forbes_1848:
 baccatus_forbes_1848:
   name: baccatus
   altSpellingOf: baccata_forbes_1848
+bafteri_leske_1778:
+  name: bafteri
+  altSpellingOf: basteri_leske_1778
 balangicystis:
   name: Balangicystis
   authority:
@@ -919,6 +932,11 @@ bassleridiscus:
   name: Bassleridiscus
   auth: [Fisher]
   year: 1951
+basteri_leske_1778:
+  name: basteri
+  rank: variety
+  authority:
+    source: 1778_leske
 batheri_ruedemann_1925:
   name: batheri
   auth: [ruedemann]
@@ -1033,6 +1051,10 @@ biforis_gmelin_1791:
   name: biforis
   auth: [Gmelin]
   year: 1791
+bigranularis_lamarck_1816:
+  name: bigranularis
+  authority:
+    source: 1816b_lamarck
 bigsbyi_billings_1857:
   name: bigsbyi
   auth: [billings]
@@ -1628,8 +1650,8 @@ celtocrinus:
   name: Celtocrinus
   auth: [Donovan, Cope]
   year: 1989
-cerasi_leske_1778:
-  name: cerasi
+nucleus cerasi_leske_1778:
+  name: nucleus cerasi
   authority:
     source: 1778_leske
 cerasus_buch_1840:
@@ -2773,11 +2795,6 @@ devonica_sieverts-doreck_1951:
 devonicus_sieverts-doreck_1951:
   name: devonicus
   altSpellingOf: devonica_sieverts-doreck_1951
-diadema_leske_1778:
-  name: diadema
-  authority:
-    source: 1778_leske
-  notes: Relationship to diadema Linnaeus 1758 unclear.
 diadema_linnaeus_1758:
   name: diadema
   authority:
@@ -3688,14 +3705,13 @@ eschara:
   name: Eschara
   authority:
     source: 1758_linnaeus
+esculenta_linnaeus_1758:
+  name: esculenta
+  altSpellingOf: esculentus_linnaeus_1758
 esculentus_linnaeus_1758:
   name: esculentus
   authority:
     source: 1758_linnaeus
-esculenta_leske_1778:
-  name: esculenta
-  authority:
-    source: 1778_leske
 etoctenocystis:
   name: Etoctenocystis
   auth: [fatka, kordule]
@@ -3810,6 +3826,10 @@ fasciata_forsskål_1775:
   name: fasciata
   auth: [forsskål]
   year: 1775
+fasciatus_lamarck_1816:
+  name: fasciatus
+  authority:
+    source: 1816b_lamarck
 fasciola:
   name: Fasciola
   authority:
@@ -4115,6 +4135,10 @@ glenocrinus:
   name: Glenocrinus
   authority:
     source: 2003_guensburg_sprinkle
+globiformis_lamarck_1816:
+  name: globiformis
+  authority:
+    source: 1816b_lamarck
 globoeocrinus:
   name: Globoeocrinus
   auth: [zhao.y.l, parsley, peng.j]
@@ -4365,6 +4389,10 @@ granifera_lamarck_1816:
   name: granifera
   authority:
     source: 1816a_lamarck
+granularis_lamarck_1816:
+  name: granularis
+  authority:
+    source: 1816b_lamarck
 granulata_leske_1778:
   name: granulata
   authority:
@@ -5771,6 +5799,10 @@ lithophytes:
   name: Lithophytes
   vulgarSpellingOf: lithophyta
   lang: FR
+lividus_lamarck_1816:
+  name: lividus
+  authority:
+    source: 1816b_lamarck
 lixula_linnaeus_1758:
   name: lixula
   authority:
@@ -5904,6 +5936,10 @@ maculata_adams_1800:
   name: maculata
   auth: [Adams]
   year: 1800
+maculatus_lamarck_1816:
+  name: maculatus
+  authority:
+    source: 1816b_lamarck
 maculosus_leske_1778:
   name: maculosus
   rank: variety
@@ -5936,6 +5972,11 @@ mahlburgi_kolata_1975:
   name: mahlburgi
   authority:
     source: 1975_kolata
+major_leske_1778:
+  name: major
+  rank: variety
+  authority:
+    source: 1778_leske
 malaisei_regnéll_1951:
   name: malaisei
   auth: [regnéll]
@@ -5955,15 +5996,6 @@ malum_pander_1830:
   name: malum
   auth: [Pander]
   year: 1830
-mammillata_leske_1778:
-  name: mammillata
-  authority:
-    source: 1778_leske
-  notes: Relation to mammillatus Linn. 1758 unclear.
-mamillatus_linnaeus_1758:
-  name: mamillatus
-  authority:
-    source: 1758_linnaeus
 mammalia:
   name: Mammalia
   rank: Class
@@ -5985,6 +6017,36 @@ mammillaris_pallas_1774:
   name: mammillaris
   altSpellingOf: mamillaris_pallas_1774
   notes: Misspelled in 1789a_bruguière
+mammillata_linnaeus_1758:
+  name: mammillata
+  altSpellingOf: mamillatus_linnaeus_1758
+mamillatus_linnaeus_1758:
+  name: mamillatus
+  authority:
+    source: 1758_linnaeus
+mammillatus_linnaeus_1758:
+  name: mammillatus
+  altSpellingOf: mamillatus_linnaeus_1758
+mammillata-var-1_leske_1778:
+  name: null
+  rank: variety
+  authority:
+    source: 1778_leske
+mammillata-var-2_leske_1778:
+  name: null
+  rank: variety
+  authority:
+    source: 1778_leske
+mammillata-var-3_leske_1778:
+  name: null
+  rank: variety
+  authority:
+    source: 1778_leske
+mammillata-var-4_leske_1778:
+  name: null
+  rank: variety
+  authority:
+    source: 1778_leske
 mandalacystis:
   name: Mandalacystis
   authority:
@@ -5993,6 +6055,10 @@ mansfieldi_guensburg_2010:
   name: mansfieldi
   auth: [guensburg]
   year: 2010
+margaritaceus_lamarck_1816:
+  name: margaritaceus
+  authority:
+    source: 1816b_lamarck
 marginatus_lamarck_1816:
   name: marginatus
   authority:
@@ -6062,6 +6128,10 @@ megapinacotus_ehlers_kesling_1958:
   name: megapinacotus
   auth: [Ehlers, kesling]
   year: 1958
+melo_lamarck_1816:
+  name: melo
+  authority:
+    source: 1816b_lamarck
 membranacea_retzius_1783:
   name: membranacea
   auth: [Retzius]
@@ -6112,10 +6182,16 @@ metazoa-grade:
   rank: Grade
   auth: [haeckel]
   year: 1874
+miliaris_müller.p.l.s_1776:
+  name: miliaris
+  auth: [müller.p.l.s]
+  year: 1776
+  notes: an echinoid
 militaris_müller.o.f_1776:
   name: militaris
   authority:
     source: 1776_müller.o.f
+  notes: Asterias
 millepora:
   name: Millepora
   authority:
@@ -6154,6 +6230,12 @@ minervaecystis-sp_sumrall_sprinkle_guensburg_1997:
   rank: species
   authority:
     source: 1997_sumrall_sprinkle_guensburg
+minor_leske_1778_angulosa_leske_1778_cidaris:
+  name: minor
+  rank: variety
+  originalParent: angulosa_leske_1778_cidaris
+  authority:
+    source: 1778_leske
 minor_leske_1778_dentatus_leske_1778:
   name: minor
   rank: variety
@@ -6168,6 +6250,12 @@ minor_leske_1778_echinocorys:
 minor_leske_1778_echinoneus:
   name: minor
   originalParent: echinoneus
+  authority:
+    source: 1778_leske
+minor_leske_1778_papillata_leske_1778:
+  name: minor
+  rank: variety
+  originalParent: papillata_leske_1778
   authority:
     source: 1778_leske
 minor_leske_1778_spatangus_leske_1778:
@@ -6414,6 +6502,10 @@ neglecta_smith.a.b_1983:
   name: neglecta
   auth: [smith.a.b]
   year: 1983
+neglectus_lamarck_1816:
+  name: neglectus
+  authority:
+    source: 1816b_lamarck
 negrina_öpik_1975:
   name: negrina
   auth: [Öpik]
@@ -6464,6 +6556,11 @@ nigra_abildgaard_1789:
   auth: [Abildgaard]
   in: [müller.o.f]
   year: 1789
+nigra_leske_1778:
+  name: nigra
+  rank: variety
+  authority:
+    source: 1778_leske
 nimius_bell.b.m_sprinkle_1978:
   name: nimius
   auth: [bell.b.m, sprinkle]
@@ -6564,6 +6661,12 @@ obtusangula_lamarck_1816:
   name: obtusangula
   authority:
     source: 1816a_lamarck
+  notes: Asterias
+obtusangulus_lamarck_1816:
+  name: obtusangulus
+  authority:
+    source: 1816b_lamarck
+  notes: Echinus
 ocellifera_lamarck_1816:
   name: ocellifera
   authority:
@@ -6818,6 +6921,10 @@ ovarius_leske_1778:
   name: ovarius
   authority:
     source: 1778_leske
+ovum_lamarck_1816:
+  name: ovum
+  authority:
+    source: 1816b_lamarck
 ###################### P
 pahvanticystis:
   name: Pahvanticystis
@@ -6845,6 +6952,10 @@ palasterina:
   name: Palasterina
   auth: [mccoy]
   year: 1851
+pallidus_lamarck_1816:
+  name: pallidus
+  authority:
+    source: 1816b_lamarck
 palmeri_sprinkle_1973:
   name: palmeri
   authority:
@@ -7133,6 +7244,10 @@ pentagonula_lamarck_1816:
   name: pentagonula
   authority:
     source: 1816a_lamarck
+pentagonus_lamarck_1816:
+  name: pentagonus
+  authority:
+    source: 1816b_lamarck
 pentangularis_miller.j.s_1821:
   name: pentangularis
   authority:
@@ -7252,6 +7367,10 @@ pilea_hall_1866:
   name: pilea
   auth: [Hall]
   year: 1866
+pileolus_lamarck_1816:
+  name: pileolus
+  authority:
+    source: 1816b_lamarck
 pileus_hall_1866:
   name: pileus
   altSpellingOf: pilea_hall_1866
@@ -7513,6 +7632,10 @@ polyus_forsskål_1775:
   name: polyus
   auth: [forsskål]
   year: 1775
+polyzonalis_lamarck_1816:
+  name: polyzonalis
+  authority:
+    source: 1816b_lamarck
 pomum_wahlenberg_1821:
   name: pomum
   auth: [Wahlenberg]
@@ -7738,6 +7861,10 @@ punctatus_ulrich_1886:
   name: punctatus
   auth: [Ulrich]
   year: 1886
+punctulatus_lamarck_1816:
+  name: punctulatus
+  authority:
+    source: 1816b_lamarck
 purpureus_müller.o.f_1776:
   name: purpureus
   authority:
@@ -7760,6 +7887,9 @@ pustulosa_leske_1778_cidaris:
   originalParent: cidaris
   authority:
     source: 1778_leske
+pustulosus_leske_1778_cidaris:
+  name: pustulosus
+  altSpellingOf: pustulosa_leske_1778_cidaris
 pustulosus_leske_1778_echinocorys:
   name: pustulosus
   originalParent: echinocorys
@@ -8444,6 +8574,9 @@ sardica_leske_1778:
   name: sardica
   authority:
     source: 1778_leske
+sardicus_leske_1778:
+  name: sardicus
+  altSpellingOf: sardica_leske_1778
 savagella:
   name: Savagella
   auth: [Foerste]
@@ -8452,11 +8585,6 @@ savogineus_leske_1778:
   name: savogineus
   authority:
     source: 1778_leske
-saxatilis_leske_1778:
-  name: saxatilis
-  authority:
-    source: 1778_leske
-  notes: Appears to be different from Linnaeus 1758, but unclear.
 saxatilis_linnaeus_1758:
   name: saxatilis
   authority:
@@ -8515,6 +8643,10 @@ scotiaecystis-sp_sumrall_sprinkle_guensburg_1997:
   rank: species
   authority:
     source: 1997_sumrall_sprinkle_guensburg
+sculptus_lamarck_1816:
+  name: sculptus
+  authority:
+    source: 1816b_lamarck
 scutatus_leske_1778:
   name: scutatus
   authority:
@@ -8622,6 +8754,11 @@ sertularia:
   name: Sertularia
   authority:
     source: 1758_linnaeus
+setosa_leske_1778:
+  name: setosa
+  rank: variety
+  authority:
+    source: 1778_leske
 sexfasciatus_gmelin_1791:
   name: sexfasciatus
   auth: [Gmelin]
@@ -8801,6 +8938,16 @@ sphagoblastus:
   name: Sphagoblastus
   authority:
     source: 1983_jell
+spinis claviculatis_leske_1778:
+  name: spinis claviculatis
+  rank: variety
+  authority:
+    source: 1778_leske
+spinis conoideis_leske_1778:
+  name: spinis conoideis
+  rank: variety
+  authority:
+    source: 1778_leske
 spinosa_smith.a.b_jell_1990:
   name: spinosa
   authority:
@@ -9130,10 +9277,18 @@ subangularis_miller.j.s_1821:
   name: subangularis
   authority:
     source: 1821_miller.j.s
+subangulosus_lamarck_1816:
+  name: subangulosus
+  authority:
+    source: 1816b_lamarck
 subbasaltiformis_miller.j.s_1821:
   name: subbasaltiformis
   authority:
     source: 1821_miller.j.s
+subcæruleus_lamarck_1816:
+  name: subcæruleus
+  authority:
+    source: 1816b_lamarck
 subglobosus_hall_1862:
   name: subglobosus
   auth: [hall]
@@ -9461,6 +9616,10 @@ toreumatica_leske_1778:
   name: toreumatica
   authority:
     source: 1778_leske
+toreumaticus_leske_1778:
+  name: toreumaticus
+  authority:
+    source: 1778_leske
 tormoblastus:
   name: Tormoblastus
   auth: [jaekel]
@@ -9547,6 +9706,10 @@ trigona_lamarck_1816:
   name: trigona
   authority:
     source: 1816b_lamarck
+trigonarius_lamarck_1816:
+  name: trigonarius
+  authority:
+    source: 1816b_lamarck
 trilobita:
   name: Trilobita
   rank: Class
@@ -9575,6 +9738,10 @@ trochus:
   name: Trochus
   authority:
     source: 1758_linnaeus
+tuberculatus_lamarck_1816:
+  name: tuberculatus
+  authority:
+    source: 1816b_lamarck
 tuberculatus_miller.j.s_1821_pentacrinites:
   name: tuberculatus
   originalParent: pentacrinites
@@ -9781,6 +9948,14 @@ variegata_leske_1778:
   name: variegata
   authority:
     source: 1778_leske
+variegatus_leske_1778:
+  name: variegatus
+  authority:
+    source: 1778_leske
+variolaris_lamarck_1816:
+  name: variolaris
+  authority:
+    source: 1816b_lamarck
 variolata_bruzelius_1805:
   name: variolata
   auth: [Bruzelius]
@@ -9805,8 +9980,14 @@ venosa_müller.o.f_1776:
   name: venosa
   authority:
     source: 1776_müller.o.f
-ventricosus_lamarck_1816:
+ventricosus_lamarck_1816_echinus:
   name: ventricosus
+  originalParent: echinus
+  authority:
+    source: 1816b_lamarck
+ventricosus_lamarck_1816_spatangus_leske_1778:
+  name: ventricosus
+  originalParent: spatangus_leske_1778
   authority:
     source: 1816b_lamarck
 venus:
@@ -9888,6 +10069,15 @@ violacea_leske_1778:
   name: violacea
   authority:
     source: 1778_leske
+viridi flava_leske_1778:
+  name: viridi flava
+  rank: variety
+  authority:
+    source: 1778_leske
+virgatus_lamarck_1816:
+  name: virgatus
+  authority:
+    source: 1816b_lamarck
 virgenea_müller.o.f_1776:
   name: virgenea
   authority:

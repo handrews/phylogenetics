@@ -964,14 +964,7 @@
     - taxon: cidaris
       new: true
       children:
-      - taxon: esculenta_leske_1778
-        new: true
-        notes: |
-          Definitely different from E. esculentus Linn., although it may
-          have been intended to be the same.  IRMNG assignes
-          Cidaris esculenta (Linnaeus, 1758) (with recomb. parens) to
-          Tripneustes esculentus (Leske, 1778) while leaving E. esculentus
-          alone.
+      - taxon: esculenta_linnaeus_1758
         children:
         - taxon: fulcis brevibus_leske_1778
           new: true
@@ -981,13 +974,17 @@
           new: true
         - taxon: decem radiata_leske_1778
           new: true
-      - taxon: saxatilis_leske_1778
-        new: true
-        notes: Not synonymized with Linnaeus so treating as new?
+      - taxon: saxatilis_linnaeus_1758
+        children:
+        - taxon: basteri_leske_1778
+          new: true
       - taxon: hemisphærica_leske_1778
         new: true
       - taxon: angulosa_leske_1778_cidaris
         new: true
+        children:
+        - taxon: minor_leske_1778_angulosa_leske_1778_cidaris
+          new: true
       - taxon: excavatus_leske_1778
         new: true
         parents:
@@ -1008,9 +1005,14 @@
         - taxon: polyphemi_leske_1778
           parents:
           - taxon: oculus
-      - taxon: diadema_leske_1778
-        new: true
-        notes: Not synonymized with Linnaeus so treating as new?
+      - taxon: diadema_linnaeus_1758
+        children:
+        - taxon: viridi flava_leske_1778
+          new: true
+        - taxon: setosa_leske_1778
+          new: true
+        - taxon: nigra_leske_1778
+          new: true
       - taxon: ovarius_leske_1778
         new: true
       - taxon: subangularis_leske_1778
@@ -1036,10 +1038,28 @@
         new: true
         parents:
         - taxon: cidarites
-      - taxon: mammillata_leske_1778
-        new: true
+      - taxon: mammillata_linnaeus_1758
+        notes: States "Four varieties in terms of spines"
+        children:
+        - openTaxon: mammillata-var-1_leske_1778
+          new: true
+        - openTaxon: mammillata-var-2_leske_1778
+          new: true
+        - openTaxon: mammillata-var-3_leske_1778
+          new: true
+        - openTaxon: mammillata-var-4_leske_1778
+          new: true
       - taxon: papillata_leske_1778
         new: true
+        children:
+        - taxon: major_leske_1778
+          new: true
+        - taxon: minor_leske_1778_papillata_leske_1778
+          new: true
+        - taxon: spinis conoideis_leske_1778
+          new: true
+        - taxon: spinis claviculatis_leske_1778
+          new: true
       - taxon: corollaris_leske_1778
         new: true
         parents:
@@ -1204,7 +1224,7 @@
         I am unable to determine species from Van Phelsum where this genus
         was established, so unclear if any should be credited to Van Phelsum.
       children:
-      - taxon: cerasi_leske_1778
+      - taxon: nucleus cerasi_leske_1778
         new: true
       - taxon: verticecentrali_leske_1778
         new: true
@@ -2540,7 +2560,7 @@
             children:
             - taxon: pectoralis_lamarck_1816
               new: true
-            - taxon: ventricosus_lamarck_1816
+            - taxon: ventricosus_lamarck_1816_spatangus_leske_1778
               new: true
               notes: |
                 Synonymized with "Brissus ventricosus Leske ad Klein"
@@ -2649,6 +2669,141 @@
             - taxon: amygdala_lamarck_1816
               new: true
           - taxon: echinus
+            children:
+            - taxon: esculentus_linnaeus_1758
+            - taxon: ventricosus_lamarck_1816_echinus
+              new: true
+              synonyms:
+              - taxon: miliaris_müller.p.l.s_1776
+                notes: Given as C. miliaris Leske 1778, but no such species?
+                parents:
+                - taxon: cidaris
+            - taxon: granularis_lamarck_1816
+              new: true
+            - taxon: virgatus_lamarck_1816
+              new: true
+            - taxon: globiformis_lamarck_1816
+              new: true
+              synonyms:
+              - tentative: true
+                taxon: sphæra_müller.o.f_1776
+                notes: Given as sphæra Gm. but probably Müller?
+            - taxon: fasciatus_lamarck_1816
+              new: true
+            - taxon: pileolus_lamarck_1816
+              new: true
+            - taxon: melo_lamarck_1816
+              new: true
+            - taxon: sardicus_leske_1778
+              synonyms:
+              - taxon: sardica_leske_1778
+                parents:
+                - taxon: cidaris
+            - taxon: acutus_lamarck_1816
+              new: true
+            - taxon: pentagonus_lamarck_1816
+              new: true
+            - taxon: obtusangulus_lamarck_1816
+              new: true
+              synonyms:
+              - taxon: angulosa_leske_1778_cidaris
+                parents:
+                - taxon: cidaris
+            - taxon: polyzonalis_lamarck_1816
+              new: true
+            - taxon: maculatus_lamarck_1816
+              new: true
+            - taxon: variolaris_lamarck_1816
+              new: true
+            - taxon: margaritaceus_lamarck_1816
+              notes: |
+                Habite... les mers australes ? La figure de l’echinus
+                toreumaticus (Klein et Leske, tab. 10. fig. D—E.) rend assez
+                bien notre espèce; mais la description ne lui convient pas.
+              new: true
+            - taxon: sculptus_lamarck_1816
+              new: true
+              synonyms:
+              - tentative: true
+                taxon: toreumaticus_leske_1778
+                notes: Credited to Gmelin?  Perhaps because of the genus?
+                parents:
+                - taxon: echinus
+            - taxon: punctulatus_lamarck_1816
+              new: true
+              notes: Something about Cidaris pustulos Leske, needs translation
+            - taxon: ovum_lamarck_1816
+              new: true
+            - taxon: pallidus_lamarck_1816
+              new: true
+            - taxon: subangulosus_lamarck_1816
+              new: true
+              synonyms:
+              - taxon: minor_leske_1778_angulosa_leske_1778_cidaris
+                parents:
+                - taxon: angulosa_leske_1778_cidaris
+                - taxon: cidaris
+            - taxon: variegatus_leske_1778
+              synonyms:
+              - taxon: variegata_leske_1778
+                parents:
+                - taxon: cidaris
+            - taxon: subcæruleus_lamarck_1816
+              new: true
+            - taxon: pustulosus_leske_1778_cidaris
+              synonyms:
+              - taxon: pustulosa_leske_1778_cidaris
+                parents:
+                - taxon: cidaris
+            - taxon: neglectus_lamarck_1816
+              new: true
+              synonyms:
+              - tentative: true
+                taxon: hemisphærica_leske_1778
+                parents:
+                - taxon: cidaris
+            - taxon: miliaris_müller.p.l.s_1776
+              notes: |
+                Synonomized w/C. miliaris saxatils Leske, which does not
+                seem to exist in Leske 1778. Nor does C. miliaris at all.
+                Possibly C. saxatilis (from E. saxatilis Linn.) was intended?
+                But that is tentatively synonymized with E. lividus?
+            - taxon: rotularis_lamarck_1816
+              new: true
+            - taxon: lividus_lamarck_1816
+              new: true
+              synonyms:
+              - tentative: true
+                taxon: saxatilis_linnaeus_1758
+            - taxon: tuberculatus_lamarck_1816
+              new: true
+            - taxon: bigranularis_lamarck_1816
+              new: true
+            - taxon: arenatus_lamarck_1816
+              new: true
+            - taxon: lucunter_linnaeus_1758
+              synonyms:
+              - taxon: lucunter_leske_1778
+                notes: Leske thought this was separate? If reading right?
+                parents:
+                - taxon: cidaris
+            - taxon: atratus_linnaeus_1758
+              synonyms:
+              - taxon: violacea_leske_1778
+                parents:
+                - taxon: cidaris
+            - taxon: mammillatus_linnaeus_1758
+              synonyms:
+              - taxon: mammillata_linnaeus_1758
+                parents:
+                - taxon: cidaris
+            - taxon: trigonarius_lamarck_1816
+              new: true
+              synonyms:
+              - openTaxon: mammillata-var-4_leske_1778
+                parents:
+                - taxon: mammillata_linnaeus_1758
+                - taxon: cidaris
           - taxon: cidarites
         - taxon: fistulides
           children:

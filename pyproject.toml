@@ -11,6 +11,8 @@ phylohist = 'phylohist.main:main'
 [tool.poetry.dependencies]
 python = "^3.8"
 coloredlog = "^0.2.5"
+pyyaml = "^6.0.3"
+jschon = "^0.11.1"
 
 
 [build-system]

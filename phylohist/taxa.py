@@ -207,6 +207,7 @@ class Taxon:
         logger.error(f"Unnamed, unranked taxon {taxon_key}!")
 
       self._rank = 'species' if self._name.islower() else 'genus'
+      # TODO: Figure out if homonym/originalParent/needsQualification relevant.
 
     logger.debug(f'  Processing taxon "{taxon_key}"...')
 
@@ -216,6 +217,9 @@ class Taxon:
       self._alt = alt
       self._rank = alt.rank
       self._authority = alt.authority
+      for field in ('homonym', 'originalParent', 'needsQualification'):
+        if field in alt._data:
+          self._data[field] = alt._data[field]
 
     elif (latin_key := taxon_data.get('vulgarSpellingOf')):
       if not (latin := Taxon.get(latin_key)):

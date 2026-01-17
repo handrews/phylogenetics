@@ -468,12 +468,22 @@ moore:
 müller.j.p:
   family: Müller
   given: Johannes Peter
+  birth: 1801
+  death: 1858
 müller.o.f:
   family: Müller
-  given: Othone Friderico
+  given: Otto Freidrich
+  birth: 1730
+  death: 1784
+  notes: Sometimes written Othone Friderico
 müller.p:
   family: Müller
   given: Peter
+müller.p.l.s:
+  family: Müller
+  given: Philipp Ludwig Statius
+  birth: 1725
+  death: 1776
 murchison:
   family: Murchison
   given: Roderick Impey
