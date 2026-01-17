@@ -184,9 +184,8 @@
   notes: Officially recognized use of "Echinodermata" (in Latin), revived from Klein
   identifiers:
     url: https://www.biodiversitylibrary.org/bibliography/64072
-1798a_cuvier:
+1798_cuvier:
   book: tableau-cuvier
-  volume: 1
   notes: Date may be 1797 or 1798
   pubDate:
     year: 1798
@@ -194,26 +193,6 @@
   - cuvier
   identifiers:
     url: https://www.biodiversitylibrary.org/item/42906
-1798b_cuvier:
-  book: tableau-cuvier
-  volume: 2
-  notes: Date may be 1797 or 1798
-  pubDate:
-    year: 1798
-  authors:
-  - cuvier
-  identifiers:
-    url: https://www.biodiversitylibrary.org/item/87284
-1798c_cuvier:
-  book: tableau-cuvier
-  volume: 3
-  notes: Date may be 1797 or 1798
-  pubDate:
-    year: 1798
-  authors:
-  - cuvier
-  identifiers:
-    url: https://www.biodiversitylibrary.org/item/99338
 1801_lamarck:
   book: systeme-sans-vertebres
   pubDate:
@@ -256,6 +235,34 @@
   - lamarck
   identifiers:
     url: https://www.biodiversitylibrary.org/item/89218
+1817a_cuvier:
+  book: regne-animal
+  volume: 1
+  pubDate:
+    year: 1817
+  authors:
+  - cuvier
+1817b_cuvier:
+  book: regne-animal
+  volume: 2
+  pubDate:
+    year: 1817
+  authors:
+  - cuvier
+1817c_cuvier:
+  book: regne-animal
+  volume: 3
+  pubDate:
+    year: 1817
+  authors:
+  - cuvier
+1817d_cuvier:
+  book: regne-animal
+  volume: 4
+  pubDate:
+    year: 1817
+  authors:
+  - cuvier
 1818_lamarck:
   book: hist-sans-vert
   volume: 5

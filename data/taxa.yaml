@@ -3,6 +3,12 @@ abbreviatus_lamarck_1816:
   name: abbreviatus
   authority:
     source: 1816b_lamarck
+acalèphes:
+  name: Acalèphes
+  rank: Class
+  lang: FR
+  authority:
+    source: 1817b_cuvier
 acanthalepis:
   name: Acanthalepis
   auth: [mccoy]
@@ -11,6 +17,16 @@ acanthocystites:
   name: Acanthocystites
   auth: [barrande]
   year: 1887
+acéphales-order:
+  name: Acéphales
+  rank: Order
+  lang: FR
+  notes: Possible earlier authority?
+  authority:
+    source: 1798_cuvier
+acéphales-class:
+  rank: Class
+  altRankOf: acéphales-order
 actinia:
   name: Actinia
   authority:
@@ -446,6 +462,13 @@ animaux:
   name: Animaux
   vulgarSpellingOf: animalia
   lang: FR
+annélides:
+  name: Annélides
+  rank: Class
+  lang: FR
+  notes: Rank based on usage in 1817 Cuvier
+  auth: [lamarck]
+  year: 1809
 annulifera_lamarck_1816:
   name: annulifera
   authority:
@@ -672,6 +695,12 @@ articulata-division:
   rank: Division
   authority:
     source: 1821_miller.j.s
+articulés:
+  name: Articulés
+  rank: Phylum
+  lang: FR
+  authority:
+    source: 1817b_cuvier
 ascaris:
   name: Ascaris
   authority:
@@ -733,6 +762,9 @@ asterias:
   name: Asterias
   authority:
     source: 1758_linnaeus
+asterias-family:
+  rank: Family
+  altRankOf: asterias
 asteriadæ:
   name: Asteriadæ
   rank: Order
@@ -1235,6 +1267,15 @@ brachiopoda:
   rank: Phylum
   auth: [Dumeril]
   year: 1806
+brachiopoda-class:
+  name: Brachiopoda
+  rank: Class
+  auth: [Dumeril]
+  year: 1806
+brachiopodes-class:
+  name: Brachiopodes
+  lang: FR
+  vulgarSpellingOf: brachiopoda-class
 branagani_brown.i.a_1963:
   name: branagani
   authority:
@@ -1608,7 +1649,7 @@ caryophyllia:
 caryophyllœus:
   name: Caryophyllœus
   authority:
-    source: 1798a_cuvier
+    source: 1798_cuvier
   notes: Accepted as Caryophyllæus (Müller, 1878), note different ligature.
 cassidulus:
   name: Cassidulus
@@ -1665,10 +1706,14 @@ celtocrinus:
   name: Celtocrinus
   auth: [Donovan, Cope]
   year: 1989
-nucleus cerasi_leske_1778:
-  name: nucleus cerasi
+céphalopodes-order:
+  name: Céphalopodes
+  rank: Order
   authority:
-    source: 1778_leske
+    source: 1798_cuvier
+céphalopodes-class:
+  rank: Class
+  altRankOf: céphalopodes-order
 cerasus_buch_1840:
   name: cerasus
   auth: [buch]
@@ -1681,7 +1726,7 @@ cératophytes:
   name: Cératophytes
   rank: Order
   authority:
-    source: 1798a_cuvier
+    source: 1798_cuvier
   lang: FR
   notes: Authority uncertain.
 cercaria:
@@ -1847,6 +1892,12 @@ circinnatus_leske_1778:
   name: circinnatus
   authority:
     source: 1778_leske
+cirrhopodes:
+  name: Cirrhopodes
+  rank: Class
+  lang: FR
+  authority:
+    source: 1817b_cuvier
 citrus_hisinger_1837:
   name: citrus
   auth: [Hisinger]
@@ -2104,7 +2155,7 @@ corallina:
 corallium:
   name: Corallium
   authority:
-    source: 1798a_cuvier
+    source: 1798_cuvier
 corallum_jaekel_1918:
   name: corallum
   auth: [jaekel]
@@ -2116,7 +2167,7 @@ cordata_lamarck_1816:
 corine:
   name: Corine
   authority:
-    source: 1798a_cuvier
+    source: 1798_cuvier
 cornuta:
   name: Cornuta
   rank: Order
@@ -2290,7 +2341,7 @@ crinozoa-sp_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_19
 cristatella:
   name: Cristatella
   authority:
-    source: 1798a_cuvier
+    source: 1798_cuvier
 cristatus_bassler_1943:
   name: cristatus
   auth: [bassler]
@@ -2305,10 +2356,19 @@ crustacea-order:
   rank: Order
   auth: [Brünnich]
   year: 1772
+crustacea-class:
+  name: Crustacea
+  rank: Class
+  auth: [Brünnich]
+  year: 1772
 crustacés-order:
   name: Crustacés
   vulgarSpellingOf: crustacea-order
   lang: FR
+crustacés-class:
+  name: Crustacés
+  lang: FR
+  vulgarSpellingOf: crustacea-class
 crux andraæ_lamarck_1816:
   name: crux andraæ
   authority:
@@ -3132,12 +3192,16 @@ echinodermata-incertae-sedis_ubaghs_1999:
   rank: Class
   authority:
     source: 1999_ubaghs
-échinodermes:
+échinodermes-order:
   name: Échinodermes
   vulgarSpellingOf: echinodermata-order
   lang: FR
   authority:
     source: 1789a_bruguière
+échinodermes-class:
+  name: Échinodermes
+  lang: FR
+  vulgarSpellingOf: echinodermata-class
 echinodiscus:
   name: Echinodiscus
   authority:
@@ -3241,6 +3305,9 @@ echinus:
   name: Echinus
   authority:
     source: 1758_linnaeus
+echinus-family:
+  rank: Family
+  altRankOf: echinus
 echinus-order:
   name: Echinus
   rank: Order
@@ -3532,6 +3599,12 @@ enterozoa-branch:
   auth: [lankester]
   year: 1877
   notes: Subkingdom? "emend. Beklemishev 1944" on Wikipedia
+entozoa:
+  name: Entozoa
+  rank: Class
+  notes: Rank assumed based on usage in Cuvier 1817?
+  auth: [Rudophi]
+  year: 1808
 entrocha_linnaeus_1767:
   name: entrocha
   authority:
@@ -3722,7 +3795,7 @@ escares:
   name: Escares
   rank: Order
   authority:
-    source: 1798a_cuvier
+    source: 1798_cuvier
   lang: FR
   notes: Authority uncertain.
 eschara:
@@ -3971,7 +4044,7 @@ flos_klug_krüger_korn_rücklin_schemm-gregory_debates_mapes_2008:
 floscularia:
   name: Floscularia
   authority:
-    source: 1798a_cuvier
+    source: 1798_cuvier
 flustra:
   name: Flustra
   auth: [linnaeus]
@@ -4057,6 +4130,15 @@ gasterocomacea:
   rank: Superfamily
   auth: [Roemer]
   year: 1854
+gastéropodes-order:
+  name: Gastéropodes
+  rank: Order
+  lang: FR
+  auth: [cuvier]
+  year: 1795
+gastéropodes-class:
+  rank: Class
+  altRankOf: gastéropodes-order
 gebhardi_conrad.t.a_1840:
   name: gebhardi
   auth: [conrad.t.a]
@@ -5140,6 +5222,11 @@ infundus_frest_strimple_mcginnis_1976:
   name: infundus
   auth: [frest, Strimple, McGinnis]
   year: 1976
+infusoria-class:
+  name: Infusoria
+  rank: Class
+  auth: [Ledermüller]
+  year: 1763
 infusoria-order:
   name: Infusoria
   rank: Order
@@ -5150,6 +5237,10 @@ infusoria-section:
   rank: section
   auth: [Ledermüller]
   year: 1763
+infusoires-class:
+  name: Infusoires
+  vulgarSpellingOf: infusoria-class
+  lang: FR
 infusoires:
   name: Infusoires
   vulgarSpellingOf: infusoria-order
@@ -5185,6 +5276,12 @@ intestina-order:
   rank: Order
   authority:
     source: 1758_linnaeus
+intestinaux-class:
+  name: Intestinaux
+  rank: Class
+  lang: FR
+  authority:
+    source: 1817b_cuvier
 intestinalis_linnaeus_1767:
   name: intestinalis
   authority:
@@ -5772,7 +5869,7 @@ ligula_cuvier_1798:
   name: Ligula
   needsQualification: true
   authority:
-    source: 1798a_cuvier
+    source: 1798_cuvier
   notes: Accepted as Lingula (Brug. 1797) per IRMNG, non Bloch (1782)
 liliiformis_lamarck_1801:
   name: liliiformis
@@ -6045,6 +6142,10 @@ mammaria:
   name: Mammaria
   authority:
     source: 1776_müller.o.f
+mammifères:
+  name: Mammifères
+  lang: FR
+  vulgarSpellingOf: mammalia
 mamillaris_pallas_1774:
   name: mamillaris
   auth: [Pallas]
@@ -6324,6 +6425,10 @@ minutus_kolata_1975:
   name: minutus
   authority:
     source: 1975_kolata
+minyas:
+  name: Minyas
+  authority:
+    source: 1817d_cuvier
 mitrata:
   name: Mitrata
   rank: Order
@@ -6359,6 +6464,10 @@ mollusca:
   rank: Phylum
   authority:
     source: 1758_linnaeus
+mollusques-phylum:
+  name: Mollusques
+  vulgarSpellingOf: mollusca
+  lang: FR
 mollusca-class:
   rank: Class
   altRankOf: mollusca
@@ -6373,6 +6482,10 @@ mollusques-order:
   name: Mollusques
   vulgarSpellingOf: mollusca-order
   lang: FR
+molpadia:
+  name: Molpadia
+  authority:
+    source: 1817d_cuvier
 monas:
   name: Monas
   authority:
@@ -6665,6 +6778,10 @@ nucleolites:
   name: Nucleolites
   authority:
     source: 1801_lamarck
+nucleus cerasi_leske_1778:
+  name: nucleus cerasi
+  authority:
+    source: 1778_leske
 nues:
   name: Nues
   rank: section
@@ -6868,7 +6985,7 @@ orties de mer:
   name: Orties de mer
   rank: section
   authority:
-    source: 1798a_cuvier
+    source: 1798_cuvier
   lang: FR
   notes: Authority unclear.
 osculocystis:
@@ -7200,6 +7317,12 @@ pedicellaria:
   name: Pedicellaria
   authority:
     source: 1776_müller.o.f
+pédicellés-order:
+  name: Pédicellés
+  rank: Order
+  lang: FR
+  authority:
+    source: 1817d_cuvier
 pedunculata_bruguière_1789:
   name: pedunculata
   authority:
@@ -7643,7 +7766,7 @@ polypes-section:
   name: Polypes
   rank: section
   authority:
-    source: 1798a_cuvier
+    source: 1798_cuvier
   lang: FR
   notes: Authority uncertain.
 polyphemi_leske_1778:
@@ -7964,6 +8087,16 @@ pseudogranatus_paul.c.r.c_1997:
   name: pseudogranatus
   authority:
     source: 1997_paul.c.r.c
+ptéropodes-order:
+  name: Ptéropodes
+  rank: Order
+  lang: FR
+  auth: [cuvier]
+  year: 1804
+  notes: Rank presumed?
+ptéropodes-class:
+  rank: Class
+  altRankOf: ptéropodes-order
 ptychopariida:
   name: Ptychopariida
   rank: Order
@@ -8486,7 +8619,7 @@ rotalaria_lamarck_1816:
 rotifer:
   name: Rotifer
   authority:
-    source: 1798a_cuvier
+    source: 1798_cuvier
 rotifères:
   name: Rotifères
   rank: Order
@@ -8614,6 +8747,12 @@ sanguisuga:
   name: Sanguisuga
   authority:
     source: 1789a_bruguière
+sans pédicellés-order:
+  name: Sans Pédicellés
+  rank: Order
+  lang: FR
+  authority:
+    source: 1817d_cuvier
 saratogensis_ruedemann_1912:
   name: saratogensis
   auth: [ruedemann]
@@ -10065,7 +10204,7 @@ venus:
 veretillum:
   name: Veretillum
   authority:
-    source: 1798a_cuvier
+    source: 1798_cuvier
 vermes:
   name: Vermes
   rank: Class
@@ -10087,6 +10226,12 @@ vers:
   name: Vers
   vulgarSpellingOf: vermes
   lang: FR
+vertébrés:
+  name: Vertébrés
+  rank: Phylum
+  lang: FR
+  authority:
+    source: 1817a_cuvier
 verticecentrali_leske_1778:
   name: verticecentrali
   authority:
@@ -10370,3 +10515,9 @@ zoophyta-class:
   authority:
     source: 1758_linnaeus
   notes: Possibly nomen transl. or new 1798a_cuvier
+zoophytes-phylum:
+  name: Zoophytes
+  rank: Phylum
+  lang: FR
+  authority:
+    source: 1817a_cuvier

@@ -162,6 +162,8 @@ pworld:
   name: Palaeoworld
 p-z:
   name: Paläontologische Zeitschrift
+regne-animal:
+  name: Le règne animal distribué d'après son organisation
 series-geol:
   name: Series in Geology, Notes for a Short Course
 silurian-system:

@@ -1447,7 +1447,7 @@
         - taxon: pileus_müller.o.f_1776
         - taxon: hexagonus_modeer_1790
       - taxon: medusa
-    - taxon: échinodermes
+    - taxon: échinodermes-order
       new: true
       children:
       - taxon: asterias
@@ -1495,7 +1495,7 @@
     children:
     - taxon: infusoria-order
     - taxon: intestina-order
-    - taxon: mollusca
+    - taxon: mollusca-order
     - taxon: echinodermata-order
       new: true
       children:
@@ -1503,7 +1503,7 @@
       - taxon: echinus
     - taxon: testacea-order
     - taxon: zoophyta
-1798a_cuvier:
+1798_cuvier:
   notes: |
     This text is very hard to map to Linnaean taxonomies, with various
     groupings of an unclear nature, some grouping some species of one
@@ -1582,7 +1582,7 @@
     - taxon: zoophytes-class
       notes: zoophyta-class
       children:
-      - taxon: échinodermes
+      - taxon: échinodermes-order
         notes: |
           echinodermata-order
           Chapter II, Des Zoophytes qui ont une enveloppe cortace ou calcaire,
@@ -1789,7 +1789,7 @@
     - taxon: radiares
       new: true
       children:
-      - taxon: échinodermes
+      - taxon: échinodermes-order
         children:
         - taxon: échinides
           new: true
@@ -2043,7 +2043,7 @@
           - taxon: porpita
         - taxon: médusaires
           new: true
-      - taxon: échinodermes
+      - taxon: échinodermes-order
         children:
         - taxon: stellérides
           children:
@@ -3015,6 +3015,95 @@
         new: true
       - taxon: hispides
         new: true
+1817a_cuvier:
+  taxonomies:
+  - taxon: animaux
+    children:
+    - taxon: vertébrés
+      new: true # Or Lamarck?
+      children:
+      - taxon: mammifères
+      - taxon: oiseaux
+1817b_cuvier:
+  taxonomies:
+  - taxon: animaux
+    children:
+    - taxon: vertébrés
+      children:
+      - taxon: reptiles
+      - taxon: poissons
+    - taxon: mollusques-phylum
+      children:
+      - taxon: céphalopodes-class
+      - taxon: ptéropodes-class
+      - taxon: gastéropodes-class
+      - taxon: acéphales-class
+      - taxon: brachiopodes-class
+        new: true
+      - taxon: cirrhopodes
+        new: true
+    - taxon: articulés
+      new: true
+      children:
+      - taxon: annélides # Lamarck
+      - taxon: crustacés-class
+        new: true
+      - taxon: arachnides
+      - taxon: insectes
+1817c_cuvier:
+  notes: Continues the Articulés, no new class-level definitions.
+1817d_cuvier:
+  taxonomies:
+  - taxon: animaux
+    children:
+    - taxon: zoophytes-phylum
+      children:
+      - taxon: échinodermes-class
+        children:
+        - taxon: pédicellés-order
+          new: true
+          children:
+          - taxon: asterias-family
+            children:
+            - taxon: asterias # sensu Lamarck
+            - taxon: ophiura
+            - taxon: euryale
+            - taxon: comatula
+          - taxon: encrinus
+          - taxon: echinus-family
+            children:
+            - taxon: echinus # sensu Lamarck
+              synonyms:
+              - taxon: cidaris # Klien
+            - taxon: echinoneus # Phelsum and Leske
+            - taxon: nucleolites # Lamarck
+            - taxon: galerites # Lamarck, Conulus Klein
+              synonyms:
+              - taxon: conulus
+            - taxon: scutella # Lamarck
+            - taxon: cassidulus # Lamarck
+            - taxon: clypeaster # Lamarck, Echinanthus Klein
+              synonyms:
+              - taxon: echinanthus
+            - taxon: fibularia # Lamarck
+            - taxon: spatangus_leske_1778 # Lamarck, Klein
+            - taxon: brissus # Klein
+          - taxon: holothuria
+        - taxon: sans pédicellés-order
+          new: true
+          children:
+          - taxon: molpadia # Cuvier, Holothuroideans
+            new: true
+          - taxon: minyas # Cuvier, Hexacoralians
+            new: true
+          - taxon: priapulus # Lamarck
+          - taxon: sipunculus # "Gra."
+      - taxon: intestinaux-class
+        synonyms:
+        - taxon: entozoa
+      - taxon: acalèphes
+      - taxon: polypes-class
+      - taxon: infusoires-class
 1820_say:
   taxonomies:
   - taxon: pentacrinus
