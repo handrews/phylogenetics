@@ -1005,7 +1005,8 @@
         - taxon: polyphemi_leske_1778
           parents:
           - taxon: oculus
-      - taxon: diadema_linnaeus_1758
+      - taxon: diadema_leske_1778
+        new: true
         children:
         - taxon: viridi flava_leske_1778
           new: true
@@ -1024,8 +1025,7 @@
         notes: If I am reading the text right, this is different from Linnaeus?
       - taxon: rupestris_leske_1778
         new: true
-      - taxon: calamaris_leske_1778
-        new: true
+      - taxon: calamaris_pallas_1774
       - taxon: araneiformis_leske_1778
         new: true
       - taxon: stellata_leske_1778
@@ -2805,6 +2805,81 @@
                 - taxon: mammillata_linnaeus_1758
                 - taxon: cidaris
           - taxon: cidarites
+            children:
+            - taxon: imperialis_lamarck_1816
+              new: true
+              synonyms:
+              - taxon: major_leske_1778
+                parents:
+                - taxon: papillata_leske_1778
+                - taxon: cidaris
+            - taxon: pistillaris_lamarck_1816
+              new: true
+            - taxon: hystrix_lamarck_1816
+              new: true
+              synonyms:
+              - taxon: spinis conoideis_leske_1778
+                notes: Written as C. papillata, var. 3 Leske apud Klein
+                parents:
+                - taxon: papillata_leske_1778
+                - taxon: cidaris
+            - taxon: baculosa_lamarck_1816
+              new: true
+            - taxon: geranioides_lamarck_1816
+              new: true
+            - taxon: tribuloides_lamarck_1816
+              new: true
+              synonyms:
+              - taxon: spinis claviculatis_leske_1778
+                notes: |
+                  Written as C. pap., var. Leske apud Klein, assuming the
+                  fourth variant as the similarly "spinis"-prefixed 3rd was
+                  referenced by number, but "major" was by name and the 2nd
+                  is also properly named ("minor").
+                parents:
+                - taxon: papillata_leske_1778
+                - taxon: cidaris
+            - taxon: metularia_lamarck_1816
+              new: true
+            - taxon: verticellata_lamarck_1816
+              new: true
+            - taxon: tubaria_lamarck_1816
+              new: true
+            - taxon: bispinosa_lamarck_1816
+              new: true
+            - taxon: annulifera_lamarck_1816
+              notes: no info, but as with all no-info, assuming new.
+              new: true
+            - taxon: spinosissima_lamarck_1816
+              new: true
+            - taxon: calamaria_pallas_1774
+              synonyms:
+              - taxon: calamaris_pallas_1774
+                parents:
+                - taxon: cidaris
+            - taxon: subularis_lamarck_1816
+              new: true
+            - taxon: diadema_leske_1778
+              synonyms:
+              - taxon: setosa_leske_1778
+                notes: |
+                  Given as Echinometra setosa Leske but no such taxon?
+                  Assuming the Cidaris diadema variant was intended.
+                parents:
+                - taxon: diadema_leske_1778
+                - taxon: cidaris
+            - taxon: crenularis_lamarck_1816
+              notes: There is a Cidarites crenularis Goldfuss 1829 but ???
+              new: true
+            - taxon: pseudo-diadema_lamarck_1816
+              new: true
+            - taxon: pulvinata_lamarck_1816
+              new: true
+            - taxon: radiata_leske_1778
+              synonyms:
+              - taxon: radiata_leske_1778
+                parents:
+                - taxon: cidaris
         - taxon: fistulides
           children:
           - taxon: tentaculées
