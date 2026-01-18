@@ -362,6 +362,16 @@
   - parkinson
   identifiers:
     url: https://darwin-online.org.uk/converted/pdf/1822_fossil_CUL-DAR.LIB.490.pdf
+1825_gray.j.e:
+  title: An Attempt to divide the Echinida, or Sea Eggs, into Natural Families
+  journal: annals-phil-ns
+  volume: 10
+  number: 6
+  pubDate:
+    year: 1825
+    month: 12
+  authors:
+  - gray.j.e
 1825a_say:
   title: On two genera and several species of Crinoidea
   journal: jofacnatsci-philadelphia

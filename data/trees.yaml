@@ -1167,7 +1167,7 @@
           new: true
       - openTaxon: echinocorys-sp_leske_1778
         notes: species dubia
-    - taxon: echinanthus
+    - taxon: echinanthus_leske_1778
       new: true
       children:
       - taxon: humilis_leske_1778
@@ -1179,7 +1179,7 @@
         new: true
       - taxon: orbiculatus_leske_1778
         new: true
-      - taxon: ovatus_leske_1778_echinanthus
+      - taxon: ovatus_leske_1778_echinanthus_leske_1778
         new: true
         synonyms:
         - taxon: orbiculatus_leske_1778
@@ -2354,7 +2354,7 @@
                 - taxon: echinus
               - taxon: humilis_leske_1778
                 parents:
-                - taxon: echinanthus
+                - taxon: echinanthus_leske_1778
             - taxon: altus_leske_1778
               synonyms:
               - taxon: altus_leske_1778
@@ -2362,7 +2362,7 @@
                 - taxon: echinus
               - taxon: altus_leske_1778
                 parents:
-                - taxon: echinanthus
+                - taxon: echinanthus_leske_1778
             - taxon: marginatus_lamarck_1816
               new: true
             - taxon: scutiformis_lamarck_1816
@@ -2380,9 +2380,9 @@
               - taxon: oviformis_gmelin_1791
                 parents:
                 - taxon: echinus
-              - taxon: ovatus_leske_1778_echinanthus
+              - taxon: ovatus_leske_1778_echinanthus_leske_1778
                 parents:
-                - taxon: echinanthus
+                - taxon: echinanthus_leske_1778
             - taxon: politus_lamarck_1816
               new: true
             - taxon: hemisphæricus_lamarck_1816_clypeaster
@@ -3176,8 +3176,25 @@
     - taxon: tunicata
 1821_miller.j.s:
   taxonomies:
-  - taxon: echinodermata
+  - taxon: echinodermata-order
     children:
+    - taxon: stelleridæ
+      children:
+      - taxon: asteria
+      - taxon: ophiura
+      - taxon: euryale
+      - taxon: comatula
+        children:
+        - taxon: fimbriata_miller.j.s_1821
+          new: true
+          synonyms:
+          - tentative: true
+            taxon: fimbriata_lamarck_1816
+      - taxon: marsupites
+        new: true
+        children:
+        - taxon: ornatus_miller.j.s_1821
+          new: true
     - taxon: crinoidea-family
       new: true
       synonyms:
@@ -3282,23 +3299,82 @@
             provisional: true
             questionable: true
             new: true
-    - taxon: stelleridæ
+1825_gray.j.e:
+  taxonomies:
+  - taxon: radiata
+    children:
+    - taxon: echinodermata
+      notes: Quinarian "Normal Group"
       children:
-      - taxon: asteria
-      - taxon: ophiura
-      - taxon: euryale
-      - taxon: comatula
+      - taxon: echinida
+        synonyms:
+        - taxon: echinides
         children:
-        - taxon: fimbriata_miller.j.s_1821
-          new: true
-          synonyms:
-          - tentative: true
-            taxon: fimbriata_lamarck_1816
-      - taxon: marsupites
-        new: true
-        children:
-        - taxon: ornatus_miller.j.s_1821
-          new: true
+        - notes: Qunarian "Normal Group"
+          children:
+          - taxon: cidaridæ     # Cidaris Lamarck
+            new: true
+            children:
+            - taxon: cidaris    # Klein, Lamarck
+            - taxon: diadema
+              new: true
+            - taxon: astropyga
+              new: true
+          - taxon: echinidæ
+            new: true
+            children:
+            - taxon: echinus    # Linnaeus, Van Phelsum
+            - taxon: echinometra # Bryerius, Van Phelsum, IRMNG credits Gray?
+              new: true
+        - notes: Quinarian "Antecetent Group"
+          children:
+          - taxon: scutellidæ
+            new: true
+            children:
+            - taxon: echinanthus  # non Van Phelsum
+              new: true
+            - taxon: lagana
+            - taxon: echinarachnius # Leske, but ICZN says not?
+              new: true
+            - taxon: echinodiscus
+            - taxon: echinocyamus
+            - taxon: cassidulus
+          - taxon: galeritidæ
+            new: true
+            children:
+            - taxon: galerites
+            - taxon: discodea
+              new: true
+            - taxon: echinanaus # Koenig, Echinoneus Van Phelsum, more pars?
+            - taxon: echinocorys
+            - taxon: echinolampas
+              new: true
+            - taxon: echinobrissus
+              new: true
+          - taxon: spatangidæ
+            new: true
+            children:
+            - taxon: spatangus  # Apparently non Lamarck, Leske???
+              new: true
+            - taxon: echinocardium
+              new: true
+            - taxon: brissus
+            - taxon: ova
+              new: true
+      - taxon: stellerida
+        synonyms:
+        - taxon: stellerides
+    - notes: Quinarian "Antecetant Group"
+      children:
+      - taxon: medusida
+        synonyms:
+        - taxon: medusaires
+      - taxon: acalephida
+        synonyms:
+        - taxon: anomales
+      - taxon: fistulida-class
+        synonyms:
+        - taxon: fistulides
 1825a_say:
   taxonomies:
   - children:

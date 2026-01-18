@@ -297,7 +297,9 @@ class Taxon:
       ('inae', 'Subfamily', frozenset()),
       ('idae', 'Family', frozenset({
         'Échinides',
+        'Echinides',
         'Stellérides',
+        'Stellerides',
         'Fistulides',
       })),
     ):

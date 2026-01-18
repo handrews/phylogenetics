@@ -257,6 +257,16 @@ gozalo:
 grant:
   family: Grant
   given: J. A.
+gray.g.r:
+  family: Gray
+  given: George Robert
+  birth: 1808
+  death: 1872
+gray.j.e:
+  family: Gray
+  given: John Edward
+  birth: 1800
+  death: 1875
 guensburg:
   family: Guensburg
   given: Thomas E.

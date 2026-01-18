@@ -861,6 +861,10 @@ astrocystitidae:
   rank: Family
   auth: [bassler]
   year: 1935
+astropyga:
+  name: Astropyga
+  authority:
+    source: 1825_gray.j.e
 asturicystis:
   name: Asturicystis
   auth: [Sdzuy]
@@ -1842,6 +1846,14 @@ chrysalis_schuchert_1904:
   name: chrysalis
   auth: [schuchert]
   year: 1904
+cidaridae:
+  name: Cidaridae
+  rank: Family
+  authority:
+    source: 1825_gray.j.e
+cidaridæ:
+  name: Cidaridæ
+  altSpellingOf: cidaridae
 cidarites:
   name: Cidarites
   authority:
@@ -2921,6 +2933,10 @@ devonica_sieverts-doreck_1951:
 devonicus_sieverts-doreck_1951:
   name: devonicus
   altSpellingOf: devonica_sieverts-doreck_1951
+diadema:
+  name: Diadema
+  authority:
+    source: 1825_gray.j.e
 diadema_leske_1778:
   name: diadema
   authority:
@@ -3047,6 +3063,10 @@ discocystis:
   name: Discocystis
   auth: [Gregory]
   year: 1897
+discodea:
+  name: Discodea
+  authority:
+    source: 1825_gray.j.e
 discoidea_lamarck_1816:
   name: discoidea
   authority:
@@ -3121,10 +3141,24 @@ dyunin_kruse_1990:
   auth: [Kruse]
   year: 1990
 ###################### E
+echinanaus:
+  name: Echinanaus
+  altSpellingOf: echinoneus
+  notes: Misspelling in Gray 1825
 echinanthus:
   name: Echinanthus
   authority:
+    source: 1825_gray.j.e
+echinanthus_leske_1778:
+  name: Echinanthus
+  needsQualification: true
+  authority:
     source: 1778_leske
+echinarachnius:
+  name: Echinarachnius
+  authority:
+    source: 1825_gray.j.e
+  notes: Credits Leske by ICZN suppresses Leske for both priority and homonymy?
 echinarachnius_leske_1778:
   name: Echinarachnius
   needsQualification: true
@@ -3151,13 +3185,21 @@ echinida:
 echinidae:
   name: Echinidae
   rank: Family
-  auth: [Gray]
-  year: 1825
+  authority:
+    source: 1825_gray.j.e
+echinidæ:
+  name: Echinidæ
+  altSpellingOf: echinidae
 échinides:
   name: Échinides
   rank: Family
+  lang: FR
   authority:
     source: 1801_lamarck
+echinides:
+  name: Echinides
+  altSpellingOf: échinides
+  lang: FR
 echinites:
   name: Echinites
   authority:
@@ -3166,6 +3208,14 @@ echinites_ellis_solander_1786:
   name: echinites
   auth: [Ellis, Solander]
   year: 1786
+echinobrissus:
+  name: Echinobrissus
+  authority:
+    source: 1825_gray.j.e
+echinocardium:
+  name: Echinocardium
+  authority:
+    source: 1825_gray.j.e
 echinocorys:
   name: Echinocorys
   authority:
@@ -3297,6 +3347,18 @@ echinoidea:
   authority:
     source: 1778_leske
   notes: Originally appeared as Order Echinus
+echinolampas:
+  name: Echinolampas
+  authority:
+    source: 1825_gray.j.e
+echinolampus:
+  name: Echinolampus
+  altSpellingOf: echinolampas
+echinometra:
+  name: Echinometra
+  authority:
+    source: 1825_gray.j.e
+  notes: Mentions Bryerius and Van Phelsum, but IRMNG credits Gray?
 echinoneus:
   name: Echinoneus
   authority:
@@ -4179,6 +4241,18 @@ fusus_müller.o.f_1776:
   authority:
     source: 1776_müller.o.f
 ###################### G
+galerites:
+  name: Galerites
+  authority:
+    source: 1801_lamarck
+galeritidae:
+  name: Galeritidae
+  rank: Family
+  authority:
+    source: 1825_gray.j.e
+galeritidæ:
+  name: Galeritidæ
+  altSpellingOf: galeritidae
 gallica_domínguez alonso_1999:
   name: gallica
   auth: [domínguez alonso]
@@ -4227,10 +4301,6 @@ gelatinosum_linnaeus_1767:
   name: gelatinosum
   authority:
     source: 1767_linnaeus
-galerites:
-  name: Galerites
-  authority:
-    source: 1801_lamarck
 geranioides_lamarck_1816:
   name: geranioides
   authority:
@@ -5712,6 +5782,14 @@ laevis_raymond_1921:
   name: laevis
   auth: [Raymond]
   year: 1921
+laganum:
+  name: Laganum
+  auth: [Link]
+  year: 1807
+lagana:
+  name: Lagana
+  altSpellingOf: laganum
+  notes: Misspelling in Gray 1825
 laganum_leske_1778:
   name: laganum
   authority:
@@ -6335,6 +6413,10 @@ médusaires:
   rank: section
   authority:
     source: 1816a_lamarck
+  lang: FR
+medusaires:
+  name: Medusaires
+  altSpellingOf: médusaires
   lang: FR
 megapinacotus_ehlers_kesling_1958:
   name: megapinacotus
@@ -7092,6 +7174,10 @@ ottawacrinus:
   name: Ottawacrinus
   authority: 
     source: 1887_billings.w.r
+ova:
+  name: Ova
+  authority:
+    source: 1825_gray.j.e
 ovalis_leske_1778_echinocyamus:
   name: ovalis
   originalParent: echinocyamus
@@ -7124,9 +7210,9 @@ ovatus_lamarck_1816:
   name: ovatus
   authority:
     source: 1816b_lamarck
-ovatus_leske_1778_echinanthus:
+ovatus_leske_1778_echinanthus_leske_1778:
   name: ovatus
-  originalParent: echinanthus
+  originalParent: echinanthus_leske_1778
   authority:
     source: 1778_leske
 ovatus_leske_1778_echinocorys:
@@ -8970,6 +9056,14 @@ scutellatus_lamarck_1801:
   authority:
     source: 1801_lamarck
   notes: No other source on authority, newly described species assumed.
+scutellidae:
+  name: Scutellidae
+  rank: Family
+  authority:
+    source: 1825_gray.j.e
+scutellidæ:
+  name: Scutellidæ
+  altSpellingOf: scutellidae
 scutiformis_scilla_1759:
   name: scutiformis
   auth: [Scilla]
@@ -9179,9 +9273,21 @@ spatagus_linnaeus_1758:
   name: spatagus
   authority:
     source: 1758_linnaeus
+spatangidae:
+  name: Spatangidae
+  rank: Family
+  authority:
+    source: 1825_gray.j.e
+spatangidæ:
+  name: Spatangidæ
+  altSpellingOf: spatangidae
 spatangites:
   name: Spatangites
   altSpellingOf: spatangus_leske_1778
+spatangus:
+  name: spatangus
+  authority:
+    source: 1825_gray.j.e
 spatangus_lamarck_1816:
   name: spatangus
   authority:
@@ -9425,8 +9531,10 @@ stellérides:
   name: Stellérides
   vulgarSpellingOf: stelleridæ
   lang: FR
-  authority:
-    source: 1801_lamarck
+stellerides:
+  name: Stellerides
+  vulgarSpellingOf: stelleridæ
+  lang: FR
 # See 1825a_say; unclear if this is even a real spelling
 # stelleridica:
 #   name: Stelleridica
