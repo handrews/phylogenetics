@@ -3,12 +3,15 @@ abbreviatus_lamarck_1816:
   name: abbreviatus
   authority:
     source: 1816b_lamarck
-acalèphes:
-  name: Acalèphes
+acalephida:
+  name: Acalephida
   rank: Class
-  lang: FR
   authority:
     source: 1817b_cuvier
+acalèphes:
+  name: Acalèphes
+  lang: FR
+  vulgarSpellingOf: acalephida
 acanthalepis:
   name: Acanthalepis
   auth: [mccoy]
@@ -17,16 +20,28 @@ acanthocystites:
   name: Acanthocystites
   auth: [barrande]
   year: 1887
-acéphales-order:
-  name: Acéphales
-  rank: Order
-  lang: FR
+acephala-class:
+  name: Acephala
+  rank: Class
   notes: Possible earlier authority?
   authority:
     source: 1798_cuvier
+acephala-order:
+  rank: Order
+  altRankOf: acephala-class
+acéphales-order:
+  name: Acéphales
+  lang: FR
+  vulgarSpellingOf: acephala-order
 acéphales-class:
-  rank: Class
-  altRankOf: acéphales-order
+  name: Acéphales
+  lang: FR
+  vulgarSpellingOf: acephala-class
+acrita:
+  name: Acrita
+  rank: Phylum
+  authority:
+    source: 1821_macleay
 actinia:
   name: Actinia
   authority:
@@ -116,6 +131,11 @@ agaricia:
   name: Agaricia
   authority:
     source: 1801_lamarck
+agastria:
+  name: Agastria
+  rank: Class
+  authority:
+    source: 1821_macleay
 agelacrinidae:
   name: Agelacrinidae
   rank: Family
@@ -300,6 +320,11 @@ americanus_bassler_1936:
   name: americanus
   authority:
     source: 1936_bassler
+ametabola:
+  name: Ametabola
+  rank: Class
+  authority:
+    source: 1821_macleay
 amorphes:
   name: Amorphes
   rank: Order
@@ -462,17 +487,25 @@ animaux:
   name: Animaux
   vulgarSpellingOf: animalia
   lang: FR
-annélides:
-  name: Annélides
+annelida-class:
+  name: Annelida
   rank: Class
-  lang: FR
-  notes: Rank based on usage in 1817 Cuvier
   auth: [lamarck]
   year: 1809
+annélides:
+  name: Annélides
+  lang: FR
+  notes: Rank based on usage in 1817 Cuvier
+  vulgarSpellingOf: annelida-class
 annulifera_lamarck_1816:
   name: annulifera
   authority:
     source: 1816b_lamarck
+annulosa:
+  name: Annulosa
+  rank: Phylum
+  authority:
+    source: 1821_macleay
 annulosa_lamarck_1816:
   name: annulosa
   authority:
@@ -1706,14 +1739,22 @@ celtocrinus:
   name: Celtocrinus
   auth: [Donovan, Cope]
   year: 1989
-céphalopodes-order:
-  name: Céphalopodes
+cephalopoda-order:
+  name: Cephalopoda
   rank: Order
   authority:
     source: 1798_cuvier
-céphalopodes-class:
+cephalopoda-class:
   rank: Class
-  altRankOf: céphalopodes-order
+  altRankOf: cephalopoda-order
+céphalopodes-order:
+  name: Céphalopodes
+  lang: FR
+  vulgarSpellingOf: cephalopoda-order
+céphalopodes-class:
+  name: Céphalopodes
+  lang: FR
+  vulgarSpellingOf: cephalopoda-class
 cerasus_buch_1840:
   name: cerasus
   auth: [buch]
@@ -1892,6 +1933,12 @@ circinnatus_leske_1778:
   name: circinnatus
   authority:
     source: 1778_leske
+cirripeda:
+  name: Cirripeda
+  rank: Class
+  authority:
+    source: 1821_macleay
+  notes: Authority and relation to modern taxa unclear.
 cirrhopodes:
   name: Cirrhopodes
   rank: Class
@@ -3097,6 +3144,10 @@ echinata_linnaeus_1767:
   authority:
     source: 1767_linnaeus
   notes: Ascidian
+echinida:
+  name: Echinida
+  rank: Class
+  altRankOf: échinides
 echinidae:
   name: Echinidae
   rank: Family
@@ -3997,11 +4048,18 @@ fistularia_forsskål_1775:
   notes: |
     Fistularia (Linnaeus 1758) is a ray-finned fish.
     Fistularia (Müller 1776), another homonym, is a cnidarian.
-fistulides:
-  name: Fistulides
+fistulidæ:
+  name: Fistulidæ
   rank: Family
   authority:
     source: 1801_lamarck
+fistulida-class:
+  name: Fistulida
+  rank: Class
+  altRankOf: fistulidæ
+fistulides:
+  name: Fistulides
+  vulgarSpellingOf: fistulidæ
 fistuliporita:
   name: Fistuliporita
   rank: Order
@@ -4673,6 +4731,11 @@ haplozoa:
   rank: Subphylum
   authority:
     source: 1941_whitehouse
+haustellata:
+  name: Haustellata
+  rank: Class
+  authority:
+    source: 1821_macleay
 heckericystis:
   name: Heckericystis
   authority:
@@ -5276,12 +5339,14 @@ intestina-order:
   rank: Order
   authority:
     source: 1758_linnaeus
+intestina-class:
+  rank: Class
+  altRankOf: intestina-order
 intestinaux-class:
   name: Intestinaux
   rank: Class
   lang: FR
-  authority:
-    source: 1817b_cuvier
+  vulgarSpellingOf: intestina-class
 intestinalis_linnaeus_1767:
   name: intestinalis
   authority:
@@ -6188,6 +6253,11 @@ mandalacystis:
   name: Mandalacystis
   authority:
     source: 1987_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley
+mandibulata:
+  name: Mandibulata
+  rank: Class
+  authority:
+    source: 1821_macleay
 mansfieldi_guensburg_2010:
   name: mansfieldi
   auth: [guensburg]
@@ -6247,6 +6317,11 @@ mediterranea_lamarck_1816:
   name: mediterranea
   authority:
     source: 1816a_lamarck
+medusida:
+  name: Medusida
+  rank: Class
+  authority:
+    source: 1821_macleay
 medusa_barrande_1887:
   name: medusa
   auth: [barrande]
@@ -6478,6 +6553,16 @@ mollusques-class:
 mollusca-order:
   rank: Order
   altRankOf: mollusca
+mollusca-unknown-class-1_macleay_1821:
+  name: null
+  rank: Class
+  authority:
+    source: 1821_macleay
+mollusca-unknown-class-2_macleay_1821:
+  name: null
+  rank: Class
+  authority:
+    source: 1821_macleay
 mollusques-order:
   name: Mollusques
   vulgarSpellingOf: mollusca-order
@@ -6635,6 +6720,9 @@ natantes:
   rank: Order
   authority:
     source: 1816a_lamarck
+natantes-class:
+  rank: Class
+  altRankOf: natantes
 natus_strimple_1953:
   name: natus
   auth: [strimple]
@@ -8087,16 +8175,23 @@ pseudogranatus_paul.c.r.c_1997:
   name: pseudogranatus
   authority:
     source: 1997_paul.c.r.c
-ptéropodes-order:
-  name: Ptéropodes
+pteropoda-order:
+  name: Pteropoda
   rank: Order
-  lang: FR
   auth: [cuvier]
   year: 1804
-  notes: Rank presumed?
-ptéropodes-class:
+  notes: Rank in authoritative source presumed?
+pteropoda-class:
   rank: Class
-  altRankOf: ptéropodes-order
+  altRankOf: pteropoda-order
+ptéropodes-order:
+  name: Ptéropodes
+  lang: FR
+  vulgarSpellingOf: pteropoda-order
+ptéropodes-class:
+  name: Ptéropodes
+  lang: FR
+  vulgarSpellingOf: pteropoda-class
 ptychopariida:
   name: Ptychopariida
   rank: Order
@@ -8249,7 +8344,10 @@ radiata:
   rank: Class
   authority:
     source: 1801_lamarck
-  notes: Authority not in latin, but I can't find another option or source.
+  notes: Authority in the vulgar (French) but that seems to be allowed here.
+radiata-phylum:
+  rank: Phylum
+  altRankOf: radiata
 radiata_leske_1778:
   name: radiata
   authority:
@@ -8657,6 +8755,12 @@ ruber_forsskål_1775:
   name: ruber
   auth: [forsskål]
   year: 1775
+rudes-class:
+  name: Rudes
+  rank: Class
+  authority:
+    source: 1821_macleay
+  notes: Combines all of Lamarck 1816's Polypi except vaginati and natantes.
 rufa_müller.o.f_1776:
   name: rufa
   authority:
@@ -8753,6 +8857,16 @@ sans pédicellés-order:
   lang: FR
   authority:
     source: 1817d_cuvier
+sans vertébrés:
+  name: Sans Vertébrés
+  rank: Phylum
+  authority:
+    source: 1801_lamarck
+  notes: |
+    Unclear whether actually a taxon, and the term "Phylum" was not yet coined,
+    but it has been argued that this source established Vertebrata, and I've
+    translated Cuvier's "embranchement" as "phylum" (as have others), and
+    Cuvier treated Vertébrés as such.
 saratogensis_ruedemann_1912:
   name: saratogensis
   auth: [ruedemann]
@@ -9298,11 +9412,15 @@ stellatus_hall_1866:
   name: stellatus
   auth: [hall]
   year: 1866
+stellerida:
+  name: Stellerida
+  rank: Class
+  altRankOf: stelleridæ
 stelleridæ:
   name: Stelleridæ
   rank: Family
-  auth: [lamarck]
-  year: 1816
+  authority:
+    source: 1801_lamarck
 stellérides:
   name: Stellérides
   vulgarSpellingOf: stelleridæ
@@ -10138,6 +10256,9 @@ vaginati:
   rank: Order
   authority:
     source: 1816a_lamarck
+vaginati-class:
+  rank: Class
+  altRankOf: vaginati
 valcourensis_clark_1920:
   name: valcourensis
   auth: [Clark]
@@ -10226,12 +10347,15 @@ vers:
   name: Vers
   vulgarSpellingOf: vermes
   lang: FR
+vertebrata:
+  name: Vertebrata
+  rank: Phylum
+  authority:
+    source: 1801_lamarck
 vertébrés:
   name: Vertébrés
-  rank: Phylum
   lang: FR
-  authority:
-    source: 1817a_cuvier
+  vulgarSpellingOf: vertebrata
 verticecentrali_leske_1778:
   name: verticecentrali
   authority:
@@ -10492,6 +10616,12 @@ zoantha:
   name: Zoantha
   authority:
     source: 1801_lamarck
+zoanthida:
+  name: Zoanthida
+  rank: Class
+  notes: Authority unclear, relationship to other "Zoanth..." unclear.
+  authority:
+    source: 1821_macleay
 zoophites:
   name: Zoophites
   vulgarSpellingOf: zoophyta

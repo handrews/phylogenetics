@@ -235,7 +235,10 @@ class Taxon:
       if not (alt := Taxon.get(alt_key)):
         logger.error(f'Taxon {taxon_key} alt rank of unknown {alt_key}')
       self._alt = alt
-      self._name = alt.name
+      if 'name' in self._data:
+        self._name = self._data['name']
+      else:
+        self._name = alt.name
       self._authority = alt.authority
 
     else:
@@ -314,7 +317,15 @@ class Taxon:
         )
 
     # TODO: Verify that each exception is the expected rank
-    ida_classes = frozenset({'Arachnida'})
+    ida_classes = frozenset({
+      'Acalephida',
+      'Arachnida',
+      'Echinida',
+      'Fistulida',
+      'Medusida',
+      'Stellerida',
+      'Zoanthida',
+    })
     ida_subclasses = frozenset({'Disparida', 'Helicoplacida', 'Polyplacida'})
     ida_parvclasses = frozenset({'Cladida'})
     ida_suborders = frozenset({'Placocystida'})
