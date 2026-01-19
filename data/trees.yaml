@@ -3378,7 +3378,10 @@
 1825a_say:
   taxonomies:
   - children:
-    # - taxon: stelleridica
+    - taxon: stelleridica
+      children:
+      - taxon: comatula
+      - taxon: marsupites
     - taxon: crinoidea-family
       children:
       - taxon: inarticulata
@@ -3406,7 +3409,7 @@
           - taxon: florealis_schlotheim_1820
             parents:
             - taxon: encrinites
-    # - taxon: echinidea-family
+    - taxon: echinidea-family
 1828_hisinger:
   taxonomies:
   - taxon: echinodermata-order

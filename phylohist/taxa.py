@@ -300,6 +300,7 @@ class Taxon:
         'Echinides',
         'Stellérides',
         'Stellerides',
+        'Stelleridica',
         'Fistulides',
       })),
     ):

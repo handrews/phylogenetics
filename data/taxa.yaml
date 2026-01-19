@@ -3237,11 +3237,14 @@ echinocyamus-sp_leske_1778:
   rank: species
   authority:
     source: 1778_leske
-# See 1825a_say; unclear if this is even a real spelling
-# Not to be confused with Echinidea (Kroh & Smith 2010)
-# echinidea-family:
-#   name: Echinidea
-#   rank: Family
+echinidea-family:
+  name: Echinidea
+  rank: Family
+  notes: |
+    See 1825a_say; unclear if this is even a real spelling
+    Not to be confused with Echinidea (Kroh & Smith 2010),
+    nor with Echinidae (Gray 1825).
+  altRankOf: echinida
 echinoderma:
   name: Echinoderma
   rank: Phylum
@@ -9535,15 +9538,15 @@ stellerides:
   name: Stellerides
   vulgarSpellingOf: stelleridæ
   lang: FR
-# See 1825a_say; unclear if this is even a real spelling
-# stelleridica:
-#   name: Stelleridica
-#   altSpellingOf: stelleridæ
+stelleridica:
+  name: Stelleridica
+  altSpellingOf: stelleridæ
+  notes: See 1825a_say; unclear if this is even a real spelling
 stelleroidea:
   name: Stelleroidea
   rank: Class
   auth: [lamarck]
-  year: 1816
+  year: 1816   # Or should this be 1801?
   notes: |
     "Lamarck, 1816 [nom. transl. et correct. Gregory, 1900
     (pro les Stellerides Lamarck, 1816)]"
