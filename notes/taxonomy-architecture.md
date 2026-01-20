@@ -1,5 +1,19 @@
 ## Principles
 
+Science Moves.
+
+There is no need for a database, just language.
+
+Humans need to be able to verify the language that replaces the database.
+
+AI and humans can populate the human-verifiable language.
+
+AI is needed to query and visualize.
+
+A database serialization may be better for verificaton and some use cases.
+
+A database might be needed for the historical edit/audit trail.
+
 * Plan for everything, even if it will not be done anytime soon if ever
 	* This does not mean nail down every detail of everything
 	* It does mean specifying _all_ of the big pieces and how they connect
@@ -21,6 +35,14 @@
 	* "Visualize the history of this taxon"
 	* "Visualize the history of this researcher"
 	* "Compare all of these data sources to each other"
+
+## Language Base
+
+* Less need to handle edge cases, as LLMs can reason about sentence structure.
+* Missing data is just missing.
+* Error correction can be another sentence, either sourced or speculated:
+  * Paper X corrects statement Y to Z
+  * The data entry person thinks X is wrong, and the correct version is Z
 
 ## High Level Areas
 
@@ -111,4 +133,4 @@ For reading papers and entering data (which would also involve an OCR step that 
 
 I don't trust an LLM to do so correctly any more than I trust a human to do so.  I would trust them less than a qualified researcher
 
-The point of the data model is not purely to allow formal queries over structured data.  It is also to have an agreement on exactly what the data and its relationships mean.  
+The point of the data model is not purely to allow formal queries over structured data.  It is also to have an agreement on exactly what the data and its relationships mean.
