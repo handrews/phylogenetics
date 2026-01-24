@@ -463,6 +463,12 @@ $defs:
       stem:
         type: boolean
         default: false
+      page:
+        type: [integer, string]
+      figures:
+        type: array
+        items:
+          $ref: "phylogeny#/$defs/figure"
       specimens:
         $ref: "phylogeny#/$defs/specimens"
       diagnosis:
@@ -553,6 +559,26 @@ $defs:
             type: object
             additionalProperties:
               type: [number, string]
+  figure:
+    type: object
+    oneOf:
+    - required: [plate]
+    - required: [page]
+    properties:
+      source:
+        $ref: "#/$defs/sourceId"
+      plate:
+        type: integer
+      page:
+        type: integer
+      figure:
+        type: [integer, string]
+      location:
+        type: [integer, string]
+      collectedFrom:
+        type: string
+      notes:
+        type: string
   specimen:
     oneOf:
     - type: string
@@ -565,20 +591,7 @@ $defs:
         figures:
           type: array
           items:
-            type: object
-            properties:
-              source:
-                $ref: "#/$defs/sourceId"
-              plate:
-                type: integer
-              page:
-                type: integer
-              location:
-                type: [integer, string]
-              collectedFrom:
-                type: string
-              notes:
-                type: string
+            $ref: "phylogeny#/$defs/figure"
   specimens:
     type: object
     properties:
