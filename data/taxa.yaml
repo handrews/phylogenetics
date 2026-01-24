@@ -802,7 +802,7 @@ asterias:
 asterias-family:
   rank: Family
   altRankOf: asterias
-asteriadæ:
+asteriadæ-order:
   name: Asteriadæ
   rank: Order
   auth: [Gray]
@@ -2367,6 +2367,12 @@ crinoidea:
 crinoideæ:
   name: Crinoideæ
   altSpellingOf: crinoidea
+crinoidea-order:
+  rank: Order
+  altRankOf: crinoidea
+crinoideæ-order:
+  name: Crinoideæ
+  altSpellingOf: crinoidea-order
 crinoidea-family:
   altRankOf: crinoidea
   rank: Family
@@ -2717,13 +2723,14 @@ cystasteroidea:
 cystidea:
   name: Cystidea
   rank: Class
-  auth: [buch]
-  year: 1844
+  authority:
+    source: 1844_buch
 cystidea-order:
-  name: Cystidea
   rank: Order
-  auth: [buch]
-  year: 1844
+  altRankOf: cystidea
+cystideæ-order:
+  name: Cystideæ
+  altSpellingOf: cystidea-order
 cystidea-family:
   name: Cystidea
   rank: Family
@@ -3222,6 +3229,9 @@ echinidae:
 echinidæ:
   name: Echinidæ
   altSpellingOf: echinidae
+echinidæ-order:
+  rank: Order
+  altRankOf: echinidæ
 échinides:
   name: Échinides
   rank: Family
