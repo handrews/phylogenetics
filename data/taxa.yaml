@@ -2662,8 +2662,9 @@ cyclocystoidea:
   year: 1895
 cyclocystoides:
   name: Cyclocystoides
-  auth: [billings, salter]
-  year: 1858
+  authority:
+    authors: [billings, salter]
+    source: 1858_salter_billings
 cyclocystoides-sp_kolata_1975:
   name: null
   rank: species
@@ -2812,9 +2813,9 @@ davisii_mccoy_1848:
   year: 1848
 davisii_salter_1858:
   name: davisii
-  auth: [salter]
-  in: [salter, billings]
-  year: 1858
+  authority:
+    authors: [salter]
+    source: 1858_salter_billings
 dawsoni_billings_1859:
   name: dawsoni
   auth: [billings]
@@ -3511,8 +3512,8 @@ edgari_jell_sprinkle_2021:
     source: 2021_jell_sprinkle
 edrioaster:
   name: Edrioaster
-  auth: [billings]
-  year: 1858
+  authority:
+    source: 1858b_billings
 edrioasterida_bell.b.m_1974:
   name: Edrioasterida
   rank: Order
@@ -3558,8 +3559,12 @@ edrioasteroidea:
   name: Edrioasteroidea
   rank: Class
   bracket: Edrioasteroids
-  auth: [billings]
-  year: 1858
+  authority:
+    source: 1858b_billings
+edrioasteridæ-suborder:
+  name: Edrioasteridæ
+  rank: Suborder
+  altRankOf: edrioasteroidea
 edrioasteroidea-order-uncertain_bassler_1935:
   name: null
   rank: Order
@@ -4825,9 +4830,9 @@ haliotis:
     source: 1758_linnaeus
 halli_billings_1858:
   name: halli
-  auth: [billings]
-  in: [salter, billings]
-  year: 1858
+  authority:
+    authors: [billings]
+    source: 1858_salter_billings
 hallii_conrad.t.a_1842:
   name: hallii
   authority:

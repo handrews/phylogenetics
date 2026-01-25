@@ -3915,6 +3915,24 @@
         - taxon: bigsbyi_billings_1857
           parents:
           - taxon: cyclaster_billings_1857
+    - taxon: agelacrinites
+      children:
+      - taxon: dicksoni_billings_1857
+  - taxon: asteriadæ-order
+    children:
+    - taxon: edrioasteridæ-suborder
+      questionable: true
+      provisional: true
+      new: true
+      page: 85
+      children:
+      - taxon: edrioaster
+        new: true  # code does not understand this appearing in two trees.
+        provisional: true
+      - taxon: agelacrinites
+        provisional: true
+      - taxon: hemicystites
+        provisional: true
 1858_salter_billings:
   taxonomies:
   - taxon: cystideæ-order
