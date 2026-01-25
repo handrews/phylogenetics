@@ -55,6 +55,11 @@ billings:
 billings.w.r:
   family: Billings
   given: Walter R.
+blainville:
+  family: Blainville
+  given: Henri Marie Ducrotay de
+  birth: 1777
+  death: 1850
 bockelie:
   family: Bockelie
   given: Johan Fredrik
@@ -384,6 +389,11 @@ lamarck:
 lankester:
   family: Lankester
   given: E. Ray
+latreille:
+  family: Latreille
+  given: Pierre André
+  birth: 1762
+  death: 1833
 lawrence:
   family: Lawrence
   given: John M.
@@ -398,6 +408,11 @@ leske:
   given: Nathanael Gottfried
   birth: 1751
   death: 1786
+leuckart:
+  family: Leuckart
+  given: Rudolf
+  birth: 1822
+  death: 1898
 lewis.r.d:
   family: Lewis
   given: Ronald D.

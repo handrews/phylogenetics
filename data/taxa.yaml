@@ -47,7 +47,7 @@ actinia:
   authority:
     source: 1767_linnaeus
   notes: |
-    Possibly 1767_gunnerus?  But ICZN Opinion 1295 suppressing 
+    Possibly 1767_gunnerus?  But ICZN Opinion 1295 suppressing
     Actinia (Pallas) does not mention Gunnerus.
 actinia_pallas_1766:
   name: Actinia
@@ -65,6 +65,12 @@ actinocrinus:
   name: Actinocrinus
   auth: [Agassiz]
   year: 1836
+actinozoa:
+  name: Actinozoa
+  rank: Class
+  auth: [Latreille]
+  year: 1825
+  notes: As used by Leuckart (1848).
 acutus_lamarck_1816:
   name: acutus
   authority:
@@ -823,6 +829,9 @@ asteroidea:
 asteroidea-subclass:
   rank: Subclass
   altRankOf: asteroidea
+asteroidea-order:
+  rank: Order
+  altRankOf: asteroidea
 asteroids:
   name: Asteroids
   rank: Group
@@ -1142,8 +1151,8 @@ bigranularis_lamarck_1816:
     source: 1816b_lamarck
 bigsbyi_billings_1857:
   name: bigsbyi
-  auth: [billings]
-  year: 1857
+  authority:
+    source: 1857_billings
 billingsi_chapman_1860:
   name: billingsi
   auth: [Chapman]
@@ -2635,8 +2644,8 @@ cyclaster:
 cyclaster_billings_1857:
   homonym: true
   name: Cyclaster
-  auth: [billings]
-  year: 1857
+  authority:
+    source: 1857_billings
 cyclidium:
   name: Cyclidium
   authority:
@@ -2746,12 +2755,6 @@ cystidea-sp_buch_1944:
   rank: species
   authority:
     source: 1844_buch
-cystideæ:
-  name: Cystideæ
-  rank: Order
-  auth: [buch]
-  year: 1844
-  altSpellingOf: cystidea
 cystideæ-unnamed-group_müller.j.p_1854:
   name: null
   rank: Unranked
@@ -2772,9 +2775,10 @@ cystideæ-unnamed-subgroup-2_müller.j.p_1854:
   notes: Glyptocystitida; rank unstated
 cystoidea:
   name: Cystoidea
-  rank: Class
-  auth: [buch]
-  year: 1846
+  altSpellingOf: cystidea
+cystoidea-order:
+  rank: Order
+  altRankOf: cystoidea
 cystostellaroidea:
   name: Cystostellaroidea
   rank: Order
@@ -3396,6 +3400,9 @@ echinoidea:
   authority:
     source: 1778_leske
   notes: Originally appeared as Order Echinus
+echinoidea-order:
+  rank: Order
+  altRankOf: echinoidea
 echinolampas:
   name: Echinolampas
   authority:
@@ -5185,11 +5192,18 @@ holothuria_linnaeus_1758:
   needsQualification: true
   authority:
     source: 1758_linnaeus
-  notes: Completely different contents from the later Holothuria
+  notes: Did not include sea cucumbers, so suppressed in favor of 1767.
 holothuria:
   name: Holothuria
   authority:
     source: 1767_linnaeus
+holothuria-order:
+  name: Holothuria
+  rank: Order
+  altRankOf: holothuroidea
+  notes: |
+    Treating this as a weirdly-named Holothuroidea rather than
+    a "promoted" genus.
 holothuroidea:
   name: Holothuroidea
   rank: Class
@@ -7252,7 +7266,7 @@ ottawaensis_whiteaves_1897:
   year: 1897
 ottawacrinus:
   name: Ottawacrinus
-  authority: 
+  authority:
     source: 1887_billings.w.r
 ova:
   name: Ova
@@ -7593,14 +7607,14 @@ pelmatozoa:
   name: Pelmatozoa
   bracket: Pelmatozoans
   rank: Subphylum
-  status: informal
-  auth: [Leuckart]
-  year: 1848
+  authority:
+    source: 1848_leuckart
+pelmatozoa-class:
+  rank: Class
+  altRankOf: pelmatozoa
 pelmatozoa-grade:
-  name: Pelmatozoa
   rank: Grade
-  auth: [Leuckart]
-  year: 1848
+  altRankOf: pelmatozoa
 pelmatozoa-incertae-sedis:
   name: null
   rank: Order
@@ -7750,6 +7764,10 @@ petalus_holloway_jell_1983:
   name: petalus
   authority:
     source: 1983_holloway_jell
+petraster:
+  name: Petraster
+  authority:
+    source: 1858b_billings
 phaenoschismatidae:
   name: Phaenoschismatidae
   rank: Family
@@ -9186,6 +9204,12 @@ scyphocrinus:
   name: Scyphocrinus
   auth: [hall]
   year: 1847
+scytodermata:
+  name: Scytodermata
+  rank: Class
+  auth: [Burmeister]
+  year: 1837
+  notes: Rank based on 1848_leuckart's usage
 segurae_gil cid_domínguez alonso_2002:
   name: segurae
   authority:
@@ -9315,6 +9339,11 @@ sinuatus_leske_1778:
   name: sinuatus
   authority:
     source: 1778_leske
+sipunculida-order:
+  name: Sipunculida
+  rank: Order
+  auth: [Rafinesque]
+  year: 1814
 sipunculus:
   name: Sipunculus
   authority:
@@ -9647,6 +9676,10 @@ stelliferus_lamarck_1816:
   name: stelliferus
   authority:
     source: 1816b_lamarck
+stenaster:
+  name: Stenaster
+  authority:
+    source: 1858b_billings
 stenuroidea:
   name: Stenuroidea
   rank: Class
@@ -9891,6 +9924,10 @@ syringocrinus:
   auth: [billings]
   year: 1850
 ###################### T
+tæniaster:
+  name: Tæniaster
+  authority:
+    source: 1858b_billings
 taijiangensis_zhao.y.l_zhu.m.y_1994:
   name: taijiangensis
   authority:

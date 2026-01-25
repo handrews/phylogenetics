@@ -550,6 +550,12 @@
   - forbes
   identifiers:
     url: https://www.google.com/books/edition/Memoirs_of_the_Geological_Survey_of_Grea/WcNAAAAAcAAJ?hl=en&gbpv=1
+1848_leuckart:
+  book: uber-morph
+  pubDate:
+    year: 1848
+  authors:
+  - leuckart
 1854_müller.j.p:
   book: uber-den-bau
   pubDate:
@@ -558,6 +564,16 @@
   - müller.j.p
   identifiers:
     url: https://www.google.com/books/edition/_/JOlAAAAAcAAJ
+1857_billings:
+  book: geo-survey-canada
+  chapter: Report of E. BrLLINGs, Esq., for the year 1856
+  pages:
+  - 247
+  - 346
+  pubDate:
+    year: 1857
+  authors:
+  - billings
 1858a_billings:
   title: On the Cystideæ of the Lower Silurian Rocks of Canada
   journal: fig-desc-can

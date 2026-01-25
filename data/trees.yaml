@@ -3789,6 +3789,23 @@
     - taxon: crinoideæ-order
       synonyms:
       - taxon: crinoidea-order
+1848_leuckart:
+  taxonomies:
+  - taxon: echinodermata
+    children:
+    - taxon: pelmatozoa-class
+      new: true
+      children:
+      - taxon: cystoidea-order
+      - taxon: crinoidea-order
+    - taxon: actinozoa
+      children:
+      - taxon: echinoidea-order
+      - taxon: asteroidea-order
+    - taxon: scytodermata
+      children:
+      - taxon: holothuria-order
+      - taxon: sipunculida-order
 1854_müller.j.p:
   taxonomies:
   - notes: Partially based on the translation in 1958a_billings
@@ -3874,6 +3891,30 @@
             - taxon: leuchtenbergii_volborth_1846
               type: true
             - taxon: pomum_leuchtenberg_1843 # actually non?
+1858b_billings:
+  taxonomies:
+  - taxon: asteriadæ-order
+    children:
+    - taxon: palasterina
+      notes: As defined by Mr. Salter, 1857
+    - taxon: stenaster
+      new: true
+    - taxon: petraster
+      new: true
+    - taxon: tæniaster
+      new: true
+    - taxon: edrioaster
+      page: 82
+      new: true
+      synonyms:
+      - taxon: cyclaster_billings_1857
+        page: 292
+      children:
+      - taxon: bigsbyi_billings_1857
+        synonyms:
+        - taxon: bigsbyi_billings_1857
+          parents:
+          - taxon: cyclaster_billings_1857
 1858_salter_billings:
   taxonomies:
   - taxon: cystideæ-order

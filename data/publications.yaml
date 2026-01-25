@@ -88,6 +88,8 @@ geomag:
   name: Geological Magazine
 geo-soc-am-abs-prog:
   name: Geological Society of America, Abstracts With Programs
+geo-survey-canada:
+  name: Geological Survey of Canada. Report of Progress for the years 1853–54–55–56
 hist-sans-vert:
   name: Histoire naturelle des animaux sans vertèbres
 horae:
@@ -218,6 +220,8 @@ treatise-zoo:
   place: London
 uber-den-bau:
   name: Über den Bau der Echinodermen
+uber-morph:
+  name: Uber die Morphologie der wirbellosen Thiere
 vermium-t-e-f:
   name: Vermivm Terrestrium Et Fluviatilium, Seu Animalium Infusoriorum, Helminthicorum et Testaceorum 
 vestnik:
