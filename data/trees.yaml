@@ -3495,6 +3495,29 @@
         - taxon: icosidactylus_phillips.j_1839
           new: true
           notes: not noted as new but seems to be based on subgenus text
+1842_conrad.t.a:
+  taxonomies:
+  - taxon: crinoidea-family
+    notes: Rank is a guess
+    children:
+    - taxon: stephanocrinus
+      new: true
+      children:
+      - taxon: angulatus_conrad.t.a_1842
+        new: true
+    - taxon: ichthyocrinus
+      new: true
+      children:
+      - taxon: lævis_conrad.t.a_1842
+        new: true
+    - taxon: nucleocrinus
+      notes: |
+        This genus differs from Pentremites, Say, in
+        having only one perforation at top, which is central.
+      new: true
+      children:
+      - taxon: elegans_conrad.t.a_1842
+        new: true
 1842_vanuxem:
   taxonomies:
   - notes: |
@@ -3525,7 +3548,7 @@
             of the large, with the mid-sized adjacent to one large and
             the third large ont he other side of the first two.
     - taxon: nucleocrinus
-      new: true
+      notes: It's possible that this came out before Conrad's own 1842 paper.
       children:
       - taxon: hallii_conrad.t.a_1842
         new: true
@@ -7938,7 +7961,7 @@
           - taxon: stephanoblastus
           - taxon: stephanocrinus
             children:
-            - taxon: angulatus_conrad_1842
+            - taxon: angulatus_conrad.t.a_1842
               type: true
             - taxon: gemmiformis_hall_1852
               provisional: true

@@ -436,6 +436,20 @@
   - murchison
   identifiers:
     url: https://www.biodiversitylibrary.org/item/165542#page/7/mode/1up
+1842_conrad.t.a:
+  title: Descriptions of new Species of Organic Remains belonging to the Silurian, Devonian, and Carboniferous Systems of the United States
+  journal: jofacnatsci-philadelphia
+  volume: 8
+  number: 2
+  pages:
+  - 235
+  - 280
+  pubDate:
+    year: 1842
+  authors:
+  - conrad.t.a
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/24623276
 1842_vanuxem:
   title: Geology of New-York. Part III. Comprising the Survey of the Third Geological District
   book: nat-hist-ny

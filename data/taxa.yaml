@@ -455,10 +455,10 @@ anomia:
   name: Anomia
   authority:
     source: 1758_linnaeus
-angulatus_conrad_1842:
+angulatus_conrad.t.a_1842:
   name: angulatus
-  auth: [Conrad]
-  year: 1842
+  authority:
+    source: 1842_conrad.t.a
 angulatus_wood_1909:
   name: angulatus
   auth: [Wood]
@@ -3668,6 +3668,10 @@ eknomocrinus:
   name: Eknomocrinus
   authority:
     source: 2003_guensburg_sprinkle
+elegans_conrad.t.a_1842:
+  name: elegans
+  authority:
+    source: 1842_conrad.t.a
 elegans_müller.o.f_1776:
   name: elegans
   authority:
@@ -7037,8 +7041,8 @@ norvagicum_leske_1778:
 nucleocrinus:
   name: Nucleocrinus
   authority:
-    authors: [conrad.t.a]
-    source: 1842_vanuxem
+    source: 1842_conrad.t.a
+  notes: Possibly first published in 1842_vanuxem
 nucleolites:
   name: Nucleolites
   authority:
