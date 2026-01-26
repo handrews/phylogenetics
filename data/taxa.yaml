@@ -84,6 +84,10 @@ aculeata_pennant_1777:
   auth: [Pennant]
   year: 1777
   notes: Probably not the same as aculeata_linnaeus_1767
+aculeatus_hall_1852:
+  name: aculeatus
+  authority:
+    source: 1852_hall
 acuminata_lamarck_1816:
   name: acuminata
   authority:
@@ -717,6 +721,10 @@ armata_forbes_1848:
 armatus_forbes_1848:
   name: armatus
   altSpellingOf: armata_forbes_1848
+armatus_hall_1852:
+  name: armatus
+  authority:
+    source: 1852_hall
 arthriticus_phillips.j_1839:
   name: arthriticus
   authority:
@@ -808,6 +816,9 @@ asterias:
 asterias-family:
   rank: Family
   altRankOf: asterias
+asteriadæ-family:
+  rank: Family
+  altRankOf: asteriadæ-order
 asteriadæ-order:
   name: Asteriadæ
   rank: Order
@@ -1304,6 +1315,16 @@ botryllus:
   name: Botryllus
   auth: [Gaertner]
   year: 1774
+brachiatus_hall_1852_glyptaster:
+  name: brachiatus
+  originalParent: glyptaster
+  authority:
+    source: 1852_hall
+brachiatus_hall_1852_myelodactylus:
+  name: brachiatus
+  originalParent: myelodactylus
+  authority:
+    source: 1852_hall
 brachiatus_sprinkle_1973:
   name: brachiatus
   authority:
@@ -1440,6 +1461,10 @@ calcitrapa_lamarck_1816:
   name: calcitrapa
   authority:
     source: 1816a_lamarck
+caliculus_hall_1852:
+  name: caliculus
+  authority:
+    source: 1852_hall
 calix:
   name: Calix
   auth: [Rouault]
@@ -1542,6 +1567,10 @@ canadensis_billings_1866:
   name: canadensis
   auth: [billings]
   year: 1866
+canaliculatus_hall_1852:
+  name: canaliculatus
+  authority:
+    source: 1852_hall
 canaliferus_lamarck_1816:
   name: canaliferus
   authority:
@@ -2007,10 +2036,18 @@ clavigera_lamarck_1816:
   name: clavigera
   authority:
     source: 1816a_lamarck
+clintonensis_hall_1852:
+  name: clintonensis
+  authority:
+    source: 1852_hall
 clio:
   name: Clio
   authority:
     source: 1767_linnaeus
+closterocrinus:
+  name: Closterocrinus
+  authority:
+    source: 1852_hall
 clypeaster:
   name: Clypeaster
   authority:
@@ -2191,6 +2228,10 @@ conus:
   name: Conus
   authority:
     source: 1758_linnaeus
+convolutus_hall_1852:
+  name: convolutus
+  authority:
+    source: 1852_hall
 cooki_sprinkle_1982:
   name: cooki
   authority:
@@ -2383,9 +2424,12 @@ crinoideæ-order:
   name: Crinoideæ
   altSpellingOf: crinoidea-order
 crinoidea-family:
-  altRankOf: crinoidea
   rank: Family
+  altRankOf: crinoidea
   notes: Original rank as declared by Miller in 1821
+crinoideæ-family:
+  name: Crinoideæ
+  altSpellingOf: crinoidea-family
 crinoiden:
   name: Crinoiden
   lang: DE
@@ -2701,6 +2745,10 @@ cylindricum_aurivillius_1892:
   name: cylindricum
   auth: [Aurivillius]
   year: 1892
+cylindricus_hall_1852:
+  name: cylindricus
+  authority:
+    source: 1852_hall
 cylindricus_lamarck_1816_beroe:
   name: cylindricus
   originalParent: beroe
@@ -2747,6 +2795,9 @@ cystidea-family:
   auth: [buch]
   year: 1844
   notes: Original rank as defined in 1844 (via translation in 1846)
+cystideæ-family:
+  name: Cystideæ
+  altSpellingOf: cystidea-family
 cystideen:
   name: Cystideen
   lang: DE
@@ -3672,6 +3723,10 @@ elegans_conrad.t.a_1842:
   name: elegans
   authority:
     source: 1842_conrad.t.a
+elegans_hall_1852:
+  name: elegans
+  authority:
+    source: 1852_hall
 elegans_müller.o.f_1776:
   name: elegans
   authority:
@@ -3706,6 +3761,10 @@ elongatus_guensburg_sprinkle_1994:
   name: elongatus
   authority:
     source: 1994_guensburg_sprinkle
+elongatus_hall_1852:
+  name: elongatus
+  authority:
+    source: 1852_hall
 elongatus_miller.j.s_1821:
   name: elongatus
   authority:
@@ -3991,6 +4050,10 @@ etoctenocystis:
   name: Etoctenocystis
   auth: [fatka, kordule]
   year: 1985
+eucalyptocrinus:
+  name: Eucalyptocrinus
+  authority:
+    source: 1852_hall
 eucystis:
   name: Eucystis
   auth: [Angelin]
@@ -4495,6 +4558,10 @@ glutinosa_linnaeus_1758:
   name: glutinosa
   authority:
     source: 1758_linnaeus
+glyptaster:
+  name: Glyptaster
+  authority:
+    source: 1852_hall
 glyptocrinidae:
   name: Glyptocrinidae
   rank: Family
@@ -4504,6 +4571,11 @@ glyptocrinus:
   name: Glyptocrinus
   auth: [hall]
   year: 1847
+glyptocrinus-sp_hall_1852:
+  name: null
+  rank: species
+  authority:
+    source: 1852_hall
 glyptocrinus-sp_kolata_1975:
   name: null
   rank: species
@@ -5017,8 +5089,8 @@ hemicosmitidae:
   year: 1918
 hemicystites:
   name: Hemicystites
-  auth: [hall]
-  year: 1852
+  authority:
+    source: 1852_hall
 hemicystites-subgenus:
   name: Hemicystites
   rank: subgenus
@@ -5106,6 +5178,10 @@ heterocrinus:
   name: Heterocrinus
   auth: [hall]
   year: 1847
+heterocystites:
+  name: Heterocystites
+  authority:
+    source: 1852_hall
 hétéromorphes:
   name: Hétéromorphes
   rank: section
@@ -5233,6 +5309,10 @@ homalozoa:
   rank: Subphylum
   authority:
     source: 1941_whitehouse
+homocrinus:
+  name: Homocrinus
+  authority:
+    source: 1852_hall
 homocystites:
   name: Homocystites
   auth: [barrande]
@@ -5370,6 +5450,10 @@ imbricata:
   rank: Order
   authority:
     source: 1973_sprinkle
+immaturis_hall_1852:
+  name: immaturis
+  authority:
+    source: 1852_hall
 impatiens_forsskål_1775:
   name: impatiens
   auth: [forsskål]
@@ -5708,8 +5792,16 @@ jewetti_billings_1859:
   year: 1859
 jewetti_hall_1852:
   name: jewetti
-  auth: [hall]
-  year: 1852
+  authority:
+    source: 1852_hall
+jewettii_hall_1852:
+  name: jewettii
+  altSpellingOf: jewetti_hall_1852
+jewettii-var_hall_1852:
+  name: null
+  rank: variety
+  authority:
+    source: 1852_hall
 judaica_linnaeus_1761:
   name: judaica
   auth: [linnaeus]
@@ -5974,6 +6066,10 @@ lebouri_sladen_1879:
   name: lebouri
   auth: [Sladen]
   year: 1879
+lecanocrinus:
+  name: Lecanocrinus
+  authority:
+    source: 1852_hall
 legrandensis_miller.s.a_gurley_1894:
   name: legrandensis
   auth: [miller.s.a, gurley]
@@ -6110,6 +6206,10 @@ ligula_cuvier_1798:
   authority:
     source: 1798_cuvier
   notes: Accepted as Lingula (Brug. 1797) per IRMNG, non Bloch (1782)
+liliiformis_hall_1852:
+  name: liliiformis
+  authority:
+    source: 1852_hall
 liliiformis_lamarck_1801:
   name: liliiformis
   authority:
@@ -6280,6 +6380,10 @@ lyracystis:
   name: Lyracystis
   authority:
     source: 2006_sprinkle_collins.d
+lyriocrinus:
+  name: Lyriocrinus
+  authority:
+    source: 1852_hall
 lysocystites:
   name: Lysocystites
   auth: [Miller]
@@ -6303,6 +6407,14 @@ macronata_forsskål_1775:
   name: macronata
   auth: [forsskål]
   year: 1775
+macropetalus_hall_1852:
+  name: macropetalus
+  authority:
+    source: 1852_hall
+macrostylocrinus:
+  name: Macrostylocrinus
+  authority:
+    source: 1852_hall
 mactra:
   name: Mactra
   authority:
@@ -6525,6 +6637,10 @@ melo_lamarck_1816:
   name: melo
   authority:
     source: 1816b_lamarck
+melocrinites:
+  name: Melocrinites
+  auth: [Goldfuss]
+  year: 1831
 membranacea_retzius_1783:
   name: membranacea
   auth: [Retzius]
@@ -6869,6 +6985,15 @@ myeinocystites:
   name: Myeinocystites
   auth: [strimple]
   year: 1953
+myelodactylus:
+  name: Myelodactylus
+  authority:
+    source: 1852_hall
+myelodactylus-sp_hall_1852:
+  name: null
+  rank: species
+  authority:
+    source: 1852_hall
 mytilus:
   name: Mytilus
   authority:
@@ -6969,6 +7094,11 @@ nevadensis_sprinkle_1973:
   name: nevadensis
   authority:
     source: 1973_sprinkle
+niagarensis_hall_1852_palæaster:
+  name: niagarensis
+  originalParent: palæaster
+  authority:
+    source: 1852_hall
 nicklesi_bassler_1936:
   name: nicklesi
   authority:
@@ -7229,6 +7359,16 @@ ornatus_bassler_1943:
   name: ornatus
   auth: [bassler]
   year: 1943
+ornatus_hall_1852_lecanocrinus:
+  name: ornatus
+  originalParent: lecanocrinus
+  authority:
+    source: 1852_hall
+ornatus_hall_1852_macrostylocrinus:
+  name: ornatus
+  originalParent: macrostylocrinus
+  authority:
+    source: 1852_hall
 ornatus_miller.j.s_1821:
   name: ornatus
   authority:
@@ -7370,8 +7510,11 @@ pahvanticystis:
   year: 2018
 palaeaster:
   name: Palaeaster
-  auth: [hall]
-  year: 1852
+  authority:
+    source: 1852_hall
+palæaster:
+  name: Palæaster
+  altSpellingOf: palaeaster
 palaeasteraceae:
   name: Palaeasteraceae
   rank: Superfamily
@@ -7426,6 +7569,10 @@ papposa_linnaeus_1767:
   name: papposa
   authority:
     source: 1767_linnaeus
+papulosus_hall_1852:
+  name: papulosus
+  authority:
+    source: 1852_hall
 parablastoidea:
   name: Parablastoidea
   rank: Class
@@ -7550,6 +7697,10 @@ parvus_bassler_1936:
   name: parvus
   authority:
     source: 1936_bassler
+parvus_hall_1852:
+  name: parvus
+  authority:
+    source: 1852_hall
 patella:
   name: Patella
   authority:
@@ -9028,6 +9179,10 @@ saccatus_linnaeus_1767:
   name: saccatus
   authority:
     source: 1767_linnaeus
+saccocrinus:
+  name: Saccocrinus
+  authority:
+    source: 1852_hall
 sagittaria_thomas_ladd_1926:
   name: sagittaria
   auth: [Thomas, Ladd]
@@ -9157,6 +9312,10 @@ scotiaecystis-sp_sumrall_sprinkle_guensburg_1997:
   rank: species
   authority:
     source: 1997_sumrall_sprinkle_guensburg
+sculptus_hall_1852:
+  name: sculptus
+  authority:
+    source: 1852_hall
 sculptus_lamarck_1816:
   name: sculptus
   authority:
@@ -9318,6 +9477,10 @@ simplex_barrande_1887:
   name: simplex
   auth: [barrande]
   year: 1887
+simplex_hall_1852:
+  name: simplex
+  authority:
+    source: 1852_hall
 simplex_phillips.j_1839:
   name: simplex
   authority:
@@ -9432,6 +9595,10 @@ spatangus_leske_1778:
   authority:
     source: 1778_leske
   notes: ICZN suppressed
+speciosus_hall_1852:
+  name: speciosus
+  authority:
+    source: 1852_hall
 spencensis_wen.r_babcock_peng.j_robison_2019:
   name: spencensis
   auth: [wen.r, babcock, peng.j, robison]
@@ -10144,6 +10311,10 @@ thyroida:
   year: 1860
   notes: Some sources list order Thyroidea, Thyroida is probably an error
   altSpellingOf: thyroidea
+thysanocrinus:
+  name: Thysanocrinus
+  authority:
+    source: 1852_hall
 tiaracrinidae:
   name: Tiaracrinidae
   rank: Family

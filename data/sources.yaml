@@ -570,6 +570,12 @@
     year: 1848
   authors:
   - leuckart
+1852_hall:
+  book: paleo-ny
+  pubDate:
+    year: 1852
+  authors:
+  - hall
 1854_müller.j.p:
   book: uber-den-bau
   pubDate:

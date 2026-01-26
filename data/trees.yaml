@@ -1588,7 +1588,7 @@
           Chapter II, Des Zoophytes qui ont une enveloppe cortace ou calcaire,
           un organe respiratoire intérieur distinct,etsouvent despieds
           rétracuiles nombreux; ou des ÉCHINODERMES.
-          (These are zoophytes that have a leathery or calcareous outer 
+          (These are zoophytes that have a leathery or calcareous outer
           overing, a distinct internal respiratory organ, and often numerous
           retractable feet; or Echinoderms.)
         children:
@@ -3537,7 +3537,8 @@
         page: 158
         figures:
         - page: 306
-          figure: 80
+          figures:
+          - 80
           collectedFrom: |
             Hamilton group, Madison County, West-Hamilton village,
             upper quarry
@@ -3829,6 +3830,234 @@
       children:
       - taxon: holothuria-order
       - taxon: sipunculida-order
+1852_hall:
+  taxonomies:
+  - taxon: echinodermata-order
+    notes: rank is a guess, presence implied from text.
+    children:
+    - taxon: crinoidea-family
+      notes: Rank is a guess.  Middle Silurian of Clinton Group.
+      synonyms:
+      - taxon: crinoideæ-family
+        notes: Alternate spelling used in text.
+      children:
+      - taxon: closterocrinus
+        new: true
+        children:
+        - taxon: elongatus_hall_1852
+          new: true
+      - taxon: glyptocrinus
+        children:
+        - taxon: plumosus_hall_1843
+          synonyms:
+          - taxon: plumosus_hall_1843
+            provisional: true
+            parents:
+            - taxon: actinocrinus
+        - openTaxon: glyptocrinus-sp_hall_1852
+      - taxon: ichthyocrinus
+        children:
+        - taxon: clintonensis_hall_1852
+          provisional: true
+          new: true
+      - taxon: caryocrinus
+        children:
+        - taxon: ornatus_say_1825
+  - taxon: echinodermata-order
+    notes: Rank is a guess.  Presence implied from text.
+    children:
+    - taxon: crinoidea-family
+      notes: Rank is a guess.  Middle Silurian of Niagra Group.
+      synonyms:
+      - taxon: crinoideæ-family
+        notes: Alternate spelling used in text.
+      children:
+      - taxon: homocrinus
+        new: true
+        children:
+        - taxon: parvus_hall_1852
+          new: true
+        - taxon: cylindricus_hall_1852
+          new: true
+      - taxon: glyptaster
+        new: true
+        children:
+        - taxon: brachiatus_hall_1852_glyptaster
+          new: true
+      - taxon: thysanocrinus
+        new: true
+        children:
+        - taxon: liliiformis_hall_1852
+          new: true
+        - taxon: canaliculatus_hall_1852
+          new: true
+        - taxon: aculeatus_hall_1852
+          new: true
+        - taxon: immaturis_hall_1852
+          new: true
+      - taxon: myelodactylus
+        new: true
+        children:
+        - taxon: convolutus_hall_1852
+          new: true
+        - taxon: brachiatus_hall_1852_myelodactylus
+          notes: Described in section on fragments
+          new: true
+        - openTaxon: myelodactylus-sp_hall_1852
+          notes: Described in section on fragments
+      - taxon: dendrocrinus
+        new: true
+        children:
+        - taxon: longidactylus_hall_1852
+          new: true
+      - taxon: ichthyocrinus
+        children:
+        - taxon: lævis_conrad.t.a_1842
+      - taxon: lyriocrinus
+        new: true
+        children:
+        - taxon: dactylus_hall_1843
+          synonyms:
+          - taxon: dactylus_hall_1843
+            provisional: true
+            parents:
+            - taxon: marsupiocrinites
+      - taxon: lecanocrinus
+        new: true
+        children:
+        - taxon: macropetalus_hall_1852
+          new: true
+        - taxon: ornatus_hall_1852_lecanocrinus
+          new: true
+        - taxon: simplex_hall_1852
+          new: true
+        - taxon: caliculus_hall_1852
+          new: true
+      - taxon: macrostylocrinus
+        new: true
+        children:
+        - taxon: ornatus_hall_1852_macrostylocrinus
+          new: true
+      - taxon: saccocrinus
+        new: true
+        children:
+        - taxon: speciosus_hall_1852
+          new: true
+      - taxon: eucalyptocrinus
+        new: true
+        children:
+        - taxon: decorus_phillips.j_1839
+          notes: |
+            Compare f7. celatus. Ip. pag. 113, fig. 1;
+            and pl. 47 ut sup. fig. 4 a.
+          synonyms:
+          - taxon: decorus_phillips.j_1839
+            parents:
+            - taxon: hypanthocrinites
+        - taxon: cælatus_hall_1843
+          synonyms:
+          - taxon: cælatus_hall_1843
+            parents:
+            - taxon: hypanthocrinites
+        - taxon: papulosus_hall_1852
+          notes: Compare Lucalyptocrinus decorus, ut supra.
+          new: true
+      - taxon: stephanocrinus
+        children:
+        - taxon: angulatus_conrad.t.a_1842
+        - taxon: gemmiformis_hall_1852
+          new: true
+      - taxon: caryocrinus
+        notes: |
+          Prof. Troost has enumerated five species as occurring in Tennessee:
+          these are the Caryocrinus meconideus, C. hexagonus, C. granulatus,
+          C. insculptus, C. globosus
+        children:
+        - taxon: ornatus_say_1825
+          synonyms:
+          - taxon: loricatus_say_1825
+      - taxon: melocrinites
+        notes: |
+          Melocrinites hieroglyphicus, and M. lævis, Goldfuss,
+          Petrefacta Germania, Vol. i, pag. 197, pl. lx, figs. 1 and 2.
+        children:
+        - taxon: sculptus_hall_1852
+          new: true
+          notes: |
+            Compare Melocrinites lævis Golfuss.  Not stated as new but
+            other sources credit this one.  Possibly because fragmentary?
+      - taxon: heterocystites
+        new: true
+        children:
+        - taxon: armatus_hall_1852
+          new: true
+      - taxon: calceocrinus
+        new: true
+        notes: Errata and additions; no species defined.
+    - taxon: cystideæ-family
+      synonyms:
+      - taxon: cystidea-family
+        notes: Alternate spelling used in text.
+      children:
+      - taxon: callocystites
+        page: 238
+        new: true
+        children:
+        - taxon: jewettii_hall_1852
+          page: 239
+          figures:
+          - plate: L
+            figures:
+            - 1
+            - 11
+          new: true
+          children:
+          - openTaxon: jewettii-var_hall_1852
+            questionable: true
+            figures:
+            - plate: L
+              figures:
+              - 12
+              - 16
+      - taxon: apiocystites
+        children:
+        - taxon: elegans_hall_1852
+          page: 243
+          figures:
+          - plate: LI
+            figures:
+            - 1
+            - 17
+          new: true
+          notes: |
+            Compare Apiocystites pentremitoides, ForBrs, Mem. Geol. Survey
+            of Great Britain, 1848, Vol.  li, part ii, pag. 502, pl. xv.
+      - taxon: hemicystites
+        page: 245
+        new: true
+        synonyms:
+        - tentative: true
+          taxon: agelacrinites
+          notes: Only Agelacrinites Vanuxem, non Agelacrinites Forbes.
+        children:
+        - taxon: parasitica_hall_1852
+          page: 246
+          figures:
+          - plate: LI
+            figures:
+            - 18
+            - 20
+          - plate: LI
+            figures:
+            - 20†
+          new: true
+    - taxon: asteriadæ-family
+      children:
+      - taxon: palæaster
+        new: true
+        children:
+        - taxon: niagarensis_hall_1852_palæaster
+          new: true
 1854_müller.j.p:
   taxonomies:
   - notes: Partially based on the translation in 1958a_billings

@@ -579,7 +579,9 @@ class Tree:
     if self._metadata:
       self._source = Source.get(self._metadata['source_key'])
       if self._source is None:
-        logger.error(f'Tree source {source_key} not reognized!')
+        logger.error(
+          f"Tree source {self._metadata['source_key']} not reognized!"
+        )
 
       self._type = self._metadata['type']
       if self._type not in Tree._type_index:

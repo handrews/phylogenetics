@@ -568,11 +568,13 @@ $defs:
       source:
         $ref: "#/$defs/sourceId"
       plate:
-        type: integer
-      page:
-        type: integer
-      figure:
         type: [integer, string]
+      page:
+        type: [integer, string]
+      figures:
+        type: array
+        items:
+          type: [integer, string]
       location:
         type: [integer, string]
       collectedFrom:
