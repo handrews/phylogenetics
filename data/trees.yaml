@@ -3697,6 +3697,147 @@
           - openTaxon: crinoidea-secondhand-sp_sowerby_1833 # date uncertain!
             parents:
             - openTaxon: crinoidea-secondhand-genus_sowerby_1833
+1847_hall:
+  taxonomies:
+  - taxon: crinoidea-order
+    notes: Chazy limestone
+    children:
+    - taxon: crinoidea-family
+      children:
+      - taxon: actinocrinus
+        children:
+        - taxon: tenuiradiatus_hall_1847
+          new: true
+        - openTaxon: actinocrinus-sp_hall_1847
+  - taxon: echinodermata-class
+    notes: |
+      Trenton limestone
+      Echinodermata described as a family in text, but also as containing
+      the families Crinoidea, Cystidea, Echinidea and the genus Asterias,
+      although Crinoidea is also described as an "Order or Class" in a table,
+      and even Asterias is included there..
+    children:
+    - taxon: crinoidea-order
+      children:
+      - taxon: asterias
+        notes: |
+          No mention of Asteriadea, or its ordered relationship to the
+          Crinoidea -> Cystidea -> Echinidea sequence, but phrases like
+          "approaching a true Asterias" suggest it is veiwed as higher?
+        children:
+        - taxon: matunita_hall_1847
+          new: true
+      - taxon: crinoidea-family
+        notes: Seems to use Crinoidea as both Order and Family?
+        children:
+        - taxon: schizocrinus
+          children:
+          - taxon: nodosus_hall_1847
+            new: true
+        - taxon: poteriocrinus
+          children:
+          - taxon: alternatus_hall_1847
+            new: true
+          - taxon: gracilis_
+        - taxon: scyphocrinus
+          children:
+          - taxon: heterocostalis_hall_1847
+            new: true
+      - taxon: cystidea-family
+        notes: |
+          Mostly described as a separate family from Crinoidea, noting it
+          as intermediate between them and the Echinidea, but sometimes
+          spoken of compared to "true Crinoidea" implying containment?
+          Seems to use Crinoidea as both Order and Family?
+        children:
+        - taxon: echino-encrinites
+          synonyms:
+          - taxon: echino-encrinites
+            auth: [von Meyer]
+            in: [Karstner]
+            year: 1826
+            notes: volume ii; specimen has since been lost
+            pages:
+            - 185
+            - 192
+            figures:
+            - plate: 2
+              figures:
+              - 1
+              - 5
+          - taxon: echino-encrinites
+            auth: [von Meyer]
+            in: [Karstner]
+            year: 1826
+            notes: volume iii
+            pages:
+            - 232
+            - 237
+          - taxon: echinosphærites
+            auth: [Pander]
+            year: 1830
+            notes: '"Sp."'
+          - taxon: echinosphærites
+            auth: [Bronn]
+            year: 1835
+            notes: '"Sp."'
+          - taxon: goniocrinites
+            auth: [Eichwald]
+            year: 1840
+          - taxon: echino-encrinus
+            auth: [Volborth]
+            year: 1842
+          - taxon: sycocystites
+            auth: [buch]
+            year: 1844
+          children:
+          - taxon: anatiformis_hall_1847
+            new: true
+            page: 127
+            figures:
+            - plate: XXIX
+              figures:
+              - 4a
+              - 4f
+      - taxon: echinidea-family
+        notes: Included due to mention as the destination of Cystidia transtion.
+  - notes: Corals of the Hudson River Group (exact higher taxon unclear?)
+    children:
+    - taxon: discophyllum
+      new: true
+      page: 277
+      children:
+      - taxon: peltatum_hall_1847
+        new: true
+        page: 277
+        figures:
+        - plate: LXXV
+          figures:
+          - 3
+      - openTaxon: discophyllum-sp_hall_1847
+        page: 277
+        figures:
+        - plate: LXXV
+          figures:
+          - 4
+  - taxon: crinoidea-order
+    notes: Crinoidea of the Hudson River Group
+    children:
+    - taxon: crinoidea-family
+      children:
+      - taxon: heterocrinus
+        children:
+        - taxon: heterodactylus_
+        - taxon: simplex_
+        - taxon: gracilis_
+          provisional: true
+      - taxon: glyptocrinus
+        children:
+        - taxon: decadactylus_
+      - taxon: tentaculites_emmons_1842
+        children:
+        - taxon: flexulosa_hall_1847
+          new: true
 1848b_forbes:
   taxonomies:
   - taxon: echinodermata-class
@@ -3830,6 +3971,11 @@
       children:
       - taxon: holothuria-order
       - taxon: sipunculida-order
+# 1852a_billings:
+#   taxonomies:
+#   - taxon: echinodermata-class
+#     children:
+#     - taxon: cystidea-order
 1852_hall:
   taxonomies:
   - taxon: echinodermata-order
@@ -4143,6 +4289,71 @@
             - taxon: leuchtenbergii_volborth_1846
               type: true
             - taxon: pomum_leuchtenberg_1843 # actually non?
+1857_billings:
+  taxonomies:
+  - taxon: radiata-subkingdom
+    children:
+    - taxon: echinodermata-class
+      children:
+      - taxon: crinoidea-order
+        children:
+        - taxon: glyptocrinus
+          children:
+          - taxon: priscus_
+          - taxon: ramulosus_
+          - taxon: marginatus_
+          - taxon: ornatus_
+          - taxon: lacunosus_
+        - taxon: thysanocrinus
+          children:
+          - taxon: rhodocrinus-subgenus
+            children:
+            - taxon: pyriformis
+            - taxon: microbasalis
+        - taxon: dendrocrinus
+          children:
+          - taxon: gregarius_
+          - taxon: auctidactylus_
+          - taxon: proboscidiatus_
+          - taxon: similis_
+          - taxon: conjugans_
+          - taxon: angulatus_
+          - taxon: humilis_
+          - taxon: latibrachiatus_
+          - taxon: rusticus_
+        - taxon: heterocrinus
+          children:
+          - taxon: simplex_hall_
+          - taxon: tenuis_
+        - taxon: hybocrinus
+          new: true
+          children:
+          - taxon: conicus_
+          - taxon: tumidus_
+        - taxon: carabocrinus
+          new: true
+          children:
+          - taxon: radiatus_
+        - taxon: cleiocrinus
+          new: true
+          children:
+          - taxon: regius_
+        - taxon: lecanocrinus
+          children:
+          - taxon: elegans_
+          - taxon: lævis_
+        - taxon: porocrinus
+          new: true
+          children:
+          - taxon: conicus_
+      - taxon: cystideæ-order
+        children:
+        - taxon: glyptocystites
+          children:
+          - taxon: multiporus_
+          - taxon: logani_
+          - taxon: forbesi_
+      - taxon: pleurocystites
 1858b_billings:
   taxonomies:
   - taxon: asteriadæ-order

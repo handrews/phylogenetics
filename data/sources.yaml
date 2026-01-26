@@ -520,6 +520,13 @@
   - buch
   identifiers:
     url: https://www.biodiversitylibrary.org/page/35336917
+1847_hall:
+  book: paleo-ny
+  volume: 1
+  pubDate:
+    year: 1847
+  authors:
+  - hall
 1848_austin.t:
   title: Observations on the Cystidea of M. von Buch, and the Crinoidea generally
   journal: quart-jour-geol-soc
@@ -572,6 +579,7 @@
   - leuckart
 1852_hall:
   book: paleo-ny
+  volume: 2
   pubDate:
     year: 1852
   authors:

@@ -514,6 +514,12 @@ $defs:
         minItems: 1
         items:
           type: string
+      in:
+        $comment: overrides taxon field
+        type: array
+        minItems: 1
+        items:
+          type: string
       year:
         $comment: overrides taxon field
         type: integer

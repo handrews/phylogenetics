@@ -65,6 +65,11 @@ actinocrinus:
   name: Actinocrinus
   auth: [Agassiz]
   year: 1836
+actinocrinus-sp_hall_1847:
+  name: null
+  rank: species
+  authority:
+    source: 1847_hall
 actinozoa:
   name: Actinozoa
   rank: Class
@@ -3166,6 +3171,15 @@ discoidea_lamarck_1816:
   name: discoidea
   authority:
     source: 1816a_lamarck
+discophyllum:
+  name: Discophyllum
+  authority:
+    source: 1847_hall
+discophyllum-sp_hall_1847:
+  name: null
+  rank: species
+  authority:
+    source: 1847_hall
 disparida:
   name: Disparida
   rank: Subclass
@@ -7785,6 +7799,10 @@ pelmatozoans:
   rank: Group
   auth: [Leuckart]
   year: 1848
+peltatum_hall_1847:
+  name: peltatum
+  authority:
+    source: 1847_hall
 pembrocystidae:
   name: Pembrocystidae
   rank: Family
@@ -10166,6 +10184,12 @@ tentaculées:
   lang: FR
   authority:
     source: 1816b_lamarck
+tentaculites_emmons_1842:
+  homonym: true
+  name: Tentaculites
+  auth: [Emmons]
+  year: 1842
+  notes: "[New York?] Geological Report, 1842, p. 404, fig. 6"
 tenuis_billings_1857:
   name: tenuis
   auth: [billings]
