@@ -3980,11 +3980,6 @@
       children:
       - taxon: holothuria-order
       - taxon: sipunculida-order
-# 1852a_billings:
-#   taxonomies:
-#   - taxon: echinodermata-class
-#     children:
-#     - taxon: cystidea-order
 1852_hall:
   taxonomies:
   - taxon: echinodermata-order
@@ -4213,6 +4208,57 @@
         children:
         - taxon: niagarensis_hall_1852_palæaster
           new: true
+1854a_billings:
+  taxonomies:
+  - taxon: echinodermata-class
+    children:
+    - taxon: cystidea-order
+      children:
+      - taxon: glyptocystites
+        page: 215
+        new: true
+        children:
+        - taxon: multiporata_billings_1854
+          page: 216
+          new: true
+          figures:
+          - page: 216
+            figures:
+            - 1
+            - 6
+1854b_billings:
+  taxonomies:
+  - taxon: echinodermata-class
+    children:
+    - taxon: cystidea-order
+      children:
+      - taxon: pleurocystites
+        page: 251
+        new: true
+        children:
+        - taxon: squamosus_billings_1854
+          new: true
+          page: 251
+          figures:
+          - page: 251
+            figures:
+            - 9
+            - 12
+        - taxon: filitextus_billings_1854
+          new: true
+          page: 252
+          figures:
+          - page: 252
+            figures:
+            - 13
+            - 14
+        - taxon: robustus_billings_1854
+          new: true
+          page: 252
+          figures:
+          - page: 252
+            figures:
+            - 15
 1854_müller.j.p:
   taxonomies:
   - notes: Partially based on the translation in 1958a_billings

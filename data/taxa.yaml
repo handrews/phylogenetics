@@ -4221,8 +4221,8 @@ filiformis_müller.o.f_1776:
     source: 1776_müller.o.f
 filitextus_billings_1854:
   name: filitextus
-  auth: [billings]
-  year: 1854
+  authority:
+    source: 1854b_billings
 fillmorensis_guensburg_sprinkle_2003:
   name: fillmorensis
   authority:
@@ -4630,8 +4630,8 @@ glyptocystitidae:
   year: 1899
 glyptocystites:
   name: Glyptocystites
-  auth: [billings]
-  year: 1854
+  authority:
+    source: 1854a_billings
 glyptocystitida-superfamily:
   name: Glyptocystitida
   bracket: Glyptocystitids
@@ -6990,6 +6990,10 @@ multiplexidiscus:
   name: Multiplexidiscus
   authority:
     source: 2009_sumrall_brett_mckinney
+multiporata_billings_1854:
+  name: multiporata
+  authority:
+    source: 1854a_billings
 multiradiata_lamarck_1816:
   name: multiradiata
   authority:
@@ -8178,8 +8182,8 @@ pleuricostatus_dean.j_smith.a.b_1998:
     source: 1998_dean.j_smith.a.b
 pleurocystites:
   name: Pleurocystites
-  auth: [billings]
-  year: 1854
+  authority:
+    source: 1854b_billings
 pleurocystitida:
   name: Pleurocystitida
   rank: Order
@@ -9093,6 +9097,10 @@ rigidules:
   lang: FR
   authority:
     source: 1816b_lamarck
+robustus_billings_1854:
+  name: robustus
+  authority:
+    source: 1854b_billings
 rocktonensis_kolata_1975:
   name: rocktonensis
   authority:
@@ -9818,8 +9826,8 @@ squamosa_bruguière_1798:
   year: 1798
 squamosus_billings_1854:
   name: squamosus
-  auth: [billings]
-  year: 1854
+  authority:
+    source: 1854b_billings
 squamosus_forbes_1848:
   name: squamosus
   authority:

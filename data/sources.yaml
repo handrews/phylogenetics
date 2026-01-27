@@ -584,6 +584,34 @@
     year: 1852
   authors:
   - hall
+1854a_billings:
+  title: On some New Genera and Species of Cystidea from the Trenton Limestonee
+  journal: canadian-journal
+  volume: 2
+  pages:
+  - 215
+  - 218
+  pubDate:
+    year: 1854
+    month: 4
+  processDates:
+    read: 1854-02-11
+  authors:
+  - billings
+1854b_billings:
+  title: On some New Genera and Species of Cystidea from the Trenton Limestonee
+  journal: canadian-journal
+  volume: 2
+  pages:
+  - 248
+  - 253
+  pubDate:
+    year: 1854
+    month: 5
+  processDates:
+    read: 1854-02-11
+  authors:
+  - billings
 1854_müller.j.p:
   book: uber-den-bau
   pubDate:
