@@ -3731,6 +3731,7 @@
         notes: Seems to use Crinoidea as both Order and Family?
         children:
         - taxon: schizocrinus
+          new: true
           children:
           - taxon: nodosus_hall_1847
             new: true
@@ -3738,8 +3739,10 @@
           children:
           - taxon: alternatus_hall_1847
             new: true
-          - taxon: gracilis_
+          - taxon: gracilis_hall_1847_poteriocrinus
+            new: true
         - taxon: scyphocrinus
+          new: true
           children:
           - taxon: heterocostalis_hall_1847
             new: true
@@ -3826,14 +3829,20 @@
     - taxon: crinoidea-family
       children:
       - taxon: heterocrinus
+        new: true
         children:
-        - taxon: heterodactylus_
-        - taxon: simplex_
-        - taxon: gracilis_
+        - taxon: heterodactylus_hall_1847
+          new: true
+        - taxon: simplex_hall_1847
+          new: true
+        - taxon: gracilis_hall_1847_heterocrinus
           provisional: true
+          new: true
       - taxon: glyptocrinus
+        new: true
         children:
-        - taxon: decadactylus_
+        - taxon: decadactylus_hall_1847
+          new: true
       - taxon: tentaculites_emmons_1842
         children:
         - taxon: flexulosa_hall_1847
@@ -7411,12 +7420,12 @@
                       - taxon: conjugans_billings_1859
                         parents:
                         - taxon: dendrocrinus
-                    - taxon: gracilis_hall_1847
+                    - taxon: gracilis_hall_1847_poteriocrinus
                       synonyms:
-                      - taxon: gracilis_hall_1847
+                      - taxon: gracilis_hall_1847_poteriocrinus
                         parents:
                         - taxon: poteriocrinus
-                      - taxon: gracilis_hall_1847
+                      - taxon: gracilis_hall_1847_poteriocrinus
                         parents:
                         - taxon: dendrocrinus
                       notes: I'm not sure how to handle the "non" here.

@@ -310,6 +310,10 @@ alter_barrande_1887:
   name: alter
   auth: [barrande]
   year: 1887
+alternatus_hall_1847:
+  name: alternatus
+  authority:
+    source: 1847_hall
 altus_leske_1778:
   name: altus
   authority:
@@ -430,6 +434,10 @@ anastacia_linnaeus_1758:
   name: anastacia
   authority:
     source: 1758_linnaeus
+anatiformis_hall_1847:
+  name: anatiformis
+  authority:
+    source: 1847_hall
 ancylus:
   name: Ancylus
   authority:
@@ -2886,8 +2894,8 @@ decadactylos_gmelin_1791:
   year: 1791
 decadactylus_hall_1847:
   name: decadactylus
-  auth: [hall]
-  year: 1847
+  authority:
+    source: 1847_hall
 decadactylus_phillips.j_1839:
   name: decadactylus
   authority:
@@ -4290,6 +4298,10 @@ flexibilia:
   rank: Subclass
   auth: [zittel]
   year: 1895
+flexulosa_hall_1847:
+  name: flexulosa
+  authority:
+    source: 1847_hall
 florealis_schlotheim_1820:
   name: florealis
   auth: [Schlotheim] # Baron von
@@ -4583,8 +4595,8 @@ glyptocrinidae:
   year: 1879
 glyptocrinus:
   name: Glyptocrinus
-  auth: [hall]
-  year: 1847
+  authority:
+    source: 1847_hall
 glyptocrinus-sp_hall_1852:
   name: null
   rank: species
@@ -4740,6 +4752,10 @@ gondi_ubaghs_1987:
   name: gondi
   auth: [ubaghs]
   year: 1987
+goniocrinites:
+  name: Goniocrinites
+  auth: [Eichwald]
+  year: 1840
 goniodactylus_phillips.j_1839:
   name: goniodactylus
   authority:
@@ -4765,10 +4781,16 @@ goshutensis_sumrall_sprinkle_guensburg_1997:
   name: goshutensis
   authority:
     source: 1997_sumrall_sprinkle_guensburg
-gracilis_hall_1847:
+gracilis_hall_1847_heterocrinus:
   name: gracilis
-  auth: [hall]
-  year: 1847
+  originalParent: heterocrinus
+  authority:
+    source: 1847_hall
+gracilis_hall_1847_poteriocrinus:
+  name: gracilis
+  originalParent: poteriocrinus
+  authority:
+    source: 1847_hall
 graffhami_sprinkle_1982:
   name: graffhami
   authority:
@@ -5176,8 +5198,8 @@ hesperocystis:
   year: 1945
 heterocostalis_hall_1847:
   name: heterocostalis
-  auth: [hall]
-  year: 1847
+  authority:
+    source: 1847_hall
 heterocrinacea:
   name: Heterocrinacea
   rank: Superfamily
@@ -5190,12 +5212,16 @@ heterocrinidae:
   year: 1879
 heterocrinus:
   name: Heterocrinus
-  auth: [hall]
-  year: 1847
+  authority:
+    source: 1847_hall
 heterocystites:
   name: Heterocystites
   authority:
     source: 1852_hall
+heterodactylus_hall_1847:
+  name: heterodactylus
+  authority:
+    source: 1847_hall
 hétéromorphes:
   name: Hétéromorphes
   rank: section
@@ -6600,6 +6626,10 @@ matacarros_sumrall_zamora_2011:
   name: matacarros
   authority:
     source: 2011_sumrall_zamora
+matunita_hall_1847:
+  name: matunita
+  authority:
+    source: 1847_hall
 maxima_forsskål_1775:
   name: maxima
   auth: [forsskål]
@@ -7157,6 +7187,10 @@ nodosaria_foerste_1919:
   name: nodosaria
   auth: [foerste]
   year: 1919
+nodosus_hall_1847:
+  name: nodosus
+  authority:
+    source: 1847_hall
 nodosus_hall_1864:
   name: nodosus
   auth: [Hall]
@@ -8723,6 +8757,9 @@ radiata:
   authority:
     source: 1801_lamarck
   notes: Authority in the vulgar (French) but that seems to be allowed here.
+radiata-subkingdom:
+  rank: Subkingdom
+  altRankOf: radiata
 radiata-phylum:
   rank: Phylum
   altRankOf: radiata
@@ -9285,6 +9322,10 @@ scalpellum:
   auth: [Leach]
   year: 1818
   notes: Mindat has 1817
+schizocrinus:
+  name: Schizocrinus
+  authority:
+    source: 1847_hall
 schizocystis:
   name: Schizocystis
   auth: [jaekel]
@@ -9388,8 +9429,8 @@ scyllæa:
   altSpellingOf: scyllaea
 scyphocrinus:
   name: Scyphocrinus
-  auth: [hall]
-  year: 1847
+  authority:
+    source: 1847_hall
 scytodermata:
   name: Scytodermata
   rank: Class
@@ -9495,6 +9536,10 @@ simplex_barrande_1887:
   name: simplex
   auth: [barrande]
   year: 1887
+simplex_hall_1847:
+  name: simplex
+  authority:
+    source: 1847_hall
 simplex_hall_1852:
   name: simplex
   authority:
@@ -10190,6 +10235,10 @@ tentaculites_emmons_1842:
   auth: [Emmons]
   year: 1842
   notes: "[New York?] Geological Report, 1842, p. 404, fig. 6"
+tenuiradiatus_hall_1847:
+  name: tenuiradiatus
+  authority:
+    source: 1847_hall
 tenuis_billings_1857:
   name: tenuis
   auth: [billings]
