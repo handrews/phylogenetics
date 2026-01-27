@@ -195,6 +195,11 @@ agelacrinites:
   name: Agelacrinites
   auth: [Vanuxem]
   year: 1842
+agelacrinites-sp_billings_1854:
+  name: null
+  rank: species
+  authority:
+    source: 1854c_billings
 agelacrinites-subgenus:
   name: Agelacrinites
   rank: subgenus
@@ -472,6 +477,10 @@ anomia:
   name: Anomia
   authority:
     source: 1758_linnaeus
+angulatus_billings_1857:
+  name: angulatus
+  authority:
+    source: 1857_billings
 angulatus_conrad.t.a_1842:
   name: angulatus
   authority:
@@ -559,6 +568,10 @@ ansticei_bather_1915:
   name: ansticei
   auth: [bather]
   year: 1915
+anticostensis_billings_1857:
+  name: anticostensis
+  authority:
+    source: 1857_billings
 antipathes:
   name: Antipathes
   auth: [Pallas]
@@ -936,6 +949,10 @@ atropos_lamarck_1816:
   name: atropos
   authority:
     source: 1816b_lamarck
+auctidactylus_billings_1857:
+  name: auctidactylus
+  authority:
+    source: 1857_billings
 auranea_schlotheim_1826:
   name: auranea
   auth: [Schlotheim]
@@ -1468,8 +1485,8 @@ calceocrinidae:
   year: 1869
 calceocrinus:
   name: Calceocrinus
-  auth: [hall]
-  year: 1852
+  authority:
+    source: 1852_hall
 calcitrapa_lamarck_1816:
   name: calcitrapa
   authority:
@@ -1488,8 +1505,8 @@ callianira:
     source: 1816a_lamarck
 callocystites:
   name: Callocystites
-  auth: [hall]
-  year: 1852
+  authority:
+    source: 1852_hall
 callocystitidae:
   name: Callocystitidae
   rank: Family
@@ -1507,6 +1524,10 @@ calvini_white_1876:
   name: calvini
   auth: [White]
   year: 1876
+camarocystites:
+  name: Camarocystites
+  authority:
+    source: 1854c_billings
 cambraster:
   name: Cambraster
   auth: [jaekel]
@@ -1623,8 +1644,8 @@ carabocrinidae:
   year: 1899
 carabocrinus:
   name: Carabocrinus
-  auth: [billings]
-  year: 1857
+  authority:
+    source: 1857_billings
 carabocrinus-sp_kolata_1975:
   name: null
   rank: species
@@ -2049,6 +2070,10 @@ clavigera_lamarck_1816:
   name: clavigera
   authority:
     source: 1816a_lamarck
+cleiocrinus:
+  name: Cleiocrinus
+  authority:
+    source: 1857_billings
 clintonensis_hall_1852:
   name: clintonensis
   authority:
@@ -2202,13 +2227,17 @@ conglomeratus_gaertner_1774:
 conicus_billings_1857_hybocrinus:
   originalParent: hybocrinus
   name: conicus
-  auth: [billings]
-  year: 1857
+  authority:
+    source: 1857_billings
 conicus_billings_1857_porocrinus:
   originalParent: porocrinus
   name: conicus
-  auth: [billings]
-  year: 1857
+  authority:
+    source: 1857_billings
+conjugans_billings_1857:
+  name: conjugans
+  authority:
+    source: 1857_billings
 conjugans_billings_1859:
   name: conjugans
   auth: [billings]
@@ -2749,6 +2778,10 @@ cyclostomus_leske_1778:
   name: cyclostomus
   authority:
     source: 1778_leske
+cylindrica_billings_1857:
+  name: cylindrica
+  authority:
+    source: 1857_billings
 cylindrica_lamarck_1816:
   name: cylindrica
   authority:
@@ -2964,8 +2997,8 @@ dendrocrinina:
   year: 1899
 dendrocrinus:
   name: Dendrocrinus
-  auth: [hall]
-  year: 1852
+  authority:
+    source: 1852_hall
 dendrocrinus-sp-a_kolata_1975:
   name: null
   rank: species
@@ -3741,6 +3774,16 @@ eknomocrinus:
   name: Eknomocrinus
   authority:
     source: 2003_guensburg_sprinkle
+elegans_billings_1857_lecanocrinus:
+  name: elegans
+  originalParent: lecanocrinus
+  authority:
+    source: 1857_billings
+elegans_billings_1857_pleurocystites:
+  name: elegans
+  originalParent: pleurocystites
+  authority:
+    source: 1857_billings
 elegans_conrad.t.a_1842:
   name: elegans
   authority:
@@ -4129,11 +4172,6 @@ everndeni_durham_1967:
   name: everndeni
   authority:
     source: 1967c_durham
-exigua_lamarck_1816:
-  name: exigua
-  authority:
-    source: 1816a_lamarck
-  notes: Asterias
 excavatus_leske_1778:
   name: excavatus
   authority:
@@ -4148,11 +4186,20 @@ excentricus_lamarck_1816_galerites:
   originalParent: galerites
   authority:
     source: 1816b_lamarck
+exigua_lamarck_1816:
+  name: exigua
+  authority:
+    source: 1816a_lamarck
+  notes: Asterias
 exiguum_lamarck_1816:
   name: exiguum
   authority:
     source: 1816a_lamarck
   notes: Euryale
+exornatus_billings_1857:
+  name: exornatus
+  authority:
+    source: 1857_billings
 expansus_phillips.j_1839:
   name: expansus
   authority:
@@ -4302,6 +4349,10 @@ flexulosa_hall_1847:
   name: flexulosa
   authority:
     source: 1847_hall
+florealis_billings_1854:
+  name: florealis
+  authority:
+    source: 1854c_billings
 florealis_schlotheim_1820:
   name: florealis
   auth: [Schlotheim] # Baron von
@@ -4333,10 +4384,13 @@ foerstediscus:
     source: 1935_bassler
 foerstei_bassler_shideler_1936:
   name: foerstei
-  auth: [bassler, Shideler]
-  in: [bassler]
-  year: 1936
-  notes: 1936_bassler (but 'in' doesn't support this form yet)
+  authority:
+    authors: [bassler, Shideler]
+    source: 1936_bassler
+forbesi_billings_1857:
+  name: forbesi
+  authority:
+    source: 1857_billings
 forbesi_sumrall_sprinkle_bonem_2006:
   name: forbesi
   authority:
@@ -4437,8 +4491,8 @@ gebhardii_conrad.t.a_1840:
   notes: original spelling
 gemmiformis_hall_1852:
   name: gemmiformis
-  auth: [hall]
-  year: 1852
+  authority:
+    source: 1852_hall
 gelasinus_sumrall_bowsher_1996:
   name: gelasinus
   authority:
@@ -4864,6 +4918,10 @@ grebelae_müller.p_hahn_2010:
   name: grebelae
   authority:
     source: 2010_müller.p_hahn
+gregarius_billings_1857:
+  name: gregarius
+  authority:
+    source: 1857_billings
 guensburgi_sprinkle_sumrall_2015:
   name: guensburgi
   authority:
@@ -5128,10 +5186,8 @@ hemicystites:
   authority:
     source: 1852_hall
 hemicystites-subgenus:
-  name: Hemicystites
   rank: subgenus
-  auth: [hall]
-  year: 1852
+  altRankOf: hemicystites
 hemicystites-questionable_bell.b.m_1974:
   name: null
   rank: genus
@@ -5149,10 +5205,6 @@ hemicystitidae:
   rank: Family
   auth: [bassler]
   year: 1936
-hemicystitides:
-  name: Hemicystitides
-  auth: [hall]
-  year: 1852
 hemicystis:
   name: Hemicystis
   auth: [haeckel]
@@ -5397,8 +5449,8 @@ hudsoni_sprinkle_1973:
     source: 1973_sprinkle
 humilis_billings_1857:
   name: humilis
-  auth: [billings]
-  year: 1857
+  authority:
+    source: 1857_billings
 humilis_leske_1778:
   name: humilis
   authority:
@@ -5959,6 +6011,10 @@ lacertosa_lamarck_1801:
   name: lacertosa
   authority:
     source: 1801_lamarck
+lacunosus_billings_1857:
+  name: lacunosus
+  authority:
+    source: 1857_billings
 lacunosus_linnaeus_1758:
   name: lacunosus
   authority:
@@ -5979,6 +6035,10 @@ laevis_leske_1778:
   rank: variety
   authority:
     source: 1778_leske
+lævis_billings_1857:
+  name: lævis
+  authority:
+    source: 1857_billings
 lævis_conrad.t.a_1842:
   name: lævis
   auth: [conrad.t.a]
@@ -6047,6 +6107,10 @@ lathyrus_leske_1778:
   name: lathyrus
   authority:
     source: 1778_leske
+latibrachiatus_billings_1857:
+  name: latibrachiatus
+  authority:
+    source: 1857_billings
 latissima_lamarck_1816:
   name: latissima
   authority:
@@ -6342,10 +6406,14 @@ loeblichi_bassler_1943:
   name: loeblichi
   auth: [bassler]
   year: 1943
+logani_billings_1857:
+  name: logani
+  authority:
+    source: 1857_billings
 longidactylus_hall_1852:
   name: longidactylus
-  auth: [hall]
-  year: 1852
+  authority:
+    source: 1852_hall
 longidactylus_walcott_1886:
   name: longidactylus
   auth: [walcott]
@@ -6595,6 +6663,10 @@ margaritaceus_lamarck_1816:
   name: margaritaceus
   authority:
     source: 1816b_lamarck
+marginatus_billings_1857:
+  name: marginatus
+  authority:
+    source: 1857_billings
 marginatus_lamarck_1816:
   name: marginatus
   authority:
@@ -6634,6 +6706,10 @@ maxima_forsskål_1775:
   name: maxima
   auth: [forsskål]
   year: 1775
+microbasalis_billings_1857:
+  name: microbasalis
+  authority:
+    source: 1857_billings
 mimus_sumrall_zamora_2011:
   name: mimus
   authority:
@@ -7411,6 +7487,10 @@ ornatus_bassler_1943:
   name: ornatus
   auth: [bassler]
   year: 1943
+ornatus_billings_1857:
+  name: ornatus
+  authority:
+    source: 1857_billings
 ornatus_hall_1852_lecanocrinus:
   name: ornatus
   originalParent: lecanocrinus
@@ -7572,6 +7652,20 @@ palaeasteraceae:
   rank: Superfamily
   auth: [miller.s.a]
   year: 1889
+palaeasterina:
+  name: Palaeasterina
+  auth: [mccoy]
+  year: 1851
+palæasterina:
+  name: Palæasterina
+  altSpellingOf: palaeasterina
+palaeocoma:
+  name: Palaeocoma
+  auth: [salter]
+  year: 1857
+palæocoma:
+  name: Palæocoma
+  altSpellingOf: palaeocoma
 palaeocystites:
   name: Palaeocystites
   auth: [billings]
@@ -7701,8 +7795,8 @@ pararotadiscus_zhao.y.l_zhu.m.y_1994:
     source: 1994_zhao.y.l_zhu.m.y
 parasitica_hall_1852:
   name: parasitica
-  auth: [Hall]
-  year: 1852
+  authority:
+    source: 1852_hall
 parasiticus_hall_1852:
   name: parasiticus
   altSpellingOf: parasitica_hall_1852
@@ -8314,8 +8408,8 @@ porocrinidae:
   year: 1894
 porocrinus:
   name: Porocrinus
-  auth: [billings]
-  year: 1857
+  authority:
+    source: 1857_billings
 porosublastus:
   name: Porosublastus
   authority:
@@ -8397,6 +8491,10 @@ priscus_barrande_1846:
   name: priscus
   auth: [barrande]
   year: 1846
+priscus_billings_1857:
+  name: priscus
+  authority:
+    source: 1857_billings
 priscus_miller.s.a_gurley_1894:
   name: priscus
   auth: [miller.s.a, gurley]
@@ -8506,6 +8604,10 @@ pulaskiensis_miller.s.a_gurley_1894:
   name: pulaskiensis
   auth: [miller.s.a, gurley]
   year: 1894
+pulchellus_billings_1857:
+  name: pulchellus
+  authority:
+    source: 1857_billings
 pulvillus_müller.o.f_1776:
   name: pulvillus
   authority:
@@ -8519,6 +8621,9 @@ punctata_lamarck_1816:
   authority:
     source: 1816a_lamarck
   notes: Asterias
+punctatus_billings_1854:
+  name: punctatus
+  altSpellingOf: punctuatus_billings_1854
 punctatus_lamarck_1816:
   name: punctatus
   authority:
@@ -8532,6 +8637,10 @@ punctatus_ulrich_1886:
   name: punctatus
   auth: [Ulrich]
   year: 1886
+punctuatus_billings_1854:
+  name: punctuatus
+  authority:
+    source: 1854c_billings
 punctulatus_lamarck_1816:
   name: punctulatus
   authority:
@@ -8676,6 +8785,10 @@ pyriformis_forbes_1848:
   name: pyriformis
   authority:
     source: 1848b_forbes
+pyriformis_billings_1857:
+  name: pyriformis
+  authority:
+    source: 1857_billings
 pyriformis_leske_1778:
   name: pyriformis
   authority:
@@ -8755,6 +8868,10 @@ quinquies perforatus_leske_1778:
   authority:
     source: 1778_leske
 ###################### R
+radiares:
+  name: Radiares
+  vulgarSpellingOf: radiata
+  lang: FR
 radiata:
   name: Radiata
   rank: Class
@@ -8771,14 +8888,6 @@ radiata_leske_1778:
   name: radiata
   authority:
     source: 1778_leske
-radiatus_gmelin_1791:
-  name: radiatus
-  auth: [Gmelin]
-  year: 1791
-radiares:
-  name: Radiares
-  vulgarSpellingOf: radiata
-  lang: FR
 radiata_sprinkle_1973:
   name: radiata
   authority:
@@ -8795,10 +8904,20 @@ radiatae:
 radiatæ:
   name: Radiatæ
   altSpellingOf: radiatae
+radiatus_billings_1854:
+  name: radiatus
+  authority:
+    source: 1854c_billings
+  notes: Amygdalocystites
 radiatus_billings_1857:
   name: radiatus
-  auth: [billings]
-  year: 1857
+  authority:
+    source: 1857_billings
+  notes: Carabocrinus
+radiatus_gmelin_1791:
+  name: radiatus
+  auth: [Gmelin]
+  year: 1791
 ramosa_bruguière_1789:
   name: ramosa
   authority:
@@ -8811,6 +8930,10 @@ ramseyocrinus:
   name: Ramseyocrinus
   auth: [Bates]
   year: 1968
+ramulosus_billings_1857:
+  name: ramulosus
+  authority:
+    source: 1857_billings
 rapa_bruguière_1789:
   name: rapa
   authority:
@@ -8886,6 +9009,10 @@ reesei_sprinkle_collins.d_2006:
   name: reesei
   authority:
     source: 2006_sprinkle_collins.d
+regius_billings_1857:
+  name: regius
+  authority:
+    source: 1857_billings
 regnelli_sinclair_1948:
   name: regnelli
   auth: [Sinclair]
@@ -9039,6 +9166,12 @@ rhodocrinites:
   name: Rhodocrinites
   authority:
     source: 1821_miller.j.s
+rhodocrinus:
+  name: Rhodocrinus
+  altSpellingOf: rhodocrinites
+rhodocrinus-subgenus:
+  rank: subgenus
+  altRankOf: rhodocrinus
 rhombifera:
   name: Rhombifera
   auth: [barrande]
@@ -9097,6 +9230,10 @@ rigidules:
   lang: FR
   authority:
     source: 1816b_lamarck
+rigidus_billings_1857:
+  name: rigidus
+  authority:
+    source: 1857_billings
 robustus_billings_1854:
   name: robustus
   authority:
@@ -9220,6 +9357,10 @@ rustica_linnaeus_1767:
   name: rustica
   authority:
     source: 1767_linnaeus
+rusticus_billings_1857:
+  name: rusticus
+  authority:
+    source: 1857_billings
 ruthveni_mccoy_1851:
   name: ruthveni
   auth: [mccoy]
@@ -9540,6 +9681,10 @@ siderolites:
   name: Siderolites
   authority:
     source: 1801_lamarck
+similis_billings_1857:
+  name: similis
+  authority:
+    source: 1857_billings
 simplex_barrande_1887:
   name: simplex
   auth: [barrande]
@@ -9731,6 +9876,10 @@ spinis conoideis_leske_1778:
   rank: variety
   authority:
     source: 1778_leske
+spinosa_billings_1857:
+  name: spinosa
+  authority:
+    source: 1857_billings
 spinosa_smith.a.b_jell_1990:
   name: spinosa
   authority:
@@ -9870,6 +10019,10 @@ stellaris_billings_1859:
   name: stellaris
   auth: [billings]
   year: 1859
+stellata_billings_1857:
+  name: stellata
+  authority:
+    source: 1857_billings
 stellata_leske_1778:
   name: stellata
   authority:
@@ -10249,8 +10402,8 @@ tenuiradiatus_hall_1847:
     source: 1847_hall
 tenuis_billings_1857:
   name: tenuis
-  auth: [billings]
-  year: 1857
+  authority:
+    source: 1857_billings
 tenuis_miller.j.s_1821:
   name: tenuis
   authority:
@@ -10259,6 +10412,10 @@ tenuispina_lamarck_1816:
   name: tenuispina
   authority:
     source: 1816a_lamarck
+tenuistriatus_billings_1854:
+  name: tenuistriatus
+  authority:
+    source: 1854c_billings
 terebella:
   name: Terebella
   authority:
@@ -10607,6 +10764,10 @@ tubulosa_müller.o.f_1776:
   name: tubulosa
   authority:
     source: 1776_müller.o.f
+tumidus_billings_1857:
+  name: tumidus
+  authority:
+    source: 1857_billings
 tunicata-class:
   rank: Class
   altRankOf: tunicata

@@ -612,6 +612,20 @@
     read: 1854-02-11
   authors:
   - billings
+1854c_billings:
+  title: On some New Genera and Species of Cystidea from the Trenton Limestone, Second Paper
+  journal: canadian-journal
+  volume: 2
+  pages:
+  - 268
+  - 274
+  pubDate:
+    year: 1854
+    month: 6
+  processDates:
+    read: 1854-04-08
+  authors:
+  - billings
 1854_müller.j.p:
   book: uber-den-bau
   pubDate:
@@ -622,7 +636,7 @@
     url: https://www.google.com/books/edition/_/JOlAAAAAcAAJ
 1857_billings:
   book: geo-survey-canada
-  chapter: Report of E. BrLLINGs, Esq., for the year 1856
+  chapter: Report of E. Billings, Esq., for the year 1856
   pages:
   - 247
   - 346

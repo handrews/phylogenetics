@@ -350,6 +350,8 @@ class Taxon:
       'Funiculina',
       'Meandrina',
       'Palasterina',
+      'Palaeasterina',
+      'Palæasterina',
       'Tellina',
     })
 
