@@ -425,6 +425,8 @@ $defs:
         type: integer
       modifier:
         type: string
+      source:
+        type: string
       citation:
         type: object
         required: [source]
@@ -452,7 +454,11 @@ $defs:
           figures:
             type: array
             items:
-              type: [integer, string]
+              type: [integer, string, array]
+              minItems: 2
+              maxItems: 2
+              items:
+                type: [integer, string]
         additionalProperties: false
       notes:
         type: string
@@ -580,7 +586,11 @@ $defs:
       figures:
         type: array
         items:
-          type: [integer, string]
+          type: [integer, string, array]
+          minItems: 2
+          maxItems: 2
+          items:
+            type: [integer, string]
       location:
         type: [integer, string]
       collectedFrom:

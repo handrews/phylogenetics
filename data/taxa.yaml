@@ -928,6 +928,10 @@ atavus_jaekel_1899:
   name: atavus
   auth: [jaekel]
   year: 1899
+ateleocystites:
+  name: Ateleocystites
+  authority:
+    source: 1858a_billings
 athenacrinidae:
   name: Athenacrinidae
   rank: Family
@@ -1038,6 +1042,10 @@ balticus_eichwald_1829:
   name: balticus
   auth: [Eichwald]
   year: 1829
+barrandi_billings_1858:
+  name: barrandi
+  authority:
+    source: 1858a_billings
 barroisi_bather_1898:
   name: barroisi
   auth: [bather]
@@ -1526,8 +1534,7 @@ calvini_white_1876:
   year: 1876
 camarocystites:
   name: Camarocystites
-  authority:
-    source: 1854c_billings
+  altSpellingOf: comarocystites
 cambraster:
   name: Cambraster
   auth: [jaekel]
@@ -1878,6 +1885,10 @@ chaos:
   name: Chaos
   authority:
     source: 1767_linnaeus
+chapmani_billings_1858:
+  name: chapmani
+  authority:
+    source: 1858a_billings
 chapmani_raymond_1915:
   name: chapmani
   auth: [Raymond]
@@ -2170,6 +2181,10 @@ columbocystis:
   name: Columbocystis
   auth: [bassler]
   year: 1950
+comarocystites:
+  name: Comarocystites
+  authority:
+    source: 1854c_billings
 comarocystitida:
   name: Comarocystitida
   rank: Order
@@ -2913,10 +2928,10 @@ davisii_salter_1858:
   authority:
     authors: [salter]
     source: 1858_salter_billings
-dawsoni_billings_1859:
+dawsoni_billings_1858:
   name: dawsoni
-  auth: [billings]
-  year: 1859
+  authority:
+    source: 1858a_billings
 deani_ubaghs_1994:
   name: deani
   auth: [ubaghs]
@@ -4835,6 +4850,11 @@ goshutensis_sumrall_sprinkle_guensburg_1997:
   name: goshutensis
   authority:
     source: 1997_sumrall_sprinkle_guensburg
+gracilis_billings_1858:
+  name: gracilis
+  rank: variety
+  authority:
+    source: 1858a_billings
 gracilis_hall_1847_heterocrinus:
   name: gracilis
   originalParent: heterocrinus
@@ -5463,6 +5483,10 @@ huronensis_billings_1865:
   name: huronensis
   auth: [billings]
   year: 1865
+huxleyi_billings_1858:
+  name: huxleyi
+  authority:
+    source: 1858a_billings
 hybocrinida:
   name: Hybocrinida
   rank: Order
@@ -6576,6 +6600,11 @@ malaisei_regnéll_1951:
   name: malaisei
   auth: [regnéll]
   year: 1951
+malocystites:
+  name: Malocystites
+  authority:
+    source: 1858a_billings
+  notes: PBDB agrees, but IRMNG says Chapman 1857?
 malocystidae:
   name: Malocystidae
   rank: Family
@@ -7093,6 +7122,10 @@ munitus_forbes_1848:
   name: munitus
   authority:
     source: 1848b_forbes
+murchisoni_billings_1858:
+  name: murchisoni
+  authority:
+    source: 1858a_billings
 murex:
   name: Murex
   authority:
@@ -7668,8 +7701,12 @@ palæocoma:
   altSpellingOf: palaeocoma
 palaeocystites:
   name: Palaeocystites
-  auth: [billings]
-  year: 1859
+  authority:
+    source: 1858a_billings
+palæocystites:
+  name: Palæocystites
+  authority:
+    source: 1858a_billings
 palaeocystitidae:
   name: Palaeocystitidae
   rank: Family
