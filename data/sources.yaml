@@ -426,6 +426,14 @@
   - hisinger
   identifiers:
     url: https://www.google.com/books/edition/Anteckningar_i_Physik_och_Geognosi_under/LotfAAAAcAAJ?hl=en
+1830_pander:
+  book: beitrage
+  pubDate:
+    year: 1830
+  authors:
+  - pander
+  identifiers:
+    url: https://www.google.com/books/edition/Beitr%C3%A4ge_zur_geognosie_des_russischen_r/yJ0_AAAAYAAJ?hl=en
 1839_murchison:
   title: Organic Remains
   book: silurian-system

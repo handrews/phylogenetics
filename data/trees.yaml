@@ -3442,6 +3442,117 @@
           - taxon: granatum_wahlenberg_1821
             parents:
             - taxon: echinosphærites
+1830_pander:
+  taxonomies:
+  - taxon: lithozoa
+    children:
+    - taxon: bolboporites
+      page: 106
+      new: true
+      children:
+      - taxon: semiglobosa_pander_1830
+        page: 107
+        new: true
+        figures:
+        - plate: 2
+          figures:
+          - 1
+      - taxon: triangularis_pander_1830
+        page: 107
+        new: true
+        figures:
+        - plate: 2
+          figures:
+          - 2
+      - taxon: uncinata_pander_1830
+        page: 107
+        new: true
+        figures:
+        - plate: 2
+          figures:
+          - 3
+      - taxon: mitralis_pander_1830
+        page: 107
+        new: true
+        figures:
+        - plate: 2
+          figures:
+          - 4a
+          - 4b
+  - taxon: echinosphaerites
+    page: 141
+    children:
+    - taxon: aurantium_gyllenhaal_1772
+      new: true
+      page: 144
+      figures:
+      - plate: 2
+        figures:
+        - 21
+      - plate: 29
+        figures:
+        - 2a
+        - 2b
+        - 3a
+        - 3b
+      synonyms:
+      - auth: [Wahlenberg]
+        year: 1821
+        page: 52
+      - auth: [gyllenhaal]
+        year: 1772
+        page: 245
+        figures:
+        - plate: 8
+          figures:
+          - 4
+          - 5
+        - plate: 9
+    - taxon: malum_pander_1830
+      page: 145
+      figures:
+      - plate: 29
+        figures:
+        - [1a, 1c]
+    - taxon: oblonga_pander_1830
+      new: true
+      page: 146
+      figures:
+      - plate: 2
+        figures:
+        - 22
+        - 25
+    - taxon: angulosa_pander_1830
+      new: true
+      page: 146
+      figures:
+      - plate: 2
+        figures:
+        - [27, 29]
+      - plate: 28
+        figures:
+        - 11
+    - taxon: striata_pander_1830
+      new: true
+      page: 147
+      figures:
+      - plate: 2
+        figures:
+        - [30, 32]
+      - plate: 28
+        figures:
+        - 12
+      synonyms:
+      - taxon: granatum_wahlenberg_1821
+        page: 55
+        questionable: true
+    - taxon: laevis_pander_1830
+      new: true
+      page: 147
+      figures:
+      - plate: 2
+        figures:
+        - [24, 26]
 1839_murchison:
   taxonomies:
   - taxon: crinoidea-family

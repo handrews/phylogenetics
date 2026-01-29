@@ -1307,6 +1307,10 @@ bohemiellidae:
   rank: Family
   auth: [Havliček]
   year: 1977
+bolboporites:
+  name: Bolboporites
+  authority:
+    source: 1830_pander
 boliviensis_sprinkle_1973:
   name: boliviensis
   authority:
@@ -6398,6 +6402,11 @@ lithophyta:
   rank: Order
   authority:
     source: 1758_linnaeus
+lithozoa:
+  name: Lithozoa
+  rank: Class
+  altRankOf: lithophyta
+  notes: Not really an alt spelling, and rank unknown, but best for now?
 lithophytes:
   name: Lithophytes
   vulgarSpellingOf: lithophyta
@@ -6950,6 +6959,10 @@ minyas:
   name: Minyas
   authority:
     source: 1817d_cuvier
+mitralis_pander_1830:
+  name: mitralis
+  authority:
+    source: 1830_pander
 mitrata:
   name: Mitrata
   rank: Order
@@ -7366,6 +7379,10 @@ nus:
     source: 1801_lamarck
   lang: FR
 ###################### O
+oblonga_pander_1830:
+  name: oblonga
+  authority:
+    source: 1830_pander
 oblongus_forbes_1848:
   name: oblongus
   authority:
@@ -9632,6 +9649,10 @@ semiarticulata:
   rank: Division
   authority:
     source: 1821_miller.j.s
+semiglobosa_pander_1830:
+  name: semiglobosa
+  authority:
+    source: 1830_pander
 semi-globus_lamarck_1816_ananchytes:
   name: semi-globus
   originalParent: ananchytes
@@ -10698,6 +10719,10 @@ triacontadactylus_miller.j.s_1821:
   name: triacontadactylus
   authority:
     source: 1821_miller.j.s
+triangularis_pander_1830:
+  name: triangularis
+  authority:
+    source: 1830_pander
 triangulatus_paul.c.r.c_1997:
   name: triangulatus
   authority:
@@ -10908,6 +10933,10 @@ uncinaria:
   name: Uncinaria
   auth: [Frölich]
   year: 1789
+uncinata_pander_1830:
+  name: uncinata
+  authority:
+    source: 1830_pander
 undata_müller.o.f_1784:
   name: undata
   auth: [müller.o.f]
