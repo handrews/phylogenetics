@@ -362,7 +362,7 @@ class Taxon:
       (
         'zoa',
         ('Class', 'Subphylum', 'Phylum', 'Subkingdom', 'Kingdom'),
-        frozenset(),
+        frozenset({'Lithozoa'}),
       ),
     ):
       if (

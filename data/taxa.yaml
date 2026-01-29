@@ -6404,9 +6404,10 @@ lithophyta:
     source: 1758_linnaeus
 lithozoa:
   name: Lithozoa
-  rank: Class
-  altRankOf: lithophyta
-  notes: Not really an alt spelling, and rank unknown, but best for now?
+  rank: Order
+  auth: [Goldfuss]
+  year: 1820
+  notes: Rank is a guess, it was defined under Class Protozoa
 lithophytes:
   name: Lithophytes
   vulgarSpellingOf: lithophyta
