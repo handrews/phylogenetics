@@ -6406,8 +6406,7 @@ lithozoa:
   name: Lithozoa
   rank: Order
   auth: [Goldfuss]
-  year: 1820
-  notes: Rank is a guess, it was defined under Class Protozoa
+  year: 1818
 lithophytes:
   name: Lithophytes
   vulgarSpellingOf: lithophyta
