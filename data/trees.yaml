@@ -606,18 +606,16 @@
           new: true
 1772_gyllenhaal:
   taxonomies:
-  - taxon: mollusca-class
+  - taxon: mollusca-order
     children:
-    - taxon: echinodermata-order
+    - taxon: echinus
       children:
-      - taxon: echinus
-        children:
-        - taxon: pomum_gyllenhaal_1772
-          new: true
-          page: 253
-        - taxon: aurantium_gyllenhaal_1772
-          new: true
-          page: 253
+      - taxon: pomum_gyllenhaal_1772
+        new: true
+        page: 253
+      - taxon: aurantium_gyllenhaal_1772
+        new: true
+        page: 253
 1773_müller.o.f:
   taxonomies:
   - taxon: vermes
