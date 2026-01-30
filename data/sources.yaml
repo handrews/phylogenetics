@@ -76,6 +76,12 @@
   - linnaeus
   identifiers:
     url: https://www.biodiversitylibrary.org/item/137240#page/5/mode/1up
+1772_gyllenhaal:
+  book: kungliga-svenska
+  pubDate:
+    year: 1772
+  authors:
+  - gyllenhaal
 1773_müller.o.f:
   book: vermium-t-e-f
   volume: 1
