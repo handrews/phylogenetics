@@ -77,9 +77,19 @@
   identifiers:
     url: https://www.biodiversitylibrary.org/item/137240#page/5/mode/1up
 1772_gyllenhaal:
-  book: kungliga-svenska
+  title: På de så kallade Crystall-åplen och kalk-bollar, såsom petreficerade Djur af Echini genus, eller defs når maste flågtingär
+  journal: kungliga-svenska
+  series: 1
+  volume: 33
+  pages:
+  - 239
+  - 261
+  plates:
+  - VIII
+  - IX
   pubDate:
     year: 1772
+    months: [7, 8, 9]
   authors:
   - gyllenhaal
 1773_müller.o.f:
@@ -205,6 +215,23 @@
     year: 1801
   authors:
   - lamarck
+1802_hisinger:
+  title: Minerographiske anmårkningar öfver Öland
+  journal: kungliga-svenska
+  series: 2
+  volume: 23
+  pages:
+  - 183
+  - 191
+  plates:
+  - VII
+  pubDate:
+    year: 1802
+    months: [7, 8, 9]
+  authors:
+  - hisinger
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/46952850
 1815_lamarck:
   book: hist-sans-vert
   volume: 1
@@ -340,6 +367,20 @@
   - miller.j.s
   identifiers:
     url: https://www.biodiversitylibrary.org/bibliography/178175
+1821_wahlenberg:
+  title: Petrificata telluris svecanae
+  journal: nova-acta-ups
+  volume: 8
+  pages:
+  - 1
+  - 116
+  plates:
+  - I
+  - IV
+  pubDate:
+    year: 1821
+  authors:
+  - wahlenberg
 1822a_lamarck:
   book: hist-sans-vert
   volume: 6
@@ -426,6 +467,10 @@
 1828_hisinger:
   book: anteck
   volume: 4
+  chapter: VI. Afdelningen. Öland.
+  pages:
+  - 193
+  - 201
   pubDate:
     year: 1828
   authors:

@@ -149,6 +149,9 @@ $defs:
         type: string
       reading:
         type: string
+      series:
+        type: [integer, string]
+        $comment: Intended for journals that reset volume numbering.
       volume:
         type: [integer, string]
         minimum: 1
@@ -471,6 +474,14 @@ $defs:
         default: false
       page:
         type: [integer, string]
+      pages:
+        type: array
+        items:
+          type: [integer, string, array]
+          minItems: 2
+          maxItems: 2
+          items:
+            type: [integer, string]
       figures:
         type: array
         items:
