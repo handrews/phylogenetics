@@ -701,9 +701,25 @@ vanuxem:
 vizcaïno:
   family: Vizcaïno
   given: D.
+volborth:
+  family: Volborth
+  given: Alexander von
+  birth: 1800
+  death: 1876
+  notes: Alternatively, Aleksandr Fedorovich von Volborth
+wahlenberg:
+  family: Wahlenberg
+  given: Göran
+  birth: 1780
+  death: 1851
 wagner:
   family: Wagner
   given: Carol D.
+walch:
+  family: Walch
+  given: Johann Ernst Immanuel
+  birth: 1725
+  death: 1778
 walcott:
   family: Walcott
   given: Charles Doolittle

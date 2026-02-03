@@ -285,6 +285,10 @@ albus_forsskål_1775:
   name: albus
   auth: [forsskål]
   year: 1775
+alcyonis_schlotheim_1826:
+  name: alcyonis
+  authority:
+    source: 1826_schlotheim
 alcyonium:
   name: Alcyonium
   authority:
@@ -638,8 +642,8 @@ aranciaca_linnaeus_1758:
     source: 1758_linnaeus
 aranea_schlotheim_1826:
   name: aranea
-  auth: [Schlotheim]
-  year: 1826
+  authority:
+    source: 1826_schlotheim
 araneiformis_leske_1778:
   name: araneiformis
   authority:
@@ -701,6 +705,10 @@ arenatus_lamarck_1816:
   authority:
     source: 1816b_lamarck
   notes: Echinus
+areolatus_wahlenberg_1821:
+  name: areolatus
+  authority:
+    source: 1821_wahlenberg
 argodiscus:
   name: Argodiscus
   auth: [Prokop]
@@ -3506,8 +3514,8 @@ echinoencrininae:
   altSpellingOf: echinoencrinitinae
 echinoencrinites:
   name: Echinoencrinites
-  auth: [von Meyer]
-  year: 1826
+  authority:
+    source: 1826_meyer
 echino-encrinites:
   name: Echino-encrinites
   altSpellingOf: echinoencrinites
@@ -3580,11 +3588,26 @@ echinosphaerites:
 echinosphaerites-subgenus:
   rank: subgenus
   altRankOf: echinosphaerites
+echinosphaerites-sp_hisinger_1802:
+  name: null
+  rank: species
+  authority:
+    source: 1802_hisinger
 echinosphaerites-sp_paul.c.r.c_1997:
   name: null
   rank: species
   authority:
     source: 1997_paul.c.r.c
+echinosphaerites-sp-1_schlotheim_1826:
+  name: null
+  rank: species
+  authority:
+    source: 1826_schlotheim
+echinosphaerites-sp-2_schlotheim_1826:
+  name: null
+  rank: species
+  authority:
+    source: 1826_schlotheim
 echinosphærites:
   name: Echinosphærites
   altSpellingOf: echinosphaerites
@@ -3609,6 +3632,16 @@ echinus-order:
   authority:
     source: 1778_leske
   notes: Eventually translated to Class Echinoidea
+echinus-sp_hisinger_1802:
+  name: null
+  rank: species
+  authority:
+    source: 1802_hisinger
+echinus-sp_linnaeus_1741:
+  name: null
+  rank: species
+  authority:
+    source: 1741_linnaeus
 echynorhynchus:
   name: Echynorhynchus
   auth: [Zoega]
@@ -7587,6 +7620,15 @@ osculocystis:
   name: Osculocystis
   auth: [paul.c.r.c]
   year: 1967  # Not the current 1967_paul.c.r.c
+ostracion:
+  name: Ostracion
+  authority:
+    source: 1758_linnaeus
+ostracion-sp_walch_1776:
+  name: null
+  rank: species
+  authority:
+    source: 1776_walch
 ostrea:
   name: Ostrea
   authority:
@@ -7685,6 +7727,10 @@ ovum_lamarck_1816:
   name: ovum
   authority:
     source: 1816b_lamarck
+ovum_schlotheim_1826:
+  name: ovum
+  authority:
+    source: 1826_schlotheim
 ###################### P
 pahvanticystis:
   name: Pahvanticystis
@@ -7989,6 +8035,10 @@ peltatum_hall_1847:
   name: peltatum
   authority:
     source: 1847_hall
+peltiformis_wahlenberg_1821:
+  name: peltiformis
+  authority:
+    source: 1821_wahlenberg
 pembrocystidae:
   name: Pembrocystidae
   rank: Family
@@ -8451,10 +8501,10 @@ pomum_leuchtenberg_1843:
   name: pomum
   auth: [Leuchtenberg]
   year: 1843
-pomum_wahlenberg_1821:
+pomum_gyllenhaal_1772:
   name: pomum
-  auth: [Wahlenberg]
-  year: 1821
+  authority:
+    source: 1772_gyllenhaal
 porocrinidae:
   name: Porocrinidae
   rank: Family
@@ -9669,8 +9719,11 @@ semilunaris_gmelin_1791:
   year: 1791
 senckenbergii_meyer_1826:
   name: senckenbergii
-  auth: [Meyer]
-  year: 1826
+  authority:
+    source: 1826_meyer
+senkenbergii_meyer_1826:
+  name: senkenbergii
+  altSpellingOf: senckenbergii_meyer_1826
 senegalensis_lamarck_1816:
   name: senegalensis
   authority:
@@ -9902,6 +9955,12 @@ sphaeronites:
 sphæronites:
   name: Sphæronites
   altSpellingOf: sphaeronites
+sphæronites-family:
+  name: Sphæronites
+  rank: Family
+  authority:
+    source: 1828_hisinger
+  notes: Taxon somewhat dubious, but best apparent fit to vague prose.
 sphaeronitida-superfamily:
   name: Sphaeronitida
   rank: Superfamily

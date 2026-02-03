@@ -14,9 +14,9 @@
     year: 1741
   authors:
   - linnaeus
-  - forsstrand
   identifiers:
     url: https://www.biodiversitylibrary.org/page/21083954
+  notes: Book also credited to Carl Forsstrand, but seems to be Linnaeus's journal?
 1758_linnaeus:
   title: Regnum Animalia
   book: systema-naturae-10th-ed
@@ -154,6 +154,8 @@
   - 279
   pubDate:
     year: 1776
+  authors:
+  - walch
   identifiers:
     url: https://www.google.com/books/edition/_/uoNlAAAAcAAJ?hl=en&gbpv=1
 1778_klein:
@@ -244,6 +246,7 @@
   - 183
   - 191
   plates:
+  - VII
   - VII
   pubDate:
     year: 1802
@@ -492,6 +495,12 @@
   pages:
   - 309
   - 316
+  plates:
+  - 1
+  pubDate:
+    year: 1826
+  authors:
+  - schlotheim
 1827_say:
   title: On the species of the Linnean genus Echinus, inhabiting the coast of the United States
   journal: jofacnatsci-philadelphia
@@ -532,6 +541,16 @@
   - murchison
   identifiers:
     url: https://www.biodiversitylibrary.org/item/165542#page/7/mode/1up
+1840_buch:
+  title: Hr. v.Buch las über Sphaeroniten und einige andere Geschlechter, aus welchen Crinoideen entstehen
+  journal: bericht-berlin
+  pages:
+  - 56
+  - 59
+  pubDate:
+    year: 1840
+  authors:
+  - buch
 1842_conrad.t.a:
   title: Descriptions of new Species of Organic Remains belonging to the Silurian, Devonian, and Carboniferous Systems of the United States
   journal: jofacnatsci-philadelphia
@@ -555,6 +574,22 @@
   - vanuxem
   identifiers:
     url: https://www.biodiversitylibrary.org/page/55172030
+1842_volborth:
+  journal: ac-st-p-bulletin
+  title: Ueber die Echino-Encrinen und die Identität des contractilen Theiles ihres Stieles mit dem Cornulites Sarpularius
+  volume: 10
+  pages:
+  - 293
+  - 302
+  plates:
+  - 1
+  - 2
+  authors:
+  - volborth
+  pubDate:
+    year: 1842
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/44263691
 1843_hall:
   title: Geology of New-York. Part IV. Comprising the Survey of the Fourth Geological District
   book: nat-hist-ny

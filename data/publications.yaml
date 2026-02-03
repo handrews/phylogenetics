@@ -1,5 +1,7 @@
 abh-k-akad-wiss-berlin:
   name: Abhandlungen der Königlichen Akademie der Wissenschaften zu Berlin
+ac-st-p-bulletin:
+  name: Académie Impériale des Sciences de Saint Petersbourg Bulletin
 acta-p-polonica:
   name: Acta Palaeontologica Polonica
 acta-p-sinica:
@@ -30,6 +32,8 @@ annual-ny:
   name: Annual Report of the New York State Museum of Natural History
 arch-nat:
   name: Archiv für die gesammte Naturlehre
+bericht-berlin:
+  name: Bericht über die zur Bekanntmachung geeigneten Verhandlungen der Königl. Preufs. Akademie der Wissenschaften zu Berlin.
 beitrage:
   name: Beiträge zur geognosie des russischen reiches
 brief-we:
@@ -136,6 +140,8 @@ monographs-usgs:
   name: Monographs of the United States Geological Survey
 nature:
   name: Nature
+naturforscher:
+  name: Der Naturforscher
 nat-com:
   name: Nature Communications
 nat-disp-ech:

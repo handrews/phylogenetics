@@ -1,3 +1,14 @@
+1741_linnaeus:
+  taxonomies:
+  - taxon: echinus
+    notes: |
+      On page 134 rather than 136 as some later sources indicate.
+      "Echinus" not used, instead states "[resembles a] valvulum echini"
+    children:
+    - openTaxon: echinus-sp_linnaeus_1741
+      page: 134
+      figures:
+      - page: 134
 1758_linnaeus:
   taxonomies:
   - taxon: animalia
@@ -3370,7 +3381,6 @@
       - taxon: peltiformis_wahlenberg_1821
         new: true
         page: 49
-        page: 46
         figures:
         - plate: III
           figures:
@@ -3436,9 +3446,9 @@
           figures:
           - plate: 8
             figures:
-            [1, 3]
-        - taxon: echinus-sp_linnaeus_1740
-          source: 1740_linnaeus
+            - [1, 3]
+        - openTaxon: echinus-sp_linnaeus_1741
+          source: 1741_linnaeus
           page: 136
           notes: Described as "en valvulam echini", actually on page 134.
 1825_gray.j.e:
@@ -3559,6 +3569,7 @@
     new: true
     children:
     - taxon: senckenbergii_meyer_1826
+      notes: Unclear if actual spelling "Senkenbergii" or "Senckenbergii"
       new: true
 1826_schlotheim:
   taxonomies:
@@ -3581,12 +3592,13 @@
     - taxon: granatum_wahlenberg_1821
       page: 311
       figures:
-      - figures:
-        - [1a, 1c]
+      - plate: I
+        figures:
+          [1a, 1c]
       synonyms:
       - source: 1821_wahlenberg
         page: 53
-      - taxon: echinosphaerites-sp_hisinger_1802
+      - openTaxon: echinosphaerites-sp_hisinger_1802
         page: 189
         figures:
         - plate: 7
@@ -3608,12 +3620,13 @@
       synonyms:
       - taxon: aurantium_gyllenhaal_1772
         source: 1821_wahlenberg
-    - taxon: alcyonis_schlotheim_1861
+    - taxon: alcyonis_schlotheim_1826
       questionable: true
       new: true
       page: 312
       figures:
-      - figures:
+      - plate: I
+        figures:
         - 2
     - taxon: aranea_schlotheim_1826
       notes: A later paragraph mentions "E. costatus, Fig. 3"?
@@ -3621,7 +3634,8 @@
       pages:
       - [312, 313]
       figures:
-      - figures:
+      - plate: I
+        figures:
         - 3
     - taxon: ovum_schlotheim_1826
       notes: Not figured.
@@ -3630,7 +3644,8 @@
     - taxon: pomum_gyllenhaal_1772
       page: 313
       figures:
-      - figures:
+      - plate: I
+        figures:
         - 5a
       synonyms:
       - taxon: pomum_gyllenhaal_1772
@@ -3646,10 +3661,10 @@
         - plate: 8
           figures:
           - [1, 3]
-      - openTaxon: echinus-sp_linnaeus_1740
+      - openTaxon: echinus-sp_linnaeus_1741
         parents:
         - taxon: echinus
-        source: 1740_linnaeus
+        source: 1741_linnaeus
         page: 156
     - affTaxon: pomum_gyllenhaal_1772
       notes: |
@@ -3659,14 +3674,16 @@
       pages:
       - [313, 314]
       figures:
-      - figures:
+      - plate: I
+        figures:
         - 5b
     - openTaxon: echinosphaerites-sp-1_schlotheim_1826
       pages:
       - [309, 310]
       - 314
       figures:
-      - figures:
+      - plate: I
+        figures:
         - 6
     - openTaxon: echinosphaerites-sp-2_schlotheim_1826
       notes: |
@@ -3674,7 +3691,8 @@
         this name defined; Fig. 3 is associated with E. aranea.
       page: 314
       figures:
-      - figures:
+      - plate: I
+        figures:
         - 7
 1828_hisinger:
   taxonomies:
@@ -3735,7 +3753,7 @@
             figures:
             - plate: V
               figures:
-              [2, 4]
+              - [2, 4]
             synonyms:
             - parents:
               - taxon: echinus
@@ -4077,9 +4095,9 @@
           - taxon: aurantium_gyllenhaal_1772
             parents:
             - taxon: echinus
-        - taxon: pomum_wahlenberg_1821
+        - taxon: pomum_gyllenhaal_1772
           synonyms:
-          - taxon: pomum_wahlenberg_1821
+          - taxon: pomum_gyllenhaal_1772
             parents:
             - taxon: echinosphærites
       - taxon: caryocystites
@@ -4805,7 +4823,7 @@
           children:
           - taxon: sphæronites
             children:
-            - taxon: pomum_wahlenberg_1821 # Or gyllenhaal 1772?
+            - taxon: pomum_gyllenhaal_1772
               type: true
             - taxon: litchii_forbes_1848  # litchi in original
               provisional: true
