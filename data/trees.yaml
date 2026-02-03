@@ -3805,6 +3805,8 @@
 1830_pander:
   taxonomies:
   - taxon: lithozoa
+    pages:
+    - [100, 105]
     children:
     - taxon: bolboporites
       page: 106
@@ -3814,28 +3816,28 @@
         page: 107
         new: true
         figures:
-        - plate: 2
+        - plate: II
           figures:
           - 1
       - taxon: triangularis_pander_1830
         page: 107
         new: true
         figures:
-        - plate: 2
+        - plate: II
           figures:
           - 2
       - taxon: uncinata_pander_1830
         page: 107
         new: true
         figures:
-        - plate: 2
+        - plate: II
           figures:
           - 3
       - taxon: mitralis_pander_1830
         page: 107
         new: true
         figures:
-        - plate: 2
+        - plate: II
           figures:
           - 4a
           - 4b
@@ -3846,15 +3848,13 @@
       new: true
       page: 144
       figures:
-      - plate: 2
+      - plate: II
         figures:
         - 21
-      - plate: 29
+      - plate: XXIX
         figures:
-        - 2a
-        - 2b
-        - 3a
-        - 3b
+        - [2a, 2b]
+        - [3a, 3b]
       synonyms:
       - source: 1821_wahlenberg
         page: 52
@@ -3863,55 +3863,53 @@
         - taxon: echinus
         page: 245
         figures:
-        - plate: 8
+        - plate: VIII
           figures:
-          - 4
-          - 5
-        - plate: 9
+          - [4, 5]
+        - plate: IX
     - taxon: malum_pander_1830
       new: true
       page: 145
       figures:
-      - plate: 29
+      - plate: XXIX
         figures:
         - [1a, 1c]
     - taxon: oblonga_pander_1830
       new: true
       page: 146
       figures:
-      - plate: 2
+      - plate: II
         figures:
-        - 22
-        - 25
+        - [22, 23]
     - taxon: angulosa_pander_1830
       new: true
       page: 146
       figures:
-      - plate: 2
+      - plate: II
         figures:
         - [27, 29]
-      - plate: 28
+      - plate: XXVIII
         figures:
         - 11
     - taxon: striata_pander_1830
       new: true
       page: 147
       figures:
-      - plate: 2
+      - plate: II
         figures:
         - [30, 32]
-      - plate: 28
+      - plate: XXVIII
         figures:
         - 12
       synonyms:
       - taxon: granatum_wahlenberg_1821
-        page: 55
+        page: 53
         questionable: true
     - taxon: laevis_pander_1830
       new: true
       page: 147
       figures:
-      - plate: 2
+      - plate: II
         figures:
         - [24, 26]
 1839_murchison:
