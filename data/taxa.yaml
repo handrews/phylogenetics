@@ -501,8 +501,8 @@ angulosus_leske_1778_echinocyamus:
     source: 1778_leske
 angulosa_pander_1830:
   name: angulosa
-  auth: [Pander]
-  year: 1830
+  authority:
+    source: 1830_pander
 angulosus_pander_1830:
   name: angulosus
   altSpellingOf: angulosa_pander_1830
@@ -6077,8 +6077,8 @@ lævis_miller.j.s_1821:
     source: 1821_miller.j.s
 laevis_pander_1830:
   name: laevis
-  auth: [Pander]
-  year: 1830
+  authority:
+    source: 1830_pander
 lævis_pander_1830:
   name: lævis
   altSpellingOf: laevis_pander_1830
@@ -6627,8 +6627,8 @@ malocystitidae:
   year: 1899
 malum_pander_1830:
   name: malum
-  auth: [Pander]
-  year: 1830
+  authority:
+    source: 1830_pander
 mammalia:
   name: Mammalia
   rank: Class
@@ -7389,8 +7389,8 @@ oblongus_forbes_1848:
     source: 1848b_forbes
 oblongus_pander_1830:
   name: oblongus
-  auth: [Pander]
-  year: 1830
+  authority:
+    source: 1830_pander
 obtusangula_lamarck_1816:
   name: obtusangula
   authority:
@@ -10192,8 +10192,8 @@ striata_lamarck_1816_asterias:
     source: 1816a_lamarck
 striata_pander_1830:
   name: striata
-  auth: [Pander]
-  year: 1830
+  authority:
+    source: 1830_pander
 striatus_pander_1830:
   name: striatus
   altSpellingOf: striata_pander_1830

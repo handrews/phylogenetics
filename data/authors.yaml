@@ -229,6 +229,9 @@ forsskål:
   given: Peter
   birth: 1732
   death: 1763
+forsstrand:
+  family: Forsstrand
+  given: Carl
 frest:
   family: Frest
   given: T. J.
@@ -469,6 +472,11 @@ melville:
 mestre:
   family: Mestre
   given: Ana I.
+meyer:
+  family: Meyer
+  given: Hermann von
+  birth: 1802
+  death: 1869
 miller.j.s:
   family: Miller
   given: J. S.
@@ -623,6 +631,11 @@ say:
   given: Thomas
   birth: 1787
   death: 1834
+schlotheim:
+  family: Schlotheim
+  given: Ernst Friedrich von
+  birth: 1765
+  death: 1832
 schuchert:
   family: Schuchert
   given: Charles

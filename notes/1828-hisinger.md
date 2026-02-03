@@ -38,6 +38,7 @@ and at Aleböke there are several inches long horns and fragments of a large spe
 -----
 
 1) It has been called Illænus Centanrus for the time being, Dalman Vet, Ac. H. 1826, p, 261 .
+
 2) Anomites novemrad , Wahlenberg. Acta Soe, Sc, Upsal, Vol. VIII, p. 66,
 
 -----
@@ -49,7 +50,8 @@ The largest amount of petrificares is collected at Böda hamn, in the slabs of g
 -----
 
 1 ) Vet. Acad. Handl. 1772 p. 245.
-2 ) Pate V. fig. 1-4.
+
+2 ) Plate V. fig. 1-4.
 
 -----
 
@@ -60,6 +62,7 @@ A similar example is given by Schlotheim, who in Isis 1) described and drew a so
 -----
 
 1) År 1826. 3 Häftet Plate I. fig. 1, c.
+
 2) Kæstners Archiv f. die Naturlehre, 1826 B. VII. p. 185.
 
 -----
@@ -71,7 +74,9 @@ Sphæronites pomum, Tab. V. fig. 2, 3, 4 and Sphæronites granatum, Tab. V. fig,
 -----
 
 1) Anf, st,
+
 2) Act, soc. sc. Ups. VIII. p. 53, 54.
+
 3) Perhaps these have arisen from the side of the trunk, not from the ends?
 
 -----

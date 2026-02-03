@@ -28,6 +28,8 @@ anteck:
   name: Anteckningar i Physik och Geognosi under resor uti Sverige och Norrige
 annual-ny:
   name: Annual Report of the New York State Museum of Natural History
+arch-nat:
+  name: Archiv für die gesammte Naturlehre
 beitrage:
   name: Beiträge zur geognosie des russischen reiches
 brief-we:
@@ -44,6 +46,8 @@ canadian-journal:
   name: The Canadian Journal
 can-j-earth-sci:
   name: Canadian Journal of Earth Sciences
+cl-olandska:
+  name: Carl von Linnés öländska resa, förrättad 1741
 coloquios:
   name: Coloquios de Paleontología
 e-research-1998:
@@ -100,6 +104,8 @@ horae:
   name: Horae Entomologicae, or Essays on the annulose animals
 invertebrates:
   name: The Invertebrates
+isis-von-oken:
+  name: Isis von Oken
 jofacnatsci-philadelphia:
   name: Journal of the Academy of Natural Sciences of Philadelphia
 jofpaleo:

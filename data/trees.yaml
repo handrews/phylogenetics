@@ -950,6 +950,17 @@
         - taxon: pholas
       - taxon: cellulana-order
         new: true
+1776_walch:
+  taxonomies:
+  - taxon: ostracion
+    children:
+    - openTaxon: ostracion-sp_walch_1776
+      provisional: true
+      page: 259
+      figures:
+      - plate: V
+        figures:
+        - [1, 2]
 1778_klein:
   taxonomies:
   - taxon: echinodermata_klein_1778
@@ -3370,13 +3381,17 @@
       children:
       - taxon: aurantium_gyllenhaal_1772
         page: 52
-        moved:
-          taxon: echinus
-        figures:
-        - plate: VIII
-          figures:
+        notes: |
+          Tilas in Vet. Ac. Handl. 1740, p. 196. Plate II. f. 18 is an
+          additional "synonym", but described and figured as a mineral
+          formation rather than a fossil.  The page number (196) is an
+          error; Tilas has two articles in the journal, one on pages
+          198–201, and one on pages 202–209 with plate II.  The correct
+          page number is 204; the plate and figure are correct as given.
         synonyms:
         - taxon: aurantium_gyllenhaal_1772
+          parents:
+          - taxon: echinus
           source: 1772_gyllenhaal
           pages:
           - 245
@@ -3388,30 +3403,32 @@
           - plate: 9
             figures:
             - [6, 9]
-        - openTaxon: sp-tilas_1740
-          notes: |
-            Unclear what he thought it was a species of, as there appears
-            to be an error with the page and/or plate number.
-          auth: [Tilas]
-          year: 1740
-          page: 196
+        - openTaxon: ostracion-sp_walch_1776
+          provisional: true
+          parents:
+          - taxon: ostracion
+          page: 259
           figures:
-          - plate: II
+          - plate: 5
             figures:
-            - 18
+            - [1, 2]
       - taxon: granatum_wahlenberg_1821
         new: true
+        notes: Not figured in this publication.
         synonyms:
         - openTaxon: echinus-sp_hisinger_1802
+          parents:
+          - taxon: echinus
           page: 189
           figures:
           - plate: VII
             figures:
             - b
       - taxon: pomum_gyllenhaal_1772
-        notes: 'Possibly also a synonym: "Linnis Oldask. resa p. 136."'
         synonyms:
         - taxon: pomum_gyllenhaal_1772
+          parents:
+          - taxon: echinus
           source: 1772_gyllenhaal
           pages:
           - 242
@@ -3420,6 +3437,10 @@
           - plate: 8
             figures:
             [1, 3]
+        - taxon: echinus-sp_linnaeus_1740
+          source: 1740_linnaeus
+          page: 136
+          notes: Described as "en valvulam echini", actually on page 134.
 1825_gray.j.e:
   taxonomies:
   - taxon: radiata
@@ -3531,40 +3552,238 @@
             parents:
             - taxon: encrinites
     - taxon: echinidea-family
+1826_meyer:
+  notes: Second-hand information, no scan available.
+  taxonomies:
+  - taxon: echino-encrinites
+    new: true
+    children:
+    - taxon: senckenbergii_meyer_1826
+      new: true
+1826_schlotheim:
+  taxonomies:
+  - taxon: echinosphaerites
+    pages:
+    - [309, 310]
+    synonyms:
+    - source: 1821_wahlenberg
+      page: 52
+    - tentative: true
+      taxon: ostracion
+      pars: true
+      source: 1776_walch
+      page: 259
+      figures:
+      - plate: 5
+        figures:
+        - [1, 2]
+    children:
+    - taxon: granatum_wahlenberg_1821
+      page: 311
+      figures:
+      - figures:
+        - [1a, 1c]
+      synonyms:
+      - source: 1821_wahlenberg
+        page: 53
+      - taxon: echinosphaerites-sp_hisinger_1802
+        page: 189
+        figures:
+        - plate: 7
+          figures:
+          - b
+    - taxon: aurantium_gyllenhaal_1772
+      page: 312
+      notes: |
+        Discussed in E. alcyonis section, no direct description.
+        Gyllenhaal 1772 and Tilas 1740 not addressed as Schlotheim
+        had been unable to locate copies of the journals.
+      non:
+      - taxon: aurantium_gyllenhaal_1772
+        source: 1776_walch
+        figures:
+        - plate: 5
+          figures:
+          - [1, 2]
+      synonyms:
+      - taxon: aurantium_gyllenhaal_1772
+        source: 1821_wahlenberg
+    - taxon: alcyonis_schlotheim_1861
+      questionable: true
+      new: true
+      page: 312
+      figures:
+      - figures:
+        - 2
+    - taxon: aranea_schlotheim_1826
+      notes: A later paragraph mentions "E. costatus, Fig. 3"?
+      new: true
+      pages:
+      - [312, 313]
+      figures:
+      - figures:
+        - 3
+    - taxon: ovum_schlotheim_1826
+      notes: Not figured.
+      new: true
+      page: 313
+    - taxon: pomum_gyllenhaal_1772
+      page: 313
+      figures:
+      - figures:
+        - 5a
+      synonyms:
+      - taxon: pomum_gyllenhaal_1772
+        source: 1821_wahlenberg
+      - taxon: pomum_gyllenhaal_1772
+        parents:
+        - taxon: echinus
+        source: 1772_gyllenhaal
+        pages:
+        - 242,
+        - 253
+        figures:
+        - plate: 8
+          figures:
+          - [1, 3]
+      - openTaxon: echinus-sp_linnaeus_1740
+        parents:
+        - taxon: echinus
+        source: 1740_linnaeus
+        page: 156
+    - affTaxon: pomum_gyllenhaal_1772
+      notes: |
+        Included in the E. pomum formal figure list, but in the text
+        noted as a possible separate species
+      questionable: true
+      pages:
+      - [313, 314]
+      figures:
+      - figures:
+        - 5b
+    - openTaxon: echinosphaerites-sp-1_schlotheim_1826
+      pages:
+      - [309, 310]
+      - 314
+      figures:
+      - figures:
+        - 6
+    - openTaxon: echinosphaerites-sp-2_schlotheim_1826
+      notes: |
+        Notes similarity to "E. costatus, Fig. 3", but no species of
+        this name defined; Fig. 3 is associated with E. aranea.
+      page: 314
+      figures:
+      - figures:
+        - 7
 1828_hisinger:
   taxonomies:
-  - taxon: echinodermata-order
-    source: 1817d_cuvier
+  - taxon: echinodermata-class
+    synonyms:
+    - taxon: échinodermes-class
+      source: 1817d_cuvier
+    notes: |
+      Hisinger explicitly assignes to "Echinodermata Cuvier", using
+      the latin rather than French name.
     children:
-    - taxon: encrinus
-    - openTaxon: echinodermata-indeterminate-family_hisinger_1828
-      notes: "between the Encrinite and Echinite families"
+    - taxon: pédicellés-order
+      notes: |
+        Order inclusion assumed based on class assignment, although the
+        order Pédicellés is not mentioned in the text in any language.
+        List of families/genera-taking-the-place-of-families included based on
+        Hisinger's text, in the following order, which matches Cuvier —
+        Asterias, Euryale, Comatula, Encriniterna or Crinoiderna, Echiniterna.
+        He notably uses the genus rather than family Asterias and omits
+        Ophiura, uses different (non-latin) family names in place of the genus
+        Encrinus, uses a distinct (non-latin) spelling of Echinus at family
+        rank, and omits the genus Holothuria.  The entire order to the family
+        level, plus the mentioned asterian genera, is given here for context
+        due to the explicit citation at the class level.
+        "The Sphæronites" sometimes seem to be discussed as a family, but
+        mostly as a genus.  However, the mention of Echino-Encrinites grouped
+        with the genus Sphærohites imples some sort of family, so this
+        follows Cuvier's approach of just using the type genus as the family
+        name (e.g. Asterias and Echinus).  As far as I can tell, such a
+        family-level declaration is not generally attributed to Hisinger,
+        but it is the best I can do with such vague prose.
+        Echino-Encrinites is place after Sphæronites simply because it
+        seems of secondary concern to Hisinger, as there is no formal list.
       children:
-      - taxon: sphæronites
-        pages:
-        - 195
-        notes: |
-          The 1967 Treatise incorrectly gives the page as 185.
-          The synonyms may not be quite right due to the need for
-          automatic translation and the imprecise nature of the prose
+      - taxon: asterias-family
+        children:
+        - taxon: asterias
+        - taxon: ophiura
+        - taxon: euryale
+        - taxon: comatula
+      - taxon: encrinus
+      - taxon: sphæronites-family
+        page: 196
         new: true
         children:
-        - taxon: pomum_wahlenberg_1821
+        - taxon: sphæronites
+          page: 195
+          new: true
+          notes: The 1967 Treatise incorrectly gives the page as 185.
           synonyms:
-          - taxon: pomum_wahlenberg_1821
-            parents:
-            - taxon: echinosphærites
-        - taxon: aurantium_gyllenhaal_1772
-          synonyms:
-          - taxon: aurantium_gyllenhaal_1772
-            parents:
-            - taxon: echinus
-        - taxon: granatum_wahlenberg_1821
-          synonyms:
+          - taxon: echinosphærites
+            source: 1821_wahlenberg
+          children:
+          - taxon: pomum_gyllenhaal_1772
+            pages:
+            - [47, 48]
+            - 195
+            figures:
+            - plate: V
+              figures:
+              [2, 4]
+            synonyms:
+            - parents:
+              - taxon: echinus
+              source: 1772_gyllenhaal
+              page: 245
+            - parents:
+              - taxon: echinosphærites
+              source: 1821_wahlenberg
+              pages:
+              - [53, 54]
           - taxon: granatum_wahlenberg_1821
-            parents:
-            - taxon: echinosphærites
-    - taxon: enchinus-family
+            pages:
+            - 196
+            figures:
+            - plate: V
+              figures:
+              - 1
+            synonyms:
+            - source: 1826_schlotheim
+              figures:
+              - plate: 1
+                figures:
+                - 1c
+            - parents:
+              - taxon: echinosphærites
+              source: 1821_wahlenberg
+              pages:
+              - [53, 54]
+          - taxon: aurantium_gyllenhaal_1772
+            notes: |
+              Mentioned as Sphærontes aurantium on page 48, and in a footnote
+              on page 198, but not directly listed in the section renaming
+              Echinosphaerites to Sphaeronites.
+            pages:
+            - 48
+            - 198
+        - taxon: echino-encrinites
+          page: 196
+          synonyms:
+          - source: 1826_meyer
+          children:
+          - taxon: senkenbergii_meyer_1826
+            page: 196
+            synonyms:
+            - source: 1826_meyer
+              page: 185
+      - taxon: echinus-family
+      - taxon: holothuria
 1830_pander:
   taxonomies:
   - taxon: lithozoa
@@ -3619,10 +3838,11 @@
         - 3a
         - 3b
       synonyms:
-      - auth: [Wahlenberg]
-        year: 1821
+      - source: 1821_wahlenberg
         page: 52
       - source: 1772_gyllenhaal
+        parents:
+        - taxon: echinus
         page: 245
         figures:
         - plate: 8
@@ -3631,6 +3851,7 @@
           - 5
         - plate: 9
     - taxon: malum_pander_1830
+      new: true
       page: 145
       figures:
       - plate: 29

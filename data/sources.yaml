@@ -8,6 +8,15 @@
   identifiers:
     doi: 10.5962/bhl.title.65731
     url: https://www.biodiversitylibrary.org/bibliography/65731
+1741_linnaeus:
+  book: cl-olandska
+  pubDate:
+    year: 1741
+  authors:
+  - linnaeus
+  - forsstrand
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/21083954
 1758_linnaeus:
   title: Regnum Animalia
   book: systema-naturae-10th-ed
@@ -136,6 +145,17 @@
     year: 1776
   authors:
   - müller.o.f
+1776_walch:
+  title: Joh. Ernst Imm. Walchs lithologische Beobachtungen. Siebentes Stuck.
+  journal: naturforscher
+  volume: 8
+  pages:
+  - 259
+  - 279
+  pubDate:
+    year: 1776
+  identifiers:
+    url: https://www.google.com/books/edition/_/uoNlAAAAcAAJ?hl=en&gbpv=1
 1778_klein:
   book: nat-disp-ech-1778
   seen: false
@@ -381,6 +401,8 @@
     year: 1821
   authors:
   - wahlenberg
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/2560273
 1822a_lamarck:
   book: hist-sans-vert
   volume: 6
@@ -451,6 +473,25 @@
   - say
   identifiers:
     url: https://www.biodiversitylibrary.org/page/24657187
+1826_meyer:
+  title: Beschreibung des Echino-Encrinites Senkenbergii, einer neu entdeckten Versteinerung
+  seen: False
+  journal: arch-nat
+  volume: 7
+  pages:
+  - 185
+  - 192
+  pubDate:
+    year: 1826
+  authors:
+  - meyer
+1826_schlotheim:
+  title: Beschreibung einiger Abgebildeten Arten von Echinosphaeriten und Trilobiten
+  journal: isis-von-oken
+  volume: 3
+  pages:
+  - 309
+  - 316
 1827_say:
   title: On the species of the Linnean genus Echinus, inhabiting the coast of the United States
   journal: jofacnatsci-philadelphia
@@ -467,10 +508,6 @@
 1828_hisinger:
   book: anteck
   volume: 4
-  chapter: VI. Afdelningen. Öland.
-  pages:
-  - 193
-  - 201
   pubDate:
     year: 1828
   authors:

@@ -406,10 +406,6 @@ $defs:
         $comment: For synonyms / non
         type: boolean
         default: true
-      pages:
-        type: array
-        items:
-          type: [number, string]
       plates:
         type: array
         items:
