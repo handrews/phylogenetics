@@ -567,6 +567,8 @@
     year: 1840
   authors:
   - buch
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/11051358
 1840b_buch:
   title: On Sphæronites and some other genera from which Crinoidea originate
   translationOf: 1840a_buch
