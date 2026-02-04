@@ -374,6 +374,14 @@
   - say
   identifiers:
     url: https://www.biodiversitylibrary.org/page/14905893
+1820_schlotheim:
+  book: petrefactenkunde
+  authors:
+  - schlotheim
+  pubDate:
+    year: 1820
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/61894272
 1821_macleay:
   book: horae
   volume: 1
@@ -531,6 +539,14 @@
   - pander
   identifiers:
     url: https://www.google.com/books/edition/Beitr%C3%A4ge_zur_geognosie_des_russischen_r/yJ0_AAAAYAAJ?hl=en
+1837_hisinger:
+  book: lethaea-suecica
+  authors:
+  - hisinger
+  pubDate:
+    year: 1837
+  identifiers:
+    url: https://www.google.com/books/edition/Lethaea_Suecica/M19aAAAAYAAJ?hl=en
 1839_murchison:
   title: Organic Remains
   book: silurian-system
@@ -541,7 +557,7 @@
   - murchison
   identifiers:
     url: https://www.biodiversitylibrary.org/item/165542#page/7/mode/1up
-1840_buch:
+1840a_buch:
   title: Hr. v.Buch las über Sphaeroniten und einige andere Geschlechter, aus welchen Crinoideen entstehen
   journal: bericht-berlin
   pages:
@@ -551,6 +567,34 @@
     year: 1840
   authors:
   - buch
+1840b_buch:
+  title: On Sphæronites and some other genera from which Crinoidea originate
+  translationOf: 1840a_buch
+  journal: annals-and-mag
+  volume: 6
+  number: 34
+  pages:
+  - 12
+  - 15
+  authors:
+  - buch
+  pubDate:
+    year: 1840
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/2335829
+1841_buch:
+  title: Beiträge zur Bestimmung der Oebirgsformationen in Russland
+  journal: arch-min-geo
+  volume: 15
+  pages:
+  - 3
+  - 128
+  pubDate:
+    year: 1841
+  authors:
+  - buch
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/49045685
 1842_conrad.t.a:
   title: Descriptions of new Species of Organic Remains belonging to the Silurian, Devonian, and Carboniferous Systems of the United States
   journal: jofacnatsci-philadelphia
@@ -888,7 +932,7 @@
   authors:
   - hall
 1865_norman:
-  title: XIII.—On the genera and species of British Echinodermata
+  title: On the genera and species of British Echinodermata
   journal: annals-and-mag
   volume: 15
   pages:
@@ -2487,7 +2531,7 @@ inprep_sprinkle_strimple:
     doi: 10.1017/S0022336000036052
 1998_dean.j_smith.a.b:
   title: Palaeobiology of the primitive Ordovician pelmatozoan echinoderm Cardiocystites
-  journal: palaeontology 
+  journal: palaeontology
   volume: 41
   number: 6
   pages:

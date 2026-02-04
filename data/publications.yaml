@@ -30,6 +30,8 @@ anteck:
   name: Anteckningar i Physik och Geognosi under resor uti Sverige och Norrige
 annual-ny:
   name: Annual Report of the New York State Museum of Natural History
+arch-min-geo:
+  name: Archiv für Mineralogie, Geognosie, Bergbau und Hüttenkunde
 arch-nat:
   name: Archiv für die gesammte Naturlehre
 bericht-berlin:
@@ -124,6 +126,8 @@ konglinga:
   name: Kongliga Vetenskaps Academiens Handlingar
 kungliga-svenska:
   name: Kungliga Svenska vetenskapsakademiens handlingar
+lethaea-suecica:
+  name: Lethaea Suecica
 lethaia:
   name: Lethaia
 mem-aust:
@@ -176,6 +180,8 @@ paleo-memoir:
   name: Paleontological Society Memoir
 papersinpalaeo:
   name: Papers in Palaeontology
+petrefactenkunde:
+  name: Die Petrefactenkunde auf ihrem jetzigen Standpunkte durch die Beschreibung seiner Sammlung versteinerter und fossiler Überreste des Thier-und pflanzenreichs der Vorwelt erläutert
 plos-one:
   name: PLoS ONE
 ppp:

@@ -9134,6 +9134,10 @@ regulares:
   rank: section
   authority:
     source: 1758_linnaeus
+regularis_buch_1840:
+  name: regularis
+  auth: [buch]
+  year: 1840
 regularis_orłowski_1968:
   name: regularis
   auth: [orłowski]

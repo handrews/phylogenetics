@@ -3423,6 +3423,7 @@
             figures:
             - [1, 2]
       - taxon: granatum_wahlenberg_1821
+        page: 53
         new: true
         notes: Not figured in this publication.
         synonyms:
@@ -3905,6 +3906,12 @@
       - taxon: granatum_wahlenberg_1821
         page: 53
         questionable: true
+        notes: |
+          Given as "(Echinosph. Granatum? Wahlenberg, p. 53.)",
+          but there is no indication of a questionable taxon,
+          although the referenced figure is in another source.
+          It is unclear from Pander's text what the question mark
+          means here.
     - taxon: laevis_pander_1830
       new: true
       page: 147
@@ -3965,6 +3972,39 @@
         - taxon: icosidactylus_phillips.j_1839
           new: true
           notes: not noted as new but seems to be based on subgenus text
+1840a_buch:
+  taxonomies:
+  - taxon: sphaeronites
+    notes: |
+      No formal definitions or figures, just mentions in text.
+      Most notable is the synonymization of E. granatum with E. aurantium,
+      and the mention of E. pomum without synonymization (but with a note
+      that E. pomum has not been seen near St. Peterburg.
+    synonyms:
+    - taxon: echinoencrinites
+    children:
+    - taxon: aurantium_gyllenhaal_1772
+      synonyms:
+      - taxon: granatum_wahlenberg_1821
+    - taxon: pomum_gyllenhaal_1772
+  - taxon: hemicosmites
+    notes: Not figured, but the genus+species is given its own paragraph.
+    new: true
+    pages:
+    - [59, 60]
+    children:
+    - taxon: pyriformis_buch_1840
+      new: true
+      pages:
+      - [59, 60]
+  - taxon: cryptocrinites
+    new: true
+    page: 60
+    children:
+    - taxon: regularis_buch_1840
+      new: true
+    - taxon: cerasus_buch_1840
+      new: true
 1842_conrad.t.a:
   taxonomies:
   - taxon: crinoidea-family
