@@ -2070,8 +2070,8 @@ cirrhopodes:
     source: 1817b_cuvier
 citrus_hisinger_1837:
   name: citrus
-  auth: [Hisinger]
-  year: 1837
+  authority:
+    source: 1837_hisinger
 cladida:
   name: Cladida
   rank: Parvclass
@@ -3461,7 +3461,7 @@ echinodermata-indeterminate-subphylum_bell.b.m_1982:
   rank: Subphylum
   authority:
     source: 1982_bell.b.m
-echinodermata-indeterminate-family_hisinger_1828:
+echinodermata-unnamed-family_hisinger_1828:
   name: null
   rank: Family
   authority:
@@ -3536,6 +3536,9 @@ echinoidea:
   notes: Originally appeared as Order Echinus
 echinoidea-order:
   rank: Order
+  altRankOf: echinoidea
+echinoidea-family:
+  rank: Family
   altRankOf: echinoidea
 echinolampas:
   name: Echinolampas
@@ -4167,10 +4170,13 @@ etoctenocystis:
   name: Etoctenocystis
   auth: [fatka, kordule]
   year: 1985
+eucalyptocrinites:
+  name: Eucalyptocrinites
+  auth: [Goldfuss]
+  year: 1831
 eucalyptocrinus:
   name: Eucalyptocrinus
-  authority:
-    source: 1852_hall
+  altSpellingOf: eucalyptocrinites
 eucystis:
   name: Eucystis
   auth: [Angelin]
@@ -9959,12 +9965,6 @@ sphaeronites:
 sphæronites:
   name: Sphæronites
   altSpellingOf: sphaeronites
-sphæronites-family:
-  name: Sphæronites
-  rank: Family
-  authority:
-    source: 1828_hisinger
-  notes: Taxon somewhat dubious, but best apparent fit to vague prose.
 sphaeronitida-superfamily:
   name: Sphaeronitida
   rank: Superfamily
@@ -10168,6 +10168,9 @@ stellerida:
   name: Stellerida
   rank: Class
   altRankOf: stelleridæ
+stelleridea:
+  name: Stelleridea
+  altSpellingOf: stelleridæ
 stelleridæ:
   name: Stelleridæ
   rank: Family
@@ -10584,8 +10587,8 @@ testacés:
   lang: FR
 testudinarius_hisinger_1837:
   name: testudinarius
-  auth: [hisinger]
-  year: 1837
+  authority:
+    source: 1837_hisinger
 testudineus_nardin_bohatý_2013:
   name: testudineus
   authority:

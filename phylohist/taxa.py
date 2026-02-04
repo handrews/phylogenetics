@@ -300,6 +300,7 @@ class Taxon:
         'Cystideen',
         'Échinides',
         'Echinides',
+        'Stelleridea',
         'Stellérides',
         'Stellerides',
         'Stelleridica',
