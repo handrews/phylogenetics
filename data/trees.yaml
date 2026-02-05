@@ -3919,6 +3919,13 @@
       - plate: II
         figures:
         - [24, 26]
+    - affTaxon: laevis_pander_1830
+      pages:
+      - [147, 148]
+      figures:
+      - plate: II
+        figures:
+        - [33, 35]
 1837_hisinger:
   taxonomies:
   - taxon: radiata-subkingdom  # Cuv
@@ -4052,39 +4059,198 @@
         - taxon: icosidactylus_phillips.j_1839
           new: true
           notes: not noted as new but seems to be based on subgenus text
-1840a_buch:
-  taxonomies:
-  - taxon: sphaeronites
-    notes: |
-      No formal definitions or figures, just mentions in text.
-      Most notable is the synonymization of E. granatum with E. aurantium,
-      and the mention of E. pomum without synonymization (but with a note
-      that E. pomum has not been seen near St. Peterburg.
-    synonyms:
-    - taxon: echinoencrinites
-    children:
-    - taxon: aurantium_gyllenhaal_1772
-      synonyms:
-      - taxon: granatum_wahlenberg_1821
-    - taxon: pomum_gyllenhaal_1772
-  - taxon: hemicosmites
-    notes: Not figured, but the genus+species is given its own paragraph.
+  - notes: Under "Nondescripts"
+    taxon: ischadites
     new: true
     pages:
-    - [59, 60]
+    - [697, 698]
     children:
-    - taxon: pyriformis_buch_1840
+    - taxon: königii_murchison_1839
       new: true
       pages:
-      - [59, 60]
-  - taxon: cryptocrinites
-    new: true
-    page: 60
+      - [697, 698]
+      figures:
+      - plate: XXVI
+        figures:
+        - 11
+1840a_buch:
+  taxonomies:
+  - taxon: crinoidea-family
     children:
-    - taxon: regularis_buch_1840
+    - taxon: sphaeronites
+      notes: |
+        No formal definitions or figures, just mentions in text.
+        Most notable is the synonymization of E. granatum with E. aurantium,
+        and the mention of E. pomum without synonymization (but with a note
+        that E. pomum has not been seen near St. Peterburg.
+      synonyms:
+      - taxon: echinosphaerites
+        source: 1821_wahlenberg
+        page: 52
+        notes: |
+          No indication of which figures go with which species; presumably
+          Buch would retain the E. pomum figures with that species, and
+          assign both the E. aurantium and E. granatum figures to
+          E. aurantium.  But this is not spelled out as it is for some
+          other sources.
+        figures:
+        - plate: I
+          figures:
+          - [14, 17]
+      children:
+      - taxon: aurantium_gyllenhaal_1772
+        figures:
+        - plate: I
+          figures:
+          - 14
+          - 17
+        synonyms:
+        - source: 1837_hisinger
+          figures:
+          - plate: XXV
+            figures:
+            - [8, 9]
+        - source: 1830_pander
+          figures:
+          - plate: XXIX
+            figures:
+            - 3a
+        - taxon: granatum_wahlenberg_1821
+      - taxon: pomum_gyllenhaal_1772
+        figures:
+        - plate: I
+          figures:
+          - [15, 16]
+        synonyms:
+        - source: 1772_gyllenhaal
+          parents:
+          - taxon: echinus
+    - taxon: hemicosmites
       new: true
-    - taxon: cerasus_buch_1840
+      pages:
+      - [32, 33]
+      children:
+      - taxon: pyriformis_buch_1840
+        new: true
+        pages:
+        - [32, 33]
+        figures:
+        - plate: I
+          figures:
+          - [1, 3]
+          - [6, 7]
+          - 11
+          - 13
+        notes: |
+          One statement references figure 16, but clearly means 13 as it
+          reference the exploded plate analysis of that figure.
+          Pander's E. malum is not explicitly synonymized with H. pyriformis,
+          nor is it explicitly recombined as H. malum (its modern name).
+          However, the plates for E. malum are discussed as Hemicosmites
+          plates, so it is included as a synonym.
+        synonyms:
+        - taxon: malum_pander_1830
+          parents:
+          - taxon: echinosphaerites
+          figures:
+          - plate: XXIX
+            figures:
+            - [1a, 1c]
+    - taxon: cryptocrinites
       new: true
+      page: 36
+      children:
+      - taxon: cerasus_buch_1840
+        new: true
+        page: 36
+        synonyms:
+        - taxon: laevis_pander_1830
+          parents:
+          - taxon: echinosphaerites
+          source: 1830_pander
+          figures:
+          - plate: II
+            figures:
+            - [24, 26]
+        - affTaxon: laevis_pander_1830
+          parents:
+          - taxon: echinosphaerites
+          source: 1830_pander
+          figures:
+          - plate: II
+            figures:
+            - 33
+        non:
+        - notes: |
+            Note explicitly excluded, but only figure 33 is included.
+          affTaxon: laevis_pander_1830
+          parents:
+          - taxon: echinosphaerites
+          source: 1830_pander
+          figures:
+          - plate: II
+            figures:
+            - [34, 35]
+      - taxon: regularis_buch_1840
+        questionable: true
+        new: true
+        page: 37
+1840b_buch:
+  notes: |
+    This is a shortened yet enhanced version of part of 1840a_buch,
+    as now Cryptocrinites regularis is defintely rather than tentatively
+    a species, and Ischadites koenigii Murchison is now synonymized
+    with Sphaeronites aurantium.
+  taxonomies:
+  - taxon: crinoidea-family
+    children:
+    - taxon: sphaeronites
+      notes: |
+        No formal definitions or figures, just mentions in text.
+      synonyms:
+      - taxon: echinosphaerites
+      - taxon: ischadites
+      children:
+      - taxon: aurantium_gyllenhaal_1772
+        synonyms:
+        - taxon: granatum_wahlenberg_1821
+        - taxon: koenigii_murchison_1839
+          parents:
+          - taxon: ischadites
+          source: 1839_murchison
+          figures:
+          - plate: XXVI
+            figures:
+            - 11
+      - taxon: pomum_gyllenhaal_1772
+    - taxon: hemicosmites
+      pages:
+      - [59, 60]
+      children:
+      - taxon: pyriformis_buch_1840
+        pages:
+        - [59, 60]
+    - taxon: cryptocrinites
+      page: 60
+      children:
+      - taxon: regularis_buch_1840
+        page: 60
+        notes: |
+          No longer tentative, but no figures cited, even though
+          Buch's previous paper included figure 33 from Pander's
+          unnamed species similar to E. laevis which is no longer
+          synonymized with C. cerasus.
+      - taxon: cerasus_buch_1840
+        page: 60
+        synonyms:
+        - taxon: laevis_pander_1830
+          parents:
+          - taxon: echinosphaerites
+          source: 1830_pander
+          figures:
+          - plate: II
+            figures:
+            - [24, 26]
 1842_conrad.t.a:
   taxonomies:
   - taxon: crinoidea-family

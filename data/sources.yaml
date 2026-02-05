@@ -558,7 +558,21 @@
   identifiers:
     url: https://www.biodiversitylibrary.org/item/165542#page/7/mode/1up
 1840a_buch:
-  title: Hr. v.Buch las über Sphaeroniten und einige andere Geschlechter, aus welchen Crinoideen entstehen
+  notes: |
+    This appears to be the first printing of this material.  1840b_buch is
+    a shorter but updated version read at a conference.  1840c_buch is a
+    translation of 1840b_buch.  1841_buch appears to be a direct reprint,
+    right down to identically typeset pages, of this standalone book into
+    a journal article.
+  book: beitrage-russland
+  pubDate:
+    year: 1840
+  authors:
+  - buch
+  identifiers:
+    url: https://www.google.com/books/edition/Beitr%C3%A4ge_zur_Bestimmung_der_Gebirgsform/iB44AAAAMAAJ?hl=en
+1840b_buch:
+  title: Hr. v. Buch las über Sphaeroniten und einige andere Geschlechter, aus welchen Crinoideen entstehen
   journal: bericht-berlin
   pages:
   - 56
@@ -569,7 +583,7 @@
   - buch
   identifiers:
     url: https://www.biodiversitylibrary.org/page/11051358
-1840b_buch:
+1840c_buch:
   title: On Sphæronites and some other genera from which Crinoidea originate
   translationOf: 1840a_buch
   journal: annals-and-mag

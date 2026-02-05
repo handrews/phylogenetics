@@ -5774,6 +5774,10 @@ irregulares:
   rank: section
   authority:
     source: 1758_linnaeus
+ischadites:
+  name: Ischadites
+  authority:
+    source: 1839_murchison
 isis:
   name: Isis
   authority:
@@ -6043,6 +6047,13 @@ knizeki_fatka_1991:
   name: knizeki
   authority:
     source: 1991_fatka
+koenigii_murchison_1839:
+  name: koenigii
+  authority:
+    source: 1839_murchison
+königii_murchison_1839:
+  name: königii
+  altSpellingOf: koenigii_murchison_1839
 kolpoda:
   name: Kolpoda
   altSpellingOf: colpoda
