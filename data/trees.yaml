@@ -308,7 +308,8 @@
 1760b_linnaeus:
   notes: Part II has invertebrates
   taxonomies:
-  - taxon: animalia
+  - mergeInto: [1760a_linnaeus, 0]
+    taxon: animalia
     children:
     - taxon: insecta
     - taxon: vermes
@@ -2046,7 +2047,8 @@
     - taxon: vers
 1816a_lamarck:
   taxonomies:
-  - taxon: animaux
+  - mergeInto: [1815_lamarck, 0]
+    taxon: animaux
     children:
     - taxon: infusoires
     - taxon: polypes-class
@@ -2295,7 +2297,8 @@
               new: true
 1816b_lamarck:
   taxonomies:
-  - taxon: animaux
+  - mergeInto: [1815_lamarck, 0]
+    taxon: animaux
     children:
     - taxon: radiares
       children:
@@ -3096,7 +3099,8 @@
       - taxon: oiseaux
 1817b_cuvier:
   taxonomies:
-  - taxon: animaux
+  - mergeInto: [1817a_cuvier, 0]
+    taxon: animaux
     children:
     - taxon: vertébrés
       children:
@@ -3124,7 +3128,8 @@
   notes: Continues the Articulés, no new class-level definitions.
 1817d_cuvier:
   taxonomies:
-  - taxon: animaux
+  - mergeInto: [1817a_cuvier, 0]
+    taxon: animaux
     children:
     - taxon: zoophytes-phylum
       children:
@@ -4251,6 +4256,154 @@
           - plate: II
             figures:
             - [24, 26]
+1840_eichwald:
+  taxonomies:
+  - taxon: strahlthiere
+    children:
+    - taxon: crinoideen
+      children:
+      - taxon: cupressocrinites
+        children:
+        - taxon: pentaporus_eichwald_1840
+          new: true
+      - taxon: cyathocrinites
+        children:
+        - taxon: planus_miller.j.s_1821
+          auth: [Goldfuss]
+          year: 1831
+        - taxon: pinnatus_goldfuss_1831
+      - taxon: eugeniacrinites
+        children:
+        - taxon: mespiliformis_goldfuss_1831  # cannot find this referenced
+      - taxon: platycrinus
+        children:
+        - affTaxon: laevis_miller.j.s_1821
+      - taxon: actinocrinites
+        children:
+        - affTaxon: triacontodactylus_miller.j.s_1821
+        - taxon: granulatus_goldfuss_1831
+      - taxon: pentacrinus
+        children:
+        - taxon: priscus_goldfuss_1831
+      - taxon: poteriocrinites
+        children:
+        - taxon: crassus_miller.j.s_1821
+      - taxon: cornulites
+        children:
+        - taxon: serpularius_schlotheim_1820
+      - taxon: gonocrinites
+        new: true
+        pages:
+        - [178, 179]
+        children:
+        - taxon: angulosus_pander_1830
+          page: 179
+        - taxon: striatus_pander_1830
+          pages:
+          - [179, 180]
+      - taxon: hemicosmites
+        children:
+        - taxon: pyriformis_buch_1840
+          pages:
+          - [180, 182]
+          synonyms:
+          - taxon: malum_pander_1830
+            parents:
+            - taxon: echinosphaerites
+        - taxon: extraneus_eichwald_1840
+          new: true
+          pages:
+          - [182, 183]
+        - taxon: porosus_eichwald_1840
+          new: true
+          pages:
+          - [183, 184]
+      - taxon: cryptocrinites
+        children:
+        - taxon: regularis_buch_1840
+          pages:
+          - [184, 185]
+          synonyms:
+          - taxon: laevis_pander_1830
+            parents:
+            - taxon: echinosphaerites
+        - taxon: cerasus_buch_1840
+          page: 185
+        - taxon: oviformis_eichwald_1840
+          new: true
+          pages:
+          - [185, 187]
+      - taxon: sphaeronites
+        children:
+        - taxon: aurantium_gyllenhaal_1772
+          pages:
+          - [187, 189]
+          synonyms:
+          - source: 1821_wahlenberg
+            notes: This combination is credited to Wahleberg in this text.
+          - taxon: citrus_hisinger_1837
+            parents:
+            - taxon: echinosphaerites
+          - taxon: strangwaysii_koenig_1825
+            parents:
+            - taxon: leucophthalmus
+      - taxon: sphaeronites
+        children:
+        - taxon: pomum_gyllenhaal_1772
+          page: 189
+          synonyms:
+          - source: 1821_wahlenberg
+            notes: This combination is credited to Wahleberg in this text.
+      - taxon: heliocrinites
+        new: true
+        notes: No distinct genus description.
+        children:
+        - taxon: balticus_eichwald_1829
+          pages:
+          - [189, 191]
+          synonyms:
+          - auth: [eichwald]
+            year: 1829
+            notes: "Zoologia specialis quam expositus animalibus tum vivis"
+            parents:
+            - taxon: echinosphaerites
+        - taxon: radiatus_eichwald_1840
+          new: true
+          pages:
+          - [191, 192]
+      - taxon: cyclocrinites
+        new: true
+        notes: No separate genus description.  Actually a plant.
+        children:
+        - taxon: spaskii_eichwald_1840
+          new: true
+          pages:
+          - [192, 193]
+      - taxon: ophiura
+        children:
+        - taxon: obtusa_eichwald_1840
+          new: true
+          pages:
+          - [193, 194]
+        - affTaxon: schlotheimii_unknown
+          page: 194
+          notes: |
+            Given as "Ophiura Schlotheimii Holl. aff", but no clue as to
+            who "Holl." is, as those four letters do not occur anywhere else
+            in the text.  One fragmentary OCR source found credits Münster,
+            but without a year, and unclear how it relates to "Holl."
+            The text says O. Schlotheimii described in "Schlotheim 1. c. "
+            "Heft II.  Tab. XXIX. Fig. 6", but no one names a species after
+            themselves, so this can't be the original, and doesn't fit with
+            the credit to "Holl." either.
+      - taxon: asterocrinus
+        children:
+        - taxon: münsteri_eichwald_1840
+          new: true
+          page: 195
+        - taxon: priscus_eichwald_1840
+          new: true
+          page: 196
 1842_conrad.t.a:
   taxonomies:
   - taxon: crinoidea-family
@@ -4315,6 +4468,28 @@
     - taxon: lepocrinites
       children:
       - taxon: gebhardi_conrad.t.a_1840
+1842_volborth:
+  taxonomies:
+  - taxon: crinoidea-family
+    children:
+    - taxon: echino-encrinites
+      children:
+      # - taxon: senkenbergii_meyer_1826
+      - taxon: angulosus_pander_1830
+        synonyms:
+        - taxon: angulosa_pander_1830
+          parents:
+          - taxon: echinosphaerites
+      - taxon: striatus_pander_1830
+        synonyms:
+        - taxon: striata_pander_1830
+          parents:
+          - taxon: echinosphaerites
+      - taxon: granatum_wahlenberg_1821
+        synonyms:
+        - parents:
+          - source: 1828_hisinger
+            taxon: sphaeronites
 1843_hall:
   taxonomies:
   - notes: Clinton group (only echinoderms are noted here)
@@ -4423,7 +4598,7 @@
             - taxon: echinosphærites
       - taxon: cryptocrinites
         children:
-        - taxon: cerasus_buch_1840 # date uncertain?
+        - taxon: cerasus_buch_1840
           synonyms:
           - taxon: lævis_pander_1830
             parents:

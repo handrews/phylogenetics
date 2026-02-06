@@ -382,6 +382,14 @@ $defs:
     $dynamicAnchor: tree
     type: object
     properties:
+      mergeInto:
+        type: array
+        minItems: 2
+        maxItems: 2
+        prefixItems:
+        - $ref: "phylogeny#/$defs/sourceId"
+        - type: integer
+          minimum: 0
       taxon:
         type: string
       type:

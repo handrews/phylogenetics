@@ -297,6 +297,7 @@ class Taxon:
       ('inae', 'Subfamily', frozenset()),
       ('idae', 'Family', frozenset({
         'Crinoiden',
+        'Crinoideen',
         'Cystideen',
         'Échinides',
         'Echinides',
@@ -605,11 +606,14 @@ class Tree:
 
     if taxon_key:
       if field in self._PROXY_FIELDS:
-        taxon = ProxyTaxon(
-          Taxon.get(taxon_key),
-          field[:-len('Taxon')] + '.',
-          self._source,
-        )
+        if (proxy_target := Taxon.get(taxon_key)):
+          taxon = ProxyTaxon(
+            proxy_target,
+            field[:-len('Taxon')] + '.',
+            self._source,
+          )
+        else:
+          raise ValueError(f"Could not get proxy target {taxon_key}")
       else:
         taxon = Taxon.get(taxon_key)
         if taxon is None:

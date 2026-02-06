@@ -598,6 +598,14 @@
     year: 1840
   identifiers:
     url: https://www.biodiversitylibrary.org/page/2335829
+1840_eichwald:
+  book: ueber-esthland
+  pubDate:
+    year: 1840
+  authors:
+  - eichwald
+  identifiers:
+    url: biodiversitylibrary.org/item/253802
 1841_buch:
   title: Beiträge zur Bestimmung der Oebirgsformationen in Russland
   journal: arch-min-geo

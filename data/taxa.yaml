@@ -866,6 +866,10 @@ asterizans_leske_1778:
   name: asterizans
   authority:
     source: 1778_leske
+asterocrinus:
+  name: Asterocrinus
+  auth: [Münster]
+  year: 1839
 asteroidea:
   name: Asteroidea
   rank: Class
@@ -967,8 +971,7 @@ auctidactylus_billings_1857:
     source: 1857_billings
 auranea_schlotheim_1826:
   name: auranea
-  auth: [Schlotheim]
-  year: 1826
+  altSpellingOf: aranea_schlotheim_1826
 aurantium_gyllenhaal_1772:
   name: aurantium
   auth: [gyllenhaal]
@@ -1048,7 +1051,7 @@ balticus_jaekel_1899:
   year: 1899
 balticus_eichwald_1829:
   name: balticus
-  auth: [Eichwald]
+  auth: [eichwald]
   year: 1829
 barrandi_billings_1858:
   name: barrandi
@@ -1344,7 +1347,7 @@ bothriocidaridae-sp_kolata_1975:
     source: 1975_kolata
 bothriocidaris:
   name: Bothriocidaris
-  auth: [Eichwald]
+  auth: [eichwald]
   year: 1860
 bothriocidaroida:
   name: Bothriocidaroida
@@ -1928,7 +1931,7 @@ cheirocrinitidae:
   notes: Unclear if this is really alt spelling, need Br. Ord. Cystoids pt. 2
 cheirocrinus:
   name: Cheirocrinus
-  auth: [Eichwald]
+  auth: [eichwald]
   year: 1856
 cheirocrinus-sp-1_paul.c.r.c_1968:
   name: null
@@ -2362,6 +2365,10 @@ corine:
   name: Corine
   authority:
     source: 1798_cuvier
+cornulites:
+  name: Cornulites
+  authority:
+    source: 1820_schlotheim
 cornuta:
   name: Cornuta
   rank: Order
@@ -2501,6 +2508,10 @@ crinoideæ-family:
   altSpellingOf: crinoidea-family
 crinoiden:
   name: Crinoiden
+  lang: DE
+  vulgarSpellingOf: crinoidea-family
+crinoideen:
+  name: Crinoideen
   lang: DE
   vulgarSpellingOf: crinoidea-family
 crinoidea-indeterminate-subclass_sprinkle_1973:
@@ -2648,6 +2659,10 @@ cuniculocystis:
   name: Cuniculocystis
   auth: [sprinkle, Wahlman]
   year: 1994
+cupressocrinites:
+  name: Cupressocrinites
+  auth: [Goldfuss]
+  year: 1831
 cupuliformis_zhao.j_guo.j_selden_cong.p.y_li.y.j_2022:
   name: cupuliformis
   authority:
@@ -2763,6 +2778,11 @@ cyclidium:
   name: Cyclidium
   authority:
     source: 1773_müller.o.f
+cyclocrinites:
+  name: Cyclocrinites
+  authority:
+    source: 1840_eichwald
+  notes: Actually green algae
 cyclocystoididae:
   name: Cyclocystoididae
   rank: Family
@@ -4273,6 +4293,10 @@ externes:
   authority:
     source: 1801_lamarck
   lang: FR
+extraneus_eichwald_1840:
+  name: extraneus
+  authority:
+    source: 1840_eichwald
 ###################### F
 faberi_miller.s.a_1894:
   name: faberi
@@ -4673,7 +4697,7 @@ globulus_dehm_1934:
   year: 1934
 globulus_eichwald_1860:
   name: globulus
-  auth: [Eichwald]
+  auth: [eichwald]
   year: 1860
 globulus_linnaeus_1758:
   name: globulus
@@ -4866,8 +4890,8 @@ gondi_ubaghs_1987:
   year: 1987
 goniocrinites:
   name: Goniocrinites
-  auth: [Eichwald]
-  year: 1840
+  authority:
+    source: 1840_eichwald
 goniodactylus_phillips.j_1839:
   name: goniodactylus
   authority:
@@ -4879,8 +4903,8 @@ gonium:
     source: 1773_müller.o.f
 gonocrinites:
   name: Gonocrinites
-  auth: [Eichwald]
-  year: 1840
+  authority:
+    source: 1840_eichwald
 gordius:
   name: Gordius
   authority:
@@ -4937,6 +4961,10 @@ granulata_leske_1778:
   name: granulata
   authority:
     source: 1778_leske
+granulatus_goldfuss_1831:
+  name: granulatus
+  auth: [Goldfuss]
+  year: 1831
 granulatus_jaekel_1899:
   name: granulatus
   auth: [jaekel]
@@ -5126,8 +5154,8 @@ helianthus_lamarck_1816:
     source: 1816a_lamarck
 heliocrinites:
   name: Heliocrinites
-  auth: [Eichwald]
-  year: 1840
+  authority:
+    source: 1840_eichwald
 heliocrinites-sp-a_paul.c.r.c_1997:
   name: null
   rank: species
@@ -6121,10 +6149,13 @@ lævis_conrad.t.a_1842:
   name: lævis
   auth: [conrad.t.a]
   year: 1842
-lævis_miller.j.s_1821:
-  name: lævis
+laevis_miller.j.s_1821:
+  name: laevis
   authority:
     source: 1821_miller.j.s
+lævis_miller.j.s_1821:
+  name: lævis
+  altSpellingOf: laevis_miller.j.s_1821
 laevis_pander_1830:
   name: laevis
   authority:
@@ -6341,11 +6372,13 @@ leuchtenbergii_volborth_1846:
   name: leuchtenbergii
   auth: [Volborth]
   year: 1846
-leucopthalmus:
-  name: Leucopthalmus
+leucophthalmus:
+  name: Leucophthalmus
   auth: [Koenig]
   year: 1825
-  notes: Authority based on species strangwaysii
+leucopthalmus:
+  name: Leucopthalmus
+  altSpellingOf: leucophthalmus
 levatus_bassler_1943:
   name: levatus
   auth: [bassler]
@@ -6885,6 +6918,10 @@ mesocystidae:
   rank: Family
   auth: [bather]
   year: 1899
+mespiliformis_goldfuss_1831:
+  name: mespiliformis
+  auth: [Goldfuss]
+  year: 1831
 mespilocystites:
   name: Mespilocystites
   auth: [barrande]
@@ -7138,6 +7175,13 @@ moroccopyrgus:
   name: Moroccopyrgus
   authority:
     source: 2011_sumrall_zamora
+münsteri_eichwald_1840:
+  name: münsteri
+  authority:
+    source: 1840_eichwald
+muensteri_eichwald_1840:
+  name: muensteri
+  altSpellingOf: münsteri_eichwald_1840
 multibrachiatus_kirk_1945:
   name: multibrachiatus
   auth: [Kirk]
@@ -7441,6 +7485,10 @@ oblongus_pander_1830:
   name: oblongus
   authority:
     source: 1830_pander
+obtusa_eichwald_1840:
+  name: obtusa
+  authority:
+    source: 1840_eichwald
 obtusangula_lamarck_1816:
   name: obtusangula
   authority:
@@ -7716,8 +7764,8 @@ ovatus_leske_1778_spatangus_leske_1778:
     source: 1778_leske
 oviformis_eichwald_1840:
   name: oviformis
-  auth: [Eichwald]
-  year: 1840
+  authority:
+    source: 1840_eichwald
 oviformis_gmelin_1791:
   name: oviformis
   auth: [Gmelin]
@@ -8133,6 +8181,10 @@ pentaporus_gmelin_1791:
   name: pentaporus
   auth: [Gmelin]
   year: 1791
+pentaporus_eichwald_1840:
+  name: pentaporus
+  authority:
+    source: 1840_eichwald
 pentrematoides_forbes_1848:
   name: pentrematoides
   authority:
@@ -8141,6 +8193,9 @@ pentremite:
   name: Pentremite
   authority:
     source: 1820_say
+pentremites:
+  name: Pentremites
+  altSpellingOf: pentremite
 perforata_müller.o.f_1776:
   name: perforata
   authority:
@@ -8260,6 +8315,10 @@ pinnata_forsskål_1775:
   name: pinnata
   auth: [forsskål]
   year: 1775
+pinnatus_goldfuss_1831:
+  name: pinnatus
+  auth: [Goldfuss]
+  year: 1831
 piojoensis_sumrall_heredia_rodríguez.c.m_mestre_2013:
   name: piojoensis
   authority:
@@ -8352,6 +8411,9 @@ platycrinites:
   name: Platycrinites
   authority:
     source: 1821_miller.j.s
+platycrinus:
+  name: Platycrinus
+  altSpellingOf: platycrinites
 platycystites:
   name: Platycystites
   auth: [miller.s.a]
@@ -8535,6 +8597,10 @@ porosublastus:
   name: Porosublastus
   authority:
     source: 2015_sprinkle_sumrall
+porosus_eichwald_1840:
+  name: porosus
+  authority:
+    source: 1840_eichwald
 porpita:
   name: Porpita
   authority:
@@ -8616,6 +8682,14 @@ priscus_billings_1857:
   name: priscus
   authority:
     source: 1857_billings
+priscus_eichwald_1840:
+  name: priscus
+  authority:
+    source: 1840_eichwald
+priscus_goldfuss_1831:
+  name: priscus
+  auth: [Goldfuss]
+  year: 1831
 priscus_miller.s.a_gurley_1894:
   name: priscus
   auth: [miller.s.a, gurley]
@@ -8677,8 +8751,8 @@ protocrinidae:
   altSpellingOf: protocrinitidae
 protocrinites:
   name: Protocrinites
-  auth: [Eichwald]
-  year: 1840
+  authority:
+    source: 1840_eichwald
 protocrinitida:
   name: Protocrinitida
   rank: Superfamily
@@ -9035,6 +9109,10 @@ radiatus_billings_1857:
   authority:
     source: 1857_billings
   notes: Carabocrinus
+radiatus_eichwald_1840:
+  name: radiatus
+  authority:
+    source: 1840_eichwald
 radiatus_gmelin_1791:
   name: radiatus
   auth: [Gmelin]
@@ -9604,6 +9682,14 @@ schizocystis:
   name: Schizocystis
   auth: [jaekel]
   year: 1895
+schlotheimii_unknown:
+  name: schlotheimii
+  auth: []
+  notes: |
+    Appears in 1840_eichwald credited to "Holl." with no explanation,
+    and no other use of "Holl." in the source.  A fragmentary OCR
+    text jumble appeared to credit "Münster" with no year, but it
+    was too noisy to be certain.
 schuchertocystis:
   name: Schuchertocystis
   auth: [bassler]
@@ -9777,6 +9863,10 @@ serpula:
   name: Serpula
   authority:
     source: 1758_linnaeus
+serpularius_schlotheim_1820:
+  name: serpularius
+  authority:
+    source: 1820_schlotheim
 sertularia:
   name: Sertularia
   authority:
@@ -9910,6 +10000,10 @@ southworthi_bassler_1936:
   name: southworthi
   authority:
     source: 1936_bassler
+spaskii_eichwald_1840:
+  name: spaskii
+  authority:
+    source: 1840_eichwald
 spatagus:
   name: Spatagus
   authority:
@@ -10249,6 +10343,9 @@ strabocystis:
   name: Strabocystis
   authority:
     source: 1982g_sprinkle
+strahlthiere:
+  name: Strahlthiere
+  vulgarSpellingOf: radiata
 strangwaysii_koenig_1825:
   name: strangwaysii
   auth: [Koenig]
@@ -10796,6 +10893,9 @@ triacontadactylus_miller.j.s_1821:
   name: triacontadactylus
   authority:
     source: 1821_miller.j.s
+triacontodactylus_miller.j.s_1821:
+  name: triacontodactylus
+  altSpellingOf: triacontadactylus_miller.j.s_1821
 triangularis_pander_1830:
   name: triangularis
   authority:
