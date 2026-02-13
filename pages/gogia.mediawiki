@@ -9,12 +9,12 @@
 | type_species = ''†G. prolifica''
 | subdivision_ranks = Species
 | subdivision =
-*''G. prolifica'' {{small|Walcott 1917}} <ref>{{Cite journal |last1=Harker |first1=P. |last2= Hutchinson |first2=R. |year=1953 |title=A New Occurrence and Redescription of ''Gogia prolifica'' Walcott |journal=Journal of Paleontology |volume=27 |issue=2 |pages=285–287 |jstor= 1300058}}</ref>
+*''G. prolifica'' {{small|Walcott 1917}} <ref>{{harvnb|Harker|Hutchinson|1953}}</ref>
 *''G. (Eocrinus) longidactylus'' {{small|(Walcott, 1886)}}<ref name=Robison1965/>
 *''G. granulosa'' {{small|Robison 1965}}<ref name=Robison1965/>
 *''G. multibrachiata'' {{small|(Kirk, 1945)}}<ref name=Robison1965/>
 *''G. spiralis'' {{small|Robison, 1965}}<ref name=Robison1965/>
-*''G. ojenai'' {{small|Durham, 1978}}<ref name=Durham1978>{{Cite journal |last1=Durham |first1=J. |year=1978 |title=A Lower Cambrian Eocrinoid |journal=Journal of Paleontology |volume=52 |issue=1 |pages=195–199 |jstor=1303808 }}</ref>
+*''G. ojenai'' {{small|Durham, 1978}}<ref name=Durham1978>{{harvnb|Durham|1978}}</ref>
 | synonyms =
 * ''Eocrinus''<ref name=Robison1965/>
 }}
@@ -22,16 +22,25 @@
 [[File:Gogia spiralis USNM.jpg|alt=fossil eocrinoid Gogia spiralis|left|thumb|''Gogia spiralis'']]
 '''''Gogia''''' is a [[genus]] of primitive [[Eocrinoidea|eocrinoid]] [[blastozoa]]n from the early to [[middle Cambrian]].
 
-''G. ojenai'' dates to the late Early Cambrian;<ref name=Durham1978/> other [[species]] come from various Middle Cambrian strata throughout North America, but the genus has yet to be described outside this [[continent]].<ref name=Robison1965>{{Cite journal |last1=Robison |first1=R. A. |year=1965 |title=Middle Cambrian Eocrinoids from Western North America |journal=Journal of Paleontology |volume=39 |issue=3 |pages=355–364 |jstor=1301709}}</ref>  Notable localities where species are found include the [[Wheeler Shale]] of [[Utah]],<ref>{{Cite web | url=https://gsa.confex.com/gsa/2007AM/finalprogram/abstract_130823.htm | title=Paleoecology of the Middle Cambrian Eocrinoid Echinoderm ''Gogia Spiralis'': Possible Changes in Substrate Adaptations Through Ontogeny | access-date=2017-07-05 | archive-date=2017-08-15 | archive-url=https://web.archive.org/web/20170815062212/https://gsa.confex.com/gsa/2007AM/finalprogram/abstract_130823.htm | url-status=dead }}</ref> and the [[Burgess Shale]] of [[British Columbia]].{{citation needed|date=July 2017}}
+''G. ojenai'' dates to the late Early Cambrian;<ref name=Durham1978/> other [[species]] come from various Middle Cambrian strata throughout North America, but the genus has yet to be described outside this [[continent]].<ref name=Robison1965>{{harvnb|Robison|1965}}</ref>  Notable localities where species are found include the [[Wheeler Shale]] of [[Utah]],<ref>{{harvnb|Schlottke|2007}}</ref> and the [[Burgess Shale]] of [[British Columbia]].{{citation needed|date=July 2017}}
 
 The species of ''Gogia'', like other eocrinoids, were not closely related to the true [[crinoid]]s, instead, being more closely related to the [[blastoid]]s.
 [[Image:Gogia radiata.jpg|thumb|left|''Gogia radiata'']] 
-''Gogia'' is distinguished from sea lilies, and most other blastoids, in that the plate-covered body was shaped like a vase, or a bowling pin (with the pin part stuck into the substrate), and that the five [[ambulacral|ambulacra]] were split into pairs of coiled or straight, ribbon-like strands. Six specimens of ''Gogia'' are known from the Greater [[Phyllopod bed]], where they comprise < 0.1% of the community.<ref name=Caron2006>{{cite journal|last1=Caron |first1=Jean-Bernard|last2=Jackson |first2=Donald A.|title=Taphonomy of the Greater Phyllopod Bed community, Burgess Shale|journal=PALAIOS |volume=21 |issue=5 |pages=451–65|date=October 2006|doi=10.2110/palo.2003.P05-070R|jstor=20173022|bibcode=2006Palai..21..451C |s2cid=53646959 }}</ref>
+''Gogia'' is distinguished from sea lilies, and most other blastoids, in that the plate-covered body was shaped like a vase, or a bowling pin (with the pin part stuck into the substrate), and that the five [[ambulacral|ambulacra]] were split into pairs of coiled or straight, ribbon-like strands. Six specimens of ''Gogia'' are known from the Greater [[Phyllopod bed]], where they comprise < 0.1% of the community.<ref name=Caron2006>{{harvnb|Caron|Jackson|2006}}</ref>
 
 As a whole, the Eocrinoids are regarded as basal blastozoans very close to the ancestry of the entire subphylum.
 
 == References ==
 {{Reflist}}
+
+=== Works cited ===
+{{refbegin}}
+* {{cite journal|last1=Caron |first1=Jean-Bernard|last2=Jackson |first2=Donald A.|title=Taphonomy of the Greater Phyllopod Bed community, Burgess Shale|journal=PALAIOS |volume=21 |issue=5 |pages=451–65|date=October 2006|doi=10.2110/palo.2003.P05-070R|jstor=20173022|bibcode=2006Palai..21..451C |s2cid=53646959 }}
+* {{cite journal|last1=Durham |first1=J. |year=1978 |title=A Lower Cambrian Eocrinoid |journal=Journal of Paleontology |volume=52 |issue=1 |pages=195–199 |jstor=1303808 }}
+* {{cite journal|last1=Harker |first1=P. |last2= Hutchinson |first2=R. |year=1953 |title=A New Occurrence and Redescription of ''Gogia prolifica'' Walcott |journal=Journal of Paleontology |volume=27 |issue=2 |pages=285–287 |jstor= 1300058}}
+* {{cite journal|last1=Robison |first1=R. A. |year=1965 |title=Middle Cambrian Eocrinoids from Western North America |journal=Journal of Paleontology |volume=39 |issue=3 |pages=355–364 |jstor=1301709}}
+* {{cite journal|last1=Schlottke |first1=Mark T. |year=2007 |title=Paleoecology of the Middle Cambrian Eocrinoid Echinoderm ''Gogia Spiralis'': Possible Changes in Substrate Adaptations Through Ontogeny |journal=Geological Society of America Abstracts with Programs |volume=39 |number=6 |page=33 |access-date=2017-07-05 |archive-date=2017-08-15 |archive-url=https://web.archive.org/web/20170815062212/https://gsa.confex.com/gsa/2007AM/finalprogram/abstract_130823.htm |url=https://gsa.confex.com/gsa/2007AM/finalprogram/abstract_130823.htm |url-status=dead }}
+{{refend}}
 
 ==External links==
 *{{Cite web|date=2025|title=''Gogia stephenensis''|work=Burgess Shale Fossil Gallery|publisher=Virtual Museum of Canada|url=https://burgess-shale.rom.on.ca/fossils/gogia-stephenensis/|access-date=2025-03-24}}
