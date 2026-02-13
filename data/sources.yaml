@@ -668,13 +668,17 @@
   identifiers:
     url: https://www.biodiversitylibrary.org/page/55361977
 1844_buch:
-  title: Über Cystideen eingeleitet durch die Entwicklung der Eigenthümlichkeiten von Caryocrinus ornatus
-  reading: akademie
-  notes: Some sources incorrectly give May 3rd instead of March 3rd due to an early typo.
+  title: Hr. v. Buch las über Cystideen, eingeleitet durch die Entwickelung der Eigenthümlichkeiten des Caryocrinus ornatus
+  journal: bericht-berlin
+  pages:
+  - 120
+  - 133
   pubDate:
     year: 1844
-    month: 3
-    day: 3
+  processDates:
+    read: 1844-03-03
+  notes: |
+    Some sources incorrectly give May 3rd instead of March 3rd due to an early typo.
   authors:
   - buch
 1846a_buch:
@@ -685,6 +689,9 @@
   pages:
   - 89
   - 116
+  plates:
+  - 1
+  - 2
   authors:
   - buch
 1846b_buch:
