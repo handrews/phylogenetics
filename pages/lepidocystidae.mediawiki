@@ -12,7 +12,16 @@
 * ''Vyscystis'' {{small|Fatka & Kordule 1990}}
 }}
 
-The '''Lepidocystidae''' (sometimes misspelled '''Lepidocyst''o''idae''', not to be confused with the class Lepidocystoid''ea'' that was proposed at the same time but later abandoned) are an extinct family that constitue the most [[basal (phylogenetics)|basal]] known group within the [[paraphyletic]] class "[[Eocrinoidea]]", and therefore within the subphylum [[Blastozoa]] as a whole.  Its members are also informally known as "imbricates" or "imbricate Eocrinoids"<ref>{{harvnb|Mooie|Lefebvre|Guensburg|Nohejovlá|Dupichaud|2024}}</ref> after the order Imbricata 
+The '''Lepidocystidae''' (sometimes misspelled '''Lepidocyst''o''idae''', not to be confused with the class Lepidocystoid''ea'' that was proposed at the same time but later abandoned) are an extinct family that constitue the most [[basal (phylogenetics)|basal]] known group within the [[paraphyletic]] class "[[Eocrinoidea]]", and therefore within the subphylum [[Blastozoa]] as a whole.  Its members, along with the transitional [[Felbabkacystidae]], are also informally known as "imbricates" or "imbricate Eocrinoids"<ref>{{harvnb|Mooie|Lefebvre|Guensburg|Nohejovlá|Dupichaud|2024}}</ref> after the likewise paraphyletic order Imbricata.<ref>{{harvnb|Mooi|Lefebvre|Guensburg|Nohejlová|Dupichaud|2024|page=480}}</ref>
+
+== Description ==
+
+Lepidocystids are unusual among blastozoans in that, aside from the relatively flat upward-facing oral surface, the entire body wall is covered with imbricate plates, including a wide stalk that is not well-differentiated from the main body.  The oral surface, which contains, has tessalate plating with epispires for respiration.  The oral surface contains the mouth and other openings, as well as the ambulacral grooves which support brachioles, the feeding structures that define the blastozoan clade.
+
+In more derived blastozoans, the main body, or theca, is composed of tessalate plates, with the imbricate area reduced to a well-differentiated stalk.  The transition from the primative lepidocystid condition to the more derived condition is illustrated by the [[Felbabkacystidae]].
+
+
+Like most blastozoans, lepidocystids are [[filter feeders]] that attach to a substrate and have feeding appendages known as [[brachioles]].  The oral surface is flat, and consists of [[tessalate]] plates, while the body is made of imbricate (overlapping) plates, with a relatively thick stalk that is not well-differentiated from the main body.
 
 ==Classification==
 
@@ -20,7 +29,7 @@ The '''Lepidocystidae''' (sometimes misspelled '''Lepidocyst''o''idae''', not to
 
 ''Lepidocystis wanneri'' from the [[Kinzers Formation]] ([[Cambrian Stage 4]]) was described by [[August Foerste]] in a posthumous publication in 1938 and assigned to the class Eocrinoidea.  In the 1967 [[Treatise on Invertebrate Paleontology]], Durham noted differences between ''Lepidocystis'' and other Eocrinoidea, as well as a few similarities to the Edrioasteroidea, and deemed it sufficiently distinctive to erect the family Lepidocystidae and the class Lepidocystoidea.<ref>{{harvnb|Durham|1967}}</ref>
 
-While erecting the subphylum Blastozoa in 1973, James Sprinkle examined additional, more complete specimens of both ''Lepidocystis'' and a newly described genus and species, ''Kinzercystis durhami'', all also from the Kinzers Formation.  These specimens demonstrated more affiliation with other eocrinoids than had been apparent in the specimens available to Durham, so Sprinkle rejected Lepidocystoidea and replaced it with the eocystoid order Imbricata, returning the expanded Lepidocystidae to the Eocrinoidea.
+While erecting the subphylum Blastozoa in 1973, James Sprinkle examined additional, more complete specimens of both ''Lepidocystis'' and a newly described genus and species, ''Kinzercystis durhami'', all also from the Kinzers Formation.  These specimens demonstrated more affiliation with other eocrinoids than had been apparent in the specimens available to Durham, leading Sprinkle to reject Lepidocystoidea and replace it with the basal eocrinoid order Imbricata.
 
 In 1990, Fatka and Kordule described the new genus and species ''Vyscystis ubaghsi'' to the Lepidocydtidae, without changing Sprinkle's class- and order-level assignments.  [TODO: Nardin ''et al.'' dispense with Eocrinoidea and Imbricata].  However, when reviewing the phylogentic sygnificance of ''Vyscystis'' in 2019, Nohejlová ''et al.'' [TODO: they just accepted Nardin ''et al.'']
 
