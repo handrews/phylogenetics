@@ -1,0 +1,36 @@
+{{Short description|Extinct family of marine invertebrates}}
+{{Automatic Taxobox
+| fossil_range = {{fossil range|late Early Cambrian|Middle Cambrian}}
+| image = Gogia_ojenai.jpg
+| image_caption = ''[[Gogia]] ojenai''
+| taxon = Eocrinidae
+| authority = Jaekel 1918
+| type_genus =  †''Eocrinus'' {{small|Jaekel 1918}}<ref>{{cite book|last1=Ubaghs |first1=Georges |date=1967 |chapter=Eocrinoidea |editor-last1=Moore |editor-first1=Raymond C. |title=Treatise on Invertebrate Paleontology, Part S: Echinodermata 1 |volume=1 |pages=S455–S495 |publisher=University of Kansas Press |url=https://journals.ku.edu/InvertebratePaleo/issue/view/519 |access-date=29 October 2024}}
+</ref><br />(=  †''[[Gogia]]'' {{small|Walcott 1917}})
+| subdivision_ranks = Genera
+| subdivision_ref = <ref>{{cite web|website=Paleobiology Database |url=https://paleobiodb.org/classic/basicTaxonInfo?taxon_no=120077 |title=†family Eocrinidae Jaekel 1918 |accessdate=27 November 2024}}</ref><ref>{{cite journal|last1=Parsley |first1=Ronald |last2=Zhao |first2=Yuanlong |year=2006 |title=Long stalked eocrinoids in the basal Middle Cambrian Kaili Biota, Taijiang County, Guizhou Province, China |journal=Journal of Paleontology |volume=80 |number=6 |pages=1058–1071 |doi=10.1666/0022-3360(2006)80[1058:LSEITB]2.0.CO;2}}</ref>
+| subdivision =
+* †''[[Gogia]]'' {{small|Walcott 1917}}
+* †''Acanthocystites'' {{small|Barrande 1887}}
+* †''Akadocrinus'' {{small|Prokop 1962}}
+* †''Alanisicystis'' {{small|Ubaghs & Vizcaino 1990}}
+* †''Archaeocystites'' {{small|Barrande 1887}}
+* †''Globoeocrinus'' {{small|Zhao, Parsley & Jin 2008}}
+* †''Guizhoueocrinus'' {{small|Zhao, Parsley & Jin 2007}}
+* †''Sinoeocrinus'' {{small|Zhao, Huang & Gong, 1994}}
+}}
+
+The '''Eocrinidae''' are a family of early echinoderms that contain the genus ''[[Gogia]]''.<ref>{{Cite journal| doi = 10.1016/j.geobios.2008.10.003| title = First report of Gogia (Eocrinoidea, Echinodermata) from the Early-Middle Cambrian of Sonora (Mexico), with biostratigraphical and palaeoecological comments☆| year = 2009| last1 = Nardin | first1 = E.| last2 = Almazán-Vásquez | first2 = E.| last3 = Buitrón-Sánchez | first3 = B. E.| journal = Geobios| volume = 42| issue = 2| pages = 233}}</ref>
+
+==References==
+{{Reflist}}
+
+{{Taxonbar|from=Q5381640}}
+
+[[Category:Goggida]]
+[[Category:Blastozoa]]
+[[Category:Prehistoric echinoderm families]]
+[[Category:Cambrian first appearances]]
+[[Category:Cambrian extinctions]]
+{{paleo-echinoderm-stub}}
+
