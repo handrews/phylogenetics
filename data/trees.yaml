@@ -7839,7 +7839,7 @@
             children:
             - taxon: ascocystites
               children:
-              - taxon: drawbowensis_barrande_1887
+              - taxon: drabowensis_barrande_1887
                 type: true
           - taxon: macrocystellidae
             moved:
