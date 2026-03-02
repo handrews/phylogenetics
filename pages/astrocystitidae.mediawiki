@@ -1,0 +1,224 @@
+{{Short description|Extinct genus of marine invertebrates}}
+{{Italic title}}
+{{Automatic taxobox
+| fossil_range = {{fossil range|Late Cambrian|Late Ordovician}}
+| taxon = Astrocystitidae
+| authority = Bassler 1935
+| type_genus = ''Astrocystites'' {{small|Whiteeaves 1897}}
+| type_species = ''A. ottawaensis'' {{small|Whiteaves 1897}}
+| synonyms = * Steganoblastidae {{small|Bather 1900}}
+| subdivision_ranks = Genera
+| subdivision_ref = <ref>{{cite web|title=†family Astrocystitidae Bassler 1935 |website=The Paleobiology Database |url=https://paleobiodb.org/classic/basicTaxonInfo?taxon_no=txn:345560 |access-date=27 February 2026}}</ref><ref>{{harvnb|Jell|Sprinkle|2021}}</ref>
+| subdivision = * {{extinct}}''Astrocystites'' {{small|Whiteaves 1897}}
+** {{extinct}}''A. ottawaensis'' {{small|Whiteaves 1897}}
+** {{extinct}}''A. distans'' {{small|Webby 1968}}
+* {{extinct}}''Cambroblastus'' {{small|Smith & Jell 1990}}
+** {{extinct}}''C. enubilatus'' {{small|Smith & Jell 1990}}
+** {{extinct}}''C. guolensis'' {{small|Zhu, Zamora  & Lefebvre 2014}}
+* {{extinct}}''Lampteroblastus'' {{small|Guensburg & Sprinkle 1994}}
+** {{extinct}}''L. hintzei'' {{small|Guensburg & Sprinkle 1994}}
+* {{extinct}}''Porosublastus'' {{small|Sprinkle & Sumrall 2015}}
+** {{extinct}}''P. inexpectus'' {{small|Sprinkle & Sumrall 2015}}
+* {{extinct}}''Ikerus''? {{small|Jell & Sprinkle 2021}}<ref>{{harvnb|Jell|Sprinkle|2021|p=27}}</ref>
+** {{extinct}}''I. edgari'' {{small|Jell & Sprinkle 2021}}<ref>{{harvnb|Jell|Sprinkle|2021|p=34}}</ref>
+}}
+
+The '''Astrocystitidae''' are a small, extinct family of [[edrioblastoid]] [[edrioasteroids]] that are generally rare in the fossil record.  They are characterized by possession of a stalk and theca shape convergent with the [[Blastoidea]].
+
+==Classification==
+
+===History===
+
+''Astrocystites ottawaensis'' was initially classified as a [[cystoid]], a group that at that time included all stalked echinoderms that were neither [[crinoids]] nor [[blastoids]].  It was subsequently placed by different authors with either the blastoids or (somewhat more frequently) the edrioasteroids, although a resemblence to the [[parablastoids]] was also noted.<ref>{{harvnb|Fay|1967|pp=S292</ref> Despite the trend towards considering ''Astrocystites'' to be an edrioasteroid, the class Edrioblastoidea was erected by Robert O. Fay to contain the family in 1962.<ref>{{harvnb|Fay|1967|pp=S290}}</ref>
+
+===Equivalence with edrioblastoids ''sensu stricto''===
+
+Traditionally, the Astrocystitidae have been the only edrioblastoid family, including after the class's demotion to the edrioasteroid order Edrioblastoida in 1990 by Smith and Jell.<ref>{{harvnb|Smith|Jell|1990|p=742}}</ref>
+
+More recently, edrioblastoids were further demoted by Guensburg and Sprinkle to the suborder Edrioblastoidina within the order Edrioasterida, and expanded to include the cyathocystids and rhenopyrgids as either one<ref>{{harvnb|Guensburg|Sprinkle|1994|pp=20–21}}</ref> or two<ref>{{harvnb|Sumrall|Herida|Rodríguez|Mestre|2013|p=773}}</ref> additional families.  A possible relationship among these groups had been noted at the time the order Edrioblastoida was established.<ref>{{harvnb|Smith|Jell|1990|pp=744–745, 750}}</ref>
+
+Even among authors that use the expanded suborder, the term "edrioblastoid" is often used informally to refer only to astrocystitids, as opposed to cyathocystids and/or rhenopyrgids.<ref>{{harvnb|Sprinkle|Sumrall|p=346}}</ref><ref>{{harvnb|Sumrall|Herida|Rodríguez|Mestre|2013|p=766}}</ref>
+
+===External Taxonomy===
+
+===Internal Phylogeny===
+
+No comprehensive cladistic analysis of the Astrocystitidae has yet been published.  However, certain relationships have been noted:
+
+* 
+
+==Classification==
+
+Authors that treat edrioblastoids as the order Edrioblastoida include the Astrocystitidae as the only family of that order,<ref>{{harvnb|Smith|Jell|1990}}</ref> or omit the family level classification as superfluous.<ref>{{harvnb|Zhu|Zamora|Lefebvre|2014}}</ref><ref>{{harvnb|Jell|Sprinke|2021}}</ref>  Authors that treat edrioblastoids as the suborder Edrioblastoidina within the order Edrioasterida include the cyathocystids and rhenopyrgids as either one or two additional families in the suborder.<ref>{{harvnb|Guensburg|Sprinkle|1994}}</ref><ref>{{harvnb|Sprinkle|Sumrall|2015}}</ref>
+
+
+They have traditionally been the only family in the group, and some who treat edrioblastoids as the order Edrioblastoida omit Aristocystitidae as synonymous with the order.<ref>{{harvnb|Jell|Sprinkle|2021}}</ref>  Those who instead treat edrioblastoids as the suborder Edrioblastoidina within the order Edrioasterida aslo include the cyathocystids and rhenopyrgids in the suborder.<ref>{{harvnb|Guensburg|Sprinkle|1994}}</ref>
+
+==External Classification==
+
+The [[Treatise on Invertebrate Paleontology]] gave the following classification in 1967, with ''Astrocystites ottawaensis'' as the only edrioblastoid species:
+
+* Subphylum Crinozoa (Matsumoto 1929)
+** Class Edrioblastoidea (Fay 1962)
+*** Order Pentacystida (Jaekel 1918)
+**** Astrocystitidae (Bassler 1938) (=Steganoblastidae (Bather 1900))
+***** ''Astrocystites'' (Whiteaves 1897) (=''Steganoblastus'' (Whiteaves 1898)
+****** ''A. ottawaensis'' (Whiteaves 1897)
+
+In 1990, Smith and Jell returned the edrioblastoids to the Edrioasteroidea as an order, without addressing the subphylum level.  Astrocystitidae remained the only family, although now with two genera and three species:
+
+* Class Edrioasteroidea (Billigns 1858)
+** Order Edrioblastoida (Fay 1962)
+*** Family Astrocystitidae (Bassler 1938)
+**** ''Astrocystites'' (Whiteaves 1897)
+***** ''A. ottawaensis'' (Whiteaves 1897)
+***** ''A. distans'' (Webby 1968)
+**** ''Cambroblastus'' (Smith and Jell 1990)
+***** ''C. enubilatus'' (Smith and Jell 1990)
+
+In 1994, Guensburg and Sprinkle both further demoted edrioblastoids to a suborder and expanded it to include two other groups.  Subsequent work by Zamora ''et al.'' 
+====Guensburg and Sprinkle 1994====
+* Class Edrioasteroidea (Billings 1858)
+
+
+====Zhu, Zamora and Lefebvre 2014====
+* Phylum Echinodermata (Bruguiere 1791)
+** Class Edrioasteroidea (Billings 1858)
+*** Order Edrioblastoida (Fay 1962)
+**** ''Cambroblastus'' (Smith and Jell 1990)
+***** ''C. enubilatus'' (Smith and Jell 1990)
+***** ''C. guolensis'' (Zhu, Zamora and Lefebvre 2014)
+
+====Sprinkle and Sumrall 2015====
+* Class Edrioasteroidea (Billings 1858)
+** Order Edrioasterida (Bell 1976)
+*** Suborder Edrioasterina (Bather 1898)
+**** Family Edrioasteridae (Bather 1899)
+***** ''Pseudedriophus'' (Sprinkle and Sumrall 2015)
+****** ''P. guensburgi'' (Sprinkle and Sumrall 2015)
+*** Suborder Edrioblastoidina (Fay 1962)
+**** Family Astrocystitidae (Bassler 1935)
+***** ''Porosublastus'' (Sprinkle and Sumrall 2015)
+****** ''P. inexpectus'' (Sprinkle and Sumrall 2015)
+
+====Jell and Sprinkle 2021====
+* Subphylum Echinozoa (Leuckart 1848)
+** Class Edrioasteroidea
+*** Order Edrioblastoida
+**** ''Astrocystites''
+***** ''A. ottawaensis''
+***** ''A. distans''
+**** ''Cambroblastus''
+***** ''C. enubilatus''
+***** ''C. guolensis''
+**** ''Lampteroblastus''
+***** ''L. hintzei''
+**** ''Porosublastus''
+***** ''P. inexpectus''
+**** ''Ikerus''
+***** ''I. edgari''
+
+* Class Edrioasteroidea
+** Order Stromatocystitida
+** Order Edrioasterida
+*** Suborder Edrioasterina
+*** Suborder Edrioblastoidina
+**** Family Astrocystitidae
+***** ''Astrocystites''
+****** ''A. ottawaensis''
+****** ''A. distans''
+***** ''Cambroblastus''
+****** ''C. enubilatus''
+****** ''C. guolensis''
+***** ''Lampteroblastus''
+****** ''L. hintzei''
+***** ''Porosublastus''
+****** ''P. inexpectus''
+***** ''Ikerus''
+****** ''I. edgari''
+**** Family Cyathocystidae
+***** ''Cyathocystis''
+****** ''C. plautinae''
+****** ''C. rhizophora''
+****** ''C. oklahomae''
+****** ''C. americana''
+***** ''Cyathotheca''
+****** ''C. suecica''
+****** ''C. corallum''
+**** Family Rhenopyrgidae
+***** ''Rhenopyrgus''
+****** ''R. coronaeformis''
+****** ''R. flos''
+****** ''R. piojensis''
+****** ''R. whitei''
+***** [[''unnamed genus'']
+****** ''R. grayae''
+***** ''Heropyrgus''
+****** ''H. disterminus''
+** Order Isorophida
+*** Suborder Isorophina
+**** Family Isorophidae
+**** Family Agelacrinitidae
+*** Suborder Lebetodiscina
+**** Family Lebetodiscidae
+**** Family Carneyellidae
+**** Family Pyrgocystidae
+
+
+For much of its history, the Astrocystitidae were the only family of edrioblastoids, which were treated either as a class (Edrioblastoidea) or as an edrioasteroid order (Edrioblastoida).  While the family was regularly included for decades, some recent papers have omitted it as redundant, leading to ``Poroblastus`` and ``Ikerus`` being assigned directly to Edrioblastoida.
+
+However, other researchers treat edrioblastoids as the suborder Edrioblastoidina within the order Edrioasterida, and include the cyathocystids and rhenopyrgids as either one or two additional families.  ``Poroblastus`` and ``Ikerus`` are included in the Astrocystitidae as their placement directly under Edrioblastoida is due to Astrocystitidae effectively being a synonym in that classification.
+
+was synonymous with the edrioblastoids, which were treated either as a class (Edriobloastoidea) or edrioasteroid order (Edrioblastoida) containing only the one 
+Historically, the Astrocystitidae were the only family within the class Edrioblastoidea, and contained only the genus ``Astrocystites``.  In 1990, Smith and Jell demoted Edrioblastoidea to the order Edrioblastoida within the Edrioasteroidea, adding the newly described genus ``Cambroblastus`` to the Astrocystitidae but retaining that family as the order's only contents.  In 1994, Guensburg and Sprinkle further demoted the order to the suborder Edrioblastoidina, retaining Astrocystitidae (to which the newly described ''Lampteroblastus'' was added) but also including the cyathocystids and rhenopyrgids as a distinct family.
+
+Later publications treating edrioblastoids as an order continue to place only the Astrocystitidae within it, but in some cases the family is omitted as redundant.  The genera ``Poroblastus`` and ``Ikerus`` were assigned directly to the order Edrioblastoida in this manner, but are included here to ensure the correct definition of Astrocystitidae as it is used within the suborder Edrioblastoidina.
+
+
+
+Determining the contents of the Astrocystitidae is slightly complicated due to its omission from some recent descriptions that treat the order Edrioblastoida as essentially synonymoous.  However, researchers that treat the edrioblastoids as the suborder Edrioblastoidina retain the family, as the suborder also contains the cyathocystids and rhenopyrgids.
+
+
+
+
+Due to ongoing debate regarding the rank and composition of the edrioblastoids, this page includes all genera that have either been formally assigned to the Astrocystitidae (since 1994 under the suborder Edrioblastoidina), or to the order Edrioblastoida.  While the order included Astrocystitidae as its only 
+
+Between its definition in 1897 and the discovery of ``Astrocystites distans`` (Webby) in 1968, the Astrocystitidae consisted only of ``Astrocystites ottawaensis``.  It's placement was the subject of much debate, and it was eventually placed in its own class, Edrioblastoidea, by Fay in 1962.  This was accepted by the [[Treatise on Invertebrate Paleontology]] in 1967, but was already being called into quetion by Webby in 1968, in favor of placement within the Edrioasteroidea.
+
+The latter position eventually won out, and in 1990 Smith and Jell demoted the class Edrioblastoidea to the order Edrioblastoida, still consisting only of the Astrocystitidae, to which the genus ``Cambroblastus`` was also added.  In 1994, Guensburg and Sprinkle further demoted the group to the suborder Edrioblastoidina, which contained the cyathocystids and rhenopyrgids in addition to Astrocystitidae.  Both arrangments have been cited in more recent papers.
+
+Researchers who treat the edrioblastoids as an order sometimes omit Astrocystitidae as it is 
+
+
+The classificatoin of edrioblastoids, which traditionally consisted only of ''Astrocystites'', continues to be a point of scientific debate.  For some time, they were considered their own class, Edrioblastoidea, but are now broadly accepted to be within the Edrioasteroidea.
+
+One camp has proposed the order Edrioblastoida, consisting like the former class of only the Astrocystitidae, to which they added the newly-described species ''Cambroblastus''.  In subsequent publications, the family Ast
+
+It was the only edrioblastoid family until the expansion of the clade to incorporate cyathocystids and rhenopyrgids in 1994.  Fossils of this group are rare, with most species represented by a single articulated specimen.
+
+* ''A. ottawaensis''
+** 1967: 2 specimens from Coburg Limestone (Trentonian), Ottawa; one lost
+* ''A. distans''
+** 1968: 7 or so specimens, lower Cleifden Caves Limestone, Boonderoo
+* ''C. enubilatus''
+** 1990: 2 
+
+
+==References==
+{{reflist}}
+
+===Works cited===
+
+{{refbegin}}
+* {{cite journal|last1=Guensburg |first1=Thomas E. |last2=Sprinkle |first2=James |date=December 1994 |title=Revised Phylogeny and Functional Interpretation of the Edrioasteroidea Based on New Taxa from the Early and Middle Ordovician of Western Utah|journal=Fieldiana: Geology, New Series |number=29 |pages=1–43}}
+* {{cite journal|last1=Jell |first1=Peter A. |last2=Sprinkle |first2=James |year=2021 |title=Revision of Whitehouse’s eocrinoids Peridionites and Cymbionites, with description of the associated fauna including two new echinoderm genera, lower Middle Cambrian Thorntonia Limestone, northwestern Queensland |journal=Alcheringa: An Australasian Journal of Palaeontology |volume=45 |number=1 |pages=1–55 |doi=10.1080/03115518.2021.1913512}} {{small|(The statement that "no subdivision between ordinal and generic levels have yet been proposed" for Edrioblastoida is flatly contradicted by the previous work of both authors.  Jell included Astrocystitidae as the sole family when defining Edrioblastoida as an order ({{harvnb|Smith|Jell|1990}}), and Sprinkle included it when defining Edrioblastoidina as a suborder that also contained the cyathocystids and rhenopyrgids ({{harvnb|Guensburg|Sprinkle|1994}}), as well as in {{harvnb|Sprinkle|Sumrall|2015}} which this paper cites for the inclusion of ''Porosublastus'' in Edrioblastoida.  For this reason, ''Ikerus'' is included in the Astrocystitidae as all other taxa listed for Edrioblastoida in this paper have been assigned there, and the only way to align this with the ''Porosublastus'' and earlier papers is to include ''Ikerus'' as well.)}}
+* {{cite journal|last1=Smith |first1=Andrew B. |last2=Jell |first2=Peter A. |date=31 August 1990 |title=Cambrian edrioasteroids from Australia and the origin of starfishes |journal=Memoirs of the Queensland Museum |volume=28 |number=2 }}
+* {{cite journal|last1=Sprinkle |first1=James |last2=Sumrall |first2=Colin D. |year=2015 |title=New edrioasterine and astrocystitid (Echinodermata: Edrioasteroidea) from the Ninemile Shale (Lower Ordovician), central Nevadada |journal=Journal of Paleontology |volume=89 |number=2 |pages=346–352 |doi=10.1017/jpa.2014.29}}
+* {{cite journal|last1=Sumrall |first1=Colin D. |last2=Herida |first2=Susana |last3=Rodríguez |first3=Cecilia M. |last4=Mestre |first4=Ana I. |year=2013 |title=The first report of South American edrioasteroids and the paleoecology and ontogeny of rhenopyrgid echinoderms |journal=Acta Palaeontologica Polonica |volume=58 |number=4 |pages=763–776 |doi=10.4202/app.2011.0108}}
+* {{cite journal|last1=Zhu |first1=Xue-Jian |last2=Zamora |first2=Samuel |last3=Lefebvre |first3=Bertrand |year=2014 |title=Morphology and palaeoecology of a new edrioblastoid from the Furongian of China |journal=Acta Palaeontologica Polonica |volume=59 |number=4 |pages=921–926 |doi=10.4202/app.2012.0116}}
+{{refend}}
+
+
+
+{{small|(This paper by Jell and Sprinkle treats edrioblastoids as the order Edrioblastoida, ''sensu'' Smith and Jell 1990, yet claims that "no subdivisions between ordinal and generic levels have yet been proposed."  This is objectively incorrect as page 741 establishes the order with Astrocystitidae as its only family, as it was for the prior class Edrioblastoidea.  Sprinkle also recognized Astrocystitidae when further demoting the order to the suborder Astroblastoidina (Guensburg and Sprinkle 1994, pages 20–21) and further adding to the family (Sprinkle and Sumrall 2015, page 351).  As the paper says it was never proposed rather than removing it from use, this appears to be an error meant more to reject the suborder arrangement (which included additional families), as the contents of Edrioblastoida given here by Jell and Sprinkle exactly match those of Astrocystitidae in Zhu, Zamora, and Lefebvre 2014
+(Note that this paper treats edrioblakstoids as the order Edrioblastoida containing only the genera contained in the Astrocystitidae, but claims that "no subdivisions between ordinal and generic levels have yet been proposed," despite Jell having included Astrocystitidae when establishing Edrioblastoida as an order with Smith in 1990 (p. 741), and Sprinkle having included it in when demoting edrioblastoids to the suborder Edroblastoidina with Guensburg in 1994, (pp. 20–21) and again with Sumrall in 2015. (p. 351) As there is no way to square the 2021 statements with consistent use of the family, including by both of these authors, from the late 1800s through 2015, with the statement that no such family has ever been proposed, this page retains the far more common usage and includes ''Ikerus'' in the family based on the list of genera in the paper being identical to the Astrocystitidae as described in all other papers cited.}}

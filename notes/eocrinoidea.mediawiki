@@ -1,0 +1,126 @@
+* Cl Eocrinoidea
+** Or Imbricata
+*** Fm Lepidocystidae
+**** gn ''Lepidocystis''
+***** sp ''L. wanneri''
+**** gn ''Kinzercystis''
+***** sp  ''K. durhami''
+**** gn ''Vyscystis''
+***** sp ''V. ubaghsi''
+***** sp ''V.? spinosa''
+***  F Felbabkacystitdae
+**** gn ''Felbabkacystis''
+***** sp ''F. luckae''
+** Or Gogiida
+*** Fm Lyracystidae
+**** gn ''Lyracystis''
+***** sp ''L. radiata'' (=''Gogia? radiata'' (''pars''))
+***** sp ''L. reesei''
+**** gn ''Balangicystis''
+***** sp ''B. rotundus''
+*** Fm Eocrinidae
+**** gn ''Gogia'' (=''Eocrinus'')
+***** sp ''G. prolifica''
+***** sp ''G. gondi''
+***** sp ''G. granulosa'' (=''Eocrinus longidactylus'' (''pars''))
+***** sp ''G. guntheri''
+***** sp ''G. hobbsi''
+***** sp ''G. kitchnerensis'' (=''G. prolifica'' (''pars''); ''Eocrinus''? n. sp.)
+***** sp ''G. longidactylus'' (=''Eocystites?? longidactylus''; ''Eocrinus longidactylus'')
+***** sp ''G. multibrachiatus'' (=''Eocrinus multibrachiatus'')
+***** sp ''G. ojenai''
+***** sp ''G. palmeri''
+***** sp ''G. parsleyi''
+***** sp ''G. spiralis''
+***** sp ''G. stephenensis'' (=''G.? radiata'' (''pars''))
+**** gn ''Acanthocystites''
+***** sp ''A. briareus''
+**** gn ''Alanisicystis''
+***** sp ''A. andalusiae'' (=''Gogia (Alanisicystis) andalusiae'')
+**** gn ''Akadocrinus''
+***** sp ''A. jani'' (=''A. nuntius'')
+***** sp ''A. knizeki''
+**** gn ''Globoeocrinus''
+***** sp ''G. globulus''
+**** gn ''Guizhoueocrinus''
+***** sp ''G. yui''
+**** gn ''Kunmingeocrinus''
+***** sp ''K. cupuliformis''
+**** gn ''Sinoeocrinus'' (=''Curteocrinus''; ''Paragogia'')
+***** sp ''S. lui'' (=''S. curtobrachiolis''; ''S. lepidus''; ''S. longus'' ''S. minus''; ''P. globosa''; ''C. guizhouensis'')
+*** Fm Turbanicystidae
+**** gn ''Turbanicystis''
+***** sp ''T. inflatus''
+*** Fm Thorntonitidae
+**** gn ''Thorntonites''
+***** sp ''T. dowlingi''
+*** Fm Lichenoididae
+**** gn ''Lichenoides''
+***** sp ''L. priscus''
+***** sp ''L. vadosus''
+**** gn ''Cymbionites''
+***** sp ''C. craticula''
+**** gn ''Peridionites''
+***** sp ''P. navicula''
+*** ''incertae sedis''
+**** gn ''Wudingeocrinus''
+***** sp ''W. rarus''
+** Or Ascocystitida
+*** Fm Ascocystitidae
+**** gn ''Ascocystites''
+***** sp ''A. drabowensis'' (=''A. micraster''; ''A. barrandei'')
+***** sp ''A. cuneiformis''
+*** Fm Cambrocrinidae
+**** gn ''Cambrocrinus''
+***** sp ''C. regularis''
+**** gn ''Eocystites''
+***** sp ''E. primaevus''
+*** fm Rhopalocystidae
+**** gn ''Rhopalocystis''
+***** sp ''R. destombesi''
+***** sp ''R. fraga''
+***** sp ''R. grandis''
+***** sp ''R. havlichecki''
+***** sp ''R. zagoraensis''
+*** ''incertae sedis''
+**** gn ''Eustypocystis''
+***** sp ''E. minor''
+**** gn ''Nolichuckia''
+***** sp ''N. casteri''
+**** gn ''Pareocrinus''
+***** sp ''P. ljubzovi''
+** Or Trachelocrinida
+*** Fm Trachelocrinidae
+**** gn ''Trachelocrinus''
+***** sp ''T. resseri''
+**** gn ''Tatonkacystis''
+***** sp ''T. codyensis''
+*** Fm Heckerocrinidae (=Bockiidae)
+**** gn ''Heckerocrinus'' (=''Bockia'')
+***** sp ''H. neglectus'' (=''B. neglecta'')
+***** sp ''H. cucumis''
+***** sp ''H. elpasoensis''
+***** sp ''H. grava''
+***** sp ''H. heintzi''
+***** sp ''H. laevis''
+***** sp ''H. mirabilis''
+***** sp ''H. sculptus''
+** Or Digitata [lateral (BC-DE) flattening]
+*** Fm Rhipidocystidae
+**** gn ''Rhipidocystis''
+***** sp 
+** ''incertae sedis'' [anterior-posterior (A-CD) flattening]
+*** gn ''Durhamicystis''
+**** sp ''D. americana''
+*** gn ''Neorhipidocystis''
+*** gn ''Petalocystites''
+** ''incertae sedis'' [appendages]
+*** gn ''Llanocystis''
+**** sp ''L. wilbernsensis''
+*** gn ''Ubaghsicystis''
+**** sp ''U. segurae''
+** ''incertae sedis''
+*** gn ''Luhocrinus''
+**** sp ''L. monicae''
+*** gn ''Marjumicystis''
+**** sp ''M. mettae''

@@ -1,0 +1,38 @@
+{{Short description|Extinct order of marine invertebrates}}
+{{Automatic taxobox
+| fossil_range = {{fossil range|Upper Cambrian|Upper Ordovician }}
+| taxon = Ascocystitida
+| extinct = yes
+| authority = Broadhead 1982
+| type_genus = †''Ascocystites''
+| includes_refs =
+| includes_ranks = Families and genera
+| includes =
+* †Ascocystitidae
+** †''Ascocystites''
+* †Cambrocrinidae
+** †''Cambrocrinus''
+* †Rhopalocystidae
+** †''Rhopalocystis''
+* †Ridersiidae
+** †''Ridersia''
+* ''[[incertae sedis]]''
+** ? †''[[Eocystis]]''
+** †''Eustypocystis''
+** †''Nolichuckia''
+| excludes_refs =
+| excludes =
+* [[Glyptocystitida]]
+}}
+
+SMITH 1988
+
+''Cambrocrinus'' ->? ''Ridersia'' -> ''Macrocystella'' -> ''Cheirocrinus''
+[note, later work inserts ''Sanducystis'' after ''Ridersia'', and I think
+''Velieuxicystis'' and ''Barroubiocystis'' before ''Macrocystella''?]
+
+PARSLEY 2021 GOGIID-ASCOCYSTITID LINE
+
+''Rhopalocystis'' appears to be transitional from long-stalked Gogiida to
+Ascocystitida, although it is younger than the more derived ''Cambrocrinus''.
+
