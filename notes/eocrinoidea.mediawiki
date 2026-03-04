@@ -114,13 +114,29 @@
 **** sp ''D. americana''
 *** gn ''Neorhipidocystis''
 *** gn ''Petalocystites''
+*** gn ''Haimacystis'' {{harvnb|Sumrall|Sprinkle|Guensburg|2001}}
+**** sp ''H. rozhnovi'' {{harvnb|Sumrall|Sprinkle|Guensburg|2001}}
 ** ''incertae sedis'' [appendages]
-*** gn ''Llanocystis''
-**** sp ''L. wilbernsensis''
+*** gn ''Llanocystis'' {{harvnb|Zamora|Sumrall|Sprinkle|2015}}
+**** sp ''L. wilbernsensis'' {{harvnb|Zamora|Sumrall|Sprinkle|2015}}
 *** gn ''Ubaghsicystis''
 **** sp ''U. segurae''
-** ''incertae sedis''
+** ''incertae sedis'' [???]
 *** gn ''Luhocrinus''
 **** sp ''L. monicae''
 *** gn ''Marjumicystis''
 **** sp ''M. mettae''
+
+*** gn ''Cardiocystites'' (plane of flattening unclear)
+**** sp ''C. bohemicus'' {{harvnb|Barrande }}
+**** sp ''C. pleuricostatus'' {{harvnb|Dean|Smith }}
+*** gn ''Lingulocystis''
+**** sp ''L. elongata'' {{harvnb|Ubaghs|1960}}
+**** sp ''L. boliviensis'' {{harvnb|Sprinkle|1973}}
+** Fm Rhipidocystidae 
+*** gn ''Rhipidocystis'' Jaekel
+*** gn ''Batherocystis'' Bassler
+*** gn ''Mandalocystis'' Lewis et al.
+*** gn ''Patalocystites'' Sprinkle
+*** gn ''Neorhipidocystis'' Rozhnov
+
