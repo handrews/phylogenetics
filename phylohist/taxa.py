@@ -327,8 +327,11 @@ class Taxon:
     ida_classes = frozenset({
       'Acalephida',
       'Arachnida',
+      'Caryocystitida',
       'Echinida',
       'Fistulida',
+      'Glyptocystitida',
+      'Hemicosmitida',
       'Medusida',
       'Stellerida',
       'Zoanthida',

@@ -2655,10 +2655,15 @@ cucullanus:
   name: Cucullanus
   auth: [müller.o.f]
   year: 1777
+cuniculocystidae:
+  name: Cuniculocystidae
+  rank: Family
+  authority:
+    source: 1994_sprinkle_wahlman
 cuniculocystis:
   name: Cuniculocystis
-  auth: [sprinkle, Wahlman]
-  year: 1994
+  authority:
+    source: 1994_sprinkle_wahlman
 cupressocrinites:
   name: Cupressocrinites
   auth: [Goldfuss]
@@ -3915,8 +3920,12 @@ elongatus_sprinkle_1973:
     source: 1973_sprinkle
 elpasocrinus:
   name: Elpasocrinus
-  auth: [sprinkle, Wahlm]
-  year: 1994
+  authority:
+    source: 1994_sprinkle_wahlman
+elpasoensis_sprinkle_wahlman_1994:
+  name: elpasoensis
+  authority:
+    source: 1994_sprinkle_wahlman
 emarginata_leske_1778:
   name: emarginata
   authority:
@@ -4050,6 +4059,11 @@ eocrinoidea-indeterminate-order-3_sprinkle_1973:
   rank: Order
   authority:
     source: 1973_sprinkle
+eocrinoidea-indeterminate-order_sprinkle_wahlman_1994:
+  name: null
+  rank: Order
+  authority:
+    source: 1994_sprinkle_wahlman
 eocrinoidea-indeterminate-family-1_sprinkle_1973:
   name: null
   rank: Family
@@ -4452,6 +4466,10 @@ floscularia:
   name: Floscularia
   authority:
     source: 1798_cuvier
+floweri_sprinkle_wahlman_1994:
+  name: floweri
+  authority:
+    source: 1994_sprinkle_wahlman
 flustra:
   name: Flustra
   auth: [linnaeus]
@@ -4759,6 +4777,11 @@ glyptocystinae:
   auth: [calvin.s]
   year: 1899
   notes: Authority might not be accurate, needs verification
+glyptocystitida:
+  name: Glyptocystitida
+  rank: Superfamily
+  auth: [bather]
+  year: 1899
 glyptocystitidae:
   name: Glyptocystitidae
   rank: Family
@@ -9117,6 +9140,10 @@ radiatus_gmelin_1791:
   name: radiatus
   auth: [Gmelin]
   year: 1791
+radiatus_sprinkle_wahlman_1994:
+  name: radiatus
+  authority:
+    source: 1994_sprinkle_wahlman
 ramosa_bruguière_1789:
   name: ramosa
   authority:

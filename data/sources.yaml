@@ -2448,6 +2448,21 @@ inprep_sprinkle_strimple:
   authors:
   - guensburg
   - sprinkle
+1994_sprinkle_wahlman:
+  title: New echinoderms from the Early Ordovician of west Texas
+  journal: jofpaleo
+  volume: 68
+  number: 2
+  pages:
+  - 324
+  - 338
+  pubDate:
+    year: 1994
+  authors:
+  - sprinkle
+  - wahlman
+  identifiers:
+    doi: 10.1017/S0022336000022915
 1994_zhao.y.l_huang.y.z_gong.x.y:
   title: The middle Cambrian Kaili Formation of southwestern China
   journal: acta-p-sinica

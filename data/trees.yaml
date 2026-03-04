@@ -11046,6 +11046,70 @@
             quoted: true
             children:
             - taxon: lloydi_sprinkle_1985
+1994_sprinkle_wahlman:
+  taxonomies:
+  - taxon: blastozoa
+    children:
+    - taxon: rhombifera-class
+      emended: true
+      authority:
+        source: 1968b_paul.c.r.c
+      children:
+      - taxon: dichoporita
+        emended: true
+        authority:
+          source: 1968b_paul.c.r.c
+        children:
+        - taxon: glyptocystitida
+          children:
+          - taxon: cuniculocystidae
+            provisional: true
+            new: true
+            children:
+            - taxon: cuniculocystis
+              new: true
+              children:
+              - taxon: floweri_sprinkle_wahlman_1994
+                type: true
+                new: true
+    - taxon: eocrinoidea
+      children:
+      - openTaxon: eocrinoidea-indeterminate-order_sprinkle_wahlman_1994
+        children:
+        - taxon: bockiidae
+          children:
+          - taxon: bockia
+            children:
+            - taxon: neglecta_hecker_1938
+              type: true
+              synonyms:
+              - taxon: neglecta_hecker_1938
+                auth: [Hecker]
+                year: 1938
+                page: 423
+            - taxon: elpasoensis_sprinkle_wahlman_1994
+              provisional: true
+              new: true
+  - taxon: crinozoa
+    children:
+    - taxon: crinoidea
+      children:
+      - taxon: inadunata
+        children:
+        - taxon: cladida
+          children:
+          - taxon: dendrocrinina
+            children:
+            - taxon: dendrocrinacea
+              children:
+              - taxon: dendrocrinidae
+                children:
+                - taxon: elpasocrinus
+                  new: true
+                  children:
+                  - taxon: radiatus_sprinkle_wahlman_1994
+                    type: true
+                    new: true
 1995_dzik_orłowski:
   taxonomies:
   - taxon: ctenocystoidea
