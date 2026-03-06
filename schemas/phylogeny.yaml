@@ -587,9 +587,6 @@ $defs:
               type: [number, string]
   figure:
     type: object
-    oneOf:
-    - required: [plate]
-    - required: [page]
     properties:
       source:
         $ref: "#/$defs/sourceId"

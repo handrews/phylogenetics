@@ -1559,6 +1559,11 @@ cambrasteridae:
   rank: Family
   auth: [Termier, Termier]
   year: 1969
+cambraster-sp_jell_burrett_banks_1985:
+  name: null
+  rank: species
+  authority:
+    source: 1985_jell_burrett_banks
 cambraster-sp_jell_sprinkle_2021:
   name: null
   rank: species
@@ -4345,6 +4350,15 @@ fayi_sprinkle_1982:
   name: fayi
   authority:
     source: 1982g_sprinkle
+felbabkacystis:
+  name: Felbabkacystis
+  authority:
+    source: 2017_nardin_lefebvre_fatka_nohejlová_kašiča_šinágl_szabad
+felbabkacystidae:
+  name: Felbabkacystidae
+  rank: Family
+  authority:
+    source: 2017_nardin_lefebvre_fatka_nohejlová_kašiča_šinágl_szabad
 fenestrata_leske_1778:
   name: fenestrata
   authority:
@@ -5660,6 +5674,11 @@ imbricata:
   rank: Order
   authority:
     source: 1973_sprinkle
+imbricata-sp_nohejlová_fatka_2015:
+  name: null
+  rank: species
+  auth: [nohejlová, fatka]
+  year: 2015
 immaturis_hall_1852:
   name: immaturis
   authority:
@@ -5900,6 +5919,11 @@ isorophida-sp_holloway_jell_1983:
   rank: species
   authority:
     source: 1983_holloway_jell
+isorophida-sp_jell_burrett_banks_1985:
+  name: null
+  rank: species
+  authority:
+    source: 1985_jell_burrett_banks
 isorophida-sp_zamora_smith.a.b_2010:
   name: null
   rank: species
@@ -6341,11 +6365,19 @@ lepidocystidae:
   rank: Family
   auth: [durham]
   year: 1967
+lepidocystoidae:
+  name: Lepidocystoidae
+  altSpellingOf: lepidocystidae
+  notes: Incorrect later spelling
 lepidocystoidea:
   name: Lepidocystoidea
   rank: Class
   auth: [durham]
   year: 1967
+lepidocystoidea-family:
+  name: Lepidocystoidea
+  altSpellingOf: lepidocystidae
+  notes: Erroneous use of class name as family name
 lepidocystis:
   name: Lepidocystis
   auth: [foerste]
@@ -6428,6 +6460,9 @@ lichenoididae:
   rank: Family
   auth: [jaekel]
   year: 1918
+lichenoidae:
+  name: Lichenoidae
+  altSpellingOf: lichenoididae
 lichenoididae-gen_smith.a.b_zamora_álvaro_2013:
   name: null
   rank: genus
@@ -6585,6 +6620,10 @@ lucernaria:
   name: Lucernaria
   authority:
     source: 1776_müller.o.f
+luckae_nardin_lefebvre_fatka_nohejlová_kašiča_šinágl_szabad_2017:
+  name: luckae
+  authority:
+    source: 2017_nardin_lefebvre_fatka_nohejlová_kašiča_šinágl_szabad
 lucunter_leske_1778:
   name: lucunter
   authority:
@@ -6650,6 +6689,11 @@ macrocystellidae:
   rank: Family
   auth: [bather]
   year: 1899
+macrocystellidae-sp_jell_burrett_banks_1985:
+  name: null
+  rank: species
+  authority:
+    source: 1985_jell_burrett_banks
 macronata_forsskål_1775:
   name: macronata
   auth: [forsskål]
@@ -10441,6 +10485,11 @@ stromatocystitidae:
   rank: Family
   auth: [bassler]
   year: 1936
+stromatocystitidae-sp_jell_burrett_banks_1985:
+  name: null
+  rank: species
+  authority:
+    source: 1985_jell_burrett_banks
 stromatocystites:
   name: Stromatocystites
   auth: [Pompeckj]
@@ -10454,6 +10503,11 @@ stromatocystites-sp_ubaghs_1999:
   rank: species
   authority:
     source: 1999_ubaghs
+stromatocystites-sp_jell_burrett_banks_1985:
+  name: null
+  rank: species
+  authority:
+    source: 1985_jell_burrett_banks
 strombus:
   name: Strombus
   authority:
@@ -11149,6 +11203,26 @@ undata_müller.o.f_1784:
     WoRMS incorrectly cites 1778, which it uses as the date of volume 1 of the
     source (although the correct date ia 1779).  However, this species is
     described in volume 2, published in 1784.
+undescribed-genus_fatka_kordule_szabad_2004:
+  name: null
+  rank: genus
+  auth: [fatka, kordule, szabad]
+  year: 2004
+undescribed-sp_fatka_kordule_szabad_2004:
+  name: null
+  rank: species
+  auth: [fatka, kordule, szabad]
+  year: 2004
+undescribed-transitional-genus_lefebvre_nardin_fatka_2015:
+  name: null
+  rank: genus
+  auth: [lefebvre, nardin, fatka]
+  year: 2015
+undescribed-transitional-sp_lefebvre_nardin_fatka_2015:
+  name: null
+  rank: species
+  auth: [lefebvre, nardin, fatka]
+  year: 2015
 unicolor_leske_1778:
   name: unicolor
   rank: variety

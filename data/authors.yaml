@@ -370,6 +370,9 @@ joysey:
 kammer:
   family: Kammer
   given: Thomas W.
+kašiča:
+  family: Kašiča
+  given: Libor
 kesling:
   family: Kesling
   given: Robert V.
@@ -649,6 +652,9 @@ schuchert:
 selden:
   family: Selden
   given: Paul A.
+šinágl:
+  family: Šinágl
+  given: Miroslav
 smith.a.b:
   family: Smith
   given: Andrew B.
@@ -677,6 +683,9 @@ sumrall:
 sun.z.x:
   family: Sun
   given: Zhi-Xin
+szabad:
+  family: Szabad
+  given: Michal
 tarlo:
   family: Tarlo
   given: L. B. H.

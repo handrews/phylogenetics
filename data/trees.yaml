@@ -9957,6 +9957,22 @@
             - NMVP107070
             - NMVP107071
             - NMVP107072
+        - cfTaxon: tastudorum_jell_burrett_banks_1985
+          new: true
+          specimens:
+            unknowntypes:
+            - UTGD122233
+            - UTGD122234
+        - openTaxon: cambraster-sp_jell_burrett_banks_1985
+          new: true
+          specimens:
+            unknowntypes:
+            - ANU36957
+            - ANU36958
+            - ANU36959
+            - ANU36960
+        - taxon: walcotti_schuchert_1919
+          provisional: true
       - taxon: edriodiscus
         new: true
         children:
@@ -9967,6 +9983,33 @@
             paratypes:
             - CPCl1396
             - NMVP107479
+          synonyms:
+          - taxon: primotica_henderson_shergold_1971
+            auth: [Henderson, Shergold]
+            year: 1971
+            parents:
+            - taxon: cyclocystoides
+      - taxon: stromatocystites
+        children:
+        - openTaxon: stromatocystites-sp_jell_burrett_banks_1985
+          provisional: true
+          new: true
+          specimens:
+            unknowntypes:
+            - NMVP107478
+      - openTaxon: stromatocystitidae-sp_jell_burrett_banks_1985
+        new: true
+        specimens:
+          unknowntypes:
+          - [ANU36949, ANU36956]
+    - taxon: isorophida
+      children:
+      - openTaxon: isorophida-sp_jell_burrett_banks_1985
+        new: true
+        specimens:
+          unknowntypes:
+          - NMVP107129
+          - NMVP108990
   - taxon: ctenocystoidea
     children:
     - taxon: ctenocystidae
@@ -10027,6 +10070,13 @@
             - NMVP107491
             - NMVP107492
             - NMVP108991
+    - taxon: macrocystellidae
+      children:
+      - openTaxon: macrocystellidae-sp_jell_burrett_banks_1985
+        new: true
+        specimens:
+          unknowntypes:
+          - TMF8342
 1985_smith.a.b:
   taxonomies:
   - notes: |
@@ -13422,6 +13472,84 @@
             type: true
           - openTaxon: ubaghsicystis-sp_sumrall_zamora_2015
             new: true
+2017_nardin_lefebvre_fatka_nohejlová_kašiča_šinágl_szabad:
+  taxonomies:
+  - taxon: blastozoa
+    children:
+    - taxon: lepidocystoidae
+      children:
+      - taxon: lepidocystis
+      - taxon: kinzercystis
+      - taxon: vyscystis
+    - taxon: felbabkacystidae
+      new: true
+      children:
+      - taxon: felbabkacystis
+        new: true
+        children:
+        - taxon: luckae_nardin_lefebvre_fatka_nohejlová_kašiča_šinágl_szabad_2017
+          type: true
+          new: true
+          synonyms:
+          - openTaxon: undescribed-genus_fatka_kordule_szabad_2004
+            auth: [fatka, kordule, szabad]
+            year: 2004
+            children:
+            - openTaxon: undescribed-sp_fatka_kordule_szabad_2004
+              auth: [fatka, kordule, szabad]
+              year: 2004
+              page: 379
+          - openTaxon: undescribed-transitional-genus_lefebvre_nardin_fatka_2015
+            auth: [lefebvre, nardin, fatka]
+            year: 2015
+            children:
+            - openTaxon: undescribed-transitional-sp_lefebvre_nardin_fatka_2015
+              auth: [lefebvre, nardin, fatka]
+              year: 2015
+              page: 89
+              figures:
+              - figures:
+                - 1B
+          - openTaxon: imbricata-sp_nohejlová_fatka_2015
+            auth: [noheljová, fatka]
+            year: 2015
+            page: 119
+            figures:
+            - figures:
+              - 2D
+  phylogenies:
+  - treeType: cladogram
+    tree:
+      children:
+      - taxon: stromatocystites
+        outgroup: true
+      - children:
+        - bracket: lepidocystoidae
+          children:
+          - taxon: kinzercystis
+          - taxon: vyscystis
+          - taxon: lepidocystis
+        - children:
+          - bracket: felbabkacystidae
+            children:
+            - taxon: felbabkacystis
+          - children:
+            - bracket: eocrinidae
+              taxon: lyracystis
+            - children:
+              - bracket: eocrinidae
+                children:
+                - taxon: akadocrinus
+                - taxon: gogia
+                - taxon: sinoeocrinus
+                - taxon: ubaghsicystis
+              - children:
+                - bracket: lichenoidae
+                  taxon: lichenoides
+                - notes: bracket "derived blastozoa"
+                  children:
+                  - taxon: trachelocrinus
+                  - taxon: ridersia
 2017_zamora_sumrall_zhu.x.j_lefebvre:
   taxonomies:
   - taxon: echinodermata
@@ -13503,6 +13631,40 @@
                 additional:
                 - USNM 393393
                 - USNM 393394
+2019_nohejlová_nardin_fatka_kašiča_szabad:
+  taxonomies:
+  - taxon: echinodermata
+    children:
+    - taxon: blastozoa
+      children:
+      - taxon: lepidocystoidea-family
+        children:
+        - taxon: vyscystis
+          children:
+          - taxon: ubaghsi_fatka_kordule_1990
+            type: true
+  phylogenies:
+  - treeType: cladogram
+    tree:
+      children:
+      - taxon: stromatocystites
+      - children:
+        - children:
+          - children:
+            - taxon: lepidocystis
+            - taxon: kinzercystis
+          - taxon: vyscystis
+        - children:
+          - taxon: felbabkacystis
+          - children:
+            - children:
+              - children:
+                - taxon: akadocrinus
+                - taxon: gogia
+              - children:
+                - taxon: lichenoides
+                - taxon: macrocystella
+            - taxon: ascocystites
 2019_wen.r_babcock_peng.j_robison:
   taxonomies:
   - taxon: edrioasteroidea
