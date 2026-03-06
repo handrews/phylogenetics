@@ -1,24 +1,24 @@
 {{Short description|Extinct genus of marine invertebrates}}
-{{Taxobox
-| fossil_range = {{fossil range|Burgess Shale}}
-| regnum = [[Animalia]]
-| phylum = [[Echinodermata]]
-| classis = [[Eocrinoidea]]
-| ordo = [[Gogiida]]
-| familia = '''Lyracystidae'''
-| familia_authority = Sprinkle & Collins, 2006
-| genus = '''''Lyracystis'''''
-| genus_authority = Sprinkle & Collins, 2006
-| species = '''''L. radiata'''''
-| binomial = ''Lyracystis radiata''
-| binomial_authority = (Sprinkle 1973) Sprinkle & Collins 2006<ref>{{Cite journal| doi = 10.1139/E05-107| title = New eocrinoids from the Burgess Shale, southern British Columbia, Canada, and the Spence Shale, northern Utah, USA| year = 2006| last1 = Sprinkle | first1 = J.| last2 = Collins | first2 = D.| journal = Canadian Journal of Earth Sciences| volume = 43| pages = 303–322|bibcode = 2006CaJES..43..303S }}</ref>
-| synonyms = ''Gogia? radiata'' <small>Sprinkle 1973</small>
+{{Automatic taxobox
+| fossil_range = {{fossil range|Wuliuan}}
+| taxon = Lyracystis
+| authority = Sprinkle & Collins 2006
+| type_species = Gogia? radiata (pars)
+| type_species_authority = Sprinkle 1973
+| subdivision_ref = <ref>{{harvnb|Sprinkle|Collins|2006}}</ref>
+| subdivision = * ''Lyracystis radiata'' {{small|(Sprinkle 1973)}}
+* ''Lyracystis reesei'' {{small|Sprinklez&nbsp;&amp;&nbsp;Collins 2006}}
 }}
 
-'''''Lyracystis radiata''''' is an [[extinct]] [[genus]] of [[Cambrian]] [[eocrinoidea|eocrinoid]] [[echinoderm]], [[fossils]] of which are known from the [[Burgess Shale]] of [[British Columbia]], [[Canada]]. It is related to ''[[Gogia]]''.
+'''''Lyracystis''''' is an [[extinct]] [[genus]] of [[Cambrian]] [[eocrinoid]] [[echinoderm]].  The type species, ''L. radiata'', is known from several specimens from the [[Burgess Shale]] of [[British Columbia]], while ''L. reesei'' is known from a single specimen from the slightly younger [[Spence Shale]] of [[Utah]].  It is the type species of the [[Gogiida|gogiid]] family [[Lyracystidae]].
 
 ==References==
 {{Reflist}}
+
+===Works cited===
+{{refbegin}}
+* {{Cite journal| doi = 10.1139/E05-107| title = New eocrinoids from the Burgess Shale, southern British Columbia, Canada, and the Spence Shale, northern Utah, USA| year = 2006| last1 = Sprinkle | first1 = J.| last2 = Collins | first2 = D.| journal = Canadian Journal of Earth Sciences| volume = 43| pages = 303–322|bibcode = 2006CaJES..43..303S }}
+{{refend}}
 
 == External links ==
 * {{Cite web|date=2025|title=''Lyracystis radiata''|work=Burgess Shale Fossil Gallery|publisher=Virtual Museum of Canada|url=https://burgess-shale.rom.on.ca/fossils/lyracystis-radiata/}}
