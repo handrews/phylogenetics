@@ -3482,6 +3482,28 @@ inprep_sprinkle_strimple:
   - zamora
   identifiers:
     doi: 10.1017/jpa.2014.54
+2017_nardin_lefebvre_fatka_nohejlová_kašiča_šinágl_szabad:
+  title: Evolutionary implications of a new transitional blastozoan echinoderm from the middle Cambrian of the Czech Republic
+  journal: jofpaleo
+  volume: 91
+  number: 4
+  pages:
+  - 672
+  - 684
+  pubDate:
+    year: 2017
+  processDates:
+    accepted: 2016-11-08
+  authors:
+  - nardin
+  - lefebvre
+  - fatka
+  - nohejlová
+  - kašiča
+  - šinágl
+  - szabad
+  identifiers:
+    doi: 10.1017/jpa.2016.157
 2017_zamora_deline_álvaro_rahman:
   title: The Cambrian Substrate Revolution and the early evolution of attachment in suspension-feeding echinoderms
   complete:
@@ -3551,6 +3573,28 @@ inprep_sprinkle_strimple:
   authors:
   - lefebvre
   - lerosey-aubril
+2019_nohejlová_nardin_fatka_kašiča_szabad:
+  title: Morphology, palaeoecology and phylogenetic interpretation of the Cambrian echinoderm Vyscystis (Barrandian area, Czech Republic)
+  journal: jofsystp
+  volume: 17
+  number: 19
+  pages:
+  - 1619
+  - 1634
+  pubDate:
+    year: 2019
+  processDates:
+    received: 2017-07-25
+    accepted: 2018-10-19
+    online: 2019-01-29
+  authors:
+  - nohejlová
+  - nardin
+  - fatka
+  - kašiča
+  - szabad
+  identifiers:
+    doi: 10.1080/14772019.2018.1541485
 2019_wen.r_babcock_peng.j_robison:
   title: "New edrioasteroid (Echinodermata) from the Spence Shale (Cambrian), Idaho, USA: further evidence of attachment in the early evolutionary history of edrioasteroids"
   journal: bullgeo
