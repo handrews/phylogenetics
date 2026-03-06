@@ -1,0 +1,35 @@
+{{Short description|Extinct genus of marine invertebrates}}
+{{Taxobox
+| fossil_range = {{fossil range|Burgess Shale}}
+| regnum = [[Animalia]]
+| phylum = [[Echinodermata]]
+| classis = [[Eocrinoidea]]
+| ordo = [[Gogiida]]
+| familia = '''Lyracystidae'''
+| familia_authority = Sprinkle & Collins, 2006
+| genus = '''''Lyracystis'''''
+| genus_authority = Sprinkle & Collins, 2006
+| species = '''''L. radiata'''''
+| binomial = ''Lyracystis radiata''
+| binomial_authority = (Sprinkle 1973) Sprinkle & Collins 2006<ref>{{Cite journal| doi = 10.1139/E05-107| title = New eocrinoids from the Burgess Shale, southern British Columbia, Canada, and the Spence Shale, northern Utah, USA| year = 2006| last1 = Sprinkle | first1 = J.| last2 = Collins | first2 = D.| journal = Canadian Journal of Earth Sciences| volume = 43| pages = 303–322|bibcode = 2006CaJES..43..303S }}</ref>
+| synonyms = ''Gogia? radiata'' <small>Sprinkle 1973</small>
+}}
+
+'''''Lyracystis radiata''''' is an [[extinct]] [[genus]] of [[Cambrian]] [[eocrinoidea|eocrinoid]] [[echinoderm]], [[fossils]] of which are known from the [[Burgess Shale]] of [[British Columbia]], [[Canada]]. It is related to ''[[Gogia]]''.
+
+==References==
+{{Reflist}}
+
+== External links ==
+* {{Cite web|date=2025|title=''Lyracystis radiata''|work=Burgess Shale Fossil Gallery|publisher=Virtual Museum of Canada|url=https://burgess-shale.rom.on.ca/fossils/lyracystis-radiata/}}
+
+{{Taxonbar|from=Q16926204}}
+
+[[Category:Burgess Shale animals]]
+[[Category:Blastozoa genera]]
+[[Category:Cambrian genus extinctions]]
+
+
+{{cambrian-animal-stub}}
+{{paleo-echinoderm-stub}}
+
