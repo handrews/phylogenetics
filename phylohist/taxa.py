@@ -899,7 +899,7 @@ def print_tree(
       header=header,
     )
 
-  if leaf and found_name in args.leaf:
+  if leaf and found_name in leaf:
     on = old_on
   if root and found_name in root:
     on -= 1
