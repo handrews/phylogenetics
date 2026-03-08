@@ -34,6 +34,8 @@ arch-min-geo:
   name: Archiv für Mineralogie, Geognosie, Bergbau und Hüttenkunde
 arch-nat:
   name: Archiv für die gesammte Naturlehre
+atlantic-geo:
+  name: Atlantic Geology
 bericht-berlin:
   name: Bericht über die zur Bekanntmachung geeigneten Verhandlungen der Königl. Preufs. Akademie der Wissenschaften zu Berlin.
 beitrage:
@@ -216,6 +218,8 @@ sp-pub-harvard:
   name: Special Publication of the Museum of Comparative Zoology, Harvard University
 stamm:
   name: Stammesgeschichte der Pelmatozoen
+strati:
+  name:  STRATI 2013 First International Congress on Stratigraphy At the Cutting Edge of Stratigraphy
 systema-naturae-10th-ed:
   name: Systema Naturæ, Editio Decima, reformata
 systema-naturae-11th-ed:

@@ -2436,6 +2436,21 @@ inprep_sprinkle_strimple:
   - 302
   authors:
   - sumrall
+1993_young.t.p_donovan.s.k:
+  title: The eocrinoid Ascocystites Barrande (Echinodermata, Blastozoa) from the Middle Ordovician of central Portugal, with comments on the stratigraphy of the Brejo Fundeiro Formation
+  journal: atlantic-geo
+  volume: 29
+  pages:
+  - 149
+  - 154
+  pubDate:
+    year: 1993
+  processDates:
+    received: 1993-06-20
+    accepted: 1993-08-01
+  authors:
+  - young.t.p
+  - donovan.s.k
 1994_guensburg_sprinkle:
   title: Revised phylogeny and functional interpretation of the Edrioasteroidea based on new taxa from the Early and Middle Ordovician of western Utah
   journal: fieldiana
@@ -3378,6 +3393,21 @@ inprep_sprinkle_strimple:
   - vizcaïno
   identifiers:
     doi: 10.4202/app.2011.0152
+2014_makhlouf_lefebvre_nardin_nedjari_régnault_ferhi:
+  title: Stratigraphic and Palaeogeographical Distribution of the Ordovician Eocrinoid Ascocystites Barrande 1887 (Echinodermata, Blastozoa)
+  book: strati
+  pages:
+  - 1045
+  - 1048
+  authors:
+  - makhlouf
+  - lefebvre
+  - nardin
+  - nedjari
+  - régnault
+  - ferhi
+  pubDate:
+    year: 2014
 2014_zhu.x.j_zamora_lefebvre:
   title: Morphology and palaeoecology of a new edrioblastoid from the Furongian of China
   journal: acta-p-polonica

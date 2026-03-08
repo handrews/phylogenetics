@@ -10786,6 +10786,24 @@
                           - openTaxon: laudoni-chester-l_sumrall_1993
                           - taxon: lispidecodus
                           - taxon: discocystis
+1993_young.t.p_donovan.s.k:
+  taxonomies:
+  - taxon: blastozoa-class
+    children:
+    - taxon: eocrinoidea
+      rank: Group
+      children:
+      - taxon: ascocystitidae
+        children:
+        - taxon: ascocystites
+          children:
+          - taxon: drabowensis_barrande_1887
+          - taxon: micraster_barrande_1887
+          - taxon: barrandei_jaekel_1918
+          - taxon: cuneiformis_chauvel_1941
+            provisional: true
+          - openTaxon: ascocystites-sp_young.t.p_donovan.s.k_1993
+            new: true
 1994_guensburg_sprinkle:
   taxonomies:
   - taxon: echinozoa
@@ -13377,6 +13395,23 @@
               - taxon: cannati_miquel_1894
                 parents:
                 - taxon: trochocystites
+2014_makhlouf_lefebvre_nardin_nedjari_régnault_ferhi:
+  taxonomies:
+  - taxon: blastozoa
+    children:
+    - taxon: ascocystitidae
+      children:
+      - taxon: ascocystites
+        children:
+        - taxon: drabowensis_barrande_1887
+          type: true
+          synonyms:
+          - taxon: micraster_barrande_1887
+          - taxon: barrandei_jaekel_1918
+          - openTaxon: ascocystites-sp_young.t.p_donovan.s.k_1993
+          - openTaxon: ascocystites-sp_régnault_2007
+          - openTaxon: ascocystites-sp_makhlouf_lefebvre_nardin_nedjari_régnault_ferhi_2014
+            new: true
 2014_zhu.x.j_zamora_lefebvre:
   taxonomies:
   - taxon: echinodermata

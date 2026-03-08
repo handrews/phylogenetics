@@ -808,6 +808,21 @@ ascocystites:
   name: Ascocystites
   auth: [barrande]
   year: 1887
+ascocystites-sp_makhlouf_lefebvre_nardin_nedjari_régnault_ferhi_2014:
+  name: null
+  rank: species
+  authority:
+    source: 2014_makhlouf_lefebvre_nardin_nedjari_régnault_ferhi
+ascocystites-sp_régnault_2007:
+  name: null
+  rank: species
+  auth: [régnault]
+  year: 2007
+ascocystites-sp_young.t.p_donovan.s.k_1993:
+  name: null
+  rank: species
+  authority:
+    source: 1993_young.t.p_donovan.s.k
 ascocystitida:
   name: Ascocystitida
   rank: Order
@@ -1053,6 +1068,10 @@ balticus_eichwald_1829:
   name: balticus
   auth: [eichwald]
   year: 1829
+barrandei_jaekel_1918:
+  name: barrandei
+  auth: [jaekel]
+  year: 1918
 barrandi_billings_1858:
   name: barrandi
   authority:
@@ -1276,6 +1295,9 @@ blastozoa:
   bracket: Blastozoans
   authority:
     source: 1973_sprinkle
+blastozoa-class:
+  rank: Class
+  altRankOf: blastozoa
 blastozoa-indeterminate-class_sprinkle_1973:
   name: null
   rank: Class
@@ -2660,6 +2682,10 @@ cucullanus:
   name: Cucullanus
   auth: [müller.o.f]
   year: 1777
+cuneiformis_chauvel_1941:
+  name: cuneiformis
+  auth: [Chauvel]
+  year: 1941
 cuniculocystidae:
   name: Cuniculocystidae
   rank: Family
@@ -6894,6 +6920,10 @@ maxima_forsskål_1775:
   name: maxima
   auth: [forsskål]
   year: 1775
+micraster_barrande_1887:
+  name: micraster
+  auth: [barrande]
+  year: 1887
 microbasalis_billings_1857:
   name: microbasalis
   authority:
