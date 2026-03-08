@@ -185,6 +185,9 @@ derstler:
 domínguez alonso:
   family: Domínguez Alonso
   given: Patricio
+donovan.s.k:
+  family: Donovan
+  given: Stephen K.
 doweld:
   family: Doweld
   given: Alexander B.
@@ -216,6 +219,9 @@ fell:
   given: H. Barraclough
   birth: 1917
   death: 1994
+ferhi:
+  family: Ferhi
+  given: Mohamed
 fischer:
   family: Fischer
   given: A. G.
@@ -447,6 +453,9 @@ macleay:
   birth: 1792
   death: 1865
   notes: Alternate spelling/capitalization McLeay
+makhlouf:
+  family: Makhlouf
+  given: Yamouna
 mantell:
   family: Mantell
   given: Gideon
@@ -534,6 +543,9 @@ murchison:
 nardin:
   family: Nardin
   given: Elise
+nedjari:
+  family: Nedjari
+  given: Ahmed
 neumayr:
   family: Neumayr
   given: Melchior
@@ -593,6 +605,9 @@ rahman:
 ramsbottom:
   family: Ramsbottom
   given: W. H. C.
+régnault:
+  family: Régnault
+  given: Serge
 regnéll:
   family: Regnéll
   given: Gerhard
@@ -791,6 +806,9 @@ yang.r.d:
 yang.x.l:
   family: Yang
   given: Xing-Lian
+young.t.p:
+  family: Young
+  given: Timothy P.
 yuan.j.l:
   family: Yuan
   given: Jin-Liang
