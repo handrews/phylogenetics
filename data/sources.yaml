@@ -1916,6 +1916,24 @@
   - sprinkle
   identifiers:
     jstor: 1303701
+1978_durham:
+  title: A Lower Cambrian Eocrinoid
+  journal: jofpaleo
+  volume: 52
+  number: 1
+  pages:
+  - 195
+  - 199
+  pubDate:
+    year: 1978
+    month: 1
+  processDates:
+    received: 1977-01-10
+    revised: 1977-05-20
+  authors:
+  - durham
+  identifiers:
+    jstor: 1303808
 1979_guensburg:
   title: Cyclocystoid-like edrioasteroids from the Orchard Creek Shale (U. Ord.) in southern Illinois
   journal: geo-soc-am-abs-prog
@@ -2759,6 +2777,21 @@ inprep_sprinkle_strimple:
   authors:
   - sumrall
   - parsley
+2004_parsley_prokop:
+  title: Functional morphology and paleoecology of some sessile Middle Cambrian echinoderms from the Barrandian region of Bohemia
+  journal: bullgeo
+  volume: 79
+  number: 3
+  pages:
+  - 147
+  - 156
+  pubDate:
+    year: 2004
+  authors:
+  - parsley
+  - prokop
+  identifiers:
+    url: https://www.researchgate.net/publication/279671453_Functional_morphology_and_paleoecology_of_some_sessile_Middle_Cambrian_echinoderms_from_the_Barrandian_region_of_Bohemia
 2005_frest:
   title: Ampheristocystis, a Silurian (Lower Wenlock) eocrinoid (Echinodermata, Blastozoa) from Indiana
   journal: geo-j
@@ -3729,6 +3762,24 @@ inprep_sprinkle_strimple:
   - parsley
   identifiers:
     doi: 10.1134/S0031030121090100
+2022_deshmukh:
+  title: "Parsleya nomen novum: a replacement name for the preoccupied Kailidiscus Zhao, Sumrall, Parsley et Peng, 2010 (Echinodermata: Edrioasteroidea)"
+  journal: hist-nat-bulg
+  volume: 44
+  number: 3
+  pages:
+  - 23
+  - 24
+  pubDate:
+    year: 2022
+  processDates:
+    received: 2022-03-11
+    accepted: 2022-03-31
+    online: 2022-04-07
+  authors:
+  - deshmukh
+  identifiers:
+    doi: 10.48027/hnb.44.031
 2022_zamora_rahman_sumrall_gibson_thompson:
   title: Cambrian edrioasteroid reveals new mechanism for secondary reduction of the skeleton in echinoderms
   journal: procrsocb

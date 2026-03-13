@@ -4481,6 +4481,10 @@ flexibilia:
   rank: Subclass
   auth: [zittel]
   year: 1895
+flexibilis_parsley_prokop_2004:
+  name: flexibilis
+  authority:
+    source: 2004_parsley_prokop
 flexulosa_hall_1847:
   name: flexulosa
   authority:
@@ -7640,6 +7644,10 @@ oiseaux:
   name: Oiseaux
   vulgarSpellingOf: aves
   lang: FR
+ojenai_durham_1978:
+  name: ojenai
+  authority:
+    source: 1978_durham
 oklahomae_strimple_graffham_1955:
   name: oklahomae
   auth: [Strimple, Graffham]
@@ -8092,8 +8100,8 @@ parma_smith.a.b_jell_1990:
   name: parma
   authority:
     source: 1990_smith.a.b_jell
-parsleya_deshmukh_2022:
-  name: parsleya
+parsleya:
+  name: Parsleya
   auth: [Deshmukh]
   year: 2022
 parsleyi_zamora_2009:
@@ -11291,6 +11299,10 @@ utahensis_robison_sprinkle_1969:
   auth: [robison, sprinkle]
   year: 1969
 ###################### V
+vadosus_parsley_prokop_2004:
+  name: vadosus
+  authority:
+    source: 2004_parsley_prokop
 vaginati:
   name: Vaginati
   rank: Order

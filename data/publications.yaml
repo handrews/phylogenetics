@@ -51,7 +51,7 @@ bullamp:
 bullbrgeo:
   name: Bulletin of the British Museum (Natural History) Geology
 bullgeo:
-  name: Bulletins of Geosciences
+  name: Bulletin of Geosciences
 canadian-journal:
   name: The Canadian Journal
 can-j-earth-sci:
@@ -108,6 +108,8 @@ geo-soc-am-abs-prog:
   name: Geological Society of America, Abstracts With Programs
 geo-survey-canada:
   name: Geological Survey of Canada. Report of Progress for the years 1853–54–55–56
+hist-nat-bulg:
+  name: Historia Naturalis Bulgarica
 hist-sans-vert:
   name: Histoire naturelle des animaux sans vertèbres
 horae:
