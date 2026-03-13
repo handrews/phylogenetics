@@ -7731,11 +7731,7 @@
                   - USNM 165403 # ?
                   - USNM 165404 # ?
                   - GSC 25954
-              - openTaxon: gogia-sp-1_sprinkle_1973
-                synonyms:
-                - openTaxon: gogia-sp_robison_1965
-                  parents:
-                  - taxon: gogia
+              - openTaxon: gogia-sp_robison_1965
                 specimens:
                   holotype: USNM 165411
               - openTaxon: gogia-sp-2_sprinkle_1973
@@ -9189,6 +9185,21 @@
           - taxon: nimius_bell.b.m_sprinkle_1978
             type: true
             new: true
+1978_durham:
+  taxonomies:
+  - taxon: eocrinoidea
+    children:
+    - taxon: eocrinidae
+      children:
+      - taxon: gogia
+        children:
+        - taxon: ojenai_durham_1978
+          new: true
+          figures:
+          - plate: 1
+            figures:
+            - 1
+            - 9
 1979_guensburg:
   taxonomies:
   - notes: From a paragraph in an abstract.  Higher classification assumed.
@@ -12147,6 +12158,66 @@
             - taxon: spiraclavus
             - notes: Thickening of interambulacral plates
               taxon: giganticlavus
+2004_parsley_prokop:
+  taxonomies:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: edrioasterida
+      children:
+      - taxon: stromatocystites
+        children:
+        - taxon: pentangularis_pompeckj_1896
+          type: true
+          pages:
+          - 151
+          - 152
+          figures:
+          - plate: 1
+            figures:
+            - [1, 7]
+        - taxon: flexibilis_parsley_prokop_2004
+          new: true
+          synonyms:
+          - affTaxon: pentangularis_pompeckj_1896
+            auth: [prokop]
+            year: 1961
+            page: 42
+          page: 152
+          figures:
+          - plate: 1
+            figures:
+            - [8, 9]
+  - taxon: eocrinoidea
+    children:
+    - taxon: lichenoididae
+      children:
+      - taxon: lichenoides
+        children:
+        - taxon: priscus_barrande_1846
+          type: true
+          page: 154
+          figures:
+          - page: 153
+            figures:
+            - [1D, 1G]
+        - taxon: vadosus_parsley_prokop_2004
+          new: true
+          synonyms:
+          - taxon: priscus_barrande_1846
+            pars: true
+            auth: [pompeckj]
+            year: 1896
+            page: 502
+            figures:
+            - plate: 13
+              figures:
+              - [7a, 7c]
+          pages:
+          - [154, 155]
+          figures:
+          - page: 153
+            figures:
+            - [1A, 1C]
 2005_frest:
   taxonomies:
   - taxon: blastozoa
@@ -12394,9 +12465,9 @@
             synonyms:
             - taxon: radiata_sprinkle_1973
               pars: true
+              provisional: true
               parents:
               - taxon: gogia
-                provisional: true
 2006_sumrall_brett_cornell:
   taxonomies:
   - notes: No ranks are included
@@ -14127,6 +14198,19 @@
           - taxon: ascocystitidae
             children:
             - taxon: ascocystites
+2022_deshmukh:
+  taxonomies:
+  - taxon: parsleya
+    new: true
+    synonyms:
+    - taxon: kailidiscus
+    children:
+    - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
+      type: true
+      synonyms:
+      - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
+        parents:
+        - taxon: kailidiscus
 2022_zamora_rahman_sumrall_gibson_thompson:
   taxonomies:
   - taxon: echinodermata
