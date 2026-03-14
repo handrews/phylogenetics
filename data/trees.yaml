@@ -12661,6 +12661,17 @@
               type: true
               new: true
               diagnosis: Same as for genus.
+2008_luo.h.l_li.y_hu.s.x_fu.x.p_hou.s.g_liu.x.r_chen.l.z_li.j.f_pang.j.y_liu.q:
+  notes: From PBDB entry, including only echinoderms
+  taxonomies:
+  - taxon: gogiida
+    children:
+    - taxon: wudingeocrinus
+      new: true
+      children:
+      - taxon: rarus_luo.h.l_li.y_hu.s.x_fu.x.p_hou.s.g_liu.x.r_chen.l.z_li.j.f_pang.j.y_liu.q_2008
+        type: true
+        new: true
 2008_zhao.y.l_parsley_peng.j:
   taxonomies:
   - taxon: blastozoa

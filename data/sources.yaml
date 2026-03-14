@@ -2940,6 +2940,21 @@ inprep_sprinkle_strimple:
   - peng.j
   identifiers:
     doi: 10.1016/j.palaeo.2007.03.020
+2008_luo.h.l_li.y_hu.s.x_fu.x.p_hou.s.g_liu.x.r_chen.l.z_li.j.f_pang.j.y_liu.q:
+  book: malong-guanshan
+  pubDate:
+    year: 2008
+  authors:
+  - luo.h.l
+  - li.y
+  - hu.s.x
+  - fu.x.p
+  - hou.s.g
+  - liu.x.r
+  - chen.l.z
+  - li.j.f
+  - pang.j.y
+  - liu.q
 2008_stewart_owen:
   title: "Probing the deep shelf: a Lagerstätte from the Upper Ordovician of Girvan, southwestern Scotland"
   journal: lethaia

@@ -116,6 +116,9 @@ chen.a:
 chen.j.y:
   family: Chen
   given: Jun-Yuan
+chen.l.z:
+  family: Chen
+  given: L.-Z.
 clark.a.h:
   family: Clark
   given: Austin Hobart
@@ -252,6 +255,9 @@ frest:
 frizzell:
   family: Frizzell
   given: Don L.
+fu.x.p:
+  family: Fu
+  given: X.-P.
 gahn:
   family: Gahn
   given: Forest J.
@@ -345,9 +351,15 @@ holland:
 holloway:
   family: Holloway
   given: David J.
+hou.s.g:
+  family: Hou
+  given: S.-G.
 house:
   family: House
   given: M. R.
+hu.s.x:
+  family: Hu
+  given: S.-X.
 huang.y.l:
   family: Huang
   given: Y.-L.
@@ -436,6 +448,12 @@ leuckart:
 lewis.r.d:
   family: Lewis
   given: Ronald D.
+li.j.f:
+  family: Li
+  given: J.-F.
+li.y:
+  family: Li
+  given: Y.
 li.y.j:
   family: Li
   given: Yu-Jing
@@ -447,6 +465,15 @@ linnaeus:
   given: Carl
   birth: 1707
   death: 1778
+liu.q:
+  family: Liu
+  given: Q.
+liu.x.r:
+  family: Liu
+  given: X.-R.
+luo.h.l:
+  family: Luo
+  given: H.-L.
 longman:
   family: Longman
   given: H. A.
@@ -575,6 +602,9 @@ pander:
   birth: 1794
   death: 1865
   notes: Also known as Christian Heinrich
+pang.j.y:
+  family: Pang
+  given: J.-Y.
 parkinson:
   family: Parkinson
   given: James
