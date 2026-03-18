@@ -1303,15 +1303,23 @@ blastozoa-indeterminate-class_sprinkle_1973:
   rank: Class
   authority:
     source: 1973_sprinkle
-bockia:
+bockia_hecker_1938:
+  homonym: true
   name: Bockia
+  rank: genus
   auth: [Hecker]
   year: 1938
+bockia-sp-a_bockelie_1981:
+  name: null
+  rank: species
+  authority:
+    source: 1981_bockelie
 bockiidae:
   name: Bockiidae
   rank: Family
   auth: [ubaghs]
   year: 1972
+  synonym: heckerocrinidae
 bohemica_barrande_1867:
   name: bohemica
   auth: [barrande]
@@ -1816,6 +1824,15 @@ caryocystites:
   name: Caryocystites
   authority:
     source: 1844_buch
+caryocystis:
+  name: Caryocystis
+  auth: [Angelin]
+  year: 1878
+caryocystis-sp_størmer_1953:
+  name: null
+  rank: species
+  auth: [Størmer]
+  year: 1953
 caryophyllia:
   name: Caryophyllia
   authority:
@@ -2682,6 +2699,10 @@ cucullanus:
   name: Cucullanus
   auth: [müller.o.f]
   year: 1777
+cucumis_hecker_1940:
+  name: cucumis
+  auth: [Hecker]
+  year: 1940
 cuneiformis_chauvel_1941:
   name: cuneiformis
   auth: [Chauvel]
@@ -2795,7 +2816,8 @@ cyathothecidae:
 cyathocystis:
   name: Cyathocystis
   auth: [Schmidt]
-  year: 1880
+  year: 1879
+  notes: 1935_bassler says 1880 for reasons unclear
 cyathotheca:
   name: Cyathotheca
   auth: [jaekel]
@@ -3313,6 +3335,10 @@ distans_webby_1968:
   name: distans
   auth: [webby]
   year: 1968
+disterminus_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman_2017:
+  name: disterminus
+  authority:
+    source: 2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman
 dizonida:
   name: Dizonida
   rank: Order
@@ -4065,11 +4091,13 @@ eocrinoidea-unnamed-order-1_sprinkle_1973:
   rank: Order
   authority:
     source: 1973_sprinkle
+  synonym: gogiida
 eocrinoidea-unnamed-order-2_sprinkle_1973:
   name: null
   rank: Order
   authority:
     source: 1973_sprinkle
+  synonym: ascocystitida
 eocrinoidea-uncertain-order_sumrall_sprinkle_guensburg_2001:
   name: null
   rank: Order
@@ -4080,6 +4108,7 @@ eocrinoidea-indeterminate-order-1_sprinkle_1973:
   rank: Order
   authority:
     source: 1973_sprinkle
+  synonym: trachelocrinida
 eocrinoidea-indeterminate-order-2_sprinkle_1973:
   name: null
   rank: Order
@@ -4105,11 +4134,13 @@ eocrinoidea-indeterminate-family-2_sprinkle_1973:
   rank: Family
   authority:
     source: 1973_sprinkle
+  synonym: cambrocrinidae
 eocrinoidea-indeterminate-family-3_sprinkle_1973:
   name: null
   rank: Family
   authority:
     source: 1973_sprinkle
+  synonym: heckerocrinidae
 eocrinoidea-indeterminate-family-4_sprinkle_1973:
   name: null
   rank: Family
@@ -5064,6 +5095,13 @@ gratilla_linnaeus_1758:
   name: gratilla
   authority:
     source: 1758_linnaeus
+grava_bockelie_1981:
+  name: grava
+  authority:
+    source: 1981_bockelie
+gravus_bockelie_1981:
+  name: gravus
+  altSpellingOf: grava_bockelie_1981
 grayae_bather_1915:
   name: grayae
   auth: [bather]
@@ -5211,6 +5249,19 @@ heckericystis:
   name: Heckericystis
   authority:
     source: 1960_gill_caster
+heckerocrinidae:
+  name: Heckerocrinidae
+  rank: Family
+  authority:
+    source: 2012_doweld
+heckerocrinus:
+  name: Heckerocrinus
+  authority:
+    source: 2012_doweld
+heintzi_bockelie_1981:
+  name: heintzi
+  authority:
+    source: 1981_bockelie
 helianthus_ellis_1768:
   name: helianthus
   auth: [Ellis]
@@ -5402,6 +5453,10 @@ henicocystis:
   name: Henicocystis
   authority:
     source: 1983_jell
+heropyrgus:
+  name: Heropyrgus
+  authority:
+    source: 2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman
 hesperocystis:
   name: Hesperocystis
   auth: [Sinclair]
@@ -6088,12 +6143,11 @@ junori_withers_1933:
   auth: [Withers]
   year: 1933
 ###################### K
-kailidiscus:
+kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010:
+  homonym: true
   name: Kailidiscus
   auth: [zhao.y.l, sumrall, parsley, peng.j]
   year: 2010
-  synonym: parsleya
-  reason: needsQualification
 kailidiscus-sp_jell_sprinkle_2021:
   name: null
   rank: species
@@ -6213,6 +6267,10 @@ laevis_bather_1914:
   name: laevis
   auth: [bather]
   year: 1914
+laevis_hecker_1940:
+  name: laevis
+  auth: [Hecker]
+  year: 1940
 laevis_leske_1778:
   name: laevis
   rank: variety
@@ -6936,6 +6994,10 @@ mimus_sumrall_zamora_2011:
   name: mimus
   authority:
     source: 2011_sumrall_zamora
+mirabilis_bockelie_1981:
+  name: mirabilis
+  authority:
+    source: 1981_bockelie
 mckenziensis_sumrall_brett_mckinney_2009:
   name: mckenziensis
   authority:
@@ -7406,10 +7468,13 @@ navicula_whitehouse_1941:
   name: navicula
   authority:
     source: 1941_whitehouse
-neglecta_hecker_1938:
+neglecta_hecker_1940:
   name: neglecta
   auth: [Hecker]
-  year: 1938
+  year: 1940
+neglectus_hecker_1940:
+  name: neglectus
+  altSpellingOf: neglecta_hecker_1940
 neglecta_smith.a.b_1983:
   name: neglecta
   auth: [smith.a.b]
@@ -7532,6 +7597,10 @@ nolichuckia:
   name: Nolichuckia
   authority:
     source: 1973_sprinkle
+norvegica_bockelie_1981:
+  name: norvegica
+  authority:
+    source: 1981_bockelie
 norvagicum_leske_1778:
   name: norvagicum
   rank: variety
@@ -8104,6 +8173,7 @@ parsleya:
   name: Parsleya
   auth: [Deshmukh]
   year: 2022
+  synonym: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
 parsleyi_zamora_2009:
   name: parsleyi
   auth: [zamora]
@@ -8542,10 +8612,12 @@ platys_raymond_1915:
   name: platys
   auth: [Raymond]
   year: 1915
-plantini_schmidt_1880:
-  name: plantini
+plautini_schmidt_1880:
+  name: plautini
   auth: [Schmidt]
   year: 1880
+  notes: Unclear why 1880 vs 1879; from 1935_bassler
+  altSpellingOf: plautinae_schmidt_1879
 plautinae_schmidt_1879:
   name: plautinae
   auth: [Schmidt]
@@ -9844,6 +9916,13 @@ scotiaecystis-sp_sumrall_sprinkle_guensburg_1997:
   rank: species
   authority:
     source: 1997_sumrall_sprinkle_guensburg
+sculpta_hecker_1940:
+  name: sculpta
+  auth: [Hecker]
+  year: 1940
+sculptus_hecker_1940:
+  name: sculptus
+  altSpellingOf: sculpta_hecker_1940
 sculptus_hall_1852:
   name: sculptus
   authority:
@@ -10020,6 +10099,10 @@ similis_billings_1857:
   name: similis
   authority:
     source: 1857_billings
+similis_bockelie_1981:
+  name: similis
+  authority:
+    source: 1981_bockelie
 simplex_barrande_1887:
   name: simplex
   auth: [barrande]

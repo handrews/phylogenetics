@@ -1965,6 +1965,19 @@ inprep_sprinkle_strimple:
   - sprinkle
   - strimple
   notes: Cited in 1980_bell.b.m
+1981_bockelie:
+  title: The Middle Ordovician of the Oslo Region, Norway, 30. The eocrinoid genera Cryptocrinites, Rhipidocystis and Bockia
+  journal: norsk-geo-tid
+  volume: 61
+  pages:
+  - 123
+  - 147
+  pubDate:
+    year: 1981
+  authors:
+  - bockelie
+  identifiers:
+    url: https://foreninger.uio.no/ngf/ngt/pdfs/NGT_61_2_123-147.pdf
 1981_derstler:
   title: Morphological diversity of early Cambrian echinoderms
   book: short-2nd-cambrian
@@ -3269,8 +3282,23 @@ inprep_sprinkle_strimple:
   - zamora
   identifiers:
     doi: 10.1080/14772019.2010.499137
-# 2012_doweld:
-#   title: "Heckerocrinus, a new substitute generic name for fossil crinoid Bockia Hecker 1940 (Echinodermata: Crinoidea) non Reisinger 1924 (Vermes: Turbellaria)"
+2012_doweld:
+  title: "Heckerocrinus, a new substitute generic name for fossil crinoid Bockia Hecker 1940 (Echinodermata: Crinoidea) non Reisinger 1924 (Vermes: Turbellaria)"
+  journal: p-z
+  volume: 86
+  pages:
+  - 457
+  - 458
+  pubDate:
+    year: 2012
+  processDates:
+    received: 2012-07-12
+    accepted: 2012-07-16
+    online: 2012-08-12
+  authors:
+  - doweld
+  identifiers:
+    doi: 10.1007/s12542-012-0148-y
 2012_zamora_rahman_smith.a.b:
   title: Plated Cambrian Bilaterians Reveal the Earliest Stages of Echinoderm Evolution
   journal: plos-one
@@ -3560,6 +3588,20 @@ inprep_sprinkle_strimple:
   - zamora
   identifiers:
     doi: 10.1017/jpa.2014.54
+2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman:
+  title: An edrioasteroid from the Silurian Herefordshire Lagerstätte of England reveals the nature of the water vascular system in an extinct echinoderm
+  journal: procrsocb
+  volume: 284
+  number: 1862
+  articleNumber: 20171189
+  pubDate:
+    year: 2017
+  authors:
+  - briggs.d.e.g
+  - siveter.de.j
+  - siveter.da.j
+  - sutton.m.d
+  - rahman
 2017_nardin_lefebvre_fatka_nohejlová_kašiča_šinágl_szabad:
   title: Evolutionary implications of a new transitional blastozoan echinoderm from the middle Cambrian of the Czech Republic
   journal: jofpaleo

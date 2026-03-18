@@ -6199,7 +6199,7 @@
       children:
       - taxon: cyathocystis
         children:
-        - taxon: plantini_schmidt_1880
+        - taxon: plautini_schmidt_1880
           type: true
       - taxon: cyathotheca
         children:
@@ -7884,11 +7884,11 @@
                 type: true
           - openTaxon: eocrinoidea-indeterminate-family-3_sprinkle_1973
             children:
-            - taxon: bockia
+            - taxon: bockia_hecker_1938
               moved:
                 taxon: springerocystidae
               children:
-              - taxon: neglecta_hecker_1938
+              - taxon: neglecta_hecker_1940
                 type: true
         - openTaxon: eocrinoidea-indeterminate-order-3_sprinkle_1973
           children:
@@ -9303,6 +9303,115 @@
     - taxon: astrocystitidae
       children:
       - taxon: astrocystites
+1981_bockelie:
+  taxonomies:
+  - taxon: eocrinoidea
+    children:
+    - taxon: bockiidae
+      synonyms:
+      - taxon: trachelocrinidae
+      children:
+      - taxon: bockia_hecker_1938
+        type: true
+        children:
+        - taxon: neglecta_hecker_1940
+          type: true
+        - taxon: mirabilis_bockelie_1981
+          new: true
+          pages:
+          - [129, 132]
+          figures:
+          - page: 129
+            figure: 2
+          - page: 130
+            figure: 3
+          - page: 131
+            figure: 4
+        - taxon: grava_bockelie_1981
+          new: true
+          pages:
+          - [132, 135]
+          figures:
+          - page: 133
+            figure: 5
+          - page: 134
+            figure: 6
+          - page: 135
+            figures:
+            - [7A, 7D]
+        - taxon: heintzi_bockelie_1981
+          new: true
+          pages:
+          - [135, 138]
+          figures:
+          - page: 135
+            figure: 7E
+          - page: 136
+            figure: 8
+          synonyms:
+          - openTaxon: caryocystis-sp_størmer_1953
+            auth: [Størmer]
+            year: 1953
+            page: 64
+            parents:
+            - taxon: caryocystis
+        - openTaxon: bockia-sp-a_bockelie_1981
+          page: 138
+          figures:
+          - page: 140
+            figures:
+            - [11F, 11G]
+      - taxon: trachelocrinus
+      removed:
+      - taxon: balanticystis
+    - taxon: cryptocrinitidae
+      children:
+      - taxon: cryptocrinites
+        children:
+        - taxon: laevis_pander_1830
+          type: true
+          synonyms:
+          - parents:
+            - taxon: echinosphaerites
+          figures:
+          - page: 139
+            figures:
+            - [10B, 10E]
+          - page: 140
+            figure: 11K
+        - taxon: similis_bockelie_1981
+          provisional: true
+          new: true
+          pages:
+          - [139, 141]
+          figures:
+          - page: 139
+            figure: 10A
+          - page: 140
+            figures:
+            - 11H
+            - 11J
+    - taxon: rhipidocystidae
+      children:
+      - taxon: rhipidocystis
+        children:
+        - taxon: gigas_jaekel_1901
+          type: true
+        - taxon: norvegica_bockelie_1981
+          new: true
+          pages:
+          - [142, 147]
+          figures:
+          - page: 140
+            figures:
+            - [11A, 11F]
+          - page: 143
+            figures:
+            - [12A, 12C]
+            - 12H
+          - page: 144
+            figures:
+            - [13A, 13D]
 1981_derstler:
   phylogenies:
   - treeType: diagram
@@ -11157,13 +11266,16 @@
         children:
         - taxon: bockiidae
           children:
-          - taxon: bockia
+          - taxon: bockia_hecker_1938
             children:
-            - taxon: neglecta_hecker_1938
+            - taxon: neglecta_hecker_1940
               type: true
+              year: 1938
+              notes: Year appears wrong?  1940?
               synonyms:
-              - taxon: neglecta_hecker_1938
+              - taxon: neglecta_hecker_1940
                 auth: [Hecker]
+                notes: Year appears wrong?  1940?
                 year: 1938
                 page: 423
             - taxon: elpasoensis_sprinkle_wahlman_1994
@@ -11542,7 +11654,7 @@
               is the same as generic diagnosis above.
       - taxon: bockiidae
         children:
-        - taxon: bockia
+        - taxon: bockia_hecker_1938
     - taxon: gogiida
       children:
       - openTaxon: gogiida-indeterminate-family-1_sumrall_sprinkle_guensburg_1997
@@ -12986,7 +13098,7 @@
       - openTaxon:
           edrioasteroidea-family-uncertain_zhao.y.l_sumrall_parsley_peng.j_2010
         children:
-        - taxon: kailidiscus
+        - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
           new: true
           children:
           - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
@@ -13135,7 +13247,7 @@
       children:
       - taxon: cambraster
       - children:
-        - taxon: kailidiscus
+        - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
         - children:
           - taxon: edrioaster
           - taxon: isorophida
@@ -13163,6 +13275,73 @@
                   - children:
                     - taxon: anedriophus
                     - taxon: isorophusella
+2012_doweld:
+  taxonomies:
+  - taxon: blastozoa
+    children:
+    - taxon: eocrinoidea
+      children:
+      - taxon: trachelocrinida
+        children:
+        - taxon: heckerocrinidae
+          new: true
+          synonyms:
+          - taxon: bockiidae
+          children:
+          - taxon: heckerocrinus
+            new: true
+            synonyms:
+            - taxon: bockia_hecker_1938
+              year: 1940
+              notes: Reason for erroneous year unclear.
+              parents:
+              - taxon: bockiidae
+            children:
+            - taxon: neglectus_hecker_1940
+              type: true
+              synonyms:
+              - taxon: neglecta_hecker_1940
+                type: true
+                parents:
+                - taxon: bockia_hecker_1938
+                - taxon: bockiidae
+            - taxon: cucumis_hecker_1940
+              synonyms:
+              - parents:
+                - taxon: bockia_hecker_1938
+                - taxon: bockiidae
+            - taxon: elpasoensis_sprinkle_wahlman_1994
+              synonyms:
+              - parents:
+                - taxon: bockia_hecker_1938
+                - taxon: bockiidae
+            - taxon: gravus_bockelie_1981
+              synonyms:
+              - taxon: grava_bockelie_1981
+                parents:
+                - taxon: bockia_hecker_1938
+                - taxon: bockiidae
+            - taxon: heintzi_bockelie_1981
+              synonyms:
+              - parents:
+                - taxon: bockia_hecker_1938
+                - taxon: bockiidae
+            - taxon: laevis_hecker_1940
+              synonyms:
+              - parents:
+                - taxon: bockia_hecker_1938
+                - taxon: bockiidae
+            - taxon: mirabilis_bockelie_1981
+              synonyms:
+              - parents:
+                - taxon: bockia_hecker_1938
+                - taxon: bockiidae
+            - taxon: sculptus_hecker_1940
+              synonyms:
+              - taxon: sculpta_hecker_1940
+                parents:
+                - taxon: bockia_hecker_1938
+                - taxon: bockiidae
 2012_zamora_smith.a.b:
   taxonomies:
   - taxon: echinodermata
@@ -13384,7 +13563,7 @@
     methodology: strict consensus of two most parsimonious trees
     tree:
       children:
-      - taxon: kailidiscus
+      - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
       - children:
         - children:
           - taxon: paredriophus
@@ -13403,7 +13582,7 @@
       Argodiscus as sister taxa
     tree:
       children:
-      - taxon: kailidiscus
+      - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
       - children:
         - children:
           - taxon: paredriophus
@@ -13438,7 +13617,7 @@
           - taxon: edrioaster
           - children:
             - children:
-              - taxon: kailidiscus
+              - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
               - taxon: argodiscus
             - children:
               - taxon: hadrodiscus
@@ -13589,6 +13768,24 @@
             type: true
           - openTaxon: ubaghsicystis-sp_sumrall_zamora_2015
             new: true
+2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman:
+  taxonomies:
+  - taxon: echinodermata
+    children:
+    - taxon: edrioasteroidea
+      children:
+      - taxon: edrioasterida
+        children:
+        - taxon: edrioblastoidina
+          children:
+          - taxon: rhenopyrgidae
+            children:
+            - taxon: heropyrgus
+              new: true
+              children:
+              - taxon: disterminus_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman_2017
+                type: true
+                new: true
 2017_nardin_lefebvre_fatka_nohejlová_kašiča_šinágl_szabad:
   taxonomies:
   - taxon: blastozoa
@@ -13853,7 +14050,7 @@
   - taxon: hybocrinus
     children:
     - taxon: nitidus_sinclair_1945
-  - taxon: kailidiscus
+  - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
     children:
     - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
   - taxon: kinzercystis
@@ -13967,7 +14164,7 @@
       children:
       - taxon: stromatocystites
         outgroup: true
-      - taxon: kailidiscus
+      - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
       - children:
         - taxon: camptostroma
         - taxon: ceratocystis
@@ -14145,7 +14342,7 @@
                   - QMF59653
           - openTaxon: stromatocystitida-incertae-sedis
             children:
-            - taxon: kailidiscus
+            - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
               children:
               - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
                 type: true
@@ -14214,14 +14411,14 @@
   - taxon: parsleya
     new: true
     synonyms:
-    - taxon: kailidiscus
+    - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
     children:
     - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
       type: true
       synonyms:
       - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
         parents:
-        - taxon: kailidiscus
+        - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
 2022_zamora_rahman_sumrall_gibson_thompson:
   taxonomies:
   - taxon: echinodermata
@@ -14258,7 +14455,7 @@
           - taxon: gogia
           - taxon: stromatocystites
           - children:
-            - taxon: kailidiscus
+            - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
             - taxon: yorkicystis
             - children:
               - taxon: argodiscus
@@ -14274,7 +14471,7 @@
           - bracket: edrioasteroidea
             children:
             - children:
-              - taxon: kailidiscus
+              - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
               - taxon: yorkicystis
             - children:
               - taxon: argodiscus
