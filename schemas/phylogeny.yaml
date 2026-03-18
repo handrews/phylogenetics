@@ -504,6 +504,10 @@ $defs:
         type: array
         items:
           $ref: tree
+      removed:
+        type: array
+        items:
+          $ref: tree
       non:
         type: array
         items:

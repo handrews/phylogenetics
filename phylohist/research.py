@@ -34,8 +34,12 @@ class Author:
     givens = author_data['given'].split(' ')
     if len(givens) == 1:
       givens = givens[0].split('-')
-    with_initials = \
-      f'{family_only}.' + '.'.join([name[0].lower() for name in givens])
+    if family_only == 'siveter':
+      with_initials = \
+        f'{family_only}.{givens[0][0:2].lower()}.{givens[1][0].lower()}'
+    else:
+      with_initials = \
+        f'{family_only}.' + '.'.join([name[0].lower() for name in givens])
 
     expected_set = {family_only, with_initials}
     if author_key not in expected_set:

@@ -216,7 +216,10 @@ class Taxon:
         logger.error(f'Taxon {taxon_key} alt spelling of unknown {alt_key}')
       self._alt = alt
       self._rank = alt.rank
-      self._authority = alt.authority
+      if 'auth' in self._data or 'authority' in self._data:
+        self._authority = Authority(taxon_data)
+      else:
+        self._authority = alt.authority
       for field in ('homonym', 'originalParent', 'needsQualification'):
         if field in alt._data:
           self._data[field] = alt._data[field]
@@ -239,7 +242,10 @@ class Taxon:
         self._name = self._data['name']
       else:
         self._name = alt.name
-      self._authority = alt.authority
+      if 'auth' in self._data or 'authority' in self._data:
+        self._authority = Authority(taxon_data)
+      else:
+        self._authority = alt.authority
 
     else:
       self._alt = None
