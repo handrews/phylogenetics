@@ -78,6 +78,9 @@ bowsher:
 brett:
   family: Brett
   given: Carlton E.
+briggs.d.e.g:
+  family: Briggs
+  given: Derek E. G.
 bruguière:
   family: Bruguière
   given: Jean Guillaume
@@ -706,6 +709,12 @@ selden:
 šinágl:
   family: Šinágl
   given: Miroslav
+siveter.da.j:
+  family: Siveter
+  given: David J.
+siveter.de.j:
+  family: Siveter
+  given: Derek J.
 smith.a.b:
   family: Smith
   given: Andrew B.
@@ -734,6 +743,9 @@ sumrall:
 sun.z.x:
   family: Sun
   given: Zhi-Xin
+sutton.m.d:
+  family: Sutton
+  given: Mark D.
 szabad:
   family: Szabad
   given: Michal
