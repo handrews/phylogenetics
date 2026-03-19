@@ -5,19 +5,37 @@
 | authority = Sprinkle & Collins 2006
 | type_species = Gogia? radiata (pars)
 | type_species_authority = Sprinkle 1973
-| subdivision_ref = <ref>{{harvnb|Sprinkle|Collins|2006}}</ref>
+| subdivision_ref = <ref>{{harvnb|Sprinkle|Parsley|Zhao|Peng|2011|p=254}}</ref>
 | subdivision = * ''Lyracystis radiata'' {{small|(Sprinkle 1973)}}
 * ''Lyracystis reesei'' {{small|Sprinklez&nbsp;&amp;&nbsp;Collins 2006}}
 }}
 
-'''''Lyracystis''''' is an [[extinct]] [[genus]] of [[Cambrian]] [[eocrinoid]] [[echinoderm]].  The type species, ''L. radiata'', is known from several specimens from the [[Burgess Shale]] of [[British Columbia]], while ''L. reesei'' is known from a single specimen from the slightly younger [[Spence Shale]] of [[Utah]].  It is the type species of the [[Gogiida|gogiid]] family [[Lyracystidae]].
+'''''Lyracystis''''' is an [[extinct]] [[genus]] of [[Cambrian]] [[eocrinoid]] [[echinoderm]] and the type genus of the [[Gogiida|gogiid]] family [[Lyracystidae]].<ref>{{harvnb|Sprinkle|Collins|2006|p=311}}</ref>  The type species, ''L. radiata'', is known from several specimens from the [[Burgess Shale]] of [[British Columbia]],<ref>{{harvnb|Sprinkle|Collins|2006|pp=313–315}}</ref> while ''L. reesei'' is known from a single specimen from the slightly younger [[Spence Shale]] of [[Utah]].<ref>{{harvnb|Sprinkle|Collins|2006|pp=315–317}}</ref>
+
+==Description==
+
+''Lyracystis radiata'' is among the largest echinoderms known from the Middle Cambrian.  The multiplated stalk of ''Lyracystis'' can reach over 11 cm in length, making it one of the highest-level suspension-feeding echinoderms of its time.<ref>{{harvnb|Sprinkle|Collins|2006|pp=314–315}}</ref> Aside from the length, most stalk and theca featuers, such as epispires for respiration, are typical of of Early to Middle Cambrian eocrinoids.<ref name=SCp306>{{harvnb|Sprinkle|Collins|2006|p=306}}</ref>
+
+The feeding appendages of ''Lyracystis'' are its most dramatic feature, with three ambulacra (A, shared BC, and shared DE) extending to the edge of the oral surface of the theca before branching into two exothecal trunks forming a heart- or lyre-shaped structure with endotomously branching brachioles growing vertically from the trunks.  Unlike in most echinoderms where the BC ambulacrum divides into B and C, and the DE into D and E, resulting in a total of five ambulacra, the A ambulacrum also divides, producing tri-radial ambulacral symmetry with three pairs of exothecal trunks.<ref>{{harvnb|Sprinkle|Parsley|Zhao|Peng|2011|pp=251–253}}</ref>
+
+Notably, these appendages are not considered "arms" in the sense of [[crinoid]] arms, as they are not homologous to crinoid appendages.<ref name=SPZPp253>{{harvnb|Sprinkle|Parsley|Zhao|Peng|2011|p=253}}</ref>  A comparison of ''Lyracystis'' appendages to crinoid arms noted that the morphology of contemporary crinoid arms was quite different, with only much later (Ordovician) taxa having superficial similarities to ''Lyracystis''.<ref name=SCp306 />
+
+==Classification==
+
+''Lyracystis'' is a member of the [[Lyracystidae]], a family defined by the long stalks and distinctive feeding appendage morphology shared by ''Lyracystis'' and the family's only other member, ''Balangiocystis''.<ref name=SPZPp253 />
+
+It is assigned to the order [[Gogiida]] based on the presence of epispires.<ref>{{harvnb|Sprinkle|Parsley|Zhao|Peng|2011|p=250}}</ref> A 2017 phylogenetic analysis recovered ''Lyracystis'' as more basal within the Gogiida than the families [[Eocrinidae]] and [[Lichenoididae]].<ref name=nardin2017>{{harvnb|Nardin|Lefebvre|Fatka|Nohejlová|2017|page=680}}</ref>
+
+''Lyracystis radiata'' was originally identified as ''[[Gogia]]? radiata'' as the first fossils collected included only the theca and stalk, whith the feeding appendages collected separately and described as the "Burgess Shale 'Arms.'"  The discovery of ''Lyracystis reesei'' confirmed that the "arms" matched the theca and stalk of the type specimen of ''Gogia? radiata'', leading to its reassignment to ''Lyracystis.''  This connection was further confirmed by the discovery of additional ''L. radiata'' specimens.<ref>{{harvnb|Sprinkle|Collins|2006|p=304}}</ref> Some other ''Gogia? radiata'' specimens were determined to be an actual ''Gogia'' species, now named ''G. stephenensis''.<ref>{{harvnb|Sprinkle|Collins|2006|p=303}}</ref>
 
 ==References==
 {{Reflist}}
 
 ===Works cited===
 {{refbegin}}
-* {{Cite journal| doi = 10.1139/E05-107| title = New eocrinoids from the Burgess Shale, southern British Columbia, Canada, and the Spence Shale, northern Utah, USA| year = 2006| last1 = Sprinkle | first1 = J.| last2 = Collins | first2 = D.| journal = Canadian Journal of Earth Sciences| volume = 43| pages = 303–322|bibcode = 2006CaJES..43..303S }}
+* {{cite journal|last1=Nardin |first1=Elise |last2=Lefebvre |first2=Bertrand |last3=Fatka |first3=Oldřich |last4=Nohejlová |first4=Martina |last5=Kašička |first5=Libor |last6=Šinágl |first6=Miroslav |last7=Szabad |first7=Michal |title=Evolutionary implications of a new transitional blastozoan echinoderm from the middle Cambrian of the Czech Republic |journal=Journal of Paleontology |volume=91 |number=4 |year=2017 |pages=672–684|doi=10.1017/jpa.2016.157 |bibcode=2017JPal...91..672N }}
+* {{cite journal|last1=Sprinkle |first1=J. |last2=Collins |first2=D. |year=2006 |title=New eocrinoids from the Burgess Shale, southern British Columbia, Canada, and the Spence Shale, northern Utah, USA |journal=Canadian Journal of Earth Sciences |volume=43 |pages=303–322|bibcode=2006CaJES..43..303S |doi=10.1139/E05-107}}
+* {{cite journal|last1=Sprinkle |first1=James |last2=Parsley |first2=Ronald L. |last3=Zhao |first3=Yuanlong |last4=Peng |first4=Jin |year=2011 |title=Revision of Lyracystid Eocrinoids from the Middle Cambrian of South China and western Laurentia |journal=Journal of Paleontology |volume=85 |number=2 |pages=250–255 |doi=10.1666/10-072.1}}
 {{refend}}
 
 == External links ==
