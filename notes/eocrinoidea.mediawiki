@@ -14,31 +14,42 @@
 ** Or Gogiida
 *** Fm Lyracystidae
 **** gn ''Lyracystis''
-***** sp ''L. radiata'' (=''Gogia? radiata'' (''pars''))
+***** sp ''L. radiata''
+****** = ''Gogia? radiata'' (''pars'')
 ***** sp ''L. reesei''
 **** gn ''Balangicystis''
 ***** sp ''B. rotundus''
 *** Fm Eocrinidae
-**** gn ''Gogia'' (=''Eocrinus'')
+**** gn ''Gogia''
+***** = ''Eocrinus''
 ***** sp ''G. prolifica''
 ***** sp ''G. gondi''
-***** sp ''G. granulosa'' (=''Eocrinus longidactylus'' (''pars''))
+***** sp ''G. granulosa''
+****** sp = ''Eocrinus longidactylus'' (''pars'')
 ***** sp ''G. guntheri''
 ***** sp ''G. hobbsi''
-***** sp ''G. kitchnerensis'' (=''G. prolifica'' (''pars''); ''Eocrinus''? n. sp.)
-***** sp ''G. longidactylus'' (=''Eocystites?? longidactylus''; ''Eocrinus longidactylus'')
-***** sp ''G. multibrachiatus'' (=''Eocrinus multibrachiatus'')
+***** sp ''G. kitchnerensis''
+****** = ''G. prolifica'' (''pars'')
+****** = ''Eocrinus''? n. sp.
+***** sp ''G. longidactylus''
+****** = ''Eocystites?? longidactylus''
+****** = ''Eocrinus longidactylus''
+***** sp ''G. multibrachiatus''
+****** = ''Eocrinus multibrachiatus''
 ***** sp ''G. ojenai''
 ***** sp ''G. palmeri''
 ***** sp ''G. parsleyi''
 ***** sp ''G. spiralis''
-***** sp ''G. stephenensis'' (=''G.? radiata'' (''pars''))
+***** sp ''G. stephenensis''
+****** = ''G.? radiata'' (''pars'')
 **** gn ''Acanthocystites''
 ***** sp ''A. briareus''
 **** gn ''Alanisicystis''
-***** sp ''A. andalusiae'' (=''Gogia (Alanisicystis) andalusiae'')
+***** sp ''A. andalusiae''
+****** = ''Gogia (Alanisicystis) andalusiae''
 **** gn ''Akadocrinus''
-***** sp ''A. jani'' (=''A. nuntius'')
+***** sp ''A. jani'' 
+****** = ''A. nuntius''
 ***** sp ''A. knizeki''
 **** gn ''Globoeocrinus''
 ***** sp ''G. globulus''
@@ -46,8 +57,16 @@
 ***** sp ''G. yui''
 **** gn ''Kunmingeocrinus''
 ***** sp ''K. cupuliformis''
-**** gn ''Sinoeocrinus'' (=''Curteocrinus''; ''Paragogia'')
-***** sp ''S. lui'' (=''S. curtobrachiolis''; ''S. lepidus''; ''S. longus'' ''S. minus''; ''P. globosa''; ''C. guizhouensis'')
+**** gn ''Sinoeocrinus''
+***** = ''Curteocrinus''
+***** = ''Paragogia''
+***** sp ''S. lui''
+****** = ''S. curtobrachiolis''
+****** = ''S. lepidus''
+****** = ''S. longus''
+****** = ''S. minus''
+****** = ''Paragogia globosa''
+****** = ''Curteocrinus guizhouensis'')
 *** Fm Turbanicystidae
 **** gn ''Turbanicystis''
 ***** sp ''T. inflatus''
@@ -68,7 +87,9 @@
 ** Or Ascocystitida
 *** Fm Ascocystitidae
 **** gn ''Ascocystites''
-***** sp ''A. drabowensis'' (=''A. micraster''; ''A. barrandei'')
+***** sp ''A. drabowensis''
+****** = ''A. micraster''
+****** = ''A. barrandei''
 ***** sp ''A. cuneiformis''
 *** Fm Cambrocrinidae
 **** gn ''Cambrocrinus''
@@ -95,9 +116,12 @@
 ***** sp ''T. resseri''
 **** gn ''Tatonkacystis''
 ***** sp ''T. codyensis''
-*** Fm Heckerocrinidae (=Bockiidae)
-**** gn ''Heckerocrinus'' (=''Bockia'')
-***** sp ''H. neglectus'' (=''B. neglecta'')
+*** Fm Heckerocrinidae
+**** = Bockiidae
+**** gn ''Heckerocrinus''
+***** = ''Bockia''
+***** sp ''H. neglectus''
+****** = ''B. neglecta''
 ***** sp ''H. cucumis''
 ***** sp ''H. elpasoensis''
 ***** sp ''H. grava''
@@ -106,37 +130,70 @@
 ***** sp ''H. mirabilis''
 ***** sp ''H. sculptus''
 ** Or Digitata [lateral (BC-DE) flattening]
-*** Fm Rhipidocystidae
-**** gn ''Rhipidocystis''
-***** sp 
+*** Fm Rhipidocystidae {{harvnb|Jaekel|1901}}
+**** gn ''Rhipidocystis'' {{harvnb|Jaekel|1901}}
+***** sp ''R. gigas'' {{harvnb|Jaekel|1901}}
 ** ''incertae sedis'' [anterior-posterior (A-CD) flattening]
-*** gn ''Durhamicystis''
-**** sp ''D. americana''
-*** gn ''Neorhipidocystis''
-*** gn ''Petalocystites''
+*** gn ''Durhamicystis'' {{harvnb|Zamora|Sprinkle|Sumrall|2020}}
+**** sp ''D. americana'' {{harvnb|Zamora|Sprinkle|Sumrall|2020}}
+*** gn ''Neorhipidocystis'' {{harvnb|Rozhnov|1989}}
+**** sp ''norvegica'' ({{harvnb|Bockelie|1981}})
+*** gn ''Petalocystites'' {{harvnb|Sprinkle|1973}}
+**** sp ''P. ikecanensis'' {{harvnb|Sprinkle|1973}}
 *** gn ''Haimacystis'' {{harvnb|Sumrall|Sprinkle|Guensburg|2001}}
 **** sp ''H. rozhnovi'' {{harvnb|Sumrall|Sprinkle|Guensburg|2001}}
+*** Fm Lingulocystidae {{harvnb|Ubaghs|1960}}
+**** gn ''Lingulocystis'' {{harvnb|Thoral|1935}}
+***** sp ''L. elongata'' {{harvnb|Thoral|1935}}
+***** sp ''L. deani'' {{harvnb|Ubaghs|1994}}
+***** sp ''L. boliviensis'' {{harvnb|Sprinkle|1973}}
+** ''incertae sedis'' [plane of flattening unclear]
+*** gn ''Cardiocystites'' {{harvnb|Barrande|1887}}
+**** sp ''C. bohemicus'' {{harvnb|Barrande|1887}}
+**** sp ''C. pleuricostatus'' {{harvnb|Dean|Smith }}
 ** ''incertae sedis'' [appendages]
 *** gn ''Llanocystis'' {{harvnb|Zamora|Sumrall|Sprinkle|2015}}
 **** sp ''L. wilbernsensis'' {{harvnb|Zamora|Sumrall|Sprinkle|2015}}
-*** gn ''Ubaghsicystis''
-**** sp ''U. segurae''
+*** gn ''Ubaghsicystis'' {{harvnb|Gil Cid|Dominguez Alonso|2022}}
+**** sp ''U. segurae'' {{harvnb|Gil Cid|Dominguez Alonso|2022}}
+** ''incertae sedis'' [Eocrinidae?]
+*** gn ''Archaeocystites'' {{harvnb|Barrande|1887}}
+**** sp ''A. medusa'' {{harvnb|Barrande|1887}}
 ** ''incertae sedis'' [???]
-*** gn ''Luhocrinus''
-**** sp ''L. monicae''
-*** gn ''Marjumicystis''
-**** sp ''M. mettae''
+*** gn ''Balanticystis''
+**** sp ''B. regnelli'' {{harvnb|Chauvel|1966}}
+*** gn ''Cigara'' {{harvnb|Barrande|1887}}
+**** sp ''C. dusli'' {{harvnb|Barrande|1887}}
+*** gn ''Gadovocrinus'' {{harvnb|Rozhnov|1997}}
+**** sp ''G. ovalis'' {{harvnb|Rozhnov|1997}}
+*** gn ''Hexedriocystis'' {{harvnb|Sumrall|Zamora|2011}}
+**** sp ''H. inexpectans'' {{harvnb|Sumrall|Zamora|2011}}
+**** sp ''H. mimus'' {{harvnb|Sumrall|Zamora|2011}}
+*** gn ''Luhocrinus'' {{harvnb|Prokop|Fatka|1985}}
+**** sp ''L. monicae'' {{harvnb|Prokop|Fatka|1985}}
+*** gn ''Marjumicystis'' {{harvnb|Ubaghs|Robison|1988}}
+**** sp ''M. mettae'' {{harvnb|Ubaghs|Robison|1988}}
+*** gn ''Polyptychella'' {{harvnb|Jaekel|1918}}
+**** sp ''P. esthona'' {{harvnb|Jaekel|1918}}
+*** Fm Ampherocystidae {{harvnb|Frest|2005}}
+**** gn ''Ampherocystis'' {{harvnb|Frest|2005}}
+***** sp ''A. concentricus'' {{harvnb|Frest|2005}}
 
-*** gn ''Cardiocystites'' (plane of flattening unclear)
-**** sp ''C. bohemicus'' {{harvnb|Barrande }}
-**** sp ''C. pleuricostatus'' {{harvnb|Dean|Smith }}
-*** gn ''Lingulocystis''
-**** sp ''L. elongata'' {{harvnb|Ubaghs|1960}}
-**** sp ''L. boliviensis'' {{harvnb|Sprinkle|1973}}
+
 ** Fm Rhipidocystidae 
-*** gn ''Rhipidocystis'' Jaekel
-*** gn ''Batherocystis'' Bassler
-*** gn ''Mandalocystis'' Lewis et al.
-*** gn ''Patalocystites'' Sprinkle
-*** gn ''Neorhipidocystis'' Rozhnov
+*** gn ''Batherocystis'' {{harvnb|Bassler|1950}}
+*** gn ''Mandalocystis'' {{harvnb|Lewis|Sprinkle|Bailey|Moffit|Parsley|1987}}
 
+** Fm Cryptocrinitidae
+*** gn ''Paracryptocrinus''
+**** sp ''P. bockeliei'' {{harvnb|Rozhnov|Fedorov|2001}}
+**** sp ''P. ceraus'' ({{harvnb|Buch|1840}})
+
+*** gn ''Bolboporites'' {{harvnb|Pander|1830}}
+**** sp ''B. uncinata'' {{harvnb|Pander|1830}}
+**** sp ''B. mitralis'' {{harvnb|Pander|1830}}
+**** sp ''B. americanus'' {{harvnb|Billings|1859}}
+
+''Mimocystites'' == ''Macrocystella''
+''Pilocystites'' == ''Tuzoia'' fragment (Arthropod)
+''Lapillocystites'' == Edrioasteroid ''Stromatocystites''
