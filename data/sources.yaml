@@ -3588,6 +3588,28 @@ inprep_sprinkle_strimple:
   - zamora
   identifiers:
     doi: 10.1017/jpa.2014.54
+2017_allaire_lefebvre_nardin_martin.e.l.o_vaucher_escarguel:
+  title: Morphological disparity and systematic revision of the eocrinoid genus Rhopalocystis (Echinodermata, Blastozoa) from the Lower Ordovician of the central Anti-Atlas (Morocco)
+  journal: jofpaleo
+  volume: 91
+  number: 4
+  pages:
+  - 685
+  - 714
+  pubDate:
+    year: 2017
+  processDates:
+    accepted: 2017-02-21
+  authors:
+  - allaire
+  - lefebvre
+  - nardin
+  - martin.e.l.o
+  - vaucher
+  - escarguel
+  identifiers:
+    doi: 10.1017/jpa.2017.6
+    jstor: 48572861
 2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman:
   title: An edrioasteroid from the Silurian Herefordshire Lagerstätte of England reveals the nature of the water vascular system in an extinct echinoderm
   journal: procrsocb

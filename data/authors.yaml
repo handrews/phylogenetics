@@ -1,3 +1,6 @@
+allaire:
+  family: Allaire
+  given: Ninon
 álvaro:
   family: Álvaro
   given: J. Javier
@@ -213,6 +216,9 @@ eichwald:
   given: Karl
   birth: 1795
   dealth: 1876
+escarguel:
+  family: Escarguel
+  given: Gilles
 exline:
   family: Exline
   given: Harriet
@@ -492,6 +498,9 @@ makhlouf:
 mantell:
   family: Mantell
   given: Gideon
+martin.e.l.o:
+  family: Martin
+  given: Emmanuel L. O.
 martin.w:
   family: Martin
   given: William
@@ -775,6 +784,9 @@ vanuxem:
   given: Lardner
   birth: 1792
   death: 1848
+vaucher:
+  family: Vaucher
+  given: Romain
 vizcaïno:
   family: Vizcaïno
   given: D.
