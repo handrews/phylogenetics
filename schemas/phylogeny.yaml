@@ -589,6 +589,14 @@ $defs:
             type: object
             additionalProperties:
               type: [number, string]
+  multiRanges:
+    type: array
+    items:
+      type: [integer, string, array]
+      minItems: 2
+      maxItems: 2
+      items:
+        type: [integer, string]
   figure:
     type: object
     properties:
@@ -598,14 +606,14 @@ $defs:
         type: [integer, string]
       page:
         type: [integer, string]
+      figure:
+        type: [integer, string]
+      textFigure:
+        type: [integer, string]
       figures:
-        type: array
-        items:
-          type: [integer, string, array]
-          minItems: 2
-          maxItems: 2
-          items:
-            type: [integer, string]
+        $ref: "#/$defs/multiRanges"
+      textFigures:
+        $ref: "#/$defs/multiRanges"
       location:
         type: [integer, string]
       collectedFrom:

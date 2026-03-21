@@ -826,8 +826,8 @@ ascocystites-sp_young.t.p_donovan.s.k_1993:
 ascocystitida:
   name: Ascocystitida
   rank: Order
-  auth: [broadhead]
-  year: 1982
+  authority:
+    source: 1982_broadhead
 ascocystitidae:
   name: Ascocystitidae
   rank: Family
@@ -4584,6 +4584,10 @@ fortuitus_guensburg_sprinkle_2003:
   name: fortuitus
   authority:
     source: 2003_guensburg_sprinkle
+fraga_chauvel_1971:
+  name: fraga
+  auth: [Chauvel]
+  year: 1971
 fragilis_abildgaard_1789:
   name: fragilis
   auth: [Abildgaard]
@@ -5083,6 +5087,10 @@ grandis_bassler_1935:
   name: grandis
   authority:
     source: 1935_bassler
+grandis_chauvel_1971:
+  name: grandis
+  auth: [Chauvel]
+  year: 1971
 granulatus_hall_1871:
   name: granulatus
   auth: [Hall]
@@ -5245,6 +5253,10 @@ haustellata:
   rank: Class
   authority:
     source: 1821_macleay
+havliceki_chauvel_1978:
+  name: havliceki
+  auth: [Chauvel]
+  year: 1978
 heckericystis:
   name: Heckericystis
   authority:
@@ -6422,6 +6434,10 @@ legrandensis_miller.s.a_gurley_1894:
   name: legrandensis
   auth: [miller.s.a, gurley]
   year: 1894
+lehmani_chauvel_régnault_1986:
+  name: lehmani
+  auth: [Chauvel, Régnault]
+  year: 1986
 lenticularis_lamarck_1816:
   name: lenticularis
   authority:
@@ -9599,6 +9615,31 @@ rhopalocystis:
   name: Rhopalocystis
   auth: [ubaghs]
   year: 1963
+rhopalocystis-sp_chauvel_1971:
+  name: null
+  rank: species
+  auth: [Chauvel]
+  year: 1971
+rhopalocystis-sp-a_chauvel_1978:
+  name: null
+  rank: species
+  auth: [Chauvel]
+  year: 1978
+rhopalocystis-sp-b_chauvel_1978:
+  name: null
+  rank: species
+  auth: [Chauvel]
+  year: 1978
+rhopalocystis-sp-c_chauvel_1978:
+  name: null
+  rank: species
+  auth: [Chauvel]
+  year: 1978
+rhopalocystis-sp-c_chauvel_régnault_1986:
+  name: null
+  rank: species
+  auth: [Chauvel, Régnault]
+  year: 1986
 richmondensis_bassler_1936:
   name: richmondensis
   authority:
@@ -11755,6 +11796,10 @@ yui_zhao.y.l_parsley_peng.j_2007:
   authority:
     source: 2007_zhao.y.l_parsley_peng.j
 ###################### Z
+zagoraensis_chauvel_1971:
+  name: zagoraensis
+  auth: [Chauvel]
+  year: 1971
 zoantha:
   name: Zoantha
   authority:

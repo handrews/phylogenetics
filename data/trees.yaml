@@ -13768,6 +13768,104 @@
             type: true
           - openTaxon: ubaghsicystis-sp_sumrall_zamora_2015
             new: true
+2017_allaire_lefebvre_nardin_martin.e.l.o_vaucher_escarguel:
+  taxonomies:
+  - taxon: eocrinoidea
+    children:
+    - taxon: ascocystitida
+      authority:
+        source: 2005_frest
+      notes: Authority incorrect; cited source correctly cites Broadhead 1982
+      children:
+      - taxon: rhopalocystidae
+        authority:
+          source: 2005_frest
+        notes: Authority incorrect; cited source does not mention the family.
+        children:
+        - taxon: rhopalocystis
+          page: 697
+          children:
+          - taxon: destombesi_ubaghs_1963
+            type: true
+            pages:
+            - [697, 701]
+            figures:
+            - page: 698
+              figure: 7
+            - page: 700
+              figure: 8
+          - taxon: fraga_chauvel_1971
+            pages:
+            - [701, 703]
+            figures:
+            - page: 702
+              figures:
+              - ["9.1", "9.4"]
+            - page: 703
+              figures:
+              - 2
+              - 4
+            synonyms:
+            - openTaxon: rhopalocystis-sp_chauvel_1971
+              page: 44
+              figures:
+              - plate: 1
+                figures:
+                - [9, 10]
+            - openTaxon: rhopalocystis-sp-a_chauvel_1978
+              page: 54
+            - openTaxon: rhopalocystis-sp-b_chauvel_1978
+              page: 54
+              figures:
+              - textFigure: 11q
+          - taxon: grandis_chauvel_1971
+            pages:
+            - [703, 704]
+            figures:
+            - page: 702
+              figures:
+              - ["9.5", "9.7"]
+            - page: 703
+              figures:
+              - "10.1"
+              - ["10.3", "10.5"]
+          - taxon: havliceki_chauvel_1978
+            pages:
+            - [704, 707]
+            figures:
+            - page: 705
+              figure: 11
+            - page: 706
+              figure: 12
+            - page: 708
+              figure: 13
+            synonyms:
+            - openTaxon: rhopalocystis-sp-c_chauvel_1978
+              page: 55
+              figures:
+              - plate: 5
+                figure: 4
+              - textFigures:
+                - [11o, 11p]
+            - openTaxon: rhopalocystis-sp-c_chauvel_régnault_1986
+              page: 870
+          - taxon: zagoraensis_chauvel_1971
+            pages:
+            - [707, 712]
+            figures:
+            - page: 710
+              figure: 14
+            - page: 712
+              figure: 15
+            synonyms:
+            - taxon: lehmani_chauvel_régnault_1986
+              page: 866
+              figures:
+              - plate: 1
+                figures:
+                - [9, 10]
+              - textFigures:
+                - [3I, 3N]
 2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman:
   taxonomies:
   - taxon: echinodermata
@@ -14387,13 +14485,13 @@
             - taxon: guizhoueocrinus
             - taxon: globoeocrinus
         - taxon: ascocystitida
-          auth: [Frest]
-          year: 2005
+          authority:
+            source: 2005_frest
           notes: The Frest (2005) in references gives Broadhead (1982)
           children:
           - taxon: rhopalocystitidae
-            auth: [Frest]
-            year: 2005
+            authority:
+              source: 2005_frest
             notes: The Frest (2005) in references does not support this.
             children:
             - taxon: rhopalocystis
