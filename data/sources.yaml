@@ -2907,6 +2907,22 @@ inprep_sprinkle_strimple:
   - bonem
   identifiers:
     jstor: 4095122
+2007_hu.s.x_luo.h.l_hou.s.g_erdtmann:
+  title: Eocrinoid echinoderms from the Lower Cambrian Guanshan Fauna in Wuding, Yunnan, China
+  journal: chi-sci-bull
+  volume: 52
+  number: 5
+  pages:
+  - 717
+  - 719
+  pubDate:
+    year: 2007
+    month: 3
+  authors:
+  - hu.s.x
+  - luo.h.l
+  - hou.s.g
+  - erdtmann
 2007a_nardin:
   title: "New specimens of Lingulocystis Thoral, 1935 (Eocrinoidea, Blastozoa) from the Arenig (Lower Ordovician) of Montagne noire (southern France): Intraspecific morphological variability, stratigraphic, and palaeoecological implications"
   journal: annals
@@ -3588,6 +3604,28 @@ inprep_sprinkle_strimple:
   - zamora
   identifiers:
     doi: 10.1017/jpa.2014.54
+2015_yang.z.c_lin.j.p_zhang.y.p_wu.y.s_meng.x.y:
+  title: A new eocrinoid fauna (Cambrian Series 2) from Guizhou Province, South China
+  journal: palaeoworld
+  volume: 24
+  pages:
+  - 430
+  - 437
+  pubDate:
+    year: 2015
+  processDates:
+    received: 2014-08-02
+    revised: 2014-12-04
+    accepted: 2015-03-30
+    online: 2015-04-08
+  authors:
+  - yang.z.c
+  - lin.j.p
+  - zhang.y.p
+  - wu.y.s
+  - meng.x.y
+  identifiers:
+    doi: 10.1016/j.palwor.2015.03.007
 2017_allaire_lefebvre_nardin_martin.e.l.o_vaucher_escarguel:
   title: Morphological disparity and systematic revision of the eocrinoid genus Rhopalocystis (Echinodermata, Blastozoa) from the Lower Ordovician of the central Anti-Atlas (Morocco)
   journal: jofpaleo

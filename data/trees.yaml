@@ -12720,6 +12720,12 @@
               children:
               - taxon: graysoni_sumrall_sprinkle_bonem_2006
                 new: true
+2007_hu.s.x_luo.h.l_hou.s.g_erdtmann:
+  taxonomies:
+  - taxon: eocrinoidea
+    children:
+    - openTaxon: eocrinoidea-sp_hu.s.x_luo.h.l_hou.s.g_erdtmann_2007
+      new: true
 2007a_nardin:
   taxonomies:
   - taxon: blastozoa
@@ -12784,6 +12790,8 @@
       - taxon: rarus_luo.h.l_li.y_hu.s.x_fu.x.p_hou.s.g_liu.x.r_chen.l.z_li.j.f_pang.j.y_liu.q_2008
         type: true
         new: true
+        synonyms:
+        - openTaxon: eocrinoidea-sp_hu.s.x_luo.h.l_hou.s.g_erdtmann_2007
 2008_zhao.y.l_parsley_peng.j:
   taxonomies:
   - taxon: blastozoa
@@ -13768,6 +13776,30 @@
             type: true
           - openTaxon: ubaghsicystis-sp_sumrall_zamora_2015
             new: true
+2015_yang.z.c_lin.j.p_zhang.y.p_wu.y.s_meng.x.y:
+  taxonomies:
+  - taxon: blastozoa
+    children:
+    - taxon: eocrinoidea
+      children:
+      - taxon: gogiida
+        children:
+        - taxon: eocrinidae
+          children:
+          - taxon: globoeocrinus
+            children:
+            - taxon: globulus_zhao.y.l_parsley_peng.j_2008
+              type: true
+            - taxon: zhaoyuanlongensis_yang.z.c_lin.j.p_zhang.y.p_wu.y.s_meng.x.y_2015
+              new: true
+              page: 433
+              figures:
+              - page: 434
+                figure: 4
+              - page: 435
+                figure: 5
+              - page: 436
+                figure: 6
 2017_allaire_lefebvre_nardin_martin.e.l.o_vaucher_escarguel:
   taxonomies:
   - taxon: eocrinoidea

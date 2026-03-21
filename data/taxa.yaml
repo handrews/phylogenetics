@@ -4171,6 +4171,12 @@ eocrinoidea-family-uncertain_sumrall_zamora_2015:
   rank: Family
   authority:
     source: 2015_sumrall_zamora
+eocrinoidea-sp_hu.s.x_luo.h.l_hou.s.g_erdtmann_2007:
+  name: null
+  rank: species
+  authority:
+    source: 2007_hu.s.x_luo.h.l_hou.s.g_erdtmann
+  synonym: rarus_luo.h.l_li.y_hu.s.x_fu.x.p_hou.s.g_liu.x.r_chen.l.z_li.j.f_pang.j.y_liu.q_2008
 eocrinus:
   name: Eocrinus
   auth: [jaekel]
@@ -11800,6 +11806,10 @@ zagoraensis_chauvel_1971:
   name: zagoraensis
   auth: [Chauvel]
   year: 1971
+zhaoyuanlongensis_yang.z.c_lin.j.p_zhang.y.p_wu.y.s_meng.x.y_2015:
+  name: zhaoyuanlongensis
+  authority:
+    source: 2015_yang.z.c_lin.j.p_zhang.y.p_wu.y.s_meng.x.y
 zoantha:
   name: Zoantha
   authority:
