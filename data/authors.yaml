@@ -349,6 +349,9 @@ hall:
 harland:
   family: Harland
   given: W. B.
+haude:
+  family: Haude
+  given: R.
 heredia:
   family: Heredia
   given: S
@@ -679,6 +682,9 @@ regnéll:
   given: Gerhard
   birth: 1915
   death: 2002
+reich.m:
+  family: Reich
+  given: Mike
 reynolds:
   family: Reynolds
   given: A. B.

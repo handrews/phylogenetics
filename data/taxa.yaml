@@ -6605,6 +6605,15 @@ lindstroemi_regnéll_1945:
   name: lindstroemi
   auth: [regnéll]
   year: 1945
+linguaserra:
+  name: Linguaserra
+  authority:
+    source: 2004_reich.m_haude
+linguaserridae:
+  name: Linguaserridae
+  rank: Family
+  authority:
+    source: 2004_reich.m_haude
 linguatula_frölich_1789:
   name: Linguatula
   needsQualification: true
@@ -7768,6 +7777,11 @@ ophiocistioidea:
   rank: Class
   auth: [Sollas]
   year: 1899
+ophiocistioidea-unnamed-order_reich.m_2007:
+  name: null
+  rank: Order
+  authority:
+    source: 2007_reich.m
 ophiura:
   name: Ophiura
   authority:
