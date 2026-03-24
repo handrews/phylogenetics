@@ -608,10 +608,10 @@ $defs:
         type: [integer, string]
       figure:
         type: [integer, string]
-      textFigure:
-        type: [integer, string]
       figures:
         $ref: "#/$defs/multiRanges"
+      textFigure:
+        type: [integer, string]
       textFigures:
         $ref: "#/$defs/multiRanges"
       location:
