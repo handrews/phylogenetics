@@ -1,7 +1,7 @@
 {{Short description|Extinct genus of marine invertebrates}}
 {{for|the surname|Gogia (surname)}}
 {{Automatic Taxobox
-| fossil_range = {{fossil range|Late Early Cambrian|Middle Cambrian}}
+| fossil_range = {{fossil range|Cambrian Stage 4|Guzhanigian}}
 | image = Gogia kitchnerensis 01.jpg
 | image_caption = ''G. kitchnerensis'' specimen from Utah
 | taxon = Gogia
@@ -31,7 +31,11 @@
 
 [[File:Gogia_ojenai.jpg|thumb|left|upright|Artists reconstruction of ''G. ojenai'']]
 [[File:Gogia spiralis USNM.jpg|alt=fossil eocrinoid Gogia spiralis|left|thumb|''Gogia spiralis'']]
-'''''Gogia''''' is a [[genus]] of primitive [[Eocrinoidea|eocrinoid]] [[blastozoa]]n from the early to [[middle Cambrian]].
+'''''Gogia''''' is a [[genus]] of primitive [[Eocrinoidea|eocrinoid]] [[blastozoa]]n from the early to [[middle Cambrian]].  Whether under its own name or that of its junior synonym ''Eocrinus'', it is the type species of the family Eocrinidae, the order Gogiida, and the class Eocrinoidea.  ''Gogia'' is one of the most abundant and well-studied Cambrian echinoderms, with most species being endemic to western North America.
+
+With 13 named species as of early 2026, with a wide range of morphological variations, ''Gogia'' considered to be in need of revision.  It is expected that at least three additional genera will be split from it,<ref>{{harvnb|Parsley|Zhao|2006|p=1065}}</ref> and several sister-taxa relationships between ''Gogia'' species and other Eocrinidae from China have been proposed.<ref>{{harvnb|Parsley|2018}}</ref>
+
+The family Eocrinidae appears to have originated in [[South China (continent)|South China]] (??Cambrian Stage 3?? What about Alanisicystis???), with different species of ''Gogia'' likely representing several distinct migrations to Laurentia, and later to West Gondwana.
 
 ''G. ojenai'' dates to the late Early Cambrian;<ref name=Durham1978/> other [[species]] come from various Middle Cambrian strata throughout North America, but the genus has yet to be described outside this [[continent]].<ref name=Robison1965>{{harvnb|Robison|1965}}</ref>  Notable localities where species are found include the [[Wheeler Shale]] of [[Utah]],<ref>{{harvnb|Schlottke|2007}}</ref> and the [[Burgess Shale]] of [[British Columbia]].{{citation needed|date=July 2017}}
 

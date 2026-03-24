@@ -1,0 +1,65 @@
+{{Short description|Extinct genus of marine invertebrates}}
+{{Automatic taxobox
+| fossil_range = {{fossil range|Wuliuan|Drumian}}
+| taxon = Lyracystidae
+| authority = Sprinkle & Collins 2006
+| type_genus = [[Lyracystis]]
+| type_genus_authority = Sprinkle & Collins 2006
+| type_species = Gogia? radiata (pars)
+| type_species_authority = Sprinkle 1973
+| subdivision_refs = <ref>{{harvnb|Sprinkle|Parsley|Zhao|Peng|2015}}</ref>
+| subdivision_ranks = genera and species
+| subdivision = * ''Lyracystis'' {{small|Sprinkle & Collins 2006}}
+** ''L. radiata'' {{small|(Sprinkle 1973)}}
+** ''L. reesei'' {{small|Sprinkle & Collins 2006}}
+* ''Balangicystis'' {{small|Parsley & Zhao 2006}}
+** ''B. rotundus'' {{small|Parsley & Zhau 2006}}
+}}
+
+The '''Lyracystidae''' are a small family of gogiid eocrinoids known for their long stalks and their unusual feeding appendages, which have a shape reminiscent of a [[lyre]].
+
+==Description==
+
+Lyracystids have unusually long stalks for gogiid eocrinoids, and fewer epispires for respiration.  Otherwise, their stalk and theca are fairly typical of gogiids.  However, their feeding appendages, combining erect ambulacra that continue off the theca before giving rise to relatively stiff brachioles, are unlike those of any other eocrinoid group.
+
+Lyracystitids have three ambulacra extending from the central, upward-facing mouth to the edge of the oral surface.  Echinoderm ambulacra are typically named A–E, with ambulacra B and C often starting as a shared BC ambulacrum, and likewise D and E as a shared DE.  In all lyracystids, the A, BC, and DE ambulacra radiate from the central mouth to the edge of the upwards-facing oral surface, and the shared BC and shared DE ambulacra each divide into two exothecal appendages curving upwards and away from each other.  Vertical brachioles arise endotamously from these appendages.  In ''Lyracystis'', the A ambulacra divides as well, producing an unusual triradial symmetry in the ambulacral system.  In ''Balangicystis'', the morphology of the A ambulacrum is unclear, and its exothecal extension may remain unbranched.<ref>{{harvnb|Sprinkle|Parsley|Zhao|Peng|2011|pp=251–253}}</ref>
+
+==Occurrences==
+
+''Lyracystis'' is known from the [[Middle Cambrian]] of [[Laurentia]], specifically the [[Burgess Shale]] (numerous specimens of ''L. radiata'') and the [[Spence Shales]] (a single specimen of ''L. reesei'').  ''Balangicystis'' is known from the Middle Cambrian [[Kaili Formation]] of [[South China (continent)|South China]].
+
+==Classification==
+
+* Phylum [[Echinodermata]]
+** Class [[Eocrinoidea]]
+*** Order [[Gogiida]]
+**** Family '''Lyracystidae'''
+***** ''[[Lyracystis]]''
+****** ''L. radiata''
+****** ''L. reesei''
+***** ''Balangicystis''
+****** ''B. rotundus''
+
+
+==References==
+{{Reflist}}
+
+===Works cited===
+{{refbegin}}
+* {{cite journal|last1=Sprinkle |first1=J. |last2=Collins |first2=D. |year=2006 |title=New eocrinoids from the Burgess Shale, southern British Columbia, Canada, and the Spence Shale, northern Utah, USA |journal=Canadian Journal of Earth Sciences |volume=43 |pages=303–322|bibcode=2006CaJES..43..303S |doi=10.1139/E05-107}}
+* {{cite journal|last1=Sprinkle |first1=James |last2=Parsley |first2=Ronald L. |last3=Zhao |first3=Yuanlong |last4=Peng |first4=Jin |year=2011 |title=Revision of Lyracystid Eocrinoids from the Middle Cambrian of South China and western Laurentia |journal=Journal of Paleontology |volume=85 |number=2 |pages=250–255 |doi=10.1666/10-072.1}}
+{{refend}}
+
+== External links ==
+* {{Cite web|date=2025|title=''Lyracystis radiata''|work=Burgess Shale Fossil Gallery|publisher=Virtual Museum of Canada|url=https://burgess-shale.rom.on.ca/fossils/lyracystis-radiata/}}
+
+{{Taxonbar|from=Q16926204}}
+
+[[Category:Burgess Shale animals]]
+[[Category:Blastozoa genera]]
+[[Category:Cambrian genus extinctions]]
+
+
+{{cambrian-animal-stub}}
+{{paleo-echinoderm-stub}}
+
