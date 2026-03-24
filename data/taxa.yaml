@@ -584,10 +584,15 @@ anulocrinus:
   name: Anulocrinus
   auth: [Ramsbottom]
   year: 1961
+apektocrinidae:
+  name: Apektocrinidae
+  rank: Family
+  authority:
+    source: 2009_guensburg_sprinkle
 apektocrinus:
   name: Apektocrinus
-  auth: [guensburg, sprinkle]
-  year: 2009
+  authority:
+    source: 2009_guensburg_sprinkle
 aphrodita:
   name: Aphrodita
   authority:
@@ -1303,6 +1308,10 @@ blastozoa-indeterminate-class_sprinkle_1973:
   rank: Class
   authority:
     source: 1973_sprinkle
+bockeliei_rozhnov_fedorov_2001:
+  name: bockeliei
+  authority:
+    source: 2001_rozhnov_fedorov
 bockia_hecker_1938:
   homonym: true
   name: Bockia
@@ -2124,6 +2133,11 @@ cladida:
   rank: Parvclass
   auth: [Moore, Laudon]
   year: 1943
+cladida-order-uncertain_guensburg_sprinkle_2009:
+  name: null
+  rank: Order
+  authority:
+    source: 2009_guensburg_sprinkle
 clausus_austen_1843:
   name: clausus
   auth: [Austen]
@@ -2269,6 +2283,10 @@ commensalus_bell.b.m_1976:
   name: commensalus
   authority:
     source: 1976_bell.b.m
+compagicrinus:
+  name: Compagicrinus
+  auth: [Jobson, paul.c.r.c]
+  year: 1979
 compressus_lamarck_1816:
   name: compressus
   authority:
@@ -7012,6 +7030,10 @@ maxima_forsskål_1775:
   name: maxima
   auth: [forsskål]
   year: 1775
+maydena:
+  name: Maydena
+  authority:
+    source: 2014_jell
 micraster_barrande_1887:
   name: micraster
   auth: [barrande]
@@ -7792,6 +7814,11 @@ ophiuroidea:
 ophiuroidea-subclass:
   rank: Subclass
   altRankOf: ophiuroidea
+ophiuroidea-fam-uncertaion_jell_2014:
+  name: null
+  rank: Family
+  authority:
+    source: 2014_jell
 ophiuroids:
   name: Ophiuroids
   rank: Group
@@ -8098,6 +8125,15 @@ paracrinoidea:
   rank: Class
   auth: [regnéll]
   year: 1945
+paracryptocrinites:
+  name: Paracryptocrinites
+  authority:
+    source: 2001_rozhnov_fedorov
+paracryptocrinites-sp_rozhnov_fedorov_2001:
+  name: null
+  rank: species
+  authority:
+    source: 2001_rozhnov_fedorov
 paracystis:
   name: Paracystis
   auth: [Sjöberg]
@@ -9383,6 +9419,10 @@ reciprocans_forsskål_1775:
   name: reciprocans
   auth: [forsskål]
   year: 1775
+reciprocodiscus:
+  name: Reciprocodiscus
+  authority:
+    source: 2014_jell
 reclinata_bosc_1802:
   name: reclinata
   auth: [Bosc]
@@ -9682,6 +9722,10 @@ rigidus_billings_1857:
   name: rigidus
   authority:
     source: 1857_billings
+roadsidensis_jell_2014:
+  name: roadsidensis
+  authority:
+    source: 2014_jell
 robustus_billings_1854:
   name: robustus
   authority:
@@ -11138,6 +11182,10 @@ trachelocrinus-sp_sumrall_sprinkle_guensburg_1997:
   rank: species
   authority:
     source: 1997_sumrall_sprinkle_guensburg
+transambus_jell_2014:
+  name: transambus
+  authority:
+    source: 2014_jell
 traskocrinus:
   name: Traskocrinus
   authority:
@@ -11338,8 +11386,8 @@ ubaghsi_fatka_kordule_1990:
     source: 1990_fatka_kordule
 ubaghsi_guensburg_sprinkle_2009:
   name: ubaghsi
-  auth: [guensburg, sprinkle]
-  year: 2009
+  authority:
+    source: 2009_guensburg_sprinkle
 ubaghsicystis:
   name: Ubaghsicystis
   auth: [Gil Cid, Domínguez]

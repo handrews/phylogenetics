@@ -238,6 +238,9 @@ fay:
   family: Fay
   given: Robert O.
   birth: 1927
+fedorov:
+  family: Fedorov
+  given: P. V.
 fell:
   family: Fell
   given: H. Barraclough
@@ -714,6 +717,9 @@ rodríguez.c.m:
 roux:
   family: Roux
   given: Michel
+rozhnov:
+  family: Rozhnov
+  given: S. V.
 rudwick:
   family: Rudwick
   given: M. J. S.

@@ -2695,6 +2695,20 @@ inprep_sprinkle_strimple:
   - pope
   identifiers:
     jstor: 1306885
+2001_rozhnov_fedorov:
+  title: A New Cryptocrinid Genus (Eocrinoidea, Echinodermata) from the Bioherm-related Facies of the Volkhov Stage (Late Arenigian, Ordovician), Leningrad Region
+  journal: paleo-j
+  volume: 35
+  number: 6
+  pages:
+  - 606
+  - 613
+  pubDate:
+    year: 2001
+  authors:
+  - rozhnov
+  - fedorov
+  notes: Translated from Paleontologicheskii Zhurnal, No. 6, 2001, pp. 42-49.
 2001_sumrall:
   title: Paleoecology and Taphonomy of Two New Edrioasteroids from a Mississippian Hardground in Kentucky
   journal: jofpaleo
@@ -3025,6 +3039,23 @@ inprep_sprinkle_strimple:
   - peng.j
   identifiers:
     jstor: 20144206
+2009_guensburg_sprinkle:
+  title: |
+    Solving the Mystery of Crinoid Ancestry: New Fossil Evidence
+    of Arm Origin and Development
+  journal: jofpaleo
+  volume: 83
+  number: 3
+  pages:
+  - 350
+  - 364
+  pubDate:
+    year: 2009
+  processDates:
+    accepted: 2009-01-06
+  authors:
+  - guensburg
+  - sprinkle
 2009_sumrall:
   title: "First Definite Record of Permian Edrioasteroids: Neoisorophusella maslennikovi n. sp.  from the Kungurian of Northeast Russia"
   journal: jofpaleo
@@ -3514,6 +3545,25 @@ inprep_sprinkle_strimple:
   authors:
   - chen.g.y
   - han.n.r
+2014_jell:
+  title: A Tremadocian asterozoan from Tasmania and a late Llandovery edrioasteroid from Victoria
+  journal: alcheringa
+  volume: 38
+  number: 4
+  pages:
+  - 528
+  - 540
+  pubDate:
+    year: 2014
+  processDates:
+    received: 2013-07-31
+    revised: 2014-02-24
+    accepted: 2014-03-27
+    online: 2014-05-19
+  authors:
+  - jell
+  identifiers:
+    doi: 10.1080/03115518.2014.911642
 2014_makhlouf_lefebvre_nardin_nedjari_régnault_ferhi:
   title: Stratigraphic and Palaeogeographical Distribution of the Ordovician Eocrinoid Ascocystites Barrande 1887 (Echinodermata, Blastozoa)
   book: strati

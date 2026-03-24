@@ -12090,6 +12090,38 @@
           children:
           - taxon: hybolopus_fraunfelter_utgaard_1970
           - taxon: murphyi_sumrall_garbisch_pope_2000
+2001_rozhnov_fedorov:
+  taxonomies:
+  - taxon: eocrinoidea
+    children:
+    - taxon: cryptocrinitidae
+      children:
+      - taxon: paracryptocrinites
+        new: true
+        page: 609
+        children:
+        - taxon: bockeliei_rozhnov_fedorov_2001
+          type: true
+          new: true
+          pages:
+          - [609, 612]
+          figures:
+          - page: 608
+            plate: 6
+            figures:
+            - [1, 3]
+          - page: 610
+            textFigures:
+            - [2, 3]
+          - page: 611
+            textFigure: 4
+        - openTaxon: paracryptocrinites-sp_rozhnov_fedorov_2001
+          new: true
+          figures:
+          - page: 608
+            plate: 6
+            figures:
+            - [4, 9]
 2001_sumrall:
   taxonomies:
   - taxon: edrioasteroidea
@@ -12837,6 +12869,77 @@
                 modifier: nomen nudum
                 parents:
                 - taxon: sinoeocrinus
+2009_guensburg_sprinkle:
+  taxonomies:
+  - taxon: crinoidea
+    emended: true
+    page: 357
+    children:
+    - taxon: cladida
+      children:
+      - openTaxon: cladida-order-uncertain_guensburg_sprinkle_2009
+        children:
+        - taxon: apektocrinidae
+          new: true
+          page: 353
+          children:
+          - taxon: apektocrinus
+            type: true
+            new: true
+            page: 353
+            children:
+            - taxon: ubaghsi_guensburg_sprinkle_2009
+              type: true
+              new: true
+              pages:
+              - [353, 357]
+              figures:
+              - page: 352
+                figure: 1
+              - page: 353
+                figure: 2
+              - page: 354
+                figure: 3
+              - page: 355
+                figure: 4
+              - page: 356
+                figure: 5
+              - page: 357
+                figure: 6
+              - page: 358
+                figures:
+                - ["7.1", "7.3"]
+              - page: 359
+                figure: 8
+              - page: 361
+                figure: "10.1"
+              - page: 363
+                figure: "21.1"
+                notes: Given as 11.1 in the text, but that is the tree diagram.
+  phylogenies:
+  - treeType: diagram
+    tree:
+      children:
+      - taxon: camptostroma
+      - children:
+        - taxon: kinzercystis
+        - children:
+          - taxon: cambroblastus
+            provisional: true
+          - children:
+            - children:
+              - taxon: titanocrinus
+              - children:
+                - taxon: proexenocrinus
+                - taxon: celtocrinus
+            - children:
+              - taxon: apektocrinus
+              - children:
+                - taxon: compagicrinus
+                - taxon: aethocrinus
+            - children:
+              - notes: Placed beside "Tremadociocrinod", no clear explanation
+                taxon: ramseyocrinus
 2009_sumrall:
   taxonomies:
   - notes: Ranks included only due to editorial policy
@@ -13695,6 +13798,42 @@
         - taxon: guoleensis_chen.g.y_han.n.r_2014
           type: true
           new: true
+2014_jell:
+  taxonomies:
+  - taxon: ophiuroidea
+    children:
+    - openTaxon: ophiuroidea-fam-uncertaion_jell_2014
+      children:
+      - taxon: maydena
+        new: true
+        pages:
+        - [531, 532]
+        children:
+        - taxon: roadsidensis_jell_2014
+          type: true
+          new: true
+          pages:
+          - [532, 533]
+          figures:
+          - page: 533
+            figure: 3
+  - taxon: edrioasteroidea
+    children:
+    - taxon: isorophida
+      children:
+      - taxon: reciprocodiscus
+        new: true
+        pages:
+        - [533, 534]
+        children:
+        - taxon: transambus_jell_2014
+          type: true
+          new: true
+          pages:
+          - [534, 536]
+          figures:
+          - page: 535
+            figure: 4
 2014_makhlouf_lefebvre_nardin_nedjari_régnault_ferhi:
   taxonomies:
   - taxon: blastozoa
