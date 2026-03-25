@@ -53,6 +53,7 @@
 ***** sp ''A. knizeki''
 **** gn ''Globoeocrinus''
 ***** sp ''G. globulus''
+***** sp ''G. zhaoyuanlongensis''
 **** gn ''Guizhoueocrinus''
 ***** sp ''G. yui''
 **** gn ''Kunmingeocrinus''
