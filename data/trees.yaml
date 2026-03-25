@@ -12720,6 +12720,12 @@
               children:
               - taxon: graysoni_sumrall_sprinkle_bonem_2006
                 new: true
+2007_hu.s.x_luo.h.l_hou.s.g_erdtmann:
+  taxonomies:
+  - taxon: eocrinoidea
+    children:
+    - openTaxon: eocrinoidea-sp_hu.s.x_luo.h.l_hou.s.g_erdtmann_2007
+      new: true
 2007a_nardin:
   taxonomies:
   - taxon: blastozoa
@@ -12781,9 +12787,11 @@
     - taxon: wudingeocrinus
       new: true
       children:
-      - taxon: rarus_luo.h.l_li.y_hu.s.x_fu.x.p_hou.s.g_liu.x.r_chen.l.z_li.j.f_pang.j.y_liu.q_2008
+      - taxon: rarus_hu.s.x_luo.h.l_2008
         type: true
         new: true
+        synonyms:
+        - openTaxon: eocrinoidea-sp_hu.s.x_luo.h.l_hou.s.g_erdtmann_2007
 2008_zhao.y.l_parsley_peng.j:
   taxonomies:
   - taxon: blastozoa
@@ -12889,6 +12897,24 @@
                   brachioles. Almost no stalk, except for an expanded holdfast
                   composed of tiny globular plates.
               - openTaxon: gogia-sp_zamora_gozalo_liñán_2009
+                new: true
+2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l:
+  taxonomies:
+  - taxon: echinodermata
+    authority:
+      source: 1734_klein
+    children:
+    - taxon: blastozoa
+      children:
+      - taxon: eocrinoidea
+        children:
+        - taxon: gogiida
+          children:
+          - taxon: eocrinidae
+            children:
+            - taxon: sinoeocrinus
+              children:
+              - openTaxon: sinoeocrinus-sp_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010
                 new: true
 2010_müller.p_hahn:
   taxonomies:
@@ -13656,6 +13682,19 @@
               - taxon: cannati_miquel_1894
                 parents:
                 - taxon: trochocystites
+2014_chen.g.y_han.n.r:
+  notes: taxonomy wrangled from AI due to inaccessible paper
+  taxonomies:
+  - taxon: eocrinoidea
+    children:
+    - taxon: gogiida
+      children:
+      - taxon: jingxieocrinus
+        new: true
+        children:
+        - taxon: guoleensis_chen.g.y_han.n.r_2014
+          type: true
+          new: true
 2014_makhlouf_lefebvre_nardin_nedjari_régnault_ferhi:
   taxonomies:
   - taxon: blastozoa
@@ -13768,6 +13807,60 @@
             type: true
           - openTaxon: ubaghsicystis-sp_sumrall_zamora_2015
             new: true
+2015_yang.z.c_lin.j.p_zhang.y.p_wu.y.s_meng.x.y:
+  taxonomies:
+  - taxon: blastozoa
+    children:
+    - taxon: eocrinoidea
+      children:
+      - taxon: gogiida
+        children:
+        - taxon: eocrinidae
+          children:
+          - taxon: globoeocrinus
+            children:
+            - taxon: globulus_zhao.y.l_parsley_peng.j_2008
+              type: true
+            - taxon: zhaoyuanlongensis_yang.z.c_lin.j.p_zhang.y.p_wu.y.s_meng.x.y_2015
+              new: true
+              page: 433
+              figures:
+              - page: 434
+                figure: 4
+              - page: 435
+                figure: 5
+              - page: 436
+                figure: 6
+2015_zhao.y.l_peng.j_wu.m.y_luo.x.c_wen.r.q_liu.y.j:
+  taxonomies:
+  - taxon: blastozoa
+    children:
+    - taxon: eocrinoidea
+      children:
+      - taxon: gogiida
+        children:
+        - taxon: eocrinidae
+          children:
+          - taxon: protogloboeocrinus
+            new: true
+            pages:
+            - [252, 253]
+            - [256, 257]
+            notes: First page range Chinese, second English.
+            children:
+            - taxon: yini_zhao.y.l_peng.j_wu.m.y_2015
+              type: true
+              new: true
+              pages:
+              - [253, 256]
+              - [257, 258]
+              notes: First page range Chinese, second English.
+              figures:
+              - page: 254
+                figures:
+                - [3a, 3c]
+              - pages: 255
+                figure: 4
 2017_allaire_lefebvre_nardin_martin.e.l.o_vaucher_escarguel:
   taxonomies:
   - taxon: eocrinoidea
@@ -14077,7 +14170,7 @@
                 - taxon: lichenoides
                 - taxon: macrocystella
             - taxon: ascocystites
-2019_wen.r_babcock_peng.j_robison:
+2019_wen.r.q_babcock_peng.j_robison:
   taxonomies:
   - taxon: edrioasteroidea
     children:
@@ -14089,7 +14182,7 @@
           children:
           - taxon: nimius_bell.b.m_sprinkle_1978
             type: true
-          - taxon: spencensis_wen.r_babcock_peng.j_robison_2019
+          - taxon: spencensis_wen.r.q_babcock_peng.j_robison_2019
             new: true
             # specimens:
               # holotype: [KUMIP 49294A, KUMIP 49294B]
@@ -14666,7 +14759,7 @@
           children:
           - taxon: lloydi_sprinkle_1985
             type: true
-          - taxon: spencensis_wen.r_babcock_peng.j_robison_2019
+          - taxon: spencensis_wen.r.q_babcock_peng.j_robison_2019
             moved:
               taxon: totiglobus
             modifier: n. comb.

@@ -4171,6 +4171,12 @@ eocrinoidea-family-uncertain_sumrall_zamora_2015:
   rank: Family
   authority:
     source: 2015_sumrall_zamora
+eocrinoidea-sp_hu.s.x_luo.h.l_hou.s.g_erdtmann_2007:
+  name: null
+  rank: species
+  authority:
+    source: 2007_hu.s.x_luo.h.l_hou.s.g_erdtmann
+  synonym: rarus_hu.s.x_luo.h.l_2008
 eocrinus:
   name: Eocrinus
   auth: [jaekel]
@@ -5146,6 +5152,10 @@ guntheri_sprinkle_1973:
   name: guntheri
   authority:
     source: 1973_sprinkle
+guoleensis_chen.g.y_han.n.r_2014:
+  name: guoleensis
+  authority:
+    source: 2014_chen.g.y_han.n.r
 guolensis_zhu.x.j_zamora_lefebvre_2014:
   name: guolensis
   authority:
@@ -6137,6 +6147,10 @@ jewettii-var_hall_1852:
   rank: variety
   authority:
     source: 1852_hall
+jingxieocrinus:
+  name: Jingxieocrinus
+  authority:
+    source: 2014_chen.g.y_han.n.r
 judaica_linnaeus_1761:
   name: judaica
   auth: [linnaeus]
@@ -8962,6 +8976,10 @@ protocrinoida:
   notes: Order (Plesion) in original definition
   authority:
     source: 2003_guensburg_sprinkle
+protogloboeocrinus:
+  name: Protogloboeocrinus
+  authority:
+    source: 2015_zhao.y.l_peng.j_wu.m.y_luo.x.c_wen.r.q_liu.y.j
 protorophus:
   name: protorophus
   authority:
@@ -9342,9 +9360,10 @@ raripunctata_angelin_1878:
   name: raripunctata
   auth: [Angelin]
   year: 1878
-rarus_luo.h.l_li.y_hu.s.x_fu.x.p_hou.s.g_liu.x.r_chen.l.z_li.j.f_pang.j.y_liu.q_2008:
+rarus_hu.s.x_luo.h.l_2008:
   name: rarus
   authority:
+    authors: [hu.s.x, luo.h.l]
     source: 2008_luo.h.l_li.y_hu.s.x_fu.x.p_hou.s.g_liu.x.r_chen.l.z_li.j.f_pang.j.y_liu.q
 raymondi_foerste_1920:
   name: raymondi
@@ -10182,6 +10201,11 @@ sinoeocrinus:
   name: Sinoeocrinus
   authority:
     source: 1994_zhao.y.l_huang.y.z_gong.x.y
+sinoeocrinus-sp_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010:
+  name: null
+  rank: species
+  authority:
+    source: 2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l
 sinuatus_leske_1778:
   name: sinuatus
   authority:
@@ -10278,10 +10302,10 @@ speciosus_hall_1852:
   name: speciosus
   authority:
     source: 1852_hall
-spencensis_wen.r_babcock_peng.j_robison_2019:
+spencensis_wen.r.q_babcock_peng.j_robison_2019:
   name: spencensis
-  auth: [wen.r, babcock, peng.j, robison]
-  year: 2019
+  authority:
+    source: 2019_wen.r.q_babcock_peng.j_robison
 sphæra_müller.o.f_1776:
   name: sphæra
   authority:
@@ -11752,6 +11776,7 @@ wrighti_begg_1939:
 wudingeocrinus:
   name: Wudingeocrinus
   authority:
+    authors: [hu.s.x, luo.h.l]
     source: 2008_luo.h.l_li.y_hu.s.x_fu.x.p_hou.s.g_liu.x.r_chen.l.z_li.j.f_pang.j.y_liu.q
 ###################### X
 xenocystites:
@@ -11778,6 +11803,11 @@ xystriduridae:
   auth: [whitehouse]
   year: 1939
 ###################### Y
+yini_zhao.y.l_peng.j_wu.m.y_2015:
+  name: yini
+  authority:
+    authors: [zhao.y.l, peng.j, wu.m.y]
+    source: 2015_zhao.y.l_peng.j_wu.m.y_luo.x.c_wen.r.q_liu.y.j
 yorkicystitidae:
   name: Yorkicystitidae
   rank: Family
@@ -11800,6 +11830,10 @@ zagoraensis_chauvel_1971:
   name: zagoraensis
   auth: [Chauvel]
   year: 1971
+zhaoyuanlongensis_yang.z.c_lin.j.p_zhang.y.p_wu.y.s_meng.x.y_2015:
+  name: zhaoyuanlongensis
+  authority:
+    source: 2015_yang.z.c_lin.j.p_zhang.y.p_wu.y.s_meng.x.y
 zoantha:
   name: Zoantha
   authority:

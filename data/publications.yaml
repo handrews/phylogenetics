@@ -56,6 +56,8 @@ canadian-journal:
   name: The Canadian Journal
 can-j-earth-sci:
   name: Canadian Journal of Earth Sciences
+chi-sci-bull:
+  name: Chinese Science Bulletin
 cl-olandska:
   name: Carl von Linnés öländska resa, förrättad 1741
 coloquios:
@@ -72,6 +74,8 @@ e-tampa-bay:
   - lawrence
   publisher: A.A.Balkema
   place: Rotterdam
+earth-science:
+  name: Earth Science
 es-rev:
   name: Earth-Science Reviews
 e-faunas-bromide:
@@ -182,6 +186,8 @@ p-of-iowa:
   name: Palaeontology of Iowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857
 palaeontology:
   name: Palaeontology
+palaeoworld:
+  name: Palaeoworld
 paleo-j:
   name: Paleontological Journal
 paleo-ny:
