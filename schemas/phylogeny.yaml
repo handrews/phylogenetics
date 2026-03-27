@@ -326,6 +326,8 @@ $defs:
       needsQualification:
         type: boolean
         default: false
+      holotype:
+        type: string
       notes:
         type: string
   rank:

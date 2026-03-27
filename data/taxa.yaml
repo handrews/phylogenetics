@@ -2094,6 +2094,7 @@ chinensis_zhao.y.l_sumrall_parsley_peng.j_2010:
   name: chinensis
   auth: [zhao.y.l, sumrall, parsley, peng.j]
   year: 2010
+  holotype: {GM: [3428]}
 chiton:
   name: Chiton
   authority:
@@ -2532,6 +2533,8 @@ craticula_whitehouse_1941:
   name: craticula
   authority:
     source: 1941_whitehouse
+  holotype: {UQF: [5409]}
+  notes: Holotype also "and other material figured with original description"
 cremacrinus:
   name: Cremacrinus
   auth: [Ulrich]
@@ -3382,6 +3385,7 @@ dowlingi_jell_sprinkle_2021:
   name: dowlingi
   authority:
     source: 2021_jell_sprinkle
+  holotype: {QMF: [59526]}
 drabowensis_barrande_1887:
   name: drabowensis
   auth: [barrande]
@@ -3771,6 +3775,7 @@ edgari_jell_sprinkle_2021:
   name: edgari
   authority:
     source: 2021_jell_sprinkle
+  holotype: {QMF: [59588]}
 edrioaster:
   name: Edrioaster
   authority:
@@ -4387,6 +4392,7 @@ extenuatus_zhao.j_rahman_zamora_chen.a_cong.p.y_2022:
   name: extenuatus
   auth: [zhao.j, rahman, zamora, chen.a, cong.p.y]
   year: 2022
+  holotype: {YKLP: [13397]}
 externes:
   name: Externes
   rank: Order
@@ -5222,6 +5228,7 @@ haefneri_zamora_rahman_sumrall_gibson_thompson_2022:
   name: haefneri
   auth: [zamora, rahman, sumrall, gibson, thompson]
   year: 2022
+  holotype: {NHMUK: [EE 1659]}
 haimacystis:
   name: Haimacystis
   authority:
@@ -7382,6 +7389,7 @@ moroccoensis_smith.a.b_zamora_2013:
   name: moroccoensis
   auth: [smith.a.b, zamora]
   year: 2013
+  holotype: {NHM UK: [EE15373]}
 moroccoensis_sumrall_zamora_2011:
   name: moroccoensis
   authority:
@@ -7520,6 +7528,7 @@ navicula_whitehouse_1941:
   name: navicula
   authority:
     source: 1941_whitehouse
+  holotype: {UQF: [5404]}
 neglecta_hecker_1940:
   name: neglecta
   auth: [Hecker]

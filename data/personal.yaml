@@ -10,6 +10,23 @@ taxonomies:
         children:
         - taxon: haefneri_zamora_rahman_sumrall_gibson_thompson_2022
           type: true
+          occurrences:
+          - stage: Cambrian Stage 4
+            localStages: [Middle Dyerian, Delamaran]
+            unit: Kinzers Formation
+            subunit: Emigsville Member
+            biozones: [Wanneria walcottana, Olenellus roddyi]
+            paleocontinent: Laurentia
+            location:
+            - City View Church yard
+            - York
+            - Pennsylvania
+            - USA
+            sources:
+            - 2022_zamora_rahman_sumrall_gibson_thompson
+            specimens:
+              NHMUK:
+              - [EE 1659, EE 1660]
     - taxon: stromatocystitida
       children:
       - taxon: stromatocystitidae
@@ -20,6 +37,22 @@ taxonomies:
           - taxon: cannati_miquel_1894
             type: true
           - openTaxon: cambraster-sp_jell_sprinkle_2021
+            occurrences:
+            - unit: Thorntonia Limestone
+              subunit: Bed G
+              inferred:
+                stageBoundary: [Cambrian Stage 4, Wuliuan]
+            biozone: Xystridura negrina
+            paleocontinent: Gondwana (East)
+            location:
+            - UQL453
+            - Queensland
+            - Australia
+            specimens:
+              QMF:
+              - [59647, 59653]
+            sources:
+            - 2021_jell_sprinkle
     - taxon: edrioasterida
       children:
       - taxon: walcottidiscus
@@ -35,13 +68,80 @@ taxonomies:
         children:
         - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
           type: true
+          occurrences:
+          - series: Miaolingian
+            inferred:
+              stage: Wuliuan
+              notes: described as "basl Middle Cambrian"
+            unit: Kaili Formation
+            subunit: mid-third
+            superunit: Jiangnan Slope belt
+            paleocontinent: South China
+            location:
+            - Miaobanpo (fossil) Quarry
+            - Balang village
+            - Jianhe County
+            - Guizhou Province
+            sources:
+            - 2010_zhao.y.l_sumrall_parsley_peng.j
+            specimens:
+              Museum of Paleontology, Guizhou University:
+              - GM 3428
+              - GM 70
+              - GM 746
+              - GM 1331
+              - GM 1670
+              - GM 1898
+              - GM 2013
+              - GM 2146
+              - [GM 3295a, GM 3295c]
+              - GM 3035
+              - GM 3600
+              - GM 3665
+              - GM 8052
+              - GM 9292
         - openTaxon: kailidiscus-sp_jell_sprinkle_2021
+          occurrences:
+          - unit: Thorntonia Limestone
+            subunit: Bed G
+            inferred:
+              stageBoundary: [Cambrian Stage 4, Wuliuan]
+            biozone: Xystridura negrina
+            paleocontinent: Gondwana (East)
+            location:
+            - UQL453
+            - Queensland
+            - Australia
+            specimens:
+              QMF:
+              - [59654, 59668]
+            sources:
+            - 2021_jell_sprinkle
       - taxon: sprinkleoglobus
         provisional: true
         children:
         - taxon: lloydi_sprinkle_1985
           type: true
         - taxon: extenuatus_zhao.j_rahman_zamora_chen.a_cong.p.y_2022
+          occurrences:
+          - stage: Cambrian Stage 3
+            unit: Yu'anshan Formation
+            subunit: Maotianshan Shale Member
+            section: Jianshan section
+            biota: Chengjiang
+            paleocontinent: South China
+            location:
+            - 24.77036°N, 102.57877°E
+            - Haikou area
+            - Kunming
+            - Yunnan Province
+            - China
+            sources:
+            - 2022_zhao.j_rahman_zamora_chen.a_cong.p.y
+            specimens:
+              YKLP:
+              - 13397
+              - 13553
         - taxon: spencensis_wen.r_babcock_peng.j_robison_2019
       - taxon: edrioasterina
         type: true
@@ -104,6 +204,22 @@ taxonomies:
             children:
             - taxon: edgari_jell_sprinkel_2021
               type: true
+              occurrences:
+              - unit: Thorntonia Limestone
+                subunit: Bed G
+                inferred:
+                  stageBoundary: [Cambrian Stage 4, Wuliuan]
+                biozone: Xystridura negrina
+                paleocontinent: Gondwana (East)
+                location:
+                - UQL453
+                - Queensland
+                - Australia
+                specimens:
+                  QMF:
+                  - [59587, 59646]
+                sources:
+                - 2021_jell_sprinkle
           - taxon: cambroblastus
             children:
             - taxon: enubilatus_smith.a.b_jell_1990
@@ -244,6 +360,81 @@ taxonomies:
               type: true
     - taxon: crinoidea
       type: true
+  - taxon: helicocystidae
+    children:
+    - taxon: helicocystis
+      type: true
+      children:
+      - taxon: moroccoensis_smith.a.b_zamora_2013
+        type: true
+        occurrences:
+        - inferred:
+            stage: Cambrian Stage 4
+          unit: Jbel Wawrmast Formatation
+          subunit: Brèche à Micmacca Member
+          biozone: Cephalopyge notabilis
+          paleocontinent: Gondwana (West)
+          location:
+          - 31.287688 N, 004.984938 W
+          - Assemame 3
+          - Alnif
+          - Morocco
+          notes: |
+            Described as Stage 4-5 boundary, but also as
+            as ~515-510MA which would be Series 2, Stage 3-4.
+            Other sources put this formation around base of Series 3.
+            Biozone noted as "basal biozone Cephalopyge notabilis",
+            which would suggest the Stage 4 side of the 4-5 boundary.
+          possibleSpecimens:
+            NHM UK:
+            - [EE15374, EE15376]
+            - [EE14847, EE14848]
+            - EE15329
+          sources:
+            - 2013_smith.a.b_zamora
+        - inferred:
+            stageBoundary: [Cambrian Stage 4, Wuliuan]
+          unit: Jbel Wawrmast Formatation
+          subunit: Brèche à Micmacca Member
+          biozone: Cephalopyge notabilis
+          paleocontinent: Gondwana (West)
+          location:
+          - 31.394598 N, 005.019778 W
+          - primary school of Tarhia
+          - Morocco
+          notes: |
+            Probably slightly younger than Assemame 3 location.
+            Described as Stage 4-5 boundary or basal Stage 4, but also
+            as ~515-510MA which would be Series 2, Stage 3-4.
+            Other sources put this formation around base of Series 3.
+          possibleSpecimens:
+            NHM UK:
+            - [EE15374, EE15376]
+            - [EE14847, EE14848]
+            - EE15329
+        - notes: |
+            Described as "base of Cambrian Series 3", but also
+            as ~515-510MA which would be Series 2, Stage 3-4.
+            Other sources put this formation around base of Series 3.
+          series: Miaolingian
+          outdatedNames:
+            series: Cambrian Series 3
+          inferred:
+            age: Wuliuan
+          unit: Jbel Wawrmast Formatation
+          subunit: Tarhoucht Member
+          biozones: [Cephalopyge notabilis, Ornamentaspis fequens]
+          paleocontinent: Gondwana (West)
+          location:
+          - 31.302408 N, 005.262668 W
+          - road north from Alnif that intersects road from Tinejdad to Ourzazate
+          - Tizi n'Telgane
+          - Morocco
+          specimens:
+            NHM UK:
+            - EE15373
+          sources:
+            - 2013_smith.a.b_zamora
   - taxon: blastozoa
     children:
     - taxon: eocrinoidea
@@ -420,7 +611,7 @@ taxonomies:
                 stage: Cambrian Stage 4
                 unit: Wulongqing Formation
                 section: Gaoloufang section
-                biozone:  Palaeolenus
+                biozone: Palaeolenus
                 biota: Guanshan
                 paleocontinent: South China
                 location:
@@ -506,12 +697,41 @@ taxonomies:
             children:
             - taxon: dowlingi_jell_sprinkle_2021
               type: true
-            - openTaxon: lichenoididae-gen_smith.a.b_zamora_álvaro_2013
-              provisional: true
-              children:
-              - openTaxon: lichenoididae-gen-sp_smith.a.b_zamora_álvaro_2013
-                synonyms:
-                - openTaxon: lichenoides-sp_zamora_deline_álvaro_rahman_2017
+              occurrences:
+              - unit: Thorntonia Limestone
+                subunit: Bed G
+                inferred:
+                  stageBoundary: [Cambrian Stage 4, Wuliuan]
+                biozone: Xystridura negrina
+                paleocontinent: Gondwana (East)
+                location:
+                - UQL453
+                - Queensland
+                - Australia
+                specimens:
+                  QMF:
+                  - [59374, 59586]
+                sources:
+                - 2021_jell_sprinkle
+          - openTaxon: lichenoididae-gen_smith.a.b_zamora_álvaro_2013
+            provisional: true
+            children:
+            - openTaxon: lichenoididae-gen-sp_smith.a.b_zamora_álvaro_2013
+              synonyms:
+              - openTaxon: lichenoides-sp_zamora_deline_álvaro_rahman_2017
+              occurrences:
+              - stage: Wuliuan
+                obsoleteNames:
+                  stage: Cambrian Stage 5
+                unit: Jbel Wawrmast Formation
+                subunit: Tarhoucht Member
+                inferred:
+                  paleocontinent: Gondwana (West)
+                location:
+                - Atlas Mountains
+                - Morocco
+                sources:
+                - 2021_jell_sprinkle
         - taxon: lichenoididae
           synonyms:
           - taxon: haplozoa
@@ -535,6 +755,33 @@ taxonomies:
             children:
             - taxon: navicula_whitehouse_1941
               type: true
+              occurrences:
+              - unit: Thorntonia Limestone
+                subunit: Bed G
+                inferred:
+                  stageBoundary: [Cambrian Stage 4, Wuliuan]
+                biozone: Xystridura negrina
+                paleocontinent: Gondwana (East)
+                location:
+                - UQL453
+                - Queensland
+                - Australia
+                specimens:
+                  QMF:
+                  - [5398, 5407]
+                  - [59034, 59220]
+                sources:
+                - 2021_jell_sprinkle
+              - unit: Ranken Limestone
+                localStageBoundary: [Templetonian, Undillian]
+                paleocontinent: Gondwana (East)
+                location:
+                - Barkly Tableland
+                - Northern Territory
+                - Australia
+                notes: Secondhand from Öpik 1956
+                sources:
+                - 2021_jell_sprinkle
           - taxon: cymbionites
             synonyms:
             - parents:
@@ -542,8 +789,65 @@ taxonomies:
               - taxon: cycloidea
               - taxon: haplozoa
             children:
-            - taxon: navicula_whiteouse_1941
+            - taxon: craticula_whiteouse_1941
               type: true
+              occurrences:
+              - unit: Thorntonia Limesone
+                subunit: Bed E
+                biozone: Xystridura negrina
+                inferred:
+                  stageBoundary: [Cambrian Stage 4, Wuliuan]
+                paleocontinent: Gondwana (East)
+                location:
+                - UQL452
+                - west bank of Thornton River
+                - southwest of Thorntonia
+                - Queensland
+                - Australia
+                specimens:
+                  UQF:
+                  - [5408, 5431]
+                  - [5433, 5435]
+                  - [59221, 59373]
+                sources:
+                - 2021_jell_sprinkle
+              - unit: Thorntonia Limesone
+                subunit: Bed F
+                biozone: Xystridura negrina
+                inferred:
+                  stageBoundary: [Cambrian Stage 4, Wuliuan]
+                paleocontinent: Gondwana (East)
+                location:
+                - southwest of Thorntonia
+                - Queensland
+                - Australia
+                sources:
+                - 2021_jell_sprinkle
+              - tentative: true
+                notes: as "Eocystis?"
+                unit: Thorntonia Limestone
+                subunit: Bed B
+                biozone: Redlichia forresti
+                inferred:
+                - stage: Cambrian Stage 4
+                paleocontinent: Gondwana (East)
+                location:
+                - UQL499
+                - southwest of Thorntonia
+                - Queensland
+                - Australia
+                sources:
+                - 2021_jell_sprinkle
+              - unit: Ranken Limestone
+                localStageBoundary: [Templetonian, Undillian]
+                paleocontinent: Gondwana (East)
+                location:
+                - Barkly Tableland
+                - Northern Territory
+                - Australia
+                notes: Secondhand from Öpik 1956
+                sources:
+                - 2021_jell_sprinkle
         - taxon: jingxieocrinus
           notes: |
             Order wrangled from Google Gemini after some confusion; no family.
