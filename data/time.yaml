@@ -1,0 +1,238 @@
+eons:
+- name: Hadean
+  eras: []
+- name: Archean
+  eras:
+  - name: Eoarchean
+  - name: Paleoarchean
+  - name: Mesoarchean
+  - name: Neoarchean
+- name: Proterozoic
+  eras:
+  - name: Paleoproterozoic
+    periods:
+    - name: Siderian
+    - name: Rhyacian
+    - name: Orosirian
+    - name: Statherian
+  - name: Mesoproterozoic
+    periods:
+    - name: Calymmian
+    - name: Ectasian
+    - name: Stenian
+  - name: Neoproterozoic
+    periods:
+    - name: Tonian
+    - name: Cryogenian
+    - name: Ediacaran
+- name: Phanerozoic
+  eras:
+  - name: Paleozoic
+    periods:
+    - name: Cambrian
+      series:
+      - name: Terrenuevian
+        stages:
+        - name: Fortunian
+        - name: Cambrian Stage 2
+      - name: Cambrian Series 2
+        stages:
+        - name: Cambrian Stage 3
+        - name: Cambrian Stage 4
+      - name: Miaolingian
+        stages:
+        - name: Wuliuan
+        - name: Drumian
+        - name: Guzhangian
+      - name: Furongian
+        stages:
+        - name: Paibian
+        - name: Jiangshanian
+        - name: Cambrian Stage 10
+    - name: Ordovician
+      series:
+      - name: Lower Ordovician
+        stages:
+        - name: Tremadocian
+        - name: Floian
+      - name: Middle Ordovician
+        stages:
+        - name: Dapingian
+        - name: Darriwilian
+      - name: Upper Ordovician
+        stages:
+        - name: Sandbian
+        - name: Katian
+        - name: Hirnantian
+    - name: Silurian
+      series:
+      - name: Llandovery
+        stages:
+        - name: Rhuddanian
+        - name: Aeronian
+        - name: Telychian
+      - name: Wenlock
+        stages:
+        - name: Sheinwoodian
+        - name: Homerian
+      - name: Ludlow
+        stages:
+        - name: Gorstian
+        - name: Ludfordian
+      - name: Přídolí
+        stages: []
+    - name: Devonian
+      series:
+      - name: Lower Devonian
+        stages:
+        - name: Lochkovian
+        - name: Pragian
+        - name: Emsian
+      - name: Middle Devonian
+        stages:
+        - name: Eifelian
+        - name: Givetian
+      - name: Upper Devonian
+        stages:
+        - name: Frasnian
+        - name: Famennian
+    - name: Carboniferous
+      series:
+      - name: Lower Mississippian
+        stages:
+        - name: Touraisian
+      - name: Middle Mississippian
+        stages:
+        - name: Viséan
+      - name: Upper Mississippian
+        stages:
+        - name: Serpukhovian
+      - name: Lower Pennsylvanian
+        stages:
+        - name: Baskirian
+      - name: Middle Pennsylvanian
+        stages:
+        - name: Moscovian
+      - name: Upper Pennsylvanian
+        stages:
+        - name: Kasimovian
+        - name: Gzhelian
+    - name: Permian
+      series:
+      - name: Cisuralian
+        stages:
+        - name: Asselian
+        - name: Sakmarian
+        - name: Artinskian
+        - name: Kungurian
+      - name: Guadalupian
+        stages:
+        - name: Roadian
+        - name: Wordian
+        - name: Capitanian
+        - name: 
+      - name: Lopingian
+        stages:
+        - name: Wuchiapingian
+        - name: Changhshingian
+  - name: Mesozoic
+    periods:
+    - name: Triassic
+      series:
+      - name: Lower Triassic
+        stages:
+        - name: Induan
+        - name: Olenekian
+      - name: Middle Triassic
+        stages:
+        - name: Anisian
+        - name: Ladinian
+      - name: Upper Triassic
+        stages:
+        - name: Carnian
+        - name: Norian
+        - name: Rhaetian
+    - name: Jurassic
+      series:
+      - name: Lower Jurassic
+        stages:
+        - name: Hettangian
+        - name: Sinemurian
+        - name: Toarcian
+      - name: Middle Jurassic
+        stages:
+        - name: Aalenian
+        - name: Bajocian
+        - name: Bathonian
+        - name: Callovian
+      - name: Upper Jurassic
+        stages:
+        - name: Oxfordian
+        - name: Kimmeridgian
+        - name: Tithonian
+    - name: Cretaceous
+      series:
+      - name: Lower Cretaceous
+        stages:
+        - name: Berriasian
+        - name: Valanginian
+        - name: Hauterivian
+        - name: Barremian
+        - name: Aptian
+        - name: Albian
+      - name: Upper Cretaceous
+        stages:
+        - name: Cenomanian
+        - name: Turonian
+        - name: Coniacian
+        - name: Santonian
+        - name: Campanian
+        - name: Maastrichtian
+  - name: Cenozoic
+    periods:
+    - name: Paleogene
+      series:
+      - name: Paleocene
+        stages:
+        - name: Danian
+        - name: Selanian
+        - name: Thanetian
+      - name: Eocene
+        stages:
+        - name: Ypresian
+        - name: Lutetian
+        - name: Bartonian
+        - name: Priabonian
+      - name: Oligocene
+        stages:
+        - name: Rupelian
+        - name: Chattian
+    - name: Neogene
+      series:
+      - name: Miocene
+        stages:
+        - name: Aquitanian
+        - name: Burdigalian
+        - name: Langhian
+        - name: Serravallian
+        - name: Tortonian
+        - name: Messinian
+      - name: Pliocene
+        stages:
+        - name: Zanclean
+        - name: Piacenzian
+    - name: Quaternary
+      series:
+      - name: Pleistocene
+        stages:
+        - name: Gelasian
+        - name: Calabrian
+        - name: Chibanian
+        - name: Late Pleistocene
+      - name: Holocene
+        stages:
+        - name: Greenlandian
+        - name: Northgrippian
+        - name: Meghalayan
+
+
