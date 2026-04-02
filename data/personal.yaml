@@ -12,7 +12,7 @@ taxonomies:
           type: true
           occurrences:
           - stage: Cambrian Stage 4
-            localStages: [Middle Dyerian, Delamaran]
+            localStageRange: [Middle Dyerian, Delamaran]
             unit: Kinzers Formation
             subunit: Emigsville Member
             biozones: [Wanneria walcottana, Olenellus roddyi]
@@ -32,6 +32,68 @@ taxonomies:
       - taxon: stromatocystitidae
         children:
         - taxon: stromatocystites
+          children:
+          - taxon: pentangularis_pompeckj_1896
+            type: true
+            occurrences:
+            - series: Cambrian Series 3
+              stageBoundary: [Wuliuan, Drumian]
+              unit: Buchava Formation
+              subunit: Slapnice Member
+              biozone: Eccaparadoxides pusillus
+              paleocontinent: Gondwana (West)
+              location:
+              - Pod trním locality
+              - near Týřovice
+              - Skryje-Týřovice Basin
+              - Bohemia
+              sources:
+              - 2015_zamora_lefebvre_hosgör_franzen_nardin_fatka_álvaro
+            - series: Cambrian Series 3
+              stageBoundary: [Wuliuan, Drumian]
+              unit: Jince Formation
+              biozone: Paradoxides (P.) pradoxissimus gracilis
+              paleocontinent: Gondwana (West)
+              location:
+              - Příbram-Jince 
+              - Bohemia
+              sources:
+              - 2015_zamora_lefebvre_hosgör_franzen_nardin_fatka_álvaro
+            - inferred:
+                stage: Cambrian Stage 4
+              unit: Jbel Wawrmast Formation
+              subunit: Brèche à Micmacca Member
+              biozone: Morocconus notabilis
+              sources:
+              - 2015_zamora_lefebvre_hosgör_franzen_nardin_fatka_álvaro
+            - inferred:
+                stage: Wuliuan
+              unit: Jbel Wawrmast Formation
+              subunit: Tarhoucht Member
+              biozone: Morocconus notabilis
+              paleocontinent: Gondwana (West)
+              location:
+              - Morocco
+              sources:
+              - 2015_zamora_lefebvre_hosgör_franzen_nardin_fatka_álvaro
+            - stage: Wuliuan
+              uhit: Oville Formation
+              subunit: Genestosa Member
+              paleocontinent: Gondwana (West)
+              location:
+              - Spain
+              sources:
+              - 2015_zamora_lefebvre_hosgör_franzen_nardin_fatka_álvaro
+          - taxon: walcotti_schuchert_1919
+            quoted: true
+            syononms:
+            - taxon: walcotti_schuchert_1919
+              parents:
+              - taxon: schuchertidiscus
+                notes: nomen nudum
+          - taxon: reduncus_smith.a.b_jell_1990
+            synonyms:
+            - openTaxon: "?stromatocystites-sp_jell_burrett_banks_1985"
         - taxon: cambraster
           children:
           - taxon: cannati_miquel_1894
@@ -224,6 +286,27 @@ taxonomies:
             children:
             - taxon: enubilatus_smith.a.b_jell_1990
               type: true
+              occurrences:
+              - series: Furongian
+                localStage: Franconian
+                biozone: Peichiashania secunda-Prochuangia glabella
+                notes: Described as "median Upper Cambrian"
+                inferred:
+                - stage: Jiangshanian
+                  notes: Based on biozone
+                paleocontinent: Gondwana (East)
+                location:
+                - K204 of Shergold (1982)
+                - Chatsworthia Limestone
+                - 3.5 km south of Chatsworth Homestead
+                - 60 km southeast of Duchess
+                - western Queensland
+                - Australia
+                specimens:
+                  QMF:
+                  - [17872, 17873]
+                sources:
+                - 1990_smith.a.b_jell
             - taxon: guolensis_zhu.x.j_zamora_lefebvre_2014
           - taxon: lampteroblastus
             children:
@@ -330,6 +413,66 @@ taxonomies:
             - Springfield
             - Victoria
             - Australia
+      - taxon: hadrodiscus
+        children:
+        - taxon: parma_smith.a.b_jell_1990
+          type: true
+          occurrences:
+          - series: Furongian
+            localStage: Franconian
+            biozone: Peichiashania secunda-Prochuangia glabella
+            notes: Described as "median Upper Cambrian"
+            inferred:
+            - stage: Jiangshanian
+              notes: Based on biozone
+            paleocontinent: Gondwana (East)
+            location:
+            - K204 of Shergold (1982)
+            - Chatsworthia Limestone
+            - 3.5 km south of Chatsworth Homestead
+            - 60 km southeast of Duchess
+            - western Queensland
+            - Australia
+            specimens:
+              QMF:
+              - [17874, 17875]
+              BMNH:
+              - E63527
+            sources:
+            - 1990_smith.a.b_jell
+      - taxon: chatsworthia
+        children:
+        - taxon: spinosa_smith.a.b_jell
+          type: true
+          occurrences:
+          - series: Furongian
+            localStage: Franconian
+            biozone: Peichiashania secunda-Prochuangia glabella
+            notes: Described as "median Upper Cambrian"
+            inferred:
+            - stage: Jiangshanian
+              notes: Based on biozone
+            paleocontinent: Gondwana (East)
+            location:
+            - K204 of Shergold (1982)
+            - Chatsworthia Limestone
+            - 3.5 km south of Chatsworth Homestead
+            - 60 km southeast of Duchess
+            - western Queensland
+            - Australia
+            specimens:
+              QMF:
+              - [17944, 17959]
+              NMVP:
+              - 107129
+              - 108990
+              BMNH:
+              - [E63528, E63530]
+              - E6353
+              BMNH:
+              - E63527
+            sources:
+            - 1990_smith.a.b_jell
       - taxon: pyrgocystidae
       - taxon: lebetodiscina
         children:
@@ -420,7 +563,7 @@ taxonomies:
           outdatedNames:
             series: Cambrian Series 3
           inferred:
-            age: Wuliuan
+            stage: Wuliuan
           unit: Jbel Wawrmast Formatation
           subunit: Tarhoucht Member
           biozones: [Cephalopyge notabilis, Ornamentaspis fequens]
@@ -507,6 +650,7 @@ taxonomies:
               type: true
             - taxon: gondi_ubaghs_1987
             - taxon: granulosa_robison_1965
+              synonyms:
               - taxon: longidactylus_walcott_1886
                 pars: true
                 parents:
@@ -721,8 +865,6 @@ taxonomies:
               - openTaxon: lichenoides-sp_zamora_deline_álvaro_rahman_2017
               occurrences:
               - stage: Wuliuan
-                obsoleteNames:
-                  stage: Cambrian Stage 5
                 unit: Jbel Wawrmast Formation
                 subunit: Tarhoucht Member
                 inferred:
@@ -910,6 +1052,7 @@ taxonomies:
         - taxon: ridersia
           type: true
       - taxon: dichoporita
+        children:
         - taxon: glyptocystitida-superfamily
         - taxon: hemicosmitida-superfamily
     - taxon: trachelocrinida
@@ -1024,6 +1167,7 @@ taxonomies:
                   sources:
                   - 2001_rozhnov_fedorov
               - taxon: paracryptocrinites-sp_rozhnov_fedorov_2001
+                occurrences:
                 - period: Ordovician
                   localStage: Volkhov
                   notes: Arenigian also mentioned, but seems == Floian
@@ -1058,6 +1202,7 @@ taxonomies:
             - taxon: lysocystites
               provisional: true
         - taxon: digitata
+          children:
           - taxon: rhipidocystidae
             type: true
             children:

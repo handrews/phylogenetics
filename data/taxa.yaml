@@ -4079,6 +4079,7 @@ enubilatus_smith.a.b_jell_1990:
   name: enubilatus
   authority:
     source: 1990_smith.a.b_jell
+  holotype: {QMF: [17872]}
 eocrinida:
   name: Eocrinida
   rank: Order
@@ -10424,6 +10425,7 @@ spinosa_smith.a.b_jell_1990:
   name: spinosa
   authority:
     source: 1990_smith.a.b_jell
+  holotype: {QMF: [17944]}
 spinosa_wang.d.z_nohejlová_sun.z.x_zeng.h_lefebvre_yang.x.l_zhao.f.c_2024:
   name: spinosa
   authority:
