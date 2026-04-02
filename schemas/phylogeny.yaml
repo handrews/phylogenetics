@@ -327,7 +327,11 @@ $defs:
         type: boolean
         default: false
       holotype:
-        type: string
+        type: object
+        additionalProperties:
+          type: array
+          items:
+            type: string
       notes:
         type: string
   rank:
