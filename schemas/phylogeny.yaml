@@ -473,6 +473,10 @@ $defs:
               maxItems: 2
               items:
                 type: [integer, string]
+          occurrences:
+            type: array
+            items:
+              $ref: "phylogeny#/$defs/occurrence"
         additionalProperties: false
       notes:
         type: string
@@ -628,6 +632,296 @@ $defs:
         type: string
       notes:
         type: string
+  basicOccurrence:
+    type: object
+    properties:
+      series:
+        $ref: "#/$defs/series"
+      seriesBoundary:
+        $ref: "#/$defs/seriesRange"
+      seriesRange:
+        $ref: "#/$defs/seriesRange"
+      stage:
+        $ref: "#/$defs/stage"
+      stageBoundary:
+        $ref: "#/$defs/stageRange"
+      stageRange:
+        $ref: "#/$defs/stageRange"
+      unit:
+        type: string
+      subunit:
+        type: string
+      biozone:
+        type: string
+      biozones:
+        type: array
+        items:
+          type: string
+        minItems: 2
+      paleocontinent:
+        type: string
+      location:
+        type: array
+        items:
+          type: string
+      sources:
+        type: array
+        items:
+          $ref: "#/$defs/sourceId"
+      notes:
+        type: string
+      specimens:
+        type: object
+        additionalProperties:
+          type: array
+          items:
+            type: [string, array]
+            items:
+              type: string
+      possibleSpecimens:
+        type: object
+        additionalProperties:
+          type: array
+          items:
+            type: [string, array]
+            items:
+              type: string
+  occurrence:
+    $ref: "#/$defs/basicOccurrence"
+    properties:
+      localSeries:
+        $ref: "#/$defs/localSeries"
+      localSeriesBoundary:
+        $ref: "#/$defs/localSeriesRange"
+      localSeriesRange:
+        $ref: "#/$defs/localSeriesRange"
+      localStage:
+        $ref: "#/$defs/localStage"
+      localStageBoundary:
+        $ref: "#/$defs/localStageRange"
+      localStageRange:
+        $ref: "#/$defs/localStageRange"
+      inferred:
+        $ref: "#/$defs/basicOccurrence"
+        unevaluatedProperties: false
+    unevaluatedProperties: false
+  eons:
+    type: string
+    enum:
+    - Hadean
+    - Archean
+    - Proterozoic
+    - Phanerozoic
+  eras:
+    type: string
+    enum:
+    - Eoarchean
+    - Paleoarchean
+    - Mesoarchean
+    - Neoarchean
+    - Paleoproterozoic
+    - Mesoproterozoic
+    - Neoproterozoic
+    - Paleozoic
+    - Mesozoic
+    - Cenozoic
+  periods:
+    type: string
+    enum:
+    - Siderian
+    - Rhyacian
+    - Orosirian
+    - Statherian
+    - Calymmian
+    - Ectasian
+    - Stenian
+    - Tonian
+    - Cryogenian
+    - Ediacaran
+    - Cambrian
+    - Ordovician
+    - Silurian
+    - Devonian
+    - Carboniferous
+    - Permian
+    - Triassic
+    - Jurassic
+    - Cretaceous
+    - Paleogene
+    - Neogene
+    - Quaternary
+  localSeries:
+    type: string
+  localSeriesRange:
+    type: array
+    items:
+      $ref: "#/$defs/localSeries"
+    minItems: 2
+    maxItems: 2
+  seriesRange:
+    type: array
+    items:
+      $ref: "#/$defs/series"
+    minItems: 2
+    maxItems: 2
+  series:
+    type: string
+    enum:
+    - Terrenuevian
+    - Cambrian Series 2
+    - Miaolingian
+    - Furongian
+    - Lower Ordovician
+    - Middle Ordovician
+    - Upper Ordovician
+    - Llandovery
+    - Wenlock
+    - Ludlow
+    - Přídolí
+    - Lower Devonian
+    - Middle Devonian
+    - Upper Devonian
+    - Lower Mississippian
+    - Middle Mississippian
+    - Upper Mississippian
+    - Lower Pennsylvanian
+    - Middle Pennsylvanian
+    - Upper Pennsylvanian
+    - Cisuralian
+    - Guadalupian
+    - Lopingian
+    - Lower Triassic
+    - Middle Triassic
+    - Upper Triassic
+    - Lower Jurassic
+    - Middle Jurassic
+    - Upper Jurassic
+    - Lower Cretaceous
+    - Upper Cretaceous
+    - Paleocene
+    - Eocene
+    - Oligocene
+    - Miocene
+    - Pliocene
+    - Pleistocene
+    - Holocene
+  localStage:
+    type: string
+  localStageRange:
+    type: array
+    items:
+      $ref: "#/$defs/localStage"
+    minItems: 2
+    maxItems: 2
+  stageRange:
+    type: array
+    items:
+      $ref: "#/$defs/stage"
+    minItems: 2
+    maxItems: 2
+  stage:
+    type: string
+    enum:
+    - Fortunian
+    - Cambrian Stage 2
+    - Cambrian Stage 3
+    - Cambrian Stage 4
+    - Wuliuan
+    - Drumian
+    - Guzhangian
+    - Paibian
+    - Jiangshanian
+    - Cambrian Stage 10
+    - Tremadocian
+    - Floian
+    - Dapingian
+    - Darriwilian
+    - Sandbian
+    - Katian
+    - Hirnantian
+    - Rhuddanian
+    - Aeronian
+    - Telychian
+    - Sheinwoodian
+    - Homerian
+    - Gorstian
+    - Ludfordian
+    - Lochkovian
+    - Pragian
+    - Emsian
+    - Eifelian
+    - Givetian
+    - Frasnian
+    - Famennian
+    - Touraisian
+    - Viséan
+    - Serpukhovian
+    - Baskirian
+    - Moscovian
+    - Kasimovian
+    - Gzhelian
+    - Asselian
+    - Sakmarian
+    - Artinskian
+    - Kungurian
+    - Roadian
+    - Wordian
+    - Capitanian
+    - Wuchiapingian
+    - Changhsingian
+    - Induan
+    - Olenekian
+    - Anisian
+    - Ladinian
+    - Carnian
+    - Norian
+    - Rhaetian
+    - Hettangian
+    - Sinemurian
+    - Toarcian
+    - Aalenian
+    - Bajocian
+    - Bathonian
+    - Callovian
+    - Oxfordian
+    - Kimmeridgian
+    - Tithonian
+    - Berriasian
+    - Valanginian
+    - Hauterivian
+    - Barremian
+    - Aptian
+    - Albian
+    - Cenomanian
+    - Turonian
+    - Coniacian
+    - Santonian
+    - Campanian
+    - Maastrichtian
+    - Danian
+    - Selanian
+    - Thanetian
+    - Ypresian
+    - Lutetian
+    - Bartonian
+    - Priabonian
+    - Rupelian
+    - Chattian
+    - Aquitanian
+    - Burdigalian
+    - Langhian
+    - Serravallian
+    - Tortonian
+    - Messinian
+    - Zanclean
+    - Piacenzian
+    - Gelasian
+    - Calabrian
+    - Chibanian
+    - Upper Pleistocene # Tarantian
+    - Greenlandian
+    - Northgrippian
+    - Meghalayan
   specimen:
     oneOf:
     - type: string
