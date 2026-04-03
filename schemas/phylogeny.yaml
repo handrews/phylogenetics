@@ -331,9 +331,9 @@ $defs:
         additionalProperties:
           type: array
           items:
-            type: [array, string, number]
+            type: [array, string, integer]
             items:
-              type: [string, number]
+              type: [string, integer]
       notes:
         type: string
   rank:
@@ -439,6 +439,10 @@ $defs:
         type: integer
       modifier:
         type: string
+      occurrences:
+        type: array
+        items:
+          $ref: "phylogeny#/$defs/occurrence"
       source:
         type: string
       citation:
@@ -473,10 +477,6 @@ $defs:
               maxItems: 2
               items:
                 type: [integer, string]
-          occurrences:
-            type: array
-            items:
-              $ref: "phylogeny#/$defs/occurrence"
         additionalProperties: false
       notes:
         type: string
@@ -635,6 +635,12 @@ $defs:
   basicOccurrence:
     type: object
     properties:
+      eon:
+        $ref: "#/$defs/eon"
+      era:
+        $ref: "#/$defs/era"
+      period:
+        $ref: "#/$defs/period"
       series:
         $ref: "#/$defs/series"
       seriesBoundary:
@@ -647,9 +653,15 @@ $defs:
         $ref: "#/$defs/stageRange"
       stageRange:
         $ref: "#/$defs/stageRange"
+      superunit:
+        type: string
       unit:
         type: string
       subunit:
+        type: string
+      section:
+        type: string
+      biota:
         type: string
       biozone:
         type: string
@@ -675,9 +687,9 @@ $defs:
         additionalProperties:
           type: array
           items:
-            type: [string, array]
+            type: [string, integer, array]
             items:
-              type: string
+              type: [string, integer]
       possibleSpecimens:
         type: object
         additionalProperties:
@@ -689,6 +701,9 @@ $defs:
   occurrence:
     $ref: "#/$defs/basicOccurrence"
     properties:
+      tentative:
+        type: boolean
+        default: false
       localSeries:
         $ref: "#/$defs/localSeries"
       localSeriesBoundary:
@@ -705,14 +720,14 @@ $defs:
         $ref: "#/$defs/basicOccurrence"
         unevaluatedProperties: false
     unevaluatedProperties: false
-  eons:
+  eon:
     type: string
     enum:
     - Hadean
     - Archean
     - Proterozoic
     - Phanerozoic
-  eras:
+  era:
     type: string
     enum:
     - Eoarchean
@@ -725,7 +740,7 @@ $defs:
     - Paleozoic
     - Mesozoic
     - Cenozoic
-  periods:
+  period:
     type: string
     enum:
     - Siderian

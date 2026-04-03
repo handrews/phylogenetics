@@ -37,7 +37,7 @@
             - taxon: pentangularis_pompeckj_1896
               type: true
               occurrences:
-              - series: Cambrian Series 3
+              - series: Miaolingian
                 stageBoundary: [Wuliuan, Drumian]
                 unit: Buchava Formation
                 subunit: Slapnice Member
@@ -50,7 +50,7 @@
                 - Bohemia
                 sources:
                 - 2015_zamora_lefebvre_hosgör_franzen_nardin_fatka_álvaro
-              - series: Cambrian Series 3
+              - series: Miaolingian
                 stageBoundary: [Wuliuan, Drumian]
                 unit: Jince Formation
                 biozone: Paradoxides (P.) pradoxissimus gracilis
@@ -78,7 +78,7 @@
                 sources:
                 - 2015_zamora_lefebvre_hosgör_franzen_nardin_fatka_álvaro
               - stage: Wuliuan
-                uhit: Oville Formation
+                unit: Oville Formation
                 subunit: Genestosa Member
                 paleocontinent: Gondwana (West)
                 location:
@@ -87,7 +87,7 @@
                 - 2015_zamora_lefebvre_hosgör_franzen_nardin_fatka_álvaro
             - taxon: walcotti_schuchert_1919
               quoted: true
-              syononms:
+              synonyms:
               - taxon: walcotti_schuchert_1919
                 parents:
                 - taxon: schuchertidiscus
@@ -105,17 +105,17 @@
                 subunit: Bed G
                 inferred:
                   stageBoundary: [Cambrian Stage 4, Wuliuan]
-              biozone: Xystridura negrina
-              paleocontinent: Gondwana (East)
-              location:
-              - UQL453
-              - Queensland
-              - Australia
-              specimens:
-                QMF:
-                - [59647, 59653]
-              sources:
-              - 2021_jell_sprinkle
+                biozone: Xystridura negrina
+                paleocontinent: Gondwana (East)
+                location:
+                - UQL453
+                - Queensland
+                - Australia
+                specimens:
+                  QMF:
+                  - [59647, 59653]
+                sources:
+                - 2021_jell_sprinkle
       - taxon: edrioasterida
         children:
         - taxon: walcottidiscus
@@ -229,7 +229,8 @@
               - taxon: bigsbyi_billings_1857
                 type: true
                 synonyms:
-                - parent: cyclaster_billings_1857
+                - parents:
+                  - taxon: cyclaster_billings_1857
               - taxon: buchianus_forbes_1848
                 synonyms:
                 - parents:
@@ -247,7 +248,7 @@
                   - taxon: edrioaster
               - cfTaxon: laevis_bather_1914 # alt spelling of levis? sep fm cf
               - taxon: saratogensis_ruedemann_1912
-                provisiona: true
+                provisional: true
             - taxon: paredriophus
               children:
               - taxon: elongatus_guensburg_sprinkle_1994
@@ -293,7 +294,7 @@
                   biozone: Peichiashania secunda-Prochuangia glabella
                   notes: Described as "median Upper Cambrian"
                   inferred:
-                  - stage: Jiangshanian
+                    stage: Jiangshanian
                     notes: Based on biozone
                   paleocontinent: Gondwana (East)
                   location:
@@ -424,7 +425,7 @@
               biozone: Peichiashania secunda-Prochuangia glabella
               notes: Described as "median Upper Cambrian"
               inferred:
-              - stage: Jiangshanian
+                stage: Jiangshanian
                 notes: Based on biozone
               paleocontinent: Gondwana (East)
               location:
@@ -451,7 +452,7 @@
               biozone: Peichiashania secunda-Prochuangia glabella
               notes: Described as "median Upper Cambrian"
               inferred:
-              - stage: Jiangshanian
+                stage: Jiangshanian
                 notes: Based on biozone
               paleocontinent: Gondwana (East)
               location:
@@ -558,8 +559,6 @@
               as ~515-510MA which would be Series 2, Stage 3-4.
               Other sources put this formation around base of Series 3.
             series: Miaolingian
-            outdatedNames:
-              series: Cambrian Series 3
             inferred:
               stage: Wuliuan
             unit: Jbel Wawrmast Formatation
@@ -631,7 +630,7 @@
               - taxon: rotundus_parsley_zhao.y.l_2006
                 type: true
                 occurrences:
-                - series: Cambrian Series 3
+                - series: Miaolingian
                   unit: Kaili Formation
                   biozone: Orytocephalus indicus
                   sources:
@@ -720,8 +719,8 @@
                   modifier: nomen nudum
                   parents:
                   - taxon: sinoeocrinus
-                occurences:
-                - series: Cambrian Series 3
+                occurrences:
+                - series: Miaolingian
                   unit: Kaili Formation
                   biozone: Orytocephalus indicus
                   paleocontinent: South China
@@ -799,7 +798,7 @@
                   parents:
                   - taxon: curteocrinus
                 occurrences:
-                - series: Cambrian Series 3
+                - series: Miaolingian
                   unit: Kaili Formation
                   biozone: Orytocephalus indicus
                   paleocontinent: South China
@@ -819,7 +818,7 @@
               - taxon: inflatus_parsley_zhao.y.l_2010
                 type: true
                 occurrences:
-                - series: Cambrian Series 3
+                - series: Miaolingian
                   unit: Kaili Formation
                   biota: Kaili
                   biozone: Oryctocephalus indicus
@@ -969,7 +968,7 @@
                   subunit: Bed B
                   biozone: Redlichia forresti
                   inferred:
-                  - stage: Cambrian Stage 4
+                    stage: Cambrian Stage 4
                   paleocontinent: Gondwana (East)
                   location:
                   - UQL499
@@ -995,7 +994,7 @@
             - taxon: guoleensis_chen.g.y_han.n.r_2014
               type: true
               occurrences:
-              - stage: Furongian
+              - series: Furongian
                 unit: Guole Formation
                 paleocontinent: South China
                 sources:
