@@ -95,6 +95,7 @@ def main():
   parser.add_argument('-i', '--highest')
   parser.add_argument('-w', '--lowest')
   parser.add_argument('-a', '--author', nargs='+', action='extend', default=[])
+  parser.add_argument('-p', '--personal', default=False, action='store_true')
   args = parser.parse_args()
 
   taxa = frozenset(
@@ -119,7 +120,7 @@ def main():
     if 'o' in args.type:
       tree_types.add(Tree.TYPE_OTHER)
 
-  data = load_files()
+  data = load_files(args.personal)
 
   for field, cls in (
     ('authors', Author),

@@ -9,15 +9,26 @@ import jschon
 logger = logging.getLogger(__name__)
 
 
-FILEDIR = pathlib.Path(__file__).parent / '..' / 'data'
-FILES = (
-  FILEDIR / 'authors.yaml',
-  FILEDIR / 'publications.yaml',
-  FILEDIR / 'sources.yaml',
-  FILEDIR / 'taxa.yaml',
-  FILEDIR / 'trees.yaml',
-)
+# Raw string to work around bizarre syntax highlighting bug
+FILEDIR = pathlib.Path(__file__).parent / r'..'
+DATA_DIR = FILEDIR / 'data'
+PERSONAL_DIR = FILEDIR / 'personal'
 
+COMMON_FILES = (
+  DATA_DIR / 'authors.yaml',
+  DATA_DIR / 'publications.yaml',
+  DATA_DIR / 'sources.yaml',
+  DATA_DIR / 'taxa.yaml',
+)
+DATA_FILES = (
+  DATA_DIR / 'trees.yaml',
+)
+PERSONAL_FILES = (
+  PERSONAL_DIR / 'authors.yaml',
+  PERSONAL_DIR / 'publications.yaml',
+  PERSONAL_DIR / 'sources.yaml',
+  PERSONAL_DIR / 'trees.yaml',
+)
 
 class UniqueKeyNoDatesLoader(yaml.SafeLoader):
   # and https://stackoverflow.com/questions/34667108/ignore-dates-and-times-while-parsing-yaml
@@ -66,15 +77,15 @@ def load_yaml(filename, debug=True):
     return data
 
 
-def load_files(*files):
-  if files:
-    files = [pathlib.Path(f) for f in files]
+def load_files(personal=False):
+  if personal:
+    files = COMMON_FILES + PERSONAL_FILES
   else:
-    files = FILES
+    files = COMMON_FILES + DATA_FILES
 
   logger.info("Checking schema...")
   schema_library = jschon.JSONSchema(load_yaml(
-    pathlib.Path(__file__).parent / '..' / 'schemas' / 'phylogeny.yaml'
+    pathlib.Path(__file__).parent / r'..' / 'schemas' / 'phylogeny.yaml'
   ))
   r = schema_library.validate()
   if not r.valid:
@@ -92,6 +103,8 @@ def load_files(*files):
     'sources': {},
     'taxa': {},
     'trees': {},
+    'personal': {},
+    'time': {},
   }
   for filename in files:
     logger.info(f'Checking "{filename}"...')

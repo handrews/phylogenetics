@@ -1,4 +1,4 @@
-2026_andrews:
+2026_andrews.h.h:
   taxonomies:
   - taxon: echinodermata
     children:
@@ -468,10 +468,7 @@
                 - 107129
                 - 108990
                 BMNH:
-                - [E63528, E63530]
-                - E6353
-                BMNH:
-                - E63527
+                - [E63527, E63531]
               sources:
               - 1990_smith.a.b_jell
         - taxon: pyrgocystidae
