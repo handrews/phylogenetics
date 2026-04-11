@@ -1,0 +1,38 @@
+taxonomies:
+- taxon: pyrgocystis
+  authority:
+    source: 1915_bather
+  children:
+  - taxon: coronaeformis_rievers_1961
+    new: true
+    pages:
+    - [10, 11]
+    figures:
+    - plate: 2
+      figures:
+      - [1, 4]
+    diagnosis: |
+      A *Pyrgocystis* specimen measuring 95 mm in overall length,
+      featuring a scaly column (stem) approximately 13 mm in diameter,
+      which transitions at its lower end into a rounded, sac-like
+      structure measuring 27 mm in height and approximately 17 mm
+      in diameter.
+    occurrences:
+    - series: Lower Devonian
+      unit:
+      - Roofing Slate facies
+      - Hunsrück Slate
+      locality:
+      - near Kirn (Nahe)
+      - Bundenbach
+      - Hunsrück Region
+      - Germany
+      fauna:
+      - Shallow-marine
+      specimens:
+        RVS:
+          holotypes:
+          - "[Plate 2, Figures 1–4]"
+      inferred:
+        stage: Emsian
+        paleocontinent: Laurussia

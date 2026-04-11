@@ -1065,10 +1065,16 @@ balantiocystis:
   name: Balantiocystis
   auth: [Chauvel]
   year: 1966
+baltica_jaekel_1901:
+  name: baltica
+  auth: [jaekel]
+  year: 1901
+  notes: Rhipidocystis
 balticus_jaekel_1899:
   name: balticus
   auth: [jaekel]
   year: 1899
+  notes: Stromatocystites
 balticus_eichwald_1829:
   name: balticus
   auth: [eichwald]
@@ -4195,6 +4201,11 @@ eocrinoidea-family-uncertain_sumrall_zamora_2015:
   rank: Family
   authority:
     source: 2015_sumrall_zamora
+eocrinoidea-uncertain-family_zamora_sumrall_sprinkle_2015:
+  name: null
+  rank: Family
+  authority:
+    source: 2015_zamora_sumrall_sprinkle
 eocrinoidea-sp_hu.s.x_luo.h.l_hou.s.g_erdtmann_2007:
   name: null
   rank: species
@@ -4624,6 +4635,10 @@ fragilis_abildgaard_1789:
   auth: [Abildgaard]
   in: [müller.o.f]
   year: 1789
+fragilis_barrande_1887:
+  name: fragilis
+  auth: [barrande]
+  year: 1887
 frondosa_gunnerus_1767:
   name: frondosa
   authority:
@@ -5143,8 +5158,9 @@ gravus_bockelie_1981:
   altSpellingOf: grava_bockelie_1981
 grayae_bather_1915:
   name: grayae
-  auth: [bather]
-  year: 1915
+  authority:
+    source: 1915_bather
+  holotype: {NHMUK: [E23470]}
 graysoni_sumrall_sprinkle_bonem_2006:
   name: graysoni
   authority:
@@ -5869,6 +5885,10 @@ inexpectatus_sumrall_zamora_2011:
   name: inexpectatus
   authority:
     source: 2011_sumrall_zamora
+inexpectans_sumrall_zamora_2011:
+  name: inexpectans
+  altSpellingOf: inexpectatus_sumrall_zamora_2011
+  notes: PBDB uses this spelling
 inexpectata_paul.c.r.c_1997:
   name: inexpectata
   authority:
@@ -6386,6 +6406,10 @@ languedocianus_ubaghs_1987:
   name: languedocianus
   auth: [ubaghs]
   year: 1987
+lapillocystites:
+  name: Lapillocystites
+  auth: [barrande]
+  year: 1887
 lapis cancri_leske_1778:
   name: lapis cancri
   authority:
@@ -6708,6 +6732,10 @@ ljubzovi_yakovlev_1956:
   name: ljubzovi
   auth: [Yakovlev]
   year: 1956
+llanocystis:
+  name: Llanocystis
+  authority:
+    source: 2015_zamora_sumrall_sprinkle
 lloydi_sprinkle_1985:
   name: lloydi
   auth: [sprinkle]
@@ -6777,6 +6805,10 @@ lucunter_linnaeus_1758:
   name: lucunter
   authority:
     source: 1758_linnaeus
+luhocrinus:
+  name: Luhocrinus
+  auth: [prokop, fatka]
+  year: 1985
 lui_zhao.y.l_huang.y.z_gong.x.y_1994:
   name: lui
   authority:
@@ -7007,6 +7039,10 @@ mariae_callaway_1877:
   name: mariae
   auth: [Callaway]
   year: 1877
+marjumicystis:
+  name: Marjumicystis
+  auth: [ubaghs, Robison]
+  year: 1985
 marmorata_lamarck_1816:
   name: marmorata
   authority:
@@ -7159,6 +7195,10 @@ metazoa-grade:
   rank: Grade
   auth: [haeckel]
   year: 1874
+mettae_ubaghs_robison_1988:
+  name: mettae
+  auth: [ubaghs, Robison]
+  year: 1988
 metularia_lamarck_1816:
   name: metularia
   authority:
@@ -7352,6 +7392,10 @@ moncereti_domínguez alonso_1999:
   name: moncereti
   auth: [domínguez alonso]
   year: 1999
+monicae_prokop_fatka_1985:
+  name: monicae
+  auth: [prokop, fatka]
+  year: 1985
 moniliformis_miller.j.s_1821:
   name: moniliformis
   authority:
@@ -8964,6 +9008,9 @@ procerum_aurivillius_1892:
   name: procerum
   auth: [Aurivillius]
   year: 1892
+procera_aurivillius_1892:
+  name: procera
+  altSpellingOf: procerum_aurivillius_1892
 proexenocrinus:
   name: Proexenocrinus
   auth: [Strimple, McGinnis]
@@ -9482,6 +9529,11 @@ regius_billings_1857:
   name: regius
   authority:
     source: 1857_billings
+regnelli_chauvel_1966:
+  name: regnelli
+  notes: Authority based on genus (Balantiocystis) and might be incorrect
+  auth: [Chauvel]
+  year: 1966
 regnelli_sinclair_1948:
   name: regnelli
   auth: [Sinclair]
@@ -9618,6 +9670,11 @@ rhenopyrgus-subgenus:
   rank: subgenus
   auth: [Dehm]
   year: 1961
+rhenopyrgus-sp-1_ewin_martin.m_isotalo_zamora_2020:
+  name: null
+  rank: species
+  authority:
+    source: 2020_ewin_martin.m_isotalo_zamora
 rhipidocystidae:
   name: Rhipidocystidae
   rank: Family
@@ -9989,6 +10046,11 @@ schlotheimii_unknown:
     and no other use of "Holl." in the source.  A fragmentary OCR
     text jumble appeared to credit "Münster" with no year, but it
     was too noisy to be certain.
+schuchertidiscus:
+  name: Schuchertidiscus
+  auth: [Wilbur]
+  year: 2005
+  notes: nomen nudum; thesis not formally published
 schuchertocystis:
   name: Schuchertocystis
   auth: [bassler]
@@ -11702,6 +11764,11 @@ vittata_forsskål_1775:
   name: vittata
   auth: [forsskål]
   year: 1775
+viviani_ewin_martin.m_isotlo_zamora_2020:
+  name: viviani
+  authority:
+    source: 2020_ewin_martin.m_isotalo_zamora
+  holotype: {EE: [16642]}
 viviannae_domínguez alonso_1999:
   name: viviannae
   auth: [domínguez alonso]
@@ -11812,6 +11879,11 @@ whitesidei_sumrall_sprinkle_bonem_2006:
   name: whitesidei
   authority:
     source: 2006_sumrall_sprinkle_bonem
+wilbernsensis_zamora_sumrall_sprinkle_2015:
+  name: wilbernsensis
+  authority:
+    source: 2015_zamora_sumrall_sprinkle
+  holotype: {USNM: [178555]}
 wilkinsi_gill_caster_1960:
   name: wilkinsi
   authority:

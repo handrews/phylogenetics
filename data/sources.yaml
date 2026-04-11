@@ -1155,6 +1155,19 @@
   - clark.a.h
   identifiers:
     url: https://www.biodiversitylibrary.org/page/43433793
+1915_bather:
+  title: Studies in Edrioasteroidea IV. Pyrgocystis n. g.
+  journal: geomag
+  number: 5–12
+  pages:
+  - 49
+  - 90
+  pubDate:
+    year: 1915
+    month: 12
+    day: 6
+  authors:
+  - bather
 1929_matsumoto:
   title: Outline of a classification of Echinoermata
   journal: tohoku
@@ -1169,6 +1182,19 @@
     year: 1929
   identifiers:
     url: https://files.core.ac.uk/download/pdf/235749176.pdf
+1930_richter.r:
+  title: |
+    Schuppenrohren als Anzeiger von zwei im deutschen Devon neuen
+    Echinodermen-Gruppen (Edrioasteroidea Billings und Ophiocistia Sollas?)
+  journal: senckenbergiana
+  volume: 12
+  pages:
+  - 279
+  - 304
+  pubDate:
+    year: 1930
+  authors:
+  - richter.r
 1935_bassler:
   title: The Classification of the Edrioasteroidea
   complete:
@@ -1243,6 +1269,28 @@
   - caster
   identifiers:
     url: https://www.biodiversitylibrary.org/page/10654670
+1961_dehm:
+  title: Über Pyrgocystis (Rhenopyrgus) nov. subgen. Coronaeformis Rievers aus dem rheinischen Unter-Devon
+  journal: mitt
+  volume: 1
+  pages:
+  - 12
+  - 17
+  pubDate:
+    year: 1961
+  authors:
+  - dehm
+1961_rievers:
+  title: Eine neue Pyrgocystis (Echinod., Edrioasteroidea) aus den Bundenbacher Dachschiefern (Devon)
+  journal: mitt
+  volume: 1
+  pages:
+  - 9
+  - 11
+  pubDate:
+    year: 1961
+  authors:
+  - rievers
 1962_fay:
   title: Edrioblastoidea, a new class of Echinodermata
   complete:
@@ -3705,6 +3753,24 @@ inprep_sprinkle_strimple:
   - meng.x.y
   identifiers:
     doi: 10.1016/j.palwor.2015.03.007
+2015_zamora_sumrall_sprinkle:
+  title: New long-stemmed eocrinoid from the Furongian Point Peak Shale Member of the Wilberns Formation, central Texas
+  journal: jofpaleo
+  volume: 89
+  number: 1
+  pages:
+  - 189
+  - 193
+  pubDate:
+    year: 2015
+  processDates:
+    accepted: 2014-05-28
+  authors:
+  - zamora
+  - sumrall
+  - sprinkle
+  identifiers:
+    doi: 10.1017/jpa.2014
 2015_zhao.y.l_peng.j_wu.m.y_luo.x.c_wen.r.q_liu.y.j:
   title: A New Type Eocrinoids of Echinoderms from the Balang Formation in Cambrian at Xiasi Town, Majiang County, Guizhou Province, China
   journal: earth-science
@@ -3897,6 +3963,25 @@ inprep_sprinkle_strimple:
     issued: 2019-03-31
   identifiers:
     doi: 10.3140/bull.geosci.1730
+2020_ewin_martin.m_isotalo_zamora:
+  title: New rhenopyrgid edrioasteroids (Echinodermata) and their implications for taxonomy, functional morphology, and paleoecology
+  journal: jofpaleo
+  volume: 94
+  number: 1
+  pages:
+  - 115
+  - 130
+  pubDate:
+    year: 2020
+  processDates:
+    accepted: 2019-08-05
+  authors:
+  - ewin
+  - martin.m
+  - isotalo
+  - zamora
+  identifiers:
+    doi: 10.1017/jpa.2019.65
 2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler:
   title: Athenacrinus n. gen. and other early echinoderm taxa inform crinoid origin and arm evolution
   journal: jofpaleo

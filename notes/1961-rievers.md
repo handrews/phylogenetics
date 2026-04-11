@@ -43,7 +43,7 @@ I would like to take this opportunity to thank Prof. Pfannenstiel (Freiburg im B
 
 *Pyrgocystis coronaeformis* n. sp.
 
-Pl. 2, Fig. 14
+Pl. 2, Fig. 1–4
 
 Diagnosis: A *Pyrgocystis* specimen measuring 95 mm in overall length, featuring a scaly column (stem) approximately 13 mm in diameter, which transitions at its lower end into a rounded, sac-like structure measuring 27 mm in height and approximately 17 mm in diameter.
 
@@ -57,7 +57,9 @@ Locality: Hunsrück region; Bundenbach near Kirn (Nahe).
 
 Stratum: Lower Devonian; Hunsrück Slate; Roofing Slate facies.
 
-Associated Fauna: Shallow-marine. Preservation: The animal's remains were completely transformed into pyrite due to the pressure of overlying sediment. During excavation, the left side of the "tower" section was damaged at approximately three-quarters of its height.
+Associated Fauna: Shallow-marine.
+
+Preservation: The animal's remains were completely transformed into pyrite due to the pressure of overlying sediment. During excavation, the left side of the "tower" section was damaged at approximately three-quarters of its height.
 
 Description: The root-like portion of the fossil—which is rounded at the base—has a sac-like appearance; it stands 27 mm tall and has an average width of 17 mm. Due to lateral compression caused by pressure, the actual diameter of the originally rounded animal was likely smaller at this point. Individual small, rounded calcareous platelets and rod-like granules are embedded within the leathery integument, creating a texture of nodules and striations that renders the surface partly granular and partly striated in appearance (Pl. 2, Fig. 4). In the lower half, the punctate pattern predominates, whereas in the upper half, the striation—which generally follows a vertical orientation—is dominant. This arrangement appears to have facilitated the animal's burrowing into the mud (or fine sand) and enhanced its structural stability against the pressure of the surrounding sediment. The upper extremity of the root-like section forms a slightly raised rim, marking the level at which the animal was embedded within the substrate. From this terminal rim of the root—serving, as it were, as a pedestal—the central section of the animal (the "tower") rises with a slight offset, thereby creating a small ledge. This "tower"—measuring 13 mm in width and 50 mm in height—is armored at its upper extremity with scale-like calcareous plates. Over the greater part of its length (approximately 35 mm), it maintains a width of 13 mm—a dimension likely somewhat exaggerated by the effects of compression. The lower part conforms with a gentle curvature to the larger diameter of the root, while the upper part widens slightly in a conical shape, forming a rim—or, to maintain the tower metaphor, a cornice—into which the tower cap is fitted as if into a cuff (Pl. 2, Figs. 2–3).
 

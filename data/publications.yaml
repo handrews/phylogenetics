@@ -150,6 +150,8 @@ mem-q:
   name: Memoirs of the Queensland Museum
 methodique:
   name: Encyclopédie Méthodique. Histoire Naturelle des Vers.
+mitt:
+  name: Mitteilungen der Bayerischen Staatssammlung für Paläontologie und historische Geologie
 monograph-palaeo:
   name: Monograph of the Palaeontological Society
 monographs-usgs:
@@ -212,6 +214,8 @@ p-z:
   name: Paläontologische Zeitschrift
 regne-animal:
   name: Le règne animal distribué d'après son organisation
+senckenbergiana:
+  name: Senckenbergiana
 series-geol:
   name: Series in Geology, Notes for a Short Course
 quart-jour-geol-soc:

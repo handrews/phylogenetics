@@ -191,6 +191,9 @@ david:
 dean.j:
   family: Dean
   given: Juliette
+dehm:
+  family: Dehm
+  given: R.
 deline:
   family: Deline
   given: Bradley
@@ -228,6 +231,9 @@ erdtmann:
 escarguel:
   family: Escarguel
   given: Gilles
+ewin:
+  family: Ewin
+  given: Timothy A. M.
 exline:
   family: Exline
   given: Harriet
@@ -407,6 +413,9 @@ hyman:
   given: Libbie Henrietta
   birth: 1888
   death: 1969
+isotalo:
+  family: Isotalo
+  given: Phillip
 jaekel:
   family: Jaekel
   given: Otto
@@ -537,6 +546,9 @@ mantell:
 martin.e.l.o:
   family: Martin
   given: Emmanuel L. O.
+martin.m:
+  family: Martin
+  given: Markus
 martin.w:
   family: Martin
   given: William
@@ -706,6 +718,12 @@ reynolds:
 rhenberg:
   family: Rhenberg
   given: Elizabeth C.
+richter.r:
+  family: Richter
+  given: Rudolf
+rievers:
+  family: Rievers
+  given: J.
 robison:
   family: Robison
   given: Richard A.

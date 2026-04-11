@@ -1,0 +1,207 @@
+taxonomies:
+- taxon: echinodermata
+  rank: Phylum
+  authority: 
+    source: 1791_bruguière
+    ex:
+      source: 1734_klein
+  children:
+  - taxon: edrioasteroidea
+    rank: Class
+    authority:
+      source: 1858b_bilings
+    children:
+    - taxon: edrioasterida
+      rank: Order
+      authority:
+        source: 1976_bell.b.m
+      children:
+      - taxon: edrioblastoidina
+        rank: Suborder
+        authority:
+          source: 1962_fay
+        children:
+        - taxon: rhenopyrgidae
+          rank: Family
+          authority:
+            source: 1983_holloway_jell
+          page: 118
+          diagnosis: |
+            Pyrgate edrioasteroids with relatively
+            small oral surfaces bearing ve, short, straight rapidly tapering
+            ambulacra; interambulacra formed of single tessellate
+            interradial oral plates and biserial and alternating oor plates
+            that may or may not be fused; cover plates, where present, are
+            biserial and tall proximally; sub oral constriction generally
+            short, composed of circlets of poorly organized imbricate,
+            scale-like plates and periproct, sometimes withdrawn behind
+            collar plates; collar plates large, forming a single imbricate
+            circlet at base of suboral constriction; pyrgate zone comprised
+            of highly imbricated scale-like plates often in eight rows
+            arranged in alternating circlets of four; holdfast formed of
+            coriaceous sac comprised of small unorganized platelets.
+          emended: true
+          occurrenceSummary:
+          - stageRange: [Tremadocian, Eifelian]
+            locationRange:
+              North Africa: [Morocco]
+              Europe: [Germany, UK, France, Russia, Sweden]
+              Americas: []
+            possiblLocationRange:
+              Europe: [Spain]
+          children:
+          - taxon: rhenopyrgus
+            rank: genus
+            authority:
+              source: 1961_dehm
+            page: 118
+            diagnosis: |
+              Rhenopyrgids with fused or unfused
+              ambulacral oor and interradial oral plates; suboral
+              constriction, formed of a zone of highly imbricate elongate
+              plates formed between the oral surface and suboral collar, may
+              or may not be exposed. Cover plates present. Pyrgate zone
+              formed of eight rows of imbricated plates arranged in two
+              circlets of four
+            emended: true
+            occurrenceSummary:
+            - stageRange: [Tremadocian, Emsian]
+            - stage: Tremadocian
+              stageModifier: upper
+              location:
+              - France
+            - stage: Floian
+              location:
+              - France
+            typeTaxon:
+              taxon: coronaeformis_rievers_1961
+              authority:
+                source: 1961_rievers
+              parents:
+              - taxon: rhenopyrgus-subgenus
+              - taxon: pyrgocystis
+              occurrences:
+              - unit:
+                - Hunsrück Slate
+                stage: Emsian
+                location:
+                - Germany
+            children:
+            - taxon: coronaeformis_rievers_1961
+              synonyms:
+              - taxon: coronaeformis_rievers_1961
+                parents:
+                - taxon: rhenopyrgus-subgenus
+                - taxon: pyrgocystis
+            - taxon: grayae_bather_1915
+              synonyms:
+              - parents:
+                - taxon: pyrgocystis
+                source: 1915_bather
+                page: 48
+                figures:
+                - plate: 3
+                  figures:
+                  - [1, 2]
+              - source: 1983_holloway_jell
+                page: 1004
+              - source: 1985_smith.a.b
+                page: 732
+                textFigure: 11
+              - parents:
+                - taxon: pyrgocystis
+                source: 2013_sumrall_heredia_rodríguez_mestre
+                figures:
+                - figure: 1
+              - source: 2013_sumrall_heredia_rodríguez_mestre
+                page: 773
+              occurrences:
+              - stage: Katian
+                series: Upper Ordovician
+                localSeries: Ardmillan
+                unit:
+                - Farden Member
+                - South Threave Formation
+                - Drummuck Group
+                location:
+                - Lady Burn Starfish Bed
+                - part of the Craighead inlier.
+                - Lady Burn
+                - near Givran
+                - Scotland
+                - UK
+                specimens:
+                  holotypes:
+                    NHMUK:
+                    - E23470
+                  unspecified:
+                    NHMUK:
+                    - E23674
+                    - E29570
+            - taxon: whitei_holloway_jell_1983
+            - taxon: flos_klug_krüger_korn_rücklin_schemm-gregory_debates_mapes_2008
+            - taxon: piojoensis_sumrall_heredia_rodríguez.c.m_mestre_2013
+            - taxon: viviani_ewin_martin.m_isotalo_zamora_2020
+              pages:
+              - [120, 123]
+              figures:
+              - figures:
+                - 2
+                - [4, 5]2
+              new: true
+              occurrences:
+              - unit:
+                - Cybèle Member
+                - Jupiter Formation
+                stage: Telychian
+                location:
+                - Rock Pool Ledge
+                - Jupiter River Section
+                - Anticosti Island
+                - Québec
+                - Canada
+                specimens:
+                  holotypes:
+                    NHMUK:
+                    - EE16642
+                  paratypes:
+                    NHMUK:
+                    - [EE15752, EE15755]
+                    MPEP:
+                    - "1126.1"
+              - unit:
+                - Pavillon Member
+                - Jupiter Formation
+                stage: Telychian
+                location:
+                - Pavillon River Section
+                - Anticosti Island
+                - Québec
+                - Canada
+                specimens:
+                  paratypes:
+                    NHMUK:
+                    - EE15756
+              - notes: No locality information given for this specimen
+                specimens:
+                  unspecified:
+                    MPEP: "1143.1"
+            - openTaxon: rhenopyrgus-sp-1_ewin_martin.m_isotalo_zamora_2020
+              synonyms:
+              - taxon: procera_aurivillius_1892
+                parents:
+                - taxon: pyrgocysitis
+                source: 1915_bather
+                page: 59
+              - taxon: procera_aurivillius_1892
+                provisional: true
+                source: 2913_sumrall_heredia_rodríguez.c.m_mestre
+                page: 764
+                figures:
+                - figure: 1C
+            - openTaxon: rhenopyrgus-sp-2_ewin_martin.m_isotalo_zamora_2020
+            - openTaxon: rhenopyrgus-sp-3_ewin_martin.m_isotalo_zamora_2020
+            - openTaxon: rhenopyrgus-sp-4_ewin_martin.m_isotalo_zamora_2020
+          - taxon: heropyrgus
+            authority:
+              source: 2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman

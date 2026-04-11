@@ -1,8 +1,16 @@
-BMNH: British Museum (Natural History)
-NM: National Museum, Prague
-NHM UK: Natural History Museum (London)
-NMVP: Museum of Victoria, Melbourne
-QMF: Queensland Museum
-QML: Queensland Museum
-UQF: University of Queensland
-UQL: University of Queensland
+repositories:
+  BMNH: British Museum (Natural History)
+  BSPG: Bayerische Staatssammlung für Paläontologie und Geologie, Germany
+  MPEP: Musée de paléontologie et de l’évolution, Québec, Canada
+  NM: National Museum, Prague
+  NHMUK: Natural History Museum (London)
+    # PI department for source 2020_ewin_martin.m_isotalo_zamora ?
+  NMVP: Museum of Victoria, Melbourne
+  QMF: Queensland Museum
+  QML: Queensland Museum
+  RVS: Rievers Collection, Enkirch (Moselle)
+  UCBL-FSL: University Claude Bernard 1, Lyon, France.
+  UQF: University of Queensland
+  USNM: National Museum of Natural History (Smithsonian)
+localities:
+  UQL: University of Queensland

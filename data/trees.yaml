@@ -13970,6 +13970,49 @@
                 figure: 5
               - page: 436
                 figure: 6
+2015_zamora_sumrall_sprinkle:
+  taxonomies:
+  - taxon: blastozoa
+    children:
+    - taxon: eocrinoidea
+      children:
+      - openTaxon: eocrinoidea-uncertain-family_zamora_sumrall_sprinkle_2015
+        children:
+        - taxon: llanocystis
+          new: true
+          children:
+          - taxon: wilbernsensis_zamora_sumrall_sprinkle_2015
+            type: true
+            new: true
+            occurrences:
+            - stage: Jiangshanian
+              localStage: Sunwaptan
+              localStageModifier: lower
+              unit:
+              - Intraformational conglomerate beds
+              - Point Peak Shale Member
+              - Wilberns Formation
+              - NW Llano Uplift
+              notes: |
+                North American lower Sunwaptan Stage.
+                The "boundary between the Idahoia and Ellipsocephaloides
+                Zones occurs near the base of the member" but unclear which
+                zone is upper or lower
+              biozoneRange: [Idahoia, Ellipsocephaloides]
+              location:
+              - Long Valley
+              - 21 km (13 miles) SE of Brady
+              - near the NW edge of the Llano uplift
+              - McCulloch County
+              - Texas
+              specimens:
+                holotypes:
+                  USNM:
+                  - 178555
+                paratypes:
+                  USNM:
+                  - 178556
+                  - 178554
 2015_zhao.y.l_peng.j_wu.m.y_luo.x.c_wen.r.q_liu.y.j:
   taxonomies:
   - taxon: blastozoa
@@ -14326,6 +14369,135 @@
             # specimens:
               # holotype: [KUMIP 49294A, KUMIP 49294B]
               # paratypes:
+2020_ewin_martin.m_isotalo_zamora:
+  taxonomies:
+  - taxon: echinodermata
+    children:
+    - taxon: edrioasteroidea
+        children:
+        - taxon: edrioblastoidina
+          children:
+          - taxon: rhenopyrgidae
+            children:
+            - taxon: rhenopyrgus
+              children:
+              - taxon: coronaeformis_rievers_1961
+                type: true
+                synonyms:
+                - taxon: coronaeformis_rievers_1961
+                  parents:
+                  - taxon: rhenopyrgus-subgenus
+                  - taxon: pyrgocystis
+              - taxon: grayae_bather_1915
+                synonyms:
+                - parents:
+                  - taxon: pyrgocystis
+                  source: 1915_bather
+                  page: 48
+                  figures:
+                  - plate: 3
+                    figures:
+                    - [1, 2]
+                - source: 1983_holloway_jell
+                  page: 1004
+                - source: 1985_smith.a.b
+                  page: 732
+                  textFigure: 11
+                - parents:
+                  - taxon: pyrgocystis
+                  source: 2013_sumrall_heredia_rodríguez_mestre
+                  figures:
+                  - figure: 1
+                - source: 2013_sumrall_heredia_rodríguez_mestre
+                  page: 773
+                occurrences:
+                - stage: Katian
+                  series: Upper Ordovician
+                  localSeries: Ardmillan
+                  unit:
+                  - Farden Member
+                  - South Threave Formation
+                  - Drummuck Group
+                  location:
+                  - Lady Burn Starfish Bed
+                  - part of the Craighead inlier.
+                  - Lady Burn
+                  - near Givran
+                  - Scotland
+                  - UK
+                  specimens:
+                    holotypes:
+                      NHMUK:
+                      - E23470
+                    unspecified:
+                      NHMUK:
+                      - E23674
+                      - E29570
+              - taxon: whitei_holloway_jell_1983
+              - taxon: flos_klug_krüger_korn_rücklin_schemm-gregory_debates_mapes_2008
+              - taxon: piojoensis_sumrall_heredia_rodríguez.c.m_mestre_2013
+              - taxon: viviani_ewin_martin.m_isotalo_zamora_2020
+                pages:
+                - [120, 123]
+                figures:
+                - figures:
+                  - 2
+                  - [4, 5]2
+                new: true
+                occurrences:
+                - unit:
+                  - Cybèle Member
+                  - Jupiter Formation
+                  stage: Telychian
+                  location:
+                  - Rock Pool Ledge
+                  - Jupiter River Section
+                  - Anticosti Island
+                  - Québec
+                  - Canada
+                  specimens:
+                    holotypes:
+                      NHMUK:
+                      - EE16642
+                    paratypes:
+                      NHMUK:
+                      - [EE15752, EE15755]
+                      MPEP:
+                      - "1126.1"
+                - unit:
+                  - Pavillon Member
+                  - Jupiter Formation
+                  stage: Telychian
+                  location:
+                  - Pavillon River Section
+                  - Anticosti Island
+                  - Québec
+                  - Canada
+                  specimens:
+                    paratypes:
+                      NHMUK:
+                      - EE15756
+                - notes: No locality information given for this specimen
+                  specimens:
+                    unspecified:
+                      MPEP: "1143.1"
+              - openTaxon: rhenopyrgus-sp-1_ewin_martin.m_isotalo_zamora_2020
+                synonyms:
+                - taxon: procera_aurivillius_1892
+                  parents:
+                  - taxon: pyrgocysitis
+                  source: 1915_bather
+                  page: 59
+                - taxon: procera_aurivillius_1892
+                  provisional: true
+                  source: 2913_sumrall_heredia_rodríguez.c.m_mestre
+                  page: 764
+                  figures:
+                  - figure: 1C
+              - openTaxon: rhenopyrgus-sp-2_ewin_martin.m_isotalo_zamora_2020
+              - openTaxon: rhenopyrgus-sp-3_ewin_martin.m_isotalo_zamora_2020
+              - openTaxon: rhenopyrgus-sp-4_ewin_martin.m_isotalo_zamora_2020
+            - taxon: heropyrgus
 2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler:
   taxonomies:
   - taxon: crinoidea
@@ -14557,7 +14729,7 @@
 2021_jell_sprinkle:
   taxonomies:
   - taxon: echinodermata
-    auth: [brugiére]
+    auth: [brugière]
     year: 1791
     children:
     - taxon: blastozoa
