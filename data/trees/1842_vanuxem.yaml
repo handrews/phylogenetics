@@ -1,0 +1,92 @@
+taxonomies:
+- notes: |
+    No formal systematics, only echinoderm taxa included as best as could
+    be found by searching/skimming the taxt; could not find species
+    authority info for possible species Pentacrinites hamptonii,
+    Encrinites lævis, or E. triciclas; Echinus drydenensis was tentatively
+    proposed but seems to have been a nomen nudum.
+  taxon: crinoidea
+  rank: Family
+  children:
+  - taxon: agelacrinites
+    new: true
+    rank: genus
+    page: 158
+    children:
+    - taxon: hamiltonensis_vanuxem_1842
+      new: true
+      diagnosis: |
+        A cast of it shows a connected surface, upon which six detached
+        circular forms were placed, having the appearance of medallions;
+        their whole surface, and sides which are inclined, being highly
+        wrought with minute markings like gothic tracery.... Near the centre
+        of the largest and perfect medallion are five branching arms, like
+        those of an asteria or star-fish; between two of which, and those
+        which are most expanded, is a star, which probably was the mouth
+        of the animal.
+      page: 158
+      figures:
+      - page: 306
+        figures:
+        - 80
+      occurrences:
+      - unit:
+        - Hamilton group
+        - New York System
+        locality:
+        - upper quarry
+        - the hill back of the Seminary
+        - West-Hamilton village
+        - Madison County
+        - New York
+        - United States
+          upper quarry
+        specimens:
+          "":
+            holotypes:
+            - "Page 306, Figure 80"
+        notes: |
+          Six organisms on the slab, but only one complete.  Three
+          full-size, including the complete fossil, two small, and
+          one in between.  The small are in the angle between two
+          of the large, with the mid-sized adjacent to one large and
+          the third large ont he other side of the first two.
+  - taxon: nucleocrinus
+    notes: It's possible that this came out before Conrad's own 1842 paper.
+    children:
+    - taxon: hallii_conrad.t.a_1842
+      notes: No description or figures.
+      occurrences:
+      - unit:
+        - Hamilton Group
+        locality:
+        - New York
+  - taxon: pentacrinites
+    children:
+    - taxon: hamptonii_unknown
+      page: 64
+      figures:
+      - page: 65
+        textFigure: 9
+        figure: 3
+      occurrences:
+      - unit:
+        - Pulaski shales
+        locality:
+        - Oswego
+        - New York
+  - taxon: lepocrinites
+    children:
+    - taxon: gebhardi_conrad.t.a_1840
+      page: 117
+      figures:
+      - page: 117
+        textFigure: 25
+        figure: 4
+      occurrences:
+      - unit:
+        - between two Pentamerus galeatus beds
+        - Pentamerus Limestone
+        locality:
+        - near Cherry-Valley, Sharon Springs, Cooperstown, and Warren
+        - New York

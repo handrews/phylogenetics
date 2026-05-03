@@ -1,0 +1,157 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: echinozoa
+    children:
+    - taxon: edrioasteroidea
+      occurrenceSummary:
+      - seriesRange: [Lower Cambrian, Upper Mississippian]
+      children:
+      - taxon: stromatocystitidae
+        authority:
+          source: 1936_bassler
+          notes: Should be 1935_bassler?
+        page: U160
+        diagnosis: |
+          Mouth surrounded and covered by 4 large imperforate plates and
+          many small ones; theca flexible, subpentagonal or circular, adoral
+          side depressed convex, aboral side slightly concave, enclosing
+          a shallow cavity; interambulacral areas and aboral side mostly
+          composed of polygonal plates; ambulacra 5, narrow, straight or
+          curved, confined to the upper surface; unstalked and unattached. 
+        occurrenceSummary:
+        - seriesRange: [Lower Cambrian, Upper Devonian]
+        children:
+        - taxon: stromatocystites
+          authority:
+            source: 1896_pompeckj
+          synonyms:
+          - taxon: stromatocysitis
+            source: 1900_bather
+          children:
+          - taxon: pentangularis_pompeckj_1896
+            type: true
+        - taxon: walcottidiscus
+          children:
+          - taxon: typicalis_bassler_1935
+            type: true
+        - taxon: xenocystites
+          children:
+          - taxon: carteri_bassler_1936
+            type: true
+            notes: G. W. Sinclair suggests may belong to Cooperidiscus
+      - taxon: cyathocystidae
+        synonyms:
+        - taxon: thecocystidae
+        - taxon: cyathothecidae
+        children:
+        - taxon: cyathocystis
+          children:
+          - taxon: plautinae_schmidt_1879
+            type: true
+            notes: Type by SD Haeckel (1896)
+        - taxon: cyathotheca
+          children:
+          - taxon: suecica_jaekel_1927
+            type: true
+      - taxon: hemicystitidae
+        children:
+        - taxon: hemicystites
+          children:
+          - taxon: parasiticus_hall_1852
+            type: true
+        - taxon: anglidiscus
+          children:
+          - taxon: fistulosus_anderson_1939
+            type: true
+        - taxon: bassleridiscus
+          children:
+          - taxon: mohawkensis_fisher_1951
+            type: true
+        - taxon: carneyella
+          children:
+          - taxon: pileus_hall_1866
+            type: true
+        - taxon: cincinnatidiscus
+          children:
+          - taxon: stellatus_hall_1866
+            type: true
+        - taxon: cystaster
+          children:
+          - taxon: granulatus_hall_1871
+            type: true
+        - taxon: foerstediscus
+          children:
+          - taxon: grandis_bassler_1935
+            type: true
+        - taxon: lebetodiscus
+          children:
+          - taxon: dicksoni_billings_1857
+            type: true
+        - taxon: lepidoconia
+          children:
+          - taxon: loriformis_raymond_1915
+            type: true
+        - taxon: pyrgocystis
+          children:
+          - taxon: pyrgocystis-subgenus
+            children:
+            - taxon: sardesoni_bather_1915
+              type: true
+            - taxon: sulcata_aurivillius_1892
+          - taxon: rhenopyrgus-subgenus
+            children:
+            - taxon: coronaeformis_rievers_1961
+              type: true
+        - taxon: streptaster
+          children:
+          - taxon: vorticellatus_hall_1866
+            type: true
+        - taxon: timeischytes
+          children:
+          - taxon: megapinacotus_ehlers_kesling_1958
+            type: true
+      - taxon: agelacrinitidae
+        children:
+        - taxon: agelacrinites
+          children:
+          - taxon: hamiltonensis_vanuxem_1842
+            type: true
+        - taxon: cooperidiscus
+          children:
+          - taxon: alleganius_clarke_1901
+            type: true
+        - taxon: discocystis
+          children:
+          - taxon: kaskaskiensis_hall_1858
+            type: true
+        - taxon: isorophus
+          children:
+          - taxon: cincinnatiensis_roemer_1851
+            type: true
+        - taxon: isorophusella
+          children:
+          - taxon: inconditus_raymond_1915
+            type: true
+        - taxon: lepidodiscus
+          children:
+          - taxon: squamosus_meek_worthen_1868
+            type: true
+        - taxon: thresherodiscus
+          children:
+          - taxon: ramosus_foerste_1914
+            type: true
+        - taxon: ulrichidiscus
+          children:
+          - taxon: pulaskiensis_miller.s.a_gurley_1894
+            type: true
+      - taxon: edrioasteridae
+        children:
+        - taxon: edrioaster
+          children:
+          - taxon: bigsbyi_billings_1857
+            type: true
+        - taxon: dinocystis
+          children:
+          - taxon: barroisi_bather_1898
+            type: true

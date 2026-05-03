@@ -466,6 +466,9 @@
     read: 1825-03-01
   authors:
   - say
+  notes: |
+    Reprinted in October of the same year in The Zoological Journal, Vol. II
+    (issue number unclear, possibly just identified by the month)
   identifiers:
     url: https://www.biodiversitylibrary.org/page/24655407
 1825b_say:
@@ -484,6 +487,40 @@
   - say
   identifiers:
     url: https://www.biodiversitylibrary.org/page/24657187
+1825a_sowerby.g.b:
+  title: A Note on the foregoing Paper, together with a Description of a new Species of Pentremites
+  notes: |
+    The "foregoing Paper" is 1825a_say, which had been reprinted
+    on pages 311–315 of this publication.
+  journal: zoolj
+  volume: II
+  number: October
+  pages:
+  - 316
+  - 318
+  pubDate:
+    year: 1825
+    month: 10
+  authors:
+  - sowerby.g.b
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/27490660
+1825b_sowerby.g.b:
+  title: |
+    Notice of a Fossil belonging to the Class Radiaria, found by Dr. Bigsby in Canada
+  journal: zoolj
+  volume: II
+  number: October
+  pages:
+  - 318
+  - 320
+  pubDate:
+    year: 1825
+    month: 10
+  authors:
+  - sowerby.g.b
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/27490662
 1826_meyer:
   title: Beschreibung des Echino-Encrinites Senkenbergii, einer neu entdeckten Versteinerung
   seen: False

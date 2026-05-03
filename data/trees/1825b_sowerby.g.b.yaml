@@ -1,0 +1,35 @@
+taxonomies:
+- taxon: radiaria
+  rank: Class
+  children:
+  - taxon: asteridae
+    rank: Family
+    children:
+    - openTaxon: asteriadae-gen_sowerby.g.b_1825
+      new: true
+      pages:
+      - [318, 320]
+      children:
+      - openTaxon: asteriadae-gen-sp_sowerby.g.b_1825
+        new: true
+        pages:
+        - [318, 320]
+        figures:
+        - plate: XI
+          figure: 5
+        occurrences:
+        - locality:
+          - the falls of the Chaudière
+          - Ottawa River
+          - Lower Canada
+          - Canada
+          specimen:
+          - "Pl. XI, Fig. 5"
+  - taxon: crinoidea
+    rank: Family
+  - taxon: blastoidea
+    rank: Family
+    authority:
+      source: 1825a_say
+  - taxon: echinida
+    rank: Family

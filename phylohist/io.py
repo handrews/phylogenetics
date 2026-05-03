@@ -109,7 +109,7 @@ def load_files(personal=False):
   for filename in files:
     logger.info(f'Checking "{filename}"...')
     name = filename.stem
-    data[name] = load_yaml(filename)
+    data[name].update(load_yaml(filename))
     try:
       schema = defs[name]
       r = schema.evaluate(jschon.JSON(data[name]))

@@ -1,0 +1,142 @@
+taxonomies:
+- taxon: Radiata
+  children:
+  - taxon: Echinodermata
+    rank: Order
+    children:
+    - taxon: Asteriadae
+    - taxon: Cystideae
+    - taxon: Echinidae
+    - taxon: Crinoideae
+taxonomies:
+- taxon: echinodermata
+  rank: Class
+  children:
+  - taxon: cystideæ
+    rank: Order
+    synonyms:
+    - taxon: cystidea
+      rank: Order
+    children:
+    - taxon: pseudocrinites
+      emended: true
+      children:
+      - taxon: bifasciatus_pearce_1843
+      - taxon: magnificus_forbes_1848
+        new: true
+      - taxon: quadrifasciatus_pearce_1843
+      - taxon: oblongus_forbes_1848
+        new: true
+    - taxon: apiocystites
+      new: true
+      children:
+      - taxon: pentrematoides_forbes_1848
+        new: true
+    - taxon: prunocystites
+      new: true
+      children:
+      - taxon: fletcheri_forbes_1848
+        new: true
+    - taxon: echino-encrinus
+      notes: |
+        The names "Echino-encrinus" and "Echino-encrinites" are used
+        more-or-less interchangeably but with the definitions using
+        "Echino-encrinus" and the commentary "Echino-encrinites."
+      synonyms:
+      - taxon: echino-encrinites
+      - taxon: gonocrinites
+      - taxon: sycocystites
+      children:
+      - taxon: baccatus_forbes_1848
+        new: true
+      - taxon: armatus_forbes_1848
+        new: true
+    - taxon: hemicosmites
+      children:
+      - taxon: squamosus_forbes_1848
+        provisional: true
+        new: true
+      - taxon: pyriformis_buch_1840
+        synonyms:
+        - taxon: malum_pander_1830
+          parents:
+          - taxon: echinosphærites
+      - taxon: oblongus_pander_1830
+        provisional: true
+        synonyms:
+        - taxon: oblongus_pander_1830
+          parents:
+          - taxon: echinosphærites
+    - taxon: caryocystites
+      children:
+      - taxon: granatum_wahlenberg_1821
+        synonyms:
+        - taxon: granatum_wahlenberg_1821
+          parents:
+          - taxon: echinosphærites
+        - taxon: testudinarius_hisinger_1837
+          parents:
+          - taxon: sphæronites
+      - taxon: davisii_mccoy_1848
+      - taxon: litchi_forbes_1848
+        new: true
+      - taxon: pyriformis_forbes_1848
+        new: true
+      - taxon: munitus_forbes_1848
+        provisional: true
+        new: true
+    - taxon: sphæronites
+      or:
+      - taxon: echino-sphærites
+      children:
+      - taxon: aurantium_gyllenhaal_1772
+        synonyms:
+        - taxon: aurantium_gyllenhaal_1772
+          parents:
+          - taxon: echinus
+        - taxon: aurantium_gyllenhaal_1772
+          parents:
+          - taxon: echino-sphærites
+        - taxon: strangwaysii_koenig_1825
+          parents:
+          - taxon: leucopthalmus
+        - taxon: citrus_hisinger_1837
+      - taxon: arachnoideus_forbes_1848
+        new: true
+      - taxon: balticus_eichwald_1829
+        synonyms:
+        - taxon: balticus_eichwald_1829
+          parents:
+          - taxon: echino-sphærites
+        - taxon: balticus_eichwald_1829
+          parents:
+          - taxon: heliocrinites
+        - taxon: aranea_schlotheim_1826
+          notes: says Volborth with no date, but cannot find any citation for it
+          parents:
+          - taxon: echino-sphærites
+      - taxon: punctatus_forbes_1848
+        provisional: true
+        new: true
+    - taxon: agelacrinites
+      synonyms:
+      - openTaxon: asteriadae-gen_sowerby.g.b_1825
+      children:
+      - taxon: hamiltonensis_vanuxem_1842
+      - openTaxon: agelacrinites-sp_forbes_1848
+        new: true
+        synonyms:
+        - openTaxon: asteriadae-gen-sp_sowerby.g.b_1825
+      - taxon: buchianus_forbes_1848
+        new: true
+        diagnosis: |
+          Body hemisphæric, slightly depressed above, with a concave base,
+          the margins of which are rounded. The mouth appears to have been
+          in the centre of the summit, and from it radiate deep canals or
+          grooves, five in number, regularly bordered by close parallel ridges
+          and sulcations.  These canals ( in which the arms are lodged) are
+          each and all curved 
+
+  - taxon: crinoideæ-order
+    synonyms:
+    - taxon: crinoidea-order

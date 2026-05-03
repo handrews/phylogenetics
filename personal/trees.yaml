@@ -27,7 +27,7 @@
               - 2022_zamora_rahman_sumrall_gibson_thompson
               specimens:
                 NHMUK:
-                - [EE 1659, EE 1660]
+                - [EE1659, EE1660]
       - taxon: stromatocystitida
         children:
         - taxon: stromatocystitidae
@@ -94,7 +94,8 @@
                   notes: nomen nudum
             - taxon: reduncus_smith.a.b_jell_1990
               synonyms:
-              - openTaxon: "?stromatocystites-sp_jell_burrett_banks_1985"
+              - openTaxon: "stromatocystitidae-sp_jell_burrett_banks_1985"
+                provisional: true
           - taxon: cambraster
             children:
             - taxon: cannati_miquel_1894
@@ -124,10 +125,10 @@
           - taxon: typicalis_bassler_1935
             synonyms:
             - taxon: magister_bassler_1936
-        - taxon: parseleya
+        - taxon: parsleya
           provisional: true
           synonyms:
-          - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j
+          - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
           children:
           - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
             type: true
@@ -205,7 +206,7 @@
                 YKLP:
                 - 13397
                 - 13553
-          - taxon: spencensis_wen.r_babcock_peng.j_robison_2019
+          - taxon: spencensis_wen.r.q_babcock_peng.j_robison_2019
         - taxon: edrioasterina
           type: true
           children:
@@ -214,7 +215,7 @@
             - taxon: totiglobus
               type: true
               children:
-              - taxon: nimus
+              - taxon: nimius_bell.b.m_sprinkle_1978
           - taxon: edrioasteridae
             type: true
             children:
@@ -266,7 +267,7 @@
             children:
             - taxon: ikerus
               children:
-              - taxon: edgari_jell_sprinkel_2021
+              - taxon: edgari_jell_sprinkle_2021
                 type: true
                 occurrences:
                 - unit: Thorntonia Limestone
@@ -365,18 +366,27 @@
                 synonyms:
                 - parents:
                   - taxon: pyrgocystis
-              - taxon: grayae_bather_1915
-                synonyms:
+                  auth: [Rievers]
+                  year: 1961
                 - parents:
                   - taxon: rhenopyrgus-subgenus
                   - taxon: pyrgocystis
+                  auth: [Dehm]
+                  year: 1961
+              - taxon: grayae_bather_1915
+                synonyms:
                 - parents:
                   - taxon: pyrgocystis
               - taxon: whitei_holloway_jell_1983
               - taxon: piojoensis_sumrall_heredia_rodríguez.c.m_mestre_2013
               - taxon: flos_klug_krüger_korn_rücklin_schemm-gregory_debates_mapes_2008
-              - taxon: viviani_ewin_martin.m_isotlo_zamora_2020
-              - taxon: rhenopyrgus-sp-1_ewin_martin.m_isotlo_zamora_2020
+                synonyms:
+                - taxon: flos_klug_krüger_korn_rücklin_schemm-gregory_debates_mapes_2008
+                  parents:
+                  - taxon: rhenopyrgus
+                  - taxon: pyrgocystidae
+              - taxon: viviani_ewin_martin.m_isotalo_zamora_2020
+              - taxon: rhenopyrgus-sp-1_ewin_martin.m_isotalo_zamora_2020
                 synonyms:
                 - taxon: procera_aurivillius_1915 # (Aurivilius) Bather, 1915
                   provisional: true
@@ -502,7 +512,7 @@
                 type: true
       - taxon: crinoidea
         type: true
-    - taxon: helicocystidae
+    - taxon: helicocystitidae
       children:
       - taxon: helicocystis
         type: true
@@ -528,7 +538,7 @@
               Biozone noted as "basal biozone Cephalopyge notabilis",
               which would suggest the Stage 4 side of the 4-5 boundary.
             possibleSpecimens:
-              NHM UK:
+              NHMUK:
               - [EE15374, EE15376]
               - [EE14847, EE14848]
               - EE15329
@@ -550,7 +560,7 @@
               as ~515-510MA which would be Series 2, Stage 3-4.
               Other sources put this formation around base of Series 3.
             possibleSpecimens:
-              NHM UK:
+              NHMUK:
               - [EE15374, EE15376]
               - [EE14847, EE14848]
               - EE15329
@@ -571,7 +581,7 @@
             - Tizi n'Telgane
             - Morocco
             specimens:
-              NHM UK:
+              NHMUK:
               - EE15373
             sources:
               - 2013_smith.a.b_zamora
@@ -686,7 +696,7 @@
                 - taxon: radiata_sprinkle_1973
                   provisional: true
                   pars: true
-              - openTaxon: gogia-sp-robison_1965
+              - openTaxon: gogia-sp_robison_1965
               - openTaxon: eocystites?-sp_walcott_1917
                 synonyms:
                 - provisional: true
@@ -712,7 +722,7 @@
               - taxon: nuntius_prokop_1962
             - taxon: globoeocrinus
               children:
-              - taxon: globulus_zhao.y.l_parsley_peng.j_2008
+              - taxon: globus_zhao.y.l_parsley_peng.j_2008
                 type: true
                 synonyms:
                 - taxon: globulus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
@@ -928,7 +938,7 @@
                 - taxon: cycloidea
                 - taxon: haplozoa
               children:
-              - taxon: craticula_whiteouse_1941
+              - taxon: craticula_whitehouse_1941
                 type: true
                 occurrences:
                 - unit: Thorntonia Limesone
@@ -1078,10 +1088,10 @@
               parents:
               - taxon: bockiidae
               children:
-              - taxon: neglectus_hecker_1938
+              - taxon: neglectus_hecker_1940
                 type: true
                 synonyms:
-                - taxon: neglecta_hecker_1938
+                - taxon: neglecta_hecker_1940
                   parents:
                   - taxon: bockia_hecker_1938
                   - taxon: bockiidae
@@ -1204,17 +1214,34 @@
               type: true
               children:
               - taxon: rhipidocystis
+                notes: lateral flattening
                 type: true
+                children:
+                - taxon: gigas_jaekel_1901
+                  type: true
+                - taxon: baltica_jaekel_1901
+                - taxon: norvegica_bockelie_1981
+              - taxon: mandalacystis
+                notes: lateral flattening
+                children:
+                - taxon: dockeryi_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley_1987
+                  type: true
               - taxon: batherocystis
                 provisional: true
+                children:
+                - taxon: appressa_bassler_1950
+                  type: true
               - taxon: durhamicystis
                 provisional: true
-              - taxon: mandalacystis
-                provisional: true
+                children:
+                - taxon: americana_zamora_sprinkle_sumrall_2020
               - taxon: neorhipidocystis
                 provisional: true
-              - taxon: petalacystis
+              - taxon: petalocystites
                 provisional: true
+                children:
+                - taxon: ikecanensis_sprinkle_1973
+                  type: true
           - taxon: ampheristocystidae
             children:
             - taxon: ampheristocystis
@@ -1222,20 +1249,80 @@
           - taxon: lingulocystidae
             children:
             - taxon: lingulocystis
+              notes: anterior-posterior flattening
               type: true
           - taxon: balantiocystis
+            children:
+            - taxon: regnelli_chauvel_1966
+              type: true
+              notes: |
+                Type species and species auth assumed based on genus as
+                only one species name can be found, and only without auth info.
           - taxon: cardiocystites
+            notes: |
+              Periproct apparently central, possibly indicating
+              anterior-posterior flattening
+            children:
+            - taxon: bohemicus_barrande_1887_cardiocystites
+              type: true
+            - taxon: pleuricostatus_dean.j_smith.a.b_1998
           - taxon: haimacystis
+            notes: anterior-posterior flattening
+            children:
+            - taxon: rozhnovi_sumrall_sprinkle_guensburg_2001
+              type: true
           - taxon: hexedriocystis
+            children:
+            - taxon: inexpectatus_sumrall_zamora_2011
+              type: true
+            - taxon: mimum_sumrall_zamora_2011
           - taxon: marjumicystis
+            children:
+            - taxon: mettae_ubaghs_robison_1988
+              type: true
           - taxon: lapillocystites
+            questionable: true
+            children:
+            - taxon: fragilis_barrande_1887
+              questionable: true
+              notes: |
+                Per Jaekel, may represent a bulbous holdfast of Acanthocystites
           - taxon: llanocystis
+            children:
+            - taxon: wilbernsensis_zamora_sumrall_sprinkle_2015
+              type: true
+              occurrences:
+              - stage: Jiangshanian
+                localStage: Sunwaptan
+                unit: Wilberns Formation
+                subunit: Point Peak Shale Member
+                superunit: Llano Uplift
+                notes: |
+                  North American lower Sunwaptan Stage.
+                  The "boundary between the Idahoia and Ellipsocephaloides
+                  Zones occurs near the base of the member" but unclear which
+                  zone is upper or lower
+                location:
+                - Long Valley
+                - 21 km (13 miles) SE of Brady
+                - near the NW edge of the Llano uplift
+                - McCulloch County
+                - Texas
+                specimens:
+                  USNM:
+                  - [178554, 178556]
+                sources:
+                - 2015_zamora_sumrall_sprinkle
           - taxon: luhocrinus
+            children:
+            - taxon: monicae_prokop_fatka_1985
+              type: true
           - taxon: pilocystites
           - taxon: polyptchella
           - taxon: ubaghsicystis
           - taxon: bolboporites
             provisional: true
+            questionable: true
           - taxon: cigara
             provisional: true
           - taxon: gadovocrinus
