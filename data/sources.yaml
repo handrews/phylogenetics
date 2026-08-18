@@ -1374,6 +1374,9 @@
   journal: science-new-series
   volume: 149
   number: 3568
+  pages:
+  - 820
+  - 822
   pubDate:
     year: 1963
     month: 5
