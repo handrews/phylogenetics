@@ -14374,6 +14374,8 @@
   - taxon: echinodermata
     children:
     - taxon: edrioasteroidea
+      children:
+      - taxon: edrioasterida
         children:
         - taxon: edrioblastoidina
           children:
@@ -14402,7 +14404,8 @@
                   page: 1004
                 - source: 1985_smith.a.b
                   page: 732
-                  textFigure: 11
+                  figures:
+                  - textFigure: 11
                 - parents:
                   - taxon: pyrgocystis
                   source: 2013_sumrall_heredia_rodríguez_mestre
@@ -14442,7 +14445,7 @@
                 figures:
                 - figures:
                   - 2
-                  - [4, 5]2
+                  - [4, 5]
                 new: true
                 occurrences:
                 - unit:
@@ -14482,6 +14485,30 @@
                     unspecified:
                       MPEP: "1143.1"
               - openTaxon: rhenopyrgus-sp-1_ewin_martin.m_isotalo_zamora_2020
+                figures:
+                - figures:
+                  - "3.3"
+                  - "3.4"
+                occurrences:
+                - unit:
+                  - Newlands Beds
+                  - Newlands Farm Formation
+                  - Newlands Subgroup
+                  - Saugh Hill Group
+                  series: Llandovery
+                  # seriesModifier: middle
+                  location:
+                  - Newlands Farm
+                  - Argyle
+                  - Scotland
+                  notes: |
+                    may extend into the Ardmillan group of the Upper Ordovician
+                  specimens:
+                    unspecified:
+                      E:
+                      - "62751"
+                      - "62752"
+                      - "62753"
                 synonyms:
                 - taxon: procera_aurivillius_1892
                   parents:
@@ -14490,14 +14517,46 @@
                   page: 59
                 - taxon: procera_aurivillius_1892
                   provisional: true
-                  source: 2913_sumrall_heredia_rodríguez.c.m_mestre
+                  source: 2013_sumrall_heredia_rodríguez.c.m_mestre
                   page: 764
                   figures:
                   - figure: 1C
               - openTaxon: rhenopyrgus-sp-2_ewin_martin.m_isotalo_zamora_2020
+                figures:
+                - figures:
+                  - "3.5"
+                occurrences:
+                - unit: Craighead inlier
+                  stage: Katian
+                  localStage: Girvan?
+                  localSeries: Ardmillan
+                  specimens:
+                    unspecified:
+                      EE:
+                      - 16254
               - openTaxon: rhenopyrgus-sp-3_ewin_martin.m_isotalo_zamora_2020
+                synonyms:
+                - openTaxon: pyrgocystis-sp_vizcaïno_lefebvre_1999
+                  provisional: true
+                  page: 356
+                  parents:
+                  - taxon: pyrgocystis
+                    source: bather_1915
+                - openTaxon: pyrgocystis-sp_vizcaïno_álvaro_lefebvre_2001
+                  provisional: true
+                  page: 218
+                  parents:
+                  - taxon: pyrgocystis
+                    source: bather_1915
+                notes: |
+                  "2013 Rhenopyrgidae Sumrall et al., p. 773" in synonym
+                  list with no explanation; that page in the referenced
+                  paper does not include this specimen.
+                # TODO: FINISH!
               - openTaxon: rhenopyrgus-sp-4_ewin_martin.m_isotalo_zamora_2020
+                # TODO: THIS!
             - taxon: heropyrgus
+              # TODO: THIS!
 2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler:
   taxonomies:
   - taxon: crinoidea

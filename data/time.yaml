@@ -130,11 +130,10 @@ eons:
         - name: Roadian
         - name: Wordian
         - name: Capitanian
-        - name: 
       - name: Lopingian
         stages:
         - name: Wuchiapingian
-        - name: Changhshingian
+        - name: Changhsingian
   - name: Mesozoic
     periods:
     - name: Triassic

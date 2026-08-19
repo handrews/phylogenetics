@@ -656,7 +656,9 @@ $defs:
       superunit:
         type: string
       unit:
-        type: string
+        type: [string, array]
+        items:
+          type: string
       subunit:
         type: string
       section:
@@ -670,6 +672,12 @@ $defs:
         items:
           type: string
         minItems: 2
+      biozoneRange:
+        type: array
+        items:
+          type: string
+        minItems: 2
+        maxItems: 2
       paleocontinent:
         type: string
       location:
@@ -685,7 +693,7 @@ $defs:
       specimens:
         type: object
         additionalProperties:
-          type: array
+          type: object
           items:
             type: [string, integer, array]
             items:
@@ -693,7 +701,7 @@ $defs:
       possibleSpecimens:
         type: object
         additionalProperties:
-          type: array
+          type: object
           items:
             type: [string, array]
             items:
@@ -716,6 +724,9 @@ $defs:
         $ref: "#/$defs/localStageRange"
       localStageRange:
         $ref: "#/$defs/localStageRange"
+      localStageModifier:
+        type: string
+        enum: [lower, middle, upper]
       inferred:
         $ref: "#/$defs/basicOccurrence"
         unevaluatedProperties: false
@@ -779,6 +790,9 @@ $defs:
       $ref: "#/$defs/series"
     minItems: 2
     maxItems: 2
+  seriesModifier:
+    type: string
+    enum: [upper, middle, lower]
   series:
     type: string
     enum:
@@ -834,6 +848,9 @@ $defs:
       $ref: "#/$defs/stage"
     minItems: 2
     maxItems: 2
+  stageModifier:
+    type: string
+    enum: [lower, middle, upper]
   stage:
     type: string
     enum:
