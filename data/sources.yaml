@@ -2747,6 +2747,20 @@ inprep_sprinkle_strimple:
     accepted: 1998-01-26
   authors:
   - ubaghs
+1999_vizcaïno_lefebvre:
+  title: |
+    Les échinodermes du Paléozoïque inférieur
+    de Montagne Noire: biostratigraphie et paléodiversité
+  journal: geobios
+  volume: 32
+  pages:
+  - 353
+  - 364
+  pubDate:
+    year: 1999
+  authors:
+  - vizcaïno
+  - lefebvre
 1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y:
   title: A progress report on research on the early Middle Cambrian Kaili Biota, Guizhou, PRC
   journal: acta-p-sinica
@@ -2832,6 +2846,19 @@ inprep_sprinkle_strimple:
   - guensburg
   identifiers:
     doi: 10.1666/0022-3360(2001)075<0985:COFBEI>2.0.CO;2
+2001_vizcaïno_álvaro_lefebvre:
+  title: The Lower Ordovician of the southern Montagne Noire
+  journal: annales-nord
+  volume: 8
+  pages:
+  - 213
+  - 220
+  pubDate:
+    year: 2001
+  authors:
+  - vizcaïno
+  - álvaro
+  - lefebvre
 2002_gil cid_domínguez alonso:
   title: |
     "Ubaghsicystis segurae nov. gen. y sp., nuevo Eocrinoide

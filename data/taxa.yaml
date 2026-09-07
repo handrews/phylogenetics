@@ -9272,6 +9272,16 @@ pyrgocystis-sp_guensburg_1988:
   rank: species
   authority:
     source: 1988_guensburg
+pyrgocystis-sp_vizcaïno_lefebvre_1999:
+  name: null
+  rank: species
+  authority:
+    source: 1999_vizcaïno_lefebvre
+pyrgocystis-sp_vizcaïno_álvaro_lefebvre_2001:
+  name: null
+  rank: species
+  authority:
+    source: 2001_vizcaïno_álvaro_lefebvre
 pyrgopostibulla:
   name: Pyrgopostibulla
   authority:
@@ -9671,6 +9681,21 @@ rhenopyrgus-subgenus:
   auth: [Dehm]
   year: 1961
 rhenopyrgus-sp-1_ewin_martin.m_isotalo_zamora_2020:
+  name: null
+  rank: species
+  authority:
+    source: 2020_ewin_martin.m_isotalo_zamora
+rhenopyrgus-sp-2_ewin_martin.m_isotalo_zamora_2020:
+  name: null
+  rank: species
+  authority:
+    source: 2020_ewin_martin.m_isotalo_zamora
+rhenopyrgus-sp-3_ewin_martin.m_isotalo_zamora_2020:
+  name: null
+  rank: species
+  authority:
+    source: 2020_ewin_martin.m_isotalo_zamora
+rhenopyrgus-sp-4_ewin_martin.m_isotalo_zamora_2020:
   name: null
   rank: species
   authority:
@@ -11764,7 +11789,7 @@ vittata_forsskål_1775:
   name: vittata
   auth: [forsskål]
   year: 1775
-viviani_ewin_martin.m_isotlo_zamora_2020:
+viviani_ewin_martin.m_isotalo_zamora_2020:
   name: viviani
   authority:
     source: 2020_ewin_martin.m_isotalo_zamora
