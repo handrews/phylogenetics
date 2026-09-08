@@ -24,8 +24,9 @@ require validity.
 
 ## Headline
 
-Revised 2026-09-08 with domain input from the author; see *Corrections* at the
-end for what changed and why.
+Revised twice on 2026-09-08 with domain input from the author; see *Corrections*
+at the end for what changed and why. Section 2 in particular now records
+confirmed semantics rather than inferred ones.
 
 1. **Attribution has two mechanisms, and the split is mostly legitimate.**
    `auth`+`year` is the encoding used when no citable publication exists to put
@@ -39,7 +40,10 @@ end for what changed and why.
 3. **The `auth` array mixes author ids with free-form names** — 673 id
    references against 521 free-form strings. 182 of those uses name an author who
    already has a record; 323 name someone with no record at all.
-4. **The occurrence/stratigraphy subtree is barely exercised**, and what use it
+4. **`figures` names two different things** — an array of illustration objects,
+   and a set of figure numbers inside one. Renaming the object to `illustration`
+   resolves it.
+5. **The occurrence/stratigraphy subtree is barely exercised**, and what use it
    has is mostly in `personal/`. Its structural asymmetries are worth fixing
    while it is still nearly free to change.
 
@@ -79,14 +83,16 @@ same author and year (e.g. `hall` 1858 matches both `1858a_hall` and
 `1858b_hall`), so they need a human decision rather than a script; the remaining
 117 have exactly one candidate and can be converted mechanically.
 
-### `in` belongs to the `auth` mechanism
+### `in` belongs to the `auth` mechanism only
 
-`taxon.in` has 26 uses and **every one of them is on an `auth`+`year` taxon**;
-`authority.in` has zero. This confirms `in` was added to `authority` to support
-the migration and has not yet been needed there. `in` records that the authors
-credited with the taxon differ from the authors of the publication it appeared
-in — so it is orthogonal to which mechanism carries the attribution, and any
-converged design needs it on both sides.
+`taxon.in` has 26 uses and **every one is on an `auth`+`year` taxon**;
+`authority.in` has zero. `in` records that the authors credited with the taxon
+differ from the authors of the publication it appeared in.
+
+`in` was added to `authority` to support the migration, but §2 shows that job is
+already done by `authority.authors`: when that field is present, `source` *is* the
+"in" publication. So `authority` needs no `in` of its own — `in` stays on the
+`auth`+`year` side, where it is the only way to express the distinction.
 
 ### The `auth` array mixes references and free text
 
@@ -139,13 +145,26 @@ opinions — `1858a_billings` (19), `1826_schlotheim` (8), `1828_hisinger` (8),
 attribute names to still older ones. Semantically this is exactly
 `authority: {source: …}` written as a bare string.
 
-The two that do *not* resolve are **data bugs, not schema issues**:
+**Decided: replace bare `tree.source` with `authority.source`.** The migration is
+mechanical — **no tree node carries both**, so all 72 convert without collision.
 
-- `1854c_billigns` — typo for `billings`
-- `1789_bruguiére` — no such record in `sources.yaml`
+The two values that do not resolve are **data bugs, not schema issues**:
+
+| value in `trees.yaml` | correct value | why it is wrong |
+|---|---|---|
+| `1854c_billigns` | `1854c_billings` | letters transposed |
+| `1789_bruguiére` | `1789a_bruguière` | missing the `a` disambiguator **and** an acute `é` where the record uses a grave `è` |
+
+The `bruguiére` case is wrong on two counts. `sources.yaml` contains
+`1789a_bruguière`, `1789b_bruguière`, `1789c_bruguière` and `1791_bruguière`, all
+spelled with U+00E8 (`è`); the tree value uses U+00E9 (`é`). Fixing only the
+disambiguator would leave it still unresolvable.
 
 Neither is caught today, because `tree.source` is typed as a plain `string`
-rather than as `$defs/sourceId`. Tightening that type would have caught both.
+rather than as `$defs/sourceId` — and even that would not catch them, since both
+match the `sourceId` *pattern*. Only a cross-reference check against the keys of
+`sources.yaml` catches a well-formed id that names nothing. That check does not
+exist anywhere today and is worth adding as its own task.
 
 ### `citation` is transcription, not attribution
 
@@ -177,56 +196,97 @@ faithful. `citation.pages`, `.plates` and `.figures` are never used and go away.
 
 ### Suggested convergence
 
-1. Migrate the **171** `auth`+`year` taxa that have a source (39 need a human
-   decision between same-author-year candidates).
+1. Migrate the **171** `auth`+`year` taxa that have a source (54 need a human
+   decision between same-author-year candidates; 117 are mechanical).
 2. Keep `auth`+`year` permanently for the other 791.
 3. Convert the **182** free-form `auth` names that map to exactly one existing
    author; disambiguate the 5; decide whether the 149 unknown names get
    family-only author records or stay free-form.
-4. Retype `tree.source` as `$defs/sourceId` and fix the two bad values.
+4. Replace bare `tree.source` (72 nodes, no collisions) with
+   `authority: {source: …}`, and fix the two bad values.
 5. Fold `tree.citation` into `auth`+`year` plus `citedAs`.
-6. Build out `authority`'s locator fields (below) rather than trimming them.
+6. Drop `authority.in`; rename `authority.authors` → `namedBy` (§2).
+7. Finish `authority`'s locator fields rather than trimming them (§2).
 
 ---
 
-## 2. `authority`'s locator fields: an unfinished intention
+## 2. `authority`: what each field is actually for
 
 `$defs/authority` declares nine properties. Across all 1,569 instances:
 
-| property | uses | share | write dates (blame) | reading |
-|---|---|---|---|---|
-| `source` | 1,569 | 100% | median 2026-01-02 | the load-bearing field |
-| `authors` | 24 | 1.5% | 2025-12-22 → 2026-03-24 | **active**, and newer than the median `source` |
-| `ex` | 2 | 0.1% | 2025-10-24, 2025-12-30 | rare **by nature** — keep |
-| `pages` | 2 | 0.1% | 2025-11-07, 2025-11-09 | stale |
-| `notes` | 2 | 0.1% | 2025-11-09 | stale |
-| `page` | 1 | 0.1% | (in `trees.yaml`) | stale |
-| `figures` | 1 | 0.1% | (in `trees.yaml`) | stale |
-| `in` | 0 | — | — | reserved for the `auth` migration |
-| `plates` | 0 | — | — | never used |
+| property | uses | write dates (blame) | verdict |
+|---|---|---|---|
+| `source` | 1,569 | median 2026-01-02 | the load-bearing field |
+| `authors` | 24 | 2025-12-22 → 2026-03-24 | **active** — and misnamed; see below |
+| `ex` | 2 | 2025-10-24, 2025-12-30 | rare **by nature** — keep |
+| `pages` | 2 | 2025-11-07, 2025-11-09 | locator, stalled — keep and finish |
+| `page` | 1 | in `trees.yaml` | locator, stalled — keep and finish |
+| `figures` | 1 | in `trees.yaml` | locator, stalled — keep, rename (§3) |
+| `notes` | 2 | 2025-11-09 | stale |
+| `in` | 0 | — | **redundant — remove** |
+| `plates` | 0 | — | **redundant — remove** |
 
 The original intent was for `authority` to connect the declaring authority not
 just to a source and year but to the **specific pages, figures and plates**
 involved. That build-out stopped: the locator fields were written twice in early
-November 2025 and never again.
+November 2025 and never again. They stay, and get finished using the settled
+range encodings.
 
-Two corrections to the first draft of this audit:
+### `authors` already subsumes `in` — confirmed
 
-- **`ex` is not dead weight.** It encodes a real and rare form of taxonomic
-  credit — a formally accepted name republished from a term coined before the
-  naming rules were formalised. Echinodermata itself is credited this way. Two
-  uses is the expected order of magnitude; it stays.
-- **`authors` is not vestigial.** Its write dates run *later* than the median
-  `authority.source`, so it is part of current practice.
+The hypothesis was that `authors` alongside `source` means *the taxon is
+attributed to these authors, not to the ones implied by `source`* — making
+`source` implicitly the "in" publication, and `authority.in` redundant. **The data
+confirms it exactly:**
 
-That leaves only `pages`, `notes`, `page`, `figures` and `plates` as stale — and
-these are precisely the locator fields the design intended to grow. The question
-is not whether to remove them but **whether to finish them**, using the
-range/locator encodings that the rest of the schema has since settled on.
+| | count |
+|---|---|
+| `authority.authors` instances | 24 |
+| ...whose authors **differ** from the source record's authors | **24** |
+| ...whose authors are identical to the source's | **0** |
+| ...that also carry `in` | **0** |
 
----
+Not one instance uses `authors` redundantly, and not one pairs it with `in`. The
+rule "when `authors` is present, `source` is the *in* source" is already how the
+data is written. Textbook cases:
 
-## 3. Citation ranges: four encodings, five months apart
+```yaml
+arthriticus_phillips.j_1839:
+  authority: {authors: [phillips.j], source: 1839_murchison}   # Phillips in Murchison
+foerstei_bassler_shideler_1936:
+  authority: {authors: [bassler, Shideler], source: 1936_bassler}
+```
+
+**So `authority.in` can be dropped.** One nuance worth preserving: `cyclocystoides`
+has `authors: [billings, salter]` against source authors `[salter, billings]` —
+the same people in a *different order*. Author order is significant in taxonomic
+attribution, so "differs from the source" legitimately includes reordering, and
+any consumer must compare sequences, not sets.
+
+**`authors` is badly named** — inside an object called `authority`, next to a
+`source` that also has authors, it reads as "the source's authors", which is the
+opposite of what it means. Suggested rename: **`namedBy`**, which states the
+semantics and mirrors the ICZN "X *in* Y" construction it encodes:
+
+```yaml
+authority: {namedBy: [phillips.j], source: 1839_murchison}
+```
+
+Alternatives if `namedBy` doesn't fit house style: `credited`, `attributedTo`,
+`taxonAuthors`.
+
+### `plates` is redundant with the illustration object
+
+`authority.plates` has zero uses, and `$defs/figure` — reachable via
+`authority.figures` — already carries a `plate` property alongside `page`,
+`figure`, `textFigure`, `figures` and `textFigures`. A plate reference belongs
+inside that object, not as a sibling array. **Remove `authority.plates`.**
+
+### `page`/`pages` stay
+
+Both are worth keeping and are covered by the singular/plural question in §3.
+
+## 3. Locators: ranges, naming, and singular/plural pairs
 
 Successive answers to one question:
 
@@ -242,12 +302,73 @@ array stays for now — it lives in `sources.yaml`, which will be dealt with as 
 unit later, so everything under `$defs/article` (`pages` *and* `plates`) is out
 of scope for this pass.
 
-Plain scalar arrays to convert: `authority.pages`, `authority.plates`,
-`tree.plates`, and `tree.citation.pages`/`.plates` (which disappear with
-`citation` anyway).
+Plain scalar arrays to convert: `authority.pages` and `tree.plates`.
+`authority.plates` is removed outright rather than converted (§2), and
+`tree.citation.pages`/`.plates` disappear with `citation`.
 
 Never used at all: `tree.citation.pages`/`.plates`/`.figures`; `tree.plates`;
 `figure.source`, `figure.location`, `figure.collectedFrom`.
+
+### `figure` is overloaded — rename the object to `illustration`
+
+`figures` currently means two different things depending on where it appears:
+
+- `authority.figures`, `tree.figures`, `specimen.figures` — an array of **`$defs/figure` objects**, each a full illustration reference
+- `figure.figures` — a `multiRanges` of **figure numbers within** one such reference
+
+So `figures` is both the container and one of its own fields. The object is also
+misnamed: in the literature "figure" is one *kind* of illustration, alongside
+"text figure" and "plate" — and `$defs/figure` already carries `plate`,
+`textFigure` and `figure` as separate properties, so it clearly models the
+general case, not the specific one.
+
+**Rename `$defs/figure` → `$defs/illustration`**, and the properties that hold
+arrays of them → `illustrations`:
+
+| now | becomes |
+|---|---|
+| `$defs/figure` | `$defs/illustration` |
+| `authority.figures` | `authority.illustrations` |
+| `tree.figures` (138 uses) | `tree.illustrations` |
+| `specimen.figures` | `specimen.illustrations` |
+| `figure.figure` / `.figures` / `.plate` / `.textFigure` / `.textFigures` | unchanged — these name specific illustration kinds |
+
+There is no established general term in the literature; `illustration` is a
+coinage, chosen because it is unambiguous and does not collide with any of the
+specific kinds it generalises.
+
+### Singular/plural pairs are an authoring convenience
+
+Five pairs exist, where the singular takes a scalar and the plural an array,
+purely so a single value need not be written as a one-element array:
+
+| container | pair | uses (singular / plural) |
+|---|---|---|
+| `tree` | `page` / `pages` | 183 / 61 |
+| `figure` → `illustration` | `figure` / `figures` | 43 / 130 |
+| `figure` → `illustration` | `textFigure` / `textFigures` | 5 / 3 |
+| `authority` | `page` / `pages` | 1 / 2 |
+| `modularDate` | `month` / `months` | 66 / small |
+
+(`basicOccurrence.biozone` / `biozones` is *not* one of these — `biozones`
+requires `minItems: 2`, so it means something different.)
+
+Both halves of the two big pairs are heavily used, so this is a real convenience,
+not an abandoned alternative. Three ways to handle it:
+
+1. **Keep both.** Zero churn; the schema keeps five redundant field pairs and
+   every consumer keeps two code paths.
+2. **Drop the singular**, always write an array. Simplest schema and one code
+   path, at the cost of `pages: [42]` for the common case — which is exactly the
+   friction that created the pairs.
+3. **Keep only the plural, and let it accept a bare scalar** as shorthand:
+   `pages: 42` ≡ `pages: [42]`. One field name, one code path after a trivial
+   normalisation step, and the authoring convenience is preserved.
+
+**Recommendation: option 3.** It is the only one that removes the duplication
+*and* keeps the ergonomics. It costs a one-line normalise-to-list on read, which
+consumers arguably need anyway. Note this makes the schema more permissive rather
+than less, so it should be a deliberate choice — flagging it rather than assuming.
 
 ### One value space for all citation numbers
 
@@ -440,41 +561,55 @@ Name-variant markers show the same spread: `altSpellingOf` (160, 2025-10-24),
 
 ## Suggested order of attack
 
-Settled, ready to implement as schema changes:
+**Settled, ready to implement as schema changes:**
 
-1. **Plain scalar arrays → `multiRanges`**: `authority.pages`,
-   `authority.plates`, `tree.plates`. `$defs/article` is out of scope this pass.
-2. **`number` → `integer`** at all nine declaring locations.
-3. **Introduce a shared citation-number value space** (`[integer, string]`) for
-   page / plate / figure / specimen numbers, and use it everywhere including
+1. **Plain scalar arrays → `multiRanges`**: `authority.pages`, `tree.plates`.
+   `$defs/article` is out of scope this pass.
+2. **`number` → `integer`** at all nine declaring locations (§3).
+3. **Shared citation-number value space** (`[integer, string]`) for
+   page / plate / figure / specimen numbers, used everywhere including
    `figure.page`, whose `string` branch is retained deliberately.
-4. **Retype `tree.source` as `$defs/sourceId`** — this alone catches the two bad
-   values already in the data.
+4. **Remove `authority.plates`** — redundant with `illustration.plate` (§2).
+5. **Remove `authority.in`** — subsumed by `authority.authors` (§2).
+6. **Rename `authority.authors` → `namedBy`** (§2). Touches 24 data entries.
+7. **Rename `$defs/figure` → `$defs/illustration`**, and `…figures` →
+   `…illustrations` where it holds an array of them (§3). Touches ~140 data
+   entries, mostly `tree.figures`.
+8. **Replace bare `tree.source` with `authority: {source: …}`** — 72 nodes, no
+   collisions — and fix `1854c_billigns` and `1789_bruguiére`.
 
-Needs a decision or a data migration, not just a schema edit:
+Items 6–8 change data as well as schema, but mechanically; they are grouped here
+because no judgement call remains.
 
-5. **Migrate 171 taxa** from `auth`+`year` to `authority` (54 need a human choice
-   between same-author-year sources). The other 791 stay as they are.
-6. **Normalise the `auth` array**: convert the 182 free-form uses that map to a
-   single existing author; disambiguate 5; decide whether the 149 unrecorded
-   names get family-only author records (already schema-legal, currently unused)
-   or remain free-form.
-7. **Fold `tree.citation`** into `auth`+`year` plus a free-text `citedAs`.
-8. **Finish `authority`'s locator fields** using the shared range encodings,
-   rather than removing them.
-9. **Fix the inert `items`** on `basicOccurrence.specimens` / `possibleSpecimens`
-   — they validate nothing today.
-10. **Redesign the stratigraphy block** while it is still nearly unused: unify
-    Range vs Boundary, decide whether `period`/`era`/`eon` need range variants,
-    fold in `biozone`.
-11. **Drop the genuinely dead leaves**: `taxon.modifier`, `taxon.reason`,
-    `tree.categories`, `tree.data`, `person.suffix`, `trees.<id>.source`,
-    `$defs/specimen`'s unused object branch, `specimens.repository`.
+**Needs a decision:**
+
+9. **Singular/plural pairs** — recommendation is to keep only the plural and let
+   it accept a bare scalar (§3). Affects 5 pairs across `tree`, `illustration`,
+   `authority` and `modularDate`.
+10. **A cross-reference check for `sourceId` values.** Nothing today verifies
+    that a well-formed source id actually names a record in `sources.yaml`;
+    both bad `tree.source` values match the pattern. This is a validation task,
+    not a schema one, and would also cover `authority.source`, `figure.source`
+    and `basicOccurrence.sources`.
+
+**Needs a decision or a data migration:**
+
+11. **Migrate 171 taxa** from `auth`+`year` to `authority` (117 mechanical,
+    54 ambiguous). The other 791 stay as they are.
+12. **Normalise the `auth` array**: convert 182 free-form uses, disambiguate 5,
+    decide on the 149 unrecorded names (family-only records are already
+    schema-legal but unused).
+13. **Fold `tree.citation`** into `auth`+`year` plus a free-text `citedAs`.
+14. **Finish `authority`'s locator fields** using the settled range encodings.
+15. **Fix the inert `items`** on `basicOccurrence.specimens` /
+    `possibleSpecimens` — they validate nothing today.
+16. **Redesign the stratigraphy block** while it is still nearly unused.
+17. **Re-examine the dead leaves** with the abandoned/rare/unbuilt question
+    (§7).
 
 Explicitly **not** doing: trimming the geologic enums (§6); removing
-`authority.ex` (§2); eliminating `auth`+`year` (§1).
-
----
+`authority.ex` (§2); eliminating `auth`+`year` (§1); narrowing `string` off any
+citation-number field (§3).
 
 ## Corrections to the first draft
 
@@ -490,6 +625,10 @@ several interpretations were not. What changed:
 | `authority.in` is unused, so drop it | Reserved for the `auth` migration. All 26 uses of `taxon.in` are on `auth` taxa. |
 | Enums are oversized; consider trimming | Standards-body vocabularies. Low usage is corpus selection bias. **Do not trim.** |
 | `figure.page` could narrow to `integer` (70/70 int) | All citation numbers share one value space regardless of current use. Keep `string`. |
+| `authority.in` should be kept for the migration | Subsumed by `authority.authors`: all 24 instances differ from their source's authors, none carries `in`. Drop it. |
+| `authority.plates` is simply unused | Redundant — `illustration.plate` already covers it. |
+| `tree.source` should be retyped as `$defs/sourceId` | Replace it with `authority: {source: …}` outright. And the pattern alone catches neither bad value — a cross-reference check is needed. |
+| `1789_bruguiére` has no record | The record exists as `1789a_bruguière` — the value is wrong in *two* ways, a missing disambiguator and `é` for `è`. |
 
 The lesson for future passes: usage frequency identifies *candidates*, but it
 cannot distinguish "abandoned" from "rare by nature" or "not built yet". Only
