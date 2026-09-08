@@ -35,7 +35,7 @@ taxonomies:
       notes: Period given as "Lower Silurian (Ordovician)"
       location:
       - Russia
-  - taxon: sulcata_angelin_1892
+  - taxon: sulcata_aurivillius_1892
     occurrences:
     - localPeriod: Gotlandian
       notes: |
@@ -45,7 +45,7 @@ taxonomies:
       location:
       - Gotland
       - Sweden
-  - taxon: procera_angelin_1892
+  - taxon: procera_aurivillius_1892
     occurrences:
     - localPeriod: Gotlandian
       notes: |
@@ -55,7 +55,7 @@ taxonomies:
       location:
       - Gotland
       - Sweden
-  - taxon: cylindrica_angelin_1892
+  - taxon: cylindrica_aurivillius_1892
     occurrences:
     - localPeriod: Gotlandian
       notes: |

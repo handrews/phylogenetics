@@ -193,8 +193,13 @@ agelacrinitinae:
   year: 1987
 agelacrinites:
   name: Agelacrinites
-  auth: [Vanuxem]
-  year: 1842
+  authority:
+    source: 1842_vanuxem
+agelacrinites-sp_forbes_1848:
+  name: null
+  rank: species
+  authority:
+    source: 1848b_forbes
 agelacrinites-sp_billings_1854:
   name: null
   rank: species
@@ -873,6 +878,12 @@ asterias-family:
 asteriadæ-family:
   rank: Family
   altRankOf: asteriadæ-order
+asteriadae-family:
+  name: Asteriadae
+  rank: Family
+  altSpellingOf: asteriadæ-family
+  auth: [Gray]
+  year: 1840
 asteriadæ-order:
   name: Asteriadæ
   rank: Order
@@ -882,6 +893,16 @@ asteriadæ-order:
     There is some confusion about this taxon as order vs family, and whether
     it was re-ranked to the modern similarly-spelled family, or re-spelled
     to Asteroidea, although that is always credited to de Blainville.
+asteriadae-gen_sowerby.g.b_1825:
+  name: null
+  rank: genus
+  authority:
+    source: 1825b_sowerby.g.b
+asteriadae-gen-sp_sowerby.g.b_1825:
+  name: null
+  rank: species
+  authority:
+    source: 1825b_sowerby.g.b
 asterizans_leske_1778:
   name: asterizans
   authority:
@@ -2919,6 +2940,9 @@ cylindrica_lamarck_1816:
   authority:
     source: 1816a_lamarck
   notes: Asterias
+cylindrica_aurivillius_1892:
+  name: cylindrica
+  altSpellingOf: cylindricum_aurivillius_1892
 cylindricum_aurivillius_1892:
   name: cylindricum
   auth: [Aurivillius]
@@ -3469,6 +3493,10 @@ echinida:
   name: Echinida
   rank: Class
   altRankOf: échinides
+echinida-family:
+  rank: Family
+  altRankOf: echinida
+  notes: Seen in 1825b_sowerby
 echinidae:
   name: Echinidae
   rank: Family
@@ -5080,6 +5108,10 @@ gracilis_hall_1847_poteriocrinus:
   originalParent: poteriocrinus
   authority:
     source: 1847_hall
+gracilis_hecker_1939:
+  name: gracilis
+  auth: [Hecker]
+  year: 1939
 graffhami_sprinkle_1982:
   name: graffhami
   authority:
@@ -6610,10 +6642,14 @@ levis_bather_1914:
   name: levis
   auth: [bather]
   year: 1914
-leuniseni_grigo_2000:
-  name: leuniseni
+leunisseni_grigo_2000:
+  name: leunisseni
   authority:
     source: 2000_grigo
+leuniseni_grigo_2000:
+  name: leuniseni
+  altSpellingOf: leunisseni_grigo_2000
+  notes: Seen in 2013_müller_hahn_bohaty
 lichenoides:
   name: Lichenoides
   auth: [barrande]
@@ -7799,10 +7835,10 @@ octodentata_gunnerus_1770:
   name: octodentata
   auth: [gunnerus]
   year: 1770
-octogona_richter_1930:
+octogona_richter.r_1930:
   name: octogona
-  auth: [Richter]
-  year: 1930
+  authority:
+    source: 1930_richter.r
 oculus:
   name: Oculus
   authority:
@@ -9107,6 +9143,10 @@ pulchellus_billings_1857:
   name: pulchellus
   authority:
     source: 1857_billings
+pulkovi_hecker_1939:
+  name: pulkovi
+  auth: [Hecker]
+  year: 1939
 pulvillus_müller.o.f_1776:
   name: pulvillus
   authority:
@@ -9381,6 +9421,10 @@ radiares:
   name: Radiares
   vulgarSpellingOf: radiata
   lang: FR
+radiaria:
+  name: Radiaria
+  altSpellingOf: radiata
+  notes: Seen in 1825b_sowerby.g.b
 radiata:
   name: Radiata
   rank: Class

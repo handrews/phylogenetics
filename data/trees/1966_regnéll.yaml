@@ -26,7 +26,7 @@ taxonomies:
           authority:
             source: 1896_pompeckj
           synonyms:
-          - taxon: stromatocysitis
+          - taxon: stromatocystis
             source: 1900_bather
           children:
           - taxon: pentangularis_pompeckj_1896
