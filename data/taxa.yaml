@@ -1379,6 +1379,11 @@ bohemicus_barrande_1887_mimocystites:
   name: bohemicus
   auth: [barrande]
   year: 1887
+bohemicus_barrande_1887_trochocystites:
+  originalParent: trochocystites
+  name: bohemicus
+  auth: [barrande]
+  year: 1887
 bohemiellidae:
   name: Bohemiellidae
   rank: Family
@@ -7354,6 +7359,15 @@ mitrata:
   rank: Order
   auth: [jaekel]
   year: 1918
+mitrocystites:
+  name: Mitrocystites
+  auth: [barrande]
+  year: 1887
+mitrocystites-sp_pompeckj_1896:
+  name: null
+  rank: species
+  authority:
+    source: 1896_pompeckj
 mohawkensis_fisher_1951:
   name: mohawkensis
   auth: [Fisher]
@@ -8499,8 +8513,8 @@ pentangularis_miller.j.s_1821:
     source: 1821_miller.j.s
 pentangularis_pompeckj_1896:
   name: pentangularis
-  auth: [Pompeckj]
-  year: 1896
+  authority:
+    source: 1896_pompeckj
 pentapetala_pennant_1777:
   name: pentapetala
   auth: [Pennant]
@@ -10880,8 +10894,8 @@ stromatocystitidae-sp_jell_burrett_banks_1985:
     source: 1985_jell_burrett_banks
 stromatocystites:
   name: Stromatocystites
-  auth: [Pompeckj]
-  year: 1896
+  authority:
+    source: 1896_pompeckj
 stromatocystis:
   name: Stromatocystis
   altSpellingOf: stromatocystites

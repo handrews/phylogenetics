@@ -1108,6 +1108,17 @@
   - haeckel
   identifiers:
     url: https://www.biodiversitylibrary.org/page/11808822
+1896_pompeckj:
+  title: Die Fauna des Cambrium von Tejřovic und Skrej in Böhmen
+  journal: jahrbuch
+  volume: 45
+  notes: 1895 annual, but publication year is 1896
+  pubDate:
+    year: 1896
+  authors:
+  - pompeckj
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/35578547
 1898_walcott:
   title: Fossile Medusæ
   journal: monographs-usgs
