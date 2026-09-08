@@ -65,7 +65,7 @@ All the Echinites already mentioned above belong to our most recent sedimentary 
 Page 52 (midway through above ¶)
 
 a. Echinosphaerites Aurantium: surface tessulated as if distant from the anus.
-Echinus 2. Aurantium, Gyllenhahl in Vet. Ac. Handl. 1772. p. 245 and 243. tab. 3. f. 4. 5. and tab. 9. f. 6 – 9.
+Echinus 2. Aurantium, Gyllenhahl in Vet. Ac. Handl. 1772. p. 245 and 253. tab. 8. f. 4. 5. and tab. 9. f. 6 – 9.
 Tilas Vet. Ac. Handl. 1740. p. 196. t. 11. f. 18.
 Ostracion? Walch in. Naturforsch. 8. p. 259. t. 5. f. 1. 2.
 

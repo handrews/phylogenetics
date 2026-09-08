@@ -3413,7 +3413,7 @@
             - 245
             - 253
             illustrations:
-            - plate: 3
+            - plate: 8
               figures:
               - [4, 5]
             - plate: 9
@@ -5392,9 +5392,10 @@
         page: 54
         illustrations:
         - plate: 3
-          # Note: There are two figures "g" on the plate
-          # It seems like perhaps "n" was intended to be "h",
-          # and the second "g" was to be "j"?
+          notes: |
+            There are two figures "g" on the plate
+            It seems like perhaps "n" was intended to be "h",
+            and the second "g" was to be "j"?
           figures: [1a, 1b, d, E, F, c, g, i, n, L, g, k]
         synonyms:
         - authority:
@@ -12840,9 +12841,10 @@
               - PWL 2009/5020-LS
               - PWL 2009/5021-LS
       - taxon: agelacrinitinae
-        type: true  # Agelacrinites is given as type of Agelacrinitidae as well
+        type: true
         children:
         - taxon: agelacrinites
+          notes:  Agelacrinites is given as type of Agelacrinitidae as well
           type: true
           children:
           - taxon: hamiltonensis_vanuxem_1842
@@ -14321,7 +14323,7 @@
         - taxon: totiglobus
           quoted: true
           children:
-          - taxon: lloydi_sprinkle_1985 # As "totiglobus"
+          - taxon: lloydi_sprinkle_1985
         - taxon: pseudedriophus
       - bracket: blastozoa
         children:
