@@ -585,7 +585,14 @@ $defs:
       to be an integer.
     type: [integer, string]
   multiRanges:
-    $comment: A list of citation numbers, where an entry may be a range of two.
+    description: |
+      A list of distinct citation numbers or ranges.  A range is specified
+      by a two-element list in the top-level list.  Therefore
+      the array [42, 88] as page numbers means that the information appears
+      on page 42 and 88, but not the pages in between, while [[42, 88]] means
+      that the information appears on the range of pages from 42 to 88
+      inclusive.  The value [10, [42, 88]] would indicate information
+      appearing on page 10 and also the range from 42 to 88 inclusive.
     type: array
     items:
       anyOf:

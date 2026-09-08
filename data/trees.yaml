@@ -4690,8 +4690,7 @@
             year: 1826
             notes: volume ii; specimen has since been lost
             pages:
-            - 185
-            - 192
+            - [185, 192]
             illustrations:
             - plate: 2
               figures:
@@ -4702,8 +4701,7 @@
             year: 1826
             notes: volume iii
             pages:
-            - 232
-            - 237
+            - [232, 237]
           - taxon: echinosphærites
             auth: [Pander]
             year: 1830
@@ -12080,8 +12078,7 @@
         - taxon: pentangularis_pompeckj_1896
           type: true
           pages:
-          - 151
-          - 152
+          - [151, 152]
           illustrations:
           - plate: 1
             figures:
