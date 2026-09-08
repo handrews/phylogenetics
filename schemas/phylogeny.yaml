@@ -248,7 +248,7 @@ $defs:
     unevaluatedProperties: false
     properties:
       source:
-        type: string
+        $ref: "#/$defs/sourceId"
       attributedTo:
         $comment: |
           The authors credited with the taxon, when they differ from the authors
@@ -260,11 +260,9 @@ $defs:
       ex:
         $ref: "#/$defs/authority"
       page:
-        type: [number, string]
+        $ref: "#/$defs/citationNumber"
       pages:
-        type: array
-        items:
-          type: [number, string]
+        $ref: "#/$defs/multiRanges"
       illustrations:
         type: array
         items:
@@ -416,9 +414,7 @@ $defs:
         type: boolean
         default: true
       plates:
-        type: array
-        items:
-          type: [number, string]
+        $ref: "phylogeny#/$defs/multiRanges"
       children:
         type: array
         items:
@@ -426,9 +422,10 @@ $defs:
       bracket:
         type: string
       matrix:
+        $comment: Character states; strings carry `?` for missing data.
         type: array
         items:
-          type: [number, string]
+          type: [integer, string]
       bootstrap:
         type: integer
       modifier:
@@ -437,8 +434,6 @@ $defs:
         type: array
         items:
           $ref: "phylogeny#/$defs/occurrence"
-      source:
-        type: string
       citation:
         type: object
         required: [source]
@@ -450,11 +445,11 @@ $defs:
           source:
             type: string
           year:
-            type: number
+            type: integer
           disambiguator:
             type: string
           content:
-            type: [number, string]
+            $ref: "phylogeny#/$defs/citationNumber"
           pages:
             type: array
             items:
@@ -476,7 +471,7 @@ $defs:
         type: boolean
         default: false
       page:
-        type: [integer, string]
+        $ref: "phylogeny#/$defs/citationNumber"
       pages:
         $ref: "phylogeny#/$defs/multiRanges"
       illustrations:
@@ -549,7 +544,7 @@ $defs:
       data:
         type: object
         additionalProperties:
-          type: number
+          type: integer
       categories:
         type: array
         items:
@@ -580,28 +575,39 @@ $defs:
           additionalProperties:
             type: object
             additionalProperties:
-              type: [number, string]
+              type: [integer, string]
+  citationNumber:
+    $comment: |
+      Page, plate, figure and specimen "numbers" share one value space.  They are
+      often not integers: Roman numerals (LI), dot-separated sequences that are
+      version-like rather than decimal (10.1), and letter-suffixed forms (S637,
+      2D) all occur.  Fields keep `string` even where every current value happens
+      to be an integer.
+    type: [integer, string]
   multiRanges:
+    $comment: A list of citation numbers, where an entry may be a range of two.
     type: array
     items:
-      type: [integer, string, array]
-      minItems: 2
-      maxItems: 2
-      items:
-        type: [integer, string]
+      anyOf:
+      - $ref: "#/$defs/citationNumber"
+      - type: array
+        minItems: 2
+        maxItems: 2
+        items:
+          $ref: "#/$defs/citationNumber"
   illustration:
     type: object
     properties:
       source:
         $ref: "#/$defs/sourceId"
       plate:
-        type: [integer, string]
+        $ref: "#/$defs/citationNumber"
       page:
-        type: [integer, string]
+        $ref: "#/$defs/citationNumber"
       figure:
-        type: [integer, string]
+        $ref: "#/$defs/citationNumber"
       textFigure:
-        type: [integer, string]
+        $ref: "#/$defs/citationNumber"
       figures:
         $ref: "#/$defs/multiRanges"
       textFigures:
@@ -953,7 +959,7 @@ $defs:
         repository:
           type: string
         id:
-          type: [integer, string]
+          $ref: "#/$defs/citationNumber"
         illustrations:
           type: array
           items:

@@ -692,6 +692,11 @@ petersen.m.s:
 phillips.j:
   family: Phillips
   given: John
+pompeckj:
+  family: Pompeckj
+  given: Josef Felix
+  birth: 1867
+  death: 1930
 pope:
   family: Pope
   given: John Paul

@@ -23,11 +23,12 @@ taxonomies:
         # - seriesRange: [Lower Cambrian, Upper Devonian]
         children:
         - taxon: stromatocystites
-          authority:
-            source: 1896_pompeckj
+          auth: [pompeckj]
+          year: 1896
           synonyms:
           - taxon: stromatocystis
-            source: 1900_bather
+            authority:
+              source: 1900_bather
           children:
           - taxon: pentangularis_pompeckj_1896
             type: true

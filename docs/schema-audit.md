@@ -149,26 +149,46 @@ opinions — `1858a_billings` (19), `1826_schlotheim` (8), `1828_hisinger` (8),
 attribute names to still older ones. Semantically this is exactly
 `authority: {source: …}` written as a bare string.
 
-**Decided: replace bare `tree.source` with `authority.source`.** The migration is
-mechanical — **no tree node carries both**, so all 72 convert without collision.
+**Done ✅: bare `tree.source` replaced with `authority.source`.** No tree node
+carried both, so all 72 converted without collision, and `tree.source` is gone
+from the schema.
 
-The two values that do not resolve are **data bugs, not schema issues**:
+**The sibling locators moved too.** Every one of the 72 sits inside a synonymy
+entry — 66 directly in `synonyms`, 2 in `non`, 4 in a `parents` array nested in a
+`synonyms` entry — so the `page` (45), `illustrations` (23) and `pages` (5) on
+those nodes document the *cited* source and moved into the `authority` object
+with it. This keeps `tree.page` meaning exactly one thing ("page in the opinion's
+own source"); it would otherwise have meant two.
 
-| value in `trees.yaml` | correct value | why it is wrong |
+### Seven dangling source ids, not two ✅
+
+An earlier draft of this section reported two. That count conflated `tree.source`
+with `authority.source` — the walker used then recursed into `authority` objects.
+Checking each schema location separately found **seven**, six of which are now
+fixed:
+
+| value | → | at |
 |---|---|---|
-| `1854c_billigns` | `1854c_billings` | letters transposed |
-| `1789_bruguiére` | `1789a_bruguière` | missing the `a` disambiguator **and** an acute `é` where the record uses a grave `è` |
+| `1854c_billigns` | `1854c_billings` | `tree.source` |
+| `2013_sumrall_heredia_rodríguez_mestre` ×2 | `2013_sumrall_heredia_rodríguez.c.m_mestre` | `tree.source` |
+| `bather_1915` ×2 | `1915_bather` | `tree.source` |
+| `1789_bruguiére` | `1789a_bruguière` | **`authority.source`** |
 
-The `bruguiére` case is wrong on two counts. `sources.yaml` contains
-`1789a_bruguière`, `1789b_bruguière`, `1789c_bruguière` and `1791_bruguière`, all
-spelled with U+00E8 (`è`); the tree value uses U+00E9 (`é`). Fixing only the
-disambiguator would leave it still unresolvable.
+`bruguiére` was wrong on two counts: `sources.yaml` spells all four
+`bruguière` records with U+00E8 (`è`) and the tree value used U+00E9 (`é`), so
+fixing only the disambiguator would have left it unresolvable.
 
-Neither is caught today, because `tree.source` is typed as a plain `string`
-rather than as `$defs/sourceId` — and even that would not catch them, since both
-match the `sourceId` *pattern*. Only a cross-reference check against the keys of
-`sources.yaml` catches a well-formed id that names nothing. That check does not
-exist anywhere today and is worth adding as its own task.
+The seventh, `1896_pompeckj`, had no source record *and* no author. Since the
+1896 paper is not yet identified, an author record for Josef Felix Pompeckj
+(1867–1930) was added and the node now uses `auth: [pompeckj]` + `year: 1896`.
+
+**`authority.source` is now typed `$defs/sourceId` ✅** rather than plain
+`string`, which is what let `bather_1915` — author and year transposed — pass.
+But the pattern catches almost none of these: five of the seven match it
+perfectly and simply name nothing. Only a cross-reference against the real keys
+does, so `scripts/schema_audit.py` now performs one. **All 2,152 sourceId-typed
+values in `data/` resolve.** `personal/` has four of its own, consistent with its
+existing validation failures.
 
 ### `citation` is transcription, not attribution
 
@@ -303,8 +323,8 @@ Successive answers to one question:
 | structured `figure` objects | 2025-12-22 `d45dd5b` | 181 | `{plate, page, figure, figures…}` |
 | `multiRanges` | 2026-03-20 `4bd976c` | 194 | `[n, [start,end], n…]` |
 
-**Decided:** the plain scalar arrays become `multiRanges`. The flat alternating
-array stays for now — it lives in `sources.yaml`, which will be dealt with as a
+**Done ✅:** the plain scalar arrays became `multiRanges` (`authority.pages`,
+`tree.plates`). The flat alternating array stays for now — it lives in `sources.yaml`, which will be dealt with as a
 unit later, so everything under `$defs/article` (`pages` *and* `plates`) is out
 of scope for this pass.
 
@@ -402,15 +422,20 @@ Measured, not assumed — the union types are earned:
 Roman numerals, supplement letters, dot-separated sequences (version-style, not
 decimal) and page-prefix letters all occur.
 
-**Rule adopted:** every page / plate / figure / specimen "number" shares one
-value space, whether or not a given field currently exercises all of it. So
-`figure.page` keeps `string` even though all 70 current uses are integers —
-future figures will appear on unnumbered or oddly-numbered pages. This argues for
-a single shared `$defs` entry (say `citationNumber` = `[integer, string]`, with
-`multiRanges` built on it) rather than nine independently-drifting declarations.
+**Rule adopted, and implemented ✅:** every page / plate / figure / specimen
+"number" shares one value space, whether or not a given field currently exercises
+all of it — so `illustration.page` keeps `string` even though all 70 current uses
+are integers. `$defs/citationNumber` (`[integer, string]`) now backs
+`authority.page`, `illustration.plate`/`.page`/`.figure`/`.textFigure`,
+`tree.page`, `specimen.id`, `tree.citation.content` and the scalar leaves of
+`multiRanges`, which is itself now expressed as "a citation number, or a range of
+two". `$defs/article` is deliberately excluded, pending the `sources.yaml` pass.
 
-**`number` → `integer` everywhere.** No fractional value appears anywhere in the
-corpus. Nine locations declare `number`:
+**`number` → `integer` everywhere ✅.** No fractional value appears anywhere in
+the corpus. The eight remaining locations that declared `number` are converted;
+note that `tree.matrix`, `tree.data` and `phylogeny.characteristics` are numeric
+*data*, not citation numbers, so they take plain `integer` rather than
+`citationNumber`. Formerly:
 
 `authority.page`, `authority.pages/items`, `authority.plates/items`,
 `tree.plates/items`, `tree.citation.content`, `tree.citation.year`,
@@ -579,12 +604,10 @@ Name-variant markers show the same spread: `altSpellingOf` (160, 2025-10-24),
 
 **Settled, ready to implement as schema changes:**
 
-1. **Plain scalar arrays → `multiRanges`**: `authority.pages`, `tree.plates`.
-   `$defs/article` is out of scope this pass.
-2. **`number` → `integer`** at all nine declaring locations (§3).
-3. **Shared citation-number value space** (`[integer, string]`) for
-   page / plate / figure / specimen numbers, used everywhere including
-   `figure.page`, whose `string` branch is retained deliberately.
+1. ✅ **Plain scalar arrays → `multiRanges`**: `authority.pages`, `tree.plates`.
+   `$defs/article` remains out of scope.
+2. ✅ **`number` → `integer`** at every declaring location (§3).
+3. ✅ **Shared citation-number value space** — `$defs/citationNumber`.
 4. ✅ **Removed `authority.plates`** — redundant with `illustration.plate` (§2).
 5. ✅ **Removed `authority.in`** — subsumed by `attributedTo`; the `oneOf`
    collapsed to `required: [source]` (§2).
@@ -592,8 +615,10 @@ Name-variant markers show the same spread: `altSpellingOf` (160, 2025-10-24),
    two lines in `phylohist/taxa.py`.
 7. ✅ **Renamed `$defs/figure` → `$defs/illustration`**, and the array-valued
    `figures` → `illustrations` — 139 data entries across 7 files.
-8. **Replace bare `tree.source` with `authority: {source: …}`** — 72 nodes, no
-   collisions — and fix `1854c_billigns` and `1789_bruguiére`.
+8. ✅ **Replaced bare `tree.source` with `authority: {source: …}`** — 72 nodes,
+   with their locators — fixed six dangling ids, converted the seventh to
+   `auth`+`year`, typed `authority.source` as `$defs/sourceId`, and added a
+   dangling-reference check to `scripts/schema_audit.py`.
 
 Items 6–8 change data as well as schema, but mechanically; they are grouped here
 because no judgement call remains.
@@ -603,11 +628,9 @@ because no judgement call remains.
 9. **Singular/plural pairs** — recommendation is to keep only the plural and let
    it accept a bare scalar (§3). Affects 5 pairs across `tree`, `illustration`,
    `authority` and `modularDate`.
-10. **A cross-reference check for `sourceId` values.** Nothing today verifies
-    that a well-formed source id actually names a record in `sources.yaml`;
-    both bad `tree.source` values match the pattern. This is a validation task,
-    not a schema one, and would also cover `authority.source`, `figure.source`
-    and `basicOccurrence.sources`.
+10. ✅ **Cross-reference check for `sourceId` values**, in
+    `scripts/schema_audit.py`. Reports `data/` and `personal/` separately and
+    fails only on `data/`, since `personal/` does not validate yet.
 
 **Needs a decision or a data migration:**
 
@@ -646,6 +669,8 @@ several interpretations were not. What changed:
 | `authority.plates` is simply unused | Redundant — `illustration.plate` already covers it. |
 | `tree.source` should be retyped as `$defs/sourceId` | Replace it with `authority: {source: …}` outright. And the pattern alone catches neither bad value — a cross-reference check is needed. |
 | `1789_bruguiére` has no record | The record exists as `1789a_bruguière` — the value is wrong in *two* ways, a missing disambiguator and `é` for `è`. |
+| Two dangling source ids | **Seven.** The count conflated `tree.source` with `authority.source`; `1789_bruguiére` is at the latter. Six are fixed; `1896_pompeckj` became `auth`+`year`. |
+| `tree.source` should keep its locators at tree level | They move into `authority` too — all 72 nodes are inside synonymy entries, so their `page`/`pages`/`illustrations` document the cited source. |
 
 The lesson for future passes: usage frequency identifies *candidates*, but it
 cannot distinguish "abandoned" from "rare by nature" or "not built yet". Only

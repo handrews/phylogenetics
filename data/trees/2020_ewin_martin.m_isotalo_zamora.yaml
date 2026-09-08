@@ -85,25 +85,30 @@ taxonomies:
               synonyms:
               - parents:
                 - taxon: pyrgocystis
-                source: 1915_bather
-                page: 48
-                illustrations:
-                - plate: 3
-                  figures:
-                  - [1, 2]
-              - source: 1983_holloway_jell
-                page: 1004
-              - source: 1985_smith.a.b
-                page: 732
-                illustrations:
-                - textFigure: 11
+                authority:
+                  source: 1915_bather
+                  page: 48
+                  illustrations:
+                  - plate: 3
+                    figures:
+                    - [1, 2]
+              - authority:
+                  source: 1983_holloway_jell
+                  page: 1004
+              - authority:
+                  source: 1985_smith.a.b
+                  page: 732
+                  illustrations:
+                  - textFigure: 11
               - parents:
                 - taxon: pyrgocystis
-                source: 2013_sumrall_heredia_rodríguez_mestre
-                illustrations:
-                - figure: 1
-              - source: 2013_sumrall_heredia_rodríguez_mestre
-                page: 773
+                authority:
+                  source: 2013_sumrall_heredia_rodríguez.c.m_mestre
+                  illustrations:
+                  - figure: 1
+              - authority:
+                  source: 2013_sumrall_heredia_rodríguez.c.m_mestre
+                  page: 773
               occurrences:
               - stage: Katian
                 series: Upper Ordovician
@@ -204,14 +209,16 @@ taxonomies:
               - taxon: procera_aurivillius_1892
                 parents:
                 - taxon: pyrgocystis
-                source: 1915_bather
-                page: 59
+                authority:
+                  source: 1915_bather
+                  page: 59
               - taxon: procera_aurivillius_1892
                 provisional: true
-                source: 2013_sumrall_heredia_rodríguez.c.m_mestre
-                page: 764
-                illustrations:
-                - figure: 1C
+                authority:
+                  source: 2013_sumrall_heredia_rodríguez.c.m_mestre
+                  page: 764
+                  illustrations:
+                  - figure: 1C
             - openTaxon: rhenopyrgus-sp-2_ewin_martin.m_isotalo_zamora_2020
               illustrations:
               - figures:
@@ -232,13 +239,15 @@ taxonomies:
                 page: 356
                 parents:
                 - taxon: pyrgocystis
-                  source: bather_1915
+                  authority:
+                    source: 1915_bather
               - openTaxon: pyrgocystis-sp_vizcaïno_álvaro_lefebvre_2001
                 provisional: true
                 page: 218
                 parents:
                 - taxon: pyrgocystis
-                  source: bather_1915
+                  authority:
+                    source: 1915_bather
               notes: |
                 "2013 Rhenopyrgidae Sumrall et al., p. 773" in synonym
                 list with no explanation; that page in the referenced

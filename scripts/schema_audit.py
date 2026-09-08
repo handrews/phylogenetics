@@ -85,6 +85,8 @@ class Census:
     self.samples = collections.defaultdict(list)
     # corpus -> property name -> count (independent raw-YAML cross-check)
     self.raw_keys = collections.defaultdict(collections.Counter)
+    # corpus -> source id -> count, for every value typed as $defs/sourceId
+    self.source_refs = collections.defaultdict(collections.Counter)
     self.invalid = []
 
   def absorb(self, result, corpus, prefix):
@@ -121,6 +123,10 @@ class Census:
             bucket.append(value)
       elif res.key == 'enum':
         self.enums[keyword_loc][repr(res.instance.value)].add(inst)
+      if keyword_loc == 'phylogeny#/$defs/sourceId' and res.key == 'pattern':
+        # Every value the schema declares to be a source id.  The pattern says
+        # it is well-formed; only a cross-reference says it names something.
+        self.source_refs[corpus][res.instance.value] += 1
 
       stack.extend(res.children.values())
 
@@ -306,6 +312,20 @@ def analyse(census, _unused=None):
   return report
 
 
+def dangling_sources(census):
+  """Source ids that are well-formed but name no record in sources.yaml.
+
+  The `sourceId` pattern cannot catch this: a typo like `1854c_billigns` or a
+  stale id matches it perfectly.  Only a lookup against the real keys does.
+  """
+  known = set(load_yaml(ROOT / 'data' / 'sources.yaml'))
+  out = {}
+  for corpus, counter in census.source_refs.items():
+    missing = {sid: n for sid, n in counter.items() if sid not in known}
+    out[corpus] = dict(sorted(missing.items(), key=lambda kv: -kv[1]))
+  return out
+
+
 def cross_check(census, report):
   """Independent verification: raw-YAML key counts vs Result-tree counts.
 
@@ -441,6 +461,22 @@ def main():
     return 1
   print('cross-check passed: no schema location outnumbers its raw YAML count',
         file=sys.stderr)
+
+  dangling = dangling_sources(census)
+  report['dangling_sources'] = dangling
+  for corpus in sorted(dangling):
+    bad = dangling[corpus]
+    total = sum(census.source_refs[corpus].values())
+    if bad:
+      print(f'{corpus}: {len(bad)} dangling source id(s) of {total} checked:',
+            file=sys.stderr)
+      for sid, n in bad.items():
+        print(f'  {n}x {sid}', file=sys.stderr)
+    else:
+      print(f'{corpus}: all {total} source ids resolve', file=sys.stderr)
+  # `personal/` is not expected to validate yet, so only `data/` gates.
+  if dangling.get('data'):
+    return 1
 
   if args.json:
     pathlib.Path(args.json).write_text(json.dumps(report, indent=1, default=str))
