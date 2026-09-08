@@ -12,7 +12,7 @@ taxonomies:
             type: true
           - taxon: leunisseni_grigo_2000
             page: 92
-            figures:
+            illustrations:
             - page: 93
               figure: 2
             new: true
@@ -34,7 +34,7 @@ taxonomies:
                   - 1585
           - taxon: prescheri_grigo_2000
             page: 94
-            figures:
+            illustrations:
             - page: 94
               figure: 4
             - page: 94
@@ -78,7 +78,7 @@ taxonomies:
               - openTaxon: rhenopyrgus-sp_grigo_2000
                 new: true
                 page: 96
-                figures:
+                illustrations:
                 - page: 96
                   figures:
                   - [8a, 8f]

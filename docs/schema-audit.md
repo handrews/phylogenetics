@@ -28,6 +28,10 @@ Revised twice on 2026-09-08 with domain input from the author; see *Corrections*
 at the end for what changed and why. Section 2 in particular now records
 confirmed semantics rather than inferred ones.
 
+**Items marked ✅ have been implemented** on this branch. The counts throughout
+still describe the corpus accurately, since every change was a rename or the
+removal of an unused field.
+
 1. **Attribution has two mechanisms, and the split is mostly legitimate.**
    `auth`+`year` is the encoding used when no citable publication exists to put
    in `data/sources.yaml` — common for pre-1900 works. Of the 962 taxa using it,
@@ -205,7 +209,7 @@ faithful. `citation.pages`, `.plates` and `.figures` are never used and go away.
 4. Replace bare `tree.source` (72 nodes, no collisions) with
    `authority: {source: …}`, and fix the two bad values.
 5. Fold `tree.citation` into `auth`+`year` plus `citedAs`.
-6. Drop `authority.in`; rename `authority.authors` → `namedBy` (§2).
+6. Drop `authority.in`; rename `authority.authors` → `attributedTo` (§2). ✅
 7. Finish `authority`'s locator fields rather than trimming them (§2).
 
 ---
@@ -217,14 +221,14 @@ faithful. `citation.pages`, `.plates` and `.figures` are never used and go away.
 | property | uses | write dates (blame) | verdict |
 |---|---|---|---|
 | `source` | 1,569 | median 2026-01-02 | the load-bearing field |
-| `authors` | 24 | 2025-12-22 → 2026-03-24 | **active** — and misnamed; see below |
+| `authors` → `attributedTo` ✅ | 24 | 2025-12-22 → 2026-03-24 | **active** — renamed; see below |
 | `ex` | 2 | 2025-10-24, 2025-12-30 | rare **by nature** — keep |
 | `pages` | 2 | 2025-11-07, 2025-11-09 | locator, stalled — keep and finish |
 | `page` | 1 | in `trees.yaml` | locator, stalled — keep and finish |
-| `figures` | 1 | in `trees.yaml` | locator, stalled — keep, rename (§3) |
+| `figures` → `illustrations` ✅ | 1 | in `trees.yaml` | locator, stalled — keep and finish |
 | `notes` | 2 | 2025-11-09 | stale |
-| `in` | 0 | — | **redundant — remove** |
-| `plates` | 0 | — | **redundant — remove** |
+| `in` | 0 | — | **redundant — removed ✅** |
+| `plates` | 0 | — | **redundant — removed ✅** |
 
 The original intent was for `authority` to connect the declaring authority not
 just to a source and year but to the **specific pages, figures and plates**
@@ -263,17 +267,19 @@ the same people in a *different order*. Author order is significant in taxonomic
 attribution, so "differs from the source" legitimately includes reordering, and
 any consumer must compare sequences, not sets.
 
-**`authors` is badly named** — inside an object called `authority`, next to a
-`source` that also has authors, it reads as "the source's authors", which is the
-opposite of what it means. Suggested rename: **`namedBy`**, which states the
-semantics and mirrors the ICZN "X *in* Y" construction it encodes:
+**`authors` was badly named** — inside an object called `authority`, next to a
+`source` that also has authors, it read as "the source's authors", the opposite
+of what it means. **Renamed to `attributedTo` ✅:**
 
 ```yaml
-authority: {namedBy: [phillips.j], source: 1839_murchison}
+authority: {attributedTo: [phillips.j], source: 1839_murchison}
 ```
 
-Alternatives if `namedBy` doesn't fit house style: `credited`, `attributedTo`,
-`taxonAuthors`.
+Removing `in` also collapsed the object's
+`oneOf: [{required: [source]}, {required: [in]}]` to a plain `required: [source]`
+✅ — which additionally brings the schema in line with the code, since
+`Authority.__init__` (`phylohist/taxa.py:69`) unconditionally reads `a['source']`
+and never supported the `in`-only variant the schema allowed.
 
 ### `plates` is redundant with the illustration object
 
@@ -322,20 +328,30 @@ misnamed: in the literature "figure" is one *kind* of illustration, alongside
 `textFigure` and `figure` as separate properties, so it clearly models the
 general case, not the specific one.
 
-**Rename `$defs/figure` → `$defs/illustration`**, and the properties that hold
-arrays of them → `illustrations`:
+**Renamed `$defs/figure` → `$defs/illustration` ✅**, with the properties that
+hold arrays of them → `illustrations`. The def is singular (named for what one
+instance is) while the array properties are plural, matching how `$defs/specimen`
+relates to `specimens`:
 
 | now | becomes |
 |---|---|
 | `$defs/figure` | `$defs/illustration` |
-| `authority.figures` | `authority.illustrations` |
+| `authority.figures` (1 use) | `authority.illustrations` |
 | `tree.figures` (138 uses) | `tree.illustrations` |
-| `specimen.figures` | `specimen.illustrations` |
+| `specimen.figures` (0 uses) | `specimen.illustrations` |
 | `figure.figure` / `.figures` / `.plate` / `.textFigure` / `.textFigures` | unchanged — these name specific illustration kinds |
 
 There is no established general term in the literature; `illustration` is a
 coinage, chosen because it is unambiguous and does not collide with any of the
 specific kinds it generalises.
+
+**The rename had to be structural, not textual.** In `data/trees.yaml` the two
+meanings of `figures` occur **122 times each**, sometimes two lines apart (line
+630 held an object array, line 632 the number array inside it). A `sed` would
+have corrupted half of them. The migration located each key through the YAML
+node tree — matching `figures` only where its value is a sequence of mappings —
+and then rewrote just those lines, leaving comments, quoting and key order
+untouched.
 
 ### Singular/plural pairs are an authoring convenience
 
@@ -569,12 +585,13 @@ Name-variant markers show the same spread: `altSpellingOf` (160, 2025-10-24),
 3. **Shared citation-number value space** (`[integer, string]`) for
    page / plate / figure / specimen numbers, used everywhere including
    `figure.page`, whose `string` branch is retained deliberately.
-4. **Remove `authority.plates`** — redundant with `illustration.plate` (§2).
-5. **Remove `authority.in`** — subsumed by `authority.authors` (§2).
-6. **Rename `authority.authors` → `namedBy`** (§2). Touches 24 data entries.
-7. **Rename `$defs/figure` → `$defs/illustration`**, and `…figures` →
-   `…illustrations` where it holds an array of them (§3). Touches ~140 data
-   entries, mostly `tree.figures`.
+4. ✅ **Removed `authority.plates`** — redundant with `illustration.plate` (§2).
+5. ✅ **Removed `authority.in`** — subsumed by `attributedTo`; the `oneOf`
+   collapsed to `required: [source]` (§2).
+6. ✅ **Renamed `authority.authors` → `attributedTo`** — 24 data entries, plus
+   two lines in `phylohist/taxa.py`.
+7. ✅ **Renamed `$defs/figure` → `$defs/illustration`**, and the array-valued
+   `figures` → `illustrations` — 139 data entries across 7 files.
 8. **Replace bare `tree.source` with `authority: {source: …}`** — 72 nodes, no
    collisions — and fix `1854c_billigns` and `1789_bruguiére`.
 

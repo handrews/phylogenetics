@@ -244,21 +244,19 @@ $defs:
         type: string
   authority:
     type: object
-    oneOf:
-    - required:
-      - source
-    - required:
-      - in
+    required: [source]
     unevaluatedProperties: false
     properties:
       source:
         type: string
-      authors:
+      attributedTo:
+        $comment: |
+          The authors credited with the taxon, when they differ from the authors
+          of `source` -- in which case `source` is the publication the name
+          appeared *in*, rather than the work being credited.
         type: array
         items:
           type: string
-      in:
-        $ref: "#/$defs/sourceId"
       ex:
         $ref: "#/$defs/authority"
       page:
@@ -267,14 +265,10 @@ $defs:
         type: array
         items:
           type: [number, string]
-      plates:
+      illustrations:
         type: array
         items:
-          type: [number, string]
-      figures:
-        type: array
-        items:
-          $ref: "#/$defs/figure"
+          $ref: "#/$defs/illustration"
       notes:
         type: string
   rank:
@@ -485,10 +479,10 @@ $defs:
         type: [integer, string]
       pages:
         $ref: "phylogeny#/$defs/multiRanges"
-      figures:
+      illustrations:
         type: array
         items:
-          $ref: "phylogeny#/$defs/figure"
+          $ref: "phylogeny#/$defs/illustration"
       specimens:
         $ref: "phylogeny#/$defs/specimens"
       diagnosis:
@@ -595,7 +589,7 @@ $defs:
       maxItems: 2
       items:
         type: [integer, string]
-  figure:
+  illustration:
     type: object
     properties:
       source:
@@ -960,10 +954,10 @@ $defs:
           type: string
         id:
           type: [integer, string]
-        figures:
+        illustrations:
           type: array
           items:
-            $ref: "#/$defs/figure"
+            $ref: "#/$defs/illustration"
   specimens:
     type: object
     properties:

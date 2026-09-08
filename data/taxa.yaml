@@ -772,7 +772,7 @@ armatus_hall_1852:
 arthriticus_phillips.j_1839:
   name: arthriticus
   authority:
-    authors: [phillips.j]
+    attributedTo: [phillips.j]
     source: 1839_murchison
 arthropoda:
   name: Arthropoda
@@ -1713,7 +1713,7 @@ cannati_miquel_1894:
 capillaris_phillips.j_1839:
   name: capillaris
   authority:
-    authors: [phillips.j]
+    attributedTo: [phillips.j]
     source: 1839_murchison
 capsularia:
   name: Capsularia
@@ -1909,7 +1909,7 @@ cavernata_bosc_1802:
 cælatus_phillips.j_1839:
   name: cælatus
   authority:
-    authors: [phillips.j]
+    attributedTo: [phillips.j]
     source: 1839_murchison
 cellaria:
   name: Cellaria
@@ -2902,7 +2902,7 @@ cyclocystoidea:
 cyclocystoides:
   name: Cyclocystoides
   authority:
-    authors: [billings, salter]
+    attributedTo: [billings, salter]
     source: 1858_salter_billings
 cyclocystoides-sp_kolata_1975:
   name: null
@@ -3067,7 +3067,7 @@ davisii_mccoy_1848:
 davisii_salter_1858:
   name: davisii
   authority:
-    authors: [salter]
+    attributedTo: [salter]
     source: 1858_salter_billings
 dawsoni_billings_1858:
   name: dawsoni
@@ -3088,7 +3088,7 @@ decadactylus_hall_1847:
 decadactylus_phillips.j_1839:
   name: decadactylus
   authority:
-    authors: [phillips.j]
+    attributedTo: [phillips.j]
     source: 1839_murchison
 decem radiata_leske_1778:
   name: decem radiata
@@ -3106,7 +3106,7 @@ deckeri_sinclair_1945:
 decorus_phillips.j_1839:
   name: decorus
   authority:
-    authors: [phillips.j]
+    attributedTo: [phillips.j]
     source: 1839_murchison
 decussatum_begg_1934:
   name: decussatum
@@ -3285,7 +3285,7 @@ dimerocrinites-subgenus:
   name: dimerocrinites
   rank: subgenus
   authority:
-    authors: [phillips.j]
+    attributedTo: [phillips.j]
     source: 1839_murchison
 dinocystis:
   name: Dinocystis
@@ -4426,7 +4426,7 @@ exornatus_billings_1857:
 expansus_phillips.j_1839:
   name: expansus
   authority:
-    authors: [phillips.j]
+    attributedTo: [phillips.j]
     source: 1839_murchison
 extenuatus_zhao.j_rahman_zamora_chen.a_cong.p.y_2022:
   name: extenuatus
@@ -4630,7 +4630,7 @@ foerstediscus:
 foerstei_bassler_shideler_1936:
   name: foerstei
   authority:
-    authors: [bassler, Shideler]
+    attributedTo: [bassler, Shideler]
     source: 1936_bassler
 forbesi_billings_1857:
   name: forbesi
@@ -5071,7 +5071,7 @@ goniocrinites:
 goniodactylus_phillips.j_1839:
   name: goniodactylus
   authority:
-    authors: [phillips.j]
+    attributedTo: [phillips.j]
     source: 1839_murchison
 gonium:
   name: Gonium
@@ -5289,12 +5289,12 @@ haliotis:
 halli_billings_1858:
   name: halli
   authority:
-    authors: [billings]
+    attributedTo: [billings]
     source: 1858_salter_billings
 hallii_conrad.t.a_1842:
   name: hallii
   authority:
-    authors: [conrad.t.a]
+    attributedTo: [conrad.t.a]
     source: 1842_vanuxem
 hallicystis:
   name: Hallicystis
@@ -5806,7 +5806,7 @@ hydra:
 hypanthocrinites:
   name: Hypanthocrinites
   authority:
-    authors: [phillips.j]
+    attributedTo: [phillips.j]
     source: 1839_murchison
 hypsiclavus:
   name: Hypsiclavus
@@ -5836,7 +5836,7 @@ ichthyocrinus:
 icosidactylus_phillips.j_1839:
   name: icosidactylus
   authority:
-    authors: [phillips.j]
+    attributedTo: [phillips.j]
     source: 1839_murchison
 ikecanensis_sprinkle_1973:
   name: ikecanensis
@@ -7086,12 +7086,12 @@ marmorata_lamarck_1816:
 marsupiocrinites:
   name: Marsupiocrinites
   authority:
-    authors: [phillips.j]
+    attributedTo: [phillips.j]
     source: 1839_murchison
 marsupites:
   name: Marsupites
   authority:
-    authors: [mantell]
+    attributedTo: [mantell]
     source: 1821_miller.j.s
   notes: Given as from source in prep, unclear if ever published.
 maslennikovi_sumrall_2009:
@@ -7700,7 +7700,7 @@ nobilis_linnaeus_1767:
 noctiluca:
   name: Noctiluca
   authority:
-    authors: [Suriray]
+    attributedTo: [Suriray]
     source: 1816a_lamarck
   notes: |
     Most sources give Suriray 1836, but Lamarck 1816a credits Suriray
@@ -9355,7 +9355,7 @@ pyriformis_paul.c.r.c_1967:
 pyriformis_phillips.j_1839:
   name: pyriformis
   authority:
-    authors: [phillips.j]
+    attributedTo: [phillips.j]
     source: 1839_murchison
 pyriformis_say_1825:
   name: pyriformis
@@ -9510,7 +9510,7 @@ raripunctata_angelin_1878:
 rarus_hu.s.x_luo.h.l_2008:
   name: rarus
   authority:
-    authors: [hu.s.x, luo.h.l]
+    attributedTo: [hu.s.x, luo.h.l]
     source: 2008_luo.h.l_li.y_hu.s.x_fu.x.p_hou.s.g_liu.x.r_chen.l.z_li.j.f_pang.j.y_liu.q
 raymondi_foerste_1920:
   name: raymondi
@@ -9646,7 +9646,7 @@ retepora:
 retiarius_phillips.j_1839:
   name: retiarius
   authority:
-    authors: [phillips.j]
+    attributedTo: [phillips.j]
     source: 1839_murchison
 reteocrinus:
   name: Reteocrinus
@@ -10375,7 +10375,7 @@ simplex_hall_1852:
 simplex_phillips.j_1839:
   name: simplex
   authority:
-    authors: [phillips.j]
+    attributedTo: [phillips.j]
     source: 1839_murchison
 sinclairi_sprinkle_1982h:
   name: sinclairi
@@ -11988,7 +11988,7 @@ wrighti_begg_1939:
 wudingeocrinus:
   name: Wudingeocrinus
   authority:
-    authors: [hu.s.x, luo.h.l]
+    attributedTo: [hu.s.x, luo.h.l]
     source: 2008_luo.h.l_li.y_hu.s.x_fu.x.p_hou.s.g_liu.x.r_chen.l.z_li.j.f_pang.j.y_liu.q
 ###################### X
 xenocystites:
@@ -12018,7 +12018,7 @@ xystriduridae:
 yini_zhao.y.l_peng.j_wu.m.y_2015:
   name: yini
   authority:
-    authors: [zhao.y.l, peng.j, wu.m.y]
+    attributedTo: [zhao.y.l, peng.j, wu.m.y]
     source: 2015_zhao.y.l_peng.j_wu.m.y_luo.x.c_wen.r.q_liu.y.j
 yorkicystitidae:
   name: Yorkicystitidae

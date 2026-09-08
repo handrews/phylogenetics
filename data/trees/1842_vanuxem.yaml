@@ -24,7 +24,7 @@ taxonomies:
         which are most expanded, is a star, which probably was the mouth
         of the animal.
       page: 158
-      figures:
+      illustrations:
       - page: 306
         figures:
         - 80
@@ -65,7 +65,7 @@ taxonomies:
     children:
     - taxon: hamptonii_unknown
       page: 64
-      figures:
+      illustrations:
       - page: 65
         textFigure: 9
         figure: 3
@@ -79,7 +79,7 @@ taxonomies:
     children:
     - taxon: gebhardi_conrad.t.a_1840
       page: 117
-      figures:
+      illustrations:
       - page: 117
         textFigure: 25
         figure: 4

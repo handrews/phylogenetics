@@ -87,7 +87,7 @@ taxonomies:
                 - taxon: pyrgocystis
                 source: 1915_bather
                 page: 48
-                figures:
+                illustrations:
                 - plate: 3
                   figures:
                   - [1, 2]
@@ -95,12 +95,12 @@ taxonomies:
                 page: 1004
               - source: 1985_smith.a.b
                 page: 732
-                figures:
+                illustrations:
                 - textFigure: 11
               - parents:
                 - taxon: pyrgocystis
                 source: 2013_sumrall_heredia_rodríguez_mestre
-                figures:
+                illustrations:
                 - figure: 1
               - source: 2013_sumrall_heredia_rodríguez_mestre
                 page: 773
@@ -133,7 +133,7 @@ taxonomies:
             - taxon: viviani_ewin_martin.m_isotalo_zamora_2020
               pages:
               - [120, 123]
-              figures:
+              illustrations:
               - figures:
                 - 2
                 - [4, 5]
@@ -176,7 +176,7 @@ taxonomies:
                   unspecified:
                     MPEP: "1143.1"
             - openTaxon: rhenopyrgus-sp-1_ewin_martin.m_isotalo_zamora_2020
-              figures:
+              illustrations:
               - figures:
                 - "3.3"
                 - "3.4"
@@ -210,10 +210,10 @@ taxonomies:
                 provisional: true
                 source: 2013_sumrall_heredia_rodríguez.c.m_mestre
                 page: 764
-                figures:
+                illustrations:
                 - figure: 1C
             - openTaxon: rhenopyrgus-sp-2_ewin_martin.m_isotalo_zamora_2020
-              figures:
+              illustrations:
               - figures:
                 - "3.5"
               occurrences:
@@ -243,7 +243,7 @@ taxonomies:
                 "2013 Rhenopyrgidae Sumrall et al., p. 773" in synonym
                 list with no explanation; that page in the referenced
                 paper does not include this specimen.
-              figures:
+              illustrations:
               - page: 121
                 figures:
                 - ["3.6", "3.7"]

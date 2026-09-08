@@ -15,17 +15,16 @@ even when its parent is also unreached, so read parents first.
 
 | `$defs` | unreached locations |
 |---|---|
-| `authority` | `phylogeny#/$defs/authority/properties/in`<br>`phylogeny#/$defs/authority/properties/plates`<br>`phylogeny#/$defs/authority/properties/plates/items` |
 | `basicOccurrence` | `phylogeny#/$defs/basicOccurrence/properties/eon`<br>`phylogeny#/$defs/basicOccurrence/properties/era`<br>`phylogeny#/$defs/basicOccurrence/properties/seriesBoundary`<br>`phylogeny#/$defs/basicOccurrence/properties/seriesRange`<br>`phylogeny#/$defs/basicOccurrence/properties/stageRange` |
 | `eon` | `phylogeny#/$defs/eon` |
 | `era` | `phylogeny#/$defs/era` |
-| `figure` | `phylogeny#/$defs/figure/properties/collectedFrom`<br>`phylogeny#/$defs/figure/properties/location`<br>`phylogeny#/$defs/figure/properties/source` |
+| `illustration` | `phylogeny#/$defs/illustration/properties/collectedFrom`<br>`phylogeny#/$defs/illustration/properties/location`<br>`phylogeny#/$defs/illustration/properties/source` |
 | `localSeriesRange` | `phylogeny#/$defs/localSeriesRange`<br>`phylogeny#/$defs/localSeriesRange/items` |
 | `occurrence` | `phylogeny#/$defs/occurrence/properties/localSeriesBoundary`<br>`phylogeny#/$defs/occurrence/properties/localSeriesRange` |
 | `person` | `phylogeny#/$defs/person/properties/suffix` |
 | `publication` | `phylogeny#/$defs/publication/properties/type` |
 | `seriesRange` | `phylogeny#/$defs/seriesRange`<br>`phylogeny#/$defs/seriesRange/items` |
-| `specimen` | `phylogeny#/$defs/specimen/oneOf/1/properties/figures`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/figures/items`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/id`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/repository` |
+| `specimen` | `phylogeny#/$defs/specimen/oneOf/1/properties/id`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/illustrations`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/illustrations/items`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/repository` |
 | `specimens` | `phylogeny#/$defs/specimens/properties/allotype`<br>`phylogeny#/$defs/specimens/properties/neotype`<br>`phylogeny#/$defs/specimens/properties/repository` |
 | `taxon` | `phylogeny#/$defs/taxon/properties/holotype/additionalProperties/items/items`<br>`phylogeny#/$defs/taxon/properties/modifier`<br>`phylogeny#/$defs/taxon/properties/reason` |
 | `tree` | `tree#/properties/categories`<br>`tree#/properties/categories/items`<br>`tree#/properties/citation/properties/figures`<br>`tree#/properties/citation/properties/pages`<br>`tree#/properties/citation/properties/pages/items`<br>`tree#/properties/citation/properties/plates`<br>`tree#/properties/citation/properties/plates/items`<br>`tree#/properties/data`<br>`tree#/properties/data/additionalProperties`<br>`tree#/properties/plates`<br>`tree#/properties/plates/items` |
@@ -92,14 +91,12 @@ property. `personal` is counted separately.
 | property | data | data % | personal |
 |---|---|---|---|
 | `source` | 1569 | 100.0% | 0 |
-| `authors` | 24 | 1.5% | 0 |
+| `attributedTo` | 24 | 1.5% | 0 |
 | `ex` | 2 | 0.1% | 0 |
 | `notes` | 2 | 0.1% | 0 |
 | `pages` | 2 | 0.1% | 0 |
-| `figures` | 1 | 0.1% | 0 |
+| `illustrations` | 1 | 0.1% | 0 |
 | `page` | 1 | 0.1% | 0 |
-| `in` | 0 | 0.0% | 0 |
-| `plates` | 0 | 0.0% | 0 |
 
 ### `basicOccurrence` -- 33 instances in `data/`
 
@@ -131,7 +128,7 @@ property. `personal` is counted separately.
 | `subunit` | 0 | 0.0% | 20 |
 | `superunit` | 0 | 0.0% | 2 |
 
-### `figure` -- 181 instances in `data/`
+### `illustration` -- 181 instances in `data/`
 
 | property | data | data % | personal |
 |---|---|---|---|
@@ -259,7 +256,7 @@ property. `personal` is counted separately.
 | `parents` | 326 | 5.1% | 38 |
 | `openTaxon` | 230 | 3.6% | 16 |
 | `page` | 183 | 2.8% | 0 |
-| `figures` | 138 | 2.1% | 0 |
+| `illustrations` | 138 | 2.1% | 0 |
 | `provisional` | 120 | 1.9% | 23 |
 | `specimens` | 88 | 1.4% | 0 |
 | `source` | 72 | 1.1% | 0 |
@@ -490,10 +487,10 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/basicOccurrence/properties/specimens/additionalProperties/items/items` | string/integer | intx26, strx6 | `E63531`, `E63527`, `GM 3295c`, `GM 3295a` | - |
 | `phylogeny#/$defs/basicOccurrence/properties/specimens/additionalProperties/items` | string/integer/array | listx16, strx15, intx4 | `EE15373`, `E63527`, `GM 9292`, `GM 8052` | - |
 | `phylogeny#/$defs/basicOccurrence/properties/unit` | string/array | strx36, listx20 | `Craighead inlier`, `Mantou Formation`, `Wilberns Formation`, `Wulongqing Formation` | - |
-| `phylogeny#/$defs/figure/properties/figure` | integer/string | intx34, strx9 | `21.1`, `10.1`, `10A`, `11K` | - |
-| `phylogeny#/$defs/figure/properties/page` | integer/string | intx70 | - | string |
-| `phylogeny#/$defs/figure/properties/plate` | integer/string | strx61, intx39 | `LI`, `L`, `LXXV`, `XXIX` | - |
-| `phylogeny#/$defs/figure/properties/textFigure` | integer/string | intx4, strx1 | `11q` | - |
+| `phylogeny#/$defs/illustration/properties/figure` | integer/string | intx34, strx9 | `21.1`, `10.1`, `10A`, `11K` | - |
+| `phylogeny#/$defs/illustration/properties/page` | integer/string | intx70 | - | string |
+| `phylogeny#/$defs/illustration/properties/plate` | integer/string | strx61, intx39 | `LI`, `L`, `LXXV`, `XXIX` | - |
+| `phylogeny#/$defs/illustration/properties/textFigure` | integer/string | intx4, strx1 | `11q` | - |
 | `phylogeny#/$defs/multiRanges/items/items` | integer/string | intx208, strx66 | `3N`, `3I`, `11p`, `11o` | - |
 | `phylogeny#/$defs/multiRanges/items` | integer/string/array | listx137, intx66, strx43 | `2D`, `1B`, `10.1`, `12H` | - |
 | `phylogeny#/$defs/person/properties/death` | integer/null | intx74, nullx1 | - | - |

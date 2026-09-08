@@ -72,8 +72,8 @@ class Authority:
         logger.error(f'Authority source "{source_key}" not recognized')
 
       self._source_authors = self._source.authors
-      if 'authors' in a:
-        self._authors = self._find_authors(a['authors'])
+      if 'attributedTo' in a:
+        self._authors = self._find_authors(a['attributedTo'])
       else:
         self._authors = None
 
