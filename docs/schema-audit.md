@@ -24,62 +24,104 @@ require validity.
 
 ## Headline
 
-Four findings, in order of how much they'd change a redesign:
+Revised 2026-09-08 with domain input from the author; see *Corrections* at the
+end for what changed and why.
 
-1. **Attribution has two mechanisms and the corpus is split down the middle.**
-   1,550 taxa use `authority`; 962 use `auth`+`year`. Only **2** use both. This
-   is a half-finished migration, not two features.
-2. **`authority` is a nine-property object that is used as a one-property
-   object.** All 1,569 instances have `source`; nothing else exceeds 1.5%.
-3. **The occurrence/stratigraphy subtree is almost entirely unexercised** — and
-   what use it has is mostly in `personal/`, not published data.
-4. **Enums are sized for the whole geologic column, not the data.** `stage`
-   declares 100 values and uses 12; `series` declares 38 and uses 8; `eon` and
-   `era` are used zero times.
+1. **Attribution has two mechanisms, and the split is mostly legitimate.**
+   `auth`+`year` is the encoding used when no citable publication exists to put
+   in `data/sources.yaml` — common for pre-1900 works. Of the 962 taxa using it,
+   **791 have no matching source and are correctly on `auth`**; only **171** have
+   a source record already and were simply never switched over.
+2. **`authority` is under-built, not over-built.** It was meant to carry the
+   locator (page/figure/plate) alongside the source, and that never happened.
+   Its `authors` sub-field is *recent and active*; only `pages`/`notes` are
+   genuinely stale.
+3. **The `auth` array mixes author ids with free-form names** — 673 id
+   references against 521 free-form strings. 182 of those uses name an author who
+   already has a record; 323 name someone with no record at all.
+4. **The occurrence/stratigraphy subtree is barely exercised**, and what use it
+   has is mostly in `personal/`. Its structural asymmetries are worth fixing
+   while it is still nearly free to change.
 
 ---
 
-## 1. Attribution: an unfinished migration
+## 1. Attribution: two mechanisms, one real backlog
 
 Two ways to say who named a taxon and when:
 
-| mechanism | in schema since | taxa using it | data median | Q3 |
+| mechanism | in schema since | taxa | data median | Q3 |
 |---|---|---|---|---|
 | `auth` (array) + `year` (int) | 2025-10-15 `261af0c` | 962 | 2025-11-18 | 2025-12-13 |
 | `authority` (`{source: …}`) | 2025-10-22 `b50d209` | 1,550 | 2026-01-02 | 2026-01-14 |
 
-They partition the corpus: **2 taxa carry both, 229 carry neither.** The blame
-dates say `authority` is the newer idiom and still the active one — of taxa
-touched in the last three months, 13 use `authority` and 4 use `auth`.
+They partition the corpus: **2 taxa carry both, 229 carry neither.**
 
-**Reading:** `auth`/`year` is legacy. 962 taxa were written before `authority`
-existed and never migrated. This is the single largest semantic duplication in
-the schema, and the only one where the *data* — not just the schema — needs
-migrating.
+**These are not redundant.** `auth`+`year` is the encoding for a taxon whose
+naming publication cannot be cited as a source record — either it is unobtainable
+or, for many 100+ year old works, no consistent formal citation exists. That case
+is permanent; `auth`+`year` has to stay.
 
-### `authority` is over-specified
+The actionable question is therefore not "how many use `auth`" but "how many use
+`auth` *despite a source record existing*". Matching each taxon's `auth` entries
+and `year` against the `authors` + `pubDate.year` of every record in
+`data/sources.yaml`:
 
-`$defs/authority` declares nine properties. Across all 1,569 instances:
+| | taxa |
+|---|---|
+| no matching source — correctly on `auth`+`year` | **791** |
+| a matching source exists — never switched to `authority` | **171** |
 
-| property | uses | share |
+So the migration backlog is **171 taxa, not 962**. Examples: `amphorida`
+(`auth: [haeckel], year: 1896` — `1896_haeckel` exists), `angelini_jaekel_1899`
+(→ `1899_jaekel`), `alabamensis_sumrall_garbisch_pope_2000` (→ the exact-match
+`2000_sumrall_garbisch_pope`). 54 of the 171 match more than one source from the
+same author and year (e.g. `hall` 1858 matches both `1858a_hall` and
+`1858b_hall`), so they need a human decision rather than a script; the remaining
+117 have exactly one candidate and can be converted mechanically.
+
+### `in` belongs to the `auth` mechanism
+
+`taxon.in` has 26 uses and **every one of them is on an `auth`+`year` taxon**;
+`authority.in` has zero. This confirms `in` was added to `authority` to support
+the migration and has not yet been needed there. `in` records that the authors
+credited with the taxon differ from the authors of the publication it appeared
+in — so it is orthogonal to which mechanism carries the attribution, and any
+converged design needs it on both sides.
+
+### The `auth` array mixes references and free text
+
+Items are either an author id (all lower-case) or a free-form name. Across the
+962 `auth` taxa:
+
+| kind | uses | distinct |
 |---|---|---|
-| `source` | 1,569 | 100% |
-| `authors` | 24 | 1.5% |
-| `ex` | 2 | 0.1% |
-| `notes` | 2 | 0.1% |
-| `pages` | 2 | 0.1% |
-| `figures` | 1 | 0.1% |
-| `page` | 1 | 0.1% |
-| `in` | **0** | — |
-| `plates` | **0** | — |
+| author-id references | 673 | 92 (**all resolve** — no dangling ids) |
+| free-form names | 521 | 220 |
 
-The `oneOf: [required source, required in]` never takes its second branch. In
-practice `authority` is a `sourceId` with six escape hatches, five of which have
-been used a combined seven times.
+Breaking the free-form half down against `data/authors.yaml`:
 
-### Tree nodes have *four* attribution mechanisms
+| | distinct names | uses |
+|---|---|---|
+| exactly one existing author has that family name — mechanically convertible | 66 | 182 |
+| several authors share the family name — needs disambiguation | 5 | 16 |
+| no author record exists — one must be created | 149 | 323 |
 
-Counting nodes that carry any attribution at all (80 of 6,445):
+The ambiguous five are `Miller` (→ `miller.j.s` / `miller.s.a`), `Gray`,
+`Sowerby`, `Zhao`, and `Clark` (five candidates). Note that `Hall` appears as a
+free-form name 10 times *while* `hall` exists as an id and is referenced
+elsewhere — the same person is recorded both ways.
+
+**On family-only author records:** the schema already permits them.
+`$defs/person` requires `anyOf: [required family, required given]`, so a record
+with `family` and no `given` validates today. No schema change is needed — but
+**zero of the 272 current authors use that form**, so the 149 missing names
+(`Gmelin` 20, `Chauvel` 13, `Hecker` 10, `Pallas` 9, `Pennant`, `Ellis` …) would
+be the first, and many are 18th–19th century figures whose given names may be
+genuinely unknown.
+
+### Tree nodes have four attribution mechanisms
+
+Counting nodes that carry any attribution (80 of 6,445):
 
 | mechanism | nodes | in schema since |
 |---|---|---|
@@ -88,39 +130,128 @@ Counting nodes that carry any attribution at all (80 of 6,445):
 | `citation` (own object) | 12 | 2025-11-18 `e1d038a` |
 | `authority` (`$ref`) | 10 | 2025-10-22 |
 
-`tree.citation` is a fifth encoding of a source reference, with its own
-`source`/`year`/`authors`/`disambiguator`/`content` — re-deriving fields that
-`$defs/article` and `$defs/authority` already model. Its `pages`, `plates`, and
-`figures` are **never used**. Of its 12 instances, `disambiguator` appears once.
+(`tree.source` has 72 uses in total; 22 sit on nodes that also carry a taxon.)
 
-**Recommendation.** Converge on `authority`, thinned to what's used; migrate the
-962 `auth`/`year` taxa; retire `tree.citation` (12 nodes) and bare `tree.source`
-(22 nodes).
+**`tree.source` is a bare `sourceId` reference, and it works.** 70 of 72 values
+resolve to a real record in `sources.yaml`. They cluster in early-19th-century
+opinions — `1858a_billings` (19), `1826_schlotheim` (8), `1828_hisinger` (8),
+`1837_hisinger` (6), `1840a_buch` (7) — i.e. transcriptions of old works that
+attribute names to still older ones. Semantically this is exactly
+`authority: {source: …}` written as a bare string.
+
+The two that do *not* resolve are **data bugs, not schema issues**:
+
+- `1854c_billigns` — typo for `billings`
+- `1789_bruguiére` — no such record in `sources.yaml`
+
+Neither is caught today, because `tree.source` is typed as a plain `string`
+rather than as `$defs/sourceId`. Tightening that type would have caught both.
+
+### `citation` is transcription, not attribution
+
+All 12 `tree.citation` nodes live inside `synonyms`/`non` arrays of just two
+opinions — `1974_bell.b.m` (9) and `2005_frest` (3) — and every one is a
+**synonymy entry copied verbatim from the paper being transcribed**:
+
+```yaml
+citation:
+  year: 1901
+  authors: [bather]
+  source: "GeoI. Mag. (n.s.) , dec. 5, 5"      # free text, as printed
+  content: "543·550, pl. 25, fig. 1"           # free text locator, as printed
+```
+
+`source` here is **not** a `sourceId` — it is the bibliographic string as it
+appears on the page, typos and OCR artifacts included (`GeoI.` for `Geol.`).
+`content` is a free-text locator. `authors` *are* real author ids.
+
+So `citation` is the "no source record" case again, plus a verbatim transcription.
+It overlaps `auth`+`year` on authors and year, and its remaining two fields have
+no home in `authority`.
+
+**Recommendation:** fold it in. `citation.authors`/`citation.year` become the
+existing `auth`+`year`; `citation.source` and `citation.content` collapse into a
+single free-text field (`citedAs`) that says plainly "this is what the source
+printed". That removes the fourth mechanism while keeping the transcription
+faithful. `citation.pages`, `.plates` and `.figures` are never used and go away.
+
+### Suggested convergence
+
+1. Migrate the **171** `auth`+`year` taxa that have a source (39 need a human
+   decision between same-author-year candidates).
+2. Keep `auth`+`year` permanently for the other 791.
+3. Convert the **182** free-form `auth` names that map to exactly one existing
+   author; disambiguate the 5; decide whether the 149 unknown names get
+   family-only author records or stay free-form.
+4. Retype `tree.source` as `$defs/sourceId` and fix the two bad values.
+5. Fold `tree.citation` into `auth`+`year` plus `citedAs`.
+6. Build out `authority`'s locator fields (below) rather than trimming them.
 
 ---
 
-## 2. Citation ranges: four encodings, five months apart
+## 2. `authority`'s locator fields: an unfinished intention
 
-The user's hypothesis is confirmed — these are successive answers to one question:
+`$defs/authority` declares nine properties. Across all 1,569 instances:
+
+| property | uses | share | write dates (blame) | reading |
+|---|---|---|---|---|
+| `source` | 1,569 | 100% | median 2026-01-02 | the load-bearing field |
+| `authors` | 24 | 1.5% | 2025-12-22 → 2026-03-24 | **active**, and newer than the median `source` |
+| `ex` | 2 | 0.1% | 2025-10-24, 2025-12-30 | rare **by nature** — keep |
+| `pages` | 2 | 0.1% | 2025-11-07, 2025-11-09 | stale |
+| `notes` | 2 | 0.1% | 2025-11-09 | stale |
+| `page` | 1 | 0.1% | (in `trees.yaml`) | stale |
+| `figures` | 1 | 0.1% | (in `trees.yaml`) | stale |
+| `in` | 0 | — | — | reserved for the `auth` migration |
+| `plates` | 0 | — | — | never used |
+
+The original intent was for `authority` to connect the declaring authority not
+just to a source and year but to the **specific pages, figures and plates**
+involved. That build-out stopped: the locator fields were written twice in early
+November 2025 and never again.
+
+Two corrections to the first draft of this audit:
+
+- **`ex` is not dead weight.** It encodes a real and rare form of taxonomic
+  credit — a formally accepted name republished from a term coined before the
+  naming rules were formalised. Echinodermata itself is credited this way. Two
+  uses is the expected order of magnitude; it stays.
+- **`authors` is not vestigial.** Its write dates run *later* than the median
+  `authority.source`, so it is part of current practice.
+
+That leaves only `pages`, `notes`, `page`, `figures` and `plates` as stale — and
+these are precisely the locator fields the design intended to grow. The question
+is not whether to remove them but **whether to finish them**, using the
+range/locator encodings that the rest of the schema has since settled on.
+
+---
+
+## 3. Citation ranges: four encodings, five months apart
+
+Successive answers to one question:
 
 | encoding | in schema since | uses | shape |
 |---|---|---|---|
 | flat alternating array (`article.pages`) | 2025-10-06 `5715f5b` | 199 | `[start, end, start, end…]` |
-| plain scalar array (`authority.pages`/`plates`) | 2025-10-22 `b50d209` | 2 / 0 | `[n, n]` |
+| plain scalar array (`authority.pages`/`plates`, `tree.plates`) | 2025-10-22 `b50d209` | 2 / 0 / 0 | `[n, n]` |
 | structured `figure` objects | 2025-12-22 `d45dd5b` | 181 | `{plate, page, figure, figures…}` |
 | `multiRanges` | 2026-03-20 `4bd976c` | 194 | `[n, [start,end], n…]` |
 
-`multiRanges` and `figure` are the current idioms and are both healthy.
-The middle encoding is vestigial: `authority.pages` has 2 uses, `authority.page`
-1, `authority.plates` 0. The oldest survives only in `article`, where the
-"alternate start and end" convention is still load-bearing (199 uses).
+**Decided:** the plain scalar arrays become `multiRanges`. The flat alternating
+array stays for now — it lives in `sources.yaml`, which will be dealt with as a
+unit later, so everything under `$defs/article` (`pages` *and* `plates`) is out
+of scope for this pass.
 
-Never used at all: `tree.citation.pages`, `.plates`, `.figures`; `tree.plates`;
+Plain scalar arrays to convert: `authority.pages`, `authority.plates`,
+`tree.plates`, and `tree.citation.pages`/`.plates` (which disappear with
+`citation` anyway).
+
+Never used at all: `tree.citation.pages`/`.plates`/`.figures`; `tree.plates`;
 `figure.source`, `figure.location`, `figure.collectedFrom`.
 
-### The string-typed numbers are justified — mostly
+### One value space for all citation numbers
 
-Measured, not assumed. The union types earn their keep almost everywhere:
+Measured, not assumed — the union types are earned:
 
 | location | observed | real string examples |
 |---|---|---|
@@ -128,25 +259,34 @@ Measured, not assumed. The union types earn their keep almost everywhere:
 | `multiRanges/items` | list×137, int×66, str×43 | `2D`, `1B`, `10.1`, `12H` |
 | `article.pages/items` | int×364, str×42 | `S637`, `S634` |
 | `article.volume` | int×210, str×8 | `New Series`, `4th Series`, `III` |
-| `article.number` | int×140, str×9 | `Supplement`, `1/2`, `5–12` |
 | `figure.figure` | int×34, str×9 | `21.1`, `10A`, `11K` |
+| `specimens/…/items` | str×513, list×4 | `PE 93415`, `NHMUK EE 1660` |
 
-Roman numerals, supplement letters, dot-separated sequences and page-prefix
-letters all occur. **Keep the unions.** Three exceptions where the union is
-currently unearned:
+Roman numerals, supplement letters, dot-separated sequences (version-style, not
+decimal) and page-prefix letters all occur.
 
-- `authority.page` / `authority.pages` declare `number` but only int was seen
-  (and only 3 times total) — these are vestigial anyway.
-- `figure.page` declares `integer/string`, 70 uses, **all int**.
-- `article.chapter` has exactly one value, and it is a 47-character title
-  string, not a chapter number.
+**Rule adopted:** every page / plate / figure / specimen "number" shares one
+value space, whether or not a given field currently exercises all of it. So
+`figure.page` keeps `string` even though all 70 current uses are integers —
+future figures will appear on unnumbered or oddly-numbered pages. This argues for
+a single shared `$defs` entry (say `citationNumber` = `[integer, string]`, with
+`multiRanges` built on it) rather than nine independently-drifting declarations.
 
-`number` vs `integer` is inconsistent across these fields with no observable
-justification: no fractional value appears anywhere in the corpus.
+**`number` → `integer` everywhere.** No fractional value appears anywhere in the
+corpus. Nine locations declare `number`:
 
----
+`authority.page`, `authority.pages/items`, `authority.plates/items`,
+`tree.plates/items`, `tree.citation.content`, `tree.citation.year`,
+`tree.matrix/items`, `tree.data/additionalProperties`,
+`phylogeny.characteristics/…/additionalProperties`
 
-## 3. Specimens: three shapes for one concept
+The last three are **not** citation numbers — `tree.matrix` is a character-state
+matrix (int×139, str×5, where the strings are `?` for missing data),
+`characteristics` and `tree.data` are numeric measurements. `integer` is still
+correct for all of them today, but they should not be folded into
+`citationNumber`; they are a separate concern.
+
+## 4. Specimens: three shapes for one concept
 
 | encoding | in schema since | uses |
 |---|---|---|
@@ -167,7 +307,7 @@ justification: no fractional value appears anywhere in the corpus.
 
 ---
 
-## 4. Stratigraphy: internally inconsistent from birth
+## 5. Stratigraphy: internally inconsistent from birth
 
 Unlike the clusters above, the occurrence subtree arrived all at once
 (2026-04-02, `b8eb38a`) — so its inconsistencies are not forgetting, they are an
@@ -196,7 +336,10 @@ Structural problems, all unexercised:
 
 ---
 
-## 5. Enums are sized for geology, not for the corpus
+## 6. Enum coverage: not a finding
+
+The first draft of this audit flagged the geologic enums as oversized. **That was
+wrong**, and the numbers are recorded here only so nobody re-raises it:
 
 | enum | declared | used | never used |
 |---|---|---|---|
@@ -204,26 +347,30 @@ Structural problems, all unexercised:
 | `series` | 38 | 8 | 30 |
 | `rank` | 32 | 24 | 8 |
 | `period` | 22 | 2 | 20 |
-| `era` | 10 | **0** | 10 |
-| `eon` | 4 | **0** | 4 |
+| `era` | 10 | 0 | 10 |
+| `eon` | 4 | 0 | 4 |
 | `specimens` roles | 14 | 10 | 4 |
 | `season` | 5 | 1 | 4 |
 | `treeType` | 4 | 2 | 2 |
-| `publication.type` | 2 | **0** | 2 |
+| `publication.type` | 2 | 0 | 2 |
 
-This is not necessarily wrong — a reference vocabulary is legitimately complete
-rather than minimal — but it is worth an explicit decision, because these enums
-are ~180 of the schema's ~1,000 lines. The corpus is Cambrian–Ordovician
-echinoderms; the Jurassic stages are unlikely to ever appear.
+These enums transcribe vocabularies defined by standards bodies. Low usage
+reflects **data selection bias** — the corpus is Cambrian–Ordovician echinoderms,
+so the Jurassic stages are simply out of scope for the present dataset, not
+surplus to the schema. `eon` and `era` are present for completeness of the
+geologic time scale and may be used later. **Do not trim these.**
 
-`treeType` never takes the value `taxonomy` even though `trees.taxonomies` is a
-separate array — the distinction is carried by position, not by the enum.
-`publication.type` is never set at all, relying entirely on its `default:
-journal`.
+Coverage percentages on a controlled vocabulary measure the corpus, not the
+schema. The one item here that *is* worth a look is `publication.type`, which is
+never set at all and relies entirely on its `default: journal` — a different kind
+of observation from the geologic enums.
 
----
+## 7. Never reached by any data
 
-## 6. Never reached by any data
+Zero uses means "no data reaches this", which is a *candidate* for removal, not a
+verdict — §2 and §6 are both cases where a low count turned out to mean "rare by
+nature" or "not built yet". Each of these still needs the same question asked:
+abandoned, rare, or unfinished?
 
 Beyond what's noted above:
 
@@ -240,7 +387,7 @@ Rare enough to question (≤5 uses in 6,445 tree nodes): `tree.removed` (1),
 
 ---
 
-## 7. Schema and code disagree
+## 8. Schema and code disagree
 
 Constructs the schema permits that no code consumes — the redesign should decide
 whether these are unimplemented features or dead ideas:
@@ -262,7 +409,7 @@ whether these are unimplemented features or dead ideas:
 
 ---
 
-## 8. Uncertainty markers: ten overlapping ways to hedge
+## 9. Uncertainty markers: ten overlapping ways to hedge
 
 Not a duplication in the same sense — these plausibly mean different things —
 but they accreted over eleven months without a unifying model, and several are
@@ -293,18 +440,57 @@ Name-variant markers show the same spread: `altSpellingOf` (160, 2025-10-24),
 
 ## Suggested order of attack
 
-1. **Migrate `auth`/`year` → `authority`** in 962 taxa. Largest win; needs a data
-   migration, not just a schema edit.
-2. **Thin `authority`** to `source` plus whatever survives review of the seven
-   outlier uses.
-3. **Retire the vestigial citation encodings**: `tree.citation` (12),
-   `tree.source` (22), `authority.pages`/`page`/`plates` (3 total).
-4. **Fix the inert `items`** on `basicOccurrence.specimens` / `possibleSpecimens`
+Settled, ready to implement as schema changes:
+
+1. **Plain scalar arrays → `multiRanges`**: `authority.pages`,
+   `authority.plates`, `tree.plates`. `$defs/article` is out of scope this pass.
+2. **`number` → `integer`** at all nine declaring locations.
+3. **Introduce a shared citation-number value space** (`[integer, string]`) for
+   page / plate / figure / specimen numbers, and use it everywhere including
+   `figure.page`, whose `string` branch is retained deliberately.
+4. **Retype `tree.source` as `$defs/sourceId`** — this alone catches the two bad
+   values already in the data.
+
+Needs a decision or a data migration, not just a schema edit:
+
+5. **Migrate 171 taxa** from `auth`+`year` to `authority` (54 need a human choice
+   between same-author-year sources). The other 791 stay as they are.
+6. **Normalise the `auth` array**: convert the 182 free-form uses that map to a
+   single existing author; disambiguate 5; decide whether the 149 unrecorded
+   names get family-only author records (already schema-legal, currently unused)
+   or remain free-form.
+7. **Fold `tree.citation`** into `auth`+`year` plus a free-text `citedAs`.
+8. **Finish `authority`'s locator fields** using the shared range encodings,
+   rather than removing them.
+9. **Fix the inert `items`** on `basicOccurrence.specimens` / `possibleSpecimens`
    — they validate nothing today.
-5. **Redesign the stratigraphy block** while it is still nearly unused: unify
-   Range vs Boundary, decide whether `period`/`era`/`eon` need variants, fold in
-   `biozone`.
-6. **Decide the enum policy** — complete reference vocabulary, or corpus-sized.
-7. **Drop the zero-use leaves**: `taxon.modifier`, `taxon.reason`,
-   `tree.categories`, `tree.data`, `person.suffix`, `trees.<id>.source`,
-   `specimen`'s object branch, `specimens.repository`.
+10. **Redesign the stratigraphy block** while it is still nearly unused: unify
+    Range vs Boundary, decide whether `period`/`era`/`eon` need range variants,
+    fold in `biozone`.
+11. **Drop the genuinely dead leaves**: `taxon.modifier`, `taxon.reason`,
+    `tree.categories`, `tree.data`, `person.suffix`, `trees.<id>.source`,
+    `$defs/specimen`'s unused object branch, `specimens.repository`.
+
+Explicitly **not** doing: trimming the geologic enums (§6); removing
+`authority.ex` (§2); eliminating `auth`+`year` (§1).
+
+---
+
+## Corrections to the first draft
+
+This audit was revised on 2026-09-08 after review. The measurements were right;
+several interpretations were not. What changed:
+
+| first draft said | actually |
+|---|---|
+| `auth`+`year` is legacy; migrate all 962 taxa | It is the permanent encoding for taxa with no citable source. Only **171** are migratable. |
+| `authority` is over-specified — nine properties for one used field | It is **under-built**. The locator fields are an unfinished intention, not surplus. |
+| `authority.ex` is vestigial (2 uses) | Rare **by nature** — it encodes pre-Linnaean republication credit. Keep. |
+| `authority.authors` is a rare outlier (1.5%) | Recent and active; its write dates run later than the median `authority.source`. |
+| `authority.in` is unused, so drop it | Reserved for the `auth` migration. All 26 uses of `taxon.in` are on `auth` taxa. |
+| Enums are oversized; consider trimming | Standards-body vocabularies. Low usage is corpus selection bias. **Do not trim.** |
+| `figure.page` could narrow to `integer` (70/70 int) | All citation numbers share one value space regardless of current use. Keep `string`. |
+
+The lesson for future passes: usage frequency identifies *candidates*, but it
+cannot distinguish "abandoned" from "rare by nature" or "not built yet". Only
+domain knowledge separates those three, and all three look identical in a census.
