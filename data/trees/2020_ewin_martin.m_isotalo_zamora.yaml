@@ -1,30 +1,13 @@
 taxonomies:
 - taxon: echinodermata
-  rank: Phylum
-  authority: 
-    source: 1791_bruguière
-    ex:
-      source: 1734_klein
   children:
   - taxon: edrioasteroidea
-    rank: Class
-    authority:
-      source: 1858b_bilings
     children:
     - taxon: edrioasterida
-      rank: Order
-      authority:
-        source: 1976_bell.b.m
       children:
       - taxon: edrioblastoidina
-        rank: Suborder
-        authority:
-          source: 1962_fay
         children:
         - taxon: rhenopyrgidae
-          rank: Family
-          authority:
-            source: 1983_holloway_jell
           page: 118
           diagnosis: |
             Pyrgate edrioasteroids with relatively
@@ -41,19 +24,16 @@ taxonomies:
             arranged in alternating circlets of four; holdfast formed of
             coriaceous sac comprised of small unorganized platelets.
           emended: true
-          occurrenceSummary:
-          - stageRange: [Tremadocian, Eifelian]
-            locationRange:
-              North Africa: [Morocco]
-              Europe: [Germany, UK, France, Russia, Sweden]
-              Americas: []
-            possiblLocationRange:
-              Europe: [Spain]
+#           occurrenceSummary:
+#           - stageRange: [Tremadocian, Eifelian]
+#             locationRange:
+#               North Africa: [Morocco]
+#               Europe: [Germany, UK, France, Russia, Sweden]
+#               Americas: []
+#             possiblLocationRange:
+#               Europe: [Spain]
           children:
           - taxon: rhenopyrgus
-            rank: genus
-            authority:
-              source: 1961_dehm
             page: 118
             diagnosis: |
               Rhenopyrgids with fused or unfused
@@ -64,35 +44,43 @@ taxonomies:
               formed of eight rows of imbricated plates arranged in two
               circlets of four
             emended: true
-            occurrenceSummary:
-            - stageRange: [Tremadocian, Emsian]
-            - stage: Tremadocian
-              stageModifier: upper
-              location:
-              - France
-            - stage: Floian
-              location:
-              - France
-            typeTaxon:
-              taxon: coronaeformis_rievers_1961
-              authority:
-                source: 1961_rievers
-              parents:
-              - taxon: rhenopyrgus-subgenus
-              - taxon: pyrgocystis
-              occurrences:
-              - unit:
-                - Hunsrück Slate
-                stage: Emsian
-                location:
-                - Germany
+#             occurrenceSummary:
+#             - stageRange: [Tremadocian, Emsian]
+#             - stage: Tremadocian
+#               stageModifier: upper
+#               location:
+#               - France
+#             - stage: Floian
+#               location:
+#               - France
+#             typeTaxon:
+#               taxon: coronaeformis_rievers_1961
+#               authority:
+#                 source: 1961_rievers
+#               parents:
+#               - taxon: rhenopyrgus-subgenus
+#               - taxon: pyrgocystis
+#               occurrences:
+#               - unit:
+#                 - Hunsrück Slate
+#                 stage: Emsian
+#                 location:
+#                 - Germany
             children:
             - taxon: coronaeformis_rievers_1961
+              type: true
               synonyms:
               - taxon: coronaeformis_rievers_1961
                 parents:
                 - taxon: rhenopyrgus-subgenus
                 - taxon: pyrgocystis
+              occurrences:
+              - unit:
+                - Hunsrück Slate
+                stage: Emsian
+                series: Lower Devonian
+                location:
+                - Germany
             - taxon: grayae_bather_1915
               synonyms:
               - parents:
@@ -107,7 +95,8 @@ taxonomies:
                 page: 1004
               - source: 1985_smith.a.b
                 page: 732
-                textFigure: 11
+                figures:
+                - textFigure: 11
               - parents:
                 - taxon: pyrgocystis
                 source: 2013_sumrall_heredia_rodríguez_mestre
@@ -147,7 +136,7 @@ taxonomies:
               figures:
               - figures:
                 - 2
-                - [4, 5]2
+                - [4, 5]
               new: true
               occurrences:
               - unit:
@@ -187,21 +176,130 @@ taxonomies:
                   unspecified:
                     MPEP: "1143.1"
             - openTaxon: rhenopyrgus-sp-1_ewin_martin.m_isotalo_zamora_2020
+              figures:
+              - figures:
+                - "3.3"
+                - "3.4"
+              occurrences:
+              - unit:
+                - Newlands Beds
+                - Newlands Farm Formation
+                - Newlands Subgroup
+                - Saugh Hill Group
+                series: Llandovery
+                # seriesModifier: middle
+                location:
+                - Newlands Farm
+                - Argyle
+                - Scotland
+                notes: |
+                  may extend into the Ardmillan group of the Upper Ordovician
+                specimens:
+                  unspecified:
+                    E:
+                    - "62751"
+                    - "62752"
+                    - "62753"
               synonyms:
               - taxon: procera_aurivillius_1892
                 parents:
-                - taxon: pyrgocysitis
+                - taxon: pyrgocystis
                 source: 1915_bather
                 page: 59
               - taxon: procera_aurivillius_1892
                 provisional: true
-                source: 2913_sumrall_heredia_rodríguez.c.m_mestre
+                source: 2013_sumrall_heredia_rodríguez.c.m_mestre
                 page: 764
                 figures:
                 - figure: 1C
             - openTaxon: rhenopyrgus-sp-2_ewin_martin.m_isotalo_zamora_2020
+              figures:
+              - figures:
+                - "3.5"
+              occurrences:
+              - unit: Craighead inlier
+                stage: Katian
+                localStage: Girvan?
+                localSeries: Ardmillan
+                specimens:
+                  unspecified:
+                    EE:
+                    - 16254
             - openTaxon: rhenopyrgus-sp-3_ewin_martin.m_isotalo_zamora_2020
+              synonyms:
+              - openTaxon: pyrgocystis-sp_vizcaïno_lefebvre_1999
+                provisional: true
+                page: 356
+                parents:
+                - taxon: pyrgocystis
+                  source: bather_1915
+              - openTaxon: pyrgocystis-sp_vizcaïno_álvaro_lefebvre_2001
+                provisional: true
+                page: 218
+                parents:
+                - taxon: pyrgocystis
+                  source: bather_1915
+              notes: |
+                "2013 Rhenopyrgidae Sumrall et al., p. 773" in synonym
+                list with no explanation; that page in the referenced
+                paper does not include this specimen.
+              figures:
+              - page: 121
+                figures:
+                - ["3.6", "3.7"]
+                notes: Foulon Formation specimen
+              - page: 121
+                figure: "3.8"
+                notes: beneath Saint-Chinian formation
+              occurrences:
+              - stage: Tremadocian
+                stageModifier: upper
+                series: Lower Ordovician
+                location:
+                - SW of Donnadieu
+                - Babeau-Bouldoux
+                - Hérault
+                - France
+                unit:
+                - Saint-Chinian Formation
+                biozone: E. filacovi
+                specimens:
+                  unspecified:
+                    UCBL-FSL:
+                    - 713316
+              - stage: Floian
+                stageModifier: middle
+                series: Lower Ordovician
+                location:
+                - la Croix de Roquebrun
+                - Saint-Nazaire-de-Ladarez
+                - Hérault
+                - France
+                unit:
+                - Foulon Formation
+                biozone: N. arenosus
+                specimens:
+                  unspecified:
+                    UCBL-FSL:
+                    - 713312
+              - stage: Floian
+                stageModifier: upper
+                series: Lower Ordovician
+                location:
+                - Pont supérieur
+                - Saint-Nazaire-de-Ladarez
+                - Hérault
+                - France
+                unit:
+                - Landeyran Formation
+                biozone: A. incisus
+                specimens:
+                  unspecified:
+                    UCBL-FSL:
+                    - [713313, 713315]
             - openTaxon: rhenopyrgus-sp-4_ewin_martin.m_isotalo_zamora_2020
+              page: 118
+              notes: Only mentioned briefly, no formal description.
+              synonyms:
+              - openTaxon: rhenopyrgus-sp_grigo_2000
           - taxon: heropyrgus
-            authority:
-              source: 2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman

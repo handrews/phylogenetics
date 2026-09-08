@@ -12,6 +12,7 @@ logger = logging.getLogger(__name__)
 # Raw string to work around bizarre syntax highlighting bug
 FILEDIR = pathlib.Path(__file__).parent / r'..'
 DATA_DIR = FILEDIR / 'data'
+TREE_DIR = DATA_DIR / 'trees'
 PERSONAL_DIR = FILEDIR / 'personal'
 
 COMMON_FILES = (
@@ -121,6 +122,30 @@ def load_files(personal=False):
         logger.debug(f'"{filename}" is valid.')
     except KeyError as e:
       logger.error(repr(e))
+
+  for tree_path in TREE_DIR.iterdir():
+    if tree_path.suffix != '.yaml':
+      continue
+
+    # TODO: Fix code duplication
+    logger.info(f'Checking "{tree_path}"...')
+    name = tree_path.stem
+    tree_data = {name: load_yaml(tree_path)}
+    try:
+      schema = defs['trees']
+      r = schema.evaluate(jschon.JSON(tree_data))
+      if not r.valid:
+        logger.error(f'File "{tree_path}" is not valid.')
+        log_schema_errors(r)
+        sys.exit(-1)
+      else:
+        logger.debug(f'"{tree_path}" is valid.')
+    except KeyError as e:
+      logger.error(repr(e))
+    if name in data['trees']:
+      logger.warn(f'File "{tree_path}" overwrites the main tree file.')
+    data['trees'].update(tree_data)
+      
   return data
 
 

@@ -4,8 +4,8 @@ taxonomies:
   - taxon: echinozoa
     children:
     - taxon: edrioasteroidea
-      occurrenceSummary:
-      - seriesRange: [Lower Cambrian, Upper Mississippian]
+      # occurrenceSummary:
+      # - seriesRange: [Lower Cambrian, Upper Mississippian]
       children:
       - taxon: stromatocystitidae
         authority:
@@ -19,8 +19,8 @@ taxonomies:
           a shallow cavity; interambulacral areas and aboral side mostly
           composed of polygonal plates; ambulacra 5, narrow, straight or
           curved, confined to the upper surface; unstalked and unattached. 
-        occurrenceSummary:
-        - seriesRange: [Lower Cambrian, Upper Devonian]
+        # occurrenceSummary:
+        # - seriesRange: [Lower Cambrian, Upper Devonian]
         children:
         - taxon: stromatocystites
           authority:

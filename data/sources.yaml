@@ -2780,6 +2780,27 @@ inprep_sprinkle_strimple:
   - pan.y
   identifiers:
     url: https://www.researchgate.net/publication/284507301_A_progress_report_on_research_on_the_early_Middle_Cambrian_Kaili_Biota_Guizhou_PRC
+2000_grigo:
+  title: |
+    Erstnachweis von Edrioasteroidea (Echinodermata) aus dem Mittel-Devon
+    der Eifel (Rheinisches Schiefergebirge)
+  translations:
+    en: |
+      First record of Edrioasteroidea (Echinodermata) from the Middle Devonian
+      of the Eifel (Rheinisches Schiefergebirge)
+  journal: p-z
+  volume: 74
+  pages:
+  - 91
+  - 98
+  pubDate:
+    year: 2000
+    month: 5
+  processDates:
+    received: 1999-11-28
+    accepted: 2000-03-30
+  authors:
+  - grigo
 2000_sumrall_garbisch_pope:
   title: The Systematics of Postibullinid Edrioasteroids
   journal: jofpaleo

@@ -1028,36 +1028,36 @@
               children:
               - taxon: destombesi_ubaghs_1963
                 type: true
-        - taxon: ascocystitidae
-          type: true
-          children:
-          - taxon: ascocystites
+          - taxon: ascocystitidae
             type: true
             children:
-            - taxon: drabowensis_barrande_1887
+            - taxon: ascocystites
               type: true
-              synonyms:
-              - taxon: micraster_barrande_1887
-              - taxon: barrandei_jaekel_1918
-              - openTaxon: ascocystites-sp_young.t.p_donovan.s.k_1993
-              - openTaxon: ascocystites-sp_régnault_2007
-              - openTaxon: ascocystites-sp_makhlouf_lefebvre_nardin_nedjari_régnault_ferhi_2014
-            - taxon: cuneiformis_chauvel_1941
-        - taxon: cambrocrinidae
-          children:
-          - taxon: cambrocrinus
-            type: true
+              children:
+              - taxon: drabowensis_barrande_1887
+                type: true
+                synonyms:
+                - taxon: micraster_barrande_1887
+                - taxon: barrandei_jaekel_1918
+                - openTaxon: ascocystites-sp_young.t.p_donovan.s.k_1993
+                - openTaxon: ascocystites-sp_régnault_2007
+                - openTaxon: ascocystites-sp_makhlouf_lefebvre_nardin_nedjari_régnault_ferhi_2014
+              - taxon: cuneiformis_chauvel_1941
+          - taxon: cambrocrinidae
             children:
-            - taxon: regularis_orłowski_1968
+            - taxon: cambrocrinus
               type: true
-          - taxon: eocystites
+              children:
+              - taxon: regularis_orłowski_1968
+                type: true
+            - taxon: eocystites
+              children:
+              - taxon: primaevus_billings_1868
+                type: true
+          - taxon: ridersiidae
             children:
-            - taxon: primaevus_billings_1868
+            - taxon: ridersia
               type: true
-        - taxon: ridersiidae
-          children:
-          - taxon: ridersia
-            type: true
         - taxon: dichoporita
           children:
           - taxon: glyptocystitida-superfamily

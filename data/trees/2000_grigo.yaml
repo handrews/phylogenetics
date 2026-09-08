@@ -1,0 +1,114 @@
+taxonomies:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: isorophida
+      children:
+      - taxon: agelacrinitidae
+        children:
+        - taxon: timeischytes
+          page: 91
+          children:
+          - taxon: megapinacotus_ehlers_kesling_1958
+            type: true
+          - taxon: leunisseni_grigo_2000
+            page: 92
+            figures:
+            - page: 93
+              figure: 2
+            new: true
+            occurrences:
+            - stage: Eifelian
+            - series: Middle Devonian
+              unit:
+              - Grauberg Subformation
+              - Junkerberg Formation
+              location:
+              - Rommersheim Route (B 51)
+              - east of Prüm
+              - Prüm Basin
+              - MTB 5704 Prüm
+              - r 329375 / h 635250
+              specimens:
+                holotypes:
+                  GIK:
+                  - 1585
+          - taxon: prescheri_grigo_2000
+            page: 94
+            figures:
+            - page: 94
+              figure: 4
+            - page: 94
+              figure: 7
+              uncertain: true
+            new: true
+            notes: |
+              Another specimen from the same unit and locality
+              is tentatively assigned to this species and described
+              on page 95 and figured as Fig. 7 on the same page.
+              However, no repository or specimen identifier is provided.
+            occurrences:
+            - stage: Givetian
+              series: Middle Devonian
+              unit:
+              - Hustley Member
+              - Loogh Formation
+              location:
+              - Railway embankment near
+              - Gerolstine
+              - Gerolstine Syncline
+              - MTB 5706 Hillesheim
+              - r 483500 / h 657750
+              specimens:
+                holotypes:
+                  GIK:
+                  - 1586
+    - taxon: edrioasterida
+      children:
+      - taxon: edrioblastoidina
+        children:
+        - taxon: cyathocystidae
+          children:
+          - taxon: rhenopyrginae
+            children:
+            - taxon: rhenopyrgus
+              page: 95
+              children:
+              - taxon: coronaeformis_rievers_1961
+                type: true
+              - openTaxon: rhenopyrgus-sp_grigo_2000
+                new: true
+                page: 96
+                figures:
+                - page: 96
+                  figures:
+                  - [8a, 8f]
+                - page: 96
+                  figure: 8g
+                notes: |
+                  Figure 8a-8f are the GIK specimen, figure 8g
+                  from the other location is in the
+                  Prescher collection (Kerpen-Horrem)
+                occurrences:
+                - stage: Eifelian
+                  series: Middle Devonian
+                  unit:
+                  - Flesten Member
+                  - Ahrdorf Formation
+                  location:
+                  - Auberg near Gerolstein
+                  - MTB 5705 Gerolstein
+                  - r 461000 / h 656250
+                  specimens:
+                    unknowntypes:
+                      GIK:
+                      - 1857
+                - stage: Eifelian
+                  series: Middle Devonian
+                  unit:
+                  - Flesten Member
+                  - Ahrdorf Formation
+                  location:
+                  - Salmer Weg near Gees
+                  - MTB 5706 Hillesheim
+                  - r 493000 / h 652000
+                  notes: Figure 8g in the Prescher collection

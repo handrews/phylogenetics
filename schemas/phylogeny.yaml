@@ -261,6 +261,8 @@ $defs:
         $ref: "#/$defs/sourceId"
       ex:
         $ref: "#/$defs/authority"
+      page:
+        type: [number, string]
       pages:
         type: array
         items:
@@ -269,6 +271,10 @@ $defs:
         type: array
         items:
           type: [number, string]
+      figures:
+        type: array
+        items:
+          $ref: "phylogeny#/$defs/figure"
       notes:
         type: string
   taxonBasic:
@@ -288,6 +294,9 @@ $defs:
       name:
         type: [string, "null"]
         pattern: ^[\w][\w._ -]*$
+      identifier:
+        description: |
+          The phrase given in place of a name for taxa in open nomenclature
       rank:
         $ref: phylogeny#/$defs/rank
       authority:
@@ -630,6 +639,13 @@ $defs:
         type: [integer, string]
       collectedFrom:
         type: string
+      uncertain:
+        description: |
+          If true, the assignment of the specimen to the given taxon
+          is uncertain, but no other identifiable taxon (such as a cf. taxon)
+          was defined.
+        type: boolean
+        default: false
       notes:
         type: string
   basicOccurrence:
@@ -653,6 +669,8 @@ $defs:
         $ref: "#/$defs/stageRange"
       stageRange:
         $ref: "#/$defs/stageRange"
+      stageModifier:
+        $ref: "#/$defs/stageModifier"
       superunit:
         type: string
       unit:
@@ -678,6 +696,10 @@ $defs:
           type: string
         minItems: 2
         maxItems: 2
+      fauna:
+        type: array
+        items:
+          type: string
       paleocontinent:
         type: string
       location:
@@ -712,6 +734,8 @@ $defs:
       tentative:
         type: boolean
         default: false
+      localPeriod:
+        type: string
       localSeries:
         $ref: "#/$defs/localSeries"
       localSeriesBoundary:

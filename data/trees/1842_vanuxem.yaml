@@ -5,8 +5,7 @@ taxonomies:
     authority info for possible species Pentacrinites hamptonii,
     Encrinites lævis, or E. triciclas; Echinus drydenensis was tentatively
     proposed but seems to have been a nomen nudum.
-  taxon: crinoidea
-  rank: Family
+  taxon: crinoidea-family
   children:
   - taxon: agelacrinites
     new: true
@@ -33,7 +32,7 @@ taxonomies:
       - unit:
         - Hamilton group
         - New York System
-        locality:
+        location:
         - upper quarry
         - the hill back of the Seminary
         - West-Hamilton village
@@ -55,11 +54,12 @@ taxonomies:
     notes: It's possible that this came out before Conrad's own 1842 paper.
     children:
     - taxon: hallii_conrad.t.a_1842
+      new: true # It's a little unclear how to handle this situation
       notes: No description or figures.
       occurrences:
       - unit:
         - Hamilton Group
-        locality:
+        location:
         - New York
   - taxon: pentacrinites
     children:
@@ -72,7 +72,7 @@ taxonomies:
       occurrences:
       - unit:
         - Pulaski shales
-        locality:
+        location:
         - Oswego
         - New York
   - taxon: lepocrinites
@@ -87,6 +87,6 @@ taxonomies:
       - unit:
         - between two Pentamerus galeatus beds
         - Pentamerus Limestone
-        locality:
+        location:
         - near Cherry-Valley, Sharon Springs, Cooperstown, and Warren
         - New York

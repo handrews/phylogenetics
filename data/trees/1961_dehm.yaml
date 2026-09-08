@@ -1,38 +1,39 @@
 taxonomies:
 - taxon: pyrgocystis
   rank: genus
-  typeTaxon:
-    taxon: sardesoni_bather_1915
+  # typeTaxon:
+  #   taxon: sardesoni_bather_1915
   children:
   - taxon: sardesoni_bather_1915
+    type: true
     occurrences:
     - period: Ordovician
       notes: Period given as "Lower Silurian (Ordovician)"
-      locality:
+      location:
       - North America
   - taxon: grayae_bather_1915
     occurrences:
     - period: Ordovician
       notes: Period given as "Lower Silurian (Ordovician)"
-      locality:
+      location:
       - Scotland
   - taxon: volborthi_hecker_1939
     occurrences:
     - period: Ordovician
       notes: Period given as "Lower Silurian (Ordovician)"
-      locality:
+      location:
       - Russia
   - taxon: gracilis_hecker_1939
     occurrences:
     - period: Ordovician
       notes: Period given as "Lower Silurian (Ordovician)"
-      locality:
+      location:
       - Russia
   - taxon: pulkovi_hecker_1939
     occurrences:
     - period: Ordovician
       notes: Period given as "Lower Silurian (Ordovician)"
-      locality:
+      location:
       - Russia
   - taxon: sulcata_angelin_1892
     occurrences:
@@ -41,7 +42,7 @@ taxonomies:
         Period given as "Upper Silurian (Gotlandian)", but unknown if this
         "Upper Silurian" is equivalent to the modern Silurian period, or
         to the actual modern Upper Silurian series.
-      locality:
+      location:
       - Gotland
       - Sweden
   - taxon: procera_angelin_1892
@@ -51,7 +52,7 @@ taxonomies:
         Period given as "Upper Silurian (Gotlandian)", but unknown if this
         "Upper Silurian" is equivalent to the modern Silurian period, or
         to the actual modern Upper Silurian series.
-      locality:
+      location:
       - Gotland
       - Sweden
   - taxon: cylindrica_angelin_1892
@@ -61,7 +62,7 @@ taxonomies:
         Period given as "Upper Silurian (Gotlandian)", but unknown if this
         "Upper Silurian" is equivalent to the modern Silurian period, or
         to the actual modern Upper Silurian series.
-      locality:
+      location:
       - Gotland
       - Sweden
   - taxon: octogona_richter.r_1930
@@ -74,40 +75,45 @@ taxonomies:
     - series: Lower Devonian
       unit:
       - greywacke slates
-      locality:
+      location:
       - Bornich
       - near Weisel on the Rhine
       - Germany
   - taxon: rhenopyrgus
     new: true
     rank: subgenus
-    typeTaxon:
-      taxon: coronaeformis_rievers_1961
-      parents:
-      - taxon: pyrgocystis
+    # typeTaxon:
+    #   taxon: coronaeformis_rievers_1961
+    #   parents:
+    #   - taxon: pyrgocystis
     children:
     - taxon: coronaeformis_rievers_1961
+      type: true
+      synonyms:
+      - parents:
+        - taxon: pyrgocystis
       occurrences:
       - series: Lower Devonian
         unit:
         - Hunsrück Slates
-        locality:
+        location:
         - Bundenbach
-phylogenies:
-- taxon: pyrgocystis
-  rank: genus
-  children:
-  - taxon: sardesoni_bather_1915
-  - taxon: grayae_bather_1915
-  - taxon: volborthi_hecker_1939
-  - taxon: gracilis_hecker_1939
-  - taxon: pulkovi_hecker_1939
-  - taxon: sulcata_angelin_1892
-  - taxon: procera_angelin_1892
-  - taxon: cylindrica_angelin_1892
-  - children:
-    - taxon: octagona_richter_1930
-    - taxon: rhenopyrgus
-      rank: subgenus
-      children:
-      - taxon: coronaeformis_rievers_1961
+# TODO: I'm not sure where the phylogeny came from?
+# phylogenies:
+# - taxon: pyrgocystis
+#   rank: genus
+#   children:
+#   - taxon: sardesoni_bather_1915
+#   - taxon: grayae_bather_1915
+#   - taxon: volborthi_hecker_1939
+#   - taxon: gracilis_hecker_1939
+#   - taxon: pulkovi_hecker_1939
+#   - taxon: sulcata_angelin_1892
+#   - taxon: procera_angelin_1892
+#   - taxon: cylindrica_angelin_1892
+#   - children:
+#     - taxon: octagona_richter_1930
+#     - taxon: rhenopyrgus
+#       rank: subgenus
+#       children:
+#       - taxon: coronaeformis_rievers_1961

@@ -18,13 +18,12 @@ taxonomies:
         - plate: XI
           figure: 5
         occurrences:
-        - locality:
+        - location:
           - the falls of the Chaudière
           - Ottawa River
           - Lower Canada
           - Canada
-          specimen:
-          - "Pl. XI, Fig. 5"
+          notes: Specimen from the plates.
   - taxon: crinoidea
     rank: Family
   - taxon: blastoidea

@@ -1,22 +1,18 @@
+# taxonomies:
+# - taxon: Radiata
+#   children:
+#   - taxon: echinodermata-order
+#     children:
+#     - taxon: asteriadae
+#     - taxon: cystideae
+#     - taxon: echinidae
+#     - taxon: crinoideae
 taxonomies:
-- taxon: Radiata
+- taxon: echinodermata-class
   children:
-  - taxon: Echinodermata
-    rank: Order
-    children:
-    - taxon: Asteriadae
-    - taxon: Cystideae
-    - taxon: Echinidae
-    - taxon: Crinoideae
-taxonomies:
-- taxon: echinodermata
-  rank: Class
-  children:
-  - taxon: cystideæ
-    rank: Order
+  - taxon: cystideæ-order
     synonyms:
-    - taxon: cystidea
-      rank: Order
+    - taxon: cystidea-order
     children:
     - taxon: pseudocrinites
       emended: true

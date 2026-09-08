@@ -2778,7 +2778,7 @@ curtus_bassler_1936:
     source: 1936_bassler
 curvatus_grigo_1995:
   name: curvatus
-  auth: [Grigo]
+  auth: [grigo]
   year: 1995
 curvitriordo:
   name: Curvitriordo
@@ -6612,8 +6612,8 @@ levis_bather_1914:
   year: 1914
 leuniseni_grigo_2000:
   name: leuniseni
-  auth: [Grigo]
-  year: 2000
+  authority:
+    source: 2000_grigo
 lichenoides:
   name: Lichenoides
   auth: [barrande]
@@ -8943,8 +8943,8 @@ praepleurocystis-sp_kolata_1975:
     source: 1975_kolata
 prescheri_grigo_2000:
   name: prescheri
-  auth: [Grigo]
-  year: 2000
+  authority:
+    source: 2000_grigo
 priapulus:
   name: Priapulus
   authority:
@@ -9680,24 +9680,36 @@ rhenopyrgus-subgenus:
   rank: subgenus
   auth: [Dehm]
   year: 1961
+rhenopyrgus-sp_grigo_2000:
+  name: null
+  rank: species
+  authority:
+    source: 2000_grigo
 rhenopyrgus-sp-1_ewin_martin.m_isotalo_zamora_2020:
   name: null
+  identifier: Rhenopyrgus sp. indet. 1
   rank: species
   authority:
     source: 2020_ewin_martin.m_isotalo_zamora
 rhenopyrgus-sp-2_ewin_martin.m_isotalo_zamora_2020:
   name: null
+  identifier: Rhenopyrgus sp. indet. 2
   rank: species
   authority:
     source: 2020_ewin_martin.m_isotalo_zamora
 rhenopyrgus-sp-3_ewin_martin.m_isotalo_zamora_2020:
   name: null
+  identifier: Rhenopyrgus sp. indet. 3
   rank: species
   authority:
     source: 2020_ewin_martin.m_isotalo_zamora
 rhenopyrgus-sp-4_ewin_martin.m_isotalo_zamora_2020:
   name: null
+  identifier: Rhenopyrgus sp. indet. 4
   rank: species
+  notes: |
+    Only described this way in a figure caption referencing
+    a prevoius open nomenclature description.
   authority:
     source: 2020_ewin_martin.m_isotalo_zamora
 rhipidocystidae:
