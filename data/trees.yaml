@@ -3671,7 +3671,7 @@
         authority:
           source: 1772_gyllenhaal
           pages:
-          - 242,
+          - 242
           - 253
           illustrations:
           - plate: 8
@@ -4120,10 +4120,6 @@
         authority:
           source: 1821_wahlenberg
           page: 52
-          illustrations:
-          - plate: I
-            figures:
-            - [14, 17]
         notes: |
           No indication of which figures go with which species; presumably
           Buch would retain the E. pomum figures with that species, and
@@ -8963,8 +8959,7 @@
           illustrations:
           - plate: 1
             figures:
-            - 1
-            - 9
+            - [1, 9]
 1979_guensburg:
   taxonomies:
   - notes: From a paragraph in an abstract.  Higher classification assumed.

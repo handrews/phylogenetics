@@ -22,33 +22,47 @@ The Royal College of Metallurgy's residences in the Royal Mint of Stockholm now 
 
 ===========================================
 
+Page 44
+
 Of the whole group of Linnaean Vermium, whose fossilized remains are found among us, the Echini are certainly the most perfect in various respects. The strong teeth of the mouth and the external organs of movement, devoid of spines, are the chief indications of a more perfect internal organization, constituted by a framework of multiple and more evident muscles. Therefore, since we observe that these organs are more perfect in different species, we also believe that these species are more perfect in others. Indeed, all organs contribute most to the functions of the mouth, where the mouth is in a central position and the anus is opposite it, there is no doubt; but the further the mouth is from the center, the weaker the entire voluntary mechanism becomes, until finally all organization is almost exclusively carried out by vegetative force, such as is found in corals. From these principles a scale of perfection and antiquity of the Echinites can be deduced, which is completely confirmed by their occurrence in more or less ancient strata of mountains, and which helps to follow in enumerating them.
 
 Also, most of the now living Echini from the first tribe (with mouth and anus opposite the cenirals, Anocysti Kleinii or Cidares) have an almost spherical shape, and at the same time both the mouth organs and the stings are of moderate size. But those that died out last are distinguished by a depressed, rotular figure, which form was most suitable for the insertion of very thick nails. It seems that a certain Cidaris equipped with completely oval nails is found in a calcifode at Bahlsberg in Scania, or in some other fixed rock in Sweden, for certain I do not know; but Cidaris bowls with oblong spines are everywhere found in the conchaceous limestone of eastern-northern Scania. These narrower spines are no less remarkable than the thickest ones due to the internal substance consisting purely of perfectly crystallized and glittering calcareous spathe, in which no signs of living organization are discovered. We see that the organic covering enclosed material -so inorganic that, when organic life ceased, it could have "gone into pure spathe", which is indeed nowhere observed in living nature. — To the same tribe, that is, Cidaris in a broader sense, belongs the following species, long preserved in collections, but of which no description has yet been published *).
 
------
+Page 45 (midway through above ¶, also massive footnote quoting Gyllenhaal starts)
 
-Massive multi page footnote quoting Gyllenhaal starts here.
+[no new paragraph starts on this page]
 
------
+Page 46 (mostly taken up by continuation of previous page's footnote)
 
 Echinites areolatus: mouth and anus opposite the axis of the rotular shell, the region of the anus divided into six equal areolas; the central one at the edge of the anus emitting. Icon Tab III. figg. 4 5.
 
+Page 47 (also includes continuation of prev page's footnote)
+
 It is found everywhere in calcifodine at Bahlsberg in Scania; whence it is preserved in most collections of Swedish petrifiers. The shell varies from the size of a lens: larger up to Nucis vomicae; the shape of the same. so. depressed or rotular, so that the transverse diameter is twice as large as the axis between the mouth and the anus, the opening of the mouth consumes the greatest part of the lower plate of the shell, which is practically flat. Five pairs of ambulacra: constitute, completely straight; towards the upper side: the shell is slightly narrowed or decreasing in width; the margins on both sides are pierced by a series of double points, which between.series become moderately elevated ambulacra and papillose: The areas are decorated with a double row of nipples, almost as in the more common Cidars; the nipples are only slightly further apart. The upper area surrounding the anus offers the best differences of this species; for it is divided by conspicuous inscribed lines into six pentagonal tessulas or arculas, of equal size to each other; the central one of which is not pierced by any point; the lateral ones are marked with five obvious points. The opening of the anus is oblong, placed transversely, at the corner of the central areola, so that this corner is consumed together with the adjacent corners of the two nearest arculas, whereby these arculas become three so-called hexagons. In this way the anus is indeed opened outside the center of the shell, but so little that this species is not excluded from the Cidar tribe for this reason alone; this eccentric location alone is sufficient to distinguish this species from the rest of the same tribe. Furthermore, outside the six areolas ‘said’ there are five smaller, alternating, subcordate figures, the individual ones of which are placed at the apex of each ambulatory.
 
+Page 48 (midway through above ¶)
+
 The second tribe of Echinitarum svecanorum is distinguished by the mouth also now central, although the anus is also located on the lower page. The upper plate of these, very regularly formed, emits five equal rays from the impervious center reaching up to the mouth, to which the fibulae or fibulatory balls: by means of a filament: are referred to by these Echinitarum; and because of this similarity they are aptly enough called Fibulares. Among the species of this. tribe, I think it is desirable to propose a new, Echinite, first.
+
+Page 49 (midway through above ¶)
 
 Echinites peltiformis: central egg, triangular inframarginal anus exceeding twice the width of the mouth, contiguous ambulatory, reticulate areas, oval depressed shell Icon Tab. III. fig. 1. 2. 3.
 
 In the calcareous stratum at Bahlsberg in Scania it is more common than others, as it is also better preserved. It is similar to E. scutiformem Leske p. 174. and Scilla de corp. marin. t. XI f 1. 2., in which however the anus is round, not at all larger ore, ambulatory from each other separated by a space exceeding their width, so that I would not mention the remarkable size of the shell of this species. Therefore I believed our Echinite to be a different species, to be designated by the subsimilar name peltiforsir. The shape of the entire shell is oval or rather subovate, due to the slightly wider end of the other; which is so depressed in height that the distance of the vertex from the mouth is scarcely more than a third of the length of the whole shell. The vertex of the shell is placed somewhat outside the centre of the upper part towards the narrower extremity, pierced by five pores at the end of the ambulae. There are in fact ten ambulae, but in pairs so close together or contiguous that there appear to be only five; transversely striated. The areas are divided by the sutures in flexures and longitudinally, and by other transverse cracks approaching the flexures of the longitudinal suture they become tessulae, exactly as in E. albogalero and vulgari, but so that the smaller tessulae, situated near the apex of the shell, emerge into raised tubercles. In the lower part of the shell all the cracks and sutures of both the ambulae and the areas disappear, and in place of the sutures small warts appear. The anus is opened entirely near the margin on the lower side: a triangular opening twice as large as the mouth. The mouth is almost in the center of the same page, exceptionally impressed: the opening is rounded, completely straight and not: in any way. coming out with an oblique lead as in the cassian Echines, As for the external face, at first glance this species is so similar to E. orbiculari that you would hardly. suspect that it is in fact much more akin to E. vulgari.
 
+Page 50 (midway through above ¶)
+
 Which in our collections, from Scania, as is reported, is preserved in Ech. orbicularir its shape somewhat oval differs slightly from the Leskean icon, but I have not found any sufficient specific difference.
 
 Echinites vulgaris, which has both the form and construction of Fibularia to the highest degree and was therefore better called E. fibularis than the others, arose from a certain Cretaceous stratum and lies everywhere throughout the coastal plains of Scania, but whether it was truly indigenous to Sweden and clung to its long-destructed strata or rather came from foreign Cretaceous mountains, is not certain.
 
+Page 51 (early in above ¶)
+
 The third tribe of our Echinites, to be distinguished by the mouth opening obliquely outside the base of the cinders and the anus ending at the other end opposite the mouth, contains the Cassides or Echinitas cassideos, so called for their unequal conical form. This includes our most frequent E. scutatus, which is not only abundantly found loose throughout all the plains of Scania, but also frequently sits alone in the Cretaceous stratum at Limhamn. However, whether E. cor angvinum was ever embedded in the Swedish chalk remains doubtful, although it is now not infrequently found on the coasts.
 
 All the Echinites already mentioned above belong to our most recent sedimentary formations (called Flótz) and are relics of the true Echinoids. Now, however, some species remain in our older strata of the transitional formation, which in structure even recede further from the already living Echinoids. For in them no radiated conformation is ever observed, so essential to all other and related genera, nor in them any movable spines giving the ‘name’; but they all consist of a uniform globe, the axis of which exits into two more or less evident opposite rostra or poles. On the same side. the mouth and anus of the other one exit, a little removed from each other. The surface of the globe is generally more or less tesserae, which, when moved together; the presence. of the mouth and anus conformation proves that they are in some way related to Echinoids; but in reality they more closely resemble a certain Alcyonium. Their two rostra, in turns, have been in some way stumps, seem to have functioned. in the globe. feeding or constructing salt. Due to such a close resemblance to the true Echinites, I cannot beg to differ from them in some way, but to call them Echinosphaerites, distinguishing them by a different name. They are indeed of several different species.
+
+Page 52 (midway through above ¶)
 
 a. Echinosphaerites Aurantium: surface tessulated as if distant from the anus.
 Echinus 2. Aurantium, Gyllenhahl in Vet. Ac. Handl. 1772. p. 245 and 243. tab. 3. f. 4. 5. and tab. 9. f. 6 – 9.
@@ -57,10 +71,14 @@ Ostracion? Walch in. Naturforsch. 8. p. 259. t. 5. f. 1. 2.
 
 It occurs, as far as I have personally experienced, only in the upper schistose layer of the Westrogotlriac and especially in the layers of the almost hard and textured felsic layer a little below the Trapp layer itself. It is somewhat larger and more perfect than the following species, as well as being of a higher and more recent origin. In size and more prominent beaks than in other pomums. It really refers to Aurantium. It is best distinguished by the five-valved mouth with a surface of about three times the size, separated by a space of several lines from the small round anal opening.
 
+Page 53 (midway through above ¶)
+
 Echinosphaerites Granatum: the surface is textured and grooved, subcontiguous to the anus ori valva.
 Echinus novus Hisinger in Vet. Acad. Handl. 1802. p. 189. tab 7. fig b.
 
 We know that this species has only been collected in the northern part of Öland and in Dalecarlia at Wikarby and Furudal, that is, in regions endowed with no other layer, full of petrified rocks, than limestone. It is in a way intermediate between the preceding and following species, with a tesserae surface suitable for the former, but more akin in kind to the following mouth and anus. The surface is indeed tesserae as in the preceding, but much better expressed both by wider tesserae and by areolar lines, often elevated and more numerous within themselves. Due to these areolae, the sides. I thought the name given above was not inappropriate, referring almost to garnet stone. The mouth and anus as in the following species, however not so confluent. It never seems to have limestone crystals inside.
+
+Page 54.
 
 3. Echinosphaerites Pomum: surface punctate undivided, mouth evalv with anus flowing.
 Echinus 1. Pomum Gyllenhahl in Vet. Acad. Handl. 1772.
