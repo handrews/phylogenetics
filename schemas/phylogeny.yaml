@@ -274,75 +274,7 @@ $defs:
       figures:
         type: array
         items:
-          $ref: "phylogeny#/$defs/figure"
-      notes:
-        type: string
-  taxonBasic:
-    type: object
-    if:
-      oneOf:
-      - required: [auth]
-      - required: [authority]
-    then:
-      required: [name]
-    else:
-      oneOf:
-      - required: [altRankOf, rank]
-      - required: [altSpellingOf, name]
-      - required: [vulgarSpellingOf, name]
-    properties:
-      name:
-        type: [string, "null"]
-        pattern: ^[\w][\w._ -]*$
-      identifier:
-        description: |
-          The phrase given in place of a name for taxa in open nomenclature
-      rank:
-        $ref: phylogeny#/$defs/rank
-      authority:
-        $ref: "#/$defs/authority"
-      auth:
-        type: array
-        items:
-          type: string
-      year:
-        type: integer
-        minimum: 1700
-        maximum: 2030 # Fragile!  But helpful for now.  Apologies to the future.
-      bracket:
-        ### TODO: Replace this property name
-        type: string
-      status:
-        type: string
-      originalParent:
-        type: string
-      modifier:
-        type: string
-      in:
-        type: array
-        items:
-          type: string
-      altRankOf:
-        type: string
-      altSpellingOf:
-        type: string
-      vulgarSpellingOf:
-        type: string
-      lang:
-        type: string
-        minLength: 2
-        maxLength: 2
-      needsQualification:
-        type: boolean
-        default: false
-      holotype:
-        type: object
-        additionalProperties:
-          type: array
-          items:
-            type: [array, string, integer]
-            items:
-              type: [string, integer]
+          $ref: "#/$defs/figure"
       notes:
         type: string
   rank:
@@ -381,10 +313,70 @@ $defs:
     - Scion
     - Unranked
   taxon:
-    $ref: "#/$defs/taxonBasic"
+    type: object
+    if:
+      oneOf:
+      - required: [auth]
+      - required: [authority]
+    then:
+      required: [name]
+    else:
+      oneOf:
+      - required: [altRankOf, rank]
+      - required: [altSpellingOf, name]
+      - required: [vulgarSpellingOf, name]
     unevaluatedProperties: false
-    # These extra properties might not be extra now.
     properties:
+      name:
+        type: [string, "null"]
+        pattern: ^[\w][\w._ -]*$
+      identifier:
+        description: |
+          The phrase given in place of a name for taxa in open nomenclature
+      rank:
+        $ref: "#/$defs/rank"
+      authority:
+        $ref: "#/$defs/authority"
+      auth:
+        type: array
+        items:
+          type: string
+      year:
+        $ref: "#/$defs/publicationYear"
+      bracket:
+        ### TODO: Replace this property name
+        type: string
+      status:
+        type: string
+      originalParent:
+        type: string
+      modifier:
+        type: string
+      in:
+        type: array
+        items:
+          type: string
+      altRankOf:
+        type: string
+      altSpellingOf:
+        type: string
+      vulgarSpellingOf:
+        type: string
+      lang:
+        type: string
+        minLength: 2
+        maxLength: 2
+      needsQualification:
+        type: boolean
+        default: false
+      holotype:
+        type: object
+        additionalProperties:
+          type: array
+          items:
+            type: [array, string, integer]
+            items:
+              type: [string, integer]
       homonym:
         type: boolean
         default: false
@@ -392,11 +384,10 @@ $defs:
         type: string
       reason:
         type: string
-      bracket:
+      notes:
         type: string
   tree:
     $id: tree
-    $dynamicAnchor: tree
     type: object
     properties:
       mergeInto:
@@ -479,13 +470,7 @@ $defs:
             items:
               type: [integer, string]
           figures:
-            type: array
-            items:
-              type: [integer, string, array]
-              minItems: 2
-              maxItems: 2
-              items:
-                type: [integer, string]
+            $ref: "phylogeny#/$defs/multiRanges"
         additionalProperties: false
       notes:
         type: string
@@ -499,13 +484,7 @@ $defs:
       page:
         type: [integer, string]
       pages:
-        type: array
-        items:
-          type: [integer, string, array]
-          minItems: 2
-          maxItems: 2
-          items:
-            type: [integer, string]
+        $ref: "phylogeny#/$defs/multiRanges"
       figures:
         type: array
         items:
@@ -552,7 +531,7 @@ $defs:
         items:
           $ref: tree
       rank:
-        $ref: phylogeny#/$defs/rank
+        $ref: "phylogeny#/$defs/rank"
       auth:
         $comment: overrides taxon field
         type: array
@@ -567,9 +546,7 @@ $defs:
           type: string
       year:
         $comment: overrides taxon field
-        type: integer
-        minimum: 1700
-        maximum: 2030 # Fragile!  But helpful for now.  Apologies to the future.
+        $ref: "phylogeny#/$defs/publicationYear"
       authority:
         $ref: "phylogeny#/$defs/authority"
       outgroup:
@@ -749,8 +726,7 @@ $defs:
       localStageRange:
         $ref: "#/$defs/localStageRange"
       localStageModifier:
-        type: string
-        enum: [lower, middle, upper]
+        $ref: "#/$defs/stageModifier"
       inferred:
         $ref: "#/$defs/basicOccurrence"
         unevaluatedProperties: false
@@ -814,9 +790,6 @@ $defs:
       $ref: "#/$defs/series"
     minItems: 2
     maxItems: 2
-  seriesModifier:
-    type: string
-    enum: [upper, middle, lower]
   series:
     type: string
     enum:
@@ -990,7 +963,7 @@ $defs:
         figures:
           type: array
           items:
-            $ref: "phylogeny#/$defs/figure"
+            $ref: "#/$defs/figure"
   specimens:
     type: object
     properties:
@@ -1028,6 +1001,12 @@ $defs:
       - topotypes
       - additional
       - unknowntypes
+  publicationYear:
+    $comment: Linnaeus was born in 1707.  The upper bound is fragile but
+      helpful for now; apologies to the future.
+    type: integer
+    minimum: 1700
+    maximum: 2030
   simpleDate:
     type: string
     pattern: ^[12][7890]\d\d-[01]\d-[0123]\d$
@@ -1036,9 +1015,7 @@ $defs:
     required: [year]
     properties:
       year:
-        type: integer
-        minimum: 1700 # Linnaeus was born in 1707
-        maximum: 2030
+        $ref: "#/$defs/publicationYear"
       month:
         type: integer
         minimum: 1
