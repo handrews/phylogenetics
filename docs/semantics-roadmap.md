@@ -1,0 +1,565 @@
+# Semantics roadmap: finalizing the MVP data model
+
+Decisions needed to give every field one meaning, mapped to the nomenclatural
+term it records. Companion to [`schema-audit.md`](schema-audit.md), which holds
+the usage evidence; numbers here are from that census (`productize` @ `4e64c36`).
+
+Each item has an id (`A1`, `D4`, …) so decisions can be referenced. Items marked
+**MVP** must be settled before the claim table is built; the rest can be decided
+now and migrated best-effort, gold slice first.
+
+Conventions are checked against two Treatise Editorial Prefaces: Moore's in
+Part U (1966, pp. ix–xxiii; cited as *Preface* with the roman page) and Selden
+& Ausich's in Part V, 2nd revision (2023, pp. xi–xxvi; cited as *Preface 2023*).
+Where they differ, the 2023 usage is the convention and the 1966 form is
+recorded as a synonym; see [Terminology updates](#terminology-updates-1966--2023).
+
+## Ground rules
+
+- The data model is the product. Code changes only where they enforce integrity
+  or are unavoidable.
+- Every field records something *a source printed*. Editorial judgement is
+  allowed, but it is a separate, marked layer, never mixed into a source's claim.
+- One field, one meaning. Where a field means different things in different
+  contexts, either the meaning is "as printed on this line" for all of them, or
+  the field splits.
+- Attribution is written the way the literature writes it. A synonymy line
+  cites "Name AUTHOR, year, p. n" in the same form as a nomenclatural authority,
+  so the data does likewise and does not invent a second vocabulary.
+- Species names are entities in their own right, not halves of a binomial. A
+  species node always sits under a genus node, so the tree encodes the
+  combination, and a recombination is the same species entity appearing under a
+  different genus in a later source. `originalParent` on the taxon record and
+  `parents` on a synonymy entry both record a combination: the original one and
+  the one the cited usage employed.
+- Consult `notes` before deciding what a value means. YAML comments carry no
+  meaning.
+- Migrations are data-only wherever possible. Tree-node attribution fields
+  (`authority`, `auth`, `year`, `in`) are not read by `phylohist/taxa.py`.
+
+## Terminology updates, 1966 → 2023
+
+What changed between the two prefaces, and what it means for the data.
+
+| topic | 1966 | 2023 | consequence |
+|---|---|---|---|
+| Code edition | 1961 | 4th ed. 1999; new acts must be registered in ZooBank (xi) | none for historical data; a `zoobank` identifier slot on sources is worth reserving |
+| replacement name | "nom. subst." preferred (xii) | "nom. nov. pro X, non Y" (xx) | `act` member is `nomNov`; treat "nom. subst." as its synonym |
+| name-group Latin (nom. inviol., perf., imperf., van., neg., vet., null.) | defined and used (xii–xiv) | named once, then "authors have used fewer terms" (xiii) | do not pre-populate `act` with them; add only when a source prints one |
+| citing an act | author and year (xv, xviii) | author, year **and page** (xv, xvii–xviii) | `actBy` is a full `authority`, so it can carry `pages` |
+| combined act | "if desired … nom. transl. et correct." (xviii) | a recognized form (xvii) | `act` is a list |
+| emend. | author and date (xix) | author, date and page; style "…; emend., Williams & Wright, 1965, p. 299" (xviii) | add `emendedBy: authority`, used when the emender is not the current source |
+| superfamily suffix | unspecified (xv) | -oidea mandated, -acea disallowed, tribe -ini (Art. 29.2, xiv) | suffix lint must be era-aware; older sources print -acea legitimately |
+| suprafamilial endings | may not end in -idae/-inae (xvii) | may not end in -oidea/-idae/-inae (xvii) | prescriptive for new names only; Crinoidea and Edrioasteroidea stand |
+| type-species fixation | M, OS, OD, SD, SM, ICZN (xx) | OD, M, SD (with page), typus/typicus, tautonymy, ICZN; post-1930 genus without fixation is invalid, later fixation re-dates the name (xix–xx) | `typeFixation` enum keeps all; SM and OS are historical |
+| type species form | original combination (xix) | "always given in the exact form it had in the original publication" (xix) | supports `originalParent` and capture-as-published |
+| synonym history | not addressed | "syn. by AUTHOR, year, p." records who first synonymized a name; "an important part of the history of a taxon" (xxii) | new field `synonymizedBy` (B15) |
+| subjective synonyms | "(obj.)" marks objective ones (xxi) | same, and the synonym's own type species is cited (xxi) | B11 unchanged; the type is already a species node |
+| homonym by misidentification | cited in synonymies with "(non AUTHOR, year)" (xxi) | not repeated | B10 unchanged |
+| stratigraphy | Treatise's own European and North American tables (xxviii–xxx) | ICS International Chronostratigraphic Chart; ranges to biozone level in Part V (xxii) | E6: `time.yaml` follows ICS; the 1966 tables feed the `regional` section |
+| author names | Cyrillic transliterated, alternates in brackets (xxiv) | Western name order for all; full given names for Chinese authors; **each author's own romanization retained per publication** (xxi–xxii) | authors need aliases (A5) |
+| repositories | not listed | abbreviation table with former names, e.g. "NHMUK (formerly BMNH)" (xxv–xxvi) | `repositories.yaml` needs `formerly` aliases (F2) |
+| online first | — | Treatise Online and print are one entity; cite the online date as earliest (xxii) | `processDates.online` already exists |
+
+## MVP cut line
+
+The MVP claim table needs, per source, unambiguous answers to four questions
+about a taxon: what name was used, where it was placed, which earlier usages the
+source accepted or rejected for it, and how sure the source was. That is phases
+A, B and C plus the coverage flag in G. Material (D) and time (E) can be carried
+through as per-source blobs attached to the node until their designs are
+migrated.
+
+---
+
+## A. Attribution
+
+One field, `authority` (or `auth`+`year`+`in`), whose meaning is always "the
+attribution printed on this line". What that attribution *identifies* depends on
+where the line is:
+
+| where | identifies | question it answers |
+|---|---|---|
+| `taxa.yaml` record | the name's nomenclatural authority | who made this name available, and where |
+| tree node under `children` / root | the attribution as this source printed it | how did *this* source credit the name |
+| tree node under `synonyms`, `non`, `parents` | the work in which the cited usage appeared | which earlier work, page and figure is being listed |
+
+```yaml
+# taxa.yaml: nomenclatural authority
+echinodermata:
+  authority: {source: 1791_bruguière, ex: {source: 1734_klein}}
+
+# 1975_kolata tree: Kolata credits Fleming
+- taxon: echinodermata
+  auth: [Fleming]
+  year: 1828
+
+# 1974_bell.b.m synonymy of Lebetodiscus: an accepted earlier usage
+- taxon: agelacrinites
+  authority: {source: 1858b_billings, pages: 84,
+              illustrations: [{plate: 8, figures: [3, 3a, 4, 4a]}]}
+  citedAs: "Geol. Surv. Canada, Fig. and Descriptions of Canadian Organic Remains, dec. 3:84"
+```
+
+**A1 (MVP). Document the table above in the schema; no rename.** `citedAs`
+stays a node field: the bibliographic string exactly as the source printed it.
+
+**A2 (MVP). Attribution on a `children` node that matches the record.**
+Integrity check, report not error: if the printed attribution resolves to the
+same source, or the same author set and year, as the taxon record's authority,
+the field carries no information and should be dropped. Where it differs, the
+difference is a claim ("Kolata 1975 credits Echinodermata to Fleming 1828") and
+the claim table emits it.
+
+**A3 (MVP). `ex`, `in`, `attributedTo`.**
+
+- `ex` — the name derives from an earlier work that could not make it available;
+  `source` is the work that did. Two uses, both Klein 1734. The *Preface* (xv,
+  xviii) uses "ex" in a second sense, the name a nom. transl. was derived from;
+  that sense is handled by `altRankOf` and B6, not by this field.
+- `attributedTo` (with a source record) and `in` (with `auth`+`year`) — the
+  credited authors differ from the work's authors ("Luo & Hu in Luo et al.,
+  1999"). One per mechanism; they never co-occur.
+
+**A4.** Finish the `auth`→`authority` migration from the audit (117 mechanical,
+54 needing a choice). Not MVP-blocking.
+
+**A5.** `auth` free-text names (521 uses, 220 distinct): decide the rule for
+family-only author records. Add alias support to `person` while there: the
+*Preface 2023* (xxi–xxii) retains each author's own romanization per
+publication, so one person legitimately appears under several spellings
+(Chang / Zhang; Gekker / Hecker). An `altSpellingOf`-style link between author
+records keeps the printed form and the identity. Not MVP-blocking.
+
+---
+
+## B. Relations and their nomenclatural terms
+
+**B1 (MVP). Field-to-term map.** This becomes the schema's documentation.
+"Nested node" is what the child node under the field denotes.
+
+| field | printed form | term | nested node denotes | decision |
+|---|---|---|---|---|
+| `children` | indentation / headings | placement | a member | keep |
+| `synonyms` | synonymy list | accepted earlier usage (B2) | a usage this source accepts | keep |
+| `parents` (on an entry) | "*Echinosphaerites malum* PANDER" | combination as cited | the genus of the cited usage | keep |
+| `non` | "non VANUXEM, 1842" | rejected usage (B2) | a usage this source excludes | keep |
+| `pars` | "partim", "pars" | partial acceptance | — (flag) | keep |
+| `tentative` | "?" before an entry | questionable acceptance | — (flag) | keep; default → `false` (B4) |
+| `moved` | "transferred from" | prior placement | where the taxon came from | keep; document direction |
+| `corrected` | "nom. correct." (*Preface* xiii–xv, xviii) | corrected form, no rank change | the form being corrected | keep; document direction |
+| `or` | "vel", "or" | alternative name offered | the alternative | keep |
+| `altPlacements` | "or possibly in", "sedis mutabilis" | alternative placement | the other parent | keep |
+| `removed` | "removed from", "excluded" | explicit exclusion of a member | the removed member | keep; fix recursion (B5) |
+| `mergeInto` | multi-part work | continuation of a taxonomy | — | keep; integrity: target exists |
+| `new` | "n. gen.", "sp. nov." | protologue here | — (flag) | keep |
+| `type` | "*" before the type species (*Preface* xix) | name-bearing type at genus/family level | — (flag) | keep; see B3, B14 |
+| `emended` | "emend." (*Preface* xix: scope change only) | emended diagnosis, same name | — (flag) | keep; drop `null` from its type |
+| `modifier` | "nom. transl.", "nomen nudum", "n. comb." | nomenclatural act or name group | — | replace with `act` (B6) |
+| `stem` | "stem-group" | stem-group usage | — (flag) | keep |
+| `outgroup` | cladogram outgroup | outgroup | — (flag) | keep |
+| `bracket` (tree) | clade bracket / label | named clade in a cladogram | — | keep |
+| `rank` (tree) | rank as printed here | rank as used by this source | — | keep; overrides taxon rank |
+
+Taxon-record relations:
+
+| field | term | decision |
+|---|---|---|
+| `altSpellingOf` | subsequent spelling, incl. incorrect ones, gender agreement, æ/ae (*Preface* x–xi) | keep |
+| `vulgarSpellingOf` | vernacular-language form | keep |
+| `altRankOf` | nomen translatum: same name at another rank, so a distinct record (*Preface* xv) | keep |
+| `originalParent` | original combination (*Preface* xix) | keep |
+| `homonym` | homonymy (*Preface* xx) | keep; see B10 |
+| `needsQualification` | key-disambiguation housekeeping | keep |
+| `bracket` (taxon) | vernacular plural ("Edrioasteroids") | rename `vernacular` (B7) |
+| `synonym` | unsourced equation | move to the editorial layer (B8) |
+| `status` | mixed: `informal`, `unregistered`, `monophyletic` | split (B9) |
+| `identifier` | open-nomenclature label ("*Rhenopyrgus* sp. indet. 1") | keep |
+
+**B2 (MVP). What a synonymy entry asserts.** Every entry under `synonyms`
+means: *this source accepts the cited usage as belonging to this taxon*. That is
+the whole claim, and it is the same claim whether the cited usage carries the
+same name or a different one. A thorough revision such as Bell 1974 lists every
+earlier usage it agrees with, so a name appearing "as a synonym of itself" is the
+author's accounting of the taxon's history, not an error. `non` is the same claim
+negated: the cited usage does not belong here. `pars` and `tentative` qualify the
+acceptance.
+
+The claim table emits one `accepts-usage` (or `rejects-usage`) claim per entry,
+carrying the cited work, pages, figures, and the combination from `parents`.
+When the entry's name differs from the node's name it additionally derives a
+`junior-synonym` claim between the two names. No data change.
+
+**B3 (MVP). `type: true` on a synonymy entry.** All three uses (Kesling 1966
+twice, Doweld 2012) sit on an entry whose taxon is the parent node's own taxon.
+The *Preface* (xix) cites a genus's type species with an asterisk *in its
+original combination*, inside the genus entry, so these look like that citation
+recorded on the species' self-usage entry. Proposed rule: `type: true` lives on
+the species node under the genus, never on a synonymy entry; the original
+combination is already on the taxon record as `originalParent`. Confirm, then
+move the three flags.
+
+**B4 (MVP). `tentative` defaults to `true`.** Every sibling flag defaults to
+`false`, code never reads it, and all 16 uses set it explicitly. Change the
+default to `false`.
+
+**B5 (MVP). `removed` is invisible.** `Tree.__init__` does not recurse it, so
+its one use reaches no consumer. Explicit exclusion is a claim worth keeping,
+since it is exactly what consensus databases discard. Add it to
+`RELATED_LIST`. The one code change in phase B.
+
+**B6. Replace free-text `modifier` with `act` + `actBy`.** The *Preface 2023*
+(xv, xvii–xviii) cites an act as its name, author, year and page, then the
+name it derives from:
+
+```
+Order CORYNEXOCHIDA Kobayashi, 1935
+  [nom. transl. Moore, 1959, p. 217, ex suborder Corynexochida Kobayashi, 1935, p. 81]
+Order HYBOCRINIDA Jaekel, 1918
+  [nom. transl. et correct. Moore in Moore, Lalicker, & Fischer, 1952, p. 613, ex …]
+```
+
+`act` is a list, because "nom. transl. et correct." is one act with two
+kinds. `actBy` is an `authority` (so it carries `pages`), used only when the
+act's author is not the current source. The derived-from name is `altRankOf`
+(nom. transl.) or `corrected` (nom. correct.). Observed values map as:
+
+| printed | count | `act` | notes |
+|---|---|---|---|
+| nomen transl. / nom. transl. / nom. tranls. Paul 1968b / nom. transl.? | 14 | `[nomTransl]` | "Paul 1968b" → `actBy`; "?" → `provisional` |
+| nomen nudum | 4 | `[nomNudum]` | |
+| n. comb. | 1 | `[combNov]` | |
+| (Plesion) | 1 | — | a rank; move to `rank: Plesion` |
+
+Add members only when a source prints them, under the 2023 spelling:
+`nomCorrect`, `nomNov` (1966 "nom. subst." maps here), `nomDubium`,
+`nomOblitum`, `nomConserv`, and the rarer 1966 groups (`nomNullum`,
+`nomVanum`, `nomNegatum`, `nomVetitum`) only if ever encountered.
+
+Emendation of scope is not a name act and stays on `emended`, but the *Preface
+2023* (xviii) requires its author, date and page, so add `emendedBy: authority`
+for the case where the emender is not the current source.
+
+**B7. Rename taxon-level `bracket` to `vernacular`** (13 uses).
+
+**B8 (MVP). Taxon-level `synonym` is an unsourced claim.** All 8 uses identify
+an anonymous placeholder with a later-named taxon (Sprinkle 1973's unnamed order
+1 = Gogiida). Either a later source makes that identification, in which case it
+belongs in that source's synonymy list as a B2 entry, or it is editorial:
+
+```yaml
+eocrinoidea-unnamed-order-1_sprinkle_1973:
+  editorial:
+    sameAs: gogiida
+    basis: "Sprinkle 1973 order 1 comprises the genera later placed in Gogiida"
+```
+
+**B9. Split `status`.** `monophyletic` is an opinion and belongs on a tree.
+`informal` and `unregistered` describe availability; fold them into
+`availability: informal | unregistered` on the record, or into `act` on the node
+that prints the judgement.
+
+**B10. Homonyms by misidentification.** The *Preface* (xx–xxi) cites
+"Posidonomya PACHT, 1852 (non BRONN, 1834)" inside a synonymy: Pacht used
+Bronn's name for something else, and that misuse is what is being synonymized.
+The current model has `homonym: true` for distinct names with the same spelling,
+which is a different thing. Decide whether a misidentification is a taxon record
+of its own (`posidonomya_pacht_1852`, with a `misidentificationOf` link) or a
+synonymy entry carrying `non: {authority}`. No current data forces the choice;
+record the convention before it is needed.
+
+**B11. Objective synonyms.** The *Preface* (xxi) marks "(obj.)" and treats the
+rest as subjective. Add `objective: true` to a synonymy entry only where a source
+prints it.
+
+**B12. "auctt."** (*Preface* xxii: auctorum, "of authors") marks a usage by
+various later authors rather than the original one. Allow `auth: [auctt.]` on
+an entry and document it.
+
+**B13. "s.l." and "s.s."** (*Preface* xxiii). A `sensu: lato | stricto` flag on
+the node, added when first printed.
+
+**B14. Type-species fixation.** Both prefaces record how the type was fixed.
+Current forms (*Preface 2023*, xix–xx): OD (original designation, including
+pre-1931 "n. gen., n. sp." on a single species), M (monotypy), SD (subsequent
+designation, with author, date and page), typus/typicus, tautonymy, and ICZN
+(with the Opinion number). Historical forms (*Preface*, xx): SM (subsequent
+monotypy) and OS (objective synonymy). This volume prints them: "Lebetodiscus
+BATHER, 1908 [*Agelacrinites dicksoni BILLINGS, 1857; OD]". Add `typeFixation`
+with the union of both lists and `typeFixedBy` (an `authority`) for SD and
+ICZN, on the `type: true` node. Two rules from the 2023 text affect identity:
+a genus published after 1930 without a fixed type is unavailable, and a later
+fixation makes the name available under the later author and date, which the
+model expresses as a second taxon record with its own authority.
+
+**B15. "syn. by".** Part V records the work that first synonymized a name,
+"syn. by Zalasiewicz, 1995, p. 34", because "such information is an important
+part of the history of a taxon" (*Preface 2023*, xxii). Add `synonymizedBy:
+authority` on a synonymy entry. It is a secondhand claim: the current source
+attributes the synonymy to the cited work. The claim table emits it as such,
+and when the cited work's own tree is captured the two can be compared, which
+is the citation-error check the MVP eval wants.
+
+---
+
+## C. Open nomenclature and uncertainty
+
+Ten markers, each hedging a different thing. Keep them distinct but name the
+axis each one sits on.
+
+| axis | field | printed form | meaning |
+|---|---|---|---|
+| identification of material | `cfTaxon` | "cf." (*Preface* xxii: confer, compare) | compared with the named taxon; identification tentative |
+| identification of material | `affTaxon` | "aff." (*Preface* xxii: affinis, related to) | related to but distinct from the named taxon; usually undescribed |
+| identification of material | `illustration.uncertain` | "?" on a figure | figured specimen doubtfully assigned, no cf. target |
+| name in open nomenclature | `openTaxon` + `identifier` | "sp.", "sp. indet.", "gen. et sp. nov." | unnamed placeholder |
+| placement | `provisional` | "?" before the parent, "incertae sedis" | assignment to parent tentative |
+| validity of the taxon | `questionable` | "?" before the name | the taxon itself doubtful |
+| validity of the taxon | `quoted` | name in quotation marks | name used informally or as unavailable |
+| acceptance of a usage | `tentative` | "?" before the entry | acceptance tentative |
+| acceptance of a usage | `pars` | "partim" | only part of the cited material |
+| name identity | `needsQualification` | — | housekeeping only |
+
+**C1 (MVP). The tree encodes where cf. and aff. apply.** Because species are
+entities, "*Gogia* cf. *G. spiralis*" is a genus node with a `cfTaxon` species
+child, and "cf. *Gogia*" is a `cfTaxon` genus node with species children. The
+data already does this: all 29 species-level qualifiers sit under a genus node
+with no children, and both genus-level ones (Buch 1844) carry children. Document
+the convention; no new field.
+
+**C2 (MVP). Integrity check on cf./aff. targets.** The target key resolves; a
+species-rank target sits under a genus node; a genus-rank target may carry
+children.
+
+**C3.** "ex gr.", "?" between genus and species, and the B12/B13 markers appear
+in the literature but not yet in the data. Add fields only when a source prints
+them, on the identification axis.
+
+---
+
+## D. Material: specimens, illustrations, occurrences
+
+Principle from `notes/graph.txt`: specimens are the physical anchors,
+illustrations are proxies for them, occurrences say where specimens came from.
+The current model keeps all three as siblings on the node with no links between
+them, in four different specimen shapes.
+
+**D1. One `material` list per node, one entry per specimen or batch.**
+
+```yaml
+- taxon: coronaeformis_rievers_1961
+  new: true
+  pages: [[10, 11]]
+  material:
+  - ids: [RVS 1]
+    role: holotype
+    illustrations:
+    - {plate: 2, figures: [[1, 4]], depicts: cast}
+    occurrence: 0            # index into this node's occurrences
+  - ids: [[QMF 59647, QMF 59653]]   # a batch, ranges allowed
+    role: paratype
+  illustrations:             # only figures the source does not tie to a specimen
+  - {plate: 3, figures: 7, notes: "specimen not identified"}
+  occurrences:
+  - series: Lower Devonian
+    unit: [Roofing Slate facies, Hunsrück Slate]
+    location: [Bundenbach, Hunsrück Region, Germany]
+```
+
+- An illustration nested under a material entry *depicts* that specimen. A
+  node-level illustration is a figure the source never ties to a specimen,
+  which is the honest state for most pre-1900 work. Migration is therefore
+  incremental: nothing moves until the paper supports the link.
+- `depicts: specimen | cast | reconstruction | drawing` records the medium, so
+  a latex cast is a property of the figure, not a second specimen.
+- The repository is the id prefix, resolved against `repositories.yaml` (F2).
+  An explicit `repository` field is allowed when the prefix is absent or
+  ambiguous (`NHMUK` vs `NHM UK` vs `EE`).
+- Occurrence-level `specimens` and `possibleSpecimens` (D3) become
+  `occurrence` back-references from material entries, so a specimen is written
+  once.
+
+**D2. Type roles, checked against the Code.** ICZN Art. 72–75 regulate the
+name-bearing types; the rest are conventions the literature uses and the data
+must still record as printed.
+
+| role | regulated | meaning |
+|---|---|---|
+| `holotype` | yes | the single specimen designated as name-bearing type in the original publication |
+| `paratype` | yes | any other specimen of the type series cited in the original publication |
+| `syntype` | yes | each specimen of a type series when no holotype was designated |
+| `lectotype` | yes | a syntype later designated as the name-bearing type |
+| `paralectotype` | yes | a remaining syntype after lectotype designation |
+| `neotype` | yes | designated when the original name-bearing type is lost |
+| `topotype` | no | from the type locality |
+| `hypotype`, `plesiotype` | no | figured or described in a later work; older North American usage |
+| `allotype` | no | a paratype of the opposite sex; not applicable here, drop |
+| `kleptotype` | no | never used; drop |
+| (none) | — | material cited without a role; replaces `unknowntypes`, `unknown`, `unspecified`, `additional` |
+
+**Holotypes are singular by definition.** Two catalogue numbers for one holotype
+are one specimen with two parts, written as two `ids` on one entry with
+`parts: [part, counterpart]`; the plural `holotypes` role goes away. Integrity
+check across all sources: a name has at most one holotype specimen, unless a
+later source records a `lectotype` or `neotype` designation, which is itself a
+nomenclatural act on that source's node.
+
+**D3. Occurrence-level `specimens` and `possibleSpecimens`.** Both are
+validated by nothing today. Under D1 they are replaced by back-references.
+`possibleSpecimens` (2 uses, personal) records that the source is unsure which
+specimens came from this horizon; that becomes `tentative: true` on the
+material entry's occurrence link.
+
+**D4. Illustrations as locators versus depictions.** The same `illustration`
+shape serves two roles, fixed by context: under a synonymy entry's `authority` it
+locates a figure *in the cited work*; under `material` or a node it records what
+a figure *in this source* shows. No rename. Drop `illustration.source`,
+`location` and `collectedFrom`, which were earlier attempts at the specimen link
+and are unused.
+
+**D5. Migration.** 88 node-level `specimens` blocks, 13 `taxon.holotype`
+entries, 30 occurrence-level blocks. Mechanical for the typed-role shapes;
+`taxon.holotype` moves onto the protologue node (`new: true`) of the same name.
+Do the gold slice first and leave the rest on the old shape behind a
+deprecation flag in the schema until migrated.
+
+---
+
+## E. Stratigraphic time
+
+Four distinct statements a source can make about age, plus two scales:
+
+| statement | example | proposed field |
+|---|---|---|
+| point | "Wuliuan" | `stage: Wuliuan` |
+| span | "Wuliuan to Drumian" | `stageRange: [Wuliuan, Drumian]` |
+| boundary | "at the Wuliuan–Drumian boundary" | `stageBoundary: [Wuliuan, Drumian]` |
+| informal subdivision | "lower Wuliuan" | `stage: Wuliuan` + `stageModifier: lower` |
+
+**E1. One pattern for every rank on both scales.** For each rank in `period`,
+`series`, `stage`: the four fields above. For the regional scale, the same four
+with a `local` prefix (`localStage`, `localStageRange`, …). Today `series` and
+`stage` have the variants and `period` does not; boundary and range share one
+def though they mean different things. All of this is under 70 instances, so
+the cost of making it uniform is small now and large later.
+
+**E2. Biozones follow the same pattern** with one addition: `biozones` (a list)
+means several zones from *different* zonations apply at once, which is neither
+a range nor a boundary. Document the three.
+
+**E3. Units are one ordered list.** `unit: [member, formation, group]`, most
+specific first, as the personal tree already does. Drop `superunit`,
+`subunit`, `section`.
+
+**E4. Merge `basicOccurrence` into `occurrence`.** The split exists only so
+`inferred` cannot itself contain `inferred` or regional fields. Use one def and
+enforce that constraint in the loader: an `inferred` block may carry only
+global-scale fields, `basis` and `sources`.
+
+**E5. `inferred` is editorial and must say so.** It records the data-enterer's
+or a later source's translation of a regional age to the global scale. Require
+`basis` (free text) or `sources` on every `inferred` block.
+
+**E6. Validate against `time.yaml`.** The schema's `period`, `series` and
+`stage` enums duplicate `time.yaml`. Load `time.yaml`, check values against it,
+and delete the enums, or generate them. `time.yaml` follows the ICS
+International Chronostratigraphic Chart, which the *Preface 2023* (xxii) names
+as the Treatise standard. Add a `regional` section for the names now
+free-floating in `localStage` (Sunwaptan, Dyerian, Delamaran, Ardmillan) so
+they validate too; the *Preface* (xxviii–xxx) tabulates the 1966 European and
+North American regional units and is a ready source for the Ordovician and
+Devonian names the corpus uses.
+
+**E7. Delete `geology.yaml`.** Every specimen it records is already on a tree
+node. Its formation and member registry is an idea for later (F3), not a file to
+keep loading nothing from.
+
+---
+
+## F. Registries and integrity checks
+
+The only code this roadmap asks for. Each check reports, and the ones marked
+fail also exit non-zero.
+
+**F1 (MVP). Reference resolution, fail.** Every source id, taxon key (including
+`cfTaxon`, `affTaxon`, `openTaxon`, `mergeInto` targets), author id and
+`altSpellingOf` / `altRankOf` / `vulgarSpellingOf` target resolves.
+
+**F2. Repository prefixes, fail.** Every material id prefix resolves in
+`repositories.yaml`. Load and validate that file. Give entries a `formerly`
+list so a printed prefix resolves to the current institution without
+rewriting the id: the *Preface 2023* (xxv–xxvi) lists "NHMUK (formerly BMNH)",
+and the corpus already has both as separate entries.
+
+**F3. Time values, fail.** Every `stage`, `series`, `period` and regional value
+resolves in `time.yaml` (E6).
+
+**F4 (MVP). Attribution redundancy, report** (A2).
+
+**F5. Holotype uniqueness, report** (D2).
+
+**F6 (MVP). Protologue consistency, fail.** Exactly one `new: true` node per
+name across all sources, and its source equals the name's authority source. The
+second half exists in `Tree._check_primary_taxon`; the first does not.
+
+**F7 (MVP). `removed` recursion** (B5).
+
+**F8 (MVP). cf./aff. position** (C2).
+
+---
+
+## G. Leftovers
+
+**G1 (MVP). Replace `complete` with an audit state.** `complete` was used on 23
+of 289 sources and its sub-flags were never used consistently. Replace with:
+
+```yaml
+audit:
+  state: complete | partial | unaudited | unauditable
+  notes: "open nomenclature not captured"
+```
+
+Default is `unaudited`. `unauditable` means no machine-readable text exists.
+The MVP coverage manifest reads this plus derived facts (page anchors present,
+material present, node count).
+
+**G2. `sources.yaml` `pages` and `plates`** use the flat alternating encoding
+(199 uses). Convert to `citationNumbers`; mechanical.
+
+**G3. Dead leaves from the audit.** `tree.categories`, `tree.data`,
+`tree.plates`, `taxon.modifier`, `taxon.reason`, `person.suffix`,
+`publication.type`, `trees.<id>.source`, the object form of `$defs/specimen`.
+Delete after D1 lands, since that is the only design that could have wanted any
+of them.
+
+**G4. `phylohist/support.py` and `phylohist/source.py`.** Orphaned; delete.
+
+---
+
+## Sequence
+
+1. **A1–A3, B1–B5, B8, C1, C2, F1, F4, F6–F8, G1.** The MVP set. Each is a
+   documentation decision, a small data migration, or one integrity check.
+   Nothing here depends on D or E.
+2. **B6, B7, B9–B15, A4, A5.** Vocabulary the literature uses that the data
+   does not yet need; decide the convention now, add fields on first use.
+3. **D1–D5 decided, then migrated on the Edrioasteroidea gold slice only.**
+   The rest of the corpus keeps the old shapes behind a deprecation flag.
+4. **E1–E7 and F2, F3, F5.** Same pattern: decide now, migrate the gold slice,
+   validate everything.
+5. **G2–G4.** Housekeeping whenever convenient.
+
+## Questions only you can answer
+
+1. **B3**: does the reading of the three `type: true` synonymy entries as the
+   Treatise's asterisked type-species citation match what you meant?
+2. **B8**: for each of the 8 `taxon.synonym` entries, is there a source that
+   makes the identification, or is it yours?
+3. **B10**: which representation do you want for a homonym by misidentification
+   when one turns up?
+4. **D2**: are `hypotype` and `plesiotype` worth keeping as distinct roles, or
+   should both record as `plesiotype` with the printed word in `notes`?
+5. **D1**: is a back-reference by index into the node's `occurrences` list
+   acceptable to edit by hand, or would you rather give occurrences short ids?
+6. **E1**: are there age statements in your notes that the four forms (point,
+   span, boundary, modifier) cannot express?
