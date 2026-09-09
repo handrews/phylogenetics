@@ -270,3 +270,129 @@ Data checks: the record has `rhombifera-class` and `rhombifera-order` as
 "zittel 1870". This paper prints "Zittel, 1879" for the class, and its
 synonymy cites Zittel 1879, p. 424. Check which Zittel work the record means.
 The two records share one authority and should be linked by `altRankOf`.
+
+## Kesling 1967, Treatise Part S — *Caryocystites* (pp. S229–S233)
+
+`1967a_kesling` in `sources.yaml`; no tree captured. Read from the PDF text
+layer. The genus entry on S229 is short and contains, by my count, eleven
+distinct kinds of statement the model must carry. Parsed:
+
+**The header.** "Caryocystites VON BUCH, 1846, p. 128". The Treatise's own
+reference list (S263) has three von Buch entries: (29) 1840, Bericht, pp.
+56–60; (30) 1844, Bericht "for year 1844", pp. 120–133; (31) "1846 (1845)",
+Abhandlungen for 1844, pp. 89–116, "Gelesen … am 14. Mai 1844", "Preprinted
+in 1845; regular issue in 1846". Page 128 falls inside (30), not (31). The
+type-species citation "Caryocystites testudinarius VON BUCH, 1846, p. 19"
+fits neither: p. 19 can only be the 1845 preprint's own pagination. So one
+entry cites "1846" with pages from two other physical printings. The
+bracketed remark on S229 adds "In 1846 (31) (or variously reported as 1844 or
+1845)". The data has `1844_buch` (a `reading`, dated 3 March with a note that
+"some sources incorrectly give May 3rd"), `1846a_buch` (Abhandlungen, pp.
+89–116), and `1846b`/`1846c` (the English notice and translation), and no
+record for the 1844 Bericht or the 1845 preprint. The Treatise says 14 May.
+Three reading dates and four printings for one paper. See A11.
+
+**The type species.** "*Caryocystis angelini HAECKEL, 1896, p. 59
+(=*Caryocystites testudinarius VON BUCH, 1846, p. 19, OD, nom. in errore pro
+'Sphaeronites testudinarius' HISINGER, 1837, pl. 25, fig. 8d, non fig. 9d,
+recte 'S. citrus' HISINGER; non S. testudinarius HISINGER, 1826, p. 115,
+=Heliocrinites granatum (WAHLENBERG); non S. citrus HISINGER, 1837, p. 91,
+=Echinosphaerites aurantium (GYLLENHAAL); Amorphocystis buchi JAEKEL, 1899,
+p. 339)". Unpacked, with the prose on S229 as the guide:
+
+1. Von Buch designated a type (OD) and called it *Caryocystites
+   testudinarius*, believing it to be Hisinger's *Sphaeronites testudinarius*.
+2. He cited Hisinger's *Lethaea Suecica* "taf. 25, figure 9d". The lithographer
+   had misplaced the numbers: the specimen von Buch meant is fig. 8d, which
+   Hisinger's plate explanation labels "*S. citrus*", and which is neither
+   *S. citrus* nor *S. testudinarius* but an unnamed species.
+3. So von Buch's name is a *nomen in errore*: a name used for the wrong
+   specimen. It is *not* Hisinger's 1826 *testudinarius* (which is
+   *Heliocrinites granatum*) and *not* *S. citrus* (which is *Echinosphaerites
+   aurantium*).
+4. Haeckel 1896 named *Caryocystis angelini* for Angelin's plate 13, figs.
+   4–9, which "more by accident than design" represent the same specimen. So
+   the type species has a valid name after all, Haeckel's, and *Caryocystites*
+   stands.
+5. Jaekel 1899 overlooked Haeckel and named the same thing *Amorphocystis
+   buchi*; under his scheme *Caryocystites* meant what is now *Heliocrinites*
+   and *Amorphocystites* meant what is now *Caryocystites*.
+
+What this needs from the model:
+
+- **A misidentification record** (B10). Von Buch's usage is not a usage of
+  Hisinger's name; it is a distinct name-in-error with its own type. It needs
+  its own record, linked to the name it was mistaken for. Without it, the
+  chain from *testudinarius* Hisinger to *angelini* Haeckel to *buchi* Jaekel
+  cannot be stated.
+- **A locator that corrects another work's locator** ("fig. 8d, non fig.
+  9d"). Von Buch's tree keeps "9d" as printed; the Treatise's tree records
+  the locator as `{plate: 25, figures: 8d, non: [9d]}` (D6) with the prose in
+  `notes`. The mismatch is then a derived comparison, as in B19.
+- **A genus-level name swap.** Jaekel's *Caryocystites* is a genus-level
+  misidentification: the same name applied by him to a different genus. His
+  own tree says what he said; the Treatise's synonymy says "Amorphocystites
+  JAEKEL, 1896 (type, A. buchi JAEKEL = C. testudinarius VON BUCH)". No
+  translation of Jaekel's names into later concepts is ever stored.
+- **A `non` entry that also says where the excluded usage belongs** ("non S.
+  citrus HISINGER, 1837, p. 91, = Echinosphaerites aurantium"). See B21.
+- **Type fixation under a wrong name.** OD by von Buch, but the species the
+  designation attaches to carries Haeckel's name. `type: true` and
+  `typeFixation: OD` sit on *angelini*, whose synonymy holds von Buch's
+  usage.
+
+**Genus synonyms with name-group Latin.** "Caryoclstites D'ORBIGNY, 1850 (nom.
+null.); Caryocystis ANGELIN, 1878 (nom. van.); Amorphocystites JAEKEL, 1896
+…; Amorphocystis JAEKEL, 1899 (nom. van.)". The 1966 name groups are printed
+in a source this dataset targets, so `nomNullum` and `nomVanum` enter the
+`act` enum now (B6).
+
+**Other vocabulary on these pages.** "recte" (correctly); "subgen. ad
+Heliocystis" (a subgenus of); "sp. hypoth.?" on *Pomonites* (a hypothetical
+species, S241); "partim"; "var."; "?Ulrichocystis" as a provisional genus in a
+family; a dichotomous "Key to Genera", which is a complete membership list
+with diagnostic characters (B16, `listComplete: true`).
+
+**"?" inside a range.** "M.Ord., ?U.Ord., Asia(China)-Eu.(Sweden-Est.-?Wales)
+- ?N. Am.(USA)". Doubt attaches to single elements of an age or region list,
+not to the occurrence as a whole. See E8.
+
+**Citations by index number.** Figures and remarks cite "(31)", "(69)",
+"(99)": the volume's own numbered reference list. Like Bell's year letters
+(A7), the number is what was printed and goes in `citedAs`; it resolves only
+through that volume's list.
+
+**Works cited but absent from the reference list.** "HISINGER, 1826, p. 115"
+and "HISINGER, 1837, pl. 25" appear in the text; the Hisinger entries on S264
+are 1802 and 1828 only. "BATHER in REED (12)" is Reed 1913, *Caradocian
+Cystidea from Girvan*, with Bather's contribution, which is where "the
+confusion regarding the type species was adequately resolved".
+
+**The volume's year.** The title page says "Published 1967"; Paul et al. 2024
+cite "Kesling, 1968, p. S178". A8 again.
+
+**A pattern already in the data.** `sphaeronites` in `taxa.yaml` carries
+"notes: The 1967 Treatise incorrectly cites page 185". That is a claim about
+the Treatise, and it belongs on the Treatise's node for *Sphaeronites* as
+printed (`pages: 185`) with an editorial correction, not on the taxon record.
+See B22.
+
+Data checks:
+
+- `testudinarius_hisinger_1837` is `new: true` in the 1837 tree. The Treatise
+  dates the name to Hisinger 1826, p. 115, and treats 1837 as the figure. If
+  1826 is right, the 1837 node is a usage and the record's authority moves.
+  Needs Hisinger 1826.
+- `1840b_buch` has pages 56–59; the Treatise reference (29) gives 56–60.
+- The 1844 Bericht (reference 30, pp. 120–133) and the 1845 preprint are not
+  source records. The Treatise's page citations resolve only to them.
+- Not in `taxa.yaml`: *angelini* Haeckel 1896, *buchi* Jaekel 1899,
+  *Amorphocystites*, *Amorphocystis*, *Caryoclstites*, *Orocystites*,
+  *Arachnocystites*. Not in `sources.yaml`: Angelin 1878, d'Orbigny 1850,
+  Reed 1913, Hisinger 1826.
+- The reading date: 3 March (record), 3 May (the typo the record mentions),
+  14 May (Treatise). Which is the typo is not established by anything I have
+  read.
+
+Papers worth having for this one entry: Reed 1913 with Bather's appendix,
+Hisinger 1826, the 1845 preprint of von Buch, and the 1844 Bericht.

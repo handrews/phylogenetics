@@ -192,6 +192,25 @@ aepyaster:
     basis: no publication located as of 2026-09; Bell 1980 cites it as in preparation
 ```
 
+**A11. One work, several printings.** Von Buch's *Über Cystideen* was read
+on a date reported as 3 March, 3 May or 14 May 1844, reported in the
+Academy's Bericht for 1844 (pp. 120–133), preprinted separately in 1845 (its
+own pagination), issued in the Abhandlungen for 1844 in 1846 (pp. 89–116),
+noticed in English in 1846 and translated in 1846. The Treatise (S229) cites
+"VON BUCH, 1846, p. 128" and "1846, p. 19": the year of the Abhandlungen with
+pages that exist only in the Bericht and the preprint. Rules:
+
+- Each physical printing is its own source record, linked by `printingOf`
+  (the analogue of `translationOf`), with the reading as `processDates.read`
+  on whichever record is treated as first.
+- A printed citation resolves to the printing whose pagination it fits, and
+  where year and page disagree the editorial block (A6) names the printing
+  and says why.
+- The taxon record's authority names one printing, with `basis`. Which one is
+  a judgement (the Code dates availability from publication, not reading),
+  and the current choice of the reading is exactly the kind of judgement A10
+  says to mark.
+
 **A10 (MVP). The record's authority is an editorial choice, and silence is
 not a choice.** Echinodermata is attributed in the tree files to Bruguière
 1791, Klein 1734, Bruguière 1789 and Fleming 1828, and Stokes 2021 argues for
@@ -312,8 +331,11 @@ act's author is not the current source. The derived-from name is `altRankOf`
 
 Add members only when a source prints them, under the 2023 spelling:
 `nomCorrect`, `nomNov` (1966 "nom. subst." maps here), `nomDubium`,
-`nomOblitum`, `nomConserv`, and the rarer 1966 groups (`nomNullum`,
-`nomVanum`, `nomNegatum`, `nomVetitum`) only if ever encountered.
+`nomOblitum`, `nomConserv`. The Treatise Part S cystoid chapter prints "nom.
+null." and "nom. van." throughout its synonymies (S229: *Caryoclstites*
+d'Orbigny, *Caryocystis* Angelin, *Amorphocystis* Jaekel), so `nomNullum` and
+`nomVanum` are needed for a target source and enter now; `nomNegatum` and
+`nomVetitum` wait for a sighting.
 
 Emendation of scope is not a name act and stays on `emended`, but the *Preface
 2023* (xviii) requires its author, date and page, so add `emendedBy: authority`
@@ -338,14 +360,33 @@ eocrinoidea-unnamed-order-1_sprinkle_1973:
 `availability: informal | unregistered` on the record, or into `act` on the node
 that prints the judgement.
 
-**B10. Homonyms by misidentification.** The *Preface* (xx–xxi) cites
+**B10 (MVP). Homonyms by misidentification.** The *Preface* (xx–xxi) cites
 "Posidonomya PACHT, 1852 (non BRONN, 1834)" inside a synonymy: Pacht used
 Bronn's name for something else, and that misuse is what is being synonymized.
-The current model has `homonym: true` for distinct names with the same spelling,
-which is a different thing. Decide whether a misidentification is a taxon record
-of its own (`posidonomya_pacht_1852`, with a `misidentificationOf` link) or a
-synonymy entry carrying `non: {authority}`. No current data forces the choice;
-record the convention before it is needed.
+The Treatise entry for *Caryocystites* (S229) forces the choice: von Buch's
+"*Caryocystites testudinarius*" is a *nomen in errore* for a specimen that was
+not Hisinger's *testudinarius*, it carries von Buch's type designation, and it
+was later named *angelini* by Haeckel and *buchi* by Jaekel. None of that can
+be said if von Buch's usage is only a usage of Hisinger's name.
+
+Decision: a misidentification is a taxon record of its own, with a link to the
+name it was mistaken for:
+
+```yaml
+testudinarius_buch_1845:
+  name: testudinarius
+  authority: {source: 1845_buch, pages: 19}
+  misidentificationOf: testudinarius_hisinger_1826
+  notes: nom. in errore per Kesling 1967, S229; the specimen is Hisinger 1837 pl. 25 fig. 8d
+```
+
+Later synonymies then read naturally: *angelini* Haeckel 1896 has
+`synonyms: [testudinarius_buch_1845, buchi_jaekel_1899]` and `non:
+[testudinarius_hisinger_1826, citrus_hisinger_1837]`. The same shape covers a
+genus: Jaekel's *Caryocystites* (for what is now *Heliocrinites*) is a record
+with `misidentificationOf: caryocystites`. `homonym: true` stays for distinct
+names that merely share a spelling. "nom. in errore pro" is the printed marker
+for this and goes in `citedAs`.
 
 **B11. Objective synonyms.** The *Preface* (xxi) marks "(obj.)" and treats the
 rest as subjective. Add `objective: true` to a synonymy entry only where a source
@@ -438,6 +479,20 @@ Agelacrinitidae". An inferred node needs a marker the claim table can read:
 ```
 
 The claim table emits the placement as editorial, not as the source's.
+
+**B21. A `non` entry that says where the usage belongs.** "non S. citrus
+HISINGER, 1837, p. 91, = Echinosphaerites aurantium (GYLLENHAAL)" (S229).
+The exclusion is the claim of this node; the "=" is a cross-reference to the
+node where that usage is accepted, which exists on S233. Allow `identifiedAs:
+<taxon>` on a `non` entry; the claim table emits the exclusion here and
+checks that an acceptance exists there.
+
+**B22. Errors in other works are claims, not record annotations.** The
+`sphaeronites` record carries "notes: The 1967 Treatise incorrectly cites
+page 185". That statement is about the Treatise. It belongs on the Treatise
+tree's *Sphaeronites* node: `pages: 185` as printed, an editorial correction
+with `basis`, and nothing on the taxon record. Same for every "X gives Y" note
+now sitting on records.
 
 
 ---
@@ -583,6 +638,13 @@ illustrations:
 - {plate: 2, figures: [[1, 5], 11], non: [6]}
 ```
 
+The same shape records a **correction of another work's figure number**:
+Kesling 1967 (S229) writes "HISINGER, 1837, pl. 25, fig. 8d, non fig. 9d"
+because a lithographer misplaced the numbers and von Buch cited 9d. Von Buch's
+tree keeps 9d as printed; the Treatise's locator is `{plate: 25, figures: 8d,
+non: [9d]}` with the explanation in `notes`. The disagreement is derived, as in
+B19, never resolved in place.
+
 **D7. A type designated by figure.** The same paper selects a lectotype as
 "the original of Barrande, 1867, plate 11, figure 5, now in the National
 Museum, Prague (Reg. no. L13001)". The material entry carries the number, the
@@ -643,6 +705,12 @@ free-floating in `localStage` (Sunwaptan, Dyerian, Delamaran, Ardmillan) so
 they validate too; the *Preface* (xxviii–xxx) tabulates the 1966 European and
 North American regional units and is a ready source for the Ordovician and
 Devonian names the corpus uses.
+
+**E8. Doubt on one element of a range.** "M.Ord., ?U.Ord., Asia(China)-Eu.
+(Sweden-Est.-?Wales)-?N. Am.(USA)" (Kesling 1967, S229). The "?" attaches to
+one age and two regions, not to the occurrence. Each element of a range or
+location list may be written as `{value, tentative: true}` in place of the
+bare string, so the doubt stays where it was printed.
 
 **E7. Delete `geology.yaml`.** Every specimen it records is already on a tree
 node. Its formation and member registry is an idea for later (F3), not a file to
@@ -738,6 +806,14 @@ Each has a home; none needs a new top-level construct.
 | a usage accepted except some figures | "(non fig. 6)" (Paul et al. 2024, p. 5) | `non` inside the locator (D6) |
 | two years for one cited work | Schmidt 1879 / 1880; "1918 (1921)" | as printed; source record picks one with `notes` (A8) |
 | a tentative recombination in prose | "*Agelacrinites* (*sensu lato*) *hanoveri* may belong to the genus *Postibulla*" (Bell 1975, p. 34) | placement with `provisional` and `sensu: lato` |
+| a citation whose year and page come from different printings | "VON BUCH, 1846, p. 128" (Kesling 1967, S229) | printings as separate records; `editorial.source` names the one the page fits (A11) |
+| a name used for the wrong specimen | "*C. testudinarius* VON BUCH … nom. in errore pro …" (S229) | a misidentification record (B10) |
+| one author's name meaning another's genus | Jaekel's *Caryocystites* = *Heliocrinites* (S229) | genus-level misidentification record (B10); Jaekel's tree unchanged |
+| a corrected figure number in a cited work | "pl. 25, fig. 8d, non fig. 9d" (S229) | `non` in the locator (D6) |
+| an exclusion that names the right home | "non S. citrus … = Echinosphaerites aurantium" (S229) | `identifiedAs` on the `non` entry (B21) |
+| a dichotomous key | "Key to Genera of Caryocystitidae" (S229) | `listComplete: true`; characters stay prose in `notes` |
+| doubt on one element of a range | "?U.Ord.", "?Wales" (S229) | per-element `tentative` (E8) |
+| citations by a volume's index numbers | "(31)", "(69)" (S229) | `citedAs`; resolve through that volume's list (A7) |
 | anything else | — | `notes`, on the node, and the audit state records that it was seen |
 
 The example sources are catalogued in
@@ -751,12 +827,12 @@ the note verbatim with the claim.
 
 ## Sequence
 
-1. **A1–A3, A6, A10, B1–B5, B8, B16, B18, B20, C1, C2, F1, F4, F6–F8, G1.**
-   The MVP set. Each is a documentation decision, a small data migration, or
-   one integrity check. Nothing here depends on D or E.
-2. **B6, B7, B9–B15, B17, B19, A4, A5, A7–A9, D6, D7.** Vocabulary the
-   literature uses that the data does not yet need everywhere; decide the
-   convention now, add fields on first use.
+1. **A1–A3, A6, A10, B1–B5, B8, B10, B16, B18, B20, C1, C2, F1, F4, F6–F8,
+   G1.** The MVP set. Each is a documentation decision, a small data
+   migration, or one integrity check. Nothing here depends on D or E.
+2. **B6, B7, B9, B11–B15, B17, B19, B21, B22, A4, A5, A7–A9, A11, D6, D7,
+   E8.** Vocabulary the literature uses that the data does not yet need
+   everywhere; decide the convention now, add fields on first use.
 3. **D1–D5 decided, then migrated on the Edrioasteroidea gold slice only.**
    The rest of the corpus keeps the old shapes behind a deprecation flag.
 4. **E1–E7 and F2, F3, F5.** Same pattern: decide now, migrate the gold slice,
@@ -789,3 +865,14 @@ the note verbatim with the claim.
 11. **1983 diagram**: the figure caption names the ancestor as the genus
     *Stromatocystites*; the tree's diagram root is the order. Which does the
     figure show?
+12. **A11**: for names von Buch introduced, which printing should the record's
+    authority name: the 1844 reading it names now, the 1845 preprint, or the
+    1846 Abhandlungen? And which reading date do you hold to be the typo:
+    3 May, or the Treatise's 14 May?
+13. **B10**: does the misidentification record shape read right to you, and
+    should von Buch's *testudinarius* be keyed to the preprint (1845) or to
+    `1844_buch`?
+14. **Hisinger**: the Treatise dates *testudinarius* to Hisinger 1826, p. 115;
+    the 1837 tree has it `new`. Can you find Hisinger 1826? Reed 1913 with
+    Bather's appendix, the 1845 preprint, and the 1844 Bericht would each
+    settle one open item on S229.
