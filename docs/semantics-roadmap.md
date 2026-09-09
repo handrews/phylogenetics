@@ -512,11 +512,17 @@ is the citation-error check the MVP eval wants.
 things a source can say about a list of members, both met in the examples:
 
 - **Hedged membership.** Bell 1975 (p. 36): "other members of this group may
-  include:" followed by eight species, one with a "?". Every listed member is
-  `provisional` (the C table's placement axis); the "?" item is additionally
-  `questionable`; the parent carries the phrase in `notes`. Bell also places
-  the family under the suborder "with question", so the family node is
-  `provisional` as well.
+  include:" followed by eight species, one with a "?". Decision: `provisional`
+  only where a "?" is printed against the item; the list-level "may include"
+  and the family-level "with question" go in `notes` on the parent, quoted.
+  The reason not to mark every member is that the hedge is not uniform:
+  the suborder is named from *Cyathocystis*, which under the *Preface 2023*
+  (xvii) presumes that genus as its type, while Bell defines it on
+  *Timeischytes*; marking *Cyathocystis* provisional in its own nominate
+  suborder would assert more doubt than the page shows. The cost is that the
+  claim table sees firm placements unless it reads the note; if that matters,
+  a single `listHedged: true` on the parent, the twin of `listComplete`, is
+  the smallest structural marker and is left to your call.
 - **Declared incompleteness.** Parsley 2021 (p. 974): "This is not a
   comprehensive listing of the probable orders to be included in this sub
   class", and "Genera, e.g. Gogia, …". The placements are firm; the source
@@ -536,7 +542,13 @@ the printed convention is not lost.
 
 **B18 (MVP). The same name at different ranks.** *Rhombifera* is a class
 (Zittel 1879), an order, an informal group, and a genus (Barrande 1867), and
-Paul et al. 2024 use class and genus in one hierarchy. *Gogiida* is an order
+Paul et al. 2024 use class and genus in one hierarchy. Zittel's own page
+(Handbuch, p. 417) prints "3. Gruppe. Rhombiferi. Joh. Müll.": rank
+"Gruppe", spelling *Rhombiferi*, credited to Müller 1854, whose own tree has
+the group unnamed. So the record for the suprageneric name is Zittel's
+*Rhombiferi* (A-given: Müller), and the later class and order *Rhombifera*
+are `corrected` forms at other ranks; "1870" on the current records is a
+typo for 1879, which the `aporita` record already carries. *Gogiida* is an order
 (Broadhead 1982) and, in Parsley 2021, a subclass containing that order.
 Jaekel's 1918 name appears as Eocrinida, Eocrinoida and Eocrinoidea at order
 and class. The rule: one record per name-and-authority-and-rank;
@@ -945,26 +957,20 @@ the note verbatim with the claim.
 ## Questions only you can answer
 
 Answered so far, and folded into the items above: B3 (type on a synonymy
-entry), B8 (drop `synonym`), B10 (`homonym` is housekeeping), D1 (occurrence
-ids), D2 (keep `hypotype`), E1 (no other age forms known), A9 (no editorial
-availability judgement), A11 (key by printing, never reading; reading date
-settled as 14 March 1844).
+entry), B8 (drop `synonym`), B10 (misidentification records, `homonym` is
+housekeeping), B16 (`provisional` only where "?" is printed), B18 (Zittel
+1879, *Rhombiferi*), D1 (occurrence ids), D2 (keep `hypotype`), E1 (no other
+age forms known), A9 (no editorial availability judgement), A11 (key by
+printing, never reading; reading date settled as 14 March 1844), A6 (1975
+tree's 1980 is a typo for 1880), and the 1983 diagram (root is the order; the
+caption's "*Stromatocystites*" is an intra-source inconsistency to note).
 
 1. **B10**: the Caryocystites case supplies the misidentification-record
    shape; confirm it, including the genus-level use for Jaekel and Hall.
-2. **A6**: the 1975 tree's `year: 1980` on *plautinae* is a typo for 1880?
-3. **B16**: in the 1975 tree, should *Cyathocystis*, *Cyathotheca*, their
-   species, and the family all become `provisional` to match "may include"
-   and "with question"?
-4. **B18**: the record dates the Zittel *Rhombifera* class and order to 1870;
-   Paul et al. 2024 print 1879. Which Zittel work did you mean?
-5. **1983 diagram**: the figure caption names the ancestor as the genus
-   *Stromatocystites*; the tree's diagram root is the order. Which does the
-   figure show?
-6. **Audit**: the *Lebetodiscus* 1908 entry has `year: 1901`; is that a typo
+2. **Audit**: the *Lebetodiscus* 1908 entry has `year: 1901`; is that a typo
    to fix now, and should *Carneyella valcourensis* be `provisional`?
-7. **A11**: do you want `1844_buch` rewritten in place as the Bericht article,
+3. **A11**: do you want `1844_buch` rewritten in place as the Bericht article,
    with `cystidea-sp_buch_1944` fixed to 1844 at the same time?
-8. **Hisinger**: settled. Still wanted: Bather 1906 in Reed's Northern Shan
+4. **Hisinger**: settled. Still wanted: Bather 1906 in Reed's Northern Shan
    States memoir, now known to be unobtainable online, and the 1845 preprint
    if it exists anywhere.

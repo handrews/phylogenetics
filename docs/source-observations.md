@@ -640,3 +640,42 @@ exception: works exist that are undigitized, or digitized behind institutional
 subscriptions priced for libraries. G1's `unobtainable` audit state records
 the fact, and every claim that cites such a work stays secondhand with the
 citing source named.
+
+
+## Zittel 1879 — Handbuch der Palaeontologie, Band I, Abtheilung 1
+
+The bound half-volume in hand carries "1876–1880" on its title page and
+"1880" on the wrapper. The Vorwort (pp. vi–vii) says the first and second
+Lieferungen were more than two years apart and that the Halbband is
+"completed with the present Lieferung"; the Nachträge (p. 723) are "zur
+ersten Lieferung" and cover the Protozoa. The scan has no part wrappers, so
+the Lieferung that holds the Echinodermata (pp. 308–460 or so; the section
+opens on p. 309) cannot be dated from it. Bather 1899, the Treatise, and Paul
+et al. 2024 all cite the cystoid pages as 1879, which is the conventional
+date of that part. Under A11 the source record is keyed `1879_zittel` for
+that printing, with a note that the volume is 1876–1880 and the part date is
+taken from later citations, not from a wrapper.
+
+**What Zittel printed (p. 412, p. 417).** He adopts Johannes Müller's
+three-way division and says so: "Joh. Müller … theilte darnach die Cystoideen
+in 3 Gruppen ein: a) Formen ohne Poren (Aporitidae), b) Formen mit Doppelporen
+(Diploporitidae), c) Formen mit Porenrauten oder gestreiften Rhomben
+(Rhombiferi). Die Müller'sche Einteilung wurde auch im vorliegenden Buche
+beibehalten". The heading is "3. Gruppe. Rhombiferi. Joh. Müll." So the
+name is *Rhombiferi*, the rank is "Gruppe", and the attribution printed is
+Müller's. The data's 1854 Müller tree records the rhomb-bearing group as an
+unnamed placeholder ("Rhombifera, but not named") and *Diploporiten* as a
+German vernacular, which is consistent: Zittel latinized what Müller left in
+German or unnamed, and later authors credit the latinization to Zittel.
+"Rhombifera Zittel, 1879" is therefore a corrected form (B6 `nomCorrect`) at a
+different rank of Zittel's *Rhombiferi*, which Zittel credits to Müller: the
+A10 pattern where the record's authority is a choice among printed
+attributions.
+
+Data checks:
+
+- `rhombifera-order` and `rhombifera-class` have `year: 1870`; no Zittel work
+  of 1870 exists in the data, and `aporita` already says 1879. Typo.
+- Add a record for *Rhombiferi* (Zittel 1879, rank Group, `notes` quoting the
+  heading) and link the class and order records to it as corrected forms.
+- Add `1879_zittel` to `sources.yaml` with the volume note above.
