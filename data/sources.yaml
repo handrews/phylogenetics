@@ -1129,6 +1129,23 @@
   - walcott
   identifiers:
     url: https://www.biodiversitylibrary.org/page/2056780
+1899_bather:
+  title: A Phylogenetic Classification of the Pelmatozoa
+  journal: reports-british-advancement
+  volume: |
+    Report of the 68th Meeting of the British Association for the Advancement of Science (Bristol, 1898)
+  pages:
+  - 916
+  - 923
+  pubDate:
+    year: 1899
+  processDates:
+    conferenceStart: 1898-09-07
+    conferenceEnd: 1898-09-07
+  authors:
+  - bather
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/30221787
 1899_jaekel:
   book: stamm
   pubDate:
@@ -1927,15 +1944,6 @@
     year: 1973
   authors:
   - sprinkle
-1974_bell.b.m:
-  title: A Study of North American Edrioasteroidea
-  journal: nysm
-  volume: 21
-  pubDate:
-    year: 1974
-  authors:
-  - bell.b.m
-  notes: This printing cited in 1975_bell, but usually cited as 1976 seen below.
 1975_bell.b.m:
   title: "Ontogeny and systematics of Timeischytes casteri n. sp.: an enigmatic Devonian edrioasteroid"
   journal: bullamp
@@ -1947,6 +1955,9 @@
   - bell.b.m
   identifiers:
     url: https://www.biodiversitylibrary.org/page/10896154
+  notes: |
+    Incorrectly assumes 1976_bell.b.m was printed in 1974 as planned,
+    rather than accurately citing it as "in press."
 1975_broadhead_strimple:
   title: Respiration in a Vagrant Ordovician Cystoid, Amecystis
   journal: paleobiology
@@ -1982,7 +1993,11 @@
     month: 2
   authors:
   - bell.b.m
-  notes: Either a reprint, or a misprinted cover that has been cited ever since.
+  notes: |
+    Originally intended for publication in February 1974 as noted on the
+    interior title page.  However, formal publication was delayed until
+    Feburary 1976.  At least one paper (1975_bell.b.m) incorrectly assumed
+    the original date rather than citing it as "in press."
 1976_bell.b.m_petersen.m.s:
   title: An Edrioasteroid from the Guilmette Formation at Wendover, Utah-Nevada
   journal: jofpaleo

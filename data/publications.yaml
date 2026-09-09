@@ -216,6 +216,8 @@ pworld:
   name: Palaeoworld
 p-z:
   name: Paläontologische Zeitschrift
+reports-british-advancement:
+  name: Reports of the Meetings of the British Association for the Advancement of Science
 regne-animal:
   name: Le règne animal distribué d'après son organisation
 senckenbergiana:

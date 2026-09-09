@@ -166,21 +166,11 @@ agelacrinitidae:
   rank: Family
   auth: [Chapman]
   year: 1860
-agelacrinitidae-uncertain-genus_bell.b.m_1974:
-  name: null
-  rank: genus
-  authority:
-    source: 1974_bell.b.m
 agelacrinitidae-uncertain-genus_bell.b.m_1976:
   name: null
   rank: genus
   authority:
     source: 1976_bell.b.m
-agelacrinitidae-sp_bell.b.m_1974:
-  name: null
-  rank: species
-  authority:
-    source: 1974_bell.b.m
 agelacrinitidae-sp_bell.b.m_1976:
   name: null
   rank: species
@@ -1197,11 +1187,6 @@ belochthus:
   name: Belochthus
   authority:
     source: 1976_bell.b.m
-belochthus_bell.b.m_1974:
-  name: Belochthus
-  needsQualification: true
-  authority:
-    source: 1974_bell.b.m
 belochthos:
   name: Belochthos
   altSpellingOf: belochthus
@@ -1807,12 +1792,6 @@ carneyellidae:
   rank: Family
   authority:
     source: 1976_bell.b.m
-carneyellidae_bell.b.m_1974:
-  name: Carneyellidae
-  rank: Family
-  needsQualification: true
-  authority:
-    source: 1974_bell.b.m
 carneyellinae:
   name: Carneyellinae
   rank: Subfamily
@@ -2308,10 +2287,6 @@ comatula:
   name: Comatula
   auth: [lamarck]
   year: 1815
-commensalus_bell.b.m_1974:
-  name: commensalus
-  authority:
-    source: 1974_bell.b.m
 commensalus_bell.b.m_1976:
   name: commensalus
   authority:
@@ -2707,11 +2682,6 @@ cryptogoleus:
   name: Cryptogoleus
   authority:
     source: 1976_bell.b.m
-cryptogoleus_bell.b.m_1974:
-  name: Cryptogoleus
-  needsQualification: true
-  authority:
-    source: 1974_bell.b.m
 crystalensis_guensburg_sprinkle_1994:
   name: crystalensis
   authority:
@@ -2810,11 +2780,6 @@ curvitriordo:
   name: Curvitriordo
   authority:
     source: 1976_bell.b.m
-curvitriordo_bell.b.m_1974:
-  name: Curvitriordo
-  needsQualification: true
-  authority:
-    source: 1974_bell.b.m
 cuspidata_lamarck_1816:
   name: cuspidata
   authority:
@@ -3819,12 +3784,6 @@ edrioaster:
   name: Edrioaster
   authority:
     source: 1858b_billings
-edrioasterida_bell.b.m_1974:
-  name: Edrioasterida
-  rank: Order
-  needsQualification: true
-  authority:
-    source: 1974_bell.b.m
 edrioasterida:
   name: Edrioasterida
   rank: Order
@@ -3947,11 +3906,6 @@ edriophus:
   name: Edriophus
   authority:
     source: 1976_bell.b.m
-edriophus_bell.b.m_1974:
-  name: Edriophus
-  needsQualification: true
-  authority:
-    source: 1974_bell.b.m
 edulis_pallas_1774:
   name: edulis
   auth: [Pallas]
@@ -5260,11 +5214,6 @@ hadrochthus:
   name: Hadrochthus
   authority:
     source: 1976_bell.b.m
-hadrochthus_bell.b.m_1974:
-  name: Hadrochthus
-  needsQualification: true
-  authority:
-    source: 1974_bell.b.m
 hadrocystis:
   name: Hadrocystis
   auth: [sprinkle]
@@ -5498,12 +5447,6 @@ hemicystites:
 hemicystites-subgenus:
   rank: subgenus
   altRankOf: hemicystites
-hemicystites-questionable_bell.b.m_1974:
-  name: null
-  rank: genus
-  notes: Used when otherwise Hemicystites would appear in two places.
-  authority:
-    source: 1974_bell.b.m
 hemicystites-questionable_bell.b.m_1976:
   name: null
   rank: genus
@@ -6047,33 +5990,11 @@ isorophida:
   rank: Order
   authority:
     source: 1976_bell.b.m
-isorophida_bell.b.m_1974:
-  name: Isorophida
-  rank: Order
-  needsQualification: true
-  authority:
-    source: 1974_bell.b.m
-  notes: |
-    Bell's major work on Edrioasteroids was initially published
-    in 1974, but either was reprinted in 1976, or the cover
-    was misprinted as 1976 and that has been deemed the year
-    to cite.  Except in Bell 1975 where he cites himself from 1974,
-    but only for the order Isorophida and a few species.
-isorophida-uncertain-suborder_bell.b.m_1974:
-  name: null
-  rank: Suborder
-  authority:
-    source: 1974_bell.b.m
 isorophida-uncertain-suborder_bell.b.m_1976:
   name: null
   rank: Suborder
   authority:
     source: 1976_bell.b.m
-isorophida-uncertain-family_bell.b.m_1974:
-  name: null
-  rank: Family
-  authority:
-    source: 1974_bell.b.m
 isorophida-uncertain-family_bell.b.m_1976:
   name: null
   rank: Family
@@ -6124,12 +6045,6 @@ isorophidae:
   rank: Family
   authority:
     source: 1976_bell.b.m
-isorophidae_bell.b.m_1974:
-  name: Isorophidae
-  rank: Family
-  needsQualification: true
-  authority:
-    source: 1974_bell.b.m
 isorophids:
   name: Isorophids
   rank: Group
@@ -6140,17 +6055,6 @@ isorophina:
   rank: Suborder
   authority:
     source: 1976_bell.b.m
-isorophina_bell.b.m_1974:
-  name: Isorophina
-  rank: Suborder
-  needsQualification: true
-  authority:
-    source: 1974_bell.b.m
-isorophina-uncertain-family_bell.b.m_1974:
-  name: null
-  rank: Family
-  authority:
-    source: 1974_bell.b.m
 isorophina-uncertain-family_bell.b.m_1976:
   name: null
   rank: Family
@@ -6161,12 +6065,6 @@ isorophinae:
   rank: Subfamily
   authority:
     source: 1976_bell.b.m
-isorophinae_bell.b.m_1974:
-  name: Isorophinae
-  rank: Subfamily
-  needsQualification: true
-  authority:
-    source: 1974_bell.b.m
 isorophinid-incertae-sedis_sumrall_zamora_2011:
   name: null
   rank: Family
@@ -6275,10 +6173,6 @@ kerona_müller.o.f_1786:
   homonym: true
   auth: [müller.o.f]
   year: 1786
-keslingi_bell.b.m_1974:
-  name: keslingi
-  authority:
-    source: 1974_bell.b.m
 keslingi_bell.b.m_1976:
   name: keslingi
   authority:
@@ -6299,10 +6193,6 @@ kinzercystis:
   name: Kinzercystis
   authority:
     source: 1973_sprinkle
-kirkfieldensis_bell.b.m_1974:
-  name: kirkfieldensis
-  authority:
-    source: 1974_bell.b.m
 kirkfieldensis_bell.b.m_1976:
   name: kirkfieldensis
   authority:
@@ -6330,11 +6220,6 @@ krama:
   name: Krama
   authority:
     source: 1976_bell.b.m
-krama_bell.b.m_1974:
-  name: Krama
-  needsQualification: true
-  authority:
-    source: 1974_bell.b.m
 krama-sp_müller.p_hahn_bohatý_2013:
   name: null
   rank: species
@@ -6490,23 +6375,11 @@ lebetodiscidae:
   rank: Family
   authority:
     source: 1976_bell.b.m
-lebetodiscidae_bell.b.m_1974:
-  name: Lebetodiscidae
-  rank: Family
-  needsQualification: true
-  authority:
-    source: 1974_bell.b.m
 lebetodiscina:
   name: Lebetodiscina
   rank: Suborder
   authority:
     source: 1976_bell.b.m
-lebetodiscina_bell.b.m_1974:
-  name: Lebetodiscina
-  rank: Suborder
-  needsQualification: true
-  authority:
-    source: 1974_bell.b.m
 lebetodiscinae:
   name: Lebetodiscinae
   rank: Subfamily
@@ -8001,10 +7874,6 @@ orthida:
   rank: Order
   auth: [schuchert, cooper]
   year: 1932
-orthokolus_bell.b.m_1974:
-  name: orthokolus
-  authority:
-    source: 1974_bell.b.m
 orthokolus_bell.b.m_1976:
   name: orthokolus
   authority:
@@ -8786,7 +8655,9 @@ plautini_schmidt_1880:
   name: plautini
   auth: [Schmidt]
   year: 1880
-  notes: Unclear why 1880 vs 1879; from 1935_bassler
+  notes: |
+    Unclear why 1880 vs 1879; from 1935_bassler, see also
+    1975_bell.b.m for a "plautinae Schmidt, 1980"
   altSpellingOf: plautinae_schmidt_1879
 plautinae_schmidt_1879:
   name: plautinae
@@ -8956,11 +8827,6 @@ postibulla:
   name: Postibulla
   authority:
     source: 1976_bell.b.m
-postibulla_bell.b.m_1974:
-  name: Postibulla
-  needsQualification: true
-  authority:
-    source: 1974_bell.b.m
 postibullinae:
   name: Postibullinae
   rank: Subfamily
@@ -9560,11 +9426,6 @@ rectitriordo:
   name: Rectitriordo
   authority:
     source: 1976_bell.b.m
-rectitriordo_bell.b.m_1974:
-  name: Rectitriordo
-  needsQualification: true
-  authority:
-    source: 1974_bell.b.m
 redlichia:
   name: Redlichia
   auth: [Cossman]
@@ -9671,10 +9532,6 @@ reticulata_linnaeus_1758:
   authority:
     source: 1758_linnaeus
   notes: Asterias; Distinct from reticulatus_linnaeus_1758
-reticulatus_bell.b.m_1974:
-  name: reticulatus
-  authority:
-    source: 1974_bell.b.m
 reticulatus_bell.b.m_1976:
   name: reticulatus
   authority:
@@ -10619,10 +10476,6 @@ solitaria_bruguière_1789:
   name: solitaria
   authority:
     source: 1789a_bruguière
-solitarius_bell.b.m_1974:
-  name: solitarius
-  authority:
-    source: 1974_bell.b.m
 solitarius_bell.b.m_1976:
   name: solitarius
   authority:
