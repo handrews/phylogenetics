@@ -32,6 +32,24 @@ recorded as a synonym; see [Terminology updates](#terminology-updates-1966--2023
   different genus in a later source. `originalParent` on the taxon record and
   `parents` on a synonymy entry both record a combination: the original one and
   the one the cited usage employed.
+- Every rule in this document has been broken by some publication. The model
+  does not have to fit everything; it has to make it visible when something
+  does not fit. `notes` is the last-resort escape hatch on every object, and
+  any object that lacks one gets one when needed.
+- `notes` is the one field that may be read from enclosing objects, because
+  a note sometimes covers several taxa. Apply an inherited note with caution,
+  and have derived data mark it as inherited rather than as the node's own.
+- Absence of a field is not a statement. A source that does not list a
+  synonym, a specimen, or a range has not denied it; the data only records
+  what was captured. Nothing may be inferred from a missing value, and the
+  audit state (G1) says how much was looked for.
+- Prefer stated uncertainty to confidence. The audience is researchers who
+  will follow the citation; the job is access to what was printed, not
+  synthesis of it.
+- Early works are authoritative by their date and inadequate by every later
+  standard: no catalogue number, sometimes no illustration, a name proposed in
+  a sentence. The model must carry such a source with the same fields as a
+  modern one and simply leave most of them empty.
 - Consult `notes` before deciding what a value means. YAML comments carry no
   meaning.
 - Migrations are data-only wherever possible. Tree-node attribution fields
@@ -94,7 +112,7 @@ echinodermata:
   auth: [Fleming]
   year: 1828
 
-# 1974_bell.b.m synonymy of Lebetodiscus: an accepted earlier usage
+# 1976_bell.b.m synonymy of Lebetodiscus (p. 54): an accepted earlier usage
 - taxon: agelacrinites
   authority: {source: 1858b_billings, pages: 84,
               illustrations: [{plate: 8, figures: [3, 3a, 4, 4a]}]}
@@ -123,6 +141,34 @@ the claim table emits it.
 
 **A4.** Finish the `auth`→`authority` migration from the audit (117 mechanical,
 54 needing a choice). Not MVP-blocking.
+
+**A6 (MVP). Attribution that cannot resolve as printed.** Bell 1975 cites
+"Bell, 1974" for a work that appeared in 1976; the correct citation would have
+been "in press". The tree records what was printed (`auth: [bell.b.m]`,
+`year: 1974`, `citedAs: Bell, 1974`) and explains in `notes`. That is right,
+and the taxon record already carries the true authority. What is missing is a
+machine-readable link from the printed line to the resolved work, so the claim
+table can attach the usage to `1976_bell.b.m` without guessing. Reuse the
+editorial block from B8:
+
+```yaml
+- taxon: isorophida
+  auth: [bell.b.m]
+  year: 1974
+  citedAs: Bell, 1974
+  editorial:
+    source: 1976_bell.b.m
+    basis: cited before publication; printed with the intended year
+```
+
+The same block covers a wrong page, a wrong year, or a citation to a reprint.
+It is editorial because the printed line alone does not establish it.
+
+**A7. Printed year letters.** Bell writes "1858b" and "1896b" using his own
+bibliography's letters. They happen to match this dataset's `1858b_billings`
+and would not match a differently lettered `1896_haeckel`. Keep the letter in
+`citedAs` (it is part of what was printed) and never derive a source key from
+it.
 
 **A5.** `auth` free-text names (521 uses, 220 distinct): decide the rule for
 family-only author records. Add alias support to `person` while there: the
@@ -378,6 +424,23 @@ them, in four different specimen shapes.
 - Occurrence-level `specimens` and `possibleSpecimens` (D3) become
   `occurrence` back-references from material entries, so a specimen is written
   once.
+- A material entry may have **no catalogue number**. Bell's "Bigsby specimen"
+  (1976, p. 63) is identified only by the four works that figured it; the
+  entry then carries a `label` and its `illustrations`, and nothing else.
+- `formerIds` records renumbering ("YPM 28451 (old 2361)"; "ROM 161-t-a …
+  described … as 'GSC 1415'", pp. 61–62), including a move between
+  repositories. `fragmentOf` marks a piece of a lost or dispersed specimen
+  (GSC 1407-B, "a fragment of the holotype", p. 60).
+- `roleAsPrinted` keeps the author's word when it is not in the role enum:
+  Bell's "Illustrated Specimen", Bassler's "plesiotype". The enum value is
+  the editorial mapping; the printed word is the fact.
+- `examined: false` for specimens the source reports from other works without
+  seeing them (Bell, p. 62: "Three other representatives … have been
+  reported").
+- `holotypeFixation: monotypy` parallels B14 at the species level; Bell
+  states it explicitly for *L. dicksoni* (p. 62).
+- `measurements` as free text or a small map, since every Bell specimen has
+  two diameters; not a modelling priority.
 
 **D2. Type roles, checked against the Code.** ICZN Art. 72–75 regulate the
 name-bearing types; the rest are conventions the literature uses and the data
@@ -485,11 +548,14 @@ fail also exit non-zero.
 `cfTaxon`, `affTaxon`, `openTaxon`, `mergeInto` targets), author id and
 `altSpellingOf` / `altRankOf` / `vulgarSpellingOf` target resolves.
 
-**F2. Repository prefixes, fail.** Every material id prefix resolves in
-`repositories.yaml`. Load and validate that file. Give entries a `formerly`
-list so a printed prefix resolves to the current institution without
-rewriting the id: the *Preface 2023* (xxv–xxvi) lists "NHMUK (formerly BMNH)",
-and the corpus already has both as separate entries.
+**F2. Repository prefixes, fail.** Every material id prefix resolves. Resolution
+is **scoped to the source**: Bell 1976 (p. 2) defines UCMP as the University of
+Cincinnati, where current usage means the University of California, and cites
+the Field Museum as CFM, CFMP, CFMPE and CFMUC. So `repositories.yaml` holds
+global defaults with `formerly` aliases (the *Preface 2023*, xxv–xxvi, lists
+"NHMUK (formerly BMNH)"), and a source record may carry its own
+`repositoryAbbreviations` map that wins within that source. The id string
+keeps the printed prefix either way.
 
 **F3. Time values, fail.** Every `stage`, `series`, `period` and regional value
 resolves in `time.yaml` (E6).
@@ -536,13 +602,38 @@ of them.
 
 ---
 
+## H. Things that do not fit, and where they go
+
+Cases met in the Bell 1976 audit ([`audit-1976_bell.b.m.md`](audit-1976_bell.b.m.md)).
+Each has a home; none needs a new top-level construct.
+
+| case | example | where it lands |
+|---|---|---|
+| a usage with no name, cited by a phrase | "A Fossil Belonging to the Class Radiaria", Sowerby 1825 (p. 55) | `openTaxon` placeholder in `taxa.yaml`, cited like any usage |
+| two names in one synonymy line | "1946 *Lebetodiscus* … Wilson, 19; *Lepidoconia* Wilson, ibid.: 21" (p. 54) | two entries with the same attribution |
+| a claim about another work's error | Wilson "erroneously considered the specimen to be the holotype" (p. 61) | a claim of this source about that source: material entry `notes` now; a `disputes` link later if it recurs |
+| classification of taxa the work does not treat | Stromatocystitidae, Cyathocystidae, Pyrgocystidae under "Others" with genera bracketed (p. 50) | ordinary `children` placements; the source's own scope is a `notes` on the tree |
+| an earlier classification reproduced | Jaekel 1899, Bather 1900, Bassler 1935–36 summarized (pp. 4–8) | belongs to those sources' own trees; here, at most a `notes` that Bell reproduces them, with page |
+| specimen identity that moved | ROM 161-t-a formerly GSC 1415 (p. 61) | `formerIds` (D1) |
+| a nickname for a specimen | the "Grant specimen", the "Fitzpatrick specimen" (p. 61) | `label` on the material entry |
+| a printed attribution that is wrong | "Bell, 1974" in Bell 1975 | as printed, plus `editorial.source` (A6) |
+| a role word outside the enum | "Illustrated Specimen" (p. 61) | `roleAsPrinted` (D1) |
+| horizon given as a quoted local name plus a hierarchy | "'Cobourg beds' (= the 'Cystid beds, about 180 feet below the top of the Trenton')" (p. 65) | `unit` list for the hierarchy; the quoted equivalence in `notes` until E1 has a `localUnit` alias |
+| anything else | — | `notes`, on the node, and the audit state records that it was seen |
+
+The rule for adding structure: a case earns a field when it appears in a
+second source. Until then it lives in `notes`, and the claim table surfaces
+the note verbatim with the claim.
+
+---
+
 ## Sequence
 
-1. **A1–A3, B1–B5, B8, C1, C2, F1, F4, F6–F8, G1.** The MVP set. Each is a
-   documentation decision, a small data migration, or one integrity check.
+1. **A1–A3, A6, B1–B5, B8, C1, C2, F1, F4, F6–F8, G1.** The MVP set. Each is
+   a documentation decision, a small data migration, or one integrity check.
    Nothing here depends on D or E.
-2. **B6, B7, B9–B15, A4, A5.** Vocabulary the literature uses that the data
-   does not yet need; decide the convention now, add fields on first use.
+2. **B6, B7, B9–B15, A4, A5, A7.** Vocabulary the literature uses that the
+   data does not yet need; decide the convention now, add fields on first use.
 3. **D1–D5 decided, then migrated on the Edrioasteroidea gold slice only.**
    The rest of the corpus keeps the old shapes behind a deprecation flag.
 4. **E1–E7 and F2, F3, F5.** Same pattern: decide now, migrate the gold slice,
@@ -563,3 +654,7 @@ of them.
    acceptable to edit by hand, or would you rather give occurrences short ids?
 6. **E1**: are there age statements in your notes that the four forms (point,
    span, boundary, modifier) cannot express?
+7. **A6**: you mentioned a second in-press citation you could not place. If it
+   turns up, does the editorial block cover it?
+8. **Audit**: the *Lebetodiscus* 1908 entry has `year: 1901`; is that a typo
+   to fix now, and should *Carneyella valcourensis* be `provisional`?
