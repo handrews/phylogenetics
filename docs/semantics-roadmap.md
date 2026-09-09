@@ -211,6 +211,17 @@ pages that exist only in the Bericht and the preprint. Rules:
   and the current choice of the reading is exactly the kind of judgement A10
   says to mark.
 
+The same shape recurs with Hall: the 1866 advance print of the New York State
+Museum 20th Annual Report, the 1871 advance print of the revised paper, and
+the 1872 24th Annual Report. Bell 1976 dates *pilea* and *vorticellatus* to
+1866, *Cystaster* to 1871 and *Streptaster* to 1872, each to the printing that
+first carried the name. The data has records for 1866 and 1872 only.
+
+A source key's year should then be the year of the printing the record
+describes. Today `1963_brown.i.a` is keyed to its reading year and issued in
+1964, and Schmidt is 1879 or 1880 by the same ambiguity; decide the rule once
+and note exceptions on the record.
+
 **A10 (MVP). The record's authority is an editorial choice, and silence is
 not a choice.** Echinodermata is attributed in the tree files to Bruguière
 1791, Klein 1734, Bruguière 1789 and Fleming 1828, and Stokes 2021 argues for

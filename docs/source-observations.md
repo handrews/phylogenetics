@@ -396,3 +396,55 @@ Data checks:
 
 Papers worth having for this one entry: Reed 1913 with Bather's appendix,
 Hisinger 1826, the 1845 preprint of von Buch, and the 1844 Bericht.
+
+## Printings in `sources.yaml` — the other preprint
+
+A scan of `sources.yaml` for reprints, advance prints, readings and issue
+dates. Five situations, one of them the twin of von Buch's.
+
+**Hall 1866 / 1871 / 1872.** `1866_hall` is keyed as its own source: New York
+State Museum 20th Annual Report, "number: Adv. Pr.", 17 pages, with the note
+"Original 17 pages of the paper eventually published as 1872b_hall … there
+was a revised edition with its own difficult-to-locate preprint." Bell 1976
+cites all three printings in his synonymies (pp. 82, 91):
+
+| year | printed as | what Bell dates to it |
+|---|---|---|
+| 1866 | "New York State Mus., 20th Ann. Rept. (adv. pub.): 7–8" | *pilea*, *stellatus*, *vorticellatus* (Hall), 1866 |
+| 1871 | "24th Ann. Rept. (adv. pub.): Explanation of pl. 2, fig. 1–6" | *Cystaster* Hall, 1871; *C. granulatus* Hall, 1871 |
+| 1872 | "24th Ann. Rept.: 215, pl. 6" | *Streptaster* Hall, 1872 |
+
+So one paper's names are dated to three printings by the same later author,
+depending on which printing first carried each name. The data has records for
+1866 and 1872 and none for 1871, yet dates *cystaster* and *granulatus* to
+1871. This is A11 exactly, and the Hall case is the cleaner of the two because
+Bell spells out which printing carries what.
+
+**Say 1825 reprinted with a commentary.** `1825a_say` (Journal of the Academy
+of Natural Sciences) was reprinted in October 1825 in The Zoological Journal,
+vol. II, pp. 311–315, immediately followed by `1825a_sowerby.g.b`, "A Note on
+the foregoing Paper". The reprint is described in `notes` and is not a record,
+so Sowerby's "foregoing Paper" resolves only through prose.
+
+**Von Buch 1840 / 1841.** `1840a_buch` (the book) and `1841_buch` ("a direct
+reprint, right down to identically typeset pages") are separate records with
+no link between them. `1840c_buch` has `translationOf: 1840a_buch` while the
+note on `1840a_buch` says 1840c translates 1840b. One of the two is wrong.
+
+**Read, then printed.** `1854a`–`1854c_billings` carry `processDates.read`
+and a `pubDate` months later; `1963_brown.i.a` is `read: 1963-11-27`,
+`issued: 1964-04-10`, and keyed 1963. `1842_volborth` is headed "Read March
+18, 1842" in the translation but has no `read` date in the record. The
+Schmidt 1879/1880 question (A8) is the same question asked of the key: does
+the year in a source key follow the volume, the reading, or the issue? The
+records answer it three different ways.
+
+Data checks:
+
+- `streptaster` is `auth: [Hall], year: 1866`; Bell 1976 (p. 82) dates it to
+  the 1872 printing, as a subgenus of *Agelacrinus*. Check the 1866 pages.
+- No `1871_hall` record exists for the revised advance print that
+  *Cystaster* and *granulatus* are dated to. The BHL page in the 1866 note is
+  the lead.
+- `1840c_buch.translationOf` disagrees with the `1840a_buch` note.
+- `1842_volborth` lacks `processDates.read: 1842-03-18`.
