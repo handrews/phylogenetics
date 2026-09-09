@@ -471,18 +471,34 @@ its "p. 19" for the species is one dropped digit from 129 rather than a
 preprint page. The English version (Quarterly Journal 2, pt. 2) has the genus
 on p. 32 and the species on p. 33, inside the record's `1846c_buch` span.
 
-**Von Buch's *testudinarius* was a deliberate transfer, not a slip.** Bericht
-p. 129 cites "Sphaeronites testudinarius, Hisinger, Lethaea Suecica, t. XXV.
-f. 9. d" for the elongated form and "t. XXV. f. 9. a" under *C. granatum* for
-the round one. The 1846 translation (p. 34) explains: "Hisinger has united
-this species with the former under the name Sphæronites testudinarius, but
-since he has not given the reasons which induced him to abandon the older
-name, S. granatum … I have thought it better to apply his name to this
-remarkable species which he has considered as a variety." Von Buch knew
-Hisinger's *testudinarius* meant the round form and chose to move the name to
-the elongated one. The Treatise's "nom. in errore" is a later judgement on a
-knowing act. For B10 this changes nothing about the shape and everything
-about the `notes`: the record should quote the sentence.
+**Von Buch's *testudinarius*: a deliberate transfer on a false premise.**
+Bericht p. 129 cites "Sphaeronites testudinarius, Hisinger, Lethaea Suecica,
+t. XXV. f. 9. d" for the elongated form and "t. XXV. f. 9. a" under *C.
+granatum* for the round one. The 1846 translation (p. 34) explains: "Hisinger
+has united this species with the former under the name Sphæronites
+testudinarius, but since he has not given the reasons which induced him to
+abandon the older name, S. granatum … I have thought it better to apply his
+name to this remarkable species which he has considered as a variety."
+
+Hisinger did no such uniting. Lethaea Suecica p. 92 treats the elongated
+forms as "Obs. Formæ irregulares, globoso-subovatæ, rostris oppositis,
+crassis, elongatis … ad Bödahamn Oelandiæ occurunt. Striæ valvularum ut in
+Sphæronite Citro directæ (fig. 8. d.)": an observation appended to *S.
+Citrus*, unnamed, unranked, and the only "Obs." in the book. He does not call
+them a variety, and the book has a notation for that ("c. varietas" under
+*Leptaena depressa*, p. 82; "ejusdem varietas", p. 93) which he did not use.
+Von Buch, taking the spindle-shaped 8d for the fourth figure of series 9,
+concluded that Hisinger had placed it under *testudinarius* as a variety, and
+on that reading chose to apply *testudinarius* to it. Knowing act, wrong
+premise.
+
+For the model: Hisinger's forms become an `openTaxon` under *citrus* carrying
+`identifier: "Formæ irregulares"`, the fig. 8d locator, and the sentence in
+`notes`, with no rank inferred from von Buch's word; von Buch's
+misidentification record (B10) then has a concrete target; and "which he has
+considered as a variety" joins B19 as a printed claim about another work that
+the work contradicts. "Variety" was a rank below species in 1837 and still
+is in botany; here it is von Buch's word only.
 
 **The plate is consistent with its explanation; the misplacement is
 spatial.** Lethaea Suecica p. 91 lists "Tab. XXV. fig. 8 … d. rostris

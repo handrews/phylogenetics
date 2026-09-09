@@ -416,11 +416,21 @@ testudinarius_buch_1845:
   notes: nom. in errore per Kesling 1967, S229; the specimen is Hisinger 1837 pl. 25 fig. 8d
 ```
 
-Von Buch's own words matter here. The 1846 translation (p. 34) says he
-"thought it better to apply his name to this remarkable species which he has
-considered as a variety": a deliberate transfer of Hisinger's name to another
-form, which the Treatise later calls a nomen in errore. The record's `notes`
-quotes the sentence; the shape is unchanged.
+Von Buch's own words matter here, and so do Hisinger's. The 1846 translation
+(p. 34) says "Hisinger has united this species with the former under the name
+Sphæronites testudinarius … I have thought it better to apply his name to this
+remarkable species which he has considered as a variety." Hisinger's text
+(Lethaea Suecica, p. 92) says something else: the elongated forms are an
+"Obs. Formæ irregulares … (fig. 8. d.)" appended to *S. Citrus*, with "striae
+as in *Sphæronites Citro*", and the word variety is absent, although the same
+book marks varieties elsewhere ("c. varietas", pp. 82, 93). So von Buch's
+"variety of *testudinarius*" is his reading of the misplaced figure, and his
+transfer of the name was deliberate on a false premise. Three consequences:
+Hisinger's unnamed forms are an `openTaxon` node under *citrus* with
+`identifier: "Formæ irregulares"`, fig. 8d, and no rank inferred; von Buch's
+misidentification record points at that node, not merely at a figure; and the
+sentence about the variety is a secondhand claim contradicted by its source
+(B19), recorded in `notes` as printed.
 
 Later synonymies then read naturally: *angelini* Haeckel 1896 has
 `synonyms: [testudinarius_buch_1845, buchi_jaekel_1899]` and `non:
