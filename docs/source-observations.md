@@ -448,3 +448,93 @@ Data checks:
   the lead.
 - `1840c_buch.translationOf` disagrees with the `1840a_buch` note.
 - `1842_volborth` lacks `processDates.read: 1842-03-18`.
+
+## S229 revisited with the primary sources
+
+Read from the 1844 Bericht, the 1846 Quarterly Journal translation, Hisinger
+1828 and 1837, and Trans. Roy. Soc. Edinburgh 49 (1913). Each open item from
+the Caryocystites section above, with what the sources say.
+
+**The reading date is 14 March 1844.** Bericht 1844, p. 120: "14. März.
+Gesammtsitzung der Akademie. Hr. v. Buch las über Cystideen, eingeleitet
+durch …". So the record's 3 March has the wrong day and the Treatise's "14.
+Mai" has the wrong month; the "May 3rd" the record calls a typo is a third
+variant. Set `processDates.read: 1844-03-14` on the reading, and put the two
+printed variants in `notes` with their sources.
+
+**"1846, p. 128" is the Bericht, and "p. 19" is almost certainly p. 129.**
+The Bericht report runs pp. 120–133. The genus header "CARYOCYSTITES" and
+"3) Caryocystites Granatum Wahl." are on p. 128; "4) Caryocystites
+testudinarius His." is on p. 129 (PDF 474–475). The Treatise's page for the
+genus is therefore the Bericht's, cited under the Abhandlungen's year, and
+its "p. 19" for the species is one dropped digit from 129 rather than a
+preprint page. The English version (Quarterly Journal 2, pt. 2) has the genus
+on p. 32 and the species on p. 33, inside the record's `1846c_buch` span.
+
+**Von Buch's *testudinarius* was a deliberate transfer, not a slip.** Bericht
+p. 129 cites "Sphaeronites testudinarius, Hisinger, Lethaea Suecica, t. XXV.
+f. 9. d" for the elongated form and "t. XXV. f. 9. a" under *C. granatum* for
+the round one. The 1846 translation (p. 34) explains: "Hisinger has united
+this species with the former under the name Sphæronites testudinarius, but
+since he has not given the reasons which induced him to abandon the older
+name, S. granatum … I have thought it better to apply his name to this
+remarkable species which he has considered as a variety." Von Buch knew
+Hisinger's *testudinarius* meant the round form and chose to move the name to
+the elongated one. The Treatise's "nom. in errore" is a later judgement on a
+knowing act. For B10 this changes nothing about the shape and everything
+about the `notes`: the record should quote the sentence.
+
+**The plate is consistent with its explanation; the misplacement is
+spatial.** Lethaea Suecica p. 91 lists "Tab. XXV. fig. 8 … d. rostris
+elongatis" under *S. Citrus* and p. 92 lists "fig. 9. a. — b. valvula … c.
+valvula … d. unus rhomboidum" under *S. testudinarius*; the plate (PDF 194)
+matches: 8d is the spindle-shaped specimen with two rostra, 9d a single
+rhomb. But 8d is drawn at the far right of the bottom row, level with 9a–9c,
+so a reader takes it for the fourth figure of series 9. That is the
+"lithographer's lapse in placing the numbers": the placement, not the
+labels. Von Buch's "f. 9. d" is the reader's error the layout invited, and
+the Treatise's "fig. 8d, non fig. 9d" is the correction. D6's locator shape
+records both.
+
+**Hisinger's *testudinarius* dates from 1837 and is a replacement name.**
+Lethaea Suecica p. 92: "SPHAERONITES testudinarius … Echinosphærites granatum
+VAHLENB. l. c. pag. 53. Sphæronites granatum His. Anteckn. VI. pag. 195. Tab.
+VIII. fig. 1." He renamed his own 1828 combination of Wahlenberg's *granatum*
+without stating a reason, which is what von Buch objected to. In the 1966
+vocabulary that is a nomen vanum, a junior objective synonym; the 1837 node
+gets `act: [nomNov]` and the existing synonymy already says the rest. The
+name does not occur in the 1828 Anteckningar, whose *Sphaeronites* section
+(pp. 195–197) has only *pomum* and *granatum*. The Treatise's "HISINGER,
+1826, p. 115" is unsupported by anything here, and its own reference list
+(S264) has no 1826 entry. Treat it as an error, as you supposed.
+
+**Where the Treatise's "p. 185" for *Sphaeronites* came from.** Hisinger 1828
+introduces *Sphaeronites* on p. 195. His footnote on p. 196 cites Meyer's
+*Echino-Encrinites* in "Kæstners Archiv f. die Naturlehre, 1826 B. VII. S.
+185". The Treatise's 185 is the page of the work Hisinger cites, not
+Hisinger's page. The record's note is right; B22 says where it belongs.
+
+**Reed 1913 is the wrong reference.** Trans. Roy. Soc. Edinburgh 49 contains
+Bather's own memoir "Caradocian Cystidea from Girvan" (pp. 359–529; "Read May
+13, 1912. MS. received March 8, 1913. Issued separately July 24, 1913"), and
+the string "Caryocyst" occurs nowhere in the volume; the memoir's index has
+*Caryocrinidae* and *Heliocrinus* only. The Treatise's "(12)" is Bather 1913
+in its list, but the words "BATHER in REED" fit reference (13), "Note on
+Yunnan Cystidea" (1918–19), which are Bather's notes in Reed's Yunnan
+papers. So the resolution of the type-species question is in a work not yet
+in hand, and the Treatise mis-numbered it. Index numbers can be wrong too
+(A7). The Bather memoir's dates are another reading-then-separate-issue case
+for A11.
+
+Data checks from this pass:
+
+- `1844_buch`: `processDates.read` should be 1844-03-14; the note about "May
+  3rd" should say the Treatise prints 14 May.
+- Add the 1844 Bericht as a source (Bericht 1844, pp. 120–133; genus p. 128,
+  species p. 129), linked to `1846a_buch` by `printingOf` (A11).
+- `testudinarius_hisinger_1837`: keep `new: true`; add `act: [nomNov]`.
+- Von Buch's *testudinarius* needs its misidentification record (B10), keyed
+  to whichever printing the authority rule picks, with the 1846 sentence in
+  `notes`.
+- Reed 1913 need not be added for this purpose; Bather's Yunnan notes are the
+  target.

@@ -168,7 +168,10 @@ It is editorial because the printed line alone does not establish it.
 bibliography's letters. They happen to match this dataset's `1858b_billings`
 and would not match a differently lettered `1896_haeckel`. Keep the letter in
 `citedAs` (it is part of what was printed) and never derive a source key from
-it.
+it. Index numbers can themselves be wrong: the Treatise's "BATHER in REED (12)"
+(S229) numbers Bather's 1913 Girvan memoir but describes reference (13),
+Bather's notes in Reed's Yunnan papers, and the Girvan memoir never mentions
+*Caryocystites*.
 
 **A8. A cited work's year is itself contested.** Schmidt's *Cyathocystis*
 paper is 1879 in Bockelie & Paul 1983 and 1880 in Bell 1975 and Bassler 1935;
@@ -210,6 +213,12 @@ pages that exist only in the Bericht and the preprint. Rules:
   a judgement (the Code dates availability from publication, not reading),
   and the current choice of the reading is exactly the kind of judgement A10
   says to mark.
+
+The Bericht settles the von Buch case: the reading was 14 March 1844 (Bericht
+p. 120), the genus is on Bericht p. 128 and the species on p. 129, so the
+Treatise's "1846, p. 128" is the Abhandlungen's year with the Bericht's page
+and its "p. 19" is a dropped digit. Both printed variants of the reading date
+(3 May, 14 May) go in `notes`.
 
 The same shape recurs with Hall: the 1866 advance print of the New York State
 Museum 20th Annual Report, the 1871 advance print of the revised paper, and
@@ -390,6 +399,12 @@ testudinarius_buch_1845:
   misidentificationOf: testudinarius_hisinger_1826
   notes: nom. in errore per Kesling 1967, S229; the specimen is Hisinger 1837 pl. 25 fig. 8d
 ```
+
+Von Buch's own words matter here. The 1846 translation (p. 34) says he
+"thought it better to apply his name to this remarkable species which he has
+considered as a variety": a deliberate transfer of Hisinger's name to another
+form, which the Treatise later calls a nomen in errore. The record's `notes`
+quotes the sentence; the shape is unchanged.
 
 Later synonymies then read naturally: *angelini* Haeckel 1896 has
 `synonyms: [testudinarius_buch_1845, buchi_jaekel_1899]` and `non:
@@ -651,10 +666,12 @@ illustrations:
 
 The same shape records a **correction of another work's figure number**:
 Kesling 1967 (S229) writes "HISINGER, 1837, pl. 25, fig. 8d, non fig. 9d"
-because a lithographer misplaced the numbers and von Buch cited 9d. Von Buch's
-tree keeps 9d as printed; the Treatise's locator is `{plate: 25, figures: 8d,
-non: [9d]}` with the explanation in `notes`. The disagreement is derived, as in
-B19, never resolved in place.
+because the plate's fig. 8d is drawn level with series 9 and von Buch read it
+as 9d; Hisinger's plate explanation and labels agree with each other (Lethaea
+Suecica pp. 91–92, pl. XXV). Von Buch's tree keeps 9d as printed; the
+Treatise's locator is `{plate: 25, figures: 8d, non: [9d]}` with the
+explanation in `notes`. The disagreement is derived, as in B19, never resolved
+in place.
 
 **D7. A type designated by figure.** The same paper selects a lectotype as
 "the original of Barrande, 1867, plate 11, figure 5, now in the National
@@ -877,13 +894,13 @@ the note verbatim with the claim.
     *Stromatocystites*; the tree's diagram root is the order. Which does the
     figure show?
 12. **A11**: for names von Buch introduced, which printing should the record's
-    authority name: the 1844 reading it names now, the 1845 preprint, or the
-    1846 Abhandlungen? And which reading date do you hold to be the typo:
-    3 May, or the Treatise's 14 May?
+    authority name: the 1844 reading, the 1844 Bericht (which carries the
+    names on pp. 128–129), the 1845 preprint, or the 1846 Abhandlungen? The
+    reading date is settled: 14 March 1844 per the Bericht.
 13. **B10**: does the misidentification record shape read right to you, and
     should von Buch's *testudinarius* be keyed to the preprint (1845) or to
     `1844_buch`?
-14. **Hisinger**: the Treatise dates *testudinarius* to Hisinger 1826, p. 115;
-    the 1837 tree has it `new`. Can you find Hisinger 1826? Reed 1913 with
-    Bather's appendix, the 1845 preprint, and the 1844 Bericht would each
-    settle one open item on S229.
+14. **Hisinger**: settled. *testudinarius* is a 1837 replacement name for
+    *granatum*; "1826" is a Treatise error. Still wanted: Bather's "Note on
+    Yunnan Cystidea" (1918–19), which is where the type-species question was
+    actually resolved, and the 1845 preprint if it exists anywhere.
