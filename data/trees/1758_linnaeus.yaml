@@ -1,0 +1,284 @@
+taxonomies:
+- taxon: animalia
+  new: true
+  children:
+  - taxon: mammalia
+    new: true
+  - taxon: aves
+    new: true
+  - taxon: amphibia_linnaeus_1758
+    new: true
+  - taxon: pisces
+    new: true
+  - taxon: insecta
+    new: true
+  - taxon: vermes
+    new: true
+    children:
+    - taxon: intestina-order
+      new: true
+      children:
+      - taxon: gordius
+        new: true
+      - taxon: furia
+        new: true
+      - taxon: lumbricus
+        new: true
+      - taxon: ascaris
+        new: true
+      - taxon: fasciola
+        new: true
+      - taxon: hirudo
+        new: true
+      - taxon: myxine
+        new: true
+        children:
+        - taxon: glutinosa_linnaeus_1758
+          new: true
+      - taxon: teredo
+        new: true
+    - taxon: mollusca-order
+      new: true
+      children:
+      - taxon: limax
+        new: true
+      - taxon: doris
+        new: true
+      - taxon: tethys
+        new: true
+      - taxon: nereis
+        new: true
+      - taxon: aphrodita
+        new: true
+      - taxon: lernæa
+        new: true
+      - taxon: priapus
+        new: true
+      - taxon: scyllæa
+        new: true
+      - taxon: holothuria_linnaeus_1758
+        new: true
+        children:
+        - taxon: physalis_linnaeus_1758
+          new: true
+        - taxon: thalia_linnaeus_1758
+          new: true
+        - taxon: caudata_linnaeus_1758
+          new: true
+        - taxon: denudata_linnaeus_1758
+          new: true
+      - taxon: triton
+        new: true
+      - taxon: sepia
+        new: true
+      - taxon: medusa
+        new: true
+      - taxon: asterias
+        new: true
+        children:
+        - taxon: integra
+          new: true
+          children:
+          - taxon: luna_linnaeus_1758
+            new: true
+        - taxon: stellatæ
+          new: true
+          children:
+          - taxon: rubens_linnaeus_1758
+            new: true
+          - taxon: glacialis_linnaeus_1758
+            new: true
+          - taxon: reticulata_linnaeus_1758
+            new: true
+          - taxon: nodosa_linnaeus_1758
+            new: true
+          - taxon: aranciaca_linnaeus_1758
+            new: true
+          - taxon: equestris_linnaeus_1758
+            new: true
+          - taxon: lævigata_linnaeus_1758
+            new: true
+        - taxon: radiatæ
+          new: true
+          children:
+          - taxon: planci_linnaeus_1758
+            new: true
+          - taxon: ophiura_linnaeus_1758
+            new: true
+          - taxon: pectinata_linnaeus_1758
+            new: true
+          - taxon: multiradiata_linnaeus_1758
+            new: true
+          - taxon: caput medusæ_linnaeus_1758
+            new: true
+      - taxon: echinus
+        new: true
+        children:
+        - taxon: regulares
+          new: true
+          children:
+          - taxon: esculentus_linnaeus_1758
+            new: true
+          - taxon: globulus_linnaeus_1758
+            new: true
+          - taxon: sphæroides_linnaeus_1758
+            new: true
+          - taxon: gratilla_linnaeus_1758
+            new: true
+          - taxon: lixula_linnaeus_1758
+            new: true
+          - taxon: saxatilis_linnaeus_1758
+            new: true
+          - taxon: diadema_linnaeus_1758
+            new: true
+          - taxon: cidaris_linnaeus_1758
+            new: true
+          - taxon: mamillatus_linnaeus_1758
+            new: true
+          - taxon: lucunter_linnaeus_1758
+            new: true
+          - taxon: atratus_linnaeus_1758
+            new: true
+        - taxon: irregulares
+          new: true
+          children:
+          - taxon: spatagus_linnaeus_1758
+            new: true
+          - taxon: lacunosus_linnaeus_1758
+            new: true
+          - taxon: rosaceus_linnaeus_1758
+            new: true
+          - taxon: reticulatus_linnaeus_1758
+            new: true
+          - taxon: placenta_linnaeus_1758
+            new: true
+          - taxon: orbiculus_linnaeus_1758
+            new: true
+    - taxon: testacea-order
+      new: true
+      children:
+      - openTaxon: testacea-unnamed-section-1_linnaeus_1758
+        notes: Multivalvia
+        children:
+        - taxon: chiton
+          new: true
+        - taxon: lepas
+          new: true
+      - taxon: conchæ
+        new: true
+        notes: Bivalvia
+        children:
+        - taxon: pholas
+          new: true
+        - taxon: mya
+          new: true
+        - taxon: solen
+          new: true
+        - taxon: tellina
+          new: true
+        - taxon: cardium
+          new: true
+        - taxon: donax
+          new: true
+        - taxon: venus
+          new: true
+        - taxon: spondylus
+          new: true
+        - taxon: chama
+          new: true
+        - taxon: arca
+          new: true
+        - taxon: ostrea
+          new: true
+        - taxon: anomia
+          new: true
+        - taxon: mytilus
+          new: true
+        - taxon: pinna
+          new: true
+      - taxon: cochleæ
+        new: true
+        notes: Univalvia
+        children:
+        - taxon: argonauta
+          new: true
+        - taxon: nautilus
+          new: true
+        - taxon: conus
+          new: true
+        - taxon: cypræa
+          new: true
+        - taxon: bulla
+          new: true
+        - taxon: voluta
+          new: true
+        - taxon: buccinum
+          new: true
+        - taxon: strombus
+          new: true
+        - taxon: murex
+          new: true
+        - taxon: trochus
+          new: true
+        - taxon: turbo
+          new: true
+        - taxon: helix
+          new: true
+        - taxon: nerita
+          new: true
+        - taxon: haliotis
+          new: true
+      - openTaxon: testacea-unnamed-section-2_linnaeus_1758
+        notes: Univalvia absque spira regulari
+        children:
+        - taxon: patella
+          new: true
+        - taxon: dentalium
+          new: true
+        - taxon: serpula
+          new: true
+    - taxon: lithophyta
+      new: true
+      children:
+      - taxon: tubipora
+        new: true
+      - taxon: millepora
+        new: true
+      - taxon: madrepora
+        new: true
+    - taxon: zoophyta
+      new: true
+      children:
+      - taxon: isis
+        new: true
+        children:
+        - taxon: hippuris_linnaeus_1758
+          new: true
+        - taxon: dichotoma_linnaeus_1758
+          new: true
+        - taxon: ocracea_linnaeus_1758
+          new: true
+        - taxon: anastacia_linnaeus_1758
+          new: true
+        - taxon: encrinus_linnaeus_1758  # A coral, not a crinoid
+          new: true
+      - taxon: gorgonia
+        new: true
+      - taxon: alcyonium
+        new: true
+      - taxon: tubularia
+        new: true
+      - taxon: eschara
+        new: true
+      - taxon: corallina
+        new: true
+      - taxon: sertularia
+        new: true
+      - taxon: hydra
+        new: true
+      - taxon: pennatula
+        new: true
+      - taxon: tænia
+        new: true
+      - taxon: volvox
+        new: true

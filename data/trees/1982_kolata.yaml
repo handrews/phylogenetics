@@ -1,0 +1,16 @@
+taxonomies:
+- taxon: echinodermata
+  auth: [bruguiére]
+  year: 1791
+  children:
+  - taxon: echinozoa
+    children:
+    - taxon: cyclocystoidea
+      children:
+      - taxon: cyclocystoididae
+        children:
+        - taxon: cyclocystoides
+          children:
+          - taxon: halli_billings_1858
+            type: true
+          - openTaxon: cyclocystoides-sp_kolata_1982

@@ -1,0 +1,31 @@
+taxonomies:
+- taxon: eocrinoidea
+  children:
+  - taxon: cryptocrinitidae
+    children:
+    - taxon: paracryptocrinites
+      new: true
+      pages: 609
+      children:
+      - taxon: bockeliei_rozhnov_fedorov_2001
+        type: true
+        new: true
+        pages:
+        - [609, 612]
+        illustrations:
+        - page: 608
+          plate: 6
+          figures:
+          - [1, 3]
+        - page: 610
+          textFigures:
+          - [2, 3]
+        - page: 611
+          textFigures: 4
+      - openTaxon: paracryptocrinites-sp_rozhnov_fedorov_2001
+        new: true
+        illustrations:
+        - page: 608
+          plate: 6
+          figures:
+          - [4, 9]

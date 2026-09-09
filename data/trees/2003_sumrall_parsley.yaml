@@ -1,0 +1,16 @@
+phylogenies:
+- treeType: cladogram
+  notes: character acquisition
+  tree:
+    notes: Development of floor plate lateral extensions
+    children:
+    - taxon: ulrichidiscus
+    - children:
+      - taxon: clavidiscus
+      - notes: Development of interambulacral plate extensions
+        children:
+        - taxon: hypsiclavus
+        - children:
+          - taxon: spiraclavus
+          - notes: Thickening of interambulacral plates
+            taxon: giganticlavus

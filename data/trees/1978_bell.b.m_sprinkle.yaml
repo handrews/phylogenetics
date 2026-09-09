@@ -1,0 +1,17 @@
+taxonomies:
+- taxon: edrioasteroidea
+  children:
+  - taxon: edrioasterida
+    emended: true
+    children:
+    - taxon: edrioasteridae
+      emended: true
+    - taxon: totiglobidae
+      new: true
+      children:
+      - taxon: totiglobus
+        new: true
+        children:
+        - taxon: nimius_bell.b.m_sprinkle_1978
+          type: true
+          new: true

@@ -1,0 +1,48 @@
+taxonomies:
+- taxon: glyptocystitida-superfamily
+  children:
+  - taxon: callocystitidae
+    children:
+    - taxon: staurocystinae
+      children:
+      - taxon: staurocystis
+        children:
+        - taxon: quadrifasciatus_pearce_1843
+          type: true
+      - taxon: pseudocrinites
+        children:
+        - taxon: bifasciatus_pearce_1843
+          type: true
+        - taxon: pyriformis_paul.c.r.c_1967
+          new: true
+      - taxon: tetracystis
+        children:
+        - taxon: chrysalis_schuchert_1904
+          type: true
+        - taxon: oblongus_forbes_1848
+      - taxon: prunocystites
+        children:
+        - taxon: fletcheri_forbes_1848
+          type: true
+    - taxon: apiocystitinae
+      children:
+      - taxon: apiocystites
+        children:
+        - taxon: pentrematoides_forbes_1848
+          type: true
+  - taxon: echinoencrinitidae
+    children:
+    - taxon: echinoencrinitinae
+      new: true
+    - taxon: scoliocystinae
+      emended: true
+      children:
+      - taxon: glansicystis
+        new: true
+        children:
+        - taxon: baccata_forbes_1848
+          type: true
+      - taxon: schizocystis
+        children:
+        - taxon: armata_forbes_1848
+          type: true

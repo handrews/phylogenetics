@@ -1,0 +1,66 @@
+taxonomies:
+- taxon: blastozoa
+  children:
+  - taxon: eocrinoidea
+    children:
+    - taxon: trachelocrinida
+      children:
+      - taxon: heckerocrinidae
+        new: true
+        synonyms:
+        - taxon: bockiidae
+        children:
+        - taxon: heckerocrinus
+          new: true
+          synonyms:
+          - taxon: bockia_hecker_1938
+            year: 1940
+            notes: Reason for erroneous year unclear.
+            parents:
+            - taxon: bockiidae
+          children:
+          - taxon: neglectus_hecker_1940
+            type: true
+            synonyms:
+            - taxon: neglecta_hecker_1940
+              type: true
+              parents:
+              - taxon: bockia_hecker_1938
+              - taxon: bockiidae
+          - taxon: cucumis_hecker_1940
+            synonyms:
+            - parents:
+              - taxon: bockia_hecker_1938
+              - taxon: bockiidae
+          - taxon: elpasoensis_sprinkle_wahlman_1994
+            synonyms:
+            - parents:
+              - taxon: bockia_hecker_1938
+              - taxon: bockiidae
+          - taxon: gravus_bockelie_1981
+            synonyms:
+            - taxon: grava_bockelie_1981
+              parents:
+              - taxon: bockia_hecker_1938
+              - taxon: bockiidae
+          - taxon: heintzi_bockelie_1981
+            synonyms:
+            - parents:
+              - taxon: bockia_hecker_1938
+              - taxon: bockiidae
+          - taxon: laevis_hecker_1940
+            synonyms:
+            - parents:
+              - taxon: bockia_hecker_1938
+              - taxon: bockiidae
+          - taxon: mirabilis_bockelie_1981
+            synonyms:
+            - parents:
+              - taxon: bockia_hecker_1938
+              - taxon: bockiidae
+          - taxon: sculptus_hecker_1940
+            synonyms:
+            - taxon: sculpta_hecker_1940
+              parents:
+              - taxon: bockia_hecker_1938
+              - taxon: bockiidae

@@ -1,0 +1,27 @@
+taxonomies:
+- taxon: echinodermata
+  auth: [bruguiére]
+  year: 1791
+  children:
+  - taxon: blastozoa
+    children:
+    - taxon: diploporita-class
+      modifier: nom. tranls. Paul 1968b
+      children:
+      - taxon: eumorphocystoidea
+        modifier: nom. transl.
+        children:
+        - taxon: eumorphocystidae
+          emended: true
+          children:
+          - taxon: eumorphocystis
+            children:
+            - taxon: multiporata_branson_peck_1940
+              type: true
+              synonyms:
+              - taxon: typicalis_bassler_1950
+                parents:
+                - taxon: regnellicystis
+              - taxon: oklahomensis_bassler_1950
+                parents:
+                - taxon: strimplecystis

@@ -1,0 +1,43 @@
+taxonomies:
+- taxon: helicoplacoidea
+  children:
+  - taxon: helicoplacida
+    new: true
+    children:
+    - taxon: helicoplacus
+      children:
+      - taxon: gilberti_durham_caster_1963
+        type: true
+      - taxon: curtisi_durham_caster_1963
+      - taxon: everndeni_durham_1967
+        new: true
+        synonyms:
+        - taxon: curtisi_durham_caster_1963
+          pars: true
+        specimens:
+          holotype: UCMP 14770
+      - taxon: firbyi_durham_1967
+        new: true
+        specimens:
+          holotype: UCMP 30143
+    - taxon: waucobella
+      new: true
+      children:
+      - taxon: nelsoni_durham_1967
+        type: true
+        new: true
+        specimens:
+          holotype: UCMP 14769
+  - taxon: polyplacida
+    new: true
+    children:
+    - taxon: polyplacus
+      new: true
+      children:
+      - taxon: kilmeri_durham_1967
+        type: true
+        new: true
+        specimens:
+          holotype: UCMP 14767
+          paratypes:
+          - UCMP 14768

@@ -1,0 +1,10 @@
+notes: Only the vertabrates are covered in detail in this part.
+taxonomies:
+- taxon: animalia
+  children:
+  - taxon: mammalia
+  - taxon: aves
+  - taxon: amphibia_linnaeus_1758
+  - taxon: pisces
+  - taxon: insecta
+  - taxon: vermes

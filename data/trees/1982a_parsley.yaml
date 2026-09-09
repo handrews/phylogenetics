@@ -1,0 +1,78 @@
+taxonomies:
+- taxon: echinodermata
+  auth: [bruguiére]
+  year: 1791
+  children:
+  - taxon: crinozoa
+    children:
+    - taxon: paracrinoidea
+      children:
+      - taxon: comarocystitida
+        children:
+        - taxon: comarocystitidae
+          children:
+          - taxon: sinclairocystis
+            children:
+            - taxon: praedicta_bassler_1950
+              type: true
+        - taxon: amygdalocystitidae
+          emended: true
+          notes: Emended Parsley and Mintz, 1975
+          children:
+          - taxon: oklahomacystis
+            emended: true
+            children:
+            - taxon: tribrachiatus_bassler_1943
+              type: true
+              synonyms:
+              - taxon: tribrachiatus_bassler_1943
+                parents:
+                - taxon: amygdalocystites
+            - taxon: bibrachiatus_parsley_1982
+              new: true
+      - taxon: platycystitida
+        emended: true
+        children:
+        - taxon: platycystitidae
+          children:
+          - taxon: platycystites
+            children:
+            - taxon: faberi_miller.s.a_1899
+              type: true
+            - taxon: levatus_bassler_1943
+              synonyms:
+              - taxon: fimbriatus_bassler_1943
+              - taxon: bromidensis_bassler_1943
+              - cfTaxon: bromidensis_bassler_1943
+                auth: [bassler, Sinclair]
+                year: 1945
+              - cfTaxon: levatus_bassler_1943
+                auth: [bassler, Sinclair]
+                year: 1945
+              - taxon: cristatus_bassler_1943
+                pars: true
+            - taxon: cristatus_bassler_1943
+              non:
+              - taxon: cristatus_bassler_1943
+                auth: [parsley, Mintz]
+                year: 1975
+                pars: true
+              - taxon: cristatus_bassler_1943
+                auth: [frest, Strimple, Coney]
+                year: 1979
+                parents:
+                - taxon: globulocystites
+              synonyms:
+              - taxon: faberi_miller.s.a_1899
+                pars: true
+              - taxon: infundus_frest_strimple_mcginnis_1976
+              - taxon: infundus_frest_strimple_mcginnis_1976
+                parents:
+                - taxon: globulocystites
+              - openTaxon: platycystites-sp_frest_strimple_coney_1979
+          - taxon: arbucklecystis
+            new: true
+            children:
+            - taxon: pyriformis_parsley_sprinkle_1982
+              type: true
+              new: true

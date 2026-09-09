@@ -1,0 +1,31 @@
+taxonomies:
+- taxon: pelmatozoa
+  children:
+  - taxon: edrioblastoidea
+    children:
+    - taxon: steganoblastidae
+      children:
+      - taxon: astrocystites
+        synonyms:
+        - taxon: steganoblastus
+        children:
+        - taxon: ottawaensis_whiteaves_1897
+          type: true
+        - taxon: distans_webby_1968
+          new: true
+          specimens:
+            holotype: USGD 2302
+            paratypes:
+            - USGD 2303
+            - USGD 2304
+            - USGD 2305
+            - USGD 2306
+            - USGD 2309
+            - USGD 2310
+            - USGD 2311
+            - USGD 2312
+            - USGD 3303
+        - openTaxon: astrocystites-sp_webby_1968
+          specimens:
+            unknowntypes:
+            - USGD 3304

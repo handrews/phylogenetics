@@ -1,0 +1,70 @@
+taxonomies:
+- taxon: ctenocystoidea
+  children:
+  - taxon: monozonida
+    new: true
+    children:
+    - taxon: courtessoleidae
+      new: true
+      children:
+      - taxon: courtessolea
+        new: true
+        children:
+        - taxon: moncereti_domínguez alonso_1999
+          type: true
+          new: true
+  - taxon: pleurozonida
+    new: true
+    children:
+    - taxon: jugoszoviidae
+      children:
+      - taxon: jugoszovia
+        children:
+        - taxon: archaeocyathoides_dzik_orłowski_1995
+          type: true
+  - taxon: azonida
+    new: true
+    children:
+    - taxon: conolliidae
+      new: true
+      children:
+      - taxon: conollia
+        new: true
+        children:
+        - taxon: staffordi_domínguez alonso_1999
+          type: true
+          new: true
+  - taxon: dizonida
+    new: true
+    children:
+    - taxon: pembrocystidae
+      new: true
+      children:
+      - taxon: pembrocystis
+        new: true
+        children:
+        - taxon: gallica_domínguez alonso_1999
+          type: true
+          new: true
+    - taxon: ctenocystidae
+      children:
+      - taxon: etoctenocystis
+        children:
+        - taxon: bohemica_fatka_kordule_1985
+          type: true
+      - taxon: gilcidia
+        new: true
+        children:
+        - taxon: smithi_ubaghs_1987
+          moved:
+            taxon: ctenocystis
+        - taxon: jagoi_jell_burrett_banks_1985
+          moved:
+            taxon: ctenocystis
+        - taxon: viviannae_domínguez alonso_1999
+          new: true
+      - taxon: ctenocystis
+        children:
+        - taxon: utahensis_robison_sprinkle_1969
+          type: true
+        - taxon: colodon_ubaghs_robison_1988

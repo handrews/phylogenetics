@@ -1,0 +1,10 @@
+taxonomies:
+- taxon: ostracion
+  children:
+  - openTaxon: ostracion-sp_walch_1776
+    provisional: true
+    pages: 259
+    illustrations:
+    - plate: V
+      figures:
+      - [1, 2]

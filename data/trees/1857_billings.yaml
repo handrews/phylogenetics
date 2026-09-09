@@ -1,0 +1,147 @@
+notes: |
+  Only Radiata (which happends to only include Echinodermata here) are
+  recorded so far.  Sub-kingdoms Mollusca and Articulata also represented
+  in the text, as is kingdom Plantæ.
+taxonomies:
+- taxon: radiata-subkingdom
+  children:
+  - taxon: echinodermata-class
+    children:
+    - taxon: crinoidea-order
+      children:
+      - taxon: glyptocrinus
+        children:
+        - taxon: priscus_billings_1857
+          new: true
+        - taxon: ramulosus_billings_1857
+          new: true
+        - taxon: marginatus_billings_1857
+          new: true
+        - taxon: ornatus_billings_1857
+          new: true
+        - taxon: lacunosus_billings_1857
+          new: true
+      - taxon: thysanocrinus
+        children:
+        - taxon: rhodocrinus-subgenus
+          children:
+          - taxon: pyriformis_billings_1857
+            new: true
+          - taxon: microbasalis_billings_1857
+            new: true
+      - taxon: dendrocrinus
+        children:
+        - taxon: gregarius_billings_1857
+          new: true
+        - taxon: auctidactylus_billings_1857
+          new: true
+        - taxon: proboscidiatus_billings_1857
+          new: true
+        - taxon: similis_billings_1857
+          new: true
+        - taxon: conjugans_billings_1857
+          new: true
+        - taxon: angulatus_billings_1857
+          new: true
+        - taxon: humilis_billings_1857
+          new: true
+        - taxon: latibrachiatus_billings_1857
+          new: true
+        - taxon: rusticus_billings_1857
+          new: true
+      - taxon: heterocrinus
+        children:
+        - taxon: simplex_hall_1847
+        - taxon: tenuis_billings_1857
+          new: true
+      - taxon: hybocrinus
+        new: true
+        children:
+        - taxon: conicus_billings_1857_hybocrinus
+          new: true
+        - taxon: tumidus_billings_1857
+          new: true
+      - taxon: carabocrinus
+        new: true
+        children:
+        - taxon: radiatus_billings_1857
+          new: true
+      - taxon: cleiocrinus
+        new: true
+        children:
+        - taxon: regius_billings_1857
+          new: true
+      - taxon: lecanocrinus
+        children:
+        - taxon: elegans_billings_1857_lecanocrinus
+          new: true
+        - taxon: lævis_billings_1857
+          new: true
+      - taxon: porocrinus
+        new: true
+        children:
+        - taxon: conicus_billings_1857_porocrinus
+          new: true
+    - taxon: cystideæ-order
+      children:
+      - taxon: glyptocystites
+        children:
+        - taxon: multiporus_billings_1854
+        - taxon: logani_billings_1857
+          new: true
+        - taxon: forbesi_billings_1857
+          new: true
+      - taxon: pleurocystites
+        children:
+        - taxon: squamosus_billings_1854
+        - taxon: filitextus_billings_1854
+        - taxon: robustus_billings_1854
+        - taxon: elegans_billings_1857_pleurocystites
+          new: true
+        - taxon: exornatus_billings_1857
+          new: true
+        - taxon: anticostensis_billings_1857
+          new: true
+      - taxon: comarocystites
+        notes: Citation says p. 227 but actually p. 268
+        children:
+        - taxon: punctatus_billings_1854
+      - taxon: amygdalocystites
+        children:
+        - taxon: florealis_billings_1854
+        - taxon: radiatus_billings_1854
+        - taxon: tenuistriatus_billings_1854
+    - taxon: asteriadæ-order
+      children:
+      - taxon: palæaster
+        children:
+        - taxon: stellata_billings_1857
+          new: true
+        - taxon: rigidus_billings_1857
+          new: true
+        - taxon: rugosus_billings_1857
+          new: true
+        - taxon: pulchellus_billings_1857
+          new: true
+      - taxon: palæasterina
+        notes: Noted from other source, but no new species described.
+      - taxon: palæocoma
+        children:
+        - taxon: spinosa_billings_1857
+          new: true
+        - taxon: cylindrica_billings_1857
+          new: true
+      - taxon: cyclaster
+        new: true
+        pages: 292
+        children:
+        - taxon: bigsbyi_billings_1857
+          new: true
+          pages: 293
+      - taxon: agelacrinites
+        notes: No separate genus description.
+        pages: 294
+        children:
+        - taxon: dicksoni_billings_1857
+          pages: 294
+          new: true

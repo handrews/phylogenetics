@@ -1,0 +1,6 @@
+taxonomies:
+- taxon: pentacrinus
+  children:
+  - taxon: caput medusæ_lamarck_1801
+- taxon: pentremite
+  new: true

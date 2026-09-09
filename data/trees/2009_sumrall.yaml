@@ -1,0 +1,14 @@
+taxonomies:
+- notes: Ranks included only due to editorial policy
+  taxon: edrioasteroidea
+  children:
+  - taxon: isorophida
+    children:
+    - taxon: isorophina
+      children:
+      - taxon: agelacrinitidae
+        children:
+        - taxon: neoisorophusella
+          children:
+          - taxon: maslennikovi_sumrall_2009
+            new: true

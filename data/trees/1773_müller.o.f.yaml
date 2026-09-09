@@ -1,0 +1,31 @@
+taxonomies:
+- taxon: vermes
+  children:
+  - taxon: infusoria-order
+    children:
+    - taxon: monas
+      new: true
+    - taxon: volvox
+    - taxon: enchelis
+      new: true
+    - taxon: vibrio
+      new: true
+    - taxon: cyclidium
+      new: true
+    - taxon: paramæcium
+      new: true
+    - taxon: kolpoda
+      new: true
+    - taxon: gonium
+      new: true
+    - taxon: bursaria
+      new: true
+    - taxon: cercaria
+      new: true
+    - taxon: trichoda
+      new: true
+    - taxon: vorticella
+    - taxon: brachionus
+  - taxon: helminthica-order
+    new: true
+  - taxon: testacea-order

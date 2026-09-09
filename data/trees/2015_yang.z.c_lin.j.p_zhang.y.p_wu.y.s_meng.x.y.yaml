@@ -1,0 +1,23 @@
+taxonomies:
+- taxon: blastozoa
+  children:
+  - taxon: eocrinoidea
+    children:
+    - taxon: gogiida
+      children:
+      - taxon: eocrinidae
+        children:
+        - taxon: globoeocrinus
+          children:
+          - taxon: globulus_zhao.y.l_parsley_peng.j_2008
+            type: true
+          - taxon: zhaoyuanlongensis_yang.z.c_lin.j.p_zhang.y.p_wu.y.s_meng.x.y_2015
+            new: true
+            pages: 433
+            illustrations:
+            - page: 434
+              figures: 4
+            - page: 435
+              figures: 5
+            - page: 436
+              figures: 6

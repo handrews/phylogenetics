@@ -1,0 +1,16 @@
+taxonomies:
+- taxon: vermes
+  children:
+  - taxon: infusoria-order
+  - taxon: helminthica-order
+    children:
+    - taxon: hydra
+    - taxon: tubularia
+    - taxon: nais
+      new: true
+    - taxon: lumbricus
+    - taxon: gordius
+    - taxon: ascaris
+    - taxon: hirudo
+    - taxon: fasciola
+  - taxon: testacea-order

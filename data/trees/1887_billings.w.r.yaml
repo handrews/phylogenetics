@@ -1,0 +1,20 @@
+taxonomies:
+- taxon: ottawacrinus
+  new: true
+  children:
+  - taxon: typus_billings.w.r_1887
+    type: true
+    new: true
+- taxon: calceocrinus
+  children:
+  - taxon: furcillatus_billings.w.r_1887
+    new: true
+  - taxon: rugosus_billings.w.r_1887
+    new: true
+- taxon: dendrocrinus
+  children:
+  - taxon: proboscidiatus_billings_1857 # Elkanah Billings
+    notes: |
+      Later soures note that this proboscidiatus in W. R. Billings (1887),
+      while attributed to E. Billings (1857) is not the same species, which
+      was later transferred to the genus Plicodendrocrinus.

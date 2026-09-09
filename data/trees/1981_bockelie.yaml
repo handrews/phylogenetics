@@ -1,0 +1,108 @@
+taxonomies:
+- taxon: eocrinoidea
+  children:
+  - taxon: bockiidae
+    synonyms:
+    - taxon: trachelocrinidae
+    children:
+    - taxon: bockia_hecker_1938
+      type: true
+      children:
+      - taxon: neglecta_hecker_1940
+        type: true
+      - taxon: mirabilis_bockelie_1981
+        new: true
+        pages:
+        - [129, 132]
+        illustrations:
+        - page: 129
+          figures: 2
+        - page: 130
+          figures: 3
+        - page: 131
+          figures: 4
+      - taxon: grava_bockelie_1981
+        new: true
+        pages:
+        - [132, 135]
+        illustrations:
+        - page: 133
+          figures: 5
+        - page: 134
+          figures: 6
+        - page: 135
+          figures:
+          - [7A, 7D]
+      - taxon: heintzi_bockelie_1981
+        new: true
+        pages:
+        - [135, 138]
+        illustrations:
+        - page: 135
+          figures: 7E
+        - page: 136
+          figures: 8
+        synonyms:
+        - openTaxon: caryocystis-sp_størmer_1953
+          auth: [Størmer]
+          year: 1953
+          pages: 64
+          parents:
+          - taxon: caryocystis
+      - openTaxon: bockia-sp-a_bockelie_1981
+        pages: 138
+        illustrations:
+        - page: 140
+          figures:
+          - [11F, 11G]
+    - taxon: trachelocrinus
+    removed:
+    - taxon: balanticystis
+  - taxon: cryptocrinitidae
+    children:
+    - taxon: cryptocrinites
+      children:
+      - taxon: laevis_pander_1830
+        type: true
+        synonyms:
+        - parents:
+          - taxon: echinosphaerites
+        illustrations:
+        - page: 139
+          figures:
+          - [10B, 10E]
+        - page: 140
+          figures: 11K
+      - taxon: similis_bockelie_1981
+        provisional: true
+        new: true
+        pages:
+        - [139, 141]
+        illustrations:
+        - page: 139
+          figures: 10A
+        - page: 140
+          figures:
+          - 11H
+          - 11J
+  - taxon: rhipidocystidae
+    children:
+    - taxon: rhipidocystis
+      children:
+      - taxon: gigas_jaekel_1901
+        type: true
+      - taxon: norvegica_bockelie_1981
+        new: true
+        pages:
+        - [142, 147]
+        illustrations:
+        - page: 140
+          figures:
+          - [11A, 11F]
+        - page: 143
+          figures:
+          - [12A, 12C]
+          - 12H
+        - page: 144
+          figures:
+          - [13A, 13D]

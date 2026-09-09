@@ -1,0 +1,376 @@
+taxonomies:
+- taxon: edrioasteroidea
+  synonyms:
+  - taxon: thyroidea
+  - taxon: agelacrinoidea
+  - taxon: cystasteroidea
+  - taxon: thecoidea
+  - taxon: cystostellaroidea
+  children:
+  - taxon: agelacrinitidae
+    corrected:
+      taxon: agelacrinidae
+    synonyms:
+    - taxon: thecocystidae
+    children:
+    - taxon: stromatocystites
+      synonyms:
+      - taxon: stromatocystis
+        notes: post-dates correct Stromatocystites
+      children:
+      - taxon: pentangularis_pompeckj_1896
+        type: true
+      - taxon: balticus_jaekel_1899
+      - taxon: walcotti_schuchert_1919
+        children:
+        - taxon: minor_schuchert_1919
+    - taxon: walcottidiscus
+      new: true
+      children:
+      - taxon: typicalis_bassler_1935
+        type: true
+        new: true
+    - taxon: cystaster
+      synonyms:
+      - taxon: thecocystis
+      children:
+      - taxon: granulatus_hall_1871
+        type: true
+        synonyms:
+        - taxon: granulatus_hall_1871
+          parents:
+          - taxon: cystaster-subgenus
+          - taxon: hemicystites
+    - taxon: cincinnatidiscus
+      new: true
+      synonyms:
+      - taxon: hemicystites
+        pars: true
+        notes: given as "Hemicystites of authors not Hall"
+      children:
+      - taxon: stellatus_hall_1866
+        type: true
+        synonyms:
+        - taxon: stellatus_hall_1866
+          parents:
+          - taxon: hemicystites-subgenus
+          - taxon: agelacrinus
+      - taxon: carnensis_foerste_1914
+    - taxon: carneyella
+      children:
+      - taxon: pilea_hall_1866
+        type: true
+        synonyms:
+        - taxon: pileus_hall_1866
+          parents:
+          - taxon: lepidodiscus-subgenus
+          - taxon: agelacrinus
+      - taxon: vetusta_foerste_1914
+      - taxon: valcourensis_clark_1920
+        provisional: true
+      - taxon: cincinnatiensis_bassler_1935
+        new: true
+        notes: |
+          Claimed as new sp. but synonymized with the same species name
+          from Hall?  The Treatise credits to Hall, and does not list
+          the subgenus which also appears to pre-date (if credited to
+          Hall 1866) the genus Lepidodiscus from Meek and Worthen 1868
+          (per PBDB and Treaties) or 1869 (per IRMNG).
+        synonyms:
+        - taxon: cincinnatiensis_hall_1866
+          notes: |
+            noted as Agelacrinus (Lepidodiscus) cincinnatiensis Hall
+            (not Roemer); see Isorophus cincinnatiensis for Roemer's species
+          parents:
+          - taxon: lepidodiscus-subgenus
+          - taxon: agelacrinus
+    - taxon: isorophus
+      children:
+      - taxon: cincinnatiensis_roemer_1851
+        type: true
+        synonyms:
+        - taxon: cincinnatiensis_roemer_1851
+          parents:
+          - taxon: agelacrinus
+      - taxon: austini_foerste_1914
+        synonyms:
+        - taxon: austini_foerste_1914
+          parents:
+          - taxon: agelacrinus
+      - taxon: faberi_miller.s.a_1894
+        synonyms:
+        - taxon: faberi_miller.s.a_1894
+          parents:
+          - taxon: agelacrinus
+      - taxon: warrenensis_james_1883
+        synonyms:
+        - taxon: warrenensis_james_1883
+          parents:
+          - taxon: agelacrinus
+      - taxon: holbrooki_james_1878
+        synonyms:
+        - taxon: holbrooki_james_1878
+          parents:
+          - taxon: agelacrinus
+    - taxon: isorophusella
+      new: true
+      children:
+      - taxon: inconditus_raymond_1915
+        type: true
+        synonyms:
+        - taxon: inconditus_raymond_1915
+          parents:
+          - taxon: lebetodiscus
+    - taxon: streptaster
+      children:
+      - taxon: vorticellatus_hall_1866
+        type: true
+        synonyms:
+        - taxon: vorticellata_hall_1866
+          parents:
+          - taxon: agelacrinus
+      - taxon: reversatus_foerste_1914
+      - taxon: septembrachiatus_miller.s.a_dyer_1878
+    - taxon: lebetodiscus
+      children:
+      - taxon: dicksoni_billings_1857
+        type: true
+        synonyms:
+        - taxon: dicksoni_billings_1857
+          parents:
+          - taxon: agelacrinites
+      - taxon: loriformis_raymond_1915
+    - taxon: foerstediscus
+      new: true
+      children:
+      - taxon: grandis_bassler_1935
+        type: true
+        new: true
+    - taxon: pyrgocystis
+      children:
+      - taxon: sardesoni_bather_1915
+        type: true
+      - taxon: sulcatum_aurivillius_1892
+        synonyms:
+        - taxon: sulcatum_aurivillius_1892
+          parents:
+          - taxon: scalpellum
+      - taxon: procerum_aurivillius_1892
+        synonyms:
+        - taxon: procerum_aurivillius_1892
+          parents:
+          - taxon: scalpellum
+      - taxon: cylindricum_aurivillius_1892
+        synonyms:
+        - taxon: cylindricum_aurivillius_1892
+          parents:
+          - taxon: scalpellum
+      - taxon: octogona_richter.r_1930
+      - taxon: grayae_bather_1915
+      - taxon: ansticei_bather_1915
+      - taxon: batheri_ruedemann_1925
+    - taxon: hemicystites
+      synonyms:
+      - taxon: hemicystis
+      children:
+      - taxon: parasitica_hall_1852
+        type: true
+      - taxon: bellulus_barrande_1887
+        synonyms:
+        - taxon: bellulus_barrande_1887
+          parents:
+          - taxon: agelacrinites
+      - taxon: bohemicus_barrande_1887_agelacrinites
+        synonyms:
+        - taxon: bohemicus_barrande_1887_agelacrinites
+          parents:
+          - taxon: agelacrinites
+      - taxon: confertus_barrande_1887
+        synonyms:
+        - taxon: confertus_barrande_1887
+          parents:
+          - taxon: agelacrinites
+      - taxon: latiusculus_barrande_1887
+        synonyms:
+        - taxon: latiusculus_barrande_1887
+          parents:
+          - taxon: agelacrinites
+      - taxon: simplex_barrande_1887
+        synonyms:
+        - taxon: simplex_barrande_1887
+          parents:
+          - taxon: agelacrinites
+      - taxon: tener_barrande_1887
+        synonyms:
+        - taxon: tener_barrande_1887
+          parents:
+          - taxon: agelacrinites
+      - taxon: velatus_barrande_1887
+        synonyms:
+        - taxon: velatus_barrande_1887
+          parents:
+          - taxon: agelacrinites
+      - taxon: rectiradiatus_shideler_1918
+        synonyms:
+        - taxon: rectiradiatus_shideler_1918
+          parents:
+          - taxon: agelacrinites
+      - taxon: billingsi_chapman_1860
+        synonyms:
+        - taxon: billingsi_chapman_1860
+          parents:
+          - taxon: agelacrinus
+      - taxon: youngi_raymond_1915
+        synonyms:
+        - taxon: youngi_raymond_1915
+          parents:
+          - taxon: lebetodiscus
+      - taxon: chapmani_raymond_1915
+        synonyms:
+        - taxon: chapmani_raymond_1915
+          parents:
+          - taxon: lebetodiscus
+    - taxon: thresherodiscus
+      children:
+      - taxon: ramosus_foerste_1914
+        type: true
+    - taxon: agelacrinites
+      synonyms:
+      - taxon: agelacystis
+      - taxon: haplocystites
+      - taxon: haplocystis
+      children:
+      - taxon: hamiltonensis_vanuxem_1842
+        type: true
+      - taxon: ephraemovianus_bogolubov_1926
+      - taxon: hanoveri_thomas_1924
+      - taxon: rhenanus_roemer_1851
+    - taxon: discocystis
+      synonyms:
+      - taxon: echinodiscus_worthen_miller_1883
+        notes: Worthen and Miller 1883 (not Agassiz)
+      - taxon: ageladiscus
+      children:
+      - taxon: optatus_worthen_miller_1883
+        type: true
+        synonyms:
+        - taxon: optatus_worthen_miller_1883
+          parents:
+          - taxon: echinodiscus_worthen_miller_1883
+        - taxon: kaskaskiensis_hall_1858
+          parents:
+          - taxon: agelacrinus-subgenus_discocystis
+          - taxon: discocystis
+      - taxon: sampsoni_miller.s.a_1891
+        synonyms:
+        - taxon: sampsoni_miller.s.a_1891
+          parents:
+          - taxon: echinodiscus
+    - taxon: cooperidiscus
+      new: true
+      children:
+      - taxon: alleganius_clarke_1901
+        type: true
+        synonyms:
+        - taxon: alleganius_clarke_1901
+          parents:
+          - taxon: lepidodiscus
+    - taxon: lepidodiscus
+      children:
+      - taxon: squamosus_meek_worthen_1868
+        type: true
+        synonyms:
+        - taxon: squamosus_meek_worthen_1868
+          parents:
+          - taxon: agelacrinites
+      - taxon: beecheri_clarke_1901
+        synonyms:
+        - taxon: beecheri_clarke_1901
+          parents:
+          - taxon: agelacrinites
+      - taxon: buttsi_clarke_1901
+        synonyms:
+        - taxon: buttsi_clarke_1901
+          parents:
+          - taxon: agelacrinites
+      - taxon: lebouri_sladen_1879
+      - taxon: milleri_sharman_newton_1892
+    - taxon: ulrichidiscus
+      new: true
+      children:
+      - taxon: pulaskiensis_miller.s.a_gurley_1894
+        type: true
+        synonyms:
+        - taxon: pulaskiensis_miller.s.a_gurley_1894
+          parents:
+          - taxon: agelacrinus
+  - taxon: edrioasteridae
+    children:
+    - taxon: edrioaster
+      synonyms:
+      - taxon: cyclaster_billings_1857
+      - taxon: edriocystis
+      - taxon: aesiocystites
+      - taxon: aesiocystis
+      children:
+      - taxon: bigsbyi_billings_1857
+        type: true
+        synonyms:
+        - taxon: bigsbyi_billings_1857
+          parents:
+          - taxon: cyclaster_billings_1857
+      - taxon: buchianus_forbes_1848
+        synonyms:
+        - taxon: buchianus_forbes_1848
+          parents:
+          - taxon: agelacrinites
+      - taxon: levis_bather_1914
+      - taxon: saratogensis_ruedemann_1912
+      - taxon: priscus_miller.s.a_gurley_1894
+        synonyms:
+        - taxon: priscus_miller.s.a_gurley_1894
+          parents:
+          - taxon: aesiocystites
+    - taxon: dinocystis
+      children:
+      - taxon: barroisi_bather_1898
+        type: true
+  - taxon: cyathocystidae
+    children:
+    - taxon: cyathocystis
+      children:
+      - taxon: plautini_schmidt_1880
+        type: true
+    - taxon: cyathotheca
+      children:
+      - taxon: suecica_jaekel_1927
+        type: true
+  - taxon: astrocystitidae
+    new: true
+    provisional: true
+    altPlacements:
+    - taxon: blastoidea
+    notes: |
+      given as "new name" and only Steganoblastidae is mentioned as
+      a synonym, but I think this is a nomen. correct. to match the
+      original Atrocystites name instead of the unneessary replacement
+      name Steganoblastus.
+    corrected:
+      taxon: steganoblastidae
+    synonyms:
+    - taxon: steganoblastidae
+    children:
+    - taxon: astrocystites
+      synonyms:
+      - taxon: steganoblastus
+  - openTaxon: edrioasteroidea-order-uncertain_bassler_1935
+    notes: |
+      The note "(order undertain)" is odd because no orders had been
+      defined for the Edrioasteroidea, and would not be for decades.
+    children:
+    - taxon: cyclocystoididae
+      provisional: true
+      children:
+      - taxon: cyclocystoides
+      - taxon: narrawayella
+      - taxon: savagella

@@ -1,0 +1,12 @@
+taxonomies:
+- taxon: parsleya
+  new: true
+  synonyms:
+  - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
+  children:
+  - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
+    type: true
+    synonyms:
+    - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
+      parents:
+      - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010

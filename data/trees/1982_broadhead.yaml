@@ -1,0 +1,47 @@
+taxonomies:
+- taxon: eocrinoidea
+  children:
+  - taxon: imbricata
+    children:
+    - taxon: lepidocystidae
+      children:
+      - taxon: lepidocystis
+      - taxon: kinzercystis
+  - taxon: gogiida
+    new: true
+    synonyms:
+    - openTaxon: eocrinoidea-unnamed-order-1_sprinkle_1973
+    children:
+    - taxon: eocrinidae
+      children:
+      - taxon: gogia
+      - taxon: acanthocystites
+      - taxon: akadocrinus
+      - taxon: nolichuckia
+    - taxon: lichenoididae
+      children:
+      - taxon: lichenoides
+    - taxon: rhopalocystidae
+      children:
+      - taxon: rhopalocystis
+    - taxon: palaeocystitidae
+      children:
+      - taxon: palaeocystites
+      - taxon: schuchertocystis
+      - taxon: ulrichocystis
+      - taxon: bromidocystis
+  - taxon: ascocystitida
+    new: true
+    synonyms:
+    - openTaxon: eocrinoidea-unnamed-order-2_sprinkle_1973
+    children:
+    - taxon: ascocystitidae
+      children:
+      - taxon: ascocystites
+    - taxon: macrocystellidae
+      children:
+      - taxon: macrocystella
+    - openTaxon: eocrinoidea-indeterminate-family-2_sprinkle_1973
+      children:
+      - taxon: cambrocrinus
+      - taxon: eocystites

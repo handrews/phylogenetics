@@ -1,0 +1,19 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: edrioasterida
+      children:
+      - taxon: sprinkleoglobus
+        provisional: true
+        children:
+        - taxon: lloydi_sprinkle_1985
+          type: true
+        - taxon: spencensis_wen.r.q_babcock_peng.j_robison_2019
+          moved:
+            taxon: totiglobus
+          modifier: n. comb.
+          specimens:
+            paratypes:
+            - PE 93415

@@ -1,0 +1,15 @@
+taxonomies:
+- taxon: ctenocystoidea
+  children:
+  - taxon: etoctenocystis
+    new: true
+    children:
+    - taxon: bohemica_fatka_kordule_1985
+      type: true
+      new: true
+      synonyms:
+      - taxon: briareus_barrande_1887
+        parents:
+        - taxon: acanthocystites
+      specimens:
+        holotype: OF 002

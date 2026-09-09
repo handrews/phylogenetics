@@ -1,0 +1,309 @@
+taxonomies:
+- taxon: echinozoa
+  notes: Credited to Matsumoto 1929
+  children:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: camptostromatoida
+      children:
+      - taxon: camptostromatidae
+        children:
+        - taxon: camptostroma
+    - taxon: stromatocystitida
+      children:
+      - taxon: stromatocystitidae
+        children:
+        - taxon: stromatocystites
+    - openTaxon: edrioasteroidea-order-uncertain_guensburg_sprinkle_1994
+      children:
+      - openTaxon: edrioasteroidea-family-uncertain_guensburg_sprinkle_1994
+        children:
+        - taxon: cambraster
+        - taxon: walcottidiscus
+    - taxon: isorophida
+      children:
+      - openTaxon: isorophida-family-uncertain_guensburg_sprinkle_1994
+        children:
+        - taxon: edriodiscus
+        - taxon: stromatocystites
+          quoted: true
+          children:
+          - taxon: walcotti_schuchert_1919
+      - taxon: agelacrinitidae
+        emended: true
+        children:
+        - taxon: agelacrinites
+        - taxon: cooperidiscus
+        - taxon: curvitriordo
+        - taxon: deltadiscus
+          new: true
+          children:
+          - taxon: superbus_guensburg_sprinkle_1994
+            type: true
+            new: true
+        - taxon: dinocystis
+        - taxon: discocystis
+        - taxon: hadrochthus
+        - taxon: hemicystites
+        - taxon: hystrichopsydrax
+        - taxon: isorophus
+        - taxon: isorophusella
+        - taxon: krama
+        - taxon: lepidodiscus
+        - taxon: lispidecodus
+        - taxon: neoisorophusella
+        - taxon: postibulla
+        - taxon: rectitriordo
+        - taxon: savagella
+        - taxon: spiraclavus
+        - taxon: stalticodiscus
+        - taxon: thresherodiscus
+        - taxon: timeischytes
+        - taxon: ulrichidiscus
+      - taxon: lebetodiscidae
+        modifier: nomen transl.
+        emended: true
+        children:
+        - taxon: lebetodiscinae
+          modifier: nomen transl.
+          children:
+          - taxon: argodiscus
+          - taxon: belochthos
+          - taxon: chatsworthia
+          - taxon: cystaster
+          - taxon: euhydrodiskos
+          - taxon: floridiscus
+          - taxon: foerstediscus
+          - taxon: hadrodiscus
+          - taxon: lebetodiscus
+          - taxon: streptaster
+        - taxon: carneyellinae
+          modifier: nomen transl.
+          children:
+          - taxon: carneyella
+          - taxon: cryptogoleus
+        - taxon: pyrgocystinae
+          modifier: nomen transl.
+          emended: true
+          children:
+          - taxon: archaepyrgus
+            new: true
+            children:
+            - taxon: anitae_guensburg_sprinkle_1994
+              type: true
+              new: true
+          - taxon: epipaston
+          - taxon: fanulodiscus
+            new: true
+            children:
+            - taxon: crystalensis_guensburg_sprinkle_1994
+              type: true
+              new: true
+          - taxon: pyrgocystis
+    - taxon: edrioasterida
+      emended: true
+      children:
+      - taxon: edrioasterina
+        modifier: nomen transl.
+        emended: true
+        children:
+        - taxon: totiglobidae
+          children:
+          - taxon: totiglobus
+          - taxon: totiglobus
+            quoted: true
+            children:
+            - taxon: lloydi_sprinkle_1985
+        - taxon: edrioasteridae
+          children:
+          - taxon: edrioaster
+          - taxon: edriophus
+          - taxon: paredriophus
+            new: true
+            children:
+            - taxon: elongatus_guensburg_sprinkle_1994
+              type: true
+              new: true
+      - taxon: edrioblastoidina
+        modifier: nomen transl.
+        emended: true
+        children:
+        - taxon: astrocystitidae
+          emended: true
+          children:
+          - taxon: astrocystites
+          - taxon: cambroblastus
+          - taxon: lampteroblastus
+            new: true
+            children:
+            - taxon: hintzei_guensburg_sprinkle_1994
+              type: true
+              new: true
+        - taxon: cyathocystidae
+          emended: true
+          children:
+          - taxon: cyathocystinae
+            modifier: nomen transl.
+            emended: true
+            children:
+            - taxon: cyathocystis
+              synonyms:
+              - taxon: cyathotheca
+                notes: |
+                  In text, notes that Cyathotheca is probably a junior
+                  synonym as its difference from Cyathocystis is likely
+                  to be preservational in nature.
+          - taxon: rhenopyrginae
+            modifier: nomen transl.
+            emended: true
+            children:
+            - taxon: rhenopyrgus
+phylogenies:
+- treeType: cladogram
+  methodology: preferred parsimony A
+  tree:
+    taxon: edrioasteroidea
+    children:
+    - children:
+      - taxon: stromatocystites
+      - children:
+        - children:
+          - children:
+            - taxon: cambraster
+            - children:
+              - taxon: edriodiscus
+              - children:
+                - children:
+                  - children:
+                    - taxon: pyrgocystinae
+                    - taxon: lebetodiscinae
+                  - taxon: chatsworthia
+                - taxon: agelacrinitidae
+          - taxon: stromatocystites
+            quoted: true
+            children:
+            - taxon: walcotti_schuchert_1919
+        - children:
+          - children:
+            - taxon: totiglobus
+            - children:
+              - taxon: edrioasteridae
+              - children:
+                - taxon: astrocystitidae
+                - children:
+                  - taxon: rhenopyrgus
+                  - taxon: cyathocystis
+          - taxon: totiglobus
+            quoted: true
+            children:
+            - taxon: lloydi_sprinkle_1985
+    - taxon: camptostroma
+- treeType: cladogram
+  methodology: preferred parsimony B
+  tree:
+    taxon: edrioasteroidea
+    children:
+    - children:
+      - children:
+        - taxon: stromatocystites
+        - children:
+          - children:
+            - taxon: cambraster
+            - children:
+              - taxon: edriodiscus
+              - children:
+                - children:
+                  - children:
+                    - taxon: pyrgocystinae
+                    - taxon: lebetodiscinae
+                  - taxon: chatsworthia
+                - taxon: agelacrinitidae
+          - taxon: stromatocystites
+            quoted: true
+            children:
+            - taxon: walcotti_schuchert_1919
+      - children:
+        - children:
+          - taxon: totiglobus
+          - children:
+            - taxon: edrioasteridae
+            - children:
+              - taxon: astrocystitidae
+              - children:
+                - taxon: rhenopyrgus
+                - taxon: cyathocystis
+        - taxon: totiglobus
+          quoted: true
+          children:
+          - taxon: lloydi_sprinkle_1985
+    - taxon: camptostroma
+- treeType: cladogram
+  methodology: Adams
+  tree:
+    taxon: edrioasteroidea
+    children:
+    - children:
+      - taxon: stromatocystites
+      - children:
+        - taxon: cambraster
+        - children:
+          - taxon: edriodiscus
+          - children:
+            - children:
+              - taxon: pyrgocystinae
+              - taxon: lebetodiscinae
+            - taxon: chatsworthia
+            - taxon: agelacrinitidae
+      - children:
+        - children:
+          - taxon: totiglobus
+          - children:
+            - taxon: edrioasteridae
+            - children:
+              - taxon: astrocystitidae
+              - taxon: rhenopyrgus
+              - taxon: cyathocystis
+        - taxon: totiglobus
+          quoted: true
+          children:
+          - taxon: lloydi_sprinkle_1985
+      - taxon: stromatocystites
+        quoted: true
+        children:
+        - taxon: walcotti_schuchert_1919
+    - taxon: camptostroma
+- treeType: cladogram
+  methodology: strict consensus
+  tree:
+    taxon: edrioasteroidea
+    children:
+    - children:
+      - taxon: stromatocystites
+      - children:
+        - children:
+          - taxon: cambraster
+          - children:
+            - taxon: edriodiscus
+            - children:
+              - children:
+                - taxon: pyrgocystinae
+                - taxon: lebetodiscinae
+              - taxon: chatsworthia
+              - taxon: agelacrinitidae
+        - taxon: stromatocystites
+          quoted: true
+          children:
+          - taxon: walcotti_schuchert_1919
+      - children:
+        - children:
+          - taxon: totiglobus
+          - children:
+            - taxon: edrioasteridae
+            - children:
+              - taxon: astrocystitidae
+              - taxon: rhenopyrgus
+              - taxon: cyathocystis
+        - taxon: totiglobus
+          quoted: true
+          children:
+          - taxon: lloydi_sprinkle_1985

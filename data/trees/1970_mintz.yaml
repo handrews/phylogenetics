@@ -1,0 +1,16 @@
+taxonomies:
+- taxon: crinozoa
+  children:
+  - taxon: edrioblastoidea
+    children:
+    - taxon: astrocystitidae
+      synonyms:
+      - taxon: steganoblastidae
+      children:
+      - taxon: astrocystites
+        synonyms:
+        - taxon: steganoblastus
+        children:
+        - taxon: ottawaensis_whiteaves_1897
+          type: true
+        - taxon: distans_webby_1968

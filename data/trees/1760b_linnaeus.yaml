@@ -1,0 +1,78 @@
+notes: Part II has invertebrates
+taxonomies:
+- mergeInto: [1760a_linnaeus, 0]
+  taxon: animalia
+  children:
+  - taxon: insecta
+  - taxon: vermes
+    children:
+    - taxon: intestina-order
+    - taxon: mollusca-order
+      children:
+      - taxon: limax
+      - taxon: doris
+      - taxon: tethys
+      - taxon: nereis
+      - taxon: aphrodita
+      - taxon: lernaea
+      - taxon: priapus
+      - taxon: scyllaea
+      - taxon: holothuria_linnaeus_1758
+        children:
+        - taxon: physalis_linnaeus_1758
+        - taxon: thalia_linnaeus_1758
+        - taxon: caudata_linnaeus_1758
+        - taxon: denudata_linnaeus_1758
+      - taxon: triton
+      - taxon: sepia
+      - taxon: medusa
+      - taxon: asterias
+        children:
+        - taxon: integra
+          children:
+          - taxon: luna_linnaeus_1758
+        - taxon: stellatae
+          children:
+          - taxon: rubens_linnaeus_1758
+          - taxon: glacialis_linnaeus_1758
+          - taxon: reticulata_linnaeus_1758
+          - taxon: nodosa_linnaeus_1758
+          - taxon: aranciaca_linnaeus_1758
+          - taxon: equestris_linnaeus_1758
+          - taxon: laevigata_linnaeus_1758
+        - taxon: radiatae
+          children:
+          - taxon: planci_linnaeus_1758
+            notes: |
+              Relegated to the appendix.  Unclear if this is where accidental
+              omissions ended up or if it has other meaning.
+          - taxon: ophiura_linnaeus_1758
+          - taxon: pectinata_linnaeus_1758
+          - taxon: multiradiata_linnaeus_1758
+          - taxon: caput medusae_linnaeus_1758
+      - taxon: echinus
+        children:
+        - taxon: regulares
+          children:
+          - taxon: esculentus_linnaeus_1758
+          - taxon: globulus_linnaeus_1758
+          - taxon: sphaeroides_linnaeus_1758
+          - taxon: gratilla_linnaeus_1758
+          - taxon: lixula_linnaeus_1758
+          - taxon: saxatilis_linnaeus_1758
+          - taxon: diadema_linnaeus_1758
+          - taxon: cidaris_linnaeus_1758
+          - taxon: mamillatus_linnaeus_1758
+          - taxon: lucunter_linnaeus_1758
+          - taxon: atratus_linnaeus_1758
+        - taxon: irregulares
+          children:
+          - taxon: spatagus_linnaeus_1758
+          - taxon: lacunosus_linnaeus_1758
+          - taxon: rosaceus_linnaeus_1758
+          - taxon: reticulatus_linnaeus_1758
+          - taxon: placenta_linnaeus_1758
+          - taxon: orbiculus_linnaeus_1758
+    - taxon: testacea-order
+    - taxon: lithophyta
+    - taxon: zoophyta

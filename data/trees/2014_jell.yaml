@@ -1,0 +1,35 @@
+taxonomies:
+- taxon: ophiuroidea
+  children:
+  - openTaxon: ophiuroidea-fam-uncertaion_jell_2014
+    children:
+    - taxon: maydena
+      new: true
+      pages:
+      - [531, 532]
+      children:
+      - taxon: roadsidensis_jell_2014
+        type: true
+        new: true
+        pages:
+        - [532, 533]
+        illustrations:
+        - page: 533
+          figures: 3
+- taxon: edrioasteroidea
+  children:
+  - taxon: isorophida
+    children:
+    - taxon: reciprocodiscus
+      new: true
+      pages:
+      - [533, 534]
+      children:
+      - taxon: transambus_jell_2014
+        type: true
+        new: true
+        pages:
+        - [534, 536]
+        illustrations:
+        - page: 535
+          figures: 4

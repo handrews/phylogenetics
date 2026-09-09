@@ -1,0 +1,33 @@
+taxonomies:
+- taxon: edrioasteroidea
+  children:
+  - openTaxon:
+      edrioasteroidea-order-uncertain_zhao.y.l_sumrall_parsley_peng.j_2010
+    children:
+    - openTaxon:
+        edrioasteroidea-family-uncertain_zhao.y.l_sumrall_parsley_peng.j_2010
+      children:
+      - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
+        new: true
+        children:
+        - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
+          type: true
+          new: true
+          specimens:
+            holotype: GM 3428
+            paratypes:
+            - GM 70
+            - GM 746
+            - GM 1331
+            - GM 1670
+            - GM 1898
+            - GM 2013
+            - GM 2146
+            - GM 3295a
+            - GM 3295b
+            - GM 3295c
+            - GM 3035
+            - GM 3600
+            - GM 3665
+            - GM 8052
+            - GM 9292

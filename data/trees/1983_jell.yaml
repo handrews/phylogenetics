@@ -1,0 +1,55 @@
+taxonomies:
+- notes: From abstract and PBDB
+  taxon: blastoidea
+  children:
+  - taxon: fissiculata
+    children:
+    - taxon: phaenoschismatidae
+      children:
+      - taxon: sphagoblastus
+        new: true
+        children:
+        - taxon: adectus_jell_1983
+          type: true
+          new: true
+- notes: From abstract and 2nd-hand from Nardin and Bohatý (2013)
+  taxon: rhombifera-class
+  children:
+  - taxon: hillocystida
+    new: true
+    children:
+    - taxon: hillocystidae
+      new: true
+      children:
+      - taxon: hillocystis
+        new: true
+        children:
+        - taxon: atracta_jell_1983
+          type: true
+          new: true
+  - taxon: pleurocystitida
+    new: true
+    children:
+    - taxon: pleurocystitidae
+    - taxon: henicocystidae
+      new: true
+      children:
+      - taxon: henicocystis
+        new: true
+        children:
+        - taxon: darraghi_jell_1983
+          type: true
+          new: true
+- notes: From abstract and PBDB
+  taxon: echinozoa
+  children:
+  - taxon: ophiocistioidea
+    children:
+    - taxon: gillocystis
+      new: true
+      children:
+      - taxon: polypoda_jell_1983
+        type: true
+        new: true
+      - taxon: runcinata_jell_1983
+        new: true

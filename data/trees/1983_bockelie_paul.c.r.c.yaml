@@ -1,0 +1,41 @@
+taxonomies:
+- taxon: edrioasteroidea
+  children:
+  - taxon: cyathocystida
+    emended: true
+    notes: nom. transl. from suborder cyathocystina
+    children:
+    - taxon: cyathocystidae
+      children:
+      - taxon: cyathocystis
+        children:
+        - taxon: plautinae_schmidt_1879
+          type: true
+        - taxon: rhizophora_schmidt_1889
+          notes: Given as Jaekel (1899)?
+        - taxon: oklahomae_strimple_graffham_1955
+          notes: Given as Bell (1982)?
+      - taxon: cyathotheca
+        children:
+        - taxon: suecica_jaekel_1927
+          type: true
+        - taxon: corallum_jaekel_1918
+  - notes: This part from the paper's text, order and suborder assumed.
+    taxon: isorophida
+    children:
+    - openTaxon: isorophida-indeterminate-suborder_bockelie_paul.c.r.c_1983
+      children:
+      - openTaxon: isorophida-indenterminate_family_bockelie_paul.c.r._1983
+        children:
+        - taxon: timeischytes
+        - taxon: hadrochthus
+phylogenies:
+- treeType: diagram
+  notes: Ordinal diagram of Edrioasteroidea
+  tree:
+    taxon: stromatocystitida
+    children:
+    - taxon: cyathocystida
+    - taxon: edrioasterida
+      children:
+      - taxon: isorophida

@@ -1,0 +1,8 @@
+notes: Second-hand information, no scan available.
+taxonomies:
+- taxon: echino-encrinites
+  new: true
+  children:
+  - taxon: senckenbergii_meyer_1826
+    notes: Unclear if actual spelling "Senkenbergii" or "Senckenbergii"
+    new: true

@@ -1,0 +1,45 @@
+taxonomies:
+- taxon: blastozoa
+  children:
+  - taxon: eocrinoidea
+    children:
+    - taxon: gogiida
+      children:
+      - taxon: lyracystidae
+        diagnosis: |
+          Gogiid eocrinoids with ridged thecal plates having few epispires,
+          three lyre- or heart-shaped, erect, exothecal ambulacra with
+          endotomous brachioles, and a long, thin, multiplated, attachment
+          stalk.
+        children:
+        - taxon: balangicystis
+          emended: true
+          notes: Says "Revised diagnosis" rather than emended.
+          diagnosis: |
+            Theca small, cup-shaped to rounded conical, 23-25 small, thick,
+            heavily ridged plates per side with scattered epispires, domed
+            summit with smaller plates. Three(?) lyre-shaped exothecal
+            ambulacra branching off summit, up to 14 thin brachioles with
+            high cover plates extending up center of lyre; ambulacral trunks
+            biserial, slightly rugose, large erect spines protecting trunk
+            food groove. Stalk relatively long, thin, with tiny bulbous
+            to slightly spiny plates; preserved distal tip slightly expanded
+            and rounded.
+          children:
+          - taxon: rotundus_parsley_zhao.y.l_2006
+            type: true
+        - taxon: lyracystis
+          diagnosis: |
+            Theca large, cup-shaped to globular, both vertical and horizontal
+            primary ridges present; about 60, small-to-medium, ridged plates
+            per side, scattered epispires between ridges; summit domed to
+            protuberant, bearing tiny plates with epispires. Three large,
+            lyre-shaped, exothecal ambulacra branching off summit, lateral
+            trunks biserial or triserial, no spines present over wide,
+            adoral, food groove; up to 44 brachioles with low cover plates
+            attached between trunks. Stalk very long, thin, with small domed,
+            ridged, or spiny plates, no distal holdfast preserved.
+          children:
+          - taxon: radiata_sprinkle_1973
+            type: true
+          - taxon: reesei_sprinkle_collins.d_2006

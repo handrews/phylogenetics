@@ -1,0 +1,126 @@
+taxonomies:
+- notes: |
+    Traditional classification (based on Bell 1980, but with later additions)
+  taxon: edrioasteroidea
+  children:
+  - taxon: stromatocystitida
+    notes: |
+      Termier and Termier 1969 instead of Bell 1980, but AFAICT without
+      seeing the full paper, it did not erect the formal latin taxon.
+    children:
+    - taxon: stromatocystitidae
+    - taxon: cambrasteridae
+  - taxon: edrioasterida
+    children:
+    - taxon: edrioasteridae
+    - taxon: totiglobidae
+  - taxon: isorophida
+    children:
+    - taxon: lebetodiscina
+      children:
+      - taxon: lebetodiscidae
+      - taxon: carneyellidae
+    - taxon: isorophina
+      children:
+      - taxon: hemicystitidae
+        synonyms:
+        - taxon: isorophidae
+      - taxon: agelacrinitidae
+    - openTaxon: isorophida-uncertain-suborder_bell.b.m_1976
+      children:
+      - taxon: pyrgocystidae
+      - taxon: lispidecodidae
+      - taxon: rhenocystidae
+  - taxon: cyathocystida
+    notes: |
+      Credits Bockelie and Paul (1983), but they credit Bell based on
+      establishment of suborder Cyathocystina, which they translated
+      to an order.
+    children:
+    - taxon: cyathocystidae
+- notes: Revised classification (A. B. Smith 1985)
+  children:
+  - taxon: stromatocystites
+  - taxon: edrioasteroidea
+    rank: Plesion
+    children:
+    - taxon: edrioasterida
+      children:
+      - taxon: totiglobidae
+      - taxon: edrioasteridae
+    - taxon: isorophida
+      children:
+      - taxon: cambraster
+      - taxon: edriodiscus
+      - taxon: cyclocystoididae
+      - taxon: agelacrinitidae
+        children:
+        - taxon: isorophinae
+        - taxon: lebetodiscinae
+    - taxon: cyathocystida
+      emended: true
+      notes: sedis mutabilis
+      children:
+      - taxon: pyrgocystidae
+      - taxon: cyathocystidae
+- notes: Systematic paleontology, no higher taxa given.
+  children:
+  - taxon: stromatocystites
+    children:
+    - taxon: pentangularis_pompeckj_1896
+      type: true
+    - taxon: walcotti_schuchert_1919
+    - taxon: balticus_jaekel_1899
+      notes: Recommend treating as nomen dubium due to lost specimens.
+  - taxon: walcottidiscus
+    children:
+    - taxon: typicalis_bassler_1935
+      type: true
+      synonyms:
+      - taxon: magister_bassler_1936
+  - taxon: totiglobus
+    children:
+    - taxon: nimius_bell.b.m_sprinkle_1978
+      type: true
+  - taxon: cambraster
+    children:
+    - taxon: cannati_miquel_1894
+      type: true
+    - taxon: tastudorum_jell_burrett_banks_1985
+  - taxon: edriodiscus
+    children:
+    - taxon: primotica_henderson_shergold_1971
+      type: true
+phylogenies:
+- treeType: cladogram
+  tree:
+    children:
+    - taxon: stromatocystites
+    - bracket: edrioasteroidea
+      children:
+      - bracket: edrioasterida
+        children:
+        - bracket: edrioasteridae
+          children:
+          - children:
+            - taxon: edriophus
+            - taxon: edrioaster
+          - taxon: walcottidiscus
+        - taxon: totiglobus
+      - bracket: cyathocystida
+        children:
+        - taxon: cyathocystidae
+        - taxon: pyrgocystidae
+      - bracket: isorophida
+        children:
+        - taxon: cambraster
+        - children:
+          - taxon: edriodiscus
+            children:
+            - taxon: cyclocystoididae
+              children:
+              - bracket: agelacrinitidae
+                taxon: savagella
+                children:
+                - taxon: isorophinae
+                - taxon: lebetodiscinae

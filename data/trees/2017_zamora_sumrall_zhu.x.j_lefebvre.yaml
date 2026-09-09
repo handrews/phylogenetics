@@ -1,0 +1,54 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: blastozoa
+    children:
+    - taxon: rhombifera-class
+      quoted: true
+      children:
+      - taxon: glyptocystitida-order
+        children:
+        - taxon: sanducystis
+          new: true
+          children:
+          - taxon: sinensis_zamora_sumrall_zhu.x.j_lefebvre_2017
+            new: true
+            type: true
+            specimens:
+              holotype: NIGPAS163198
+              paratypes:
+              - NIGPAS163199
+              - NIGPAS163210
+        - taxon: ridersiidae
+          children:
+          - taxon: ridersia
+phylogenies:
+- treeType: cladogram
+  tree:
+    children:
+    - bracket: glyptocystitida-order
+      children:
+      - taxon: ridersia
+      - children:
+        - taxon: sanducystis
+        - children:
+          - children:
+            - taxon: macrocystella
+            - taxon: cuniculocystis
+            - children:
+              - children:
+                - children:
+                  - taxon: pleurocystites
+                  - children:
+                    - taxon: lepadocystis
+                    - taxon: scoliocystis
+                    - taxon: echinoencrinites
+                - taxon: cheirocystis
+                - taxon: glyptocystites
+              - taxon: cheirocrinus
+          - taxon: barroubiocystis
+          - taxon: velieuxicystis
+    - taxon: stephanocrinus
+      outgroup: true
+    - taxon: hemicosmites
+      outgroup: true

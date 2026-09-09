@@ -1,0 +1,124 @@
+taxonomies:
+- taxon: lithozoa
+  pages:
+  - [100, 105]
+  children:
+  - taxon: bolboporites
+    pages: 106
+    new: true
+    children:
+    - taxon: semiglobosa_pander_1830
+      pages: 107
+      new: true
+      illustrations:
+      - plate: II
+        figures:
+        - 1
+    - taxon: triangularis_pander_1830
+      pages: 107
+      new: true
+      illustrations:
+      - plate: II
+        figures:
+        - 2
+    - taxon: uncinata_pander_1830
+      pages: 107
+      new: true
+      illustrations:
+      - plate: II
+        figures:
+        - 3
+    - taxon: mitralis_pander_1830
+      pages: 107
+      new: true
+      illustrations:
+      - plate: II
+        figures:
+        - 4a
+        - 4b
+- taxon: echinosphaerites
+  pages: 141
+  children:
+  - taxon: aurantium_gyllenhaal_1772
+    new: true
+    pages: 144
+    illustrations:
+    - plate: II
+      figures:
+      - 21
+    - plate: XXIX
+      figures:
+      - [2a, 2b]
+      - [3a, 3b]
+    synonyms:
+    - authority:
+        source: 1821_wahlenberg
+        pages: 52
+    - authority:
+        source: 1772_gyllenhaal
+        pages: 245
+        illustrations:
+        - plate: VIII
+          figures:
+          - [4, 5]
+        - plate: IX
+      parents:
+      - taxon: echinus
+  - taxon: malum_pander_1830
+    new: true
+    pages: 145
+    illustrations:
+    - plate: XXIX
+      figures:
+      - [1a, 1c]
+  - taxon: oblonga_pander_1830
+    new: true
+    pages: 146
+    illustrations:
+    - plate: II
+      figures:
+      - [22, 23]
+  - taxon: angulosa_pander_1830
+    new: true
+    pages: 146
+    illustrations:
+    - plate: II
+      figures:
+      - [27, 29]
+    - plate: XXVIII
+      figures:
+      - 11
+  - taxon: striata_pander_1830
+    new: true
+    pages: 147
+    illustrations:
+    - plate: II
+      figures:
+      - [30, 32]
+    - plate: XXVIII
+      figures:
+      - 12
+    synonyms:
+    - taxon: granatum_wahlenberg_1821
+      pages: 53
+      questionable: true
+      notes: |
+        Given as "(Echinosph. Granatum? Wahlenberg, p. 53.)",
+        but there is no indication of a questionable taxon,
+        although the referenced figure is in another source.
+        It is unclear from Pander's text what the question mark
+        means here.
+  - taxon: laevis_pander_1830
+    new: true
+    pages: 147
+    illustrations:
+    - plate: II
+      figures:
+      - [24, 26]
+  - affTaxon: laevis_pander_1830
+    pages:
+    - [147, 148]
+    illustrations:
+    - plate: II
+      figures:
+      - [33, 35]

@@ -1,0 +1,25 @@
+taxonomies:
+- taxon: edrioasteroidea
+  children:
+  - taxon: edrioasterida
+    children:
+    - taxon: edrioasterina
+      children:
+      - taxon: edrioasteridae
+        children:
+        - taxon: pseudedriophus
+          new: true
+          children:
+          - taxon: guensburgi_sprinkle_sumrall_2015
+            type: true
+            new: true
+    - taxon: edrioblastoidina
+      children:
+      - taxon: astrocystitidae
+        children:
+        - taxon: porosublastus
+          new: true
+          children:
+          - taxon: inexpectus_sprinkle_sumrall_2015
+            type: true
+            new: true

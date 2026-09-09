@@ -1,0 +1,75 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: yorkicystitidae
+      new: true
+      children:
+      - taxon: yorkicystis
+        new: true
+        children:
+        - taxon: haefneri_zamora_rahman_sumrall_gibson_thompson_2022
+          new: true
+          type: true
+          specimens:
+            holotype: NHMUK EE 1659
+            paratypes:
+            - NHMUK EE 1660
+phylogenies:
+- treeType: cladogram
+  methodology: 50% majority-rule consenus Bayesian
+  tree:
+    children:
+    - children:
+      - taxon: helicocystis
+      - children:
+        - taxon: lepidocystis
+        - taxon: vyscystis
+        - children:
+          - taxon: titanocrinus
+          - taxon: apektocrinus
+        - taxon: ridersia
+        - taxon: gogia
+        - taxon: stromatocystites
+        - children:
+          - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
+          - taxon: yorkicystis
+          - children:
+            - taxon: argodiscus
+            - taxon: isorophus
+    - taxon: helicoplacus
+      outgroup: true
+- treeType: cladogram
+  methodology: strict consensus of four most parsimonious trees parsimony analysis
+  tree:
+    children:
+    - children:
+      - children:
+        - bracket: edrioasteroidea
+          children:
+          - children:
+            - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
+            - taxon: yorkicystis
+          - children:
+            - taxon: argodiscus
+            - taxon: isorophus
+        - children:
+          - children:
+            - bracket: blastozoa
+              children:
+              - taxon: lepidocystis
+              - taxon: vyscystis
+              - taxon: ridersia
+              - taxon: gogia
+            - bracket: crinoidea
+              children:
+              - taxon: titanocrinus
+              - taxon: apektocrinus
+          - taxon: stromatocystites
+            bracket: edrioasteroidea
+      - taxon: helicocystis
+        bracket: helicocystoidea
+    - taxon: helicoplacus
+      bracket: helicoplacoidea
+      outgroup: true

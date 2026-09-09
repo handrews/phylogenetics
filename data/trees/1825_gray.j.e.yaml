@@ -1,0 +1,75 @@
+taxonomies:
+- taxon: radiata
+  children:
+  - taxon: echinodermata
+    notes: Quinarian "Normal Group"
+    children:
+    - taxon: echinida
+      synonyms:
+      - taxon: echinides
+      children:
+      - notes: Qunarian "Normal Group"
+        children:
+        - taxon: cidaridæ     # Cidaris Lamarck
+          new: true
+          children:
+          - taxon: cidaris    # Klein, Lamarck
+          - taxon: diadema
+            new: true
+          - taxon: astropyga
+            new: true
+        - taxon: echinidæ
+          new: true
+          children:
+          - taxon: echinus    # Linnaeus, Van Phelsum
+          - taxon: echinometra # Bryerius, Van Phelsum, IRMNG credits Gray?
+            new: true
+      - notes: Quinarian "Antecetent Group"
+        children:
+        - taxon: scutellidæ
+          new: true
+          children:
+          - taxon: echinanthus  # non Van Phelsum
+            new: true
+          - taxon: lagana
+          - taxon: echinarachnius # Leske, but ICZN says not?
+            new: true
+          - taxon: echinodiscus
+          - taxon: echinocyamus
+          - taxon: cassidulus
+        - taxon: galeritidæ
+          new: true
+          children:
+          - taxon: galerites
+          - taxon: discodea
+            new: true
+          - taxon: echinanaus # Koenig, Echinoneus Van Phelsum, more pars?
+          - taxon: echinocorys
+          - taxon: echinolampas
+            new: true
+          - taxon: echinobrissus
+            new: true
+        - taxon: spatangidæ
+          new: true
+          children:
+          - taxon: spatangus  # Apparently non Lamarck, Leske???
+            new: true
+          - taxon: echinocardium
+            new: true
+          - taxon: brissus
+          - taxon: ova
+            new: true
+    - taxon: stellerida
+      synonyms:
+      - taxon: stellerides
+  - notes: Quinarian "Antecetant Group"
+    children:
+    - taxon: medusida
+      synonyms:
+      - taxon: medusaires
+    - taxon: acalephida
+      synonyms:
+      - taxon: anomales
+    - taxon: fistulida-class
+      synonyms:
+      - taxon: fistulides

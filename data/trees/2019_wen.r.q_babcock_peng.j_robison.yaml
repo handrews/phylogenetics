@@ -1,0 +1,16 @@
+taxonomies:
+- taxon: edrioasteroidea
+  children:
+  - taxon: edrioasterida
+    children:
+    - taxon: totiglobidae
+      children:
+      - taxon: totiglobus
+        children:
+        - taxon: nimius_bell.b.m_sprinkle_1978
+          type: true
+        - taxon: spencensis_wen.r.q_babcock_peng.j_robison_2019
+          new: true
+          # specimens:
+            # holotype: [KUMIP 49294A, KUMIP 49294B]
+            # paratypes:

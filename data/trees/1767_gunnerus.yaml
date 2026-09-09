@@ -1,0 +1,17 @@
+notes: |
+  Some confusion regarding date of this vs 12th ed. of Linnaeus.
+  Holothuria in the sense of sea cucumbers, as well as all of the
+  other names, are all new either here or in Linnaeus 12th edition,
+  depending on publication order.  The consensus seems to be to
+  credit frondosa to Gunnerus and everything else to Linnaeus, although
+  I cannot figure out why.  For that reason, the Holothuria here is
+  treated as Holothuria (Linnaeus 1767) instead of (Linnaeus 1758).
+taxonomies:
+- taxon: holothuria
+  children:
+  - taxon: frondosa_gunnerus_1767
+    new: true
+  - taxon: tremula_linnaeus_1767
+- taxon: actinia
+  children:
+  - taxon: senilis_linnaeus_1767

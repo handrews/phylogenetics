@@ -1,0 +1,28 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: blastozoa
+    children:
+    - taxon: eocrinoidea
+      children:
+      - taxon: gogiida
+        children:
+        - taxon: eocrinidae
+          children:
+          - taxon: gogia
+            children:
+            - taxon: prolifica_walcott_1917
+              type: true
+            - taxon: parsleyi_zamora_2009
+              new: true
+              diagnosis: |
+                Eocrinid with globular−shaped theca and large, slightly
+                convex thecal plates (slightly ornamented). Epispires are
+                simple and numerous, with a well developed raised rim
+                sometimes covered by a stereomic dome or by small plates.
+                Thecal plates are arranged into six or seven subregular
+                circlets. At least seven long, narrow biserial and spiralled
+                brachioles. Almost no stalk, except for an expanded holdfast
+                composed of tiny globular plates.
+            - openTaxon: gogia-sp_zamora_gozalo_liñán_2009
+              new: true

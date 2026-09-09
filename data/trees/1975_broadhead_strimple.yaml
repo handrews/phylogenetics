@@ -1,0 +1,13 @@
+taxonomies:
+- taxon: rhombifera-class
+  children:
+  - taxon: glyptocystitida-order
+    children:
+    - taxon: pleurocystitidae
+      children:
+      - taxon: amecystis
+        children:
+        - taxon: laevis_raymond_1921
+          type: true
+        - taxon: woodi_broadhead_strimple_1975
+          new: true

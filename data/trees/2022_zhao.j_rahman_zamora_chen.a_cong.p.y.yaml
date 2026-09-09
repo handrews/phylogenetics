@@ -1,0 +1,22 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: edrioasterida
+      children:
+      - taxon: sprinkleoglobus
+        provisional: true
+        new: true
+        children:
+        - taxon: lloydi_sprinkle_1985
+          type: true
+          moved:
+            taxon: totiglobus
+            quoted: true
+        - taxon: extenuatus_zhao.j_rahman_zamora_chen.a_cong.p.y_2022
+          new: true
+          specimens:
+            holotype: YKLP 13397
+            paratypes:
+            - YKLP 13553

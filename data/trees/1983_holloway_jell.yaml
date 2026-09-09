@@ -1,0 +1,59 @@
+taxonomies:
+- taxon: edrioasteroidea
+  children:
+  - openTaxon: edrioasteroidea-order-uncertain_holloway_jell_1983
+    children:
+    - taxon: rhenopyrgidae
+      new: true
+      children:
+      - taxon: rhenopyrgus
+        children:
+        - taxon: coronaeformis_rievers_1961
+          type: true
+          synonyms:
+          - taxon: coronaeformis_rievers_1961
+            parents:
+            - taxon: pyrgocystis
+        - taxon: grayae_bather_1915
+          synonyms:
+          - taxon: grayae_bather_1915
+            parents:
+            - taxon: pyrgocystis
+        - taxon: whitei_holloway_jell_1983
+          new: true
+  - taxon: isorophida
+    children:
+    - taxon: lebetodiscidae
+      children:
+      - taxon: epipaston
+        new: true
+        children:
+        - taxon: ixine_holloway_jell_1983
+          type: true
+          new: true
+    - taxon: pyrgocystidae
+      children:
+      - taxon: pyrgocystis
+        children:
+        - taxon: sardesoni_bather_1915
+          type: true
+        - taxon: petalus_holloway_jell_1983
+          provisional: true
+          new: true
+    - taxon: hemicystitidae
+      synonyms:
+      - taxon: isorophidae
+      children:
+      - taxon: isorophus
+        children:
+        - taxon: cincinnatiensis_roemer_1851
+          type: true
+          synonyms:
+          - taxon: cincinnatiensis_roemer_1851
+            parents:
+            - taxon: agelacrinus
+        - taxon: pannosus_holloway_jell_1983
+          new: true
+    - openTaxon: isorophida-genus-indeterminate_holloway_jell_1983
+      children:
+      - openTaxon: isorophida-sp_holloway_jell_1983

@@ -1,0 +1,249 @@
+taxonomies:
+- mergeInto: [1815_lamarck, 0]
+  taxon: animaux
+  children:
+  - taxon: infusoires
+  - taxon: polypes-class
+    children:
+    - taxon: ciliati
+      new: true
+    - taxon: denudati
+      new: true
+    - taxon: vaginati
+      new: true
+    - taxon: natantes
+      new: true
+      children:
+      - taxon: veretillum
+      - taxon: funiculina
+        new: true
+      - taxon: pennatula
+      - taxon: renilla
+        new: true
+      - taxon: virgularia
+        new: true
+      - taxon: encrinus
+        children:
+        - taxon: caput medusæ_lamarck_1801
+          synonyms:
+          - taxon: asteria_linnaeus_1767
+            parents:
+            - taxon: isis
+        - taxon: liliiformis_lamarck_1801
+      - taxon: umbellularia_lamarck_1801
+  - taxon: radiares
+    children:
+    - taxon: mollasses_radiares
+      children:
+      - taxon: anomales
+        new: true
+        children:
+        - taxon: stephanomia
+        - taxon: cestum
+          notes: Ctenophore
+          children:
+          - taxon: veneris_lesueur_1813
+        - taxon: callianira
+          notes: Ctenophore
+          new: true
+          children:
+          - taxon: triploptera_lamarck_1816
+            new: true
+          - taxon: diploptera_lamarck_1816
+            new: true
+        - taxon: beroe
+          notes: Ctenophore
+          children:
+          - taxon: cylindricus_lamarck_1816_beroe
+            new: true
+          - taxon: ovatus_bruguière_1789
+          - taxon: pileus_müller.o.f_1776
+        - taxon: noctiluca
+          new: true
+        - taxon: lucernaria
+        - taxon: physsophora
+        - taxon: rhizophysa
+        - taxon: physalia
+        - taxon: velella
+        - taxon: porpita
+      - taxon: médusaires
+        new: true
+    - taxon: échinodermes-order
+      children:
+      - taxon: stellérides
+        children:
+        - taxon: comatula
+          new: true
+          children:
+          - taxon: solaris_lamarck_1816
+            new: true
+          - taxon: multiradiata_lamarck_1816
+            new: true
+            synonyms:
+            - tentative: true
+              taxon: multiradiata_linnaeus_1758
+              notes: This is actually a different comatulid from Lamarck's.
+              parents:
+              - taxon: asterias
+          - taxon: rotalaria_lamarck_1816
+            new: true
+          - taxon: fimbriata_lamarck_1816
+            new: true
+          - taxon: carinata_lamarck_1816
+            new: true
+          - taxon: mediterranea_lamarck_1816
+            new: true
+          - taxon: adeonæ_lamarck_1816
+            new: true
+          - taxon: brachiolata_lamarck_1816
+            new: true
+            synonyms:
+            - tentative: true
+              taxon: tenella_retzius_1783
+              parents:
+              - taxon: asterias
+        - taxon: euryale
+          new: true
+          children:
+          - taxon: verrucosum_lamarck_1816
+            new: true
+            synonyms:
+            - taxon: euryale_retzius_1783
+              parents:
+              - taxon: asterias
+            - taxon: caput medusæ_linnaeus_1758
+              parents:
+              - taxon: asterias
+          - taxon: costosum_lamarck_1816
+            new: true
+            notes: |
+              No other information on this, cites "Linc." whose work is
+              pre-Linnaean, so crediting to Lamarck.
+          - taxon: asperum_müller.o.f_1776
+          - taxon: exiguum_lamarck_1816
+            new: true
+          - taxon: palmiferum_lamarck_1816
+            new: true
+        - taxon: ophiura
+          children:
+          - taxon: texturata_lamarck_1816
+            new: true
+          - taxon: lacertosa_lamarck_1801
+          - taxon: incrassata_lamarck_1816
+            new: true
+          - taxon: annulosa_lamarck_1816
+            new: true
+          - taxon: marmorata_lamarck_1816
+            new: true
+          - taxon: echinata_lamarck_1816
+            new: true
+            synonyms:
+            - taxon: nigra_abildgaard_1789
+              parents:
+              - taxon: asterias
+            notes: |
+              Also possible synonymy with "an asterias auleata? Lin. an Sloan"
+              but no readily discoverable info on this species or its source.
+          - taxon: scolopendrina_lamarck_1816
+            new: true
+          - taxon: longipeda_lamarck_1816
+            new: true
+          - taxon: nereidina_lamarck_1816
+            new: true
+          - taxon: ciliaris_lamarck_1816
+            new: true
+            notes: Different from cilliaris (Linnaeus 1767) despite synonomy
+            synonyms:
+            - taxon: ciliaris_linnaeus_1767
+              parents:
+              - taxon: asterias
+          - taxon: squamata_lamarck_1816
+            new: true
+          - taxon: fragilis_abildgaard_1789
+          # "Species that I have not seen"
+          # - taxon: rosularia_grube_
+          # - taxon: pentagona_lamarck_1816
+          #   new: true
+          # - taxon: filiformis_
+          # - taxon: tricolor_
+          # - taxon: lombricalis_
+          # - taxon: cuspidifera_
+        - taxon: asterias
+          children:
+          - taxon: tessellata_lamarck_1816
+            new: true
+          - taxon: punctata_lamarck_1816
+            new: true
+          - taxon: cuspidata_lamarck_1816
+            new: true
+          - taxon: pleyadella_lamarck_1816
+            new: true
+          - taxon: ocellifera_lamarck_1816
+            new: true
+          - taxon: vernicina_lamarck_1816
+            new: true
+          - taxon: discoidea_lamarck_1816
+            new: true
+          - taxon: exigua_lamarck_1816
+            new: true
+          - taxon: pentagonula_lamarck_1816
+            new: true
+          - taxon: pulvillus_müller.o.f_1776
+          - taxon: penicillaris_lamarck_1816
+            new: true
+          - taxon: equestris_linnaeus_1758
+          - taxon: carinifera_lamarck_1816
+            new: true
+          - taxon: obtusangula_lamarck_1816
+            new: true
+          - taxon: reticulata_linnaeus_1758
+          - taxon: nodosa_linnaeus_1758
+          - taxon: calcar_lamarck_1816
+            new: true
+          - taxon: membranacea_retzius_1783
+          - taxon: rosacea_lamarck_1816
+            new: true
+          - taxon: helianthus_lamarck_1816
+            new: true
+          - taxon: echinites_ellis_solander_1786
+          - taxon: papposa_linnaeus_1767
+          - taxon: endeca_linnaeus_1771
+          - taxon: granifera_lamarck_1816
+            new: true
+          - taxon: echinophora_lamarck_1816
+            new: true
+          - taxon: glacialis_linnaeus_1758
+          - taxon: tenuispina_lamarck_1816
+            new: true
+          - taxon: rubens_linnaeus_1758
+          - taxon: clavigera_lamarck_1816
+            new: true
+          - taxon: seposita_retzius_1783
+          - taxon: aranciaca_linnaeus_1758
+          - taxon: calcitrapa_lamarck_1816
+            new: true
+          - taxon: acuminata_lamarck_1816
+            new: true
+            notes: |
+              No info on this species to be found, no citation,
+              therefore credited to Lamarck by default.
+          - taxon: striata_lamarck_1816_asterias
+            new: true
+          - taxon: milleporella_lamarck_1816
+            new: true
+          - taxon: variolata_bruzelius_1805
+          - taxon: multifora_lamarck_1816
+            new: true
+          - taxon: bicolor_lamarck_1816
+            new: true
+          - taxon: lævigata_linnaeus_1758
+          - taxon: arenata_lamarck_1816
+            new: true
+          - taxon: cylindrica_lamarck_1816
+            new: true
+          - taxon: senegalensis_lamarck_1816
+            new: true
+          - taxon: ophidiana_lamarck_1816
+            new: true
+          - taxon: subulata_lamarck_1816
+            new: true

@@ -1,0 +1,793 @@
+taxonomies:
+- mergeInto: [1815_lamarck, 0]
+  taxon: animaux
+  children:
+  - taxon: radiares
+    children:
+      - taxon: échinides
+        children:
+        - taxon: scutella
+          new: true
+          children:
+          - taxon: dentata_leske_1778
+            synonyms:
+            - taxon: orbiculus_linnaeus_1758
+              notes: credited to Gmel.
+              parents:
+              - taxon: echinus
+            - taxon: dentata_leske_1778
+              parents:
+              - taxon: echinodiscus
+          - taxon: digitata_lamarck_1816
+            new: true
+            synonyms:
+            - taxon: decadactylos_gmelin_1791
+              parents:
+              - taxon: echinus
+            - taxon: decies digitatus_leske_1778
+              parents:
+              - taxon: echinodiscus
+            - taxon: octodactylos_gmelin_1791
+              parents:
+              - taxon: echinus
+            - taxon: octies digitatus_leske_1778
+              parents:
+              - taxon: echinodiscus
+          - taxon: emarginata_leske_1778
+            synonyms:
+            - taxon: emarginata_leske_1778
+              parents:
+              - taxon: echinodiscus
+          - taxon: sexforis_lamarck_1816
+            new: true
+            synonyms:
+            - taxon: hexaporus_gmelin_1791
+              parents:
+              - taxon: echinus
+            - taxon: sexies perforatus_leske_1778
+              parents:
+              - taxon: echinodiscus
+          - taxon: quinquefora_lamarck_1816
+            new: true
+            synonyms:
+            - taxon: pentaphorus_gmelin_1791
+              notes: Proper spelling "pentaporus"
+              parents:
+              - taxon: echinus
+            - taxon: quinquies perforatus_leske_1778
+              parents:
+              - taxon: echinodiscus
+          - taxon: quadrifora_lamarck_1816
+            new: true
+            synonyms:
+            - taxon: tetraporus_gmelin_1791
+              parents:
+              - taxon: echinus
+            - taxon: quater perforatus_leske_1778
+              parents:
+              - taxon: echinodiscus
+          - taxon: bifora_gmelin_1791
+            synonyms:
+            - taxon: biforis_gmelin_1791
+              parents:
+              - taxon: echinus
+            - taxon: biperforatus_leske_1778
+              parents:
+              - taxon: echinodiscus
+          - taxon: bifissa_gmelin_1791
+            synonyms:
+            - taxon: inauritus_gmelin_1791
+              parents:
+              - taxon: echinus
+            - taxon: auritus_leske_1778
+              notes: |
+                Unclear what inauritus Gmelin and auritus Leske when there
+                ia also an inauritus Leske?
+              parents:
+              - taxon: echinus
+          - taxon: lenticularis_lamarck_1816
+            new: true
+          - taxon: orbicularis_gmelin_1791
+            synonyms:
+            - taxon: orbicularis_gmelin_1791
+              parents:
+              - taxon: echinus
+          - taxon: fibularis_lamarck_1816
+            new: true
+            notes: No info available, assuming new taxon.
+          - taxon: placenta_linnaeus_1758
+            notes: |
+              Synonymized with Echinarachnus (Leske ex Klein) but no species?
+            synonyms:
+            - taxon: placenta_linnaeus_1758
+              parents:
+              - taxon: echinus
+          - taxon: parma_lamarck_1816
+            new: true
+          - taxon: subrotunda_leske_1778
+            synonyms:
+            - taxon: subrotundus_leske_1778
+              parents:
+              - taxon: echinodiscus
+          - taxon: placunaria_lamarck_1816
+            new: true
+          - taxon: latissima_lamarck_1816
+            new: true
+          - taxon: ambigena_lamarck_1816
+            new: true
+        - taxon: clypeaster
+          children:
+          - taxon: rosaceus_linnaeus_1758
+            synonyms:
+            - taxon: rosaceus_linnaeus_1758
+              parents:
+              - taxon: echinus
+            - taxon: humilis_leske_1778
+              parents:
+              - taxon: echinanthus_leske_1778
+          - taxon: altus_leske_1778
+            synonyms:
+            - taxon: altus_leske_1778
+              parents:
+              - taxon: echinus
+            - taxon: altus_leske_1778
+              parents:
+              - taxon: echinanthus_leske_1778
+          - taxon: marginatus_lamarck_1816
+            new: true
+          - taxon: scutiformis_lamarck_1816
+            new: true
+            notes: Synonym Echinus planus scutiformis Seba mns. 3. tab. 15.
+          - taxon: laganum_leske_1778
+            synonyms:
+            - taxon: laganum_leske_1778
+              parents:
+              - taxon: echinodiscus
+          - taxon: excentricus_lamarck_1816_clypeaster
+            new: true
+          - taxon: oviformis_gmelin_1791
+            synonyms:
+            - taxon: oviformis_gmelin_1791
+              parents:
+              - taxon: echinus
+            - taxon: ovatus_leske_1778_echinanthus_leske_1778
+              parents:
+              - taxon: echinanthus_leske_1778
+          - taxon: politus_lamarck_1816
+            new: true
+          - taxon: hemisphæricus_lamarck_1816_clypeaster
+            new: true
+          - taxon: stelliferus_lamarck_1816
+            new: true
+        - taxon: fibularia
+          new: true
+          children:
+          - taxon: trigona_lamarck_1816
+            new: true
+          - taxon: ovulum_lamarck_1816_fibularia
+            new: true
+          - taxon: tarentina_lamarck_1816
+            new: true
+        - taxon: echinoneus
+          children:
+          - taxon: cyclostomus_leske_1778
+            synonyms:
+            - taxon: cyclostomus_leske_1778
+              parents:
+              - taxon: echinus
+          - taxon: semilunaris_gmelin_1791
+            synonyms:
+            - taxon: minor_leske_1778_echinoneus
+          - taxon: gibbosus_lamarck_1816
+            new: true
+        - taxon: galerites
+          children:
+          - taxon: albo-galerus_leske_1778
+            synonyms:
+            - taxon: albo-galerus_leske_1778
+              parents:
+              - taxon: echinus
+            - taxon: albo-galerus_leske_1778
+              parents:
+              - taxon: conulus
+          - taxon: vulgaris_leske_1778
+            synonyms:
+            - taxon: vulgaris_leske_1778
+              parents:
+              - taxon: echinus
+            - taxon: vulgaris_leske_1778
+              parents:
+              - taxon: echinites
+          - taxon: abbreviatus_lamarck_1816
+            new: true
+          - taxon: sexfasciatus_gmelin_1791
+            synonyms:
+            - taxon: sexfasciatus_gmelin_1791
+              parents:
+              - taxon: echinus
+            - taxon: sexies fasciculatus_leske_1778
+              parents:
+              - taxon: echinites
+          - taxon: fissuratus_lamarck_1816
+            new: true
+          - taxon: hemisphæricus_lamarck_1816_galerites
+            new: true
+          - taxon: depressus_leske_1778
+            synonyms:
+            - taxon: depressus_leske_1778
+              parents:
+              - taxon: echinus
+            - taxon: depressus_leske_1778
+              parents:
+              - taxon: echinites
+          - taxon: rotularis_lamarck_1816
+            new: true
+            synonyms:
+            - taxon: subuculus_leske_1778
+              parents:
+              - taxon: echinus
+            - taxon: subuculus_leske_1778
+              parents:
+              - taxon: echinites
+          - taxon: conoideus_lamarck_1816
+            new: true
+          - taxon: scutiformis_lamarck_1816
+            new: true
+          - taxon: ovatus_lamarck_1816
+            new: true
+          - taxon: semi-globus_lamarck_1816_galerites
+            new: true
+          - taxon: cylindricus_lamarck_1816_galerites
+            new: true
+          - taxon: patella_lamarck_1816
+            new: true
+          - taxon: umbrella_lamarck_1816
+            new: true
+            synonyms:
+            - tentative: true
+              taxon: sinuatus_leske_1778
+              parents:
+              - taxon: clypeus
+          - taxon: excentricus_lamarck_1816_galerites
+            new: true
+        - taxon: ananchytes
+          children:
+          - taxon: ovata_leske_1778_echinocorys
+            synonyms:
+            - taxon: ovatus_leske_1778_echinocorys
+              parents:
+              - taxon: echinocorytes
+                notes: Written under Echinocorys, but as Echinocorytes ovatus
+          - taxon: striata_lamarck_1816_ananchytes
+            new: true
+            notes: |
+              Synonymized with Echinocorytes Leske but no species?
+              Assuming a new taxon here as no other info to be found.
+          - taxon: gibba_lamarck_1816
+            new: true
+            synonyms:
+            - tentative: true
+              taxon: scutatus_leske_1778
+              parents:
+              - taxon: echinocorys
+            - tentative: true
+              taxon: scutatus_leske_1778
+              parents:
+              - taxon: echinus
+          - taxon: pustulosa_leske_1778_ananchytes
+            synonyms:
+            - taxon: pustulosa_leske_1778_ananchytes
+              parents:
+              - taxon: echinocorytes
+          - taxon: bicordata_leske_1778
+            synonyms:
+            - taxon: bicordatus_leske_1778
+              parents:
+              - taxon: spatangites
+            - taxon: bicordatus_leske_1778
+              parents:
+              - taxon: echinus
+          - taxon: carinata_leske_1778
+            synonyms:
+            - taxon: carinatus_leske_1778
+              parents:
+              - taxon: spatangites
+            - taxon: carinatus_leske_1778
+              parents:
+              - taxon: echinus
+          - taxon: elliptica_lamarck_1816
+            new: true
+          - taxon: cordata_lamarck_1816
+            new: true
+            synonyms:
+            - tentative: true
+              taxon: ananchytis_leske_1778
+              parents:
+              - taxon: spatangus_leske_1778
+          - taxon: spatangus_lamarck_1816
+            new: true
+          - taxon: semi-globus_lamarck_1816_ananchytes
+            new: true
+            synonyms:
+            - taxon: minor_leske_1778_echinocorys
+              notes: |
+                Leske wrote the genus heading Echinocorys, but wrote each
+                species as Echinocorytes ...; Echinocorys is deemed senior.
+              parents:
+              - taxon: echinocorytes
+                notes: Echinocorytes used in Lamarck so shown as parent here.
+            - taxon: minor_leske_1778_echinocorys
+              parents:
+              - taxon: echinus
+          - taxon: pillula_lamarck_1816
+            new: true
+          - taxon: cor avium_lamarck_1816
+            new: true
+            synonyms:
+            - tentative: true
+              taxon: teres_gmelin_1791
+              parents:
+              - taxon: echinus
+            - tentative: true
+              taxon: ovatus_leske_1778_spatangus_leske_1778
+              parents:
+              - taxon: spatangus_leske_1778
+        - taxon: spatangus_leske_1778
+          children:
+          - taxon: pectoralis_lamarck_1816
+            new: true
+          - taxon: ventricosus_lamarck_1816_spatangus_leske_1778
+            new: true
+            notes: |
+              Synonymized with "Brissus ventricosus Leske ad Klein"
+              but the cited pages aren't correct and the closest
+              I can find is a footnote saying "Echinus Spatagus,
+              inportu Meffanae captus: videtur varietatem maculosam
+              ventricosam siftere," which is a purely descriptive usage.
+              Note that Brissus (capitalized) is a "Familia" (but in the
+              position of a subgenus) and it is unclear if it is an actual
+              taxon.  Lowercase it is a species, with varieties, but none
+              of the varieties are called ventricosus.
+          - taxon: purpureus_müller.o.f_1776
+            synonyms:
+            - taxon: purpureus_müller.o.f_1776
+              parents:
+              - taxon: echinus
+          - taxon: ovatus_leske_1778_spatangus_leske_1778
+            notes: Not entirely clear if this is correct ovatus given syn?
+            synonyms:
+            - taxon: unicolor_leske_1778
+              parents:
+              - taxon: brissus_leske_1778
+              - taxon: spatangus_leske_1778
+          - taxon: carinatus_leske_1778
+            synonyms:
+            - taxon: late carinatus_leske_1778
+              parents:
+              - taxon: brissus_leske_1778
+              - taxon: spatangus_leske_1778
+          - taxon: columbaris_lamarck_1816
+            new: true
+          - taxon: compressus_lamarck_1816
+            new: true
+          - taxon: crux andraæ_lamarck_1816
+            new: true
+          - taxon: sternalis_lamarck_1816
+            new: true
+          - taxon: planulatus_lamarck_1816
+            new: true
+          - taxon: canaliferus_lamarck_1816
+            new: true
+          - taxon: atropos_lamarck_1816
+            new: true
+          - taxon: arcuarius_lamarck_1816
+            new: true
+            synonyms:
+            - taxon: pusillus_müller.o.f_1776
+              notes: |
+                Synonymized as Leske apud Klein, but that seems to be properly
+                credited to Müller (although it is not entirely clear).
+          - taxon: punctatus_lamarck_1816
+            notes: attribution uncertain
+            new: true
+            synonyms:
+            - tentative: true
+              taxon: cor anguinum_leske_1778
+          - taxon: cor anguinum_leske_1778
+          - taxon: retusus_lamarck_1816
+            notes: attribution uncertain
+            new: true
+            synonyms:
+            - taxon: complanatus_gmelin_1791
+              parents:
+              - taxon: echinus
+          - taxon: subglobosus_leske_1778
+          - taxon: gibbus_lamarck_1816
+            notes: attribution uncertain
+            new: true
+          - taxon: prunella_lamarck_1816
+            notes: attribution uncertain
+            new: true
+          - taxon: radiatus_gmelin_1791
+            synonyms:
+            - taxon: striato-radiatus_leske_1778
+            - taxon: radiatus_gmelin_1791
+              parents:
+              - taxon: echinus
+        - taxon: cassidulus
+          children:
+          - taxon: scutella_lamarck_1816
+            new: true
+          - taxon: australis_lamarck_1816
+            new: true
+          - taxon: lapis cancri_leske_1778
+            synonyms:
+            - taxon: lapis cancri_leske_1778
+              parents:
+              - taxon: echinites
+            - taxon: lapis cancri_leske_1778
+              parents:
+              - taxon: echinus
+          - taxon: complanatus_lamarck_1816
+            new: true
+        - taxon: nucleolites
+          children:
+          - taxon: scutata_lamarck_1816
+            new: true
+            synonyms:
+            - taxon: depressus_leske_1778
+              parents:
+              - taxon: spatangus_leske_1778
+          - taxon: columbaria_lamarck_1816
+            new: true
+          - taxon: ovulum_lamarck_1816_nucleolites
+            new: true
+          - taxon: amygdala_lamarck_1816
+            new: true
+        - taxon: echinus
+          children:
+          - taxon: esculentus_linnaeus_1758
+          - taxon: ventricosus_lamarck_1816_echinus
+            new: true
+            synonyms:
+            - taxon: miliaris_müller.p.l.s_1776
+              notes: Given as C. miliaris Leske 1778, but no such species?
+              parents:
+              - taxon: cidaris
+          - taxon: granularis_lamarck_1816
+            new: true
+          - taxon: virgatus_lamarck_1816
+            new: true
+          - taxon: globiformis_lamarck_1816
+            new: true
+            synonyms:
+            - tentative: true
+              taxon: sphæra_müller.o.f_1776
+              notes: Given as sphæra Gm. but probably Müller?
+          - taxon: fasciatus_lamarck_1816
+            new: true
+          - taxon: pileolus_lamarck_1816
+            new: true
+          - taxon: melo_lamarck_1816
+            new: true
+          - taxon: sardicus_leske_1778
+            synonyms:
+            - taxon: sardica_leske_1778
+              parents:
+              - taxon: cidaris
+          - taxon: acutus_lamarck_1816
+            new: true
+          - taxon: pentagonus_lamarck_1816
+            new: true
+          - taxon: obtusangulus_lamarck_1816
+            new: true
+            synonyms:
+            - taxon: angulosa_leske_1778_cidaris
+              parents:
+              - taxon: cidaris
+          - taxon: polyzonalis_lamarck_1816
+            new: true
+          - taxon: maculatus_lamarck_1816
+            new: true
+          - taxon: variolaris_lamarck_1816
+            new: true
+          - taxon: margaritaceus_lamarck_1816
+            notes: |
+              Habite... les mers australes ? La figure de l’echinus
+              toreumaticus (Klein et Leske, tab. 10. fig. D—E.) rend assez
+              bien notre espèce; mais la description ne lui convient pas.
+            new: true
+          - taxon: sculptus_lamarck_1816
+            new: true
+            synonyms:
+            - tentative: true
+              taxon: toreumaticus_leske_1778
+              notes: Credited to Gmelin?  Perhaps because of the genus?
+              parents:
+              - taxon: echinus
+          - taxon: punctulatus_lamarck_1816
+            new: true
+            notes: Something about Cidaris pustulos Leske, needs translation
+          - taxon: ovum_lamarck_1816
+            new: true
+          - taxon: pallidus_lamarck_1816
+            new: true
+          - taxon: subangulosus_lamarck_1816
+            new: true
+            synonyms:
+            - taxon: minor_leske_1778_angulosa_leske_1778_cidaris
+              parents:
+              - taxon: angulosa_leske_1778_cidaris
+              - taxon: cidaris
+          - taxon: variegatus_leske_1778
+            synonyms:
+            - taxon: variegata_leske_1778
+              parents:
+              - taxon: cidaris
+          - taxon: subcæruleus_lamarck_1816
+            new: true
+          - taxon: pustulosus_leske_1778_cidaris
+            synonyms:
+            - taxon: pustulosa_leske_1778_cidaris
+              parents:
+              - taxon: cidaris
+          - taxon: neglectus_lamarck_1816
+            new: true
+            synonyms:
+            - tentative: true
+              taxon: hemisphærica_leske_1778
+              parents:
+              - taxon: cidaris
+          - taxon: miliaris_müller.p.l.s_1776
+            notes: |
+              Synonomized w/C. miliaris saxatils Leske, which does not
+              seem to exist in Leske 1778. Nor does C. miliaris at all.
+              Possibly C. saxatilis (from E. saxatilis Linn.) was intended?
+              But that is tentatively synonymized with E. lividus?
+          - taxon: rotularis_lamarck_1816
+            new: true
+          - taxon: lividus_lamarck_1816
+            new: true
+            synonyms:
+            - tentative: true
+              taxon: saxatilis_linnaeus_1758
+          - taxon: tuberculatus_lamarck_1816
+            new: true
+          - taxon: bigranularis_lamarck_1816
+            new: true
+          - taxon: arenatus_lamarck_1816
+            new: true
+          - taxon: lucunter_linnaeus_1758
+            synonyms:
+            - taxon: lucunter_leske_1778
+              notes: Leske thought this was separate? If reading right?
+              parents:
+              - taxon: cidaris
+          - taxon: atratus_linnaeus_1758
+            synonyms:
+            - taxon: violacea_leske_1778
+              parents:
+              - taxon: cidaris
+          - taxon: mammillatus_linnaeus_1758
+            synonyms:
+            - taxon: mammillata_linnaeus_1758
+              parents:
+              - taxon: cidaris
+          - taxon: trigonarius_lamarck_1816
+            new: true
+            synonyms:
+            - openTaxon: mammillata-var-4_leske_1778
+              parents:
+              - taxon: mammillata_linnaeus_1758
+              - taxon: cidaris
+        - taxon: cidarites
+          children:
+          - taxon: imperialis_lamarck_1816
+            new: true
+            synonyms:
+            - taxon: major_leske_1778
+              parents:
+              - taxon: papillata_leske_1778
+              - taxon: cidaris
+          - taxon: pistillaris_lamarck_1816
+            new: true
+          - taxon: hystrix_lamarck_1816
+            new: true
+            synonyms:
+            - taxon: spinis conoideis_leske_1778
+              notes: Written as C. papillata, var. 3 Leske apud Klein
+              parents:
+              - taxon: papillata_leske_1778
+              - taxon: cidaris
+          - taxon: baculosa_lamarck_1816
+            new: true
+          - taxon: geranioides_lamarck_1816
+            new: true
+          - taxon: tribuloides_lamarck_1816
+            new: true
+            synonyms:
+            - taxon: spinis claviculatis_leske_1778
+              notes: |
+                Written as C. pap., var. Leske apud Klein, assuming the
+                fourth variant as the similarly "spinis"-prefixed 3rd was
+                referenced by number, but "major" was by name and the 2nd
+                is also properly named ("minor").
+              parents:
+              - taxon: papillata_leske_1778
+              - taxon: cidaris
+          - taxon: metularia_lamarck_1816
+            new: true
+          - taxon: verticellata_lamarck_1816
+            new: true
+          - taxon: tubaria_lamarck_1816
+            new: true
+          - taxon: bispinosa_lamarck_1816
+            new: true
+          - taxon: annulifera_lamarck_1816
+            notes: no info, but as with all no-info, assuming new.
+            new: true
+          - taxon: spinosissima_lamarck_1816
+            new: true
+          - taxon: calamaria_pallas_1774
+            synonyms:
+            - taxon: calamaris_pallas_1774
+              parents:
+              - taxon: cidaris
+          - taxon: subularis_lamarck_1816
+            new: true
+          - taxon: diadema_leske_1778
+            synonyms:
+            - taxon: setosa_leske_1778
+              notes: |
+                Given as Echinometra setosa Leske but no such taxon?
+                Assuming the Cidaris diadema variant was intended.
+              parents:
+              - taxon: diadema_leske_1778
+              - taxon: cidaris
+          - taxon: crenularis_lamarck_1816
+            notes: There is a Cidarites crenularis Goldfuss 1829 but ???
+            new: true
+          - taxon: pseudo-diadema_lamarck_1816
+            new: true
+          - taxon: pulvinata_lamarck_1816
+            new: true
+          - taxon: radiata_leske_1778
+            synonyms:
+            - taxon: radiata_leske_1778
+              parents:
+              - taxon: cidaris
+      - taxon: fistulides
+        children:
+        - taxon: tentaculées
+          new: true
+          children:
+          - taxon: actinia_pallas_1766
+            notes: |
+              Actinia (Pallas 1766) was a genus of holothuroideans,
+              while Actinia (Linnaeus 1767) is a genus of corals.
+              Lamarck seems to have conflated them, along with
+              a smattering of priapulids, here.  Since this genus
+              is grouped with Holothuria (Linnaeus 1767) and
+              Fistularia (Forsskål 1775), it is treated nas
+              Actinia (Pallas 1766).
+            children:
+            - taxon: rufa_müller.o.f_1776
+            - taxon: crassicornis_müller.o.f_1776
+            - taxon: plumosa_müller.o.f_1776
+            - taxon: coccinia_müller.o.f_1776
+            - taxon: judaica_linnaeus_1761
+            - taxon: viduata_müller.o.f_1776
+            - taxon: effœta_linnaeus_1767
+            - taxon: senilis_linnaeus_1767
+            - taxon: undata_müller.o.f_1784
+            - taxon: sulcata_pennant_1777
+            - taxon: gigas_bruguière_1798
+            - taxon: rubra_forsskål_1775
+              synonyms:
+              - taxon: ruber_forsskål_1775
+                parents:
+                - taxon: priapus
+            - taxon: viridis_forsskål_1775
+              synonyms:
+              - taxon: viridis_forsskål_1775
+                parents:
+                - taxon: priapus
+            - taxon: maculata_adams_1800
+              notes: Unclear why this coral was synonomized w/Priapus
+              synonyms:
+              - taxon: polyus_forsskål_1775
+                parents:
+                - taxon: priapus
+            - taxon: alba_forsskål_1775
+              synonyms:
+              - taxon: albus_forsskål_1775
+                parents:
+                - taxon: fistularia_forsskål_1775
+            - taxon: cavernata_bosc_1802
+            - taxon: reclinata_bosc_1802
+            - taxon: pedunculata_pennant_1777
+            - taxon: squamosa_bruguière_1798
+            - taxon: verrucosa_pennant_1777
+            - taxon: quadrangularis_bruguière_1798
+            - taxon: pentapetala_pennant_1777
+            - taxon: aster_ellis_1768
+            - taxon: anemone_ellis_1768
+            - taxon: helianthus_ellis_1768
+          - taxon: holothuria
+            children:
+            - taxon: frondosa_gunnerus_1767
+            - taxon: phantapus_strussenfelt_1765
+            - taxon: pentacta_gmelin_1791
+            - taxon: doliolum_pallas_1766
+              synonyms:
+              - taxon: doliolum_pallas_1766
+                parents:
+                - taxon: actinia
+            - taxon: fusus_müller.o.f_1776
+            - taxon: inhærens_müller.o.f_1776
+            - taxon: glutinosa_lamarck_1816
+              new: true
+              synonyms:
+              - taxon: reciprocans_forsskål_1775
+                parents:
+                - taxon: fistularia_forsskål_1775
+            - taxon: vittata_forsskål_1775
+              synonyms:
+              - taxon: vittata_forsskål_1775
+                parents:
+                - taxon: fistularia_forsskål_1775
+            - taxon: squamata_müller.o.f_1776
+            - taxon: penicillus_müller.o.f_1776
+          - taxon: fistularia_forsskål_1775
+            children:
+            - taxon: elegans_müller.o.f_1776
+              synonyms:
+              - taxon: elegans_müller.o.f_1776
+                parents:
+                - taxon: holothuria
+            - taxon: tubulosa_müller.o.f_1776
+              synonyms:
+              - taxon: tremula_gunnerus_1767
+                parents:
+                - taxon: holothuria
+            - taxon: impatiens_forsskål_1775
+            - taxon: maxima_forsskål_1775
+            - taxon: digitata_montagu_1815
+        - taxon: nues
+          new: true
+          children:
+          - taxon: priapulus
+            new: true
+            children:
+            - taxon: caudatus_lamarck_1816
+              new: true
+              synonyms:
+              - taxon: priapus_linnaeus_1767
+                parents:
+                - taxon: holothuria
+          - taxon: sipunculus
+            children:
+            - taxon: nudus_linnaeus_1767
+            - taxon: saccatus_linnaeus_1767
+            - taxon: edulis_pallas_1774
+  - taxon: tunicata
+    new: true
+    children:
+    - taxon: botryllaires
+      new: true
+    - taxon: ascidiens
+      new: true
+  - taxon: vers
+    children:
+    - taxon: mollasses_vers
+      children:
+      - taxon: vésiculaires
+        new: true
+      - taxon: planulaires
+        new: true
+      - taxon: hétéromorphes
+        new: true
+    - taxon: rigidules
+      new: true
+    - taxon: hispides
+      new: true

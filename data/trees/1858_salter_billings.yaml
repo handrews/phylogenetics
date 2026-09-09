@@ -1,0 +1,17 @@
+taxonomies:
+- taxon: cystideæ-order
+  notes: Rank is a guess
+  children:
+  - taxon: cyclocystoides
+    provisional: true
+    altPlacements:
+    - taxon: asteriadæ-order
+      notes: |
+        Discussed only as "star-fishes", but Asteriadæ used by Billings
+        in another article in the same publication.  Rank is a guess.
+    new: true
+    children:
+    - taxon: halli_billings_1858
+      new: true
+    - taxon: davisii_salter_1858
+      new: true

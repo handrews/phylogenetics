@@ -1,0 +1,77 @@
+taxonomies:
+- taxon: blastozoa
+  children:
+  - taxon: lepidocystoidae
+    children:
+    - taxon: lepidocystis
+    - taxon: kinzercystis
+    - taxon: vyscystis
+  - taxon: felbabkacystidae
+    new: true
+    children:
+    - taxon: felbabkacystis
+      new: true
+      children:
+      - taxon: luckae_nardin_lefebvre_fatka_nohejlová_kašiča_šinágl_szabad_2017
+        type: true
+        new: true
+        synonyms:
+        - openTaxon: undescribed-genus_fatka_kordule_szabad_2004
+          auth: [fatka, kordule, szabad]
+          year: 2004
+          children:
+          - openTaxon: undescribed-sp_fatka_kordule_szabad_2004
+            auth: [fatka, kordule, szabad]
+            year: 2004
+            pages: 379
+        - openTaxon: undescribed-transitional-genus_lefebvre_nardin_fatka_2015
+          auth: [lefebvre, nardin, fatka]
+          year: 2015
+          children:
+          - openTaxon: undescribed-transitional-sp_lefebvre_nardin_fatka_2015
+            auth: [lefebvre, nardin, fatka]
+            year: 2015
+            pages: 89
+            illustrations:
+            - figures:
+              - 1B
+        - openTaxon: imbricata-sp_nohejlová_fatka_2015
+          auth: [noheljová, fatka]
+          year: 2015
+          pages: 119
+          illustrations:
+          - figures:
+            - 2D
+phylogenies:
+- treeType: cladogram
+  tree:
+    children:
+    - taxon: stromatocystites
+      outgroup: true
+    - children:
+      - bracket: lepidocystoidae
+        children:
+        - taxon: kinzercystis
+        - taxon: vyscystis
+        - taxon: lepidocystis
+      - children:
+        - bracket: felbabkacystidae
+          children:
+          - taxon: felbabkacystis
+        - children:
+          - bracket: eocrinidae
+            taxon: lyracystis
+          - children:
+            - bracket: eocrinidae
+              children:
+              - taxon: akadocrinus
+              - taxon: gogia
+              - taxon: sinoeocrinus
+              - taxon: ubaghsicystis
+            - children:
+              - bracket: lichenoidae
+                taxon: lichenoides
+              - notes: bracket "derived blastozoa"
+                children:
+                - taxon: trachelocrinus
+                - taxon: ridersia

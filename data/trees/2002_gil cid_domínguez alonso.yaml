@@ -1,0 +1,20 @@
+taxonomies:
+- taxon: eocrinoidea
+  notes: (Grupo Nodal de Pelmatozoa)
+  children:
+  - taxon: ubaghsicystis
+    new: true
+    diagnosis: |
+      unas 40 placas. Epispiras presentes en la mitad superior de la teca
+      y ausentes en la inferior. Pirámide anal en posición lateral por
+      encima de la línea ecuatorial de la teca. Pedúnculo largo, homeomorfo,
+      holomérito y con un disco de fijación distal. Columnares de sección
+      circular, lumen estrecho y sin crenulaciones articulares. Brazos
+      delgados, biseriales, con placas coberteras y sin braquiolas.
+    children:
+    - taxon: segurae_gil cid_domínguez alonso_2002
+      type: true
+      new: true
+      diagnosis: |
+        por tratarse de un género monoespecífico, la diagnosis de la
+        especie coincide con la dada para el género

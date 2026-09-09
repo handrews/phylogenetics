@@ -1,0 +1,25 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: blastozoa
+    children:
+    - taxon: soluta-class
+      children:
+      - taxon: syringocrinida
+        children:
+        - taxon: pahvanticystis
+          new: true
+          children:
+          - taxon: utahensis_lefebvre_lerosey-aubril_2018
+            new: true
+            type: true
+            specimens:
+              holotype: UU05072.02_01
+              paratypes:
+              - UU05072.01_01
+              - UU05072.01_02
+              - UU05072.02_02
+              - UU05072.03
+              additional:
+              - USNM 393393
+              - USNM 393394

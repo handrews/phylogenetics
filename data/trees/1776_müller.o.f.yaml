@@ -1,0 +1,231 @@
+taxonomies:
+- taxon: animalia
+  children:
+  - taxon: mammalia
+  - taxon: aves
+  - taxon: amphibia_linnaeus_1758
+  - taxon: pisces
+  - taxon: insecta
+  - taxon: vermes
+    children:
+    - taxon: infusoria-order
+      children:
+      - taxon: monas
+      - taxon: volvox
+      - taxon: enchelis
+      - taxon: vibrio
+      - taxon: cyclidium
+      - taxon: paramæcium
+      - taxon: kolpoda
+      - taxon: gonium
+      - taxon: bursaria
+      - taxon: cercaria
+      - taxon: trichoda
+      - taxon: vorticella
+      - taxon: brachionus
+    - taxon: helminthica-order
+      children:
+      - taxon: gordius
+      - taxon: ascaris
+      - taxon: echinorynchus
+      - taxon: lumbricus
+      - taxon: amphitrite
+      - taxon: nereis
+    - taxon: mollusca-order
+      children:
+      - taxon: planaria
+        new: true
+      - taxon: fasciola
+      - taxon: mammaria
+        new: true
+      - taxon: ascidia
+        children:
+        - taxon: rustica_linnaeus_1767
+        - taxon: quadridentata_linnaeus_1767
+        - taxon: echinata_linnaeus_1767
+        - taxon: gelatina_müller.o.f_1776
+          new: true
+        - taxon: mentula_müller.o.f_1776
+          new: true
+        - taxon: crystallina_müller.o.f_1776
+          new: true
+        - taxon: scabra_müller.o.f_1776
+          new: true
+        - taxon: conchilega_müller.o.f_1776
+          new: true
+        - taxon: aspersa_müller.o.f_1776
+          new: true
+        - taxon: patula_müller.o.f_1776
+          new: true
+        - taxon: prunum_müller.o.f_1776
+          new: true
+        - taxon: octodentata_gunnerus_1770
+        - taxon: virgenea_müller.o.f_1776
+          new: true
+        - taxon: intestinalis_linnaeus_1767
+        - taxon: canina_müller.o.f_1776
+          new: true
+        - taxon: corrugata_müller.o.f_1776
+          new: true
+        - taxon: venosa_müller.o.f_1776
+          new: true
+        - taxon: parallelogramma_müller.o.f_1776
+          new: true
+        - taxon: lepadiformis_müller.o.f_1776
+          new: true
+        - taxon: patelliformis_müller.o.f_1776
+          new: true
+        - taxon: clavata_müller.o.f_1776
+          new: true
+      - taxon: lobaria
+        new: true
+      - taxon: clio
+      - taxon: lernæa
+      - taxon: lucernaria
+        new: true
+      - taxon: myxine
+        children:
+        - taxon: glutinosa_linnaeus_1758
+      - taxon: limax
+      - taxon: doris
+      - taxon: pedicellaria
+        new: true
+      - taxon: hydra
+      - taxon: actinia
+      - taxon: holothuria
+        children:
+        - taxon: frondosa_gunnerus_1767
+        - taxon: phantapus_strussenfelt_1765
+        - taxon: elegans_müller.o.f_1776
+          new: true
+          synonyms:
+          - taxon: tremula_linnaeus_1767
+        - taxon: denudata_linnaeus_1758
+          provisional: true
+        - taxon: pentactes_linnaeus_1767
+        - taxon: priapus_linnaeus_1767
+        - taxon: penicillus_müller.o.f_1776
+          new: true
+        - taxon: fusus_müller.o.f_1776
+          new: true
+        - taxon: squamata_müller.o.f_1776
+          new: true
+        - taxon: inhærens_müller.o.f_1776
+          new: true
+        # Cannot find a reference for this at all.
+        # - taxon: lagenam_
+        #   provisional: true
+        #   notes: Not italicized, noted "Hardly Holothuria, rather Ascidia?"
+      - taxon: sepia
+      - taxon: beroe
+        new: true
+        children:
+        - taxon: infundibulum_müller.o.f_1776
+          new: true
+          synonyms:
+          - taxon: beroe_linnaeus_1758
+            parents:
+            - taxon: volvox
+        - taxon: pileus_müller.o.f_1776
+          new: true
+      - taxon: medusa
+      - taxon: asterias
+        children:
+        - taxon: lunatæ
+          new: true
+          notes: Not entirely clear if this is really new.
+          children:
+          - taxon: equestris_linnaeus_1758
+          - taxon: pulvillus_müller.o.f_1776
+            new: true
+          - taxon: militaris_müller.o.f_1776
+            new: true
+        - taxon: stellatæ
+          children:
+          - taxon: phrygiana_parelius_1768
+          - taxon: rubens_linnaeus_1758
+          - taxon: aranciaca_linnaeus_1758
+          - taxon: papposa_linnaeus_1767
+          - taxon: aspera_müller.o.f_1776
+            new: true
+          - taxon: perforata_müller.o.f_1776
+            new: true
+          - taxon: minuta_linnaeus_1761
+          - taxon: sanguinolenta_müller.o.f_1776
+            new: true
+        - taxon: radiatæ
+          children:
+          - taxon: rosea_müller.o.f_1776
+            new: true
+          - taxon: glacialis_linnaeus_1758
+          - taxon: pertusa_müller.o.f_1776
+            new: true
+          - taxon: ophiura_linnaeus_1758
+          - taxon: aculeata_linnaeus_1767
+          - taxon: ciliata_müller.o.f_1776
+            new: true
+          - taxon: filiformis_müller.o.f_1776
+            new: true
+          - taxon: caput medusæ_linnaeus_1758
+    - taxon: testacea-order
+      children:
+      - taxon: echinus
+        children:
+        - taxon: sphæra_müller.o.f_1776
+          new: true
+        - taxon: dröbachiensis_müller.o.f_1776
+          new: true
+        - taxon: saxatilis_linnaeus_1758
+        # No information can be found about the following taxon.
+        # - taxon: spinis obtusis_
+        #   notes: Not italicized, dubious?
+      - taxon: spatagus
+        new: true
+        children:
+        - taxon: flavescens_müller.o.f_1776
+          new: true
+        - taxon: purpureus_müller.o.f_1776
+          new: true
+        - taxon: pusillus_müller.o.f_1776
+          new: true
+      - taxon: dentalium
+      - taxon: serpula
+      - taxon: ancylus
+      - taxon: patella
+      - taxon: haliotis
+      - taxon: argonauta
+      - taxon: planorbis
+      - taxon: valvata
+      - taxon: helix
+      - taxon: vertigo
+      - taxon: carychium
+      - taxon: akera
+        new: true
+      - taxon: bulla
+      - taxon: trochus
+      - taxon: turbo
+      - taxon: buccinum
+      - taxon: tritonium
+        new: true
+      - taxon: nerita
+      - taxon: solen
+      - taxon: mya
+      - taxon: tellina
+      - taxon: cardium
+      - taxon: mactra
+      - taxon: donax
+      - taxon: venus
+      - taxon: chama
+      - taxon: arca
+      - taxon: ostrea
+      - taxon: pecten
+        new: true
+      - taxon: anomia
+      - taxon: terebratula
+        new: true
+      - taxon: mytilus
+      - taxon: chiton
+      - taxon: lepas
+      - taxon: pholas
+    - taxon: cellulana-order
+      new: true

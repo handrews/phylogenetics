@@ -1,0 +1,22 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: arkarua
+      provisional: true
+      new: true
+      children:
+      - taxon: adami_gehling_1987
+        type: true
+        new: true
+        specimens:
+          holotype: SAMP26768
+          paratypes:
+          - SAMP26769
+          - SAMP26770
+          - SAMP26771
+          - SAMP26772
+          - SAMP26773
+          - SAMP26774
+          - SAMP26775

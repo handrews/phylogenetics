@@ -1,0 +1,37 @@
+taxonomies:
+- taxon: edrioasteroidea
+  children:
+  - taxon: isorophida
+    children:
+    - taxon: cyathocystina
+      new: true
+      children:
+      - taxon: cyathocystidae
+        children:
+        - taxon: cyathocystis
+          children:
+          - taxon: plautinae_schmidt_1879
+            notes: Given as "Schmidt 1880" but other sources say 1879
+          - taxon: rhizophora_schmidt_1889
+          - taxon: americanus_bassler_1936
+          - taxon: oklahomae_strimple_graffham_1955
+        - taxon: cyathotheca
+          children:
+          - taxon: suecica_jaekel_1927
+          - taxon: corallum_jaekel_1918
+        - taxon: hadrochthus
+          provisional: true
+          children:
+          - taxon: commensalus_bell.b.m_1974
+        - taxon: timeischytes
+          emended: true
+          provisional: true
+          children:
+          - taxon: megapinacotus_ehlers_kesling_1958
+            type: true
+          - taxon: casteri_bell.b.m_1975
+            new: true
+      - taxon: postibulla
+        provisional: true
+        children:
+        - taxon: jasperensis_harker_1953

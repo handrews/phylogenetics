@@ -1,0 +1,37 @@
+notes: Only echinoderms and cambroernids added here so far, many others defined
+taxonomies:
+- taxon: sinoeocrinus
+  children:
+  - taxon: minus_zhao.y.l_huang.y.z_gong.x.y_1994
+  - taxon: globus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
+    new: true
+    diagnosis: null
+- taxon: edrioasteroidea
+  children:
+  - openTaxon: edrioasteroidea-genus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
+    new: true
+    children:
+    - openTaxon: edrioasteroidea-sp_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
+      new: true
+- taxon: crinozoa
+  children:
+  - openTaxon: crinozoa-genus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
+    new: true
+    children:
+    - openTaxon: crinozoa-sp_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
+      new: true
+- taxon: holothuroidea
+  children:
+  - openTaxon: holothuroidea-genus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
+    provisional: true
+    new: true
+    children:
+    - openTaxon: holothuroidea-sp_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
+      new: true
+- taxon: pararotadiscus_zhao.y.l_zhu.m.y_1994
+  notes: |
+    Pararotadiscus generally credited to Zhu, Zhao, & Chen (2002).
+    This may be a "nomen nudum" for Pararotadiscus.
+  children:
+  - taxon: taijiangensis_zhao.y.l_zhu.m.y_1994
+    notes: Possibly a nomen nudum renamed Rotadiscus guizhouensis?

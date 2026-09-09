@@ -1,0 +1,40 @@
+taxonomies:
+- taxon: edrioasteroidea
+  children:
+  - taxon: aragocystites
+    new: true
+    children:
+    - taxon: belli_zamora_2013
+      type: true
+      new: true
+phylogenies:
+- treeType: cladogram
+  methodology: single most parsimonious tree
+  tree:
+    children:
+    - taxon: camptostroma
+    - children:
+      - children:
+        - taxon: edrioaster
+        - children:
+          - children:
+            - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
+            - taxon: argodiscus
+          - children:
+            - taxon: hadrodiscus
+            - taxon: chatsworthia
+            - taxon: protorophus
+      - children:
+        - taxon: reduncus_smith.a.b_jell_1990
+          parents:
+          - taxon: stromatocystites
+        - children:
+          - taxon: pentangularis_pompeckj_1896
+            parents:
+            - taxon: stromatocystites
+          - taxon: totiglobus
+          - children:
+            - taxon: aragocystites
+              children:
+              - taxon: edriodiscus
+              - taxon: cambraster

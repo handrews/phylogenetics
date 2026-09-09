@@ -1,0 +1,98 @@
+taxonomies:
+- taxon: stylophora
+  children:
+  - taxon: cornuta
+    children:
+    - taxon: phyllocystidae
+      children:
+      - taxon: lobocarpus
+        provisional: true
+        new: true
+        diagnosis: |
+          Théque asymétrique, partagée en deux lobes droit et gauche
+          inégaux, sans protubérances, épines et projections latéales;
+          dix marginales formant un cadre bien différencié et constituant
+          la plus grande partie de la face inféieure; cinq infracentrales
+          (deux grandes et trois petites); marginales M1 et M'1 trés
+          inégales de forme et de taille; face inféieure rigide, face
+          supéieure probablement souple.
+        children:
+        - taxon: vizcainoi_ubaghs_1999
+          type: true
+          new: true
+          diagnosis: Identique á celle du genre.
+    - openTaxon: cornuta-incertae-sedis_ubaghs_1999
+      children:
+      - openTaxon: cornuta-sp_ubaghs_1999
+        new: true
+- taxon: cystoidea
+  children:
+  - taxon: glyptocystitida-superfamily
+    children:
+    - taxon: barroubiocystidae
+      new: true
+      diagnosis: |
+        Théque subcylindrique, sans pectinirhombes, composée de quatre
+        basales, cinq infralatérales, cinq latérales, cinq (?) radiales et
+        cinq (?) orales, ornées de rides compactes (non de plis), allant
+        du centre des plaques á leurs angles; brachioles confinés á la
+        surface orale; région proximale de la tige formSe d'articles
+        comprenant chacun une columnale externe et une columnale interne
+        et suivie d'une longue région distale faite d'une seule série
+        de columnales cylindriques de plus en plus étroites en direction
+        distale; articulations synostosiques entre toutes les columnales,
+        les proximales aussi bien que les distales.
+      children:
+      - taxon: barroubiocystis
+        new: true
+        diagnosis: |
+          "Genre de Barroubiocystidae caractérisé par: des radiales
+          proéminentes; des plaques thécales avec des rides simples et
+          lisses, qui s'élargissent vers les angles et sont s'éparées
+          par des espaces sans ornementation; l'absence (?) d'un périprocte
+          latéral; la presence d'une dizaine d'articles dans la région
+          proxima]e de la tige."
+        children:
+        - taxon: radiata_ubaghs_1999
+          type: true
+          new: true
+          diagnosis: Méme que celle du genre.
+      - taxon: velieuxicystis
+        new: true
+        diagnosis: |
+          "Genre de Barroubiocystidae caractérisé par: des radiales
+          de taille modérée, non proéminentes; des rides et espaces
+          intermédiaires chargés d'excroissances et de pustules;
+          un périprocte lateral de taille moyenne, entouré par deux
+          infralatérales (IL4 et ILs) et deux latérales (L4 et L5),
+          sans contact avec les radiales; la présence d'une quinzaine
+          d'articles dans la région proximale de la tige."
+        children:
+        - taxon: ornata_ubaghs_1999
+          type: true
+          new: true
+          diagnosis: Identique à celle du genre.
+- taxon: edrioasteroidea
+  notes: Also has a "?", in addition to Stromatocystites having one
+  children:
+  - taxon: stromatocystites
+    children:
+    - openTaxon: stromatocystites-sp_ubaghs_1999
+      provisional: true
+      new: true
+- openTaxon: echinodermata-incertae-sedis_ubaghs_1999
+  children:
+  - taxon: scoteinocystis
+    new: true
+    diagnosis: |
+      Echinoderme de petite taille, de contour subcirculaire ou subovale
+      face dorsale (seule conserv6e) convexe, formic de plaques calcitiques
+      polygonales, étroitement jointives, disposées de manière irrégulière,
+      en nombre variable; épispires nombreuses, ne s'ouvrant que du côté
+      interne de la face dorsale; bouche et anus probablement sur la face
+      ventrale (non conservée).
+    children:
+    - taxon: cambriensis_ubaghs_1999
+      type: true
+      new: true
+      diagnosis: Identique à celle du genre.

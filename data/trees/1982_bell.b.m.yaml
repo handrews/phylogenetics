@@ -1,0 +1,36 @@
+taxonomies:
+- taxon: echinodermata
+  auth: [bruguiére]
+  year: 1791
+  children:
+  - openTaxon: echinodermata-indeterminate-subphylum_bell.b.m_1982
+    children:
+    - taxon: edrioasteroidea
+      children:
+      - taxon: edrioasterida
+        children:
+        - taxon: edriophus
+          children:
+          - cfTaxon: laevis_bather_1914
+      - taxon: isorophida
+        children:
+        - taxon: lebetodiscina
+          children:
+          - taxon: lebetodiscidae
+            children:
+            - taxon: foerstediscus
+              children:
+              - taxon: splendens_bassler_1936
+            - taxon: pyrgocystis
+              children:
+              - taxon: sardesoni_bather_1915
+                type: true
+              - openTaxon: pyrgocystis-sp-a_bell.b.m_1982
+              - openTaxon: pyrgocystis-sp-b_bell.b.m_1982
+        - taxon: cyathocystina
+          children:
+          - taxon: cyathocystidae
+            children:
+            - taxon: cyathocystis
+              children:
+              - taxon: americanus_bassler_1936

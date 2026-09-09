@@ -1,0 +1,18 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: stromatocystitida
+      emended: true
+      children:
+      - taxon: stromatocystitidae
+        children:
+        - taxon: cambraster
+          children:
+          - taxon: cannati_miquel_1894
+            type: true
+            synonyms:
+            - taxon: cannati_miquel_1894
+              parents:
+              - taxon: trochocystites

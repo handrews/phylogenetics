@@ -1,0 +1,29 @@
+taxonomies:
+- taxon: cystoidea
+  children:
+  - taxon: eocrinida
+    children:
+    - taxon: cambrocrinidae
+      new: true
+      diagnosis: |
+        "Theca without epispires composed of plates with sharp ridges
+        radiating from the center to the corners. Anal pyramid at the oral
+        surface of the theca. Stem composed of circular colurnnals,
+        subdivided in two parts: the proximal widely conical one composed
+        of thin columnals with fulcra and the distal one with smooth
+        cylindrical columnals."
+      children:
+      - taxon: cambrocrinus
+        diagnosis: As for the type species.
+        children:
+        - taxon: regularis_orłowski_1968
+          type: true
+          emended: true
+          diagnosis: |
+            "Elongated subcylindrical theca composed of seven circles of
+            plates, mostly hexagonal in shape. The flattened oral area bears
+            five ambulacral grooves, each terminating in a pair of brachiolar
+            bases, and small anal pyramid. Stem strongly tapering proximally,
+            composed there of thin colurnnals connected by fulcra marginally,
+            distally narrow, with smooth cylindrical columnals."
+      - taxon: eocystites

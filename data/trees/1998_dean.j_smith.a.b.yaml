@@ -1,0 +1,138 @@
+taxonomies:
+- taxon: rhipidocystidae
+  children:
+  - taxon: cardiocystites
+    children:
+    - taxon: bohemicus_barrande_1887_cardiocystites
+      type: true
+    - taxon: pleuricostatus_dean.j_smith.a.b_1998
+      new: true
+phylogenies:
+- treeType: cladogram
+  methodology: single most parsimonious cladogram
+  characteristics:
+  - thecal form:
+      globular to ovate: 0
+      strongly flattened in one plane: 1
+  - stem columnals:
+      polyplated: 0
+      holomeric: 1
+  - stem:
+      homeomorphic: 0
+      heteromorphic, with large and small columnals alternating: 1
+      reduced to a few large elements: 2
+  - stem attachement to theca:
+      attaches equally to two basals: 0
+      attaches to three basals: 1
+      attaches to four basals: 2
+      attaches to five basals: 3
+  - marginal frame plates:
+      undifferentiated: 0
+      present: 1
+  - marginal plates with internal flanges:
+      absent: 0
+      present: 1
+  - marginal frame plates:
+      double, at least distally: 0
+      single: 1
+  - number of plates forming lateral and distal margin of theca:
+      more than ten: 0
+      seven or eight: 1
+  - centrals:
+      tessalate: 0
+      imbricate: 1
+  - number of centrals:
+      more than six: 0
+      three or four: 1
+  - transverse strutting:
+      absent: 0
+      present: 1
+  - arms:
+      absent (oral frame plates give rise to brachioles directly): 0
+      present: 1
+  - oral area and arms:
+      basically pentaradial: 0
+      strongly bilateral: 1
+  - brachioles:
+      biserial: 0
+      uniserial: 1
+  - brachioles:
+      contiguous forming filtration net: 0
+      in scattered clumps: 1
+  - oral area:
+      narrow, not stretching across entire proximal face: 0
+      wide, occupying the entire width of theca proximally: 1
+  - oral area:
+      flush: 0
+      depressed, below horn-like processes of the theca: 1
+  - periproct:
+      lateral, half-way down theca: 0
+      in upper corner of theca close to peristome: 1
+      on oral surface: 2
+  tree:
+    children:
+    - taxon: akadocrinus
+      outgroup: true
+      matrix: [
+        0, 1, 0, 3, 0,
+        0, "?", 0, 0, 0,
+        0, 0, 0, 0, 0,
+        0, 0, 2,
+      ]
+    - children:
+      - taxon: balantiocystis
+        outgroup: true
+        matrix: [
+          0, 1, 1, 1, 0,
+          0, "?", 0, 0, 0,
+          0, 0, 0, 0, 0,
+          0, 0, 0,
+        ]
+      - children:
+        - taxon: lingulocystis
+          bracket: lingulocystidae
+          matrix: [
+            1, 1, 1, 2, 1,
+            0, 1, 0, 1, 0,
+            1, 0, 1, 0, 0,
+            0, 0, 0,
+          ]
+        - bracket: rhipidocystidae
+          children:
+          - children:
+            - taxon: mandalacystis
+              matrix: [
+                1, 1, 0, 1, 1,
+                1, 0, 1, 0, 1,
+                0, 1, 1, 0, 1,
+                1, 1, 1,
+              ]
+            - taxon: cardiocystites
+              matrix: [
+                1, 1, 1, 0, 1,
+                1, 0, 1, 0, 1,
+                1, 1, 0, 0, 1,
+                0, 1, 1,
+              ]
+          - children:
+            - taxon: petalocystis
+              matrix: [
+                1, 1, 2, 0, 1,
+                1, 0, 1, 0, 1,
+                0, 0, 1, 0, 0,
+                0, 0, 1,
+              ]
+            - taxon: batherocystis
+              matrix: [
+                1, 1, 2, 0, 1,
+                1, 0, 1, 0, 1,
+                0, 0, "?", "?", "?",
+                0, 0, 1,
+              ]
+            - taxon: rhipidocystis
+              matrix: [
+                1, 1, 2, 0, 1,
+                1, 0, 1, 0, 1,
+                0, 0, 1, 1, 0,
+                1, 0, 1,
+              ]

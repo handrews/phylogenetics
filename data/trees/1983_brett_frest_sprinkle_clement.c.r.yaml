@@ -1,0 +1,20 @@
+taxonomies:
+- taxon: blastozoa
+  children:
+  - taxon: coronoidea
+    new: true
+    children:
+    - taxon: coronata
+      children:
+      - taxon: stephanocrinidae
+        children:
+        - taxon: mespilocystites
+        - taxon: paracystis
+        - taxon: tormoblastus
+        - taxon: stephanoblastus
+        - taxon: stephanocrinus
+          children:
+          - taxon: angulatus_conrad.t.a_1842
+            type: true
+          - taxon: gemmiformis_hall_1852
+            provisional: true

@@ -1,0 +1,179 @@
+taxonomies:
+- taxon: pelmatozoa
+  children:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: stromatocystitidae
+      new: true
+      children:
+      - taxon: walcottidiscus
+        children:
+        - taxon: typicalis_bassler_1935
+          type: true
+        - openTaxon: walcottidiscus-sp_bassler_1936
+          new: true
+        - taxon: magister_bassler_1936
+          new: true
+          specimens:
+            holotype: USNM 90755
+      - taxon: stromatocystites
+        children:
+        - taxon: pentangularis_pompeckj_1896
+          type: true
+      - taxon: xenocystites
+        new: true
+        children:
+        - taxon: carteri_bassler_1936
+          type: true
+          new: true
+          specimens:
+            holotype: Collection New York State Museum
+    - taxon: hemicystitidae
+      new: true
+      children:
+      - taxon: cystaster
+        children:
+        - taxon: granulatus_hall_1871
+          synonyms:
+          - taxon: granulatus_hall_1871
+            notes: |
+              Given as "C. (Hemicystite) granulatus", but this is assumed
+              to be an error as it reverses both Bassler (1935) and
+              the Treatise (1966) and other sources noting that Cysaster
+              was originally defined as a subgenus.
+            parents:
+            - taxon: cystaster-subgenus
+            - taxon: hemicystites
+        - taxon: ulrichi_bassler_1936
+          new: true
+          specimens:
+            holotype: USNM 42138
+      - taxon: cincinnatidiscus
+        children:
+        - taxon: hemicystites-subgenus
+          children:
+          - taxon: stellatus_hall_1866
+            type: true
+          - taxon: carnensis_foerste_1914
+        - taxon: turgidus_bassler_1936
+          new: true
+        - taxon: edenensis_bassler_1936
+          new: true
+      - taxon: carneyella
+        children:
+        - taxon: agelacrinus-subgenus_carneyella
+          children:
+          - taxon: pileus_hall_1866
+            type: true
+          - taxon: vetusta_foerste_1914
+          - taxon: faberi_miller.s.a_1894
+        - taxon: nicklesi_bassler_1936
+          new: true
+        - taxon: ulrichi_bassler_shideler_1936
+      - taxon: streptaster
+        children:
+        - taxon: agelacrinus-subgenus_streptaster
+          children:
+          - taxon: septembrachiata_miller.s.a_dyer_1878
+      - taxon: lebetodiscus
+        children:
+        - taxon: dicksoni_billings_1857
+          type: true
+          synonyms:
+          - taxon: dicksoni_billings_1857
+            parents:
+            - taxon: agelacrinites
+        - taxon: loriformis_raymond_1915
+      - taxon: foerstediscus
+        children:
+        - taxon: splendens_bassler_1936
+          new: true
+        - taxon: parvus_bassler_1936
+          new: true
+      - taxon: pyrgocystis
+      - taxon: hemicystites
+        children:
+        - taxon: parasiticus_hall_1852
+          type: true
+        - taxon: lebetodiscus-subgenus
+          children:
+          - taxon: multibrachiatus_raymond_1915
+          - taxon: chapmani_raymond_1915
+          - taxon: youngi_raymond_1915
+        - taxon: agelacrinites-subgenus
+          children:
+          - taxon: billingsi_chapman_1860
+          - taxon: rectiradiatus_shideler_1918
+        - taxon: curtus_bassler_1936
+          new: true
+        - taxon: germanus_bassler_1936_hemicystites
+          new: true
+        - taxon: paulianus_bassler_1936
+          new: true
+        - taxon: richmondensis_bassler_1936
+          new: true
+        - taxon: devonicus_bassler_1936
+          new: true
+        - taxon: carbonarius_bassler_1936
+          provisional: true
+          new: true
+    - taxon: agelacrinitidae
+      children:
+      - taxon: thresherodiscus
+      - taxon: agelacrinites
+        children:
+        - taxon: southworthi_bassler_1936
+          new: true
+      - taxon: isorophus
+        children:
+        - taxon: tennesseensis_bassler_1936
+          new: true
+        - taxon: trentonensis_bassler_1936
+          new: true
+        - taxon: agelacrinus-subgenus_isorophus
+          children:
+          - taxon: austini_foerste_1914
+          - taxon: holbrooki_james_1878
+          - taxon: warrenensis_james_1883
+        - taxon: germanus_bassler_1936_isorophus
+          new: true
+        - taxon: kentuckyensis_bassler_1936
+          new: true
+        - taxon: shideleri_bassler_1936
+          new: true
+      - taxon: isorophusella
+      - taxon: lepidodiscus
+        children:
+        - taxon: alpenensis_bassler_1936
+          new: true
+      - taxon: discocystis
+        children:
+        - taxon: laudoni_bassler_1936
+          new: true
+        - taxon: agelacrinus-subgenus_discocystis
+          children:
+          - taxon: kaskaskiensis_hall_1858
+      - taxon: ulrichidiscus
+      - taxon: cooperidiscus
+    - taxon: edrioasteridae
+      children:
+      - taxon: edrioaster
+      - taxon: dinocystis
+        provisional: true
+    - taxon: cyathocystidae
+      children:
+      - taxon: cyathocystis
+        children:
+        - taxon: americanus_bassler_1936
+          new: true
+  - taxon: blastoidea
+    children:
+    - taxon: protoblastoidea
+      children:
+      - taxon: astrocystites
+        provisional: true
+  - openTaxon: pelmatozoa-incertae-sedis
+    children:
+    - taxon: cyclocystoididae
+      children:
+        - taxon: cyclocystoides

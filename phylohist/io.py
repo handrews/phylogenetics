@@ -21,9 +21,6 @@ COMMON_FILES = (
   DATA_DIR / 'sources.yaml',
   DATA_DIR / 'taxa.yaml',
 )
-DATA_FILES = (
-  DATA_DIR / 'trees.yaml',
-)
 PERSONAL_FILES = (
   PERSONAL_DIR / 'authors.yaml',
   PERSONAL_DIR / 'publications.yaml',
@@ -82,7 +79,7 @@ def load_files(personal=False):
   if personal:
     files = COMMON_FILES + PERSONAL_FILES
   else:
-    files = COMMON_FILES + DATA_FILES
+    files = COMMON_FILES
 
   logger.info("Checking schema...")
   schema_library = jschon.JSONSchema(load_yaml(
@@ -108,6 +105,9 @@ def load_files(personal=False):
     'time': {},
   }
   for filename in files:
+    if not filename.exists():
+      continue
+
     logger.info(f'Checking "{filename}"...')
     name = filename.stem
     data[name].update(load_yaml(filename))

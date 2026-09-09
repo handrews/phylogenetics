@@ -1,0 +1,158 @@
+notes: |
+  Latin species names are only in the detailed entries, and only the first
+  of three volumes of this 1789 edition (through genera starting with BU)
+  is available online.  All three of the later 1791-92 edition are available,
+  but the changes between editions are unclear.
+taxonomies:
+- taxon: vers
+  children:
+  - taxon: infusoires
+    children:
+    - taxon: monas
+    - taxon: proteus_müller.o.f_1786
+    - taxon: volvox
+    - taxon: enchelis
+    - taxon: vibrio
+    - taxon: cyclidium
+    - taxon: paramæcium
+    - taxon: kolpoda
+    - taxon: gonium
+    - taxon: bursaria
+    - taxon: cercaria
+    - taxon: trichoda
+    - taxon: kerona_müller.o.f_1786
+    - taxon: himantopus_müller.o.f_1786
+    - taxon: vorticella
+    - taxon: brachionus
+  - taxon: intestins
+    children:
+    - taxon: gordius
+    - taxon: cuculanus
+    - taxon: ascaris
+    - taxon: echynorynchus
+    - taxon: sanguisuga
+      new: true
+    - taxon: tænia
+    - taxon: strongylus
+    - taxon: lumbricus
+    - taxon: nereis
+    - taxon: nais
+    - taxon: amphitrite
+    - taxon: amphinome
+      new: true
+    - taxon: aphrodita
+  - taxon: mollusques-order
+    children:
+    - taxon: mammaria
+    - taxon: ascidia
+      children:
+      - taxon: mammillaris_pallas_1774
+      - taxon: mentula_müller.o.f_1776
+      - taxon: scabra_müller.o.f_1776
+      - taxon: patula_müller.o.f_1776
+      - taxon: rustica_linnaeus_1767
+      - taxon: papillosa_linnaeus_1767
+      - taxon: echinata_linnaeus_1767
+      - taxon: conchilega_müller.o.f_1776
+      - taxon: villosa_fabricius_1780
+      - taxon: ampulla_bruguière_1789
+        new: true
+      - taxon: tuberculum_fabricius_1780
+      - taxon: pedunculata_bruguière_1789
+        new: true
+      - taxon: rapa_bruguière_1789
+        new: true
+      - taxon: aspersa_müller.o.f_1776
+      - taxon: complanata_fabricius_1780
+      - taxon: corrugata_müller.o.f_1776
+      - taxon: ramosa_bruguière_1789
+        new: true
+      - taxon: clavata_müller.o.f_1776
+      - taxon: lepadiformis_müller.o.f_1776
+      - taxon: canina_müller.o.f_1776
+      - taxon: viridescens_bruguière_1789
+        new: true
+      - taxon: solitaria_bruguière_1789
+        new: true
+      - taxon: sypho_forsskål_1775               # Salpa
+      - taxon: parallelogramma_müller.o.f_1776
+      - taxon: orbicularis_müller.o.f_1784
+      - taxon: venosa_müller.o.f_1776
+      - taxon: intestinalis_linnaeus_1767
+      - taxon: octodentata_gunnerus_1770
+      - taxon: gelatinosa_linnaeus_1767
+      - taxon: quadridentata_linnaeus_1767
+      - taxon: virgenea_müller.o.f_1776
+      - taxon: prunum_müller.o.f_1776
+      # "Species that are insufficiently known"
+      # - taxon: gelatina_müller.o.f_1776
+      # - taxon: crystallina_müller.o.f_1776
+      # - taxon: patelliformis_müller.o.f_1776
+    - taxon: pedicellaria
+    - taxon: planaria
+    - taxon: fasciola
+    - taxon: tethys
+    - taxon: lærnea
+    - taxon: biphora                            # Salpa
+      synonyms:
+      - taxon: salpa
+      new: true
+      children:
+      - taxon: maxima_forsskål_1775
+      - taxon: pinnata_forsskål_1775
+      - taxon: democratica_forsskål_1775
+      - taxon: macronata_forsskål_1775
+      - taxon: punctata_forsskål_1775
+      - taxon: confœderata_forsskål_1775
+      - taxon: fasciata_forsskål_1775
+      - taxon: africana_forsskål_1775
+      - taxon: polycratica_forsskål_1775
+    - taxon: actinia
+    - taxon: hydra
+    - taxon: holothuria
+    - taxon: sepia
+    - taxon: clio
+    - taxon: doris
+    - taxon: laplysia
+    - taxon: limax
+    - taxon: myxine
+    - taxon: physsophora
+    - taxon: beroe
+      children:
+      - taxon: ovatus_bruguière_1789
+        new: true
+      - taxon: pileus_müller.o.f_1776
+      - taxon: hexagonus_modeer_1790
+    - taxon: medusa
+  - taxon: échinodermes-order
+    new: true
+    children:
+    - taxon: asterias
+      notes: Volume 2 not available for species (filed under Étoile).
+    - taxon: echinus
+      notes: Volume 2/3 not available for species (filed under Oursin).
+  - taxon: testacés
+  - taxon: zoophites
+    children:
+    - taxon: tubipora
+    - taxon: madrepora
+    - taxon: mæandrites
+    - taxon: millepora
+    - taxon: flustra
+    - taxon: cellaria
+    - taxon: carallina
+    - taxon: isis
+      notes: Volume 2/3 not available for species
+    - taxon: gorgonia
+    - taxon: antipathes
+    - taxon: sertularia
+    - taxon: tubularia
+    - taxon: botryllus # Sea Squirt
+      children:
+      - taxon: stellatus_gaertner_1774
+        notes: Le botrylle étoilé. (B. stellatus.)
+      - taxon: conglomeratus_gaertner_1774
+        notes: Botrylle fasciculé
+    - taxon: alcyonium
+    - taxon: pennatula
+    - taxon: spongia

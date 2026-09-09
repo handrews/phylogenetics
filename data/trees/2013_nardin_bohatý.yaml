@@ -1,0 +1,62 @@
+taxonomies:
+- taxon: blastozoa
+  children:
+  - taxon: rhombifera
+    emended: true
+    notes: Emended Paul, 1968
+    children:
+    - taxon: dichoporita
+      children:
+      - taxon: glyptocystitida-superfamily
+        children:
+        - taxon: pleurocystitidae
+          children:
+          - taxon: henicocystinae
+            emended: true
+            modifier: nom. transl.?
+            children:
+            - taxon: henicocystis
+            - taxon: coopericystis
+            - taxon: regulaecystis
+              children:
+              - taxon: pleurocystoides_dehm_1932
+                type: true
+              - taxon: testudineus_nardin_bohatý_2013
+                new: true
+        - openTaxon: pleurocystitidae-indeterminate-genus_nardin_bohatý_2013
+          children:
+          - openTaxon: pleurocystitidae-sp_nardin_bohatý_2013
+phylogenies:
+- treeType: cladogram
+  methodology: strict consensus of 4 shortest trees (45 steps)
+  tree:
+    children:
+    - taxon: cuniculocystis
+      outgroup: true
+    - taxon: macrocystella
+      outgroup: true
+    - taxon: cheirocystella
+      outgroup: true
+    - children:
+      - children:
+        - children:
+          - bracket: henicocystinae
+            children:
+            - taxon: coopericystis
+            - taxon: henicocystis
+            - taxon: regulaecystis
+          - taxon: hillocystis
+          - bracket: pleurocystitinae
+            taxon: turgidacystis
+        - bracket: pleurocystitinae
+          taxon: amecystis
+        - bracket: pleurocystitinae
+          children:
+          - children:
+            - taxon: pleurocystites
+            - taxon: praepleurocystis
+          - taxon: pygecystis
+      - bracket: deltacystinae
+        children:
+        - taxon: deltacystis
+        - taxon: plethoschisma

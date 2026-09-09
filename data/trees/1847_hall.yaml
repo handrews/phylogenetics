@@ -1,0 +1,145 @@
+taxonomies:
+- taxon: crinoidea-order
+  notes: Chazy limestone
+  children:
+  - taxon: crinoidea-family
+    children:
+    - taxon: actinocrinus
+      children:
+      - taxon: tenuiradiatus_hall_1847
+        new: true
+      - openTaxon: actinocrinus-sp_hall_1847
+- taxon: echinodermata-class
+  notes: |
+    Trenton limestone
+    Echinodermata described as a family in text, but also as containing
+    the families Crinoidea, Cystidea, Echinidea and the genus Asterias,
+    although Crinoidea is also described as an "Order or Class" in a table,
+    and even Asterias is included there..
+  children:
+  - taxon: crinoidea-order
+    children:
+    - taxon: asterias
+      notes: |
+        No mention of Asteriadea, or its ordered relationship to the
+        Crinoidea -> Cystidea -> Echinidea sequence, but phrases like
+        "approaching a true Asterias" suggest it is veiwed as higher?
+      children:
+      - taxon: matunita_hall_1847
+        new: true
+    - taxon: crinoidea-family
+      notes: Seems to use Crinoidea as both Order and Family?
+      children:
+      - taxon: schizocrinus
+        new: true
+        children:
+        - taxon: nodosus_hall_1847
+          new: true
+      - taxon: poteriocrinus
+        children:
+        - taxon: alternatus_hall_1847
+          new: true
+        - taxon: gracilis_hall_1847_poteriocrinus
+          new: true
+      - taxon: scyphocrinus
+        new: true
+        children:
+        - taxon: heterocostalis_hall_1847
+          new: true
+    - taxon: cystidea-family
+      notes: |
+        Mostly described as a separate family from Crinoidea, noting it
+        as intermediate between them and the Echinidea, but sometimes
+        spoken of compared to "true Crinoidea" implying containment?
+        Seems to use Crinoidea as both Order and Family?
+      children:
+      - taxon: echino-encrinites
+        synonyms:
+        - taxon: echino-encrinites
+          auth: [von Meyer]
+          in: [Karstner]
+          year: 1826
+          notes: volume ii; specimen has since been lost
+          pages:
+          - [185, 192]
+          illustrations:
+          - plate: 2
+            figures:
+            - [1, 5]
+        - taxon: echino-encrinites
+          auth: [von Meyer]
+          in: [Karstner]
+          year: 1826
+          notes: volume iii
+          pages:
+          - [232, 237]
+        - taxon: echinosphærites
+          auth: [Pander]
+          year: 1830
+          notes: '"Sp."'
+        - taxon: echinosphærites
+          auth: [Bronn]
+          year: 1835
+          notes: '"Sp."'
+        - taxon: goniocrinites
+          auth: [Eichwald]
+          year: 1840
+        - taxon: echino-encrinus
+          auth: [Volborth]
+          year: 1842
+        - taxon: sycocystites
+          auth: [buch]
+          year: 1844
+        children:
+        - taxon: anatiformis_hall_1847
+          new: true
+          pages: 127
+          illustrations:
+          - plate: XXIX
+            figures:
+            - [4a, 4f]
+    - taxon: echinidea-family
+      notes: Included due to mention as the destination of Cystidia transtion.
+- notes: Corals of the Hudson River Group (exact higher taxon unclear?)
+  children:
+  - taxon: discophyllum
+    new: true
+    pages: 277
+    children:
+    - taxon: peltatum_hall_1847
+      new: true
+      pages: 277
+      illustrations:
+      - plate: LXXV
+        figures:
+        - 3
+    - openTaxon: discophyllum-sp_hall_1847
+      pages: 277
+      illustrations:
+      - plate: LXXV
+        figures:
+        - 4
+- taxon: crinoidea-order
+  notes: Crinoidea of the Hudson River Group
+  children:
+  - taxon: crinoidea-family
+    children:
+    - taxon: heterocrinus
+      new: true
+      children:
+      - taxon: heterodactylus_hall_1847
+        new: true
+      - taxon: simplex_hall_1847
+        new: true
+      - taxon: gracilis_hall_1847_heterocrinus
+        provisional: true
+        new: true
+    - taxon: glyptocrinus
+      new: true
+      children:
+      - taxon: decadactylus_hall_1847
+        new: true
+    - taxon: tentaculites_emmons_1842
+      children:
+      - taxon: flexulosa_hall_1847
+        new: true

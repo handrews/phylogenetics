@@ -1,0 +1,15 @@
+taxonomies:
+- taxon: echinodermata_klein_1778
+  children:
+  - taxon: blastozoa
+    children:
+    - taxon: lepidocystidae
+      children:
+      - taxon: vyscystis
+        emended: true
+        children:
+        - taxon: ubaghsi_fatka_kordule_1990
+          type: true
+        - taxon: spinosa_wang.d.z_nohejlová_sun.z.x_zeng.h_lefebvre_yang.x.l_zhao.f.c_2024
+          provisional: true
+          new: true

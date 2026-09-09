@@ -1,0 +1,31 @@
+taxonomies:
+- taxon: echinodermata
+  auth: [bruguiére]
+  year: 1791
+  children:
+  - taxon: blastozoa
+    children:
+    - taxon: rhombifera-class
+      emended: true
+      notes: Emended Paul 1968
+      children:
+      - taxon: dichoporita
+        children:
+        - taxon: glyptocystitida-superfamily
+          modifier: nom. transl.
+          children:
+          - taxon: pleurocystitidae
+            children:
+            - taxon: praepleurocystis
+              children:
+              - taxon: watkinsi_strimple_1948
+                type: true
+                synonyms:
+                - taxon: watkinsi_strimple_1948
+                  parents:
+                  - taxon: pleurocystites
+                - taxon: nodosus_westphal_1974
+            - taxon: pleurocystites
+              children:
+              - taxon: squamosus_billings_1854
+                type: true

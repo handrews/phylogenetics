@@ -1,0 +1,15 @@
+taxonomies:
+- taxon: edrioblastoidea
+  new: true
+  children:
+  - taxon: astrocystites
+    moved:
+      taxon: edrioasteroidea
+    synonyms:
+    - taxon: steganoblastus
+    children:
+    - taxon: ottawaensis_whiteaves_1897
+      type: true
+      specimens:
+        syntypes:
+        - Canadian Geological Survey 752
