@@ -29,9 +29,18 @@ recorded as a synonym; see [Terminology updates](#terminology-updates-1966--2023
 - Species names are entities in their own right, not halves of a binomial. A
   species node always sits under a genus node, so the tree encodes the
   combination, and a recombination is the same species entity appearing under a
-  different genus in a later source. `originalParent` on the taxon record and
-  `parents` on a synonymy entry both record a combination: the original one and
-  the one the cited usage employed.
+  different genus in a later source. The original combination is whatever the
+  protologue node (`new: true`) sits under; `parents` on a synonymy entry is
+  the combination the cited usage employed. `originalParent` on the taxon
+  record is not a combination claim: it disambiguates the key when one author
+  used one epithet for two species under different genera in one work
+  (`brachiatus_hall_1852_myelodactylus` beside `brachiatus_hall_1852_glyptaster`).
+  It belongs with `needsQualification` as key housekeeping and should be
+  renamed to say so (`keyQualifier`); it disappears when the YAML gives way
+  to a database.
+- Source keys carry the year of publication, never of a reading. A `reading`
+  record, or a key that follows a volume's nominal year rather than its issue,
+  is an error to fix (A11).
 - Every rule in this document has been broken by some publication. The model
   does not have to fit everything; it has to make it visible when something
   does not fit. `notes` is the last-resort escape hatch on every object, and
@@ -181,19 +190,13 @@ that year, and each printed attribution stays as printed. Resolution uses A6's
 editorial block only when the printed year would otherwise resolve to the
 wrong record or to none. Never "correct" a printed year in place.
 
-**A9. "In preparation" and works never located.** Bell 1980 lists "Aepyaster
-Sprinkle and Strimple (in preparation)". The `inPrep` source record is the
-right anchor for the usage. Whether the work ever appeared is not known, and
-a later summary cites the name without comment, so the availability judgement
-("nomen nudum") is editorial and dated:
-
-```yaml
-aepyaster:
-  authority: {source: inprep_sprinkle_strimple}
-  editorial:
-    availability: unavailable
-    basis: no publication located as of 2026-09; Bell 1980 cites it as in preparation
-```
+**A9. "In preparation" citations.** Bell 1980 lists "Aepyaster Sprinkle and
+Strimple (in preparation)". The `inPrep` source record is the anchor for the
+usage, and that is all the data says. No editorial availability judgement is
+recorded: the nomen nudum status will be captured as a claim when the
+publication that states it is added, and until then the absence of a
+protologue is visible from the `inPrep` flag alone. The "never published"
+wording on the record should go.
 
 **A11. One work, several printings.** Von Buch's *Über Cystideen* was read
 on a date reported as 3 March, 3 May or 14 May 1844, reported in the
@@ -209,10 +212,14 @@ pages that exist only in the Bericht and the preprint. Rules:
 - A printed citation resolves to the printing whose pagination it fits, and
   where year and page disagree the editorial block (A6) names the printing
   and says why.
-- The taxon record's authority names one printing, with `basis`. Which one is
-  a judgement (the Code dates availability from publication, not reading),
-  and the current choice of the reading is exactly the kind of judgement A10
-  says to mark.
+- The taxon record's authority names a printing, never a reading, and the
+  key's year is that printing's year. `1844_buch` is therefore a record to
+  convert, not to keep: the 1844 Bericht (pp. 120–133) is the first printing
+  that carries the names, so the record becomes the Bericht article with
+  `processDates.read: 1844-03-14`, and the keys `_buch_1844` stand. The
+  `reading` form of `$defs/article` is retired once no record uses it (G6).
+  `1963_brown.i.a` (issued 1964-04-10) becomes `1964_brown.i.a`, and
+  `branagani_brown.i.a_1963` follows.
 
 The Bericht settles the von Buch case: the reading was 14 March 1844 (Bericht
 p. 120), the genus is on Bericht p. 128 and the species on p. 129, so the
@@ -311,14 +318,15 @@ carrying the cited work, pages, figures, and the combination from `parents`.
 When the entry's name differs from the node's name it additionally derives a
 `junior-synonym` claim between the two names. No data change.
 
-**B3 (MVP). `type: true` on a synonymy entry.** All three uses (Kesling 1966
-twice, Doweld 2012) sit on an entry whose taxon is the parent node's own taxon.
-The *Preface* (xix) cites a genus's type species with an asterisk *in its
-original combination*, inside the genus entry, so these look like that citation
-recorded on the species' self-usage entry. Proposed rule: `type: true` lives on
-the species node under the genus, never on a synonymy entry; the original
-combination is already on the taxon record as `originalParent`. Confirm, then
-move the three flags.
+**B3 (MVP). `type: true` on a synonymy entry** means the species was the type
+species of the genus given in that entry's `parents`, at the time of the cited
+usage. All three uses fit: Kesling 1966 lists *cincinnatiensis* and *ornatus*
+as types of *Narrawayella* and *Savagella*, which became junior synonyms of
+*Cyclocystoides* when their types moved; Doweld 2012 lists *neglecta* as type
+of *Bockia*, replaced by *Heckerocrinus*. Rule: on a synonymy entry `type`
+requires `parents`, and the claim table emits "type species of `parents[0]`"
+for the entry rather than a type claim about the node. This is distinct from
+`type: true` on a `children` node, which is the type of the node's own parent.
 
 **B4 (MVP). `tentative` defaults to `true`.** Every sibling flag defaults to
 `false`, code never reads it, and all 16 uses set it explicitly. Change the
@@ -364,19 +372,24 @@ Emendation of scope is not a name act and stays on `emended`, but the *Preface
 2023* (xviii) requires its author, date and page, so add `emendedBy: authority`
 for the case where the emender is not the current source.
 
+Authors trained under the botanical code use its words in zoological papers:
+Doweld 2012 writes "nom. illeg.", "legitimate", "generotype", "Holotypus" and
+"Heckerocrinus (Bockia) cucumis", with the replaced genus in parentheses as a
+citation device. The act is still `nomNov`; the printed words go in `citedAs`
+or `notes`. No enum member for another code's vocabulary unless it recurs.
+
 **B7. Rename taxon-level `bracket` to `vernacular`** (13 uses).
 
-**B8 (MVP). Taxon-level `synonym` is an unsourced claim.** All 8 uses identify
-an anonymous placeholder with a later-named taxon (Sprinkle 1973's unnamed order
-1 = Gogiida). Either a later source makes that identification, in which case it
-belongs in that source's synonymy list as a B2 entry, or it is editorial:
-
-```yaml
-eocrinoidea-unnamed-order-1_sprinkle_1973:
-  editorial:
-    sameAs: gogiida
-    basis: "Sprinkle 1973 order 1 comprises the genera later placed in Gogiida"
-```
+**B8 (MVP). Drop taxon-level `synonym`.** An early idea, superseded by the
+trees. Of the 8 uses, 5 are already stated by a later source's synonymy:
+Broadhead 1982 lists Sprinkle's unnamed orders 1 and 2 under Gogiida and
+Ascocystitida, Doweld 2012 lists Bockiidae under Heckerocrinidae, Luo et al.
+2008 and Deshmukh 2022 cover the two species cases. The remaining 3 (Sprinkle's
+indeterminate order 1 = Trachelocrinida, indeterminate families 2 and 3 =
+Cambrocrinidae and Heckerocrinidae) have no source in the data that equates
+them. Delete the field everywhere; for those three, either add the source that
+makes the identification or let the placeholder stand unequated. No editorial
+block: an equation nobody printed is not recorded.
 
 **B9. Split `status`.** `monophyletic` is an opinion and belongs on a tree.
 `informal` and `unregistered` describe availability; fold them into
@@ -413,9 +426,24 @@ Later synonymies then read naturally: *angelini* Haeckel 1896 has
 `synonyms: [testudinarius_buch_1845, buchi_jaekel_1899]` and `non:
 [testudinarius_hisinger_1826, citrus_hisinger_1837]`. The same shape covers a
 genus: Jaekel's *Caryocystites* (for what is now *Heliocrinites*) is a record
-with `misidentificationOf: caryocystites`. `homonym: true` stays for distinct
-names that merely share a spelling. "nom. in errore pro" is the printed marker
-for this and goes in `citedAs`.
+with `misidentificationOf: caryocystites`. "nom. in errore pro" is the printed
+marker for this and goes in `citedAs`.
+
+**Taxon-level `homonym: true` is key housekeeping, not a claim.** It marks
+that a record's name collides with another record's or with a name outside the
+corpus, so the key needs a suffix. The homonymy itself is a claim some source
+makes, and it lives in that source's tree: Doweld 2012 is
+`heckerocrinus` with `act: [nomNov]`, `synonyms: [bockia_hecker_1938]`, and
+`non: [bockia_reisinger_1924]`, which needs a record for the turbellarian
+*Bockia* even though it is outside the corpus. Of the 16 flags, the trees
+state the homonymy for *Cyclaster* (Billings 1858 replaces it with
+*Edrioaster*) and can for *Bockia* once the `non` is added; *Actinia*,
+*Fistularia*, *Tentaculites* and *Umbellularia* have the senior name only in
+`notes`; *Alcyonium* and the two *Encrinus* records appear in no tree at all;
+*Himantopus*, *Kerona*, *Proteus*, *Penicillus*, *Urceolaria*, *Echinodiscus*
+and *Kailidiscus* have neither. Keep the flag, treat it like
+`needsQualification`, and add an integrity check that a flagged record has
+either a tree claim or a `notes` citation of the senior homonym.
 
 **B11. Objective synonyms.** The *Preface* (xxi) marks "(obj.)" and treats the
 rest as subjective. Add `objective: true` to a synonymy entry only where a source
@@ -439,7 +467,12 @@ with the union of both lists and `typeFixedBy` (an `authority`) for SD and
 ICZN, on the `type: true` node. Two rules from the 2023 text affect identity:
 a genus published after 1930 without a fixed type is unavailable, and a later
 fixation makes the name available under the later author and date, which the
-model expresses as a second taxon record with its own authority.
+model expresses as a second taxon record with its own authority. Doweld 2012
+applies exactly this: *Bockia* Hecker 1938 "failed to publish an available
+name" for want of a type (Art. 13.3), so he dates it 1940, where the type was
+fixed. The 2012 tree's "Reason for erroneous year unclear" is answered: the
+year is a printed re-dating, and the tree records it as printed with Doweld's
+reason in `notes`.
 
 **B15. "syn. by".** Part V records the work that first synonymized a name,
 "syn. by Zalasiewicz, 1995, p. 34", because "such information is an important
@@ -579,17 +612,21 @@ them, in four different specimen shapes.
     role: holotype
     illustrations:
     - {plate: 2, figures: [[1, 4]], depicts: cast}
-    occurrence: 0            # index into this node's occurrences
+    occurrence: bundenbach   # id of one of this node's occurrences
   - ids: [[QMF 59647, QMF 59653]]   # a batch, ranges allowed
     role: paratype
   illustrations:             # only figures the source does not tie to a specimen
   - {plate: 3, figures: 7, notes: "specimen not identified"}
   occurrences:
-  - series: Lower Devonian
+  - id: bundenbach
+    series: Lower Devonian
     unit: [Roofing Slate facies, Hunsrück Slate]
     location: [Bundenbach, Hunsrück Region, Germany]
 ```
 
+- Occurrences carry a short `id`, unique within the node, and material entries
+  refer to it by name. Spelling the id twice is a weak check, and F1 makes it a
+  real one: an `occurrence` reference must resolve within its node.
 - An illustration nested under a material entry *depicts* that specimen. A
   node-level illustration is a figure the source never ties to a specimen,
   which is the honest state for most pre-1900 work. Migration is therefore
@@ -633,7 +670,7 @@ must still record as printed.
 | `paralectotype` | yes | a remaining syntype after lectotype designation |
 | `neotype` | yes | designated when the original name-bearing type is lost |
 | `topotype` | no | from the type locality |
-| `hypotype`, `plesiotype` | no | figured or described in a later work; older North American usage |
+| `hypotype`, `plesiotype` | no | figured or described in a later work; older North American usage; both kept as printed (`hypotype` in Durham 1966) |
 | `allotype` | no | a paratype of the opposite sex; not applicable here, drop |
 | `kleptotype` | no | never used; drop |
 | (none) | — | material cited without a role; replaces `unknowntypes`, `unknown`, `unspecified`, `additional` |
@@ -791,11 +828,16 @@ of 289 sources and its sub-flags were never used consistently. Replace with:
 
 ```yaml
 audit:
-  state: complete | partial | unaudited | unauditable
+  state: complete | partial | unaudited | unauditable | unobtainable
   notes: "open nomenclature not captured"
 ```
 
-Default is `unaudited`. `unauditable` means no machine-readable text exists.
+Default is `unaudited`. `unauditable` means a copy exists but no
+machine-readable text does. `unobtainable` means no copy could be had at all:
+not digitized, or behind institutional access. Palaeontologia Indica n.s. 2(3)
+(1906), where the *Caryocystites* type-species question was settled, is the
+first such case; every chain of citations eventually ends at one, and the
+manifest must say so rather than leave the source looking merely uncaptured.
 The MVP coverage manifest reads this plus derived facts (page anchors present,
 material present, node count).
 
@@ -809,6 +851,10 @@ Delete after D1 lands, since that is the only design that could have wanted any
 of them.
 
 **G4. `phylohist/support.py` and `phylohist/source.py`.** Orphaned; delete.
+
+**G6. Retire the `reading` article form.** Once `1844_buch` is converted
+(A11), no record uses `oneOf` branch 3 of `$defs/article`; readings are
+`processDates.read` on the printed record.
 
 ---
 
@@ -872,40 +918,27 @@ the note verbatim with the claim.
 
 ## Questions only you can answer
 
-1. **B3**: does the reading of the three `type: true` synonymy entries as the
-   Treatise's asterisked type-species citation match what you meant?
-2. **B8**: for each of the 8 `taxon.synonym` entries, is there a source that
-   makes the identification, or is it yours?
-3. **B10**: which representation do you want for a homonym by misidentification
-   when one turns up?
-4. **D2**: are `hypotype` and `plesiotype` worth keeping as distinct roles, or
-   should both record as `plesiotype` with the printed word in `notes`?
-5. **D1**: is a back-reference by index into the node's `occurrences` list
-   acceptable to edit by hand, or would you rather give occurrences short ids?
-6. **E1**: are there age statements in your notes that the four forms (point,
-   span, boundary, modifier) cannot express?
-7. **A9**: the second in-press citation was *Aepyaster* in Bell 1980. Is the
-   dated editorial availability judgement the right shape for it?
-8. **Audit**: the *Lebetodiscus* 1908 entry has `year: 1901`; is that a typo
-   to fix now, and should *Carneyella valcourensis* be `provisional`?
-9. **B16**: in the 1975 tree, should *Cyathocystis*, *Cyathotheca*, their
+Answered so far, and folded into the items above: B3 (type on a synonymy
+entry), B8 (drop `synonym`), B10 (`homonym` is housekeeping), D1 (occurrence
+ids), D2 (keep `hypotype`), E1 (no other age forms known), A9 (no editorial
+availability judgement), A11 (key by printing, never reading; reading date
+settled as 14 March 1844).
+
+1. **B10**: the Caryocystites case supplies the misidentification-record
+   shape; confirm it, including the genus-level use for Jaekel and Hall.
+2. **A6**: the 1975 tree's `year: 1980` on *plautinae* is a typo for 1880?
+3. **B16**: in the 1975 tree, should *Cyathocystis*, *Cyathotheca*, their
    species, and the family all become `provisional` to match "may include"
-   and "with question"? And is `year: 1980` on *plautinae* a typo for 1880?
-10. **B18**: the record dates the Zittel *Rhombifera* class and order to 1870;
-    Paul et al. 2024 print 1879. Which Zittel work did you mean?
-11. **1983 diagram**: the figure caption names the ancestor as the genus
-    *Stromatocystites*; the tree's diagram root is the order. Which does the
-    figure show?
-12. **A11**: for names von Buch introduced, which printing should the record's
-    authority name: the 1844 reading, the 1844 Bericht (which carries the
-    names on pp. 128–129), the 1845 preprint, or the 1846 Abhandlungen? The
-    reading date is settled: 14 March 1844 per the Bericht.
-13. **B10**: does the misidentification record shape read right to you, and
-    should von Buch's *testudinarius* be keyed to the preprint (1845) or to
-    `1844_buch`?
-14. **Hisinger**: settled. *testudinarius* is a 1837 replacement name for
-    *granatum*; "1826" is a Treatise error. Still wanted: Bather 1906,
-    "Ordovician Cystidea from Burma", in Reed's Northern Shan States memoir
-    (Palaeontologia Indica n.s. 2, mem. 3), which is the Treatise's reference
-    (11) and where the type-species question was resolved; and the 1845
-    preprint if it exists anywhere.
+   and "with question"?
+4. **B18**: the record dates the Zittel *Rhombifera* class and order to 1870;
+   Paul et al. 2024 print 1879. Which Zittel work did you mean?
+5. **1983 diagram**: the figure caption names the ancestor as the genus
+   *Stromatocystites*; the tree's diagram root is the order. Which does the
+   figure show?
+6. **Audit**: the *Lebetodiscus* 1908 entry has `year: 1901`; is that a typo
+   to fix now, and should *Carneyella valcourensis* be `provisional`?
+7. **A11**: do you want `1844_buch` rewritten in place as the Bericht article,
+   with `cystidea-sp_buch_1944` fixed to 1844 at the same time?
+8. **Hisinger**: settled. Still wanted: Bather 1906 in Reed's Northern Shan
+   States memoir, now known to be unobtainable online, and the 1845 preprint
+   if it exists anywhere.

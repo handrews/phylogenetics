@@ -573,3 +573,54 @@ about *Caryocystites*:
 
 Data check: none new. The paper still to find for S229 is Palaeontologia
 Indica n.s. 2(3), 1906, Reed's Burma memoir with Bather's cystid chapter.
+
+## 2012_doweld — *Heckerocrinus* nom. nov. (Paläont. Z. 86)
+
+A two-page replacement-name note, read in full.
+
+**The act.** "Heckerocrinus nom. nov. … proposed as a replacement name for
+Bockia Hecker non Reisinger" and "Heckerocrinidae nom. nov. … instead of
+illegitimate Bockiidae Ubaghs (1972: 4)". Under B6 both nodes carry `act:
+[nomNov]`; the senior homonym *Bockia* Reisinger 1924 (a turbellarian) needs a
+record so the `non` can point at it, even though it is outside the corpus.
+
+**A re-dating by Article 13.3 (p. 457).** "Hecker did not designate type of the
+genus, and thereby failed to publish an available (valid) generic name in
+1938 … This was done later … (Hecker 1940: 38)". So Doweld cites "Bockia
+Hecker 1940" throughout. The 2012 tree records `year: 1940` with "Reason for
+erroneous year unclear"; the reason is now known and the year is a printed
+claim, not an error. B14.
+
+**Botanical vocabulary in a zoological paper.** "nom. illeg.", "legitimate",
+"generotype", "Holotypus", "Derivatio nominis", and the citation device
+"Heckerocrinus (Bockia) cucumis" with the replaced genus in parentheses. B6
+records the words as printed and maps the act.
+
+**Gender endings.** *neglecta* becomes *neglectus* under the masculine
+replacement name, with *grava*/*gravus* and *sculpta*/*sculptus*. The tree
+uses `altSpellingOf` pairs, which is the *Preface* rule (x–xi): agreement
+changes are not new names.
+
+**Material and doubt.** One line per species with "Holotypus: 2801/22 [Geol.
+Institute, Russ. Acad. Sci. Moscow]" (repository in brackets after the
+number) and an occurrence with "?Southwestern USA (West Texas) and ?Western
+USA" (per-element doubt, E8).
+
+**`type: true` on a synonymy entry (B3).** "Type species: H. neglectus
+(Hecker) (Bockia neglecta Hecker)". The tree has *neglectus* as type under
+*Heckerocrinus* and the *neglecta* entry with `type: true` and `parents:
+[bockia_hecker_1938, bockiidae]`: the species was the type of *Bockia*. Same
+shape as Kesling 1966's *Narrawayella* and *Savagella* entries.
+
+Data checks: add `bockia_reisinger_1924` and the `non` on the 2012 node;
+resolve the "erroneous year" note into the Art. 13.3 statement.
+
+## Sources that cannot be had
+
+Palaeontologia Indica n.s. 2(3) (Reed 1906, with Bather's cystid chapter) is
+not in any online archive, and the Treatise's account of the *Caryocystites*
+type species rests on it. This is the normal end of a citation chain, not an
+exception: works exist that are undigitized, or digitized behind institutional
+subscriptions priced for libraries. G1's `unobtainable` audit state records
+the fact, and every claim that cites such a work stays secondhand with the
+citing source named.
