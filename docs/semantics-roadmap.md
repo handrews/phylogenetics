@@ -406,15 +406,30 @@ was later named *angelini* by Haeckel and *buchi* by Jaekel. None of that can
 be said if von Buch's usage is only a usage of Hisinger's name.
 
 Decision: a misidentification is a taxon record of its own, with a link to the
-name it was mistaken for:
+name the author applied. `misidentificationOf` answers one question only:
+whose name was this? It does not say what the material was, or what the
+name's author thought the material was; those are synonymy claims made by
+whichever source makes them.
 
 ```yaml
-testudinarius_buch_1845:
+testudinarius_buch_1844:
   name: testudinarius
-  authority: {source: 1845_buch, pages: 19}
-  misidentificationOf: testudinarius_hisinger_1826
-  notes: nom. in errore per Kesling 1967, S229; the specimen is Hisinger 1837 pl. 25 fig. 8d
+  authority: {source: 1844_buch, pages: 129}
+  misidentificationOf: testudinarius_hisinger_1837
+  notes: |
+    "Caryocystites testudinarius His." applied to the elongated form von Buch
+    read as Hisinger's pl. 25 fig. 9d; the figure is 8d, Hisinger's unnamed
+    "Formæ irregulares" under S. Citrus. nom. in errore per Kesling 1967, S229.
 ```
+
+Von Buch printed Hisinger's name, so the link goes to Hisinger's
+*testudinarius*. What the material actually was is stated by the sources
+that say so: the Treatise's node for *angelini* lists von Buch's usage and
+Hisinger's "Formæ irregulares" node (fig. 8d) in `synonyms`, and Hisinger's
+*testudinarius* and *citrus* in `non`. Hisinger's own view sits in his own
+tree, where the forms are an `openTaxon` under *citrus*. Von Buch's belief
+about Hisinger's belief is a sentence in `notes` (B19). Nothing needs to be
+captured twice, and nothing beyond this goes into structure.
 
 Von Buch's own words matter here, and so do Hisinger's. The 1846 translation
 (p. 34) says "Hisinger has united this species with the former under the name
@@ -433,8 +448,9 @@ sentence about the variety is a secondhand claim contradicted by its source
 (B19), recorded in `notes` as printed.
 
 Later synonymies then read naturally: *angelini* Haeckel 1896 has
-`synonyms: [testudinarius_buch_1845, buchi_jaekel_1899]` and `non:
-[testudinarius_hisinger_1826, citrus_hisinger_1837]`. The same shape covers a
+`synonyms: [testudinarius_buch_1844, buchi_jaekel_1899, <Hisinger's Formæ
+irregulares node>]` and `non: [testudinarius_hisinger_1837,
+citrus_hisinger_1837]`. The same shape covers a
 genus: Jaekel's *Caryocystites* (for what is now *Heliocrinites*) is a record
 with `misidentificationOf: caryocystites`. "nom. in errore pro" is the printed
 marker for this and goes in `citedAs`.
