@@ -170,6 +170,39 @@ and would not match a differently lettered `1896_haeckel`. Keep the letter in
 `citedAs` (it is part of what was printed) and never derive a source key from
 it.
 
+**A8. A cited work's year is itself contested.** Schmidt's *Cyathocystis*
+paper is 1879 in Bockelie & Paul 1983 and 1880 in Bell 1975 and Bassler 1935;
+Regnéll's Treatise chapter is 1966 and "1967"; Bell 1975 prints "Jaekel, O.
+1918 (1921)". The source record carries one `pubDate` and a `notes` saying why
+that year, and each printed attribution stays as printed. Resolution uses A6's
+editorial block only when the printed year would otherwise resolve to the
+wrong record or to none. Never "correct" a printed year in place.
+
+**A9. "In preparation" and works never located.** Bell 1980 lists "Aepyaster
+Sprinkle and Strimple (in preparation)". The `inPrep` source record is the
+right anchor for the usage. Whether the work ever appeared is not known, and
+a later summary cites the name without comment, so the availability judgement
+("nomen nudum") is editorial and dated:
+
+```yaml
+aepyaster:
+  authority: {source: inprep_sprinkle_strimple}
+  editorial:
+    availability: unavailable
+    basis: no publication located as of 2026-09; Bell 1980 cites it as in preparation
+```
+
+**A10 (MVP). The record's authority is an editorial choice, and silence is
+not a choice.** Echinodermata is attributed in the tree files to Bruguière
+1791, Klein 1734, Bruguière 1789 and Fleming 1828, and Stokes 2021 argues for
+Klein 1778; thirty-four sources print no attribution at all. The `taxa.yaml`
+authority is the dataset's canonical pick, marked as such with a `basis`; every
+differing printed attribution is a claim (A2); a source that prints none makes
+no claim, and nothing is inferred. The one assumption the model does make is
+identity: a bare "Echinodermata" at phylum rank resolves to the single record.
+That is an editorial rule for well-established high-rank names, stated here,
+and it does not extend downward.
+
 **A5.** `auth` free-text names (521 uses, 220 distinct): decide the rule for
 family-only author records. Add alias support to `person` while there: the
 *Preface 2023* (xxi–xxii) retains each author's own romanization per
@@ -346,6 +379,67 @@ attributes the synonymy to the cited work. The claim table emits it as such,
 and when the cited work's own tree is captured the two can be compared, which
 is the citation-error check the MVP eval wants.
 
+**B16 (MVP). Hedged and declared-incomplete membership.** Two different
+things a source can say about a list of members, both met in the examples:
+
+- **Hedged membership.** Bell 1975 (p. 36): "other members of this group may
+  include:" followed by eight species, one with a "?". Every listed member is
+  `provisional` (the C table's placement axis); the "?" item is additionally
+  `questionable`; the parent carries the phrase in `notes`. Bell also places
+  the family under the suborder "with question", so the family node is
+  `provisional` as well.
+- **Declared incompleteness.** Parsley 2021 (p. 974): "This is not a
+  comprehensive listing of the probable orders to be included in this sub
+  class", and "Genera, e.g. Gogia, …". The placements are firm; the source
+  says the list is partial. Add `listComplete: false` on the parent node, with
+  the phrase in `notes`. Its opposite is also printed: Dzik & Orłowski 1993
+  "Species included: Monotypic" is `listComplete: true`.
+
+The ground rule that absence is not a statement still holds; `listComplete`
+records what the source *said* about its list, nothing more.
+
+**B17. Parentheses around a suprafamilial authority.** Bockelie & Paul 1983
+print "Order Cyathocystida (Bell 1975)" for a suborder they raise to order and
+redefine, with the act stated in prose on p. 262. The parentheses borrow the
+species-level changed-combination convention. Record it as `act: [nomTransl]`
+with `emended: true` (B6), and keep the parenthesized form in `citedAs` so
+the printed convention is not lost.
+
+**B18 (MVP). The same name at different ranks.** *Rhombifera* is a class
+(Zittel 1879), an order, an informal group, and a genus (Barrande 1867), and
+Paul et al. 2024 use class and genus in one hierarchy. *Gogiida* is an order
+(Broadhead 1982) and, in Parsley 2021, a subclass containing that order.
+Jaekel's 1918 name appears as Eocrinida, Eocrinoida and Eocrinoidea at order
+and class. The rule: one record per name-and-authority-and-rank;
+`altRankOf` links records only when they are the same author's name
+transferred (the two Zittel *Rhombifera* records, not the Barrande genus);
+name resolution is rank-aware and returns every record; the claim table never
+merges on the string. The *Preface 2023* (xvii) says such duplication should
+not happen, which is why it must be modelled rather than assumed away.
+
+**B19. Secondhand claims that contradict their source.** Parsley 2021 (p.
+970) cites Dzik & Orłowski 1993 for a placement those authors argued against;
+Bockelie & Paul 1983 summarize Bell 1980 as placing Cyathocystina in "the
+order Isorophina". Both are recorded as printed. When both works are captured
+the claim table can set the secondhand claim beside the source's own claim.
+That comparison is derived, never stored, and it is the citation-error class
+of the MVP eval.
+
+**B20 (MVP). Placements the editor inferred.** The 1983 tree places
+*Timeischytes* and *Hadrochthus* under Isorophida with the note "order and
+suborder assumed", because the paper says only "offshoots from the
+Agelacrinitidae". An inferred node needs a marker the claim table can read:
+
+```yaml
+- taxon: isorophida
+  editorial:
+    inferred: true
+    basis: Agelacrinitidae is in Isorophida per Bell 1980, which the paper cites
+```
+
+The claim table emits the placement as editorial, not as the source's.
+
+
 ---
 
 ## C. Open nomenclature and uncertainty
@@ -479,6 +573,23 @@ locates a figure *in the cited work*; under `material` or a node it records what
 a figure *in this source* shows. No rename. Drop `illustration.source`,
 `location` and `collectedFrom`, which were earlier attempts at the specimen link
 and are unused.
+
+**D6. Exclusion at figure level.** Paul et al. 2024 accept "Gutiérrez-Marco
+et al., p. 111, pl. 2, figs. 1–5, 11 (non fig. 6)". Neither `pars` nor a
+`non` entry says which figures. Allow `non` inside an `illustrations` locator:
+
+```yaml
+illustrations:
+- {plate: 2, figures: [[1, 5], 11], non: [6]}
+```
+
+**D7. A type designated by figure.** The same paper selects a lectotype as
+"the original of Barrande, 1867, plate 11, figure 5, now in the National
+Museum, Prague (Reg. no. L13001)". The material entry carries the number, the
+role `lectotype`, the designation as this source's act, and the 1867 figure as
+the identifying locator. Older works identify specimens by figure alone
+(Bell's Bigsby specimen), so the locator must be able to stand without a
+number.
 
 **D5. Migration.** 88 node-level `specimens` blocks, 13 `taxon.holotype`
 entries, 30 occurrence-level blocks. Mechanical for the typed-role shapes;
@@ -619,7 +730,18 @@ Each has a home; none needs a new top-level construct.
 | a printed attribution that is wrong | "Bell, 1974" in Bell 1975 | as printed, plus `editorial.source` (A6) |
 | a role word outside the enum | "Illustrated Specimen" (p. 61) | `roleAsPrinted` (D1) |
 | horizon given as a quoted local name plus a hierarchy | "'Cobourg beds' (= the 'Cystid beds, about 180 feet below the top of the Trenton')" (p. 65) | `unit` list for the hierarchy; the quoted equivalence in `notes` until E1 has a `localUnit` alias |
+| a list the source says is partial | "not a comprehensive listing", "Genera, e.g." (Parsley 2021, pp. 974–975) | `listComplete: false` (B16) |
+| a list the source hedges as a whole | "other members of this group may include" (Bell 1975, p. 36) | `provisional` on each member (B16) |
+| a placement the editor inferred | "order and suborder assumed" (1983 tree) | `editorial.inferred` (B20) |
+| a name at two ranks in one hierarchy | Class Rhombifera / genus *Rhombifera* (Paul et al. 2024, p. 5) | separate records; rank-aware resolution (B18) |
+| a citation that contradicts the cited work | Parsley 2021 on Dzik & Orłowski 1993 | as printed; comparison derived (B19) |
+| a usage accepted except some figures | "(non fig. 6)" (Paul et al. 2024, p. 5) | `non` inside the locator (D6) |
+| two years for one cited work | Schmidt 1879 / 1880; "1918 (1921)" | as printed; source record picks one with `notes` (A8) |
+| a tentative recombination in prose | "*Agelacrinites* (*sensu lato*) *hanoveri* may belong to the genus *Postibulla*" (Bell 1975, p. 34) | placement with `provisional` and `sensu: lato` |
 | anything else | — | `notes`, on the node, and the audit state records that it was seen |
+
+The example sources are catalogued in
+[`source-observations.md`](source-observations.md).
 
 The rule for adding structure: a case earns a field when it appears in a
 second source. Until then it lives in `notes`, and the claim table surfaces
@@ -629,11 +751,12 @@ the note verbatim with the claim.
 
 ## Sequence
 
-1. **A1–A3, A6, B1–B5, B8, C1, C2, F1, F4, F6–F8, G1.** The MVP set. Each is
-   a documentation decision, a small data migration, or one integrity check.
-   Nothing here depends on D or E.
-2. **B6, B7, B9–B15, A4, A5, A7.** Vocabulary the literature uses that the
-   data does not yet need; decide the convention now, add fields on first use.
+1. **A1–A3, A6, A10, B1–B5, B8, B16, B18, B20, C1, C2, F1, F4, F6–F8, G1.**
+   The MVP set. Each is a documentation decision, a small data migration, or
+   one integrity check. Nothing here depends on D or E.
+2. **B6, B7, B9–B15, B17, B19, A4, A5, A7–A9, D6, D7.** Vocabulary the
+   literature uses that the data does not yet need everywhere; decide the
+   convention now, add fields on first use.
 3. **D1–D5 decided, then migrated on the Edrioasteroidea gold slice only.**
    The rest of the corpus keeps the old shapes behind a deprecation flag.
 4. **E1–E7 and F2, F3, F5.** Same pattern: decide now, migrate the gold slice,
@@ -654,7 +777,15 @@ the note verbatim with the claim.
    acceptable to edit by hand, or would you rather give occurrences short ids?
 6. **E1**: are there age statements in your notes that the four forms (point,
    span, boundary, modifier) cannot express?
-7. **A6**: you mentioned a second in-press citation you could not place. If it
-   turns up, does the editorial block cover it?
+7. **A9**: the second in-press citation was *Aepyaster* in Bell 1980. Is the
+   dated editorial availability judgement the right shape for it?
 8. **Audit**: the *Lebetodiscus* 1908 entry has `year: 1901`; is that a typo
    to fix now, and should *Carneyella valcourensis* be `provisional`?
+9. **B16**: in the 1975 tree, should *Cyathocystis*, *Cyathotheca*, their
+   species, and the family all become `provisional` to match "may include"
+   and "with question"? And is `year: 1980` on *plautinae* a typo for 1880?
+10. **B18**: the record dates the Zittel *Rhombifera* class and order to 1870;
+    Paul et al. 2024 print 1879. Which Zittel work did you mean?
+11. **1983 diagram**: the figure caption names the ancestor as the genus
+    *Stromatocystites*; the tree's diagram root is the order. Which does the
+    figure show?
