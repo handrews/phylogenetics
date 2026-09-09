@@ -91,10 +91,9 @@ property. `personal` is counted separately.
 | property | data | data % | personal |
 |---|---|---|---|
 | `source` | 1640 | 100.0% | 0 |
-| `page` | 46 | 2.8% | 0 |
+| `pages` | 53 | 3.2% | 0 |
 | `attributedTo` | 24 | 1.5% | 0 |
-| `illustrations` | 24 | 1.5% | 0 |
-| `pages` | 7 | 0.4% | 0 |
+| `illustrations` | 23 | 1.4% | 0 |
 | `ex` | 2 | 0.1% | 0 |
 | `notes` | 2 | 0.1% | 0 |
 
@@ -128,17 +127,15 @@ property. `personal` is counted separately.
 | `subunit` | 0 | 0.0% | 20 |
 | `superunit` | 0 | 0.0% | 2 |
 
-### `illustration` -- 181 instances in `data/`
+### `illustration` -- 180 instances in `data/`
 
 | property | data | data % | personal |
 |---|---|---|---|
-| `figures` | 130 | 71.8% | 0 |
-| `plate` | 100 | 55.2% | 0 |
-| `page` | 70 | 38.7% | 0 |
-| `figure` | 43 | 23.8% | 0 |
-| `textFigure` | 5 | 2.8% | 0 |
-| `notes` | 3 | 1.7% | 0 |
-| `textFigures` | 3 | 1.7% | 0 |
+| `figures` | 172 | 95.6% | 0 |
+| `plate` | 99 | 55.0% | 0 |
+| `page` | 70 | 38.9% | 0 |
+| `textFigures` | 8 | 4.4% | 0 |
+| `notes` | 4 | 2.2% | 0 |
 | `uncertain` | 1 | 0.6% | 0 |
 | `collectedFrom` | 0 | 0.0% | 0 |
 | `location` | 0 | 0.0% | 0 |
@@ -252,16 +249,15 @@ property. `personal` is counted separately.
 | `new` | 1480 | 23.0% | 0 |
 | `type` | 389 | 6.0% | 105 |
 | `synonyms` | 385 | 6.0% | 49 |
-| `notes` | 364 | 5.6% | 9 |
+| `notes` | 365 | 5.7% | 9 |
 | `parents` | 326 | 5.1% | 38 |
 | `openTaxon` | 230 | 3.6% | 16 |
-| `page` | 138 | 2.1% | 0 |
+| `pages` | 194 | 3.0% | 0 |
 | `provisional` | 120 | 1.9% | 23 |
 | `illustrations` | 115 | 1.8% | 0 |
 | `specimens` | 88 | 1.4% | 0 |
 | `authority` | 86 | 1.3% | 0 |
 | `diagnosis` | 69 | 1.1% | 0 |
-| `pages` | 56 | 0.9% | 0 |
 | `emended` | 49 | 0.8% | 0 |
 | `year` | 48 | 0.7% | 2 |
 | `auth` | 46 | 0.7% | 2 |
@@ -484,7 +480,7 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/basicOccurrence/properties/specimens/additionalProperties/items/items` | string/integer | intx26, strx6 | `E63531`, `E63527`, `GM 3295c`, `GM 3295a` | - |
 | `phylogeny#/$defs/basicOccurrence/properties/specimens/additionalProperties/items` | string/integer/array | listx16, strx15, intx4 | `EE15373`, `E63527`, `GM 9292`, `GM 8052` | - |
 | `phylogeny#/$defs/basicOccurrence/properties/unit` | string/array | strx36, listx20 | `Craighead inlier`, `Mantou Formation`, `Wilberns Formation`, `Wulongqing Formation` | - |
-| `phylogeny#/$defs/citationNumber` | integer/string | intx607, strx191, listx137 | `2D`, `1B`, `3N`, `3I` | - |
+| `phylogeny#/$defs/citationNumber` | integer/string | intx606, listx335, strx189 | `2D`, `1B`, `3N`, `3I` | - |
 | `phylogeny#/$defs/person/properties/death` | integer/null | intx75, nullx1 | - | - |
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
 | `phylogeny#/$defs/specimens/additionalProperties/items` | string/array | strx513, listx4 | `PE 93415`, `YKLP 13553`, `NHMUK EE 1660`, `QMF59668` | - |

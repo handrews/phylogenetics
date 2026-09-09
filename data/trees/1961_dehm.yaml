@@ -68,9 +68,9 @@ taxonomies:
   - taxon: octogona_richter.r_1930
     authority:
       source: 1930_richter.r
-      page: 294
+      pages: 294
       illustrations:
-      - figure: 1h
+      - figures: 1h
     occurrences:
     - series: Lower Devonian
       unit:

@@ -10,7 +10,7 @@ taxonomies:
   - taxon: agelacrinites
     new: true
     rank: genus
-    page: 158
+    pages: 158
     children:
     - taxon: hamiltonensis_vanuxem_1842
       new: true
@@ -23,7 +23,7 @@ taxonomies:
         those of an asteria or star-fish; between two of which, and those
         which are most expanded, is a star, which probably was the mouth
         of the animal.
-      page: 158
+      pages: 158
       illustrations:
       - page: 306
         figures:
@@ -64,11 +64,11 @@ taxonomies:
   - taxon: pentacrinites
     children:
     - taxon: hamptonii_unknown
-      page: 64
+      pages: 64
       illustrations:
       - page: 65
-        textFigure: 9
-        figure: 3
+        textFigures: 9
+        figures: 3
       occurrences:
       - unit:
         - Pulaski shales
@@ -78,11 +78,11 @@ taxonomies:
   - taxon: lepocrinites
     children:
     - taxon: gebhardi_conrad.t.a_1840
-      page: 117
+      pages: 117
       illustrations:
       - page: 117
-        textFigure: 25
-        figure: 4
+        textFigures: 25
+        figures: 4
       occurrences:
       - unit:
         - between two Pentamerus galeatus beds

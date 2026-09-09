@@ -6,7 +6,7 @@
       "Echinus" not used, instead states "[resembles a] valvulum echini"
     children:
     - openTaxon: echinus-sp_linnaeus_1741
-      page: 134
+      pages: 134
       illustrations:
       - page: 134
 1758_linnaeus:
@@ -968,7 +968,7 @@
     children:
     - openTaxon: ostracion-sp_walch_1776
       provisional: true
-      page: 259
+      pages: 259
       illustrations:
       - plate: V
         figures:
@@ -3378,24 +3378,24 @@
       children:
       - taxon: areolatus_wahlenberg_1821
         new: true
-        page: 46
+        pages: 46
         illustrations:
         - plate: III
           figures:
           - [4, 5]
       - taxon: peltiformis_wahlenberg_1821
         new: true
-        page: 49
+        pages: 49
         illustrations:
         - plate: III
           figures:
           - [1, 3]
     - taxon: echinosphaerites
       new: true
-      page: 52
+      pages: 52
       children:
       - taxon: aurantium_gyllenhaal_1772
-        page: 52
+        pages: 52
         notes: |
           Tilas in Vet. Ac. Handl. 1740, p. 196. Plate II. f. 18 is an
           additional "synonym", but described and figured as a mineral
@@ -3423,20 +3423,20 @@
           provisional: true
           parents:
           - taxon: ostracion
-          page: 259
+          pages: 259
           illustrations:
           - plate: 5
             figures:
             - [1, 2]
       - taxon: granatum_wahlenberg_1821
-        page: 53
+        pages: 53
         new: true
         notes: Not figured in this publication.
         synonyms:
         - openTaxon: echinus-sp_hisinger_1802
           parents:
           - taxon: echinus
-          page: 189
+          pages: 189
           illustrations:
           - plate: VII
             figures:
@@ -3458,7 +3458,7 @@
         - openTaxon: echinus-sp_linnaeus_1741
           authority:
             source: 1741_linnaeus
-            page: 136
+            pages: 136
           notes: Described as "en valvulam echini", actually on page 134.
 1825_gray.j.e:
   taxonomies:
@@ -3588,20 +3588,20 @@
     synonyms:
     - authority:
         source: 1821_wahlenberg
-        page: 52
+        pages: 52
     - tentative: true
       taxon: ostracion
       pars: true
       authority:
         source: 1776_walch
-        page: 259
+        pages: 259
         illustrations:
         - plate: 5
           figures:
           - [1, 2]
     children:
     - taxon: granatum_wahlenberg_1821
-      page: 311
+      pages: 311
       illustrations:
       - plate: I
         figures:
@@ -3609,15 +3609,15 @@
       synonyms:
       - authority:
           source: 1821_wahlenberg
-          page: 53
+          pages: 53
       - openTaxon: echinosphaerites-sp_hisinger_1802
-        page: 189
+        pages: 189
         illustrations:
         - plate: 7
           figures:
           - b
     - taxon: aurantium_gyllenhaal_1772
-      page: 312
+      pages: 312
       notes: |
         Discussed in E. alcyonis section, no direct description.
         Gyllenhaal 1772 and Tilas 1740 not addressed as Schlotheim
@@ -3637,7 +3637,7 @@
     - taxon: alcyonis_schlotheim_1826
       questionable: true
       new: true
-      page: 312
+      pages: 312
       illustrations:
       - plate: I
         figures:
@@ -3654,9 +3654,9 @@
     - taxon: ovum_schlotheim_1826
       notes: Not figured.
       new: true
-      page: 313
+      pages: 313
     - taxon: pomum_gyllenhaal_1772
-      page: 313
+      pages: 313
       illustrations:
       - plate: I
         figures:
@@ -3682,7 +3682,7 @@
         - taxon: echinus
         authority:
           source: 1741_linnaeus
-          page: 156
+          pages: 156
     - affTaxon: pomum_gyllenhaal_1772
       notes: |
         Included in the E. pomum formal figure list, but in the text
@@ -3706,7 +3706,7 @@
       notes: |
         Notes similarity to "E. costatus, Fig. 3", but no species of
         this name defined; Fig. 3 is associated with E. aranea.
-      page: 314
+      pages: 314
       illustrations:
       - plate: I
         figures:
@@ -3753,11 +3753,11 @@
         - taxon: comatula
       - taxon: encrinus
       - openTaxon: echinodermata-unnamed-family_hisinger_1828
-        page: 196
+        pages: 196
         new: true
         children:
         - taxon: sphæronites
-          page: 195
+          pages: 195
           new: true
           notes: The 1967 Treatise incorrectly gives the page as 185.
           synonyms:
@@ -3778,7 +3778,7 @@
               - taxon: echinus
               authority:
                 source: 1772_gyllenhaal
-                page: 245
+                pages: 245
             - parents:
               - taxon: echinosphærites
               authority:
@@ -3814,17 +3814,17 @@
             - 48
             - 198
         - taxon: echino-encrinites
-          page: 196
+          pages: 196
           synonyms:
           - authority:
               source: 1826_meyer
           children:
           - taxon: senkenbergii_meyer_1826
-            page: 196
+            pages: 196
             synonyms:
             - authority:
                 source: 1826_meyer
-                page: 185
+                pages: 185
       - taxon: echinus-family
       - taxon: holothuria
 1830_pander:
@@ -3834,32 +3834,32 @@
     - [100, 105]
     children:
     - taxon: bolboporites
-      page: 106
+      pages: 106
       new: true
       children:
       - taxon: semiglobosa_pander_1830
-        page: 107
+        pages: 107
         new: true
         illustrations:
         - plate: II
           figures:
           - 1
       - taxon: triangularis_pander_1830
-        page: 107
+        pages: 107
         new: true
         illustrations:
         - plate: II
           figures:
           - 2
       - taxon: uncinata_pander_1830
-        page: 107
+        pages: 107
         new: true
         illustrations:
         - plate: II
           figures:
           - 3
       - taxon: mitralis_pander_1830
-        page: 107
+        pages: 107
         new: true
         illustrations:
         - plate: II
@@ -3867,11 +3867,11 @@
           - 4a
           - 4b
   - taxon: echinosphaerites
-    page: 141
+    pages: 141
     children:
     - taxon: aurantium_gyllenhaal_1772
       new: true
-      page: 144
+      pages: 144
       illustrations:
       - plate: II
         figures:
@@ -3883,10 +3883,10 @@
       synonyms:
       - authority:
           source: 1821_wahlenberg
-          page: 52
+          pages: 52
       - authority:
           source: 1772_gyllenhaal
-          page: 245
+          pages: 245
           illustrations:
           - plate: VIII
             figures:
@@ -3896,21 +3896,21 @@
         - taxon: echinus
     - taxon: malum_pander_1830
       new: true
-      page: 145
+      pages: 145
       illustrations:
       - plate: XXIX
         figures:
         - [1a, 1c]
     - taxon: oblonga_pander_1830
       new: true
-      page: 146
+      pages: 146
       illustrations:
       - plate: II
         figures:
         - [22, 23]
     - taxon: angulosa_pander_1830
       new: true
-      page: 146
+      pages: 146
       illustrations:
       - plate: II
         figures:
@@ -3920,7 +3920,7 @@
         - 11
     - taxon: striata_pander_1830
       new: true
-      page: 147
+      pages: 147
       illustrations:
       - plate: II
         figures:
@@ -3930,7 +3930,7 @@
         - 12
       synonyms:
       - taxon: granatum_wahlenberg_1821
-        page: 53
+        pages: 53
         questionable: true
         notes: |
           Given as "(Echinosph. Granatum? Wahlenberg, p. 53.)",
@@ -3940,7 +3940,7 @@
           means here.
     - taxon: laevis_pander_1830
       new: true
-      page: 147
+      pages: 147
       illustrations:
       - plate: II
         figures:
@@ -3980,7 +3980,7 @@
             synonyms:
             - authority:
                 source: 1772_gyllenhaal
-                page: 242
+                pages: 242
                 illustrations:
                 - plate: VIII
                   figures:
@@ -3989,7 +3989,7 @@
               - taxon: echinosphaerites
               authority:
                 source: 1821_wahlenberg
-                page: 54
+                pages: 54
           - taxon: citrus_hisinger_1837
             new: true
             illustrations:
@@ -4000,7 +4000,7 @@
             - taxon: aurantium_gyllenhaal_1772
               authority:
                 source: 1772_gyllenhaal
-                page: 245
+                pages: 245
                 illustrations:
                 - plate: VIII
                   figures:
@@ -4011,7 +4011,7 @@
             - taxon: aurantium_gyllenhaal_1772
               authority:
                 source: 1821_wahlenberg
-                page: 52
+                pages: 52
           - taxon: testudinarius_hisinger_1837
             new: true
             illustrations:
@@ -4022,11 +4022,11 @@
             - taxon: granatum_wahlenberg_1821
               authority:
                 source: 1821_wahlenberg
-                page: 53
+                pages: 53
             - taxon: granatum_wahlenberg_1821
               authority:
                 source: 1828_hisinger
-                page: 195
+                pages: 195
                 illustrations:
                 - plate: VIII
                   figures:
@@ -4119,7 +4119,7 @@
       - taxon: echinosphaerites
         authority:
           source: 1821_wahlenberg
-          page: 52
+          pages: 52
         notes: |
           No indication of which figures go with which species; presumably
           Buch would retain the E. pomum figures with that species, and
@@ -4190,11 +4190,11 @@
             - [1a, 1c]
     - taxon: cryptocrinites
       new: true
-      page: 36
+      pages: 36
       children:
       - taxon: cerasus_buch_1840
         new: true
-        page: 36
+        pages: 36
         synonyms:
         - taxon: laevis_pander_1830
           parents:
@@ -4229,7 +4229,7 @@
       - taxon: regularis_buch_1840
         questionable: true
         new: true
-        page: 37
+        pages: 37
 1840b_buch:
   notes: |
     This is a shortened yet enhanced version of part of 1840a_buch,
@@ -4267,17 +4267,17 @@
         pages:
         - [59, 60]
     - taxon: cryptocrinites
-      page: 60
+      pages: 60
       children:
       - taxon: regularis_buch_1840
-        page: 60
+        pages: 60
         notes: |
           No longer tentative, but no figures cited, even though
           Buch's previous paper included figure 33 from Pander's
           unnamed species similar to E. laevis which is no longer
           synonymized with C. cerasus.
       - taxon: cerasus_buch_1840
-        page: 60
+        pages: 60
         synonyms:
         - taxon: laevis_pander_1830
           parents:
@@ -4329,7 +4329,7 @@
         - [178, 179]
         children:
         - taxon: angulosus_pander_1830
-          page: 179
+          pages: 179
         - taxon: striatus_pander_1830
           pages:
           - [179, 180]
@@ -4360,7 +4360,7 @@
             parents:
             - taxon: echinosphaerites
         - taxon: cerasus_buch_1840
-          page: 185
+          pages: 185
         - taxon: oviformis_eichwald_1840
           new: true
           pages:
@@ -4383,7 +4383,7 @@
       - taxon: sphaeronites
         children:
         - taxon: pomum_gyllenhaal_1772
-          page: 189
+          pages: 189
           synonyms:
           - authority:
               source: 1821_wahlenberg
@@ -4420,7 +4420,7 @@
           pages:
           - [193, 194]
         - affTaxon: schlotheimii_unknown
-          page: 194
+          pages: 194
           notes: |
             Given as "Ophiura Schlotheimii Holl. aff", but no clue as to
             who "Holl." is, as those four letters do not occur anywhere else
@@ -4434,10 +4434,10 @@
         children:
         - taxon: münsteri_eichwald_1840
           new: true
-          page: 195
+          pages: 195
         - taxon: priscus_eichwald_1840
           new: true
-          page: 196
+          pages: 196
 1842_conrad.t.a:
   taxonomies:
   - taxon: crinoidea-family
@@ -4718,7 +4718,7 @@
           children:
           - taxon: anatiformis_hall_1847
             new: true
-            page: 127
+            pages: 127
             illustrations:
             - plate: XXIX
               figures:
@@ -4729,17 +4729,17 @@
     children:
     - taxon: discophyllum
       new: true
-      page: 277
+      pages: 277
       children:
       - taxon: peltatum_hall_1847
         new: true
-        page: 277
+        pages: 277
         illustrations:
         - plate: LXXV
           figures:
           - 3
       - openTaxon: discophyllum-sp_hall_1847
-        page: 277
+        pages: 277
         illustrations:
         - plate: LXXV
           figures:
@@ -4955,11 +4955,11 @@
         notes: Alternate spelling used in text.
       children:
       - taxon: callocystites
-        page: 238
+        pages: 238
         new: true
         children:
         - taxon: jewettii_hall_1852
-          page: 239
+          pages: 239
           illustrations:
           - plate: L
             figures:
@@ -4975,7 +4975,7 @@
       - taxon: apiocystites
         children:
         - taxon: elegans_hall_1852
-          page: 243
+          pages: 243
           illustrations:
           - plate: LI
             figures:
@@ -4985,7 +4985,7 @@
             Compare Apiocystites pentremitoides, ForBrs, Mem. Geol. Survey
             of Great Britain, 1848, Vol.  li, part ii, pag. 502, pl. xv.
       - taxon: hemicystites
-        page: 245
+        pages: 245
         new: true
         synonyms:
         - tentative: true
@@ -4993,7 +4993,7 @@
           notes: Only Agelacrinites Vanuxem, non Agelacrinites Forbes.
         children:
         - taxon: parasitica_hall_1852
-          page: 246
+          pages: 246
           illustrations:
           - plate: LI
             figures:
@@ -5014,11 +5014,11 @@
     - taxon: cystidea-order
       children:
       - taxon: glyptocystites
-        page: 215
+        pages: 215
         new: true
         children:
         - taxon: multiporata_billings_1854
-          page: 216
+          pages: 216
           new: true
           illustrations:
           - page: 216
@@ -5031,19 +5031,19 @@
     - taxon: cystidea-order
       children:
       - taxon: pleurocystites
-        page: 251
+        pages: 251
         new: true
         children:
         - taxon: squamosus_billings_1854
           new: true
-          page: 251
+          pages: 251
           illustrations:
           - page: 251
             figures:
             - [9, 12]
         - taxon: filitextus_billings_1854
           new: true
-          page: 252
+          pages: 252
           illustrations:
           - page: 252
             figures:
@@ -5051,7 +5051,7 @@
             - 14
         - taxon: robustus_billings_1854
           new: true
-          page: 252
+          pages: 252
           illustrations:
           - page: 252
             figures:
@@ -5062,22 +5062,22 @@
     children:
     - taxon: comarocystites
       new: true
-      page: 269
+      pages: 269
       notes: First given on page 268, formal definition starts on page 269.
       children:
       - taxon: punctuatus_billings_1854
         new: true
-        page: 270
+        pages: 270
         illustrations:
         - page: 270
           figures:
           - [1, 3]
     - taxon: amygdalocystites
-      page: 270
+      pages: 270
       new: true
       children:
       - taxon: florealis_billings_1854
-        page: 270
+        pages: 270
         new: true
         illustrations:
         - page: 270
@@ -5089,7 +5089,7 @@
           - 6
       - taxon: radiatus_billings_1854
         new: true
-        page: 271
+        pages: 271
         illustrations:
         - page: 271
           figures:
@@ -5097,7 +5097,7 @@
           - 8
       - taxon: tenuistriatus_billings_1854
         new: true
-        page: 271
+        pages: 271
         illustrations:
         - page: 271
           figures:
@@ -5326,70 +5326,70 @@
             new: true
         - taxon: cyclaster
           new: true
-          page: 292
+          pages: 292
           children:
           - taxon: bigsbyi_billings_1857
             new: true
-            page: 293
+            pages: 293
         - taxon: agelacrinites
           notes: No separate genus description.
-          page: 294
+          pages: 294
           children:
           - taxon: dicksoni_billings_1857
-            page: 294
+            pages: 294
             new: true
 1858a_billings:
   taxonomies:
   - taxon: cystidea-order
     children:
     - taxon: pleurocystites
-      page: 46
+      pages: 46
       children:
       - taxon: squamosus_billings_1854
-        page: 49
+        pages: 49
         illustrations:
         - plate: 1
           figures:
           - [1a, 1d]
       - taxon: robustus_billings_1854
-        page: 49
+        pages: 49
         illustrations:
         - plate: 1
           figures:
           - 2a
       - taxon: filitextus_billings_1854
-        page: 50
+        pages: 50
         illustrations:
         - plate: 2
           figures:
           - 1a
           - 1b
       - taxon: elegans_billings_1857_pleurocystites
-        page: 51
+        pages: 51
         illustrations:
         - plate: 2
           figures:
           - [2a, 2d]
       - taxon: exornatus_billings_1857
-        page: 52
+        pages: 52
       - taxon: anticostensis_billings_1857
-        page: 52
+        pages: 52
         illustrations:
         - plate: 1
           figures:
           - 3
     - taxon: glyptocystites
-      page: 53
+      pages: 53
       synonyms:
       - authority:
           source: 1854a_billings
-          page: 215
+          pages: 215
       - authority:
           source: 1857_billings
-          page: 280
+          pages: 280
       children:
       - taxon: multiporus_billings_1854
-        page: 54
+        pages: 54
         illustrations:
         - plate: 3
           notes: |
@@ -5400,16 +5400,16 @@
         synonyms:
         - authority:
             source: 1854a_billings
-            page: 215
+            pages: 215
         - authority:
             source: 1857_billings
-            page: 281
+            pages: 281
       - taxon: logani_billings_1857
-        page: 54
+        pages: 54
         synonyms:
         - authority:
             source: 1857_billings
-            page: 282
+            pages: 282
         illustrations:
         - plate: 4
           figures:
@@ -5417,7 +5417,7 @@
         children:
         - taxon: gracilis_billings_1858
           new: true
-          page: 59
+          pages: 59
           illustrations:
           - plate: 4
             figures:
@@ -5426,80 +5426,80 @@
         synonyms:
         - authority:
             source: 1857_billings
-            page: 283
+            pages: 283
         illustrations:
         - plate: 4
           figures:
           - [3a, 3d]
     - taxon: comarocystites
-      page: 61
+      pages: 61
       synonyms:
       - authority:
           source: 1854c_billings
-          page: 269
+          pages: 269
       - authority:
           source: 1857_billings
-          page: 288
+          pages: 288
       children:
       - taxon: punctatus_billings_1854
-        page: 61
+        pages: 61
         synonyms:
         - authority:
             source: 1854c_billings
-            page: 270
+            pages: 270
         - authority:
             source: 1857_billings
-            page: 288
+            pages: 288
         illustrations:
         - plate: 5
           figures:
           - 1
           - 2
     - taxon: amygdalocystites
-      page: 63
+      pages: 63
       synonyms:
       - authority:
           source: 1854c_billings
-          page: 270
+          pages: 270
       - authority:
           source: 1857_billings
-          page: 288
+          pages: 288
       children:
       - taxon: florealis_billings_1854
-        page: 63
+        pages: 63
         synonyms:
         - authority:
             source: 1854c_billings
-            page: 270
+            pages: 270
         - authority:
             source: 1857_billings
-            page: 289
+            pages: 289
         illustrations:
         - plate: 6
           figures:
           - [1a, 1e]
       - taxon: tenuistriatus_billings_1854
-        page: 64
+        pages: 64
         synonyms:
         - authority:
             source: 1854c_billings
-            page: 271
+            pages: 271
         - authority:
             source: 1857_billings
-            page: 289
+            pages: 289
         illustrations:
         - plate: 6
           figures:
           - [2a, 2f]
       - taxon: radiatus_billings_1854
-        page: 65
+        pages: 65
         synonyms:
         - authority:
             source: 1854c_billings
-            page: 271
+            pages: 271
         - authority:
             source: 1857_billings
-            page: 289
+            pages: 289
         illustrations:
         - plate: 6
           figures:
@@ -5508,33 +5508,33 @@
     - taxon: malocystites
       new: true
       notes: Billings claims authorship, PBDB agrees, IRMNG says Chapman 1857?
-      page: 66
+      pages: 66
       children:
       - taxon: murchisoni_billings_1858
         new: true
-        page: 66
+        pages: 66
         illustrations:
         - plate: 7
           figures:
           - [1a, 1i]
       - taxon: barrandi_billings_1858
         new: true
-        page: 67
+        pages: 67
         illustrations:
         - plate: 7
           figures:
           - [2a, 2c]
     - taxon: palæocystites
       new: true
-      page: 68
+      pages: 68
       children:
       - taxon: tenuiradiatus_hall_1847
-        page: 69
+        pages: 69
         synonyms:
         - taxon: tenuiradiatus_hall_1847
           authority:
             source: 1847_hall
-            page: 18
+            pages: 18
             illustrations:
             - plate: 4
               figures:
@@ -5544,20 +5544,20 @@
           - taxon: actinocrinus
       - taxon: dawsoni_billings_1858
         new: true
-        page: 70
+        pages: 70
         notes: Not figured.
       - taxon: chapmani_billings_1858
         new: true
-        page: 71
+        pages: 71
         notes: Not figured.
     - taxon: ateleocystites
       new: true
-      page: 72
+      pages: 72
       notes: No separate genus description, only species.
       children:
       - taxon: huxleyi_billings_1858
         new: true
-        page: 72
+        pages: 72
         illustrations:
         - page: 73
           figures:
@@ -5575,16 +5575,16 @@
     - taxon: tæniaster
       new: true
     - taxon: edrioaster
-      page: 82
+      pages: 82
       new: true
       synonyms:
       - taxon: cyclaster_billings_1857
         authority:
           source: 1857_billings
-          page: 292
+          pages: 292
       children:
       - taxon: bigsbyi_billings_1857
-        page: 82
+        pages: 82
         illustrations:
         - plate: 8
           figures:
@@ -5596,18 +5596,18 @@
         - taxon: bigsbyi_billings_1857
           authority:
             source: 1857_billings
-            page: 293
+            pages: 293
           parents:
           - taxon: cyclaster_billings_1857
             authority:
               source: 1857_billings
-              page: 292
+              pages: 292
     - taxon: agelacrinites
-      page: 84
+      pages: 84
       notes: No separate genus description.
       children:
       - taxon: dicksoni_billings_1857
-        page: 84
+        pages: 84
         illustrations:
         - plate: 8
           figures:
@@ -5618,7 +5618,7 @@
         synonyms:
         - authority:
             source: 1857_billings
-            page: 294
+            pages: 294
   - notes: Speculative tree establishing Edrioasteridæ (Edrioasteroidea)
     taxon: asteriadæ-order
     children:
@@ -5626,7 +5626,7 @@
       questionable: true
       provisional: true
       new: true
-      page: 85
+      pages: 85
       children:
       - taxon: edrioaster
         new: true  # code does not understand this appearing in two trees.
@@ -9083,20 +9083,20 @@
           - [129, 132]
           illustrations:
           - page: 129
-            figure: 2
+            figures: 2
           - page: 130
-            figure: 3
+            figures: 3
           - page: 131
-            figure: 4
+            figures: 4
         - taxon: grava_bockelie_1981
           new: true
           pages:
           - [132, 135]
           illustrations:
           - page: 133
-            figure: 5
+            figures: 5
           - page: 134
-            figure: 6
+            figures: 6
           - page: 135
             figures:
             - [7A, 7D]
@@ -9106,18 +9106,18 @@
           - [135, 138]
           illustrations:
           - page: 135
-            figure: 7E
+            figures: 7E
           - page: 136
-            figure: 8
+            figures: 8
           synonyms:
           - openTaxon: caryocystis-sp_størmer_1953
             auth: [Størmer]
             year: 1953
-            page: 64
+            pages: 64
             parents:
             - taxon: caryocystis
         - openTaxon: bockia-sp-a_bockelie_1981
-          page: 138
+          pages: 138
           illustrations:
           - page: 140
             figures:
@@ -9139,7 +9139,7 @@
             figures:
             - [10B, 10E]
           - page: 140
-            figure: 11K
+            figures: 11K
         - taxon: similis_bockelie_1981
           provisional: true
           new: true
@@ -9147,7 +9147,7 @@
           - [139, 141]
           illustrations:
           - page: 139
-            figure: 10A
+            figures: 10A
           - page: 140
             figures:
             - 11H
@@ -11038,7 +11038,7 @@
                 auth: [Hecker]
                 notes: Year appears wrong?  1940?
                 year: 1938
-                page: 423
+                pages: 423
             - taxon: elpasoensis_sprinkle_wahlman_1994
               provisional: true
               new: true
@@ -11859,7 +11859,7 @@
       children:
       - taxon: paracryptocrinites
         new: true
-        page: 609
+        pages: 609
         children:
         - taxon: bockeliei_rozhnov_fedorov_2001
           type: true
@@ -11875,7 +11875,7 @@
             textFigures:
             - [2, 3]
           - page: 611
-            textFigure: 4
+            textFigures: 4
         - openTaxon: paracryptocrinites-sp_rozhnov_fedorov_2001
           new: true
           illustrations:
@@ -12085,8 +12085,8 @@
           - affTaxon: pentangularis_pompeckj_1896
             auth: [prokop]
             year: 1961
-            page: 42
-          page: 152
+            pages: 42
+          pages: 152
           illustrations:
           - plate: 1
             figures:
@@ -12099,7 +12099,7 @@
         children:
         - taxon: priscus_barrande_1846
           type: true
-          page: 154
+          pages: 154
           illustrations:
           - page: 153
             figures:
@@ -12111,7 +12111,7 @@
             pars: true
             auth: [pompeckj]
             year: 1896
-            page: 502
+            pages: 502
             illustrations:
             - plate: 13
               figures:
@@ -12633,7 +12633,7 @@
   taxonomies:
   - taxon: crinoidea
     emended: true
-    page: 357
+    pages: 357
     children:
     - taxon: cladida
       children:
@@ -12641,12 +12641,12 @@
         children:
         - taxon: apektocrinidae
           new: true
-          page: 353
+          pages: 353
           children:
           - taxon: apektocrinus
             type: true
             new: true
-            page: 353
+            pages: 353
             children:
             - taxon: ubaghsi_guensburg_sprinkle_2009
               type: true
@@ -12655,26 +12655,26 @@
               - [353, 357]
               illustrations:
               - page: 352
-                figure: 1
+                figures: 1
               - page: 353
-                figure: 2
+                figures: 2
               - page: 354
-                figure: 3
+                figures: 3
               - page: 355
-                figure: 4
+                figures: 4
               - page: 356
-                figure: 5
+                figures: 5
               - page: 357
-                figure: 6
+                figures: 6
               - page: 358
                 figures:
                 - ["7.1", "7.3"]
               - page: 359
-                figure: 8
+                figures: 8
               - page: 361
-                figure: "10.1"
+                figures: "10.1"
               - page: 363
-                figure: "21.1"
+                figures: "21.1"
                 notes: Given as 11.1 in the text, but that is the tree diagram.
   phylogenies:
   - treeType: diagram
@@ -13577,7 +13577,7 @@
           - [532, 533]
           illustrations:
           - page: 533
-            figure: 3
+            figures: 3
   - taxon: edrioasteroidea
     children:
     - taxon: isorophida
@@ -13594,7 +13594,7 @@
           - [534, 536]
           illustrations:
           - page: 535
-            figure: 4
+            figures: 4
 2014_makhlouf_lefebvre_nardin_nedjari_régnault_ferhi:
   taxonomies:
   - taxon: blastozoa
@@ -13723,14 +13723,14 @@
               type: true
             - taxon: zhaoyuanlongensis_yang.z.c_lin.j.p_zhang.y.p_wu.y.s_meng.x.y_2015
               new: true
-              page: 433
+              pages: 433
               illustrations:
               - page: 434
-                figure: 4
+                figures: 4
               - page: 435
-                figure: 5
+                figures: 5
               - page: 436
-                figure: 6
+                figures: 6
 2015_zamora_sumrall_sprinkle:
   taxonomies:
   - taxon: blastozoa
@@ -13803,7 +13803,7 @@
                 figures:
                 - [3a, 3c]
               - pages: 255
-                figure: 4
+                figures: 4
 2017_allaire_lefebvre_nardin_martin.e.l.o_vaucher_escarguel:
   taxonomies:
   - taxon: eocrinoidea
@@ -13819,7 +13819,7 @@
         notes: Authority incorrect; cited source does not mention the family.
         children:
         - taxon: rhopalocystis
-          page: 697
+          pages: 697
           children:
           - taxon: destombesi_ubaghs_1963
             type: true
@@ -13827,9 +13827,9 @@
             - [697, 701]
             illustrations:
             - page: 698
-              figure: 7
+              figures: 7
             - page: 700
-              figure: 8
+              figures: 8
           - taxon: fraga_chauvel_1971
             pages:
             - [701, 703]
@@ -13843,17 +13843,17 @@
               - 4
             synonyms:
             - openTaxon: rhopalocystis-sp_chauvel_1971
-              page: 44
+              pages: 44
               illustrations:
               - plate: 1
                 figures:
                 - [9, 10]
             - openTaxon: rhopalocystis-sp-a_chauvel_1978
-              page: 54
+              pages: 54
             - openTaxon: rhopalocystis-sp-b_chauvel_1978
-              page: 54
+              pages: 54
               illustrations:
-              - textFigure: 11q
+              - textFigures: 11q
           - taxon: grandis_chauvel_1971
             pages:
             - [703, 704]
@@ -13870,32 +13870,32 @@
             - [704, 707]
             illustrations:
             - page: 705
-              figure: 11
+              figures: 11
             - page: 706
-              figure: 12
+              figures: 12
             - page: 708
-              figure: 13
+              figures: 13
             synonyms:
             - openTaxon: rhopalocystis-sp-c_chauvel_1978
-              page: 55
+              pages: 55
               illustrations:
               - plate: 5
-                figure: 4
+                figures: 4
               - textFigures:
                 - [11o, 11p]
             - openTaxon: rhopalocystis-sp-c_chauvel_régnault_1986
-              page: 870
+              pages: 870
           - taxon: zagoraensis_chauvel_1971
             pages:
             - [707, 712]
             illustrations:
             - page: 710
-              figure: 14
+              figures: 14
             - page: 712
-              figure: 15
+              figures: 15
             synonyms:
             - taxon: lehmani_chauvel_régnault_1986
-              page: 866
+              pages: 866
               illustrations:
               - plate: 1
                 figures:
@@ -13946,7 +13946,7 @@
             - openTaxon: undescribed-sp_fatka_kordule_szabad_2004
               auth: [fatka, kordule, szabad]
               year: 2004
-              page: 379
+              pages: 379
           - openTaxon: undescribed-transitional-genus_lefebvre_nardin_fatka_2015
             auth: [lefebvre, nardin, fatka]
             year: 2015
@@ -13954,14 +13954,14 @@
             - openTaxon: undescribed-transitional-sp_lefebvre_nardin_fatka_2015
               auth: [lefebvre, nardin, fatka]
               year: 2015
-              page: 89
+              pages: 89
               illustrations:
               - figures:
                 - 1B
           - openTaxon: imbricata-sp_nohejlová_fatka_2015
             auth: [noheljová, fatka]
             year: 2015
-            page: 119
+            pages: 119
             illustrations:
             - figures:
               - 2D

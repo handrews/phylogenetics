@@ -6,15 +6,15 @@ taxonomies:
       - taxon: agelacrinitidae
         children:
         - taxon: timeischytes
-          page: 91
+          pages: 91
           children:
           - taxon: megapinacotus_ehlers_kesling_1958
             type: true
           - taxon: leunisseni_grigo_2000
-            page: 92
+            pages: 92
             illustrations:
             - page: 93
-              figure: 2
+              figures: 2
             new: true
             occurrences:
             - stage: Eifelian
@@ -33,12 +33,12 @@ taxonomies:
                   GIK:
                   - 1585
           - taxon: prescheri_grigo_2000
-            page: 94
+            pages: 94
             illustrations:
             - page: 94
-              figure: 4
+              figures: 4
             - page: 94
-              figure: 7
+              figures: 7
               uncertain: true
             new: true
             notes: |
@@ -71,19 +71,19 @@ taxonomies:
           - taxon: rhenopyrginae
             children:
             - taxon: rhenopyrgus
-              page: 95
+              pages: 95
               children:
               - taxon: coronaeformis_rievers_1961
                 type: true
               - openTaxon: rhenopyrgus-sp_grigo_2000
                 new: true
-                page: 96
+                pages: 96
                 illustrations:
                 - page: 96
                   figures:
                   - [8a, 8f]
                 - page: 96
-                  figure: 8g
+                  figures: 8g
                 notes: |
                   Figure 8a-8f are the GIK specimen, figure 8g
                   from the other location is in the

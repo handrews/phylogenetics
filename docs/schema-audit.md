@@ -373,38 +373,40 @@ node tree — matching `figures` only where its value is a sequence of mappings 
 and then rewrote just those lines, leaving comments, quoting and key order
 untouched.
 
-### Singular/plural pairs are an authoring convenience
+### Singular/plural pairs — merged ✅
 
-Five pairs exist, where the singular takes a scalar and the plural an array,
-purely so a single value need not be written as a one-element array:
+Four pairs existed where the singular took a scalar and the plural an array,
+purely so a lone value need not be written as a one-element array:
 
 | container | pair | uses (singular / plural) |
 |---|---|---|
-| `tree` | `page` / `pages` | 183 / 61 |
-| `figure` → `illustration` | `figure` / `figures` | 43 / 130 |
-| `figure` → `illustration` | `textFigure` / `textFigures` | 5 / 3 |
-| `authority` | `page` / `pages` | 1 / 2 |
-| `modularDate` | `month` / `months` | 66 / small |
+| `tree` | `page` / `pages` | 138 / 56 |
+| `illustration` | `figure` / `figures` | 43 / 129 |
+| `authority` | `page` / `pages` | 46 / 7 |
+| `illustration` | `textFigure` / `textFigures` | 5 / 3 |
 
-(`basicOccurrence.biozone` / `biozones` is *not* one of these — `biozones`
-requires `minItems: 2`, so it means something different.)
+**No node anywhere carried both halves of a pair**, so the merge was clean. Each
+plural now points at a new `$defs/citationNumbers`, which accepts a bare number
+as shorthand for a single-entry list — `pages: 52` and `pages: [52]` mean the
+same thing. One field name, one code path after a trivial normalise-to-list, and
+the authoring convenience is preserved. 232 data keys renamed.
 
-Both halves of the two big pairs are heavily used, so this is a real convenience,
-not an abandoned alternative. Three ways to handle it:
+**Two apparent pairs were deliberately left alone**, and for stronger reasons
+than the surface asymmetry suggested:
 
-1. **Keep both.** Zero churn; the schema keeps five redundant field pairs and
-   every consumer keeps two code paths.
-2. **Drop the singular**, always write an array. Simplest schema and one code
-   path, at the cost of `pages: [42]` for the common case — which is exactly the
-   friction that created the pairs.
-3. **Keep only the plural, and let it accept a bare scalar** as shorthand:
-   `pages: 42` ≡ `pages: [42]`. One field name, one code path after a trivial
-   normalisation step, and the authoring convenience is preserved.
+- **`modularDate.month` / `months`** are not a convenience pair. `month` is
+  load-bearing: `if: {required: [day]}` then a `oneOf` over `month: {const: 2}`,
+  `{const: 4}` … validates the day against the month's length. An array-valued
+  `month` would never match a `const`, silently disabling that check. They also
+  mean different things — `month: 6` is a June issue, `months: [6, 7]` a
+  June–July one.
+- **`basicOccurrence.biozone` / `biozones`** likewise: `biozones` requires
+  `minItems: 2`, so a single biozone *cannot* be written as `biozones`. It means
+  "spans several", against `biozone`'s "in this one" — and `biozoneRange`
+  (exactly 2) is a third distinct thing.
 
-**Recommendation: option 3.** It is the only one that removes the duplication
-*and* keeps the ergonomics. It costs a one-line normalise-to-list on read, which
-consumers arguably need anyway. Note this makes the schema more permissive rather
-than less, so it should be a deliberate choice — flagging it rather than assuming.
+`illustration.page` and `illustration.plate` also stay singular: they had no
+plural sibling, and an illustration genuinely sits on one page of one plate.
 
 ### One value space for all citation numbers
 
@@ -625,9 +627,10 @@ because no judgement call remains.
 
 **Needs a decision:**
 
-9. **Singular/plural pairs** — recommendation is to keep only the plural and let
-   it accept a bare scalar (§3). Affects 5 pairs across `tree`, `illustration`,
-   `authority` and `modularDate`.
+9. ✅ **Singular/plural pairs merged** — the plural now accepts a bare scalar
+   via `$defs/citationNumbers` (§3). Four pairs merged, 232 data keys renamed;
+   `modularDate.month`/`months` and `biozone`/`biozones` deliberately excluded,
+   as neither is a convenience pair.
 10. ✅ **Cross-reference check for `sourceId` values**, in
     `scripts/schema_audit.py`. Reports `data/` and `personal/` separately and
     fails only on `data/`, since `personal/` does not validate yet.

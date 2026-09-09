@@ -259,10 +259,8 @@ $defs:
           type: string
       ex:
         $ref: "#/$defs/authority"
-      page:
-        $ref: "#/$defs/citationNumber"
       pages:
-        $ref: "#/$defs/multiRanges"
+        $ref: "#/$defs/citationNumbers"
       illustrations:
         type: array
         items:
@@ -470,10 +468,8 @@ $defs:
       stem:
         type: boolean
         default: false
-      page:
-        $ref: "phylogeny#/$defs/citationNumber"
       pages:
-        $ref: "phylogeny#/$defs/multiRanges"
+        $ref: "phylogeny#/$defs/citationNumbers"
       illustrations:
         type: array
         items:
@@ -584,6 +580,16 @@ $defs:
       2D) all occur.  Fields keep `string` even where every current value happens
       to be an integer.
     type: [integer, string]
+  citationNumbers:
+    description: |
+      One or more citation numbers or ranges.  A bare number is shorthand for a
+      single-entry list, so `pages: 52` and `pages: [52]` mean the same thing.
+      This replaces the former singular/plural field pairs (`page`/`pages`,
+      `figure`/`figures`, `textFigure`/`textFigures`), which existed only so a
+      lone number need not be written as a one-element array.
+    anyOf:
+    - $ref: "#/$defs/citationNumber"
+    - $ref: "#/$defs/multiRanges"
   multiRanges:
     description: |
       A list of distinct citation numbers or ranges.  A range is specified
@@ -611,14 +617,10 @@ $defs:
         $ref: "#/$defs/citationNumber"
       page:
         $ref: "#/$defs/citationNumber"
-      figure:
-        $ref: "#/$defs/citationNumber"
-      textFigure:
-        $ref: "#/$defs/citationNumber"
       figures:
-        $ref: "#/$defs/multiRanges"
+        $ref: "#/$defs/citationNumbers"
       textFigures:
-        $ref: "#/$defs/multiRanges"
+        $ref: "#/$defs/citationNumbers"
       location:
         type: [integer, string]
       collectedFrom:

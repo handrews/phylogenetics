@@ -8,7 +8,7 @@ taxonomies:
       - taxon: edrioblastoidina
         children:
         - taxon: rhenopyrgidae
-          page: 118
+          pages: 118
           diagnosis: |
             Pyrgate edrioasteroids with relatively
             small oral surfaces bearing ve, short, straight rapidly tapering
@@ -34,7 +34,7 @@ taxonomies:
 #               Europe: [Spain]
           children:
           - taxon: rhenopyrgus
-            page: 118
+            pages: 118
             diagnosis: |
               Rhenopyrgids with fused or unfused
               ambulacral oor and interradial oral plates; suboral
@@ -87,28 +87,28 @@ taxonomies:
                 - taxon: pyrgocystis
                 authority:
                   source: 1915_bather
-                  page: 48
+                  pages: 48
                   illustrations:
                   - plate: 3
                     figures:
                     - [1, 2]
               - authority:
                   source: 1983_holloway_jell
-                  page: 1004
+                  pages: 1004
               - authority:
                   source: 1985_smith.a.b
-                  page: 732
+                  pages: 732
                   illustrations:
-                  - textFigure: 11
+                  - textFigures: 11
               - parents:
                 - taxon: pyrgocystis
                 authority:
                   source: 2013_sumrall_heredia_rodríguez.c.m_mestre
                   illustrations:
-                  - figure: 1
+                  - figures: 1
               - authority:
                   source: 2013_sumrall_heredia_rodríguez.c.m_mestre
-                  page: 773
+                  pages: 773
               occurrences:
               - stage: Katian
                 series: Upper Ordovician
@@ -211,14 +211,14 @@ taxonomies:
                 - taxon: pyrgocystis
                 authority:
                   source: 1915_bather
-                  page: 59
+                  pages: 59
               - taxon: procera_aurivillius_1892
                 provisional: true
                 authority:
                   source: 2013_sumrall_heredia_rodríguez.c.m_mestre
-                  page: 764
+                  pages: 764
                   illustrations:
-                  - figure: 1C
+                  - figures: 1C
             - openTaxon: rhenopyrgus-sp-2_ewin_martin.m_isotalo_zamora_2020
               illustrations:
               - figures:
@@ -236,14 +236,14 @@ taxonomies:
               synonyms:
               - openTaxon: pyrgocystis-sp_vizcaïno_lefebvre_1999
                 provisional: true
-                page: 356
+                pages: 356
                 parents:
                 - taxon: pyrgocystis
                   authority:
                     source: 1915_bather
               - openTaxon: pyrgocystis-sp_vizcaïno_álvaro_lefebvre_2001
                 provisional: true
-                page: 218
+                pages: 218
                 parents:
                 - taxon: pyrgocystis
                   authority:
@@ -258,7 +258,7 @@ taxonomies:
                 - ["3.6", "3.7"]
                 notes: Foulon Formation specimen
               - page: 121
-                figure: "3.8"
+                figures: "3.8"
                 notes: beneath Saint-Chinian formation
               occurrences:
               - stage: Tremadocian
@@ -307,7 +307,7 @@ taxonomies:
                     UCBL-FSL:
                     - [713313, 713315]
             - openTaxon: rhenopyrgus-sp-4_ewin_martin.m_isotalo_zamora_2020
-              page: 118
+              pages: 118
               notes: Only mentioned briefly, no formal description.
               synonyms:
               - openTaxon: rhenopyrgus-sp_grigo_2000
