@@ -967,8 +967,13 @@ caption's "*Stromatocystites*" is an intra-source inconsistency to note).
 
 1. **B10**: the Caryocystites case supplies the misidentification-record
    shape; confirm it, including the genus-level use for Jaekel and Hall.
-2. **Audit**: the *Lebetodiscus* 1908 entry has `year: 1901`; is that a typo
-   to fix now, and should *Carneyella valcourensis* be `provisional`?
+2. **Audit, two unrelated items.** (a) In `1976_bell.b.m.yaml`, the synonymy
+   entry `taxon: lebetodiscus` with `auth: [bather]` has `year: 1901` (line
+   113 at `d94730a`); Bell prints 1908 for it on p. 54, and the record says
+   1908, so the data value is a typo. (b) On p. 129 Bell heads the species
+   "( ?) *Carneyella valcourensis* Clark, 1920", the same printed form as
+   "( ?) *P. jasperensis*", which the tree marks `provisional`; the
+   *valcourensis* node has no marker.
 3. **A11**: do you want `1844_buch` rewritten in place as the Bericht article,
    with `cystidea-sp_buch_1944` fixed to 1844 at the same time?
 4. **Hisinger**: settled. Still wanted: Bather 1906 in Reed's Northern Shan

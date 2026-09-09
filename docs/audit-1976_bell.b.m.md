@@ -124,10 +124,15 @@ override.
 
 ## 4. Findings to act on
 
-1. **Data error.** The 1908 Bather entry in the *Lebetodiscus* synonymy has
-   `year: 1901`. Change to 1908.
-2. **Check.** Whether *Carneyella valcourensis* is headed "(?)" on p. 129, and
-   flag `provisional` if so.
+1. **Data error.** In the tree file, the *Lebetodiscus* synonymy entry for
+   Bather's own genus (`taxon: lebetodiscus`, `auth: [bather]`) has `year:
+   1901`; the paper prints 1908 (p. 54) and `taxa.yaml` has 1908. The 1901
+   entry immediately above it, Clarke's *Agelacrinites*, is correct.
+2. **Confirmed.** Bell heads the species "( ?) *Carneyella valcourensis*
+   Clark, 1920" on p. 129 and writes that "determination of specific and even
+   most generic characters is questionable". The tree marks *jasperensis*,
+   *alpenensis* and *saratogensis* `provisional` for the same printed form;
+   *valcourensis* should match.
 3. **Capture, in priority order for the gold slice:** the rest of the
    *Lebetodiscus* synonymy; the *L. dicksoni* synonymy and material; the
    "Others" placements on p. 50; then the same for the remaining
