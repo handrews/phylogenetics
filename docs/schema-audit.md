@@ -190,10 +190,10 @@ does, so `scripts/schema_audit.py` now performs one. **All 2,152 sourceId-typed
 values in `data/` resolve.** `personal/` has four of its own, consistent with its
 existing validation failures.
 
-### `citation` is transcription, not attribution
+### `citation` was transcription, not attribution — folded ✅
 
-All 12 `tree.citation` nodes live inside `synonyms`/`non` arrays of just two
-opinions — `1974_bell.b.m` (9) and `2005_frest` (3) — and every one is a
+All 12 `tree.citation` nodes lived inside `synonyms`/`non` arrays of just two
+opinions — `1974_bell.b.m` (9) and `2005_frest` (3) — and every one was a
 **synonymy entry copied verbatim from the paper being transcribed**:
 
 ```yaml
@@ -204,19 +204,33 @@ citation:
   content: "543·550, pl. 25, fig. 1"           # free text locator, as printed
 ```
 
-`source` here is **not** a `sourceId` — it is the bibliographic string as it
-appears on the page, typos and OCR artifacts included (`GeoI.` for `Geol.`).
-`content` is a free-text locator. `authors` *are* real author ids.
+`source` was **not** a `sourceId` — it was the bibliographic string as it appears
+on the page, OCR artifacts included (`GeoI.` for `Geol.`). So `citation` was a
+fourth attribution mechanism that duplicated `authority` and `auth`+`year`.
 
-So `citation` is the "no source record" case again, plus a verbatim transcription.
-It overlaps `auth`+`year` on authors and year, and its remaining two fields have
-no home in `authority`.
+**Resolution: each node moved to whichever idiom the corpus already used for its
+case**, rather than to one uniform shape:
 
-**Recommendation:** fold it in. `citation.authors`/`citation.year` become the
-existing `auth`+`year`; `citation.source` and `citation.content` collapse into a
-single free-text field (`citedAs`) that says plainly "this is what the source
-printed". That removes the fourth mechanism while keeping the transcription
-faithful. `citation.pages`, `.plates` and `.figures` are never used and go away.
+| | nodes | became |
+|---|---|---|
+| a matching source record exists | 5 | `authority: {source, pages, illustrations}` |
+| no record exists | 7 | `auth` + `year`, locator at tree level |
+
+The 5 resolved to `1842_vanuxem`, `1857_billings`, `1858b_billings` (its
+`disambiguator: b` pinned the edition exactly), `1896_haeckel` and
+`1899_jaekel` — all of which the project already holds.
+
+The verbatim bibliographic string moved to a new **`tree.citedAs`**, documented as
+"exactly as printed in the source being transcribed, including any errors or OCR
+artifacts". That keeps the transcription faithful while the attribution itself
+becomes machine-resolvable.
+
+The free-text locators were parsed into `pages` and `illustrations` — `p. 158
+fig. 80` → `pages: 158` + `illustrations: [{figures: 80}]`; `543·550, pl. 25,
+fig. 1` → `pages: [[543, 550]]` (the middle dot is an OCR artifact for a range
+dash) + `illustrations: [{plate: 25, figures: 1}]`; `55, 83` → two disjoint
+pages, not a range. `citation.pages`, `.plates` and `.figures` were never used
+and are gone.
 
 ### Suggested convergence
 
@@ -228,7 +242,8 @@ faithful. `citation.pages`, `.plates` and `.figures` are never used and go away.
    family-only author records or stay free-form.
 4. Replace bare `tree.source` (72 nodes, no collisions) with
    `authority: {source: …}`, and fix the two bad values.
-5. Fold `tree.citation` into `auth`+`year` plus `citedAs`.
+5. ✅ Folded `tree.citation` into `authority` (5) or `auth`+`year` (7), plus
+   `citedAs` for the verbatim string.
 6. Drop `authority.in`; rename `authority.authors` → `attributedTo` (§2). ✅
 7. Finish `authority`'s locator fields rather than trimming them (§2).
 
@@ -642,7 +657,8 @@ because no judgement call remains.
 12. **Normalise the `auth` array**: convert 182 free-form uses, disambiguate 5,
     decide on the 149 unrecorded names (family-only records are already
     schema-legal but unused).
-13. **Fold `tree.citation`** into `auth`+`year` plus a free-text `citedAs`.
+13. ✅ **Folded `tree.citation`** — 5 nodes to `authority`, 7 to `auth`+`year`,
+    all 12 keeping the printed reference in `citedAs`.
 14. **Finish `authority`'s locator fields** using the settled range encodings.
 15. **Fix the inert `items`** on `basicOccurrence.specimens` /
     `possibleSpecimens` — they validate nothing today.

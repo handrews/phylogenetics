@@ -7943,72 +7943,71 @@
           - taxon: lebetodiscus
             non:
             - taxon: agelacrinites
-              citation:
-                year: 1842
-                authors:
-                - vanuxem
-                source: Nat. Hist. New York, pt. IV, Geology, 3:158
-                content: p. 158 fig. 80
+              authority:
+                source: 1842_vanuxem
+                pages: 158
+                illustrations:
+                - figures: 80
+              citedAs: Nat. Hist. New York, pt. IV, Geology, 3:158
             synonyms:
             - taxon: agelacrinites
-              citation:
-                year: 1857
-                authors:
-                - billings
-                source: "Geol. Surv, Canada, Rept. Prog. 1853-1856: 294-295"
+              authority:
+                source: 1857_billings
+              citedAs: "Geol. Surv, Canada, Rept. Prog. 1853-1856: 294-295"
             - taxon: agelacrinites
-              citation:
-                year: 1858
-                disambiguator: b
-                authors:
-                - billings
-                source: Geol. Surv. Canada, Fig. and Descriptions of Canadian Organic Remains, dec. 3:84
-                content: p. 84, pl. 8, fig. 3, 3a, 4, 4a.
+              authority:
+                source: 1858b_billings
+                pages: 84
+                illustrations:
+                - plate: 8
+                  figures: [3, 3a, 4, 4a]
+              citedAs: Geol. Surv. Canada, Fig. and Descriptions of Canadian Organic Remains, dec. 3:84
             - taxon: agelacrinites
-              citation:
-                year: 1881
-                authors:
-                - grant
-                source: Ottawa Field Naturalists' Club, Trans. 2
-                content: pl. 1, fig. 9.
+              auth: [grant]
+              year: 1881
+              illustrations:
+              - plate: 1
+                figures: 9
+              citedAs: Ottawa Field Naturalists' Club, Trans. 2
             - taxon: agelacrinites
               pars: true # partim
-              citation:
-                year: 1887
-                authors:
-                - barrande
-                source: Systeme Silurien du centre de la Boheme, Prague, pt. 1, 7(1)
-                content: 55, 83
+              auth: [barrande]
+              year: 1887
+              pages: [55, 83]
+              citedAs: Systeme Silurien du centre de la Boheme, Prague, pt. 1, 7(1)
             - taxon: agelacrinus
-              citation:
-                year: 1896
-                authors:
-                - haeckel
-                source: Die Amphorideen und Cystoideen, Leipzig, 1
-                content: pl. 3 fig. 29
+              authority:
+                source: 1896_haeckel
+                illustrations:
+                - plate: 3
+                  figures: 29
+              citedAs: Die Amphorideen und Cystoideen, Leipzig, 1
             - taxon: agelacrinites
               pars: true # partim
-              citation:
-                year: 1899
-                authors:
-                - jaekel
-                source: Starnmes- geschichte der Pelmatozoen, Bd. 1, Thecoidea und Cys- toidea, Berlin
-                content: 50, pl. 2 fig. 2
+              authority:
+                source: 1899_jaekel
+                pages: 50
+                illustrations:
+                - plate: 2
+                  figures: 2
+              citedAs: Starnmes- geschichte der Pelmatozoen, Bd. 1, Thecoidea und Cys- toidea, Berlin
             - taxon: agelacrinites
-              citation:
-                year: 1901
-                authors:
-                - clarke.j.m
-                source: New York State Mus. Bull. 49(2)
-                content: 191, text fig. 3
+              auth: [clarke.j.m]
+              year: 1901
+              pages: 191
+              illustrations:
+              - textFigures: 3
+              citedAs: New York State Mus. Bull. 49(2)
             - taxon: lebetodiscus
               new: true
-              citation:
-                year: 1901
-                authors:
-                - bather
-                source: GeoI. Mag. (n.s.) , dec. 5, 5
-                content: 543·550, pl. 25, fig. 1
+              auth: [bather]
+              year: 1901
+              pages:
+              - [543, 550]
+              illustrations:
+              - plate: 25
+                figures: 1
+              citedAs: GeoI. Mag. (n.s.) , dec. 5, 5
             diagnosis: |
               Lehetodiscidae with: domal theca, oral surface highly convex;
               oral region with secondary oral plates; hydropmre structure
@@ -12159,28 +12158,22 @@
           synonyms:
           - taxon: ampheristocystis
             modifier: nomen nudum
-            citation:
-              authors:
-              - frest
-              year: 1984
-              source: |
-                Studies of Silurian echinoderms. Dissertation Abstracts
-                International B44
-              content: 2097
+            auth: [frest]
+            year: 1984
+            pages: 2097
+            citedAs: |
+              Studies of Silurian echinoderms. Dissertation Abstracts
+              International B44
           - taxon: ampheristocystis
             modifier: nomen nudum
-            citation:
-              authors:
-              - frest
-              - brett
-              - witzke
-              year: 1999
-              source: |
-                "Caradocian-Gedinnian echinoderm associations of central and
-                eastern North America. In Paleocommunity Analysis: A
-                Silurian-Lower Devonian Example, Boucot AJ, Lawson JD (eds).
-                Cambridge University Press: Cambridge; 638–783."
-              content: pp. 728, 729
+            auth: [frest, brett, witzke]
+            year: 1999
+            pages: [728, 729]
+            citedAs: |
+              "Caradocian-Gedinnian echinoderm associations of central and
+              eastern North America. In Paleocommunity Analysis: A
+              Silurian-Lower Devonian Example, Boucot AJ, Lawson JD (eds).
+              Cambridge University Press: Cambridge; 638–783."
           children:
           - taxon: concentricus_frest_2005
             diagnosis: |
@@ -12193,14 +12186,13 @@
             synonyms:
             - taxon: concentricus_frest_2005
               modifier: nomen nudum
-              citation:
-                year: 1999
-                source: |
-                  "Caradocian-Gedinnian echinoderm associations of central and
-                  eastern North America. In Paleocommunity Analysis: A
-                  Silurian-Lower Devonian Example, Boucot AJ, Lawson JD (eds).
-                  Cambridge University Press: Cambridge; 638–783."
-                content: pp. 729
+              year: 1999
+              pages: 729
+              citedAs: |
+                "Caradocian-Gedinnian echinoderm associations of central and
+                eastern North America. In Paleocommunity Analysis: A
+                Silurian-Lower Devonian Example, Boucot AJ, Lawson JD (eds).
+                Cambridge University Press: Cambridge; 638–783."
               notes: Also cites Frest & Strimple, but unclear what paper.
 2006_parsley_zhao.y.l:
   taxonomies:

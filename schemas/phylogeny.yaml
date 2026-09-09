@@ -432,36 +432,17 @@ $defs:
         type: array
         items:
           $ref: "phylogeny#/$defs/occurrence"
-      citation:
-        type: object
-        required: [source]
-        properties:
-          authors:
-            type: array
-            items:
-              type: string
-          source:
-            type: string
-          year:
-            type: integer
-          disambiguator:
-            type: string
-          content:
-            $ref: "phylogeny#/$defs/citationNumber"
-          pages:
-            type: array
-            items:
-              type: [integer, string]
-          plates:
-            type: array
-            items:
-              type: [integer, string]
-          figures:
-            $ref: "phylogeny#/$defs/multiRanges"
-        additionalProperties: false
       notes:
         type: string
       # TODO: Something is off here, dup field?
+      citedAs:
+        description: |
+          A bibliographic reference exactly as printed in the source being
+          transcribed, including any errors or OCR artifacts.  Used for synonymy
+          lists, where the point is to record what that paper listed.  The
+          citation's own attribution goes in `authority` when the work has a
+          record in sources.yaml, or in `auth`/`year` when it does not.
+        type: string
       quoted:
         type: boolean
         default: false

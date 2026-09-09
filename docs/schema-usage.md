@@ -27,7 +27,7 @@ even when its parent is also unreached, so read parents first.
 | `specimen` | `phylogeny#/$defs/specimen/oneOf/1/properties/id`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/illustrations`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/illustrations/items`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/repository` |
 | `specimens` | `phylogeny#/$defs/specimens/properties/allotype`<br>`phylogeny#/$defs/specimens/properties/neotype`<br>`phylogeny#/$defs/specimens/properties/repository` |
 | `taxon` | `phylogeny#/$defs/taxon/properties/holotype/additionalProperties/items/items`<br>`phylogeny#/$defs/taxon/properties/modifier`<br>`phylogeny#/$defs/taxon/properties/reason` |
-| `tree` | `tree#/properties/categories`<br>`tree#/properties/categories/items`<br>`tree#/properties/citation/properties/figures`<br>`tree#/properties/citation/properties/pages`<br>`tree#/properties/citation/properties/pages/items`<br>`tree#/properties/citation/properties/plates`<br>`tree#/properties/citation/properties/plates/items`<br>`tree#/properties/data`<br>`tree#/properties/data/additionalProperties`<br>`tree#/properties/plates` |
+| `tree` | `tree#/properties/categories`<br>`tree#/properties/categories/items`<br>`tree#/properties/data`<br>`tree#/properties/data/additionalProperties`<br>`tree#/properties/plates` |
 | `trees` | `phylogeny#/$defs/trees/additionalProperties/properties/source` |
 
 ## 2. Property frequency by `$defs`
@@ -86,14 +86,14 @@ property. `personal` is counted separately.
 | `quotes` | 1 | 0.3% | 0 |
 | `reading` | 1 | 0.3% | 0 |
 
-### `authority` -- 1640 instances in `data/`
+### `authority` -- 1645 instances in `data/`
 
 | property | data | data % | personal |
 |---|---|---|---|
-| `source` | 1640 | 100.0% | 0 |
-| `pages` | 53 | 3.2% | 0 |
+| `source` | 1645 | 100.0% | 0 |
+| `pages` | 56 | 3.4% | 0 |
+| `illustrations` | 27 | 1.6% | 0 |
 | `attributedTo` | 24 | 1.5% | 0 |
-| `illustrations` | 23 | 1.4% | 0 |
 | `ex` | 2 | 0.1% | 0 |
 | `notes` | 2 | 0.1% | 0 |
 
@@ -127,16 +127,16 @@ property. `personal` is counted separately.
 | `subunit` | 0 | 0.0% | 20 |
 | `superunit` | 0 | 0.0% | 2 |
 
-### `illustration` -- 180 instances in `data/`
+### `illustration` -- 187 instances in `data/`
 
 | property | data | data % | personal |
 |---|---|---|---|
-| `figures` | 172 | 95.6% | 0 |
-| `plate` | 99 | 55.0% | 0 |
-| `page` | 70 | 38.9% | 0 |
-| `textFigures` | 8 | 4.4% | 0 |
-| `notes` | 4 | 2.2% | 0 |
-| `uncertain` | 1 | 0.6% | 0 |
+| `figures` | 178 | 95.2% | 0 |
+| `plate` | 104 | 55.6% | 0 |
+| `page` | 70 | 37.4% | 0 |
+| `textFigures` | 9 | 4.8% | 0 |
+| `notes` | 4 | 2.1% | 0 |
+| `uncertain` | 1 | 0.5% | 0 |
 | `collectedFrom` | 0 | 0.0% | 0 |
 | `location` | 0 | 0.0% | 0 |
 | `source` | 0 | 0.0% | 0 |
@@ -252,15 +252,15 @@ property. `personal` is counted separately.
 | `notes` | 365 | 5.7% | 9 |
 | `parents` | 326 | 5.1% | 38 |
 | `openTaxon` | 230 | 3.6% | 16 |
-| `pages` | 194 | 3.0% | 0 |
+| `pages` | 200 | 3.1% | 0 |
 | `provisional` | 120 | 1.9% | 23 |
-| `illustrations` | 115 | 1.8% | 0 |
+| `illustrations` | 118 | 1.8% | 0 |
+| `authority` | 91 | 1.4% | 0 |
 | `specimens` | 88 | 1.4% | 0 |
-| `authority` | 86 | 1.3% | 0 |
 | `diagnosis` | 69 | 1.1% | 0 |
+| `year` | 55 | 0.9% | 2 |
+| `auth` | 52 | 0.8% | 2 |
 | `emended` | 49 | 0.8% | 0 |
-| `year` | 48 | 0.7% | 2 |
-| `auth` | 46 | 0.7% | 2 |
 | `bracket` | 35 | 0.5% | 0 |
 | `moved` | 29 | 0.4% | 0 |
 | `occurrences` | 26 | 0.4% | 31 |
@@ -271,12 +271,8 @@ property. `personal` is counted separately.
 | `affTaxon` | 16 | 0.2% | 0 |
 | `tentative` | 16 | 0.2% | 0 |
 | `cfTaxon` | 15 | 0.2% | 1 |
-| `citation` | 12 | 0.2% | 0 |
-| `citation.source` | 12 | 100.0% | 0 |
-| `citation.year` | 12 | 100.0% | 0 |
+| `citedAs` | 12 | 0.2% | 0 |
 | `questionable` | 12 | 0.2% | 3 |
-| `citation.authors` | 11 | 91.7% | 0 |
-| `citation.content` | 11 | 91.7% | 0 |
 | `matrix` | 8 | 0.1% | 0 |
 | `rank` | 8 | 0.1% | 0 |
 | `altPlacements` | 7 | 0.1% | 0 |
@@ -286,13 +282,9 @@ property. `personal` is counted separately.
 | `non` | 4 | 0.1% | 0 |
 | `or` | 3 | 0.0% | 0 |
 | `in` | 2 | 0.0% | 0 |
-| `citation.disambiguator` | 1 | 8.3% | 0 |
 | `removed` | 1 | 0.0% | 0 |
 | `stem` | 1 | 0.0% | 0 |
 | `categories` | 0 | 0.0% | 0 |
-| `citation.figures` | 0 | 0.0% | 0 |
-| `citation.pages` | 0 | 0.0% | 0 |
-| `citation.plates` | 0 | 0.0% | 0 |
 | `data` | 0 | 0.0% | 0 |
 | `plates` | 0 | 0.0% | 0 |
 
@@ -480,7 +472,7 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/basicOccurrence/properties/specimens/additionalProperties/items/items` | string/integer | intx26, strx6 | `E63531`, `E63527`, `GM 3295c`, `GM 3295a` | - |
 | `phylogeny#/$defs/basicOccurrence/properties/specimens/additionalProperties/items` | string/integer/array | listx16, strx15, intx4 | `EE15373`, `E63527`, `GM 9292`, `GM 8052` | - |
 | `phylogeny#/$defs/basicOccurrence/properties/unit` | string/array | strx36, listx20 | `Craighead inlier`, `Mantou Formation`, `Wilberns Formation`, `Wulongqing Formation` | - |
-| `phylogeny#/$defs/citationNumber` | integer/string | intx606, listx335, strx189 | `2D`, `1B`, `3N`, `3I` | - |
+| `phylogeny#/$defs/citationNumber` | integer/string | intx630, listx340, strx181 | `2D`, `1B`, `3N`, `3I` | - |
 | `phylogeny#/$defs/person/properties/death` | integer/null | intx75, nullx1 | - | - |
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
 | `phylogeny#/$defs/specimens/additionalProperties/items` | string/array | strx513, listx4 | `PE 93415`, `YKLP 13553`, `NHMUK EE 1660`, `QMF59668` | - |
