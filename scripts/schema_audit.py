@@ -36,7 +36,7 @@ import jschon
 sys.path.insert(0, str(pathlib.Path(__file__).parent.parent))
 
 from phylohist.io import (  # noqa: E402
-  COMMON_FILES, DATA_FILES, PERSONAL_FILES, TREE_DIR, load_yaml,
+  COMMON_FILES, PERSONAL_FILES, TREE_DIR, load_yaml,
 )
 
 ROOT = pathlib.Path(__file__).parent.parent
@@ -158,8 +158,11 @@ def corpus_files():
   counting which constructs are *used*, and presence does not require validity.
   """
   items = []
-  for path in COMMON_FILES + DATA_FILES:
-    items.append(('data', path.stem, path))
+  for path in COMMON_FILES:
+    if path.exists():
+      items.append(('data', path.stem, path))
+  # Since trees.yaml was split, every tree lives in its own file under
+  # data/trees/, keyed by the source id its filename stems from.
   for path in sorted(TREE_DIR.iterdir()):
     if path.suffix == '.yaml':
       items.append(('data', 'trees', path))

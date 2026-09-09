@@ -6,8 +6,6 @@ Narrative analysis of these numbers is in `docs/schema-audit.md`.
 Counts are *distinct instance locations* that reached a given schema
 location, measured from the `jschon` evaluation result tree.
 
-> `trees.yaml` do not currently validate. They are still censused -- presence does not require validity -- so their columns show what is *used*, not what is correct.
-
 ## 1. Unreached schema locations
 
 Schema locations no data anywhere reaches. A nested location is listed
@@ -15,7 +13,7 @@ even when its parent is also unreached, so read parents first.
 
 | `$defs` | unreached locations |
 |---|---|
-| `basicOccurrence` | `phylogeny#/$defs/basicOccurrence/properties/eon`<br>`phylogeny#/$defs/basicOccurrence/properties/era`<br>`phylogeny#/$defs/basicOccurrence/properties/seriesBoundary`<br>`phylogeny#/$defs/basicOccurrence/properties/seriesRange`<br>`phylogeny#/$defs/basicOccurrence/properties/stageRange` |
+| `basicOccurrence` | `phylogeny#/$defs/basicOccurrence/properties/eon`<br>`phylogeny#/$defs/basicOccurrence/properties/era`<br>`phylogeny#/$defs/basicOccurrence/properties/possibleSpecimens/additionalProperties/items`<br>`phylogeny#/$defs/basicOccurrence/properties/possibleSpecimens/additionalProperties/items/items`<br>`phylogeny#/$defs/basicOccurrence/properties/section`<br>`phylogeny#/$defs/basicOccurrence/properties/seriesBoundary`<br>`phylogeny#/$defs/basicOccurrence/properties/seriesRange`<br>`phylogeny#/$defs/basicOccurrence/properties/specimens/additionalProperties/items`<br>`phylogeny#/$defs/basicOccurrence/properties/specimens/additionalProperties/items/items`<br>`phylogeny#/$defs/basicOccurrence/properties/stageRange`<br>`phylogeny#/$defs/basicOccurrence/properties/subunit`<br>`phylogeny#/$defs/basicOccurrence/properties/superunit` |
 | `eon` | `phylogeny#/$defs/eon` |
 | `era` | `phylogeny#/$defs/era` |
 | `illustration` | `phylogeny#/$defs/illustration/properties/collectedFrom`<br>`phylogeny#/$defs/illustration/properties/location`<br>`phylogeny#/$defs/illustration/properties/source` |
@@ -118,14 +116,14 @@ property. `personal` is counted separately.
 | `eon` | 0 | 0.0% | 0 |
 | `era` | 0 | 0.0% | 0 |
 | `possibleSpecimens` | 0 | 0.0% | 2 |
-| `section` | 0 | 0.0% | 2 |
+| `section` | 0 | 0.0% | 0 |
 | `seriesBoundary` | 0 | 0.0% | 0 |
 | `seriesRange` | 0 | 0.0% | 0 |
 | `sources` | 0 | 0.0% | 40 |
 | `stageBoundary` | 0 | 0.0% | 10 |
 | `stageRange` | 0 | 0.0% | 0 |
-| `subunit` | 0 | 0.0% | 20 |
-| `superunit` | 0 | 0.0% | 2 |
+| `subunit` | 0 | 0.0% | 0 |
+| `superunit` | 0 | 0.0% | 0 |
 
 ### `illustration` -- 187 instances in `data/`
 
@@ -288,7 +286,7 @@ property. `personal` is counted separately.
 | `data` | 0 | 0.0% | 0 |
 | `plates` | 0 | 0.0% | 0 |
 
-### `trees` -- 9 instances in `data/`
+### `trees` -- 218 instances in `data/`
 
 | property | data | data % | personal |
 |---|---|---|---|
@@ -412,10 +410,10 @@ property. `personal` is counted separately.
 | `'plesiotypes'` | 6 |
 | `'topotypes'` | 3 |
 | `'lectotype'` | 2 |
-| `'additional'` | 1 |
-| `'syntype'` | 1 |
-| `'hypotypes'` | 1 |
 | `'syntypes'` | 1 |
+| `'hypotypes'` | 1 |
+| `'syntype'` | 1 |
+| `'additional'` | 1 |
 
 **Never used (4):** `'allotype'`, `'neotype'`, `'kleptotypes'`, `'paralectotypes'`
 
@@ -468,17 +466,14 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/article/properties/plates/items` | integer/string | intx11, strx8 | `II`, `I`, `IV`, `VII` | - |
 | `phylogeny#/$defs/article/properties/series` | integer/string | intx2 | - | string |
 | `phylogeny#/$defs/article/properties/volume` | integer/string | intx210, strx8 | `New Series`, `3: Echinoderms: Notes fo...`, `4th Series`, `III` | - |
-| `phylogeny#/$defs/basicOccurrence/properties/possibleSpecimens/additionalProperties/items` | string/array | listx4, strx2 | `EE15329` | - |
-| `phylogeny#/$defs/basicOccurrence/properties/specimens/additionalProperties/items/items` | string/integer | intx26, strx6 | `E63531`, `E63527`, `GM 3295c`, `GM 3295a` | - |
-| `phylogeny#/$defs/basicOccurrence/properties/specimens/additionalProperties/items` | string/integer/array | listx16, strx15, intx4 | `EE15373`, `E63527`, `GM 9292`, `GM 8052` | - |
-| `phylogeny#/$defs/basicOccurrence/properties/unit` | string/array | strx36, listx20 | `Craighead inlier`, `Mantou Formation`, `Wilberns Formation`, `Wulongqing Formation` | - |
-| `phylogeny#/$defs/citationNumber` | integer/string | intx630, listx340, strx181 | `2D`, `1B`, `3N`, `3I` | - |
+| `phylogeny#/$defs/basicOccurrence/properties/unit` | string/array | listx54, strx2 | `Craighead inlier`, `Guole Formation` | - |
+| `phylogeny#/$defs/citationNumber` | integer/string | intx630, listx340, strx181 | `IX`, `VIII`, `V`, `b` | - |
 | `phylogeny#/$defs/person/properties/death` | integer/null | intx75, nullx1 | - | - |
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
-| `phylogeny#/$defs/specimens/additionalProperties/items` | string/array | strx513, listx4 | `PE 93415`, `YKLP 13553`, `NHMUK EE 1660`, `QMF59668` | - |
+| `phylogeny#/$defs/specimens/additionalProperties/items` | string/array | strx513, listx4 | `F. 5420`, `F. 5419`, `F. 5418`, `F. 5417` | - |
 | `phylogeny#/$defs/taxon/properties/holotype/additionalProperties/items` | array/string/integer | intx10, strx3 | `EE15373`, `EE 1659`, `E23470` | array |
 | `phylogeny#/$defs/taxon/properties/name` | string/null | strx2502, nullx202 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
-| `tree#/properties/diagnosis` | string/null | strx68, nullx1 | `Gogiids with a non-pored...`, `Theca large, cup-shaped ...`, `Theca small, cup-shaped ...`, `Gogiid eocrinoids with r...` | - |
+| `tree#/properties/diagnosis` | string/null | strx68, nullx1 | `A cast of it shows a con...`, `Body hemisphæric, slight...`, `A *Pyrgocystis* specimen...`, `Mouth surrounded and cov...` | - |
 | `tree#/properties/emended` | boolean/null | boolx49 | - | null |
 | `tree#/properties/matrix/items` | integer/string | intx139, strx5 | `?` | - |
 
