@@ -538,3 +538,38 @@ Data checks from this pass:
   `notes`.
 - Reed 1913 need not be added for this purpose; Bather's Yunnan notes are the
   target.
+
+## Bather 1919 (Geol. Mag. dec. 6, vol. 6) — the wrong paper, twice over
+
+**"Bather in Reed" is reference (11), not (12) or (13).** The Treatise's own
+list has Bather (11) 1906, "Ordovician Cystidea from Burma: in [Reed], The
+Lower Palaeozoic fossils of the Northern Shan States, Burma: Geol. Survey
+India, Palaeontologia Indica, n.s. v. 2, mem. 3"; (12) is the 1913 Girvan
+memoir; (13) the Yunnan notes of 1918–19 in the Geological Magazine. The
+phrase "BATHER in REED (12)" on S229 pairs (11)'s description with (12)'s
+number. The Girvan memoir never mentions *Caryocystites*, and the 1919 volume
+holds only part III of the Yunnan notes ("Sinocystis compared with similar
+genera", pp. 71–77, 110–15, 255–62, 318–25), which is about Diploporita.
+The type-species resolution is in Bather 1906 in Reed's Burma memoir, which
+also explains the Treatise's "Asia(Burma)" range for *Heliocrinites*.
+
+**What the 1919 paper does contribute.** Two things for the model, neither
+about *Caryocystites*:
+
+- *Caryocystites* as a genus-level misapplication a second time (pp. 73–74).
+  Hall 1861 named Silurian diploporites "*Caryocystites cylindricum*" and
+  "*C. alternatum*" before erecting *Holocystites* for them in the 20th Annual
+  Report; Winchell & Marcy 1865 added "*C. sphericus*". Under B18 and B10 these
+  are records of *Caryocystites* sensu Hall with `misidentificationOf:
+  caryocystites`, exactly as Jaekel's usage is.
+- The printing history of the 20th Annual Report of the New York State
+  Museum, the report your `1866_hall` advance print belongs to. Bather (p. 73):
+  "the earlier pages seem first to have been issued in 1864 … The complete
+  Report was issued (presumably in a limited edition) in January, 1865, and
+  (more freely) in 1867; a revised edition was published in 1870." That is
+  four issues in addition to the 1866 advance print Bell cites, and Bather
+  dates names from it "1865-67". A11's Hall case has more printings than
+  either Bell or the record knows.
+
+Data check: none new. The paper still to find for S229 is Palaeontologia
+Indica n.s. 2(3), 1906, Reed's Burma memoir with Bather's cystid chapter.

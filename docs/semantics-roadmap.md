@@ -169,8 +169,8 @@ bibliography's letters. They happen to match this dataset's `1858b_billings`
 and would not match a differently lettered `1896_haeckel`. Keep the letter in
 `citedAs` (it is part of what was printed) and never derive a source key from
 it. Index numbers can themselves be wrong: the Treatise's "BATHER in REED (12)"
-(S229) numbers Bather's 1913 Girvan memoir but describes reference (13),
-Bather's notes in Reed's Yunnan papers, and the Girvan memoir never mentions
+(S229) describes its reference (11), Bather 1906 in Reed's Burma memoir, under
+the number of (12), the 1913 Girvan memoir, which never mentions
 *Caryocystites*.
 
 **A8. A cited work's year is itself contested.** Schmidt's *Cyathocystis*
@@ -224,7 +224,10 @@ The same shape recurs with Hall: the 1866 advance print of the New York State
 Museum 20th Annual Report, the 1871 advance print of the revised paper, and
 the 1872 24th Annual Report. Bell 1976 dates *pilea* and *vorticellatus* to
 1866, *Cystaster* to 1871 and *Streptaster* to 1872, each to the printing that
-first carried the name. The data has records for 1866 and 1872 only.
+first carried the name. The data has records for 1866 and 1872 only, and
+Bather (1919, Geol. Mag., p. 73) adds that the 20th Annual Report itself was
+issued in parts from 1864, complete in January 1865 and again in 1867, and
+revised in 1870.
 
 A source key's year should then be the year of the printing the record
 describes. Today `1963_brown.i.a` is keyed to its reading year and issued in
@@ -901,6 +904,8 @@ the note verbatim with the claim.
     should von Buch's *testudinarius* be keyed to the preprint (1845) or to
     `1844_buch`?
 14. **Hisinger**: settled. *testudinarius* is a 1837 replacement name for
-    *granatum*; "1826" is a Treatise error. Still wanted: Bather's "Note on
-    Yunnan Cystidea" (1918–19), which is where the type-species question was
-    actually resolved, and the 1845 preprint if it exists anywhere.
+    *granatum*; "1826" is a Treatise error. Still wanted: Bather 1906,
+    "Ordovician Cystidea from Burma", in Reed's Northern Shan States memoir
+    (Palaeontologia Indica n.s. 2, mem. 3), which is the Treatise's reference
+    (11) and where the type-species question was resolved; and the 1845
+    preprint if it exists anywhere.
