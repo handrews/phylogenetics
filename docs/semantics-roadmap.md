@@ -667,6 +667,23 @@ children.
 in the literature but not yet in the data. Add fields only when a source prints
 them, on the identification axis.
 
+**C4. Uncertain versus unnamed placeholders.** Two different placeholders
+share the `openTaxon` mechanism. "Uncertain" or "indeterminate" (Smith 1985's
+"Suborder uncertain", Guensburg & Sprinkle's "Family Uncertain") means the
+members need not belong to one real taxon at that rank; the placeholder is a
+bin. "Unnamed" (Sprinkle 1973's unnamed orders) means the source believes one
+taxon contains the members but does not name it, usually because its contents
+are uncertain. The keys already distinguish the two (`-uncertain-`,
+`-indeterminate-` against `-unnamed-`); the claim table must not read a bin
+as a taxon, and the placeholder record should carry the distinction as a
+field rather than only in the key.
+
+**C5. One printed heading for two uncertain ranks.** "Order and Family
+Uncertain" (Guensburg & Sprinkle 1994, p. 42) is English shorthand for an
+uncertain order and an uncertain family; two nested placeholders are the
+right reading, not an editorial invention. A note quoting the heading on the
+outer node is enough.
+
 ---
 
 ## D. Material: specimens, illustrations, occurrences
@@ -930,6 +947,28 @@ of them.
 **G6. Retire the `reading` article form.** Once `1844_buch` is converted
 (A11), no record uses `oneOf` branch 3 of `$defs/article`; readings are
 `processDates.read` on the printed record.
+
+**G7. A tree assembled from several printed structures.** The 1994 tree is
+built from the Systematic Paleontology header, the Revised Classification
+and the Appendix compilation, none of which alone is the tree. Whether to
+split it into one taxonomy per printed structure (as the Smith 1985 tree
+does for Table 3's two columns) or keep one assembled tree with a `notes`
+naming its parts is open. Either way the assembly is the editor's and needs
+saying; the claim table can attach each node's page to the structure it
+came from.
+
+**G8. Rank stated in the tree, not the record (long term).** Cladistic
+authors use names that carry a traditional rank while declining to assign
+one; Smith 1985 prints "Plesion (Class)". Requiring rank on the tree node
+and dropping it from `taxa.yaml` would record each source's own usage. The
+migration is not automatic; noted, not scheduled.
+
+**G9. Coverage gaps are scope history, not errors.** Sources entered early
+capture less because the project's scope grew (skeleton first, then
+synonymy, material, occurrences, disarticulated plates). The audit state
+records this; a review should list what is missing without treating it as a
+mistake. Disarticulated plate material belongs in scope: the earliest
+echinoderm records are plates, older than any articulated fossil.
 
 ---
 
