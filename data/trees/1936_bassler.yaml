@@ -10,8 +10,6 @@ taxonomies:
         children:
         - taxon: typicalis_bassler_1935
           type: true
-        - openTaxon: walcottidiscus-sp_bassler_1936
-          new: true
         - taxon: magister_bassler_1936
           new: true
           specimens:
@@ -37,7 +35,7 @@ taxonomies:
           synonyms:
           - taxon: granulatus_hall_1871
             notes: |
-              Given as "C. (Hemicystite) granulatus", but this is assumed
+              Given as "C. (Hemicystites) granulatus", but this is assumed
               to be an error as it reverses both Bassler (1935) and
               the Treatise (1966) and other sources noting that Cysaster
               was originally defined as a subgenus.
@@ -70,6 +68,15 @@ taxonomies:
         - taxon: nicklesi_bassler_1936
           new: true
         - taxon: ulrichi_bassler_shideler_1936
+          new: true
+          auth: [bassler, Shideler]
+          citedAs: 'n. sp. (Bassler and Shideler)'
+        - taxon: foerstei_bassler_shideler_1936
+          new: true
+          auth: [bassler, Shideler]
+          citedAs: 'n. sp. (Bassler and Shideler)'
+          specimens:
+            holotype: USNM S-3965
       - taxon: streptaster
         children:
         - taxon: agelacrinus-subgenus_streptaster

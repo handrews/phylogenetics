@@ -11783,11 +11783,6 @@ walcottidiscus:
   name: Walcottidiscus
   authority:
     source: 1935_bassler
-walcottidiscus-sp_bassler_1936:
-  name: null
-  rank: species
-  authority:
-    source: 1936_bassler
 wanneri_foerste_1938:
   name: wanneri
   auth: [foerste]
