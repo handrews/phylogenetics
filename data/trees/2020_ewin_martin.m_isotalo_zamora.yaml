@@ -11,9 +11,9 @@ taxonomies:
           pages: 118
           diagnosis: |
             Pyrgate edrioasteroids with relatively
-            small oral surfaces bearing ve, short, straight rapidly tapering
+            small oral surfaces bearing five, short, straight rapidly tapering
             ambulacra; interambulacra formed of single tessellate
-            interradial oral plates and biserial and alternating oor plates
+            interradial oral plates and biserial and alternating floor plates
             that may or may not be fused; cover plates, where present, are
             biserial and tall proximally; sub oral constriction generally
             short, composed of circlets of poorly organized imbricate,
@@ -37,7 +37,7 @@ taxonomies:
             pages: 118
             diagnosis: |
               Rhenopyrgids with fused or unfused
-              ambulacral oor and interradial oral plates; suboral
+              ambulacral floor and interradial oral plates; suboral
               constriction, formed of a zone of highly imbricate elongate
               plates formed between the oral surface and suboral collar, may
               or may not be exposed. Cover plates present. Pyrgate zone
@@ -87,7 +87,7 @@ taxonomies:
                 - taxon: pyrgocystis
                 authority:
                   source: 1915_bather
-                  pages: 48
+                  pages: 58
                   illustrations:
                   - plate: 3
                     figures:
@@ -121,7 +121,7 @@ taxonomies:
                 - Lady Burn Starfish Bed
                 - part of the Craighead inlier.
                 - Lady Burn
-                - near Givran
+                - near Girvan
                 - Scotland
                 - UK
                 specimens:
@@ -137,7 +137,7 @@ taxonomies:
             - taxon: piojoensis_sumrall_heredia_rodríguez.c.m_mestre_2013
             - taxon: viviani_ewin_martin.m_isotalo_zamora_2020
               pages:
-              - [120, 123]
+              - [120, 122]
               illustrations:
               - figures:
                 - 2
@@ -226,8 +226,12 @@ taxonomies:
               occurrences:
               - unit: Craighead inlier
                 stage: Katian
-                localStage: Girvan?
                 localSeries: Ardmillan
+                location:
+                - Scotland
+                - UK
+                notes: |
+                  printed "'Ardmillan' [?Girvan], Scotland, UK, Ardmillan Series" (p. 123)
                 specimens:
                   unspecified:
                     EE:
@@ -272,6 +276,7 @@ taxonomies:
                 unit:
                 - Saint-Chinian Formation
                 biozone: E. filacovi
+                notes: printed "late Tremadocian" (p. 123)
                 specimens:
                   unspecified:
                     UCBL-FSL:
@@ -302,6 +307,7 @@ taxonomies:
                 unit:
                 - Landeyran Formation
                 biozone: A. incisus
+                notes: printed "late Floian" (p. 123)
                 specimens:
                   unspecified:
                     UCBL-FSL:
