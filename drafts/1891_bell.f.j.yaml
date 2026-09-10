@@ -1,0 +1,275 @@
+# DRAFT -- for human audit only, not ready to commit.
+#
+# NEW TAXA RECORDS NEEDED (none of these keys exist in data/taxa.yaml):
+#
+# - incaliculata
+#     name: Incaliculata, rank word as printed: "Branch" (p. 212)
+#     authority: Bell, 1891 -- no source record yet; author key bell.f.j
+#     does not yet exist in data/authors.yaml (only bell.b.m, a different
+#     author, is present)
+# - caliculata
+#     name: Caliculata, rank word as printed: "Branch" (p. 212)
+#     authority: Bell, 1891 (as above)
+# - anactinogonidiata
+#     name: Anactinogonidiata, rank word as printed: "Stage" (p. 212) --
+#     "Stage" has no value in schemas/phylogeny.yaml's rank enum
+#     authority: Bell, 1891 (as above)
+# - actinogonidiata
+#     name: Actinogonidiata, rank word as printed: "Stage" (p. 212) --
+#     no enum value, as above
+#     authority: Bell, 1891 (as above)
+# - statozoa
+#     name: Statozoa, rank word as printed: "Sub-branch" (p. 212, as "1st
+#     Sub-branch"; the name itself is only given in running prose, p. 210,
+#     the table heading is OCR-garbled -- see notes below) -- "Sub-branch"
+#     has no enum value
+#     authority: Bell, 1891 (as above)
+# - zygopoda
+#     name: Zygopoda, rank word as printed: "Division" (p. 213)
+#     authority: Bell, 1891 (as above)
+# - azygopoda
+#     name: Azygopoda, rank word as printed: "Division" (p. 213)
+#     authority: Bell, 1891 (as above)
+#
+# Two unnamed placeholders (per docs/semantics-roadmap.md item C4: the
+# source clearly believes each grouping exists but gives it no substantive
+# name, only an adjective already used elsewhere in the paper):
+#
+# - statozoa-unnamed-substage-1_bell.f.j_1891
+#     "Sub-stage i. Apelmatozoic." (p. 213) -- "Sub-stage" has no enum value
+# - statozoa-unnamed-substage-2_bell.f.j_1891
+#     "Sub-stage ii. Pelmatozoic." (p. 213) -- as above
+#
+# `eleutherozoa` already exists in data/taxa.yaml (auth: [Bell], year: 1891,
+# rank: Subphylum) and needs no new record -- this paper is that record's
+# source. Note the rank mismatch: the existing record says Subphylum, but
+# this paper's own table calls it a "2nd Sub-branch" (see its node below).
+# This is the same shape as the roadmap's G8 (rank belongs on the tree
+# node, not fixed on the identity record).
+
+notes: |
+  Bell frames both branches below together as "the proposed arrangement"
+  (p. 211-212: "Put in the ordinary linear way the proposed arrangement
+  will read thus:--"). The word "Echinodermata" itself is not printed as a
+  row of this table -- it is defined in prose immediately after the table,
+  p. 213 -- so no synthetic root node is added above Branch A / Branch B;
+  they are kept as two sibling entries here, exactly as printed.
+
+  Page 211 also carries a diagram (referred to on p. 210 as "the
+  accompanying table", showing "the relations of the forms... objectively")
+  which this text layer renders as unreadable OCR garbage. Its content is
+  not captured anywhere in this file. See the review doc, section (b).
+
+  "Stage a. ANACTINOGONIDIATA." (p. 212) is printed twice, identically,
+  once under each Branch (Incaliculata and Caliculata) -- the same
+  proposed taxon recurs at the same rank under two different parents in
+  Bell's own hierarchy, not one placement. Both occurrences are kept as
+  separate nodes below, as printed.
+
+  Cystidea, Crinoidea and Blastoidea are each split by Bell across two or
+  three places in this table (p. 210: "there were apelmatozoic and
+  pelmatozoic Cystids"; "The rearrangement of the Cystidea has long been
+  recognized as a serious want.") rather than renamed or given new formal
+  subtaxa. Each occurrence below is its own node, with the printed
+  qualifier ("?", quotation marks, "(s. s.)") captured on that node only.
+
+  Rank words "Stage", "Sub-branch" and "Sub-stage" have no value in
+  schemas/phylogeny.yaml's rank enum (which does have Branch, Division,
+  Class, Group, Grade, Unranked among others); each is quoted in `notes`
+  on its own node instead of set via the node's `rank` field. See the
+  review doc, section (d).
+
+  "(s. s.)" (sensu stricto, pp. 213) and the cross-reference "(s.
+  Stelleridea, s. em.)" (sensu emendato, p. 213) have no dedicated field
+  yet (docs/semantics-roadmap.md B13); quoted in `notes` on the affected
+  nodes below except the Stelleridea cross-reference, which is recorded as
+  a `synonyms` entry with `modifier: "s. em."`.
+
+taxonomies:
+- taxon: incaliculata
+  new: true
+  rank: Branch
+  pages: 212
+  notes: 'printed "Branch A. INCALICULATA."'
+  children:
+  - taxon: anactinogonidiata
+    new: true
+    pages: 212
+    notes: |
+      printed "Stage a. ANACTINOGONIDIATA." -- rank word "Stage" has no
+      enum value
+    children:
+    - taxon: holothuroidea
+      pages: 212
+      notes: |
+        printed "Class. 1. Holothurioidea." (sic -- stray period after
+        "Class", not seen on any other Class line in this table); also
+        spelled with an extra "i" against "Holothuroidea" in this paper's
+        own diagnosis (p. 214) -- cannot verify which spelling is a
+        compositor error without the page image
+- taxon: caliculata
+  new: true
+  rank: Branch
+  pages: 212
+  notes: 'printed "Branch B. CALICULATA."'
+  children:
+  - taxon: anactinogonidiata
+    new: true
+    pages: 212
+    notes: |
+      printed "Stage a. ANACTINOGONIDIATA." -- rank word "Stage" has no
+      enum value; same taxon as under Branch A above, printed identically
+      here
+    children:
+    - taxon: cystidea
+      questionable: true
+      pages: 212
+      notes: |
+        printed "Class 2. Some Cystidea (?)." -- only part of Cystidea
+        placed here, not the whole class (see other Cystidea nodes in this
+        tree)
+  - taxon: actinogonidiata
+    new: true
+    pages: 212
+    notes: |
+      printed "Stage 8. ACTINOGONIDIATA." -- OCR "8", almost certainly the
+      Greek letter beta (paired with "Stage a." above); rank word "Stage"
+      has no enum value
+    children:
+    - taxon: statozoa
+      new: true
+      pages: 212
+      notes: |
+        printed "1st Sub-branch. Svarozoa." -- OCR garble; the paper's own
+        running prose (p. 210) names this "the Statozoa" ("...the former
+        may be called the Statozoa, the latter the Eleutherozoa."); rank
+        word "Sub-branch" has no enum value
+      children:
+      - taxon: statozoa-unnamed-substage-1_bell.f.j_1891
+        new: true
+        pages: 213
+        notes: |
+          printed "Sub-stage i. Apelmatozoic." -- no substantive name is
+          given for this grouping, only the adjective (cf. "apelmatozoic
+          and pelmatozoic Cystids", p. 210); rank word "Sub-stage" has no
+          enum value
+        children:
+        - taxon: cystidea
+          questionable: true
+          quoted: true
+          pages: 213
+          notes: 'printed "Class 3. ?"Some Cystidea.""'
+        - taxon: crinoidea
+          questionable: true
+          pages: 213
+          notes: 'printed "Class 4. ? Some Crinoidea."'
+        - taxon: blastoidea
+          questionable: true
+          pages: 213
+          notes: |
+            printed "Class 5. ?Some Llastoidea." -- OCR garble for
+            "Blastoidea"
+      - taxon: statozoa-unnamed-substage-2_bell.f.j_1891
+        new: true
+        pages: 213
+        notes: |
+          printed "Sub-stage ii. Pelmatozoic." -- no substantive name is
+          given for this grouping, only the adjective; rank word
+          "Sub-stage" has no enum value
+        children:
+        - taxon: crinoidea
+          pages: 213
+          notes: |
+            printed "Class 6. Crinotdea (s. s.)." -- OCR garble for
+            "Crinoidea"; "(s. s.)" = sensu stricto, no dedicated field yet
+            (roadmap B13)
+        - taxon: cystidea
+          quoted: true
+          pages: 213
+          notes: 'printed "Class 7. "Cystidea.""'
+        - taxon: blastoidea
+          pages: 213
+          notes: |
+            printed "Class 8. Blastotdea (s. s.)." -- OCR garble for
+            "Blastoidea"; "(s. s.)" = sensu stricto, no dedicated field yet
+            (roadmap B13)
+    - taxon: eleutherozoa
+      new: true
+      pages: 213
+      notes: |
+        printed "2nd Sub-branch. Hzevrxerozoa." -- OCR garble; the paper's
+        own running prose (p. 210) names this "the Eleutherozoa" (same
+        sentence as the Statozoa naming, above); this is that naming
+        sentence's paper, with a formal diagnosis at p. 214. Rank word
+        "Sub-branch" has no enum value; the existing taxa.yaml record
+        carries rank: Subphylum, which this paper's own table does not use
+        (see top-of-file note)
+      children:
+      - taxon: zygopoda
+        new: true
+        rank: Division
+        pages: 213
+        notes: 'printed "Division i. Zygopoda."'
+        children:
+        - taxon: echinoidea
+          pages: 213
+      - taxon: azygopoda
+        new: true
+        rank: Division
+        pages: 213
+        notes: |
+          printed "Division 1. Azygopoda (s. Stelleridea, s. em.)." --
+          printed "1." where "ii." would parallel "Division i." above;
+          cannot verify whether this is an OCR misread or a compositor
+          error
+        synonyms:
+        - taxon: stelleridea
+          modifier: "s. em."
+          notes: |
+            cross-reference printed as "(s. Stelleridea, s. em.)" -- sensu
+            Stelleridea "of earlier writers" (p. 212: "The Stelleridea then
+            of earlier writers are marked by the common character of being
+            azygopodous"), sensu emendato; no dedicated `sensu` field yet
+            (roadmap B13)
+        children:
+        - taxon: asteroidea
+          pages: 213
+        - taxon: ophiuroidea
+          pages: 213
+          notes: |
+            printed "Class 11. Ophiurordea." -- OCR garble for
+            "Ophiuroidea"
+
+# Read from the page image (1891_bell.f.j_p211.png beside this file), not
+# from the text layer: a rotated tree captioned "Phylogeny of the
+# Echinodermata", rooted on "Primitive Echinoderm". Three main branches;
+# the small labels near the root read "Pedata" and "Apoda" on the
+# Holothurioidea branch. Branch lengths and the order of branching along
+# the Statozoa stem should be checked against the image by the auditor.
+phylogenies:
+- treeType: diagram
+  pages: 211
+  notes: |
+    Captioned "Phylogeny of the Echinodermata"; the root is labelled
+    "Primitive Echinoderm", which is not a taxon and is not given a node.
+    "Cystidea (pelmatozoic)" and "Apelmatozoic Anactinogonidial Cystidea"
+    are two labelled branches of Cystidea, matching the two Cystidea
+    placements in the linear arrangement.
+  tree:
+    bracket: echinodermata
+    children:
+    - taxon: holothuroidea
+      notes: 'labelled "Holothurioidea", with side labels "Pedata" and "Apoda"'
+    - taxon: eleutherozoa
+      children:
+      - taxon: echinoidea
+      - taxon: asteroidea
+      - taxon: ophiuroidea
+    - taxon: statozoa
+      children:
+      - taxon: crinoidea
+      - taxon: blastoidea
+      - taxon: cystidea
+        notes: 'labelled "Cystidea (pelmatozoic)"'
+      - taxon: cystidea
+        notes: 'labelled "Apelmatozoic Anactinogonidial Cystidea"'

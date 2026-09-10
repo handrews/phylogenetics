@@ -1427,3 +1427,503 @@ Attribution conflicts to resolve:
 - **Echino-encrinites Von Meyer/Volborth**: `taxa.yaml` credits Volborth, 1842; `1848b_forbes` credits "Von Meyer" for the genus throughout (p. 504).
 - **Agelacrinitidae Chapman 1860 vs Jaekel 1899**: `taxa.yaml` gives Chapman, 1860; `1935_bassler`'s own paper credits the superseded family form to "Agelacrinidae Jaekel, 1899" (p. 2), and its adjacent Class-level synonym on the same page independently reads "Thyroidea Chapman, 1860," suggesting a possible copy error.
 - **stellatus 1856/1866**: the `hemicystites-subgenus > stellatus_hall_1866` key gives 1866; `1936_bassler` prints "(Hall), 1856" (p. 5).
+
+
+# Reading round of 2026-09-10: six papers
+
+Bell 1891, Haeckel 1896, Pompeckj 1896, Bather 1899 and 1900, Jaekel 1899;
+PDFs in `example-publications/09-10`. Four have no tree; Bell 1891 has a
+draft tree in `drafts/` for audit. Coverage is stated per kind only (G9).
+
+## 1891_bell.f.j — "On the Arrangement and Inter-relations of the Classes of the Echinodermata" (Ann. & Mag. Nat. Hist., Ser. 6, Vol. 8)
+
+Read from the OCR text, printed pp. 206–215, with the p. 211 diagram read
+separately from the page image (the text layer renders it as garbage). No
+source record, no tree and no author record exist for this paper — the
+expected author key `bell.f.j` is absent from `data/authors.yaml`, which
+holds only `bell.b.m`, a different, later author. A draft tree
+(`drafts/1891_bell.f.j.yaml`) has been prepared for the owner to audit before
+entry. Coverage in one sentence: the paper prints one linear classification
+with formal diagnoses for nearly every name and a phylogenetic diagram, and
+proposes several new names at several ranks (G9).
+
+**The linear arrangement (pp. 211–212).** "Put in the ordinary linear way
+the proposed arrangement will read thus:—" introduces two Branches
+(Incaliculata, Caliculata), each split into Stages, Sub-branches and
+Sub-stages down to Class. Diagnoses follow for nearly every name (pp.
+213–215); Bell declines two: "It is not necessary for the purpose I have in
+view to offer definitions of the Cystidea or Blastoidea; perhaps a
+palaeontologist will oblige" (p. 215).
+
+**Eleutherozoa and Statozoa, named in one sentence (p. 210).** "…the other
+leads to the Echinoidea, Asteroidea, and Ophiuroidea; the former may be
+called the Statozoa, the latter the Eleutherozoa." Both get formal
+diagnoses at p. 214. `eleutherozoa` already exists in `data/taxa.yaml`
+(`auth: [Bell]`, `year: 1891`, `rank: Subphylum`) — this paper is that
+record's source — but the paper's own table places it as "2nd Sub-branch"
+(p. 213), not a Subphylum. The rank word the record carries and the rank
+word the source prints are two different things, exactly the shape G8
+describes.
+
+**Four more coined names, no diagnosis before the table (pp. 211–213).**
+Incaliculata/Caliculata are introduced only as the table's Branch headings
+(no separate proposing sentence); Anactinogonidiata/Actinogonidiata as
+Stage headings; Zygopoda/Azygopoda are proposed as adjectives first ("I
+propose, provisionally at any rate, to speak of it as zygopodous in the
+Urchin and azygopodous in the Starfish," p. 211) and only later become
+Division-rank substantives (p. 213). None of the six has a taxon record.
+
+**Three rank words absent from the enum (pp. 212–213).** Bell's table uses
+six rank-like words — Branch, Stage, Sub-branch, Sub-stage, Division, Class
+— against `$defs/rank` in `schemas/phylogeny.yaml`; Branch, Division and
+Class are in the enum, Stage, Sub-branch and Sub-stage are not. The words
+are not even used consistently within Bell's own tree: the same depth is
+"Sub-stage" on the Statozoa side of the split and "Division" on the
+Eleutherozoa side.
+
+**Two unnamed placeholders (p. 213).** "Sub-stage i. Apelmatozoic." and
+"Sub-stage ii. Pelmatozoic." each carry a member list but no substantive
+name, only an adjective already used elsewhere in the paper ("there were
+apelmatozoic and pelmatozoic Cystids," p. 210) — the C4 "unnamed" shape, not
+the "uncertain" one, since Bell believes each grouping is real.
+
+**The p. 211 diagram, read from the page image.** Captioned "Phylogeny of
+the Echinodermata," rooted on "Primitive Echinoderm" (not itself a taxon).
+Three main branches, with small side labels "Pedata" and "Apoda" on the
+Holothurioidea branch; Cystidea appears twice, once labelled "(pelmatozoic)"
+and once "Apelmatozoic Anactinogonidial Cystidea," matching the two Cystidea
+placements in the linear arrangement. Branch lengths and the order of
+branching along the Statozoa stem still need checking against the image by
+the auditor.
+
+Source record: none exists yet. A record needs the author key `bell.f.j`
+added to `data/authors.yaml` first (only `bell.b.m` is present); pages
+206–215; journal Ann. & Mag. Nat. Hist., Ser. 6, Vol. 8, 1891; no
+read/received date is printed anywhere in the supplied pages.
+
+Data checks:
+
+- `draft_1891_bell.f.j.yaml`: three printed rank words (Stage, Sub-branch,
+  Sub-stage, pp. 212–213) have no value in the rank enum and are currently
+  parked in each node's `notes`.
+- `draft_1891_bell.f.j.yaml`: two unnamed sub-stage placeholders
+  (`statozoa-unnamed-substage-1_bell.f.j_1891`,
+  `statozoa-unnamed-substage-2_bell.f.j_1891`, p. 213) need the C4 "unnamed"
+  marker once that field exists.
+- `draft_1891_bell.f.j.yaml` phylogeny: the p. 211 diagram was read from the
+  page image, not the OCR text; branch order and lengths along the Statozoa
+  stem are unverified.
+- `eleutherozoa`: the existing record's `rank: Subphylum` disagrees with
+  this paper's own printed rank for the same node, "2nd Sub-branch" (p.
+  213).
+
+## 1896_haeckel — "Die Amphorideen und Cystoideen" (Festschrift für Carl Gegenbaur)
+
+Read from the OCR text, printed pp. [1]–179 (own separate pagination, offset
+confirmed against running heads at eight points). No tree exists; a source
+record exists with several gaps. Coverage in one sentence: the paper prints
+a whole-phylum system plus two fully worked class-level systems (Amphoridea,
+Cystoidea) with full family synonymies, roughly twenty new genera and six
+new family/subfamily names, and no new species at all (G9).
+
+**No species proposed, by the author's own statement (p. 6).** "Weiter als
+bis zu den Gattungen hinabzugehen, schien mir nicht rathsam" ("I did not
+think it advisable to go further down than to the genera"), confirmed by a
+full-text search: no "n. sp."/"nov. sp." anywhere. Everything marked new in
+this paper is genus rank or above.
+
+**Edrioasteroid-relevant genera stay inside Cystoidea, and a rival class
+proposal is named and rejected (p. 108).** All of Agelacrinidae's relatives
+sit as one family (Agelacystida) with two subfamilies inside Class
+Cystoidea. Haeckel names and disagrees with Jaekel's competing proposal:
+"Otto Jaekel (49, pag. 110) hält die Hemicystiden … für 'die primitivsten
+Formen der Pelmatozoen' … er bildet aus ihnen die besondere Klasse der
+Thecoidea. Nach meiner Auffassung dagegen gehören dieselben zu den höchst
+entwickelten Formen der Cystoideen." No edrioasteroid-shaped taxon of any
+rank exists in this paper.
+
+**Edriocystis as a replacement name, same type species (p. 117–118).** New
+genus Edriocystis replaces Edrioaster Billings, 1858 (itself replacing
+Billings's own Cyclaster, 1856) without changing the type species:
+"Species typica: Edriocystis Bigsbyi, E. Haeckel. — Edrioaster Bigsbyi,
+BILLINGS, 15, pag. 82." The same genus complex is also split across two
+same-author decisions on facing pages: Barrande's Bohemian *Agelacrinites*
+is synonymized under genus Hemicystis (p. 111), while Vanuxem's own
+*Agelacrinites* stays under genus Agelacrinus (p. 112) — two same-named
+usages, resolved two different ways by the same reviewer.
+
+**Three `taxa.yaml` records that disagree with the print.** `amphorida`
+(Order, Haeckel 1896) is printed here as Klasse "Amphoridea," and Haeckel's
+own text credits the name to his 1895 paper, not 1896 (p. 8–9); `hemicystis`
+(credited to Haeckel, 1896) is printed as a genus of Hall, 1852 (p. 111),
+with no Haeckel authorship attached anywhere; `placocystida` (recorded rank
+Suborder) is printed as a Subfamilia (p. 37, table heading "I. Subfamilia:
+Placoecystida, Hkl.").
+
+**Mixed novelty-marking, one work, three conventions.** An explicit "(nov.
+gen.)" tag covers most new genera; a bare author abbreviation with no year
+covers the three new Anomocystida subfamilies ("Hkl.," p. 37); a first-person
+proposing verb with no tag covers two Cystoidea subfamilies ("unterscheide
+ich," p. 107) and genus Staurocystis ("gründe ich," p. 134).
+
+Source record: title, year and author match; series (Festschrift für Carl
+Gegenbaur), publisher (Wilhelm Engelmann, Leipzig), the work's own pagination
+(pp. [1]–179), and its status as a separately-paginated chapter in a
+multi-author dedicatory volume are all unrecorded — no Festschrift-shaped
+record exists anywhere in the corpus yet (`grep -rin festschrift` over
+`data/` and `docs/` returns nothing); the closest existing shape is
+`1857_billings`'s `book:`+`chapter:`+`pages:` pattern.
+
+Data checks:
+
+- `amphorida`: printed as Klasse "Amphoridea" (p. 8–9, 164), Haeckel's own
+  1895 self-citation, not 1896 — name, rank and year all differ from the
+  record.
+- `hemicystis`: printed as a genus of Hall, 1852 (p. 111), not of Haeckel —
+  the record's authorship is wrong for this citation.
+- `placocystida`: printed rank is Subfamilia (p. 37), not Suborder.
+
+## 1896_pompeckj — "Die Fauna des Cambrium von Tejřovic und Skrej in Böhmen" (Jahrbuch d. k. k. geol. Reichsanstalt 45)
+
+Read from the OCR text, printed pages confirmed against running heads at
+four points. Tree: one taxonomy, no phylogeny, matching the paper's own
+count of "4 Cystoideen" (p. 564). Coverage in one sentence: the
+classification skeleton, both new taxa and their illustrations are captured;
+type fixation, material, occurrences and diagnoses are not, and two
+open-nomenclature entities the paper itself prints have no node at all (G9).
+
+**Stromatocystites, erected without a stated type (p. 505–506).**
+"Stromatocystites nov. gen.," diagnosed "Kelch ungestielt, vieltäfelig,
+niedrig, von ungefähr fünfseitigem Umriss" and continuing for four more
+sentences, none of it captured in `diagnosis`. The genus is monotypic here
+(only *S. pentangularis* is assigned to it), so the type is fixed only by
+subsequent monotypy — Pompeckj never writes "Typus" or "Genotypus."
+
+**A genus-level "(?)" that hedges placement, not the species (p. 504).**
+"Mitrocystites (?) nov. spec." — the question mark sits after the genus
+name, and Pompeckj states exactly what it hedges: "Das Vorkommen einer
+solchen seitlichen Oeffnung kann die Zuzählung der vorliegenden Form zu
+Mitrocystites Barr. als bedingt richtig erscheinen lassen" ("…can make the
+assignment to *Mitrocystites* Barr. appear only conditionally correct").
+The tree's `provisional: true` on `mitrocystites-sp_pompeckj_1896` is the
+right mapping (B16); the bracketed-after-the-genus form of the hedge is
+worth naming separately so it is not misread as doubt on the species.
+
+**A hedged synonymy, restated three times, captured nowhere.** Pompeckj
+proposes that Barrande's *Cystidea concomitans* is the same species as his
+new *pentangularis*: "scheint auf schlecht erhaltene Reste der eben
+beschriebenen Form begründet zu sein" (p. 507, "seems to be based on poorly
+preserved remains of the form just described"), repeated at p. 585
+("wahrscheinlich … auch bei Skrej … vertreten") and p. 590. None of the
+three statements is in the tree.
+
+**A fourth taxon-like entity that never gets a node.** Under *Trochocystites
+bohemicus* (p. 503), isolated thick plates from three localities are
+described as "Sehr wahrscheinlich … einer Cystoideenform … möglicherweise …
+von einer Trochocystiten-Art," and the plate caption gives them their own
+line, locality and figures, distinct from *T. bohemicus*'s own: "Trochoeystites?
+sp. pag. 503 [9]" (Taf. XIII, Fig. 9–11). Pompeckj's own genus count treats
+this as material under *Trochocystites*, not a fifth species, but it is a
+distinct, figured, open-nomenclature unit — exactly the disarticulated-plate
+scope G9 flags as belonging in this project.
+
+**A bare, rank-less heading for the whole class (p. 502).** "Cystoidea."
+carries no rank word in the original — the Class rank the tree assigns comes
+entirely from the `cystidea` taxon record (`cystoidea` is `altSpellingOf:
+cystidea`), not from anything Pompeckj printed. Every higher-taxon heading in
+the paper follows the same bare-noun convention (G8).
+
+Source record: title, journal, volume 45, `notes` on the 1895-annual/1896-
+publication gap, `pubDate.year: 1896` and author all match the printed
+running head and table of contents; no discrepancy found.
+
+Data checks:
+
+- Add an `openTaxon` child of `trochocystites` for "Trochocystites? sp."
+  (p. 503, Taf. XIII fig. 9–11), currently uncaptured.
+- Add a hedged `synonyms` entry for *Cystidea concomitans* Barr. under
+  `pentangularis_pompeckj_1896` (pp. 507, 585, 590).
+
+## 1899_bather — "A Phylogenetic Classification of the Pelmatozoa" (Rep. Brit. Assoc. Adv. Sci. for 1898, pp. 916–923)
+
+Read from the OCR text of the Report volume; offset confirmed at both ends
+of the paper. No tree exists. Coverage in one sentence: the paper prints one
+full linear classification, Sub-Phylum to family, ending mid-family where
+the section's business closed, with no explicit "new" marker anywhere in it
+(G9).
+
+**The classification (pp. 919–923).** Sub-Phylum Pelmatozoa contains Class I
+Cystidea (4 orders, 17 families), Class II Blastoidea (two Grades, an
+intermediate "Series" rank between Grade and family), Class III Crinoidea,
+and Class IV Edrioasteroidea, printed as three families with no orders
+("Not divided into Orders" is the 1900 book's sentence, not this paper's).
+The paper is cut off mid-family by the next item on the sitting's agenda.
+
+**No name in the paper carries a "new" marker.** "n. fam.," "n. gen.," "gen.
+nov.," "established," "proposed" and "erect(ed)" occur nowhere in the text.
+Every name is presented as "an epitome of that adopted in a forthcoming
+text-book of zoology edited by Professor Ray Lankester" (p. 916) — i.e.
+`1900_bather`. Novelty has to be inferred from the absence of a prior
+author, not read off the page.
+
+**The year problem: Bather's own later self-citations disagree.** The
+printed 1899 paper carries no year on any of its own names. In `1900_bather`
+Bather cites this paper's grade Protoblastoidea as "Bather (1899)" (p. 79)
+and its genus Dinocystis as "Bather (1898)" (p. 209) — within pages of each
+other, in the same book. `taxa.yaml` follows both conventions inconsistently
+across different names from the same 1899 paper; nothing printed in the 1899
+paper itself supports one year over the other for any specific name.
+
+**Haplocystis, likely a wrong genus authority.** `taxa.yaml` credits the
+genus to Bather, 1899, but this paper only lists "Haplocystis" among
+Agelacrinidae's genera with no attribution and no "new" marker, while
+`1900_bather` explicitly credits it to "C. F. Roemer (1855)" (p. 208) — an
+error discoverable only by holding both papers together.
+
+**Tiaracrinidae, apparently pre-dated.** `taxa.yaml` credits the family to
+`1900_bather`, but "Tiaracrinide" is already printed here in 1899 (p. 921),
+with the same lack of attribution as every other family in the paper.
+Crediting it to 1900 looks wrong unless some still-earlier, unexamined
+source used the name first.
+
+**Steganoblastus, provisionally placed.** Appears here only as a genus,
+bracketed "[?]" inside family Asteroblastidae under Grade Protoblastoidea
+(p. 921) — a placement `1900_bather` overturns a year later by giving it its
+own family, Steganoblastidae, under Edrioasteroidea, while explicitly
+citing this very paper for the placement it is now rejecting ("Bather,
+1899," p. 209).
+
+Source record: title, journal reference, pages [916, 923] and sole
+authorship all match, confirmed independently by Bather's own bibliography
+entry in `1900_bather` (item 12, p. 216). `processDates.conferenceStart` and
+`conferenceEnd` are both `1898-09-07`, but the paper was read specifically
+in the Tuesday, 13 September 1898 sitting of a Section that ran business
+across at least six days (8–14 September) — one identical date captures
+neither the meeting's span nor this paper's own reading date.
+
+Data checks:
+
+- `haplocystis`: credited to Bather, 1899; `1900_bather` p. 208 explicitly
+  credits "C. F. Roemer (1855)" instead.
+- `tiaracrinidae`: credited to `1900_bather`; the family is already printed,
+  unattributed, in `1899_bather` p. 921.
+- `1899_bather` (once entered): `processDates.conferenceStart`/`conferenceEnd`
+  both read `1898-09-07`; the paper's own reading date was 13 September 1898.
+- `glyptocystinae`: credited to "Calvin, 1899," already flagged unverified by
+  the editor; `1899_bather` p. 920 is a plausible actual source (appears in
+  Bather's own sentence beside the confirmed Callocystinae/Echinoencrininae)
+  but this is not confirmed — cannot verify without checking Calvin directly.
+
+## 1899_jaekel — *Stammesgeschichte der Pelmatozoen*, Erster Band: Thecoidea und Cystoidea (Berlin: Julius Springer)
+
+Read from the OCR text; offset confirmed at eight anchors across the whole
+main text. No tree exists; a source record exists. Coverage in one sentence:
+the volume prints two full class-level systems (Thecoidea, Cystoidea) with
+family/genus synonymies, several new genera and species, and one
+family-rank name Jaekel explicitly claims as his own (G9).
+
+**Two classes, one volume, no single Pelmatozoa table.** Thecoidea (pp.
+6–51) and Cystoidea (pp. 53–436) are simply the two halves of this Band;
+Pelmatozoa itself is never subdivided in one printed table anywhere in the
+book.
+
+**Billings's name for the group is quoted and declined (p. 9).** Jaekel
+cites Billings 1858 proposing "Edrioasteridae" for this group and explains
+why he does not adopt it: "die genannte Wortbildung nach den heutigen Regeln
+der Nomenklatur nur zur Bezeichnung einer Familie, nicht aber einer Klasse
+verwendet werden darf" ("that word-formation may, by today's rules of
+nomenclature, be used only to denote a family, not a class"). He also
+rejects Miller's 1889 "Agelacrinoidea" as a replacement.
+
+**Dinocystis, erected in Jaekel's own name with no citation to Bather
+anywhere (pp. 10, 46–47).** "Dinocystis n. g.," diagnosed and given a type
+species, *D. Barroisi* n. sp. ("Ich nenne die Art zu Ehren des Herrn CHARLES
+BARROIS"). `taxa.yaml`'s `dinocystis` record reads `auth: [bather], year:
+1898`; nothing in this book supports that — Jaekel lists "Dinocystis, n. g."
+in his own name at p. 10 and erects it formally at p. 46, with no Bather
+citation anywhere the name occurs in the volume.
+
+**Agelacrinidae claimed as Jaekel's own, apparently in ignorance of Chapman
+(p. 47, 49).** "II. Fam. Agelacrinidae m." — "m." (*mihi*, "of me"). The only
+place Chapman's name touches this material at all is a species citation, "H.
+Billingsi CHAPMAN 1860" (p. 49); Chapman is never connected to the family
+name itself. `taxa.yaml`'s `agelacrinidae` record correctly keeps Chapman
+1860 as authority, so no change is indicated there, but the printed "m." is
+worth a note if this source is entered.
+
+**Three spelling/identity mismatches against `taxa.yaml`.** `apiocystitinae`
+is printed throughout as "Apiocystinae" (p. 277), never with the "-tit-";
+`cheirocrinidae` is printed consistently as "Chirocrinidae" (p. 212, and the
+genus is always "Chirocrinus," never "Cheirocrinus"); `scoliocystinae` does
+not occur anywhere in the book at all — only family Scoliocystidae exists,
+with no subfamily subdivision in either the table of contents or the text.
+
+**Eocrinoidea confirmed absent (p. 174, 210).** "Eocrinoidea"/"Eocrinida" do
+not occur anywhere, checked for every occurrence; the only related word is
+the informal collective "Eocriniten," used descriptively, never as a formal
+Klasse/Ordnung with a Latin diagnosis. This corroborates Regnéll 1945 (p.
+14) and matches `taxa.yaml`'s own correct dating of `eocrinoidea` to Jaekel
+1918, not 1899.
+
+Source record: author, title stem (`book: stamm`) and year all match. The
+volume-specific subtitle, "Erster Band: Thecoidea und Cystoidea," is not
+carried in any field — the project uses a `title:` field for exactly this
+purpose elsewhere on a multi-part work (`1900_bather`: `title: Part III —
+The Echinoderma`) — worth adding if Jaekel's later Bände are ever entered.
+
+Data checks:
+
+- `dinocystis`: credited to Bather, 1898; Jaekel erects "Dinocystis n. g."
+  in his own name (pp. 10, 46), with no Bather citation anywhere in the
+  volume.
+- `apiocystitinae`: spelling; printed throughout as "Apiocystinae" (p. 277).
+- `cheirocrinidae`: spelling; printed consistently as "Chirocrinidae" (p.
+  212).
+- `scoliocystinae`: not found anywhere in the book — cannot confirm this
+  subfamily exists as printed; only family Scoliocystidae is present.
+
+## 1900_bather — "The Echinoderma," Part III of Lankester's *A Treatise on Zoology*
+
+Read from the OCR text; offset confirmed at four anchors across the
+examined chapters. Tree: `data/trees/1900_bather.yaml`, one taxonomy, no
+phylogeny. Coverage in one sentence: the classification skeleton from
+Kingdom to Sub-family is captured cleanly for every chapter read; type
+species, material, occurrences, illustrations and phylogeny are not, and
+most attribution on the covered nodes is missing even where the book prints
+it (G9).
+
+**35 of 39 nodes match the print cleanly** on identity, rank, placement and
+(where present) notes, including a word-for-word quote check on the
+`blastoidea` node spanning a page break (pp. 78–79).
+
+**A compound, multi-author attribution the schema cannot yet hold (p.
+205).** "CLASS IV. EDRIOASTEROIDEA, E. Billings (1854,-58; Huxley, 1877; and
+Bather, 1899) (=Thyroida, Chapman, 1860; Agelacrinoidea, S. A. Miller,
+1877-83; Worthen, 1883; Cystasteroidea, Steinmann, 1888; F. Bernard, 1893;
+Thecoidea, Jaekel, 1895)." The class name is credited to three independent
+author-years at once, and two of the four listed synonyms are each credited
+to two authors. `taxa.yaml`'s `edrioasteroidea` record picks one authority
+(`1858b_billings`); the tree node carries none of this — no `auth`, `year`
+or `citedAs` on the class or on any of its four synonym entries.
+
+**Two spelling and one omitted attribution, all against the paper's own
+sibling nodes.** The `amphorida` node's `notes` spell the printed authority
+"Haekel (1896, pars)" (p. 43) for what the book actually prints as
+"Haeckel"; the same misspelling recurs on `eocystidae`'s notes ("Haekel's
+Eocystida" for "Haeckel's Eocystida"). `rhombifera-order` carries no `notes`
+at all, though its sibling orders `aporita` and `diploporita-order` both
+carry the book's identical attribution pattern ("Zittel (1879, restr.)" /
+"Zittel (1879, emend.)"), and Rhombifera is credited the same way at p. 52.
+
+**Tiaracrinidae's `new: true` is very likely wrong.** "Famity 4.
+TIARACRINIDAE" (p. 57) carries no attribution or "new" language here, and
+the family is already in print, equally unattributed, in `1899_bather` a
+year earlier — flagging it new to this 1900 source looks wrong unless a
+still-earlier use is ruled out.
+
+**Rank drift for Pelmatozoa, within one work and between two.** The formal
+heading reads "GRADE A. PELMATOZOA" (p. 1), which the tree follows
+(`pelmatozoa-grade`); the book's own prose, 33 pages later, gives a
+different reason and a different rank: "their genetic connection is so
+evident that it should be recognised by the establishment of a Sub-phylum,
+to which we shall continue to apply the name Pelmatozoa" (p. 33) — almost
+verbatim `1899_bather`'s own prose and formal heading, both of which use
+Sub-Phylum. The same name is a Sub-Phylum in 1899 (formal heading and
+prose) and a Grade in 1900's formal heading, while 1900's own prose still
+calls it a Sub-phylum.
+
+**An internal `taxa.yaml` inconsistency, visible only because two linked
+records disagree.** `anomalocystidae` (`altSpellingOf: anomalocystitidae`)
+carries `auth: [Hall], year: 1859`, but `anomalocystitidae` itself carries
+`auth: [bassler], year: 1938`; neither 1899 nor 1900 prints any attribution
+for this family, so this review cannot settle which is right, only that the
+two linked records disagree. The same split exists for `dendrocystidae`
+(Barrande 1887) vs. `dendrocystitidae` (Bassler 1938); here the 1900 book at
+least credits the *genus* Dendrocystis to Barrande, 1887 (p. 47), matching
+the alt-spelling record, not the primary one.
+
+Source record: title page, `book: treatise-zoo`, `pubDate.year: 1900` and
+`authors: [bather]` all match exactly; the title page's "assisted by" credit
+(J. W. Gregory, E. S. Goodrich) has no field to land in, which is not an
+error — `authors` correctly reflects the "BY" line — but is worth a `notes`
+line if the record is touched again.
+
+Data checks:
+
+- `amphorida` / `eocystidae`: `notes` spell "Haekel" where the book prints
+  "Haeckel" (p. 43).
+- `rhombifera-order`: missing the `notes` attribution ("Zittel (1879,
+  emend.)," p. 52) that its sibling orders both carry.
+- `edrioasteroidea`: node carries no `auth`/`year`/`citedAs` for the
+  compound three-author printed attribution (p. 205); its four `synonyms`
+  entries (`thyroida`, `agelacrinoidea`, `cystasteroidea`, `thecoidea`)
+  likewise carry none of their printed attributions.
+- `tiaracrinidae`: `new: true` is very likely wrong — the family is already
+  printed, unattributed, in `1899_bather` p. 921.
+- `anomalocystidae`/`anomalocystitidae`: the linked records disagree on
+  authority (Hall, 1859 vs. Bassler, 1938); neither source read in this
+  round prints an attribution for the family.
+
+## Data corrections surfaced by the 09-10 round
+
+| file or key | correction | shown at |
+|---|---|---|
+| `amphorida` (taxa.yaml) | printed as Klasse "Amphoridea," self-cited by Haeckel to 1895, not 1896 | 1896_haeckel p. 8–9, 164 |
+| `hemicystis` (taxa.yaml) | printed as a genus of Hall, 1852, not of Haeckel | 1896_haeckel p. 111 |
+| `placocystida` (taxa.yaml) | printed rank is Subfamilia, not Suborder | 1896_haeckel p. 37 |
+| `dinocystis` (taxa.yaml) | Jaekel erects it in his own name; no Bather citation anywhere in the volume | 1899_jaekel pp. 10, 46 |
+| `apiocystitinae` (taxa.yaml) | spelling; printed "Apiocystinae" | 1899_jaekel p. 277 |
+| `cheirocrinidae` (taxa.yaml) | spelling; printed consistently "Chirocrinidae" | 1899_jaekel p. 212 |
+| `haplocystis` (taxa.yaml) | credited to Bather, 1899; Bather's own later book credits Roemer, 1855 | 1900_bather p. 208, re: 1899_bather |
+| `tiaracrinidae` (taxa.yaml) | credited to `1900_bather`; already printed, unattributed, a year earlier | 1899_bather p. 921 |
+| `1899_bather` `processDates` (sources.yaml, once entered) | `conferenceStart`/`conferenceEnd` both `1898-09-07`; the paper's own reading date was 13 September 1898 | 1899_bather p. 916 |
+| `amphorida` / `eocystidae` `notes` (1900_bather tree) | "Haekel" for printed "Haeckel" | 1900_bather p. 43 |
+| `rhombifera-order` (1900_bather tree) | missing the attribution its sibling orders both carry | 1900_bather p. 52 |
+| `edrioasteroidea` and its four `synonyms` (1900_bather tree) | no `auth`/`year`/`citedAs` captured for any of the printed attributions | 1900_bather p. 205 |
+| `tiaracrinidae` `new: true` (1900_bather tree) | very likely wrong; family already printed unattributed a year earlier | 1900_bather p. 57, re: 1899_bather p. 921 |
+| `anomalocystidae`/`anomalocystitidae` (taxa.yaml) | linked records disagree on authority (Hall, 1859 vs. Bassler, 1938) | — |
+| `eleutherozoa` `rank: Subphylum` (taxa.yaml) | this paper's own table prints "2nd Sub-branch" for the same node | 1891_bell.f.j p. 213 |
+
+Attribution conflicts to resolve
+
+- **Bather 1898 vs. 1899, for names from the same paper.** The printed
+  1899 paper (`1899_bather`) carries no year on any of its own names.
+  Bather's own later book (`1900_bather`) cites the grade Protoblastoidea
+  as "Bather (1899)" (p. 79) and the genus Dinocystis from the same paper
+  as "Bather (1898)" (p. 209) — within pages of each other. `taxa.yaml`
+  follows both conventions inconsistently; nothing in the 1899 paper itself
+  favors either year for any specific name.
+- **haplocystis: Roemer, 1855 vs. Bather, 1899.** `taxa.yaml` credits the
+  genus to Bather, 1899; `1899_bather` merely lists the name unattributed;
+  `1900_bather` p. 208 explicitly credits "C. F. Roemer (1855)."
+- **tiaracrinidae: 1899 vs. 1900.** `taxa.yaml` credits `1900_bather`; the
+  family is already printed, equally unattributed, in `1899_bather` p. 921,
+  a year earlier.
+- **dinocystis: Bather, 1898 vs. Jaekel, 1899 "n. g."** `taxa.yaml` credits
+  Bather, 1898; Jaekel erects "Dinocystis n. g." in his own name (pp. 10,
+  46), with no Bather citation anywhere in the book.
+- **Agelacrinidae: Jaekel, 1899 "m." vs. Chapman, 1860.** Jaekel prints "II.
+  Fam. Agelacrinidae m." (mihi, p. 47), apparently unaware of Chapman's
+  prior use — Chapman is cited in the volume only for a species, never
+  connected to the family name. `taxa.yaml` correctly keeps Chapman, 1860.
+- **amphorida, hemicystis, placocystida vs. Haeckel's own print.** Three of
+  eight Haeckel-1896-attributed `taxa.yaml` records disagree with what
+  `1896_haeckel` actually prints: name/rank/year for `amphorida`,
+  authorship entirely for `hemicystis`, rank for `placocystida`.
+- **The Haeckel 1895 paper as the true source of several family names.**
+  Most of `1896_haeckel`'s family-rank names (Eocystida's components,
+  Palaeocystida, Pomocystida, Fungocystida, Agelacystida, Ascocystida,
+  Glyptocystida) are explicitly self-cited by Haeckel to his 1895 paper
+  ("Die cambrische Stammgruppe der Echinodermen"), not proposed new in 1896;
+  no `1895_haeckel` source record exists yet to resolve these citations
+  against.
+- **Jaekel spellings Apiocystinae/Chirocrinidae, and the missing
+  scoliocystinae.** `taxa.yaml`'s `apiocystitinae` and `cheirocrinidae` both
+  carry spellings the book never uses (printed "Apiocystinae" p. 277,
+  "Chirocrinidae" p. 212 throughout); `scoliocystinae` does not occur
+  anywhere in the volume at all — only family Scoliocystidae, unsplit,
+  exists.
+- **Eocrinoidea absent from Jaekel 1899.** Checked for every occurrence:
+  "Eocrinoidea"/"Eocrinida" do not appear anywhere in the book, only the
+  informal "Eocriniten." This corroborates Regnéll 1945 (p. 14) and matches
+  `taxa.yaml`'s own correct dating of `eocrinoidea` to Jaekel, 1918.

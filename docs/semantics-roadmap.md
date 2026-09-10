@@ -304,6 +304,11 @@ built from exactly these nodes. Where the source itself prints two years
 for one name (Cyathocystidae 1898/1899 in Smith's Table 3; Edrioasterina
 1898 and Edrioasteridae 1899 four lines apart in Sprinkle & Sumrall 2015),
 each line is recorded as printed and the comparison is derived (B19).
+Bather 1900 prints a compound credit for the class itself, "CLASS IV.
+EDRIOASTEROIDEA, E. Billings (1854,-58; Huxley, 1877; and Bather, 1899)"
+(p. 205), and two-author credits on its synonyms ("AGELACRINOIDEA, S. A.
+Miller, 1877-83; Worthen, 1883"): `citedAs` holds the printed line whole,
+and `auth`/`year` take the first credit only.
 
 **A13. A collected reprint is one printing of several works.** Bather's
 *Studies in Edrioasteroidea* (1915) reprints nine Geological Magazine
@@ -1111,6 +1116,13 @@ editorial policy rather than the views of the author" (Sumrall 2009 p. 991).
 Sumrall, Brett & Cornell 2006 print no rank word above genus and list
 Isorophina above Isorophida (p. 190); the tree nests by the records' ranks
 and says so in `notes`, which is the right call until G8.
+Bell 1891 is the older shape of the same problem: Branch, Stage,
+Sub-branch, Sub-stage, Division and Class, with "Sub-stage" on one side of
+a split and "Division" on the other at the same depth (pp. 212–213), and
+Eleutherozoa printed as "2nd Sub-branch" where the record says Subphylum.
+Bather prints Pelmatozoa as "Sub-Phylum" in 1899 and "Grade" in 1900. Until
+G8 lands, the draft tree quotes each rank word in `notes`; whether Stage,
+Sub-branch and Sub-stage join the enum is the auditor's call.
 
 **G10. Typographical variation is not spelling.** Four kinds of variation
 in the printed literature, and the decision for each. The Code treats the
