@@ -400,9 +400,9 @@
                   - taxon: pyrgocystis
               - taxon: whitei_holloway_jell_1983
               - taxon: piojoensis_sumrall_heredia_rodríguez.c.m_mestre_2013
-              - taxon: flos_klug_krüger_korn_rücklin_schemm-gregory_debates_mapes_2008
+              - taxon: flos_klug_krüger_korn_rücklin_schemm-gregory_debaets_mapes_2008
                 synonyms:
-                - taxon: flos_klug_krüger_korn_rücklin_schemm-gregory_debates_mapes_2008
+                - taxon: flos_klug_krüger_korn_rücklin_schemm-gregory_debaets_mapes_2008
                   parents:
                   - taxon: rhenopyrgus
                   - taxon: pyrgocystidae
