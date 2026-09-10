@@ -13,19 +13,13 @@ logger = logging.getLogger(__name__)
 FILEDIR = pathlib.Path(__file__).parent / r'..'
 DATA_DIR = FILEDIR / 'data'
 TREE_DIR = DATA_DIR / 'trees'
-PERSONAL_DIR = FILEDIR / 'personal'
 
+# Note: There were once other file sets, but now only this one.
 COMMON_FILES = (
   DATA_DIR / 'authors.yaml',
   DATA_DIR / 'publications.yaml',
   DATA_DIR / 'sources.yaml',
   DATA_DIR / 'taxa.yaml',
-)
-PERSONAL_FILES = (
-  PERSONAL_DIR / 'authors.yaml',
-  PERSONAL_DIR / 'publications.yaml',
-  PERSONAL_DIR / 'sources.yaml',
-  PERSONAL_DIR / 'trees.yaml',
 )
 
 class UniqueKeyNoDatesLoader(yaml.SafeLoader):
@@ -75,11 +69,8 @@ def load_yaml(filename, debug=True):
     return data
 
 
-def load_files(personal=False):
-  if personal:
-    files = COMMON_FILES + PERSONAL_FILES
-  else:
-    files = COMMON_FILES
+def load_files():
+  files = COMMON_FILES
 
   logger.info("Checking schema...")
   schema_library = jschon.JSONSchema(load_yaml(
@@ -101,7 +92,6 @@ def load_files(personal=False):
     'sources': {},
     'taxa': {},
     'trees': {},
-    'personal': {},
     'time': {},
   }
   for filename in files:
