@@ -742,6 +742,22 @@ because the records' authorities differ (Chapman 1860 for the first, which
 nothing in the paper supports). `act` per B6 with the printed phrase in
 `citedAs`; the authority question is a data check.
 
+The short stems are a pattern, not a slip. Bather forms family-group names
+on the truncated stem of genera in -ites and -crinus: "Glyptocystidae",
+"Comarocystidae", "Agelacrinidae", "Echinoencrininae", "Caryocrinidae"
+(1899 pp. 920–923; 1900 throughout), where the Code derives the stem from
+the genitive (Art. 29.3: Glyptocystit-idae). Such a stem is an incorrect
+original spelling, corrected without change of authority unless the short
+form is in prevailing usage (Art. 29.4, 32.5.3), which is why Bassler's
+"Agelacrinitidae, new name" is a stem correction and not a new name. The
+data already holds each pair as `altSpellingOf` with the same authority,
+which is right; the correcting act belongs on the tree of the source that
+made it, as `act: [nomCorrect]` (B6). A different thing hides beside it:
+Bather's suborders are printed "Cyathocrinoidea" and "Dendrocrinoidea"
+(1899 p. 923), while the records `cyathocrinina` and `dendrocrinina` credit
+him with the Treatise's -ina forms he never printed. Those are rank-suffix
+variants, `altRankOf`-style coordinate names, not spellings.
+
 ---
 
 ## C. Open nomenclature and uncertainty
