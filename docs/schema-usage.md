@@ -43,15 +43,15 @@ property.
 | `pubDate` | 295 | 99.7% |
 | `title` | 246 | 83.1% |
 | `volume` | 225 | 76.0% |
-| `identifiers` | 207 | 69.9% |
+| `identifiers` | 208 | 70.3% |
 | `pages` | 207 | 69.9% |
 | `journal` | 204 | 68.9% |
 | `number` | 149 | 50.3% |
-| `identifiers.url` | 125 | 60.4% |
+| `identifiers.url` | 126 | 60.6% |
 | `processDates` | 94 | 31.8% |
 | `book` | 90 | 30.4% |
 | `processDates.accepted` | 62 | 66.0% |
-| `identifiers.doi` | 61 | 29.5% |
+| `identifiers.doi` | 61 | 29.3% |
 | `processDates.received` | 53 | 56.4% |
 | `audit` | 48 | 16.2% |
 | `audit.notes` | 48 | 100.0% |
@@ -59,7 +59,7 @@ property.
 | `audit.coverage` | 29 | 60.4% |
 | `notes` | 29 | 9.8% |
 | `processDates.online` | 28 | 29.8% |
-| `identifiers.jstor` | 24 | 11.6% |
+| `identifiers.jstor` | 24 | 11.5% |
 | `processDates.revised` | 18 | 19.1% |
 | `plates` | 14 | 4.7% |
 | `processDates.read` | 8 | 8.5% |
