@@ -1036,7 +1036,7 @@ Source record: title, journal, volume/number, pages and plates all match the pri
 
 Data checks:
 
-- `1848b_forbes.yaml`: the `echino-encrinus` node's `notes` assigns "Echino-encrinus" to the formal diagnosis and "Echino-encrinites" to general commentary; printed usage is the reverse (diagnosis headed "ECHINO-ENCRINITES," p. 509; general prose "ECHINO-ENCRINUS," p. 504).
+- `1848b_forbes.yaml`: the `echino-encrinus` node's `notes` on the two spellings was wrong in both versions; Forbes uses one genus under two forms: "Echino-encrinus" for the English description, the character table and the species headings (pp. 494, 504, 506–507), "Echino-encrinites" for Von Meyer's genus as cited, the Latin summary and its "E. armatus"/"E. baccatus", the general prose and the chart (pp. 485, 504, 509–510, 526). Corrected 2026-09-10.
 - `sources.yaml` `1848b_forbes.title`: drop the trailing ".pdf".
 
 ## 1852_hall — Palæontology of New-York, vol. 2 (Clinton and Niagara Cystideæ, Asteriadæ, crinoids)
@@ -1467,7 +1467,7 @@ Attribution conflicts to resolve:
 - **Edrioasteridae 1898/1899 and Bather/Bell 1976**: `taxa.yaml` gives Bather, 1898; `2015_sprinkle_sumrall` prints "Bather, 1899" for the family four lines below "Bather, 1898" for the coordinate suborder (p. 348, the paper's own inconsistency); `1978_bell.b.m_sprinkle` credits the family to "Bell, 1976" throughout (pp. 245–246).
 - **Camptostromatidae 1967/1968**: `taxa.yaml` gives 1967 (per `1994_guensburg_sprinkle`, already documented in `source-observations.md`); that paper prints "Durham, 1968" (pp. 12, 42).
 - **Stromatocystitidae 1935/1936**: `taxa.yaml` gives Bassler, 1936; `2015_zamora_stromatocystites` prints "Family STROMATOCYSTITIDAE Bassler, 1935" (p. 418).
-- **Echino-encrinites Von Meyer/Volborth**: `taxa.yaml` credits Volborth, 1842; `1848b_forbes` credits "Von Meyer" for the genus throughout (p. 504).
+- **Echino-encrinites Von Meyer/Volborth**: not a conflict. `echinoencrinites` (Meyer 1826) and `echinoencrinus` (Volborth 1842) are separate records for the two spellings of one genus; Forbes 1848 credits Von Meyer for "Echino-encrinites" (p. 504) and heads his own English descriptions "Echino-encrinus", so each form resolves to its own record.
 - **Agelacrinitidae Chapman 1860 vs Jaekel 1899**: `taxa.yaml` gives Chapman, 1860; `1935_bassler`'s own paper credits the superseded family form to "Agelacrinidae Jaekel, 1899" (p. 2), and its adjacent Class-level synonym on the same page independently reads "Thyroidea Chapman, 1860," suggesting a possible copy error.
 - **stellatus 1856/1866**: the `hemicystites-subgenus > stellatus_hall_1866` key gives 1866; `1936_bassler` prints "(Hall), 1856" (p. 5).
 

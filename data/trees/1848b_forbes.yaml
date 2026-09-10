@@ -35,8 +35,13 @@ taxonomies:
         new: true
     - taxon: echino-encrinus
       notes: |
-        The formal diagnosis is headed "ECHINO-ENCRINITES." (p. 509);
-        the general prose uses "Echino-encrinus" (p. 504).
+        One genus under two spellings. "Echino-encrinus" heads the English
+        description (p. 504), the character table (p. 494) and the species
+        headings "Echino-encrinus baccatus, Forbes" and "E. armatus"
+        (pp. 506–507). "Echino-encrinites" is used when citing "his genus"
+        of Von Meyer (p. 504), in the Latin summary heading with "1. E.
+        armatus" and "2. E. baccatus" (pp. 509–510), in the general prose
+        ("most Echino-encrinites", p. 485) and in the chart (p. 526).
       synonyms:
       - taxon: echino-encrinites
       - taxon: gonocrinites
