@@ -239,6 +239,8 @@ taxonomies:
       - taxon: agelacystis
       - taxon: haplocystites
       - taxon: haplocystis
+      - taxon: agelacrinus
+        citedAs: Agelacrinus authors
       children:
       - taxon: hamiltonensis_vanuxem_1842
         type: true
@@ -312,6 +314,9 @@ taxonomies:
       - taxon: edriocystis
       - taxon: aesiocystites
       - taxon: aesiocystis
+      - openTaxon: agelacrinites-sp_forbes_1848
+        citedAs: Agelacrinites Forbes, 1848, not Vanuxem
+        pars: true
       children:
       - taxon: bigsbyi_billings_1857
         type: true
