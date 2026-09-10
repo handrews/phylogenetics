@@ -97,7 +97,7 @@ property. `personal` is counted separately.
 |---|---|---|---|
 | `location` | 30 | 90.9% | 35 |
 | `unit` | 21 | 63.6% | 35 |
-| `notes` | 17 | 51.5% | 20 |
+| `notes` | 15 | 45.5% | 20 |
 | `specimens` | 15 | 45.5% | 14 |
 | `stage` | 14 | 42.4% | 23 |
 | `series` | 13 | 39.4% | 18 |
@@ -505,6 +505,7 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/taxon/properties/holotype/additionalProperties/items` | array/string/integer | intx10, strx3 | `EE15373`, `EE 1659`, `E23470` | array |
 | `phylogeny#/$defs/taxon/properties/name` | string/null | strx2483, nullx197 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
 | `tree#/properties/diagnosis` | string/null | strx68, nullx1 | `A cast of it shows a con...`, `Body hemisphæric, slight...`, `A *Pyrgocystis* specimen...`, `Mouth surrounded and cov...` | - |
+| `tree#/properties/editorial/properties/inferred` | boolean/array | boolx2, listx1 | - | - |
 | `tree#/properties/emended` | boolean/null | boolx49 | - | null |
 | `tree#/properties/matrix/items` | integer/string | intx139, strx5 | `?` | - |
 
