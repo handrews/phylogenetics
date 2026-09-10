@@ -248,7 +248,6 @@ taxonomies:
 # the Statozoa stem should be checked against the image by the auditor.
 phylogenies:
 - treeType: diagram
-  pages: 211
   notes: |
     Captioned "Phylogeny of the Echinodermata"; the root is labelled
     "Primitive Echinoderm", which is not a taxon and is not given a node.
@@ -257,6 +256,7 @@ phylogenies:
     placements in the linear arrangement.
   tree:
     bracket: echinodermata
+    pages: 211
     children:
     - taxon: holothuroidea
       notes: 'labelled "Holothurioidea", with side labels "Pedata" and "Apoda"'
