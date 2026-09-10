@@ -3811,7 +3811,8 @@ edrioasteridae:
   name: Edrioasteridae
   rank: Family
   auth: [bather]
-  year: 1898
+  year: 1899
+  notes: from the 1898 meeting paper, published 1899; cited as both 1898 and 1899
 edrioasterids:
   name: Edrioasterids
   rank: Group
@@ -3890,8 +3891,7 @@ edrioblastoidea:
 edrioblastoidina:
   name: Edrioblastoidina
   rank: Suborder
-  auth: [fay]
-  year: 1962
+  altRankOf: edrioblastoidea
 edrioblastoids:
   name: Edrioblastoids
   rank: Group
@@ -4240,8 +4240,8 @@ ephraemovianus_bogolubov_1926:
   name: ephraemovianus
   auth: [Bogolubov]
   year: 1926
-epilezorum_sumrall_zamora_2011:
-  name: epilezorum
+espilezorum_sumrall_zamora_2011:
+  name: espilezorum
   authority:
     source: 2011_sumrall_zamora
 epipaston:
@@ -4559,9 +4559,9 @@ floridiscus:
   name: Floridiscus
   auth: [Smith]
   year: 1980
-flos_klug_krüger_korn_rücklin_schemm-gregory_debates_mapes_2008:
+flos_klug_krüger_korn_rücklin_schemm-gregory_debaets_mapes_2008:
   name: flos
-  auth: [Klug, Krüger, Korn, Rücklin, Schemm-Gregory, DeBates, Mapes]
+  auth: [Klug, Krüger, Korn, Rücklin, Schemm-Gregory, DeBaets, Mapes]
   year: 2008
 floscularia:
   name: Floscularia
@@ -5268,8 +5268,9 @@ hanoveri_thomas_1924:
   year: 1924
 haplocystis:
   name: Haplocystis
-  auth: [bather]
-  year: 1899
+  auth: [Roemer]
+  year: 1855
+  notes: Bather 1900 p. 208 credits C. F. Roemer (1855); Bather 1899 p. 923 lists it unattributed
 haplocystites:
   name: Haplocystites
   auth: [Roemer]
@@ -10725,11 +10726,11 @@ stromatocystitida:
   rank: Order
   authority:
     source: 1980_bell.b.m
-stromatocystitida-incertae-sedis:
+stromatocystitida-unknown-family_jell_sprinkle_2021:
   name: null
   rank: Family
-  auth: [linnaeus]
-  year: 1758
+  authority:
+    source: 2021_jell_sprinkle
 stromatocystitidae:
   name: Stromatocystitidae
   rank: Family
@@ -11120,7 +11121,8 @@ tiaracrinidae:
   name: Tiaracrinidae
   rank: Family
   authority:
-    source: 1900_bather
+    source: 1899_bather
+  notes: printed unattributed in Bather 1899 p. 921 and Bather 1900 p. 57
 timeischytes:
   name: Timeischytes
   auth: [Ehlers, kesling]

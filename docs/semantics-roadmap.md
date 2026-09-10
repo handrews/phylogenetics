@@ -76,7 +76,10 @@ says on what evidence. Two kinds:
   wrong year, a page from another printing) and the editor resolves it to
   this source record. The printed `auth`/`year`/`citedAs` stay (A6).
 - `inferred: true`: the node's existence or placement is the editor's, not
-  the source's (B20).
+  the source's (B20). When the node is printed but one of its fields is
+  not, `inferred` names the fields instead: Fay 1962 prints *Astrocystites
+  ottawaensis* but never "type species", so its node has
+  `inferred: [type]`.
 
 What it is not for: an alternative authority, year or spelling. The name's
 true authority lives on the taxon record; a printed misspelling is an
@@ -1025,11 +1028,12 @@ bare string, so the doubt stays where it was printed.
 node. Its formation and member registry is an idea for later (F3), not a file to
 keep loading nothing from.
 
-**E9. Record the printed stage qualifier.** Ewin et al. 2020 print "upper
-Tremadocian" (p. 120) and "late Tremadocian" (p. 123) for one interval; the
-tree stores `stageModifier: upper` for both. The printed word is the fact
-and the enum is the mapping, so keep the word in `citedAs` on the occurrence
-or widen the enum to accept both.
+**E9. Stage qualifiers: stratigraphic and chronological words are one
+field.** Lower, middle and upper (the stratigraphic set) are equivalent to
+early, middle and late (the chronological set), in formal and informal use
+alike, so "late Tremadocian" (Ewin et al. 2020 p. 123) is
+`stageModifier: upper` and needs no note recording the printed word. The
+enum stays as it is.
 
 ---
 

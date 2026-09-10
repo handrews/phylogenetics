@@ -10,6 +10,14 @@ taxonomies:
     children:
     - taxon: ottawaensis_whiteaves_1897
       type: true
+      editorial:
+        inferred: [type]
+        basis: Fay never prints "type species"; the genus is monotypic (p. 201)
       specimens:
         syntypes:
         - Canadian Geological Survey 752
+      notes: |
+        Captioned "Holotype, 752, Canadian Geological Survey" (p. 201); the text
+        says "It is labelled a syntype because another specimen, lent to Mr.
+        Hudson, Plattsburg, New York, was the other syntype. When Hudson died,
+        this specimen disappeared." (p. 205)

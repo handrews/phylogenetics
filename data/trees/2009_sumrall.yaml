@@ -6,7 +6,7 @@ taxonomies:
     children:
     - taxon: isorophina
       children:
-      - taxon: agelacrinitidae
+      - taxon: agelacrinidae
         children:
         - taxon: neoisorophusella
           children:

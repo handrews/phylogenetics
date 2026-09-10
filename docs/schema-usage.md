@@ -80,11 +80,11 @@ property. `personal` is counted separately.
 | `quotes` | 1 | 0.3% | 0 |
 | `reading` | 1 | 0.3% | 0 |
 
-### `authority` -- 1618 instances in `data/`
+### `authority` -- 1619 instances in `data/`
 
 | property | data | data % | personal |
 |---|---|---|---|
-| `source` | 1618 | 100.0% | 0 |
+| `source` | 1619 | 100.0% | 0 |
 | `pages` | 56 | 3.5% | 0 |
 | `illustrations` | 27 | 1.7% | 0 |
 | `attributedTo` | 24 | 1.5% | 0 |
@@ -95,10 +95,10 @@ property. `personal` is counted separately.
 
 | property | data | data % | personal |
 |---|---|---|---|
-| `location` | 29 | 87.9% | 35 |
+| `location` | 30 | 90.9% | 35 |
 | `unit` | 21 | 63.6% | 35 |
+| `notes` | 15 | 45.5% | 20 |
 | `specimens` | 15 | 45.5% | 14 |
-| `notes` | 14 | 42.4% | 20 |
 | `stage` | 14 | 42.4% | 23 |
 | `series` | 13 | 39.4% | 18 |
 | `period` | 5 | 15.2% | 7 |
@@ -157,8 +157,8 @@ property. `personal` is counted separately.
 |---|---|---|---|
 | `localPeriod` | 3 | 9.4% | 0 |
 | `localSeries` | 2 | 6.2% | 2 |
-| `localStage` | 2 | 6.2% | 11 |
 | `inferred` | 1 | 3.1% | 25 |
+| `localStage` | 1 | 3.1% | 11 |
 | `localStageModifier` | 1 | 3.1% | 0 |
 | `localSeriesBoundary` | 0 | 0.0% | 0 |
 | `localSeriesRange` | 0 | 0.0% | 0 |
@@ -213,15 +213,15 @@ property. `personal` is counted separately.
 | property | data | data % | personal |
 |---|---|---|---|
 | `name` | 2680 | 98.6% | 0 |
-| `authority` | 1524 | 56.1% | 0 |
-| `auth` | 963 | 35.4% | 0 |
-| `year` | 960 | 35.3% | 0 |
+| `authority` | 1525 | 56.1% | 0 |
+| `auth` | 961 | 35.3% | 0 |
+| `year` | 958 | 35.2% | 0 |
 | `rank` | 717 | 26.4% | 0 |
-| `notes` | 207 | 7.6% | 0 |
+| `notes` | 210 | 7.7% | 0 |
 | `altSpellingOf` | 161 | 5.9% | 0 |
 | `lang` | 75 | 2.8% | 0 |
 | `originalParent` | 65 | 2.4% | 0 |
-| `altRankOf` | 48 | 1.8% | 0 |
+| `altRankOf` | 49 | 1.8% | 0 |
 | `vulgarSpellingOf` | 47 | 1.7% | 0 |
 | `in` | 26 | 1.0% | 0 |
 | `homonym` | 16 | 0.6% | 0 |
@@ -239,8 +239,8 @@ property. `personal` is counted separately.
 |---|---|---|---|
 | `taxon` | 5747 | 90.6% | 368 |
 | `children` | 2183 | 34.4% | 124 |
-| `new` | 1462 | 23.0% | 0 |
-| `notes` | 370 | 5.8% | 9 |
+| `new` | 1461 | 23.0% | 0 |
+| `notes` | 372 | 5.9% | 9 |
 | `type` | 367 | 5.8% | 105 |
 | `synonyms` | 358 | 5.6% | 49 |
 | `parents` | 326 | 5.1% | 38 |
@@ -260,24 +260,24 @@ property. `personal` is counted separately.
 | `modifier` | 22 | 0.3% | 1 |
 | `outgroup` | 19 | 0.3% | 0 |
 | `quoted` | 18 | 0.3% | 1 |
+| `citedAs` | 17 | 0.3% | 0 |
 | `pars` | 17 | 0.3% | 4 |
 | `affTaxon` | 16 | 0.3% | 0 |
-| `citedAs` | 16 | 0.3% | 0 |
 | `tentative` | 16 | 0.3% | 0 |
 | `cfTaxon` | 15 | 0.2% | 1 |
 | `questionable` | 12 | 0.2% | 3 |
 | `matrix` | 8 | 0.1% | 0 |
-| `rank` | 8 | 0.1% | 0 |
 | `altPlacements` | 7 | 0.1% | 0 |
+| `rank` | 7 | 0.1% | 0 |
 | `bootstrap` | 6 | 0.1% | 0 |
 | `corrected` | 6 | 0.1% | 0 |
+| `editorial` | 5 | 0.1% | 0 |
+| `editorial.basis` | 5 | 100.0% | 0 |
 | `mergeInto` | 5 | 0.1% | 0 |
-| `editorial` | 4 | 0.1% | 0 |
-| `editorial.basis` | 4 | 100.0% | 0 |
 | `non` | 4 | 0.1% | 0 |
+| `editorial.inferred` | 3 | 60.0% | 0 |
 | `or` | 3 | 0.0% | 0 |
-| `editorial.inferred` | 2 | 50.0% | 0 |
-| `editorial.source` | 2 | 50.0% | 0 |
+| `editorial.source` | 2 | 40.0% | 0 |
 | `in` | 2 | 0.0% | 0 |
 | `removed` | 1 | 0.0% | 0 |
 | `stem` | 1 | 0.0% | 0 |
@@ -386,7 +386,7 @@ property. `personal` is counted separately.
 
 ### `phylogeny#/$defs/rank`
 
-24 of 32 members used, 725 occurrences.
+24 of 32 members used, 724 occurrences.
 
 | value | count |
 |---|---|
@@ -398,8 +398,8 @@ property. `personal` is counted separately.
 | `'genus'` | 25 |
 | `'Subfamily'` | 25 |
 | `'section'` | 22 |
-| `'subgenus'` | 18 |
 | `'Superfamily'` | 18 |
+| `'subgenus'` | 17 |
 | `'Suborder'` | 15 |
 | `'Subclass'` | 15 |
 | `'Phylum'` | 13 |
@@ -436,13 +436,13 @@ property. `personal` is counted separately.
 
 ### `phylogeny#/$defs/specimens/propertyNames`
 
-10 of 14 members used, 146 occurrences.
+10 of 14 members used, 147 occurrences.
 
 | value | count |
 |---|---|
 | `'holotype'` | 68 |
 | `'paratypes'` | 48 |
-| `'unknowntypes'` | 15 |
+| `'unknowntypes'` | 16 |
 | `'plesiotypes'` | 6 |
 | `'topotypes'` | 3 |
 | `'lectotype'` | 2 |
@@ -505,6 +505,7 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/taxon/properties/holotype/additionalProperties/items` | array/string/integer | intx10, strx3 | `EE15373`, `EE 1659`, `E23470` | array |
 | `phylogeny#/$defs/taxon/properties/name` | string/null | strx2483, nullx197 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
 | `tree#/properties/diagnosis` | string/null | strx68, nullx1 | `A cast of it shows a con...`, `Body hemisphæric, slight...`, `A *Pyrgocystis* specimen...`, `Mouth surrounded and cov...` | - |
+| `tree#/properties/editorial/properties/inferred` | boolean/array | boolx2, listx1 | - | - |
 | `tree#/properties/emended` | boolean/null | boolx49 | - | null |
 | `tree#/properties/matrix/items` | integer/string | intx139, strx5 | `?` | - |
 

@@ -36,7 +36,6 @@ taxonomies:
                     - taxon: comarocystidae
                     - taxon: macrocystellidae
                     - taxon: tiaracrinidae
-                      new: true
                     - taxon: malocystidae
                     - taxon: glyptocystidae
                       children:
