@@ -1244,7 +1244,11 @@ the note verbatim with the claim.
 
 ## Sequence
 
-0. **Pre-build cleanup, gold slice only.** Small enough for one sitting and
+This is the order for the semantics stream. The cross-stream plan, with the
+milestones that interleave this sequence with the claim table and the
+ingestion work, is `docs/plan.md`; read that first. Step 0 is done.
+
+0. **Pre-build cleanup, gold slice only.** (Done, 2026-09-09.) Small enough for one sitting and
    mechanical enough for a cheaper model, then checked:
    - `1976_bell.b.m.yaml`: the *Lebetodiscus* entry's `year: 1901` → 1908;
      `valcourensis_clark_1920` gains `provisional: true`.
