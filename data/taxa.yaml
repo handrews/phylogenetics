@@ -1340,7 +1340,6 @@ bockiidae:
   rank: Family
   auth: [ubaghs]
   year: 1972
-  synonym: heckerocrinidae
 bohemica_barrande_1867:
   name: bohemica
   auth: [barrande]
@@ -4108,13 +4107,11 @@ eocrinoidea-unnamed-order-1_sprinkle_1973:
   rank: Order
   authority:
     source: 1973_sprinkle
-  synonym: gogiida
 eocrinoidea-unnamed-order-2_sprinkle_1973:
   name: null
   rank: Order
   authority:
     source: 1973_sprinkle
-  synonym: ascocystitida
 eocrinoidea-uncertain-order_sumrall_sprinkle_guensburg_2001:
   name: null
   rank: Order
@@ -4125,7 +4122,6 @@ eocrinoidea-indeterminate-order-1_sprinkle_1973:
   rank: Order
   authority:
     source: 1973_sprinkle
-  synonym: trachelocrinida
 eocrinoidea-indeterminate-order-2_sprinkle_1973:
   name: null
   rank: Order
@@ -4151,13 +4147,11 @@ eocrinoidea-indeterminate-family-2_sprinkle_1973:
   rank: Family
   authority:
     source: 1973_sprinkle
-  synonym: cambrocrinidae
 eocrinoidea-indeterminate-family-3_sprinkle_1973:
   name: null
   rank: Family
   authority:
     source: 1973_sprinkle
-  synonym: heckerocrinidae
 eocrinoidea-indeterminate-family-4_sprinkle_1973:
   name: null
   rank: Family
@@ -4198,7 +4192,6 @@ eocrinoidea-sp_hu.s.x_luo.h.l_hou.s.g_erdtmann_2007:
   rank: species
   authority:
     source: 2007_hu.s.x_luo.h.l_hou.s.g_erdtmann
-  synonym: rarus_hu.s.x_luo.h.l_2008
 eocrinus:
   name: Eocrinus
   auth: [jaekel]
@@ -8212,7 +8205,6 @@ parsleya:
   name: Parsleya
   auth: [Deshmukh]
   year: 2022
-  synonym: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
 parsleyi_zamora_2009:
   name: parsleyi
   auth: [zamora]

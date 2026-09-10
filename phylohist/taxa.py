@@ -432,6 +432,12 @@ class Taxon:
   def authority(self):
     return self._authority
 
+  @property
+  def alias_of(self):
+    # The record this one is a spelling or rank variant of, if any; such
+    # records borrow their authority and never have a protologue of their own.
+    return self._alt
+
 
 class ProxyTaxon(Taxon):
   def __init__(self, taxon, proxy_type, source):
@@ -472,11 +478,13 @@ class Tree:
     'or',
     'synonyms',
     'non',
+    'removed',
     'children',
     'parents',
   )
 
   _taxon_index = collections.defaultdict(set)
+  _new_index = collections.defaultdict(set)
   _author_index = collections.defaultdict(set)
   _type_index = {
     TYPE_TAXONOMY: set(),
@@ -542,6 +550,7 @@ class Tree:
     self._or = []
     self._synonyms = []
     self._non = []
+    self._removed = []
     self._alt_placements = []
     self._parents = []
     self._children = []
@@ -562,6 +571,8 @@ class Tree:
       self._synonyms.append(Tree(syn, parent=self, relpath=('synonyms', index)))
     for index, non in enumerate(self._data.get('non', ())):
       self._non.append(Tree(non, parent=self, relpath=('non', index)))
+    for index, rem in enumerate(self._data.get('removed', ())):
+      self._removed.append(Tree(rem, parent=self, relpath=('removed', index)))
     for index, relparent in enumerate(self._data.get('parents', ())):
       self._parents.append(
         Tree(relparent, parent=self, relpath=('parents', index))
@@ -578,6 +589,9 @@ class Tree:
     if self._taxon:
       if self._taxon.name:
         Tree._taxon_index[self._taxon.name].add(self.root)
+
+      if self._data.get('new'):
+        Tree._new_index[self._taxon.key].add(self._source.key)
 
       # For now, only registered authors are supported in order to use
       # their unique keys.  TODO: Better options.

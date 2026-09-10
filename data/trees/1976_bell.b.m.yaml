@@ -110,7 +110,7 @@ taxonomies:
           - taxon: lebetodiscus
             new: true
             auth: [bather]
-            year: 1901
+            year: 1908
             pages:
             - [543, 550]
             illustrations:
@@ -236,6 +236,7 @@ taxonomies:
           - taxon: faberi_miller.s.a_1894
           - taxon: ulrichi_bassler_shideler_1936
           - taxon: valcourensis_clark_1920
+            provisional: true
         - taxon: cryptogoleus
           new: true
           children:

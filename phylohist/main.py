@@ -43,6 +43,42 @@ def _load_taxa(data):
   logger.info(f"...taxa processed.")
 
 
+def _report_merge_targets(data):
+  for ref_key, opinion in data['trees'].items():
+    for tax_tree in opinion.get('taxonomies', ()):
+      if 'mergeInto' not in tax_tree:
+        continue
+      src, index = tax_tree['mergeInto']
+      if src not in data['trees']:
+        logger.error(
+          f'{ref_key} has mergeInto target source "{src}", which does '
+          'not exist',
+        )
+      elif index >= len(data['trees'][src].get('taxonomies', [])):
+        logger.error(
+          f'{ref_key} has mergeInto target "{src}"[{index}], but "{src}" '
+          f'only has {len(data["trees"][src].get("taxonomies", []))} '
+          'taxonomies',
+        )
+
+
+def _report_missing_protologues(data):
+  # A protologue is the source that names a taxon; if that source is one of
+  # our trees, the taxon should show up flagged `new` in it.
+  missing = 0
+  for taxon in Taxon._taxa.values():
+    # Open taxa and spelling/rank variants have no protologue to flag.
+    if taxon.name is None or taxon.alias_of is not None:
+      continue
+    source = taxon.authority.source
+    if source is None or source.key not in data['trees']:
+      continue
+    if source.key not in Tree._new_index.get(taxon.key, ()):
+      logger.warning(f'Protologue not flagged: {taxon.key} in {source.key}')
+      missing += 1
+  logger.info(f'{missing} taxa with an unflagged protologue')
+
+
 def _load_trees(data):
   logger.info(f"Processing {len(data['trees'])} opinions...")
 
@@ -78,6 +114,9 @@ def _load_trees(data):
       t = Tree(phy_tree['tree'], metadata)
 
   logger.info(f"...opinions processed.")
+
+  _report_merge_targets(data)
+  _report_missing_protologues(data)
 
   return data
 

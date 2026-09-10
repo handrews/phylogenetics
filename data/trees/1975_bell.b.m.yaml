@@ -5,6 +5,9 @@ taxonomies:
     auth: [bell.b.m]
     year: 1974
     citedAs: Bell, 1974
+    editorial:
+      source: 1976_bell.b.m
+      basis: cited before publication; printed with the intended year
     notes: |
       1976_bell.b.m was originally expected to be published in 1974 and
       was cited as such here, but should have been cited as "in press"
@@ -21,8 +24,8 @@ taxonomies:
           children:
           - taxon: plautinae_schmidt_1879
             auth: [Schmidt]
-            year: 1980
-            citedAs: Schmidt, 1980
+            year: 1880
+            citedAs: Schmidt, 1880
             notes: |
               Given as "Schmidt 1880" but other sources say 1879, although
               there is also a plautini_schmidt_1980 that might be the same?
@@ -40,6 +43,9 @@ taxonomies:
             auth: [bell.b.m]
             year: 1974
             citedAs: Bell, 1974
+            editorial:
+              source: 1976_bell.b.m
+              basis: cited before publication; printed with the intended year
             notes: |
               1976_bell.b.m was originally expected to be published in 1974 and
               was cited as such here, but should have been cited as "in press"
