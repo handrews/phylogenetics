@@ -679,3 +679,280 @@ Data checks:
 - Add a record for *Rhombiferi* (Zittel 1879, rank Group, `notes` quoting the
   heading) and link the class and order records to it as corrected forms.
 - Add `1879_zittel` to `sources.yaml` with the volume note above.
+
+## 1985_smith.a.b — Cambrian eleutherozoans and edrioasteroid diversification (Palaeontology 28)
+
+Read from the volume scan's text layer; Table 3 (p. 734) checked against the
+page image. Tree: `data/trees/1985_smith.a.b.yaml`, three taxonomies (Table 3
+traditional column; Table 3 revised column; systematic headings pp. 736–753)
+and one phylogeny.
+
+**Re-ranking with the authority kept (p. 734).** The revised column prints
+"Subfamily ISOROPHINAE Bell, 1976" and "Subfamily LEBETODISCINAE Bell, 1976";
+the prose (p. 733) says "The two suborders erected by Bell could then be
+transformed to the rank of subfamily; Lebetodiscinae (for the Lebetodiscina)
+and Isorophinae (for the Isorophina)". Authority stays Bell's, the act is
+Smith's. This is the `altRankOf` identity link plus a tree-level act (B18,
+B6); both nodes now carry `modifier: nomen transl.`.
+
+**Variant spellings printed in a table.** The traditional column prints "Order
+STROMATOCYSTITOIDA Termier and Termier, 1969" and "Order EDRIOASTEROIDA Bell,
+1976" (confirmed on the image), against Stromatocystitida and Edrioasterida
+everywhere else, including the revised column. Records as printed: two
+`altSpellingOf` records, cited from this tree; the current nodes point at the
+standard spellings and lose the printed forms.
+
+**A source that contradicts itself.** Table 3 prints "Genus EDRIODISCUS Smith,
+1985" (p. 734); the genus heading prints "Genus EDRIODISCUS Jell, Burrett and
+Banks, 1985" with the synonymy line "1985 *Edriodiscus* Jell, Burrett and
+Banks, p. 190" (p. 753). Cyathocystidae is "Bather, 1899" in the traditional
+column and "Bather, 1898" in the revised column of the same table, with the
+prose (p. 730) saying 1899. Both are printed attributions that disagree with
+the taxon record; recorded as printed on each node (`auth`/`year`/`citedAs`),
+and the disagreement is derived (B19). Nodes in this tree carry no
+attribution fields at all, so neither case is visible yet.
+
+**"sedis mutabilis" and "(emend.)" (p. 734).** All three orders under the
+plesion print "(sedis mutabilis)"; Isorophida and Cyathocystida print
+"(emend.)" and have emended definitions (pp. 734–736). The tree has both only
+on Cyathocystida. "sedis mutabilis" rides on `notes`; it has now appeared
+three times in one table and once in the 1983 paper's vocabulary, so it earns
+a flag (Wiley's convention for unresolved sibling order; distinct from
+`provisional`).
+
+**Plesion (Class).** "Plesion (Class) EDRIOASTEROIDEA Billings, 1858": a rank
+and a parenthesised conventional rank on one line. The tree has `rank:
+Plesion`; the "(Class)" is not captured. `citedAs` can hold the printed form.
+
+**Editorial resolution recorded as prose.** The `stromatocystitida` node's
+note explains that Termier & Termier 1969 is printed but Bell 1980 is used
+as authority. That is `editorial.source` with the printed `citedAs`
+preserved, exactly the A6 form.
+
+**"Suborder uncertain".** The traditional column's "Suborder UNCERTAIN"
+(Pyrgocystidae, Lispidecodidae, Rhenocystidae) is captured with Bell 1976's
+placeholder `isorophida-uncertain-suborder_bell.b.m_1976`. The column is
+"based on Bell 1980, but with later additions" and Rhenocystidae is 1984, so
+the placeholder's identity across sources is an editorial equation, not a
+printed one; a note on the node should say so.
+
+**Type fixation.** Every "Type species." line names the mechanism: "by
+original monotypy" (pp. 736, 746), "by original designation" (pp. 748, 749,
+753). B14.
+
+**Type species cited in its original combination (p. 753).** "Type species.
+*Cyclocystoides primotica* Henderson and Shergold, 1971"; the recombination
+line "1985 *Edriodiscus primotica* (Henderson and Shergold); Jell, Burrett and
+Banks, p. 190" is not captured as `synonyms` + `parents`.
+
+**One phylogeny for three cladograms.** The paper prints text-figs 9 (p. 728),
+10 (p. 730) and 12 (p. 735). The single `phylogenies` entry is unlabelled and
+its `savagella` exemplar belongs to text-fig. 10. Text-fig. 12 is image-only
+in the scan, so the topology was not verified. Each printed figure should be
+its own phylogeny with a `notes` naming it. The `bracket: edrioasteridae`
+clade includes *Walcottidiscus*, which Table 3 places in the order, not the
+family: a clade label wider than the formal name.
+
+**Not captured:** genus and species synonymy lists (0 of 12 except
+*typicalis*/*magister*), diagnoses and emended definitions (0 of 13),
+material (0; BM(NH), USNM, MCZ, NYSM, CPC), occurrences (0), illustrations
+(0; text-figs 1–20, pls. 87–89).
+
+Source record: title, volume 28 part 4, pp. 715–756, received 7 October 1984,
+revised 25 March 1985 all match. Plates 87–89 are not recorded.
+
+Data checks:
+
+- Add `emended: true` and the sedis mutabilis marker to `edrioasterida` and
+  `isorophida` in the revised taxonomy.
+- Add `citedAs` on `edriodiscus` (both taxonomies) and `cyathocystidae`
+  (revised: 1898) so the printed disagreements are recorded.
+- Alt-spelling records for *Stromatocystitoida* and *Edrioasteroida*.
+- Split the phylogeny into the three printed figures, once text-fig. 12 has
+  been read from the image.
+
+## 1985_jell_burrett_banks — Cambrian and Ordovician echinoderms from eastern Australia (Alcheringa 9)
+
+Read from the text layer; printed page = PDF index + 182. Tree:
+`data/trees/1985_jell_burrett_banks.yaml`, one taxonomy, no `notes`.
+
+**A whole class missing from the tree (p. 205).** "Class RHOMBIFERA / Family
+ECHINOENCRINITIDAE Bather 1899 / Echinoencrinitid indet." with material
+UTGD54622, announced in the abstract (p. 183). Also missing: "Family
+undetermined / Eocrinoid plates indet." (ANU36961–36964, p. 205). Both keys
+exist in `taxa.yaml`; the gap is in this tree.
+
+**`new` on open placeholders.** Six open or cf. nodes carry `new: true` with
+no nomenclatural act printed ("CAMBRASTER sp.", "?STROMATOCYSTITES sp.",
+"Stromatocystitid indet.", "Isorophid indet.", "Macrocystellid indet.",
+"CAMBRASTER sp. cf. C. TASTUDORUM"). In this dataset a placeholder's
+authority is the source that first needed it, and the loader requires `new`
+wherever a node's taxon has this source as authority, so the flag is
+consistent. It is not a protologue. The roadmap should say that `new` on an
+`openTaxon` or `cfTaxon` means "this source originates the placeholder", so
+the claim table does not emit it as a new name.
+
+**"the holotype" of an unnamed form (p. 196).** "Details of the oral frame are
+not clear, particularly on the holotype" is said of NMVP107129 under
+"Isorophid indet.", which the paper leaves "in open nomenclature within the
+order". A printed role word that cannot be a nomenclatural type. Record the
+word as printed (`roleAsPrinted`, D1) and let the contradiction stand.
+
+**A paratype that is not one (p. 190).** The `primotica` node lists
+`paratypes: [CPCl1396, NMVP107479]`. The paper designates only CPCl1396 as
+"Paratype" (Henderson & Shergold's 1971 type series); NMVP107479 is this
+paper's own new specimen, assigned "based on comparison". A referred
+specimen, not a paratype; a data error to fix.
+
+**Type species with original combination and fixation (p. 185, p. 192).**
+"Type species. *Trochocystites cannati* Miquel 1894 … by original
+designation" is captured as the type flag only; the original combination
+(`synonyms` + `parents`, as done for *primotica*) and the fixation (B14) are
+not. "*Stromatocystites pentangularis* Pompeckj 1896, by monotypy" has no
+node at all.
+
+**Attribution on the record disagrees with every source (p. 185).**
+"CAMBRASTER Cabibel, Termier & Termier 1958" here and in Smith 1985 (p. 734,
+p. 749); `taxa.yaml` has `auth: [jaekel]`, `year: 1923`, and no tree in the
+data marks the genus `new`. Check where 1923 came from; if Jaekel 1923 is a
+nomen nudum or a different name, the record needs a note either way.
+
+**Paper-internal inconsistencies, kept as printed.** UTGD122233 is a paratype
+of *C. tastudorum* (p. 186) and material of *C.* sp. cf. *C. tastudorum*
+(p. 188). NMVP107074 is figured (fig. 10B, p. 198) but absent from the *C.
+jagoi* paratype list (p. 197). Both belong in `notes` on the material entry;
+neither is a data error.
+
+**Genus synonymy in prose (p. 185).** "the synonymy of *Eikosacystis*
+Cabibel, Termier & Termier 1958 … recognised … by Ubaghs (1971)": a synonymy
+this source accepts from another, not captured.
+
+**Not captured:** occurrences (0 of 6 localities, four numbered NMVPL
+localities with grid references, formation and zone, pp. 183–184), all 18
+figures, diagnoses (0 of 5), repository prefixes NMVP, UTGD, CPC, TMF, ANU
+(p. 184; F-item registry, scoped per source).
+
+Source record: title, volume 9 number 3, pp. 183–208, DOI, received 22
+November 1984 and online 27 November 2008 all match. The header prints
+"1985:08:26", which is not in the record; meaning unverified (an issue date
+would matter for the key-year rule).
+
+Data checks:
+
+- Add the Rhombifera and "Family undetermined" branches.
+- Add `pentangularis_pompeckj_1896` as type under *Stromatocystites*, and
+  the *Trochocystites cannati* original combination.
+- Move NMVP107479 out of `paratypes`.
+- Resolve the *Cambraster* authority.
+
+## 1994_guensburg_sprinkle — Revised phylogeny of the Edrioasteroidea (Fieldiana Geol. n.s. 29)
+
+Read from the text layer; printed page = PDF index − 11. Tree:
+`data/trees/1994_guensburg_sprinkle.yaml`, one taxonomy and four
+phylogenies (Fig. 2A–D, p. 5). The taxonomy is a synthesis of three printed
+structures: the Systematic Paleontology header (p. 13), the Revised
+Classification (pp. 12–13, repeated verbatim as section headings) and the
+Appendix genus compilation (pp. 42–43). None of the three alone is the tree;
+a `notes` on the tree should say so.
+
+**Eight re-rankings, each with its derivation printed.** All are this paper's
+acts, all downward except two: "Family LEBETODISCIDAE Bell, 1976 (nomen
+transl., emend.)" ex suborder Lebetodiscina; "Subfamily LEBETODISCINAE Bell,
+1976" ex "the Lebetodiscidae Bell, 1976" (p. 27); "Subfamily CARNEYELLINAE
+Bell, 1976" ex "the family Carneyellidae Bell, 1976" (p. 27); "Subfamily
+PYRGOCYSTINAE Kesling, 1967"; "Suborder EDRIOASTERINA Bather, 1898" ex
+"Bather's family Edrioasteridae as defined by Bell (1976a, 1980)" (p. 13);
+"Suborder EDRIOBLASTOIDINA Fay, 1962" ex class Edrioblastoidea; "Subfamily
+CYATHOCYSTINAE Bather, 1899" ex "the family Cyathocystidae of Bather, 1898,
+and the order Cyathocystida, Bell, 1975" (p. 21); "Subfamily RHENOPYRGINAE
+Holloway and Jell, 1983" ex "their family Rhenopyrgidae" (p. 21). All eight
+carry `modifier: nomen transl.`. This source and Smith 1985 re-rank
+Lebetodiscina in opposite directions, which is why the act lives in each
+tree (B18). Note the Cyathocystinae line, which names two predecessors at
+two ranks in one sentence: the B6 derived-from link may need to be a list.
+
+**One name, two acts in one paper.** Lebetodiscinae is "(nomen transl.)" on
+p. 12 and "(nomen transl.. emend.)" on p. 27, with "it is emended to allow for
+separation of pyrgocystinids". The tree follows p. 12. The node should carry
+`emended: true` with a note that the classification list omits it; the
+discrepancy is the source's own.
+
+**Placeholder invented at two ranks.** The Appendix heading "Order and Family
+Uncertain" (p. 42) holds *Cambraster* and *Walcottidiscus* directly. The tree
+nests `edrioasteroidea-order-uncertain` over
+`edrioasteroidea-family-uncertain`. One printed placeholder, two editorial
+ones; mark the inner node `editorial.inferred` or collapse to one placeholder
+whose note quotes the heading.
+
+**Provisional in prose, unflagged.** "'Totiglobus' lloydi was provisionally
+assigned to genus at the time of its description because of poor
+preservation (Sprinkle, 1985)" (p. 19): `quoted: true` is captured,
+`provisional` is not. "The new genus is provisionally assigned to … the most
+primitive taxon of agelacrinitids" (p. 25) for *Deltadiscus*: not flagged.
+B16 said `provisional` only where "?" is printed; "provisionally" in the
+prose is at least as strong and should count.
+
+**Attributions printed here that disagree with the records.** Camptostromatidae
+"Durham, 1968" (pp. 12, 42) against 1967; *Isorophus* and *Carneyella*
+"Foerste, 1917" (p. 42) against 1916; *Edriodiscus* "Smith, 1985" (p. 42),
+the same slip Smith's own Table 3 makes; *Cambraster* "Cabibel, Termier, and
+Termier, 1958" (p. 42) against Jaekel 1923. The 1916/1917 pair looks like a
+reading-versus-issue question (A8) rather than two typos. None is visible
+because the nodes carry no attribution fields.
+
+**Declared scope limits (p. 42).** "several subfamilies are likely present,
+but these are not treated here" and "the list is not exhaustive": the
+`listComplete: false` case (B16) on Agelacrinitidae and on the Appendix as a
+whole.
+
+**In-press addendum (p. 25, footnote).** A second *Deltadiscus* specimen,
+paratype FMNH PE 52719, "discovered by Colin Sumrall while this paper was in
+press", with its own occurrence. Material added after acceptance is still
+this source's statement; a note on the material entry suffices.
+
+**Secondhand placement declined (p. 19).** "*Walcottidiscus* … has been
+presented as the sister group to the edrioasterids (Smith & Jell, 1990, p.
+771) … we omitted this taxon from the parsimony analysis." A B19 citation
+attached to a taxon this source places only under the uncertain placeholder.
+
+**Cladogram terminals of mixed rank (p. 5).** Agelacrinitidae (family),
+Pyrgocystinae and Lebetodiscinae (subfamilies) and *Chatsworthia* (a genus
+the classification puts inside Lebetodiscinae) are coordinate terminals. The
+flat `taxon` reference handles it; recorded as the example. Branching was
+checked against the prose (pp. 3–4, 18–20) only; the figure's line structure
+is not in the text layer.
+
+**Not captured:** material and occurrences for the five new species and three
+"Species Indeterminate" groups (pp. 14–37), diagnoses (0), Table 1 (42
+characters) and the matrix (Fig. 1), the prose comparison with Bell 1980 and
+Smith 1985 (pp. 12–13), the Jaekel 1927 attribution and "(Fig. 17D)" on the
+*Cyathotheca* synonymy note (p. 21).
+
+Source record: title, series and number, authors and the printed "Published
+December 30, 1994" match. "Accepted May 27, 1994" is on the same page and is
+not recorded; pages 1–43 are not recorded.
+
+Data checks:
+
+- `lebetodiscinae`: `emended: true` with a note on the p. 12 / p. 27
+  difference.
+- `provisional` on `lloydi_sprinkle_1985` and `deltadiscus`.
+- Mark or collapse the two-rank uncertain placeholder.
+- `citedAs` on the five nodes whose printed attribution disagrees with the
+  record; resolve *Cambraster* and the Foerste 1916/1917 question.
+- `processDates.accepted: 1994-05-27` and `pages: [1, 43]` on the source.
+
+## Across the three papers
+
+- The same family-group name is re-ranked in opposite directions by Smith
+  1985 and Guensburg & Sprinkle 1994. Identity stays one `altRankOf` chain in
+  `taxa.yaml`; each act is a node in the tree that made it.
+- Attribution on classification nodes is absent in all three trees, so every
+  printed attribution that disagrees with a record (six cases across the
+  three) is invisible. The claim table's citation-error class needs
+  `auth`/`year`/`citedAs` on nodes wherever the printed line has them.
+- "sedis mutabilis", "provisionally assigned", and "(nomen transl., emend.)"
+  are each printed more than once across the set; each earns a field or a
+  documented mapping rather than `notes`.
+- *Cambraster* Jaekel 1923 in `taxa.yaml` is contradicted by both 1985 papers
+  and by 1994.
