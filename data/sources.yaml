@@ -1262,13 +1262,10 @@
   - richter.r
 1935_bassler:
   title: The Classification of the Edrioasteroidea
-  complete:
-    named: true
-    open: true
-    history: true
-    specimens:
-      basic: null
-      all: null
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=true history=true specimens.basic=null specimens.all=null
   journal: smith-misc
   volume: 93
   number: 8
@@ -1358,13 +1355,10 @@
   - rievers
 1962_fay:
   title: Edrioblastoidea, a new class of Echinodermata
-  complete:
-    named: true
-    open: null
-    history: true
-    specimens:
-      basic: true
-      all: true
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=null history=true specimens.basic=true specimens.all=true
   journal: jofpaleo
   volume: 36
   number: 2
@@ -1392,13 +1386,10 @@
   - brown.i.a
 1963_durham_caster:
   title: "Helicoplacoidea: A New Class of Echinoderms"
-  complete:
-    named: true
-    open: null
-    history: null
-    specimens:
-      basic: true
-      all: true
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=null history=null specimens.basic=true specimens.all=true
   journal: science-new-series
   volume: 149
   number: 3568
@@ -1433,13 +1424,10 @@
     url: https://www.biodiversitylibrary.org/page/4312670
 1966_durham:
   title: Camptostroma, an Early Cambrian Supposed Scyphozoan, Referable to Echinodermata
-  complete:
-    named: true
-    open: null
-    history: true
-    specimens:
-      basic: true
-      all: true
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=null history=true specimens.basic=true specimens.all=true
   journal: jofpaleo
   volume: 40
   number: 5
@@ -1470,13 +1458,10 @@
     url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
 1966_durham_caster:
   title: Helicoplacoids
-  complete:
-    named: true
-    open: true
-    history: true
-    specimens:
-      basic: null
-      all: null
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=true history=true specimens.basic=null specimens.all=null
   book: treatise-u
   pubDate:
     year: 1966
@@ -1613,13 +1598,10 @@
     url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
 1967a_fay:
   title: Edrioblastoids
-  complete:
-    named: true
-    open: null
-    history: true
-    specimens:
-      basic: null
-      all: null
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=null history=true specimens.basic=null specimens.all=null
   book: treatise-s
   pubDate:
     year: 1967
@@ -1632,13 +1614,10 @@
     url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
 1967b_fay:
   title: Parablastoids
-  complete:
-    named: true
-    open: null
-    history: null
-    specimens:
-      basic: null
-      all: null
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=null history=null specimens.basic=null specimens.all=null
   book: treatise-s
   pubDate:
     year: 1967
@@ -1712,13 +1691,10 @@
     url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
 1967a_durham:
   title: Camptostromatoids
-  complete:
-    named: true
-    open: null
-    history: true
-    specimens:
-      basic: null
-      all: null
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=null history=true specimens.basic=null specimens.all=null
   book: treatise-s
   pubDate:
     year: 1967
@@ -1731,13 +1707,10 @@
     url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
 1967b_durham:
   title: Lepidocystoidea
-  complete:
-    named: true
-    open: null
-    history: null
-    specimens:
-      basic: null
-      all: null
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=null history=null specimens.basic=null specimens.all=null
   book: treatise-s
   pubDate:
     year: 1967
@@ -1750,13 +1723,10 @@
     url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
 1967e_ubaghs:
   title: Cymbionites and Peridionites—Unclassified Middle Cambrian Echinoderms
-  complete:
-    named: true
-    open: true
-    history: true
-    specimens:
-      basic: null
-      all: null
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=true history=true specimens.basic=null specimens.all=null
   book: treatise-s
   pubDate:
     year: 1967
@@ -1769,13 +1739,10 @@
     url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
 1967c_durham:
   title: Notes on the Helicoplacoidea and Early Echinoderms
-  complete:
-    named: true
-    open: null
-    history: true
-    specimens:
-      basic: true
-      all: true
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=null history=true specimens.basic=true specimens.all=true
   journal: jofpaleo
   volume: 41
   number: 1
@@ -1838,13 +1805,10 @@
   - paul.c.r.c
 1968_webby:
   title: Astrocystites distans sp. nov., an edrioblastoid from the Ordovician of eastern Australia
-  complete:
-    named: true
-    open: true
-    history: true
-    specimens:
-      basic: true
-      all: true
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=true history=true specimens.basic=true specimens.all=true
   journal: palaeontology
   volume: 11
   number: 4
@@ -1859,13 +1823,10 @@
     url: https://archive.org/details/biostor-164880
 1969_robison_sprinkle:
   title: "Ctenocystoidea: New Class of Primitive Echinoderms"
-  complete:
-    named: true
-    open: null
-    history: null
-    specimens:
-      basic: true
-      all: false
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=null history=null specimens.basic=true specimens.all=false
   journal: science-new-series
   volume: 166
   number: 3912
@@ -1998,6 +1959,9 @@
     interior title page.  However, formal publication was delayed until
     Feburary 1976.  At least one paper (1975_bell.b.m) incorrectly assumed
     the original date rather than citing it as "in press."
+  audit:
+    state: partial
+    notes: See docs/audit-1976_bell.b.m.md
 1976_bell.b.m_petersen.m.s:
   title: An Edrioasteroid from the Guilmette Formation at Wendover, Utah-Nevada
   journal: jofpaleo
@@ -2306,13 +2270,10 @@ inprep_sprinkle_strimple:
   - jell
 1985_fatka_kordule:
   title: Etoctenocystis bohemica gen. et sp. nov. - new Ctenocystoid from Czechoslovakia (Echinodermata, Middle Cambrian)
-  complete:
-    named: true
-    open: false
-    history: false
-    specimens:
-      basic: true
-      all: false
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=false history=false specimens.basic=true specimens.all=false
   journal: vestnik
   volume: 60
   number: 4
@@ -2332,13 +2293,10 @@ inprep_sprinkle_strimple:
     url: https://www.researchgate.net/publication/277013746_Etoctenocystis_bohemica_gen_et_sp_nov_-_new_Ctenocystoid_from_Czechoslovakia_Echinodermata_Middle_Cambrian#fullTextFileContent
 1985_jell_burrett_banks:
   title: Cambrian and Ordovician echinoderms from eastern Australia
-  complete:
-    named: true
-    open: false
-    history: false
-    specimens:
-      basic: false
-      all: false
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=false history=false specimens.basic=false specimens.all=false
   journal: alcheringa
   volume: 9
   number: 3
@@ -2466,13 +2424,10 @@ inprep_sprinkle_strimple:
     jstor: 1305262
 1988_ubaghs_robison:
   title: Homalozoan echinoderms of the Wheeler Formation (Middle Cambrian) of Western Utah
-  complete:
-    named: true
-    open: null
-    history: null
-    specimens:
-      basic: true
-      all: false
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=null history=null specimens.basic=true specimens.all=false
   journal: kansas
   number: 129
   pubDate:
@@ -2651,8 +2606,10 @@ inprep_sprinkle_strimple:
 1995_dzik_orłowski:
   title: Primitive ctenocystoid echinoderm from the earliest Middle Cambrian of Poland
   seen: false
-  complete:
-    history: false # the named species was previously in open nomenclature(s)
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=null open=null history=false specimens.basic=null specimens.all=null
   journal: annals
   volume: 81
   pages:
@@ -3163,13 +3120,10 @@ inprep_sprinkle_strimple:
 2008_stewart_owen:
   title: "Probing the deep shelf: a Lagerstätte from the Upper Ordovician of Girvan, southwestern Scotland"
   journal: lethaia
-  complete:
-    named: null
-    open: false
-    history: null
-    specimens:
-      basic: false
-      all: false
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=null open=false history=null specimens.basic=false specimens.all=false
   volume: 41
   pages:
   - 139
@@ -3615,13 +3569,10 @@ inprep_sprinkle_strimple:
   - zamora
 2013_smith.a.b_zamora_álvaro:
   title: The oldest echinoderm faunas from Gondwana show that echinoderm body plan diversification was rapid
-  complete:
-    named: null
-    open: null
-    history: null
-    specimens:
-      basic: null
-      all: null
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=null open=null history=null specimens.basic=null specimens.all=null
   journal: nat-com
   volume: 4
   articleNumber: 1385
@@ -3785,13 +3736,10 @@ inprep_sprinkle_strimple:
     doi: 10.1111/pala.12204
 2015_rahman_stewart_zamora:
   title: The youngest ctenocystoids from the Upper Ordovician of the United Kingdom and the evolution of the bilateral body plan in echinoderms
-  complete:
-    named: true
-    open: null
-    history: null
-    specimens:
-      basic: true
-      all: true
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=null history=null specimens.basic=true specimens.all=true
   journal: acta-p-polonica
   volume: 60
   number: 1
@@ -3965,13 +3913,10 @@ inprep_sprinkle_strimple:
     doi: 10.1017/jpa.2016.157
 2017_zamora_deline_álvaro_rahman:
   title: The Cambrian Substrate Revolution and the early evolution of attachment in suspension-feeding echinoderms
-  complete:
-    named: null
-    open: null
-    history: null
-    specimens:
-      basic: null
-      all: null
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=null open=null history=null specimens.basic=null specimens.all=null
   journal: es-rev
   volume: 171
   pages:
@@ -4012,9 +3957,10 @@ inprep_sprinkle_strimple:
   - lefebvre
 2018_lefebvre_lerosey-aubril:
   title: "Laurentian origin of solutan echinoderms: new evidence from the Guzhangian (Cambrian Series 3) Weeks Formation of Utah, USA"
-  complete:
-    named: true
-    history: false
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=null history=false specimens.basic=null specimens.all=null
   journal: geomag
   volume: 155
   number: 5
@@ -4137,14 +4083,11 @@ inprep_sprinkle_strimple:
     url: https://www.app.pan.pl/article/item/app007182019.html
 2021_jell_sprinkle:
   title: Revision of Whitehouse’s eocrinoids Peridionites and Cymbionites, with description of the associated fauna including two new echinoderm genera, lower Middle Cambrian Thorntonia Limestone, northwestern Queensland
-  complete:
-    notes: Non-echinoderm trees not captured
-    named: true
-    open: true
-    history: true
-    specimens:
-      basic: true
-      all: true
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=true history=true specimens.basic=true specimens.all=true
+      Non-echinoderm trees not captured
   journal: alcheringa
   volume: 45
   number: 1

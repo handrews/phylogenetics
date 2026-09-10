@@ -120,27 +120,14 @@ $defs:
           paper; any names are nomen nudum unless/until publication.
         type: boolean
         default: false
-      complete:
+      audit:
         type: object
+        additionalProperties: false
+        required: [state]
         properties:
-          named:
-            type: [boolean, "null"]
-            default: false
-          open:
-            type: [boolean, "null"]
-            default: false
-          history:
-            type: [boolean, "null"]
-            default: false
-          specimens:
-            type: object
-            properties:
-              basic:
-                type: [boolean, "null"]
-                default: false
-              all:
-                type: [boolean, "null"]
-                default: false
+          state:
+            type: string
+            enum: [complete, partial, unaudited, unauditable, unobtainable]
           notes:
             type: string
       journal:
@@ -370,8 +357,6 @@ $defs:
       homonym:
         type: boolean
         default: false
-      synonym:
-        type: string
       reason:
         type: string
       notes:
@@ -410,7 +395,7 @@ $defs:
       tentative:
         $comment: For synonyms / non
         type: boolean
-        default: true
+        default: false
       plates:
         $ref: "phylogeny#/$defs/multiRanges"
       children:
@@ -434,6 +419,30 @@ $defs:
           $ref: "phylogeny#/$defs/occurrence"
       notes:
         type: string
+      editorial:
+        description: |
+          The editor's layer beside the printed fields, never a replacement
+          for them. `source` resolves a printed citation that cannot resolve
+          as printed (in press, wrong year, another printing) to a source
+          record while `auth`/`year`/`citedAs` stay as printed. `inferred`
+          marks a node whose existence or placement is the editor's, not the
+          source's. Not for an alternative authority, year or spelling: the
+          true authority lives on the taxon record, a misspelling is an
+          `altSpellingOf` record, and a wrong printed attribution is kept as
+          printed with the disagreement derived.
+        type: object
+        additionalProperties: false
+        required: [basis]
+        anyOf:
+        - required: [source]
+        - required: [inferred]
+        properties:
+          source:
+            $ref: "phylogeny#/$defs/sourceId"
+          inferred:
+            type: boolean
+          basis:
+            type: string
       # TODO: Something is off here, dup field?
       citedAs:
         description: |

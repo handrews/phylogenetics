@@ -58,6 +58,14 @@ taxonomies:
     - taxon: trachelocrinus
     removed:
     - taxon: balanticystis
+      auth: [ubaghs]
+      year: 1972
+      citedAs: Ubaghs 1972
+      notes: |
+        Ubaghs 1972 is titled "Le genre Balanticystis Chauvel (Echinodermata,
+        Eocrinoidea) dans l'Ordovicien inferieur de la Montagne Noire (France)",
+        so the name is Chauvel's (Balantiocystis Chauvel, 1966) in Ubaghs's
+        spelling; both the spelling and the attribution here follow Ubaghs.
   - taxon: cryptocrinitidae
     children:
     - taxon: cryptocrinites
