@@ -956,3 +956,474 @@ Data checks:
   documented mapping rather than `notes`.
 - *Cambraster* Jaekel 1923 in `taxa.yaml` is contradicted by both 1985 papers
   and by 1994.
+
+# Reading round of 2026-09-09: 24 papers
+
+Reviewed against their trees with the shared brief in the session scratchpad; coverage is stated per kind only (G9). The roadmap items this round produced are A12–A13, B23–B27, D8–D9, E9 and the extensions to B14, B16, C4, G7 and G8.
+
+## 1842_vanuxem — Agelacrinites hamiltonensis (Geology of New-York, Part III)
+
+Read from the volume's text layer across two windows (pp. 156–171, 304–306); printed page = PDF index − 9. The tree holds one taxonomy, no phylogeny, keyed to Vanuxem's brief survey-report treatment of *Agelacrinites*. Coverage in one sentence: beyond the classification skeleton, the *hamiltonensis* protologue carries an occurrence, an exact plate/figure citation and an English diagnosis, but three further species keys rest on bibliographic cross-reference outside the read windows and were not verified this pass (G9).
+
+**A new genus proposed in first-person narrative (p. 158).** Vanuxem writes: "it therefore establishes a new genus, for which the name of Agela-crinites is proposed... and hamiltonensis for the species." The tree's `new: true` on both `agelacrinites` and `hamiltonensis_vanuxem_1842` is fully supported; no other author is credited anywhere in the passage.
+
+**A diagnosis captured with a genuine mid-paragraph elision (p. 158).** The `diagnosis` field quotes the opening and closing of Vanuxem's description verbatim but elides the middle sentences on the six medallions' size and arrangement via "....". This is a coverage choice within an already-populated field, not a printed truncation; the field should be read as partial rather than complete.
+
+**A name credited to another author, undescribed in this source (no page cited on the node).** `hallii_conrad.t.a_1842` carries `new: true` and the taxon record's `authority: {attributedTo: [conrad.t.a], source: 1842_vanuxem}`, but the node's own note reads "No description or figures," and no page could be located in either read window to check the printed passage. This is a name attributed in print to one author (Conrad) inside another author's (Vanuxem's) publication with no accompanying description — closer to A3's `attributedTo` mechanism than to a protologue, but the printed wording itself could not be verified.
+
+Source record: title, book, date, and single authorship all check out against the title page and the first-person narrative voice.
+
+Data checks:
+
+- `1842_vanuxem.yaml`: the `hamiltonensis_vanuxem_1842` occurrence's `location` list merges "United States" and a stray "upper quarry" continuation line into one six-element list (should be seven), a YAML block-scalar artifact, not a printed value.
+
+## 1848b_forbes — Cystideæ of the Silurian Rocks of the British Islands (Mem. Geol. Surv. Gt. Britain 2)
+
+Read from the text layer, printed page = PDF index + 374; the Cystideæ paper (pp. 483–538) follows the companion Asteriadæ paper in the same continuous scan. The tree holds one taxonomy, no phylogeny, covering all 8 genera Forbes treats. Coverage in one sentence: new taxa, most synonymy lists, and the `or` alternative-name convention are captured; material, occurrences, illustrations and all but one diagnosis are not (G9).
+
+**A genus credited to the wrong author (p. 504).** Forbes writes "the characters which were assigned by **Von Meyer** to his genus Echino-encrinites," crediting Von Meyer throughout for the genus name; `taxa.yaml`'s `echino-encrinus`/`echinoencrinus` record instead carries `auth: [Volborth], year: 1842`. Volborth is credited in this same paper only for observations on tentacula and a separate Bulletin note, never for the genus. The node carries no attribution field, so the disagreement (A2/B19) is currently invisible.
+
+**Two alternative generic names as one printed heading, not two synonymous genera (pp. 514–515).** "SPHÆRONITES (Hisinger), or ECHINO-SPHÆRITES (Wahlemberg)" is a single header presenting two names joined by "or," each with its author in parentheses as a citation, not a subgenus. The tree's `sphæronites: {or: [echino-sphærites]}` matches this exactly.
+
+**Blanket hedges on a genus's whole species list, not individually flagged (pp. 510, 512).** Forbes writes "I provisionally refer to this genus the following fossils" for *Hemicosmites* and "With the exception of the first species in the list, the descriptions given must be regarded merely as provisional" for *Caryocystites*. Neither hedge is recorded in `notes` on the respective parent node, though B16 calls for exactly this; the individual `provisional` flags on the "?"-marked species within each list are correctly unaffected.
+
+**Prose-only "provisionally" hedges with no printed "?" (pp. 504, 518).** Two new species — *Prunocystites fletcheri* ("I have named it provisionally...") and *Sphæronites arachnoideus* ("I name it provisionally as above") — are hedged in prose only, with no "?" in their headers. Neither carries `provisional: true`, consistent with the model's convention of flagging only a printed "?," but the textual hedge itself is recorded nowhere on either node.
+
+Source record: title, journal, volume/number, pages and plates all match the printed article; `sources.yaml`'s title field carries a trailing ".pdf" not part of the printed title ("On the CYSTIDEÆ of the Silurian Rocks...", p. 483).
+
+Data checks:
+
+- `1848b_forbes.yaml`: the `echino-encrinus` node's `notes` assigns "Echino-encrinus" to the formal diagnosis and "Echino-encrinites" to general commentary; printed usage is the reverse (diagnosis headed "ECHINO-ENCRINITES," p. 509; general prose "ECHINO-ENCRINUS," p. 504).
+- `sources.yaml` `1848b_forbes.title`: drop the trailing ".pdf".
+
+## 1852_hall — Palæontology of New-York, vol. 2 (Clinton and Niagara Cystideæ, Asteriadæ, crinoids)
+
+Read across two windows (PDF 255–265, printed p. 236–246; PDF 374–380, a non-unique page range shared by the main text and the "Additions and Corrections" section). The tree holds two disjoint taxonomies (Clinton and Niagara groups), no phylogeny. Coverage in one sentence: new-taxon flags and illustrations are captured for the read windows' genera; synonymy beyond a few genera, material, occurrences and diagnoses are not (G9).
+
+**A genus flagged new though the source reconciles two earlier ones.** Hall's header reads "Genus EUCALYPTOCRINUS." with no "(nov. gen.)" tag, followed by the printed synonymy "*Eucalyptocrinites*, Goldfuss, 1826" and "*Hypanthocrinites*, Phillips, 1839," and Hall's own text: "there is no sufficient character to separate it from the Genus Hypanthocrinites." `taxa.yaml` already treats `eucalyptocrinus` as `altSpellingOf: eucalyptocrinites` with no authority tied to this source, directly contradicting the tree's `new: true` on the same node — the clearest internal inconsistency found in this file.
+
+**A genuine printed dagger, not a data artifact (p. 246).** "Figs. 18, 19, 20 and 20†," with "Fig. 20†. A still farther enlargement of a part of a specimen" printed as its own caption, confirms `illustrations: [[18,20], "20†"]` matches the source exactly.
+
+**A synonymy assembled from two passages 55 pages apart (pp. 238, 300).** The tree's tentative *Hemicystites*/*Agelacrinites* synonym note draws on Hall's Addenda ("this genus is apparently identical with Agelacrinites of Vanuxem... which I had overlooked," p. 300) and an earlier footnote on Forbes's unrelated redefinition of the name (p. 238), neither of which sits on the genus's own main-text page (245). The synonymy is correctly resolved to Vanuxem's record, but the node's `pages: 245` field does not point to the text that actually supports the claim.
+
+**The same epithet, two genera, one volume (pp. 187, 232).** *Glyptaster brachiatus* n. sp. and *Myelodactylus brachiatus* n. sp. are both genuinely new in this work; `taxa.yaml`'s `originalParent: glyptaster` / `originalParent: myelodactylus` on the two `brachiatus_hall_1852_*` keys is a clean, verified instance of the disambiguation the roadmap describes.
+
+Source record: book, volume, year and author all match the title page; neither `paleo-ny` record in `sources.yaml` (1847 or 1852) carries `title`/`pages`/`identifiers`, a consistent convention for this book rather than an omission.
+
+Data checks:
+
+- `1852_hall.yaml`: `eucalyptocrinus` carries `new: true`, contradicted by the printed heading (no "nov. gen.") and by `taxa.yaml`'s own `altSpellingOf: eucalyptocrinites` record (genus heading, pp. 207–211 area).
+- `1852_hall.yaml`: `papulosus_hall_1852` notes field reads "Compare Lucalyptocrinus decorus"; the printed text (p. 211) uses Hall's own abbreviation "*E.*" [Eucalyptocrinus], not the OCR-garbled genus name.
+- `1852_hall.yaml`: `decorus_phillips.j_1839` notes field reads "Compare f7. celatus. Ip. pag. 113..."; the printed line (p. 207) reads "Compare *E.* cælatus. *Id.* pag. 113...".
+
+## 1854c_billings — Cystidea from the Trenton Limestone, Second Paper (Canadian Journal 2)
+
+Read from pp. 268–274 of the whole-volume scan (printed page = PDF index − 53 in this stretch); the article is Billings's "Second Paper," distinct from the identically-titled `1854a_billings`/`1854b_billings` "First Paper" split across two issues. The tree holds one taxonomy, no phylogeny. Coverage in one sentence: new genera and species are fully flagged; synonymy, material, occurrences and diagnoses are not captured at all (G9).
+
+**A genus name introduced twice, narrative then formal (pp. 268–269).** Billings first names *Comarocystites* in a descriptive header ("the fossil for which the above generic name is proposed") on p. 268, then gives its terse formal diagnosis ("Body ovate... column round") on p. 269 under a repeated header. The tree's note ("First given on page 268, formal definition starts on page 269") is verified word-for-word correct.
+
+**Two populations under one placeholder (pp. 271–273).** Billings reports small specimens he confidently calls *Agelacrinites* ("I have no doubt but that they are Agelucrinites [sic]") and, separately, a large, extensively redescribed fossil he suspects is "certainly... a different genus" but does not name. The tree's `openTaxon: agelacrinites-sp_billings_1854` correctly captures the small-specimen population (C4); the large, unnamed suspected-different-genus population is not represented anywhere, though it receives the greater share of Billings's description.
+
+**Inconsistent new-taxon notation across the author's own two papers.** This installment introduces both new genera in full prose with no "n. gen."/"n. sp." abbreviation, unlike the First Paper's explicit "(Now. gen.)" [Nov. gen.] marker (p. 215). Not a dataset error, but a documented inconsistency in Billings's own practice worth keeping distinct from a modelling gap.
+
+Source record: pages 268–274, volume 2, and authorship all confirmed directly; the "Limestonee" double-e spelling recurs identically in both the First and Second Papers and is the genuine printed title, not a data-entry duplication.
+
+Data checks:
+
+- `1854c_billings.yaml`: `punctuatus_billings_1854` illustrations list records only figs. 1 and 3; fig. 2's caption is also printed on p. 270 and is omitted.
+
+## 1857_billings — Report of E. Billings for 1856 (Geological Survey of Canada, Report of Progress 1853–56)
+
+Read from pp. 256–295 ("Descriptions of New Fossils," Asteriadæ subsection pp. 290–295); printed page = PDF index − 15 in this range. The tree holds one taxonomy, no phylogeny, spanning Crinoidea, Cystideae and Asteriadae. Coverage in one sentence: the classification skeleton and every `new` flag match the Contents page exactly; synonymy, material, occurrences and diagnoses are entirely uncaptured, matching this report's early place in scope (G9).
+
+**Three new species keyed under the wrong genus (pp. 290–291).** "PALŒASTERINA STELLATA," "PALiEASTERINA RIGIDUS" and "PALJEASTERINA RUGOSUS" (OCR renderings of *Palæasterina*) are all printed directly under that genus heading; the tree keys `stellata_billings_1857`, `rigidus_billings_1857` and `rugosus_billings_1857` under `palæaster` instead. The `palæasterina` node's own note, "Noted from other source, but no new species described," is directly contradicted by these three species.
+
+**Two attribution conventions in one report (pp. 261, 292).** Billings's own new genera carry no author at all ("Genus CYCLASTER." / "CYCLASTER BIGSBYI."), marked instead with the phrase "(new genus.)" (Hybocrinus, Carabocrinus, Cleiocrinus); genera he is merely using carry "(Author.)" ("Genus HETEROCRINUS, (Hall.)"). One paper later, `1858b_billings` prints "Billings" directly on his own new taxa. Neither convention is captured in any `citedAs` field on either tree — an unused mechanism for exactly this case (A1/A2).
+
+**A subgenus given in parentheses, at both genus and species rank (pp. 261, 263).** "Genus THYSANOCRINUS (Hall), RHODOCRINUS (Miller)" and "THYSANOCRINUS (RHODOCRINUS) MICROBASALIS" both use the standard bracketed-subgenus form. The tree already nests `rhodocrinus-subgenus` correctly under `thysanocrinus`, but no node preserves the exact printed heading form.
+
+Source record: chapter title, pages 247–346 and authorship match the printed Contents entry exactly.
+
+Data checks:
+
+- `1857_billings.yaml`: `stellata_billings_1857`, `rigidus_billings_1857` and `rugosus_billings_1857` are keyed under `palæaster`; all three are printed under `Palæasterina` (pp. 290–291), and the `palæasterina` node's note is contradicted by them.
+
+## 1858b_billings — On the Asteriadae of the Lower Silurian Rocks of Canada (Figures and Descriptions of Canadian Organic Remains, Decade III)
+
+Read pp. 75–85 (printed page = PDF index − 3), plate VIII. The tree holds two taxonomies (the genus-level revision, and a second "speculative" suborder tree), no phylogeny. Coverage in one sentence: the *Edrioaster*/*Agelacrinites* half of this revision is fully placed with illustrations and synonymy; the paper's other main achievement — three new genera absorbing five recombined species — is represented only as bare, childless genus nodes (G9).
+
+**A junior homonym forces a replacement name, with a priority argument (p. 82).** "In my report for 1856 this genus is called Cyclaster; but I find that this name had been a short time previously given to a genus of sea-urchins by M. Cotteau... This number of the Bulletin was published in March 1857, but my Report was not issued until the autumn following." The identity side is modelled (`cyclaster` vs. `cyclaster_billings_1857`, `homonym: true`), but Billings's own priority argument — the reasoning behind the replacement — exists only in this quoted paragraph.
+
+**An attribution traced to a one-line popular-journal diagnosis (p. 75).** Billings quotes his own 1857 introduction: his attribution of *Palasterina* (and *Palæaster*, *Palæocoma*) rests on a single-sentence generic diagnosis in Silliman's Journal, November 1856, itself superseded by Salter's fuller 1857 paper, which Billings cites only by mention. The current `notes: "As defined by Mr. Salter, 1857"` compresses this 1856-diagnosis/1857-details distinction into one year the quoted prose does not support.
+
+**An author's own admission of a mixed-up specimen (p. 83).** "I regret, that, in consequence of mistaking the meaning of Prof. E. Forbes' remarks... I supposed this [*Edrioaster Bigsbyi*] to be the specimen discovered by Dr. Bigsby... Since then I have seen Dr. Bigsby's specimen, and find it to be A. Dicksoni. It is too late now to change the names." Neither `bigsbyi_billings_1857` nor `dicksoni_billings_1857` records this admitted name/specimen crossover; it belongs in `notes` on one or both.
+
+**The Edrioasteridae name proposed as a hedge, not an act (p. 85).** "...it is probable that they will be arranged as a sub-order, for which the name Edrioasteridæ would be appropriate..." — three layers of hedging around a name that is nonetheless treated as the group's working label in the same sentence, and is universally cited as the taxon's protologue. The tree's `questionable`, `provisional` and `new` flags on `edrioasteridæ-suborder` capture this reasonably, but no single flag distinguishes "proposed as a suggestion" from "proposed and now in use."
+
+Source record: title, volume (Decade III), pages 75–85 and authorship all match the printed title page and plate heading.
+
+Data checks:
+
+- `taxa.yaml`: `palasterina` (used by this tree) is an orphan record with no `altSpellingOf`, distinct from the linked `palaeasterina`/`palæasterina` pair that `1857_billings.yaml` uses for the same genus — three identity records for one name.
+
+## 1915_bather — Studies in Edrioasteroidea (self-published, reprinted from Geological Magazine)
+
+No tree file exists for this source. The volume collects nine numbered Studies (Dec. 1898 – Sept. 1915) plus two short 1899 letters, each kept in its original *Geological Magazine* pagination; this is an A11 "several printings" situation on the reprint/original-serial axis rather than the printing/printing axis. Nine studies contain: two new genera and species from disarticulated material (I, *Dinocystis Barroisi*), one full redescription (II, *Edrioaster Buchianus*), one new genus by recombination (III, *Lebetodiscus* for Billings's *Agelacrinites Dicksoni*), a broader revision naming at least one further new species in running text (IV, "*E. laevis*"), one new genus from a misclassified Cystidean (V, *Steganoblastus*), one new genus with three new species (VI, *Pyrgocystis*), and three synthetic/comparative studies with no new taxa (VII–IX).
+
+**A source record that matches none of the nine printed items.** The single existing record, `1915_bather`, is titled "Studies in Edrioasteroidea IV. Pyrgocystis n. g." with `pages: [49, 90]` and `pubDate: 1915-12-06`. *Pyrgocystis* is printed as Study VI, not IV; its two parts run pp. 5–12 (Jan. 1915) and 49–60 (Feb. 1915), so the record's pages match neither part fully, and `number: 5–12` reads as a fragment of Part I's own range misfiled into the wrong schema field. The 1915-12-06 date matches no printed date for either part.
+
+**A cited authority with no source record to resolve to.** *Lebetodiscus* (Study III) is credited in `taxa.yaml` to `auth: [bather], year: 1908`, but no `1908_bather` source record exists anywhere in `sources.yaml` — an established citation with nothing to resolve to (A6).
+
+A source record for this volume would need: separate entries per Study (or per Study-part, where a Study prints two citation brackets, e.g. VI and VII), each keyed to its own year and *Geological Magazine* pagination; a `printingOf`-style link from each to the 1915 volume, which adds a stated corrigendum (a text-figure's ray numbering, Study VII) and new horizon information (Studies I and V) not in the originals.
+
+Data checks:
+
+- `sources.yaml` `1915_bather`: title, Roman numeral, `pages` and `pubDate` all misidentify the printed item; the record should describe Study VI ("Pyrgocystis, n.g.," pp. 5–12 and 49–60, Jan./Feb. 1915), not Study IV, and likely needs splitting into two part-records.
+
+## 1935_bassler — The Classification of the Edrioasteroidea (Smithsonian Misc. Collections 93)
+
+Printed page = PDF index − 1 (pp. 1–11 plus one unnumbered plate). The tree holds one taxonomy, no phylogeny, matching the paper's Class→Family→genus→species order exactly (18 genera under Agelacrinitidae, 2 under Edrioasteridae, 2 under Cyathocystidae). Coverage in one sentence: the classification skeleton, all six new genera, all three new species and every type-species flag are captured; material, occurrences, illustrations, diagnoses and attribution fields are not (G9).
+
+**Two "not X" genus-homonym citations, conflated with the record they exclude.** The paper prints three "A, author, year, not B, year" citations (p. 3, p. 9): "Cyclaster Billings, 1857, not Cotteau, 1856," "Agelacrinites Forbes, 1848, not Vanuxem," and "Hemicystites of authors not Hall." Only the first has a distinct identity record in the corpus; the second is entirely absent from the tree's synonymy, and the third (`cincinnatidiscus`'s synonym entry) points its `taxon` at the very `hemicystites` record the printed phrase excludes. This is the same shape as the *Caryocystites*/*Heliocrinites* misidentification case B10 already covers: a name reused by a different author needs an anchor of its own, not a pointer to the name it was excluded from.
+
+**A bracketed genus name that means two different things in one paper.** In the systematic text, "X (Y) species" is a same-year subgenus grouping (e.g. "Hemicystites (Cystaster) granulatus Hall, 1871," p. 3); in the plate explanation, the identical bracket shape becomes a "current genus (original genus) species" cross-reference for readers of older literature, and even drops the actually-cited subgenus (*Lepidodiscus*) in favour of the plain original genus (p. 10). Six of the plate's ten described figures follow this second pattern; a single bracket-reading rule cannot serve both parts of the paper.
+
+**"New name" at family rank, worded identically, treated two different ways.** "Family AGELAGRINITIDAE, new name" (p. 2) and "Family ASTROCYSTITIDAE, new name" (p. 10) are worded the same, but only the latter carries `new: true` in the tree — because `taxa.yaml`'s authority choice differs (Astrocystitidae: Bassler 1935; Agelacrinidae/Agelacrinitidae: Chapman, 1860), not because of anything in the printed line. Bassler's own paper credits the superseded family form to "Agelacrinidae Jaekel, 1899" (p. 2), not Chapman 1860, and the Chapman, 1860 date matches the adjacent Class-level synonym on the same page — worth checking whether the family record's authority is a copy of that neighbouring entry.
+
+Source record: title, journal, volume/number, `pubDate` 1935-04-04 and author all match the printed title page; the record has no `pages` field (printed pagination is pp. 1–11).
+
+Data checks:
+
+- `1935_bassler.yaml`: `agelacrinites` synonyms list omits "Agelacrinus authors," the fourth of four printed synonyms (p. 7).
+- `1935_bassler.yaml`: `edrioaster` synonyms list omits "Agelacrinites Forbes, 1848, not Vanuxem," the fifth of five printed synonyms (p. 9).
+- `1935_bassler.yaml`: `buchianus_forbes_1848`'s synonym entry has `parents: [agelacrinites]`, pointing at Vanuxem's genus though the printed line explicitly excludes it ("not Vanuxem," p. 9).
+- `1935_bassler.yaml`: `cincinnatidiscus`'s `pars: true` synonym entry has `taxon: hemicystites`, pointing at Hall's genus though the printed phrase excludes it ("Hemicystites of authors not Hall," p. 3).
+
+## 1936_bassler — New Species of American Edrioasteroidea (Smithsonian Misc. Collections 95)
+
+Printed page = PDF index − 181 (pp. 1–33 plus seven unnumbered plates). The tree holds one taxonomy, no phylogeny. Coverage in one sentence: the classification skeleton and every type-species flag are captured; synonymy, occurrences, illustrations and diagnoses are essentially uncaptured, and material is captured for only 3 of roughly 23 new species (G9).
+
+**A stated convention explains every bracketed name in the paper (p. 2).** Bassler writes: "For facility of reference the original generic name of the described species is inserted in parentheses." Every "(Agelacrinus)," "(Agelacrinites)," "(Hemicystites)" bracket in this paper is this declared shorthand for "originally described in genus X," not a subgenus claim. The existing `*-subgenus_*` taxa.yaml records (each flagged "unsure if correct") can now drop that doubt for citations from this specific source; the paper also supplies two different original genera ("Agelacrinus" and "Agelacrinites") for species presently grouped under the same current genus, which the mismatches below show the tree sometimes conflates.
+
+**A new species credited to two authors, printed in the same typographic slot as the case above (pp. 8–9).** *Carneyella ulrichi* and *C. foerstei* are headed "n. sp. (Bassler and Shideler)," explained in prose: "The writer has included Dr. Shideler as coauthor of these two species." This reuses the paper's own parenthetical-name convention for a different purpose (joint authorship, not original genus) — worth flagging so a future data-enterer does not conflate the two uses of the same slot.
+
+**A genus account previews an unnamed species that turns out to be the next heading (p. 2).** The *Walcottidiscus* genus account describes "a second species possessing the same generic features... but with curved ambulacra, four... directed to the left, and one... to the right" — the identical curvature described in the very next heading, "WALCOTTIDISCUS MAGISTER, n. sp." No other species of the genus is mentioned anywhere in the paper. This is a general risk for `openTaxon` placeholders: a genus diagnosis's forward reference to "another form" must be checked against the next heading before treating it as a distinct, unnamed taxon.
+
+**An editorial synthesis presented as a hierarchy the paper never draws.** The words "Pelmatozoa" and "Blastoidea" never appear as classification headings; Bassler's statements are two disconnected sentences (displaced genera "might well be assigned to the Protoblastoidea," p. 23; Cyclocystoididae "must be left... as an uncertain order of Pelmatozoa," p. 23). The tree's `pelmatozoa` root with `blastoidea`/`protoblastoidea` and `pelmatozoa-incertae-sedis` children is an editorial assembly of these two sentences (G7/B20), and neither branch carries an `editorial.inferred` marker.
+
+Source record: title, journal, volume/number, authors and `pubDate` (May 4, 1936) match the printed title page; the record has no `pages` field, a gap shared with `1935_bassler`.
+
+Data checks:
+
+- `1936_bassler.yaml`: `walcottidiscus-sp_bassler_1936` (openTaxon, `new: true`) double-counts *W. magister*, described by anticipation in the same genus account (p. 2), as a separate unnamed species.
+- `1936_bassler.yaml`: `granulatus_hall_1871`'s synonym note asserts the source prints "(Hemicystite)" (singular); both printed occurrences (p. 4; plate 1 caption, p. 25) read "(Hemicystites)."
+- `1936_bassler.yaml`: `billingsi_chapman_1860` is grouped under `agelacrinites-subgenus`; both printed occurrences (p. 12; plate 3 caption, p. 26) read "(Agelacrinus) billingsi," not "(Agelacrinites)."
+- `1936_bassler.yaml`: `ulrichi_bassler_shideler_1936` carries no flags at all, despite being headed "n. sp." twice (p. 8; plate 6 caption).
+- `1936_bassler.yaml`: no node exists for *Carneyella foerstei*, n. sp. (holotype USNM S-3965, plate 6 figs. 7–8, p. 8), though its siblings *nicklesi* and *ulrichi* are both present.
+
+## 1945_regnell — Non-Crinoid Pelmatozoa from the Paleozoic of Sweden (Meddel. Lunds Geol.-Min. Inst. 108)
+
+No source record or tree file exists for this paper; it surfaces in the corpus today only as an external citation in later trees. Printed page = PDF index − 9 for the arabic-paginated body (pp. 1–255). The relevant content is two systematic treatments (a classification-chapter pass, pp. 43–49, and a full systematic pass, pp. 197–223) plus an extensive historical-citation apparatus naming essentially every prior author on Edrioasteroidea and Cyclocystoidea.
+
+**Two new species, one new class-level act, within scope.** *Cyclocystoides lindströmi* and *C. insularis* (pp. 216–223) are both full new-species descriptions with holotypes. "Class Paracrinoidea nov." (p. 14) is a new class-list entry whose diagnosis (p. 37) is outside the read range. No genus or family is erected for edrioasteroids in this paper; *Stromatocystites balticus*, *Cyathotheca suecica*, and all four *Pyrgocystis* species are redescriptions/recombinations, not new acts.
+
+**A footnoted self-correction of another author's date (p. 14).** "In his paper of 1918... JAEKEL gave 1899 as the year of publication for the term Eocrinoidea. This is not correct... since the term was not... even mentioned in JAEKEL's memoir of 1899." A worked A8 case: Regnéll corrects a cited author's own self-citation.
+
+**A citation Regnéll uses to override a later author's priority claim (pp. 208–209).** Regnéll cites Bather 1915a (pp. 52–53) as having "described and analysed the spiral plate arrangement years before Hecker (1939) claimed it as a first observation" — a printed B19-style correction of one cited work by another, made by the current source itself rather than merely reported.
+
+A source record for this paper would need: title, author (OCR renders "Regnell" as "Reonell" on the first title-page scan), series/number (Meddelanden från Lunds Geologisk-Mineralogiska Institution N:r 108), 1945, pp. I–VIII + 1–255 + 15 plates; no received/accepted/online date is printed anywhere in the volume. `data/sources.yaml` and `data/trees/` confirm no record or tree exists.
+
+Data checks:
+
+- None — no existing record to check against.
+
+## 1961_rievers — Eine neue Pyrgocystis aus den Bundenbacher Dachschiefern (Mitt. Bayer. Staatssamml. Paläont. hist. Geol. 1)
+
+Printed page = PDF index − 9 (pp. 9–11); a posthumous manuscript (Rievers died 1955) edited for publication by Dehm, who states he limited his own contribution to foreword, minor edits, added measurements, and the plate. The tree holds one taxonomy, no phylogeny — the sole new species and its genus. Coverage in one sentence: the holotype, occurrence, and illustration range are fully captured; the diagnosis is only partly captured and per-figure captions are not (G9).
+
+**A two-sentence diagnosis captured only in part (pp. 10–11).** The printed Diagnose reads, in full: "Eine Pyrgocystis von 95 mm Größe mit einem geschuppten Turm..." (dimensions) followed by "Am oberen Ende trägt der Turm die kronenförmige Theka, von der sich, durch 5 Dreiecke gebildet, die Ambulacra abheben" (the crown and five-triangle ambulacral arrangement). The tree's `diagnosis` field stops after the first sentence; the second — diagnostically the more distinctive character — is omitted even though `pages: [[10, 11]]` already spans both pages.
+
+**A holotype identified only by a plate figure, in a private collection (p. 11).** "Holotyp (und einziges Stück): das in Taf. 2, Fig. 1—4 dargestellte Fossil, Sammlung Rievers, Enkirch (Mosel)" — there was never a museum accession number. The dataset's D1 mechanism ("a material entry may have no catalogue number... a `label` and its `illustrations`, and nothing else") is a direct fit, though the current node still uses the pre-D1 `specimens: {RVS: {holotypes: [...]}}` shape with the plate citation standing in for an `ids` value.
+
+Source record: title, journal, volume, `pages: [9, 11]`, `pubDate.year: 1961` and author all match the printed article completely.
+
+Data checks:
+
+- None confirmed; the diagnosis omission is a coverage gap within an already-populated field rather than a printed-text mismatch.
+
+## 1961_dehm — Über Pyrgocystis (Rhenopyrgus nov. subgen.) coronaeformis Rievers (Mitt. Bayer. Staatssamml. Paläont. hist. Geol. 1)
+
+Printed page = PDF index − 11 (pp. 13–17), immediately following Rievers's paper in the same Heft. The tree holds one taxonomy assembled from comparative prose, no phylogeny. Coverage in one sentence: the type-species flag and all nine comparanda's placements/occurrences are captured; the subgenus diagnosis itself is not captured anywhere (G9).
+
+**The subgenus diagnosis has no home on its own node (p. 16).** "Diagnose von Rhenopyrgus nov. subgen.: Pyrgocystis (mit turmförmiger... Theka...) mit folgenden Besonderheiten: Theka groß und schlank... Typus-Art der Untergattung: Pyrgocystis coronaeformis Rievers (1961)." Only the final, type-fixing sentence is reflected (as `type: true`); since this is one of the two gold-slice protologues, the missing diagnosis text is the single most consequential gap in the file.
+
+**A tree assembled from comparative prose, not a printed list (G7).** The species list under `pyrgocystis` (sardesoni, grayae, volborthi, gracilis, pulkovi, sulcata, procera, cylindrica, octogona) is compiled from one paragraph (p. 15) written to establish which species resemble *coronaeformis*, not to classify the genus. The tree presents it as an ordinary `children` list indistinguishable from a printed systematic list, the same situation G7 already describes for the 1994 tree.
+
+**A same-volume, already-resolved citation with no roadmap label.** Dehm cites Rievers twice: informally ("(S.9)") and fully, resolved, in the bibliography ("Rıevers, J. †, 1961... Diese Zeitschr., 9—11"). Unlike A6's in-press case, this citation resolves cleanly — both papers share one publication date, and the direction (Dehm cites Rievers, never the reverse, since Rievers wrote in 1955) is fixed. Neither node marks this same-volume relationship, which the roadmap does not yet have a label for.
+
+Source record: title, journal, volume and author match, with two small wording differences from the printed title (bracket placement, and species-epithet case).
+
+Data checks:
+
+- `1961_dehm.yaml`: the subgenus node is keyed `taxon: rhenopyrgus` with a node-level `rank: subgenus` override, instead of the dedicated `rhenopyrgus-subgenus` record that three later trees (`1966_regnéll`, `2013_sumrall_heredia_rodríguez.c.m_mestre`, `2020_ewin_martin.m_isotalo_zamora`) use for this same identity.
+- `sources.yaml` `1961_dehm.pages`: `[12, 17]`; the article begins at printed p. 13 (p. 12 belongs to Rievers's plate leaves) — should read `[13, 17]`.
+
+## 1962_fay — Edrioblastoidea, a New Class of Echinodermata (J. Paleontology 36)
+
+Printed page = PDF index + 199 (pp. 201–205). The tree holds one taxonomy, no phylogeny — class, genus and species only, since the paper erects no order or family. Coverage in one sentence: the classification skeleton is complete; synonymy is partly captured (one of five citations), and material, occurrences, illustrations and the class diagnosis are not (G9).
+
+**A class placed directly over a pre-existing genus, no order or family between them (p. 201).** "The genus *Astrocystites* Whiteaves is removed from the Edrioasteroidea and placed in a new class of echinoderms, Edrio-blastoidea..." Both words "order" and "family" are absent from the paper entirely. This monotypic class-directly-over-genus shape is unusual for the rank hierarchy but is exactly what the source prints.
+
+**A `type: true` flag the source itself never states (throughout).** Fay never writes "type species" for *Astrocystites*; the genus is simply treated as monotypic. The flag on `ottawaensis_whiteaves_1897` is plausible but would have been fixed, if anywhere, in Whiteaves's 1897 original description, which has no source record in this dataset — a B20-style case (editorial inference of identity rather than placement) with no `editorial.inferred` marker.
+
+**The same specimen called both "holotype" and "syntype" by its own author (pp. 201, 205).** The plate caption reads "Holotype, 752"; the body text reads "The holotype, No. 752... It is labelled a syntype because another specimen, lent to Mr. Hudson... was the other syntype. When Hudson died, this specimen disappeared." This is Fay's own contradiction, not an OCR artifact. The tree's `specimens.syntypes` entry picks one term without noting either the contradiction or the lost second syntype.
+
+Source record: title, journal, volume/number, pages and `pubDate` all match; `identifiers.jstor: 13011100` has an extra digit (the printed Stable URL has seven digits, `1301100`).
+
+Data checks:
+
+- `sources.yaml` `1962_fay.identifiers.jstor`: `13011100` should be `1301100` (extra digit).
+
+## 1978_bell.b.m_sprinkle — Totiglobus, an Unusual New Edrioasteroid (J. Paleontology 52)
+
+Printed page = PDF index + 242 (pp. 243–266); the source file is named for the revised manuscript's receipt date, not the 1978 publication date the running head and citation line both confirm. The tree holds one taxonomy, no phylogeny, matching the printed Systematic Paleontology hierarchy exactly. Coverage in one sentence: the classification skeleton, with correct `new`/`emended` flags, is fully captured; diagnoses, material, occurrences and illustrations are not (G9).
+
+**A family's diagnosis explicitly deferred to its species, because monotypic (p. 247).** "Genus TOTIGLOBUS n. gen.... Diagnosis.—The monotypic genus has the characteristics of the type species." The genus's printed "diagnosis" is a statement that none is needed; the schema's single-string `diagnosis` field has no way to record "deferred to <node>, because monotypic" distinct from "not printed." The identical pattern recurs in the companion 1983 Holloway & Jell paper (family deferring to genus).
+
+**A second in-preparation citation earlier than the roadmap's own example (pp. 245–246).** "*Aepyaster* Sprinkle & Strimple (in preparation)" is treated here as a second, coordinate genus of family Totiglobidae, described in the family diagnosis with a "clavate theca" contrasted against *Totiglobus*'s "subgloboid theca" — but no node exists for it, so the family's `children` list is visibly incomplete against its own printed diagnosis. This citation predates the one A9 currently documents from Bell 1980.
+
+**Two informal, quoted prior citations of the new species (p. 247).** "'Poorly preserved edrioasteroid,' SPRINKLE, 1973... 'New edrioasteroid,' SPRINKLE, 1976..." sit exactly where a synonymy would go. Neither is captured; both are clean H-table candidates ("a usage with no name, cited by a phrase") for `openTaxon`/`quoted` placeholders.
+
+**A family attribution the tree cannot show disagrees with the record (pp. 245–246).** The paper credits family Edrioasteridae to "Bell, 1976" throughout, but `taxa.yaml`'s canonical authority is Bather, 1898. The node carries no `auth`/`year` at all, so this disagreement (A2) is currently invisible; which authorship is correct cannot be verified without both works in hand.
+
+Source record: title, journal, volume/number, pages, `pubDate` and JSTOR identifier all match with no discrepancy.
+
+Data checks:
+
+- None confirmed as data errors; the Edrioasteridae and *Isorophus* year questions are attribution conflicts (see the closing list), not tree mistakes.
+
+## 1983_holloway_jell — Silurian and Devonian Edrioasteroids from Australia (J. Paleontology 57)
+
+Printed page numbers appear directly in the text (pp. 1001–1016). The tree holds one taxonomy, no phylogeny, covering five families across two branches (Rhenopyrgidae; Isorophida's three families). Coverage in one sentence: the classification skeleton, `new` and `type` flags are fully and correctly captured; diagnoses, material, occurrences and illustrations are not, and every synonymy/`parents` entry omits its printed citation detail (G9).
+
+**A family's diagnosis deferred to its genus, and the genus's type fixed by monotypy alone (p. 1002).** Family Rhenopyrgidae's protologue has no "Diagnosis" heading at all, only "Remarks... distinguished by the characters cited in the generic diagnosis below." No "Type genus" sentence is ever printed either — the family is simply stated to "include only *Rhenopyrgus*." Neither deferral nor the implicit type-genus fixation has a place on the `rhenopyrgidae` node, which carries no `diagnosis` field.
+
+**An order left unresolved between two named candidates, not a bin (pp. 1002–1004).** "Order UNCERTAIN" is followed by an extended two-sided argument weighing Isorophida against Edrioasterida for Rhenopyrgidae's placement. This fits neither of C4's senses (not a heterogeneous bin, not simply unnamed) — the source names two specific orders and cannot choose. The `openTaxon` placeholder captures the heading correctly, but the argument giving the uncertainty its content is not referenced anywhere in the tree.
+
+**A secondhand claim that appears to contradict its own cited source (p. 1004).** "*P. octogona* Richter, 1930 was assigned to *Rhenopyrgus* by Dehm (1961)..." — but Dehm's actual 1961 paper concludes the opposite, keeping the two species separate and naming only *coronaeformis* as type. Since both works are in this dataset, the B19 comparison is directly checkable; neither tree records it.
+
+**An explicit, named rank-elevation argument against two prior authors (p. 1004).** "Although considered to be a subgenus of *Pyrgocystis* by Dehm (1961) and Regnell (1966), *Rhenopyrgus* differs from that taxon... we discount the possibility of an evolutionary relationship... suggested by Dehm (1961)." This is the printed reasoning behind the B18 genus/subgenus split already present in `taxa.yaml`; the tree uses the correct (genus) key, but the argument itself is recorded nowhere.
+
+Source record: title, journal, volume/number, pages, `pubDate` and both manuscript dates all match with no discrepancy.
+
+Data checks:
+
+- None confirmed; the recurring missing citation detail on synonymy entries is a coverage gap (four instances in this file), not a specific error.
+
+## 2006_sumrall_brett_cornell — Pyrgopostibulla belli (J. Paleontology 80)
+
+Printed page = PDF index + 186 (pp. 187–192). The tree holds one taxonomy, no phylogeny, matching the printed header exactly. Coverage in one sentence: the classification skeleton and both new-taxon/type flags are fully captured; synonymy (none printed), material, occurrences, illustrations and diagnoses are not (G9).
+
+**A rankless hierarchy, with one exception (p. 190).** The printed header runs "EDRIOASTEROIDEA Billings, 1858 / ISOROPHINA Bell, 1976b / ISOROPHIDA Bell, 1976b / AGELACRINITIDAE Chapman, 1860 / POSTIBULLINAE Sumrall, et al., 2000 / Genus PYRGOPOSTIBULLA new genus." No rank word appears above genus level, but "Genus" is printed before the genus name. The tree's top-level `notes: No ranks are included` slightly overstates this — the supra-generic convention is correct, but the genus-level "Genus" tag is in fact printed.
+
+**A printed sequence that inverts true rank order, corrected silently (p. 190).** The header lists Isorophina (suborder) above Isorophida (order), an inversion of an otherwise high-to-low list. The tree nests by the correct rank hierarchy rather than reproducing print order, flagging the anomaly with `notes: "Isorophida and Isorophina are switched, surely by error"` rather than an `editorial` block — a defensible choice since the placement itself is not in doubt, only the print sequence, but a borderline case worth keeping on record for when `editorial` vs. `notes` is next revisited.
+
+Source record: title, journal, volume/number, pages, authors, acceptance date and JSTOR id all match with no discrepancy.
+
+Data checks:
+
+- `2006_sumrall_brett_cornell.yaml`: the top-level `notes`, "No ranks are included," overstates the print — the word "Genus" is printed before the genus name (p. 190).
+
+## 2009_sumrall — Neoisorophusella maslennikovi (J. Paleontology 83)
+
+Printed page = PDF index + 989 (pp. 990–993). The tree holds one taxonomy, no phylogeny. Coverage in one sentence: the classification skeleton and the new-species flag are captured; the paper's central nomenclatural story — a genus- and species-level nomen nudum resolved by this paper — is entirely absent, along with material, occurrences, illustrations and diagnoses (G9).
+
+**Ranks printed under explicit editorial disclaimer, not the author's own usage (p. 991).** "Discussion.—Inclusion of Linnaean ranks reflects editorial policy rather than the views of the author." The tree's top-level `notes` paraphrases this accurately — a clean instance for G8 ("rank stated in the tree, not the record"), since rank here is *Journal of Paleontology* house style, yet `taxa.yaml` records it as if it were a settled property of the name.
+
+**A resolved nomen nudum, printed in synonymy form, entirely uncaptured (pp. 990–992).** "'Yakutidiscus maslennikovi' (Arendt, 1983) from the Permian Verkhoyansk Region was named in a short paper without diagnosis or illustration and is consequently a nomen nudum," restated in the Systematic Paleontology section as three printed lines ("'Yakutidiscus' Arendt, 1983, p. 136, nomen nudum," and two more), with the specimens tied directly to the new name ("The holotype of Neoisorophusella maslennikovi n. sp. is PIN 4010/1 = 'Yakutidiscus maslennikovi' of Arendt (1983)"). None of this — genus, two nominal species, or the specimen-identity link — is in the tree; it is exactly the shape B6's `act: [nomNudum]` is meant for.
+
+Source record: title, journal, volume/number, pages, author and acceptance date all match with no discrepancy.
+
+Data checks:
+
+- `2009_sumrall.yaml`: the family node is keyed `agelacrinitidae`; the paper prints "Family Agelacrinidae Chapman, 1860" (p. 991, clean typeset text, not OCR), and `taxa.yaml` already carries a dedicated `agelacrinidae` `altSpellingOf` record used elsewhere in the corpus (`1900_bather`, `1935_bassler`).
+
+## 2010_zhao.y.l_sumrall_parsley_peng.j — Kailidiscus chinensis (J. Paleontology 84)
+
+Printed page = PDF index + 668 (pp. 668–680). The tree holds one taxonomy, no phylogeny. Coverage in one sentence: the classification skeleton, both new-taxon/type flags, and all sixteen material numbers are captured; occurrences, illustrations and diagnoses are not (G9).
+
+**Two uncertain ranks printed as two separate lines, cleanly modelled (p. 674).** "Order uncertain" and "Family uncertain" appear as two distinct printed lines, removing the C5 ambiguity of a single combined English heading. The tree's two nested `openTaxon` placeholders map one per line, each correctly sourced and ranked in `taxa.yaml` — a clean confirmation of the C4 mechanism rather than a problem case.
+
+**Type fixation stated as monotypy, with no field yet to hold it (p. 674).** "Diagnosis.—Same as for species by monotypy" is an explicit B14 "M" statement; the schema has no `typeFixation` field yet, so nothing is missing that should be present, but this is a ready-made example for when B14 is implemented.
+
+Source record: title, journal, volume, pages, authors, acceptance date and DOI all match; `number: 5` in the record conflicts with the printed masthead and six separate running heads, all reading "84(4)."
+
+Data checks:
+
+- `2010_zhao.y.l_sumrall_parsley_peng.j.yaml`: the paratype list gives `GM 2013`; the Types paragraph and three figure captions (pp. 676, 679) all read "2103," unambiguously and repeatedly.
+- `sources.yaml` `2010_zhao.y.l_sumrall_parsley_peng.j.number`: `5`; six printed running heads read "84(4)" — should be `4`.
+
+## 2011_sumrall_zamora — Ordovician edrioasteroids from Morocco (J. Systematic Palaeontology 9)
+
+Printed page = PDF index + 424 (pp. 425–454). The tree holds two taxonomies (Edrioasteroidea, Eocrinoidea) and one phylogeny (Fig. 6 cladogram, with `notes` on naming/rank discrepancies). Coverage in one sentence: the classification skeleton, all new-taxon/type flags and the cladogram's taxon sampling are captured; synonymy, material, occurrences, illustrations and diagnoses are not (G9).
+
+**Classification and cladogram kept as two separate structures, correctly (pp. 432–434).** The paper runs a classification with unevenly printed rank words alongside a full cladistic analysis whose figure explicitly uses a different rank label ("Pyrgocystinae," a subfamily, for the clade the classification calls "Pyrgocystidae," a family). The tree's `taxonomies`/`phylogenies` split, with a `notes` on the cladogram's `pyrgocystinae` node recording the naming mismatch, is the right call rather than inventing a correspondence the source itself only states informally. A second cladogram `notes` inferring an unlabelled node's placement ("Presumably also Isorophina...") is the editor's own judgement riding on a plain `notes` field rather than the `editorial.inferred` block B20 defines.
+
+**Two Hall dates for one genus, an independent A11 case (pp. 432, 435).** The Systematic section credits "Genus Streptaster Hall, 1872," matching this paper's own reference list, but a figure caption elsewhere cites the type species as "Streptaster vorticellatus Hall, 1866" — the same multi-printing pattern A11 already documents for Hall. Neither year is captured on the tree's `streptaster` node.
+
+**An online-first date not captured, matching an existing schema slot.** The cover page states "Published online: 03 May 2011," distinct from "printed 15 September 2011," but `sources.yaml` records only `received`/`accepted`/`printed`, though `processDates.online` already exists in the schema for exactly this case.
+
+Source record: title, journal, volume/issue, pages, authors, received/accepted/printed dates and DOI all match; no `online` date is recorded (see above).
+
+Data checks:
+
+- `2011_sumrall_zamora.yaml` and `taxa.yaml`: the species is keyed/spelled `epilezorum_sumrall_zamora_2011`; the paper prints "espilezorum" nine times with no variant spelling anywhere (abstract and eight further occurrences) — a corpus-wide transcription slip in both files.
+
+## 2013_sumrall_heredia_rodríguez.c.m_mestre — Rhenopyrgids and Edrioasterida phylogeny (Acta Palaeontol. Polonica 58)
+
+Printed page = PDF index + 763 (pp. 763–776). The tree holds one taxonomy and two phylogeny topologies (strict consensus; a constrained alternative). Coverage in one sentence: the classification skeleton, new-species and type flags, and both cladogram topologies with methodology are captured; material, occurrences, illustrations, most diagnoses and the character matrix/tree statistics are not (G9).
+
+**A sibling family placed by the source, absent from the tree.** The paper's Systematic Paleontology explicitly nests Cyathocystidae Bather, 1899 as a coordinate family alongside Rhenopyrgidae within Edrioasterida (p. 773: "including Rhenopyrgidae Holloway and Jell, 1983 in Edrioasterida Bell, 1976 along with Cyathocystidae Bather, 1899 and Astrocystitidae Bassler, 1935"), but the tree only branches down the Rhenopyrgidae line. Per G9 this is scope, not error, but a reader of the tree alone would not see the paper's three-family placement.
+
+**A hedged, unresolved candidate-membership list, correctly omitted (p. 773).** Seven species "that might belong to *Rhenopyrgus*, but incomplete preservation precludes generic assignment" are named in prose, not a formal synonymy, and none appears in the tree — correct, since the paper explicitly declines to place them, but the model has no field to represent "considered but not assigned" beyond the free-text discussion.
+
+**A subgenus correctly modelled through the existing `parents` mechanism (p. 773).** "*Pyrgocystis (Rhenopyrgus) coronaeformis* Rievers, 1961" is captured as a `synonyms` entry with `parents: [rhenopyrgus-subgenus, pyrgocystis]` — a positive confirmation that B18's mechanism, worked out for suprageneric cases, also covers a parenthetical subgenus citation cleanly.
+
+Source record: title, journal, volume/issue/pages, authors and all three process dates match with no discrepancy.
+
+Data checks:
+
+- `taxa.yaml`: the seventh author of *Rhenopyrgus flos* is keyed/spelled "DeBates" in `flos_klug_krüger_korn_rücklin_schemm-gregory_debates_mapes_2008`; both the species citation and the reference list in this paper spell it "DeBaets" (pp. 773–774).
+
+## 2015_sprinkle_sumrall — New edrioasterine and astrocystitid edrioasteroids (J. Paleontology 89)
+
+Printed page = PDF index + 346 (pp. 346–352); the source file is named for the acceptance date, and the publication year (2015, vol. 89 issue 2) is confirmed by the masthead and copyright line. The tree holds one taxonomy, no phylogeny — two new, monotypic genera. Coverage in one sentence: the classification skeleton and all four new/type flags are captured; material, occurrences, illustrations and diagnoses are not (G9).
+
+**Two coordinate names from one Bather work, printed with two different years (p. 348).** Four lines apart: "Suborder Edrioasterina, Bather, 1898" and "Family Edrioasteridae Bather, 1899." Both trace to the same 1899 British Association report, itself "for 1898" — the classic proceedings dual-dating case (A7/A8). The paper is not internally consistent about which year it prints for which coordinate name, and neither tree node carries an explicit `year` to record the discrepancy.
+
+**"Diagnosis.—Same as for species," printed twice for two monotypic genera (pp. 348, 351).** A specific, printed statement of diagnostic redundancy under monotypy, distinct from simply omitting a diagnosis; if diagnoses are captured for this source, the phrase is worth preserving verbatim rather than treating the genus as undiagnosed.
+
+Source record: title, journal, volume/issue/pages, authors, acceptance date and DOI all match with no discrepancy; no received/online date is printed anywhere in the article.
+
+Data checks:
+
+- None confirmed as tree errors; the Edrioasterina/Edrioasteridae year split is an attribution conflict (see the closing list), reflecting the source's own inconsistency rather than a data-entry mistake.
+
+## 2015_zamora_stromatocystites — The Cambrian edrioasteroid Stromatocystites (Geobios 48)
+
+No source record or tree file exists for this paper. Printed page = PDF index + 416 (pp. 417–426); the extraction includes a ResearchGate cover sheet (index 0) that is not part of the article and should not feed a source record. The paper reviews all six proposed species of *Stromatocystites*, retaining three as valid (*pentangularis*, *walcotti*, *reduncus*), reaffirming Smith 1985's nomen dubium status for *balticus*, and synonymizing one (*S. flexibilis* Parsley and Prokop, 2004, into *S. pentangularis*) — its one new nomenclatural act. Three lots of new material are described in open nomenclature ("*Stromatocystites* cf. *pentangularis*," "*Stromatocystites* sp. A," "*Stromatocystites* sp.") with no new species named anywhere.
+
+**A new synonymy, stated plainly (p. 418).** "This species is thus reinterpreted here as a junior synonym of *S. pentangularis*," for *S. flexibilis* — a clean synonymy act with no existing taxon record (`flexibilis_parsley_prokop_2004`) to attach it to.
+
+**A name kept as a nomen dubium, with its lost material tentatively reassigned (p. 420).** "We agree with Smith (1985) that the original description from Jaekel (1899) is too vague... we tentatively suggest that these two specimens are probably similar to those described herein from Sweden, suggesting *S. balticus* should also be treated as *Stromatocystites* cf. *pentangularis*." The existing `balticus_jaekel_1899` record carries neither the nomen dubium status (dating to Smith 1985, reaffirmed here) nor this tentative material reassignment.
+
+**A chimaera untangled across three papers, cited by the "vide" convention (p. 421).** Three Polish specimens, once figured as part of the ctenocystoid "*Jugoszovia archaeocyathoides*" (Dzik and Orłowski, 1995) and later "Stromatocystitidae indet." (Domínguez Alonso, 1999b), are here assigned to *Stromatocystites* but left as "*Stromatocystites* sp. A" in open nomenclature, with both prior citations printed in "v. [year]" synonymy form.
+
+A source record for this paper would need: title, seven authors in printed order, Geobios vol. 48, pp. 417–426 (no issue number is printed anywhere), received/accepted/online dates (26 Nov 2014 / 19 Jul 2015 / 7 Aug 2015), DOI 10.1016/j.geobios.2015.07.004.
+
+Data checks:
+
+- None — no existing record to check against; see the closing list for the Stromatocystitidae 1935/1936 attribution conflict this paper surfaces.
+
+## 2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman — An edrioasteroid from the Herefordshire Lagerstätte (Proc. R. Soc. B 284)
+
+Printed page = PDF page-index + 1. The tree holds one taxonomy, no phylogeny — one new genus and species. Coverage in one sentence: the classification skeleton and both new/type flags are captured; material, occurrences, illustrations and the diagnosis are not (G9).
+
+**A full systematic treatment in the main text of a Royal Society paper (p. 2).** Unlike journals that push taxonomy into supplementary material, this paper's entire "Systematic palaeontology" section — heading, etymology, diagnosis, material, locality, description — sits in the body text; nothing in this tree could have come from material outside what this file contains.
+
+**Monotypy stated in a structured line the schema has no place for (p. 2).** "(b) Diagnosis of genus (monotypic) and species... Other species: None," printed directly under the type-species designation — a Treatise-style structured statement with no field beyond `notes`.
+
+**Discussion-section classification history correctly excluded (pp. 4–5).** The Discussion narrates three earlier, different placements of *Rhenopyrgus* (Holloway & Jell 1983, "order uncertain"; Smith & Jell 1990; Guensburg & Sprinkle 1994) before stating the paper's own choice, "We assign *Heropyrgus* to the Rhenopyrgidae." The tree reflects only this final placement, correctly leaving the three superseded schemes to their own sources' trees (H table).
+
+Source record: title, journal, volume and article number match; the issue number (1862) is not printed anywhere in the captured text and cannot be verified from this source alone.
+
+Data checks:
+
+- None confirmed; whether "Edrioblastoidina" is Fay's own 1962 coinage at suborder rank (his paper's own title names a class) cannot be verified without that source.
+
+## 2020_ewin_martin.m_isotalo_zamora — New rhenopyrgid edrioasteroids (J. Paleontology 94)
+
+Printed page = PDF page-index + 115 (pp. 115–130). The tree holds one taxonomy, no phylogeny. Coverage in one sentence: the classification skeleton, all material and (mostly) all synonymy and species-level occurrences are captured; family/genus-level range summaries and species-level diagnoses are staged as disabled blocks rather than live data (G9).
+
+**Family Rhenopyrgidae emended and given a second genus (p. 118).** "Diagnosis (Emended).—Pyrgate edrioasteroids with relatively small oral surfaces..." broadens the family to admit floor plates "that may or may not be fused," following the paper's finding that some species fuse them and *R. grayae* does not; "Genera included.—*Rhenopyrgus* Dehm, 1961; *Heropyrgus* Briggs et al., 2017" is fully reflected in the tree.
+
+**A family-rank name for the edrioblastoid group appearing once, off the systematic header (p. 128).** The Conclusions once use "the other stalked edrioasterid families Cyathocystidae and Edrioblastidae," a name printed nowhere else in the paper (elsewhere "edrioblastoids" or suborder "Edrioblastoidina" only) and absent from `taxa.yaml`. Whether this is a slip for Edrioblastoidina or a deliberate distinct name cannot be settled from this paper alone.
+
+**A verified citation gap, handled by silent omission rather than a flag.** The `rhenopyrgus-sp-3` node's `notes` records that a 2013 citation "in synonym list with no explanation" does not actually cover this specimen at the cited page — an editor-verified discrepancy that is the *source's own* citation error, the "noted for later" case the roadmap's Ground Rules anticipate as a possible third `editorial` kind. It is handled today as an omission from the captured synonymy, not a flagged exclusion.
+
+Source record: title, journal, volume/number/pages, authors, acceptance date and DOI all match with no discrepancy.
+
+Data checks:
+
+- `2020_ewin_martin.m_isotalo_zamora.yaml`: `rhenopyrgidae`/`rhenopyrgus` diagnosis fields carry dropped-ligature OCR text ("ve" for "five," "oor" for "floor," pp. 118, 120) copied verbatim instead of the plain printed words.
+- `2020_ewin_martin.m_isotalo_zamora.yaml`: `grayae_bather_1915`'s synonym entry gives `pages: 48`; the paper prints "p. 58" (p. 122).
+- `2020_ewin_martin.m_isotalo_zamora.yaml`: `grayae_bather_1915`'s occurrence location reads "Givran"; the paper prints "Girvan" (p. 122).
+- `2020_ewin_martin.m_isotalo_zamora.yaml`: `rhenopyrgus-sp-2`'s occurrence stores `localStage: Girvan?` (a place name, not a stage) and omits "Scotland, UK," present on every other occurrence in the file (p. 123).
+
+## 2021_jell_sprinkle — Revision of Whitehouse's eocrinoids Peridionites and Cymbionites (Alcheringa 45)
+
+Printed page = PDF page-index (pp. 1–55); the tree is scoped to the paper's echinoderm content only, per its own `audit.notes` ("Non-echinoderm trees not captured"), leaving the paper's full trilobite/brachiopod/mollusc/hyolith/sponge treatment (pp. 37–55) out as documented scope (G9). The tree holds one taxonomy, no phylogeny, across two branches (Lichenoididae; Edrioblastoida). Coverage in one sentence: new taxa, type species and all material numbers are captured; synonymy citation detail, occurrences, illustrations and diagnoses are not (G9).
+
+**Open-nomenclature species carrying `new: true`, per the dataset's own placeholder convention (p. 35–36).** "*Cambraster* sp." and "*Kailidiscus* sp." are plain indeterminate assignments to existing genera, correctly modelled as `openTaxon`; both also carry `new: true`, which is consistent with C4's rule that `new` on a placeholder marks the source that originates it, not a nomenclatural act.
+
+**A chain of informal placements across three papers, resolved cleanly (pp. 26–27).** Smith et al.'s unnamed "Lichenoidid gen. et sp. nov." becomes Zamora et al.'s "*Lichenoides* sp.," and this paper tentatively allies both with Thorntonitidae without committing to genus. The tree represents this as two nested `openTaxon` records at the family level, with the later naming nested as a `synonyms` entry under the earlier placeholder — a clean example of the model handling a chain of other papers' open nomenclature.
+
+**A genus attribution that reads as a match only because nothing marks the disagreement (p. 35).** "*Cambraster* Cabibel et al., 1958" is printed; `taxa.yaml`'s record carries `auth: [jaekel], year: 1923`, a different author and year. The tree node has no `auth`/`year` override or `notes`, so under A2's convention (bare node = agrees with the record) this silently reads as a match when the paper's own attribution disagrees.
+
+Source record: title, journal, volume/number/pages, all four process dates, DOI and both authors match with no discrepancy.
+
+Data checks:
+
+- `taxa.yaml`: `stromatocystitida-incertae-sedis` carries `auth: [linnaeus], year: 1758`, unsupported by this paper (which prints "Family UNCERTAIN," p. 36, with no attribution) or by any other source — likely a leftover template value.
+- `2021_jell_sprinkle.yaml`: the `echinodermata` node keys attribution to "brugière" (missing the "u" of Bruguière, unlike `1791_bruguière` used elsewhere in the corpus) and carries `auth`/`year` duplicating the taxon record, unlike every other backbone node in this same file (p. 6).
+
+## Data corrections surfaced by this round
+
+| file or key | correction | shown at |
+|---|---|---|
+| `1842_vanuxem.yaml` | `hamiltonensis_vanuxem_1842` occurrence `location` list merges "United States" and a stray "upper quarry" continuation into one item (six elements, not seven) | occurrence block, tree lines ~35–42 |
+| `sources.yaml` `1848b_forbes` | `title` carries a trailing ".pdf" not part of the printed title | printed title, p. 483 |
+| `1848b_forbes.yaml` | `echino-encrinus` node's `notes` reverses which section is "definitions" vs. "commentary" | pp. 504, 509 |
+| `1852_hall.yaml` | `eucalyptocrinus` carries `new: true`, contradicted by the printed heading and by `taxa.yaml`'s own `altSpellingOf: eucalyptocrinites` | genus heading, pp. 207–211 area |
+| `1852_hall.yaml` | `papulosus_hall_1852` notes reproduce OCR garble "Lucalyptocrinus" for Hall's own abbreviation "*E.*" | p. 211 |
+| `1852_hall.yaml` | `decorus_phillips.j_1839` notes reproduce OCR garble "f7. celatus. Ip." for "*E.* cælatus. *Id.*" | p. 207 |
+| `1854c_billings.yaml` | `punctuatus_billings_1854` illustrations list omits fig. 2, captioned on the same page | p. 270 |
+| `1857_billings.yaml` | `stellata_billings_1857`, `rigidus_billings_1857`, `rugosus_billings_1857` keyed under `palæaster`; all three printed under *Palæasterina*, contradicting the `palæasterina` node's own note | pp. 290–291 |
+| `taxa.yaml` | `palasterina` (used by `1858b_billings.yaml`) is an orphan record with no `altSpellingOf`, distinct from the linked `palaeasterina`/`palæasterina` pair `1857_billings.yaml` uses | — |
+| `sources.yaml` `1915_bather` | title, Roman numeral, `pages` and `pubDate` all misidentify the printed item (Study VI, not IV; pp. 5–12 and 49–60, Jan./Feb. 1915, not `[49, 90]`/1915-12-06) | Study VI headings |
+| `1935_bassler.yaml` | `agelacrinites` synonyms omit "Agelacrinus authors," the fourth of four printed synonyms | p. 7 |
+| `1935_bassler.yaml` | `edrioaster` synonyms omit "Agelacrinites Forbes, 1848, not Vanuxem," the fifth of five printed synonyms | p. 9 |
+| `1935_bassler.yaml` | `buchianus_forbes_1848` synonym entry's `parents: [agelacrinites]` points at the genus the printed line explicitly excludes ("not Vanuxem") | p. 9 |
+| `1935_bassler.yaml` | `cincinnatidiscus`'s `pars: true` synonym entry's `taxon: hemicystites` points at the genus the printed phrase excludes ("Hemicystites of authors not Hall") | p. 3 |
+| `1936_bassler.yaml` | `walcottidiscus-sp_bassler_1936` (openTaxon) double-counts *W. magister*, previewed in the same genus account, as a separate unnamed species | p. 2 |
+| `1936_bassler.yaml` | `granulatus_hall_1871` synonym note asserts the print reads "(Hemicystite)"; both printed occurrences read "(Hemicystites)" | p. 4; plate 1, p. 25 |
+| `1936_bassler.yaml` | `billingsi_chapman_1860` grouped under `agelacrinites-subgenus`; both printed occurrences read "(Agelacrinus) billingsi," not "(Agelacrinites)" | p. 12; plate 3, p. 26 |
+| `1936_bassler.yaml` | `ulrichi_bassler_shideler_1936` carries no flags at all, despite being headed "n. sp." twice | p. 8; plate 6 |
+| `1936_bassler.yaml` | no node exists for *Carneyella foerstei*, n. sp. (holotype USNM S-3965) | p. 8 |
+| `1961_dehm.yaml` | subgenus node keyed `taxon: rhenopyrgus` with a `rank: subgenus` override, instead of the dedicated `rhenopyrgus-subgenus` record three later trees use | p. 16 |
+| `sources.yaml` `1961_dehm` | `pages: [12, 17]`; the article begins at printed p. 13 | running heads, pp. 13–17 |
+| `1961_rievers.yaml` | `coronaeformis_rievers_1961` diagnosis field stops after the first Diagnose sentence; the second (crown, five-triangle ambulacra) is omitted | pp. 10–11 |
+| `sources.yaml` `1962_fay` | `identifiers.jstor: 13011100` has an extra digit | printed Stable URL, `.../1301100` |
+| `2009_sumrall.yaml` | family node keyed `agelacrinitidae`; paper prints "Family Agelacrinidae Chapman, 1860" (no "-iti-"), and a dedicated `agelacrinidae` record already exists | p. 991 |
+| `2010_zhao.y.l_sumrall_parsley_peng.j.yaml` | paratype list gives `GM 2013`; five printed occurrences read "2103" | pp. 676, 679 |
+| `sources.yaml` `2010_zhao.y.l_sumrall_parsley_peng.j` | `number: 5`; six running heads read "84(4)" | pp. 670–680 |
+| `2011_sumrall_zamora.yaml` and `taxa.yaml` | species keyed/spelled `epilezorum`; the paper prints "espilezorum" nine times with no variant | pp. 425–441 |
+| `taxa.yaml` | `flos_klug_krüger_korn_rücklin_schemm-gregory_debates_mapes_2008` spells the seventh author "DeBates"; the citing paper and its own reference list spell it "DeBaets" | pp. 773–774 |
+| `2020_ewin_martin.m_isotalo_zamora.yaml` | `rhenopyrgidae`/`rhenopyrgus` diagnosis fields carry dropped-ligature OCR text ("ve" for "five," "oor" for "floor") | pp. 118, 120 |
+| `2020_ewin_martin.m_isotalo_zamora.yaml` | `grayae_bather_1915` synonym entry gives `pages: 48`; the paper prints "p. 58" | p. 122 |
+| `2020_ewin_martin.m_isotalo_zamora.yaml` | `grayae_bather_1915` occurrence location reads "Givran"; the paper prints "Girvan" | p. 122 |
+| `2020_ewin_martin.m_isotalo_zamora.yaml` | `rhenopyrgus-sp-2` occurrence stores `localStage: Girvan?` (a place name) and omits "Scotland, UK" | p. 123 |
+| `taxa.yaml` | `stromatocystitida-incertae-sedis` carries `auth: [linnaeus], year: 1758`, unsupported by any source | p. 36 (2021_jell_sprinkle prints "Family UNCERTAIN," no attribution) |
+| `2021_jell_sprinkle.yaml` | `echinodermata` node keys attribution to "brugière" (missing the "u") and carries `auth`/`year` duplicating the taxon record, unlike every other backbone node in the file | p. 6 |
+| `2006_sumrall_brett_cornell.yaml` | top-level `notes` "No ranks are included" overstates the print — "Genus" is printed before the genus name | p. 190 |
+
+Attribution conflicts to resolve:
+
+- **Cambraster**: `taxa.yaml` credits Jaekel, 1923; printed "Cabibel, Termier & Termier, 1958" in `1985_jell_burrett_banks` (p. 185; Smith 1985's Table 3, p. 749), `1994_guensburg_sprinkle` (p. 42), and `2021_jell_sprinkle` (p. 35).
+- **Foerste 1916/1917**: `taxa.yaml`'s `isorophus` gives 1916; printed "Foerste, 1917" in `1978_bell.b.m_sprinkle`, `1994_guensburg_sprinkle` (p. 42), and `2011_sumrall_zamora` (p. 435).
+- **Edrioasteridae 1898/1899 and Bather/Bell 1976**: `taxa.yaml` gives Bather, 1898; `2015_sprinkle_sumrall` prints "Bather, 1899" for the family four lines below "Bather, 1898" for the coordinate suborder (p. 348, the paper's own inconsistency); `1978_bell.b.m_sprinkle` credits the family to "Bell, 1976" throughout (pp. 245–246).
+- **Camptostromatidae 1967/1968**: `taxa.yaml` gives 1967 (per `1994_guensburg_sprinkle`, already documented in `source-observations.md`); that paper prints "Durham, 1968" (pp. 12, 42).
+- **Stromatocystitidae 1935/1936**: `taxa.yaml` gives Bassler, 1936; `2015_zamora_stromatocystites` prints "Family STROMATOCYSTITIDAE Bassler, 1935" (p. 418).
+- **Echino-encrinites Von Meyer/Volborth**: `taxa.yaml` credits Volborth, 1842; `1848b_forbes` credits "Von Meyer" for the genus throughout (p. 504).
+- **Agelacrinitidae Chapman 1860 vs Jaekel 1899**: `taxa.yaml` gives Chapman, 1860; `1935_bassler`'s own paper credits the superseded family form to "Agelacrinidae Jaekel, 1899" (p. 2), and its adjacent Class-level synonym on the same page independently reads "Thyroidea Chapman, 1860," suggesting a possible copy error.
+- **stellatus 1856/1866**: the `hemicystites-subgenus > stellatus_hall_1866` key gives 1866; `1936_bassler` prints "(Hall), 1856" (p. 5).
