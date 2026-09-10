@@ -54,6 +54,7 @@ property. `personal` is counted separately.
 | `audit` | 48 | 16.6% | 0 |
 | `audit.notes` | 48 | 100.0% | 0 |
 | `audit.state` | 48 | 100.0% | 0 |
+| `audit.coverage` | 29 | 60.4% | 0 |
 | `processDates.online` | 27 | 29.3% | 0 |
 | `identifiers.jstor` | 24 | 11.7% | 0 |
 | `notes` | 24 | 8.3% | 0 |
@@ -295,6 +296,33 @@ property. `personal` is counted separately.
 | `/additionalProperties.source` | 0 | 0.0% | 0 |
 
 ## 3. Enum member usage
+
+### `phylogeny#/$defs/article/properties/audit/properties/coverage/additionalProperties`
+
+4 of 4 members used, 261 occurrences.
+
+| value | count |
+|---|---|
+| `'none'` | 98 |
+| `'all'` | 66 |
+| `'partly'` | 53 |
+| `'na'` | 44 |
+
+### `phylogeny#/$defs/article/properties/audit/properties/coverage/propertyNames`
+
+9 of 9 members used, 261 occurrences.
+
+| value | count |
+|---|---|
+| `'phylogeny'` | 29 |
+| `'diagnoses'` | 29 |
+| `'illustrations'` | 29 |
+| `'occurrences'` | 29 |
+| `'material'` | 29 |
+| `'synonymy'` | 29 |
+| `'types'` | 29 |
+| `'newTaxa'` | 29 |
+| `'skeleton'` | 29 |
 
 ### `phylogeny#/$defs/article/properties/audit/properties/state`
 

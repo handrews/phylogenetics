@@ -121,6 +121,15 @@ $defs:
         type: boolean
         default: false
       audit:
+        description: |
+          Two axes, both claims made after reading the paper. `state` says
+          whether what is entered was checked against the page (verification).
+          `coverage` says, per kind of statement, whether everything the paper
+          prints of that kind is entered (completeness); it is only meaningful
+          once the source is at least partially audited, and an unaudited
+          source carries none. A user's confidence in an answer is the
+          conjunction: audited, and complete for the kinds the question
+          touches.
         type: object
         additionalProperties: false
         required: [state]
@@ -128,6 +137,22 @@ $defs:
           state:
             type: string
             enum: [complete, partial, unaudited, unauditable, unobtainable]
+          coverage:
+            type: object
+            propertyNames:
+              enum:
+              - skeleton
+              - newTaxa
+              - types
+              - synonymy
+              - material
+              - occurrences
+              - illustrations
+              - diagnoses
+              - phylogeny
+            additionalProperties:
+              type: string
+              enum: [all, partly, none, na]
           notes:
             type: string
       journal:
