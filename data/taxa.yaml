@@ -4212,7 +4212,7 @@ eocystidae:
   rank: Family
   authority:
     source: 1900_bather
-  notes: "in no way corresponds to Haekel's Eocystida"
+  notes: "in no way corresponds to Haeckel's Eocystida"
 eocystites:
   name: Eocystites
   auth: [Hart]
