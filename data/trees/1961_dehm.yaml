@@ -79,9 +79,8 @@ taxonomies:
       - Bornich
       - near Weisel on the Rhine
       - Germany
-  - taxon: rhenopyrgus
+  - taxon: rhenopyrgus-subgenus
     new: true
-    rank: subgenus
     # typeTaxon:
     #   taxon: coronaeformis_rievers_1961
     #   parents:
