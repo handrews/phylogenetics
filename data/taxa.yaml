@@ -8044,8 +8044,7 @@ palaeocystitidae:
   year: 1967
 palasterina:
   name: Palasterina
-  auth: [mccoy]
-  year: 1851
+  altSpellingOf: palaeasterina
 pallidus_lamarck_1816:
   name: pallidus
   authority:
