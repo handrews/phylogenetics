@@ -1133,9 +1133,12 @@ worth keeping goes in `citedAs`, never into identity.
   convention changed is a history-of-printing question, not a taxonomic one.
 - **Diacritics (confirmed: not tracked).** Removed by the Code (Art.
   32.5.2.1), with one wrinkle worth knowing: a German umlaut in a name
-  published before 1985 becomes "ue", "oe", "ae", not the bare vowel. Author
-  keys are a different matter: `regnéll` and `hoşgör` identify people and
-  keep their marks.
+  published before 1985 becomes "ue", "oe", "ae", not the bare vowel, while
+  a diacritic from any other language is simply dropped. Regnéll 1945
+  prints a name with "ö" (*Cyclocystoides lindströmi*), a Swedish name in a
+  Swedish work, so the key is `lindstromi`, not `lindstroemi`; decide this
+  when that source is entered. Author keys are a different matter:
+  `regnéll` and `hoşgör` identify people and keep their marks.
 - **Hyphens and spaces (kept, to revisit at F).** "Echino-encrinites",
   "caput medusae", "bis perforatus". The Code unites them too (Art.
   32.5.2.2–3), so by the reasoning above they would fold like ligatures; the
