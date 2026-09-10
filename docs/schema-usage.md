@@ -35,41 +35,41 @@ even when its parent is also unreached, so read parents first.
 `data %` is the share of that container's instances carrying the
 property.
 
-### `article` -- 290 instances in `data/`
+### `article` -- 296 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `authors` | 290 | 100.0% |
-| `pubDate` | 289 | 99.7% |
-| `title` | 240 | 82.8% |
-| `volume` | 219 | 75.5% |
-| `identifiers` | 205 | 70.7% |
-| `pages` | 200 | 69.0% |
-| `journal` | 198 | 68.3% |
-| `number` | 149 | 51.4% |
-| `identifiers.url` | 125 | 61.0% |
-| `processDates` | 92 | 31.7% |
-| `book` | 90 | 31.0% |
-| `processDates.accepted` | 61 | 66.3% |
-| `identifiers.doi` | 59 | 28.8% |
-| `processDates.received` | 52 | 56.5% |
-| `audit` | 48 | 16.6% |
+| `authors` | 296 | 100.0% |
+| `pubDate` | 295 | 99.7% |
+| `title` | 246 | 83.1% |
+| `volume` | 225 | 76.0% |
+| `identifiers` | 207 | 69.9% |
+| `pages` | 207 | 69.9% |
+| `journal` | 204 | 68.9% |
+| `number` | 149 | 50.3% |
+| `identifiers.url` | 125 | 60.4% |
+| `processDates` | 94 | 31.8% |
+| `book` | 90 | 30.4% |
+| `processDates.accepted` | 62 | 66.0% |
+| `identifiers.doi` | 61 | 29.5% |
+| `processDates.received` | 53 | 56.4% |
+| `audit` | 48 | 16.2% |
 | `audit.notes` | 48 | 100.0% |
 | `audit.state` | 48 | 100.0% |
 | `audit.coverage` | 29 | 60.4% |
-| `processDates.online` | 27 | 29.3% |
-| `identifiers.jstor` | 24 | 11.7% |
-| `notes` | 24 | 8.3% |
-| `processDates.revised` | 18 | 19.6% |
-| `plates` | 10 | 3.4% |
+| `notes` | 29 | 9.8% |
+| `processDates.online` | 28 | 29.8% |
+| `identifiers.jstor` | 24 | 11.6% |
+| `processDates.revised` | 18 | 19.1% |
+| `plates` | 14 | 4.7% |
+| `processDates.read` | 8 | 8.5% |
 | `articleNumber` | 7 | 2.4% |
-| `processDates.read` | 7 | 7.6% |
+| `series` | 6 | 2.0% |
 | `seen` | 5 | 1.7% |
-| `processDates.conferenceEnd` | 3 | 3.3% |
-| `processDates.conferenceStart` | 3 | 3.3% |
-| `processDates.transmitted` | 3 | 3.3% |
-| `processDates.issued` | 2 | 2.2% |
-| `series` | 2 | 0.7% |
+| `processDates.conferenceEnd` | 3 | 3.2% |
+| `processDates.conferenceStart` | 3 | 3.2% |
+| `processDates.transmitted` | 3 | 3.2% |
+| `processDates.issued` | 2 | 2.1% |
 | `translationOf` | 2 | 0.7% |
 | `translations` | 2 | 0.7% |
 | `chapter` | 1 | 0.3% |
@@ -82,11 +82,11 @@ property.
 | `quotes` | 1 | 0.3% |
 | `reading` | 1 | 0.3% |
 
-### `authority` -- 1619 instances in `data/`
+### `authority` -- 1622 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `source` | 1619 | 100.0% |
+| `source` | 1622 | 100.0% |
 | `pages` | 56 | 3.5% |
 | `illustrations` | 27 | 1.7% |
 | `attributedTo` | 24 | 1.5% |
@@ -137,20 +137,20 @@ property.
 | `location` | 0 | 0.0% |
 | `source` | 0 | 0.0% |
 
-### `modularDate` -- 289 instances in `data/`
+### `modularDate` -- 295 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `year` | 289 | 100.0% |
-| `month` | 66 | 22.8% |
-| `/then/oneOf/0.day` | 22 | 100.0% |
-| `/then/oneOf/0.month` | 22 | 100.0% |
-| `/then/oneOf/1.day` | 22 | 100.0% |
-| `/then/oneOf/1.month` | 22 | 100.0% |
-| `/then/oneOf/2.day` | 22 | 100.0% |
-| `/then/oneOf/2.month` | 22 | 100.0% |
-| `day` | 22 | 7.6% |
-| `months` | 3 | 1.0% |
+| `year` | 295 | 100.0% |
+| `month` | 67 | 22.7% |
+| `/then/oneOf/0.day` | 21 | 100.0% |
+| `/then/oneOf/0.month` | 21 | 100.0% |
+| `/then/oneOf/1.day` | 21 | 100.0% |
+| `/then/oneOf/1.month` | 21 | 100.0% |
+| `/then/oneOf/2.day` | 21 | 100.0% |
+| `/then/oneOf/2.month` | 21 | 100.0% |
+| `day` | 21 | 7.1% |
+| `months` | 4 | 1.4% |
 | `season` | 1 | 0.3% |
 
 ### `occurrence` -- 32 instances in `data/`
@@ -168,14 +168,14 @@ property.
 | `localStageRange` | 0 | 0.0% |
 | `tentative` | 0 | 0.0% |
 
-### `person` -- 273 instances in `data/`
+### `person` -- 276 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `family` | 273 | 100.0% |
-| `given` | 273 | 100.0% |
-| `birth` | 77 | 28.2% |
-| `death` | 76 | 27.8% |
+| `family` | 276 | 100.0% |
+| `given` | 276 | 100.0% |
+| `birth` | 78 | 28.3% |
+| `death` | 77 | 27.9% |
 | `suffix` | 0 | 0.0% |
 
 ### `phylogeny` -- 36 instances in `data/`
@@ -188,15 +188,15 @@ property.
 | `notes` | 6 | 16.7% |
 | `characteristics` | 1 | 2.8% |
 
-### `publication` -- 128 instances in `data/`
+### `publication` -- 130 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `name` | 128 | 100.0% |
-| `editors` | 9 | 7.0% |
-| `place` | 3 | 2.3% |
-| `publisher` | 3 | 2.3% |
-| `notes` | 1 | 0.8% |
+| `name` | 130 | 100.0% |
+| `editors` | 9 | 6.9% |
+| `place` | 4 | 3.1% |
+| `publisher` | 4 | 3.1% |
+| `notes` | 2 | 1.5% |
 | `type` | 0 | 0.0% |
 
 ### `specimens` -- 88 instances in `data/`
@@ -215,11 +215,11 @@ property.
 | property | data | data % |
 |---|---|---|
 | `name` | 2680 | 98.6% |
-| `authority` | 1525 | 56.1% |
-| `auth` | 961 | 35.3% |
-| `year` | 958 | 35.2% |
+| `authority` | 1528 | 56.2% |
+| `auth` | 958 | 35.2% |
+| `year` | 955 | 35.1% |
 | `rank` | 717 | 26.4% |
-| `notes` | 210 | 7.7% |
+| `notes` | 211 | 7.8% |
 | `altSpellingOf` | 161 | 5.9% |
 | `lang` | 75 | 2.8% |
 | `originalParent` | 65 | 2.4% |
@@ -393,8 +393,8 @@ property.
 |---|---|
 | `'Family'` | 177 |
 | `'species'` | 116 |
-| `'Order'` | 112 |
-| `'Class'` | 88 |
+| `'Order'` | 111 |
+| `'Class'` | 89 |
 | `'variety'` | 32 |
 | `'genus'` | 25 |
 | `'Subfamily'` | 25 |
@@ -486,14 +486,14 @@ Tests whether each multi-type declaration is actually needed.
 |---|---|---|---|---|
 | `phylogeny#/$defs/article/properties/articleNumber` | integer/string | intx5, strx2 | `e1465`, `e38296` | - |
 | `phylogeny#/$defs/article/properties/chapter` | integer/string | strx1 | `Report of E. Billings, E...` | integer |
-| `phylogeny#/$defs/article/properties/number` | integer/string | intx140, strx9 | `Supplement`, `1/2`, `5–12`, `Adv. Pr.` | - |
-| `phylogeny#/$defs/article/properties/pages/items` | integer/string | intx366, strx42 | `S637`, `S634`, `S631`, `S627` | - |
-| `phylogeny#/$defs/article/properties/plates/items` | integer/string | intx11, strx8 | `II`, `I`, `IV`, `VII` | - |
-| `phylogeny#/$defs/article/properties/series` | integer/string | intx2 | - | string |
-| `phylogeny#/$defs/article/properties/volume` | integer/string | intx210, strx9 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `4th Series` | - |
+| `phylogeny#/$defs/article/properties/number` | integer/string | intx141, strx8 | `Supplement`, `1/2`, `Adv. Pr.`, `1–2` | - |
+| `phylogeny#/$defs/article/properties/pages/items` | integer/string | intx382, strx42 | `S637`, `S634`, `S631`, `S627` | - |
+| `phylogeny#/$defs/article/properties/plates/items` | integer/string | intx19, strx8 | `II`, `I`, `IV`, `VII` | - |
+| `phylogeny#/$defs/article/properties/series` | integer/string | intx6 | - | string |
+| `phylogeny#/$defs/article/properties/volume` | integer/string | intx216, strx9 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `4th Series` | - |
 | `phylogeny#/$defs/basicOccurrence/properties/unit` | string/array | listx20, strx1 | `Craighead inlier` | - |
 | `phylogeny#/$defs/citationNumber` | integer/string | intx643, listx344, strx183 | `IX`, `VIII`, `V`, `b` | - |
-| `phylogeny#/$defs/person/properties/death` | integer/null | intx75, nullx1 | - | - |
+| `phylogeny#/$defs/person/properties/death` | integer/null | intx76, nullx1 | - | - |
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
 | `phylogeny#/$defs/specimens/additionalProperties/items` | string/array | strx513, listx4 | `F. 5420`, `F. 5419`, `F. 5418`, `F. 5417` | - |
 | `phylogeny#/$defs/taxon/properties/holotype/additionalProperties/items` | array/string/integer | intx10, strx3 | `EE15373`, `EE 1659`, `E23470` | array |
