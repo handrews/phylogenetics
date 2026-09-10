@@ -1070,16 +1070,33 @@ second half exists in `Tree._check_primary_taxon`; the first does not.
 
 ## G. Leftovers
 
-**G1 (MVP). Replace `complete` with an audit state.** `complete` was used on 23
-of 289 sources and its sub-flags were never used consistently. Replace with:
+**G1 (MVP). Replace `complete` with an audit block on two axes.** `complete`
+was used on 23 of 289 sources and its sub-flags were never used
+consistently, because they were set at entry time and the scope kept
+growing. The replacement separates two questions, both answered only after
+someone has read the paper:
 
 ```yaml
 audit:
   state: complete | partial | unaudited | unauditable | unobtainable
-  notes: "open nomenclature not captured"
+  coverage:
+    skeleton: all      # per kind: all | partly | none | na
+    synonymy: partly
+    material: none
+  notes: "Reviewed against the paper 2026-09-10; see docs/reviews/…"
 ```
 
-Default is `unaudited`. `unauditable` means a copy exists but no
+`state` is verification: has what is entered been checked against the
+page? `coverage` is completeness: of what the paper prints of each kind,
+is all of it entered? The kinds are the nine the review brief uses
+(skeleton, newTaxa, types, synonymy, material, occurrences, illustrations,
+diagnoses, phylogeny); scope growth adds a kind rather than invalidating
+the block. Coverage cannot be derived from the tree, since the tree never
+holds the denominator; the derived counts of what the tree contains are
+the cross-check (a tree with no synonymy entries and `synonymy: all` has
+one of them wrong). A user's confidence in an answer is the conjunction:
+audited, and complete for the kinds the question touches. An unaudited
+source carries no `coverage`. Default state is `unaudited`. `unauditable` means a copy exists but no
 machine-readable text does. `unobtainable` means no copy could be had at all:
 not digitized, or behind institutional access. Palaeontologia Indica n.s. 2(3)
 (1906), where the *Caryocystites* type-species question was settled, is the

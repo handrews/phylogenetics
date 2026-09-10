@@ -66,7 +66,7 @@ now, in parallel, as a document; migrate after the extractor exists.
 
 **M0. Close the reading rounds** (S2; cheap-model work with a human check)
 - Copy the review brief and the 32 review files into `docs/reviews/` so
-  the audit trail survives the session.
+  the audit trail survives the session. (Done: branch `m0-reviews`.)
 - Apply the corrections table, gold slice first (roadmap step 0b), one
   commit per source, gate green after each.
 - Give every reviewed source an `audit` block: `state`, and `notes` naming

@@ -977,6 +977,49 @@ Data checks:
 
 - `1842_vanuxem.yaml`: the `hamiltonensis_vanuxem_1842` occurrence's `location` list merges "United States" and a stray "upper quarry" continuation line into one six-element list (should be seven), a YAML block-scalar artifact, not a printed value.
 
+**Addendum, full read (2026-09-10).** All nine nodes now check against the
+print. *Nucleocrinus hallii* is on p. 163, a bare binomial under a rank-less
+"Crinoidea." heading in a list Vanuxem blanket-credits to "the Reports, etc.
+of T. A. Conrad"; `attributedTo` is right and `new: true` remains the open
+question (B25). The root "Crinoidea." is printed (p. 163) but as a list
+label, not a family. Of the four names in the top-level note: *Pentacrinites
+hamptonii* (pp. 63–65) is a figured bare name; *Encrinites lævis* (p. 132,
+"for the present may be termed") is Vanuxem's own hedged name and has no
+record (`lævis_conrad.t.a_1842` is Conrad's *Ichthyocrinus lævis*, a
+different species); *E. triciclas* (pp. 182–183) is figured and described
+and credited "it appears" to the late Prof. Eaton; *Echinus drydenensis*
+(p. 184) carries a full description under a conditional name, a hedged
+protologue (B24), not a nomen nudum. Wood-cut numbers run through the
+volume, which is why cut 80 sits at the end.
+
+## 1842_conrad.t.a — Descriptions of new species of organic remains (J. Acad. Nat. Sci. Philadelphia 8)
+
+Read from a whole-volume scan with a text layer; printed page = PDF index
+− 31. The echinoderm content is pp. 278–280 under a bare "CRINOIDEA."
+heading: three new monotypic genera, *Stephanocrinus angulatus*,
+*Icthyocrinus lævis* and *Nucleocrinus elegans*. All six tree nodes match,
+including the *Nucleocrinus* note quoted from p. 280.
+
+**A printed spelling the record does not carry (pp. 279–280, index).**
+Conrad prints "ICTHYOCRINUS" throughout, in text, plate explanation and
+volume index; the record is `ichthyocrinus` only. The printed form is an
+`altSpellingOf` record cited from this tree (G10 is about ligatures and
+diacritics; a dropped letter is a spelling).
+
+**What this paper settles for Vanuxem 1842.** *Nucleocrinus hallii*,
+*Lepocrinites gebhardi* and *Encrinites lævis* are absent. Conrad heads the
+genus "NUCLEOCRINUS, Conrad." and places only *elegans* in it, so Vanuxem's
+"Nucleocrinus hallii" (p. 163) cites a Conrad name from his survey reports,
+not from this paper, and the `nucleocrinus` record's "Possibly first
+published in 1842_vanuxem" stays open until those reports are read.
+
+Source record: matches (vol. 8 no. 2, pp. 235–280, 1842).
+
+Data checks:
+
+- Add `icthyocrinus: {name: Icthyocrinus, altSpellingOf: ichthyocrinus}` and
+  cite it from the 1842 tree.
+
 ## 1848b_forbes — Cystideæ of the Silurian Rocks of the British Islands (Mem. Geol. Surv. Gt. Britain 2)
 
 Read from the text layer, printed page = PDF index + 374; the Cystideæ paper (pp. 483–538) follows the companion Asteriadæ paper in the same continuous scan. The tree holds one taxonomy, no phylogeny, covering all 8 genera Forbes treats. Coverage in one sentence: new taxa, most synonymy lists, and the `or` alternative-name convention are captured; material, occurrences, illustrations and all but one diagnosis are not (G9).
