@@ -670,6 +670,9 @@
   - conrad.t.a
   identifiers:
     url: https://www.biodiversitylibrary.org/page/24623276
+  audit:
+    state: partial
+    notes: Reviewed against the paper 2026-09-10; see docs/reviews/review_1842_conrad.t.a.md
 1842_vanuxem:
   title: Geology of New-York. Part III. Comprising the Survey of the Third Geological District
   book: nat-hist-ny
