@@ -3812,7 +3812,7 @@ edrioasteridae:
   rank: Family
   auth: [bather]
   year: 1899
-  notes: from the 1898 meeting paper published 1899 (key-year rule); cited as both 1898 and 1899
+  notes: from the 1898 meeting paper, published 1899; cited as both 1898 and 1899
 edrioasterids:
   name: Edrioasterids
   rank: Group
@@ -10726,7 +10726,7 @@ stromatocystitida:
   rank: Order
   authority:
     source: 1980_bell.b.m
-stromatocystitida-incertae-sedis:
+stromatocystitida-unknown-family_jell_sprinkle_2021:
   name: null
   rank: Family
   authority:

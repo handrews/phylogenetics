@@ -1,7 +1,7 @@
 taxonomies:
 - taxon: echinodermata
   auth: [bruguière]
-  citedAs: Brugiere, 1791
+  citedAs: Brugière, 1791
   year: 1791
   children:
   - taxon: blastozoa
@@ -114,7 +114,7 @@ taxonomies:
                 - QMF59647
                 - ...
                 - QMF59653
-        - openTaxon: stromatocystitida-incertae-sedis
+        - openTaxon: stromatocystitida-unknown-family_jell_sprinkle_2021
           children:
           - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
             children:
