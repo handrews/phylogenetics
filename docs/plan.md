@@ -136,9 +136,6 @@ cheap-model work behind a spec)
 
 ## Things to keep straight
 
-- **`personal/`** is the owner's own synthesis. The product's closed world
-  excludes it unless a question asks for it, and then it is cited as its
-  own source.
 - **Derived versus declared.** Coverage is derived from the tree; audit
   state is declared. Do not reintroduce declared coverage flags.
 - **The extractor is the seam.** Any schema migration touches the

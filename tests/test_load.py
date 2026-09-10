@@ -43,7 +43,7 @@ def load_records():
   logger = logging.getLogger('phylohist')
   logger.addHandler(handler)
   try:
-    data = load_files(personal=False)
+    data = load_files()
     for field, cls in (
       ('authors', Author),
       ('publications', Publication),

@@ -36,7 +36,7 @@ import jschon
 sys.path.insert(0, str(pathlib.Path(__file__).parent.parent))
 
 from phylohist.io import (  # noqa: E402
-  COMMON_FILES, PERSONAL_FILES, TREE_DIR, load_yaml,
+  COMMON_FILES, TREE_DIR, load_yaml,
 )
 
 ROOT = pathlib.Path(__file__).parent.parent
@@ -152,11 +152,7 @@ def load_schema():
 
 
 def corpus_files():
-  """(corpus label, def name, path) for everything we can census.
-
-  `personal/` is included even though it does not currently validate: we are
-  counting which constructs are *used*, and presence does not require validity.
-  """
+  """(corpus label, def name, path) for everything we can census."""
   items = []
   for path in COMMON_FILES:
     if path.exists():
@@ -166,9 +162,6 @@ def corpus_files():
   for path in sorted(TREE_DIR.iterdir()):
     if path.suffix == '.yaml':
       items.append(('data', 'trees', path))
-  for path in PERSONAL_FILES:
-    if path.exists():
-      items.append(('personal', path.stem, path))
   return items
 
 
@@ -249,9 +242,7 @@ def _label(container, name):
 
 
 def counts(census, loc):
-  data = len(census.reached.get(('data', loc), ()))
-  personal = len(census.reached.get(('personal', loc), ()))
-  return data, personal
+  return len(census.reached.get(('data', loc), ()))
 
 
 def analyse(census, _unused=None):
@@ -276,12 +267,12 @@ def analyse(census, _unused=None):
       continue
     # A resource root is recorded without its empty fragment ("tree").
     parent, name = m.group(1).rstrip('#') or m.group(1), m.group(2)
-    d, p = counts(census, loc)
-    pd, pp = counts(census, parent)
+    d = counts(census, loc)
+    pd = counts(census, parent)
     report['properties'].append({
       'location': loc, 'def': def_of(loc), 'container': parent,
       'property': name, 'label': _label(parent, name),
-      'data': d, 'personal': p, 'container_data': pd, 'container_personal': pp,
+      'data': d, 'container_data': pd,
       'pct': round(100.0 * d / pd, 1) if pd else None,
     })
 
@@ -392,20 +383,20 @@ def render(census, report):
 
   L += ['## 2. Property frequency by `$defs`', '',
         '`data %` is the share of that container\'s instances carrying the',
-        'property. `personal` is counted separately.', '']
+        'property.', '']
   groups = collections.defaultdict(list)
   for row in report['properties']:
     groups[row['def']].append(row)
   for d in sorted(groups):
     rows = sorted(groups[d], key=lambda r: (-r['data'], r['label']))
-    if not any(r['data'] or r['personal'] for r in rows):
+    if not any(r['data'] for r in rows):
       continue
     root = 'tree' if d == 'tree' else f'phylogeny#/$defs/{d}'
     total = len(census.reached.get(('data', root), ()))
     L += [f'### `{d}`' + (f' -- {total} instances in `data/`' if total else ''), '']
-    L += _table(['property', 'data', 'data %', 'personal'],
+    L += _table(['property', 'data', 'data %'],
                 [(f"`{r['label']}`", r['data'],
-                  '-' if r['pct'] is None else f"{r['pct']}%", r['personal'])
+                  '-' if r['pct'] is None else f"{r['pct']}%")
                  for r in rows])
 
   L += ['## 3. Enum member usage', '']
@@ -477,7 +468,6 @@ def main():
         print(f'  {n}x {sid}', file=sys.stderr)
     else:
       print(f'{corpus}: all {total} source ids resolve', file=sys.stderr)
-  # `personal/` is not expected to validate yet, so only `data/` gates.
   if dangling.get('data'):
     return 1
 
