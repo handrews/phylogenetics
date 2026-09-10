@@ -34,11 +34,6 @@ taxonomies:
         - taxon: granulatus_hall_1871
           synonyms:
           - taxon: granulatus_hall_1871
-            notes: |
-              Given as "C. (Hemicystites) granulatus", but this is assumed
-              to be an error as it reverses both Bassler (1935) and
-              the Treatise (1966) and other sources noting that Cysaster
-              was originally defined as a subgenus.
             parents:
             - taxon: cystaster-subgenus
             - taxon: hemicystites

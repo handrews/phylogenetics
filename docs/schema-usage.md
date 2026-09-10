@@ -242,7 +242,7 @@ property.
 | `taxon` | 5749 | 90.6% |
 | `children` | 2184 | 34.4% |
 | `new` | 1461 | 23.0% |
-| `notes` | 374 | 5.9% |
+| `notes` | 373 | 5.9% |
 | `type` | 367 | 5.8% |
 | `synonyms` | 358 | 5.6% |
 | `parents` | 326 | 5.1% |
@@ -253,8 +253,8 @@ property.
 | `authority` | 92 | 1.4% |
 | `specimens` | 89 | 1.4% |
 | `diagnosis` | 69 | 1.1% |
-| `year` | 59 | 0.9% |
-| `auth` | 58 | 0.9% |
+| `year` | 61 | 1.0% |
+| `auth` | 60 | 0.9% |
 | `emended` | 49 | 0.8% |
 | `bracket` | 35 | 0.6% |
 | `moved` | 29 | 0.5% |

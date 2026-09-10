@@ -67,12 +67,16 @@ taxonomies:
                   citedAs: 'E. Billings (1854,-58; Huxley, 1877; and Bather, 1899)'
                   synonyms:
                   - taxon: thyroida
+                    auth: [Chapman]
+                    year: 1860
                     citedAs: Thyroida, Chapman, 1860
                   - taxon: agelacrinoidea
                     citedAs: Agelacrinoidea, S. A. Miller, 1877-83; Worthen, 1883
                   - taxon: cystasteroidea
                     citedAs: Cystasteroidea, Steinmann, 1888; F. Bernard, 1893
                   - taxon: thecoidea
+                    auth: [jaekel]
+                    year: 1895
                     citedAs: Thecoidea, Jaekel, 1895
                   children:
                   - taxon: agelacrinidae

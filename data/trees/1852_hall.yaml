@@ -111,11 +111,11 @@ taxonomies:
       - taxon: speciosus_hall_1852
         new: true
     - taxon: eucalyptocrinus
-      notes: 'printed "Genus EUCALYPTOCRINUS." with the synonymy Eucalyptocrinites Goldfuss 1826 and Hypanthocrinites Phillips 1839; no nov. gen.'
+      notes: 'printed "Genus EUCALYPTOCRINUS." with the synonyms Eucalyptocrinites Goldfuss 1826 and Hypanthocrinites Phillips 1839'
       children:
       - taxon: decorus_phillips.j_1839
         notes: |
-          Compare E. cælatus. Id. pag. 113, fig. 1;
+          Compare H. cœlatus. Id. pag. 113, fig. 1;
           and pl. 47 ut sup. fig. 4 a.
         synonyms:
         - taxon: decorus_phillips.j_1839
