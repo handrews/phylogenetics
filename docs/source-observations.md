@@ -1927,3 +1927,59 @@ Attribution conflicts to resolve
   "Eocrinoidea"/"Eocrinida" do not appear anywhere in the book, only the
   informal "Eocriniten." This corroborates Regnéll 1945 (p. 14) and matches
   `taxa.yaml`'s own correct dating of `eocrinoidea` to Jaekel, 1918.
+
+## 1895_haeckel — "Die cambrische Stammgruppe der Echinodermen" (Jenaische Zeitschr. Naturwiss. 30)
+
+Read from an offprint with a clean text layer (Antiqua, unlike the 1896
+Festschrift), own pagination pp. 1–12; no source record, no tree. This is the
+paper Haeckel 1896 self-cites for Amphoridea and most of its family names,
+and all nine of those citations resolve to it with matching page and
+spelling. It prints Class Amphoridea with four families, Class Cystoidea
+with six, and a closing diagram (p. 12) that groups the eight echinoderm
+classes into Monorchonia and Pentorchonia.
+
+**Two dates for one paper (pp. 1, 11).** The text is "Vorgetragen in der
+Sitzung der Medicinisch-Naturwissenschaftlichen Gesellschaft zu Jena am 13.
+December 1895" and signed "Jena, am 15. December 1895."; the offprint
+wrapper and the catalogue give 1896. The key-year rule takes the printing,
+which needs the Heft's issue date; if that is 1896 the key collides with the
+Festschrift paper and both become `1896a_haeckel`/`1896b_haeckel` (A7,
+A11). The reading date goes in `processDates.read` either way.
+
+**Novelty marked by verbs, never by a tag (p. 2, 11).** "die Bezeichnung
+Amphoridea vorschlage", "unter dem Begriffe der Monorchonia zusammenfassen";
+the four Amphoridea families and the six Cystoidea families are simply
+listed. No "n.", "nov." or "m." anywhere. `new: true` rests on the verb or
+on the list, and the sentence goes in `notes` (B24's hedged protologue is
+the same problem from the other side).
+
+**Bell 1891's names cited as alternatives (p. 11).** "Monorchonia (oder
+,,Anactinogonidiata")" and "Pentorchonia (oder ,,Actinogonidiata")": Haeckel
+offers Bell's 1891 stage names as synonyms of his own, without citing Bell.
+An `or` entry on each node, with `citedAs` holding the printed parenthesis;
+the attribution to Bell is derived from the 1891 record, not printed here.
+
+**Every family heading carries an alternative name in parentheses (pp.
+4–10).** "Archaeocystida (oder Protamphorida)", "Glyptocystida (oder
+Apiocystida)" and so on: one heading, two names, the second sometimes
+marked "p. p." or "sensu restricto". The `or` relation already covers the
+Forbes 1848 form of this (H table); the qualifiers ride on the `or` entry.
+
+**"Cladoma" as a rank word (p. 11).** "zwei verschiedenen Cladomen oder
+Hauptclassen": a coined rank with its own gloss. Quote it in `notes` on the
+node; it is another G8 case.
+
+Source record: none exists. It needs journal Jenaische Zeitschrift für
+Naturwissenschaft, Bd. 30 (N. F. 23), the article's pages in the volume
+(the offprint's 1–12 cannot be assumed), the reading date 1895-12-13, and a
+decision on the key year.
+
+Data checks:
+
+- `amphorida` (taxa.yaml): printed "Amphoridea", rank "Classe", proposed
+  here in 1895, not 1896; the record has the wrong name, rank and year.
+- Of the eight `auth: [haeckel]` records, only `amphorida` originates in
+  this paper; the rest belong to 1896 or to an 1874 work, and `hemicystis`
+  is Hall 1852.
+- `anactinogonidiata`/`actinogonidiata` (from the Bell 1891 draft): this
+  paper is their second use, as alternatives to Haeckel's own names.
