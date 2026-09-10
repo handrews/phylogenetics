@@ -1112,6 +1112,44 @@ Sumrall, Brett & Cornell 2006 print no rank word above genus and list
 Isorophina above Isorophida (p. 190); the tree nests by the records' ranks
 and says so in `notes`, which is the right call until G8.
 
+**G10. Typographical variation is not spelling.** Four kinds of variation
+in the printed literature, and the decision for each. The Code treats the
+first three as mandatory corrections (Art. 27, 32.5.2), so they carry no
+nomenclatural information, and the project's own rule is that a printed form
+worth keeping goes in `citedAs`, never into identity.
+
+- **Ligatures (decided).** æ and œ are typesetting: which form appears
+  depends on the compositor's case, not the author, and the Code corrects
+  them to ae and oe (Art. 32.5.2.1). Keys and `name` values use ae/oe. Today
+  67 keys in `taxa.yaml` contain a ligature, 33 of them `altSpellingOf`
+  records that exist only for the ligature and 34 primary records entered
+  from a ligature printing; 27 trees and 7 source keys cite them. Migration:
+  rename the 67 keys, merge the 33 aliases into their bases, and add a loader
+  warning on any key containing æ or œ so the rule holds. A mechanical job
+  with the test gate behind it, as its own commit after `step0` merges.
+- **Capitalised epithets (confirmed: not tracked).** Older works capitalise
+  a species name formed from a person's name ("Edrioaster Bigsbyi", Billings
+  1858). Species-group names are lowercase by rule (Art. 28); when the
+  convention changed is a history-of-printing question, not a taxonomic one.
+- **Diacritics (confirmed: not tracked).** Removed by the Code (Art.
+  32.5.2.1), with one wrinkle worth knowing: a German umlaut in a name
+  published before 1985 becomes "ue", "oe", "ae", not the bare vowel. Author
+  keys are a different matter: `regnéll` and `hoşgör` identify people and
+  keep their marks.
+- **Hyphens and spaces (kept, to revisit at F).** "Echino-encrinites",
+  "caput medusae", "bis perforatus". The Code unites them too (Art.
+  32.5.2.2–3), so by the reasoning above they would fold like ligatures; the
+  argument for keeping them is different in kind from the three above. A
+  ligature or a capital is recoverable from a rule: every "ae" was once a
+  ligature, every capital marked a proper noun, so folding them loses
+  nothing. A hyphen or a space was the author's own choice, follows no rule
+  that is obvious now, and cannot be regenerated once dropped; folding it
+  destroys information. Readers also search for the printed form, but that
+  belongs to the name resolver (F), which should fold hyphens, spaces and
+  ligatures on lookup either way. Roughly 32 hyphenated and 30 spaced name
+  keys exist. Decision: keep them as `altSpellingOf` records, and reconsider
+  only if the resolver makes them redundant.
+
 **G9. Coverage gaps are scope history, not errors.** Sources entered early
 capture less because the project's scope grew (skeleton first, then
 synonymy, material, occurrences, disarticulated plates). The audit state
