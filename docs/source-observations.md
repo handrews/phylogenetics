@@ -977,6 +977,21 @@ Data checks:
 
 - `1842_vanuxem.yaml`: the `hamiltonensis_vanuxem_1842` occurrence's `location` list merges "United States" and a stray "upper quarry" continuation line into one six-element list (should be seven), a YAML block-scalar artifact, not a printed value.
 
+**Addendum, full read (2026-09-10).** All nine nodes now check against the
+print. *Nucleocrinus hallii* is on p. 163, a bare binomial under a rank-less
+"Crinoidea." heading in a list Vanuxem blanket-credits to "the Reports, etc.
+of T. A. Conrad"; `attributedTo` is right and `new: true` remains the open
+question (B25). The root "Crinoidea." is printed (p. 163) but as a list
+label, not a family. Of the four names in the top-level note: *Pentacrinites
+hamptonii* (pp. 63–65) is a figured bare name; *Encrinites lævis* (p. 132,
+"for the present may be termed") is Vanuxem's own hedged name and has no
+record (`lævis_conrad.t.a_1842` is Conrad's *Ichthyocrinus lævis*, a
+different species); *E. triciclas* (pp. 182–183) is figured and described
+and credited "it appears" to the late Prof. Eaton; *Echinus drydenensis*
+(p. 184) carries a full description under a conditional name, a hedged
+protologue (B24), not a nomen nudum. Wood-cut numbers run through the
+volume, which is why cut 80 sits at the end.
+
 ## 1848b_forbes — Cystideæ of the Silurian Rocks of the British Islands (Mem. Geol. Surv. Gt. Britain 2)
 
 Read from the text layer, printed page = PDF index + 374; the Cystideæ paper (pp. 483–538) follows the companion Asteriadæ paper in the same continuous scan. The tree holds one taxonomy, no phylogeny, covering all 8 genera Forbes treats. Coverage in one sentence: new taxa, most synonymy lists, and the `or` alternative-name convention are captured; material, occurrences, illustrations and all but one diagnosis are not (G9).
