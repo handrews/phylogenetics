@@ -942,6 +942,25 @@ the note verbatim with the claim.
 
 ## Sequence
 
+0. **Pre-build cleanup, gold slice only.** Small enough for one sitting and
+   mechanical enough for a cheaper model, then checked:
+   - `1976_bell.b.m.yaml`: the *Lebetodiscus* entry's `year: 1901` → 1908;
+     `valcourensis_clark_1920` gains `provisional: true`.
+   - `1975_bell.b.m.yaml`: `plautinae` entry's `year: 1980` and `citedAs` →
+     1880.
+   - Delete taxon-level `synonym` from the 8 records (B8) and remove the field
+     from the schema.
+   - Schema: `tentative` default → `false` (B4); add the `audit` block (G1)
+     and the `editorial` block with `source`, `inferred`, `basis` (A6, B20);
+     set `audit.state` on the gold-slice sources and leave the rest defaulted.
+   - Code: add `removed` to `Tree.RELATED_LIST` (B5); add the F1 reference
+     check for `mergeInto` targets and the F6 protologue-uniqueness check.
+   - Mark the 1975 in-press entries and the 1983 inferred placement with the
+     new `editorial` block, since the claim table reads them.
+   Everything else in the data checks (Zittel 1879 and *Rhombiferi*, the
+   `1963_brown.i.a` key, Doweld's *Bockia* `non`, Hisinger's `nomNov`, the
+   Hall 1871 record, the 1840c `translationOf`, Volborth's read date) is
+   outside the gold slice and waits.
 1. **A1–A3, A6, A10, B1–B5, B8, B10, B16, B18, B20, C1, C2, F1, F4, F6–F8,
    G1.** The MVP set. Each is a documentation decision, a small data
    migration, or one integrity check. Nothing here depends on D or E.
@@ -954,23 +973,20 @@ the note verbatim with the claim.
    validate everything.
 5. **G2–G4.** Housekeeping whenever convenient.
 
-## Questions only you can answer
+## Open items
 
-Answered so far, and folded into the items above: B3 (type on a synonymy
-entry), B8 (drop `synonym`), B10 (misidentification records, `homonym` is
-housekeeping), B16 (`provisional` only where "?" is printed), B18 (Zittel
-1879, *Rhombiferi*), D1 (occurrence ids), D2 (keep `hypotype`), E1 (no other
-age forms known), A9 (no editorial availability judgement), A11 (key by
-printing, never reading; reading date settled as 14 March 1844), A6 (1975
-tree's 1980 is a typo for 1880), the 1976 audit items (the *Lebetodiscus*
-1901 is a data typo; *valcourensis* becomes `provisional` under *Carneyella*
-on the strength of p. 129), and the 1983 diagram (root is the order; the
-caption's "*Stromatocystites*" is an intra-source inconsistency to note).
+Every question raised during the semantics pass has been answered and folded
+into the numbered items above, with two exceptions that are deferred on
+purpose:
 
-1. **B10**: the Caryocystites case supplies the misidentification-record
-   shape; confirm it, including the genus-level use for Jaekel and Hall.
-2. **A11**: do you want `1844_buch` rewritten in place as the Bericht article,
-   with `cystidea-sp_buch_1944` fixed to 1844 at the same time?
-3. **Hisinger**: settled. Still wanted: Bather 1906 in Reed's Northern Shan
-   States memoir, now known to be unobtainable online, and the 1845 preprint
-   if it exists anywhere.
+- **`1844_buch`** stays as it is for now. The von Buch printings are outside
+  the Edrioasteroidea gold slice, the field itself treats them as confusing
+  (Kesling 1967, S229: "1846 (or variously reported as 1844 or 1845)"), and
+  the rewrite deserves its own look at why the record was built around the
+  reading. A11 states the rule; the record will follow when the cystoids come
+  into scope.
+- **Unobtainable sources** are a standing condition, not a to-do. Bather 1906
+  in Reed's Northern Shan States memoir is the worked example: the Treatise's
+  account of the *Caryocystites* type species rests on it, and no archive has
+  it. G1's `unobtainable` state and the note in `source-observations.md` are
+  the whole of the response.
