@@ -35,9 +35,8 @@ taxonomies:
         new: true
     - taxon: echino-encrinus
       notes: |
-        The names "Echino-encrinus" and "Echino-encrinites" are used
-        more-or-less interchangeably but with the definitions using
-        "Echino-encrinus" and the commentary "Echino-encrinites."
+        The formal diagnosis is headed "ECHINO-ENCRINITES." (p. 509);
+        the general prose uses "Echino-encrinus" (p. 504).
       synonyms:
       - taxon: echino-encrinites
       - taxon: gonocrinites
