@@ -5791,6 +5791,9 @@ icosidactylus_phillips.j_1839:
   authority:
     attributedTo: [phillips.j]
     source: 1839_murchison
+icthyocrinus:
+  name: Icthyocrinus
+  altSpellingOf: ichthyocrinus
 ikecanensis_sprinkle_1973:
   name: ikecanensis
   authority:
