@@ -115,16 +115,17 @@ taxonomies:
       children:
       - taxon: palæaster
         children:
+        - taxon: pulchellus_billings_1857
+          new: true
+      - taxon: palæasterina
+        notes: printed under PALÆASTERINA, pp. 290–291
+        children:
         - taxon: stellata_billings_1857
           new: true
         - taxon: rigidus_billings_1857
           new: true
         - taxon: rugosus_billings_1857
           new: true
-        - taxon: pulchellus_billings_1857
-          new: true
-      - taxon: palæasterina
-        notes: Noted from other source, but no new species described.
       - taxon: palæocoma
         children:
         - taxon: spinosa_billings_1857
