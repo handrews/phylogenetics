@@ -228,6 +228,7 @@ taxonomies:
                 stage: Katian
                 localSeries: Ardmillan
                 location:
+                - ?Girvan
                 - Scotland
                 - UK
                 notes: |
@@ -276,7 +277,6 @@ taxonomies:
                 unit:
                 - Saint-Chinian Formation
                 biozone: E. filacovi
-                notes: printed "late Tremadocian" (p. 123)
                 specimens:
                   unspecified:
                     UCBL-FSL:
@@ -307,7 +307,6 @@ taxonomies:
                 unit:
                 - Landeyran Formation
                 biozone: A. incisus
-                notes: printed "late Floian" (p. 123)
                 specimens:
                   unspecified:
                     UCBL-FSL:
