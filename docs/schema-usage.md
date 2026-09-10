@@ -51,10 +51,10 @@ property. `personal` is counted separately.
 | `processDates.accepted` | 61 | 66.3% | 0 |
 | `identifiers.doi` | 59 | 28.8% | 0 |
 | `processDates.received` | 52 | 56.5% | 0 |
+| `audit` | 48 | 16.6% | 0 |
+| `audit.notes` | 48 | 100.0% | 0 |
+| `audit.state` | 48 | 100.0% | 0 |
 | `processDates.online` | 27 | 29.3% | 0 |
-| `audit` | 24 | 8.3% | 0 |
-| `audit.notes` | 24 | 100.0% | 0 |
-| `audit.state` | 24 | 100.0% | 0 |
 | `identifiers.jstor` | 24 | 11.7% | 0 |
 | `notes` | 24 | 8.3% | 0 |
 | `processDates.revised` | 18 | 19.6% | 0 |
@@ -298,11 +298,11 @@ property. `personal` is counted separately.
 
 ### `phylogeny#/$defs/article/properties/audit/properties/state`
 
-1 of 5 members used, 24 occurrences.
+1 of 5 members used, 48 occurrences.
 
 | value | count |
 |---|---|
-| `'partial'` | 24 |
+| `'partial'` | 48 |
 
 **Never used (4):** `'complete'`, `'unaudited'`, `'unauditable'`, `'unobtainable'`
 
