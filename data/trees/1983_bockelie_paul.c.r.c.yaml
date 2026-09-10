@@ -20,13 +20,26 @@ taxonomies:
         - taxon: suecica_jaekel_1927
           type: true
         - taxon: corallum_jaekel_1918
-  - notes: This part from the paper's text, order and suborder assumed.
+  - notes: |
+      On page 262 the paper states:
+      "The affinities of the Devonian genera [Timeischytes and Hadrochthus]
+      are more difficult to settle, but we suspect they represent specialized,
+      probably neotenous, offshoots from the Agelacrinitidae. We are uncertain
+      whether to assign them to that family or to a family (or families)
+      of their own."
     taxon: isorophida
     editorial:
       inferred: true
-      basis: Agelacrinitidae is in Isorophida per Bell 1980, which the paper cites
+      basis: |
+        Agelacrinitidae is in Isorophida per Bell 1980, which the paper cites;
+        this paper also mentions Isorophida on page 263.
     children:
     - openTaxon: isorophida-indeterminate-suborder_bockelie_paul.c.r.c_1983
+      editorial:
+        inferred: true
+        basis: |
+          This paper does not mention a suborder, although Agelacrinitidae
+          is placed in Isorophina in Bell 1980.
       children:
       - openTaxon: isorophida-indenterminate_family_bockelie_paul.c.r._1983
         children:

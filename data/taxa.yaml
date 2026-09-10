@@ -1072,6 +1072,10 @@ balangicystis:
   name: Balangicystis
   authority:
     source: 2006_parsley_zhao.y.l
+balanticystis:
+  name: Balanticystis
+  altSpellingOf: balantiocystis
+  notes: Seen in 1981_bockelie based on Ubaghs 1972's title.
 balantiocystis:
   name: Balantiocystis
   auth: [Chauvel]
@@ -6056,8 +6060,8 @@ isorophina-uncertain-family_bell.b.m_1976:
 isorophinae:
   name: Isorophinae
   rank: Subfamily
-  authority:
-    source: 1976_bell.b.m
+  altRankOf: isorophina
+  notes: Explicitly re-ranked from suborder (not family) in 1985_a.b.smith
 isorophinid-incertae-sedis_sumrall_zamora_2011:
   name: null
   rank: Family
@@ -6376,9 +6380,8 @@ lebetodiscina:
 lebetodiscinae:
   name: Lebetodiscinae
   rank: Subfamily
-  authority:
-    source: 1976_bell.b.m
-  notes: Nomen transl., so no 1974 synonym.
+  altRankOf: lebetodiscina
+  notes: Explicitly re-ranked from suborder (not family) in 1985_a.b.smith
 lebetodiscus:
   name: Lebetodiscus
   auth: [bather]
