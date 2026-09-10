@@ -24,7 +24,7 @@ taxonomies:
           new: true
       - taxon: argodiscus
         children:
-        - taxon: epilezorum_sumrall_zamora_2011
+        - taxon: espilezorum_sumrall_zamora_2011
           new: true
       - taxon: archaepyrgus
       - taxon: epipaston
