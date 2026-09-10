@@ -286,6 +286,37 @@ publication, so one person legitimately appears under several spellings
 (Chang / Zhang; Gekker / Hecker). An `altSpellingOf`-style link between author
 records keeps the printed form and the identity. Not MVP-blocking.
 
+**A12 (MVP). A printed attribution that disagrees with the record goes on
+the node.** Classification nodes in almost every tree carry no `auth`,
+`year` or `citedAs`; the reading round found the same disagreement pattern
+in six papers and none of it is visible: *Cambraster* printed "Cabibel,
+Termier & Termier, 1958" (Jell et al. 1985 p. 185; Smith 1985 p. 734;
+Guensburg & Sprinkle 1994 p. 42; Jell & Sprinkle 2021 p. 35) against a
+record of Jaekel 1923; *Isorophus* and *Carneyella* "Foerste, 1917" (1978,
+1994, 2011) against 1916; Edrioasteridae "Bell, 1976" (Bell & Sprinkle 1978
+p. 246) and "Bather, 1899" (Sprinkle & Sumrall 2015 p. 348) against Bather
+1898; Camptostromatidae "Durham, 1968" against 1967; Stromatocystitidae
+"Bassler, 1935" (Zamora et al. 2015) against 1936; *Echino-encrinites* "Von
+Meyer" (Forbes 1848 p. 504) against Volborth 1842. Rule: absence of `auth`
+on a node means "as the record"; whenever the printed line differs, the
+node records the printed form. The claim table's citation-error class is
+built from exactly these nodes. Where the source itself prints two years
+for one name (Cyathocystidae 1898/1899 in Smith's Table 3; Edrioasterina
+1898 and Edrioasteridae 1899 four lines apart in Sprinkle & Sumrall 2015),
+each line is recorded as printed and the comparison is derived (B19).
+
+**A13. A collected reprint is one printing of several works.** Bather's
+*Studies in Edrioasteroidea* (1915) reprints nine Geological Magazine
+papers of 1898–1915 with their original pagination, a preface, a
+corrigendum and an index. Each study is its own source keyed by its first
+publication (1898, 1899, 1900, 1908, 1914 ×2, 1915 ×3), and the collection
+is a `printingOf` record for the additions. The existing `1915_bather`
+record ("IV. Pyrgocystis n.g.", pages 49–90, dated 1915-12-06) matches none
+of the nine as printed, and `lebetodiscus` cites Bather 1908 with no
+`1908_bather` record to resolve to. A same-volume citation is not this
+case: Dehm 1961 cites Rievers as "Diese Zeitschr., 9–11" in the same Heft,
+an ordinary resolved citation that needs no `editorial` block.
+
 ---
 
 ## B. Relations and their nomenclatural terms
@@ -527,6 +558,18 @@ fixed. The 2012 tree's "Reason for erroneous year unclear" is answered: the
 year is a printed re-dating, and the tree records it as printed with Doweld's
 reason in `notes`.
 
+The reading round adds printed forms for the union list: "by original
+monotypy" and "by original designation" (Smith 1985, pp. 736–753), "by
+monotypy" (Jell et al. 1985 p. 192), "Genotypus" (Dehm 1961 p. 15),
+"genotype" and "type of the genus" (Bassler 1935–36, no method stated),
+"Typus-Art der Untergattung" (Dehm 1961 p. 16), "Other species: None"
+(Briggs et al. 2017 p. 2), "Diagnosis.—Same as for species by monotypy"
+(Zhao et al. 2010 p. 674), and a family whose type genus is fixed only by
+"this family, which includes only *Rhenopyrgus*" (Holloway & Jell 1983
+p. 1002) with no "Type genus" line. Fay 1962 never prints "type species" for
+*Astrocystites*; the flag on *ottawaensis* is inferred from monotypy and
+needs `editorial.inferred`.
+
 **B15. "syn. by".** Part V records the work that first synonymized a name,
 "syn. by Zalasiewicz, 1995, p. 34", because "such information is an important
 part of the history of a taxon" (*Preface 2023*, xxii). Add `synonymizedBy:
@@ -559,6 +602,17 @@ things a source can say about a list of members, both met in the examples:
 
 The ground rule that absence is not a statement still holds; `listComplete`
 records what the source *said* about its list, nothing more.
+
+Revised by the reading round. Hedges printed in prose count as printed:
+"I have named it provisionally Prunocystites Fletcheri" (Forbes 1848
+p. 504), "I name it provisionally as above" (p. 518), "'Totiglobus' lloydi
+was provisionally assigned to genus" (Guensburg & Sprinkle 1994 p. 19),
+"The new genus is provisionally assigned to … agelacrinitids" (p. 25) all
+take `provisional`, "?" or not. Blanket hedges over a list now have three
+instances (Bell 1975 p. 36; Forbes 1848 p. 510 "I provisionally refer to
+this genus the following fossils" and p. 512 "the descriptions given must be
+regarded merely as provisional"), so `listHedged: true` on the parent is
+adopted, with the sentence in `notes`.
 
 **B17. Parentheses around a suprafamilial authority.** Bockelie & Paul 1983
 print "Order Cyathocystida (Bell 1975)" for a suborder they raise to order and
@@ -632,6 +686,57 @@ with `basis`, and nothing on the taxon record. Same for every "X gives Y" note
 now sitting on records.
 
 
+**B23 (MVP). A genus in parentheses inside a combination means three
+things.** (a) A subgenus: "THYSANOCRINUS (RHODOCRINUS) MICROBASALIS"
+(Billings 1857 p. 263); "Rhenopyrgus nov. subgen." with "Pyrgocystis
+(Rhenopyrgus) coronaeformis" (Dehm 1961 p. 16). (b) The original genus, as
+a cross-reference: Bassler 1936 states the convention, "For facility of
+reference the original generic name of the described species is inserted
+in parentheses" (p. 2), and Bassler 1935's plate captions print "Carneyella
+(Agelacrinus) pileus" where its systematic text prints "Agelacrinus
+(Lepidodiscus) pileus" (pp. 4, 10). (c) Joint authorship: "CARNEYELLA
+ULRICHI, n. sp. (Bassler and Shideler)" (Bassler 1936 p. 8). The tree
+records the printed form in `citedAs` and models each by its meaning: (a)
+a subgenus node, and a `-subgenus` record only where a source declares or
+uses one; (b) the original combination through `synonyms` + `parents`, the
+mechanism already used for *primotica*, never a subgenus; (c) `auth`. The
+17 `-subgenus` records need auditing against this; those that exist only
+because of Bassler's convention (e.g. `hemicystites-subgenus` under
+*Cincinnatidiscus* in the 1936 tree) are original-combination links.
+`1961_dehm` keys the declared subgenus to the genus record with a `rank`
+override instead of `rhenopyrgus-subgenus`, which three later trees use.
+
+**B24. A hedged protologue.** Billings 1858 erects Edrioasteridae in a
+conditional sentence: "it is probable … would be appropriate" (p. 85), and
+every later author treats the page as the protologue. `new: true` with the
+sentence in `notes`; no flag, since none of the C-axis markers means "the
+act itself was hedged". Fay 1962 is the other unusual shape: a class erected
+directly over a genus with no order or family (p. 201), which the rank
+hierarchy already permits.
+
+**B25. Nomina nuda cited as synonymy lines.** Sumrall 2009 prints
+"'Yakutidiscus' Arendt, 1983, p. 136, nomen nudum" and two species lines in
+the same form (p. 991), then ties the material: "The holotype … is PIN
+4010/1 = 'Yakutidiscus maslennikovi' of Arendt (1983)" (p. 992). Synonymy
+entries with `quoted: true` and `act: [nomNudum]` (B6), and the specimen
+identity on the material entry (D1). Vanuxem 1842 is the older form of the
+same thing: a name credited to Conrad with no description, already
+recorded through `attributedTo`.
+
+**B26. "not X" at genus rank.** Bassler 1935 prints "Cyclaster Billings,
+1857, not Cotteau, 1856" (p. 9), "Agelacrinites Forbes, 1848, not Vanuxem"
+(p. 9) and "Hemicystites of authors not Hall" (p. 3). Only the first has a
+record of its own; the other two are either missing from the tree or point
+at the very record the line excludes. Genus-level misidentification records
+(B10), one per excluded usage.
+
+**B27. "new name" at family rank.** "Family AGELACRINITIDAE, new name" for
+"Agelacrinidae Jaekel, 1899" and "Family ASTROCYSTITIDAE, new name"
+(Bassler 1935 pp. 2, 10) are one printed act treated two ways in the tree
+because the records' authorities differ (Chapman 1860 for the first, which
+nothing in the paper supports). `act` per B6 with the printed phrase in
+`citedAs`; the authority question is a data check.
+
 ---
 
 ## C. Open nomenclature and uncertainty
@@ -677,6 +782,10 @@ are uncertain. The keys already distinguish the two (`-uncertain-`,
 `-indeterminate-` against `-unnamed-`); the claim table must not read a bin
 as a taxon, and the placeholder record should carry the distinction as a
 field rather than only in the key.
+A third shape is neither: "Order UNCERTAIN" followed by two pages weighing
+Isorophida against Edrioasterida (Holloway & Jell 1983 pp. 1002–1004). Doubt
+between named candidates is `provisional` plus `altPlacements`, as the 1935
+tree already does for Astrocystitidae, not a placeholder.
 
 **C5. One printed heading for two uncertain ranks.** "Order and Family
 Uncertain" (Guensburg & Sprinkle 1994, p. 42) is English shorthand for an
@@ -813,6 +922,25 @@ the identifying locator. Older works identify specimens by figure alone
 (Bell's Bigsby specimen), so the locator must be able to stand without a
 number.
 
+**D8. A diagnosis deferred to another node.** "Diagnosis.—Same as for
+species." (Sprinkle & Sumrall 2015 pp. 348, 351), "Diagnosis.—As for genus"
+(Holloway & Jell 1983 p. 1008), "The monotypic genus has the characteristics
+of the type species" (Bell & Sprinkle 1978 p. 247), "distinguished by the
+characters cited in the generic diagnosis below" (Holloway & Jell 1983
+p. 1002), "Same as for species by monotypy" (Zhao et al. 2010 p. 674). Six
+instances in one round. Record the printed phrase verbatim in `diagnosis`;
+the claim table recognises a deferral and does not count the node as
+lacking one. No new field.
+
+**D9. Printed type words that contradict each other.** Fay 1962 captions
+No. 752 "Holotype" (p. 201) and writes "It is labelled a syntype because
+another specimen … was the other syntype. When Hudson died, this specimen
+disappeared" (p. 205). Jell et al. 1985 call NMVP107129 "the holotype" of a
+form left in open nomenclature (p. 196). Rievers 1961 fixes a holotype with
+no number, "das in Taf. 2, Fig. 1–4 dargestellte Fossil" (p. 10), in a
+private collection. `roleAsPrinted` and the no-number entry (D1) carry all
+three; the lost second syntype is an entry with `label` and `notes` only.
+
 **D5. Migration.** 88 node-level `specimens` blocks, 13 `taxon.holotype`
 entries, 30 occurrence-level blocks. Mechanical for the typed-role shapes;
 `taxon.holotype` moves onto the protologue node (`new: true`) of the same name.
@@ -875,6 +1003,12 @@ bare string, so the doubt stays where it was printed.
 **E7. Delete `geology.yaml`.** Every specimen it records is already on a tree
 node. Its formation and member registry is an idea for later (F3), not a file to
 keep loading nothing from.
+
+**E9. Record the printed stage qualifier.** Ewin et al. 2020 print "upper
+Tremadocian" (p. 120) and "late Tremadocian" (p. 123) for one interval; the
+tree stores `stageModifier: upper` for both. The printed word is the fact
+and the enum is the mapping, so keep the word in `citedAs` on the occurrence
+or widen the enum to accept both.
 
 ---
 
@@ -957,11 +1091,26 @@ naming its parts is open. Either way the assembly is the editor's and needs
 saying; the claim table can attach each node's page to the structure it
 came from.
 
+Three more assembled trees from the reading round: Bassler 1935's
+`pelmatozoa` root is built from two sentences on p. 23 that never form one
+hierarchy; Dehm 1961's *Pyrgocystis* species list is compiled from a
+comparative paragraph (p. 15), not a classification; Hall 1852's
+*Hemicystites* = *Agelacrinites* synonymy is printed only in the Additions
+and Corrections (p. 300) and its "non Forbes" caution in a footnote on p. 238,
+while the node's `pages` says 245. Rule: a node's `pages` point where the
+claim is printed, and addenda are part of the source.
+
 **G8. Rank stated in the tree, not the record (long term).** Cladistic
 authors use names that carry a traditional rank while declining to assign
 one; Smith 1985 prints "Plesion (Class)". Requiring rank on the tree node
 and dropping it from `taxa.yaml` would record each source's own usage. The
 migration is not automatic; noted, not scheduled.
+
+The reading round supplies the quote: "Inclusion of Linnaean ranks reflects
+editorial policy rather than the views of the author" (Sumrall 2009 p. 991).
+Sumrall, Brett & Cornell 2006 print no rank word above genus and list
+Isorophina above Isorophida (p. 190); the tree nests by the records' ranks
+and says so in `notes`, which is the right call until G8.
 
 **G9. Coverage gaps are scope history, not errors.** Sources entered early
 capture less because the project's scope grew (skeleton first, then
@@ -1009,6 +1158,14 @@ Each has a home; none needs a new top-level construct.
 
 The example sources are catalogued in
 [`source-observations.md`](source-observations.md).
+| a genus in parentheses meaning the original genus | "Carneyella (Agelacrinus) pileus" (Bassler 1935 pl. 1) | original combination via `parents` (B23) |
+| a genus in parentheses meaning joint authorship | "n. sp. (Bassler and Shideler)" (Bassler 1936 p. 8) | `auth` (B23) |
+| a hedge printed in prose | "I name it provisionally as above" (Forbes 1848 p. 518) | `provisional` (B16) |
+| a diagnosis deferred to another node | "Diagnosis.—Same as for species." (Sprinkle & Sumrall 2015) | printed phrase in `diagnosis` (D8) |
+| a class erected straight over a genus | Edrioblastoidea for *Astrocystites* (Fay 1962 p. 201) | ordinary nesting; no order or family node (B24) |
+| a collected reprint of earlier papers | Bather 1915 | one source per study, collection as `printingOf` (A13) |
+| doubt between two named parents | "Order UNCERTAIN" weighing two orders (Holloway & Jell 1983) | `provisional` + `altPlacements` (C4) |
+| a synonymy printed only in the addenda | Hall 1852 p. 300 | `pages` on the node point at the addenda (G7) |
 
 The rule for adding structure: a case earns a field when it appears in a
 second source. Until then it lives in `notes`, and the claim table surfaces
@@ -1037,7 +1194,14 @@ the note verbatim with the claim.
    `1963_brown.i.a` key, Doweld's *Bockia* `non`, Hisinger's `nomNov`, the
    Hall 1871 record, the 1840c `translationOf`, Volborth's read date) is
    outside the gold slice and waits.
-1. **A1–A3, A6, A10, B1–B5, B8, B10, B16, B18, B20, C1, C2, F1, F4, F6–F8,
+0b. **Data corrections from the reading round.** The table at the end of
+   `docs/source-observations.md` ("Data corrections surfaced by this
+   round") lists confirmed transcription and placement errors across
+   twenty-two trees, and the attribution conflicts to resolve. Fix the
+   gold-slice ones (1961, 1962, 1978, 1983, 2013, 2015, 2017, 2020) before
+   step 1; the rest as they are reached.
+
+1. **A1–A3, A6, A10, A12, B1–B5, B8, B10, B16, B18, B20, B23, C1, C2, F1, F4, F6–F8,
    G1.** The MVP set. Each is a documentation decision, a small data
    migration, or one integrity check. Nothing here depends on D or E.
 2. **B6, B7, B9, B11–B15, B17, B19, B21, B22, A4, A5, A7–A9, A11, D6, D7,
