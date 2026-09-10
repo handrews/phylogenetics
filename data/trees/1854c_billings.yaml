@@ -11,8 +11,7 @@ taxonomies:
       pages: 270
       illustrations:
       - page: 270
-        figures:
-        - [1, 3]
+        figures: [[1, 3]]
   - taxon: amygdalocystites
     pages: 270
     new: true
