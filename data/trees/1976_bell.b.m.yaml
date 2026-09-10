@@ -86,7 +86,7 @@ taxonomies:
             citedAs: Systeme Silurien du centre de la Boheme, Prague, pt. 1, 7(1)
           - taxon: agelacrinus
             authority:
-              source: 1896_haeckel
+              source: 1896b_haeckel
               illustrations:
               - plate: 3
                 figures: 29

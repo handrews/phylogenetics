@@ -86,7 +86,7 @@ taxonomies:
               - parents:
                 - taxon: pyrgocystis
                 authority:
-                  source: 1915_bather
+                  source: 1915b_bather
                   pages: 58
                   illustrations:
                   - plate: 3
@@ -210,7 +210,7 @@ taxonomies:
                 parents:
                 - taxon: pyrgocystis
                 authority:
-                  source: 1915_bather
+                  source: 1915b_bather
                   pages: 59
               - taxon: procera_aurivillius_1892
                 provisional: true
@@ -245,14 +245,14 @@ taxonomies:
                 parents:
                 - taxon: pyrgocystis
                   authority:
-                    source: 1915_bather
+                    source: 1915a_bather
               - openTaxon: pyrgocystis-sp_vizcaïno_álvaro_lefebvre_2001
                 provisional: true
                 pages: 218
                 parents:
                 - taxon: pyrgocystis
                   authority:
-                    source: 1915_bather
+                    source: 1915a_bather
               notes: |
                 "2013 Rhenopyrgidae Sumrall et al., p. 773" in synonym
                 list with no explanation; that page in the referenced

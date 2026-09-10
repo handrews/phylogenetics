@@ -1191,8 +1191,45 @@
   - billings.w.r
   identifiers:
     url: https://www.biodiversitylibrary.org/page/30200108
-1896_haeckel:
+1891_bell.f.j:
+  title: On the Arrangement and Inter-relations of the Classes of the Echinodermata
+  journal: annals-and-mag
+  series: 6
+  volume: 8
+  pages:
+  - 206
+  - 215
+  pubDate:
+    year: 1891
+  authors:
+  - bell.f.j
+  identifiers:
+    doi: 10.1080/00222939109460422
+1896a_haeckel:
+  title: "Die cambrische Stammgruppe der Echinodermen. Vorläufige Mittheilung, vorgetragen in der Sitzung der Medicinisch-Naturwissenschaftlichen Gesellschaft zu Jena am 13. December 1895"
+  journal: jena-zeitschr
+  volume: 30
+  pages:
+  - 393
+  - 404
+  pubDate:
+    year: 1896
+  processDates:
+    read: 1895-12-13
+  authors:
+  - haeckel
+  identifiers:
+    url: https://babel.hathitrust.org/cgi/pt?id=hvd.32044107303950&seq=1
+  notes: |
+    Volume 30 is Neue Folge 23. The HathiTrust copy is a separately
+    paginated printing (pp. 1–12) signed "Jena, am 15. December 1895", so
+    citations as "Haeckel 1895" occur; with its own pagination it reads as
+    a separate issued ahead of the volume rather than an offprint of it.
+1896b_haeckel:
   book: amph-und-cyst
+  pages:
+  - 1
+  - 179
   pubDate:
     year: 1896
   authors:
@@ -1223,6 +1260,23 @@
       diagnoses: none
       phylogeny: na
     notes: Reviewed against the paper 2026-09-10; see docs/reviews/review_1896_pompeckj.md
+1898_bather:
+  title: Studies in Edrioasteroidea. I. Dinocystis Barroisi, n.g. et sp., Psammites du Condroz
+  journal: geomag
+  series: 4
+  volume: 5
+  pages:
+  - 543
+  - 548
+  plates:
+  - 21
+  - 21
+  pubDate:
+    year: 1898
+    month: 12
+  authors:
+  - bather
+  notes: '"Decade IV" is recorded as the series.'
 1898_walcott:
   title: Fossile Medusæ
   journal: monographs-usgs
@@ -1280,6 +1334,23 @@
       diagnoses: partly
       phylogeny: na
     notes: Reviewed against the paper 2026-09-10; see docs/reviews/review_1900_bather.md
+1908_bather:
+  title: Studies in Edrioasteroidea. III. Lebetodiscus, n.g. for Agelacrinites Dicksoni Billings
+  journal: geomag
+  series: 5
+  volume: 5
+  pages:
+  - 543
+  - 550
+  plates:
+  - 25
+  - 25
+  pubDate:
+    year: 1908
+    month: 12
+  authors:
+  - bather
+  notes: '"Decade V" is recorded as the series.'
 1911b_walcott:
   title: Middle Cambrian Holothurians and Medusaæ
   journal: smith-misc
@@ -1337,17 +1408,45 @@
   - clark.a.h
   identifiers:
     url: https://www.biodiversitylibrary.org/page/43433793
-1915_bather:
-  title: Studies in Edrioasteroidea IV. Pyrgocystis n. g.
+1915a_bather:
+  title: Studies in Edrioasteroidea. VI. Pyrgocystis, n.g.
   journal: geomag
-  number: 5–12
+  series: 6
+  volume: 2
   pages:
-  - 49
-  - 90
+  - 5
+  - 12
+  plates:
+  - 2
+  - 2
   pubDate:
     year: 1915
-    month: 12
-    day: 6
+    month: 1
+  notes: |
+    "Decade VI" is recorded as the series. First part, January number:
+    the genus and P. sardesoni, the genotype. Plate III "containing the
+    figures of Pyrgocystis grayae, will be given with" the second part
+    (p. 10), which is 1915b_bather; a tree for this study should merge the
+    two.
+  authors:
+  - bather
+1915b_bather:
+  title: Studies in Edrioasteroidea. VI. Pyrgocystis, n.g. (continued)
+  journal: geomag
+  series: 6
+  volume: 2
+  pages:
+  - 49
+  - 60
+  plates:
+  - 3
+  - 3
+  pubDate:
+    year: 1915
+    month: 2
+  notes: |
+    "Decade VI" is recorded as the series. Second part, February number,
+    continuing 1915a_bather: P. grayae and P. ansticei, with plate III.
   authors:
   - bather
 1929_matsumoto:
@@ -1445,6 +1544,21 @@
     day: 13
   identifiers:
     url: https://www.biodiversitylibrary.org/item/189697#page/38/mode/1up
+1945_regnéll:
+  title: Non-Crinoid Pelmatozoa from the Paleozoic of Sweden. A taxonomic study
+  journal: lund-medd
+  number: 108
+  pages:
+  - 1
+  - 255
+  plates:
+  - 1
+  - 15
+  pubDate:
+    year: 1945
+  authors:
+  - regnéll
+  notes: No date beyond "Lund 1945" is printed.
 1955_hyman:
   title: Enchinodermata, the Coelomate Bilateria
   book: invertebrates
@@ -2238,6 +2352,29 @@
   - bell.b.m
   identifiers:
     doi: 10.1017/S027116480000018X
+2015_zamora_lefebvre_hoşgör_franzen_nardin_fatka_álvaro:
+  title: "The Cambrian edrioasteroid Stromatocystites (Echinodermata): Systematics, palaeogeography, and palaeoecology"
+  journal: geobios
+  volume: 48
+  pages:
+  - 417
+  - 426
+  pubDate:
+    year: 2015
+  processDates:
+    received: 2014-11-26
+    accepted: 2015-07-19
+    online: 2015-08-07
+  authors:
+  - zamora
+  - lefebvre
+  - hoşgör
+  - franzen
+  - nardin
+  - fatka
+  - álvaro
+  identifiers:
+    doi: 10.1016/j.geobios.2015.07.004
 inprep_sprinkle_strimple:
   inPrep: true
   authors:
