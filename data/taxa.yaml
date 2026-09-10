@@ -597,6 +597,9 @@ apiocrinites:
   name: Apiocrinites
   authority:
     source: 1821_miller.j.s
+apiocystinae:
+  name: Apiocystinae
+  altSpellingOf: apiocystitinae
 apiocystites:
   name: Apiocystites
   authority:
@@ -2024,6 +2027,9 @@ cheirocystis:
   name: Cheirocystis
   auth: [paul.c.r.c]
   year: 1972
+chirocrinidae:
+  name: Chirocrinidae
+  altSpellingOf: cheirocrinidae
 chrysalis_schuchert_1904:
   name: chrysalis
   auth: [schuchert]
@@ -5459,8 +5465,8 @@ hemicystitidae:
   year: 1936
 hemicystis:
   name: Hemicystis
-  auth: [haeckel]
-  year: 1896
+  auth: [hall]
+  year: 1852
 hemisphærica_leske_1778:
   name: hemisphærica
   authority:
