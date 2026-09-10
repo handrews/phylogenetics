@@ -451,7 +451,7 @@ $defs:
           as printed (in press, wrong year, another printing) to a source
           record while `auth`/`year`/`citedAs` stay as printed. `inferred`
           marks a node whose existence or placement is the editor's, not the
-          source's. Not for an alternative authority, year or spelling: the
+          source's, or names the fields that are, when the node is printed. Not for an alternative authority, year or spelling: the
           true authority lives on the taxon record, a misspelling is an
           `altSpellingOf` record, and a wrong printed attribution is kept as
           printed with the disagreement derived.
@@ -465,7 +465,13 @@ $defs:
           source:
             $ref: "phylogeny#/$defs/sourceId"
           inferred:
-            type: boolean
+            $comment: |
+              `true` when the node's existence or placement is the editor's;
+              a list of field names when only those fields are inferred and
+              the node itself is printed.
+            type: [boolean, array]
+            items:
+              type: string
           basis:
             type: string
       # TODO: Something is off here, dup field?

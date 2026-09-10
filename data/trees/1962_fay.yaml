@@ -11,7 +11,7 @@ taxonomies:
     - taxon: ottawaensis_whiteaves_1897
       type: true
       editorial:
-        inferred: true
+        inferred: [type]
         basis: Fay never prints "type species"; the genus is monotypic (p. 201)
       specimens:
         syntypes:
