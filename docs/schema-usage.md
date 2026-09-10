@@ -82,11 +82,11 @@ property.
 | `quotes` | 1 | 0.3% |
 | `reading` | 1 | 0.3% |
 
-### `authority` -- 1621 instances in `data/`
+### `authority` -- 1622 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `source` | 1621 | 100.0% |
+| `source` | 1622 | 100.0% |
 | `pages` | 56 | 3.5% |
 | `illustrations` | 27 | 1.7% |
 | `attributedTo` | 24 | 1.5% |
@@ -215,11 +215,11 @@ property.
 | property | data | data % |
 |---|---|---|
 | `name` | 2682 | 98.6% |
-| `authority` | 1527 | 56.1% |
-| `auth` | 957 | 35.2% |
-| `year` | 954 | 35.1% |
+| `authority` | 1528 | 56.2% |
+| `auth` | 956 | 35.1% |
+| `year` | 953 | 35.0% |
 | `rank` | 716 | 26.3% |
-| `notes` | 211 | 7.8% |
+| `notes` | 213 | 7.8% |
 | `altSpellingOf` | 165 | 6.1% |
 | `lang` | 75 | 2.8% |
 | `originalParent` | 65 | 2.4% |
@@ -396,13 +396,13 @@ property.
 | `'Order'` | 111 |
 | `'Class'` | 89 |
 | `'variety'` | 32 |
+| `'Subfamily'` | 26 |
 | `'genus'` | 25 |
-| `'Subfamily'` | 25 |
 | `'section'` | 22 |
 | `'Superfamily'` | 18 |
 | `'subgenus'` | 17 |
-| `'Suborder'` | 15 |
 | `'Subclass'` | 15 |
+| `'Suborder'` | 14 |
 | `'Phylum'` | 13 |
 | `'Subphylum'` | 11 |
 | `'Group'` | 9 |
