@@ -2,6 +2,7 @@
 # A new line here is allowed only in a commit that adds a check; every line
 # is a resolution owed. Regenerate with:
 #   PHYLOHIST_UPDATE_EXPECTED=1 poetry run pytest
+Placocystida of rank Subfamily expected to end with suffix "inae"
 Protologue not flagged: acalephida in 1817b_cuvier
 Protologue not flagged: acephala-class in 1798_cuvier
 Protologue not flagged: alanisicystis in 1990_ubaghs_vizcaïno
