@@ -10728,8 +10728,8 @@ stromatocystitida:
 stromatocystitida-incertae-sedis:
   name: null
   rank: Family
-  auth: [linnaeus]
-  year: 1758
+  authority:
+    source: 2021_jell_sprinkle
 stromatocystitidae:
   name: Stromatocystitidae
   rank: Family
