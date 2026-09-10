@@ -179,7 +179,7 @@ taxonomies:
       children:
       - taxon: astrocystites
         provisional: true
-  - openTaxon: pelmatozoa-incertae-sedis
+  - openTaxon: pelmatozoa-uncertain-order_bassler_1936
     children:
     - taxon: cyclocystoididae
       children:

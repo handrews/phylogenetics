@@ -8305,11 +8305,12 @@ pelmatozoa-class:
 pelmatozoa-grade:
   rank: Grade
   altRankOf: pelmatozoa
-pelmatozoa-incertae-sedis:
+pelmatozoa-uncertain-order_bassler_1936:
   name: null
   rank: Order
-  auth: [linnaeus]
-  year: 1758
+  authority:
+    source: 1936_bassler
+  notes: printed "must be left at present as an uncertain order of Pelmatozoa" (p. 23)
 pelmatozoans:
   name: Pelmatozoans
   rank: Group
@@ -8565,7 +8566,8 @@ placocystella:
   year: 1936
 placocystida:
   name: Placocystida
-  rank: Suborder
+  rank: Subfamily
+  notes: printed "Subfamilia" (Haeckel 1896 p. 37)
   auth: [haeckel]
   year: 1896
 placocystidae:
