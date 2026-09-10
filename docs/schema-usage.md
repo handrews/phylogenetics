@@ -79,11 +79,11 @@ property. `personal` is counted separately.
 | `quotes` | 1 | 0.3% | 0 |
 | `reading` | 1 | 0.3% | 0 |
 
-### `authority` -- 1621 instances in `data/`
+### `authority` -- 1618 instances in `data/`
 
 | property | data | data % | personal |
 |---|---|---|---|
-| `source` | 1621 | 100.0% | 0 |
+| `source` | 1618 | 100.0% | 0 |
 | `pages` | 56 | 3.5% | 0 |
 | `illustrations` | 27 | 1.7% | 0 |
 | `attributedTo` | 24 | 1.5% | 0 |
@@ -207,21 +207,21 @@ property. `personal` is counted separately.
 | `neotype` | 0 | 0.0% | 0 |
 | `repository` | 0 | 0.0% | 0 |
 
-### `taxon` -- 2718 instances in `data/`
+### `taxon` -- 2719 instances in `data/`
 
 | property | data | data % | personal |
 |---|---|---|---|
-| `name` | 2679 | 98.6% | 0 |
-| `authority` | 1527 | 56.2% | 0 |
+| `name` | 2680 | 98.6% | 0 |
+| `authority` | 1524 | 56.1% | 0 |
 | `auth` | 963 | 35.4% | 0 |
 | `year` | 960 | 35.3% | 0 |
 | `rank` | 717 | 26.4% | 0 |
-| `notes` | 204 | 7.5% | 0 |
-| `altSpellingOf` | 160 | 5.9% | 0 |
+| `notes` | 207 | 7.6% | 0 |
+| `altSpellingOf` | 161 | 5.9% | 0 |
 | `lang` | 75 | 2.8% | 0 |
 | `originalParent` | 65 | 2.4% | 0 |
+| `altRankOf` | 48 | 1.8% | 0 |
 | `vulgarSpellingOf` | 47 | 1.7% | 0 |
-| `altRankOf` | 45 | 1.7% | 0 |
 | `in` | 26 | 1.0% | 0 |
 | `homonym` | 16 | 0.6% | 0 |
 | `bracket` | 13 | 0.5% | 0 |
@@ -239,7 +239,7 @@ property. `personal` is counted separately.
 | `taxon` | 5747 | 90.6% | 368 |
 | `children` | 2183 | 34.4% | 124 |
 | `new` | 1462 | 23.0% | 0 |
-| `notes` | 369 | 5.8% | 9 |
+| `notes` | 370 | 5.8% | 9 |
 | `type` | 367 | 5.8% | 105 |
 | `synonyms` | 358 | 5.6% | 49 |
 | `parents` | 326 | 5.1% | 38 |
@@ -250,20 +250,20 @@ property. `personal` is counted separately.
 | `authority` | 92 | 1.5% | 0 |
 | `specimens` | 88 | 1.4% | 0 |
 | `diagnosis` | 69 | 1.1% | 0 |
-| `year` | 58 | 0.9% | 2 |
-| `auth` | 55 | 0.9% | 2 |
+| `year` | 59 | 0.9% | 2 |
+| `auth` | 56 | 0.9% | 2 |
 | `emended` | 49 | 0.8% | 0 |
 | `bracket` | 35 | 0.6% | 0 |
 | `moved` | 29 | 0.5% | 0 |
 | `occurrences` | 26 | 0.4% | 31 |
-| `modifier` | 20 | 0.3% | 1 |
+| `modifier` | 22 | 0.3% | 1 |
 | `outgroup` | 19 | 0.3% | 0 |
 | `quoted` | 18 | 0.3% | 1 |
 | `pars` | 17 | 0.3% | 4 |
 | `affTaxon` | 16 | 0.3% | 0 |
+| `citedAs` | 16 | 0.3% | 0 |
 | `tentative` | 16 | 0.3% | 0 |
 | `cfTaxon` | 15 | 0.2% | 1 |
-| `citedAs` | 15 | 0.2% | 0 |
 | `questionable` | 12 | 0.2% | 3 |
 | `matrix` | 8 | 0.1% | 0 |
 | `rank` | 8 | 0.1% | 0 |
@@ -271,13 +271,13 @@ property. `personal` is counted separately.
 | `bootstrap` | 6 | 0.1% | 0 |
 | `corrected` | 6 | 0.1% | 0 |
 | `mergeInto` | 5 | 0.1% | 0 |
+| `editorial` | 4 | 0.1% | 0 |
+| `editorial.basis` | 4 | 100.0% | 0 |
 | `non` | 4 | 0.1% | 0 |
-| `editorial` | 3 | 0.0% | 0 |
-| `editorial.basis` | 3 | 100.0% | 0 |
 | `or` | 3 | 0.0% | 0 |
-| `editorial.source` | 2 | 66.7% | 0 |
+| `editorial.inferred` | 2 | 50.0% | 0 |
+| `editorial.source` | 2 | 50.0% | 0 |
 | `in` | 2 | 0.0% | 0 |
-| `editorial.inferred` | 1 | 33.3% | 0 |
 | `removed` | 1 | 0.0% | 0 |
 | `stem` | 1 | 0.0% | 0 |
 | `categories` | 0 | 0.0% | 0 |
@@ -475,7 +475,7 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
 | `phylogeny#/$defs/specimens/additionalProperties/items` | string/array | strx513, listx4 | `F. 5420`, `F. 5419`, `F. 5418`, `F. 5417` | - |
 | `phylogeny#/$defs/taxon/properties/holotype/additionalProperties/items` | array/string/integer | intx10, strx3 | `EE15373`, `EE 1659`, `E23470` | array |
-| `phylogeny#/$defs/taxon/properties/name` | string/null | strx2482, nullx197 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
+| `phylogeny#/$defs/taxon/properties/name` | string/null | strx2483, nullx197 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
 | `tree#/properties/diagnosis` | string/null | strx68, nullx1 | `A cast of it shows a con...`, `Body hemisphæric, slight...`, `A *Pyrgocystis* specimen...`, `Mouth surrounded and cov...` | - |
 | `tree#/properties/emended` | boolean/null | boolx49 | - | null |
 | `tree#/properties/matrix/items` | integer/string | intx139, strx5 | `?` | - |

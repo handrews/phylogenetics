@@ -64,6 +64,32 @@ recorded as a synonym; see [Terminology updates](#terminology-updates-1966--2023
 - Migrations are data-only wherever possible. Tree-node attribution fields
   (`authority`, `auth`, `year`, `in`) are not read by `phylohist/taxa.py`.
 
+### The `editorial` block
+
+A tree node's own fields record what the source printed: the resolved
+`taxon`, `auth`/`year`/`citedAs` as printed, and the printed flags.
+`editorial` sits beside them and never replaces any of them. It records what
+the data editor did that the printed line does not establish, and `basis`
+says on what evidence. Two kinds:
+
+- `source: <key>`: the printed citation cannot resolve as printed (in press,
+  wrong year, a page from another printing) and the editor resolves it to
+  this source record. The printed `auth`/`year`/`citedAs` stay (A6).
+- `inferred: true`: the node's existence or placement is the editor's, not
+  the source's (B20).
+
+What it is not for: an alternative authority, year or spelling. The name's
+true authority lives on the taxon record; a printed misspelling is an
+`altSpellingOf` record; a printed attribution that disagrees with the record
+is kept as printed and the disagreement is derived (B19), never stored.
+Bockelie 1981's "Balanticystis Ubaghs 1972" is the worked case: `auth`,
+`year`, `citedAs` as printed, identity through `balanticystis`
+(`altSpellingOf: balantiocystis`), the reading in `notes`, no `editorial`.
+
+Noted for later: an editor-verified marker for a discrepancy that is the
+source's own error, if the eval needs to separate verified from unverified
+ones. That would be a third kind, not a change to these two.
+
 ## Terminology updates, 1966 → 2023
 
 What changed between the two prefaces, and what it means for the data.
@@ -171,7 +197,8 @@ editorial block from B8:
 ```
 
 The same block covers a wrong page, a wrong year, or a citation to a reprint.
-It is editorial because the printed line alone does not establish it.
+It is editorial because the printed line alone does not establish it. See
+"The `editorial` block" under Ground rules.
 
 **A7. Printed year letters.** Bell writes "1858b" and "1896b" using his own
 bibliography's letters. They happen to match this dataset's `1858b_billings`
@@ -558,6 +585,15 @@ name resolution is rank-aware and returns every record; the claim table never
 merges on the string. The *Preface 2023* (xvii) says such duplication should
 not happen, which is why it must be modelled rather than assumed away.
 
+`altRankOf` is only the identity link between coordinate family-group names;
+it says nothing about who re-ranked. The act belongs to the tree of the source
+that did it (`modifier: nomen transl.` today, `act: [nomTransl]` after B6), so
+Smith 1985 (suborder Isorophina to subfamily Isorophinae) and Guensburg &
+Sprinkle 1994 (suborder Lebetodiscina to family Lebetodiscidae; families
+Lebetodiscidae, Carneyellidae and Pyrgocystidae to subfamilies) each carry
+their own. B6 will revisit whether the derived-from link should move into the
+tree as well.
+
 **B19. Secondhand claims that contradict their source.** Parsley 2021 (p.
 970) cites Dzik & Orłowski 1993 for a placement those authors argued against;
 Bockelie & Paul 1983 summarize Bell 1980 as placing Cyathocystina in "the
@@ -578,7 +614,8 @@ Agelacrinitidae". An inferred node needs a marker the claim table can read:
     basis: Agelacrinitidae is in Isorophida per Bell 1980, which the paper cites
 ```
 
-The claim table emits the placement as editorial, not as the source's.
+The claim table emits the placement as editorial, not as the source's. See
+"The `editorial` block" under Ground rules.
 
 **B21. A `non` entry that says where the usage belongs.** "non S. citrus
 HISINGER, 1837, p. 91, = Echinosphaerites aurantium (GYLLENHAAL)" (S229).

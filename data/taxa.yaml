@@ -1798,8 +1798,8 @@ carneyellidae:
 carneyellinae:
   name: Carneyellinae
   rank: Subfamily
-  authority:
-    source: 1976_bell.b.m
+  altRankOf: carneyellidae
+  notes: Re-ranked from family in 1994_guensburg_sprinkle
 carpoidea:
   name: Carpoidea
   rank: Class
@@ -6061,7 +6061,7 @@ isorophinae:
   name: Isorophinae
   rank: Subfamily
   altRankOf: isorophina
-  notes: Explicitly re-ranked from suborder (not family) in 1985_a.b.smith
+  notes: Explicitly re-ranked from suborder (not family) in 1985_smith.a.b
 isorophinid-incertae-sedis_sumrall_zamora_2011:
   name: null
   rank: Family
@@ -6381,7 +6381,7 @@ lebetodiscinae:
   name: Lebetodiscinae
   rank: Subfamily
   altRankOf: lebetodiscina
-  notes: Explicitly re-ranked from suborder (not family) in 1985_a.b.smith
+  notes: Explicitly re-ranked from suborder (not family) in 1985_smith.a.b
 lebetodiscus:
   name: Lebetodiscus
   auth: [bather]

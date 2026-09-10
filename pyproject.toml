@@ -14,7 +14,15 @@ coloredlog = "^0.2.5"
 pyyaml = "^6.0.3"
 jschon = "^0.11.1"
 
+[tool.poetry.group.dev.dependencies]
+pytest = "^8"
+
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+filterwarnings = [
+  "ignore::DeprecationWarning:rfc3986",
+]

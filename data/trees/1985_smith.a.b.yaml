@@ -56,7 +56,9 @@ taxonomies:
       - taxon: agelacrinitidae
         children:
         - taxon: isorophinae
+          modifier: nomen transl.
         - taxon: lebetodiscinae
+          modifier: nomen transl.
     - taxon: cyathocystida
       emended: true
       notes: sedis mutabilis

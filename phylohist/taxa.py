@@ -61,6 +61,17 @@ RANK_GROUPS = {
 }
 
 
+def _check_unregistered_author(author_string, where=None):
+  # A capitalised author string is the convention for an author with no
+  # record; when its key form is registered, the record was meant.
+  if Author.get(author_string.lower()):
+    at = f' at {where}' if where is not None else ''
+    logger.warning(
+      f'Unregistered author "{author_string}"{at} matches registered key '
+      f'"{author_string.lower()}"',
+    )
+
+
 class Authority:
   def __init__(self, data):
     self._source = None
@@ -137,6 +148,7 @@ class Authority:
 
       if author_string.lower() != author_string:
         # Currently, we do not have unregistered authors with given names.
+        _check_unregistered_author(author_string)
         authors.append(Author({'family': author_string}))
       else:
         if not (author := Author.get(author_string)):
@@ -592,6 +604,10 @@ class Tree:
 
       if self._data.get('new'):
         Tree._new_index[self._taxon.key].add(self._source.key)
+
+      for author_string in self._data.get('auth') or ():
+        if author_string.lower() != author_string:
+          _check_unregistered_author(author_string, where=self)
 
       # For now, only registered authors are supported in order to use
       # their unique keys.  TODO: Better options.

@@ -421,11 +421,18 @@ $defs:
         type: string
       editorial:
         $comment: |
-          Marks a statement that comes from the data editor rather than the
-          source: a resolution of a citation that cannot resolve as printed,
-          or a placement inferred from the text.
+          The editor's layer beside the printed fields, never a replacement
+          for them. `source` resolves a printed citation that cannot resolve
+          as printed (in press, wrong year, another printing) to a source
+          record while `auth`/`year`/`citedAs` stay as printed. `inferred`
+          marks a node whose existence or placement is the editor's, not the
+          source's. Not for an alternative authority, year or spelling: the
+          true authority lives on the taxon record, a misspelling is an
+          `altSpellingOf` record, and a wrong printed attribution is kept as
+          printed with the disagreement derived.
         type: object
         additionalProperties: false
+        required: [basis]
         anyOf:
         - required: [source]
         - required: [inferred]

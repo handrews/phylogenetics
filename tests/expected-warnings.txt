@@ -1,0 +1,163 @@
+# Expected WARNING-level messages from loading all data files.
+# A new line here is allowed only in a commit that adds a check; every line
+# is a resolution owed. Regenerate with:
+#   PHYLOHIST_UPDATE_EXPECTED=1 poetry run pytest
+Protologue not flagged: acalephida in 1817b_cuvier
+Protologue not flagged: acephala-class in 1798_cuvier
+Protologue not flagged: alanisicystis in 1990_ubaghs_vizcaïno
+Protologue not flagged: ananchytes_leske_1778 in 1778_leske
+Protologue not flagged: arachnida in 1801_lamarck
+Protologue not flagged: armata_forbes_1848 in 1848b_forbes
+Protologue not flagged: articulata in 1821_miller.j.s
+Protologue not flagged: aurita_linnaeus_1758 in 1758_linnaeus
+Protologue not flagged: baccata_forbes_1848 in 1848b_forbes
+Protologue not flagged: beroe_linnaeus_1758 in 1758_linnaeus
+Protologue not flagged: bicordata_leske_1778 in 1778_leske
+Protologue not flagged: biperforatus_leske_1778 in 1778_leske
+Protologue not flagged: blastoidea in 1825a_say
+Protologue not flagged: brissus in 1816b_lamarck
+Protologue not flagged: caput medusae_linnaeus_1758 in 1758_linnaeus
+Protologue not flagged: caribaearum_lamarck_1801 in 1801_lamarck
+Protologue not flagged: carinata_leske_1778 in 1778_leske
+Protologue not flagged: cephalopoda-order in 1798_cuvier
+Protologue not flagged: cidaridae in 1825_gray.j.e
+Protologue not flagged: coccinia_müller.o.f_1776 in 1776_müller.o.f
+Protologue not flagged: colpoda in 1773_müller.o.f
+Protologue not flagged: corallium in 1798_cuvier
+Protologue not flagged: crassicornis_müller.o.f_1776 in 1776_müller.o.f
+Protologue not flagged: crinoidea in 1821_miller.j.s
+Protologue not flagged: cyathocystida in 1975_bell.b.m
+Protologue not flagged: cyathocystids in 1975_bell.b.m
+Protologue not flagged: cyclaster_billings_1857 in 1857_billings
+Protologue not flagged: cyclostoma_leske_1778 in 1778_leske
+Protologue not flagged: cystidea in 1844_buch
+Protologue not flagged: dentata_leske_1778 in 1778_leske
+Protologue not flagged: devonica_bassler_1936 in 1936_bassler
+Protologue not flagged: diploporita-class in 1854_müller.j.p
+Protologue not flagged: droebachiensis_müller.o.f_1776 in 1776_müller.o.f
+Protologue not flagged: echinidae in 1825_gray.j.e
+Protologue not flagged: echinodermata in 1791_bruguière
+Protologue not flagged: echinoencrinites in 1826_meyer
+Protologue not flagged: echinoidea in 1778_leske
+Protologue not flagged: echinorhynchus in 1773_müller.o.f
+Protologue not flagged: edrioasteroidea in 1858b_billings
+Protologue not flagged: effœta_linnaeus_1767 in 1767_linnaeus
+Protologue not flagged: emarginata_leske_1778 in 1778_leske
+Protologue not flagged: eocystis in 1900_bather
+Protologue not flagged: fistulidæ in 1801_lamarck
+Protologue not flagged: foerstei_bassler_shideler_1936 in 1936_bassler
+Protologue not flagged: galeritidae in 1825_gray.j.e
+Protologue not flagged: glyptosphaerites in 1854_müller.j.p
+Protologue not flagged: goniocrinites in 1840_eichwald
+Protologue not flagged: henicocystinae in 1983_jell
+Protologue not flagged: hillocystinae in 1983_jell
+Protologue not flagged: isorophids in 1976_bell.b.m
+Protologue not flagged: jewetti_hall_1852 in 1852_hall
+Protologue not flagged: koenigii_murchison_1839 in 1839_murchison
+Protologue not flagged: laevigata_linnaeus_1758 in 1758_linnaeus
+Protologue not flagged: laevis_miller.j.s_1821 in 1821_miller.j.s
+Protologue not flagged: lernaea in 1758_linnaeus
+Protologue not flagged: mollasses_radiares in 1801_lamarck
+Protologue not flagged: mollasses_vers in 1816a_lamarck
+Protologue not flagged: mollusca in 1758_linnaeus
+Protologue not flagged: nudus_linnaeus_1767 in 1767_linnaeus
+Protologue not flagged: oblongus_pander_1830 in 1830_pander
+Protologue not flagged: ochracea_linnaeus_1758 in 1758_linnaeus
+Protologue not flagged: ostracion in 1758_linnaeus
+Protologue not flagged: palaeaster in 1852_hall
+Protologue not flagged: palaeocystites in 1858a_billings
+Protologue not flagged: pelmatozoa in 1848_leuckart
+Protologue not flagged: penicillus_bruguière_1789 in 1789a_bruguière
+Protologue not flagged: physalia in 1801_lamarck
+Protologue not flagged: plumosa_müller.o.f_1776 in 1776_müller.o.f
+Protologue not flagged: polypi in 1815_lamarck
+Protologue not flagged: porpita in 1801_lamarck
+Protologue not flagged: proboscidea_bruguière_1791 in 1791_bruguière
+Protologue not flagged: protocrinites in 1840_eichwald
+Protologue not flagged: pustulosa_leske_1778_ananchytes in 1778_leske
+Protologue not flagged: radiata in 1801_lamarck
+Protologue not flagged: radiatae in 1758_linnaeus
+Protologue not flagged: rufa_müller.o.f_1776 in 1776_müller.o.f
+Protologue not flagged: saccatus_linnaeus_1767 in 1767_linnaeus
+Protologue not flagged: scutellidae in 1825_gray.j.e
+Protologue not flagged: scyllaea in 1758_linnaeus
+Protologue not flagged: senilis_linnaeus_1767 in 1767_linnaeus
+Protologue not flagged: spatangidae in 1825_gray.j.e
+Protologue not flagged: sphaeroides_linnaeus_1758 in 1758_linnaeus
+Protologue not flagged: sphaeronites in 1828_hisinger
+Protologue not flagged: stellatae in 1758_linnaeus
+Protologue not flagged: stelleridæ in 1801_lamarck
+Protologue not flagged: subrotunda_leske_1778 in 1778_leske
+Protologue not flagged: toreumaticus_leske_1778 in 1778_leske
+Protologue not flagged: tubulosa_müller.o.f_1776 in 1776_müller.o.f
+Protologue not flagged: variegatus_leske_1778 in 1778_leske
+Protologue not flagged: velella in 1801_lamarck
+Protologue not flagged: vertebrata in 1801_lamarck
+Protologue not flagged: viduata_müller.o.f_1776 in 1776_müller.o.f
+Protologue not flagged: zoophyta-class in 1758_linnaeus
+Protologue not flagged: zoophytes-phylum in 1817a_cuvier
+Unregistered author "Banks" matches registered key "banks"
+Unregistered author "Bather" matches registered key "bather"
+Unregistered author "Buch" matches registered key "buch"
+Unregistered author "Burrett" matches registered key "burrett"
+Unregistered author "Caster" matches registered key "caster"
+Unregistered author "David" matches registered key "david"
+Unregistered author "Dehm" matches registered key "dehm"
+Unregistered author "Derstler" matches registered key "derstler"
+Unregistered author "Deshmukh" matches registered key "deshmukh"
+Unregistered author "Durham" matches registered key "durham"
+Unregistered author "Eichwald" at Hall (1847)[1]/echinodermata-class/0/crinoidea-order/2/cystidea-family/0/echino-encrinites/4/synonyms/goniocrinites matches registered key "eichwald"
+Unregistered author "Fatka" matches registered key "fatka"
+Unregistered author "Foerste" matches registered key "foerste"
+Unregistered author "Garbisch" matches registered key "garbisch"
+Unregistered author "Gibson" matches registered key "gibson"
+Unregistered author "Gil Cid" matches registered key "gil cid"
+Unregistered author "Gill" matches registered key "gill"
+Unregistered author "Goldfuss" at Eichwald (1840)[0]/strahlthiere/0/crinoideen/1/cyathocrinites/0/planus_miller.j.s_1821 matches registered key "goldfuss"
+Unregistered author "Goldfuss" matches registered key "goldfuss"
+Unregistered author "Grant" matches registered key "grant"
+Unregistered author "Guensburg" matches registered key "guensburg"
+Unregistered author "Haeckel" matches registered key "haeckel"
+Unregistered author "Hall" matches registered key "hall"
+Unregistered author "Holloway" matches registered key "holloway"
+Unregistered author "Jell" matches registered key "jell"
+Unregistered author "Kammer" matches registered key "kammer"
+Unregistered author "Klein" at Sprinkle (1973)[0]/echinodermata matches registered key "klein"
+Unregistered author "Kordule" matches registered key "kordule"
+Unregistered author "Latreille" matches registered key "latreille"
+Unregistered author "Lefebvre" matches registered key "lefebvre"
+Unregistered author "Lerosey-Aubril" matches registered key "lerosey-aubril"
+Unregistered author "Leuckart" matches registered key "leuckart"
+Unregistered author "Matsumoto" matches registered key "matsumoto"
+Unregistered author "Meek" matches registered key "meek"
+Unregistered author "Mintz" at Parsley (1982)[0]/echinodermata/0/crinozoa/0/paracrinoidea/1/platycystitida/0/platycystitidae/0/platycystites/2/cristatus_bassler_1943/0/non/cristatus_bassler_1943 matches registered key "mintz"
+Unregistered author "Mintz" matches registered key "mintz"
+Unregistered author "Mooi" matches registered key "mooi"
+Unregistered author "Moore" matches registered key "moore"
+Unregistered author "Pander" at Hall (1847)[1]/echinodermata-class/0/crinoidea-order/2/cystidea-family/0/echino-encrinites/2/synonyms/echinosphærites matches registered key "pander"
+Unregistered author "Pope" matches registered key "pope"
+Unregistered author "Prokop" matches registered key "prokop"
+Unregistered author "Rahman" matches registered key "rahman"
+Unregistered author "Ramsbottom" matches registered key "ramsbottom"
+Unregistered author "Rievers" matches registered key "rievers"
+Unregistered author "Robison" matches registered key "robison"
+Unregistered author "Roux" matches registered key "roux"
+Unregistered author "Rozhnov" matches registered key "rozhnov"
+Unregistered author "Régnault" matches registered key "régnault"
+Unregistered author "Savage" matches registered key "savage"
+Unregistered author "Schlotheim" matches registered key "schlotheim"
+Unregistered author "Spencer" matches registered key "spencer"
+Unregistered author "Springer" matches registered key "springer"
+Unregistered author "Strimple" at Parsley (1982)[0]/echinodermata/0/crinozoa/0/paracrinoidea/1/platycystitida/0/platycystitidae/0/platycystites/2/cristatus_bassler_1943/1/non/cristatus_bassler_1943 matches registered key "strimple"
+Unregistered author "Strimple" matches registered key "strimple"
+Unregistered author "Thompson" matches registered key "thompson"
+Unregistered author "Ulrich" matches registered key "ulrich"
+Unregistered author "Vanuxem" matches registered key "vanuxem"
+Unregistered author "Volborth" at Hall (1847)[1]/echinodermata-class/0/crinoidea-order/2/cystidea-family/0/echino-encrinites/5/synonyms/echino-encrinus matches registered key "volborth"
+Unregistered author "Volborth" matches registered key "volborth"
+Unregistered author "Wahlenberg" matches registered key "wahlenberg"
+Unregistered author "Walch" matches registered key "walch"
+Unregistered author "Walcott" matches registered key "walcott"
+Unregistered author "Whiteaves" matches registered key "whiteaves"
+Unregistered author "Worthen" matches registered key "worthen"
+Unregistered author "Zamora" matches registered key "zamora"
