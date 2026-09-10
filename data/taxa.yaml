@@ -3811,7 +3811,8 @@ edrioasteridae:
   name: Edrioasteridae
   rank: Family
   auth: [bather]
-  year: 1898
+  year: 1899
+  notes: from the 1898 meeting paper published 1899 (key-year rule); cited as both 1898 and 1899
 edrioasterids:
   name: Edrioasterids
   rank: Group
@@ -3890,8 +3891,7 @@ edrioblastoidea:
 edrioblastoidina:
   name: Edrioblastoidina
   rank: Suborder
-  auth: [fay]
-  year: 1962
+  altRankOf: edrioblastoidea
 edrioblastoids:
   name: Edrioblastoids
   rank: Group
@@ -5268,8 +5268,9 @@ hanoveri_thomas_1924:
   year: 1924
 haplocystis:
   name: Haplocystis
-  auth: [bather]
-  year: 1899
+  auth: [Roemer]
+  year: 1855
+  notes: Bather 1900 p. 208 credits C. F. Roemer (1855); Bather 1899 p. 923 lists it unattributed
 haplocystites:
   name: Haplocystites
   auth: [Roemer]
@@ -11120,7 +11121,8 @@ tiaracrinidae:
   name: Tiaracrinidae
   rank: Family
   authority:
-    source: 1900_bather
+    source: 1899_bather
+  notes: printed unattributed in Bather 1899 p. 921 and Bather 1900 p. 57
 timeischytes:
   name: Timeischytes
   auth: [Ehlers, kesling]
