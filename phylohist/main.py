@@ -67,8 +67,8 @@ def _report_missing_protologues(data):
   # our trees, the taxon should show up flagged `new` in it.
   missing = 0
   for taxon in Taxon._taxa.values():
-    # Open taxa and spelling/rank variants have no protologue to flag.
-    if taxon.name is None or taxon.alias_of is not None:
+    # Open taxa and derivative records have no protologue to flag.
+    if taxon.name is None or taxon.derivative_of is not None:
       continue
     source = taxon.authority.source
     if source is None or source.key not in data['trees']:

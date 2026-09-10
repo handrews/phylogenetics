@@ -420,7 +420,7 @@ $defs:
       notes:
         type: string
       editorial:
-        $comment: |
+        description: |
           The editor's layer beside the printed fields, never a replacement
           for them. `source` resolves a printed citation that cannot resolve
           as printed (in press, wrong year, another printing) to a source

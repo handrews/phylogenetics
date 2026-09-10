@@ -445,9 +445,10 @@ class Taxon:
     return self._authority
 
   @property
-  def alias_of(self):
-    # The record this one is a spelling or rank variant of, if any; such
-    # records borrow their authority and never have a protologue of their own.
+  def derivative_of(self):
+    # The record this one derives from (a spelling, vulgar or rank variant),
+    # if any; the authority is borrowed from it, so there is no protologue of
+    # this record's own.
     return self._alt
 
 

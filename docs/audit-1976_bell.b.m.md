@@ -133,13 +133,7 @@ override.
    most generic characters is questionable". The tree marks *jasperensis*,
    *alpenensis* and *saratogensis* `provisional` for the same printed form;
    *valcourensis* should match.
-3. **Attribution to check.** `taxa.yaml` credits Carneyellinae, Isorophinae
-   and Lebetodiscinae to `1976_bell.b.m`, but the monograph's text contains no
-   subfamily names of its own (its only "subfamily" mentions quote Jaekel's
-   Hemicystida and Asterocystida, p. 7), and the tree file has no subfamily
-   nodes. Surfaced by the protologue check added in step 0; either the
-   authority is another work or the nodes are missing here.
-4. **Capture, in priority order for the gold slice:** the rest of the
+3. **Capture, in priority order for the gold slice:** the rest of the
    *Lebetodiscus* synonymy; the *L. dicksoni* synonymy and material; the
    "Others" placements on p. 50; then the same for the remaining
    Edrioasteroidea genera.
