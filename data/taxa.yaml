@@ -394,11 +394,12 @@ amphitrite:
   name: Amphitrite
   auth: [müller.o.f]
   year: 1771
-amphorida:
-  name: Amphorida
-  rank: Order
-  auth: [haeckel]
-  year: 1896
+amphoridea:
+  name: Amphoridea
+  rank: Class
+  authority:
+    source: 1896a_haeckel
+  notes: printed "Classe" (p. 2)
 ampulla_bruguière_1789:
   name: ampulla
   authority:
@@ -3262,8 +3263,8 @@ dimerocrinites-subgenus:
     source: 1839_murchison
 dinocystis:
   name: Dinocystis
-  auth: [bather]
-  year: 1898
+  authority:
+    source: 1898_bather
 diplobathrida:
   name: Diplobathrida
   rank: Order
@@ -5147,7 +5148,7 @@ gravus_bockelie_1981:
 grayae_bather_1915:
   name: grayae
   authority:
-    source: 1915_bather
+    source: 1915a_bather
   holotype: {NHMUK: [E23470]}
 graysoni_sumrall_sprinkle_bonem_2006:
   name: graysoni
@@ -6385,8 +6386,8 @@ lebetodiscinae:
   notes: Explicitly re-ranked from suborder (not family) in 1985_smith.a.b
 lebetodiscus:
   name: Lebetodiscus
-  auth: [bather]
-  year: 1908
+  authority:
+    source: 1908_bather
 lebetodiscus-subgenus:
   name: Lebetodiscus
   rank: subgenus

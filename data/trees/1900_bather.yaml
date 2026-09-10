@@ -22,7 +22,7 @@ taxonomies:
                 children:
                 - taxon: cystidea
                   children:
-                  - taxon: amphorida
+                  - taxon: amphoridea
                     notes: "Haekel (1896, pars)"
                     children:
                     - taxon: aristocystidae
