@@ -1416,20 +1416,37 @@
   pages:
   - 5
   - 12
+  plates:
+  - 2
+  - 2
+  pubDate:
+    year: 1915
+    month: 1
+  notes: |
+    "Decade VI" is recorded as the series. First part, January number:
+    the genus and P. sardesoni, the genotype. Plate III "containing the
+    figures of Pyrgocystis grayae, will be given with" the second part
+    (p. 10), which is 1915b_bather; a tree for this study should merge the
+    two.
+  authors:
+  - bather
+1915b_bather:
+  title: Studies in Edrioasteroidea. VI. Pyrgocystis, n.g. (continued)
+  journal: geomag
+  series: 6
+  volume: 2
+  pages:
   - 49
   - 60
   plates:
-  - 2
+  - 3
   - 3
   pubDate:
     year: 1915
-    months:
-    - 1
-    - 2
+    month: 2
   notes: |
-    "Decade VI" is recorded as the series. Printed in two parts: pp. 5–12
-    with plates II and III in the January number, pp. 49–60 in the
-    February number.
+    "Decade VI" is recorded as the series. Second part, February number,
+    continuing 1915a_bather: P. grayae and P. ansticei, with plate III.
   authors:
   - bather
 1929_matsumoto:

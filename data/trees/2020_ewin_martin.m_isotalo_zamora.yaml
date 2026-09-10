@@ -86,7 +86,7 @@ taxonomies:
               - parents:
                 - taxon: pyrgocystis
                 authority:
-                  source: 1915a_bather
+                  source: 1915b_bather
                   pages: 58
                   illustrations:
                   - plate: 3
@@ -210,7 +210,7 @@ taxonomies:
                 parents:
                 - taxon: pyrgocystis
                 authority:
-                  source: 1915a_bather
+                  source: 1915b_bather
                   pages: 59
               - taxon: procera_aurivillius_1892
                 provisional: true
