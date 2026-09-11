@@ -1020,6 +1020,55 @@ Data checks:
 - Add `icthyocrinus: {name: Icthyocrinus, altSpellingOf: ichthyocrinus}` and
   cite it from the 1842 tree.
 
+## Hall 1866–1872 — the printings of the Hudson-river group crinoids and edrioasteroids
+
+Read from the 20th Annual Report (1867), its Revised Edition (title page
+1868, pasted note "completed in 1870") and the 24th Annual Report (1872),
+all with text layers; the review is `docs/reviews/review_hall_printings.md`.
+
+**What each printing holds.** The 1867 first edition prints no text of the
+paper, only the notice "This paper, to the 17th page, was published in
+November 1866. The illustrations … could not be engraved in time … The
+paper will therefore be deferred in its final publication to the next
+Report" (p. 304), naming four crinoid species added since. The Revised
+Edition drops the paper altogether. The 24th Report carries the whole text
+(pp. 205–224, with the Cincinnati paper pp. 225–232), the plates and
+captions, an errata sheet (p. 233), and a footnote that most of the text is
+a republication of the November 1866 material; the Cincinnati paper's
+footnote says "Published October, 1871, as advance sheets of the State
+Museum Report". So the citations resolve: "Hall 1866" is the advance
+sheets, "Hall 1871" the October 1871 pamphlet (not on hand), "Hall 1872"
+the 24th Report. `1866_hall` and `1872b_hall`/`1872c_hall` are the right
+records; the 1867 and 1870 volumes need none for this paper.
+
+**A genus born in an errata line (p. 233).** "Page 215, line 15, after
+AGELACRINUS insert (STREPTASTER)" is the only place *Streptaster* is
+introduced; no diagnosis exists. That is why Bell 1976 dates the genus 1872
+while its species *vorticellatus* is 1866. *Cystaster* is coined in a
+plate-caption footnote of the 1871 reissue. Two acts with no heading of
+their own; the record's `notes` carries the errata line.
+
+**A bracket that postdates its line.** "[Lepidodiscus]" on the 1866-dated
+species cannot be from the November 1866 sheets, since Meek & Worthen's
+genus is 1868; it was added for the 1871/1872 republication. The
+`lepidodiscus-subgenus` record's caution stands.
+
+**Bassler's "(Hall), 1856" for *stellatus*** (1936 p. 5) is his typo; his
+1935 paper prints 1866, and the printings agree.
+
+Data checks:
+
+- `streptaster`: year 1866 → 1872, with the errata line (done).
+- `1872c_hall`: note its October 1871 advance sheets (done); `1872a_hall`:
+  add Whitfield as co-author per the contents page (done).
+- `cincinnatiensis_hall_1866` is not a Hall name: p. 214 prints
+  "Rœm." with Roemer's 1851 citation; the record stands in for Hall's
+  misidentified specimen (fig. 7, pl. 6) that Bassler 1935 separated. A
+  misidentification record (B10), for the owner.
+- `vorticellata_hall_1866` is canonical with `vorticellatus` as the
+  variant, but every printing reads "vorticellatus"; likewise *pileus*
+  over `pilea`. For the owner.
+
 ## 1848b_forbes — Cystideæ of the Silurian Rocks of the British Islands (Mem. Geol. Surv. Gt. Britain 2)
 
 Read from the text layer, printed page = PDF index + 374; the Cystideæ paper (pp. 483–538) follows the companion Asteriadæ paper in the same continuous scan. The tree holds one taxonomy, no phylogeny, covering all 8 genera Forbes treats. Coverage in one sentence: new taxa, most synonymy lists, and the `or` alternative-name convention are captured; material, occurrences, illustrations and all but one diagnosis are not (G9).

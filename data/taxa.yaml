@@ -10685,8 +10685,12 @@ strangwaysii_koenig_1825:
   year: 1825
 streptaster:
   name: Streptaster
-  auth: [Hall]
-  year: 1866
+  auth: [hall]
+  year: 1872
+  notes: |
+    Enters print only through the errata of the 24th Annual Report (p. 233):
+    "Page 215, line 15, after AGELACRINUS insert (STREPTASTER)"; the 1866
+    advance sheets and the text as reprinted do not carry the name.
 striata_lamarck_1816_ananchytes:
   name: striata
   originalParent: ananchytes

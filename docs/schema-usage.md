@@ -56,7 +56,7 @@ property.
 | `audit` | 48 | 16.2% |
 | `audit.notes` | 48 | 100.0% |
 | `audit.state` | 48 | 100.0% |
-| `notes` | 30 | 10.1% |
+| `notes` | 31 | 10.4% |
 | `audit.coverage` | 29 | 60.4% |
 | `processDates.online` | 28 | 29.8% |
 | `identifiers.jstor` | 24 | 11.5% |
@@ -168,14 +168,14 @@ property.
 | `localStageRange` | 0 | 0.0% |
 | `tentative` | 0 | 0.0% |
 
-### `person` -- 276 instances in `data/`
+### `person` -- 277 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `family` | 276 | 100.0% |
-| `given` | 276 | 100.0% |
-| `birth` | 78 | 28.3% |
-| `death` | 77 | 27.9% |
+| `family` | 277 | 100.0% |
+| `given` | 277 | 100.0% |
+| `birth` | 79 | 28.5% |
+| `death` | 78 | 28.2% |
 | `suffix` | 0 | 0.0% |
 
 ### `phylogeny` -- 36 instances in `data/`
@@ -219,7 +219,7 @@ property.
 | `auth` | 956 | 35.1% |
 | `year` | 953 | 35.0% |
 | `rank` | 716 | 26.3% |
-| `notes` | 213 | 7.8% |
+| `notes` | 214 | 7.9% |
 | `altSpellingOf` | 165 | 6.1% |
 | `lang` | 75 | 2.8% |
 | `originalParent` | 65 | 2.4% |
@@ -493,7 +493,7 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/article/properties/volume` | integer/string | intx217, strx9 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `4th Series` | - |
 | `phylogeny#/$defs/basicOccurrence/properties/unit` | string/array | listx20, strx1 | `Craighead inlier` | - |
 | `phylogeny#/$defs/citationNumber` | integer/string | intx643, listx344, strx183 | `IX`, `VIII`, `V`, `b` | - |
-| `phylogeny#/$defs/person/properties/death` | integer/null | intx76, nullx1 | - | - |
+| `phylogeny#/$defs/person/properties/death` | integer/null | intx77, nullx1 | - | - |
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
 | `phylogeny#/$defs/specimens/additionalProperties/items` | string/array | strx513, listx4 | `F. 5420`, `F. 5419`, `F. 5418`, `F. 5417` | - |
 | `phylogeny#/$defs/taxon/properties/holotype/additionalProperties/items` | array/string/integer | intx10, strx3 | `EE15373`, `EE 1659`, `E23470` | array |
