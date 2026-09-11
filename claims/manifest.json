@@ -1503,7 +1503,8 @@
   },
   "1854c_billings": {
    "acts": {
-    "new": 6
+    "new": 6,
+    "type": 1
    },
    "audit": {
     "coverage": {
@@ -1521,7 +1522,8 @@
     "state": "partial"
    },
    "claims": {
-    "act": 6,
+    "act": 7,
+    "editorial": 1,
     "material": 5,
     "placement": 8,
     "usage": 9

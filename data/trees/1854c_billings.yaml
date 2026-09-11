@@ -9,6 +9,10 @@ taxonomies:
     - taxon: punctuatus_billings_1854
       new: true
       pages: 270
+      type: true
+      editorial:
+        inferred: [type]
+        basis: Apparent monotypy.
       illustrations:
       - page: 270
         figures:

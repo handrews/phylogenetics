@@ -243,7 +243,7 @@ property.
 | `children` | 2184 | 34.4% |
 | `new` | 1461 | 23.0% |
 | `notes` | 378 | 6.0% |
-| `type` | 367 | 5.8% |
+| `type` | 368 | 5.8% |
 | `synonyms` | 361 | 5.7% |
 | `parents` | 326 | 5.1% |
 | `openTaxon` | 219 | 3.4% |
@@ -273,13 +273,13 @@ property.
 | `rank` | 7 | 0.1% |
 | `bootstrap` | 6 | 0.1% |
 | `corrected` | 6 | 0.1% |
-| `editorial` | 5 | 0.1% |
-| `editorial.basis` | 5 | 100.0% |
+| `editorial` | 6 | 0.1% |
+| `editorial.basis` | 6 | 100.0% |
 | `mergeInto` | 5 | 0.1% |
+| `editorial.inferred` | 4 | 66.7% |
 | `non` | 4 | 0.1% |
-| `editorial.inferred` | 3 | 60.0% |
 | `or` | 3 | 0.0% |
-| `editorial.source` | 2 | 40.0% |
+| `editorial.source` | 2 | 33.3% |
 | `in` | 2 | 0.0% |
 | `removed` | 1 | 0.0% |
 | `stem` | 1 | 0.0% |
@@ -499,7 +499,7 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/taxon/properties/holotype/additionalProperties/items` | array/string/integer | intx10, strx3 | `EE15373`, `EE 1659`, `E23470` | array |
 | `phylogeny#/$defs/taxon/properties/name` | string/null | strx2486, nullx196 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
 | `tree#/properties/diagnosis` | string/null | strx68, nullx1 | `A cast of it shows a con...`, `Body hemisphæric, slight...`, `A *Pyrgocystis* specimen...`, `Mouth surrounded and cov...` | - |
-| `tree#/properties/editorial/properties/inferred` | boolean/array | boolx2, listx1 | - | - |
+| `tree#/properties/editorial/properties/inferred` | boolean/array | listx2, boolx2 | - | - |
 | `tree#/properties/emended` | boolean/null | boolx50 | - | null |
 | `tree#/properties/matrix/items` | integer/string | intx139, strx5 | `?` | - |
 
