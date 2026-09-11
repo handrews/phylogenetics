@@ -1155,6 +1155,37 @@ Data checks:
   stays with 1900_bather, as Bather 1914 and Webby 1968 both say.
 - `parablastoidea`: author key lowercased to the registered `hudson`.
 
+## Dames 1879 and Jaekel 1927 — the cyathocystid protologues
+
+**The Neues Jahrbuch page is not Schmidt's paper.** Printed p. 1001 of the
+1879 Jahrgang is a Referat signed "W. Dames", a third-person summary of
+Schmidt's "Über Cyathocystis Plautinae" in the Verhandlungen der
+Mineralogischen Gesellschaft zu St. Petersburg, 1879, which is not on hand.
+No "n. g." or "n. sp." is printed; the acts are Dames's paraphrase, and
+the genus is compared with the edrioasterids and said to have "mehr
+Analogieen mit Asteriden als mit Cystideen". Recorded as `1879_dames`, a
+source whose every statement is secondhand; the year question (Schmidt
+1879 or 1880) needs Schmidt's own volume.
+
+**Jaekel 1927, three dates for one paper.** Communicated 27 October 1926,
+"Tryckt den 21 februari 1927" (p. 5), and issued in Häfte 2 of Band 19 on
+3 November 1927: the separate printing keys the record, the other two go
+in `processDates`. The family name shifts within four pages, Cyathocystidae,
+Cyathothecidae and the heading "Fam. Thecocystidae"; the type of
+*Cyathotheca suecica* is fixed by monotypy without the words; *Cyathocystis
+corallum* is recombined to *Cyathotheca* only in the plate caption; and
+Jaekel cites Schmidt as "1889", the likely origin of the
+`rhizophora_schmidt_1889` key.
+
+Data checks:
+
+- `cyathotheca`, `suecica_jaekel_1927` → source 1927_jaekel (done);
+  `cyathocystis` keeps Schmidt 1879 with the Referat noted.
+- `rhizophora_schmidt_1889`: printed 1879 in the Referat; the 1889 rests on
+  Jaekel's footnote.
+- Schema: `specimens.repository` is declared but absent from the
+  `propertyNames` enum, so it cannot be used; for D1.
+
 ## 1848b_forbes — Cystideæ of the Silurian Rocks of the British Islands (Mem. Geol. Surv. Gt. Britain 2)
 
 Read from the text layer, printed page = PDF index + 374; the Cystideæ paper (pp. 483–538) follows the companion Asteriadæ paper in the same continuous scan. The tree holds one taxonomy, no phylogeny, covering all 8 genera Forbes treats. Coverage in one sentence: new taxa, most synonymy lists, and the `or` alternative-name convention are captured; material, occurrences, illustrations and all but one diagnosis are not (G9).

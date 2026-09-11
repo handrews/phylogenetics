@@ -39,6 +39,10 @@ arch-min-geo:
   name: Archiv für Mineralogie, Geognosie, Bergbau und Hüttenkunde
 arch-nat:
   name: Archiv für die gesammte Naturlehre
+arkiv-zool:
+  name: Arkiv för Zoologi
+  publisher: Kungliga Svenska Vetenskapsakademien
+  place: Stockholm
 atlantic-geo:
   name: Atlantic Geology
 bericht-berlin:
@@ -191,6 +195,10 @@ nat-hist-crinoidea:
   name: A Natural History of the Crinoidea, or Lily-Shaped Animals
 nat-hist-ny:
   name: Natural History of New York
+neues-jahrbuch:
+  name: Neues Jahrbuch für Mineralogie, Geologie und Paläontologie
+  publisher: E. Schweizerbart'sche Verlagshandlung
+  place: Stuttgart
 norsk-geo-tid:
   name: Norsk Geologisk Tidsskrift
 nova-acta-ups:

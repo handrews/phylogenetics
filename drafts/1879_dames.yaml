@@ -1,0 +1,99 @@
+# DRAFT -- for human audit only, not ready to commit.
+#
+# NEW TAXA RECORDS NEEDED: none -- cyathocystis, plautinae_schmidt_1879,
+# rhizophora_schmidt_1889, agelacrinus, edrioaster, hemicystis and cystaster
+# all already exist in data/taxa.yaml.
+
+notes: |
+  Records W. Dames's Referat (review/abstract) of Fr. Schmidt's paper, not
+  Schmidt's own protologue text: Schmidt's paper (Verhandlungen der
+  Mineralogischen Gesellschaft zu St. Petersburg, 1879) is not on hand, and
+  the whole entry narrates in the third person, closing with the reviewer's
+  own signature. Heading and byline, in full (p. 1001): "Fr. Schmidt: Über
+  Cyathocystis Plautinae, eine neue Cystideenform aus Reval. (Petersburger
+  Mineralog. Gesellschaft 1879)." ... "W. Dames." -- the same pattern as
+  the neighbouring abstracts in this Referate department, each signed with
+  the reviewer's own name, not the reviewed author's. Every statement below
+  is therefore Dames's account of Schmidt's paper, not Schmidt's own words;
+  nothing is marked `new`, since Dames reports Schmidt's act rather than
+  performing one himself.
+
+taxonomies:
+- taxon: cyathocystis
+  citedAs: Cyathocystis
+  auth: [Schmidt]
+  year: 1879
+  pages: 1001
+  notes: |
+    No parent node is entered: the group Dames places the genus with is
+    named only by an OCR-illegible author. "Die neue Gattung gehört in die
+    S[OCR: "SrıLzına"]'sche Gruppe der Edrioasteriden mit Agelacrinus,
+    Edrioaster, Hemicystis und C[OCR: "Oystastes"], die mehr Analogieen mit
+    Asteriden als mit Cystideen zeigen." (p. 1001) -- "The new genus
+    belongs in [a named author]'s group of the Edrioasterids, with
+    Agelacrinus, Edrioaster, Hemicystis and Cystaster, which show more
+    analogies with Asterids than with Cystids." The classifying author's
+    name cannot be resolved with confidence (candidates considered and
+    rejected on spelling grounds: Stoliczka, who appears two entries later
+    in the same section; Zittel; Stur), so no parent taxon is entered for
+    this specific, smaller group; the bare class-level "Edrioasteriden" is
+    legible but is not the same thing as the illegible named subgroup
+    within it.
+
+    Comparators as printed: Agelacrinus (spelling as printed, not
+    Agelacrinites), Edrioaster, Hemicystis (not Hemicystites), and OCR
+    "COystastes" (almost certainly Cystaster Hall).
+
+    Not called a cystid, despite Schmidt's own paper title (as quoted in
+    the heading above) calling it "eine neue Cystideenform" (a new
+    cystoid-type form): this classifying sentence instead explicitly
+    aligns the genus with the Edrioasteroids/Asteroids over the Cystoids.
+    Whether that tension is Schmidt's own hedge or Dames's editorial gloss
+    cannot be told from a third-person review.
+  children:
+  - taxon: plautinae_schmidt_1879
+    citedAs: Cyathocystis Plautinae
+    pages: 1001
+    occurrences:
+    - unit: Echinosphäritenkalk
+      location:
+      - Reval
+      notes: |
+        "aus dem Echinosphäritenkalk (= der oberen Abtheilung des
+        Orthocerenkalks nach des Autors neuester Eintheilung des
+        Untersilur) von Reval" (p. 1001) -- "from the Echinosphäritenkalk
+        (= the upper division of the Orthocerenkalk, per the author's
+        newest subdivision of the Lower Silurian), from Reval."
+    notes: |
+      "gesammelt von der Generalin Plautin und nach ihr benannt" (p. 1001)
+      -- "collected by the Generalin [general's wife] Plautin, and named
+      after her." No catalogue number, repository or specimen count is
+      printed; this is the only collecting information given, an eponym
+      note rather than a specimen record.
+  - taxon: rhizophora_schmidt_1889
+    citedAs: Cyathocystis rhizophora
+    auth: [Schmidt]
+    year: 1879
+    pages: 1001
+    occurrences:
+    - unit: Jewesche Schicht
+      subunit: Hemicosmitenbank
+      notes: |
+        "aus der Hemicosmitenbank der Jeweschen Schicht (1b)" (p. 1001) --
+        "from the Hemicosmites-bank of the Jewe Stage (1b)." No locality is
+        stated beyond the unit name.
+    notes: |
+      "welche fast stets in mehreren zusammengewachsenen Kelchen vorkommt,
+      einen bedeutender entwickelten Wurzelhaftapparat und viel dickere
+      Kelchwände besitzt, bisher aber noch nie mit Deckel gefunden wurde"
+      (p. 1001) -- "which occurs almost always in several calyxes grown
+      together, has a markedly more developed rooting apparatus and much
+      thicker calyx walls, but has so far never been found with a lid."
+
+      `year: 1879` is entered here as printed in this source -- the whole
+      entry is dated 1879 throughout, with no separate year given for this
+      second species. The existing taxon record's year, 1889, is not
+      supported by anything in this Referat; per the companion review of
+      this file, "1889" more likely originates from Jaekel 1927's own
+      footnote citation of Schmidt (see drafts/1927_jaekel.yaml) than from
+      here.

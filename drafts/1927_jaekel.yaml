@@ -1,0 +1,248 @@
+# DRAFT -- for human audit only, not ready to commit.
+#
+# NEW TAXA RECORDS NEEDED: none -- thecoidea, thecocystidae, cyathocystidae,
+# cyathocystis, cyathotheca, suecica_jaekel_1927 and corallum_jaekel_1918 all
+# already exist in data/taxa.yaml; cyathotheca and suecica_jaekel_1927 have
+# authority already pointing to this source (1927_jaekel).
+
+notes: |
+  The protologue of Cyathotheca and C. suecica, "n. g. n. sp." per the
+  title (p. 1). Two files were checked and read identically: the
+  standalone article (1927-00-00-p_C.txt, pp. 1-5 plus Tafel 1) and the
+  bound Band 19 archive volume (indices 196-201), whose footer confirms
+  "Arkiv för zoologi. Bd 19 A. N:o 5." Three dates are printed for this one
+  paper -- communicated 27 October 1926, separately printed 21 February
+  1927 (the source record's `pubDate`), and collectively issued as Häfte 2
+  of Band 19 on 3 November 1927 -- none in conflict, just different
+  milestones.
+
+  The paper prints three distinct family-group names across four pages
+  (Cyathocystidae p. 1, Cyathothecidae and Thecocystidae both p. 4); which
+  one actually contains Cyathotheca is not resolvable from the text alone
+  -- see the `thecocystidae` node's notes below. Two footnote citations
+  read "1889" where every other source gives 1879/1880 (for Schmidt's
+  paper) or 1899 (for Jaekel's own "Stammesgeschichte der Pelmatozoen") --
+  almost certainly OCR/compositor "7"/"9" slips, not independently
+  confirmed; see the `cyathocystis` node below. The type of C. suecica is
+  fixed by unlabelled monotypy, not a printed type-species word (the same
+  shape as Fay 1962's Astrocystites ottawaensis, data/trees/1962_fay.yaml).
+  Cyathotheca corallum is a recombination of Jaekel's own 1918 Cyathocystis
+  corallum, visible only in the plate caption and never announced in the
+  running text.
+
+taxonomies:
+- taxon: thecoidea
+  pages: 1
+  notes: |
+    Cited as pre-existing, not defined in this paper: "sich ganz dem Typus
+    meiner neuen Klasse der Thecoidea einordnen" (p. 1) -- "fits entirely
+    the type of my new class Thecoidea."
+  children:
+  - taxon: thecocystidae
+    citedAs: "Fam. Thecocystidae"
+    pages: 4
+    notes: |
+      Heading and diagnosis, as printed (p. 4): "...die ich 1918 noch
+      einer Familie der Thecocystidae zurechnete. Es waren das
+      Stromatocystis Pompeckj, Thecocystis Jaekel und Cystaster Hall. Es
+      wird also nötig, die Familie meiner Thecocystidae zu einer Ordnung
+      zu erweitern und deren einzelnen Formenkreise ... als Familien
+      aufzufassen ... Für eine neue Familie der Cyathothecidae würde sich
+      nun folgende Definition ergeben: Fam. Thecocystidae. Theca
+      sackförmig aus einem Stück ..." -- "...which I in 1918 still
+      assigned to a family Thecocystidae. These were Stromatocystis
+      Pompeckj, Thecocystis Jaekel and Cystaster Hall. It thus becomes
+      necessary to expand the family of my Thecocystidae to an order and
+      to treat its individual form-circles ... as families ... For a new
+      family, the Cyathothecidae, the following definition now results:
+      Fam. Thecocystidae. Theca sack-shaped, of one piece ..."
+
+      The lead sentence announces a new family "Cyathothecidae" (evidently
+      meant for Cyathotheca, by the -theca- root), but the diagnosis
+      heading that immediately follows reads "Fam. Thecocystidae" instead
+      -- the name of Jaekel's own pre-existing family (his
+      "Stammesgeschichte der Pelmatozoen," 1899 [`thecocystidae`,
+      `1899_jaekel`], still used unchanged in his 1918 "System der
+      Pelmatozoen" for Stromatocystis, Thecocystis and Cystaster). Which
+      family -- if either -- this diagnosis actually names cannot be
+      resolved from the text alone; checked against both the standalone
+      article file and the bound Band 19 archive file, which read
+      identically. This paper separately proposes raising Thecocystidae to
+      Order rank and treating its "Formenkreise" (form-circles), plus
+      Bather's Pyrgocystidae, as families within it (p. 4) -- a
+      classification act stated in prose, with no formal Order name
+      printed.
+
+      A third, distinct family name, Cyathocystidae, is used earlier in
+      this same paper (p. 1) for Cyathocystis alone -- see the
+      `cyathocystis` node below -- so the paper prints three similar but
+      distinct family-group names across four pages (Cyathocystidae p. 1,
+      Cyathothecidae and Thecocystidae both p. 4), at most one of which
+      (the original Thecocystidae) is unambiguously identified with stated
+      content.
+
+      `thecocystidae`, the existing record (auth Jaekel, 1899), is used
+      here as the literal printed heading; whether Cyathotheca truly
+      belongs in that family's original content, or whether the heading is
+      a slip for the announced Cyathothecidae, is left open.
+    children:
+    - taxon: cyathotheca
+      new: true
+      citedAs: Cyathotheca
+      pages: [1, 4]
+      notes: |
+        Diagnosis, quoted in full (p. 4): "Die Diagnose unserer neuen
+        Gattung Cyathotheca würde demnach lauten: Theca unregelmässig,
+        becherförmig, aufgewachsen. Oben geschlossen durch 5 interradiale
+        Platten, neben denen abgesondert der After gelegen war." -- "The
+        diagnosis of our new genus Cyathotheca would accordingly read:
+        Theca irregular, cup-shaped, attached. Closed above by 5
+        interradial plates, beside which the anus lay separately." No
+        separate diagnosis is given for the species; the generic diagnosis
+        and the specimen description (pp. 2-3, monotypic) serve as both.
+
+        Distinguished from Cyathocystis on four stated differences (p. 3):
+        the whole oral field of Cyathotheca is only 5 plates ("die wohl
+        den äusseren und nicht den inneren Oralien von Cyathocystis
+        entsprechen würden"); Cyathotheca lacks marginal ("Saum-") plates
+        including the inner "Oralien"; it lacks the outer ring of marginal
+        plates present in Cyathocystis between the calyx rim and the
+        orals; and the anus lies outside the oral field (inside it, in
+        Cyathocystis).
+      children:
+      - taxon: suecica_jaekel_1927
+        new: true
+        citedAs: "Cyathotheca suecica n. g. n. sp."
+        pages: [[1, 5]]
+        type: true
+        editorial:
+          inferred: [type]
+          basis: |
+            Jaekel never prints "Genotyp"/"Typus" for suecica itself; the
+            species is monotypic (p. 1): "Es liegt nur ein Exemplar vor,
+            auf das Gattung und Art begründet sind, und das in den Fig.
+            1-3 der Taf. abgebildet ist." (Only one specimen is at hand,
+            on which the genus and species are founded, and which is
+            figured in Fig. 1-3 of the plate.)
+        specimens:
+          unknowntypes:
+          - "Riksmuseum, Stockholm (\"Orig. Riksmuseum. Stockholm,\" plate
+            caption p. 5): the sole specimen on which the genus and species
+            are founded (p. 1); no catalogue number or type-status word is
+            printed"
+        occurrences:
+        - unit: roter Leptaenakalk
+          location:
+          - Boda
+          - Dalarna
+          notes: |
+            Locality and horizon from the plate caption (p. 5): "roter
+            Leptaenakalk, Boda, Dalarna" (red Leptaena limestone). The
+            body text (p. 2) gives a vaguer, explicitly hedged locality
+            not used in the caption: "aus den roten eisenhaltigen
+            Kalkmergeln im südlichen Schweden, vermutlich aus der Gegend
+            von Boda, Dalarna" (from the red ferruginous limestone marls
+            in southern Sweden, presumably from the vicinity of Boda,
+            Dalarna) -- "Ein genaues Fundort war leider bei diesem Stück
+            nicht angegeben" (no precise locality was recorded for this
+            piece, p. 2). Age, stated separately (p. 5): "Geologische
+            Verbreitung im mittleren und vielleicht schon unteren
+            Ordovicium" (geological range: Middle, and perhaps already
+            Lower, Ordovician).
+        illustrations:
+        - plate: 1
+          figures: [1, 2, 3]
+          notes: |
+            "1 von oben, 2 von der einen, 3 von der anderen Seite. etwa
+            10:1; 3 a natürl. Grösse" (1 from above, 2 from one side, 3
+            from the other side; about 10:1; fig. 3a natural size) (p. 5).
+      - taxon: corallum_jaekel_1918
+        citedAs: "Cyathotheca corallum Jaekel sp."
+        pages: 5
+        synonyms:
+        - parents:
+          - taxon: cyathocystis
+          auth: [jaekel]
+          year: 1918
+          citedAs: Cyathocystis corallum
+          pages: 3
+          notes: |
+            "die ich als Cyathocystis corallum in meinem System der
+            Pelmatozoen pag. 112 abbildete" (p. 3) -- "which I figured as
+            Cyathocystis corallum in my System der Pelmatozoen, p. 112"
+            (Jaekel 1918, "Phylogenie und System der Pelmatozoen,"
+            Palaeont. Zeitschr. III, p. 112). The running text still uses
+            this original combination when citing Jaekel's own 1918
+            figure.
+        specimens:
+          additional:
+          - Museum Berlin (plate caption, p. 5); cited comparative
+            material, not new here, refigured from Jaekel's 1918 work
+        occurrences:
+        - location:
+          - Petersburg
+          notes: |
+            Plate caption (p. 5): "unteres Ordovicium Gegend von
+            Petersburg" (Lower Ordovician, vicinity of [St.] Petersburg).
+            Comparative material already published by Jaekel in 1918, not
+            new here.
+        illustrations:
+        - plate: 1
+          figures: [4, 5, 6]
+          notes: |
+            "4 von der Seite 9:1, 4 a in natürl. Grösse, 5 Theca von oben,
+            6 untere Ansatzfläche" (4 from the side, 9:1; 4a natural size;
+            5 theca from above; 6 lower attachment surface) (p. 5). OCR of
+            the caption's genus name reads "Cyatholheca corallum JAEKEL
+            sp."
+        notes: |
+          The recombination from Cyathocystis to Cyathotheca is visible
+          only by comparing this plate caption against the running text
+          (p. 3), which still cites the original combination; no sentence
+          anywhere states the transfer ("n. comb." or equivalent).
+    - taxon: cyathocystis
+      pages: 1
+      notes: |
+        Footnote 1 (p. 1) calls the type species "Genotyp": "Dieselben
+        sind 1889 von Friedr. Schmidt als Cyathocystis Plautinae (Genotyp)
+        aus dem Echinosphäritenkalk von Reval ... beschrieben worden" --
+        "These were described in 1889 by Friedr. Schmidt as Cyathocystis
+        Plautinae (Genotyp) from the Echinosphäritenkalk of Reval..." -- a
+        secondhand type-fixation statement about a genus Jaekel did not
+        himself erect, third party to Schmidt's own paper (not among the
+        supplied Schmidt review files either), years before the statement
+        Bockelie & Paul 1983 are usually cited for ("Type species --
+        Cyathocystis plautinae Schmidt, by monotypy," per
+        docs/source-observations.md). Schmidt's paper is cited here (same
+        footnote) as "Verhdl. d. Mineral. Ges. Petersburg 1889, [S.?] Nr.
+        12" -- every other citation of this work gives 1879 or 1880
+        (1879_dames, the Neues Jahrbuch Referat of the same paper, and
+        Bell 1975/Bassler 1935's citations of the Petersburg original), so
+        "1889" is very likely an OCR/compositor "7"/"9" slip, but this
+        cannot be confirmed. Left unresolved (no `editorial.source`)
+        rather than pointed at `1879_dames`: that record is a different
+        printing/venue (the Neues Jahrbuch review), not the Petersburg
+        Verhandlungen Jaekel cites here.
+
+        Placed here alongside Cyathotheca because Jaekel treats the two as
+        one widened family circle: "Durch Cyathotheca wird der engere
+        Verwandschaftskreis von Cyathocystis zu einem Familienkreis
+        erweitert" (p. 4) -- "Through Cyathotheca, the narrower circle of
+        relationship of Cyathocystis is widened to a family circle" --
+        while also stating their relationship "ist aus den erhaltenen
+        Skeletteilen kaum klarzustellen" (can hardly be clarified from the
+        preserved skeletal parts, p. 4): an explicit doubt, not a claim of
+        synonymy.
+
+        Footnote 2 (p. 1) separately credits Jaekel himself, not Bather,
+        with founding this genus's own family: "Da sie sich von deren
+        Typus erheblich entfernen, so habe ich sie zum Typus einer neuen
+        Familie der Cyathocystidae gemacht" (p. 1) -- "Since it differs
+        considerably from their type, I made it the type of a new family,
+        the Cyathocystidae" -- citing his own "Stammesgeschichte der
+        Pelmatozoen," Bd. I, p. 42, printed year "1889" here too (almost
+        certainly the same kind of slip, for 1899, the year of that work,
+        `1899_jaekel`; not independently verified). The existing
+        `cyathocystidae` taxon record credits this family to Bather, 1899,
+        not Jaekel -- a straight authorship disagreement between the two,
+        recorded here as printed and not resolved.

@@ -2846,11 +2846,15 @@ cyathocystis:
   name: Cyathocystis
   auth: [Schmidt]
   year: 1879
-  notes: 1935_bassler says 1880 for reasons unclear
+  notes: |
+    Schmidt's paper (Verh. Mineral. Ges. St. Petersburg, 1879) is not on hand;
+    known here through Dames's Referat (1879_dames). Bassler 1935 and Bell 1975
+    print 1880.
 cyathotheca:
   name: Cyathotheca
-  auth: [jaekel]
-  year: 1927
+  authority:
+    source: 1927_jaekel
+    pages: 1
 cyclaster:
   name: Cyclaster
   auth: [Cotteau]
@@ -10864,8 +10868,9 @@ sucis crispis_leske_1778:
     source: 1778_leske
 suecica_jaekel_1927:
   name: suecica
-  auth: [jaekel]
-  year: 1927
+  authority:
+    source: 1927_jaekel
+    pages: 1
 sulcata_aurivillius_1892:
   name: sulcata
   auth: [Aurivillius]

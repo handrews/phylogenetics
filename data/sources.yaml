@@ -1182,6 +1182,23 @@
     transmitted: 1871-04-18
   authors:
   - hall
+1879_dames:
+  title: "Fr. Schmidt: Über Cyathocystis Plautinae (Referat)"
+  journal: neues-jahrbuch
+  volume: 1879
+  pages:
+  - 1001
+  - 1001
+  pubDate:
+    year: 1879
+  authors:
+  - dames
+  notes: |
+    A Referat by W. Dames of Schmidt's paper in the Verhandlungen der
+    Mineralogischen Gesellschaft zu St. Petersburg, 1879, which is not on
+    hand; every statement here is Dames's account of Schmidt. The Heft's
+    issue date is not printed; the volume's closing notice is dated 15
+    October 1879. Later authors cite the genus as Schmidt 1879 and 1880.
 1887_billings.w.r:
   title: A new genus and three new species of crinoids from the Trenton Formation with notes on a large specimen of Dendrocrinus proboscidiatus
   journal: ottawa-naturalist
@@ -1541,6 +1558,30 @@
     year: 1927
   authors:
   - hudson
+1927_jaekel:
+  title: Cyathotheca suecica n. g. n. sp., eine Thecoidee des schwedischen Ordoviciums
+  journal: arkiv-zool
+  series: A
+  volume: 19
+  number: 5
+  pages:
+  - 1
+  - 5
+  plates:
+  - 1
+  - 1
+  pubDate:
+    year: 1927
+    month: 2
+    day: 21
+  processDates:
+    transmitted: 1926-10-27
+    issued: 1927-11-03
+  authors:
+  - jaekel
+  notes: |
+    "Tryckt den 21 februari 1927" (p. 5), the separate printing; communicated
+    27 October 1926; Häfte 2 of Band 19 issued 3 November 1927.
 1929_matsumoto:
   title: Outline of a classification of Echinoermata
   journal: tohoku
