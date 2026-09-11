@@ -1,0 +1,122 @@
+# DRAFT -- for human audit only, not ready to commit.
+#
+# NEW TAXA RECORDS NEEDED: none -- edrioasteroidea, steganoblastidae,
+# steganoblastus and ottawaensis_whiteaves_1897 all already exist in
+# data/taxa.yaml.
+
+notes: |
+  A re-description and re-classification of the type material, not a
+  nomenclatural act on the genus or family name. No "diagnosis" or "type
+  species" wording occurs anywhere in the study (checked exhaustively); its
+  own sections run "Previous History" -> "Material" -> "General
+  Description" -> "Description of the Specimens" -> "Relations of
+  Steganoblastus" -> "Explanation of Plate XV" -- a narrative
+  re-examination, not a systematic-palaeontology entry. No "Order",
+  "Class" or "Family" heading is set as a formal scaffold anywhere; the
+  classification chain below is assembled from the prose "Relations of
+  Steganoblastus" section (pp. 202-203), quoted in full on the
+  steganoblastus node.
+
+taxonomies:
+- taxon: edrioasteroidea
+  children:
+  - taxon: steganoblastidae
+    notes: |
+      Not erected here. "Previous History" (pp. 193-194) narrates that this
+      was already done: "The first results of my examination were
+      summarized in Lankester's Treatise on Zoology, vol. iii, pp. 209-10,
+      text-fig. vii (1900), where I founded for the reception of this genus
+      the Family Steganoblastidae of the Class Edrioasteroidea" (p. 194);
+      restated as a conclusion later in this same paper, "It has therefore
+      been necessary to establish for it the Family Steganoblastidae
+      (Treatise, 1900, p. 209)" (p. 203).
+    children:
+    - taxon: steganoblastus
+      pages: [[193, 203]]
+      notes: |
+        "Relations of Steganoblastus" (pp. 202-203), quoted in full:
+
+        "First, the absence of brachioles, inferred from the lack of
+        brachiole-facets and the presence of large cover-plates, proves
+        that Steganoblastus is not a blastoid, not even one of the
+        Protoblastoidea, as was at first supposed. It also proves, if
+        proof be needed, that it is not one of the Cystidea Diploporita.
+
+        Secondly, the structure of the subvective groove, with its
+        floor-plates and cover-plates, and its pores between the
+        floor-plates, is paralleled by Edrioasteroidea alone among
+        Pelmatozoa, and in that Class most closely by Edrioaster, though
+        there are minor differences.
+
+        Thirdly, the presence of a stem, and the enhanced pentamerism of
+        the thecal structures thereby induced, render it impossible to
+        place Steganoblastus in the Family Edrioasteridae. It has
+        therefore been necessary to establish for it the Family
+        Steganoblastidae (Treatise, 1900, p. 209)."
+
+        The three arguments reject, in order: the placement "at first
+        supposed" (Blastoidea / Protoblastoidea, Bather's own 1899 paper),
+        the Cystidea Diploporita (Whiteaves' 1897 tentative placement), and
+        the Family Edrioasteridae -- leaving genus Edrioaster, in the newly
+        established Family Steganoblastidae, as structurally closest but
+        explicitly distinct. No order rank is used for this lineage
+        anywhere in this paper.
+      children:
+      - taxon: ottawaensis_whiteaves_1897
+        pages: 194
+        specimens:
+          holotype: A -- "an almost perfect theca with two columnals"; Victoria Memorial Museum, Ottawa
+          syntypes:
+          - B -- "a theca crushed in the left anterior interradius and adjoining radii, with portions of three columnals"; Victoria Memorial Museum, Ottawa
+          - C -- "a much broken and crushed theca with no columnals"; remains in the possession of Walter R. Billings, not the Museum
+        occurrences:
+        - unit:
+          - Trenton Limestone
+          location:
+          - Division Street
+          - Ottawa
+          notes: '"The precise horizon has nowhere been stated" (p. 194).'
+        illustrations:
+        - plate: 15
+          figures: [1, 3, 4, 6, 7]
+          notes: specimen A; photographs by H. G. Herring except fig. 3, "enlarged 3 diameters" (explained p. 203).
+        - plate: 15
+          figures: [2, 5]
+          notes: specimen B.
+        - textFigures: [[1, 6]]
+          notes: |
+            pencil drawings by G. T. Gwilliam, pp. 194-201; figs. 1-2
+            restored views of the theca (based mainly on specimen A),
+            figs. 3-6 structural detail tied to specific plate-figures in
+            the description. No specimen C figure is mentioned anywhere.
+        notes: |
+          "MATERIAL. -- The specimens are the three syntypes of Whiteaves,
+          and may be distinguished as A, B, and C... A is an almost perfect
+          theca with two columnals. It is the original of Whiteaves' figs.
+          1 and 2, and of Pl. XV, Figs. 1, 3, 4, 6, 7, in the present
+          paper. It is hereby selected as the holotype." (p. 194) -- a
+          lectotype designation in modern terms, described here in
+          Bather's own era usage ("holotype" selected from among named
+          syntypes); no type-role word is attached to B or C. `type: true`
+          is not set on this node: that flag records Whiteaves' own type
+          fixation at genus level (already the flag's meaning in
+          data/trees/1962_fay.yaml), while this is a distinct,
+          material-level act -- selecting one syntype among three as the
+          holotype -- not repeated here as a `type` claim.
+
+          All three specimens are "from the Trenton Limestone at Division
+          Street, Ottawa" (p. 194); no catalogue numbers are given for any
+          of them. Two repository names for the same holding appear within
+          two pages of each other: "Previous History" (p. 193) says
+          Whiteaves "kindly lent me the two specimens belonging to the
+          Geological Survey of Canada," while "Material" (p. 194) places
+          the same two specimens in the "Victoria Memorial Museum, Ottawa"
+          -- the same collection under an institutional rename, not two
+          holdings.
+
+          Whiteaves' own words are quoted back: "'All three of these
+          specimens, when found, were,' says Whiteaves, 'almost completely
+          covered with a very tenacious shaly limestone.' This had been
+          for the most part skilfully removed before the specimens were
+          sent to me, but the pores and the outlines of the plates were
+          still obscured." (p. 194)
