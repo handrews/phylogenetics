@@ -12,7 +12,9 @@ fails if `claims/` changes, so every data commit regenerates it.
 `--draft` also loads `drafts/` and therefore refuses to write into the
 committed directory. `--inconsistencies` writes nothing: it prints each
 source whose declared coverage disagrees with the derived claims, with
-the claims behind the disagreement, for the owner to settle either way.
+the claims behind the disagreement, for the owner to settle either way,
+and exits 1 when there are any; `tests/test_claims.py` fails on the same
+rows, so CI catches a new one.
 """
 
 import argparse
@@ -171,8 +173,7 @@ def main(argv):
   _, roots = load(drafts=args.draft)
   claims_by_source = extract(roots, sources=set(args.source or ()) or None)
   if args.inconsistencies:
-    report_inconsistencies(claims_by_source)
-    return 0
+    return 1 if report_inconsistencies(claims_by_source) else 0
   full = args.source is None
   write(out, claims_by_source, full)
 

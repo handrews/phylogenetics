@@ -1516,7 +1516,7 @@
      "phylogeny": "na",
      "skeleton": "partly",
      "synonymy": "none",
-     "types": "partly"
+     "types": "na"
     },
     "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_1854c_billings.md",
     "state": "partial"
@@ -1533,9 +1533,7 @@
     "newTaxa": 6,
     "skeleton": 17
    },
-   "inconsistencies": [
-    "types: declared partly, no claims derived"
-   ],
+   "inconsistencies": [],
    "material": {
     "illustration": 5
    },
@@ -1978,7 +1976,7 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "partly",
+     "diagnoses": "none",
      "illustrations": "none",
      "material": "none",
      "newTaxa": "partly",
@@ -2002,9 +2000,7 @@
     "skeleton": 96,
     "synonymy": 7
    },
-   "inconsistencies": [
-    "diagnoses: declared partly, no claims derived"
-   ],
+   "inconsistencies": [],
    "material": {},
    "tree": true
   },

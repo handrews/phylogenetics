@@ -305,10 +305,10 @@ property.
 
 | value | count |
 |---|---|
-| `'none'` | 99 |
+| `'none'` | 100 |
 | `'all'` | 70 |
-| `'partly'` | 57 |
-| `'na'` | 44 |
+| `'partly'` | 55 |
+| `'na'` | 45 |
 
 ### `phylogeny#/$defs/article/properties/audit/properties/coverage/propertyNames`
 
