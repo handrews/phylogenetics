@@ -2933,10 +2933,15 @@ inprep_sprinkle_strimple:
   journal: fieldiana
   volume: New Series
   number: 29
+  pages:
+  - 1
+  - 43
   pubDate:
     year: 1994
     month: 12
     day: 30
+  processDates:
+    accepted: 1994-05-27
   authors:
   - guensburg
   - sprinkle

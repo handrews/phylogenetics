@@ -935,12 +935,12 @@ not recorded; pages 1–43 are not recorded.
 Data checks:
 
 - `lebetodiscinae`: `emended: true` with a note on the p. 12 / p. 27
-  difference.
-- `provisional` on `lloydi_sprinkle_1985` and `deltadiscus`.
+  difference (done).
+- `provisional` on `lloydi_sprinkle_1985` and `deltadiscus` (done).
 - Mark or collapse the two-rank uncertain placeholder.
 - `citedAs` on the five nodes whose printed attribution disagrees with the
-  record; resolve *Cambraster* and the Foerste 1916/1917 question.
-- `processDates.accepted: 1994-05-27` and `pages: [1, 43]` on the source.
+  record; resolve *Cambraster* and the Foerste 1916/1917 question (done).
+- `processDates.accepted: 1994-05-27` and `pages: [1, 43]` on the source (done).
 
 ## Across the three papers
 
@@ -1257,8 +1257,8 @@ Source record: title, journal, volume and author match, with two small wording d
 
 Data checks:
 
-- `1961_dehm.yaml`: the subgenus node is keyed `taxon: rhenopyrgus` with a node-level `rank: subgenus` override, instead of the dedicated `rhenopyrgus-subgenus` record that three later trees (`1966_regnéll`, `2013_sumrall_heredia_rodríguez.c.m_mestre`, `2020_ewin_martin.m_isotalo_zamora`) use for this same identity.
-- `sources.yaml` `1961_dehm.pages`: `[12, 17]`; the article begins at printed p. 13 (p. 12 belongs to Rievers's plate leaves) — should read `[13, 17]`.
+- `1961_dehm.yaml`: the subgenus node is keyed `taxon: rhenopyrgus` with a node-level `rank: subgenus` override, instead of the dedicated `rhenopyrgus-subgenus` record that three later trees (`1966_regnéll`, `2013_sumrall_heredia_rodríguez.c.m_mestre`, `2020_ewin_martin.m_isotalo_zamora`) use for this same identity (done).
+- `sources.yaml` `1961_dehm.pages`: `[12, 17]`; the article begins at printed p. 13 (p. 12 belongs to Rievers's plate leaves) — should read `[13, 17]` (done).
 
 ## 1962_fay — Edrioblastoidea, a New Class of Echinodermata (J. Paleontology 36)
 
@@ -1274,7 +1274,7 @@ Source record: title, journal, volume/number, pages and `pubDate` all match; `id
 
 Data checks:
 
-- `sources.yaml` `1962_fay.identifiers.jstor`: `13011100` should be `1301100` (extra digit).
+- `sources.yaml` `1962_fay.identifiers.jstor`: `13011100` should be `1301100` (extra digit) (done).
 
 ## 1978_bell.b.m_sprinkle — Totiglobus, an Unusual New Edrioasteroid (J. Paleontology 52)
 
@@ -1385,7 +1385,7 @@ Source record: title, journal, volume/issue/pages, authors and all three process
 
 Data checks:
 
-- `taxa.yaml`: the seventh author of *Rhenopyrgus flos* is keyed/spelled "DeBates" in `flos_klug_krüger_korn_rücklin_schemm-gregory_debates_mapes_2008`; both the species citation and the reference list in this paper spell it "DeBaets" (pp. 773–774).
+- `taxa.yaml`: the seventh author of *Rhenopyrgus flos* is keyed/spelled "DeBates" in `flos_klug_krüger_korn_rücklin_schemm-gregory_debates_mapes_2008`; both the species citation and the reference list in this paper spell it "DeBaets" (pp. 773–774) (done).
 
 ## 2015_sprinkle_sumrall — New edrioasterine and astrocystitid edrioasteroids (J. Paleontology 89)
 
@@ -1447,10 +1447,10 @@ Source record: title, journal, volume/number/pages, authors, acceptance date and
 
 Data checks:
 
-- `2020_ewin_martin.m_isotalo_zamora.yaml`: `rhenopyrgidae`/`rhenopyrgus` diagnosis fields carry dropped-ligature OCR text ("ve" for "five," "oor" for "floor," pp. 118, 120) copied verbatim instead of the plain printed words.
-- `2020_ewin_martin.m_isotalo_zamora.yaml`: `grayae_bather_1915`'s synonym entry gives `pages: 48`; the paper prints "p. 58" (p. 122).
-- `2020_ewin_martin.m_isotalo_zamora.yaml`: `grayae_bather_1915`'s occurrence location reads "Givran"; the paper prints "Girvan" (p. 122).
-- `2020_ewin_martin.m_isotalo_zamora.yaml`: `rhenopyrgus-sp-2`'s occurrence stores `localStage: Girvan?` (a place name, not a stage) and omits "Scotland, UK," present on every other occurrence in the file (p. 123).
+- `2020_ewin_martin.m_isotalo_zamora.yaml`: `rhenopyrgidae`/`rhenopyrgus` diagnosis fields carry dropped-ligature OCR text ("ve" for "five," "oor" for "floor," pp. 118, 120) copied verbatim instead of the plain printed words (done).
+- `2020_ewin_martin.m_isotalo_zamora.yaml`: `grayae_bather_1915`'s synonym entry gives `pages: 48`; the paper prints "p. 58" (p. 122) (done).
+- `2020_ewin_martin.m_isotalo_zamora.yaml`: `grayae_bather_1915`'s occurrence location reads "Givran"; the paper prints "Girvan" (p. 122) (done).
+- `2020_ewin_martin.m_isotalo_zamora.yaml`: `rhenopyrgus-sp-2`'s occurrence stores `localStage: Girvan?` (a place name, not a stage) and omits "Scotland, UK," present on every other occurrence in the file (p. 123) (done).
 
 ## 2021_jell_sprinkle — Revision of Whitehouse's eocrinoids Peridionites and Cymbionites (Alcheringa 45)
 
@@ -1466,8 +1466,8 @@ Source record: title, journal, volume/number/pages, all four process dates, DOI 
 
 Data checks:
 
-- `taxa.yaml`: `stromatocystitida-incertae-sedis` carries `auth: [linnaeus], year: 1758`, unsupported by this paper (which prints "Family UNCERTAIN," p. 36, with no attribution) or by any other source — likely a leftover template value.
-- `2021_jell_sprinkle.yaml`: the `echinodermata` node keys attribution to "brugière" (missing the "u" of Bruguière, unlike `1791_bruguière` used elsewhere in the corpus) and carries `auth`/`year` duplicating the taxon record, unlike every other backbone node in this same file (p. 6).
+- `taxa.yaml`: `stromatocystitida-incertae-sedis` carries `auth: [linnaeus], year: 1758`, unsupported by this paper (which prints "Family UNCERTAIN," p. 36, with no attribution) or by any other source — likely a leftover template value (done).
+- `2021_jell_sprinkle.yaml`: the `echinodermata` node keys attribution to "brugière" (missing the "u" of Bruguière, unlike `1791_bruguière` used elsewhere in the corpus) and carries `auth`/`year` duplicating the taxon record, unlike every other backbone node in this same file (p. 6) (done).
 
 ## Data corrections surfaced by this round
 
@@ -1492,21 +1492,21 @@ Data checks:
 | `1936_bassler.yaml` | `billingsi_chapman_1860` grouped under `agelacrinites-subgenus`; both printed occurrences read "(Agelacrinus) billingsi," not "(Agelacrinites)" | p. 12; plate 3, p. 26 |
 | `1936_bassler.yaml` | `ulrichi_bassler_shideler_1936` carries no flags at all, despite being headed "n. sp." twice | p. 8; plate 6 |
 | `1936_bassler.yaml` | no node exists for *Carneyella foerstei*, n. sp. (holotype USNM S-3965) | p. 8 |
-| `1961_dehm.yaml` | subgenus node keyed `taxon: rhenopyrgus` with a `rank: subgenus` override, instead of the dedicated `rhenopyrgus-subgenus` record three later trees use | p. 16 |
-| `sources.yaml` `1961_dehm` | `pages: [12, 17]`; the article begins at printed p. 13 | running heads, pp. 13–17 |
+| `1961_dehm.yaml` | subgenus node keyed `taxon: rhenopyrgus` with a `rank: subgenus` override, instead of the dedicated `rhenopyrgus-subgenus` record three later trees use (done) | p. 16 |
+| `sources.yaml` `1961_dehm` | `pages: [12, 17]`; the article begins at printed p. 13 (done) | running heads, pp. 13–17 |
 | `1961_rievers.yaml` | `coronaeformis_rievers_1961` diagnosis field stops after the first Diagnose sentence; the second (crown, five-triangle ambulacra) is omitted | pp. 10–11 |
-| `sources.yaml` `1962_fay` | `identifiers.jstor: 13011100` has an extra digit | printed Stable URL, `.../1301100` |
+| `sources.yaml` `1962_fay` | `identifiers.jstor: 13011100` has an extra digit (done) | printed Stable URL, `.../1301100` |
 | `2009_sumrall.yaml` | family node keyed `agelacrinitidae`; paper prints "Family Agelacrinidae Chapman, 1860" (no "-iti-"), and a dedicated `agelacrinidae` record already exists | p. 991 |
 | `2010_zhao.y.l_sumrall_parsley_peng.j.yaml` | paratype list gives `GM 2013`; five printed occurrences read "2103" | pp. 676, 679 |
 | `sources.yaml` `2010_zhao.y.l_sumrall_parsley_peng.j` | `number: 5`; six running heads read "84(4)" | pp. 670–680 |
 | `2011_sumrall_zamora.yaml` and `taxa.yaml` | species keyed/spelled `epilezorum`; the paper prints "espilezorum" nine times with no variant | pp. 425–441 |
-| `taxa.yaml` | `flos_klug_krüger_korn_rücklin_schemm-gregory_debates_mapes_2008` spells the seventh author "DeBates"; the citing paper and its own reference list spell it "DeBaets" | pp. 773–774 |
-| `2020_ewin_martin.m_isotalo_zamora.yaml` | `rhenopyrgidae`/`rhenopyrgus` diagnosis fields carry dropped-ligature OCR text ("ve" for "five," "oor" for "floor") | pp. 118, 120 |
-| `2020_ewin_martin.m_isotalo_zamora.yaml` | `grayae_bather_1915` synonym entry gives `pages: 48`; the paper prints "p. 58" | p. 122 |
-| `2020_ewin_martin.m_isotalo_zamora.yaml` | `grayae_bather_1915` occurrence location reads "Givran"; the paper prints "Girvan" | p. 122 |
-| `2020_ewin_martin.m_isotalo_zamora.yaml` | `rhenopyrgus-sp-2` occurrence stores `localStage: Girvan?` (a place name) and omits "Scotland, UK" | p. 123 |
-| `taxa.yaml` | `stromatocystitida-incertae-sedis` carries `auth: [linnaeus], year: 1758`, unsupported by any source | p. 36 (2021_jell_sprinkle prints "Family UNCERTAIN," no attribution) |
-| `2021_jell_sprinkle.yaml` | `echinodermata` node keys attribution to "brugière" (missing the "u") and carries `auth`/`year` duplicating the taxon record, unlike every other backbone node in the file | p. 6 |
+| `taxa.yaml` | `flos_klug_krüger_korn_rücklin_schemm-gregory_debates_mapes_2008` spells the seventh author "DeBates"; the citing paper and its own reference list spell it "DeBaets" (done) | pp. 773–774 |
+| `2020_ewin_martin.m_isotalo_zamora.yaml` | `rhenopyrgidae`/`rhenopyrgus` diagnosis fields carry dropped-ligature OCR text ("ve" for "five," "oor" for "floor") (done) | pp. 118, 120 |
+| `2020_ewin_martin.m_isotalo_zamora.yaml` | `grayae_bather_1915` synonym entry gives `pages: 48`; the paper prints "p. 58" (done) | p. 122 |
+| `2020_ewin_martin.m_isotalo_zamora.yaml` | `grayae_bather_1915` occurrence location reads "Givran"; the paper prints "Girvan" (done) | p. 122 |
+| `2020_ewin_martin.m_isotalo_zamora.yaml` | `rhenopyrgus-sp-2` occurrence stores `localStage: Girvan?` (a place name) and omits "Scotland, UK" (done) | p. 123 |
+| `taxa.yaml` | `stromatocystitida-incertae-sedis` carries `auth: [linnaeus], year: 1758`, unsupported by any source (done) | p. 36 (2021_jell_sprinkle prints "Family UNCERTAIN," no attribution) |
+| `2021_jell_sprinkle.yaml` | `echinodermata` node keys attribution to "brugière" (missing the "u") and carries `auth`/`year` duplicating the taxon record, unlike every other backbone node in the file (done) | p. 6 |
 | `2006_sumrall_brett_cornell.yaml` | top-level `notes` "No ranks are included" overstates the print — "Genus" is printed before the genus name | p. 190 |
 
 Attribution conflicts to resolve:

@@ -64,7 +64,7 @@ now, in parallel, as a document; migrate after the extractor exists.
 
 ## Milestones
 
-**M0. Close the reading rounds** (S2; cheap-model work with a human check)
+**M0. Close the reading rounds** (done 2026-09-10) (S2; cheap-model work with a human check)
 - Copy the review brief and the 32 review files into `docs/reviews/` so
   the audit trail survives the session. (Done: branch `m0-reviews`.)
 - Apply the corrections table, gold slice first (roadmap step 0b), one
@@ -95,6 +95,8 @@ now, in parallel, as a document; migrate after the extractor exists.
   locators), `editorial` (source resolution or inferred placement, with
   basis). Every claim carries source key, page, node path, and the audit
   state of its tree.
+- Outputs: `docs/claims.md` (vocabulary) and `eval/questions.yaml` with
+  `eval/README.md`.
 
 **M2. Claim table and coverage manifest** (S3 with S1 interleaved; mostly
 cheap-model work behind a spec)

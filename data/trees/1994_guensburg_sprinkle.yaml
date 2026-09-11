@@ -7,6 +7,7 @@ taxonomies:
     - taxon: camptostromatoida
       children:
       - taxon: camptostromatidae
+        citedAs: Camptostromatidae Durham, 1968
         children:
         - taxon: camptostroma
     - taxon: stromatocystitida
@@ -19,12 +20,14 @@ taxonomies:
       - openTaxon: edrioasteroidea-family-uncertain_guensburg_sprinkle_1994
         children:
         - taxon: cambraster
+          citedAs: Cambraster Cabibel, Termier, and Termier, 1958
         - taxon: walcottidiscus
     - taxon: isorophida
       children:
       - openTaxon: isorophida-family-uncertain_guensburg_sprinkle_1994
         children:
         - taxon: edriodiscus
+          citedAs: Edriodiscus Smith, 1985
         - taxon: stromatocystites
           quoted: true
           children:
@@ -36,6 +39,9 @@ taxonomies:
         - taxon: cooperidiscus
         - taxon: curvitriordo
         - taxon: deltadiscus
+          provisional: true
+          notes: |
+            "The new genus is provisionally assigned to and arguably the most primitive taxon of agelacrinitids" (p. 25)
           new: true
           children:
           - taxon: superbus_guensburg_sprinkle_1994
@@ -47,6 +53,7 @@ taxonomies:
         - taxon: hemicystites
         - taxon: hystrichopsydrax
         - taxon: isorophus
+          citedAs: Isorophus Foerste, 1917
         - taxon: isorophusella
         - taxon: krama
         - taxon: lepidodiscus
@@ -66,6 +73,9 @@ taxonomies:
         children:
         - taxon: lebetodiscinae
           modifier: nomen transl.
+          emended: true
+          notes: |
+            Printed "(nomen transl.)" in the classification (p. 12) and "(nomen transl., emend.)" at the systematic heading (p. 27), where the text says "it is emended to allow for separation of pyrgocystinids".
           children:
           - taxon: argodiscus
           - taxon: belochthos
@@ -81,6 +91,7 @@ taxonomies:
           modifier: nomen transl.
           children:
           - taxon: carneyella
+            citedAs: Carneyella Foerste, 1917
           - taxon: cryptogoleus
         - taxon: pyrgocystinae
           modifier: nomen transl.
@@ -114,6 +125,9 @@ taxonomies:
             quoted: true
             children:
             - taxon: lloydi_sprinkle_1985
+              provisional: true
+              notes: |
+                "'Totiglobus' lloydi was provisionally assigned to genus at the time of its description because of poor preservation (Sprinkle, 1985)" (p. 19)
         - taxon: edrioasteridae
           children:
           - taxon: edrioaster
