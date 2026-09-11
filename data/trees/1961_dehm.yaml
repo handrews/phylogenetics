@@ -81,6 +81,8 @@ taxonomies:
       - Germany
   - taxon: rhenopyrgus-subgenus
     new: true
+    citedAs: Rhenopyrgus nov. subgen.
+    pages: 16
     # typeTaxon:
     #   taxon: coronaeformis_rievers_1961
     #   parents:

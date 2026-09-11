@@ -39,6 +39,10 @@ arch-min-geo:
   name: Archiv für Mineralogie, Geognosie, Bergbau und Hüttenkunde
 arch-nat:
   name: Archiv für die gesammte Naturlehre
+arkiv-zool:
+  name: Arkiv för Zoologi
+  publisher: Kungliga Svenska Vetenskapsakademien
+  place: Stockholm
 atlantic-geo:
   name: Atlantic Geology
 bericht-berlin:
@@ -61,6 +65,10 @@ canadian-journal:
   name: The Canadian Journal
 can-j-earth-sci:
   name: Canadian Journal of Earth Sciences
+canadian-record-sci:
+  name: The Canadian Record of Science
+  publisher: Natural History Society of Montreal
+  place: Montreal
 chi-sci-bull:
   name: Chinese Science Bulletin
 cl-olandska:
@@ -133,6 +141,10 @@ jena-zeitschr:
   name: Jenaische Zeitschrift für Naturwissenschaft
 jofacnatsci-philadelphia:
   name: Journal of the Academy of Natural Sciences of Philadelphia
+jofgeol-chicago:
+  name: The Journal of Geology
+  publisher: The University of Chicago Press
+  place: Chicago
 jofpaleo:
   name: Journal of Paleontology
 jofgeol-london:
@@ -183,6 +195,10 @@ nat-hist-crinoidea:
   name: A Natural History of the Crinoidea, or Lily-Shaped Animals
 nat-hist-ny:
   name: Natural History of New York
+neues-jahrbuch:
+  name: Neues Jahrbuch für Mineralogie, Geologie und Paläontologie
+  publisher: E. Schweizerbart'sche Verlagshandlung
+  place: Stuttgart
 norsk-geo-tid:
   name: Norsk Geologisk Tidsskrift
 nova-acta-ups:
@@ -289,6 +305,8 @@ ueber-esthland:
   name: Ueber das silurische Schichtensystem in Esthland
 vermium-t-e-f:
   name: Vermivm Terrestrium Et Fluviatilium, Seu Animalium Infusoriorum, Helminthicorum et Testaceorum 
+vermont-geol:
+  name: Report of the Vermont State Geologist
 vestnik:
   name: Věstník Ústředního ústavu geologického
 zoo-dan:

@@ -769,9 +769,10 @@ and the data shows when and where each was printed. The original spelling
 is derived, not declared: it is the spelling on the node flagged `new: true`
 in its source's tree. So `vorticellata_hall_1866` with `vorticellatus` as
 the variant needs no swap; Hall's tree, once entered, will carry `new` on
-*vorticellatus*. `canonical_name` in `phylohist/taxa.py`, which returns the
-`altSpellingOf` target, assumes a direction the data does not have; the
-claim extractor (M2) derives canonical from `new` and that method goes.
+*vorticellatus*. `canonical_name` in `phylohist/taxa.py` returns the
+`altSpellingOf` target as the code's consistent display choice, not as a
+nomenclatural claim; the claim extractor (M2) does not use it to decide
+which spelling is original.
 
 ---
 

@@ -6,6 +6,8 @@ taxonomies:
     - taxon: edrioasterida
       children:
       - taxon: edrioblastoidina
+        citedAs: Suborder Edrioblastoidina Fay, 1962
+        pages: 118
         children:
         - taxon: rhenopyrgidae
           pages: 118

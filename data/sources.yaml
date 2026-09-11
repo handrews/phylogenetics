@@ -1182,6 +1182,23 @@
     transmitted: 1871-04-18
   authors:
   - hall
+1879_dames:
+  title: "Fr. Schmidt: Über Cyathocystis Plautinae (Referat)"
+  journal: neues-jahrbuch
+  volume: 1879
+  pages:
+  - 1001
+  - 1001
+  pubDate:
+    year: 1879
+  authors:
+  - dames
+  notes: |
+    A Referat by W. Dames of Schmidt's paper in the Verhandlungen der
+    Mineralogischen Gesellschaft zu St. Petersburg, 1879, which is not on
+    hand; every statement here is Dames's account of Schmidt. The Heft's
+    issue date is not printed; the volume's closing notice is dated 15
+    October 1879. Later authors cite the genus as Schmidt 1879 and 1880.
 1887_billings.w.r:
   title: A new genus and three new species of crinoids from the Trenton Formation with notes on a large specimen of Dendrocrinus proboscidiatus
   journal: ottawa-naturalist
@@ -1262,6 +1279,26 @@
       diagnoses: none
       phylogeny: na
     notes: Reviewed against the paper 2026-09-10; see docs/reviews/review_1896_pompeckj.md
+1897_whiteaves:
+  title: Description of a new genus and species of cystideans from the Trenton limestone at Ottawa
+  journal: canadian-record-sci
+  volume: 7
+  number: 5
+  pages:
+  - 287
+  - 292
+  pubDate:
+    year: 1897
+    month: 6
+    day: 12
+  processDates:
+    submitted: 1897-04-28
+  authors:
+  - whiteaves
+  notes: |
+    The Number's wrapper reads "January, 1897"; the volume's own issue notice
+    says Number 5 was issued 12 June 1897, and Bather 1914 (p. 193) calls the
+    January date "obviously erroneous". Dated 28 April 1897 at the end.
 1898_bather:
   title: Studies in Edrioasteroidea. I. Dinocystis Barroisi, n.g. et sp., Psammites du Condroz
   journal: geomag
@@ -1289,6 +1326,26 @@
   - walcott
   identifiers:
     url: https://www.biodiversitylibrary.org/page/2056780
+1898_whiteaves:
+  title: Postscript to a "Description of a new genus and species of cystideans from the Trenton limestone at Ottawa"
+  journal: canadian-record-sci
+  volume: 7
+  number: 7
+  pages:
+  - 395
+  - 396
+  pubDate:
+    year: 1898
+    month: 1
+    day: 7
+  processDates:
+    submitted: 1897-09-14
+  authors:
+  - whiteaves
+  notes: |
+    The Number's wrapper reads 1897; the volume's issue notice says Number 7
+    was issued 7 January 1898, and Bather 1914 (p. 194) cites "p. 395, January
+    7, 1898". Cited as both 1897 and 1898. Dated 14 September 1897 at the end.
 1899_bather:
   title: A Phylogenetic Classification of the Pelmatozoa
   journal: reports-british-advancement
@@ -1410,6 +1467,24 @@
   - clark.a.h
   identifiers:
     url: https://www.biodiversitylibrary.org/page/43433793
+1914c_bather:
+  title: Studies in Edrioasteroidea. V. Steganoblastus
+  journal: geomag
+  series: 6
+  volume: 1
+  number: 5
+  pages:
+  - 193
+  - 203
+  plates:
+  - 15
+  - 15
+  pubDate:
+    year: 1914
+    month: 5
+  authors:
+  - bather
+  notes: '"Decade VI" is recorded as the series. Letters a and b are reserved for the two parts of Study IV (March and April 1914).'
 1915a_bather:
   title: Studies in Edrioasteroidea. VI. Pyrgocystis, n.g.
   journal: geomag
@@ -1451,6 +1526,62 @@
     continuing 1915a_bather: P. grayae and P. ansticei, with plate III.
   authors:
   - bather
+1925_hudson:
+  title: The Need of Improved Technique in Illustration
+  journal: jofgeol-chicago
+  volume: 33
+  number: 6
+  pages:
+  - 642
+  - 657
+  plates:
+  - 1
+  - 4
+  pubDate:
+    year: 1925
+    months:
+    - 8
+    - 9
+  authors:
+  - hudson
+1927_hudson:
+  title: The surface characteristics of Astrocystites (Steganoblastus) ottawaensis
+  journal: vermont-geol
+  volume: 15
+  pages:
+  - 97
+  - 110
+  plates:
+  - 6
+  - 10
+  pubDate:
+    year: 1927
+  authors:
+  - hudson
+1927_jaekel:
+  title: Cyathotheca suecica n. g. n. sp., eine Thecoidee des schwedischen Ordoviciums
+  journal: arkiv-zool
+  series: A
+  volume: 19
+  number: 5
+  pages:
+  - 1
+  - 5
+  plates:
+  - 1
+  - 1
+  pubDate:
+    year: 1927
+    month: 2
+    day: 21
+  processDates:
+    transmitted: 1926-10-27
+    issued: 1927-11-03
+  authors:
+  - jaekel
+  notes: |
+    "Tryckt den 21 februari 1927" (p. 5), the separate printing; communicated
+    27 October 1926; Häfte 2 of Band 19 issued 3 November 1927.
 1929_matsumoto:
   title: Outline of a classification of Echinoermata
   journal: tohoku
@@ -2101,8 +2232,19 @@
   title: Astrocystites distans sp. nov., an edrioblastoid from the Ordovician of eastern Australia
   audit:
     state: partial
+    coverage:
+      skeleton: all
+      newTaxa: all
+      types: all
+      synonymy: partly
+      material: partly
+      occurrences: none
+      illustrations: none
+      diagnoses: none
+      phylogeny: na
     notes: |
       Migrated from complete: named=true open=true history=true specimens.basic=true specimens.all=true
+      Reviewed against the paper 2026-09-10; see docs/reviews/review_1968_webby.md
   journal: palaeontology
   volume: 11
   number: 4
@@ -2933,10 +3075,15 @@ inprep_sprinkle_strimple:
   journal: fieldiana
   volume: New Series
   number: 29
+  pages:
+  - 1
+  - 43
   pubDate:
     year: 1994
     month: 12
     day: 30
+  processDates:
+    accepted: 1994-05-27
   authors:
   - guensburg
   - sprinkle

@@ -35,59 +35,59 @@ even when its parent is also unreached, so read parents first.
 `data %` is the share of that container's instances carrying the
 property.
 
-### `article` -- 297 instances in `data/`
+### `article` -- 304 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `authors` | 297 | 100.0% |
-| `pubDate` | 296 | 99.7% |
-| `title` | 247 | 83.2% |
-| `volume` | 226 | 76.1% |
-| `identifiers` | 208 | 70.0% |
-| `pages` | 208 | 70.0% |
-| `journal` | 205 | 69.0% |
-| `number` | 149 | 50.2% |
+| `authors` | 304 | 100.0% |
+| `pubDate` | 303 | 99.7% |
+| `title` | 254 | 83.6% |
+| `volume` | 233 | 76.6% |
+| `pages` | 216 | 71.1% |
+| `journal` | 212 | 69.7% |
+| `identifiers` | 208 | 68.4% |
+| `number` | 154 | 50.7% |
 | `identifiers.url` | 126 | 60.6% |
-| `processDates` | 94 | 31.6% |
-| `book` | 90 | 30.3% |
-| `processDates.accepted` | 62 | 66.0% |
+| `processDates` | 98 | 32.2% |
+| `book` | 90 | 29.6% |
+| `processDates.accepted` | 63 | 64.3% |
 | `identifiers.doi` | 61 | 29.3% |
-| `processDates.received` | 53 | 56.4% |
-| `audit` | 48 | 16.2% |
+| `processDates.received` | 53 | 54.1% |
+| `audit` | 48 | 15.8% |
 | `audit.notes` | 48 | 100.0% |
 | `audit.state` | 48 | 100.0% |
-| `notes` | 31 | 10.4% |
-| `audit.coverage` | 29 | 60.4% |
-| `processDates.online` | 28 | 29.8% |
+| `notes` | 36 | 11.8% |
+| `audit.coverage` | 30 | 62.5% |
+| `processDates.online` | 28 | 28.6% |
 | `identifiers.jstor` | 24 | 11.5% |
-| `processDates.revised` | 18 | 19.1% |
-| `plates` | 15 | 5.1% |
-| `processDates.read` | 8 | 8.5% |
-| `articleNumber` | 7 | 2.4% |
-| `series` | 7 | 2.4% |
-| `seen` | 5 | 1.7% |
-| `processDates.conferenceEnd` | 3 | 3.2% |
-| `processDates.conferenceStart` | 3 | 3.2% |
-| `processDates.transmitted` | 3 | 3.2% |
-| `processDates.issued` | 2 | 2.1% |
+| `plates` | 19 | 6.2% |
+| `processDates.revised` | 18 | 18.4% |
+| `series` | 9 | 3.0% |
+| `processDates.read` | 8 | 8.2% |
+| `articleNumber` | 7 | 2.3% |
+| `seen` | 5 | 1.6% |
+| `processDates.transmitted` | 4 | 4.1% |
+| `processDates.conferenceEnd` | 3 | 3.1% |
+| `processDates.conferenceStart` | 3 | 3.1% |
+| `processDates.issued` | 3 | 3.1% |
+| `processDates.submitted` | 3 | 3.1% |
 | `translationOf` | 2 | 0.7% |
 | `translations` | 2 | 0.7% |
 | `chapter` | 1 | 0.3% |
 | `editors` | 1 | 0.3% |
 | `inPrep` | 1 | 0.3% |
-| `processDates.printed` | 1 | 1.1% |
-| `processDates.published` | 1 | 1.1% |
-| `processDates.submitted` | 1 | 1.1% |
-| `processDates.unknown` | 1 | 1.1% |
+| `processDates.printed` | 1 | 1.0% |
+| `processDates.published` | 1 | 1.0% |
+| `processDates.unknown` | 1 | 1.0% |
 | `quotes` | 1 | 0.3% |
 | `reading` | 1 | 0.3% |
 
-### `authority` -- 1622 instances in `data/`
+### `authority` -- 1628 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `source` | 1622 | 100.0% |
-| `pages` | 56 | 3.5% |
+| `source` | 1628 | 100.0% |
+| `pages` | 62 | 3.8% |
 | `illustrations` | 27 | 1.7% |
 | `attributedTo` | 24 | 1.5% |
 | `ex` | 2 | 0.1% |
@@ -137,20 +137,20 @@ property.
 | `location` | 0 | 0.0% |
 | `source` | 0 | 0.0% |
 
-### `modularDate` -- 296 instances in `data/`
+### `modularDate` -- 303 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `year` | 296 | 100.0% |
-| `month` | 69 | 23.3% |
-| `/then/oneOf/0.day` | 21 | 100.0% |
-| `/then/oneOf/0.month` | 21 | 100.0% |
-| `/then/oneOf/1.day` | 21 | 100.0% |
-| `/then/oneOf/1.month` | 21 | 100.0% |
-| `/then/oneOf/2.day` | 21 | 100.0% |
-| `/then/oneOf/2.month` | 21 | 100.0% |
-| `day` | 21 | 7.1% |
-| `months` | 3 | 1.0% |
+| `year` | 303 | 100.0% |
+| `month` | 73 | 24.1% |
+| `/then/oneOf/0.day` | 24 | 100.0% |
+| `/then/oneOf/0.month` | 24 | 100.0% |
+| `/then/oneOf/1.day` | 24 | 100.0% |
+| `/then/oneOf/1.month` | 24 | 100.0% |
+| `/then/oneOf/2.day` | 24 | 100.0% |
+| `/then/oneOf/2.month` | 24 | 100.0% |
+| `day` | 24 | 7.9% |
+| `months` | 4 | 1.3% |
 | `season` | 1 | 0.3% |
 
 ### `occurrence` -- 32 instances in `data/`
@@ -168,14 +168,14 @@ property.
 | `localStageRange` | 0 | 0.0% |
 | `tentative` | 0 | 0.0% |
 
-### `person` -- 277 instances in `data/`
+### `person` -- 279 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `family` | 277 | 100.0% |
-| `given` | 277 | 100.0% |
-| `birth` | 79 | 28.5% |
-| `death` | 78 | 28.2% |
+| `family` | 279 | 100.0% |
+| `given` | 279 | 100.0% |
+| `birth` | 80 | 28.7% |
+| `death` | 79 | 28.3% |
 | `suffix` | 0 | 0.0% |
 
 ### `phylogeny` -- 36 instances in `data/`
@@ -188,14 +188,14 @@ property.
 | `notes` | 6 | 16.7% |
 | `characteristics` | 1 | 2.8% |
 
-### `publication` -- 130 instances in `data/`
+### `publication` -- 135 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `name` | 130 | 100.0% |
-| `editors` | 9 | 6.9% |
-| `place` | 4 | 3.1% |
-| `publisher` | 4 | 3.1% |
+| `name` | 135 | 100.0% |
+| `editors` | 9 | 6.7% |
+| `place` | 8 | 5.9% |
+| `publisher` | 8 | 5.9% |
 | `notes` | 2 | 1.5% |
 | `type` | 0 | 0.0% |
 
@@ -215,11 +215,11 @@ property.
 | property | data | data % |
 |---|---|---|
 | `name` | 2682 | 98.6% |
-| `authority` | 1528 | 56.2% |
-| `auth` | 956 | 35.1% |
-| `year` | 953 | 35.0% |
+| `authority` | 1533 | 56.3% |
+| `auth` | 951 | 35.0% |
+| `year` | 948 | 34.8% |
 | `rank` | 716 | 26.3% |
-| `notes` | 214 | 7.9% |
+| `notes` | 215 | 7.9% |
 | `altSpellingOf` | 165 | 6.1% |
 | `lang` | 75 | 2.8% |
 | `originalParent` | 65 | 2.4% |
@@ -235,37 +235,37 @@ property.
 | `modifier` | 0 | 0.0% |
 | `reason` | 0 | 0.0% |
 
-### `tree` -- 6345 instances in `data/`
+### `tree` -- 6346 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `taxon` | 5749 | 90.6% |
+| `taxon` | 5750 | 90.6% |
 | `children` | 2184 | 34.4% |
 | `new` | 1461 | 23.0% |
-| `notes` | 373 | 5.9% |
+| `notes` | 378 | 6.0% |
 | `type` | 367 | 5.8% |
-| `synonyms` | 358 | 5.6% |
+| `synonyms` | 359 | 5.7% |
 | `parents` | 326 | 5.1% |
 | `openTaxon` | 219 | 3.5% |
-| `pages` | 209 | 3.3% |
+| `pages` | 217 | 3.4% |
 | `illustrations` | 120 | 1.9% |
-| `provisional` | 118 | 1.9% |
-| `authority` | 92 | 1.4% |
+| `provisional` | 120 | 1.9% |
+| `authority` | 93 | 1.5% |
 | `specimens` | 89 | 1.4% |
 | `diagnosis` | 69 | 1.1% |
 | `year` | 61 | 1.0% |
 | `auth` | 60 | 0.9% |
-| `emended` | 49 | 0.8% |
+| `emended` | 50 | 0.8% |
+| `citedAs` | 42 | 0.7% |
 | `bracket` | 35 | 0.6% |
 | `moved` | 29 | 0.5% |
-| `citedAs` | 26 | 0.4% |
 | `occurrences` | 26 | 0.4% |
 | `modifier` | 22 | 0.3% |
 | `outgroup` | 19 | 0.3% |
 | `pars` | 18 | 0.3% |
 | `quoted` | 18 | 0.3% |
+| `tentative` | 17 | 0.3% |
 | `affTaxon` | 16 | 0.3% |
-| `tentative` | 16 | 0.3% |
 | `cfTaxon` | 15 | 0.2% |
 | `questionable` | 12 | 0.2% |
 | `matrix` | 8 | 0.1% |
@@ -301,30 +301,30 @@ property.
 
 ### `phylogeny#/$defs/article/properties/audit/properties/coverage/additionalProperties`
 
-4 of 4 members used, 261 occurrences.
+4 of 4 members used, 270 occurrences.
 
 | value | count |
 |---|---|
-| `'none'` | 98 |
-| `'all'` | 66 |
-| `'partly'` | 53 |
-| `'na'` | 44 |
+| `'none'` | 101 |
+| `'all'` | 69 |
+| `'partly'` | 55 |
+| `'na'` | 45 |
 
 ### `phylogeny#/$defs/article/properties/audit/properties/coverage/propertyNames`
 
-9 of 9 members used, 261 occurrences.
+9 of 9 members used, 270 occurrences.
 
 | value | count |
 |---|---|
-| `'phylogeny'` | 29 |
-| `'diagnoses'` | 29 |
-| `'illustrations'` | 29 |
-| `'occurrences'` | 29 |
-| `'material'` | 29 |
-| `'synonymy'` | 29 |
-| `'types'` | 29 |
-| `'newTaxa'` | 29 |
-| `'skeleton'` | 29 |
+| `'phylogeny'` | 30 |
+| `'diagnoses'` | 30 |
+| `'illustrations'` | 30 |
+| `'occurrences'` | 30 |
+| `'material'` | 30 |
+| `'synonymy'` | 30 |
+| `'types'` | 30 |
+| `'newTaxa'` | 30 |
+| `'skeleton'` | 30 |
 
 ### `phylogeny#/$defs/article/properties/audit/properties/state`
 
@@ -486,20 +486,20 @@ Tests whether each multi-type declaration is actually needed.
 |---|---|---|---|---|
 | `phylogeny#/$defs/article/properties/articleNumber` | integer/string | intx5, strx2 | `e1465`, `e38296` | - |
 | `phylogeny#/$defs/article/properties/chapter` | integer/string | strx1 | `Report of E. Billings, E...` | integer |
-| `phylogeny#/$defs/article/properties/number` | integer/string | intx141, strx8 | `Supplement`, `1/2`, `Adv. Pr.`, `1–2` | - |
-| `phylogeny#/$defs/article/properties/pages/items` | integer/string | intx382, strx42 | `S637`, `S634`, `S631`, `S627` | - |
-| `phylogeny#/$defs/article/properties/plates/items` | integer/string | intx21, strx8 | `II`, `I`, `IV`, `VII` | - |
-| `phylogeny#/$defs/article/properties/series` | integer/string | intx7 | - | string |
-| `phylogeny#/$defs/article/properties/volume` | integer/string | intx217, strx9 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `4th Series` | - |
+| `phylogeny#/$defs/article/properties/number` | integer/string | intx146, strx8 | `Supplement`, `1/2`, `Adv. Pr.`, `1–2` | - |
+| `phylogeny#/$defs/article/properties/pages/items` | integer/string | intx398, strx42 | `S637`, `S634`, `S631`, `S627` | - |
+| `phylogeny#/$defs/article/properties/plates/items` | integer/string | intx29, strx8 | `II`, `I`, `IV`, `VII` | - |
+| `phylogeny#/$defs/article/properties/series` | integer/string | intx8, strx1 | `A` | - |
+| `phylogeny#/$defs/article/properties/volume` | integer/string | intx224, strx9 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `4th Series` | - |
 | `phylogeny#/$defs/basicOccurrence/properties/unit` | string/array | listx20, strx1 | `Craighead inlier` | - |
-| `phylogeny#/$defs/citationNumber` | integer/string | intx643, listx344, strx183 | `IX`, `VIII`, `V`, `b` | - |
-| `phylogeny#/$defs/person/properties/death` | integer/null | intx77, nullx1 | - | - |
+| `phylogeny#/$defs/citationNumber` | integer/string | intx657, listx344, strx183 | `IX`, `VIII`, `V`, `b` | - |
+| `phylogeny#/$defs/person/properties/death` | integer/null | intx78, nullx1 | - | - |
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
-| `phylogeny#/$defs/specimens/additionalProperties/items` | string/array | strx513, listx4 | `F. 5420`, `F. 5419`, `F. 5418`, `F. 5417` | - |
+| `phylogeny#/$defs/specimens/additionalProperties/items` | string/array | strx516, listx4 | `F. 5420`, `F. 5419`, `F. 5418`, `F. 5417` | - |
 | `phylogeny#/$defs/taxon/properties/holotype/additionalProperties/items` | array/string/integer | intx10, strx3 | `EE15373`, `EE 1659`, `E23470` | array |
 | `phylogeny#/$defs/taxon/properties/name` | string/null | strx2486, nullx196 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
 | `tree#/properties/diagnosis` | string/null | strx68, nullx1 | `A cast of it shows a con...`, `Body hemisphæric, slight...`, `A *Pyrgocystis* specimen...`, `Mouth surrounded and cov...` | - |
 | `tree#/properties/editorial/properties/inferred` | boolean/array | boolx2, listx1 | - | - |
-| `tree#/properties/emended` | boolean/null | boolx49 | - | null |
+| `tree#/properties/emended` | boolean/null | boolx50 | - | null |
 | `tree#/properties/matrix/items` | integer/string | intx139, strx5 | `?` | - |
 

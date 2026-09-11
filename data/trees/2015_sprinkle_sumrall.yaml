@@ -4,8 +4,12 @@ taxonomies:
   - taxon: edrioasterida
     children:
     - taxon: edrioasterina
+      citedAs: Suborder Edrioasterina, Bather, 1898
+      pages: 348
       children:
       - taxon: edrioasteridae
+        citedAs: Family Edrioasteridae Bather, 1899
+        pages: 348
         children:
         - taxon: pseudedriophus
           new: true

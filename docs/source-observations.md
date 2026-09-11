@@ -935,12 +935,12 @@ not recorded; pages 1–43 are not recorded.
 Data checks:
 
 - `lebetodiscinae`: `emended: true` with a note on the p. 12 / p. 27
-  difference.
-- `provisional` on `lloydi_sprinkle_1985` and `deltadiscus`.
+  difference (done).
+- `provisional` on `lloydi_sprinkle_1985` and `deltadiscus` (done).
 - Mark or collapse the two-rank uncertain placeholder.
 - `citedAs` on the five nodes whose printed attribution disagrees with the
-  record; resolve *Cambraster* and the Foerste 1916/1917 question.
-- `processDates.accepted: 1994-05-27` and `pages: [1, 43]` on the source.
+  record; resolve *Cambraster* and the Foerste 1916/1917 question (done).
+- `processDates.accepted: 1994-05-27` and `pages: [1, 43]` on the source (done).
 
 ## Across the three papers
 
@@ -1068,6 +1068,123 @@ Data checks:
 - `vorticellata_hall_1866` / `vorticellatus` and `pilea` / `pileus`: no
   change. `altSpellingOf` is undirected and the original spelling is the
   one on the `new` node (B28).
+
+## 1968_webby — Astrocystites distans (Palaeontology 11)
+
+Read from a whole-volume scan; two tipped-in plates shift the page mapping
+twice. One taxonomy; skeleton, new taxon and type captured; occurrences,
+illustrations and the diagnosis not.
+
+**The family-name history, in the source's own words (p. 514).** "In the
+same year Bather raised objections to Whiteaves's generic name on the
+grounds of possible confusion with Asterocystis Haeckel, and suggested that
+Whiteaves substitute the name Steganoblastus. The new generic name was
+introduced by Whiteaves (1898), and the family name Steganoblastidae of
+the Class Edrioasteroidea added by Bather (1900). Whiteaves's original
+generic name, Astrocystites, was restored by Bassler (1935) on grounds of
+priority, and he introduced a new family name, Astrocystitidae, to replace
+Steganoblastidae." Webby keeps Steganoblastidae: it "is based on a junior
+objective synonym, has priority and has been a more widely used name",
+citing Art. 40. A reasoned rejection of Bassler's replacement, now on the
+family node as a tentative synonym with the sentence; the `stance:
+rejects` claim (claims.md) is what it will become.
+
+**Placement history relayed (p. 514).** Bather 1914b an edrioasteroid,
+Hudson 1925 a blastoid, Bassler 1935–36 Edrioasteroidea "pending further
+discoveries", Fay 1962 a class of its own: secondhand statements about
+four sources, `citation` claims when that kind lands.
+
+**Three paratypes and a shared number.** USGD 2308, 2313 and 2314 are
+paratypes in the Material paragraph (p. 515) and were missing from the
+list; three paratype letters share catalogue number 2309.
+
+Source record: matches (vol. 11 part 4, pp. 513–525).
+
+Data checks:
+
+- `steganoblastus`: year 1899 → 1898 as Webby cites Whiteaves; the primary
+  is not on hand (done).
+- `distans_webby_1968`: paratypes 2308, 2313, 2314 added (done).
+- The six "miscellaneous pelmatozoan plates" (pp. 522–524) have no node.
+
+
+## Whiteaves 1897 and 1898, Bather 1914, Hudson 1925 and 1927 — the first edrioblastoid
+
+Read from four scans with text layers; reviews in `docs/reviews/`. None
+had a record or tree; records are added and drafts prepared in `drafts/`.
+
+**The protologue (1897, pp. 287–292).** "Description of a new genus and
+species of cystideans from the Trenton limestone at Ottawa", in a Number
+whose wrapper says "January, 1897" but which the volume's own notice says
+was issued 12 June 1897; Bather 1914 calls the January date "obviously
+erroneous". Three specimens, no catalogue numbers and no type words.
+
+**The replacement name (1898, pp. 395–396).** Whiteaves: "the writer has
+been informed by Mr. F. A. Bather … that Haeckel in 1896 separated
+Asteroblastus tuberculatus … under the new generic name Asterocystis. Mr.
+Bather thinks that there is not sufficient difference between the words
+Astrocystites and Asterocystis … The writer, therefore, desires to be
+allowed to substitute the generic name Steganoblastus … as kindly suggested
+by Mr. Bather". The Number's wrapper says 1897; it was issued 7 January
+1898, which Bather 1914 cites as "January 7, 1898". So Webby's 1898 is the
+issue date and the wrapper's 1897 is the citation trap; the record now
+keys the postscript 1898 with both dates in its notes. Whiteaves also
+slips into "Steganoblastus Canadensis" for his own species.
+
+**Bather 1914, Study V.** Does not erect Steganoblastidae: "in Lankester's
+Treatise on Zoology … (1900), where I founded for the reception of this
+genus the Family Steganoblastidæ of the Class Edrioasteroidea" (p. 194).
+Its act is to name specimen A "the holotype" among "the three syntypes of
+Whiteaves", which is why Fay 1962 could write "holotype" and "syntype" of
+one specimen: three syntypes in 1897 and 1914, two in Fay 1962 with one
+lost to Hudson.
+
+**Hudson 1925 and 1927.** No classification is printed; both write
+"Astrocystites (Steganoblastus) ottawaensis", the parenthesis being the
+replacement name, not a subgenus. The blastoid reading Webby summarises is
+one sentence: "Astrocystites is seen to be a true blastid and to be a
+nearer Pentremites than is either Asteroblastus, Asterocystis, or
+Blastoidocrinus" (1925 p. 642), an affinity, not a placement. Both papers
+name "cotypes A and B" after Bather; 1927's abstract says three specimens
+and discusses two.
+
+Data checks:
+
+- `astrocystites`, `ottawaensis_whiteaves_1897` → source 1897_whiteaves;
+  `steganoblastus` → source 1898_whiteaves (done). `steganoblastidae`
+  stays with 1900_bather, as Bather 1914 and Webby 1968 both say.
+- `parablastoidea`: author key lowercased to the registered `hudson`.
+
+## Dames 1879 and Jaekel 1927 — the cyathocystid protologues
+
+**The Neues Jahrbuch page is not Schmidt's paper.** Printed p. 1001 of the
+1879 Jahrgang is a Referat signed "W. Dames", a third-person summary of
+Schmidt's "Über Cyathocystis Plautinae" in the Verhandlungen der
+Mineralogischen Gesellschaft zu St. Petersburg, 1879, which is not on hand.
+No "n. g." or "n. sp." is printed; the acts are Dames's paraphrase, and
+the genus is compared with the edrioasterids and said to have "mehr
+Analogieen mit Asteriden als mit Cystideen". Recorded as `1879_dames`, a
+source whose every statement is secondhand; the year question (Schmidt
+1879 or 1880) needs Schmidt's own volume.
+
+**Jaekel 1927, three dates for one paper.** Communicated 27 October 1926,
+"Tryckt den 21 februari 1927" (p. 5), and issued in Häfte 2 of Band 19 on
+3 November 1927: the separate printing keys the record, the other two go
+in `processDates`. The family name shifts within four pages, Cyathocystidae,
+Cyathothecidae and the heading "Fam. Thecocystidae"; the type of
+*Cyathotheca suecica* is fixed by monotypy without the words; *Cyathocystis
+corallum* is recombined to *Cyathotheca* only in the plate caption; and
+Jaekel cites Schmidt as "1889", the likely origin of the
+`rhizophora_schmidt_1889` key.
+
+Data checks:
+
+- `cyathotheca`, `suecica_jaekel_1927` → source 1927_jaekel (done);
+  `cyathocystis` keeps Schmidt 1879 with the Referat noted.
+- `rhizophora_schmidt_1889`: printed 1879 in the Referat; the 1889 rests on
+  Jaekel's footnote.
+- Schema: `specimens.repository` is declared but absent from the
+  `propertyNames` enum, so it cannot be used; for D1.
 
 ## 1848b_forbes — Cystideæ of the Silurian Rocks of the British Islands (Mem. Geol. Surv. Gt. Britain 2)
 
@@ -1257,8 +1374,8 @@ Source record: title, journal, volume and author match, with two small wording d
 
 Data checks:
 
-- `1961_dehm.yaml`: the subgenus node is keyed `taxon: rhenopyrgus` with a node-level `rank: subgenus` override, instead of the dedicated `rhenopyrgus-subgenus` record that three later trees (`1966_regnéll`, `2013_sumrall_heredia_rodríguez.c.m_mestre`, `2020_ewin_martin.m_isotalo_zamora`) use for this same identity.
-- `sources.yaml` `1961_dehm.pages`: `[12, 17]`; the article begins at printed p. 13 (p. 12 belongs to Rievers's plate leaves) — should read `[13, 17]`.
+- `1961_dehm.yaml`: the subgenus node is keyed `taxon: rhenopyrgus` with a node-level `rank: subgenus` override, instead of the dedicated `rhenopyrgus-subgenus` record that three later trees (`1966_regnéll`, `2013_sumrall_heredia_rodríguez.c.m_mestre`, `2020_ewin_martin.m_isotalo_zamora`) use for this same identity (done).
+- `sources.yaml` `1961_dehm.pages`: `[12, 17]`; the article begins at printed p. 13 (p. 12 belongs to Rievers's plate leaves) — should read `[13, 17]` (done).
 
 ## 1962_fay — Edrioblastoidea, a New Class of Echinodermata (J. Paleontology 36)
 
@@ -1274,7 +1391,7 @@ Source record: title, journal, volume/number, pages and `pubDate` all match; `id
 
 Data checks:
 
-- `sources.yaml` `1962_fay.identifiers.jstor`: `13011100` should be `1301100` (extra digit).
+- `sources.yaml` `1962_fay.identifiers.jstor`: `13011100` should be `1301100` (extra digit) (done).
 
 ## 1978_bell.b.m_sprinkle — Totiglobus, an Unusual New Edrioasteroid (J. Paleontology 52)
 
@@ -1385,7 +1502,7 @@ Source record: title, journal, volume/issue/pages, authors and all three process
 
 Data checks:
 
-- `taxa.yaml`: the seventh author of *Rhenopyrgus flos* is keyed/spelled "DeBates" in `flos_klug_krüger_korn_rücklin_schemm-gregory_debates_mapes_2008`; both the species citation and the reference list in this paper spell it "DeBaets" (pp. 773–774).
+- `taxa.yaml`: the seventh author of *Rhenopyrgus flos* is keyed/spelled "DeBates" in `flos_klug_krüger_korn_rücklin_schemm-gregory_debates_mapes_2008`; both the species citation and the reference list in this paper spell it "DeBaets" (pp. 773–774) (done).
 
 ## 2015_sprinkle_sumrall — New edrioasterine and astrocystitid edrioasteroids (J. Paleontology 89)
 
@@ -1447,10 +1564,10 @@ Source record: title, journal, volume/number/pages, authors, acceptance date and
 
 Data checks:
 
-- `2020_ewin_martin.m_isotalo_zamora.yaml`: `rhenopyrgidae`/`rhenopyrgus` diagnosis fields carry dropped-ligature OCR text ("ve" for "five," "oor" for "floor," pp. 118, 120) copied verbatim instead of the plain printed words.
-- `2020_ewin_martin.m_isotalo_zamora.yaml`: `grayae_bather_1915`'s synonym entry gives `pages: 48`; the paper prints "p. 58" (p. 122).
-- `2020_ewin_martin.m_isotalo_zamora.yaml`: `grayae_bather_1915`'s occurrence location reads "Givran"; the paper prints "Girvan" (p. 122).
-- `2020_ewin_martin.m_isotalo_zamora.yaml`: `rhenopyrgus-sp-2`'s occurrence stores `localStage: Girvan?` (a place name, not a stage) and omits "Scotland, UK," present on every other occurrence in the file (p. 123).
+- `2020_ewin_martin.m_isotalo_zamora.yaml`: `rhenopyrgidae`/`rhenopyrgus` diagnosis fields carry dropped-ligature OCR text ("ve" for "five," "oor" for "floor," pp. 118, 120) copied verbatim instead of the plain printed words (done).
+- `2020_ewin_martin.m_isotalo_zamora.yaml`: `grayae_bather_1915`'s synonym entry gives `pages: 48`; the paper prints "p. 58" (p. 122) (done).
+- `2020_ewin_martin.m_isotalo_zamora.yaml`: `grayae_bather_1915`'s occurrence location reads "Givran"; the paper prints "Girvan" (p. 122) (done).
+- `2020_ewin_martin.m_isotalo_zamora.yaml`: `rhenopyrgus-sp-2`'s occurrence stores `localStage: Girvan?` (a place name, not a stage) and omits "Scotland, UK," present on every other occurrence in the file (p. 123) (done).
 
 ## 2021_jell_sprinkle — Revision of Whitehouse's eocrinoids Peridionites and Cymbionites (Alcheringa 45)
 
@@ -1466,8 +1583,8 @@ Source record: title, journal, volume/number/pages, all four process dates, DOI 
 
 Data checks:
 
-- `taxa.yaml`: `stromatocystitida-incertae-sedis` carries `auth: [linnaeus], year: 1758`, unsupported by this paper (which prints "Family UNCERTAIN," p. 36, with no attribution) or by any other source — likely a leftover template value.
-- `2021_jell_sprinkle.yaml`: the `echinodermata` node keys attribution to "brugière" (missing the "u" of Bruguière, unlike `1791_bruguière` used elsewhere in the corpus) and carries `auth`/`year` duplicating the taxon record, unlike every other backbone node in this same file (p. 6).
+- `taxa.yaml`: `stromatocystitida-incertae-sedis` carries `auth: [linnaeus], year: 1758`, unsupported by this paper (which prints "Family UNCERTAIN," p. 36, with no attribution) or by any other source — likely a leftover template value (done).
+- `2021_jell_sprinkle.yaml`: the `echinodermata` node keys attribution to "brugière" (missing the "u" of Bruguière, unlike `1791_bruguière` used elsewhere in the corpus) and carries `auth`/`year` duplicating the taxon record, unlike every other backbone node in this same file (p. 6) (done).
 
 ## Data corrections surfaced by this round
 
@@ -1492,21 +1609,21 @@ Data checks:
 | `1936_bassler.yaml` | `billingsi_chapman_1860` grouped under `agelacrinites-subgenus`; both printed occurrences read "(Agelacrinus) billingsi," not "(Agelacrinites)" | p. 12; plate 3, p. 26 |
 | `1936_bassler.yaml` | `ulrichi_bassler_shideler_1936` carries no flags at all, despite being headed "n. sp." twice | p. 8; plate 6 |
 | `1936_bassler.yaml` | no node exists for *Carneyella foerstei*, n. sp. (holotype USNM S-3965) | p. 8 |
-| `1961_dehm.yaml` | subgenus node keyed `taxon: rhenopyrgus` with a `rank: subgenus` override, instead of the dedicated `rhenopyrgus-subgenus` record three later trees use | p. 16 |
-| `sources.yaml` `1961_dehm` | `pages: [12, 17]`; the article begins at printed p. 13 | running heads, pp. 13–17 |
+| `1961_dehm.yaml` | subgenus node keyed `taxon: rhenopyrgus` with a `rank: subgenus` override, instead of the dedicated `rhenopyrgus-subgenus` record three later trees use (done) | p. 16 |
+| `sources.yaml` `1961_dehm` | `pages: [12, 17]`; the article begins at printed p. 13 (done) | running heads, pp. 13–17 |
 | `1961_rievers.yaml` | `coronaeformis_rievers_1961` diagnosis field stops after the first Diagnose sentence; the second (crown, five-triangle ambulacra) is omitted | pp. 10–11 |
-| `sources.yaml` `1962_fay` | `identifiers.jstor: 13011100` has an extra digit | printed Stable URL, `.../1301100` |
+| `sources.yaml` `1962_fay` | `identifiers.jstor: 13011100` has an extra digit (done) | printed Stable URL, `.../1301100` |
 | `2009_sumrall.yaml` | family node keyed `agelacrinitidae`; paper prints "Family Agelacrinidae Chapman, 1860" (no "-iti-"), and a dedicated `agelacrinidae` record already exists | p. 991 |
 | `2010_zhao.y.l_sumrall_parsley_peng.j.yaml` | paratype list gives `GM 2013`; five printed occurrences read "2103" | pp. 676, 679 |
 | `sources.yaml` `2010_zhao.y.l_sumrall_parsley_peng.j` | `number: 5`; six running heads read "84(4)" | pp. 670–680 |
 | `2011_sumrall_zamora.yaml` and `taxa.yaml` | species keyed/spelled `epilezorum`; the paper prints "espilezorum" nine times with no variant | pp. 425–441 |
-| `taxa.yaml` | `flos_klug_krüger_korn_rücklin_schemm-gregory_debates_mapes_2008` spells the seventh author "DeBates"; the citing paper and its own reference list spell it "DeBaets" | pp. 773–774 |
-| `2020_ewin_martin.m_isotalo_zamora.yaml` | `rhenopyrgidae`/`rhenopyrgus` diagnosis fields carry dropped-ligature OCR text ("ve" for "five," "oor" for "floor") | pp. 118, 120 |
-| `2020_ewin_martin.m_isotalo_zamora.yaml` | `grayae_bather_1915` synonym entry gives `pages: 48`; the paper prints "p. 58" | p. 122 |
-| `2020_ewin_martin.m_isotalo_zamora.yaml` | `grayae_bather_1915` occurrence location reads "Givran"; the paper prints "Girvan" | p. 122 |
-| `2020_ewin_martin.m_isotalo_zamora.yaml` | `rhenopyrgus-sp-2` occurrence stores `localStage: Girvan?` (a place name) and omits "Scotland, UK" | p. 123 |
-| `taxa.yaml` | `stromatocystitida-incertae-sedis` carries `auth: [linnaeus], year: 1758`, unsupported by any source | p. 36 (2021_jell_sprinkle prints "Family UNCERTAIN," no attribution) |
-| `2021_jell_sprinkle.yaml` | `echinodermata` node keys attribution to "brugière" (missing the "u") and carries `auth`/`year` duplicating the taxon record, unlike every other backbone node in the file | p. 6 |
+| `taxa.yaml` | `flos_klug_krüger_korn_rücklin_schemm-gregory_debates_mapes_2008` spells the seventh author "DeBates"; the citing paper and its own reference list spell it "DeBaets" (done) | pp. 773–774 |
+| `2020_ewin_martin.m_isotalo_zamora.yaml` | `rhenopyrgidae`/`rhenopyrgus` diagnosis fields carry dropped-ligature OCR text ("ve" for "five," "oor" for "floor") (done) | pp. 118, 120 |
+| `2020_ewin_martin.m_isotalo_zamora.yaml` | `grayae_bather_1915` synonym entry gives `pages: 48`; the paper prints "p. 58" (done) | p. 122 |
+| `2020_ewin_martin.m_isotalo_zamora.yaml` | `grayae_bather_1915` occurrence location reads "Givran"; the paper prints "Girvan" (done) | p. 122 |
+| `2020_ewin_martin.m_isotalo_zamora.yaml` | `rhenopyrgus-sp-2` occurrence stores `localStage: Girvan?` (a place name) and omits "Scotland, UK" (done) | p. 123 |
+| `taxa.yaml` | `stromatocystitida-incertae-sedis` carries `auth: [linnaeus], year: 1758`, unsupported by any source (done) | p. 36 (2021_jell_sprinkle prints "Family UNCERTAIN," no attribution) |
+| `2021_jell_sprinkle.yaml` | `echinodermata` node keys attribution to "brugière" (missing the "u") and carries `auth`/`year` duplicating the taxon record, unlike every other backbone node in the file (done) | p. 6 |
 | `2006_sumrall_brett_cornell.yaml` | top-level `notes` "No ranks are included" overstates the print — "Genus" is printed before the genus name | p. 190 |
 
 Attribution conflicts to resolve:

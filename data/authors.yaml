@@ -6,12 +6,20 @@ bell.f.j:
   given: Francis Jeffrey
   birth: 1855
   death: 1924
+dames:
+  family: Dames
+  given: Wilhelm
+  birth: 1843
+  death: 1898
 franzen:
   family: Franzen
   given: Christina
 hoşgör:
   family: Hoşgör
   given: İzzet
+hudson:
+  family: Hudson
+  given: George H.
 whitfield:
   family: Whitfield
   given: Robert Parr

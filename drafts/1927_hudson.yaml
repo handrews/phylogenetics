@@ -1,0 +1,70 @@
+# DRAFT -- for human audit only, not ready to commit.
+#
+# NEW TAXA RECORDS NEEDED: none -- astrocystites and
+# ottawaensis_whiteaves_1897 already exist in data/taxa.yaml.
+
+notes: |
+  As in Hudson 1925 (see drafts/1925_hudson.yaml), no classification list,
+  diagnosis heading, or rank hierarchy occurs anywhere in the paper
+  (checked by full-text search for "Blastoidea", "Protoblastoidea",
+  "class", "order", "family"). Hudson proposes no new taxon and no
+  synonymy; every act reported is attributed elsewhere -- the species and
+  genus to Whiteaves, the "holotype" designation among cotypes to Bather.
+
+taxonomies:
+- taxon: astrocystites
+  children:
+  - taxon: ottawaensis_whiteaves_1897
+    citedAs: Astrocystites (Steganoblastus) ottawaensis, Whiteaves
+    pages: 97
+    specimens:
+      syntypes:
+      - cotype A
+      - cotype B
+    notes: |
+      Printed "Astroeystites" in the title, Abstract and plate captions
+      (pp. 97, 98, 101, 103) -- almost certainly OCR for "Astrocystites",
+      which is spelled correctly throughout the running body text (e.g.
+      p. 99); the intended spelling is used above, not the OCR form. The
+      bracketed form is the replacement name Steganoblastus (Whiteaves,
+      1898), not a subgenus -- no rank word is attached to either name.
+
+      "...the species shown to be an interesting example of a transition
+      stage between a primitive form of papular respiration and the highly
+      specialized respiratory mode of the Eublastoidea." (p. 97) -- names a
+      formal higher taxon, Eublastoidea, only as the endpoint of an
+      evolutionary trajectory ("a transition stage... toward"), not as a
+      placement of Astrocystites inside it; no higher classification node
+      is added for it here, and no taxon record exists yet for
+      Eublastoidea in this dataset.
+
+      "Each species is the sole representative of its genus, of its
+      family, and possibly also of its sub-order." (p. 97) -- no family or
+      sub-order is named anywhere in the paper (both words occur exactly
+      once, in this sentence); it also covers Blastoidocrinus
+      carchariaedens, discussed in the same paragraph as a parallel case of
+      "splendid isolation", so it is not exclusively about this species.
+
+      "This unique species, from the Trenton (Curdsville) of Ottawa,
+      Canada, is known only through three specimens." (p. 97, Abstract) --
+      but the paper analyses and illustrates only two, consistently
+      "cotype A" and "cotype B" (e.g. pp. 98, 100-108); no third specimen
+      is ever named, numbered, or discussed anywhere else in the text, a
+      direct internal inconsistency in the paper's own material count.
+      "Plates VI and VII contain, save for the tegmenal region, a complete
+      analysis of the cotypes of A. ottawaensis which Bather designated as
+      specimens 'A' and 'B' (1, p. 194)." (p. 98) -- the paper's own
+      citation locating Bather's A/B designation to Bather 1914, p. 194.
+      No catalogue number is given for either cotype anywhere in this
+      paper. The schema offers no "cotypes" role; recorded as `syntypes`
+      above with the printed word kept here.
+
+      p. 106, a rhetorical aside, not an act: "Bather designated 'specimen
+      A' as the holotype -- in specimen B do we have a different species?"
+      -- raises, without resolving, whether cotype B represents a distinct
+      species from the (Bather-designated) holotype-bearing cotype A, on
+      the basis of the two specimens' very different surface-groove
+      ornamentation. Cotype B is separately described (p. 106) as having
+      "the longer sutures", being "the older specimen", and presenting
+      "the most complex figures" -- a comparative age/condition judgment
+      between the two cotypes, not a formal role.

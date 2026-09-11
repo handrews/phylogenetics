@@ -18,6 +18,8 @@ taxonomies:
               type: true
               synonyms:
               - taxon: coronaeformis_rievers_1961
+                citedAs: Pyrgocystis (Rhenopyrgus) coronaeformis Rievers, 1961
+                pages: 773
                 parents:
                 - taxon: rhenopyrgus-subgenus
                 - taxon: pyrgocystis

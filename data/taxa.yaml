@@ -932,8 +932,9 @@ astrea:
     source: 1801_lamarck
 astrocystites:
   name: Astrocystites
-  auth: [Whiteaves]
-  year: 1897
+  authority:
+    source: 1897_whiteaves
+    pages: 287
 astrocystites-sp_webby_1968:
   name: null
   rank: species
@@ -2845,11 +2846,15 @@ cyathocystis:
   name: Cyathocystis
   auth: [Schmidt]
   year: 1879
-  notes: 1935_bassler says 1880 for reasons unclear
+  notes: |
+    Schmidt's paper (Verh. Mineral. Ges. St. Petersburg, 1879) is not on hand;
+    known here through Dames's Referat (1879_dames). Bassler 1935 and Bell 1975
+    print 1880.
 cyathotheca:
   name: Cyathotheca
-  auth: [jaekel]
-  year: 1927
+  authority:
+    source: 1927_jaekel
+    pages: 1
 cyclaster:
   name: Cyclaster
   auth: [Cotteau]
@@ -7911,8 +7916,9 @@ ostrea:
     source: 1758_linnaeus
 ottawaensis_whiteaves_1897:
   name: ottawaensis
-  auth: [Whiteaves]
-  year: 1897
+  authority:
+    source: 1897_whiteaves
+    pages: 287
 ottawacrinus:
   name: Ottawacrinus
   authority:
@@ -8097,7 +8103,7 @@ papulosus_hall_1852:
 parablastoidea:
   name: Parablastoidea
   rank: Class
-  auth: [Hudson]
+  auth: [hudson]
   year: 1907
 paracrinoidea:
   name: Paracrinoidea
@@ -10572,8 +10578,10 @@ steganoblastidae:
     source: 1900_bather
 steganoblastus:
   name: Steganoblastus
-  auth: [whiteaves]
-  year: 1899
+  authority:
+    source: 1898_whiteaves
+    pages: 395
+  notes: A replacement name for Astrocystites, proposed at Bather's suggestion; issued 7 January 1898 in a Number whose wrapper says 1897.
 stellaris_billings_1859:
   name: stellaris
   auth: [billings]
@@ -10860,8 +10868,9 @@ sucis crispis_leske_1778:
     source: 1778_leske
 suecica_jaekel_1927:
   name: suecica
-  auth: [jaekel]
-  year: 1927
+  authority:
+    source: 1927_jaekel
+    pages: 1
 sulcata_aurivillius_1892:
   name: sulcata
   auth: [Aurivillius]
