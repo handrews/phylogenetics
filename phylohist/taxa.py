@@ -327,7 +327,7 @@ class Taxon:
       })),
     ):
       if self.name.endswith (suffix) and self.rank != rank:
-        logger.warn(
+        logger.warning(
           f'{self.name} with suffix "{suffix}" expected to have rank of {rank}',
         )
       if (
@@ -337,7 +337,7 @@ class Taxon:
       ):
         if suffix == 'idae' and self.name.endswith('idæ'):
           continue
-        logger.warn(
+        logger.warning(
           f'{self.name} of rank {rank} expected to end with suffix "{suffix}"',
         )
 
@@ -393,7 +393,7 @@ class Taxon:
         self.rank not in ranks and
         self.name not in exceptions
       ):
-        logger.warn(
+        logger.warning(
           f'{self.name} with suffix "{suffix}" expected to have one of ranks '
           f'{ranks} but has rank {self.rank}',
         )
@@ -773,9 +773,9 @@ class Tree:
 
   @cached_property
   def taxon_path(self):
-    # logger.warn(str(id(self)) + ' ' + str(self.taxon))
+    # logger.warning(str(id(self)) + ' ' + str(self.taxon))
     path = f'/{self.taxon.key}' if self.taxon else ''
-    # logger.warn(f'{path} ... {self._relpath}')
+    # logger.warning(f'{path} ... {self._relpath}')
     for segment in self._relpath:
       if segment != 'children':
         path = f'/{segment}{path}'
