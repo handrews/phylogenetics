@@ -35,32 +35,32 @@ even when its parent is also unreached, so read parents first.
 `data %` is the share of that container's instances carrying the
 property.
 
-### `article` -- 304 instances in `data/`
+### `article` -- 305 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `authors` | 304 | 100.0% |
-| `pubDate` | 303 | 99.7% |
-| `title` | 254 | 83.6% |
-| `volume` | 233 | 76.6% |
-| `pages` | 216 | 71.1% |
-| `journal` | 212 | 69.7% |
-| `identifiers` | 208 | 68.4% |
-| `number` | 154 | 50.7% |
+| `authors` | 305 | 100.0% |
+| `pubDate` | 304 | 99.7% |
+| `title` | 255 | 83.6% |
+| `volume` | 234 | 76.7% |
+| `pages` | 216 | 70.8% |
+| `journal` | 213 | 69.8% |
+| `identifiers` | 208 | 68.2% |
+| `number` | 155 | 50.8% |
 | `identifiers.url` | 126 | 60.6% |
-| `processDates` | 98 | 32.2% |
-| `book` | 90 | 29.6% |
+| `processDates` | 98 | 32.1% |
+| `book` | 90 | 29.5% |
 | `processDates.accepted` | 63 | 64.3% |
 | `identifiers.doi` | 61 | 29.3% |
 | `processDates.received` | 53 | 54.1% |
-| `audit` | 48 | 15.8% |
+| `audit` | 48 | 15.7% |
 | `audit.notes` | 48 | 100.0% |
 | `audit.state` | 48 | 100.0% |
-| `notes` | 36 | 11.8% |
+| `notes` | 37 | 12.1% |
 | `audit.coverage` | 30 | 62.5% |
 | `processDates.online` | 28 | 28.6% |
 | `identifiers.jstor` | 24 | 11.5% |
-| `plates` | 19 | 6.2% |
+| `plates` | 21 | 6.9% |
 | `processDates.revised` | 18 | 18.4% |
 | `series` | 9 | 3.0% |
 | `processDates.read` | 8 | 8.2% |
@@ -82,11 +82,11 @@ property.
 | `quotes` | 1 | 0.3% |
 | `reading` | 1 | 0.3% |
 
-### `authority` -- 1628 instances in `data/`
+### `authority` -- 1633 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `source` | 1628 | 100.0% |
+| `source` | 1633 | 100.0% |
 | `pages` | 62 | 3.8% |
 | `illustrations` | 27 | 1.7% |
 | `attributedTo` | 24 | 1.5% |
@@ -137,12 +137,12 @@ property.
 | `location` | 0 | 0.0% |
 | `source` | 0 | 0.0% |
 
-### `modularDate` -- 303 instances in `data/`
+### `modularDate` -- 304 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `year` | 303 | 100.0% |
-| `month` | 73 | 24.1% |
+| `year` | 304 | 100.0% |
+| `month` | 73 | 24.0% |
 | `/then/oneOf/0.day` | 24 | 100.0% |
 | `/then/oneOf/0.month` | 24 | 100.0% |
 | `/then/oneOf/1.day` | 24 | 100.0% |
@@ -215,11 +215,11 @@ property.
 | property | data | data % |
 |---|---|---|
 | `name` | 2682 | 98.6% |
-| `authority` | 1533 | 56.3% |
-| `auth` | 950 | 34.9% |
-| `year` | 947 | 34.8% |
+| `authority` | 1538 | 56.5% |
+| `auth` | 945 | 34.7% |
+| `year` | 942 | 34.6% |
 | `rank` | 716 | 26.3% |
-| `notes` | 215 | 7.9% |
+| `notes` | 216 | 7.9% |
 | `altSpellingOf` | 165 | 6.1% |
 | `lang` | 75 | 2.8% |
 | `originalParent` | 65 | 2.4% |
@@ -486,11 +486,11 @@ Tests whether each multi-type declaration is actually needed.
 |---|---|---|---|---|
 | `phylogeny#/$defs/article/properties/articleNumber` | integer/string | intx5, strx2 | `e1465`, `e38296` | - |
 | `phylogeny#/$defs/article/properties/chapter` | integer/string | strx1 | `Report of E. Billings, E...` | integer |
-| `phylogeny#/$defs/article/properties/number` | integer/string | intx146, strx8 | `Supplement`, `1/2`, `Adv. Pr.`, `1–2` | - |
+| `phylogeny#/$defs/article/properties/number` | integer/string | intx146, strx9 | `Supplement`, `1/2`, `Adv. Pr.`, `1–2` | - |
 | `phylogeny#/$defs/article/properties/pages/items` | integer/string | intx398, strx42 | `S637`, `S634`, `S631`, `S627` | - |
-| `phylogeny#/$defs/article/properties/plates/items` | integer/string | intx29, strx8 | `II`, `I`, `IV`, `VII` | - |
+| `phylogeny#/$defs/article/properties/plates/items` | integer/string | intx29, strx12 | `II`, `I`, `VI`, `V` | - |
 | `phylogeny#/$defs/article/properties/series` | integer/string | intx8, strx1 | `A` | - |
-| `phylogeny#/$defs/article/properties/volume` | integer/string | intx224, strx9 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `4th Series` | - |
+| `phylogeny#/$defs/article/properties/volume` | integer/string | intx225, strx9 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `4th Series` | - |
 | `phylogeny#/$defs/basicOccurrence/properties/unit` | string/array | listx20, strx1 | `Craighead inlier` | - |
 | `phylogeny#/$defs/citationNumber` | integer/string | intx657, listx344, strx183 | `IX`, `VIII`, `V`, `b` | - |
 | `phylogeny#/$defs/person/properties/death` | integer/null | intx78, nullx1 | - | - |
