@@ -123,16 +123,16 @@ property.
 | `subunit` | 0 | 0.0% |
 | `superunit` | 0 | 0.0% |
 
-### `illustration` -- 189 instances in `data/`
+### `illustration` -- 194 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `figures` | 180 | 95.2% |
-| `plate` | 106 | 56.1% |
-| `page` | 70 | 37.0% |
-| `textFigures` | 9 | 4.8% |
+| `figures` | 185 | 95.4% |
+| `plate` | 111 | 57.2% |
+| `page` | 70 | 36.1% |
+| `textFigures` | 9 | 4.6% |
 | `notes` | 4 | 2.1% |
-| `uncertain` | 1 | 0.5% |
+| `uncertain` | 2 | 1.0% |
 | `collectedFrom` | 0 | 0.0% |
 | `location` | 0 | 0.0% |
 | `source` | 0 | 0.0% |
@@ -235,7 +235,7 @@ property.
 | `modifier` | 0 | 0.0% |
 | `reason` | 0 | 0.0% |
 
-### `tree` -- 6346 instances in `data/`
+### `tree` -- 6348 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
@@ -244,17 +244,17 @@ property.
 | `new` | 1461 | 23.0% |
 | `notes` | 378 | 6.0% |
 | `type` | 367 | 5.8% |
-| `synonyms` | 359 | 5.7% |
+| `synonyms` | 361 | 5.7% |
 | `parents` | 326 | 5.1% |
-| `openTaxon` | 219 | 3.5% |
-| `pages` | 217 | 3.4% |
-| `illustrations` | 120 | 1.9% |
+| `openTaxon` | 219 | 3.4% |
+| `pages` | 219 | 3.4% |
+| `illustrations` | 122 | 1.9% |
 | `provisional` | 120 | 1.9% |
 | `authority` | 94 | 1.5% |
 | `specimens` | 89 | 1.4% |
 | `diagnosis` | 69 | 1.1% |
-| `year` | 61 | 1.0% |
-| `auth` | 60 | 0.9% |
+| `year` | 63 | 1.0% |
+| `auth` | 62 | 1.0% |
 | `emended` | 50 | 0.8% |
 | `citedAs` | 43 | 0.7% |
 | `bracket` | 35 | 0.6% |
@@ -492,7 +492,7 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/article/properties/series` | integer/string | intx8, strx1 | `A` | - |
 | `phylogeny#/$defs/article/properties/volume` | integer/string | intx225, strx9 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `4th Series` | - |
 | `phylogeny#/$defs/basicOccurrence/properties/unit` | string/array | listx20, strx1 | `Craighead inlier` | - |
-| `phylogeny#/$defs/citationNumber` | integer/string | intx657, listx344, strx183 | `IX`, `VIII`, `V`, `b` | - |
+| `phylogeny#/$defs/citationNumber` | integer/string | intx672, listx354, strx185 | `IX`, `VIII`, `V`, `b` | - |
 | `phylogeny#/$defs/person/properties/death` | integer/null | intx78, nullx1 | - | - |
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
 | `phylogeny#/$defs/specimens/additionalProperties/items` | string/array | strx516, listx4 | `F. 5420`, `F. 5419`, `F. 5418`, `F. 5417` | - |

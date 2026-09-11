@@ -1863,19 +1863,19 @@
     "state": "partial"
    },
    "claims": {
+    "acceptance": 2,
     "act": 3,
     "material": 2,
     "placement": 8,
-    "usage": 9
+    "usage": 11
    },
    "derived": {
     "illustrations": 2,
     "newTaxa": 3,
-    "skeleton": 17
+    "skeleton": 19,
+    "synonymy": 2
    },
-   "inconsistencies": [
-    "synonymy: declared partly, no claims derived"
-   ],
+   "inconsistencies": [],
    "material": {
     "illustration": 2
    },
