@@ -919,7 +919,7 @@
     coverage:
       skeleton: partly
       newTaxa: all
-      types: partly
+      types: na
       synonymy: none
       material: none
       occurrences: none
@@ -1416,7 +1416,7 @@
       material: none
       occurrences: none
       illustrations: none
-      diagnoses: partly
+      diagnoses: none
       phylogeny: na
     notes: Reviewed against the paper 2026-09-10; see docs/reviews/review_1900_bather.md
 1908_bather:
