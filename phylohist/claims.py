@@ -32,6 +32,9 @@ _PLACEMENT_FLAGS = (
   'stem',
 )
 _ACCEPTANCE_FLAGS = ('pars', 'tentative')
+# On these entries `pages` and `illustrations` locate the cited usage in
+# the cited work, never the citing source's own page or figure.
+_CITED_AXES = ('synonyms', 'non')
 # Role words as recorded today (the schema's enum and the plurals the
 # occurrence blocks use); D1 will fix the vocabulary.
 _SPECIMEN_ROLES = frozenset({
@@ -108,7 +111,10 @@ class _NodeClaims:
       'taxonomy' if node.tree_type == 'taxonomy' else node.tree_type
     )
     self.tree_notes = root.tree_notes
-    self.pages, self.pages_inherited = _effective_pages(node)
+    self.cited_entry = node.axis in _CITED_AXES
+    self.pages, self.pages_inherited = (
+      (None, False) if self.cited_entry else _effective_pages(node)
+    )
     self.subject = node.taxon.key if node.taxon is not None else None
     self.placeholder = placeholder_kind(node.taxon)
 
@@ -159,6 +165,13 @@ class _NodeClaims:
       ):
         if field in authority:
           claim[name] = authority[field]
+    if self.cited_entry:
+      for field, name in (
+        ('pages', 'citedPages'),
+        ('illustrations', 'citedIllustrations'),
+      ):
+        if field in self.data:
+          claim[name] = self.data[field]
     if not printed and not authority:
       claim['printedAttribution'] = 'as-record'
 
@@ -275,7 +288,9 @@ class _NodeClaims:
             self._occurrence_specimens(index, key, outer, ids)
           else:
             self._occurrence_specimens(index, outer, key, ids)
-    for illustration in data.get('illustrations') or ():
+    for illustration in (
+      () if self.cited_entry else data.get('illustrations') or ()
+    ):
       claim = self._base('material')
       claim['materialKind'] = 'illustration'
       claim['illustration'] = illustration

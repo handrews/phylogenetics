@@ -25,7 +25,7 @@ Every claim carries:
 | `source` | the tree file's source key |
 | `path` | the node's position and pointer, `0/children/0/children/0`, the same string the id carries |
 | `tree` | `taxonomy`, or a phylogeny's `treeType`; a phylogeny's `notes` ride along as `treeNotes` |
-| `pages` | the node's `pages` as written. A node without `pages` takes the nearest ancestor's along the `children` axis only, and the claim then carries `pagesInherited: true`. Entries under `synonyms`, `non`, `removed`, `parents`, `altPlacements`, `moved` and `corrected` never inherit: a synonymy line's page is its own or unknown. |
+| `pages` | the node's `pages` as written. A node without `pages` takes the nearest ancestor's along the `children` axis only, and the claim then carries `pagesInherited: true`. Entries under `synonyms`, `non`, `removed`, `parents`, `altPlacements`, `moved` and `corrected` never inherit. On a `synonyms` or `non` entry `pages` and `illustrations` locate the cited usage in the cited work, whether written flat or inside an `authority` block, so they appear as `citedPages` and `citedIllustrations` and the claim has no `pages` of its own. |
 | `subject` | the resolved taxon key the claim is about |
 | `printed` | the printed form on that line: `citedAs` verbatim, and `auth`, `year`, `in` as written (A1, A12). Absent `auth` means "as the record"; the claim says so with `printedAttribution: as-record`. |
 | `audit` | the source's `audit.state`; `coverageKind`, the coverage kind the claim counts under (`skeleton` for usage, rejection and a taxonomy placement, `phylogeny` for a placement in a phylogeny, `synonymy` for acceptance, `newTaxa`/`types` for the matching acts, `material`/`occurrences`/`illustrations` by material kind, `diagnoses`); and `coverage`, the declared value for that kind when the source declares one |
@@ -140,7 +140,8 @@ on the claim they qualify, as fields. No separate table.
 ### `material`
 
 Emitted for each `specimens` role entry, each `occurrences` entry and each
-`illustrations` entry on a node. Fields added: `materialKind: specimen |
+`illustrations` entry on a node other than a `synonyms` or `non` entry,
+whose illustrations are the cited work's. Fields added: `materialKind: specimen |
 occurrence | illustration`, `role` as recorded today (`holotype`,
 `paratypes`, `syntypes`, `unknowntypes`, and the occurrence blocks'
 `holotypes` and `unspecified`), `ids`, `repository`, and the occurrence or
