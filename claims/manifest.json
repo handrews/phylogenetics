@@ -2199,10 +2199,10 @@
      "occurrences": "none",
      "phylogeny": "na",
      "skeleton": "all",
-     "synonymy": "none",
+     "synonymy": "partly",
      "types": "all"
     },
-    "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_1936_bassler.md",
+    "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_1936_bassler.md\nSynonymy re-declared 2026-09-11: the parenthetical earlier genus in\n\"C. (Hemicystites) granulatus\" (p. 4) and \"L. (Agelacrinites) dicksoni\"\n(p. 9) is a synonymy of the earlier combination and is captured; the\ntwo-line citation under Discocystis kaskaskiensis (p. 21) is not.\n",
     "state": "partial"
    },
    "claims": {
@@ -2219,9 +2219,7 @@
     "synonymy": 2,
     "types": 7
    },
-   "inconsistencies": [
-    "synonymy: declared none, 2 claims derived"
-   ],
+   "inconsistencies": [],
    "material": {
     "specimen": 4
    },
@@ -2316,10 +2314,10 @@
      "occurrences": "all",
      "phylogeny": "na",
      "skeleton": "partly",
-     "synonymy": "na",
+     "synonymy": "all",
      "types": "all"
     },
-    "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_1961_dehm.md",
+    "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_1961_dehm.md\nSynonymy re-declared 2026-09-11: moving Rievers's Pyrgocystis\ncoronaeformis into the new subgenus is the paper's one synonymy\nstatement, captured as the original combination under the species.\n",
     "state": "partial"
    },
    "claims": {
@@ -2337,7 +2335,6 @@
     "types": 2
    },
    "inconsistencies": [
-    "synonymy: declared na, 1 claims derived",
     "illustrations: declared partly, no claims derived"
    ],
    "material": {
@@ -3789,10 +3786,10 @@
      "occurrences": "none",
      "phylogeny": "na",
      "skeleton": "partly",
-     "synonymy": "none",
+     "synonymy": "partly",
      "types": "partly"
     },
-    "notes": "Migrated from complete: named=true open=false history=false specimens.basic=false specimens.all=false\nReviewed against the paper 2026-09-09; see docs/reviews/review_1985_jell_burrett_banks.md\n",
+    "notes": "Migrated from complete: named=true open=false history=false specimens.basic=false specimens.all=false\nReviewed against the paper 2026-09-09; see docs/reviews/review_1985_jell_burrett_banks.md\nSynonymy re-declared 2026-09-11: Cyclocystoides primotica as the type\nof the new Edriodiscus is a recombination, captured as the original\ncombination under the species; the Eikosacystis synonymy (p. 185) is not.\n",
     "state": "partial"
    },
    "claims": {
@@ -3809,9 +3806,7 @@
     "synonymy": 1,
     "types": 4
    },
-   "inconsistencies": [
-    "synonymy: declared none, 1 claims derived"
-   ],
+   "inconsistencies": [],
    "material": {
     "specimen": 15
    },
