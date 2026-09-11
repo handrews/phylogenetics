@@ -82,13 +82,13 @@ property.
 | `quotes` | 1 | 0.3% |
 | `reading` | 1 | 0.3% |
 
-### `authority` -- 1633 instances in `data/`
+### `authority` -- 1635 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `source` | 1633 | 100.0% |
+| `source` | 1635 | 100.0% |
 | `pages` | 62 | 3.8% |
-| `illustrations` | 27 | 1.7% |
+| `illustrations` | 28 | 1.7% |
 | `attributedTo` | 24 | 1.5% |
 | `ex` | 2 | 0.1% |
 | `notes` | 2 | 0.1% |
@@ -123,16 +123,16 @@ property.
 | `subunit` | 0 | 0.0% |
 | `superunit` | 0 | 0.0% |
 
-### `illustration` -- 189 instances in `data/`
+### `illustration` -- 196 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `figures` | 180 | 95.2% |
-| `plate` | 106 | 56.1% |
-| `page` | 70 | 37.0% |
-| `textFigures` | 9 | 4.8% |
-| `notes` | 4 | 2.1% |
-| `uncertain` | 1 | 0.5% |
+| `figures` | 187 | 95.4% |
+| `plate` | 113 | 57.7% |
+| `page` | 70 | 35.7% |
+| `textFigures` | 9 | 4.6% |
+| `notes` | 4 | 2.0% |
+| `uncertain` | 2 | 1.0% |
 | `collectedFrom` | 0 | 0.0% |
 | `location` | 0 | 0.0% |
 | `source` | 0 | 0.0% |
@@ -235,34 +235,34 @@ property.
 | `modifier` | 0 | 0.0% |
 | `reason` | 0 | 0.0% |
 
-### `tree` -- 6346 instances in `data/`
+### `tree` -- 6349 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
 | `taxon` | 5750 | 90.6% |
 | `children` | 2184 | 34.4% |
 | `new` | 1461 | 23.0% |
-| `notes` | 378 | 6.0% |
-| `type` | 367 | 5.8% |
-| `synonyms` | 359 | 5.7% |
+| `notes` | 377 | 5.9% |
+| `type` | 368 | 5.8% |
+| `synonyms` | 362 | 5.7% |
 | `parents` | 326 | 5.1% |
-| `openTaxon` | 219 | 3.5% |
-| `pages` | 217 | 3.4% |
-| `illustrations` | 120 | 1.9% |
+| `openTaxon` | 219 | 3.4% |
+| `pages` | 219 | 3.4% |
+| `illustrations` | 123 | 1.9% |
 | `provisional` | 120 | 1.9% |
-| `authority` | 93 | 1.5% |
+| `authority` | 95 | 1.5% |
 | `specimens` | 89 | 1.4% |
 | `diagnosis` | 69 | 1.1% |
-| `year` | 61 | 1.0% |
-| `auth` | 60 | 0.9% |
-| `emended` | 50 | 0.8% |
-| `citedAs` | 42 | 0.7% |
+| `year` | 63 | 1.0% |
+| `auth` | 62 | 1.0% |
+| `emended` | 53 | 0.8% |
+| `citedAs` | 44 | 0.7% |
 | `bracket` | 35 | 0.6% |
 | `moved` | 29 | 0.5% |
 | `occurrences` | 26 | 0.4% |
 | `modifier` | 22 | 0.3% |
 | `outgroup` | 19 | 0.3% |
-| `pars` | 18 | 0.3% |
+| `pars` | 19 | 0.3% |
 | `quoted` | 18 | 0.3% |
 | `tentative` | 17 | 0.3% |
 | `affTaxon` | 16 | 0.3% |
@@ -273,13 +273,13 @@ property.
 | `rank` | 7 | 0.1% |
 | `bootstrap` | 6 | 0.1% |
 | `corrected` | 6 | 0.1% |
-| `editorial` | 5 | 0.1% |
-| `editorial.basis` | 5 | 100.0% |
+| `editorial` | 6 | 0.1% |
+| `editorial.basis` | 6 | 100.0% |
 | `mergeInto` | 5 | 0.1% |
+| `editorial.inferred` | 4 | 66.7% |
 | `non` | 4 | 0.1% |
-| `editorial.inferred` | 3 | 60.0% |
 | `or` | 3 | 0.0% |
-| `editorial.source` | 2 | 40.0% |
+| `editorial.source` | 2 | 33.3% |
 | `in` | 2 | 0.0% |
 | `removed` | 1 | 0.0% |
 | `stem` | 1 | 0.0% |
@@ -305,8 +305,8 @@ property.
 
 | value | count |
 |---|---|
-| `'none'` | 101 |
-| `'all'` | 69 |
+| `'none'` | 100 |
+| `'all'` | 70 |
 | `'partly'` | 55 |
 | `'na'` | 45 |
 
@@ -492,14 +492,14 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/article/properties/series` | integer/string | intx8, strx1 | `A` | - |
 | `phylogeny#/$defs/article/properties/volume` | integer/string | intx225, strx9 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `4th Series` | - |
 | `phylogeny#/$defs/basicOccurrence/properties/unit` | string/array | listx20, strx1 | `Craighead inlier` | - |
-| `phylogeny#/$defs/citationNumber` | integer/string | intx657, listx344, strx183 | `IX`, `VIII`, `V`, `b` | - |
+| `phylogeny#/$defs/citationNumber` | integer/string | intx678, listx358, strx185 | `IX`, `VIII`, `V`, `b` | - |
 | `phylogeny#/$defs/person/properties/death` | integer/null | intx78, nullx1 | - | - |
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
 | `phylogeny#/$defs/specimens/additionalProperties/items` | string/array | strx516, listx4 | `F. 5420`, `F. 5419`, `F. 5418`, `F. 5417` | - |
 | `phylogeny#/$defs/taxon/properties/holotype/additionalProperties/items` | array/string/integer | intx10, strx3 | `EE15373`, `EE 1659`, `E23470` | array |
 | `phylogeny#/$defs/taxon/properties/name` | string/null | strx2486, nullx196 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
 | `tree#/properties/diagnosis` | string/null | strx68, nullx1 | `A cast of it shows a con...`, `Body hemisphæric, slight...`, `A *Pyrgocystis* specimen...`, `Mouth surrounded and cov...` | - |
-| `tree#/properties/editorial/properties/inferred` | boolean/array | boolx2, listx1 | - | - |
-| `tree#/properties/emended` | boolean/null | boolx50 | - | null |
+| `tree#/properties/editorial/properties/inferred` | boolean/array | listx2, boolx2 | - | - |
+| `tree#/properties/emended` | boolean/null | boolx53 | - | null |
 | `tree#/properties/matrix/items` | integer/string | intx139, strx5 | `?` | - |
 

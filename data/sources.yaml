@@ -919,7 +919,7 @@
     coverage:
       skeleton: partly
       newTaxa: all
-      types: partly
+      types: na
       synonymy: none
       material: none
       occurrences: none
@@ -1416,7 +1416,7 @@
       material: none
       occurrences: none
       illustrations: none
-      diagnoses: partly
+      diagnoses: none
       phylogeny: na
     notes: Reviewed against the paper 2026-09-10; see docs/reviews/review_1900_bather.md
 1908_bather:
@@ -1678,13 +1678,18 @@
       skeleton: all
       newTaxa: partly
       types: all
-      synonymy: none
+      synonymy: partly
       material: partly
       occurrences: none
       illustrations: none
       diagnoses: none
       phylogeny: na
-    notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1936_bassler.md
+    notes: |
+      Reviewed against the paper 2026-09-09; see docs/reviews/review_1936_bassler.md
+      Synonymy re-declared 2026-09-11: the parenthetical earlier genus in
+      "C. (Hemicystites) granulatus" (p. 4) and "L. (Agelacrinites) dicksoni"
+      (p. 9) is a synonymy of the earlier combination and is captured; the
+      two-line citation under Discocystis kaskaskiensis (p. 21) is not.
 1941_whitehouse:
   title: "The Cambrian faunas of north-eastern Australia, Part 4: Early Cambrian echinoderms similar to the larval stages of Recent forms"
   journal: mem-q
@@ -1762,13 +1767,17 @@
       skeleton: partly
       newTaxa: all
       types: all
-      synonymy: na
+      synonymy: all
       material: none
       occurrences: all
       illustrations: partly
       diagnoses: none
       phylogeny: na
-    notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1961_dehm.md
+    notes: |
+      Reviewed against the paper 2026-09-09; see docs/reviews/review_1961_dehm.md
+      Synonymy re-declared 2026-09-11: moving Rievers's Pyrgocystis
+      coronaeformis into the new subgenus is the paper's one synonymy
+      statement, captured as the original combination under the species.
 1961_rievers:
   title: Eine neue Pyrgocystis (Echinod., Edrioasteroidea) aus den Bundenbacher Dachschiefern (Devon)
   journal: mitt
@@ -2820,7 +2829,7 @@ inprep_sprinkle_strimple:
       skeleton: partly
       newTaxa: all
       types: partly
-      synonymy: none
+      synonymy: partly
       material: partly
       occurrences: none
       illustrations: none
@@ -2829,6 +2838,9 @@ inprep_sprinkle_strimple:
     notes: |
       Migrated from complete: named=true open=false history=false specimens.basic=false specimens.all=false
       Reviewed against the paper 2026-09-09; see docs/reviews/review_1985_jell_burrett_banks.md
+      Synonymy re-declared 2026-09-11: Cyclocystoides primotica as the type
+      of the new Edriodiscus is a recombination, captured as the original
+      combination under the species; the Eikosacystis synonymy (p. 185) is not.
   journal: alcheringa
   volume: 9
   number: 3

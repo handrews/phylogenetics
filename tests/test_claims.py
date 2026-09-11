@@ -8,6 +8,11 @@ with an equal value, lists compared element by element); a `not-captured`
 refusal needs the source to declare `none` or `partly` for the coverage
 kind, or to have no tree; an `absent` refusal needs no tree for the scoped
 source, or no claim about the scoped taxon when no source is given.
+
+The manifest's inconsistency rows are gated too: a declared coverage
+value that the derived claims contradict fails until the declaration or
+the tree is corrected (`scripts/claims.py --inconsistencies` explains
+each row).
 """
 
 import os
@@ -16,7 +21,7 @@ import pathlib
 import pytest
 import yaml
 
-from phylohist.claims import extract
+from phylohist.claims import extract, manifest
 from phylohist.research import Source
 
 QUESTIONS_PATH = (
@@ -102,3 +107,19 @@ def test_question(question, claims):
         pytest.fail(f'{qid}: {scope["taxon"]} has claims in {mentions}')
     else:
       pytest.fail(f'{qid}: an absent question needs a scoped taxon or source')
+
+
+def test_no_inconsistencies(claims):
+  rows = {
+    source_key: entry['inconsistencies']
+    for source_key, entry in manifest(claims)['sources'].items()
+    if entry['inconsistencies']
+  }
+  if rows:
+    listing = '\n'.join(
+      f'{source_key}: {"; ".join(found)}' for source_key, found in rows.items()
+    )
+    pytest.fail(
+      f'{len(rows)} sources declare coverage their claims contradict '
+      f'(run scripts/claims.py --inconsistencies):\n{listing}',
+    )

@@ -23,7 +23,11 @@ taxonomies:
                 - taxon: cystidea
                   children:
                   - taxon: amphoridea
-                    notes: "Haeckel (1896, pars)"
+                    synonyms:
+                    - authority:
+                        source: 1896b_haeckel
+                      pars: true
+                      citedAs: "Haeckel (1896, pars)"
                     children:
                     - taxon: aristocystidae
                     - taxon: dendrocystidae
@@ -31,6 +35,7 @@ taxonomies:
                       new: true
                     - taxon: anomalocystidae
                   - taxon: rhombifera-order
+                    emended: true
                     notes: 'Zittel (1879, emend.)'
                     children:
                     - taxon: echinosphaeridae
@@ -46,10 +51,12 @@ taxonomies:
                     - taxon: caryocrinidae
                   - taxon: aporita
                     notes: "Zittel (1879, restr.)"
+                    emended: true
                     children:
                     - taxon: cryptocrinidae
                   - taxon: diploporita-order
                     notes: "Zittel (1879, emend.)"
+                    emended: true
                     children:
                     - taxon: sphaeronidae
                     - taxon: glyptosphaeridae

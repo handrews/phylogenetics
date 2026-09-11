@@ -1503,7 +1503,8 @@
   },
   "1854c_billings": {
    "acts": {
-    "new": 6
+    "new": 6,
+    "type": 1
    },
    "audit": {
     "coverage": {
@@ -1515,13 +1516,14 @@
      "phylogeny": "na",
      "skeleton": "partly",
      "synonymy": "none",
-     "types": "partly"
+     "types": "na"
     },
     "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_1854c_billings.md",
     "state": "partial"
    },
    "claims": {
-    "act": 6,
+    "act": 7,
+    "editorial": 1,
     "material": 5,
     "placement": 8,
     "usage": 9
@@ -1531,9 +1533,7 @@
     "newTaxa": 6,
     "skeleton": 17
    },
-   "inconsistencies": [
-    "types: declared partly, no claims derived"
-   ],
+   "inconsistencies": [],
    "material": {
     "illustration": 5
    },
@@ -1863,19 +1863,19 @@
     "state": "partial"
    },
    "claims": {
+    "acceptance": 2,
     "act": 3,
     "material": 2,
     "placement": 8,
-    "usage": 9
+    "usage": 11
    },
    "derived": {
     "illustrations": 2,
     "newTaxa": 3,
-    "skeleton": 17
+    "skeleton": 19,
+    "synonymy": 2
    },
-   "inconsistencies": [
-    "synonymy: declared partly, no claims derived"
-   ],
+   "inconsistencies": [],
    "material": {
     "illustration": 2
    },
@@ -1971,11 +1971,12 @@
   },
   "1900_bather": {
    "acts": {
+    "emended": 3,
     "new": 2
    },
    "audit": {
     "coverage": {
-     "diagnoses": "partly",
+     "diagnoses": "none",
      "illustrations": "none",
      "material": "none",
      "newTaxa": "partly",
@@ -1989,19 +1990,17 @@
     "state": "partial"
    },
    "claims": {
-    "acceptance": 6,
-    "act": 2,
+    "acceptance": 7,
+    "act": 5,
     "placement": 44,
-    "usage": 51
+    "usage": 52
    },
    "derived": {
     "newTaxa": 2,
-    "skeleton": 95,
-    "synonymy": 6
+    "skeleton": 96,
+    "synonymy": 7
    },
-   "inconsistencies": [
-    "diagnoses: declared partly, no claims derived"
-   ],
+   "inconsistencies": [],
    "material": {},
    "tree": true
   },
@@ -2199,10 +2198,10 @@
      "occurrences": "none",
      "phylogeny": "na",
      "skeleton": "all",
-     "synonymy": "none",
+     "synonymy": "partly",
      "types": "all"
     },
-    "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_1936_bassler.md",
+    "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_1936_bassler.md\nSynonymy re-declared 2026-09-11: the parenthetical earlier genus in\n\"C. (Hemicystites) granulatus\" (p. 4) and \"L. (Agelacrinites) dicksoni\"\n(p. 9) is a synonymy of the earlier combination and is captured; the\ntwo-line citation under Discocystis kaskaskiensis (p. 21) is not.\n",
     "state": "partial"
    },
    "claims": {
@@ -2219,9 +2218,7 @@
     "synonymy": 2,
     "types": 7
    },
-   "inconsistencies": [
-    "synonymy: declared none, 2 claims derived"
-   ],
+   "inconsistencies": [],
    "material": {
     "specimen": 4
    },
@@ -2316,31 +2313,30 @@
      "occurrences": "all",
      "phylogeny": "na",
      "skeleton": "partly",
-     "synonymy": "na",
+     "synonymy": "all",
      "types": "all"
     },
-    "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_1961_dehm.md",
+    "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_1961_dehm.md\nSynonymy re-declared 2026-09-11: moving Rievers's Pyrgocystis\ncoronaeformis into the new subgenus is the paper's one synonymy\nstatement, captured as the original combination under the species.\n",
     "state": "partial"
    },
    "claims": {
     "acceptance": 1,
     "act": 3,
-    "material": 10,
+    "material": 11,
     "placement": 11,
     "usage": 14
    },
    "derived": {
+    "illustrations": 1,
     "newTaxa": 1,
     "occurrences": 10,
     "skeleton": 25,
     "synonymy": 1,
     "types": 2
    },
-   "inconsistencies": [
-    "synonymy: declared na, 1 claims derived",
-    "illustrations: declared partly, no claims derived"
-   ],
+   "inconsistencies": [],
    "material": {
+    "illustration": 1,
     "occurrence": 10
    },
    "tree": true
@@ -3789,10 +3785,10 @@
      "occurrences": "none",
      "phylogeny": "na",
      "skeleton": "partly",
-     "synonymy": "none",
+     "synonymy": "partly",
      "types": "partly"
     },
-    "notes": "Migrated from complete: named=true open=false history=false specimens.basic=false specimens.all=false\nReviewed against the paper 2026-09-09; see docs/reviews/review_1985_jell_burrett_banks.md\n",
+    "notes": "Migrated from complete: named=true open=false history=false specimens.basic=false specimens.all=false\nReviewed against the paper 2026-09-09; see docs/reviews/review_1985_jell_burrett_banks.md\nSynonymy re-declared 2026-09-11: Cyclocystoides primotica as the type\nof the new Edriodiscus is a recombination, captured as the original\ncombination under the species; the Eikosacystis synonymy (p. 185) is not.\n",
     "state": "partial"
    },
    "claims": {
@@ -3809,9 +3805,7 @@
     "synonymy": 1,
     "types": 4
    },
-   "inconsistencies": [
-    "synonymy: declared none, 1 claims derived"
-   ],
+   "inconsistencies": [],
    "material": {
     "specimen": 15
    },
