@@ -4,6 +4,16 @@ Written 2026-09-10 after step 0, two reading rounds (33 papers) and the
 semantics roadmap. This is the entry point; `semantics-roadmap.md` is the
 detail for the data model, `source-observations.md` the findings per paper.
 
+## The stance
+
+Science is dynamic. Disagreement and debate are how it moves, and the
+product exists to make that movement visible and accessible, not to treat
+it as a pathology to be resolved. Questions about one paper are the
+foundation, and their value is access and speed; the questions the tool is
+for run across every source the corpus holds and show trajectories, when a
+position became general, how many distinct groups hold it, and who
+dissented and when. No answer passes a verdict.
+
 ## Where things stand
 
 - **Data.** 218 tree files, 2,716 taxon records, 289 source records. 24
@@ -79,6 +89,11 @@ now, in parallel, as a document; migrate after the extractor exists.
   down what the audit took, since that is the measurement for the workflow.
 
 **M1. Eval set v1 and the claim vocabulary** (S3, judgment work)
+- Gold slice: Edrioblastoidea (Astrocystitidae) and Rhenopyrgidae, widened
+  on 2026-09-10 to the cyathocystids, which some modern views place with
+  them; all fourteen trees that treat cyathocystids are already among the
+  twenty-four gold-slice trees, so the widening adds nodes and two
+  protologues not yet entered (Schmidt 1879, Jaekel 1927), not papers.
 - Question classes: *answerable* (a claim exists and is cited),
   *uncaptured* (the paper says it, the data does not; ground truth from
   the reviews' coverage lines), *as-published* (the answer must reproduce
