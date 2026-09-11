@@ -91,7 +91,9 @@ taxonomies:
     - taxon: coronaeformis_rievers_1961
       type: true
       synonyms:
-      - parents:
+      - authority:
+          source: 1961_rievers
+        parents:
         - taxon: pyrgocystis
       occurrences:
       - series: Lower Devonian

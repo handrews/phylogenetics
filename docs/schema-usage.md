@@ -82,11 +82,11 @@ property.
 | `quotes` | 1 | 0.3% |
 | `reading` | 1 | 0.3% |
 
-### `authority` -- 1633 instances in `data/`
+### `authority` -- 1634 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `source` | 1633 | 100.0% |
+| `source` | 1634 | 100.0% |
 | `pages` | 62 | 3.8% |
 | `illustrations` | 27 | 1.7% |
 | `attributedTo` | 24 | 1.5% |
@@ -250,13 +250,13 @@ property.
 | `pages` | 217 | 3.4% |
 | `illustrations` | 120 | 1.9% |
 | `provisional` | 120 | 1.9% |
-| `authority` | 93 | 1.5% |
+| `authority` | 94 | 1.5% |
 | `specimens` | 89 | 1.4% |
 | `diagnosis` | 69 | 1.1% |
 | `year` | 61 | 1.0% |
 | `auth` | 60 | 0.9% |
 | `emended` | 50 | 0.8% |
-| `citedAs` | 42 | 0.7% |
+| `citedAs` | 43 | 0.7% |
 | `bracket` | 35 | 0.6% |
 | `moved` | 29 | 0.5% |
 | `occurrences` | 26 | 0.4% |

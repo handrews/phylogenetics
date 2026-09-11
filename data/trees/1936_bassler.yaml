@@ -85,6 +85,7 @@ taxonomies:
           type: true
           synonyms:
           - taxon: dicksoni_billings_1857
+            citedAs: 'L. (Agelacrinites) dicksoni (Billings), 1857'
             parents:
             - taxon: agelacrinites
         - taxon: loriformis_raymond_1915
