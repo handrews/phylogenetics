@@ -82,11 +82,11 @@ property.
 | `quotes` | 1 | 0.3% |
 | `reading` | 1 | 0.3% |
 
-### `authority` -- 1634 instances in `data/`
+### `authority` -- 1635 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `source` | 1634 | 100.0% |
+| `source` | 1635 | 100.0% |
 | `pages` | 62 | 3.8% |
 | `illustrations` | 28 | 1.7% |
 | `attributedTo` | 24 | 1.5% |
@@ -235,34 +235,34 @@ property.
 | `modifier` | 0 | 0.0% |
 | `reason` | 0 | 0.0% |
 
-### `tree` -- 6348 instances in `data/`
+### `tree` -- 6349 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
 | `taxon` | 5750 | 90.6% |
 | `children` | 2184 | 34.4% |
 | `new` | 1461 | 23.0% |
-| `notes` | 378 | 6.0% |
+| `notes` | 377 | 5.9% |
 | `type` | 368 | 5.8% |
-| `synonyms` | 361 | 5.7% |
+| `synonyms` | 362 | 5.7% |
 | `parents` | 326 | 5.1% |
 | `openTaxon` | 219 | 3.4% |
 | `pages` | 219 | 3.4% |
 | `illustrations` | 123 | 1.9% |
 | `provisional` | 120 | 1.9% |
-| `authority` | 94 | 1.5% |
+| `authority` | 95 | 1.5% |
 | `specimens` | 89 | 1.4% |
 | `diagnosis` | 69 | 1.1% |
 | `year` | 63 | 1.0% |
 | `auth` | 62 | 1.0% |
-| `emended` | 50 | 0.8% |
-| `citedAs` | 43 | 0.7% |
+| `emended` | 53 | 0.8% |
+| `citedAs` | 44 | 0.7% |
 | `bracket` | 35 | 0.6% |
 | `moved` | 29 | 0.5% |
 | `occurrences` | 26 | 0.4% |
 | `modifier` | 22 | 0.3% |
 | `outgroup` | 19 | 0.3% |
-| `pars` | 18 | 0.3% |
+| `pars` | 19 | 0.3% |
 | `quoted` | 18 | 0.3% |
 | `tentative` | 17 | 0.3% |
 | `affTaxon` | 16 | 0.3% |
@@ -500,6 +500,6 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/taxon/properties/name` | string/null | strx2486, nullx196 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
 | `tree#/properties/diagnosis` | string/null | strx68, nullx1 | `A cast of it shows a con...`, `Body hemisphæric, slight...`, `A *Pyrgocystis* specimen...`, `Mouth surrounded and cov...` | - |
 | `tree#/properties/editorial/properties/inferred` | boolean/array | listx2, boolx2 | - | - |
-| `tree#/properties/emended` | boolean/null | boolx50 | - | null |
+| `tree#/properties/emended` | boolean/null | boolx53 | - | null |
 | `tree#/properties/matrix/items` | integer/string | intx139, strx5 | `?` | - |
 

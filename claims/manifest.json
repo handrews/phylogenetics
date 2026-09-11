@@ -1973,6 +1973,7 @@
   },
   "1900_bather": {
    "acts": {
+    "emended": 3,
     "new": 2
    },
    "audit": {
@@ -1991,15 +1992,15 @@
     "state": "partial"
    },
    "claims": {
-    "acceptance": 6,
-    "act": 2,
+    "acceptance": 7,
+    "act": 5,
     "placement": 44,
-    "usage": 51
+    "usage": 52
    },
    "derived": {
     "newTaxa": 2,
-    "skeleton": 95,
-    "synonymy": 6
+    "skeleton": 96,
+    "synonymy": 7
    },
    "inconsistencies": [
     "diagnoses: declared partly, no claims derived"
