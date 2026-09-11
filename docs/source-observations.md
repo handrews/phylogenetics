@@ -1063,11 +1063,11 @@ Data checks:
   add Whitfield as co-author per the contents page (done).
 - `cincinnatiensis_hall_1866` is not a Hall name: p. 214 prints
   "Rœm." with Roemer's 1851 citation; the record stands in for Hall's
-  misidentified specimen (fig. 7, pl. 6) that Bassler 1935 separated. A
-  misidentification record (B10), for the owner.
-- `vorticellata_hall_1866` is canonical with `vorticellatus` as the
-  variant, but every printing reads "vorticellatus"; likewise *pileus*
-  over `pilea`. For the owner.
+  misidentified specimen (fig. 7, pl. 6) that Bassler 1935 separated.
+  Decided: it becomes a misidentification record when B10's field lands.
+- `vorticellata_hall_1866` / `vorticellatus` and `pilea` / `pileus`: no
+  change. `altSpellingOf` is undirected and the original spelling is the
+  one on the `new` node (B28).
 
 ## 1848b_forbes — Cystideæ of the Silurian Rocks of the British Islands (Mem. Geol. Surv. Gt. Britain 2)
 
