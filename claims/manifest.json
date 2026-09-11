@@ -725,19 +725,19 @@
    "claims": {
     "acceptance": 5,
     "act": 4,
-    "material": 4,
+    "material": 2,
     "placement": 7,
     "usage": 17
    },
    "derived": {
-    "illustrations": 4,
+    "illustrations": 2,
     "newTaxa": 4,
     "skeleton": 24,
     "synonymy": 5
    },
    "inconsistencies": [],
    "material": {
-    "illustration": 4
+    "illustration": 2
    },
    "tree": true
   },
@@ -896,19 +896,19 @@
    "claims": {
     "acceptance": 9,
     "act": 3,
-    "material": 8,
+    "material": 7,
     "placement": 9,
     "usage": 21
    },
    "derived": {
-    "illustrations": 8,
+    "illustrations": 7,
     "newTaxa": 3,
     "skeleton": 30,
     "synonymy": 9
    },
    "inconsistencies": [],
    "material": {
-    "illustration": 8
+    "illustration": 7
    },
    "tree": true
   },
@@ -1058,19 +1058,19 @@
    "claims": {
     "acceptance": 9,
     "act": 5,
-    "material": 4,
+    "material": 3,
     "placement": 8,
     "usage": 23
    },
    "derived": {
-    "illustrations": 4,
+    "illustrations": 3,
     "newTaxa": 5,
     "skeleton": 31,
     "synonymy": 9
    },
    "inconsistencies": [],
    "material": {
-    "illustration": 4
+    "illustration": 3
    },
    "tree": true
   },
@@ -1295,19 +1295,19 @@
    "claims": {
     "acceptance": 7,
     "act": 18,
-    "material": 4,
+    "material": 3,
     "placement": 31,
     "usage": 41
    },
    "derived": {
-    "illustrations": 4,
+    "illustrations": 3,
     "newTaxa": 18,
     "skeleton": 72,
     "synonymy": 7
    },
    "inconsistencies": [],
    "material": {
-    "illustration": 4
+    "illustration": 3
    },
    "tree": true
   },
@@ -3197,24 +3197,18 @@
     "acceptance": 23,
     "act": 44,
     "diagnosis": 14,
-    "material": 3,
     "placement": 83,
     "usage": 122
    },
    "derived": {
     "diagnoses": 14,
-    "illustrations": 3,
     "newTaxa": 22,
     "skeleton": 205,
     "synonymy": 23,
     "types": 22
    },
-   "inconsistencies": [
-    "illustrations: declared none, 3 claims derived"
-   ],
-   "material": {
-    "illustration": 3
-   },
+   "inconsistencies": [],
+   "material": {},
    "tree": true
   },
   "1976_bell.b.m_petersen.m.s": {
@@ -4721,12 +4715,12 @@
    "claims": {
     "acceptance": 2,
     "act": 4,
-    "material": 5,
+    "material": 4,
     "placement": 8,
     "usage": 12
    },
    "derived": {
-    "illustrations": 5,
+    "illustrations": 4,
     "newTaxa": 2,
     "skeleton": 20,
     "synonymy": 2,
@@ -4734,7 +4728,7 @@
    },
    "inconsistencies": [],
    "material": {
-    "illustration": 5
+    "illustration": 4
    },
    "tree": true
   },
@@ -5880,19 +5874,19 @@
    "claims": {
     "acceptance": 6,
     "act": 1,
-    "material": 17,
+    "material": 11,
     "placement": 8,
     "usage": 15
    },
    "derived": {
-    "illustrations": 17,
+    "illustrations": 11,
     "skeleton": 23,
     "synonymy": 6,
     "types": 1
    },
    "inconsistencies": [],
    "material": {
-    "illustration": 17
+    "illustration": 11
    },
    "tree": true
   },
@@ -5941,12 +5935,12 @@
    "claims": {
     "acceptance": 3,
     "act": 4,
-    "material": 2,
+    "material": 1,
     "placement": 24,
     "usage": 31
    },
    "derived": {
-    "illustrations": 2,
+    "illustrations": 1,
     "newTaxa": 3,
     "phylogeny": 15,
     "skeleton": 40,
@@ -5955,7 +5949,7 @@
    },
    "inconsistencies": [],
    "material": {
-    "illustration": 2
+    "illustration": 1
    },
    "tree": true
   },
