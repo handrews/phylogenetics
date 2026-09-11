@@ -16,3 +16,5 @@ jobs:
     - run: poetry run pytest
     - run: poetry run python scripts/schema_audit.py --markdown docs/schema-usage.md
     - run: git diff --exit-code docs/schema-usage.md
+    - run: poetry run python scripts/claims.py
+    - run: git diff --exit-code claims/
