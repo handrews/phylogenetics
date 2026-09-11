@@ -16,7 +16,7 @@ Every claim carries:
 | field | value |
 |---|---|
 | `id` | `<source>:<path>:<kind>[:<n>]`. `<path>` is the node's position in its tree file as the loader computes it: the taxonomy or phylogeny index, then each step down (`children/2`, `synonyms/0`, `non/1`, `removed/0`, `parents/0`, `moved`, `corrected`, `or/0`). `<n>` disambiguates several claims of one kind from one node (a node with three `specimens` roles yields three `material` claims). Ids are stable as long as the file is not reordered; the tree keeps printed order, so reordering is a data change. |
-| `kind` | one of `usage`, `placement`, `acceptance`, `act`, `material`, `citation`, `editorial` |
+| `kind` | one of `usage`, `placement`, `acceptance`, `act`, `rejection`, `material`, `secondhand`, `editorial` |
 | `source` | the tree file's source key |
 | `pages` | the node's `pages` as written. A node without `pages` takes the nearest ancestor's along the `children` axis only, and the claim then carries `pagesInherited: true`. Entries under `synonyms`, `non`, `removed`, `parents`, `altPlacements`, `moved` and `corrected` never inherit: a synonymy line's page is its own or unknown. |
 | `subject` | the resolved taxon key the claim is about |
@@ -69,17 +69,22 @@ A phylogeny's nesting produces placements too, marked
 `tree: cladogram | diagram | other` with the phylogeny's `notes`, and a
 `bracket` label is a placement whose parent is the bracket's key.
 
-Two things a source says about placement that the trees do not yet hold
-as fields, and that the vocabulary reserves for them:
+A source can also say where a name does *not* belong. Two printed shapes,
+one claim: "we are confining the family Cyathocystidae to Cyathocystis and
+Cyathotheca" (Bockelie & Paul 1983, the `removed` list, B5) and "we do not
+include them within Cyathocystidae Bather, 1899" (Sumrall et al. 2013,
+p. 773). The first is written from the group's side and the second from
+the taxon's side, and whether anyone had placed the name there before is
+the source's business, not the claim's. Both emit a `rejection`: subject,
+the declined parent, the printed words. `removed` under a group node and a
+`rejectedPlacements` list on the taxon node (not yet in the schema) are
+the two spellings.
 
-- `stance: rejects`: a placement the source names and declines, as
-  Sumrall et al. 2013 decline Cyathocystidae for the rhenopyrgids ("we do
-  not include them within Cyathocystidae Bather, 1899", p. 773). Today such
-  a statement lives in `notes`; the claim kind exists so that a debate has
-  both sides on record, not only the side that placed.
-- `follows`: the source adopts a placement by citing another work for it
-  ("Edrioasterida sensu Guensburg and Sprinkle (1994)", 2013). A follower
-  and a decider count differently when agreement is measured.
+`follows`: the source adopts a placement by citing another work for it
+("Edrioasterida sensu Guensburg and Sprinkle (1994)", 2013). A source that
+argues a placement from its own evidence is a decider; one that adopts
+another's by citation is a follower. The distinction is carried on the
+placement claim so that agreement can be counted both ways.
 
 ### `acceptance`
 
@@ -123,16 +128,16 @@ occurrence or illustration fields copied verbatim. The shape follows the
 YAML as it stands; when D1 migrates material, only the extractor's
 material adapter changes and these claims keep their fields.
 
-### `citation`
+### `secondhand`
 
-A source's statement about what another source did: "P. octogona … was
-assigned to Rhenopyrgus by Dehm (1961)" (Holloway & Jell 1983 p. 1004),
-which Dehm's own tree does not bear out. Fields: `about` (the cited source
-key), `says` (the act or placement attributed to it), `matches` (derived:
-whether the cited source's own claims agree; B19). Not emitted from any
-tree field today; reserved so that "what did later authors say he did" has
-a home, and so the derived comparison is the citation-error class of the
-eval.
+A source's statement about what another source did, accurate or not: "P.
+octogona … was assigned to Rhenopyrgus by Dehm (1961)" (Holloway & Jell
+1983 p. 1004). Fields: `about` (the cited source key), `says` (the act or
+placement attributed to it), and `matches`, derived by comparing `says`
+with the cited source's own claims (B19); here Dehm's tree does not bear
+the statement out. Not emitted from any tree field today; reserved so that
+"what did later authors say he did" has a home, and so the derived
+comparison feeds the citation-error part of the eval.
 
 ### `editorial`
 

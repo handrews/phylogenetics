@@ -44,10 +44,19 @@ the group settled on, which every author need not share.
 
 ## Language
 
-Answers are written for readers of the literature, not of this
-repository. They never mention files, YAML, records as storage, or how a
-fact is held; they say what the corpus credits, where a source places a
-name, and whether a statement is the source's or the editor's.
+Answers are written for researchers who read the literature, in the
+words of the scientific community. They never mention files, YAML,
+records as storage, internal field names or mechanisms, or how a fact is
+held; they say what the corpus credits, where a source places a name, and
+whether a statement is the source's or the editor's. A translated name is
+a nomen translatum, not an "alternate-rank form".
+
+They never leak scope, schedule or planning: no gold slice, milestone or
+demo, and no opinion on how important a gap is. A gap is stated as a fact
+about the corpus, in a form that assumes the work goes on: "the material
+printed there has not yet been entered", never "was not entered" as a
+finished judgement, and never a word that reads as a reproach to whoever
+entered the data. Readers judge the implications themselves.
 
 ## The entries
 

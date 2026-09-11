@@ -82,12 +82,12 @@ property.
 | `quotes` | 1 | 0.3% |
 | `reading` | 1 | 0.3% |
 
-### `authority` -- 1625 instances in `data/`
+### `authority` -- 1626 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `source` | 1625 | 100.0% |
-| `pages` | 59 | 3.6% |
+| `source` | 1626 | 100.0% |
+| `pages` | 60 | 3.7% |
 | `illustrations` | 27 | 1.7% |
 | `attributedTo` | 24 | 1.5% |
 | `ex` | 2 | 0.1% |
@@ -247,14 +247,14 @@ property.
 | `synonyms` | 359 | 5.7% |
 | `parents` | 326 | 5.1% |
 | `openTaxon` | 219 | 3.5% |
-| `pages` | 218 | 3.4% |
+| `pages` | 217 | 3.4% |
 | `illustrations` | 120 | 1.9% |
 | `provisional` | 120 | 1.9% |
-| `authority` | 92 | 1.4% |
+| `authority` | 93 | 1.5% |
 | `specimens` | 89 | 1.4% |
 | `diagnosis` | 69 | 1.1% |
-| `year` | 62 | 1.0% |
-| `auth` | 61 | 1.0% |
+| `year` | 61 | 1.0% |
+| `auth` | 60 | 0.9% |
 | `emended` | 50 | 0.8% |
 | `citedAs` | 42 | 0.7% |
 | `bracket` | 35 | 0.6% |

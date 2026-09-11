@@ -9,7 +9,6 @@ taxonomies:
       synonyms:
       - taxon: astrocystitidae
         tentative: true
-        pages: 514
         notes: |
           Bassler 1935 "introduced a new family name, Astrocystitidae, to
           replace Steganoblastidae. However, since Steganoblastidae, which is
@@ -29,9 +28,10 @@ taxonomies:
           (1898)" (p. 514).
         synonyms:
         - taxon: steganoblastus
-          auth: [whiteaves]
-          year: 1898
           citedAs: steganoblastus Whiteaves 1898
+          authority:
+            source: 1898_whiteaves
+            pages: 395
         children:
         - taxon: ottawaensis_whiteaves_1897
           type: true
