@@ -88,7 +88,7 @@ property.
 |---|---|---|
 | `source` | 1634 | 100.0% |
 | `pages` | 62 | 3.8% |
-| `illustrations` | 27 | 1.7% |
+| `illustrations` | 28 | 1.7% |
 | `attributedTo` | 24 | 1.5% |
 | `ex` | 2 | 0.1% |
 | `notes` | 2 | 0.1% |
@@ -123,15 +123,15 @@ property.
 | `subunit` | 0 | 0.0% |
 | `superunit` | 0 | 0.0% |
 
-### `illustration` -- 194 instances in `data/`
+### `illustration` -- 196 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `figures` | 185 | 95.4% |
-| `plate` | 111 | 57.2% |
-| `page` | 70 | 36.1% |
+| `figures` | 187 | 95.4% |
+| `plate` | 113 | 57.7% |
+| `page` | 70 | 35.7% |
 | `textFigures` | 9 | 4.6% |
-| `notes` | 4 | 2.1% |
+| `notes` | 4 | 2.0% |
 | `uncertain` | 2 | 1.0% |
 | `collectedFrom` | 0 | 0.0% |
 | `location` | 0 | 0.0% |
@@ -248,7 +248,7 @@ property.
 | `parents` | 326 | 5.1% |
 | `openTaxon` | 219 | 3.4% |
 | `pages` | 219 | 3.4% |
-| `illustrations` | 122 | 1.9% |
+| `illustrations` | 123 | 1.9% |
 | `provisional` | 120 | 1.9% |
 | `authority` | 94 | 1.5% |
 | `specimens` | 89 | 1.4% |
@@ -492,7 +492,7 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/article/properties/series` | integer/string | intx8, strx1 | `A` | - |
 | `phylogeny#/$defs/article/properties/volume` | integer/string | intx225, strx9 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `4th Series` | - |
 | `phylogeny#/$defs/basicOccurrence/properties/unit` | string/array | listx20, strx1 | `Craighead inlier` | - |
-| `phylogeny#/$defs/citationNumber` | integer/string | intx672, listx354, strx185 | `IX`, `VIII`, `V`, `b` | - |
+| `phylogeny#/$defs/citationNumber` | integer/string | intx678, listx358, strx185 | `IX`, `VIII`, `V`, `b` | - |
 | `phylogeny#/$defs/person/properties/death` | integer/null | intx78, nullx1 | - | - |
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
 | `phylogeny#/$defs/specimens/additionalProperties/items` | string/array | strx516, listx4 | `F. 5420`, `F. 5419`, `F. 5418`, `F. 5417` | - |

@@ -2325,21 +2325,21 @@
    "claims": {
     "acceptance": 1,
     "act": 3,
-    "material": 10,
+    "material": 11,
     "placement": 11,
     "usage": 14
    },
    "derived": {
+    "illustrations": 1,
     "newTaxa": 1,
     "occurrences": 10,
     "skeleton": 25,
     "synonymy": 1,
     "types": 2
    },
-   "inconsistencies": [
-    "illustrations: declared partly, no claims derived"
-   ],
+   "inconsistencies": [],
    "material": {
+    "illustration": 1,
     "occurrence": 10
    },
    "tree": true
