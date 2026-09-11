@@ -190,7 +190,8 @@ publication-year order. Coverage is declared by a reviewer and counted by
 the extractor; they are cross-checked, never conflated (G1): a source
 declaring `all` or `partly` for a kind with no derived claims, or `none`
 or `na` with any, is an inconsistency row for the owner to settle either
-way.
+way. `scripts/claims.py --inconsistencies` prints the rows with the
+claims behind them and the review file to check against.
 
 ## What the vocabulary does not do
 

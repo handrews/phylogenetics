@@ -4,12 +4,15 @@
     poetry run python scripts/claims.py                # -> claims/
     poetry run python scripts/claims.py --source 1962_fay 1983_holloway_jell
     poetry run python scripts/claims.py --draft --out /tmp/claims-with-drafts
+    poetry run python scripts/claims.py --inconsistencies
 
 Writes one `<source>.jsonl` per tree file, one claim per line, and
 `manifest.json`; `docs/claims.md` defines both. CI reruns the script and
 fails if `claims/` changes, so every data commit regenerates it.
 `--draft` also loads `drafts/` and therefore refuses to write into the
-committed directory.
+committed directory. `--inconsistencies` writes nothing: it prints each
+source whose declared coverage disagrees with the derived claims, with
+the claims behind the disagreement, for the owner to settle either way.
 """
 
 import argparse
@@ -60,12 +63,51 @@ def write(out, claims_by_source, full):
       fd.write('\n')
 
 
+def report_inconsistencies(claims_by_source):
+  rows = manifest(claims_by_source)['sources']
+  found = 0
+  for source_key, entry in rows.items():
+    if not entry['inconsistencies']:
+      continue
+    found += 1
+    review = ROOT / 'docs' / 'reviews' / f'review_{source_key}.md'
+    print(f'{source_key}' + (f'  ({review.relative_to(ROOT)})' if review.exists() else ''))
+    for row in entry['inconsistencies']:
+      kind = row.split(':')[0]
+      print(f'  {row}')
+      for claim in claims_by_source.get(source_key, ()):
+        if claim['audit'].get('coverageKind') != kind or claim.get('inferred'):
+          continue
+        printed = claim.get('printed') or {}
+        detail = printed.get('citedAs') or ' '.join(
+          ', '.join(printed[f]) if f == 'auth' else str(printed[f])
+          for f in ('auth', 'year') if f in printed
+        )
+        extra = ''
+        if claim['kind'] == 'acceptance' and claim.get('parents'):
+          extra = f" parents={claim['parents']}"
+        if claim['kind'] == 'material':
+          extra = f" {claim['materialKind']}"
+          if 'role' in claim:
+            extra += f" {claim['role']} {claim.get('ids')}"
+        print(
+          f"    {claim['kind']:<11} {claim['subject']}{extra}"
+          + (f'  "{detail}"' if detail else '') + f"  @ {claim['path']}"
+        )
+  print(f'{found} sources with inconsistencies')
+  return found
+
+
 def main(argv):
   parser = argparse.ArgumentParser(description=__doc__.split('\n\n')[0])
   parser.add_argument('--out', type=pathlib.Path, default=DEFAULT_OUT)
   parser.add_argument('--source', nargs='+', help='only these source keys')
   parser.add_argument(
     '--draft', action='store_true', help='also load the trees in drafts/',
+  )
+  parser.add_argument(
+    '--inconsistencies', action='store_true',
+    help='print declared-versus-derived coverage disagreements; write nothing',
   )
   args = parser.parse_args(argv)
 
@@ -76,6 +118,9 @@ def main(argv):
   logging.basicConfig(level=logging.WARNING)
   _, roots = load(drafts=args.draft)
   claims_by_source = extract(roots, sources=set(args.source or ()) or None)
+  if args.inconsistencies:
+    report_inconsistencies(claims_by_source)
+    return 0
   full = args.source is None
   write(out, claims_by_source, full)
 
