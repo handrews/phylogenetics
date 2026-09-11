@@ -247,7 +247,7 @@ property.
 | `synonyms` | 358 | 5.6% |
 | `parents` | 326 | 5.1% |
 | `openTaxon` | 219 | 3.5% |
-| `pages` | 209 | 3.3% |
+| `pages` | 215 | 3.4% |
 | `illustrations` | 120 | 1.9% |
 | `provisional` | 120 | 1.9% |
 | `authority` | 92 | 1.4% |
@@ -256,8 +256,8 @@ property.
 | `year` | 61 | 1.0% |
 | `auth` | 60 | 0.9% |
 | `emended` | 50 | 0.8% |
+| `citedAs` | 39 | 0.6% |
 | `bracket` | 35 | 0.6% |
-| `citedAs` | 31 | 0.5% |
 | `moved` | 29 | 0.5% |
 | `occurrences` | 26 | 0.4% |
 | `modifier` | 22 | 0.3% |
@@ -492,7 +492,7 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/article/properties/series` | integer/string | intx7 | - | string |
 | `phylogeny#/$defs/article/properties/volume` | integer/string | intx217, strx9 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `4th Series` | - |
 | `phylogeny#/$defs/basicOccurrence/properties/unit` | string/array | listx20, strx1 | `Craighead inlier` | - |
-| `phylogeny#/$defs/citationNumber` | integer/string | intx643, listx344, strx183 | `IX`, `VIII`, `V`, `b` | - |
+| `phylogeny#/$defs/citationNumber` | integer/string | intx649, listx344, strx183 | `IX`, `VIII`, `V`, `b` | - |
 | `phylogeny#/$defs/person/properties/death` | integer/null | intx77, nullx1 | - | - |
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
 | `phylogeny#/$defs/specimens/additionalProperties/items` | string/array | strx513, listx4 | `F. 5420`, `F. 5419`, `F. 5418`, `F. 5417` | - |

@@ -6,6 +6,8 @@ taxonomies:
     children:
     - taxon: edrioasteridae
       emended: true
+      citedAs: Family Edrioasteridae Bell, 1976 [emend. herein]
+      pages: 246
     - taxon: totiglobidae
       new: true
       children:
