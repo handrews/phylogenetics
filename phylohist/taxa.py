@@ -793,6 +793,103 @@ class Tree:
   def children(self):
     return tuple(self._children)
 
+  # Public view of the node for consumers such as the claim extractor, so
+  # that the traversal and its path convention are defined here only.
+  @property
+  def data(self):
+    return self._data
+
+  @property
+  def parent(self):
+    return self._parent
+
+  @property
+  def relpath(self):
+    return self._relpath
+
+  @property
+  def axis(self):
+    # How this node hangs off its parent: 'children', 'synonyms', ...;
+    # 'root' for the top of a taxonomy or phylogeny.
+    return self._relpath[0] if self._relpath else 'root'
+
+  @property
+  def position(self):
+    return self._position
+
+  @property
+  def tree_type(self):
+    return self._type
+
+  @property
+  def tree_notes(self):
+    return self.root._metadata.get('notes')
+
+  @property
+  def bracket(self):
+    return self._bracket
+
+  @property
+  def moved(self):
+    return self._moved
+
+  @property
+  def corrected(self):
+    return self._corrected
+
+  @property
+  def or_(self):
+    return tuple(self._or)
+
+  @property
+  def synonyms(self):
+    return tuple(self._synonyms)
+
+  @property
+  def non(self):
+    return tuple(self._non)
+
+  @property
+  def removed(self):
+    return tuple(self._removed)
+
+  @property
+  def parents(self):
+    return tuple(self._parents)
+
+  @property
+  def alt_placements(self):
+    return tuple(self._alt_placements)
+
+  def related(self):
+    """Yield ``(axis, node)`` for every subtree other than ``children``.
+
+    The order is the constructor's, so it is the order of every walk.
+    """
+    if self._moved is not None:
+      yield 'moved', self._moved
+    if self._corrected is not None:
+      yield 'corrected', self._corrected
+    for axis, nodes in (
+      ('or', self._or),
+      ('synonyms', self._synonyms),
+      ('non', self._non),
+      ('removed', self._removed),
+      ('parents', self._parents),
+      ('altPlacements', self._alt_placements),
+    ):
+      for node in nodes:
+        yield axis, node
+
+  def walk(self):
+    """Yield this node and every descendant, related subtrees before
+    children, depth first."""
+    yield self
+    for _, node in self.related():
+      yield from node.walk()
+    for child in self._children:
+      yield from child.walk()
+
   @property
   def is_new(self):
     return self._data.get('new', False)

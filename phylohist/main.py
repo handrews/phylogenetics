@@ -80,10 +80,13 @@ def _report_missing_protologues(data):
 
 
 def _load_trees(data):
+  """Build every tree; return ``{source_key: [roots in position order]}``."""
   logger.info(f"Processing {len(data['trees'])} opinions...")
 
+  roots = {}
   for ref_key, opinion in data['trees'].items():
     logger.debug(f'Processing opinions from "{ref_key}"')
+    roots[ref_key] = []
 
     position = 0
     for tax_tree in opinion.get('taxonomies', {}):
@@ -95,6 +98,7 @@ def _load_trees(data):
       position += 1
 
       t = Tree(tax_tree, metadata)
+      roots[ref_key].append(t)
       logger.debug(f'Processed tree {t}')
 
     for phy_tree in opinion.get('phylogenies', {}):
@@ -110,13 +114,17 @@ def _load_trees(data):
 
       if 'characteristics' in phy_tree:
         metadata['characteristics'] = phy_tree['characteristics']
+      if 'notes' in phy_tree:
+        metadata['notes'] = phy_tree['notes']
 
       t = Tree(phy_tree['tree'], metadata)
+      roots[ref_key].append(t)
 
   logger.info(f"...opinions processed.")
 
   _report_merge_targets(data)
   _report_missing_protologues(data)
+  return roots
 
   return data
 

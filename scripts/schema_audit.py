@@ -13,8 +13,9 @@ the same per-keyword-location coverage that Istanbul-style JSON Schema coverage
 tools produce, but it also carries the instance paths, and it needs no
 dependency the project does not already have.
 
-Deliberately does *not* reuse ``phylohist.taxa.Tree``: that object model does
-not recurse into ``removed``, so traversing with it would silently under-count.
+Deliberately does *not* reuse ``phylohist.taxa.Tree``: the census measures
+what the schema evaluation reaches, so it works from the raw documents the
+schema sees, not from the object model built over them.
 
 Usage::
 
