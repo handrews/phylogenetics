@@ -40,6 +40,11 @@ RUNS = ROOT / 'eval' / 'runs'
 # cut is recorded on the call.
 RESULT_LIMIT = 60_000
 
+# Output budget per reply. The model's own reasoning counts against it,
+# so it is well above the length of any answer; a reply that still hits
+# it is recorded with stopReason max_tokens.
+MAX_TOKENS = 8192
+
 
 def api_key():
   key = os.environ.get('ANTHROPIC_API_KEY')
@@ -86,7 +91,7 @@ def run_question(client, model, system, question, max_turns):
   for turn in range(max_turns):
     response = client.messages.create(
       model=model,
-      max_tokens=2048,
+      max_tokens=MAX_TOKENS,
       system=system,
       tools=tools.TOOL_SPECS,
       messages=messages,
@@ -137,7 +142,7 @@ def run_question(client, model, system, question, max_turns):
     )})
     response = client.messages.create(
       model=model,
-      max_tokens=2048,
+      max_tokens=MAX_TOKENS,
       system=system,
       messages=messages,
     )
@@ -152,6 +157,8 @@ def run_question(client, model, system, question, max_turns):
     'question': question['question'],
     'model': model,
     'promptSha': hashlib.sha256(system.encode()).hexdigest()[:12],
+    'maxTokens': MAX_TOKENS,
+    'maxTurns': max_turns,
     'toolCalls': calls,
     'answer': answer,
     'stopReason': stop,

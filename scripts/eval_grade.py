@@ -148,6 +148,10 @@ def mechanical(record, question, store):
   leak = LEAK_WORDS.search(answer)
   if leak:
     failures.append(f'answer leaks internals: "{leak.group(0)}"')
+  if record.get('stopReason') == 'max_tokens':
+    notes.append('answer cut at the output token limit')
+  elif record.get('stopReason') == 'max_turns':
+    notes.append('answered after the lookup limit was reached')
   return failures, notes
 
 
