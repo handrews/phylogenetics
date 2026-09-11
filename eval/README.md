@@ -10,7 +10,7 @@ is the vocabulary their expected answers are written in.
 | class | what the data holds | the right answer |
 |---|---|---|
 | answerable | a claim exists | the claim, cited by source and page |
-| uncaptured | the paper prints it; the corpus does not hold it | "not captured for <source>", with the declared coverage value; never "not in the paper" |
+| uncaptured | the paper prints it; the corpus does not hold it (a declared coverage of `none` or `partly`, or a source recorded with no tree entered yet) | "not captured for <source>", with the declared coverage value; never "not in the paper" |
 | as-published | the printed form differs from the record or from later usage | the printed form verbatim, cited; a correction only if asked |
 | trajectory | several sources treat the same question over time | the measured present, then the history, then the dissent; no verdict |
 | absent | nothing in the corpus mentions it | "no source in the corpus mentions <x>"; no answer from general knowledge |
@@ -84,7 +84,10 @@ review file with the printed page.
 
 - A question is added only with its `verified` line; a question whose
   expected answer stops matching the data is either updated with the data
-  change that broke it or removed, never left stale.
+  change that broke it or removed, never left stale. `tests/test_claims.py`
+  enforces this: every selector must match a claim of its source, and
+  every refusal must hold against the declared coverage or the absence of
+  a tree.
 - When a source gains coverage, its uncaptured questions turn into
   answerable ones; keep the id and change the class.
 - The mix (roughly 12 answerable, 8 uncaptured, 8 as-published, 16

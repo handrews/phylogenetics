@@ -249,6 +249,11 @@ class Source:
   def in_preparation(self):
     return self._data.get('inPrep', False)
 
+  @property
+  def audit(self):
+    # The declared audit block; a source without one is unaudited.
+    return self._data.get('audit') or {'state': 'unaudited'}
+
   @cached_property
   def title(self):
     try:
