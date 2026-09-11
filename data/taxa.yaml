@@ -10573,7 +10573,8 @@ steganoblastidae:
 steganoblastus:
   name: Steganoblastus
   auth: [whiteaves]
-  year: 1899
+  year: 1898
+  notes: Webby 1968 p. 514 cites Whiteaves (1898); Whiteaves's paper is not on hand.
 stellaris_billings_1859:
   name: stellaris
   auth: [billings]

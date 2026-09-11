@@ -2101,8 +2101,19 @@
   title: Astrocystites distans sp. nov., an edrioblastoid from the Ordovician of eastern Australia
   audit:
     state: partial
+    coverage:
+      skeleton: all
+      newTaxa: all
+      types: all
+      synonymy: partly
+      material: partly
+      occurrences: none
+      illustrations: none
+      diagnoses: none
+      phylogeny: na
     notes: |
       Migrated from complete: named=true open=true history=true specimens.basic=true specimens.all=true
+      Reviewed against the paper 2026-09-10; see docs/reviews/review_1968_webby.md
   journal: palaeontology
   volume: 11
   number: 4

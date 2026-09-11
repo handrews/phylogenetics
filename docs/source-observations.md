@@ -1069,6 +1069,45 @@ Data checks:
   change. `altSpellingOf` is undirected and the original spelling is the
   one on the `new` node (B28).
 
+## 1968_webby — Astrocystites distans (Palaeontology 11)
+
+Read from a whole-volume scan; two tipped-in plates shift the page mapping
+twice. One taxonomy; skeleton, new taxon and type captured; occurrences,
+illustrations and the diagnosis not.
+
+**The family-name history, in the source's own words (p. 514).** "In the
+same year Bather raised objections to Whiteaves's generic name on the
+grounds of possible confusion with Asterocystis Haeckel, and suggested that
+Whiteaves substitute the name Steganoblastus. The new generic name was
+introduced by Whiteaves (1898), and the family name Steganoblastidae of
+the Class Edrioasteroidea added by Bather (1900). Whiteaves's original
+generic name, Astrocystites, was restored by Bassler (1935) on grounds of
+priority, and he introduced a new family name, Astrocystitidae, to replace
+Steganoblastidae." Webby keeps Steganoblastidae: it "is based on a junior
+objective synonym, has priority and has been a more widely used name",
+citing Art. 40. A reasoned rejection of Bassler's replacement, now on the
+family node as a tentative synonym with the sentence; the `stance:
+rejects` claim (claims.md) is what it will become.
+
+**Placement history relayed (p. 514).** Bather 1914b an edrioasteroid,
+Hudson 1925 a blastoid, Bassler 1935–36 Edrioasteroidea "pending further
+discoveries", Fay 1962 a class of its own: secondhand statements about
+four sources, `citation` claims when that kind lands.
+
+**Three paratypes and a shared number.** USGD 2308, 2313 and 2314 are
+paratypes in the Material paragraph (p. 515) and were missing from the
+list; three paratype letters share catalogue number 2309.
+
+Source record: matches (vol. 11 part 4, pp. 513–525).
+
+Data checks:
+
+- `steganoblastus`: year 1899 → 1898 as Webby cites Whiteaves; the primary
+  is not on hand (done).
+- `distans_webby_1968`: paratypes 2308, 2313, 2314 added (done).
+- The six "miscellaneous pelmatozoan plates" (pp. 522–524) have no node.
+
+
 ## 1848b_forbes — Cystideæ of the Silurian Rocks of the British Islands (Mem. Geol. Surv. Gt. Britain 2)
 
 Read from the text layer, printed page = PDF index + 374; the Cystideæ paper (pp. 483–538) follows the companion Asteriadæ paper in the same continuous scan. The tree holds one taxonomy, no phylogeny, covering all 8 genera Forbes treats. Coverage in one sentence: new taxa, most synonymy lists, and the `or` alternative-name convention are captured; material, occurrences, illustrations and all but one diagnosis are not (G9).
