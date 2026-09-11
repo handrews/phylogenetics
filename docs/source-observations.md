@@ -1108,6 +1108,53 @@ Data checks:
 - The six "miscellaneous pelmatozoan plates" (pp. 522–524) have no node.
 
 
+## Whiteaves 1897 and 1898, Bather 1914, Hudson 1925 and 1927 — the first edrioblastoid
+
+Read from four scans with text layers; reviews in `docs/reviews/`. None
+had a record or tree; records are added and drafts prepared in `drafts/`.
+
+**The protologue (1897, pp. 287–292).** "Description of a new genus and
+species of cystideans from the Trenton limestone at Ottawa", in a Number
+whose wrapper says "January, 1897" but which the volume's own notice says
+was issued 12 June 1897; Bather 1914 calls the January date "obviously
+erroneous". Three specimens, no catalogue numbers and no type words.
+
+**The replacement name (1898, pp. 395–396).** Whiteaves: "the writer has
+been informed by Mr. F. A. Bather … that Haeckel in 1896 separated
+Asteroblastus tuberculatus … under the new generic name Asterocystis. Mr.
+Bather thinks that there is not sufficient difference between the words
+Astrocystites and Asterocystis … The writer, therefore, desires to be
+allowed to substitute the generic name Steganoblastus … as kindly suggested
+by Mr. Bather". The Number's wrapper says 1897; it was issued 7 January
+1898, which Bather 1914 cites as "January 7, 1898". So Webby's 1898 is the
+issue date and the wrapper's 1897 is the citation trap; the record now
+keys the postscript 1898 with both dates in its notes. Whiteaves also
+slips into "Steganoblastus Canadensis" for his own species.
+
+**Bather 1914, Study V.** Does not erect Steganoblastidae: "in Lankester's
+Treatise on Zoology … (1900), where I founded for the reception of this
+genus the Family Steganoblastidæ of the Class Edrioasteroidea" (p. 194).
+Its act is to name specimen A "the holotype" among "the three syntypes of
+Whiteaves", which is why Fay 1962 could write "holotype" and "syntype" of
+one specimen: three syntypes in 1897 and 1914, two in Fay 1962 with one
+lost to Hudson.
+
+**Hudson 1925 and 1927.** No classification is printed; both write
+"Astrocystites (Steganoblastus) ottawaensis", the parenthesis being the
+replacement name, not a subgenus. The blastoid reading Webby summarises is
+one sentence: "Astrocystites is seen to be a true blastid and to be a
+nearer Pentremites than is either Asteroblastus, Asterocystis, or
+Blastoidocrinus" (1925 p. 642), an affinity, not a placement. Both papers
+name "cotypes A and B" after Bather; 1927's abstract says three specimens
+and discusses two.
+
+Data checks:
+
+- `astrocystites`, `ottawaensis_whiteaves_1897` → source 1897_whiteaves;
+  `steganoblastus` → source 1898_whiteaves (done). `steganoblastidae`
+  stays with 1900_bather, as Bather 1914 and Webby 1968 both say.
+- `parablastoidea`: author key lowercased to the registered `hudson`.
+
 ## 1848b_forbes — Cystideæ of the Silurian Rocks of the British Islands (Mem. Geol. Surv. Gt. Britain 2)
 
 Read from the text layer, printed page = PDF index + 374; the Cystideæ paper (pp. 483–538) follows the companion Asteriadæ paper in the same continuous scan. The tree holds one taxonomy, no phylogeny, covering all 8 genera Forbes treats. Coverage in one sentence: new taxa, most synonymy lists, and the `or` alternative-name convention are captured; material, occurrences, illustrations and all but one diagnosis are not (G9).

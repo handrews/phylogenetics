@@ -932,8 +932,9 @@ astrea:
     source: 1801_lamarck
 astrocystites:
   name: Astrocystites
-  auth: [Whiteaves]
-  year: 1897
+  authority:
+    source: 1897_whiteaves
+    pages: 287
 astrocystites-sp_webby_1968:
   name: null
   rank: species
@@ -7911,8 +7912,9 @@ ostrea:
     source: 1758_linnaeus
 ottawaensis_whiteaves_1897:
   name: ottawaensis
-  auth: [Whiteaves]
-  year: 1897
+  authority:
+    source: 1897_whiteaves
+    pages: 287
 ottawacrinus:
   name: Ottawacrinus
   authority:
@@ -8097,7 +8099,7 @@ papulosus_hall_1852:
 parablastoidea:
   name: Parablastoidea
   rank: Class
-  auth: [Hudson]
+  auth: [hudson]
   year: 1907
 paracrinoidea:
   name: Paracrinoidea
@@ -10572,9 +10574,10 @@ steganoblastidae:
     source: 1900_bather
 steganoblastus:
   name: Steganoblastus
-  auth: [whiteaves]
-  year: 1898
-  notes: Webby 1968 p. 514 cites Whiteaves (1898); Whiteaves's paper is not on hand.
+  authority:
+    source: 1898_whiteaves
+    pages: 395
+  notes: A replacement name for Astrocystites, proposed at Bather's suggestion; issued 7 January 1898 in a Number whose wrapper says 1897.
 stellaris_billings_1859:
   name: stellaris
   auth: [billings]
