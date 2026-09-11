@@ -1020,6 +1020,55 @@ Data checks:
 - Add `icthyocrinus: {name: Icthyocrinus, altSpellingOf: ichthyocrinus}` and
   cite it from the 1842 tree.
 
+## Hall 1866–1872 — the printings of the Hudson-river group crinoids and edrioasteroids
+
+Read from the 20th Annual Report (1867), its Revised Edition (title page
+1868, pasted note "completed in 1870") and the 24th Annual Report (1872),
+all with text layers; the review is `docs/reviews/review_hall_printings.md`.
+
+**What each printing holds.** The 1867 first edition prints no text of the
+paper, only the notice "This paper, to the 17th page, was published in
+November 1866. The illustrations … could not be engraved in time … The
+paper will therefore be deferred in its final publication to the next
+Report" (p. 304), naming four crinoid species added since. The Revised
+Edition drops the paper altogether. The 24th Report carries the whole text
+(pp. 205–224, with the Cincinnati paper pp. 225–232), the plates and
+captions, an errata sheet (p. 233), and a footnote that most of the text is
+a republication of the November 1866 material; the Cincinnati paper's
+footnote says "Published October, 1871, as advance sheets of the State
+Museum Report". So the citations resolve: "Hall 1866" is the advance
+sheets, "Hall 1871" the October 1871 pamphlet (not on hand), "Hall 1872"
+the 24th Report. `1866_hall` and `1872b_hall`/`1872c_hall` are the right
+records; the 1867 and 1870 volumes need none for this paper.
+
+**A genus born in an errata line (p. 233).** "Page 215, line 15, after
+AGELACRINUS insert (STREPTASTER)" is the only place *Streptaster* is
+introduced; no diagnosis exists. That is why Bell 1976 dates the genus 1872
+while its species *vorticellatus* is 1866. *Cystaster* is coined in a
+plate-caption footnote of the 1871 reissue. Two acts with no heading of
+their own; the record's `notes` carries the errata line.
+
+**A bracket that postdates its line.** "[Lepidodiscus]" on the 1866-dated
+species cannot be from the November 1866 sheets, since Meek & Worthen's
+genus is 1868; it was added for the 1871/1872 republication. The
+`lepidodiscus-subgenus` record's caution stands.
+
+**Bassler's "(Hall), 1856" for *stellatus*** (1936 p. 5) is his typo; his
+1935 paper prints 1866, and the printings agree.
+
+Data checks:
+
+- `streptaster`: year 1866 → 1872, with the errata line (done).
+- `1872c_hall`: note its October 1871 advance sheets (done); `1872a_hall`:
+  add Whitfield as co-author per the contents page (done).
+- `cincinnatiensis_hall_1866` is not a Hall name: p. 214 prints
+  "Rœm." with Roemer's 1851 citation; the record stands in for Hall's
+  misidentified specimen (fig. 7, pl. 6) that Bassler 1935 separated.
+  Decided: it becomes a misidentification record when B10's field lands.
+- `vorticellata_hall_1866` / `vorticellatus` and `pilea` / `pileus`: no
+  change. `altSpellingOf` is undirected and the original spelling is the
+  one on the `new` node (B28).
+
 ## 1848b_forbes — Cystideæ of the Silurian Rocks of the British Islands (Mem. Geol. Surv. Gt. Britain 2)
 
 Read from the text layer, printed page = PDF index + 374; the Cystideæ paper (pp. 483–538) follows the companion Asteriadæ paper in the same continuous scan. The tree holds one taxonomy, no phylogeny, covering all 8 genera Forbes treats. Coverage in one sentence: new taxa, most synonymy lists, and the `or` alternative-name convention are captured; material, occurrences, illustrations and all but one diagnosis are not (G9).
@@ -1036,7 +1085,7 @@ Source record: title, journal, volume/number, pages and plates all match the pri
 
 Data checks:
 
-- `1848b_forbes.yaml`: the `echino-encrinus` node's `notes` assigns "Echino-encrinus" to the formal diagnosis and "Echino-encrinites" to general commentary; printed usage is the reverse (diagnosis headed "ECHINO-ENCRINITES," p. 509; general prose "ECHINO-ENCRINUS," p. 504).
+- `1848b_forbes.yaml`: the `echino-encrinus` node's `notes` on the two spellings was wrong in both versions; Forbes uses one genus under two forms: "Echino-encrinus" for the English description, the character table and the species headings (pp. 494, 504, 506–507), "Echino-encrinites" for Von Meyer's genus as cited, the Latin summary and its "E. armatus"/"E. baccatus", the general prose and the chart (pp. 485, 504, 509–510, 526). Corrected 2026-09-10.
 - `sources.yaml` `1848b_forbes.title`: drop the trailing ".pdf".
 
 ## 1852_hall — Palæontology of New-York, vol. 2 (Clinton and Niagara Cystideæ, Asteriadæ, crinoids)
@@ -1467,7 +1516,7 @@ Attribution conflicts to resolve:
 - **Edrioasteridae 1898/1899 and Bather/Bell 1976**: `taxa.yaml` gives Bather, 1898; `2015_sprinkle_sumrall` prints "Bather, 1899" for the family four lines below "Bather, 1898" for the coordinate suborder (p. 348, the paper's own inconsistency); `1978_bell.b.m_sprinkle` credits the family to "Bell, 1976" throughout (pp. 245–246).
 - **Camptostromatidae 1967/1968**: `taxa.yaml` gives 1967 (per `1994_guensburg_sprinkle`, already documented in `source-observations.md`); that paper prints "Durham, 1968" (pp. 12, 42).
 - **Stromatocystitidae 1935/1936**: `taxa.yaml` gives Bassler, 1936; `2015_zamora_stromatocystites` prints "Family STROMATOCYSTITIDAE Bassler, 1935" (p. 418).
-- **Echino-encrinites Von Meyer/Volborth**: `taxa.yaml` credits Volborth, 1842; `1848b_forbes` credits "Von Meyer" for the genus throughout (p. 504).
+- **Echino-encrinites Von Meyer/Volborth**: not a conflict. `echinoencrinites` (Meyer 1826) and `echinoencrinus` (Volborth 1842) are separate records for the two spellings of one genus; Forbes 1848 credits Von Meyer for "Echino-encrinites" (p. 504) and heads his own English descriptions "Echino-encrinus", so each form resolves to its own record.
 - **Agelacrinitidae Chapman 1860 vs Jaekel 1899**: `taxa.yaml` gives Chapman, 1860; `1935_bassler`'s own paper credits the superseded family form to "Agelacrinidae Jaekel, 1899" (p. 2), and its adjacent Class-level synonym on the same page independently reads "Thyroidea Chapman, 1860," suggesting a possible copy error.
 - **stellatus 1856/1866**: the `hemicystites-subgenus > stellatus_hall_1866` key gives 1866; `1936_bassler` prints "(Hall), 1856" (p. 5).
 

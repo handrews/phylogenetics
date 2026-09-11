@@ -111,11 +111,11 @@ taxonomies:
       - taxon: speciosus_hall_1852
         new: true
     - taxon: eucalyptocrinus
-      new: true
+      notes: 'printed "Genus EUCALYPTOCRINUS." with the synonyms Eucalyptocrinites Goldfuss 1826 and Hypanthocrinites Phillips 1839'
       children:
       - taxon: decorus_phillips.j_1839
         notes: |
-          Compare f7. celatus. Ip. pag. 113, fig. 1;
+          Compare H. cœlatus. Id. pag. 113, fig. 1;
           and pl. 47 ut sup. fig. 4 a.
         synonyms:
         - taxon: decorus_phillips.j_1839
@@ -127,7 +127,7 @@ taxonomies:
           parents:
           - taxon: hypanthocrinites
       - taxon: papulosus_hall_1852
-        notes: Compare Lucalyptocrinus decorus, ut supra.
+        notes: Compare E. decorus, ut supra.
         new: true
     - taxon: stephanocrinus
       children:

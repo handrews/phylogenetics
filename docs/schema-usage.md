@@ -56,7 +56,7 @@ property.
 | `audit` | 48 | 16.2% |
 | `audit.notes` | 48 | 100.0% |
 | `audit.state` | 48 | 100.0% |
-| `notes` | 30 | 10.1% |
+| `notes` | 31 | 10.4% |
 | `audit.coverage` | 29 | 60.4% |
 | `processDates.online` | 28 | 29.8% |
 | `identifiers.jstor` | 24 | 11.5% |
@@ -168,14 +168,14 @@ property.
 | `localStageRange` | 0 | 0.0% |
 | `tentative` | 0 | 0.0% |
 
-### `person` -- 276 instances in `data/`
+### `person` -- 277 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `family` | 276 | 100.0% |
-| `given` | 276 | 100.0% |
-| `birth` | 78 | 28.3% |
-| `death` | 77 | 27.9% |
+| `family` | 277 | 100.0% |
+| `given` | 277 | 100.0% |
+| `birth` | 79 | 28.5% |
+| `death` | 78 | 28.2% |
 | `suffix` | 0 | 0.0% |
 
 ### `phylogeny` -- 36 instances in `data/`
@@ -199,28 +199,28 @@ property.
 | `notes` | 2 | 1.5% |
 | `type` | 0 | 0.0% |
 
-### `specimens` -- 88 instances in `data/`
+### `specimens` -- 89 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `holotype` | 68 | 77.3% |
-| `lectotype` | 2 | 2.3% |
+| `holotype` | 69 | 77.5% |
+| `lectotype` | 2 | 2.2% |
 | `syntype` | 1 | 1.1% |
 | `allotype` | 0 | 0.0% |
 | `neotype` | 0 | 0.0% |
 | `repository` | 0 | 0.0% |
 
-### `taxon` -- 2719 instances in `data/`
+### `taxon` -- 2721 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `name` | 2680 | 98.6% |
+| `name` | 2682 | 98.6% |
 | `authority` | 1528 | 56.2% |
-| `auth` | 958 | 35.2% |
-| `year` | 955 | 35.1% |
-| `rank` | 717 | 26.4% |
-| `notes` | 211 | 7.8% |
-| `altSpellingOf` | 161 | 5.9% |
+| `auth` | 956 | 35.1% |
+| `year` | 953 | 35.0% |
+| `rank` | 716 | 26.3% |
+| `notes` | 214 | 7.9% |
+| `altSpellingOf` | 165 | 6.1% |
 | `lang` | 75 | 2.8% |
 | `originalParent` | 65 | 2.4% |
 | `altRankOf` | 49 | 1.8% |
@@ -235,14 +235,14 @@ property.
 | `modifier` | 0 | 0.0% |
 | `reason` | 0 | 0.0% |
 
-### `tree` -- 6343 instances in `data/`
+### `tree` -- 6345 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `taxon` | 5747 | 90.6% |
-| `children` | 2183 | 34.4% |
+| `taxon` | 5749 | 90.6% |
+| `children` | 2184 | 34.4% |
 | `new` | 1461 | 23.0% |
-| `notes` | 372 | 5.9% |
+| `notes` | 373 | 5.9% |
 | `type` | 367 | 5.8% |
 | `synonyms` | 358 | 5.6% |
 | `parents` | 326 | 5.1% |
@@ -250,20 +250,20 @@ property.
 | `pages` | 209 | 3.3% |
 | `illustrations` | 120 | 1.9% |
 | `provisional` | 118 | 1.9% |
-| `authority` | 92 | 1.5% |
-| `specimens` | 88 | 1.4% |
+| `authority` | 92 | 1.4% |
+| `specimens` | 89 | 1.4% |
 | `diagnosis` | 69 | 1.1% |
-| `year` | 59 | 0.9% |
-| `auth` | 56 | 0.9% |
+| `year` | 61 | 1.0% |
+| `auth` | 60 | 0.9% |
 | `emended` | 49 | 0.8% |
 | `bracket` | 35 | 0.6% |
 | `moved` | 29 | 0.5% |
+| `citedAs` | 26 | 0.4% |
 | `occurrences` | 26 | 0.4% |
 | `modifier` | 22 | 0.3% |
 | `outgroup` | 19 | 0.3% |
+| `pars` | 18 | 0.3% |
 | `quoted` | 18 | 0.3% |
-| `citedAs` | 17 | 0.3% |
-| `pars` | 17 | 0.3% |
 | `affTaxon` | 16 | 0.3% |
 | `tentative` | 16 | 0.3% |
 | `cfTaxon` | 15 | 0.2% |
@@ -387,22 +387,22 @@ property.
 
 ### `phylogeny#/$defs/rank`
 
-24 of 32 members used, 724 occurrences.
+24 of 32 members used, 723 occurrences.
 
 | value | count |
 |---|---|
 | `'Family'` | 177 |
-| `'species'` | 116 |
+| `'species'` | 115 |
 | `'Order'` | 111 |
 | `'Class'` | 89 |
 | `'variety'` | 32 |
+| `'Subfamily'` | 26 |
 | `'genus'` | 25 |
-| `'Subfamily'` | 25 |
 | `'section'` | 22 |
 | `'Superfamily'` | 18 |
 | `'subgenus'` | 17 |
-| `'Suborder'` | 15 |
 | `'Subclass'` | 15 |
+| `'Suborder'` | 14 |
 | `'Phylum'` | 13 |
 | `'Subphylum'` | 11 |
 | `'Group'` | 9 |
@@ -434,11 +434,11 @@ property.
 
 ### `phylogeny#/$defs/specimens/propertyNames`
 
-10 of 14 members used, 147 occurrences.
+10 of 14 members used, 148 occurrences.
 
 | value | count |
 |---|---|
-| `'holotype'` | 68 |
+| `'holotype'` | 69 |
 | `'paratypes'` | 48 |
 | `'unknowntypes'` | 16 |
 | `'plesiotypes'` | 6 |
@@ -493,11 +493,11 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/article/properties/volume` | integer/string | intx217, strx9 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `4th Series` | - |
 | `phylogeny#/$defs/basicOccurrence/properties/unit` | string/array | listx20, strx1 | `Craighead inlier` | - |
 | `phylogeny#/$defs/citationNumber` | integer/string | intx643, listx344, strx183 | `IX`, `VIII`, `V`, `b` | - |
-| `phylogeny#/$defs/person/properties/death` | integer/null | intx76, nullx1 | - | - |
+| `phylogeny#/$defs/person/properties/death` | integer/null | intx77, nullx1 | - | - |
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
 | `phylogeny#/$defs/specimens/additionalProperties/items` | string/array | strx513, listx4 | `F. 5420`, `F. 5419`, `F. 5418`, `F. 5417` | - |
 | `phylogeny#/$defs/taxon/properties/holotype/additionalProperties/items` | array/string/integer | intx10, strx3 | `EE15373`, `EE 1659`, `E23470` | array |
-| `phylogeny#/$defs/taxon/properties/name` | string/null | strx2483, nullx197 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
+| `phylogeny#/$defs/taxon/properties/name` | string/null | strx2486, nullx196 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
 | `tree#/properties/diagnosis` | string/null | strx68, nullx1 | `A cast of it shows a con...`, `Body hemisphæric, slight...`, `A *Pyrgocystis* specimen...`, `Mouth surrounded and cov...` | - |
 | `tree#/properties/editorial/properties/inferred` | boolean/array | boolx2, listx1 | - | - |
 | `tree#/properties/emended` | boolean/null | boolx49 | - | null |

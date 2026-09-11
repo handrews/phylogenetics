@@ -817,7 +817,7 @@
   identifiers:
     url: https://www.google.com/books/edition/Memoirs_of_the_Geological_Survey_of_Grea/WcNAAAAAcAAJ?hl=en&gbpv=1
 1848b_forbes:
-  title: On the Cystideæ of the Silurian Rocks of the British Islands.pdf
+  title: On the Cystideæ of the Silurian Rocks of the British Islands
   journal: mem-geol-gb
   volume: 2
   number: 2
@@ -1130,7 +1130,7 @@
   - billings
   identifiers:
     url: https://www.biodiversitylibrary.org/page/19266657
-1872a_hall:
+1872a_hall_whitfield:
   title: Descriptions of new species of fossils from the vicinity of Louisville, Kentucky, and the Falls of the Ohio
   journal: annual-ny
   volume: 24
@@ -1147,6 +1147,7 @@
     transmitted: 1871-04-18
   authors:
   - hall
+  - whitfield
 1872b_hall:
   title: Description of new species of Crinoidea and other fossils from strata of the age of the Hudson-River Group and Trenton Limestone
   journal: annual-ny
@@ -1167,6 +1168,7 @@
     url: https://www.biodiversitylibrary.org/page/35612725
 1872c_hall:
   title: Description of new species of fossils from the Hudson River Group, in the vicinity of Cincinnati, Ohio
+  notes: 'Its footnote reads "Published October, 1871, as advance sheets of the State Museum Report"; that pamphlet is not on hand.'
   journal: annual-ny
   volume: 24
   pages:

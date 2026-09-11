@@ -761,6 +761,18 @@ Bather's suborders are printed "Cyathocrinoidea" and "Dendrocrinoidea"
 him with the Treatise's -ina forms he never printed. Those are rank-suffix
 variants, `altRankOf`-style coordinate names, not spellings.
 
+**B28. `altSpellingOf` is undirected.** The record without `altSpellingOf`
+is whichever spelling was entered first, not the original; the original is
+often unknown when a record is made and sometimes turns out to be a form
+found later. All spellings in a chain are equal for search and resolution,
+and the data shows when and where each was printed. The original spelling
+is derived, not declared: it is the spelling on the node flagged `new: true`
+in its source's tree. So `vorticellata_hall_1866` with `vorticellatus` as
+the variant needs no swap; Hall's tree, once entered, will carry `new` on
+*vorticellatus*. `canonical_name` in `phylohist/taxa.py`, which returns the
+`altSpellingOf` target, assumes a direction the data does not have; the
+claim extractor (M2) derives canonical from `new` and that method goes.
+
 ---
 
 ## C. Open nomenclature and uncertainty

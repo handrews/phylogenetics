@@ -7,7 +7,7 @@ taxonomies:
     children:
     - taxon: angulatus_conrad.t.a_1842
       new: true
-  - taxon: ichthyocrinus
+  - taxon: icthyocrinus
     new: true
     children:
     - taxon: lævis_conrad.t.a_1842

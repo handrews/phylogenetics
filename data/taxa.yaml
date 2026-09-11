@@ -597,6 +597,9 @@ apiocrinites:
   name: Apiocrinites
   authority:
     source: 1821_miller.j.s
+apiocystinae:
+  name: Apiocystinae
+  altSpellingOf: apiocystitinae
 apiocystites:
   name: Apiocystites
   authority:
@@ -2024,6 +2027,9 @@ cheirocystis:
   name: Cheirocystis
   auth: [paul.c.r.c]
   year: 1972
+chirocrinidae:
+  name: Chirocrinidae
+  altSpellingOf: cheirocrinidae
 chrysalis_schuchert_1904:
   name: chrysalis
   auth: [schuchert]
@@ -4212,7 +4218,7 @@ eocystidae:
   rank: Family
   authority:
     source: 1900_bather
-  notes: "in no way corresponds to Haekel's Eocystida"
+  notes: "in no way corresponds to Haeckel's Eocystida"
 eocystites:
   name: Eocystites
   auth: [Hart]
@@ -5459,8 +5465,8 @@ hemicystitidae:
   year: 1936
 hemicystis:
   name: Hemicystis
-  auth: [haeckel]
-  year: 1896
+  auth: [hall]
+  year: 1852
 hemisphærica_leske_1778:
   name: hemisphærica
   authority:
@@ -5785,6 +5791,9 @@ icosidactylus_phillips.j_1839:
   authority:
     attributedTo: [phillips.j]
     source: 1839_murchison
+icthyocrinus:
+  name: Icthyocrinus
+  altSpellingOf: ichthyocrinus
 ikecanensis_sprinkle_1973:
   name: ikecanensis
   authority:
@@ -8044,8 +8053,7 @@ palaeocystitidae:
   year: 1967
 palasterina:
   name: Palasterina
-  auth: [mccoy]
-  year: 1851
+  altSpellingOf: palaeasterina
 pallidus_lamarck_1816:
   name: pallidus
   authority:
@@ -8297,11 +8305,12 @@ pelmatozoa-class:
 pelmatozoa-grade:
   rank: Grade
   altRankOf: pelmatozoa
-pelmatozoa-incertae-sedis:
+pelmatozoa-uncertain-order_bassler_1936:
   name: null
   rank: Order
-  auth: [linnaeus]
-  year: 1758
+  authority:
+    source: 1936_bassler
+  notes: printed "must be left at present as an uncertain order of Pelmatozoa" (p. 23)
 pelmatozoans:
   name: Pelmatozoans
   rank: Group
@@ -8557,7 +8566,8 @@ placocystella:
   year: 1936
 placocystida:
   name: Placocystida
-  rank: Suborder
+  rank: Subfamily
+  notes: printed "Subfamilia" (Haeckel 1896 p. 37)
   auth: [haeckel]
   year: 1896
 placocystidae:
@@ -10675,8 +10685,12 @@ strangwaysii_koenig_1825:
   year: 1825
 streptaster:
   name: Streptaster
-  auth: [Hall]
-  year: 1866
+  auth: [hall]
+  year: 1872
+  notes: |
+    Enters print only through the errata of the 24th Annual Report (p. 233):
+    "Page 215, line 15, after AGELACRINUS insert (STREPTASTER)"; the 1866
+    advance sheets and the text as reprinted do not carry the name.
 striata_lamarck_1816_ananchytes:
   name: striata
   originalParent: ananchytes
@@ -11784,11 +11798,6 @@ walcottidiscus:
   name: Walcottidiscus
   authority:
     source: 1935_bassler
-walcottidiscus-sp_bassler_1936:
-  name: null
-  rank: species
-  authority:
-    source: 1936_bassler
 wanneri_foerste_1938:
   name: wanneri
   auth: [foerste]

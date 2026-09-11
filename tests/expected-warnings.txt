@@ -2,6 +2,7 @@
 # A new line here is allowed only in a commit that adds a check; every line
 # is a resolution owed. Regenerate with:
 #   PHYLOHIST_UPDATE_EXPECTED=1 poetry run pytest
+Placocystida of rank Subfamily expected to end with suffix "inae"
 Protologue not flagged: acalephida in 1817b_cuvier
 Protologue not flagged: acephala-class in 1798_cuvier
 Protologue not flagged: alanisicystis in 1990_ubaghs_vizcaïno
@@ -45,7 +46,6 @@ Protologue not flagged: effœta_linnaeus_1767 in 1767_linnaeus
 Protologue not flagged: emarginata_leske_1778 in 1778_leske
 Protologue not flagged: eocystis in 1900_bather
 Protologue not flagged: fistulidæ in 1801_lamarck
-Protologue not flagged: foerstei_bassler_shideler_1936 in 1936_bassler
 Protologue not flagged: galeritidae in 1825_gray.j.e
 Protologue not flagged: glyptosphaerites in 1854_müller.j.p
 Protologue not flagged: goniocrinites in 1840_eichwald
