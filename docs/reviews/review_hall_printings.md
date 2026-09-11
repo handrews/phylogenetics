@@ -434,6 +434,9 @@ Edrioasterida is referenced only secondhand via `docs/semantics-roadmap.md`
 and another reviewer's file (`review_1978_bell.b.m_sprinkle.md`). Cannot
 independently verify Bell's page citations beyond what those docs already
 quote.
+  Owner's note (2026-09-10): "1976a" is Bell & Sprinkle 1978's own
+  bibliography label; their 1976a is this dataset's `1976_bell.b.m`, which is
+  on hand.
 
 ## 5. Uncertainties
 
