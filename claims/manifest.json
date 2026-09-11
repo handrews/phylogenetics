@@ -1754,6 +1754,17 @@
    "material": {},
    "tree": false
   },
+  "1871_hall": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "claims": {},
+   "derived": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1872a_hall_whitfield": {
    "acts": {},
    "audit": {

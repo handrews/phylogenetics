@@ -2957,8 +2957,8 @@ cystaster:
 cystaster-subgenus:
   name: Cystaster
   rank: subgenus
-  auth: [Hall]
-  year: 1871
+  authority:
+    source: 1871_hall
 cystasteroidea:
   name: Cystasteroidea
   rank: Order
@@ -5139,8 +5139,12 @@ grandis_chauvel_1971:
   year: 1971
 granulatus_hall_1871:
   name: granulatus
-  auth: [Hall]
-  year: 1871
+  authority:
+    source: 1871_hall
+  notes: |
+    This species is noted as erected in 1871 in 1872b_hall, the final
+    and proper printing of the paper.  1871 was a preprint, but is
+    nonetheless accepted as an authoritative publication.
 granulosa_robison_1965:
   name: granulosa
   auth: [robison]
@@ -9920,8 +9924,8 @@ salpa:
   year: 1775
 salteri_hall_1866:
   name: salteri
-  auth: [hall]
-  year: 1866
+  authority:
+    source: 1866_hall
 sampsoni_miller.s.a_1891:
   name: sampsoni
   auth: [miller.s.a]
@@ -10607,8 +10611,8 @@ stellatus_gaertner_1774:
   year: 1774
 stellatus_hall_1866:
   name: stellatus
-  auth: [hall]
-  year: 1866
+  authority:
+    source: 1866_hall
 stellerida:
   name: Stellerida
   rank: Class
@@ -10692,8 +10696,8 @@ strangwaysii_koenig_1825:
   year: 1825
 streptaster:
   name: Streptaster
-  auth: [hall]
-  year: 1872
+  authority:
+    source: 1872b_hall
   notes: |
     Enters print only through the errata of the 24th Annual Report (p. 233):
     "Page 215, line 15, after AGELACRINUS insert (STREPTASTER)"; the 1866

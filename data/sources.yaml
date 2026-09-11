@@ -1130,6 +1130,26 @@
   - billings
   identifiers:
     url: https://www.biodiversitylibrary.org/page/19266657
+1871_hall:
+  title: Descriptions of some new species of Crinoidea and other Fossils from the Lower Silurian strata, principally of the age of the Hudson-river group.
+  journal: annual-ny
+  volume: 24
+  number: Adv. Pr.
+  plates:
+  - I
+  - II
+  pubDate:
+    year: 1871
+  authors:
+  - hall
+  notes: |
+    Pre-print of the plates and descriptions missing from the 1866 pre-print,
+    which introduced a number of additional names (e.g. Cystaster as a subgenus),
+    but also left out the subgenus Streptaster which is not considered
+    introduced until the 1872 final printing where it is addressed in the errate.
+    See also 1866_hall and 1872b_hall.  The plates were renumbered in 1872b_hall.
+    The title is assumed to match the earlier pre-print rather than the final
+    publication, but this is not known for certain.
 1872a_hall_whitfield:
   title: Descriptions of new species of fossils from the vicinity of Louisville, Kentucky, and the Falls of the Ohio
   journal: annual-ny
@@ -1157,13 +1177,19 @@
   - 224
   - 233 # Errata
   - 233
+  plates:
+  - V
+  - VI
   pubDate:
     year: 1872
   processDates:
     transmitted: 1871-04-18
   authors:
   - hall
-  notes: Possibly should be 1871_hall, proper date a bit unclear
+  notes: |
+    Final printing of 1866_hall and 1871_hall.  Note that the pre-print plate numbers
+    were changed from I and II to V and VI respectively due to plates from other
+    articles preceding them in the journal.
   identifiers:
     url: https://www.biodiversitylibrary.org/page/35612725
 1872c_hall:
