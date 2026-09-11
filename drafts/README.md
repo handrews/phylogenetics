@@ -1,9 +1,13 @@
 # Drafts
 
 Tree files drafted by an AI pass from a paper's text, awaiting a human
-audit before they move to `data/trees/`. The loader does not read this
-directory. Each draft opens with the taxon and author records it would
-need, and quotes every printed form it could not map to a field.
+audit before they move to `data/trees/`. The loader reads this directory
+only when asked: `phylohist --draft` (`-d`) loads the drafts after the
+audited trees, and `PHYLOHIST_DRAFTS=1 poetry run pytest` runs the load
+test over them (the warning snapshot is skipped in that mode, since a
+draft is expected to warn until its records exist). Each draft opens with
+the taxon and author records it would need, and quotes every printed
+form it could not map to a field.
 
 Check a draft with:
 

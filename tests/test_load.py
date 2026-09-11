@@ -4,6 +4,11 @@ Fails on any ERROR-level log record. Compares WARNING-level messages against
 ``tests/expected-warnings.txt``: a new line there is allowed only in a commit
 that adds a check, and every line is a resolution owed. Regenerate with
 ``PHYLOHIST_UPDATE_EXPECTED=1 poetry run pytest``.
+
+``PHYLOHIST_DRAFTS=1`` also loads the unaudited trees under ``drafts/``
+(the CLI's ``--draft``). Drafts are expected to produce errors and
+warnings until their records exist, so the warning snapshot is not
+compared in that mode; the error test still reports what a draft needs.
 """
 
 import logging
@@ -43,7 +48,7 @@ def load_records():
   logger = logging.getLogger('phylohist')
   logger.addHandler(handler)
   try:
-    data = load_files()
+    data = load_files(drafts=bool(os.getenv('PHYLOHIST_DRAFTS')))
     for field, cls in (
       ('authors', Author),
       ('publications', Publication),
@@ -72,6 +77,8 @@ def test_data_loaded(load_records):
 
 
 def test_expected_warnings(load_records):
+  if os.getenv('PHYLOHIST_DRAFTS'):
+    pytest.skip('drafts loaded; the warning snapshot covers data/ only')
   _, records = load_records
   actual = sorted({
     r.getMessage() for r in records if r.levelno == logging.WARNING

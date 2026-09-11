@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 FILEDIR = pathlib.Path(__file__).parent / r'..'
 DATA_DIR = FILEDIR / 'data'
 TREE_DIR = DATA_DIR / 'trees'
+DRAFT_DIR = FILEDIR / 'drafts'
 
 # Note: There were once other file sets, but now only this one.
 COMMON_FILES = (
@@ -69,7 +70,13 @@ def load_yaml(filename, debug=True):
     return data
 
 
-def load_files():
+def load_files(drafts=False):
+  """Load and schema-check every data file.
+
+  With ``drafts`` true, the AI-drafted trees under ``drafts/`` are loaded
+  after the audited ones, so that a draft can be run through the same
+  integrity checks before it is promoted.
+  """
   files = COMMON_FILES
 
   logger.info("Checking schema...")
@@ -113,30 +120,31 @@ def load_files():
     except KeyError as e:
       logger.error(repr(e))
 
-  for tree_path in TREE_DIR.iterdir():
+  _load_tree_dir(TREE_DIR, defs['trees'], data['trees'])
+  if drafts:
+    _load_tree_dir(DRAFT_DIR, defs['trees'], data['trees'])
+
+  return data
+
+
+def _load_tree_dir(directory, schema, trees):
+  for tree_path in sorted(directory.iterdir()):
     if tree_path.suffix != '.yaml':
       continue
 
-    # TODO: Fix code duplication
     logger.info(f'Checking "{tree_path}"...')
     name = tree_path.stem
     tree_data = {name: load_yaml(tree_path)}
-    try:
-      schema = defs['trees']
-      r = schema.evaluate(jschon.JSON(tree_data))
-      if not r.valid:
-        logger.error(f'File "{tree_path}" is not valid.')
-        log_schema_errors(r)
-        sys.exit(-1)
-      else:
-        logger.debug(f'"{tree_path}" is valid.')
-    except KeyError as e:
-      logger.error(repr(e))
-    if name in data['trees']:
-      logger.warn(f'File "{tree_path}" overwrites the main tree file.')
-    data['trees'].update(tree_data)
-      
-  return data
+    r = schema.evaluate(jschon.JSON(tree_data))
+    if not r.valid:
+      logger.error(f'File "{tree_path}" is not valid.')
+      log_schema_errors(r)
+      sys.exit(-1)
+    else:
+      logger.debug(f'"{tree_path}" is valid.')
+    if name in trees:
+      logger.warning(f'File "{tree_path}" overwrites the main tree file.')
+    trees.update(tree_data)
 
 
 def log_error_node(error):
