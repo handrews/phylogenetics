@@ -11,3 +11,9 @@ and `claims/`, and fails if either is stale:
     poetry run python scripts/claims.py
     git diff --exit-code docs/schema-usage.md claims/
 
+The four read-only tools over the claim table (`phylohist/tools.py`) are
+served over MCP by `scripts/mcp_server.py`; `.mcp.json` registers the
+server for Claude Code, so a session in this directory can resolve a
+name, list what the corpus holds about it, check a source's coverage, or
+follow a name across sources.
+
