@@ -9597,8 +9597,7 @@ rhenopyrgids:
 rhenopyrginae:
   name: Rhenopyrginae
   rank: Subfamily
-  auth: [Holloway, Jell]
-  year: 1983
+  altRankOf: rhenopyrgidae
 rhenopyrgus:
   name: Rhenopyrgus
   auth: [Dehm]

@@ -269,7 +269,7 @@
       source: 1983_holloway_jell
       subject: rhenopyrgidae
       parent: edrioasteroidea-order-uncertain_holloway_jell_1983
-      placeholder: uncertain
+      parentPlaceholder: uncertain
     - kind: placement
       source: 1983_holloway_jell
       subject: edrioasteroidea-order-uncertain_holloway_jell_1983
@@ -334,7 +334,7 @@
       source: 2020_ewin_martin.m_isotalo_zamora
       subject: viviani_ewin_martin.m_isotalo_zamora_2020
       materialKind: specimen
-      role: holotype
+      role: holotypes
       repository: NHMUK
       ids:
       - EE16642
@@ -360,7 +360,7 @@
       source: 2020_ewin_martin.m_isotalo_zamora
       subject: grayae_bather_1915
       materialKind: specimen
-      role: holotype
+      role: holotypes
       repository: NHMUK
       ids:
       - E23470
@@ -854,6 +854,9 @@
       source: 1961_dehm
       actKind: new
       subject: rhenopyrgus-subgenus
+    - kind: placement
+      source: 1961_dehm
+      subject: rhenopyrgus-subgenus
       parent: pyrgocystis
     - kind: placement
       source: 1966_regnéll
@@ -989,7 +992,11 @@
       source: 1935_bassler
       subject: astrocystites
       parent: astrocystitidae
-      placeholder: uncertain
+    - kind: placement
+      source: 1935_bassler
+      subject: astrocystitidae
+      provisional: true
+      altPlacements: [blastoidea]
     - kind: placement
       source: 1936_bassler
       subject: astrocystites
@@ -1191,27 +1198,31 @@
     overlap (Sprinkle appears in 1994 and 2015; Sumrall appears in 2013 and 2015) confirmed against sources.yaml
     author lists.
 - id: q037
-  class: absent
+  class: uncaptured
   question: What does Whiteaves (1897) print as the original type-species designation for Astrocystites?
   scope:
     taxon: astrocystites
+    source: 1897_whiteaves
   expected:
-    refusal: absent
+    refusal: not-captured
+    coverageKind: newTaxa
     answer: |
-      Nothing in this corpus can answer that. Whiteaves's 1897 original
-      description of Astrocystites is not part of this corpus at all —
-      every later paper in the corpus (Fay 1962 included) treats ottawaensis
-      as the type species by inference from monotypy, never by quoting
-      Whiteaves's own words.
-  evidence: null
-  verified: 'grep "1897_whiteaves" data/sources.yaml returns no match; docs/reviews/review_1962_fay.md
-    sec.3 states this explicitly: "it would have been fixed, if anywhere, in Whiteaves'' 1897 original
-    description, which has no source record anywhere in this dataset." sources.yaml (no entry for 1897_whiteaves)'
+      Not captured for Whiteaves (1897): the paper is on record as the
+      source of Astrocystites and of A. ottawaensis, but its content has
+      not yet been entered. Every later paper in the corpus (Fay 1962
+      included) treats ottawaensis as the type species by inference from
+      monotypy, never by quoting Whiteaves's own words.
+  evidence:
+    source: 1897_whiteaves
+  verified: data/sources.yaml has a `1897_whiteaves:` record (added 2026-09-11); ls data/trees/ has
+    no file for it (the AI draft awaits audit in drafts/1897_whiteaves.yaml); data/taxa.yaml
+    astrocystites and ottawaensis_whiteaves_1897 resolve `authority.source` to 1897_whiteaves.
 - id: q038
   class: absent
   question: What does Klug et al. (2008) themselves print in their protologue for Rhenopyrgus flos?
   scope:
     taxon: flos_klug_krüger_korn_rücklin_schemm-gregory_debaets_mapes_2008
+    source: 2008_klug_krüger_korn_rücklin_schemm-gregory_debaets_mapes
   expected:
     refusal: absent
     answer: |
@@ -1228,7 +1239,8 @@
 - id: q039
   class: absent
   question: What placement does the record give for the genus Rhenoblastus among the edrioblastoids?
-  scope: {}
+  scope:
+    taxon: rhenoblastus
   expected:
     refusal: absent
     answer: |
@@ -1737,7 +1749,11 @@
       source: 1935_bassler
       subject: astrocystites
       parent: astrocystitidae
-      placeholder: uncertain
+    - kind: placement
+      source: 1935_bassler
+      subject: astrocystitidae
+      provisional: true
+      altPlacements: [blastoidea]
     - kind: placement
       source: 1936_bassler
       subject: astrocystites
