@@ -3974,12 +3974,13 @@
     "editorial": 1,
     "material": 1,
     "placement": 2,
+    "rejection": 1,
     "usage": 5
    },
    "derived": {
     "material": 1,
     "newTaxa": 1,
-    "skeleton": 7,
+    "skeleton": 8,
     "synonymy": 1
    },
    "inconsistencies": [],
@@ -4119,12 +4120,13 @@
     "act": 3,
     "material": 2,
     "placement": 3,
+    "rejection": 1,
     "usage": 5
    },
    "derived": {
     "material": 2,
     "newTaxa": 1,
-    "skeleton": 8,
+    "skeleton": 9,
     "types": 1
    },
    "inconsistencies": [],
@@ -4804,10 +4806,11 @@
    "claims": {
     "act": 4,
     "placement": 5,
+    "rejection": 2,
     "usage": 8
    },
    "derived": {
-    "skeleton": 13,
+    "skeleton": 15,
     "types": 2
    },
    "inconsistencies": [],
@@ -5104,12 +5107,13 @@
     "act": 75,
     "material": 56,
     "placement": 126,
+    "rejection": 19,
     "usage": 170
    },
    "derived": {
     "material": 56,
     "newTaxa": 27,
-    "skeleton": 296,
+    "skeleton": 315,
     "synonymy": 12,
     "types": 29
    },
@@ -5443,10 +5447,11 @@
     "acceptance": 2,
     "act": 1,
     "placement": 5,
+    "rejection": 1,
     "usage": 15
    },
    "derived": {
-    "skeleton": 20,
+    "skeleton": 21,
     "synonymy": 2
    },
    "inconsistencies": [],
@@ -7207,11 +7212,12 @@
    "claims": {
     "act": 23,
     "placement": 26,
+    "rejection": 2,
     "usage": 29
    },
    "derived": {
     "newTaxa": 15,
-    "skeleton": 55,
+    "skeleton": 57,
     "types": 6
    },
    "inconsistencies": [],
@@ -8440,12 +8446,13 @@
     "act": 19,
     "material": 12,
     "placement": 42,
+    "rejection": 1,
     "usage": 44
    },
    "derived": {
     "material": 12,
     "newTaxa": 9,
-    "skeleton": 86,
+    "skeleton": 87,
     "types": 9
    },
    "inconsistencies": [],
@@ -8995,12 +9002,13 @@
     "acceptance": 1,
     "act": 5,
     "placement": 25,
+    "rejection": 1,
     "usage": 30
    },
    "derived": {
     "newTaxa": 1,
     "phylogeny": 16,
-    "skeleton": 39,
+    "skeleton": 40,
     "synonymy": 1,
     "types": 1
    },
@@ -10278,12 +10286,13 @@
     "act": 4,
     "material": 2,
     "placement": 5,
+    "rejection": 1,
     "usage": 7
    },
    "derived": {
     "material": 2,
     "newTaxa": 2,
-    "skeleton": 12,
+    "skeleton": 13,
     "types": 1
    },
    "inconsistencies": [],
@@ -10358,11 +10367,12 @@
     "act": 3,
     "material": 1,
     "placement": 5,
+    "rejection": 1,
     "usage": 7
    },
    "derived": {
     "material": 1,
-    "skeleton": 12,
+    "skeleton": 13,
     "types": 1
    },
    "inconsistencies": [],

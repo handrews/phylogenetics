@@ -1654,6 +1654,10 @@
       source: 2013_sumrall_heredia_rodríguez.c.m_mestre
       actKind: emended
       subject: rhenopyrgidae
+    - kind: rejection
+      source: 2013_sumrall_heredia_rodríguez.c.m_mestre
+      subject: rhenopyrgidae
+      declinedParent: cyathocystidae
     - kind: placement
       source: 2013_sumrall_heredia_rodríguez.c.m_mestre
       subject: rhenopyrgidae

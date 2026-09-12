@@ -49,7 +49,6 @@ Protologue not flagged: fistulidæ in 1801_lamarck
 Protologue not flagged: galeritidae in 1825_gray.j.e
 Protologue not flagged: glyptosphaerites in 1854_müller.j.p
 Protologue not flagged: goniocrinites in 1840_eichwald
-Protologue not flagged: henicocystinae in 1983_jell
 Protologue not flagged: hillocystinae in 1983_jell
 Protologue not flagged: isorophids in 1976_bell.b.m
 Protologue not flagged: jewetti_hall_1852 in 1852_hall

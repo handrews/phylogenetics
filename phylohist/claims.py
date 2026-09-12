@@ -45,6 +45,28 @@ _SPECIMEN_ROLES = frozenset({
 })
 
 
+_rank_hubs = None
+
+
+def rank_variants(key):
+  """The records of the same name at other ranks, in both directions of
+  the `altRankOf` link: a spoke sees its hub and the other spokes, a hub
+  sees its spokes."""
+  global _rank_hubs
+  if _rank_hubs is None:
+    _rank_hubs = collections.defaultdict(set)
+    for k, taxon in Taxon._taxa.items():
+      hub = taxon._data.get('altRankOf')
+      if hub:
+        _rank_hubs[hub].add(k)
+  hub = Taxon.get(key)._data.get('altRankOf') if Taxon.get(key) else None
+  family = set(_rank_hubs.get(key, ()))
+  if hub:
+    family |= {hub} | _rank_hubs.get(hub, set())
+  family.discard(key)
+  return sorted(family)
+
+
 def placeholder_kind(taxon):
   """C4: a bin (`uncertain`), an unnamed taxon (`unnamed`) or open."""
   if taxon is None or taxon.name is not None:
@@ -263,10 +285,16 @@ class _NodeClaims:
     if named:
       self._acts()
 
+    # A rejection has two printed shapes: the group's side (`removed`
+    # under the group) and the taxon's side (`moved` on the taxon).
     if node.axis == 'removed' and named:
       claim = self._base('rejection')
       claim['declinedParent'] = self.owner_key
       self._emit(claim, 'removed')
+    if named and node.moved is not None and node.moved.taxon is not None:
+      claim = self._base('rejection')
+      claim['declinedParent'] = node.moved.taxon.key
+      self._emit(claim, 'moved')
 
     for role, value in (data.get('specimens') or {}).items():
       if role == 'repository':
@@ -358,6 +386,11 @@ class _NodeClaims:
         derived = node.taxon.derivative_of
         if derived is not None and 'altRankOf' in node.taxon._data:
           fields['altRankOf'] = derived.key
+        # The identity link between coordinate names is undirected: the
+        # variants are listed whichever record carries the link.
+        variants = rank_variants(node.taxon.key)
+        if variants:
+          fields['rankVariants'] = variants
         self._act('nomTransl', 'modifier', **fields)
       else:
         self._act('modifier', 'modifier', modifier=modifier)

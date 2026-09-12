@@ -92,9 +92,10 @@ include them within Cyathocystidae Bather, 1899" (Sumrall et al. 2013,
 p. 773). The first is written from the group's side and the second from
 the taxon's side, and whether anyone had placed the name there before is
 the source's business, not the claim's. Both emit a `rejection`: subject,
-`declinedParent`, the printed words. `removed` under a group node and a
-`rejectedPlacements` list on the taxon node (not yet in the schema) are
-the two spellings.
+`declinedParent`, the printed words. `removed` under a group node and
+`moved` on the taxon node are the two spellings (Sumrall et al. 2013
+carry `moved: {taxon: cyathocystidae}` on Rhenopyrgidae), and each also
+yields its `act`.
 
 `follows`: the source adopts a placement by citing another work for it
 ("Edrioasterida sensu Guensburg and Sprinkle (1994)", 2013). A source that
