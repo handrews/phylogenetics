@@ -26,6 +26,10 @@ _KIND_ORDER = {
 _NODE_FLAGS = ('new', 'provisional', 'questionable', 'quoted')
 _SPECIES_GROUP = ('species', 'subspecies', 'variety')
 
+
+def _species_group(rank):
+  return (rank or '').lower() in _SPECIES_GROUP
+
 _PLURAL_KINDS = {'newTaxa', 'types', 'occurrences', 'illustrations', 'diagnoses'}
 
 # The community's words for what the table records.
@@ -173,6 +177,9 @@ class ClaimStore:
       if rank == 'subgenus':
         genus = genus or self._genus_of_subgenus(key)
         label = f'{self.name(genus)} ({self.name(key)})' if genus else self.name(key)
+      elif rank in _SPECIES_GROUP and not self.names[key].get('name') and self.names[key].get('identifier'):
+        # An unnamed species designated as printed ("Rhenopyrgus sp. indet. 1").
+        label = self.names[key]['identifier']
       elif rank in _SPECIES_GROUP:
         parts = []
         if genus:
@@ -250,13 +257,18 @@ class ClaimStore:
 
   def related_keys(self, taxon_key):
     """Records sharing the name at another rank or spelling, and the
-    base or variants a record is linked to."""
+    base or variants a record is linked to. An epithet is not a name on
+    its own, so species-group records relate only through explicit
+    links: two species called casteri in different genera are different
+    names."""
     row = self.names.get(taxon_key)
     if row is None:
       return []
     keys = set()
-    for form in row['folded']:
-      keys.update(self.by_folded.get(form, ()))
+    if not _species_group(row.get('rank')):
+      for form in row['folded']:
+        keys.update(k for k in self.by_folded.get(form, ())
+                    if not _species_group(self.rank(k)))
     if 'of' in row:
       keys.add(row['of'])
     for key, other in self.names.items():
@@ -602,6 +614,16 @@ class ClaimStore:
     )
     return _with_style(block, style)
 
+  def _variant_words(self, key, base):
+    """How a record reached by a variant edge relates to the record it
+    is a variant of: a spelling at the same rank, or the name at another
+    rank."""
+    of = self.names[key].get('of') == base or self.names[base].get('of') == key
+    same_rank = (self.rank(key) or '').lower() == (self.rank(base) or '').lower()
+    if same_rank:
+      return f"{'spelling' if of else 'same name'} variant of {self.display(base)}"
+    return f"same name at another rank as {self.display(base)}"
+
   def descendants(self, records, include_synonyms=True, include_variants=True,
                   trees=None, years=None, style='text'):
     trees = tuple(trees) if trees else TAXONOMY
@@ -627,9 +649,12 @@ class ClaimStore:
             parent_path = claim['path'].rsplit('/children/', 1)[0]
             how.append({'value': f"{self.cite(via['source'])}: under {self.display(via['parent'], via['source'], parent_path)}", 'claim': via['claim'], 'source': via['source']})
           elif 'synonymOf' in via:
-            how.append({'value': f"{self.cite(via['source'])}: synonym of {self.name(via['synonymOf'])}", 'claim': via['claim'], 'source': via['source']})
+            # The senior name as that source combines it.
+            claim = self.by_id[via['claim']]
+            senior = self.display(via['synonymOf'], via['source'], claim['path'].rsplit('/', 2)[0])
+            how.append({'value': f"{self.cite(via['source'])}: synonym of {senior}", 'claim': via['claim'], 'source': via['source']})
           else:
-            how.append({'value': f"same name as {self.name(via['variantOf'])}"})
+            how.append({'value': self._variant_words(key, via['variantOf'])})
         rows.append({'cells': [
           [{'value': label, 'key': key}],
           [{'value': self.rank(key) or ''}],

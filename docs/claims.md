@@ -251,7 +251,12 @@ each is a name of its own; a cited name takes its original combination
 from the synonymy entry, or the genus of the name it is cited under.
 Where a source lists a species with no genus above it (thirteen nodes in
 eight old sources) the printed form is shown, else the epithet alone:
-the corpus does not invent a genus. No authority is appended.
+the corpus does not invent a genus; an unnamed species with a printed
+designation shows it ("Rhenopyrgus sp. indet. 1"). No authority is
+appended. An epithet is not a name on its own: species-group records
+relate to one another only through an explicit spelling link (*procera*
+/ *procerum*), never by a shared epithet, so *Nolichuckia casteri* and
+*Timeischytes casteri* are unrelated names.
 
 The closures (`phylohist/closure.py`) are the execution layer:
 descendants of a set across every source (transitive within a source,

@@ -506,6 +506,8 @@ def names_index():
     if taxon.name is None:
       kind = 'placeholder'
     row = {'name': taxon.name, 'rank': taxon.rank, 'kind': kind}
+    if data.get('identifier'):
+      row['identifier'] = data['identifier']
     if taxon.derivative_of is not None:
       row['of'] = taxon.derivative_of.key
     authority = taxon.authority

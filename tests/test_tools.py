@@ -182,6 +182,33 @@ def test_rank_variants_linked(store):
   assert claim['rankVariants'] == ['diploporita-order', 'diploporita-suborder']
 
 
+def test_epithets_do_not_relate_records(store):
+  # Two species called casteri in different genera are different names;
+  # a gender or spelling variant is linked explicitly.
+  assert store.related_keys('casteri_bell.b.m_1975') == []
+  assert store.related_keys('asteria_linnaeus_1767') == []
+  assert store.related_keys('angulosus_pander_1830') == ['angulosa_pander_1830']
+  assert store.related_keys('edrioblastoidea') == ['edrioblastoida', 'edrioblastoidina']
+  found = store.descendants(['edrioblastoidea'], style='json')
+  assert [r['combination'] for r in found['rows'] if r['record'].startswith('casteri')] == ['Timeischytes casteri']
+  above = store.descendants(['edrioasteroidea'], style='json')
+  row = next(r for r in above['rows'] if r['record'] == 'septembrachiata_miller.s.a_dyer_1878')
+  assert row['cells'][2][-1] == {'value': 'spelling variant of ' + store.display('septembrachiatus_miller.s.a_dyer_1878')}
+  row = next(r for r in above['rows'] if r['record'] == 'edrioasterina')
+  assert row['cells'][2][0]['value'].startswith('Guensburg & Sprinkle 1994')
+  assert row['cells'][2][-1]['value'] == 'same name at another rank as Edrioasteridae'
+
+
+def test_senior_synonym_and_designation_shown_as_combinations(store):
+  under = store.descendants(['pyrgocystis'], style='json')
+  procera = [r for r in under['rows'] if r['record'] == 'procera_aurivillius_1892']
+  assert procera[0]['cells'][2][-1]['value'] == 'Ewin et al. 2020: synonym of Rhenopyrgus sp. indet. 1'
+  indet = next(r for r in under['rows'] if r['record'] == 'rhenopyrgus-sp-1_ewin_martin.m_isotalo_zamora_2020')
+  assert indet['combination'] == 'Rhenopyrgus sp. indet. 1'
+  listing = store.contents('2020_ewin_martin.m_isotalo_zamora', 'rhenopyrgus')[0]
+  assert '  Rhenopyrgus sp. indet. 1\n' in listing['rendered'] + '\n'
+
+
 def test_combinations_in_a_listing(store):
   dehm = store.contents('1961_dehm', 'pyrgocystis')[0]['rendered'].splitlines()
   assert dehm[0] == 'Pyrgocystis'

@@ -132,7 +132,8 @@ class Closure:
               nxt.append(variant)
       frontier = nxt
     for vias in found.values():
-      vias.sort(key=lambda v: (v.get('year', 0), v.get('source', ''), v.get('claim', '')))
+      # Variant edges carry no source; they follow the placements.
+      vias.sort(key=lambda v: (v.get('year', 9999), v.get('source', ''), v.get('claim', '')))
     return found
 
   def ancestors(self, records, include_variants=True, trees=TAXONOMY, years=None):

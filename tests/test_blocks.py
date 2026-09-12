@@ -52,6 +52,11 @@ def test_table_text_and_markdown(store):
   assert md[0] == '**Statements about Rhenopyrgidae**'
   assert md[2] == '| source | as | kind | statement | page | by |'
   assert md[4].startswith('| Holloway & Jell 1983 | Rhenopyrgidae | act | named as new |')
+  found = store.descendants(['edrioblastoidea'], style='json')
+  casteri = next(l for l in render.render(found, 'markdown').splitlines() if 'casteri' in l)
+  assert '| Bell 1975: under Timeischytes<br>Müller et al. 2013: under Timeischytes |' in casteri
+  text = next(l for l in render.render(found, 'text').splitlines() if 'casteri' in l)
+  assert 'Bell 1975: under Timeischytes / Müller et al. 2013: under Timeischytes' in text
 
 
 def test_list_text(store):

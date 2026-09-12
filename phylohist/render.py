@@ -73,14 +73,14 @@ def _node_label(node):
   return name
 
 
-def _cell_text(cell):
+def _cell_text(cell, sep=' / '):
   values = []
   for v in cell:
     value = v.get('value') if isinstance(v, dict) else v
     if isinstance(value, (list, tuple)):
       value = ', '.join(str(x) for x in value)
     values.append('' if value is None else str(value))
-  return ' / '.join(values)
+  return sep.join(values)
 
 
 def _entry_line(entry, heading_name=None):
@@ -223,7 +223,8 @@ def _md_table(block):
     if row.get('group') is not None and row['group'] != current:
       current = row['group']
       lines.append('| ' + f'**{current}**' + ' |' * len(headers))
-    cells = [_cell_text(cell).replace('|', '\\|') for cell in row['cells']]
+    # A cell with several values breaks lines; GFM tables allow <br>.
+    cells = [_cell_text(cell, '<br>').replace('|', '\\|') for cell in row['cells']]
     lines.append('| ' + ' | '.join(cells) + ' |')
   return '\n'.join(lines)
 
