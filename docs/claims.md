@@ -241,6 +241,18 @@ aligned tables) and `markdown`; `json` is the block. A new style is one
 function and a registration; a graph or a timeline of a table needs
 nothing from the model.
 
+Species-group names are shown as the combination the source uses: the
+nearest genus up the node's chain, a subgenus between in parentheses,
+the species above a variety, then the epithet ("Rhenopyrgus grayae",
+"Pyrgocystis (Rhenopyrgus) coronaeformis", "Genus species var.
+epithet"); a subgenus reads "Genus (Subgenus)". A species recombined
+into another genus appears once per combination in every table, since
+each is a name of its own; a cited name takes its original combination
+from the synonymy entry, or the genus of the name it is cited under.
+Where a source lists a species with no genus above it (thirteen nodes in
+eight old sources) the printed form is shown, else the epithet alone:
+the corpus does not invent a genus. No authority is appended.
+
 The closures (`phylohist/closure.py`) are the execution layer:
 descendants of a set across every source (transitive within a source,
 through accepted synonyms and through the same name at other ranks),

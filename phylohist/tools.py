@@ -24,6 +24,7 @@ _KIND_ORDER = {
   'placeholder': 4,
 }
 _NODE_FLAGS = ('new', 'provisional', 'questionable', 'quoted')
+_SPECIES_GROUP = ('species', 'subspecies', 'variety')
 
 _PLURAL_KINDS = {'newTaxa', 'types', 'occurrences', 'illustrations', 'diagnoses'}
 
@@ -92,6 +93,7 @@ class ClaimStore:
       for form in row['folded']:
         self.by_folded[form].append(key)
     self._closure = None
+    self._combinations_at = {}
 
   @property
   def closure(self):
@@ -119,9 +121,132 @@ class ClaimStore:
   def rank(self, key):
     return (self.names.get(key) or {}).get('rank')
 
-  def label(self, key):
+  def label(self, key, source=None, path=None):
     rank = self.rank(key)
-    return f'{self.name(key)} ({rank})' if rank else self.name(key)
+    name = self.display(key, source, path)
+    return f'{name} ({rank})' if rank and rank.lower() not in _SPECIES_GROUP else name
+
+  def _rank_of(self, key):
+    return (self.rank(key) or '').lower()
+
+  def combination(self, source_key, path):
+    """The name a source uses at a node: for a species-group record the
+    nearest genus up the chain, a subgenus between in parentheses, the
+    species above a variety, then the epithet; for a subgenus "Genus
+    (Subgenus)"; otherwise the record's name. Where the chain gives no
+    genus the printed form is used, else the epithet alone."""
+    cached = self._combinations_at.get((source_key, path))
+    if cached is not None:
+      return cached
+    at = self.at_path[source_key].get(path, [])
+    placement = self.closure.by_path[source_key].get(path)
+    usage = next((c for c in at if c['kind'] == 'usage'), None)
+    acceptance = next((c for c in at if c['kind'] == 'acceptance'), None)
+    base = placement or usage or acceptance
+    result = None
+    if base is not None:
+      key = base['subject']
+      rank = self._rank_of(key)
+      genus = subgenus = species = None
+      if placement is not None:
+        node = placement
+        while node is not None and node.get('parent') and genus is None:
+          parent = node['parent']
+          parent_rank = self._rank_of(parent)
+          if parent_rank == 'subgenus' and subgenus is None:
+            subgenus = parent
+          elif parent_rank == 'genus':
+            genus = parent
+          elif parent_rank == 'species' and species is None:
+            species = parent
+          node = self.closure.parent_claim(source_key, node)
+      elif acceptance is not None and '/' in path:
+        # A cited name: the original combination when the entry gives it,
+        # else the genus of the node it sits under.
+        parents = acceptance.get('parents') or []
+        if parents:
+          genus = parents[0]
+          subgenus = parents[1] if len(parents) > 1 else None
+        else:
+          owner = self.combination(source_key, path.rsplit('/', 2)[0])
+          genus, subgenus = owner.get('genus'), owner.get('subgenus')
+      if rank == 'subgenus':
+        genus = genus or self._genus_of_subgenus(key)
+        label = f'{self.name(genus)} ({self.name(key)})' if genus else self.name(key)
+      elif rank in _SPECIES_GROUP:
+        parts = []
+        if genus:
+          parts.append(self.name(genus))
+          if subgenus:
+            parts.append(f'({self.name(subgenus)})')
+          if species and rank != 'species':
+            parts.append(self.name(species))
+          if rank == 'variety':
+            parts.append('var.')
+          parts.append(self.name(key))
+        else:
+          printed = (usage or {}).get('printed') or {}
+          parts.append(printed.get('citedAs') or self.name(key))
+        label = ' '.join(parts)
+      else:
+        label = self.name(key)
+      result = {
+        'label': label, 'record': key, 'genus': genus, 'subgenus': subgenus,
+        'species': species,
+        'keys': [k for k in (genus, subgenus, species, key) if k],
+      }
+    self._combinations_at[(source_key, path)] = result or {}
+    return result or {}
+
+  def _genus_of_subgenus(self, key):
+    """The genus a subgenus sits in, from its own placements, for the
+    places a subgenus is cited without its chain."""
+    counts = collections.Counter()
+    for claim in self.closure.placements_of.get(key, ()):
+      parent = claim.get('parent')
+      if parent and self._rank_of(parent) == 'genus':
+        counts[parent] += 1
+    return counts.most_common(1)[0][0] if counts else None
+
+  def combinations(self, key):
+    """A species-group record's distinct combinations across the taxonomy
+    trees, each with its sources and years."""
+    found = {}
+    for claim in self.closure.placements_of.get(key, ()):
+      if claim['tree'] != 'taxonomy':
+        continue
+      label = self.combination(claim['source'], claim['path']).get('label')
+      if not label:
+        continue
+      entry = found.setdefault(label, {'label': label, 'sources': set()})
+      entry['sources'].add(claim['source'])
+    out = []
+    for entry in found.values():
+      sources = sorted(entry['sources'], key=lambda s: (self.source_year(s), s))
+      out.append({
+        'label': entry['label'], 'sources': sources,
+        'firstYear': self.source_year(sources[0]), 'lastYear': self.source_year(sources[-1]),
+      })
+    out.sort(key=lambda e: (e['firstYear'], e['label']))
+    return out
+
+  def display(self, key, source=None, path=None):
+    """How a name is shown: the combination at a node when the node is
+    known; a species-group record's combinations joined when it is not;
+    the name otherwise."""
+    if source is not None and path is not None:
+      label = self.combination(source, path).get('label')
+      if label and self.combination(source, path).get('record') == key:
+        return label
+    if self._rank_of(key) in _SPECIES_GROUP:
+      combos = self.combinations(key)
+      if combos:
+        return ' / '.join(c['label'] for c in combos)
+    if self._rank_of(key) == 'subgenus':
+      genus = self._genus_of_subgenus(key)
+      if genus:
+        return f'{self.name(genus)} ({self.name(key)})'
+    return self.name(key)
 
   def related_keys(self, taxon_key):
     """Records sharing the name at another rank or spelling, and the
@@ -157,6 +282,8 @@ class ClaimStore:
       entry['authority'] = row['authority'].get('display')
       if 'source' in row['authority']:
         entry['authoritySource'] = row['authority']['source']
+    if (row['rank'] or '').lower() in _SPECIES_GROUP:
+      entry['combinations'] = self.combinations(key)
     return entry
 
   def _placed_under(self, key, genus_forms):
@@ -205,11 +332,12 @@ class ClaimStore:
         words += f" in a {claim['tree']}"
       return words
     if kind == 'acceptance':
-      original = ' '.join(self.name(p) for p in claim.get('parents') or ())
-      target = f'{original} {self.name(claim["subject"])}' if original else self.name(claim['subject'])
+      target = self.display(claim['subject'], claim['source'], claim['path'])
       verb = 'accepts' if claim['stance'] == 'accepts' else 'rejects'
       cited = f" ({self.cite(claim['citesSource'])})" if claim.get('citesSource') else ''
-      under = self.name(claim['under']) if claim.get('under') else ''
+      under = ''
+      if claim.get('under'):
+        under = self.display(claim['under'], claim['source'], claim['path'].rsplit('/', 2)[0])
       return f'{verb} {target}{cited} as {under}' if under else f'{verb} {target}{cited}'
     if kind == 'act':
       return self._act_words(claim)
@@ -300,6 +428,9 @@ class ClaimStore:
     }
     if base.get('placeholder'):
       node['placeholder'] = base['placeholder']
+    label = self.combination(source_key, path).get('label')
+    if label and label != node['name']:
+      node['label'] = label
     printed = (usage or {}).get('printed') or {}
     if printed.get('citedAs'):
       node['printed'] = printed['citedAs']
@@ -337,7 +468,13 @@ class ClaimStore:
         parents=[self.name(p) for p in acceptance.get('parents') or ()] or None,
         printed=printed.get('citedAs'),
         record=acceptance['subject'] if not acceptance.get('ownName') else None,
-        name=self.name(acceptance['subject']) if not acceptance.get('ownName') else None,
+        # With an original combination the entry carries the bare epithet
+        # (the parents supply the genus); without one, the cited name as the
+        # combination the entry falls under; the heading's own name needs
+        # neither.
+        name=(self.name(acceptance['subject']) if acceptance.get('parents')
+              else None if acceptance.get('ownName')
+              else self.display(acceptance['subject'], source_key, candidate)),
       ))
     entries.sort(key=lambda e: (e.get('year') or 0, e.get('cite') or ''))
     return entries
@@ -423,13 +560,16 @@ class ClaimStore:
         if sources and claim['source'] not in sources:
           continue
         parent = claim.get('parent')
-        value = self.label(parent) if parent else '(unnamed group)'
+        parent_path = claim['path'].rsplit('/children/', 1)[0]
+        value = self.label(parent, claim['source'], parent_path) if parent else '(unnamed group)'
         if claim.get('parentPlaceholder'):
           value += ' [placeholder]'
         for flag in ('provisional', 'questionable'):
           if claim.get(flag):
             value += f' ({flag})'
-        cells[key][claim['source']].append({
+        # A species recombined is a different name: one row per combination.
+        row_label = self.display(key, claim['source'], claim['path'])
+        cells[(key, row_label)][claim['source']].append({
           'value': value, 'key': parent, 'claim': claim['id'],
           'rank': claim.get('rank'),
         })
@@ -440,12 +580,14 @@ class ClaimStore:
     ]
     rows = []
     for key in rows_keys:
-      if not cells.get(key):
-        continue
-      row_cells = [[{'value': self.label(key), 'key': key}]]
-      for s in columns_keys:
-        row_cells.append(cells[key].get(s, []))
-      rows.append({'cells': row_cells, 'record': key})
+      labels = [label for (k, label) in cells if k == key]
+      for row_label in sorted(labels, key=lambda l: min(self.source_year(s) for s in cells[(key, l)])):
+        rank = self.rank(key)
+        shown = f'{row_label} ({rank})' if rank and rank.lower() not in _SPECIES_GROUP else row_label
+        row_cells = [[{'value': shown, 'key': key}]]
+        for s in columns_keys:
+          row_cells.append(cells[(key, row_label)].get(s, []))
+        rows.append({'cells': row_cells, 'record': key, 'combination': row_label})
     schemes = closure.schemes(list(records), include_variants, trees, years)
     parameters = {
       'records': list(records), 'sources': sources, 'years': years,
@@ -466,21 +608,34 @@ class ClaimStore:
     found = self.closure.descendants(list(records), include_synonyms, include_variants, trees, years)
     rows = []
     for key in sorted(found, key=lambda k: (_rank_order(self.rank(k)), self.name(k))):
-      vias = found[key]
-      how = []
-      for via in vias:
-        if 'parent' in via:
-          how.append({'value': f"{self.cite(via['source'])}: under {self.name(via['parent'])}", 'claim': via['claim'], 'source': via['source']})
-        elif 'synonymOf' in via:
-          how.append({'value': f"{self.cite(via['source'])}: synonym of {self.name(via['synonymOf'])}", 'claim': via['claim'], 'source': via['source']})
+      # One row per combination: a species recombined is a different name.
+      by_label = {}
+      for via in found[key]:
+        claim = self.by_id.get(via.get('claim'))
+        if claim is not None and 'parent' in via:
+          label = self.display(key, claim['source'], claim['path'])
+        elif claim is not None and 'synonymOf' in via:
+          label = self.display(key, claim['source'], claim['path'])
         else:
-          how.append({'value': f"same name as {self.name(via['variantOf'])}"})
-      rows.append({'cells': [
-        [{'value': self.name(key), 'key': key}],
-        [{'value': self.rank(key) or ''}],
-        how,
-        [{'value': len({v['source'] for v in vias if 'source' in v})}],
-      ], 'record': key})
+          label = self.display(key)
+        by_label.setdefault(label, []).append(via)
+      for label, vias in sorted(by_label.items(), key=lambda kv: (min((v.get('year', 0) for v in kv[1]), default=0), kv[0])):
+        how = []
+        for via in vias:
+          if 'parent' in via:
+            claim = self.by_id[via['claim']]
+            parent_path = claim['path'].rsplit('/children/', 1)[0]
+            how.append({'value': f"{self.cite(via['source'])}: under {self.display(via['parent'], via['source'], parent_path)}", 'claim': via['claim'], 'source': via['source']})
+          elif 'synonymOf' in via:
+            how.append({'value': f"{self.cite(via['source'])}: synonym of {self.name(via['synonymOf'])}", 'claim': via['claim'], 'source': via['source']})
+          else:
+            how.append({'value': f"same name as {self.name(via['variantOf'])}"})
+        rows.append({'cells': [
+          [{'value': label, 'key': key}],
+          [{'value': self.rank(key) or ''}],
+          how,
+          [{'value': len({v['source'] for v in vias if 'source' in v})}],
+        ], 'record': key, 'combination': label})
     parameters = {
       'records': list(records), 'includeSynonyms': include_synonyms,
       'includeVariants': include_variants, 'trees': list(trees), 'years': years,
@@ -488,7 +643,7 @@ class ClaimStore:
     block = blocks.table([
       {'name': 'record', 'kind': 'record'}, {'name': 'rank', 'kind': 'rank'},
       {'name': 'placed by', 'kind': 'text'}, {'name': 'sources', 'kind': 'count'},
-    ], rows, parameters, title='Placed under ' + ', '.join(self.name(r) for r in records),
+    ], rows, parameters, title='Placed under ' + ', '.join(self.display(r) for r in records),
        extra={'found': found})
     return _with_style(block, style)
 
@@ -515,7 +670,7 @@ class ClaimStore:
       {'name': 'higher taxon', 'kind': 'record'}, {'name': 'rank', 'kind': 'rank'},
       {'name': 'edge', 'kind': 'text'}, {'name': 'sources', 'kind': 'source'},
       {'name': 'count', 'kind': 'count'},
-    ], rows, parameters, title='Placed above ' + ', '.join(self.name(r) for r in records),
+    ], rows, parameters, title='Placed above ' + ', '.join(self.display(r) for r in records),
        extra={'found': found})
     return _with_style(block, style)
 
@@ -534,12 +689,21 @@ class ClaimStore:
     rows = []
     for source_key in sorted(by_source, key=lambda s: (self.source_year(s), s)):
       claims = by_source[source_key]
-      used = sorted({c['subject'] for c in claims if c['kind'] == 'usage' and c.get('axis') in ('children', 'root')})
+      uses = [c for c in claims if c['kind'] == 'usage' and c.get('axis') in ('children', 'root')]
+      used = sorted({c['subject'] for c in uses})
+      as_used = []
+      # The name as this source uses it; a source that only cites the name
+      # (in a synonymy) shows the combination it cites.
+      for c in uses or [c for c in claims if c['kind'] in ('usage', 'acceptance')]:
+        label = self.display(c['subject'], source_key, c['path'])
+        if label not in [a['value'] for a in as_used]:
+          as_used.append({'value': label, 'key': c['subject'], 'claim': c['id']})
       positions = []
       for c in claims:
         if c['kind'] == 'placement' and c['tree'] in trees:
           parent = c.get('parent')
-          positions.append({'value': (self.label(parent) if parent else '(unnamed group)') + (' [placeholder]' if c.get('parentPlaceholder') else ''), 'key': parent, 'claim': c['id']})
+          parent_path = c['path'].rsplit('/children/', 1)[0]
+          positions.append({'value': (self.label(parent, source_key, parent_path) if parent else '(unnamed group)') + (' [placeholder]' if c.get('parentPlaceholder') else ''), 'key': parent, 'claim': c['id']})
         elif c['kind'] == 'placement':
           positions.append({'value': f"in a {c['tree']}", 'claim': c['id']})
       seen = set()
@@ -551,6 +715,7 @@ class ClaimStore:
       rows.append({'cells': [
         [{'value': self.cite(source_key), 'source': source_key}],
         [{'value': self.source_year(source_key)}],
+        as_used,
         [{'value': ', '.join(self.rank(k) or '' for k in used)}],
         positions, acts, printed,
         [{'value': p.strip('"') } for p in pages],
@@ -576,10 +741,11 @@ class ClaimStore:
     parameters = {'record': record, 'includeRelated': include_related, 'trees': list(trees), 'years': years}
     block = blocks.table([
       {'name': 'source', 'kind': 'source'}, {'name': 'year', 'kind': 'year'},
+      {'name': 'as', 'kind': 'record'},
       {'name': 'rank', 'kind': 'rank'}, {'name': 'placed under', 'kind': 'record'},
       {'name': 'acts', 'kind': 'text'}, {'name': 'printed as', 'kind': 'text'},
       {'name': 'pages', 'kind': 'text'},
-    ], rows, parameters, decorations=deco, title=f'History of {self.name(record)}',
+    ], rows, parameters, decorations=deco, title=f'History of {self.display(record)}',
        extra={'measurement': m})
     return _with_style(block, style)
 
@@ -597,7 +763,8 @@ class ClaimStore:
         if not entries:
           continue
         block = blocks.listing(
-          {'key': record, 'name': self.name(record), 'rank': self.rank(record)},
+          {'key': record, 'name': self.display(record, source_key, path),
+           'rank': None if self._rank_of(record) in _SPECIES_GROUP else self.rank(record)},
           entries, {'record': record, 'source': source_key, 'path': path},
           extra={'source': source_key, 'cite': self.cite(source_key)},
         )
@@ -622,6 +789,7 @@ class ClaimStore:
         page = f"cited p. {c['citedPages']}"
       rows.append({'cells': [
         [{'value': self.cite(c['source']), 'source': c['source']}],
+        [{'value': self.display(record, c['source'], c['path']), 'key': record}],
         [{'value': c['kind']}],
         [{'value': self._claim_words(c), 'claim': c['id']}],
         [{'value': '' if page is None else page}],
@@ -629,10 +797,11 @@ class ClaimStore:
       ], 'claim': c['id']})
     parameters = {'record': record, 'source': source, 'kind': kind, 'actKind': act_kind}
     block = blocks.table([
-      {'name': 'source', 'kind': 'source'}, {'name': 'kind', 'kind': 'text'},
+      {'name': 'source', 'kind': 'source'}, {'name': 'as', 'kind': 'record'},
+      {'name': 'kind', 'kind': 'text'},
       {'name': 'statement', 'kind': 'text'}, {'name': 'page', 'kind': 'text'},
       {'name': 'by', 'kind': 'text'},
-    ], rows, parameters, title=f'Statements about {self.name(record)}')
+    ], rows, parameters, title=f'Statements about {self.display(record)}')
     return _with_style(block, style)
 
   def source_coverage(self, source_key):
@@ -690,7 +859,8 @@ class ClaimStore:
       ))
     entries.sort(key=lambda e: (e['year'], e['cite'], e.get('page') is None))
     block = blocks.listing(
-      {'key': record, 'name': self.name(record), 'rank': self.rank(record)},
+      {'key': record, 'name': self.display(record),
+       'rank': None if self._rank_of(record) in _SPECIES_GROUP else self.rank(record)},
       entries, {'record': record, 'source': source}, kind='printedForms',
     )
     return _with_style(block, style)
@@ -859,6 +1029,14 @@ TOOL_DESCRIPTIONS = {
     'what a paper actually prints. Never corrected.'
   ),
 }
+
+_COMBINATION_NOTE = (
+  ' Species-group names are shown as the combination the source uses '
+  '(genus, subgenus in parentheses, epithet); a species recombined into '
+  'another genus appears once per combination, since each is a name of its own.'
+)
+for _name in ('contents', 'placements', 'descendants', 'history', 'statements', 'synonymy'):
+  TOOL_DESCRIPTIONS[_name] += _COMBINATION_NOTE
 
 _RECORDS = {'type': 'array', 'items': {'type': 'string'}, 'description': 'record keys from resolve_name'}
 _STYLE = {'type': 'string', 'enum': ['text', 'markdown', 'json'], 'description': 'rendering style, default text'}

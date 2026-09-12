@@ -132,7 +132,7 @@ def test_contents_of_a_family_in_a_source(store):
                   'lampteroblastus', 'hintzei_guensburg_sprinkle_1994']
   assert blocks[0]['rendered'] == (
     'Astrocystitidae emend.\n  Astrocystites\n  Cambroblastus\n  Lampteroblastus*\n'
-    '    hintzei* [type]'
+    '    Lampteroblastus hintzei* [type]'
   )
   every = store.contents(None, 'astrocystitidae')
   assert [b['source'] for b in every][:2] == ['1935_bassler', '1967a_fay']
@@ -155,12 +155,12 @@ def test_gap_sentences(store):
 
 def test_statements_in_words(store):
   block = store.statements('rhenopyrgidae', kind='act', style='json')
-  words = {row['cells'][2][0]['value'] for row in block['rows']}
+  words = {row['cells'][3][0]['value'] for row in block['rows']}
   assert 'named as new' in words and 'emended' in words
   new = store.statements('rhenopyrgidae', act_kind='new', style='json')
   assert [row['cells'][0][0]['source'] for row in new['rows']] == ['1983_holloway_jell']
   moved = store.statements('rhenopyrgidae', kind='rejection', style='json')
-  assert moved['rows'][0]['cells'][2][0]['value'] == 'declines a placement in Cyathocystidae (Family)'
+  assert moved['rows'][0]['cells'][3][0]['value'] == 'declines a placement in Cyathocystidae (Family)'
   assert store.statements('no_such_key', style='json')['rows'] == []
 
 
@@ -180,3 +180,64 @@ def test_rank_variants_linked(store):
   transl = store.statements('diploporita-class', act_kind='nomTransl', style='json')
   claim = store.by_id[transl['rows'][0]['claim']]
   assert claim['rankVariants'] == ['diploporita-order', 'diploporita-suborder']
+
+
+def test_combinations_in_a_listing(store):
+  dehm = store.contents('1961_dehm', 'pyrgocystis')[0]['rendered'].splitlines()
+  assert dehm[0] == 'Pyrgocystis'
+  assert dehm[1] == '  Pyrgocystis sardesoni [type]'
+  assert dehm[-2] == '  Pyrgocystis (Rhenopyrgus)*'
+  assert dehm[-1] == '    Pyrgocystis (Rhenopyrgus) coronaeformis [type]'
+
+
+def test_recombined_species_are_separate_rows(store):
+  block = store.descendants(['pyrgocystis', 'rhenopyrgus'], style='json')
+  rows = {row['combination']: row for row in block['rows'] if row['record'] == 'grayae_bather_1915'}
+  assert set(rows) == {'Pyrgocystis grayae', 'Rhenopyrgus grayae'}
+  sources = {label: {v['source'] for v in row['cells'][2] if 'source' in v} for label, row in rows.items()}
+  assert sources['Pyrgocystis grayae'] and sources['Rhenopyrgus grayae']
+  assert not (sources['Pyrgocystis grayae'] & sources['Rhenopyrgus grayae'])
+  assert 'Pyrgocystis (Rhenopyrgus) coronaeformis' in {row['combination'] for row in block['rows']}
+  placed = store.placements(['grayae_bather_1915'], style='json')
+  labels = [row['combination'] for row in placed['rows']]
+  assert labels == ['Pyrgocystis grayae', 'Rhenopyrgus grayae']
+  filled = [
+    {placed['sourceKeys'][i] for i, cell in enumerate(row['cells'][1:]) if cell}
+    for row in placed['rows']
+  ]
+  assert filled[0] and filled[1] and not (filled[0] & filled[1])
+
+
+def test_history_shows_the_name_as_used(store):
+  block = store.history('rhenopyrgus-subgenus', include_related=False, style='json')
+  assert {row['cells'][2][0]['value'] for row in block['rows']} == {'Pyrgocystis (Rhenopyrgus)'}
+  grayae = store.history('grayae_bather_1915', style='json')
+  assert grayae['title'] == 'History of Pyrgocystis grayae / Rhenopyrgus grayae'
+  as_used = [row['cells'][2][0]['value'] for row in grayae['rows'] if row['cells'][2]]
+  assert len(as_used) == len(grayae['rows'])
+  assert as_used[:2] == ['Pyrgocystis grayae', 'Pyrgocystis grayae']
+  assert as_used[-1] == 'Rhenopyrgus grayae'
+
+
+def test_resolver_lists_combinations(store):
+  grayae = next(c for c in store.resolve_name('Rhenopyrgus grayae') if c['key'] == 'grayae_bather_1915')
+  labels = [x['label'] for x in grayae['combinations']]
+  assert labels == ['Pyrgocystis grayae', 'Rhenopyrgus grayae']
+  assert grayae['combinations'][1]['firstYear'] == 1983
+  assert 'combinations' not in store.resolve_name('Rhenopyrgus', rank='genus')[0]
+
+
+def test_variety_and_no_genus_fallback(store):
+  labelled = []
+  for key, row in store.names.items():
+    if (row['rank'] or '').lower() != 'variety':
+      continue
+    for c in store.closure.placements_of.get(key, ()):
+      if c['tree'] == 'taxonomy' and store.combination(c['source'], c['path']).get('genus'):
+        labelled.append(store.display(key, c['source'], c['path']))
+  assert labelled and all(' var. ' in label for label in labelled)
+  # A species listed straight under a family keeps its epithet or printed form.
+  claim = next(c for c in store.closure.placements_of['angulosus_pander_1830'] if c['source'] == '1968b_paul.c.r.c')
+  label = store.display('angulosus_pander_1830', claim['source'], claim['path'])
+  printed = (store.by_id[claim['id']].get('printed') or {}).get('citedAs')
+  assert label in ('angulosus', printed)

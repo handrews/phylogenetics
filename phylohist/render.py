@@ -52,9 +52,7 @@ def render_composition(composition, name='text'):
 # -- shared pieces ---------------------------------------------------------
 
 def _node_label(node):
-  name = node['name'] if node.get('name') else f"[{node['key']}]"
-  if node.get('rank') == 'subgenus':
-    name = f'({name})'
+  name = node.get('label') or (node['name'] if node.get('name') else f"[{node['key']}]")
   if (node.get('flags') or {}).get('quoted'):
     name = f'"{name}"'
   if (node.get('flags') or {}).get('new'):
