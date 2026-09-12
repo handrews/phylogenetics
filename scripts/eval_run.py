@@ -14,7 +14,8 @@ renders the composition, and writes one JSON line per question to
 `eval/runs/<date>-<model>.jsonl`: the question, every tool call with a
 compact summary of what it returned, the composition (header, blocks
 with their types, parameters and claim ids, question, any invalid ids,
-any free text), the rendered answer, token usage and the prompt's hash.
+any free text, each with its turn and whether that turn called submit),
+the rendered answer, token usage and the prompt's hash.
 Runs are committed. `--resume` skips ids already in the file.
 
 The API key is read from ANTHROPIC_API_KEY, or from a `.env` line of that
@@ -156,7 +157,10 @@ def run_question(client, model, system, question, max_turns):
     text = _text_of(response.content).strip()
     tool_uses = [b for b in response.content if b.type == 'tool_use']
     if text:
-      free_text.append(text)
+      free_text.append({
+        'turn': turn, 'text': text,
+        'withSubmit': any(b.name == 'submit' for b in tool_uses),
+      })
 
     if not tool_uses:
       if asked_to_compose or forced:
@@ -230,7 +234,7 @@ def run_question(client, model, system, question, max_turns):
       'compositionId': composition['composition']['compositionId'] if composition['composition'] else None,
     },
     'rendered': rendered,
-    'answer': rendered if composition else '\n\n'.join(free_text),
+    'answer': rendered if composition else '\n\n'.join(f['text'] for f in free_text),
     'stopReason': 'max_turns' if turn > max_turns else stop,
     'usage': usage,
     'seconds': round(time.time() - started, 1),

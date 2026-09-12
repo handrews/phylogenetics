@@ -1,7 +1,7 @@
 # Evaluation questions v11 over the gold slice (Edrioblastoidea: Astrocystitidae;
 # Rhenopyrgidae). Format and answer contract: eval/README.md; vocabulary:
-# docs/claims.md. Mix: answerable 12, uncaptured 8, as-published 8, trajectory 16,
-# absent 4. Answers speak to readers of the literature, never of the repository
+# docs/claims.md. Mix: answerable 12, uncaptured 9, as-published 8, trajectory 17,
+# absent 3. Answers speak to readers of the literature, never of the repository
 # that holds them; `verified` may still cite files and paths.
 
 - id: q001
@@ -1027,7 +1027,7 @@
     at p.13.
 - id: q033
   class: trajectory
-  question: What year does the corpus give for family Edrioasteridae's authorship, Bather 1898 or 1899?
+  question: What do the papers in the corpus print as the attribution of family Edrioasteridae, name-bearer and year? Is it Bather 1898 or 1899?
   scope:
     taxon: edrioasteridae
   expected:
