@@ -123,7 +123,7 @@ class ClaimStore:
     ("Rhenopyrgus sp. indet. 1") when it has one, else its key in
     brackets."""
     row = self.names.get(key) or {}
-    return row.get('name') or row.get('identifier') or f'[{key}]'
+    return row.get('name') or row.get('designation') or f'[{key}]'
 
   def _key(self, key):
     """A record or source key as given, or lowercased when only that form
@@ -191,9 +191,9 @@ class ClaimStore:
       if rank == 'subgenus':
         genus = genus or self._genus_of_subgenus(key)
         label = f'{self.name(genus)} ({self.name(key)})' if genus else self.name(key)
-      elif rank in _SPECIES_GROUP and not self.names[key].get('name') and self.names[key].get('identifier'):
+      elif rank in _SPECIES_GROUP and not self.names[key].get('name') and self.names[key].get('designation'):
         # An unnamed species designated as printed ("Rhenopyrgus sp. indet. 1").
-        label = self.names[key]['identifier']
+        label = self.names[key]['designation']
       elif rank in _SPECIES_GROUP:
         parts = []
         if genus:

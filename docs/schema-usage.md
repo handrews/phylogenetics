@@ -231,7 +231,7 @@ property.
 | `holotype` | 13 | 0.5% |
 | `needsQualification` | 12 | 0.4% |
 | `status` | 5 | 0.2% |
-| `identifier` | 4 | 0.1% |
+| `designation` | 4 | 0.1% |
 | `modifier` | 0 | 0.0% |
 | `reason` | 0 | 0.0% |
 

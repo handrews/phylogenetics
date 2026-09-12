@@ -99,7 +99,7 @@ class Census:
     would count it once per property.  Reconstruct the real subschema location
     from the dispatch keyword and the child's key instead; that also gives a
     location to property subschemas carrying no assertion keyword of their own
-    (e.g. ``taxon.identifier``, which is description-only).
+    (e.g. ``taxon.designation``, which is description-only).
     """
     stack = [result]
     while stack:
