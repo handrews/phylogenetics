@@ -114,6 +114,28 @@ def test_unnamed_records_are_not_found_by_name(store):
   assert store.name('edrioasteroidea-order-uncertain_holloway_jell_1983') == '[edrioasteroidea-order-uncertain_holloway_jell_1983]'
 
 
+def test_combinations_resolve(store):
+  # A multi-word query is a combination as some source writes it; the
+  # subgenus may be left out, and the subgenus itself is "Genus (Subgenus)".
+  for query in ('Rhenopyrgus coronaeformis', 'Pyrgocystis (Rhenopyrgus) coronaeformis',
+                'Pyrgocystis coronaeformis', 'Rhenopyrgus Coronaeformis'):
+    assert [c['key'] for c in store.resolve_name(query)] == ['coronaeformis_rievers_1961'], query
+  assert [c['key'] for c in store.resolve_name('Pyrgocystis (Rhenopyrgus)')] == ['rhenopyrgus-subgenus']
+  assert store.resolve_name('Astrocystites coronaeformis') == []
+
+
+def test_names_accepted_where_keys_are(store):
+  assert store.history('Astrocystites ottawaensis', style='json')['blockId'] == \
+    store.history('ottawaensis_whiteaves_1897', style='json')['blockId']
+  assert store.descendants(['Pyrgocystis (Rhenopyrgus)'], style='json')['blockId'] == \
+    store.descendants(['rhenopyrgus-subgenus'], style='json')['blockId']
+  # A bare epithet two species share cannot name one record; a genus name
+  # that is itself a key (case aside) is not ambiguous.
+  with pytest.raises(ValueError, match='casteri_bell.b.m_1975, casteri_sprinkle_1973'):
+    store.history('casteri')
+  assert store.history('Rhenopyrgus', style='json')['parameters']['record'] == 'rhenopyrgus'
+
+
 def test_keys_accepted_in_any_case(store):
   assert store.contents('1983_Holloway_Jell', 'Rhenopyrgidae') == store.contents('1983_holloway_jell', 'rhenopyrgidae')
   assert store.history('Rhenopyrgus', style='json')['blockId'] == store.history('rhenopyrgus', style='json')['blockId']

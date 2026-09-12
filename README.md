@@ -19,6 +19,7 @@ blocks, rendered in a style; the CLI has one subcommand per tool:
     poetry run phylohist descendants edrioblastoidea
     poetry run phylohist ancestors astrocystitidae cyathocystidae rhenopyrgidae
     poetry run phylohist history rhenopyrgus --style markdown
+    poetry run phylohist history "Rhenopyrgus grayae"
     poetry run phylohist gap 1983_holloway_jell material
 
 The same tools are served over MCP by `scripts/mcp_server.py`, which

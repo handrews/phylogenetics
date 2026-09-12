@@ -113,6 +113,14 @@ def build_parser():
 
 
 def main(argv=None):
+  try:
+    return _main(argv)
+  except ValueError as exc:
+    print(exc, file=sys.stderr)
+    return 2
+
+
+def _main(argv):
   args = build_parser().parse_args(argv)
   style = getattr(args, 'style', 'text')
   command = args.command

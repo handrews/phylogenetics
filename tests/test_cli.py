@@ -69,6 +69,13 @@ def test_resolve_and_absence(capsys):
   assert code == 0 and json.loads(out)['entered'] is False
 
 
+def test_ambiguous_name_exits_2(capsys):
+  assert cli.main(['history', 'casteri']) == 2
+  err = capsys.readouterr().err
+  assert 'casteri_sprinkle_1973' in err and 'name one by its key' in err
+  assert cli.main(['history', 'Rhenopyrgus grayae']) == 0
+
+
 def test_bad_argument_exits_2(capsys):
   with pytest.raises(SystemExit) as exc:
     cli.main(['gap', '1983_holloway_jell', 'no-such-kind'])
