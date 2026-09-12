@@ -120,5 +120,5 @@ never from the repository.
   a tree.
 - When a source gains coverage, its uncaptured questions turn into
   answerable ones; keep the id and change the class.
-- The mix (roughly 12 answerable, 8 uncaptured, 8 as-published, 16
-  trajectory, 4 absent) is a floor for each class, not a quota.
+- The mix (roughly 12 answerable, 9 uncaptured, 8 as-published, 17
+  trajectory, 3 absent) is a floor for each class, not a quota.
