@@ -737,8 +737,7 @@ aristocystidae:
 aristocystitidae-superfamily:
   name: Aristocystitidae
   rank: Superfamily
-  auth: [neumayr]
-  year: 1889
+  altRankOf: aristocystitidae
 aristocystis:
   name: Aristocystis
   auth: [barrande]
@@ -2836,8 +2835,7 @@ cyathocystids:
 cyathocystinae:
   name: Cyathocystinae
   rank: Subfamily
-  auth: [bather]
-  year: 1899
+  altRankOf: cyathocystidae
 cyathothecidae:
   name: Cyathothecidae
   altSpellingOf: cyathocystidae
@@ -3833,6 +3831,7 @@ edrioasterids:
 edrioasterina:
   name: Edrioasterina
   rank: Suborder
+  altRankOf: edrioasteridae
   auth: [bather]
   year: 1898
 edrioasteroidea:
@@ -4334,8 +4333,7 @@ eumorphocystidae:
 eumorphocystoidea:
   name: Eumorphocystoidea
   rank: Superfamily
-  auth: [Branson, Peck]
-  year: 1940
+  altRankOf: eumorphocystidae
   notes: nom. transl., possibly in 1982_sprinkle(ed)?
 euryale:
   name: Euryale
@@ -4916,8 +4914,7 @@ glyptocystitida-superfamily:
   name: Glyptocystitida
   bracket: Glyptocystitids
   rank: Superfamily
-  auth: [Bather]
-  year: 1899
+  altRankOf: glyptocystitidae
 glyptocystitida-order:
   name: Glyptocystitida
   bracket: Glyptocystitids
@@ -5505,8 +5502,7 @@ henicocystidae:
 henicocystinae:
   name: Henicocystinae
   rank: Subfamily
-  authority:
-    source: 1983_jell
+  altRankOf: henicocystidae
 henicocystis:
   name: Henicocystis
   authority:
@@ -6390,8 +6386,7 @@ laudoni-chester-l_sumrall_1993:
 lebetodiscidae:
   name: Lebetodiscidae
   rank: Family
-  authority:
-    source: 1976_bell.b.m
+  altRankOf: lebetodiscina
 lebetodiscina:
   name: Lebetodiscina
   rank: Suborder
@@ -9183,8 +9178,7 @@ pyrgocystidae:
 pyrgocystinae:
   name: Pyrgocystinae
   rank: Subfamily
-  auth: [kesling]
-  year: 1967
+  altRankOf: pyrgocystidae
 pyrgocystis:
   name: Pyrgocystis
   auth: [bather]

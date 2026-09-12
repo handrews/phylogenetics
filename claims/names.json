@@ -1988,8 +1988,9 @@
    "aristocystitidae",
    "aristocystitidaesuperfamily"
   ],
-  "kind": "primary",
+  "kind": "altRankOf",
   "name": "Aristocystitidae",
+  "of": "aristocystitidae",
   "rank": "Superfamily"
  },
  "arkarua": {
@@ -7582,8 +7583,9 @@
   "folded": [
    "cyathocystinae"
   ],
-  "kind": "primary",
+  "kind": "altRankOf",
   "name": "Cyathocystinae",
+  "of": "cyathocystidae",
   "rank": "Subfamily"
  },
  "cyathocystis": {
@@ -10323,8 +10325,9 @@
   "folded": [
    "edrioasterina"
   ],
-  "kind": "primary",
+  "kind": "altRankOf",
   "name": "Edrioasterina",
+  "of": "edrioasteridae",
   "rank": "Suborder"
  },
  "edrioasteroidea": {
@@ -11603,8 +11606,9 @@
   "folded": [
    "eumorphocystoidea"
   ],
-  "kind": "primary",
+  "kind": "altRankOf",
   "name": "Eumorphocystoidea",
+  "of": "eumorphocystidae",
   "rank": "Superfamily"
  },
  "euryale": {
@@ -13168,8 +13172,9 @@
    "glyptocystitida",
    "glyptocystitidasuperfamily"
   ],
-  "kind": "primary",
+  "kind": "altRankOf",
   "name": "Glyptocystitida",
+  "of": "glyptocystitidae",
   "rank": "Superfamily"
  },
  "glyptocystitidae": {
@@ -14692,8 +14697,9 @@
   "folded": [
    "henicocystinae"
   ],
-  "kind": "primary",
+  "kind": "altRankOf",
   "name": "Henicocystinae",
+  "of": "henicocystidae",
   "rank": "Subfamily"
  },
  "henicocystis": {
@@ -17068,8 +17074,9 @@
   "folded": [
    "lebetodiscidae"
   ],
-  "kind": "primary",
+  "kind": "altRankOf",
   "name": "Lebetodiscidae",
+  "of": "lebetodiscina",
   "rank": "Family"
  },
  "lebetodiscina": {
@@ -24741,8 +24748,9 @@
   "folded": [
    "pyrgocystinae"
   ],
-  "kind": "primary",
+  "kind": "altRankOf",
   "name": "Pyrgocystinae",
+  "of": "pyrgocystidae",
   "rank": "Subfamily"
  },
  "pyrgocystis": {
