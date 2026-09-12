@@ -93,8 +93,11 @@ def test_measurement_of_rhenopyrgus(closure):
   ranks = {r['rank']: r for r in m['ranks']}
   assert m['latestRank']['rank'] == 'genus'
   assert ranks['genus']['firstYear'] == 1983
-  assert ranks['genus']['papers'] == 6
-  assert len(ranks['genus']['coauthorSets']) == 6
+  assert ranks['genus']['papers'] == 5
+  assert len(ranks['genus']['coauthorSets']) == 5
   assert ranks['subgenus']['lastSource'] == '1966_regnéll'
   assert ranks['subgenus']['sources'] == ['1961_dehm', '1966_regnéll']
-  assert m['papers'] == 8
+  assert m['papers'] == 7
+  # A cladogram enters only when asked for.
+  with_clado = closure.measurement('rhenopyrgus', trees=('taxonomy', 'cladogram'))
+  assert {r['rank']: r['papers'] for r in with_clado['ranks']}['genus'] == 6

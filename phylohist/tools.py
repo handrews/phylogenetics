@@ -529,7 +529,7 @@ class ClaimStore:
     by_source = collections.defaultdict(list)
     for key in keys:
       for claim in self.by_subject.get(key, ()):
-        if _in_years(self.source_year(claim['source']), years):
+        if claim.get('tree') in trees and _in_years(self.source_year(claim['source']), years):
           by_source[claim['source']].append(claim)
     rows = []
     for source_key in sorted(by_source, key=lambda s: (self.source_year(s), s)):
