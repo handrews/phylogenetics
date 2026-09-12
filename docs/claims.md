@@ -95,7 +95,13 @@ the source's business, not the claim's. Both emit a `rejection`: subject,
 `declinedParent`, the printed words. `removed` under a group node and
 `moved` on the taxon node are the two spellings (Sumrall et al. 2013
 carry `moved: {taxon: cyathocystidae}` on Rhenopyrgidae), and each also
-yields its `act`.
+yields its `act`. The tree uses `moved` when the source gives the new
+place and `removed` when it gives none, or none worth tracking; a
+`moved` name is not also listed as `removed` under its old group.
+
+Placements, closures and the history's counts read taxonomy trees unless
+a `trees` parameter says otherwise: the cladograms and diagrams under
+`phylogenies` are entered less consistently and are a later concern.
 
 `follows`: the source adopts a placement by citing another work for it
 ("Edrioasterida sensu Guensburg and Sprinkle (1994)", 2013). A source that

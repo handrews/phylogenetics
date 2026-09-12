@@ -108,16 +108,18 @@ def test_history_order_and_measurement(store):
   block = store.history('rhenopyrgus', style='json')
   sources = [row['source'] for row in block['rows']]
   assert sources == [
-    '1961_dehm', '1966_regnéll', '1983_holloway_jell', '1990_smith.a.b_jell',
+    '1961_dehm', '1966_regnéll', '1983_holloway_jell',
     '1994_guensburg_sprinkle', '2000_grigo',
     '2013_sumrall_heredia_rodríguez.c.m_mestre',
     '2020_ewin_martin.m_isotalo_zamora',
   ]
+  with_clado = store.history('rhenopyrgus', trees=('taxonomy', 'cladogram'), style='json')
+  assert '1990_smith.a.b_jell' in [row['source'] for row in with_clado['rows']]
   m = block['measurement']
   assert m['latestRank']['rank'] == 'genus' and m['latestRank']['firstYear'] == 1983
   assert m['ranks'][-1]['lastSource'] == '1966_regnéll'
   header = store.history('rhenopyrgus')['rendered'].splitlines()
-  assert header[1].startswith('latest rank: genus: 6 papers 1983–2020, 6 co-author sets')
+  assert header[1].startswith('latest rank: genus: 5 papers 1983–2020, 5 co-author sets')
   alone = store.history('rhenopyrgus', include_related=False, style='json')
   assert '1961_dehm' not in [row['source'] for row in alone['rows']]
 

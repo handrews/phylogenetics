@@ -862,10 +862,6 @@
       source: 1966_regnéll
       subject: rhenopyrgus-subgenus
       parent: pyrgocystis
-    - kind: act
-      source: 1983_holloway_jell
-      actKind: new
-      subject: rhenopyrgidae
     - kind: placement
       source: 1983_holloway_jell
       subject: rhenopyrgus
@@ -887,10 +883,6 @@
       subject: rhenopyrgus
       parent: rhenopyrgidae
       position: 0
-    - kind: placement
-      source: 1990_smith.a.b_jell
-      subject: rhenopyrgus
-      tree: cladogram
     answer: |
       Proposed as a subgenus of Pyrgocystis by Dehm (1961) and kept so by
       Regnéll (1966), Rhenopyrgus has been treated as a genus by every paper
@@ -1834,3 +1826,40 @@
     does not do"), no claim kind exists for one source's description of another source's act, so Holloway
     & Jell's sentence about Dehm is deliberately not modelled as a claim above — only Dehm's own placement
     is.
+- id: q049
+  class: trajectory
+  question: Which cladistic analyses in the corpus include Rhenopyrgus, and where does each place it?
+  scope:
+    taxon: rhenopyrgus
+  expected:
+    claims:
+    - kind: placement
+      source: 1990_smith.a.b_jell
+      subject: rhenopyrgus
+      tree: cladogram
+    - kind: placement
+      source: 1994_guensburg_sprinkle
+      subject: rhenopyrgus
+      tree: cladogram
+    - kind: placement
+      source: 2013_sumrall_heredia_rodríguez.c.m_mestre
+      subject: rhenopyrgus
+      tree: cladogram
+    answer: |
+      Three papers in the corpus carry Rhenopyrgus in a cladogram, from
+      three sets of co-authors: Smith & Jell (1990), Guensburg & Sprinkle
+      (1994) and Sumrall, Heredia Rodríguez & Mestre (2013). Each places
+      it among the edrioasteroids in its own analysis; the classifications
+      the same papers print are a separate question, answered by their
+      taxonomic placements. No cladogram entered in the corpus places it
+      with Pyrgocystis.
+  evidence:
+  - source: 1990_smith.a.b_jell
+  - source: 1994_guensburg_sprinkle
+  - source: 2013_sumrall_heredia_rodríguez.c.m_mestre
+  verified: 'claims/: placement claims with subject rhenopyrgus and tree cladogram exist for
+    exactly 1990_smith.a.b_jell (also a diagram), 1994_guensburg_sprinkle and
+    2013_sumrall_heredia_rodríguez.c.m_mestre; a history with trees taxonomy and cladogram
+    carries all three. Added 2026-09-12 so that reaching for cladograms is tested where the
+    question asks for it, after q030 lost its cladogram selector (the default reads
+    taxonomies only).'

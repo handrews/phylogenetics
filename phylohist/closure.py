@@ -218,15 +218,16 @@ class Closure:
     last paper for each earlier one."""
     schemes = self.schemes([record], include_related, trees, years)
     keys = self.expand([record], include_related)
-    # The rank a source uses the name at is a fact of any tree it appears
-    # in, a cladogram included; positions above are taxonomy placements.
+    # The rank a source uses the name at, counted in the same trees as the
+    # positions: taxonomies unless asked otherwise, since the cladograms
+    # are entered less consistently and are a later concern.
     ranks = {}
     for key in keys:
       rank = (self.rank(key) or '').lower() or 'unranked'
       for claim in self.store.by_subject.get(key, ()):
         if claim['kind'] != 'usage' or claim.get('axis') not in ('children', 'root'):
           continue
-        if not _in_years(self.year(claim['source']), years):
+        if not self._wanted(claim, trees, years):
           continue
         entry = ranks.setdefault(rank, {'rank': rank, 'records': set(), 'sources': set()})
         entry['records'].add(key)
