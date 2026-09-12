@@ -119,8 +119,22 @@ class ClaimStore:
     return short_citation(row['citation'])
 
   def name(self, key):
+    """The record's name; an unnamed record's printed designation
+    ("Rhenopyrgus sp. indet. 1") when it has one, else its key in
+    brackets."""
     row = self.names.get(key) or {}
-    return row.get('name') or f'[{key}]'
+    return row.get('name') or row.get('identifier') or f'[{key}]'
+
+  def _key(self, key):
+    """A record or source key as given, or lowercased when only that form
+    exists: keys are lowercase, printed names are not."""
+    if key is None or key in self.names or key in self.sources:
+      return key
+    lowered = key.lower()
+    return lowered if lowered in self.names or lowered in self.sources else key
+
+  def _keys(self, keys):
+    return [self._key(k) for k in keys]
 
   def rank(self, key):
     return (self.names.get(key) or {}).get('rank')
@@ -517,6 +531,7 @@ class ClaimStore:
 
   def contents(self, source, record, depth=None, synonymy=False, style='text', trees=TAXONOMY):
     """What a source places under a record, as the source prints it."""
+    source, record = self._key(source), self._key(record)
     parameters = {'source': source, 'record': record, 'depth': depth, 'synonymy': synonymy}
     if source is None:
       out = []
@@ -555,6 +570,8 @@ class ClaimStore:
                  include_synonyms=True, trees=None, style='text'):
     """Where each source places each record: rows records, columns sources
     in year order, cells the parent (and its rank)."""
+    records = self._keys(records)
+    sources = self._keys(sources) if sources else sources
     trees = tuple(trees) if trees else TAXONOMY
     closure = self.closure
     rows_keys = closure.expand(list(records), include_variants)
@@ -626,6 +643,7 @@ class ClaimStore:
 
   def descendants(self, records, include_synonyms=True, include_variants=True,
                   trees=None, years=None, style='text'):
+    records = self._keys(records)
     trees = tuple(trees) if trees else TAXONOMY
     found = self.closure.descendants(list(records), include_synonyms, include_variants, trees, years)
     rows = []
@@ -673,6 +691,7 @@ class ClaimStore:
     return _with_style(block, style)
 
   def ancestors(self, records, include_variants=True, trees=None, years=None, style='text'):
+    records = self._keys(records)
     trees = tuple(trees) if trees else TAXONOMY
     found = self.closure.ancestors(list(records), include_variants, trees, years)
     rows = []
@@ -703,6 +722,7 @@ class ClaimStore:
     """One row per source in year order: the record used, its rank, the
     position given, the acts, the printed form, the page; the measurement
     as the header."""
+    record = self._key(record)
     trees = tuple(trees) if trees else TAXONOMY
     closure = self.closure
     keys = closure.expand([record], include_related)
@@ -777,6 +797,7 @@ class ClaimStore:
   def synonymy(self, record, source=None, style='text'):
     """The synonymy a source gives under a record, as a list; every source
     with one when no source is named."""
+    record, source = self._key(record), self._key(source)
     out = []
     sources = [source] if source else sorted(
       {c['source'] for c in self.by_subject.get(record, ()) if c['kind'] == 'usage'},
@@ -799,6 +820,7 @@ class ClaimStore:
   def statements(self, record, source=None, kind=None, act_kind=None, style='text'):
     """Every statement the corpus holds about one record, in publication
     order, in words."""
+    record, source = self._key(record), self._key(source)
     claims = self.by_subject.get(record, [])
     if source is not None:
       claims = [c for c in claims if c['source'] == source]
@@ -832,6 +854,7 @@ class ClaimStore:
   def source_coverage(self, source_key):
     """The raw view of one source: citation, whether entered, declared
     audit, derived counts."""
+    source_key = self._key(source_key)
     row = self.sources.get(source_key)
     if row is None:
       return {'source': source_key, 'known': False}
@@ -846,6 +869,7 @@ class ClaimStore:
   def gap(self, source, kind, style='text'):
     """What the corpus says about a source's coverage of one kind of
     statement, as the sentence the contract asks for."""
+    source = self._key(source)
     row = self.sources.get(source)
     what = COVERAGE_WORDS.get(kind, kind)
     if row is None:
@@ -864,6 +888,7 @@ class ClaimStore:
 
   def printed_forms(self, record, source=None, style='text'):
     """Each form a source prints for a record, verbatim, with the page."""
+    record, source = self._key(record), self._key(source)
     entries = []
     seen = set()
     for c in self.by_subject.get(record, ()):
@@ -966,10 +991,14 @@ TOOL_DESCRIPTIONS = {
     'variant of another (and of which, under "variants": the same name at '
     'other ranks, which together make one group), the authority as cited, '
     'and how many sources make statements about it '
-    '("sourcesWithStatements", not a count of citations of anything). A '
-    'record without a name is a placeholder such as "order uncertain". An '
-    'empty list means no source in the corpus carries the name; it does '
-    'not mean the name does not exist. Optionally restrict by rank word.'
+    '("sourcesWithStatements", not a count of citations of anything). '
+    'Unnamed records (a bin such as "order uncertain", a taxon in open '
+    'nomenclature such as "Rhenopyrgus sp. indet. 1") are never found by '
+    'name, since the words in their designation name other taxa; reach '
+    'them by the key a listing shows. Record and source keys are '
+    'lowercase; the other tools accept them in any case. An empty list '
+    'means no source in the corpus carries the name; it does not mean the '
+    'name does not exist. Optionally restrict by rank word.'
   ),
   'contents': (
     'What one source places under a record, as the source prints it: a '

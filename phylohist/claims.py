@@ -525,9 +525,11 @@ def names_index():
     placeholder = placeholder_kind(taxon)
     if placeholder is not None:
       row['placeholder'] = placeholder
-    forms = set(fold_forms(key_stem(key)))
+    # An unnamed record (a bin, an open-nomenclature taxon) has no name to
+    # look up: the words in its key or designation name other taxa.
+    forms = set()
     if taxon.name is not None:
-      forms |= fold_forms(taxon.name)
+      forms = fold_forms(key_stem(key)) | fold_forms(taxon.name)
     row['folded'] = sorted(forms)
     rows[key] = row
   return dict(sorted(rows.items()))

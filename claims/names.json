@@ -150,9 +150,7 @@
    "display": "Hall 1847",
    "source": "1847_hall"
   },
-  "folded": [
-   "actinocrinussp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -440,9 +438,7 @@
    "display": "Billings 1854",
    "source": "1854c_billings"
   },
-  "folded": [
-   "agelacrinitessp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -453,9 +449,7 @@
    "display": "Forbes 1848",
    "source": "1848b_forbes"
   },
-  "folded": [
-   "agelacrinitessp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -489,9 +483,7 @@
    "display": "Bell 1976",
    "source": "1976_bell.b.m"
   },
-  "folded": [
-   "agelacrinitidaesp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -502,9 +494,7 @@
    "display": "Bell 1976",
    "source": "1976_bell.b.m"
   },
-  "folded": [
-   "agelacrinitidaeuncertaingenus"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -883,9 +873,7 @@
    "display": "Paul 1968",
    "source": "1968b_paul.c.r.c"
   },
-  "folded": [
-   "amecystissp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -2156,9 +2144,7 @@
    "display": "Makhlouf, Lefebvre, Nardin, Nedjari, Régnault, Ferhi 2014",
    "source": "2014_makhlouf_lefebvre_nardin_nedjari_régnault_ferhi"
   },
-  "folded": [
-   "ascocystitessp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -2168,9 +2154,7 @@
   "authority": {
    "display": "Régnault 2007"
   },
-  "folded": [
-   "ascocystitessp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -2181,9 +2165,7 @@
    "display": "Young, Donovan 1993",
    "source": "1993_young.t.p_donovan.s.k"
   },
-  "folded": [
-   "ascocystitessp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -2302,9 +2284,7 @@
    "display": "Sowerby 1825",
    "source": "1825b_sowerby.g.b"
   },
-  "folded": [
-   "asteriadaegensp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -2315,9 +2295,7 @@
    "display": "Sowerby 1825",
    "source": "1825b_sowerby.g.b"
   },
-  "folded": [
-   "asteriadaegen"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -2485,9 +2463,7 @@
    "display": "Sprinkle 1982",
    "source": "1982i_sprinkle"
   },
-  "folded": [
-   "astrocystitesspa"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -2498,9 +2474,7 @@
    "display": "Sprinkle 1982",
    "source": "1982i_sprinkle"
   },
-  "folded": [
-   "astrocystitesspb"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -2511,9 +2485,7 @@
    "display": "Webby 1968",
    "source": "1968_webby"
   },
-  "folded": [
-   "astrocystitessp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -3576,9 +3548,7 @@
    "display": "Sprinkle 1973",
    "source": "1973_sprinkle"
   },
-  "folded": [
-   "blastozoaindeterminateclass"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -3601,9 +3571,7 @@
    "display": "Bockelie 1981",
    "source": "1981_bockelie"
   },
-  "folded": [
-   "bockiaspa"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -3765,9 +3733,7 @@
    "display": "Kolata 1975",
    "source": "1975_kolata"
   },
-  "folded": [
-   "bothriocidaridaesp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -3778,9 +3744,7 @@
    "display": "Kolata 1975",
    "source": "1975_kolata"
   },
-  "folded": [
-   "bothriocidaridaeunknowngenus"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -4365,9 +4329,7 @@
    "display": "Jell, Burrett, Banks 1985",
    "source": "1985_jell_burrett_banks"
   },
-  "folded": [
-   "cambrastersp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -4378,9 +4340,7 @@
    "display": "Jell, Sprinkle 2021",
    "source": "2021_jell_sprinkle"
   },
-  "folded": [
-   "cambrastersp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -4680,9 +4640,7 @@
    "display": "Kolata 1975",
    "source": "1975_kolata"
   },
-  "folded": [
-   "carabocrinussp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -4964,9 +4922,7 @@
   "authority": {
    "display": "Størmer 1953"
   },
-  "folded": [
-   "caryocystissp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -5376,9 +5332,7 @@
    "display": "Paul 1968",
    "source": "1968b_paul.c.r.c"
   },
-  "folded": [
-   "cheirocrinussp1"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -5389,9 +5343,7 @@
    "display": "Paul 1968",
    "source": "1968b_paul.c.r.c"
   },
-  "folded": [
-   "cheirocrinussp2"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -5402,9 +5354,7 @@
    "display": "Paul 1968",
    "source": "1968b_paul.c.r.c"
   },
-  "folded": [
-   "cheirocrinussp3"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -5756,9 +5706,7 @@
    "display": "Guensburg, Sprinkle 2009",
    "source": "2009_guensburg_sprinkle"
   },
-  "folded": [
-   "cladidaorderuncertain"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -6565,9 +6513,7 @@
    "display": "Ubaghs 1999",
    "source": "1999_ubaghs"
   },
-  "folded": [
-   "cornutaincertaesedis"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -6578,9 +6524,7 @@
    "display": "Ubaghs 1999",
    "source": "1999_ubaghs"
   },
-  "folded": [
-   "cornutasp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -6833,9 +6777,7 @@
    "display": "Kolata 1975",
    "source": "1975_kolata"
   },
-  "folded": [
-   "cremacrinussp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -6884,9 +6826,7 @@
    "display": "Guensburg, Sprinkle 2003",
    "source": "2003_guensburg_sprinkle"
   },
-  "folded": [
-   "crinoideagenusa"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -6897,9 +6837,7 @@
    "display": "Sprinkle 1973",
    "source": "1973_sprinkle"
   },
-  "folded": [
-   "crinoideaindeterminateorder"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -6910,9 +6848,7 @@
    "display": "Sprinkle 1973",
    "source": "1973_sprinkle"
   },
-  "folded": [
-   "crinoideaindeterminatesubclass"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -6936,9 +6872,7 @@
   "authority": {
    "display": "Sowerby 1933"
   },
-  "folded": [
-   "crinoideasecondhandgenus"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -6948,9 +6882,7 @@
   "authority": {
    "display": "Sowerby 1933"
   },
-  "folded": [
-   "crinoideasecondhandsp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -7041,9 +6973,7 @@
    "display": "Zhao, Yuan, Zhu, Yang, Guo, Qian, Huang, Pan 1999",
    "source": "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y"
   },
-  "folded": [
-   "crinozoagenus"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -7054,9 +6984,7 @@
    "display": "Zhao, Yuan, Zhu, Yang, Guo, Qian, Huang, Pan 1999",
    "source": "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y"
   },
-  "folded": [
-   "crinozoasp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -7699,9 +7627,7 @@
    "display": "Kolata 1975",
    "source": "1975_kolata"
   },
-  "folded": [
-   "cyclocystoidessp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -7712,9 +7638,7 @@
    "display": "Kolata 1982",
    "source": "1982_kolata"
   },
-  "folded": [
-   "cyclocystoidessp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -7978,9 +7902,7 @@
    "display": "Buch 1844",
    "source": "1844_buch"
   },
-  "folded": [
-   "cystideasp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -8031,9 +7953,7 @@
    "display": "Müller 1854",
    "source": "1854_müller.j.p"
   },
-  "folded": [
-   "cystideaeunnamedgroup"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "unnamed",
@@ -8044,9 +7964,7 @@
    "display": "Müller 1854",
    "source": "1854_müller.j.p"
   },
-  "folded": [
-   "cystideaeunnamedsubgroup1"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "unnamed",
@@ -8057,9 +7975,7 @@
    "display": "Müller 1854",
    "source": "1854_müller.j.p"
   },
-  "folded": [
-   "cystideaeunnamedsubgroup2"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "unnamed",
@@ -8452,9 +8368,7 @@
    "display": "Kolata 1975",
    "source": "1975_kolata"
   },
-  "folded": [
-   "dendrocrinusspa"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -8465,9 +8379,7 @@
    "display": "Kolata 1975",
    "source": "1975_kolata"
   },
-  "folded": [
-   "dendrocrinusspb"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -8868,9 +8780,7 @@
    "display": "Paul 1997",
    "source": "1997_paul.c.r.c"
   },
-  "folded": [
-   "diploporitaincertaesedis"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -8895,9 +8805,7 @@
    "display": "Paul 1997",
    "source": "1997_paul.c.r.c"
   },
-  "folded": [
-   "diploporitaspe"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -9053,9 +8961,7 @@
    "display": "Hall 1847",
    "source": "1847_hall"
   },
-  "folded": [
-   "discophyllumsp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -9551,9 +9457,7 @@
    "display": "Leske 1778",
    "source": "1778_leske"
   },
-  "folded": [
-   "echinocoryssp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -9589,9 +9493,7 @@
    "display": "Leske 1778",
    "source": "1778_leske"
   },
-  "folded": [
-   "echinocyamussp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -9640,9 +9542,7 @@
    "display": "Ubaghs 1967",
    "source": "1967e_ubaghs"
   },
-  "folded": [
-   "echinodermataincertaesedis"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -9653,9 +9553,7 @@
    "display": "Ubaghs 1999",
    "source": "1999_ubaghs"
   },
-  "folded": [
-   "echinodermataincertaesedis"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -9666,9 +9564,7 @@
    "display": "Bell 1982",
    "source": "1982_bell.b.m"
   },
-  "folded": [
-   "echinodermataindeterminatesubphylum"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -9693,9 +9589,7 @@
    "display": "Hisinger 1828",
    "source": "1828_hisinger"
   },
-  "folded": [
-   "echinodermataunnamedfamily"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "unnamed",
@@ -9989,9 +9883,7 @@
    "display": "Schlotheim 1826",
    "source": "1826_schlotheim"
   },
-  "folded": [
-   "echinosphaeritessp1"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -10002,9 +9894,7 @@
    "display": "Schlotheim 1826",
    "source": "1826_schlotheim"
   },
-  "folded": [
-   "echinosphaeritessp2"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -10015,9 +9905,7 @@
    "display": "Hisinger 1802",
    "source": "1802_hisinger"
   },
-  "folded": [
-   "echinosphaeritessp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -10028,9 +9916,7 @@
    "display": "Paul 1997",
    "source": "1997_paul.c.r.c"
   },
-  "folded": [
-   "echinosphaeritessp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -10127,9 +10013,7 @@
    "display": "Hisinger 1802",
    "source": "1802_hisinger"
   },
-  "folded": [
-   "echinussp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -10140,9 +10024,7 @@
    "display": "Linnaeus 1741",
    "source": "1741_linnaeus"
   },
-  "folded": [
-   "echinussp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -10248,9 +10130,7 @@
    "display": "Sumrall, Sprinkle, Guensburg 1997",
    "source": "1997_sumrall_sprinkle_guensburg"
   },
-  "folded": [
-   "edrioasteridaindeterminatefamily"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -10261,9 +10141,7 @@
    "display": "Sumrall, Sprinkle, Guensburg 1997",
    "source": "1997_sumrall_sprinkle_guensburg"
   },
-  "folded": [
-   "edrioasteridaindeterminategenus"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -10274,9 +10152,7 @@
    "display": "Sumrall, Sprinkle, Guensburg 1997",
    "source": "1997_sumrall_sprinkle_guensburg"
   },
-  "folded": [
-   "edrioasteridasp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -10347,9 +10223,7 @@
    "display": "Guensburg, Sprinkle 1994",
    "source": "1994_guensburg_sprinkle"
   },
-  "folded": [
-   "edrioasteroideafamilyuncertain"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -10360,9 +10234,7 @@
    "display": "Zhao, Sumrall, Parsley, Peng 2010",
    "source": "2010_zhao.y.l_sumrall_parsley_peng.j"
   },
-  "folded": [
-   "edrioasteroideafamilyuncertain"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -10373,9 +10245,7 @@
    "display": "Zhao, Yuan, Zhu, Yang, Guo, Qian, Huang, Pan 1999",
    "source": "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y"
   },
-  "folded": [
-   "edrioasteroideagenus"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -10386,9 +10256,7 @@
    "display": "Bassler 1935",
    "source": "1935_bassler"
   },
-  "folded": [
-   "edrioasteroideaorderuncertain"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -10399,9 +10267,7 @@
    "display": "Guensburg 1988",
    "source": "1988_guensburg"
   },
-  "folded": [
-   "edrioasteroideaorderuncertain"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -10412,9 +10278,7 @@
    "display": "Guensburg, Sprinkle 1994",
    "source": "1994_guensburg_sprinkle"
   },
-  "folded": [
-   "edrioasteroideaorderuncertain"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -10425,9 +10289,7 @@
    "display": "Holloway, Jell 1983",
    "source": "1983_holloway_jell"
   },
-  "folded": [
-   "edrioasteroideaorderuncertain"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -10438,9 +10300,7 @@
    "display": "Zhao, Sumrall, Parsley, Peng 2010",
    "source": "2010_zhao.y.l_sumrall_parsley_peng.j"
   },
-  "folded": [
-   "edrioasteroideaorderuncertain"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -10451,9 +10311,7 @@
    "display": "Zhao, Yuan, Zhu, Yang, Guo, Qian, Huang, Pan 1999",
    "source": "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y"
   },
-  "folded": [
-   "edrioasteroideasp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -11030,9 +10888,7 @@
    "display": "Sumrall, Zamora 2015",
    "source": "2015_sumrall_zamora"
   },
-  "folded": [
-   "eocrinoideafamilyuncertain"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -11043,9 +10899,7 @@
    "display": "Smith 1982",
    "source": "1982_smith.a.b"
   },
-  "folded": [
-   "eocrinoideaincertaesedis"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -11056,9 +10910,7 @@
    "display": "Sprinkle 1973",
    "source": "1973_sprinkle"
   },
-  "folded": [
-   "eocrinoideaindeterminatefamily1"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -11069,9 +10921,7 @@
    "display": "Sprinkle 1973",
    "source": "1973_sprinkle"
   },
-  "folded": [
-   "eocrinoideaindeterminatefamily2"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -11082,9 +10932,7 @@
    "display": "Sprinkle 1973",
    "source": "1973_sprinkle"
   },
-  "folded": [
-   "eocrinoideaindeterminatefamily3"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -11095,9 +10943,7 @@
    "display": "Sprinkle 1973",
    "source": "1973_sprinkle"
   },
-  "folded": [
-   "eocrinoideaindeterminatefamily4"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -11108,9 +10954,7 @@
    "display": "Sprinkle 1973",
    "source": "1973_sprinkle"
   },
-  "folded": [
-   "eocrinoideaindeterminateorder1"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -11121,9 +10965,7 @@
    "display": "Sprinkle 1973",
    "source": "1973_sprinkle"
   },
-  "folded": [
-   "eocrinoideaindeterminateorder2"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -11134,9 +10976,7 @@
    "display": "Sprinkle 1973",
    "source": "1973_sprinkle"
   },
-  "folded": [
-   "eocrinoideaindeterminateorder3"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -11147,9 +10987,7 @@
    "display": "Sprinkle, Wahlman 1994",
    "source": "1994_sprinkle_wahlman"
   },
-  "folded": [
-   "eocrinoideaindeterminateorder"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -11160,9 +10998,7 @@
    "display": "Hu, Luo, Hou, Erdtmann 2007",
    "source": "2007_hu.s.x_luo.h.l_hou.s.g_erdtmann"
   },
-  "folded": [
-   "eocrinoideasp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -11173,9 +11009,7 @@
    "display": "Parsley, Zhao 2006",
    "source": "2006_parsley_zhao.y.l"
   },
-  "folded": [
-   "eocrinoideauncertainfamily"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -11186,9 +11020,7 @@
    "display": "Sumrall, Sprinkle, Guensburg 2001",
    "source": "2001_sumrall_sprinkle_guensburg"
   },
-  "folded": [
-   "eocrinoideauncertainfamily"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -11198,9 +11030,7 @@
   "authority": {
    "display": "Ubaghs 1967"
   },
-  "folded": [
-   "eocrinoideauncertainfamily"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -11211,9 +11041,7 @@
    "display": "Zamora, Sumrall, Sprinkle 2015",
    "source": "2015_zamora_sumrall_sprinkle"
   },
-  "folded": [
-   "eocrinoideauncertainfamily"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -11224,9 +11052,7 @@
    "display": "Parsley, Zhao 2006",
    "source": "2006_parsley_zhao.y.l"
   },
-  "folded": [
-   "eocrinoideauncertainorder"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -11237,9 +11063,7 @@
    "display": "Sumrall, Sprinkle, Guensburg 2001",
    "source": "2001_sumrall_sprinkle_guensburg"
   },
-  "folded": [
-   "eocrinoideauncertainorder"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -11250,9 +11074,7 @@
    "display": "Sprinkle 1973",
    "source": "1973_sprinkle"
   },
-  "folded": [
-   "eocrinoideaunnamedorder1"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "unnamed",
@@ -11263,9 +11085,7 @@
    "display": "Sprinkle 1973",
    "source": "1973_sprinkle"
   },
-  "folded": [
-   "eocrinoideaunnamedorder2"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "unnamed",
@@ -11286,9 +11106,7 @@
   "authority": {
    "display": "Caster, Pope 1960"
   },
-  "folded": [
-   "eocrinus?sp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -11333,9 +11151,7 @@
   "authority": {
    "display": "Walcott 1917"
   },
-  "folded": [
-   "eocystites?sp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -11427,9 +11243,7 @@
    "display": "Paul 1968",
    "source": "1968b_paul.c.r.c"
   },
-  "folded": [
-   "erinocystissp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -13075,9 +12889,7 @@
    "display": "Hall 1852",
    "source": "1852_hall"
   },
-  "folded": [
-   "glyptocrinussp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -13088,9 +12900,7 @@
    "display": "Kolata 1975",
    "source": "1975_kolata"
   },
-  "folded": [
-   "glyptocrinussp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -13253,9 +13063,7 @@
    "display": "Sprinkle 1973",
    "source": "1973_sprinkle"
   },
-  "folded": [
-   "gogiasp1"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -13266,9 +13074,7 @@
    "display": "Sprinkle 1973",
    "source": "1973_sprinkle"
   },
-  "folded": [
-   "gogiasp2"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -13278,9 +13084,7 @@
   "authority": {
    "display": "Palmer in Hobbs, Hays, Ross 1968"
   },
-  "folded": [
-   "gogiasp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -13290,9 +13094,7 @@
   "authority": {
    "display": "Robison 1965"
   },
-  "folded": [
-   "gogiasp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -13302,9 +13104,7 @@
   "authority": {
    "display": "Zamora in Zamora, Gozalo, Liñán 2009"
   },
-  "folded": [
-   "gogiasp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -13326,9 +13126,7 @@
    "display": "Sumrall, Sprinkle, Guensburg 1997",
    "source": "1997_sumrall_sprinkle_guensburg"
   },
-  "folded": [
-   "gogiidaindeterminatefamily1"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -13339,9 +13137,7 @@
    "display": "Sumrall, Sprinkle, Guensburg 1997",
    "source": "1997_sumrall_sprinkle_guensburg"
   },
-  "folded": [
-   "gogiidaindeterminatefamily2"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -13352,9 +13148,7 @@
    "display": "Sumrall, Sprinkle, Guensburg 1997",
    "source": "1997_sumrall_sprinkle_guensburg"
   },
-  "folded": [
-   "gogiidaindeterminategenus1"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -13365,9 +13159,7 @@
    "display": "Sumrall, Sprinkle, Guensburg 1997",
    "source": "1997_sumrall_sprinkle_guensburg"
   },
-  "folded": [
-   "gogiidaindeterminategenus2"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -13378,9 +13170,7 @@
    "display": "Sumrall, Sprinkle, Guensburg 1997",
    "source": "1997_sumrall_sprinkle_guensburg"
   },
-  "folded": [
-   "gogiidasp1"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -13391,9 +13181,7 @@
    "display": "Sumrall, Sprinkle, Guensburg 1997",
    "source": "1997_sumrall_sprinkle_guensburg"
   },
-  "folded": [
-   "gogiidasp2"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -14359,9 +14147,7 @@
    "display": "Durham, Caster 1966",
    "source": "1966_durham_caster"
   },
-  "folded": [
-   "helicoplacussp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -14384,9 +14170,7 @@
    "display": "Paul 1997",
    "source": "1997_paul.c.r.c"
   },
-  "folded": [
-   "heliocrinitesspa"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -14397,9 +14181,7 @@
    "display": "Paul 1997",
    "source": "1997_paul.c.r.c"
   },
-  "folded": [
-   "heliocrinitesspb"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -14410,9 +14192,7 @@
    "display": "Paul 1997",
    "source": "1997_paul.c.r.c"
   },
-  "folded": [
-   "heliocrinitesspc"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -14423,9 +14203,7 @@
    "display": "Paul 1997",
    "source": "1997_paul.c.r.c"
   },
-  "folded": [
-   "heliocrinitessp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -14472,9 +14250,7 @@
    "display": "Paul 1968",
    "source": "1968b_paul.c.r.c"
   },
-  "folded": [
-   "hemicosmitessp1"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -14485,9 +14261,7 @@
    "display": "Paul 1968",
    "source": "1968b_paul.c.r.c"
   },
-  "folded": [
-   "hemicosmitessp2"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -14498,9 +14272,7 @@
    "display": "Paul 1968",
    "source": "1968b_paul.c.r.c"
   },
-  "folded": [
-   "hemicosmitessp3"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -14595,9 +14367,7 @@
    "display": "Bell 1976",
    "source": "1976_bell.b.m"
   },
-  "folded": [
-   "hemicystitesquestionable"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -15084,9 +14854,7 @@
    "display": "Zhao, Yuan, Zhu, Yang, Guo, Qian, Huang, Pan 1999",
    "source": "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y"
   },
-  "folded": [
-   "holothuroideagenus"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -15097,9 +14865,7 @@
    "display": "Zhao, Yuan, Zhu, Yang, Guo, Qian, Huang, Pan 1999",
    "source": "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y"
   },
-  "folded": [
-   "holothuroideasp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -15156,9 +14922,7 @@
    "display": "Ubaghs, Robison 1988",
    "source": "1988_ubaghs_robison"
   },
-  "folded": [
-   "homoiosteleaindeterminatefamily"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -15540,9 +15304,7 @@
   "authority": {
    "display": "Nohejlová, Fatka 2015"
   },
-  "folded": [
-   "imbricatasp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -16064,9 +15826,7 @@
    "display": "Guensburg, Sprinkle 1994",
    "source": "1994_guensburg_sprinkle"
   },
-  "folded": [
-   "isorophidafamilyuncertain"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -16077,9 +15837,7 @@
    "display": "Holloway, Jell 1983",
    "source": "1983_holloway_jell"
   },
-  "folded": [
-   "isorophidagenusindeterminate"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -16090,9 +15848,7 @@
    "display": "Zamora, Smith 2010",
    "source": "2010_zamora_smith.a.b"
   },
-  "folded": [
-   "isorophidagenusindeterminate"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -16103,9 +15859,7 @@
    "display": "Bockelie, Paul 1983",
    "source": "1983_bockelie_paul.c.r.c"
   },
-  "folded": [
-   "isorophidaindenterminate"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -16116,9 +15870,7 @@
    "display": "Bockelie, Paul 1983",
    "source": "1983_bockelie_paul.c.r.c"
   },
-  "folded": [
-   "isorophidaindeterminatesuborder"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -16129,9 +15881,7 @@
    "display": "Holloway, Jell 1983",
    "source": "1983_holloway_jell"
   },
-  "folded": [
-   "isorophidasp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -16142,9 +15892,7 @@
    "display": "Jell, Burrett, Banks 1985",
    "source": "1985_jell_burrett_banks"
   },
-  "folded": [
-   "isorophidasp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -16155,9 +15903,7 @@
    "display": "Zamora, Smith 2010",
    "source": "2010_zamora_smith.a.b"
   },
-  "folded": [
-   "isorophidasp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -16168,9 +15914,7 @@
    "display": "Bell 1976",
    "source": "1976_bell.b.m"
   },
-  "folded": [
-   "isorophidauncertainfamily"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -16181,9 +15925,7 @@
    "display": "Bell 1976",
    "source": "1976_bell.b.m"
   },
-  "folded": [
-   "isorophidauncertainsuborder"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -16230,9 +15972,7 @@
    "display": "Bell 1976",
    "source": "1976_bell.b.m"
   },
-  "folded": [
-   "isorophinauncertainfamily"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -16256,9 +15996,7 @@
    "display": "Sumrall, Zamora 2011",
    "source": "2011_sumrall_zamora"
   },
-  "folded": [
-   "isorophinidincertaesedis"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -16280,9 +16018,7 @@
    "display": "Guensburg 1988",
    "source": "1988_guensburg"
   },
-  "folded": [
-   "isorophussp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -16406,9 +16142,7 @@
    "display": "Hall 1852",
    "source": "1852_hall"
   },
-  "folded": [
-   "jewettiivar"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -16488,9 +16222,7 @@
    "display": "Jell, Sprinkle 2021",
    "source": "2021_jell_sprinkle"
   },
-  "folded": [
-   "kailidiscussp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -16681,9 +16413,7 @@
    "display": "Müller, Hahn, Bohatý 2013",
    "source": "2013_müller.p_hahn_bohatý"
   },
-  "folded": [
-   "kramasp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -17047,9 +16777,7 @@
    "display": "Sumrall 1993",
    "source": "1993_sumrall"
   },
-  "folded": [
-   "laudonichesterl"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -17306,9 +17034,7 @@
    "display": "Sumrall 1996",
    "source": "1996_sumrall"
   },
-  "folded": [
-   "lepidodiscussp1"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -17319,9 +17045,7 @@
    "display": "Sumrall 1996",
    "source": "1996_sumrall"
   },
-  "folded": [
-   "lepidodiscussp2"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -17496,9 +17220,7 @@
    "display": "Zamora, Deline, Álvaro, Rahman 2017",
    "source": "2017_zamora_deline_álvaro_rahman"
   },
-  "folded": [
-   "lichenoidessp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -17520,9 +17242,7 @@
    "display": "Smith, Zamora, Álvaro 2013",
    "source": "2013_smith.a.b_zamora_álvaro"
   },
-  "folded": [
-   "lichenoididaegensp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -17533,9 +17253,7 @@
    "display": "Smith, Zamora, Álvaro 2013",
    "source": "2013_smith.a.b_zamora_álvaro"
   },
-  "folded": [
-   "lichenoididaegen"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -18225,9 +17943,7 @@
    "display": "Jell, Burrett, Banks 1985",
    "source": "1985_jell_burrett_banks"
   },
-  "folded": [
-   "macrocystellidaesp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -18536,9 +18252,7 @@
    "display": "Leske 1778",
    "source": "1778_leske"
   },
-  "folded": [
-   "mammillatavar1"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -18549,9 +18263,7 @@
    "display": "Leske 1778",
    "source": "1778_leske"
   },
-  "folded": [
-   "mammillatavar2"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -18562,9 +18274,7 @@
    "display": "Leske 1778",
    "source": "1778_leske"
   },
-  "folded": [
-   "mammillatavar3"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -18575,9 +18285,7 @@
    "display": "Leske 1778",
    "source": "1778_leske"
   },
-  "folded": [
-   "mammillatavar4"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -19218,9 +18926,7 @@
    "display": "Sumrall, Sprinkle, Guensburg 1997",
    "source": "1997_sumrall_sprinkle_guensburg"
   },
-  "folded": [
-   "minervaecystissp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -19425,9 +19131,7 @@
    "display": "Pompeckj 1896",
    "source": "1896_pompeckj"
   },
-  "folded": [
-   "mitrocystitessp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -19542,9 +19246,7 @@
    "display": "Macleay 1821",
    "source": "1821_macleay"
   },
-  "folded": [
-   "molluscaunknownclass1"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -19555,9 +19257,7 @@
    "display": "Macleay 1821",
    "source": "1821_macleay"
   },
-  "folded": [
-   "molluscaunknownclass2"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -19705,9 +19405,7 @@
    "display": "Guensburg, Sprinkle 2003",
    "source": "2003_guensburg_sprinkle"
   },
-  "folded": [
-   "monobathridauncertainfamily"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -20019,9 +19717,7 @@
    "display": "Hall 1852",
    "source": "1852_hall"
   },
-  "folded": [
-   "myelodactylussp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -20279,9 +19975,7 @@
    "display": "Kolata 1975",
    "source": "1975_kolata"
   },
-  "folded": [
-   "neobothriocidarissp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -20987,9 +20681,7 @@
    "display": "Jell 2014",
    "source": "2014_jell"
   },
-  "folded": [
-   "ophiuroideafamuncertaion"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -21272,9 +20964,7 @@
    "display": "Walch 1776",
    "source": "1776_walch"
   },
-  "folded": [
-   "ostracionsp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -21865,9 +21555,7 @@
    "display": "Rozhnov, Fedorov 2001",
    "source": "2001_rozhnov_fedorov"
   },
-  "folded": [
-   "paracryptocrinitessp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -21982,9 +21670,7 @@
    "display": "Sumrall, Garbisch, Pope 2000",
    "source": "2000_sumrall_garbisch_pope"
   },
-  "folded": [
-   "parapostibullaspa"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -21995,9 +21681,7 @@
    "display": "Sumrall, Garbisch, Pope 2000",
    "source": "2000_sumrall_garbisch_pope"
   },
-  "folded": [
-   "parapostibullsspindeterminate"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -22391,9 +22075,7 @@
    "display": "Bassler 1936",
    "source": "1936_bassler"
   },
-  "folded": [
-   "pelmatozoauncertainorder"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -23330,9 +23012,7 @@
   "authority": {
    "display": "Frest, Strimple, Coney 1979"
   },
-  "folded": [
-   "platycystitessp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -23468,9 +23148,7 @@
    "display": "Nardin, Bohatý 2013",
    "source": "2013_nardin_bohatý"
   },
-  "folded": [
-   "pleurocystitidaeindeterminategenus"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -23481,9 +23159,7 @@
    "display": "Nardin, Bohatý 2013",
    "source": "2013_nardin_bohatý"
   },
-  "folded": [
-   "pleurocystitidaesp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -23898,9 +23574,7 @@
    "display": "Kolata 1975",
    "source": "1975_kolata"
   },
-  "folded": [
-   "praepleurocystissp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -24770,9 +24444,7 @@
    "display": "Bell 1982",
    "source": "1982_bell.b.m"
   },
-  "folded": [
-   "pyrgocystisspa"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -24783,9 +24455,7 @@
    "display": "Bell 1982",
    "source": "1982_bell.b.m"
   },
-  "folded": [
-   "pyrgocystisspb"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -24796,9 +24466,7 @@
    "display": "Guensburg 1988",
    "source": "1988_guensburg"
   },
-  "folded": [
-   "pyrgocystissp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -24809,9 +24477,7 @@
    "display": "Vizcaïno, Lefebvre 1999",
    "source": "1999_vizcaïno_lefebvre"
   },
-  "folded": [
-   "pyrgocystissp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -24822,9 +24488,7 @@
    "display": "Vizcaïno, Álvaro, Lefebvre 2001",
    "source": "2001_vizcaïno_álvaro_lefebvre"
   },
-  "folded": [
-   "pyrgocystissp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -25506,9 +25170,7 @@
    "display": "Jell, Sprinkle 2021",
    "source": "2021_jell_sprinkle"
   },
-  "folded": [
-   "redlichiaspp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -25920,9 +25582,7 @@
    "display": "Ewin, Martin, Isotalo, Zamora 2020",
    "source": "2020_ewin_martin.m_isotalo_zamora"
   },
-  "folded": [
-   "rhenopyrgussp1"
-  ],
+  "folded": [],
   "identifier": "Rhenopyrgus sp. indet. 1",
   "kind": "placeholder",
   "name": null,
@@ -25934,9 +25594,7 @@
    "display": "Ewin, Martin, Isotalo, Zamora 2020",
    "source": "2020_ewin_martin.m_isotalo_zamora"
   },
-  "folded": [
-   "rhenopyrgussp2"
-  ],
+  "folded": [],
   "identifier": "Rhenopyrgus sp. indet. 2",
   "kind": "placeholder",
   "name": null,
@@ -25948,9 +25606,7 @@
    "display": "Ewin, Martin, Isotalo, Zamora 2020",
    "source": "2020_ewin_martin.m_isotalo_zamora"
   },
-  "folded": [
-   "rhenopyrgussp3"
-  ],
+  "folded": [],
   "identifier": "Rhenopyrgus sp. indet. 3",
   "kind": "placeholder",
   "name": null,
@@ -25962,9 +25618,7 @@
    "display": "Ewin, Martin, Isotalo, Zamora 2020",
    "source": "2020_ewin_martin.m_isotalo_zamora"
   },
-  "folded": [
-   "rhenopyrgussp4"
-  ],
+  "folded": [],
   "identifier": "Rhenopyrgus sp. indet. 4",
   "kind": "placeholder",
   "name": null,
@@ -25976,9 +25630,7 @@
    "display": "Grigo 2000",
    "source": "2000_grigo"
   },
-  "folded": [
-   "rhenopyrgussp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -26153,9 +25805,7 @@
   "authority": {
    "display": "Chauvel 1978"
   },
-  "folded": [
-   "rhopalocystisspa"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -26165,9 +25815,7 @@
   "authority": {
    "display": "Chauvel 1978"
   },
-  "folded": [
-   "rhopalocystisspb"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -26177,9 +25825,7 @@
   "authority": {
    "display": "Chauvel 1978"
   },
-  "folded": [
-   "rhopalocystisspc"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -26189,9 +25835,7 @@
   "authority": {
    "display": "Chauvel, Régnault 1986"
   },
-  "folded": [
-   "rhopalocystisspc"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -26201,9 +25845,7 @@
   "authority": {
    "display": "Chauvel 1971"
   },
-  "folded": [
-   "rhopalocystissp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -27069,9 +26711,7 @@
    "display": "Sumrall, Sprinkle, Guensburg 1997",
    "source": "1997_sumrall_sprinkle_guensburg"
   },
-  "folded": [
-   "scotiaecystissp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -27725,9 +27365,7 @@
    "display": "Liu, Hu, Zhang, Cuevas-Castell, Gong, Tao 2010",
    "source": "2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l"
   },
-  "folded": [
-   "sinoeocrinussp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -29046,9 +28684,7 @@
    "display": "Jell, Burrett, Banks 1985",
    "source": "1985_jell_burrett_banks"
   },
-  "folded": [
-   "stromatocystitessp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -29059,9 +28695,7 @@
    "display": "Ubaghs 1999",
    "source": "1999_ubaghs"
   },
-  "folded": [
-   "stromatocystitessp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -29084,9 +28718,7 @@
    "display": "Jell, Sprinkle 2021",
    "source": "2021_jell_sprinkle"
   },
-  "folded": [
-   "stromatocystitidaunknownfamily"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -29108,9 +28740,7 @@
    "display": "Jell, Burrett, Banks 1985",
    "source": "1985_jell_burrett_banks"
   },
-  "folded": [
-   "stromatocystitidaesp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -29166,9 +28796,7 @@
    "display": "Sumrall, Sprinkle, Guensburg 1997",
    "source": "1997_sumrall_sprinkle_guensburg"
   },
-  "folded": [
-   "stylophoraspindeterminate"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "uncertain",
@@ -29801,9 +29429,7 @@
    "display": "Linnaeus 1758",
    "source": "1758_linnaeus"
   },
-  "folded": [
-   "testaceaunnamedsection1"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "unnamed",
@@ -29814,9 +29440,7 @@
    "display": "Linnaeus 1758",
    "source": "1758_linnaeus"
   },
-  "folded": [
-   "testaceaunnamedsection2"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "unnamed",
@@ -30131,9 +29755,7 @@
    "display": "Guensburg, Sprinkle 2003",
    "source": "2003_guensburg_sprinkle"
   },
-  "folded": [
-   "titanocrinussp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -30282,9 +29904,7 @@
    "display": "Sumrall, Sprinkle, Guensburg 1997",
    "source": "1997_sumrall_sprinkle_guensburg"
   },
-  "folded": [
-   "trachelocrinussp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -30912,9 +30532,7 @@
    "display": "Sumrall, Zamora 2015",
    "source": "2015_sumrall_zamora"
   },
-  "folded": [
-   "ubaghsicystissp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -31029,9 +30647,7 @@
   "authority": {
    "display": "Fatka, Kordule, Szabad 2004"
   },
-  "folded": [
-   "undescribedgenus"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -31041,9 +30657,7 @@
   "authority": {
    "display": "Fatka, Kordule, Szabad 2004"
   },
-  "folded": [
-   "undescribedsp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -31053,9 +30667,7 @@
   "authority": {
    "display": "Lefebvre, Nardin, Fatka 2015"
   },
-  "folded": [
-   "undescribedtransitionalgenus"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -31065,9 +30677,7 @@
   "authority": {
    "display": "Lefebvre, Nardin, Fatka 2015"
   },
-  "folded": [
-   "undescribedtransitionalsp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
@@ -31112,9 +30722,7 @@
    "display": "Kolata 1975",
    "source": "1975_kolata"
   },
-  "folded": [
-   "urasterellasp"
-  ],
+  "folded": [],
   "kind": "placeholder",
   "name": null,
   "placeholder": "open",
