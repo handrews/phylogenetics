@@ -130,7 +130,7 @@ interleaved)
 - Step-1 items land as the extractor reaches them, each as its own small
   migration with the gate green.
 
-**M3. Tools, prompts, eval run, write-up** (S3)
+**M3. Tools, prompts, eval run, write-up** (done 2026-09-11) (S3)
 - Four tools (M3a, done 2026-09-11): resolve a name (rank-aware, folding
   G10 variation); claims about a taxon, filterable by source and kind; a
   source's coverage and audit state; the history of a name across sources
@@ -149,7 +149,8 @@ interleaved)
 - Run the eval, keep the failures, and write up the failure modes with the
   reading rounds' catalogue (OCR errors, misattribution, placement slips,
   normalisation of printed forms, gap-filling). That write-up is the
-  demonstration (M3c).
+  demonstration (M3c, done 2026-09-11: `docs/eval-writeup.md`, on the
+  first Sonnet 5 run; its closing list is the order of the next fixes).
 
 **M4. Materials** (S4)
 - D1–D5 as a design decision, with the specimen cases the reviews
