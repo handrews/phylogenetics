@@ -82,9 +82,9 @@ review file with the printed page.
 
 ## Running the eval
 
-`eval/system-prompt.md` is the closed-world prompt: answer only from what
-the four tools return, cite source and page, name a gap as not yet
-entered, follow the trajectory contract and the language rules above.
+`eval/system-prompt.md` is the closed-world prompt: compose only blocks
+the tools return, name a gap as not yet entered, follow the trajectory
+contract and the language rules above.
 
     poetry run python scripts/eval_run.py --model claude-sonnet-5
     poetry run python scripts/eval_grade.py eval/runs/<date>-<model>.jsonl
@@ -103,8 +103,9 @@ made to submit from what it has, and the record says so. Runs are
 committed; they are the evidence the write-up rests on. The grader is
 mechanical: every expected claim must be carried by a composed block, a
 refusal must compose the gap block for its source and kind, the header
-must leak nothing and pass no verdict, and no free text may accompany
-the submission; `--judge` adds a judge model's score for the header
+must leak nothing and pass no verdict, and no text may accompany the
+submission (text between lookups is noted, not failed); `--judge` adds a
+judge model's score for the header
 alone. It writes `<run>.grades.jsonl` and `<run>.md` with per-class
 pass rates and every failure beside the composition the model chose.
 The API key comes from `ANTHROPIC_API_KEY` or a git-ignored `.env`,

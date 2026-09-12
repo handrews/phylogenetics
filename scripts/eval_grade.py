@@ -17,7 +17,8 @@ perhaps a question back. The mechanical checks, all on by default:
   unentered-source block, and no block about the scoped taxon when no
   source is given;
 - the header and any question contain no leak of internals and no
-  verdict; the model wrote no free text beyond them;
+  verdict; the reply that submitted carried no text beside the call
+  (text between lookups is noted, not failed);
 - when the evidence names a page and a composed block carries it, the
   rendered answer shows it.
 
@@ -97,9 +98,17 @@ def mechanical(record, question, store):
     return failures, notes
   if comp.get('invalidIds'):
     failures.append(f"submitted block ids the tools never returned: {comp['invalidIds']}")
-  if comp.get('freeText'):
-    failures.append('free text beyond header and question: ' +
-                    ' | '.join(t[:80] for t in comp['freeText']))
+  beside, between = [], []
+  for entry in comp.get('freeText') or ():
+    # The first run recorded free text as bare strings, all beside the submission.
+    if not isinstance(entry, dict) or entry.get('withSubmit'):
+      beside.append(entry['text'] if isinstance(entry, dict) else entry)
+    else:
+      between.append(entry['text'])
+  if beside:
+    failures.append('free text beside the submission: ' + ' | '.join(t[:80] for t in beside))
+  if between:
+    notes.append('text between lookups: ' + ' | '.join(t[:80] for t in between))
   header = (comp.get('header') or '') + ' ' + (comp.get('question') or '')
   leak = LEAK_WORDS.search(header)
   if leak:
