@@ -26,24 +26,10 @@ import sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
 from phylohist.claims import extract, manifest, names_index  # noqa: E402
-from phylohist.io import load_files  # noqa: E402
-from phylohist.main import _basic_load, _load_taxa, _load_trees  # noqa: E402
-from phylohist.research import Author, Publication, Source  # noqa: E402
+from phylohist.load import load  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DEFAULT_OUT = ROOT / 'claims'
-
-
-def load(drafts=False):
-  data = load_files(drafts=drafts)
-  for field, cls in (
-    ('authors', Author),
-    ('publications', Publication),
-    ('sources', Source),
-  ):
-    _basic_load(data, field, cls)
-  _load_taxa(data)
-  return data, _load_trees(data)
 
 
 def write(out, claims_by_source, full):

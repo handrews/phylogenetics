@@ -14,7 +14,9 @@ import sys
 import jschon
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
-from phylohist.io import DATA_DIR, FILEDIR, load_yaml, log_schema_errors  # noqa: E402
+from phylohist.io import (  # noqa: E402
+  DATA_DIR, FILEDIR, ensure_catalog, load_yaml, log_schema_errors,
+)
 
 TAXON_FIELDS = ('taxon', 'openTaxon', 'cfTaxon', 'affTaxon', 'bracket')
 
@@ -48,7 +50,7 @@ def main(argv):
     print(__doc__)
     return 2
   path = pathlib.Path(argv[1])
-  jschon.create_catalog('2020-12')
+  ensure_catalog()
   schema = jschon.JSONSchema(load_yaml(FILEDIR / 'schemas' / 'phylogeny.yaml'))
   draft = load_yaml(path)
   result = schema['$defs']['trees'].evaluate(jschon.JSON({path.stem: draft}))

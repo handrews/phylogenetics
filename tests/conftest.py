@@ -10,9 +10,7 @@ import os
 
 import pytest
 
-from phylohist.io import load_files
-from phylohist.main import _basic_load, _load_taxa, _load_trees
-from phylohist.research import Author, Publication, Source
+from phylohist.load import load
 
 
 class _CollectingHandler(logging.Handler):
@@ -30,15 +28,7 @@ def load_records():
   logger = logging.getLogger('phylohist')
   logger.addHandler(handler)
   try:
-    data = load_files(drafts=bool(os.getenv('PHYLOHIST_DRAFTS')))
-    for field, cls in (
-      ('authors', Author),
-      ('publications', Publication),
-      ('sources', Source),
-    ):
-      _basic_load(data, field, cls)
-    _load_taxa(data)
-    roots = _load_trees(data)
+    data, roots = load(drafts=bool(os.getenv('PHYLOHIST_DRAFTS')))
   finally:
     logger.removeHandler(handler)
 

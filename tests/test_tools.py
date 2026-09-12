@@ -1,11 +1,12 @@
-"""The four tools answer from the committed claim table.
+"""The tools answer from the committed claim table.
 
-`claims_about` must return, for every eval question with expected claims,
-a claim matching each selector; `source_coverage` must return the declared
+`statements` must hold, for every eval question with expected claims, a
+claim matching each selector; `source_coverage` must return the declared
 value a not-captured question relies on; the resolver must fold the
-typographical variation G10 names; `name_history` must order sources by
-publication year and label related records. CI proves `claims/` current,
-so these tests read the committed files rather than re-extracting.
+typographical variation G10 names; `contents`, `history`, `gap` and the
+rest must render what the worked examples say. CI proves `claims/`
+current, so these tests read the committed files rather than
+re-extracting.
 """
 
 import os
@@ -42,11 +43,12 @@ def store():
 
 
 @pytest.mark.parametrize('question', WITH_CLAIMS, ids=[q['id'] for q in WITH_CLAIMS])
-def test_claims_about_answers(question, store):
+def test_statements_answer(question, store):
   for selector in question['expected']['claims']:
-    found = store.claims_about(selector['subject'], source=selector['source'])
+    block = store.statements(selector['subject'], source=selector['source'], style='json')
+    found = [store.by_id[row['claim']] for row in block['rows']]
     if not any(matches(selector, c) for c in found):
-      pytest.fail(f"{question['id']}: claims_about returned no match for {selector}")
+      pytest.fail(f"{question['id']}: statements returned no match for {selector}")
 
 
 @pytest.mark.parametrize('question', NOT_CAPTURED, ids=[q['id'] for q in NOT_CAPTURED])
@@ -91,6 +93,8 @@ def test_resolve_ranks_and_kinds(store):
   assert [c['key'] for c in subgenus] == ['rhenopyrgus-subgenus']
   both = store.resolve_name('Rhenopyrgus')
   assert both[0]['key'] == 'rhenopyrgus', 'the most cited primary record first'
+  assert both[0]['variants'] == ['rhenopyrgus-subgenus']
+  assert 'sourcesWithStatements' in both[0] and 'sources' not in both[0]
   spelling = next(c for c in store.resolve_name('Palæaster') if c['key'] == 'palæaster')
   assert spelling['kind'] == 'altSpellingOf' and spelling['of'] == 'palaeaster'
 
@@ -100,30 +104,77 @@ def test_resolve_absent_is_empty(store):
   assert store.resolve_name('') == []
 
 
-def test_name_history_order_and_related(store):
-  history = store.name_history('rhenopyrgus')
-  sources = [h['source'] for h in history]
+def test_history_order_and_measurement(store):
+  block = store.history('rhenopyrgus', style='json')
+  sources = [row['source'] for row in block['rows']]
   assert sources == [
     '1961_dehm', '1966_regnéll', '1983_holloway_jell', '1990_smith.a.b_jell',
     '1994_guensburg_sprinkle', '2000_grigo',
     '2013_sumrall_heredia_rodríguez.c.m_mestre',
     '2020_ewin_martin.m_isotalo_zamora',
   ]
-  dehm = history[0]
-  assert dehm['cite'] == 'Dehm 1961'
-  assert all(p['record'] == 'rhenopyrgus-subgenus' for p in dehm['placements'])
-  assert dehm['placements'][0]['recordRank'] == 'subgenus'
-  assert any(a['act'] == 'new' for a in dehm['acts'])
-  smith = next(h for h in history if h['source'] == '1990_smith.a.b_jell')
-  assert smith['placements'][0]['tree'] == 'cladogram'
-  alone = store.name_history('rhenopyrgus', include_related=False)
-  assert '1961_dehm' not in [h['source'] for h in alone]
+  m = block['measurement']
+  assert m['latestRank']['rank'] == 'genus' and m['latestRank']['firstYear'] == 1983
+  assert m['ranks'][-1]['lastSource'] == '1966_regnéll'
+  header = store.history('rhenopyrgus')['rendered'].splitlines()
+  assert header[1].startswith('latest rank: genus: 6 papers 1983–2020, 6 co-author sets')
+  alone = store.history('rhenopyrgus', include_related=False, style='json')
+  assert '1961_dehm' not in [row['source'] for row in alone['rows']]
 
 
-def test_claims_about_filters(store):
-  acts = store.claims_about('rhenopyrgidae', kind='act')
-  assert {a['actKind'] for a in acts} >= {'new', 'emended'}
-  new = store.claims_about('rhenopyrgidae', act_kind='new')
-  assert [c['source'] for c in new] == ['1983_holloway_jell']
-  assert new[0]['sourceCitation'] == 'Holloway & Jell 1983'
-  assert store.claims_about('no_such_key') == []
+def test_contents_of_a_family_in_a_source(store):
+  blocks = store.contents('1994_guensburg_sprinkle', 'astrocystitidae', synonymy=True)
+  assert len(blocks) == 1
+  keys = [n['key'] for n in blocks[0]['nodes']]
+  assert keys == ['astrocystitidae', 'astrocystites', 'cambroblastus',
+                  'lampteroblastus', 'hintzei_guensburg_sprinkle_1994']
+  assert blocks[0]['rendered'] == (
+    'Astrocystitidae\n  Astrocystites\n  Cambroblastus\n  Lampteroblastus*\n'
+    '    hintzei*'
+  )
+  every = store.contents(None, 'astrocystitidae')
+  assert [b['source'] for b in every][:2] == ['1935_bassler', '1967a_fay']
+
+
+def test_gap_sentences(store):
+  assert store.gap('1983_holloway_jell', 'material')['rendered'] == (
+    'The material printed in Holloway & Jell 1983 has not yet been entered '
+    '(none of it is entered so far).'
+  )
+  assert store.gap('1897_whiteaves', 'newTaxa')['rendered'].startswith(
+    'Whiteaves 1897 is on record; its content has not yet been entered')
+  assert store.gap('1962_fay', 'types')['rendered'] == (
+    'Fay 1962 prints no type designations, as reviewed.'
+  )
+  assert store.gap('1994_guensburg_sprinkle', 'newTaxa')['rendered'] == (
+    'The new taxa printed in Guensburg & Sprinkle 1994 are entered in full.'
+  )
+
+
+def test_statements_in_words(store):
+  block = store.statements('rhenopyrgidae', kind='act', style='json')
+  words = {row['cells'][2][0]['value'] for row in block['rows']}
+  assert 'named as new' in words and 'emended' in words
+  new = store.statements('rhenopyrgidae', act_kind='new', style='json')
+  assert [row['cells'][0][0]['source'] for row in new['rows']] == ['1983_holloway_jell']
+  moved = store.statements('rhenopyrgidae', kind='rejection', style='json')
+  assert moved['rows'][0]['cells'][2][0]['value'] == 'declines a placement in Cyathocystidae (Family)'
+  assert store.statements('no_such_key', style='json')['rows'] == []
+
+
+def test_rank_variants_linked(store):
+  for key, base in (
+    ('aristocystitidae-superfamily', 'aristocystitidae'),
+    ('glyptocystitida-superfamily', 'glyptocystitidae'),
+    ('eumorphocystoidea', 'eumorphocystidae'),
+    ('lebetodiscidae', 'lebetodiscina'),
+    ('pyrgocystinae', 'pyrgocystidae'),
+    ('edrioasterina', 'edrioasteridae'),
+    ('cyathocystinae', 'cyathocystidae'),
+    ('henicocystinae', 'henicocystidae'),
+    ('edrioblastoida', 'edrioblastoidea'),
+  ):
+    assert store.names[key].get('of') == base, key
+  transl = store.statements('diploporita-class', act_kind='nomTransl', style='json')
+  claim = store.by_id[transl['rows'][0]['claim']]
+  assert claim['rankVariants'] == ['diploporita-order', 'diploporita-suborder']

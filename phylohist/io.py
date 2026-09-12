@@ -70,6 +70,14 @@ def load_yaml(filename, debug=True):
     return data
 
 
+def ensure_catalog():
+  """The jschon catalog the schema evaluates against, created once."""
+  try:
+    jschon.create_catalog('2020-12')
+  except jschon.exc.CatalogError:
+    pass
+
+
 def load_files(drafts=False):
   """Load and schema-check every data file.
 
@@ -79,6 +87,7 @@ def load_files(drafts=False):
   """
   files = COMMON_FILES
 
+  ensure_catalog()
   logger.info("Checking schema...")
   schema_library = jschon.JSONSchema(load_yaml(
     pathlib.Path(__file__).parent / r'..' / 'schemas' / 'phylogeny.yaml'
