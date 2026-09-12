@@ -131,17 +131,23 @@ interleaved)
   migration with the gate green.
 
 **M3. Tools, prompts, eval run, write-up** (S3)
-- Four tools: resolve a name (rank-aware, folding G10 variation); claims
-  about a taxon, filterable by source and kind; a source's coverage and
-  audit state; the history of a name across sources in order. All read
-  the committed claim table; none can write.
+- Four tools (M3a, done 2026-09-11): resolve a name (rank-aware, folding
+  G10 variation); claims about a taxon, filterable by source and kind; a
+  source's coverage and audit state; the history of a name across sources
+  in order. All read the committed claim table; none can write. They are
+  a library (`phylohist/tools.py`) and an MCP server
+  (`scripts/mcp_server.py`, registered by `.mcp.json`); `claims/names.json`
+  and the manifest's citations are what they read besides the claims.
 - The closed-world rule in the prompt: answer only from claims, cite them,
   and when the manifest says a kind is absent for a source, say "not
-  captured", never "not in the paper".
+  captured", never "not in the paper". (M3b, with the runner and grader:
+  decided 2026-09-11 to run through the Anthropic SDK, Sonnet 5 first,
+  graded mechanically, then by a judge model, then by the owner on the
+  trajectory answers; runs are committed under `eval/runs/`.)
 - Run the eval, keep the failures, and write up the failure modes with the
   reading rounds' catalogue (OCR errors, misattribution, placement slips,
   normalisation of printed forms, gap-filling). That write-up is the
-  demonstration.
+  demonstration (M3c).
 
 **M4. Materials** (S4)
 - D1–D5 as a design decision, with the specimen cases the reviews

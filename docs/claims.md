@@ -207,6 +207,33 @@ land unnoticed.
   "not captured", and only the declared coverage can say whether the paper
   prints any.
 
+## Reading the table
+
+Two more generated files sit beside the claims. `claims/names.json` has
+one row per taxon record: name, rank, kind (`primary`, `altSpellingOf`,
+`altRankOf`, `vulgarSpellingOf`, `placeholder`), the base record of a
+variant, the authority as displayed and its resolved source, and the
+folded lookup forms (`phylohist/names.py`: lowercase, ligatures expanded,
+diacritics dropped, separators removed, the German umlaut expansion tried
+too). Each manifest source row carries a `citation` (authors, year,
+title, where, volume, pages) so a source can be named as a reader cites
+it.
+
+`phylohist/tools.py` reads only these files and offers four read-only
+tools, also served over MCP by `scripts/mcp_server.py` (`.mcp.json`
+registers it for Claude Code):
+
+| tool | answers |
+|---|---|
+| `resolve_name(query, rank)` | which records a printed name can mean, folding G10 variation; a two-word query resolves the epithet under a genus of that name; an empty list is the closed-world answer |
+| `claims_about(key, source, kind, act_kind)` | every claim about a record in publication order, each with its source's citation |
+| `source_coverage(key)` | citation, whether the source's content is entered, the declared audit and coverage, the derived counts, the inconsistency rows |
+| `name_history(key, include_related)` | per source in publication order: placements, acts, acceptances, rejections; related records (another rank or spelling of the same name) included and labelled |
+
+`tests/test_tools.py` checks every eval selector through `claims_about`,
+the refusals through `source_coverage`, and the resolver and history by
+hand.
+
 ## Worked examples
 
 ### Holloway & Jell 1983, *Rhenopyrgus* (`data/trees/1983_holloway_jell.yaml`)

@@ -6,8 +6,8 @@
     poetry run python scripts/claims.py --draft --out /tmp/claims-with-drafts
     poetry run python scripts/claims.py --inconsistencies
 
-Writes one `<source>.jsonl` per tree file, one claim per line, and
-`manifest.json`; `docs/claims.md` defines both. CI reruns the script and
+Writes one `<source>.jsonl` per tree file, one claim per line,
+`manifest.json` and `names.json`; `docs/claims.md` defines all three. CI reruns the script and
 fails if `claims/` changes, so every data commit regenerates it.
 `--draft` also loads `drafts/` and therefore refuses to write into the
 committed directory. `--inconsistencies` writes nothing: it prints each
@@ -25,7 +25,7 @@ import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
-from phylohist.claims import extract, manifest  # noqa: E402
+from phylohist.claims import extract, manifest, names_index  # noqa: E402
 from phylohist.io import load_files  # noqa: E402
 from phylohist.main import _basic_load, _load_taxa, _load_trees  # noqa: E402
 from phylohist.research import Author, Publication, Source  # noqa: E402
@@ -57,12 +57,13 @@ def write(out, claims_by_source, full):
         fd.write(json.dumps(claim, ensure_ascii=False, sort_keys=True))
         fd.write('\n')
   if full:
-    with open(out / 'manifest.json', 'w') as fd:
-      json.dump(
-        manifest(claims_by_source), fd, ensure_ascii=False, indent=1,
-        sort_keys=True,
-      )
-      fd.write('\n')
+    for name, content in (
+      ('manifest.json', manifest(claims_by_source)),
+      ('names.json', names_index()),
+    ):
+      with open(out / name, 'w') as fd:
+        json.dump(content, fd, ensure_ascii=False, indent=1, sort_keys=True)
+        fd.write('\n')
 
 
 # Which tree fields a coverage kind is counted from, for the report.

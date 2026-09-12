@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "phylohist": {
+      "command": "poetry",
+      "args": ["run", "python", "scripts/mcp_server.py"]
+    }
+  }
+}

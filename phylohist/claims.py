@@ -10,7 +10,8 @@ per-source coverage counts and cross-checks them against the declared
 
 import collections
 
-from .research import Source
+from .names import fold_forms, key_stem
+from .research import Publication, Source
 from .taxa import Taxon
 
 KINDS = (
@@ -441,6 +442,62 @@ def extract(roots, sources=None):
   return out
 
 
+def citation(source):
+  """How a reader cites the source: names, year, title, where."""
+  data = source._data
+  entry = {
+    'authors': [a.family for a in source.authors],
+    'year': None if source.in_preparation else source.year,
+    'title': data.get('title'),
+  }
+  for field in ('journal', 'book'):
+    if field in data:
+      publication = Publication.get(data[field])
+      entry['in'] = publication.name if publication is not None else data[field]
+  for field in ('series', 'volume', 'number', 'pages', 'plates'):
+    if field in data:
+      entry[field] = data[field]
+  return entry
+
+
+def names_index():
+  """One row per taxon record: what a resolver needs to find it and say
+  what it is, with the folded lookup forms precomputed."""
+  rows = {}
+  for key, taxon in Taxon._taxa.items():
+    data = taxon._data
+    kind = 'primary'
+    for field in ('altSpellingOf', 'altRankOf', 'vulgarSpellingOf'):
+      if field in data:
+        kind = field
+    if taxon.name is None:
+      kind = 'placeholder'
+    row = {'name': taxon.name, 'rank': taxon.rank, 'kind': kind}
+    if taxon.derivative_of is not None:
+      row['of'] = taxon.derivative_of.key
+    authority = taxon.authority
+    try:
+      display = str(authority)
+    except TypeError:
+      display = None
+    if display or authority.source is not None:
+      row['authority'] = {'display': display or None}
+      if authority.source is not None:
+        row['authority']['source'] = authority.source.key
+    for field in ('homonym', 'originalParent', 'lang', 'status'):
+      if field in data:
+        row[field] = data[field]
+    placeholder = placeholder_kind(taxon)
+    if placeholder is not None:
+      row['placeholder'] = placeholder
+    forms = set(fold_forms(key_stem(key)))
+    if taxon.name is not None:
+      forms |= fold_forms(taxon.name)
+    row['folded'] = sorted(forms)
+    rows[key] = row
+  return dict(sorted(rows.items()))
+
+
 def _source_order(source_key):
   source = Source.get(source_key)
   year = source.year if source is not None and not source.in_preparation \
@@ -457,6 +514,7 @@ def manifest(claims_by_source):
   for source_key in Source._sources:
     source = Source.get(source_key)
     entry = {
+      'citation': citation(source),
       'tree': source_key in claims_by_source,
       'audit': source.audit,
       'claims': {},

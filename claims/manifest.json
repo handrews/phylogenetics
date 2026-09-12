@@ -5,6 +5,14 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Klein"
+    ],
+    "in": "Naturalis Dispositio Echinodermatum. Accessit Lucubratiuncula de Aculeis Echinorum Marinorum, cum Specilegio de Belemnitis",
+    "title": null,
+    "year": 1734
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -15,6 +23,14 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Linnaeus"
+    ],
+    "in": "Carl von Linnés öländska resa, förrättad 1741",
+    "title": null,
+    "year": 1741
    },
    "claims": {
     "material": 1,
@@ -38,6 +54,15 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Linnaeus"
+    ],
+    "in": "Systema Naturæ, Editio Decima, reformata",
+    "title": "Regnum Animalia",
+    "volume": 1,
+    "year": 1758
+   },
    "claims": {
     "act": 128,
     "placement": 129,
@@ -56,6 +81,16 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Linnaeus"
+    ],
+    "in": "Systema Naturae, Ad editionem decimam reformatam",
+    "number": 1,
+    "title": null,
+    "volume": 1,
+    "year": 1760
+   },
    "claims": {
     "placement": 6,
     "usage": 7
@@ -72,6 +107,16 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Linnaeus"
+    ],
+    "in": "Systema Naturae, Ad editionem decimam reformatam",
+    "number": 2,
+    "title": null,
+    "volume": 1,
+    "year": 1760
+   },
    "claims": {
     "placement": 60,
     "usage": 61
@@ -87,6 +132,16 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Linnaeus"
+    ],
+    "in": "Systema Naturæ, Editio Duodecima, reformata",
+    "number": 1,
+    "title": null,
+    "volume": 1,
+    "year": 1766
    },
    "claims": {
     "placement": 6,
@@ -105,6 +160,20 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Gunnerus"
+    ],
+    "in": "Kongliga Vetenskaps Academiens Handlingar",
+    "number": 2,
+    "pages": [
+     114,
+     124
+    ],
+    "title": "Beskrifning på trenne Norrska sjö-kräk, sjö-pungar kallade",
+    "volume": 28,
+    "year": 1767
    },
    "claims": {
     "act": 1,
@@ -125,6 +194,16 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Linnaeus"
+    ],
+    "in": "Systema Naturæ, Editio Duodecima, reformata",
+    "number": 2,
+    "title": null,
+    "volume": 1,
+    "year": 1767
    },
    "claims": {
     "acceptance": 2,
@@ -147,6 +226,24 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Gyllenhaal"
+    ],
+    "in": "Kungliga Svenska vetenskapsakademiens handlingar",
+    "pages": [
+     239,
+     261
+    ],
+    "plates": [
+     "VIII",
+     "IX"
+    ],
+    "series": 1,
+    "title": "På de så kallade Crystall-åplen och kalk-bollar, såsom petreficerade Djur af Echini genus, eller defs når maste flågtingär",
+    "volume": 33,
+    "year": 1772
    },
    "claims": {
     "act": 2,
@@ -172,6 +269,16 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Müller"
+    ],
+    "in": "Vermivm Terrestrium Et Fluviatilium, Seu Animalium Infusoriorum, Helminthicorum et Testaceorum",
+    "number": 1,
+    "title": null,
+    "volume": 1,
+    "year": 1773
+   },
    "claims": {
     "act": 11,
     "placement": 16,
@@ -192,6 +299,14 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "van Phelsum"
+    ],
+    "in": "Brief aan den Wel-Eerwaardigen en zeer geleerden Heere Cornelius Nozeman",
+    "title": null,
+    "year": 1774
+   },
    "claims": {
     "act": 2,
     "usage": 2
@@ -210,6 +325,16 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Müller"
+    ],
+    "in": "Vermivm Terrestrium Et Fluviatilium, Seu Animalium Infusoriorum, Helminthicorum et Testaceorum",
+    "number": 2,
+    "title": null,
+    "volume": 1,
+    "year": 1774
    },
    "claims": {
     "act": 1,
@@ -231,6 +356,15 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Müller"
+    ],
+    "in": "Vermivm Terrestrium Et Fluviatilium, Seu Animalium Infusoriorum, Helminthicorum et Testaceorum",
+    "title": null,
+    "volume": 2,
+    "year": 1774
+   },
    "claims": {
     "act": 5,
     "placement": 15,
@@ -251,6 +385,14 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Müller"
+    ],
+    "in": "Zoologiæ Danicæ prodromus, seu animalium Daniæ et Norvegiæ indigenarum characteres, nomina, et synonyma imprimis popularium",
+    "title": null,
+    "year": 1776
+   },
    "claims": {
     "acceptance": 2,
     "act": 50,
@@ -270,6 +412,19 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Walch"
+    ],
+    "in": "Der Naturforscher",
+    "pages": [
+     259,
+     279
+    ],
+    "title": "Joh. Ernst Imm. Walchs lithologische Beobachtungen. Siebentes Stuck.",
+    "volume": 8,
+    "year": 1776
    },
    "claims": {
     "material": 1,
@@ -293,6 +448,14 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Klein"
+    ],
+    "in": "Naturalis Dispositio Echinodermatum. Accessit Lucubratiuncula de Aculeis Echinorum Marinorum et Specilegium de Belemnitis. Edita et Descriptionibus Novisque Inventis et Synonymis Auctorum Auca a Nathanaele Godofredo Leske",
+    "title": null,
+    "year": 1778
+   },
    "claims": {
     "act": 1,
     "usage": 1
@@ -312,6 +475,14 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Leske"
+    ],
+    "in": "Additamenta ad Iacobi Theodori Klein Naturalem Dispositionem Echinodermatum et Lucubratiunculam de Aculeis Echinorum Marinorum",
+    "title": null,
+    "year": 1778
    },
    "claims": {
     "acceptance": 12,
@@ -335,6 +506,16 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Bruguière"
+    ],
+    "in": "Encyclopédie Méthodique. Histoire Naturelle des Vers.",
+    "number": 1,
+    "title": null,
+    "volume": 1,
+    "year": 1789
+   },
    "claims": {
     "acceptance": 1,
     "act": 11,
@@ -355,6 +536,16 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Bruguière"
+    ],
+    "in": "Encyclopédie Méthodique. Histoire Naturelle des Vers.",
+    "number": 2,
+    "title": null,
+    "volume": 1,
+    "year": 1789
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -365,6 +556,16 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Bruguière"
+    ],
+    "in": "Encyclopédie Méthodique. Histoire Naturelle des Vers.",
+    "number": 3,
+    "title": null,
+    "volume": 1,
+    "year": 1789
    },
    "claims": {},
    "derived": {},
@@ -378,6 +579,14 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Bruguière"
+    ],
+    "in": "Tableau Encyclopédique et Méthodique des Trois Règnes de la Nature. Contenant l’Helminthologie, ou les Vers Infusoires, les Vers Intestins, les Vers Mollusques",
+    "title": null,
+    "year": 1791
    },
    "claims": {
     "act": 1,
@@ -399,6 +608,14 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Cuvier"
+    ],
+    "in": "Tableau élémentaire de l'histoire naturelle des animaux",
+    "title": null,
+    "year": 1798
+   },
    "claims": {
     "act": 11,
     "placement": 93,
@@ -418,6 +635,14 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Lamarck"
+    ],
+    "in": "Systéme des Animaux sans Vertèbres",
+    "title": null,
+    "year": 1801
    },
    "claims": {
     "acceptance": 4,
@@ -439,6 +664,24 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Hisinger"
+    ],
+    "in": "Kungliga Svenska vetenskapsakademiens handlingar",
+    "pages": [
+     183,
+     191
+    ],
+    "plates": [
+     "VII",
+     "VII"
+    ],
+    "series": 2,
+    "title": "Minerographiske anmårkningar öfver Öland",
+    "volume": 23,
+    "year": 1802
+   },
    "claims": {
     "material": 1,
     "placement": 3,
@@ -459,6 +702,15 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Lamarck"
+    ],
+    "in": "Histoire naturelle des animaux sans vertèbres",
+    "title": null,
+    "volume": 1,
+    "year": 1815
+   },
    "claims": {
     "placement": 4,
     "usage": 5
@@ -476,6 +728,15 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Lamarck"
+    ],
+    "in": "Histoire naturelle des animaux sans vertèbres",
+    "title": null,
+    "volume": 2,
+    "year": 1816
    },
    "claims": {
     "acceptance": 7,
@@ -499,6 +760,15 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Lamarck"
+    ],
+    "in": "Histoire naturelle des animaux sans vertèbres",
+    "title": null,
+    "volume": 3,
+    "year": 1816
+   },
    "claims": {
     "acceptance": 94,
     "act": 119,
@@ -519,6 +789,15 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Lamarck"
+    ],
+    "in": "Histoire naturelle des animaux sans vertèbres",
+    "title": null,
+    "volume": 4,
+    "year": 1817
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -529,6 +808,15 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Cuvier"
+    ],
+    "in": "Le règne animal distribué d'après son organisation",
+    "title": null,
+    "volume": 1,
+    "year": 1817
    },
    "claims": {
     "placement": 3,
@@ -548,6 +836,15 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Cuvier"
+    ],
+    "in": "Le règne animal distribué d'après son organisation",
+    "title": null,
+    "volume": 2,
+    "year": 1817
+   },
    "claims": {
     "act": 4,
     "placement": 15,
@@ -566,6 +863,15 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Cuvier"
+    ],
+    "in": "Le règne animal distribué d'après son organisation",
+    "title": null,
+    "volume": 3,
+    "year": 1817
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -578,6 +884,15 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Cuvier"
+    ],
+    "in": "Le règne animal distribué d'après son organisation",
+    "title": null,
+    "volume": 4,
+    "year": 1817
    },
    "claims": {
     "acceptance": 4,
@@ -599,6 +914,15 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Lamarck"
+    ],
+    "in": "Histoire naturelle des animaux sans vertèbres",
+    "title": null,
+    "volume": 5,
+    "year": 1818
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -609,6 +933,16 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Lamarck"
+    ],
+    "in": "Histoire naturelle des animaux sans vertèbres",
+    "number": 1,
+    "title": null,
+    "volume": 6,
+    "year": 1819
    },
    "claims": {},
    "derived": {},
@@ -621,6 +955,16 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Macleay"
+    ],
+    "in": "Horae Entomologicae, or Essays on the annulose animals",
+    "number": 1,
+    "title": null,
+    "volume": 1,
+    "year": 1819
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -631,6 +975,20 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Say"
+    ],
+    "in": "The American Journal of Science, &c.",
+    "number": 4,
+    "pages": [
+     381,
+     387
+    ],
+    "title": "Observation on some Species of Zoophytes, Shells, &c. principally Fossil (part 1)",
+    "volume": 1,
+    "year": 1819
    },
    "claims": {},
    "derived": {},
@@ -644,6 +1002,20 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Say"
+    ],
+    "in": "The American Journal of Science, and Arts",
+    "number": 1,
+    "pages": [
+     34,
+     45
+    ],
+    "title": "Observation on some Species of Zoophytes, Shells, &c. principally Fossil (part 2)",
+    "volume": 2,
+    "year": 1820
    },
    "claims": {
     "act": 1,
@@ -663,6 +1035,14 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Schlotheim"
+    ],
+    "in": "Die Petrefactenkunde auf ihrem jetzigen Standpunkte durch die Beschreibung seiner Sammlung versteinerter und fossiler Überreste des Thier-und pflanzenreichs der Vorwelt erläutert",
+    "title": null,
+    "year": 1820
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -675,6 +1055,16 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Macleay"
+    ],
+    "in": "Horae Entomologicae, or Essays on the annulose animals",
+    "number": 2,
+    "title": null,
+    "volume": 1,
+    "year": 1821
    },
    "claims": {
     "acceptance": 1,
@@ -699,6 +1089,14 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Miller"
+    ],
+    "in": "A Natural History of the Crinoidea, or Lily-Shaped Animals",
+    "title": null,
+    "year": 1821
+   },
    "claims": {
     "acceptance": 2,
     "act": 41,
@@ -721,6 +1119,23 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Wahlenberg"
+    ],
+    "in": "Nova Acta Regiæ Societatis Scientarium Upsaliensis",
+    "pages": [
+     1,
+     116
+    ],
+    "plates": [
+     "I",
+     "IV"
+    ],
+    "title": "Petrificata telluris svecanae",
+    "volume": 8,
+    "year": 1821
    },
    "claims": {
     "acceptance": 5,
@@ -746,6 +1161,14 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Parkinson"
+    ],
+    "in": "Outlines of Oryctology: An introduction to the study of fossil remains; especially those found in the British strata",
+    "title": null,
+    "year": 1822
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -757,6 +1180,16 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Lamarck"
+    ],
+    "in": "Histoire naturelle des animaux sans vertèbres",
+    "number": 2,
+    "title": null,
+    "volume": 6,
+    "year": 1822
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -767,6 +1200,15 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Lamarck"
+    ],
+    "in": "Histoire naturelle des animaux sans vertèbres",
+    "title": null,
+    "volume": 7,
+    "year": 1822
    },
    "claims": {},
    "derived": {},
@@ -780,6 +1222,16 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Gray"
+    ],
+    "in": "The Annals of Philosophy. New Series.",
+    "number": 6,
+    "title": "An Attempt to divide the Echinida, or Sea Eggs, into Natural Families",
+    "volume": 10,
+    "year": 1825
    },
    "claims": {
     "acceptance": 5,
@@ -803,6 +1255,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Say"
+    ],
+    "in": "Journal of the Academy of Natural Sciences of Philadelphia",
+    "number": 2,
+    "pages": [
+     289,
+     296
+    ],
+    "title": "On two genera and several species of Crinoidea",
+    "volume": 4,
+    "year": 1825
+   },
    "claims": {
     "acceptance": 1,
     "act": 6,
@@ -823,6 +1289,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Sowerby"
+    ],
+    "in": "The Zoological Journal",
+    "number": "October",
+    "pages": [
+     316,
+     318
+    ],
+    "title": "A Note on the foregoing Paper, together with a Description of a new Species of Pentremites",
+    "volume": "II",
+    "year": 1825
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -833,6 +1313,20 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Say"
+    ],
+    "in": "Journal of the Academy of Natural Sciences of Philadelphia",
+    "number": 1,
+    "pages": [
+     141,
+     154
+    ],
+    "title": "On the species of the Linnean genus Asterias, inhabiting the coast of the United States",
+    "volume": 5,
+    "year": 1825
    },
    "claims": {},
    "derived": {},
@@ -846,6 +1340,20 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Sowerby"
+    ],
+    "in": "The Zoological Journal",
+    "number": "October",
+    "pages": [
+     318,
+     320
+    ],
+    "title": "Notice of a Fossil belonging to the Class Radiaria, found by Dr. Bigsby in Canada\n",
+    "volume": "II",
+    "year": 1825
    },
    "claims": {
     "act": 2,
@@ -873,6 +1381,19 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Meyer"
+    ],
+    "in": "Archiv für die gesammte Naturlehre",
+    "pages": [
+     185,
+     192
+    ],
+    "title": "Beschreibung des Echino-Encrinites Senkenbergii, einer neu entdeckten Versteinerung",
+    "volume": 7,
+    "year": 1826
+   },
    "claims": {
     "act": 2,
     "placement": 1,
@@ -892,6 +1413,22 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Schlotheim"
+    ],
+    "in": "Isis von Oken",
+    "pages": [
+     309,
+     316
+    ],
+    "plates": [
+     1
+    ],
+    "title": "Beschreibung einiger Abgebildeten Arten von Echinosphaeriten und Trilobiten",
+    "volume": 3,
+    "year": 1826
    },
    "claims": {
     "acceptance": 9,
@@ -917,6 +1454,16 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Say"
+    ],
+    "in": "Journal of the Academy of Natural Sciences of Philadelphia",
+    "number": 2,
+    "title": "On the species of the Linnean genus Echinus, inhabiting the coast of the United States",
+    "volume": 5,
+    "year": 1827
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -930,6 +1477,15 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Hisinger"
+    ],
+    "in": "Anteckningar i Physik och Geognosi under resor uti Sverige och Norrige",
+    "title": null,
+    "volume": 4,
+    "year": 1828
    },
    "claims": {
     "acceptance": 8,
@@ -957,6 +1513,14 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Pander"
+    ],
+    "in": "Beiträge zur geognosie des russischen reiches",
+    "title": null,
+    "year": 1830
+   },
    "claims": {
     "acceptance": 3,
     "act": 11,
@@ -982,6 +1546,14 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Hisinger"
+    ],
+    "in": "Lethaea Suecica",
+    "title": null,
+    "year": 1837
    },
    "claims": {
     "acceptance": 6,
@@ -1009,6 +1581,15 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Murchison"
+    ],
+    "in": "The Silurian System",
+    "title": "Organic Remains",
+    "volume": 2,
+    "year": 1839
+   },
    "claims": {
     "act": 16,
     "material": 1,
@@ -1033,6 +1614,14 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Eichwald"
+    ],
+    "in": "Ueber das silurische Schichtensystem in Esthland",
+    "title": null,
+    "year": 1840
+   },
    "claims": {
     "acceptance": 7,
     "act": 12,
@@ -1054,6 +1643,14 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Buch"
+    ],
+    "in": "Beiträge zur Bestimmung der Oebirgsformationen in Russland",
+    "title": null,
+    "year": 1840
    },
    "claims": {
     "acceptance": 9,
@@ -1079,6 +1676,18 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Buch"
+    ],
+    "in": "Bericht über die zur Bekanntmachung geeigneten Verhandlungen der Königl. Preufs. Akademie der Wissenschaften zu Berlin.",
+    "pages": [
+     56,
+     59
+    ],
+    "title": "Hr. v. Buch las über Sphaeroniten und einige andere Geschlechter, aus welchen Crinoideen entstehen",
+    "year": 1840
+   },
    "claims": {
     "acceptance": 5,
     "placement": 8,
@@ -1097,6 +1706,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Buch"
+    ],
+    "in": "The Annals and Magazine of Natural History",
+    "number": 34,
+    "pages": [
+     12,
+     15
+    ],
+    "title": "On Sphæronites and some other genera from which Crinoidea originate",
+    "volume": 6,
+    "year": 1840
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -1107,6 +1730,19 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Buch"
+    ],
+    "in": "Archiv für Mineralogie, Geognosie, Bergbau und Hüttenkunde",
+    "pages": [
+     3,
+     128
+    ],
+    "title": "Beiträge zur Bestimmung der Oebirgsformationen in Russland",
+    "volume": 15,
+    "year": 1841
    },
    "claims": {},
    "derived": {},
@@ -1132,6 +1768,20 @@
     },
     "notes": "Reviewed against the paper 2026-09-10; see docs/reviews/review_1842_conrad.t.a.md",
     "state": "partial"
+   },
+   "citation": {
+    "authors": [
+     "Conrad"
+    ],
+    "in": "Journal of the Academy of Natural Sciences of Philadelphia",
+    "number": 2,
+    "pages": [
+     235,
+     280
+    ],
+    "title": "Descriptions of new Species of Organic Remains belonging to the Silurian, Devonian, and Carboniferous Systems of the United States",
+    "volume": 8,
+    "year": 1842
    },
    "claims": {
     "act": 6,
@@ -1165,6 +1815,14 @@
     "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_1842_vanuxem.md",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Vanuxem"
+    ],
+    "in": "Natural History of New York",
+    "title": "Geology of New-York. Part III. Comprising the Survey of the Third Geological District",
+    "year": 1842
+   },
    "claims": {
     "act": 3,
     "diagnosis": 1,
@@ -1193,6 +1851,23 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Volborth"
+    ],
+    "in": "Académie Impériale des Sciences de Saint Petersbourg Bulletin",
+    "pages": [
+     293,
+     302
+    ],
+    "plates": [
+     1,
+     2
+    ],
+    "title": "Ueber die Echino-Encrinen und die Identität des contractilen Theiles ihres Stieles mit dem Cornulites Sarpularius",
+    "volume": 10,
+    "year": 1842
+   },
    "claims": {
     "acceptance": 3,
     "placement": 4,
@@ -1212,6 +1887,14 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Hall"
+    ],
+    "in": "Natural History of New York",
+    "title": "Geology of New-York. Part IV. Comprising the Survey of the Fourth Geological District",
+    "year": 1843
    },
    "claims": {
     "acceptance": 1,
@@ -1236,6 +1919,13 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Buch"
+    ],
+    "title": "Über Cystideen eingeleitet durch die Entwicklung der Eigenthümlichkeiten von Caryocrinus ornatus",
+    "year": 1844
+   },
    "claims": {
     "acceptance": 14,
     "act": 5,
@@ -1257,6 +1947,18 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Buch"
+    ],
+    "in": "Abhandlungen der Königlichen Akademie der Wissenschaften zu Berlin",
+    "pages": [
+     89,
+     116
+    ],
+    "title": "Über Cystideen eingeleitet durch die Entwicklung der Eigenthümlichkeiten von Caryocrinus ornatus SAY",
+    "year": 1846
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -1268,6 +1970,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Buch"
+    ],
+    "in": "The Quarterly Journal of the Geological Society of London",
+    "number": "Part 1",
+    "pages": [
+     11,
+     12
+    ],
+    "title": "Notice of a New Family of Crinoidal Animals, called Cystidea",
+    "volume": 2,
+    "year": 1846
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -1278,6 +1994,24 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Buch"
+    ],
+    "in": "The Quarterly Journal of the Geological Society of London",
+    "number": "Part 2",
+    "pages": [
+     20,
+     42
+    ],
+    "plates": [
+     3,
+     4
+    ],
+    "title": "On the Cystidea (a new family of radiated animals), introduced by Account of the Caryocrinus ornatus, Say",
+    "volume": 2,
+    "year": 1846
    },
    "claims": {},
    "derived": {},
@@ -1291,6 +2025,15 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Hall"
+    ],
+    "in": "Palaeontology of New York",
+    "title": null,
+    "volume": 1,
+    "year": 1847
    },
    "claims": {
     "acceptance": 7,
@@ -1316,6 +2059,16 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Austin"
+    ],
+    "in": "Quarterly Journal of the Geological Society",
+    "number": "1–2",
+    "title": "Observations on the Cystidea of M. von Buch, and the Crinoidea generally",
+    "volume": 4,
+    "year": 1848
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -1328,6 +2081,14 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Leuckart"
+    ],
+    "in": "Uber die Morphologie der wirbellosen Thiere",
+    "title": null,
+    "year": 1848
    },
    "claims": {
     "act": 1,
@@ -1346,6 +2107,20 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Forbes"
+    ],
+    "in": "Memoirs of the Geological Survey of Great Britain, and of the Museum of Practical Geology in London",
+    "number": 2,
+    "pages": [
+     457,
+     482
+    ],
+    "title": "On the Asteriadæ found Fossil in British Strata",
+    "volume": 2,
+    "year": 1848
    },
    "claims": {},
    "derived": {},
@@ -1373,6 +2148,24 @@
     },
     "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_1848b_forbes.md",
     "state": "partial"
+   },
+   "citation": {
+    "authors": [
+     "Forbes"
+    ],
+    "in": "Memoirs of the Geological Survey of Great Britain, and of the Museum of Practical Geology in London",
+    "number": 2,
+    "pages": [
+     483,
+     538
+    ],
+    "plates": [
+     11,
+     23
+    ],
+    "title": "On the Cystideæ of the Silurian Rocks of the British Islands",
+    "volume": 2,
+    "year": 1848
    },
    "claims": {
     "acceptance": 18,
@@ -1410,6 +2203,15 @@
     "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_1852_hall.md",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Hall"
+    ],
+    "in": "Palaeontology of New York",
+    "title": null,
+    "volume": 2,
+    "year": 1852
+   },
    "claims": {
     "acceptance": 9,
     "act": 41,
@@ -1437,6 +2239,14 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Müller"
+    ],
+    "in": "Über den Bau der Echinodermen",
+    "title": null,
+    "year": 1854
+   },
    "claims": {
     "acceptance": 6,
     "act": 4,
@@ -1459,6 +2269,19 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Billings"
+    ],
+    "in": "The Canadian Journal",
+    "pages": [
+     215,
+     218
+    ],
+    "title": "On some New Genera and Species of Cystidea from the Trenton Limestonee",
+    "volume": 2,
+    "year": 1854
    },
    "claims": {
     "act": 2,
@@ -1483,6 +2306,19 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Billings"
+    ],
+    "in": "The Canadian Journal",
+    "pages": [
+     248,
+     253
+    ],
+    "title": "On some New Genera and Species of Cystidea from the Trenton Limestonee",
+    "volume": 2,
+    "year": 1854
    },
    "claims": {
     "act": 4,
@@ -1521,6 +2357,19 @@
     "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_1854c_billings.md",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Billings"
+    ],
+    "in": "The Canadian Journal",
+    "pages": [
+     268,
+     274
+    ],
+    "title": "On some New Genera and Species of Cystidea from the Trenton Limestone, Second Paper",
+    "volume": 2,
+    "year": 1854
+   },
    "claims": {
     "act": 7,
     "editorial": 1,
@@ -1558,6 +2407,18 @@
     "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_1857_billings.md",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Billings"
+    ],
+    "in": "Geological Survey of Canada. Report of Progress for the years 1853–54–55–56",
+    "pages": [
+     247,
+     346
+    ],
+    "title": null,
+    "year": 1857
+   },
    "claims": {
     "act": 42,
     "placement": 69,
@@ -1578,6 +2439,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Salter",
+     "Billings"
+    ],
+    "in": "Figures and descriptions of Canadian organic remains",
+    "pages": [
+     86,
+     90
+    ],
+    "title": "On Cyclocystoides, a new genus of Echinodermata from the Lower and Middle Silurian Rocks",
+    "volume": "III",
+    "year": 1858
+   },
    "claims": {
     "act": 3,
     "placement": 3,
@@ -1597,6 +2472,19 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Billings"
+    ],
+    "in": "Figures and descriptions of Canadian organic remains",
+    "pages": [
+     9,
+     74
+    ],
+    "title": "On the Cystideæ of the Lower Silurian Rocks of Canada",
+    "volume": "III",
+    "year": 1858
    },
    "claims": {
     "acceptance": 19,
@@ -1621,6 +2509,20 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Hall"
+    ],
+    "in": "Palaeontology of Iowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857",
+    "number": 2,
+    "pages": [
+     479,
+     485
+    ],
+    "title": "Crinoideae of the Hamilton Group",
+    "volume": 1,
+    "year": 1858
    },
    "claims": {},
    "derived": {},
@@ -1647,6 +2549,19 @@
     "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_1858b_billings.md",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Billings"
+    ],
+    "in": "Figures and descriptions of Canadian organic remains",
+    "pages": [
+     75,
+     85
+    ],
+    "title": "On the Asteriadæ of the Lower Silurian Rocks of Canada",
+    "volume": "III",
+    "year": 1858
+   },
    "claims": {
     "acceptance": 3,
     "act": 6,
@@ -1671,6 +2586,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Hall"
+    ],
+    "in": "Palaeontology of Iowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857",
+    "number": 2,
+    "pages": [
+     524,
+     596
+    ],
+    "title": "Fossils of the Burlington Limestone. Crinoideae",
+    "volume": 1,
+    "year": 1858
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -1681,6 +2610,20 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Hall"
+    ],
+    "in": "Palaeontology of Iowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857",
+    "number": 2,
+    "pages": [
+     654,
+     656
+    ],
+    "title": "Crinoideae and other Echniodermata of the Warsaw Limestone",
+    "volume": 1,
+    "year": 1858
    },
    "claims": {},
    "derived": {},
@@ -1693,6 +2636,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Hall"
+    ],
+    "in": "Palaeontology of Iowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857",
+    "number": 2,
+    "pages": [
+     606,
+     634
+    ],
+    "title": "Crinoideae of the Keokuk Limestone",
+    "volume": 1,
+    "year": 1858
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -1703,6 +2660,20 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Hall"
+    ],
+    "in": "Palaeontology of Iowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857",
+    "number": 2,
+    "pages": [
+     669,
+     673
+    ],
+    "title": "Crinoideae of the St. Louis Limestone",
+    "volume": 1,
+    "year": 1858
    },
    "claims": {},
    "derived": {},
@@ -1715,6 +2686,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Hall"
+    ],
+    "in": "Palaeontology of Iowa. Iowa Geol. Surv. Rept., Embracing the Results of Investigations Made During Portions of the Years 1855, 1856, 1857",
+    "number": 2,
+    "pages": [
+     678,
+     701
+    ],
+    "title": "Crinoideae and other Echinodermata of the Kaskaskia Limestone",
+    "volume": 1,
+    "year": 1858
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -1725,6 +2710,19 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Norman"
+    ],
+    "in": "The Annals and Magazine of Natural History",
+    "pages": [
+     98,
+     129
+    ],
+    "title": "On the genera and species of British Echinodermata",
+    "volume": 15,
+    "year": 1865
    },
    "claims": {},
    "derived": {},
@@ -1737,6 +2735,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Hall"
+    ],
+    "in": "Annual Report of the New York State Museum of Natural History",
+    "number": "Adv. Pr.",
+    "pages": [
+     1,
+     17
+    ],
+    "title": "Descriptions of some new species of Crinoidea and other Fossils from the Lower Silurian strata, principally of the age of the Hudson-river group.",
+    "volume": 20,
+    "year": 1866
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -1747,6 +2759,20 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Billings"
+    ],
+    "in": "The Annals and Magazine of Natural History",
+    "number": 28,
+    "pages": [
+     251,
+     266
+    ],
+    "title": "Notes on the Structure of the Crinoidea, Cystidea, and Blastoidea",
+    "volume": "4th Series",
+    "year": 1870
    },
    "claims": {},
    "derived": {},
@@ -1759,6 +2785,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Hall"
+    ],
+    "in": "Annual Report of the New York State Museum of Natural History",
+    "number": "Adv. Pr.",
+    "plates": [
+     "I",
+     "II"
+    ],
+    "title": "Descriptions of some new species of Crinoidea and other Fossils from the Lower Silurian strata, principally of the age of the Hudson-river group.",
+    "volume": 24,
+    "year": 1871
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -1769,6 +2809,24 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Hall",
+     "Whitfield"
+    ],
+    "in": "Annual Report of the New York State Museum of Natural History",
+    "pages": [
+     181,
+     200,
+     "200a",
+     "200a",
+     233,
+     233
+    ],
+    "title": "Descriptions of new species of fossils from the vicinity of Louisville, Kentucky, and the Falls of the Ohio",
+    "volume": 24,
+    "year": 1872
    },
    "claims": {},
    "derived": {},
@@ -1781,6 +2839,25 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Hall"
+    ],
+    "in": "Annual Report of the New York State Museum of Natural History",
+    "pages": [
+     205,
+     224,
+     233,
+     233
+    ],
+    "plates": [
+     "V",
+     "VI"
+    ],
+    "title": "Description of new species of Crinoidea and other fossils from strata of the age of the Hudson-River Group and Trenton Limestone",
+    "volume": 24,
+    "year": 1872
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -1792,6 +2869,21 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Hall"
+    ],
+    "in": "Annual Report of the New York State Museum of Natural History",
+    "pages": [
+     225,
+     232,
+     233,
+     233
+    ],
+    "title": "Description of new species of fossils from the Hudson River Group, in the vicinity of Cincinnati, Ohio",
+    "volume": 24,
+    "year": 1872
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -1802,6 +2894,19 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Dames"
+    ],
+    "in": "Neues Jahrbuch für Mineralogie, Geologie und Paläontologie",
+    "pages": [
+     1001,
+     1001
+    ],
+    "title": "Fr. Schmidt: Über Cyathocystis Plautinae (Referat)",
+    "volume": 1879,
+    "year": 1879
    },
    "claims": {},
    "derived": {},
@@ -1816,6 +2921,16 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Billings"
+    ],
+    "in": "The Ottawa Naturalist",
+    "number": 3,
+    "title": "A new genus and three new species of crinoids from the Trenton Formation with notes on a large specimen of Dendrocrinus proboscidiatus",
+    "volume": 1,
+    "year": 1887
    },
    "claims": {
     "act": 5,
@@ -1835,6 +2950,20 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Bell"
+    ],
+    "in": "The Annals and Magazine of Natural History",
+    "pages": [
+     206,
+     215
+    ],
+    "series": 6,
+    "title": "On the Arrangement and Inter-relations of the Classes of the Echinodermata",
+    "volume": 8,
+    "year": 1891
    },
    "claims": {},
    "derived": {},
@@ -1862,6 +2991,15 @@
     "notes": "Reviewed against the paper 2026-09-10; see docs/reviews/review_1896_pompeckj.md",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Pompeckj"
+    ],
+    "in": "Jahrbuch der Kaiserlich-Königlichen Geologischen Reichsanstalt",
+    "title": "Die Fauna des Cambrium von Tejřovic und Skrej in Böhmen",
+    "volume": 45,
+    "year": 1896
+   },
    "claims": {
     "acceptance": 2,
     "act": 3,
@@ -1886,6 +3024,19 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Haeckel"
+    ],
+    "in": "Jenaische Zeitschrift für Naturwissenschaft",
+    "pages": [
+     393,
+     404
+    ],
+    "title": "Die cambrische Stammgruppe der Echinodermen. Vorläufige Mittheilung, vorgetragen in der Sitzung der Medicinisch-Naturwissenschaftlichen Gesellschaft zu Jena am 13. December 1895",
+    "volume": 30,
+    "year": 1896
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -1896,6 +3047,18 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Haeckel"
+    ],
+    "in": "Die Amphorideen und Cystoideen: beiträge zur Morphologie und Phylogenie der Echinodermen",
+    "pages": [
+     1,
+     179
+    ],
+    "title": null,
+    "year": 1896
    },
    "claims": {},
    "derived": {},
@@ -1908,6 +3071,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Whiteaves"
+    ],
+    "in": "The Canadian Record of Science",
+    "number": 5,
+    "pages": [
+     287,
+     292
+    ],
+    "title": "Description of a new genus and species of cystideans from the Trenton limestone at Ottawa",
+    "volume": 7,
+    "year": 1897
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -1918,6 +3095,24 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Bather"
+    ],
+    "in": "Geological Magazine",
+    "pages": [
+     543,
+     548
+    ],
+    "plates": [
+     21,
+     21
+    ],
+    "series": 4,
+    "title": "Studies in Edrioasteroidea. I. Dinocystis Barroisi, n.g. et sp., Psammites du Condroz",
+    "volume": 5,
+    "year": 1898
    },
    "claims": {},
    "derived": {},
@@ -1930,6 +3125,15 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Walcott"
+    ],
+    "in": "Monographs of the United States Geological Survey",
+    "title": "Fossile Medusæ",
+    "volume": 30,
+    "year": 1898
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -1940,6 +3144,20 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Whiteaves"
+    ],
+    "in": "The Canadian Record of Science",
+    "number": 7,
+    "pages": [
+     395,
+     396
+    ],
+    "title": "Postscript to a \"Description of a new genus and species of cystideans from the Trenton limestone at Ottawa\"",
+    "volume": 7,
+    "year": 1898
    },
    "claims": {},
    "derived": {},
@@ -1952,6 +3170,19 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Bather"
+    ],
+    "in": "Reports of the Meetings of the British Association for the Advancement of Science",
+    "pages": [
+     916,
+     923
+    ],
+    "title": "A Phylogenetic Classification of the Pelmatozoa",
+    "volume": "Report of the 68th Meeting of the British Association for the Advancement of Science (Bristol, 1898)\n",
+    "year": 1899
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -1962,6 +3193,14 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Jaekel"
+    ],
+    "in": "Stammesgeschichte der Pelmatozoen",
+    "title": null,
+    "year": 1899
    },
    "claims": {},
    "derived": {},
@@ -1989,6 +3228,14 @@
     "notes": "Reviewed against the paper 2026-09-10; see docs/reviews/review_1900_bather.md",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Bather"
+    ],
+    "in": "A Treatise on Zoology",
+    "title": "Part III — The Echinoderma",
+    "year": 1900
+   },
    "claims": {
     "acceptance": 7,
     "act": 5,
@@ -2009,6 +3256,24 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Bather"
+    ],
+    "in": "Geological Magazine",
+    "pages": [
+     543,
+     550
+    ],
+    "plates": [
+     25,
+     25
+    ],
+    "series": 5,
+    "title": "Studies in Edrioasteroidea. III. Lebetodiscus, n.g. for Agelacrinites Dicksoni Billings",
+    "volume": 5,
+    "year": 1908
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -2019,6 +3284,16 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Walcott"
+    ],
+    "in": "Smithsonian Miscellaneous Collections",
+    "number": 3,
+    "title": "Middle Cambrian Holothurians and Medusaæ",
+    "volume": 57,
+    "year": 1911
    },
    "claims": {},
    "derived": {},
@@ -2031,6 +3306,16 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Walcott"
+    ],
+    "in": "Smithsonian Miscellaneous Collections",
+    "number": 5,
+    "title": "Middle Cambrian Annelids",
+    "volume": 57,
+    "year": 1911
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -2041,6 +3326,20 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Clark"
+    ],
+    "in": "Science (New Series)",
+    "number": 894,
+    "pages": [
+     274,
+     278
+    ],
+    "title": "Fossil Holothurians",
+    "volume": 35,
+    "year": 1912
    },
    "claims": {},
    "derived": {},
@@ -2053,6 +3352,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Clark"
+    ],
+    "in": "The American Naturalist",
+    "number": 560,
+    "pages": [
+     488,
+     507
+    ],
+    "title": "Cambrian Holothurians",
+    "volume": 47,
+    "year": 1913
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -2063,6 +3376,25 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Bather"
+    ],
+    "in": "Geological Magazine",
+    "number": 5,
+    "pages": [
+     193,
+     203
+    ],
+    "plates": [
+     15,
+     15
+    ],
+    "series": 6,
+    "title": "Studies in Edrioasteroidea. V. Steganoblastus",
+    "volume": 1,
+    "year": 1914
    },
    "claims": {},
    "derived": {},
@@ -2075,6 +3407,24 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Bather"
+    ],
+    "in": "Geological Magazine",
+    "pages": [
+     5,
+     12
+    ],
+    "plates": [
+     2,
+     2
+    ],
+    "series": 6,
+    "title": "Studies in Edrioasteroidea. VI. Pyrgocystis, n.g.",
+    "volume": 2,
+    "year": 1915
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -2085,6 +3435,24 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Bather"
+    ],
+    "in": "Geological Magazine",
+    "pages": [
+     49,
+     60
+    ],
+    "plates": [
+     3,
+     3
+    ],
+    "series": 6,
+    "title": "Studies in Edrioasteroidea. VI. Pyrgocystis, n.g. (continued)",
+    "volume": 2,
+    "year": 1915
    },
    "claims": {},
    "derived": {},
@@ -2097,6 +3465,24 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Hudson"
+    ],
+    "in": "The Journal of Geology",
+    "number": 6,
+    "pages": [
+     642,
+     657
+    ],
+    "plates": [
+     1,
+     4
+    ],
+    "title": "The Need of Improved Technique in Illustration",
+    "volume": 33,
+    "year": 1925
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -2107,6 +3493,23 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Hudson"
+    ],
+    "in": "Report of the Vermont State Geologist",
+    "pages": [
+     97,
+     110
+    ],
+    "plates": [
+     6,
+     10
+    ],
+    "title": "The surface characteristics of Astrocystites (Steganoblastus) ottawaensis",
+    "volume": 15,
+    "year": 1927
    },
    "claims": {},
    "derived": {},
@@ -2119,6 +3522,25 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Jaekel"
+    ],
+    "in": "Arkiv för Zoologi",
+    "number": 5,
+    "pages": [
+     1,
+     5
+    ],
+    "plates": [
+     1,
+     1
+    ],
+    "series": "A",
+    "title": "Cyathotheca suecica n. g. n. sp., eine Thecoidee des schwedischen Ordoviciums",
+    "volume": 19,
+    "year": 1927
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -2130,6 +3552,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Matsumoto"
+    ],
+    "in": "Tohoku Imperial University.Science Reports, 2nd Series, (geology)",
+    "number": 2,
+    "pages": [
+     27,
+     22
+    ],
+    "title": "Outline of a classification of Echinoermata",
+    "volume": 13,
+    "year": 1929
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -2140,6 +3576,19 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Richter"
+    ],
+    "in": "Senckenbergiana",
+    "pages": [
+     279,
+     304
+    ],
+    "title": "Schuppenrohren als Anzeiger von zwei im deutschen Devon neuen\nEchinodermen-Gruppen (Edrioasteroidea Billings und Ophiocistia Sollas?)\n",
+    "volume": 12,
+    "year": 1930
    },
    "claims": {},
    "derived": {},
@@ -2167,6 +3616,16 @@
     },
     "notes": "Migrated from complete: named=true open=true history=true specimens.basic=null specimens.all=null\nReviewed against the paper 2026-09-09; see docs/reviews/review_1935_bassler.md\n",
     "state": "partial"
+   },
+   "citation": {
+    "authors": [
+     "Bassler"
+    ],
+    "in": "Smithsonian Miscellaneous Collections",
+    "number": 8,
+    "title": "The Classification of the Edrioasteroidea",
+    "volume": 93,
+    "year": 1935
    },
    "claims": {
     "acceptance": 60,
@@ -2204,6 +3663,16 @@
     "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_1936_bassler.md\nSynonymy re-declared 2026-09-11: the parenthetical earlier genus in\n\"C. (Hemicystites) granulatus\" (p. 4) and \"L. (Agelacrinites) dicksoni\"\n(p. 9) is a synonymy of the earlier combination and is captured; the\ntwo-line citation under Discocystis kaskaskiensis (p. 21) is not.\n",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Bassler"
+    ],
+    "in": "Smithsonian Miscellaneous Collections",
+    "number": 6,
+    "title": "New Species of American Edrioasteroidea",
+    "volume": 95,
+    "year": 1936
+   },
    "claims": {
     "acceptance": 2,
     "act": 35,
@@ -2232,6 +3701,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Whitehouse"
+    ],
+    "in": "Memoirs of the Queensland Museum",
+    "number": 1,
+    "pages": [
+     1,
+     28
+    ],
+    "title": "The Cambrian faunas of north-eastern Australia, Part 4: Early Cambrian echinoderms similar to the larval stages of Recent forms",
+    "volume": 12,
+    "year": 1941
+   },
    "claims": {
     "act": 12,
     "material": 3,
@@ -2256,6 +3739,23 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Regnéll"
+    ],
+    "in": "Meddelanden från Lunds Geologisk-Mineralogiska Institution",
+    "number": 108,
+    "pages": [
+     1,
+     255
+    ],
+    "plates": [
+     1,
+     15
+    ],
+    "title": "Non-Crinoid Pelmatozoa from the Paleozoic of Sweden. A taxonomic study",
+    "year": 1945
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -2266,6 +3766,15 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Hyman"
+    ],
+    "in": "The Invertebrates",
+    "title": "Enchinodermata, the Coelomate Bilateria",
+    "volume": 4,
+    "year": 1955
    },
    "claims": {},
    "derived": {},
@@ -2282,6 +3791,21 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Gill",
+     "Caster"
+    ],
+    "in": "Bulletins of American Paleontology",
+    "number": 185,
+    "pages": [
+     1,
+     72
+    ],
+    "title": "Carpoid echinoderms from the Silurian and Devonian of Australia",
+    "volume": 41,
+    "year": 1960
    },
    "claims": {
     "acceptance": 1,
@@ -2318,6 +3842,19 @@
     },
     "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_1961_dehm.md\nSynonymy re-declared 2026-09-11: moving Rievers's Pyrgocystis\ncoronaeformis into the new subgenus is the paper's one synonymy\nstatement, captured as the original combination under the species.\n",
     "state": "partial"
+   },
+   "citation": {
+    "authors": [
+     "Dehm"
+    ],
+    "in": "Mitteilungen der Bayerischen Staatssammlung für Paläontologie und historische Geologie",
+    "pages": [
+     13,
+     17
+    ],
+    "title": "Über Pyrgocystis (Rhenopyrgus) nov. subgen. Coronaeformis Rievers aus dem rheinischen Unter-Devon",
+    "volume": 1,
+    "year": 1961
    },
    "claims": {
     "acceptance": 1,
@@ -2359,6 +3896,19 @@
     },
     "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_1961_rievers.md",
     "state": "partial"
+   },
+   "citation": {
+    "authors": [
+     "Rievers"
+    ],
+    "in": "Mitteilungen der Bayerischen Staatssammlung für Paläontologie und historische Geologie",
+    "pages": [
+     9,
+     11
+    ],
+    "title": "Eine neue Pyrgocystis (Echinod., Edrioasteroidea) aus den Bundenbacher Dachschiefern (Devon)",
+    "volume": 1,
+    "year": 1961
    },
    "claims": {
     "act": 1,
@@ -2404,6 +3954,20 @@
     "notes": "Migrated from complete: named=true open=null history=true specimens.basic=true specimens.all=true\nReviewed against the paper 2026-09-09; see docs/reviews/review_1962_fay.md\n",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Fay"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 2,
+    "pages": [
+     201,
+     205
+    ],
+    "title": "Edrioblastoidea, a new class of Echinodermata",
+    "volume": 36,
+    "year": 1962
+   },
    "claims": {
     "acceptance": 1,
     "act": 3,
@@ -2432,6 +3996,16 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Brown"
+    ],
+    "in": "Proceddings of the Linnaean Society of New South Wales",
+    "number": 3,
+    "title": "A new cystoid (Pelmatozoa, Echinodermata) from the Silurian of New South Wales",
+    "volume": 88,
+    "year": 1963
+   },
    "claims": {
     "act": 3,
     "placement": 6,
@@ -2454,6 +4028,21 @@
    "audit": {
     "notes": "Migrated from complete: named=true open=null history=null specimens.basic=true specimens.all=true\n",
     "state": "partial"
+   },
+   "citation": {
+    "authors": [
+     "Durham",
+     "Caster"
+    ],
+    "in": "Science (New Series)",
+    "number": 3568,
+    "pages": [
+     820,
+     822
+    ],
+    "title": "Helicoplacoidea: A New Class of Echinoderms",
+    "volume": 149,
+    "year": 1963
    },
    "claims": {
     "act": 5,
@@ -2478,6 +4067,19 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Fell"
+    ],
+    "in": "Breviora",
+    "number": 219,
+    "pages": [
+     1,
+     17
+    ],
+    "title": "The Early Evolution of the Echinozoa",
+    "year": 1965
+   },
    "claims": {
     "placement": 20,
     "usage": 21
@@ -2498,6 +4100,20 @@
    "audit": {
     "notes": "Migrated from complete: named=true open=null history=true specimens.basic=true specimens.all=true\n",
     "state": "partial"
+   },
+   "citation": {
+    "authors": [
+     "Durham"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 5,
+    "pages": [
+     1216,
+     1220
+    ],
+    "title": "Camptostroma, an Early Cambrian Supposed Scyphozoan, Referable to Echinodermata",
+    "volume": 40,
+    "year": 1966
    },
    "claims": {
     "act": 3,
@@ -2527,6 +4143,19 @@
     "notes": "Migrated from complete: named=true open=true history=true specimens.basic=null specimens.all=null\n",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Durham",
+     "Caster"
+    ],
+    "in": "Treatise on Invertebrate Paleontology, Part U: Echinodermata 3",
+    "pages": [
+     "U131",
+     "U136"
+    ],
+    "title": "Helicoplacoids",
+    "year": 1966
+   },
    "claims": {
     "act": 3,
     "placement": 7,
@@ -2546,6 +4175,24 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Durham",
+     "Fell",
+     "Fischer",
+     "Kier",
+     "Melville",
+     "Pawson",
+     "Wagner"
+    ],
+    "in": "Treatise on Invertebrate Paleontology, Part U: Echinodermata 3",
+    "pages": [
+     "U211",
+     "U640"
+    ],
+    "title": "Echinoids",
+    "year": 1966
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -2556,6 +4203,20 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Frizzell",
+     "Exline",
+     "Pawson"
+    ],
+    "in": "Treatise on Invertebrate Paleontology, Part U: Echinodermata 3",
+    "pages": [
+     "U641",
+     "U672"
+    ],
+    "title": "Holothurians",
+    "year": 1966
    },
    "claims": {},
    "derived": {},
@@ -2569,6 +4230,18 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Kesling"
+    ],
+    "in": "Treatise on Invertebrate Paleontology, Part U: Echinodermata 3",
+    "pages": [
+     "U188",
+     "U210"
+    ],
+    "title": "Cyclocystoids",
+    "year": 1966
    },
    "claims": {
     "acceptance": 4,
@@ -2592,6 +4265,18 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Regnéll"
+    ],
+    "in": "Treatise on Invertebrate Paleontology, Part U: Echinodermata 3",
+    "pages": [
+     "U136",
+     "U173"
+    ],
+    "title": "Edrioasteroids",
+    "year": 1966
+   },
    "claims": {
     "acceptance": 3,
     "act": 28,
@@ -2614,6 +4299,19 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Spencer",
+     "Wright"
+    ],
+    "in": "Treatise on Invertebrate Paleontology, Part U: Echinodermata 3",
+    "pages": [
+     "U4",
+     "U107"
+    ],
+    "title": "Asterozoans",
+    "year": 1966
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -2624,6 +4322,18 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Ubaghs"
+    ],
+    "in": "Treatise on Invertebrate Paleontology, Part U: Echinodermata 3",
+    "pages": [
+     "U174",
+     "U188"
+    ],
+    "title": "Ophiocistioids",
+    "year": 1966
    },
    "claims": {},
    "derived": {},
@@ -2636,6 +4346,18 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Caster"
+    ],
+    "in": "Treatise on Invertebrate Paleontology, Part S: Echinodermata 1",
+    "pages": [
+     "S581",
+     "S627"
+    ],
+    "title": "Homoiostelea",
+    "year": 1967
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -2647,6 +4369,19 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Fay",
+     "Wanner"
+    ],
+    "in": "Treatise on Invertebrate Paleontology, Part S: Echinodermata 1",
+    "pages": [
+     "S396",
+     "S455"
+    ],
+    "title": "Blastoids: Systematic Descriptions",
+    "year": 1967
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -2657,6 +4392,21 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Jeffries",
+     "Joysey",
+     "Paul",
+     "Ramsbottom"
+    ],
+    "in": "The Fossil Record",
+    "pages": [
+     565,
+     581
+    ],
+    "title": "Chapter 21: Echinodermata: Pelmatozoa",
+    "year": 1967
    },
    "claims": {},
    "derived": {},
@@ -2672,6 +4422,24 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Paul"
+    ],
+    "in": "Bulletin of the British Museum (Natural History) Geology",
+    "number": 6,
+    "pages": [
+     297,
+     344
+    ],
+    "plates": [
+     1,
+     10
+    ],
+    "title": "British Silurian Cystoids",
+    "volume": 13,
+    "year": 1967
    },
    "claims": {
     "act": 11,
@@ -2697,6 +4465,18 @@
     "notes": "Migrated from complete: named=true open=null history=true specimens.basic=null specimens.all=null\n",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Durham"
+    ],
+    "in": "Treatise on Invertebrate Paleontology, Part S: Echinodermata 1",
+    "pages": [
+     "S627",
+     "S631"
+    ],
+    "title": "Camptostromatoids",
+    "year": 1967
+   },
    "claims": {
     "act": 3,
     "placement": 5,
@@ -2719,6 +4499,18 @@
     "notes": "Migrated from complete: named=true open=null history=true specimens.basic=null specimens.all=null\n",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Fay"
+    ],
+    "in": "Treatise on Invertebrate Paleontology, Part S: Echinodermata 1",
+    "pages": [
+     "S289",
+     "S292"
+    ],
+    "title": "Edrioblastoids",
+    "year": 1967
+   },
    "claims": {
     "acceptance": 2,
     "act": 1,
@@ -2739,6 +4531,18 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Kesling"
+    ],
+    "in": "Treatise on Invertebrate Paleontology, Part S: Echinodermata 1",
+    "pages": [
+     "S85",
+     "S267"
+    ],
+    "title": "Cystoids",
+    "year": 1967
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -2749,6 +4553,18 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Ubaghs"
+    ],
+    "in": "Treatise on Invertebrate Paleontology, Part S: Echinodermata 1",
+    "pages": [
+     "S3",
+     "S60"
+    ],
+    "title": "General Characters of Echinodermata",
+    "year": 1967
    },
    "claims": {
     "placement": 25,
@@ -2769,6 +4585,18 @@
    "audit": {
     "notes": "Migrated from complete: named=true open=null history=null specimens.basic=null specimens.all=null\n",
     "state": "partial"
+   },
+   "citation": {
+    "authors": [
+     "Durham"
+    ],
+    "in": "Treatise on Invertebrate Paleontology, Part S: Echinodermata 1",
+    "pages": [
+     "S631",
+     "S634"
+    ],
+    "title": "Lepidocystoidea",
+    "year": 1967
    },
    "claims": {
     "act": 3,
@@ -2792,6 +4620,18 @@
     "notes": "Migrated from complete: named=true open=null history=null specimens.basic=null specimens.all=null\n",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Fay"
+    ],
+    "in": "Treatise on Invertebrate Paleontology, Part S: Echinodermata 1",
+    "pages": [
+     "S293",
+     "S296"
+    ],
+    "title": "Parablastoids",
+    "year": 1967
+   },
    "claims": {
     "act": 2,
     "placement": 7,
@@ -2810,6 +4650,18 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Kesling"
+    ],
+    "in": "Treatise on Invertebrate Paleontology, Part S: Echinodermata 1",
+    "pages": [
+     "S268",
+     "S288"
+    ],
+    "title": "Paracrinoids",
+    "year": 1967
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -2820,6 +4672,18 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Ubaghs"
+    ],
+    "in": "Treatise on Invertebrate Paleontology, Part S: Echinodermata 1",
+    "pages": [
+     "S455",
+     "S495"
+    ],
+    "title": "Eocrinoidea",
+    "year": 1967
    },
    "claims": {},
    "derived": {},
@@ -2835,6 +4699,20 @@
    "audit": {
     "notes": "Migrated from complete: named=true open=null history=true specimens.basic=true specimens.all=true\n",
     "state": "partial"
+   },
+   "citation": {
+    "authors": [
+     "Durham"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 1,
+    "pages": [
+     97,
+     102
+    ],
+    "title": "Notes on the Helicoplacoidea and Early Echinoderms",
+    "volume": 41,
+    "year": 1967
    },
    "claims": {
     "acceptance": 1,
@@ -2861,6 +4739,18 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Ubaghs"
+    ],
+    "in": "Treatise on Invertebrate Paleontology, Part S: Echinodermata 1",
+    "pages": [
+     "S495",
+     "S565"
+    ],
+    "title": "Stylophora",
+    "year": 1967
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -2871,6 +4761,18 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Ubaghs"
+    ],
+    "in": "Treatise on Invertebrate Paleontology, Part S: Echinodermata 1",
+    "pages": [
+     "S565",
+     "S581"
+    ],
+    "title": "Homostelea",
+    "year": 1967
    },
    "claims": {},
    "derived": {},
@@ -2886,6 +4788,18 @@
    "audit": {
     "notes": "Migrated from complete: named=true open=true history=true specimens.basic=null specimens.all=null\n",
     "state": "partial"
+   },
+   "citation": {
+    "authors": [
+     "Ubaghs"
+    ],
+    "in": "Treatise on Invertebrate Paleontology, Part S: Echinodermata 1",
+    "pages": [
+     "S634",
+     "S637"
+    ],
+    "title": "Cymbionites and Peridionites—Unclassified Middle Cambrian Echinoderms",
+    "year": 1967
    },
    "claims": {
     "act": 4,
@@ -2920,6 +4834,20 @@
     "notes": "Migrated from complete: named=true open=true history=true specimens.basic=true specimens.all=true\nReviewed against the paper 2026-09-10; see docs/reviews/review_1968_webby.md\n",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Webby"
+    ],
+    "in": "Palaeontology",
+    "number": 4,
+    "pages": [
+     513,
+     525
+    ],
+    "title": "Astrocystites distans sp. nov., an edrioblastoid from the Ordovician of eastern Australia",
+    "volume": 11,
+    "year": 1968
+   },
    "claims": {
     "acceptance": 2,
     "act": 2,
@@ -2947,6 +4875,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Paul"
+    ],
+    "in": "Palaeontology",
+    "number": 4,
+    "pages": [
+     580,
+     600
+    ],
+    "title": "Macrocystella Callaway, the earliest glyptocystitid cystoid",
+    "volume": 11,
+    "year": 1968
+   },
    "claims": {
     "acceptance": 1,
     "act": 1,
@@ -2970,6 +4912,24 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Paul"
+    ],
+    "in": "Palaeontology",
+    "number": 5,
+    "pages": [
+     697,
+     730
+    ],
+    "plates": [
+     134,
+     140
+    ],
+    "title": "Morphology and function of dichoporite pore-structures in cystoids",
+    "volume": 11,
+    "year": 1968
+   },
    "claims": {
     "act": 7,
     "placement": 93,
@@ -2991,6 +4951,21 @@
    "audit": {
     "notes": "Migrated from complete: named=true open=null history=null specimens.basic=true specimens.all=false\n",
     "state": "partial"
+   },
+   "citation": {
+    "authors": [
+     "Robison",
+     "Sprinkle"
+    ],
+    "in": "Science (New Series)",
+    "number": 3912,
+    "pages": [
+     1512,
+     1514
+    ],
+    "title": "Ctenocystoidea: New Class of Primitive Echinoderms",
+    "volume": 166,
+    "year": 1969
    },
    "claims": {
     "act": 4,
@@ -3017,6 +4992,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Mintz"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 5,
+    "pages": [
+     872,
+     880
+    ],
+    "title": "The Edrioblastoidea: Re-Evaluation Based on a New Specimen of Astrocystites from the Middle Ordovician of Ontario",
+    "volume": 44,
+    "year": 1970
+   },
    "claims": {
     "acceptance": 2,
     "act": 1,
@@ -3039,6 +5028,15 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Paul"
+    ],
+    "in": "Fieldiana, Geology",
+    "title": "Revision of the Holocystites fauna (Diploporita) of North America",
+    "volume": 24,
+    "year": 1971
+   },
    "claims": {
     "act": 1,
     "placement": 1,
@@ -3057,6 +5055,20 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Paul"
+    ],
+    "in": "Palaeontology",
+    "number": 1,
+    "pages": [
+     1,
+     28
+    ],
+    "title": "Morphology and function of exothecal pore-structures in Cystoids",
+    "volume": 15,
+    "year": 1972
    },
    "claims": {
     "act": 1,
@@ -3078,6 +5090,14 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Sprinkle"
+    ],
+    "in": "Special Publication of the Museum of Comparative Zoology, Harvard University",
+    "title": "Morphology and Evolution of Blastozoan Echinoderms",
+    "year": 1973
    },
    "claims": {
     "acceptance": 12,
@@ -3104,6 +5124,19 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Sprinkle"
+    ],
+    "in": "Journal of Paleontology",
+    "pages": [
+     1113,
+     1116
+    ],
+    "title": "New occurrence of the Ordovician eocrinoid Lingulocystis from Bolivia, South America",
+    "volume": 47,
+    "year": 1973
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -3118,6 +5151,16 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Bell"
+    ],
+    "in": "Bulletins of American Paleontology",
+    "number": 287,
+    "title": "Ontogeny and systematics of Timeischytes casteri n. sp.: an enigmatic Devonian edrioasteroid",
+    "volume": 67,
+    "year": 1975
    },
    "claims": {
     "act": 4,
@@ -3142,6 +5185,21 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Broadhead",
+     "Strimple"
+    ],
+    "in": "Paleobiology",
+    "number": 3,
+    "pages": [
+     312,
+     319
+    ],
+    "title": "Respiration in a Vagrant Ordovician Cystoid, Amecystis",
+    "volume": 1,
+    "year": 1975
+   },
    "claims": {
     "act": 2,
     "placement": 5,
@@ -3163,6 +5221,15 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Kolata"
+    ],
+    "in": "Paleontological Society Memoir",
+    "title": "Middle Ordovician echinoderms from northern Illinois and southern Wisconsin",
+    "volume": 7,
+    "year": 1975
    },
    "claims": {
     "acceptance": 18,
@@ -3200,6 +5267,15 @@
     "notes": "Audited against the monograph 2026-09-09; see docs/audit-1976_bell.b.m.md",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Bell"
+    ],
+    "in": "New York State Museum and Science Service Memoirs",
+    "title": "A Study of North American Edrioasteroidea",
+    "volume": 21,
+    "year": 1976
+   },
    "claims": {
     "acceptance": 23,
     "act": 44,
@@ -3225,6 +5301,21 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Bell",
+     "Petersen"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 4,
+    "pages": [
+     577,
+     589
+    ],
+    "title": "An Edrioasteroid from the Guilmette Formation at Wendover, Utah-Nevada",
+    "volume": 50,
+    "year": 1976
    },
    "claims": {
     "act": 2,
@@ -3261,6 +5352,21 @@
     "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_1978_bell.b.m_sprinkle.md",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Bell",
+     "Sprinkle"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 2,
+    "pages": [
+     243,
+     266
+    ],
+    "title": "Totiglobus, an Unusual New Edrioasteroid from the Middle Cambrian of Nevada",
+    "volume": 52,
+    "year": 1978
+   },
    "claims": {
     "act": 6,
     "placement": 5,
@@ -3281,6 +5387,20 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Durham"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 1,
+    "pages": [
+     195,
+     199
+    ],
+    "title": "A Lower Cambrian Eocrinoid",
+    "volume": 52,
+    "year": 1978
    },
    "claims": {
     "act": 1,
@@ -3306,6 +5426,19 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Guensburg"
+    ],
+    "in": "Geological Society of America, Abstracts With Programs",
+    "pages": [
+     74,
+     74
+    ],
+    "title": "Cyclocystoid-like edrioasteroids from the Orchard Creek Shale (U. Ord.) in southern Illinois",
+    "volume": 11,
+    "year": 1979
+   },
    "claims": {
     "acceptance": 2,
     "act": 1,
@@ -3326,6 +5459,19 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Bell"
+    ],
+    "in": "Series in Geology, Notes for a Short Course",
+    "pages": [
+     158,
+     174
+    ],
+    "title": "Edrioasteroidea and Edrioblastoidea",
+    "volume": "3: Echinoderms: Notes for a Short Course",
+    "year": 1980
    },
    "claims": {
     "act": 1,
@@ -3348,6 +5494,19 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Bockelie"
+    ],
+    "in": "Norsk Geologisk Tidsskrift",
+    "pages": [
+     123,
+     147
+    ],
+    "title": "The Middle Ordovician of the Oslo Region, Norway, 30. The eocrinoid genera Cryptocrinites, Rhipidocystis and Bockia",
+    "volume": 61,
+    "year": 1981
    },
    "claims": {
     "acceptance": 3,
@@ -3375,6 +5534,18 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Derstler"
+    ],
+    "in": "Short Papers for the Second International Symposium on the Cambrian System, 1981",
+    "pages": [
+     71,
+     75
+    ],
+    "title": "Morphological diversity of early Cambrian echinoderms",
+    "year": 1981
+   },
    "claims": {
     "placement": 11,
     "usage": 13
@@ -3393,6 +5564,18 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Bell"
+    ],
+    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma",
+    "pages": [
+     297,
+     306
+    ],
+    "title": "Edrioasteroids",
+    "year": 1982
    },
    "claims": {
     "act": 1,
@@ -3413,6 +5596,18 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Broadhead"
+    ],
+    "in": "Echinoderms: Proceedings of the International Conference, Tampa Bay",
+    "pages": [
+     125,
+     131
+    ],
+    "title": "Reappraisal of Class Eocrinoidea (Echinodermata)",
+    "year": 1982
    },
    "claims": {
     "acceptance": 2,
@@ -3436,6 +5631,18 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Kolata"
+    ],
+    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma",
+    "pages": [
+     309,
+     309
+    ],
+    "title": "Cyclocystoids",
+    "year": 1982
+   },
    "claims": {
     "act": 1,
     "placement": 6,
@@ -3453,6 +5660,20 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Smith"
+    ],
+    "in": "Alcheringa",
+    "number": 2,
+    "pages": [
+     93,
+     99
+    ],
+    "title": "The affinities of the Middle Cambrian Haplozoa (Echinodermata)",
+    "volume": 6,
+    "year": 1982
    },
    "claims": {
     "placement": 3,
@@ -3472,6 +5693,19 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Sprinkle",
+     "Parsley"
+    ],
+    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma",
+    "pages": [
+     224,
+     230
+    ],
+    "title": "\"Golf-Ball\" Paracrinoid",
+    "year": 1982
    },
    "claims": {
     "act": 4,
@@ -3495,6 +5729,18 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Parsley"
+    ],
+    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma",
+    "pages": [
+     212,
+     223
+    ],
+    "title": "Paracrinoids",
+    "year": 1982
    },
    "claims": {
     "acceptance": 12,
@@ -3521,6 +5767,18 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Parsley"
+    ],
+    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma",
+    "pages": [
+     274,
+     279
+    ],
+    "title": "Pleurocystitids",
+    "year": 1982
+   },
    "claims": {
     "acceptance": 2,
     "act": 4,
@@ -3545,6 +5803,18 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Parsley"
+    ],
+    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma",
+    "pages": [
+     280,
+     288
+    ],
+    "title": "Eumorphocystis",
+    "year": 1982
+   },
    "claims": {
     "acceptance": 2,
     "act": 4,
@@ -3565,6 +5835,18 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Parsley"
+    ],
+    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma",
+    "pages": [
+     322,
+     323
+    ],
+    "title": "Homalozoans",
+    "year": 1982
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -3579,6 +5861,18 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Sprinkle"
+    ],
+    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma",
+    "pages": [
+     231,
+     273
+    ],
+    "title": "Cylcindrical and Globular Rhombiferans",
+    "year": 1982
    },
    "claims": {
     "acceptance": 5,
@@ -3604,6 +5898,18 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Sprinkle"
+    ],
+    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma",
+    "pages": [
+     289,
+     296
+    ],
+    "title": "Palaeocystitids",
+    "year": 1982
+   },
    "claims": {
     "act": 4,
     "placement": 6,
@@ -3625,6 +5931,18 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Sprinkle"
+    ],
+    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma",
+    "pages": [
+     307,
+     308
+    ],
+    "title": "Astrocystites",
+    "year": 1982
+   },
    "claims": {
     "act": 1,
     "placement": 8,
@@ -3645,6 +5963,21 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Bockelie",
+     "Paul"
+    ],
+    "in": "Lethaia",
+    "number": 4,
+    "pages": [
+     257,
+     264
+    ],
+    "title": "Cyathotheca suecica and its bearing on the evolution of the Edrioasteroidea",
+    "volume": 16,
+    "year": 1983
    },
    "claims": {
     "act": 3,
@@ -3668,6 +6001,23 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Brett",
+     "Frest",
+     "Sprinkle",
+     "Clement"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 4,
+    "pages": [
+     627,
+     651
+    ],
+    "title": "Coronoidea: A New Class of Blastozoan Echinoderms Based on Taxonomic Reevaluation of Stephanocrinus",
+    "volume": 57,
+    "year": 1983
    },
    "claims": {
     "act": 2,
@@ -3703,6 +6053,21 @@
     "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_1983_holloway_jell.md",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Holloway",
+     "Jell"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 5,
+    "pages": [
+     1001,
+     1016
+    ],
+    "title": "Silurian and Devonian edrioasteroids from Australia",
+    "volume": 57,
+    "year": 1983
+   },
    "claims": {
     "acceptance": 4,
     "act": 10,
@@ -3727,6 +6092,19 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Jell"
+    ],
+    "in": "Memoirs of the Association of the Australian Palaeontologists",
+    "pages": [
+     209,
+     235
+    ],
+    "title": "Early Devonian echinoderms from Victoria (Rhombifera, Blastoidea and Ophiocistioidea)",
+    "volume": 1,
+    "year": 1983
+   },
    "claims": {
     "act": 17,
     "placement": 17,
@@ -3749,6 +6127,21 @@
    "audit": {
     "notes": "Migrated from complete: named=true open=false history=false specimens.basic=true specimens.all=false\n",
     "state": "partial"
+   },
+   "citation": {
+    "authors": [
+     "Fatka",
+     "Kordule"
+    ],
+    "in": "Věstník Ústředního ústavu geologického",
+    "number": 4,
+    "pages": [
+     225,
+     230
+    ],
+    "title": "Etoctenocystis bohemica gen. et sp. nov. - new Ctenocystoid from Czechoslovakia (Echinodermata, Middle Cambrian)",
+    "volume": 60,
+    "year": 1985
    },
    "claims": {
     "acceptance": 1,
@@ -3791,6 +6184,22 @@
     "notes": "Migrated from complete: named=true open=false history=false specimens.basic=false specimens.all=false\nReviewed against the paper 2026-09-09; see docs/reviews/review_1985_jell_burrett_banks.md\nSynonymy re-declared 2026-09-11: Cyclocystoides primotica as the type\nof the new Edriodiscus is a recombination, captured as the original\ncombination under the species; the Eikosacystis synonymy (p. 185) is not.\n",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Jell",
+     "Burrett",
+     "Banks"
+    ],
+    "in": "Alcheringa",
+    "number": 3,
+    "pages": [
+     183,
+     208
+    ],
+    "title": "Cambrian and Ordovician echinoderms from eastern Australia",
+    "volume": 9,
+    "year": 1985
+   },
    "claims": {
     "acceptance": 1,
     "act": 16,
@@ -3832,6 +6241,20 @@
     "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_1985_smith.a.b.md",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Smith"
+    ],
+    "in": "Palaeontology",
+    "number": 4,
+    "pages": [
+     715,
+     756
+    ],
+    "title": "Cambrian Eleutherozoan Echinoderms and the Early Diversification of Edrioasteroids",
+    "volume": 28,
+    "year": 1985
+   },
    "claims": {
     "acceptance": 2,
     "act": 8,
@@ -3855,6 +6278,15 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Sprinkle"
+    ],
+    "in": "The University of Kansas Paleontological Contributions",
+    "number": 116,
+    "title": "New edrioasteroid from the Middle Cambrian of western Utah",
+    "year": 1985
    },
    "claims": {
     "act": 2,
@@ -3882,6 +6314,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Gehling"
+    ],
+    "in": "Alcheringa",
+    "number": 4,
+    "pages": [
+     337,
+     345
+    ],
+    "title": "Earliest known echinoderm — a new Ediacaran fossil from the Pound Subgroup of South Australia",
+    "volume": 11,
+    "year": 1987
+   },
    "claims": {
     "act": 3,
     "material": 2,
@@ -3908,6 +6354,24 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Lewis",
+     "Sprinkle",
+     "Bailey",
+     "Moffit",
+     "Parsley"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 6,
+    "pages": [
+     1222,
+     1235
+    ],
+    "title": "Mandalacystis, a New Rhipidocystid Eocrinoid from the Whiterockian Stage (Ordovician) in Oklahoma and Nevada.pdf",
+    "volume": 61,
+    "year": 1987
+   },
    "claims": {
     "act": 3,
     "placement": 6,
@@ -3926,6 +6390,21 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Smith",
+     "Arbizu"
+    ],
+    "in": "Lethaia",
+    "number": 1,
+    "pages": [
+     49,
+     62
+    ],
+    "title": "Inverse larval development in a Devonian edrioasteroid from Spain and the phylogeny of Agelacrinitinae",
+    "volume": 20,
+    "year": 1987
    },
    "claims": {
     "acceptance": 1,
@@ -3948,6 +6427,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Ubaghs"
+    ],
+    "in": "Annales de Paleontologie",
+    "number": 1,
+    "pages": [
+     1,
+     27
+    ],
+    "title": "Echinodermes nouveaux du Cambrien moyen de la Montagne Noire (France)",
+    "volume": 73,
+    "year": 1987
+   },
    "claims": {
     "act": 4,
     "placement": 10,
@@ -3968,6 +6461,20 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Guensburg"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 1,
+    "pages": [
+     110,
+     126
+    ],
+    "title": "Systematics, Functional Morphology, and Life Modes of Late Ordovician Edrioasteroids, Orchard Creek Shale, Southern Illinois",
+    "volume": 62,
+    "year": 1988
    },
    "claims": {
     "acceptance": 3,
@@ -3993,6 +6500,16 @@
    "audit": {
     "notes": "Migrated from complete: named=true open=null history=null specimens.basic=true specimens.all=false\n",
     "state": "partial"
+   },
+   "citation": {
+    "authors": [
+     "Ubaghs",
+     "Robison"
+    ],
+    "in": "The University of Kansas Paleontological Contributions",
+    "number": 129,
+    "title": "Homalozoan echinoderms of the Wheeler Formation (Middle Cambrian) of Western Utah",
+    "year": 1988
    },
    "claims": {
     "act": 5,
@@ -4020,6 +6537,25 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Fatka",
+     "Kordule"
+    ],
+    "in": "Věstník Ústředního ústavu geologického",
+    "number": 5,
+    "pages": [
+     315,
+     319
+    ],
+    "plates": [
+     "I",
+     "II"
+    ],
+    "title": "Vyscystis ubaghsi gen. et sp.nov., imbricate eocrinoid from Czechoslovakia",
+    "volume": 65,
+    "year": 1990
+   },
    "claims": {
     "act": 3,
     "placement": 4,
@@ -4041,6 +6577,17 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Smith",
+     "Jell"
+    ],
+    "in": "Memoirs of the Queensland Museum",
+    "number": 2,
+    "title": "Cambrian edrioasteroids from Australia and the origin of starfishes",
+    "volume": 28,
+    "year": 1990
    },
    "claims": {
     "act": 13,
@@ -4064,6 +6611,21 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Ubaghs",
+     "Vizcaïno"
+    ],
+    "in": "Palaeontology",
+    "number": 1,
+    "pages": [
+     249,
+     256
+    ],
+    "title": "A new eocrinoid from the Lower Cambrian of Spain",
+    "volume": 33,
+    "year": 1990
    },
    "claims": {
     "act": 3,
@@ -4089,6 +6651,16 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Fatka"
+    ],
+    "in": "Věstník Ústředního ústavu geologického",
+    "number": 4,
+    "title": "Akadocrinus knizeki sp.nov., gogiid eocrinoid from Czechoslovakia (Echinodermata, Middle Cambrian)",
+    "volume": 66,
+    "year": 1991
+   },
    "claims": {
     "act": 2,
     "placement": 5,
@@ -4110,6 +6682,16 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Sumrall"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 1,
+    "title": "Spiraclavus nacoensis, a new species of clavate agelacrinitid edrioasteroid from central Arizona",
+    "volume": 66,
+    "year": 1992
    },
    "claims": {
     "act": 3,
@@ -4134,6 +6716,21 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Dzik",
+     "Orłowski"
+    ],
+    "in": "Acta Palaeontologica Polonica",
+    "number": "1/2",
+    "pages": [
+     21,
+     34
+    ],
+    "title": "The Late Cambrian eocrinoid Cambrocrinus",
+    "volume": 38,
+    "year": 1993
+   },
    "claims": {
     "act": 3,
     "diagnosis": 3,
@@ -4155,6 +6752,19 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Sumrall"
+    ],
+    "in": "Lethaia",
+    "pages": [
+     289,
+     302
+    ],
+    "title": "1993-12-00-p Thecal designs in isorophinid edrioasteroids.pdf",
+    "volume": 26,
+    "year": 1993
+   },
    "claims": {
     "placement": 19,
     "usage": 22
@@ -4173,6 +6783,20 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Young",
+     "Donovan"
+    ],
+    "in": "Atlantic Geology",
+    "pages": [
+     149,
+     154
+    ],
+    "title": "The eocrinoid Ascocystites Barrande (Echinodermata, Blastozoa) from the Middle Ordovician of central Portugal, with comments on the stratigraphy of the Brejo Fundeiro Formation",
+    "volume": 29,
+    "year": 1993
    },
    "claims": {
     "act": 1,
@@ -4209,6 +6833,21 @@
     "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_1994_guensburg_sprinkle.md",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Guensburg",
+     "Sprinkle"
+    ],
+    "in": "Fieldiana, Geology",
+    "number": 29,
+    "pages": [
+     1,
+     43
+    ],
+    "title": "Revised phylogeny and functional interpretation of the Edrioasteroidea based on new taxa from the Early and Middle Ordovician of western Utah",
+    "volume": "New Series",
+    "year": 1994
+   },
    "claims": {
     "acceptance": 1,
     "act": 34,
@@ -4235,6 +6874,21 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Sprinkle",
+     "Wahlman"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 2,
+    "pages": [
+     324,
+     338
+    ],
+    "title": "New echinoderms from the Early Ordovician of west Texas",
+    "volume": 68,
+    "year": 1994
+   },
    "claims": {
     "acceptance": 1,
     "act": 11,
@@ -4256,6 +6910,21 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Zhao",
+     "Huang",
+     "Gong"
+    ],
+    "in": "Acta Palaeontologica Sinica",
+    "pages": [
+     305,
+     324
+    ],
+    "title": "The middle Cambrian Kaili Formation of southwestern China",
+    "volume": 33,
+    "year": 1994
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -4266,6 +6935,20 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Zhao",
+     "Zhu"
+    ],
+    "in": "Acta Palaeontologica Sinica",
+    "pages": [
+     350,
+     358
+    ],
+    "title": "Medusiform fossils of Kaili Fauna from Taijiang, Guizhou",
+    "volume": 33,
+    "year": 1994
    },
    "claims": {},
    "derived": {},
@@ -4281,6 +6964,20 @@
    "audit": {
     "notes": "Migrated from complete: named=null open=null history=false specimens.basic=null specimens.all=null\n",
     "state": "partial"
+   },
+   "citation": {
+    "authors": [
+     "Dzik",
+     "Orłowski"
+    ],
+    "in": "Annales de Paleontologie",
+    "pages": [
+     17,
+     35
+    ],
+    "title": "Primitive ctenocystoid echinoderm from the earliest Middle Cambrian of Poland",
+    "volume": 81,
+    "year": 1995
    },
    "claims": {
     "act": 3,
@@ -4303,6 +7000,20 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Sumrall"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 6,
+    "pages": [
+     969,
+     985
+    ],
+    "title": "Late Paleozoic Edrioasteroids (Echinodermata) From The North American Midcontinent",
+    "volume": 70,
+    "year": 1996
    },
    "claims": {
     "acceptance": 3,
@@ -4328,6 +7039,21 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Sumrall",
+     "Bowsher"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 6,
+    "pages": [
+     986,
+     993
+    ],
+    "title": "Giganticlavus, a new genus of Pennsylvanian edrioasteroid from North America",
+    "volume": 70,
+    "year": 1996
+   },
    "claims": {
     "act": 4,
     "placement": 7,
@@ -4350,6 +7076,16 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Paul"
+    ],
+    "in": "Monograph of the Palaeontological Society",
+    "number": 604,
+    "title": "British Ordovician Cystoids, Part 3",
+    "volume": 151,
+    "year": 1997
    },
    "claims": {
     "act": 23,
@@ -4374,6 +7110,22 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Sumrall",
+     "Sprinkle",
+     "Guensburg"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 6,
+    "pages": [
+     1091,
+     1109
+    ],
+    "title": "Systematics And Paleoecology Of Late Cambrian Echinoderms From The Western United States",
+    "volume": 71,
+    "year": 1997
    },
    "claims": {
     "acceptance": 1,
@@ -4401,6 +7153,21 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Dean",
+     "Smith"
+    ],
+    "in": "Palaeontology",
+    "number": 6,
+    "pages": [
+     1183,
+     1194
+    ],
+    "title": "Palaeobiology of the primitive Ordovician pelmatozoan echinoderm Cardiocystites",
+    "volume": 41,
+    "year": 1998
+   },
    "claims": {
     "act": 2,
     "placement": 12,
@@ -4425,6 +7192,18 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Domínguez Alonso"
+    ],
+    "in": "Echinoderm Research 1998",
+    "pages": [
+     263,
+     268
+    ],
+    "title": "The early evolution of echinoderms: the class Ctenocystoidea and its closest relatives revisited",
+    "year": 1999
+   },
    "claims": {
     "act": 23,
     "placement": 26,
@@ -4448,6 +7227,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Ubaghs"
+    ],
+    "in": "Geobios",
+    "number": 6,
+    "pages": [
+     809,
+     829
+    ],
+    "title": "Échinodermes nouveaux du Cambrien supérieur de la Montagne Noire (France méridionale)",
+    "volume": 31,
+    "year": 1999
+   },
    "claims": {
     "act": 15,
     "diagnosis": 9,
@@ -4469,6 +7262,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Vizcaïno",
+     "Lefebvre"
+    ],
+    "in": "Geobios",
+    "pages": [
+     353,
+     364
+    ],
+    "title": "Les échinodermes du Paléozoïque inférieur\nde Montagne Noire: biostratigraphie et paléodiversité\n",
+    "volume": 32,
+    "year": 1999
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -4482,6 +7289,23 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Zhao",
+     "Yuan",
+     "Zhu",
+     "Yang",
+     "Guo",
+     "Qian",
+     "Huang",
+     "Pan"
+    ],
+    "in": "Acta Palaeontologica Sinica",
+    "number": "Supplement",
+    "title": "A progress report on research on the early Middle Cambrian Kaili Biota, Guizhou, PRC",
+    "volume": 38,
+    "year": 1999
    },
    "claims": {
     "act": 7,
@@ -4506,6 +7330,19 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Grigo"
+    ],
+    "in": "Paläontologische Zeitschrift",
+    "pages": [
+     91,
+     98
+    ],
+    "title": "Erstnachweis von Edrioasteroidea (Echinodermata) aus dem Mittel-Devon\nder Eifel (Rheinisches Schiefergebirge)\n",
+    "volume": 74,
+    "year": 2000
    },
    "claims": {
     "act": 5,
@@ -4536,6 +7373,22 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Sumrall",
+     "Garbisch",
+     "Pope"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 1,
+    "pages": [
+     72,
+     83
+    ],
+    "title": "The Systematics of Postibullinid Edrioasteroids",
+    "volume": 74,
+    "year": 2000
+   },
    "claims": {
     "act": 4,
     "placement": 29,
@@ -4558,6 +7411,21 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Rozhnov",
+     "Fedorov"
+    ],
+    "in": "Paleontological Journal",
+    "number": 6,
+    "pages": [
+     606,
+     613
+    ],
+    "title": "A New Cryptocrinid Genus (Eocrinoidea, Echinodermata) from the Bioherm-related Facies of the Volkhov Stage (Late Arenigian, Ordovician), Leningrad Region",
+    "volume": 35,
+    "year": 2001
    },
    "claims": {
     "act": 4,
@@ -4585,6 +7453,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Sumrall"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 1,
+    "pages": [
+     135,
+     146
+    ],
+    "title": "Paleoecology and Taphonomy of Two New Edrioasteroids from a Mississippian Hardground in Kentucky",
+    "volume": 75,
+    "year": 2001
+   },
    "claims": {
     "act": 4,
     "placement": 8,
@@ -4607,6 +7489,22 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Sumrall",
+     "Sprinkle",
+     "Guensburg"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 5,
+    "pages": [
+     985,
+     992
+    ],
+    "title": "Comparison Of Flattened Blastozoan Echinoderms: Insights From The New Early Ordovician Eocrinoid Haimacystis Rozhnovi",
+    "volume": 75,
+    "year": 2001
+   },
    "claims": {
     "act": 3,
     "placement": 4,
@@ -4626,6 +7524,21 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Vizcaïno",
+     "Álvaro",
+     "Lefebvre"
+    ],
+    "in": "Annales de la Société Géologique Nord",
+    "pages": [
+     213,
+     220
+    ],
+    "title": "The Lower Ordovician of the southern Montagne Noire",
+    "volume": 8,
+    "year": 2001
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -4639,6 +7552,20 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Gil Cid",
+     "Domínguez Alonso"
+    ],
+    "in": "Coloquios de Paleontología",
+    "pages": [
+     21,
+     32
+    ],
+    "title": "\"Ubaghsicystis segurae nov. gen. y sp., nuevo Eocrinoide\n(Echinodermata) del Cámbrico Medio del Norte de España\"\n",
+    "volume": 53,
+    "year": 2002
    },
    "claims": {
     "act": 3,
@@ -4661,6 +7588,21 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Zhu",
+     "Zhao",
+     "Chen"
+    ],
+    "in": "Geobios",
+    "pages": [
+     165,
+     185
+    ],
+    "title": "Revision of the Cambrian discoidal animals Stellostomites eumorphus and Pararotadiscus guizhouensis from South China",
+    "volume": 35,
+    "year": 2002
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -4676,6 +7618,16 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Guensburg",
+     "Sprinkle"
+    ],
+    "in": "Bulletins of American Paleontology",
+    "number": 364,
+    "title": "The oldest known crinoids (Early Ordovician, Utah) and a new crinoid plate homology system",
+    "year": 2003
    },
    "claims": {
     "act": 25,
@@ -4697,6 +7649,17 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Sumrall",
+     "Parsley"
+    ],
+    "in": "Palaeontology",
+    "number": 1,
+    "title": "Morphology and biomechanical implications of isolated discocystinid plates",
+    "volume": 46,
+    "year": 2003
+   },
    "claims": {
     "placement": 5,
     "usage": 5
@@ -4716,6 +7679,21 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Parsley",
+     "Prokop"
+    ],
+    "in": "Bulletin of Geosciences",
+    "number": 3,
+    "pages": [
+     147,
+     156
+    ],
+    "title": "Functional morphology and paleoecology of some sessile Middle Cambrian echinoderms from the Barrandian region of Bohemia",
+    "volume": 79,
+    "year": 2004
    },
    "claims": {
     "acceptance": 2,
@@ -4745,6 +7723,19 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Frest"
+    ],
+    "in": "Geological Journal",
+    "pages": [
+     301,
+     329
+    ],
+    "title": "Ampheristocystis, a Silurian (Lower Wenlock) eocrinoid (Echinodermata, Blastozoa) from Indiana",
+    "volume": 40,
+    "year": 2005
+   },
    "claims": {
     "acceptance": 3,
     "act": 6,
@@ -4771,6 +7762,21 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Parsley",
+     "Zhao"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 6,
+    "pages": [
+     1058,
+     1071
+    ],
+    "title": "Long stalked eocrinoids in the basal Middle Cambrian Kaili Biota, Taijiang County, Guizhou Province, China",
+    "volume": 80,
+    "year": 2006
+   },
    "claims": {
     "acceptance": 12,
     "act": 6,
@@ -4796,6 +7802,21 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Sprinkle",
+     "Collins"
+    ],
+    "in": "Canadian Journal of Earth Sciences",
+    "number": 3,
+    "pages": [
+     303,
+     322
+    ],
+    "title": "New eocrinoids from the Burgess Shale, southern British Columbia, Canada, and the Spence Shale, northern Utah, USA",
+    "volume": 43,
+    "year": 2006
    },
    "claims": {
     "acceptance": 2,
@@ -4835,6 +7856,22 @@
     "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_2006_sumrall_brett_cornell.md",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Sumrall",
+     "Brett",
+     "Cornell"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 1,
+    "pages": [
+     187,
+     192
+    ],
+    "title": "The Systematics and Ontogeny of Pyrgopostibulla belli, a New Edrioasteroid (Echinodermata) from the Lower Devonian of New York",
+    "volume": 80,
+    "year": 2006
+   },
    "claims": {
     "act": 3,
     "placement": 6,
@@ -4853,6 +7890,20 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Sumrall",
+     "Gahn"
+    ],
+    "in": "Canadian Journal of Earth Sciences",
+    "pages": [
+     497,
+     507
+    ],
+    "title": "Morphological and systematic reinterpretation of two enigmatic edrioasteroids (Echinodermata) from Canada",
+    "volume": 43,
+    "year": 2006
    },
    "claims": {
     "placement": 37,
@@ -4873,6 +7924,22 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Sumrall",
+     "Sprinkle",
+     "Bonem"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 2,
+    "pages": [
+     229,
+     244
+    ],
+    "title": "An Edrioasteroid-Dominated Echinoderm Assemblage from a Lower Pennsylvanian Marine Conglomerate in Oklahoma",
+    "volume": 80,
+    "year": 2006
+   },
    "claims": {
     "act": 4,
     "placement": 17,
@@ -4892,6 +7959,23 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Hu",
+     "Luo",
+     "Hou",
+     "Erdtmann"
+    ],
+    "in": "Chinese Science Bulletin",
+    "number": 5,
+    "pages": [
+     717,
+     719
+    ],
+    "title": "Eocrinoid echinoderms from the Lower Cambrian Guanshan Fauna in Wuding, Yunnan, China",
+    "volume": 52,
+    "year": 2007
    },
    "claims": {
     "act": 1,
@@ -4914,6 +7998,21 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Zhao",
+     "Parsley",
+     "Peng"
+    ],
+    "in": "Palaeogeography, Palaeoclimatology, Palaeoecology",
+    "pages": [
+     317,
+     327
+    ],
+    "title": "Early Cambrian eocrinoids from Guizhou Province, South China",
+    "volume": 254,
+    "year": 2007
    },
    "claims": {
     "act": 4,
@@ -4939,6 +8038,19 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Nardin"
+    ],
+    "in": "Annales de Paleontologie",
+    "pages": [
+     199,
+     214
+    ],
+    "title": "New specimens of Lingulocystis Thoral, 1935 (Eocrinoidea, Blastozoa) from the Arenig (Lower Ordovician) of Montagne noire (southern France): Intraspecific morphological variability, stratigraphic, and palaeoecological implications",
+    "volume": 93,
+    "year": 2007
+   },
    "claims": {
     "act": 2,
     "placement": 7,
@@ -4960,6 +8072,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Nardin"
+    ],
+    "in": "Acta Palaeontologica Polonica",
+    "number": 1,
+    "pages": [
+     17,
+     26
+    ],
+    "title": "New occurrence of the Ordovician eocrinoid Cardiocystites: Palaeogeographical and palaeoecological implications",
+    "volume": 42,
+    "year": 2007
+   },
    "claims": {
     "act": 1,
     "placement": 3,
@@ -4980,6 +8106,23 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Luo",
+     "Li",
+     "Hu",
+     "Fu",
+     "Hou",
+     "Liu",
+     "Chen",
+     "Li",
+     "Pang",
+     "Liu"
+    ],
+    "in": "Early Cambrian Malong Fauna and Guanshan Fauna from Eastern Yunnan, China",
+    "title": null,
+    "year": 2008
    },
    "claims": {
     "acceptance": 1,
@@ -5003,6 +8146,20 @@
     "notes": "Migrated from complete: named=null open=false history=null specimens.basic=false specimens.all=false\n",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Stewart",
+     "Owen"
+    ],
+    "in": "Lethaia",
+    "pages": [
+     139,
+     146
+    ],
+    "title": "Probing the deep shelf: a Lagerstätte from the Upper Ordovician of Girvan, southwestern Scotland",
+    "volume": 41,
+    "year": 2008
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -5018,6 +8175,22 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Zhao",
+     "Parsley",
+     "Peng"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 2,
+    "pages": [
+     415,
+     422
+    ],
+    "title": "Basal Middle Cambrian Short-Stalked Eocrinoids from the Kaili Biota: Guizhou Province, China",
+    "volume": 82,
+    "year": 2008
    },
    "claims": {
     "acceptance": 1,
@@ -5045,6 +8218,21 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Guensburg",
+     "Sprinkle"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 3,
+    "pages": [
+     350,
+     364
+    ],
+    "title": "Solving the Mystery of Crinoid Ancestry: New Fossil Evidence\nof Arm Origin and Development\n",
+    "volume": 83,
+    "year": 2009
    },
    "claims": {
     "act": 6,
@@ -5084,6 +8272,20 @@
     "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_2009_sumrall.md",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Sumrall"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 6,
+    "pages": [
+     990,
+     993
+    ],
+    "title": "First Definite Record of Permian Edrioasteroids: Neoisorophusella maslennikovi n. sp.  from the Kungurian of Northeast Russia",
+    "volume": 83,
+    "year": 2009
+   },
    "claims": {
     "act": 1,
     "placement": 5,
@@ -5104,6 +8306,22 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Sumrall",
+     "Brett",
+     "McKinney"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 5,
+    "pages": [
+     794,
+     803
+    ],
+    "title": "A New Agelacrinitid Edrioasteroid Attached to a Large Hardground Clast from the McKenzie Member of the Mifflintown Member (Silurian) of Pennsylvania",
+    "volume": 83,
+    "year": 2009
    },
    "claims": {
     "act": 3,
@@ -5128,6 +8346,22 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Zamora",
+     "Gozalo",
+     "Liñán"
+    ],
+    "in": "Acta Palaeontologica Polonica",
+    "number": 2,
+    "pages": [
+     253,
+     264
+    ],
+    "title": "Middle Cambrian gogiid echinoderms from Northeast Spain: Taxonomy, palaeoecology, and palaeogeographic implications",
+    "volume": 54,
+    "year": 2009
+   },
    "claims": {
     "act": 3,
     "diagnosis": 1,
@@ -5151,6 +8385,21 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Liu",
+     "Hu",
+     "Zhang",
+     "Cuevas-Castell",
+     "Gong",
+     "Tao"
+    ],
+    "in": "Acta Palaeontologica Sinica",
+    "number": 3,
+    "title": "A new Burgess Shale-type biota from the upper Shilongdong Formation,Lower Cambrian of central Hubei,South China",
+    "volume": 49,
+    "year": 2010
+   },
    "claims": {
     "act": 1,
     "placement": 6,
@@ -5172,6 +8421,20 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Müller",
+     "Hahn"
+    ],
+    "in": "Geologica et Palaeontologica",
+    "pages": [
+     9,
+     47
+    ],
+    "title": "Edrioasteroidea aus den Seifen-Schichten im Westerwald, Rheinisches Schiefer-Gebirge (Unter-Devon, Deutschland), Teil 1",
+    "volume": 43,
+    "year": 2010
    },
    "claims": {
     "act": 19,
@@ -5199,6 +8462,21 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Parsley",
+     "Zhao"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 3,
+    "pages": [
+     549,
+     553
+    ],
+    "title": "A New Turban-Shaped Gogiid Eocrinoid From The Kaili Formation (Kaili Biota), Balang, Jianhe County, Guizhou Province, China",
+    "volume": 84,
+    "year": 2010
+   },
    "claims": {
     "act": 4,
     "material": 2,
@@ -5224,6 +8502,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Sumrall"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 5,
+    "pages": [
+     783,
+     794
+    ],
+    "title": "The systematics of a new Upper Ordovician edrioasteroid pavement from northern Kentucky",
+    "volume": 84,
+    "year": 2010
+   },
    "claims": {
     "act": 1,
     "placement": 13,
@@ -5244,6 +8536,21 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Zamora",
+     "Smith"
+    ],
+    "in": "Acta Palaeontologica Polonica",
+    "number": 3,
+    "pages": [
+     487,
+     494
+    ],
+    "title": "The oldest isorophid edrioasteroid (Echinodermata) and the evolution of attachment strategies in Cambrian edrioasteroids",
+    "volume": 55,
+    "year": 2010
    },
    "claims": {
     "act": 3,
@@ -5279,6 +8586,23 @@
     "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_2010_zhao.y.l_sumrall_parsley_peng.j.md",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Zhao",
+     "Sumrall",
+     "Parsley",
+     "Peng"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 4,
+    "pages": [
+     668,
+     680
+    ],
+    "title": "Kailidiscus, A New Plesiomorphic Edrioasteroid From The Basal Middle Cambrian Kaili Biota Of Guizhou Province, China",
+    "volume": 84,
+    "year": 2010
+   },
    "claims": {
     "act": 3,
     "material": 2,
@@ -5304,6 +8628,23 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Sprinkle",
+     "Parsley",
+     "Zhao",
+     "Peng"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 2,
+    "pages": [
+     250,
+     255
+    ],
+    "title": "Revision Of Lyracystid Eocrinoids From The Middle Cambrian Of South China And Western Laurentia",
+    "volume": 25,
+    "year": 2011
    },
    "claims": {
     "act": 3,
@@ -5341,6 +8682,21 @@
     "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_2011_sumrall_zamora.md",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Sumrall",
+     "Zamora"
+    ],
+    "in": "Journal of Systematic Palaeontology",
+    "number": 3,
+    "pages": [
+     425,
+     454
+    ],
+    "title": "Ordovician edrioasteroids from Morocco: faunal exchanges across the Rheic Ocean",
+    "volume": 9,
+    "year": 2011
+   },
    "claims": {
     "act": 19,
     "placement": 47,
@@ -5364,6 +8720,19 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Doweld"
+    ],
+    "in": "Paläontologische Zeitschrift",
+    "pages": [
+     457,
+     458
+    ],
+    "title": "Heckerocrinus, a new substitute generic name for fossil crinoid Bockia Hecker 1940 (Echinodermata: Crinoidea) non Reisinger 1924 (Vermes: Turbellaria)",
+    "volume": 86,
+    "year": 2012
+   },
    "claims": {
     "acceptance": 10,
     "act": 4,
@@ -5385,6 +8754,18 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Zamora",
+     "Rahman",
+     "Smith"
+    ],
+    "in": "PLoS ONE",
+    "number": 6,
+    "title": "Plated Cambrian Bilaterians Reveal the Earliest Stages of Echinoderm Evolution",
+    "volume": 7,
+    "year": 2012
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -5398,6 +8779,20 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Zamora",
+     "Smith"
+    ],
+    "in": "Proceedings of the Royal Society B",
+    "pages": [
+     293,
+     298
+    ],
+    "title": "Cambrian stalked echinoderms show unexpected plasticity of arm construction",
+    "volume": 279,
+    "year": 2012
    },
    "claims": {
     "act": 7,
@@ -5426,6 +8821,21 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Müller",
+     "Hahn",
+     "Bohatý"
+    ],
+    "in": "Paläontologische Zeitschrift",
+    "pages": [
+     455,
+     472
+    ],
+    "title": "Agelacrinitid Edrioasteroidea (Echinodermata) from the Middle Devonian of the Eifel (Rhenish Massif, Germany)",
+    "volume": 87,
+    "year": 2013
+   },
    "claims": {
     "acceptance": 1,
     "act": 4,
@@ -5452,6 +8862,21 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Nardin",
+     "Bohatý"
+    ],
+    "in": "Acta Palaeontologica Polonica",
+    "number": 3,
+    "pages": [
+     533,
+     544
+    ],
+    "title": "A new pleurocystitid blastozoan from the Middle Devonian of the Eifel (Germany) and its phylogenetic importance",
+    "volume": 58,
+    "year": 2013
+   },
    "claims": {
     "act": 5,
     "placement": 28,
@@ -5474,6 +8899,16 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Smith",
+     "Zamora"
+    ],
+    "in": "Proceedings of the Royal Society B",
+    "title": "Cambrian spiral-plated echinoderms from Gondwana reveal the earliest pentaradial body plan",
+    "volume": 280,
+    "year": 2013
    },
    "claims": {
     "act": 4,
@@ -5499,6 +8934,17 @@
    "audit": {
     "notes": "Migrated from complete: named=null open=null history=null specimens.basic=null specimens.all=null\n",
     "state": "partial"
+   },
+   "citation": {
+    "authors": [
+     "Smith",
+     "Zamora",
+     "Álvaro"
+    ],
+    "in": "Nature Communications",
+    "title": "The oldest echinoderm faunas from Gondwana show that echinoderm body plan diversification was rapid",
+    "volume": 4,
+    "year": 2013
    },
    "claims": {},
    "derived": {},
@@ -5527,6 +8973,23 @@
     "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_2013_sumrall_heredia_rodríguez.c.m_mestre.md",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Sumrall",
+     "Heredia",
+     "Rodríguez",
+     "Mestre"
+    ],
+    "in": "Acta Palaeontologica Polonica",
+    "number": 4,
+    "pages": [
+     763,
+     776
+    ],
+    "title": "The first report of South American edrioasteroids and the paleoecology and ontogeny of rhenopyrgid echinoderms",
+    "volume": 58,
+    "year": 2013
+   },
    "claims": {
     "acceptance": 1,
     "act": 4,
@@ -5552,6 +9015,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Zamora"
+    ],
+    "in": "Palaeontology",
+    "number": 2,
+    "pages": [
+     421,
+     431
+    ],
+    "title": "Morphology and phylogenetic interpretation of a new Cambrian edrioasteroid  Echinodermata",
+    "volume": 56,
+    "year": 2013
+   },
    "claims": {
     "act": 3,
     "placement": 15,
@@ -5574,6 +9051,22 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Zamora",
+     "Sumrall",
+     "Vizcaïno"
+    ],
+    "in": "Acta Palaeontologica Polonica",
+    "number": 3,
+    "pages": [
+     545,
+     559
+    ],
+    "title": "Morphology and ontogeny of the Cambrian edrioasteroid echinoderm Cambraster cannati from western Gondwana",
+    "volume": 58,
+    "year": 2013
    },
    "claims": {
     "acceptance": 1,
@@ -5598,6 +9091,21 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Chen",
+     "Han"
+    ],
+    "in": "Acta Palaeontologica Sinica",
+    "number": 3,
+    "pages": [
+     290,
+     301
+    ],
+    "title": "A new eocrinoid genus from the upper Cambrian of Guangxi, south China",
+    "volume": 53,
+    "year": 2014
+   },
    "claims": {
     "act": 3,
     "placement": 3,
@@ -5619,6 +9127,20 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Jell"
+    ],
+    "in": "Alcheringa",
+    "number": 4,
+    "pages": [
+     528,
+     540
+    ],
+    "title": "A Tremadocian asterozoan from Tasmania and a late Llandovery edrioasteroid from Victoria",
+    "volume": 38,
+    "year": 2014
    },
    "claims": {
     "act": 6,
@@ -5646,6 +9168,23 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Makhlouf",
+     "Lefebvre",
+     "Nardin",
+     "Nedjari",
+     "Régnault",
+     "Ferhi"
+    ],
+    "in": "STRATI 2013 First International Congress on Stratigraphy At the Cutting Edge of Stratigraphy",
+    "pages": [
+     1045,
+     1048
+    ],
+    "title": "Stratigraphic and Palaeogeographical Distribution of the Ordovician Eocrinoid Ascocystites Barrande 1887 (Echinodermata, Blastozoa)",
+    "year": 2014
+   },
    "claims": {
     "acceptance": 5,
     "act": 2,
@@ -5670,6 +9209,22 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Zhu",
+     "Zamora",
+     "Lefebvre"
+    ],
+    "in": "Acta Palaeontologica Polonica",
+    "number": 4,
+    "pages": [
+     921,
+     926
+    ],
+    "title": "Morphology and palaeoecology of a new edrioblastoid from the Furongian of China",
+    "volume": 59,
+    "year": 2014
+   },
    "claims": {
     "act": 2,
     "placement": 5,
@@ -5689,6 +9244,23 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Ausich",
+     "Kammer",
+     "Rhenberg",
+     "Wright"
+    ],
+    "in": "Palaeontology",
+    "number": 6,
+    "pages": [
+     937,
+     952
+    ],
+    "title": "Early phylogeny of crinoids within the pelmatozoan clade",
+    "volume": 58,
+    "year": 2015
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -5703,6 +9275,22 @@
    "audit": {
     "notes": "Migrated from complete: named=true open=null history=null specimens.basic=true specimens.all=true\n",
     "state": "partial"
+   },
+   "citation": {
+    "authors": [
+     "Rahman",
+     "Stewart",
+     "Zamora"
+    ],
+    "in": "Acta Palaeontologica Polonica",
+    "number": 1,
+    "pages": [
+     39,
+     48
+    ],
+    "title": "The youngest ctenocystoids from the Upper Ordovician of the United Kingdom and the evolution of the bilateral body plan in echinoderms",
+    "volume": 60,
+    "year": 2015
    },
    "claims": {
     "act": 2,
@@ -5742,6 +9330,21 @@
     "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_2015_sprinkle_sumrall.md",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Sprinkle",
+     "Sumrall"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 2,
+    "pages": [
+     346,
+     352
+    ],
+    "title": "New edrioasterine and astrocystitid (Echinodermata: Edrioasteroidea) from the Ninemile Shale (Lower Ordovician), central Nevada",
+    "volume": 89,
+    "year": 2015
+   },
    "claims": {
     "act": 6,
     "placement": 9,
@@ -5764,6 +9367,21 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Sumrall",
+     "Zamora"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 2,
+    "pages": [
+     366,
+     368
+    ],
+    "title": "A columnal-bearing eocrinoid from the Cambrian Burgess Shale (British Columbia, Canada)",
+    "volume": 89,
+    "year": 2015
+   },
    "claims": {
     "act": 2,
     "placement": 5,
@@ -5785,6 +9403,23 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Yang",
+     "Lin",
+     "Zhang",
+     "Wu",
+     "Meng"
+    ],
+    "in": "Palaeoworld",
+    "pages": [
+     430,
+     437
+    ],
+    "title": "A new eocrinoid fauna (Cambrian Series 2) from Guizhou Province, South China",
+    "volume": 24,
+    "year": 2015
    },
    "claims": {
     "act": 2,
@@ -5809,6 +9444,25 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Zamora",
+     "Lefebvre",
+     "Hoşgör",
+     "Franzen",
+     "Nardin",
+     "Fatka",
+     "Álvaro"
+    ],
+    "in": "Geobios",
+    "pages": [
+     417,
+     426
+    ],
+    "title": "The Cambrian edrioasteroid Stromatocystites (Echinodermata): Systematics, palaeogeography, and palaeoecology",
+    "volume": 48,
+    "year": 2015
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -5822,6 +9476,22 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Zamora",
+     "Sumrall",
+     "Sprinkle"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 1,
+    "pages": [
+     189,
+     193
+    ],
+    "title": "New long-stemmed eocrinoid from the Furongian Point Peak Shale Member of the Wilberns Formation, central Texas",
+    "volume": 89,
+    "year": 2015
    },
    "claims": {
     "act": 3,
@@ -5851,6 +9521,25 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Zhao",
+     "Peng",
+     "Wu",
+     "Luo",
+     "Wen",
+     "Liu"
+    ],
+    "in": "Earth Science",
+    "number": 2,
+    "pages": [
+     249,
+     260
+    ],
+    "title": "A New Type Eocrinoids of Echinoderms from the Balang Formation in Cambrian at Xiasi Town, Majiang County, Guizhou Province, China",
+    "volume": 40,
+    "year": 2015
+   },
    "claims": {
     "act": 3,
     "material": 2,
@@ -5875,6 +9564,25 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Allaire",
+     "Lefebvre",
+     "Nardin",
+     "Martin",
+     "Vaucher",
+     "Escarguel"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 4,
+    "pages": [
+     685,
+     714
+    ],
+    "title": "Morphological disparity and systematic revision of the eocrinoid genus Rhopalocystis (Echinodermata, Blastozoa) from the Lower Ordovician of the central Anti-Atlas (Morocco)",
+    "volume": 91,
+    "year": 2017
    },
    "claims": {
     "acceptance": 6,
@@ -5915,6 +9623,20 @@
     "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman.md",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Briggs",
+     "Siveter",
+     "Siveter",
+     "Sutton",
+     "Rahman"
+    ],
+    "in": "Proceedings of the Royal Society B",
+    "number": 1862,
+    "title": "An edrioasteroid from the Silurian Herefordshire Lagerstätte of England reveals the nature of the water vascular system in an extinct echinoderm",
+    "volume": 284,
+    "year": 2017
+   },
    "claims": {
     "act": 3,
     "placement": 6,
@@ -5936,6 +9658,26 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Nardin",
+     "Lefebvre",
+     "Fatka",
+     "Nohejlová",
+     "Kašiča",
+     "Šinágl",
+     "Szabad"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 4,
+    "pages": [
+     672,
+     684
+    ],
+    "title": "Evolutionary implications of a new transitional blastozoan echinoderm from the middle Cambrian of the Czech Republic",
+    "volume": 91,
+    "year": 2017
    },
    "claims": {
     "acceptance": 3,
@@ -5964,6 +9706,22 @@
     "notes": "Migrated from complete: named=null open=null history=null specimens.basic=null specimens.all=null\n",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Zamora",
+     "Deline",
+     "Álvaro",
+     "Rahman"
+    ],
+    "in": "Earth-Science Reviews",
+    "pages": [
+     478,
+     491
+    ],
+    "title": "The Cambrian Substrate Revolution and the early evolution of attachment in suspension-feeding echinoderms",
+    "volume": 171,
+    "year": 2017
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -5977,6 +9735,23 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Zamora",
+     "Sumrall",
+     "Zhu",
+     "Lefebvre"
+    ],
+    "in": "Geological Magazine",
+    "number": 3,
+    "pages": [
+     465,
+     475
+    ],
+    "title": "A new stemmed echinoderm from the Furongian of China and the origin of Glyptocystitida (Blastozoa, Echinodermata)",
+    "volume": 154,
+    "year": 2017
    },
    "claims": {
     "act": 3,
@@ -6006,6 +9781,21 @@
     "notes": "Migrated from complete: named=true open=null history=false specimens.basic=null specimens.all=null\n",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Lefebvre",
+     "Lerosey-Aubril"
+    ],
+    "in": "Geological Magazine",
+    "number": 5,
+    "pages": [
+     1190,
+     1204
+    ],
+    "title": "Laurentian origin of solutan echinoderms: new evidence from the Guzhangian (Cambrian Series 3) Weeks Formation of Utah, USA",
+    "volume": 155,
+    "year": 2018
+   },
    "claims": {
     "act": 3,
     "material": 3,
@@ -6031,6 +9821,24 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Nohejlová",
+     "Nardin",
+     "Fatka",
+     "Kašiča",
+     "Szabad"
+    ],
+    "in": "Journal of Systematic Palaeontology",
+    "number": 19,
+    "pages": [
+     1619,
+     1634
+    ],
+    "title": "Morphology, palaeoecology and phylogenetic interpretation of the Cambrian echinoderm Vyscystis (Barrandian area, Czech Republic)",
+    "volume": 17,
+    "year": 2019
+   },
    "claims": {
     "act": 1,
     "placement": 14,
@@ -6052,6 +9860,23 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Wen",
+     "Babcock",
+     "Peng",
+     "Robison"
+    ],
+    "in": "Bulletin of Geosciences",
+    "number": 1,
+    "pages": [
+     115,
+     124
+    ],
+    "title": "New edrioasteroid (Echinodermata) from the Spence Shale (Cambrian), Idaho, USA: further evidence of attachment in the early evolutionary history of edrioasteroids",
+    "volume": 94,
+    "year": 2019
    },
    "claims": {
     "act": 2,
@@ -6088,6 +9913,23 @@
     "notes": "Reviewed against the paper 2026-09-09; see docs/reviews/review_2020_ewin_martin.m_isotalo_zamora.md",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Ewin",
+     "Martin",
+     "Isotalo",
+     "Zamora"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 1,
+    "pages": [
+     115,
+     130
+    ],
+    "title": "New rhenopyrgid edrioasteroids (Echinodermata) and their implications for taxonomy, functional morphology, and paleoecology",
+    "volume": 94,
+    "year": 2020
+   },
    "claims": {
     "acceptance": 11,
     "act": 4,
@@ -6122,6 +9964,26 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Guensburg",
+     "Sprinkle",
+     "Mooi",
+     "Lefebvre",
+     "David",
+     "Roux",
+     "Derstler"
+    ],
+    "in": "Journal of Paleontology",
+    "number": 2,
+    "pages": [
+     311,
+     333
+    ],
+    "title": "Athenacrinus n. gen. and other early echinoderm taxa inform crinoid origin and arm evolution",
+    "volume": 94,
+    "year": 2020
+   },
    "claims": {
     "act": 4,
     "material": 2,
@@ -6148,6 +10010,22 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Zamora",
+     "Sprinkle",
+     "Sumrall"
+    ],
+    "in": "Acta Palaeontologica Polonica",
+    "number": 3,
+    "pages": [
+     455,
+     465
+    ],
+    "title": "A revaluation of rhipidocystid echinoderms based on a new flattened blastozoan from the Upper Ordovician of Maryland, USA",
+    "volume": 65,
+    "year": 2020
    },
    "claims": {
     "act": 3,
@@ -6184,6 +10062,21 @@
     "notes": "Migrated from complete: named=true open=true history=true specimens.basic=true specimens.all=true\nNon-echinoderm trees not captured\nReviewed against the paper 2026-09-09; see docs/reviews/review_2021_jell_sprinkle.md\n",
     "state": "partial"
    },
+   "citation": {
+    "authors": [
+     "Jell",
+     "Sprinkle"
+    ],
+    "in": "Alcheringa",
+    "number": 1,
+    "pages": [
+     1,
+     55
+    ],
+    "title": "Revision of Whitehouse’s eocrinoids Peridionites and Cymbionites, with description of the associated fauna including two new echinoderm genera, lower Middle Cambrian Thorntonia Limestone, northwestern Queensland",
+    "volume": 45,
+    "year": 2021
+   },
    "claims": {
     "acceptance": 6,
     "act": 13,
@@ -6211,6 +10104,20 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Parsley"
+    ],
+    "in": "Paleontological Journal",
+    "number": 9,
+    "pages": [
+     966,
+     976
+    ],
+    "title": "Evolution, Functional Morphology and Paedomorphism in the Gogiid-Ascocystitid Lineage (Eocrinoidea; Cambrian-Ordovician)",
+    "volume": 55,
+    "year": 2021
+   },
    "claims": {
     "act": 1,
     "diagnosis": 1,
@@ -6233,6 +10140,20 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Deshmukh"
+    ],
+    "in": "Historia Naturalis Bulgarica",
+    "number": 3,
+    "pages": [
+     23,
+     24
+    ],
+    "title": "Parsleya nomen novum: a replacement name for the preoccupied Kailidiscus Zhao, Sumrall, Parsley et Peng, 2010 (Echinodermata: Edrioasteroidea)",
+    "volume": 44,
+    "year": 2022
    },
    "claims": {
     "acceptance": 2,
@@ -6257,6 +10178,19 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Zamora",
+     "Rahman",
+     "Sumrall",
+     "Gibson",
+     "Thompson"
+    ],
+    "in": "Proceedings of the Royal Society B",
+    "title": "Cambrian edrioasteroid reveals new mechanism for secondary reduction of the skeleton in echinoderms",
+    "volume": 289,
+    "year": 2022
    },
    "claims": {
     "act": 4,
@@ -6286,6 +10220,23 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Zhao",
+     "Guo",
+     "Selden",
+     "Cong",
+     "Li"
+    ],
+    "in": "Palaeoworld",
+    "pages": [
+     185,
+     193
+    ],
+    "title": "A new eocrinoid from the Guanshan Biota (Cambrian Series 2, Stage 4), with implication of the development of different attachment modes in early Cambrian",
+    "volume": 31,
+    "year": 2022
+   },
    "claims": {
     "act": 4,
     "placement": 6,
@@ -6308,6 +10259,19 @@
    },
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Zhao",
+     "Rahman",
+     "Zamora",
+     "Chen",
+     "Cong"
+    ],
+    "in": "Papers in Palaeontology",
+    "number": 8,
+    "title": "The first edrioasteroid echinoderm from the lower Cambrian Chengjiang biota of Yunnan Province, China",
+    "year": 2022
    },
    "claims": {
     "act": 4,
@@ -6336,6 +10300,21 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Wang",
+     "Nohejlová",
+     "Sun",
+     "Zeng",
+     "Lefebvre",
+     "Yang",
+     "Zhao"
+    ],
+    "in": "Palaeogeography, Palaeoclimatology, Palaeoecology",
+    "title": "First report of lepidocystid echinoderm in the Cambrian of North China- Evolutionary and Palaeobiogeographic implications",
+    "volume": 644,
+    "year": 2024
+   },
    "claims": {
     "act": 3,
     "placement": 5,
@@ -6359,6 +10338,21 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Zamora",
+     "Guensburg",
+     "Sprinkle"
+    ],
+    "in": "Journal of Paleontology",
+    "pages": [
+     952,
+     958
+    ],
+    "title": "Redescription of the Cambrian edrioasteroid Sprinkleoglobus spencensis n. comb. (Wen et al., 2019) from the Spence Shale (Utah, USA)",
+    "volume": 98,
+    "year": 2024
+   },
    "claims": {
     "act": 3,
     "material": 1,
@@ -6381,6 +10375,21 @@
    "audit": {
     "state": "unaudited"
    },
+   "citation": {
+    "authors": [
+     "Savage",
+     "Rahman"
+    ],
+    "in": "Acta Palaeontologica Polonica",
+    "number": 1,
+    "pages": [
+     175,
+     178
+    ],
+    "title": "First evidence of attached juveniles in the solutan echinoderm Pahvanticystis from the middle Cambrian Weeks Formation (Utah, USA)",
+    "volume": 70,
+    "year": 2025
+   },
    "claims": {},
    "derived": {},
    "inconsistencies": [],
@@ -6391,6 +10400,14 @@
    "acts": {},
    "audit": {
     "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Sprinkle",
+     "Strimple"
+    ],
+    "title": null,
+    "year": null
    },
    "claims": {},
    "derived": {},
