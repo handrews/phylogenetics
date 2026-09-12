@@ -27,16 +27,16 @@ def store():
 def test_classification_text_and_markdown(store):
   block = store.contents('1994_guensburg_sprinkle', 'astrocystitidae', style='json')[0]
   assert render.render(block, 'text') == (
-    'Astrocystitidae\n  Astrocystites\n  Cambroblastus\n  Lampteroblastus*\n'
-    '    hintzei*'
+    'Astrocystitidae emend.\n  Astrocystites\n  Cambroblastus\n  Lampteroblastus*\n'
+    '    hintzei* [type]'
   )
-  assert render.render(block, 'markdown').startswith('```\nAstrocystitidae\n')
+  assert render.render(block, 'markdown').startswith('```\nAstrocystitidae emend.\n')
   assert 'rendered' not in block
 
 
 def test_provisional_and_placeholder_marks(store):
   bassler = store.contents('1935_bassler', 'astrocystitidae', style='json')[0]
-  assert render.render(bassler, 'text').splitlines()[0] == 'Astrocystitidae*'
+  assert render.render(bassler, 'text').splitlines()[0] == 'Astrocystitidae* nom. correct.'
   holloway = store.contents('1983_holloway_jell', 'edrioasteroidea', depth=1, style='json')[0]
   lines = render.render(holloway, 'text').splitlines()
   assert lines[1] == '  [edrioasteroidea-order-uncertain_holloway_jell_1983]'
@@ -91,7 +91,7 @@ def test_composition(store):
   composition = blocks.compose([a, b], 'Rhenopyrgidae in Holloway & Jell 1983; material coverage.')
   text = render.render_composition(composition, 'text')
   assert text.startswith('Rhenopyrgidae in Holloway & Jell 1983; material coverage.\n\nThe material')
-  assert text.endswith('Rhenopyrgidae*\n  Rhenopyrgus\n    coronaeformis\n    grayae\n    whitei*')
+  assert text.endswith('Rhenopyrgidae*\n  Rhenopyrgus\n    coronaeformis [type]\n    grayae\n    whitei*')
   assert composition['compositionId'] == blocks.compose([a, b], composition['header'])['compositionId']
 
 

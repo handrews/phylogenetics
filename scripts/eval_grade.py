@@ -1,26 +1,30 @@
 #!/usr/bin/env python3
-"""Grade a run of the eval: mechanical checks, then a judge model.
+"""Grade a run of the eval: mechanical checks over compositions, a judge on request.
 
-    poetry run python scripts/eval_grade.py eval/runs/2026-09-11-claude-sonnet-5.jsonl
-    poetry run python scripts/eval_grade.py <run> --no-judge
+    poetry run python scripts/eval_grade.py eval/runs/2026-09-12-claude-sonnet-5.jsonl
     poetry run python scripts/eval_grade.py <run> --judge claude-opus-5
 
-Mechanical checks per question class:
+An answer is a composition: a header, blocks the tools returned, and
+perhaps a question back. The mechanical checks, all on by default:
 
-- with expected claims: the model retrieved, through the tools, a claim
-  matching every expected selector, and the answer names each expected
-  source's author and year (and the page when `evidence` gives one);
-- not-captured: the answer says the material has not yet been entered
-  or is not captured, and does not say the paper lacks it;
-- absent: the model asked the corpus (a name resolution or a source
-  lookup) and the answer names nothing outside it as fact.
+- a composition exists and every block id in it came from this
+  conversation;
+- for a question with expected claims, every selector matches a claim
+  referenced by a composed block (completeness: retrieval alone does not
+  count);
+- a not-captured question composes a gap block for the scoped source
+  and kind of statement; an absent question composes an absent or
+  unentered-source block, and no block about the scoped taxon when no
+  source is given;
+- the header and any question contain no leak of internals and no
+  verdict; the model wrote no free text beyond them;
+- when the evidence names a page and a composed block carries it, the
+  rendered answer shows it.
 
-The judge scores each answer 0-2 on three axes against the expected
-answer and the contract in eval/README.md: grounded (every fact traceable
-to the corpus), complete (what the expected answer holds is there), and
-contract (refusal language, trajectory structure, no verdict, no leak of
-tools or planning). Writes `<run>.grades.jsonl` and `<run>.md`, a summary
-with per-class pass rates and every failure, for the owner's review.
+With --judge, a judge model scores the header and question only, for
+contract (0-2). Writes `<run>.grades.jsonl` and `<run>.md`, a summary
+with per-class pass rates and every failure with the composition the
+model chose, for the owner's review.
 """
 
 import argparse
@@ -41,8 +45,15 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 QUESTIONS = ROOT / 'eval' / 'questions.yaml'
 README = ROOT / 'eval' / 'README.md'
 
-NOT_CAPTURED_WORDS = re.compile(
-  r'not (yet )?been entered|not captured|has not been entered|not yet entered',
+LEAK_WORDS = re.compile(
+  r'\b(yaml|json|jsonl|claim table|record key|taxon_key|source_key|'
+  r'coverage value|gold slice|milestone|MVP|resolve_name|claims_about|'
+  r'source_coverage|name_history|block id|blockId|tool)\b',
+  re.I,
+)
+VERDICT_WORDS = re.compile(
+  r'\b(is a valid|is the correct|correctly|incorrectly|should be|clearly|'
+  r'stands unopposed|is a genus|is a subgenus|is a synonym)\b',
   re.I,
 )
 DENIAL_WORDS = re.compile(
@@ -50,12 +61,7 @@ DENIAL_WORDS = re.compile(
   r'(does not|doesn\'t) (mention|print|give|provide|designate|report)',
   re.I,
 )
-LEAK_WORDS = re.compile(
-  r'\b(yaml|json|jsonl|claim table|record key|taxon_key|source_key|'
-  r'coverage value|gold slice|milestone|MVP|resolve_name|claims_about|'
-  r'source_coverage|name_history)\b',
-  re.I,
-)
+NEGATED = re.compile(r'(not evidence that|not that|rather than|never that)[^.]{0,60}$', re.I)
 
 
 def load_jsonl(path):
@@ -63,207 +69,171 @@ def load_jsonl(path):
     return [json.loads(line) for line in fd if line.strip()]
 
 
-def retrieved_ids(record):
-  ids = set()
-  for call in record['toolCalls']:
-    result = call.get('result') or {}
-    ids.update(result.get('ids', ()))
-  return ids
+def composed_claims(record):
+  comp = record.get('composition') or {}
+  return {c for b in comp.get('blocks') or () for c in b.get('claims') or ()}
 
 
-def asked_corpus(record):
-  return any(
-    c['name'] in ('resolve_name', 'source_coverage') for c in record['toolCalls']
-  )
+def composed_blocks(record):
+  return (record.get('composition') or {}).get('blocks') or []
 
 
-def _page_seen(got, source_key, page):
-  for claim in got:
-    if claim['source'] != source_key:
-      continue
-    pages = claim.get('pages')
-    if pages is None:
-      continue
-    for item in (pages if isinstance(pages, list) else [pages]):
-      if item == page or (isinstance(item, list) and len(item) == 2
-                          and item[0] <= page <= item[1]):
-        return True
-  return False
+def _denial(text):
+  for m in DENIAL_WORDS.finditer(text):
+    before = text[max(0, m.start() - 70):m.start()]
+    if not NEGATED.search(before):
+      return m.group(0)
+  return None
 
 
 def mechanical(record, question, store):
-  """A list of failure strings and a list of notes; no failures means
-  every check passed. A trajectory answer that did not retrieve one of
-  its expected claims gets a note, since the judge grades its
-  completeness; a point answer gets a failure."""
-  failures = []
-  notes = []
+  """(failures, notes)."""
+  failures, notes = [], []
   expected = question.get('expected') or {}
-  answer = record['answer'] or ''
-  if not answer.strip():
-    return ['no answer produced'], notes
+  scope = question.get('scope') or {}
+  comp = record.get('composition')
+  if not comp:
+    failures.append('no composition (the model answered in prose or not at all)')
+    return failures, notes
+  if comp.get('invalidIds'):
+    failures.append(f"submitted block ids the tools never returned: {comp['invalidIds']}")
+  if comp.get('freeText'):
+    failures.append('free text beyond header and question: ' +
+                    ' | '.join(t[:80] for t in comp['freeText']))
+  header = (comp.get('header') or '') + ' ' + (comp.get('question') or '')
+  leak = LEAK_WORDS.search(header)
+  if leak:
+    failures.append(f'header leaks internals: "{leak.group(0)}"')
+  verdict = VERDICT_WORDS.search(header)
+  if verdict:
+    failures.append(f'header passes a verdict: "{verdict.group(0)}"')
+  denial = _denial(header)
+  if denial:
+    failures.append(f'header says the paper lacks it: "{denial}"')
 
+  claims = composed_claims(record)
+  got = [store.by_id[c] for c in claims if c in store.by_id]
   selectors = expected.get('claims') or []
-  if selectors:
-    ids = retrieved_ids(record)
-    got = [c for source_claims in store.by_source.values()
-           for c in source_claims if c['id'] in ids]
-    cited_sources = set()
-    for selector in selectors:
-      if not any(matches(selector, c) for c in got):
-        message = f'did not retrieve a claim matching {selector}'
-        (notes if question['class'] == 'trajectory' else failures).append(message)
-      cited_sources.add(selector['source'])
-    for source_key in sorted(cited_sources):
-      row = store.sources.get(source_key)
-      if row is None:
-        continue
-      citation = row['citation']
-      year = str(citation.get('year'))
-      family = (citation.get('authors') or [''])[0]
-      if year not in answer or family.split('.')[0].lower() not in answer.lower():
-        failures.append(f'answer does not cite {store.cite(source_key)}')
-    evidence = question.get('evidence') or {}
-    pages = evidence.get('pages') if isinstance(evidence, dict) else None
-    if isinstance(pages, int) and str(pages) not in answer:
-      source_key = evidence.get('source') or next(iter(cited_sources), None)
-      if _page_seen(got, source_key, pages):
-        failures.append(f'answer does not give page {pages}')
-      else:
-        notes.append(f'page {pages} was not among the retrieved claims')
+  for selector in selectors:
+    if not any(matches(selector, c) for c in got):
+      failures.append(f'no composed block carries a claim matching {selector}')
+  evidence = question.get('evidence') or {}
+  if isinstance(evidence, dict):
+    page = evidence.get('pages')
+    if isinstance(page, int) and str(page) not in (record.get('rendered') or ''):
+      source_key = evidence.get('source')
+      carried = any(
+        c['source'] == (source_key or c['source']) and _has_page(c, page) for c in got
+      )
+      (failures if carried else notes).append(
+        f'page {page} {"not shown" if carried else "not among the composed claims"}'
+      )
 
+  blocks = composed_blocks(record)
   refusal = expected.get('refusal')
   if refusal == 'not-captured':
-    if not NOT_CAPTURED_WORDS.search(answer):
-      failures.append('refusal does not say the material has not yet been entered')
-    if DENIAL_WORDS.search(answer):
-      failures.append('refusal says the paper lacks it: ' +
-                      DENIAL_WORDS.search(answer).group(0))
+    wanted = (scope.get('source'), expected.get('coverageKind'))
+    gaps = [b for b in blocks if b['type'] == 'statement' and
+            (b.get('parameters') or {}).get('source') == wanted[0] and
+            (b.get('parameters') or {}).get('kind') == wanted[1]]
+    if not gaps:
+      failures.append(f'no gap block for {wanted[0]} / {wanted[1]}')
   elif refusal == 'absent':
-    if not asked_corpus(record):
-      failures.append('answered without asking the corpus')
-    if DENIAL_WORDS.search(answer) and 'corpus' not in answer.lower():
-      failures.append('absence stated as a fact about the paper')
-
-  leak = LEAK_WORDS.search(answer)
-  if leak:
-    failures.append(f'answer leaks internals: "{leak.group(0)}"')
-  if record.get('stopReason') == 'max_tokens':
-    notes.append('answer cut at the output token limit')
-  elif record.get('stopReason') == 'max_turns':
-    notes.append('answered after the lookup limit was reached')
+    statements = [b for b in blocks if b['type'] == 'statement']
+    if scope.get('source'):
+      ok = any((b.get('parameters') or {}).get('source') == scope['source'] for b in statements)
+      if not ok:
+        failures.append(f"no block states that {scope['source']} is not entered")
+    else:
+      if not statements and blocks:
+        failures.append('an absent question composed only blocks with content')
+      taxon = scope.get('taxon')
+      if taxon and any(store.by_id[c]['subject'] == taxon for c in claims if c in store.by_id):
+        failures.append(f'a composed block makes statements about {taxon}')
+  if record.get('stopReason') == 'max_turns':
+    notes.append('composed after the lookup limit was reached')
   return failures, notes
 
 
-JUDGE_PROMPT = """You are grading one answer from a question-answering system that may use only a closed corpus of published taxonomic opinions. Score the answer on three axes, each 0, 1 or 2, and give a one-sentence reason for each.
+def _has_page(claim, page):
+  pages = claim.get('pages')
+  if pages is None:
+    return False
+  for item in (pages if isinstance(pages, list) else [pages]):
+    if item == page or (isinstance(item, list) and len(item) == 2 and item[0] <= page <= item[1]):
+      return True
+  return False
 
-grounded: 2 if every fact in the answer could come from the corpus as the expected answer describes it and nothing is added from general knowledge; 1 if one detail is unsupported or embellished; 0 if the answer asserts facts the expected answer contradicts or that the corpus could not hold.
 
-complete: 2 if what the expected answer holds is present (the same sources, positions, counts or refusal); 1 if part is missing; 0 if the substance is missing or wrong.
-
-contract: 2 if the answer follows the contract below for its class (a refusal names the gap as not yet entered, never as the paper lacking it; a trajectory leads with the measured present, then history, then dissent, and passes no verdict; no mention of tools, records, files, fields, storage, or planning; the language of the scientific community); 1 for one lapse; 0 for more.
-
-Reply with JSON only, each reason at most 25 words: {"grounded": n, "complete": n, "contract": n, "reasons": {"grounded": "...", "complete": "...", "contract": "..."}}
-
-The contract (from the eval's README):
-<contract>
-%s
-</contract>
+JUDGE_PROMPT = """You are grading the header and question of an answer assembled from blocks of a closed corpus of published taxonomic opinions. The blocks themselves are computed and are not graded here. Score contract 0, 1 or 2: 2 if the header states only the parameters chosen (which records the group is, whether synonyms and rank variants are included, which trees, the year range) in the language of the scientific community, passes no verdict, and the question (if any) asks about a genuinely ambiguous parameter; 1 for one lapse (a summary, a mechanism word, a judgement); 0 for more. Reply with JSON only: {"contract": n, "reason": "..."} with the reason at most 25 words.
 
 Question class: %s
 Question: %s
-
 Expected answer:
 <expected>
 %s
 </expected>
-
-The system's answer:
-<answer>
-%s
-</answer>
+Header: %s
+Question back: %s
 """
 
 
-def judge(client, model, contract, record, question):
+def judge(client, model, record, question):
+  comp = record.get('composition') or {}
   expected = question.get('expected') or {}
   prompt = JUDGE_PROMPT % (
-    contract, question['class'], question['question'],
+    question['class'], question['question'],
     expected.get('answer', '(a refusal: ' + str(expected.get('refusal')) + ')'),
-    record['answer'],
+    comp.get('header') or '(none)', comp.get('question') or '(none)',
   )
-  messages = [{'role': 'user', 'content': prompt}]
-  axes = ('grounded', 'complete', 'contract')
-  for attempt in range(2):
-    response = client.messages.create(
-      model=model, max_tokens=2000, messages=messages,
-    )
-    text = ''.join(b.text for b in response.content if b.type == 'text')
-    match = re.search(r'\{.*\}', text, re.S)
-    try:
-      verdict = json.loads(match.group(0)) if match else None
-    except json.JSONDecodeError:
-      verdict = None
-    if isinstance(verdict, dict) and all(
-      isinstance(verdict.get(axis), int) for axis in axes
-    ):
-      return verdict
-    # The judge sometimes writes a reason for an axis and drops its
-    # integer; ask once more for all three.
-    missing = [a for a in axes if not isinstance((verdict or {}).get(a), int)]
-    messages += [
-      {'role': 'assistant', 'content': text or '(empty)'},
-      {'role': 'user', 'content': (
-        f'Your reply omitted the integer score for: {", ".join(missing)}. '
-        'Reply again with the complete JSON: all three integer scores and '
-        'the three reasons.'
-      )},
-    ]
-  return {'error': text, 'stopReason': response.stop_reason}
-
-
-def contract_text():
-  text = README.read_text()
-  start = text.index('## The answer contract')
-  end = text.index('## The entries')
-  return text[start:end]
+  response = client.messages.create(model=model, max_tokens=600,
+                                    messages=[{'role': 'user', 'content': prompt}])
+  text = ''.join(b.text for b in response.content if b.type == 'text')
+  match = re.search(r'\{.*\}', text, re.S)
+  try:
+    verdict = json.loads(match.group(0)) if match else None
+  except json.JSONDecodeError:
+    verdict = None
+  return verdict if isinstance(verdict, dict) and 'contract' in verdict else {'error': text}
 
 
 def summary(path, grades):
-  by_class = collections.defaultdict(lambda: {'n': 0, 'mechanical': 0, 'judge': 0})
+  by_class = collections.defaultdict(lambda: {'n': 0, 'pass': 0})
   for grade in grades:
     row = by_class[grade['class']]
     row['n'] += 1
     if not grade['failures']:
-      row['mechanical'] += 1
-    j = grade.get('judge') or {}
-    if all(j.get(axis) == 2 for axis in ('grounded', 'complete', 'contract')):
-      row['judge'] += 1
+      row['pass'] += 1
   lines = [f'# Grades for `{path.name}`', '']
-  lines.append('| class | questions | mechanical pass | judge 2/2/2 |')
-  lines.append('|---|---|---|---|')
+  lines.append('| class | questions | mechanical pass |')
+  lines.append('|---|---|---|')
   for cls, row in sorted(by_class.items()):
-    lines.append(f"| {cls} | {row['n']} | {row['mechanical']} | {row['judge']} |")
+    lines.append(f"| {cls} | {row['n']} | {row['pass']} |")
   lines.append('')
-  lines.append('## Failures and low scores')
+  lines.append('## Failures and notes')
   lines.append('')
   for grade in grades:
-    j = grade.get('judge') or {}
-    low = {a: j[a] for a in ('grounded', 'complete', 'contract') if j.get(a, 2) < 2}
-    if not grade['failures'] and not low and not grade.get('notes'):
+    if not grade['failures'] and not grade.get('notes'):
       continue
     lines.append(f"### {grade['id']} ({grade['class']})")
     lines.append('')
     lines.append(f"Q: {grade['question']}")
     lines.append('')
     for failure in grade['failures']:
-      lines.append(f'- mechanical: {failure}')
+      lines.append(f'- failure: {failure}')
     for note in grade.get('notes') or ():
       lines.append(f'- note: {note}')
-    for axis, score in low.items():
-      lines.append(f"- judge {axis} {score}: {j.get('reasons', {}).get(axis, '')}")
+    if grade.get('judge'):
+      lines.append(f"- judge contract {grade['judge'].get('contract')}: {grade['judge'].get('reason', '')}")
+    comp = grade.get('composition') or {}
     lines.append('')
-    lines.append('> ' + (grade['answer'] or '').strip().replace('\n', '\n> '))
+    lines.append(f"Header: {comp.get('header', '')}")
+    for b in comp.get('blocks') or ():
+      lines.append(f"- {b['type']} {json.dumps(b.get('parameters'), ensure_ascii=False)}")
+    if comp.get('question'):
+      lines.append(f"Question back: {comp['question']}")
+    lines.append('')
+    lines.append('> ' + (grade['rendered'] or '').strip().replace('\n', '\n> '))
     lines.append('')
   return '\n'.join(lines) + '\n'
 
@@ -271,8 +241,7 @@ def summary(path, grades):
 def main(argv):
   parser = argparse.ArgumentParser(description=__doc__.split('\n\n')[0])
   parser.add_argument('run', type=pathlib.Path)
-  parser.add_argument('--judge', default='claude-opus-5')
-  parser.add_argument('--no-judge', action='store_true')
+  parser.add_argument('--judge', help='judge model for the header and question')
   args = parser.parse_args(argv)
 
   with open(QUESTIONS) as fd:
@@ -281,32 +250,26 @@ def main(argv):
   records = load_jsonl(args.run)
 
   client = None
-  contract = None
-  if not args.no_judge:
+  if args.judge:
     import anthropic
     from eval_run import api_key  # noqa: E402
     client = anthropic.Anthropic(api_key=api_key())
-    contract = contract_text()
 
   grades = []
   for record in records:
     question = questions[record['id']]
+    failures, notes = mechanical(record, question, store)
     grade = {
-      'id': record['id'],
-      'class': record['class'],
-      'question': record['question'],
-      'answer': record['answer'],
+      'id': record['id'], 'class': record['class'], 'question': record['question'],
+      'composition': record.get('composition'), 'rendered': record.get('rendered'),
+      'failures': failures, 'notes': notes,
     }
-    grade['failures'], grade['notes'] = mechanical(record, question, store)
     if client is not None:
-      grade['judge'] = judge(client, args.judge, contract, record, question)
+      grade['judge'] = judge(client, args.judge, record, question)
       grade['judgeModel'] = args.judge
     grades.append(grade)
-    status = 'ok ' if not grade['failures'] else 'FAIL'
-    scores = grade.get('judge') or {}
-    print(f"{grade['id']} {status} "
-          f"{scores.get('grounded', '-')}/{scores.get('complete', '-')}/{scores.get('contract', '-')} "
-          + '; '.join(grade['failures']))
+    status = 'ok ' if not failures else 'FAIL'
+    print(f"{grade['id']} {status} " + '; '.join(failures))
 
   grades_path = args.run.with_suffix('.grades.jsonl')
   with open(grades_path, 'w') as fd:

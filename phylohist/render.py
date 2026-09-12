@@ -61,6 +61,17 @@ def _node_label(node):
     name += '*'
   if (node.get('flags') or {}).get('questionable'):
     name += ' ?'
+  # The acts a listing prints beside a name, in the community's abbreviations.
+  for act in node.get('acts') or ():
+    kind = act.get('act')
+    mark = {
+      'type': '[type]', 'emended': 'emend.', 'nomTransl': 'nom. transl.',
+      'corrected': 'nom. correct.',
+    }.get(kind)
+    if kind in ('moved', 'removed'):
+      mark = f"({act.get('words')})"
+    if mark:
+      name += ' ' + mark + (' (inferred)' if act.get('inferred') else '')
   return name
 
 
