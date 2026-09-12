@@ -1,21 +1,18 @@
-import sys
-import pathlib
-import logging
-import collections
-import argparse
+"""Loading the corpus into the object model.
 
-import yaml
-import jschon
+`load()` reads every data file through `phylohist.io`, registers authors,
+publications and sources, builds the taxa and then every tree, and
+returns the raw data with the tree roots per source. The scripts, the
+tests and the extractor all come through here.
+"""
+
+import logging
 
 from .io import load_files
 from .research import Author, Publication, Source
-from .taxa import Taxon, Tree, print_taxa
-from .convert import convert
+from .taxa import Taxon, Tree
 
 logger = logging.getLogger(__name__)
-
-schema_catalog = jschon.create_catalog('2020-12')
-"""The default shared ``jschon`` schema loader and cache"""
 
 
 def _basic_load(data, field, cls):
@@ -129,71 +126,14 @@ def _load_trees(data):
   return data
 
 
-def main():
-  parser = argparse.ArgumentParser(
-    prog='phylohist',
-  )
-  parser.add_argument('-t', '--type', nargs='+', action='extend', default=['x'])
-  parser.add_argument('-r', '--root', nargs='+', action='extend', default=[])
-  parser.add_argument('-l', '--leaf', nargs='+', action='extend', default=[])
-  parser.add_argument('-b', '--branch', nargs='+', action='extend', default=[])
-  parser.add_argument('-f', '--find', nargs='+', action='extend', default=[])
-  parser.add_argument('-m', '--match', default=False, action='store_true')
-  parser.add_argument('-i', '--highest')
-  parser.add_argument('-w', '--lowest')
-  parser.add_argument('-a', '--author', nargs='+', action='extend', default=[])
-  parser.add_argument(
-    '-d', '--draft', default=False, action='store_true',
-    help='also load the unaudited trees under drafts/',
-  )
-  args = parser.parse_args()
-
-  taxa = frozenset(
-    args.find if args.find else (
-      args.branch if args.branch else (
-        args.root if args.root else args.leaf
-      )
-    )
-  )
-
-  tree_types = set()
-  # If 'a' is present, leave set empty to indicate all types.
-  if 'a' not in args.type:
-    if 'x' in args.type:
-      tree_types.add(Tree.TYPE_TAXONOMY)
-    if 't' in args.type:
-      tree_types.add(Tree.TYPE_TABLE)
-    if 'c' in args.type:
-      tree_types.add(Tree.TYPE_CLADOGRAM)
-    if 'd' in args.type:
-      tree_types.add(Tree.TYPE_DIAGRAM)
-    if 'o' in args.type:
-      tree_types.add(Tree.TYPE_OTHER)
-
-  data = load_files(drafts=args.draft)
-
+def load(drafts=False):
+  """``(data, roots)``: the loaded data files and ``{source: [roots]}``."""
+  data = load_files(drafts=drafts)
   for field, cls in (
     ('authors', Author),
     ('publications', Publication),
     ('sources', Source),
   ):
     _basic_load(data, field, cls)
-
   _load_taxa(data)
-  _load_trees(data)
-
-  if taxa or args.author:
-    if taxa:
-      logger.info(f'...searching for taxon "{taxa}"')
-    else:
-      logger.info(f'...searching for opinions by "{args.author}"')
-    print_taxa(
-      taxa=taxa,
-      authors=frozenset(args.author),
-      tree_types=frozenset(tree_types),
-      root=frozenset(args.root if args.root else args.branch),
-      leaf=frozenset(args.leaf),
-      branch=frozenset(args.branch),
-      highest=args.highest,
-      lowest=args.lowest,
-    )
+  return data, _load_trees(data)
