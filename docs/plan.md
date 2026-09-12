@@ -159,9 +159,12 @@ framing: the model is a planner, execution and assembly are code)
   (`cli.py`, replacing the tree printer), the runner composing with
   `submit` and the grader grading compositions. `moved` yields a
   rejection; every nomen translatum record is linked to its base.
-- Next: the second Sonnet 5 run on its own branch, once the owner has
-  tried the block tools; then step 2, a plan the model emits and code
-  executes, designed from the compositions the run records.
+- Second run (done 2026-09-12: `docs/eval-writeup-2.md`, on
+  `eval/runs/2026-09-12-claude-sonnet-5.*`): the 49 questions through
+  the block tools, Sonnet 5 composing, Opus 5 judging the headers; the
+  write-up catalogues the composition shapes per class.
+- Next: step 2, a plan the model emits and code executes, designed from
+  the compositions in `docs/eval-writeup-2.md`.
 
 **M4. Materials** (S4)
 - D1–D5 as a design decision, with the specimen cases the reviews
