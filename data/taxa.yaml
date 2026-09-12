@@ -3892,8 +3892,7 @@ edrioasteroidea-sp_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_p
 edrioblastoida:
   name: Edrioblastoida
   rank: Order
-  auth: [fay]
-  year: 1962
+  altRankOf: edrioblastoidea
 edrioblastoidea:
   name: Edrioblastoidea
   rank: Class

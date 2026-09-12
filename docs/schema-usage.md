@@ -216,14 +216,14 @@ property.
 |---|---|---|
 | `name` | 2682 | 98.6% |
 | `authority` | 1536 | 56.4% |
-| `auth` | 940 | 34.5% |
-| `year` | 937 | 34.4% |
+| `auth` | 939 | 34.5% |
+| `year` | 936 | 34.4% |
 | `rank` | 716 | 26.3% |
 | `notes` | 216 | 7.9% |
 | `altSpellingOf` | 165 | 6.1% |
 | `lang` | 75 | 2.8% |
 | `originalParent` | 65 | 2.4% |
-| `altRankOf` | 58 | 2.1% |
+| `altRankOf` | 59 | 2.2% |
 | `vulgarSpellingOf` | 47 | 1.7% |
 | `in` | 26 | 1.0% |
 | `homonym` | 16 | 0.6% |

@@ -10466,8 +10466,9 @@
   "folded": [
    "edrioblastoida"
   ],
-  "kind": "primary",
+  "kind": "altRankOf",
   "name": "Edrioblastoida",
+  "of": "edrioblastoidea",
   "rank": "Order"
  },
  "edrioblastoidea": {
