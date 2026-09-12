@@ -9611,25 +9611,25 @@ rhenopyrgus-sp_grigo_2000:
     source: 2000_grigo
 rhenopyrgus-sp-1_ewin_martin.m_isotalo_zamora_2020:
   name: null
-  identifier: Rhenopyrgus sp. indet. 1
+  designation: Rhenopyrgus sp. indet. 1
   rank: species
   authority:
     source: 2020_ewin_martin.m_isotalo_zamora
 rhenopyrgus-sp-2_ewin_martin.m_isotalo_zamora_2020:
   name: null
-  identifier: Rhenopyrgus sp. indet. 2
+  designation: Rhenopyrgus sp. indet. 2
   rank: species
   authority:
     source: 2020_ewin_martin.m_isotalo_zamora
 rhenopyrgus-sp-3_ewin_martin.m_isotalo_zamora_2020:
   name: null
-  identifier: Rhenopyrgus sp. indet. 3
+  designation: Rhenopyrgus sp. indet. 3
   rank: species
   authority:
     source: 2020_ewin_martin.m_isotalo_zamora
 rhenopyrgus-sp-4_ewin_martin.m_isotalo_zamora_2020:
   name: null
-  identifier: Rhenopyrgus sp. indet. 4
+  designation: Rhenopyrgus sp. indet. 4
   rank: species
   notes: |
     Only described this way in a figure caption referencing

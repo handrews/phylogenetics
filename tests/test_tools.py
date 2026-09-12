@@ -104,6 +104,23 @@ def test_resolve_absent_is_empty(store):
   assert store.resolve_name('') == []
 
 
+def test_unnamed_records_are_not_found_by_name(store):
+  # The words in a bin's key or an open-nomenclature designation name
+  # other taxa; a prefix query must not sweep them in.
+  assert all(c['name'] for c in store.resolve_name('eocrinoid'))
+  assert store.resolve_name('Rhenopyrgus sp.') == []
+  assert store.names['rhenopyrgus-sp-1_ewin_martin.m_isotalo_zamora_2020']['folded'] == []
+  assert store.name('rhenopyrgus-sp-1_ewin_martin.m_isotalo_zamora_2020') == 'Rhenopyrgus sp. indet. 1'
+  assert store.name('edrioasteroidea-order-uncertain_holloway_jell_1983') == '[edrioasteroidea-order-uncertain_holloway_jell_1983]'
+
+
+def test_keys_accepted_in_any_case(store):
+  assert store.contents('1983_Holloway_Jell', 'Rhenopyrgidae') == store.contents('1983_holloway_jell', 'rhenopyrgidae')
+  assert store.history('Rhenopyrgus', style='json')['blockId'] == store.history('rhenopyrgus', style='json')['blockId']
+  assert store.descendants(['Edrioblastoidea'], style='json')['blockId'] == store.descendants(['edrioblastoidea'], style='json')['blockId']
+  assert store.gap('1983_HOLLOWAY_JELL', 'material', style='json') == store.gap('1983_holloway_jell', 'material', style='json')
+
+
 def test_history_order_and_measurement(store):
   block = store.history('rhenopyrgus', style='json')
   sources = [row['source'] for row in block['rows']]

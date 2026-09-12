@@ -274,7 +274,7 @@ blocks; the CLI (`phylohist <tool>`, `--style`), the MCP server
 
 | tool | answers |
 |---|---|
-| `resolve_name(query, rank)` | which records a printed name can mean, with each record's variants (the same name at other ranks or spellings) and the count of sources with statements about it; empty is the closed-world answer |
+| `resolve_name(query, rank)` | which records a printed name can mean, with each record's variants (the same name at other ranks or spellings) and the count of sources with statements about it; empty is the closed-world answer. Unnamed records (bins, open nomenclature) are never found by name: the words in their designation name other taxa. Keys are lowercase; every tool accepts a key in any case |
 | `contents(source, record, depth, synonymy)` | a classification block of what a source places under a record; every source that places it when no source is given |
 | `placements(records, sources, years, …)` | a table: records as rows (variants folded), sources as columns in year order, the parent each gives; the schemes measured in the header |
 | `descendants(records, …)` / `ancestors(records, …)` | tables over the closures, with how each record was reached |

@@ -368,7 +368,7 @@ Taxon-record relations:
 | `bracket` (taxon) | vernacular plural ("Edrioasteroids") | rename `vernacular` (B7) |
 | `synonym` | unsourced equation | move to the editorial layer (B8) |
 | `status` | mixed: `informal`, `unregistered`, `monophyletic` | split (B9) |
-| `identifier` | open-nomenclature label ("*Rhenopyrgus* sp. indet. 1") | keep |
+| `designation` | open-nomenclature designation ("*Rhenopyrgus* sp. indet. 1") | keep |
 
 **B2 (MVP). What a synonymy entry asserts.** Every entry under `synonyms`
 means: *this source accepts the cited usage as belonging to this taxon*. That is
@@ -786,7 +786,7 @@ axis each one sits on.
 | identification of material | `cfTaxon` | "cf." (*Preface* xxii: confer, compare) | compared with the named taxon; identification tentative |
 | identification of material | `affTaxon` | "aff." (*Preface* xxii: affinis, related to) | related to but distinct from the named taxon; usually undescribed |
 | identification of material | `illustration.uncertain` | "?" on a figure | figured specimen doubtfully assigned, no cf. target |
-| name in open nomenclature | `openTaxon` + `identifier` | "sp.", "sp. indet.", "gen. et sp. nov." | unnamed placeholder |
+| name in open nomenclature | `openTaxon` + `designation` | "sp.", "sp. indet.", "gen. et sp. nov." | unnamed placeholder |
 | placement | `provisional` | "?" before the parent, "incertae sedis" | assignment to parent tentative |
 | validity of the taxon | `questionable` | "?" before the name | the taxon itself doubtful |
 | validity of the taxon | `quoted` | name in quotation marks | name used informally or as unavailable |

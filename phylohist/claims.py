@@ -506,8 +506,8 @@ def names_index():
     if taxon.name is None:
       kind = 'placeholder'
     row = {'name': taxon.name, 'rank': taxon.rank, 'kind': kind}
-    if data.get('identifier'):
-      row['identifier'] = data['identifier']
+    if data.get('designation'):
+      row['designation'] = data['designation']
     if taxon.derivative_of is not None:
       row['of'] = taxon.derivative_of.key
     authority = taxon.authority
@@ -525,9 +525,11 @@ def names_index():
     placeholder = placeholder_kind(taxon)
     if placeholder is not None:
       row['placeholder'] = placeholder
-    forms = set(fold_forms(key_stem(key)))
+    # An unnamed record (a bin, an open-nomenclature taxon) has no name to
+    # look up: the words in its key or designation name other taxa.
+    forms = set()
     if taxon.name is not None:
-      forms |= fold_forms(taxon.name)
+      forms = fold_forms(key_stem(key)) | fold_forms(taxon.name)
     row['folded'] = sorted(forms)
     rows[key] = row
   return dict(sorted(rows.items()))

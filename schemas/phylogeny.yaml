@@ -332,7 +332,7 @@ $defs:
       name:
         type: [string, "null"]
         pattern: ^[\w][\w._ -]*$
-      identifier:
+      designation:
         description: |
           The phrase given in place of a name for taxa in open nomenclature
       rank:
