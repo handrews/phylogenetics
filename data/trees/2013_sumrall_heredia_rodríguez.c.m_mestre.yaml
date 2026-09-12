@@ -9,6 +9,8 @@ taxonomies:
       - taxon: edrioblastoidina
         children:
         - taxon: rhenopyrgidae
+          moved:
+            taxon: cyathocystidae
           emended: true
           children:
           - taxon: rhenopyrgus

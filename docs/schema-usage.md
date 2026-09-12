@@ -235,11 +235,11 @@ property.
 | `modifier` | 0 | 0.0% |
 | `reason` | 0 | 0.0% |
 
-### `tree` -- 6349 instances in `data/`
+### `tree` -- 6350 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `taxon` | 5750 | 90.6% |
+| `taxon` | 5751 | 90.6% |
 | `children` | 2184 | 34.4% |
 | `new` | 1461 | 23.0% |
 | `notes` | 377 | 5.9% |
@@ -258,7 +258,7 @@ property.
 | `emended` | 53 | 0.8% |
 | `citedAs` | 44 | 0.7% |
 | `bracket` | 35 | 0.6% |
-| `moved` | 29 | 0.5% |
+| `moved` | 30 | 0.5% |
 | `occurrences` | 26 | 0.4% |
 | `modifier` | 22 | 0.3% |
 | `outgroup` | 19 | 0.3% |
