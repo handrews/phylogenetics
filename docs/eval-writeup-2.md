@@ -12,11 +12,6 @@ the catalogue of what the model composed, per class of question,
 because step 2 (`notes/structured-answers.md`) is to be designed from
 recorded compositions.
 
-The judge pass did not run. The API refused for want of credits after
-scoring 32 headers, and the grader keeps nothing until it finishes. The
-grades are the mechanical checks alone; `--judge claude-opus-5` on the
-same run file adds the column.
-
 ## The setup
 
 What changed since the first run, against its closing list:
@@ -28,6 +23,7 @@ What changed since the first run, against its closing list:
 | tool outputs in the community's words | blocks rendered by style: classification listings, tables, synonymy lists, gap sentences |
 | the history tool returns the measurement | `history` and `placements` carry the measurement as decorations (papers, years, co-author sets, last paper) |
 | grading over what was composed | every expected claim must be carried by a composed block; leak, verdict and denial checks on the header only; free text beside the submission fails, text between lookups is noted |
+| the judge sees only the header | Opus 5 scores the header and question back for contract (0–2): parameters only, community language, no verdict |
 | eval upkeep | q045's rejection entered as data (`moved`); q033 asks what each paper prints; q010 and q019 left for the grader to re-test |
 
 The corpus: 305 sources on record, 218 with a tree entered, 48 audited
@@ -65,14 +61,14 @@ carried by a composed block, which is stricter. The last column sets
 aside the one failure that is about the transcript rather than the
 answer, text written beside the `submit` call.
 
-| class | n | first run | second run | free text set aside |
-|---|---|---|---|---|
-| answerable | 12 | 2 | 8 | 9 |
-| as-published | 8 | 8 | 4 | 6 |
-| uncaptured | 9 | 7 | 6 | 7 |
-| absent | 3 | 3 | 2 | 2 |
-| trajectory | 17 | 9 of 16 | 5 | 8 |
-| all | 49 | 29 of 48 | 25 | 32 |
+| class | n | first run | second run | free text set aside | judge contract | full marks |
+|---|---|---|---|---|---|---|
+| answerable | 12 | 2 | 8 | 9 | 1.83 | 10 |
+| as-published | 8 | 8 | 4 | 6 | 1.75 | 7 |
+| uncaptured | 9 | 7 | 6 | 7 | 2.00 | 9 |
+| absent | 3 | 3 | 2 | 2 | 1.00 | 1 |
+| trajectory | 17 | 9 of 16 | 5 | 8 | 1.59 | 11 |
+| all | 49 | 29 of 48 | 25 | 32 | 1.71 | 38 |
 
 Failures by check, over the 24 failed questions:
 
@@ -87,6 +83,15 @@ Failures by check, over the 24 failed questions:
 No header leaked a mechanism word, passed a verdict, or said a paper
 lacks something, by the checks. No submission named a block id the
 tools had not returned.
+
+The judge gave 38 of 49 headers full marks (first run: 2 of 48
+answers). Every lapse it found is one kind: the header states a finding
+before the blocks do. Three headers scored 0 (q021, q039, q047) and
+eight scored 1 (q002, q004, q030, q031, q033, q038, q042, q048); the
+reasons read "pre-answers the question", "pre-announces the finding",
+"asserts a finding". The first run's judge disagreed with the corpus;
+this one disagrees with the model's habit of summarising, which the
+checks (§1, §5 below) also see.
 
 ## Composition shapes
 
@@ -394,8 +399,7 @@ exempts classifications.
    the family acts dropped or the questions reworded for q041, q044;
    the excess acts dropped from q006, q010, q032; any kind accepted for
    an unentered source (q037); q038 scoped to what the corpus can say.
-5. The judge pass on this run when credits allow.
-6. Step 2, designed from the shapes above. What they say a plan must
+5. Step 2, designed from the shapes above. What they say a plan must
    express: a resolution followed by one operation with parameters
    (34 of 49); a pair of operations over the same record (12); an
    operation mapped over the sources a closure returns (q041's history

@@ -23,7 +23,8 @@ perhaps a question back. The mechanical checks, all on by default:
   rendered answer shows it.
 
 With --judge, a judge model scores the header and question only, for
-contract (0-2). Writes `<run>.grades.jsonl` and `<run>.md`, a summary
+contract (0-2); a re-run keeps the valid scores already in the grades
+file and judges only what is missing. Writes `<run>.grades.jsonl` and `<run>.md`, a summary
 with per-class pass rates and every failure with the composition the
 model chose, for the owner's review.
 """
@@ -195,15 +196,46 @@ def judge(client, model, record, question):
     expected.get('answer', '(a refusal: ' + str(expected.get('refusal')) + ')'),
     comp.get('header') or '(none)', comp.get('question') or '(none)',
   )
-  response = client.messages.create(model=model, max_tokens=600,
-                                    messages=[{'role': 'user', 'content': prompt}])
-  text = ''.join(b.text for b in response.content if b.type == 'text')
+  # The judge's reasoning counts against max_tokens; a low cap truncates
+  # the JSON or leaves no text at all, so the cap is generous and a
+  # malformed reply is retried once before it is recorded as an error.
+  text = ''
+  for _ in range(2):
+    response = client.messages.create(model=model, max_tokens=4000,
+                                      messages=[{'role': 'user', 'content': prompt}])
+    text = ''.join(b.text for b in response.content if b.type == 'text')
+    verdict = _parse_verdict(text)
+    if verdict is not None:
+      return verdict
+  return {'error': text}
+
+
+def _parse_verdict(text):
   match = re.search(r'\{.*\}', text, re.S)
-  try:
-    verdict = json.loads(match.group(0)) if match else None
-  except json.JSONDecodeError:
-    verdict = None
-  return verdict if isinstance(verdict, dict) and 'contract' in verdict else {'error': text}
+  if match:
+    try:
+      verdict = json.loads(match.group(0))
+      if isinstance(verdict, dict) and isinstance(verdict.get('contract'), int):
+        return verdict
+    except json.JSONDecodeError:
+      pass
+  score = re.search(r'"contract"\s*:\s*([012])', text)
+  reason = re.search(r'"reason"\s*:\s*"([^"]*)', text)
+  if score:
+    return {'contract': int(score.group(1)), 'reason': reason.group(1) if reason else ''}
+  return None
+
+
+def _previous_judge(path, model):
+  """Valid judge entries from an earlier grading of the same run, so a
+  re-run judges only what is missing."""
+  previous = {}
+  if path.exists():
+    for grade in load_jsonl(path):
+      verdict = grade.get('judge') or {}
+      if grade.get('judgeModel') == model and isinstance(verdict.get('contract'), int):
+        previous[grade['id']] = verdict
+  return previous
 
 
 def summary(path, grades):
@@ -264,6 +296,8 @@ def main(argv):
     from eval_run import api_key  # noqa: E402
     client = anthropic.Anthropic(api_key=api_key())
 
+  grades_path = args.run.with_suffix('.grades.jsonl')
+  previous = _previous_judge(grades_path, args.judge) if args.judge else {}
   grades = []
   for record in records:
     question = questions[record['id']]
@@ -274,13 +308,12 @@ def main(argv):
       'failures': failures, 'notes': notes,
     }
     if client is not None:
-      grade['judge'] = judge(client, args.judge, record, question)
+      grade['judge'] = previous.get(record['id']) or judge(client, args.judge, record, question)
       grade['judgeModel'] = args.judge
     grades.append(grade)
     status = 'ok ' if not failures else 'FAIL'
     print(f"{grade['id']} {status} " + '; '.join(failures))
 
-  grades_path = args.run.with_suffix('.grades.jsonl')
   with open(grades_path, 'w') as fd:
     for grade in grades:
       fd.write(json.dumps(grade, ensure_ascii=False) + '\n')

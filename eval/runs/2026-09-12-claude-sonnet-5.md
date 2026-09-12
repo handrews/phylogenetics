@@ -16,6 +16,7 @@ Q: What new class does Fay (1962) erect for the genus Astrocystites, and what fa
 
 - failure: free text beside the submission: Fay (1962) erects the class **Edrioblastoidea**, and places the genus *Astrocyst
 - note: page 201 not among the composed claims
+- judge contract 2: Header lists only taxon, single source tree, no synonyms, no rank variants, no year limit; no verdict, mechanism, or summary; no question needed.
 
 Header: Astrocystites and its placement in Fay (1962); classification tree from that source only, no synonyms, no other-rank variants, no year restriction
 - classification {"source": "1962_fay", "record": "edrioblastoidea", "depth": null, "synonymy": false, "path": "0"}
@@ -31,6 +32,7 @@ Header: Astrocystites and its placement in Fay (1962); classification tree from 
 Q: What new genus and type species do Sprinkle & Sumrall (2015) place in family Astrocystitidae?
 
 - note: page 351 not among the composed claims
+- judge contract 2: Header lists group, record scope, tree type, and year without verdict or mechanism; no question needed for an answerable case.
 
 Header: Astrocystitidae as classified by Sprinkle & Sumrall (2015); new genus and type species only; classification tree; year 2015
 - classification {"source": "2015_sprinkle_sumrall", "record": "astrocystitidae", "depth": null, "synonymy": false, "path": "0/children/0/children/1/children/0"}
@@ -48,6 +50,7 @@ Q: What species do Sumrall, Heredia Rodríguez & Mestre (2013) confirm as the ty
 - failure: free text beside the submission: Confirmed: Sumrall, Heredia Rodríguez & Mestre (2013) list *Rhenopyrgus coronaef
 - failure: no composed block carries a claim matching {'kind': 'act', 'source': '2013_sumrall_heredia_rodríguez.c.m_mestre', 'actKind': 'emended', 'subject': 'rhenopyrgus'}
 - note: page 773 not among the composed claims
+- judge contract 2: Header lists only scope parameters—taxon plus synonym/rank variants, classifications-only trees, all years—passes no verdict on the type species; no question needed.
 
 Header: Type species act for Rhenopyrgus (Sumrall, Heredia Rodríguez & Mestre 2013), shown via the full name history of Rhenopyrgus coronaeformis (= Pyrgocystis (Rhenopyrgus) coronaeformis / Pyrgocystis coronaeformis); classifications only; all years
 - table {"record": "coronaeformis_rievers_1961", "includeRelated": true, "trees": ["taxonomy"], "years": null}
@@ -73,6 +76,7 @@ Header: Type species act for Rhenopyrgus (Sumrall, Heredia Rodríguez & Mestre 2
 Q: What is the holotype specimen number for Rhenopyrgus viviani, named by Ewin, Martin, Isotalo & Zamora (2020)?
 
 - failure: no composed block carries a claim matching {'kind': 'act', 'source': '2020_ewin_martin.m_isotalo_zamora', 'actKind': 'new', 'subject': 'viviani_ewin_martin.m_isotalo_zamora_2020'}
+- judge contract 2: Header names only the taxon and the scope (holotype material as printed); no summary, verdict, or mechanism, and no question needed here.
 
 Header: Rhenopyrgus viviani Ewin, Martin, Isotalo & Zamora, 2020; holotype material statement as printed in the source
 - table {"record": "viviani_ewin_martin.m_isotalo_zamora_2020", "source": null, "kind": "material", "actKind": null}
@@ -97,6 +101,7 @@ Header: Rhenopyrgus viviani Ewin, Martin, Isotalo & Zamora, 2020; holotype mater
 Q: What is the holotype specimen number for Rhenopyrgus grayae, per Ewin et al. (2020)?
 
 - note: page 122 not among the composed claims
+- judge contract 2: Header names only taxon, data type (holotype) and source publication in standard taxonomic language; no verdict or summary; no question needed for answerable query.
 
 Header: Holotype of Rhenopyrgus grayae (Bather, 1915), as given by Ewin, Martin, Isotalo & Zamora (2020)
 - table {"record": "grayae_bather_1915", "source": "2020_ewin_martin.m_isotalo_zamora", "kind": "material", "actKind": null}
@@ -115,6 +120,7 @@ Header: Holotype of Rhenopyrgus grayae (Bather, 1915), as given by Ewin, Martin,
 Q: Which two genera does Ewin et al. (2020) list under the emended family Rhenopyrgidae?
 
 - failure: page 118 not shown
+- judge contract 2: Header lists only scope parameters (taxon, source, years, classification-only) in standard nomenclatural terms; no summary, verdict, or mechanism wording; no question needed.
 
 Header: Genera placed under the emended family Rhenopyrgidae by Ewin et al. (2020): classification only, this source, all years
 - classification {"source": "2020_ewin_martin.m_isotalo_zamora", "record": "rhenopyrgidae", "depth": null, "synonymy": false, "path": "0/children/0/children/0/children/0/children/0"}
@@ -140,6 +146,7 @@ Header: Genera placed under the emended family Rhenopyrgidae by Ewin et al. (202
 Q: What holotype and paratype specimen numbers does Holloway & Jell (1983) give for Rhenopyrgus whitei?
 
 - note: page 1004 not among the composed claims
+- judge contract 2: Header names only taxon, source, and requested data type; no verdict, summary, or mechanism language; no question needed for an uncaptured lookup.
 
 Header: Rhenopyrgus whitei Holloway &amp; Jell, 1983 — holotype and paratype specimen numbers as printed in that source
 - statement {"source": "1983_holloway_jell", "kind": "material"}
@@ -153,6 +160,7 @@ Header: Rhenopyrgus whitei Holloway &amp; Jell, 1983 — holotype and paratype s
 Q: What occurrence data does Guensburg & Sprinkle (1994) print for the new species Lampteroblastus hintzei?
 
 - note: text between lookups: The occurrence coverage for this source is declared "none," so this is a gap.
+- judge contract 2: Header names only the taxon and the source-restricted occurrence scope, in standard language, with no summary, mechanism word, or verdict; no question needed.
 
 Header: Lampteroblastus hintzei Guensburg & Sprinkle, 1994; occurrence data from that source only
 - statement {"source": "1994_guensburg_sprinkle", "kind": "occurrences"}
@@ -167,6 +175,7 @@ Q: What is the full printed diagnosis of Rhenopyrgus nov. subgen. in Dehm (1961)
 
 - failure: no gap block for 1961_dehm / diagnoses
 - note: composed after the lookup limit was reached
+- judge contract 2: Header names only the record, rank reading, source and year scope; no verdict, summary or mechanism language; no question needed.
 
 Header: Rhenopyrgus taken as the subgenus (Pyrgocystis (Rhenopyrgus)) named as new by Dehm 1961; diagnosis sought in that source only
 - table {"record": "rhenopyrgus-subgenus", "source": null, "kind": null, "actKind": null}
@@ -192,6 +201,7 @@ Header: Rhenopyrgus taken as the subgenus (Pyrgocystis (Rhenopyrgus)) named as n
 Q: What illustrations does Fay (1962) print for Astrocystites ottawaensis?
 
 - note: page 201 not among the composed claims
+- judge contract 2: Header names only taxon, authority, source treatment, and scope restriction to illustrations; no verdict, summary, or mechanism language; no question posed.
 
 Header: Astrocystites ottawaensis (Whiteaves 1897), as treated by Fay (1962); illustrations only
 - statement {"source": "1962_fay", "kind": "illustrations"}
@@ -205,6 +215,7 @@ Header: Astrocystites ottawaensis (Whiteaves 1897), as treated by Fay (1962); il
 Q: What is the second sentence of Rievers's (1961) printed diagnosis for Pyrgocystis coronaeformis?
 
 - note: text between lookups: Diagnoses coverage is only "partly" for this source, so a second sentence beyond
+- judge contract 2: Header lists only taxon, source, expansion settings, statement type, and year range; no verdict or summary; no question needed for this unambiguous request.
 
 Header: Pyrgocystis coronaeformis Rievers, 1961 — diagnosis as printed by Rievers (1961); no rank or synonym expansion; classification/diagnosis statements only; all years
 - statement {"source": "1961_rievers", "kind": "diagnoses"}
@@ -218,6 +229,7 @@ Header: Pyrgocystis coronaeformis Rievers, 1961 — diagnosis as printed by Riev
 Q: Whose holotype does Briggs et al. (2017) cite for Heropyrgus disterminus, and where is it deposited?
 
 - failure: free text beside the submission: The gap block answers this directly.
+- judge contract 2: Header names taxon, source, scope (material statements) and year range in community terms; no verdict or summary; no question needed for unambiguous uncaptured request.
 
 Header: Heropyrgus disterminus (Briggs, Siveter, Siveter, Sutton & Rahman, 2017); holotype/deposition sought from the material statements of that source; all years
 - statement {"source": "2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman", "kind": "material"}
@@ -231,6 +243,7 @@ Header: Heropyrgus disterminus (Briggs, Siveter, Siveter, Sutton & Rahman, 2017)
 Q: Which earlier works does Fay (1962) cite in his synonymy of Astrocystites ottawaensis?
 
 - note: page 201 not among the composed claims
+- judge contract 2: Header names taxon, source work, and year range in standard taxonomic language; no verdict, summary, or mechanism wording; no question needed.
 
 Header: Astrocystites ottawaensis (Whiteaves 1897), synonymy as printed by Fay (1962); all years
 - statement {"source": "1962_fay", "kind": "synonymy"}
@@ -244,6 +257,7 @@ Header: Astrocystites ottawaensis (Whiteaves 1897), synonymy as printed by Fay (
 Q: How does Bassler (1936) print the original-genus citation for Cystaster granulatus?
 
 - failure: no composed block carries a claim matching {'kind': 'acceptance', 'source': '1936_bassler', 'subject': 'granulatus_hall_1871', 'printed': {'citedAs': 'C. (Hemicystites) granulatus (Hall)'}, 'parents': ['cystaster-subgenus', 'hemicystites']}
+- judge contract 2: Header names only the taxon, authority, and the requested parameter (Bassler 1936 printed citation form); no verdict, summary, or mechanism language; no question needed.
 
 Header: Cystaster granulatus (originally Hall 1871); printed form of the original-genus citation as given by Bassler (1936)
 - list {"record": "granulatus_hall_1871", "source": "1936_bassler"}
@@ -259,6 +273,7 @@ Q: How did Dehm (1961) style the new subgenus name Rhenopyrgus, and how do Sumra
 
 - failure: free text beside the submission: Now composing the answer with the relevant blocks.
 - failure: no composed block carries a claim matching {'kind': 'act', 'source': '1961_dehm', 'actKind': 'new', 'subject': 'rhenopyrgus-subgenus', 'printed': {'citedAs': 'Rhenopyrgus nov. subgen.'}}
+- judge contract 2: Header names the taxon records, rank/name variants, restricts to classifications and all years; no summary, mechanism, or verdict; no question needed.
 
 Header: Rhenopyrgus (subgenus of Pyrgocystis, Dehm 1961) and its type species Rhenopyrgus coronaeformis (Rievers, 1961); printed forms and the type-species citation as given by Sumrall et al. (2013); classifications only, all years
 - list {"record": "rhenopyrgus-subgenus", "source": null}
@@ -287,6 +302,7 @@ Header: Rhenopyrgus (subgenus of Pyrgocystis, Dehm 1961) and its type species Rh
 Q: What two different words does Fay (1962) use for the same specimen, No. 752, in Astrocystites ottawaensis?
 
 - note: composed after the lookup limit was reached
+- judge contract 2: Header lists only taxon, source record, synonym/rank exclusions, tree scope, and year; no verdict or mechanism wording; no unnecessary follow-up question.
 
 Header: Astrocystites ottawaensis (Whiteaves, 1897); material statement of Fay (1962); no synonyms or other-rank forms; classification/material tree only; year 1962
 - table {"record": "ottawaensis_whiteaves_1897", "source": "1962_fay", "kind": "material", "actKind": null}
@@ -303,6 +319,7 @@ Header: Astrocystites ottawaensis (Whiteaves, 1897); material statement of Fay (
 Q: What two years does Sprinkle & Sumrall (2015) print for coordinate names from the same Bather work, Suborder Edrioasterina and Family Edrioasteridae?
 
 - failure: free text beside the submission: Sprinkle & Sumrall (2015) prints "Suborder Edrioasterina, Bather, 1898" and "Fam
+- judge contract 2: Header names only scope: the two Bather names in Sprinkle & Sumrall (2015), coordinate ranks, full history, all years; no verdict or summary; no question needed.
 
 Header: Years printed by Sprinkle & Sumrall (2015) for the Bather names Suborder Edrioasterina and Family Edrioasteridae (coordinate ranks of the same taxon); full nomenclatural history shown for context; all years.
 - table {"record": "edrioasterina", "includeRelated": true, "trees": ["taxonomy"], "years": null}
@@ -355,6 +372,7 @@ Q: What exact heading and parenthetical act does Guensburg & Sprinkle (1994) pri
 
 - failure: free text beside the submission: The history table already gives the exact heading and act; I'll present that alo
 - note: page 21 not among the composed claims
+- judge contract 2: Header names only scope parameters—record, rank-variant fold, synonym policy, data type, year range—in standard nomenclatural language, passing no verdict; no question needed for an unambiguous target.
 
 Header: Guensburg & Sprinkle (1994) heading and act for the Rhenopyrgus subfamily (Rhenopyrginae, a subfamily-rank variant of Rhenopyrgidae); classification/history data only, no synonyms beyond the variant fold, all years
 - list {"record": "rhenopyrginae", "source": "guensburg_sprinkle_1994"}
@@ -379,6 +397,7 @@ Header: Guensburg & Sprinkle (1994) heading and act for the Rhenopyrgus subfamil
 Q: Is Rhenopyrgus a genus or a subgenus of Pyrgocystis?
 
 - failure: free text beside the submission: Both records give the same single history table (the two ranks fold together as 
+- judge contract 1: Parameters and scope are stated plainly, but calling it "the genus" with its "earlier" subgenus form pre-judges the rank trajectory asked about.
 
 Header: Rhenopyrgus, taken as the genus together with its earlier subgenus-rank form (Pyrgocystis (Rhenopyrgus)); classifications only; all years
 - table {"record": "rhenopyrgus", "includeRelated": true, "trees": ["taxonomy"], "years": null}
@@ -406,6 +425,7 @@ Q: What genus is Pyrgocystis octogona (Richter, 1930) placed in across the corpu
 
 - failure: no composed block carries a claim matching {'kind': 'usage', 'source': '1935_bassler', 'subject': 'octogona_richter.r_1930', 'form': 'taxon'}
 - failure: no composed block carries a claim matching {'kind': 'usage', 'source': '1961_dehm', 'subject': 'octogona_richter.r_1930', 'form': 'taxon'}
+- judge contract 1: Parameters and year range stated neutrally, but "the two sources that carry it" pre-announces a finding about coverage, one summary lapse.
 
 Header: Pyrgocystis octogona (Richter, 1930) taken as the species combination; placements across the corpus's two sources that carry it; all years.
 - table {"records": ["octogona_richter.r_1930"], "sources": null, "years": null, "includeVariants": true, "includeSynonyms": true, "trees": ["taxonomy"]}
@@ -423,6 +443,7 @@ Header: Pyrgocystis octogona (Richter, 1930) taken as the species combination; p
 Q: What class or order has Astrocystites been placed in, across the sources that treat it?
 
 - failure: no composed block carries a claim matching {'kind': 'act', 'source': '1962_fay', 'actKind': 'new', 'subject': 'edrioblastoidea'}
+- judge contract 2: Header lists only scope parameters—taxon, higher-rank placements, all treating sources, all years—in standard taxonomic language, with no summary, mechanism, or verdict; no question needed.
 
 Header: Astrocystites (genus); higher taxa it has been placed under (classes, orders and other ranks), across all sources that treat it; classifications only; all years
 - table {"records": ["astrocystites"], "includeVariants": true, "trees": ["taxonomy"], "years": null}
@@ -453,6 +474,7 @@ Q: Is Isorophus (and its sibling genus Carneyella) attributed to Foerste 1916 or
 
 - failure: free text beside the submission: I have the history tables showing both attributions (1916 by resolve_name's auth
 - note: page 42 not among the composed claims
+- judge contract 2: Header lists only scope parameters (taxa, genus rank, all sources, all years, classifications), no verdict or summary; omitting a question is permissible.
 
 Header: Isorophus and Carneyella (genus-rank history, all sources, all years); classifications only
 - table {"record": "isorophus", "includeRelated": true, "trees": ["taxonomy"], "years": null}
@@ -495,6 +517,7 @@ Header: Isorophus and Carneyella (genus-rank history, all sources, all years); c
 Q: At what rank do the sources treat Edrioblastoidea: a class, an order, or a suborder?
 
 - failure: no composed block carries a claim matching {'kind': 'placement', 'source': '1990_smith.a.b_jell', 'subject': 'astrocystitidae', 'parent': 'edrioblastoida'}
+- judge contract 2: Header names only the taxon, its rank variants, and the scope (all sources, all years) in standard usage; no verdict or summary; no question asked.
 
 Header: Edrioblastoidea taken as the class and its order (Edrioblastoida) and suborder (Edrioblastoidina) rank variants; history of usage across all sources, all years
 - table {"record": "edrioblastoidea", "includeRelated": true, "trees": ["taxonomy"], "years": null}
@@ -532,6 +555,7 @@ Header: Edrioblastoidea taken as the class and its order (Edrioblastoida) and su
 Q: What does Whiteaves (1897) print as the original type-species designation for Astrocystites?
 
 - failure: no gap block for 1897_whiteaves / newTaxa
+- judge contract 2: Header lists only taxon, type species, source attribution, and scope; no verdict, summary, or mechanism language; absent question acceptable here.
 
 Header: Astrocystites (genus) and its type species Astrocystites ottawaensis, as attributed to Whiteaves (1897); type designation sought directly from that source; no year restriction
 - statement {"source": "1897_whiteaves", "kind": "types"}
@@ -546,6 +570,7 @@ Q: What does Klug et al. (2008) themselves print in their protologue for Rhenopy
 
 - failure: no block states that 2008_klug_krüger_korn_rücklin_schemm-gregory_debaets_mapes is not entered
 - note: composed after the lookup limit was reached
+- judge contract 1: Header is clean parameters, but the question-back delivers the answer's conclusion (no protologue text obtainable) rather than probing an ambiguous parameter — one summarizing lapse.
 
 Header: Rhenopyrgus flos (Klug, Krüger, Korn, Rücklin, Schemm-Gregory, DeBaets & Mapes, 2008); protologue sought in Klug et al. (2008) itself; no synonyms beyond the species record; all years
 - table {"record": "flos_klug_krüger_korn_rücklin_schemm-gregory_debaets_mapes_2008", "includeRelated": true, "trees": ["taxonomy"], "years": null}
@@ -581,6 +606,7 @@ Q: Which papers in the corpus treat edrioblastoids, and what does each do to the
 - failure: no composed block carries a claim matching {'kind': 'act', 'source': '1935_bassler', 'actKind': 'new', 'subject': 'astrocystitidae'}
 - failure: no composed block carries a claim matching {'kind': 'placement', 'source': '1936_bassler', 'subject': 'astrocystites', 'parent': 'protoblastoidea'}
 - failure: no composed block carries a claim matching {'kind': 'act', 'source': '1983_holloway_jell', 'actKind': 'new', 'subject': 'rhenopyrgidae'}
+- judge contract 2: States only scope (rank-variant lineage), synonym handling, trees shown, year range, in standard nomenclatural terms; no summary, mechanism talk, or verdict; no question needed.
 
 Header: Edrioblastoidea taken as the class and its order (Edrioblastoida) and suborder (Edrioblastoidina) rank-forms together (a nomen translatum lineage); synonyms not separately listed; classifications and history shown; all years (1962–2021)
 - table {"record": "edrioblastoidea", "includeRelated": true, "trees": ["taxonomy"], "years": null}
@@ -754,6 +780,7 @@ Q: At what rank has the edrioblastoid group been treated, and by which co-author
 - failure: no composed block carries a claim matching {'kind': 'placement', 'source': '2013_sumrall_heredia_rodríguez.c.m_mestre', 'subject': 'rhenopyrgidae', 'parent': 'edrioblastoidina'}
 - failure: no composed block carries a claim matching {'kind': 'placement', 'source': '2015_sprinkle_sumrall', 'subject': 'astrocystitidae', 'parent': 'edrioblastoidina'}
 - failure: no composed block carries a claim matching {'kind': 'placement', 'source': '2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman', 'subject': 'rhenopyrgidae', 'parent': 'edrioblastoidina'}
+- judge contract 2: States only scope parameters: group plus rank-variant names unified, all sources, all years, classifications only; no verdict or summary; no question needed.
 
 Header: Edrioblastoidea (with its order and suborder rank forms, Edrioblastoida/Edrioblastoidina) taken as one group; rank history across all sources, all years, classifications only
 - table {"record": "edrioblastoidea", "includeRelated": true, "trees": ["taxonomy"], "years": null}
@@ -794,6 +821,7 @@ Q: Which family name has been used for Astrocystites and by whom, Steganoblastid
 - failure: no composed block carries a claim matching {'kind': 'act', 'source': '1900_bather', 'actKind': 'new', 'subject': 'steganoblastidae'}
 - failure: no composed block carries a claim matching {'kind': 'act', 'source': '1935_bassler', 'actKind': 'new', 'subject': 'astrocystitidae'}
 - failure: no composed block carries a claim matching {'kind': 'placement', 'source': '2015_sprinkle_sumrall', 'subject': 'porosublastus', 'parent': 'astrocystitidae'}
+- judge contract 2: Header lists only record, synonym setting, tree type, year range in standard nomenclatural language; no verdict or summary; no question needed.
 
 Header: Astrocystites (Whiteaves 1897): family placements across sources — Astrocystitidae (Bassler) vs Steganoblastidae (Bather); synonyms not included; classifications only; all years
 - table {"records": ["astrocystites"], "sources": null, "years": null, "includeVariants": true, "includeSynonyms": true, "trees": ["taxonomy"]}
@@ -813,6 +841,7 @@ Q: Who proposed placing rhenopyrgids inside Cyathocystidae, who followed, and wh
 - failure: no composed block carries a claim matching {'kind': 'act', 'source': '1994_guensburg_sprinkle', 'actKind': 'nomTransl', 'subject': 'rhenopyrginae', 'altRankOf': 'rhenopyrgidae'}
 - failure: no composed block carries a claim matching {'kind': 'act', 'source': '2013_sumrall_heredia_rodríguez.c.m_mestre', 'actKind': 'emended', 'subject': 'rhenopyrgidae'}
 - failure: no composed block carries a claim matching {'kind': 'rejection', 'source': '2013_sumrall_heredia_rodríguez.c.m_mestre', 'subject': 'rhenopyrgidae', 'declinedParent': 'cyathocystidae'}
+- judge contract 2: Header lists only scope: taxon names, rank-variant inclusion, classification sources, year span; no verdict, summary, or mechanism wording; absent question is permissible.
 
 Header: Rhenopyrgidae/Rhenopyrginae placements relative to Cyathocystidae; same-rank variants included; classifications only; all years (1983–2020)
 - table {"records": ["rhenopyrgidae"], "sources": null, "years": null, "includeVariants": true, "includeSynonyms": true, "trees": ["taxonomy"]}
@@ -834,6 +863,7 @@ Q: Has any single author appeared in papers holding different ranks for the edri
 - failure: no composed block carries a claim matching {'kind': 'placement', 'source': '2015_sprinkle_sumrall', 'subject': 'astrocystitidae', 'parent': 'edrioblastoidina'}
 - failure: no composed block carries a claim matching {'kind': 'placement', 'source': '2021_jell_sprinkle', 'subject': 'ikerus', 'parent': 'edrioblastoida'}
 - failure: no composed block carries a claim matching {'kind': 'placement', 'source': '1990_smith.a.b_jell', 'subject': 'astrocystitidae', 'parent': 'edrioblastoida'}
+- judge contract 2: Header lists only scope parameters—name/rank variants pooled, placements only, all years—in community terms, with no verdict, summary, or mechanism language; no question needed.
 
 Header: Edrioblastoidea (class) and its order/suborder-rank forms (Edrioblastoida, Edrioblastoidina), taken together as one group; taxonomic placements only, all years
 - table {"record": "edrioblastoidea", "includeRelated": true, "trees": ["taxonomy"], "years": null}
@@ -876,6 +906,7 @@ Q: Which taxon in the edrioblastoid group has the most distinct placements acros
 - failure: no composed block carries a claim matching {'kind': 'act', 'source': '1962_fay', 'actKind': 'new', 'subject': 'edrioblastoidea'}
 - failure: no composed block carries a claim matching {'kind': 'placement', 'source': '1967a_fay', 'subject': 'astrocystites', 'parent': 'astrocystitidae'}
 - failure: no composed block carries a claim matching {'kind': 'placement', 'source': '1994_guensburg_sprinkle', 'subject': 'astrocystitidae', 'parent': 'edrioblastoidina'}
+- judge contract 0: Header states parameters but then delivers the full verdict and comparative summary (most sources, five parents, rival Astrocystitidae), several judgement lapses.
 
 Header: Within the Edrioblastoidea group (all ranks and rank-variant names folded together; synonymous names excluded; taxonomic classifications only; all years), the family Cyathocystidae (with its subfamily-rank variant Cyathocystinae folded in) is the taxon carried across the most sources, having been placed under five distinct parent taxa spanning eleven source papers from Bather 1900 through Grigo 2000 — as many distinct placements as its closest rival, Astrocystitidae, but over a broader span of sources
 - table {"records": ["cyathocystidae"], "sources": null, "years": null, "includeVariants": true, "includeSynonyms": false, "trees": ["taxonomy"]}
@@ -894,6 +925,7 @@ Header: Within the Edrioblastoidea group (all ranks and rank-variant names folde
 Q: What did Holloway & Jell (1983) say Dehm (1961) did with Pyrgocystis octogona, and what does Dehm's own paper do?
 
 - note: composed after the lookup limit was reached
+- judge contract 1: Header otherwise states only scope parameters, but asserts a finding—that no Holloway & Jell statement exists—pre-empting the answer; one lapse.
 
 Header: Pyrgocystis octogona (Richter 1930); history of the name's treatment by Dehm (1961) as entered in the corpus, since no statement by Holloway & Jell (1983) about this species is recorded there; synonyms not included; classifications only; all years.
 - table {"record": "octogona_richter.r_1930", "includeRelated": true, "trees": ["taxonomy"], "years": null}
@@ -927,6 +959,7 @@ Question back: The corpus holds no statement by Holloway & Jell (1983) about Pyr
 Q: Which cladistic analyses in the corpus include Rhenopyrgus, and where does each place it?
 
 - failure: free text beside the submission: The placements table already gives the full picture (unnamed groups for Smith & 
+- judge contract 2: Header names only scope parameters—genus plus rank variant, cladogram trees—in community language, passes no verdict, no mechanism or summary; no question needed.
 
 Header: Cladistic analyses (cladogram trees) in the corpus that include Rhenopyrgus (genus and its subgenus-rank variant), showing where each places it
 - table {"records": ["rhenopyrgus", "rhenopyrgus-subgenus"], "sources": null, "years": null, "includeVariants": true, "includeSynonyms": true, "trees": ["cladogram"]}
