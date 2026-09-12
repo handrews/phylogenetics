@@ -152,6 +152,17 @@ interleaved)
   demonstration (M3c, done 2026-09-11: `docs/eval-writeup.md`, on the
   first Sonnet 5 run; its closing list is the order of the next fixes).
 
+**Step 1. Blocks** (done 2026-09-12; `notes/structured-answers.md` is the
+framing: the model is a planner, execution and assembly are code)
+- Closures (`phylohist/closure.py`), blocks and styles (`blocks.py`,
+  `render.py`), tools returning blocks (`tools.py`), a CLI per tool
+  (`cli.py`, replacing the tree printer), the runner composing with
+  `submit` and the grader grading compositions. `moved` yields a
+  rejection; every nomen translatum record is linked to its base.
+- Next: the second Sonnet 5 run on its own branch, once the owner has
+  tried the block tools; then step 2, a plan the model emits and code
+  executes, designed from the compositions the run records.
+
 **M4. Materials** (S4)
 - D1–D5 as a design decision, with the specimen cases the reviews
   supplied (D8, D9). Migrate the gold slice; update the extractor's

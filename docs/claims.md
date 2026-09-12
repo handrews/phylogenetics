@@ -214,26 +214,57 @@ Two more generated files sit beside the claims. `claims/names.json` has
 one row per taxon record: name, rank, kind (`primary`, `altSpellingOf`,
 `altRankOf`, `vulgarSpellingOf`, `placeholder`), the base record of a
 variant, the authority as displayed and its resolved source, and the
-folded lookup forms (`phylohist/names.py`: lowercase, ligatures expanded,
-diacritics dropped, separators removed, the German umlaut expansion tried
-too). Each manifest source row carries a `citation` (authors, year,
-title, where, volume, pages) so a source can be named as a reader cites
-it.
+folded lookup forms (`phylohist/names.py`). Each manifest source row
+carries a `citation` so a source can be named as a reader cites it.
 
-`phylohist/tools.py` reads only these files and offers four read-only
-tools, also served over MCP by `scripts/mcp_server.py` (`.mcp.json`
-registers it for Claude Code):
+Answers are assembled from **blocks** (`phylohist/blocks.py`): data,
+never text. A block has a type, an id (a hash of its content), the
+parameters that produced it, the claim ids it rests on, and a payload
+that keeps keys, names, ranks, sources, years and claim ids on every
+node and cell. Four types: `classification` (a tree as a source prints
+it, with the acts marked), `table` (typed columns; a cell holds several
+values when one source places a record twice), `list` (a synonymy or
+the printed forms under a heading), `statement` (a gap, a printed form,
+an absence). `validate` confirms every id and key against the store;
+`compose` makes an answer of blocks with a one-line header and an
+optional question back. Rendering is a registry of styles
+(`phylohist/render.py`): `text` (the listing the old CLI drew, with `*`
+for new, `[type]`, `emend.`, `nom. transl.`, `?` for provisional and
+questionable, brackets for a placeholder, `=` lines for synonyms;
+aligned tables) and `markdown`; `json` is the block. A new style is one
+function and a registration; a graph or a timeline of a table needs
+nothing from the model.
+
+The closures (`phylohist/closure.py`) are the execution layer:
+descendants of a set across every source (transitive within a source,
+through accepted synonyms and through the same name at other ranks),
+ancestors with each source's chain (alternative placements and
+placeholders marked), the sources partitioned by the placement they
+give, and the measurement a trajectory asks for (positions and ranks
+with papers, co-author sets and years; the latest; the last paper for
+each earlier one).
+
+The tools (`phylohist/tools.py`) read only these files and return
+blocks; the CLI (`phylohist <tool>`, `--style`), the MCP server
+(`scripts/mcp_server.py`, `.mcp.json`) and the eval runner all go through
+`tools.call`:
 
 | tool | answers |
 |---|---|
-| `resolve_name(query, rank)` | which records a printed name can mean, folding G10 variation; a two-word query resolves the epithet under a genus of that name; an empty list is the closed-world answer |
-| `claims_about(key, source, kind, act_kind)` | every claim about a record in publication order, each with its source's citation |
-| `source_coverage(key)` | citation, whether the source's content is entered, the declared audit and coverage, the derived counts, the inconsistency rows |
-| `name_history(key, include_related)` | per source in publication order: placements, acts, acceptances, rejections; related records (another rank or spelling of the same name) included and labelled |
+| `resolve_name(query, rank)` | which records a printed name can mean, with each record's variants (the same name at other ranks or spellings) and the count of sources with statements about it; empty is the closed-world answer |
+| `contents(source, record, depth, synonymy)` | a classification block of what a source places under a record; every source that places it when no source is given |
+| `placements(records, sources, years, …)` | a table: records as rows (variants folded), sources as columns in year order, the parent each gives; the schemes measured in the header |
+| `descendants(records, …)` / `ancestors(records, …)` | tables over the closures, with how each record was reached |
+| `history(record, include_related)` | a table, one row per source in year order, with the measurement as its header |
+| `synonymy(record, source)` | the synonymy a source prints under a record, as a list |
+| `statements(record, source, kind, act_kind)` | every claim about a record in words, the drill-down |
+| `gap(source, kind)` | the contract's sentence for what is not yet entered |
+| `printed_forms(record, source)` | each form a source prints, verbatim, with the page |
+| `source_coverage(key)` | the raw coverage view |
 
-`tests/test_tools.py` checks every eval selector through `claims_about`,
-the refusals through `source_coverage`, and the resolver and history by
-hand.
+`tests/test_tools.py`, `tests/test_closure.py`, `tests/test_blocks.py`
+and `tests/test_cli.py` check the selectors, the worked example of
+`notes/structured-answers.md`, the renderings and the subcommands.
 
 ## Worked examples
 
