@@ -8955,6 +8955,7 @@
   "2013_sumrall_heredia_rodríguez.c.m_mestre": {
    "acts": {
     "emended": 2,
+    "moved": 1,
     "new": 1,
     "type": 1
    },
@@ -8992,14 +8993,14 @@
    },
    "claims": {
     "acceptance": 1,
-    "act": 4,
+    "act": 5,
     "placement": 25,
-    "usage": 29
+    "usage": 30
    },
    "derived": {
     "newTaxa": 1,
     "phylogeny": 16,
-    "skeleton": 38,
+    "skeleton": 39,
     "synonymy": 1,
     "types": 1
    },
@@ -12845,7 +12846,8 @@
    "1983_bockelie_paul.c.r.c",
    "1985_smith.a.b",
    "1994_guensburg_sprinkle",
-   "2000_grigo"
+   "2000_grigo",
+   "2013_sumrall_heredia_rodríguez.c.m_mestre"
   ],
   "cyathocystids": [
    "1990_smith.a.b_jell"
