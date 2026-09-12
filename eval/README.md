@@ -80,6 +80,30 @@ class carries `expected.refusal` (`not-captured` with `coverageKind`, or
 question was written: the tree path, the `audit.coverage` value, or the
 review file with the printed page.
 
+## Running the eval
+
+`eval/system-prompt.md` is the closed-world prompt: answer only from what
+the four tools return, cite source and page, name a gap as not yet
+entered, follow the trajectory contract and the language rules above.
+
+    poetry run python scripts/eval_run.py --model claude-sonnet-5
+    poetry run python scripts/eval_grade.py eval/runs/<date>-<model>.jsonl
+
+The runner answers every question in a bounded tool-use loop over
+`phylohist/tools.py` and writes `eval/runs/<date>-<model>.jsonl`: the
+question, each tool call with a compact summary of what it returned, the
+answer, token usage and the prompt's hash. When the lookup limit is hit
+the model is asked to answer from what it has, and the record says so.
+Runs are committed; they are the evidence the write-up rests on. The
+grader applies the mechanical checks (retrieval of every expected claim,
+citation of the expected sources and page, the refusal wording, no
+denial that the paper holds it, no leak of internals), then a judge model
+scores grounded, complete and contract (0-2 each) against the expected
+answer, and writes `<run>.grades.jsonl` and `<run>.md` with per-class
+pass rates and every failure for the owner's review. The API key comes
+from `ANTHROPIC_API_KEY` or a git-ignored `.env`, never from the
+repository.
+
 ## Maintenance
 
 - A question is added only with its `verified` line; a question whose

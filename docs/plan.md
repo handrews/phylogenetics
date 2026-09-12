@@ -143,7 +143,9 @@ interleaved)
   captured", never "not in the paper". (M3b, with the runner and grader:
   decided 2026-09-11 to run through the Anthropic SDK, Sonnet 5 first,
   graded mechanically, then by a judge model, then by the owner on the
-  trajectory answers; runs are committed under `eval/runs/`.)
+  trajectory answers; runs are committed under `eval/runs/`. Built
+  2026-09-11: `eval/system-prompt.md`, `scripts/eval_run.py`,
+  `scripts/eval_grade.py`; see `eval/README.md`, "Running the eval".)
 - Run the eval, keep the failures, and write up the failure modes with the
   reading rounds' catalogue (OCR errors, misattribution, placement slips,
   normalisation of printed forms, gap-filling). That write-up is the

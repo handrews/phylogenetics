@@ -14,6 +14,112 @@ from .names import fold_forms
 
 CLAIMS_DIR = pathlib.Path(__file__).parent / '..' / 'claims'
 
+# The tool descriptions a model sees, in one place for the MCP server and
+# the eval runner; written for a reader of the literature.
+TOOL_DESCRIPTIONS = {
+  'resolve_name': (
+    'Find the records a printed name can refer to. Folds ligatures, '
+    'diacritics, capitals, hyphens and spaces, so "Palæaster", '
+    '"Echino-encrinites" and "Edrioaster Bigsbyi" all resolve. A two-word '
+    'query is a species: the epithet is resolved and kept where some source '
+    'places it under a genus of that name. Each candidate gives the record '
+    'key to use with the other tools, the rank, whether the record is a '
+    'spelling or rank variant of another (and of which), the authority as '
+    'cited, and how many sources make statements about it. A record without '
+    'a name is a placeholder such as "order uncertain". An empty list means '
+    'no source in the corpus carries the name; it does not mean the name '
+    'does not exist. Optionally restrict by rank word.'
+  ),
+  'claims_about': (
+    'Every statement the corpus holds about one record, in publication '
+    'order. Each statement carries the source (key and citation), the page '
+    'when recorded, the printed form when it differs from the record, and '
+    'the source\'s audit state and declared coverage for that kind of '
+    'statement. Kinds: usage (the name is cited), placement (put under a '
+    'parent, with rank and any provisional or questionable marks), '
+    'acceptance (an earlier usage accepted as a synonym or rejected), act '
+    '(new, type, emended, nomTransl, corrected, moved, removed), rejection '
+    '(the source declines a placement), material (specimens, occurrences, '
+    'illustrations), diagnosis, editorial (the editor, not the paper, '
+    'supplied something). A statement marked inferred is the editor\'s '
+    'reading, and says so. A page inherited from a heading is marked as '
+    'such. Filter by source key, kind, or act kind.'
+  ),
+  'source_coverage': (
+    'What the corpus holds of one publication. Its citation; whether its '
+    'content has been entered at all ("entered" false means the paper is on '
+    'record but not yet entered); the audit state and, per kind of '
+    'statement, whether the reviewer declared all, part or none of what the '
+    'paper prints to be entered; and the counts of statements actually '
+    'derived. When a kind is declared none or partly, the right answer to a '
+    'question about it is that the material has not yet been entered, never '
+    'that the paper lacks it. Unknown key: known false.'
+  ),
+  'name_history': (
+    'What each source does with a name, in publication order. Per source: '
+    'where the name is placed and at what rank, the acts performed on it, '
+    'the earlier usages accepted or rejected, and placements declined. With '
+    'include_related, records carrying the same name at another rank or '
+    'spelling (a subgenus and the genus it became, a nomen translatum, a '
+    'ligature spelling) are included, each entry naming its record, so a '
+    'trajectory across ranks is visible. The history reports; it passes no '
+    'verdict on which position is right.'
+  ),
+}
+
+# The same four tools in the Anthropic Messages API shape.
+TOOL_SPECS = [
+  {
+    'name': 'resolve_name',
+    'description': TOOL_DESCRIPTIONS['resolve_name'],
+    'input_schema': {
+      'type': 'object',
+      'properties': {
+        'query': {'type': 'string', 'description': 'the printed name'},
+        'rank': {'type': 'string', 'description': 'optional rank word'},
+      },
+      'required': ['query'],
+    },
+  },
+  {
+    'name': 'claims_about',
+    'description': TOOL_DESCRIPTIONS['claims_about'],
+    'input_schema': {
+      'type': 'object',
+      'properties': {
+        'taxon_key': {'type': 'string', 'description': 'a record key from resolve_name'},
+        'source': {'type': 'string', 'description': 'optional source key'},
+        'kind': {'type': 'string', 'description': 'optional statement kind'},
+        'act_kind': {'type': 'string', 'description': 'optional act kind'},
+      },
+      'required': ['taxon_key'],
+    },
+  },
+  {
+    'name': 'source_coverage',
+    'description': TOOL_DESCRIPTIONS['source_coverage'],
+    'input_schema': {
+      'type': 'object',
+      'properties': {
+        'source_key': {'type': 'string', 'description': 'a source key as it appears on statements'},
+      },
+      'required': ['source_key'],
+    },
+  },
+  {
+    'name': 'name_history',
+    'description': TOOL_DESCRIPTIONS['name_history'],
+    'input_schema': {
+      'type': 'object',
+      'properties': {
+        'taxon_key': {'type': 'string', 'description': 'a record key from resolve_name'},
+        'include_related': {'type': 'boolean', 'description': 'default true'},
+      },
+      'required': ['taxon_key'],
+    },
+  },
+]
+
 _KIND_ORDER = {
   'primary': 0, 'altRankOf': 1, 'altSpellingOf': 2, 'vulgarSpellingOf': 3,
   'placeholder': 4,
@@ -311,3 +417,15 @@ def source_coverage(source_key):
 
 def name_history(taxon_key, include_related=True):
   return store().name_history(taxon_key, include_related=include_related)
+
+
+def call(name, arguments):
+  """Dispatch a tool call by name with keyword arguments; the runner's
+  entry point, so the model sees exactly what the MCP server serves."""
+  functions = {
+    'resolve_name': resolve_name,
+    'claims_about': claims_about,
+    'source_coverage': source_coverage,
+    'name_history': name_history,
+  }
+  return functions[name](**arguments)
