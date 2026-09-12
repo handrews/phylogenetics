@@ -135,6 +135,10 @@ def main(argv=None):
         line += f"{c['sourcesWithStatements']} sources"
         if c.get('variants'):
           line += f"; same name at other ranks or spellings: {', '.join(c['variants'])}"
+        if c.get('combinations'):
+          line += '; as ' + '; '.join(
+            f"{x['label']} {x['firstYear']}" + (f"–{x['lastYear']}" if x['lastYear'] != x['firstYear'] else '')
+            for x in c['combinations'])
         print(line)
     return 0
   if command == 'coverage':
