@@ -90,19 +90,25 @@ entered, follow the trajectory contract and the language rules above.
     poetry run python scripts/eval_grade.py eval/runs/<date>-<model>.jsonl
 
 The runner answers every question in a bounded tool-use loop over
-`phylohist/tools.py` and writes `eval/runs/<date>-<model>.jsonl`: the
-question, each tool call with a compact summary of what it returned, the
-answer, token usage and the prompt's hash. When the lookup limit is hit
-the model is asked to answer from what it has, and the record says so.
-Runs are committed; they are the evidence the write-up rests on. The
-grader applies the mechanical checks (retrieval of every expected claim,
-citation of the expected sources and page, the refusal wording, no
-denial that the paper holds it, no leak of internals), then a judge model
-scores grounded, complete and contract (0-2 each) against the expected
-answer, and writes `<run>.grades.jsonl` and `<run>.md` with per-class
-pass rates and every failure for the owner's review. The API key comes
-from `ANTHROPIC_API_KEY` or a git-ignored `.env`, never from the
-repository.
+`phylohist/tools.py`. The model sees each block's id, type and rendered
+text and finishes by calling `submit`: a one-line header stating the
+parameters it chose, the ids of the blocks to show in order, and a
+question back when a parameter is ambiguous. The runner validates the
+submission against the blocks it kept, renders the composition, and
+writes `eval/runs/<date>-<model>.jsonl`: the question, each tool call,
+the composition (header, blocks with their types, parameters and claim
+ids, question, any invalid ids, any free text), the rendered answer,
+token usage and the prompt's hash. At the lookup limit the model is
+made to submit from what it has, and the record says so. Runs are
+committed; they are the evidence the write-up rests on. The grader is
+mechanical: every expected claim must be carried by a composed block, a
+refusal must compose the gap block for its source and kind, the header
+must leak nothing and pass no verdict, and no free text may accompany
+the submission; `--judge` adds a judge model's score for the header
+alone. It writes `<run>.grades.jsonl` and `<run>.md` with per-class
+pass rates and every failure beside the composition the model chose.
+The API key comes from `ANTHROPIC_API_KEY` or a git-ignored `.env`,
+never from the repository.
 
 ## Maintenance
 

@@ -129,8 +129,8 @@ def test_contents_of_a_family_in_a_source(store):
   assert keys == ['astrocystitidae', 'astrocystites', 'cambroblastus',
                   'lampteroblastus', 'hintzei_guensburg_sprinkle_1994']
   assert blocks[0]['rendered'] == (
-    'Astrocystitidae\n  Astrocystites\n  Cambroblastus\n  Lampteroblastus*\n'
-    '    hintzei*'
+    'Astrocystitidae emend.\n  Astrocystites\n  Cambroblastus\n  Lampteroblastus*\n'
+    '    hintzei* [type]'
   )
   every = store.contents(None, 'astrocystitidae')
   assert [b['source'] for b in every][:2] == ['1935_bassler', '1967a_fay']

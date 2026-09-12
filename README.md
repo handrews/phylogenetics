@@ -11,9 +11,17 @@ and `claims/`, and fails if either is stale:
     poetry run python scripts/claims.py
     git diff --exit-code docs/schema-usage.md claims/
 
-The four read-only tools over the claim table (`phylohist/tools.py`) are
-served over MCP by `scripts/mcp_server.py`; `.mcp.json` registers the
-server for Claude Code, so a session in this directory can resolve a
-name, list what the corpus holds about it, check a source's coverage, or
-follow a name across sources.
+The read-only tools over the claim table (`phylohist/tools.py`) return
+blocks, rendered in a style; the CLI has one subcommand per tool:
+
+    poetry run phylohist resolve "Palæaster"
+    poetry run phylohist contents 1994_guensburg_sprinkle astrocystitidae --synonymy
+    poetry run phylohist descendants edrioblastoidea
+    poetry run phylohist ancestors astrocystitidae cyathocystidae rhenopyrgidae
+    poetry run phylohist history rhenopyrgus --style markdown
+    poetry run phylohist gap 1983_holloway_jell material
+
+The same tools are served over MCP by `scripts/mcp_server.py`, which
+`.mcp.json` registers for Claude Code. `docs/claims.md`, "Reading the
+table", describes the blocks and the tools.
 

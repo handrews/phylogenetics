@@ -293,7 +293,10 @@ class ClaimStore:
     node = {
       'key': key, 'name': self.names.get(key, {}).get('name'),
       'rank': self.rank(key), 'depth': depth, 'flags': flags,
-      'claim': base['id'], 'acts': [self._act_words(a) for a in acts],
+      'claim': base['id'],
+      'acts': [{'act': a['actKind'], 'words': self._act_words(a),
+                'inferred': bool(a.get('inferred'))} for a in acts],
+      'actClaims': [a['id'] for a in acts],
     }
     if base.get('placeholder'):
       node['placeholder'] = base['placeholder']
