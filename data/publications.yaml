@@ -20,7 +20,7 @@ am-nat:
   name: The American Naturalist
 amph-und-cyst:
   name: "Die Amphorideen und Cystoideen: beiträge zur Morphologie und Phylogenie der Echinodermen"
-annals:
+annales-de-paleo:
   name: Annales de Paleontologie
 annales-nord:
   name: Annales de la Société Géologique Nord
@@ -78,6 +78,9 @@ e-tampa-bay:
   place: Rotterdam
 earth-science:
   name: Earth Science
+echin-munchen:
+  name: "Echinoderms: München. Proceedings of the 11th International Echinoderm
+Conference, Munich, Germany, 6-10 October 2003"
 es-rev:
   name: Earth-Science Reviews
 e-faunas-bromide:

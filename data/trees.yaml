@@ -12067,6 +12067,55 @@
           - page: 153
             figures:
             - [1A, 1C]
+2004_reich.m_haude:
+  taxonomies:
+  - taxon: eleutherozoa
+    children:
+    - taxon: ophiocistioidea
+      removed:
+      - taxon: augustina
+        children:
+        - taxon: winteri_dementev_1998
+          notes: nomen nudum, appears to be an echinoid
+      children:
+      - taxon: volchoviidae
+        children:
+        - taxon: volchovia
+      - taxon: eucladidae
+        children:
+        - taxon: eucladia
+        - taxon: angu-loserra
+      - taxon: sollasinidae
+        children:
+        - taxon: sollasina
+        - taxon: euthemon
+        - taxon: cardioserra
+        - taxon: klukovichella
+      - taxon: rhenosquamidae
+        emended: true
+        pages:
+        - [492, 493]
+        children:
+        - taxon: rhenosquama
+        - taxon: gillocystis
+      - taxon: rotasacciidae
+        children:
+        - taxon: rotasaccus
+        - taxon: eriserra
+        - taxon: longiserra
+        - taxon: ornatoserra
+        - taxon: pararotasaccus
+      - taxon: linguaserridae
+        new: true
+        page: 493
+        children:
+        - taxon: linguaserra
+        - openTaxon: lingaserridae-genus_reich.m_2004
+          new: true
+          page: 493
+      - openTaxon: ophiocistioidia-fam-uncertain_reich.m_haude_2004
+        children:
+        - taxon: branzoviella
 2005_frest:
   taxonomies:
   - taxon: blastozoa
@@ -12489,6 +12538,37 @@
         children:
         - taxon: bohemicus_barrande_1887_cardiocystites
           type: true
+2007_reich.m:
+  taxonomies:
+  - taxon: echinoermata
+    auth: [brugiére]
+    year: 1791
+    children:
+    - taxon: eleutherozoa
+      children:
+      - taxon: ophiocistioidea
+        children:
+        - openTaxon: ophiocistioidea-unnamed-order_reich.m_2007
+          children:
+          - taxon: linguaserridae
+            children:
+            - taxon: linguaserra
+              emended: true
+              pages:
+              - [323, 324]
+              children:
+              - taxon: ligula_langer_1991
+                type: true
+              - taxon: franzenae_reich.m_kutscher_2014
+                notes: "in prep"
+              - openTaxon: linguaserra-sp_weber_1997
+              - taxon: spandeli_reich.m_2007
+                new: true
+                pages:
+                - [324, 326]
+                figures:
+                - page: 326
+                  figure: 5 
 2007_zhao.y.l_parsley_peng.j:
   taxonomies:
   - taxon: blastozoa
@@ -12524,7 +12604,7 @@
     - taxon: wudingeocrinus
       new: true
       children:
-      - taxon: rarus_hu.s.x_luo.h.l_2008
+      - taxon: rarus_luo.h.l_li.y_hu.s.x_fu.x.p_hou.s.g_liu.x.r_chen.l.z_li.j.f_pang.j.y_liu.q_2008
         type: true
         new: true
         synonyms:

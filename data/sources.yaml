@@ -2411,7 +2411,7 @@ inprep_sprinkle_strimple:
   - arbizu
 1987_ubaghs:
   title: Echinodermes nouveaux du Cambrien moyen de la Montagne Noire (France)
-  journal: annals
+  journal: annales-de-paleo
   volume: 73
   number: 1
   pubDate:
@@ -2627,7 +2627,7 @@ inprep_sprinkle_strimple:
   seen: false
   complete:
     history: false # the named species was previously in open nomenclature(s)
-  journal: annals
+  journal: annales-de-paleo
   volume: 81
   pages:
   - 17
@@ -2955,6 +2955,17 @@ inprep_sprinkle_strimple:
   - prokop
   identifiers:
     url: https://www.researchgate.net/publication/279671453_Functional_morphology_and_paleoecology_of_some_sessile_Middle_Cambrian_echinoderms_from_the_Barrandian_region_of_Bohemia
+2004_reich.m_haude:
+  title: "Ophiocistioidea (fossil Echinodermata): an overview"
+  book: echin-munchen
+  pages:
+  - 489
+  - 494
+  pubDate:
+    year: 2004
+  authors:
+  - reich.m
+  - haude
 2005_frest:
   title: Ampheristocystis, a Silurian (Lower Wenlock) eocrinoid (Echinodermata, Blastozoa) from Indiana
   journal: geo-j
@@ -3075,7 +3086,7 @@ inprep_sprinkle_strimple:
   - erdtmann
 2007a_nardin:
   title: "New specimens of Lingulocystis Thoral, 1935 (Eocrinoidea, Blastozoa) from the Arenig (Lower Ordovician) of Montagne noire (southern France): Intraspecific morphological variability, stratigraphic, and palaeoecological implications"
-  journal: annals
+  journal: annales-de-paleo
   volume: 93
   pages:
   - 199
@@ -3102,6 +3113,21 @@ inprep_sprinkle_strimple:
   - nardin
   identifiers:
     url: https://www.app.pan.pl/article/item/app52-017.html
+2007_reich.m:
+  title: |
+    Linguaserra spandeli sp. nov. (Echinodermata: Ophiocistioidea)
+    from the Late Permian (Zechstein) of Thuringia, Germany
+  journal: annales-de-paleo
+  volume: 93
+  pages:
+  - 317
+  - 330
+  pubDate:
+    year: 2007
+  authors:
+  - reich.m
+  identifiers:
+    doi: 10.1016/j.annpal.2007.09.007
 2007_zhao.y.l_parsley_peng.j:
   title: Early Cambrian eocrinoids from Guizhou Province, South China
   journal: ppp

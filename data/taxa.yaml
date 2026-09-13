@@ -4239,7 +4239,7 @@ eocrinoidea-sp_hu.s.x_luo.h.l_hou.s.g_erdtmann_2007:
   rank: species
   authority:
     source: 2007_hu.s.x_luo.h.l_hou.s.g_erdtmann
-  synonym: rarus_hu.s.x_luo.h.l_2008
+  synonym: rarus_luo.h.l_li.y_hu.s.x_fu.x.p_hou.s.g_liu.x.r_chen.l.z_li.j.f_pang.j.y_liu.q_2008
 eocrinus:
   name: Eocrinus
   auth: [jaekel]
@@ -6699,6 +6699,15 @@ lindstroemi_regnéll_1945:
   name: lindstroemi
   auth: [regnéll]
   year: 1945
+linguaserra:
+  name: Linguaserra
+  authority:
+    source: 2004_reich.m_haude
+linguaserridae:
+  name: Linguaserridae
+  rank: Family
+  authority:
+    source: 2004_reich.m_haude
 linguatula_frölich_1789:
   name: Linguatula
   needsQualification: true
@@ -7888,6 +7897,11 @@ ophiocistioidea:
   rank: Class
   auth: [Sollas]
   year: 1899
+ophiocistioidea-unnamed-order_reich.m_2007:
+  name: null
+  rank: Order
+  authority:
+    source: 2007_reich.m
 ophiura:
   name: Ophiura
   authority:
@@ -9507,10 +9521,9 @@ raripunctata_angelin_1878:
   name: raripunctata
   auth: [Angelin]
   year: 1878
-rarus_hu.s.x_luo.h.l_2008:
+rarus_luo.h.l_li.y_hu.s.x_fu.x.p_hou.s.g_liu.x.r_chen.l.z_li.j.f_pang.j.y_liu.q_2008:
   name: rarus
   authority:
-    authors: [hu.s.x, luo.h.l]
     source: 2008_luo.h.l_li.y_hu.s.x_fu.x.p_hou.s.g_liu.x.r_chen.l.z_li.j.f_pang.j.y_liu.q
 raymondi_foerste_1920:
   name: raymondi
@@ -11988,7 +12001,6 @@ wrighti_begg_1939:
 wudingeocrinus:
   name: Wudingeocrinus
   authority:
-    authors: [hu.s.x, luo.h.l]
     source: 2008_luo.h.l_li.y_hu.s.x_fu.x.p_hou.s.g_liu.x.r_chen.l.z_li.j.f_pang.j.y_liu.q
 ###################### X
 xenocystites:

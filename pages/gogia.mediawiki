@@ -1,0 +1,391 @@
+{{Short description|Extinct genus of marine invertebrates}}
+{{for|the surname|Gogia (surname)}}
+{{Automatic Taxobox
+| fossil_range = {{fossil range|Late Early Cambrian|Middle Cambrian}}
+| image = Gogia kitchnerensis 01.jpg
+| image_caption = ''G. kitchnerensis'' specimen from Utah
+| taxon = Gogia
+| authority = Walcott 1917
+| type_species = †''G. prolifica''
+| subdivision_ranks = Species
+| subdivision =
+* †''G. prolifica'' {{small|Walcott 1917}} <ref>{{harvnb|Harker|Hutchinson|1953}}</ref>
+* †''G. longidactylus'' {{small|(Walcott 1886)}}<ref name=Robison1965/>
+* †''G. granulosa'' {{small|Robison 1965}}<ref name=Robison1965/>
+* †''G. multibrachiata'' {{small|(Kirk 1945)}}<ref name=Robison1965/>
+* †''G. spiralis'' {{small|Robison 1965}}<ref name=Robison1965/>
+* †''G. ojenai'' {{small|Durham 1978}}<ref name=Durham1978>{{harvnb|Durham|1978}}</ref>
+* †''G. palmeri'' {{small|Sprinkle 1973}}
+* †''G. guntheri'' {{small|Sprinkle 1973}}
+* †''G. kitchnerensis'' {{small|Sprinkle 1973}}
+* †''G. hobbsi'' {{small|Sprinkle 1973}}
+* †''G. gondi'' {{small|Ubaghs 1987}}
+* †''G. stephenensis'' {{small|Sprinkle and Collins 2006}}
+* †''G. parsleyi'' {{small|Zamoa, Gozalo, and Liñan 2009}}
+| synonyms =
+* †''Eocrinus'' {{{small|Jaekel, 1918}}<ref name=Robison1965/>
+** †''E. longidactylus''
+** †''E. multibrachiatus''
+}}
+
+
+[[File:Gogia_ojenai.jpg|thumb|left|upright|Artists reconstruction of ''G. ojenai'']]
+[[File:Gogia spiralis USNM.jpg|alt=fossil eocrinoid Gogia spiralis|left|thumb|''Gogia spiralis'']]
+'''''Gogia''''' is a [[genus]] of primitive [[Eocrinoidea|eocrinoid]] [[blastozoa]]n from the early to [[middle Cambrian]].
+
+''G. ojenai'' dates to the late Early Cambrian;<ref name=Durham1978/> other [[species]] come from various Middle Cambrian strata throughout North America, but the genus has yet to be described outside this [[continent]].<ref name=Robison1965>{{harvnb|Robison|1965}}</ref>  Notable localities where species are found include the [[Wheeler Shale]] of [[Utah]],<ref>{{harvnb|Schlottke|2007}}</ref> and the [[Burgess Shale]] of [[British Columbia]].{{citation needed|date=July 2017}}
+
+The species of ''Gogia'', like other eocrinoids, were not closely related to the true [[crinoid]]s, instead, being more closely related to the [[blastoid]]s.
+[[Image:Gogia radiata.jpg|thumb|left|''Gogia radiata'']] 
+''Gogia'' is distinguished from sea lilies, and most other blastoids, in that the plate-covered body was shaped like a vase, or a bowling pin (with the pin part stuck into the substrate), and that the five [[ambulacral|ambulacra]] were split into pairs of coiled or straight, ribbon-like strands. Six specimens of ''Gogia'' are known from the Greater [[Phyllopod bed]], where they comprise < 0.1% of the community.<ref name=Caron2006>{{harvnb|Caron|Jackson|2006}}</ref>
+
+As a whole, the Eocrinoids are regarded as basal blastozoans very close to the ancestry of the entire subphylum.
+
+
+== outline ==
+
+Either under its current name or that of its junior synonym ''Eocrinus'' (Jaekel 1918), ''Gogia'' is the type genus of the family Eocrinidae, order Gogiida, and class Eocrinoidea.
+
+The morphological diversity shown by ''Gogia's'' thirteen formally described species makes it challenging to distinguis the genus fro other members of the Eocrinidae.  The genus is considered to be in need of revision, with one source expecting at least three new genera to be established as a result.  A 1988 paper proposed several informal subgroups, but these have not been formalized in subsequent decades.
+
+
+''Gogia'' is the most widespread, diverse, and abundant echinoderm genus of those known from the [[Miaolingian]] (???) epoch.
+
+As currently defined, ''Gogia'' appears to have a world-wide distribution, with formally described species documented from Laurentia (western United States, Canada, and Mexico) and West Gondwana (Iberian craton, Morocco, and the Bohemian Massif), and isolated plates from the North China craton (North Korea) and East Gondwana (western Australia).
+
+{|
+|+ Characteristics of ''Gogia'' species
+|-
+! Species
+! Age
+! Location
+! Thecal Shape
+! Thecal Plates
+! Epispires
+| Ambulacra
+! Brachiole Shape
+! Number of Brachioles
+! Stalk Shape
+! Stalk Plates
+! Holdfast
+! Proposed Group
+|-
+| ''G. gondi''
+| late Middle Cambrian
+| France
+| 
+|-
+| ''G. granulosa''
+| Middle Cambrian
+| North America
+|-
+| ''G. guntheri''
+| Middle Cambrian
+| North America
+|-
+| ''G. hobbsi''
+| Middle Cambrian
+| North America
+|-
+| ''G. kitchnerensis''
+| Middle Cambrian
+| North America
+|
+|
+|
+| A, C, D well-developed, B and E short
+|
+|
+|
+|
+|
+| ''G. kitchnerensis''
+|-
+| ''G. longidactylus''
+| Middle Cambrian
+| North America
+|-
+| ''G. multibrachiata''
+| Middle Cambrian
+| North America
+|-
+| ''G. ojenai''
+| late Early Cambrian
+| United States
+|-
+| ''G. palmeri''
+| Middle Cambrian
+| North America
+|-
+| ''G. parsleyi''<ref>{{harvnb|Zamora|Gozalo|Liñán|2009|pp=258–259}}</ref>
+| Middle Cambrian
+| Spain
+| globular, large
+| slightly convex plates arranged in six or seven subregular circlets
+| simple, numerous, well-developed raised rim, sometimes covered by dome or small plates
+|
+| long, narrow, spiraled
+| at least seven
+| almost none
+| ''TODO''
+| expanded, tiny globular plates
+| ''n/a'' (''G. spiralis''?)
+|-
+| ''G. prolifica''
+| Middle Cambrian
+| North America
+|-
+| ''G. spiralis''
+| Middle Cambrian
+| North America
+|-
+| ''G. stephenensis''<ref>{{harvnb|Sprinkle|Collins|2006|p=317–319}}</ref>
+| Middle Cambrian
+| North America
+| ellipsoidal to rounded conical
+| moderate number of large and small
+| many elliptical epispires on large plates all over theca
+|
+| long, relatively large, mostly straight, rarely spiral, may branch
+| 2 to 3 i n smaller specimens, 10 to 12 in larger
+| relatively short and thin
+| many small plates
+| often large flaring distal stalk tip
+| ''n/a'' (''G. spiralis'' ??)
+|-
+
+== quotes ==
+
+KAMMER ET AL 2013
+2013-00-00-p Oral Region Homologies in Paleozoic Crinoids and Other Plesiomorphic Pentaradial Echinoderms.pdf
+
+PBS=Peristomial Border Systems
+
+In PBS B2 the peristomial border is formed exclusively from
+radially-positioned oral frame plates presumably derived from
+modified floor plates (Figure 5F). This type is present in
+plesiomorphic eocrinoid taxa such as Lepidocystis ([9], pls. 1–3;
+Figure 4M, N), the eocrinoid gogiid Sinoeocrinus (Figure 4 C, D),
+Gogia [49], and many of the edrioasteroid clades, especially the
+isorophids [38,50,51]. Here five radial elements form around a
+bean-shaped peristomial opening, and an extra plate fits in the CD
+interray that does not bear an ambulacrum. In most cases floor
+plates extend from the oral frame plates forming the distal food
+grooves; but in at least one gogiid, Sinoeocrinus, brachioles are
+sutured directly to the oral frame plates ([52], fig. 4.1; Figure 4C,
+D). The edrioasteroid condition is also different in that the
+hydropore/gonopore structures are incorporated into the oral
+frame [50,53], whereas they are located in the proximal
+interambulacral fields in plesiomorphic eocrinoids [9].
+
+Hydropore and gonopore. The hydropore and gonopore
+structures of plesiomorphic echinoderms lie in the proximal right
+interambulacral fields unrelated to the plating of the peristomial
+border. This occurs in the eocrinoids Kinzercystis ([9], pl. 6 fig. 3)
+and Gogia (Sumrall pers. obs., 1995) and the edrioasteroid
+Kailidiscus [48]. In these taxa the hydropore and gonopore
+structures are closely positioned and in the form of small pyramids
+or, in the case of one of the structures in Kinzercystis, a small
+polyplated spout.
+
+True orals are absent in
+isorophids (Figure 4K, L), Lepidocystis (Figure 4M, N), Sinoeocrinus
+(Figure 4C, D), and Gogia [49].
+
+Oral frame plates are totally absent in other
+Cambrian edrioasteroids such as Aragocystites, Stromatocystites and
+Totiglobus. It is unclear if these uniserial elements derive from the
+fusion of the inner row of floor plates that border the oral frame in
+Kailidiscus. A noteworthy observation is that this construction of the
+mouth frame incorporating oral frame plates is also present in at
+least three Cambrian blastozoans, Lepidocystis, Sinoeocrinus, and
+Gogia [9,49,52].
+
+If something akin to Kailidiscus had the plesiomorphic state for
+pentaradiate echinoderms, then oral plates are plesiomorphic and
+later lost in Imbricata, Gogiida, and Isorophida where a new type
+of oral frame plates likely formed by fusion of floor plates into
+radial elements. Edrioasterids, with both orals and oral frame
+plates, are inferred to be the outgroup to the clade containing
+edrioblastoids, cyathocystids, and rhenopyrgids [22,23,71]. For
+crinoids to be derived from edrioblastoids, the oral frame plates
+must be lost in this scenario.
+If something akin to the imbricate eocrinoid Lepidocystis has the
+plesiomorphic condition for pentaradiate echinoderms, then the
+oral frame plates of Imbricata, Gogiida, Edrioasterida and
+Isorophida are plesiomorphic. This would require the non-
+homology of oral plates in crinoids and derived blastozoans, if
+crinoids were separately derived from edrioblastoids, which seems
+unlikely based on evidence presented herein. Furthermore,
+crinoids derived from edrioblastoids would require a secondary
+loss of oral frame plates and numerous homoplasic modifications
+of the nature of the oral plate system, which would generate a
+system that is much less parsimonious than if crinoids were derived
+from within derived blastozoans.
+
+PAGE 482 ZAMORA, DELINE, JAVIER ÁLVARO AND RHAMAN 2017
+3.3.6. Gogia
+Gogia (Fig. 1D) is by far the most abundant, diverse, and widespread
+eocrinoid known from Cambrian Epoch 3 (Zamora et al., 2009). There
+are several species of Gogia, but all have similar distal structures for
+attachment, which comprise an expanded polyplated holdfast. Gogia is
+commonly preserved attached to skeletal fragments (Fig. 2H) and is
+therefore best interpreted as a hard substrate attacher, as suggested by
+Sprinkle (1973), Dornbos (2006), Zamora et al. (2009), and Álvaro
+et al. (2013), among others.
+
+PAGE 1065 PARSLEY AND ZHAO 2006
+A comprehensive comparison between
+Sinoeocrinus and Gogia is difficult because Gogia is such a varied
+genus that future cladistic analysis, taking into account growth
+stages, will probably result in the establishment of at least three
+or more new genera.
+
+A revision of ''Gogia'' taking into account growth stages is expected to result in "at least three or more new genera."<ref>{{harvnb|Parsley|Zhao|2006|P=1065}}</ref>
+
+PAGE 237 NARDIN ET AL 2009
+The genus Gogia is the most abundant and widespread
+echinoderm genus known so far in the Early and Middle
+Cambrian. Walcott (1917), Harker and Hutchinson (1953),
+Robison (1965), Sprinkle (1973), and Sprinkle and Collins
+(2006) described 12 species from the Middle Cambrian of
+North America: Gogia granulosa Robison, 1965, G. guntheri
+Sprinkle, 1973, G. hobbsi Sprinkle, 1973, G. kitchnerensis
+Sprinkle, 1973, G. longidactylus (Walcott, 1886),
+G. multibrachiatus (Kirk, 1945), G. palmeri Sprinkle, 1973,
+G. prolifica Walcott, 1917, G. spiralis Robison, 1965,
+G. stephenensis Sprinkle and Collins, 2006, G. sp. 1 Sprinkle,
+1973, and G. sp. 2 Sprinkle, 1973. Durham (1978) described the
+single species (G. ojenai) from the late Early Cambrian of the
+United States, and Ubaghs (1987) one species (G. gondi) from
+the late Middle Cambrian of France. Many isolated plates or
+complete specimens of indeterminate species have been found
+in Spain (Zamora, pers. com. to E.N. 2006), Morocco (E.N.,
+pers. obs.), North Korea (Saito, 1936), and West Australia (Jell
+et al., 1985).
+
+ZAMORA GOZALO LIÑÁN 2009
+
+Discussion.—Gogia is the most abundant and diverse Cam−
+brian eocrinoid (Sprinkle 1973). Thirteen species have been
+described in the lower and middle Cambrian of Laurentia;
+only one of these, Gogia ojenai Durham, 1973, is from the
+lower Cambrian (Robison 1965; Sprinkle 1973; Sprinkle and
+Collins 2006). There are, however, several new species from
+the lower Cambrian of Laurentia that still require formal de−
+scription (Bryan C. Wilbur, personal communication 2005).
+Until now, the first convincing appearance of Gogia in West−
+ern Perigondwana was in the upper middle Cambrian of
+Montagne Noire (France), where Gogia gondi Ubaghs, 1987
+is reported. The Spanish material described here suggests an
+older first occurrence of the genus Gogia in Gondwana, in
+the lower middle Cambrian.
+
+SMITH 1988 PAGE 814
+
+The genus Gogia has been informally subdivided into a number of species groups as follows, each based on the first-listed species, although none of the groups have been formally defined as subgenera or separate genera:
+
+* Spiral brachiole species
+** ''G. spiralis'' (Robison 1965)
+** ''G. granulosa'' (Robison 1965)
+** ''G. guntheri'' (Sprinkle 1973)
+** ''G. ojenai' (Durham 1978)
+* Extensively developed epispires forming prominent external grooves
+** ''G. prolifica'' (Walcott 1917)
+** ''G. palmeri'' (Sprinkle 1973)
+* Substanitally reduced holdfast
+** ''G. hobbsi'' (Sprinkle 1973)
+** ''G. gondi'' (Ubaghs 1987)
+* No differentiated holdfast
+** ''G. multibrachialis'' (Kirk 1945; Eocrinus)
+* Greatly reduced epispires confied to oral area
+** ''G. kitchnerensis'' (Sprinkle 1973)
+** ''G. longidactylus'' (Walcott 1886; Eocrinus)
+* (discovered later)
+** ''G. stephenensis'' (Sprinkle and Collins 2006)
+** ''G. parsleyi'' (Zamora 2009)
+
+(i) the G. spiralis group ( G. ojenai , G. granulosa , G. guntheri , and G. spiralis ), for species with spiral brachioles. The spiralling of the brachioles is a shared derived feature and is found in no other echinoderm;
+
+(ii) the G. prolifica group (G. prolifica and G. palmeri ), for species with extensively developed epispires forming prominent external grooves on plate margins;
+
+(iii) the G. hobbsi group (G. hobbsi and G. gondi ), species in which the holdfast is considerably reduced in size;
+
+(iv) G.  multibrachialis, a species in which there is no apparent holdfast differentiated;
+
+(v) the G. kitchnerensis group ( Gogia sp. 1 of Sprinkle 1973, G. longidactylus, and G, kitchnerensis), for species in which the epispires are greatly reduced and confined to the oral area of the theca.
+
+G. radiata Sprinkle appears to represent yet another group, but it is so poorly known that its assignment to a genus is impossible. However, from what little we do know of this species, it closely resembles Eocystites languedocianus (Ubaghs 1987) and the two have been grouped together.
+
+Loss of epispires. Camptostroma and primitive pelmatozoans such as Kinzercystis and Gogia all have
+well-developed epispires over their oral surface. In the G. kitchnerensis group epispires are greatly reduced
+in size and extent. In other groups the epispires are either lost or have been replaced by more sophisticated
+respiratory structures.
+
+PAGE 818
+In primitive crinoids and cystoids such
+as Gogia , the anus lies close to the mouth within the area of the subvective filtration fan.
+
+CRYPTO-HELICAL
+Gogiids, in general, have
+three morphological attributes common among echinoderms:
+brachioles for feeding, a main body chamber for internal organs,
+and a holdfast for attachment to the substratum (Fig. 1).
+
+5.2. Issues on Gogiida
+The stalk is an important morphologic feature for the Order
+Gogiida (Parsley and Prokop, 2004). The most recent reviews
+(Parsley and Zhao, 2006, 2012; Zhao et al., 2008) of the
+Family Eocrinidae included Gogia, Sinoeocrinus, Acanthocys-
+tites, Akadocrinus, Guizhoueocrinus, and Globoeocrinus, but
+excluded Balangicystis. Recently, Balangicystis has been reas-
+signed to the Family Lyracystidae (Sprinkle et al., 2011).
+The Eocrinidae is characterized by a polyplated stalk, a
+crypto-helically plated theca with epispires, and unbranched
+brachioles (Fig. 3). However, Akadocrinus bears a columnal-
+like stalk (Fatka and Kordule, 1991) that is different from the
+other gogiids mentioned above. The closest stalked family is
+the Lyracystidae Sprinkle and Collins, 2006, which is similar
+to Eocrinidae by bearing similar stalk and thecal plates but is
+different in having a very long stalk, a decrease in number of
+thecal plates, and the unusual endotomous branching brachioles
+(Sprinkle et al., 2011). In contrast, Lichenoididae Jaekel (see
+Parsley and Prokop, 2004) is different from both gogiid families
+due to the lack of a stalk and a theca with highly reduced thecal
+plates. Phylogenetic relationships among gogiid families cannot
+be fully understood without a complete treatment of taxonomic
+revision of the Order Gogiida with cladistic analyses, but such
+task is beyond the scope of current work.
+
+
+== References ==
+{{Reflist}}
+
+=== Works cited ===
+{{refbegin}}
+* {{cite journal|last1=Caron |first1=Jean-Bernard|last2=Jackson |first2=Donald A.|title=Taphonomy of the Greater Phyllopod Bed community, Burgess Shale|journal=PALAIOS |volume=21 |issue=5 |pages=451–65|date=October 2006|doi=10.2110/palo.2003.P05-070R|jstor=20173022|bibcode=2006Palai..21..451C |s2cid=53646959 }}
+* {{cite journal|last1=Durham |first1=J. |year=1978 |title=A Lower Cambrian Eocrinoid |journal=Journal of Paleontology |volume=52 |issue=1 |pages=195–199 |jstor=1303808 }}
+* {{cite journal|last1=Harker |first1=P. |last2= Hutchinson |first2=R. |year=1953 |title=A New Occurrence and Redescription of ''Gogia prolifica'' Walcott |journal=Journal of Paleontology |volume=27 |issue=2 |pages=285–287 |jstor= 1300058}}
+* {{cite journal|last1=Parsley |first1=Ronald L. |last2=Zhao |first2=Yuanlong |year=2006 |title=Long stalked eocrinoids in the basal Middle Cambrian Kaili
+Biota, Taijiang County, Guizhou Province, China |journal=Journal of Paleontology |volume=80 |number=6 |pages=1058–1071 |doi=10.1666/0022-3360(2006)80[1058:LSEITB]2.0.CO;2}}
+* {{cite journal|last1=Robison |first1=R. A. |year=1965 |title=Middle Cambrian Eocrinoids from Western North America |journal=Journal of Paleontology |volume=39 |issue=3 |pages=355–364 |jstor=1301709}}
+* {{cite journal|last1=Schlottke |first1=Mark T. |year=2007 |title=Paleoecology of the Middle Cambrian Eocrinoid Echinoderm ''Gogia Spiralis'': Possible Changes in Substrate Adaptations Through Ontogeny |journal=Geological Society of America Abstracts with Programs |volume=39 |number=6 |page=33 |access-date=2017-07-05 |archive-date=2017-08-15 |archive-url=https://web.archive.org/web/20170815062212/https://gsa.confex.com/gsa/2007AM/finalprogram/abstract_130823.htm |url=https://gsa.confex.com/gsa/2007AM/finalprogram/abstract_130823.htm |url-status=dead }}
+{{refend}}
+
+==External links==
+*{{Cite web|date=2025|title=''Gogia stephenensis''|work=Burgess Shale Fossil Gallery|publisher=Virtual Museum of Canada|url=https://burgess-shale.rom.on.ca/fossils/gogia-stephenensis/|access-date=2025-03-24}}
+
+{{Portal|Paleontology}}
+{{Taxonbar|from=Q16982410}}
+
+[[Category:Burgess Shale fossils]]
+[[Category:Burgess Shale animals]]
+[[Category:Cambrian echinoderms]]
+[[Category:Blastozoa genera]]
+[[Category:Cambrian genus extinctions]]
+[[Category:Wheeler Shale]]
+[[Category:Paleozoic life of Alberta]]
+
+
+{{paleo-echinoderm-stub}}
+
