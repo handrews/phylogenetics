@@ -9,6 +9,7 @@ and the eval runner call these functions directly.
 """
 
 import collections
+import re
 import json
 import pathlib
 
@@ -127,11 +128,23 @@ class ClaimStore:
 
   def _key(self, key):
     """A record or source key as given, or lowercased when only that form
-    exists: keys are lowercase, printed names are not."""
+    exists (keys are lowercase, printed names are not), or the one record
+    a printed name resolves to. A name that can mean several records is
+    refused with the candidates, since a tool cannot choose among them."""
     if key is None or key in self.names or key in self.sources:
       return key
     lowered = key.lower()
-    return lowered if lowered in self.names or lowered in self.sources else key
+    if lowered in self.names or lowered in self.sources:
+      return lowered
+    candidates = self.resolve_name(key)
+    if len(candidates) == 1:
+      return candidates[0]['key']
+    if candidates:
+      raise ValueError(
+        f'"{key}" can mean several records: ' + ', '.join(c['key'] for c in candidates)
+        + '; name one by its key'
+      )
+    return key
 
   def _keys(self, keys):
     return [self._key(k) for k in keys]
@@ -312,6 +325,45 @@ class ClaimStore:
       entry['combinations'] = self.combinations(key)
     return entry
 
+  def _resolve_combination(self, words):
+    """A multi-word query is a combination as the literature writes it:
+    "Genus species", "Genus (Subgenus) species", "Genus species
+    subspecies", or "Genus (Subgenus)" for the subgenus itself. The
+    record is the last name; the rest must be the chain some source
+    gives it (the subgenus may be left out of the query)."""
+    bare = [w.strip('()') for w in words]
+    if len(words) == 2 and words[1].startswith('('):
+      genus_forms, sub_forms = fold_forms(bare[0]), fold_forms(bare[1])
+      return {
+        k for form in sub_forms for k in self.by_folded.get(form, ())
+        if self._rank_of(k) == 'subgenus'
+        and genus_forms & fold_forms(self.name(self._genus_of_subgenus(k) or ''))
+      }
+    wanted = fold_forms(' '.join(bare))
+    epithet_keys = {
+      k for form in fold_forms(bare[-1]) for k in self.by_folded.get(form, ())
+      if self._rank_of(k) in _SPECIES_GROUP
+    }
+    keys = set()
+    for k in epithet_keys:
+      for combo in self.combinations(k):
+        label = combo['label']
+        without_subgenus = re.sub(r' \([^)]*\)', '', label)
+        if wanted & (fold_forms(label) | fold_forms(without_subgenus)):
+          keys.add(k)
+          break
+    if not keys:
+      # A species no source places under a genus: the chain the first
+      # description gives, or the parent recorded with it.
+      genus_forms = fold_forms(bare[0])
+      keys = {k for k in epithet_keys if self._placed_under(k, genus_forms)}
+      if not keys:
+        keys = {
+          k for k in epithet_keys
+          if genus_forms & fold_forms(self.names[k].get('originalParent') or '')
+        }
+    return keys
+
   def _placed_under(self, key, genus_forms):
     for claim in self.by_subject.get(key, ()):
       if claim['kind'] != 'placement' or claim.get('parent') is None:
@@ -397,17 +449,7 @@ class ClaimStore:
 
     words = query.split()
     if not keys and len(words) >= 2:
-      genus_forms = fold_forms(words[0])
-      epithet_forms = fold_forms(words[-1])
-      epithet_keys = {
-        k for form in epithet_forms for k in self.by_folded.get(form, ())
-      }
-      keys = {k for k in epithet_keys if self._placed_under(k, genus_forms)}
-      if not keys:
-        keys = {
-          k for k in epithet_keys
-          if genus_forms & fold_forms(self.names[k].get('originalParent') or '')
-        }
+      keys = self._resolve_combination(words)
 
     if not keys and len(words) == 1 and len(query) >= 4:
       prefixes = tuple(forms)
@@ -996,7 +1038,11 @@ TOOL_DESCRIPTIONS = {
     'nomenclature such as "Rhenopyrgus sp. indet. 1") are never found by '
     'name, since the words in their designation name other taxa; reach '
     'them by the key a listing shows. Record and source keys are '
-    'lowercase; the other tools accept them in any case. An empty list '
+    'lowercase; the other tools accept them in any case, or a printed '
+    'name that resolves to one record (a name that can mean several is '
+    'refused with the candidates). A combination is written as the '
+    'literature writes it: "Rhenopyrgus grayae", "Pyrgocystis '
+    '(Rhenopyrgus) coronaeformis", "Pyrgocystis (Rhenopyrgus)". An empty list '
     'means no source in the corpus carries the name; it does not mean the '
     'name does not exist. Optionally restrict by rank word.'
   ),
