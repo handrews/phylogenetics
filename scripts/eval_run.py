@@ -4,6 +4,7 @@
     poetry run python scripts/eval_run.py --model claude-sonnet-5
     poetry run python scripts/eval_run.py --ids q001 q013 q037
     poetry run python scripts/eval_run.py --resume eval/runs/2026-09-12-claude-sonnet-5.jsonl
+    poetry run python scripts/eval_run.py --ask "Who first placed Rhenopyrgus under Edrioblastoidina?"
 
 One tool-use loop per question over `phylohist.tools`, the system prompt
 from `eval/system-prompt.md`, bounded turns. The model sees each block's
@@ -16,7 +17,9 @@ compact summary of what it returned, the composition (header, blocks
 with their types, parameters and claim ids, question, any invalid ids,
 any free text, each with its turn and whether that turn called submit),
 the rendered answer, token usage and the prompt's hash.
-Runs are committed. `--resume` skips ids already in the file.
+Runs are committed. `--resume` skips ids already in the file. `--ask`
+answers one question typed on the command line the same way and prints
+the rendered answer with the lookups it took; nothing is written.
 
 The API key is read from ANTHROPIC_API_KEY, or from a `.env` line of that
 name at the repository root; it is never written anywhere.
@@ -261,6 +264,40 @@ def _submit(payload, kept):
   }
 
 
+def ask(client, model, system, text, max_turns):
+  """One question from the command line: the answer as the reader would
+  see it, then the trail (lookups, header, question back, any text the
+  model wrote beside its calls, tokens)."""
+  question = {'id': 'ask', 'class': 'ask', 'question': text}
+  record = run_question(client, model, system, question, max_turns)
+  comp = record.get('composition')
+  print(record['rendered'] if comp else '(no composition)')
+  print()
+  print('--- trail')
+  for call in record['toolCalls']:
+    if call['name'] == 'submit':
+      continue
+    result = call.get('result') or {}
+    got = (f"{len(result['blocks'])} block(s)" if 'blocks' in result
+           else f"{result.get('count', '')} candidate(s)" if 'count' in result
+           else 'error: ' + call['error'] if call.get('error') else '')
+    print(f"  {call['name']} {json.dumps(call['input'], ensure_ascii=False)} -> {got}")
+  if comp:
+    print(f"  header: {comp['header']}")
+    if comp.get('question'):
+      print(f"  question back: {comp['question']}")
+    for entry in comp.get('freeText') or ():
+      where = 'beside the submission' if entry.get('withSubmit') else 'between lookups'
+      print(f"  text {where}: {entry['text']}")
+    if comp.get('invalidIds'):
+      print(f"  invalid block ids: {comp['invalidIds']}")
+  else:
+    print('  ' + (record['answer'] or '(nothing)'))
+  print(f"  {record['usage']['input_tokens']}+{record['usage']['output_tokens']} tokens, "
+        f"{record['seconds']}s, {record['stopReason']}")
+  return 0
+
+
 def main(argv):
   parser = argparse.ArgumentParser(description=__doc__.split('\n\n')[0])
   parser.add_argument('--model', default='claude-sonnet-5')
@@ -268,11 +305,14 @@ def main(argv):
   parser.add_argument('--out', type=pathlib.Path, help='run file to write')
   parser.add_argument('--resume', type=pathlib.Path, help='run file to continue')
   parser.add_argument('--max-turns', type=int, default=12)
+  parser.add_argument('--ask', metavar='QUESTION', help='answer this one question and print it; write nothing')
   args = parser.parse_args(argv)
 
   import anthropic
   client = anthropic.Anthropic(api_key=api_key())
   system = PROMPT.read_text()
+  if args.ask:
+    return ask(client, args.model, system, args.ask, args.max_turns)
   with open(QUESTIONS) as fd:
     questions = yaml.safe_load(fd)
   if args.ids:
