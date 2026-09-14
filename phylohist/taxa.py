@@ -122,9 +122,9 @@ class Authority:
       for a in self._source_authors:
         if (
           not a.could_publish_in(self._year) and
-          not (a.family == 'Klein' and self._year == 1778) and
-          not (a.family == 'Linnaeus' and self._year == 1790) and
-          not (a.family == 'Forsskål' and self._year == 1775)
+          not (a.surname == 'Klein' and self._year == 1778) and
+          not (a.surname == 'Linnaeus' and self._year == 1790) and
+          not (a.surname == 'Forsskål' and self._year == 1775)
         ):
           logger.error(
             f'Source {self} year {self._year} too far '
@@ -133,9 +133,9 @@ class Authority:
 
   def __str__(self):
     # TODO: Figure out when/how to add disambiguating intitials.
-    string = ', '.join([a.family for a in self.authors])
+    string = ', '.join([a.surname for a in self.authors])
     if self.attribution_differs_from_source:
-      string += ' in ' + ', '.join([a.family for a in self.source_authors])
+      string += ' in ' + ', '.join([a.surname for a in self.source_authors])
     if self._year:
       string = f'{string} {self._year}'
     return string
@@ -149,7 +149,7 @@ class Authority:
       if author_string.lower() != author_string:
         # Currently, we do not have unregistered authors with given names.
         _check_unregistered_author(author_string)
-        authors.append(Author({'family': author_string}))
+        authors.append(Author({'surname': author_string}))
       else:
         if not (author := Author.get(author_string)):
           logger.error(f'Author for author key {author_string} not found!')
@@ -188,7 +188,7 @@ class Authority:
       string = 'unknown'
     else:
       string = '_'.join([
-        (a.key if a.key else a.family.lower())
+        (a.key if a.key else a.surname.lower())
         for a in self.authors
       ])
     if self.year:

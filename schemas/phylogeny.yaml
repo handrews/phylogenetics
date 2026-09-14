@@ -60,10 +60,10 @@ $defs:
   person:
     type: object
     anyOf:
-    - required: [family]
+    - required: [surname]
     - required: [given]
     properties:
-      family:
+      surname:
         type: string
       given:
         type: string

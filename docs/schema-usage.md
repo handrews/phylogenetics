@@ -172,8 +172,8 @@ property.
 
 | property | data | data % |
 |---|---|---|
-| `family` | 279 | 100.0% |
 | `given` | 279 | 100.0% |
+| `surname` | 279 | 100.0% |
 | `birth` | 80 | 28.7% |
 | `death` | 79 | 28.3% |
 | `suffix` | 0 | 0.0% |
