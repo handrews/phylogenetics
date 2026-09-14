@@ -201,6 +201,8 @@ def test_contents_of_a_family_in_a_source(store):
     'Guensburg & Sprinkle 1994\n  Family Astrocystitidae emend.\n    Genus Astrocystites\n    Genus Cambroblastus\n    Genus Lampteroblastus gen. nov.\n      Type species. Lampteroblastus hintzei\n      Lampteroblastus hintzei sp. nov.'
   )
   every = store.contents(None, 'astrocystitidae')
+  # The heading carries the page the listing starts on when it is recorded.
+  assert store.contents('2020_ewin_martin.m_isotalo_zamora', 'rhenopyrgidae')[0]['rendered'].splitlines()[0] == 'Ewin et al. 2020, p. 118'
   assert [b['source'] for b in every][:2] == ['1935_bassler', '1967a_fay']
 
 
@@ -228,6 +230,14 @@ def test_statements_in_words(store):
   moved = store.statements('rhenopyrgidae', kind='rejection', style='json')
   assert moved['entries'][0]['sentence'] == 'declines a placement in Cyathocystidae'
   assert store.statements('no_such_key', style='json')['entries'] == []
+  # Nothing of a kind about a record in a named source: the gap block, so
+  # the answer is the source's coverage, not an empty list.
+  gap = store.statements('whitei_holloway_jell_1983', source='Holloway & Jell 1983', kind='material', style='json')
+  assert gap['type'] == 'statement' and gap['parameters']['kind'] == 'material'
+  assert gap['parameters']['source'] == '1983_holloway_jell'
+  assert store.statements('rhenopyrgus-subgenus', source='1961_dehm', kind='diagnosis')['rendered'].startswith(
+    'The diagnoses printed in Dehm 1961 have not yet been entered')
+  assert store.statements('whitei_holloway_jell_1983', kind='diagnosis')['rendered'].endswith('(none entered from any source)')
   lines = store.statements('Rhenopyrgus viviani', kind='material')['rendered'].splitlines()
   assert lines[0] == 'Statements about Rhenopyrgus viviani Ewin et al. 2020'
   assert '  2020  Ewin et al.  holotypes: NHMUK EE16642 (pp. 120–122)' in lines

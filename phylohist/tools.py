@@ -32,6 +32,12 @@ _SPECIES_GROUP = ('species', 'subspecies', 'variety')
 def _species_group(rank):
   return (rank or '').lower() in _SPECIES_GROUP
 
+# The coverage kind a kind of statement is declared under.
+_COVERAGE_OF_KIND = {
+  'material': 'material', 'diagnosis': 'diagnoses', 'acceptance': 'synonymy',
+  'usage': 'skeleton', 'placement': 'skeleton', 'rejection': 'skeleton',
+  'act': 'skeleton', 'editorial': 'skeleton',
+}
 _PLURAL_KINDS = {'newTaxa', 'types', 'occurrences', 'illustrations', 'diagnoses'}
 
 # The community's words for what the table records.
@@ -1291,6 +1297,16 @@ class ClaimStore:
         printed='editor' if c.get('inferred') else None,
       ))
     parameters = {'record': record, 'source': source, 'kind': kind, 'actKind': act_kind}
+    if not entries and source is not None:
+      # Nothing of that kind about the record in that source: the answer
+      # is the source's coverage of the kind, the gap block, not an
+      # empty list a reader could take for a finished answer.
+      coverage_kind = _COVERAGE_OF_KIND.get(kind, 'skeleton')
+      if act_kind == 'new' or kind == 'act' and act_kind is None:
+        coverage_kind = 'newTaxa'
+      gap = self.gap(source, coverage_kind, style='json')
+      gap = blocks.statement(gap['kind'], gap['fields'], {**gap['parameters'], **parameters})
+      return _with_style(gap, style)
     block = blocks.listing({'key': record, 'name': heading}, entries, parameters, kind='statements')
     return _with_style(block, style)
 
@@ -1572,7 +1588,9 @@ TOOL_DESCRIPTIONS = {
     '(usage, placement, acceptance, act, rejection, material, diagnosis, '
     'editorial) or one act kind (new, type, emended, nomTransl, moved, '
     'removed, corrected). A statement marked "editor" is the '
-    'editor\'s inference, not the paper\'s words.'
+    'editor\'s inference, not the paper\'s words. When a source is named '
+    'and nothing of that kind about the record is entered, the result is '
+    'the gap block for that source and kind: compose it as the answer.'
   ),
   'source_coverage': (
     'What the corpus holds of one publication: its citation, whether its '
