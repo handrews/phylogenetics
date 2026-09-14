@@ -15,6 +15,8 @@ on every cell, so both can be drawn from the model as it is).
 
 import json
 
+from . import blocks
+
 STYLES = {}
 
 
@@ -51,21 +53,26 @@ def render_composition(composition, name='text'):
 
 # -- shared pieces ---------------------------------------------------------
 
+_SPECIES_GROUP_WORDS = ('species', 'subspecies', 'variety')
+
+
 def _node_label(node):
+  """A heading as a Systematic Paleontology section prints it: the rank
+  word above the species level, the name, the source's mark for a new
+  taxon, the acts in the community's abbreviations."""
   name = node.get('label') or (node['name'] if node.get('name') else f"[{node['key']}]")
   if (node.get('flags') or {}).get('quoted'):
     name = f'"{name}"'
+  rank_word = node.get('rankWord')
+  if rank_word and rank_word.lower() not in _SPECIES_GROUP_WORDS and not node.get('placeholder'):
+    name = f'{rank_word} {name}'
   if (node.get('flags') or {}).get('new'):
-    name += '*'
+    name += ' ' + (node.get('newMark') or blocks.new_mark(rank_word))
   if (node.get('flags') or {}).get('questionable'):
     name += ' ?'
-  # The acts a listing prints beside a name, in the community's abbreviations.
   for act in node.get('acts') or ():
     kind = act.get('act')
-    mark = {
-      'type': '[type]', 'emended': 'emend.', 'nomTransl': 'nom. transl.',
-      'corrected': 'nom. correct.',
-    }.get(kind)
+    mark = blocks.ACT_MARKS.get(kind)
     if kind in ('moved', 'removed'):
       mark = f"({act.get('words')})"
     if mark:
@@ -163,6 +170,8 @@ def _text_classification(block):
     lines.append(indent + _node_label(node))
     for entry in node.get('synonymy') or ():
       lines.append(indent + '  = ' + _entry_line(entry, node.get('name')))
+    if node.get('typeSpecies'):
+      lines.append(indent + '  Type species. ' + node['typeSpecies']['label'])
   return '\n'.join(lines)
 
 

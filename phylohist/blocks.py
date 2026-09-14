@@ -78,6 +78,7 @@ def classification(nodes, parameters, source=None, root=None, extra=None):
   makes them."""
   claims = [n['claim'] for n in nodes if n.get('claim')]
   claims += [c for n in nodes for c in n.get('actClaims') or ()]
+  claims += [n['typeSpecies']['claim'] for n in nodes if n.get('typeSpecies')]
   claims += [e['claim'] for n in nodes for e in n.get('synonymy') or () if e.get('claim')]
   return _make('classification', {
     'source': source, 'root': root, 'nodes': nodes,

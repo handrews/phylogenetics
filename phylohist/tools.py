@@ -611,6 +611,7 @@ class ClaimStore:
     for act in acts:
       if act['actKind'] in ('new', 'placeholder'):
         flags['new'] = True
+    rank_word = (placement or {}).get('rank') or self.rank(key)
     node = {
       'key': key, 'name': self.names.get(key, {}).get('name'),
       'rank': self.rank(key), 'depth': depth, 'flags': flags,
@@ -619,9 +620,19 @@ class ClaimStore:
                 'inferred': bool(a.get('inferred'))} for a in acts],
       'actClaims': [a['id'] for a in acts],
     }
+    if rank_word:
+      node['rankWord'] = rank_word[:1].upper() + rank_word[1:]
     if base.get('placeholder'):
       node['placeholder'] = base['placeholder']
-    label = self.combination(source_key, path).get('label')
+    if flags.get('new'):
+      # As the source prints it when recorded, else the rank's abbreviation.
+      new_act = next((a for a in acts if a['actKind'] in ('new', 'placeholder')), None)
+      printed_new = ((new_act or {}).get('printed') or {}).get('citedAs')
+      if printed_new and node['name']:
+        # The printed form carries the name; the mark is what follows it.
+        printed_new = re.sub(re.escape(node['name']), '', printed_new, flags=re.I).strip() or None
+      node['newMark'] = printed_new or blocks.new_mark(rank_word)
+    label = self.display(key, source_key, path)
     if label and label != node['name']:
       node['label'] = label
     printed = (usage or {}).get('printed') or {}
@@ -684,6 +695,20 @@ class ClaimStore:
     if max_depth is None or depth < max_depth:
       for child in self._children_paths(source_key, path):
         nodes += self._subtree(source_key, child, depth + 1, max_depth, synonymy)
+    # The type species as its own line under the genus, as a Systematic
+    # Paleontology section prints it: the act's printed form when
+    # recorded, else the child's name in this source.
+    for child_path in self._children_paths(source_key, path):
+      for claim in self._node_claims(source_key, child_path):
+        if claim['kind'] == 'act' and claim.get('actKind') == 'type':
+          printed = (claim.get('printed') or {}).get('citedAs')
+          node['typeSpecies'] = {
+            'key': claim['subject'], 'claim': claim['id'],
+            'label': printed or self.display(claim['subject'], source_key, child_path),
+          }
+          break
+      if node.get('typeSpecies'):
+        break
     return nodes
 
   def _record_paths(self, source_key, record, trees=TAXONOMY):

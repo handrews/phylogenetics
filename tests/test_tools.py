@@ -170,8 +170,7 @@ def test_contents_of_a_family_in_a_source(store):
   assert keys == ['astrocystitidae', 'astrocystites', 'cambroblastus',
                   'lampteroblastus', 'hintzei_guensburg_sprinkle_1994']
   assert blocks[0]['rendered'] == (
-    'Astrocystitidae emend.\n  Astrocystites\n  Cambroblastus\n  Lampteroblastus*\n'
-    '    Lampteroblastus hintzei* [type]'
+    'Family Astrocystitidae emend.\n  Genus Astrocystites\n  Genus Cambroblastus\n  Genus Lampteroblastus gen. nov.\n    Type species. Lampteroblastus hintzei\n    Lampteroblastus hintzei sp. nov.'
   )
   every = store.contents(None, 'astrocystitidae')
   assert [b['source'] for b in every][:2] == ['1935_bassler', '1967a_fay']
@@ -303,10 +302,13 @@ def test_headings_name_the_combination_asked_for(store):
 
 def test_combinations_in_a_listing(store):
   dehm = store.contents('1961_dehm', 'pyrgocystis')[0]['rendered'].splitlines()
-  assert dehm[0] == 'Pyrgocystis'
-  assert dehm[1] == '  Pyrgocystis sardesoni [type]'
-  assert dehm[-2] == '  Pyrgocystis (Rhenopyrgus)*'
-  assert dehm[-1] == '    Pyrgocystis (Rhenopyrgus) coronaeformis [type]'
+  assert dehm[0] == 'Genus Pyrgocystis'
+  assert dehm[1] == '  Type species. Pyrgocystis sardesoni'
+  assert dehm[2] == '  Pyrgocystis sardesoni'
+  # The source's own wording for the new subgenus, "Rhenopyrgus nov. subgen.".
+  assert dehm[-3] == '  Subgenus Pyrgocystis (Rhenopyrgus) nov. subgen.'
+  assert dehm[-2] == '    Type species. Pyrgocystis (Rhenopyrgus) coronaeformis'
+  assert dehm[-1] == '    Pyrgocystis (Rhenopyrgus) coronaeformis'
 
 
 def test_recombined_species_are_separate_rows(store):
