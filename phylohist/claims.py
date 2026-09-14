@@ -517,6 +517,15 @@ def names_index():
       display = None
     if display or authority.source is not None:
       row['authority'] = {'display': display or None}
+      # The parts a heading is built from, in the corpus's citation form.
+      try:
+        row['authority']['authors'] = [a.family for a in authority.authors]
+        if authority.attribution_differs_from_source:
+          row['authority']['in'] = [a.family for a in authority.source_authors]
+        if authority.year:
+          row['authority']['year'] = authority.year
+      except (TypeError, AttributeError):
+        pass
       if authority.source is not None:
         row['authority']['source'] = authority.source.key
     for field in ('homonym', 'originalParent', 'lang', 'status'):

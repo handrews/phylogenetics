@@ -99,14 +99,14 @@ def table(columns, rows, parameters, groups=None, decorations=None, title=None, 
 
 def list_entry(source, cite, year, claim, page=None, stance=None, parents=None,
                printed=None, record=None, name=None, kind=None, sentence=None,
-               claims=None):
+               claims=None, authors=None):
   """One line of a list: a synonymy entry (parents, name, printed form,
   stance), a printed form, or a statement (kind, sentence)."""
   entry = {'source': source, 'cite': cite, 'year': year, 'claim': claim}
   for field, value in (
     ('page', page), ('stance', stance), ('parents', parents),
     ('printed', printed), ('record', record), ('name', name),
-    ('kind', kind), ('sentence', sentence), ('claims', claims),
+    ('kind', kind), ('sentence', sentence), ('claims', claims), ('authors', authors),
   ):
     if value is not None:
       entry[field] = value

@@ -351,6 +351,19 @@ class ClaimStore:
       return f"{self.name(original) if original in self.names else original} {self.name(key)}"
     return None
 
+  def authority_words(self, key):
+    """The recorded authority in the corpus's citation form ("Holloway &
+    Jell 1983", "Bather in Smith 1900"), or as displayed when the parts
+    are not recorded."""
+    authority = (self.names.get(key) or {}).get('authority') or {}
+    if authority.get('authors'):
+      words = short_citation({'authors': authority['authors'], 'year': None}).rsplit(' ', 2)[0]
+      if authority.get('in'):
+        words += ' in ' + short_citation({'authors': authority['in'], 'year': None}).rsplit(' ', 2)[0]
+      year = authority.get('year')
+      return f'{words} {year}' if year else words
+    return authority.get('display')
+
   def _asked_label(self, key, asked):
     """The combination a query named, in the corpus's spelling."""
     wanted = fold_forms(asked)
@@ -370,10 +383,7 @@ class ClaimStore:
     row = self.names.get(key) or {}
     if row.get('placeholder'):
       return self.placeholder_words(key)
-    authority = row.get('authority') or {}
-    # The author as the corpus cites the paper when it is on record.
-    author = (self.cite(authority['source']) if authority.get('source') in self.sources
-              else authority.get('display'))
+    author = self.authority_words(key)
     if self._rank_of(key) in _SPECIES_GROUP:
       original = self.original_combination(key)
       if asked:
@@ -516,11 +526,9 @@ class ClaimStore:
       return f'cites the name as "{printed}"' if printed else 'cites the name'
     if kind == 'placement':
       parent = claim.get('parent')
-      where = self.label(parent) if parent else 'an unnamed group'
+      where = self.display(parent) if parent else 'an unnamed group'
       flags = [f for f in ('provisional', 'questionable', 'quoted') if claim.get(f)]
       words = f'places it under {where}'
-      if claim.get('parentPlaceholder'):
-        words += f" ({claim['parentPlaceholder']} placeholder)"
       if flags:
         words += ' (' + ', '.join(flags) + ')'
       if claim.get('tree') != 'taxonomy':
@@ -537,18 +545,18 @@ class ClaimStore:
     if kind == 'act':
       return self._act_words(claim)
     if kind == 'rejection':
-      return f"declines a placement in {self.label(claim.get('declinedParent', ''))}"
+      return f"declines a placement in {self.display(claim.get('declinedParent', ''))}"
     if kind == 'material':
       mk = claim['materialKind']
       if mk == 'specimen':
-        ids = ', '.join(str(i) for i in claim.get('ids') or ())
+        ids = ', '.join(_flat_words(claim.get('ids')))
         repo = f" {claim['repository']}" if claim.get('repository') else ''
         return f"{claim.get('role', 'specimens')}:{repo} {ids}".strip()
       if mk == 'occurrence':
         occ = claim.get('occurrence') or {}
-        parts = [str(occ.get(k)) for k in ('stage', 'series', 'unit', 'location') if occ.get(k)]
-        return 'occurrence: ' + '; '.join(p.replace("['", '').replace("']", '') for p in parts)
-      return 'illustration: ' + json.dumps(claim.get('illustration'), ensure_ascii=False)
+        parts = [', '.join(_flat_words(occ.get(k))) for k in ('stage', 'series', 'unit', 'location') if occ.get(k)]
+        return 'occurrence: ' + '; '.join(p for p in parts if p) if parts else 'occurrence'
+      return 'illustration: ' + _illustration_words(claim.get('illustration') or {})
     if kind == 'diagnosis':
       return 'diagnosis: ' + (claim.get('text') or '').strip().replace('\n', ' ')
     if kind == 'editorial':
@@ -1043,7 +1051,8 @@ class ClaimStore:
 
   def statements(self, record, source=None, kind=None, act_kind=None, style='text'):
     """Every statement the corpus holds about one record, in publication
-    order, in words."""
+    order, each as a sentence."""
+    raw = record
     record, source = self._key(record), self._key(source)
     claims = self.by_subject.get(record, [])
     if source is not None:
@@ -1053,26 +1062,23 @@ class ClaimStore:
     if act_kind is not None:
       claims = [c for c in claims if c.get('actKind') == act_kind]
     claims = sorted(claims, key=lambda c: (self.source_year(c['source']), c['source'], c['path']))
-    rows = []
+    heading = self.heading(record, self._asked(raw, record))
+    entries = []
     for c in claims:
       page = c.get('pages')
       if page is None and c.get('citedPages') is not None:
         page = f"cited p. {c['citedPages']}"
-      rows.append({'cells': [
-        [{'value': self.cite(c['source']), 'source': c['source']}],
-        [{'value': self.display(record, c['source'], c['path']), 'key': record}],
-        [{'value': c['kind']}],
-        [{'value': self._claim_words(c), 'claim': c['id']}],
-        [{'value': '' if page is None else page}],
-        [{'value': 'editor' if c.get('inferred') else 'source'}],
-      ], 'claim': c['id']})
+      as_used = self.display(record, c['source'], c['path'])
+      entries.append(blocks.list_entry(
+        source=c['source'], cite=self.cite(c['source']), year=self.source_year(c['source']),
+        claim=c['id'], page=page, kind=c['kind'], sentence=self._claim_words(c),
+        # The name as this source uses it, when it is not the heading's.
+        name=as_used if not heading.startswith(as_used) else None,
+        authors=self._authors(c['source']),
+        printed='editor' if c.get('inferred') else None,
+      ))
     parameters = {'record': record, 'source': source, 'kind': kind, 'actKind': act_kind}
-    block = blocks.table([
-      {'name': 'source', 'kind': 'source'}, {'name': 'as', 'kind': 'record'},
-      {'name': 'kind', 'kind': 'text'},
-      {'name': 'statement', 'kind': 'text'}, {'name': 'page', 'kind': 'text'},
-      {'name': 'by', 'kind': 'text'},
-    ], rows, parameters, title=f'Statements about {self.display(record)}')
+    block = blocks.listing({'key': record, 'name': heading}, entries, parameters, kind='statements')
     return _with_style(block, style)
 
   def source_coverage(self, source_key):
@@ -1138,6 +1144,38 @@ class ClaimStore:
       entries, {'record': record, 'source': source}, kind='printedForms',
     )
     return _with_style(block, style)
+
+
+def _flat_words(value):
+  """Strings from a value that may be a string, a number, or nested lists."""
+  if value is None:
+    return []
+  if isinstance(value, (list, tuple)):
+    return [w for v in value for w in _flat_words(v)]
+  return [str(value)]
+
+
+def _range_words(items):
+  """Figures, plates or pages as printed: "2, 4–5"."""
+  out = []
+  for item in (items if isinstance(items, list) else [items]):
+    if isinstance(item, list) and len(item) == 2 and not isinstance(item[0], list):
+      out.append(f'{item[0]}–{item[1]}')
+    else:
+      out.append(str(item))
+  return ', '.join(out)
+
+
+def _illustration_words(illustration):
+  parts = []
+  for field, word in (('plate', 'pl.'), ('plates', 'pl.'), ('figures', 'fig.'),
+                      ('figure', 'fig.'), ('textFigures', 'text-fig.'), ('page', 'p.')):
+    if illustration.get(field) is not None:
+      parts.append(f'{word} {_range_words(illustration[field])}')
+  for field, value in illustration.items():
+    if field not in ('plate', 'plates', 'figures', 'figure', 'textFigures', 'page'):
+      parts.append(f'{field} {_range_words(value)}')
+  return ', '.join(parts) or 'unspecified'
 
 
 def _rank_order(rank):
@@ -1290,12 +1328,14 @@ TOOL_DESCRIPTIONS = {
   ),
   'statements': (
     'Every statement the corpus holds about one record, in publication '
-    'order and in words: what each source cites, where it places the '
-    'name, what it does to it, what material it gives, whether the '
-    'statement is the source\'s or the editor\'s, and the page. Filter by '
-    'source, kind (usage, placement, acceptance, act, rejection, '
-    'material, diagnosis, editorial) or act kind. The drill-down tool: '
-    'use it to see the statement behind a cell.'
+    'order, each as a sentence with its source, year and page: the name '
+    'cited, the placement given, an act (named as new, emended, moved, '
+    'type species), a synonymy acceptance, a rejection, material, a '
+    'diagnosis. Optionally one source, one kind of statement '
+    '(usage, placement, acceptance, act, rejection, material, diagnosis, '
+    'editorial) or one act kind (new, type, emended, nomTransl, moved, '
+    'removed, corrected). A statement marked "editor" is the '
+    'editor\'s inference, not the paper\'s words.'
   ),
   'source_coverage': (
     'What the corpus holds of one publication: its citation, whether its '

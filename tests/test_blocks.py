@@ -43,16 +43,19 @@ def test_provisional_and_placeholder_marks(store):
 
 
 def test_table_text_and_markdown(store):
-  block = store.statements('rhenopyrgidae', act_kind='new', style='json')
-  text = render.render(block, 'text').splitlines()
-  assert text[0] == 'Statements about Rhenopyrgidae'
-  assert text[1].split() == ['source', 'as', 'kind', 'statement', 'page', 'by']
-  assert text[3].startswith('Holloway & Jell 1983  Rhenopyrgidae  act   named as new')
-  md = render.render(block, 'markdown').splitlines()
-  assert md[0] == '**Statements about Rhenopyrgidae**'
-  assert md[2] == '| source | as | kind | statement | page | by |'
-  assert md[4].startswith('| Holloway & Jell 1983 | Rhenopyrgidae | act | named as new |')
   found = store.descendants(['edrioblastoidea'], style='json')
+  text = render.render(found, 'text').splitlines()
+  assert text[0] == 'Placed under Edrioblastoidea'
+  assert text[1].split() == ['record', 'rank', 'placed', 'by', 'sources']
+  md = render.render(found, 'markdown').splitlines()
+  assert md[0] == '**Placed under Edrioblastoidea**'
+  assert md[2] == '| record | rank | placed by | sources |'
+  statements = store.statements('rhenopyrgidae', act_kind='new', style='json')
+  assert render.render(statements, 'text').splitlines() == [
+    'Statements about Rhenopyrgidae Holloway & Jell 1983',
+    '  1983  Holloway & Jell  named as new',
+  ]
+  assert render.render(statements, 'markdown').splitlines()[2] == '- 1983 Holloway & Jell: named as new'
   casteri = next(l for l in render.render(found, 'markdown').splitlines() if 'casteri' in l)
   assert '| Bell 1975: under Timeischytes<br>Müller et al. 2013: under Timeischytes |' in casteri
   text = next(l for l in render.render(found, 'text').splitlines() if 'casteri' in l)

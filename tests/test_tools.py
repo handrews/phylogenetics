@@ -46,7 +46,7 @@ def store():
 def test_statements_answer(question, store):
   for selector in question['expected']['claims']:
     block = store.statements(selector['subject'], source=selector['source'], style='json')
-    found = [store.by_id[row['claim']] for row in block['rows']]
+    found = [store.by_id[entry['claim']] for entry in block['entries']]
     if not any(matches(selector, c) for c in found):
       pytest.fail(f"{question['id']}: statements returned no match for {selector}")
 
@@ -194,13 +194,17 @@ def test_gap_sentences(store):
 
 def test_statements_in_words(store):
   block = store.statements('rhenopyrgidae', kind='act', style='json')
-  words = {row['cells'][3][0]['value'] for row in block['rows']}
+  words = {e['sentence'] for e in block['entries']}
   assert 'named as new' in words and 'emended' in words
   new = store.statements('rhenopyrgidae', act_kind='new', style='json')
-  assert [row['cells'][0][0]['source'] for row in new['rows']] == ['1983_holloway_jell']
+  assert [e['source'] for e in new['entries']] == ['1983_holloway_jell']
   moved = store.statements('rhenopyrgidae', kind='rejection', style='json')
-  assert moved['rows'][0]['cells'][3][0]['value'] == 'declines a placement in Cyathocystidae (Family)'
-  assert store.statements('no_such_key', style='json')['rows'] == []
+  assert moved['entries'][0]['sentence'] == 'declines a placement in Cyathocystidae'
+  assert store.statements('no_such_key', style='json')['entries'] == []
+  lines = store.statements('Rhenopyrgus viviani', kind='material')['rendered'].splitlines()
+  assert lines[0] == 'Statements about Rhenopyrgus viviani Ewin et al. 2020'
+  assert '  2020  Ewin et al.  holotypes: NHMUK EE16642 (pp. 120–122)' in lines
+  assert '  2020  Ewin et al.  paratypes: NHMUK EE15752, EE15755 (pp. 120–122)' in lines
 
 
 def test_rank_variants_linked(store):
@@ -217,7 +221,7 @@ def test_rank_variants_linked(store):
   ):
     assert store.names[key].get('of') == base, key
   transl = store.statements('diploporita-class', act_kind='nomTransl', style='json')
-  claim = store.by_id[transl['rows'][0]['claim']]
+  claim = store.by_id[transl['entries'][0]['claim']]
   assert claim['rankVariants'] == ['diploporita-order', 'diploporita-suborder']
 
 

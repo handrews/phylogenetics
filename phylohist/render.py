@@ -83,6 +83,24 @@ def _cell_text(cell, sep=' / '):
   return sep.join(values)
 
 
+def pages_text(value):
+  """Pages as the community writes them: "p. 118", "pp. 120–122",
+  "pp. 242–245, 253"; a phrase such as "cited p. 58" as it is."""
+  if value is None:
+    return ''
+  if isinstance(value, str):
+    return value
+  items = value if isinstance(value, list) else [value]
+  words = []
+  for item in items:
+    if isinstance(item, list) and len(item) == 2:
+      words.append(f'{item[0]}–{item[1]}')
+    else:
+      words.append(str(item))
+  single = len(items) == 1 and not isinstance(items[0], list)
+  return ('p. ' if single else 'pp. ') + ', '.join(words)
+
+
 def _entry_line(entry, heading_name=None):
   parts = [str(entry.get('year') or '')]
   name = entry.get('name') or heading_name
@@ -96,7 +114,7 @@ def _entry_line(entry, heading_name=None):
     parts.append(f'"{entry["printed"]}"')
   parts.append(entry.get('cite') or entry.get('source') or '')
   if entry.get('page') is not None:
-    parts.append(f'p. {entry["page"]}')
+    parts.append(pages_text(entry['page']))
   if entry.get('stance') == 'rejects':
     parts.append('(non)')
   return ' '.join(p for p in parts if p)
@@ -181,13 +199,41 @@ def _decoration_lines(decorations):
   return lines
 
 
-@style('text', 'list')
-def _text_list(block):
+def _statement_line(entry):
+  """One statement: year, source, the name as that source uses it when
+  it differs from the heading, the sentence, the page."""
+  parts = [str(entry.get('year') or ''), entry.get('authors') or entry.get('cite') or '']
+  sentence = entry.get('sentence') or ''
+  if entry.get('name'):
+    sentence = f"{entry['name']}: {sentence}"
+  if entry.get('printed') == 'editor':
+    sentence += ' (editor)'
+  if entry.get('page') is not None:
+    sentence += f" ({pages_text(entry['page'])})"
+  parts.append(sentence)
+  return parts
+
+
+def _list_title(block):
   heading = block['heading']
   title = heading.get('name') or f"[{heading['key']}]"
   if heading.get('rank'):
     title += f" ({heading['rank']})"
-  lines = [title]
+  if block.get('kind') == 'statements':
+    title = f'Statements about {title}'
+  return title
+
+
+@style('text', 'list')
+def _text_list(block):
+  heading = block['heading']
+  lines = [_list_title(block)]
+  if block.get('kind') == 'statements':
+    rows = [_statement_line(e) for e in block['entries']]
+    width = max([len(r[1]) for r in rows] + [0])
+    for year, authors, sentence in rows:
+      lines.append(f'  {year}  {authors.ljust(width)}  {sentence}')
+    return '\n'.join(lines)
   for entry in block['entries']:
     lines.append('  ' + _entry_line(entry, heading.get('name')))
   return '\n'.join(lines)
@@ -273,10 +319,11 @@ def _md_table(block):
 @style('markdown', 'list')
 def _md_list(block):
   heading = block['heading']
-  title = heading.get('name') or f"[{heading['key']}]"
-  if heading.get('rank'):
-    title += f" ({heading['rank']})"
-  lines = [f'**{title}**', '']
+  lines = [f'**{_list_title(block)}**', '']
+  if block.get('kind') == 'statements':
+    for year, authors, sentence in (_statement_line(e) for e in block['entries']):
+      lines.append(f'- {year} {authors}: {sentence}')
+    return '\n'.join(lines)
   for entry in block['entries']:
     lines.append('- ' + _entry_line(entry, heading.get('name')))
   return '\n'.join(lines)
