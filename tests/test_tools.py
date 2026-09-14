@@ -136,6 +136,30 @@ def test_names_accepted_where_keys_are(store):
   assert store.history('Rhenopyrgus', style='json')['parameters']['record'] == 'rhenopyrgus'
 
 
+def test_sources_by_citation(store):
+  # A citation as the blocks print it resolves like a key; the year and
+  # the families named, in order, pick the paper.
+  for query, key in (
+    ('Dehm 1961', '1961_dehm'), ('Holloway & Jell 1983', '1983_holloway_jell'),
+    ('Sumrall et al. 2013', '2013_sumrall_heredia_rodríguez.c.m_mestre'),
+    ('Ewin, Martin, Isotalo & Zamora 2020', '2020_ewin_martin.m_isotalo_zamora'),
+    ('Fay 1967a', '1967a_fay'), ('1983_holloway_jell', '1983_holloway_jell'),
+    ('Sprinkle & Strimple in prep', 'inprep_sprinkle_strimple'),
+  ):
+    assert [c['key'] for c in store.resolve_source(query)] == [key], query
+  assert store.gap('Holloway & Jell 1983', 'material', style='json') == \
+    store.gap('1983_holloway_jell', 'material', style='json')
+  assert store.statements('rhenopyrgus', source='Dehm 1961', style='json')['parameters']['source'] == '1961_dehm'
+  assert store.contents('Guensburg & Sprinkle 1994', 'astrocystitidae')[0]['source'] == '1994_guensburg_sprinkle'
+  with pytest.raises(ValueError, match='1816a_lamarck, 1816b_lamarck'):
+    store.gap('Lamarck 1816', 'material')
+  # A paper the corpus does not have passes through, so the gap can say so.
+  assert store.resolve_source('Klug et al. 2008') == []
+  assert store.gap('Klug et al. 2008', 'newTaxa')['rendered'] == \
+    'No source in the corpus mentions the source Klug et al. 2008.'
+  assert store.source_signature('2008_klug_krüger_korn_rücklin_schemm-gregory_debaets_mapes')['families'][0] == 'klug'
+
+
 def test_keys_accepted_in_any_case(store):
   assert store.contents('1983_Holloway_Jell', 'Rhenopyrgidae') == store.contents('1983_holloway_jell', 'rhenopyrgidae')
   assert store.history('Rhenopyrgus', style='json')['blockId'] == store.history('rhenopyrgus', style='json')['blockId']
