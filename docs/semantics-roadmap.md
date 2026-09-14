@@ -283,7 +283,7 @@ That is an editorial rule for well-established high-rank names, stated here,
 and it does not extend downward.
 
 **A5.** `auth` free-text names (521 uses, 220 distinct): decide the rule for
-family-only author records. Add alias support to `person` while there: the
+surname-only author records. Add alias support to `person` while there: the
 *Preface 2023* (xxi–xxii) retains each author's own romanization per
 publication, so one person legitimately appears under several spellings
 (Chang / Zhang; Gekker / Hecker). An `altSpellingOf`-style link between author

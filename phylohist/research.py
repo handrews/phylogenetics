@@ -30,23 +30,23 @@ class Author:
     if not self._key:
       return
 
-    family_only = author_data['family'].lower()
+    surname_only = author_data['surname'].lower()
     givens = author_data['given'].split(' ')
     if len(givens) == 1:
       givens = givens[0].split('-')
-    if family_only == 'siveter':
+    if surname_only == 'siveter':
       with_initials = \
-        f'{family_only}.{givens[0][0:2].lower()}.{givens[1][0].lower()}'
+        f'{surname_only}.{givens[0][0:2].lower()}.{givens[1][0].lower()}'
     else:
       with_initials = \
-        f'{family_only}.' + '.'.join([name[0].lower() for name in givens])
+        f'{surname_only}.' + '.'.join([name[0].lower() for name in givens])
 
-    expected_set = {family_only, with_initials}
+    expected_set = {surname_only, with_initials}
     if author_key not in expected_set:
       logger.error(f'"{author_key}" not in expected set: {expected_set}')
 
   def __repr__(self):
-    string = f'{self.family}'
+    string = f'{self.surname}'
     if self.given:
       string += f', {self.given}'
     if self.birth:
@@ -64,8 +64,8 @@ class Author:
     return self._key
 
   @cached_property
-  def family(self):
-    return self._data.get('family')
+  def surname(self):
+    return self._data.get('surname')
 
   @cached_property
   def given(self):
@@ -217,7 +217,7 @@ class Source:
       )
 
   def __str__(self):
-    return ', '.join([a.family for a in self.authors]) + f' ({self.year})'
+    return ', '.join([a.surname for a in self.authors]) + f' ({self.year})'
 
   @property
   def key(self):

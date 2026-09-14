@@ -479,7 +479,7 @@ def citation(source):
   """How a reader cites the source: names, year, title, where."""
   data = source._data
   entry = {
-    'authors': [a.family for a in source.authors],
+    'authors': [a.surname for a in source.authors],
     'year': None if source.in_preparation else source.year,
     'title': data.get('title'),
   }
@@ -519,9 +519,9 @@ def names_index():
       row['authority'] = {'display': display or None}
       # The parts a heading is built from, in the corpus's citation form.
       try:
-        row['authority']['authors'] = [a.family for a in authority.authors]
+        row['authority']['authors'] = [a.surname for a in authority.authors]
         if authority.attribution_differs_from_source:
-          row['authority']['in'] = [a.family for a in authority.source_authors]
+          row['authority']['in'] = [a.surname for a in authority.source_authors]
         if authority.year:
           row['authority']['year'] = authority.year
       except (TypeError, AttributeError):
