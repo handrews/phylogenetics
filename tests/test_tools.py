@@ -248,6 +248,55 @@ def test_senior_synonym_and_designation_shown_as_combinations(store):
   assert '  Rhenopyrgus sp. indet. 1\n' in listing['rendered'] + '\n'
 
 
+def test_ancestors_are_chains_per_source(store):
+  block = store.ancestors(['rhenopyrgus'], style='json')
+  assert block['type'] == 'chains' and block['title'] == 'Above Rhenopyrgus Dehm 1961'
+  assert block['decorations']['measure'] == '7 papers, 7 co-author sets, 1961–2020'
+  chains = {e['source']: [n['label'] for n in e['chain']] for e in block['entries']}
+  assert chains['1994_guensburg_sprinkle'] == [
+    'Echinozoa', 'Edrioasteroidea', 'Edrioasterida', 'Edrioblastoidina',
+    'Cyathocystidae', 'Rhenopyrginae', 'Rhenopyrgus',
+  ]
+  assert chains['1961_dehm'] == ['Pyrgocystis', 'Pyrgocystis (Rhenopyrgus)']
+  # A placeholder reads in the source's words, never as a key.
+  assert chains['1983_holloway_jell'][1] == 'Order uncertain'
+  lines = store.ancestors(['rhenopyrgus'])['rendered'].splitlines()
+  assert lines[2].startswith('1961  Dehm ') and lines[2].endswith('Pyrgocystis › Pyrgocystis (Rhenopyrgus)')
+  assert '[' not in store.ancestors(['rhenopyrgus'])['rendered']
+
+
+def test_placed_under_states_first_and_last(store):
+  block = store.placed_under('rhenopyrgus', 'edrioblastoidina', style='json')
+  assert [e['source'] for e in block['entries']] == [
+    '1994_guensburg_sprinkle', '2000_grigo', '2013_sumrall_heredia_rodríguez.c.m_mestre',
+    '2020_ewin_martin.m_isotalo_zamora',
+  ]
+  assert block['decorations'] == {
+    'measure': '4 papers, 4 co-author sets, 1994–2020',
+    'span': 'first Guensburg & Sprinkle 1994, last Ewin et al. 2020',
+  }
+  assert [n['label'] for n in block['entries'][0]['chain']] == ['Cyathocystidae', 'Rhenopyrginae', 'Rhenopyrgus']
+  text = store.placed_under('rhenopyrgus', 'edrioblastoidina')['rendered'].splitlines()
+  assert text[0] == 'Rhenopyrgus Dehm 1961 under Edrioblastoidina Fay 1962: 4 papers, 4 co-author sets, 1994–2020'
+  assert text[1] == 'first Guensburg & Sprinkle 1994, last Ewin et al. 2020'
+  # A recombined species ends each line in the combination that source uses.
+  grayae = store.placed_under('Rhenopyrgus grayae', 'Edrioasteroidea', style='json')
+  assert grayae['title'] == 'Rhenopyrgus grayae (Bather 1915) under Edrioasteroidea Billings 1858'
+  assert [e['chain'][-1]['label'] for e in grayae['entries']] == [
+    'Pyrgocystis grayae', 'Rhenopyrgus grayae', 'Rhenopyrgus grayae']
+  assert store.placed_under('rhenopyrgus', 'blastoidea', style='json')['entries'] == []
+
+
+def test_headings_name_the_combination_asked_for(store):
+  assert store.heading('grayae_bather_1915') == 'Pyrgocystis grayae Bather 1915'
+  assert store.heading('grayae_bather_1915', 'Rhenopyrgus grayae') == 'Rhenopyrgus grayae (Bather 1915)'
+  assert store.heading('grayae_bather_1915', 'grayae') == 'grayae Bather 1915'
+  assert store.heading('rhenopyrgus-subgenus') == 'Pyrgocystis (Rhenopyrgus) Dehm 1961'
+  assert store.heading('edrioasteroidea-order-uncertain_holloway_jell_1983') == 'Order uncertain'
+  assert store.original_combination('coronaeformis_rievers_1961') == 'Pyrgocystis coronaeformis'
+  assert store.original_combination('viviani_ewin_martin.m_isotalo_zamora_2020') == 'Rhenopyrgus viviani'
+
+
 def test_combinations_in_a_listing(store):
   dehm = store.contents('1961_dehm', 'pyrgocystis')[0]['rendered'].splitlines()
   assert dehm[0] == 'Pyrgocystis'
@@ -301,7 +350,7 @@ def test_variety_and_no_genus_fallback(store):
     for c in store.closure.placements_of.get(key, ()):
       if c['tree'] == 'taxonomy' and store.combination(c['source'], c['path']).get('genus'):
         labelled.append(store.display(key, c['source'], c['path']))
-  assert labelled and all(' var. ' in label for label in labelled)
+  assert labelled and all(' var.' in label for label in labelled)
   # A species listed straight under a family keeps its epithet or printed form.
   claim = next(c for c in store.closure.placements_of['angulosus_pander_1830'] if c['source'] == '1968b_paul.c.r.c')
   label = store.display('angulosus_pander_1830', claim['source'], claim['path'])

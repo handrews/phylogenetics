@@ -59,6 +59,17 @@ def test_table_text_and_markdown(store):
   assert 'Bell 1975: under Timeischytes / Müller et al. 2013: under Timeischytes' in text
 
 
+def test_chains_text_and_markdown(store):
+  block = store.placed_under('rhenopyrgus', 'edrioblastoidina', style='json')
+  text = render.render(block, 'text').splitlines()
+  assert text[3] == '1994  Guensburg & Sprinkle  Cyathocystidae › Rhenopyrginae › Rhenopyrgus'
+  md = render.render(block, 'markdown').splitlines()
+  assert md[0].startswith('**Rhenopyrgus Dehm 1961 under Edrioblastoidina Fay 1962: 4 papers')
+  assert md[3] == '| year | source | chain |'
+  assert md[5] == '| 1994 | Guensburg & Sprinkle | Cyathocystidae › Rhenopyrginae › Rhenopyrgus |'
+  assert blocks.validate(block, store) == []
+
+
 def test_list_text(store):
   block = store.synonymy('grayae_bather_1915', source='2020_ewin_martin.m_isotalo_zamora', style='json')[0]
   lines = render.render(block, 'text').splitlines()

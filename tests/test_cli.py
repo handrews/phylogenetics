@@ -35,6 +35,8 @@ def run(capsys, *argv):
    lambda: tools.descendants(['edrioblastoidea'], include_synonyms=False)['rendered']),
   (['ancestors', 'rhenopyrgidae', '--years', '1990', '2020'],
    lambda: tools.ancestors(['rhenopyrgidae'], years=(1990, 2020))['rendered']),
+  (['under', 'Rhenopyrgus grayae', 'Rhenopyrgidae'],
+   lambda: tools.placed_under('Rhenopyrgus grayae', 'Rhenopyrgidae')['rendered']),
   (['placements', 'astrocystitidae', 'rhenopyrgidae', '--sources', '1994_guensburg_sprinkle'],
    lambda: tools.placements(['astrocystitidae', 'rhenopyrgidae'], sources=['1994_guensburg_sprinkle'])['rendered']),
   (['statements', 'rhenopyrgidae', '--act', 'new'],

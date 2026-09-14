@@ -15,7 +15,7 @@ import pathlib
 
 from . import blocks
 from .closure import Closure, TAXONOMY, _in_years
-from .names import fold_forms
+from .names import fold, fold_forms, key_stem
 from .render import render
 
 CLAIMS_DIR = pathlib.Path(__file__).parent / '..' / 'claims'
@@ -184,6 +184,10 @@ class ClaimStore:
         while node is not None and node.get('parent') and genus is None:
           parent = node['parent']
           parent_rank = self._rank_of(parent)
+          if (self.names.get(parent) or {}).get('placeholder'):
+            # A bin above the species is not a genus; the name falls back
+            # to the printed form or the epithet.
+            break
           if parent_rank == 'subgenus' and subgenus is None:
             subgenus = parent
           elif parent_rank == 'genus':
@@ -215,12 +219,15 @@ class ClaimStore:
             parts.append(f'({self.name(subgenus)})')
           if species and rank != 'species':
             parts.append(self.name(species))
-          if rank == 'variety':
+          tail = self._open_tail(key, [genus, subgenus, species]) if self.names[key].get('placeholder') else None
+          if rank == 'variety' and not (tail and tail.startswith('var.')):
             parts.append('var.')
-          parts.append(self.name(key))
+          parts.append(tail if tail is not None else self.name(key))
         else:
           printed = (usage or {}).get('printed') or {}
-          parts.append(printed.get('citedAs') or self.name(key))
+          parts.append(printed.get('citedAs') or self.placeholder_words(key, source_key, path)
+                       if self.names[key].get('placeholder') else
+                       printed.get('citedAs') or self.name(key))
         label = ' '.join(parts)
       else:
         label = self.name(key)
@@ -268,6 +275,8 @@ class ClaimStore:
     """How a name is shown: the combination at a node when the node is
     known; a species-group record's combinations joined when it is not;
     the name otherwise."""
+    if (self.names.get(key) or {}).get('placeholder') and self._rank_of(key) not in _SPECIES_GROUP:
+      return self.placeholder_words(key, source, path)
     if source is not None and path is not None:
       label = self.combination(source, path).get('label')
       if label and self.combination(source, path).get('record') == key:
@@ -276,11 +285,119 @@ class ClaimStore:
       combos = self.combinations(key)
       if combos:
         return ' / '.join(c['label'] for c in combos)
+      if (self.names.get(key) or {}).get('placeholder'):
+        return self.placeholder_words(key)
     if self._rank_of(key) == 'subgenus':
       genus = self._genus_of_subgenus(key)
       if genus:
         return f'{self.name(genus)} ({self.name(key)})'
     return self.name(key)
+
+  _OPEN_WORDS = {'sp': 'sp.', 'spp': 'spp.', 'gen': 'gen.', 'indet': 'indet.',
+                 'cf': 'cf.', 'aff': 'aff.', 'nov': 'nov.', 'n': 'n.', 'var': 'var.'}
+
+  def placeholder_words(self, key, source=None, path=None):
+    """A placeholder in the source's words: a bin by its rank ("Order
+    uncertain", "Unnamed family"), an open-nomenclature record by its
+    designation, the form printed at the node, or the words of its key
+    ("Agelacrinites sp.")."""
+    row = self.names.get(key) or {}
+    kind = row.get('placeholder')
+    rank = (row.get('rank') or '').lower()
+    if kind == 'uncertain':
+      return f'{rank.capitalize()} uncertain' if rank else 'Uncertain'
+    if kind == 'unnamed':
+      return f'Unnamed {rank}' if rank else 'Unnamed'
+    if row.get('designation'):
+      return row['designation']
+    if source is not None and path is not None:
+      for c in self.at_path.get(source, {}).get(path, ()):
+        if c['kind'] == 'usage' and (c.get('printed') or {}).get('citedAs'):
+          return c['printed']['citedAs']
+    words = [self._OPEN_WORDS.get(w, w) for w in key_stem(key).split('-')]
+    return ' '.join(words)[:1].upper() + ' '.join(words)[1:]
+
+  def _open_tail(self, key, chain_keys):
+    """The words of an open-nomenclature record's key after the names
+    its chain already gives: "sp. a", "var. 1", "sp. indet."."""
+    known = {fold(self.name(k)) for k in chain_keys if k}
+    tokens = key_stem(key).split('-')
+    while tokens and fold(tokens[0]) in known:
+      tokens.pop(0)
+    return ' '.join(self._OPEN_WORDS.get(w, w) for w in tokens)
+
+  def original_combination(self, key):
+    """The combination a species-group record was published in, when the
+    corpus knows it: its placement in the authority's own paper, the
+    original combination a synonymy entry gives, or the parent recorded
+    with it. None otherwise."""
+    row = self.names.get(key) or {}
+    auth_source = (row.get('authority') or {}).get('source')
+    if auth_source in self.sources:
+      for c in self.by_subject.get(key, ()):
+        if c['source'] == auth_source and c['kind'] == 'placement':
+          combo = self.combination(auth_source, c['path'])
+          if combo.get('genus'):
+            return combo['label']
+    for c in self.by_subject.get(key, ()):
+      parents = c.get('parents') if c['kind'] == 'acceptance' else None
+      if parents:
+        parts = [self.name(parents[0])]
+        if len(parents) > 1:
+          parts.append(f'({self.name(parents[1])})')
+        return ' '.join(parts + [self.name(key)])
+    original = row.get('originalParent')
+    if original:
+      return f"{self.name(original) if original in self.names else original} {self.name(key)}"
+    return None
+
+  def _asked_label(self, key, asked):
+    """The combination a query named, in the corpus's spelling."""
+    wanted = fold_forms(asked)
+    for combo in self.combinations(key):
+      label = combo['label']
+      bare = re.sub(r' \([^)]*\)', '', label)
+      if wanted & (fold_forms(label) | fold_forms(bare)):
+        return label
+    if wanted & fold_forms(self.name(key)):
+      return self.name(key)
+    return asked.strip()
+
+  def heading(self, key, asked=None):
+    """A record as a block names it: the combination asked for (else
+    the original one, else the latest) with the recorded author, in
+    parentheses when the corpus knows the name is a recombination."""
+    row = self.names.get(key) or {}
+    if row.get('placeholder'):
+      return self.placeholder_words(key)
+    authority = row.get('authority') or {}
+    # The author as the corpus cites the paper when it is on record.
+    author = (self.cite(authority['source']) if authority.get('source') in self.sources
+              else authority.get('display'))
+    if self._rank_of(key) in _SPECIES_GROUP:
+      original = self.original_combination(key)
+      if asked:
+        shown = self._asked_label(key, asked)
+      else:
+        combos = self.combinations(key)
+        latest = max(combos, key=lambda c: c['lastYear'])['label'] if combos else None
+        shown = original or latest or self.name(key)
+      recombined = bool(
+        original and ' ' in shown
+        and fold(shown.split()[0]) != fold(original.split()[0])
+      )
+      if not author:
+        return shown
+      return f'{shown} ({author})' if recombined else f'{shown} {author}'
+    shown = self.display(key)
+    return f'{shown} {author}' if author else shown
+
+  @staticmethod
+  def _asked(raw, key):
+    """The query as typed when it was a printed name rather than a key."""
+    if raw is None or raw == key or str(raw).lower() == key:
+      return None
+    return str(raw)
 
   def related_keys(self, taxon_key):
     """Records sharing the name at another rank or spelling, and the
@@ -732,32 +849,97 @@ class ClaimStore:
        extra={'found': found})
     return _with_style(block, style)
 
+  def _authors(self, source_key):
+    """The short citation without its year, for a line that shows the
+    year in its own column."""
+    cite = self.cite(source_key)
+    year = str(self.source_year(source_key))
+    return cite[:-len(year)].rstrip() if cite.endswith(year) else cite
+
+  def _chain_entry(self, chain, nodes=None):
+    source_key = chain['source']
+    nodes = chain['nodes'] if nodes is None else nodes
+    shown = []
+    for n in nodes:
+      shown.append({
+        'key': n['key'], 'label': self.display(n['key'], source_key, n['path']),
+        'rank': self.rank(n['key']),
+        'kind': 'placeholder' if n['placeholder'] else 'placement',
+        'alternatives': [self.display(a) for a in n['alternatives']],
+        'provisional': n['provisional'], 'questionable': n['questionable'],
+      })
+    last = chain['nodes'][-1]
+    claims = [n['claim'] for n in nodes if n.get('claim')]
+    claims += [c['id'] for c in self._node_claims(source_key, last['path'])]
+    return {
+      'source': source_key, 'cite': self.cite(source_key),
+      'authors': self._authors(source_key), 'year': chain['year'],
+      'chain': shown, 'claims': sorted(set(claims)),
+    }
+
+  def _chain_decorations(self, entries, first_last=False):
+    sources = sorted({e['source'] for e in entries}, key=lambda s: (self.source_year(s), s))
+    if not sources:
+      return {}
+    sets = {self.closure.coauthor_set(s) for s in sources}
+    years = f"{self.source_year(sources[0])}" if len(sources) == 1 else \
+      f"{self.source_year(sources[0])}–{self.source_year(sources[-1])}"
+    deco = {'measure': (
+      f"{len(sources)} paper{'s' if len(sources) != 1 else ''}, "
+      f"{len(sets)} co-author set{'s' if len(sets) != 1 else ''}, {years}"
+    )}
+    if first_last:
+      deco['span'] = f'first {self.cite(sources[0])}, last {self.cite(sources[-1])}'
+    return deco
+
   def ancestors(self, records, include_variants=True, trees=None, years=None, style='text'):
+    """Every source's chain of taxa above the records, one line per
+    source, top down."""
+    raw = list(records)
     records = self._keys(records)
     trees = tuple(trees) if trees else TAXONOMY
-    found = self.closure.ancestors(list(records), include_variants, trees, years)
-    rows = []
-    for key in sorted(found, key=lambda k: (-len({v['source'] for v in found[k]}), self.name(k))):
-      vias = found[key]
-      kinds = sorted({v['kind'] for v in vias})
-      sources = sorted({v['source'] for v in vias}, key=lambda s: (self.source_year(s), s))
-      rows.append({'cells': [
-        [{'value': self.name(key), 'key': key}],
-        [{'value': self.rank(key) or ''}],
-        [{'value': ', '.join(kinds)}],
-        [{'value': self.cite(s), 'source': s, 'claim': next(v['claim'] for v in vias if v['source'] == s)} for s in sources],
-        [{'value': len(sources)}],
-      ], 'record': key})
+    closure = self.closure
+    entries = []
+    for key in closure.expand(list(records), include_variants):
+      for chain in closure.chains_of(key, trees, years):
+        entries.append(self._chain_entry(chain))
+    entries.sort(key=lambda e: (e['year'], e['source']))
     parameters = {
       'records': list(records), 'includeVariants': include_variants,
       'trees': list(trees), 'years': years,
     }
-    block = blocks.table([
-      {'name': 'higher taxon', 'kind': 'record'}, {'name': 'rank', 'kind': 'rank'},
-      {'name': 'edge', 'kind': 'text'}, {'name': 'sources', 'kind': 'source'},
-      {'name': 'count', 'kind': 'count'},
-    ], rows, parameters, title='Placed above ' + ', '.join(self.display(r) for r in records),
-       extra={'found': found})
+    title = 'Above ' + ', '.join(
+      self.heading(k, self._asked(r, k)) for r, k in zip(raw, records))
+    block = blocks.chains(entries, parameters, title=title,
+                          decorations=self._chain_decorations(entries))
+    return _with_style(block, style)
+
+  def placed_under(self, record, parent, include_variants=True, trees=None, years=None,
+                   style='text'):
+    """The sources that place a record under a higher taxon, directly or
+    through intermediates, in year order, each with the taxa between;
+    first and last stated."""
+    raw_record, raw_parent = record, parent
+    record, parent = self._key(record), self._key(parent)
+    trees = tuple(trees) if trees else TAXONOMY
+    closure = self.closure
+    parents = set(closure.expand([parent], include_variants))
+    entries = []
+    for key in closure.expand([record], include_variants):
+      for chain in closure.chains_of(key, trees, years):
+        index = next((i for i, n in enumerate(chain['nodes']) if n['key'] in parents), None)
+        if index is None:
+          continue
+        entries.append(self._chain_entry(chain, chain['nodes'][index + 1:]))
+    entries.sort(key=lambda e: (e['year'], e['source']))
+    parameters = {
+      'record': record, 'parent': parent, 'includeVariants': include_variants,
+      'trees': list(trees), 'years': years,
+    }
+    title = (f"{self.heading(record, self._asked(raw_record, record))} under "
+             f"{self.heading(parent, self._asked(raw_parent, parent))}")
+    block = blocks.chains(entries, parameters, title=title,
+                          decorations=self._chain_decorations(entries, first_last=True))
     return _with_style(block, style)
 
   def history(self, record, include_related=True, trees=None, years=None, style='text'):
@@ -999,6 +1181,10 @@ def ancestors(records, include_variants=True, trees=None, years=None, style='tex
   return store().ancestors(records, include_variants, trees, years, style)
 
 
+def placed_under(record, parent, include_variants=True, trees=None, years=None, style='text'):
+  return store().placed_under(record, parent, include_variants, trees, years, style)
+
+
 def history(record, include_related=True, trees=None, years=None, style='text'):
   return store().history(record, include_related, trees, years, style)
 
@@ -1074,12 +1260,17 @@ TOOL_DESCRIPTIONS = {
     'records to placements or ancestors.'
   ),
   'ancestors': (
-    'Every higher taxon any source has placed the given records under, up '
-    'each source\'s chain: a table with rank, the kind of edge (a '
-    'placement on the chain, an alternative placement the source offers, '
-    'or a placeholder such as "order uncertain"), the sources, and a '
-    'count. Pass the descendants of a group to see everything the group '
-    'has ever been put under.'
+    'The chain of taxa above the given records in every source that '
+    'places them: one line per source in year order, top down, with a '
+    'placeholder such as "Order uncertain" in the source\'s words and an '
+    'alternative placement the source offers beside the taxon it applies '
+    'to. The heading counts the papers, co-author sets and years.'
+  ),
+  'placed_under': (
+    'The sources that place a record under a higher taxon, directly or '
+    'through intermediate taxa: one line per source in year order with '
+    'the taxa between, the first and last source stated in the heading. '
+    'Answers "who placed X under Y", "who first", "who followed".'
   ),
   'history': (
     'What each source does with a name, in publication order: one row per '
@@ -1176,6 +1367,11 @@ TOOL_SPECS = [
     'records': _RECORDS, 'include_variants': {'type': 'boolean'},
     'trees': _TREES, 'years': _YEARS,
   }, ['records']),
+  _spec('placed_under', {
+    'record': {'type': 'string', 'description': 'the record key or printed name'},
+    'parent': {'type': 'string', 'description': 'the higher taxon, key or printed name'},
+    'include_variants': {'type': 'boolean'}, 'trees': _TREES, 'years': _YEARS,
+  }, ['record', 'parent']),
   _spec('history', {
     'record': {'type': 'string'}, 'include_related': {'type': 'boolean'},
     'trees': _TREES, 'years': _YEARS,
@@ -1206,9 +1402,9 @@ def call(name, arguments):
   functions = {
     'resolve_name': resolve_name, 'contents': contents,
     'placements': placements, 'descendants': descendants,
-    'ancestors': ancestors, 'history': history, 'synonymy': synonymy,
-    'statements': statements, 'source_coverage': source_coverage,
-    'gap': gap, 'printed_forms': printed_forms,
+    'ancestors': ancestors, 'placed_under': placed_under, 'history': history,
+    'synonymy': synonymy, 'statements': statements,
+    'source_coverage': source_coverage, 'gap': gap, 'printed_forms': printed_forms,
   }
   arguments = dict(arguments)
   if 'years' in arguments and arguments['years'] is not None:

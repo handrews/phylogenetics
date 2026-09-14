@@ -80,6 +80,13 @@ def build_parser():
     if name == 'placements':
       p.add_argument('--sources', nargs='+')
 
+  p = add_parser('under', help='the sources that place a record under a higher taxon')
+  p.add_argument('record')
+  p.add_argument('parent')
+  p.add_argument('--years', nargs=2, type=int, metavar=('FIRST', 'LAST'))
+  p.add_argument('--trees', nargs='+', choices=['taxonomy', 'cladogram', 'diagram', 'other'])
+  p.add_argument('--no-variants', dest='include_variants', action='store_false')
+
   p = add_parser('history', help='what each source does with a name')
   p.add_argument('record')
   p.add_argument('--alone', dest='include_related', action='store_false',
@@ -168,6 +175,9 @@ def _main(argv):
   elif command == 'ancestors':
     result = tools.ancestors(args.records, include_variants=args.include_variants,
                              trees=args.trees, years=years, style=style)
+  elif command == 'under':
+    result = tools.placed_under(args.record, args.parent, include_variants=args.include_variants,
+                                trees=args.trees, years=years, style=style)
   elif command == 'history':
     result = tools.history(args.record, include_related=args.include_related,
                            trees=args.trees, years=years, style=style)

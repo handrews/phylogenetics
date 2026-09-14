@@ -88,6 +88,18 @@ def ancestors(
   )
 
 
+@server.tool(description=D['placed_under'])
+def placed_under(
+  record: str, parent: str, include_variants: bool = True,
+  trees: list[str] | None = None, years: list[int | None] | None = None,
+  style: str = 'text',
+) -> dict:
+  return tools.placed_under(
+    record, parent, include_variants=include_variants, trees=trees,
+    years=tuple(years) if years else None, style=style,
+  )
+
+
 @server.tool(description=D['history'])
 def history(
   record: str, include_related: bool = True, trees: list[str] | None = None,

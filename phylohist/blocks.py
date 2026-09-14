@@ -10,14 +10,46 @@ block looks is `render.py`'s business; a new rendering (a modern
 there and needs nothing here.
 
 Types: `classification` (a tree as a source prints it), `table` (typed
-columns, cells that may hold several values), `list` (a synonymy list
-under a heading), `statement` (a gap, a printed form, an absence).
+columns, cells that may hold several values), `list` (a synonymy list,
+printed forms or statements under a heading), `statement` (a gap, a
+printed form, an absence), `chains` (one line per source: the chain of
+taxa from a higher taxon down to a record), `timeline` (one line per
+source in year order: what it does with a name).
 """
 
 import hashlib
 import json
 
-TYPES = ('classification', 'table', 'list', 'statement')
+TYPES = ('classification', 'table', 'list', 'statement', 'chains', 'timeline')
+
+# The marks a listing prints beside a name, in the community's
+# abbreviations; shared by the tools that word cells and the renderers.
+ACT_MARKS = {
+  'emended': 'emend.', 'nomTransl': 'nom. transl.', 'corrected': 'nom. correct.',
+}
+_NEW_MARKS = {
+  'superfamily': 'superfam. nov.', 'family': 'fam. nov.', 'subfamily': 'subfam. nov.',
+  'genus': 'gen. nov.', 'subgenus': 'subgen. nov.', 'species': 'sp. nov.',
+  'subspecies': 'subsp. nov.', 'variety': 'var. nov.', 'order': 'ord. nov.',
+  'suborder': 'subord. nov.',
+}
+
+
+def new_mark(rank):
+  """How a new taxon is marked when the source's own wording is not
+  recorded: the rank's abbreviation, or "nov." for a rank without one."""
+  return _NEW_MARKS.get((rank or '').lower(), 'nov.')
+
+
+def _claims_of(value):
+  """The claim ids a cell value or entry carries: one under `claim`,
+  several under `claims`."""
+  found = []
+  if isinstance(value, dict):
+    if value.get('claim'):
+      found.append(value['claim'])
+    found += list(value.get('claims') or ())
+  return found
 
 
 def _canonical(obj):
@@ -58,10 +90,7 @@ def table(columns, rows, parameters, groups=None, decorations=None, title=None, 
   column], group?: label}]. A cell is a list because one source can place
   a record twice. ``decorations`` carries computed measurements (counts,
   co-author sets, year spans) that a renderer may show as a header."""
-  claims = [
-    v['claim'] for row in rows for cell in row['cells'] for v in cell
-    if isinstance(v, dict) and v.get('claim')
-  ]
+  claims = [c for row in rows for cell in row['cells'] for v in cell for c in _claims_of(v)]
   return _make('table', {
     'title': title, 'columns': columns, 'rows': rows,
     'groups': groups or [], 'decorations': decorations or {},
@@ -69,11 +98,15 @@ def table(columns, rows, parameters, groups=None, decorations=None, title=None, 
 
 
 def list_entry(source, cite, year, claim, page=None, stance=None, parents=None,
-               printed=None, record=None, name=None):
+               printed=None, record=None, name=None, kind=None, sentence=None,
+               claims=None):
+  """One line of a list: a synonymy entry (parents, name, printed form,
+  stance), a printed form, or a statement (kind, sentence)."""
   entry = {'source': source, 'cite': cite, 'year': year, 'claim': claim}
   for field, value in (
     ('page', page), ('stance', stance), ('parents', parents),
     ('printed', printed), ('record', record), ('name', name),
+    ('kind', kind), ('sentence', sentence), ('claims', claims),
   ):
     if value is not None:
       entry[field] = value
@@ -85,7 +118,27 @@ def listing(heading, entries, parameters, kind='synonymy', extra=None):
   year order."""
   return _make('list', {
     'kind': kind, 'heading': heading, 'entries': entries,
-  }, parameters, [e['claim'] for e in entries if e.get('claim')], extra)
+  }, parameters, [c for e in entries for c in _claims_of(e)], extra)
+
+
+def chains(entries, parameters, title=None, decorations=None, extra=None):
+  """``entries`` in year order, each: source, cite, year, chain (top
+  down, each node key, label, rank, kind: placement, placeholder or
+  alternative), claims. ``decorations`` carries the measurement (papers,
+  co-author sets, years, first and last)."""
+  return _make('chains', {
+    'title': title, 'entries': entries, 'decorations': decorations or {},
+  }, parameters, [c for e in entries for c in _claims_of(e)], extra)
+
+
+def timeline(entries, parameters, title=None, decorations=None, extra=None):
+  """``entries`` in year order, each: year, source, cite, line (the name
+  as the source uses it and its position), acts (words), page, optional
+  synonymy entries, claims."""
+  return _make('timeline', {
+    'title': title, 'entries': entries, 'decorations': decorations or {},
+  }, parameters, [c for e in entries for c in _claims_of(e)] +
+     [c for e in entries for s in e.get('synonymy') or () for c in _claims_of(s)], extra)
 
 
 def statement(kind, fields, parameters, claims=()):
@@ -162,6 +215,16 @@ def validate(block, store):
     fields = block.get('fields', {})
     check_source(fields.get('source'))
     check_key(fields.get('record'))
+  elif kind == 'chains':
+    for entry in block.get('entries', ()):
+      check_source(entry.get('source'))
+      for node in entry.get('chain', ()):
+        check_key(node.get('key'))
+  elif kind == 'timeline':
+    for entry in block.get('entries', ()):
+      check_source(entry.get('source'))
+      for s in entry.get('synonymy') or ():
+        check_source(s.get('source'))
   else:
     problems.append(f'unknown block type {kind}')
   return problems

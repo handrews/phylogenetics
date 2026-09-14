@@ -79,6 +79,46 @@ class Closure:
       return None
     return self.by_path[source_key].get(path.rsplit('/children/', 1)[0])
 
+  def chains_of(self, record, trees=TAXONOMY, years=None):
+    """The chain of taxa above a record in every source that places it,
+    top down, one per placement. Each is ``{source, year, nodes}``; a node
+    names its key, path, the claim that puts it there (the root's usage
+    claim), whether it is a placeholder, the alternative placements the
+    source offers at that step, and the provisional and questionable
+    flags."""
+    out = []
+    for claim in self.placements_of.get(record, ()):
+      if not self._wanted(claim, trees, years):
+        continue
+      source_key = claim['source']
+      nodes = []
+      current = claim
+      while current is not None:
+        nodes.append({
+          'key': current['subject'], 'path': current['path'], 'claim': current['id'],
+          'placeholder': bool(current.get('placeholder')),
+          'alternatives': list(current.get('altPlacements') or ()),
+          'provisional': bool(current.get('provisional')),
+          'questionable': bool(current.get('questionable')),
+        })
+        above = self.parent_claim(source_key, current)
+        if above is None and current.get('parent'):
+          # The root of the tree has a usage claim but no placement.
+          path = current['path'].rsplit('/children/', 1)[0]
+          usage = next((c for c in self.store.at_path[source_key].get(path, ())
+                        if c['kind'] == 'usage'), None)
+          nodes.append({
+            'key': current['parent'], 'path': path,
+            'claim': usage['id'] if usage else None,
+            'placeholder': bool(current.get('parentPlaceholder')),
+            'alternatives': [], 'provisional': False, 'questionable': False,
+          })
+        current = above
+      nodes.reverse()
+      out.append({'source': source_key, 'year': self.year(source_key), 'nodes': nodes})
+    out.sort(key=lambda e: (e['year'], e['source'], e['nodes'][-1]['path']))
+    return out
+
   def _wanted(self, claim, trees, years):
     return claim['tree'] in trees and _in_years(self.year(claim['source']), years)
 

@@ -198,6 +198,47 @@ def _text_statement(block):
   return _statement_text(block)
 
 
+def _chain_text(chain):
+  parts = []
+  for node in chain:
+    label = node['label']
+    if node.get('provisional'):
+      label = '? ' + label
+    if node.get('questionable'):
+      label += ' ?'
+    if node.get('alternatives'):
+      label += ' (or ' + ', '.join(node['alternatives']) + ')'
+    parts.append(label)
+  return ' › '.join(parts)
+
+
+def _chains_head(block):
+  """The title line with the measurement, then the first/last line."""
+  deco = block.get('decorations') or {}
+  lines = []
+  title = block.get('title') or ''
+  if deco.get('measure'):
+    title = f"{title}: {deco['measure']}" if title else deco['measure']
+  if title:
+    lines.append(title)
+  if deco.get('span'):
+    lines.append(deco['span'])
+  return lines
+
+
+@style('text', 'chains')
+def _text_chains(block):
+  lines = _chains_head(block)
+  if lines and block['entries']:
+    lines.append('')
+  width = max([len(e.get('authors') or e['cite']) for e in block['entries']] + [0])
+  for e in block['entries']:
+    lines.append(f"{e['year']}  {(e.get('authors') or e['cite']).ljust(width)}  {_chain_text(e['chain'])}")
+  if not block['entries']:
+    lines.append('(no source places it there)')
+  return '\n'.join(lines)
+
+
 # -- markdown --------------------------------------------------------------
 
 @style('markdown', 'classification')
@@ -244,3 +285,21 @@ def _md_list(block):
 @style('markdown', 'statement')
 def _md_statement(block):
   return _statement_text(block)
+
+
+@style('markdown', 'chains')
+def _md_chains(block):
+  head = _chains_head(block)
+  lines = []
+  if head:
+    lines.append(f'**{head[0]}**')
+    lines += head[1:]
+    lines.append('')
+  if not block['entries']:
+    lines.append('(no source places it there)')
+    return '\n'.join(lines)
+  lines.append('| year | source | chain |')
+  lines.append('|---|---|---|')
+  for e in block['entries']:
+    lines.append(f"| {e['year']} | {e.get('authors') or e['cite']} | {_chain_text(e['chain']).replace('|', '\\|')} |")
+  return '\n'.join(lines)
