@@ -9,6 +9,7 @@ and the eval runner call these functions directly.
 """
 
 import collections
+import html
 import re
 import json
 import pathlib
@@ -166,7 +167,8 @@ class ClaimStore:
     """What a citation or a key says about a paper: the year (with a
     key's letter suffix when given), the author families folded, and
     whether it is a work in preparation."""
-    text = (text or '').strip()
+    # A model may write the ampersand as an entity ("Holloway &amp; Jell").
+    text = html.unescape((text or '').strip())
     sig = {'year': None, 'suffix': None, 'families': [], 'inprep': False}
     if not text:
       return sig
@@ -198,7 +200,7 @@ class ClaimStore:
     letter, "Fay 1967a") whose authors begin with the families named, in
     the order named. "Sumrall et al. 2013" names one family; "Holloway &
     Jell 1983" two. A key is its own answer."""
-    query = (query or '').strip()
+    query = html.unescape((query or '').strip())
     if not query:
       return []
     if query in self.sources or query.lower() in self.sources:

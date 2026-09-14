@@ -145,6 +145,7 @@ def test_sources_by_citation(store):
     ('Ewin, Martin, Isotalo & Zamora 2020', '2020_ewin_martin.m_isotalo_zamora'),
     ('Fay 1967a', '1967a_fay'), ('1983_holloway_jell', '1983_holloway_jell'),
     ('Sprinkle & Strimple in prep', 'inprep_sprinkle_strimple'),
+    ('Holloway &amp; Jell 1983', '1983_holloway_jell'),
   ):
     assert [c['key'] for c in store.resolve_source(query)] == [key], query
   assert store.gap('Holloway & Jell 1983', 'material', style='json') == \
