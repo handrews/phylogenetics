@@ -171,14 +171,14 @@ class ClaimStore:
 
   def source_signature(self, text):
     """What a citation or a key says about a paper: the year (with a
-    key's letter suffix when given), the author families folded, and
+    key's letter suffix when given), the authors' names folded, and
     whether it is a work in preparation."""
     # A model may write the ampersand as an entity ("Holloway &amp; Jell").
     text = html.unescape((text or '').strip())
-    sig = {'year': None, 'suffix': None, 'families': [], 'inprep': False}
+    sig = {'year': None, 'suffix': None, 'authors': [], 'inprep': False}
     if not text:
       return sig
-    # A key, known or not: year and letter, then families with initials.
+    # A key, known or not: year and letter, then authors with initials.
     if re.match(r'^(\d{4}[a-z]?|inprep)_', text.lower()):
       head, _, rest = text.lower().partition('_')
       match = self._YEAR_TOKEN.match(head)
@@ -186,7 +186,7 @@ class ClaimStore:
         sig['year'], sig['suffix'] = int(match.group(1)), match.group(2)
       else:
         sig['inprep'] = True
-      sig['families'] = [fold(part.split('.')[0]) for part in rest.split('_') if part]
+      sig['authors'] = [fold(part.split('.')[0]) for part in rest.split('_') if part]
       return sig
     for token in re.split(r'[\s,&;]+', text):
       token = token.strip('().')
@@ -198,13 +198,13 @@ class ClaimStore:
       elif token.lower() in self._CITATION_NOISE:
         sig['inprep'] = sig['inprep'] or token.lower().startswith('prep')
       else:
-        sig['families'].append(fold(token))
+        sig['authors'].append(fold(token))
     return sig
 
   def resolve_source(self, query):
     """The sources a citation can mean: the papers of that year (and
-    letter, "Fay 1967a") whose authors begin with the families named, in
-    the order named. "Sumrall et al. 2013" names one family; "Holloway &
+    letter, "Fay 1967a") whose authors begin with the authors named, in
+    the order named. "Sumrall et al. 2013" names one author; "Holloway &
     Jell 1983" two. A key is its own answer."""
     query = html.unescape((query or '').strip())
     if not query:
@@ -227,7 +227,7 @@ class ClaimStore:
       elif year is not None:
         continue
       authors = [fold(a) for a in citation.get('authors') or ()]
-      if authors[:len(sig['families'])] != sig['families']:
+      if authors[:len(sig['authors'])] != sig['authors']:
         continue
       found.append(self._source_candidate(key))
     found.sort(key=lambda c: (c['year'] or 9999, c['key']))

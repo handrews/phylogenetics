@@ -276,7 +276,7 @@ The fix is either: the compact view of every block lists its source
 keys beside the citations (the placements table already carries them
 as `sourceKeys`), or every `source` parameter accepts a citation
 ("Dehm 1961", "Sumrall et al. 2013") resolved the way names are, by
-folded author family and year. The second also gives the model a way
+folded author name and year. The second also gives the model a way
 to say "Klug et al. 2008" and be told the corpus has no such source.
 
 ### 3. An absent name has no block
