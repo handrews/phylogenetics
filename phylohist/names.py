@@ -1,6 +1,6 @@
 """Folding printed names to lookup forms.
 
-G10 in `docs/semantics-roadmap.md`: ligatures, capitals, diacritics,
+G10 in `notes/development/semantics-roadmap.md`: ligatures, capitals, diacritics,
 hyphens and spaces are typographical variation, not spelling, and a
 resolver folds them on lookup while the records keep what was entered.
 Folding is for finding a record; it never changes a key or a name.

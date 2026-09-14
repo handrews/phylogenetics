@@ -196,7 +196,7 @@ counts by coverage kind (`derived`, editor-inferred claims excluded), and
 publication-year order. Coverage is declared by a reviewer and counted by
 the extractor; they are cross-checked, never conflated (G1): a source
 declaring `all` or `partly` for a kind with no derived claims, or `none`
-or `na` with any, is an inconsistency row for the owner to settle either
+or `na` with any, is an inconsistency row for the editor to settle either
 way. `scripts/claims.py --inconsistencies` prints the rows with the
 claims behind them and the review file to check against, and
 `tests/test_claims.py` fails while any row exists, so a new one cannot
@@ -324,7 +324,7 @@ blocks; the CLI (`phylohist <tool>`, `--style`), the MCP server
 
 `tests/test_tools.py`, `tests/test_closure.py`, `tests/test_blocks.py`
 and `tests/test_cli.py` check the selectors, the worked example of
-`notes/structured-answers.md`, the renderings and the subcommands.
+`notes/development/structured-answers.md`, the renderings and the subcommands.
 
 ## Worked examples
 

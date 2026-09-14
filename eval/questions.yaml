@@ -38,7 +38,7 @@
     source: 1962_fay
     pages: 201
   verified: 'data/trees/1962_fay.yaml, taxonomies/0 (edrioblastoidea, new:true) /children/0 (astrocystites,
-    moved:{taxon: edrioasteroidea}); confirmed against docs/reviews/review_1962_fay.md sec. 2-3, which
+    moved:{taxon: edrioasteroidea}); confirmed against notes/reviews/review_1962_fay.md sec. 2-3, which
     quotes the p.201 passage and notes both "order" and "family" never occur in the paper.'
 - id: q002
   class: answerable
@@ -75,7 +75,7 @@
     source: 1962_fay
     pages: 201
   verified: data/trees/1962_fay.yaml, taxonomies/0/children/0/children/0 (ottawaensis_whiteaves_1897,
-    type:true, editorial.inferred:[type]); docs/reviews/review_1962_fay.md sec. 2-3 confirms "type species"
+    type:true, editorial.inferred:[type]); notes/reviews/review_1962_fay.md sec. 2-3 confirms "type species"
     never occurs in the paper's text.
 - id: q003
   class: answerable
@@ -180,7 +180,7 @@
     source: 2015_sprinkle_sumrall
     pages: 351
   verified: data/trees/2015_sprinkle_sumrall.yaml, taxonomies/0/children/1(edrioblastoidina)/children/0(astrocystitidae)/children/0(porosublastus,
-    new)/children/0(inexpectus_sprinkle_sumrall_2015, type, new); docs/reviews/review_2015_sprinkle_sumrall.md
+    new)/children/0(inexpectus_sprinkle_sumrall_2015, type, new); notes/reviews/review_2015_sprinkle_sumrall.md
     sec. 2 quotes p.351 verbatim.
 - id: q006
   class: answerable
@@ -215,7 +215,7 @@
     pages: 773
   verified: data/trees/2013_sumrall_heredia_rodríguez.c.m_mestre.yaml, taxonomies/0/children/0/children/0(edrioasterida)/children/0(edrioblastoidina)/children/0(rhenopyrgidae,
     emended)/children/0(rhenopyrgus, emended)/children/0(coronaeformis_rievers_1961, type; synonyms parents
-    [rhenopyrgus-subgenus, pyrgocystis]); docs/reviews/review_2013_sumrall_heredia_rodríguez.c.m_mestre.md
+    [rhenopyrgus-subgenus, pyrgocystis]); notes/reviews/review_2013_sumrall_heredia_rodríguez.c.m_mestre.md
     sec. 2 quotes p.773 verbatim.
 - id: q007
   class: answerable
@@ -250,7 +250,7 @@
     source: 2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman
     pages: 2
   verified: data/trees/2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman.yaml, taxonomies/0/children/0/children/0/children/0(edrioblastoidina)/children/0(rhenopyrgidae)/children/0(heropyrgus,
-    new)/children/0(disterminus_..._2017, type, new); docs/reviews/review_2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman.md
+    new)/children/0(disterminus_..._2017, type, new); notes/reviews/review_2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman.md
     sec. 2 quotes the p.2 header verbatim.
 - id: q008
   class: answerable
@@ -287,7 +287,7 @@
     - 1002
     - 1004
   verified: data/trees/1983_holloway_jell.yaml, taxonomies/0(edrioasteroidea)/children/0(openTaxon edrioasteroidea-order-uncertain_holloway_jell_1983)/children/0(rhenopyrgidae,
-    new); docs/reviews/review_1983_holloway_jell.md sec. 2-3 quotes the p.1002 heading and the pp.1002-1004
+    new); notes/reviews/review_1983_holloway_jell.md sec. 2-3 quotes the p.1002 heading and the pp.1002-1004
     two-sided argument.
 - id: q009
   class: answerable
@@ -346,7 +346,7 @@
     source: 2020_ewin_martin.m_isotalo_zamora
     pages: 120
   verified: 'data/trees/2020_ewin_martin.m_isotalo_zamora.yaml, taxonomies/0/children/0/children/0/children/0/children/0(rhenopyrgidae)/children/0(rhenopyrgus)/children/5(viviani_ewin_martin.m_isotalo_zamora_2020,
-    new, pages:[120,122])/occurrences/0/specimens/holotypes/NHMUK: [EE16642]; docs/reviews/review_2020_ewin_martin.m_isotalo_zamora.md
+    new, pages:[120,122])/occurrences/0/specimens/holotypes/NHMUK: [EE16642]; notes/reviews/review_2020_ewin_martin.m_isotalo_zamora.md
     places the Holotype/Remarks account beginning p.120.'
 - id: q011
   class: answerable
@@ -373,7 +373,7 @@
     source: 2020_ewin_martin.m_isotalo_zamora
     pages: 122
   verified: 'data/trees/2020_ewin_martin.m_isotalo_zamora.yaml, .../rhenopyrgus/children/1(grayae_bather_1915)/occurrences/0/specimens/holotypes/NHMUK:
-    [E23470]; docs/reviews/review_2020_ewin_martin.m_isotalo_zamora.md sec. 3 pins the Girvan locality
+    [E23470]; notes/reviews/review_2020_ewin_martin.m_isotalo_zamora.md sec. 3 pins the Girvan locality
     data to p.122 (also flagging the tree''s own "Givran" OCR-style typo there, not reproduced in this
     answer).'
 - id: q012
@@ -408,7 +408,7 @@
     source: 2020_ewin_martin.m_isotalo_zamora
     pages: 118
   verified: data/trees/2020_ewin_martin.m_isotalo_zamora.yaml, taxonomies/0/children/0/children/0/children/0/children/0(rhenopyrgidae,
-    emended, pages:118)/children/0(rhenopyrgus) and /children/1(heropyrgus, no children captured); docs/reviews/review_2020_ewin_martin.m_isotalo_zamora.md
+    emended, pages:118)/children/0(rhenopyrgus) and /children/1(heropyrgus, no children captured); notes/reviews/review_2020_ewin_martin.m_isotalo_zamora.md
     sec. 2 quotes the p.118 "Genera included" line.
 - id: q013
   class: uncaptured
@@ -426,7 +426,7 @@
     source: 1983_holloway_jell
     pages: 1004
   verified: data/trees/1983_holloway_jell.yaml has no `specimens`/`material` field anywhere; sources.yaml
-    audit.coverage.material for 1983_holloway_jell = none (matches gold_inventory.md and docs/reviews/review_1983_holloway_jell.md
+    audit.coverage.material for 1983_holloway_jell = none (matches gold_inventory.md and notes/reviews/review_1983_holloway_jell.md
     sec. 1, "material | none | every type-material list... is absent from the tree").
 - id: q014
   class: uncaptured
@@ -446,7 +446,7 @@
     - 14
     - 37
   verified: data/trees/1994_guensburg_sprinkle.yaml has no `occurrences` field on the hintzei node or
-    anywhere in the file; docs/source-observations.md "1994_guensburg_sprinkle" section, "Not captured"
+    anywhere in the file; notes/audits/source-observations.md "1994_guensburg_sprinkle" section, "Not captured"
     paragraph (line ~925), matches sources.yaml audit.coverage.occurrences = none.
 - id: q015
   class: uncaptured
@@ -463,7 +463,7 @@
     source: 1961_dehm
     pages: 16
   verified: 'data/trees/1961_dehm.yaml, the rhenopyrgus-subgenus node (keyed `taxon: rhenopyrgus`, `rank:
-    subgenus`) carries `new: true` but no `diagnosis` field; docs/reviews/review_1961_dehm.md sec. 1 and
+    subgenus`) carries `new: true` but no `diagnosis` field; notes/reviews/review_1961_dehm.md sec. 1 and
     3 quote the p.16 diagnosis in full and confirm coverage "diagnoses | none".'
 - id: q016
   class: uncaptured
@@ -480,7 +480,7 @@
     source: 1962_fay
     pages: 201
   verified: data/trees/1962_fay.yaml has no `illustrations` field on the ottawaensis node or anywhere
-    in the file; sources.yaml audit.coverage.illustrations for 1962_fay = none, matching docs/reviews/review_1962_fay.md
+    in the file; sources.yaml audit.coverage.illustrations for 1962_fay = none, matching notes/reviews/review_1962_fay.md
     sec. 1.
 - id: q017
   class: uncaptured
@@ -499,7 +499,7 @@
     - 10
     - 11
   verified: data/trees/1961_rievers.yaml, taxonomies/0/children/0(coronaeformis_rievers_1961)/diagnosis
-    ends after the first sentence; docs/reviews/review_1961_rievers.md sec. 2-3 quotes both printed sentences
+    ends after the first sentence; notes/reviews/review_1961_rievers.md sec. 2-3 quotes both printed sentences
     and marks coverage "diagnoses | partly".
 - id: q018
   class: uncaptured
@@ -517,7 +517,7 @@
     source: 2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman
     pages: 2
   verified: data/trees/2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman.yaml has no `specimens`/`material`
-    field anywhere in the file; docs/reviews/review_2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman.md
+    field anywhere in the file; notes/reviews/review_2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman.md
     sec. 1 gives coverage "material | none | Holotype OUMNH C.36043... not in tree".
 - id: q019
   class: uncaptured
@@ -535,7 +535,7 @@
     pages: 201
   verified: 'data/trees/1962_fay.yaml, taxonomies/0/children/0(astrocystites)/synonyms has exactly one
     entry (`{taxon: steganoblastus}`) with no `auth`/`year`/`pages`; sources.yaml audit.coverage.synonymy
-    for 1962_fay = partly, matching docs/reviews/review_1962_fay.md sec. 1-2.'
+    for 1962_fay = partly, matching notes/reviews/review_1962_fay.md sec. 1-2.'
 - id: q020
   class: uncaptured
   question: What holotype and paratype numbers does Sumrall et al. (2013) give for Rhenopyrgus piojoensis?
@@ -553,7 +553,7 @@
     - 774
     - 775
   verified: data/trees/2013_sumrall_heredia_rodríguez.c.m_mestre.yaml has no `specimens`/`material` field
-    anywhere in the file; docs/reviews/review_2013_sumrall_heredia_rodríguez.c.m_mestre.md coverage table
+    anywhere in the file; notes/reviews/review_2013_sumrall_heredia_rodríguez.c.m_mestre.md coverage table
     gives "Material | None | Holotype PIL 14656-H, paratypes PIL 14174-14872 (p. 774-775) not in tree".
 - id: q021
   class: as-published
@@ -576,7 +576,7 @@
     pages: 118
   verified: 'data/trees/2020_ewin_martin.m_isotalo_zamora.yaml, taxonomies/0/children/0/children/0(edrioblastoidina);
     data/taxa.yaml edrioblastoidina record (`rank: Suborder, altRankOf: edrioblastoidea`) vs. edrioblastoidea
-    (`rank: Class, auth: [fay], year: 1962`); docs/reviews/review_2020_ewin_martin.m_isotalo_zamora.md
+    (`rank: Class, auth: [fay], year: 1962`); notes/reviews/review_2020_ewin_martin.m_isotalo_zamora.md
     sec. 3 quotes the p.118 header in full.'
 - id: q022
   class: as-published
@@ -598,7 +598,7 @@
     pages:
     - 245
     - 246
-  verified: 'data/taxa.yaml edrioasteridae record (`auth: [bather], year: 1899`); docs/source-observations.md
+  verified: 'data/taxa.yaml edrioasteridae record (`auth: [bather], year: 1899`); notes/audits/source-observations.md
     "1978_bell.b.m_sprinkle" section, "A family attribution the tree cannot show disagrees with the record
     (pp. 245-246)".'
 - id: q023
@@ -630,7 +630,7 @@
     - 4
     - 25
   verified: data/trees/1936_bassler.yaml, taxonomies/0/children/0/children/1(hemicystitidae)/children/0(cystaster)/children/0(granulatus_hall_1871)/synonyms/0
-    (parents [cystaster-subgenus, hemicystites]); docs/reviews/review_1936_bassler.md coverage row quotes
+    (parents [cystaster-subgenus, hemicystites]); notes/reviews/review_1936_bassler.md coverage row quotes
     both p.4 and p.25 occurrences verbatim (and corrects the tree's own note, which had claimed the print
     read "(Hemicystite)" without the final "s").
 - id: q024
@@ -666,8 +666,8 @@
     pages: 16
   - source: 2013_sumrall_heredia_rodríguez.c.m_mestre
     pages: 773
-  verified: 'docs/reviews/review_1961_dehm.md sec. 3 quotes the full p.16 diagnosis and type sentence;
-    docs/reviews/review_2013_sumrall_heredia_rodríguez.c.m_mestre.md sec. 2 quotes the p.773 line; data/trees/2013_sumrall_heredia_rodríguez.c.m_mestre.yaml''s
+  verified: 'notes/reviews/review_1961_dehm.md sec. 3 quotes the full p.16 diagnosis and type sentence;
+    notes/reviews/review_2013_sumrall_heredia_rodríguez.c.m_mestre.md sec. 2 quotes the p.773 line; data/trees/2013_sumrall_heredia_rodríguez.c.m_mestre.yaml''s
     coronaeformis synonymy entry carries `parents: [rhenopyrgus-subgenus, pyrgocystis]`, modelling the
     parenthetical form.'
 - id: q025
@@ -690,8 +690,8 @@
     source: 1936_bassler
     pages: 5
   verified: data/trees/1936_bassler.yaml, taxonomies/0/children/0/children/1(hemicystitidae)/children/2(cincinnatidiscus)/children/0(hemicystites-subgenus)/children/0(stellatus_hall_1866,
-    type:true); docs/reviews/review_1936_bassler.md coverage row quotes "(Hall), 1856" verbatim and flags
-    it as a mismatch against the taxon record's 1866; docs/source-observations.md "Hall 1866-1872" section
+    type:true); notes/reviews/review_1936_bassler.md coverage row quotes "(Hall), 1856" verbatim and flags
+    it as a mismatch against the taxon record's 1866; notes/audits/source-observations.md "Hall 1866-1872" section
     confirms 1935_bassler prints 1866 and calls 1936's "1856" a typo.
 - id: q026
   class: as-published
@@ -723,7 +723,7 @@
   - source: 1962_fay
     pages: 205
   verified: data/trees/1962_fay.yaml, taxonomies/0/children/0/children/0(ottawaensis_whiteaves_1897)/notes
-    quotes both captions; specimens.syntypes picks one term only; docs/reviews/review_1962_fay.md sec.
+    quotes both captions; specimens.syntypes picks one term only; notes/reviews/review_1962_fay.md sec.
     3 quotes both passages in full.
 - id: q027
   class: as-published
@@ -750,7 +750,7 @@
     source: 2015_sprinkle_sumrall
     pages: 348
   verified: data/trees/2015_sprinkle_sumrall.yaml, taxonomies/0/children/0(edrioasterida)/children/0(edrioasterina)/children/0(edrioasteridae)
-    — neither node carries a node-level `year`; docs/reviews/review_2015_sprinkle_sumrall.md sec. "Gold-slice"
+    — neither node carries a node-level `year`; notes/reviews/review_2015_sprinkle_sumrall.md sec. "Gold-slice"
     quotes both headers verbatim, four lines apart in the source text.
 - id: q028
   class: as-published
@@ -779,7 +779,7 @@
     source: 1994_guensburg_sprinkle
     pages: 21
   verified: 'data/trees/1994_guensburg_sprinkle.yaml, .../cyathocystidae/children/1(rhenopyrginae, modifier:
-    nomen transl., emended:true)/children/0(rhenopyrgus); docs/source-observations.md "1994_guensburg_sprinkle"
+    nomen transl., emended:true)/children/0(rhenopyrgus); notes/audits/source-observations.md "1994_guensburg_sprinkle"
     section, "Eight re-rankings..." paragraph quotes the p.21 heading verbatim.'
 - id: q029
   class: trajectory
@@ -842,7 +842,7 @@
     and data/trees/2020_ewin_martin.m_isotalo_zamora.yaml each show the stated parent node for rhenopyrgidae/rhenopyrginae;
     authors for the three present-position papers per sources.yaml (sumrall/heredia/rodríguez.c.m/mestre;
     briggs.d.e.g/siveter.de.j/siveter.da.j/sutton.m.d/rahman; ewin/martin.m/isotalo/zamora) share no name;
-    docs/reviews/review_2013_sumrall_heredia_rodríguez.c.m_mestre.md quotes the p.773 declination verbatim.
+    notes/reviews/review_2013_sumrall_heredia_rodríguez.c.m_mestre.md quotes the p.773 declination verbatim.
 - id: q030
   class: trajectory
   question: Is Rhenopyrgus a genus or a subgenus of Pyrgocystis?
@@ -921,7 +921,7 @@
     no `taxonomies` entry for the genus itself; data/trees/1994_guensburg_sprinkle.yaml, data/trees/2000_grigo.yaml,
     data/trees/2013_sumrall_heredia_rodríguez.c.m_mestre.yaml and data/trees/2020_ewin_martin.m_isotalo_zamora.yaml
     each carry a bare `rhenopyrgus` genus node; author lists per sources.yaml confirm the six sets are
-    pairwise distinct except for the shared name Jell (1983, 1990); docs/reviews/review_1983_holloway_jell.md
+    pairwise distinct except for the shared name Jell (1983, 1990); notes/reviews/review_1983_holloway_jell.md
     sec. 3 quotes the p.1004 argument in full. Could not confirm any node placing Rhenopyrgus (or a synonym
     of it) at genus rank in 1930_richter.r or 1935_bassler — neither tree has the name at all.'
 - id: q031
@@ -969,7 +969,7 @@
     node lists only `pyrgocystis-subgenus` (sardesoni, sulcata) and `rhenopyrgus-subgenus` (coronaeformis)
     as children, so an earlier version of this question's verification (crediting 1966 as a third placement)
     does not hold and has been dropped. data/trees/2010_müller.p_hahn.yaml has no octogona node at all
-    and lists `rhenopyrgidae` with no children; docs/reviews/review_1983_holloway_jell.md sec. 3 quotes
+    and lists `rhenopyrgidae` with no children; notes/reviews/review_1983_holloway_jell.md sec. 3 quotes
     the p.1004 claim and Dehm's contrary conclusion; data/sources.yaml's notes for 2010_müller.p_hahn
     (~line 3734) carry the Klug et al. (2008)/Müller & Hahn dispute in translated paraphrase, not a `quotes`
     block, and are not themselves a placement claim on any tree.
@@ -1022,8 +1022,8 @@
     data/trees/1990_smith.a.b_jell.yaml and data/trees/1994_guensburg_sprinkle.yaml both nest astrocystitidae
     under edrioblastoida/edrioblastoidina respectively, from disjoint author sets (smith.a.b+jell vs.
     guensburg+sprinkle) per sources.yaml; data/trees/1967a_fay.yaml, data/trees/1970_mintz.yaml and data/trees/1982i_sprinkle.yaml
-    each keep astrocystites under class edrioblastoidea; docs/reviews/review_1936_bassler.md sec.4 quotes
-    the p.23 sentence; docs/source-observations.md 1994 section cites the Systematic Paleontology header
+    each keep astrocystites under class edrioblastoidea; notes/reviews/review_1936_bassler.md sec.4 quotes
+    the p.23 sentence; notes/audits/source-observations.md 1994 section cites the Systematic Paleontology header
     at p.13.
 - id: q033
   class: trajectory
@@ -1068,7 +1068,7 @@
     pages: 246
   verified: data/taxa.yaml edrioasteridae record and its `notes` field; data/trees/2015_sprinkle_sumrall.yaml
     taxonomies/0/children/0/children/0(edrioasterina)/children/0(edrioasteridae), neither node carrying
-    an override year; docs/reviews/review_2015_sprinkle_sumrall.md sec.2-3 quotes both printed years verbatim.
+    an override year; notes/reviews/review_2015_sprinkle_sumrall.md sec.2-3 quotes both printed years verbatim.
 - id: q034
   class: trajectory
   question: Who does the corpus credit as the author of Cambraster, and does every source agree?
@@ -1103,7 +1103,7 @@
     edrioasteroidea-family-uncertain)/children/0(cambraster, citedAs: "Cambraster Cabibel, Termier, and
     Termier, 1958"); data/trees/2021_jell_sprinkle.yaml stromatocystitidae/children/0(cambraster) carries
     no `citedAs` field itself, so the "Cabibel et al., 1958" reading is from the paper''s printed text
-    (docs/source-observations.md "Attribution conflicts to resolve" list, Cambraster entry) rather than
+    (notes/audits/source-observations.md "Attribution conflicts to resolve" list, Cambraster entry) rather than
     from a tree-level override; sources.yaml authors for 1994_guensburg_sprinkle = [guensburg, sprinkle]
     and for 2021_jell_sprinkle = [jell, sprinkle], sharing Sprinkle only.'
 - id: q035
@@ -1130,7 +1130,7 @@
     pages: 42
   verified: 'data/taxa.yaml isorophus and carneyella records (`auth: [foerste], year: 1916` both); data/trees/1994_guensburg_sprinkle.yaml,
     .../agelacrinitidae/children (isorophus `citedAs: Isorophus Foerste, 1917`) and .../carneyellinae/children/0(carneyella
-    `citedAs: Carneyella Foerste, 1917`); docs/source-observations.md "1994_guensburg_sprinkle" section,
+    `citedAs: Carneyella Foerste, 1917`); notes/audits/source-observations.md "1994_guensburg_sprinkle" section,
     "Attributions printed here that disagree with the records". The 2011_sumrall_zamora mention is a documented
     cross-check outside the gold slice, not independently re-verified against a tree in this pass.'
 - id: q036
@@ -1370,10 +1370,10 @@
     from the tree files themselves — data/trees/1980_bell.b.m.yaml has a second, separate taxonomies entry
     (edrioblastoidea > astrocystitidae > astrocystites) that gold_inventory.md's one-line summary omits;
     data/trees/1982_bell.b.m.yaml (36 lines, one taxonomies entry rooted at echinodermata) has no edrioblastoid-related
-    content at all — could not confirm this source treats the group, despite docs/source-observations.md-style
+    content at all — could not confirm this source treats the group, despite notes/audits/source-observations.md-style
     expectations elsewhere; it is described here as covering unrelated isorophid/agelacrinitid/cyathocystid
     material only. data/trees/2010_müller.p_hahn.yaml's `rhenopyrgidae` node has zero children (confirmed
-    by direct read). docs/reviews/review_1968_webby.md sec.3 quotes the Art. 40 passage (p. 514) in full.
+    by direct read). notes/reviews/review_1968_webby.md sec.3 quotes the Art. 40 passage (p. 514) in full.
 - id: q042
   class: trajectory
   question: What genera and species have ever been classified as edrioblastoids by any definition, and
@@ -1614,7 +1614,7 @@
     1970_mintz.yaml, 1990_smith.a.b_jell.yaml, 1994_guensburg_sprinkle.yaml (emended:true) and 2015_sprinkle_sumrall.yaml.
     Could not confirm "Bell 1982" (data/trees/1982_bell.b.m.yaml) uses either name — that file has no
     edrioblastoid content at all; dropped from this answer''s Steganoblastidae list even though some informal
-    accounts of this literature include it. Webby''s Art. 40 argument is quoted in full in docs/reviews/review_1968_webby.md
+    accounts of this literature include it. Webby''s Art. 40 argument is quoted in full in notes/reviews/review_1968_webby.md
     sec.3 (p.514: "since Steganoblastidae, which is based on a junior objective synonym, has priority
     and has been a more widely used name, it would seem desirable that it be retained. This view accords
     with Art. 40..."); the same review documents Whiteaves introducing Steganoblastus in 1898 at Bather''s
@@ -1689,7 +1689,7 @@
     data/trees/2013_sumrall_heredia_rodríguez.c.m_mestre.yaml, data/trees/2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman.yaml
     and data/trees/2020_ewin_martin.m_isotalo_zamora.yaml each place rhenopyrgidae under edrioblastoidina
     directly, with no cyathocystidae ancestor. The p.773 rejection sentence, including the phylogenetic
-    justification quoted above, is transcribed in docs/reviews/review_2013_sumrall_heredia_rodríguez.c.m_mestre.md
+    justification quoted above, is transcribed in notes/reviews/review_2013_sumrall_heredia_rodríguez.c.m_mestre.md
     line 15 and in data/sources.yaml's notes for that source; it is not itself captured as a claim on
     any tree node (no claim kind records "source A rejects source B's placement, citing reason X") — the
     second paragraph of the answer above is drawn from the reviewed printed text, not from a placement
@@ -1821,7 +1821,7 @@
   - source: 1983_holloway_jell
     pages: 1004
   verified: data/trees/1961_dehm.yaml places octogona_richter.r_1930 under `pyrgocystis` with no `moved`
-    field and no rhenopyrgus-subgenus placement; docs/reviews/review_1983_holloway_jell.md sec. 3 quotes
+    field and no rhenopyrgus-subgenus placement; notes/reviews/review_1983_holloway_jell.md sec. 3 quotes
     the p.1004 sentence and Dehm's contrary p.16 conclusion in full. Per docs/claims.md ("What the vocabulary
     does not do"), no claim kind exists for one source's description of another source's act, so Holloway
     & Jell's sentence about Dehm is deliberately not modelled as a claim above — only Dehm's own placement

@@ -1,4 +1,4 @@
-"""The closures reproduce the worked example of notes/structured-answers.md.
+"""The closures reproduce the worked example of notes/development/structured-answers.md.
 
 "Under what higher taxa have edrioblastoids been placed across the
 corpus?": the records that constitute the group, everything any source
