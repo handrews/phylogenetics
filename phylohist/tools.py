@@ -749,7 +749,7 @@ class ClaimStore:
   def _scheme_lines(self, schemes):
     lines = []
     for s in schemes:
-      parents = ' / '.join(self.label(p['key']) for p in s['parents'])
+      parents = ' / '.join(self.display(p['key']) for p in s['parents'])
       span = f"{s['firstYear']}" if s['firstYear'] == s['lastYear'] else f"{s['firstYear']}–{s['lastYear']}"
       lines.append(
         f"{parents}: {s['papers']} paper{'s' if s['papers'] != 1 else ''} "
@@ -975,10 +975,70 @@ class ClaimStore:
                           decorations=self._chain_decorations(entries, first_last=True))
     return _with_style(block, style)
 
-  def history(self, record, include_related=True, trees=None, years=None, style='text'):
-    """One row per source in year order: the record used, its rank, the
-    position given, the acts, the printed form, the page; the measurement
-    as the header."""
+  def _position_above(self, source_key, path):
+    """The taxon a node sits under, above what its combination already
+    says: for a species the parent of its genus, for a subgenus the
+    parent of the genus, otherwise the parent. None when the source's
+    tree stops there."""
+    closure = self.closure
+    claim = closure.by_path[source_key].get(path)
+    if claim is None:
+      return None
+    inside = set(self.combination(source_key, path).get('keys') or ())
+    current = claim
+    while current is not None and current.get('parent') in inside:
+      current = closure.parent_claim(source_key, current)
+    if current is None or not current.get('parent'):
+      return None
+    parent_path = current['path'].rsplit('/children/', 1)[0]
+    words = self.display(current['parent'], source_key, parent_path)
+    if current.get('provisional'):
+      words += ' (provisional)'
+    if current.get('questionable'):
+      words += ' (questionable)'
+    return {'key': current['parent'], 'words': words, 'claim': current['id']}
+
+  def _rank_lines(self, m):
+    rows = m['ranks']
+    if len(rows) < 2:
+      return None
+    latest = rows[0]
+    parts = []
+    for r in rows:
+      if r is latest and r['lastSource'] == m['sources'][-1]:
+        span = f"since {r['firstYear']}"
+      elif r['firstYear'] == r['lastYear']:
+        span = f"{r['firstYear']}"
+      else:
+        span = f"{r['firstYear']}–{r['lastYear']}"
+      parts.append(f"{r['rank']} {span} ({r['papers']} paper{'s' if r['papers'] != 1 else ''})")
+    return ', '.join(parts)
+
+  def _position_lines(self, m):
+    schemes = m['positions']
+    if not schemes:
+      return None
+    parts = []
+    for i, s in enumerate(schemes):
+      parents = ' / '.join(self.display(p['key']) for p in s['parents'])
+      if i == 0 and s['lastSource'] == m['sources'][-1]:
+        span = f"since {s['firstYear']}"
+      elif s['firstYear'] == s['lastYear']:
+        span = f"{s['firstYear']}"
+      else:
+        span = f"{s['firstYear']}–{s['lastYear']}"
+      sets = len(s['coauthorSets'])
+      parts.append(f"in {parents} {span} ({s['papers']} paper{'s' if s['papers'] != 1 else ''}"
+                   + (f", {sets} co-author sets" if sets != s['papers'] else '') + ')')
+    return ', '.join(parts)
+
+  def history(self, record, include_related=True, synonymy=False, trees=None, years=None,
+              style='text'):
+    """One line per source in year order: the name as the source uses
+    it, its position above what the combination says, the acts in
+    words, the page; with synonymy, each source's synonymy entries. The
+    measurement is the heading."""
+    raw = record
     record = self._key(record)
     trees = tuple(trees) if trees else TAXONOMY
     closure = self.closure
@@ -988,67 +1048,68 @@ class ClaimStore:
       for claim in self.by_subject.get(key, ()):
         if claim.get('tree') in trees and _in_years(self.source_year(claim['source']), years):
           by_source[claim['source']].append(claim)
-    rows = []
+    heading = self.heading(record, self._asked(raw, record))
+    entries = []
     for source_key in sorted(by_source, key=lambda s: (self.source_year(s), s)):
       claims = by_source[source_key]
       uses = [c for c in claims if c['kind'] == 'usage' and c.get('axis') in ('children', 'root')]
-      used = sorted({c['subject'] for c in uses})
-      as_used = []
-      # The name as this source uses it; a source that only cites the name
-      # (in a synonymy) shows the combination it cites.
-      for c in uses or [c for c in claims if c['kind'] in ('usage', 'acceptance')]:
-        label = self.display(c['subject'], source_key, c['path'])
-        if label not in [a['value'] for a in as_used]:
-          as_used.append({'value': label, 'key': c['subject'], 'claim': c['id']})
-      positions = []
-      for c in claims:
-        if c['kind'] == 'placement' and c['tree'] in trees:
-          parent = c.get('parent')
-          parent_path = c['path'].rsplit('/children/', 1)[0]
-          positions.append({'value': (self.label(parent, source_key, parent_path) if parent else '(unnamed group)') + (' [placeholder]' if c.get('parentPlaceholder') else ''), 'key': parent, 'claim': c['id']})
-        elif c['kind'] == 'placement':
-          positions.append({'value': f"in a {c['tree']}", 'claim': c['id']})
-      seen = set()
-      positions = [p for p in positions if not (p['value'] in seen or seen.add(p['value']))]
-      acts = [{'value': self._act_words(c), 'claim': c['id']} for c in claims if c['kind'] == 'act']
-      acts += [{'value': self._claim_words(c), 'claim': c['id']} for c in claims if c['kind'] in ('acceptance', 'rejection')]
-      printed = [{'value': c['printed']['citedAs'], 'claim': c['id']} for c in claims if c['kind'] == 'usage' and (c.get('printed') or {}).get('citedAs')]
-      pages = sorted({json.dumps(c['pages']) for c in claims if c.get('pages') is not None and c['kind'] == 'usage'})
-      rows.append({'cells': [
-        [{'value': self.cite(source_key), 'source': source_key}],
-        [{'value': self.source_year(source_key)}],
-        as_used,
-        [{'value': ', '.join(self.rank(k) or '' for k in used)}],
-        positions, acts, printed,
-        [{'value': p.strip('"') } for p in pages],
-      ], 'source': source_key})
+      if uses:
+        for use in uses:
+          path = use['path']
+          at = self._node_claims(source_key, path)
+          words = self.display(use['subject'], source_key, path)
+          position = self._position_above(source_key, path)
+          if position:
+            words += f", in {position['words']}"
+          acts = [self._act_words(c) for c in at if c['kind'] == 'act']
+          acts += [self._claim_words(c) for c in at if c['kind'] == 'rejection']
+          if acts:
+            words += '; ' + '; '.join(acts)
+          entry = {
+            'year': self.source_year(source_key), 'source': source_key,
+            'cite': self.cite(source_key), 'authors': self._authors(source_key),
+            'record': use['subject'], 'line': words, 'page': use.get('pages'),
+            'claims': sorted({c['id'] for c in at}),
+          }
+          if synonymy:
+            found = self._synonymy_entries(source_key, path)
+            if found:
+              entry['synonymy'] = found
+          entries.append(entry)
+      else:
+        # A source that only cites the name, in a synonymy.
+        for c in claims:
+          if c['kind'] != 'acceptance':
+            continue
+          under = c.get('under')
+          under_path = c['path'].rsplit('/', 2)[0]
+          words = self.display(c['subject'], source_key, c['path'])
+          if under:
+            words += f", cited as a synonym of {self.display(under, source_key, under_path)}"
+          entries.append({
+            'year': self.source_year(source_key), 'source': source_key,
+            'cite': self.cite(source_key), 'authors': self._authors(source_key),
+            'record': c['subject'], 'line': words, 'page': c.get('citedPages'),
+            'claims': [c['id']],
+          })
     m = closure.measurement(record, include_related, trees, years)
     deco = {}
-    if m['latestRank']:
-      r = m['latestRank']
-      deco['latest rank'] = (
-        f"{r['rank']}: {r['papers']} paper{'s' if r['papers'] != 1 else ''} "
-        f"{r['firstYear']}–{r['lastYear']}, {len(r['coauthorSets'])} co-author set"
-        f"{'s' if len(r['coauthorSets']) != 1 else ''}, last {self.cite(r['lastSource'])}"
-      )
-      earlier = [x for x in m['ranks'] if x is not r]
-      if earlier:
-        deco['earlier ranks'] = [
-          f"{x['rank']}: {x['papers']} paper{'s' if x['papers'] != 1 else ''} "
-          f"{x['firstYear']}–{x['lastYear']}, last {self.cite(x['lastSource'])}" for x in earlier
-        ]
-    if m['positions']:
-      deco['positions'] = self._scheme_lines(m['positions'])
-    deco['papers'] = f"{m['papers']}, {len(m['coauthorSets'])} co-author sets"
-    parameters = {'record': record, 'includeRelated': include_related, 'trees': list(trees), 'years': years}
-    block = blocks.table([
-      {'name': 'source', 'kind': 'source'}, {'name': 'year', 'kind': 'year'},
-      {'name': 'as', 'kind': 'record'},
-      {'name': 'rank', 'kind': 'rank'}, {'name': 'placed under', 'kind': 'record'},
-      {'name': 'acts', 'kind': 'text'}, {'name': 'printed as', 'kind': 'text'},
-      {'name': 'pages', 'kind': 'text'},
-    ], rows, parameters, decorations=deco, title=f'History of {self.display(record)}',
-       extra={'measurement': m})
+    if m['papers']:
+      sets = len(m['coauthorSets'])
+      years_span = (f"{self.source_year(m['sources'][0])}" if len(m['sources']) == 1 else
+                    f"{self.source_year(m['sources'][0])}–{self.source_year(m['sources'][-1])}")
+      deco['measure'] = (f"{m['papers']} paper{'s' if m['papers'] != 1 else ''}, "
+                         f"{sets} co-author set{'s' if sets != 1 else ''}, {years_span}")
+    ranks = self._rank_lines(m)
+    if ranks:
+      deco['ranks'] = ranks
+    positions = self._position_lines(m)
+    if positions:
+      deco['positions'] = positions
+    parameters = {'record': record, 'includeRelated': include_related, 'synonymy': synonymy,
+                  'trees': list(trees), 'years': years}
+    block = blocks.timeline(entries, parameters, title=heading, decorations=deco,
+                            extra={'measurement': m})
     return _with_style(block, style)
 
   def synonymy(self, record, source=None, style='text'):
@@ -1248,8 +1309,8 @@ def placed_under(record, parent, include_variants=True, trees=None, years=None, 
   return store().placed_under(record, parent, include_variants, trees, years, style)
 
 
-def history(record, include_related=True, trees=None, years=None, style='text'):
-  return store().history(record, include_related, trees, years, style)
+def history(record, include_related=True, synonymy=False, trees=None, years=None, style='text'):
+  return store().history(record, include_related, synonymy, trees, years, style)
 
 
 def synonymy(record, source=None, style='text'):
@@ -1336,14 +1397,15 @@ TOOL_DESCRIPTIONS = {
     'Answers "who placed X under Y", "who first", "who followed".'
   ),
   'history': (
-    'What each source does with a name, in publication order: one row per '
-    'source with the rank used, the position given, the acts (named as '
-    'new, type species, emended, nomen translatum, moved from, corrected), '
-    'the printed form and the pages. The header is the measurement a '
-    'trajectory needs: the latest rank and position with papers, years, '
-    'co-author sets and the last paper, and the earlier ones with their '
-    'last paper. Records of the same name at other ranks are included and '
-    'labelled. The history reports; it passes no verdict.'
+    'What each source does with a name, one line per source in year '
+    'order: the name as that source uses it (a species as its '
+    'combination there), its position above what the combination says, '
+    'the acts (named as new, emended, nomen translatum, moved, a rejected '
+    'placement), the page; the heading measures the papers, co-author '
+    'sets and years, the ranks used and the positions given (which is the '
+    'trajectory\'s present and history). The same name at other ranks is '
+    'included unless include_related is false. With synonymy true each '
+    'source\'s synonymy entries follow its line.'
   ),
   'synonymy': (
     'The synonymy a source prints under a record, as a dated list: each '
@@ -1438,7 +1500,8 @@ TOOL_SPECS = [
     'include_variants': {'type': 'boolean'}, 'trees': _TREES, 'years': _YEARS,
   }, ['record', 'parent']),
   _spec('history', {
-    'record': {'type': 'string'}, 'include_related': {'type': 'boolean'},
+    'record': {'type': 'string', 'description': 'the record key or printed name'},
+    'include_related': {'type': 'boolean'}, 'synonymy': {'type': 'boolean'},
     'trees': _TREES, 'years': _YEARS,
   }, ['record']),
   _spec('synonymy', {

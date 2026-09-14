@@ -91,6 +91,7 @@ def build_parser():
   p.add_argument('record')
   p.add_argument('--alone', dest='include_related', action='store_false',
                  help='this record only, not the same name at other ranks')
+  p.add_argument('--synonymy', action='store_true', help="each source's synonymy under its line")
   p.add_argument('--years', nargs=2, type=int, metavar=('FIRST', 'LAST'))
   p.add_argument('--trees', nargs='+', choices=['taxonomy', 'cladogram', 'diagram', 'other'])
 
@@ -180,7 +181,7 @@ def _main(argv):
                                 trees=args.trees, years=years, style=style)
   elif command == 'history':
     result = tools.history(args.record, include_related=args.include_related,
-                           trees=args.trees, years=years, style=style)
+                           synonymy=args.synonymy, trees=args.trees, years=years, style=style)
   elif command == 'synonymy':
     result = tools.synonymy(args.record, source=args.source, style=style)
   elif command == 'statements':

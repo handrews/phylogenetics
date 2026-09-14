@@ -343,6 +343,49 @@ def _md_statement(block):
   return _statement_text(block)
 
 
+@style('text', 'timeline')
+def _text_timeline(block):
+  lines = _chains_head(block)
+  deco = block.get('decorations') or {}
+  for key in ('ranks', 'positions'):
+    if deco.get(key):
+      lines.append(deco[key])
+  if block['entries']:
+    lines.append('')
+  width = max([len(e.get('authors') or e['cite']) for e in block['entries']] + [0])
+  for e in block['entries']:
+    line = e['line']
+    if e.get('page') is not None:
+      line += f" ({pages_text(e['page'])})"
+    lines.append(f"{e['year']}  {(e.get('authors') or e['cite']).ljust(width)}  {line}")
+    for s in e.get('synonymy') or ():
+      lines.append(' ' * (8 + width) + '= ' + _entry_line(s))
+  if not block['entries']:
+    lines.append('(no source uses the name)')
+  return '\n'.join(lines)
+
+
+@style('markdown', 'timeline')
+def _md_timeline(block):
+  head = _chains_head(block)
+  deco = block.get('decorations') or {}
+  lines = [f'**{head[0]}**'] if head else []
+  for key in ('ranks', 'positions'):
+    if deco.get(key):
+      lines.append(deco[key] + '  ')
+  lines.append('')
+  for e in block['entries']:
+    line = e['line']
+    if e.get('page') is not None:
+      line += f" ({pages_text(e['page'])})"
+    lines.append(f"- {e['year']} {e.get('authors') or e['cite']}: {line}")
+    for s in e.get('synonymy') or ():
+      lines.append('  - = ' + _entry_line(s))
+  if not block['entries']:
+    lines.append('(no source uses the name)')
+  return '\n'.join(lines)
+
+
 @style('markdown', 'chains')
 def _md_chains(block):
   head = _chains_head(block)

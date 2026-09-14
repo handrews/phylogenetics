@@ -102,11 +102,12 @@ def placed_under(
 
 @server.tool(description=D['history'])
 def history(
-  record: str, include_related: bool = True, trees: list[str] | None = None,
-  years: list[int | None] | None = None, style: str = 'text',
+  record: str, include_related: bool = True, synonymy: bool = False,
+  trees: list[str] | None = None, years: list[int | None] | None = None,
+  style: str = 'text',
 ) -> dict:
   return tools.history(
-    record, include_related=include_related, trees=trees,
+    record, include_related=include_related, synonymy=synonymy, trees=trees,
     years=tuple(years) if years else None, style=style,
   )
 
