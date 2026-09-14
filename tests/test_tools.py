@@ -138,7 +138,7 @@ def test_names_accepted_where_keys_are(store):
 
 def test_sources_by_citation(store):
   # A citation as the blocks print it resolves like a key; the year and
-  # the families named, in order, pick the paper.
+  # the authors named, in order, pick the paper.
   for query, key in (
     ('Dehm 1961', '1961_dehm'), ('Holloway & Jell 1983', '1983_holloway_jell'),
     ('Sumrall et al. 2013', '2013_sumrall_heredia_rodríguez.c.m_mestre'),
@@ -158,7 +158,7 @@ def test_sources_by_citation(store):
   assert store.resolve_source('Klug et al. 2008') == []
   assert store.gap('Klug et al. 2008', 'newTaxa')['rendered'] == \
     'No source in the corpus mentions the source Klug et al. 2008.'
-  assert store.source_signature('2008_klug_krüger_korn_rücklin_schemm-gregory_debaets_mapes')['families'][0] == 'klug'
+  assert store.source_signature('2008_klug_krüger_korn_rücklin_schemm-gregory_debaets_mapes')['authors'][0] == 'klug'
 
 
 def test_keys_accepted_in_any_case(store):

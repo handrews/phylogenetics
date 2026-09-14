@@ -176,7 +176,7 @@ def _source_sig(store, text):
   if not text:
     return None
   sig = store.source_signature(text)
-  return (sig['year'], tuple(sig['families'][:1]))
+  return (sig['year'], tuple(sig['authors'][:1]))
 
 
 def _has_page(claim, page):
