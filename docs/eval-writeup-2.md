@@ -386,15 +386,79 @@ exempts classifications.
 | refusals complete as refusals | 8 of 9 uncaptured composed; the ninth lost to source keys (§2) |
 | new | source keys guessed (§2); the absent name has no block (§3); blocks carry fewer claims than they show (§4) |
 
+## The third run
+
+The run of 2026-09-14 (`eval/runs/2026-09-14-claude-sonnet-5.*`): the
+same 49 questions after the answer shapes (chains, `placed_under`, the
+Systematic Paleontology listing, the timeline, statements as sentences,
+the absent-name block) and after every source argument began to accept
+a citation. A smoke, not a verdict: the eval's expectations still name
+claims, and the shapes are what the next eval should be written
+against.
+
+| | second run | third run |
+|---|---|---|
+| lookups | 257 (median 4, max 18) | 228 (median 3, max 16) |
+| input tokens | 1.80 M | 1.72 M |
+| at the lookup limit | 4 | 3 |
+| source arguments the corpus could not resolve | 28 in 7 questions | 6 in 4 questions |
+| free text beside the submission | 11 questions | 5 |
+| questions back | 2 | 0 |
+| mechanical pass | 25 | 26 |
+| judge contract, full marks | 1.71, 38 | 1.82, 42 |
+
+| class | n | second run | third run |
+|---|---|---|---|
+| answerable | 12 | 8 | 6 |
+| as-published | 8 | 4 | 5 |
+| uncaptured | 9 | 6 | 4 |
+| absent | 3 | 2 | 3 |
+| trajectory | 17 | 5 | 8 |
+
+**Citations replaced keys.** Twenty-four source arguments were
+citations the resolver turned into keys; `resolve_source` was called
+27 times, usually once per question before the first lookup. Five of
+the six unresolved arguments are one habit, the ampersand written as
+an HTML entity ("Holloway &amp; Jell 1983"), which the resolver now
+tolerates; the sixth is Klug et al. 2008, which the corpus does not
+have, and the answer composed the absent-source block for it. No
+question ran to the limit on keys; q015, sixteen lookups in the second
+run, took three.
+
+**The new shapes were reached for.** Every absent question composed
+the gap block, q039 by name. `placed_under` was used twice, both on
+q045 ("who proposed, who followed, who rejected") and composed with
+the matrix; `ancestors` five times as chains. The trajectory class
+composed history alone in five questions and rose from 5 to 8 passes
+with 13 of 17 headers at full marks.
+
+**One regression, from the shapes.** Uncaptured fell from 6 to 4: in
+q013, q015, q018 and q020 the model asked `statements` for one kind in
+one source, got an empty list, and composed it. The second run's empty
+table looked as empty, but the model went on to `gap`; the sentence
+list's bare heading reads as a finished answer. `statements` now
+returns the gap block itself when a source is named and nothing of the
+kind is entered (commit on the same branch), so the block the model
+stops at is the right one.
+
+**What stays.** The route-specific expectations (§5) account for the
+rest of the failures: q036, q043, q046 composed the group's history,
+q041 and q044 the matrix, q047 wrote its comparison into the header
+again (judge 0). q001 composed the genus's listing in Fay 1962, which
+does not carry the class's act above it. Two classification blocks
+were composed whose evidence page is not rendered (q009, q012); the
+listing's heading now carries the page when the root has one, which
+covers q012.
+
 ## What changes next, in order
 
-1. Source keys: citations accepted wherever a source is a parameter, or
-   keys shown beside citations in every block; a resolver that finds no
-   source says so as a block. Closes §2 and q015, q038.
-2. A statement block for a name no source carries, returned by the
-   resolver. Closes §3.
-3. Tables carry every claim at a node (usage, acts, rejection), and the
-   placements cell marks a rejection. Closes §4 except q010.
+1. Source keys: citations accepted wherever a source is a parameter
+   (done 2026-09-14: `resolve_source`, every source argument takes a
+   citation). Closes §2 and q015, q038.
+2. A statement block for a name no source carries (done 2026-09-13:
+   `gap(name=…)`). Closes §3.
+3. Tables carry every claim at a node and the placements cell marks a
+   rejection (done 2026-09-13). Closes §4 except q010.
 4. Eval upkeep: selectors admitting either route for q036, q043, q046;
    the family acts dropped or the questions reworded for q041, q044;
    the excess acts dropped from q006, q010, q032; any kind accepted for
