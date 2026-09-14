@@ -131,8 +131,9 @@ def source_coverage(source_key: str) -> dict:
 
 
 @server.tool(description=D['gap'])
-def gap(source: str, kind: str, style: str = 'text') -> dict:
-  return tools.gap(source, kind, style=style)
+def gap(source: str | None = None, kind: str | None = None, name: str | None = None,
+        style: str = 'text') -> dict:
+  return tools.gap(source, kind, name=name, style=style)
 
 
 @server.tool(description=D['printed_forms'])

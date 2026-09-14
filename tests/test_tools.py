@@ -326,10 +326,21 @@ def test_recombined_species_are_separate_rows(store):
   labels = [row['combination'] for row in placed['rows']]
   assert labels == ['Pyrgocystis grayae', 'Rhenopyrgus grayae']
   filled = [
-    {placed['sourceKeys'][i] for i, cell in enumerate(row['cells'][1:]) if cell}
+    {placed['sourceKeys'][i] for i, cell in enumerate(row['cells'][2:]) if cell}
     for row in placed['rows']
   ]
   assert filled[0] and filled[1] and not (filled[0] & filled[1])
+  # A cell shows the parent without a rank word, carries every claim at the
+  # node, and marks a rejection the source states.
+  block = store.placements(['rhenopyrgidae'], style='json')
+  sumrall = block['sourceKeys'].index('2013_sumrall_heredia_rodríguez.c.m_mestre')
+  cell = block['rows'][0]['cells'][2 + sumrall][0]
+  assert cell['value'] == 'Edrioblastoidina; not Cyathocystidae'
+  assert any(store.by_id[c]['kind'] == 'rejection' for c in cell['claims'])
+  assert block['rows'][0]['cells'][1][0]['value'] == 'Family'
+  assert store.gap(name='Rhenoblastus')['rendered'] == 'No source in the corpus mentions the name Rhenoblastus.'
+  with pytest.raises(ValueError):
+    store.gap('1983_holloway_jell')
 
 
 def test_history_shows_the_name_as_used(store):

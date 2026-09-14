@@ -782,30 +782,33 @@ class ClaimStore:
           continue
         parent = claim.get('parent')
         parent_path = claim['path'].rsplit('/children/', 1)[0]
-        value = self.label(parent, claim['source'], parent_path) if parent else '(unnamed group)'
-        if claim.get('parentPlaceholder'):
-          value += ' [placeholder]'
-        for flag in ('provisional', 'questionable'):
-          if claim.get(flag):
-            value += f' ({flag})'
+        value = self.display(parent, claim['source'], parent_path) if parent else '(unnamed group)'
+        if claim.get('provisional'):
+          value = '? ' + value
+        if claim.get('questionable'):
+          value += ' ?'
+        # Every claim at the node rides with the cell: the usage, the acts,
+        # a rejection, which the cell also shows.
+        at = self._node_claims(claim['source'], claim['path'])
+        for c in at:
+          if c['kind'] == 'rejection' and c.get('declinedParent'):
+            value += f"; not {self.display(c['declinedParent'])}"
         # A species recombined is a different name: one row per combination.
         row_label = self.display(key, claim['source'], claim['path'])
         cells[(key, row_label)][claim['source']].append({
           'value': value, 'key': parent, 'claim': claim['id'],
-          'rank': claim.get('rank'),
+          'claims': sorted({c['id'] for c in at}), 'rank': claim.get('rank'),
         })
         column_sources.add(claim['source'])
     columns_keys = sorted(column_sources, key=lambda s: (self.source_year(s), s))
-    columns = [{'name': 'record', 'kind': 'record'}] + [
+    columns = [{'name': 'record', 'kind': 'record'}, {'name': 'rank', 'kind': 'rank'}] + [
       {'name': self.cite(s), 'kind': 'source', 'source': s} for s in columns_keys
     ]
     rows = []
     for key in rows_keys:
       labels = [label for (k, label) in cells if k == key]
       for row_label in sorted(labels, key=lambda l: min(self.source_year(s) for s in cells[(key, l)])):
-        rank = self.rank(key)
-        shown = f'{row_label} ({rank})' if rank and rank.lower() not in _SPECIES_GROUP else row_label
-        row_cells = [[{'value': shown, 'key': key}]]
+        row_cells = [[{'value': row_label, 'key': key}], [{'value': self.rank(key) or ''}]]
         for s in columns_keys:
           row_cells.append(cells[(key, row_label)].get(s, []))
         rows.append({'cells': row_cells, 'record': key, 'combination': row_label})
@@ -1182,9 +1185,15 @@ class ClaimStore:
       'inconsistencies': row['inconsistencies'],
     }
 
-  def gap(self, source, kind, style='text'):
+  def gap(self, source=None, kind=None, name=None, style='text'):
     """What the corpus says about a source's coverage of one kind of
-    statement, as the sentence the contract asks for."""
+    statement, as the sentence the contract asks for; or, with a name,
+    that no source in the corpus carries it."""
+    if name:
+      block = blocks.statement('absent', {'name': f'the name {name}'}, {'name': name})
+      return _with_style(block, style)
+    if not source or not kind:
+      raise ValueError('gap needs a source and a kind of statement, or a name')
     source = self._key(source)
     row = self.sources.get(source)
     what = COVERAGE_WORDS.get(kind, kind)
@@ -1325,8 +1334,8 @@ def source_coverage(source_key):
   return store().source_coverage(source_key)
 
 
-def gap(source, kind, style='text'):
-  return store().gap(source, kind, style)
+def gap(source=None, kind=None, name=None, style='text'):
+  return store().gap(source, kind, name, style)
 
 
 def printed_forms(record, source=None, style='text'):
@@ -1439,7 +1448,9 @@ TOOL_DESCRIPTIONS = {
     'synonymy, material, occurrences, illustrations, diagnoses, '
     'phylogeny), whether the source is entered and what its declared '
     'coverage says, worded as work not yet done, never as the paper '
-    'lacking it. Use this block, not your own words, for a gap.'
+    'lacking it; or, with a name, that no source in the corpus carries '
+    'that name (use it when the resolver finds nothing). Use this block, '
+    'not your own words, for a gap or an absence.'
   ),
   'printed_forms': (
     'Each form a source prints for a record, verbatim, with the page: '
@@ -1517,7 +1528,8 @@ TOOL_SPECS = [
   _spec('gap', {
     'source': {'type': 'string'},
     'kind': {'type': 'string', 'enum': list(COVERAGE_WORDS)},
-  }, ['source', 'kind']),
+    'name': {'type': 'string', 'description': 'a name no source carries, instead of source and kind'},
+  }, []),
   _spec('printed_forms', {
     'record': {'type': 'string'}, 'source': {'type': ['string', 'null']},
   }, ['record']),
