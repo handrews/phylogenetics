@@ -1367,18 +1367,21 @@ TOOL_DESCRIPTIONS = {
   ),
   'contents': (
     'What one source places under a record, as the source prints it: a '
-    'classification block (the tree, with new names marked * and '
-    'provisional or questionable ones ?), optionally with each name\'s '
-    'synonymy. Use it to see the genera a source puts in a family, the '
+    'classification block laid out as a Systematic Paleontology section '
+    '(rank words on the headings, the type species under its genus, new '
+    'names marked as the source prints them or by rank: fam. nov., gen. '
+    'nov., sp. nov.; provisional or questionable names ?), optionally '
+    'with each name\'s synonymy. Use it to see the genera a source puts in a family, the '
     'species in a genus, or a whole scheme. With no source, one block per '
     'source that places the record. When a source\'s declared coverage of '
     'new taxa is complete, everything it names sits in this block; look '
     'here before concluding that something has not been entered.'
   ),
   'placements': (
-    'Where each source places each record: a table with the records as '
-    'rows (the same name at other ranks folded in), the sources as columns '
-    'in publication order, and the parent each gives in the cell. The '
+    'Where each source places each record: a matrix with the records as '
+    'rows (the same name at other ranks folded in) and their rank, the '
+    'sources as columns in publication order, and the parent each gives '
+    'in the cell (a rejected placement marked "; not X"). The '
     'header measures the schemes: each distinct placement with its papers, '
     'years, co-author sets and last paper. Pass several records to see a '
     'group at once (for example the descendants of a family). Synonyms '
