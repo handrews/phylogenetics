@@ -15,7 +15,7 @@ is the vocabulary their expected answers are written in.
 | trajectory | several sources treat the same question over time | the measured present, then the history, then the dissent; no verdict |
 | absent | nothing in the corpus mentions it | "no source in the corpus mentions <x>"; no answer from general knowledge |
 
-The contract is the closed-world rule of `docs/plan.md` made testable: an
+The contract is the closed-world rule of `notes/development/plan.md` made testable: an
 answer is right only when every fact in it is a claim, cited, and every
 gap is named as a gap of the data rather than of the literature.
 

@@ -21,7 +21,7 @@ Usage::
 
     python scripts/schema_audit.py                 # census -> stdout summary
     python scripts/schema_audit.py --json out.json # full census as JSON
-    python scripts/schema_audit.py --markdown docs/schema-audit.md
+    python scripts/schema_audit.py --markdown notes/audits/schema-audit.md
 """
 
 import argparse
@@ -361,7 +361,7 @@ def render(census, report):
   """Render the regenerable census.  Narrative analysis lives elsewhere."""
   L = ['# Schema usage census', '',
        '**Generated** by `scripts/schema_audit.py` -- do not edit by hand.',
-       'Narrative analysis of these numbers is in `docs/schema-audit.md`.', '',
+       'Narrative analysis of these numbers is in `notes/audits/schema-audit.md`.', '',
        'Counts are *distinct instance locations* that reached a given schema',
        'location, measured from the `jschon` evaluation result tree.', '']
 
