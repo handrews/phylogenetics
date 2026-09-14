@@ -256,6 +256,13 @@ name, `=` lines for the synonymy:
           = Pyrgocystis coronaeformis
         Rhenopyrgus whitei sp. nov.
 
+A listing is headed by its source, the tree indented under it, so a
+list of listings reads source by source. An `or` entry (the same taxon
+under another name in that source) reads on the node's line, "Genus
+Pentacrinites or Pentacrinus", and the `or` name matches wherever its
+node does: `contents`, `placements`, `history` and the closures treat
+the node as that name's own.
+
 A block's heading names the combination that was asked for with the
 recorded author, in parentheses when the corpus knows the name is a
 recombination: "Pyrgocystis grayae Bather 1915", "Rhenopyrgus grayae

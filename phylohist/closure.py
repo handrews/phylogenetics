@@ -42,6 +42,12 @@ class Closure:
         elif claim['kind'] == 'acceptance' and claim['stance'] == 'accepts':
           if claim.get('under') and claim.get('subject') != claim.get('under'):
             self.accepted_under[claim['under']].append(claim)
+    # An `or` name is placed wherever its node is.
+    for record, uses in store.or_usages.items():
+      for source_key, node_path, _ in uses:
+        placement = self.by_path[source_key].get(node_path)
+        if placement is not None and placement not in self.placements_of[record]:
+          self.placements_of[record].append(placement)
 
   # -- helpers -------------------------------------------------------------
 

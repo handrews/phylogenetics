@@ -27,18 +27,18 @@ def store():
 def test_classification_text_and_markdown(store):
   block = store.contents('1994_guensburg_sprinkle', 'astrocystitidae', style='json')[0]
   assert render.render(block, 'text') == (
-    'Family Astrocystitidae emend.\n  Genus Astrocystites\n  Genus Cambroblastus\n  Genus Lampteroblastus gen. nov.\n    Type species. Lampteroblastus hintzei\n    Lampteroblastus hintzei sp. nov.'
+    'Guensburg & Sprinkle 1994\n  Family Astrocystitidae emend.\n    Genus Astrocystites\n    Genus Cambroblastus\n    Genus Lampteroblastus gen. nov.\n      Type species. Lampteroblastus hintzei\n      Lampteroblastus hintzei sp. nov.'
   )
-  assert render.render(block, 'markdown').startswith('```\nFamily Astrocystitidae emend.\n')
+  assert render.render(block, 'markdown').startswith('**Guensburg & Sprinkle 1994**\n```\nFamily Astrocystitidae emend.\n')
   assert 'rendered' not in block
 
 
 def test_provisional_and_placeholder_marks(store):
   bassler = store.contents('1935_bassler', 'astrocystitidae', style='json')[0]
-  assert render.render(bassler, 'text').splitlines()[0] == 'Family Astrocystitidae fam. nov. nom. correct.'
+  assert render.render(bassler, 'text').splitlines()[:2] == ['Bassler 1935', '  Family Astrocystitidae fam. nov. nom. correct.']
   holloway = store.contents('1983_holloway_jell', 'edrioasteroidea', depth=1, style='json')[0]
   lines = render.render(holloway, 'text').splitlines()
-  assert lines[1] == '  Order uncertain'
+  assert lines[2] == '    Order uncertain'
 
 
 def test_table_text_and_markdown(store):
@@ -109,9 +109,9 @@ def test_composition(store):
   composition = blocks.compose([a, b], 'Rhenopyrgidae in Holloway & Jell 1983; material coverage.')
   text = render.render_composition(composition, 'text')
   assert text.startswith('Rhenopyrgidae in Holloway & Jell 1983; material coverage.\n\nThe material')
-  assert text.endswith('Family Rhenopyrgidae fam. nov.\n  Genus Rhenopyrgus\n'
-                       '    Type species. Rhenopyrgus coronaeformis\n    Rhenopyrgus coronaeformis\n'
-                       '    Rhenopyrgus grayae\n    Rhenopyrgus whitei sp. nov.')
+  assert text.endswith('Holloway & Jell 1983\n  Family Rhenopyrgidae fam. nov.\n    Genus Rhenopyrgus\n'
+                       '      Type species. Rhenopyrgus coronaeformis\n      Rhenopyrgus coronaeformis\n'
+                       '      Rhenopyrgus grayae\n      Rhenopyrgus whitei sp. nov.')
   assert composition['compositionId'] == blocks.compose([a, b], composition['header'])['compositionId']
 
 

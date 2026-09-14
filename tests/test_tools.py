@@ -173,7 +173,7 @@ def test_contents_of_a_family_in_a_source(store):
   assert keys == ['astrocystitidae', 'astrocystites', 'cambroblastus',
                   'lampteroblastus', 'hintzei_guensburg_sprinkle_1994']
   assert blocks[0]['rendered'] == (
-    'Family Astrocystitidae emend.\n  Genus Astrocystites\n  Genus Cambroblastus\n  Genus Lampteroblastus gen. nov.\n    Type species. Lampteroblastus hintzei\n    Lampteroblastus hintzei sp. nov.'
+    'Guensburg & Sprinkle 1994\n  Family Astrocystitidae emend.\n    Genus Astrocystites\n    Genus Cambroblastus\n    Genus Lampteroblastus gen. nov.\n      Type species. Lampteroblastus hintzei\n      Lampteroblastus hintzei sp. nov.'
   )
   every = store.contents(None, 'astrocystitidae')
   assert [b['source'] for b in every][:2] == ['1935_bassler', '1967a_fay']
@@ -251,7 +251,7 @@ def test_senior_synonym_and_designation_shown_as_combinations(store):
   indet = next(r for r in under['rows'] if r['record'] == 'rhenopyrgus-sp-1_ewin_martin.m_isotalo_zamora_2020')
   assert indet['combination'] == 'Rhenopyrgus sp. indet. 1'
   listing = store.contents('2020_ewin_martin.m_isotalo_zamora', 'rhenopyrgus')[0]
-  assert '  Rhenopyrgus sp. indet. 1\n' in listing['rendered'] + '\n'
+  assert '    Rhenopyrgus sp. indet. 1\n' in listing['rendered'] + '\n'
 
 
 def test_ancestors_are_chains_per_source(store):
@@ -305,13 +305,28 @@ def test_headings_name_the_combination_asked_for(store):
 
 def test_combinations_in_a_listing(store):
   dehm = store.contents('1961_dehm', 'pyrgocystis')[0]['rendered'].splitlines()
-  assert dehm[0] == 'Genus Pyrgocystis'
-  assert dehm[1] == '  Type species. Pyrgocystis sardesoni'
-  assert dehm[2] == '  Pyrgocystis sardesoni'
+  assert dehm[0] == 'Dehm 1961'
+  assert dehm[1] == '  Genus Pyrgocystis'
+  assert dehm[2] == '    Type species. Pyrgocystis sardesoni'
+  assert dehm[3] == '    Pyrgocystis sardesoni'
   # The source's own wording for the new subgenus, "Rhenopyrgus nov. subgen.".
-  assert dehm[-3] == '  Subgenus Pyrgocystis (Rhenopyrgus) nov. subgen.'
-  assert dehm[-2] == '    Type species. Pyrgocystis (Rhenopyrgus) coronaeformis'
-  assert dehm[-1] == '    Pyrgocystis (Rhenopyrgus) coronaeformis'
+  assert dehm[-3] == '    Subgenus Pyrgocystis (Rhenopyrgus) nov. subgen.'
+  assert dehm[-2] == '      Type species. Pyrgocystis (Rhenopyrgus) coronaeformis'
+  assert dehm[-1] == '      Pyrgocystis (Rhenopyrgus) coronaeformis'
+
+
+def test_or_names_match_their_node(store):
+  # Miller 1821 writes "Pentacrinites or Pentacrinus": the second name
+  # matches wherever the node does.
+  miller = [b for b in store.contents(None, 'pentacrinus') if b['source'] == '1821_miller.j.s']
+  assert len(miller) == 1
+  assert miller[0]['rendered'].splitlines()[1] == '  Genus Pentacrinites or Pentacrinus'
+  assert '1821_miller.j.s' in store.placements(['pentacrinus'], style='json')['sourceKeys']
+  lines = store.history('pentacrinus')['rendered'].splitlines()
+  assert sum(1 for l in lines if l.startswith('1821  Miller')) == 1
+  assert any(l.endswith('Pentacrinites or Pentacrinus, in Articulata') for l in lines)
+  alone = store.history('pentacrinus', include_related=False)['rendered'].splitlines()
+  assert any(l.startswith('1821  Miller') and 'Pentacrinus, in Articulata' in l for l in alone)
 
 
 def test_recombined_species_are_separate_rows(store):

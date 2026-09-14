@@ -63,6 +63,8 @@ def _node_label(node):
   name = node.get('label') or (node['name'] if node.get('name') else f"[{node['key']}]")
   if (node.get('flags') or {}).get('quoted'):
     name = f'"{name}"'
+  if node.get('or'):
+    name += ' or ' + ' or '.join(node['or'])
   rank_word = node.get('rankWord')
   if rank_word and rank_word.lower() not in _SPECIES_GROUP_WORDS and not node.get('placeholder'):
     name = f'{rank_word} {name}'
@@ -162,10 +164,13 @@ def _statement_text(block):
 
 @style('text', 'classification')
 def _text_classification(block):
-  lines = []
+  # The source above its tree, the tree indented under it, so a list of
+  # listings reads source by source.
+  lines = [block['cite']] if block.get('cite') else []
+  base = '  ' if block.get('cite') else ''
   for node in block['nodes']:
-    indent = '  ' * node.get('depth', 0)
-    if (node.get('flags') or {}).get('provisional') and indent:
+    indent = base + '  ' * node.get('depth', 0)
+    if (node.get('flags') or {}).get('provisional') and node.get('depth', 0):
       indent = indent[:-2] + '? '
     lines.append(indent + _node_label(node))
     for entry in node.get('synonymy') or ():
@@ -298,7 +303,9 @@ def _text_chains(block):
 
 @style('markdown', 'classification')
 def _md_classification(block):
-  return '```\n' + _text_classification(block) + '\n```'
+  tree = _text_classification(dict(block, cite=None))
+  head = f"**{block['cite']}**\n" if block.get('cite') else ''
+  return head + '```\n' + tree + '\n```'
 
 
 @style('markdown', 'table')

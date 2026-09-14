@@ -99,6 +99,16 @@ class ClaimStore:
         self.by_folded[form].append(key)
     self._closure = None
     self._combinations_at = {}
+    # An `or` entry is the same taxon under another name in that source:
+    # the usage claim sits on an `or` axis under the node it belongs to.
+    self.or_usages = collections.defaultdict(list)
+    self.or_names_at = collections.defaultdict(list)
+    for claims in self.by_source.values():
+      for claim in claims:
+        if claim['kind'] == 'usage' and claim.get('axis') == 'or':
+          node_path = claim['path'].rsplit('/or/', 1)[0]
+          self.or_usages[claim['subject']].append((claim['source'], node_path, claim))
+          self.or_names_at[(claim['source'], node_path)].append(claim['subject'])
 
   @property
   def closure(self):
@@ -622,6 +632,9 @@ class ClaimStore:
     }
     if rank_word:
       node['rankWord'] = rank_word[:1].upper() + rank_word[1:]
+    also = self.or_names_at.get((source_key, path))
+    if also:
+      node['or'] = [self.name(k) for k in also]
     if base.get('placeholder'):
       node['placeholder'] = base['placeholder']
     if flags.get('new'):
@@ -719,6 +732,10 @@ class ClaimStore:
       if claim.get('axis') not in ('children', 'root') or claim.get('tree') not in trees:
         continue
       paths.append(claim['path'])
+    # The node an `or` name belongs to counts as the name's own.
+    for source, node_path, claim in self.or_usages.get(record, ()):
+      if source == source_key and claim.get('tree') in trees and node_path not in paths:
+        paths.append(node_path)
     return paths
 
   def contents(self, source, record, depth=None, synonymy=False, style='text', trees=TAXONOMY):
@@ -1056,11 +1073,20 @@ class ClaimStore:
     for source_key in sorted(by_source, key=lambda s: (self.source_year(s), s)):
       claims = by_source[source_key]
       uses = [c for c in claims if c['kind'] == 'usage' and c.get('axis') in ('children', 'root')]
+      # An `or` name is used at the node it belongs to; when the node's own
+      # name is also in the history the two share one line.
+      node_paths = {c['path'] for c in uses}
+      uses += [dict(c, path=c['path'].rsplit('/or/', 1)[0])
+               for c in claims if c['kind'] == 'usage' and c.get('axis') == 'or'
+               and c['path'].rsplit('/or/', 1)[0] not in node_paths]
       if uses:
         for use in uses:
           path = use['path']
           at = self._node_claims(source_key, path)
           words = self.display(use['subject'], source_key, path)
+          also = [k for k in self.or_names_at.get((source_key, path), ()) if k != use['subject']]
+          if also and use.get('axis') != 'or':
+            words += ' or ' + ' or '.join(self.name(k) for k in also)
           position = self._position_above(source_key, path)
           if position:
             words += f", in {position['words']}"
