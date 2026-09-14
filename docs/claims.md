@@ -227,19 +227,53 @@ Answers are assembled from **blocks** (`phylohist/blocks.py`): data,
 never text. A block has a type, an id (a hash of its content), the
 parameters that produced it, the claim ids it rests on, and a payload
 that keeps keys, names, ranks, sources, years and claim ids on every
-node and cell. Four types: `classification` (a tree as a source prints
-it, with the acts marked), `table` (typed columns; a cell holds several
-values when one source places a record twice), `list` (a synonymy or
-the printed forms under a heading), `statement` (a gap, a printed form,
-an absence). `validate` confirms every id and key against the store;
-`compose` makes an answer of blocks with a one-line header and an
-optional question back. Rendering is a registry of styles
-(`phylohist/render.py`): `text` (the listing the old CLI drew, with `*`
-for new, `[type]`, `emend.`, `nom. transl.`, `?` for provisional and
-questionable, brackets for a placeholder, `=` lines for synonyms;
-aligned tables) and `markdown`; `json` is the block. A new style is one
-function and a registration; a graph or a timeline of a table needs
-nothing from the model.
+node and cell. Six types, one per answer shape: `classification` (a
+tree as a source prints it), `chains` (one line per source: the taxa
+from a higher taxon down to a record), `timeline` (one line per source
+in year order: what it does with a name), `table` (typed columns; a
+cell holds several values when one source places a record twice),
+`list` (a synonymy, the printed forms, or the statements about a
+record, under a heading), `statement` (a gap, an absence). `validate`
+confirms every id and key against the store; `compose` makes an answer
+of blocks with a one-line header and an optional question back.
+Rendering is a registry of styles (`phylohist/render.py`): `text` and
+`markdown`; `json` is the block. A new style is one function and a
+registration.
+
+The renderings follow the community's conventions. The listing is a
+Systematic Paleontology section: rank words on the headings above the
+species level (the paper's rank where it writes one, else the
+record's), the type species as its own line under the genus, a new
+taxon marked as the source prints it or by the rank's abbreviation
+(`fam. nov.`, `gen. nov.`, `sp. nov.`), `emend.`, `nom. transl.` and
+`nom. correct.` after the name, `?` for a provisional or questionable
+name, `=` lines for the synonymy:
+
+    Family Rhenopyrgidae fam. nov.
+      Genus Rhenopyrgus
+        Type species. Rhenopyrgus coronaeformis
+        Rhenopyrgus coronaeformis
+          = Pyrgocystis coronaeformis
+        Rhenopyrgus whitei sp. nov.
+
+A listing is headed by its source, the tree indented under it, so a
+list of listings reads source by source. An `or` entry (the same taxon
+under another name in that source) reads on the node's line, "Genus
+Pentacrinites or Pentacrinus", and the `or` name matches wherever its
+node does: `contents`, `placements`, `history` and the closures treat
+the node as that name's own.
+
+A block's heading names the combination that was asked for with the
+recorded author, in parentheses when the corpus knows the name is a
+recombination: "Pyrgocystis grayae Bather 1915", "Rhenopyrgus grayae
+(Bather 1915)", "Rhenopyrgidae Holloway & Jell 1983". The original
+combination is the record's placement in its authority's paper when
+that tree is entered, else the one a synonymy entry gives, else the
+parent recorded with it; when none is on record the author is shown
+without parentheses. A placeholder reads in the source's words ("Order
+uncertain", "Unnamed family", "Pyrgocystis sp. a"), never as a key.
+Rank words otherwise appear only in a rank column or a heading; sources
+are always the short citation; pages read "p. 118" or "pp. 120–122".
 
 Species-group names are shown as the combination the source uses: the
 nearest genus up the node's chain, a subgenus between in parentheses,
@@ -276,12 +310,14 @@ blocks; the CLI (`phylohist <tool>`, `--style`), the MCP server
 |---|---|
 | `resolve_name(query, rank)` | which records a printed name can mean, with each record's variants (the same name at other ranks or spellings) and the count of sources with statements about it; empty is the closed-world answer. Unnamed records (bins, open nomenclature) are never found by name: the words in their designation name other taxa. Keys are lowercase; every tool accepts a key in any case, or a printed name that resolves to one record ("Rhenopyrgus grayae", "Pyrgocystis (Rhenopyrgus) coronaeformis", "Pyrgocystis (Rhenopyrgus)"); a name that can mean several records is refused with the candidates |
 | `contents(source, record, depth, synonymy)` | a classification block of what a source places under a record; every source that places it when no source is given |
-| `placements(records, sources, years, …)` | a table: records as rows (variants folded), sources as columns in year order, the parent each gives; the schemes measured in the header |
-| `descendants(records, …)` / `ancestors(records, …)` | tables over the closures, with how each record was reached |
-| `history(record, include_related)` | a table, one row per source in year order, with the measurement as its header |
+| `placements(records, sources, years, …)` | the matrix: records as rows (variants folded) with their rank, sources as columns in year order, the parent each gives (a rejection marked "; not X"); the schemes measured in the header |
+| `descendants(records, …)` | a table over the closure: everything any source places under the records, with how each was reached |
+| `ancestors(records, …)` | a chains block: each source's chain of taxa above the records, one line per source |
+| `placed_under(record, parent)` | a chains block of the sources that place the record under the parent, with the taxa between; first and last stated |
+| `history(record, include_related, synonymy)` | a timeline: one line per source in year order with the name as used, its position, the acts and the page; the measurement as the heading; each source's synonymy with `synonymy` |
 | `synonymy(record, source)` | the synonymy a source prints under a record, as a list |
-| `statements(record, source, kind, act_kind)` | every claim about a record in words, the drill-down |
-| `gap(source, kind)` | the contract's sentence for what is not yet entered |
+| `statements(record, source, kind, act_kind)` | every claim about a record as a sentence with source, year and page, the drill-down |
+| `gap(source, kind)` / `gap(name=…)` | the contract's sentence for what is not yet entered, or for a name no source carries |
 | `printed_forms(record, source)` | each form a source prints, verbatim, with the page |
 | `source_coverage(key)` | the raw coverage view |
 

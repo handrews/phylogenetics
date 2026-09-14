@@ -15,6 +15,8 @@ on every cell, so both can be drawn from the model as it is).
 
 import json
 
+from . import blocks
+
 STYLES = {}
 
 
@@ -51,21 +53,28 @@ def render_composition(composition, name='text'):
 
 # -- shared pieces ---------------------------------------------------------
 
+_SPECIES_GROUP_WORDS = ('species', 'subspecies', 'variety')
+
+
 def _node_label(node):
+  """A heading as a Systematic Paleontology section prints it: the rank
+  word above the species level, the name, the source's mark for a new
+  taxon, the acts in the community's abbreviations."""
   name = node.get('label') or (node['name'] if node.get('name') else f"[{node['key']}]")
   if (node.get('flags') or {}).get('quoted'):
     name = f'"{name}"'
+  if node.get('or'):
+    name += ' or ' + ' or '.join(node['or'])
+  rank_word = node.get('rankWord')
+  if rank_word and rank_word.lower() not in _SPECIES_GROUP_WORDS and not node.get('placeholder'):
+    name = f'{rank_word} {name}'
   if (node.get('flags') or {}).get('new'):
-    name += '*'
+    name += ' ' + (node.get('newMark') or blocks.new_mark(rank_word))
   if (node.get('flags') or {}).get('questionable'):
     name += ' ?'
-  # The acts a listing prints beside a name, in the community's abbreviations.
   for act in node.get('acts') or ():
     kind = act.get('act')
-    mark = {
-      'type': '[type]', 'emended': 'emend.', 'nomTransl': 'nom. transl.',
-      'corrected': 'nom. correct.',
-    }.get(kind)
+    mark = blocks.ACT_MARKS.get(kind)
     if kind in ('moved', 'removed'):
       mark = f"({act.get('words')})"
     if mark:
@@ -83,6 +92,24 @@ def _cell_text(cell, sep=' / '):
   return sep.join(values)
 
 
+def pages_text(value):
+  """Pages as the community writes them: "p. 118", "pp. 120–122",
+  "pp. 242–245, 253"; a phrase such as "cited p. 58" as it is."""
+  if value is None:
+    return ''
+  if isinstance(value, str):
+    return value
+  items = value if isinstance(value, list) else [value]
+  words = []
+  for item in items:
+    if isinstance(item, list) and len(item) == 2:
+      words.append(f'{item[0]}–{item[1]}')
+    else:
+      words.append(str(item))
+  single = len(items) == 1 and not isinstance(items[0], list)
+  return ('p. ' if single else 'pp. ') + ', '.join(words)
+
+
 def _entry_line(entry, heading_name=None):
   parts = [str(entry.get('year') or '')]
   name = entry.get('name') or heading_name
@@ -96,7 +123,7 @@ def _entry_line(entry, heading_name=None):
     parts.append(f'"{entry["printed"]}"')
   parts.append(entry.get('cite') or entry.get('source') or '')
   if entry.get('page') is not None:
-    parts.append(f'p. {entry["page"]}')
+    parts.append(pages_text(entry['page']))
   if entry.get('stance') == 'rejects':
     parts.append('(non)')
   return ' '.join(p for p in parts if p)
@@ -137,14 +164,19 @@ def _statement_text(block):
 
 @style('text', 'classification')
 def _text_classification(block):
-  lines = []
+  # The source above its tree, the tree indented under it, so a list of
+  # listings reads source by source.
+  lines = [block['cite']] if block.get('cite') else []
+  base = '  ' if block.get('cite') else ''
   for node in block['nodes']:
-    indent = '  ' * node.get('depth', 0)
-    if (node.get('flags') or {}).get('provisional') and indent:
+    indent = base + '  ' * node.get('depth', 0)
+    if (node.get('flags') or {}).get('provisional') and node.get('depth', 0):
       indent = indent[:-2] + '? '
     lines.append(indent + _node_label(node))
     for entry in node.get('synonymy') or ():
       lines.append(indent + '  = ' + _entry_line(entry, node.get('name')))
+    if node.get('typeSpecies'):
+      lines.append(indent + '  Type species. ' + node['typeSpecies']['label'])
   return '\n'.join(lines)
 
 
@@ -181,13 +213,41 @@ def _decoration_lines(decorations):
   return lines
 
 
-@style('text', 'list')
-def _text_list(block):
+def _statement_line(entry):
+  """One statement: year, source, the name as that source uses it when
+  it differs from the heading, the sentence, the page."""
+  parts = [str(entry.get('year') or ''), entry.get('authors') or entry.get('cite') or '']
+  sentence = entry.get('sentence') or ''
+  if entry.get('name'):
+    sentence = f"{entry['name']}: {sentence}"
+  if entry.get('printed') == 'editor':
+    sentence += ' (editor)'
+  if entry.get('page') is not None:
+    sentence += f" ({pages_text(entry['page'])})"
+  parts.append(sentence)
+  return parts
+
+
+def _list_title(block):
   heading = block['heading']
   title = heading.get('name') or f"[{heading['key']}]"
   if heading.get('rank'):
     title += f" ({heading['rank']})"
-  lines = [title]
+  if block.get('kind') == 'statements':
+    title = f'Statements about {title}'
+  return title
+
+
+@style('text', 'list')
+def _text_list(block):
+  heading = block['heading']
+  lines = [_list_title(block)]
+  if block.get('kind') == 'statements':
+    rows = [_statement_line(e) for e in block['entries']]
+    width = max([len(r[1]) for r in rows] + [0])
+    for year, authors, sentence in rows:
+      lines.append(f'  {year}  {authors.ljust(width)}  {sentence}')
+    return '\n'.join(lines)
   for entry in block['entries']:
     lines.append('  ' + _entry_line(entry, heading.get('name')))
   return '\n'.join(lines)
@@ -198,11 +258,54 @@ def _text_statement(block):
   return _statement_text(block)
 
 
+def _chain_text(chain):
+  parts = []
+  for node in chain:
+    label = node['label']
+    if node.get('provisional'):
+      label = '? ' + label
+    if node.get('questionable'):
+      label += ' ?'
+    if node.get('alternatives'):
+      label += ' (or ' + ', '.join(node['alternatives']) + ')'
+    parts.append(label)
+  return ' › '.join(parts)
+
+
+def _chains_head(block):
+  """The title line with the measurement, then the first/last line."""
+  deco = block.get('decorations') or {}
+  lines = []
+  title = block.get('title') or ''
+  if deco.get('measure'):
+    title = f"{title}: {deco['measure']}" if title else deco['measure']
+  if title:
+    lines.append(title)
+  if deco.get('span'):
+    lines.append(deco['span'])
+  return lines
+
+
+@style('text', 'chains')
+def _text_chains(block):
+  lines = _chains_head(block)
+  if lines and block['entries']:
+    lines.append('')
+  width = max([len(e.get('authors') or e['cite']) for e in block['entries']] + [0])
+  for e in block['entries']:
+    lines.append(f"{e['year']}  {(e.get('authors') or e['cite']).ljust(width)}  {_chain_text(e['chain'])}")
+  if not block['entries']:
+    lines.append('(no source places it there)')
+  return '\n'.join(lines)
+
+
 # -- markdown --------------------------------------------------------------
 
 @style('markdown', 'classification')
 def _md_classification(block):
-  return '```\n' + _text_classification(block) + '\n```'
+  tree = _text_classification(dict(block, cite=None))
+  head = f"**{block['cite']}**\n" if block.get('cite') else ''
+  return head + '```\n' + tree + '\n```'
 
 
 @style('markdown', 'table')
@@ -232,10 +335,11 @@ def _md_table(block):
 @style('markdown', 'list')
 def _md_list(block):
   heading = block['heading']
-  title = heading.get('name') or f"[{heading['key']}]"
-  if heading.get('rank'):
-    title += f" ({heading['rank']})"
-  lines = [f'**{title}**', '']
+  lines = [f'**{_list_title(block)}**', '']
+  if block.get('kind') == 'statements':
+    for year, authors, sentence in (_statement_line(e) for e in block['entries']):
+      lines.append(f'- {year} {authors}: {sentence}')
+    return '\n'.join(lines)
   for entry in block['entries']:
     lines.append('- ' + _entry_line(entry, heading.get('name')))
   return '\n'.join(lines)
@@ -244,3 +348,64 @@ def _md_list(block):
 @style('markdown', 'statement')
 def _md_statement(block):
   return _statement_text(block)
+
+
+@style('text', 'timeline')
+def _text_timeline(block):
+  lines = _chains_head(block)
+  deco = block.get('decorations') or {}
+  for key in ('ranks', 'positions'):
+    if deco.get(key):
+      lines.append(deco[key])
+  if block['entries']:
+    lines.append('')
+  width = max([len(e.get('authors') or e['cite']) for e in block['entries']] + [0])
+  for e in block['entries']:
+    line = e['line']
+    if e.get('page') is not None:
+      line += f" ({pages_text(e['page'])})"
+    lines.append(f"{e['year']}  {(e.get('authors') or e['cite']).ljust(width)}  {line}")
+    for s in e.get('synonymy') or ():
+      lines.append(' ' * (8 + width) + '= ' + _entry_line(s))
+  if not block['entries']:
+    lines.append('(no source uses the name)')
+  return '\n'.join(lines)
+
+
+@style('markdown', 'timeline')
+def _md_timeline(block):
+  head = _chains_head(block)
+  deco = block.get('decorations') or {}
+  lines = [f'**{head[0]}**'] if head else []
+  for key in ('ranks', 'positions'):
+    if deco.get(key):
+      lines.append(deco[key] + '  ')
+  lines.append('')
+  for e in block['entries']:
+    line = e['line']
+    if e.get('page') is not None:
+      line += f" ({pages_text(e['page'])})"
+    lines.append(f"- {e['year']} {e.get('authors') or e['cite']}: {line}")
+    for s in e.get('synonymy') or ():
+      lines.append('  - = ' + _entry_line(s))
+  if not block['entries']:
+    lines.append('(no source uses the name)')
+  return '\n'.join(lines)
+
+
+@style('markdown', 'chains')
+def _md_chains(block):
+  head = _chains_head(block)
+  lines = []
+  if head:
+    lines.append(f'**{head[0]}**')
+    lines += head[1:]
+    lines.append('')
+  if not block['entries']:
+    lines.append('(no source places it there)')
+    return '\n'.join(lines)
+  lines.append('| year | source | chain |')
+  lines.append('|---|---|---|')
+  for e in block['entries']:
+    lines.append(f"| {e['year']} | {e.get('authors') or e['cite']} | {_chain_text(e['chain']).replace('|', '\\|')} |")
+  return '\n'.join(lines)

@@ -80,10 +80,18 @@ def build_parser():
     if name == 'placements':
       p.add_argument('--sources', nargs='+')
 
+  p = add_parser('under', help='the sources that place a record under a higher taxon')
+  p.add_argument('record')
+  p.add_argument('parent')
+  p.add_argument('--years', nargs=2, type=int, metavar=('FIRST', 'LAST'))
+  p.add_argument('--trees', nargs='+', choices=['taxonomy', 'cladogram', 'diagram', 'other'])
+  p.add_argument('--no-variants', dest='include_variants', action='store_false')
+
   p = add_parser('history', help='what each source does with a name')
   p.add_argument('record')
   p.add_argument('--alone', dest='include_related', action='store_false',
                  help='this record only, not the same name at other ranks')
+  p.add_argument('--synonymy', action='store_true', help="each source's synonymy under its line")
   p.add_argument('--years', nargs=2, type=int, metavar=('FIRST', 'LAST'))
   p.add_argument('--trees', nargs='+', choices=['taxonomy', 'cladogram', 'diagram', 'other'])
 
@@ -100,9 +108,10 @@ def build_parser():
   p = add_parser('coverage', help="what the corpus holds of a source")
   p.add_argument('source')
 
-  p = add_parser('gap', help='the sentence for what is not yet entered')
-  p.add_argument('source')
-  p.add_argument('kind', choices=list(tools.COVERAGE_WORDS))
+  p = add_parser('gap', help='the sentence for what is not yet entered, or for a name no source carries')
+  p.add_argument('source', nargs='?')
+  p.add_argument('kind', nargs='?', choices=list(tools.COVERAGE_WORDS))
+  p.add_argument('--name', help='a name no source in the corpus carries')
 
   p = add_parser('printed', help='each form a source prints for a record')
   p.add_argument('record')
@@ -168,16 +177,19 @@ def _main(argv):
   elif command == 'ancestors':
     result = tools.ancestors(args.records, include_variants=args.include_variants,
                              trees=args.trees, years=years, style=style)
+  elif command == 'under':
+    result = tools.placed_under(args.record, args.parent, include_variants=args.include_variants,
+                                trees=args.trees, years=years, style=style)
   elif command == 'history':
     result = tools.history(args.record, include_related=args.include_related,
-                           trees=args.trees, years=years, style=style)
+                           synonymy=args.synonymy, trees=args.trees, years=years, style=style)
   elif command == 'synonymy':
     result = tools.synonymy(args.record, source=args.source, style=style)
   elif command == 'statements':
     result = tools.statements(args.record, source=args.source, kind=args.kind,
                               act_kind=args.act_kind, style=style)
   elif command == 'gap':
-    result = tools.gap(args.source, args.kind, style=style)
+    result = tools.gap(args.source, args.kind, name=args.name, style=style)
   elif command == 'printed':
     result = tools.printed_forms(args.record, source=args.source, style=style)
   else:

@@ -88,13 +88,26 @@ def ancestors(
   )
 
 
+@server.tool(description=D['placed_under'])
+def placed_under(
+  record: str, parent: str, include_variants: bool = True,
+  trees: list[str] | None = None, years: list[int | None] | None = None,
+  style: str = 'text',
+) -> dict:
+  return tools.placed_under(
+    record, parent, include_variants=include_variants, trees=trees,
+    years=tuple(years) if years else None, style=style,
+  )
+
+
 @server.tool(description=D['history'])
 def history(
-  record: str, include_related: bool = True, trees: list[str] | None = None,
-  years: list[int | None] | None = None, style: str = 'text',
+  record: str, include_related: bool = True, synonymy: bool = False,
+  trees: list[str] | None = None, years: list[int | None] | None = None,
+  style: str = 'text',
 ) -> dict:
   return tools.history(
-    record, include_related=include_related, trees=trees,
+    record, include_related=include_related, synonymy=synonymy, trees=trees,
     years=tuple(years) if years else None, style=style,
   )
 
@@ -118,8 +131,9 @@ def source_coverage(source_key: str) -> dict:
 
 
 @server.tool(description=D['gap'])
-def gap(source: str, kind: str, style: str = 'text') -> dict:
-  return tools.gap(source, kind, style=style)
+def gap(source: str | None = None, kind: str | None = None, name: str | None = None,
+        style: str = 'text') -> dict:
+  return tools.gap(source, kind, name=name, style=style)
 
 
 @server.tool(description=D['printed_forms'])

@@ -20,8 +20,10 @@ blocks, rendered in a style; the CLI has one subcommand per tool:
     poetry run phylohist ancestors astrocystitidae cyathocystidae rhenopyrgidae
     poetry run phylohist history rhenopyrgus --style markdown
     poetry run phylohist history "Rhenopyrgus grayae"
-    poetry run python scripts/eval_run.py --ask "Who first placed Rhenopyrgus under Edrioblastoidina?"
+    poetry run phylohist under rhenopyrgus edrioblastoidina
+    poetry run phylohist statements "Rhenopyrgus viviani"
     poetry run phylohist gap 1983_holloway_jell material
+    poetry run python scripts/eval_run.py --ask "Who first placed Rhenopyrgus under Edrioblastoidina?"
 
 The same tools are served over MCP by `scripts/mcp_server.py`, which
 `.mcp.json` registers for Claude Code. `docs/claims.md`, "Reading the

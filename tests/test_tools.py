@@ -46,7 +46,7 @@ def store():
 def test_statements_answer(question, store):
   for selector in question['expected']['claims']:
     block = store.statements(selector['subject'], source=selector['source'], style='json')
-    found = [store.by_id[row['claim']] for row in block['rows']]
+    found = [store.by_id[entry['claim']] for entry in block['entries']]
     if not any(matches(selector, c) for c in found):
       pytest.fail(f"{question['id']}: statements returned no match for {selector}")
 
@@ -145,7 +145,7 @@ def test_keys_accepted_in_any_case(store):
 
 def test_history_order_and_measurement(store):
   block = store.history('rhenopyrgus', style='json')
-  sources = [row['source'] for row in block['rows']]
+  sources = [e['source'] for e in block['entries']]
   assert sources == [
     '1961_dehm', '1966_regnéll', '1983_holloway_jell',
     '1994_guensburg_sprinkle', '2000_grigo',
@@ -153,14 +153,17 @@ def test_history_order_and_measurement(store):
     '2020_ewin_martin.m_isotalo_zamora',
   ]
   with_clado = store.history('rhenopyrgus', trees=('taxonomy', 'cladogram'), style='json')
-  assert '1990_smith.a.b_jell' in [row['source'] for row in with_clado['rows']]
+  assert '1990_smith.a.b_jell' in [e['source'] for e in with_clado['entries']]
   m = block['measurement']
   assert m['latestRank']['rank'] == 'genus' and m['latestRank']['firstYear'] == 1983
   assert m['ranks'][-1]['lastSource'] == '1966_regnéll'
-  header = store.history('rhenopyrgus')['rendered'].splitlines()
-  assert header[1].startswith('latest rank: genus: 5 papers 1983–2020, 5 co-author sets')
+  lines = store.history('rhenopyrgus')['rendered'].splitlines()
+  assert lines[0] == 'Rhenopyrgus Dehm 1961: 7 papers, 7 co-author sets, 1961–2020'
+  assert lines[1] == 'genus since 1983 (5 papers), subgenus 1961–1966 (2 papers)'
+  assert lines[2] == 'in Rhenopyrgidae / Rhenopyrginae since 1983 (5 papers), in Pyrgocystis 1961–1966 (2 papers)'
+  assert lines[4] == '1961  Dehm                  Pyrgocystis (Rhenopyrgus); named as new (p. 16)'
   alone = store.history('rhenopyrgus', include_related=False, style='json')
-  assert '1961_dehm' not in [row['source'] for row in alone['rows']]
+  assert '1961_dehm' not in [e['source'] for e in alone['entries']]
 
 
 def test_contents_of_a_family_in_a_source(store):
@@ -170,8 +173,7 @@ def test_contents_of_a_family_in_a_source(store):
   assert keys == ['astrocystitidae', 'astrocystites', 'cambroblastus',
                   'lampteroblastus', 'hintzei_guensburg_sprinkle_1994']
   assert blocks[0]['rendered'] == (
-    'Astrocystitidae emend.\n  Astrocystites\n  Cambroblastus\n  Lampteroblastus*\n'
-    '    Lampteroblastus hintzei* [type]'
+    'Guensburg & Sprinkle 1994\n  Family Astrocystitidae emend.\n    Genus Astrocystites\n    Genus Cambroblastus\n    Genus Lampteroblastus gen. nov.\n      Type species. Lampteroblastus hintzei\n      Lampteroblastus hintzei sp. nov.'
   )
   every = store.contents(None, 'astrocystitidae')
   assert [b['source'] for b in every][:2] == ['1935_bassler', '1967a_fay']
@@ -194,13 +196,17 @@ def test_gap_sentences(store):
 
 def test_statements_in_words(store):
   block = store.statements('rhenopyrgidae', kind='act', style='json')
-  words = {row['cells'][3][0]['value'] for row in block['rows']}
+  words = {e['sentence'] for e in block['entries']}
   assert 'named as new' in words and 'emended' in words
   new = store.statements('rhenopyrgidae', act_kind='new', style='json')
-  assert [row['cells'][0][0]['source'] for row in new['rows']] == ['1983_holloway_jell']
+  assert [e['source'] for e in new['entries']] == ['1983_holloway_jell']
   moved = store.statements('rhenopyrgidae', kind='rejection', style='json')
-  assert moved['rows'][0]['cells'][3][0]['value'] == 'declines a placement in Cyathocystidae (Family)'
-  assert store.statements('no_such_key', style='json')['rows'] == []
+  assert moved['entries'][0]['sentence'] == 'declines a placement in Cyathocystidae'
+  assert store.statements('no_such_key', style='json')['entries'] == []
+  lines = store.statements('Rhenopyrgus viviani', kind='material')['rendered'].splitlines()
+  assert lines[0] == 'Statements about Rhenopyrgus viviani Ewin et al. 2020'
+  assert '  2020  Ewin et al.  holotypes: NHMUK EE16642 (pp. 120–122)' in lines
+  assert '  2020  Ewin et al.  paratypes: NHMUK EE15752, EE15755 (pp. 120–122)' in lines
 
 
 def test_rank_variants_linked(store):
@@ -217,7 +223,7 @@ def test_rank_variants_linked(store):
   ):
     assert store.names[key].get('of') == base, key
   transl = store.statements('diploporita-class', act_kind='nomTransl', style='json')
-  claim = store.by_id[transl['rows'][0]['claim']]
+  claim = store.by_id[transl['entries'][0]['claim']]
   assert claim['rankVariants'] == ['diploporita-order', 'diploporita-suborder']
 
 
@@ -245,15 +251,82 @@ def test_senior_synonym_and_designation_shown_as_combinations(store):
   indet = next(r for r in under['rows'] if r['record'] == 'rhenopyrgus-sp-1_ewin_martin.m_isotalo_zamora_2020')
   assert indet['combination'] == 'Rhenopyrgus sp. indet. 1'
   listing = store.contents('2020_ewin_martin.m_isotalo_zamora', 'rhenopyrgus')[0]
-  assert '  Rhenopyrgus sp. indet. 1\n' in listing['rendered'] + '\n'
+  assert '    Rhenopyrgus sp. indet. 1\n' in listing['rendered'] + '\n'
+
+
+def test_ancestors_are_chains_per_source(store):
+  block = store.ancestors(['rhenopyrgus'], style='json')
+  assert block['type'] == 'chains' and block['title'] == 'Above Rhenopyrgus Dehm 1961'
+  assert block['decorations']['measure'] == '7 papers, 7 co-author sets, 1961–2020'
+  chains = {e['source']: [n['label'] for n in e['chain']] for e in block['entries']}
+  assert chains['1994_guensburg_sprinkle'] == [
+    'Echinozoa', 'Edrioasteroidea', 'Edrioasterida', 'Edrioblastoidina',
+    'Cyathocystidae', 'Rhenopyrginae', 'Rhenopyrgus',
+  ]
+  assert chains['1961_dehm'] == ['Pyrgocystis', 'Pyrgocystis (Rhenopyrgus)']
+  # A placeholder reads in the source's words, never as a key.
+  assert chains['1983_holloway_jell'][1] == 'Order uncertain'
+  lines = store.ancestors(['rhenopyrgus'])['rendered'].splitlines()
+  assert lines[2].startswith('1961  Dehm ') and lines[2].endswith('Pyrgocystis › Pyrgocystis (Rhenopyrgus)')
+  assert '[' not in store.ancestors(['rhenopyrgus'])['rendered']
+
+
+def test_placed_under_states_first_and_last(store):
+  block = store.placed_under('rhenopyrgus', 'edrioblastoidina', style='json')
+  assert [e['source'] for e in block['entries']] == [
+    '1994_guensburg_sprinkle', '2000_grigo', '2013_sumrall_heredia_rodríguez.c.m_mestre',
+    '2020_ewin_martin.m_isotalo_zamora',
+  ]
+  assert block['decorations'] == {
+    'measure': '4 papers, 4 co-author sets, 1994–2020',
+    'span': 'first Guensburg & Sprinkle 1994, last Ewin et al. 2020',
+  }
+  assert [n['label'] for n in block['entries'][0]['chain']] == ['Cyathocystidae', 'Rhenopyrginae', 'Rhenopyrgus']
+  text = store.placed_under('rhenopyrgus', 'edrioblastoidina')['rendered'].splitlines()
+  assert text[0] == 'Rhenopyrgus Dehm 1961 under Edrioblastoidina Fay 1962: 4 papers, 4 co-author sets, 1994–2020'
+  assert text[1] == 'first Guensburg & Sprinkle 1994, last Ewin et al. 2020'
+  # A recombined species ends each line in the combination that source uses.
+  grayae = store.placed_under('Rhenopyrgus grayae', 'Edrioasteroidea', style='json')
+  assert grayae['title'] == 'Rhenopyrgus grayae (Bather 1915) under Edrioasteroidea Billings 1858'
+  assert [e['chain'][-1]['label'] for e in grayae['entries']] == [
+    'Pyrgocystis grayae', 'Rhenopyrgus grayae', 'Rhenopyrgus grayae']
+  assert store.placed_under('rhenopyrgus', 'blastoidea', style='json')['entries'] == []
+
+
+def test_headings_name_the_combination_asked_for(store):
+  assert store.heading('grayae_bather_1915') == 'Pyrgocystis grayae Bather 1915'
+  assert store.heading('grayae_bather_1915', 'Rhenopyrgus grayae') == 'Rhenopyrgus grayae (Bather 1915)'
+  assert store.heading('grayae_bather_1915', 'grayae') == 'grayae Bather 1915'
+  assert store.heading('rhenopyrgus-subgenus') == 'Pyrgocystis (Rhenopyrgus) Dehm 1961'
+  assert store.heading('edrioasteroidea-order-uncertain_holloway_jell_1983') == 'Order uncertain'
+  assert store.original_combination('coronaeformis_rievers_1961') == 'Pyrgocystis coronaeformis'
+  assert store.original_combination('viviani_ewin_martin.m_isotalo_zamora_2020') == 'Rhenopyrgus viviani'
 
 
 def test_combinations_in_a_listing(store):
   dehm = store.contents('1961_dehm', 'pyrgocystis')[0]['rendered'].splitlines()
-  assert dehm[0] == 'Pyrgocystis'
-  assert dehm[1] == '  Pyrgocystis sardesoni [type]'
-  assert dehm[-2] == '  Pyrgocystis (Rhenopyrgus)*'
-  assert dehm[-1] == '    Pyrgocystis (Rhenopyrgus) coronaeformis [type]'
+  assert dehm[0] == 'Dehm 1961'
+  assert dehm[1] == '  Genus Pyrgocystis'
+  assert dehm[2] == '    Type species. Pyrgocystis sardesoni'
+  assert dehm[3] == '    Pyrgocystis sardesoni'
+  # The source's own wording for the new subgenus, "Rhenopyrgus nov. subgen.".
+  assert dehm[-3] == '    Subgenus Pyrgocystis (Rhenopyrgus) nov. subgen.'
+  assert dehm[-2] == '      Type species. Pyrgocystis (Rhenopyrgus) coronaeformis'
+  assert dehm[-1] == '      Pyrgocystis (Rhenopyrgus) coronaeformis'
+
+
+def test_or_names_match_their_node(store):
+  # Miller 1821 writes "Pentacrinites or Pentacrinus": the second name
+  # matches wherever the node does.
+  miller = [b for b in store.contents(None, 'pentacrinus') if b['source'] == '1821_miller.j.s']
+  assert len(miller) == 1
+  assert miller[0]['rendered'].splitlines()[1] == '  Genus Pentacrinites or Pentacrinus'
+  assert '1821_miller.j.s' in store.placements(['pentacrinus'], style='json')['sourceKeys']
+  lines = store.history('pentacrinus')['rendered'].splitlines()
+  assert sum(1 for l in lines if l.startswith('1821  Miller')) == 1
+  assert any(l.endswith('Pentacrinites or Pentacrinus, in Articulata') for l in lines)
+  alone = store.history('pentacrinus', include_related=False)['rendered'].splitlines()
+  assert any(l.startswith('1821  Miller') and 'Pentacrinus, in Articulata' in l for l in alone)
 
 
 def test_recombined_species_are_separate_rows(store):
@@ -268,21 +341,36 @@ def test_recombined_species_are_separate_rows(store):
   labels = [row['combination'] for row in placed['rows']]
   assert labels == ['Pyrgocystis grayae', 'Rhenopyrgus grayae']
   filled = [
-    {placed['sourceKeys'][i] for i, cell in enumerate(row['cells'][1:]) if cell}
+    {placed['sourceKeys'][i] for i, cell in enumerate(row['cells'][2:]) if cell}
     for row in placed['rows']
   ]
   assert filled[0] and filled[1] and not (filled[0] & filled[1])
+  # A cell shows the parent without a rank word, carries every claim at the
+  # node, and marks a rejection the source states.
+  block = store.placements(['rhenopyrgidae'], style='json')
+  sumrall = block['sourceKeys'].index('2013_sumrall_heredia_rodríguez.c.m_mestre')
+  cell = block['rows'][0]['cells'][2 + sumrall][0]
+  assert cell['value'] == 'Edrioblastoidina; not Cyathocystidae'
+  assert any(store.by_id[c]['kind'] == 'rejection' for c in cell['claims'])
+  assert block['rows'][0]['cells'][1][0]['value'] == 'Family'
+  assert store.gap(name='Rhenoblastus')['rendered'] == 'No source in the corpus mentions the name Rhenoblastus.'
+  with pytest.raises(ValueError):
+    store.gap('1983_holloway_jell')
 
 
 def test_history_shows_the_name_as_used(store):
   block = store.history('rhenopyrgus-subgenus', include_related=False, style='json')
-  assert {row['cells'][2][0]['value'] for row in block['rows']} == {'Pyrgocystis (Rhenopyrgus)'}
+  assert all(e['line'].startswith('Pyrgocystis (Rhenopyrgus)') for e in block['entries'])
   grayae = store.history('grayae_bather_1915', style='json')
-  assert grayae['title'] == 'History of Pyrgocystis grayae / Rhenopyrgus grayae'
-  as_used = [row['cells'][2][0]['value'] for row in grayae['rows'] if row['cells'][2]]
-  assert len(as_used) == len(grayae['rows'])
-  assert as_used[:2] == ['Pyrgocystis grayae', 'Pyrgocystis grayae']
-  assert as_used[-1] == 'Rhenopyrgus grayae'
+  assert grayae['title'] == 'Pyrgocystis grayae Bather 1915'
+  assert store.history('Rhenopyrgus grayae', style='json')['title'] == 'Rhenopyrgus grayae (Bather 1915)'
+  lines = [e['line'] for e in grayae['entries']]
+  # The binomial states the genus; the position is the level above it.
+  assert lines == ['Pyrgocystis grayae, in Agelacrinitidae', 'Pyrgocystis grayae',
+                   'Rhenopyrgus grayae, in Rhenopyrgidae', 'Rhenopyrgus grayae, in Rhenopyrgidae']
+  assert grayae['decorations']['positions'] == 'in Rhenopyrgus since 1983 (2 papers), in Pyrgocystis 1935–1961 (2 papers)'
+  with_syn = store.history('grayae_bather_1915', synonymy=True, style='json')
+  assert [len(e.get('synonymy') or ()) for e in with_syn['entries']] == [0, 0, 1, 5]
 
 
 def test_resolver_lists_combinations(store):
@@ -301,7 +389,7 @@ def test_variety_and_no_genus_fallback(store):
     for c in store.closure.placements_of.get(key, ()):
       if c['tree'] == 'taxonomy' and store.combination(c['source'], c['path']).get('genus'):
         labelled.append(store.display(key, c['source'], c['path']))
-  assert labelled and all(' var. ' in label for label in labelled)
+  assert labelled and all(' var.' in label for label in labelled)
   # A species listed straight under a family keeps its epithet or printed form.
   claim = next(c for c in store.closure.placements_of['angulosus_pander_1830'] if c['source'] == '1968b_paul.c.r.c')
   label = store.display('angulosus_pander_1830', claim['source'], claim['path'])
