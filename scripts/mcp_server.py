@@ -42,6 +42,11 @@ def resolve_name(query: str, rank: str | None = None) -> list[dict]:
   return tools.resolve_name(query, rank=rank)
 
 
+@server.tool(description=D['resolve_source'])
+def resolve_source(query: str) -> list[dict]:
+  return tools.resolve_source(query)
+
+
 @server.tool(description=D['contents'])
 def contents(
   record: str, source: str | None = None, depth: int | None = None,

@@ -136,6 +136,31 @@ def test_names_accepted_where_keys_are(store):
   assert store.history('Rhenopyrgus', style='json')['parameters']['record'] == 'rhenopyrgus'
 
 
+def test_sources_by_citation(store):
+  # A citation as the blocks print it resolves like a key; the year and
+  # the families named, in order, pick the paper.
+  for query, key in (
+    ('Dehm 1961', '1961_dehm'), ('Holloway & Jell 1983', '1983_holloway_jell'),
+    ('Sumrall et al. 2013', '2013_sumrall_heredia_rodríguez.c.m_mestre'),
+    ('Ewin, Martin, Isotalo & Zamora 2020', '2020_ewin_martin.m_isotalo_zamora'),
+    ('Fay 1967a', '1967a_fay'), ('1983_holloway_jell', '1983_holloway_jell'),
+    ('Sprinkle & Strimple in prep', 'inprep_sprinkle_strimple'),
+    ('Holloway &amp; Jell 1983', '1983_holloway_jell'),
+  ):
+    assert [c['key'] for c in store.resolve_source(query)] == [key], query
+  assert store.gap('Holloway & Jell 1983', 'material', style='json') == \
+    store.gap('1983_holloway_jell', 'material', style='json')
+  assert store.statements('rhenopyrgus', source='Dehm 1961', style='json')['parameters']['source'] == '1961_dehm'
+  assert store.contents('Guensburg & Sprinkle 1994', 'astrocystitidae')[0]['source'] == '1994_guensburg_sprinkle'
+  with pytest.raises(ValueError, match='1816a_lamarck, 1816b_lamarck'):
+    store.gap('Lamarck 1816', 'material')
+  # A paper the corpus does not have passes through, so the gap can say so.
+  assert store.resolve_source('Klug et al. 2008') == []
+  assert store.gap('Klug et al. 2008', 'newTaxa')['rendered'] == \
+    'No source in the corpus mentions the source Klug et al. 2008.'
+  assert store.source_signature('2008_klug_krüger_korn_rücklin_schemm-gregory_debaets_mapes')['families'][0] == 'klug'
+
+
 def test_keys_accepted_in_any_case(store):
   assert store.contents('1983_Holloway_Jell', 'Rhenopyrgidae') == store.contents('1983_holloway_jell', 'rhenopyrgidae')
   assert store.history('Rhenopyrgus', style='json')['blockId'] == store.history('rhenopyrgus', style='json')['blockId']
@@ -176,6 +201,8 @@ def test_contents_of_a_family_in_a_source(store):
     'Guensburg & Sprinkle 1994\n  Family Astrocystitidae emend.\n    Genus Astrocystites\n    Genus Cambroblastus\n    Genus Lampteroblastus gen. nov.\n      Type species. Lampteroblastus hintzei\n      Lampteroblastus hintzei sp. nov.'
   )
   every = store.contents(None, 'astrocystitidae')
+  # The heading carries the page the listing starts on when it is recorded.
+  assert store.contents('2020_ewin_martin.m_isotalo_zamora', 'rhenopyrgidae')[0]['rendered'].splitlines()[0] == 'Ewin et al. 2020, p. 118'
   assert [b['source'] for b in every][:2] == ['1935_bassler', '1967a_fay']
 
 
@@ -203,6 +230,14 @@ def test_statements_in_words(store):
   moved = store.statements('rhenopyrgidae', kind='rejection', style='json')
   assert moved['entries'][0]['sentence'] == 'declines a placement in Cyathocystidae'
   assert store.statements('no_such_key', style='json')['entries'] == []
+  # Nothing of a kind about a record in a named source: the gap block, so
+  # the answer is the source's coverage, not an empty list.
+  gap = store.statements('whitei_holloway_jell_1983', source='Holloway & Jell 1983', kind='material', style='json')
+  assert gap['type'] == 'statement' and gap['parameters']['kind'] == 'material'
+  assert gap['parameters']['source'] == '1983_holloway_jell'
+  assert store.statements('rhenopyrgus-subgenus', source='1961_dehm', kind='diagnosis')['rendered'].startswith(
+    'The diagnoses printed in Dehm 1961 have not yet been entered')
+  assert store.statements('whitei_holloway_jell_1983', kind='diagnosis')['rendered'].endswith('(none entered from any source)')
   lines = store.statements('Rhenopyrgus viviani', kind='material')['rendered'].splitlines()
   assert lines[0] == 'Statements about Rhenopyrgus viviani Ewin et al. 2020'
   assert '  2020  Ewin et al.  holotypes: NHMUK EE16642 (pp. 120–122)' in lines

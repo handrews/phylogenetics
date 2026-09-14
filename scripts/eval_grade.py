@@ -151,7 +151,14 @@ def mechanical(record, question, store):
   elif refusal == 'absent':
     statements = [b for b in blocks if b['type'] == 'statement']
     if scope.get('source'):
-      ok = any((b.get('parameters') or {}).get('source') == scope['source'] for b in statements)
+      # The block names the source by key when the corpus has it, or by
+      # the citation the model typed when it does not.
+      wanted = _source_sig(store, scope['source'])
+      ok = any(
+        (b.get('parameters') or {}).get('source') == scope['source']
+        or _source_sig(store, (b.get('parameters') or {}).get('source')) == wanted
+        for b in statements
+      )
       if not ok:
         failures.append(f"no block states that {scope['source']} is not entered")
     else:
@@ -163,6 +170,13 @@ def mechanical(record, question, store):
   if record.get('stopReason') == 'max_turns':
     notes.append('composed after the lookup limit was reached')
   return failures, notes
+
+
+def _source_sig(store, text):
+  if not text:
+    return None
+  sig = store.source_signature(text)
+  return (sig['year'], tuple(sig['families'][:1]))
 
 
 def _has_page(claim, page):

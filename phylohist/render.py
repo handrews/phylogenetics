@@ -166,7 +166,14 @@ def _statement_text(block):
 def _text_classification(block):
   # The source above its tree, the tree indented under it, so a list of
   # listings reads source by source.
-  lines = [block['cite']] if block.get('cite') else []
+  lines = []
+  if block.get('cite'):
+    # The source, with the page the listing starts on when it is recorded.
+    head = block['cite']
+    root_pages = (block['nodes'][0].get('pages') if block.get('nodes') else None)
+    if root_pages is not None:
+      head += ', ' + pages_text(root_pages)
+    lines.append(head)
   base = '  ' if block.get('cite') else ''
   for node in block['nodes']:
     indent = base + '  ' * node.get('depth', 0)
@@ -247,6 +254,8 @@ def _text_list(block):
     width = max([len(r[1]) for r in rows] + [0])
     for year, authors, sentence in rows:
       lines.append(f'  {year}  {authors.ljust(width)}  {sentence}')
+    if not rows:
+      lines.append('  (none entered from any source)')
     return '\n'.join(lines)
   for entry in block['entries']:
     lines.append('  ' + _entry_line(entry, heading.get('name')))
@@ -339,6 +348,8 @@ def _md_list(block):
   if block.get('kind') == 'statements':
     for year, authors, sentence in (_statement_line(e) for e in block['entries']):
       lines.append(f'- {year} {authors}: {sentence}')
+    if not block['entries']:
+      lines.append('(none entered from any source)')
     return '\n'.join(lines)
   for entry in block['entries']:
     lines.append('- ' + _entry_line(entry, heading.get('name')))

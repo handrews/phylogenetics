@@ -9,6 +9,7 @@ and the eval runner call these functions directly.
 """
 
 import collections
+import html
 import re
 import json
 import pathlib
@@ -31,6 +32,12 @@ _SPECIES_GROUP = ('species', 'subspecies', 'variety')
 def _species_group(rank):
   return (rank or '').lower() in _SPECIES_GROUP
 
+# The coverage kind a kind of statement is declared under.
+_COVERAGE_OF_KIND = {
+  'material': 'material', 'diagnosis': 'diagnoses', 'acceptance': 'synonymy',
+  'usage': 'skeleton', 'placement': 'skeleton', 'rejection': 'skeleton',
+  'act': 'skeleton', 'editorial': 'skeleton',
+}
 _PLURAL_KINDS = {'newTaxa', 'types', 'occurrences', 'illustrations', 'diagnoses'}
 
 # The community's words for what the table records.
@@ -158,6 +165,103 @@ class ClaimStore:
 
   def _keys(self, keys):
     return [self._key(k) for k in keys]
+
+  _YEAR_TOKEN = re.compile(r'^(\d{4})([a-z])?$')
+  _CITATION_NOISE = {'et', 'al', 'in', 'prep', 'preparation', 'and'}
+
+  def source_signature(self, text):
+    """What a citation or a key says about a paper: the year (with a
+    key's letter suffix when given), the author families folded, and
+    whether it is a work in preparation."""
+    # A model may write the ampersand as an entity ("Holloway &amp; Jell").
+    text = html.unescape((text or '').strip())
+    sig = {'year': None, 'suffix': None, 'families': [], 'inprep': False}
+    if not text:
+      return sig
+    # A key, known or not: year and letter, then families with initials.
+    if re.match(r'^(\d{4}[a-z]?|inprep)_', text.lower()):
+      head, _, rest = text.lower().partition('_')
+      match = self._YEAR_TOKEN.match(head)
+      if match:
+        sig['year'], sig['suffix'] = int(match.group(1)), match.group(2)
+      else:
+        sig['inprep'] = True
+      sig['families'] = [fold(part.split('.')[0]) for part in rest.split('_') if part]
+      return sig
+    for token in re.split(r'[\s,&;]+', text):
+      token = token.strip('().')
+      if not token:
+        continue
+      match = self._YEAR_TOKEN.match(token)
+      if match:
+        sig['year'], sig['suffix'] = int(match.group(1)), match.group(2)
+      elif token.lower() in self._CITATION_NOISE:
+        sig['inprep'] = sig['inprep'] or token.lower().startswith('prep')
+      else:
+        sig['families'].append(fold(token))
+    return sig
+
+  def resolve_source(self, query):
+    """The sources a citation can mean: the papers of that year (and
+    letter, "Fay 1967a") whose authors begin with the families named, in
+    the order named. "Sumrall et al. 2013" names one family; "Holloway &
+    Jell 1983" two. A key is its own answer."""
+    query = html.unescape((query or '').strip())
+    if not query:
+      return []
+    if query in self.sources or query.lower() in self.sources:
+      key = query if query in self.sources else query.lower()
+      return [self._source_candidate(key)]
+    sig = self.source_signature(query)
+    if sig['year'] is None and not sig['inprep']:
+      return []
+    found = []
+    for key, row in self.sources.items():
+      citation = row['citation']
+      year = citation.get('year')
+      if sig['year'] is not None:
+        if year != sig['year']:
+          continue
+        if sig['suffix'] and not key.split('_', 1)[0].endswith(sig['suffix']):
+          continue
+      elif year is not None:
+        continue
+      authors = [fold(a) for a in citation.get('authors') or ()]
+      if authors[:len(sig['families'])] != sig['families']:
+        continue
+      found.append(self._source_candidate(key))
+    found.sort(key=lambda c: (c['year'] or 9999, c['key']))
+    return found
+
+  def _source_candidate(self, key):
+    row = self.sources[key]
+    return {
+      'key': key, 'cite': short_citation(row['citation']),
+      'year': row['citation'].get('year'), 'entered': bool(row.get('tree')),
+      'authors': list(row['citation'].get('authors') or ()),
+    }
+
+  def _source_key(self, key):
+    """A source key as given, or lowercased when only that form exists,
+    or the one source a citation resolves to; a citation that can mean
+    several is refused with their keys. An unknown citation passes
+    through, so the gap block can say no source in the corpus is it."""
+    if key is None or key in self.sources:
+      return key
+    if str(key).lower() in self.sources:
+      return str(key).lower()
+    candidates = self.resolve_source(str(key))
+    if len(candidates) == 1:
+      return candidates[0]['key']
+    if candidates:
+      raise ValueError(
+        f'"{key}" can mean several sources: ' + ', '.join(c['key'] for c in candidates)
+        + '; name one by its key'
+      )
+    return key
+
+  def _source_keys(self, keys):
+    return [self._source_key(k) for k in keys]
 
   def rank(self, key):
     return (self.names.get(key) or {}).get('rank')
@@ -740,7 +844,7 @@ class ClaimStore:
 
   def contents(self, source, record, depth=None, synonymy=False, style='text', trees=TAXONOMY):
     """What a source places under a record, as the source prints it."""
-    source, record = self._key(source), self._key(record)
+    source, record = self._source_key(source), self._key(record)
     parameters = {'source': source, 'record': record, 'depth': depth, 'synonymy': synonymy}
     if source is None:
       out = []
@@ -780,7 +884,7 @@ class ClaimStore:
     """Where each source places each record: rows records, columns sources
     in year order, cells the parent (and its rank)."""
     records = self._keys(records)
-    sources = self._keys(sources) if sources else sources
+    sources = self._source_keys(sources) if sources else sources
     trees = tuple(trees) if trees else TAXONOMY
     closure = self.closure
     rows_keys = closure.expand(list(records), include_variants)
@@ -1144,7 +1248,7 @@ class ClaimStore:
   def synonymy(self, record, source=None, style='text'):
     """The synonymy a source gives under a record, as a list; every source
     with one when no source is named."""
-    record, source = self._key(record), self._key(source)
+    record, source = self._key(record), self._source_key(source)
     out = []
     sources = [source] if source else sorted(
       {c['source'] for c in self.by_subject.get(record, ()) if c['kind'] == 'usage'},
@@ -1168,7 +1272,7 @@ class ClaimStore:
     """Every statement the corpus holds about one record, in publication
     order, each as a sentence."""
     raw = record
-    record, source = self._key(record), self._key(source)
+    record, source = self._key(record), self._source_key(source)
     claims = self.by_subject.get(record, [])
     if source is not None:
       claims = [c for c in claims if c['source'] == source]
@@ -1193,13 +1297,23 @@ class ClaimStore:
         printed='editor' if c.get('inferred') else None,
       ))
     parameters = {'record': record, 'source': source, 'kind': kind, 'actKind': act_kind}
+    if not entries and source is not None:
+      # Nothing of that kind about the record in that source: the answer
+      # is the source's coverage of the kind, the gap block, not an
+      # empty list a reader could take for a finished answer.
+      coverage_kind = _COVERAGE_OF_KIND.get(kind, 'skeleton')
+      if act_kind == 'new' or kind == 'act' and act_kind is None:
+        coverage_kind = 'newTaxa'
+      gap = self.gap(source, coverage_kind, style='json')
+      gap = blocks.statement(gap['kind'], gap['fields'], {**gap['parameters'], **parameters})
+      return _with_style(gap, style)
     block = blocks.listing({'key': record, 'name': heading}, entries, parameters, kind='statements')
     return _with_style(block, style)
 
   def source_coverage(self, source_key):
     """The raw view of one source: citation, whether entered, declared
     audit, derived counts."""
-    source_key = self._key(source_key)
+    source_key = self._source_key(source_key)
     row = self.sources.get(source_key)
     if row is None:
       return {'source': source_key, 'known': False}
@@ -1220,7 +1334,7 @@ class ClaimStore:
       return _with_style(block, style)
     if not source or not kind:
       raise ValueError('gap needs a source and a kind of statement, or a name')
-    source = self._key(source)
+    source = self._source_key(source)
     row = self.sources.get(source)
     what = COVERAGE_WORDS.get(kind, kind)
     if row is None:
@@ -1239,7 +1353,7 @@ class ClaimStore:
 
   def printed_forms(self, record, source=None, style='text'):
     """Each form a source prints for a record, verbatim, with the page."""
-    record, source = self._key(record), self._key(source)
+    record, source = self._key(record), self._source_key(source)
     entries = []
     seen = set()
     for c in self.by_subject.get(record, ()):
@@ -1323,6 +1437,10 @@ def resolve_name(query, rank=None):
   return store().resolve_name(query, rank=rank)
 
 
+def resolve_source(query):
+  return store().resolve_source(query)
+
+
 def contents(source=None, record=None, depth=None, synonymy=False, style='text'):
   return store().contents(source, record, depth=depth, synonymy=synonymy, style=style)
 
@@ -1390,6 +1508,16 @@ TOOL_DESCRIPTIONS = {
     '(Rhenopyrgus) coronaeformis", "Pyrgocystis (Rhenopyrgus)". An empty list '
     'means no source in the corpus carries the name; it does not mean the '
     'name does not exist. Optionally restrict by rank word.'
+  ),
+  'resolve_source': (
+    'The sources a citation can mean: "Dehm 1961", "Holloway & Jell '
+    '1983", "Sumrall et al. 2013", "Fay 1967a". Each candidate gives the '
+    'key, the citation as the blocks print it, the year, the authors and '
+    'whether the paper\'s content is entered. Every tool that takes a '
+    'source accepts the citation itself, so this is needed only when a '
+    'citation can mean several papers (the tool then refuses with their '
+    'keys) or to check whether a paper is in the corpus at all: an empty '
+    'list means no source in the corpus is that paper.'
   ),
   'contents': (
     'What one source places under a record, as the source prints it: a '
@@ -1460,7 +1588,9 @@ TOOL_DESCRIPTIONS = {
     '(usage, placement, acceptance, act, rejection, material, diagnosis, '
     'editorial) or one act kind (new, type, emended, nomTransl, moved, '
     'removed, corrected). A statement marked "editor" is the '
-    'editor\'s inference, not the paper\'s words.'
+    'editor\'s inference, not the paper\'s words. When a source is named '
+    'and nothing of that kind about the record is entered, the result is '
+    'the gap block for that source and kind: compose it as the answer.'
   ),
   'source_coverage': (
     'What the corpus holds of one publication: its citation, whether its '
@@ -1498,6 +1628,7 @@ for _name in ('contents', 'placements', 'descendants', 'history', 'statements', 
 
 _RECORDS = {'type': 'array', 'items': {'type': 'string'}, 'description': 'record keys from resolve_name'}
 _STYLE = {'type': 'string', 'enum': ['text', 'markdown', 'json'], 'description': 'rendering style, default text'}
+_SOURCE = {'type': ['string', 'null'], 'description': 'a source key or the citation as the blocks print it ("Dehm 1961", "Sumrall et al. 2013")'}
 _YEARS = {'type': 'array', 'items': {'type': ['integer', 'null']}, 'minItems': 2, 'maxItems': 2, 'description': '[first, last] publication years, either may be null'}
 _TREES = {'type': 'array', 'items': {'type': 'string', 'enum': ['taxonomy', 'cladogram', 'diagram', 'other']}, 'description': 'tree kinds to read placements from; default taxonomy only'}
 
@@ -1514,15 +1645,18 @@ TOOL_SPECS = [
     'query': {'type': 'string', 'description': 'the printed name'},
     'rank': {'type': 'string', 'description': 'optional rank word'},
   }, ['query']),
+  _spec('resolve_source', {
+    'query': {'type': 'string', 'description': 'a citation or a key'},
+  }, ['query']),
   _spec('contents', {
-    'source': {'type': ['string', 'null'], 'description': 'a source key; omit for every source that places the record'},
+    'source': {'type': ['string', 'null'], 'description': 'a source key or citation ("Dehm 1961"); omit for every source that places the record'},
     'record': {'type': 'string', 'description': 'a record key'},
     'depth': {'type': ['integer', 'null'], 'description': 'levels below the record; omit for all'},
     'synonymy': {'type': 'boolean', 'description': 'include each name\'s synonymy'},
   }, ['record']),
   _spec('placements', {
     'records': _RECORDS,
-    'sources': {'type': 'array', 'items': {'type': 'string'}, 'description': 'restrict to these source keys'},
+    'sources': {'type': 'array', 'items': {'type': 'string'}, 'description': 'restrict to these sources, keys or citations'},
     'years': _YEARS, 'include_variants': {'type': 'boolean'},
     'include_synonyms': {'type': 'boolean'}, 'trees': _TREES,
   }, ['records']),
@@ -1545,22 +1679,22 @@ TOOL_SPECS = [
     'trees': _TREES, 'years': _YEARS,
   }, ['record']),
   _spec('synonymy', {
-    'record': {'type': 'string'}, 'source': {'type': ['string', 'null']},
+    'record': {'type': 'string'}, 'source': _SOURCE,
   }, ['record']),
   _spec('statements', {
-    'record': {'type': 'string'}, 'source': {'type': ['string', 'null']},
+    'record': {'type': 'string'}, 'source': _SOURCE,
     'kind': {'type': ['string', 'null']}, 'act_kind': {'type': ['string', 'null']},
   }, ['record']),
   _spec('source_coverage', {
-    'source_key': {'type': 'string'},
+    'source_key': {'type': 'string', 'description': 'a source key or citation'},
   }, ['source_key']),
   _spec('gap', {
-    'source': {'type': 'string'},
+    'source': {'type': 'string', 'description': 'a source key or the citation as the blocks print it'},
     'kind': {'type': 'string', 'enum': list(COVERAGE_WORDS)},
     'name': {'type': 'string', 'description': 'a name no source carries, instead of source and kind'},
   }, []),
   _spec('printed_forms', {
-    'record': {'type': 'string'}, 'source': {'type': ['string', 'null']},
+    'record': {'type': 'string'}, 'source': _SOURCE,
   }, ['record']),
 ]
 
@@ -1569,7 +1703,7 @@ def call(name, arguments):
   """Dispatch a tool call by name with keyword arguments; what the CLI,
   the MCP server and the runner all go through."""
   functions = {
-    'resolve_name': resolve_name, 'contents': contents,
+    'resolve_name': resolve_name, 'resolve_source': resolve_source, 'contents': contents,
     'placements': placements, 'descendants': descendants,
     'ancestors': ancestors, 'placed_under': placed_under, 'history': history,
     'synonymy': synonymy, 'statements': statements,

@@ -71,6 +71,18 @@ def test_resolve_and_absence(capsys):
   assert code == 0 and json.loads(out)['entered'] is False
 
 
+def test_source_subcommand_and_citations(capsys):
+  code, out = run(capsys, 'source', 'Holloway & Jell 1983')
+  assert code == 0 and out == '1983_holloway_jell  Holloway & Jell 1983; entered; Holloway, Jell'
+  code, out = run(capsys, 'source', 'Klug et al. 2008')
+  assert code == 0 and out == '(no source in the corpus is that paper)'
+  assert cli.main(['gap', 'Lamarck 1816', 'material']) == 2
+  assert '1816a_lamarck, 1816b_lamarck' in capsys.readouterr().err
+  _, by_cite = run(capsys, 'gap', 'Dehm 1961', 'diagnoses')
+  _, by_key = run(capsys, 'gap', '1961_dehm', 'diagnoses')
+  assert by_cite == by_key
+
+
 def test_ambiguous_name_exits_2(capsys):
   assert cli.main(['history', 'casteri']) == 2
   err = capsys.readouterr().err

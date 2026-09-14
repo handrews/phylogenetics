@@ -59,6 +59,9 @@ def build_parser():
   p.add_argument('query')
   p.add_argument('--rank')
 
+  p = add_parser('source', help='the sources a citation can mean')
+  p.add_argument('query')
+
   p = add_parser('contents', help='what a source places under a record')
   p.add_argument('source', nargs='?', help='a source key, or - for every source')
   p.add_argument('record')
@@ -157,6 +160,17 @@ def _main(argv):
             f"{x['label']} {x['firstYear']}" + (f"–{x['lastYear']}" if x['lastYear'] != x['firstYear'] else '')
             for x in c['combinations'])
         print(line)
+    return 0
+  if command == 'source':
+    result = tools.resolve_source(args.query)
+    if style == 'json':
+      print(json.dumps(result, ensure_ascii=False, indent=1))
+    elif not result:
+      print('(no source in the corpus is that paper)')
+    else:
+      for c in result:
+        print(f"{c['key']}  {c['cite']}; {'entered' if c['entered'] else 'not entered'}; "
+              + ', '.join(c['authors']))
     return 0
   if command == 'coverage':
     print(json.dumps(tools.source_coverage(args.source), ensure_ascii=False, indent=1))
