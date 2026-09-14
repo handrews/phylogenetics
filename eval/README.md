@@ -88,6 +88,13 @@ contract and the language rules above.
 
     poetry run python scripts/eval_run.py --model claude-sonnet-5
     poetry run python scripts/eval_grade.py eval/runs/<date>-<model>.jsonl
+    poetry run python scripts/eval_run.py --ask "Who first placed Rhenopyrgus under Edrioblastoidina?"
+
+`--ask` answers one question typed on the command line exactly as a run
+would (same prompt, tools and composition step), prints the rendered
+answer and then the trail (the lookups, the header, any question back,
+any text the model wrote beside its calls, the tokens), and writes
+nothing.
 
 The runner answers every question in a bounded tool-use loop over
 `phylohist/tools.py`. The model sees each block's id, type and rendered
