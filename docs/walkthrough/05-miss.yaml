@@ -1,0 +1,21 @@
+# What exact suborder heading do Ewin et al. (2020) print above family Rhenopyrgidae, and at what rank was that name first established?
+# The plan Claude Sonnet 5 stated in the eval run of 2026-09-14 (planner mode, q021).
+header: Rhenopyrgidae (family, with its subfamily-rank form Rhenopyrginae as the same name group) considered;
+  classificatory (taxonomy) trees only; ancestors restricted to Ewin et al. 2020 for the suborder heading,
+  history taken across all years including the related rank to find when the name was first established
+blocks:
+- tool: ancestors
+  parameters:
+    records:
+    - rhenopyrgidae
+    trees:
+    - taxonomy
+    years:
+    - 2020
+    - 2020
+- tool: history
+  parameters:
+    record: rhenopyrgidae
+    include_related: true
+    trees:
+    - taxonomy

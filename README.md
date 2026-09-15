@@ -134,6 +134,9 @@ The `eval_run.py` script can be used to ask a question without using the
 chat interface to see how the model plans the queries and selects the output
 blocks.  It requires an Anthropic API key to be configured.
 
+For worked examples, with the plan the model stated and the answer it
+renders, see [`docs/walkthrough.md`](docs/walkthrough.md).
+
     poetry run python scripts/eval_run.py --ask "Who first placed Rhenopyrgus under Edrioblastoidina?"
 
 ## Install
