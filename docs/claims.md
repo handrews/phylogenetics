@@ -329,9 +329,10 @@ when a parameter is genuinely ambiguous. `validate` checks a plan
 against the tool surface; `execute` builds the composition, one tool
 call per block, and reports what could not be built (an ambiguous name
 or citation lists what it can mean). `phylohist plan <file>` executes
-a plan written by hand; the eval's expected answers are plans; in the
-runner's planner mode the model resolves names and citations and then
-states a plan, never seeing the blocks.
+a plan written by hand; the MCP server's `plan` tool executes one a
+chat model states and returns the rendered answer; the eval's expected
+answers are plans; in the runner's planner mode the model resolves
+names and citations and then states a plan, never seeing the blocks.
 
 `tests/test_tools.py`, `tests/test_closure.py`, `tests/test_blocks.py`
 and `tests/test_cli.py` check the tools, the worked example of
