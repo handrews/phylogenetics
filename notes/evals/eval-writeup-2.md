@@ -571,6 +571,53 @@ here (source, kind, act_kind, synonymy, years, trees, include_related),
 and the header is written before any block exists, which shows in the
 judge's marks: 38 of 47 at full, none at zero.
 
+## The planner run repeated
+
+Run c (`eval/runs/2026-09-14-planner-c-claude-sonnet-5`) is the planner
+again after the changes run b prompted: the gap `statements` returns
+keeps the coverage kind, and the prompt says a genus's type species and
+a new class are shown by the listing. Same 47 questions, same grader.
+
+| | planner run b | planner run c |
+|---|---|---|
+| lookups | 105 (median 2, max 8) | 128 (median 2, max 10) |
+| input tokens | 0.41 M | 0.57 M |
+| output tokens | 37 k | 48 k |
+| wall time | ~8 min | ~10 min |
+| at the lookup limit | 0 | 1 (q021) |
+| plans revised after an error | 1 | 0 |
+| questions back | 0 | 0 |
+| mechanical pass | 34 | 36 |
+| judge contract, full marks | 1.81, 38 | 1.79, 38 |
+
+| class | n | run b | run c |
+|---|---|---|---|
+| answerable | 12 | 8 | 9 |
+| as-published | 8 | 5 | 5 |
+| uncaptured | 9 | 6 | 9 |
+| absent | 3 | 3 | 3 |
+| trajectory | 15 | 12 | 10 |
+
+**What the fixes bought.** q014, q015 and q016 pass: the gap for
+material in a named source now matches whichever tool states it. q003
+and q006 pass: the plans ask `contents` for a type species. q001 still
+plans `ancestors` for Fay's class, and the chain does not print the
+"nov." the listing does.
+
+**What moved the other way.** Three questions that passed in run b
+fail here on the block chosen: q002 plans `statements` about the genus
+with `act_kind: type` beside the listing, where the expectation is the
+statements about the species in Fay 1962 (the editor's designation is
+a statement about *ottawaensis*); q035 plans `printed_forms` for two
+genera where a history is asked; q044 plans `placed_under` twice
+instead of a history. Nothing in the tools or prompt changed for these
+three: the planner's choice varies between runs on a handful of
+questions, which is the noise floor of a 47-question set with one run
+per configuration. Thirty-nine plans are one block, eight are two.
+
+**Tokens.** Input rose with the lookups (q021 spent its twelve turns
+resolving suborder names); still a third of compose mode.
+
 ## What changes next, in order
 
 1. Source keys: citations accepted wherever a source is a parameter
