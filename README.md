@@ -5,6 +5,64 @@ loader with integrity checks (`phylohist/`), and a generated claim table
 (`claims/`, one JSONL per source plus a coverage manifest; see
 `docs/claims.md`).
 
+## How it fits together
+
+Three lanes, human, model and code. Each column is one story, read
+top to bottom; every surface in the code lane sits on the same tools
+over the claim table, so the CLI, the MCP server and the eval cannot
+disagree about an answer.
+
+```mermaid
+flowchart TB
+  subgraph Human
+    D[Edits the data<br/>as printed, audits]
+    C[Asks the CLI<br/>no model]
+    Q[Asks in chat<br/>Claude Code, MCP]
+    E[Runs the eval<br/>writes, reviews]
+  end
+  subgraph Model["Model (Claude)"]
+    M[Reviews the data<br/>optional: reads sources, drafts trees]
+    P[Claude in chat<br/>resolves names, states a plan]
+    J[Eval model<br/>answers, and judges the header]
+  end
+  subgraph Code
+    L[Load + extract<br/>schema, claim table] --> T[(claims/<br/>committed, CI-checked)]
+    CLI[CLI<br/>phylohist tool]
+    MCP[MCP server<br/>tools and plan]
+    R[Eval runner<br/>grader, scripts]
+    T --> S[Tools over the claim table<br/>store, resolve, words, blocks, render]
+    CLI --> S
+    MCP --> S
+    R --> S
+  end
+  D <--> M
+  M <--> L
+  D --> L
+  C --> CLI
+  Q --> P --> MCP
+  E --> R
+  R <--> J
+```
+
+- **The data.** The researcher records each publication's opinions as
+  printed. The model's part is optional and reviewable: it reads a
+  paper against its tree and writes a review (`notes/reviews/`), or
+  drafts a tree (`drafts/`) that code validates and the researcher
+  audits before it enters `data/`. The human and the model review each
+  other's work; code checks both against the schema and regenerates the
+  claim table, which CI keeps current.
+- **The CLI.** A question goes from the researcher to the tools with no
+  model in the lane: `phylohist history rhenopyrgus` renders the block.
+- **Chat.** Claude Code asks the MCP server. The model resolves the
+  names and papers the question mentions and states a plan, the blocks
+  the answer is made of; code builds and renders them. The model
+  chooses; code answers. The only words of the model's own that reach a
+  reader are a one-line header stating the parameters it chose.
+- **The eval.** The runner drives the model over the committed
+  questions in compose or planner mode, the grader is code, and a model
+  judges only the header. The researcher writes the questions and
+  reviews the grades and write-ups (`eval/`, `notes/evals/`).
+
 ## Install
 
 Python 3.10 or later and [Poetry](https://python-poetry.org/):
