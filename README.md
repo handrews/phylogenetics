@@ -1,7 +1,7 @@
 # Phylogenetic History Tools
 
 Hand-edited YAML capturing taxonomic opinions as published (`data/`), a
-loader with integrity checks (`phylohist/`), and a generated claim table
+loader with integrity checks (`phylohist/loader/`), and a generated claim table
 (`claims/`, one JSONL per source plus a coverage manifest; see
 `docs/claims.md`).
 

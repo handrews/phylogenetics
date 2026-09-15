@@ -13,7 +13,7 @@ import os
 import pytest
 
 from phylohist.closure import Closure
-from phylohist.load import load
+from phylohist.loader import load
 from phylohist.tools import ClaimStore
 
 

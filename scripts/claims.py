@@ -26,8 +26,7 @@ import sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
 from phylohist.claims import extract, manifest, names_index  # noqa: E402
-from phylohist.io import LoadError  # noqa: E402
-from phylohist.load import load  # noqa: E402
+from phylohist.loader import LoadError, load  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DEFAULT_OUT = ROOT / 'claims'

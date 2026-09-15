@@ -13,7 +13,7 @@ the same per-keyword-location coverage that Istanbul-style JSON Schema coverage
 tools produce, but it also carries the instance paths, and it needs no
 dependency the project does not already have.
 
-Deliberately does *not* reuse ``phylohist.taxa.Tree``: the census measures
+Deliberately does *not* reuse ``phylohist.loader.taxa.Tree``: the census measures
 what the schema evaluation reaches, so it works from the raw documents the
 schema sees, not from the object model built over them.
 
@@ -35,7 +35,7 @@ import jschon
 
 sys.path.insert(0, str(pathlib.Path(__file__).parent.parent))
 
-from phylohist.io import (  # noqa: E402
+from phylohist.loader.io import (  # noqa: E402
   COMMON_FILES,
   TREE_DIR,
   load_yaml,

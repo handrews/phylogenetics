@@ -10,9 +10,9 @@ per-source coverage counts and cross-checks them against the declared
 
 import collections
 
+from .loader.research import Publication, Source
+from .loader.taxa import Taxon
 from .names import fold_forms, key_stem
-from .research import Publication, Source
-from .taxa import Taxon
 
 KINDS = (
   'usage',

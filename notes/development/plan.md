@@ -201,10 +201,10 @@ planner reached 41/47)
   both) and `words.py` (the wording) behind the same facade; `tools.py`
   is the surface; the tool name is a field `tools.call` sets on each
   block.
-- Deliberately left: the loader half (`taxa.py`, `research.py`,
-  `io.py`, `load.py`: log-and-continue validation, class-level
-  registries, its TODOs, no direct tests beyond the load snapshot) is
-  the earlier layer the demo does not showcase; `tools` renders through
+- Deliberately left: the loader subpackage (`phylohist/loader/`:
+  log-and-continue validation, class-level registries, its TODOs, no
+  direct tests beyond the load snapshot) is the earlier layer the demo
+  does not showcase; `tools` renders through
   `render` as the surface's presentation step; no type checker; no
   retry around the runner's API call; `PHYLOHIST_DRAFTS` mode skips
   most tests; filenames with spaces under `data/trees/` and `claims/`.

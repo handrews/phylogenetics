@@ -86,7 +86,7 @@ def test_expected_warnings(load_records):
 def test_invalid_tree_raises(tmp_path):
   # A file that fails the schema stops the load with an error the caller
   # can handle, instead of ending the process.
-  from phylohist import io
+  from phylohist.loader import io
 
   io.ensure_catalog()
   schema = jschon.JSONSchema(io.load_yaml(io.FILEDIR / 'schemas' / 'phylogeny.yaml'))

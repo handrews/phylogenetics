@@ -62,7 +62,7 @@ recorded as a synonym; see [Terminology updates](#terminology-updates-1966--2023
 - Consult `notes` before deciding what a value means. YAML comments carry no
   meaning.
 - Migrations are data-only wherever possible. Tree-node attribution fields
-  (`authority`, `auth`, `year`, `in`) are not read by `phylohist/taxa.py`.
+  (`authority`, `auth`, `year`, `in`) are not read by `phylohist/loader/taxa.py`.
 
 ### The `editorial` block
 
@@ -769,7 +769,7 @@ and the data shows when and where each was printed. The original spelling
 is derived, not declared: it is the spelling on the node flagged `new: true`
 in its source's tree. So `vorticellata_hall_1866` with `vorticellatus` as
 the variant needs no swap; Hall's tree, once entered, will carry `new` on
-*vorticellatus*. `canonical_name` in `phylohist/taxa.py` returns the
+*vorticellatus*. `canonical_name` in `phylohist/loader/taxa.py` returns the
 `altSpellingOf` target as the code's consistent display choice, not as a
 nomenclatural claim; the claim extractor (M2) does not use it to decide
 which spelling is original.
