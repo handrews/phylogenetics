@@ -11,18 +11,10 @@ import os
 
 import pytest
 
-from phylohist.closure import Closure
-from phylohist.tools import ClaimStore
-
 pytestmark = pytest.mark.skipif(
   bool(os.getenv('PHYLOHIST_DRAFTS')),
   reason='the committed claim table covers data/ only',
 )
-
-
-@pytest.fixture(scope='module')
-def closure():
-  return Closure(ClaimStore())
 
 
 def test_group_resolves_to_rank_variants(closure):

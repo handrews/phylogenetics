@@ -23,6 +23,7 @@ import yaml
 
 from phylohist import plan
 from phylohist.claims import extract, manifest
+from phylohist.evaluation import alternatives, normalise
 from phylohist.render import render_composition
 
 QUESTIONS_PATH = pathlib.Path(__file__).parent.parent / 'eval' / 'questions.yaml'
@@ -40,19 +41,6 @@ pytestmark = pytest.mark.skipif(
 def claims(load_records):
   _, _, roots = load_records
   return extract(roots)
-
-
-def alternatives(expected):
-  """The alternatives, each ``{blocks, shows}``: one list of blocks, or
-  several under `anyOf`, an alternative being a list of blocks or an
-  object with its own shows beside the question's."""
-  spec = expected['blocks']
-  items = spec['anyOf'] if isinstance(spec, dict) else [spec]
-  return [item if isinstance(item, dict) else {'blocks': item, 'shows': []} for item in items]
-
-
-def normalise(text):
-  return ' '.join(text.split())
 
 
 @pytest.mark.parametrize('question', QUESTIONS, ids=[q['id'] for q in QUESTIONS])

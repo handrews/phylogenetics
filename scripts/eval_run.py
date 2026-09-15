@@ -29,14 +29,14 @@ answers one question typed on the command line the same way and prints
 the rendered answer with the lookups it took; nothing is written.
 
 The API key is read from ANTHROPIC_API_KEY, or from a `.env` line of that
-name at the repository root; it is never written anywhere.
+name at the repository root (`phylohist.evaluation.api_key`); it is never
+written anywhere.
 """
 
 import argparse
 import datetime
 import hashlib
 import json
-import os
 import pathlib
 import sys
 import time
@@ -45,8 +45,9 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
 import yaml  # noqa: E402
 
-from phylohist import blocks, tools  # noqa: E402
 from phylohist import plan as plans
+from phylohist import tools  # noqa: E402
+from phylohist.evaluation import api_key, submit  # noqa: E402
 from phylohist.render import render_composition  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -81,19 +82,6 @@ SUBMIT_SPEC = {
     'required': ['header', 'blocks'],
   },
 }
-
-
-def api_key():
-  key = os.environ.get('ANTHROPIC_API_KEY')
-  if key:
-    return key
-  env = ROOT / '.env'
-  if env.exists():
-    for line in env.read_text().splitlines():
-      name, _, value = line.strip().partition('=')
-      if name == 'ANTHROPIC_API_KEY' and value:
-        return value.strip().strip('"\'')
-  sys.exit('ANTHROPIC_API_KEY is not set (environment or .env)')
 
 
 def _is_block(value):
@@ -141,7 +129,94 @@ def _text_of(content):
   return ''.join(b.text for b in content if getattr(b, 'type', None) == 'text')
 
 
+def _specs(mode):
+  """The finishing tool's name and the tool specs the model is offered."""
+  if mode == 'planner':
+    return 'plan', [s for s in tools.TOOL_SPECS if s['name'] in RESOLVERS] + [plans.PLAN_SPEC]
+  return 'submit', tools.TOOL_SPECS + [SUBMIT_SPEC]
+
+
+def _nudge(mode, forced):
+  """What the model is told when it must finish, or when it wrote no call."""
+  if forced:
+    if mode == 'planner':
+      return 'You have reached the limit of lookups. State your plan now.'
+    return (
+      'You have reached the limit of lookups. Compose your answer now '
+      'with submit from the blocks already returned.'
+    )
+  if mode == 'planner':
+    return 'State your plan with the plan tool: a one-line header and the blocks to show, in order.'
+  return (
+    'Compose your answer with the submit tool: a one-line header and '
+    'the ids of the blocks to show, in order.'
+  )
+
+
+def _result(block, content):
+  return {'type': 'tool_result', 'tool_use_id': block.id, 'content': content}
+
+
+def _plan_call(block, turn, may_revise):
+  """A plan: executed; its errors go back once for a revised plan, else the
+  composition is what could be built. Returns (call, result, composition)."""
+  payload = dict(block.input)
+  outcome = plans.execute(payload)
+  call = {'turn': turn, 'name': 'plan', 'input': payload, 'errors': outcome['errors']}
+  if outcome['errors'] and may_revise:
+    content = json.dumps(
+      {'errors': outcome['errors'], 'note': 'name what is ambiguous and plan again'},
+      ensure_ascii=False,
+    )
+    return call, _result(block, content), None
+  composition = {
+    'header': payload.get('header') or '',
+    'question': payload.get('question'),
+    'blocks': outcome['blocks'],
+    'invalidIds': [],
+    'composition': outcome['composition'],
+    'plan': payload,
+    'planErrors': outcome['errors'],
+  }
+  return call, _result(block, 'planned'), composition
+
+
+def _lookup_call(block, turn, kept):
+  """A tool call the model made: the blocks it returns are kept by id for
+  the submission; what the model sees is the compact view, cut at the
+  limit. Returns (call, result)."""
+  try:
+    result = tools.call(block.name, dict(block.input))
+    error = None
+  except Exception as exc:  # the model sees the failure, the run records it
+    result, error = None, str(exc)
+  if result is not None:
+    for b in result if isinstance(result, list) else [result]:
+      if _is_block(b):
+        kept[b['blockId']] = dict(b, _tool=block.name)
+    text_out = json.dumps(compact(result), ensure_ascii=False)
+  else:
+    text_out = json.dumps({'error': error})
+  cut = len(text_out) > RESULT_LIMIT
+  if cut:
+    text_out = text_out[:RESULT_LIMIT] + '\n[result cut here; ask more narrowly]'
+  call = {
+    'turn': turn,
+    'name': block.name,
+    'input': block.input,
+    'chars': len(text_out),
+    'result': summarise(block.name, result) if result is not None else None,
+  }
+  if error:
+    call['error'] = error
+  if cut:
+    call['cut'] = True
+  return call, _result(block, text_out)
+
+
 def run_question(client, model, system, question, max_turns, mode='compose'):
+  """One question through the model: the tool-use loop, bounded by
+  max_turns lookups plus the forced finish, and the run record."""
   messages = [{'role': 'user', 'content': question['question']}]
   calls = []
   kept = {}
@@ -152,11 +227,7 @@ def run_question(client, model, system, question, max_turns, mode='compose'):
   stop = None
   asked_to_compose = False
   revised = False
-  finish = 'plan' if mode == 'planner' else 'submit'
-  if mode == 'planner':
-    specs = [s for s in tools.TOOL_SPECS if s['name'] in RESOLVERS] + [plans.PLAN_SPEC]
-  else:
-    specs = tools.TOOL_SPECS + [SUBMIT_SPEC]
+  finish, specs = _specs(mode)
 
   def create(**extra):
     response = client.messages.create(
@@ -175,17 +246,7 @@ def run_question(client, model, system, question, max_turns, mode='compose'):
   while turn < max_turns + 2 and composition is None:
     forced = turn >= max_turns
     if forced:
-      messages.append(
-        {
-          'role': 'user',
-          'content': (
-            'You have reached the limit of lookups. State your plan now.'
-            if mode == 'planner'
-            else 'You have reached the limit of lookups. Compose your answer now '
-            'with submit from the blocks already returned.'
-          ),
-        }
-      )
+      messages.append({'role': 'user', 'content': _nudge(mode, forced=True)})
       response = create(tool_choice={'type': 'tool', 'name': finish})
     else:
       response = create()
@@ -195,75 +256,34 @@ def run_question(client, model, system, question, max_turns, mode='compose'):
     tool_uses = [b for b in response.content if b.type == 'tool_use']
     if text:
       free_text.append(
-        {
-          'turn': turn,
-          'text': text,
-          'withSubmit': any(b.name == finish for b in tool_uses),
-        }
+        {'turn': turn, 'text': text, 'withSubmit': any(b.name == finish for b in tool_uses)}
       )
 
     if not tool_uses:
       if asked_to_compose or forced:
         break
       asked_to_compose = True
-      messages.append(
-        {
-          'role': 'user',
-          'content': (
-            'State your plan with the plan tool: a one-line header and the '
-            'blocks to show, in order.'
-            if mode == 'planner'
-            else 'Compose your answer with the submit tool: a one-line header and '
-            'the ids of the blocks to show, in order.'
-          ),
-        }
-      )
+      messages.append({'role': 'user', 'content': _nudge(mode, forced=False)})
       turn += 1
       continue
 
     results = []
     for block in tool_uses:
       if block.name == 'submit' and mode != 'planner':
-        composition = _submit(dict(block.input), kept)
+        composition = submit(dict(block.input), kept)
         calls.append({'turn': turn, 'name': 'submit', 'input': block.input})
-        results.append({'type': 'tool_result', 'tool_use_id': block.id, 'content': 'submitted'})
-        continue
-      if block.name == 'plan' and mode == 'planner':
-        payload = dict(block.input)
-        outcome = plans.execute(payload)
-        calls.append({'turn': turn, 'name': 'plan', 'input': payload, 'errors': outcome['errors']})
-        if outcome['errors'] and not revised and not forced:
-          # The plan comes back once with what could not be built.
+        results.append(_result(block, 'submitted'))
+      elif block.name == 'plan' and mode == 'planner':
+        call, result, composition = _plan_call(block, turn, may_revise=not revised and not forced)
+        if composition is None:
           revised = True
-          results.append(
-            {
-              'type': 'tool_result',
-              'tool_use_id': block.id,
-              'content': json.dumps(
-                {'errors': outcome['errors'], 'note': 'name what is ambiguous and plan again'},
-                ensure_ascii=False,
-              ),
-            }
-          )
-          continue
-        composition = {
-          'header': payload.get('header') or '',
-          'question': payload.get('question'),
-          'blocks': outcome['blocks'],
-          'invalidIds': [],
-          'composition': outcome['composition'],
-          'plan': payload,
-          'planErrors': outcome['errors'],
-        }
-        results.append({'type': 'tool_result', 'tool_use_id': block.id, 'content': 'planned'})
-        continue
-      if mode == 'planner' and block.name not in RESOLVERS:
+        calls.append(call)
+        results.append(result)
+      elif mode == 'planner' and block.name not in RESOLVERS:
         results.append(
-          {
-            'type': 'tool_result',
-            'tool_use_id': block.id,
-            'content': json.dumps({'error': f'{block.name} is not available: put it in the plan'}),
-          }
+          _result(
+            block, json.dumps({'error': f'{block.name} is not available: put it in the plan'})
+          )
         )
         calls.append(
           {
@@ -273,35 +293,10 @@ def run_question(client, model, system, question, max_turns, mode='compose'):
             'error': 'not available in planner mode',
           }
         )
-        continue
-      try:
-        result = tools.call(block.name, dict(block.input))
-        error = None
-      except Exception as exc:  # the model sees the failure, the run records it
-        result, error = None, str(exc)
-      if result is not None:
-        for b in result if isinstance(result, list) else [result]:
-          if _is_block(b):
-            kept[b['blockId']] = dict(b, _tool=block.name)
-        text_out = json.dumps(compact(result), ensure_ascii=False)
       else:
-        text_out = json.dumps({'error': error})
-      cut = len(text_out) > RESULT_LIMIT
-      if cut:
-        text_out = text_out[:RESULT_LIMIT] + '\n[result cut here; ask more narrowly]'
-      call = {
-        'turn': turn,
-        'name': block.name,
-        'input': block.input,
-        'chars': len(text_out),
-        'result': summarise(block.name, result) if result is not None else None,
-      }
-      if error:
-        call['error'] = error
-      if cut:
-        call['cut'] = True
-      calls.append(call)
-      results.append({'type': 'tool_result', 'tool_use_id': block.id, 'content': text_out})
+        call, result = _lookup_call(block, turn, kept)
+        calls.append(call)
+        results.append(result)
     if composition is None:
       messages.append({'role': 'user', 'content': results})
     turn += 1
@@ -349,33 +344,6 @@ def run_question(client, model, system, question, max_turns, mode='compose'):
   if composition is None:
     record['noComposition'] = True
   return record
-
-
-def _submit(payload, kept):
-  ids = list(payload.get('blocks') or [])
-  chosen = [kept[i] for i in ids if i in kept]
-  invalid = [i for i in ids if i not in kept]
-  composed = (
-    blocks.compose(chosen, payload.get('header') or '', payload.get('question'))
-    if chosen or not invalid
-    else None
-  )
-  return {
-    'header': payload.get('header') or '',
-    'question': payload.get('question'),
-    'blocks': [
-      {
-        'blockId': b['blockId'],
-        'type': b['type'],
-        'tool': b.get('_tool'),
-        'parameters': b.get('parameters'),
-        'claims': b['claims'],
-      }
-      for b in chosen
-    ],
-    'invalidIds': invalid,
-    'composition': composed,
-  }
 
 
 def ask(client, model, system, text, max_turns, mode='compose'):
@@ -445,7 +413,10 @@ def main(argv):
 
   import anthropic
 
-  client = anthropic.Anthropic(api_key=api_key())
+  key = api_key()
+  if not key:
+    sys.exit('ANTHROPIC_API_KEY is not set (environment or .env)')
+  client = anthropic.Anthropic(api_key=key)
   system = (PLANNER_PROMPT if args.mode == 'planner' else PROMPT).read_text()
   if args.ask:
     return ask(client, args.model, system, args.ask, args.max_turns, args.mode)
