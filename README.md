@@ -93,7 +93,7 @@ flowchart TB
 - **The eval.** The runner drives the model over the committed
   questions in compose or planner mode, the grader is code, and a model
   judges only the header. The researcher writes the questions and
-  reviews the grades and write-ups (`eval/`, `notes/evals/`).
+  reviews the grades and write-ups (`eval/`).
 
 ## Install
 
@@ -148,7 +148,7 @@ table", describes the blocks and the tools.
   as well as the tools and the answer formats.
 * `notes/` contains project development information from both the human
   and LLM developers; some of this information might be out-of-date.
-* `eval/` holds the evaluation questions (writeups are in `notes/eval/`).
+* `eval/` holds the evaluation questions, results, write-ups, and metrics.
 * `drafts/` holds AI-drafted trees awaiting a human audit.
 
 ## Licence
