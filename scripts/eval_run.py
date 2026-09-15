@@ -4,7 +4,7 @@
     poetry run python scripts/eval_run.py --model claude-sonnet-5
     poetry run python scripts/eval_run.py --ids q001 q013 q037
     poetry run python scripts/eval_run.py --resume eval/runs/2026-09-12-claude-sonnet-5.jsonl
-    poetry run python scripts/eval_run.py --ask "Who first placed Rhenopyrgus under Edrioblastoidina?"
+    poetry run python scripts/eval_run.py --ask "Who erected Rhenopyrgidae?"
     poetry run python scripts/eval_run.py --mode planner --model claude-sonnet-5
 
 Two modes. In `compose` mode (the default) the model works one
@@ -45,7 +45,8 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
 import yaml  # noqa: E402
 
-from phylohist import blocks, plan as plans, tools  # noqa: E402
+from phylohist import blocks, tools  # noqa: E402
+from phylohist import plan as plans
 from phylohist.render import render_composition  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -118,9 +119,17 @@ def compact(result):
 def summarise(name, result):
   """What the run records of a tool result: block ids and types, or keys."""
   if isinstance(result, list) and result and _is_block(result[0]):
-    return {'blocks': [{'blockId': b['blockId'], 'type': b['type'], 'claims': len(b['claims'])} for b in result]}
+    return {
+      'blocks': [
+        {'blockId': b['blockId'], 'type': b['type'], 'claims': len(b['claims'])} for b in result
+      ]
+    }
   if _is_block(result):
-    return {'blocks': [{'blockId': result['blockId'], 'type': result['type'], 'claims': len(result['claims'])}]}
+    return {
+      'blocks': [
+        {'blockId': result['blockId'], 'type': result['type'], 'claims': len(result['claims'])}
+      ]
+    }
   if isinstance(result, list):
     return {'count': len(result), 'keys': [c.get('key') for c in result if isinstance(c, dict)]}
   if isinstance(result, dict):
@@ -151,8 +160,12 @@ def run_question(client, model, system, question, max_turns, mode='compose'):
 
   def create(**extra):
     response = client.messages.create(
-      model=model, max_tokens=MAX_TOKENS, system=system, tools=specs,
-      messages=messages, **extra,
+      model=model,
+      max_tokens=MAX_TOKENS,
+      system=system,
+      tools=specs,
+      messages=messages,
+      **extra,
     )
     usage['input_tokens'] += response.usage.input_tokens
     usage['output_tokens'] += response.usage.output_tokens
@@ -162,12 +175,17 @@ def run_question(client, model, system, question, max_turns, mode='compose'):
   while turn < max_turns + 2 and composition is None:
     forced = turn >= max_turns
     if forced:
-      messages.append({'role': 'user', 'content': (
-        'You have reached the limit of lookups. State your plan now.'
-        if mode == 'planner' else
-        'You have reached the limit of lookups. Compose your answer now '
-        'with submit from the blocks already returned.'
-      )})
+      messages.append(
+        {
+          'role': 'user',
+          'content': (
+            'You have reached the limit of lookups. State your plan now.'
+            if mode == 'planner'
+            else 'You have reached the limit of lookups. Compose your answer now '
+            'with submit from the blocks already returned.'
+          ),
+        }
+      )
       response = create(tool_choice={'type': 'tool', 'name': finish})
     else:
       response = create()
@@ -176,22 +194,30 @@ def run_question(client, model, system, question, max_turns, mode='compose'):
     text = _text_of(response.content).strip()
     tool_uses = [b for b in response.content if b.type == 'tool_use']
     if text:
-      free_text.append({
-        'turn': turn, 'text': text,
-        'withSubmit': any(b.name == finish for b in tool_uses),
-      })
+      free_text.append(
+        {
+          'turn': turn,
+          'text': text,
+          'withSubmit': any(b.name == finish for b in tool_uses),
+        }
+      )
 
     if not tool_uses:
       if asked_to_compose or forced:
         break
       asked_to_compose = True
-      messages.append({'role': 'user', 'content': (
-        'State your plan with the plan tool: a one-line header and the '
-        'blocks to show, in order.'
-        if mode == 'planner' else
-        'Compose your answer with the submit tool: a one-line header and '
-        'the ids of the blocks to show, in order.'
-      )})
+      messages.append(
+        {
+          'role': 'user',
+          'content': (
+            'State your plan with the plan tool: a one-line header and the '
+            'blocks to show, in order.'
+            if mode == 'planner'
+            else 'Compose your answer with the submit tool: a one-line header and '
+            'the ids of the blocks to show, in order.'
+          ),
+        }
+      )
       turn += 1
       continue
 
@@ -209,21 +235,44 @@ def run_question(client, model, system, question, max_turns, mode='compose'):
         if outcome['errors'] and not revised and not forced:
           # The plan comes back once with what could not be built.
           revised = True
-          results.append({'type': 'tool_result', 'tool_use_id': block.id, 'content': json.dumps(
-            {'errors': outcome['errors'], 'note': 'name what is ambiguous and plan again'},
-            ensure_ascii=False)})
+          results.append(
+            {
+              'type': 'tool_result',
+              'tool_use_id': block.id,
+              'content': json.dumps(
+                {'errors': outcome['errors'], 'note': 'name what is ambiguous and plan again'},
+                ensure_ascii=False,
+              ),
+            }
+          )
           continue
         composition = {
-          'header': payload.get('header') or '', 'question': payload.get('question'),
-          'blocks': outcome['blocks'], 'invalidIds': [], 'composition': outcome['composition'],
-          'plan': payload, 'planErrors': outcome['errors'],
+          'header': payload.get('header') or '',
+          'question': payload.get('question'),
+          'blocks': outcome['blocks'],
+          'invalidIds': [],
+          'composition': outcome['composition'],
+          'plan': payload,
+          'planErrors': outcome['errors'],
         }
         results.append({'type': 'tool_result', 'tool_use_id': block.id, 'content': 'planned'})
         continue
       if mode == 'planner' and block.name not in RESOLVERS:
-        results.append({'type': 'tool_result', 'tool_use_id': block.id,
-                        'content': json.dumps({'error': f'{block.name} is not available: put it in the plan'})})
-        calls.append({'turn': turn, 'name': block.name, 'input': block.input, 'error': 'not available in planner mode'})
+        results.append(
+          {
+            'type': 'tool_result',
+            'tool_use_id': block.id,
+            'content': json.dumps({'error': f'{block.name} is not available: put it in the plan'}),
+          }
+        )
+        calls.append(
+          {
+            'turn': turn,
+            'name': block.name,
+            'input': block.input,
+            'error': 'not available in planner mode',
+          }
+        )
         continue
       try:
         result = tools.call(block.name, dict(block.input))
@@ -231,7 +280,7 @@ def run_question(client, model, system, question, max_turns, mode='compose'):
       except Exception as exc:  # the model sees the failure, the run records it
         result, error = None, str(exc)
       if result is not None:
-        for b in (result if isinstance(result, list) else [result]):
+        for b in result if isinstance(result, list) else [result]:
           if _is_block(b):
             kept[b['blockId']] = dict(b, _tool=block.name)
         text_out = json.dumps(compact(result), ensure_ascii=False)
@@ -241,7 +290,9 @@ def run_question(client, model, system, question, max_turns, mode='compose'):
       if cut:
         text_out = text_out[:RESULT_LIMIT] + '\n[result cut here; ask more narrowly]'
       call = {
-        'turn': turn, 'name': block.name, 'input': block.input,
+        'turn': turn,
+        'name': block.name,
+        'input': block.input,
         'chars': len(text_out),
         'result': summarise(block.name, result) if result is not None else None,
       }
@@ -257,7 +308,9 @@ def run_question(client, model, system, question, max_turns, mode='compose'):
 
   if composition is not None:
     composition['freeText'] = free_text
-    rendered = render_composition(composition['composition'], 'text') if composition['composition'] else ''
+    rendered = (
+      render_composition(composition['composition'], 'text') if composition['composition'] else ''
+    )
   else:
     rendered = ''
 
@@ -271,14 +324,21 @@ def run_question(client, model, system, question, max_turns, mode='compose'):
     'maxTokens': MAX_TOKENS,
     'maxTurns': max_turns,
     'toolCalls': calls,
-    'composition': composition and {
+    'composition': composition
+    and {
       'header': composition['header'],
       'question': composition['question'],
       'blocks': composition['blocks'],
       'invalidIds': composition['invalidIds'],
       'freeText': composition['freeText'],
-      'compositionId': composition['composition']['compositionId'] if composition['composition'] else None,
-      **({'plan': composition['plan'], 'planErrors': composition['planErrors']} if 'plan' in composition else {}),
+      'compositionId': composition['composition']['compositionId']
+      if composition['composition']
+      else None,
+      **(
+        {'plan': composition['plan'], 'planErrors': composition['planErrors']}
+        if 'plan' in composition
+        else {}
+      ),
     },
     'rendered': rendered,
     'answer': rendered if composition else '\n\n'.join(f['text'] for f in free_text),
@@ -295,14 +355,24 @@ def _submit(payload, kept):
   ids = list(payload.get('blocks') or [])
   chosen = [kept[i] for i in ids if i in kept]
   invalid = [i for i in ids if i not in kept]
-  composed = blocks.compose(chosen, payload.get('header') or '', payload.get('question')) if chosen or not invalid else None
+  composed = (
+    blocks.compose(chosen, payload.get('header') or '', payload.get('question'))
+    if chosen or not invalid
+    else None
+  )
   return {
     'header': payload.get('header') or '',
     'question': payload.get('question'),
-    'blocks': [{
-      'blockId': b['blockId'], 'type': b['type'], 'tool': b.get('_tool'),
-      'parameters': b.get('parameters'), 'claims': b['claims'],
-    } for b in chosen],
+    'blocks': [
+      {
+        'blockId': b['blockId'],
+        'type': b['type'],
+        'tool': b.get('_tool'),
+        'parameters': b.get('parameters'),
+        'claims': b['claims'],
+      }
+      for b in chosen
+    ],
     'invalidIds': invalid,
     'composition': composed,
   }
@@ -322,28 +392,36 @@ def ask(client, model, system, text, max_turns, mode='compose'):
     if call['name'] == 'submit':
       continue
     if call['name'] == 'plan':
-      print(f"  plan {json.dumps(call['input'], ensure_ascii=False)}")
+      print(f'  plan {json.dumps(call["input"], ensure_ascii=False)}')
       if call.get('errors'):
-        print(f"  plan errors: {json.dumps(call['errors'], ensure_ascii=False)}")
+        print(f'  plan errors: {json.dumps(call["errors"], ensure_ascii=False)}')
       continue
     result = call.get('result') or {}
-    got = (f"{len(result['blocks'])} block(s)" if 'blocks' in result
-           else f"{result.get('count', '')} candidate(s)" if 'count' in result
-           else 'error: ' + call['error'] if call.get('error') else '')
-    print(f"  {call['name']} {json.dumps(call['input'], ensure_ascii=False)} -> {got}")
+    got = (
+      f'{len(result["blocks"])} block(s)'
+      if 'blocks' in result
+      else f'{result.get("count", "")} candidate(s)'
+      if 'count' in result
+      else 'error: ' + call['error']
+      if call.get('error')
+      else ''
+    )
+    print(f'  {call["name"]} {json.dumps(call["input"], ensure_ascii=False)} -> {got}')
   if comp:
-    print(f"  header: {comp['header']}")
+    print(f'  header: {comp["header"]}')
     if comp.get('question'):
-      print(f"  question back: {comp['question']}")
+      print(f'  question back: {comp["question"]}')
     for entry in comp.get('freeText') or ():
       where = 'beside the submission' if entry.get('withSubmit') else 'between lookups'
-      print(f"  text {where}: {entry['text']}")
+      print(f'  text {where}: {entry["text"]}')
     if comp.get('invalidIds'):
-      print(f"  invalid block ids: {comp['invalidIds']}")
+      print(f'  invalid block ids: {comp["invalidIds"]}')
   else:
     print('  ' + (record['answer'] or '(nothing)'))
-  print(f"  {record['usage']['input_tokens']}+{record['usage']['output_tokens']} tokens, "
-        f"{record['seconds']}s, {record['stopReason']}")
+  print(
+    f'  {record["usage"]["input_tokens"]}+{record["usage"]["output_tokens"]} tokens, '
+    f'{record["seconds"]}s, {record["stopReason"]}'
+  )
   return 0
 
 
@@ -354,12 +432,19 @@ def main(argv):
   parser.add_argument('--out', type=pathlib.Path, help='run file to write')
   parser.add_argument('--resume', type=pathlib.Path, help='run file to continue')
   parser.add_argument('--max-turns', type=int, default=12)
-  parser.add_argument('--ask', metavar='QUESTION', help='answer this one question and print it; write nothing')
-  parser.add_argument('--mode', choices=('compose', 'planner'), default='compose',
-                      help='compose: the model reads blocks and submits ids; planner: it states a plan')
+  parser.add_argument(
+    '--ask', metavar='QUESTION', help='answer this one question and print it; write nothing'
+  )
+  parser.add_argument(
+    '--mode',
+    choices=('compose', 'planner'),
+    default='compose',
+    help='compose: the model reads blocks and submits ids; planner: it states a plan',
+  )
   args = parser.parse_args(argv)
 
   import anthropic
+
   client = anthropic.Anthropic(api_key=api_key())
   system = (PLANNER_PROMPT if args.mode == 'planner' else PROMPT).read_text()
   if args.ask:
@@ -370,8 +455,10 @@ def main(argv):
     questions = [q for q in questions if q['id'] in set(args.ids)]
 
   tag = '-planner' if args.mode == 'planner' else ''
-  out = args.resume or args.out or (
-    RUNS / f'{datetime.date.today().isoformat()}{tag}-{args.model}.jsonl'
+  out = (
+    args.resume
+    or args.out
+    or (RUNS / f'{datetime.date.today().isoformat()}{tag}-{args.model}.jsonl')
   )
   out.parent.mkdir(parents=True, exist_ok=True)
   done = set()
@@ -388,12 +475,12 @@ def main(argv):
       fd.flush()
       comp = record.get('composition') or {}
       print(
-        f"{record['id']} {record['class']:<12} {len(record['toolCalls'])} calls "
-        f"{record['usage']['input_tokens']}+{record['usage']['output_tokens']} tok "
-        f"{record['seconds']}s {record['stopReason']} "
-        f"{len(comp.get('blocks') or [])} blocks"
+        f'{record["id"]} {record["class"]:<12} {len(record["toolCalls"])} calls '
+        f'{record["usage"]["input_tokens"]}+{record["usage"]["output_tokens"]} tok '
+        f'{record["seconds"]}s {record["stopReason"]} '
+        f'{len(comp.get("blocks") or [])} blocks'
         + (' NO COMPOSITION' if record.get('noComposition') else '')
-        + (f" invalid={comp['invalidIds']}" if comp.get('invalidIds') else ''),
+        + (f' invalid={comp["invalidIds"]}' if comp.get('invalidIds') else ''),
       )
   print(f'-> {out}')
   return 0

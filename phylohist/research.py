@@ -1,12 +1,6 @@
-import sys
-import pathlib
-import logging
-import collections
-from functools import cached_property
 import calendar
-
-import yaml
-import jschon
+import logging
+from functools import cached_property
 
 logger = logging.getLogger(__name__)
 
@@ -35,11 +29,9 @@ class Author:
     if len(givens) == 1:
       givens = givens[0].split('-')
     if surname_only == 'siveter':
-      with_initials = \
-        f'{surname_only}.{givens[0][0:2].lower()}.{givens[1][0].lower()}'
+      with_initials = f'{surname_only}.{givens[0][0:2].lower()}.{givens[1][0].lower()}'
     else:
-      with_initials = \
-        f'{surname_only}.' + '.'.join([name[0].lower() for name in givens])
+      with_initials = f'{surname_only}.' + '.'.join([name[0].lower() for name in givens])
 
     expected_set = {surname_only, with_initials}
     if author_key not in expected_set:
@@ -83,9 +75,12 @@ class Author:
     # This is a weird heuristic right now, needs improvement.
     if (
       # 15 pretty arbitrary, no clue if there's a kid genius paleontologist
-      self.birth and year < (self.birth + 15) or
+      self.birth
+      and year < (self.birth + 15)
+      or
       # plus 5 for Barrande 1887
-      self.death and year > (self.death + 5)
+      self.death
+      and year > (self.death + 5)
     ):
       return False
     return True
@@ -182,7 +177,7 @@ class Source:
       source_type = (source_data.keys() & {'journal', 'book', 'reading'}).pop()
       if Publication.get(source_data[source_type]) is None:
         logger.error(f'{source_type} "{source_data[source_type]}" not found!')
-      expected_key = f"{source_data['pubDate']['year']}"
+      expected_key = f'{source_data["pubDate"]["year"]}'
       if source_key[4] != '_':
         # There's a disambiguation letter, just assume it is correct.
         # TODO: figure out something better for disambiguation letters.
@@ -208,13 +203,8 @@ class Source:
     if source_key != expected_key:
       logger.error(f'Expected "{expected_key}" but found "{source_key}"')
 
-    if (
-      (trans_of := source_data.get('translationOf')) and
-      Source.get(trans_of) is None
-    ):
-      logger.error(
-        f'Translation source "{trans_of}" for "{source_key}" not found!'
-      )
+    if (trans_of := source_data.get('translationOf')) and Source.get(trans_of) is None:
+      logger.error(f'Translation source "{trans_of}" for "{source_key}" not found!')
 
   def __str__(self):
     return ', '.join([a.surname for a in self.authors]) + f' ({self.year})'
@@ -222,10 +212,6 @@ class Source:
   @property
   def key(self):
     return self._key
-
-  @property
-  def publication_date(self):
-    return self._pub_date
 
   @property
   def year(self):

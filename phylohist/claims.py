@@ -15,21 +15,40 @@ from .research import Publication, Source
 from .taxa import Taxon
 
 KINDS = (
-  'usage', 'placement', 'acceptance', 'act', 'rejection', 'material',
-  'diagnosis', 'secondhand', 'editorial',
+  'usage',
+  'placement',
+  'acceptance',
+  'act',
+  'rejection',
+  'material',
+  'diagnosis',
+  'secondhand',
+  'editorial',
 )
 
 # The audit.coverage kind each claim is counted under, for the manifest and
 # for the `audit.coverage` value carried on the claim.
 COVERAGE_KINDS = (
-  'skeleton', 'newTaxa', 'types', 'synonymy', 'material', 'occurrences',
-  'illustrations', 'diagnoses', 'phylogeny',
+  'skeleton',
+  'newTaxa',
+  'types',
+  'synonymy',
+  'material',
+  'occurrences',
+  'illustrations',
+  'diagnoses',
+  'phylogeny',
 )
 
 _TAXON_FIELDS = ('taxon', 'openTaxon', 'cfTaxon', 'affTaxon')
 _PRINTED_FIELDS = ('citedAs', 'auth', 'year', 'in')
 _PLACEMENT_FLAGS = (
-  'provisional', 'questionable', 'quoted', 'pars', 'tentative', 'outgroup',
+  'provisional',
+  'questionable',
+  'quoted',
+  'pars',
+  'tentative',
+  'outgroup',
   'stem',
 )
 _ACCEPTANCE_FLAGS = ('pars', 'tentative')
@@ -38,11 +57,26 @@ _ACCEPTANCE_FLAGS = ('pars', 'tentative')
 _CITED_AXES = ('synonyms', 'non')
 # Role words as recorded today (the schema's enum and the plurals the
 # occurrence blocks use); D1 will fix the vocabulary.
-_SPECIMEN_ROLES = frozenset({
-  'holotype', 'allotype', 'lectotype', 'neotype', 'syntype', 'hypotypes',
-  'kleptotypes', 'paralectotypes', 'paratypes', 'plesiotypes', 'syntypes',
-  'topotypes', 'additional', 'unknowntypes', 'holotypes', 'unspecified',
-})
+_SPECIMEN_ROLES = frozenset(
+  {
+    'holotype',
+    'allotype',
+    'lectotype',
+    'neotype',
+    'syntype',
+    'hypotypes',
+    'kleptotypes',
+    'paralectotypes',
+    'paratypes',
+    'plesiotypes',
+    'syntypes',
+    'topotypes',
+    'additional',
+    'unknowntypes',
+    'holotypes',
+    'unspecified',
+  }
+)
 
 
 _rank_hubs = None
@@ -106,11 +140,14 @@ def _coverage_kind(claim):
     return 'synonymy'
   if kind == 'act':
     return {
-      'new': 'newTaxa', 'placeholder': 'newTaxa', 'type': 'types',
+      'new': 'newTaxa',
+      'placeholder': 'newTaxa',
+      'type': 'types',
     }.get(claim['actKind'])
   if kind == 'material':
     return {
-      'specimen': 'material', 'occurrence': 'occurrences',
+      'specimen': 'material',
+      'occurrence': 'occurrences',
       'illustration': 'illustrations',
     }[claim['materialKind']]
   if kind == 'diagnosis':
@@ -130,14 +167,10 @@ class _NodeClaims:
     self.claims = []
 
     root = node.root
-    self.tree = (
-      'taxonomy' if node.tree_type == 'taxonomy' else node.tree_type
-    )
+    self.tree = 'taxonomy' if node.tree_type == 'taxonomy' else node.tree_type
     self.tree_notes = root.tree_notes
     self.cited_entry = node.axis in _CITED_AXES
-    self.pages, self.pages_inherited = (
-      (None, False) if self.cited_entry else _effective_pages(node)
-    )
+    self.pages, self.pages_inherited = (None, False) if self.cited_entry else _effective_pages(node)
     self.subject = node.taxon.key if node.taxon is not None else None
     self.placeholder = placeholder_kind(node.taxon)
 
@@ -145,8 +178,7 @@ class _NodeClaims:
     # removed name's group), for the claims that need it.
     self.owner = node.parent if node.axis != 'children' else None
     self.owner_key = (
-      self.owner.taxon.key
-      if self.owner is not None and self.owner.taxon is not None else None
+      self.owner.taxon.key if self.owner is not None and self.owner.taxon is not None else None
     )
 
   # -- the shared record ---------------------------------------------------
@@ -202,9 +234,7 @@ class _NodeClaims:
     # A claim the editorial block says was inferred is the editor's, not
     # the paper's; it says so, and the manifest does not count it.
     inferred = (self.data.get('editorial') or {}).get('inferred')
-    if inferred is True or (
-      isinstance(inferred, list) and field is not None and field in inferred
-    ):
+    if inferred is True or (isinstance(inferred, list) and field is not None and field in inferred):
       claim['inferred'] = True
     coverage_kind = _coverage_kind(claim)
     audit = {'state': self.audit.get('state', 'unaudited')}
@@ -256,14 +286,10 @@ class _NodeClaims:
         if (kind := placeholder_kind(ancestor.taxon)) is not None:
           claim['parentPlaceholder'] = kind
         if ancestor is not node.parent:
-          claim['parentPath'] = (
-            f'{node.parent.position}{node.parent.pointer}'.rstrip('/')
-          )
+          claim['parentPath'] = f'{node.parent.position}{node.parent.pointer}'.rstrip('/')
       else:
         claim['parent'] = None
-        claim['parentPath'] = (
-          f'{node.parent.position}{node.parent.pointer}'.rstrip('/')
-        )
+        claim['parentPath'] = f'{node.parent.position}{node.parent.pointer}'.rstrip('/')
       claim['position'] = node.relpath[1]
       self._emit(claim, 'children')
 
@@ -317,9 +343,7 @@ class _NodeClaims:
             self._occurrence_specimens(index, key, outer, ids)
           else:
             self._occurrence_specimens(index, outer, key, ids)
-    for illustration in (
-      () if self.cited_entry else data.get('illustrations') or ()
-    ):
+    for illustration in () if self.cited_entry else data.get('illustrations') or ():
       claim = self._base('material')
       claim['materialKind'] = 'illustration'
       claim['illustration'] = illustration
@@ -332,10 +356,9 @@ class _NodeClaims:
 
     if 'editorial' in data:
       claim = self._base('editorial')
-      claim.update({
-        k: v for k, v in data['editorial'].items()
-        if k in ('inferred', 'source', 'basis')
-      })
+      claim.update(
+        {k: v for k, v in data['editorial'].items() if k in ('inferred', 'source', 'basis')}
+      )
       self._emit(claim)
 
     self._number()
@@ -396,7 +419,9 @@ class _NodeClaims:
         self._act('modifier', 'modifier', modifier=modifier)
     if node.corrected is not None and node.corrected.taxon is not None:
       self._act(
-        'corrected', 'corrected', correctedFrom=node.corrected.taxon.key,
+        'corrected',
+        'corrected',
+        correctedFrom=node.corrected.taxon.key,
       )
     if node.moved is not None and node.moved.taxon is not None:
       self._act('moved', 'moved', movedFrom=node.moved.taxon.key)
@@ -411,7 +436,7 @@ class _NodeClaims:
     repositories = set()
     entries = value if isinstance(value, list) else [value]
     for entry in entries:
-      for item in (entry if isinstance(entry, list) else [entry]):
+      for item in entry if isinstance(entry, list) else [entry]:
         if isinstance(item, dict):
           if 'id' in item:
             ids.append(item['id'])
@@ -517,15 +542,14 @@ def names_index():
       display = None
     if display or authority.source is not None:
       row['authority'] = {'display': display or None}
-      # The parts a heading is built from, in the corpus's citation form.
-      try:
+      # The parts a heading is built from, in the corpus's citation form;
+      # a record that names no author has none.
+      if authority.authors is not None:
         row['authority']['authors'] = [a.surname for a in authority.authors]
         if authority.attribution_differs_from_source:
           row['authority']['in'] = [a.surname for a in authority.source_authors]
         if authority.year:
           row['authority']['year'] = authority.year
-      except (TypeError, AttributeError):
-        pass
       if authority.source is not None:
         row['authority']['source'] = authority.source.key
     for field in ('homonym', 'originalParent', 'lang', 'status'):
@@ -546,8 +570,7 @@ def names_index():
 
 def _source_order(source_key):
   source = Source.get(source_key)
-  year = source.year if source is not None and not source.in_preparation \
-    else 9999
+  year = source.year if source is not None and not source.in_preparation else 9999
   return (year, source_key)
 
 
@@ -571,17 +594,20 @@ def manifest(claims_by_source):
     claims = claims_by_source.get(source_key, [])
     by_kind = collections.Counter(c['kind'] for c in claims)
     entry['claims'] = dict(sorted(by_kind.items()))
-    entry['acts'] = dict(sorted(collections.Counter(
-      c['actKind'] for c in claims if c['kind'] == 'act'
-    ).items()))
-    entry['material'] = dict(sorted(collections.Counter(
-      c['materialKind'] for c in claims if c['kind'] == 'material'
-    ).items()))
+    entry['acts'] = dict(
+      sorted(collections.Counter(c['actKind'] for c in claims if c['kind'] == 'act').items())
+    )
+    entry['material'] = dict(
+      sorted(
+        collections.Counter(c['materialKind'] for c in claims if c['kind'] == 'material').items()
+      )
+    )
 
     # Editor-inferred claims are not the paper's, so they do not count
     # towards what the paper's coverage was declared to be.
     derived = collections.Counter(
-      c['audit']['coverageKind'] for c in claims
+      c['audit']['coverageKind']
+      for c in claims
       if 'coverageKind' in c['audit'] and not c.get('inferred')
     )
     declared = source.audit.get('coverage') or {}
@@ -605,8 +631,5 @@ def manifest(claims_by_source):
 
   return {
     'sources': dict(sorted(sources.items())),
-    'taxa': {
-      key: sorted(keys, key=_source_order)
-      for key, keys in sorted(taxa.items())
-    },
+    'taxa': {key: sorted(keys, key=_source_order) for key, keys in sorted(taxa.items())},
   }

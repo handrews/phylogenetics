@@ -1,14 +1,8 @@
-import sys
-import pathlib
-import logging
 import collections
+import logging
 from functools import cached_property, reduce
 
-import yaml
-import jschon
-
 from .research import Author, Source
-
 
 logger = logging.getLogger(__name__)
 
@@ -67,8 +61,7 @@ def _check_unregistered_author(author_string, where=None):
   if Author.get(author_string.lower()):
     at = f' at {where}' if where is not None else ''
     logger.warning(
-      f'Unregistered author "{author_string}"{at} matches registered key '
-      f'"{author_string.lower()}"',
+      f'Unregistered author "{author_string}"{at} matches registered key "{author_string.lower()}"',
     )
 
 
@@ -76,7 +69,7 @@ class Authority:
   def __init__(self, data):
     self._source = None
 
-    if (a := data.get('authority' )):
+    if a := data.get('authority'):
       source_key = a['source']
       self._source = Source.get(source_key)
       if not self._source:
@@ -121,14 +114,13 @@ class Authority:
     if self._year:
       for a in self._source_authors:
         if (
-          not a.could_publish_in(self._year) and
-          not (a.surname == 'Klein' and self._year == 1778) and
-          not (a.surname == 'Linnaeus' and self._year == 1790) and
-          not (a.surname == 'Forsskål' and self._year == 1775)
+          not a.could_publish_in(self._year)
+          and not (a.surname == 'Klein' and self._year == 1778)
+          and not (a.surname == 'Linnaeus' and self._year == 1790)
+          and not (a.surname == 'Forsskål' and self._year == 1775)
         ):
           logger.error(
-            f'Source {self} year {self._year} too far '
-            f'outside of {a} lifespan!',
+            f'Source {self} year {self._year} too far outside of {a} lifespan!',
           )
 
   def __str__(self):
@@ -166,10 +158,7 @@ class Authority:
 
   @property
   def authors(self):
-    return (
-      self._authors if self.attribution_differs_from_source
-      else self._source_authors
-    )
+    return self._authors if self.attribution_differs_from_source else self._source_authors
 
   @property
   def source_authors(self):
@@ -187,17 +176,13 @@ class Authority:
     elif self.authors is None:
       string = 'unknown'
     else:
-      string = '_'.join([
-        (a.key if a.key else a.surname.lower())
-        for a in self.authors
-      ])
+      string = '_'.join([(a.key if a.key else a.surname.lower()) for a in self.authors])
     if self.year:
       return f'{string}_{self._year}'
     return string
 
 
 class Taxon:
-
   _taxa = {}
 
   @classmethod
@@ -216,14 +201,14 @@ class Taxon:
 
     if not self._rank:
       if self._name is None:
-        logger.error(f"Unnamed, unranked taxon {taxon_key}!")
+        logger.error(f'Unnamed, unranked taxon {taxon_key}!')
 
       self._rank = 'species' if self._name.islower() else 'genus'
       # TODO: Figure out if homonym/originalParent/needsQualification relevant.
 
     logger.debug(f'  Processing taxon "{taxon_key}"...')
 
-    if (alt_key := taxon_data.get('altSpellingOf')):
+    if alt_key := taxon_data.get('altSpellingOf'):
       if not (alt := Taxon.get(alt_key)):
         logger.error(f'Taxon {taxon_key} alt spelling of unknown {alt_key}')
       self._alt = alt
@@ -236,7 +221,7 @@ class Taxon:
         if field in alt._data:
           self._data[field] = alt._data[field]
 
-    elif (latin_key := taxon_data.get('vulgarSpellingOf')):
+    elif latin_key := taxon_data.get('vulgarSpellingOf'):
       if not (latin := Taxon.get(latin_key)):
         logger.error(f'Taxon {taxon_key} vulgar spelling of unknown {alt_key}')
       self._alt = latin
@@ -246,7 +231,7 @@ class Taxon:
       else:
         self._authority = latin.authority
 
-    elif (alt_key := taxon_data.get('altRankOf')):
+    elif alt_key := taxon_data.get('altRankOf'):
       if not (alt := Taxon.get(alt_key)):
         logger.error(f'Taxon {taxon_key} alt rank of unknown {alt_key}')
       self._alt = alt
@@ -282,9 +267,9 @@ class Taxon:
       return False, {expected}
 
     if (
-      self._data.get('homonym') or
-      self._data.get('needsQualification') or
-      self.rank in ('species', 'subspecies', 'variety')
+      self._data.get('homonym')
+      or self._data.get('needsQualification')
+      or self.rank in ('species', 'subspecies', 'variety')
     ):
       suffix_expected = expected + '_' + self.authority.taxon_suffix
       expected_set = {suffix_expected}
@@ -293,9 +278,9 @@ class Taxon:
     else:
       expected_set = {expected}
 
-    expected_set.add(f"{expected}-{self.rank.lower()}")
-    if (op := self._data.get('originalParent')):
-      expected_set = {e + f"_{op.lower()}" for e in expected_set}
+    expected_set.add(f'{expected}-{self.rank.lower()}')
+    if op := self._data.get('originalParent'):
+      expected_set = {e + f'_{op.lower()}' for e in expected_set}
 
     logger.debug(f'...built {expected_set}')
 
@@ -305,36 +290,38 @@ class Taxon:
 
   def _check_rank(self):
     if (
-      self.rank in NON_RANKS or
-      self.name.lower() == self.name or
-      self.key.endswith('-' + self.rank.lower())
+      self.rank in NON_RANKS
+      or self.name.lower() == self.name
+      or self.key.endswith('-' + self.rank.lower())
     ):
       return
 
     for suffix, rank, exceptions in (
       ('inae', 'Subfamily', frozenset()),
-      ('idae', 'Family', frozenset({
-        'Crinoiden',
-        'Crinoideen',
-        'Cystideen',
-        'Échinides',
-        'Echinides',
-        'Stelleridea',
-        'Stellérides',
-        'Stellerides',
-        'Stelleridica',
-        'Fistulides',
-      })),
+      (
+        'idae',
+        'Family',
+        frozenset(
+          {
+            'Crinoiden',
+            'Crinoideen',
+            'Cystideen',
+            'Échinides',
+            'Echinides',
+            'Stelleridea',
+            'Stellérides',
+            'Stellerides',
+            'Stelleridica',
+            'Fistulides',
+          }
+        ),
+      ),
     ):
-      if self.name.endswith (suffix) and self.rank != rank:
+      if self.name.endswith(suffix) and self.rank != rank:
         logger.warning(
           f'{self.name} with suffix "{suffix}" expected to have rank of {rank}',
         )
-      if (
-        self.rank == rank and
-        not self.name.endswith(suffix) and
-        not self.name in exceptions
-      ):
+      if self.rank == rank and not self.name.endswith(suffix) and self.name not in exceptions:
         if suffix == 'idae' and self.name.endswith('idæ'):
           continue
         logger.warning(
@@ -342,41 +329,41 @@ class Taxon:
         )
 
     # TODO: Verify that each exception is the expected rank
-    ida_classes = frozenset({
-      'Acalephida',
-      'Arachnida',
-      'Caryocystitida',
-      'Echinida',
-      'Fistulida',
-      'Glyptocystitida',
-      'Hemicosmitida',
-      'Medusida',
-      'Stellerida',
-      'Zoanthida',
-    })
+    ida_classes = frozenset(
+      {
+        'Acalephida',
+        'Arachnida',
+        'Caryocystitida',
+        'Echinida',
+        'Fistulida',
+        'Glyptocystitida',
+        'Hemicosmitida',
+        'Medusida',
+        'Stellerida',
+        'Zoanthida',
+      }
+    )
     ida_subclasses = frozenset({'Disparida', 'Helicoplacida', 'Polyplacida'})
     ida_parvclasses = frozenset({'Cladida'})
     ida_suborders = frozenset({'Placocystida'})
     ida_superfamilies = frozenset({'Protocrinitida'})
     ida_exceptions = (
-      ida_classes |
-      ida_subclasses |
-      ida_parvclasses |
-      ida_suborders |
-      ida_superfamilies
+      ida_classes | ida_subclasses | ida_parvclasses | ida_suborders | ida_superfamilies
     )
 
-    ina_exceptions = frozenset({
-      'Carallina',
-      'Corallina',
-      'Craterina',
-      'Funiculina',
-      'Meandrina',
-      'Palasterina',
-      'Palaeasterina',
-      'Palæasterina',
-      'Tellina',
-    })
+    ina_exceptions = frozenset(
+      {
+        'Carallina',
+        'Corallina',
+        'Craterina',
+        'Funiculina',
+        'Meandrina',
+        'Palasterina',
+        'Palaeasterina',
+        'Palæasterina',
+        'Tellina',
+      }
+    )
 
     for suffix, ranks, exceptions in (
       ('acea', ('Superfamily',), frozenset({'Crustacea'})),
@@ -388,11 +375,7 @@ class Taxon:
         frozenset({'Lithozoa'}),
       ),
     ):
-      if (
-        self.name.endswith(suffix) and
-        self.rank not in ranks and
-        self.name not in exceptions
-      ):
+      if self.name.endswith(suffix) and self.rank not in ranks and self.name not in exceptions:
         logger.warning(
           f'{self.name} with suffix "{suffix}" expected to have one of ranks '
           f'{ranks} but has rank {self.rank}',
@@ -431,7 +414,7 @@ class Taxon:
     # If a name is the result of a re-ranking that has been
     # done both with and without translation, the translation is preferred.
     # TODO: Align with ICZN wherever possible.
-    if (alt := self._data.get('altSpellingOf')):
+    if alt := self._data.get('altSpellingOf'):
       return Taxon.get(alt).name
     return self.name
 
@@ -538,7 +521,6 @@ class Tree:
 
     return trees
 
-
   def __init__(
     self,
     tree_data,
@@ -546,8 +528,9 @@ class Tree:
     parent=None,
     relpath=(),
   ):
-    if ((tree_metadata, parent) == (None, None) or
-        (tree_metadata is not None and parent is not None)):
+    if (tree_metadata, parent) == (None, None) or (
+      tree_metadata is not None and parent is not None
+    ):
       logger.error(
         'Tree nodes must have either a parent or metadata, but not both!',
       )
@@ -572,11 +555,14 @@ class Tree:
     self._check_primary_taxon()
 
     self._bracket = self._check_taxon('bracket')
-    self._moved = Tree(self._data['moved'], parent=self, relpath=('moved',)) \
-      if 'moved' in self._data else None
-    self._corrected = Tree(
-      self._data['corrected'], parent=self, relpath=('corrected',)
-    ) if 'corrected' in self._data else None
+    self._moved = (
+      Tree(self._data['moved'], parent=self, relpath=('moved',)) if 'moved' in self._data else None
+    )
+    self._corrected = (
+      Tree(self._data['corrected'], parent=self, relpath=('corrected',))
+      if 'corrected' in self._data
+      else None
+    )
 
     for index, vel_or in enumerate(self._data.get('or', ())):
       self._or.append(Tree(vel_or, parent=self, relpath=('or', index)))
@@ -587,17 +573,11 @@ class Tree:
     for index, rem in enumerate(self._data.get('removed', ())):
       self._removed.append(Tree(rem, parent=self, relpath=('removed', index)))
     for index, relparent in enumerate(self._data.get('parents', ())):
-      self._parents.append(
-        Tree(relparent, parent=self, relpath=('parents', index))
-      )
+      self._parents.append(Tree(relparent, parent=self, relpath=('parents', index)))
     for index, placement in enumerate(self._data.get('altPlacements', ())):
-      self._alt_placements.append(
-        Tree(placement, parent=self, relpath=('altPlacements', index))
-      )
+      self._alt_placements.append(Tree(placement, parent=self, relpath=('altPlacements', index)))
     for index, child in enumerate(self._data.get('children', ())):
-      self._children.append(
-        Tree(child, parent=self, relpath=('children', index))
-      )
+      self._children.append(Tree(child, parent=self, relpath=('children', index)))
 
     if self._taxon:
       if self._taxon.name:
@@ -623,9 +603,7 @@ class Tree:
     if self._metadata:
       self._source = Source.get(self._metadata['source_key'])
       if self._source is None:
-        logger.error(
-          f"Tree source {self._metadata['source_key']} not reognized!"
-        )
+        logger.error(f'Tree source {self._metadata["source_key"]} not reognized!')
 
       self._type = self._metadata['type']
       if self._type not in Tree._type_index:
@@ -646,14 +624,14 @@ class Tree:
 
     if taxon_key:
       if field in self._PROXY_FIELDS:
-        if (proxy_target := Taxon.get(taxon_key)):
+        if proxy_target := Taxon.get(taxon_key):
           taxon = ProxyTaxon(
             proxy_target,
-            field[:-len('Taxon')] + '.',
+            field[: -len('Taxon')] + '.',
             self._source,
           )
         else:
-          raise ValueError(f"Could not get proxy target {taxon_key}")
+          raise ValueError(f'Could not get proxy target {taxon_key}')
       else:
         taxon = Taxon.get(taxon_key)
         if taxon is None:
@@ -668,8 +646,7 @@ class Tree:
         )
       if field in unnamed and taxon.name:
         logger.error(
-          f'Taxon {self._taxon} at {self}/{field} expected '
-          'to not be named.',
+          f'Taxon {self._taxon} at {self}/{field} expected to not be named.',
         )
       return taxon
     return None
@@ -678,8 +655,7 @@ class Tree:
     taxon_fields = self._ALL_TAXON_FIELDS & self._data.keys()
     if len(taxon_fields) > 1:
       logger.error(
-        f'Found {len(taxon_fields)} taxon fields '
-        f'({taxon_fields}), expected at most one!',
+        f'Found {len(taxon_fields)} taxon fields ({taxon_fields}), expected at most one!',
       )
 
     if len(taxon_fields) == 1:
@@ -691,20 +667,17 @@ class Tree:
         return
 
       if (
-        self._type == self.TYPE_TAXONOMY and
-        self.is_primary and
-        taxon_field in self._NAMED_FIELDS and
-        self._taxon.authority.source
+        self._type == self.TYPE_TAXONOMY
+        and self.is_primary
+        and taxon_field in self._NAMED_FIELDS
+        and self._taxon.authority.source
       ):
-        is_new = (
-          self._data.get('new')
-        )
+        is_new = self._data.get('new')
         tsource = self._taxon._authority.source
 
         if is_new and self._source != tsource:
           logger.error(
-            f'Expected source {self._source} for new taxon {self._taxon}, '
-            f'got source {tsource}',
+            f'Expected source {self._source} for new taxon {self._taxon}, got source {tsource}',
           )
         elif not is_new and self._source == tsource:
           logger.error(
@@ -773,9 +746,7 @@ class Tree:
 
   @cached_property
   def taxon_path(self):
-    # logger.warning(str(id(self)) + ' ' + str(self.taxon))
     path = f'/{self.taxon.key}' if self.taxon else ''
-    # logger.warning(f'{path} ... {self._relpath}')
     for segment in self._relpath:
       if segment != 'children':
         path = f'/{segment}{path}'
@@ -838,10 +809,6 @@ class Tree:
     return self._corrected
 
   @property
-  def or_(self):
-    return tuple(self._or)
-
-  @property
   def synonyms(self):
     return tuple(self._synonyms)
 
@@ -893,11 +860,3 @@ class Tree:
   @property
   def is_new(self):
     return self._data.get('new', False)
-
-  @property
-  def is_provisional(self):
-    return self._data.get('provisional', False)
-
-  @property
-  def is_questionable(self):
-    return self._data.get('questionable', False)

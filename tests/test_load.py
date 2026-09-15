@@ -16,6 +16,7 @@ import logging
 import os
 import pathlib
 
+import jschon
 import pytest
 
 EXPECTED_WARNINGS_PATH = pathlib.Path(__file__).parent / 'expected-warnings.txt'
@@ -45,9 +46,7 @@ def test_expected_warnings(load_records):
   if os.getenv('PHYLOHIST_DRAFTS'):
     pytest.skip('drafts loaded; the warning snapshot covers data/ only')
   _, records, _ = load_records
-  actual = sorted({
-    r.getMessage() for r in records if r.levelno == logging.WARNING
-  })
+  actual = sorted({r.getMessage() for r in records if r.levelno == logging.WARNING})
 
   if os.getenv('PHYLOHIST_UPDATE_EXPECTED'):
     with open(EXPECTED_WARNINGS_PATH, 'w') as fd:
@@ -73,12 +72,23 @@ def test_expected_warnings(load_records):
     parts = []
     if unexpected:
       parts.append(
-        'Unexpected warnings (not in tests/expected-warnings.txt):\n' +
-        '\n'.join(sorted(unexpected)),
+        'Unexpected warnings (not in tests/expected-warnings.txt):\n'
+        + '\n'.join(sorted(unexpected)),
       )
     if stale:
       parts.append(
-        'Stale expected warnings (no longer produced):\n' +
-        '\n'.join(sorted(stale)),
+        'Stale expected warnings (no longer produced):\n' + '\n'.join(sorted(stale)),
       )
     pytest.fail('\n\n'.join(parts))
+
+
+def test_invalid_tree_raises(tmp_path):
+  # A file that fails the schema stops the load with an error the caller
+  # can handle, instead of ending the process.
+  from phylohist import io
+
+  io.ensure_catalog()
+  schema = jschon.JSONSchema(io.load_yaml(io.FILEDIR / 'schemas' / 'phylogeny.yaml'))
+  (tmp_path / 'broken.yaml').write_text('tree:\n  rnak: genus\n')
+  with pytest.raises(io.LoadError, match='broken.yaml'):
+    io._load_tree_dir(tmp_path, schema['$defs']['trees'], {})

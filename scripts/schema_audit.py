@@ -29,7 +29,6 @@ import collections
 import json
 import pathlib
 import re
-import subprocess
 import sys
 
 import jschon
@@ -37,7 +36,9 @@ import jschon
 sys.path.insert(0, str(pathlib.Path(__file__).parent.parent))
 
 from phylohist.io import (  # noqa: E402
-  COMMON_FILES, TREE_DIR, load_yaml,
+  COMMON_FILES,
+  TREE_DIR,
+  load_yaml,
 )
 
 ROOT = pathlib.Path(__file__).parent.parent
@@ -54,22 +55,43 @@ def location(schema):
 
 
 # JSON Schema type name -> the Python type names `type_name()` reports.
-JSON_TYPES = {'string': {'str'}, 'integer': {'int'}, 'number': {'int', 'float'},
-              'boolean': {'bool'}, 'null': {'null'}, 'array': {'list'},
-              'object': {'dict'}}
+JSON_TYPES = {
+  'string': {'str'},
+  'integer': {'int'},
+  'number': {'int', 'float'},
+  'boolean': {'bool'},
+  'null': {'null'},
+  'array': {'list'},
+  'object': {'dict'},
+}
 
 
 def type_name(value):
   if isinstance(value, bool):
     return 'bool'
-  return {int: 'int', float: 'float', str: 'str',
-          list: 'list', dict: 'dict', type(None): 'null'}.get(
-            type(value), type(value).__name__)
+  return {
+    int: 'int',
+    float: 'float',
+    str: 'str',
+    list: 'list',
+    dict: 'dict',
+    type(None): 'null',
+  }.get(type(value), type(value).__name__)
 
 
 # Keywords whose Result children are dispatch nodes rather than keyword nodes.
-_DISPATCH = frozenset({'properties', 'patternProperties', '$defs', 'allOf',
-                       'anyOf', 'oneOf', 'prefixItems', 'dependentSchemas'})
+_DISPATCH = frozenset(
+  {
+    'properties',
+    'patternProperties',
+    '$defs',
+    'allOf',
+    'anyOf',
+    'oneOf',
+    'prefixItems',
+    'dependentSchemas',
+  }
+)
 
 
 class Census:
@@ -190,8 +212,17 @@ def run_census():
 
 
 # Keywords whose value is a single subschema, or a map/array of subschemas.
-_SUBSCHEMA = ('items', 'additionalProperties', 'propertyNames', 'not',
-              'if', 'then', 'else', 'unevaluatedProperties', 'contains')
+_SUBSCHEMA = (
+  'items',
+  'additionalProperties',
+  'propertyNames',
+  'not',
+  'if',
+  'then',
+  'else',
+  'unevaluatedProperties',
+  'contains',
+)
 _SUBSCHEMA_MAP = ('properties', 'patternProperties', '$defs')
 _SUBSCHEMA_LIST = ('allOf', 'anyOf', 'oneOf', 'prefixItems')
 
@@ -207,7 +238,7 @@ def inventory(node, base='phylogeny#', pointer='', out=None):
   if not isinstance(node, dict):
     return out
   if '$id' in node and pointer:
-    base, pointer = f"{node['$id']}#", ''
+    base, pointer = f'{node["$id"]}#', ''
   # jschon labels a resource root without the empty fragment ("tree", not
   # "tree#"), so match that or the roots look permanently unreached.
   out[f'{base}{pointer}' if pointer else base.rstrip('#')] = node
@@ -246,14 +277,19 @@ def counts(census, loc):
   return len(census.reached.get(('data', loc), ()))
 
 
-def analyse(census, _unused=None):
+def analyse(census):
   """Turn raw census data into the report's findings."""
   schema_yaml = load_yaml(SCHEMA_PATH)
   locs = inventory(schema_yaml)
   reached = {loc for _, loc in census.reached}
 
-  report = {'unreached': [], 'properties': [], 'enums': [], 'types': [],
-            'invalid_files': census.invalid}
+  report = {
+    'unreached': [],
+    'properties': [],
+    'enums': [],
+    'types': [],
+    'invalid_files': census.invalid,
+  }
 
   # 1. Coverage: schema locations no data ever reached.
   for loc in sorted(locs):
@@ -262,7 +298,7 @@ def analyse(census, _unused=None):
 
   # 2. Property frequency, with the containing def's instance count as the
   #    denominator so "rare" is readable as a percentage.
-  for loc, node in sorted(locs.items()):
+  for loc in sorted(locs):
     m = re.match(r'(.*)/properties/([^/]+)$', loc)
     if not m:
       continue
@@ -270,12 +306,18 @@ def analyse(census, _unused=None):
     parent, name = m.group(1).rstrip('#') or m.group(1), m.group(2)
     d = counts(census, loc)
     pd = counts(census, parent)
-    report['properties'].append({
-      'location': loc, 'def': def_of(loc), 'container': parent,
-      'property': name, 'label': _label(parent, name),
-      'data': d, 'container_data': pd,
-      'pct': round(100.0 * d / pd, 1) if pd else None,
-    })
+    report['properties'].append(
+      {
+        'location': loc,
+        'def': def_of(loc),
+        'container': parent,
+        'property': name,
+        'label': _label(parent, name),
+        'data': d,
+        'container_data': pd,
+        'pct': round(100.0 * d / pd, 1) if pd else None,
+      }
+    )
 
   # 3. Enum members: used vs never used.
   for loc, node in sorted(locs.items()):
@@ -283,13 +325,15 @@ def analyse(census, _unused=None):
       continue
     used = {k: len(v) for k, v in census.enums.get(loc, {}).items()}
     allowed = {repr(v): v for v in node['enum']}
-    report['enums'].append({
-      'location': loc, 'def': def_of(loc),
-      'used': sorted(((allowed.get(k, k), n) for k, n in used.items()),
-                     key=lambda kv: -kv[1]),
-      'unused': [v for k, v in allowed.items() if k not in used],
-      'total': len(node['enum']),
-    })
+    report['enums'].append(
+      {
+        'location': loc,
+        'def': def_of(loc),
+        'used': sorted(((allowed.get(k, k), n) for k, n in used.items()), key=lambda kv: -kv[1]),
+        'unused': [v for k, v in allowed.items() if k not in used],
+        'total': len(node['enum']),
+      }
+    )
 
   # 4. Value types actually observed where the schema allows a union.
   for loc in sorted(census.types):
@@ -298,11 +342,15 @@ def analyse(census, _unused=None):
     declared = node.get('type')
     if isinstance(declared, str):
       declared = [declared]
-    report['types'].append({
-      'location': loc, 'def': def_of(loc), 'declared': declared,
-      'observed': dict(sorted(seen.items(), key=lambda kv: -kv[1])),
-      'samples': census.samples.get(loc, [])[:200],
-    })
+    report['types'].append(
+      {
+        'location': loc,
+        'def': def_of(loc),
+        'declared': declared,
+        'observed': dict(sorted(seen.items(), key=lambda kv: -kv[1])),
+        'samples': census.samples.get(loc, [])[:200],
+      }
+    )
 
   return report
 
@@ -342,16 +390,16 @@ def cross_check(census, report):
   for name, seen in paths.items():
     raw = census.raw_keys['data'][name]
     if len(seen) > raw:
-      problems.append(f'{name}: result-tree {len(seen)} distinct paths > '
-                      f'raw-YAML {raw} occurrences')
+      problems.append(
+        f'{name}: result-tree {len(seen)} distinct paths > raw-YAML {raw} occurrences'
+      )
   return sorted(problems)
 
 
 def _table(header, rows):
   if not rows:
     return ['(none)', '']
-  out = ['| ' + ' | '.join(header) + ' |',
-         '|' + '|'.join('---' for _ in header) + '|']
+  out = ['| ' + ' | '.join(header) + ' |', '|' + '|'.join('---' for _ in header) + '|']
   out += ['| ' + ' | '.join(str(c) for c in r) + ' |' for r in rows]
   out.append('')
   return out
@@ -359,32 +407,49 @@ def _table(header, rows):
 
 def render(census, report):
   """Render the regenerable census.  Narrative analysis lives elsewhere."""
-  L = ['# Schema usage census', '',
-       '**Generated** by `scripts/schema_audit.py` -- do not edit by hand.',
-       'Narrative analysis of these numbers is in `notes/audits/schema-audit.md`.', '',
-       'Counts are *distinct instance locations* that reached a given schema',
-       'location, measured from the `jschon` evaluation result tree.', '']
+  L = [
+    '# Schema usage census',
+    '',
+    '**Generated** by `scripts/schema_audit.py` -- do not edit by hand.',
+    'Narrative analysis of these numbers is in `notes/audits/schema-audit.md`.',
+    '',
+    'Counts are *distinct instance locations* that reached a given schema',
+    'location, measured from the `jschon` evaluation result tree.',
+    '',
+  ]
 
   if report['invalid_files']:
-    L += [f"> `{'`, `'.join(report['invalid_files'])}` do not currently validate. "
-          'They are still censused -- presence does not require validity -- so '
-          'their columns show what is *used*, not what is correct.', '']
+    L += [
+      f'> `{"`, `".join(report["invalid_files"])}` do not currently validate. '
+      'They are still censused -- presence does not require validity -- so '
+      'their columns show what is *used*, not what is correct.',
+      '',
+    ]
 
-  L += ['## 1. Unreached schema locations', '',
-        'Schema locations no data anywhere reaches. A nested location is listed',
-        'even when its parent is also unreached, so read parents first.', '']
+  L += [
+    '## 1. Unreached schema locations',
+    '',
+    'Schema locations no data anywhere reaches. A nested location is listed',
+    'even when its parent is also unreached, so read parents first.',
+    '',
+  ]
   by_def = collections.defaultdict(list)
   for row in report['unreached']:
     if row['location'] == 'phylogeny':
       continue  # never evaluated directly; io.py always enters via $defs/<name>
     by_def[row['def']].append(row['location'])
-  L += _table(['`$defs`', 'unreached locations'],
-              [(f'`{d}`', '<br>'.join(f'`{x}`' for x in sorted(v)))
-               for d, v in sorted(by_def.items())])
+  L += _table(
+    ['`$defs`', 'unreached locations'],
+    [(f'`{d}`', '<br>'.join(f'`{x}`' for x in sorted(v))) for d, v in sorted(by_def.items())],
+  )
 
-  L += ['## 2. Property frequency by `$defs`', '',
-        '`data %` is the share of that container\'s instances carrying the',
-        'property.', '']
+  L += [
+    '## 2. Property frequency by `$defs`',
+    '',
+    "`data %` is the share of that container's instances carrying the",
+    'property.',
+    '',
+  ]
   groups = collections.defaultdict(list)
   for row in report['properties']:
     groups[row['def']].append(row)
@@ -395,31 +460,39 @@ def render(census, report):
     root = 'tree' if d == 'tree' else f'phylogeny#/$defs/{d}'
     total = len(census.reached.get(('data', root), ()))
     L += [f'### `{d}`' + (f' -- {total} instances in `data/`' if total else ''), '']
-    L += _table(['property', 'data', 'data %'],
-                [(f"`{r['label']}`", r['data'],
-                  '-' if r['pct'] is None else f"{r['pct']}%")
-                 for r in rows])
+    L += _table(
+      ['property', 'data', 'data %'],
+      [(f'`{r["label"]}`', r['data'], '-' if r['pct'] is None else f'{r["pct"]}%') for r in rows],
+    )
 
   L += ['## 3. Enum member usage', '']
   for e in sorted(report['enums'], key=lambda x: x['location']):
     used = sum(n for _, n in e['used'])
-    L += [f"### `{e['location']}`", '',
-          f"{len(e['used'])} of {e['total']} members used, {used} occurrences.", '']
+    L += [
+      f'### `{e["location"]}`',
+      '',
+      f'{len(e["used"])} of {e["total"]} members used, {used} occurrences.',
+      '',
+    ]
     if e['used']:
-      L += _table(['value', 'count'],
-                  [(f'`{v!r}`', n) for v, n in e['used']])
+      L += _table(['value', 'count'], [(f'`{v!r}`', n) for v, n in e['used']])
     if e['unused']:
-      L += [f"**Never used ({len(e['unused'])}):** "
-            + ', '.join(f'`{v!r}`' for v in e['unused']), '']
+      L += [
+        f'**Never used ({len(e["unused"])}):** ' + ', '.join(f'`{v!r}`' for v in e['unused']),
+        '',
+      ]
 
-  L += ['## 4. Observed value types where the schema allows a union', '',
-        'Tests whether each multi-type declaration is actually needed.', '']
+  L += [
+    '## 4. Observed value types where the schema allows a union',
+    '',
+    'Tests whether each multi-type declaration is actually needed.',
+    '',
+  ]
   rows = []
   for t in report['types']:
     if not t['declared'] or len(t['declared']) < 2:
       continue
-    unused_types = [d for d in t['declared']
-                    if not (JSON_TYPES.get(d, {d}) & set(t['observed']))]
+    unused_types = [d for d in t['declared'] if not (JSON_TYPES.get(d, {d}) & set(t['observed']))]
     obs = ', '.join(f'{k}x{v}' for k, v in t['observed'].items())
     strings = []
     for sample in t['samples']:
@@ -431,11 +504,18 @@ def render(census, report):
         strings.append(short)
       if len(strings) == 4:
         break
-    rows.append((f"`{t['location']}`", '/'.join(t['declared']), obs or '-',
-                 ', '.join(f'`{s}`' for s in strings) or '-',
-                 ', '.join(unused_types) or '-'))
-  L += _table(['location', 'declared', 'observed', 'string examples',
-               'declared but unseen'], sorted(rows))
+    rows.append(
+      (
+        f'`{t["location"]}`',
+        '/'.join(t['declared']),
+        obs or '-',
+        ', '.join(f'`{s}`' for s in strings) or '-',
+        ', '.join(unused_types) or '-',
+      )
+    )
+  L += _table(
+    ['location', 'declared', 'observed', 'string examples', 'declared but unseen'], sorted(rows)
+  )
   return '\n'.join(L) + '\n'
 
 
@@ -454,8 +534,7 @@ def main():
     for p in problems:
       print('  ' + p, file=sys.stderr)
     return 1
-  print('cross-check passed: no schema location outnumbers its raw YAML count',
-        file=sys.stderr)
+  print('cross-check passed: no schema location outnumbers its raw YAML count', file=sys.stderr)
 
   dangling = dangling_sources(census)
   report['dangling_sources'] = dangling
@@ -463,8 +542,7 @@ def main():
     bad = dangling[corpus]
     total = sum(census.source_refs[corpus].values())
     if bad:
-      print(f'{corpus}: {len(bad)} dangling source id(s) of {total} checked:',
-            file=sys.stderr)
+      print(f'{corpus}: {len(bad)} dangling source id(s) of {total} checked:', file=sys.stderr)
       for sid, n in bad.items():
         print(f'  {n}x {sid}', file=sys.stderr)
     else:
@@ -477,8 +555,8 @@ def main():
   if args.markdown:
     pathlib.Path(args.markdown).write_text(render(census, report))
   if not (args.json or args.markdown):
-    print(f"{len(report['unreached'])} unreached schema locations")
-    print(f"{len(report['properties'])} property locations")
+    print(f'{len(report["unreached"])} unreached schema locations')
+    print(f'{len(report["properties"])} property locations')
   return 0
 
 

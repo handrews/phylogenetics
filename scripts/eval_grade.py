@@ -46,7 +46,6 @@ from phylohist.tools import ClaimStore  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 QUESTIONS = ROOT / 'eval' / 'questions.yaml'
-README = ROOT / 'eval' / 'README.md'
 
 LEAK_WORDS = re.compile(
   r'\b(yaml|json|jsonl|claim table|record key|taxon_key|source_key|'
@@ -78,7 +77,7 @@ def composed_blocks(record):
 
 def _denial(text):
   for m in DENIAL_WORDS.finditer(text):
-    before = text[max(0, m.start() - 70):m.start()]
+    before = text[max(0, m.start() - 70) : m.start()]
     if not NEGATED.search(before):
       return m.group(0)
   return None
@@ -88,13 +87,12 @@ def mechanical(record, question, store):
   """(failures, notes)."""
   failures, notes = [], []
   expected = question.get('expected') or {}
-  scope = question.get('scope') or {}
   comp = record.get('composition')
   if not comp:
     failures.append('no composition (the model answered in prose or not at all)')
     return failures, notes
   if comp.get('invalidIds'):
-    failures.append(f"submitted block ids the tools never returned: {comp['invalidIds']}")
+    failures.append(f'submitted block ids the tools never returned: {comp["invalidIds"]}')
   beside, between = [], []
   for entry in comp.get('freeText') or ():
     # The first run recorded free text as bare strings, all beside the submission.
@@ -118,21 +116,25 @@ def mechanical(record, question, store):
     failures.append(f'header says the paper lacks it: "{denial}"')
 
   tool_of = _tools_of(record)
-  composed = [dict(b, tool=b.get('tool') or tool_of.get(b['blockId']))
-              for b in composed_blocks(record)]
+  composed = [
+    dict(b, tool=b.get('tool') or tool_of.get(b['blockId'])) for b in composed_blocks(record)
+  ]
   rendered = _normalise(record.get('rendered') or '')
   # One alternative must be met in full: its blocks and its shows, with
   # the question's shows; the failures reported are the nearest miss.
   nearest = None
   for alternative in alternatives(expected):
     misses = [
-      f"no composed block is {spec['tool']} {json.dumps(spec.get('parameters') or {}, ensure_ascii=False)}"
+      f'no composed block is {spec["tool"]} '
+      f'{json.dumps(spec.get("parameters") or {}, ensure_ascii=False)}'
       for spec in alternative['blocks']
       if not any(_block_matches(store, spec, b) for b in composed)
     ]
-    misses += [f'the answer does not show "{text}"'
-               for text in list(expected.get('shows') or ()) + alternative['shows']
-               if _normalise(text) not in rendered]
+    misses += [
+      f'the answer does not show "{text}"'
+      for text in list(expected.get('shows') or ()) + alternative['shows']
+      if _normalise(text) not in rendered
+    ]
     if nearest is None or len(misses) < len(nearest):
       nearest = misses
   failures += nearest or []
@@ -148,13 +150,6 @@ def alternatives(expected):
   spec = expected.get('blocks')
   items = spec['anyOf'] if isinstance(spec, dict) else [spec or []]
   return [item if isinstance(item, dict) else {'blocks': item, 'shows': []} for item in items]
-
-
-def _source_sig(store, text):
-  if not text:
-    return None
-  sig = store.source_signature(text)
-  return (sig['year'], tuple(sig['authors'][:1]))
 
 
 def _tools_of(record):
@@ -208,8 +203,9 @@ def _norm(store, bare, value):
 def _block_matches(store, spec, block):
   # The statements tool answers an empty query in a named source with the
   # gap block itself; an expected gap is met by it.
-  gap_by_statements = (spec['tool'] == 'gap' and block.get('tool') == 'statements'
-                       and block.get('type') == 'statement')
+  gap_by_statements = (
+    spec['tool'] == 'gap' and block.get('tool') == 'statements' and block.get('type') == 'statement'
+  )
   if block.get('tool') != spec['tool'] and not gap_by_statements:
     return False
   actual = {k.replace('_', '').lower(): v for k, v in (block.get('parameters') or {}).items()}
@@ -222,7 +218,17 @@ def _block_matches(store, spec, block):
   return True
 
 
-JUDGE_PROMPT = """You are grading the header and question of an answer assembled from blocks of a closed corpus of published taxonomic opinions. The blocks themselves are computed and are not graded here. Score contract 0, 1 or 2: 2 if the header states only the parameters chosen (which records the group is, whether synonyms and rank variants are included, which trees, the year range) in the language of the scientific community, passes no verdict, and the question (if any) asks about a genuinely ambiguous parameter; 1 for one lapse (a summary, a mechanism word, a judgement); 0 for more. Reply with JSON only: {"contract": n, "reason": "..."} with the reason at most 25 words.
+JUDGE_PROMPT = (
+  'You are grading the header and question of an answer assembled from blocks '
+  'of a closed corpus of published taxonomic opinions. The blocks themselves '
+  'are computed and are not graded here. Score contract 0, 1 or 2: 2 if the '
+  'header states only the parameters chosen (which records the group is, '
+  'whether synonyms and rank variants are included, which trees, the year '
+  'range) in the language of the scientific community, passes no verdict, and '
+  'the question (if any) asks about a genuinely ambiguous parameter; 1 for one '
+  'lapse (a summary, a mechanism word, a judgement); 0 for more. Reply with '
+  'JSON only: {"contract": n, "reason": "..."} with the reason at most 25 words.'
+  """
 
 Question class: %s
 Question: %s
@@ -233,23 +239,27 @@ Expected answer:
 Header: %s
 Question back: %s
 """
+)
 
 
 def judge(client, model, record, question):
   comp = record.get('composition') or {}
   expected = question.get('expected') or {}
   prompt = JUDGE_PROMPT % (
-    question['class'], question['question'],
+    question['class'],
+    question['question'],
     expected.get('answer', '(none written)'),
-    comp.get('header') or '(none)', comp.get('question') or '(none)',
+    comp.get('header') or '(none)',
+    comp.get('question') or '(none)',
   )
   # The judge's reasoning counts against max_tokens; a low cap truncates
   # the JSON or leaves no text at all, so the cap is generous and a
   # malformed reply is retried once before it is recorded as an error.
   text = ''
   for _ in range(2):
-    response = client.messages.create(model=model, max_tokens=4000,
-                                      messages=[{'role': 'user', 'content': prompt}])
+    response = client.messages.create(
+      model=model, max_tokens=4000, messages=[{'role': 'user', 'content': prompt}]
+    )
     text = ''.join(b.text for b in response.content if b.type == 'text')
     verdict = _parse_verdict(text)
     if verdict is not None:
@@ -296,34 +306,36 @@ def summary(path, grades):
   lines.append('| class | questions | mechanical pass |')
   lines.append('|---|---|---|')
   for cls, row in sorted(by_class.items()):
-    lines.append(f"| {cls} | {row['n']} | {row['pass']} |")
+    lines.append(f'| {cls} | {row["n"]} | {row["pass"]} |')
   lines.append('')
   lines.append('## Failures and notes')
   lines.append('')
   for grade in grades:
     if not grade['failures'] and not grade.get('notes'):
       continue
-    lines.append(f"### {grade['id']} ({grade['class']})")
+    lines.append(f'### {grade["id"]} ({grade["class"]})')
     lines.append('')
-    lines.append(f"Q: {grade['question']}")
+    lines.append(f'Q: {grade["question"]}')
     lines.append('')
     for failure in grade['failures']:
       lines.append(f'- failure: {failure}')
     for note in grade.get('notes') or ():
       lines.append(f'- note: {note}')
     if grade.get('judge'):
-      lines.append(f"- judge contract {grade['judge'].get('contract')}: {grade['judge'].get('reason', '')}")
+      lines.append(
+        f'- judge contract {grade["judge"].get("contract")}: {grade["judge"].get("reason", "")}'
+      )
     comp = grade.get('composition') or {}
     lines.append('')
     if comp.get('plan'):
-      lines.append(f"Plan: {json.dumps(comp['plan'], ensure_ascii=False)}")
+      lines.append(f'Plan: {json.dumps(comp["plan"], ensure_ascii=False)}')
       if comp.get('planErrors'):
-        lines.append(f"Plan errors: {json.dumps(comp['planErrors'], ensure_ascii=False)}")
-    lines.append(f"Header: {comp.get('header', '')}")
+        lines.append(f'Plan errors: {json.dumps(comp["planErrors"], ensure_ascii=False)}')
+    lines.append(f'Header: {comp.get("header", "")}')
     for b in comp.get('blocks') or ():
-      lines.append(f"- {b['type']} {json.dumps(b.get('parameters'), ensure_ascii=False)}")
+      lines.append(f'- {b["type"]} {json.dumps(b.get("parameters"), ensure_ascii=False)}')
     if comp.get('question'):
-      lines.append(f"Question back: {comp['question']}")
+      lines.append(f'Question back: {comp["question"]}')
     lines.append('')
     lines.append('> ' + (grade['rendered'] or '').strip().replace('\n', '\n> '))
     lines.append('')
@@ -345,6 +357,7 @@ def main(argv):
   if args.judge:
     import anthropic
     from eval_run import api_key  # noqa: E402
+
     client = anthropic.Anthropic(api_key=api_key())
 
   grades_path = args.run.with_suffix('.grades.jsonl')
@@ -352,23 +365,27 @@ def main(argv):
   grades = []
   skipped = [r['id'] for r in records if r['id'] not in questions]
   if skipped:
-    print(f"skipped (no longer in the question set): {', '.join(skipped)}")
+    print(f'skipped (no longer in the question set): {", ".join(skipped)}')
   for record in records:
     if record['id'] not in questions:
       continue
     question = questions[record['id']]
     failures, notes = mechanical(record, question, store)
     grade = {
-      'id': record['id'], 'class': record['class'], 'question': record['question'],
-      'composition': record.get('composition'), 'rendered': record.get('rendered'),
-      'failures': failures, 'notes': notes,
+      'id': record['id'],
+      'class': record['class'],
+      'question': record['question'],
+      'composition': record.get('composition'),
+      'rendered': record.get('rendered'),
+      'failures': failures,
+      'notes': notes,
     }
     if client is not None:
       grade['judge'] = previous.get(record['id']) or judge(client, args.judge, record, question)
       grade['judgeModel'] = args.judge
     grades.append(grade)
     status = 'ok ' if not failures else 'FAIL'
-    print(f"{grade['id']} {status} " + '; '.join(failures))
+    print(f'{grade["id"]} {status} ' + '; '.join(failures))
 
   with open(grades_path, 'w') as fd:
     for grade in grades:

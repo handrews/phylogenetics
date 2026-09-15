@@ -26,6 +26,7 @@ import sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
 from phylohist.claims import extract, manifest, names_index  # noqa: E402
+from phylohist.io import LoadError  # noqa: E402
 from phylohist.load import load  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -70,20 +71,22 @@ def _describe(claim):
   printed = claim.get('printed') or {}
   detail = printed.get('citedAs') or ' '.join(
     ', '.join(printed[f]) if f == 'auth' else str(printed[f])
-    for f in ('auth', 'year') if f in printed
+    for f in ('auth', 'year')
+    if f in printed
   )
   extra = ''
   if claim['kind'] == 'act':
-    extra = f" {claim['actKind']}"
+    extra = f' {claim["actKind"]}'
   if claim['kind'] == 'acceptance' and claim.get('parents'):
-    extra = f" parents={claim['parents']}"
+    extra = f' parents={claim["parents"]}'
   if claim['kind'] == 'material':
-    extra = f" {claim['materialKind']}"
+    extra = f' {claim["materialKind"]}'
     if 'role' in claim:
-      extra += f" {claim['role']} {claim.get('ids')}"
+      extra += f' {claim["role"]} {claim.get("ids")}'
   return (
-    f"{claim['kind']:<11} {claim['subject']}{extra}"
-    + (f'  "{detail}"' if detail else '') + f"  @ {claim['path']}"
+    f'{claim["kind"]:<11} {claim["subject"]}{extra}'
+    + (f'  "{detail}"' if detail else '')
+    + f'  @ {claim["path"]}'
   )
 
 
@@ -106,14 +109,18 @@ def report_inconsistencies(claims_by_source):
     for row in entry['inconsistencies']:
       kind, _, rest = row.partition(':')
       declared = entry['audit'].get('coverage', {}).get(kind)
-      print(f'  {kind}: declared {declared} in data/sources.yaml '
-            f'({source_key}.audit.coverage.{kind});{rest.split(",", 1)[1]}')
+      print(
+        f'  {kind}: declared {declared} in data/sources.yaml '
+        f'({source_key}.audit.coverage.{kind});{rest.split(",", 1)[1]}'
+      )
       counted = [
-        c for c in claims_by_source.get(source_key, ())
+        c
+        for c in claims_by_source.get(source_key, ())
         if c['audit'].get('coverageKind') == kind and not c.get('inferred')
       ]
       inferred = [
-        c for c in claims_by_source.get(source_key, ())
+        c
+        for c in claims_by_source.get(source_key, ())
         if c['audit'].get('coverageKind') == kind and c.get('inferred')
       ]
       if counted:
@@ -121,20 +128,26 @@ def report_inconsistencies(claims_by_source):
         for claim in counted:
           print('      ' + _describe(claim))
       else:
-        print(f'    nothing in data/trees/{source_key}.yaml yields a countable '
-              f'claim of this kind ({_KIND_SOURCES[kind]})')
+        print(
+          f'    nothing in data/trees/{source_key}.yaml yields a countable '
+          f'claim of this kind ({_KIND_SOURCES[kind]})'
+        )
       if inferred:
-        print('    editor-inferred, so not counted as the paper\'s:')
+        print("    editor-inferred, so not counted as the paper's:")
         for claim in inferred:
           basis = (claim.get('editorial') or {}).get('basis', '')
           print('      ' + _describe(claim) + (f'  basis: {basis.strip()}' if basis else ''))
       if declared in ('all', 'partly') and not counted:
-        print(f'    to resolve: enter what the paper prints, or declare '
-              f'{"na" if not inferred else "na (the paper prints none; the editor inferred it)"} '
-              f'or none')
+        print(
+          f'    to resolve: enter what the paper prints, or declare '
+          f'{"na" if not inferred else "na (the paper prints none; the editor inferred it)"} '
+          f'or none'
+        )
       elif declared in ('none', 'na') and counted:
-        print('    to resolve: declare partly or all, or remove the entries if '
-              'they are not what the paper prints')
+        print(
+          '    to resolve: declare partly or all, or remove the entries if '
+          'they are not what the paper prints'
+        )
   print(f'{found} sources with inconsistencies')
   return found
 
@@ -144,10 +157,13 @@ def main(argv):
   parser.add_argument('--out', type=pathlib.Path, default=DEFAULT_OUT)
   parser.add_argument('--source', nargs='+', help='only these source keys')
   parser.add_argument(
-    '--draft', action='store_true', help='also load the trees in drafts/',
+    '--draft',
+    action='store_true',
+    help='also load the trees in drafts/',
   )
   parser.add_argument(
-    '--inconsistencies', action='store_true',
+    '--inconsistencies',
+    action='store_true',
     help='print declared-versus-derived coverage disagreements; write nothing',
   )
   args = parser.parse_args(argv)
@@ -157,7 +173,11 @@ def main(argv):
     parser.error('--draft needs --out pointing outside claims/')
 
   logging.basicConfig(level=logging.WARNING)
-  _, roots = load(drafts=args.draft)
+  try:
+    _, roots = load(drafts=args.draft)
+  except LoadError as exc:
+    print(f'error: {exc}', file=sys.stderr)
+    return 1
   claims_by_source = extract(roots, sources=set(args.source or ()) or None)
   if args.inconsistencies:
     return 1 if report_inconsistencies(claims_by_source) else 0

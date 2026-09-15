@@ -181,6 +181,31 @@ framing: the model is a planner, execution and assembly are code)
   alternatives with their own shows, is level with compose mode. The MCP server serves `plan` too, so a
   chat model can take either route.
 
+**Engineering discipline** (2026-09-15, three branches after the
+planner reached 41/47)
+- `hygiene`: dead code out (`convert.py`, never-called methods, unused
+  parameters and names); validation failures raise `LoadError` instead
+  of exiting the process; ruff lint and format (two-space indentation,
+  single quotes, line length 100) with the one real find being a
+  backslash inside an f-string expression that Python 3.10 and 3.11
+  reject; PEP 621 metadata, MIT licence, CI on Python 3.10 and 3.14
+  with lock check, lint, coverage gate at 90 %, and the drafts
+  validated.
+- `contracts`: one parameter-name convention (snake_case) across
+  specs, blocks, CLI, MCP and plans; a parity test over every place the
+  tool surface is declared; grading and submission logic in
+  `phylohist/evaluation.py` with unit tests; a session-scoped store in
+  the tests.
+- `structure`: `ClaimStore` split into resolution, wording and block
+  building behind the same facade; the tool name a block field.
+- Deliberately left: the loader half (`taxa.py`, `research.py`,
+  `io.py`, `load.py`: log-and-continue validation, class-level
+  registries, its TODOs, no direct tests beyond the load snapshot) is
+  the earlier layer the demo does not showcase; `tools` renders through
+  `render` as the surface's presentation step; no type checker; no
+  retry around the runner's API call; `PHYLOHIST_DRAFTS` mode skips
+  most tests; filenames with spaces under `data/trees/` and `claims/`.
+
 **M4. Materials** (S4)
 - D1–D5 as a design decision, with the specimen cases the reviews
   supplied (D8, D9). Migrate the gold slice; update the extractor's
