@@ -1,16 +1,48 @@
-# Phylogenetic History Tools
+# Phylogenetic Research Tools
 
-Hand-edited YAML capturing taxonomic opinions as published (`data/`), a
-loader with integrity checks (`phylohist/loader/`), and a generated claim table
-(`claims/`, one JSONL per source plus a coverage manifest; see
-`docs/claims.md`).
+Science is always in motion.  Most online taxonomy or phylogeny
+databases attempt to show a consensus or accepted view, with
+each site having its own editorial policy for what gets included.
 
-## How it fits together
+The `phylohist` project instead provides access to trees as published,
+over time, while leaving the judgement of what to accept or reject to
+the researcher.  An LLM-driven interface supports complex queries over
+a curated corpus stored as YAML data.  This leverages the power of AI
+models while avoiding hallucinations and costly guessing by handling
+as much querying and output formatting as possible in code.
 
-Three lanes, human, model and code. Each column is one story, read
-top to bottom; every surface in the code lane sits on the same tools
-over the claim table, so the CLI, the MCP server and the eval cannot
-disagree about an answer.
+The current corpus includes information from over 280 papers from the
+1700s to the current year, mostly focusing on Paleozoic echinoderms.
+A coverage system tracks how much of the information from a paper has
+been entered and reviewed.
+
+**Please note:** This project began as a hobby, which is where the loader
+code came from.  Further work has been done with the assistance of
+Claude Code.  Next steps include writing human-user-friendly documentation,
+continuing to improve the software development methodology, and publishing
+the package as well as curating additional data and adding more features.
+
+Work to incorporate specimens and geologic time scales is ongoing, but
+currently handled in several different experimental ways while a final
+design is determined.
+
+## Humans, Models, and Code
+
+The internet has made a tremendous amount of information available,
+but finding what you need and verifying its accuracy is a lot of work.
+Humans have the deepest judgement for data curation, while models
+handle flexible querying beyond what fixed database queries can provide.
+Underneath it all, deterministic code ensures fast, repeatable, and
+accurate outcomes.
+
+This table shows the roles of humans (the top row), models (the middle)
+and code.  The third column shows the expected typical interactive usage,
+where the model interprets the questions and chooses the tools to call and
+output shapes to render, but leaves the querying and output construction
+to code.
+
+This avoids verbose or hallucinated output while spending tokens only
+on the work that really requires a model's reasoning and flexibility.
 
 ```mermaid
 flowchart TB
@@ -44,7 +76,7 @@ flowchart TB
   R <--> J
 ```
 
-- **The data.** The researcher records each publication's opinions as
+- **The data.** The curator records each publication's opinions as
   printed. The model's part is optional and reviewable: it reads a
   paper against its tree and writes a review (`notes/reviews/`), or
   drafts a tree (`drafts/`) that code validates and the researcher
@@ -53,7 +85,7 @@ flowchart TB
   claim table, which CI keeps current.
 - **The CLI.** A question goes from the researcher to the tools with no
   model in the lane: `phylohist history rhenopyrgus` renders the block.
-- **Chat.** Claude Code asks the MCP server. The model resolves the
+- **Chat.** Claude asks the MCP server. The model resolves the
   names and papers the question mentions and states a plan, the blocks
   the answer is made of; code builds and renders them. The model
   chooses; code answers. The only words of the model's own that reach a
@@ -111,15 +143,13 @@ table", describes the blocks and the tools.
 
 ## Where things are
 
-`docs/` explains phylohist to a researcher who wants to use it:
-`docs/claims.md` is the claim table, the closures over it, the tools
-and the answer shapes. `notes/` is the development record, for anyone
-interested in how the project was built: design notes, plans, audits,
-per-paper reviews, eval write-ups, and notes on and translations of
-individual papers (`notes/README.md` is the index). `eval/` holds the
-questions, the prompt and the committed runs; `drafts/` holds
-AI-drafted trees awaiting a human audit; `scripts/schema-usage.md` is
-the generated schema census CI keeps current.
+* `docs/` will contain user documentation; for now it explains how
+  recorded tree data is converted to the claims that the tools use,
+  as well as the tools and the answer formats.
+* `notes/` contains project development information from both the human
+  and LLM developers; some of this information might be out-of-date.
+* `eval/` holds the evaluation questions (writeups are in `notes/eval/`).
+* `drafts/` holds AI-drafted trees awaiting a human audit.
 
 ## Licence
 
