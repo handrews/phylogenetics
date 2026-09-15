@@ -322,6 +322,17 @@ blocks; the CLI (`phylohist <tool>`, `--style`), the MCP server
 | `printed_forms(record, source)` | each form a source prints, verbatim, with the page |
 | `source_coverage(key)` | the raw coverage view |
 
+A **plan** (`phylohist/plan.py`) is an answer as data before it is
+built: a one-line header stating the parameters chosen, the blocks in
+order, each a tool and the parameters that matter, and a question back
+when a parameter is genuinely ambiguous. `validate` checks a plan
+against the tool surface; `execute` builds the composition, one tool
+call per block, and reports what could not be built (an ambiguous name
+or citation lists what it can mean). `phylohist plan <file>` executes
+a plan written by hand; the eval's expected answers are plans; in the
+runner's planner mode the model resolves names and citations and then
+states a plan, never seeing the blocks.
+
 `tests/test_tools.py`, `tests/test_closure.py`, `tests/test_blocks.py`
 and `tests/test_cli.py` check the tools, the worked example of
 `notes/development/structured-answers.md`, the renderings and the subcommands.

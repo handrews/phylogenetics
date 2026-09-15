@@ -710,8 +710,11 @@
     taxon: rhenopyrgidae
   expected:
     blocks:
-    - tool: placements
-      parameters: {records: [rhenopyrgidae]}
+      anyOf:
+      - - tool: placements
+          parameters: {records: [rhenopyrgidae]}
+      - - tool: ancestors
+          parameters: {records: [rhenopyrgidae]}
     shows:
     - Cyathocystidae
     - Edrioblastoidina
@@ -811,6 +814,8 @@
           parameters: {records: [octogona_richter.r_1930]}
       - - tool: history
           parameters: {record: octogona_richter.r_1930}
+      - - tool: ancestors
+          parameters: {records: [octogona_richter.r_1930]}
     shows:
     - "Pyrgocystis octogona"
     answer: |

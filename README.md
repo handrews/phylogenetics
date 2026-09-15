@@ -24,6 +24,8 @@ blocks, rendered in a style; the CLI has one subcommand per tool:
     poetry run phylohist statements "Rhenopyrgus viviani"
     poetry run phylohist gap "Holloway & Jell 1983" material
     poetry run phylohist source "Lamarck 1816"
+    poetry run phylohist plan my-plan.yaml
+    poetry run python scripts/eval_run.py --mode planner --ask "Who first placed Rhenopyrgus under Edrioblastoidina?"
     poetry run python scripts/eval_run.py --ask "Who first placed Rhenopyrgus under Edrioblastoidina?"
 
 The same tools are served over MCP by `scripts/mcp_server.py`, which

@@ -507,6 +507,69 @@ question fully". The reader never sees it and the prompt forbids it;
 the habit is the model's, and it grew from five questions to twelve
 with no prompt change. A run that set it aside would pass 41 of 47.
 Whether to keep failing it is a contract decision, not a tooling one.
+Decided the same day: it is noted, not failed, from the next run on,
+since it costs a few hundred output tokens a run and reaches no reader.
+
+## The planner run
+
+Step 2: the model resolves names and citations, then states a plan
+(header, blocks as tool and parameters, question back) and code builds
+the composition. Two runs the same day (`eval/runs/2026-09-14-planner-a-…`
+and `-b-…`, 47 questions each). Run a was spoilt by one habit the
+executor let through: `trees: "classification"` and `years: "all"` as
+strings, which the tools took as tuples of characters, so twenty-odd
+blocks came back empty ("no source uses the name"). The executor now
+refuses a parameter of the wrong type with the type and the reason,
+and the prompt names the values; run b followed.
+
+| | fourth run (compose) | planner run b |
+|---|---|---|
+| lookups | 215 (median 3, max 20) | 105 (median 2, max 8) |
+| input tokens | 1.62 M | 0.41 M |
+| output tokens | 44 k | 37 k |
+| wall time | ~25 min | ~8 min |
+| at the lookup limit | 3 | 0 |
+| plans revised after an error | – | 1 (q019) |
+| questions back | 0 | 0 |
+| mechanical pass | 32 | 34 |
+| judge contract, full marks | 1.77, 38 | 1.81, 38 |
+
+| class | n | compose | planner |
+|---|---|---|---|
+| answerable | 12 | 8 | 8 |
+| as-published | 8 | 5 | 5 |
+| uncaptured | 9 | 7 | 6 |
+| absent | 3 | 3 | 3 |
+| trajectory | 15 | 9 | 12 |
+
+**The same answers for a quarter of the tokens.** The planner never
+sees a block, so a question costs its resolver calls and one plan; the
+fourth run's 1.6 million input tokens were the rendered blocks the
+model read and discarded. Pass rates are level with compose mode and
+the trajectory class is better: the plans reach for history and the
+chains and get them right first time.
+
+**Three grader and tool changes came out of run b.** A gap block the
+`statements` tool returns for an empty query now counts as the gap the
+expectation names (the planner asks `statements` for material in a
+source rather than `gap`, and is right to); `statements` takes
+`occurrences`, `illustrations` and `specimens` as kinds; and a gap so
+returned keeps the coverage kind as its own parameter. The grades above
+are what the run's records show; q014, q015 and q016 would pass on a
+fresh run with those changes. Two expectations gained the chains as an
+alternative (q029, q031).
+
+**What fails on substance.** The planner chose `statements` for a
+genus's type species (q003, q006) and `ancestors` for Fay's class
+(q001), where only the listing shows what is asked; the prompt now says
+so. The rest are the fourth run's misses again: q009, q024, q028, q034,
+q045, q048.
+
+**What the plans look like.** Forty-two of 47 are one block; four are
+two; none is more. Every parameter varied in compose mode was varied
+here (source, kind, act_kind, synonymy, years, trees, include_related),
+and the header is written before any block exists, which shows in the
+judge's marks: 38 of 47 at full, none at zero.
 
 ## What changes next, in order
 
@@ -519,11 +582,7 @@ Whether to keep failing it is a contract decision, not a tooling one.
    rejection (done 2026-09-13). Closes §4 except q010.
 4. Eval upkeep (done 2026-09-14: expected answers are shapes with
    parameters and shows strings; q046 and q047 dropped).
-5. Step 2, designed from the shapes above. What they say a plan must
-   express: a resolution followed by one operation with parameters
-   (34 of 49); a pair of operations over the same record (12); an
-   operation mapped over the sources a closure returns (q041's history
-   then contents per source); a measurement over a closure (q047); the
-   parameters that were actually varied (source, kind, synonymy,
-   act_kind, rank, include_synonyms, years, trees) and the one that
-   never was (include_variants).
+5. Step 2 (done 2026-09-14: `phylohist/plan.py`, planner mode, the
+   planner run above). What remains open: an operation mapped over the
+   sources a closure returns, and a measurement over a closure (the
+   dropped q047), neither of which a plan can yet express.

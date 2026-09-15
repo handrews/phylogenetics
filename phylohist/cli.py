@@ -23,8 +23,10 @@ import argparse
 import json
 import sys
 
-from . import tools
-from .render import styles
+import yaml
+
+from . import plan as plans, tools
+from .render import render_composition, styles
 
 
 def _print_blocks(result, style):
@@ -120,6 +122,9 @@ def build_parser():
   p.add_argument('record')
   p.add_argument('--source')
 
+  p = add_parser('plan', help='execute a plan (YAML or JSON: header, blocks, question) and print the answer')
+  p.add_argument('file', help='a plan file, or - for stdin')
+
   add_parser('tools', help='the tools and what they answer')
   return parser
 
@@ -160,6 +165,19 @@ def _main(argv):
             f"{x['label']} {x['firstYear']}" + (f"–{x['lastYear']}" if x['lastYear'] != x['firstYear'] else '')
             for x in c['combinations'])
         print(line)
+    return 0
+  if command == 'plan':
+    text = sys.stdin.read() if args.file == '-' else open(args.file).read()
+    outcome = plans.execute(yaml.safe_load(text))
+    for error in outcome['errors']:
+      where = f"block {error['block']} ({error['tool']})" if error.get('block') else 'plan'
+      print(f"{where}: {error['error']}", file=sys.stderr)
+    if outcome['composition'] is None:
+      return 2
+    if style == 'json':
+      print(json.dumps(outcome['composition'], ensure_ascii=False, indent=1))
+    else:
+      print(render_composition(outcome['composition'], style))
     return 0
   if command == 'source':
     result = tools.resolve_source(args.query)
