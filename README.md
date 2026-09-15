@@ -28,8 +28,9 @@ schema census or claim table is stale:
     git diff --exit-code scripts/schema-usage.md claims/
     poetry run python scripts/check_draft.py drafts/<file>.yaml
 
-The read-only tools over the claim table (`phylohist/tools.py`) return
-blocks, rendered in a style; the CLI has one subcommand per tool:
+The read-only tools over the claim table (`phylohist/tools.py`, over the
+store in `store.py` with `resolve.py` and `words.py`) return blocks,
+rendered in a style; the CLI has one subcommand per tool:
 
     poetry run phylohist resolve "Palæaster"
     poetry run phylohist contents 1994_guensburg_sprinkle astrocystitidae --synonymy

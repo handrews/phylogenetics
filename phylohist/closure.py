@@ -15,7 +15,7 @@ import collections
 TAXONOMY = ('taxonomy',)
 
 
-def _in_years(year, years):
+def in_years(year, years):
   if years is None:
     return True
   first, last = years
@@ -136,7 +136,7 @@ class Closure:
     return out
 
   def _wanted(self, claim, trees, years):
-    return claim['tree'] in trees and _in_years(self.year(claim['source']), years)
+    return claim['tree'] in trees and in_years(self.year(claim['source']), years)
 
   # -- closures ------------------------------------------------------------
 
@@ -178,7 +178,7 @@ class Closure:
               nxt.append(key)
         if include_synonyms:
           for claim in self.accepted_under.get(parent, ()):
-            if not _in_years(self.year(claim['source']), years):
+            if not in_years(self.year(claim['source']), years):
               continue
             key = claim['subject']
             found.setdefault(key, []).append(

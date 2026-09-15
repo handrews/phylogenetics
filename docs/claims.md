@@ -301,7 +301,10 @@ give, and the measurement a trajectory asks for (positions and ranks
 with papers, co-author sets and years; the latest; the last paper for
 each earlier one).
 
-The tools (`phylohist/tools.py`) read only these files and return
+The store (`phylohist/store.py`) reads only these files and builds
+the blocks; `phylohist/resolve.py` turns printed names and citations
+into keys, and `phylohist/words.py` phrases what the blocks carry. The
+tools (`phylohist/tools.py`) are the surface over the store: they return
 blocks; the CLI (`phylohist <tool>`, `--style`), the MCP server
 (`scripts/mcp_server.py`, `.mcp.json`) and the eval runner all go through
 `tools.call`:

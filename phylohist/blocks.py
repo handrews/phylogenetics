@@ -244,7 +244,7 @@ def validate(block, store):
   the store, and the block id must match its content. Returns the list
   of problems; empty means valid."""
   problems = []
-  content = {k: v for k, v in block.items() if k not in ('blockId', 'rendered')}
+  content = {k: v for k, v in block.items() if k not in ('blockId', 'rendered', 'tool')}
   if block_id(content) != block.get('blockId'):
     problems.append('blockId does not match content')
   known_claims = {c['id'] for claims in store.by_source.values() for c in claims}

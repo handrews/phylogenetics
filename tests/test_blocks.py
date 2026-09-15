@@ -11,17 +11,11 @@ import os
 import pytest
 
 from phylohist import blocks, render
-from phylohist.tools import ClaimStore
 
 pytestmark = pytest.mark.skipif(
   bool(os.getenv('PHYLOHIST_DRAFTS')),
   reason='the committed claim table covers data/ only',
 )
-
-
-@pytest.fixture(scope='module')
-def store():
-  return ClaimStore()
 
 
 def test_classification_text_and_markdown(store):

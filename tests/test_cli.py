@@ -26,52 +26,71 @@ def run(capsys, *argv):
 
 
 @pytest.mark.parametrize(
-  'argv, expected',
+  'argv, expected, shows',
   [
     (
       ['contents', '1994_guensburg_sprinkle', 'astrocystitidae'],
       lambda: tools.contents('1994_guensburg_sprinkle', 'astrocystitidae')[0]['rendered'],
+      'Genus Lampteroblastus gen. nov.',
     ),
-    (['history', 'rhenopyrgus'], lambda: tools.history('rhenopyrgus')['rendered']),
+    (
+      ['history', 'rhenopyrgus'],
+      lambda: tools.history('rhenopyrgus')['rendered'],
+      'Rhenopyrgus Dehm 1961',
+    ),
     (
       ['gap', '1983_holloway_jell', 'material'],
       lambda: tools.gap('1983_holloway_jell', 'material')['rendered'],
+      'The material printed in Holloway & Jell 1983 has not yet been entered',
     ),
     (
       ['descendants', 'edrioblastoidea', '--no-synonyms'],
       lambda: tools.descendants(['edrioblastoidea'], include_synonyms=False)['rendered'],
+      'Astrocystites',
     ),
     (
       ['ancestors', 'rhenopyrgidae', '--years', '1990', '2020'],
       lambda: tools.ancestors(['rhenopyrgidae'], years=(1990, 2020))['rendered'],
+      'Above Rhenopyrgidae',
     ),
     (
       ['under', 'Rhenopyrgus grayae', 'Rhenopyrgidae'],
       lambda: tools.placed_under('Rhenopyrgus grayae', 'Rhenopyrgidae')['rendered'],
+      'under Rhenopyrgidae',
     ),
     (
       ['placements', 'astrocystitidae', 'rhenopyrgidae', '--sources', '1994_guensburg_sprinkle'],
       lambda: tools.placements(
         ['astrocystitidae', 'rhenopyrgidae'], sources=['1994_guensburg_sprinkle']
       )['rendered'],
+      'Guensburg & Sprinkle 1994',
     ),
     (
       ['statements', 'rhenopyrgidae', '--act', 'new'],
       lambda: tools.statements('rhenopyrgidae', act_kind='new')['rendered'],
+      'named as new',
     ),
-    (['printed', 'edrioblastoidina'], lambda: tools.printed_forms('edrioblastoidina')['rendered']),
+    (
+      ['printed', 'edrioblastoidina'],
+      lambda: tools.printed_forms('edrioblastoidina')['rendered'],
+      'Edrioblastoidina',
+    ),
     (
       ['synonymy', 'grayae_bather_1915', '--source', '2020_ewin_martin.m_isotalo_zamora'],
       lambda: tools.synonymy('grayae_bather_1915', source='2020_ewin_martin.m_isotalo_zamora')[0][
         'rendered'
       ],
+      'Synonymy under Rhenopyrgus grayae in Ewin et al. 2020',
     ),
   ],
 )
-def test_subcommand_matches_library(capsys, argv, expected):
+def test_subcommand_matches_library(capsys, argv, expected, shows):
+  # The wiring: the subcommand prints what the library renders for the
+  # same arguments. The literal: a rendering regression fails here too.
   code, out = run(capsys, *argv)
   assert code == 0
   assert out == expected()
+  assert shows in out
 
 
 def test_style_on_any_subcommand(capsys):

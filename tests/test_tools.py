@@ -14,7 +14,7 @@ import pathlib
 import pytest
 import yaml
 
-from phylohist.tools import ClaimStore
+from phylohist.evaluation import alternatives
 
 QUESTIONS_PATH = pathlib.Path(__file__).parent.parent / 'eval' / 'questions.yaml'
 with open(QUESTIONS_PATH) as fd:
@@ -28,19 +28,15 @@ pytestmark = pytest.mark.skipif(
 UNCAPTURED = [q for q in QUESTIONS if q['class'] == 'uncaptured']
 
 
-@pytest.fixture(scope='module')
-def store():
-  return ClaimStore()
-
-
 @pytest.mark.parametrize('question', UNCAPTURED, ids=[q['id'] for q in UNCAPTURED])
 def test_source_coverage_backs_refusals(question, store):
   # An uncaptured question expects a gap block; the source must declare
   # that kind none or partly, or have no tree entered.
-  spec = question['expected']['blocks']
-  alternatives = spec['anyOf'] if isinstance(spec, dict) else [spec]
   gaps = [
-    b for alt in alternatives for b in alt if b['tool'] == 'gap' and b['parameters'].get('kind')
+    b
+    for alt in alternatives(question['expected'])
+    for b in alt['blocks']
+    if b['tool'] == 'gap' and b['parameters'].get('kind')
   ]
   assert gaps, question['id']
   for gap in gaps:
@@ -304,7 +300,7 @@ def test_statements_in_words(store):
   # No kind asked: every kind of the source not fully entered is named,
   # since the record's statements may lie in any of them.
   whole = store.statements('octogona_richter.r_1930', source='Holloway & Jell 1983', style='json')
-  assert whole['parameters']['alsoKinds'] == [
+  assert whole['parameters']['also_kinds'] == [
     'synonymy',
     'material',
     'occurrences',

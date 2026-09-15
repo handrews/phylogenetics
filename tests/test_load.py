@@ -48,7 +48,8 @@ def test_expected_warnings(load_records):
   _, records, _ = load_records
   actual = sorted({r.getMessage() for r in records if r.levelno == logging.WARNING})
 
-  if os.getenv('PHYLOHIST_UPDATE_EXPECTED'):
+  if os.getenv('PHYLOHIST_UPDATE_EXPECTED') and not os.getenv('CI'):
+    # Regenerate the snapshot; never on CI, where it would hide a regression.
     with open(EXPECTED_WARNINGS_PATH, 'w') as fd:
       fd.write(EXPECTED_WARNINGS_HEADER)
       for message in actual:

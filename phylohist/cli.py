@@ -28,6 +28,25 @@ import yaml
 from . import plan as plans
 from . import tools
 from .render import render_composition, styles
+from .words import years_span
+
+# Every subcommand that is a tool, by the tool's name; `plan` and `tools`
+# are the CLI's own.
+SUBCOMMANDS = {
+  'resolve': 'resolve_name',
+  'source': 'resolve_source',
+  'contents': 'contents',
+  'placements': 'placements',
+  'descendants': 'descendants',
+  'ancestors': 'ancestors',
+  'under': 'placed_under',
+  'history': 'history',
+  'synonymy': 'synonymy',
+  'statements': 'statements',
+  'coverage': 'source_coverage',
+  'gap': 'gap',
+  'printed': 'printed_forms',
+}
 
 
 def _print_blocks(result, style):
@@ -146,6 +165,15 @@ def main(argv=None):
     return 2
 
 
+def _arguments(args, tool):
+  """The tool's parameters, from the parsed arguments of the same names."""
+  properties = next(s for s in tools.TOOL_SPECS if s['name'] == tool)['input_schema']['properties']
+  arguments = {name: getattr(args, name) for name in properties if hasattr(args, name)}
+  if tool == 'contents' and arguments.get('source') == '-':
+    arguments['source'] = None
+  return arguments
+
+
 def _main(argv):
   args = build_parser().parse_args(argv)
   style = getattr(args, 'style', 'text')
@@ -153,29 +181,6 @@ def _main(argv):
   if command == 'tools':
     for name, text in tools.TOOL_DESCRIPTIONS.items():
       print(f'{name}\n  {text}\n')
-    return 0
-  if command == 'resolve':
-    result = tools.resolve_name(args.query, rank=args.rank)
-    if style == 'json':
-      print(json.dumps(result, ensure_ascii=False, indent=1))
-    elif not result:
-      print('(no record in the corpus carries this name)')
-    else:
-      for c in result:
-        line = f'{c["key"]}  {c["name"] or "[placeholder]"} ({c["rank"]}, {c["kind"]}'
-        if c.get('of'):
-          line += f', of {c["of"]}'
-        line += f'); {c.get("authority") or "authority not recorded"}; '
-        line += f'{c["sourcesWithStatements"]} sources'
-        if c.get('variants'):
-          line += f'; same name at other ranks or spellings: {", ".join(c["variants"])}'
-        if c.get('combinations'):
-          line += '; as ' + '; '.join(
-            f'{x["label"]} {x["firstYear"]}'
-            + (f'–{x["lastYear"]}' if x['lastYear'] != x['firstYear'] else '')
-            for x in c['combinations']
-          )
-        print(line)
     return 0
   if command == 'plan':
     text = sys.stdin.read() if args.file == '-' else open(args.file).read()
@@ -190,88 +195,53 @@ def _main(argv):
     else:
       print(render_composition(outcome['composition'], style))
     return 0
-  if command == 'source':
-    result = tools.resolve_source(args.query)
-    if style == 'json':
-      print(json.dumps(result, ensure_ascii=False, indent=1))
-    elif not result:
-      print('(no source in the corpus is that paper)')
-    else:
-      for c in result:
-        print(
-          f'{c["key"]}  {c["cite"]}; {"entered" if c["entered"] else "not entered"}; '
-          + ', '.join(c['authors'])
-        )
-    return 0
-  if command == 'coverage':
-    print(json.dumps(tools.source_coverage(args.source), ensure_ascii=False, indent=1))
-    return 0
-
-  years = tuple(args.years) if getattr(args, 'years', None) else None
-  if command == 'contents':
-    source = None if args.source in (None, '-') else args.source
-    result = tools.contents(
-      source, args.record, depth=args.depth, synonymy=args.synonymy, style=style
-    )
-  elif command == 'placements':
-    result = tools.placements(
-      args.records,
-      sources=args.sources,
-      years=years,
-      include_variants=args.include_variants,
-      include_synonyms=args.include_synonyms,
-      trees=args.trees,
-      style=style,
-    )
-  elif command == 'descendants':
-    result = tools.descendants(
-      args.records,
-      include_synonyms=args.include_synonyms,
-      include_variants=args.include_variants,
-      trees=args.trees,
-      years=years,
-      style=style,
-    )
-  elif command == 'ancestors':
-    result = tools.ancestors(
-      args.records,
-      include_variants=args.include_variants,
-      trees=args.trees,
-      years=years,
-      style=style,
-    )
-  elif command == 'under':
-    result = tools.placed_under(
-      args.record,
-      args.parent,
-      include_variants=args.include_variants,
-      trees=args.trees,
-      years=years,
-      style=style,
-    )
-  elif command == 'history':
-    result = tools.history(
-      args.record,
-      include_related=args.include_related,
-      synonymy=args.synonymy,
-      trees=args.trees,
-      years=years,
-      style=style,
-    )
-  elif command == 'synonymy':
-    result = tools.synonymy(args.record, source=args.source, style=style)
-  elif command == 'statements':
-    result = tools.statements(
-      args.record, source=args.source, kind=args.kind, act_kind=args.act_kind, style=style
-    )
-  elif command == 'gap':
-    result = tools.gap(args.source, args.kind, name=args.name, style=style)
-  elif command == 'printed':
-    result = tools.printed_forms(args.record, source=args.source, style=style)
+  tool = SUBCOMMANDS[command]
+  result = tools.call(tool, _arguments(args, tool), style=style)
+  if command == 'resolve':
+    _print_resolved(result, style)
+  elif command == 'source':
+    _print_sources(result, style)
+  elif command == 'coverage':
+    print(json.dumps(result, ensure_ascii=False, indent=1))
   else:
-    return 2
-  _print_blocks(result, style)
+    _print_blocks(result, style)
   return 0
+
+
+def _print_resolved(result, style):
+  if style == 'json':
+    print(json.dumps(result, ensure_ascii=False, indent=1))
+    return
+  if not result:
+    print('(no record in the corpus carries this name)')
+    return
+  for c in result:
+    line = f'{c["key"]}  {c["name"] or "[placeholder]"} ({c["rank"]}, {c["kind"]}'
+    if c.get('of'):
+      line += f', of {c["of"]}'
+    line += f'); {c.get("authority") or "authority not recorded"}; '
+    line += f'{c["sourcesWithStatements"]} sources'
+    if c.get('variants'):
+      line += f'; same name at other ranks or spellings: {", ".join(c["variants"])}'
+    if c.get('combinations'):
+      line += '; as ' + '; '.join(
+        f'{x["label"]} {years_span(x["firstYear"], x["lastYear"])}' for x in c['combinations']
+      )
+    print(line)
+
+
+def _print_sources(result, style):
+  if style == 'json':
+    print(json.dumps(result, ensure_ascii=False, indent=1))
+    return
+  if not result:
+    print('(no source in the corpus is that paper)')
+    return
+  for c in result:
+    print(
+      f'{c["key"]}  {c["cite"]}; {"entered" if c["entered"] else "not entered"}; '
+      + ', '.join(c['authors'])
+    )
 
 
 if __name__ == '__main__':

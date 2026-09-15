@@ -139,7 +139,8 @@ the composition (header, blocks with their types, parameters and claim
 ids, question, any invalid ids, any free text), the rendered answer,
 token usage and the prompt's hash. At the lookup limit the model is
 made to submit from what it has, and the record says so. Runs are
-committed; they are the evidence the write-up rests on. The grader is
+committed; they are the evidence the write-up rests on. The grader
+(`scripts/eval_grade.py`, whose checks are `phylohist.evaluation`) is
 mechanical: for one of the expected alternatives every expected block
 must be matched by a composed block of the same tool whose parameters
 agree on those the expectation names (keys and citations compared after
