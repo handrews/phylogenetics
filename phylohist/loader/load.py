@@ -1,14 +1,18 @@
 """Loading the corpus into the object model.
 
-`load()` reads every data file through `phylohist.io`, registers authors,
-publications and sources, builds the taxa and then every tree, and
-returns the raw data with the tree roots per source. The scripts, the
-tests and the extractor all come through here.
+`load()` reads every data file through `phylohist.loader.io`, registers
+authors, publications and sources, builds the taxa and then every tree,
+and returns the raw data with the tree roots per source. The scripts,
+the tests and the extractor all come through here. Every integrity
+problem is logged where it is found so that one run reports them all;
+the load then fails with their count, unless the caller asks for the
+data anyway.
 """
 
+import contextlib
 import logging
 
-from .io import load_files
+from .io import LoadError, load_files
 from .research import Author, Publication, Source
 from .taxa import Taxon, Tree
 
@@ -125,14 +129,50 @@ def _load_trees(data):
   return roots
 
 
-def load(drafts=False):
-  """``(data, roots)``: the loaded data files and ``{source: [roots]}``."""
-  data = load_files(drafts=drafts)
-  for field, cls in (
-    ('authors', Author),
-    ('publications', Publication),
-    ('sources', Source),
-  ):
-    _basic_load(data, field, cls)
-  _load_taxa(data)
-  return data, _load_trees(data)
+class ErrorCount(logging.Handler):
+  """Counts the records at ERROR or above that pass through the logger it
+  is attached to; the loader's checks report by logging, and this is how
+  a caller learns whether any fired."""
+
+  def __init__(self):
+    super().__init__(level=logging.ERROR)
+    self.count = 0
+
+  def emit(self, record):
+    self.count += 1
+
+
+@contextlib.contextmanager
+def counting_errors():
+  """A block in which every error the package logs is counted; yields the
+  counter. Records propagate to the package logger from every module
+  under it, so the counter sits there."""
+  counter = ErrorCount()
+  package = logging.getLogger(__name__.partition('.')[0])
+  package.addHandler(counter)
+  try:
+    yield counter
+  finally:
+    package.removeHandler(counter)
+
+
+def load(drafts=False, tolerate=False):
+  """``(data, roots)``: the loaded data files and ``{source: [roots]}``.
+  Raises `LoadError` when any integrity check logged an error, with the
+  count, so a caller cannot take a broken load for a good one; with
+  ``tolerate`` the data comes back regardless, for a caller that wants
+  to see everything before stopping."""
+  with counting_errors() as errors:
+    data = load_files(drafts=drafts)
+    for field, cls in (
+      ('authors', Author),
+      ('publications', Publication),
+      ('sources', Source),
+    ):
+      _basic_load(data, field, cls)
+    _load_taxa(data)
+    roots = _load_trees(data)
+  if errors.count and not tolerate:
+    plural = 's' if errors.count != 1 else ''
+    raise LoadError(f'{errors.count} integrity error{plural} while loading; see the log')
+  return data, roots

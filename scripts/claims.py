@@ -26,7 +26,7 @@ import sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
 from phylohist.claims import extract, manifest, names_index  # noqa: E402
-from phylohist.loader import LoadError, load  # noqa: E402
+from phylohist.loader import LoadError, counting_errors, load  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DEFAULT_OUT = ROOT / 'claims'
@@ -165,6 +165,11 @@ def main(argv):
     action='store_true',
     help='print declared-versus-derived coverage disagreements; write nothing',
   )
+  parser.add_argument(
+    '--tolerate',
+    action='store_true',
+    help='write the claims even when the load logs integrity errors; the exit status is still 1',
+  )
   args = parser.parse_args(argv)
 
   out = args.out.resolve()
@@ -172,11 +177,12 @@ def main(argv):
     parser.error('--draft needs --out pointing outside claims/')
 
   logging.basicConfig(level=logging.WARNING)
-  try:
-    _, roots = load(drafts=args.draft)
-  except LoadError as exc:
-    print(f'error: {exc}', file=sys.stderr)
-    return 1
+  with counting_errors() as errors:
+    try:
+      _, roots = load(drafts=args.draft, tolerate=args.tolerate)
+    except LoadError as exc:
+      print(f'error: {exc}', file=sys.stderr)
+      return 1
   claims_by_source = extract(roots, sources=set(args.source or ()) or None)
   if args.inconsistencies:
     return 1 if report_inconsistencies(claims_by_source) else 0
@@ -185,6 +191,9 @@ def main(argv):
 
   total = sum(len(c) for c in claims_by_source.values())
   print(f'{total} claims from {len(claims_by_source)} sources -> {out}')
+  if errors.count:
+    print(f'{errors.count} integrity errors while loading (tolerated)', file=sys.stderr)
+    return 1
   return 0
 
 

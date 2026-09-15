@@ -9,6 +9,6 @@ table.
 """
 
 from .io import LoadError
-from .load import load
+from .load import counting_errors, load
 
-__all__ = ['LoadError', 'load']
+__all__ = ['LoadError', 'counting_errors', 'load']
