@@ -42,10 +42,18 @@
     source: 1962_fay
   expected:
     blocks:
-    - tool: statements
-      parameters: {record: ottawaensis_whiteaves_1897, source: 1962_fay}
+      anyOf:
+      - blocks:
+        - tool: statements
+          parameters: {record: ottawaensis_whiteaves_1897, source: 1962_fay}
+        shows:
+        - "type species"
+      - blocks:
+        - tool: contents
+          parameters: {source: 1962_fay, record: astrocystites}
+        shows:
+        - "Type species. Astrocystites ottawaensis (editor)"
     shows:
-    - "type species"
     - "(editor)"
     answer: |
       It is editorial. Fay never writes "type species" anywhere in the paper
@@ -147,13 +155,18 @@
   expected:
     blocks:
       anyOf:
-      - - tool: contents
+      - blocks:
+        - tool: contents
           parameters: {source: 2013_sumrall_heredia_rodríguez.c.m_mestre, record: rhenopyrgus}
-      - - tool: statements
+        shows:
+        - "Sumrall et al. 2013"
+      - blocks:
+        - tool: statements
           parameters: {record: coronaeformis_rievers_1961, source: 2013_sumrall_heredia_rodríguez.c.m_mestre, act_kind: type}
+        shows:
+        - "Rhenopyrgus coronaeformis: type species"
     shows:
     - "Rhenopyrgus coronaeformis"
-    - "Sumrall et al. 2013"
     answer: |
       Pyrgocystis (Rhenopyrgus) coronaeformis Rievers, 1961: "Type species:
       Pyrgocystis (Rhenopyrgus) coronaeformis Rievers, 1961" (p. 773), under
@@ -1279,6 +1292,10 @@
           parameters: {record: astrocystites}
       - - tool: ancestors
           parameters: {records: [astrocystites]}
+      - - tool: placed_under
+          parameters: {record: astrocystites, parent: steganoblastidae}
+        - tool: placed_under
+          parameters: {record: astrocystites, parent: astrocystitidae}
     shows:
     - Steganoblastidae
     - Astrocystitidae
@@ -1329,13 +1346,23 @@
     taxon: cyathocystidae
   expected:
     blocks:
-    - tool: placed_under
-      parameters: {record: rhenopyrgidae, parent: cyathocystidae}
-    - tool: placements
-      parameters: {records: [rhenopyrgidae]}
+      anyOf:
+      - blocks:
+        - tool: placed_under
+          parameters: {record: rhenopyrgidae, parent: cyathocystidae}
+        - tool: placements
+          parameters: {records: [rhenopyrgidae]}
+        shows:
+        - "not Cyathocystidae"
+      - blocks:
+        - tool: placed_under
+          parameters: {record: rhenopyrgidae, parent: cyathocystidae}
+        - tool: history
+          parameters: {record: rhenopyrgidae}
+        shows:
+        - "declines a placement in Cyathocystidae"
     shows:
     - "first Guensburg & Sprinkle 1994"
-    - "not Cyathocystidae"
     answer: |
       Guensburg & Sprinkle (1994) propose it, translating Holloway & Jell's
       family Rhenopyrgidae down to subfamily Rhenopyrginae inside their own
@@ -1377,17 +1404,29 @@
   expected:
     blocks:
       anyOf:
-      - - tool: history
+      - blocks:
+        - tool: history
           parameters: {record: octogona_richter.r_1930}
         - tool: gap
           parameters: {source: 1983_holloway_jell, kind: synonymy}
-      - - tool: statements
+        shows:
+        - "The synonymy printed in Holloway & Jell 1983 has not yet been entered"
+      - blocks:
+        - tool: statements
           parameters: {record: octogona_richter.r_1930}
         - tool: gap
           parameters: {source: 1983_holloway_jell, kind: synonymy}
+        shows:
+        - "The synonymy printed in Holloway & Jell 1983 has not yet been entered"
+      - blocks:
+        - tool: statements
+          parameters: {record: octogona_richter.r_1930, source: 1983_holloway_jell}
+        - tool: statements
+          parameters: {record: octogona_richter.r_1930, source: 1961_dehm}
+        shows:
+        - "Its synonymy is entered in part"
     shows:
     - "Pyrgocystis octogona"
-    - "The synonymy printed in Holloway & Jell 1983 has not yet been entered"
     answer: |
       Two accounts that do not agree. Dehm's own paper keeps Pyrgocystis octogona in Pyrgocystis and does not move it into his new subgenus Rhenopyrgus; its entry ends in a comparison: "es [ist] erforderlich, diese Formen gesondert zu halten" ("it is necessary to keep these forms separate", p. 16). Holloway & Jell (1983) write of the same species that it "was assigned to Rhenopyrgus by Dehm (1961)" (p. 1004). Dehm's placement is held from his paper; Holloway & Jell's statement about Dehm is known only from their text and is not held as a placement of their own, and it does not match what Dehm printed.
   evidence:

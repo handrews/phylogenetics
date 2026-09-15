@@ -175,8 +175,11 @@ framing: the model is a planner, execution and assembly are code)
   the two resolvers and the `plan` tool, so it never sees a block, and
   returns execution errors once for revision. Free text beside a
   submission is noted, not failed, in either mode.
-- Next: the planner run beside the fourth run; then what the
-  comparison says.
+- The planner run sits beside the fourth run in
+  `notes/evals/eval-writeup-2.md`; `notes/evals/metrics.md` puts the
+  runs on one yardstick; planner run d, after three tool fixes and
+  alternatives with their own shows, is level with compose mode. The MCP server serves `plan` too, so a
+  chat model can take either route.
 
 **M4. Materials** (S4)
 - D1–D5 as a design decision, with the specimen cases the reviews

@@ -56,7 +56,7 @@ def render_composition(composition, name='text'):
 _SPECIES_GROUP_WORDS = ('species', 'subspecies', 'variety')
 
 
-def _node_label(node):
+def node_label(node):
   """A heading as a Systematic Paleontology section prints it: the rank
   word above the species level, the name, the source's mark for a new
   taxon, the acts in the community's abbreviations."""
@@ -125,6 +125,8 @@ def _entry_line(entry, heading_name=None):
     parts.append(entry['name'])
   if entry.get('printed'):
     parts.append(f'"{entry["printed"]}"')
+  if entry.get('kind') == 'heading':
+    parts.append('(the heading as entered; no verbatim form is recorded)')
   parts.append(entry.get('cite') or entry.get('source') or '')
   if entry.get('page') is not None:
     parts.append(pages_text(entry['page']))
@@ -133,28 +135,60 @@ def _entry_line(entry, heading_name=None):
   return ' '.join(p for p in parts if p)
 
 
+def _gap_sentence(f):
+  what = f.get('what', 'this kind of statement')
+  bare = what[4:] if what.startswith('the ') else what
+  plural = f.get('plural', False)
+  if not f.get('entered', True):
+    return (f"{f['cite']} is on record; its content has not yet been "
+            f"entered, so nothing it prints about {bare} can be reported yet.")
+  declared = f.get('declared')
+  if declared in ('none', 'partly'):
+    extent = 'none' if declared == 'none' else 'only part'
+    return (f"{what[0].upper() + what[1:]} printed in {f['cite']} "
+            f"{'have' if plural else 'has'} not yet been entered "
+            f"({extent} of {'them' if plural else 'it'} is entered so far).")
+  if declared == 'na':
+    return f"{f['cite']} prints no {bare}, as reviewed."
+  if declared == 'all':
+    return (f"{what[0].upper() + what[1:]} printed in {f['cite']} "
+            f"{'are' if plural else 'is'} entered in full.")
+  return f"How much of {what} in {f['cite']} is entered has not been reviewed."
+
+
+def _also_sentence(also):
+  """The source's other kinds not fully entered, in one sentence: "Its
+  synonymy is entered in part; its diagnoses and material have not yet
+  been entered."
+  """
+  def words(items):
+    bare = [i['what'][4:] if i['what'].startswith('the ') else i['what'] for i in items]
+    joined = bare[0] if len(bare) == 1 else ', '.join(bare[:-1]) + ' and ' + bare[-1]
+    plural = len(items) > 1 or items[0].get('plural', False)
+    return joined, plural
+  clauses = []
+  partly = [i for i in also if i['declared'] == 'partly']
+  none = [i for i in also if i['declared'] == 'none']
+  if partly:
+    joined, plural = words(partly)
+    clauses.append(f"its {joined} {'are' if plural else 'is'} entered in part")
+  if none:
+    joined, plural = words(none)
+    clauses.append(f"its {joined} {'have' if plural else 'has'} not yet been entered")
+  text = '; '.join(clauses)
+  return text[0].upper() + text[1:] + '.'
+
+
 def _statement_text(block):
   kind = block['kind']
   f = block['fields']
   if kind == 'gap':
-    what = f.get('what', 'this kind of statement')
-    bare = what[4:] if what.startswith('the ') else what
-    plural = f.get('plural', False)
-    if not f.get('entered', True):
-      return (f"{f['cite']} is on record; its content has not yet been "
-              f"entered, so nothing it prints about {bare} can be reported yet.")
-    declared = f.get('declared')
-    if declared in ('none', 'partly'):
-      extent = 'none' if declared == 'none' else 'only part'
-      return (f"{what[0].upper() + what[1:]} printed in {f['cite']} "
-              f"{'have' if plural else 'has'} not yet been entered "
-              f"({extent} of {'them' if plural else 'it'} is entered so far).")
-    if declared == 'na':
-      return f"{f['cite']} prints no {bare}, as reviewed."
-    if declared == 'all':
-      return (f"{what[0].upper() + what[1:]} printed in {f['cite']} "
-              f"{'are' if plural else 'is'} entered in full.")
-    return f"How much of {what} in {f['cite']} is entered has not been reviewed."
+    text = _gap_sentence(f)
+    if f.get('about') and f.get('entered', True):
+      text = f"Nothing about {f['about']} is entered from {f['cite']}. " + text
+    if f.get('also'):
+      text += ' ' + _also_sentence(f['also'])
+    return text
   if kind == 'printedForm':
     return (f"{f['cite']}{', p. ' + str(f['page']) if f.get('page') is not None else ''}"
             f" prints \"{f['printed']}\"" +
@@ -183,11 +217,12 @@ def _text_classification(block):
     indent = base + '  ' * node.get('depth', 0)
     if (node.get('flags') or {}).get('provisional') and node.get('depth', 0):
       indent = indent[:-2] + '? '
-    lines.append(indent + _node_label(node))
+    lines.append(indent + node_label(node))
     for entry in node.get('synonymy') or ():
       lines.append(indent + '  = ' + _entry_line(entry, node.get('name')))
     if node.get('typeSpecies'):
-      lines.append(indent + '  Type species. ' + node['typeSpecies']['label'])
+      lines.append(indent + '  Type species. ' + node['typeSpecies']['label']
+                   + (' (editor)' if node['typeSpecies'].get('inferred') else ''))
   return '\n'.join(lines)
 
 
@@ -246,6 +281,9 @@ def _list_title(block):
     title += f" ({heading['rank']})"
   if block.get('kind') == 'statements':
     title = f'Statements about {title}'
+  elif block.get('kind') == 'synonymy':
+    # The synonymy is one source's: the listing says whose.
+    title = f"Synonymy under {title} in {block['cite']}"
   return title
 
 

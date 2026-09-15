@@ -17,7 +17,7 @@ import pathlib
 from . import blocks
 from .closure import Closure, TAXONOMY, _in_years
 from .names import fold, fold_forms, key_stem
-from .render import render
+from .render import node_label, render
 
 CLAIMS_DIR = pathlib.Path(__file__).parent / '..' / 'claims'
 
@@ -823,6 +823,7 @@ class ClaimStore:
           node['typeSpecies'] = {
             'key': claim['subject'], 'claim': claim['id'],
             'label': printed or self.display(claim['subject'], source_key, child_path),
+            'inferred': bool(claim.get('inferred')),
           }
           break
       if node.get('typeSpecies'):
@@ -1264,7 +1265,7 @@ class ClaimStore:
           {'key': record, 'name': self.display(record, source_key, path),
            'rank': None if self._rank_of(record) in _SPECIES_GROUP else self.rank(record)},
           entries, {'record': record, 'source': source_key, 'path': path},
-          extra={'source': source_key, 'cite': self.cite(source_key)},
+          kind='synonymy', extra={'source': source_key, 'cite': self.cite(source_key)},
         )
         out.append(_with_style(block, style))
     return out
@@ -1311,9 +1312,22 @@ class ClaimStore:
       if act_kind == 'new' or kind == 'act' and act_kind is None:
         coverage_kind = 'newTaxa'
       gap = self.gap(source, coverage_kind, style='json')
+      fields, params = dict(gap['fields']), {**parameters, **gap['parameters'], 'statementKind': kind}
+      if gap['kind'] == 'gap':
+        fields['about'] = heading
+      if gap['kind'] == 'gap' and kind is None and act_kind is None and fields.get('entered'):
+        # No kind asked: the record's statements may lie in any kind of the
+        # source not yet entered, so the gap names every such kind.
+        declared = (self.sources[source]['audit'].get('coverage') or {})
+        also = [
+          {'kind': k, 'what': COVERAGE_WORDS[k], 'plural': k in _PLURAL_KINDS, 'declared': declared[k]}
+          for k in COVERAGE_WORDS if k != coverage_kind and declared.get(k) in ('none', 'partly')
+        ]
+        if also:
+          fields['also'] = also
+          params['alsoKinds'] = [a['kind'] for a in also]
       # The gap's own parameters name the coverage kind; the query's ride beside.
-      gap = blocks.statement(gap['kind'], gap['fields'],
-                             {**parameters, **gap['parameters'], 'statementKind': kind})
+      gap = blocks.statement(gap['kind'], fields, params)
       return _with_style(gap, style)
     block = blocks.listing({'key': record, 'name': heading}, entries, parameters, kind='statements')
     return _with_style(block, style)
@@ -1383,6 +1397,18 @@ class ClaimStore:
         source=c['source'], cite=self.cite(c['source']), year=self.source_year(c['source']),
         claim=c['id'], page=c.get('pages'), printed=form,
       ))
+    if not entries and source:
+      # No verbatim form from that source: the heading as the source's
+      # listing is entered, which is the closest thing the corpus holds.
+      for path in self._record_paths(source, record):
+        usage = next((c for c in self._node_claims(source, path) if c['kind'] == 'usage'), None)
+        if usage is None:
+          continue
+        node = self._subtree(source, path, 0, 0, False)[0]
+        entries.append(blocks.list_entry(
+          source=source, cite=self.cite(source), year=self.source_year(source),
+          claim=usage['id'], page=usage.get('pages'), printed=node_label(node), kind='heading',
+        ))
     entries.sort(key=lambda e: (e['year'], e['cite'], e.get('page') is None))
     block = blocks.listing(
       {'key': record, 'name': self.display(record),

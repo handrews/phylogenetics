@@ -93,9 +93,12 @@ entered the data. Readers judge the implications themselves.
 
 `expected.blocks` names the tools and the parameters that matter; a
 parameter left out is not graded, so a composition that also asks for
-synonymy or a year range still matches. Alternatives go under `anyOf`.
-`expected.shows` are the strings the rendered answer must contain,
-taken from the rendering of the expected blocks. `verified` says what
+synonymy or a year range still matches. Alternatives go under `anyOf`;
+an alternative that renders differently carries its own `shows` beside
+its `blocks` (`anyOf: [{blocks: […], shows: […]}, …]`).
+`expected.shows` are the strings the rendered answer must contain
+whichever alternative it takes, taken from the rendering of the
+expected blocks. `verified` says what
 was checked when the question was written: the tree path, the
 `audit.coverage` value, or the review file with the printed page.
 
@@ -141,7 +144,7 @@ mechanical: for one of the expected alternatives every expected block
 must be matched by a composed block of the same tool whose parameters
 agree on those the expectation names (keys and citations compared after
 resolution; extra blocks are not failures), every `shows` string must
-appear in the rendered answer, and the header must leak nothing and
+appear in the rendered answer, the question's and that alternative's, and the header must leak nothing and
 pass no verdict; text the model writes beside its calls or its
 submission is noted, never failed, since no reader sees it; `--judge`
 adds a judge model's score for the header alone. It writes `<run>.grades.jsonl` and `<run>.md` with per-class

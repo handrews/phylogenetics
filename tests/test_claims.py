@@ -6,8 +6,8 @@ makes that mechanical. An expected answer is the blocks it is made of
 (a tool and the parameters that matter) and the strings the rendered
 answer shows. Each alternative is a plan that `phylohist.plan.execute`
 must build in full, every block resting on claims or being a gap or
-absence statement; the rendered composition of the first alternative
-must contain every `shows` string.
+absence statement; the rendered composition of each alternative
+must contain every `shows` string, the question's and its own.
 
 The manifest's inconsistency rows are gated too: a declared coverage
 value that the derived claims contradict fails until the declaration or
@@ -45,11 +45,12 @@ def claims(load_records):
 
 
 def alternatives(expected):
-  """The expected block lists: one, or several under `anyOf`."""
+  """The alternatives, each ``{blocks, shows}``: one list of blocks, or
+  several under `anyOf`, an alternative being a list of blocks or an
+  object with its own shows beside the question's."""
   spec = expected['blocks']
-  if isinstance(spec, dict):
-    return spec['anyOf']
-  return [spec]
+  items = spec['anyOf'] if isinstance(spec, dict) else [spec]
+  return [item if isinstance(item, dict) else {'blocks': item, 'shows': []} for item in items]
 
 
 def normalise(text):
@@ -60,21 +61,19 @@ def normalise(text):
 def test_question(question):
   expected = question['expected']
   qid = question['id']
-  first = None
   for alternative in alternatives(expected):
-    # Each alternative is a plan; it must build in full.
-    outcome = plan.execute({'header': '', 'blocks': alternative})
+    # Each alternative is a plan; it must build in full and show its
+    # strings and the question's.
+    outcome = plan.execute({'header': '', 'blocks': alternative['blocks']})
     if outcome['errors']:
       pytest.fail(f"{qid}: {outcome['errors']}")
     for block in outcome['blocks']:
       if block['type'] != 'statement' and not block['claims']:
         pytest.fail(f"{qid}: {block['tool']} {block['parameters']} rests on no claim")
-    if first is None:
-      first = outcome['composition']
-  rendered = normalise(render_composition(first, 'text'))
-  for text in expected.get('shows') or ():
-    if normalise(text) not in rendered:
-      pytest.fail(f'{qid}: the expected answer does not show "{text}"')
+    rendered = normalise(render_composition(outcome['composition'], 'text'))
+    for text in list(expected.get('shows') or ()) + alternative['shows']:
+      if normalise(text) not in rendered:
+        pytest.fail(f'{qid}: the expected answer does not show "{text}"')
 
 
 def test_no_inconsistencies(claims):
