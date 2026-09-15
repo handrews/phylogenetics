@@ -113,7 +113,9 @@ The answer:
 
 The paper is on record and its classification is entered, but its occurrence data is not. The closed world answers with what the corpus holds and what it does not yet hold, in the community's words, and never says the paper lacks the data. The model asked `statements` for occurrences in that source; the tool answered with the gap.
 
-## What exact suborder heading do Ewin et al. (2020) print above family Rhenopyrgidae, and at what rank was that name first established?
+## _Limitation:_  What exact suborder heading do Ewin et al. (2020) print above family Rhenopyrgidae, and at what rank was that name first established?
+
+_As of today, the system can only partially answer this question as it is not able to connect the output of one block to the input of another; this will be remedied in the future._
 
 The plan (`docs/walkthrough/05-miss.yaml`):
 
