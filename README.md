@@ -47,37 +47,7 @@ to code.
 This avoids verbose or hallucinated output while spending tokens only
 on the work that really requires a model's reasoning and flexibility.
 
-```mermaid
-flowchart TB
-  subgraph Human
-    D[Edits the data<br/>as printed, audits]
-    C[Asks the CLI<br/>no model]
-    Q[Asks in chat<br/>Claude Code, MCP]
-    E[Runs the eval<br/>writes, reviews]
-  end
-  subgraph Model["Model (Claude)"]
-    M[Reviews the data<br/>optional: reads sources, drafts trees]
-    P[Claude in chat<br/>resolves names, states a plan]
-    J[Eval model<br/>answers, and judges the header]
-  end
-  subgraph Code
-    L[Load + extract<br/>schema, claim table] --> T[(claims/<br/>committed, CI-checked)]
-    CLI[CLI<br/>phylohist tool]
-    MCP[MCP server<br/>tools and plan]
-    R[Eval runner<br/>grader, scripts]
-    T --> S[Tools over the claim table<br/>store, resolve, words, blocks, render]
-    CLI --> S
-    MCP --> S
-    R --> S
-  end
-  D <--> M
-  M <--> L
-  D --> L
-  C --> CLI
-  Q --> P --> MCP
-  E --> R
-  R <--> J
-```
+![How phylohist fits together: three lanes, human, model and code, read in four columns, the data, the CLI, chat and the eval](docs/architecture.svg)
 
 - **The data.** The curator records each publication's opinions as
   printed. The model's part is optional and reviewable: it reads a
