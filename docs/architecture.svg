@@ -14,15 +14,15 @@ text{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;text-anchor
 <text x="418" y="18" class="tc">Chat</text>
 <text x="568" y="18" class="tc">The eval</text>
 <rect x="40" y="74" width="600" height="100" rx="16" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.75"/><text x="612" y="92" class="tl" fill="#3C3489">Human</text>
+<rect x="40" y="204" width="600" height="100" rx="16" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.75"/><text x="612" y="222" class="tl" fill="#085041">Model (Claude)</text>
+<rect x="40" y="334" width="600" height="230" rx="16" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.75"/><text x="612" y="352" class="tl" fill="#444441">Code</text>
 <rect x="52" y="106" width="132" height="56" rx="8" fill="#FFFFFF" stroke="#888780" stroke-width="0.75"/><text x="118.0" y="124" class="th">Edits the data</text><text x="118.0" y="143" class="ts">as printed, audits</text>
 <rect x="202" y="106" width="132" height="56" rx="8" fill="#FFFFFF" stroke="#888780" stroke-width="0.75"/><text x="268.0" y="124" class="th">Asks the CLI</text><text x="268.0" y="143" class="ts">no model</text>
 <rect x="352" y="106" width="132" height="56" rx="8" fill="#FFFFFF" stroke="#888780" stroke-width="0.75"/><text x="418.0" y="124" class="th">Asks in chat</text><text x="418.0" y="143" class="ts">Claude Code, MCP</text>
 <rect x="502" y="106" width="132" height="56" rx="8" fill="#FFFFFF" stroke="#888780" stroke-width="0.75"/><text x="568.0" y="124" class="th">Runs the eval</text><text x="568.0" y="143" class="ts">writes, reviews</text>
-<rect x="40" y="204" width="600" height="100" rx="16" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.75"/><text x="612" y="222" class="tl" fill="#085041">Model (Claude)</text>
 <rect x="52" y="236" width="110" height="56" rx="8" fill="#FFFFFF" stroke="#888780" stroke-width="0.75" stroke-dasharray="4 3"/><text x="107.0" y="254" class="th">Reviews data</text><text x="107.0" y="273" class="ts">optional, drafts</text>
 <rect x="352" y="236" width="132" height="56" rx="8" fill="#FFFFFF" stroke="#888780" stroke-width="0.75"/><text x="418.0" y="254" class="th">Claude in chat</text><text x="418.0" y="273" class="ts">resolves, plans</text>
 <rect x="502" y="236" width="110" height="56" rx="8" fill="#FFFFFF" stroke="#888780" stroke-width="0.75"/><text x="557.0" y="254" class="th">Eval model</text><text x="557.0" y="273" class="ts">as judge too</text>
-<rect x="40" y="334" width="600" height="230" rx="16" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.75"/><text x="612" y="352" class="tl" fill="#444441">Code</text>
 <rect x="52" y="366" width="132" height="56" rx="8" fill="#FFFFFF" stroke="#888780" stroke-width="0.75"/><text x="118.0" y="384" class="th">Load + extract</text><text x="118.0" y="403" class="ts">schema, claims</text>
 <rect x="202" y="366" width="132" height="56" rx="8" fill="#FFFFFF" stroke="#888780" stroke-width="0.75"/><text x="268.0" y="384" class="th">CLI</text><text x="268.0" y="403" class="ts">phylohist &lt;tool&gt;</text>
 <rect x="352" y="366" width="132" height="56" rx="8" fill="#FFFFFF" stroke="#888780" stroke-width="0.75"/><text x="418.0" y="384" class="th">MCP server</text><text x="418.0" y="403" class="ts">tools and plan</text>

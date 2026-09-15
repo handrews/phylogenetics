@@ -47,7 +47,10 @@ to code.
 This avoids verbose or hallucinated output while spending tokens only
 on the work that really requires a model's reasoning and flexibility.
 
-![How phylohist fits together: three lanes, human, model and code, read in four columns, the data, the CLI, chat and the eval](docs/architecture.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/architecture-dark.svg">
+  <img alt="How phylohist fits together: three lanes, human, model and code, read in four columns, the data, the CLI, chat and the eval" src="docs/architecture.svg">
+</picture>
 
 - **The data.** The curator records each publication's opinions as
   printed. The model's part is optional and reviewable: it reads a
