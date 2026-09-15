@@ -100,25 +100,35 @@ class Closure:
       nodes = []
       current = claim
       while current is not None:
-        nodes.append({
-          'key': current['subject'], 'path': current['path'], 'claim': current['id'],
-          'placeholder': bool(current.get('placeholder')),
-          'alternatives': list(current.get('altPlacements') or ()),
-          'provisional': bool(current.get('provisional')),
-          'questionable': bool(current.get('questionable')),
-        })
+        nodes.append(
+          {
+            'key': current['subject'],
+            'path': current['path'],
+            'claim': current['id'],
+            'placeholder': bool(current.get('placeholder')),
+            'alternatives': list(current.get('altPlacements') or ()),
+            'provisional': bool(current.get('provisional')),
+            'questionable': bool(current.get('questionable')),
+          }
+        )
         above = self.parent_claim(source_key, current)
         if above is None and current.get('parent'):
           # The root of the tree has a usage claim but no placement.
           path = current['path'].rsplit('/children/', 1)[0]
-          usage = next((c for c in self.store.at_path[source_key].get(path, ())
-                        if c['kind'] == 'usage'), None)
-          nodes.append({
-            'key': current['parent'], 'path': path,
-            'claim': usage['id'] if usage else None,
-            'placeholder': bool(current.get('parentPlaceholder')),
-            'alternatives': [], 'provisional': False, 'questionable': False,
-          })
+          usage = next(
+            (c for c in self.store.at_path[source_key].get(path, ()) if c['kind'] == 'usage'), None
+          )
+          nodes.append(
+            {
+              'key': current['parent'],
+              'path': path,
+              'claim': usage['id'] if usage else None,
+              'placeholder': bool(current.get('parentPlaceholder')),
+              'alternatives': [],
+              'provisional': False,
+              'questionable': False,
+            }
+          )
         current = above
       nodes.reverse()
       out.append({'source': source_key, 'year': self.year(source_key), 'nodes': nodes})
@@ -131,8 +141,12 @@ class Closure:
   # -- closures ------------------------------------------------------------
 
   def descendants(
-    self, records, include_synonyms=True, include_variants=True,
-    trees=TAXONOMY, years=None,
+    self,
+    records,
+    include_synonyms=True,
+    include_variants=True,
+    trees=TAXONOMY,
+    years=None,
   ):
     """Every record any source places under the set, transitively within
     each source. Returns ``{key: [via, ...]}`` where a via names the
@@ -151,10 +165,14 @@ class Closure:
             if not self._wanted(claim, trees, years):
               continue
             key = claim['subject']
-            found.setdefault(key, []).append({
-              'source': source_key, 'year': self.year(source_key),
-              'parent': parent, 'claim': claim['id'],
-            })
+            found.setdefault(key, []).append(
+              {
+                'source': source_key,
+                'year': self.year(source_key),
+                'parent': parent,
+                'claim': claim['id'],
+              }
+            )
             if key not in seen:
               seen.add(key)
               nxt.append(key)
@@ -163,10 +181,14 @@ class Closure:
             if not _in_years(self.year(claim['source']), years):
               continue
             key = claim['subject']
-            found.setdefault(key, []).append({
-              'source': claim['source'], 'year': self.year(claim['source']),
-              'synonymOf': parent, 'claim': claim['id'],
-            })
+            found.setdefault(key, []).append(
+              {
+                'source': claim['source'],
+                'year': self.year(claim['source']),
+                'synonymOf': parent,
+                'claim': claim['id'],
+              }
+            )
             if key not in seen:
               seen.add(key)
               nxt.append(key)
@@ -202,15 +224,27 @@ class Closure:
           depth += 1
           parent = current['parent']
           kind = 'placeholder' if current.get('parentPlaceholder') else 'placement'
-          found.setdefault(parent, []).append({
-            'source': source_key, 'year': self.year(source_key), 'of': key,
-            'depth': depth, 'claim': current['id'], 'kind': kind,
-          })
+          found.setdefault(parent, []).append(
+            {
+              'source': source_key,
+              'year': self.year(source_key),
+              'of': key,
+              'depth': depth,
+              'claim': current['id'],
+              'kind': kind,
+            }
+          )
           for alt in current.get('altPlacements') or ():
-            found.setdefault(alt, []).append({
-              'source': source_key, 'year': self.year(source_key), 'of': key,
-              'depth': depth, 'claim': current['id'], 'kind': 'alternative',
-            })
+            found.setdefault(alt, []).append(
+              {
+                'source': source_key,
+                'year': self.year(source_key),
+                'of': key,
+                'depth': depth,
+                'claim': current['id'],
+                'kind': 'alternative',
+              }
+            )
           current = self.parent_claim(source_key, current)
     for vias in found.values():
       vias.sort(key=lambda v: (v['year'], v['source'], v['depth']))
@@ -228,33 +262,51 @@ class Closure:
         if not self._wanted(claim, trees, years) or not claim.get('parent'):
           continue
         parent = claim['parent']
-        family = tuple(sorted({parent} | set(
-          v for v in self.variants(parent)
-          if (self.names.get(v) or {}).get('kind') != 'altSpellingOf'
-        )))
+        family = tuple(
+          sorted(
+            {parent}
+            | set(
+              v
+              for v in self.variants(parent)
+              if (self.names.get(v) or {}).get('kind') != 'altSpellingOf'
+            )
+          )
+        )
         group = groups.setdefault(family, {'parents': {}, 'entries': []})
-        group['parents'].setdefault(parent, {
-          'key': parent, 'name': self.name(parent), 'rank': self.rank(parent),
-        })
-        group['entries'].append({
-          'source': claim['source'], 'year': self.year(claim['source']),
-          'record': key, 'rank': claim.get('rank'), 'claim': claim['id'],
-          'placeholder': claim.get('parentPlaceholder'),
-        })
+        group['parents'].setdefault(
+          parent,
+          {
+            'key': parent,
+            'name': self.name(parent),
+            'rank': self.rank(parent),
+          },
+        )
+        group['entries'].append(
+          {
+            'source': claim['source'],
+            'year': self.year(claim['source']),
+            'record': key,
+            'rank': claim.get('rank'),
+            'claim': claim['id'],
+            'placeholder': claim.get('parentPlaceholder'),
+          }
+        )
     schemes = []
-    for family, group in groups.items():
+    for group in groups.values():
       entries = sorted(group['entries'], key=lambda e: (e['year'], e['source']))
       sources = list(dict.fromkeys(e['source'] for e in entries))
-      schemes.append({
-        'parents': sorted(group['parents'].values(), key=lambda p: p['key']),
-        'entries': entries,
-        'sources': sources,
-        'papers': len(sources),
-        'coauthorSets': sorted({self.coauthor_set(s) for s in sources}),
-        'firstYear': entries[0]['year'],
-        'lastYear': entries[-1]['year'],
-        'lastSource': entries[-1]['source'],
-      })
+      schemes.append(
+        {
+          'parents': sorted(group['parents'].values(), key=lambda p: p['key']),
+          'entries': entries,
+          'sources': sources,
+          'papers': len(sources),
+          'coauthorSets': sorted({self.coauthor_set(s) for s in sources}),
+          'firstYear': entries[0]['year'],
+          'lastYear': entries[-1]['year'],
+          'lastSource': entries[-1]['source'],
+        }
+      )
     schemes.sort(key=lambda s: (-s['lastYear'], -s['papers'], s['parents'][0]['key']))
     return schemes
 
@@ -282,16 +334,18 @@ class Closure:
     rank_rows = []
     for entry in ranks.values():
       sources = sorted(entry['sources'], key=lambda s: (self.year(s), s))
-      rank_rows.append({
-        'rank': entry['rank'],
-        'records': sorted(entry['records']),
-        'sources': sources,
-        'papers': len(sources),
-        'coauthorSets': sorted({self.coauthor_set(s) for s in sources}),
-        'firstYear': self.year(sources[0]),
-        'lastYear': self.year(sources[-1]),
-        'lastSource': sources[-1],
-      })
+      rank_rows.append(
+        {
+          'rank': entry['rank'],
+          'records': sorted(entry['records']),
+          'sources': sources,
+          'papers': len(sources),
+          'coauthorSets': sorted({self.coauthor_set(s) for s in sources}),
+          'firstYear': self.year(sources[0]),
+          'lastYear': self.year(sources[-1]),
+          'lastSource': sources[-1],
+        }
+      )
     rank_rows.sort(key=lambda r: (-r['lastYear'], -r['papers'], r['rank']))
     # The papers that use the name at all, at any rank, in any tree.
     all_sources = sorted(

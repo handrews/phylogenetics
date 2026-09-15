@@ -1,9 +1,8 @@
-import pathlib
 import logging
-import collections
+import pathlib
 
-import yaml
 import jschon
+import yaml
 
 logger = logging.getLogger(__name__)
 
@@ -26,6 +25,7 @@ COMMON_FILES = (
 class LoadError(ValueError):
   """The schema or a data file failed validation; the errors were logged."""
 
+
 class UniqueKeyNoDatesLoader(yaml.SafeLoader):
   # and https://stackoverflow.com/questions/34667108/ignore-dates-and-times-while-parsing-yaml
   @classmethod
@@ -39,23 +39,23 @@ class UniqueKeyNoDatesLoader(yaml.SafeLoader):
     go on to serialise as json which doesn't have the advanced types
     of yaml, and leads to incompatibilities down the track.
     """
-    if not 'yaml_implicit_resolvers' in cls.__dict__:
+    if 'yaml_implicit_resolvers' not in cls.__dict__:
       cls.yaml_implicit_resolvers = cls.yaml_implicit_resolvers.copy()
 
     for first_letter, mappings in cls.yaml_implicit_resolvers.items():
-      cls.yaml_implicit_resolvers[first_letter] = [(tag, regexp)
-                                                   for tag, regexp in mappings
-                                                   if tag != tag_to_remove]
+      cls.yaml_implicit_resolvers[first_letter] = [
+        (tag, regexp) for tag, regexp in mappings if tag != tag_to_remove
+      ]
 
   # from https://gist.github.com/pypt/94d747fe5180851196eb?permalink_comment_id=4653474#gistcomment-4653474
   def construct_mapping(self, node, deep=False):
     mapping = set()
-    for key_node, value_node in node.value:
+    for key_node, _value_node in node.value:
       if ':merge' in key_node.tag:
         continue
       key = self.construct_object(key_node, deep=deep)
       if key in mapping:
-        raise ValueError(f"Duplicate {key!r} key found in YAML.")
+        raise ValueError(f'Duplicate {key!r} key found in YAML.')
       mapping.add(key)
     return super().construct_mapping(node, deep)
 
@@ -91,16 +91,16 @@ def load_files(drafts=False):
   files = COMMON_FILES
 
   ensure_catalog()
-  logger.info("Checking schema...")
-  schema_library = jschon.JSONSchema(load_yaml(
-    pathlib.Path(__file__).parent / r'..' / 'schemas' / 'phylogeny.yaml'
-  ))
+  logger.info('Checking schema...')
+  schema_library = jschon.JSONSchema(
+    load_yaml(pathlib.Path(__file__).parent / r'..' / 'schemas' / 'phylogeny.yaml')
+  )
   r = schema_library.validate()
   if not r.valid:
     log_schema_errors(r)
     raise LoadError('the schema is not valid against its metaschema')
 
-  logger.debug("Schema is valid.")
+  logger.debug('Schema is valid.')
   defs = schema_library['$defs']
 
   schema = None
@@ -164,6 +164,7 @@ def log_error_node(error):
       log_error_node(error['errors'])
       to_log = {k: v for k, v in error.items() if k != 'errors'}
     logger.error('\n' + yaml.safe_dump(to_log))
+
 
 def log_schema_errors(result):
   for error in result.output('detailed').get('errors', []):

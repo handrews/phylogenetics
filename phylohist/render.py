@@ -24,6 +24,7 @@ def style(name, block_type):
   def register(fn):
     STYLES[(block_type, name)] = fn
     return fn
+
   return register
 
 
@@ -54,12 +55,11 @@ def render_composition(composition, name='text'):
 # -- shared pieces ---------------------------------------------------------
 
 
-
 def node_label(node):
   """A heading as a Systematic Paleontology section prints it: the rank
   word above the species level, the name, the source's mark for a new
   taxon, the acts in the community's abbreviations."""
-  name = node.get('label') or (node['name'] if node.get('name') else f"[{node['key']}]")
+  name = node.get('label') or (node['name'] if node.get('name') else f'[{node["key"]}]')
   if (node.get('flags') or {}).get('quoted'):
     name = f'"{name}"'
   if node.get('or'):
@@ -79,7 +79,7 @@ def node_label(node):
     kind = act.get('act')
     mark = blocks.ACT_MARKS.get(kind)
     if kind in ('moved', 'removed'):
-      mark = f"({act.get('words')})"
+      mark = f'({act.get("words")})'
     if mark:
       name += ' ' + mark + (' (inferred)' if act.get('inferred') else '')
   return name
@@ -139,20 +139,26 @@ def _gap_sentence(f):
   bare = what[4:] if what.startswith('the ') else what
   plural = f.get('plural', False)
   if not f.get('entered', True):
-    return (f"{f['cite']} is on record; its content has not yet been "
-            f"entered, so nothing it prints about {bare} can be reported yet.")
+    return (
+      f'{f["cite"]} is on record; its content has not yet been '
+      f'entered, so nothing it prints about {bare} can be reported yet.'
+    )
   declared = f.get('declared')
   if declared in ('none', 'partly'):
     extent = 'none' if declared == 'none' else 'only part'
-    return (f"{what[0].upper() + what[1:]} printed in {f['cite']} "
-            f"{'have' if plural else 'has'} not yet been entered "
-            f"({extent} of {'them' if plural else 'it'} is entered so far).")
+    return (
+      f'{what[0].upper() + what[1:]} printed in {f["cite"]} '
+      f'{"have" if plural else "has"} not yet been entered '
+      f'({extent} of {"them" if plural else "it"} is entered so far).'
+    )
   if declared == 'na':
-    return f"{f['cite']} prints no {bare}, as reviewed."
+    return f'{f["cite"]} prints no {bare}, as reviewed.'
   if declared == 'all':
-    return (f"{what[0].upper() + what[1:]} printed in {f['cite']} "
-            f"{'are' if plural else 'is'} entered in full.")
-  return f"How much of {what} in {f['cite']} is entered has not been reviewed."
+    return (
+      f'{what[0].upper() + what[1:]} printed in {f["cite"]} '
+      f'{"are" if plural else "is"} entered in full.'
+    )
+  return f'How much of {what} in {f["cite"]} is entered has not been reviewed.'
 
 
 def _also_sentence(also):
@@ -160,20 +166,22 @@ def _also_sentence(also):
   synonymy is entered in part; its diagnoses and material have not yet
   been entered."
   """
+
   def words(items):
     bare = [i['what'][4:] if i['what'].startswith('the ') else i['what'] for i in items]
     joined = bare[0] if len(bare) == 1 else ', '.join(bare[:-1]) + ' and ' + bare[-1]
     plural = len(items) > 1 or items[0].get('plural', False)
     return joined, plural
+
   clauses = []
   partly = [i for i in also if i['declared'] == 'partly']
   none = [i for i in also if i['declared'] == 'none']
   if partly:
     joined, plural = words(partly)
-    clauses.append(f"its {joined} {'are' if plural else 'is'} entered in part")
+    clauses.append(f'its {joined} {"are" if plural else "is"} entered in part')
   if none:
     joined, plural = words(none)
-    clauses.append(f"its {joined} {'have' if plural else 'has'} not yet been entered")
+    clauses.append(f'its {joined} {"have" if plural else "has"} not yet been entered')
   text = '; '.join(clauses)
   return text[0].upper() + text[1:] + '.'
 
@@ -184,20 +192,22 @@ def _statement_text(block):
   if kind == 'gap':
     text = _gap_sentence(f)
     if f.get('about') and f.get('entered', True):
-      text = f"Nothing about {f['about']} is entered from {f['cite']}. " + text
+      text = f'Nothing about {f["about"]} is entered from {f["cite"]}. ' + text
     if f.get('also'):
       text += ' ' + _also_sentence(f['also'])
     return text
   if kind == 'printedForm':
-    return (f"{f['cite']}{', p. ' + str(f['page']) if f.get('page') is not None else ''}"
-            f" prints \"{f['printed']}\"" +
-            (f" for {f['name']}" if f.get('name') else '') + '.')
+    return (
+      f'{f["cite"]}{", p. " + str(f["page"]) if f.get("page") is not None else ""}'
+      f' prints "{f["printed"]}"' + (f' for {f["name"]}' if f.get('name') else '') + '.'
+    )
   if kind == 'absent':
-    return f"No source in the corpus mentions {f['name']}."
+    return f'No source in the corpus mentions {f["name"]}.'
   return json.dumps(f, ensure_ascii=False)
 
 
 # -- text ------------------------------------------------------------------
+
 
 @style('text', 'classification')
 def _text_classification(block):
@@ -207,7 +217,7 @@ def _text_classification(block):
   if block.get('cite'):
     # The source, with the page the listing starts on when it is recorded.
     head = block['cite']
-    root_pages = (block['nodes'][0].get('pages') if block.get('nodes') else None)
+    root_pages = block['nodes'][0].get('pages') if block.get('nodes') else None
     if root_pages is not None:
       head += ', ' + pages_text(root_pages)
     lines.append(head)
@@ -220,8 +230,12 @@ def _text_classification(block):
     for entry in node.get('synonymy') or ():
       lines.append(indent + '  = ' + _entry_line(entry, node.get('name')))
     if node.get('typeSpecies'):
-      lines.append(indent + '  Type species. ' + node['typeSpecies']['label']
-                   + (' (editor)' if node['typeSpecies'].get('inferred') else ''))
+      lines.append(
+        indent
+        + '  Type species. '
+        + node['typeSpecies']['label']
+        + (' (editor)' if node['typeSpecies'].get('inferred') else '')
+      )
   return '\n'.join(lines)
 
 
@@ -229,11 +243,11 @@ def _text_classification(block):
 def _text_table(block):
   headers = [c['name'] for c in block['columns']]
   body = [[_cell_text(cell) for cell in row['cells']] for row in block['rows']]
-  widths = [
-    max([len(h)] + [len(r[i]) for r in body]) for i, h in enumerate(headers)
-  ]
+  widths = [max([len(h)] + [len(r[i]) for r in body]) for i, h in enumerate(headers)]
+
   def fmt(values):
-    return '  '.join(v.ljust(w) for v, w in zip(values, widths)).rstrip()
+    return '  '.join(v.ljust(w) for v, w in zip(values, widths, strict=False)).rstrip()
+
   lines = []
   if block.get('title'):
     lines.append(block['title'])
@@ -241,7 +255,7 @@ def _text_table(block):
   lines.append(fmt(headers))
   lines.append(fmt(['-' * w for w in widths]))
   current = None
-  for row, cells in zip(block['rows'], body):
+  for row, cells in zip(block['rows'], body, strict=True):
     if row.get('group') is not None and row['group'] != current:
       current = row['group']
       lines.append(f'-- {current} --')
@@ -264,25 +278,25 @@ def _statement_line(entry):
   parts = [str(entry.get('year') or ''), entry.get('authors') or entry.get('cite') or '']
   sentence = entry.get('sentence') or ''
   if entry.get('name'):
-    sentence = f"{entry['name']}: {sentence}"
+    sentence = f'{entry["name"]}: {sentence}'
   if entry.get('printed') == 'editor':
     sentence += ' (editor)'
   if entry.get('page') is not None:
-    sentence += f" ({pages_text(entry['page'])})"
+    sentence += f' ({pages_text(entry["page"])})'
   parts.append(sentence)
   return parts
 
 
 def _list_title(block):
   heading = block['heading']
-  title = heading.get('name') or f"[{heading['key']}]"
+  title = heading.get('name') or f'[{heading["key"]}]'
   if heading.get('rank'):
-    title += f" ({heading['rank']})"
+    title += f' ({heading["rank"]})'
   if block.get('kind') == 'statements':
     title = f'Statements about {title}'
   elif block.get('kind') == 'synonymy':
     # The synonymy is one source's: the listing says whose.
-    title = f"Synonymy under {title} in {block['cite']}"
+    title = f'Synonymy under {title} in {block["cite"]}'
   return title
 
 
@@ -328,7 +342,7 @@ def _chains_head(block):
   lines = []
   title = block.get('title') or ''
   if deco.get('measure'):
-    title = f"{title}: {deco['measure']}" if title else deco['measure']
+    title = f'{title}: {deco["measure"]}' if title else deco['measure']
   if title:
     lines.append(title)
   if deco.get('span'):
@@ -343,7 +357,9 @@ def _text_chains(block):
     lines.append('')
   width = max([len(e.get('authors') or e['cite']) for e in block['entries']] + [0])
   for e in block['entries']:
-    lines.append(f"{e['year']}  {(e.get('authors') or e['cite']).ljust(width)}  {_chain_text(e['chain'])}")
+    lines.append(
+      f'{e["year"]}  {(e.get("authors") or e["cite"]).ljust(width)}  {_chain_text(e["chain"])}'
+    )
   if not block['entries']:
     lines.append('(no source places it there)')
   return '\n'.join(lines)
@@ -351,10 +367,11 @@ def _text_chains(block):
 
 # -- markdown --------------------------------------------------------------
 
+
 @style('markdown', 'classification')
 def _md_classification(block):
   tree = _text_classification(dict(block, cite=None))
-  head = f"**{block['cite']}**\n" if block.get('cite') else ''
+  head = f'**{block["cite"]}**\n' if block.get('cite') else ''
   return head + '```\n' + tree + '\n```'
 
 
@@ -363,7 +380,7 @@ def _md_table(block):
   headers = [c['name'] for c in block['columns']]
   lines = []
   if block.get('title'):
-    lines.append(f"**{block['title']}**")
+    lines.append(f'**{block["title"]}**')
     lines.append('')
   deco = _decoration_lines(block.get('decorations') or {})
   if deco:
@@ -415,8 +432,8 @@ def _text_timeline(block):
   for e in block['entries']:
     line = e['line']
     if e.get('page') is not None:
-      line += f" ({pages_text(e['page'])})"
-    lines.append(f"{e['year']}  {(e.get('authors') or e['cite']).ljust(width)}  {line}")
+      line += f' ({pages_text(e["page"])})'
+    lines.append(f'{e["year"]}  {(e.get("authors") or e["cite"]).ljust(width)}  {line}')
     for s in e.get('synonymy') or ():
       lines.append(' ' * (8 + width) + '= ' + _entry_line(s))
   if not block['entries']:
@@ -436,8 +453,8 @@ def _md_timeline(block):
   for e in block['entries']:
     line = e['line']
     if e.get('page') is not None:
-      line += f" ({pages_text(e['page'])})"
-    lines.append(f"- {e['year']} {e.get('authors') or e['cite']}: {line}")
+      line += f' ({pages_text(e["page"])})'
+    lines.append(f'- {e["year"]} {e.get("authors") or e["cite"]}: {line}')
     for s in e.get('synonymy') or ():
       lines.append('  - = ' + _entry_line(s))
   if not block['entries']:
@@ -459,5 +476,6 @@ def _md_chains(block):
   lines.append('| year | source | chain |')
   lines.append('|---|---|---|')
   for e in block['entries']:
-    lines.append(f"| {e['year']} | {e.get('authors') or e['cite']} | {_chain_text(e['chain']).replace('|', '\\|')} |")
+    chain = _chain_text(e['chain']).replace('|', '\\|')
+    lines.append(f'| {e["year"]} | {e.get("authors") or e["cite"]} | {chain} |')
   return '\n'.join(lines)

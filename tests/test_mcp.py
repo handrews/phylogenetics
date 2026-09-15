@@ -28,9 +28,15 @@ def server():
 
 
 def test_plan_tool_renders_the_composition(server):
-  got = server.plan('Rhenopyrgidae under Cyathocystidae', [
-    {'tool': 'placed_under', 'parameters': {'record': 'rhenopyrgidae', 'parent': 'cyathocystidae'}},
-  ])
+  got = server.plan(
+    'Rhenopyrgidae under Cyathocystidae',
+    [
+      {
+        'tool': 'placed_under',
+        'parameters': {'record': 'rhenopyrgidae', 'parent': 'cyathocystidae'},
+      },
+    ],
+  )
   assert got['errors'] == []
   assert got['rendered'].startswith('Rhenopyrgidae under Cyathocystidae\n\n')
   assert 'first Guensburg & Sprinkle 1994' in got['rendered']

@@ -20,13 +20,16 @@ pytestmark = pytest.mark.skipif(
 
 
 def test_validate_rejects_what_the_tools_lack():
-  bad = {'header': 'x', 'blocks': [
-    {'tool': 'bogus', 'parameters': {}},
-    {'tool': 'history', 'parameters': {'record': 'rhenopyrgus', 'colour': 'red'}},
-    {'tool': 'contents', 'parameters': {'source': '1961_dehm'}},
-    {'tool': 'resolve_name', 'parameters': {'query': 'x'}},
-    {'tool': 'history', 'parameters': {'record': 'rhenopyrgus', 'years': True}},
-  ]}
+  bad = {
+    'header': 'x',
+    'blocks': [
+      {'tool': 'bogus', 'parameters': {}},
+      {'tool': 'history', 'parameters': {'record': 'rhenopyrgus', 'colour': 'red'}},
+      {'tool': 'contents', 'parameters': {'source': '1961_dehm'}},
+      {'tool': 'resolve_name', 'parameters': {'query': 'x'}},
+      {'tool': 'history', 'parameters': {'record': 'rhenopyrgus', 'years': True}},
+    ],
+  }
   problems = plan.validate(bad)
   assert problems[:4] == [
     'block 1: unknown tool bogus',
@@ -34,19 +37,41 @@ def test_validate_rejects_what_the_tools_lack():
     'block 3: contents needs record',
     'block 4: resolve_name answers a lookup, not a reader; it is not a block',
   ]
-  assert problems[4].startswith('block 5: history years must be a list ([first, last] publication years')
-  assert plan.validate({'header': 'x', 'blocks': [{'tool': 'history', 'parameters': {'record': 'rhenopyrgus', 'years': [1990, None]}}]}) == []
-  assert plan.validate({'header': 'x', 'blocks': [{'tool': 'history', 'parameters': {'record': 'rhenopyrgus'}}]}) == []
+  assert problems[4].startswith(
+    'block 5: history years must be a list ([first, last] publication years'
+  )
+  assert (
+    plan.validate(
+      {
+        'header': 'x',
+        'blocks': [
+          {'tool': 'history', 'parameters': {'record': 'rhenopyrgus', 'years': [1990, None]}}
+        ],
+      }
+    )
+    == []
+  )
+  assert (
+    plan.validate(
+      {'header': 'x', 'blocks': [{'tool': 'history', 'parameters': {'record': 'rhenopyrgus'}}]}
+    )
+    == []
+  )
 
 
 def test_execute_builds_the_blocks_in_order():
-  outcome = plan.execute({
-    'header': 'Rhenopyrgidae under Cyathocystidae; all years',
-    'blocks': [
-      {'tool': 'placed_under', 'parameters': {'record': 'Rhenopyrgidae', 'parent': 'Cyathocystidae'}},
-      {'tool': 'placements', 'parameters': {'records': ['rhenopyrgidae']}},
-    ],
-  })
+  outcome = plan.execute(
+    {
+      'header': 'Rhenopyrgidae under Cyathocystidae; all years',
+      'blocks': [
+        {
+          'tool': 'placed_under',
+          'parameters': {'record': 'Rhenopyrgidae', 'parent': 'Cyathocystidae'},
+        },
+        {'tool': 'placements', 'parameters': {'records': ['rhenopyrgidae']}},
+      ],
+    }
+  )
   assert outcome['errors'] == []
   assert [b['tool'] for b in outcome['blocks']] == ['placed_under', 'placements']
   assert outcome['blocks'][0]['parameters']['record'] == 'rhenopyrgidae'
@@ -57,14 +82,22 @@ def test_execute_builds_the_blocks_in_order():
 
 
 def test_execute_reports_what_it_cannot_build():
-  outcome = plan.execute({'header': 'x', 'blocks': [
-    {'tool': 'history', 'parameters': {'record': 'casteri'}},
-    {'tool': 'gap', 'parameters': {'source': 'Lamarck 1816', 'kind': 'material'}},
-    {'tool': 'gap', 'parameters': {'name': 'Rhenoblastus'}},
-  ]})
+  outcome = plan.execute(
+    {
+      'header': 'x',
+      'blocks': [
+        {'tool': 'history', 'parameters': {'record': 'casteri'}},
+        {'tool': 'gap', 'parameters': {'source': 'Lamarck 1816', 'kind': 'material'}},
+        {'tool': 'gap', 'parameters': {'name': 'Rhenoblastus'}},
+      ],
+    }
+  )
   assert [e['block'] for e in outcome['errors']] == [1, 2]
   assert 'casteri_bell.b.m_1975' in outcome['errors'][0]['error']
   assert '1816a_lamarck' in outcome['errors'][1]['error']
   assert [b['tool'] for b in outcome['blocks']] == ['gap']
   assert outcome['composition']['blocks'][0]['type'] == 'statement'
-  assert plan.execute({'header': 'x', 'blocks': [{'tool': 'bogus', 'parameters': {}}]})['composition'] is None
+  assert (
+    plan.execute({'header': 'x', 'blocks': [{'tool': 'bogus', 'parameters': {}}]})['composition']
+    is None
+  )

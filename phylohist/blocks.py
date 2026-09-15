@@ -27,12 +27,20 @@ TYPES = ('classification', 'table', 'list', 'statement', 'chains', 'timeline')
 # The marks a listing prints beside a name, in the community's
 # abbreviations; shared by the tools that word cells and the renderers.
 ACT_MARKS = {
-  'emended': 'emend.', 'nomTransl': 'nom. transl.', 'corrected': 'nom. correct.',
+  'emended': 'emend.',
+  'nomTransl': 'nom. transl.',
+  'corrected': 'nom. correct.',
 }
 _NEW_MARKS = {
-  'superfamily': 'superfam. nov.', 'family': 'fam. nov.', 'subfamily': 'subfam. nov.',
-  'genus': 'gen. nov.', 'subgenus': 'subgen. nov.', 'species': 'sp. nov.',
-  'subspecies': 'subsp. nov.', 'variety': 'var. nov.', 'order': 'ord. nov.',
+  'superfamily': 'superfam. nov.',
+  'family': 'fam. nov.',
+  'subfamily': 'subfam. nov.',
+  'genus': 'gen. nov.',
+  'subgenus': 'subgen. nov.',
+  'species': 'sp. nov.',
+  'subspecies': 'subsp. nov.',
+  'variety': 'var. nov.',
+  'order': 'ord. nov.',
   'suborder': 'subord. nov.',
 }
 
@@ -83,9 +91,17 @@ def classification(nodes, parameters, source=None, root=None, extra=None):
   claims += [c for n in nodes for c in n.get('actClaims') or ()]
   claims += [n['typeSpecies']['claim'] for n in nodes if n.get('typeSpecies')]
   claims += [e['claim'] for n in nodes for e in n.get('synonymy') or () if e.get('claim')]
-  return _make('classification', {
-    'source': source, 'root': root, 'nodes': nodes,
-  }, parameters, claims, extra)
+  return _make(
+    'classification',
+    {
+      'source': source,
+      'root': root,
+      'nodes': nodes,
+    },
+    parameters,
+    claims,
+    extra,
+  )
 
 
 def table(columns, rows, parameters, groups=None, decorations=None, title=None, extra=None):
@@ -95,22 +111,51 @@ def table(columns, rows, parameters, groups=None, decorations=None, title=None, 
   a record twice. ``decorations`` carries computed measurements (counts,
   co-author sets, year spans) that a renderer may show as a header."""
   claims = [c for row in rows for cell in row['cells'] for v in cell for c in _claims_of(v)]
-  return _make('table', {
-    'title': title, 'columns': columns, 'rows': rows,
-    'groups': groups or [], 'decorations': decorations or {},
-  }, parameters, claims, extra)
+  return _make(
+    'table',
+    {
+      'title': title,
+      'columns': columns,
+      'rows': rows,
+      'groups': groups or [],
+      'decorations': decorations or {},
+    },
+    parameters,
+    claims,
+    extra,
+  )
 
 
-def list_entry(source, cite, year, claim, page=None, stance=None, parents=None,
-               printed=None, record=None, name=None, kind=None, sentence=None,
-               claims=None, authors=None):
+def list_entry(
+  source,
+  cite,
+  year,
+  claim,
+  page=None,
+  stance=None,
+  parents=None,
+  printed=None,
+  record=None,
+  name=None,
+  kind=None,
+  sentence=None,
+  claims=None,
+  authors=None,
+):
   """One line of a list: a synonymy entry (parents, name, printed form,
   stance), a printed form, or a statement (kind, sentence)."""
   entry = {'source': source, 'cite': cite, 'year': year, 'claim': claim}
   for field, value in (
-    ('page', page), ('stance', stance), ('parents', parents),
-    ('printed', printed), ('record', record), ('name', name),
-    ('kind', kind), ('sentence', sentence), ('claims', claims), ('authors', authors),
+    ('page', page),
+    ('stance', stance),
+    ('parents', parents),
+    ('printed', printed),
+    ('record', record),
+    ('name', name),
+    ('kind', kind),
+    ('sentence', sentence),
+    ('claims', claims),
+    ('authors', authors),
   ):
     if value is not None:
       entry[field] = value
@@ -120,9 +165,17 @@ def list_entry(source, cite, year, claim, page=None, stance=None, parents=None,
 def listing(heading, entries, parameters, kind='synonymy', extra=None):
   """``heading``: {key, name, rank}; ``entries`` from `list_entry`, in
   year order."""
-  return _make('list', {
-    'kind': kind, 'heading': heading, 'entries': entries,
-  }, parameters, [c for e in entries for c in _claims_of(e)], extra)
+  return _make(
+    'list',
+    {
+      'kind': kind,
+      'heading': heading,
+      'entries': entries,
+    },
+    parameters,
+    [c for e in entries for c in _claims_of(e)],
+    extra,
+  )
 
 
 def chains(entries, parameters, title=None, decorations=None, extra=None):
@@ -130,19 +183,35 @@ def chains(entries, parameters, title=None, decorations=None, extra=None):
   down, each node key, label, rank, kind: placement, placeholder or
   alternative), claims. ``decorations`` carries the measurement (papers,
   co-author sets, years, first and last)."""
-  return _make('chains', {
-    'title': title, 'entries': entries, 'decorations': decorations or {},
-  }, parameters, [c for e in entries for c in _claims_of(e)], extra)
+  return _make(
+    'chains',
+    {
+      'title': title,
+      'entries': entries,
+      'decorations': decorations or {},
+    },
+    parameters,
+    [c for e in entries for c in _claims_of(e)],
+    extra,
+  )
 
 
 def timeline(entries, parameters, title=None, decorations=None, extra=None):
   """``entries`` in year order, each: year, source, cite, line (the name
   as the source uses it and its position), acts (words), page, optional
   synonymy entries, claims."""
-  return _make('timeline', {
-    'title': title, 'entries': entries, 'decorations': decorations or {},
-  }, parameters, [c for e in entries for c in _claims_of(e)] +
-     [c for e in entries for s in e.get('synonymy') or () for c in _claims_of(s)], extra)
+  return _make(
+    'timeline',
+    {
+      'title': title,
+      'entries': entries,
+      'decorations': decorations or {},
+    },
+    parameters,
+    [c for e in entries for c in _claims_of(e)]
+    + [c for e in entries for s in e.get('synonymy') or () for c in _claims_of(s)],
+    extra,
+  )
 
 
 def statement(kind, fields, parameters, claims=()):
@@ -160,9 +229,13 @@ def compose(blocks, header, question=None):
     'blocks': blocks,
     'question': question,
   }
-  content['compositionId'] = block_id({
-    'header': header, 'blocks': [b['blockId'] for b in blocks], 'question': question,
-  })
+  content['compositionId'] = block_id(
+    {
+      'header': header,
+      'blocks': [b['blockId'] for b in blocks],
+      'question': question,
+    }
+  )
   return content
 
 
@@ -174,9 +247,7 @@ def validate(block, store):
   content = {k: v for k, v in block.items() if k not in ('blockId', 'rendered')}
   if block_id(content) != block.get('blockId'):
     problems.append('blockId does not match content')
-  known_claims = {
-    c['id'] for claims in store.by_source.values() for c in claims
-  }
+  known_claims = {c['id'] for claims in store.by_source.values() for c in claims}
   for claim_id in block.get('claims', ()):
     if claim_id not in known_claims:
       problems.append(f'unknown claim {claim_id}')
@@ -199,7 +270,10 @@ def validate(block, store):
   elif kind == 'table':
     for column, values in zip(
       block.get('columns', ()),
-      zip(*[row['cells'] for row in block.get('rows', ())]) if block.get('rows') else (),
+      zip(*[row['cells'] for row in block.get('rows', ())], strict=False)
+      if block.get('rows')
+      else (),
+      strict=False,
     ):
       for cell in values:
         for v in cell:

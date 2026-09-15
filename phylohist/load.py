@@ -16,20 +16,22 @@ logger = logging.getLogger(__name__)
 
 
 def _basic_load(data, field, cls):
-  logger.info(f"Loading {len(data[field])} {field}...")
+  logger.info(f'Loading {len(data[field])} {field}...')
   for item_key, item_data in data[field].items():
     cls.add(item_data, item_key)
   logger.info(f'...{field} loaded.')
 
 
 def _load_taxa(data):
-  logger.info(f"Processing {len(data['taxa'])} taxa...")
+  logger.info(f'Processing {len(data["taxa"])} taxa...')
   deferred = []
-  deferring_fields = frozenset({
-    'altRankOf',
-    'altSpellingOf',
-    'vulgarSpellingOf',
-  })
+  deferring_fields = frozenset(
+    {
+      'altRankOf',
+      'altSpellingOf',
+      'vulgarSpellingOf',
+    }
+  )
   for taxon_key, taxon_data in data['taxa'].items():
     if taxon_data.keys() & deferring_fields:
       deferred.append((taxon_key, taxon_data))
@@ -37,7 +39,7 @@ def _load_taxa(data):
     Taxon.add(taxon_data, taxon_key)
   for taxon_key, taxon_data in deferred:
     Taxon.add(taxon_data, taxon_key)
-  logger.info(f"...taxa processed.")
+  logger.info('...taxa processed.')
 
 
 def _report_merge_targets(data):
@@ -48,8 +50,7 @@ def _report_merge_targets(data):
       src, index = tax_tree['mergeInto']
       if src not in data['trees']:
         logger.error(
-          f'{ref_key} has mergeInto target source "{src}", which does '
-          'not exist',
+          f'{ref_key} has mergeInto target source "{src}", which does not exist',
         )
       elif index >= len(data['trees'][src].get('taxonomies', [])):
         logger.error(
@@ -78,7 +79,7 @@ def _report_missing_protologues(data):
 
 def _load_trees(data):
   """Build every tree; return ``{source_key: [roots in position order]}``."""
-  logger.info(f"Processing {len(data['trees'])} opinions...")
+  logger.info(f'Processing {len(data["trees"])} opinions...')
 
   roots = {}
   for ref_key, opinion in data['trees'].items():
@@ -117,7 +118,7 @@ def _load_trees(data):
       t = Tree(phy_tree['tree'], metadata)
       roots[ref_key].append(t)
 
-  logger.info(f"...opinions processed.")
+  logger.info('...opinions processed.')
 
   _report_merge_targets(data)
   _report_missing_protologues(data)

@@ -25,9 +25,7 @@ from phylohist import plan
 from phylohist.claims import extract, manifest
 from phylohist.render import render_composition
 
-QUESTIONS_PATH = (
-  pathlib.Path(__file__).parent.parent / 'eval' / 'questions.yaml'
-)
+QUESTIONS_PATH = pathlib.Path(__file__).parent.parent / 'eval' / 'questions.yaml'
 
 with open(QUESTIONS_PATH) as fd:
   QUESTIONS = yaml.safe_load(fd)
@@ -66,10 +64,10 @@ def test_question(question):
     # strings and the question's.
     outcome = plan.execute({'header': '', 'blocks': alternative['blocks']})
     if outcome['errors']:
-      pytest.fail(f"{qid}: {outcome['errors']}")
+      pytest.fail(f'{qid}: {outcome["errors"]}')
     for block in outcome['blocks']:
       if block['type'] != 'statement' and not block['claims']:
-        pytest.fail(f"{qid}: {block['tool']} {block['parameters']} rests on no claim")
+        pytest.fail(f'{qid}: {block["tool"]} {block["parameters"]} rests on no claim')
     rendered = normalise(render_composition(outcome['composition'], 'text'))
     for text in list(expected.get('shows') or ()) + alternative['shows']:
       if normalise(text) not in rendered:
@@ -83,9 +81,7 @@ def test_no_inconsistencies(claims):
     if entry['inconsistencies']
   }
   if rows:
-    listing = '\n'.join(
-      f'{source_key}: {"; ".join(found)}' for source_key, found in rows.items()
-    )
+    listing = '\n'.join(f'{source_key}: {"; ".join(found)}' for source_key, found in rows.items())
     pytest.fail(
       f'{len(rows)} sources declare coverage their claims contradict '
       f'(run scripts/claims.py --inconsistencies):\n{listing}',

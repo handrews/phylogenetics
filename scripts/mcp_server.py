@@ -20,7 +20,8 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
 from mcp.server.mcpserver import MCPServer  # noqa: E402
 
-from phylohist import plan as plans, tools  # noqa: E402
+from phylohist import plan as plans  # noqa: E402
+from phylohist import tools
 from phylohist.render import render_composition  # noqa: E402
 
 server = MCPServer(
@@ -54,71 +55,107 @@ def resolve_source(query: str) -> list[dict]:
 
 @server.tool(description=D['contents'])
 def contents(
-  record: str, source: str | None = None, depth: int | None = None,
-  synonymy: bool = False, style: str = 'text',
+  record: str,
+  source: str | None = None,
+  depth: int | None = None,
+  synonymy: bool = False,
+  style: str = 'text',
 ) -> list[dict]:
   return tools.contents(source, record, depth=depth, synonymy=synonymy, style=style)
 
 
 @server.tool(description=D['placements'])
 def placements(
-  records: list[str], sources: list[str] | None = None,
-  years: list[int | None] | None = None, include_variants: bool = True,
-  include_synonyms: bool = True, trees: list[str] | None = None,
+  records: list[str],
+  sources: list[str] | None = None,
+  years: list[int | None] | None = None,
+  include_variants: bool = True,
+  include_synonyms: bool = True,
+  trees: list[str] | None = None,
   style: str = 'text',
 ) -> dict:
   return tools.placements(
-    records, sources=sources, years=tuple(years) if years else None,
-    include_variants=include_variants, include_synonyms=include_synonyms,
-    trees=trees, style=style,
+    records,
+    sources=sources,
+    years=tuple(years) if years else None,
+    include_variants=include_variants,
+    include_synonyms=include_synonyms,
+    trees=trees,
+    style=style,
   )
 
 
 @server.tool(description=D['descendants'])
 def descendants(
-  records: list[str], include_synonyms: bool = True, include_variants: bool = True,
-  trees: list[str] | None = None, years: list[int | None] | None = None,
+  records: list[str],
+  include_synonyms: bool = True,
+  include_variants: bool = True,
+  trees: list[str] | None = None,
+  years: list[int | None] | None = None,
   style: str = 'text',
 ) -> dict:
   return tools.descendants(
-    records, include_synonyms=include_synonyms, include_variants=include_variants,
-    trees=trees, years=tuple(years) if years else None, style=style,
+    records,
+    include_synonyms=include_synonyms,
+    include_variants=include_variants,
+    trees=trees,
+    years=tuple(years) if years else None,
+    style=style,
   )
 
 
 @server.tool(description=D['ancestors'])
 def ancestors(
-  records: list[str], include_variants: bool = True,
-  trees: list[str] | None = None, years: list[int | None] | None = None,
+  records: list[str],
+  include_variants: bool = True,
+  trees: list[str] | None = None,
+  years: list[int | None] | None = None,
   style: str = 'text',
 ) -> dict:
   return tools.ancestors(
-    records, include_variants=include_variants, trees=trees,
-    years=tuple(years) if years else None, style=style,
+    records,
+    include_variants=include_variants,
+    trees=trees,
+    years=tuple(years) if years else None,
+    style=style,
   )
 
 
 @server.tool(description=D['placed_under'])
 def placed_under(
-  record: str, parent: str, include_variants: bool = True,
-  trees: list[str] | None = None, years: list[int | None] | None = None,
+  record: str,
+  parent: str,
+  include_variants: bool = True,
+  trees: list[str] | None = None,
+  years: list[int | None] | None = None,
   style: str = 'text',
 ) -> dict:
   return tools.placed_under(
-    record, parent, include_variants=include_variants, trees=trees,
-    years=tuple(years) if years else None, style=style,
+    record,
+    parent,
+    include_variants=include_variants,
+    trees=trees,
+    years=tuple(years) if years else None,
+    style=style,
   )
 
 
 @server.tool(description=D['history'])
 def history(
-  record: str, include_related: bool = True, synonymy: bool = False,
-  trees: list[str] | None = None, years: list[int | None] | None = None,
+  record: str,
+  include_related: bool = True,
+  synonymy: bool = False,
+  trees: list[str] | None = None,
+  years: list[int | None] | None = None,
   style: str = 'text',
 ) -> dict:
   return tools.history(
-    record, include_related=include_related, synonymy=synonymy, trees=trees,
-    years=tuple(years) if years else None, style=style,
+    record,
+    include_related=include_related,
+    synonymy=synonymy,
+    trees=trees,
+    years=tuple(years) if years else None,
+    style=style,
   )
 
 
@@ -129,8 +166,11 @@ def synonymy(record: str, source: str | None = None, style: str = 'text') -> lis
 
 @server.tool(description=D['statements'])
 def statements(
-  record: str, source: str | None = None, kind: str | None = None,
-  act_kind: str | None = None, style: str = 'text',
+  record: str,
+  source: str | None = None,
+  kind: str | None = None,
+  act_kind: str | None = None,
+  style: str = 'text',
 ) -> dict:
   return tools.statements(record, source=source, kind=kind, act_kind=act_kind, style=style)
 
@@ -141,8 +181,9 @@ def source_coverage(source_key: str) -> dict:
 
 
 @server.tool(description=D['gap'])
-def gap(source: str | None = None, kind: str | None = None, name: str | None = None,
-        style: str = 'text') -> dict:
+def gap(
+  source: str | None = None, kind: str | None = None, name: str | None = None, style: str = 'text'
+) -> dict:
   return tools.gap(source, kind, name=name, style=style)
 
 
@@ -152,13 +193,14 @@ def printed_forms(record: str, source: str | None = None, style: str = 'text') -
 
 
 @server.tool(description=plans.PLAN_SPEC['description'])
-def plan(header: str, blocks: list[dict], question: str | None = None,
-         style: str = 'text') -> dict:
+def plan(header: str, blocks: list[dict], question: str | None = None, style: str = 'text') -> dict:
   outcome = plans.execute({'header': header, 'blocks': blocks, 'question': question})
   composition = outcome['composition']
   return {
     'rendered': render_composition(composition, style) if composition else None,
-    'blocks': [{k: b[k] for k in ('blockId', 'type', 'tool', 'parameters')} for b in outcome['blocks']],
+    'blocks': [
+      {k: b[k] for k in ('blockId', 'type', 'tool', 'parameters')} for b in outcome['blocks']
+    ],
     'errors': outcome['errors'],
   }
 

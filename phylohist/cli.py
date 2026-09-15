@@ -25,7 +25,8 @@ import sys
 
 import yaml
 
-from . import plan as plans, tools
+from . import plan as plans
+from . import tools
 from .render import render_composition, styles
 
 
@@ -94,8 +95,12 @@ def build_parser():
 
   p = add_parser('history', help='what each source does with a name')
   p.add_argument('record')
-  p.add_argument('--alone', dest='include_related', action='store_false',
-                 help='this record only, not the same name at other ranks')
+  p.add_argument(
+    '--alone',
+    dest='include_related',
+    action='store_false',
+    help='this record only, not the same name at other ranks',
+  )
   p.add_argument('--synonymy', action='store_true', help="each source's synonymy under its line")
   p.add_argument('--years', nargs=2, type=int, metavar=('FIRST', 'LAST'))
   p.add_argument('--trees', nargs='+', choices=['taxonomy', 'cladogram', 'diagram', 'other'])
@@ -110,10 +115,12 @@ def build_parser():
   p.add_argument('--kind')
   p.add_argument('--act', dest='act_kind')
 
-  p = add_parser('coverage', help="what the corpus holds of a source")
+  p = add_parser('coverage', help='what the corpus holds of a source')
   p.add_argument('source')
 
-  p = add_parser('gap', help='the sentence for what is not yet entered, or for a name no source carries')
+  p = add_parser(
+    'gap', help='the sentence for what is not yet entered, or for a name no source carries'
+  )
   p.add_argument('source', nargs='?')
   p.add_argument('kind', nargs='?', choices=list(tools.COVERAGE_WORDS))
   p.add_argument('--name', help='a name no source in the corpus carries')
@@ -122,7 +129,9 @@ def build_parser():
   p.add_argument('record')
   p.add_argument('--source')
 
-  p = add_parser('plan', help='execute a plan (YAML or JSON: header, blocks, question) and print the answer')
+  p = add_parser(
+    'plan', help='execute a plan (YAML or JSON: header, blocks, question) and print the answer'
+  )
   p.add_argument('file', help='a plan file, or - for stdin')
 
   add_parser('tools', help='the tools and what they answer')
@@ -153,25 +162,27 @@ def _main(argv):
       print('(no record in the corpus carries this name)')
     else:
       for c in result:
-        line = f"{c['key']}  {c['name'] or '[placeholder]'} ({c['rank']}, {c['kind']}"
+        line = f'{c["key"]}  {c["name"] or "[placeholder]"} ({c["rank"]}, {c["kind"]}'
         if c.get('of'):
-          line += f", of {c['of']}"
-        line += f"); {c.get('authority') or 'authority not recorded'}; "
-        line += f"{c['sourcesWithStatements']} sources"
+          line += f', of {c["of"]}'
+        line += f'); {c.get("authority") or "authority not recorded"}; '
+        line += f'{c["sourcesWithStatements"]} sources'
         if c.get('variants'):
-          line += f"; same name at other ranks or spellings: {', '.join(c['variants'])}"
+          line += f'; same name at other ranks or spellings: {", ".join(c["variants"])}'
         if c.get('combinations'):
           line += '; as ' + '; '.join(
-            f"{x['label']} {x['firstYear']}" + (f"–{x['lastYear']}" if x['lastYear'] != x['firstYear'] else '')
-            for x in c['combinations'])
+            f'{x["label"]} {x["firstYear"]}'
+            + (f'–{x["lastYear"]}' if x['lastYear'] != x['firstYear'] else '')
+            for x in c['combinations']
+          )
         print(line)
     return 0
   if command == 'plan':
     text = sys.stdin.read() if args.file == '-' else open(args.file).read()
     outcome = plans.execute(yaml.safe_load(text))
     for error in outcome['errors']:
-      where = f"block {error['block']} ({error['tool']})" if error.get('block') else 'plan'
-      print(f"{where}: {error['error']}", file=sys.stderr)
+      where = f'block {error["block"]} ({error["tool"]})' if error.get('block') else 'plan'
+      print(f'{where}: {error["error"]}', file=sys.stderr)
     if outcome['composition'] is None:
       return 2
     if style == 'json':
@@ -187,8 +198,10 @@ def _main(argv):
       print('(no source in the corpus is that paper)')
     else:
       for c in result:
-        print(f"{c['key']}  {c['cite']}; {'entered' if c['entered'] else 'not entered'}; "
-              + ', '.join(c['authors']))
+        print(
+          f'{c["key"]}  {c["cite"]}; {"entered" if c["entered"] else "not entered"}; '
+          + ', '.join(c['authors'])
+        )
     return 0
   if command == 'coverage':
     print(json.dumps(tools.source_coverage(args.source), ensure_ascii=False, indent=1))
@@ -197,29 +210,60 @@ def _main(argv):
   years = tuple(args.years) if getattr(args, 'years', None) else None
   if command == 'contents':
     source = None if args.source in (None, '-') else args.source
-    result = tools.contents(source, args.record, depth=args.depth, synonymy=args.synonymy, style=style)
+    result = tools.contents(
+      source, args.record, depth=args.depth, synonymy=args.synonymy, style=style
+    )
   elif command == 'placements':
-    result = tools.placements(args.records, sources=args.sources, years=years,
-                              include_variants=args.include_variants,
-                              include_synonyms=args.include_synonyms, trees=args.trees, style=style)
+    result = tools.placements(
+      args.records,
+      sources=args.sources,
+      years=years,
+      include_variants=args.include_variants,
+      include_synonyms=args.include_synonyms,
+      trees=args.trees,
+      style=style,
+    )
   elif command == 'descendants':
-    result = tools.descendants(args.records, include_synonyms=args.include_synonyms,
-                               include_variants=args.include_variants, trees=args.trees,
-                               years=years, style=style)
+    result = tools.descendants(
+      args.records,
+      include_synonyms=args.include_synonyms,
+      include_variants=args.include_variants,
+      trees=args.trees,
+      years=years,
+      style=style,
+    )
   elif command == 'ancestors':
-    result = tools.ancestors(args.records, include_variants=args.include_variants,
-                             trees=args.trees, years=years, style=style)
+    result = tools.ancestors(
+      args.records,
+      include_variants=args.include_variants,
+      trees=args.trees,
+      years=years,
+      style=style,
+    )
   elif command == 'under':
-    result = tools.placed_under(args.record, args.parent, include_variants=args.include_variants,
-                                trees=args.trees, years=years, style=style)
+    result = tools.placed_under(
+      args.record,
+      args.parent,
+      include_variants=args.include_variants,
+      trees=args.trees,
+      years=years,
+      style=style,
+    )
   elif command == 'history':
-    result = tools.history(args.record, include_related=args.include_related,
-                           synonymy=args.synonymy, trees=args.trees, years=years, style=style)
+    result = tools.history(
+      args.record,
+      include_related=args.include_related,
+      synonymy=args.synonymy,
+      trees=args.trees,
+      years=years,
+      style=style,
+    )
   elif command == 'synonymy':
     result = tools.synonymy(args.record, source=args.source, style=style)
   elif command == 'statements':
-    result = tools.statements(args.record, source=args.source, kind=args.kind,
-                              act_kind=args.act_kind, style=style)
+    result = tools.statements(
+      args.record, source=args.source, kind=args.kind, act_kind=args.act_kind, style=style
+    )
   elif command == 'gap':
     result = tools.gap(args.source, args.kind, name=args.name, style=style)
   elif command == 'printed':

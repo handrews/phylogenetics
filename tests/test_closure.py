@@ -34,10 +34,21 @@ def test_descendants_of_edrioblastoids(closure):
   found = closure.descendants(['edrioblastoidea'])
   expected = {
     'pentacystida',
-    'astrocystitidae', 'steganoblastidae', 'cyathocystidae', 'rhenopyrgidae',
-    'cyathocystinae', 'rhenopyrginae',
-    'astrocystites', 'cambroblastus', 'lampteroblastus', 'porosublastus',
-    'ikerus', 'cyathocystis', 'cyathotheca', 'rhenopyrgus', 'heropyrgus',
+    'astrocystitidae',
+    'steganoblastidae',
+    'cyathocystidae',
+    'rhenopyrgidae',
+    'cyathocystinae',
+    'rhenopyrginae',
+    'astrocystites',
+    'cambroblastus',
+    'lampteroblastus',
+    'porosublastus',
+    'ikerus',
+    'cyathocystis',
+    'cyathotheca',
+    'rhenopyrgus',
+    'heropyrgus',
     'steganoblastus',
   }
   missing = expected - set(found)
@@ -58,8 +69,15 @@ def test_descendants_without_synonyms(closure):
 def test_ancestors_of_edrioblastoids(closure):
   members = ['edrioblastoidea', 'astrocystitidae', 'cyathocystidae', 'rhenopyrgidae']
   found = closure.ancestors(members)
-  for key in ('edrioasteroidea', 'edrioasterida', 'echinozoa', 'crinozoa',
-              'pelmatozoa', 'isorophida', 'cyathocystida'):
+  for key in (
+    'edrioasteroidea',
+    'edrioasterida',
+    'echinozoa',
+    'crinozoa',
+    'pelmatozoa',
+    'isorophida',
+    'cyathocystida',
+  ):
     assert key in found, key
   blastoidea = found['blastoidea']
   assert {via['kind'] for via in blastoidea} == {'alternative'}
@@ -73,8 +91,9 @@ def test_ancestors_of_edrioblastoids(closure):
 def test_year_range(closure):
   found = closure.descendants(['edrioblastoidea'], years=(1994, 2000))
   assert 'lampteroblastus' in found
-  assert all(1994 <= via['year'] <= 2000 for vias in found.values()
-             for via in vias if 'year' in via)
+  assert all(
+    1994 <= via['year'] <= 2000 for vias in found.values() for via in vias if 'year' in via
+  )
 
 
 def test_schemes_for_rhenopyrgidae(closure):

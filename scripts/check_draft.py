@@ -15,7 +15,11 @@ import jschon
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 from phylohist.io import (  # noqa: E402
-  DATA_DIR, FILEDIR, ensure_catalog, load_yaml, log_schema_errors,
+  DATA_DIR,
+  FILEDIR,
+  ensure_catalog,
+  load_yaml,
+  log_schema_errors,
 )
 
 TAXON_FIELDS = ('taxon', 'openTaxon', 'cfTaxon', 'affTaxon', 'bracket')

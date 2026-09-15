@@ -25,26 +25,49 @@ def run(capsys, *argv):
   return code, out.rstrip('\n')
 
 
-@pytest.mark.parametrize('argv, expected', [
-  (['contents', '1994_guensburg_sprinkle', 'astrocystitidae'],
-   lambda: tools.contents('1994_guensburg_sprinkle', 'astrocystitidae')[0]['rendered']),
-  (['history', 'rhenopyrgus'], lambda: tools.history('rhenopyrgus')['rendered']),
-  (['gap', '1983_holloway_jell', 'material'],
-   lambda: tools.gap('1983_holloway_jell', 'material')['rendered']),
-  (['descendants', 'edrioblastoidea', '--no-synonyms'],
-   lambda: tools.descendants(['edrioblastoidea'], include_synonyms=False)['rendered']),
-  (['ancestors', 'rhenopyrgidae', '--years', '1990', '2020'],
-   lambda: tools.ancestors(['rhenopyrgidae'], years=(1990, 2020))['rendered']),
-  (['under', 'Rhenopyrgus grayae', 'Rhenopyrgidae'],
-   lambda: tools.placed_under('Rhenopyrgus grayae', 'Rhenopyrgidae')['rendered']),
-  (['placements', 'astrocystitidae', 'rhenopyrgidae', '--sources', '1994_guensburg_sprinkle'],
-   lambda: tools.placements(['astrocystitidae', 'rhenopyrgidae'], sources=['1994_guensburg_sprinkle'])['rendered']),
-  (['statements', 'rhenopyrgidae', '--act', 'new'],
-   lambda: tools.statements('rhenopyrgidae', act_kind='new')['rendered']),
-  (['printed', 'edrioblastoidina'], lambda: tools.printed_forms('edrioblastoidina')['rendered']),
-  (['synonymy', 'grayae_bather_1915', '--source', '2020_ewin_martin.m_isotalo_zamora'],
-   lambda: tools.synonymy('grayae_bather_1915', source='2020_ewin_martin.m_isotalo_zamora')[0]['rendered']),
-])
+@pytest.mark.parametrize(
+  'argv, expected',
+  [
+    (
+      ['contents', '1994_guensburg_sprinkle', 'astrocystitidae'],
+      lambda: tools.contents('1994_guensburg_sprinkle', 'astrocystitidae')[0]['rendered'],
+    ),
+    (['history', 'rhenopyrgus'], lambda: tools.history('rhenopyrgus')['rendered']),
+    (
+      ['gap', '1983_holloway_jell', 'material'],
+      lambda: tools.gap('1983_holloway_jell', 'material')['rendered'],
+    ),
+    (
+      ['descendants', 'edrioblastoidea', '--no-synonyms'],
+      lambda: tools.descendants(['edrioblastoidea'], include_synonyms=False)['rendered'],
+    ),
+    (
+      ['ancestors', 'rhenopyrgidae', '--years', '1990', '2020'],
+      lambda: tools.ancestors(['rhenopyrgidae'], years=(1990, 2020))['rendered'],
+    ),
+    (
+      ['under', 'Rhenopyrgus grayae', 'Rhenopyrgidae'],
+      lambda: tools.placed_under('Rhenopyrgus grayae', 'Rhenopyrgidae')['rendered'],
+    ),
+    (
+      ['placements', 'astrocystitidae', 'rhenopyrgidae', '--sources', '1994_guensburg_sprinkle'],
+      lambda: tools.placements(
+        ['astrocystitidae', 'rhenopyrgidae'], sources=['1994_guensburg_sprinkle']
+      )['rendered'],
+    ),
+    (
+      ['statements', 'rhenopyrgidae', '--act', 'new'],
+      lambda: tools.statements('rhenopyrgidae', act_kind='new')['rendered'],
+    ),
+    (['printed', 'edrioblastoidina'], lambda: tools.printed_forms('edrioblastoidina')['rendered']),
+    (
+      ['synonymy', 'grayae_bather_1915', '--source', '2020_ewin_martin.m_isotalo_zamora'],
+      lambda: tools.synonymy('grayae_bather_1915', source='2020_ewin_martin.m_isotalo_zamora')[0][
+        'rendered'
+      ],
+    ),
+  ],
+)
 def test_subcommand_matches_library(capsys, argv, expected):
   code, out = run(capsys, *argv)
   assert code == 0
@@ -85,8 +108,10 @@ def test_source_subcommand_and_citations(capsys):
 
 def test_plan_subcommand(capsys, tmp_path):
   path = tmp_path / 'plan.yaml'
-  path.write_text('header: Rhenopyrgidae under Cyathocystidae\nblocks:\n'
-                  '- tool: placed_under\n  parameters: {record: rhenopyrgidae, parent: cyathocystidae}\n')
+  path.write_text(
+    'header: Rhenopyrgidae under Cyathocystidae\nblocks:\n'
+    '- tool: placed_under\n  parameters: {record: rhenopyrgidae, parent: cyathocystidae}\n'
+  )
   code, out = run(capsys, 'plan', str(path))
   assert code == 0 and out.startswith('Rhenopyrgidae under Cyathocystidae\n\n')
   assert 'first Guensburg & Sprinkle 1994' in out

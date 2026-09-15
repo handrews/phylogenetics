@@ -18,6 +18,8 @@ anthropic = "^1.5.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8"
+ruff = "^0.16.7"
+pytest-cov = "^7.1.0"
 
 
 [build-system]
@@ -28,3 +30,16 @@ build-backend = "poetry.core.masonry.api"
 filterwarnings = [
   "ignore::DeprecationWarning:rfc3986",
 ]
+
+[tool.ruff]
+line-length = 100
+indent-width = 2
+target-version = "py310"
+extend-exclude = ["notes", "eval/runs"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
