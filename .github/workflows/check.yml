@@ -3,18 +3,33 @@ on:
   push:
     branches: [main, productize]
   pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: check-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   check:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.10', '3.14']
     steps:
     - uses: actions/checkout@v4
+    - run: pipx install poetry==2.2.1
     - uses: actions/setup-python@v5
       with:
-        python-version: '3.14'
-    - run: pip install poetry
+        python-version: ${{ matrix.python }}
+        cache: poetry
+    - run: poetry check --lock
     - run: poetry install
-    - run: poetry run pytest
+    - run: poetry run ruff check .
+    - run: poetry run ruff format --check .
+    - run: poetry run pytest --cov=phylohist --cov-report=term-missing:skip-covered --cov-fail-under=90
     - run: poetry run python scripts/schema_audit.py --markdown scripts/schema-usage.md
     - run: git diff --exit-code scripts/schema-usage.md
     - run: poetry run python scripts/claims.py
     - run: git diff --exit-code claims/
+    - run: for f in drafts/*.yaml; do poetry run python scripts/check_draft.py "$f" || exit 1; done
