@@ -1,0 +1,64 @@
+taxonomies:
+- taxon: edrioasteroidea
+  children:
+  - taxon: isorophida
+    auth: [bell.b.m]
+    year: 1974
+    citedAs: Bell, 1974
+    editorial:
+      source: 1976_bell.b.m
+      basis: cited before publication; printed with the intended year
+    notes: |
+      1976_bell.b.m was originally expected to be published in 1974 and
+      was cited as such here, but should have been cited as "in press"
+      as it was not actually published until 1976.
+    children:
+    - taxon: cyathocystina
+      new: true
+      children:
+      - taxon: cyathocystidae
+        authority:
+          source: 1899_bather
+        children:
+        - taxon: cyathocystis
+          children:
+          - taxon: plautinae_schmidt_1879
+            auth: [Schmidt]
+            year: 1880
+            citedAs: Schmidt, 1880
+            notes: |
+              Given as "Schmidt 1880" but other sources say 1879, although
+              there is also a plautini_schmidt_1980 that might be the same?
+          - taxon: rhizophora_schmidt_1889
+          - taxon: americanus_bassler_1936
+          - taxon: oklahomae_strimple_graffham_1955
+        - taxon: cyathotheca
+          children:
+          - taxon: suecica_jaekel_1927
+          - taxon: corallum_jaekel_1918
+        - taxon: hadrochthus
+          provisional: true
+          children:
+          - taxon: commensalus_bell.b.m_1976
+            auth: [bell.b.m]
+            year: 1974
+            citedAs: Bell, 1974
+            editorial:
+              source: 1976_bell.b.m
+              basis: cited before publication; printed with the intended year
+            notes: |
+              1976_bell.b.m was originally expected to be published in 1974 and
+              was cited as such here, but should have been cited as "in press"
+              as it was not actually published until 1976.
+        - taxon: timeischytes
+          emended: true
+          provisional: true
+          children:
+          - taxon: megapinacotus_ehlers_kesling_1958
+            type: true
+          - taxon: casteri_bell.b.m_1975
+            new: true
+      - taxon: postibulla
+        provisional: true
+        children:
+        - taxon: jasperensis_harker_1953

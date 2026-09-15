@@ -1,0 +1,92 @@
+notes: |
+  A few additional specimens are described as not learly from the locality
+  on which the paper focuses, and have been left out as they do not directly
+  fit into the given systematic paleontology declarations.
+taxonomies:
+- taxon: echinodermata
+  auth: [bruguiére]
+  year: 1791
+  children:
+  - taxon: blastozoa
+    children:
+    - taxon: rhombifera-class
+      emended: true
+      notes: |
+        Emended Paul, 1968b
+        Morphology and function of dichoporite pore-structures in cystoids
+        Palaeontology, v. 11, pt. 5, p. 697–730
+      children:
+      - taxon: dichoporita
+        children:
+        - taxon: glyptocystitida-superfamily
+          children:
+          - taxon: glyptocystitidae
+            emended: true
+            notes: |
+              Emended Paul 1972b and here; Paul 1972b is
+              Cheirocystella anti gua gen. et sp. nov. from the Lower
+              Ordovician of western Utah, and its bearing on the evolution
+              of the Cheirocrinidae (Rhombifera, Glyptocystitida)
+              Brigham Young Univ., Geol. Stud., V. 19, no. 1, p. 15-63
+            children:
+            - taxon: glyptocystella
+              children:
+              - taxon: loeblichi_bassler_1943
+                type: true
+                synonyms:
+                - taxon: loeblichi_bassler_1943
+                  provisional: true
+                  parents:
+                  - taxon: cheirocrinus
+                - taxon: loeblichi_bassler_1943
+                  parents:
+                  - taxon: glyptocystites
+                - taxon: loeblichi_bassler_1943
+                  pars: true
+                  auth: [paul.c.r.c]
+                  year: 1972
+                  parents:
+                  - taxon: glyptocystella
+            - taxon: pirocystella
+              new: true
+              children:
+              - taxon: strimplei_sprinkle_1982
+                type: true
+                new: true
+              - taxon: cooki_sprinkle_1982
+                new: true
+              - taxon: bassleri_sprinkle_1982g
+                new: true
+              - taxon: ornatus_bassler_1943
+                synonyms:
+                - taxon: ornatus_bassler_1943
+                  parents:
+                  - taxon: echinoencrinites
+                - taxon: loeblichi_bassler_1943
+                  pars: true
+                  auth: [paul.c.r.c]
+                  year: 1972
+                  parents:
+                  - taxon: glyptocystella
+            - taxon: hesperocystis
+              children:
+              - taxon: deckeri_sinclair_1945
+                type: true
+            - taxon: strabocystis
+              new: true
+              children:
+              - taxon: fayi_sprinkle_1982
+                type: true
+                new: true
+            - taxon: tanaocystis
+              new: true
+              children:
+              - taxon: watkinsi_sprinkle_1982
+                type: true
+                new: true
+            - taxon: quadrocystis
+              new: true
+              children:
+              - taxon: graffhami_sprinkle_1982
+                type: true
+                new: true

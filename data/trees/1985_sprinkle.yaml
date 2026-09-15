@@ -1,0 +1,18 @@
+taxonomies:
+- taxon: echinozoa
+  children:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: edrioasterida
+      children:
+      - taxon: totiglobidae
+        children:
+        - taxon: totiglobus
+          children:
+          - taxon: nimius_bell.b.m_sprinkle_1978
+            type: true
+          - taxon: lloydi_sprinkle_1985
+            provisional: true
+            new: true
+            specimens:
+              holotype: USNM 172047

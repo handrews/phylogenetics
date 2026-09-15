@@ -1,0 +1,44 @@
+taxonomies:
+- taxon: homalozoa
+  children:
+  - taxon: ctenocystoidea
+    children:
+    - taxon: ctenocystida
+      new: true
+      children:
+      - taxon: ctenocystidae
+        children:
+        - taxon: ctenocystis
+          children:
+          - taxon: colodon_ubaghs_robison_1988
+            new: true
+            specimens:
+              holotype: USNM 423874
+  - taxon: homoiostelea
+    children:
+    - taxon: soluta-order
+      children:
+      - openTaxon: homoiostelea-indeterminate-family_ubaghs_robison_1988
+        children:
+        - taxon: castericystis
+          children:
+          - taxon: sprinklei_ubaghs_robison_1988
+            provisional: true
+            new: true
+            specimens:
+              holotype: USNM 423877
+  - taxon: stylophora
+    children:
+    - taxon: cornuta
+      children:
+      - taxon: cothurnocystidae
+        children:
+        - taxon: cothurnocystis
+          children:
+          - taxon: elizae_bather_1913
+            type: true
+          - taxon: bifida_ubaghs_robison_1988
+            provisional: true
+            new: true
+            specimens:
+              holotype: USNM 415804

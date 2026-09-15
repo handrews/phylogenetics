@@ -1,0 +1,42 @@
+notes: |
+  Only summary publicly available, and details are only in French
+taxonomies:
+- taxon: ctenocystoidea
+  notes: Unclear if higher tree present
+  children:
+  - taxon: ctenocystida
+    notes: Unclear if used or omitted
+    children:
+    - taxon: ctenocystidae
+      notes: Unclear if used or omitted
+      children:
+      - taxon: ctenocystis
+        children:
+        - taxon: smithi_ubaghs_1987
+          new: true
+- taxon: stylophora
+  notes: Unclear if higher tree present
+  children:
+  - taxon: ceratocystis
+    notes: Unclear if intervening taxa present
+    children:
+    - taxon: vizcainoi_ubaghs_1987
+      new: true
+- taxon: eocrinoidea
+  notes: Unclear if higher tree present
+  children:
+  - taxon: gogia
+    notes: Unclear if intervening taxa present
+    children:
+    - taxon: gondi_ubaghs_1987
+      new: true
+- taxon: glyptocystitida-superfamily
+  notes: Unclear if higher tree present, unclera if supefamily or order.
+  children:
+  - taxon: eocystites # with angle quotes?
+    notes: Unclear if intervening taxa present
+    provisional: true
+    children:
+    - taxon: languedocianus_ubaghs_1987
+      provisional: true
+      new: true

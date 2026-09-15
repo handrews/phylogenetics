@@ -1,0 +1,89 @@
+taxonomies:
+- taxon: echinodermata-order
+  children:
+  - taxon: crinoidea-family
+  - taxon: cystidea-family
+    new: true
+    children:
+    - taxon: sphæronites
+      type: true
+      children:
+      - taxon: aurantium_gyllenhaal_1772
+        synonyms:
+        - taxon: aurantium_gyllenhaal_1772
+          parents:
+          - taxon: echinus
+      - taxon: pomum_gyllenhaal_1772
+        synonyms:
+        - taxon: pomum_gyllenhaal_1772
+          parents:
+          - taxon: echinosphærites
+    - taxon: caryocystites
+      new: true
+      children:
+      - taxon: granatum_wahlenberg_1821
+        synonyms:
+        - taxon: granatum_wahlenberg_1821
+          parents:
+          - taxon: echinosphærites
+      - taxon: testudinarius_hisinger_1837
+        synonyms:
+        - taxon: testudinarius_hisinger_1837
+          parents:
+          - taxon: sphæronites
+    - taxon: hemicosmites
+      children:
+      - taxon: pyriformis_buch_1840
+        synonyms:
+        - taxon: malum_pander_1830
+          parents:
+          - taxon: echinosphærites
+    - taxon: sycocystites
+      new: true
+      children:
+      - taxon: angulosus_buch_1844
+        new: true
+        or:
+        - taxon: senckenbergii_meyer_1826
+        synonyms:
+        - taxon: senckenbergii_meyer_1826
+          parents:
+          - taxon: echino-encrinus
+        - taxon: angulosa_pander_1830
+          parents:
+          - taxon: echinosphærites
+        - taxon: striata_pander_1830
+          parents:
+          - taxon: echinosphærites
+    - taxon: cryptocrinites
+      children:
+      - taxon: cerasus_buch_1840
+        synonyms:
+        - taxon: lævis_pander_1830
+          parents:
+          - taxon: echinosphærites
+        - taxon: jacksoni_austen_1843
+          parents:
+          - taxon: sycocrinites
+        - taxon: anapeptamenus_austen_1843
+          parents:
+          - taxon: sycocrinites
+    - taxon: sycocrinites
+      children:
+      - taxon: clausus_austen_1843
+    - affTaxon: caryocystites
+      children:
+      - taxon: bicopuladigiti_garnet_1844
+        synonyms:
+        - taxon: bicopuladigiti_garnet_1844
+          parents:
+          - taxon: pseudocrinites
+    - affTaxon: sphæronites
+      synonyms:
+      - openTaxon: crinoidea-secondhand-genus_sowerby_1833 # date uncertain!
+      children:
+      - openTaxon: cystidea-sp_buch_1944
+        synonyms:
+        - openTaxon: crinoidea-secondhand-sp_sowerby_1833 # date uncertain!
+          parents:
+          - openTaxon: crinoidea-secondhand-genus_sowerby_1833

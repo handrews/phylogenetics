@@ -1,0 +1,106 @@
+taxonomies:
+- taxon: crinozoa
+  children:
+  - taxon: crinoidea
+    children:
+    - taxon: protocrinoida
+      modifier: (Plesion)
+      new: true
+      children:
+      - taxon: titanocrinidae
+        new: true
+        children:
+        - taxon: titanocrinus
+          new: true
+          children:
+          - taxon: sumralli_guensburg_sprinkle_2003
+            type: true
+            new: true
+          - openTaxon: titanocrinus-sp_guensburg_sprinkle_2003
+            new: true
+        - taxon: glenocrinus
+          new: true
+          children:
+          - taxon: globularis_guensburg_sprinkle_2003
+            type: true
+            new: true
+    - taxon: camerata
+      children:
+      - taxon: diplobathrida
+        questionable: true
+        children:
+        - taxon: reteocrinidae
+          notes: diagnosis emended
+          children:
+          - taxon: cnemecrinus
+            new: true
+            children:
+            - taxon: fillmorensis_guensburg_sprinkle_2003
+              type: true
+              new: true
+      - taxon: monobathrida
+        questionable: true
+        children:
+        - taxon: eknomocrinidae
+          new: true
+          children:
+          - taxon: eknomocrinus
+            new: true
+            children:
+            - taxon: wahwahensis_guensburg_sprinkle_2003
+              type: true
+              new: true
+        - openTaxon: monobathrida-uncertain-family_guensburg_sprinkle_2003
+          new: true
+          children:
+          - taxon: adelphicrinus
+            new: true
+            children:
+            - taxon: fortuitus_guensburg_sprinkle_2003
+              type: true
+              new: true
+        - taxon: habrotecrinidae
+          new: true
+          children:
+          - taxon: habrotecrinus
+            new: true
+            children:
+            - taxon: ibexensis_guensburg_sprinkle_2003
+              type: true
+              new: true
+phylogenies:
+- treeType: cladogram
+  tree:
+    children:
+    - taxon: titanocrinus
+      bracket: protocrinoida
+    - taxon: glenocrinus
+      bracket: protocrinoida
+    - children:
+      - openTaxon: crinoidea-genus-a_guensburg_sprinkle_2003
+      - children:
+        - taxon: cnemecrinus
+          bracket: camerata
+        - children:
+          - taxon: adelphicrinus
+            bracket: camerata
+          - taxon: eknomocrinus
+            bracket: camerata
+          - bracket: camerata
+            children:
+            - taxon: habrotecrinus
+            - taxon: celtocrinus
+            - taxon: proexenocrinus
+          - children:
+            - bracket: disparida
+              children:
+              - taxon: ramseyocrinus
+              - taxon: pariocrinus
+              - taxon: ibexocrinus
+            - bracket: cladida
+              children:
+              - taxon: perittocrinus
+              - children:
+                - taxon: aethocrinus
+                - taxon: elpasocrinus
+                - taxon: hybocrinus

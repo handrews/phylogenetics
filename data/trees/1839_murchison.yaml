@@ -1,0 +1,66 @@
+taxonomies:
+- taxon: crinoidea-family
+  children:
+  - taxon: cyathocrinites
+    children:
+    - taxon: tuberculatus_miller.j.s_1821_cyathocrinites
+    - taxon: goniodactylus_phillips.j_1839
+      new: true
+    - taxon: capillaris_phillips.j_1839
+      new: true
+      notes: not noted as new but appears to be, no confirmation available
+    - taxon: pyriformis_phillips.j_1839
+      new: true
+    - taxon: rugosus_miller.j.s_1821_cyathocrinites
+  - taxon: marsupiocrinites
+    new: true
+    notes: not noted as new but credited in IRMNG
+    children:
+    - taxon: cælatus_phillips.j_1839
+      new: true
+      notes: not noted as new but appears to be, no confirmation available
+  - taxon: hypanthocrinites
+    new: true
+    notes: noted as new in text, but not in declaration
+    children:
+    - taxon: decorus_phillips.j_1839
+      new: true
+      notes: noted as new in text, but not in declaration
+  - taxon: actinocrinites
+    children:
+    - taxon: moniliformis_miller.j.s_1821
+    - taxon: simplex_phillips.j_1839
+      new: true
+      notes: not noted as new but appears to be, no confirmation available
+    - taxon: arthriticus_phillips.j_1839
+      provisional: true
+      new: true
+    - taxon: expansus_phillips.j_1839
+      provisional: true
+      new: true
+    - taxon: retiarius_phillips.j_1839
+      provisional: true
+      new: true
+    - taxon: dimerocrinites-subgenus
+      new: true
+      children:
+      - taxon: decadactylus_phillips.j_1839
+        new: true
+        notes: not noted as new but seems to be based on subgenus text
+      - taxon: icosidactylus_phillips.j_1839
+        new: true
+        notes: not noted as new but seems to be based on subgenus text
+- notes: Under "Nondescripts"
+  taxon: ischadites
+  new: true
+  pages:
+  - [697, 698]
+  children:
+  - taxon: königii_murchison_1839
+    new: true
+    pages:
+    - [697, 698]
+    illustrations:
+    - plate: XXVI
+      figures:
+      - 11

@@ -1,0 +1,9 @@
+# What new genus and type species do Sprinkle & Sumrall (2015) place in family Astrocystitidae?
+# The plan Claude Sonnet 5 stated in the eval run of 2026-09-14 (planner mode, q005).
+header: New genus and type species placed under family Astrocystitidae by Sprinkle & Sumrall (2015), as
+  that source's contents show, with new names marked
+blocks:
+- tool: contents
+  parameters:
+    source: Sprinkle & Sumrall 2015
+    record: Astrocystitidae

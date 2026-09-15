@@ -1,0 +1,63 @@
+# DRAFT -- for human audit only, not ready to commit.
+#
+# NEW TAXA RECORDS NEEDED: none -- astrocystites and
+# ottawaensis_whiteaves_1897 already exist in data/taxa.yaml.
+
+notes: |
+  Not a systematic revision -- no classification list, diagnosis, or rank
+  hierarchy anywhere in the paper; no "Class", "Order" or "Family" heading
+  occurs (checked by full-text search). Hudson proposes no new taxon, no
+  synonymy, and no type designation of his own; every nomenclatural act
+  reported (Whiteaves's description, Bather's suggestion and Whiteaves's
+  acceptance of Steganoblastus, Bassler's 1915 re-establishment of
+  Astrocystites) is attributed to someone else, so no higher classification
+  node and no `new` or act flag is added here.
+
+taxonomies:
+- taxon: astrocystites
+  children:
+  - taxon: ottawaensis_whiteaves_1897
+    citedAs: Astrocystites (Steganoblastus) ottawaensis
+    pages: 642
+    specimens:
+      syntypes:
+      - cotype A
+      - cotype B
+    notes: |
+      The bracketed form is the replacement name Steganoblastus (Whiteaves,
+      1898), not a subgenus -- no rank word is attached to either name in
+      this usage (Abstract, p. 642).
+
+      "Astrocystites is seen to be a true blastid and to be a nearer
+      Pentremites than is either Asteroblastus, Asterocystis, or
+      Blastoidocrinus." (p. 642) -- "blastid" as printed; cannot verify
+      whether this is Hudson's own usage or an OCR misreading of "blastoid"
+      (the word is used correctly elsewhere in the paper, e.g. "Blastoid
+      type", p. 652). None of Pentremites, Asteroblastus, Asterocystis or
+      Blastoidocrinus has a taxon record in this dataset yet; not added as
+      nodes here, per the brief.
+
+      History paragraph (p. 642): "Astrocystites was described in 1896 (9,
+      p. 287). Criticism of the generic name, because of similarity to
+      Asterocystis, Haeckel, was accepted by Whiteaves and Steganoblastus
+      substituted (10, p. 395) -- a name suggested by Bather. Original
+      description was republished in 1906 (11, pp. 316-17) and additional
+      matter given. A more complete study of the cotypes was made by
+      Bather (3 [1914], pp. 193-203) and illustrated by six text figures
+      and one plate. Bassler, in 1915 (1, p. 83), re-established the name
+      Astrocystites." The paper's own bibliography dates the protologue to
+      both "1897" (item 9) and, in the same sentence citing the
+      Steganoblastus substitution, "op. cit. 1896" (item 10) -- an internal
+      inconsistency in Hudson's own citations, not resolvable from this
+      paper alone.
+
+      Printed "cotype(s)" throughout (pp. 642, 643, 647, 650, 651); the
+      schema offers no "cotypes" role, so these are recorded as `syntypes`
+      above with the printed word kept here. Once, in the singular, "the
+      holotype" is used for one suture study without saying which cotype
+      (p. 650: "We have shown these sutures in six different areas of the
+      holo-type."), so the paper is internally inconsistent between
+      "holotype" and "cotype" language. No catalogue number is given for
+      either specimen. "Through the kindness of Dr. E. M. Kindle and the
+      Geological Survey of Canada we have been allowed a long period for
+      study of cotypes A and B." (p. 643)

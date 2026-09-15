@@ -1,0 +1,86 @@
+# DRAFT -- for human audit only, not ready to commit.
+#
+# NEW TAXA RECORDS NEEDED: none -- astrocystites and
+# ottawaensis_whiteaves_1897 already exist in data/taxa.yaml, with
+# authority pointing to this source (1897_whiteaves).
+
+notes: |
+  Composed at Ottawa, 28 April 1897 (closing line, p. 292). The Number's
+  own wrapper reads "January, 1897", but the volume's issue notice shows
+  Number 5 was actually issued 12 June 1897 -- see the companion
+  drafts/1898_whiteaves.yaml, whose postscript follows the same pattern one
+  Number later.
+
+  No class, order or family is erected or headed anywhere in this piece --
+  classification is argued entirely in hedged comparative prose (pp.
+  290-292) -- so the top node below is the genus itself, not a synthetic
+  higher-rank node. The prose, in full: "Astrocystites would seem to be
+  most nearly related to Asteroblastus, Eichwald, and is probably
+  referable to the same family, though it clearly differs from that genus
+  in several important particulars" (p. 290), followed by a detailed
+  plate-by-plate comparison of the two genera's calyx and summit structure
+  (pp. 290-291), and separate comparisons to Blastoidocrinus (E. Billings)
+  and to Cystoblastus, Volborth, the latter "in Zittel's description of
+  the latter genus, which is the only one that the writer has access to"
+  (p. 291). Schmidt (1874) is cited for the opinion that Blastoidocrinus,
+  Asteroblastus, Mesites and Cystoblastus are Cystidea intermediate in
+  character to the Blastoids; Eastman's 1896 translation of Zittel and
+  Etheridge & Carpenter's 1886 Catalogue of the Blastoidea are both quoted
+  on whether such Ordovician forms might eventually move to the Blastoidea
+  (p. 292). The one concrete, if hedged, order-level placement: Whiteaves
+  "tentatively refer[s]" Astrocystites to "the Diploporitidae" on Nicholson
+  & Lydekker's 1889 classification of the Cystoidea into "the three orders
+  of the Aporitidae, Diploporitidae and Rhombiferi" (p. 292; diacritics as
+  OCR'd, cannot verify the exact ligature forms printed).
+
+  None of Asteroblastus, Blastoidocrinus, Cystoblastus or Diploporitidae
+  has a taxon record in this dataset yet (checked: asteroblastus,
+  blastoidocrinus, cystoblastus, asterocystis, pentremites are all absent
+  from data/taxa.yaml). They are not added as nodes here, per the brief;
+  the placement prose that mentions them is kept in this note instead.
+
+  No formal diagnosis is printed: the heading "ASTROCYSTITES OTTAWAENSIS."
+  is followed directly by continuous descriptive prose, with no separate
+  genus/species break and no "n. gen., n. sp." notation.
+
+taxonomies:
+- taxon: astrocystites
+  new: true
+  citedAs: "ASTROCYSTITES OTTAWAENSIS."
+  pages: [[287, 292]]
+  notes: |
+    Heading combines genus and species with no separate diagnosis for
+    either (see top-of-file notes).
+  children:
+  - taxon: ottawaensis_whiteaves_1897
+    new: true
+    illustrations:
+    - page: 287
+      textFigures: [1, 2, 3]
+      notes: |
+        "Fig. 1. Side view of a nearly perfect specimen... Fig. 2. Summit
+        view of the same specimen... Fig. 3. Radial plate on the left of
+        the anal region of another specimen, twice the natural size..."
+        (p. 287); drawn by L. M. Lambe, per the closing acknowledgement
+        (p. 292). Unnumbered plate at the head of the article, before the
+        description.
+    specimens:
+      unknowntypes:
+      - two specimens collected by John Stewart, 1886, Museum of the Geological Survey of Canada
+      - an imperfect specimen lent by Walter R. Billings
+    occurrences:
+    - unit:
+      - Trenton limestone
+      location:
+      - Division street
+      - Ottawa
+      notes: no more specific horizon, member or bed is given (p. 290).
+    notes: |
+      No catalogue number and no type word ("type", "holotype", "syntype")
+      is used for any of the three specimens -- searched exhaustively, in
+      both this piece and the postscript. "Two specimens of this species,
+      both collected by Mr. John Stewart in 1886 from the Trenton limestone
+      at Division street, Ottawa, are in the Museum of the Geological
+      Survey of Canada, and an imperfect specimen from the same locality
+      has been kindly lent to the writer by Mr. Walter R. Billings."
+      (pp. 290-291)

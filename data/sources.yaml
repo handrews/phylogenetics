@@ -670,6 +670,19 @@
   - conrad.t.a
   identifiers:
     url: https://www.biodiversitylibrary.org/page/24623276
+  audit:
+    state: partial
+    coverage:
+      skeleton: all
+      newTaxa: all
+      types: na
+      synonymy: na
+      material: none
+      occurrences: none
+      illustrations: none
+      diagnoses: none
+      phylogeny: na
+    notes: Reviewed against the paper 2026-09-10; see docs/reviews/review_1842_conrad.t.a.md
 1842_vanuxem:
   title: Geology of New-York. Part III. Comprising the Survey of the Third Geological District
   book: nat-hist-ny
@@ -679,6 +692,19 @@
   - vanuxem
   identifiers:
     url: https://www.biodiversitylibrary.org/page/55172030
+  audit:
+    state: partial
+    coverage:
+      skeleton: partly
+      newTaxa: partly
+      types: na
+      synonymy: na
+      material: partly
+      occurrences: partly
+      illustrations: partly
+      diagnoses: partly
+      phylogeny: na
+    notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1842_vanuxem.md
 1842_volborth:
   journal: ac-st-p-bulletin
   title: Ueber die Echino-Encrinen und die Identität des contractilen Theiles ihres Stieles mit dem Cornulites Sarpularius
@@ -791,7 +817,7 @@
   identifiers:
     url: https://www.google.com/books/edition/Memoirs_of_the_Geological_Survey_of_Grea/WcNAAAAAcAAJ?hl=en&gbpv=1
 1848b_forbes:
-  title: On the Cystideæ of the Silurian Rocks of the British Islands.pdf
+  title: On the Cystideæ of the Silurian Rocks of the British Islands
   journal: mem-geol-gb
   volume: 2
   number: 2
@@ -807,6 +833,19 @@
   - forbes
   identifiers:
     url: https://www.google.com/books/edition/Memoirs_of_the_Geological_Survey_of_Grea/WcNAAAAAcAAJ?hl=en&gbpv=1
+  audit:
+    state: partial
+    coverage:
+      skeleton: partly
+      newTaxa: all
+      types: none
+      synonymy: partly
+      material: none
+      occurrences: none
+      illustrations: none
+      diagnoses: partly
+      phylogeny: none
+    notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1848b_forbes.md
 1848_leuckart:
   book: uber-morph
   pubDate:
@@ -820,6 +859,19 @@
     year: 1852
   authors:
   - hall
+  audit:
+    state: partial
+    coverage:
+      skeleton: partly
+      newTaxa: all
+      types: none
+      synonymy: partly
+      material: none
+      occurrences: none
+      illustrations: partly
+      diagnoses: none
+      phylogeny: na
+    notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1852_hall.md
 1854a_billings:
   title: On some New Genera and Species of Cystidea from the Trenton Limestonee
   journal: canadian-journal
@@ -862,6 +914,19 @@
     read: 1854-04-08
   authors:
   - billings
+  audit:
+    state: partial
+    coverage:
+      skeleton: partly
+      newTaxa: all
+      types: na
+      synonymy: none
+      material: none
+      occurrences: none
+      illustrations: partly
+      diagnoses: none
+      phylogeny: na
+    notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1854c_billings.md
 1854_müller.j.p:
   book: uber-den-bau
   pubDate:
@@ -880,6 +945,19 @@
     year: 1857
   authors:
   - billings
+  audit:
+    state: partial
+    coverage:
+      skeleton: all
+      newTaxa: all
+      types: na
+      synonymy: na
+      material: none
+      occurrences: none
+      illustrations: na
+      diagnoses: none
+      phylogeny: na
+    notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1857_billings.md
 1858a_billings:
   title: On the Cystideæ of the Lower Silurian Rocks of Canada
   journal: fig-desc-can
@@ -906,6 +984,19 @@
   - billings
   identifiers:
     url: https://www.biodiversitylibrary.org/page/14985851
+  audit:
+    state: partial
+    coverage:
+      skeleton: partly
+      newTaxa: partly
+      types: na
+      synonymy: partly
+      material: none
+      occurrences: none
+      illustrations: partly
+      diagnoses: none
+      phylogeny: na
+    notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1858b_billings.md
 1858_salter_billings:
   title: On Cyclocystoides, a new genus of Echinodermata from the Lower and Middle Silurian Rocks
   journal: fig-desc-can
@@ -1039,7 +1130,27 @@
   - billings
   identifiers:
     url: https://www.biodiversitylibrary.org/page/19266657
-1872a_hall:
+1871_hall:
+  title: Descriptions of some new species of Crinoidea and other Fossils from the Lower Silurian strata, principally of the age of the Hudson-river group.
+  journal: annual-ny
+  volume: 24
+  number: Adv. Pr.
+  plates:
+  - I
+  - II
+  pubDate:
+    year: 1871
+  authors:
+  - hall
+  notes: |
+    Pre-print of the plates and descriptions missing from the 1866 pre-print,
+    which introduced a number of additional names (e.g. Cystaster as a subgenus),
+    but also left out the subgenus Streptaster which is not considered
+    introduced until the 1872 final printing where it is addressed in the errate.
+    See also 1866_hall and 1872b_hall.  The plates were renumbered in 1872b_hall.
+    The title is assumed to match the earlier pre-print rather than the final
+    publication, but this is not known for certain.
+1872a_hall_whitfield:
   title: Descriptions of new species of fossils from the vicinity of Louisville, Kentucky, and the Falls of the Ohio
   journal: annual-ny
   volume: 24
@@ -1056,6 +1167,7 @@
     transmitted: 1871-04-18
   authors:
   - hall
+  - whitfield
 1872b_hall:
   title: Description of new species of Crinoidea and other fossils from strata of the age of the Hudson-River Group and Trenton Limestone
   journal: annual-ny
@@ -1065,17 +1177,24 @@
   - 224
   - 233 # Errata
   - 233
+  plates:
+  - V
+  - VI
   pubDate:
     year: 1872
   processDates:
     transmitted: 1871-04-18
   authors:
   - hall
-  notes: Possibly should be 1871_hall, proper date a bit unclear
+  notes: |
+    Final printing of 1866_hall and 1871_hall.  Note that the pre-print plate numbers
+    were changed from I and II to V and VI respectively due to plates from other
+    articles preceding them in the journal.
   identifiers:
     url: https://www.biodiversitylibrary.org/page/35612725
 1872c_hall:
   title: Description of new species of fossils from the Hudson River Group, in the vicinity of Cincinnati, Ohio
+  notes: 'Its footnote reads "Published October, 1871, as advance sheets of the State Museum Report"; that pamphlet is not on hand.'
   journal: annual-ny
   volume: 24
   pages:
@@ -1089,6 +1208,23 @@
     transmitted: 1871-04-18
   authors:
   - hall
+1879_dames:
+  title: "Fr. Schmidt: Über Cyathocystis Plautinae (Referat)"
+  journal: neues-jahrbuch
+  volume: 1879
+  pages:
+  - 1001
+  - 1001
+  pubDate:
+    year: 1879
+  authors:
+  - dames
+  notes: |
+    A Referat by W. Dames of Schmidt's paper in the Verhandlungen der
+    Mineralogischen Gesellschaft zu St. Petersburg, 1879, which is not on
+    hand; every statement here is Dames's account of Schmidt. The Heft's
+    issue date is not printed; the volume's closing notice is dated 15
+    October 1879. Later authors cite the genus as Schmidt 1879 and 1880.
 1887_billings.w.r:
   title: A new genus and three new species of crinoids from the Trenton Formation with notes on a large specimen of Dendrocrinus proboscidiatus
   journal: ottawa-naturalist
@@ -1100,14 +1236,112 @@
   - billings.w.r
   identifiers:
     url: https://www.biodiversitylibrary.org/page/30200108
-1896_haeckel:
+1891_bell.f.j:
+  title: On the Arrangement and Inter-relations of the Classes of the Echinodermata
+  journal: annals-and-mag
+  series: 6
+  volume: 8
+  pages:
+  - 206
+  - 215
+  pubDate:
+    year: 1891
+  authors:
+  - bell.f.j
+  identifiers:
+    doi: 10.1080/00222939109460422
+1896a_haeckel:
+  title: "Die cambrische Stammgruppe der Echinodermen. Vorläufige Mittheilung, vorgetragen in der Sitzung der Medicinisch-Naturwissenschaftlichen Gesellschaft zu Jena am 13. December 1895"
+  journal: jena-zeitschr
+  volume: 30
+  pages:
+  - 393
+  - 404
+  pubDate:
+    year: 1896
+  processDates:
+    read: 1895-12-13
+  authors:
+  - haeckel
+  identifiers:
+    url: https://babel.hathitrust.org/cgi/pt?id=hvd.32044107303950&seq=1
+  notes: |
+    Volume 30 is Neue Folge 23. The HathiTrust copy is a separately
+    paginated printing (pp. 1–12) signed "Jena, am 15. December 1895", so
+    citations as "Haeckel 1895" occur; with its own pagination it reads as
+    a separate issued ahead of the volume rather than an offprint of it.
+1896b_haeckel:
   book: amph-und-cyst
+  pages:
+  - 1
+  - 179
   pubDate:
     year: 1896
   authors:
   - haeckel
   identifiers:
     url: https://www.biodiversitylibrary.org/page/11808822
+1896_pompeckj:
+  title: Die Fauna des Cambrium von Tejřovic und Skrej in Böhmen
+  journal: jahrbuch
+  volume: 45
+  notes: 1895 annual, but publication year is 1896
+  pubDate:
+    year: 1896
+  authors:
+  - pompeckj
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/35578547
+  audit:
+    state: partial
+    coverage:
+      skeleton: all
+      newTaxa: partly
+      types: na
+      synonymy: partly
+      material: none
+      occurrences: none
+      illustrations: partly
+      diagnoses: none
+      phylogeny: na
+    notes: Reviewed against the paper 2026-09-10; see docs/reviews/review_1896_pompeckj.md
+1897_whiteaves:
+  title: Description of a new genus and species of cystideans from the Trenton limestone at Ottawa
+  journal: canadian-record-sci
+  volume: 7
+  number: 5
+  pages:
+  - 287
+  - 292
+  pubDate:
+    year: 1897
+    month: 6
+    day: 12
+  processDates:
+    submitted: 1897-04-28
+  authors:
+  - whiteaves
+  notes: |
+    The Number's wrapper reads "January, 1897"; the volume's own issue notice
+    says Number 5 was issued 12 June 1897, and Bather 1914 (p. 193) calls the
+    January date "obviously erroneous". Dated 28 April 1897 at the end.
+1898_bather:
+  title: Studies in Edrioasteroidea. I. Dinocystis Barroisi, n.g. et sp., Psammites du Condroz
+  journal: geomag
+  series: 4
+  volume: 5
+  pages:
+  - 543
+  - 548
+  plates:
+  - 21
+  - 21
+  pubDate:
+    year: 1898
+    month: 12
+  authors:
+  - bather
+  notes: '"Decade IV" is recorded as the series.'
 1898_walcott:
   title: Fossile Medusæ
   journal: monographs-usgs
@@ -1118,6 +1352,43 @@
   - walcott
   identifiers:
     url: https://www.biodiversitylibrary.org/page/2056780
+1898_whiteaves:
+  title: Postscript to a "Description of a new genus and species of cystideans from the Trenton limestone at Ottawa"
+  journal: canadian-record-sci
+  volume: 7
+  number: 7
+  pages:
+  - 395
+  - 396
+  pubDate:
+    year: 1898
+    month: 1
+    day: 7
+  processDates:
+    submitted: 1897-09-14
+  authors:
+  - whiteaves
+  notes: |
+    The Number's wrapper reads 1897; the volume's issue notice says Number 7
+    was issued 7 January 1898, and Bather 1914 (p. 194) cites "p. 395, January
+    7, 1898". Cited as both 1897 and 1898. Dated 14 September 1897 at the end.
+1899_bather:
+  title: A Phylogenetic Classification of the Pelmatozoa
+  journal: reports-british-advancement
+  volume: |
+    Report of the 68th Meeting of the British Association for the Advancement of Science (Bristol, 1898)
+  pages:
+  - 916
+  - 923
+  pubDate:
+    year: 1899
+  processDates:
+    conferenceStart: 1898-09-07
+    conferenceEnd: 1898-09-07
+  authors:
+  - bather
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/30221787
 1899_jaekel:
   book: stamm
   pubDate:
@@ -1135,6 +1406,36 @@
   - bather
   identifiers:
     url: https://archive.org/details/treatiseonzoolog03lank/page/n5/mode/2up
+  audit:
+    state: partial
+    coverage:
+      skeleton: all
+      newTaxa: partly
+      types: na
+      synonymy: partly
+      material: none
+      occurrences: none
+      illustrations: none
+      diagnoses: none
+      phylogeny: na
+    notes: Reviewed against the paper 2026-09-10; see docs/reviews/review_1900_bather.md
+1908_bather:
+  title: Studies in Edrioasteroidea. III. Lebetodiscus, n.g. for Agelacrinites Dicksoni Billings
+  journal: geomag
+  series: 5
+  volume: 5
+  pages:
+  - 543
+  - 550
+  plates:
+  - 25
+  - 25
+  pubDate:
+    year: 1908
+    month: 12
+  authors:
+  - bather
+  notes: '"Decade V" is recorded as the series.'
 1911b_walcott:
   title: Middle Cambrian Holothurians and Medusaæ
   journal: smith-misc
@@ -1192,19 +1493,121 @@
   - clark.a.h
   identifiers:
     url: https://www.biodiversitylibrary.org/page/43433793
-1915_bather:
-  title: Studies in Edrioasteroidea IV. Pyrgocystis n. g.
+1914c_bather:
+  title: Studies in Edrioasteroidea. V. Steganoblastus
   journal: geomag
-  number: 5–12
+  series: 6
+  volume: 1
+  number: 5
   pages:
-  - 49
-  - 90
+  - 193
+  - 203
+  plates:
+  - 15
+  - 15
   pubDate:
-    year: 1915
-    month: 12
-    day: 6
+    year: 1914
+    month: 5
   authors:
   - bather
+  notes: '"Decade VI" is recorded as the series. Letters a and b are reserved for the two parts of Study IV (March and April 1914).'
+1915a_bather:
+  title: Studies in Edrioasteroidea. VI. Pyrgocystis, n.g.
+  journal: geomag
+  series: 6
+  volume: 2
+  pages:
+  - 5
+  - 12
+  plates:
+  - 2
+  - 2
+  pubDate:
+    year: 1915
+    month: 1
+  notes: |
+    "Decade VI" is recorded as the series. First part, January number:
+    the genus and P. sardesoni, the genotype. Plate III "containing the
+    figures of Pyrgocystis grayae, will be given with" the second part
+    (p. 10), which is 1915b_bather; a tree for this study should merge the
+    two.
+  authors:
+  - bather
+1915b_bather:
+  title: Studies in Edrioasteroidea. VI. Pyrgocystis, n.g. (continued)
+  journal: geomag
+  series: 6
+  volume: 2
+  pages:
+  - 49
+  - 60
+  plates:
+  - 3
+  - 3
+  pubDate:
+    year: 1915
+    month: 2
+  notes: |
+    "Decade VI" is recorded as the series. Second part, February number,
+    continuing 1915a_bather: P. grayae and P. ansticei, with plate III.
+  authors:
+  - bather
+1925_hudson:
+  title: The Need of Improved Technique in Illustration
+  journal: jofgeol-chicago
+  volume: 33
+  number: 6
+  pages:
+  - 642
+  - 657
+  plates:
+  - 1
+  - 4
+  pubDate:
+    year: 1925
+    months:
+    - 8
+    - 9
+  authors:
+  - hudson
+1927_hudson:
+  title: The surface characteristics of Astrocystites (Steganoblastus) ottawaensis
+  journal: vermont-geol
+  volume: 15
+  pages:
+  - 97
+  - 110
+  plates:
+  - 6
+  - 10
+  pubDate:
+    year: 1927
+  authors:
+  - hudson
+1927_jaekel:
+  title: Cyathotheca suecica n. g. n. sp., eine Thecoidee des schwedischen Ordoviciums
+  journal: arkiv-zool
+  series: A
+  volume: 19
+  number: 5
+  pages:
+  - 1
+  - 5
+  plates:
+  - 1
+  - 1
+  pubDate:
+    year: 1927
+    month: 2
+    day: 21
+  processDates:
+    transmitted: 1926-10-27
+    issued: 1927-11-03
+  authors:
+  - jaekel
+  notes: |
+    "Tryckt den 21 februari 1927" (p. 5), the separate printing; communicated
+    27 October 1926; Häfte 2 of Band 19 issued 3 November 1927.
 1929_matsumoto:
   title: Outline of a classification of Echinoermata
   journal: tohoku
@@ -1234,13 +1637,21 @@
   - richter.r
 1935_bassler:
   title: The Classification of the Edrioasteroidea
-  complete:
-    named: true
-    open: true
-    history: true
-    specimens:
-      basic: null
-      all: null
+  audit:
+    state: partial
+    coverage:
+      skeleton: all
+      newTaxa: partly
+      types: all
+      synonymy: partly
+      material: none
+      occurrences: none
+      illustrations: none
+      diagnoses: none
+      phylogeny: na
+    notes: |
+      Migrated from complete: named=true open=true history=true specimens.basic=null specimens.all=null
+      Reviewed against the paper 2026-09-09; see docs/reviews/review_1935_bassler.md
   journal: smith-misc
   volume: 93
   number: 8
@@ -1261,6 +1672,24 @@
     day: 4
   authors:
   - bassler
+  audit:
+    state: partial
+    coverage:
+      skeleton: all
+      newTaxa: partly
+      types: all
+      synonymy: partly
+      material: partly
+      occurrences: none
+      illustrations: none
+      diagnoses: none
+      phylogeny: na
+    notes: |
+      Reviewed against the paper 2026-09-09; see docs/reviews/review_1936_bassler.md
+      Synonymy re-declared 2026-09-11: the parenthetical earlier genus in
+      "C. (Hemicystites) granulatus" (p. 4) and "L. (Agelacrinites) dicksoni"
+      (p. 9) is a synonymy of the earlier combination and is captured; the
+      two-line citation under Discocystis kaskaskiensis (p. 21) is not.
 1941_whitehouse:
   title: "The Cambrian faunas of north-eastern Australia, Part 4: Early Cambrian echinoderms similar to the larval stages of Recent forms"
   journal: mem-q
@@ -1279,6 +1708,21 @@
     day: 13
   identifiers:
     url: https://www.biodiversitylibrary.org/item/189697#page/38/mode/1up
+1945_regnéll:
+  title: Non-Crinoid Pelmatozoa from the Paleozoic of Sweden. A taxonomic study
+  journal: lund-medd
+  number: 108
+  pages:
+  - 1
+  - 255
+  plates:
+  - 1
+  - 15
+  pubDate:
+    year: 1945
+  authors:
+  - regnéll
+  notes: No date beyond "Lund 1945" is printed.
 1955_hyman:
   title: Enchinodermata, the Coelomate Bilateria
   book: invertebrates
@@ -1311,12 +1755,29 @@
   journal: mitt
   volume: 1
   pages:
-  - 12
+  - 13
   - 17
   pubDate:
     year: 1961
   authors:
   - dehm
+  audit:
+    state: partial
+    coverage:
+      skeleton: partly
+      newTaxa: all
+      types: all
+      synonymy: all
+      material: none
+      occurrences: all
+      illustrations: partly
+      diagnoses: none
+      phylogeny: na
+    notes: |
+      Reviewed against the paper 2026-09-09; see docs/reviews/review_1961_dehm.md
+      Synonymy re-declared 2026-09-11: moving Rievers's Pyrgocystis
+      coronaeformis into the new subgenus is the paper's one synonymy
+      statement, captured as the original combination under the species.
 1961_rievers:
   title: Eine neue Pyrgocystis (Echinod., Edrioasteroidea) aus den Bundenbacher Dachschiefern (Devon)
   journal: mitt
@@ -1328,15 +1789,36 @@
     year: 1961
   authors:
   - rievers
+  audit:
+    state: partial
+    coverage:
+      skeleton: partly
+      newTaxa: all
+      types: na
+      synonymy: na
+      material: all
+      occurrences: all
+      illustrations: partly
+      diagnoses: partly
+      phylogeny: na
+    notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1961_rievers.md
 1962_fay:
   title: Edrioblastoidea, a new class of Echinodermata
-  complete:
-    named: true
-    open: null
-    history: true
-    specimens:
-      basic: true
-      all: true
+  audit:
+    state: partial
+    coverage:
+      skeleton: all
+      newTaxa: all
+      types: na
+      synonymy: partly
+      material: partly
+      occurrences: none
+      illustrations: none
+      diagnoses: none
+      phylogeny: na
+    notes: |
+      Migrated from complete: named=true open=null history=true specimens.basic=true specimens.all=true
+      Reviewed against the paper 2026-09-09; see docs/reviews/review_1962_fay.md
   journal: jofpaleo
   volume: 36
   number: 2
@@ -1349,7 +1831,7 @@
   authors:
   - fay
   identifiers:
-    jstor: 13011100
+    jstor: 1301100
 1963_brown.i.a:
   title: A new cystoid (Pelmatozoa, Echinodermata) from the Silurian of New South Wales
   journal: proclinn-nsw
@@ -1364,13 +1846,10 @@
   - brown.i.a
 1963_durham_caster:
   title: "Helicoplacoidea: A New Class of Echinoderms"
-  complete:
-    named: true
-    open: null
-    history: null
-    specimens:
-      basic: true
-      all: true
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=null history=null specimens.basic=true specimens.all=true
   journal: science-new-series
   volume: 149
   number: 3568
@@ -1405,13 +1884,10 @@
     url: https://www.biodiversitylibrary.org/page/4312670
 1966_durham:
   title: Camptostroma, an Early Cambrian Supposed Scyphozoan, Referable to Echinodermata
-  complete:
-    named: true
-    open: null
-    history: true
-    specimens:
-      basic: true
-      all: true
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=null history=true specimens.basic=true specimens.all=true
   journal: jofpaleo
   volume: 40
   number: 5
@@ -1442,13 +1918,10 @@
     url: https://journals.ku.edu/InvertebratePaleo/issue/view/521
 1966_durham_caster:
   title: Helicoplacoids
-  complete:
-    named: true
-    open: true
-    history: true
-    specimens:
-      basic: null
-      all: null
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=true history=true specimens.basic=null specimens.all=null
   book: treatise-u
   pubDate:
     year: 1966
@@ -1585,13 +2058,10 @@
     url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
 1967a_fay:
   title: Edrioblastoids
-  complete:
-    named: true
-    open: null
-    history: true
-    specimens:
-      basic: null
-      all: null
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=null history=true specimens.basic=null specimens.all=null
   book: treatise-s
   pubDate:
     year: 1967
@@ -1604,13 +2074,10 @@
     url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
 1967b_fay:
   title: Parablastoids
-  complete:
-    named: true
-    open: null
-    history: null
-    specimens:
-      basic: null
-      all: null
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=null history=null specimens.basic=null specimens.all=null
   book: treatise-s
   pubDate:
     year: 1967
@@ -1684,13 +2151,10 @@
     url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
 1967a_durham:
   title: Camptostromatoids
-  complete:
-    named: true
-    open: null
-    history: true
-    specimens:
-      basic: null
-      all: null
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=null history=true specimens.basic=null specimens.all=null
   book: treatise-s
   pubDate:
     year: 1967
@@ -1703,13 +2167,10 @@
     url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
 1967b_durham:
   title: Lepidocystoidea
-  complete:
-    named: true
-    open: null
-    history: null
-    specimens:
-      basic: null
-      all: null
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=null history=null specimens.basic=null specimens.all=null
   book: treatise-s
   pubDate:
     year: 1967
@@ -1722,13 +2183,10 @@
     url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
 1967e_ubaghs:
   title: Cymbionites and Peridionites—Unclassified Middle Cambrian Echinoderms
-  complete:
-    named: true
-    open: true
-    history: true
-    specimens:
-      basic: null
-      all: null
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=true history=true specimens.basic=null specimens.all=null
   book: treatise-s
   pubDate:
     year: 1967
@@ -1741,13 +2199,10 @@
     url: https://journals.ku.edu/InvertebratePaleo/issue/view/519
 1967c_durham:
   title: Notes on the Helicoplacoidea and Early Echinoderms
-  complete:
-    named: true
-    open: null
-    history: true
-    specimens:
-      basic: true
-      all: true
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=null history=true specimens.basic=true specimens.all=true
   journal: jofpaleo
   volume: 41
   number: 1
@@ -1810,13 +2265,21 @@
   - paul.c.r.c
 1968_webby:
   title: Astrocystites distans sp. nov., an edrioblastoid from the Ordovician of eastern Australia
-  complete:
-    named: true
-    open: true
-    history: true
-    specimens:
-      basic: true
-      all: true
+  audit:
+    state: partial
+    coverage:
+      skeleton: all
+      newTaxa: all
+      types: all
+      synonymy: partly
+      material: partly
+      occurrences: none
+      illustrations: none
+      diagnoses: none
+      phylogeny: na
+    notes: |
+      Migrated from complete: named=true open=true history=true specimens.basic=true specimens.all=true
+      Reviewed against the paper 2026-09-10; see docs/reviews/review_1968_webby.md
   journal: palaeontology
   volume: 11
   number: 4
@@ -1831,13 +2294,10 @@
     url: https://archive.org/details/biostor-164880
 1969_robison_sprinkle:
   title: "Ctenocystoidea: New Class of Primitive Echinoderms"
-  complete:
-    named: true
-    open: null
-    history: null
-    specimens:
-      basic: true
-      all: false
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=null history=null specimens.basic=true specimens.all=false
   journal: science-new-series
   volume: 166
   number: 3912
@@ -1916,15 +2376,6 @@
     year: 1973
   authors:
   - sprinkle
-1974_bell.b.m:
-  title: A Study of North American Edrioasteroidea
-  journal: nysm
-  volume: 21
-  pubDate:
-    year: 1974
-  authors:
-  - bell.b.m
-  notes: This printing cited in 1975_bell, but usually cited as 1976 seen below.
 1975_bell.b.m:
   title: "Ontogeny and systematics of Timeischytes casteri n. sp.: an enigmatic Devonian edrioasteroid"
   journal: bullamp
@@ -1936,6 +2387,9 @@
   - bell.b.m
   identifiers:
     url: https://www.biodiversitylibrary.org/page/10896154
+  notes: |
+    Incorrectly assumes 1976_bell.b.m was printed in 1974 as planned,
+    rather than accurately citing it as "in press."
 1975_broadhead_strimple:
   title: Respiration in a Vagrant Ordovician Cystoid, Amecystis
   journal: paleobiology
@@ -1971,7 +2425,24 @@
     month: 2
   authors:
   - bell.b.m
-  notes: Either a reprint, or a misprinted cover that has been cited ever since.
+  notes: |
+    Originally intended for publication in February 1974 as noted on the
+    interior title page.  However, formal publication was delayed until
+    Feburary 1976.  At least one paper (1975_bell.b.m) incorrectly assumed
+    the original date rather than citing it as "in press."
+  audit:
+    state: partial
+    coverage:
+      skeleton: all
+      newTaxa: all
+      types: all
+      synonymy: partly
+      material: none
+      occurrences: none
+      illustrations: none
+      diagnoses: partly
+      phylogeny: na
+    notes: Audited against the monograph 2026-09-09; see docs/audit-1976_bell.b.m.md
 1976_bell.b.m_petersen.m.s:
   title: An Edrioasteroid from the Guilmette Formation at Wendover, Utah-Nevada
   journal: jofpaleo
@@ -2004,6 +2475,19 @@
   - sprinkle
   identifiers:
     jstor: 1303701
+  audit:
+    state: partial
+    coverage:
+      skeleton: all
+      newTaxa: all
+      types: all
+      synonymy: none
+      material: none
+      occurrences: none
+      illustrations: none
+      diagnoses: none
+      phylogeny: na
+    notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1978_bell.b.m_sprinkle.md
 1978_durham:
   title: A Lower Cambrian Eocrinoid
   journal: jofpaleo
@@ -2047,6 +2531,29 @@
   - bell.b.m
   identifiers:
     doi: 10.1017/S027116480000018X
+2015_zamora_lefebvre_hoşgör_franzen_nardin_fatka_álvaro:
+  title: "The Cambrian edrioasteroid Stromatocystites (Echinodermata): Systematics, palaeogeography, and palaeoecology"
+  journal: geobios
+  volume: 48
+  pages:
+  - 417
+  - 426
+  pubDate:
+    year: 2015
+  processDates:
+    received: 2014-11-26
+    accepted: 2015-07-19
+    online: 2015-08-07
+  authors:
+  - zamora
+  - lefebvre
+  - hoşgör
+  - franzen
+  - nardin
+  - fatka
+  - álvaro
+  identifiers:
+    doi: 10.1016/j.geobios.2015.07.004
 inprep_sprinkle_strimple:
   inPrep: true
   authors:
@@ -2266,6 +2773,19 @@ inprep_sprinkle_strimple:
   - jell
   identifiers:
     jstor: 1304766
+  audit:
+    state: partial
+    coverage:
+      skeleton: all
+      newTaxa: all
+      types: all
+      synonymy: partly
+      material: none
+      occurrences: none
+      illustrations: none
+      diagnoses: none
+      phylogeny: na
+    notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1983_holloway_jell.md
 1983_jell:
   title: Early Devonian echinoderms from Victoria (Rhombifera, Blastoidea and Ophiocistioidea)
   seen: false
@@ -2280,13 +2800,10 @@ inprep_sprinkle_strimple:
   - jell
 1985_fatka_kordule:
   title: Etoctenocystis bohemica gen. et sp. nov. - new Ctenocystoid from Czechoslovakia (Echinodermata, Middle Cambrian)
-  complete:
-    named: true
-    open: false
-    history: false
-    specimens:
-      basic: true
-      all: false
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=false history=false specimens.basic=true specimens.all=false
   journal: vestnik
   volume: 60
   number: 4
@@ -2306,13 +2823,24 @@ inprep_sprinkle_strimple:
     url: https://www.researchgate.net/publication/277013746_Etoctenocystis_bohemica_gen_et_sp_nov_-_new_Ctenocystoid_from_Czechoslovakia_Echinodermata_Middle_Cambrian#fullTextFileContent
 1985_jell_burrett_banks:
   title: Cambrian and Ordovician echinoderms from eastern Australia
-  complete:
-    named: true
-    open: false
-    history: false
-    specimens:
-      basic: false
-      all: false
+  audit:
+    state: partial
+    coverage:
+      skeleton: partly
+      newTaxa: all
+      types: partly
+      synonymy: partly
+      material: partly
+      occurrences: none
+      illustrations: none
+      diagnoses: none
+      phylogeny: na
+    notes: |
+      Migrated from complete: named=true open=false history=false specimens.basic=false specimens.all=false
+      Reviewed against the paper 2026-09-09; see docs/reviews/review_1985_jell_burrett_banks.md
+      Synonymy re-declared 2026-09-11: Cyclocystoides primotica as the type
+      of the new Edriodiscus is a recombination, captured as the original
+      combination under the species; the Eikosacystis synonymy (p. 185) is not.
   journal: alcheringa
   volume: 9
   number: 3
@@ -2347,6 +2875,19 @@ inprep_sprinkle_strimple:
   - smith.a.b
   identifiers:
     url: https://palass.org/sites/default/files/media/publications/palaeontology/volume_28/vol28_part4_pp715-756.pdf
+  audit:
+    state: partial
+    coverage:
+      skeleton: all
+      newTaxa: na
+      types: all
+      synonymy: partly
+      material: none
+      occurrences: none
+      illustrations: none
+      diagnoses: none
+      phylogeny: partly
+    notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1985_smith.a.b.md
 1985_sprinkle:
   title: New edrioasteroid from the Middle Cambrian of western Utah
   journal: kansas
@@ -2440,13 +2981,10 @@ inprep_sprinkle_strimple:
     jstor: 1305262
 1988_ubaghs_robison:
   title: Homalozoan echinoderms of the Wheeler Formation (Middle Cambrian) of Western Utah
-  complete:
-    named: true
-    open: null
-    history: null
-    specimens:
-      basic: true
-      all: false
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=null history=null specimens.basic=true specimens.all=false
   journal: kansas
   number: 129
   pubDate:
@@ -2575,13 +3113,31 @@ inprep_sprinkle_strimple:
   journal: fieldiana
   volume: New Series
   number: 29
+  pages:
+  - 1
+  - 43
   pubDate:
     year: 1994
     month: 12
     day: 30
+  processDates:
+    accepted: 1994-05-27
   authors:
   - guensburg
   - sprinkle
+  audit:
+    state: partial
+    coverage:
+      skeleton: all
+      newTaxa: all
+      types: all
+      synonymy: partly
+      material: none
+      occurrences: none
+      illustrations: none
+      diagnoses: none
+      phylogeny: all
+    notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1994_guensburg_sprinkle.md
 1994_sprinkle_wahlman:
   title: New echinoderms from the Early Ordovician of west Texas
   journal: jofpaleo
@@ -2625,8 +3181,10 @@ inprep_sprinkle_strimple:
 1995_dzik_orłowski:
   title: Primitive ctenocystoid echinoderm from the earliest Middle Cambrian of Poland
   seen: false
-  complete:
-    history: false # the named species was previously in open nomenclature(s)
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=null open=null history=false specimens.basic=null specimens.all=null
   journal: annals
   volume: 81
   pages:
@@ -3020,6 +3578,19 @@ inprep_sprinkle_strimple:
   - cornell
   identifiers:
     jstor: 4095094
+  audit:
+    state: partial
+    coverage:
+      skeleton: all
+      newTaxa: all
+      types: all
+      synonymy: na
+      material: none
+      occurrences: none
+      illustrations: none
+      diagnoses: none
+      phylogeny: na
+    notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_2006_sumrall_brett_cornell.md
 2006_sumrall_gahn:
   title: Morphological and systematic reinterpretation of two enigmatic edrioasteroids (Echinodermata) from Canada
   journal: can-j-earth-sci
@@ -3137,13 +3708,10 @@ inprep_sprinkle_strimple:
 2008_stewart_owen:
   title: "Probing the deep shelf: a Lagerstätte from the Upper Ordovician of Girvan, southwestern Scotland"
   journal: lethaia
-  complete:
-    named: null
-    open: false
-    history: null
-    specimens:
-      basic: false
-      all: false
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=null open=false history=null specimens.basic=false specimens.all=false
   volume: 41
   pages:
   - 139
@@ -3209,6 +3777,19 @@ inprep_sprinkle_strimple:
   - sumrall
   identifiers:
     jstor: 20627684
+  audit:
+    state: partial
+    coverage:
+      skeleton: all
+      newTaxa: all
+      types: na
+      synonymy: none
+      material: none
+      occurrences: none
+      illustrations: none
+      diagnoses: none
+      phylogeny: na
+    notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_2009_sumrall.md
 2009_sumrall_brett_mckinney:
   title: A New Agelacrinitid Edrioasteroid Attached to a Large Hardground Clast from the McKenzie Member of the Mifflintown Member (Silurian) of Pennsylvania
   journal: jofpaleo
@@ -3427,7 +4008,7 @@ inprep_sprinkle_strimple:
   title: Kailidiscus, A New Plesiomorphic Edrioasteroid From The Basal Middle Cambrian Kaili Biota Of Guizhou Province, China
   journal: jofpaleo
   volume: 84
-  number: 5
+  number: 4
   pages:
   - 668
   - 680
@@ -3442,6 +4023,19 @@ inprep_sprinkle_strimple:
     accepted: 2010-03-20
   identifiers:
     doi: 10.1666/09-159.1
+  audit:
+    state: partial
+    coverage:
+      skeleton: all
+      newTaxa: all
+      types: all
+      synonymy: na
+      material: partly
+      occurrences: none
+      illustrations: none
+      diagnoses: none
+      phylogeny: na
+    notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_2010_zhao.y.l_sumrall_parsley_peng.j.md
 2011_sprinkle_parsley_zhao.y.l_peng.j:
   title:  Revision Of Lyracystid Eocrinoids From The Middle Cambrian Of South China And Western Laurentia
   journal: jofpaleo
@@ -3481,6 +4075,19 @@ inprep_sprinkle_strimple:
   - zamora
   identifiers:
     doi: 10.1080/14772019.2010.499137
+  audit:
+    state: partial
+    coverage:
+      skeleton: all
+      newTaxa: all
+      types: all
+      synonymy: none
+      material: none
+      occurrences: none
+      illustrations: none
+      diagnoses: none
+      phylogeny: all
+    notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_2011_sumrall_zamora.md
 2012_doweld:
   title: "Heckerocrinus, a new substitute generic name for fossil crinoid Bockia Hecker 1940 (Echinodermata: Crinoidea) non Reisinger 1924 (Vermes: Turbellaria)"
   journal: p-z
@@ -3589,13 +4196,10 @@ inprep_sprinkle_strimple:
   - zamora
 2013_smith.a.b_zamora_álvaro:
   title: The oldest echinoderm faunas from Gondwana show that echinoderm body plan diversification was rapid
-  complete:
-    named: null
-    open: null
-    history: null
-    specimens:
-      basic: null
-      all: null
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=null open=null history=null specimens.basic=null specimens.all=null
   journal: nat-com
   volume: 4
   articleNumber: 1385
@@ -3630,6 +4234,19 @@ inprep_sprinkle_strimple:
   - heredia
   - rodríguez.c.m
   - mestre
+  audit:
+    state: partial
+    coverage:
+      skeleton: partly
+      newTaxa: all
+      types: all
+      synonymy: partly
+      material: none
+      occurrences: none
+      illustrations: none
+      diagnoses: none
+      phylogeny: partly
+    notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_2013_sumrall_heredia_rodríguez.c.m_mestre.md
 2013_zamora:
   title: Morphology and phylogenetic interpretation of a new Cambrian edrioasteroid  Echinodermata
   journal: palaeontology
@@ -3759,13 +4376,10 @@ inprep_sprinkle_strimple:
     doi: 10.1111/pala.12204
 2015_rahman_stewart_zamora:
   title: The youngest ctenocystoids from the Upper Ordovician of the United Kingdom and the evolution of the bilateral body plan in echinoderms
-  complete:
-    named: true
-    open: null
-    history: null
-    specimens:
-      basic: true
-      all: true
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=null history=null specimens.basic=true specimens.all=true
   journal: acta-p-polonica
   volume: 60
   number: 1
@@ -3801,6 +4415,19 @@ inprep_sprinkle_strimple:
   - sumrall
   identifiers:
     doi: 10.1017/jpa.2014.29
+  audit:
+    state: partial
+    coverage:
+      skeleton: all
+      newTaxa: all
+      types: all
+      synonymy: na
+      material: none
+      occurrences: none
+      illustrations: none
+      diagnoses: none
+      phylogeny: na
+    notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_2015_sprinkle_sumrall.md
 2015_sumrall_zamora:
   title: A columnal-bearing eocrinoid from the Cambrian Burgess Shale (British Columbia, Canada)
   journal: jofpaleo
@@ -3915,6 +4542,19 @@ inprep_sprinkle_strimple:
   - siveter.da.j
   - sutton.m.d
   - rahman
+  audit:
+    state: partial
+    coverage:
+      skeleton: all
+      newTaxa: all
+      types: all
+      synonymy: na
+      material: none
+      occurrences: none
+      illustrations: none
+      diagnoses: none
+      phylogeny: na
+    notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman.md
 2017_nardin_lefebvre_fatka_nohejlová_kašiča_šinágl_szabad:
   title: Evolutionary implications of a new transitional blastozoan echinoderm from the middle Cambrian of the Czech Republic
   journal: jofpaleo
@@ -3939,13 +4579,10 @@ inprep_sprinkle_strimple:
     doi: 10.1017/jpa.2016.157
 2017_zamora_deline_álvaro_rahman:
   title: The Cambrian Substrate Revolution and the early evolution of attachment in suspension-feeding echinoderms
-  complete:
-    named: null
-    open: null
-    history: null
-    specimens:
-      basic: null
-      all: null
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=null open=null history=null specimens.basic=null specimens.all=null
   journal: es-rev
   volume: 171
   pages:
@@ -3986,9 +4623,10 @@ inprep_sprinkle_strimple:
   - lefebvre
 2018_lefebvre_lerosey-aubril:
   title: "Laurentian origin of solutan echinoderms: new evidence from the Guzhangian (Cambrian Series 3) Weeks Formation of Utah, USA"
-  complete:
-    named: true
-    history: false
+  audit:
+    state: partial
+    notes: |
+      Migrated from complete: named=true open=null history=false specimens.basic=null specimens.all=null
   journal: geomag
   volume: 155
   number: 5
@@ -4070,6 +4708,19 @@ inprep_sprinkle_strimple:
   - zamora
   identifiers:
     doi: 10.1017/jpa.2019.65
+  audit:
+    state: partial
+    coverage:
+      skeleton: all
+      newTaxa: all
+      types: all
+      synonymy: all
+      material: all
+      occurrences: partly
+      illustrations: partly
+      diagnoses: partly
+      phylogeny: na
+    notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_2020_ewin_martin.m_isotalo_zamora.md
 2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler:
   title: Athenacrinus n. gen. and other early echinoderm taxa inform crinoid origin and arm evolution
   journal: jofpaleo
@@ -4111,14 +4762,22 @@ inprep_sprinkle_strimple:
     url: https://www.app.pan.pl/article/item/app007182019.html
 2021_jell_sprinkle:
   title: Revision of Whitehouse’s eocrinoids Peridionites and Cymbionites, with description of the associated fauna including two new echinoderm genera, lower Middle Cambrian Thorntonia Limestone, northwestern Queensland
-  complete:
-    notes: Non-echinoderm trees not captured
-    named: true
-    open: true
-    history: true
-    specimens:
-      basic: true
-      all: true
+  audit:
+    state: partial
+    coverage:
+      skeleton: all
+      newTaxa: all
+      types: all
+      synonymy: partly
+      material: all
+      occurrences: none
+      illustrations: none
+      diagnoses: none
+      phylogeny: na
+    notes: |
+      Migrated from complete: named=true open=true history=true specimens.basic=true specimens.all=true
+      Non-echinoderm trees not captured
+      Reviewed against the paper 2026-09-09; see docs/reviews/review_2021_jell_sprinkle.md
   journal: alcheringa
   volume: 45
   number: 1

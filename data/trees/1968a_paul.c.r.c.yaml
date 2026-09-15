@@ -1,0 +1,12 @@
+taxonomies:
+- taxon: glyptocystitida-superfamily
+  children:
+  - taxon: macrocystellidae
+    emended: true
+    notes: Emended Jaekel 1918
+    children:
+    - taxon: macrocystella
+      synonyms:
+      - taxon: mimocystites
+      children:
+      - taxon: mariae_callaway_1877

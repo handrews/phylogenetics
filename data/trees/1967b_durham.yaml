@@ -1,0 +1,15 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: crinozoa
+    children:
+    - taxon: lepidocystoidea
+      new: true
+      children:
+      - taxon: lepidocystidae
+        new: true
+        children:
+        - taxon: lepidocystis
+          children:
+          - taxon: wanneri_foerste_1938
+            type: true

@@ -1,0 +1,13 @@
+taxonomies:
+- taxon: blastozoa
+  children:
+  - taxon: eocrinoidea
+    children:
+    - openTaxon: eocrinoidea-family-uncertain_sumrall_zamora_2015
+      children:
+      - taxon: ubaghsicystis
+        children:
+        - taxon: segurae_gil cid_domínguez alonso_2002
+          type: true
+        - openTaxon: ubaghsicystis-sp_sumrall_zamora_2015
+          new: true

@@ -1,0 +1,129 @@
+taxonomies:
+- taxon: isorophida
+  children:
+  - taxon: pyrgocystidae
+    children:
+    - taxon: pyrgocystis
+      type: true
+      children:
+      - taxon: sardesoni_bather_1915
+        type: true
+      - taxon: volborthi_hecker_1939
+        provisional: true # with reservations
+      - taxon: petalus_holloway_jell_1983
+        provisional: true # uncertain
+      - taxon: postpetalus_müller.p_hahn_2010
+        provisional: true # following convention of petalus
+        new: true
+        specimens:
+          holotype: PWL 2009/5016sub1-LS
+          paratypes:
+          - PWL 2009/5017-LS # 517 but surely a typo
+          - PWL 2009/5018-LS
+  - taxon: agelacrinitidae
+    children:
+    - taxon: postibullinae
+      children:
+      - taxon: postibulla
+        type: true
+        children:
+        - taxon: legrandensis_miller.s.a_gurley_1894
+        - taxon: lukei_bell.b.m_petersen.m.s_1976
+        - taxon: alabamensis_sumrall_garbisch_pope_2000
+        - taxon: westergaardi_sumrall_sprinkle_bonem_2006
+        - taxon: jasperensis_harker_1953
+          provisional: true
+        - taxon: alpenensis_bassler_1936
+          provisional: true
+      - taxon: parapostibulla
+        children:
+        - taxon: murphyi_sumrall_garbisch_pope_2000
+        - taxon: hybolopus_fraunfelter_utgaard_1970
+        - taxon: neglecta_smith.a.b_1983
+          moved:
+            taxon: postibulla
+        - taxon: graysoni_sumrall_sprinkle_bonem_2006
+      - taxon: pyrgopostibulla
+        children:
+        - taxon: belli_sumrall_brett_cornell_2006
+      - taxon: eopostibulla
+        new: true
+        children:
+        - taxon: pustulata_müller.p_hahn_2010
+          type: true
+          new: true
+          specimens:
+            holotype: PWL 2009/5022-LS
+            paratypes:
+            - PWL 2009/5019-LS
+            - PWL 2009/5020-LS
+            - PWL 2009/5021-LS
+    - taxon: agelacrinitinae
+      type: true
+      children:
+      - taxon: agelacrinites
+        notes:  Agelacrinites is given as type of Agelacrinitidae as well
+        type: true
+        children:
+        - taxon: hamiltonensis_vanuxem_1842
+          type: true
+        - taxon: blairi_miller_1894
+        - taxon: curvatus_grigo_1995
+        - taxon: rhenanus_roemer_1851
+          provisional: true
+        - taxon: taunicus_rösler_1953
+        - taxon: thor_müller.p_hahn_2010
+          new: true
+          specimens:
+            holotype: PWL 2009/5023-LS
+      - taxon: krama
+        children:
+        - taxon: devonica_bassler_1936
+          type: true
+        - taxon: hispanica_müller.p_hahn_2010
+          new: true
+          specimens:
+            holotype: DPO 14001
+        - taxon: germanica_müller.p_hahn_2010
+          new: true
+          specimens:
+            holotype: PWL 2009/5024-LS
+            paratypes:
+            - PWL 2009/5025-LS
+            - PWL 2009/5026-LS
+            - PWL 2009/5027-LS
+            - PWL 2009/5028a-LS
+            - PWL 2009/5028b-LS
+            - PWL 2009/5029-LS
+            - PWL 2009/5030-LS
+            - PWL 2009/5031-LS
+            - PWL 2009/5032-LS
+            - RS 21
+            - M 2514
+        - taxon: odin_müller.p_hahn_2010
+          new: true
+          specimens:
+            holotype: PWL 2009/5033sub1-LS
+            paratypes:
+            - PWL 2009/5033sub2-LS
+      - taxon: parakrama
+        new: true
+        children:
+        - taxon: grebelae_müller.p_hahn_2010
+          type: true
+          new: true
+          specimens:
+            holotype: PWL 2009/5040-LS
+            paratypes:
+            - PWL 2009/5034-LS
+            - PWL 2009/5035-LS
+            - PWL 2009/5016sub2-LS
+            - PWL 2009/5036-LS
+            - PWL 2009/5037-LS
+            - PWL 2009/5038-LS
+            - PWL 2009/5039-LS
+            - PWL 2009/5041-LS
+            - PWL 2009/5042-LS
+    - taxon: discocystinae
+  - taxon: hemicystitidae
+  - taxon: rhenopyrgidae

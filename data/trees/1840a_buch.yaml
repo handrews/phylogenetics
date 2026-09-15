@@ -1,0 +1,124 @@
+taxonomies:
+- taxon: crinoidea-family
+  children:
+  - taxon: sphaeronites
+    notes: |
+      No formal definitions or figures, just mentions in text.
+      Most notable is the synonymization of E. granatum with E. aurantium,
+      and the mention of E. pomum without synonymization (but with a note
+      that E. pomum has not been seen near St. Peterburg.
+    synonyms:
+    - taxon: echinosphaerites
+      authority:
+        source: 1821_wahlenberg
+        pages: 52
+      notes: |
+        No indication of which figures go with which species; presumably
+        Buch would retain the E. pomum figures with that species, and
+        assign both the E. aurantium and E. granatum figures to
+        E. aurantium.  But this is not spelled out as it is for some
+        other sources.
+    children:
+    - taxon: aurantium_gyllenhaal_1772
+      illustrations:
+      - plate: I
+        figures:
+        - 14
+        - 17
+      synonyms:
+      - authority:
+          source: 1837_hisinger
+          illustrations:
+          - plate: XXV
+            figures:
+            - [8, 9]
+      - authority:
+          source: 1830_pander
+          illustrations:
+          - plate: XXIX
+            figures:
+            - 3a
+      - taxon: granatum_wahlenberg_1821
+    - taxon: pomum_gyllenhaal_1772
+      illustrations:
+      - plate: I
+        figures:
+        - [15, 16]
+      synonyms:
+      - authority:
+          source: 1772_gyllenhaal
+        parents:
+        - taxon: echinus
+  - taxon: hemicosmites
+    new: true
+    pages:
+    - [32, 33]
+    children:
+    - taxon: pyriformis_buch_1840
+      new: true
+      pages:
+      - [32, 33]
+      illustrations:
+      - plate: I
+        figures:
+        - [1, 3]
+        - [6, 7]
+        - 11
+        - 13
+      notes: |
+        One statement references figure 16, but clearly means 13 as it
+        reference the exploded plate analysis of that figure.
+        Pander's E. malum is not explicitly synonymized with H. pyriformis,
+        nor is it explicitly recombined as H. malum (its modern name).
+        However, the plates for E. malum are discussed as Hemicosmites
+        plates, so it is included as a synonym.
+      synonyms:
+      - taxon: malum_pander_1830
+        parents:
+        - taxon: echinosphaerites
+        illustrations:
+        - plate: XXIX
+          figures:
+          - [1a, 1c]
+  - taxon: cryptocrinites
+    new: true
+    pages: 36
+    children:
+    - taxon: cerasus_buch_1840
+      new: true
+      pages: 36
+      synonyms:
+      - taxon: laevis_pander_1830
+        parents:
+        - taxon: echinosphaerites
+        authority:
+          source: 1830_pander
+          illustrations:
+          - plate: II
+            figures:
+            - [24, 26]
+      - affTaxon: laevis_pander_1830
+        parents:
+        - taxon: echinosphaerites
+        authority:
+          source: 1830_pander
+          illustrations:
+          - plate: II
+            figures:
+            - 33
+      non:
+      - notes: |
+          Note explicitly excluded, but only figure 33 is included.
+        affTaxon: laevis_pander_1830
+        parents:
+        - taxon: echinosphaerites
+        authority:
+          source: 1830_pander
+          illustrations:
+          - plate: II
+            figures:
+            - [34, 35]
+    - taxon: regularis_buch_1840
+      questionable: true
+      new: true
+      pages: 37

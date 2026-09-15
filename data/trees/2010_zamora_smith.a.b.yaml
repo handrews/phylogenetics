@@ -1,0 +1,16 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: isorophida
+      children:
+      - taxon: protorophus
+        new: true
+        children:
+        - taxon: hispanicus_zamora_smith.a.b_2010
+          type: true
+          new: true
+      - openTaxon: isorophida-genus-indeterminate_zamora_smith.a.b_2010
+        children:
+        - openTaxon: isorophida-sp_zamora_smith.a.b_2010

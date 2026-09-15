@@ -1,0 +1,22 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: blastozoa
+    children:
+    - taxon: eocrinoidea
+      children:
+      - taxon: digitata
+        children:
+        - taxon: rhipidocystidae
+          children:
+          - taxon: rhipidocystis
+          - taxon: batherocystis
+          - taxon: petalocystites
+          - taxon: mandalacystis
+          - taxon: neorhipidocystis
+          - taxon: durhamicystis
+            new: true
+            children:
+            - taxon: americana_zamora_sprinkle_sumrall_2020
+              type: true
+              new: true

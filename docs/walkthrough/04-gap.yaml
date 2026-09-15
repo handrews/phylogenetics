@@ -1,0 +1,10 @@
+# What occurrence data does Guensburg & Sprinkle (1994) print for the new species Lampteroblastus hintzei?
+# The plan Claude Sonnet 5 stated in the eval run of 2026-09-14 (planner mode, q014).
+header: Occurrence data for the new species Lampteroblastus hintzei as printed by Guensburg & Sprinkle
+  (1994)
+blocks:
+- tool: statements
+  parameters:
+    record: hintzei_guensburg_sprinkle_1994
+    source: 1994_guensburg_sprinkle
+    kind: occurrences

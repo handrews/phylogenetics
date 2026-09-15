@@ -1,0 +1,13 @@
+taxonomies:
+- taxon: eocrinoidea
+  children:
+  - taxon: eocrinidae
+    children:
+    - taxon: gogia
+      children:
+      - taxon: ojenai_durham_1978
+        new: true
+        illustrations:
+        - plate: 1
+          figures:
+          - [1, 9]

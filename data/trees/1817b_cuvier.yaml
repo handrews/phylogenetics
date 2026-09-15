@@ -1,0 +1,26 @@
+taxonomies:
+- mergeInto: [1817a_cuvier, 0]
+  taxon: animaux
+  children:
+  - taxon: vertébrés
+    children:
+    - taxon: reptiles
+    - taxon: poissons
+  - taxon: mollusques-phylum
+    children:
+    - taxon: céphalopodes-class
+    - taxon: ptéropodes-class
+    - taxon: gastéropodes-class
+    - taxon: acéphales-class
+    - taxon: brachiopodes-class
+      new: true
+    - taxon: cirrhopodes
+      new: true
+  - taxon: articulés
+    new: true
+    children:
+    - taxon: annélides # Lamarck
+    - taxon: crustacés-class
+      new: true
+    - taxon: arachnides
+    - taxon: insectes

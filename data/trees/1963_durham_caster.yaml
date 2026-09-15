@@ -1,0 +1,21 @@
+taxonomies:
+- taxon: echinozoa
+  children:
+  - taxon: helicoplacoidea
+    new: true
+    children:
+    - taxon: helicoplacus
+      new: true
+      children:
+      - taxon: gilberti_durham_caster_1963
+        type: true
+        new: true
+        specimens:
+          holotype: UCMP 37847
+          paratypes:
+          - UCMP 37849
+          - UCMP 37854
+      - taxon: curtisi_durham_caster_1963
+        new: true
+        specimens:
+          holotype: UCMP 37844

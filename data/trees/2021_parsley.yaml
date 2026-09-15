@@ -1,0 +1,52 @@
+taxonomies:
+- taxon: blastozoa
+  children:
+  - taxon: eocrinoidea
+    children:
+    - taxon: gogiida-subclass
+      diagnosis: |
+        Gogiids with a non-pored, early juvenile stage of mostly hexagonal
+        plates followed by circular to ovoid epispires, or paedomorphically,
+        in later stages limits epispires to juvenile-like circular epispires
+        or retains the early juvenile non-pored stage throughout ontogeny.
+        Younger (Upper Cambrian to Ordovician) forms modify radiating (plate
+        center to plate angles), reinforcing ridges into hollowed folds that
+        appear to be, in addition to reinforcing structures, to respiratory
+        structures (Middle to Upper Ordovician). Ambulacral pattern 2-1-2
+        never attaining true pentameral symmetry. Stems/stalks evolve from
+        being irregularly plated (Lower and Middle Cambrian) to primarily
+        holomerous (Middle Cambrian to Upper Ordovician).
+      notes: |
+        "This is not a comprehensive listing of the probable orders to be
+        included in this sub class and those listed below and includes only
+        those whose representatives were part of this study."
+      new: true
+      children:
+      - taxon: gogiida
+        children:
+        - taxon: eocrinoidae
+          children:
+          - taxon: gogia
+          - taxon: sinoeocrinus
+          - taxon: guizhoueocrinus
+          - taxon: globoeocrinus
+      - taxon: ascocystitida
+        authority:
+          source: 2005_frest
+        notes: The Frest (2005) in references gives Broadhead (1982)
+        children:
+        - taxon: rhopalocystitidae
+          authority:
+            source: 2005_frest
+          notes: The Frest (2005) in references does not support this.
+          children:
+          - taxon: rhopalocystis
+        - taxon: cambrocystidae
+          notes: |
+            Cites Dzik and Orłowski (1993) which actually defines
+            Cambrocrinidae, as would be expected for Cambrocrinus.
+          children:
+          - taxon: cambrocrinus
+        - taxon: ascocystitidae
+          children:
+          - taxon: ascocystites

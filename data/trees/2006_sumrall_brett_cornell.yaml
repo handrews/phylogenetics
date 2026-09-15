@@ -1,0 +1,20 @@
+taxonomies:
+- notes: No rank words above genus; "Genus" is printed (p. 190)
+  taxon: edrioasteroidea
+  children:
+  - taxon: isorophida
+    notes: Isorophida and Isorophina are switched, surely by error.
+    children:
+    - taxon: isorophina
+      notes: Isorophida and Isorophina are switched, surely by error.
+      children:
+      - taxon: agelacrinitidae
+        children:
+        - taxon: postibullinae
+          children:
+          - taxon: pyrgopostibulla
+            new: true
+            children:
+            - taxon: belli_sumrall_brett_cornell_2006
+              type: true
+              new: true

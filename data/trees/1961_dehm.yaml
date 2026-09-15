@@ -79,9 +79,10 @@ taxonomies:
       - Bornich
       - near Weisel on the Rhine
       - Germany
-  - taxon: rhenopyrgus
+  - taxon: rhenopyrgus-subgenus
     new: true
-    rank: subgenus
+    citedAs: Rhenopyrgus nov. subgen.
+    pages: 16
     # typeTaxon:
     #   taxon: coronaeformis_rievers_1961
     #   parents:
@@ -89,8 +90,18 @@ taxonomies:
     children:
     - taxon: coronaeformis_rievers_1961
       type: true
+      illustrations:
+      - plate: 1
+        figures:
+        - [1, 4]
       synonyms:
-      - parents:
+      - authority:
+          source: 1961_rievers
+          illustrations:
+          - plate: 2
+            figures:
+            - [1, 4]
+        parents:
         - taxon: pyrgocystis
       occurrences:
       - series: Lower Devonian

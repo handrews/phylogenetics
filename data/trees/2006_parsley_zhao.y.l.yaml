@@ -1,0 +1,89 @@
+taxonomies:
+- taxon: blastozoa
+  children:
+  - taxon: eocrinoidea
+    children:
+    - taxon: gogiida
+      emended: true
+      diagnosis: |
+        Emended from Sprinkle, 1973. Eocrinoids with at tachment disk and
+        stalklike structure ranging from poorly organized holdfast to column
+        with essentially holomeric elements, transverse ambulacral system
+        on the upper face of theca (probably with 2-1-2 branching in mature
+        specimens), and loosely organized theca (regular series of plates are
+        present in adult Sinoeocrinus with almost all plates having
+        well-developed sutural pores. Brachioles of typical construction;
+        straight or variously twisted or coiled, and commonly have tall
+        covering plates over food grooves.
+      synonyms:
+      - openTaxon: eocrinoidea-unnamed-order-1_sprinkle_1973
+      children:
+      - taxon: eocrinidae
+        emended: true
+        diagnosis: |
+          Calyx plates numerous, commonly irregularly arranged, but in very
+          small juveniles at least three or more well-defined series are
+          developed under ambulacrum; thecal plates  have epispires that
+          morphologically vary considerably in ontogeny. Ambulacral system
+          confined to upper (or oral) thecal surface, consisting of three
+          to five simple ambulacral grooves leading to exothecal brachioles.
+          Brachioles may be straight, twisted, or coiled. Holdfast, variable
+          in length, irregularly multiplated with distal flattened,
+          multiplated attachment disk. Lower to Middle Cambrian (modified
+          from Sprinkle, 1973).
+        synonyms:
+        - taxon: sinoeocrinidae
+          pars: true
+        - taxon: lichenoididae
+          notes: "=Lichenoididae Jaekel, 1918, Zhao et al., 1994 (pars)"
+          pars: true
+        children:
+        - taxon: gogia
+        - taxon: acanthocystites
+        - taxon: akadocrinus
+        - taxon: sinoeocrinus
+          synonyms:
+          - taxon: paragogia
+          - taxon: curteocrinus
+          children:
+          - taxon: lui_zhao.y.l_huang.y.z_gong.x.y_1994
+            type: true
+            notes: Page numbers from English translation, which is 2nd half of paper
+            synonyms:
+            - taxon: curtobrachiolus_zhao.y.l_huang.y.z_gong.x.y_1994
+            - taxon: lepidus_zhao.y.l_huang.y.z_gong.x.y_1994
+            - taxon: longus_zhao.y.l_huang.y.z_gong.x.y_1994
+            - taxon: minus_zhao.y.l_huang.y.z_gong.x.y_1994
+            - taxon: globosa_zhao.y.l_huang.y.z_gong.x.y_1994
+              parents:
+              - taxon: paragogia
+            - taxon: guizhouensis_zhao.y.l_huang.y.z_gong.x.y_1994
+              parents:
+              - taxon: curteocrinus
+    - openTaxon: eocrinoidea-uncertain-order_parsley_zhao.y.l_2006
+      children:
+      - openTaxon: eocrinoidea-uncertain-family_parsley_zhao.y.l_2006
+        children:
+        - taxon: balangicystis
+          new: true
+          diagnosis: |
+            Eocrinoid with ?five wedge-shaped basals above which in adult specimens
+            at least six irregular circlets of polygonal plates with commonly five
+            raised, flat-topped rays extend from plate center to plate angles.
+            Sutural pores between thecal plates absent. Ten or 15 brachioles in
+            an essentially transversely elongated 2-1 -2 pattern across upper face
+            of the theca. Brachioles longer than height of theca and robust
+            relative to thecal size. Tall cover plates present. Holdfast composed
+            of short circlets of five or six platelets, some with prominent
+            circular boss. At least 40 holdfast circlets present in juvenile
+            and adult specimens.
+          children:
+          - taxon: rotundus_parsley_zhao.y.l_2006
+            type: true
+            new: true
+            diagnosis: |
+              Species is monotypic and its diagnosis is the same as for genus.
+            synonyms:
+            - openTaxon: crinozoa-sp_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
+              parents:
+              - openTaxon: crinozoa-genus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999

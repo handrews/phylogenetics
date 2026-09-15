@@ -1,0 +1,13 @@
+taxonomies:
+- taxon: eocrinoidea
+  children:
+  - openTaxon: eocrinoidea-uncertain-order_sumrall_sprinkle_guensburg_2001
+    children:
+    - openTaxon: eocrinoidea-uncertain-family_sumrall_sprinkle_guensburg_2001
+      children:
+      - taxon: haimacystis
+        new: true
+        children:
+        - taxon: rozhnovi_sumrall_sprinkle_guensburg_2001
+          type: true
+          new: true

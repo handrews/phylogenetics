@@ -1,0 +1,29 @@
+taxonomies:
+- taxon: edrioasteroidea
+  children:
+  - taxon: edrioasterida
+    children:
+    - taxon: edrioasterina
+      citedAs: Suborder Edrioasterina, Bather, 1898
+      pages: 348
+      children:
+      - taxon: edrioasteridae
+        citedAs: Family Edrioasteridae Bather, 1899
+        pages: 348
+        children:
+        - taxon: pseudedriophus
+          new: true
+          children:
+          - taxon: guensburgi_sprinkle_sumrall_2015
+            type: true
+            new: true
+    - taxon: edrioblastoidina
+      children:
+      - taxon: astrocystitidae
+        children:
+        - taxon: porosublastus
+          new: true
+          children:
+          - taxon: inexpectus_sprinkle_sumrall_2015
+            type: true
+            new: true

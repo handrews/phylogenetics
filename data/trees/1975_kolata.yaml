@@ -1,0 +1,339 @@
+taxonomies:
+- taxon: echinodermata
+  auth: [Fleming] # WTF????
+  year: 1828
+  children:
+  - taxon: homalozoa
+    children:
+    - taxon: homoiostelea
+      children:
+      - taxon: soluta-order
+        children:
+        - taxon: belemnocystitidae
+          children:
+          - taxon: myeinocystites
+            children:
+            - taxon: natus_strimple_1953
+              type: true
+  - taxon: crinozoa
+    children:
+    - taxon: cystoidea
+      children:
+      - taxon: rhombifera-order
+        children:
+        - taxon: glyptocystitida-superfamily
+          children:
+          - taxon: pleurocystitidae
+            children:
+            - taxon: pleurocystites
+              children:
+              - taxon: squamosus_billings_1854
+                type: true
+              - cfTaxon: squamosus_billings_1854
+            - taxon: praepleurocystis
+              children:
+              - taxon: watkinsi_strimple_1948
+                type: true
+              - openTaxon: praepleurocystis-sp_kolata_1975
+          - taxon: cheirocrinidae
+            children:
+            - taxon: coronocystis
+              children:
+              - taxon: angulatus_wood_1909
+                type: true
+              - taxon: durandensis_kolata_1975
+                new: true
+    - taxon: crinoidea
+      children:
+      - taxon: inadunata
+        children:
+        - taxon: disparida
+          children:
+          - taxon: calceocrinacea
+            children:
+            - taxon: calceocrinidae
+              children:
+              - taxon: cremacrinus
+                children:
+                - taxon: punctatus_ulrich_1886
+                  type: true
+                - taxon: arctus_sardeson_1928
+                - taxon: guttenbergensis_kolata_1975
+                  new: true
+                - openTaxon: cremacrinus-sp_kolata_1975
+              - taxon: anulocrinus
+                children:
+                - taxon: thraivensis_ramsbottom_1961
+                  type: true
+                - taxon: forrestonensis_kolata_1975
+                  new: true
+          - taxon: heterocrinacea
+            children:
+            - taxon: heterocrinidae
+              children:
+              - taxon: isotomocrinus
+                children:
+                - taxon: typus_ulrich_1924
+                  type: true
+                - taxon: tenuis_billings_1857
+                  synonyms:
+                  - taxon: tenuis_billings_1857
+                    parents:
+                    - taxon: heterocrinus
+                  - taxon: tenuis_billings_1857
+                    parents:
+                    - taxon: ottawacrinus
+                - taxon: minutus_kolata_1975
+                  new: true
+        - taxon: hybocrinida
+          children:
+          - taxon: hybocrinacea
+            children:
+            - taxon: hybocrinidae
+              children:
+              - taxon: hybocrinus
+                children:
+                - taxon: conicus_billings_1857_hybocrinus
+                  type: true
+        - taxon: cladida
+          children:
+          - taxon: cyathocrinina
+            children:
+            - taxon: gasterocomacea
+              children:
+              - taxon: porocrinidae
+                children:
+                - taxon: porocrinus
+                  children:
+                  - taxon: conicus_billings_1857_porocrinus
+                    type: true
+                  - taxon: pentagonius_meek_worthen_1865
+                  - cfTaxon: smithi_grant_1881
+              - taxon: carabocrinidae
+                children:
+                - taxon: carabocrinus
+                  children:
+                  - taxon: radiatus_billings_1857
+                    type: true
+                  - taxon: oogyi_kolata_1975
+                    new: true
+                  - openTaxon: carabocrinus-sp_kolata_1975
+          - taxon: dendrocrinina
+            children:
+            - taxon: dendrocrinacea
+              children:
+              - taxon: dendrocrinidae
+                children:
+                - taxon: dendrocrinus
+                  children:
+                  - taxon: longidactylus_hall_1852
+                    type: true
+                  - taxon: springeri_kolata_1975
+                    provisional: true
+                    new: true
+                  - openTaxon: dendrocrinus-sp-a_kolata_1975
+                  - openTaxon: dendrocrinus-sp-b_kolata_1975
+            - taxon: merocrinacea
+              children:
+              - taxon: merocrinidae
+                children:
+                - taxon: merocrinus
+                  children:
+                  - taxon: typus_walcott_1884
+                    type: true
+                  - taxon: britonensis_kolata_1975
+                    new: true
+              - taxon: cupulocrinidae
+                children:
+                - taxon: cupulocrinus
+                  children:
+                  - taxon: heterocostalis_hall_1847
+                    type: true
+                    synonyms:
+                    - taxon: heterocostalis_hall_1847
+                      parents:
+                      - taxon: scyphocrinus
+                  - taxon: conjugans_billings_1859
+                    synonyms:
+                    - taxon: conjugans_billings_1859
+                      parents:
+                      - taxon: dendrocrinus
+                  - taxon: gracilis_hall_1847_poteriocrinus
+                    synonyms:
+                    - taxon: gracilis_hall_1847_poteriocrinus
+                      parents:
+                      - taxon: poteriocrinus
+                    - taxon: gracilis_hall_1847_poteriocrinus
+                      parents:
+                      - taxon: dendrocrinus
+                    notes: I'm not sure how to handle the "non" here.
+                  - taxon: humilis_billings_1857
+                    synonyms:
+                    - taxon: humilis_billings_1857
+                      parents:
+                      - taxon: dendrocrinus
+                  - taxon: jewetti_billings_1859
+                    synonyms:
+                    - taxon: jewetti_billings_1859
+                      parents:
+                      - taxon: dendrocrinus
+                  - taxon: molanderi_kolata_1975
+                    new: true
+                  - taxon: plattevillensis_kolata_1975
+                    new: true
+      - taxon: camerata
+        children:
+        - taxon: diplobathra
+          children:
+          - taxon: reteocrinidae
+            children:
+            - taxon: reteocrinus
+              children:
+              - taxon: stellaris_billings_1859
+                type: true
+              - taxon: rocktonensis_kolata_1975
+                new: true
+              - taxon: spinosus_kolata_1975
+                new: true
+            - taxon: traskocrinus
+              new: true
+              children:
+              - taxon: mahlburgi_kolata_1975
+                type: true
+                new: true
+          - taxon: archaeocrinidae
+            children:
+            - taxon: raphanocrinus
+              children:
+              - taxon: subnodosus_walcott_1884
+                type: true
+                synonyms:
+                - taxon: subnodosus_walcott_1884
+                  parents:
+                  - taxon: glyptocrinus
+              - taxon: buckleyi_kolata_1975
+                new: true
+        - taxon: monobathra
+          children:
+          - taxon: glyptocrinidae
+            children:
+            - taxon: glyptocrinus
+              children:
+              - taxon: decadactylus_hall_1847
+                type: true
+              - taxon: charltoni_kolata_1975
+                new: true
+              - taxon: pustulosis_kolata_1975
+                new: true
+              - openTaxon: glyptocrinus-sp_kolata_1975
+  - taxon: stelleroidea
+    children:
+    - taxon: asteroidea-subclass
+      children:
+      - taxon: valvatida
+        children:
+        - taxon: pustulosina
+          children:
+          - taxon: promopalaeasteraceae
+            children:
+            - taxon: promopalaeasteridae
+              children:
+              - taxon: promopalaeaster
+                children:
+                - taxon: granulosus_meek_1872
+                  type: true
+                  synonyms:
+                  - taxon: granulosus_meek_1872
+                    parents:
+                    - taxon: palaeaster
+                - taxon: wilsoni_raymond_1912
+                  synonyms:
+                  - taxon: wilsoni_raymond_1912
+                    provisional: true
+                    parents:
+                    - taxon: palaeaster
+          - taxon: palaeasteraceae
+            children:
+            - taxon: hudsonasteridae
+              children:
+              - taxon: hudsonaster
+                children:
+                - taxon: rugosus_billings_1857
+                  type: true
+                  synonyms:
+                  - taxon: rugosus_billings_1857
+                    parents:
+                    - taxon: palasterina
+                - cfTaxon: rugosus_billings_1857
+                  synonyms:
+                  - taxon: rugosus_billings_1857
+                    parents:
+                    - taxon: palasterina
+                  - taxon: rugosus_billings_1857
+                    parents:
+                    - taxon: hudsonaster
+      - taxon: forcipulatida
+        children:
+        - taxon: uractinina
+          children:
+          - taxon: urasterellidae
+            children:
+            - taxon: urasterella
+              children:
+              - taxon: ruthveni_mccoy_1851
+                type: true
+              - openTaxon: urasterella-sp_kolata_1975
+                provisional: true
+  - taxon: edrioasteroidea
+    children:
+    - taxon: edrioasteridae
+      children:
+      - taxon: edrioaster
+        children:
+        - taxon: bigsbyi_billings_1857
+          type: true
+        - cfTaxon: bigsbyi_billings_1857
+          synonyms:
+          - taxon: bigsbyi_billings_1857
+            parents:
+            - taxon: cyclaster
+          - taxon: bigsbyi_billings_1857
+  - taxon: cyclocystoidea
+    children:
+    - taxon: cyclocystoididae
+      children:
+      - taxon: cyclocystoides
+        children:
+        - taxon: halli_billings_1858
+          type: true
+        - affTaxon: halli_billings_1858
+          synonyms:
+          - taxon: halli_billings_1858
+          - taxon: halli_billings_1858
+            parents:
+            - taxon: narrawayella
+        - openTaxon: cyclocystoides-sp_kolata_1975
+  - taxon: echinoidea
+    children:
+    - taxon: perishoechinoidea
+      children:
+      - taxon: bothriocidaroida
+        children:
+        - taxon: bothriocidaridae
+          children:
+          - taxon: bothriocidaris
+            children:
+            - taxon: globulus_eichwald_1860
+              type: true
+            - taxon: solemni_kolata_1975
+              new: true
+          - taxon: neobothriocidaris
+            children:
+            - taxon: peculiaris_paul.c.r.c_1967
+              type: true
+            - taxon: templetoni_kolata_1975
+              new: true
+            - openTaxon: neobothriocidaris-sp_kolata_1975
+          - openTaxon: bothriocidaridae-unknown-genus_kolata_1975
+            children:
+            - openTaxon: bothriocidaridae-sp_kolata_1975

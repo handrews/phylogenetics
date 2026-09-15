@@ -1,0 +1,17 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: echinozoa
+    children:
+    - taxon: helicoplacoidea
+      children:
+      - taxon: helicoplacidae
+        new: true
+        children:
+        - taxon: helicoplacus
+          children:
+          - taxon: gilberti_durham_caster_1963
+            type: true
+          - taxon: curtisi_durham_caster_1963
+          - openTaxon: helicoplacus-sp_durham_caster_1966
+            new: true

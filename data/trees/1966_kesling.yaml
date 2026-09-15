@@ -1,0 +1,40 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: echinozoa
+    children:
+    - taxon: cyclocystoidea
+      children:
+      - taxon: cyclocystoididae
+        children:
+        - taxon: cyclocystoides
+          synonyms:
+          - taxon: narrawayella
+          - taxon: savagella
+          children:
+          - taxon: halli_billings_1858
+            type: true
+          - taxon: cincinnatiensis_miller.s.a_faber_1892
+            synonyms:
+            - taxon: cincinnatiensis_miller.s.a_faber_1892
+              type: true
+              parents:
+              - taxon: narrawayella
+          - taxon: ornatus_savage_1917
+            synonyms:
+            - taxon: ornatus_savage_1917
+              type: true
+              parents:
+              - taxon: savagella
+          - taxon: raymondi_foerste_1920
+          - taxon: bellulus_miller.s.a_dyer_1878
+          - taxon: davisii_salter_1858
+          - taxon: salteri_hall_1866
+          - taxon: decussatus_begg_1934
+          - taxon: devonicus_sieverts-doreck_1951
+          - taxon: billingsi_wilson_1946
+          - taxon: magnus_miller.s.a_dyer_1878
+          - taxon: wrighti_begg_1939
+          - taxon: huronensis_billings_1865
+          - taxon: insularis_regnéll_1945
+          - taxon: lindstroemi_regnéll_1945

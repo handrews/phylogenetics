@@ -1,0 +1,70 @@
+taxonomies:
+- taxon: crinoidea
+  emended: true
+  pages: 357
+  children:
+  - taxon: cladida
+    children:
+    - openTaxon: cladida-order-uncertain_guensburg_sprinkle_2009
+      children:
+      - taxon: apektocrinidae
+        new: true
+        pages: 353
+        children:
+        - taxon: apektocrinus
+          type: true
+          new: true
+          pages: 353
+          children:
+          - taxon: ubaghsi_guensburg_sprinkle_2009
+            type: true
+            new: true
+            pages:
+            - [353, 357]
+            illustrations:
+            - page: 352
+              figures: 1
+            - page: 353
+              figures: 2
+            - page: 354
+              figures: 3
+            - page: 355
+              figures: 4
+            - page: 356
+              figures: 5
+            - page: 357
+              figures: 6
+            - page: 358
+              figures:
+              - ["7.1", "7.3"]
+            - page: 359
+              figures: 8
+            - page: 361
+              figures: "10.1"
+            - page: 363
+              figures: "21.1"
+              notes: Given as 11.1 in the text, but that is the tree diagram.
+phylogenies:
+- treeType: diagram
+  tree:
+    children:
+    - taxon: camptostroma
+    - children:
+      - taxon: kinzercystis
+      - children:
+        - taxon: cambroblastus
+          provisional: true
+        - children:
+          - children:
+            - taxon: titanocrinus
+            - children:
+              - taxon: proexenocrinus
+              - taxon: celtocrinus
+          - children:
+            - taxon: apektocrinus
+            - children:
+              - taxon: compagicrinus
+              - taxon: aethocrinus
+          - children:
+            - notes: Placed beside "Tremadociocrinod", no clear explanation
+              taxon: ramseyocrinus

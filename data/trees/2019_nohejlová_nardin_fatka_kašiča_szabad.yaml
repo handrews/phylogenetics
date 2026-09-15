@@ -1,0 +1,33 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: blastozoa
+    children:
+    - taxon: lepidocystoidea-family
+      children:
+      - taxon: vyscystis
+        children:
+        - taxon: ubaghsi_fatka_kordule_1990
+          type: true
+phylogenies:
+- treeType: cladogram
+  tree:
+    children:
+    - taxon: stromatocystites
+    - children:
+      - children:
+        - children:
+          - taxon: lepidocystis
+          - taxon: kinzercystis
+        - taxon: vyscystis
+      - children:
+        - taxon: felbabkacystis
+        - children:
+          - children:
+            - children:
+              - taxon: akadocrinus
+              - taxon: gogia
+            - children:
+              - taxon: lichenoides
+              - taxon: macrocystella
+          - taxon: ascocystites

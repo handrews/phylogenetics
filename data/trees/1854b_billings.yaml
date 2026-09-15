@@ -1,0 +1,31 @@
+taxonomies:
+- taxon: echinodermata-class
+  children:
+  - taxon: cystidea-order
+    children:
+    - taxon: pleurocystites
+      pages: 251
+      new: true
+      children:
+      - taxon: squamosus_billings_1854
+        new: true
+        pages: 251
+        illustrations:
+        - page: 251
+          figures:
+          - [9, 12]
+      - taxon: filitextus_billings_1854
+        new: true
+        pages: 252
+        illustrations:
+        - page: 252
+          figures:
+          - 13
+          - 14
+      - taxon: robustus_billings_1854
+        new: true
+        pages: 252
+        illustrations:
+        - page: 252
+          figures:
+          - 15

@@ -1,0 +1,58 @@
+taxonomies:
+- taxon: pelmatozoa
+  children:
+  - taxon: edrioblastoidea
+    children:
+    - taxon: steganoblastidae
+      citedAs: Family steganoblastidae Bather 1900
+      pages: 513
+      synonyms:
+      - taxon: astrocystitidae
+        tentative: true
+        notes: |
+          Bassler 1935 "introduced a new family name, Astrocystitidae, to
+          replace Steganoblastidae. However, since Steganoblastidae, which is
+          based on a junior objective synonym, has priority and has been a
+          more widely used name, it would seem desirable that it be retained.
+          This view accords with Art. 40 of the International Code of
+          Zoological Nomenclature." (p. 514)
+      children:
+      - taxon: astrocystites
+        citedAs: Genus astrocystites Whiteaves 1897 (= steganoblastus Whiteaves 1898)
+        pages: 513
+        notes: |
+          "In the same year Bather raised objections to Whiteaves's generic
+          name on the grounds of possible confusion with Asterocystis
+          Haeckel, and suggested that Whiteaves substitute the name
+          Steganoblastus. The new generic name was introduced by Whiteaves
+          (1898)" (p. 514).
+        synonyms:
+        - taxon: steganoblastus
+          citedAs: steganoblastus Whiteaves 1898
+          authority:
+            source: 1898_whiteaves
+            pages: 395
+        children:
+        - taxon: ottawaensis_whiteaves_1897
+          type: true
+        - taxon: distans_webby_1968
+          new: true
+          specimens:
+            holotype: USGD 2302
+            paratypes:
+            - USGD 2303
+            - USGD 2304
+            - USGD 2305
+            - USGD 2306
+            - USGD 2308
+            - USGD 2309
+            - USGD 2310
+            - USGD 2311
+            - USGD 2312
+            - USGD 2313
+            - USGD 2314
+            - USGD 3303
+        - openTaxon: astrocystites-sp_webby_1968
+          specimens:
+            unknowntypes:
+            - USGD 3304

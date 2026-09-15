@@ -1,0 +1,202 @@
+notes: Second part, covering only invertebrates.
+taxonomies:
+- taxon: animalia
+  children:
+  - taxon: insecta
+  - taxon: vermes
+    children:
+    - taxon: intestina-order
+      children:
+      - taxon: gordius
+      - taxon: ascaris
+      - taxon: lumbricus
+      - taxon: fasciola
+      - taxon: sipunculus
+        new: true
+      - taxon: hirudo
+      - taxon: myxine
+        children:
+        - taxon: glutinosa_linnaeus_1758
+    - taxon: mollusca-order
+      children:
+      - taxon: limax
+      - taxon: aplysia
+        new: true
+      - taxon: doris
+      - taxon: aphrodita
+      - taxon: nereis
+      - taxon: ascidia
+        new: true
+        children:
+        - taxon: papillosum_linnaeus_1767
+          new: true
+        - taxon: gelatinosum_linnaeus_1767
+          new: true
+        - taxon: intestinalis_linnaeus_1767
+          new: true
+        - taxon: quadridentata_linnaeus_1767
+          new: true
+        - taxon: rustica_linnaeus_1767
+          new: true
+        - taxon: echinata_linnaeus_1767
+          new: true
+      - taxon: actinia
+        new: true
+      - taxon: tethis
+        notes: Not shown as separate in IRMNG, unlike Asteria/s
+        synonyms:
+        - taxon: tethys
+      - taxon: holothuria
+        new: true
+        children:
+        - taxon: frondosa_gunnerus_1767
+        - taxon: phantapus_strussenfelt_1765
+          new: true
+        - taxon: tremula_linnaeus_1767
+          new: true
+        - taxon: physalis_linnaeus_1758
+        - taxon: thalia_linnaeus_1758
+        - taxon: caudata_linnaeus_1758
+        - taxon: denudata_linnaeus_1758
+        - taxon: pentactes_linnaeus_1767
+          new: true
+        - taxon: priapus_linnaeus_1767
+          new: true
+      - taxon: terebella
+        new: true
+      - taxon: triton
+      - taxon: lernæa
+      - taxon: scyllæa
+      - taxon: clio
+        new: true
+      - taxon: sepia
+      - taxon: medusa
+      - taxon: asteria
+        new: true
+        synonyms:
+        - taxon: asterias
+        children:
+        - taxon: integra
+          children:
+          - taxon: luna_linnaeus_1758
+        - taxon: stellatae
+          children:
+          - taxon: papposa_linnaeus_1767
+            new: true
+          - taxon: rubens_linnaeus_1758
+          - taxon: minuta_linnaeus_1761
+          - taxon: glacialis_linnaeus_1758
+          - taxon: reticulata_linnaeus_1758
+          - taxon: nodosa_linnaeus_1758
+          - taxon: aranciaca_linnaeus_1758
+          - taxon: equestris_linnaeus_1758
+          - taxon: laevigata_linnaeus_1758
+        - taxon: radiatae
+          children:
+          - taxon: ophiura_linnaeus_1758
+          - taxon: aculeata_linnaeus_1767 # non pennant_1777
+            new: true
+          - taxon: ciliaris_linnaeus_1767
+            new: true
+          - taxon: pectinata_linnaeus_1758
+          - taxon: multiradiata_linnaeus_1758
+          - taxon: caput medusae_linnaeus_1758
+      - taxon: echinus
+        children:
+        - taxon: regulares
+          children:
+          - taxon: esculentus_linnaeus_1758
+          - taxon: globulus_linnaeus_1758
+          - taxon: sphaeroides_linnaeus_1758
+          - taxon: gratilla_linnaeus_1758
+          - taxon: lixula_linnaeus_1758
+          - taxon: saxatilis_linnaeus_1758
+          - taxon: diadema_linnaeus_1758
+          - taxon: cidaris_linnaeus_1758
+          - taxon: mamillatus_linnaeus_1758
+          - taxon: lucunter_linnaeus_1758
+          - taxon: atratus_linnaeus_1758
+        - taxon: irregulares
+          children:
+          - taxon: spatagus_linnaeus_1758
+          - taxon: lacunosus_linnaeus_1758
+          - taxon: rosaceus_linnaeus_1758
+          - taxon: reticulatus_linnaeus_1758
+          - taxon: placenta_linnaeus_1758
+          - taxon: orbiculus_linnaeus_1758
+    - taxon: testacea-order
+      children:
+      - taxon: chiton
+      - taxon: lepas
+      - taxon: pholas
+      - taxon: mya
+      - taxon: solen
+      - taxon: tellina
+      - taxon: cardium
+      - taxon: mactra
+        new: true
+      - taxon: donax
+      - taxon: venus
+      - taxon: spondylus
+      - taxon: chama
+      - taxon: arca
+      - taxon: ostrea
+      - taxon: anomia
+      - taxon: mytilus
+      - taxon: pinna
+      - taxon: argonauta
+      - taxon: nautilus
+      - taxon: conus
+      - taxon: cypræa
+      - taxon: bulla
+      - taxon: voluta
+      - taxon: buccinum
+      - taxon: strombus
+      - taxon: murex
+      - taxon: trochus
+      - taxon: turbo
+      - taxon: helix
+      - taxon: nerita
+      - taxon: haliotis
+      - taxon: patella
+      - taxon: dentalium
+      - taxon: serpula
+      - taxon: teredo
+      - taxon: sabella
+        new: true
+    - taxon: lithophyta
+      children:
+      - taxon: tubipora
+      - taxon: madrepora
+      - taxon: millepora
+      - taxon: cellepora
+        new: true
+    - taxon: zoophyta
+      children:
+      - taxon: isis
+        children:
+        - taxon: hippuris_linnaeus_1758
+        - taxon: dichotoma_linnaeus_1758
+        - taxon: ochracea_linnaeus_1758
+        - taxon: entrocha_linnaeus_1767
+          new: true
+        - taxon: asteria_linnaeus_1767
+          new: true
+        - taxon: nobilis_linnaeus_1767
+          new: true
+      - taxon: gorgonia
+      - taxon: alcyonium
+      - taxon: spongia
+      - taxon: flustra
+      - taxon: tubularia
+      - taxon: corallina
+      - taxon: sertularia
+      - taxon: vorticella
+        new: true
+      - taxon: hydra
+      - taxon: pennatula
+      - taxon: tænia
+      - taxon: volvox
+      - taxon: furia
+      - taxon: chaos
+        new: true

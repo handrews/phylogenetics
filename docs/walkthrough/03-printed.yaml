@@ -1,0 +1,8 @@
+# What do the papers in the corpus print as the attribution of family Edrioasteridae, name-bearer and year? Is it Bather 1898 or 1899?
+# The plan Claude Sonnet 5 stated in the eval run of 2026-09-14 (planner mode, q033).
+header: Attribution of family Edrioasteridae (name-bearer and year) as printed across sources; family
+  rank only; all years
+blocks:
+- tool: printed_forms
+  parameters:
+    record: edrioasteridae

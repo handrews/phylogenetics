@@ -60,10 +60,10 @@ $defs:
   person:
     type: object
     anyOf:
-    - required: [family]
+    - required: [surname]
     - required: [given]
     properties:
-      family:
+      surname:
         type: string
       given:
         type: string
@@ -120,27 +120,39 @@ $defs:
           paper; any names are nomen nudum unless/until publication.
         type: boolean
         default: false
-      complete:
+      audit:
+        description: |
+          Two axes, both claims made after reading the paper. `state` says
+          whether what is entered was checked against the page (verification).
+          `coverage` says, per kind of statement, whether everything the paper
+          prints of that kind is entered (completeness); it is only meaningful
+          once the source is at least partially audited, and an unaudited
+          source carries none. A user's confidence in an answer is the
+          conjunction: audited, and complete for the kinds the question
+          touches.
         type: object
+        additionalProperties: false
+        required: [state]
         properties:
-          named:
-            type: [boolean, "null"]
-            default: false
-          open:
-            type: [boolean, "null"]
-            default: false
-          history:
-            type: [boolean, "null"]
-            default: false
-          specimens:
+          state:
+            type: string
+            enum: [complete, partial, unaudited, unauditable, unobtainable]
+          coverage:
             type: object
-            properties:
-              basic:
-                type: [boolean, "null"]
-                default: false
-              all:
-                type: [boolean, "null"]
-                default: false
+            propertyNames:
+              enum:
+              - skeleton
+              - newTaxa
+              - types
+              - synonymy
+              - material
+              - occurrences
+              - illustrations
+              - diagnoses
+              - phylogeny
+            additionalProperties:
+              type: string
+              enum: [all, partly, none, na]
           notes:
             type: string
       journal:
@@ -320,7 +332,7 @@ $defs:
       name:
         type: [string, "null"]
         pattern: ^[\w][\w._ -]*$
-      identifier:
+      designation:
         description: |
           The phrase given in place of a name for taxa in open nomenclature
       rank:
@@ -370,8 +382,6 @@ $defs:
       homonym:
         type: boolean
         default: false
-      synonym:
-        type: string
       reason:
         type: string
       notes:
@@ -410,7 +420,7 @@ $defs:
       tentative:
         $comment: For synonyms / non
         type: boolean
-        default: true
+        default: false
       plates:
         $ref: "phylogeny#/$defs/multiRanges"
       children:
@@ -434,6 +444,36 @@ $defs:
           $ref: "phylogeny#/$defs/occurrence"
       notes:
         type: string
+      editorial:
+        description: |
+          The editor's layer beside the printed fields, never a replacement
+          for them. `source` resolves a printed citation that cannot resolve
+          as printed (in press, wrong year, another printing) to a source
+          record while `auth`/`year`/`citedAs` stay as printed. `inferred`
+          marks a node whose existence or placement is the editor's, not the
+          source's, or names the fields that are, when the node is printed. Not for an alternative authority, year or spelling: the
+          true authority lives on the taxon record, a misspelling is an
+          `altSpellingOf` record, and a wrong printed attribution is kept as
+          printed with the disagreement derived.
+        type: object
+        additionalProperties: false
+        required: [basis]
+        anyOf:
+        - required: [source]
+        - required: [inferred]
+        properties:
+          source:
+            $ref: "phylogeny#/$defs/sourceId"
+          inferred:
+            $comment: |
+              `true` when the node's existence or placement is the editor's;
+              a list of field names when only those fields are inferred and
+              the node itself is printed.
+            type: [boolean, array]
+            items:
+              type: string
+          basis:
+            type: string
       # TODO: Something is off here, dup field?
       citedAs:
         description: |

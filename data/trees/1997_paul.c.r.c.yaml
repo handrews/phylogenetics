@@ -1,0 +1,139 @@
+taxonomies:
+- taxon: diploporita-class
+  children:
+  - taxon: sphaeronitida-superfamily
+    children:
+    - taxon: sphaeronitidae
+      children:
+      - taxon: sphaeronitinae
+        new: true
+        children:
+        - taxon: sphaeronites
+          children:
+          - taxon: peritaphros-subgenus
+        - taxon: haplosphaeronis
+        - taxon: eucystis
+      - taxon: diplosphaeroninae
+        new: true
+        children:
+        - taxon: diplosphaeronis
+          children:
+          - taxon: laevis_paul.c.r.c_1973
+        - taxon: archegocystis
+        - taxon: proboscisphaeronis
+          new: true
+          children:
+          - taxon: inexpectata_paul.c.r.c_1997
+            type: true
+            new: true
+    - taxon: holocystitidae
+      children:
+      - taxon: brightonicystis
+  - taxon: aristocystitida-superfamily
+    children:
+    - taxon: aristocystidae
+  - taxon: protocrinitida
+    children:
+    - taxon: gomphocystitidae
+      children:
+      - taxon: gomphocystites
+    - taxon: eumorphocystidae
+      children:
+      - taxon: eumorphocystis
+        children:
+        - taxon: multiporata_branson_peck_1940
+          type: true
+        - taxon: coxi_paul.c.r.c_1997
+          new: true
+  - openTaxon: diploporita-incertae-sedis
+    children:
+    - openTaxon: diploporita-sp-e_paul.c.r.c_1997
+- taxon: rhombifera-class
+  children:
+  - taxon: dichoporita
+    children:
+    - taxon: glyptocystitida-superfamily
+      children:
+      - taxon: macrocystellidae
+        children:
+        - taxon: macrocystella
+      - taxon: cheirocrinidae
+        children:
+        - taxon: acanthalepis
+        - taxon: hadrocystis
+        - taxon: homocystites
+        - taxon: coronocystis
+      - taxon: cheirocrinitidae
+      - taxon: pleurocystitidae
+        children:
+        - taxon: pleurocystites
+        - taxon: pygecystis
+        - taxon: regulaecystis
+    - taxon: hemicosmitida-superfamily
+      children:
+      - taxon: thomacystidae
+        children:
+        - taxon: thomacystis
+      - taxon: caryocrinitidae
+        children:
+        - taxon: caryocrinites
+  - taxon: fistuliporita
+    children:
+    - taxon: caryocystitida-superfamily
+      children:
+      - taxon: caryocystitidae
+        children:
+        - taxon: caryocystites
+          children:
+          - taxon: dubius_angelin_1878
+            type: true
+          - cfTaxon: lagenallis_regnéll_1945
+            new: true
+        - taxon: heliocrinites
+          children:
+          - taxon: balticus_eichwald_1829
+            type: true
+          - taxon: triangulatus_paul.c.r.c_1997
+            new: true
+          - openTaxon: heliocrinites-sp-a_paul.c.r.c_1997
+            new: true
+          - openTaxon: heliocrinites-sp-b_paul.c.r.c_1997
+            new: true
+          - taxon: davisii_mccoy_1848
+          - taxon: pseudogranatus_paul.c.r.c_1997
+            new: true
+          - taxon: kildarensis_paul.c.r.c_1997
+            new: true
+          - taxon: laevis_paul.c.r.c_1997
+            provisional: true
+            new: true
+          - openTaxon: heliocrinites-sp-c_paul.c.r.c_1997
+            new: true
+          - openTaxon: heliocrinites-sp_paul.c.r.c_1997
+            new: true
+            parents:
+            - taxon: heliocrinites
+              quoted: true
+        - taxon: lophotocystis
+          children:
+          - taxon: granatum_wahlenberg_1821
+            type: true
+          - taxon: malaisei_regnéll_1951
+      - taxon: echinosphaeritidae
+        children:
+        - taxon: echinosphaerites
+          children:
+          - taxon: echinosphaerites-subgenus
+            children:
+            - taxon: aurantium_gyllenhaal_1772
+              type: true
+            - taxon: granulatus_mccoy_1846
+            - cfTaxon: granulatus_mccoy_1846
+              new: true
+            - openTaxon: echinosphaerites-sp_paul.c.r.c_1997
+          - taxon: striatosphaerites-subgenus
+            new: true
+            children:
+            - taxon: arachnoideus_forbes_1848
+              type: true
+            - cfTaxon: arachnoideus_forbes_1848

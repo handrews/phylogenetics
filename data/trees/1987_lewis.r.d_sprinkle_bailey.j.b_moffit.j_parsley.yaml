@@ -1,0 +1,19 @@
+taxonomies:
+- taxon: echinodermata
+  authority:
+    source: 1789a_bruguière
+  children:
+  - taxon: blastozoa
+    children:
+    - taxon: eocrinoidea
+      children:
+      - taxon: digitata
+        children:
+        - taxon: rhipidocystidae
+          children:
+          - taxon: mandalacystis
+            new: true
+            children:
+            - taxon: dockeryi_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley_1987
+              type: true
+              new: true

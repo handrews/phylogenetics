@@ -1,0 +1,20 @@
+taxonomies:
+- taxon: echinodermata
+  auth: [bruguiére]
+  year: 1791
+  children:
+  - taxon: crinozoa
+    children:
+    - taxon: paracrinoidea
+      children:
+      - taxon: platycystitida
+        children:
+        - taxon: bistomiacystidae
+          new: true
+          children:
+          - taxon: bistomiacystis
+            new: true
+            children:
+            - taxon: globosa_sprinkle_parsley_1982
+              type: true
+              new: true

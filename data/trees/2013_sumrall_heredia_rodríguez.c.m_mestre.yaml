@@ -1,0 +1,69 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: edrioasterida
+      notes: sensu Guensburg and Sprinkle (1994)
+      children:
+      - taxon: edrioblastoidina
+        children:
+        - taxon: rhenopyrgidae
+          moved:
+            taxon: cyathocystidae
+          emended: true
+          children:
+          - taxon: rhenopyrgus
+            emended: true
+            children:
+            - taxon: coronaeformis_rievers_1961
+              type: true
+              synonyms:
+              - taxon: coronaeformis_rievers_1961
+                citedAs: Pyrgocystis (Rhenopyrgus) coronaeformis Rievers, 1961
+                pages: 773
+                parents:
+                - taxon: rhenopyrgus-subgenus
+                - taxon: pyrgocystis
+            - taxon: piojoensis_sumrall_heredia_rodríguez.c.m_mestre_2013
+              new: true
+            - taxon: whitei_holloway_jell_1983
+            - taxon: flos_klug_krüger_korn_rücklin_schemm-gregory_debaets_mapes_2008
+phylogenies:
+- treeType: cladogram
+  methodology: strict consensus of two most parsimonious trees
+  tree:
+    children:
+    - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
+    - children:
+      - children:
+        - taxon: paredriophus
+        - children:
+          - taxon: cyathotheca
+          - taxon: lampteroblastus
+          - taxon: rhenopyrgus
+      - children:
+        - children:
+          - taxon: isorophus
+          - taxon: carneyella
+        - taxon: argodiscus
+- treeType: cladogram
+  methodology: |
+    most parsimonious constrained to place Rhenopyrgus and
+    Argodiscus as sister taxa
+  tree:
+    children:
+    - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
+    - children:
+      - children:
+        - taxon: paredriophus
+        - children:
+          - taxon: cyathotheca
+          - taxon: lampteroblastus
+      - children:
+        - children:
+          - taxon: isorophus
+          - taxon: carneyella
+        - children:
+          - taxon: argodiscus
+          - taxon: rhenopyrgus

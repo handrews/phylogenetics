@@ -1,0 +1,19 @@
+taxonomies:
+- taxon: echinodermata
+  auth: [bruguiére]
+  year: 1791
+  children:
+  - taxon: blastozoa
+    children:
+    - taxon: eocrinoidea
+      children:
+      - taxon: palaeocystitidae
+        children:
+        - taxon: bromidocystis
+          new: true
+          children:
+          - taxon: bassleri_sprinkle_1982h
+            type: true
+            new: true
+          - taxon: sinclairi_sprinkle_1982h
+            new: true

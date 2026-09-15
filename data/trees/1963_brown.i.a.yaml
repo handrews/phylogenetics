@@ -1,0 +1,17 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: pelmatozoa
+    children:
+    - taxon: cystoidea
+      children:
+      - taxon: diploporita-order
+        children:
+        - taxon: sphaeronitidae
+          children:
+          - taxon: austrocystites
+            new: true
+            children:
+            - taxon: branagani_brown.i.a_1963
+              type: true
+              new: true

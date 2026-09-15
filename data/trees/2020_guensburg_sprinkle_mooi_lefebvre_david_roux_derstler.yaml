@@ -1,0 +1,204 @@
+taxonomies:
+- taxon: crinoidea
+  children:
+  - taxon: disparida
+    children:
+    - taxon: athenacrinidae
+      new: true
+      children:
+      - taxon: athenacrinus
+        new: true
+        children:
+        - taxon: broweri_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler_2020
+          new: true
+          type: true
+          specimens:
+            holotype: PE 52742
+            paratypes:
+            - [PE 52750, PE 52753]
+            - USNM 165237
+assumptions:
+- taxon: aethocrinus
+  children:
+  - taxon: moorei_ubaghs_1969
+- taxon: alphacrinus
+  children:
+  - taxon: mansfieldi_guensburg_2010
+- taxon: apektocrinus
+  children:
+  - taxon: ubaghsi_guensburg_sprinkle_2009
+- taxon: camptostroma
+  children:
+  - taxon: roddyi_ruedemann_1933
+- taxon: carabocrinus
+  children:
+  - taxon: treadwelli_sinclair_1945
+- taxon: ceratocystis
+  children:
+  - taxon: perneri_jaekel_1901
+- taxon: eknomocrinus
+  children:
+  - taxon: wahwahensis_guensburg_sprinkle_2003
+- taxon: eumorphocystis
+  children:
+  - taxon: multiporata_branson_peck_1940
+- taxon: glenocrinus
+  children:
+  - taxon: globularis_guensburg_sprinkle_2003
+- taxon: gogia
+  children:
+  - taxon: kitchnerensis_sprinkle_1973
+- taxon: hybocrinus
+  children:
+  - taxon: nitidus_sinclair_1945
+- taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
+  children:
+  - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
+- taxon: kinzercystis
+  children:
+  - taxon: durhami_sprinkle_1973
+- taxon: lepidocystis
+  children:
+  - taxon: wanneri_foerste_1938
+- taxon: macrocystella
+  children:
+  - taxon: mariae_callaway_1877
+- taxon: pseudedriophus
+  children:
+  - taxon: guensburgi_sprinkle_sumrall_2015
+- taxon: rhopalocystis
+  children:
+  - taxon: destombesi_ubaghs_1963
+- taxon: stromatocystites
+  children:
+  - taxon: pentangularis_pompeckj_1896
+- taxon: titanocrinus
+  children:
+  - taxon: sumralli_guensburg_sprinkle_2003
+- taxon: totiglobus
+  quoted: true
+  children:
+  - taxon: lloydi_sprinkle_1985
+    provisional: true
+phylogenies:
+- treeType: cladogram
+  methodology: strict consensus
+  tree:
+    children:
+    - taxon: pentangularis_pompeckj_1896
+      outgroup: true
+    - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
+    - children:
+      - taxon: roddyi_ruedemann_1933
+      - taxon: perneri_jaekel_1901
+      - children:
+        - children:
+          - children:
+            - children:
+              - taxon: moorei_ubaghs_1969
+              - children:
+                - children:
+                  - taxon: mansfieldi_guensburg_2010
+                  - taxon: broweri_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler_2020
+                - children:
+                  - taxon: treadwelli_sinclair_1945
+                  - taxon: nitidus_sinclair_1945
+            - taxon: ubaghsi_guensburg_sprinkle_2009
+          - taxon: wahwahensis_guensburg_sprinkle_2003
+        - taxon: globularis_guensburg_sprinkle_2003
+        - taxon: sumralli_guensburg_sprinkle_2003
+    - children:
+      - taxon: lloydi_sprinkle_1985
+      - taxon: guensburgi_sprinkle_sumrall_2015
+    - children:
+      - taxon: durhami_sprinkle_1973
+      - taxon: wanneri_foerste_1938
+      - children:
+        - taxon: kitchnerensis_sprinkle_1973
+        - children:
+          - taxon: destombesi_ubaghs_1963
+          - taxon: mariae_callaway_1877
+          - taxon: multiporata_branson_peck_1940
+- treeType: cladogram
+  methodology: 50% majority rule consensus
+  tree:
+    children:
+    - taxon: pentangularis_pompeckj_1896
+      outgroup: true
+    - children:
+      - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
+      - children:
+        - taxon: lloydi_sprinkle_1985
+        - taxon: guensburgi_sprinkle_sumrall_2015
+    - children:
+      - taxon: roddyi_ruedemann_1933
+      - taxon: perneri_jaekel_1901
+      - children:
+        - children:
+          - children:
+            - children:
+              - taxon: moorei_ubaghs_1969
+              - children:
+                - children:
+                  - taxon: mansfieldi_guensburg_2010
+                  - taxon: broweri_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler_2020
+                - children:
+                  - taxon: treadwelli_sinclair_1945
+                  - taxon: nitidus_sinclair_1945
+            - taxon: ubaghsi_guensburg_sprinkle_2009
+          - taxon: wahwahensis_guensburg_sprinkle_2003
+        - children:
+          - taxon: globularis_guensburg_sprinkle_2003
+          - taxon: sumralli_guensburg_sprinkle_2003
+    - children:
+      - taxon: durhami_sprinkle_1973
+      - taxon: wanneri_foerste_1938
+      - children:
+        - taxon: kitchnerensis_sprinkle_1973
+        - children:
+          - taxon: destombesi_ubaghs_1963
+          - taxon: mariae_callaway_1877
+          - taxon: multiporata_branson_peck_1940
+- treeType: diagram
+  notes: evolutionary tree
+  tree:
+    children:
+    - taxon: stromatocystites
+      outgroup: true
+    - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
+    - children:
+      - taxon: camptostroma
+      - taxon: ceratocystis
+      - bracket: crinoidea
+        children:
+          - children:
+            - children:
+              - children:
+                - taxon: aethocrinus
+                - children:
+                  - children:
+                    - taxon: alphacrinus
+                    - taxon: athenacrinus
+                  - children:
+                    - taxon: carabocrinus
+                    - taxon: hybocrinus
+              - taxon: apektocrinus
+            - taxon: eknomocrinus
+          - taxon: glenocrinus
+          - taxon: titanocrinus
+    - children:
+      - taxon: totiglobus
+        quoted: true
+        children:
+        - taxon: lloydi_sprinkle_1985
+      - taxon: pseudedriophus
+    - bracket: blastozoa
+      children:
+      - taxon: kinzercystis
+      - taxon: lepidocystis
+      - children:
+        - taxon: gogia
+        - children:
+          - taxon: rhopalocystis
+          - taxon: macrocystella
+          - taxon: eumorphocystis

@@ -1,0 +1,223 @@
+taxonomies:
+- taxon: cystidea-order
+  children:
+  - taxon: pleurocystites
+    pages: 46
+    children:
+    - taxon: squamosus_billings_1854
+      pages: 49
+      illustrations:
+      - plate: 1
+        figures:
+        - [1a, 1d]
+    - taxon: robustus_billings_1854
+      pages: 49
+      illustrations:
+      - plate: 1
+        figures:
+        - 2a
+    - taxon: filitextus_billings_1854
+      pages: 50
+      illustrations:
+      - plate: 2
+        figures:
+        - 1a
+        - 1b
+    - taxon: elegans_billings_1857_pleurocystites
+      pages: 51
+      illustrations:
+      - plate: 2
+        figures:
+        - [2a, 2d]
+    - taxon: exornatus_billings_1857
+      pages: 52
+    - taxon: anticostensis_billings_1857
+      pages: 52
+      illustrations:
+      - plate: 1
+        figures:
+        - 3
+  - taxon: glyptocystites
+    pages: 53
+    synonyms:
+    - authority:
+        source: 1854a_billings
+        pages: 215
+    - authority:
+        source: 1857_billings
+        pages: 280
+    children:
+    - taxon: multiporus_billings_1854
+      pages: 54
+      illustrations:
+      - plate: 3
+        notes: |
+          There are two figures "g" on the plate
+          It seems like perhaps "n" was intended to be "h",
+          and the second "g" was to be "j"?
+        figures: [1a, 1b, d, E, F, c, g, i, n, L, g, k]
+      synonyms:
+      - authority:
+          source: 1854a_billings
+          pages: 215
+      - authority:
+          source: 1857_billings
+          pages: 281
+    - taxon: logani_billings_1857
+      pages: 54
+      synonyms:
+      - authority:
+          source: 1857_billings
+          pages: 282
+      illustrations:
+      - plate: 4
+        figures:
+        - [1a, 1h]
+      children:
+      - taxon: gracilis_billings_1858
+        new: true
+        pages: 59
+        illustrations:
+        - plate: 4
+          figures:
+          - 2
+    - taxon: forbesi_billings_1857
+      synonyms:
+      - authority:
+          source: 1857_billings
+          pages: 283
+      illustrations:
+      - plate: 4
+        figures:
+        - [3a, 3d]
+  - taxon: comarocystites
+    pages: 61
+    synonyms:
+    - authority:
+        source: 1854c_billings
+        pages: 269
+    - authority:
+        source: 1857_billings
+        pages: 288
+    children:
+    - taxon: punctatus_billings_1854
+      pages: 61
+      synonyms:
+      - authority:
+          source: 1854c_billings
+          pages: 270
+      - authority:
+          source: 1857_billings
+          pages: 288
+      illustrations:
+      - plate: 5
+        figures:
+        - 1
+        - 2
+  - taxon: amygdalocystites
+    pages: 63
+    synonyms:
+    - authority:
+        source: 1854c_billings
+        pages: 270
+    - authority:
+        source: 1857_billings
+        pages: 288
+    children:
+    - taxon: florealis_billings_1854
+      pages: 63
+      synonyms:
+      - authority:
+          source: 1854c_billings
+          pages: 270
+      - authority:
+          source: 1857_billings
+          pages: 289
+      illustrations:
+      - plate: 6
+        figures:
+        - [1a, 1e]
+    - taxon: tenuistriatus_billings_1854
+      pages: 64
+      synonyms:
+      - authority:
+          source: 1854c_billings
+          pages: 271
+      - authority:
+          source: 1857_billings
+          pages: 289
+      illustrations:
+      - plate: 6
+        figures:
+        - [2a, 2f]
+    - taxon: radiatus_billings_1854
+      pages: 65
+      synonyms:
+      - authority:
+          source: 1854c_billings
+          pages: 271
+      - authority:
+          source: 1857_billings
+          pages: 289
+      illustrations:
+      - plate: 6
+        figures:
+        - 3a
+        - 3b
+  - taxon: malocystites
+    new: true
+    notes: Billings claims authorship, PBDB agrees, IRMNG says Chapman 1857?
+    pages: 66
+    children:
+    - taxon: murchisoni_billings_1858
+      new: true
+      pages: 66
+      illustrations:
+      - plate: 7
+        figures:
+        - [1a, 1i]
+    - taxon: barrandi_billings_1858
+      new: true
+      pages: 67
+      illustrations:
+      - plate: 7
+        figures:
+        - [2a, 2c]
+  - taxon: palæocystites
+    new: true
+    pages: 68
+    children:
+    - taxon: tenuiradiatus_hall_1847
+      pages: 69
+      synonyms:
+      - taxon: tenuiradiatus_hall_1847
+        authority:
+          source: 1847_hall
+          pages: 18
+          illustrations:
+          - plate: 4
+            figures:
+            - 8
+            - 9
+        parents:
+        - taxon: actinocrinus
+    - taxon: dawsoni_billings_1858
+      new: true
+      pages: 70
+      notes: Not figured.
+    - taxon: chapmani_billings_1858
+      new: true
+      pages: 71
+      notes: Not figured.
+  - taxon: ateleocystites
+    new: true
+    pages: 72
+    notes: No separate genus description, only species.
+    children:
+    - taxon: huxleyi_billings_1858
+      new: true
+      pages: 72
+      illustrations:
+      - page: 73
+        figures:
+        - 4

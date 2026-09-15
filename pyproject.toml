@@ -1,20 +1,49 @@
-[tool.poetry]
+[project]
 name = "phylohist"
 version = "0.1.0"
-description = ""
-authors = ["Henry H. Andrews <andrews_henry@yahoo.com>"]
+description = "Published taxonomic opinions on Palaeozoic echinoderms, recorded as printed, with tools that answer from them"
 readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "Henry H. Andrews", email = "henry@henryandrews.net"}]
+requires-python = ">=3.10,<4"
+dependencies = [
+  "coloredlog>=0.2.5,<0.3",
+  "pyyaml>=6.0.3,<7",
+  "jschon>=0.11.1,<0.12",
+  "mcp>=2.2.0,<3",
+  "anthropic>=1.5.0,<2",
+]
 
-[tool.poetry.scripts]
-phylohist = 'phylohist.main:main'
+[project.scripts]
+phylohist = "phylohist.cli:main"
 
-[tool.poetry.dependencies]
-python = "^3.8"
-coloredlog = "^0.2.5"
-pyyaml = "^6.0.3"
-jschon = "^0.11.1"
+[tool.poetry]
+packages = [{include = "phylohist"}]
 
+[tool.poetry.group.dev.dependencies]
+pytest = "^8"
+ruff = "^0.16.7"
+pytest-cov = "^7.1.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+filterwarnings = [
+  "ignore::DeprecationWarning:rfc3986",
+]
+
+[tool.ruff]
+line-length = 100
+indent-width = 2
+target-version = "py310"
+extend-exclude = ["notes", "eval/runs"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"

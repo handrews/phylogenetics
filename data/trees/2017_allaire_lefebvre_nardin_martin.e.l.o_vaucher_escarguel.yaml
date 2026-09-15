@@ -1,0 +1,97 @@
+taxonomies:
+- taxon: eocrinoidea
+  children:
+  - taxon: ascocystitida
+    authority:
+      source: 2005_frest
+    notes: Authority incorrect; cited source correctly cites Broadhead 1982
+    children:
+    - taxon: rhopalocystidae
+      authority:
+        source: 2005_frest
+      notes: Authority incorrect; cited source does not mention the family.
+      children:
+      - taxon: rhopalocystis
+        pages: 697
+        children:
+        - taxon: destombesi_ubaghs_1963
+          type: true
+          pages:
+          - [697, 701]
+          illustrations:
+          - page: 698
+            figures: 7
+          - page: 700
+            figures: 8
+        - taxon: fraga_chauvel_1971
+          pages:
+          - [701, 703]
+          illustrations:
+          - page: 702
+            figures:
+            - ["9.1", "9.4"]
+          - page: 703
+            figures:
+            - 2
+            - 4
+          synonyms:
+          - openTaxon: rhopalocystis-sp_chauvel_1971
+            pages: 44
+            illustrations:
+            - plate: 1
+              figures:
+              - [9, 10]
+          - openTaxon: rhopalocystis-sp-a_chauvel_1978
+            pages: 54
+          - openTaxon: rhopalocystis-sp-b_chauvel_1978
+            pages: 54
+            illustrations:
+            - textFigures: 11q
+        - taxon: grandis_chauvel_1971
+          pages:
+          - [703, 704]
+          illustrations:
+          - page: 702
+            figures:
+            - ["9.5", "9.7"]
+          - page: 703
+            figures:
+            - "10.1"
+            - ["10.3", "10.5"]
+        - taxon: havliceki_chauvel_1978
+          pages:
+          - [704, 707]
+          illustrations:
+          - page: 705
+            figures: 11
+          - page: 706
+            figures: 12
+          - page: 708
+            figures: 13
+          synonyms:
+          - openTaxon: rhopalocystis-sp-c_chauvel_1978
+            pages: 55
+            illustrations:
+            - plate: 5
+              figures: 4
+            - textFigures:
+              - [11o, 11p]
+          - openTaxon: rhopalocystis-sp-c_chauvel_régnault_1986
+            pages: 870
+        - taxon: zagoraensis_chauvel_1971
+          pages:
+          - [707, 712]
+          illustrations:
+          - page: 710
+            figures: 14
+          - page: 712
+            figures: 15
+          synonyms:
+          - taxon: lehmani_chauvel_régnault_1986
+            pages: 866
+            illustrations:
+            - plate: 1
+              figures:
+              - [9, 10]
+            - textFigures:
+              - [3I, 3N]

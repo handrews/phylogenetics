@@ -1,0 +1,13 @@
+taxonomies:
+- taxon: eocrinoidea
+  children:
+  - taxon: imbricata
+    children:
+    - taxon: lepidocystidae
+      children:
+      - taxon: vyscystis
+        new: true
+        children:
+        - taxon: ubaghsi_fatka_kordule_1990
+          type: true
+          new: true

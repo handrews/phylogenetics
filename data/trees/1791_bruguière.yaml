@@ -1,0 +1,23 @@
+notes: |
+  While Echinodermata is defined, there is no clear assigment of genera
+  that I can see, due either to missing preface pages after viij (which
+  lists genera from Vermes Infusores only, with no other order listed out)
+  or the abandonment of doing anything other than captioning plates due
+  to changes to taxonomy made by Lamarck during publication.  I'm including
+  the genera here based on 1787_bruguiere which assigned them to the French
+  name Vers Echinodermes, but did not use the latin Echinodermata that is
+  equated to it here.  I suppose we can treat that as a synonym, but how
+  to handle synonyms outside of proper nomenclature is unclear.
+taxonomies:
+- taxon: vermes
+  children:
+  - taxon: infusoria-order
+  - taxon: intestina-order
+  - taxon: mollusca-order
+  - taxon: echinodermata-order
+    new: true
+    children:
+    - taxon: asterias
+    - taxon: echinus
+  - taxon: testacea-order
+  - taxon: zoophyta

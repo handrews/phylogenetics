@@ -1,0 +1,52 @@
+taxonomies:
+- mergeInto: [1817a_cuvier, 0]
+  taxon: animaux
+  children:
+  - taxon: zoophytes-phylum
+    children:
+    - taxon: échinodermes-class
+      children:
+      - taxon: pédicellés-order
+        new: true
+        children:
+        - taxon: asterias-family
+          children:
+          - taxon: asterias # sensu Lamarck
+          - taxon: ophiura
+          - taxon: euryale
+          - taxon: comatula
+        - taxon: encrinus
+        - taxon: echinus-family
+          children:
+          - taxon: echinus # sensu Lamarck
+            synonyms:
+            - taxon: cidaris # Klien
+          - taxon: echinoneus # Phelsum and Leske
+          - taxon: nucleolites # Lamarck
+          - taxon: galerites # Lamarck, Conulus Klein
+            synonyms:
+            - taxon: conulus
+          - taxon: scutella # Lamarck
+          - taxon: cassidulus # Lamarck
+          - taxon: clypeaster # Lamarck, Echinanthus Klein
+            synonyms:
+            - taxon: echinanthus
+          - taxon: fibularia # Lamarck
+          - taxon: spatangus_leske_1778 # Lamarck, Klein
+          - taxon: brissus # Klein
+        - taxon: holothuria
+      - taxon: sans pédicellés-order
+        new: true
+        children:
+        - taxon: molpadia # Cuvier, Holothuroideans
+          new: true
+        - taxon: minyas # Cuvier, Hexacoralians
+          new: true
+        - taxon: priapulus # Lamarck
+        - taxon: sipunculus # "Gra."
+    - taxon: intestinaux-class
+      synonyms:
+      - taxon: entozoa
+    - taxon: acalèphes
+    - taxon: polypes-class
+    - taxon: infusoires-class

@@ -1,0 +1,22 @@
+taxonomies:
+- taxon: crinoidea-family
+  notes: Rank is a guess
+  children:
+  - taxon: stephanocrinus
+    new: true
+    children:
+    - taxon: angulatus_conrad.t.a_1842
+      new: true
+  - taxon: icthyocrinus
+    new: true
+    children:
+    - taxon: lævis_conrad.t.a_1842
+      new: true
+  - taxon: nucleocrinus
+    notes: |
+      This genus differs from Pentremites, Say, in
+      having only one perforation at top, which is central.
+    new: true
+    children:
+    - taxon: elegans_conrad.t.a_1842
+      new: true

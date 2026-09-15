@@ -1,7 +1,7 @@
 taxonomies:
 - taxon: pyrgocystis
   authority:
-    source: 1915_bather
+    source: 1915a_bather
   children:
   - taxon: coronaeformis_rievers_1961
     new: true

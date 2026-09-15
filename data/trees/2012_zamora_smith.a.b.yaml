@@ -1,0 +1,52 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: rhombifera-class
+    rank: Plesion
+    children:
+    - taxon: dibrachycystidae
+      new: true
+      children:
+      - taxon: dibrachycystis
+        new: true
+        children:
+        - taxon: purujoensis_zamora_smith.a.b_2012
+          new: true
+          type: true
+          specimens:
+            holotype: MPZ2009/1230
+            paratypes:
+            - [MPZ2011/2, MPZ2011/6]
+      - taxon: vizcainoia
+        new: true
+        children:
+        - taxon: languedocianus_ubaghs_1987
+          type: true
+        - taxon: moncaiensis_zamora_smith.a.b_2012
+          new: true
+          specimens:
+            holotype: MPZ2011/7
+phylogenies:
+- treeType: cladogram
+  tree:
+    taxon: kinzercystis
+    outgroup: true
+    children:
+    - children:
+      - taxon: gogia
+      - taxon: sinoeocrinus
+      - children:
+        - children:
+          - children:
+            - children:
+              - taxon: ridersia
+              - taxon: macrocystella
+            - taxon: velieuxicystis
+          - taxon: pleurocystites
+          - taxon: dibrachycystis
+        - taxon: akadocrinus
+    - children:
+      - taxon: lyracystis
+        children:
+        - taxon: titanocrinus
+        - taxon: aethocrinus

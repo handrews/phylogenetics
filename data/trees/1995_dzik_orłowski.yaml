@@ -1,0 +1,15 @@
+taxonomies:
+- taxon: ctenocystoidea
+  notes: Unclear if higher tree present
+  children:
+  - taxon: jugoszoviidae
+    notes: |
+      Direct assignment to class (not order) in this paper
+      described by Domínguez Alonso (1999).
+    children:
+    - taxon: jugoszovia
+      new: true
+      children:
+      - taxon: archaeocyathoides_dzik_orłowski_1995
+        type: true
+        new: true

@@ -1,0 +1,17 @@
+taxonomies:
+- taxon: blastozoa-class
+  children:
+  - taxon: eocrinoidea
+    rank: Group
+    children:
+    - taxon: ascocystitidae
+      children:
+      - taxon: ascocystites
+        children:
+        - taxon: drabowensis_barrande_1887
+        - taxon: micraster_barrande_1887
+        - taxon: barrandei_jaekel_1918
+        - taxon: cuneiformis_chauvel_1941
+          provisional: true
+        - openTaxon: ascocystites-sp_young.t.p_donovan.s.k_1993
+          new: true

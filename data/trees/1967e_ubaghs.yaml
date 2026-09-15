@@ -1,0 +1,17 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - openTaxon: echinodermata-incertae-sedis
+    children:
+    - taxon: cymbionites
+      moved:
+        taxon: cymbionitidae
+      children:
+      - taxon: craticula_whitehouse_1941
+        type: true
+    - taxon: peridionites
+      moved:
+        taxon: peridionitidae
+      children:
+      - taxon: navicula_whitehouse_1941
+        type: true

@@ -1,0 +1,408 @@
+taxonomies:
+- taxon: edrioasteroidea
+  diagnosis: |
+    Polyplated, thecate, sedentary Echinodermata with: initially triradiate
+    and subsequently pentaradiate symmetry; five (±) endothecal ambulacra
+    radiating from central oral structure of covering orals and underlying
+    oral frame; ambulacral system formed by two sets of thecal elements -
+    coverplates and floorplates; sutural passageways present or absent,
+    associated with ambulacra; hydropore opening in or near right posterior
+    part of oral area, posterior to midline of ambulacrum V; interambulacra
+    irregularly polyplated; anal structure on upper oral surface in
+    posterior interambulacrum, periproctal or valvular; theca domal, clavate
+    or globose (without stalk).
+  children:
+  - taxon: isorophida
+    diagnosis: |
+      Edrioasteroidea with: domal or clavate theca, ambu- lacra commonly
+      limited to upper oral surface; oral frame formed by five enlarged,
+      proximal ambulacral floorplates, with or without intrathecal
+      extensions from primary orals; hydropore structure in or posterior
+      to right posterior margin of oral area, opening along junctions
+      between plates, elongate parallel to plate margins; ambulacra formed
+      by biserial or cyclic sets of coverplates, with intra-ambulacral
+      and/or intrathecal extensions, and uni- serial floorplates;
+      ambulacral coverplate passageways present in some; margin of oral
+      surface a peripheral rim.
+    new: true
+    children:
+    - taxon: lebetodiscina
+      diagnosis: |
+        Isorophida with: center of oral area farmed by three primary orals;
+        ambulacral coverplates forming single, alternating biseries,
+        coverplates with both intra-ambulacral and intrathecal extensions;
+        ambulacral coverplate passageways present; ambulacral floorplates
+        imbricate; anal area a periproct.
+      new: true
+      children:
+      - taxon: lebetodiscidae
+        diagnosis: |
+          Lebetodiscina with: oral area including at least two pairs of
+          shared coverplates, secondary orals frequently present; hydropore
+          structure distal to oral area, opening along adradial suture line
+          of proximal, posterior part of ambulacrum V, composed of ambulacral
+          coverplates and interambulacral elements; ambulacra forming high,
+          pronounced ridges on thecal surface, amhulacral coverplates large,
+          extremely thick (perpendicular to the thecal surface) and wide
+          (perpendicular to ambulacral axis); ambulacral tunnel narrow and
+          high; coverplate passage- ways nearly vertical; peripheral rim
+          plates squamose.
+        new: true
+        children:
+        - taxon: lebetodiscus
+          non:
+          - taxon: agelacrinites
+            authority:
+              source: 1842_vanuxem
+              pages: 158
+              illustrations:
+              - figures: 80
+            citedAs: Nat. Hist. New York, pt. IV, Geology, 3:158
+          synonyms:
+          - taxon: agelacrinites
+            authority:
+              source: 1857_billings
+            citedAs: "Geol. Surv, Canada, Rept. Prog. 1853-1856: 294-295"
+          - taxon: agelacrinites
+            authority:
+              source: 1858b_billings
+              pages: 84
+              illustrations:
+              - plate: 8
+                figures: [3, 3a, 4, 4a]
+            citedAs: Geol. Surv. Canada, Fig. and Descriptions of Canadian Organic Remains, dec. 3:84
+          - taxon: agelacrinites
+            auth: [grant]
+            year: 1881
+            illustrations:
+            - plate: 1
+              figures: 9
+            citedAs: Ottawa Field Naturalists' Club, Trans. 2
+          - taxon: agelacrinites
+            pars: true # partim
+            auth: [barrande]
+            year: 1887
+            pages: [55, 83]
+            citedAs: Systeme Silurien du centre de la Boheme, Prague, pt. 1, 7(1)
+          - taxon: agelacrinus
+            authority:
+              source: 1896b_haeckel
+              illustrations:
+              - plate: 3
+                figures: 29
+            citedAs: Die Amphorideen und Cystoideen, Leipzig, 1
+          - taxon: agelacrinites
+            pars: true # partim
+            authority:
+              source: 1899_jaekel
+              pages: 50
+              illustrations:
+              - plate: 2
+                figures: 2
+            citedAs: Starnmes- geschichte der Pelmatozoen, Bd. 1, Thecoidea und Cys- toidea, Berlin
+          - taxon: agelacrinites
+            auth: [clarke.j.m]
+            year: 1901
+            pages: 191
+            illustrations:
+            - textFigures: 3
+            citedAs: New York State Mus. Bull. 49(2)
+          - taxon: lebetodiscus
+            new: true
+            auth: [bather]
+            year: 1908
+            pages:
+            - [543, 550]
+            illustrations:
+            - plate: 25
+              figures: 1
+            citedAs: GeoI. Mag. (n.s.) , dec. 5, 5
+          diagnosis: |
+            Lehetodiscidae with: domal theca, oral surface highly convex;
+            oral region with secondary oral plates; hydropmre structure
+            formed by enlarged adradial end of second prox· imal posterior
+            coverplate of ambulacrum V and two or three modified
+            interambulacrals; amhulacra curve contrasolarly; eoverplate
+            passageways large, lateral depression series present.
+          children:
+          - taxon: dicksoni_billings_1857
+            type: true
+            diagnosis: |
+              "A Lebetodiscus with: oral region having four secondary oral
+              plates which lie between perradial parts of primary orals
+              and shared coverplates; hydropore structure formed by second
+              proximal posterior coverplate of ambulacrum V and three
+              (two r ) modified interambulacral plates; interambulacral
+              plates large, thick, and bearing one or two rows of
+              depressions along distal extremity of external part of
+              plates."
+        - taxon: foerstediscus
+          diagnosis: |
+            "Lebetodiscidae with: highly convex domal theca; oral area
+            with several secondary orals; hydropore structure formed by
+            first three coverplates of ambulacrum Y and one or more
+            modified interambulacral plates; ambulacra curved, I·Y solar;
+            coverplate passageways large, external foramina elliptical;
+            coverplate lateral depression series present."
+          children:
+          - taxon: grandis_bassler_1935
+            type: true
+            diagnosis: |
+              "A Foerstediscus with: several secondary oral plates;
+              hydropore structure formed primarily by four plates;
+              anus near center of interambulacrum 5; thecal plates
+              covered with large nodes."
+          - taxon: splendens_bassler_1936
+            diagnosis: |
+              "A Foerstediscus with: oral region including 12 secondary
+              orals; hydropore formed by three ambulacral and four
+              interambulacral elements; thecal plates smooth."
+          - taxon: solitarius_bell.b.m_1976
+            new: true
+            diagnosis: |
+              "A Foerstediscus with: four or more secondary oral plates;
+              hydropore structure formed by four plates; peri. proet near
+              the oral area in proximal part of mteramhu. lacrum 5;
+              thecal plates smooth,"
+        - taxon: belochthus
+          new: true
+          diagnosis: |
+            "Lebetodiscidae with: domal theca; oral area with at least
+            several large secondary oral plates; large primary oral plates
+            externally sagittate; hydropore structure in- eluding at least
+            two ambulacrals and one enlarged inter- ambulacral plate;
+            ambulacra straight; coverplate passage- ways oblique,
+            elliptical external foramina narrow."
+          children:
+          - taxon: orthokolus_bell.b.m_1976
+            type: true
+            new: true
+            diagnosis: |
+              "A Belochthus with: oral area with three large secondary
+              oral plates; ambulacra moderately short, wide, and straight
+              distally separated from proximal margin of peripheral rim
+              by numerous interambulacral plates; interambulacral areas
+              large; periproct near center of posterior interambulacrum;
+              thecal plates smooth."
+        - taxon: streptaster
+          diagnosis: |
+            "Lebetodiscidae with: domal theca, convex oral surface
+            dominated by high ambulacral ridges; oral region including
+            secondary oral plates; hydropore structure formed by one large
+            interambulacral plate and two ambulacral coverplates;
+            amhulacra contrasolarly curved, long, wide, and high;
+            coverplates columnar, forming high, steep·sided ambulacral
+            ridges which commonly obscure all other ex· ternal thecal
+            structures; large conical spines mounted in basins atop
+            ambulacral coverplates; coverplate passageways open externally
+            along most of their length; interambulacrals squamose and
+            imbricate; periproct plates elongate, possibly hearing spines."
+          children:
+          - taxon: vorticellatus_hall_1866
+            type: true
+            diagnosis: |
+              "A Streptaster with: secondary oral plates apparently
+              variable; hydropore structure formed by second and third
+              proximal posterior coverplates of ambulacrum V and one large
+              interambulacral; ambulacra highly curved, distal tips near
+              adjacent ambulacra; spines atop ambulacral coverplates
+              varying in size independently of variations in diameter of
+              underlying columnar coverplates; spine basins developed on
+              upper ends of coverplates; interambulacral plates varying
+              in shape, each with large external node; peripheral rim
+              commonly reflexed under upper side of theca: interambulacrals
+              and rim plates having external nodes or protuberances which
+              vary in shape, size, and frequency."
+            synonyms:
+            - taxon: vorticellata_hall_1866
+              parents:
+              - taxon: agelacrinus
+        - taxon: cystaster
+          children:
+          - taxon: granulatus_hall_1871
+            type: true
+          - taxon: stellatus_hall_1866
+      - taxon: carneyellidae
+        new: true
+        children:
+        - taxon: carneyella
+          children:
+          - taxon: pilea_hall_1866
+            type: true
+            synonyms:
+            - taxon: pileus_hall_1866
+              parents:
+              - taxon: agelacrinus
+          - taxon: faberi_miller.s.a_1894
+          - taxon: ulrichi_bassler_shideler_1936
+          - taxon: valcourensis_clark_1920
+            provisional: true
+        - taxon: cryptogoleus
+          new: true
+          children:
+          - taxon: chapmani_raymond_1915
+            type: true
+            synonyms:
+            - taxon: chapmani_raymond_1915
+              parents:
+              - taxon: lebetodiscus
+          - taxon: reticulatus_bell.b.m_1976
+            new: true
+          - taxon: multibrachiatus_raymond_1915
+          - taxon: youngi_raymond_1915
+          - taxon: platys_raymond_1915
+          - taxon: billingsi_chapman_1860
+    - taxon: isorophina
+      new: true
+      children:
+      - taxon: isorophidae
+        new: true
+        children:
+        - taxon: isorophus
+          children:
+          - taxon: cincinnatiensis_roemer_1851
+            type: true
+            synonyms:
+            - taxon: cincinnatiensis_roemer_1851
+              parents:
+              - taxon: agelacrinus
+          - taxon: austini_foerste_1914
+          - taxon: warrenensis_james_1883
+        - taxon: isorophusella
+          children:
+          - taxon: incondita_raymond_1915
+            type: true
+            synonyms:
+            - taxon: inconditus_raymond_1915
+              parents:
+              - taxon: lebetodiscus
+          - taxon: trentonensis_bassler_1936
+          - taxon: pleiadae_sinclair_bolton_1965
+        - taxon: hemicystites
+          children:
+          - taxon: parasiticus_hall_1852
+            type: true
+        - taxon: rectitriordo
+          new: true
+          children:
+          - taxon: kirkfieldensis_bell.b.m_1976
+            type: true
+            new: true
+        - taxon: curvitriordo
+          new: true
+          children:
+          - taxon: kentuckyensis_bassler_1936
+            type: true
+            synonyms:
+            - taxon: kentuckyensis_bassler_1936
+              parents:
+              - taxon: isorophus
+          - taxon: shideleri_bassler_1936
+      - taxon: agelacrinitidae
+        children:
+        - taxon: agelacrinites
+          children:
+          - taxon: hamiltonensis_vanuxem_1842
+            type: true
+        - taxon: krama
+          new: true
+          children:
+          - taxon: devonicum_bassler_1936
+            type: true
+        - taxon: postibulla
+          new: true
+          children:
+          - taxon: legrandensis_miller.s.a_gurley_1894
+            type: true
+            synonyms:
+            - taxon: legrandensis_miller.s.a_gurley_1894
+              parents:
+              - taxon: agelacrinus
+          - taxon: keslingi_bell.b.m_1976
+            new: true
+          - taxon: jasperensis_harker_1953
+            provisional: true
+          - taxon: alpenensis_bassler_1936
+            provisional: true
+        - taxon: discocystis
+          children:
+          - taxon: kaskaskiensis_hall_1858
+            type: true
+            synonyms:
+            - taxon: kaskaskiensis_hall_1858
+              parents:
+              - taxon: agelacrinus
+            - taxon: optatus_worthen_miller_1883
+              parents:
+              - taxon: echinodiscus
+        - taxon: lepidodiscus
+          children:
+          - taxon: squamosus_meek_worthen_1868
+            type: true
+            synonyms:
+            - taxon: squamosus_meek_worthen_1868
+              parents:
+              - taxon: lepidodiscus-subgenus
+              - taxon: agelacrinites
+          - taxon: laudoni_bassler_1936
+          - taxon: sampsoni_miller.s.a_1891
+        - taxon: ulrichidiscus
+          children:
+          - taxon: pulaskiensis_miller.s.a_gurley_1894
+            type: true
+            synonyms:
+            - taxon: pulaskiensis_miller.s.a_gurley_1894
+              parents:
+              - taxon: agelacrinus
+        - taxon: cooperidiscus
+          children:
+          - taxon: alleganius_clarke_1901
+            type: true
+            synonyms:
+            - taxon: alleganius_clarke_1901
+              parents:
+              - taxon: lepidodiscus
+        - openTaxon: agelacrinitidae-uncertain-genus_bell.b.m_1976
+          children:
+          - openTaxon: agelacrinitidae-sp_bell.b.m_1976
+      - openTaxon: isorophina-uncertain-family_bell.b.m_1976
+        children:
+        - taxon: hadrochthus
+          new: true
+          children:
+          - taxon: commensalus_bell.b.m_1976
+            type: true
+            new: true
+    - openTaxon: isorophida-uncertain-suborder_bell.b.m_1976
+      children:
+      - openTaxon: isorophida-uncertain-family_bell.b.m_1976
+        children:
+        - openTaxon: hemicystites-questionable_bell.b.m_1976
+          children:
+          - taxon: carbonarius_bassler_1936
+            provisional: true
+  - taxon: edrioasterida
+    new: true
+    children:
+    - taxon: edrioasteridae
+      children:
+      - taxon: edrioaster
+        children:
+        - taxon: bigsbyi_billings_1857
+          type: true
+          synonyms:
+          - taxon: bigsbyi_billings_1857
+            parents:
+            - taxon: cyclaster
+        - taxon: priscus_miller.s.a_gurley_1894
+      - taxon: edriophus
+        new: true
+        children:
+        - taxon: levis_bather_1914
+          type: true
+          synonyms:
+          - taxon: levis_bather_1914
+            parents:
+            - taxon: edrioaster
+        - taxon: saratogensis_ruedemann_1912
+          provisional: true

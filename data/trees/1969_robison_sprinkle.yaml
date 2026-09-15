@@ -1,0 +1,22 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: homalozoa
+    children:
+    - taxon: ctenocystoidea
+      new: true
+      children:
+      - taxon: ctenocystis
+        new: true
+        children:
+        - taxon: utahensis_robison_sprinkle_1969
+          new: true
+          type: true
+          specimens:
+            holotype: USNM 163252
+            paratypes:
+            - USNM 163253
+            - USNM 163254
+            - USNM 163255
+            - USNM 163256
+            - USNM 163257

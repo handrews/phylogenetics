@@ -1,0 +1,14 @@
+taxonomies:
+- taxon: eocrinoidae-class
+  children:
+  - taxon: gogiida
+    children:
+    - taxon: eocrinidae
+      children:
+      - taxon: akadocrinus
+        children:
+        - taxon: jani_prokop_1962
+          type: true
+        - taxon: knizeki_fatka_1991
+          new: true
+          notes: There is a "Description" but no "Diagnosis"

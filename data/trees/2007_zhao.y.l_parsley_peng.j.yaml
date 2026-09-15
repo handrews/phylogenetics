@@ -1,0 +1,26 @@
+taxonomies:
+- taxon: blastozoa
+  children:
+  - taxon: eocrinoidea
+    children:
+    - taxon: gogiida
+      children:
+      - taxon: eocrinidae
+        emended: true
+        children:
+        - taxon: guizhoueocrinus
+          new: true
+          diagnosis: |
+            Gogiid with clavate theca, 11 to 13 irregular circlets of
+            variously polygonal plates. Sutural pores variable in number,
+            more common on upper thecal plates, circular to elliptical,
+            relatively small and with well-defined rims. Stalk conical,
+            long, intercalates commonly form rosettes around older stem
+            plates. Attachment disk, flattened and only slightly wider
+            than distal end of stalk. Mature specimens with ten long paired
+            coiled brachioles in 2-1-2 primary ambulacral split configuration.
+          children:
+          - taxon: yui_zhao.y.l_parsley_peng.j_2007
+            type: true
+            new: true
+            diagnosis: Same as for genus.

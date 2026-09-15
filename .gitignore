@@ -1,3 +1,12 @@
+.env
 .venv
 .DS_Store
 __pycache__
+*.swp
+*.swo
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+.claude/

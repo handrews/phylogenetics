@@ -1,0 +1,41 @@
+taxonomies:
+- taxon: echinodermata
+  stem: true
+  children:
+  - taxon: helicocystitidae
+    new: true
+    children:
+    - taxon: helicocystis
+      new: true
+      children:
+      - taxon: moroccoensis_smith.a.b_zamora_2013
+        new: true
+        type: true
+        specimens:
+          holotype: NHM UK EE15373
+          paratypes:
+          - [EE15374, EE15376]
+          - EE14847
+          - EE14848
+          - EE15329
+phylogenies:
+- treeType: diagram
+  notes: Evolutionary tree of Cambrian echinoderms
+  tree:
+    children:
+    - taxon: courtessolea
+    - children:
+      - taxon: asturicystis
+      - children:
+        - taxon: castericystis
+        - children:
+          - taxon: helicoplacus
+          - children:
+            - taxon: helicocystis
+            - children:
+              - taxon: camptostroma
+              - children:
+                - children:
+                  - taxon: lepidocystis
+                  - taxon: gogia
+                - taxon: stromatocystites

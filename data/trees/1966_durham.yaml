@@ -1,0 +1,19 @@
+taxonomies:
+- taxon: echinozoa
+  children:
+  - taxon: camptostromoidea
+    new: true
+    children:
+    - taxon: camptostroma
+      moved:
+        taxon: collaspididae
+        provisional: true
+      children:
+      - taxon: roddyi_ruedemann_1933
+        type: true
+        specimens:
+          holotype: USNM85181
+          hypotypes:
+          - USNM153758
+          - USNM153759
+          - USNM153760

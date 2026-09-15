@@ -1,0 +1,124 @@
+taxonomies:
+- taxon: echinodermata-order
+  children:
+  - taxon: stelleridæ
+    children:
+    - taxon: asteria
+    - taxon: ophiura
+    - taxon: euryale
+    - taxon: comatula
+      children:
+      - taxon: fimbriata_miller.j.s_1821
+        new: true
+        synonyms:
+        - tentative: true
+          taxon: fimbriata_lamarck_1816
+    - taxon: marsupites
+      new: true
+      children:
+      - taxon: ornatus_miller.j.s_1821
+        new: true
+  - taxon: crinoidea-family
+    new: true
+    synonyms:
+    - taxon: stylastritæ
+    children:
+    - taxon: articulata-division
+      new: true
+      children:
+      - taxon: apiocrinites
+        new: true
+        children:
+        - taxon: rotundus_miller.j.s_1821
+          new: true
+        - taxon: elongatus_miller.j.s_1821 # Possible nomen nudum?
+          new: true
+        - taxon: ellipticus_miller.j.s_1821
+          new: true
+      - taxon: encrinites
+        children:
+        - taxon: moniliformis_miller.j.s_1821
+          new: true
+      - taxon: pentacrinites
+        or:
+        - taxon: pentacrinus
+        children:
+        - taxon: caput medusæ_lamarck_1801
+        - taxon: briareus_miller.j.s_1821
+          new: true
+        - taxon: subangularis_miller.j.s_1821
+          new: true
+        - taxon: basaltiformis_miller.j.s_1821
+          new: true
+        - taxon: tuberculatus_miller.j.s_1821_pentacrinites
+          new: true
+        - taxon: subbasaltiformis_miller.j.s_1821
+          questionable: true
+          new: true
+    - taxon: semiarticulata
+      new: true
+      children:
+      - taxon: poteriocrinites
+        new: true
+        children:
+        - taxon: crassus_miller.j.s_1821
+          type: true
+          new: true
+        - taxon: tenuis_miller.j.s_1821
+          new: true
+    - taxon: inarticulata
+      rank: Division
+      new: true
+      children:
+      - taxon: platycrinites
+        new: true
+        children:
+        - taxon: lævis_miller.j.s_1821
+          new: true
+        - taxon: rugosus_miller.j.s_1821_platycrinites
+          new: true
+        - taxon: tuberculatus_miller.j.s_1821_platycrinites
+          new: true
+        - taxon: granulatus_miller.j.s_1821
+          new: true
+        - taxon: striatus_miller.j.s_1821
+          new: true
+        - taxon: pentangularis_miller.j.s_1821
+          new: true
+      - taxon: cyathocrinites
+        new: true
+        children:
+        - taxon: planus_miller.j.s_1821
+          new: true
+        - taxon: tuberculatus_miller.j.s_1821_cyathocrinites
+          new: true
+        - taxon: rugosus_miller.j.s_1821_cyathocrinites
+          new: true
+        - taxon: quinquangularis_miller.j.s_1821_cyathocrinites
+          new: true
+      - taxon: actinocrinites
+        new: true
+        children:
+        - taxon: triacontadactylus_miller.j.s_1821
+          new: true
+        - taxon: polydactylus_miller.j.s_1821
+          new: true
+      - taxon: rhodocrinites
+        new: true
+        children:
+        - taxon: verus_miller.j.s_1821
+          new: true
+    - taxon: coadunata
+      rank: Division
+      questionable: true
+      new: true
+      children:
+      - taxon: eugeniacrinites
+        provisional: true
+        questionable: true
+        new: true
+        children:
+        - taxon: quinquangularis_miller.j.s_1821_eugeniacrinites
+          provisional: true
+          questionable: true
+          new: true

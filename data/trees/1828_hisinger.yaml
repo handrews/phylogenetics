@@ -1,0 +1,115 @@
+taxonomies:
+- taxon: echinodermata-class
+  synonyms:
+  - taxon: échinodermes-class
+    authority:
+      source: 1817d_cuvier
+  notes: |
+    Hisinger explicitly assignes to "Echinodermata Cuvier", using
+    the latin rather than French name.
+  children:
+  - taxon: pédicellés-order
+    notes: |
+      Order inclusion assumed based on class assignment, although the
+      order Pédicellés is not mentioned in the text in any language.
+      List of families/genera-taking-the-place-of-families included based on
+      Hisinger's text, in the following order, which matches Cuvier —
+      Asterias, Euryale, Comatula, Encriniterna or Crinoiderna, Echiniterna.
+      He notably uses the genus rather than family Asterias and omits
+      Ophiura, uses different (non-latin) family names in place of the genus
+      Encrinus, uses a distinct (non-latin) spelling of Echinus at family
+      rank, and omits the genus Holothuria.  The entire order to the family
+      level, plus the mentioned asterian genera, is given here for context
+      due to the explicit citation at the class level.
+      "The Sphæronites" sometimes seem to be discussed as a family, but
+      mostly as a genus.  However, the mention of Echino-Encrinites grouped
+      with the genus Sphærohites imples some sort of family, so this
+      follows Cuvier's approach of just using the type genus as the family
+      name (e.g. Asterias and Echinus).  As far as I can tell, such a
+      family-level declaration is not generally attributed to Hisinger,
+      but it is the best I can do with such vague prose.
+      Echino-Encrinites is place after Sphæronites simply because it
+      seems of secondary concern to Hisinger, as there is no formal list.
+    children:
+    - taxon: asterias-family
+      children:
+      - taxon: asterias
+      - taxon: ophiura
+      - taxon: euryale
+      - taxon: comatula
+    - taxon: encrinus
+    - openTaxon: echinodermata-unnamed-family_hisinger_1828
+      pages: 196
+      new: true
+      children:
+      - taxon: sphæronites
+        pages: 195
+        new: true
+        notes: The 1967 Treatise incorrectly gives the page as 185.
+        synonyms:
+        - taxon: echinosphærites
+          authority:
+            source: 1821_wahlenberg
+        children:
+        - taxon: pomum_gyllenhaal_1772
+          pages:
+          - [47, 48]
+          - 195
+          illustrations:
+          - plate: V
+            figures:
+            - [2, 4]
+          synonyms:
+          - parents:
+            - taxon: echinus
+            authority:
+              source: 1772_gyllenhaal
+              pages: 245
+          - parents:
+            - taxon: echinosphærites
+            authority:
+              source: 1821_wahlenberg
+              pages:
+              - [53, 54]
+        - taxon: granatum_wahlenberg_1821
+          pages:
+          - 196
+          illustrations:
+          - plate: V
+            figures:
+            - 1
+          synonyms:
+          - authority:
+              source: 1826_schlotheim
+              illustrations:
+              - plate: 1
+                figures:
+                - 1c
+          - parents:
+            - taxon: echinosphærites
+            authority:
+              source: 1821_wahlenberg
+              pages:
+              - [53, 54]
+        - taxon: aurantium_gyllenhaal_1772
+          notes: |
+            Mentioned as Sphærontes aurantium on page 48, and in a footnote
+            on page 198, but not directly listed in the section renaming
+            Echinosphaerites to Sphaeronites.
+          pages:
+          - 48
+          - 198
+      - taxon: echino-encrinites
+        pages: 196
+        synonyms:
+        - authority:
+            source: 1826_meyer
+        children:
+        - taxon: senkenbergii_meyer_1826
+          pages: 196
+          synonyms:
+          - authority:
+              source: 1826_meyer
+              pages: 185
+    - taxon: echinus-family
+    - taxon: holothuria

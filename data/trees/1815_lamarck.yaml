@@ -1,0 +1,7 @@
+taxonomies:
+- taxon: animaux
+  children:
+  - taxon: infusoires
+  - taxon: polypes-class
+  - taxon: radiares
+  - taxon: vers

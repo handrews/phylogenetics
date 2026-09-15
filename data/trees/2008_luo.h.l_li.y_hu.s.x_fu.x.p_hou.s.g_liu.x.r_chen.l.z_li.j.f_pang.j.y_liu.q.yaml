@@ -1,0 +1,12 @@
+notes: From PBDB entry, including only echinoderms
+taxonomies:
+- taxon: gogiida
+  children:
+  - taxon: wudingeocrinus
+    new: true
+    children:
+    - taxon: rarus_hu.s.x_luo.h.l_2008
+      type: true
+      new: true
+      synonyms:
+      - openTaxon: eocrinoidea-sp_hu.s.x_luo.h.l_hou.s.g_erdtmann_2007

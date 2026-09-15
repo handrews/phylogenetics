@@ -1,0 +1,57 @@
+taxonomies:
+- taxon: animalia
+  children:
+  - taxon: acrita
+    new: true
+    children:
+    - taxon: agastria
+      new: true
+      synonyms:
+      - taxon: infusoria-class
+    - taxon: intestina-class
+    - taxon: natantes-class
+    - taxon: vaginati-class
+    - taxon: rudes-class
+      new: true
+  - taxon: zoanthida
+    provisional: true
+    new: true
+  - taxon: radiata-phylum
+    children:
+    - taxon: echinida
+    - taxon: stellerida
+    - taxon: medusida
+      new: true
+    - taxon: acalephida
+    - taxon: fistulida-class
+  - taxon: cirripeda
+    new: true
+  - taxon: annulosa
+    new: true
+    children:
+    - taxon: ametabola
+      new: true
+    - taxon: crustacea
+    - taxon: arachnida
+    - taxon: haustellata
+      new: true
+    - taxon: mandibulata
+      new: true
+  - taxon: annelida-class
+  - taxon: vertebrata
+    children:
+    - taxon: reptilia
+    - taxon: aves
+    - taxon: mammalia
+    - taxon: pisces
+    - taxon: amphibia
+  - taxon: cephalopoda-class
+  - taxon: mollusca
+    children:
+    - taxon: acephala-class
+    - taxon: brachiopoda-class
+      provisional: true
+    - taxon: pteropoda-class
+    - openTaxon: mollusca-unknown-class-1_macleay_1821
+    - openTaxon: mollusca-unknown-class-2_macleay_1821
+  - taxon: tunicata

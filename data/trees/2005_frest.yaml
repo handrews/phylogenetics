@@ -1,0 +1,72 @@
+taxonomies:
+- taxon: blastozoa
+  children:
+  - taxon: eocrinoidea
+    notes: nom. transl. Regnéll, 1945 ex Subclass Eocrinoidea Jaekel, 1918
+    diagnosis: |
+      Theca of adjacent or imbricate plates, with or without transsutural
+      epispires; subvective appendages generally erect, often biserial
+      brachioles (arranged in two to five groups) confined to adoral end of
+      theca, arising from generally distinct oral surface (tegmen) bearing
+      central mouth; theca globular or flattened, often composed of numerous,
+      irregularly arranged plates; attachment appendage either an irregularly
+      plated holdfast or a true stem. (Modified from Sprinkle 1973, p. 58;
+      Ubaghs 1978b, p. T362; Broadhead 1980, p. 125; for an alternative
+      view, see Broadhead 1982.)
+    children:
+    - taxon: ampheristocystidae
+      diagnosis: |
+        Eocrinoids with definite regular tegmen consisting of orals and fixed
+        ambulacrals; theca fusiform; the- cal plates moderate in number,
+        fairly regularly arranged in a few, mostly closed circlets; five
+        ambulacra terminating as single facets on oral–oral sutures, bearing
+        biserial trunk with brachioles. Stem, when present, crinoid-like.
+      new: true
+      children:
+      - taxon: ampheristocystis
+        diagnosis: |
+          Theca fusiform; tegmen composed of six large orals and five large
+          suborals, plus a central and a few smaller ambulacrals; periproct
+          terminal on tube-like projection; hydropore on suboral–oral suture
+          in CD interray; no visible gonopore; well developed stem on some
+          specimens.
+        new: true
+        synonyms:
+        - taxon: ampheristocystis
+          modifier: nomen nudum
+          auth: [frest]
+          year: 1984
+          pages: 2097
+          citedAs: |
+            Studies of Silurian echinoderms. Dissertation Abstracts
+            International B44
+        - taxon: ampheristocystis
+          modifier: nomen nudum
+          auth: [frest, brett, witzke]
+          year: 1999
+          pages: [728, 729]
+          citedAs: |
+            "Caradocian-Gedinnian echinoderm associations of central and
+            eastern North America. In Paleocommunity Analysis: A
+            Silurian-Lower Devonian Example, Boucot AJ, Lawson JD (eds).
+            Cambridge University Press: Cambridge; 638–783."
+        children:
+        - taxon: concentricus_frest_2005
+          diagnosis: |
+            Aboral thecal plates ornamented by raised concentric ridges;
+            tegminals nodose; small, elongate fusi- form theca constricted
+            slightly below tegmen; five or six thecal plate circlets,
+            adorally interrupted and aborally complete; large stem facet
+            (or base), about one-third maximum thecal diameter.
+          new: true
+          synonyms:
+          - taxon: concentricus_frest_2005
+            modifier: nomen nudum
+            year: 1999
+            pages: 729
+            citedAs: |
+              "Caradocian-Gedinnian echinoderm associations of central and
+              eastern North America. In Paleocommunity Analysis: A
+              Silurian-Lower Devonian Example, Boucot AJ, Lawson JD (eds).
+              Cambridge University Press: Cambridge; 638–783."
+            notes: Also cites Frest & Strimple, but unclear what paper.

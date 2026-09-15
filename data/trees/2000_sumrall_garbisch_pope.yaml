@@ -1,0 +1,64 @@
+taxonomies:
+- taxon: edrioasteroidea
+  children:
+  - taxon: isorophida
+    children:
+    - taxon: isorophina
+      children:
+      - taxon: agelacrinitidae
+        children:
+        - taxon: postibullinae
+          new: true
+          children:
+          - taxon: postibulla
+            notes: |
+              The species P.? jasperensis and P. alpenensis are
+              left unassigned
+            children:
+            - taxon: keslingi_bell.b.m_1976
+            - taxon: legrandensis_miller.s.a_gurley_1894
+            - taxon: lukei_bell.b.m_petersen.m.s_1976
+            - taxon: neglecta_smith.a.b_1983
+            - taxon: alabamensis_sumrall_garbisch_pope_2000
+              new: true
+          - taxon: parapostibulla
+            new: true
+            children:
+            - taxon: murphyi_sumrall_garbisch_pope_2000
+              new: true
+            - taxon: hybolopus_fraunfelter_utgaard_1970
+            - cfTaxon: hybolopus_fraunfelter_utgaard_1970
+            - openTaxon: parapostibulla-sp-a_sumrall_garbisch_pope_2000
+              provisional: true
+            - openTaxon: parapostibulls-sp-indeterminate_sumrall_garbisch_pope_2000
+              provisional: true
+phylogenies:
+- treeType: cladogram
+  methodology: strict consensus of three most parsimonius trees
+  tree:
+    children:
+    - children:
+      - taxon: agelacrinites
+        outgroup: true
+        children:
+        - taxon: hamiltonensis_vanuxem_1842
+          outgroup: true
+      - taxon: krama
+        outgroup: true
+        children:
+        - taxon: devonicum_bassler_1936
+          outgroup: true
+    - taxon: postibullinae
+      children:
+      - taxon: postibulla
+        children:
+        - children:
+          - taxon: alabamensis_sumrall_garbisch_pope_2000
+          - taxon: legrandensis_miller.s.a_gurley_1894
+          - children:
+            - taxon: lukei_bell.b.m_petersen.m.s_1976
+            - taxon: keslingi_bell.b.m_1976
+      - taxon: parapostibulla
+        children:
+        - taxon: hybolopus_fraunfelter_utgaard_1970
+        - taxon: murphyi_sumrall_garbisch_pope_2000

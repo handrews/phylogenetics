@@ -20,6 +20,9 @@ am-nat:
   name: The American Naturalist
 amph-und-cyst:
   name: "Die Amphorideen und Cystoideen: beiträge zur Morphologie und Phylogenie der Echinodermen"
+  publisher: Wilhelm Engelmann
+  place: Leipzig
+  notes: Separately paginated contribution to the Festschrift zum siebenzigsten Geburtstage von Carl Gegenbaur.
 annals:
   name: Annales de Paleontologie
 annales-nord:
@@ -36,6 +39,10 @@ arch-min-geo:
   name: Archiv für Mineralogie, Geognosie, Bergbau und Hüttenkunde
 arch-nat:
   name: Archiv für die gesammte Naturlehre
+arkiv-zool:
+  name: Arkiv för Zoologi
+  publisher: Kungliga Svenska Vetenskapsakademien
+  place: Stockholm
 atlantic-geo:
   name: Atlantic Geology
 bericht-berlin:
@@ -58,6 +65,10 @@ canadian-journal:
   name: The Canadian Journal
 can-j-earth-sci:
   name: Canadian Journal of Earth Sciences
+canadian-record-sci:
+  name: The Canadian Record of Science
+  publisher: Natural History Society of Montreal
+  place: Montreal
 chi-sci-bull:
   name: Chinese Science Bulletin
 cl-olandska:
@@ -124,8 +135,16 @@ invertebrates:
   name: The Invertebrates
 isis-von-oken:
   name: Isis von Oken
+jahrbuch:
+  name: Jahrbuch der Kaiserlich-Königlichen Geologischen Reichsanstalt
+jena-zeitschr:
+  name: Jenaische Zeitschrift für Naturwissenschaft
 jofacnatsci-philadelphia:
   name: Journal of the Academy of Natural Sciences of Philadelphia
+jofgeol-chicago:
+  name: The Journal of Geology
+  publisher: The University of Chicago Press
+  place: Chicago
 jofpaleo:
   name: Journal of Paleontology
 jofgeol-london:
@@ -142,6 +161,8 @@ lethaea-suecica:
   name: Lethaea Suecica
 lethaia:
   name: Lethaia
+lund-medd:
+  name: Meddelanden från Lunds Geologisk-Mineralogiska Institution
 malong-guanshan:
   name: Early Cambrian Malong Fauna and Guanshan Fauna from Eastern Yunnan, China
 mem-aust:
@@ -174,6 +195,10 @@ nat-hist-crinoidea:
   name: A Natural History of the Crinoidea, or Lily-Shaped Animals
 nat-hist-ny:
   name: Natural History of New York
+neues-jahrbuch:
+  name: Neues Jahrbuch für Mineralogie, Geologie und Paläontologie
+  publisher: E. Schweizerbart'sche Verlagshandlung
+  place: Stuttgart
 norsk-geo-tid:
   name: Norsk Geologisk Tidsskrift
 nova-acta-ups:
@@ -214,6 +239,8 @@ pworld:
   name: Palaeoworld
 p-z:
   name: Paläontologische Zeitschrift
+reports-british-advancement:
+  name: Reports of the Meetings of the British Association for the Advancement of Science
 regne-animal:
   name: Le règne animal distribué d'après son organisation
 senckenbergiana:
@@ -278,6 +305,8 @@ ueber-esthland:
   name: Ueber das silurische Schichtensystem in Esthland
 vermium-t-e-f:
   name: Vermivm Terrestrium Et Fluviatilium, Seu Animalium Infusoriorum, Helminthicorum et Testaceorum 
+vermont-geol:
+  name: Report of the Vermont State Geologist
 vestnik:
   name: Věstník Ústředního ústavu geologického
 zoo-dan:

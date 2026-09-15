@@ -1,0 +1,29 @@
+taxonomies:
+- taxon: blastozoa
+  children:
+  - taxon: eocrinoidea
+    children:
+    - taxon: gogiida
+      children:
+      - taxon: eocrinidae
+        children:
+        - taxon: protogloboeocrinus
+          new: true
+          pages:
+          - [252, 253]
+          - [256, 257]
+          notes: First page range Chinese, second English.
+          children:
+          - taxon: yini_zhao.y.l_peng.j_wu.m.y_2015
+            type: true
+            new: true
+            pages:
+            - [253, 256]
+            - [257, 258]
+            notes: First page range Chinese, second English.
+            illustrations:
+            - page: 254
+              figures:
+              - [3a, 3c]
+            - pages: 255
+              figures: 4

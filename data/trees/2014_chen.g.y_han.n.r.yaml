@@ -1,0 +1,12 @@
+notes: taxonomy wrangled from AI due to inaccessible paper
+taxonomies:
+- taxon: eocrinoidea
+  children:
+  - taxon: gogiida
+    children:
+    - taxon: jingxieocrinus
+      new: true
+      children:
+      - taxon: guoleensis_chen.g.y_han.n.r_2014
+        type: true
+        new: true

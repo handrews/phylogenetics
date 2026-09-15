@@ -1,0 +1,72 @@
+taxonomies:
+- taxon: asteriadæ-order
+  children:
+  - taxon: palasterina
+    notes: As defined by Mr. Salter, 1857
+  - taxon: stenaster
+    new: true
+  - taxon: petraster
+    new: true
+  - taxon: tæniaster
+    new: true
+  - taxon: edrioaster
+    pages: 82
+    new: true
+    synonyms:
+    - taxon: cyclaster_billings_1857
+      authority:
+        source: 1857_billings
+        pages: 292
+    children:
+    - taxon: bigsbyi_billings_1857
+      pages: 82
+      illustrations:
+      - plate: 8
+        figures:
+        - 1
+        - 1a
+        - 2
+        - 2a
+      synonyms:
+      - taxon: bigsbyi_billings_1857
+        authority:
+          source: 1857_billings
+          pages: 293
+        parents:
+        - taxon: cyclaster_billings_1857
+          authority:
+            source: 1857_billings
+            pages: 292
+  - taxon: agelacrinites
+    pages: 84
+    notes: No separate genus description.
+    children:
+    - taxon: dicksoni_billings_1857
+      pages: 84
+      illustrations:
+      - plate: 8
+        figures:
+        - 3
+        - 3a
+        - 4
+        - 4a
+      synonyms:
+      - authority:
+          source: 1857_billings
+          pages: 294
+- notes: Speculative tree establishing Edrioasteridæ (Edrioasteroidea)
+  taxon: asteriadæ-order
+  children:
+  - taxon: edrioasteridæ-suborder
+    questionable: true
+    provisional: true
+    new: true
+    pages: 85
+    children:
+    - taxon: edrioaster
+      new: true  # code does not understand this appearing in two trees.
+      provisional: true
+    - taxon: agelacrinites
+      provisional: true
+    - taxon: hemicystites
+      provisional: true

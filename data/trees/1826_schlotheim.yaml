@@ -1,0 +1,130 @@
+taxonomies:
+- taxon: echinosphaerites
+  pages:
+  - [309, 310]
+  synonyms:
+  - authority:
+      source: 1821_wahlenberg
+      pages: 52
+  - tentative: true
+    taxon: ostracion
+    pars: true
+    authority:
+      source: 1776_walch
+      pages: 259
+      illustrations:
+      - plate: 5
+        figures:
+        - [1, 2]
+  children:
+  - taxon: granatum_wahlenberg_1821
+    pages: 311
+    illustrations:
+    - plate: I
+      figures:
+        [1a, 1c]
+    synonyms:
+    - authority:
+        source: 1821_wahlenberg
+        pages: 53
+    - openTaxon: echinosphaerites-sp_hisinger_1802
+      pages: 189
+      illustrations:
+      - plate: 7
+        figures:
+        - b
+  - taxon: aurantium_gyllenhaal_1772
+    pages: 312
+    notes: |
+      Discussed in E. alcyonis section, no direct description.
+      Gyllenhaal 1772 and Tilas 1740 not addressed as Schlotheim
+      had been unable to locate copies of the journals.
+    non:
+    - taxon: aurantium_gyllenhaal_1772
+      authority:
+        source: 1776_walch
+        illustrations:
+        - plate: 5
+          figures:
+          - [1, 2]
+    synonyms:
+    - taxon: aurantium_gyllenhaal_1772
+      authority:
+        source: 1821_wahlenberg
+  - taxon: alcyonis_schlotheim_1826
+    questionable: true
+    new: true
+    pages: 312
+    illustrations:
+    - plate: I
+      figures:
+      - 2
+  - taxon: aranea_schlotheim_1826
+    notes: A later paragraph mentions "E. costatus, Fig. 3"?
+    new: true
+    pages:
+    - [312, 313]
+    illustrations:
+    - plate: I
+      figures:
+      - 3
+  - taxon: ovum_schlotheim_1826
+    notes: Not figured.
+    new: true
+    pages: 313
+  - taxon: pomum_gyllenhaal_1772
+    pages: 313
+    illustrations:
+    - plate: I
+      figures:
+      - 5a
+    synonyms:
+    - taxon: pomum_gyllenhaal_1772
+      authority:
+        source: 1821_wahlenberg
+    - taxon: pomum_gyllenhaal_1772
+      parents:
+      - taxon: echinus
+      authority:
+        source: 1772_gyllenhaal
+        pages:
+        - 242
+        - 253
+        illustrations:
+        - plate: 8
+          figures:
+          - [1, 3]
+    - openTaxon: echinus-sp_linnaeus_1741
+      parents:
+      - taxon: echinus
+      authority:
+        source: 1741_linnaeus
+        pages: 156
+  - affTaxon: pomum_gyllenhaal_1772
+    notes: |
+      Included in the E. pomum formal figure list, but in the text
+      noted as a possible separate species
+    questionable: true
+    pages:
+    - [313, 314]
+    illustrations:
+    - plate: I
+      figures:
+      - 5b
+  - openTaxon: echinosphaerites-sp-1_schlotheim_1826
+    pages:
+    - [309, 310]
+    - 314
+    illustrations:
+    - plate: I
+      figures:
+      - 6
+  - openTaxon: echinosphaerites-sp-2_schlotheim_1826
+    notes: |
+      Notes similarity to "E. costatus, Fig. 3", but no species of
+      this name defined; Fig. 3 is associated with E. aranea.
+    pages: 314
+    illustrations:
+    - plate: I
+      figures:
+      - 7
