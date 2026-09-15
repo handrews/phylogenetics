@@ -1,0 +1,67 @@
+{{Short description|Extinct family of marine invertebrates}}
+{{Automatic Taxobox
+| fossil_range = {{fossil range|late Early Cambrian|Middle Cambrian}}
+| image = Gogia_ojenai.jpg
+| image_caption = ''[[Gogia]] ojenai''
+| taxon = Eocrinidae
+| authority = Jaekel 1918
+| type_genus =  †''Eocrinus'' {{small|Jaekel 1918}}<ref>{{cite book|last1=Ubaghs |first1=Georges |date=1967 |chapter=Eocrinoidea |editor-last1=Moore |editor-first1=Raymond C. |title=Treatise on Invertebrate Paleontology, Part S: Echinodermata 1 |volume=1 |pages=S455–S495 |publisher=University of Kansas Press |url=https://journals.ku.edu/InvertebratePaleo/issue/view/519 |access-date=29 October 2024}}
+</ref><br />(=  †''[[Gogia]]'' {{small|Walcott 1917}})
+| subdivision_ranks = Genera
+| subdivision_ref = <ref>{{cite web|website=Paleobiology Database |url=https://paleobiodb.org/classic/basicTaxonInfo?taxon_no=120077 |title=†family Eocrinidae Jaekel 1918 |accessdate=27 November 2024}}</ref><ref>{{cite journal|last1=Parsley |first1=Ronald |last2=Zhao |first2=Yuanlong |year=2006 |title=Long stalked eocrinoids in the basal Middle Cambrian Kaili Biota, Taijiang County, Guizhou Province, China |journal=Journal of Paleontology |volume=80 |number=6 |pages=1058–1071 |doi=10.1666/0022-3360(2006)80[1058:LSEITB]2.0.CO;2}}</ref>
+| subdivision =
+* †''[[Gogia]]'' {{small|Walcott 1917}}
+* †''Acanthocystites'' {{small|Barrande 1887}}
+* †''Akadocrinus'' {{small|Prokop 1962}}
+* †''Alanisicystis'' {{small|Ubaghs & Vizcaino 1990}}
+* †''Archaeocystites'' {{small|Barrande 1887}}
+* †''Globoeocrinus'' {{small|Zhao, Parsley & Jin 2008}}
+* †''Guizhoueocrinus'' {{small|Zhao, Parsley & Jin 2007}}
+* †''Sinoeocrinus'' {{small|Zhao, Huang & Gong, 1994}}
+}}
+
+The '''Eocrinidae''' are a family of early echinoderms that contain the genus ''[[Gogia]]''.<ref>{{Cite journal| doi = 10.1016/j.geobios.2008.10.003| title = First report of Gogia (Eocrinoidea, Echinodermata) from the Early-Middle Cambrian of Sonora (Mexico), with biostratigraphical and palaeoecological comments☆| year = 2009| last1 = Nardin | first1 = E.| last2 = Almazán-Vásquez | first2 = E.| last3 = Buitrón-Sánchez | first3 = B. E.| journal = Geobios| volume = 42| issue = 2| pages = 233}}</ref>
+
+CRYPTO-HELICAL
+Gogiids, in general, have
+three morphological attributes common among echinoderms:
+brachioles for feeding, a main body chamber for internal organs,
+and a holdfast for attachment to the substratum (Fig. 1).
+
+5.2. Issues on Gogiida
+The stalk is an important morphologic feature for the Order
+Gogiida (Parsley and Prokop, 2004). The most recent reviews
+(Parsley and Zhao, 2006, 2012; Zhao et al., 2008) of the
+Family Eocrinidae included Gogia, Sinoeocrinus, Acanthocys-
+tites, Akadocrinus, Guizhoueocrinus, and Globoeocrinus, but
+excluded Balangicystis. Recently, Balangicystis has been reas-
+signed to the Family Lyracystidae (Sprinkle et al., 2011).
+The Eocrinidae is characterized by a polyplated stalk, a
+crypto-helically plated theca with epispires, and unbranched
+brachioles (Fig. 3). However, Akadocrinus bears a columnal-
+like stalk (Fatka and Kordule, 1991) that is different from the
+other gogiids mentioned above. The closest stalked family is
+the Lyracystidae Sprinkle and Collins, 2006, which is similar
+to Eocrinidae by bearing similar stalk and thecal plates but is
+different in having a very long stalk, a decrease in number of
+thecal plates, and the unusual endotomous branching brachioles
+(Sprinkle et al., 2011). In contrast, Lichenoididae Jaekel (see
+Parsley and Prokop, 2004) is different from both gogiid families
+due to the lack of a stalk and a theca with highly reduced thecal
+plates. Phylogenetic relationships among gogiid families cannot
+be fully understood without a complete treatment of taxonomic
+revision of the Order Gogiida with cladistic analyses, but such
+task is beyond the scope of current work.
+
+==References==
+{{Reflist}}
+
+{{Taxonbar|from=Q5381640}}
+
+[[Category:Goggida]]
+[[Category:Blastozoa]]
+[[Category:Prehistoric echinoderm families]]
+[[Category:Cambrian first appearances]]
+[[Category:Cambrian extinctions]]
+{{paleo-echinoderm-stub}}
+
