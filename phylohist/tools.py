@@ -1332,8 +1332,11 @@ class ClaimStore:
     if name:
       block = blocks.statement('absent', {'name': f'the name {name}'}, {'name': name})
       return _with_style(block, style)
-    if not source or not kind:
-      raise ValueError('gap needs a source and a kind of statement, or a name')
+    if not source:
+      raise ValueError('gap needs a source, or a name')
+    # Without a kind the question is whether the source's classification
+    # is entered at all.
+    kind = kind or 'skeleton'
     source = self._source_key(source)
     row = self.sources.get(source)
     what = COVERAGE_WORDS.get(kind, kind)

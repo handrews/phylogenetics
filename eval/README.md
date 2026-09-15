@@ -7,13 +7,27 @@ is the vocabulary their expected answers are written in.
 
 ## The answer contract
 
-| class | what the data holds | the right answer |
-|---|---|---|
-| answerable | a claim exists | the claim, cited by source and page |
-| uncaptured | the paper prints it; the corpus does not hold it (a declared coverage of `none` or `partly`, or a source recorded with no tree entered yet) | "not captured for <source>", with the declared coverage value; never "not in the paper" |
-| as-published | the printed form differs from the record or from later usage | the printed form verbatim, cited; a correction only if asked |
-| trajectory | several sources treat the same question over time | the measured present, then the history, then the dissent; no verdict |
-| absent | nothing in the corpus mentions it | "no source in the corpus mentions <x>"; no answer from general knowledge |
+| class | what the data holds | the right answer | the shape |
+|---|---|---|---|
+| answerable | a claim exists | the claim, cited by source and page | the source's listing under the record (`contents`), or the statements about it |
+| uncaptured | the paper prints it; the corpus does not hold it (a declared coverage of `none` or `partly`, or a source recorded with no tree entered yet) | "not captured for <source>", with the declared coverage value; never "not in the paper" | the gap block for the source and kind |
+| as-published | the printed form differs from the record or from later usage | the printed form verbatim, cited; a correction only if asked | the printed forms in that source |
+| trajectory | several sources treat the same question over time | the measured present, then the history, then the dissent; no verdict | the name's history, the sources holding a position, the matrix, or the chains |
+| absent | nothing in the corpus mentions it | "no source in the corpus mentions <x>"; no answer from general knowledge | the gap block for the name or the paper |
+
+An expected answer is written as the blocks it is made of, each a tool
+and the parameters that matter, with alternatives under `anyOf` where
+two compositions are both right, and the strings the rendered answer
+must show:
+
+    expected:
+      blocks:
+      - tool: placed_under
+        parameters: {record: rhenopyrgidae, parent: cyathocystidae}
+      shows:
+      - first Guensburg & Sprinkle 1994
+      answer: |
+        (the answer in prose, for the reader)
 
 The contract is the closed-world rule of `notes/development/plan.md` made testable: an
 answer is right only when every fact in it is a claim, cited, and every
@@ -66,19 +80,24 @@ entered the data. Readers judge the implications themselves.
   question: In which family does Holloway & Jell 1983 place Rhenopyrgus?
   scope: {taxon: rhenopyrgus, source: 1983_holloway_jell}
   expected:
-    claims:
-    - {kind: placement, source: 1983_holloway_jell, subject: rhenopyrgus, parent: rhenopyrgidae}
+    blocks:
+    - tool: contents
+      parameters: {source: 1983_holloway_jell, record: rhenopyrgidae}
+    shows:
+    - Family Rhenopyrgidae fam. nov.
+    - Genus Rhenopyrgus
     answer: Rhenopyrgidae, a new family; the order is left uncertain.
   evidence: {source: 1983_holloway_jell, pages: 1002}
   verified: data/trees/1983_holloway_jell.yaml, taxonomies/0/children/0/children/0/children/0
 ```
 
-`expected.claims` are selectors, field matches against the claim table's
-records, because claim ids exist only once the extractor runs. A refusal
-class carries `expected.refusal` (`not-captured` with `coverageKind`, or
-`absent`) instead of claims. `verified` says what was checked when the
-question was written: the tree path, the `audit.coverage` value, or the
-review file with the printed page.
+`expected.blocks` names the tools and the parameters that matter; a
+parameter left out is not graded, so a composition that also asks for
+synonymy or a year range still matches. Alternatives go under `anyOf`.
+`expected.shows` are the strings the rendered answer must contain,
+taken from the rendering of the expected blocks. `verified` says what
+was checked when the question was written: the tree path, the
+`audit.coverage` value, or the review file with the printed page.
 
 ## Running the eval
 
@@ -108,24 +127,26 @@ ids, question, any invalid ids, any free text), the rendered answer,
 token usage and the prompt's hash. At the lookup limit the model is
 made to submit from what it has, and the record says so. Runs are
 committed; they are the evidence the write-up rests on. The grader is
-mechanical: every expected claim must be carried by a composed block, a
-refusal must compose the gap block for its source and kind, the header
-must leak nothing and pass no verdict, and no text may accompany the
-submission (text between lookups is noted, not failed); `--judge` adds a
-judge model's score for the header
-alone. It writes `<run>.grades.jsonl` and `<run>.md` with per-class
+mechanical: for one of the expected alternatives every expected block
+must be matched by a composed block of the same tool whose parameters
+agree on those the expectation names (keys and citations compared after
+resolution; extra blocks are not failures), every `shows` string must
+appear in the rendered answer, the header must leak nothing and pass no
+verdict, and no text may accompany the submission (text between lookups
+is noted, not failed); `--judge` adds a judge model's score for the
+header alone. It writes `<run>.grades.jsonl` and `<run>.md` with per-class
 pass rates and every failure beside the composition the model chose.
 The API key comes from `ANTHROPIC_API_KEY` or a git-ignored `.env`,
 never from the repository.
 
 ## Maintenance
 
-- A question is added only with its `verified` line; a question whose
-  expected answer stops matching the data is either updated with the data
-  change that broke it or removed, never left stale. `tests/test_claims.py`
-  enforces this: every selector must match a claim of its source, and
-  every refusal must hold against the declared coverage or the absence of
-  a tree.
+- A question is added with its `verified` line, its blocks and its
+  shows; a question whose expected answer stops matching the data is
+  either updated with the data change that broke it or removed, never
+  left stale. `tests/test_claims.py` enforces this: every expected block
+  must build from the corpus and rest on claims, and every shows string
+  must appear in the rendered expectation.
 - When a source gains coverage, its uncaptured questions turn into
   answerable ones; keep the id and change the class.
 - The mix (roughly 12 answerable, 9 uncaptured, 8 as-published, 17

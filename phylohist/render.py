@@ -69,7 +69,11 @@ def _node_label(node):
   if rank_word and rank_word.lower() not in _SPECIES_GROUP_WORDS and not node.get('placeholder'):
     name = f'{rank_word} {name}'
   if (node.get('flags') or {}).get('new'):
-    name += ' ' + (node.get('newMark') or blocks.new_mark(rank_word))
+    mark = node.get('newMark') or blocks.new_mark(rank_word)
+    # An open-nomenclature name already ends in "sp."; the mark completes it.
+    if name.endswith(' sp.') and mark.startswith('sp. '):
+      name = name[:-4]
+    name += ' ' + mark
   if (node.get('flags') or {}).get('questionable'):
     name += ' ?'
   for act in node.get('acts') or ():

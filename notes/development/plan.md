@@ -163,8 +163,12 @@ framing: the model is a planner, execution and assembly are code)
   `eval/runs/2026-09-12-claude-sonnet-5.*`): the 49 questions through
   the block tools, Sonnet 5 composing, Opus 5 judging the headers; the
   write-up catalogues the composition shapes per class.
-- Next: step 2, a plan the model emits and code executes, designed from
-  the compositions in `notes/evals/eval-writeup-2.md`.
+- The eval graded by shapes (2026-09-14): each expected answer is the
+  blocks it is made of, tool and parameters, with alternatives, and the
+  strings the rendered answer shows; the claim lists are gone. That is
+  step 2's plan language in its first form.
+- Next: step 2, a plan the model emits and code executes, in the form
+  the expectations now take.
 
 **M4. Materials** (S4)
 - D1–D5 as a design decision, with the specimen cases the reviews

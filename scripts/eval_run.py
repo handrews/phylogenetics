@@ -191,7 +191,7 @@ def run_question(client, model, system, question, max_turns):
       if result is not None:
         for b in (result if isinstance(result, list) else [result]):
           if _is_block(b):
-            kept[b['blockId']] = b
+            kept[b['blockId']] = dict(b, _tool=block.name)
         text_out = json.dumps(compact(result), ensure_ascii=False)
       else:
         text_out = json.dumps({'error': error})
@@ -256,8 +256,8 @@ def _submit(payload, kept):
     'header': payload.get('header') or '',
     'question': payload.get('question'),
     'blocks': [{
-      'blockId': b['blockId'], 'type': b['type'], 'parameters': b.get('parameters'),
-      'claims': b['claims'],
+      'blockId': b['blockId'], 'type': b['type'], 'tool': b.get('_tool'),
+      'parameters': b.get('parameters'), 'claims': b['claims'],
     } for b in chosen],
     'invalidIds': invalid,
     'composition': composed,

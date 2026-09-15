@@ -1,13 +1,13 @@
-"""Every eval question must still match the claim table.
+"""Every eval question's expected answer must still build from the corpus.
 
 `eval/README.md` promises that a question whose expected answer stops
-matching the data is updated or removed, never left stale; this test makes
-that mechanical. Each `expected.claims` selector must match at least one
-claim of its source (recursive subset match: every selector key present
-with an equal value, lists compared element by element); a `not-captured`
-refusal needs the source to declare `none` or `partly` for the coverage
-kind, or to have no tree; an `absent` refusal needs no tree for the scoped
-source, or no claim about the scoped taxon when no source is given.
+matching the data is updated or removed, never left stale; this test
+makes that mechanical. An expected answer is the blocks it is made of
+(a tool and the parameters that matter) and the strings the rendered
+answer shows. Each block of each alternative must build through
+`phylohist.tools.call` into a block that rests on claims, or a gap or
+absence statement; the rendered composition of the first alternative
+must contain every `shows` string.
 
 The manifest's inconsistency rows are gated too: a declared coverage
 value that the derived claims contradict fails until the declaration or
@@ -21,10 +21,9 @@ import pathlib
 import pytest
 import yaml
 
+from phylohist import blocks, tools
 from phylohist.claims import extract, manifest
-from phylohist.research import Source
-
-from .selectors import matches
+from phylohist.render import render_composition
 
 QUESTIONS_PATH = (
   pathlib.Path(__file__).parent.parent / 'eval' / 'questions.yaml'
@@ -45,56 +44,45 @@ def claims(load_records):
   return extract(roots)
 
 
-def _derived(claims, source_key, coverage_kind):
-  return sum(
-    1 for c in claims.get(source_key, ())
-    if c['audit'].get('coverageKind') == coverage_kind
-    and not c.get('inferred')
-  )
+def alternatives(expected):
+  """The expected block lists: one, or several under `anyOf`."""
+  spec = expected['blocks']
+  if isinstance(spec, dict):
+    return spec['anyOf']
+  return [spec]
+
+
+def build(block_spec):
+  """The blocks a tool call returns for an expected block."""
+  result = tools.call(block_spec['tool'], dict(block_spec.get('parameters') or {}, style='json'))
+  return result if isinstance(result, list) else [result]
+
+
+def normalise(text):
+  return ' '.join(text.split())
 
 
 @pytest.mark.parametrize('question', QUESTIONS, ids=[q['id'] for q in QUESTIONS])
-def test_question(question, claims):
+def test_question(question):
   expected = question['expected']
-  scope = question.get('scope') or {}
   qid = question['id']
-
-  for selector in expected.get('claims') or ():
-    source_key = selector['source']
-    if source_key not in claims:
-      pytest.fail(f'{qid}: no tree for {source_key}; selector {selector}')
-    if not any(matches(selector, c) for c in claims[source_key]):
-      pytest.fail(f'{qid}: no claim of {source_key} matches {selector}')
-
-  refusal = expected.get('refusal')
-  if refusal == 'not-captured':
-    source_key = scope['source']
-    kind = expected['coverageKind']
-    if source_key not in claims:
-      return
-    declared = (Source.get(source_key).audit.get('coverage') or {}).get(kind)
-    if declared in ('none', 'partly'):
-      return
-    derived = _derived(claims, source_key, kind)
-    if declared is None and derived == 0:
-      return
-    pytest.fail(
-      f'{qid}: {source_key} declares {kind}: {declared} and derives '
-      f'{derived} claims; not-captured needs none or partly',
-    )
-  elif refusal == 'absent':
-    if 'source' in scope:
-      if scope['source'] in claims:
-        pytest.fail(f'{qid}: {scope["source"]} has a tree; not absent')
-    elif 'taxon' in scope:
-      mentions = sorted(
-        source_key for source_key, source_claims in claims.items()
-        if any(c['subject'] == scope['taxon'] for c in source_claims)
-      )
-      if mentions:
-        pytest.fail(f'{qid}: {scope["taxon"]} has claims in {mentions}')
-    else:
-      pytest.fail(f'{qid}: an absent question needs a scoped taxon or source')
+  first = None
+  for alternative in alternatives(expected):
+    built = []
+    for spec in alternative:
+      got = build(spec)
+      if not got:
+        pytest.fail(f"{qid}: {spec['tool']} {spec.get('parameters')} returns nothing")
+      for block in got:
+        if block['type'] != 'statement' and not block['claims']:
+          pytest.fail(f"{qid}: {spec['tool']} {spec.get('parameters')} rests on no claim")
+      built += got
+    if first is None:
+      first = built
+  rendered = normalise(render_composition(blocks.compose(first, ''), 'text'))
+  for text in expected.get('shows') or ():
+    if normalise(text) not in rendered:
+      pytest.fail(f'{qid}: the expected answer does not show "{text}"')
 
 
 def test_no_inconsistencies(claims):

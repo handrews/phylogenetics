@@ -5,22 +5,23 @@
     poetry run python scripts/eval_grade.py <run> --judge claude-opus-5
 
 An answer is a composition: a header, blocks the tools returned, and
-perhaps a question back. The mechanical checks, all on by default:
+perhaps a question back. An expected answer is the blocks it is made
+of (a tool and the parameters that matter; alternatives under `anyOf`)
+and the strings the rendered answer must show. The mechanical checks,
+all on by default:
 
 - a composition exists and every block id in it came from this
   conversation;
-- for a question with expected claims, every selector matches a claim
-  referenced by a composed block (completeness: retrieval alone does not
-  count);
-- a not-captured question composes a gap block for the scoped source
-  and kind of statement; an absent question composes an absent or
-  unentered-source block, and no block about the scoped taxon when no
-  source is given;
+- the reply that submitted carried no text beside the call (text
+  between lookups is noted, not failed);
 - the header and any question contain no leak of internals and no
-  verdict; the reply that submitted carried no text beside the call
-  (text between lookups is noted, not failed);
-- when the evidence names a page and a composed block carries it, the
-  rendered answer shows it.
+  verdict;
+- shapes: for one of the expected alternatives, every expected block
+  is matched by a composed block of the same tool whose parameters
+  agree on every parameter the expectation names (keys and citations
+  compared after resolution, lists as sets); extra blocks are not
+  failures;
+- shows: every expected string appears in the rendered answer.
 
 With --judge, a judge model scores the header and question only, for
 contract (0-2); a re-run keeps the valid scores already in the grades
@@ -41,7 +42,6 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 import yaml  # noqa: E402
 
 from phylohist.tools import ClaimStore  # noqa: E402
-from tests.selectors import matches  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 QUESTIONS = ROOT / 'eval' / 'questions.yaml'
@@ -69,11 +69,6 @@ NEGATED = re.compile(r'(not evidence that|not that|rather than|never that)[^.]{0
 def load_jsonl(path):
   with open(path) as fd:
     return [json.loads(line) for line in fd if line.strip()]
-
-
-def composed_claims(record):
-  comp = record.get('composition') or {}
-  return {c for b in comp.get('blocks') or () for c in b.get('claims') or ()}
 
 
 def composed_blocks(record):
@@ -121,52 +116,28 @@ def mechanical(record, question, store):
   if denial:
     failures.append(f'header says the paper lacks it: "{denial}"')
 
-  claims = composed_claims(record)
-  got = [store.by_id[c] for c in claims if c in store.by_id]
-  selectors = expected.get('claims') or []
-  for selector in selectors:
-    if not any(matches(selector, c) for c in got):
-      failures.append(f'no composed block carries a claim matching {selector}')
-  evidence = question.get('evidence') or {}
-  if isinstance(evidence, dict):
-    page = evidence.get('pages')
-    if isinstance(page, int) and str(page) not in (record.get('rendered') or ''):
-      source_key = evidence.get('source')
-      carried = any(
-        c['source'] == (source_key or c['source']) and _has_page(c, page) for c in got
-      )
-      (failures if carried else notes).append(
-        f'page {page} {"not shown" if carried else "not among the composed claims"}'
-      )
-
-  blocks = composed_blocks(record)
-  refusal = expected.get('refusal')
-  if refusal == 'not-captured':
-    wanted = (scope.get('source'), expected.get('coverageKind'))
-    gaps = [b for b in blocks if b['type'] == 'statement' and
-            (b.get('parameters') or {}).get('source') == wanted[0] and
-            (b.get('parameters') or {}).get('kind') == wanted[1]]
-    if not gaps:
-      failures.append(f'no gap block for {wanted[0]} / {wanted[1]}')
-  elif refusal == 'absent':
-    statements = [b for b in blocks if b['type'] == 'statement']
-    if scope.get('source'):
-      # The block names the source by key when the corpus has it, or by
-      # the citation the model typed when it does not.
-      wanted = _source_sig(store, scope['source'])
-      ok = any(
-        (b.get('parameters') or {}).get('source') == scope['source']
-        or _source_sig(store, (b.get('parameters') or {}).get('source')) == wanted
-        for b in statements
-      )
-      if not ok:
-        failures.append(f"no block states that {scope['source']} is not entered")
-    else:
-      if not statements and blocks:
-        failures.append('an absent question composed only blocks with content')
-      taxon = scope.get('taxon')
-      if taxon and any(store.by_id[c]['subject'] == taxon for c in claims if c in store.by_id):
-        failures.append(f'a composed block makes statements about {taxon}')
+  tool_of = _tools_of(record)
+  composed = [dict(b, tool=b.get('tool') or tool_of.get(b['blockId']))
+              for b in composed_blocks(record)]
+  alternatives = expected.get('blocks')
+  if alternatives is not None:
+    alternatives = alternatives['anyOf'] if isinstance(alternatives, dict) else [alternatives]
+    misses = []
+    for alternative in alternatives:
+      missing = [spec for spec in alternative
+                 if not any(_block_matches(store, spec, b) for b in composed)]
+      if not missing:
+        misses = []
+        break
+      misses.append(missing)
+    if misses:
+      shortest = min(misses, key=len)
+      for spec in shortest:
+        failures.append(f"no composed block is {spec['tool']} {json.dumps(spec.get('parameters') or {}, ensure_ascii=False)}")
+  rendered = _normalise(record.get('rendered') or '')
+  for text in expected.get('shows') or ():
+    if _normalise(text) not in rendered:
+      failures.append(f'the answer does not show "{text}"')
   if record.get('stopReason') == 'max_turns':
     notes.append('composed after the lookup limit was reached')
   return failures, notes
@@ -179,14 +150,63 @@ def _source_sig(store, text):
   return (sig['year'], tuple(sig['authors'][:1]))
 
 
-def _has_page(claim, page):
-  pages = claim.get('pages')
-  if pages is None:
+def _tools_of(record):
+  """Which tool produced each block the model saw, for runs that did not
+  record it on the composition."""
+  found = {}
+  for call in record.get('toolCalls') or ():
+    for b in (call.get('result') or {}).get('blocks') or ():
+      found[b['blockId']] = call['name']
+  return found
+
+
+def _normalise(text):
+  return ' '.join(text.split())
+
+
+_RECORD_PARAMS = {'record', 'records', 'parent'}
+_SOURCE_PARAMS = {'source', 'sources', 'sourcekey'}
+
+
+def _same_value(store, name, expected, actual):
+  """A parameter value the expectation names must agree with the composed
+  block's: keys and citations after resolution, lists as sets."""
+  bare = name.replace('_', '').lower()
+  if isinstance(expected, list):
+    if not isinstance(actual, list):
+      return False
+    return {_norm(store, bare, v) for v in expected} <= {_norm(store, bare, v) for v in actual}
+  return _norm(store, bare, expected) == _norm(store, bare, actual)
+
+
+def _norm(store, bare, value):
+  if isinstance(value, str):
+    if bare in _RECORD_PARAMS:
+      try:
+        return store._key(value)
+      except ValueError:
+        return value
+    if bare in _SOURCE_PARAMS:
+      try:
+        key = store._source_key(value)
+      except ValueError:
+        return value
+      if key in store.sources:
+        return key
+      sig = store.source_signature(value)
+      return (sig['year'], tuple(sig['authors'][:1]))
+  return value
+
+
+def _block_matches(store, spec, block):
+  if block.get('tool') != spec['tool']:
     return False
-  for item in (pages if isinstance(pages, list) else [pages]):
-    if item == page or (isinstance(item, list) and len(item) == 2 and item[0] <= page <= item[1]):
-      return True
-  return False
+  actual = {k.replace('_', '').lower(): v for k, v in (block.get('parameters') or {}).items()}
+  for name, value in (spec.get('parameters') or {}).items():
+    bare = name.replace('_', '').lower()
+    if bare not in actual or not _same_value(store, name, value, actual[bare]):
+      return False
+  return True
 
 
 JUDGE_PROMPT = """You are grading the header and question of an answer assembled from blocks of a closed corpus of published taxonomic opinions. The blocks themselves are computed and are not graded here. Score contract 0, 1 or 2: 2 if the header states only the parameters chosen (which records the group is, whether synonyms and rank variants are included, which trees, the year range) in the language of the scientific community, passes no verdict, and the question (if any) asks about a genuinely ambiguous parameter; 1 for one lapse (a summary, a mechanism word, a judgement); 0 for more. Reply with JSON only: {"contract": n, "reason": "..."} with the reason at most 25 words.
@@ -207,7 +227,7 @@ def judge(client, model, record, question):
   expected = question.get('expected') or {}
   prompt = JUDGE_PROMPT % (
     question['class'], question['question'],
-    expected.get('answer', '(a refusal: ' + str(expected.get('refusal')) + ')'),
+    expected.get('answer', '(none written)'),
     comp.get('header') or '(none)', comp.get('question') or '(none)',
   )
   # The judge's reasoning counts against max_tokens; a low cap truncates
@@ -313,7 +333,12 @@ def main(argv):
   grades_path = args.run.with_suffix('.grades.jsonl')
   previous = _previous_judge(grades_path, args.judge) if args.judge else {}
   grades = []
+  skipped = [r['id'] for r in records if r['id'] not in questions]
+  if skipped:
+    print(f"skipped (no longer in the question set): {', '.join(skipped)}")
   for record in records:
+    if record['id'] not in questions:
+      continue
     question = questions[record['id']]
     failures, notes = mechanical(record, question, store)
     grade = {
