@@ -3729,11 +3729,6 @@ echinosphaerites:
 echinosphaerites-subgenus:
   rank: subgenus
   altRankOf: echinosphaerites
-echinosphaerites-sp_hisinger_1802:
-  name: null
-  rank: species
-  authority:
-    source: 1802_hisinger
 echinosphaerites-sp_paul.c.r.c_1997:
   name: null
   rank: species

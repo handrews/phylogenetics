@@ -3604,7 +3604,7 @@
       synonyms:
       - source: 1821_wahlenberg
         page: 53
-      - openTaxon: echinosphaerites-sp_hisinger_1802
+      - openTaxon: echinus-sp_hisinger_1802
         page: 189
         figures:
         - plate: 7
@@ -3725,11 +3725,7 @@
         due to the explicit citation at the class level.
         "The Sphæronites" sometimes seem to be discussed as a family, but
         mostly as a genus.  However, the mention of Echino-Encrinites grouped
-        with the genus Sphærohites imples some sort of family, so this
-        follows Cuvier's approach of just using the type genus as the family
-        name (e.g. Asterias and Echinus).  As far as I can tell, such a
-        family-level declaration is not generally attributed to Hisinger,
-        but it is the best I can do with such vague prose.
+        with the genus Sphærohites imples some sort of family.
         Echino-Encrinites is place after Sphæronites simply because it
         seems of secondary concern to Hisinger, as there is no formal list.
       children:
@@ -4428,6 +4424,105 @@
       - taxon: elegans_conrad.t.a_1842
         new: true
 1842_volborth:
+  notes: |
+    While Volborth has detailed footnotes, his article is just prose
+    without formal definitions.
+  taxonomies:
+  - taxon: echino-encrinus
+    synonyms:
+    - taxon: echino-encrinites
+      notes: Leth. Geognostica, Tab. IV fig. 1. (source not yet found)
+    children:
+    - taxon: angulosus_pander_1830
+      figures:
+      - plate: I
+        figures:
+        - 4
+        - [7, 9]
+      - plate: II
+        figures:
+        - [2, 6]
+    - taxon: striatus_pander_1830
+      figures:
+      - plate: I
+        figures:
+        - 5
+        - [11, 12]
+      - plate: II
+        figures:
+        - 1
+    - taxon: granatum_wahlenberg_1821
+      provisional: true
+      notes: |
+        Additional synonym unclear: Eichwald 1940? 41?
+        Ueber das silur. Schichtensystem in Esthland p. 65
+      figures:
+      - plate: I
+        figures:
+        - [1, 3]
+        - 6
+        - 10
+      synonyms:
+      - parents:
+        - taxon: echinosphaerites
+        source: 1826_schlotheim
+        page: 311
+        figures:
+        - plate: I
+          figures:
+          - 1
+      - tentative: true
+        parents:
+        - taxon: sphaeronites
+        source: 1837_hisinger
+        page: 92
+      - taxon: testudinarius_hisinger_1837
+        tentative: true
+        parents:
+        - taxon: sphaeronites
+        source: 1837_hisinger
+        page: 92
+        figures:
+        - plate: XXV
+          figures:
+          - 9a
+      - taxon: echinus-sp_hisinger_1802
+        notes: |
+          Referred to as Echinus novus, but original source never uses "novus",
+          although it was used, somewhat ambiguously, in an intervening source.
+        source: 1802_hisinger
+        page: 189
+        figures:
+        - plate: VII
+          figures:
+          - b
+      - source: 1821_wahlenberg
+        page: 53
+Echinosphaerites angulosa Pander
+  Synonyms:
+    Echino-Encrinites Herm. von Meyer Leth. Geognostica, Tab. IV fig. 1.
+    Echinosphaerites granatum Schlotheim Isis 1826. Heft III. pag. 311. Tab. I fig. 1
+    Sphaeronites granatum Hisinger (most likely) Leth Suecic pag. 92.
+    Sphaeronites testudinarius Hisinger (most likely) ibid
+Echinus "novus" Hisinger Vetensk. Acad. Handl. 1802, pag. 189. Tab VII fig. b
+  noted synonym:
+    Echinosphaerites granatum Wahlenberg Nova Acta Reg. Societ Upsal. 1821, Vol. VIII, pag. 53.
+Later, Hisinger interprets sames striations on Sphaeronites testudinarius Leth. Suecica Tab. XXV fig. 9. a.
+Most recent descriptoin by Eichwald shows no clear idea of structure Ueber das silur. Schichtensystem in Esthland. Im zweiten Hefte des Journals für Natur- und Heilkunde, St Petersburg 1841 pag. 65.
+
+Echino-encrinus angulosus et striatus mihi
+  (Echinosphaerites angulosa et striata Pander)
+
+"third species of this genus even has 5 such pore rhombuses" (Pl I f 6 and 10)
+
+Sphaeronites aurantium seems separate?
+
+Volborth's specimens
+Tab. I fig 10 u. Tab II fig- 6.
+Table I, figures 8 and 12 (implied to be Echinus novus Hisinger?)
+Tab. I, figures 1, 2, and 3
+
+
   taxonomies:
   - taxon: crinoidea-family
     children:
@@ -4499,94 +4594,556 @@
       notes: Some sources credit Hall for this species, as new here.
 1844_buch:
   taxonomies:
-  - taxon: echinodermata-order
+  - taxon: radiarien
+    notes: Echinodermata not mentioned, just "radiated animals" and "Radiarien"
     children:
-    - taxon: crinoidea-family
-    - taxon: cystidea-family
-      new: true
+    - taxon: crinoideen
+    - taxon: caryocrinites
+      page: 122
+      notes: |
+        Described as "remaining separate and detached, standing between
+        but without absolutely uniting the families Crinoidea and Cystidea."
       children:
-      - taxon: sphæronites
+      - taxon: ornatus_say_1825
+    - taxon: cystideen
+      new: true
+      pages:
+      - [124, 126]
+      children:
+      - taxon: sphaeronites
         type: true
+        notes: Introduced page 126, additional commentary page 127.
+        pages:
+        - [126, 127]
         children:
         - taxon: aurantium_gyllenhaal_1772
+          authority:
+            source: 1828_hisinger
+          pages:
+          - [126, 127]
           synonyms:
-          - taxon: aurantium_gyllenhaal_1772
-            parents:
-            - taxon: echinus
+          - source: 1772_gyllenhaal
+            page: 242
+            notes: Plate incorrectly given as VII; VIII is correct.
+            figures:
+            - plate: VIII
+              figure:
+              - [4, 5]
+          - source: 1821_wahlenberg
+            page: 52
+          - source: 1830_pander
+            figures:
+            - plate: XXIX
+              figures:
+              - [2, 3]
+          - auth: [Leuchtenberg]
+            figures:
+            - plate: II
+              figure: 17
+          - source: 1840a_buch
+            figures:
+            - plate: I
+              figure: 14
         - taxon: pomum_gyllenhaal_1772
+          authority:
+            source: 1828_hisinger
+          pages:
+          - [127, 128]
           synonyms:
-          - taxon: pomum_gyllenhaal_1772
-            parents:
-            - taxon: echinosphærites
+          - source: 1840a_buch
+            notes: I. 15. 15. "according to Gyllenhaal"
+          - source: 1772_gyllenhaal
+            notes: From above note, not listed as a distinct synonym
+          - source: 1837_hisinger
+            figures:
+            - plate: XXV
+              figure: 7
+          - notes: From text, not synonym list
+            auth: [Leuchtenberg]
+            page: 23
+            figures:
+            - plate: II
+              figure: 19
       - taxon: caryocystites
         new: true
+        page: 128
         children:
         - taxon: granatum_wahlenberg_1821
+          page: 128
           synonyms:
-          - taxon: granatum_wahlenberg_1821
-            parents:
-            - taxon: echinosphærites
-        - taxon: testudinarius_hisinger_1837
-          synonyms:
+          - parents:
+            - taxon: echinosphaerites
+            source: 1821_wahlenberg
+            page: 53
           - taxon: testudinarius_hisinger_1837
             parents:
-            - taxon: sphæronites
+            - taxon: sphaeronites
+            source: 1837_hisinger
+            page: 92
+            figures:
+            - plate: XXV
+              figure: 9a
+        - taxon: testudinarius_hisinger_1837
+          pages:
+          - 129
+          synonyms:
+          - source: 1837_hisinger
+            figures:
+            - plate: XXV
+              figure: 9d
+
+      - affTaxon: caryocystites
+        page: 41
+        children:
+        - taxon: bicopuladigit_garnet_unknown # or _bennet_pearce_ ?
+          page: 41
+          synonyms:
+          - # source: Natural History of Staffordshire
+            parents:
+            - taxon: psuedocrinites
+            figures:
+            - plate: A
+              figures:
+              - [8, 13]
+          - # source "Athenaeum, No. 806
+            parents:
+            - taxon: psuedocrinites
+            figures:
+            - figure: 10
+
       - taxon: hemicosmites
+        page: 129
         children:
         - taxon: pyriformis_buch_1840
+          pages:
+          - [129, 130]
           synonyms:
           - taxon: malum_pander_1830
             parents:
-            - taxon: echinosphærites
-      - taxon: sycocystites
-        new: true
-        children:
-        - taxon: angulosus_buch_1844
+            - taxon: echinosphaerites
+            source: 1830_pander
+            figures:
+            - plate: XXIX
+              figures:
+              - [1, 3]
+          - source: 1840a_buch
+            notes: The 1946 paper omits figures 4, 5, 9, 10, and 12.
+            figures:
+            - plate: I
+              figures:
+              - [1, 13]
+        - taxon: sycocystites
           new: true
-          or:
+          page: 130
+          children:
           - taxon: senckenbergii_meyer_1826
-          synonyms:
-          - taxon: senckenbergii_meyer_1826
-            parents:
-            - taxon: echino-encrinus
-          - taxon: angulosa_pander_1830
-            parents:
-            - taxon: echinosphærites
-          - taxon: striata_pander_1830
-            parents:
-            - taxon: echinosphærites
-      - taxon: cryptocrinites
-        children:
-        - taxon: cerasus_buch_1840
-          synonyms:
-          - taxon: lævis_pander_1830
-            parents:
-            - taxon: echinosphærites
-          - taxon: jacksoni_austen_1843
-            parents:
-            - taxon: sycocrinites
-          - taxon: anapeptamenus_austen_1843
-            parents:
-            - taxon: sycocrinites
-      - taxon: sycocrinites
-        children:
-        - taxon: clausus_austen_1843
-      - affTaxon: caryocystites
-        children:
-        - taxon: bicopuladigiti_garnet_1844
-          synonyms:
-          - taxon: bicopuladigiti_garnet_1844
-            parents:
-            - taxon: pseudocrinites
-      - affTaxon: sphæronites
+            pages:
+            - [130, 131]
+            synonyms:
+            - taxon: senckenbergii_meyer_1826
+              parents:
+              - taxon: echinoencrinus
+              page: 185
+              figures:
+              - plate: II
+                figures:
+                - [1, 5]
+            - notes: Probably Echino-encrinus senckenbergii?
+              auth: [Bronn]
+              notes: Plate given as "4" in 1846 paper, unclear which is correct.
+              figures:
+              - plate: I
+                figure: 1
+        - taxon: cryptocrinites
+          page: 131
+          children:
+          - taxon: cerasus_buch_1840
+            page: 131
+            synonyms:
+            - taxon: laevis_pander_1830
+              parents:
+              - taxon: echinosphaerites
+              source: 1830_pander
+              page: 147
+              notes: Figures written "24, 24, 26" but corrected in 1846 paper.
+              figures:
+              - plate: II
+                figures:
+                - [24, 26]
+            - source: 1840a_buch
+              page: 36
+              figures:
+              - plate: I
+                figures:
+                - [4, 5]
+                - [9, 10]
+                - 12
+
+
+            - taxon: jacksoni_austen_1843
+              parents:
+              - taxon: sycocrinites
+              auth: [Austen]
+              year: 1843
+              page: 206
+            - taxon: anapeptamenus_austen_1843
+              parents:
+              - taxon: sycocrinites
+              auth: [Austen]
+              year: 1843
+              page: 206
+          - taxon: sycocrinites
+            questionable: true
+            children:
+            - taxon: clausus_austen_1843
+              provisional: true
+      - openTaxon: cystidea-indeterminate-genus_sowerby_
+        page: 41
         synonyms:
-        - openTaxon: crinoidea-secondhand-genus_sowerby_1833 # date uncertain!
+        - source: sowerby_
+          page: 318
+    - taxon: blastoideen
+      children:
+      - taxon: pentremites
+      - taxon: asterocrinus
+    - taxon: cystidea-dubious-incertae-sedis
+      children:
+      - taxon: spaskii_eichwald_1840
+        parents:
+        - taxon: cyclocrinites
+        page: 39
+        synonyms:
+        - source: 1840_eichwald
+          page: 48
+          figures:
+          - plate: 1
+            figure: 8
+      - taxon: echinoides
+        parents:
+        - taxon: heliocrinites
+        page: 39
+        synonyms:
+        - auth: [Leuchtenberg] # (or possibly Eichwald in Leuchtenberg?)
+          page: 18
+          figures:
+          - plate: 2
+            figures:
+            - [11, 12]
+1846c_buch:
+  taxonomies:
+  - taxon: radiaria
+    notes: Echinodermata not mentioned, just "radiated animals" and "Radiaria"
+    children:
+    - taxon: crinoidea-family
+    - taxon: caryocrinites
+      notes: |
+        Described as "remaining separate and detached, standing between
+        but without absolutely uniting the families Crinoidea and Cystidea."
+      children:
+      - taxon: ornatus_say_1825
+    - taxon: cystidea-family
+      new: true
+      page: 29
+      synonyms:
+      - taxon: cystideen
+      children:
+      - taxon: sphæronites
+        type: true
+        notes: Introduced page 30, additional commentary page 32.
+        pages:
+        - 30
+        - 32
         children:
-        - openTaxon: cystidea-sp_buch_1944
+        - taxon: aurantium_gyllenhaal_1772
+          authority:
+            source: 1828_hisinger
+          pages:
+          - [30, 31]
+          figures:
+          - plate: III
+            figure: 3
           synonyms:
-          - openTaxon: crinoidea-secondhand-sp_sowerby_1833 # date uncertain!
+          - source: 1772_gyllenhaal
+            page: 242
+            notes: Original 1844 paper incorrectly gave the plate as 7.
+            figures:
+            - plate: 8
+              figure:
+              - [4, 5]
+          - source: 1821_wahlenberg
+            page: 52
+          - source: 1830_pander
+            figures:
+            - plate: 29
+              figures:
+              - [2, 3]
+          - auth: [Leuchtenberg]
+            figures:
+            - plate: 2
+              figure: 17
+          - source: 1840a_buch
+            figures:
+            - plate: 1
+              figure: 14
+        - taxon: pomum_gyllenhaal_1772
+          authority:
+            source: 1828_hisinger
+          pages:
+          - [31, 32]
+          synonyms:
+          - source: 1840a_buch
+            notes: i. 15. 15. according to gyllenhaal
+          - source: 1772_gyllenhaal
+            notes: From above note, not listed as a distinct synonym
+          - source: 1837_hisinger
+            figures:
+            - plate: 25
+              figure: 7
+          - notes: From text, not synonym list
+            auth: [Leuchtenberg]
+            page: 23
+            figures:
+            - plate: 2
+              figure: 19
+      - taxon: caryocystites
+        new: true
+        page: 32
+        children:
+        - taxon: granatum_wahlenberg_1821
+          pages:
+          - [32, 33]
+          figures:
+          - plate: III
+            figure: 4
+          - plate: IV
+            figure: 2
+          synonyms:
+          - parents:
+            - taxon: echinosphærites
+            source: 1821_wahlenberg
+            page: 53
+          - taxon: testudinarius_hisinger_1837
             parents:
-            - openTaxon: crinoidea-secondhand-genus_sowerby_1833
+            - taxon: sphæronites
+            source: 1837_hisinger
+            page: 92
+            figures:
+            - plate: 25
+              figure: 9a
+        - taxon: testudinarius_hisinger_1837
+          pages:
+          - [33, 34]
+          figures:
+          - plate: III
+            figure: 5
+          non:
+          - source: 1837_hisinger
+            page: 92
+            figures:
+            - plate: 25
+              figure: 9a
+          synonyms:
+          - source: 1837_hisinger
+            figures:
+            - plate: 25
+              figure: 9d
+      - affTaxon: caryocystites
+        page: 41
+        children:
+        - taxon: bicopuladigit_garnet_unknown # or _bennet_pearce_ ?
+          page: 41
+          synonyms:
+          - # source: Natural History of Staffordshire
+            parents:
+            - taxon: psuedocrinites
+            figures:
+            - plate: A
+              figures:
+              - [8, 13]
+          - # source "Athenæum, No. 806
+            parents:
+            - taxon: psuedocrinites
+            figures:
+            - figure: 10
+      - taxon: hemicosmites
+        page: 34
+        children:
+        - taxon: pyriformis_buch_1840
+          pages:
+          - [34, 35]
+          figures:
+          - plate: III
+            figure: 6
+          synonyms:
+          - taxon: malum_pander_1830
+            parents:
+            - taxon: echinosphaerites
+            source: 1830_pander
+            figures:
+            - plate: 29
+              figures:
+              - [1, 3]
+          - source: 1840a_buch
+            figures:
+            - plate: I
+              figures:
+              - [1, 3]
+              - [6, 8]
+              - 11
+              - 13
+        - taxon: sycocystites
+          new: true
+          page: 35
+          children:
+          - taxon: angulosus_pander_1830
+            or:
+              taxon: senckenbergii_meyer_1826
+            figures:
+            - plate: III
+              figure: 7
+            - plate: IV
+              figures:
+              - [3, 4]
+            synonyms:
+            - taxon: senckenbergii_meyer_1826
+              parents:
+              - taxon: echino-encrinus
+            - notes: Probably Echino-encrinus senckenbergii?
+              auth: [Kastner]
+              page: 185
+              figures:
+              - plate: 2
+                figures:
+                - [1, 5]
+            - notes: Probably Echino-encrinus senckenbergii?
+              auth: [Bronn]
+              notes: Plate given as "I" in 1844 paper, unclear which is correct.
+              figures:
+              - plate: 4
+                figure: 1
+            - taxon: angulosa_pander_1830
+              parents:
+              - taxon: echinosphærites
+              source: 1830_pander
+              figures:
+              - plate: 2
+                figures:
+                - [27, 29]
+            - tentative: true
+              taxon: striatus_pander_1830
+              synonyms:
+              - source: 1830_pander
+                figures:
+                - plate: 2
+                  figures:
+                  - [30, 31]
+                - plate: 28
+                  figure: 12
+            - notes: |
+                Not stated, but presumably applies to Echino-encrinus angulosa
+                and Echino-encrinus striatus
+              source: 1842_volborth
+              figures:
+              - plate: 1
+                figures:
+                - [7, 12]
+              - plate: 2
+            - notes: Also another Volborth source?
+          - taxon: striatus_pander_1830
+            questionable: true
+            notes: No mention of Volborth's Echino-encrinus striatus
+            page: 38
+            synonyms:
+            - source: 1830_pander
+              figures:
+              - plate: 2
+                figures:
+                - [30, 31]
+              - plate: 28
+                figure: 12
+            - taxon: granatus_wahlenberg_1821
+              source: schlotheim_1826
+              figures:
+              - plate: 1
+                figure: 1
+            - auth: [meyer]
+              year: 1825
+        - taxon: cryptocrinites
+          page: 38
+          children:
+          - taxon: cerasus_buch_1840
+            pages:
+            - [38, 39]
+            figures:
+            - plate: III
+              figure: 8
+            synonyms:
+            - taxon: lævis_pander_1830
+              parents:
+              - taxon: echinosphærites
+              source: 1830_pander
+              page: 147
+              figures:
+              - plate: 2
+                figures:
+                - [24, 26]
+            - source: 1840a_buch
+              page: 36
+              figures:
+              - plate: 1
+                figures:
+                - [4, 5]
+                - [9, 10]
+                - 12
+            - taxon: jacksoni_austen_1843
+              parents:
+              - taxon: sycocrinites
+              auth: [Austen]
+              year: 1843
+              page: 206
+            - taxon: anapeptamenus_austen_1843
+              parents:
+              - taxon: sycocrinites
+              auth: [Austen]
+              year: 1843
+              page: 206
+          - taxon: sycocrinites
+            questionable: true
+            children:
+            - taxon: clausus_austen_1843
+              provisional: true
+      - openTaxon: cystidea-indeterminate-genus_sowerby_
+        page: 41
+        synonyms:
+        - source: sowerby_
+          page: 318
+    - taxon: blastoidea
+      children:
+      - taxon: pentremites
+      - taxon: asterocrinus
+    - taxon: cystidea-dubious-incertae-sedis
+      children:
+      - taxon: spaskii_eichwald_1840
+        parents:
+        - taxon: cyclocrinites
+        page: 39
+        synonyms:
+        - source: 1840_eichwald
+          page: 48
+          figures:
+          - plate: 1
+            figure: 8
+      - taxon: echinoides
+        parents:
+        - taxon: heliocrinites
+        page: 39
+        synonyms:
+        - auth: [Leuchtenberg] # (or possibly Eichwald in Leuchtenberg?)
+          page: 18
+          figures:
+          - plate: 2
+            figures:
+            - [11, 12]
 1847_hall:
   taxonomies:
   - taxon: crinoidea-order
