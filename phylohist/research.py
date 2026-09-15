@@ -224,10 +224,6 @@ class Source:
     return self._key
 
   @property
-  def publication_date(self):
-    return self._pub_date
-
-  @property
   def year(self):
     return self._pub_date.year
 

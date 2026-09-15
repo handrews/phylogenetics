@@ -29,7 +29,6 @@ import collections
 import json
 import pathlib
 import re
-import subprocess
 import sys
 
 import jschon
@@ -246,7 +245,7 @@ def counts(census, loc):
   return len(census.reached.get(('data', loc), ()))
 
 
-def analyse(census, _unused=None):
+def analyse(census):
   """Turn raw census data into the report's findings."""
   schema_yaml = load_yaml(SCHEMA_PATH)
   locs = inventory(schema_yaml)

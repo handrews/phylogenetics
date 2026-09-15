@@ -20,6 +20,8 @@ source in year order: what it does with a name).
 import hashlib
 import json
 
+SPECIES_GROUP = ('species', 'subspecies', 'variety')
+
 TYPES = ('classification', 'table', 'list', 'statement', 'chains', 'timeline')
 
 # The marks a listing prints beside a name, in the community's
@@ -64,7 +66,8 @@ def _make(kind, payload, parameters, claims, extra=None):
   # `extra` is derived data a tool attaches for its callers (a
   # measurement, the closure it drew from); it is part of the content the
   # id covers, since it comes from the same claims.
-  assert kind in TYPES, kind
+  if kind not in TYPES:
+    raise ValueError(f'unknown block type {kind}')
   content = {'type': kind, 'parameters': parameters, **payload, **(extra or {})}
   content['claims'] = sorted(set(claims))
   content['blockId'] = block_id(content)

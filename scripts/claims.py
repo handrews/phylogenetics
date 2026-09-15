@@ -26,6 +26,7 @@ import sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
 from phylohist.claims import extract, manifest, names_index  # noqa: E402
+from phylohist.io import LoadError  # noqa: E402
 from phylohist.load import load  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -157,7 +158,11 @@ def main(argv):
     parser.error('--draft needs --out pointing outside claims/')
 
   logging.basicConfig(level=logging.WARNING)
-  _, roots = load(drafts=args.draft)
+  try:
+    _, roots = load(drafts=args.draft)
+  except LoadError as exc:
+    print(f'error: {exc}', file=sys.stderr)
+    return 1
   claims_by_source = extract(roots, sources=set(args.source or ()) or None)
   if args.inconsistencies:
     return 1 if report_inconsistencies(claims_by_source) else 0

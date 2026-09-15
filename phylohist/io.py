@@ -1,4 +1,3 @@
-import sys
 import pathlib
 import logging
 import collections
@@ -22,6 +21,10 @@ COMMON_FILES = (
   DATA_DIR / 'sources.yaml',
   DATA_DIR / 'taxa.yaml',
 )
+
+
+class LoadError(ValueError):
+  """The schema or a data file failed validation; the errors were logged."""
 
 class UniqueKeyNoDatesLoader(yaml.SafeLoader):
   # and https://stackoverflow.com/questions/34667108/ignore-dates-and-times-while-parsing-yaml
@@ -94,9 +97,8 @@ def load_files(drafts=False):
   ))
   r = schema_library.validate()
   if not r.valid:
-    logger.error("Schema not valid against metaschema!")
     log_schema_errors(r)
-    sys.exit(-1)
+    raise LoadError('the schema is not valid against its metaschema')
 
   logger.debug("Schema is valid.")
   defs = schema_library['$defs']
@@ -119,15 +121,13 @@ def load_files(drafts=False):
     data[name].update(load_yaml(filename))
     try:
       schema = defs[name]
-      r = schema.evaluate(jschon.JSON(data[name]))
-      if not r.valid:
-        logger.error(f'File "{filename}" is not valid.')
-        log_schema_errors(r)
-        sys.exit(-1)
-      else:
-        logger.debug(f'"{filename}" is valid.')
-    except KeyError as e:
-      logger.error(repr(e))
+    except KeyError:
+      raise LoadError(f'no schema definition for "{name}"') from None
+    r = schema.evaluate(jschon.JSON(data[name]))
+    if not r.valid:
+      log_schema_errors(r)
+      raise LoadError(f'"{filename}" is not valid against the schema')
+    logger.debug(f'"{filename}" is valid.')
 
   _load_tree_dir(TREE_DIR, defs['trees'], data['trees'])
   if drafts:
@@ -146,11 +146,9 @@ def _load_tree_dir(directory, schema, trees):
     tree_data = {name: load_yaml(tree_path)}
     r = schema.evaluate(jschon.JSON(tree_data))
     if not r.valid:
-      logger.error(f'File "{tree_path}" is not valid.')
       log_schema_errors(r)
-      sys.exit(-1)
-    else:
-      logger.debug(f'"{tree_path}" is valid.')
+      raise LoadError(f'"{tree_path}" is not valid against the schema')
+    logger.debug(f'"{tree_path}" is valid.')
     if name in trees:
       logger.warning(f'File "{tree_path}" overwrites the main tree file.')
     trees.update(tree_data)

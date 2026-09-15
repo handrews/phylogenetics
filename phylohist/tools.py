@@ -26,7 +26,7 @@ _KIND_ORDER = {
   'placeholder': 4,
 }
 _NODE_FLAGS = ('new', 'provisional', 'questionable', 'quoted')
-_SPECIES_GROUP = ('species', 'subspecies', 'variety')
+_SPECIES_GROUP = blocks.SPECIES_GROUP
 
 
 def _species_group(rank):
@@ -844,7 +844,7 @@ class ClaimStore:
         paths.append(node_path)
     return paths
 
-  def contents(self, source, record, depth=None, synonymy=False, style='text', trees=TAXONOMY):
+  def contents(self, source, record, depth=None, synonymy=False, style='text'):
     """What a source places under a record, as the source prints it."""
     source, record = self._source_key(source), self._key(record)
     parameters = {'source': source, 'record': record, 'depth': depth, 'synonymy': synonymy}
@@ -855,10 +855,10 @@ class ClaimStore:
         key=lambda s: (self.source_year(s), s),
       )
       for source_key in sources:
-        out += self.contents(source_key, record, depth, synonymy, style, trees)
+        out += self.contents(source_key, record, depth, synonymy, style)
       return out
     result = []
-    for path in self._record_paths(source, record, trees):
+    for path in self._record_paths(source, record):
       nodes = self._subtree(source, path, 0, depth, synonymy)
       if nodes:
         block = blocks.classification(
@@ -1450,12 +1450,14 @@ def _illustration_words(illustration):
   return ', '.join(parts) or 'unspecified'
 
 
+_RANK_ORDER = ('kingdom', 'phylum', 'subphylum', 'superclass', 'class', 'subclass',
+               'superorder', 'order', 'suborder', 'superfamily', 'family',
+               'subfamily', 'genus', 'subgenus', 'species', 'subspecies')
+
+
 def _rank_order(rank):
-  order = ['kingdom', 'phylum', 'subphylum', 'superclass', 'class', 'subclass',
-           'superorder', 'order', 'suborder', 'superfamily', 'family',
-           'subfamily', 'genus', 'subgenus', 'species', 'subspecies']
   rank = (rank or '').lower()
-  return order.index(rank) if rank in order else len(order)
+  return _RANK_ORDER.index(rank) if rank in _RANK_ORDER else len(_RANK_ORDER)
 
 
 # -- module-level surface ---------------------------------------------------
@@ -1665,7 +1667,6 @@ for _name in ('contents', 'placements', 'descendants', 'history', 'statements', 
   TOOL_DESCRIPTIONS[_name] += _COMBINATION_NOTE
 
 _RECORDS = {'type': 'array', 'items': {'type': 'string'}, 'description': 'record keys from resolve_name'}
-_STYLE = {'type': 'string', 'enum': ['text', 'markdown', 'json'], 'description': 'rendering style, default text'}
 _SOURCE = {'type': ['string', 'null'], 'description': 'a source key or the citation as the blocks print it ("Dehm 1961", "Sumrall et al. 2013")'}
 _YEARS = {'type': 'array', 'items': {'type': ['integer', 'null']}, 'minItems': 2, 'maxItems': 2, 'description': '[first, last] publication years, either may be null'}
 _TREES = {'type': 'array', 'items': {'type': 'string', 'enum': ['taxonomy', 'cladogram', 'diagram', 'other']}, 'description': 'tree kinds to read placements from; default taxonomy only'}

@@ -53,7 +53,6 @@ def render_composition(composition, name='text'):
 
 # -- shared pieces ---------------------------------------------------------
 
-_SPECIES_GROUP_WORDS = ('species', 'subspecies', 'variety')
 
 
 def node_label(node):
@@ -66,7 +65,7 @@ def node_label(node):
   if node.get('or'):
     name += ' or ' + ' or '.join(node['or'])
   rank_word = node.get('rankWord')
-  if rank_word and rank_word.lower() not in _SPECIES_GROUP_WORDS and not node.get('placeholder'):
+  if rank_word and rank_word.lower() not in blocks.SPECIES_GROUP and not node.get('placeholder'):
     name = f'{rank_word} {name}'
   if (node.get('flags') or {}).get('new'):
     mark = node.get('newMark') or blocks.new_mark(rank_word)

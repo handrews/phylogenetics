@@ -773,9 +773,7 @@ class Tree:
 
   @cached_property
   def taxon_path(self):
-    # logger.warning(str(id(self)) + ' ' + str(self.taxon))
     path = f'/{self.taxon.key}' if self.taxon else ''
-    # logger.warning(f'{path} ... {self._relpath}')
     for segment in self._relpath:
       if segment != 'children':
         path = f'/{segment}{path}'
@@ -838,10 +836,6 @@ class Tree:
     return self._corrected
 
   @property
-  def or_(self):
-    return tuple(self._or)
-
-  @property
   def synonyms(self):
     return tuple(self._synonyms)
 
@@ -893,11 +887,3 @@ class Tree:
   @property
   def is_new(self):
     return self._data.get('new', False)
-
-  @property
-  def is_provisional(self):
-    return self._data.get('provisional', False)
-
-  @property
-  def is_questionable(self):
-    return self._data.get('questionable', False)

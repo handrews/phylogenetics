@@ -123,8 +123,6 @@ def _load_trees(data):
   _report_missing_protologues(data)
   return roots
 
-  return data
-
 
 def load(drafts=False):
   """``(data, roots)``: the loaded data files and ``{source: [roots]}``."""

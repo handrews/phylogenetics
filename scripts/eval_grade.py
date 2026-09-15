@@ -46,7 +46,6 @@ from phylohist.tools import ClaimStore  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 QUESTIONS = ROOT / 'eval' / 'questions.yaml'
-README = ROOT / 'eval' / 'README.md'
 
 LEAK_WORDS = re.compile(
   r'\b(yaml|json|jsonl|claim table|record key|taxon_key|source_key|'
@@ -148,13 +147,6 @@ def alternatives(expected):
   spec = expected.get('blocks')
   items = spec['anyOf'] if isinstance(spec, dict) else [spec or []]
   return [item if isinstance(item, dict) else {'blocks': item, 'shows': []} for item in items]
-
-
-def _source_sig(store, text):
-  if not text:
-    return None
-  sig = store.source_signature(text)
-  return (sig['year'], tuple(sig['authors'][:1]))
 
 
 def _tools_of(record):

@@ -131,7 +131,7 @@ def _type_words(schema):
   return ' or '.join(said) or 'omitted'
 
 
-def execute(plan, style='text'):
+def execute(plan):
   """Build a plan's composition from the corpus. Returns ``{composition,
   blocks, errors}``: the composition (None when nothing could be
   built), the blocks in order each carrying the tool and parameters
