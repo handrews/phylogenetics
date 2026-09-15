@@ -11,7 +11,7 @@ a curated corpus stored as YAML data.  This uses a model where one is
 needed, and prioritizes reliability, reproducibility, speed,
 and lower costs where one is not.
 
-The current corpus includes information from 218 papers from the
+The current corpus includes information from 218 papers from
 1734 to the present, mostly focusing on Paleozoic echinoderms.
 A coverage system tracks how much of the information from a paper has
 been entered and reviewed.
@@ -19,7 +19,7 @@ been entered and reviewed.
 **Please note:** This project began as a hobby, which is where the loader
 code came from.  Further work has been done with the assistance of
 Claude Code, focusing on edrioblastoids (including rhenopyrgids and
-cyathocysids) as the primary proof of concept data set.
+cyathocystids) as the primary proof of concept data set.
 
 Next steps include writing human-user-friendly documentation,
 continuing to improve the software development methodology, and publishing
@@ -106,7 +106,7 @@ The project's evolution can be seen through the evaluation
 Moving from AI-written prose answers to planned queries with modular
 output blocks improved key measurements across complete evaluation runs:
 
-* Correctness rose from 61% to 87%, with several failure modes
+* The measured pass rate rose from 61% to 87%, with several failure modes
   eliminated entirely.
 * Wall clock time was cut from around 25 minutes to around 10 minutes.
 * Token usage dropped from 2.25 million to 0.56 million
@@ -122,7 +122,6 @@ as text, Markdown, or JSON based on the `--style` argument.
 
 The CLI has one subcommand per tool:
 
-```
     poetry run phylohist resolve "Palæaster"
     poetry run phylohist contents 1994_guensburg_sprinkle astrocystitidae --synonymy
     poetry run phylohist descendants edrioblastoidea
@@ -135,7 +134,6 @@ The CLI has one subcommand per tool:
     poetry run phylohist source "Lamarck 1816"
     poetry run phylohist plan my-plan.yaml
     poetry run python scripts/eval_run.py --mode planner --ask "Who first placed Rhenopyrgus under Edrioblastoidina?"
-```
 
 The same tools are served over MCP by
 `scripts/mcp_server.py`, which `.mcp.json` registers for Claude Code:
@@ -147,9 +145,7 @@ The `eval_run.py` script can be used to ask a question without using the
 chat interface to see how the model plans the queries and selects the output
 blocks.  It requires an Anthropic API key to be configured.
 
-```
     poetry run python scripts/eval_run.py --ask "Who first placed Rhenopyrgus under Edrioblastoidina?"
-```
 
 ## Install
 

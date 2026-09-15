@@ -149,7 +149,7 @@ interleaved)
 - Run the eval, keep the failures, and write up the failure modes with the
   reading rounds' catalogue (OCR errors, misattribution, placement slips,
   normalisation of printed forms, gap-filling). That write-up is the
-  demonstration (M3c, done 2026-09-11: `notes/evals/eval-writeup.md`, on the
+  demonstration (M3c, done 2026-09-11: `eval/findings/prose-eval-writeup.md`, on the
   first Sonnet 5 run; its closing list is the order of the next fixes).
 
 **Step 1. Blocks** (done 2026-09-12; `notes/development/structured-answers.md` is the
@@ -159,7 +159,7 @@ framing: the model is a planner, execution and assembly are code)
   (`cli.py`, replacing the tree printer), the runner composing with
   `submit` and the grader grading compositions. `moved` yields a
   rejection; every nomen translatum record is linked to its base.
-- Second run (done 2026-09-12: `notes/evals/eval-writeup-2.md`, on
+- Second run (done 2026-09-12: `eval/findings/blocks-eval-writeups.md`, on
   `eval/runs/2026-09-12-claude-sonnet-5.*`): the 49 questions through
   the block tools, Sonnet 5 composing, Opus 5 judging the headers; the
   write-up catalogues the composition shapes per class.
@@ -176,7 +176,7 @@ framing: the model is a planner, execution and assembly are code)
   returns execution errors once for revision. Free text beside a
   submission is noted, not failed, in either mode.
 - The planner run sits beside the fourth run in
-  `notes/evals/eval-writeup-2.md`; `notes/evals/metrics.md` puts the
+  `eval/findings/blocks-eval-writeups.md`; `eval/findings/metrics.md` puts the
   runs on one yardstick; planner run d, after three tool fixes and
   alternatives with their own shows, is level with compose mode. The MCP server serves `plan` too, so a
   chat model can take either route.
