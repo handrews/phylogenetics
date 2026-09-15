@@ -1,6 +1,6 @@
 # The five runs on one yardstick
 
-The write-ups (`eval-writeup.md`, `eval-writeup-2.md`) grade each run
+The write-ups (`prose-eval-writeup.md`, `blocks-eval-writeups.md`) grade each run
 by the eval as it stood that day, so their figures do not line up. This
 note re-grades runs 2 to 7 with the final grader over the final 47
 questions (`scripts/eval_grade.py`, shapes and shown strings; text

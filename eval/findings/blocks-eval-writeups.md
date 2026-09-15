@@ -2,7 +2,7 @@
 
 The run of 2026-09-12 (`eval/runs/2026-09-12-claude-sonnet-5.*`): 49
 questions, Sonnet 5 composing blocks the tools return, graded
-mechanically. The first run (`notes/evals/eval-writeup.md`) had the model
+mechanically. The first run (`prose-eval-writeup.md`) had the model
 write prose from four bare tools; this one has it write nothing. It
 chooses what the question means in the corpus's terms, fetches blocks,
 and submits a one-line header, the block ids in order, and a question
