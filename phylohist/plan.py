@@ -80,13 +80,55 @@ def validate(plan):
       problems.append(f'{where}: parameters must be an object')
       continue
     allowed = set(spec['input_schema']['properties']) | _NOT_PLANNED
-    for name in params:
+    for name, value in params.items():
       if name not in allowed:
         problems.append(f"{where}: {block['tool']} has no parameter {name}")
+        continue
+      schema = spec['input_schema']['properties'].get(name) or {}
+      if not _type_ok(value, schema):
+        problems.append(
+          f"{where}: {block['tool']} {name} must be {_type_words(schema)}, "
+          f"not {value!r}; leave it out for the default"
+        )
     for name in spec['input_schema'].get('required', ()):
       if name not in params:
         problems.append(f"{where}: {block['tool']} needs {name}")
   return problems
+
+
+_TYPES = {
+  'string': str, 'integer': int, 'number': (int, float), 'boolean': bool,
+  'array': list, 'object': dict, 'null': type(None),
+}
+
+
+def _type_ok(value, schema):
+  kinds = schema.get('type')
+  if kinds is None:
+    return True
+  kinds = kinds if isinstance(kinds, list) else [kinds]
+  for kind in kinds:
+    expected = _TYPES.get(kind)
+    if expected is None:
+      return True
+    if isinstance(value, bool) and kind != 'boolean':
+      continue
+    if isinstance(value, expected):
+      if kind == 'array' and schema.get('items'):
+        return all(_type_ok(v, schema['items']) for v in value)
+      return True
+  return False
+
+
+def _type_words(schema):
+  kinds = schema.get('type')
+  kinds = kinds if isinstance(kinds, list) else [kinds]
+  words = {'string': 'a string', 'integer': 'an integer', 'boolean': 'true or false',
+           'array': 'a list', 'object': 'an object', 'null': 'omitted'}
+  said = [words.get(k, k) for k in kinds if k != 'null']
+  if schema.get('description'):
+    return (' or '.join(said) or 'omitted') + f" ({schema['description']})"
+  return ' or '.join(said) or 'omitted'
 
 
 def execute(plan, style='text'):

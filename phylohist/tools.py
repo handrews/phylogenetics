@@ -34,7 +34,8 @@ def _species_group(rank):
 
 # The coverage kind a kind of statement is declared under.
 _COVERAGE_OF_KIND = {
-  'material': 'material', 'diagnosis': 'diagnoses', 'acceptance': 'synonymy',
+  'material': 'material', 'occurrences': 'occurrences', 'illustrations': 'illustrations',
+  'specimens': 'material', 'diagnosis': 'diagnoses', 'acceptance': 'synonymy',
   'usage': 'skeleton', 'placement': 'skeleton', 'rejection': 'skeleton',
   'act': 'skeleton', 'editorial': 'skeleton',
 }
@@ -1276,7 +1277,12 @@ class ClaimStore:
     claims = self.by_subject.get(record, [])
     if source is not None:
       claims = [c for c in claims if c['source'] == source]
-    if kind is not None:
+    if kind in ('occurrences', 'illustrations', 'specimens'):
+      # Material kinds a reader asks for by name.
+      material_kind = {'occurrences': 'occurrence', 'illustrations': 'illustration',
+                       'specimens': 'specimen'}[kind]
+      claims = [c for c in claims if c['kind'] == 'material' and c.get('materialKind') == material_kind]
+    elif kind is not None:
       claims = [c for c in claims if c['kind'] == kind]
     if act_kind is not None:
       claims = [c for c in claims if c.get('actKind') == act_kind]
@@ -1305,7 +1311,9 @@ class ClaimStore:
       if act_kind == 'new' or kind == 'act' and act_kind is None:
         coverage_kind = 'newTaxa'
       gap = self.gap(source, coverage_kind, style='json')
-      gap = blocks.statement(gap['kind'], gap['fields'], {**gap['parameters'], **parameters})
+      # The gap's own parameters name the coverage kind; the query's ride beside.
+      gap = blocks.statement(gap['kind'], gap['fields'],
+                             {**parameters, **gap['parameters'], 'statementKind': kind})
       return _with_style(gap, style)
     block = blocks.listing({'key': record, 'name': heading}, entries, parameters, kind='statements')
     return _with_style(block, style)
@@ -1589,7 +1597,8 @@ TOOL_DESCRIPTIONS = {
     'type species), a synonymy acceptance, a rejection, material, a '
     'diagnosis. Optionally one source, one kind of statement '
     '(usage, placement, acceptance, act, rejection, material, diagnosis, '
-    'editorial) or one act kind (new, type, emended, nomTransl, moved, '
+    'editorial; or occurrences, illustrations, specimens for one kind of '
+    'material) or one act kind (new, type, emended, nomTransl, moved, '
     'removed, corrected). A statement marked "editor" is the '
     'editor\'s inference, not the paper\'s words. When a source is named '
     'and nothing of that kind about the record is entered, the result is '

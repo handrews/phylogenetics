@@ -25,14 +25,17 @@ def test_validate_rejects_what_the_tools_lack():
     {'tool': 'history', 'parameters': {'record': 'rhenopyrgus', 'colour': 'red'}},
     {'tool': 'contents', 'parameters': {'source': '1961_dehm'}},
     {'tool': 'resolve_name', 'parameters': {'query': 'x'}},
+    {'tool': 'history', 'parameters': {'record': 'rhenopyrgus', 'years': True}},
   ]}
   problems = plan.validate(bad)
-  assert problems == [
+  assert problems[:4] == [
     'block 1: unknown tool bogus',
     'block 2: history has no parameter colour',
     'block 3: contents needs record',
     'block 4: resolve_name answers a lookup, not a reader; it is not a block',
   ]
+  assert problems[4].startswith('block 5: history years must be a list ([first, last] publication years')
+  assert plan.validate({'header': 'x', 'blocks': [{'tool': 'history', 'parameters': {'record': 'rhenopyrgus', 'years': [1990, None]}}]}) == []
   assert plan.validate({'header': 'x', 'blocks': [{'tool': 'history', 'parameters': {'record': 'rhenopyrgus'}}]}) == []
 
 

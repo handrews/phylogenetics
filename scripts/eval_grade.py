@@ -199,7 +199,11 @@ def _norm(store, bare, value):
 
 
 def _block_matches(store, spec, block):
-  if block.get('tool') != spec['tool']:
+  # The statements tool answers an empty query in a named source with the
+  # gap block itself; an expected gap is met by it.
+  gap_by_statements = (spec['tool'] == 'gap' and block.get('tool') == 'statements'
+                       and block.get('type') == 'statement')
+  if block.get('tool') != spec['tool'] and not gap_by_statements:
     return False
   actual = {k.replace('_', '').lower(): v for k, v in (block.get('parameters') or {}).items()}
   for name, value in (spec.get('parameters') or {}).items():
