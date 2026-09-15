@@ -1,12 +1,12 @@
 # Review brief (shared by all reviewers in this round)
 
-Read-only task. Do NOT edit any file inside /Users/handrews/src/phylogenetics.
-Write output only to the review file(s) named in your assignment, under
-/private/tmp/claude-501/-Users-handrews/bca7a2fb-08ef-45d1-a114-c1110500f9bc/scratchpad/latest/.
+Read-only task. Do NOT edit any file inside the repository. Write output
+only to the review file(s) named in your assignment, in the scratch
+directory the assignment gives.
 
 ## The dataset
 
-/Users/handrews/src/phylogenetics holds hand-edited YAML capturing taxonomic
+The repository holds hand-edited YAML capturing taxonomic
 opinions exactly as each publication printed them, with no normalisation.
 - data/trees/<sourceId>.yaml: one file per source. `taxonomies` = one tree per
   printed classification; `phylogenies` = cladograms/diagrams. Node fields:
