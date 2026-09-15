@@ -11,9 +11,6 @@ what could not be built.
 
 from . import blocks, tools
 
-# Parameters the planner may not set: the rendering is the caller's.
-_NOT_PLANNED = {'style'}
-
 
 def _specs():
   return {spec['name']: spec for spec in tools.TOOL_SPECS}
@@ -79,7 +76,7 @@ def validate(plan):
     if not isinstance(params, dict):
       problems.append(f'{where}: parameters must be an object')
       continue
-    allowed = set(spec['input_schema']['properties']) | _NOT_PLANNED
+    allowed = set(spec['input_schema']['properties'])
     for name, value in params.items():
       if name not in allowed:
         problems.append(f'{where}: {block["tool"]} has no parameter {name}')
@@ -157,9 +154,9 @@ def execute(plan):
     }
   built, errors = [], []
   for i, spec in enumerate(plan['blocks']):
-    params = {k: v for k, v in (spec.get('parameters') or {}).items() if k not in _NOT_PLANNED}
+    params = dict(spec.get('parameters') or {})
     try:
-      result = tools.call(spec['tool'], dict(params, style='json'))
+      result = tools.call(spec['tool'], params, style='json')
     except (ValueError, KeyError, TypeError) as exc:
       errors.append({'block': i + 1, 'tool': spec['tool'], 'parameters': params, 'error': str(exc)})
       continue

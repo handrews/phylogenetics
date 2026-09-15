@@ -8,7 +8,8 @@ Claude Code. Every tool reads the committed `claims/` directory and nothing
 can write. The descriptions a model sees are `tools.TOOL_DESCRIPTIONS`,
 shared with the CLI and the eval runner, and speak of sources, names and
 statements, not of files. Block-returning tools carry `rendered`, the
-text to reproduce verbatim. The `plan` tool is the other route: the
+text to reproduce verbatim; every call goes through `tools.call`, so the
+parameters are the specs' and the rendering is text. The `plan` tool is the other route: the
 model states the blocks an answer is made of and code builds them
 (`phylohist.plan`), so a chat can answer without reading a block.
 """
@@ -43,25 +44,25 @@ server = MCPServer(
 D = tools.TOOL_DESCRIPTIONS
 
 
+def _call(tool, **arguments):
+  return tools.call(tool, arguments)
+
+
 @server.tool(description=D['resolve_name'])
 def resolve_name(query: str, rank: str | None = None) -> list[dict]:
-  return tools.resolve_name(query, rank=rank)
+  return _call('resolve_name', query=query, rank=rank)
 
 
 @server.tool(description=D['resolve_source'])
 def resolve_source(query: str) -> list[dict]:
-  return tools.resolve_source(query)
+  return _call('resolve_source', query=query)
 
 
 @server.tool(description=D['contents'])
 def contents(
-  record: str,
-  source: str | None = None,
-  depth: int | None = None,
-  synonymy: bool = False,
-  style: str = 'text',
+  record: str, source: str | None = None, depth: int | None = None, synonymy: bool = False
 ) -> list[dict]:
-  return tools.contents(source, record, depth=depth, synonymy=synonymy, style=style)
+  return _call('contents', source=source, record=record, depth=depth, synonymy=synonymy)
 
 
 @server.tool(description=D['placements'])
@@ -72,16 +73,15 @@ def placements(
   include_variants: bool = True,
   include_synonyms: bool = True,
   trees: list[str] | None = None,
-  style: str = 'text',
 ) -> dict:
-  return tools.placements(
-    records,
+  return _call(
+    'placements',
+    records=records,
     sources=sources,
-    years=tuple(years) if years else None,
+    years=years,
     include_variants=include_variants,
     include_synonyms=include_synonyms,
     trees=trees,
-    style=style,
   )
 
 
@@ -92,15 +92,14 @@ def descendants(
   include_variants: bool = True,
   trees: list[str] | None = None,
   years: list[int | None] | None = None,
-  style: str = 'text',
 ) -> dict:
-  return tools.descendants(
-    records,
+  return _call(
+    'descendants',
+    records=records,
     include_synonyms=include_synonyms,
     include_variants=include_variants,
     trees=trees,
-    years=tuple(years) if years else None,
-    style=style,
+    years=years,
   )
 
 
@@ -110,14 +109,9 @@ def ancestors(
   include_variants: bool = True,
   trees: list[str] | None = None,
   years: list[int | None] | None = None,
-  style: str = 'text',
 ) -> dict:
-  return tools.ancestors(
-    records,
-    include_variants=include_variants,
-    trees=trees,
-    years=tuple(years) if years else None,
-    style=style,
+  return _call(
+    'ancestors', records=records, include_variants=include_variants, trees=trees, years=years
   )
 
 
@@ -128,15 +122,14 @@ def placed_under(
   include_variants: bool = True,
   trees: list[str] | None = None,
   years: list[int | None] | None = None,
-  style: str = 'text',
 ) -> dict:
-  return tools.placed_under(
-    record,
-    parent,
+  return _call(
+    'placed_under',
+    record=record,
+    parent=parent,
     include_variants=include_variants,
     trees=trees,
-    years=tuple(years) if years else None,
-    style=style,
+    years=years,
   )
 
 
@@ -147,57 +140,52 @@ def history(
   synonymy: bool = False,
   trees: list[str] | None = None,
   years: list[int | None] | None = None,
-  style: str = 'text',
 ) -> dict:
-  return tools.history(
-    record,
+  return _call(
+    'history',
+    record=record,
     include_related=include_related,
     synonymy=synonymy,
     trees=trees,
-    years=tuple(years) if years else None,
-    style=style,
+    years=years,
   )
 
 
 @server.tool(description=D['synonymy'])
-def synonymy(record: str, source: str | None = None, style: str = 'text') -> list[dict]:
-  return tools.synonymy(record, source=source, style=style)
+def synonymy(record: str, source: str | None = None) -> list[dict]:
+  return _call('synonymy', record=record, source=source)
 
 
 @server.tool(description=D['statements'])
 def statements(
-  record: str,
-  source: str | None = None,
-  kind: str | None = None,
-  act_kind: str | None = None,
-  style: str = 'text',
+  record: str, source: str | None = None, kind: str | None = None, act_kind: str | None = None
 ) -> dict:
-  return tools.statements(record, source=source, kind=kind, act_kind=act_kind, style=style)
+  return _call('statements', record=record, source=source, kind=kind, act_kind=act_kind)
 
 
 @server.tool(description=D['source_coverage'])
-def source_coverage(source_key: str) -> dict:
-  return tools.source_coverage(source_key)
+def source_coverage(source: str) -> dict:
+  return _call('source_coverage', source=source)
 
 
 @server.tool(description=D['gap'])
-def gap(
-  source: str | None = None, kind: str | None = None, name: str | None = None, style: str = 'text'
-) -> dict:
-  return tools.gap(source, kind, name=name, style=style)
+def gap(source: str | None = None, kind: str | None = None, name: str | None = None) -> dict:
+  if kind is not None and kind not in tools.COVERAGE_WORDS:
+    raise ValueError(f'kind must be one of {", ".join(tools.COVERAGE_WORDS)}, not {kind!r}')
+  return _call('gap', source=source, kind=kind, name=name)
 
 
 @server.tool(description=D['printed_forms'])
-def printed_forms(record: str, source: str | None = None, style: str = 'text') -> dict:
-  return tools.printed_forms(record, source=source, style=style)
+def printed_forms(record: str, source: str | None = None) -> dict:
+  return _call('printed_forms', record=record, source=source)
 
 
 @server.tool(description=plans.PLAN_SPEC['description'])
-def plan(header: str, blocks: list[dict], question: str | None = None, style: str = 'text') -> dict:
+def plan(header: str, blocks: list[dict], question: str | None = None) -> dict:
   outcome = plans.execute({'header': header, 'blocks': blocks, 'question': question})
   composition = outcome['composition']
   return {
-    'rendered': render_composition(composition, style) if composition else None,
+    'rendered': render_composition(composition, 'text') if composition else None,
     'blocks': [
       {k: b[k] for k in ('blockId', 'type', 'tool', 'parameters')} for b in outcome['blocks']
     ],

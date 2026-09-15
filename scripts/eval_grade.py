@@ -42,7 +42,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
 import yaml  # noqa: E402
 
-from phylohist.tools import ClaimStore  # noqa: E402
+from phylohist.tools import RECORD_PARAMETERS, SOURCE_PARAMETERS, ClaimStore  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 QUESTIONS = ROOT / 'eval' / 'questions.yaml'
@@ -166,31 +166,33 @@ def _normalise(text):
   return ' '.join(text.split())
 
 
-_RECORD_PARAMS = {'record', 'records', 'parent'}
-_SOURCE_PARAMS = {'source', 'sources', 'sourcekey'}
+def _snake(name):
+  """Parameter names as the specs spell them. Run files before 2026-09-15
+  carry the blocks' earlier camelCase names (includeVariants, actKind,
+  alsoKinds); newer ones need no change."""
+  return re.sub(r'([A-Z])', lambda m: '_' + m.group(1).lower(), name)
 
 
 def _same_value(store, name, expected, actual):
   """A parameter value the expectation names must agree with the composed
   block's: keys and citations after resolution, lists as sets."""
-  bare = name.replace('_', '').lower()
   if isinstance(expected, list):
     if not isinstance(actual, list):
       return False
-    return {_norm(store, bare, v) for v in expected} <= {_norm(store, bare, v) for v in actual}
-  return _norm(store, bare, expected) == _norm(store, bare, actual)
+    return {_norm(store, name, v) for v in expected} <= {_norm(store, name, v) for v in actual}
+  return _norm(store, name, expected) == _norm(store, name, actual)
 
 
-def _norm(store, bare, value):
+def _norm(store, name, value):
   if isinstance(value, str):
-    if bare in _RECORD_PARAMS:
+    if name in RECORD_PARAMETERS:
       try:
-        return store._key(value)
+        return store.key_of('record', value)
       except ValueError:
         return value
-    if bare in _SOURCE_PARAMS:
+    if name in SOURCE_PARAMETERS:
       try:
-        key = store._source_key(value)
+        key = store.key_of('source', value)
       except ValueError:
         return value
       if key in store.sources:
@@ -208,12 +210,11 @@ def _block_matches(store, spec, block):
   )
   if block.get('tool') != spec['tool'] and not gap_by_statements:
     return False
-  actual = {k.replace('_', '').lower(): v for k, v in (block.get('parameters') or {}).items()}
+  actual = {_snake(k): v for k, v in (block.get('parameters') or {}).items()}
   for name, value in (spec.get('parameters') or {}).items():
-    bare = name.replace('_', '').lower()
-    if gap_by_statements and bare == 'kind' and value in (actual.get('alsokinds') or ()):
+    if gap_by_statements and name == 'kind' and value in (actual.get('also_kinds') or ()):
       continue
-    if bare not in actual or not _same_value(store, name, value, actual[bare]):
+    if name not in actual or not _same_value(store, name, value, actual[name]):
       return False
   return True
 

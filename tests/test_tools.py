@@ -304,7 +304,7 @@ def test_statements_in_words(store):
   # No kind asked: every kind of the source not fully entered is named,
   # since the record's statements may lie in any of them.
   whole = store.statements('octogona_richter.r_1930', source='Holloway & Jell 1983', style='json')
-  assert whole['parameters']['alsoKinds'] == [
+  assert whole['parameters']['also_kinds'] == [
     'synonymy',
     'material',
     'occurrences',

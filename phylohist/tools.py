@@ -155,6 +155,12 @@ class ClaimStore:
     row = self.names.get(key) or {}
     return row.get('name') or row.get('designation') or f'[{key}]'
 
+  def key_of(self, kind, value):
+    """The key a parameter value names: a record's or a source's, given as
+    a key, a printed name or a citation. Raises ValueError when it can mean
+    several; an unknown value comes back unchanged."""
+    return self._key(value) if kind == 'record' else self._source_key(value)
+
   def _key(self, key):
     """A record or source key as given, or lowercased when only that form
     exists (keys are lowercase, printed names are not), or the one record
@@ -1032,8 +1038,8 @@ class ClaimStore:
       'records': list(records),
       'sources': sources,
       'years': years,
-      'includeVariants': include_variants,
-      'includeSynonyms': include_synonyms,
+      'include_variants': include_variants,
+      'include_synonyms': include_synonyms,
       'trees': list(trees),
     }
     block = blocks.table(
@@ -1126,8 +1132,8 @@ class ClaimStore:
         )
     parameters = {
       'records': list(records),
-      'includeSynonyms': include_synonyms,
-      'includeVariants': include_variants,
+      'include_synonyms': include_synonyms,
+      'include_variants': include_variants,
       'trees': list(trees),
       'years': years,
     }
@@ -1214,7 +1220,7 @@ class ClaimStore:
     entries.sort(key=lambda e: (e['year'], e['source']))
     parameters = {
       'records': list(records),
-      'includeVariants': include_variants,
+      'include_variants': include_variants,
       'trees': list(trees),
       'years': years,
     }
@@ -1248,7 +1254,7 @@ class ClaimStore:
     parameters = {
       'record': record,
       'parent': parent,
-      'includeVariants': include_variants,
+      'include_variants': include_variants,
       'trees': list(trees),
       'years': years,
     }
@@ -1429,7 +1435,7 @@ class ClaimStore:
       deco['positions'] = positions
     parameters = {
       'record': record,
-      'includeRelated': include_related,
+      'include_related': include_related,
       'synonymy': synonymy,
       'trees': list(trees),
       'years': years,
@@ -1516,7 +1522,7 @@ class ClaimStore:
           printed='editor' if c.get('inferred') else None,
         )
       )
-    parameters = {'record': record, 'source': source, 'kind': kind, 'actKind': act_kind}
+    parameters = {'record': record, 'source': source, 'kind': kind, 'act_kind': act_kind}
     if not entries and source is not None:
       # Nothing of that kind about the record in that source: the answer
       # is the source's coverage of the kind, the gap block, not an
@@ -1527,7 +1533,7 @@ class ClaimStore:
       gap = self.gap(source, coverage_kind, style='json')
       fields, params = (
         dict(gap['fields']),
-        {**parameters, **gap['parameters'], 'statementKind': kind},
+        {**parameters, **gap['parameters'], 'statement_kind': kind},
       )
       if gap['kind'] == 'gap':
         fields['about'] = heading
@@ -1547,17 +1553,17 @@ class ClaimStore:
         ]
         if also:
           fields['also'] = also
-          params['alsoKinds'] = [a['kind'] for a in also]
+          params['also_kinds'] = [a['kind'] for a in also]
       # The gap's own parameters name the coverage kind; the query's ride beside.
       gap = blocks.statement(gap['kind'], fields, params)
       return _with_style(gap, style)
     block = blocks.listing({'key': record, 'name': heading}, entries, parameters, kind='statements')
     return _with_style(block, style)
 
-  def source_coverage(self, source_key):
+  def source_coverage(self, source):
     """The raw view of one source: citation, whether entered, declared
     audit, derived counts."""
-    source_key = self._source_key(source_key)
+    source_key = self._source_key(source)
     row = self.sources.get(source_key)
     if row is None:
       return {'source': source_key, 'known': False}
@@ -1797,8 +1803,8 @@ def statements(record, source=None, kind=None, act_kind=None, style='text'):
   return store().statements(record, source, kind, act_kind, style)
 
 
-def source_coverage(source_key):
-  return store().source_coverage(source_key)
+def source_coverage(source):
+  return store().source_coverage(source)
 
 
 def gap(source=None, kind=None, name=None, style='text'):
@@ -2097,9 +2103,9 @@ TOOL_SPECS = [
   _spec(
     'source_coverage',
     {
-      'source_key': {'type': 'string', 'description': 'a source key or citation'},
+      'source': {'type': 'string', 'description': 'a source key or citation'},
     },
-    ['source_key'],
+    ['source'],
   ),
   _spec(
     'gap',
@@ -2127,25 +2133,39 @@ TOOL_SPECS = [
 ]
 
 
-def call(name, arguments):
-  """Dispatch a tool call by name with keyword arguments; what the CLI,
-  the MCP server and the runner all go through."""
-  functions = {
-    'resolve_name': resolve_name,
-    'resolve_source': resolve_source,
-    'contents': contents,
-    'placements': placements,
-    'descendants': descendants,
-    'ancestors': ancestors,
-    'placed_under': placed_under,
-    'history': history,
-    'synonymy': synonymy,
-    'statements': statements,
-    'source_coverage': source_coverage,
-    'gap': gap,
-    'printed_forms': printed_forms,
-  }
+# The parameters that name records and sources, wherever a tool takes them;
+# a value given as a printed name or a citation resolves to a key.
+RECORD_PARAMETERS = frozenset({'record', 'records', 'parent'})
+SOURCE_PARAMETERS = frozenset({'source', 'sources'})
+
+# The tools that answer a lookup rather than a reader: no block, no style.
+LOOKUPS = frozenset({'resolve_name', 'resolve_source', 'source_coverage'})
+
+TOOLS = {
+  'resolve_name': resolve_name,
+  'resolve_source': resolve_source,
+  'contents': contents,
+  'placements': placements,
+  'descendants': descendants,
+  'ancestors': ancestors,
+  'placed_under': placed_under,
+  'history': history,
+  'synonymy': synonymy,
+  'statements': statements,
+  'source_coverage': source_coverage,
+  'gap': gap,
+  'printed_forms': printed_forms,
+}
+
+
+def call(name, arguments, style='text'):
+  """Dispatch a tool call by name with the parameters its spec lists; what
+  the CLI, the MCP server, the runner and plans all go through. The style
+  is the caller's, applied to the blocks on the way out; a lookup has
+  none."""
   arguments = dict(arguments)
   if 'years' in arguments and arguments['years'] is not None:
     arguments['years'] = tuple(arguments['years'])
-  return functions[name](**arguments)
+  if name not in LOOKUPS:
+    arguments['style'] = style
+  return TOOLS[name](**arguments)
