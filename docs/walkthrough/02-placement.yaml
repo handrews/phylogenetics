@@ -1,0 +1,14 @@
+# Who proposed placing rhenopyrgids inside Cyathocystidae, who followed, and who rejected it?
+# The plan Claude Sonnet 5 stated in the eval run of 2026-09-14 (planner mode, q045).
+header: 'Placement of Rhenopyrgidae (family, including its subfamily rank variant Rhenopyrginae) within
+  Cyathocystidae: proposer, followers and rejecters shown via the placement record and the full placement
+  history; classification trees; all years'
+blocks:
+- tool: placed_under
+  parameters:
+    record: rhenopyrgidae
+    parent: cyathocystidae
+- tool: history
+  parameters:
+    record: rhenopyrgidae
+    include_related: false

@@ -108,7 +108,15 @@ The CLI has one subcommand per tool:
     poetry run phylohist plan my-plan.yaml
     poetry run python scripts/eval_run.py --mode planner --ask "Who first placed Rhenopyrgus under Edrioblastoidina?"
 
-For example, what one paper places in a family, laid out as the paper
+The same tools are served over MCP by
+`scripts/mcp_server.py`, which `.mcp.json` registers for Claude Code:
+a chat model can read blocks or state a plan and get the rendered answer.
+The "Reading the table" section of `docs/claims.md` describes the blocks
+and the tools.
+
+### Tool Examples
+
+What one paper places in a family, laid out as the paper
 prints it:
 
     $ poetry run phylohist contents 1994_guensburg_sprinkle astrocystitidae
@@ -124,17 +132,32 @@ The emendation, the new genus and species, and the type species are the
 paper's own statements; nothing here is inferred, and a source whose
 listing is not yet entered says so instead.
 
-The same tools are served over MCP by
-`scripts/mcp_server.py`, which `.mcp.json` registers for Claude Code:
-a chat model can read blocks or state a plan and get the rendered answer.
-The "Reading the table" section of `docs/claims.md` describes the blocks
-and the tools.
+See [`docs/walkthrough.md`](docs/walkthrough.md) for additional examples.
+
+### Asking from the CLI
 
 The `eval_run.py` script can be used to ask a question without using the
 chat interface to see how the model plans the queries and selects the output
 blocks.  It requires an Anthropic API key to be configured.
 
     poetry run python scripts/eval_run.py --ask "Who first placed Rhenopyrgus under Edrioblastoidina?"
+
+    Rhenopyrgus (including its subgenus rank variant) placed under Edrioblastoidina (= Edrioblastoidea); taxonomy tree, all years
+
+    Rhenopyrgus Dehm 1961 under Edrioblastoidina Fay 1962: 4 papers, 4 co-author sets, 1994–2020
+    first Guensburg & Sprinkle 1994, last Ewin et al. 2020
+
+    1994  Guensburg & Sprinkle  Cyathocystidae › Rhenopyrginae › Rhenopyrgus
+    2000  Grigo                 Cyathocystidae › Rhenopyrginae › Rhenopyrgus
+    2013  Sumrall et al.        Rhenopyrgidae › Rhenopyrgus
+    2020  Ewin et al.           Rhenopyrgidae › Rhenopyrgus
+
+    --- trail
+      resolve_name {"query": "Rhenopyrgus"} -> 2 candidate(s)
+      resolve_name {"query": "Edrioblastoidina"} -> 1 candidate(s)
+      placed_under {"record": "rhenopyrgus", "parent": "edrioblastoidina", "include_variants": true} -> 1 block(s)
+      header: Rhenopyrgus (including its subgenus rank variant) placed under Edrioblastoidina (= Edrioblastoidea); taxonomy tree, all years
+      21227+375 tokens, 6.9s, tool_use
 
 ## Install
 
