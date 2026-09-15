@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 
 # Raw string to work around bizarre syntax highlighting bug
-FILEDIR = pathlib.Path(__file__).parent / r'..'
+FILEDIR = pathlib.Path(__file__).resolve().parent.parent.parent
 DATA_DIR = FILEDIR / 'data'
 TREE_DIR = DATA_DIR / 'trees'
 DRAFT_DIR = FILEDIR / 'drafts'
@@ -92,9 +92,7 @@ def load_files(drafts=False):
 
   ensure_catalog()
   logger.info('Checking schema...')
-  schema_library = jschon.JSONSchema(
-    load_yaml(pathlib.Path(__file__).parent / r'..' / 'schemas' / 'phylogeny.yaml')
-  )
+  schema_library = jschon.JSONSchema(load_yaml(FILEDIR / 'schemas' / 'phylogeny.yaml'))
   r = schema_library.validate()
   if not r.valid:
     log_schema_errors(r)

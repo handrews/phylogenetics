@@ -14,7 +14,7 @@ import sys
 import jschon
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
-from phylohist.io import (  # noqa: E402
+from phylohist.loader.io import (  # noqa: E402
   DATA_DIR,
   FILEDIR,
   ensure_catalog,

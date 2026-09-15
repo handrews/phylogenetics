@@ -13,7 +13,7 @@ import os
 import pytest
 
 from phylohist.closure import Closure
-from phylohist.load import load
+from phylohist.loader import load
 from phylohist.tools import ClaimStore
 
 
@@ -32,7 +32,8 @@ def load_records():
   logger = logging.getLogger('phylohist')
   logger.addHandler(handler)
   try:
-    data, roots = load(drafts=bool(os.getenv('PHYLOHIST_DRAFTS')))
+    # Tolerated here so that test_no_errors is the assertion, with the log.
+    data, roots = load(drafts=bool(os.getenv('PHYLOHIST_DRAFTS')), tolerate=True)
   finally:
     logger.removeHandler(handler)
 

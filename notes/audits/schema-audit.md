@@ -200,7 +200,7 @@ Rare enough to question: `tree.removed` (1 use), `tree.stem` (1), `tree.or` (3),
 ## 7. Schema and code disagree
 
 - **`tree.removed`** is valid in the schema and used once, but `Tree.__init__`
-  (`phylohist/taxa.py`) recurses `moved`, `corrected`, `or`, `synonyms`, `non`,
+  (`phylohist/loader/taxa.py`) recurses `moved`, `corrected`, `or`, `synonyms`, `non`,
   `parents`, `altPlacements` and `children` — **not `removed`**. That node is
   invisible to every consumer.
 - **Occurrences have no consumer at all.** No module in `phylohist/` references

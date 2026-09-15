@@ -86,10 +86,40 @@ def test_expected_warnings(load_records):
 def test_invalid_tree_raises(tmp_path):
   # A file that fails the schema stops the load with an error the caller
   # can handle, instead of ending the process.
-  from phylohist import io
+  from phylohist.loader import io
 
   io.ensure_catalog()
   schema = jschon.JSONSchema(io.load_yaml(io.FILEDIR / 'schemas' / 'phylogeny.yaml'))
   (tmp_path / 'broken.yaml').write_text('tree:\n  rnak: genus\n')
   with pytest.raises(io.LoadError, match='broken.yaml'):
     io._load_tree_dir(tmp_path, schema['$defs']['trees'], {})
+
+
+def test_load_fails_on_logged_errors(monkeypatch):
+  # The checks report by logging; the load counts what they logged and
+  # refuses to hand over a broken corpus unless asked to.
+  import importlib
+
+  from phylohist.loader import LoadError, load
+
+  loading = importlib.import_module('phylohist.loader.load')
+
+  def broken(drafts=False):
+    logging.getLogger('phylohist.loader.taxa').error('a check fired')
+    return {k: {} for k in ('authors', 'publications', 'sources', 'taxa', 'trees', 'time')}
+
+  monkeypatch.setattr(loading, 'load_files', broken)
+  with pytest.raises(LoadError, match='1 integrity error while loading'):
+    load()
+  data, roots = load(tolerate=True)
+  assert data['trees'] == {} and roots == {}
+
+
+def test_counting_errors_counts_only_errors():
+  from phylohist.loader import counting_errors
+
+  with counting_errors() as errors:
+    logging.getLogger('phylohist.loader.io').warning('not counted')
+    logging.getLogger('phylohist.loader.io').error('counted')
+    logging.getLogger('phylohist.loader.research').error('counted too')
+  assert errors.count == 2
