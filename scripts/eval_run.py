@@ -193,7 +193,7 @@ def _lookup_call(block, turn, kept):
   if result is not None:
     for b in result if isinstance(result, list) else [result]:
       if _is_block(b):
-        kept[b['blockId']] = dict(b, _tool=block.name)
+        kept[b['blockId']] = b
     text_out = json.dumps(compact(result), ensure_ascii=False)
   else:
     text_out = json.dumps({'error': error})

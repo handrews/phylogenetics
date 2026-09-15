@@ -37,14 +37,14 @@ def _kept():
       'type': 'chains',
       'parameters': {'record': 'x'},
       'claims': ['c1'],
-      '_tool': 'ancestors',
+      'tool': 'ancestors',
     },
     'b2': {
       'blockId': 'b2',
       'type': 'table',
       'parameters': {},
       'claims': ['c2'],
-      '_tool': 'descendants',
+      'tool': 'descendants',
     },
   }
 

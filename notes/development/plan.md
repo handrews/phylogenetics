@@ -196,8 +196,11 @@ planner reached 41/47)
   tool surface is declared; grading and submission logic in
   `phylohist/evaluation.py` with unit tests; a session-scoped store in
   the tests.
-- `structure`: `ClaimStore` split into resolution, wording and block
-  building behind the same facade; the tool name a block field.
+- `structure`: `ClaimStore` split into `store.py` (indices and block
+  building), `resolve.py` (names and citations to keys, one resolver for
+  both) and `words.py` (the wording) behind the same facade; `tools.py`
+  is the surface; the tool name is a field `tools.call` sets on each
+  block.
 - Deliberately left: the loader half (`taxa.py`, `research.py`,
   `io.py`, `load.py`: log-and-continue validation, class-level
   registries, its TODOs, no direct tests beyond the load snapshot) is

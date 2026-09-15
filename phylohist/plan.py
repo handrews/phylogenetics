@@ -173,7 +173,7 @@ def execute(plan):
       )
       continue
     for b in got:
-      built.append(dict(b, _tool=spec['tool']))
+      built.append(b)
   composition = (
     blocks.compose(built, plan.get('header') or '', plan.get('question')) if built else None
   )
@@ -183,7 +183,7 @@ def execute(plan):
       {
         'blockId': b['blockId'],
         'type': b['type'],
-        'tool': b['_tool'],
+        'tool': b['tool'],
         'parameters': b.get('parameters'),
         'claims': b['claims'],
       }

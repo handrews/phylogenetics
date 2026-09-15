@@ -28,6 +28,7 @@ import yaml
 from . import plan as plans
 from . import tools
 from .render import render_composition, styles
+from .words import years_span
 
 # Every subcommand that is a tool, by the tool's name; `plan` and `tools`
 # are the CLI's own.
@@ -224,9 +225,7 @@ def _print_resolved(result, style):
       line += f'; same name at other ranks or spellings: {", ".join(c["variants"])}'
     if c.get('combinations'):
       line += '; as ' + '; '.join(
-        f'{x["label"]} {x["firstYear"]}'
-        + (f'–{x["lastYear"]}' if x['lastYear'] != x['firstYear'] else '')
-        for x in c['combinations']
+        f'{x["label"]} {years_span(x["firstYear"], x["lastYear"])}' for x in c['combinations']
       )
     print(line)
 

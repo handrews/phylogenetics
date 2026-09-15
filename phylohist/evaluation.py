@@ -81,7 +81,7 @@ def submit(payload, kept):
       {
         'blockId': b['blockId'],
         'type': b['type'],
-        'tool': b.get('_tool'),
+        'tool': b.get('tool'),
         'parameters': b.get('parameters'),
         'claims': b['claims'],
       }
