@@ -225,8 +225,18 @@ def test_statements_in_words(store):
   gap = store.statements('whitei_holloway_jell_1983', source='Holloway & Jell 1983', kind='material', style='json')
   assert gap['type'] == 'statement' and gap['parameters']['kind'] == 'material'
   assert gap['parameters']['source'] == '1983_holloway_jell'
-  assert store.statements('rhenopyrgus-subgenus', source='1961_dehm', kind='diagnosis')['rendered'].startswith(
-    'The diagnoses printed in Dehm 1961 have not yet been entered')
+  assert store.statements('rhenopyrgus-subgenus', source='1961_dehm', kind='diagnosis')['rendered'] == (
+    'Nothing about Pyrgocystis (Rhenopyrgus) Dehm 1961 is entered from Dehm 1961. '
+    'The diagnoses printed in Dehm 1961 have not yet been entered (none of them is entered so far).')
+  # No kind asked: every kind of the source not fully entered is named,
+  # since the record's statements may lie in any of them.
+  whole = store.statements('octogona_richter.r_1930', source='Holloway & Jell 1983', style='json')
+  assert whole['parameters']['alsoKinds'] == ['synonymy', 'material', 'occurrences', 'illustrations', 'diagnoses']
+  assert store.statements('octogona_richter.r_1930', source='Holloway & Jell 1983')['rendered'] == (
+    'Nothing about Pyrgocystis octogona Richter 1930 is entered from Holloway & Jell 1983. '
+    'The classification printed in Holloway & Jell 1983 is entered in full. '
+    'Its synonymy is entered in part; its material, occurrences, illustrations and diagnoses '
+    'have not yet been entered.')
   assert store.statements('whitei_holloway_jell_1983', kind='diagnosis')['rendered'].endswith('(none entered from any source)')
   lines = store.statements('Rhenopyrgus viviani', kind='material')['rendered'].splitlines()
   assert lines[0] == 'Statements about Rhenopyrgus viviani Ewin et al. 2020'
@@ -421,3 +431,23 @@ def test_variety_and_no_genus_fallback(store):
   label = store.display('angulosus_pander_1830', claim['source'], claim['path'])
   printed = (store.by_id[claim['id']].get('printed') or {}).get('citedAs')
   assert label in ('angulosus', printed)
+
+
+def test_printed_forms_fall_back_to_the_heading(store):
+  # No verbatim form recorded in the source: the heading as its listing
+  # is entered, marked as such, rather than nothing.
+  block = store.printed_forms('rhenopyrginae', source='Guensburg & Sprinkle 1994', style='json')
+  assert [e['kind'] for e in block['entries']] == ['heading']
+  assert block['entries'][0]['printed'] == 'Subfamily Rhenopyrginae emend. nom. transl.'
+  assert block['claims']
+  assert ('(the heading as entered; no verbatim form is recorded)'
+          in store.printed_forms('rhenopyrginae', source='Guensburg & Sprinkle 1994')['rendered'])
+  verbatim = store.printed_forms('rhenopyrgus-subgenus', source='Dehm 1961', style='json')
+  assert all(e.get('kind') != 'heading' for e in verbatim['entries'])
+
+
+def test_type_species_marks_the_editor(store):
+  listing = store.contents('1962_fay', 'astrocystites')[0]
+  assert '  Type species. Astrocystites ottawaensis (editor)' in listing['rendered']
+  fixed = store.contents('Dehm 1961', 'rhenopyrgus-subgenus')[0]
+  assert 'Type species. ' in fixed['rendered'] and '(editor)' not in fixed['rendered']

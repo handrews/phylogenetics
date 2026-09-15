@@ -317,9 +317,9 @@ blocks; the CLI (`phylohist <tool>`, `--style`), the MCP server
 | `placed_under(record, parent)` | a chains block of the sources that place the record under the parent, with the taxa between; first and last stated |
 | `history(record, include_related, synonymy)` | a timeline: one line per source in year order with the name as used, its position, the acts and the page; the measurement as the heading; each source's synonymy with `synonymy` |
 | `synonymy(record, source)` | the synonymy a source prints under a record, as a list |
-| `statements(record, source, kind, act_kind)` | every claim about a record as a sentence with source, year and page, the drill-down |
+| `statements(record, source, kind, act_kind)` | every claim about a record as a sentence with source, year and page, the drill-down; with a source named and nothing of that kind entered, the gap block for it, and with no kind asked the gap names every kind of the source not yet entered |
 | `gap(source, kind)` / `gap(name=…)` | the contract's sentence for what is not yet entered, or for a name no source carries |
-| `printed_forms(record, source)` | each form a source prints, verbatim, with the page |
+| `printed_forms(record, source)` | each form a source prints, verbatim, with the page; when the named source recorded no verbatim form, the heading as its listing is entered, marked as such |
 | `source_coverage(key)` | the raw coverage view |
 
 A **plan** (`phylohist/plan.py`) is an answer as data before it is

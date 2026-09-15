@@ -75,7 +75,7 @@ def test_chains_text_and_markdown(store):
 def test_list_text(store):
   block = store.synonymy('grayae_bather_1915', source='2020_ewin_martin.m_isotalo_zamora', style='json')[0]
   lines = render.render(block, 'text').splitlines()
-  assert lines[0] == 'Rhenopyrgus grayae'
+  assert lines[0] == 'Synonymy under Rhenopyrgus grayae in Ewin et al. 2020'
   assert lines[1] == '  1915 Pyrgocystis grayae Bather 1915 p. 58'
   assert render.render(block, 'markdown').splitlines()[2] == '- 1915 Pyrgocystis grayae Bather 1915 p. 58'
 

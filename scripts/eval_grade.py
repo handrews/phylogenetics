@@ -21,7 +21,8 @@ all on by default:
   agree on every parameter the expectation names (keys and citations
   compared after resolution, lists as sets); extra blocks are not
   failures;
-- shows: every expected string appears in the rendered answer.
+- shows: every expected string appears in the rendered answer, the
+  question's and the matched alternative's own.
 
 With --judge, a judge model scores the header and question only, for
 contract (0-2); a re-run keeps the valid scores already in the grades
@@ -119,28 +120,34 @@ def mechanical(record, question, store):
   tool_of = _tools_of(record)
   composed = [dict(b, tool=b.get('tool') or tool_of.get(b['blockId']))
               for b in composed_blocks(record)]
-  alternatives = expected.get('blocks')
-  if alternatives is not None:
-    alternatives = alternatives['anyOf'] if isinstance(alternatives, dict) else [alternatives]
-    misses = []
-    for alternative in alternatives:
-      missing = [spec for spec in alternative
-                 if not any(_block_matches(store, spec, b) for b in composed)]
-      if not missing:
-        misses = []
-        break
-      misses.append(missing)
-    if misses:
-      shortest = min(misses, key=len)
-      for spec in shortest:
-        failures.append(f"no composed block is {spec['tool']} {json.dumps(spec.get('parameters') or {}, ensure_ascii=False)}")
   rendered = _normalise(record.get('rendered') or '')
-  for text in expected.get('shows') or ():
-    if _normalise(text) not in rendered:
-      failures.append(f'the answer does not show "{text}"')
+  # One alternative must be met in full: its blocks and its shows, with
+  # the question's shows; the failures reported are the nearest miss.
+  nearest = None
+  for alternative in alternatives(expected):
+    misses = [
+      f"no composed block is {spec['tool']} {json.dumps(spec.get('parameters') or {}, ensure_ascii=False)}"
+      for spec in alternative['blocks']
+      if not any(_block_matches(store, spec, b) for b in composed)
+    ]
+    misses += [f'the answer does not show "{text}"'
+               for text in list(expected.get('shows') or ()) + alternative['shows']
+               if _normalise(text) not in rendered]
+    if nearest is None or len(misses) < len(nearest):
+      nearest = misses
+  failures += nearest or []
   if record.get('stopReason') == 'max_turns':
     notes.append('composed after the lookup limit was reached')
   return failures, notes
+
+
+def alternatives(expected):
+  """The expected answer's alternatives, each ``{blocks, shows}``: one
+  list of blocks, or several under `anyOf`, an alternative being a list
+  of blocks or an object with its own shows."""
+  spec = expected.get('blocks')
+  items = spec['anyOf'] if isinstance(spec, dict) else [spec or []]
+  return [item if isinstance(item, dict) else {'blocks': item, 'shows': []} for item in items]
 
 
 def _source_sig(store, text):
@@ -208,6 +215,8 @@ def _block_matches(store, spec, block):
   actual = {k.replace('_', '').lower(): v for k, v in (block.get('parameters') or {}).items()}
   for name, value in (spec.get('parameters') or {}).items():
     bare = name.replace('_', '').lower()
+    if gap_by_statements and bare == 'kind' and value in (actual.get('alsokinds') or ()):
+      continue
     if bare not in actual or not _same_value(store, name, value, actual[bare]):
       return False
   return True
