@@ -167,8 +167,16 @@ framing: the model is a planner, execution and assembly are code)
   blocks it is made of, tool and parameters, with alternatives, and the
   strings the rendered answer shows; the claim lists are gone. That is
   step 2's plan language in its first form.
-- Next: step 2, a plan the model emits and code executes, in the form
-  the expectations now take.
+
+**Step 2. Plans** (done 2026-09-14; `phylohist/plan.py`)
+- A plan is the expectation form: header, blocks as tool and
+  parameters, question back. `validate` and `execute` in code; the CLI
+  runs a plan from a file; the runner's planner mode gives the model
+  the two resolvers and the `plan` tool, so it never sees a block, and
+  returns execution errors once for revision. Free text beside a
+  submission is noted, not failed, in either mode.
+- Next: the planner run beside the fourth run; then what the
+  comparison says.
 
 **M4. Materials** (S4)
 - D1–D5 as a design decision, with the specimen cases the reviews

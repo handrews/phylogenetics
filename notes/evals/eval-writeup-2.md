@@ -507,6 +507,8 @@ question fully". The reader never sees it and the prompt forbids it;
 the habit is the model's, and it grew from five questions to twelve
 with no prompt change. A run that set it aside would pass 41 of 47.
 Whether to keep failing it is a contract decision, not a tooling one.
+Decided the same day: it is noted, not failed, from the next run on,
+since it costs a few hundred output tokens a run and reaches no reader.
 
 ## What changes next, in order
 

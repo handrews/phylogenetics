@@ -83,6 +83,18 @@ def test_source_subcommand_and_citations(capsys):
   assert by_cite == by_key
 
 
+def test_plan_subcommand(capsys, tmp_path):
+  path = tmp_path / 'plan.yaml'
+  path.write_text('header: Rhenopyrgidae under Cyathocystidae\nblocks:\n'
+                  '- tool: placed_under\n  parameters: {record: rhenopyrgidae, parent: cyathocystidae}\n')
+  code, out = run(capsys, 'plan', str(path))
+  assert code == 0 and out.startswith('Rhenopyrgidae under Cyathocystidae\n\n')
+  assert 'first Guensburg & Sprinkle 1994' in out
+  path.write_text('header: x\nblocks:\n- tool: bogus\n  parameters: {}\n')
+  assert cli.main(['plan', str(path)]) == 2
+  assert 'unknown tool bogus' in capsys.readouterr().err
+
+
 def test_ambiguous_name_exits_2(capsys):
   assert cli.main(['history', 'casteri']) == 2
   err = capsys.readouterr().err

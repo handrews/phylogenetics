@@ -4,8 +4,8 @@
 matching the data is updated or removed, never left stale; this test
 makes that mechanical. An expected answer is the blocks it is made of
 (a tool and the parameters that matter) and the strings the rendered
-answer shows. Each block of each alternative must build through
-`phylohist.tools.call` into a block that rests on claims, or a gap or
+answer shows. Each alternative is a plan that `phylohist.plan.execute`
+must build in full, every block resting on claims or being a gap or
 absence statement; the rendered composition of the first alternative
 must contain every `shows` string.
 
@@ -21,7 +21,7 @@ import pathlib
 import pytest
 import yaml
 
-from phylohist import blocks, tools
+from phylohist import plan
 from phylohist.claims import extract, manifest
 from phylohist.render import render_composition
 
@@ -52,12 +52,6 @@ def alternatives(expected):
   return [spec]
 
 
-def build(block_spec):
-  """The blocks a tool call returns for an expected block."""
-  result = tools.call(block_spec['tool'], dict(block_spec.get('parameters') or {}, style='json'))
-  return result if isinstance(result, list) else [result]
-
-
 def normalise(text):
   return ' '.join(text.split())
 
@@ -68,18 +62,16 @@ def test_question(question):
   qid = question['id']
   first = None
   for alternative in alternatives(expected):
-    built = []
-    for spec in alternative:
-      got = build(spec)
-      if not got:
-        pytest.fail(f"{qid}: {spec['tool']} {spec.get('parameters')} returns nothing")
-      for block in got:
-        if block['type'] != 'statement' and not block['claims']:
-          pytest.fail(f"{qid}: {spec['tool']} {spec.get('parameters')} rests on no claim")
-      built += got
+    # Each alternative is a plan; it must build in full.
+    outcome = plan.execute({'header': '', 'blocks': alternative})
+    if outcome['errors']:
+      pytest.fail(f"{qid}: {outcome['errors']}")
+    for block in outcome['blocks']:
+      if block['type'] != 'statement' and not block['claims']:
+        pytest.fail(f"{qid}: {block['tool']} {block['parameters']} rests on no claim")
     if first is None:
-      first = built
-  rendered = normalise(render_composition(blocks.compose(first, ''), 'text'))
+      first = outcome['composition']
+  rendered = normalise(render_composition(first, 'text'))
   for text in expected.get('shows') or ():
     if normalise(text) not in rendered:
       pytest.fail(f'{qid}: the expected answer does not show "{text}"')

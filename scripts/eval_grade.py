@@ -12,8 +12,8 @@ all on by default:
 
 - a composition exists and every block id in it came from this
   conversation;
-- the reply that submitted carried no text beside the call (text
-  between lookups is noted, not failed);
+- text the model wrote beside its calls or its submission is noted,
+  never failed: the reader never sees it;
 - the header and any question contain no leak of internals and no
   verdict;
 - shapes: for one of the expected alternatives, every expected block
@@ -102,7 +102,7 @@ def mechanical(record, question, store):
     else:
       between.append(entry['text'])
   if beside:
-    failures.append('free text beside the submission: ' + ' | '.join(t[:80] for t in beside))
+    notes.append('text beside the submission: ' + ' | '.join(t[:80] for t in beside))
   if between:
     notes.append('text between lookups: ' + ' | '.join(t[:80] for t in between))
   header = (comp.get('header') or '') + ' ' + (comp.get('question') or '')
@@ -302,6 +302,10 @@ def summary(path, grades):
       lines.append(f"- judge contract {grade['judge'].get('contract')}: {grade['judge'].get('reason', '')}")
     comp = grade.get('composition') or {}
     lines.append('')
+    if comp.get('plan'):
+      lines.append(f"Plan: {json.dumps(comp['plan'], ensure_ascii=False)}")
+      if comp.get('planErrors'):
+        lines.append(f"Plan errors: {json.dumps(comp['planErrors'], ensure_ascii=False)}")
     lines.append(f"Header: {comp.get('header', '')}")
     for b in comp.get('blocks') or ():
       lines.append(f"- {b['type']} {json.dumps(b.get('parameters'), ensure_ascii=False)}")

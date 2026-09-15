@@ -108,6 +108,16 @@ contract and the language rules above.
     poetry run python scripts/eval_run.py --model claude-sonnet-5
     poetry run python scripts/eval_grade.py eval/runs/<date>-<model>.jsonl
     poetry run python scripts/eval_run.py --ask "Who first placed Rhenopyrgus under Edrioblastoidina?"
+    poetry run python scripts/eval_run.py --mode planner --model claude-sonnet-5
+
+Two modes. In `compose` mode, the default, the model calls the tools,
+reads the rendered blocks and submits the ids of the ones to show. In
+`planner` mode (`planner-prompt.md`) it may call only the two
+resolvers, then states a plan: the header, the blocks as tool and
+parameters, the question back; `phylohist.plan.execute` builds the
+composition and returns what could not be built once for a revised
+plan. The model never sees a block, so the run costs a fraction of the
+input tokens, and the plan is the form the expected answers take.
 
 `--ask` answers one question typed on the command line exactly as a run
 would (same prompt, tools and composition step), prints the rendered
@@ -131,10 +141,10 @@ mechanical: for one of the expected alternatives every expected block
 must be matched by a composed block of the same tool whose parameters
 agree on those the expectation names (keys and citations compared after
 resolution; extra blocks are not failures), every `shows` string must
-appear in the rendered answer, the header must leak nothing and pass no
-verdict, and no text may accompany the submission (text between lookups
-is noted, not failed); `--judge` adds a judge model's score for the
-header alone. It writes `<run>.grades.jsonl` and `<run>.md` with per-class
+appear in the rendered answer, and the header must leak nothing and
+pass no verdict; text the model writes beside its calls or its
+submission is noted, never failed, since no reader sees it; `--judge`
+adds a judge model's score for the header alone. It writes `<run>.grades.jsonl` and `<run>.md` with per-class
 pass rates and every failure beside the composition the model chose.
 The API key comes from `ANTHROPIC_API_KEY` or a git-ignored `.env`,
 never from the repository.
