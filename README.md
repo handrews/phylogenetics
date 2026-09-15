@@ -7,18 +7,21 @@ each site having its own editorial policy for what gets included.
 The `phylohist` project instead provides access to trees as published,
 over time, while leaving the judgement of what to accept or reject to
 the researcher.  An LLM-driven interface supports complex queries over
-a curated corpus stored as YAML data.  This leverages the power of AI
-models while avoiding hallucinations and costly guessing by handling
-as much querying and output formatting as possible in code.
+a curated corpus stored as YAML data.  This uses a model where one is
+needed, and prioritizes reliability, reproducibility, speed,
+and lower costs where one is not.
 
-The current corpus includes information from over 280 papers from the
-1700s to the current year, mostly focusing on Paleozoic echinoderms.
+The current corpus includes information from 218 papers from the
+1734 to the present, mostly focusing on Paleozoic echinoderms.
 A coverage system tracks how much of the information from a paper has
 been entered and reviewed.
 
 **Please note:** This project began as a hobby, which is where the loader
 code came from.  Further work has been done with the assistance of
-Claude Code.  Next steps include writing human-user-friendly documentation,
+Claude Code, focusing on edrioblastoids (including rhenopyrgids and
+cyathocysids) as the primary proof of concept data set.
+
+Next steps include writing human-user-friendly documentation,
 continuing to improve the software development methodology, and publishing
 the package as well as curating additional data and adding more features.
 
@@ -95,6 +98,59 @@ flowchart TB
   judges only the header. The researcher writes the questions and
   reviews the grades and write-ups (`eval/`).
 
+## Correctness, Performance, and Cost
+
+The project's evolution can be seen through the evaluation
+[metrics](eval/findings/metrics.md).
+
+Moving from AI-written prose answers to planned queries with modular
+output blocks improved key measurements across complete evaluation runs:
+
+* Correctness rose from 61% to 87%, with several failure modes
+  eliminated entirely.
+* Wall clock time was cut from around 25 minutes to around 10 minutes.
+* Token usage dropped from 2.25 million to 0.56 million
+
+Future improvements to how the model selects blocks are expected to raise
+the correctness score.
+
+## Tools and MCP
+
+The `phylohist` CLI runs queries over the claims table generated from
+the curated YAML data.  These result in output data blocks rendered
+as text, Markdown, or JSON based on the `--style` argument.
+
+The CLI has one subcommand per tool:
+
+```
+    poetry run phylohist resolve "Palæaster"
+    poetry run phylohist contents 1994_guensburg_sprinkle astrocystitidae --synonymy
+    poetry run phylohist descendants edrioblastoidea
+    poetry run phylohist ancestors astrocystitidae cyathocystidae rhenopyrgidae
+    poetry run phylohist history rhenopyrgus --style markdown
+    poetry run phylohist history "Rhenopyrgus grayae"
+    poetry run phylohist under rhenopyrgus edrioblastoidina
+    poetry run phylohist statements "Rhenopyrgus viviani"
+    poetry run phylohist gap "Holloway & Jell 1983" material
+    poetry run phylohist source "Lamarck 1816"
+    poetry run phylohist plan my-plan.yaml
+    poetry run python scripts/eval_run.py --mode planner --ask "Who first placed Rhenopyrgus under Edrioblastoidina?"
+```
+
+The same tools are served over MCP by
+`scripts/mcp_server.py`, which `.mcp.json` registers for Claude Code:
+a chat model can read blocks or state a plan and get the rendered answer.
+The "Reading the table" section of `docs/claims.md` describes the blocks
+and the tools.
+
+The `eval_run.py` script can be used to ask a question without using the
+chat interface to see how the model plans the queries and selects the output
+blocks.  It requires an Anthropic API key to be configured.
+
+```
+    poetry run python scripts/eval_run.py --ask "Who first placed Rhenopyrgus under Edrioblastoidina?"
+```
+
 ## Install
 
 Python 3.10 or later and [Poetry](https://python-poetry.org/):
@@ -117,29 +173,6 @@ schema census or claim table is stale:
     poetry run python scripts/claims.py
     git diff --exit-code scripts/schema-usage.md claims/
     poetry run python scripts/check_draft.py drafts/<file>.yaml
-
-The read-only tools over the claim table (`phylohist/tools.py`, over the
-store in `store.py` with `resolve.py` and `words.py`) return blocks,
-rendered in a style; the CLI has one subcommand per tool:
-
-    poetry run phylohist resolve "Palæaster"
-    poetry run phylohist contents 1994_guensburg_sprinkle astrocystitidae --synonymy
-    poetry run phylohist descendants edrioblastoidea
-    poetry run phylohist ancestors astrocystitidae cyathocystidae rhenopyrgidae
-    poetry run phylohist history rhenopyrgus --style markdown
-    poetry run phylohist history "Rhenopyrgus grayae"
-    poetry run phylohist under rhenopyrgus edrioblastoidina
-    poetry run phylohist statements "Rhenopyrgus viviani"
-    poetry run phylohist gap "Holloway & Jell 1983" material
-    poetry run phylohist source "Lamarck 1816"
-    poetry run phylohist plan my-plan.yaml
-    poetry run python scripts/eval_run.py --mode planner --ask "Who first placed Rhenopyrgus under Edrioblastoidina?"
-    poetry run python scripts/eval_run.py --ask "Who first placed Rhenopyrgus under Edrioblastoidina?"
-
-The same tools, and `plan`, are served over MCP by
-`scripts/mcp_server.py`, which `.mcp.json` registers for Claude Code:
-a chat model can read blocks or state a plan and get the rendered answer. `docs/claims.md`, "Reading the
-table", describes the blocks and the tools.
 
 ## Where things are
 
