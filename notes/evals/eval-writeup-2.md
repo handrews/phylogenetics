@@ -618,6 +618,66 @@ per configuration. Thirty-nine plans are one block, eight are two.
 **Tokens.** Input rose with the lookups (q021 spent its twelve turns
 resolving suborder names); still a third of compose mode.
 
+## The planner run after the block-choice fixes
+
+Run d (`eval/runs/2026-09-14-planner-d-claude-sonnet-5`) follows three
+tool fixes, an eval change and one prompt sentence, all prompted by
+run c's misses. `statements` for a record in a named source with no
+kind asked now says nothing about the record is entered from that
+source and names every kind of the source not yet entered, instead of
+"the classification is entered in full" alone (q048). `printed_forms`
+for a source that recorded no verbatim form gives the heading as the
+listing is entered, marked as such, instead of nothing (q028). The
+listing's "Type species." line marks the editor's inference (q002),
+and a synonymy listing says whose it is. An expected alternative may
+carry its own `shows`, so a plan that renders the same fact in other
+words is accepted: two `placed_under` blocks for q044, the timeline's
+"declines a placement in Cyathocystidae" for q045, the statements
+route for q048. The prompt says the plan is final, after run c planned
+a "probe" for q009.
+
+| | planner run c | planner run d |
+|---|---|---|
+| lookups | 128 (median 2, max 10) | 114 (median 2, max 20) |
+| input tokens | 0.57 M | 0.56 M |
+| output tokens | 48 k | 48 k |
+| wall time | ~10 min | ~11 min |
+| at the lookup limit | 1 | 0 |
+| plans revised after an error | 0 | 0 |
+| questions back | 0 | 0 |
+| mechanical pass | 36 | 41 |
+| judge contract, full marks | 1.79, 38 | 1.77, 39 |
+
+| class | n | run c | run d |
+|---|---|---|---|
+| answerable | 12 | 9 | 11 |
+| as-published | 8 | 5 | 5 |
+| uncaptured | 9 | 9 | 9 |
+| absent | 3 | 3 | 3 |
+| trajectory | 15 | 10 | 13 |
+
+**Level with compose mode.** Forty-one of 47 is the fourth run's figure
+on the same yardstick (`metrics.md`), at a third of its input tokens.
+Five questions turned: q002, q009, q044, q045 and q048; none turned
+the other way. Two of the five (q044, q045) passed because the eval
+now admits the plan the model chose; the other three because the
+blocks it chose say more than they did.
+
+**What remains.** q001 plans the chain where the listing is asked;
+q021 needs the suborder name from the first block to parameterise the
+second, which a plan cannot express; q024, q034 and q035 prefer a
+listing, a timeline or the printed forms where the expectation wants
+another; q028 resolved "the Rhenopyrgus subfamily" against the genus,
+found no subfamily-rank variant there (Rhenopyrginae is a rank variant
+of the family, not the genus) and planned the gap for a name the
+corpus does carry, which is a wrong answer, not a wrong shape.
+
+**The judge's three zeros** are all headers that state a finding. One
+is false: q002's header says the type species is "marked as printed"
+when the listing marks it as the editor's inference, which is the
+question's point. The header is the one place the model still speaks
+in its own words, and the judge is there for exactly this.
+
 ## What changes next, in order
 
 1. Source keys: citations accepted wherever a source is a parameter
