@@ -8,7 +8,9 @@ Claude Code. Every tool reads the committed `claims/` directory and nothing
 can write. The descriptions a model sees are `tools.TOOL_DESCRIPTIONS`,
 shared with the CLI and the eval runner, and speak of sources, names and
 statements, not of files. Block-returning tools carry `rendered`, the
-text to reproduce verbatim.
+text to reproduce verbatim. The `plan` tool is the other route: the
+model states the blocks an answer is made of and code builds them
+(`phylohist.plan`), so a chat can answer without reading a block.
 """
 
 import pathlib
@@ -18,7 +20,8 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
 from mcp.server.mcpserver import MCPServer  # noqa: E402
 
-from phylohist import tools  # noqa: E402
+from phylohist import plan as plans, tools  # noqa: E402
+from phylohist.render import render_composition  # noqa: E402
 
 server = MCPServer(
   'phylohist',
@@ -30,7 +33,9 @@ server = MCPServer(
     'history of a name. Every tool returns a block with a rendered form '
     'to reproduce verbatim; a gap is stated with the gap tool. Every '
     'answer must come from what these tools return; a gap in the corpus '
-    'is not a gap in the literature.'
+    'is not a gap in the literature. Or resolve the names and papers the '
+    'question mentions and state a plan: the plan tool builds the blocks '
+    'and returns the rendered answer to reproduce verbatim.'
   ),
 )
 
@@ -144,6 +149,18 @@ def gap(source: str | None = None, kind: str | None = None, name: str | None = N
 @server.tool(description=D['printed_forms'])
 def printed_forms(record: str, source: str | None = None, style: str = 'text') -> dict:
   return tools.printed_forms(record, source=source, style=style)
+
+
+@server.tool(description=plans.PLAN_SPEC['description'])
+def plan(header: str, blocks: list[dict], question: str | None = None,
+         style: str = 'text') -> dict:
+  outcome = plans.execute({'header': header, 'blocks': blocks, 'question': question})
+  composition = outcome['composition']
+  return {
+    'rendered': render_composition(composition, style) if composition else None,
+    'blocks': [{k: b[k] for k in ('blockId', 'type', 'tool', 'parameters')} for b in outcome['blocks']],
+    'errors': outcome['errors'],
+  }
 
 
 if __name__ == '__main__':

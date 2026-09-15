@@ -28,8 +28,9 @@ blocks, rendered in a style; the CLI has one subcommand per tool:
     poetry run python scripts/eval_run.py --mode planner --ask "Who first placed Rhenopyrgus under Edrioblastoidina?"
     poetry run python scripts/eval_run.py --ask "Who first placed Rhenopyrgus under Edrioblastoidina?"
 
-The same tools are served over MCP by `scripts/mcp_server.py`, which
-`.mcp.json` registers for Claude Code. `docs/claims.md`, "Reading the
+The same tools, and `plan`, are served over MCP by
+`scripts/mcp_server.py`, which `.mcp.json` registers for Claude Code:
+a chat model can read blocks or state a plan and get the rendered answer. `docs/claims.md`, "Reading the
 table", describes the blocks and the tools.
 
 ## Where things are
