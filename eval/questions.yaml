@@ -1,8 +1,10 @@
 # Evaluation questions v11 over the gold slice (Edrioblastoidea: Astrocystitidae;
 # Rhenopyrgidae). Format and answer contract: eval/README.md; vocabulary:
-# docs/claims.md. Mix: answerable 12, uncaptured 9, as-published 8, trajectory 17,
-# absent 3. Answers speak to readers of the literature, never of the repository
-# that holds them; `verified` may still cite files and paths.
+# docs/claims.md. Mix: answerable 12, uncaptured 9, as-published 8, trajectory 15,
+# absent 3. An expected answer is the blocks it is made of (a tool and the
+# parameters that matter; alternatives under anyOf) and the strings the rendered
+# answer shows. Answers speak to readers of the literature, never of the
+# repository that holds them; `verified` may still cite files and paths.
 
 - id: q001
   class: answerable
@@ -12,21 +14,12 @@
     taxon: astrocystites
     source: 1962_fay
   expected:
-    claims:
-    - kind: act
-      source: 1962_fay
-      actKind: new
-      subject: edrioblastoidea
-    - kind: placement
-      source: 1962_fay
-      subject: astrocystites
-      parent: edrioblastoidea
-      position: 0
-    - kind: act
-      source: 1962_fay
-      actKind: moved
-      subject: astrocystites
-      movedFrom: edrioasteroidea
+    blocks:
+    - tool: contents
+      parameters: {source: 1962_fay, record: edrioblastoidea}
+    shows:
+    - "Class Edrioblastoidea nov."
+    - "Genus Astrocystites"
     answer: |
       Fay (1962) erects the new class Edrioblastoidea and places Astrocystites
       directly in it, removing the genus from the Edrioasteroidea. No order or
@@ -48,20 +41,12 @@
     taxon: astrocystites
     source: 1962_fay
   expected:
-    claims:
-    - kind: act
-      source: 1962_fay
-      actKind: type
-      subject: ottawaensis_whiteaves_1897
-      editorial:
-        inferred:
-        - type
-        basis: Fay never prints "type species"; the genus is monotypic (p. 201)
-    - kind: editorial
-      source: 1962_fay
-      subject: ottawaensis_whiteaves_1897
-      inferred:
-      - type
+    blocks:
+    - tool: statements
+      parameters: {record: ottawaensis_whiteaves_1897, source: 1962_fay}
+    shows:
+    - "type species"
+    - "(editor)"
     answer: |
       It is editorial. Fay never writes "type species" anywhere in the paper
       (searched exhaustively); Astrocystites is simply treated as monotypic
@@ -84,19 +69,11 @@
     taxon: cambroblastus
     source: 1990_smith.a.b_jell
   expected:
-    claims:
-    - kind: act
-      source: 1990_smith.a.b_jell
-      actKind: new
-      subject: cambroblastus
-    - kind: act
-      source: 1990_smith.a.b_jell
-      actKind: type
-      subject: enubilatus_smith.a.b_jell_1990
-    - kind: act
-      source: 1990_smith.a.b_jell
-      actKind: new
-      subject: enubilatus_smith.a.b_jell_1990
+    blocks:
+    - tool: contents
+      parameters: {source: 1990_smith.a.b_jell, record: cambroblastus}
+    shows:
+    - "Type species. Cambroblastus enubilatus"
     answer: |
       Cambroblastus enubilatus, named new in the same paper (holotype QMF17872),
       is both the type species and the sole species Smith & Jell (1990) place
@@ -115,27 +92,12 @@
     taxon: lampteroblastus
     source: 1994_guensburg_sprinkle
   expected:
-    claims:
-    - kind: placement
-      source: 1994_guensburg_sprinkle
-      subject: astrocystitidae
-      parent: edrioblastoidina
-    - kind: act
-      source: 1994_guensburg_sprinkle
-      actKind: emended
-      subject: astrocystitidae
-    - kind: act
-      source: 1994_guensburg_sprinkle
-      actKind: new
-      subject: lampteroblastus
-    - kind: act
-      source: 1994_guensburg_sprinkle
-      actKind: type
-      subject: hintzei_guensburg_sprinkle_1994
-    - kind: act
-      source: 1994_guensburg_sprinkle
-      actKind: new
-      subject: hintzei_guensburg_sprinkle_1994
+    blocks:
+    - tool: contents
+      parameters: {source: 1994_guensburg_sprinkle, record: astrocystitidae}
+    shows:
+    - "Genus Lampteroblastus gen. nov."
+    - "Type species. Lampteroblastus hintzei"
     answer: |
       Guensburg & Sprinkle (1994) erect the new genus Lampteroblastus, with
       Lampteroblastus hintzei as its new, type species, inside an emended
@@ -158,19 +120,12 @@
     taxon: porosublastus
     source: 2015_sprinkle_sumrall
   expected:
-    claims:
-    - kind: act
-      source: 2015_sprinkle_sumrall
-      actKind: new
-      subject: porosublastus
-    - kind: act
-      source: 2015_sprinkle_sumrall
-      actKind: type
-      subject: inexpectus_sprinkle_sumrall_2015
-    - kind: act
-      source: 2015_sprinkle_sumrall
-      actKind: new
-      subject: inexpectus_sprinkle_sumrall_2015
+    blocks:
+    - tool: contents
+      parameters: {source: 2015_sprinkle_sumrall, record: astrocystitidae}
+    shows:
+    - "Genus Porosublastus gen. nov."
+    - "Type species. Porosublastus inexpectus"
     answer: |
       Porosublastus, new genus, with Porosublastus inexpectus as its new type
       species: "Suborder Edrioblastoidina Fay, 1962 / Family Astrocystitidae
@@ -190,22 +145,15 @@
     taxon: rhenopyrgus
     source: 2013_sumrall_heredia_rodríguez.c.m_mestre
   expected:
-    claims:
-    - kind: act
-      source: 2013_sumrall_heredia_rodríguez.c.m_mestre
-      actKind: emended
-      subject: rhenopyrgus
-    - kind: act
-      source: 2013_sumrall_heredia_rodríguez.c.m_mestre
-      actKind: type
-      subject: coronaeformis_rievers_1961
-    - kind: acceptance
-      source: 2013_sumrall_heredia_rodríguez.c.m_mestre
-      stance: accepts
-      subject: coronaeformis_rievers_1961
-      parents:
-      - rhenopyrgus-subgenus
-      - pyrgocystis
+    blocks:
+      anyOf:
+      - - tool: contents
+          parameters: {source: 2013_sumrall_heredia_rodríguez.c.m_mestre, record: rhenopyrgus}
+      - - tool: statements
+          parameters: {record: coronaeformis_rievers_1961, source: 2013_sumrall_heredia_rodríguez.c.m_mestre, act_kind: type}
+    shows:
+    - "Rhenopyrgus coronaeformis"
+    - "Sumrall et al. 2013"
     answer: |
       Pyrgocystis (Rhenopyrgus) coronaeformis Rievers, 1961: "Type species:
       Pyrgocystis (Rhenopyrgus) coronaeformis Rievers, 1961" (p. 773), under
@@ -225,23 +173,12 @@
     taxon: heropyrgus
     source: 2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman
   expected:
-    claims:
-    - kind: act
-      source: 2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman
-      actKind: new
-      subject: heropyrgus
-    - kind: placement
-      source: 2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman
-      subject: heropyrgus
-      parent: rhenopyrgidae
-    - kind: act
-      source: 2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman
-      actKind: type
-      subject: disterminus_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman_2017
-    - kind: act
-      source: 2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman
-      actKind: new
-      subject: disterminus_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman_2017
+    blocks:
+    - tool: contents
+      parameters: {source: 2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman, record: rhenopyrgidae}
+    shows:
+    - "Genus Heropyrgus gen. nov."
+    - "Type species. Heropyrgus disterminus"
     answer: |
       Heropyrgus gen. nov., type species Heropyrgus disterminus sp. nov.:
       "Family Rhenopyrgidae [25] / Genus Heropyrgus gen. nov. / Type species:
@@ -260,21 +197,15 @@
     taxon: rhenopyrgidae
     source: 1983_holloway_jell
   expected:
-    claims:
-    - kind: act
-      source: 1983_holloway_jell
-      actKind: new
-      subject: rhenopyrgidae
-    - kind: placement
-      source: 1983_holloway_jell
-      subject: rhenopyrgidae
-      parent: edrioasteroidea-order-uncertain_holloway_jell_1983
-      parentPlaceholder: uncertain
-    - kind: placement
-      source: 1983_holloway_jell
-      subject: edrioasteroidea-order-uncertain_holloway_jell_1983
-      parent: edrioasteroidea
-      placeholder: uncertain
+    blocks:
+      anyOf:
+      - - tool: contents
+          parameters: {source: 1983_holloway_jell, record: edrioasteroidea}
+      - - tool: ancestors
+          parameters: {records: [rhenopyrgidae]}
+    shows:
+    - "Order uncertain"
+    - Rhenopyrgidae
     answer: |
       "Class EDRIOASTEROIDEA / Order UNCERTAIN / Family RHENOPYRGIDAE n. fam."
       (p. 1002). The placeholder is not a heterogeneous bin and not simply
@@ -296,16 +227,14 @@
     taxon: rhenopyrgus
     source: 2000_grigo
   expected:
-    claims:
-    - kind: act
-      source: 2000_grigo
-      actKind: placeholder
-      subject: rhenopyrgus-sp_grigo_2000
-      placeholder: open
-    - kind: placement
-      source: 2000_grigo
-      subject: rhenopyrgus-sp_grigo_2000
-      parent: rhenopyrgus
+    blocks:
+    - tool: contents
+      parameters: {source: 2000_grigo, record: rhenopyrgus}
+    - tool: gap
+      parameters: {source: 2000_grigo, kind: occurrences}
+    shows:
+    - "Grigo 2000"
+    - "Rhenopyrgus sp. nov."
     answer: |
       An open-nomenclature Rhenopyrgus sp., new (p. 96), from the Eifelian
       (Middle Devonian) of the Ahrdorf Formation, Flesten Member, at Auberg
@@ -325,19 +254,11 @@
     taxon: viviani_ewin_martin.m_isotalo_zamora_2020
     source: 2020_ewin_martin.m_isotalo_zamora
   expected:
-    claims:
-    - kind: act
-      source: 2020_ewin_martin.m_isotalo_zamora
-      actKind: new
-      subject: viviani_ewin_martin.m_isotalo_zamora_2020
-    - kind: material
-      source: 2020_ewin_martin.m_isotalo_zamora
-      subject: viviani_ewin_martin.m_isotalo_zamora_2020
-      materialKind: specimen
-      role: holotypes
-      repository: NHMUK
-      ids:
-      - EE16642
+    blocks:
+    - tool: statements
+      parameters: {record: viviani_ewin_martin.m_isotalo_zamora_2020, kind: material}
+    shows:
+    - "holotypes: NHMUK EE16642"
     answer: |
       NHMUK EE16642, from the Cybèle Member, Jupiter Formation (Telychian),
       Rock Pool Ledge, Jupiter River Section, Anticosti Island, Québec,
@@ -355,15 +276,11 @@
     taxon: grayae_bather_1915
     source: 2020_ewin_martin.m_isotalo_zamora
   expected:
-    claims:
-    - kind: material
-      source: 2020_ewin_martin.m_isotalo_zamora
-      subject: grayae_bather_1915
-      materialKind: specimen
-      role: holotypes
-      repository: NHMUK
-      ids:
-      - E23470
+    blocks:
+    - tool: statements
+      parameters: {record: grayae_bather_1915, source: 2020_ewin_martin.m_isotalo_zamora, kind: material}
+    shows:
+    - "holotypes: NHMUK E23470"
     answer: |
       NHMUK E23470, from the Lady Burn Starfish Bed, Farden Member, South
       Threave Formation, Drummuck Group, near Girvan, Scotland, UK (Katian,
@@ -383,21 +300,12 @@
     taxon: rhenopyrgidae
     source: 2020_ewin_martin.m_isotalo_zamora
   expected:
-    claims:
-    - kind: act
-      source: 2020_ewin_martin.m_isotalo_zamora
-      actKind: emended
-      subject: rhenopyrgidae
-    - kind: placement
-      source: 2020_ewin_martin.m_isotalo_zamora
-      subject: rhenopyrgus
-      parent: rhenopyrgidae
-      position: 0
-    - kind: placement
-      source: 2020_ewin_martin.m_isotalo_zamora
-      subject: heropyrgus
-      parent: rhenopyrgidae
-      position: 1
+    blocks:
+    - tool: contents
+      parameters: {source: 2020_ewin_martin.m_isotalo_zamora, record: rhenopyrgidae}
+    shows:
+    - "Genus Rhenopyrgus"
+    - "Genus Heropyrgus"
     answer: |
       Rhenopyrgus Dehm, 1961 and Heropyrgus Briggs et al., 2017: "Diagnosis
       (Emended).—... Genera included.—Rhenopyrgus Dehm, 1961; Heropyrgus
@@ -418,8 +326,11 @@
     taxon: whitei_holloway_jell_1983
     source: 1983_holloway_jell
   expected:
-    refusal: not-captured
-    coverageKind: material
+    blocks:
+    - tool: gap
+      parameters: {source: 1983_holloway_jell, kind: material}
+    shows:
+    - "The material printed in Holloway & Jell 1983 has not yet been entered"
     answer: |
       Not captured for Holloway & Jell (1983): the type material printed there has not yet been entered. The paper gives holotype and paratype numbers for each of its species; for Rhenopyrgus whitei they follow the heading "RHENOPYRGUS WHITEI n. sp." on p. 1004.
   evidence:
@@ -436,8 +347,11 @@
     taxon: hintzei_guensburg_sprinkle_1994
     source: 1994_guensburg_sprinkle
   expected:
-    refusal: not-captured
-    coverageKind: occurrences
+    blocks:
+    - tool: gap
+      parameters: {source: 1994_guensburg_sprinkle, kind: occurrences}
+    shows:
+    - "The occurrences printed in Guensburg & Sprinkle 1994 have not yet been entered"
     answer: |
       Not captured for Guensburg & Sprinkle (1994): the occurrence data printed there has not yet been entered. The paper gives formation, member, zone and locality for Lampteroblastus hintzei and its other new species (pp. 14–37).
   evidence:
@@ -455,8 +369,11 @@
     taxon: rhenopyrgus-subgenus
     source: 1961_dehm
   expected:
-    refusal: not-captured
-    coverageKind: diagnoses
+    blocks:
+    - tool: gap
+      parameters: {source: 1961_dehm, kind: diagnoses}
+    shows:
+    - "The diagnoses printed in Dehm 1961 have not yet been entered"
     answer: |
       Not captured for Dehm (1961): the diagnosis printed there has not yet been entered. It reads "Pyrgocystis (mit turmförmiger … Theka …) mit folgenden Besonderheiten: Theka groß und schlank, oben kegelförmig erweitert …" and closes by fixing Pyrgocystis coronaeformis Rievers (1961) as the type species (p. 16); only that fixation is held.
   evidence:
@@ -472,8 +389,11 @@
     taxon: ottawaensis_whiteaves_1897
     source: 1962_fay
   expected:
-    refusal: not-captured
-    coverageKind: illustrations
+    blocks:
+    - tool: gap
+      parameters: {source: 1962_fay, kind: illustrations}
+    shows:
+    - "The illustrations printed in Fay 1962 have not yet been entered"
     answer: |
       Not captured for Fay (1962): illustrations are known to be printed there but have not yet been entered. The paper carries plate 34, figs. 1–5, and text-figures 1–3 for Astrocystites ottawaensis.
   evidence:
@@ -484,13 +404,16 @@
     sec. 1.
 - id: q017
   class: uncaptured
-  question: What is the second sentence of Rievers's (1961) printed diagnosis for Pyrgocystis coronaeformis?
+  question: What diagnosis does Rievers (1961) print for Pyrgocystis coronaeformis?
   scope:
     taxon: coronaeformis_rievers_1961
     source: 1961_rievers
   expected:
-    refusal: not-captured
-    coverageKind: diagnoses
+    blocks:
+    - tool: gap
+      parameters: {source: 1961_rievers, kind: diagnoses}
+    shows:
+    - "The diagnoses printed in Rievers 1961 have not yet been entered"
     answer: |
       Not captured for Rievers (1961) beyond the first sentence: the printed diagnosis has two sentences, and only the first, on overall dimensions, has been entered. The second reads "Am oberen Ende trägt der Turm die kronenförmige Theka, von der sich, durch 5 Dreiecke gebildet, die Ambulacra abheben" (pp. 10–11).
   evidence:
@@ -509,8 +432,11 @@
     taxon: disterminus_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman_2017
     source: 2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman
   expected:
-    refusal: not-captured
-    coverageKind: material
+    blocks:
+    - tool: gap
+      parameters: {source: 2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman, kind: material}
+    shows:
+    - "The material printed in Briggs et al. 2017 has not yet been entered"
     answer: |
       Not captured for Briggs et al. (2017): the material printed there has not yet been entered. The paper cites holotype OUMNH C.36043 with paratypes and unground specimens (p. 2) for Heropyrgus disterminus.
   evidence:
@@ -526,8 +452,11 @@
     taxon: astrocystites
     source: 1962_fay
   expected:
-    refusal: not-captured
-    coverageKind: synonymy
+    blocks:
+    - tool: gap
+      parameters: {source: 1962_fay, kind: synonymy}
+    shows:
+    - "The synonymy printed in Fay 1962 has not yet been entered"
     answer: |
       Not captured for Fay (1962) beyond one entry: the synonymy printed there has not yet been entered in full. Fay lists Whiteaves 1897; Bather 1914, as Steganoblastus; Hudson 1917, 1925 and 1927; Bassler 1936; and Wilson 1946 (p. 201); of these only the usage as Steganoblastus is held, as a synonym of the genus, without author, year, page or plate.
   evidence:
@@ -543,8 +472,11 @@
     taxon: piojoensis_sumrall_heredia_rodríguez.c.m_mestre_2013
     source: 2013_sumrall_heredia_rodríguez.c.m_mestre
   expected:
-    refusal: not-captured
-    coverageKind: material
+    blocks:
+    - tool: gap
+      parameters: {source: 2013_sumrall_heredia_rodríguez.c.m_mestre, kind: material}
+    shows:
+    - "The material printed in Sumrall et al. 2013 has not yet been entered"
     answer: |
       Not captured for Sumrall, Heredia Rodríguez & Mestre (2013): the material printed there has not yet been entered. The paper gives holotype PIL 14656-H and paratypes PIL 14174–14872 for Rhenopyrgus piojoensis (pp. 774–775).
   evidence:
@@ -563,14 +495,16 @@
     taxon: edrioblastoidina
     source: 2020_ewin_martin.m_isotalo_zamora
   expected:
+    blocks:
+    - tool: printed_forms
+      parameters: {record: edrioblastoidina, source: 2020_ewin_martin.m_isotalo_zamora}
+    - tool: history
+      parameters: {record: edrioblastoidina}
+    shows:
+    - "Suborder Edrioblastoidina Fay, 1962"
+    - "class 1962–1982"
     answer: |
       Printed: "Suborder Edrioblastoidina Fay, 1962" (p. 118), a suborder in a header that runs class Edrioasteroidea, order Edrioasterida, suborder Edrioblastoidina, family Rhenopyrgidae. Fay (1962) erected the name as a class, "a new class of echinoderms, Edrio-blastoidea" (p. 201); Edrioblastoidina is that name translated to suborder rank, first printed as such by Guensburg & Sprinkle (1994), and Ewin et al. keep Fay's authorship on the translated form as the Code provides.
-    claims:
-    - kind: usage
-      source: 2020_ewin_martin.m_isotalo_zamora
-      subject: edrioblastoidina
-      printed:
-        citedAs: Suborder Edrioblastoidina Fay, 1962
   evidence:
     source: 2020_ewin_martin.m_isotalo_zamora
     pages: 118
@@ -585,14 +519,13 @@
     taxon: edrioasteridae
     source: 1978_bell.b.m_sprinkle
   expected:
+    blocks:
+    - tool: printed_forms
+      parameters: {record: edrioasteridae, source: 1978_bell.b.m_sprinkle}
+    shows:
+    - "Family Edrioasteridae Bell, 1976 [emend. herein]"
     answer: |
       "Family Edrioasteridae Bell, 1976 [emend. herein]" (p. 246), with "the order Edrioasterida as proposed by Bell (1976a)" in the discussion (p. 245); the family is elsewhere credited to Bather, 1899.
-    claims:
-    - kind: usage
-      source: 1978_bell.b.m_sprinkle
-      subject: edrioasteridae
-      printed:
-        citedAs: Family Edrioasteridae Bell, 1976 [emend. herein]
   evidence:
     source: 1978_bell.b.m_sprinkle
     pages:
@@ -608,6 +541,11 @@
     taxon: granulatus_hall_1871
     source: 1936_bassler
   expected:
+    blocks:
+    - tool: printed_forms
+      parameters: {record: granulatus_hall_1871, source: 1936_bassler}
+    shows:
+    - "C. (Hemicystites) granulatus (Hall)"
     answer: |
       "C. (Hemicystites) granulatus (Hall)" — the original genus name in
       parentheses between the current genus abbreviation and the species
@@ -615,15 +553,6 @@
       "CYSTASTER Hall, 1871 / The view of the genotype C. (Hemicystites)
       granulatus (Hall)..." (p. 4), and the plate 1 caption, "Cystaster
       (Hemicystites) granulatus Hall" (p. 25).
-    claims:
-    - kind: acceptance
-      source: 1936_bassler
-      subject: granulatus_hall_1871
-      printed:
-        citedAs: C. (Hemicystites) granulatus (Hall)
-      parents:
-      - cystaster-subgenus
-      - hemicystites
   evidence:
     source: 1936_bassler
     pages:
@@ -641,6 +570,14 @@
     taxon: rhenopyrgus-subgenus
     source: 1961_dehm
   expected:
+    blocks:
+    - tool: printed_forms
+      parameters: {record: rhenopyrgus-subgenus, source: 1961_dehm}
+    - tool: printed_forms
+      parameters: {record: coronaeformis_rievers_1961, source: 2013_sumrall_heredia_rodríguez.c.m_mestre}
+    shows:
+    - "Rhenopyrgus nov. subgen."
+    - "Pyrgocystis (Rhenopyrgus) coronaeformis Rievers, 1961"
     answer: |
       Dehm (1961) coins it as "Rhenopyrgus nov. subgen." within the phrase
       "eine eigene Untergattung, Rhenopyrgus nov. subgen." (p. 16), fixing
@@ -649,18 +586,6 @@
       later, print it with the standard parenthetical-subgenus convention:
       "Type species: Pyrgocystis (Rhenopyrgus) coronaeformis Rievers, 1961"
       (p. 773).
-    claims:
-    - kind: act
-      source: 1961_dehm
-      actKind: new
-      subject: rhenopyrgus-subgenus
-      printed:
-        citedAs: Rhenopyrgus nov. subgen.
-    - kind: acceptance
-      source: 2013_sumrall_heredia_rodríguez.c.m_mestre
-      subject: coronaeformis_rievers_1961
-      printed:
-        citedAs: Pyrgocystis (Rhenopyrgus) coronaeformis Rievers, 1961
   evidence:
   - source: 1961_dehm
     pages: 16
@@ -678,14 +603,13 @@
     taxon: stellatus_hall_1866
     source: 1936_bassler
   expected:
+    blocks:
+    - tool: printed_forms
+      parameters: {record: stellatus_hall_1866, source: 1936_bassler}
+    shows:
+    - "(Hall), 1856"
     answer: |
       "1856": "CINCINNATIDISCUS (HEMICYSTITES) STELLATUS (Hall), 1856" (p. 5). The species is elsewhere credited to Hall 1866, as it is in Bassler's own 1935 paper, and no printing of Hall's paper in the corpus is dated 1856; the year is given here exactly as Bassler printed it.
-    claims:
-    - kind: usage
-      source: 1936_bassler
-      subject: stellatus_hall_1866
-      printed:
-        citedAs: CINCINNATIDISCUS (HEMICYSTITES) STELLATUS (Hall), 1856
   evidence:
     source: 1936_bassler
     pages: 5
@@ -701,6 +625,11 @@
     taxon: ottawaensis_whiteaves_1897
     source: 1962_fay
   expected:
+    blocks:
+    - tool: statements
+      parameters: {record: ottawaensis_whiteaves_1897, source: 1962_fay, kind: material}
+    shows:
+    - "Canadian Geological Survey 752"
     answer: |
       "Holotype" and "syntype." The plate caption reads "Holotype, 752,
       Canadian Geological Survey" (p. 201); the body text reads "The
@@ -710,13 +639,6 @@
       this specimen disappeared." (p. 205). Fay calls the same specimen "the
       holotype" three times across the paper and "labelled a syntype" once;
       this is the paper's own contradiction, not an OCR artifact.
-    claims:
-    - kind: material
-      source: 1962_fay
-      subject: ottawaensis_whiteaves_1897
-      role: syntypes
-      ids:
-      - Canadian Geological Survey 752
   evidence:
   - source: 1962_fay
     pages: 201
@@ -733,19 +655,16 @@
     taxon: edrioasteridae
     source: 2015_sprinkle_sumrall
   expected:
+    blocks:
+    - tool: printed_forms
+      parameters: {record: edrioasterina, source: 2015_sprinkle_sumrall}
+    - tool: printed_forms
+      parameters: {record: edrioasteridae, source: 2015_sprinkle_sumrall}
+    shows:
+    - "Bather, 1898"
+    - "Bather, 1899"
     answer: |
       "Suborder Edrioasterina, Bather, 1898" and, four lines later, "Family Edrioasteridae Bather, 1899" (both p. 348): two years for two coordinate names from the same report of the 1898 British Association meeting, which was published in 1899. The paper prints both years in one header.
-    claims:
-    - kind: usage
-      source: 2015_sprinkle_sumrall
-      subject: edrioasterina
-      printed:
-        citedAs: Suborder Edrioasterina, Bather, 1898
-    - kind: usage
-      source: 2015_sprinkle_sumrall
-      subject: edrioasteridae
-      printed:
-        citedAs: Family Edrioasteridae Bather, 1899
   evidence:
     source: 2015_sprinkle_sumrall
     pages: 348
@@ -760,16 +679,11 @@
     taxon: rhenopyrginae
     source: 1994_guensburg_sprinkle
   expected:
-    claims:
-    - kind: act
-      source: 1994_guensburg_sprinkle
-      actKind: nomTransl
-      subject: rhenopyrginae
-      altRankOf: rhenopyrgidae
-    - kind: act
-      source: 1994_guensburg_sprinkle
-      actKind: emended
-      subject: rhenopyrginae
+    blocks:
+    - tool: contents
+      parameters: {source: 1994_guensburg_sprinkle, record: rhenopyrginae}
+    shows:
+    - "Subfamily Rhenopyrginae emend. nom. transl."
     answer: |
       "Subfamily RHENOPYRGINAE Holloway and Jell, 1983 (nomen transl.,
       emend.)" — derived, per the same passage, "ex ... their family
@@ -788,31 +702,13 @@
   scope:
     taxon: rhenopyrgidae
   expected:
-    claims:
-    - kind: placement
-      source: 1983_holloway_jell
-      subject: rhenopyrgidae
-      parent: edrioasteroidea-order-uncertain_holloway_jell_1983
-    - kind: placement
-      source: 1994_guensburg_sprinkle
-      subject: rhenopyrginae
-      parent: cyathocystidae
-    - kind: placement
-      source: 2000_grigo
-      subject: rhenopyrginae
-      parent: cyathocystidae
-    - kind: placement
-      source: 2013_sumrall_heredia_rodríguez.c.m_mestre
-      subject: rhenopyrgidae
-      parent: edrioblastoidina
-    - kind: placement
-      source: 2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman
-      subject: rhenopyrgidae
-      parent: edrioblastoidina
-    - kind: placement
-      source: 2020_ewin_martin.m_isotalo_zamora
-      subject: rhenopyrgidae
-      parent: edrioblastoidina
+    blocks:
+    - tool: placements
+      parameters: {records: [rhenopyrgidae]}
+    shows:
+    - Cyathocystidae
+    - Edrioblastoidina
+    - "Order uncertain"
     answer: |
       Three papers in the corpus hold the present position — family
       Rhenopyrgidae directly under suborder Edrioblastoidina — over 2013 to
@@ -849,40 +745,12 @@
   scope:
     taxon: rhenopyrgus
   expected:
-    claims:
-    - kind: act
-      source: 1961_dehm
-      actKind: new
-      subject: rhenopyrgus-subgenus
-    - kind: placement
-      source: 1961_dehm
-      subject: rhenopyrgus-subgenus
-      parent: pyrgocystis
-    - kind: placement
-      source: 1966_regnéll
-      subject: rhenopyrgus-subgenus
-      parent: pyrgocystis
-    - kind: placement
-      source: 1983_holloway_jell
-      subject: rhenopyrgus
-      parent: rhenopyrgidae
-    - kind: placement
-      source: 1994_guensburg_sprinkle
-      subject: rhenopyrgus
-      parent: rhenopyrginae
-    - kind: placement
-      source: 2000_grigo
-      subject: rhenopyrgus
-      parent: rhenopyrginae
-    - kind: placement
-      source: 2013_sumrall_heredia_rodríguez.c.m_mestre
-      subject: rhenopyrgus
-      parent: rhenopyrgidae
-    - kind: placement
-      source: 2020_ewin_martin.m_isotalo_zamora
-      subject: rhenopyrgus
-      parent: rhenopyrgidae
-      position: 0
+    blocks:
+    - tool: history
+      parameters: {record: rhenopyrgus}
+    shows:
+    - "genus since 1983"
+    - "subgenus 1961–1966"
     answer: |
       Proposed as a subgenus of Pyrgocystis by Dehm (1961) and kept so by
       Regnéll (1966), Rhenopyrgus has been treated as a genus by every paper
@@ -930,15 +798,14 @@
   scope:
     taxon: octogona_richter.r_1930
   expected:
-    claims:
-    - kind: usage
-      source: 1935_bassler
-      subject: octogona_richter.r_1930
-      form: taxon
-    - kind: usage
-      source: 1961_dehm
-      subject: octogona_richter.r_1930
-      form: taxon
+    blocks:
+      anyOf:
+      - - tool: placements
+          parameters: {records: [octogona_richter.r_1930]}
+      - - tool: history
+          parameters: {record: octogona_richter.r_1930}
+    shows:
+    - "Pyrgocystis octogona"
     answer: |
       Two papers with an actual placement in the corpus, both before 1962,
       keep the species in Pyrgocystis: Bassler (1935) and Dehm (1961), the
@@ -979,32 +846,13 @@
   scope:
     taxon: astrocystites
   expected:
-    claims:
-    - kind: placement
-      source: 1935_bassler
-      subject: astrocystites
-      parent: astrocystitidae
-    - kind: placement
-      source: 1935_bassler
-      subject: astrocystitidae
-      provisional: true
-      altPlacements: [blastoidea]
-    - kind: placement
-      source: 1936_bassler
-      subject: astrocystites
-      parent: protoblastoidea
-    - kind: act
-      source: 1962_fay
-      actKind: new
-      subject: edrioblastoidea
-    - kind: placement
-      source: 1990_smith.a.b_jell
-      subject: astrocystitidae
-      parent: edrioblastoida
-    - kind: placement
-      source: 1994_guensburg_sprinkle
-      subject: astrocystitidae
-      parent: edrioblastoidina
+    blocks:
+    - tool: ancestors
+      parameters: {records: [astrocystites]}
+    shows:
+    - Edrioblastoidea
+    - Protoblastoidea
+    - Edrioblastoidina
     answer: |
       Astrocystites has sat in five different higher groups in the corpus. Bassler (1935) keeps it in class Edrioasteroidea under the heading "POSITION UNCERTAIN" (p. 10), noting Blastoidea as an alternative; Bassler (1936) places it in order Protoblastoidea of class Blastoidea, on the sentence that such genera "might well be assigned to the Protoblastoidea, the first order of blastoids" (p. 23). Fay (1962) gives it a class of its own, Edrioblastoidea, with no order or family between (p. 201). Fay (1967) and Sprinkle (1982) interpose order Pentacystida within that class, under superclass Crinozoa and Echinozoa respectively; Webby (1968) and Mintz (1970) keep the class without an order. From Smith & Jell (1990) the genus is back in class Edrioasteroidea: in order Edrioblastoida for Smith & Jell (1990), Zhu, Zamora & Lefebvre (2014) and Jell & Sprinkle (2021), and in order Edrioasterida, suborder Edrioblastoidina, for Guensburg & Sprinkle (1994), Sprinkle & Sumrall (2015) and the rhenopyrgid papers of 2013–2020. The last paper to hold the class rank is Sprinkle (1982); the last to place the genus outside Edrioasteroidea, apart from Bassler (1936), is Sprinkle (1982) as well.
   evidence:
@@ -1031,6 +879,12 @@
   scope:
     taxon: edrioasteridae
   expected:
+    blocks:
+    - tool: printed_forms
+      parameters: {record: edrioasteridae}
+    shows:
+    - "Bather, 1899"
+    - "Bell, 1976"
     answer: |
       One paper in the corpus prints a year for family Edrioasteridae's
       attribution to Bather: Sprinkle & Sumrall (2015), citing "Bather, 1899"
@@ -1045,22 +899,6 @@
       Bell (1976a)" (p. 245). No paper in the corpus explains why 1898 and
       1899 both appear for the same 1899 British Association report, itself
       dated "for 1898."
-    claims:
-    - kind: usage
-      source: 2015_sprinkle_sumrall
-      subject: edrioasteridae
-      printed:
-        citedAs: Family Edrioasteridae Bather, 1899
-    - kind: usage
-      source: 2015_sprinkle_sumrall
-      subject: edrioasterina
-      printed:
-        citedAs: Suborder Edrioasterina, Bather, 1898
-    - kind: usage
-      source: 1978_bell.b.m_sprinkle
-      subject: edrioasteridae
-      printed:
-        citedAs: Family Edrioasteridae Bell, 1976 [emend. herein]
   evidence:
   - source: 2015_sprinkle_sumrall
     pages: 348
@@ -1075,12 +913,14 @@
   scope:
     taxon: cambraster
   expected:
-    claims:
-    - kind: usage
-      source: 1994_guensburg_sprinkle
-      subject: cambraster
-      printed:
-        citedAs: Cambraster Cabibel, Termier, and Termier, 1958
+    blocks:
+      anyOf:
+      - - tool: printed_forms
+          parameters: {record: cambraster}
+      - - tool: statements
+          parameters: {record: cambraster}
+    shows:
+    - "Cabibel, Termier, and Termier, 1958"
     answer: |
       Two papers in the corpus print an author and year for Cambraster,
       twenty-seven years apart, both crediting the same trio: Guensburg &
@@ -1112,17 +952,14 @@
   scope:
     taxon: isorophus
   expected:
-    claims:
-    - kind: usage
-      source: 1994_guensburg_sprinkle
-      subject: isorophus
-      printed:
-        citedAs: Isorophus Foerste, 1917
-    - kind: usage
-      source: 1994_guensburg_sprinkle
-      subject: carneyella
-      printed:
-        citedAs: Carneyella Foerste, 1917
+    blocks:
+    - tool: history
+      parameters: {record: isorophus}
+    - tool: history
+      parameters: {record: carneyella}
+    shows:
+    - "Isorophus Foerste 1916"
+    - "Carneyella Foerste 1916"
     answer: |
       One paper in the corpus prints a year for Isorophus and Carneyella: Guensburg & Sprinkle (1994), "Isorophus Foerste, 1917" and "Carneyella Foerste, 1917" (p. 42). Elsewhere in the corpus both genera are credited to Foerste, 1916. Sumrall & Zamora (2011) also print "Foerste, 1917" for Isorophus (p. 435), so the later year is not confined to one paper. No paper in the corpus says which year is right.
   evidence:
@@ -1139,24 +976,13 @@
   scope:
     taxon: edrioblastoidea
   expected:
-    claims:
-    - kind: act
-      source: 1962_fay
-      actKind: new
-      subject: edrioblastoidea
-    - kind: placement
-      source: 1990_smith.a.b_jell
-      subject: astrocystitidae
-      parent: edrioblastoida
-    - kind: act
-      source: 1994_guensburg_sprinkle
-      actKind: nomTransl
-      subject: edrioblastoidina
-    - kind: usage
-      source: 2020_ewin_martin.m_isotalo_zamora
-      subject: edrioblastoidina
-      printed:
-        citedAs: Suborder Edrioblastoidina Fay, 1962
+    blocks:
+    - tool: history
+      parameters: {record: edrioblastoidea}
+    shows:
+    - "order since 1990"
+    - "suborder 1994–2020"
+    - "class 1962–1982"
     answer: |
       Six papers in the corpus hold the latest-adopted rank, suborder
       Edrioblastoidina, from 1994 to 2020, from six distinct sets of
@@ -1196,8 +1022,14 @@
     taxon: astrocystites
     source: 1897_whiteaves
   expected:
-    refusal: not-captured
-    coverageKind: newTaxa
+    blocks:
+      anyOf:
+      - - tool: gap
+          parameters: {source: 1897_whiteaves, kind: types}
+      - - tool: gap
+          parameters: {source: 1897_whiteaves, kind: newTaxa}
+    shows:
+    - "Whiteaves 1897 is on record; its content has not yet been entered"
     answer: |
       Not captured for Whiteaves (1897): the paper is on record as the
       source of Astrocystites and of A. ottawaensis, but its content has
@@ -1216,7 +1048,11 @@
     taxon: flos_klug_krüger_korn_rücklin_schemm-gregory_debaets_mapes_2008
     source: 2008_klug_krüger_korn_rücklin_schemm-gregory_debaets_mapes
   expected:
-    refusal: absent
+    blocks:
+    - tool: gap
+      parameters: {source: "Klug et al. 2008"}
+    shows:
+    - "No source in the corpus mentions the source Klug"
     answer: |
       Nothing in this corpus holds that text. Klug et al. (2008) is only
       ever cited by later papers (Sumrall et al. 2013; Ewin et al. 2020) as
@@ -1230,11 +1066,15 @@
     (no 2008 Klug et al. entry)
 - id: q039
   class: absent
-  question: What placement does the record give for the genus Rhenoblastus among the edrioblastoids?
+  question: Which sources place the genus Rhenoblastus, and where?
   scope:
     taxon: rhenoblastus
   expected:
-    refusal: absent
+    blocks:
+    - tool: gap
+      parameters: {name: Rhenoblastus}
+    shows:
+    - "No source in the corpus mentions the name Rhenoblastus"
     answer: |
       There is no such genus in this corpus. "Rhenoblastus" does not occur
       anywhere in it — it is not a name the corpus knows, whether as a valid
@@ -1249,7 +1089,11 @@
     taxon: octogona_richter.r_1930
     source: 1930_richter.r
   expected:
-    refusal: absent
+    blocks:
+    - tool: gap
+      parameters: {source: 1930_richter.r}
+    shows:
+    - "Richter 1930 is on record; its content has not yet been entered"
     answer: |
       Not recoverable from this corpus. Richter's 1930 paper on Devonian
       scale-tube echinoderms is cited as octogona's authority, but the paper
@@ -1265,74 +1109,17 @@
     `authority.source` to 1930_richter.r with no tree behind it.
 - id: q041
   class: trajectory
-  question: Which papers in the corpus treat edrioblastoids, and what does each do to the group (erect,
-    emend, re-rank, move, add a genus)?
+  question: Which papers in the corpus treat edrioblastoids, and what does each do to the group?
   scope:
     taxon: edrioblastoidea
   expected:
-    claims:
-    - kind: act
-      source: 1900_bather
-      actKind: new
-      subject: steganoblastidae
-    - kind: act
-      source: 1935_bassler
-      actKind: new
-      subject: astrocystitidae
-    - kind: placement
-      source: 1936_bassler
-      subject: astrocystites
-      parent: protoblastoidea
-    - kind: act
-      source: 1962_fay
-      actKind: new
-      subject: edrioblastoidea
-    - kind: act
-      source: 1968_webby
-      actKind: new
-      subject: distans_webby_1968
-    - kind: act
-      source: 1983_holloway_jell
-      actKind: new
-      subject: rhenopyrgidae
-    - kind: act
-      source: 1990_smith.a.b_jell
-      actKind: new
-      subject: cambroblastus
-    - kind: act
-      source: 1994_guensburg_sprinkle
-      actKind: nomTransl
-      subject: edrioblastoidina
-      altRankOf: edrioblastoidea
-    - kind: act
-      source: 1994_guensburg_sprinkle
-      actKind: nomTransl
-      subject: rhenopyrginae
-      altRankOf: rhenopyrgidae
-    - kind: placement
-      source: 2000_grigo
-      subject: rhenopyrginae
-      parent: cyathocystidae
-    - kind: act
-      source: 2013_sumrall_heredia_rodríguez.c.m_mestre
-      actKind: emended
-      subject: rhenopyrgidae
-    - kind: act
-      source: 2015_sprinkle_sumrall
-      actKind: new
-      subject: porosublastus
-    - kind: act
-      source: 2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman
-      actKind: new
-      subject: heropyrgus
-    - kind: act
-      source: 2020_ewin_martin.m_isotalo_zamora
-      actKind: emended
-      subject: rhenopyrgidae
-    - kind: act
-      source: 2021_jell_sprinkle
-      actKind: new
-      subject: ikerus
+    blocks:
+    - tool: history
+      parameters: {record: edrioblastoidea}
+    shows:
+    - "named as new"
+    - "nomen translatum"
+    - "Smith & Jell"
     answer: |
       By year, across the papers in the corpus that treat the group (the Astrocystitidae and the Rhenopyrgidae together): Bather (1900) erects new family Steganoblastidae under class Edrioasteroidea. Bassler (1935) erects "new" family Astrocystitidae (his own correction of Steganoblastidae) under Edrioasteroidea, heading the section "position uncertain," and separately notes an alternative placement in Blastoidea. Bassler (1936), the following year, moves the genus into order Protoblastoidea under class Blastoidea instead. Rievers (1961) describes a new species, Pyrgocystis coronaeformis, with no family-level act; Dehm (1961) adds new subgenus Rhenopyrgus within Pyrgocystis for it. Fay (1962) erects new class Edrioblastoidea directly over genus Astrocystites, removing it from Edrioasteroidea. Regnéll (1966) keeps Rhenopyrgus at subgenus rank, now under family Hemicystitidae. Fay's Treatise entry (1967) nests class Edrioblastoidea, with an interposed order Pentacystida, under superclass Crinozoa. Webby (1968) adds new species Astrocystites distans and argues, citing Art. 40 of the Code, for retaining the family name Steganoblastidae over Astrocystitidae. Mintz (1970) keeps family Astrocystitidae directly under class Edrioblastoidea under Crinozoa, with no interposed order. Bell (1980) places genus Astrocystites in family Astrocystitidae under class Edrioblastoidea, as a separate entry from his own coverage of Pyrgocystis under Isorophida, with no further act. Sprinkle's 1982 entry in the same reference series keeps family Steganoblastidae under class Edrioblastoidea under superclass Echinozoa. Holloway & Jell (1983) erect new family Rhenopyrgidae, leaving its order "UNCERTAIN," and elevate Rhenopyrgus from subgenus to genus. Smith & Jell (1990) re-rank the group as order Edrioblastoida within class Edrioasteroidea and add new genus Cambroblastus to family Astrocystitidae. Guensburg & Sprinkle (1994) translate the class to suborder Edrioblastoidina within order Edrioasterida, add new genus Lampteroblastus, and re-rank Rhenopyrgidae down to subfamily Rhenopyrginae within an emended family Cyathocystidae. Grigo (2000) follows that 1994 placement, keeping Rhenopyrginae within Cyathocystidae, and adds a new species of Rhenopyrgus. Müller & Hahn (2010) list family Rhenopyrgidae with no genera assigned to it, and dispute in prose a move of Pyrgocystis octogona reported for Klug et al. (2008). Sumrall, Heredia Rodríguez & Mestre (2013) emend family Rhenopyrgidae and genus Rhenopyrgus, place the family directly under suborder Edrioblastoidina, and decline the Cyathocystidae placement; they add new species piojoensis. Zhu, Zamora & Lefebvre (2014) add new species Cambroblastus guolensis within order Edrioblastoida. Sprinkle & Sumrall (2015) add new genus Porosublastus to family Astrocystitidae under suborder Edrioblastoidina. Briggs, Siveter, Siveter, Sutton & Rahman (2017) add new genus Heropyrgus to family Rhenopyrgidae under suborder Edrioblastoidina. Ewin, Martin, Isotalo & Zamora (2020) emend family Rhenopyrgidae, broadening it to admit both fused and unfused ambulacral floor plates, and add new species viviani. Jell & Sprinkle (2021) add new genus Ikerus to order Edrioblastoida. By 2021, the group sits as class Edrioasteroidea > order or suborder Edrioblastoida(-ina) > families Astrocystitidae and Rhenopyrgidae, the two conventions for the middle rank running in parallel rather than one having replaced the other.
   evidence:
@@ -1381,47 +1168,13 @@
   scope:
     taxon: edrioblastoidea
   expected:
-    claims:
-    - kind: placement
-      source: 1994_guensburg_sprinkle
-      subject: astrocystites
-      parent: astrocystitidae
-    - kind: placement
-      source: 1994_guensburg_sprinkle
-      subject: cambroblastus
-      parent: astrocystitidae
-    - kind: placement
-      source: 1994_guensburg_sprinkle
-      subject: lampteroblastus
-      parent: astrocystitidae
-    - kind: placement
-      source: 2015_sprinkle_sumrall
-      subject: porosublastus
-      parent: astrocystitidae
-    - kind: placement
-      source: 2021_jell_sprinkle
-      subject: ikerus
-      parent: edrioblastoida
-    - kind: placement
-      source: 1994_guensburg_sprinkle
-      subject: rhenopyrgus
-      parent: rhenopyrginae
-    - kind: placement
-      source: 2000_grigo
-      subject: rhenopyrgus
-      parent: rhenopyrginae
-    - kind: placement
-      source: 2013_sumrall_heredia_rodríguez.c.m_mestre
-      subject: rhenopyrgus
-      parent: rhenopyrgidae
-    - kind: placement
-      source: 2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman
-      subject: heropyrgus
-      parent: rhenopyrgidae
-    - kind: placement
-      source: 1994_guensburg_sprinkle
-      subject: cyathocystis
-      parent: cyathocystinae
+    blocks:
+    - tool: descendants
+      parameters: {records: [edrioblastoidea]}
+    shows:
+    - Astrocystites
+    - Cambroblastus
+    - Steganoblastidae
     answer: |
       Taking the union across every source that nests a name under Edrioblastoidea, Edrioblastoida, Edrioblastoidina, Astrocystitidae or Steganoblastidae — plus Cyathocystidae and Rhenopyrginae wherever a source itself nests those under Edrioblastoidina — the genera on record are: Astrocystites (species ottawaensis, distans, and several open-nomenclature entries), Cambroblastus (enubilatus, guolensis), Lampteroblastus (hintzei), Porosublastus (inexpectus), Ikerus (edgari), Cyathocystis (no species under this particular nesting), Rhenopyrgus (coronaeformis, and, only in Ewin et al. 2020, which nests the family there: grayae, whitei, flos, piojoensis and viviani), and Heropyrgus (disterminus). Some of these placements are later abandoned by other sources. Astrocystites itself moves out of every edrioblastoid-labelled bin for one paper, Bassler (1936), which places it in order Protoblastoidea under class Blastoidea instead — a placement no later paper in the corpus repeats. The nesting of genus Cyathocystis and Rhenopyrgus (as subfamily Rhenopyrginae) inside family Cyathocystidae, held by Guensburg & Sprinkle (1994) and Grigo (2000), is abandoned by every paper in the corpus from Sumrall, Heredia Rodríguez & Mestre (2013) on, which instead place family Rhenopyrgidae directly under suborder Edrioblastoidina. And the group's standing as its own class outside Edrioasteroidea altogether — held from Fay (1962) through Sprinkle (1982) — is abandoned by every paper in the corpus from Smith & Jell (1990) on, which return it to class Edrioasteroidea as an internal order or suborder.
   evidence:
@@ -1449,49 +1202,12 @@
   scope:
     taxon: edrioblastoidea
   expected:
-    claims:
-    - kind: act
-      source: 1962_fay
-      actKind: new
-      subject: edrioblastoidea
-    - kind: placement
-      source: 1990_smith.a.b_jell
-      subject: astrocystitidae
-      parent: edrioblastoida
-    - kind: placement
-      source: 2014_zhu.x.j_zamora_lefebvre
-      subject: cambroblastus
-      parent: edrioblastoida
-    - kind: placement
-      source: 2021_jell_sprinkle
-      subject: ikerus
-      parent: edrioblastoida
-    - kind: act
-      source: 1994_guensburg_sprinkle
-      actKind: nomTransl
-      subject: edrioblastoidina
-      altRankOf: edrioblastoidea
-    - kind: placement
-      source: 2000_grigo
-      subject: cyathocystidae
-      parent: edrioblastoidina
-    - kind: placement
-      source: 2013_sumrall_heredia_rodríguez.c.m_mestre
-      subject: rhenopyrgidae
-      parent: edrioblastoidina
-    - kind: placement
-      source: 2015_sprinkle_sumrall
-      subject: astrocystitidae
-      parent: edrioblastoidina
-    - kind: placement
-      source: 2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman
-      subject: rhenopyrgidae
-      parent: edrioblastoidina
-    - kind: usage
-      source: 2020_ewin_martin.m_isotalo_zamora
-      subject: edrioblastoidina
-      printed:
-        citedAs: Suborder Edrioblastoidina Fay, 1962
+    blocks:
+    - tool: history
+      parameters: {record: edrioblastoidea}
+    shows:
+    - "co-author sets"
+    - "order since 1990"
     answer: |
       Fourteen papers in the corpus place the group at one of three ranks,
       with two conventions running in parallel from 1990 on rather than one
@@ -1545,43 +1261,12 @@
   scope:
     taxon: astrocystitidae
   expected:
-    claims:
-    - kind: act
-      source: 1900_bather
-      actKind: new
-      subject: steganoblastidae
-    - kind: act
-      source: 1935_bassler
-      actKind: new
-      subject: astrocystitidae
-    - kind: placement
-      source: 1968_webby
-      subject: astrocystites
-      parent: steganoblastidae
-    - kind: placement
-      source: 1982i_sprinkle
-      subject: astrocystites
-      parent: steganoblastidae
-    - kind: placement
-      source: 1967a_fay
-      subject: astrocystites
-      parent: astrocystitidae
-    - kind: placement
-      source: 1970_mintz
-      subject: astrocystites
-      parent: astrocystitidae
-    - kind: placement
-      source: 1990_smith.a.b_jell
-      subject: astrocystites
-      parent: astrocystitidae
-    - kind: placement
-      source: 1994_guensburg_sprinkle
-      subject: astrocystites
-      parent: astrocystitidae
-    - kind: placement
-      source: 2015_sprinkle_sumrall
-      subject: porosublastus
-      parent: astrocystitidae
+    blocks:
+    - tool: history
+      parameters: {record: astrocystites}
+    shows:
+    - "in Steganoblastidae"
+    - "in Astrocystitidae"
     answer: |
       Three papers in the corpus use Steganoblastidae: Bather (1900, erecting
       it new), Webby (1968), and Sprinkle (1982). Seven use Astrocystitidae: Bassler (1935, printed as a "new name"),
@@ -1628,40 +1313,14 @@
   scope:
     taxon: cyathocystidae
   expected:
-    claims:
-    - kind: act
-      source: 1994_guensburg_sprinkle
-      actKind: nomTransl
-      subject: rhenopyrginae
-      altRankOf: rhenopyrgidae
-    - kind: placement
-      source: 1994_guensburg_sprinkle
-      subject: rhenopyrginae
-      parent: cyathocystidae
-    - kind: placement
-      source: 2000_grigo
-      subject: rhenopyrginae
-      parent: cyathocystidae
-    - kind: act
-      source: 2013_sumrall_heredia_rodríguez.c.m_mestre
-      actKind: emended
-      subject: rhenopyrgidae
-    - kind: rejection
-      source: 2013_sumrall_heredia_rodríguez.c.m_mestre
-      subject: rhenopyrgidae
-      declinedParent: cyathocystidae
-    - kind: placement
-      source: 2013_sumrall_heredia_rodríguez.c.m_mestre
-      subject: rhenopyrgidae
-      parent: edrioblastoidina
-    - kind: placement
-      source: 2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman
-      subject: rhenopyrgidae
-      parent: edrioblastoidina
-    - kind: placement
-      source: 2020_ewin_martin.m_isotalo_zamora
-      subject: rhenopyrgidae
-      parent: edrioblastoidina
+    blocks:
+    - tool: placed_under
+      parameters: {record: rhenopyrgidae, parent: cyathocystidae}
+    - tool: placements
+      parameters: {records: [rhenopyrgidae]}
+    shows:
+    - "first Guensburg & Sprinkle 1994"
+    - "not Cyathocystidae"
     answer: |
       Guensburg & Sprinkle (1994) propose it, translating Holloway & Jell's
       family Rhenopyrgidae down to subfamily Rhenopyrginae inside their own
@@ -1694,113 +1353,6 @@
     any tree node (no claim kind records "source A rejects source B's placement, citing reason X") — the
     second paragraph of the answer above is drawn from the reviewed printed text, not from a placement
     or act claim.
-- id: q046
-  class: trajectory
-  question: Has any single author appeared in papers holding different ranks for the edrioblastoid group?
-  scope:
-    taxon: edrioblastoidea
-  expected:
-    claims:
-    - kind: placement
-      source: 1982i_sprinkle
-      subject: astrocystites
-      parent: steganoblastidae
-    - kind: act
-      source: 1994_guensburg_sprinkle
-      actKind: nomTransl
-      subject: edrioblastoidina
-    - kind: placement
-      source: 2015_sprinkle_sumrall
-      subject: astrocystitidae
-      parent: edrioblastoidina
-    - kind: placement
-      source: 2021_jell_sprinkle
-      subject: ikerus
-      parent: edrioblastoida
-    - kind: placement
-      source: 1990_smith.a.b_jell
-      subject: astrocystitidae
-      parent: edrioblastoida
-    answer: |
-      Yes. Sprinkle co-authors papers holding the group at all three ranks recorded in the corpus: class, in his 1982 entry on Astrocystites for the Bromide fauna volume; suborder, with Guensburg (1994) and again with Sumrall (2015); and order, with Jell (2021). Jell co-authors two papers, both at order rank: with Smith (1990) and with Sprinkle (2021). These are the positions of the papers; which of them any one co-author held personally is not something the papers state.
-  evidence:
-  - source: 1982i_sprinkle
-  - source: 1994_guensburg_sprinkle
-    pages: 12
-  - source: 2015_sprinkle_sumrall
-  - source: 2021_jell_sprinkle
-  - source: 1990_smith.a.b_jell
-  verified: sources.yaml author lists confirm sprinkle appears solo in 1982i_sprinkle, with guensburg
-    in 1994_guensburg_sprinkle, with sumrall in 2015_sprinkle_sumrall, and with jell in 2021_jell_sprinkle;
-    jell appears with smith.a.b in 1990_smith.a.b_jell and with sprinkle in 2021_jell_sprinkle. Rank per
-    source confirmed against the same trees cited in q043's verified line.
-- id: q047
-  class: trajectory
-  question: Which taxon in the edrioblastoid group has the most distinct placements across sources?
-  scope:
-    taxon: astrocystites
-  expected:
-    claims:
-    - kind: placement
-      source: 1935_bassler
-      subject: astrocystites
-      parent: astrocystitidae
-    - kind: placement
-      source: 1935_bassler
-      subject: astrocystitidae
-      provisional: true
-      altPlacements: [blastoidea]
-    - kind: placement
-      source: 1936_bassler
-      subject: astrocystites
-      parent: protoblastoidea
-    - kind: act
-      source: 1962_fay
-      actKind: new
-      subject: edrioblastoidea
-    - kind: placement
-      source: 1967a_fay
-      subject: astrocystites
-      parent: astrocystitidae
-    - kind: placement
-      source: 1994_guensburg_sprinkle
-      subject: astrocystitidae
-      parent: edrioblastoidina
-    answer: |
-      Astrocystites carries more distinct higher-level container taxa than
-      any other genus in this group: five, across six papers, 1935 to 1994.
-      Bassler (1935) places it in family Astrocystitidae under class
-      Edrioasteroidea, heading the section "POSITION UNCERTAIN" while
-      separately noting an alternative placement in Blastoidea. Bassler
-      (1936), the following year, instead places it in order Protoblastoidea
-      under class Blastoidea. Fay (1962) gives it an entirely new class of
-      its own, Edrioblastoidea, directly under the phylum. Fay's own Treatise
-      entry (1967) and Mintz (1970) keep Edrioblastoidea but nest that class
-      under superclass Crinozoa; Sprinkle's entry in the same reference
-      series (1982) nests it under superclass Echinozoa instead. From Smith &
-      Jell (1990) on, it returns to class Edrioasteroidea, as family
-      Astrocystitidae under order or suborder Edrioblastoida(-ina).
-
-      By comparison, Rhenopyrgus moves through four container groups over a
-      similar span (no family context at all in 1961; family Hemicystitidae
-      in 1966; an order left "UNCERTAIN" in 1983; subfamily-within-Cyathocystidae
-      in 1994 and 2000; and family Rhenopyrgidae directly under
-      Edrioblastoidina from 2013 on) — one fewer distinct container than
-      Astrocystites.
-  evidence:
-  - source: 1935_bassler
-    pages: 10
-  - source: 1936_bassler
-    pages: 23
-  - source: 1962_fay
-    pages: 201
-  verified: Parent taxa counted directly from data/trees/1935_bassler.yaml, 1936_bassler.yaml, 1962_fay.yaml,
-    1967a_fay.yaml, 1970_mintz.yaml, 1982i_sprinkle.yaml, 1990_smith.a.b_jell.yaml and 1994_guensburg_sprinkle.yaml
-    for astrocystites; data/trees/1961_dehm.yaml (no family node at all), 1966_regnéll.yaml (hemicystitidae),
-    1983_holloway_jell.yaml (order-uncertain placeholder), 1994_guensburg_sprinkle.yaml and 2000_grigo.yaml
-    (cyathocystidae), and 2013/2017/2020 trees (rhenopyrgidae under edrioblastoidina) for rhenopyrgus.
-    This comparison is scoped to genera within the edrioblastoid group covered by this gold slice, not
-    to every taxon in the full corpus.
 - id: q048
   class: trajectory
   question: What did Holloway & Jell (1983) say Dehm (1961) did with Pyrgocystis octogona, and what does
@@ -1808,11 +1360,19 @@
   scope:
     taxon: octogona_richter.r_1930
   expected:
-    claims:
-    - kind: usage
-      source: 1961_dehm
-      subject: octogona_richter.r_1930
-      form: taxon
+    blocks:
+      anyOf:
+      - - tool: history
+          parameters: {record: octogona_richter.r_1930}
+        - tool: gap
+          parameters: {source: 1983_holloway_jell, kind: synonymy}
+      - - tool: statements
+          parameters: {record: octogona_richter.r_1930}
+        - tool: gap
+          parameters: {source: 1983_holloway_jell, kind: synonymy}
+    shows:
+    - "Pyrgocystis octogona"
+    - "The synonymy printed in Holloway & Jell 1983 has not yet been entered"
     answer: |
       Two accounts that do not agree. Dehm's own paper keeps Pyrgocystis octogona in Pyrgocystis and does not move it into his new subgenus Rhenopyrgus; its entry ends in a comparison: "es [ist] erforderlich, diese Formen gesondert zu halten" ("it is necessary to keep these forms separate", p. 16). Holloway & Jell (1983) write of the same species that it "was assigned to Rhenopyrgus by Dehm (1961)" (p. 1004). Dehm's placement is held from his paper; Holloway & Jell's statement about Dehm is known only from their text and is not held as a placement of their own, and it does not match what Dehm printed.
   evidence:
@@ -1832,19 +1392,13 @@
   scope:
     taxon: rhenopyrgus
   expected:
-    claims:
-    - kind: placement
-      source: 1990_smith.a.b_jell
-      subject: rhenopyrgus
-      tree: cladogram
-    - kind: placement
-      source: 1994_guensburg_sprinkle
-      subject: rhenopyrgus
-      tree: cladogram
-    - kind: placement
-      source: 2013_sumrall_heredia_rodríguez.c.m_mestre
-      subject: rhenopyrgus
-      tree: cladogram
+    blocks:
+    - tool: placements
+      parameters: {records: [rhenopyrgus], trees: [cladogram]}
+    shows:
+    - "Smith & Jell 1990"
+    - "Guensburg & Sprinkle 1994"
+    - "Sumrall et al. 2013"
     answer: |
       Three papers in the corpus carry Rhenopyrgus in a cladogram, from
       three sets of co-authors: Smith & Jell (1990), Guensburg & Sprinkle

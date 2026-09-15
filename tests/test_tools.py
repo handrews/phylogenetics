@@ -1,8 +1,7 @@
 """The tools answer from the committed claim table.
 
-`statements` must hold, for every eval question with expected claims, a
-claim matching each selector; `source_coverage` must return the declared
-value a not-captured question relies on; the resolver must fold the
+`source_coverage` must return the declared value an uncaptured
+question's gap block relies on; the resolver must fold the
 typographical variation G10 names; `contents`, `history`, `gap` and the
 rest must render what the worked examples say. CI proves `claims/`
 current, so these tests read the committed files rather than
@@ -17,8 +16,6 @@ import yaml
 
 from phylohist.tools import ClaimStore
 
-from .selectors import matches
-
 QUESTIONS_PATH = (
   pathlib.Path(__file__).parent.parent / 'eval' / 'questions.yaml'
 )
@@ -30,11 +27,7 @@ pytestmark = pytest.mark.skipif(
   reason='the committed claim table covers data/ only',
 )
 
-WITH_CLAIMS = [q for q in QUESTIONS if (q.get('expected') or {}).get('claims')]
-NOT_CAPTURED = [
-  q for q in QUESTIONS
-  if (q.get('expected') or {}).get('refusal') == 'not-captured'
-]
+UNCAPTURED = [q for q in QUESTIONS if q['class'] == 'uncaptured']
 
 
 @pytest.fixture(scope='module')
@@ -42,24 +35,21 @@ def store():
   return ClaimStore()
 
 
-@pytest.mark.parametrize('question', WITH_CLAIMS, ids=[q['id'] for q in WITH_CLAIMS])
-def test_statements_answer(question, store):
-  for selector in question['expected']['claims']:
-    block = store.statements(selector['subject'], source=selector['source'], style='json')
-    found = [store.by_id[entry['claim']] for entry in block['entries']]
-    if not any(matches(selector, c) for c in found):
-      pytest.fail(f"{question['id']}: statements returned no match for {selector}")
-
-
-@pytest.mark.parametrize('question', NOT_CAPTURED, ids=[q['id'] for q in NOT_CAPTURED])
+@pytest.mark.parametrize('question', UNCAPTURED, ids=[q['id'] for q in UNCAPTURED])
 def test_source_coverage_backs_refusals(question, store):
-  coverage = store.source_coverage(question['scope']['source'])
-  assert coverage['known']
-  if not coverage['entered']:
-    return
-  kind = question['expected']['coverageKind']
-  declared = (coverage['audit'].get('coverage') or {}).get(kind)
-  assert declared in ('none', 'partly'), (question['id'], kind, declared)
+  # An uncaptured question expects a gap block; the source must declare
+  # that kind none or partly, or have no tree entered.
+  spec = question['expected']['blocks']
+  alternatives = spec['anyOf'] if isinstance(spec, dict) else [spec]
+  gaps = [b for alt in alternatives for b in alt if b['tool'] == 'gap' and b['parameters'].get('kind')]
+  assert gaps, question['id']
+  for gap in gaps:
+    coverage = store.source_coverage(gap['parameters']['source'])
+    assert coverage['known']
+    if not coverage['entered']:
+      continue
+    declared = (coverage['audit'].get('coverage') or {}).get(gap['parameters']['kind'])
+    assert declared in ('none', 'partly'), (question['id'], gap['parameters'], declared)
 
 
 def test_unentered_source(store):
@@ -389,8 +379,9 @@ def test_recombined_species_are_separate_rows(store):
   assert any(store.by_id[c]['kind'] == 'rejection' for c in cell['claims'])
   assert block['rows'][0]['cells'][1][0]['value'] == 'Family'
   assert store.gap(name='Rhenoblastus')['rendered'] == 'No source in the corpus mentions the name Rhenoblastus.'
+  assert store.gap('1983_holloway_jell', style='json')['parameters']['kind'] == 'skeleton'
   with pytest.raises(ValueError):
-    store.gap('1983_holloway_jell')
+    store.gap()
 
 
 def test_history_shows_the_name_as_used(store):

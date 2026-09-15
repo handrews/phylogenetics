@@ -323,7 +323,7 @@ blocks; the CLI (`phylohist <tool>`, `--style`), the MCP server
 | `source_coverage(key)` | the raw coverage view |
 
 `tests/test_tools.py`, `tests/test_closure.py`, `tests/test_blocks.py`
-and `tests/test_cli.py` check the selectors, the worked example of
+and `tests/test_cli.py` check the tools, the worked example of
 `notes/development/structured-answers.md`, the renderings and the subcommands.
 
 ## Worked examples
