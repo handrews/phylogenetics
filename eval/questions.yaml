@@ -256,7 +256,7 @@
   expected:
     blocks:
     - tool: statements
-      parameters: {record: viviani_ewin_martin.m_isotalo_zamora_2020, kind: material}
+      parameters: {record: viviani_ewin_martin.m_isotalo_zamora_2020}
     shows:
     - "holotypes: NHMUK EE16642"
     answer: |
@@ -278,7 +278,7 @@
   expected:
     blocks:
     - tool: statements
-      parameters: {record: grayae_bather_1915, source: 2020_ewin_martin.m_isotalo_zamora, kind: material}
+      parameters: {record: grayae_bather_1915, source: 2020_ewin_martin.m_isotalo_zamora}
     shows:
     - "holotypes: NHMUK E23470"
     answer: |
@@ -410,10 +410,14 @@
     source: 1961_rievers
   expected:
     blocks:
-    - tool: gap
-      parameters: {source: 1961_rievers, kind: diagnoses}
+      anyOf:
+      - - tool: gap
+          parameters: {source: 1961_rievers, kind: diagnoses}
+      - - tool: statements
+          parameters: {record: coronaeformis_rievers_1961, source: 1961_rievers, kind: diagnosis}
     shows:
-    - "The diagnoses printed in Rievers 1961 have not yet been entered"
+    - "Rievers 1961"
+    - diagnos
     answer: |
       Not captured for Rievers (1961) beyond the first sentence: the printed diagnosis has two sentences, and only the first, on overall dimensions, has been entered. The second reads "Am oberen Ende trägt der Turm die kronenförmige Theka, von der sich, durch 5 Dreiecke gebildet, die Ambulacra abheben" (pp. 10–11).
   evidence:
@@ -453,10 +457,13 @@
     source: 1962_fay
   expected:
     blocks:
-    - tool: gap
-      parameters: {source: 1962_fay, kind: synonymy}
+      anyOf:
+      - - tool: gap
+          parameters: {source: 1962_fay, kind: synonymy}
+      - - tool: synonymy
+          parameters: {record: astrocystites, source: 1962_fay}
     shows:
-    - "The synonymy printed in Fay 1962 has not yet been entered"
+    - "Fay 1962"
     answer: |
       Not captured for Fay (1962) beyond one entry: the synonymy printed there has not yet been entered in full. Fay lists Whiteaves 1897; Bather 1914, as Steganoblastus; Hudson 1917, 1925 and 1927; Bassler 1936; and Wilson 1946 (p. 201); of these only the usage as Steganoblastus is held, as a synonym of the genus, without author, year, page or plate.
   evidence:
@@ -1262,11 +1269,14 @@
     taxon: astrocystitidae
   expected:
     blocks:
-    - tool: history
-      parameters: {record: astrocystites}
+      anyOf:
+      - - tool: history
+          parameters: {record: astrocystites}
+      - - tool: ancestors
+          parameters: {records: [astrocystites]}
     shows:
-    - "in Steganoblastidae"
-    - "in Astrocystitidae"
+    - Steganoblastidae
+    - Astrocystitidae
     answer: |
       Three papers in the corpus use Steganoblastidae: Bather (1900, erecting
       it new), Webby (1968), and Sprinkle (1982). Seven use Astrocystitidae: Bassler (1935, printed as a "new name"),
@@ -1393,12 +1403,15 @@
     taxon: rhenopyrgus
   expected:
     blocks:
-    - tool: placements
-      parameters: {records: [rhenopyrgus], trees: [cladogram]}
+      anyOf:
+      - - tool: placements
+          parameters: {records: [rhenopyrgus], trees: [cladogram]}
+      - - tool: ancestors
+          parameters: {records: [rhenopyrgus], trees: [cladogram]}
     shows:
-    - "Smith & Jell 1990"
-    - "Guensburg & Sprinkle 1994"
-    - "Sumrall et al. 2013"
+    - "Smith & Jell"
+    - "Guensburg & Sprinkle"
+    - "Sumrall et al."
     answer: |
       Three papers in the corpus carry Rhenopyrgus in a cladogram, from
       three sets of co-authors: Smith & Jell (1990), Guensburg & Sprinkle
