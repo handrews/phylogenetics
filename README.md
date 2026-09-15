@@ -142,6 +142,23 @@ blocks.  It requires an Anthropic API key to be configured.
 
     poetry run python scripts/eval_run.py --ask "Who first placed Rhenopyrgus under Edrioblastoidina?"
 
+    Rhenopyrgus (including its subgenus rank variant) placed under Edrioblastoidina (= Edrioblastoidea); taxonomy tree, all years
+
+    Rhenopyrgus Dehm 1961 under Edrioblastoidina Fay 1962: 4 papers, 4 co-author sets, 1994–2020
+    first Guensburg & Sprinkle 1994, last Ewin et al. 2020
+
+    1994  Guensburg & Sprinkle  Cyathocystidae › Rhenopyrginae › Rhenopyrgus
+    2000  Grigo                 Cyathocystidae › Rhenopyrginae › Rhenopyrgus
+    2013  Sumrall et al.        Rhenopyrgidae › Rhenopyrgus
+    2020  Ewin et al.           Rhenopyrgidae › Rhenopyrgus
+
+    --- trail
+      resolve_name {"query": "Rhenopyrgus"} -> 2 candidate(s)
+      resolve_name {"query": "Edrioblastoidina"} -> 1 candidate(s)
+      placed_under {"record": "rhenopyrgus", "parent": "edrioblastoidina", "include_variants": true} -> 1 block(s)
+      header: Rhenopyrgus (including its subgenus rank variant) placed under Edrioblastoidina (= Edrioblastoidea); taxonomy tree, all years
+      21227+375 tokens, 6.9s, tool_use
+
 ## Install
 
 Python 3.10 or later and [Poetry](https://python-poetry.org/):
