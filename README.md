@@ -38,7 +38,7 @@ handle flexible querying beyond what fixed database queries can provide.
 Underneath it all, deterministic code ensures fast, repeatable, and
 accurate outcomes.
 
-This table shows the roles of humans (the top row), models (the middle)
+This diagram shows the roles of humans (the top row), models (the middle)
 and code.  The third column shows the expected typical interactive usage,
 where the model interprets the questions and chooses the tools to call and
 output shapes to render, but leaves the querying and output construction
