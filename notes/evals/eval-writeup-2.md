@@ -450,6 +450,64 @@ were composed whose evidence page is not rendered (q009, q012); the
 listing's heading now carries the page when the root has one, which
 covers q012.
 
+## The fourth run
+
+The run of 2026-09-14, later the same day
+(`eval/runs/2026-09-14b-claude-sonnet-5.*`): 47 questions under the
+rewritten eval, whose expected answers are shapes with parameters and
+the strings the rendered answer must show. The first run the grader
+scores on what a reader would see.
+
+| | third run | fourth run |
+|---|---|---|
+| questions | 49 | 47 |
+| lookups | 228 (median 3, max 16) | 215 (median 3, max 20) |
+| input tokens | 1.72 M | 1.62 M |
+| at the lookup limit | 3 | 3 |
+| source arguments the corpus could not resolve | 6 in 4 questions | 1 (Klug et al. 2008, which it lacks) |
+| free text beside the submission | 5 questions | 12 |
+| mechanical pass (free text set aside) | 26 (31) | 32 (41) |
+| judge contract, full marks | 1.82, 42 | 1.77, 38 |
+
+| class | n | pass | free text set aside |
+|---|---|---|---|
+| answerable | 12 | 8 | 11 |
+| as-published | 8 | 5 | 6 |
+| uncaptured | 9 | 7 | 8 |
+| absent | 3 | 3 | 3 |
+| trajectory | 15 | 9 | 13 |
+
+The third run re-graded by the new grader scores 35 of 47, so the two
+grades are comparable and the model did not change much between them;
+what changed is what is measured.
+
+**Routes are no longer failures.** q032, q036 and q043 pass on the
+group's history. Six expectations gained an alternative after this
+run, where the model's route was as good as the one written: the
+entered part of a diagnosis beside the gap for the rest (q017), the
+synonymy list beside the gap (q019), the chains beside the history
+(q044, q049), and the material statements without a kind filter (q010,
+q011). Those are recorded here because the run's grades were computed
+after the change.
+
+**What still fails on substance.** Five questions: q009 composed
+Grigo's listing without the occurrence gap ("from where"); q024 fetched
+Dehm's printed form but not Sumrall et al.'s citation of the type
+species; q028 composed the subfamily's history where the question asks
+for the exact printed heading, which only the listing shows; q035
+composed statements and chains for two genera whose attribution the
+history states in its heading; q048 did not compose the gap for
+Holloway & Jell's synonymy. All five are the model's choice of shape,
+not a tool's or the grader's.
+
+**Text beside the submission is now the main failure.** Twelve
+questions, nine failing for nothing else: "This confirms the answer
+with the contents block", "This single timeline block answers the
+question fully". The reader never sees it and the prompt forbids it;
+the habit is the model's, and it grew from five questions to twelve
+with no prompt change. A run that set it aside would pass 41 of 47.
+Whether to keep failing it is a contract decision, not a tooling one.
+
 ## What changes next, in order
 
 1. Source keys: citations accepted wherever a source is a parameter
@@ -459,10 +517,8 @@ covers q012.
    `gap(name=…)`). Closes §3.
 3. Tables carry every claim at a node and the placements cell marks a
    rejection (done 2026-09-13). Closes §4 except q010.
-4. Eval upkeep: selectors admitting either route for q036, q043, q046;
-   the family acts dropped or the questions reworded for q041, q044;
-   the excess acts dropped from q006, q010, q032; any kind accepted for
-   an unentered source (q037); q038 scoped to what the corpus can say.
+4. Eval upkeep (done 2026-09-14: expected answers are shapes with
+   parameters and shows strings; q046 and q047 dropped).
 5. Step 2, designed from the shapes above. What they say a plan must
    express: a resolution followed by one operation with parameters
    (34 of 49); a pair of operations over the same record (12); an
