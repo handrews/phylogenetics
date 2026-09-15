@@ -135,6 +135,22 @@ The CLI has one subcommand per tool:
     poetry run phylohist plan my-plan.yaml
     poetry run python scripts/eval_run.py --mode planner --ask "Who first placed Rhenopyrgus under Edrioblastoidina?"
 
+For example, what one paper places in a family, laid out as the paper
+prints it:
+
+    $ poetry run phylohist contents 1994_guensburg_sprinkle astrocystitidae
+    Guensburg & Sprinkle 1994
+      Family Astrocystitidae emend.
+        Genus Astrocystites
+        Genus Cambroblastus
+        Genus Lampteroblastus gen. nov.
+          Type species. Lampteroblastus hintzei
+          Lampteroblastus hintzei sp. nov.
+
+The emendation, the new genus and species, and the type species are the
+paper's own statements; nothing here is inferred, and a source whose
+listing is not yet entered says so instead.
+
 The same tools are served over MCP by
 `scripts/mcp_server.py`, which `.mcp.json` registers for Claude Code:
 a chat model can read blocks or state a plan and get the rendered answer.
