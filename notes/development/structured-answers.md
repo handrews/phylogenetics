@@ -4,7 +4,28 @@ Discussion notes, 2026-09-11, after the first eval run. Nothing here is
 decided; it is the owner's framing and the responses it prompted, kept
 so the next planning pass starts from it.
 
-## The owner's frame
+## The owner's prompt
+
+I have some thoughts, particularly regarding "Trajectories are told as history, not measured", gap-filling, and my earlier concern about too much content in notes in the draft trees, I have some philosophical thoughts that might help frame things.  Take all of this as a starting point; some of it might not even make sense in the context of AI-based tools.
+
+The overall frame: This is a project about structured, closed-world data.  The benefit AI brings for this work is _not_ the ability to synthesize narrative stories — it is the ability to make flexible, complex, multi-step and even iterative queries that would be infeasible to handle in SQL or even in a graph database.  But the desired results are more like the bits of data you'd get back from a SQL query, assembled coherently, rather than a conversational narrative.
+
+An example of what I mean by a complex multi-step query would be "under what higher taxa have edrioblastoids been placed across the entire corpus?"  This might involve steps similar to the following, many of which require judgements of what terms like "higher taxa" mean:
+
+1.  Figure out what taxa define "edrioblastoids" (anser: Edrioblastoidea, Edrioblastida, and Edrioblastoidina)
+2. Figure out what taxa have ever been placed under them: (Order Pentacystida; Families Astrocystitidae (with synonym Steganoblastidae), Cyathocystidae, and Rhenopyrgidae; Subfamilies Cyathocystinae and Rhenopyrginae; genera Astrocystites (with synonym Steganoblastus), Cambroblastus, Lampteroblastus, Porosublastus, Ikerus, Cyathocystis, Cyathotheca, Rhenopyrgus, Heropyrgus, and all of their species which I am not going to bother writing out
+3. Figure out what higher taxa any of these have been placed under, so not just Subphylum Echinozoa, Class Edrioasteroidea, or Order Edrioasterida, but also Blastoidea and Cystidea (or Cystoidea); Order Cyathocystida was at one point the parent of Cyathocystidae, and I don't recall if any of the species are old enough to have been assumed to be Crinoids... we're now beyond what I can easily keep track of in my head.
+4. Assemble all of this into a map of lower to higher taxa, ideally conveyed in a concise, even tabular form, rather than a wall of narrative text.
+
+That "rather than a wall of narrative text" might be where the challenge is.  I tend to write walls of narrative text myself, so I sympathize, but users rarely want that.  They want to get the essential information as efficienty as possible, and if there's not enough detail, they'd rather ask for more than have to wade through irrelevant detail up front.
+
+The AI's critical role is as a flexible data-finder and correlator.  
+
+I'm tempted to consider some answer templates, like the sort of tabular form I mentioned above, so that the AI just need to find the right things to fill out the template (which can be very challenging) but doesn't have too much leeway to fill in more things.  Mechanical code might even be able to validate that the values placed into the template all come from the corpus.
+
+My current CLI interface just prints ASCII trees with fairly minimal information.  I never added print features for things like synonyms, but doing so would be straightforward.  This more-or-less mimics the "Systematic Paleontology" sections in modern papers.  It only does this one thing, but it's completely reliable in doing it.  I want something close to that small-scale output reliability in the more complex frame of AI multi-step complexity.
+
+## The owner's frame (as interpreted by Claude Code)
 
 - This is a project about structured, closed-world data. What AI brings
   is not narrative synthesis but flexible, complex, multi-step, iterative
@@ -198,6 +219,10 @@ be read.
   once (the latest position by year, counts per position, co-author
   sets as units) so that every history answer carries the same
   measurement; the contract in `eval/README.md` already says what it is.
+
+## The owner's follow-up prompt
+
+Your "pushbacks" feel more like agreements to me.  I did not mean to imply that a fixed set of templates would be sufficient.  A planner that hands off to code in some way, plus some building block shapes for answers (which would include blocks like the systematic paleontology block that could be used on its own, or used several times e.g. to show competing theories, or perhaps extended by annotating relationships with how often they have occurred in publications over a given time range (by default the whole corpus), etc.  But AI's job on the output side is more about choosing and assembling/extending those shapes than converting the data into narrative.  Does that seem right and in agreement with what you are suggesting?  If so, what are the two steps you have in mind?
 
 ## Follow-up, 2026-09-12: building blocks, and two steps
 
