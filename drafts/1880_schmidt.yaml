@@ -1,0 +1,201 @@
+# DRAFT -- for human audit only, not ready to commit.
+#
+# RECORDS NEEDED:
+# - author `schmidt`: printed "Mag. Fr. Schmidt" (p. 1); no record in
+#   data/authors.yaml (the taxa records write `auth: [Schmidt]` as an
+#   unregistered string).
+# - source `1880_schmidt` (or `1879_schmidt`, see the review): Verhandlungen
+#   der Russisch-Kaiserlichen Mineralogischen Gesellschaft zu St. Petersburg,
+#   Zweite Serie, Fünfzehnter Band, pp. 1-7; the journal has no record in
+#   data/publications.yaml.
+# - taxa: cyathocystis, plautinae_schmidt_1879, rhizophora_schmidt_1889,
+#   edrioasteroidea, agelacrinus, edrioaster, hemicystis and cystaster all
+#   exist. This paper is the protologue of all three Cyathocystis names; the
+#   record rhizophora_schmidt_1889 carries a year this paper does not print.
+#   "Hemicystites (subgen. Cystaster) granulatus Hall" (p. 4) has no species
+#   record and is kept in notes, not entered as a node.
+
+notes: |
+  Article I of the volume, pp. 1-7, "Ueber Cyathocystis Plautinae, eine neue
+  Cystideenform aus Reval. Von Mag. Fr. Schmidt." (p. 1). The volume's title
+  page is dated 1880; its Protocolle section covers the Society's sittings of
+  1879 (contents page). The running foot of p. 1 reads "XV. 1".
+
+  The text is a single description in prose with no headings, no diagnosis
+  set apart and no "n. gen." notation; the two species are marked "n. sp."
+  only in the captions of Holzschnitt I (p. 2). Three woodcuts in the text:
+  Holzschnitt I (p. 2, figs. 1-4), II (p. 4, figs. 1-3), III (p. 6, figs. 1-4).
+
+taxonomies:
+- taxon: edrioasteroidea
+  citedAs: Edrioasteriden
+  auth: [Billings]
+  pages: [[1, 2]]
+  notes: |
+    Printed as a group, with no rank word: "In den obenerwähnten Fundstücken
+    erkannte ich bald eine neue Cystideenform aus der Verwandtschaft von
+    Agelacrinus Van. im weitern Sinn, oder eine neue Gattung aus der von
+    Billings aufgestellten Gruppe der Edrioasteriden ¹), zu der ausser
+    Agelacrinus Van. noch Edrioaster Bill., Hemicystis Hall und Cystaster
+    Hall gehören, und die nach ihm den Asteroiden näher als den Cystideen
+    verwandt ist." (pp. 1-2) -- "In the finds mentioned above I soon
+    recognised a new cystid form from the relationship of Agelacrinus Van.
+    in the wider sense, or a new genus from the group of the Edrioasterids
+    set up by Billings, to which besides Agelacrinus Van. also Edrioaster
+    Bill., Hemicystis Hall and Cystaster Hall belong, and which according to
+    him is more nearly related to the Asteroids than to the Cystids."
+    Footnote 1 (p. 1): "Billings, Canadian organic remains. Dec. III, p. 85."
+    The title calls the new form "eine neue Cystideenform" (p. 1).
+  children:
+  - taxon: agelacrinus
+    citedAs: Agelacrinus Van.
+    pages: [[1, 2]]
+    notes: The author's name is printed abbreviated, "Van." (pp. 1, 2).
+  - taxon: edrioaster
+    citedAs: Edrioaster Bill.
+    pages: 2
+    notes: The author's name is printed abbreviated, "Bill." (p. 2).
+  - taxon: hemicystis
+    citedAs: Hemicystis Hall
+    auth: [Hall]
+    pages: 2
+    notes: |
+      On p. 4 the same genus is printed "Hemicystites", with Cystaster as a
+      subgenus and a species, in a comparison of figures: "Die angeführten
+      Figuren gehören zu Hemicystites (subgen. Cystaster) granulatus Hall,
+      der eine gewisse Analogie mit unsrer Cyathocystis zeigt." (p. 4) --
+      "The figures cited belong to Hemicystites (subgen. Cystaster)
+      granulatus Hall, which shows a certain analogy with our Cyathocystis."
+      The figures cited are "Hall (report of New York state museum pl. VI
+      F. 1, 2, 3)" (p. 4). That combination is not entered as a node.
+  - taxon: cystaster
+    citedAs: Cystaster Hall
+    auth: [Hall]
+    pages: 2
+    notes: Listed as a member of the group beside Hemicystis (p. 2); see the note on hemicystis for p. 4.
+  - taxon: cyathocystis
+    new: true
+    citedAs: Cyathocystis
+    pages: [[1, 7]]
+    notes: |
+      "Ich nenne die Gattung Cyathocystis, nach ihrer becherartigen Form und
+      die Art C. Plautinae." (p. 2) -- "I name the genus Cyathocystis, after
+      its cup-like form, and the species C. Plautinae." No diagnosis is set
+      apart; the description runs pp. 2-5 for the first species and pp. 5-7
+      for the second. The character the author singles out for the genus:
+      "Die grösste Eigenthümlichkeit unsrer Cyathocystis, durch die sie sich
+      vor allen ihren Verwandten auszeichnet, bleibt der aus Einem Stück
+      bestehende solide Kelch, der auf andern Petrefakten (meist Chaetetiden)
+      parasitisch aufsitzt und auf ihnen durch kurze Haftwurzeln (F. II, 3)
+      befestigt ist." (p. 5) -- "The greatest peculiarity of our
+      Cyathocystis, by which it is distinguished from all its relatives,
+      remains the solid calyx consisting of one piece, which sits
+      parasitically on other fossils (mostly Chaetetids) and is fixed to them
+      by short holdfast roots." "Von regelmässigen Poren, wie bei den meisten
+      Cystideen, ist bei Cyathocystis Nichts zu sehn." (p. 3) -- "Of regular
+      pores, as in most Cystids, nothing is to be seen in Cyathocystis."
+    children:
+    - taxon: plautinae_schmidt_1879
+      new: true
+      type: true
+      citedAs: Cyathocystis Plautinae n. sp.
+      pages: [[1, 5], 7]
+      illustrations:
+      - page: 2
+        textFigures: [1, 2, 3]
+        notes: |
+          Holzschnitt I: "Fig. 1, 2. Cyathocystis Plautinae n. sp. von Reval,
+          nat. Gr. Fig. 3. Ein Deckel von Fig. 2, vergrössert: a, Ambulacren;
+          b, Interambulacralplatte; c, Mundplatte; d, Marginalplättchen; e,
+          Klappenpyramide." (p. 2)
+      - page: 4
+        textFigures: [1, 2, 3]
+        notes: |
+          Holzschnitt II: "Fig. 1. Ein Theil des andern Deckels von F. I, 2,
+          vergrössert. Die Pyramide ist ausgefallen, bei a sieht man die
+          innern Ambulacralplättchen (?). -- Fig. 2, 3. Kelche der
+          Cyathocystis Plautinae von Reval, ohne Deckel; bei a Verticalfugen
+          sichtbar, nat. gr." (p. 4)
+      specimens:
+        unknowntypes:
+        - the two specimens figured as Holzschnitt I figs. 1 and 2, from Frau Generalin Plautin, Reval
+        - the pieces figured as Holzschnitt II figs. 2 and 3, from the same collection
+      occurrences:
+      - unit: Echinosphaeritenschicht
+        location:
+        - Reval
+        notes: |
+          "Sie sind auf Callopora heterosolen Dyb. (Chaetetes heterosole
+          Keys.) aufgewachsen und gehören der jetzt von mir so genannten
+          Echinosphaeritenschicht (C₁) an, die die oberste Schicht des
+          Estländischen Glints bildet und dem ächten Vaginaten- oder
+          Orthocerenkalk (B) aufgelagert ist. Meine Echinosphaeritenschicht
+          entspricht grösstentheils dem Schwedischen Chasmopskalk." (p. 1)
+          -- "They are grown on Callopora heterosolen Dyb. (Chaetetes
+          heterosole Keys.) and belong to the Echinosphaerites bed (C₁),
+          which I now so name, which forms the uppermost bed of the
+          Estonian Glint and lies on the true Vaginaten- or Orthoceren
+          limestone (B). My Echinosphaerites bed corresponds for the most
+          part to the Swedish Chasmops limestone."
+      notes: |
+        Collected in summer 1878 by the family of Major-General S. A.
+        Plautin at Reval; the two figured specimens and the pieces of
+        Holzschnitt II 2, 3 came from the Generalin Plautin (p. 1). "der zu
+        Ehren wir auch unsre Cyathocystis Plautinae benannt haben" (p. 7) --
+        "in whose honour we have also named our Cyathocystis Plautinae." No
+        specimen number, repository or type word is printed; "Sämmtliche
+        Originalstücke gehn noch zu Prof. Lovén nach Stockholm, der sie bei
+        seiner grossen Arbeit über Cystideen benutzen wird." (p. 4) -- "All
+        the original pieces are still going to Prof. Lovén in Stockholm, who
+        will use them in his great work on Cystids."
+
+        The only type wording: "Die runzliche Epitheca ist eben so wie bei
+        der typischen Art vorhanden" (p. 7, of C. rhizophora) -- "The
+        wrinkled epitheca is present just as in the typical species."
+        "Type species" is not printed; `type` here rests on that phrase.
+    - taxon: rhizophora_schmidt_1889
+      new: true
+      citedAs: Cyathocystis rhizophora n. sp.
+      pages: [2, [5, 7]]
+      illustrations:
+      - page: 2
+        textFigures: [4]
+        notes: 'Holzschnitt I: "Fig. 4. Cyathocystis rhizophora n. sp. von Wassalem, nat. Gr." (p. 2)'
+      - page: 6
+        textFigures: [1, 2, 3, 4]
+        notes: |
+          Holzschnitt III: "Cyathocystis rhizophora von Wassalem. Alles nat.
+          Gr. Fig. 1. Ein Zwillingskelch mit deutlicher Epitheca. Fig. 2. Eine
+          Kelchbasis oben mit dem Grunde der Höhlung und unten mit breiten
+          Wurzelausläufern, bei a Löcher in d. Wand. Fig. 3. Ein gebogener
+          Kelch mit seitlichen Verticalfugen und knotigen Wachsthumsansätzen
+          auf den Kanten, a wie in vor. Fig. b, Verticalfuge. Fig. 4. Drei
+          zusammenhängende Kelche; bei 4 b Seitendurchschnitt, an dem der
+          durchgehende Kanal am Grunde sichtbar ist." (p. 6)
+      specimens:
+        unknowntypes:
+        - several specimens collected by the author in 1863 at Wassalem, mostly delivered to the Volborth collection, now belonging to the Academy of Sciences
+      occurrences:
+      - unit: Jewesche Schicht
+        subunit: Hemicosmitenkalk
+        location:
+        - Wassalem
+        notes: |
+          "aus dem Hemicosmitenkalk von Wassalem (in der Jeweschen Schicht
+          Estlands)" (p. 5); "aus dem Hemicosmitenkalk von Wassalem (der
+          obersten Stufe der Jeweschen Schicht angehörig)" (p. 7) -- "from
+          the Hemicosmites limestone of Wassalem (belonging to the uppermost
+          stage of the Jewe bed)". "Aehnliche Stücke wurden später auch bei
+          Reval gefunden und nicht genauer beachtet" (p. 7) -- "Similar
+          pieces were later also found near Reval and not examined more
+          closely"; which species those are is not said.
+      notes: |
+        "die wir C. rhizophora (F. III, 1-4 und F. I, 4) nennen nach der
+        stärkern Entwicklung ihres Wurzelapparats, mit dem sie auf allerhand
+        Korallen und Bryozoen festsitzt" (p. 5) -- "which we name C.
+        rhizophora after the stronger development of its root apparatus,
+        with which it sits fast on all kinds of corals and bryozoans." "die
+        bisher noch nie mit dem Deckel gefunden wurde" (p. 6) -- "which has so
+        far never been found with the lid." Known to the author "schon seit
+        längerer Zeit (seit 1863)" (p. 7). No year is printed for the name
+        beyond the volume's.
