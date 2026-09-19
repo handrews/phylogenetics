@@ -6,7 +6,12 @@ taxonomies:
     year: 1974
     citedAs: Bell, 1974
     editorial:
-      source: 1976_bell.b.m
+      errors: [auth, year]
+      corrections:
+        auth: null
+        year: null
+        authority:
+          source: 1976_bell.b.m
       basis: cited before publication; printed with the intended year
     notes: |
       1976_bell.b.m was originally expected to be published in 1974 and
@@ -44,7 +49,12 @@ taxonomies:
             year: 1974
             citedAs: Bell, 1974
             editorial:
-              source: 1976_bell.b.m
+              errors: [auth, year]
+              corrections:
+                auth: null
+                year: null
+                authority:
+                  source: 1976_bell.b.m
               basis: cited before publication; printed with the intended year
             notes: |
               1976_bell.b.m was originally expected to be published in 1974 and

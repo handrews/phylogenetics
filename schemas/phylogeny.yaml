@@ -447,34 +447,56 @@ $defs:
       editorial:
         description: |
           The editor's layer beside the printed fields, never a replacement
-          for them. `source` resolves a printed citation that cannot resolve
-          as printed (in press, wrong year, another printing) to a source
-          record while `auth`/`year`/`citedAs` stay as printed. `inferred`
+          for them. `errors` indicates fields believed to contain errors;
+          if present and the correct values are known, they are placed under
+          `corrections` and merging the `corrections` tree with the containing
+          node produces what is believed to be the correct data.  `inferred`
           marks a node whose existence or placement is the editor's, not the
-          source's, or names the fields that are, when the node is printed. Not for an alternative authority, year or spelling: the
-          true authority lives on the taxon record, a misspelling is an
-          `altSpellingOf` record, and a wrong printed attribution is kept as
-          printed with the disagreement derived.
+          source's, or names the fields that are, when the node is printed.
+          Not for an apparently-intentional change of spelling, which is
+          tracked as an `altSpellingOf` record.
         type: object
         additionalProperties: false
         required: [basis]
         anyOf:
-        - required: [source]
         - required: [inferred]
+        - required: [errors]
+        dependentRequire:
+          corrections: [errors]
         properties:
-          source:
-            $ref: "phylogeny#/$defs/sourceId"
           inferred:
-            $comment: |
+            description: |
               `true` when the node's existence or placement is the editor's;
               a list of field names when only those fields are inferred and
               the node itself is printed.
             type: [boolean, array]
             items:
               type: string
+          errors:
+            description: |
+              `true` when the entire node is erroneous in some way;
+              a list of field names with errors otherwise.
+            type: [boolean, array]
+            items:
+              type: string
+          corrections:
+            description: |
+              Corrected field values if known.  Applying this object to
+              the parent as if it were a JSON Merge-Patch document (and
+              deleting the error and correction blocks) ought to produce
+              the corrected record.
+            # TODO: Probably nest entire the parent object here, but with no
+            #       required fields? Recursively? This will do for now.
+            authority:
+              source:
+                $ref: "phylogeny#/$defs/sourceId"
+            additionalProperties: true
           basis:
+            description: |
+              Explains why the editorial block is present, with sufficient
+              information for a researcher to determine whether the inference
+              or error judgement is correct, or to look up relevant sources.
             type: string
-      # TODO: Something is off here, dup field?
       citedAs:
         description: |
           A bibliographic reference exactly as printed in the source being
