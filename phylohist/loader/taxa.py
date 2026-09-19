@@ -210,7 +210,7 @@ class Taxon:
 
     if alt_key := taxon_data.get('altSpellingOf'):
       if not (alt := Taxon.get(alt_key)):
-        logger.error(f'Taxon {taxon_key} alt spelling of unknown {alt_key}')
+        raise ValueError(f'Taxon {taxon_key} alt spelling of unknown {alt_key}')
       self._alt = alt
       self._rank = alt.rank
       if 'auth' in self._data or 'authority' in self._data:
