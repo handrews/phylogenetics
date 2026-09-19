@@ -42,6 +42,35 @@ COVERAGE_KINDS = (
 
 _TAXON_FIELDS = ('taxon', 'openTaxon', 'cfTaxon', 'affTaxon')
 _PRINTED_FIELDS = ('citedAs', 'auth', 'year', 'in')
+# The node fields a correction can touch that bear on attribution.
+_ATTRIBUTION_FIELDS = tuple(_PRINTED_FIELDS) + ('authority',)
+
+
+def merge_patch(target, patch):
+  """RFC 7396 JSON Merge Patch: an object patch merges member by member, a
+  null member deletes, anything else replaces."""
+  if not isinstance(patch, dict):
+    return patch
+  result = dict(target) if isinstance(target, dict) else {}
+  for key, value in patch.items():
+    if value is None:
+      result.pop(key, None)
+    else:
+      result[key] = merge_patch(result.get(key), value)
+  return result
+
+
+def corrected_node(data):
+  """The node as the editor reads it: its printed fields with the editorial
+  `corrections` merged in and the editorial block itself left out. None
+  when the block gives no corrections."""
+  editorial = data.get('editorial') or {}
+  if 'corrections' not in editorial:
+    return None
+  base = {k: v for k, v in data.items() if k != 'editorial'}
+  return merge_patch(base, editorial['corrections'])
+
+
 _PLACEMENT_FLAGS = (
   'provisional',
   'questionable',
@@ -207,8 +236,26 @@ class _NodeClaims:
     return claim
 
   def _printed(self, claim):
-    printed = {f: self.data[f] for f in _PRINTED_FIELDS if f in self.data}
-    authority = self.data.get('authority')
+    self._attribution(claim, self.data)
+    # The editor's layer: every attribution field the corrections touch is
+    # printed in error, and the corrected node gives the attribution the
+    # editor reads instead.
+    corrections = (self.data.get('editorial') or {}).get('corrections') or {}
+    # A key the node prints; a correction that adds a field corrects nothing printed.
+    in_error = [f for f in _ATTRIBUTION_FIELDS if f in corrections and f in self.data]
+    if in_error:
+      claim['printedErrors'] = in_error
+    corrected = corrected_node(self.data)
+    if in_error and corrected is not None:
+      view = {}
+      self._attribution(view, corrected)
+      changed = {k: v for k, v in view.items() if claim.get(k) != v}
+      if changed:
+        claim['corrected'] = changed
+
+  def _attribution(self, claim, data):
+    printed = {f: data[f] for f in _PRINTED_FIELDS if f in data}
+    authority = data.get('authority')
     if printed:
       claim['printed'] = printed
     if authority:
@@ -225,17 +272,22 @@ class _NodeClaims:
         ('pages', 'citedPages'),
         ('illustrations', 'citedIllustrations'),
       ):
-        if field in self.data:
-          claim[name] = self.data[field]
+        if field in data:
+          claim[name] = data[field]
     if not printed and not authority:
       claim['printedAttribution'] = 'as-record'
 
   def _emit(self, claim, field=None):
     # A claim the editorial block says was inferred is the editor's, not
     # the paper's; it says so, and the manifest does not count it.
-    inferred = (self.data.get('editorial') or {}).get('inferred')
+    editorial = self.data.get('editorial') or {}
+    inferred = editorial.get('inferred')
     if inferred is True or (isinstance(inferred, list) and field is not None and field in inferred):
       claim['inferred'] = True
+    # A claim from a field the corrections touch is printed in error; it
+    # stays the paper's and says so, and the corrections ride on the claim.
+    if field is not None and field in (editorial.get('corrections') or {}) and field in self.data:
+      claim['erroneous'] = True
     coverage_kind = _coverage_kind(claim)
     audit = {'state': self.audit.get('state', 'unaudited')}
     if coverage_kind is not None:
@@ -357,7 +409,7 @@ class _NodeClaims:
     if 'editorial' in data:
       claim = self._base('editorial')
       claim.update(
-        {k: v for k, v in data['editorial'].items() if k in ('inferred', 'source', 'basis')}
+        {k: v for k, v in data['editorial'].items() if k in ('inferred', 'corrections', 'basis')}
       )
       self._emit(claim)
 

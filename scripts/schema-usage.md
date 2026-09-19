@@ -279,7 +279,9 @@ property.
 | `editorial.inferred` | 4 | 66.7% |
 | `non` | 4 | 0.1% |
 | `or` | 3 | 0.0% |
-| `editorial.source` | 2 | 33.3% |
+| `editorial.corrections` | 2 | 33.3% |
+| `editorial.corrections.authority` | 2 | 100.0% |
+| `editorial.corrections.authority.source` | 2 | 100.0% |
 | `in` | 2 | 0.0% |
 | `removed` | 1 | 0.0% |
 | `stem` | 1 | 0.0% |

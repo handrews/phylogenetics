@@ -72,26 +72,33 @@ A tree node's own fields record what the source printed: the resolved
 the data editor did that the printed line does not establish, and `basis`
 says on what evidence. Two kinds:
 
-- `source: <key>`: the printed citation cannot resolve as printed (in press,
-  wrong year, a page from another printing) and the editor resolves it to
-  this source record. The printed `auth`/`year`/`citedAs` stay (A6).
+- `corrections`: a JSON Merge Patch over the node; every key it touches
+  is printed in error, and its value is what the editor reads instead (a
+  `null` deletes a printed field that is wrong with nothing known to put
+  in its place; an array such as `illustrations` is restated whole). A
+  citation that cannot resolve as printed (in press, wrong year, a page
+  from another printing) is the first case: the printed
+  `auth`/`year`/`citedAs` stay, and the corrections delete the two and set
+  `authority.source` to the record (A6).
 - `inferred: true`: the node's existence or placement is the editor's, not
   the source's (B20). When the node is printed but one of its fields is
   not, `inferred` names the fields instead: Fay 1962 prints *Astrocystites
   ottawaensis* but never "type species", so its node has
   `inferred: [type]`.
 
-What it is not for: an alternative authority, year or spelling. The name's
-true authority lives on the taxon record; a printed misspelling is an
-`altSpellingOf` record; a printed attribution that disagrees with the record
-is kept as printed and the disagreement is derived (B19), never stored.
+What it is not for: an apparently intentional change of spelling, which is
+an `altSpellingOf` record; nor the name's true authority, which lives on
+the taxon record. A printed attribution that merely disagrees with the
+record is kept as printed and the disagreement is derived (B19);
+`corrections` is for what the editor judges wrong on the page, with the
+evidence in `basis`.
 Bockelie 1981's "Balanticystis Ubaghs 1972" is the worked case: `auth`,
 `year`, `citedAs` as printed, identity through `balanticystis`
 (`altSpellingOf: balantiocystis`), the reading in `notes`, no `editorial`.
 
-Noted for later: an editor-verified marker for a discrepancy that is the
-source's own error, if the eval needs to separate verified from unverified
-ones. That would be a third kind, not a change to these two.
+`corrections` is that editor-verified marker for a discrepancy that is
+the source's own error, so verified and unverified discrepancies can be
+told apart.
 
 ## Terminology updates, 1966 → 2023
 

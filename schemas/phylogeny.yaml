@@ -447,34 +447,53 @@ $defs:
       editorial:
         description: |
           The editor's layer beside the printed fields, never a replacement
-          for them. `source` resolves a printed citation that cannot resolve
-          as printed (in press, wrong year, another printing) to a source
-          record while `auth`/`year`/`citedAs` stay as printed. `inferred`
-          marks a node whose existence or placement is the editor's, not the
-          source's, or names the fields that are, when the node is printed. Not for an alternative authority, year or spelling: the
-          true authority lives on the taxon record, a misspelling is an
-          `altSpellingOf` record, and a wrong printed attribution is kept as
-          printed with the disagreement derived.
+          for them. `corrections` says what the editor judges wrong on the
+          printed line and what to read instead: merging it into the node as
+          a JSON Merge Patch produces the corrected record, so every key it
+          touches is a field in error, however deep. `inferred` marks a node
+          whose existence or placement is the editor's, not the source's, or
+          names the fields that are, when the node is printed. Not for an
+          apparently-intentional change of spelling, which is tracked as an
+          `altSpellingOf` record.
         type: object
         additionalProperties: false
         required: [basis]
         anyOf:
-        - required: [source]
         - required: [inferred]
+        - required: [corrections]
         properties:
-          source:
-            $ref: "phylogeny#/$defs/sourceId"
           inferred:
-            $comment: |
+            description: |
               `true` when the node's existence or placement is the editor's;
               a list of field names when only those fields are inferred and
               the node itself is printed.
             type: [boolean, array]
             items:
               type: string
+          corrections:
+            description: |
+              A JSON Merge Patch (RFC 7396) over the node: applying it to the
+              node, with the editorial block left out, produces the record as
+              the editor reads it. A key set to null deletes a printed field
+              that is wrong with nothing known to put in its place; a nested
+              object corrects inside `authority` or another block; an array
+              (`illustrations`) is replaced whole, so restate it in full.
+            # TODO: Probably nest entire the parent object here, but with no
+            #       required fields? Recursively? This will do for now.
+            type: object
+            properties:
+              authority:
+                type: object
+                properties:
+                  source:
+                    $ref: "phylogeny#/$defs/sourceId"
+            additionalProperties: true
           basis:
+            description: |
+              Explains why the editorial block is present, with sufficient
+              information for a researcher to determine whether the inference
+              or error judgement is correct, or to look up relevant sources.
             type: string
-      # TODO: Something is off here, dup field?
       citedAs:
         description: |
           A bibliographic reference exactly as printed in the source being
