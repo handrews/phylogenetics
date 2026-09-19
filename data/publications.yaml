@@ -279,6 +279,10 @@ pworld:
   name: Palaeoworld
 p-z:
   name: Paläontologische Zeitschrift
+quart-jour-geol-soc:
+  name: Quarterly Journal of the Geological Society
+quibusdam:
+  name: De quibusdam animalibus marinis
 recherches:
   name: Recherches sur l'organisation des corps vivans
 reports-british-advancement:
@@ -287,14 +291,14 @@ regne-animal:
   name: Le règne animal distribué d'après son organisation
 regne-animal-2nd:
   name: Le règne animal distribué d'après son organisation, 2nd Ed.
+russisch-kaiserlichen:
+  name: |
+    Verhandlungen der Russisch-Kaiserlichen Mineralogischen Gesellschaft
+    zu St. Petersburg
 senckenbergiana:
   name: Senckenbergiana
 series-geol:
   name: Series in Geology, Notes for a Short Course
-quart-jour-geol-soc:
-  name: Quarterly Journal of the Geological Society
-quibusdam:
-  name: De quibusdam animalibus marinis
 silurian-system:
   name: The Silurian System
 science-new-series:
