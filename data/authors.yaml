@@ -809,6 +809,14 @@ schlotheim:
   given: Ernst Friedrich von
   birth: 1765
   death: 1832
+schmidt.c.f:
+  surname: Schmidt
+  given: Carl Friedrich
+  notes: |
+    Also known as Fyodor Bogdanovich Schmidt.
+    Credited as "Mag. Fr. Schmidt" in 1879_schmidt.c.f.
+  birth: 1832
+  death: 1908
 schuchert:
   surname: Schuchert
   given: Charles

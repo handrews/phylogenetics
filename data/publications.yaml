@@ -245,16 +245,20 @@ pworld:
   name: Palaeoworld
 p-z:
   name: Paläontologische Zeitschrift
+quart-jour-geol-soc:
+  name: Quarterly Journal of the Geological Society
 reports-british-advancement:
   name: Reports of the Meetings of the British Association for the Advancement of Science
 regne-animal:
   name: Le règne animal distribué d'après son organisation
+russisch-kaiserlichen:
+  name: |
+    Verhandlungen der Russisch-Kaiserlichen Mineralogischen Gesellschaft
+    zu St. Petersburg
 senckenbergiana:
   name: Senckenbergiana
 series-geol:
   name: Series in Geology, Notes for a Short Course
-quart-jour-geol-soc:
-  name: Quarterly Journal of the Geological Society
 silurian-system:
   name: The Silurian System
 science-new-series:

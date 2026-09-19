@@ -1228,11 +1228,11 @@
   authors:
   - dames
   notes: |
-    A Referat by W. Dames of Schmidt's paper in the Verhandlungen der
-    Mineralogischen Gesellschaft zu St. Petersburg, 1879, which is not on
-    hand; every statement here is Dames's account of Schmidt. The Heft's
-    issue date is not printed; the volume's closing notice is dated 15
-    October 1879. Later authors cite the genus as Schmidt 1879 and 1880.
+    A Referat by W. Dames of the pre-print of Schmidt's paper in the
+    Verhandlungen der Mineralogischen Gesellschaft zu St. Petersburg, 1879,
+    1879_schmidt.c.f.  Every statement here is Dames's account of Schmidt.
+    The Heft's issue date is not printed; the volume's closing notice is dated
+    15 October 1879.
 1879a_nicholson_lydekker:
   book: manual-2nd
   volume: I
@@ -1253,6 +1253,39 @@
   - lydekker
   identifiers:
     url: https://www.biodiversitylibrary.org/item/125070
+1879_schmidt.c.f:
+  title: "Ueber Cyathocystis Plautinae,eine neue Cystideenform aus Reval"
+  journal: russisch-kaiserlichen
+  series: 2
+  volume: 15
+  number: Adv. Pr.
+  pages:
+  - 1
+  - 7
+  pubDate:
+    year: 1879
+  authors:
+  - schmidt.c.f
+  notes: |
+    Pre-print of 1880_schmidt.c.f, and the more broadly cited authority
+    for Cyathocystis and C. plautinae.
+1880_schmidt.c.f:
+  title: "Ueber Cyathocystis Plautinae,eine neue Cystideenform aus Reval"
+  journal: russisch-kaiserlichen
+  series: 2
+  volume: 15
+  pages:
+  - 1
+  - 7
+  pubDate:
+    year: 1880
+  authors:
+  - schmidt.c.f
+  identifiers:
+    url: https://babel.hathitrust.org/cgi/pt?id=uc1.aa0007683360&seq=303
+  notes: |
+    Regular printing of 1879_schmidt.c.f, sometimes erroneously cited as
+    the authority for its contents.
 1887_billings.w.r:
   title: A new genus and three new species of crinoids from the Trenton Formation with notes on a large specimen of Dendrocrinus proboscidiatus
   journal: ottawa-naturalist
