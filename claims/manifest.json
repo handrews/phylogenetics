@@ -2805,6 +2805,25 @@
    "material": {},
    "tree": false
   },
+  "1872_nicholson": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Nicholson"
+    ],
+    "in": "A Manual of Paleontology for the Use of Students",
+    "title": null,
+    "year": 1872
+   },
+   "claims": {},
+   "derived": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1872a_hall_whitfield": {
    "acts": {},
    "audit": {
@@ -2914,6 +2933,48 @@
    "material": {},
    "tree": false
   },
+  "1879a_nicholson_lydekker": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Nicholson",
+     "Lydekker"
+    ],
+    "in": "A Manual of Paleontology for the Use of Students, 2nd Ed.",
+    "title": null,
+    "volume": "I",
+    "year": 1879
+   },
+   "claims": {},
+   "derived": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1879b_nicholson_lydekker": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Nicholson",
+     "Lydekker"
+    ],
+    "in": "A Manual of Paleontology for the Use of Students, 2nd Ed.",
+    "title": null,
+    "volume": "II",
+    "year": 1879
+   },
+   "claims": {},
+   "derived": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1887_billings.w.r": {
    "acts": {
     "new": 4,
@@ -2945,6 +3006,48 @@
    "inconsistencies": [],
    "material": {},
    "tree": true
+  },
+  "1889a_nicholson_lydekker": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Nicholson",
+     "Lydekker"
+    ],
+    "in": "A Manual of Paleontology for the Use of Students, 3rd Ed.",
+    "title": null,
+    "volume": "I",
+    "year": 1889
+   },
+   "claims": {},
+   "derived": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1889b_nicholson_lydekker": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Nicholson",
+     "Lydekker"
+    ],
+    "in": "A Manual of Paleontology for the Use of Students, 3rd Ed.",
+    "title": null,
+    "volume": "II",
+    "year": 1889
+   },
+   "claims": {},
+   "derived": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
   },
   "1891_bell.f.j": {
    "acts": {},

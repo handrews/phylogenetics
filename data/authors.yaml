@@ -558,6 +558,11 @@ luo.x.c:
 longman:
   surname: Longman
   given: H. A.
+lydekker:
+  surname: Lydekker
+  given: Richard
+  birth: 1849
+  death: 1915
 macleay:
   surname: Macleay
   given: William Sharp
@@ -671,6 +676,11 @@ neumayr:
   given: Melchior
   birth: 1845
   death: 1890
+nicholson:
+  surname: Nicholson
+  given: Henry Alleyne
+  birth: 1844
+  death: 1899
 nohejlová:
   surname: Nohejlová
   given: Martina

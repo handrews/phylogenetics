@@ -1208,6 +1208,14 @@
     transmitted: 1871-04-18
   authors:
   - hall
+1872_nicholson:
+  book: manual-1st
+  pubDate:
+    year: 1872
+  authors:
+  - nicholson
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/6241
 1879_dames:
   title: "Fr. Schmidt: Über Cyathocystis Plautinae (Referat)"
   journal: neues-jahrbuch
@@ -1225,6 +1233,26 @@
     hand; every statement here is Dames's account of Schmidt. The Heft's
     issue date is not printed; the volume's closing notice is dated 15
     October 1879. Later authors cite the genus as Schmidt 1879 and 1880.
+1879a_nicholson_lydekker:
+  book: manual-2nd
+  volume: I
+  pubDate:
+    year: 1879
+  authors:
+  - nicholson
+  - lydekker
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/125070
+1879b_nicholson_lydekker:
+  book: manual-2nd
+  volume: II
+  pubDate:
+    year: 1879
+  authors:
+  - nicholson
+  - lydekker
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/125070
 1887_billings.w.r:
   title: A new genus and three new species of crinoids from the Trenton Formation with notes on a large specimen of Dendrocrinus proboscidiatus
   journal: ottawa-naturalist
@@ -1236,6 +1264,26 @@
   - billings.w.r
   identifiers:
     url: https://www.biodiversitylibrary.org/page/30200108
+1889a_nicholson_lydekker:
+  book: manual-3rd
+  volume: I
+  pubDate:
+    year: 1889
+  authors:
+  - nicholson
+  - lydekker
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/125070
+1889b_nicholson_lydekker:
+  book: manual-3rd
+  volume: II
+  pubDate:
+    year: 1889
+  authors:
+  - nicholson
+  - lydekker
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/125070
 1891_bell.f.j:
   title: On the Arrangement and Inter-relations of the Classes of the Echinodermata
   journal: annals-and-mag
