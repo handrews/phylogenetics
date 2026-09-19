@@ -1,5 +1,7 @@
 # Review: 1880_schmidt (draft)
 
+**NOTE: the accessible source is the 1880 reprint.**
+
 Schmidt, Fr. "Ueber Cyathocystis Plautinae, eine neue Cystideenform aus
 Reval." *Verhandlungen der Russisch-Kaiserlichen Mineralogischen
 Gesellschaft zu St. Petersburg*, Zweite Serie, Fünfzehnter Band: 1–7, three
