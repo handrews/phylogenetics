@@ -40,8 +40,10 @@ def walk(node, taxa, authors, sources):
       if isinstance(value, str):
         sources.add(value)
     editorial = node.get('editorial')
-    if isinstance(editorial, dict) and isinstance(editorial.get('source'), str):
-      sources.add(editorial['source'])
+    if isinstance(editorial, dict):
+      corrected = (editorial.get('corrections') or {}).get('authority') or {}
+      if isinstance(corrected.get('source'), str):
+        sources.add(corrected['source'])
     for value in node.values():
       walk(value, taxa, authors, sources)
   elif isinstance(node, list):

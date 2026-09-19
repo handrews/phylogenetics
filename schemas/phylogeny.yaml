@@ -461,7 +461,7 @@ $defs:
         anyOf:
         - required: [inferred]
         - required: [errors]
-        dependentRequire:
+        dependentRequired:
           corrections: [errors]
         properties:
           inferred:
@@ -487,9 +487,13 @@ $defs:
               the corrected record.
             # TODO: Probably nest entire the parent object here, but with no
             #       required fields? Recursively? This will do for now.
-            authority:
-              source:
-                $ref: "phylogeny#/$defs/sourceId"
+            type: object
+            properties:
+              authority:
+                type: object
+                properties:
+                  source:
+                    $ref: "phylogeny#/$defs/sourceId"
             additionalProperties: true
           basis:
             description: |

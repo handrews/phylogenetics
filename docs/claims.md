@@ -31,6 +31,9 @@ Every claim carries:
 | `audit` | the source's `audit.state`; `coverageKind`, the coverage kind the claim counts under (`skeleton` for usage, rejection and a taxonomy placement, `phylogeny` for a placement in a phylogeny, `synonymy` for acceptance, `newTaxa`/`types` for the matching acts, `material`/`occurrences`/`illustrations` by material kind, `diagnoses`); and `coverage`, the declared value for that kind when the source declares one |
 | `editorial` | the node's `editorial` block, copied through |
 | `inferred` | `true` when the editorial block says the editor supplied the field this claim comes from (`inferred: true`, or a list naming it). The claim is then the editor's, not the paper's, and the manifest does not count it |
+| `erroneous` | `true` when the editorial block says the field this claim comes from is printed in error (`errors: true`, or a list naming it). The claim stays the paper's and is counted; what the editor reads instead is in `corrected` |
+| `printedErrors` | the printed attribution fields (`auth`, `year`, `in`, `citedAs`, `authority`) the editorial block names as errors |
+| `corrected` | the attribution as the editor reads it, when the editorial block gives `corrections`: the same keys as the printed attribution (`printed`, `citesSource`, `citedPages`, ...) for whichever differ. The corrections are a JSON Merge Patch over the node; only the attribution is derived here |
 | `notes` | the node's `notes`, copied through verbatim |
 
 A claim whose subject is a placeholder (an `openTaxon` key) carries
@@ -181,9 +184,13 @@ comparison feeds the citation-error part of the eval.
 
 The node's `editorial` block emitted as a claim of its own, so a question
 can ask whether a placement is the paper's or the editor's. Fields:
-`inferred` (`true`, or the list of inferred fields), `source` (the resolved
-source for a citation that cannot resolve as printed), `basis`. The claim
-it qualifies carries the same block, so both directions are answerable.
+`inferred` (`true`, or the list of inferred fields), `errors` (`true`, or
+the list of fields printed in error), `corrections` (a JSON Merge Patch
+over the node giving the values the editor reads instead; `null` deletes a
+printed field), `basis`. Bell 1975 cites "Bell, 1974" for a paper that
+appeared in 1976: `errors: [auth, year]` with corrections that delete the
+two and set `authority.source: 1976_bell.b.m`. The claim it qualifies
+carries the same block, so both directions are answerable.
 
 ## Derived coverage
 

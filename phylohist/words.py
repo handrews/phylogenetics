@@ -399,7 +399,8 @@ class Words:
     kind = claim['kind']
     if kind == 'usage':
       printed = (claim.get('printed') or {}).get('citedAs')
-      return f'cites the name as "{printed}"' if printed else 'cites the name'
+      words = f'cites the name as "{printed}"' if printed else 'cites the name'
+      return words + self.error_words(claim)
     if kind == 'placement':
       parent = claim.get('parent')
       where = self.display(parent) if parent else 'an unnamed group'
@@ -440,8 +441,25 @@ class Words:
     if kind == 'diagnosis':
       return 'diagnosis: ' + (claim.get('text') or '').strip().replace('\n', ' ')
     if kind == 'editorial':
-      return "editor's note: " + (claim.get('basis') or '').strip()
+      words = "editor's note: " + (claim.get('basis') or '').strip()
+      errors = claim.get('errors')
+      if errors:
+        named = 'the line' if errors is True else ', '.join(errors)
+        words = f'{named} printed in error; ' + words
+      return words
     return kind
+
+  def error_words(self, claim):
+    """The clause for a printed attribution the editor reads as wrong,
+    with the source the corrections resolve it to when they do."""
+    errors = claim.get('printedErrors')
+    if not errors:
+      return ''
+    words = f'printed {", ".join(errors)} in error'
+    source = (claim.get('corrected') or {}).get('citesSource')
+    if source and source in self.store.sources:
+      words += f'; read as {self.store.cite(source)}'
+    return f' ({words})'
 
   def scheme_lines(self, schemes):
     lines = []

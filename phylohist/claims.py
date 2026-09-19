@@ -42,6 +42,35 @@ COVERAGE_KINDS = (
 
 _TAXON_FIELDS = ('taxon', 'openTaxon', 'cfTaxon', 'affTaxon')
 _PRINTED_FIELDS = ('citedAs', 'auth', 'year', 'in')
+# The fields an editorial `errors` list can name that bear on attribution.
+_ATTRIBUTION_FIELDS = tuple(_PRINTED_FIELDS) + ('authority',)
+
+
+def merge_patch(target, patch):
+  """RFC 7396 JSON Merge Patch: an object patch merges member by member, a
+  null member deletes, anything else replaces."""
+  if not isinstance(patch, dict):
+    return patch
+  result = dict(target) if isinstance(target, dict) else {}
+  for key, value in patch.items():
+    if value is None:
+      result.pop(key, None)
+    else:
+      result[key] = merge_patch(result.get(key), value)
+  return result
+
+
+def corrected_node(data):
+  """The node as the editor reads it: its printed fields with the editorial
+  `corrections` merged in and the editorial block itself left out. None
+  when the block names no errors or gives no corrections."""
+  editorial = data.get('editorial') or {}
+  if not editorial.get('errors') or 'corrections' not in editorial:
+    return None
+  base = {k: v for k, v in data.items() if k != 'editorial'}
+  return merge_patch(base, editorial['corrections'])
+
+
 _PLACEMENT_FLAGS = (
   'provisional',
   'questionable',
@@ -207,8 +236,29 @@ class _NodeClaims:
     return claim
 
   def _printed(self, claim):
-    printed = {f: self.data[f] for f in _PRINTED_FIELDS if f in self.data}
-    authority = self.data.get('authority')
+    self._attribution(claim, self.data)
+    # The editor's layer: the printed attribution fields the editorial
+    # block says are wrong, and the attribution the corrections give.
+    editorial = self.data.get('editorial') or {}
+    errors = editorial.get('errors')
+    in_error = (
+      list(_ATTRIBUTION_FIELDS)
+      if errors is True
+      else [f for f in (errors or ()) if f in _ATTRIBUTION_FIELDS]
+    )
+    if in_error:
+      claim['printedErrors'] = in_error
+    corrected = corrected_node(self.data)
+    if in_error and corrected is not None:
+      view = {}
+      self._attribution(view, corrected)
+      changed = {k: v for k, v in view.items() if claim.get(k) != v}
+      if changed:
+        claim['corrected'] = changed
+
+  def _attribution(self, claim, data):
+    printed = {f: data[f] for f in _PRINTED_FIELDS if f in data}
+    authority = data.get('authority')
     if printed:
       claim['printed'] = printed
     if authority:
@@ -225,17 +275,23 @@ class _NodeClaims:
         ('pages', 'citedPages'),
         ('illustrations', 'citedIllustrations'),
       ):
-        if field in self.data:
-          claim[name] = self.data[field]
+        if field in data:
+          claim[name] = data[field]
     if not printed and not authority:
       claim['printedAttribution'] = 'as-record'
 
   def _emit(self, claim, field=None):
     # A claim the editorial block says was inferred is the editor's, not
     # the paper's; it says so, and the manifest does not count it.
-    inferred = (self.data.get('editorial') or {}).get('inferred')
+    editorial = self.data.get('editorial') or {}
+    inferred = editorial.get('inferred')
     if inferred is True or (isinstance(inferred, list) and field is not None and field in inferred):
       claim['inferred'] = True
+    # A claim from a field the editorial block says is in error stays the
+    # paper's, and says so; the corrections, when given, ride on the claim.
+    errors = editorial.get('errors')
+    if errors is True or (isinstance(errors, list) and field is not None and field in errors):
+      claim['erroneous'] = True
     coverage_kind = _coverage_kind(claim)
     audit = {'state': self.audit.get('state', 'unaudited')}
     if coverage_kind is not None:
@@ -357,7 +413,11 @@ class _NodeClaims:
     if 'editorial' in data:
       claim = self._base('editorial')
       claim.update(
-        {k: v for k, v in data['editorial'].items() if k in ('inferred', 'source', 'basis')}
+        {
+          k: v
+          for k, v in data['editorial'].items()
+          if k in ('inferred', 'errors', 'corrections', 'basis')
+        }
       )
       self._emit(claim)
 

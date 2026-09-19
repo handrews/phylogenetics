@@ -279,7 +279,10 @@ property.
 | `editorial.inferred` | 4 | 66.7% |
 | `non` | 4 | 0.1% |
 | `or` | 3 | 0.0% |
-| `editorial.source` | 2 | 33.3% |
+| `editorial.corrections` | 2 | 33.3% |
+| `editorial.corrections.authority` | 2 | 100.0% |
+| `editorial.corrections.authority.source` | 2 | 100.0% |
+| `editorial.errors` | 2 | 33.3% |
 | `in` | 2 | 0.0% |
 | `removed` | 1 | 0.0% |
 | `stem` | 1 | 0.0% |
@@ -499,6 +502,7 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/taxon/properties/holotype/additionalProperties/items` | array/string/integer | intx10, strx3 | `EE15373`, `EE 1659`, `E23470` | array |
 | `phylogeny#/$defs/taxon/properties/name` | string/null | strx2486, nullx196 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
 | `tree#/properties/diagnosis` | string/null | strx68, nullx1 | `A cast of it shows a con...`, `Body hemisphæric, slight...`, `A *Pyrgocystis* specimen...`, `Mouth surrounded and cov...` | - |
+| `tree#/properties/editorial/properties/errors` | boolean/array | listx2 | - | boolean |
 | `tree#/properties/editorial/properties/inferred` | boolean/array | listx2, boolx2 | - | - |
 | `tree#/properties/emended` | boolean/null | boolx53 | - | null |
 | `tree#/properties/matrix/items` | integer/string | intx139, strx5 | `?` | - |

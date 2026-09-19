@@ -22,7 +22,7 @@ import pytest
 import yaml
 
 from phylohist import plan
-from phylohist.claims import extract, manifest
+from phylohist.claims import corrected_node, extract, manifest, merge_patch
 from phylohist.evaluation import alternatives, normalise
 from phylohist.render import render_composition
 
@@ -74,3 +74,51 @@ def test_no_inconsistencies(claims):
       f'{len(rows)} sources declare coverage their claims contradict '
       f'(run scripts/claims.py --inconsistencies):\n{listing}',
     )
+
+
+def test_merge_patch_follows_rfc_7396():
+  target = {'a': 'b', 'c': {'d': 'e', 'f': 'g'}}
+  assert merge_patch(target, {'a': 'z', 'c': {'f': None}}) == {'a': 'z', 'c': {'d': 'e'}}
+  assert merge_patch({'a': [1, 2]}, {'a': {'x': 1}}) == {'a': {'x': 1}}
+  assert merge_patch({'a': 1}, 'text') == 'text'
+  assert merge_patch(None, {'a': None, 'b': 2}) == {'b': 2}
+  assert target == {'a': 'b', 'c': {'d': 'e', 'f': 'g'}}
+
+
+def test_corrected_node_applies_the_editorial_corrections():
+  data = {
+    'taxon': 'isorophida',
+    'auth': ['bell.b.m'],
+    'year': 1974,
+    'citedAs': 'Bell, 1974',
+    'editorial': {
+      'errors': ['auth', 'year'],
+      'corrections': {'auth': None, 'year': None, 'authority': {'source': '1976_bell.b.m'}},
+      'basis': 'cited before publication',
+    },
+  }
+  assert corrected_node(data) == {
+    'taxon': 'isorophida',
+    'citedAs': 'Bell, 1974',
+    'authority': {'source': '1976_bell.b.m'},
+  }
+  assert corrected_node({'taxon': 'x', 'editorial': {'inferred': True, 'basis': 'b'}}) is None
+
+
+def test_errors_and_corrections_reach_the_claims(claims):
+  # Bell 1975 cites "Bell, 1974" for the paper that appeared in 1976: the
+  # usage stays as printed, names its erroneous fields, and carries the
+  # attribution the editor reads instead.
+  by_id = {c['id']: c for c in claims['1975_bell.b.m']}
+  usage = by_id['1975_bell.b.m:0/children/0:usage']
+  assert usage['printed'] == {'auth': ['bell.b.m'], 'year': 1974, 'citedAs': 'Bell, 1974'}
+  assert usage['printedErrors'] == ['auth', 'year']
+  assert usage['corrected'] == {
+    'printed': {'citedAs': 'Bell, 1974'},
+    'citesSource': '1976_bell.b.m',
+  }
+  assert 'erroneous' not in usage
+  note = by_id['1975_bell.b.m:0/children/0:editorial']
+  assert note['errors'] == ['auth', 'year'] and note['corrections']['authority'] == {
+    'source': '1976_bell.b.m'
+  }
