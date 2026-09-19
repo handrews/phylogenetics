@@ -88,6 +88,12 @@ def _load_trees(data):
   roots = {}
   for ref_key, opinion in data['trees'].items():
     logger.debug(f'Processing opinions from "{ref_key}"')
+    if Source.get(ref_key) is None:
+      # A tree needs its source record: every node hashes by it. Skipped,
+      # not built half-way, so a draft without its record fails the load
+      # cleanly instead of crashing it.
+      logger.error(f'Tree file "{ref_key}" has no source record; its trees are skipped')
+      continue
     roots[ref_key] = []
 
     position = 0

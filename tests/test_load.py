@@ -123,3 +123,24 @@ def test_counting_errors_counts_only_errors():
     logging.getLogger('phylohist.loader.io').error('counted')
     logging.getLogger('phylohist.loader.research').error('counted too')
   assert errors.count == 2
+
+
+def test_tree_without_a_source_record_is_skipped(monkeypatch):
+  # A draft keyed by a source with no record used to crash the load in
+  # the tree's hashing; now it is one logged error and no tree.
+  import importlib
+
+  from phylohist.loader import LoadError, load
+
+  loading = importlib.import_module('phylohist.loader.load')
+
+  def orphan(drafts=False):
+    data = {k: {} for k in ('authors', 'publications', 'sources', 'taxa', 'time')}
+    data['trees'] = {'9999_nobody': {'taxonomies': [{'taxon': 'cyathocystis'}]}}
+    return data
+
+  monkeypatch.setattr(loading, 'load_files', orphan)
+  with pytest.raises(LoadError, match='1 integrity error'):
+    load()
+  _, roots = load(tolerate=True)
+  assert roots == {}

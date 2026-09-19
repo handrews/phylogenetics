@@ -210,7 +210,7 @@ class Taxon:
 
     if alt_key := taxon_data.get('altSpellingOf'):
       if not (alt := Taxon.get(alt_key)):
-        logger.error(f'Taxon {taxon_key} alt spelling of unknown {alt_key}')
+        raise ValueError(f'Taxon {taxon_key} alt spelling of unknown {alt_key}')
       self._alt = alt
       self._rank = alt.rank
       if 'auth' in self._data or 'authority' in self._data:
@@ -603,7 +603,7 @@ class Tree:
     if self._metadata:
       self._source = Source.get(self._metadata['source_key'])
       if self._source is None:
-        logger.error(f'Tree source {self._metadata["source_key"]} not reognized!')
+        logger.error(f'Tree source {self._metadata["source_key"]} not recognized!')
 
       self._type = self._metadata['type']
       if self._type not in Tree._type_index:
