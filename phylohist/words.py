@@ -442,10 +442,9 @@ class Words:
       return 'diagnosis: ' + (claim.get('text') or '').strip().replace('\n', ' ')
     if kind == 'editorial':
       words = "editor's note: " + (claim.get('basis') or '').strip()
-      errors = claim.get('errors')
-      if errors:
-        named = 'the line' if errors is True else ', '.join(errors)
-        words = f'{named} printed in error; ' + words
+      wrong = claim.get('printedErrors')
+      if wrong:
+        words = f'{", ".join(wrong)} printed in error; ' + words
       return words
     return kind
 

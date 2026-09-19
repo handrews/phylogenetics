@@ -6,7 +6,6 @@ taxonomies:
     year: 1974
     citedAs: Bell, 1974
     editorial:
-      errors: [auth, year]
       corrections:
         auth: null
         year: null
@@ -49,7 +48,6 @@ taxonomies:
             year: 1974
             citedAs: Bell, 1974
             editorial:
-              errors: [auth, year]
               corrections:
                 auth: null
                 year: null

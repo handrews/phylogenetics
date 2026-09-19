@@ -92,7 +92,6 @@ def test_corrected_node_applies_the_editorial_corrections():
     'year': 1974,
     'citedAs': 'Bell, 1974',
     'editorial': {
-      'errors': ['auth', 'year'],
       'corrections': {'auth': None, 'year': None, 'authority': {'source': '1976_bell.b.m'}},
       'basis': 'cited before publication',
     },
@@ -103,9 +102,14 @@ def test_corrected_node_applies_the_editorial_corrections():
     'authority': {'source': '1976_bell.b.m'},
   }
   assert corrected_node({'taxon': 'x', 'editorial': {'inferred': True, 'basis': 'b'}}) is None
+  # A null with nothing to put in its place: the printed field is dropped.
+  dropped = corrected_node(
+    {'taxon': 'x', 'pages': 12, 'editorial': {'corrections': {'pages': None}, 'basis': 'b'}}
+  )
+  assert dropped == {'taxon': 'x'}
 
 
-def test_errors_and_corrections_reach_the_claims(claims):
+def test_corrections_reach_the_claims(claims):
   # Bell 1975 cites "Bell, 1974" for the paper that appeared in 1976: the
   # usage stays as printed, names its erroneous fields, and carries the
   # attribution the editor reads instead.
@@ -119,6 +123,4 @@ def test_errors_and_corrections_reach_the_claims(claims):
   }
   assert 'erroneous' not in usage
   note = by_id['1975_bell.b.m:0/children/0:editorial']
-  assert note['errors'] == ['auth', 'year'] and note['corrections']['authority'] == {
-    'source': '1976_bell.b.m'
-  }
+  assert 'errors' not in note and note['corrections']['authority'] == {'source': '1976_bell.b.m'}

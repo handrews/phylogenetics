@@ -42,7 +42,7 @@ COVERAGE_KINDS = (
 
 _TAXON_FIELDS = ('taxon', 'openTaxon', 'cfTaxon', 'affTaxon')
 _PRINTED_FIELDS = ('citedAs', 'auth', 'year', 'in')
-# The fields an editorial `errors` list can name that bear on attribution.
+# The node fields a correction can touch that bear on attribution.
 _ATTRIBUTION_FIELDS = tuple(_PRINTED_FIELDS) + ('authority',)
 
 
@@ -63,9 +63,9 @@ def merge_patch(target, patch):
 def corrected_node(data):
   """The node as the editor reads it: its printed fields with the editorial
   `corrections` merged in and the editorial block itself left out. None
-  when the block names no errors or gives no corrections."""
+  when the block gives no corrections."""
   editorial = data.get('editorial') or {}
-  if not editorial.get('errors') or 'corrections' not in editorial:
+  if 'corrections' not in editorial:
     return None
   base = {k: v for k, v in data.items() if k != 'editorial'}
   return merge_patch(base, editorial['corrections'])
@@ -237,15 +237,12 @@ class _NodeClaims:
 
   def _printed(self, claim):
     self._attribution(claim, self.data)
-    # The editor's layer: the printed attribution fields the editorial
-    # block says are wrong, and the attribution the corrections give.
-    editorial = self.data.get('editorial') or {}
-    errors = editorial.get('errors')
-    in_error = (
-      list(_ATTRIBUTION_FIELDS)
-      if errors is True
-      else [f for f in (errors or ()) if f in _ATTRIBUTION_FIELDS]
-    )
+    # The editor's layer: every attribution field the corrections touch is
+    # printed in error, and the corrected node gives the attribution the
+    # editor reads instead.
+    corrections = (self.data.get('editorial') or {}).get('corrections') or {}
+    # A key the node prints; a correction that adds a field corrects nothing printed.
+    in_error = [f for f in _ATTRIBUTION_FIELDS if f in corrections and f in self.data]
     if in_error:
       claim['printedErrors'] = in_error
     corrected = corrected_node(self.data)
@@ -287,10 +284,9 @@ class _NodeClaims:
     inferred = editorial.get('inferred')
     if inferred is True or (isinstance(inferred, list) and field is not None and field in inferred):
       claim['inferred'] = True
-    # A claim from a field the editorial block says is in error stays the
-    # paper's, and says so; the corrections, when given, ride on the claim.
-    errors = editorial.get('errors')
-    if errors is True or (isinstance(errors, list) and field is not None and field in errors):
+    # A claim from a field the corrections touch is printed in error; it
+    # stays the paper's and says so, and the corrections ride on the claim.
+    if field is not None and field in (editorial.get('corrections') or {}) and field in self.data:
       claim['erroneous'] = True
     coverage_kind = _coverage_kind(claim)
     audit = {'state': self.audit.get('state', 'unaudited')}
@@ -413,11 +409,7 @@ class _NodeClaims:
     if 'editorial' in data:
       claim = self._base('editorial')
       claim.update(
-        {
-          k: v
-          for k, v in data['editorial'].items()
-          if k in ('inferred', 'errors', 'corrections', 'basis')
-        }
+        {k: v for k, v in data['editorial'].items() if k in ('inferred', 'corrections', 'basis')}
       )
       self._emit(claim)
 
