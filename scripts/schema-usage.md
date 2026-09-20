@@ -82,11 +82,11 @@ property.
 | `quotes` | 1 | 0.3% |
 | `reading` | 1 | 0.3% |
 
-### `authority` -- 1633 instances in `data/`
+### `authority` -- 1634 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `source` | 1633 | 100.0% |
+| `source` | 1634 | 100.0% |
 | `pages` | 62 | 3.8% |
 | `illustrations` | 28 | 1.7% |
 | `attributedTo` | 24 | 1.5% |
@@ -123,13 +123,13 @@ property.
 | `subunit` | 0 | 0.0% |
 | `superunit` | 0 | 0.0% |
 
-### `citationFields` -- 9071 instances in `data/`
+### `citationFields` -- 9069 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `authority` | 1631 | 18.0% |
-| `auth` | 1001 | 11.0% |
-| `year` | 999 | 11.0% |
+| `authority` | 1632 | 18.0% |
+| `auth` | 1000 | 11.0% |
+| `year` | 998 | 11.0% |
 | `rank` | 723 | 8.0% |
 | `pages` | 219 | 2.4% |
 | `illustrations` | 123 | 1.4% |
@@ -267,22 +267,22 @@ property.
 | `status` | 5 | 0.2% |
 | `designation` | 4 | 0.1% |
 
-### `taxonomyTree` -- 5556 instances in `data/`
+### `taxonomyTree` -- 5554 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
 | `children` | 1840 | 33.1% |
 | `new` | 1461 | 26.3% |
 | `type` | 368 | 6.6% |
-| `synonyms` | 362 | 6.5% |
+| `synonyms` | 361 | 6.5% |
 | `parents` | 313 | 5.6% |
 | `specimens` | 89 | 1.6% |
-| `emended` | 53 | 1.0% |
+| `emended` | 54 | 1.0% |
 | `moved` | 30 | 0.5% |
 | `occurrences` | 26 | 0.5% |
 | `modifier` | 22 | 0.4% |
 | `pars` | 19 | 0.3% |
-| `corrected` | 6 | 0.1% |
+| `corrected` | 5 | 0.1% |
 | `altPlacements` | 4 | 0.1% |
 | `non` | 4 | 0.1% |
 | `or` | 3 | 0.1% |
@@ -293,12 +293,12 @@ property.
 
 | property | data | data % |
 |---|---|---|
-| `taxon` | 5751 | 90.6% |
-| `notes` | 377 | 5.9% |
+| `taxon` | 5749 | 90.6% |
+| `notes` | 378 | 6.0% |
 | `openTaxon` | 219 | 3.4% |
 | `provisional` | 120 | 1.9% |
 | `diagnosis` | 69 | 1.1% |
-| `citedAs` | 44 | 0.7% |
+| `citedAs` | 51 | 0.8% |
 | `quoted` | 18 | 0.3% |
 | `tentative` | 17 | 0.3% |
 | `affTaxon` | 16 | 0.3% |
@@ -520,6 +520,6 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/specimens/additionalProperties/items` | string/array | strx516, listx4 | `F. 5420`, `F. 5419`, `F. 5418`, `F. 5417` | - |
 | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items` | array/string/integer | intx10, strx3 | `EE15373`, `EE 1659`, `E23470` | array |
 | `phylogeny#/$defs/taxonRecord/properties/name` | string/null | strx2486, nullx196 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
-| `phylogeny#/$defs/taxonomyTree/properties/emended` | boolean/null | boolx53 | - | null |
+| `phylogeny#/$defs/taxonomyTree/properties/emended` | boolean/null | boolx54 | - | null |
 | `phylogeny#/$defs/tree/properties/diagnosis` | string/null | strx68, nullx1 | `A cast of it shows a con...`, `Body hemisphæric, slight...`, `A *Pyrgocystis* specimen...`, `Mouth surrounded and cov...` | - |
 

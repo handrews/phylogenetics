@@ -13,7 +13,6 @@ blocks carry are `words.py`; the tool surface over the store is
 import collections
 import json
 import pathlib
-import re
 
 from . import blocks
 from .closure import TAXONOMY, Closure, in_years
@@ -79,6 +78,7 @@ class ClaimStore:
     with open(directory / 'names.json') as fd:
       self.names = json.load(fd)
     self.sources = self.manifest['sources']
+    self.authors = self.manifest.get('authors') or {}
 
     self.by_source = {}
     self.by_subject = collections.defaultdict(list)
@@ -185,13 +185,8 @@ class ClaimStore:
     if base.get('placeholder'):
       node['placeholder'] = base['placeholder']
     if flags.get('new'):
-      # As the source prints it when recorded, else the rank's abbreviation.
-      new_act = next((a for a in acts if a['actKind'] in ('new', 'placeholder')), None)
-      printed_new = ((new_act or {}).get('printed') or {}).get('citedAs')
-      if printed_new and node['name']:
-        # The printed form carries the name; the mark is what follows it.
-        printed_new = re.sub(re.escape(node['name']), '', printed_new, flags=re.I).strip() or None
-      node['newMark'] = printed_new or blocks.new_mark(rank_word)
+      # The rank's abbreviation; the printed heading is the printed_forms tool's.
+      node['newMark'] = blocks.new_mark(rank_word)
     label = self.words.display(key, source_key, path)
     if label and label != node['name']:
       node['label'] = label
@@ -222,11 +217,8 @@ class ClaimStore:
       cited = acceptance.get('citesSource')
       printed = acceptance.get('printed') or {}
       year = self.source_year(cited) if cited else printed.get('year')
-      cite = (
-        self.cite(cited)
-        if cited
-        else ' '.join([', '.join(printed['auth'])] if printed.get('auth') else []) or None
-      )
+      # A cited work with no record shows its attribution as printed, by field.
+      cite = self.cite(cited) if cited else self.words.attribution_words(printed) or None
       entries.append(
         blocks.list_entry(
           source=cited,
@@ -267,16 +259,14 @@ class ClaimStore:
       for child in self._children_paths(source_key, path):
         nodes += self._subtree(source_key, child, depth + 1, max_depth, synonymy)
     # The type species as its own line under the genus, as a Systematic
-    # Paleontology section prints it: the act's printed form when
-    # recorded, else the child's name in this source.
+    # Paleontology section prints it, named as this source combines it.
     for child_path in self._children_paths(source_key, path):
       for claim in self._node_claims(source_key, child_path):
         if claim['kind'] == 'act' and claim.get('actKind') == 'type':
-          printed = (claim.get('printed') or {}).get('citedAs')
           node['typeSpecies'] = {
             'key': claim['subject'],
             'claim': claim['id'],
-            'label': printed or self.words.display(claim['subject'], source_key, child_path),
+            'label': self.words.display(claim['subject'], source_key, child_path),
             'inferred': bool(claim.get('inferred')),
           }
           break

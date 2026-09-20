@@ -124,3 +124,8 @@ def test_corrections_reach_the_claims(claims):
   assert 'erroneous' not in usage
   note = by_id['1975_bell.b.m:0/children/0:editorial']
   assert 'errors' not in note and note['corrections']['authority'] == {'source': '1976_bell.b.m'}
+
+
+def test_manifest_carries_author_surnames(claims):
+  authors = manifest(claims)['authors']
+  assert authors['bell.b.m'] == 'Bell' and authors['bather'] == 'Bather'

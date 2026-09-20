@@ -13,7 +13,7 @@ Each block is one tool and its parameters. A record is a key from the resolver o
 
 | tool | answers | parameters |
 |---|---|---|
-| contents | what one source places under a record, laid out as the source prints it, with the type species and new names marked | source, record; depth; synonymy (true to add each name's synonymy); omit source for every source that places the record |
+| contents | what one source places under a record, laid out as a Systematic Paleontology section from the recorded ranks and acts, with the type species and new names marked | source, record; depth; synonymy (true to add each name's synonymy); omit source for every source that places the record |
 | placed_under | the sources that place a record under a higher taxon, in year order, with the taxa between; first and last stated | record, parent |
 | ancestors | each source's chain of taxa above the records, one line per source | records; trees, years |
 | descendants | everything any source has placed under the records, with how each was reached | records; include_synonyms, include_variants, trees, years |

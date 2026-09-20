@@ -939,11 +939,8 @@
     taxon: cambraster
   expected:
     blocks:
-      anyOf:
-      - - tool: printed_forms
-          parameters: {record: cambraster}
-      - - tool: statements
-          parameters: {record: cambraster}
+    - tool: printed_forms
+      parameters: {record: cambraster}
     shows:
     - "Cabibel, Termier, and Termier, 1958"
     answer: |

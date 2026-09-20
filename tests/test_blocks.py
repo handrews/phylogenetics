@@ -37,10 +37,18 @@ def test_classification_text_and_markdown(store):
 
 def test_provisional_and_placeholder_marks(store):
   bassler = store.contents('1935_bassler', 'astrocystitidae', style='json')[0]
+  # The marks come from the recorded acts, never from the printed heading.
   assert render.render(bassler, 'text').splitlines()[:2] == [
     'Bassler 1935',
     '  Family Astrocystitidae fam. nov. nom. correct.',
   ]
+  # The printed heading, several lines in the data, is the printed-forms
+  # tool's, on one line.
+  forms = store.printed_forms('astrocystitidae', source='Bassler 1935', style='json')
+  assert '\n' in forms['entries'][0]['printed']
+  assert render.render(forms, 'text').splitlines()[1] == (
+    '  1935 "Family ASTROCYSTITIDAE, new name (Steganoblastidac Bather)" Bassler 1935'
+  )
   holloway = store.contents('1983_holloway_jell', 'edrioasteroidea', depth=1, style='json')[0]
   lines = render.render(holloway, 'text').splitlines()
   assert lines[2] == '    Order uncertain'
