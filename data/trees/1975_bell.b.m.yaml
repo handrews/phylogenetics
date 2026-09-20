@@ -30,12 +30,20 @@ taxonomies:
             authority:
               source: 1880_schmidt.c.f
             citedAs: Schmidt, 1880
-            notes: |
-              Given as "Schmidt 1880" but 1879 is the pre-priont, and correct.
+            editorial:
+              corrections:
+                authority:
+                  source: 1879_schmidt.c.f
+              basis: |
+                The taxon is correctly attributed to the 1879 preprint.
           - taxon: rhizophora_schmidt.c.f_1879
             citedAs: Schmidt, 1880
-            notes: |
-              Given as "Schmidt 1880" but 1879 is the pre-priont, and correct.
+            editorial:
+              corrections:
+                authority:
+                  source: 1879_schmidt.c.f
+              basis: |
+                The taxon is correctly attributed to the 1879 preprint.
           - taxon: americanus_bassler_1936
           - taxon: oklahomae_strimple_graffham_1955
         - taxon: cyathotheca
