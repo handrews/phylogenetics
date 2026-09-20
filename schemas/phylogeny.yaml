@@ -32,7 +32,7 @@ $defs:
   taxa:
     type: object
     additionalProperties:
-      $ref: "#/$defs/taxon"
+      $ref: "#/$defs/taxonRecord"
   trees:
     type: object
     propertyNames:
@@ -46,7 +46,7 @@ $defs:
         taxonomies:
           type: array
           items:
-            $ref: "#/$defs/tree"
+            $ref: "#/$defs/taxonomyTree"
         phylogenies:
           type: array
           items:
@@ -54,7 +54,7 @@ $defs:
         assumptions:
           type: array
           items:
-            $ref: "#/$defs/tree"
+            $ref: "#/$defs/taxonomyTree"
         notes:
           type: string
   person:
@@ -314,8 +314,57 @@ $defs:
     - Plesion
     - Scion
     - Unranked
-  taxon:
+
+  citationFields:
+    properties:
+      rank:
+        $ref: "#/$defs/rank"
+      bracket:
+        ### TODO: Replace this property name
+        type: string
+
+      # AUTHORITY FIELDS
+      authority:
+        $ref: "#/$defs/authority"
+      auth:
+        type: array
+        items:
+          type: string
+      year:
+        $ref: "#/$defs/publicationYear"
+      in:
+        type: array
+        minItems: 1
+        items:
+          type: string
+
+      # SUPPORTING LOCATION FIELDS
+      pages:
+        $ref: "#/$defs/citationNumbers"
+      illustrations:
+        type: array
+        items:
+          $ref: "#/$defs/illustration"
+  cladisticFields:
+    properties:
+      matrix:
+        $comment: Character states; strings carry `?` for missing data.
+        type: array
+        items:
+          type: [integer, string]
+      outgroup:
+        type: boolean
+        default: false
+      data:
+        type: object
+        additionalProperties:
+          type: integer
+      bootstrap:
+        type: integer
+  taxonRecord:
     type: object
+    $ref: "#/$defs/citationFields"
+    unevaluatedProperties: false
     if:
       oneOf:
       - required: [auth]
@@ -327,7 +376,6 @@ $defs:
       - required: [altRankOf, rank]
       - required: [altSpellingOf, name]
       - required: [vulgarSpellingOf, name]
-    unevaluatedProperties: false
     properties:
       name:
         type: [string, "null"]
@@ -335,29 +383,13 @@ $defs:
       designation:
         description: |
           The phrase given in place of a name for taxa in open nomenclature
-      rank:
-        $ref: "#/$defs/rank"
-      authority:
-        $ref: "#/$defs/authority"
-      auth:
-        type: array
-        items:
-          type: string
-      year:
-        $ref: "#/$defs/publicationYear"
-      bracket:
-        ### TODO: Replace this property name
+      needsQualification:
+        type: boolean
+        default: false
+      originalParent:
         type: string
       status:
         type: string
-      originalParent:
-        type: string
-      modifier:
-        type: string
-      in:
-        type: array
-        items:
-          type: string
       altRankOf:
         type: string
       altSpellingOf:
@@ -368,7 +400,7 @@ $defs:
         type: string
         minLength: 2
         maxLength: 2
-      needsQualification:
+      homonym:
         type: boolean
         default: false
       holotype:
@@ -379,36 +411,42 @@ $defs:
             type: [array, string, integer]
             items:
               type: [string, integer]
-      homonym:
-        type: boolean
-        default: false
-      reason:
-        type: string
       notes:
         type: string
   tree:
-    $id: tree
     type: object
+    $ref: "#/$defs/citationFields"
     properties:
       mergeInto:
         type: array
         minItems: 2
         maxItems: 2
         prefixItems:
-        - $ref: "phylogeny#/$defs/sourceId"
+        - $ref: "#/$defs/sourceId"
         - type: integer
           minimum: 0
+
+      # IDENTIFICATION FIELDS
       taxon:
         type: string
-      type:
-        type: boolean
-        default: false
-      new:
-        type: boolean
-        default: false
-      pars:
-        type: boolean
-        default: false
+      affTaxon:
+        type: string
+      cfTaxon:
+        type: string
+      openTaxon:
+        type: string
+      citedAs:
+        description: |
+          A bibliographic reference exactly as printed in the source being
+          transcribed, including any errors or OCR artifacts.  Used for synonymy
+          lists, where the point is to record what that paper listed.  The
+          citation's own attribution goes in `authority` when the work has a
+          record in sources.yaml, or in `auth`/`year` when it does not.
+        type: string
+      diagnosis:
+        type: [string, "null"]
+
+      # UNCERTAINTY FIELDS
       provisional:
         $comment: The assignment to parent taxon is provisional
         type: boolean
@@ -421,171 +459,104 @@ $defs:
         $comment: For synonyms / non
         type: boolean
         default: false
-      plates:
-        $ref: "phylogeny#/$defs/multiRanges"
-      children:
-        type: array
-        items:
-          $ref: tree
-      bracket:
-        type: string
-      matrix:
-        $comment: Character states; strings carry `?` for missing data.
-        type: array
-        items:
-          type: [integer, string]
-      bootstrap:
-        type: integer
-      modifier:
-        type: string
-      occurrences:
-        type: array
-        items:
-          $ref: "phylogeny#/$defs/occurrence"
-      notes:
-        type: string
-      editorial:
-        description: |
-          The editor's layer beside the printed fields, never a replacement
-          for them. `corrections` says what the editor judges wrong on the
-          printed line and what to read instead: merging it into the node as
-          a JSON Merge Patch produces the corrected record, so every key it
-          touches is a field in error, however deep. `inferred` marks a node
-          whose existence or placement is the editor's, not the source's, or
-          names the fields that are, when the node is printed. Not for an
-          apparently-intentional change of spelling, which is tracked as an
-          `altSpellingOf` record.
-        type: object
-        additionalProperties: false
-        required: [basis]
-        anyOf:
-        - required: [inferred]
-        - required: [corrections]
-        properties:
-          inferred:
-            description: |
-              `true` when the node's existence or placement is the editor's;
-              a list of field names when only those fields are inferred and
-              the node itself is printed.
-            type: [boolean, array]
-            items:
-              type: string
-          corrections:
-            description: |
-              A JSON Merge Patch (RFC 7396) over the node: applying it to the
-              node, with the editorial block left out, produces the record as
-              the editor reads it. A key set to null deletes a printed field
-              that is wrong with nothing known to put in its place; a nested
-              object corrects inside `authority` or another block; an array
-              (`illustrations`) is replaced whole, so restate it in full.
-            # TODO: Probably nest entire the parent object here, but with no
-            #       required fields? Recursively? This will do for now.
-            type: object
-            properties:
-              authority:
-                type: object
-                properties:
-                  source:
-                    $ref: "phylogeny#/$defs/sourceId"
-            additionalProperties: true
-          basis:
-            description: |
-              Explains why the editorial block is present, with sufficient
-              information for a researcher to determine whether the inference
-              or error judgement is correct, or to look up relevant sources.
-            type: string
-      citedAs:
-        description: |
-          A bibliographic reference exactly as printed in the source being
-          transcribed, including any errors or OCR artifacts.  Used for synonymy
-          lists, where the point is to record what that paper listed.  The
-          citation's own attribution goes in `authority` when the work has a
-          record in sources.yaml, or in `auth`/`year` when it does not.
-        type: string
       quoted:
         type: boolean
         default: false
+
+      # META FIELDS
+      editorial:
+        $ref: "#/$defs/editorialObject"
+      notes:
+        type: string
+  taxonomyTree:
+    $ref: "#/$defs/tree"
+    unevaluatedProperties: false
+    properties:
+      # ACT AND MODIFIER FIELDS
+      type:
+        type: boolean
+        default: false
+      new:
+        type: boolean
+        default: false
+      pars:
+        type: boolean
+        default: false
+      modifier:
+        type: string
       stem:
         type: boolean
         default: false
-      pages:
-        $ref: "phylogeny#/$defs/citationNumbers"
-      illustrations:
-        type: array
-        items:
-          $ref: "phylogeny#/$defs/illustration"
-      specimens:
-        $ref: "phylogeny#/$defs/specimens"
-      diagnosis:
-        type: [string, "null"]
       emended:
         type: [boolean,"null"]
         default: null
+
+      # RELATIONAL FIELDS
+      children:
+        type: array
+        items:
+          $ref: "#/$defs/taxonomyTree"
       parents:
         type: array
         items:
-          $ref: tree
+          $ref: "#/$defs/taxonomyTree"
       synonyms:
         type: array
         items:
-          $ref: tree
-      removed:
-        type: array
-        items:
-          $ref: tree
+          $ref: "#/$defs/taxonomyTree"
       non:
         type: array
         items:
-          $ref: tree
-      moved:
-        $ref: tree
-      corrected:
-        $ref: tree
+          $ref: "#/$defs/taxonomyTree"
       or:
         type: array
         items:
-          $ref: tree
-      affTaxon:
-        type: string
-      cfTaxon:
-        type: string
-      openTaxon:
-        type: string
+          $ref: "#/$defs/taxonomyTree"
       altPlacements:
         type: array
         items:
-          $ref: tree
-      rank:
-        $ref: "phylogeny#/$defs/rank"
-      auth:
-        $comment: overrides taxon field
-        type: array
-        minItems: 1
-        items:
-          type: string
-      in:
-        $comment: overrides taxon field
-        type: array
-        minItems: 1
-        items:
-          type: string
-      year:
-        $comment: overrides taxon field
-        $ref: "phylogeny#/$defs/publicationYear"
-      authority:
-        $ref: "phylogeny#/$defs/authority"
-      outgroup:
-        type: boolean
-        default: false
-      data:
-        type: object
-        additionalProperties:
-          type: integer
-      categories:
+          $ref: "#/$defs/taxonomyTree"
+      removed:
         type: array
         items:
-          type: string
+          $ref: "#/$defs/taxonomyTree"
+      moved:
+        $ref: "#/$defs/taxonomyTree"
+      corrected:
+        $ref: "#/$defs/taxonomyTree"
+
+      # MATERIALS FIELDS
+      occurrences:
+        type: array
+        items:
+          $ref: "#/$defs/occurrence"
+      specimens:
+        $ref: "#/$defs/specimens"
+
+  phylogenyTree:
     unevaluatedProperties: false
+    allOf:
+    - $ref: "#/$defs/tree"
+    - $ref: "#/$defs/cladisticFields"
+    $comment: |
+      Duplicated relational properties because there doesn't seem to be
+      a python JSON Schema implementation that both supports annotations
+      and has a fast $dynamicRef implementation.
+      Additional relational fields are absent by design as they are
+      taxonomy-specific.
+    properties:
+      children:
+        type: array
+        items:
+          $ref: "#/$defs/phylogenyTree"
+      parents:
+        type: array
+        items:
+          $ref: "#/$defs/phylogenyTree"
+      altPlacements:
+        type: array
+        items:
+          $ref: "#/$defs/phylogenyTree"
   phylogeny:
     type: object
     required: [tree, treeType]
@@ -599,7 +570,7 @@ $defs:
         - diagram
         - other
       tree:
-        $ref: tree
+        $ref: "#/$defs/phylogenyTree"
       notes:
         type: string
       methodology:
@@ -754,6 +725,56 @@ $defs:
             type: [string, array]
             items:
               type: string
+  editorialObject:
+    description: |
+      The editor's layer beside the printed fields, never a replacement
+      for them. `corrections` says what the editor judges wrong on the
+      printed line and what to read instead: merging it into the node as
+      a JSON Merge Patch produces the corrected record, so every key it
+      touches is a field in error, however deep. `inferred` marks a node
+      whose existence or placement is the editor's, not the source's, or
+      names the fields that are, when the node is printed. Not for an
+      apparently-intentional change of spelling, which is tracked as an
+      `altSpellingOf` record.
+    type: object
+    additionalProperties: false
+    required: [basis]
+    anyOf:
+    - required: [inferred]
+    - required: [corrections]
+    properties:
+      inferred:
+        description: |
+          `true` when the node's existence or placement is the editor's;
+          a list of field names when only those fields are inferred and
+          the node itself is printed.
+        type: [boolean, array]
+        items:
+          type: string
+      corrections:
+        description: |
+          A JSON Merge Patch (RFC 7396) over the node: applying it to the
+          node, with the editorial block left out, produces the record as
+          the editor reads it. A key set to null deletes a printed field
+          that is wrong with nothing known to put in its place; a nested
+          object corrects inside `authority` or another block; an array
+          (`illustrations`) is replaced whole, so restate it in full.
+        # TODO: Probably nest entire the parent object here, but with no
+        #       required fields? Recursively? This will do for now.
+        type: object
+        properties:
+          authority:
+            type: object
+            properties:
+              source:
+                $ref: "#/$defs/sourceId"
+        additionalProperties: true
+      basis:
+        description: |
+          Explains why the editorial block is present, with sufficient
+          information for a researcher to determine whether the inference
+          or error judgement is correct, or to look up relevant sources.
+        type: string
   occurrence:
     $ref: "#/$defs/basicOccurrence"
     properties:

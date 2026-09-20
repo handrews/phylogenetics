@@ -228,11 +228,7 @@ _SUBSCHEMA_LIST = ('allOf', 'anyOf', 'oneOf', 'prefixItems')
 
 
 def inventory(node, base='phylogeny#', pointer='', out=None):
-  """Every schema location in the file, labelled the way jschon labels it.
-
-  ``$defs/tree`` declares ``$id: tree``, which resets the base URI, so its
-  subschemas are ``tree#/...`` rather than ``phylogeny#/$defs/tree/...``.
-  """
+  """Every schema location in the file, labelled the way jschon labels it."""
   if out is None:
     out = {}
   if not isinstance(node, dict):
