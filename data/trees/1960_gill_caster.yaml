@@ -2,11 +2,10 @@ taxonomies:
 - taxon: echinodermata
   authority:
     source: 1734_klein
-  corrected:
-    notes: |
-      Says "as Echinodermatum", but Klein 1734 at least sometimes
-      used "Echinodermata"
-    taxon: echinodermatum
+  citedAs: Phylum ECHINODERMATA Klein, 1734 (in form ‘“Echinodermatum” )
+  notes: |
+    Says "as Echinodermatum", but Klein 1734 at least sometimes
+    used "Echinodermata".
   children:
   - taxon: pelmatozoa
     children:
@@ -32,13 +31,20 @@ taxonomies:
               children:
               - taxon: placocystitidae
                 new: true
+                citedAs: |
+                  Family PLACOCYSTITIDAE, new name
+                  (Replaces Placocystidae Caster, 1952)
                 corrected:
                   taxon: placocystidae
                 children:
                 - taxon: placocystitinae
                   new: true
+                  citedAs: |
+                    The subfamily Placocystitinae (here emended from
+                    Placocystinae Caster, 1952)
                   corrected:
                     taxon: placocystinae
+                  emended: true
                   children:
                   - taxon: placocystites
                 - taxon: victoriacystis

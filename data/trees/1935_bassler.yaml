@@ -10,6 +10,9 @@ taxonomies:
   - taxon: agelacrinitidae
     corrected:
       taxon: agelacrinidae
+    citedAs: |
+      Family AGELAGRINITIDAE, new name
+      (Agelacrinidae Jaekel, 1899; Thecocystidae Jaekel, 1899)
     synonyms:
     - taxon: thecocystidae
     children:
@@ -357,20 +360,28 @@ taxonomies:
         type: true
   - taxon: astrocystitidae
     new: true
+    citedAs: |
+      Family ASTROCYSTITIDAE, new name
+      (Steganoblastidac Bather)
+    corrected:
+      taxon: steganoblastidae
+    notes: |
+      1968_webby argues that Steganoblastidae is correct per article 40
+      of the code, but Astrocystitidae seems to be presented here as
+      a nomen correctum on the grounds of matching the senior synonym
+      of the type genus.  However, he does not say more than is quoted
+      in the "citedAs" field.
     provisional: true
     altPlacements:
     - taxon: blastoidea
-    notes: |
-      given as "new name" and only Steganoblastidae is mentioned as
-      a synonym, but I think this is a nomen. correct. to match the
-      original Atrocystites name instead of the unneessary replacement
-      name Steganoblastus.
-    corrected:
-      taxon: steganoblastidae
-    synonyms:
-    - taxon: steganoblastidae
     children:
     - taxon: astrocystites
+      citedAs: |
+        ASTROCYSTITES Whiteaves, 1897
+        (Steganoblastits Whiteaves, 1897)
+      notes: |
+        1968_webby states that this is the first point at which
+        the name was reverted to the senior synonym, Astrocystites.
       synonyms:
       - taxon: steganoblastus
   - openTaxon: edrioasteroidea-order-uncertain_bassler_1935

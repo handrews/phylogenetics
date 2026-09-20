@@ -3731,15 +3731,15 @@
     "year": 1935
    },
    "claims": {
-    "acceptance": 60,
+    "acceptance": 59,
     "act": 34,
     "placement": 98,
-    "usage": 204
+    "usage": 203
    },
    "derived": {
     "newTaxa": 10,
-    "skeleton": 302,
-    "synonymy": 60,
+    "skeleton": 301,
+    "synonymy": 59,
     "types": 22
    },
    "inconsistencies": [],
@@ -3887,7 +3887,8 @@
   },
   "1960_gill_caster": {
    "acts": {
-    "corrected": 3,
+    "corrected": 2,
+    "emended": 1,
     "new": 13,
     "placeholder": 2,
     "type": 5
@@ -3914,11 +3915,11 @@
     "acceptance": 1,
     "act": 23,
     "placement": 40,
-    "usage": 45
+    "usage": 44
    },
    "derived": {
     "newTaxa": 15,
-    "skeleton": 85,
+    "skeleton": 84,
     "synonymy": 1,
     "types": 5
    },
@@ -13690,9 +13691,6 @@
   "echinodermata_klein_1778": [
    "1778_klein",
    "2024_wang.d.z_nohejlová_sun.z.x_zeng.h_lefebvre_yang.x.l_zhao.f.c"
-  ],
-  "echinodermatum": [
-   "1960_gill_caster"
   ],
   "echinodermen": [
    "1854_müller.j.p"

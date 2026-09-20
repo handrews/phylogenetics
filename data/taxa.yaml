@@ -956,8 +956,8 @@ astrocystites-sp-b_sprinkle_1982i:
 astrocystitidae:
   name: Astrocystitidae
   rank: Family
-  auth: [bassler]
-  year: 1935
+  authority:
+    source: 1935_bassler
 astropyga:
   name: Astropyga
   authority:
