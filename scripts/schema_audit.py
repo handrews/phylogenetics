@@ -45,7 +45,7 @@ ROOT = pathlib.Path(__file__).parent.parent
 SCHEMA_PATH = ROOT / 'schemas' / 'phylogeny.yaml'
 
 # jschon assigns the schema a random urn:uuid base each run; keep only the
-# stable `phylogeny#/...` or `tree#/...` part so locations are comparable.
+# stable `phylogeny#/...` part so locations are comparable.
 _URI_PREFIX = re.compile(r'^urn:uuid:[0-9a-f-]+/')
 
 
@@ -235,8 +235,8 @@ def inventory(node, base='phylogeny#', pointer='', out=None):
     return out
   if '$id' in node and pointer:
     base, pointer = f'{node["$id"]}#', ''
-  # jschon labels a resource root without the empty fragment ("tree", not
-  # "tree#"), so match that or the roots look permanently unreached.
+  # jschon labels a resource root without the empty fragment ("phylogeny",
+  # not "phylogeny#"), so match that or the root looks permanently unreached.
   out[f'{base}{pointer}' if pointer else base.rstrip('#')] = node
   for key in _SUBSCHEMA:
     if isinstance(node.get(key), dict):
@@ -252,8 +252,6 @@ def inventory(node, base='phylogeny#', pointer='', out=None):
 
 def def_of(loc):
   """Which ``$defs`` entry a schema location belongs to."""
-  if loc.startswith('tree#'):
-    return 'tree'
   m = re.match(r'phylogeny#/\$defs/([^/]+)', loc)
   return m.group(1) if m else '(root)'
 
