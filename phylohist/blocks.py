@@ -215,8 +215,8 @@ def timeline(entries, parameters, title=None, decorations=None, extra=None):
 
 
 def statement(kind, fields, parameters, claims=()):
-  """``kind``: gap (a source's coverage for a kind of statement),
-  printedForm (a form as printed), absent (nothing in the corpus)."""
+  """``kind``: gap (a source's coverage for a kind of statement), absent
+  (nothing in the corpus)."""
   return _make('statement', {'kind': kind, 'fields': fields}, parameters, claims)
 
 

@@ -72,8 +72,7 @@ def node_label(node):
     # An open-nomenclature name already ends in "sp."; the mark completes it.
     if name.endswith(' sp.') and mark.startswith('sp. '):
       name = name[:-4]
-    # A printed mark that opens with punctuation (", new name") joins directly.
-    name += mark if mark[0] in ',;:' else ' ' + mark
+    name += ' ' + mark
   if (node.get('flags') or {}).get('questionable'):
     name += ' ?'
   for act in node.get('acts') or ():
@@ -123,15 +122,23 @@ def _entry_line(entry, heading_name=None):
     parts.append(' '.join(entry['parents']))
   elif entry.get('name'):
     parts.append(entry['name'])
-  if entry.get('printed'):
-    parts.append(f'"{entry["printed"]}"')
-  if entry.get('kind') == 'heading':
-    parts.append('(the heading as entered; no verbatim form is recorded)')
   parts.append(entry.get('cite') or entry.get('source') or '')
   if entry.get('page') is not None:
     parts.append(pages_text(entry['page']))
   if entry.get('stance') == 'rejects':
     parts.append('(non)')
+  return ' '.join(p for p in parts if p)
+
+
+def _printed_form_line(entry):
+  """A printed form, verbatim but on one line: year, the form in quotes,
+  the cite, the page. The claim keeps the form's own line breaks."""
+  parts = [str(entry.get('year') or ''), f'"{" ".join(str(entry.get("printed", "")).split())}"']
+  if entry.get('kind') == 'heading':
+    parts.append('(the heading as entered; no verbatim form is recorded)')
+  parts.append(entry.get('cite') or entry.get('source') or '')
+  if entry.get('page') is not None:
+    parts.append(pages_text(entry['page']))
   return ' '.join(p for p in parts if p)
 
 
@@ -197,11 +204,6 @@ def _statement_text(block):
     if f.get('also'):
       text += ' ' + _also_sentence(f['also'])
     return text
-  if kind == 'printedForm':
-    return (
-      f'{f["cite"]}{", p. " + str(f["page"]) if f.get("page") is not None else ""}'
-      f' prints "{f["printed"]}"' + (f' for {f["name"]}' if f.get('name') else '') + '.'
-    )
   if kind == 'absent':
     return f'No source in the corpus mentions {f["name"]}.'
   return json.dumps(f, ensure_ascii=False)
@@ -313,8 +315,11 @@ def _text_list(block):
     if not rows:
       lines.append('  (none entered from any source)')
     return '\n'.join(lines)
+  forms = block.get('kind') == 'printedForms'
   for entry in block['entries']:
-    lines.append('  ' + _entry_line(entry, heading.get('name')))
+    lines.append(
+      '  ' + (_printed_form_line(entry) if forms else _entry_line(entry, heading.get('name')))
+    )
   return '\n'.join(lines)
 
 
@@ -410,8 +415,11 @@ def _md_list(block):
     if not block['entries']:
       lines.append('(none entered from any source)')
     return '\n'.join(lines)
+  forms = block.get('kind') == 'printedForms'
   for entry in block['entries']:
-    lines.append('- ' + _entry_line(entry, heading.get('name')))
+    lines.append(
+      '- ' + (_printed_form_line(entry) if forms else _entry_line(entry, heading.get('name')))
+    )
   return '\n'.join(lines)
 
 

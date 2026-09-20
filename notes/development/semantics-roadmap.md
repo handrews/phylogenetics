@@ -63,6 +63,9 @@ recorded as a synonym; see [Terminology updates](#terminology-updates-1966--2023
   meaning.
 - Migrations are data-only wherever possible. Tree-node attribution fields
   (`authority`, `auth`, `year`, `in`) are not read by `phylohist/loader/taxa.py`.
+- `citedAs` is the line as printed, kept and searchable, shown by the
+  printed-forms tool only (2026-09-20). Every other rendering is built
+  from fields; what an answer needs from the printed line is a field.
 
 ### The `editorial` block
 

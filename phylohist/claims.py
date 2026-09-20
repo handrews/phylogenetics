@@ -10,7 +10,7 @@ per-source coverage counts and cross-checks them against the declared
 
 import collections
 
-from .loader.research import Publication, Source
+from .loader.research import Author, Publication, Source
 from .loader.taxa import Taxon
 from .names import fold_forms, key_stem
 
@@ -682,6 +682,8 @@ def manifest(claims_by_source):
         taxa[claim['subject']].add(source_key)
 
   return {
+    # Author keys to surnames, so a printed attribution renders by field.
+    'authors': {key: author.surname for key, author in sorted(Author._authors.items())},
     'sources': dict(sorted(sources.items())),
     'taxa': {key: sorted(keys, key=_source_order) for key, keys in sorted(taxa.items())},
   }

@@ -453,8 +453,9 @@ def test_combinations_in_a_listing(store):
   assert dehm[1] == '  Genus Pyrgocystis'
   assert dehm[2] == '    Type species. Pyrgocystis sardesoni'
   assert dehm[3] == '    Pyrgocystis sardesoni'
-  # The source's own wording for the new subgenus, "Rhenopyrgus nov. subgen.".
-  assert dehm[-3] == '    Subgenus Pyrgocystis (Rhenopyrgus) nov. subgen.'
+  # The rank's abbreviation; the source's own "Rhenopyrgus nov. subgen." is
+  # the printed-forms tool's.
+  assert dehm[-3] == '    Subgenus Pyrgocystis (Rhenopyrgus) subgen. nov.'
   assert dehm[-2] == '      Type species. Pyrgocystis (Rhenopyrgus) coronaeformis'
   assert dehm[-1] == '      Pyrgocystis (Rhenopyrgus) coronaeformis'
 
@@ -553,15 +554,14 @@ def test_variety_and_no_genus_fallback(store):
       if c['tree'] == 'taxonomy' and store.combination(c['source'], c['path']).get('genus'):
         labelled.append(store.display(key, c['source'], c['path']))
   assert labelled and all(' var.' in label for label in labelled)
-  # A species listed straight under a family keeps its epithet or printed form.
+  # A species listed straight under a family keeps its epithet: the corpus
+  # invents no genus and shows no printed form there.
   claim = next(
     c
     for c in store.closure.placements_of['angulosus_pander_1830']
     if c['source'] == '1968b_paul.c.r.c'
   )
-  label = store.display('angulosus_pander_1830', claim['source'], claim['path'])
-  printed = (store.by_id[claim['id']].get('printed') or {}).get('citedAs')
-  assert label in ('angulosus', printed)
+  assert store.display('angulosus_pander_1830', claim['source'], claim['path']) == 'angulosus'
 
 
 def test_printed_forms_fall_back_to_the_heading(store):
@@ -584,3 +584,18 @@ def test_type_species_marks_the_editor(store):
   assert '  Type species. Astrocystites ottawaensis (editor)' in listing['rendered']
   fixed = store.contents('Dehm 1961', 'rhenopyrgus-subgenus')[0]
   assert 'Type species. ' in fixed['rendered'] and '(editor)' not in fixed['rendered']
+
+
+def test_attribution_words_by_field(store):
+  words = store.words.attribution_words
+  assert words({'auth': ['bell.b.m'], 'year': 1974}) == 'Bell, 1974'
+  assert words({'auth': ['bather'], 'in': ['bell.b.m'], 'year': 1976}) == 'Bather in Bell, 1976'
+  assert words({'auth': ['Hall']}) == 'Hall'
+  assert words({'year': 1899}) == '1899'
+  assert words({}) == ''
+  # The usage sentence names the printed attribution by field, then the
+  # editor's reading of what is wrong with it.
+  line = store.statements('isorophida', source='Bell 1975')['rendered'].splitlines()[1]
+  assert line.endswith(
+    'cites the name, attributed to Bell, 1974 (printed auth, year in error; read as Bell 1976)'
+  )

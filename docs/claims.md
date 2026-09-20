@@ -201,7 +201,8 @@ paper is recorded but not yet entered" is derived), the declared `audit`,
 the counts of claims by kind, by `actKind` and by `materialKind`, the
 counts by coverage kind (`derived`, editor-inferred claims excluded), and
 `inconsistencies`. Per taxon, the sources with any claim about it, in
-publication-year order. Coverage is declared by a reviewer and counted by
+publication-year order. And `authors`, every author key with its
+surname, so a printed attribution (`auth: [bell.b.m]`) renders by field. Coverage is declared by a reviewer and counted by
 the extractor; they are cross-checked, never conflated (G1): a source
 declaring `all` or `partly` for a kind with no derived claims, or `none`
 or `na` with any, is an inconsistency row for the editor to settle either
@@ -252,8 +253,8 @@ The renderings follow the community's conventions. The listing is a
 Systematic Paleontology section: rank words on the headings above the
 species level (the paper's rank where it writes one, else the
 record's), the type species as its own line under the genus, a new
-taxon marked as the source prints it or by the rank's abbreviation
-(`fam. nov.`, `gen. nov.`, `sp. nov.`), `emend.`, `nom. transl.` and
+taxon marked by the rank's abbreviation (`fam. nov.`, `gen. nov.`,
+`sp. nov.`), `emend.`, `nom. transl.` and
 `nom. correct.` after the name, `?` for a provisional or questionable
 name, `=` lines for the synonymy:
 
@@ -292,9 +293,13 @@ into another genus appears once per combination in every table, since
 each is a name of its own; a cited name takes its original combination
 from the synonymy entry, or the genus of the name it is cited under.
 Where a source lists a species with no genus above it (thirteen nodes in
-eight old sources) the printed form is shown, else the epithet alone:
-the corpus does not invent a genus; an unnamed species with a printed
-designation shows it ("Rhenopyrgus sp. indet. 1"). No authority is
+eight old sources) the epithet alone is shown: the corpus does not
+invent a genus; an unnamed species with a printed designation shows it
+("Rhenopyrgus sp. indet. 1"). Every rendering is built from the
+recorded fields: `citedAs`, the line as printed, is kept on the node
+and every claim and is searchable, but it reaches a reader only through
+`printed_forms`; what an answer needs from the printed line is captured
+as a field. No authority is
 appended. An epithet is not a name on its own: species-group records
 relate to one another only through an explicit spelling link (*procera*
 / *procerum*), never by a shared epithet, so *Nolichuckia casteri* and
@@ -330,7 +335,7 @@ blocks; the CLI (`phylohist <tool>`, `--style`), the MCP server
 | `synonymy(record, source)` | the synonymy a source prints under a record, as a list |
 | `statements(record, source, kind, act_kind)` | every claim about a record as a sentence with source, year and page, the drill-down; with a source named and nothing of that kind entered, the gap block for it, and with no kind asked the gap names every kind of the source not yet entered |
 | `gap(source, kind)` / `gap(name=…)` | the contract's sentence for what is not yet entered, or for a name no source carries |
-| `printed_forms(record, source)` | each form a source prints, verbatim, with the page; when the named source recorded no verbatim form, the heading as its listing is entered, marked as such |
+| `printed_forms(record, source)` | each form a source prints, verbatim (folded to one line in text and markdown; the claim keeps its line breaks), with the page; when the named source recorded no verbatim form, the heading as its listing is entered, marked as such |
 | `source_coverage(key)` | the raw coverage view |
 
 A **plan** (`phylohist/plan.py`) is an answer as data before it is

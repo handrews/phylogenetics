@@ -169,11 +169,12 @@ class Words:
             parts.append('var.')
           parts.append(tail if tail is not None else self.store.name(key))
         else:
-          printed = (usage or {}).get('printed') or {}
+          # No genus in the chain: a placeholder in its words, a named
+          # species by its epithet; the corpus invents no genus.
           parts.append(
-            printed.get('citedAs') or self.placeholder_words(key, source_key, path)
+            self.placeholder_words(key, source_key, path)
             if self.store.names[key].get('placeholder')
-            else printed.get('citedAs') or self.store.name(key)
+            else self.store.name(key)
           )
         label = ' '.join(parts)
       else:
@@ -264,8 +265,7 @@ class Words:
   def placeholder_words(self, key, source=None, path=None):
     """A placeholder in the source's words: a bin by its rank ("Order
     uncertain", "Unnamed family"), an open-nomenclature record by its
-    designation, the form printed at the node, or the words of its key
-    ("Agelacrinites sp.")."""
+    designation, or the words of its key ("Agelacrinites sp.")."""
     row = self.store.names.get(key) or {}
     kind = row.get('placeholder')
     rank = (row.get('rank') or '').lower()
@@ -275,10 +275,6 @@ class Words:
       return f'Unnamed {rank}' if rank else 'Unnamed'
     if row.get('designation'):
       return row['designation']
-    if source is not None and path is not None:
-      for c in self.store.at_path.get(source, {}).get(path, ()):
-        if c['kind'] == 'usage' and (c.get('printed') or {}).get('citedAs'):
-          return c['printed']['citedAs']
     words = [self._OPEN_WORDS.get(w, w) for w in key_stem(key).split('-')]
     return ' '.join(words)[:1].upper() + ' '.join(words)[1:]
 
@@ -398,8 +394,8 @@ class Words:
   def claim_words(self, claim):
     kind = claim['kind']
     if kind == 'usage':
-      printed = (claim.get('printed') or {}).get('citedAs')
-      words = f'cites the name as "{printed}"' if printed else 'cites the name'
+      attributed = self.attribution_words(claim.get('printed') or {})
+      words = f'cites the name, attributed to {attributed}' if attributed else 'cites the name'
       return words + self.error_words(claim)
     if kind == 'placement':
       parent = claim.get('parent')
@@ -481,6 +477,22 @@ class Words:
     if same_rank:
       return f'{"spelling" if of else "same name"} variant of {self.display(base)}'
     return f'same name at another rank as {self.display(base)}'
+
+  def attribution_words(self, printed):
+    """A printed attribution by its fields: "Bell, 1974", "Bather in Bell,
+    1976", "Hall". Author keys become surnames through the manifest's
+    authors map; a string with no record (a capitalised name as printed)
+    stays as it is. Empty when nothing is printed."""
+
+    def names(keys):
+      return ', '.join(self.store.authors.get(k, k) for k in keys or ())
+
+    words = names(printed.get('auth'))
+    if printed.get('in'):
+      words = f'{words} in {names(printed["in"])}' if words else f'in {names(printed["in"])}'
+    if printed.get('year'):
+      words = f'{words}, {printed["year"]}' if words else str(printed['year'])
+    return words
 
   def authors(self, source_key):
     """The short citation without its year, for a line that shows the
