@@ -6,6 +6,11 @@ taxonomies:
     - taxon: camptostromatoidea
       corrected:
         taxon: camptostromoidea
+      citedAs: |
+        Class CAMPTOSTROMATOIDEA
+        Durham, 1966
+        [nom. correct. DURHAM, herein (pro Camptostromoidea
+        DURHAM, 1966, p. 1219)]
       children:
       - taxon: camptostromatidae
         new: true
