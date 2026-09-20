@@ -37,10 +37,18 @@ def test_classification_text_and_markdown(store):
 
 def test_provisional_and_placeholder_marks(store):
   bassler = store.contents('1935_bassler', 'astrocystitidae', style='json')[0]
+  # The source's own mark, read off its printed heading "Family
+  # ASTROCYSTITIDAE, new name (Steganoblastidac Bather)".
   assert render.render(bassler, 'text').splitlines()[:2] == [
     'Bassler 1935',
-    '  Family Astrocystitidae fam. nov. nom. correct.',
+    '  Family Astrocystitidae, new name nom. correct.',
   ]
+  # A printed heading that runs on into an explanation yields no mark; the
+  # rank's abbreviation stands in.
+  gill = store.contents('1960_gill_caster', 'placocystitinae', depth=0, style='json')[0]
+  assert render.render(gill, 'text').splitlines()[1] == (
+    '  Subfamily Placocystitinae subfam. nov. emend. nom. correct.'
+  )
   holloway = store.contents('1983_holloway_jell', 'edrioasteroidea', depth=1, style='json')[0]
   lines = render.render(holloway, 'text').splitlines()
   assert lines[2] == '    Order uncertain'

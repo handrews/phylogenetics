@@ -72,7 +72,8 @@ def node_label(node):
     # An open-nomenclature name already ends in "sp."; the mark completes it.
     if name.endswith(' sp.') and mark.startswith('sp. '):
       name = name[:-4]
-    name += ' ' + mark
+    # A printed mark that opens with punctuation (", new name") joins directly.
+    name += mark if mark[0] in ',;:' else ' ' + mark
   if (node.get('flags') or {}).get('questionable'):
     name += ' ?'
   for act in node.get('acts') or ():

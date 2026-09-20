@@ -65,6 +65,24 @@ def _rank_order(rank):
   return _RANK_ORDER.index(rank) if rank in _RANK_ORDER else len(_RANK_ORDER)
 
 
+def _printed_mark(printed, name, rank_word):
+  """The source's own mark for a new taxon, read off its printed heading:
+  the first line with the name and the rank word removed, when what is
+  left is a short phrase such as ", new name" or "n. sp." A heading that
+  goes on to a synonymy or an explanation yields nothing, and the rank's
+  abbreviation stands in."""
+  if not printed or not name:
+    return None
+  mark = printed.strip().splitlines()[0]
+  mark = re.sub(re.escape(name), '', mark, flags=re.I)
+  if rank_word:
+    mark = re.sub(r'^\s*' + re.escape(rank_word) + r'\b', '', mark, flags=re.I)
+  mark = mark.strip()
+  if not mark or len(mark) > 24 or '(' in mark:
+    return None
+  return mark
+
+
 def _with_style(block, style):
   if style != 'json':
     block['rendered'] = render(block, style)
@@ -188,10 +206,9 @@ class ClaimStore:
       # As the source prints it when recorded, else the rank's abbreviation.
       new_act = next((a for a in acts if a['actKind'] in ('new', 'placeholder')), None)
       printed_new = ((new_act or {}).get('printed') or {}).get('citedAs')
-      if printed_new and node['name']:
-        # The printed form carries the name; the mark is what follows it.
-        printed_new = re.sub(re.escape(node['name']), '', printed_new, flags=re.I).strip() or None
-      node['newMark'] = printed_new or blocks.new_mark(rank_word)
+      node['newMark'] = _printed_mark(printed_new, node['name'], rank_word) or blocks.new_mark(
+        rank_word
+      )
     label = self.words.display(key, source_key, path)
     if label and label != node['name']:
       node['label'] = label
