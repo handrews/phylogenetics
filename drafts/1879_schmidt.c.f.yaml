@@ -35,7 +35,7 @@ notes: |
   F. III 1", p. 7), so the material entries take those citations as labels.
 
 taxonomies:
-- taxon: edrioasteroidea
+- taxon: edrioasteridae
   citedAs: Edrioasteriden
   auth: [Billings]
   pages: [[1, 2]]
@@ -58,14 +58,16 @@ taxonomies:
   - taxon: agelacrinus
     citedAs: Agelacrinus Van.
     pages: [[1, 2]]
-    notes: The author's name is printed abbreviated, "Van." (pp. 1, 2).
   - taxon: edrioaster
     citedAs: Edrioaster Bill.
+    authority:
+      source: 1858b_billings
+      pages: 85
+      illustrations:
+        plate: xv
     pages: 2
-    notes: The author's name is printed abbreviated, "Bill." (p. 2).
   - taxon: hemicystis
     citedAs: Hemicystis Hall
-    auth: [Hall]
     pages: 2
     notes: |
       On p. 4 the same genus is printed "Hemicystites", with Cystaster as a
@@ -75,7 +77,13 @@ taxonomies:
       "The figures cited belong to Hemicystites (subgen. Cystaster)
       granulatus Hall, which shows a certain analogy with our Cyathocystis."
       The figures cited are "Hall (report of New York state museum pl. VI
-      F. 1, 2, 3)" (p. 4). That combination is not entered as a node.
+      F. 1, 2, 3)" (p. 4).
+    or:
+    - taxon: hemicystites
+    children:
+    - taxon: cystatster-subgenus
+      children:
+      - taxon: granulatus_hall_1871
   - taxon: cystaster
     citedAs: Cystaster Hall
     auth: [Hall]
@@ -196,7 +204,7 @@ taxonomies:
         der sie bei seiner grossen Arbeit über Cystideen benutzen wird."
         (p. 4) -- "All the original pieces are still going to Prof. Lovén in
         Stockholm, who will use them in his great work on Cystids."
-    - taxon: rhizophora_schmidt_1889
+    - taxon: rhizophora_schmidt_1879
       new: true
       citedAs: Cyathocystis rhizophora n. sp.
       pages: [2, [5, 7]]
