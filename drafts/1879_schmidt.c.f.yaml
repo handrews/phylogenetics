@@ -1,13 +1,6 @@
 # DRAFT -- for human audit only, not ready to commit.
 #
 # RECORDS NEEDED:
-# - author `schmidt`: printed "Mag. Fr. Schmidt" (p. 1); no record in
-#   data/authors.yaml (the taxa records write `auth: [Schmidt]` as an
-#   unregistered string).
-# - source `1880_schmidt` (or `1879_schmidt`, see the review): Verhandlungen
-#   der Russisch-Kaiserlichen Mineralogischen Gesellschaft zu St. Petersburg,
-#   Zweite Serie, Fünfzehnter Band, pp. 1-7; the journal has no record in
-#   data/publications.yaml.
 # - taxa: cyathocystis, plautinae_schmidt_1879, rhizophora_schmidt_1889,
 #   edrioasteroidea, agelacrinus, edrioaster, hemicystis and cystaster all
 #   exist. This paper is the protologue of all three Cyathocystis names; the
@@ -27,7 +20,7 @@ notes: |
   Holzschnitt I (p. 2, figs. 1-4), II (p. 4, figs. 1-3), III (p. 6, figs. 1-4).
 
 taxonomies:
-- taxon: edrioasteroidea
+- taxon: edrioasteridae
   citedAs: Edrioasteriden
   auth: [Billings]
   pages: [[1, 2]]
@@ -50,14 +43,16 @@ taxonomies:
   - taxon: agelacrinus
     citedAs: Agelacrinus Van.
     pages: [[1, 2]]
-    notes: The author's name is printed abbreviated, "Van." (pp. 1, 2).
   - taxon: edrioaster
     citedAs: Edrioaster Bill.
+    authority:
+      source: 1858b_billings
+      pages: 85
+      illustrations:
+        plate: xv
     pages: 2
-    notes: The author's name is printed abbreviated, "Bill." (p. 2).
   - taxon: hemicystis
     citedAs: Hemicystis Hall
-    auth: [Hall]
     pages: 2
     notes: |
       On p. 4 the same genus is printed "Hemicystites", with Cystaster as a
@@ -67,7 +62,13 @@ taxonomies:
       "The figures cited belong to Hemicystites (subgen. Cystaster)
       granulatus Hall, which shows a certain analogy with our Cyathocystis."
       The figures cited are "Hall (report of New York state museum pl. VI
-      F. 1, 2, 3)" (p. 4). That combination is not entered as a node.
+      F. 1, 2, 3)" (p. 4).
+    or:
+    - taxon: hemicystites
+    children:
+    - taxon: cystatster-subgenus
+      children:
+      - taxon: granulatus_hall_1871
   - taxon: cystaster
     citedAs: Cystaster Hall
     auth: [Hall]
@@ -153,7 +154,7 @@ taxonomies:
         der typischen Art vorhanden" (p. 7, of C. rhizophora) -- "The
         wrinkled epitheca is present just as in the typical species."
         "Type species" is not printed; `type` here rests on that phrase.
-    - taxon: rhizophora_schmidt_1889
+    - taxon: rhizophora_schmidt_1879
       new: true
       citedAs: Cyathocystis rhizophora n. sp.
       pages: [2, [5, 7]]
