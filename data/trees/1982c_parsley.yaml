@@ -6,10 +6,13 @@ taxonomies:
   - taxon: blastozoa
     children:
     - taxon: diploporita-class
-      modifier: nom. tranls. Paul 1968b
+      translated:
+        by:
+          source: 1968b_paul.c.r.c
+      notes: Printed "nom. tranls. Paul 1968b".
       children:
       - taxon: eumorphocystoidea
-        modifier: nom. transl.
+        translated: true
         children:
         - taxon: eumorphocystidae
           emended: true

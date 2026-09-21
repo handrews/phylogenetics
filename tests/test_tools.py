@@ -15,6 +15,7 @@ import pytest
 import yaml
 
 from phylohist.evaluation import alternatives
+from phylohist.render import node_label
 
 QUESTIONS_PATH = pathlib.Path(__file__).parent.parent / 'eval' / 'questions.yaml'
 with open(QUESTIONS_PATH) as fd:
@@ -599,3 +600,21 @@ def test_attribution_words_by_field(store):
   assert line.endswith(
     'cites the name, attributed to Bell, 1974 (printed auth, year in error; read as Bell 1976)'
   )
+
+
+def test_followed_acts_and_sensu_words(store):
+  words = store.words
+  assert words.act_words({'actKind': 'emended', 'by': '1968b_paul.c.r.c'}) == 'emended by Paul 1968'
+  assert (
+    words.act_words({'actKind': 'nomTransl', 'translatedFrom': 'rhenopyrgidae', 'byPages': 5})
+    == 'nomen translatum from Rhenopyrgidae'
+  )
+  assert (
+    words.act_words({'actKind': 'emended', 'by': '1968b_paul.c.r.c', 'byPages': [[697, 730]]})
+    == 'emended by Paul 1968, p. 697–730'
+  )
+  assert words.act_words({'actKind': 'nomNudum'}) == 'nomen nudum'
+  usage = {'kind': 'usage', 'sensu': 'stricto', 'subject': 'crinoidea'}
+  assert words.claim_words(usage) == 'cites the name sensu stricto'
+  node = {'key': 'crinoidea', 'name': 'Crinoidea', 'rank': 'Class', 'sensu': 'stricto'}
+  assert node_label(node).endswith('Crinoidea (s. s.)')

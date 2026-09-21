@@ -712,8 +712,8 @@
   evidence:
     source: 1994_guensburg_sprinkle
     pages: 21
-  verified: 'data/trees/1994_guensburg_sprinkle.yaml, .../cyathocystidae/children/1(rhenopyrginae, modifier:
-    nomen transl., emended:true)/children/0(rhenopyrgus); notes/audits/source-observations.md "1994_guensburg_sprinkle"
+  verified: 'data/trees/1994_guensburg_sprinkle.yaml, .../cyathocystidae/children/1(rhenopyrginae, translated:
+    rhenopyrgidae, emended:true)/children/0(rhenopyrgus); notes/audits/source-observations.md "1994_guensburg_sprinkle"
     section, "Eight re-rankings..." paragraph quotes the p.21 heading verbatim.'
 - id: q029
   class: trajectory
@@ -1030,8 +1030,8 @@
   - source: 2020_ewin_martin.m_isotalo_zamora
     pages: 118
   verified: data/trees/1962_fay.yaml taxonomies/0 (edrioblastoidea new); data/trees/1990_smith.a.b_jell.yaml
-    (edrioblastoida > astrocystitidae); data/trees/1994_guensburg_sprinkle.yaml (edrioblastoidina, modifier
-    nomen transl., emended); data/trees/2000_grigo.yaml, data/trees/2013_sumrall_heredia_rodríguez.c.m_mestre.yaml,
+    (edrioblastoida > astrocystitidae); data/trees/1994_guensburg_sprinkle.yaml (edrioblastoidina, translated
+    from edrioblastoidea, emended); data/trees/2000_grigo.yaml, data/trees/2013_sumrall_heredia_rodríguez.c.m_mestre.yaml,
     data/trees/2015_sprinkle_sumrall.yaml, data/trees/2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman.yaml
     and data/trees/2020_ewin_martin.m_isotalo_zamora.yaml each carry edrioblastoidina; data/trees/2021_jell_sprinkle.yaml
     carries edrioblastoida; data/taxa.yaml edrioblastoidea/edrioblastoida/edrioblastoidina records. Author

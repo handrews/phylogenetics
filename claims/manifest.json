@@ -5430,10 +5430,10 @@
    "claims": {
     "act": 1,
     "placement": 1,
-    "usage": 2
+    "usage": 3
    },
    "derived": {
-    "skeleton": 3
+    "skeleton": 4
    },
    "inconsistencies": [],
    "material": {},
@@ -6175,10 +6175,10 @@
     "acceptance": 2,
     "act": 4,
     "placement": 9,
-    "usage": 13
+    "usage": 14
    },
    "derived": {
-    "skeleton": 22,
+    "skeleton": 23,
     "synonymy": 2,
     "types": 2
    },
@@ -6651,11 +6651,11 @@
     "acceptance": 2,
     "act": 8,
     "placement": 61,
-    "usage": 69
+    "usage": 71
    },
    "derived": {
     "phylogeny": 14,
-    "skeleton": 116,
+    "skeleton": 118,
     "synonymy": 2,
     "types": 5
    },
@@ -7244,12 +7244,12 @@
     "acceptance": 1,
     "act": 34,
     "placement": 152,
-    "usage": 158
+    "usage": 166
    },
    "derived": {
     "newTaxa": 10,
     "phylogeny": 67,
-    "skeleton": 243,
+    "skeleton": 251,
     "synonymy": 1,
     "types": 5
    },
@@ -8004,7 +8004,6 @@
   },
   "2003_guensburg_sprinkle": {
    "acts": {
-    "modifier": 1,
     "new": 16,
     "placeholder": 2,
     "type": 6
@@ -8023,7 +8022,7 @@
     "year": 2003
    },
    "claims": {
-    "act": 25,
+    "act": 24,
     "placement": 44,
     "usage": 48
    },
@@ -8110,8 +8109,8 @@
   },
   "2005_frest": {
    "acts": {
-    "modifier": 3,
-    "new": 3
+    "new": 3,
+    "nomNudum": 3
    },
    "audit": {
     "state": "unaudited"
@@ -8562,8 +8561,8 @@
   "2008_zhao.y.l_parsley_peng.j": {
    "acts": {
     "emended": 1,
-    "modifier": 1,
     "new": 2,
+    "nomNudum": 1,
     "type": 1
    },
    "audit": {
@@ -9274,12 +9273,12 @@
    "claims": {
     "act": 5,
     "placement": 28,
-    "usage": 32
+    "usage": 33
    },
    "derived": {
     "newTaxa": 1,
     "phylogeny": 16,
-    "skeleton": 44,
+    "skeleton": 45,
     "types": 1
    },
    "inconsistencies": [],
@@ -10728,7 +10727,6 @@
   },
   "2024_zamora_guensburg_sprinkle": {
    "acts": {
-    "modifier": 1,
     "moved": 1,
     "type": 1
    },
@@ -10751,7 +10749,7 @@
     "year": 2024
    },
    "claims": {
-    "act": 3,
+    "act": 2,
     "material": 1,
     "placement": 5,
     "rejection": 1,
@@ -11438,6 +11436,9 @@
   ],
   "aristocystitida-superfamily": [
    "1997_paul.c.r.c"
+  ],
+  "aristocystitidae": [
+   "1971_paul.c.r.c"
   ],
   "aristocystitidae-superfamily": [
    "1971_paul.c.r.c"
@@ -12382,6 +12383,7 @@
    "1976_bell.b.m",
    "1980_bell.b.m",
    "1985_smith.a.b",
+   "1994_guensburg_sprinkle",
    "2010_sumrall"
   ],
   "carneyellinae": [
@@ -14323,7 +14325,8 @@
    "1970_mintz",
    "1973_sprinkle",
    "1980_bell.b.m",
-   "1982i_sprinkle"
+   "1982i_sprinkle",
+   "1994_guensburg_sprinkle"
   ],
   "edrioblastoidina": [
    "1994_guensburg_sprinkle",
@@ -15183,6 +15186,7 @@
   ],
   "glyptocystitidae": [
    "1968b_paul.c.r.c",
+   "1982b_parsley",
    "1982g_sprinkle"
   ],
   "glyptosphaeridae": [
@@ -15669,7 +15673,8 @@
    "1778_leske"
   ],
   "henicocystidae": [
-   "1983_jell"
+   "1983_jell",
+   "2013_nardin_bohatý"
   ],
   "henicocystinae": [
    "2013_nardin_bohatý"
@@ -16486,6 +16491,7 @@
    "1980_bell.b.m",
    "1982_bell.b.m",
    "1985_smith.a.b",
+   "1994_guensburg_sprinkle",
    "2010_sumrall",
    "2011_sumrall_zamora"
   ],
@@ -18804,6 +18810,7 @@
    "1983_holloway_jell",
    "1985_smith.a.b",
    "1988_guensburg",
+   "1994_guensburg_sprinkle",
    "2010_müller.p_hahn",
    "2011_sumrall_zamora"
   ],
@@ -19143,6 +19150,7 @@
   ],
   "rhenopyrgidae": [
    "1983_holloway_jell",
+   "1994_guensburg_sprinkle",
    "2010_müller.p_hahn",
    "2013_sumrall_heredia_rodríguez.c.m_mestre",
    "2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman",

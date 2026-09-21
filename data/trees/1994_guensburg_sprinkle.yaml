@@ -68,11 +68,13 @@ taxonomies:
         - taxon: timeischytes
         - taxon: ulrichidiscus
       - taxon: lebetodiscidae
-        modifier: nomen transl.
+        translated:
+          taxon: lebetodiscina
         emended: true
         children:
         - taxon: lebetodiscinae
-          modifier: nomen transl.
+          translated:
+            taxon: lebetodiscidae
           emended: true
           notes: |
             Printed "(nomen transl.)" in the classification (p. 12) and "(nomen transl., emend.)" at the systematic heading (p. 27), where the text says "it is emended to allow for separation of pyrgocystinids".
@@ -88,13 +90,15 @@ taxonomies:
           - taxon: lebetodiscus
           - taxon: streptaster
         - taxon: carneyellinae
-          modifier: nomen transl.
+          translated:
+            taxon: carneyellidae
           children:
           - taxon: carneyella
             citedAs: Carneyella Foerste, 1917
           - taxon: cryptogoleus
         - taxon: pyrgocystinae
-          modifier: nomen transl.
+          translated:
+            taxon: pyrgocystidae
           emended: true
           children:
           - taxon: archaepyrgus
@@ -115,7 +119,8 @@ taxonomies:
       emended: true
       children:
       - taxon: edrioasterina
-        modifier: nomen transl.
+        translated:
+          taxon: edrioasteridae
         emended: true
         children:
         - taxon: totiglobidae
@@ -139,7 +144,8 @@ taxonomies:
               type: true
               new: true
       - taxon: edrioblastoidina
-        modifier: nomen transl.
+        translated:
+          taxon: edrioblastoidea
         emended: true
         children:
         - taxon: astrocystitidae
@@ -157,7 +163,8 @@ taxonomies:
           emended: true
           children:
           - taxon: cyathocystinae
-            modifier: nomen transl.
+            translated:
+              taxon: cyathocystidae
             emended: true
             children:
             - taxon: cyathocystis
@@ -168,7 +175,8 @@ taxonomies:
                   synonym as its difference from Cyathocystis is likely
                   to be preservational in nature.
           - taxon: rhenopyrginae
-            modifier: nomen transl.
+            translated:
+              taxon: rhenopyrgidae
             emended: true
             children:
             - taxon: rhenopyrgus

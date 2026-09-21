@@ -159,6 +159,18 @@ def _nearest_named_ancestor(node):
   return ancestor
 
 
+def _by(value):
+  """The work an act is followed from: `by`'s source and pages, when the
+  field's value is an object naming one."""
+  by = value.get('by') if isinstance(value, dict) else None
+  if not by:
+    return {}
+  fields = {'by': by['source']}
+  if 'pages' in by:
+    fields['byPages'] = by['pages']
+  return fields
+
+
 def _coverage_kind(claim):
   kind = claim['kind']
   if kind in ('usage', 'rejection'):
@@ -425,6 +437,8 @@ class _NodeClaims:
     claim['axis'] = node.axis
     if field in ('cfTaxon', 'affTaxon'):
       claim['target'] = data[field]
+    if 'sensu' in data:
+      claim['sensu'] = data['sensu']
     self._emit(claim, field)
 
   def _placement_base(self):
@@ -453,22 +467,20 @@ class _NodeClaims:
       self._act('placeholder' if self.placeholder else 'new', 'new')
     if data.get('type'):
       self._act('type', 'type')
-    if data.get('emended'):
-      self._act('emended', 'emended')
-    if (modifier := data.get('modifier')) is not None:
-      if 'transl' in modifier.lower() or 'tranls' in modifier.lower():
-        fields = {'modifier': modifier}
-        derived = node.taxon.derivative_of
-        if derived is not None and 'altRankOf' in node.taxon._data:
-          fields['altRankOf'] = derived.key
-        # The identity link between coordinate names is undirected: the
-        # variants are listed whichever record carries the link.
-        variants = rank_variants(node.taxon.key)
-        if variants:
-          fields['rankVariants'] = variants
-        self._act('nomTransl', 'modifier', **fields)
-      else:
-        self._act('modifier', 'modifier', modifier=modifier)
+    if emended := data.get('emended'):
+      self._act('emended', 'emended', **_by(emended))
+    if translated := data.get('translated'):
+      fields = _by(translated)
+      if node.translated is not None and node.translated.taxon is not None:
+        fields['translatedFrom'] = node.translated.taxon.key
+      # The identity link between coordinate names is undirected: the
+      # variants are listed whichever record carries the link.
+      variants = rank_variants(node.taxon.key)
+      if variants:
+        fields['rankVariants'] = variants
+      self._act('nomTransl', 'translated', **fields)
+    if data.get('nudum'):
+      self._act('nomNudum', 'nudum')
     if node.corrected is not None and node.corrected.taxon is not None:
       self._act(
         'corrected',

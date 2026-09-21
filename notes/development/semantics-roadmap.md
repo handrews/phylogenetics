@@ -114,7 +114,7 @@ What changed between the two prefaces, and what it means for the data.
 | name-group Latin (nom. inviol., perf., imperf., van., neg., vet., null.) | defined and used (xii–xiv) | named once, then "authors have used fewer terms" (xiii) | do not pre-populate `act` with them; add only when a source prints one |
 | citing an act | author and year (xv, xviii) | author, year **and page** (xv, xvii–xviii) | `actBy` is a full `authority`, so it can carry `pages` |
 | combined act | "if desired … nom. transl. et correct." (xviii) | a recognized form (xvii) | `act` is a list |
-| emend. | author and date (xix) | author, date and page; style "…; emend., Williams & Wright, 1965, p. 299" (xviii) | add `emendedBy: authority`, used when the emender is not the current source |
+| emend. | author and date (xix) | author, date and page; style "…; emend., Williams & Wright, 1965, p. 299" (xviii) | `by: authority` on `emended`, used when the emender is not the current source (B6) |
 | superfamily suffix | unspecified (xv) | -oidea mandated, -acea disallowed, tribe -ini (Art. 29.2, xiv) | suffix lint must be era-aware; older sources print -acea legitimately |
 | suprafamilial endings | may not end in -idae/-inae (xvii) | may not end in -oidea/-idae/-inae (xvii) | prescriptive for new names only; Crinoidea and Edrioasteroidea stand |
 | type-species fixation | M, OS, OD, SD, SM, ICZN (xx) | OD, M, SD (with page), typus/typicus, tautonymy, ICZN; post-1930 genus without fixation is invalid, later fixation re-dates the name (xix–xx) | `typeFixation` enum keeps all; SM and OS are historical |
@@ -359,7 +359,7 @@ an ordinary resolved citation that needs no `editorial` block.
 | `new` | "n. gen.", "sp. nov." | protologue here | — (flag) | keep |
 | `type` | "*" before the type species (*Preface* xix) | name-bearing type at genus/family level | — (flag) | keep; see B3, B14 |
 | `emended` | "emend." (*Preface* xix: scope change only) | emended diagnosis, same name | — (flag) | keep; drop `null` from its type |
-| `modifier` | "nom. transl.", "nomen nudum", "n. comb." | nomenclatural act or name group | — | replace with `act` (B6) |
+| `modifier` | "nom. transl.", "nomen nudum", "n. comb." | nomenclatural act or name group | — | replaced by `translated` and `nudum` (B6) |
 | `stem` | "stem-group" | stem-group usage | — (flag) | keep |
 | `outgroup` | cladogram outgroup | outgroup | — (flag) | keep |
 | `bracket` (tree) | clade bracket / label | named clade in a cladogram | — | keep |
@@ -413,7 +413,21 @@ its one use reaches no consumer. Explicit exclusion is a claim worth keeping,
 since it is exactly what consensus databases discard. Add it to
 `RELATED_LIST`. The one code change in phase B.
 
-**B6. Replace free-text `modifier` with `act` + `actBy`.** The *Preface 2023*
+**B6. Replace free-text `modifier` with `act` + `actBy`.** Done 2026-09-20
+in a lighter shape than the one below, since only two acts ever reached
+`modifier`: `translated` (`true`, or a node naming the taxon at the earlier
+rank, in the shape of `moved`) and `nudum: true`. `emended` and `translated`
+take `by: authority` for an act the source follows rather than performs
+(Parsley 1982c "nom. tranls. Paul 1968b"; Frest 2005 "nom. transl. Regnéll,
+1945 ex Subclass Eocrinoidea Jaekel, 1918"). A node under `translated`,
+`corrected`, `moved` or `removed` cites the earlier state, so its own
+citation fields locate that earlier use; `moved`, `corrected` and `removed`
+are always the current source's act. `n. comb.` is implied by `moved` on a
+species and `(Plesion)` is `rank: Plesion`. An `act` list with
+`nomCorrect`, `nomNov` and the rest still waits for a source that prints
+one. The original proposal follows.
+
+The *Preface 2023*
 (xv, xvii–xviii) cites an act as its name, author, year and page, then the
 name it derives from:
 
@@ -555,8 +569,9 @@ prints it.
 various later authors rather than the original one. Allow `auth: [auctt.]` on
 an entry and document it.
 
-**B13. "s.l." and "s.s."** (*Preface* xxiii). A `sensu: lato | stricto` flag on
-the node, added when first printed.
+**B13. "s.l." and "s.s."** (*Preface* xxiii). Done 2026-09-20: `sensu:
+stricto | lato | emendato` on the node, first printed by Bell 1891 ("(s. s.)"
+on Crinoidea and Blastoidea, "(s. Stelleridea, s. em.)").
 
 **B14. Type-species fixation.** Both prefaces record how the type was fixed.
 Current forms (*Preface 2023*, xix–xx): OD (original designation, including
@@ -635,8 +650,8 @@ adopted, with the sentence in `notes`.
 **B17. Parentheses around a suprafamilial authority.** Bockelie & Paul 1983
 print "Order Cyathocystida (Bell 1975)" for a suborder they raise to order and
 redefine, with the act stated in prose on p. 262. The parentheses borrow the
-species-level changed-combination convention. Record it as `act: [nomTransl]`
-with `emended: true` (B6), and keep the parenthesized form in `citedAs` so
+species-level changed-combination convention. Record it as `translated:
+{taxon: cyathocystina}` with `emended: true` (B6), and keep the parenthesized form in `citedAs` so
 the printed convention is not lost.
 
 **B18 (MVP). The same name at different ranks.** *Rhombifera* is a class
@@ -659,7 +674,7 @@ not happen, which is why it must be modelled rather than assumed away.
 
 `altRankOf` is only the identity link between coordinate family-group names;
 it says nothing about who re-ranked. The act belongs to the tree of the source
-that did it (`modifier: nomen transl.` today, `act: [nomTransl]` after B6), so
+that did it (`translated` on the node, B6), so
 Smith 1985 (suborder Isorophina to subfamily Isorophinae) and Guensburg &
 Sprinkle 1994 (suborder Lebetodiscina to family Lebetodiscidae; families
 Lebetodiscidae, Carneyellidae and Pyrgocystidae to subfamilies) each carry

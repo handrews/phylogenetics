@@ -29,8 +29,10 @@ TYPES = ('classification', 'table', 'list', 'statement', 'chains', 'timeline')
 ACT_MARKS = {
   'emended': 'emend.',
   'nomTransl': 'nom. transl.',
+  'nomNudum': 'nom. nud.',
   'corrected': 'nom. correct.',
 }
+SENSU_MARKS = {'stricto': '(s. s.)', 'lato': '(s. l.)', 'emendato': '(s. em.)'}
 _NEW_MARKS = {
   'superfamily': 'superfam. nov.',
   'family': 'fam. nov.',
@@ -141,6 +143,7 @@ def list_entry(
   sentence=None,
   claims=None,
   authors=None,
+  nudum=None,
 ):
   """One line of a list: a synonymy entry (parents, name, printed form,
   stance), a printed form, or a statement (kind, sentence)."""
@@ -156,6 +159,7 @@ def list_entry(
     ('sentence', sentence),
     ('claims', claims),
     ('authors', authors),
+    ('nudum', nudum),
   ):
     if value is not None:
       entry[field] = value

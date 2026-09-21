@@ -13,7 +13,6 @@ taxonomies:
         - taxon: spencensis_wen.r.q_babcock_peng.j_robison_2019
           moved:
             taxon: totiglobus
-          modifier: n. comb.
           specimens:
             paratypes:
             - PE 93415

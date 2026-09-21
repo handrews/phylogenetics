@@ -189,8 +189,8 @@ TOOL_DESCRIPTIONS = {
     'diagnosis. Optionally one source, one kind of statement '
     '(usage, placement, acceptance, act, rejection, material, diagnosis, '
     'editorial; or occurrences, illustrations, specimens for one kind of '
-    'material) or one act kind (new, type, emended, nomTransl, moved, '
-    'removed, corrected). A statement marked "editor" is the '
+    'material) or one act kind (new, type, emended, nomTransl, nomNudum, '
+    'moved, removed, corrected). A statement marked "editor" is the '
     "editor's inference, not the paper's words. When a source is named "
     'and nothing of that kind about the record is entered, the result is '
     'the gap block for that source and kind: compose it as the answer.'
