@@ -2950,8 +2950,8 @@ cypræa:
     source: 1758_linnaeus
 cystaster:
   name: Cystaster
-  auth: [Hall]
-  year: 1871
+  authority:
+    source: 1871_hall
 cystaster-subgenus:
   name: Cystaster
   rank: subgenus
@@ -5093,6 +5093,14 @@ granatum_volborth_1842:
   auth: [Volborth]
   year: 1842
   notes: Very uncertain of date or even attribution.
+grandis_bassler_1935:
+  name: grandis
+  authority:
+    source: 1935_bassler
+grandis_chauvel_1971:
+  name: grandis
+  auth: [Chauvel]
+  year: 1971
 granifera_lamarck_1816:
   name: granifera
   authority:
@@ -5109,6 +5117,19 @@ granulatus_goldfuss_1831:
   name: granulatus
   auth: [Goldfuss]
   year: 1831
+granulatus_hall_1871:
+  name: granulatus
+  authority:
+    source: 1871_hall
+    illustrations:
+    - plate: II
+      figures:
+      - [1, 4]
+      notes: Plate VI in 1872_hall final printing.
+  notes: |
+    This species is noted as erected in 1871 in 1872b_hall, the final
+    and proper printing of the paper.  1871 was a preprint, but is
+    nonetheless accepted as an authoritative publication.
 granulatus_jaekel_1899:
   name: granulatus
   auth: [jaekel]
@@ -5125,22 +5146,6 @@ granulosus_meek_1872:
   name: granulosus
   auth: [meek]
   year: 1872
-grandis_bassler_1935:
-  name: grandis
-  authority:
-    source: 1935_bassler
-grandis_chauvel_1971:
-  name: grandis
-  auth: [Chauvel]
-  year: 1971
-granulatus_hall_1871:
-  name: granulatus
-  authority:
-    source: 1871_hall
-  notes: |
-    This species is noted as erected in 1871 in 1872b_hall, the final
-    and proper printing of the paper.  1871 was a preprint, but is
-    nonetheless accepted as an authoritative publication.
 granulosa_robison_1965:
   name: granulosa
   auth: [robison]
@@ -5470,8 +5475,7 @@ hemicystitidae:
   year: 1936
 hemicystis:
   name: Hemicystis
-  auth: [hall]
-  year: 1852
+  altSpellingOf: hemicystites
 hemisphærica_leske_1778:
   name: hemisphærica
   authority:
