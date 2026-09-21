@@ -11150,6 +11150,7 @@
     "Hall"
    ],
    "display": "Hall 1871",
+   "source": "1871_hall",
    "year": 1871
   },
   "folded": [
@@ -20491,13 +20492,15 @@
     "Hall"
    ],
    "display": "Hall 1852",
+   "source": "1852_hall",
    "year": 1852
   },
   "folded": [
    "hemicystis"
   ],
-  "kind": "primary",
+  "kind": "altSpellingOf",
   "name": "Hemicystis",
+  "of": "hemicystites",
   "rank": "genus"
  },
  "hemicystites": {

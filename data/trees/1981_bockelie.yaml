@@ -61,11 +61,16 @@ taxonomies:
       auth: [ubaghs]
       year: 1972
       citedAs: Ubaghs 1972
-      notes: |
-        Ubaghs 1972 is titled "Le genre Balanticystis Chauvel (Echinodermata,
-        Eocrinoidea) dans l'Ordovicien inferieur de la Montagne Noire (France)",
-        so the name is Chauvel's (Balantiocystis Chauvel, 1966) in Ubaghs's
-        spelling; both the spelling and the attribution here follow Ubaghs.
+      editorial:
+        corrections:
+          auth: [Chauvel]
+          year: 1966
+        basis: >
+          Ubaghs 1972 is titled "Le genre Balanticystis Chauvel (Echinodermata,
+          Eocrinoidea) dans l'Ordovicien inferieur de la Montagne Noire
+          (France)", which agrees with other sources regarding Balantiocystis,
+          which appears to be the generally accepted spelling despite both
+          Bockelie and Ubaghs dropping the "o".
   - taxon: cryptocrinitidae
     children:
     - taxon: cryptocrinites

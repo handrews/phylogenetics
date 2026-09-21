@@ -4591,11 +4591,11 @@
     "year": 1852
    },
    "claims": {
-    "acceptance": 9,
+    "acceptance": 10,
     "act": 41,
     "material": 4,
     "placement": 65,
-    "usage": 80
+    "usage": 81
    },
    "coverage": {
     "illustrations": "partly",
@@ -4610,8 +4610,8 @@
    "derived": {
     "illustrations": 4,
     "newTaxa": 41,
-    "skeleton": 145,
-    "synonymy": 9
+    "skeleton": 146,
+    "synonymy": 10
    },
    "derivedCoverage": {
     "illustrations": null,
@@ -9589,6 +9589,7 @@
    "claims": {
     "acceptance": 3,
     "act": 10,
+    "editorial": 1,
     "material": 16,
     "placement": 16,
     "rejection": 1,
@@ -10281,7 +10282,9 @@
   },
   "1983_bockelie_paul.c.r.c": {
    "acts": {
-    "emended": 1,
+    "emended": 2,
+    "nomTransl": 1,
+    "removed": 2,
     "type": 2
    },
    "audit": {
@@ -10303,10 +10306,10 @@
     "year": 1983
    },
    "claims": {
-    "act": 3,
-    "editorial": 2,
-    "placement": 17,
-    "usage": 19
+    "act": 7,
+    "placement": 9,
+    "rejection": 2,
+    "usage": 14
    },
    "coverage": {
     "illustrations": null,
@@ -10320,7 +10323,7 @@
    },
    "derived": {
     "phylogeny": 3,
-    "skeleton": 29,
+    "skeleton": 22,
     "types": 2
    },
    "derivedCoverage": {
@@ -18868,8 +18871,7 @@
    "1801_lamarck"
   ],
   "corallum_jaekel_1918": [
-   "1975_bell.b.m",
-   "1983_bockelie_paul.c.r.c"
+   "1975_bell.b.m"
   ],
   "cordata_lamarck_1816": [
    "1816b_lamarck"
@@ -19227,7 +19229,8 @@
   "cyathocystina": [
    "1975_bell.b.m",
    "1980_bell.b.m",
-   "1982_bell.b.m"
+   "1982_bell.b.m",
+   "1983_bockelie_paul.c.r.c"
   ],
   "cyathocystinae": [
    "1994_guensburg_sprinkle"
@@ -22209,12 +22212,6 @@
   "isorophida-genus-indeterminate_zamora_smith.a.b_2010": [
    "2010_zamora_smith.a.b"
   ],
-  "isorophida-indenterminate_family_bockelie_paul.c.r._1983": [
-   "1983_bockelie_paul.c.r.c"
-  ],
-  "isorophida-indeterminate-suborder_bockelie_paul.c.r.c_1983": [
-   "1983_bockelie_paul.c.r.c"
-  ],
   "isorophida-sp_holloway_jell_1983": [
    "1983_holloway_jell"
   ],
@@ -23765,8 +23762,7 @@
    "1982a_parsley"
   ],
   "oklahomae_strimple_graffham_1955": [
-   "1975_bell.b.m",
-   "1983_bockelie_paul.c.r.c"
+   "1975_bell.b.m"
   ],
   "oklahomensis_bassler_1950": [
    "1982c_parsley"
@@ -25358,8 +25354,7 @@
    "2020_zamora_sprinkle_sumrall"
   ],
   "rhizophora_schmidt_1889": [
-   "1975_bell.b.m",
-   "1983_bockelie_paul.c.r.c"
+   "1975_bell.b.m"
   ],
   "rhizophysa": [
    "1816a_lamarck"
