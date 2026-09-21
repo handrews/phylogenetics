@@ -3,48 +3,65 @@ taxonomies:
   children:
   - taxon: cyathocystida
     emended: true
+    citedAs: Order Cyathocystida (Bell 1975)
+    modifier: nomen transl.
     notes: nom. transl. from suborder cyathocystina
+    diagnosis: >
+      Edrioasteroids with a directly attached cup-shaped or tubular theca
+      composed of a single plate and forming a com-
+      plete aboral cover; with five primary oral cover
+      plates that remain in contact with each other
+      over the mouth throughout growth; with basical-
+      ly simple biserial, imperforate ambulacral cover
+      plates, but without ambulacral flooring plates;
+      with one large deltoid plate in each inter-radius
+      fused to the ambulacral cover plates.
     children:
     - taxon: cyathocystidae
+      emended: true
+      diagnosis: As for Order Cyathocystida.
       children:
       - taxon: cyathocystis
+        diagnosis: >
+          Cyathocystids with an oral surface
+          which includes a peripheral circlet of small plates
+          adjacent to the thecal margin; with an anal cover
+          of 1 or 2 circlets of plates.
         children:
         - taxon: plautinae_schmidt_1879
           type: true
-        - taxon: rhizophora_schmidt_1889
-          notes: Given as Jaekel (1899)?
-        - taxon: oklahomae_strimple_graffham_1955
-          notes: Given as Bell (1982)?
+          notes: Type species by monotypy.
       - taxon: cyathotheca
+        diagnosis: >
+          Cyathocystids with an oral surface
+          which lacks a peripheral series of plates adjacent
+          to the thecal margin, but with two adanal plates
+          in the posterior inter-radii; with a simple anal
+          pyramid.
         children:
         - taxon: suecica_jaekel_1927
           type: true
-        - taxon: corallum_jaekel_1918
-  - notes: |
-      On page 262 the paper states:
-      "The affinities of the Devonian genera [Timeischytes and Hadrochthus]
-      are more difficult to settle, but we suspect they represent specialized,
-      probably neotenous, offshoots from the Agelacrinitidae. We are uncertain
-      whether to assign them to that family or to a family (or families)
-      of their own."
-    taxon: isorophida
-    editorial:
-      inferred: true
-      basis: |
-        Agelacrinitidae is in Isorophida per Bell 1980, which the paper cites;
-        this paper also mentions Isorophida on page 263.
-    children:
-    - openTaxon: isorophida-indeterminate-suborder_bockelie_paul.c.r.c_1983
-      editorial:
-        inferred: true
-        basis: |
-          This paper does not mention a suborder, although Agelacrinitidae
-          is placed in Isorophina in Bell 1980.
-      children:
-      - openTaxon: isorophida-indenterminate_family_bockelie_paul.c.r._1983
-        children:
-        - taxon: timeischytes
-        - taxon: hadrochthus
+          notes: Type species by original description.
+      removed:
+      - taxon: timeischytes
+        authority:
+          source: 1980_bell.b.m
+        notes: >
+          The affinities of the Devonian genera are
+          more difficult to settle, but we suspect they represent specialized,
+          probably neotenous, offshoots from the Agelacrinitidae.
+          We are uncertain whether to assign them to that family or to a
+          family (or families) of their own.
+      - taxon: hadrochthus
+        provisional: true
+        authority:
+          source: 1980_bell.b.m
+        notes: >
+          The affinities of the Devonian genera are
+          more difficult to settle, but we suspect they represent specialized,
+          probably neotenous, offshoots from the Agelacrinitidae.
+          We are uncertain whether to assign them to that family or to a
+          family (or families) of their own.
 phylogenies:
 - treeType: diagram
   notes: Ordinal diagram of Edrioasteroidea

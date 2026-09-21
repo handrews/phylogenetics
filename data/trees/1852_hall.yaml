@@ -202,7 +202,13 @@ taxonomies:
       synonyms:
       - tentative: true
         taxon: agelacrinites
+        authority:
+          source: 1842_vanuxem
         notes: Only Agelacrinites Vanuxem, non Agelacrinites Forbes.
+      non:
+      - taxon: agelacrinites
+        authority:
+          source: 1848b_forbes
       children:
       - taxon: parasitica_hall_1852
         pages: 246
