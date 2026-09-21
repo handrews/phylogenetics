@@ -1,3 +1,7 @@
+**NOTE: These are old thoughts that may not be relevant anymore.**
+
+-----
+
 Fundamental units:
   * pgNode (phylogenetic node)
   * published location (source, pages, plates, figures)
@@ -38,6 +42,7 @@ Example: 2021-00-00-p Evolution, Functional Morphology and Paedomorphism in the 
 Audit trail:
 ============
 We need to keep track of which accounts (or import tools) added data, and also allow for review / affirmation / questioning of data.
+
 Option matrix:
 ==============
 * most recent correction (yes; could be multiple levels; no means use all)

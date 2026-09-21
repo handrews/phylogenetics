@@ -1,6 +1,10 @@
+**NOTE: These are old thoughts that may not be relevant anymore.**
+
+-----
+
 # Phylogenetic Browser
 
-* Capture everythign as-is
+* Capture everything as-is
   * Things that could connect sometimes won't — need to handle this gracefully
   * Adding sources whenever possible is preferred, but need to handle otherwise
   * Errors will be present that can't be verified (Sphaeronites page number error)
@@ -11,7 +15,7 @@
   * May need to support some duct-taping to bridge gaps (2nd-/3rd-hand knowledge)
   * Duct-taping should be obvious, and should be (automatically?) removed when possible
 
-* Three-layred system
+* Three-layered system
   * Data capture
   * Data-driven connection
   * Human-driven connection, analysis, and visualization
@@ -58,7 +62,7 @@
     * Emendation
     * Correction
     * Translation
-    * Synonymy (and not-synonomy)
+    * Synonymy (and not-synonymy)
     * Erroneous labeling
     * Restatement without modification
     * Quotes and question marks
@@ -125,7 +129,7 @@
     * Sometimes the text outlines a tree without clearly saying so
     * Sometimes the larger context of the tree is implied to varying degrees
 
-All relationships come from trees of some sort (although they might be as simple as a "tree" synonomizing a single taxon with another, or correcting a single taxon name, e.g. Regnéll definitively settling on Cystoidea over Cystidea).
+All relationships come from trees of some sort (although they might be as simple as a "tree" synonymizing a single taxon with another, or correcting a single taxon name, e.g. Regnéll definitively settling on Cystoidea over Cystidea).
 
 When we don't have the appropriate tree, we can add _synthetic relationships_ based on text, secondhand reports, and other plausible assumptions **that can be documented**.
 
