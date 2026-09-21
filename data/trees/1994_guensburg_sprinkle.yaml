@@ -1,6 +1,12 @@
 taxonomies:
 - taxon: echinozoa
-  notes: Credited to Matsumoto 1929
+  auth: [matsumoto]
+  year: 1929
+  editorial:
+    correction:
+      auth: [zittel]
+      year: 1895
+    basis: Zittel 1895 is generally accepted.
   children:
   - taxon: edrioasteroidea
     children:
