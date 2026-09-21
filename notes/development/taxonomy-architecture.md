@@ -1,6 +1,10 @@
+**NOTE: These are old thoughts that may not be relevant anymore.**
+
+-----
+
 ## Principles
 
-[quote from von Buch]
+[quote from von Buch, which I sadly have misplaced for now]
 
 Science Moves.
 
@@ -12,7 +16,7 @@ AI and humans can populate the human-verifiable language.
 
 AI is needed to query and visualize.
 
-A database serialization may be better for verificaton and some use cases.
+A database serialization may be better for verification and some use cases.
 
 A database might be needed for the historical edit/audit trail.
 
@@ -39,7 +43,7 @@ You can use an AI to gather data, but know that there are many sources of errors
 		* Robust to missing publications
 		* Citations can fill in gaps, but need to be clearly secondhand
 	* Errors are part of published facts
-		* Track errors so people can see how they propagatad
+		* Track errors so people can see how they propagated
 		* But wherever possible based on published fact, show correct form
 		* Mark corrected data clearly, especially if subjective
 		* Some errors too obvious to have a published correction
@@ -82,7 +86,7 @@ You can use an AI to gather data, but know that there are many sources of errors
 		* Strongly prefer to build on rather than re-invent
 	* Handle erroneous citations?
 		* e.g. incorrect page number in that one Treatise citation
-		* That really complicated thing with mis-labled figures
+		* That really complicated thing with mis-labeled figures
 * Geology
 	* I do not have any idea how to handle this, but it's critical
 	* Fundamentally built on specimens
@@ -92,8 +96,8 @@ You can use an AI to gather data, but know that there are many sources of errors
 	* Mindat has a data model but there are concerns
 		* Some GCD-style text formatting, and I know those problems
 		* e.g. they are trying to migrate away from abbreviations
-		* I feel like Mindat is a starting rather than ending piont
-	* PBDB seems like it might have a better model
+		* I feel like Mindat is a starting rather than ending point
+	* PBDB seems like it might have a better model for this project
 		* More fossil-oriented compared to Mindat's mineral-orientation
 	* Need to see if other data models exist
 		* How precise can formation/member/biozone be?
@@ -113,10 +117,10 @@ You can use an AI to gather data, but know that there are many sources of errors
 	* Each description or pre-formal discussion is its own entry
 		* Past entries connected by synonymy, etc. not aliasing
 		* Allows Edrioasterida Bell 1976 vs emended per G&S 1994
-	* Detailed support of synonomy
+	* Detailed support of synonymy
 	* Support for informal taxa w/cladistics
 	* No attempt to track accepted/rejected, just track published facts
-		* Acceptamce/rejection can be a published fact, but tracked as that
+		* Acceptance/rejection can be a published fact, but tracked as that
 	* Rules for less-formal descriptions will be a huge challenge
 
 ## Layers
