@@ -28,7 +28,7 @@ taxonomies:
           adjacent to the thecal margin; with an anal cover
           of 1 or 2 circlets of plates.
         children:
-        - taxon: plautinae_schmidt_1879
+        - taxon: plautinae_schmidt.c.f_1879
           type: true
           notes: Type species by monotypy.
       - taxon: cyathotheca

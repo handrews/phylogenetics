@@ -352,7 +352,7 @@ taxonomies:
     children:
     - taxon: cyathocystis
       children:
-      - taxon: plautini_schmidt_1880
+      - taxon: plautini_schmidt.c.f_1879
         type: true
     - taxon: cyathotheca
       children:

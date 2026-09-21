@@ -26,14 +26,16 @@ taxonomies:
         children:
         - taxon: cyathocystis
           children:
-          - taxon: plautinae_schmidt_1879
-            auth: [Schmidt]
-            year: 1880
+          - taxon: plautinae_schmidt.c.f_1879
+            authority:
+              source: 1880_schmidt.c.f
             citedAs: Schmidt, 1880
             notes: |
-              Given as "Schmidt 1880" but other sources say 1879, although
-              there is also a plautini_schmidt_1980 that might be the same?
-          - taxon: rhizophora_schmidt_1889
+              Given as "Schmidt 1880" but 1879 is the pre-priont, and correct.
+          - taxon: rhizophora_schmidt.c.f_1879
+            citedAs: Schmidt, 1880
+            notes: |
+              Given as "Schmidt 1880" but 1879 is the pre-priont, and correct.
           - taxon: americanus_bassler_1936
           - taxon: oklahomae_strimple_graffham_1955
         - taxon: cyathotheca

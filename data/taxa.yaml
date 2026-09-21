@@ -237,6 +237,7 @@ agelacrinoidea:
 agelacrinus:
   notes: |
     According to Bell (1976), "Agelacrinites" was commonly misspelled as this.
+    One example is 1879_schmidt.c.f.
   name: Agelacrinus
   altSpellingOf: agelacrinites
 agelacystis:
@@ -2842,12 +2843,11 @@ cyathothecidae:
   notes: By error in Regnéll (1945)
 cyathocystis:
   name: Cyathocystis
-  auth: [Schmidt]
-  year: 1879
+  authority:
+    source: 1879_schmidt.c.f
   notes: |
-    Schmidt's paper (Verh. Mineral. Ges. St. Petersburg, 1879) is not on hand;
-    known here through Dames's Referat (1879_dames). Bassler 1935 and Bell 1975
-    print 1880.
+    1879_schmidt.c.f is a pre-print; due to confusion over the pre-print,
+    1880_schmidt.c.f, the proper publication, is often cited in error.
 cyathotheca:
   name: Cyathotheca
   authority:
@@ -8666,18 +8666,22 @@ platys_raymond_1915:
   name: platys
   auth: [Raymond]
   year: 1915
-plautini_schmidt_1880:
+plautini_schmidt.c.f_1879:
   name: plautini
-  auth: [Schmidt]
-  year: 1880
+  authority:
+    source: 1879_schmidt.c.f
   notes: |
-    Unclear why 1880 vs 1879; from 1935_bassler, see also
-    1975_bell.b.m for a "plautinae Schmidt, 1980"
-  altSpellingOf: plautinae_schmidt_1879
-plautinae_schmidt_1879:
+    This form is from 1835_bassler, with 1880 given as the year.
+    1879_schmidt.c.f is a pre-print; due to confusion over the pre-print,
+    1880_schmidt.c.f, the proper publication, is often cited in error.
+  altSpellingOf: plautinae_schmidt.c.f_1879
+plautinae_schmidt.c.f_1879:
   name: plautinae
-  auth: [Schmidt]
-  year: 1879
+  authority:
+    source: 1879_schmidt.c.f
+  notes: |
+    1879_schmidt.c.f is a pre-print; due to confusion over the pre-print,
+    1880_schmidt.c.f, the proper publication, is often cited in error.
 pleiadae_sinclair_bolton_1965:
   name: pleiadae
   auth: [Sinclair, Bolton]
@@ -9649,10 +9653,13 @@ rhipidocystis:
   name: Rhipidocystis
   auth: [jaekel]
   year: 1901
-rhizophora_schmidt_1889:
+rhizophora_schmidt.c.f_1879:
   name: rhizophora
-  auth: [Schmidt]
-  year: 1889
+  authority:
+    source: 1879_schmidt.c.f
+  notes: |
+    1879_schmidt.c.f is a pre-print; due to confusion over the pre-print,
+    1880_schmidt.c.f, the proper publication, is often cited in error.
 rhizophysa:
   name: Rhizophysa
   auth: [Péron, Lesuer]

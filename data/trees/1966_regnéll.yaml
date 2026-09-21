@@ -48,7 +48,7 @@ taxonomies:
         children:
         - taxon: cyathocystis
           children:
-          - taxon: plautinae_schmidt_1879
+          - taxon: plautinae_schmidt.c.f_1879
             type: true
             notes: Type by SD Haeckel (1896)
         - taxon: cyathotheca
