@@ -8,9 +8,9 @@ State as of 2026-09-08, `productize` @ `7518190`.
 
 ## How the numbers are produced
 
-`scripts/schema_audit.py` measures usage from the `jschon` evaluation result
-tree, which records a schema location and an instance location for every keyword
-evaluated. That is the same per-keyword coverage an Istanbul-style JSON Schema
+`scripts/schema_audit.py` measures usage from the `json-schema-engine` verbose
+output tree, which records a schema location and an instance location for every
+keyword evaluated and every subschema applied. That is the same per-keyword coverage an Istanbul-style JSON Schema
 coverage tool gives, plus instance paths, using the validator the project already
 depends on.
 

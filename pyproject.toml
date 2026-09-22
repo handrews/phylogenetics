@@ -6,11 +6,11 @@ readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [{name = "Henry H. Andrews", email = "henry@henryandrews.net"}]
-requires-python = ">=3.10,<4"
+requires-python = ">=3.12,<4"
 dependencies = [
   "coloredlog>=0.2.5,<0.3",
   "pyyaml>=6.0.3,<7",
-  "jschon>=0.11.1,<0.12",
+  "json-schema-engine>=0.0.3,<0.0.4",
   "mcp>=2.2.0,<3",
   "anthropic>=1.5.0,<2",
 ]
@@ -30,15 +30,10 @@ pytest-cov = "^7.1.0"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.pytest.ini_options]
-filterwarnings = [
-  "ignore::DeprecationWarning:rfc3986",
-]
-
 [tool.ruff]
 line-length = 100
 indent-width = 2
-target-version = "py310"
+target-version = "py312"
 extend-exclude = ["notes", "eval/runs"]
 
 [tool.ruff.lint]

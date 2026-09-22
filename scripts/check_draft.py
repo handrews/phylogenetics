@@ -11,15 +11,11 @@ always printed, since a draft normally needs new records.
 import pathlib
 import sys
 
-import jschon
-
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 from phylohist.loader.io import (  # noqa: E402
   DATA_DIR,
-  FILEDIR,
-  ensure_catalog,
+  build_schema,
   load_yaml,
-  log_schema_errors,
 )
 
 TAXON_FIELDS = ('taxon', 'openTaxon', 'cfTaxon', 'affTaxon', 'bracket')
@@ -56,17 +52,15 @@ def main(argv):
     print(__doc__)
     return 2
   path = pathlib.Path(argv[1])
-  ensure_catalog()
-  schema = jschon.JSONSchema(load_yaml(FILEDIR / 'schemas' / 'phylogeny.yaml'))
+  schema = build_schema()
   draft = load_yaml(path)
-  result = schema['$defs']['trees'].evaluate(jschon.JSON({path.stem: draft}))
-  if not result.valid:
-    print(f'{path}: not valid against the tree schema')
-    log_schema_errors(result)
-    status = 1
-  else:
+  # `check` logs the reasons for whatever it rejects.
+  if schema['trees'].check({path.stem: draft}):
     print(f'{path}: valid against the tree schema')
     status = 0
+  else:
+    print(f'{path}: not valid against the tree schema')
+    status = 1
 
   taxa, authors, sources = set(), set(), set()
   walk(draft, taxa, authors, sources)

@@ -16,7 +16,6 @@ import logging
 import os
 import pathlib
 
-import jschon
 import pytest
 
 EXPECTED_WARNINGS_PATH = pathlib.Path(__file__).parent / 'expected-warnings.txt'
@@ -88,11 +87,10 @@ def test_invalid_tree_raises(tmp_path):
   # can handle, instead of ending the process.
   from phylohist.loader import io
 
-  io.ensure_catalog()
-  schema = jschon.JSONSchema(io.load_yaml(io.FILEDIR / 'schemas' / 'phylogeny.yaml'))
+  schema = io.build_schema()
   (tmp_path / 'broken.yaml').write_text('tree:\n  rnak: genus\n')
   with pytest.raises(io.LoadError, match='broken.yaml'):
-    io._load_tree_dir(tmp_path, schema['$defs']['trees'], {})
+    io._load_tree_dir(tmp_path, schema['trees'], {})
 
 
 def test_load_fails_on_logged_errors(monkeypatch):

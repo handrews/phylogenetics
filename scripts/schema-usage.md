@@ -4,7 +4,7 @@
 Narrative analysis of these numbers is in `notes/audits/schema-audit.md`.
 
 Counts are *distinct instance locations* that reached a given schema
-location, measured from the `jschon` evaluation result tree.
+location, measured from the `json-schema-engine` verbose output tree.
 
 ## 1. Unreached schema locations
 
