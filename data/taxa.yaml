@@ -1851,8 +1851,11 @@ camarocystites:
   altSpellingOf: comarocystites
 cambraster:
   name: Cambraster
-  auth: [jaekel]
-  year: 1923
+  auth: [Cabibel, Termier, Termier]
+  year: 1958
+  note: >
+    Jaekel 1923 sometimes cited, but without figures, a full description,
+    or a species name, it is considered a nomen nudum.
 cambraster-cf-tastudorum_jell_burrett_banks_1985:
   name: null
   rank: species
@@ -1917,24 +1920,24 @@ camptostroma:
 camptostromatidae:
   name: Camptostromatidae
   rank: Family
-  auth: [durham]
-  year: 1967
+  authority:
+    source: 1967a_durham
 camptostromatoida:
   name: Camptostromatoida
   rank: Order
-  auth: [durham]
-  year: 1966
+  altRankOf: camptostromatoidea
+  authority:
+    source: 1966_durham
 camptostromatoidea:
   name: Camptostromatoidea
   rank: Class
-  auth: [durham]
-  year: 1966
+  authority:
+    source: 1966_durham
 camptostromoidea:
   name: Camptostromoidea
   rank: Class
-  auth: [durham]
-  year: 1966
   altSpellingOf: camptostromatoidea
+  notes: Original invalid spelling.
 canadensis_billings_1866:
   name: canadensis
   auth: [billings]
@@ -4153,7 +4156,8 @@ echino-sphaerites:
 echinozoa:
   name: Echinozoa
   rank: Subphylum
-  auth: [zittel]
+  auth: [haeckel]
+  in: [zittel]
   year: 1895
 echinus:
   name: Echinus
@@ -4332,8 +4336,8 @@ edriocystis:
   year: 1896
 edriodiscus:
   name: Edriodiscus
-  auth: [jell, burrett, banks]
-  year: 1985
+  authority:
+    source: 1985_jell_burrett_banks
 edriophus:
   name: Edriophus
   authority:

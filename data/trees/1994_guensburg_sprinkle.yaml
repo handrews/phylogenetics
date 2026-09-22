@@ -1,19 +1,22 @@
 taxonomies:
 - taxon: echinozoa
-  auth: [matsumoto]
-  year: 1929
-  editorial:
-    correction:
-      auth: [zittel]
-      year: 1895
-    basis: Zittel 1895 is generally accepted.
+  authority:
+    source: 1929_matsumoto
+  notes: >
+    It is unclear whether the authors cited Matsumoto 1929 in error,
+    or intended to cite Echinozoa sensu Matsumoto.  Since Matsumoto
+    himself cites "Echinozoa auctt.", indicating the then-current
+    general sense of the taxon, a "sensu Matsumoto" citation would
+    seem odd, so this is assumed to be an error.
   children:
   - taxon: edrioasteroidea
     children:
     - taxon: camptostromatoida
       children:
       - taxon: camptostromatidae
-        citedAs: Camptostromatidae Durham, 1968
+        auth: [durham]
+        year: 1968
+        notes: 1968 is an error, the correct year is 1967.
         children:
         - taxon: camptostroma
     - taxon: stromatocystitida
@@ -26,14 +29,19 @@ taxonomies:
       - openTaxon: edrioasteroidea-family-uncertain_guensburg_sprinkle_1994
         children:
         - taxon: cambraster
-          citedAs: Cambraster Cabibel, Termier, and Termier, 1958
         - taxon: walcottidiscus
     - taxon: isorophida
       children:
       - openTaxon: isorophida-family-uncertain_guensburg_sprinkle_1994
         children:
         - taxon: edriodiscus
-          citedAs: Edriodiscus Smith, 1985
+          authority:
+            source: 1985_smith.a.b
+          notes: >
+            Smith 1985 correctly attributes this taxon to Jell, Burrett
+            and Banks 1985 in the main text of the paper, but erroneously
+            to himself in one table; presumably this is the reason for
+            the error here.
         - taxon: stromatocystites
           children:
           - taxon: walcotti_schuchert_1919
