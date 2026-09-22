@@ -1,8 +1,10 @@
 import logging
 import pathlib
 
-import jschon
 import yaml
+from json_schema_engine.compiler import compile_validator
+from json_schema_engine.core import create_engine
+from json_schema_engine.core.errors import SchemaValidationError
 
 logger = logging.getLogger(__name__)
 
@@ -73,12 +75,76 @@ def load_yaml(filename, debug=True):
     return data
 
 
-def ensure_catalog():
-  """The jschon catalog the schema evaluates against, created once."""
+SCHEMA_PATH = FILEDIR / 'schemas' / 'phylogeny.yaml'
+
+# The schema's own ``$id`` is the relative ``phylogeny``; it resolves against
+# whatever URI the document is registered under, and nothing ever retrieves it.
+SCHEMA_URI = 'https://phylohist.invalid/phylogeny'
+
+
+class Validator:
+  """One ``$defs`` entry, compiled to a Python function.
+
+  The compiled form answers valid/invalid and nothing else, which is all the
+  loader needs on the happy path; the interpreter is asked for the reasons
+  only when the compiled form rejects something.
+  """
+
+  def __init__(self, engine, uri):
+    self._engine = engine
+    self._uri = uri
+    self._validate = compile_validator(engine, uri).validate
+
+  def check(self, instance):
+    """True, or False once the reasons have been logged."""
+    if self._validate(instance):
+      return True
+    log_schema_errors(self._engine.evaluate(self._uri, instance, output='detailed'))
+    return False
+
+
+class Schema:
+  """The registered phylogeny schema, indexed by ``$defs`` entry name.
+
+  Compiling costs more than a single evaluation, so validators are built on
+  first use and kept; one ``Schema`` serves a whole load.
+  """
+
+  def __init__(self, engine, base, defs):
+    self.engine = engine
+    self.base = base
+    self._defs = defs
+    self._validators = {}
+
+  def uri(self, name):
+    """The absolute URI of the ``$defs`` entry ``name``."""
+    return f'{self.base}#/$defs/{name}'
+
+  def __getitem__(self, name):
+    """The validator for ``$defs/<name>``; KeyError if the schema has none."""
+    if name not in self._validators:
+      if name not in self._defs:
+        raise KeyError(name)
+      self._validators[name] = Validator(self.engine, self.uri(name))
+    return self._validators[name]
+
+
+def build_schema():
+  r"""Load and register the schema, checking it against its metaschema.
+
+  ``regex_dialect='python'`` keeps the patterns reading as they always have.
+  Under the ECMA-262 dialect the spec calls for, ``\w`` is ASCII-only, and
+  the schema's identifier patterns are written expecting Python's
+  Unicode-aware ``\w`` -- source ids such as ``1773_müller.o.f`` depend on it.
+  """
+  engine = create_engine(validate_schemas=True, regex_dialect='python')
+  document = load_yaml(SCHEMA_PATH)
   try:
-    jschon.create_catalog('2020-12')
-  except jschon.exc.CatalogError:
-    pass
+    base = engine.register_schema(document, SCHEMA_URI)
+  except SchemaValidationError as error:
+    logger.error(str(error))
+    raise LoadError('the schema is not valid against its metaschema') from None
+  return Schema(engine, base, document['$defs'])
 
 
 def load_files(drafts=False):
@@ -90,16 +156,9 @@ def load_files(drafts=False):
   """
   files = COMMON_FILES
 
-  ensure_catalog()
   logger.info('Checking schema...')
-  schema_library = jschon.JSONSchema(load_yaml(FILEDIR / 'schemas' / 'phylogeny.yaml'))
-  r = schema_library.validate()
-  if not r.valid:
-    log_schema_errors(r)
-    raise LoadError('the schema is not valid against its metaschema')
-
+  defs = build_schema()
   logger.debug('Schema is valid.')
-  defs = schema_library['$defs']
 
   schema = None
   data = {
@@ -121,9 +180,7 @@ def load_files(drafts=False):
       schema = defs[name]
     except KeyError:
       raise LoadError(f'no schema definition for "{name}"') from None
-    r = schema.evaluate(jschon.JSON(data[name]))
-    if not r.valid:
-      log_schema_errors(r)
+    if not schema.check(data[name]):
       raise LoadError(f'"{filename}" is not valid against the schema')
     logger.debug(f'"{filename}" is valid.')
 
@@ -142,9 +199,7 @@ def _load_tree_dir(directory, schema, trees):
     logger.info(f'Checking "{tree_path}"...')
     name = tree_path.stem
     tree_data = {name: load_yaml(tree_path)}
-    r = schema.evaluate(jschon.JSON(tree_data))
-    if not r.valid:
-      log_schema_errors(r)
+    if not schema.check(tree_data):
       raise LoadError(f'"{tree_path}" is not valid against the schema')
     logger.debug(f'"{tree_path}" is valid.')
     if name in trees:
@@ -165,5 +220,5 @@ def log_error_node(error):
 
 
 def log_schema_errors(result):
-  for error in result.output('detailed').get('errors', []):
+  for error in result.output_document.get('errors', []):
     log_error_node(error)

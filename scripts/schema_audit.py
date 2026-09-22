@@ -7,11 +7,11 @@ Answers three questions the schema alone cannot:
 * **Frequency** -- for each ``$defs`` entry, how often is each property used?
 * **Shape** -- what value types and enum members actually occur?
 
-The measurement reuses ``jschon``'s evaluation ``Result`` tree, which records a
-schema location and an instance location for every keyword evaluated.  That is
-the same per-keyword-location coverage that Istanbul-style JSON Schema coverage
-tools produce, but it also carries the instance paths, and it needs no
-dependency the project does not already have.
+The measurement reuses the ``verbose`` output of ``json-schema-engine``, a tree
+carrying a schema location and an instance location for every keyword evaluated
+and every subschema applied.  That is the same per-keyword-location coverage
+that Istanbul-style JSON Schema coverage tools produce, but it also carries the
+instance paths, and it needs no dependency the project does not already have.
 
 Deliberately does *not* reuse ``phylohist.loader.taxa.Tree``: the census measures
 what the schema evaluation reaches, so it works from the raw documents the
@@ -31,27 +31,30 @@ import pathlib
 import re
 import sys
 
-import jschon
-
 sys.path.insert(0, str(pathlib.Path(__file__).parent.parent))
 
 from phylohist.loader.io import (  # noqa: E402
   COMMON_FILES,
+  SCHEMA_URI,
   TREE_DIR,
+  LoadError,
+  build_schema,
   load_yaml,
 )
 
 ROOT = pathlib.Path(__file__).parent.parent
 SCHEMA_PATH = ROOT / 'schemas' / 'phylogeny.yaml'
 
-# jschon assigns the schema a random urn:uuid base each run; keep only the
-# stable `phylogeny#/...` part so locations are comparable.
-_URI_PREFIX = re.compile(r'^urn:uuid:[0-9a-f-]+/')
+# The engine reports absolute locations under the URI the schema is registered
+# at; keep only the `phylogeny#/...` part so locations read as the schema file
+# is written.  A resource root loses its empty fragment ("phylogeny", not
+# "phylogeny#"), which is the form `inventory()` builds independently.
+_URI_PREFIX = f'{SCHEMA_URI.rsplit("/", 1)[0]}/'
 
 
-def location(schema):
+def location(absolute):
   """Stable, run-independent identifier for a schema location."""
-  return _URI_PREFIX.sub('', str(schema.canonical_uri))
+  return absolute.removeprefix(_URI_PREFIX).rstrip('#')
 
 
 # JSON Schema type name -> the Python type names `type_name()` reports.
@@ -79,19 +82,23 @@ def type_name(value):
   }.get(type(value), type(value).__name__)
 
 
-# Keywords whose Result children are dispatch nodes rather than keyword nodes.
-_DISPATCH = frozenset(
-  {
-    'properties',
-    'patternProperties',
-    '$defs',
-    'allOf',
-    'anyOf',
-    'oneOf',
-    'prefixItems',
-    'dependentSchemas',
-  }
-)
+def _unescape(token):
+  return token.replace('~1', '/').replace('~0', '~')
+
+
+def instance_value(data, pointer, names):
+  """The value a node's instance location names in already-parsed data.
+
+  Output locations cannot point at a property *name*, so a subschema applied
+  by ``propertyNames`` reports the location of the property's value.  Under
+  ``names`` the instance really is that final token.
+  """
+  if names:
+    return _unescape(pointer.rsplit('/', 1)[-1])
+  node = data
+  for token in pointer.split('/')[1:]:
+    node = node[int(token)] if isinstance(node, list) else node[_unescape(token)]
+  return node
 
 
 class Census:
@@ -112,46 +119,49 @@ class Census:
     self.source_refs = collections.defaultdict(collections.Counter)
     self.invalid = []
 
-  def absorb(self, result, corpus, prefix):
-    """Walk a jschon Result tree iteratively (the data nests deeply).
+  def absorb(self, document, data, corpus, prefix):
+    """Walk a ``verbose`` output tree iteratively (the data nests deeply).
 
-    jschon gives a *dispatch* node -- the per-property child of ``properties``,
-    or the per-branch child of ``oneOf`` -- the **container's** schema URI while
-    already pointing at the child instance.  Attributing those to the container
-    would count it once per property.  Reconstruct the real subschema location
-    from the dispatch keyword and the child's key instead; that also gives a
-    location to property subschemas carrying no assertion keyword of their own
-    (e.g. ``taxon.designation``, which is description-only).
+    The tree alternates: the root is a schema application, its children are the
+    keywords that schema evaluated, an applicator keyword's children are the
+    subschemas it applied, and so on.  Tracking which of the two a node is, is
+    all it takes to name the subschema a node belongs to -- a keyword node's
+    location is its subschema's plus the keyword.  Attributing every node to
+    its subschema is what gives a location to property subschemas carrying no
+    assertion keyword of their own (e.g. ``taxon.designation``, which is
+    description-only).
     """
-    stack = [result]
+    stack = [(document, True, False)]
     while stack:
-      res = stack.pop()
-      parent = res.parent
-      if parent is not None and parent.key in _DISPATCH:
-        loc = f'{location(res.schema)}/{parent.key}/{res.key}'
-      else:
-        loc = location(res.schema)
-      inst = f'{prefix}{res.instance.path}'
+      node, applied, names = stack.pop()
+      loc = location(node['absoluteKeywordLocation'])
+      keyword = None
+      if not applied:
+        loc, _, keyword = loc.rpartition('/')
+        loc = loc.rstrip('#')
+      inst = f'{prefix}{node["instanceLocation"]}'
       self.reached[(corpus, loc)].add(inst)
 
-      keyword_loc = location(res.schema)
-      if res.key == 'type':
-        value = res.instance.value
-        self.types[keyword_loc][type_name(value)].add(inst)
+      if keyword == 'type':
+        value = instance_value(data, node['instanceLocation'], names)
+        self.types[loc][type_name(value)].add(inst)
         # Only string samples are reported; keeping ints would crowd them out
         # at locations where numbers dominate (e.g. article.pages).
         if isinstance(value, str):
-          bucket = self.samples[keyword_loc]
+          bucket = self.samples[loc]
           if len(bucket) < 200:
             bucket.append(value)
-      elif res.key == 'enum':
-        self.enums[keyword_loc][repr(res.instance.value)].add(inst)
-      if keyword_loc == 'phylogeny#/$defs/sourceId' and res.key == 'pattern':
+      elif keyword == 'enum':
+        value = instance_value(data, node['instanceLocation'], names)
+        self.enums[loc][repr(value)].add(inst)
+      elif keyword == 'pattern' and loc == 'phylogeny#/$defs/sourceId':
         # Every value the schema declares to be a source id.  The pattern says
         # it is well-formed; only a cross-reference says it names something.
-        self.source_refs[corpus][res.instance.value] += 1
+        self.source_refs[corpus][instance_value(data, node['instanceLocation'], names)] += 1
 
-      stack.extend(res.children.values())
+      children = node.get('annotations') or node.get('errors') or ()
+      names = names or keyword == 'propertyNames'
+      stack.extend((child, not applied, names) for child in children)
 
 
 def walk_raw(node, corpus, census):
@@ -166,12 +176,11 @@ def walk_raw(node, corpus, census):
 
 
 def load_schema():
-  jschon.create_catalog('2020-12')
-  schema = jschon.JSONSchema(load_yaml(SCHEMA_PATH))
-  check = schema.validate()
-  if not check.valid:
+  """The registered schema, or exit if it fails its own metaschema."""
+  try:
+    return build_schema()
+  except LoadError:
     sys.exit('Schema is not valid against the metaschema.')
-  return schema
 
 
 def corpus_files():
@@ -190,7 +199,6 @@ def corpus_files():
 
 def run_census():
   schema = load_schema()
-  defs = schema['$defs']
   census = Census()
 
   for corpus, def_name, path in corpus_files():
@@ -202,10 +210,10 @@ def run_census():
     # Files under data/trees/ hold a single opinion keyed by the file stem.
     if path.parent == TREE_DIR:
       data = {path.stem: data}
-    result = defs[def_name].evaluate(jschon.JSON(data))
+    result = schema.engine.evaluate(schema.uri(def_name), data, output='verbose', annotations=True)
     if not result.valid:
       census.invalid.append(path.name)
-    census.absorb(result, corpus, f'{path.name}:')
+    census.absorb(result.output_document, data, corpus, f'{path.name}:')
     walk_raw(data, corpus, census)
 
   return census
@@ -228,15 +236,15 @@ _SUBSCHEMA_LIST = ('allOf', 'anyOf', 'oneOf', 'prefixItems')
 
 
 def inventory(node, base='phylogeny#', pointer='', out=None):
-  """Every schema location in the file, labelled the way jschon labels it."""
+  """Every schema location in the file, labelled the way `location()` does."""
   if out is None:
     out = {}
   if not isinstance(node, dict):
     return out
   if '$id' in node and pointer:
     base, pointer = f'{node["$id"]}#', ''
-  # jschon labels a resource root without the empty fragment ("phylogeny",
-  # not "phylogeny#"), so match that or the root looks permanently unreached.
+  # A resource root is labelled without the empty fragment ("phylogeny", not
+  # "phylogeny#"), so match that or the root looks permanently unreached.
   out[f'{base}{pointer}' if pointer else base.rstrip('#')] = node
   for key in _SUBSCHEMA:
     if isinstance(node.get(key), dict):
@@ -364,7 +372,7 @@ def dangling_sources(census):
 
 
 def cross_check(census, report):
-  """Independent verification: raw-YAML key counts vs Result-tree counts.
+  """Independent verification: raw-YAML key counts vs result-tree counts.
 
   The two passes share no code.  Compare *distinct instance paths*, not summed
   per-location counts: one instance node legitimately reaches several schema
@@ -375,7 +383,7 @@ def cross_check(census, report):
   Raw counts may legitimately exceed schema-attributed ones, because taxon names
   and source ids are themselves map keys and can collide with property names.
   The real error condition is the reverse: schema-attributed paths outnumbering
-  raw occurrences would mean the Result walk invented nodes.
+  raw occurrences would mean the result walk invented nodes.
   """
   paths = collections.defaultdict(set)
   for row in report['properties']:
@@ -408,7 +416,7 @@ def render(census, report):
     'Narrative analysis of these numbers is in `notes/audits/schema-audit.md`.',
     '',
     'Counts are *distinct instance locations* that reached a given schema',
-    'location, measured from the `jschon` evaluation result tree.',
+    'location, measured from the `json-schema-engine` verbose output tree.',
     '',
   ]
 

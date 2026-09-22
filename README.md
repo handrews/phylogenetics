@@ -161,7 +161,7 @@ blocks.  It requires an Anthropic API key to be configured.
 
 ## Install
 
-Python 3.10 or later and [Poetry](https://python-poetry.org/):
+Python 3.12 or later and [Poetry](https://python-poetry.org/):
 
     poetry install
 
@@ -171,7 +171,7 @@ git-ignored `.env` at the repository root. Nothing else needs a key.
 
 ## Checks
 
-CI runs these on Python 3.10 and 3.14 and fails if the generated
+CI runs these on Python 3.12 and 3.14 and fails if the generated
 schema census or claim table is stale:
 
     poetry run ruff check .
