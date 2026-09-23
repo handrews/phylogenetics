@@ -274,10 +274,25 @@ def inventory(node, base='phylogeny#', pointer='', out=None):
   return out
 
 
+def def_root(loc):
+  """The location of the ``$defs`` entry a schema location belongs to.
+
+  A ``$defs`` entry with its own ``$id`` is a resource of its own, and its
+  locations are labelled under that ``$id`` (``tree#/properties/children``),
+  its root without the empty fragment (``tree``).  Every such entry uses its
+  ``$defs`` name as its ``$id``.
+  """
+  resource, _, pointer = loc.partition('#')
+  if resource != 'phylogeny':
+    return resource
+  m = re.match(r'/\$defs/[^/]+', pointer)
+  return f'phylogeny#{m.group(0)}' if m else 'phylogeny'
+
+
 def def_of(loc):
   """Which ``$defs`` entry a schema location belongs to."""
-  m = re.match(r'phylogeny#/\$defs/([^/]+)', loc)
-  return m.group(1) if m else '(root)'
+  root = def_root(loc)
+  return '(root)' if root == 'phylogeny' else root.rpartition('/')[2]
 
 
 def _label(container, name):
@@ -286,7 +301,7 @@ def _label(container, name):
   Keeps `tree.citation.source` distinguishable from `tree.source`, which are
   different properties that would otherwise both render as `source`.
   """
-  rel = re.sub(r'^(tree|phylogeny#/\$defs/[^/]+)#?', '', container)
+  rel = re.sub(r'^(phylogeny#/\$defs/[^/]+|[^#/]+)#?', '', container)
   rel = rel.replace('/properties/', '.').lstrip('.')
   return f'{rel}.{name}' if rel else name
 
@@ -328,6 +343,7 @@ def analyse(census):
       {
         'location': loc,
         'def': def_of(loc),
+        'root': def_root(loc),
         'container': parent,
         'property': name,
         'label': _label(parent, name),
@@ -475,8 +491,7 @@ def render(census, report):
     rows = sorted(groups[d], key=lambda r: (-r['data'], r['label']))
     if not any(r['data'] for r in rows):
       continue
-    root = 'tree' if d == 'tree' else f'phylogeny#/$defs/{d}'
-    total = len(census.reached.get(('data', root), ()))
+    total = len(census.reached.get(('data', rows[0]['root']), ()))
     L += [f'### `{d}`' + (f' -- {total} instances in `data/`' if total else ''), '']
     L += _table(
       ['property', 'data', 'data %'],

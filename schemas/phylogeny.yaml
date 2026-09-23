@@ -439,7 +439,18 @@ $defs:
         - $ref: "phylogeny#/$defs/sourceId"
         - type: integer
           minimum: 0
-
+      children:
+        type: array
+        items:
+          $dynamicRef: "#tree"
+      parents:
+        type: array
+        items:
+          $dynamicRef: "#tree"
+      altPlacements:
+        type: array
+        items:
+          $dynamicRef: "#tree"
 
   identificationFields:
     properties:
@@ -491,7 +502,7 @@ $defs:
     $id: taxonomyTree
     $dynamicAnchor: tree
     allOf:
-    - $ref: "phylogeny#/$defs/tree"
+    - $ref: tree
     - $ref: "phylogeny#/$defs/actAndModifierFields"
     - $ref: "phylogeny#/$defs/relationalFields"
     - $ref: "phylogeny#/$defs/materialsFields"
@@ -517,44 +528,28 @@ $defs:
         type: [boolean,"null"]
         default: null
 
-  sharedRelationalFields:
-    properties:
-      children:
-        type: array
-        items:
-          $dynmicRef: "#tree"
-      parents:
-        type: array
-        items:
-          $dynmicRef: "#tree"
-      altPlacements:
-        type: array
-        items:
-          $dynmicRef: "#tree"
-
   relationalFields:
-    $ref: "#/$defs/sharedRelationalFields"
     properties:
       synonyms:
         type: array
         items:
-          $dynmicRef: "#tree"
+          $ref: taxonomyTree
       non:
         type: array
         items:
-          $dynmicRef: "#tree"
+          $ref: taxonomyTree
       or:
         type: array
         items:
-          $dynmicRef: "#tree"
+          $ref: taxonomyTree
       removed:
         type: array
         items:
-          $dynmicRef: "#tree"
+          $ref: taxonomyTree
       moved:
-        $dynmicRef: "#tree"
+        $ref: taxonomyTree
       corrected:
-        $dynmicRef: "#tree"
+        $ref: taxonomyTree
 
   materialsFields:
     properties:
@@ -570,9 +565,8 @@ $defs:
     $dynamicAnchor: tree
     unevaluatedProperties: false
     allOf:
-    - $ref: "phylogeny#/$defs/tree"
+    - $ref: tree
     - $ref: "phylogeny#/$defs/cladisticFields"
-    - $ref: "phylogeny#/$defs/sharedRelationalFields"
 
   phylogeny:
     type: object
