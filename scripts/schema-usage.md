@@ -13,8 +13,9 @@ even when its parent is also unreached, so read parents first.
 
 | `$defs` | unreached locations |
 |---|---|
+| `baseTaxonomyTree` | `phylogeny#/$defs/baseTaxonomyTree/properties/emended/oneOf/1` |
 | `basicOccurrence` | `phylogeny#/$defs/basicOccurrence/properties/biota`<br>`phylogeny#/$defs/basicOccurrence/properties/biozones`<br>`phylogeny#/$defs/basicOccurrence/properties/biozones/items`<br>`phylogeny#/$defs/basicOccurrence/properties/eon`<br>`phylogeny#/$defs/basicOccurrence/properties/era`<br>`phylogeny#/$defs/basicOccurrence/properties/possibleSpecimens`<br>`phylogeny#/$defs/basicOccurrence/properties/possibleSpecimens/additionalProperties`<br>`phylogeny#/$defs/basicOccurrence/properties/possibleSpecimens/additionalProperties/items`<br>`phylogeny#/$defs/basicOccurrence/properties/possibleSpecimens/additionalProperties/items/items`<br>`phylogeny#/$defs/basicOccurrence/properties/section`<br>`phylogeny#/$defs/basicOccurrence/properties/seriesBoundary`<br>`phylogeny#/$defs/basicOccurrence/properties/seriesRange`<br>`phylogeny#/$defs/basicOccurrence/properties/sources`<br>`phylogeny#/$defs/basicOccurrence/properties/sources/items`<br>`phylogeny#/$defs/basicOccurrence/properties/specimens/additionalProperties/items`<br>`phylogeny#/$defs/basicOccurrence/properties/specimens/additionalProperties/items/items`<br>`phylogeny#/$defs/basicOccurrence/properties/stageBoundary`<br>`phylogeny#/$defs/basicOccurrence/properties/stageRange`<br>`phylogeny#/$defs/basicOccurrence/properties/subunit`<br>`phylogeny#/$defs/basicOccurrence/properties/superunit` |
-| `citedAct` | `phylogeny#/$defs/citedAct/properties/by` |
+| `citedAct` | `phylogeny#/$defs/citedAct`<br>`phylogeny#/$defs/citedAct/properties/by` |
 | `cladisticFields` | `phylogeny#/$defs/cladisticFields/properties/data`<br>`phylogeny#/$defs/cladisticFields/properties/data/additionalProperties` |
 | `eon` | `phylogeny#/$defs/eon` |
 | `era` | `phylogeny#/$defs/era` |
@@ -96,7 +97,7 @@ property.
 | `ex` | 2 | 0.1% |
 | `notes` | 2 | 0.1% |
 
-### `baseTaxonomyTree` -- 5570 instances in `data/`
+### `baseTaxonomyTree` -- 5569 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
@@ -293,11 +294,11 @@ property.
 | `status` | 5 | 0.2% |
 | `designation` | 4 | 0.1% |
 
-### `translatedNode` -- 16 instances in `data/`
+### `translatedNode` -- 15 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `by` | 1 | 6.2% |
+| `by` | 1 | 6.7% |
 
 ### `tree`
 
