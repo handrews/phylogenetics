@@ -462,6 +462,12 @@ $defs:
       quoted:
         type: boolean
         default: false
+      sensu:
+        description: |
+          A printed "s. s." / "s. l." / "s. em." qualifying the name as this
+          source uses it.
+        type: string
+        enum: [stricto, lato, emendato]
 
       # META FIELDS
       editorial:
@@ -469,8 +475,10 @@ $defs:
       notes:
         type: string
   taxonomyTree:
-    $ref: "#/$defs/tree"
+    $ref: "#/$defs/baseTaxonomyTree"
     unevaluatedProperties: false
+  baseTaxonomyTree:
+    $ref: "#/$defs/tree"
     properties:
       # ACT AND MODIFIER FIELDS
       type:
@@ -482,14 +490,31 @@ $defs:
       pars:
         type: boolean
         default: false
-      modifier:
-        type: string
+      nudum:
+        $comment: The cited usage is a nomen nudum, as this source says.
+        type: boolean
+        default: false
       stem:
         type: boolean
         default: false
       emended:
-        type: [boolean,"null"]
-        default: null
+        description: |
+          The diagnosis is emended, by this source (`true`) or, when `by`
+          names another work, as done there and followed here.
+        oneOf:
+        - type: boolean
+        - $ref: "#/$defs/citedAct"
+      translated:
+        description: |
+          Nomen translatum: the name is used at another rank than the one
+          it was proposed at.  `true` when the earlier rank is not stated;
+          otherwise the node names the taxon at the earlier rank, with the
+          node's citation fields locating that earlier use as this source
+          cites it.  The act is this source's unless `by` names the work
+          that made it.
+        oneOf:
+        - type: boolean
+        - $ref: "#/$defs/translatedNode"
 
       # RELATIONAL FIELDS
       children:
@@ -516,6 +541,9 @@ $defs:
         type: array
         items:
           $ref: "#/$defs/taxonomyTree"
+      # Nodes under these fields state the previous state of the name as
+      # this source cites it (their citation fields locate that earlier
+      # use); the change itself is this source's act.
       removed:
         type: array
         items:
@@ -533,6 +561,22 @@ $defs:
       specimens:
         $ref: "#/$defs/specimens"
 
+  citedAct:
+    $comment: |
+      An act this source follows rather than performs; `by` cites the work
+      that performed it, with its pages.
+    type: object
+    additionalProperties: false
+    required: [by]
+    properties:
+      by:
+        $ref: "#/$defs/authority"
+  translatedNode:
+    $ref: "#/$defs/baseTaxonomyTree"
+    unevaluatedProperties: false
+    properties:
+      by:
+        $ref: "#/$defs/authority"
   phylogenyTree:
     unevaluatedProperties: false
     allOf:

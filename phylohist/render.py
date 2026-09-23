@@ -75,6 +75,8 @@ def node_label(node):
     name += ' ' + mark
   if (node.get('flags') or {}).get('questionable'):
     name += ' ?'
+  if node.get('sensu'):
+    name += ' ' + blocks.SENSU_MARKS[node['sensu']]
   for act in node.get('acts') or ():
     kind = act.get('act')
     mark = blocks.ACT_MARKS.get(kind)
@@ -127,6 +129,8 @@ def _entry_line(entry, heading_name=None):
     parts.append(pages_text(entry['page']))
   if entry.get('stance') == 'rejects':
     parts.append('(non)')
+  if entry.get('nudum'):
+    parts.append(blocks.ACT_MARKS['nomNudum'])
   return ' '.join(p for p in parts if p)
 
 

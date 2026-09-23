@@ -64,6 +64,8 @@ entry. Fields added:
 - `axis`: how the node hangs off its parent (`children`, `synonyms`,
   `removed`, `parents`, …; `root` for a tree's top node).
 - `target`: for `cfTaxon` and `affTaxon`, the compared name (C1).
+- `sensu`: `stricto`, `lato` or `emendato` when the node prints the
+  qualifier.
 - A `synonyms` or `non` entry with no name field of its own is a usage of
   the node's own name by the cited source (the 2020 tree's stacked
   citations of *grayae* are this shape); it carries `ownName: true`.
@@ -133,13 +135,21 @@ Something this source does to a name. One claim per flag, `actKind` being:
 | `new: true` on a named node | `new` (the protologue; F6 checks it) |
 | `new: true` on a placeholder | `placeholder` (the source originates the placeholder; C4) |
 | `type: true` | `type` (the fixation method joins when B14 lands) |
-| `emended: true` | `emended` |
-| `modifier: nomen transl.` (and `act: [nomTransl]` after B6) | `nomTransl`, `modifier` verbatim, and `altRankOf` giving the derived-from name when the record carries the link |
-| any other `modifier` (nomen nudum, n. comb., (Plesion)) | `modifier`, verbatim, until B6 names them |
+| `emended: true` or `emended: {by}` | `emended`; `by` and `byPages` when the source follows another work's emendation |
+| `translated: true` or `translated: {taxon: y, by?}` | `nomTransl`; `translatedFrom: y` when the earlier rank is named, `by`/`byPages` when another work made the act, `rankVariants` from the records' `altRankOf` links |
+| `nudum: true` | `nomNudum` |
 | `corrected: {taxon: y}` | `corrected`, `correctedFrom: y`; the node's own name is the corrected form |
 | `moved: {taxon: y}` | `moved`, `movedFrom: y` |
 | `removed` entry | `removed`, `removedFrom` the group (the source takes the name out of it; B5), beside the `rejection` |
 | `homonym: true` on the record | not a claim: key housekeeping |
+
+A node under `translated`, `corrected`, `moved` or `removed` is the
+earlier state of the name as this source cites it: its own `authority`,
+`auth`, `year`, `pages` and `illustrations` locate that earlier use, and
+it emits a `usage` claim on its axis like any cited entry. The change is
+this source's act. `emended` and `translated` are the two acts a source
+may follow rather than perform, and `by` (an `authority`) names the work
+that performed it.
 
 ### `certainty`
 

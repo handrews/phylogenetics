@@ -13,7 +13,8 @@ taxonomies:
           children:
           - taxon: henicocystinae
             emended: true
-            modifier: nom. transl.?
+            translated:
+              taxon: henicocystidae
             children:
             - taxon: henicocystis
             - taxon: coopericystis

@@ -374,18 +374,23 @@ class Words:
 
   def act_words(self, claim):
     kind = claim.get('actKind')
+    origin = claim.get('translatedFrom')
     words = {
       'new': 'named as new',
       'placeholder': 'placeholder introduced',
       'type': 'type species',
       'emended': 'emended',
-      'nomTransl': 'nomen translatum'
-      + (f' from {self.store.name(claim["altRankOf"])}' if claim.get('altRankOf') else ''),
+      'nomTransl': 'nomen translatum' + (f' from {self.store.name(origin)}' if origin else ''),
+      'nomNudum': 'nomen nudum',
       'corrected': f'corrected from {self.store.name(claim.get("correctedFrom", ""))}',
       'moved': f'moved from {self.store.name(claim.get("movedFrom", ""))}',
       'removed': f'removed from {self.store.name(claim.get("removedFrom", ""))}',
-      'modifier': claim.get('modifier', ''),
     }.get(kind, kind or '')
+    # An act the source follows rather than performs names the work.
+    if claim.get('by'):
+      words += f' by {self.store.cite(claim["by"])}'
+      if claim.get('byPages') is not None:
+        words += f', p. {_range_words(claim["byPages"])}'
     if claim.get('inferred'):
       basis = (claim.get('editorial') or {}).get('basis', '').strip()
       words += ' (inferred by the editor' + (f': {basis}' if basis else '') + ')'
@@ -396,6 +401,8 @@ class Words:
     if kind == 'usage':
       attributed = self.attribution_words(claim.get('printed') or {})
       words = f'cites the name, attributed to {attributed}' if attributed else 'cites the name'
+      if claim.get('sensu'):
+        words += f' sensu {claim["sensu"]}'
       return words + self.error_words(claim)
     if kind == 'placement':
       parent = claim.get('parent')

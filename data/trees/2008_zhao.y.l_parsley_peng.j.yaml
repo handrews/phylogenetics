@@ -39,6 +39,6 @@ taxonomies:
             diagnosis: Same as for genus.
             synonyms:
             - taxon: globus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
-              modifier: nomen nudum
+              nudum: true
               parents:
               - taxon: sinoeocrinus

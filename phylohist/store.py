@@ -177,6 +177,8 @@ class ClaimStore:
       ],
       'actClaims': [a['id'] for a in acts],
     }
+    if usage and usage.get('sensu'):
+      node['sensu'] = usage['sensu']
     if rank_word:
       node['rankWord'] = rank_word[:1].upper() + rank_word[1:]
     also = self.or_names_at.get((source_key, path))
@@ -230,6 +232,7 @@ class ClaimStore:
           parents=[self.name(p) for p in acceptance.get('parents') or ()] or None,
           printed=printed.get('citedAs'),
           record=acceptance['subject'] if not acceptance.get('ownName') else None,
+          nudum=any(c['kind'] == 'act' and c['actKind'] == 'nomNudum' for c in claims) or None,
           # With an original combination the entry carries the bare epithet
           # (the parents supply the genus); without one, the cited name as the
           # combination the entry falls under; the heading's own name needs

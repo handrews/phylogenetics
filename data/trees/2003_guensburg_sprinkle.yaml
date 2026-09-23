@@ -4,7 +4,7 @@ taxonomies:
   - taxon: crinoidea
     children:
     - taxon: protocrinoida
-      modifier: (Plesion)
+      rank: Plesion
       new: true
       children:
       - taxon: titanocrinidae

@@ -12,7 +12,8 @@ taxonomies:
       - taxon: dichoporita
         children:
         - taxon: glyptocystitida-superfamily
-          modifier: nom. transl.
+          translated:
+            taxon: glyptocystitidae
           children:
           - taxon: pleurocystitidae
             children:

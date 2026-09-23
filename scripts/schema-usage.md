@@ -13,7 +13,9 @@ even when its parent is also unreached, so read parents first.
 
 | `$defs` | unreached locations |
 |---|---|
+| `baseTaxonomyTree` | `phylogeny#/$defs/baseTaxonomyTree/properties/emended/oneOf/1` |
 | `basicOccurrence` | `phylogeny#/$defs/basicOccurrence/properties/biota`<br>`phylogeny#/$defs/basicOccurrence/properties/biozones`<br>`phylogeny#/$defs/basicOccurrence/properties/biozones/items`<br>`phylogeny#/$defs/basicOccurrence/properties/eon`<br>`phylogeny#/$defs/basicOccurrence/properties/era`<br>`phylogeny#/$defs/basicOccurrence/properties/possibleSpecimens`<br>`phylogeny#/$defs/basicOccurrence/properties/possibleSpecimens/additionalProperties`<br>`phylogeny#/$defs/basicOccurrence/properties/possibleSpecimens/additionalProperties/items`<br>`phylogeny#/$defs/basicOccurrence/properties/possibleSpecimens/additionalProperties/items/items`<br>`phylogeny#/$defs/basicOccurrence/properties/section`<br>`phylogeny#/$defs/basicOccurrence/properties/seriesBoundary`<br>`phylogeny#/$defs/basicOccurrence/properties/seriesRange`<br>`phylogeny#/$defs/basicOccurrence/properties/sources`<br>`phylogeny#/$defs/basicOccurrence/properties/sources/items`<br>`phylogeny#/$defs/basicOccurrence/properties/specimens/additionalProperties/items`<br>`phylogeny#/$defs/basicOccurrence/properties/specimens/additionalProperties/items/items`<br>`phylogeny#/$defs/basicOccurrence/properties/stageBoundary`<br>`phylogeny#/$defs/basicOccurrence/properties/stageRange`<br>`phylogeny#/$defs/basicOccurrence/properties/subunit`<br>`phylogeny#/$defs/basicOccurrence/properties/superunit` |
+| `citedAct` | `phylogeny#/$defs/citedAct`<br>`phylogeny#/$defs/citedAct/properties/by` |
 | `cladisticFields` | `phylogeny#/$defs/cladisticFields/properties/data`<br>`phylogeny#/$defs/cladisticFields/properties/data/additionalProperties` |
 | `eon` | `phylogeny#/$defs/eon` |
 | `era` | `phylogeny#/$defs/era` |
@@ -29,6 +31,7 @@ even when its parent is also unreached, so read parents first.
 | `specimens` | `phylogeny#/$defs/specimens/properties/allotype`<br>`phylogeny#/$defs/specimens/properties/neotype`<br>`phylogeny#/$defs/specimens/properties/repository` |
 | `stageRange` | `phylogeny#/$defs/stageRange`<br>`phylogeny#/$defs/stageRange/items` |
 | `taxonRecord` | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items/items` |
+| `tree` | `phylogeny#/$defs/tree/properties/sensu` |
 | `trees` | `phylogeny#/$defs/trees/additionalProperties/properties/source` |
 
 ## 2. Property frequency by `$defs`
@@ -83,16 +86,39 @@ property.
 | `quotes` | 1 | 0.3% |
 | `reading` | 1 | 0.3% |
 
-### `authority` -- 1634 instances in `data/`
+### `authority` -- 1635 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `source` | 1634 | 100.0% |
+| `source` | 1635 | 100.0% |
 | `pages` | 62 | 3.8% |
 | `illustrations` | 28 | 1.7% |
 | `attributedTo` | 24 | 1.5% |
 | `ex` | 2 | 0.1% |
 | `notes` | 2 | 0.1% |
+
+### `baseTaxonomyTree` -- 5569 instances in `data/`
+
+| property | data | data % |
+|---|---|---|
+| `children` | 1840 | 33.0% |
+| `new` | 1461 | 26.2% |
+| `type` | 368 | 6.6% |
+| `synonyms` | 361 | 6.5% |
+| `parents` | 313 | 5.6% |
+| `specimens` | 89 | 1.6% |
+| `emended` | 54 | 1.0% |
+| `moved` | 30 | 0.5% |
+| `occurrences` | 26 | 0.5% |
+| `pars` | 19 | 0.3% |
+| `translated` | 16 | 0.3% |
+| `corrected` | 5 | 0.1% |
+| `altPlacements` | 4 | 0.1% |
+| `non` | 4 | 0.1% |
+| `nudum` | 4 | 0.1% |
+| `or` | 3 | 0.1% |
+| `removed` | 1 | 0.0% |
+| `stem` | 1 | 0.0% |
 
 ### `basicOccurrence` -- 33 instances in `data/`
 
@@ -124,14 +150,14 @@ property.
 | `subunit` | 0 | 0.0% |
 | `superunit` | 0 | 0.0% |
 
-### `citationFields` -- 9069 instances in `data/`
+### `citationFields` -- 9084 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
 | `authority` | 1632 | 18.0% |
 | `auth` | 1000 | 11.0% |
 | `year` | 998 | 11.0% |
-| `rank` | 723 | 8.0% |
+| `rank` | 724 | 8.0% |
 | `pages` | 219 | 2.4% |
 | `illustrations` | 123 | 1.4% |
 | `bracket` | 48 | 0.5% |
@@ -146,13 +172,13 @@ property.
 | `bootstrap` | 6 | 0.8% |
 | `data` | 0 | 0.0% |
 
-### `editorialObject` -- 6 instances in `data/`
+### `editorialObject` -- 7 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `basis` | 6 | 100.0% |
-| `inferred` | 4 | 66.7% |
-| `corrections` | 2 | 33.3% |
+| `basis` | 7 | 100.0% |
+| `inferred` | 5 | 71.4% |
+| `corrections` | 2 | 28.6% |
 | `corrections.authority` | 2 | 100.0% |
 | `corrections.authority.source` | 2 | 100.0% |
 
@@ -268,34 +294,18 @@ property.
 | `status` | 5 | 0.2% |
 | `designation` | 4 | 0.1% |
 
-### `taxonomyTree` -- 5554 instances in `data/`
+### `translatedNode` -- 15 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `children` | 1840 | 33.1% |
-| `new` | 1461 | 26.3% |
-| `type` | 368 | 6.6% |
-| `synonyms` | 361 | 6.5% |
-| `parents` | 313 | 5.6% |
-| `specimens` | 89 | 1.6% |
-| `emended` | 54 | 1.0% |
-| `moved` | 30 | 0.5% |
-| `occurrences` | 26 | 0.5% |
-| `modifier` | 22 | 0.4% |
-| `pars` | 19 | 0.3% |
-| `corrected` | 5 | 0.1% |
-| `altPlacements` | 4 | 0.1% |
-| `non` | 4 | 0.1% |
-| `or` | 3 | 0.1% |
-| `removed` | 1 | 0.0% |
-| `stem` | 1 | 0.0% |
+| `by` | 1 | 6.7% |
 
 ### `tree`
 
 | property | data | data % |
 |---|---|---|
-| `taxon` | 5749 | 90.6% |
-| `notes` | 378 | 6.0% |
+| `taxon` | 5763 | 90.6% |
+| `notes` | 379 | 6.0% |
 | `openTaxon` | 219 | 3.4% |
 | `provisional` | 120 | 1.9% |
 | `diagnosis` | 69 | 1.1% |
@@ -305,8 +315,9 @@ property.
 | `affTaxon` | 16 | 0.3% |
 | `cfTaxon` | 15 | 0.2% |
 | `questionable` | 12 | 0.2% |
-| `editorial` | 6 | 0.1% |
+| `editorial` | 7 | 0.1% |
 | `mergeInto` | 5 | 0.1% |
+| `sensu` | 0 | 0.0% |
 
 ### `trees` -- 218 instances in `data/`
 
@@ -408,7 +419,7 @@ property.
 
 ### `phylogeny#/$defs/rank`
 
-24 of 32 members used, 723 occurrences.
+24 of 32 members used, 724 occurrences.
 
 | value | count |
 |---|---|
@@ -431,9 +442,9 @@ property.
 | `'Division'` | 6 |
 | `'Subkingdom'` | 3 |
 | `'Unranked'` | 3 |
+| `'Plesion'` | 3 |
 | `'Superorder'` | 2 |
 | `'Branch'` | 2 |
-| `'Plesion'` | 2 |
 | `'Parvclass'` | 1 |
 | `'Kingdom'` | 1 |
 
@@ -499,6 +510,12 @@ property.
 | `'lower'` | 1 |
 | `'middle'` | 1 |
 
+### `phylogeny#/$defs/tree/properties/sensu`
+
+0 of 3 members used, 0 occurrences.
+
+**Never used (3):** `'stricto'`, `'lato'`, `'emendato'`
+
 ## 4. Observed value types where the schema allows a union
 
 Tests whether each multi-type declaration is actually needed.
@@ -515,12 +532,11 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/basicOccurrence/properties/unit` | string/array | listx20, strx1 | `Craighead inlier` | - |
 | `phylogeny#/$defs/citationNumber` | integer/string | intx678, strx185 | `IX`, `VIII`, `V`, `b` | - |
 | `phylogeny#/$defs/cladisticFields/properties/matrix/items` | integer/string | intx139, strx5 | `?` | - |
-| `phylogeny#/$defs/editorialObject/properties/inferred` | boolean/array | listx2, boolx2 | - | - |
+| `phylogeny#/$defs/editorialObject/properties/inferred` | boolean/array | boolx3, listx2 | - | - |
 | `phylogeny#/$defs/person/properties/death` | integer/null | intx80, nullx1 | - | - |
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
 | `phylogeny#/$defs/specimens/additionalProperties/items` | string/array | strx516, listx4 | `F. 5420`, `F. 5419`, `F. 5418`, `F. 5417` | - |
 | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items` | array/string/integer | intx10, strx3 | `EE15373`, `EE 1659`, `E23470` | array |
 | `phylogeny#/$defs/taxonRecord/properties/name` | string/null | strx2486, nullx196 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
-| `phylogeny#/$defs/taxonomyTree/properties/emended` | boolean/null | boolx54 | - | null |
 | `phylogeny#/$defs/tree/properties/diagnosis` | string/null | strx68, nullx1 | `A cast of it shows a con...`, `Body hemisphæric, slight...`, `A *Pyrgocystis* specimen...`, `Mouth surrounded and cov...` | - |
 
