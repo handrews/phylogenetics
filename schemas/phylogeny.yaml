@@ -46,7 +46,7 @@ $defs:
         taxonomies:
           type: array
           items:
-            $ref: "#/$defs/taxonomyTree"
+            $ref: taxonomyTree
         phylogenies:
           type: array
           items:
@@ -54,7 +54,7 @@ $defs:
         assumptions:
           type: array
           items:
-            $ref: "#/$defs/taxonomyTree"
+            $ref: taxonomyTree
         notes:
           type: string
   person:
@@ -322,8 +322,12 @@ $defs:
       bracket:
         ### TODO: Replace this property name
         type: string
+    allOf:
+    - $ref: "#/$defs/authorityFields"
+    - $ref: "#/$defs/locationFields"
 
-      # AUTHORITY FIELDS
+  authorityFields:
+    properties:
       authority:
         $ref: "#/$defs/authority"
       auth:
@@ -338,13 +342,15 @@ $defs:
         items:
           type: string
 
-      # SUPPORTING LOCATION FIELDS
+  locationFields:
+    properties:
       pages:
         $ref: "#/$defs/citationNumbers"
       illustrations:
         type: array
         items:
           $ref: "#/$defs/illustration"
+
   cladisticFields:
     properties:
       matrix:
@@ -361,6 +367,7 @@ $defs:
           type: integer
       bootstrap:
         type: integer
+
   taxonRecord:
     type: object
     $ref: "#/$defs/citationFields"
@@ -413,20 +420,29 @@ $defs:
               type: [string, integer]
       notes:
         type: string
+
   tree:
+    $id: tree
+    $dynamicAnchor: tree
     type: object
-    $ref: "#/$defs/citationFields"
+    allOf:
+    - $ref: "phylogeny#/$defs/identificationFields"
+    - $ref: "phylogeny#/$defs/citationFields"
+    - $ref: "phylogeny#/$defs/uncertaintyFields"
+    - $ref: "phylogeny#/$defs/metaFields"
     properties:
       mergeInto:
         type: array
         minItems: 2
         maxItems: 2
         prefixItems:
-        - $ref: "#/$defs/sourceId"
+        - $ref: "phylogeny#/$defs/sourceId"
         - type: integer
           minimum: 0
 
-      # IDENTIFICATION FIELDS
+
+  identificationFields:
+    properties:
       taxon:
         type: string
       affTaxon:
@@ -446,7 +462,8 @@ $defs:
       diagnosis:
         type: [string, "null"]
 
-      # UNCERTAINTY FIELDS
+  uncertaintyFields:
+    properties:
       provisional:
         $comment: The assignment to parent taxon is provisional
         type: boolean
@@ -463,16 +480,25 @@ $defs:
         type: boolean
         default: false
 
-      # META FIELDS
+  metaFields:
+    properties:
       editorial:
         $ref: "#/$defs/editorialObject"
       notes:
         type: string
+
   taxonomyTree:
-    $ref: "#/$defs/tree"
+    $id: taxonomyTree
+    $dynamicAnchor: tree
+    allOf:
+    - $ref: "phylogeny#/$defs/tree"
+    - $ref: "phylogeny#/$defs/actAndModifierFields"
+    - $ref: "phylogeny#/$defs/relationalFields"
+    - $ref: "phylogeny#/$defs/materialsFields"
     unevaluatedProperties: false
+
+  actAndModifierFields:
     properties:
-      # ACT AND MODIFIER FIELDS
       type:
         type: boolean
         default: false
@@ -491,41 +517,47 @@ $defs:
         type: [boolean,"null"]
         default: null
 
-      # RELATIONAL FIELDS
+  sharedRelationalFields:
+    properties:
       children:
         type: array
         items:
-          $ref: "#/$defs/taxonomyTree"
+          $dynmicRef: "#tree"
       parents:
         type: array
         items:
-          $ref: "#/$defs/taxonomyTree"
-      synonyms:
-        type: array
-        items:
-          $ref: "#/$defs/taxonomyTree"
-      non:
-        type: array
-        items:
-          $ref: "#/$defs/taxonomyTree"
-      or:
-        type: array
-        items:
-          $ref: "#/$defs/taxonomyTree"
+          $dynmicRef: "#tree"
       altPlacements:
         type: array
         items:
-          $ref: "#/$defs/taxonomyTree"
+          $dynmicRef: "#tree"
+
+  relationalFields:
+    $ref: "#/$defs/sharedRelationalFields"
+    properties:
+      synonyms:
+        type: array
+        items:
+          $dynmicRef: "#tree"
+      non:
+        type: array
+        items:
+          $dynmicRef: "#tree"
+      or:
+        type: array
+        items:
+          $dynmicRef: "#tree"
       removed:
         type: array
         items:
-          $ref: "#/$defs/taxonomyTree"
+          $dynmicRef: "#tree"
       moved:
-        $ref: "#/$defs/taxonomyTree"
+        $dynmicRef: "#tree"
       corrected:
-        $ref: "#/$defs/taxonomyTree"
+        $dynmicRef: "#tree"
 
-      # MATERIALS FIELDS
+  materialsFields:
+    properties:
       occurrences:
         type: array
         items:
@@ -534,29 +566,14 @@ $defs:
         $ref: "#/$defs/specimens"
 
   phylogenyTree:
+    $id: phylogenyTree
+    $dynamicAnchor: tree
     unevaluatedProperties: false
     allOf:
-    - $ref: "#/$defs/tree"
-    - $ref: "#/$defs/cladisticFields"
-    $comment: |
-      Duplicated relational properties because there doesn't seem to be
-      a python JSON Schema implementation that both supports annotations
-      and has a fast $dynamicRef implementation.
-      Additional relational fields are absent by design as they are
-      taxonomy-specific.
-    properties:
-      children:
-        type: array
-        items:
-          $ref: "#/$defs/phylogenyTree"
-      parents:
-        type: array
-        items:
-          $ref: "#/$defs/phylogenyTree"
-      altPlacements:
-        type: array
-        items:
-          $ref: "#/$defs/phylogenyTree"
+    - $ref: "phylogeny#/$defs/tree"
+    - $ref: "phylogeny#/$defs/cladisticFields"
+    - $ref: "phylogeny#/$defs/sharedRelationalFields"
+
   phylogeny:
     type: object
     required: [tree, treeType]
@@ -570,7 +587,7 @@ $defs:
         - diagram
         - other
       tree:
-        $ref: "#/$defs/phylogenyTree"
+        $ref: phylogenyTree
       notes:
         type: string
       methodology:
