@@ -130,6 +130,20 @@ class Census:
     its subschema is what gives a location to property subschemas carrying no
     assertion keyword of their own (e.g. ``taxon.designation``, which is
     description-only).
+
+    Relevance (draft-ietf-jsonschema-json-schema-03 section 12.2) is applied
+    here, by hand.  ``verbose`` is the only format that keeps every schema
+    application; the relevant-level formats omit any that produce no
+    annotation or error, which is most of them.  But ``verbose`` keeps the
+    irrelevant ones too, and a node's own ``valid`` cannot say which those
+    are: ``translated: true`` fails the ``oneOf`` branch that refers to
+    ``citationFields``, yet ``citationFields`` itself accepts it, since
+    ``properties`` ignores non-objects.  So a rejecting subschema under an
+    accepting keyword is skipped along with everything beneath it -- a
+    ``oneOf``/``anyOf`` branch that lost, an ``if`` whose condition did not
+    hold.  The other transition, which makes the accepting keywords under a
+    rejecting schema irrelevant, is deliberately not applied: it would reduce
+    an invalid file to its errors, and invalid files are still censused.
     """
     stack = [(document, True, False)]
     while stack:
@@ -160,6 +174,8 @@ class Census:
         self.source_refs[corpus][instance_value(data, node['instanceLocation'], names)] += 1
 
       children = node.get('annotations') or node.get('errors') or ()
+      if not applied and node['valid']:
+        children = [child for child in children if child['valid']]
       names = names or keyword == 'propertyNames'
       stack.extend((child, not applied, names) for child in children)
 

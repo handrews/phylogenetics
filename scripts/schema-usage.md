@@ -20,11 +20,12 @@ even when its parent is also unreached, so read parents first.
 | `illustration` | `phylogeny#/$defs/illustration/properties/collectedFrom`<br>`phylogeny#/$defs/illustration/properties/location`<br>`phylogeny#/$defs/illustration/properties/source` |
 | `localSeriesRange` | `phylogeny#/$defs/localSeriesRange`<br>`phylogeny#/$defs/localSeriesRange/items` |
 | `localStageRange` | `phylogeny#/$defs/localStageRange`<br>`phylogeny#/$defs/localStageRange/items` |
+| `modularDate` | `phylogeny#/$defs/modularDate/then/oneOf/1/properties/month/anyOf/3`<br>`phylogeny#/$defs/modularDate/then/oneOf/2/properties/month/anyOf/5` |
 | `occurrence` | `phylogeny#/$defs/occurrence/properties/localSeriesBoundary`<br>`phylogeny#/$defs/occurrence/properties/localSeriesRange`<br>`phylogeny#/$defs/occurrence/properties/localStageBoundary`<br>`phylogeny#/$defs/occurrence/properties/localStageRange`<br>`phylogeny#/$defs/occurrence/properties/tentative` |
 | `person` | `phylogeny#/$defs/person/properties/suffix` |
 | `publication` | `phylogeny#/$defs/publication/properties/type` |
 | `seriesRange` | `phylogeny#/$defs/seriesRange`<br>`phylogeny#/$defs/seriesRange/items` |
-| `specimen` | `phylogeny#/$defs/specimen/oneOf/1/properties/id`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/illustrations`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/illustrations/items`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/repository` |
+| `specimen` | `phylogeny#/$defs/specimen/oneOf/1`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/id`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/illustrations`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/illustrations/items`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/repository` |
 | `specimens` | `phylogeny#/$defs/specimens/properties/allotype`<br>`phylogeny#/$defs/specimens/properties/neotype`<br>`phylogeny#/$defs/specimens/properties/repository` |
 | `stageRange` | `phylogeny#/$defs/stageRange`<br>`phylogeny#/$defs/stageRange/items` |
 | `taxonRecord` | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items/items` |
@@ -175,14 +176,14 @@ property.
 |---|---|---|
 | `year` | 309 | 100.0% |
 | `month` | 73 | 23.6% |
-| `/then/oneOf/0.day` | 24 | 100.0% |
-| `/then/oneOf/0.month` | 24 | 100.0% |
-| `/then/oneOf/1.day` | 24 | 100.0% |
-| `/then/oneOf/1.month` | 24 | 100.0% |
-| `/then/oneOf/2.day` | 24 | 100.0% |
-| `/then/oneOf/2.month` | 24 | 100.0% |
 | `day` | 24 | 7.8% |
+| `/then/oneOf/2.day` | 14 | 100.0% |
+| `/then/oneOf/2.month` | 14 | 100.0% |
+| `/then/oneOf/1.day` | 8 | 100.0% |
+| `/then/oneOf/1.month` | 8 | 100.0% |
 | `months` | 4 | 1.3% |
+| `/then/oneOf/0.day` | 2 | 100.0% |
+| `/then/oneOf/0.month` | 2 | 100.0% |
 | `season` | 1 | 0.3% |
 
 ### `occurrence` -- 32 instances in `data/`
@@ -512,7 +513,7 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/article/properties/series` | integer/string | intx8, strx1 | `A` | - |
 | `phylogeny#/$defs/article/properties/volume` | integer/string | intx225, strx13 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `II` | - |
 | `phylogeny#/$defs/basicOccurrence/properties/unit` | string/array | listx20, strx1 | `Craighead inlier` | - |
-| `phylogeny#/$defs/citationNumber` | integer/string | intx678, listx358, strx185 | `IX`, `VIII`, `V`, `b` | - |
+| `phylogeny#/$defs/citationNumber` | integer/string | intx678, strx185 | `IX`, `VIII`, `V`, `b` | - |
 | `phylogeny#/$defs/cladisticFields/properties/matrix/items` | integer/string | intx139, strx5 | `?` | - |
 | `phylogeny#/$defs/editorialObject/properties/inferred` | boolean/array | listx2, boolx2 | - | - |
 | `phylogeny#/$defs/person/properties/death` | integer/null | intx80, nullx1 | - | - |
