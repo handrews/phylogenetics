@@ -2127,6 +2127,19 @@
   - hyman
   identifiers:
     url: https://archive.org/details/in.ernet.dli.2015.260496/page/n5/mode/2up
+1958_cabibel_termier.h_termier.g:
+  title: Les Échinoderms mésocambriens de la Montagne Noire. Ann/s
+  journal: annals
+  volume: 44
+  pages:
+  - 281
+  - 294
+  pubDate:
+    year: 1958
+  authors:
+  - cabibel
+  - termier.h
+  - termier.g
 1960_gill_caster:
   title: Carpoid echinoderms from the Silurian and Devonian of Australia
   journal: bullamp

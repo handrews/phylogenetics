@@ -1851,9 +1851,9 @@ camarocystites:
   altSpellingOf: comarocystites
 cambraster:
   name: Cambraster
-  auth: [Cabibel, Termier, Termier]
-  year: 1958
-  note: >
+  authority:
+    source: 1958_cabibel_termier.h_termier.g
+  notes: >
     Jaekel 1923 sometimes cited, but without figures, a full description,
     or a species name, it is considered a nomen nudum.
 cambraster-cf-tastudorum_jell_burrett_banks_1985:
@@ -1922,22 +1922,24 @@ camptostromatidae:
   rank: Family
   authority:
     source: 1967a_durham
+camptostromoidea:
+  name: Camptostromoidea
+  rank: Class
+  authority:
+    source: 1966_durham
+  notes: Original invalid spelling.
+camptostromatoidea:
+  name: Camptostromatoidea
+  rank: Class
+  auth: [durham] # TODO: Handle re-ranking without new protologue
+  year: 1966
+  altRankOf: camptostromoidea
 camptostromatoida:
   name: Camptostromatoida
   rank: Order
   altRankOf: camptostromatoidea
   authority:
     source: 1966_durham
-camptostromatoidea:
-  name: Camptostromatoidea
-  rank: Class
-  authority:
-    source: 1966_durham
-camptostromoidea:
-  name: Camptostromoidea
-  rank: Class
-  altSpellingOf: camptostromatoidea
-  notes: Original invalid spelling.
 canadensis_billings_1866:
   name: canadensis
   auth: [billings]

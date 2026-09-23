@@ -139,6 +139,9 @@ burmeister:
 burrett:
   surname: Burrett
   given: C. F.
+cabibel:
+  surname: Cabibel
+  given: J.
 calvin.s:
   surname: Calvin
   given: Samuel
@@ -890,6 +893,16 @@ tao.j.l:
 tarlo:
   surname: Tarlo
   given: L. B. H.
+termier.g:
+  surname: Termier
+  given: Geneviève
+  birth: 1917
+  death: 2005
+termier.h:
+  surname: Termier
+  given: Henri
+  birth: 1897
+  death: 1989
 thompson:
   surname: Thompson
   given: Jeffrey R.
