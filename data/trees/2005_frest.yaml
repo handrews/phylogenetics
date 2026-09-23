@@ -33,7 +33,7 @@ taxonomies:
         new: true
         synonyms:
         - taxon: ampheristocystis
-          modifier: nomen nudum
+          nudum: true
           auth: [frest]
           year: 1984
           pages: 2097
@@ -41,7 +41,7 @@ taxonomies:
             Studies of Silurian echinoderms. Dissertation Abstracts
             International B44
         - taxon: ampheristocystis
-          modifier: nomen nudum
+          nudum: true
           auth: [frest, brett, witzke]
           year: 1999
           pages: [728, 729]
@@ -61,7 +61,7 @@ taxonomies:
           new: true
           synonyms:
           - taxon: concentricus_frest_2005
-            modifier: nomen nudum
+            nudum: true
             year: 1999
             pages: 729
             citedAs: |

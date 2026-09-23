@@ -79,11 +79,9 @@ notes: |
   on its own node instead of set via the node's `rank` field. See the
   review doc, section (d).
 
-  "(s. s.)" (sensu stricto, pp. 213) and the cross-reference "(s.
-  Stelleridea, s. em.)" (sensu emendato, p. 213) have no dedicated field
-  yet (docs/semantics-roadmap.md B13); quoted in `notes` on the affected
-  nodes below except the Stelleridea cross-reference, which is recorded as
-  a `synonyms` entry with `modifier: "s. em."`.
+  "(s. s.)" (sensu stricto, p. 213) is `sensu: stricto` on the affected
+  nodes below; the cross-reference "(s. Stelleridea, s. em.)" (sensu
+  emendato, p. 213) is a `synonyms` entry with `sensu: emendato`.
 
 taxonomies:
 - taxon: incaliculata
@@ -178,21 +176,21 @@ taxonomies:
           "Sub-stage" has no enum value
         children:
         - taxon: crinoidea
+          sensu: stricto
           pages: 213
           notes: |
             printed "Class 6. Crinotdea (s. s.)." -- OCR garble for
-            "Crinoidea"; "(s. s.)" = sensu stricto, no dedicated field yet
-            (roadmap B13)
+            "Crinoidea"
         - taxon: cystidea
           quoted: true
           pages: 213
           notes: 'printed "Class 7. "Cystidea.""'
         - taxon: blastoidea
+          sensu: stricto
           pages: 213
           notes: |
             printed "Class 8. Blastotdea (s. s.)." -- OCR garble for
-            "Blastoidea"; "(s. s.)" = sensu stricto, no dedicated field yet
-            (roadmap B13)
+            "Blastoidea"
     - taxon: eleutherozoa
       new: true
       pages: 213
@@ -224,13 +222,12 @@ taxonomies:
           error
         synonyms:
         - taxon: stelleridea
-          modifier: "s. em."
+          sensu: emendato
           notes: |
             cross-reference printed as "(s. Stelleridea, s. em.)" -- sensu
             Stelleridea "of earlier writers" (p. 212: "The Stelleridea then
             of earlier writers are marked by the common character of being
-            azygopodous"), sensu emendato; no dedicated `sensu` field yet
-            (roadmap B13)
+            azygopodous"), sensu emendato
         children:
         - taxon: asteroidea
           pages: 213

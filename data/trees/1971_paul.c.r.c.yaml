@@ -2,5 +2,6 @@ taxonomies:
 - taxon: diploporita-class
   children:
   - taxon: aristocystitidae-superfamily
-    modifier: nom. transl.
+    translated:
+      taxon: aristocystitidae
     notes: Should have been modified to Aristocystitida (not -dae)

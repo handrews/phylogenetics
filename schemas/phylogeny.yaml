@@ -490,6 +490,12 @@ $defs:
       quoted:
         type: boolean
         default: false
+      sensu:
+        description: |
+          A printed "s. s." / "s. l." / "s. em." qualifying the name as this
+          source uses it.
+        type: string
+        enum: [stricto, lato, emendato]
 
   metaFields:
     properties:
@@ -501,12 +507,15 @@ $defs:
   taxonomyTree:
     $id: taxonomyTree
     $dynamicAnchor: tree
+    $ref: "phylogeny#/$defs/baseTaxonomyTree"
+    unevaluatedProperties: false
+
+  baseTaxonomyTree:
     allOf:
     - $ref: tree
-    - $ref: "phylogeny#/$defs/actAndModifierFields"
-    - $ref: "phylogeny#/$defs/relationalFields"
-    - $ref: "phylogeny#/$defs/materialsFields"
-    unevaluatedProperties: false
+    - $ref: "#/$defs/actAndModifierFields"
+    - $ref: "#/$defs/relationalFields"
+    - $ref: "#/$defs/materialsFields"
 
   actAndModifierFields:
     properties:
@@ -519,14 +528,31 @@ $defs:
       pars:
         type: boolean
         default: false
-      modifier:
-        type: string
+      nudum:
+        $comment: The cited usage is a nomen nudum, as this source says.
+        type: boolean
+        default: false
       stem:
         type: boolean
         default: false
       emended:
-        type: [boolean,"null"]
-        default: null
+        description: |
+          The diagnosis is emended, by this source (`true`) or, when `by`
+          names another work, as done there and followed here.
+        oneOf:
+        - type: boolean
+        - $ref: "#/$defs/citedAct"
+      translated:
+        description: |
+          Nomen translatum: the name is used at another rank than the one
+          it was proposed at.  `true` when the earlier rank is not stated;
+          otherwise the node names the taxon at the earlier rank, with the
+          node's citation fields locating that earlier use as this source
+          cites it.  The act is this source's unless `by` names the work
+          that made it.
+        oneOf:
+        - type: boolean
+        - $ref: "#/$defs/translatedNode"
 
   relationalFields:
     properties:
@@ -542,6 +568,9 @@ $defs:
         type: array
         items:
           $ref: taxonomyTree
+      # Nodes under these fields state the previous state of the name as
+      # this source cites it (their citation fields locate that earlier
+      # use); the change itself is this source's act.
       removed:
         type: array
         items:
@@ -559,6 +588,24 @@ $defs:
           $ref: "#/$defs/occurrence"
       specimens:
         $ref: "#/$defs/specimens"
+
+  citedAct:
+    $comment: |
+      An act this source follows rather than performs; `by` cites the work
+      that performed it, with its pages.
+    type: object
+    additionalProperties: false
+    required: [by]
+    properties:
+      by:
+        $ref: "#/$defs/authority"
+
+  translatedNode:
+    $ref: "#/$defs/baseTaxonomyTree"
+    unevaluatedProperties: false
+    properties:
+      by:
+        $ref: "#/$defs/authority"
 
   phylogenyTree:
     $id: phylogenyTree

@@ -6,10 +6,16 @@ taxonomies:
   - taxon: blastozoa
     children:
     - taxon: diploporita-class
-      modifier: nom. tranls. Paul 1968b
+      translated:
+        by:
+          source: 1968b_paul.c.r.c
+      notes:
+        Printed "nom. tranls. Paul 1968b" where this paper's Paul 1968b is
+        "Morphology and function of dichoporite pore-structures in cystoids"
+        in Palaeontology v. 9 pt. 5 p. 697–730.
       children:
       - taxon: eumorphocystoidea
-        modifier: nom. transl.
+        translated: true
         children:
         - taxon: eumorphocystidae
           emended: true

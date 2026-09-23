@@ -469,6 +469,7 @@ class Tree:
   RELATED_SINGULAR = (
     'moved',
     'corrected',
+    'translated',
   )
   RELATED_LIST = (
     'or',
@@ -561,6 +562,12 @@ class Tree:
     self._corrected = (
       Tree(self._data['corrected'], parent=self, relpath=('corrected',))
       if 'corrected' in self._data
+      else None
+    )
+    # `translated: true` states the act without the earlier rank.
+    self._translated = (
+      Tree(self._data['translated'], parent=self, relpath=('translated',))
+      if isinstance(self._data.get('translated'), dict)
       else None
     )
 
@@ -809,6 +816,10 @@ class Tree:
     return self._corrected
 
   @property
+  def translated(self):
+    return self._translated
+
+  @property
   def synonyms(self):
     return tuple(self._synonyms)
 
@@ -837,6 +848,8 @@ class Tree:
       yield 'moved', self._moved
     if self._corrected is not None:
       yield 'corrected', self._corrected
+    if self._translated is not None:
+      yield 'translated', self._translated
     for axis, nodes in (
       ('or', self._or),
       ('synonyms', self._synonyms),

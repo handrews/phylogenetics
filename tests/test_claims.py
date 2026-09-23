@@ -129,3 +129,27 @@ def test_corrections_reach_the_claims(claims):
 def test_manifest_carries_author_surnames(claims):
   authors = manifest(claims)['authors']
   assert authors['bell.b.m'] == 'Bell' and authors['bather'] == 'Bather'
+
+
+def test_change_node_acts(claims):
+  # A `translated` node names the taxon at the earlier rank; the node itself
+  # is the earlier state as cited, so it emits its usage on its own axis.
+  transl = next(
+    c
+    for c in claims['1994_guensburg_sprinkle']
+    if c.get('actKind') == 'nomTransl' and c['subject'] == 'rhenopyrginae'
+  )
+  assert transl['translatedFrom'] == 'rhenopyrgidae'
+  assert 'modifier' not in transl and 'altRankOf' not in transl
+  earlier = next(
+    c
+    for c in claims['1994_guensburg_sprinkle']
+    if c['kind'] == 'usage' and c['path'] == transl['path'] + '/translated'
+  )
+  assert earlier['axis'] == 'translated' and earlier['subject'] == 'rhenopyrgidae'
+  # An act the source follows rather than performs names the work.
+  parsley = next(c for c in claims['1982c_parsley'] if c.get('actKind') == 'nomTransl')
+  assert parsley['by'] == '1968b_paul.c.r.c' and 'translatedFrom' not in parsley
+  # A nomen nudum is an act on the synonymy entry that cites the nude usage.
+  nudum = [c for c in claims['2005_frest'] if c.get('actKind') == 'nomNudum']
+  assert len(nudum) == 3 and all('/synonyms/' in c['path'] for c in nudum)
