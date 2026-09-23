@@ -96,6 +96,29 @@ property.
 | `ex` | 2 | 0.1% |
 | `notes` | 2 | 0.1% |
 
+### `baseTaxonomyTree` -- 5570 instances in `data/`
+
+| property | data | data % |
+|---|---|---|
+| `children` | 1840 | 33.0% |
+| `new` | 1461 | 26.2% |
+| `type` | 368 | 6.6% |
+| `synonyms` | 361 | 6.5% |
+| `parents` | 313 | 5.6% |
+| `specimens` | 89 | 1.6% |
+| `emended` | 54 | 1.0% |
+| `moved` | 30 | 0.5% |
+| `occurrences` | 26 | 0.5% |
+| `pars` | 19 | 0.3% |
+| `translated` | 16 | 0.3% |
+| `corrected` | 5 | 0.1% |
+| `altPlacements` | 4 | 0.1% |
+| `non` | 4 | 0.1% |
+| `nudum` | 4 | 0.1% |
+| `or` | 3 | 0.1% |
+| `removed` | 1 | 0.0% |
+| `stem` | 1 | 0.0% |
+
 ### `basicOccurrence` -- 33 instances in `data/`
 
 | property | data | data % |
@@ -126,7 +149,7 @@ property.
 | `subunit` | 0 | 0.0% |
 | `superunit` | 0 | 0.0% |
 
-### `citationFields` -- 9083 instances in `data/`
+### `citationFields` -- 9084 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
@@ -148,13 +171,13 @@ property.
 | `bootstrap` | 6 | 0.8% |
 | `data` | 0 | 0.0% |
 
-### `editorialObject` -- 6 instances in `data/`
+### `editorialObject` -- 7 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `basis` | 6 | 100.0% |
-| `inferred` | 4 | 66.7% |
-| `corrections` | 2 | 33.3% |
+| `basis` | 7 | 100.0% |
+| `inferred` | 5 | 71.4% |
+| `corrections` | 2 | 28.6% |
 | `corrections.authority` | 2 | 100.0% |
 | `corrections.authority.source` | 2 | 100.0% |
 
@@ -270,29 +293,6 @@ property.
 | `status` | 5 | 0.2% |
 | `designation` | 4 | 0.1% |
 
-### `taxonomyTree` -- 5554 instances in `data/`
-
-| property | data | data % |
-|---|---|---|
-| `children` | 1840 | 33.1% |
-| `new` | 1461 | 26.3% |
-| `type` | 368 | 6.6% |
-| `synonyms` | 361 | 6.5% |
-| `parents` | 313 | 5.6% |
-| `specimens` | 89 | 1.6% |
-| `emended` | 54 | 1.0% |
-| `moved` | 30 | 0.5% |
-| `occurrences` | 26 | 0.5% |
-| `pars` | 19 | 0.3% |
-| `translated` | 16 | 0.3% |
-| `corrected` | 5 | 0.1% |
-| `altPlacements` | 4 | 0.1% |
-| `non` | 4 | 0.1% |
-| `nudum` | 4 | 0.1% |
-| `or` | 3 | 0.1% |
-| `removed` | 1 | 0.0% |
-| `stem` | 1 | 0.0% |
-
 ### `translatedNode` -- 16 instances in `data/`
 
 | property | data | data % |
@@ -303,7 +303,7 @@ property.
 
 | property | data | data % |
 |---|---|---|
-| `taxon` | 5762 | 90.5% |
+| `taxon` | 5763 | 90.6% |
 | `notes` | 379 | 6.0% |
 | `openTaxon` | 219 | 3.4% |
 | `provisional` | 120 | 1.9% |
@@ -314,7 +314,7 @@ property.
 | `affTaxon` | 16 | 0.3% |
 | `cfTaxon` | 15 | 0.2% |
 | `questionable` | 12 | 0.2% |
-| `editorial` | 6 | 0.1% |
+| `editorial` | 7 | 0.1% |
 | `mergeInto` | 5 | 0.1% |
 | `sensu` | 0 | 0.0% |
 
@@ -531,7 +531,7 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/basicOccurrence/properties/unit` | string/array | listx20, strx1 | `Craighead inlier` | - |
 | `phylogeny#/$defs/citationNumber` | integer/string | intx678, strx185 | `IX`, `VIII`, `V`, `b` | - |
 | `phylogeny#/$defs/cladisticFields/properties/matrix/items` | integer/string | intx139, strx5 | `?` | - |
-| `phylogeny#/$defs/editorialObject/properties/inferred` | boolean/array | listx2, boolx2 | - | - |
+| `phylogeny#/$defs/editorialObject/properties/inferred` | boolean/array | boolx3, listx2 | - | - |
 | `phylogeny#/$defs/person/properties/death` | integer/null | intx80, nullx1 | - | - |
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
 | `phylogeny#/$defs/specimens/additionalProperties/items` | string/array | strx516, listx4 | `F. 5420`, `F. 5419`, `F. 5418`, `F. 5417` | - |

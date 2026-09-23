@@ -1,3 +1,11 @@
 taxonomies:
 - taxon: diploporita-class
-  translated: true
+  translated:
+    taxon: diploporita-order
+    editorial:
+      inferred: true
+      basis: >
+        Diploporita had been given as an Order within Class Cystoidea
+        in the Treatise volume published in 1967, and the text of this
+        paper makes it clear that Diploporita is being promoted from
+        within Cystoidea to its own class.

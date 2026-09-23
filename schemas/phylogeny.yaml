@@ -475,8 +475,10 @@ $defs:
       notes:
         type: string
   taxonomyTree:
-    $ref: "#/$defs/tree"
+    $ref: "#/$defs/baseTaxonomyTree"
     unevaluatedProperties: false
+  baseTaxonomyTree:
+    $ref: "#/$defs/tree"
     properties:
       # ACT AND MODIFIER FIELDS
       type:
@@ -570,7 +572,7 @@ $defs:
       by:
         $ref: "#/$defs/authority"
   translatedNode:
-    $ref: "#/$defs/tree"
+    $ref: "#/$defs/baseTaxonomyTree"
     unevaluatedProperties: false
     properties:
       by:

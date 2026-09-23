@@ -5462,7 +5462,8 @@
    },
    "claims": {
     "act": 1,
-    "usage": 1
+    "editorial": 1,
+    "usage": 2
    },
    "derived": {
     "skeleton": 1
@@ -13692,7 +13693,8 @@
   ],
   "diploporita-order": [
    "1900_bather",
-   "1963_brown.i.a"
+   "1963_brown.i.a",
+   "1972_paul.c.r.c"
   ],
   "diploporita-sp-e_paul.c.r.c_1997": [
    "1997_paul.c.r.c"
