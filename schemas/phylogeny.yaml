@@ -46,7 +46,7 @@ $defs:
         taxonomies:
           type: array
           items:
-            $ref: "#/$defs/taxonomyTree"
+            $ref: taxonomyTree
         phylogenies:
           type: array
           items:
@@ -54,7 +54,7 @@ $defs:
         assumptions:
           type: array
           items:
-            $ref: "#/$defs/taxonomyTree"
+            $ref: taxonomyTree
         notes:
           type: string
   person:
@@ -322,8 +322,12 @@ $defs:
       bracket:
         ### TODO: Replace this property name
         type: string
+    allOf:
+    - $ref: "#/$defs/authorityFields"
+    - $ref: "#/$defs/locationFields"
 
-      # AUTHORITY FIELDS
+  authorityFields:
+    properties:
       authority:
         $ref: "#/$defs/authority"
       auth:
@@ -338,13 +342,15 @@ $defs:
         items:
           type: string
 
-      # SUPPORTING LOCATION FIELDS
+  locationFields:
+    properties:
       pages:
         $ref: "#/$defs/citationNumbers"
       illustrations:
         type: array
         items:
           $ref: "#/$defs/illustration"
+
   cladisticFields:
     properties:
       matrix:
@@ -361,6 +367,7 @@ $defs:
           type: integer
       bootstrap:
         type: integer
+
   taxonRecord:
     type: object
     $ref: "#/$defs/citationFields"
@@ -413,20 +420,40 @@ $defs:
               type: [string, integer]
       notes:
         type: string
+
   tree:
+    $id: tree
+    $dynamicAnchor: tree
     type: object
-    $ref: "#/$defs/citationFields"
+    allOf:
+    - $ref: "phylogeny#/$defs/identificationFields"
+    - $ref: "phylogeny#/$defs/citationFields"
+    - $ref: "phylogeny#/$defs/uncertaintyFields"
+    - $ref: "phylogeny#/$defs/metaFields"
     properties:
       mergeInto:
         type: array
         minItems: 2
         maxItems: 2
         prefixItems:
-        - $ref: "#/$defs/sourceId"
+        - $ref: "phylogeny#/$defs/sourceId"
         - type: integer
           minimum: 0
+      children:
+        type: array
+        items:
+          $dynamicRef: "#tree"
+      parents:
+        type: array
+        items:
+          $dynamicRef: "#tree"
+      altPlacements:
+        type: array
+        items:
+          $dynamicRef: "#tree"
 
-      # IDENTIFICATION FIELDS
+  identificationFields:
+    properties:
       taxon:
         type: string
       affTaxon:
@@ -446,7 +473,8 @@ $defs:
       diagnosis:
         type: [string, "null"]
 
-      # UNCERTAINTY FIELDS
+  uncertaintyFields:
+    properties:
       provisional:
         $comment: The assignment to parent taxon is provisional
         type: boolean
@@ -469,18 +497,28 @@ $defs:
         type: string
         enum: [stricto, lato, emendato]
 
-      # META FIELDS
+  metaFields:
+    properties:
       editorial:
         $ref: "#/$defs/editorialObject"
       notes:
         type: string
+
   taxonomyTree:
-    $ref: "#/$defs/baseTaxonomyTree"
+    $id: taxonomyTree
+    $dynamicAnchor: tree
+    $ref: "phylogeny#/$defs/baseTaxonomyTree"
     unevaluatedProperties: false
+
   baseTaxonomyTree:
-    $ref: "#/$defs/tree"
+    allOf:
+    - $ref: tree
+    - $ref: "#/$defs/actAndModifierFields"
+    - $ref: "#/$defs/relationalFields"
+    - $ref: "#/$defs/materialsFields"
+
+  actAndModifierFields:
     properties:
-      # ACT AND MODIFIER FIELDS
       type:
         type: boolean
         default: false
@@ -516,44 +554,34 @@ $defs:
         - type: boolean
         - $ref: "#/$defs/translatedNode"
 
-      # RELATIONAL FIELDS
-      children:
-        type: array
-        items:
-          $ref: "#/$defs/taxonomyTree"
-      parents:
-        type: array
-        items:
-          $ref: "#/$defs/taxonomyTree"
+  relationalFields:
+    properties:
       synonyms:
         type: array
         items:
-          $ref: "#/$defs/taxonomyTree"
+          $ref: taxonomyTree
       non:
         type: array
         items:
-          $ref: "#/$defs/taxonomyTree"
+          $ref: taxonomyTree
       or:
         type: array
         items:
-          $ref: "#/$defs/taxonomyTree"
-      altPlacements:
-        type: array
-        items:
-          $ref: "#/$defs/taxonomyTree"
+          $ref: taxonomyTree
       # Nodes under these fields state the previous state of the name as
       # this source cites it (their citation fields locate that earlier
       # use); the change itself is this source's act.
       removed:
         type: array
         items:
-          $ref: "#/$defs/taxonomyTree"
+          $ref: taxonomyTree
       moved:
-        $ref: "#/$defs/taxonomyTree"
+        $ref: taxonomyTree
       corrected:
-        $ref: "#/$defs/taxonomyTree"
+        $ref: taxonomyTree
 
-      # MATERIALS FIELDS
+  materialsFields:
+    properties:
       occurrences:
         type: array
         items:
@@ -571,36 +599,22 @@ $defs:
     properties:
       by:
         $ref: "#/$defs/authority"
+
   translatedNode:
     $ref: "#/$defs/baseTaxonomyTree"
     unevaluatedProperties: false
     properties:
       by:
         $ref: "#/$defs/authority"
+
   phylogenyTree:
+    $id: phylogenyTree
+    $dynamicAnchor: tree
     unevaluatedProperties: false
     allOf:
-    - $ref: "#/$defs/tree"
-    - $ref: "#/$defs/cladisticFields"
-    $comment: |
-      Duplicated relational properties because there doesn't seem to be
-      a python JSON Schema implementation that both supports annotations
-      and has a fast $dynamicRef implementation.
-      Additional relational fields are absent by design as they are
-      taxonomy-specific.
-    properties:
-      children:
-        type: array
-        items:
-          $ref: "#/$defs/phylogenyTree"
-      parents:
-        type: array
-        items:
-          $ref: "#/$defs/phylogenyTree"
-      altPlacements:
-        type: array
-        items:
-          $ref: "#/$defs/phylogenyTree"
+    - $ref: tree
+    - $ref: "phylogeny#/$defs/cladisticFields"
+
   phylogeny:
     type: object
     required: [tree, treeType]
@@ -614,7 +628,7 @@ $defs:
         - diagram
         - other
       tree:
-        $ref: "#/$defs/phylogenyTree"
+        $ref: phylogenyTree
       notes:
         type: string
       methodology:
