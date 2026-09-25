@@ -8,6 +8,7 @@ CLI, the MCP server, the eval runner and plans all go through `call`,
 which applies the caller's style and names the tool on each block.
 """
 
+from .acts import ACT_KINDS
 from .store import ClaimStore as ClaimStore
 from .words import COVERAGE_WORDS as COVERAGE_WORDS
 from .words import short_citation as short_citation
@@ -189,9 +190,8 @@ TOOL_DESCRIPTIONS = {
     'diagnosis. Optionally one source, one kind of statement '
     '(usage, placement, acceptance, act, rejection, material, diagnosis, '
     'editorial; or occurrences, illustrations, specimens for one kind of '
-    'material) or one act kind (new, type, emended, nomTransl, nomNudum, '
-    'moved, removed, corrected, substituted). A statement marked "editor" '
-    'is the '
+    f'material) or one act kind ({", ".join(ACT_KINDS)}). A statement '
+    'marked "editor" is the '
     "editor's inference, not the paper's words. When a source is named "
     'and nothing of that kind about the record is entered, the result is '
     'the gap block for that source and kind: compose it as the answer.'

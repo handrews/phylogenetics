@@ -448,6 +448,14 @@ class ProxyTaxon(Taxon):
     return f'{self._proxy_type} ' + super().display_name
 
 
+# A subtree of a tree node other than `children`: the field holding it;
+# whether that holds a list of nodes rather than a single one; and whether
+# its nodes cite a use of the name in another work (a synonymy entry, or
+# the earlier state of a name the source changes), so that their pages and
+# illustrations locate that use rather than the citing source's own.
+RelatedAxis = collections.namedtuple('RelatedAxis', 'name many cited')
+
+
 class Tree:
   _NAMED_FIELDS = {'taxon'}
   _PROXY_FIELDS = {'cfTaxon', 'affTaxon'}
@@ -466,20 +474,20 @@ class Tree:
     TYPE_OTHER,
   }
 
-  RELATED_SINGULAR = (
-    'moved',
-    'corrected',
-    'substituted',
-    'translated',
+  # The subtrees other than `children`, in walk order.
+  RELATED_AXES = (
+    RelatedAxis('moved', many=False, cited=True),
+    RelatedAxis('corrected', many=False, cited=True),
+    RelatedAxis('substituted', many=False, cited=True),
+    RelatedAxis('translated', many=False, cited=True),
+    RelatedAxis('or', many=True, cited=False),
+    RelatedAxis('synonyms', many=True, cited=True),
+    RelatedAxis('non', many=True, cited=True),
+    RelatedAxis('removed', many=True, cited=True),
+    RelatedAxis('parents', many=True, cited=False),
+    RelatedAxis('altPlacements', many=True, cited=False),
   )
-  RELATED_LIST = (
-    'or',
-    'synonyms',
-    'non',
-    'removed',
-    'children',
-    'parents',
-  )
+  CITED_AXES = frozenset(axis.name for axis in RELATED_AXES if axis.cited)
 
   _taxon_index = collections.defaultdict(set)
   _new_index = collections.defaultdict(set)
@@ -545,50 +553,26 @@ class Tree:
     self._taxon = None
     self._relpath = relpath
 
-    self._or = []
-    self._synonyms = []
-    self._non = []
-    self._removed = []
-    self._alt_placements = []
-    self._parents = []
+    self._related = {}
     self._children = []
 
     self._check_metadata()
     self._check_primary_taxon()
 
     self._bracket = self._check_taxon('bracket')
-    self._moved = (
-      Tree(self._data['moved'], parent=self, relpath=('moved',)) if 'moved' in self._data else None
-    )
-    self._corrected = (
-      Tree(self._data['corrected'], parent=self, relpath=('corrected',))
-      if 'corrected' in self._data
-      else None
-    )
-    self._substituted = (
-      Tree(self._data['substituted'], parent=self, relpath=('substituted',))
-      if 'substituted' in self._data
-      else None
-    )
-    # `translated: true` states the act without the earlier rank.
-    self._translated = (
-      Tree(self._data['translated'], parent=self, relpath=('translated',))
-      if isinstance(self._data.get('translated'), dict)
-      else None
-    )
+    for axis in self.RELATED_AXES:
+      value = self._data.get(axis.name)
+      if axis.many:
+        self._related[axis.name] = [
+          Tree(item, parent=self, relpath=(axis.name, index))
+          for index, item in enumerate(value or ())
+        ]
+      # `translated: true` states the act without the earlier rank.
+      elif isinstance(value, dict):
+        self._related[axis.name] = [Tree(value, parent=self, relpath=(axis.name,))]
+      else:
+        self._related[axis.name] = []
 
-    for index, vel_or in enumerate(self._data.get('or', ())):
-      self._or.append(Tree(vel_or, parent=self, relpath=('or', index)))
-    for index, syn in enumerate(self._data.get('synonyms', ())):
-      self._synonyms.append(Tree(syn, parent=self, relpath=('synonyms', index)))
-    for index, non in enumerate(self._data.get('non', ())):
-      self._non.append(Tree(non, parent=self, relpath=('non', index)))
-    for index, rem in enumerate(self._data.get('removed', ())):
-      self._removed.append(Tree(rem, parent=self, relpath=('removed', index)))
-    for index, relparent in enumerate(self._data.get('parents', ())):
-      self._parents.append(Tree(relparent, parent=self, relpath=('parents', index)))
-    for index, placement in enumerate(self._data.get('altPlacements', ())):
-      self._alt_placements.append(Tree(placement, parent=self, relpath=('altPlacements', index)))
     for index, child in enumerate(self._data.get('children', ())):
       self._children.append(Tree(child, parent=self, relpath=('children', index)))
 
@@ -798,6 +782,12 @@ class Tree:
     return self._relpath[0] if self._relpath else 'root'
 
   @property
+  def is_cited(self):
+    # Whether the node cites a use of the name in another work, which its
+    # pages and illustrations locate (`RelatedAxis.cited`).
+    return self.axis in self.CITED_AXES
+
+  @property
   def position(self):
     return self._position
 
@@ -813,65 +803,24 @@ class Tree:
   def bracket(self):
     return self._bracket
 
-  @property
-  def moved(self):
-    return self._moved
+  def related_node(self, axis):
+    """The node under a single-node axis (``moved``, ``corrected``, ...),
+    or None."""
+    nodes = self._related[axis]
+    return nodes[0] if nodes else None
 
-  @property
-  def corrected(self):
-    return self._corrected
-
-  @property
-  def substituted(self):
-    return self._substituted
-
-  @property
-  def translated(self):
-    return self._translated
-
-  @property
-  def synonyms(self):
-    return tuple(self._synonyms)
-
-  @property
-  def non(self):
-    return tuple(self._non)
-
-  @property
-  def removed(self):
-    return tuple(self._removed)
-
-  @property
-  def parents(self):
-    return tuple(self._parents)
-
-  @property
-  def alt_placements(self):
-    return tuple(self._alt_placements)
+  def related_nodes(self, axis):
+    """The nodes under a list axis (``synonyms``, ``parents``, ...)."""
+    return tuple(self._related[axis])
 
   def related(self):
     """Yield ``(axis, node)`` for every subtree other than ``children``.
 
-    The order is the constructor's, so it is the order of every walk.
+    The order is `RELATED_AXES`, so it is the order of every walk.
     """
-    if self._moved is not None:
-      yield 'moved', self._moved
-    if self._corrected is not None:
-      yield 'corrected', self._corrected
-    if self._substituted is not None:
-      yield 'substituted', self._substituted
-    if self._translated is not None:
-      yield 'translated', self._translated
-    for axis, nodes in (
-      ('or', self._or),
-      ('synonyms', self._synonyms),
-      ('non', self._non),
-      ('removed', self._removed),
-      ('parents', self._parents),
-      ('altPlacements', self._alt_placements),
-    ):
-      for node in nodes:
-        yield axis, node
+    for axis in self.RELATED_AXES:
+      for node in self._related[axis.name]:
+        yield axis.name, node
 
   def walk(self):
     """Yield this node and every descendant, related subtrees before

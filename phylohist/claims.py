@@ -10,6 +10,7 @@ per-source coverage counts and cross-checks them against the declared
 
 import collections
 
+from .acts import RELATED_ACTS
 from .loader.research import Author, Publication, Source
 from .loader.taxa import Taxon
 from .names import fold_forms, key_stem
@@ -80,10 +81,10 @@ _PLACEMENT_FLAGS = (
   'outgroup',
   'stem',
 )
+# The synonymy entries: each is a name the source accepts (`synonyms`) or
+# rejects (`non`) under the owner's name.
+_SYNONYMY_AXES = ('synonyms', 'non')
 _ACCEPTANCE_FLAGS = ('pars', 'tentative')
-# On these entries `pages` and `illustrations` locate the cited usage in
-# the cited work, never the citing source's own page or figure.
-_CITED_AXES = ('synonyms', 'non')
 # Role words as recorded today (the schema's enum and the plurals the
 # occurrence blocks use); D1 will fix the vocabulary.
 _SPECIMEN_ROLES = frozenset(
@@ -152,6 +153,12 @@ def _effective_pages(node):
   return None, False
 
 
+def _related_key(node, axis):
+  """The record named by the node under a single-node axis, if any."""
+  related = node.related_node(axis)
+  return related.taxon.key if related is not None and related.taxon is not None else None
+
+
 def _nearest_named_ancestor(node):
   ancestor = node.parent
   while ancestor is not None and ancestor.taxon is None:
@@ -210,7 +217,9 @@ class _NodeClaims:
     root = node.root
     self.tree = 'taxonomy' if node.tree_type == 'taxonomy' else node.tree_type
     self.tree_notes = root.tree_notes
-    self.cited_entry = node.axis in _CITED_AXES
+    # A cited entry's `pages` and `illustrations` locate the cited usage in
+    # the cited work, never the citing source's own page or figure.
+    self.cited_entry = node.is_cited
     self.pages, self.pages_inherited = (None, False) if self.cited_entry else _effective_pages(node)
     self.subject = node.taxon.key if node.taxon is not None else None
     self.placeholder = placeholder_kind(node.taxon)
@@ -318,7 +327,7 @@ class _NodeClaims:
 
     if named:
       self._usage()
-    elif node.axis in ('synonyms', 'non') and self.owner_key is not None:
+    elif node.axis in _SYNONYMY_AXES and self.owner_key is not None:
       # An entry with no name of its own cites the owner's name.
       claim = self._base('usage')
       claim['subject'] = self.owner_key
@@ -357,14 +366,14 @@ class _NodeClaims:
       claim['position'] = node.relpath[1]
       self._emit(claim, 'children')
 
-    if node.axis in ('synonyms', 'non'):
+    if node.axis in _SYNONYMY_AXES:
       claim = self._base('acceptance')
       if not named:
         claim['subject'] = self.owner_key
         claim['ownName'] = True
       claim['stance'] = 'accepts' if node.axis == 'synonyms' else 'rejects'
       claim['under'] = self.owner_key
-      parents = [p.taxon.key for p in node.parents if p.taxon is not None]
+      parents = [p.taxon.key for p in node.related_nodes('parents') if p.taxon is not None]
       if parents:
         claim['parents'] = parents
       for flag in _ACCEPTANCE_FLAGS:
@@ -381,9 +390,9 @@ class _NodeClaims:
       claim = self._base('rejection')
       claim['declinedParent'] = self.owner_key
       self._emit(claim, 'removed')
-    if named and node.moved is not None and node.moved.taxon is not None:
+    if named and (moved := _related_key(node, 'moved')) is not None:
       claim = self._base('rejection')
-      claim['declinedParent'] = node.moved.taxon.key
+      claim['declinedParent'] = moved
       self._emit(claim, 'moved')
 
     for role, value in (data.get('specimens') or {}).items():
@@ -450,7 +459,7 @@ class _NodeClaims:
     for flag in _PLACEMENT_FLAGS:
       if data.get(flag):
         claim[flag] = data[flag]
-    alt = [p.taxon.key for p in node.alt_placements if p.taxon is not None]
+    alt = [p.taxon.key for p in node.related_nodes('altPlacements') if p.taxon is not None]
     if alt:
       claim['altPlacements'] = alt
     return claim
@@ -471,8 +480,8 @@ class _NodeClaims:
       self._act('emended', 'emended', **_by(emended))
     if translated := data.get('translated'):
       fields = _by(translated)
-      if node.translated is not None and node.translated.taxon is not None:
-        fields['translatedFrom'] = node.translated.taxon.key
+      if (earlier := _related_key(node, 'translated')) is not None:
+        fields['translatedFrom'] = earlier
       # The identity link between coordinate names is undirected: the
       # variants are listed whichever record carries the link.
       variants = rank_variants(node.taxon.key)
@@ -481,20 +490,9 @@ class _NodeClaims:
       self._act('nomTransl', 'translated', **fields)
     if data.get('nudum'):
       self._act('nomNudum', 'nudum')
-    if node.corrected is not None and node.corrected.taxon is not None:
-      self._act(
-        'corrected',
-        'corrected',
-        correctedFrom=node.corrected.taxon.key,
-      )
-    if node.substituted is not None and node.substituted.taxon is not None:
-      self._act(
-        'substituted',
-        'substituted',
-        substitutedFor=node.substituted.taxon.key,
-      )
-    if node.moved is not None and node.moved.taxon is not None:
-      self._act('moved', 'moved', movedFrom=node.moved.taxon.key)
+    for kind, (field, _) in RELATED_ACTS.items():
+      if (related := _related_key(node, kind)) is not None:
+        self._act(kind, kind, **{field: related})
     if node.axis == 'removed':
       self._act('removed', 'removed', removedFrom=self.owner_key)
 
