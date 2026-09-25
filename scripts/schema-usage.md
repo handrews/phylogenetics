@@ -26,7 +26,7 @@ even when its parent is also unreached, so read parents first.
 | `occurrence` | `phylogeny#/$defs/occurrence/properties/localSeriesBoundary`<br>`phylogeny#/$defs/occurrence/properties/localSeriesRange`<br>`phylogeny#/$defs/occurrence/properties/localStageBoundary`<br>`phylogeny#/$defs/occurrence/properties/localStageRange`<br>`phylogeny#/$defs/occurrence/properties/tentative` |
 | `person` | `phylogeny#/$defs/person/properties/suffix` |
 | `publication` | `phylogeny#/$defs/publication/properties/type` |
-| `relationalFields` | `phylogeny#/$defs/relationalFields/properties/substituted` |
+| `relationalFields` | `phylogeny#/$defs/relationalFields/properties/lapsus`<br>`phylogeny#/$defs/relationalFields/properties/substituted` |
 | `seriesRange` | `phylogeny#/$defs/seriesRange`<br>`phylogeny#/$defs/seriesRange/items` |
 | `specimen` | `phylogeny#/$defs/specimen/oneOf/1`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/id`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/illustrations`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/illustrations/items`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/repository` |
 | `specimens` | `phylogeny#/$defs/specimens/properties/allotype`<br>`phylogeny#/$defs/specimens/properties/neotype`<br>`phylogeny#/$defs/specimens/properties/repository` |
@@ -99,22 +99,22 @@ property.
 | `quotes` | 1 | 0.3% |
 | `reading` | 1 | 0.3% |
 
-### `authority` -- 1635 instances in `data/`
+### `authority` -- 1636 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `source` | 1635 | 100.0% |
-| `pages` | 62 | 3.8% |
+| `source` | 1636 | 100.0% |
+| `pages` | 63 | 3.9% |
 | `illustrations` | 28 | 1.7% |
 | `attributedTo` | 24 | 1.5% |
 | `ex` | 2 | 0.1% |
 | `notes` | 2 | 0.1% |
 
-### `authorityFields` -- 9084 instances in `data/`
+### `authorityFields` -- 9085 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `authority` | 1632 | 18.0% |
+| `authority` | 1633 | 18.0% |
 | `auth` | 1000 | 11.0% |
 | `year` | 998 | 11.0% |
 | `in` | 28 | 0.3% |
@@ -149,7 +149,7 @@ property.
 | `subunit` | 0 | 0.0% |
 | `superunit` | 0 | 0.0% |
 
-### `citationFields` -- 9084 instances in `data/`
+### `citationFields` -- 9085 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
@@ -200,7 +200,7 @@ property.
 | `location` | 0 | 0.0% |
 | `source` | 0 | 0.0% |
 
-### `locationFields` -- 9084 instances in `data/`
+### `locationFields` -- 9085 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
@@ -293,6 +293,7 @@ property.
 | `non` | 4 | 0.1% |
 | `or` | 3 | 0.1% |
 | `removed` | 1 | 0.0% |
+| `lapsus` | 0 | 0.0% |
 | `substituted` | 0 | 0.0% |
 
 ### `specimens` -- 89 instances in `data/`
@@ -306,12 +307,12 @@ property.
 | `neotype` | 0 | 0.0% |
 | `repository` | 0 | 0.0% |
 
-### `taxonRecord` -- 2721 instances in `data/`
+### `taxonRecord` -- 2722 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `name` | 2682 | 98.6% |
-| `notes` | 216 | 7.9% |
+| `name` | 2683 | 98.6% |
+| `notes` | 217 | 8.0% |
 | `altSpellingOf` | 165 | 6.1% |
 | `lang` | 75 | 2.8% |
 | `originalParent` | 65 | 2.4% |
@@ -559,7 +560,7 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/article/properties/series` | integer/string | intx8, strx1 | `A` | - |
 | `phylogeny#/$defs/article/properties/volume` | integer/string | intx225, strx13 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `II` | - |
 | `phylogeny#/$defs/basicOccurrence/properties/unit` | string/array | listx20, strx1 | `Craighead inlier` | - |
-| `phylogeny#/$defs/citationNumber` | integer/string | intx678, strx185 | `IX`, `VIII`, `V`, `b` | - |
+| `phylogeny#/$defs/citationNumber` | integer/string | intx680, strx185 | `IX`, `VIII`, `V`, `b` | - |
 | `phylogeny#/$defs/cladisticFields/properties/matrix/items` | integer/string | intx139, strx5 | `?` | - |
 | `phylogeny#/$defs/editorialObject/properties/inferred` | boolean/array | boolx3, listx2 | - | - |
 | `phylogeny#/$defs/identificationFields/properties/diagnosis` | string/null | strx68, nullx1 | `A cast of it shows a con...`, `Body hemisphæric, slight...`, `A *Pyrgocystis* specimen...`, `Mouth surrounded and cov...` | - |
@@ -567,5 +568,5 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
 | `phylogeny#/$defs/specimens/additionalProperties/items` | string/array | strx516, listx4 | `F. 5420`, `F. 5419`, `F. 5418`, `F. 5417` | - |
 | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items` | array/string/integer | intx10, strx3 | `EE15373`, `EE 1659`, `E23470` | array |
-| `phylogeny#/$defs/taxonRecord/properties/name` | string/null | strx2486, nullx196 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
+| `phylogeny#/$defs/taxonRecord/properties/name` | string/null | strx2487, nullx196 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
 

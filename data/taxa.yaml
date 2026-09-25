@@ -1691,6 +1691,16 @@ canadensis_billings_1866:
   name: canadensis
   auth: [billings]
   year: 1866
+canadensis_whiteaves_1898:
+  name: canadensis
+  authority:
+    source: 1898_whiteaves
+    pages: [[395, 396]]
+  notes: |
+    A lapsus calami for ottawaensis: Whiteaves's postscript names the
+    species "Astrocystites Canadensis" and "Steganoblastus Canadensis"
+    while retaining "the original specific name", and Bather 1914 (p. 193)
+    calls it an inadvertent slip. Not a synonym and not an available name.
 canaliculatus_hall_1852:
   name: canaliculatus
   authority:

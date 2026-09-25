@@ -12,6 +12,8 @@ source, which year and which claim it rests on.
 
 import collections
 
+from .acts import SYNONYMY_ACTS
+
 TAXONOMY = ('taxonomy',)
 
 
@@ -27,7 +29,9 @@ class Closure:
     self.store = store
     self.names = store.names
     # Placement claims by source, then by path and by parent; acceptances
-    # by the record they are accepted under.
+    # by the record they are accepted under, with the synonymy an act
+    # implies taken as one: the usage of the node under the act's axis,
+    # accepted under the node's name.
     self.by_path = collections.defaultdict(dict)
     self.by_parent = collections.defaultdict(lambda: collections.defaultdict(list))
     self.placements_of = collections.defaultdict(list)
@@ -42,6 +46,11 @@ class Closure:
         elif claim['kind'] == 'acceptance' and claim['stance'] == 'accepts':
           if claim.get('under') and claim.get('subject') != claim.get('under'):
             self.accepted_under[claim['under']].append(claim)
+        elif claim['kind'] == 'act' and claim['actKind'] in SYNONYMY_ACTS:
+          at = store.at_path[source_key].get(f'{claim["path"]}/{claim["actKind"]}', ())
+          usage = next((c for c in at if c['kind'] == 'usage'), None)
+          if usage is not None and usage['subject'] != claim['subject']:
+            self.accepted_under[claim['subject']].append(dict(usage, under=claim['subject']))
     # An `or` name is placed wherever its node is.
     for record, uses in store.or_usages.items():
       for source_key, node_path, _ in uses:

@@ -5,12 +5,14 @@ specification.
 """
 
 # The acts a node states by naming, under the axis of the same name, the
-# record it changes: the claim field that carries that record's key, and
-# the word joining the act to it in a sentence ("corrected from y").
+# record it relates the name to: the claim field that carries that
+# record's key, and the words before its name in a sentence ("corrected
+# from y").
 RELATED_ACTS = {
-  'corrected': ('correctedFrom', 'from'),
-  'substituted': ('substitutedFor', 'for'),
-  'moved': ('movedFrom', 'from'),
+  'corrected': ('correctedFrom', 'corrected from'),
+  'substituted': ('substitutedFor', 'substituted for'),
+  'lapsus': ('lapsusAs', 'printed by lapsus calami as'),
+  'moved': ('movedFrom', 'moved from'),
 }
 
 # Every `actKind`, in the order a node emits its acts.
@@ -24,3 +26,8 @@ ACT_KINDS = (
   *RELATED_ACTS,
   'removed',
 )
+
+# The acts that make the record they name a synonym of the node's name
+# without the source printing a synonymy: an incorrect form and a replaced
+# name. A `synonyms` entry repeats it only when a synonymy is printed.
+SYNONYMY_ACTS = ('corrected', 'substituted')

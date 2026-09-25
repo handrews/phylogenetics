@@ -15,6 +15,7 @@ the tree is corrected (`scripts/claims.py --inconsistencies` explains
 each row).
 """
 
+import collections
 import logging
 import os
 import pathlib
@@ -176,3 +177,30 @@ def test_earlier_state_entries_are_cited(load_records, caplog, axis):
   for claim in cited:
     assert 'pages' not in claim
     assert claim['citedPages'] == 12 and claim['citedIllustrations'] == illustrations
+
+
+def test_lapsus_is_the_slip_not_a_synonym(load_records, caplog):
+  # The intended name stands in the tree and the name printed by a slip of
+  # the pen hangs under `lapsus`: the intended name's node names the slip,
+  # and the slip is used as printed here but neither accepted as a synonym
+  # nor claimed as new, though its place is its protologue.
+  child = {
+    'taxon': 'ottawaensis_whiteaves_1897',
+    'lapsus': {'taxon': 'canadensis_billings_1866', 'pages': 13},
+  }
+  root = Tree(
+    {'taxon': 'astrocystites', 'pages': 100, 'children': [child]},
+    {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 98},
+  )
+  claims = extract({'1961_dehm': [root]})['1961_dehm']
+  assert not [r for r in caplog.records if r.levelno >= logging.ERROR]
+  by_path = collections.defaultdict(list)
+  for claim in claims:
+    by_path[claim['path']].append(claim)
+  act = next(c for c in by_path['98/children/0'] if c['kind'] == 'act')
+  assert act['actKind'] == 'lapsus' and act['lapsusAs'] == 'canadensis_billings_1866'
+  [slip] = by_path['98/children/0/lapsus']
+  assert slip['kind'] == 'usage' and slip['axis'] == 'lapsus'
+  # The slip is printed in this source: its pages are the source's own.
+  assert slip['pages'] == 13 and 'citedPages' not in slip
+  assert '1961_dehm' in Tree._new_index['canadensis_billings_1866']

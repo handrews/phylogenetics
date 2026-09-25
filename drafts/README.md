@@ -19,7 +19,7 @@ and source keys the draft cites that have no record yet.
 | draft | paper | open points |
 |---|---|---|
 | `1897_whiteaves.yaml` | Whiteaves 1897, Canadian Record Sci. 7(5): 287–292 | the protologue of the first edrioblastoid; no higher taxon printed; three specimens without numbers or type words |
-| `1898_whiteaves.yaml` | Whiteaves 1898 (postscript), 7(7): 395–396 | the replacement name *Steganoblastus*; recorded as `substituted` + synonym; check against B6 |
+| `1898_whiteaves.yaml` | Whiteaves 1898 (postscript), 7(7): 395–396 | the replacement name *Steganoblastus*, recorded as `substituted`; the species' slip "Canadensis" as `lapsus`; check against B6 |
 | `1914c_bather.yaml` | Bather 1914, Studies V, Geol. Mag. (6) 1: 193–203 | Steganoblastidae used, not erected; specimen A named holotype among three syntypes |
 | `1925_hudson.yaml` | Hudson 1925, J. Geol. 33(6): 642–657 | usage only; "true blastid" affinity in notes; cotypes A and B |
 | `1927_hudson.yaml` | Hudson 1927, Rep. Vermont State Geol. 15: 97–110 | usage only; three specimens claimed, two discussed |
