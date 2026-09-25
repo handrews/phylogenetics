@@ -152,6 +152,12 @@ def _effective_pages(node):
   return None, False
 
 
+def _related_key(node, axis):
+  """The record named by the node under a single-node axis, if any."""
+  related = node.related_node(axis)
+  return related.taxon.key if related is not None and related.taxon is not None else None
+
+
 def _nearest_named_ancestor(node):
   ancestor = node.parent
   while ancestor is not None and ancestor.taxon is None:
@@ -364,7 +370,7 @@ class _NodeClaims:
         claim['ownName'] = True
       claim['stance'] = 'accepts' if node.axis == 'synonyms' else 'rejects'
       claim['under'] = self.owner_key
-      parents = [p.taxon.key for p in node.parents if p.taxon is not None]
+      parents = [p.taxon.key for p in node.related_nodes('parents') if p.taxon is not None]
       if parents:
         claim['parents'] = parents
       for flag in _ACCEPTANCE_FLAGS:
@@ -381,9 +387,9 @@ class _NodeClaims:
       claim = self._base('rejection')
       claim['declinedParent'] = self.owner_key
       self._emit(claim, 'removed')
-    if named and node.moved is not None and node.moved.taxon is not None:
+    if named and (moved := _related_key(node, 'moved')) is not None:
       claim = self._base('rejection')
-      claim['declinedParent'] = node.moved.taxon.key
+      claim['declinedParent'] = moved
       self._emit(claim, 'moved')
 
     for role, value in (data.get('specimens') or {}).items():
@@ -450,7 +456,7 @@ class _NodeClaims:
     for flag in _PLACEMENT_FLAGS:
       if data.get(flag):
         claim[flag] = data[flag]
-    alt = [p.taxon.key for p in node.alt_placements if p.taxon is not None]
+    alt = [p.taxon.key for p in node.related_nodes('altPlacements') if p.taxon is not None]
     if alt:
       claim['altPlacements'] = alt
     return claim
@@ -471,8 +477,8 @@ class _NodeClaims:
       self._act('emended', 'emended', **_by(emended))
     if translated := data.get('translated'):
       fields = _by(translated)
-      if node.translated is not None and node.translated.taxon is not None:
-        fields['translatedFrom'] = node.translated.taxon.key
+      if (earlier := _related_key(node, 'translated')) is not None:
+        fields['translatedFrom'] = earlier
       # The identity link between coordinate names is undirected: the
       # variants are listed whichever record carries the link.
       variants = rank_variants(node.taxon.key)
@@ -481,20 +487,12 @@ class _NodeClaims:
       self._act('nomTransl', 'translated', **fields)
     if data.get('nudum'):
       self._act('nomNudum', 'nudum')
-    if node.corrected is not None and node.corrected.taxon is not None:
-      self._act(
-        'corrected',
-        'corrected',
-        correctedFrom=node.corrected.taxon.key,
-      )
-    if node.substituted is not None and node.substituted.taxon is not None:
-      self._act(
-        'substituted',
-        'substituted',
-        substitutedFor=node.substituted.taxon.key,
-      )
-    if node.moved is not None and node.moved.taxon is not None:
-      self._act('moved', 'moved', movedFrom=node.moved.taxon.key)
+    if (corrected := _related_key(node, 'corrected')) is not None:
+      self._act('corrected', 'corrected', correctedFrom=corrected)
+    if (substituted := _related_key(node, 'substituted')) is not None:
+      self._act('substituted', 'substituted', substitutedFor=substituted)
+    if (moved := _related_key(node, 'moved')) is not None:
+      self._act('moved', 'moved', movedFrom=moved)
     if node.axis == 'removed':
       self._act('removed', 'removed', removedFrom=self.owner_key)
 
