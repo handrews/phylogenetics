@@ -448,6 +448,14 @@ class ProxyTaxon(Taxon):
     return f'{self._proxy_type} ' + super().display_name
 
 
+# A subtree of a tree node other than `children`: the field holding it;
+# whether that holds a list of nodes rather than a single one; and whether
+# its nodes cite a use of the name in another work (a synonymy entry, or
+# the earlier state of a name the source changes), so that their pages and
+# illustrations locate that use rather than the citing source's own.
+RelatedAxis = collections.namedtuple('RelatedAxis', 'name many cited')
+
+
 class Tree:
   _NAMED_FIELDS = {'taxon'}
   _PROXY_FIELDS = {'cfTaxon', 'affTaxon'}
@@ -466,20 +474,20 @@ class Tree:
     TYPE_OTHER,
   }
 
-  # The subtrees other than `children`, in walk order: each field and
-  # whether it holds a list of nodes rather than a single one.
+  # The subtrees other than `children`, in walk order.
   RELATED_AXES = (
-    ('moved', False),
-    ('corrected', False),
-    ('substituted', False),
-    ('translated', False),
-    ('or', True),
-    ('synonyms', True),
-    ('non', True),
-    ('removed', True),
-    ('parents', True),
-    ('altPlacements', True),
+    RelatedAxis('moved', many=False, cited=True),
+    RelatedAxis('corrected', many=False, cited=True),
+    RelatedAxis('substituted', many=False, cited=True),
+    RelatedAxis('translated', many=False, cited=True),
+    RelatedAxis('or', many=True, cited=False),
+    RelatedAxis('synonyms', many=True, cited=True),
+    RelatedAxis('non', many=True, cited=True),
+    RelatedAxis('removed', many=True, cited=True),
+    RelatedAxis('parents', many=True, cited=False),
+    RelatedAxis('altPlacements', many=True, cited=False),
   )
+  CITED_AXES = frozenset(axis.name for axis in RELATED_AXES if axis.cited)
 
   _taxon_index = collections.defaultdict(set)
   _new_index = collections.defaultdict(set)
@@ -552,17 +560,18 @@ class Tree:
     self._check_primary_taxon()
 
     self._bracket = self._check_taxon('bracket')
-    for axis, many in self.RELATED_AXES:
-      value = self._data.get(axis)
-      if many:
-        self._related[axis] = [
-          Tree(item, parent=self, relpath=(axis, index)) for index, item in enumerate(value or ())
+    for axis in self.RELATED_AXES:
+      value = self._data.get(axis.name)
+      if axis.many:
+        self._related[axis.name] = [
+          Tree(item, parent=self, relpath=(axis.name, index))
+          for index, item in enumerate(value or ())
         ]
       # `translated: true` states the act without the earlier rank.
       elif isinstance(value, dict):
-        self._related[axis] = [Tree(value, parent=self, relpath=(axis,))]
+        self._related[axis.name] = [Tree(value, parent=self, relpath=(axis.name,))]
       else:
-        self._related[axis] = []
+        self._related[axis.name] = []
 
     for index, child in enumerate(self._data.get('children', ())):
       self._children.append(Tree(child, parent=self, relpath=('children', index)))
@@ -773,6 +782,12 @@ class Tree:
     return self._relpath[0] if self._relpath else 'root'
 
   @property
+  def is_cited(self):
+    # Whether the node cites a use of the name in another work, which its
+    # pages and illustrations locate (`RelatedAxis.cited`).
+    return self.axis in self.CITED_AXES
+
+  @property
   def position(self):
     return self._position
 
@@ -803,9 +818,9 @@ class Tree:
 
     The order is `RELATED_AXES`, so it is the order of every walk.
     """
-    for axis, _ in self.RELATED_AXES:
-      for node in self._related[axis]:
-        yield axis, node
+    for axis in self.RELATED_AXES:
+      for node in self._related[axis.name]:
+        yield axis.name, node
 
   def walk(self):
     """Yield this node and every descendant, related subtrees before

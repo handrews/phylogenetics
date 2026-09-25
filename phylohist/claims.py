@@ -85,9 +85,6 @@ _PLACEMENT_FLAGS = (
 # rejects (`non`) under the owner's name.
 _SYNONYMY_AXES = ('synonyms', 'non')
 _ACCEPTANCE_FLAGS = ('pars', 'tentative')
-# On these entries `pages` and `illustrations` locate the cited usage in
-# the cited work, never the citing source's own page or figure.
-_CITED_AXES = ('synonyms', 'non')
 # Role words as recorded today (the schema's enum and the plurals the
 # occurrence blocks use); D1 will fix the vocabulary.
 _SPECIMEN_ROLES = frozenset(
@@ -220,7 +217,9 @@ class _NodeClaims:
     root = node.root
     self.tree = 'taxonomy' if node.tree_type == 'taxonomy' else node.tree_type
     self.tree_notes = root.tree_notes
-    self.cited_entry = node.axis in _CITED_AXES
+    # A cited entry's `pages` and `illustrations` locate the cited usage in
+    # the cited work, never the citing source's own page or figure.
+    self.cited_entry = node.is_cited
     self.pages, self.pages_inherited = (None, False) if self.cited_entry else _effective_pages(node)
     self.subject = node.taxon.key if node.taxon is not None else None
     self.placeholder = placeholder_kind(node.taxon)

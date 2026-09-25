@@ -15,6 +15,7 @@ the tree is corrected (`scripts/claims.py --inconsistencies` explains
 each row).
 """
 
+import logging
 import os
 import pathlib
 
@@ -24,6 +25,7 @@ import yaml
 from phylohist import plan
 from phylohist.claims import corrected_node, extract, manifest, merge_patch
 from phylohist.evaluation import alternatives, normalise
+from phylohist.loader.taxa import Tree
 from phylohist.render import render_composition
 
 QUESTIONS_PATH = pathlib.Path(__file__).parent.parent / 'eval' / 'questions.yaml'
@@ -153,3 +155,24 @@ def test_change_node_acts(claims):
   # A nomen nudum is an act on the synonymy entry that cites the nude usage.
   nudum = [c for c in claims['2005_frest'] if c.get('actKind') == 'nomNudum']
   assert len(nudum) == 3 and all('/synonyms/' in c['path'] for c in nudum)
+
+
+@pytest.mark.parametrize('axis', ['translated', 'corrected', 'substituted', 'moved', 'removed'])
+def test_earlier_state_entries_are_cited(load_records, caplog, axis):
+  # The node under a change is the earlier state of the name as this
+  # source cites it: as on a synonymy entry, its pages and illustrations
+  # locate that earlier use, never this source's own page or figure.
+  illustrations = [{'page': 13, 'figures': ['1']}]
+  earlier = {'taxon': 'rhenopyrgidae', 'pages': 12, 'illustrations': illustrations}
+  child = {'taxon': 'rhenopyrgus', axis: [earlier] if axis == 'removed' else earlier}
+  root = Tree(
+    {'taxon': 'cyathocystidae', 'pages': 100, 'children': [child]},
+    {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 99},
+  )
+  claims = extract({'1961_dehm': [root]})['1961_dehm']
+  assert not [r for r in caplog.records if r.levelno >= logging.ERROR]
+  cited = [c for c in claims if f'/{axis}' in c['path']]
+  assert cited and not [c for c in cited if c['kind'] == 'material']
+  for claim in cited:
+    assert 'pages' not in claim
+    assert claim['citedPages'] == 12 and claim['citedIllustrations'] == illustrations
