@@ -377,8 +377,8 @@ class Words:
     kind = claim.get('actKind')
     origin = claim.get('translatedFrom')
     if kind in RELATED_ACTS:
-      field, joiner = RELATED_ACTS[kind]
-      words = f'{kind} {joiner} {self.store.name(claim.get(field, ""))}'
+      field, phrase = RELATED_ACTS[kind]
+      words = f'{phrase} {self.store.name(claim.get(field, ""))}'
     else:
       words = {
         'new': 'named as new',

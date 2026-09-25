@@ -479,6 +479,7 @@ class Tree:
     RelatedAxis('moved', many=False, cited=True),
     RelatedAxis('corrected', many=False, cited=True),
     RelatedAxis('substituted', many=False, cited=True),
+    RelatedAxis('lapsus', many=False, cited=False),
     RelatedAxis('translated', many=False, cited=True),
     RelatedAxis('or', many=True, cited=False),
     RelatedAxis('synonyms', many=True, cited=True),
@@ -580,7 +581,10 @@ class Tree:
       if self._taxon.name:
         Tree._taxon_index[self._taxon.name].add(self.root)
 
-      if self._data.get('new'):
+      # A slip of the pen is where the name it prints appears, so the node
+      # under `lapsus` is that name's protologue whether or not the slip
+      # also claimed it as new.
+      if self._data.get('new') or self.axis == 'lapsus':
         Tree._new_index[self._taxon.key].add(self._source.key)
 
       for author_string in self._data.get('auth') or ():

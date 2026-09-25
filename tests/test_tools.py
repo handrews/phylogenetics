@@ -629,6 +629,15 @@ def test_followed_acts_and_sensu_words(store):
     == 'substituted for Rhenopyrgidae'
   )
   assert words.act_words({'actKind': 'nomNudum'}) == 'nomen nudum'
+  lapsus = {'actKind': 'lapsus', 'lapsusAs': 'canadensis_billings_1866'}
+  assert words.act_words(lapsus) == 'printed by lapsus calami as canadensis'
+  # A listing shows the slip beside the intended name, as it shows a move.
+  node = {
+    'key': 'ottawaensis_whiteaves_1897',
+    'name': 'ottawaensis',
+    'acts': [{'act': 'lapsus', 'words': words.act_words(lapsus)}],
+  }
+  assert node_label(node) == 'ottawaensis (printed by lapsus calami as canadensis)'
   usage = {'kind': 'usage', 'sensu': 'stricto', 'subject': 'crinoidea'}
   assert words.claim_words(usage) == 'cites the name sensu stricto'
   node = {'key': 'crinoidea', 'name': 'Crinoidea', 'rank': 'Class', 'sensu': 'stricto'}

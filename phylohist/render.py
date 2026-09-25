@@ -80,7 +80,7 @@ def node_label(node):
   for act in node.get('acts') or ():
     kind = act.get('act')
     mark = blocks.ACT_MARKS.get(kind)
-    if kind in ('moved', 'removed'):
+    if kind in ('moved', 'removed', 'lapsus'):
       mark = f'({act.get("words")})'
     if mark:
       name += ' ' + mark + (' (inferred)' if act.get('inferred') else '')

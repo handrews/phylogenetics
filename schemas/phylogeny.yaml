@@ -583,6 +583,12 @@ $defs:
       # is the preoccupied or otherwise unavailable name this source replaces.
       substituted:
         $ref: taxonomyTree
+      # A slip of the pen ("lapsus calami"): the node under it is the name
+      # this source printed in error for the node's own, which is the name
+      # intended. Not an earlier state, not a synonym, and not an available
+      # name, so it occupies nothing; its place here is its protologue.
+      lapsus:
+        $ref: taxonomyTree
 
   materialsFields:
     properties:

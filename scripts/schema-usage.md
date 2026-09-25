@@ -26,7 +26,7 @@ even when its parent is also unreached, so read parents first.
 | `occurrence` | `phylogeny#/$defs/occurrence/properties/localSeriesBoundary`<br>`phylogeny#/$defs/occurrence/properties/localSeriesRange`<br>`phylogeny#/$defs/occurrence/properties/localStageBoundary`<br>`phylogeny#/$defs/occurrence/properties/localStageRange`<br>`phylogeny#/$defs/occurrence/properties/tentative` |
 | `person` | `phylogeny#/$defs/person/properties/suffix` |
 | `publication` | `phylogeny#/$defs/publication/properties/type` |
-| `relationalFields` | `phylogeny#/$defs/relationalFields/properties/substituted` |
+| `relationalFields` | `phylogeny#/$defs/relationalFields/properties/lapsus`<br>`phylogeny#/$defs/relationalFields/properties/substituted` |
 | `seriesRange` | `phylogeny#/$defs/seriesRange`<br>`phylogeny#/$defs/seriesRange/items` |
 | `specimen` | `phylogeny#/$defs/specimen/oneOf/1`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/id`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/illustrations`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/illustrations/items`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/repository` |
 | `specimens` | `phylogeny#/$defs/specimens/properties/allotype`<br>`phylogeny#/$defs/specimens/properties/neotype`<br>`phylogeny#/$defs/specimens/properties/repository` |
@@ -293,6 +293,7 @@ property.
 | `non` | 4 | 0.1% |
 | `or` | 3 | 0.1% |
 | `removed` | 1 | 0.0% |
+| `lapsus` | 0 | 0.0% |
 | `substituted` | 0 | 0.0% |
 
 ### `specimens` -- 89 instances in `data/`

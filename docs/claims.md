@@ -20,7 +20,7 @@ Every claim carries:
 
 | field | value |
 |---|---|
-| `id` | `<source>:<path>:<kind>[:<n>]`. `<path>` is the node's position in its tree file as the loader computes it: the taxonomy or phylogeny index, then each step down (`children/2`, `synonyms/0`, `non/1`, `removed/0`, `parents/0`, `moved`, `corrected`, `substituted`, `or/0`). `<n>` disambiguates several claims of one kind from one node (a node with three `specimens` roles yields three `material` claims). Ids are stable as long as the file is not reordered; the tree keeps printed order, so reordering is a data change. |
+| `id` | `<source>:<path>:<kind>[:<n>]`. `<path>` is the node's position in its tree file as the loader computes it: the taxonomy or phylogeny index, then each step down (`children/2`, `synonyms/0`, `non/1`, `removed/0`, `parents/0`, `moved`, `corrected`, `substituted`, `lapsus`, `or/0`). `<n>` disambiguates several claims of one kind from one node (a node with three `specimens` roles yields three `material` claims). Ids are stable as long as the file is not reordered; the tree keeps printed order, so reordering is a data change. |
 | `kind` | one of `usage`, `placement`, `acceptance`, `act`, `rejection`, `material`, `diagnosis`, `secondhand`, `editorial` |
 | `source` | the tree file's source key |
 | `path` | the node's position and pointer, `0/children/0/children/0`, the same string the id carries |
@@ -140,6 +140,7 @@ Something this source does to a name. One claim per flag, `actKind` being:
 | `nudum: true` | `nomNudum` |
 | `corrected: {taxon: y}` | `corrected`, `correctedFrom: y`; the node's own name is the corrected form |
 | `substituted: {taxon: y}` | `substituted`, `substitutedFor: y`; the node's own name is the replacement name (nom. subst.), `y` the preoccupied or otherwise unavailable name it replaces |
+| `lapsus: {taxon: y}` | `lapsus`, `lapsusAs: y`; the node's own name is the one intended, `y` the name printed in its place by a slip of the pen (lapsus calami) |
 | `moved: {taxon: y}` | `moved`, `movedFrom: y` |
 | `removed` entry | `removed`, `removedFrom` the group (the source takes the name out of it; B5), beside the `rejection` |
 | `homonym: true` on the record | not a claim: key housekeeping |
@@ -151,6 +152,15 @@ it emits a `usage` claim on its axis like any cited entry. The change is
 this source's act. `emended` and `translated` are the two acts a source
 may follow rather than perform, and `by` (an `authority`) names the work
 that performed it.
+
+A node under `lapsus` is not an earlier state: it is the name this
+source printed by a slip of the pen for the node's own. Its citation
+fields are this source's (they do not inherit), and it emits its `usage`
+on its axis. A lapsus is not a nomenclatural act and makes no name: `y`
+is not a synonym, emits no `acceptance`, and does not occupy the name,
+which a later taxon may take without being a homonym. Its place under `lapsus` is its
+protologue, so the record needs no `new: true`; it carries one only when
+the slip also claimed the name as new, and then emits a `new` act.
 
 `corrected` and `substituted` imply the synonymy: the incorrect form and
 the replaced name are synonyms of the node's name, and the closure follows
