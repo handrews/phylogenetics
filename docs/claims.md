@@ -152,6 +152,13 @@ this source's act. `emended` and `translated` are the two acts a source
 may follow rather than perform, and `by` (an `authority`) names the work
 that performed it.
 
+`corrected` and `substituted` imply the synonymy: the incorrect form and
+the replaced name are synonyms of the node's name, and the closure follows
+them as it follows `synonyms` entries. A `synonyms` entry repeats the name
+only when the source prints a synonymy that lists it, as a revision may;
+the synonymy a source prints is still only its `synonyms` and `non`
+entries.
+
 ### `certainty`
 
 Not a kind of its own. The C-axis markers (`provisional`, `questionable`,

@@ -376,6 +376,17 @@ def test_senior_synonym_and_designation_shown_as_combinations(store):
   assert '    Rhenopyrgus sp. indet. 1\n' in listing['rendered'] + '\n'
 
 
+def test_corrected_form_is_a_synonym_without_a_synonymy(store):
+  # Gill & Caster 1960 correct Placocystidae to Placocystitidae and print
+  # no synonymy: the correction alone makes the one a synonym of the other.
+  under = store.descendants(['placocystitidae'], style='json')
+  row = next(r for r in under['rows'] if r['record'] == 'placocystidae')
+  assert [v['value'] for v in row['cells'][2]] == ['Gill & Caster 1960: synonym of Placocystitidae']
+  assert row['cells'][2][0]['claim'].endswith('/corrected:usage')
+  without = store.descendants(['placocystitidae'], include_synonyms=False, style='json')
+  assert 'placocystidae' not in {r['record'] for r in without['rows']}
+
+
 def test_ancestors_are_chains_per_source(store):
   block = store.ancestors(['rhenopyrgus'], style='json')
   assert block['type'] == 'chains' and block['title'] == 'Above Rhenopyrgus Dehm 1961'

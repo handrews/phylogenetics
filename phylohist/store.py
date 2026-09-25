@@ -70,6 +70,13 @@ def _with_style(block, style):
   return block
 
 
+def _owner_path(path):
+  """The node an entry on a related axis hangs off: `…/synonyms/2` and
+  `…/corrected` both hang off `…`."""
+  head, _, last = path.rpartition('/')
+  return head.rpartition('/')[0] if last.isdigit() else head
+
+
 class ClaimStore:
   def __init__(self, directory=CLAIMS_DIR):
     directory = pathlib.Path(directory)
@@ -454,9 +461,7 @@ class ClaimStore:
           elif 'synonymOf' in via:
             # The senior name as that source combines it.
             claim = self.by_id[via['claim']]
-            senior = self.words.display(
-              via['synonymOf'], via['source'], claim['path'].rsplit('/', 2)[0]
-            )
+            senior = self.words.display(via['synonymOf'], via['source'], _owner_path(claim['path']))
             how.append(
               {
                 'value': f'{self.cite(via["source"])}: synonym of {senior}',

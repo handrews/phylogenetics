@@ -24,3 +24,8 @@ ACT_KINDS = (
   *RELATED_ACTS,
   'removed',
 )
+
+# The acts that make the record they name a synonym of the node's name
+# without the source printing a synonymy: an incorrect form and a replaced
+# name. A `synonyms` entry repeats it only when a synonymy is printed.
+SYNONYMY_ACTS = ('corrected', 'substituted')
