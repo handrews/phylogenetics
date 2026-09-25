@@ -579,6 +579,10 @@ $defs:
         $ref: taxonomyTree
       corrected:
         $ref: taxonomyTree
+      # A replacement name ("nom. subst.", "nom. nov."): the node under it
+      # is the preoccupied or otherwise unavailable name this source replaces.
+      substituted:
+        $ref: taxonomyTree
 
   materialsFields:
     properties:

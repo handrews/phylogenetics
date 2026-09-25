@@ -487,6 +487,12 @@ class _NodeClaims:
         'corrected',
         correctedFrom=node.corrected.taxon.key,
       )
+    if node.substituted is not None and node.substituted.taxon is not None:
+      self._act(
+        'substituted',
+        'substituted',
+        substitutedFor=node.substituted.taxon.key,
+      )
     if node.moved is not None and node.moved.taxon is not None:
       self._act('moved', 'moved', movedFrom=node.moved.taxon.key)
     if node.axis == 'removed':
