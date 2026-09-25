@@ -6120,6 +6120,22 @@
   "name": "canadensis",
   "rank": "species"
  },
+ "canadensis_whiteaves_1898": {
+  "authority": {
+   "authors": [
+    "Whiteaves"
+   ],
+   "display": "Whiteaves 1898",
+   "source": "1898_whiteaves",
+   "year": 1898
+  },
+  "folded": [
+   "canadensis"
+  ],
+  "kind": "primary",
+  "name": "canadensis",
+  "rank": "species"
+ },
  "canaliculatus_hall_1852": {
   "authority": {
    "authors": [
