@@ -81,6 +81,9 @@ _PLACEMENT_FLAGS = (
   'outgroup',
   'stem',
 )
+# The synonymy entries: each is a name the source accepts (`synonyms`) or
+# rejects (`non`) under the owner's name.
+_SYNONYMY_AXES = ('synonyms', 'non')
 _ACCEPTANCE_FLAGS = ('pars', 'tentative')
 # On these entries `pages` and `illustrations` locate the cited usage in
 # the cited work, never the citing source's own page or figure.
@@ -325,7 +328,7 @@ class _NodeClaims:
 
     if named:
       self._usage()
-    elif node.axis in ('synonyms', 'non') and self.owner_key is not None:
+    elif node.axis in _SYNONYMY_AXES and self.owner_key is not None:
       # An entry with no name of its own cites the owner's name.
       claim = self._base('usage')
       claim['subject'] = self.owner_key
@@ -364,7 +367,7 @@ class _NodeClaims:
       claim['position'] = node.relpath[1]
       self._emit(claim, 'children')
 
-    if node.axis in ('synonyms', 'non'):
+    if node.axis in _SYNONYMY_AXES:
       claim = self._base('acceptance')
       if not named:
         claim['subject'] = self.owner_key
