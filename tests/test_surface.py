@@ -16,7 +16,8 @@ import pathlib
 
 import pytest
 
-from phylohist import cli, tools
+from phylohist import blocks, cli, tools
+from phylohist.acts import ACT_KINDS
 
 pytestmark = pytest.mark.skipif(
   bool(os.getenv('PHYLOHIST_DRAFTS')),
@@ -24,6 +25,7 @@ pytestmark = pytest.mark.skipif(
 )
 
 SERVER = pathlib.Path(__file__).parent.parent / 'scripts' / 'mcp_server.py'
+PLANNER_PROMPT = pathlib.Path(__file__).parent.parent / 'eval' / 'planner-prompt.md'
 SPECS = {spec['name']: spec for spec in tools.TOOL_SPECS}
 
 
@@ -58,6 +60,14 @@ def test_every_surface_takes_the_specified_parameters(name, mcp):
   assert _parameters(tools.TOOLS[name]) == expected, 'module function'
   assert _parameters(getattr(mcp, name)) == expected, 'MCP wrapper'
   assert 'style' not in expected
+
+
+def test_every_act_kind_is_offered(store):
+  # The acts the claim table carries and the acts a listing marks are
+  # all `ACT_KINDS`, and the planner is offered every one as the tool is.
+  assert {c['actKind'] for c in store.by_id.values() if c['kind'] == 'act'} <= set(ACT_KINDS)
+  assert set(blocks.ACT_MARKS) <= set(ACT_KINDS)
+  assert f'act_kind ({", ".join(ACT_KINDS)})' in PLANNER_PROMPT.read_text()
 
 
 def test_style_is_the_callers_not_a_parameter():

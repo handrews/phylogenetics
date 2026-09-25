@@ -1,6 +1,7 @@
 """The acts a claim records, shared by the extractor that emits them
-(`claims.py`) and the tools that word them (`words.py`), which read only
-the claim table. `docs/claims.md` is the specification.
+(`claims.py`) and the tools that word and offer them (`words.py`,
+`tools.py`), which read only the claim table. `docs/claims.md` is the
+specification.
 """
 
 # The acts a node states by naming, under the axis of the same name, the
@@ -11,3 +12,15 @@ RELATED_ACTS = {
   'substituted': ('substitutedFor', 'for'),
   'moved': ('movedFrom', 'from'),
 }
+
+# Every `actKind`, in the order a node emits its acts.
+ACT_KINDS = (
+  'new',
+  'placeholder',
+  'type',
+  'emended',
+  'nomTransl',
+  'nomNudum',
+  *RELATED_ACTS,
+  'removed',
+)
