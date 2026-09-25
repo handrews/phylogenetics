@@ -11,6 +11,7 @@ import collections
 import re
 
 from . import blocks
+from .acts import RELATED_ACTS
 from .names import fold, fold_forms, key_stem
 
 # The community's words for what the table records.
@@ -375,18 +376,19 @@ class Words:
   def act_words(self, claim):
     kind = claim.get('actKind')
     origin = claim.get('translatedFrom')
-    words = {
-      'new': 'named as new',
-      'placeholder': 'placeholder introduced',
-      'type': 'type species',
-      'emended': 'emended',
-      'nomTransl': 'nomen translatum' + (f' from {self.store.name(origin)}' if origin else ''),
-      'nomNudum': 'nomen nudum',
-      'corrected': f'corrected from {self.store.name(claim.get("correctedFrom", ""))}',
-      'substituted': f'substituted for {self.store.name(claim.get("substitutedFor", ""))}',
-      'moved': f'moved from {self.store.name(claim.get("movedFrom", ""))}',
-      'removed': f'removed from {self.store.name(claim.get("removedFrom", ""))}',
-    }.get(kind, kind or '')
+    if kind in RELATED_ACTS:
+      field, joiner = RELATED_ACTS[kind]
+      words = f'{kind} {joiner} {self.store.name(claim.get(field, ""))}'
+    else:
+      words = {
+        'new': 'named as new',
+        'placeholder': 'placeholder introduced',
+        'type': 'type species',
+        'emended': 'emended',
+        'nomTransl': 'nomen translatum' + (f' from {self.store.name(origin)}' if origin else ''),
+        'nomNudum': 'nomen nudum',
+        'removed': f'removed from {self.store.name(claim.get("removedFrom", ""))}',
+      }.get(kind, kind or '')
     # An act the source follows rather than performs names the work.
     if claim.get('by'):
       words += f' by {self.store.cite(claim["by"])}'

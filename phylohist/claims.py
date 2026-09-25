@@ -10,6 +10,7 @@ per-source coverage counts and cross-checks them against the declared
 
 import collections
 
+from .acts import RELATED_ACTS
 from .loader.research import Author, Publication, Source
 from .loader.taxa import Taxon
 from .names import fold_forms, key_stem
@@ -487,12 +488,9 @@ class _NodeClaims:
       self._act('nomTransl', 'translated', **fields)
     if data.get('nudum'):
       self._act('nomNudum', 'nudum')
-    if (corrected := _related_key(node, 'corrected')) is not None:
-      self._act('corrected', 'corrected', correctedFrom=corrected)
-    if (substituted := _related_key(node, 'substituted')) is not None:
-      self._act('substituted', 'substituted', substitutedFor=substituted)
-    if (moved := _related_key(node, 'moved')) is not None:
-      self._act('moved', 'moved', movedFrom=moved)
+    for kind, (field, _) in RELATED_ACTS.items():
+      if (related := _related_key(node, kind)) is not None:
+        self._act(kind, kind, **{field: related})
     if node.axis == 'removed':
       self._act('removed', 'removed', removedFrom=self.owner_key)
 
