@@ -613,6 +613,10 @@ def test_followed_acts_and_sensu_words(store):
     words.act_words({'actKind': 'emended', 'by': '1968b_paul.c.r.c', 'byPages': [[697, 730]]})
     == 'emended by Paul 1968, p. 697–730'
   )
+  assert (
+    words.act_words({'actKind': 'substituted', 'substitutedFor': 'rhenopyrgidae'})
+    == 'substituted for Rhenopyrgidae'
+  )
   assert words.act_words({'actKind': 'nomNudum'}) == 'nomen nudum'
   usage = {'kind': 'usage', 'sensu': 'stricto', 'subject': 'crinoidea'}
   assert words.claim_words(usage) == 'cites the name sensu stricto'

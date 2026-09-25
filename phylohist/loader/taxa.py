@@ -469,6 +469,7 @@ class Tree:
   RELATED_SINGULAR = (
     'moved',
     'corrected',
+    'substituted',
     'translated',
   )
   RELATED_LIST = (
@@ -562,6 +563,11 @@ class Tree:
     self._corrected = (
       Tree(self._data['corrected'], parent=self, relpath=('corrected',))
       if 'corrected' in self._data
+      else None
+    )
+    self._substituted = (
+      Tree(self._data['substituted'], parent=self, relpath=('substituted',))
+      if 'substituted' in self._data
       else None
     )
     # `translated: true` states the act without the earlier rank.
@@ -816,6 +822,10 @@ class Tree:
     return self._corrected
 
   @property
+  def substituted(self):
+    return self._substituted
+
+  @property
   def translated(self):
     return self._translated
 
@@ -848,6 +858,8 @@ class Tree:
       yield 'moved', self._moved
     if self._corrected is not None:
       yield 'corrected', self._corrected
+    if self._substituted is not None:
+      yield 'substituted', self._substituted
     if self._translated is not None:
       yield 'translated', self._translated
     for axis, nodes in (

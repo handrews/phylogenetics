@@ -13,21 +13,17 @@ notes: |
 
   The replacement act itself: no word for the act ("nom. subst.",
   "nom. nov.") is printed; it is stated as a request/desire to substitute a
-  preoccupied name (see the quoted passage below). There is no format in
-  this dataset yet for a replacement name specifically (B6 on
-  docs/semantics-roadmap.md); this draft copies the shape used for
-  Bassler's 1935 Astrocystitidae-for-Steganoblastidae case in
-  data/trees/1935_bassler.yaml (`corrected` on the replacing name, paired
-  with a `synonyms` entry for the replaced one), which is the nearest
-  precedent for a preoccupied-name substitution and runs in the same
-  direction as this act.
+  preoccupied name (see the quoted passage below). The act is recorded
+  as `substituted` on the replacing name (the node under it is the name
+  replaced), paired with a `synonyms` entry for the replaced one, on the
+  pattern of `corrected` for "nom. correct.".
 
 taxonomies:
 - taxon: steganoblastus
   new: true
   citedAs: Steganoblastus
   pages: [[395, 396]]
-  corrected:
+  substituted:
     taxon: astrocystites
   synonyms:
   - taxon: astrocystites

@@ -20,12 +20,12 @@ Every claim carries:
 
 | field | value |
 |---|---|
-| `id` | `<source>:<path>:<kind>[:<n>]`. `<path>` is the node's position in its tree file as the loader computes it: the taxonomy or phylogeny index, then each step down (`children/2`, `synonyms/0`, `non/1`, `removed/0`, `parents/0`, `moved`, `corrected`, `or/0`). `<n>` disambiguates several claims of one kind from one node (a node with three `specimens` roles yields three `material` claims). Ids are stable as long as the file is not reordered; the tree keeps printed order, so reordering is a data change. |
+| `id` | `<source>:<path>:<kind>[:<n>]`. `<path>` is the node's position in its tree file as the loader computes it: the taxonomy or phylogeny index, then each step down (`children/2`, `synonyms/0`, `non/1`, `removed/0`, `parents/0`, `moved`, `corrected`, `substituted`, `or/0`). `<n>` disambiguates several claims of one kind from one node (a node with three `specimens` roles yields three `material` claims). Ids are stable as long as the file is not reordered; the tree keeps printed order, so reordering is a data change. |
 | `kind` | one of `usage`, `placement`, `acceptance`, `act`, `rejection`, `material`, `diagnosis`, `secondhand`, `editorial` |
 | `source` | the tree file's source key |
 | `path` | the node's position and pointer, `0/children/0/children/0`, the same string the id carries |
 | `tree` | `taxonomy`, or a phylogeny's `treeType`; a phylogeny's `notes` ride along as `treeNotes` |
-| `pages` | the node's `pages` as written. A node without `pages` takes the nearest ancestor's along the `children` axis only, and the claim then carries `pagesInherited: true`. Entries under `synonyms`, `non`, `removed`, `parents`, `altPlacements`, `moved` and `corrected` never inherit. On a `synonyms` or `non` entry `pages` and `illustrations` locate the cited usage in the cited work, whether written flat or inside an `authority` block, so they appear as `citedPages` and `citedIllustrations` and the claim has no `pages` of its own. |
+| `pages` | the node's `pages` as written. A node without `pages` takes the nearest ancestor's along the `children` axis only, and the claim then carries `pagesInherited: true`. Entries under `synonyms`, `non`, `removed`, `parents`, `altPlacements`, `moved`, `corrected` and `substituted` never inherit. On a `synonyms` or `non` entry `pages` and `illustrations` locate the cited usage in the cited work, whether written flat or inside an `authority` block, so they appear as `citedPages` and `citedIllustrations` and the claim has no `pages` of its own. |
 | `subject` | the resolved taxon key the claim is about |
 | `printed` | the printed form on that line: `citedAs` verbatim, and `auth`, `year`, `in` as written (A1, A12). Absent `auth` means "as the record"; the claim says so with `printedAttribution: as-record`. |
 | `audit` | the source's `audit.state`; `coverageKind`, the coverage kind the claim counts under (`skeleton` for usage, rejection and a taxonomy placement, `phylogeny` for a placement in a phylogeny, `synonymy` for acceptance, `newTaxa`/`types` for the matching acts, `material`/`occurrences`/`illustrations` by material kind, `diagnoses`); and `coverage`, the declared value for that kind when the source declares one |
@@ -139,11 +139,12 @@ Something this source does to a name. One claim per flag, `actKind` being:
 | `translated: true` or `translated: {taxon: y, by?}` | `nomTransl`; `translatedFrom: y` when the earlier rank is named, `by`/`byPages` when another work made the act, `rankVariants` from the records' `altRankOf` links |
 | `nudum: true` | `nomNudum` |
 | `corrected: {taxon: y}` | `corrected`, `correctedFrom: y`; the node's own name is the corrected form |
+| `substituted: {taxon: y}` | `substituted`, `substitutedFor: y`; the node's own name is the replacement name (nom. subst.), `y` the preoccupied or otherwise unavailable name it replaces |
 | `moved: {taxon: y}` | `moved`, `movedFrom: y` |
 | `removed` entry | `removed`, `removedFrom` the group (the source takes the name out of it; B5), beside the `rejection` |
 | `homonym: true` on the record | not a claim: key housekeeping |
 
-A node under `translated`, `corrected`, `moved` or `removed` is the
+A node under `translated`, `corrected`, `substituted`, `moved` or `removed` is the
 earlier state of the name as this source cites it: its own `authority`,
 `auth`, `year`, `pages` and `illustrations` locate that earlier use, and
 it emits a `usage` claim on its axis like any cited entry. The change is
@@ -264,8 +265,8 @@ Systematic Paleontology section: rank words on the headings above the
 species level (the paper's rank where it writes one, else the
 record's), the type species as its own line under the genus, a new
 taxon marked by the rank's abbreviation (`fam. nov.`, `gen. nov.`,
-`sp. nov.`), `emend.`, `nom. transl.` and
-`nom. correct.` after the name, `?` for a provisional or questionable
+`sp. nov.`), `emend.`, `nom. transl.`, `nom. correct.` and
+`nom. subst.` after the name, `?` for a provisional or questionable
 name, `=` lines for the synonymy:
 
     Family Rhenopyrgidae fam. nov.

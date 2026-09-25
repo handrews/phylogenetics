@@ -31,6 +31,7 @@ ACT_MARKS = {
   'nomTransl': 'nom. transl.',
   'nomNudum': 'nom. nud.',
   'corrected': 'nom. correct.',
+  'substituted': 'nom. subst.',
 }
 SENSU_MARKS = {'stricto': '(s. s.)', 'lato': '(s. l.)', 'emendato': '(s. em.)'}
 _NEW_MARKS = {

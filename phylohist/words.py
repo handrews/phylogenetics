@@ -383,6 +383,7 @@ class Words:
       'nomTransl': 'nomen translatum' + (f' from {self.store.name(origin)}' if origin else ''),
       'nomNudum': 'nomen nudum',
       'corrected': f'corrected from {self.store.name(claim.get("correctedFrom", ""))}',
+      'substituted': f'substituted for {self.store.name(claim.get("substitutedFor", ""))}',
       'moved': f'moved from {self.store.name(claim.get("movedFrom", ""))}',
       'removed': f'removed from {self.store.name(claim.get("removedFrom", ""))}',
     }.get(kind, kind or '')
