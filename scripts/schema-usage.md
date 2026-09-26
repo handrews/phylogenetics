@@ -32,7 +32,6 @@ even when its parent is also unreached, so read parents first.
 | `specimens` | `phylogeny#/$defs/specimens/properties/allotype`<br>`phylogeny#/$defs/specimens/properties/neotype`<br>`phylogeny#/$defs/specimens/properties/repository` |
 | `stageRange` | `phylogeny#/$defs/stageRange`<br>`phylogeny#/$defs/stageRange/items` |
 | `taxonRecord` | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items/items` |
-| `trees` | `phylogeny#/$defs/trees/additionalProperties/properties/source` |
 | `uncertaintyFields` | `phylogeny#/$defs/uncertaintyFields/properties/sensu` |
 
 ## 2. Property frequency by `$defs`
@@ -339,15 +338,14 @@ property.
 | `altPlacements` | 7 | 0.1% |
 | `mergeInto` | 5 | 0.1% |
 
-### `trees` -- 218 instances in `data/`
+### `treeDocument` -- 218 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `/additionalProperties.taxonomies` | 214 | 98.2% |
-| `/additionalProperties.phylogenies` | 25 | 11.5% |
-| `/additionalProperties.notes` | 20 | 9.2% |
-| `/additionalProperties.assumptions` | 1 | 0.5% |
-| `/additionalProperties.source` | 0 | 0.0% |
+| `taxonomies` | 214 | 98.2% |
+| `phylogenies` | 25 | 11.5% |
+| `notes` | 20 | 9.2% |
+| `assumptions` | 1 | 0.5% |
 
 ### `uncertaintyFields` -- 6363 instances in `data/`
 

@@ -14,6 +14,7 @@ import sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 from phylohist.loader.io import (  # noqa: E402
   DATA_DIR,
+  TREE_DEF,
   build_schema,
   load_yaml,
 )
@@ -55,14 +56,16 @@ def main(argv):
   schema = build_schema()
   draft = load_yaml(path)
   # `check` logs the reasons for whatever it rejects.
-  if schema['trees'].check({path.stem: draft}):
+  if schema[TREE_DEF].check(draft):
     print(f'{path}: valid against the tree schema')
     status = 0
   else:
     print(f'{path}: not valid against the tree schema')
     status = 1
 
-  taxa, authors, sources = set(), set(), set()
+  # The draft's own source is named by its file, and the loader skips a
+  # tree whose source has no record.
+  taxa, authors, sources = set(), set(), {path.stem}
   walk(draft, taxa, authors, sources)
   known = {
     'taxa': set(load_yaml(DATA_DIR / 'taxa.yaml')),

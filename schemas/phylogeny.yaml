@@ -37,8 +37,6 @@ $defs:
     type: object
     additionalProperties: false
     properties:
-      source:
-        $ref: "#/$defs/sourceId"
       taxonomies:
         type: array
         items:

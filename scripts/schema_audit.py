@@ -34,16 +34,14 @@ import sys
 sys.path.insert(0, str(pathlib.Path(__file__).parent.parent))
 
 from phylohist.loader.io import (  # noqa: E402
-  COMMON_FILES,
+  DATA_DIR,
+  SCHEMA_PATH,
   SCHEMA_URI,
-  TREE_DIR,
   LoadError,
   build_schema,
+  data_files,
   load_yaml,
 )
-
-ROOT = pathlib.Path(__file__).parent.parent
-SCHEMA_PATH = ROOT / 'schemas' / 'phylogeny.yaml'
 
 # The engine reports absolute locations under the URI the schema is registered
 # at; keep only the `phylogeny#/...` part so locations read as the schema file
@@ -199,33 +197,16 @@ def load_schema():
     sys.exit('Schema is not valid against the metaschema.')
 
 
-def corpus_files():
-  """(corpus label, def name, path) for everything we can census."""
-  items = []
-  for path in COMMON_FILES:
-    if path.exists():
-      items.append(('data', path.stem, path))
-  # Since trees.yaml was split, every tree lives in its own file under
-  # data/trees/, keyed by the source id its filename stems from.
-  for path in sorted(TREE_DIR.iterdir()):
-    if path.suffix == '.yaml':
-      items.append(('data', 'trees', path))
-  return items
-
-
 def run_census():
   schema = load_schema()
   census = Census()
 
-  for corpus, def_name, path in corpus_files():
-    # Must use the debug path: it installs the loader that keeps dates as
-    # strings, which is what the schema expects.
+  # Every file the loader checks, against the same `$defs` entry.
+  corpus = 'data'
+  for def_name, path in data_files():
     data = load_yaml(path)
     if data is None:
       continue
-    # Files under data/trees/ hold a single opinion keyed by the file stem.
-    if path.parent == TREE_DIR:
-      data = {path.stem: data}
     result = schema.engine.evaluate(schema.uri(def_name), data, output='verbose', annotations=True)
     if not result.valid:
       census.invalid.append(path.name)
@@ -395,7 +376,7 @@ def dangling_sources(census):
   The `sourceId` pattern cannot catch this: a typo like `1854c_billigns` or a
   stale id matches it perfectly.  Only a lookup against the real keys does.
   """
-  known = set(load_yaml(ROOT / 'data' / 'sources.yaml'))
+  known = set(load_yaml(DATA_DIR / 'sources.yaml'))
   out = {}
   for corpus, counter in census.source_refs.items():
     missing = {sid: n for sid, n in counter.items() if sid not in known}
