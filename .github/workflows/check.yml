@@ -28,8 +28,6 @@ jobs:
     - run: poetry run ruff check .
     - run: poetry run ruff format --check .
     - run: poetry run pytest --cov=phylohist --cov-report=term-missing:skip-covered --cov-fail-under=90
-    - run: poetry run python scripts/schema_audit.py --markdown scripts/schema-usage.md
-    - run: git diff --exit-code scripts/schema-usage.md
-    - run: poetry run python scripts/claims.py
-    - run: git diff --exit-code claims/
+    - run: poetry run regenerate
+    - run: git diff --exit-code scripts/schema-usage.md claims/
     - run: for f in drafts/*.yaml; do poetry run python scripts/check_draft.py "$f" || exit 1; done

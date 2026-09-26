@@ -172,13 +172,13 @@ git-ignored `.env` at the repository root. Nothing else needs a key.
 ## Checks
 
 CI runs these on Python 3.12 and 3.14 and fails if the generated
-schema census or claim table is stale:
+schema census or claim table is stale; after editing `data/` or the
+schema, `poetry run regenerate` rewrites both:
 
     poetry run ruff check .
     poetry run ruff format --check .
     poetry run pytest --cov=phylohist --cov-fail-under=90
-    poetry run python scripts/schema_audit.py --markdown scripts/schema-usage.md
-    poetry run python scripts/claims.py
+    poetry run regenerate
     git diff --exit-code scripts/schema-usage.md claims/
     poetry run python scripts/check_draft.py drafts/<file>.yaml
 

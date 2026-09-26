@@ -90,7 +90,25 @@ def test_invalid_tree_raises(tmp_path):
   schema = io.build_schema()
   (tmp_path / 'broken.yaml').write_text('tree:\n  rnak: genus\n')
   with pytest.raises(io.LoadError, match='broken.yaml'):
-    io._load_tree_dir(tmp_path, schema['trees'], {})
+    io.load_checked(tmp_path / 'broken.yaml', schema[io.TREE_DEF])
+  # A definition the schema lacks is an error the loader names, too.
+  with pytest.raises(io.LoadError, match='no schema definition for "trees"'):
+    schema['trees']
+
+
+def test_data_files_in_load_order():
+  # The record files, then the audited trees, then the drafts: a draft
+  # loads last so that it replaces the audited tree of its source.
+  from phylohist.loader import io
+
+  files = io.data_files(drafts=True)
+  names = [name for name, _ in files]
+  assert names[: len(io.RECORD_FILES)] == ['authors', 'publications', 'sources', 'taxa']
+  trees = [path for name, path in files if name == io.TREE_DEF]
+  assert trees == io.tree_files(drafts=True)
+  dirs = [path.parent for path in trees]
+  assert dirs == sorted(dirs, key=lambda d: d != io.TREE_DIR) and io.DRAFT_DIR in dirs
+  assert [path for _, path in io.data_files()] == [*io.RECORD_FILES, *io.tree_files()]
 
 
 def test_load_fails_on_logged_errors(monkeypatch):
@@ -104,7 +122,7 @@ def test_load_fails_on_logged_errors(monkeypatch):
 
   def broken(drafts=False):
     logging.getLogger('phylohist.loader.taxa').error('a check fired')
-    return {k: {} for k in ('authors', 'publications', 'sources', 'taxa', 'trees', 'time')}
+    return {k: {} for k in ('authors', 'publications', 'sources', 'taxa', 'trees')}
 
   monkeypatch.setattr(loading, 'load_files', broken)
   with pytest.raises(LoadError, match='1 integrity error while loading'):
@@ -133,7 +151,7 @@ def test_tree_without_a_source_record_is_skipped(monkeypatch):
   loading = importlib.import_module('phylohist.loader.load')
 
   def orphan(drafts=False):
-    data = {k: {} for k in ('authors', 'publications', 'sources', 'taxa', 'time')}
+    data = {k: {} for k in ('authors', 'publications', 'sources', 'taxa')}
     data['trees'] = {'9999_nobody': {'taxonomies': [{'taxon': 'cyathocystis'}]}}
     return data
 
