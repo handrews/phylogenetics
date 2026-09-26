@@ -17,6 +17,7 @@ dependencies = [
 
 [project.scripts]
 phylohist = "phylohist.cli:main"
+regenerate = "phylohist.regenerate:main"
 
 [tool.poetry]
 packages = [{include = "phylohist"}]
