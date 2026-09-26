@@ -33,30 +33,26 @@ $defs:
     type: object
     additionalProperties:
       $ref: "#/$defs/taxonRecord"
-  trees:
+  treeDocument:
     type: object
-    propertyNames:
-      $ref: "#/$defs/sourceId"
-    additionalProperties:
-      type: object
-      additionalProperties: false
-      properties:
-        source:
-          $ref: "#/$defs/sourceId"
-        taxonomies:
-          type: array
-          items:
-            $ref: taxonomyTree
-        phylogenies:
-          type: array
-          items:
-            $ref: "#/$defs/phylogeny"
-        assumptions:
-          type: array
-          items:
-            $ref: taxonomyTree
-        notes:
-          type: string
+    additionalProperties: false
+    properties:
+      source:
+        $ref: "#/$defs/sourceId"
+      taxonomies:
+        type: array
+        items:
+          $ref: taxonomyTree
+      phylogenies:
+        type: array
+        items:
+          $ref: "#/$defs/phylogeny"
+      assumptions:
+        type: array
+        items:
+          $ref: taxonomyTree
+      notes:
+        type: string
   person:
     type: object
     anyOf:

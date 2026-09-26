@@ -184,9 +184,9 @@ def load_files(drafts=False):
       raise LoadError(f'"{filename}" is not valid against the schema')
     logger.debug(f'"{filename}" is valid.')
 
-  _load_tree_dir(TREE_DIR, defs['trees'], data['trees'])
+  _load_tree_dir(TREE_DIR, defs['treeDocument'], data['trees'])
   if drafts:
-    _load_tree_dir(DRAFT_DIR, defs['trees'], data['trees'])
+    _load_tree_dir(DRAFT_DIR, defs['treeDocument'], data['trees'])
 
   return data
 
@@ -197,14 +197,14 @@ def _load_tree_dir(directory, schema, trees):
       continue
 
     logger.info(f'Checking "{tree_path}"...')
-    name = tree_path.stem
-    tree_data = {name: load_yaml(tree_path)}
+    tree_data = load_yaml(tree_path)
     if not schema.check(tree_data):
       raise LoadError(f'"{tree_path}" is not valid against the schema')
     logger.debug(f'"{tree_path}" is valid.')
+    name = tree_path.stem
     if name in trees:
-      logger.warning(f'File "{tree_path}" overwrites the main tree file.')
-    trees.update(tree_data)
+      logger.warning(f'File "{tree_path}" overwrites another tree file.')
+    trees.update({name: tree_data})
 
 
 def log_error_node(error):
