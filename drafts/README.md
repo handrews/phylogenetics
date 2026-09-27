@@ -16,6 +16,35 @@ Check a draft with:
 It validates the file against the tree schema and lists the taxon, author
 and source keys the draft cites that have no record yet.
 
+## What a draft records
+
+The data says who published what systematic information in which paper
+(roadmap, Ground rules, "Scope"). A draft therefore carries names, acts,
+placements, usages, synonymies, specimens with their repository and
+geological context, and the page, plate and figure numbers that locate
+them. It does not carry diagnoses, descriptions, figure captions,
+artists' names, physical descriptions of specimens, or a narration of the
+paper's argument. Everything of that kind that a drafter finds worth
+recording goes into the review file under `notes/reviews/`, where
+quotation with printed page numbers is the expected form.
+
+Conventions the promotion of the Whiteaves and Bather drafts settled:
+
+- `notes` on a node explains only what would otherwise make the data hard
+  to understand or the source hard to locate. A note that quotes the paper
+  at length is moved to the review on promotion, so it is better written
+  there in the first place.
+- `pages` is one page: the page where the name is formally stated, or
+  where its prose treatment begins. A range is for exceptional cases.
+- A classification the paper adopts by citation is recorded as the
+  paper's usage, with the ranks the paper attributes to it, even where the
+  paper places nothing under most of it. The genus is not made the top
+  node merely because the paper erected nothing above it.
+- One specimen, one entry, even when the paper gives no number and no
+  type word. Identifiers, a paper's own letters (A, B, C) and the
+  repository are kept; descriptions are not.
+- `diagnosis` is being retired (roadmap D10). Do not fill it.
+
 | draft | paper | open points |
 |---|---|---|
 | `1897_whiteaves.yaml` | Whiteaves 1897, Canadian Record Sci. 7(5): 287–292 | the protologue of the first edrioblastoid; no higher taxon printed; three specimens without numbers or type words |

@@ -195,7 +195,10 @@ adapter changes and these claims keep their fields.
 
 Emitted for a node's `diagnosis`, `text` verbatim. It is the one tree
 field with a coverage kind (`diagnoses`) and, without a claim, no way to
-be counted.
+be counted. The field is being retired (roadmap D10, decided 2026-09-27):
+diagnoses are outside the data's scope, which is who published what
+systematic information where, with locators. The claim kind and the
+coverage kind stay until the field is removed.
 
 ### `secondhand`
 
