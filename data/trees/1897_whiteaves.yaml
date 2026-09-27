@@ -1,0 +1,46 @@
+taxonomies:
+- taxon: cystoidea
+  rank: Class
+  notes: >
+    Higher taxa stated to be after Nicholson & Lyddeker [sic.; properly
+    Lydekker] 1889, who are noted to follow Johannes Müller's classification
+    of the class "Cystoidea" (not Cystidea even though the paper's title
+    says "species of Cystideans") with the division into the three orders
+    shown here.
+  children:
+  - taxon: aporitidae
+    rank: Order
+  - taxon: diploporitidae
+    rank: Order
+    children:
+    - taxon: astrocystites
+      new: true
+      pages:
+      - [287, 292]
+      children:
+      - taxon: ottawaensis_whiteaves_1897
+        new: true
+        provisional: true
+        type: true
+        editorial:
+          inferred: [type, provisional]
+          basis: >
+            Type by monotypy.
+            Provisional based on "most probably referable to the Dipoporitidae"
+            of the three orders named in Nicholson & Lydekker 1889.
+        illustrations:
+        - page: 287
+          textFigures: [1, 2, 3]
+        specimens:
+          unknowntypes:
+          - first specimen collected by John Stewart, 1886, Museum of the Geological Survey of Canada
+          - second specimen collected by John Stewart, 1886, Museum of the Geological Survey of Canada
+          - an imperfect specimen lent by Walter R. Billings
+        occurrences:
+        - unit:
+          - Trenton limestone
+          location:
+          - Division St.
+          - Ottawa
+  - taxon: rhombiferi
+    rank: Order

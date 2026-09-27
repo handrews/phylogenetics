@@ -1,0 +1,31 @@
+taxonomies:
+- taxon: edrioasteroidea
+  children:
+  - taxon: steganoblastidae
+    children:
+    - taxon: steganoblastus
+      pages:
+      - [193, 203]
+      children:
+      - taxon: ottawaensis_whiteaves_1897
+        pages: 194
+        specimens:
+          holotype: A -- Victoria Memorial Museum, Ottawa
+          syntypes:
+          - B -- Victoria Memorial Museum, Ottawa
+          - C -- remains in the possession of Walter R. Billings
+        occurrences:
+        - unit:
+          - Trenton Limestone
+          location:
+          - Division Street
+          - Ottawa
+          notes: '"The precise horizon has nowhere been stated" (p. 194).'
+        illustrations:
+        - plate: 15
+          figures: [1, 3, 4, 6, 7]
+          notes: specimen A
+        - plate: 15
+          figures: [2, 5]
+          notes: specimen B
+        - textFigures: [[1, 6]]

@@ -2192,9 +2192,25 @@
   "folded": [
    "aporita"
   ],
-  "kind": "primary",
+  "kind": "altRankOf",
   "name": "Aporita",
+  "of": "aporitidae",
   "rank": "Order"
+ },
+ "aporitidae": {
+  "authority": {
+   "authors": [
+    "Zittel"
+   ],
+   "display": "Zittel 1879",
+   "year": 1879
+  },
+  "folded": [
+   "aporitidae"
+  ],
+  "kind": "primary",
+  "name": "Aporitidae",
+  "rank": "Group"
  },
  "appressa_bassler_1950": {
   "authority": {
@@ -12036,6 +12052,23 @@
   "name": "Diploporiten",
   "of": "diploporita-suborder",
   "rank": "Suborder"
+ },
+ "diploporitidae": {
+  "authority": {
+   "authors": [
+    "Müller"
+   ],
+   "display": "Müller 1854",
+   "source": "1854_müller.j.p",
+   "year": 1854
+  },
+  "folded": [
+   "diploporitidae"
+  ],
+  "kind": "altRankOf",
+  "name": "Diploporitidae",
+  "of": "diploporita-order",
+  "rank": "Family"
  },
  "diploporitidæ": {
   "authority": {
@@ -35228,6 +35261,22 @@
   "name": "Rhombifera",
   "rank": "Order",
   "status": "informal"
+ },
+ "rhombiferi": {
+  "authority": {
+   "authors": [
+    "Zittel"
+   ],
+   "display": "Zittel 1870",
+   "year": 1870
+  },
+  "folded": [
+   "rhombiferi"
+  ],
+  "kind": "altSpellingOf",
+  "name": "Rhombiferi",
+  "of": "rhombifera-order",
+  "rank": "Order"
  },
  "rhombiferidae": {
   "authority": {

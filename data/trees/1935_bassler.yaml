@@ -362,7 +362,7 @@ taxonomies:
     new: true
     citedAs: |
       Family ASTROCYSTITIDAE, new name
-      (Steganoblastidac Bather)
+      (Steganoblastidae Bather)
     corrected:
       taxon: steganoblastidae
     notes: |
@@ -382,6 +382,7 @@ taxonomies:
       notes: |
         1968_webby states that this is the first point at which
         the name was reverted to the senior synonym, Astrocystites.
+        However, Bassler had previously done this in 1915.
       synonyms:
       - taxon: steganoblastus
   - openTaxon: edrioasteroidea-order-uncertain_bassler_1935

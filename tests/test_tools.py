@@ -50,9 +50,9 @@ def test_source_coverage_backs_refusals(question, store):
 
 
 def test_unentered_source(store):
-  coverage = store.source_coverage('1897_whiteaves')
+  coverage = store.source_coverage('1898_bather')
   assert coverage['known'] and not coverage['entered']
-  assert coverage['cite'] == 'Whiteaves 1897'
+  assert coverage['cite'] == 'Bather 1898'
   assert store.source_coverage('1930_richter.r')['entered'] is False
   assert store.source_coverage('no_such_source') == {
     'source': 'no_such_source',
@@ -265,8 +265,8 @@ def test_gap_sentences(store):
     'The material printed in Holloway & Jell 1983 has not yet been entered '
     '(none of it is entered so far).'
   )
-  assert store.gap('1897_whiteaves', 'newTaxa')['rendered'].startswith(
-    'Whiteaves 1897 is on record; its content has not yet been entered'
+  assert store.gap('1898_bather', 'newTaxa')['rendered'].startswith(
+    'Bather 1898 is on record; its content has not yet been entered'
   )
   assert store.gap('1962_fay', 'types')['rendered'] == (
     'Fay 1962 prints no type designations, as reviewed.'

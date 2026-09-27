@@ -3453,7 +3453,10 @@
    "tree": false
   },
   "1897_whiteaves": {
-   "acts": {},
+   "acts": {
+    "new": 2,
+    "type": 1
+   },
    "audit": {
     "state": "unaudited"
    },
@@ -3471,11 +3474,27 @@
     "volume": 7,
     "year": 1897
    },
-   "claims": {},
-   "derived": {},
+   "claims": {
+    "act": 3,
+    "editorial": 1,
+    "material": 3,
+    "placement": 5,
+    "usage": 6
+   },
+   "derived": {
+    "illustrations": 1,
+    "material": 1,
+    "newTaxa": 2,
+    "occurrences": 1,
+    "skeleton": 11
+   },
    "inconsistencies": [],
-   "material": {},
-   "tree": false
+   "material": {
+    "illustration": 1,
+    "occurrence": 1,
+    "specimen": 1
+   },
+   "tree": true
   },
   "1898_bather": {
    "acts": {},
@@ -3527,7 +3546,11 @@
    "tree": false
   },
   "1898_whiteaves": {
-   "acts": {},
+   "acts": {
+    "lapsus": 1,
+    "new": 1,
+    "substituted": 1
+   },
    "audit": {
     "state": "unaudited"
    },
@@ -3545,11 +3568,18 @@
     "volume": 7,
     "year": 1898
    },
-   "claims": {},
-   "derived": {},
+   "claims": {
+    "act": 3,
+    "placement": 1,
+    "usage": 4
+   },
+   "derived": {
+    "newTaxa": 1,
+    "skeleton": 5
+   },
    "inconsistencies": [],
    "material": {},
-   "tree": false
+   "tree": true
   },
   "1899_bather": {
    "acts": {},
@@ -3782,11 +3812,24 @@
     "volume": 1,
     "year": 1914
    },
-   "claims": {},
-   "derived": {},
+   "claims": {
+    "material": 6,
+    "placement": 3,
+    "usage": 4
+   },
+   "derived": {
+    "illustrations": 3,
+    "material": 2,
+    "occurrences": 1,
+    "skeleton": 7
+   },
    "inconsistencies": [],
-   "material": {},
-   "tree": false
+   "material": {
+    "illustration": 3,
+    "occurrence": 1,
+    "specimen": 2
+   },
+   "tree": true
   },
   "1915a_bather": {
    "acts": {},
@@ -11342,6 +11385,9 @@
   "aporita": [
    "1900_bather"
   ],
+  "aporitidae": [
+   "1897_whiteaves"
+  ],
   "appressa_bassler_1950": [
    "1973_sprinkle"
   ],
@@ -11604,6 +11650,8 @@
    "1801_lamarck"
   ],
   "astrocystites": [
+   "1897_whiteaves",
+   "1898_whiteaves",
    "1935_bassler",
    "1936_bassler",
    "1962_fay",
@@ -12276,6 +12324,9 @@
   ],
   "canadensis_billings_1866": [
    "1968b_paul.c.r.c"
+  ],
+  "canadensis_whiteaves_1898": [
+   "1898_whiteaves"
   ],
   "canaliculatus_hall_1852": [
    "1852_hall"
@@ -13439,6 +13490,7 @@
   ],
   "cystoidea": [
    "1896_pompeckj",
+   "1897_whiteaves",
    "1963_brown.i.a",
    "1965_fell",
    "1967a_ubaghs",
@@ -13701,6 +13753,9 @@
   ],
   "diploporiten": [
    "1854_müller.j.p"
+  ],
+  "diploporitidae": [
+   "1897_whiteaves"
   ],
   "diploptera_lamarck_1816": [
    "1816a_lamarck"
@@ -14228,6 +14283,7 @@
   ],
   "edrioasteroidea": [
    "1900_bather",
+   "1914c_bather",
    "1935_bassler",
    "1936_bassler",
    "1962_fay",
@@ -17784,6 +17840,9 @@
    "1975_kolata"
   ],
   "ottawaensis_whiteaves_1897": [
+   "1897_whiteaves",
+   "1898_whiteaves",
+   "1914c_bather",
    "1962_fay",
    "1967a_fay",
    "1968_webby",
@@ -19241,6 +19300,9 @@
    "1900_bather",
    "1975_kolata"
   ],
+  "rhombiferi": [
+   "1897_whiteaves"
+  ],
   "rhombiferidae": [
    "1968b_paul.c.r.c"
   ],
@@ -19985,6 +20047,7 @@
   ],
   "steganoblastidae": [
    "1900_bather",
+   "1914c_bather",
    "1935_bassler",
    "1967a_fay",
    "1968_webby",
@@ -19992,6 +20055,8 @@
    "1982i_sprinkle"
   ],
   "steganoblastus": [
+   "1898_whiteaves",
+   "1914c_bather",
    "1935_bassler",
    "1962_fay",
    "1967a_fay",

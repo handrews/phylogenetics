@@ -1039,30 +1039,31 @@
     author lists.
 - id: q037
   class: uncaptured
-  question: What does Whiteaves (1897) print as the original type-species designation for Astrocystites?
+  question: What does Bather (1898) print as the original type-species designation for Dinocystis?
   scope:
-    taxon: astrocystites
-    source: 1897_whiteaves
+    taxon: dinocystis
+    source: 1898_bather
   expected:
     blocks:
       anyOf:
       - - tool: gap
-          parameters: {source: 1897_whiteaves, kind: types}
+          parameters: {source: 1898_bather, kind: types}
       - - tool: gap
-          parameters: {source: 1897_whiteaves, kind: newTaxa}
+          parameters: {source: 1898_bather, kind: newTaxa}
     shows:
-    - "Whiteaves 1897 is on record; its content has not yet been entered"
+    - "Bather 1898 is on record; its content has not yet been entered"
     answer: |
-      Not captured for Whiteaves (1897): the paper is on record as the
-      source of Astrocystites and of A. ottawaensis, but its content has
-      not yet been entered. Every later paper in the corpus (Fay 1962
-      included) treats ottawaensis as the type species by inference from
-      monotypy, never by quoting Whiteaves's own words.
+      Not captured for Bather (1898): the paper is on record as the
+      source of Dinocystis, but its content has not yet been entered.
+      The later papers in the corpus that mark a type species for
+      Dinocystis (Bassler 1935, Regnéll 1966) do so from their own
+      pages, never by quoting Bather's 1898 words.
   evidence:
-    source: 1897_whiteaves
-  verified: data/sources.yaml has a `1897_whiteaves:` record (added 2026-09-11); ls data/trees/ has
-    no file for it (the AI draft awaits audit in drafts/1897_whiteaves.yaml); data/taxa.yaml
-    astrocystites and ottawaensis_whiteaves_1897 resolve `authority.source` to 1897_whiteaves.
+    source: 1898_bather
+  verified: data/sources.yaml has a `1898_bather:` record; ls data/trees/ has no file for it
+    and drafts/ holds no draft; data/taxa.yaml dinocystis resolves `authority.source` to
+    1898_bather. (Until 2026-09-27 this question used 1897_whiteaves, whose tree was
+    then promoted from drafts/.)
 - id: q038
   class: absent
   question: What does Klug et al. (2008) themselves print in their protologue for Rhenopyrgus flos?

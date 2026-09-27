@@ -616,6 +616,10 @@ aplysia:
 aporita:
   name: Aporita
   rank: Order
+  altRankOf: aporitidae
+aporitidae:
+  name: Aporitidae
+  rank: Group
   auth: [zittel]
   year: 1879
 appressa_bassler_1950:
@@ -3303,6 +3307,10 @@ diploporita-order:
 diploporita-suborder:
   rank: Suborder
   altRankOf: diploporita-class
+diploporitidae:
+  name: Diploporitidae
+  rank: Family
+  altRankOf: diploporita-order
 diploporita-incertae-sedis:
   name: null
   rank: Superfamily
@@ -9691,6 +9699,9 @@ rhombifera-class:
   status: informal
   auth: [zittel]
   year: 1870
+rhombiferi:
+  name: Rhombiferi
+  altSpellingOf: rhombifera-order
 rhombiferidae:
   name: Rhombiferidae
   rank: Family

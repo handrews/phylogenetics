@@ -47,7 +47,7 @@ def test_provisional_and_placeholder_marks(store):
   forms = store.printed_forms('astrocystitidae', source='Bassler 1935', style='json')
   assert '\n' in forms['entries'][0]['printed']
   assert render.render(forms, 'text').splitlines()[1] == (
-    '  1935 "Family ASTROCYSTITIDAE, new name (Steganoblastidac Bather)" Bassler 1935'
+    '  1935 "Family ASTROCYSTITIDAE, new name (Steganoblastidae Bather)" Bassler 1935'
   )
   holloway = store.contents('1983_holloway_jell', 'edrioasteroidea', depth=1, style='json')[0]
   lines = render.render(holloway, 'text').splitlines()
