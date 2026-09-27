@@ -109,7 +109,7 @@ def test_resolve_and_absence(capsys):
   assert code == 0 and out == '(no record in the corpus carries this name)'
   code, out = run(capsys, 'contents', '1994_guensburg_sprinkle', 'no_such_record')
   assert code == 0 and out == '(nothing in the corpus)'
-  code, out = run(capsys, 'coverage', '1897_whiteaves')
+  code, out = run(capsys, 'coverage', '1898_bather')
   assert code == 0 and json.loads(out)['entered'] is False
 
 
