@@ -1253,6 +1253,17 @@
   - lydekker
   identifiers:
     url: https://www.biodiversitylibrary.org/item/125070
+1879_zittel:
+  book: handbuch
+  volume: II
+  chapter: III. Stamm. Echinodermata, Stachelhäuter.
+  pages:
+  - 308
+  - 560
+  pubDate:
+    year: 1879
+  authors:
+  - zittel
 1887_billings.w.r:
   title: A new genus and three new species of crinoids from the Trenton Formation with notes on a large specimen of Dendrocrinus proboscidiatus
   journal: ottawa-naturalist
