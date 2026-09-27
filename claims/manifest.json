@@ -5636,6 +5636,41 @@
    "material": {},
    "tree": false
   },
+  "1879_zittel": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Zittel"
+    ],
+    "in": "Handbuch der Palaeontologie",
+    "pages": [
+     308,
+     560
+    ],
+    "title": null,
+    "volume": "II",
+    "year": 1879
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1879a_nicholson_lydekker": {
    "acts": {},
    "audit": {
