@@ -474,16 +474,31 @@ def test_derived_material_coverage():
   )
   assert derived_material_coverage({'s': [partial_list_root]})['s']['material'] == 'partly'
 
-  # `partly`: some nodes have it, some do not.
+  # `partly`: a null is written somewhere, and some node lacks the field.
   mixed_root = tree(
+    {
+      'taxon': 'rhenopyrgus',
+      'material': None,
+      'children': [
+        {'taxon': 'grayae_bather_1915', 'material': [{'label': 'A'}]},
+        {'taxon': 'sardesoni_bather_1915'},
+      ],
+    },
+    3,
+  )
+  assert derived_material_coverage({'s': [mixed_root]})['s']['material'] == 'partly'
+
+  # Values alone declare nothing: a value says what the source prints, not
+  # that the file was audited for the field, so `None` and the fallback.
+  values_only_root = tree(
     {
       'taxon': 'rhenopyrgus',
       'material': [{'label': 'A'}],
       'children': [{'taxon': 'grayae_bather_1915'}],
     },
-    3,
+    6,
   )
-  assert derived_material_coverage({'s': [mixed_root]})['s']['material'] == 'partly'
+  assert derived_material_coverage({'s': [values_only_root]})['s']['material'] is None
 
   # Nothing declared at all (no unused, no node with a value or a null):
   # `None`, so the effective value falls back to the declared coverage.
@@ -520,12 +535,25 @@ def test_manifest_reports_derived_disagreement(load_records, roots, monkeypatch)
   from phylohist.loader.research import Source
 
   source = Source.get('1961_dehm')
-  derived = derived_material_coverage(roots)['1961_dehm']
-  assert derived['illustrations'] == 'partly'  # real data, checked once here
+  # A file that writes a null for `figures` on one node and leaves another
+  # node without it derives `partly` for illustrations (G11).
+  audited = Tree(
+    {
+      'taxon': 'pyrgocystis',
+      'figures': None,
+      'children': [
+        {'taxon': 'grayae_bather_1915', 'figures': [{'plate': 1, 'figures': 2}]},
+        {'taxon': 'sardesoni_bather_1915'},
+      ],
+    },
+    {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 0},
+  )
+  synthetic = {'1961_dehm': [audited]}
+  assert derived_material_coverage(synthetic)['1961_dehm']['illustrations'] == 'partly'
   monkeypatch.setitem(source._data['audit']['coverage'], 'illustrations', 'none')
 
-  claims = extract(roots)
-  entry = manifest(claims, roots)['sources']['1961_dehm']
+  claims = extract(synthetic)
+  entry = manifest(claims, synthetic)['sources']['1961_dehm']
   assert 'illustrations: declared none, derived partly' in entry['inconsistencies']
   assert entry['coverage']['illustrations'] == 'partly'
   assert entry['derivedCoverage']['illustrations'] == 'partly'

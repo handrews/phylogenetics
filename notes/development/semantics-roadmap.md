@@ -1347,8 +1347,11 @@ fields, `skeleton` (taxa not in the tree at all), `newTaxa` and `types`
 (flags, whose "partly" means "not every node was checked for the act",
 which has no node-level form). For the content kinds the map is derived:
 `na` when the file lists the field as unused and no node carries it;
-`all` when no node has the field absent; `none` when every node has it
-absent and the file does not list it; `partly` otherwise. The
+`all` when at least one node writes a null and no node has the field
+absent; `partly` when a null is written somewhere and some node has it
+absent; and nothing derived when no node writes a null, since a value
+records what the source prints and not that the file was audited for
+the field. The
 cross-check in the claims extractor (a declared `all` against zero
 claims) then inverts into a migration aid comparing the declared map
 with the derived one, and disappears when nothing is declared any more.

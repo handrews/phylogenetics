@@ -651,10 +651,12 @@ def derived_material_coverage(roots):
   `illustrations`, from raw node state over primary, non-cited, named
   nodes (G11): `na` when the file lists the field(s) as `unused`; `all`
   (downgraded to `partly` when a material entry has `listComplete:
-  false`) when no such node lacks the field; `partly` when some do and
-  some do not; `None` -- so the effective value falls back to the
-  declared `audit.coverage` -- when the file declares nothing at all
-  (nothing `unused`, no node writing even a null)."""
+  false`) when at least one node writes a null and no node lacks the
+  field; `partly` when a null is written somewhere and some node lacks
+  it; `None` -- so the effective value falls back to the declared
+  `audit.coverage` -- when no node writes a null and nothing is
+  `unused`: a value records what the source prints, not that the file
+  was audited for the field."""
   out = {}
   for source_key, trees in roots.items():
     unused = set(trees[0].file_unused) if trees else set()
@@ -673,7 +675,9 @@ def derived_material_coverage(roots):
         values[kind] = None
         continue
       states = [_node_field_state(node.data, fields) for node in nodes]
-      if all(s == 'absent' for s in states):
+      if not any(s == 'null' for s in states):
+        # A value says what the source prints, not that the file was
+        # audited for the field; only a null (or `unused`) says that.
         values[kind] = None
       elif any(s == 'absent' for s in states):
         values[kind] = 'partly'

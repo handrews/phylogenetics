@@ -288,11 +288,13 @@ prints any: `claims.derived_material_coverage(roots)` walks every
 primary, non-cited, named node of a source and, for each kind
 (`occurrences` reading either `contexts` or `range`), returns `na` when
 the file lists the field(s) as `unused`; `all` (downgraded to `partly`
-when a material entry has `listComplete: false`) when no such node lacks
-the field (every node carries a value or an explicit null); `partly` when
-some do and some do not; and `None` -- so the *effective* coverage falls
-back to the declared `audit.coverage` -- when the file declares nothing
-at all for that field (nothing `unused`, no node writing even a null).
+when a material entry has `listComplete: false`) when at least one node
+writes an explicit null and no such node lacks the field; `partly` when
+a null is written somewhere and some node lacks it; and `None` -- so the
+*effective* coverage falls back to the declared `audit.coverage` -- when
+no node writes a null and nothing is `unused`. A value records what the
+source prints, not that the file was audited for the field; only a null
+or an `unused` entry says that.
 `manifest()`'s `coverage` is this effective map (declared for the five
 hand-audited kinds, derived-or-declared for the three); `derivedCoverage`
 is the raw derived map. Every claim's `audit.coverage` is the effective

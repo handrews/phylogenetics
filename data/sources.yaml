@@ -1806,14 +1806,11 @@
       types: all
       synonymy: all
       material: none
-      occurrences: partly
+      occurrences: all
       illustrations: partly
       phylogeny: na
     notes: |
       Reviewed against the paper 2026-09-09; see docs/reviews/review_1961_dehm.md
-      Occurrences downgraded all -> partly (G11, stage 2): the genus heading
-      carries no `range`/`contexts` of its own and the migration adds no
-      null there, so it derives partly pending an auditor's null.
       Synonymy re-declared 2026-09-11: moving Rievers's Pyrgocystis
       coronaeformis into the new subgenus is the paper's one synonymy
       statement, captured as the original combination under the species.
@@ -1835,16 +1832,11 @@
       newTaxa: all
       types: na
       synonymy: na
-      material: partly
-      occurrences: partly
+      material: all
+      occurrences: all
       illustrations: partly
       phylogeny: na
-    notes: |
-      Reviewed against the paper 2026-09-09; see docs/reviews/review_1961_rievers.md
-      Material and occurrences downgraded all -> partly (G11, stage 2): the
-      genus heading carries no `material`/`range`/`contexts` of its own and
-      the migration adds no null there, so both derive partly pending an
-      auditor's null.
+    notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1961_rievers.md
 1962_fay:
   title: Edrioblastoidea, a new class of Echinodermata
   audit:
@@ -4745,16 +4737,11 @@ inprep_sprinkle_strimple:
       newTaxa: all
       types: all
       synonymy: all
-      material: partly
+      material: all
       occurrences: partly
       illustrations: partly
       phylogeny: na
-    notes: |
-      Reviewed against the paper 2026-09-09; see docs/reviews/review_2020_ewin_martin.m_isotalo_zamora.md
-      Material downgraded all -> partly (G11, stage 2): the higher-rank
-      headings and the cited-but-not-redescribed species carry no `material`
-      of their own and the migration adds no null there, so it derives
-      partly pending an auditor's null.
+    notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_2020_ewin_martin.m_isotalo_zamora.md
 2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler:
   title: Athenacrinus n. gen. and other early echinoderm taxa inform crinoid origin and arm evolution
   journal: jofpaleo
@@ -4803,7 +4790,7 @@ inprep_sprinkle_strimple:
       newTaxa: all
       types: all
       synonymy: partly
-      material: partly
+      material: all
       occurrences: none
       illustrations: none
       phylogeny: na
@@ -4811,10 +4798,6 @@ inprep_sprinkle_strimple:
       Migrated from complete: named=true open=true history=true specimens.basic=true specimens.all=true
       Non-echinoderm trees not captured
       Reviewed against the paper 2026-09-09; see docs/reviews/review_2021_jell_sprinkle.md
-      Material downgraded all -> partly (G11, stage 2): the higher-rank
-      headings and the cited-but-not-redescribed species carry no `material`
-      of their own and the migration adds no null there, so it derives
-      partly pending an auditor's null.
   journal: alcheringa
   volume: 45
   number: 1

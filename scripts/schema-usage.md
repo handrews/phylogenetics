@@ -440,8 +440,8 @@ property.
 | value | count |
 |---|---|
 | `'none'` | 75 |
-| `'all'` | 65 |
-| `'partly'` | 55 |
+| `'all'` | 70 |
+| `'partly'` | 50 |
 | `'na'` | 45 |
 
 ### `phylogeny#/$defs/article/properties/audit/properties/coverage/propertyNames`
