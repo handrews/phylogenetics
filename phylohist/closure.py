@@ -44,6 +44,9 @@ class Closure:
             self.by_parent[source_key][claim['parent']].append(claim)
           self.placements_of[claim['subject']].append(claim)
         elif claim['kind'] == 'acceptance' and claim['stance'] == 'accepts':
+          # A lapsus listed in a synonymy is not a synonym.
+          if claim.get('lapsusFor'):
+            continue
           if claim.get('under') and claim.get('subject') != claim.get('under'):
             self.accepted_under[claim['under']].append(claim)
         elif claim['kind'] == 'act' and claim['actKind'] in SYNONYMY_ACTS:

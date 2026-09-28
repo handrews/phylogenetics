@@ -204,3 +204,51 @@ def test_lapsus_is_the_slip_not_a_synonym(load_records, caplog):
   # The slip is printed in this source: its pages are the source's own.
   assert slip['pages'] == 13 and 'citedPages' not in slip
   assert '1961_dehm' in Tree._new_index['canadensis_billings_1866']
+
+
+def test_lapsus_listed_in_a_synonymy(claims):
+  # Bather 1914 notes Whiteaves's slip: the entry names the record the
+  # slip was printed for, and is accepted under it without being a synonym.
+  [entry] = [
+    c
+    for c in claims['1914c_bather']
+    if c['kind'] == 'acceptance' and c['subject'] == 'canadensis_whiteaves_1898'
+  ]
+  assert entry['lapsusFor'] == 'ottawaensis_whiteaves_1897'
+  assert entry['parents'] == ['steganoblastus'] and entry['citedPages'] == 395
+
+
+def test_lapsus_records_stay_under_lapsus(load_records, caplog):
+  # A lapsus record appears under `lapsus`, or as a synonymy entry marked
+  # `lapsusFor`; anywhere else, and a `lapsusFor` off a synonymy entry, is
+  # an error.
+  from phylohist.loader.load import _report_lapsus_records
+
+  slip = {'taxon': 'canadensis_billings_1866'}
+  printed = Tree(
+    {
+      'taxon': 'astrocystites',
+      'children': [{'taxon': 'ottawaensis_whiteaves_1897', 'lapsus': slip}],
+    },
+    {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 97},
+  )
+  listed = {
+    'taxon': 'ottawaensis_whiteaves_1897',
+    'synonyms': [dict(slip, lapsusFor={'taxon': 'ottawaensis_whiteaves_1897'})],
+  }
+  placed = Tree(
+    {'taxon': 'astrocystites', 'children': [dict(slip), listed]},
+    {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 96},
+  )
+  caplog.clear()
+  _report_lapsus_records({'1961_dehm': [printed, placed]})
+  errors = [r.getMessage() for r in caplog.records if r.levelno >= logging.ERROR]
+  assert len(errors) == 1 and '[96]/astrocystites/0/canadensis_billings_1866' in errors[0]
+
+  caplog.clear()
+  Tree(
+    {'taxon': 'astrocystites', 'lapsusFor': {'taxon': 'ottawaensis_whiteaves_1897'}},
+    {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 95},
+  )
+  errors = [r.getMessage() for r in caplog.records if r.levelno >= logging.ERROR]
+  assert len(errors) == 1 and 'is not a `synonyms` or `non` entry' in errors[0]

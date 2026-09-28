@@ -376,6 +376,9 @@ class _NodeClaims:
       parents = [p.taxon.key for p in node.related_nodes('parents') if p.taxon is not None]
       if parents:
         claim['parents'] = parents
+      # A lapsus listed in the synonymy: the record it was printed for.
+      if (intended := _related_key(node, 'lapsusFor')) is not None:
+        claim['lapsusFor'] = intended
       for flag in _ACCEPTANCE_FLAGS:
         if data.get(flag):
           claim[flag] = data[flag]

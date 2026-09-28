@@ -124,6 +124,8 @@ def _entry_line(entry, heading_name=None):
     parts.append(' '.join(entry['parents']))
   elif entry.get('name'):
     parts.append(entry['name'])
+  if entry.get('lapsusFor'):
+    parts.append(f'(in error for {entry["lapsusFor"]})')
   parts.append(entry.get('cite') or entry.get('source') or '')
   if entry.get('page') is not None:
     parts.append(pages_text(entry['page']))

@@ -480,6 +480,7 @@ class Tree:
     RelatedAxis('corrected', many=False, cited=True),
     RelatedAxis('substituted', many=False, cited=True),
     RelatedAxis('lapsus', many=False, cited=False),
+    RelatedAxis('lapsusFor', many=False, cited=False),
     RelatedAxis('translated', many=False, cited=True),
     RelatedAxis('or', many=True, cited=False),
     RelatedAxis('synonyms', many=True, cited=True),
@@ -561,6 +562,9 @@ class Tree:
     self._check_primary_taxon()
 
     self._bracket = self._check_taxon('bracket')
+    # A lapsus is listed only in a synonymy, as the name printed in error.
+    if 'lapsusFor' in self._data and self.axis not in ('synonyms', 'non'):
+      logger.error(f'{self} has `lapsusFor` but is not a `synonyms` or `non` entry')
     for axis in self.RELATED_AXES:
       value = self._data.get(axis.name)
       if axis.many:

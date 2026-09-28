@@ -38,7 +38,7 @@ even when its parent is also unreached, so read parents first.
 `data %` is the share of that container's instances carrying the
 property.
 
-### `actAndModifierFields` -- 5583 instances in `data/`
+### `actAndModifierFields` -- 5586 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
@@ -97,22 +97,22 @@ property.
 | `quotes` | 1 | 0.3% |
 | `reading` | 1 | 0.3% |
 
-### `authority` -- 1636 instances in `data/`
+### `authority` -- 1637 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `source` | 1636 | 100.0% |
-| `pages` | 63 | 3.9% |
+| `source` | 1637 | 100.0% |
+| `pages` | 64 | 3.9% |
 | `illustrations` | 28 | 1.7% |
 | `attributedTo` | 24 | 1.5% |
 | `ex` | 2 | 0.1% |
 | `notes` | 2 | 0.1% |
 
-### `authorityFields` -- 9102 instances in `data/`
+### `authorityFields` -- 9105 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `authority` | 1633 | 17.9% |
+| `authority` | 1634 | 17.9% |
 | `auth` | 1000 | 11.0% |
 | `year` | 998 | 11.0% |
 | `in` | 28 | 0.3% |
@@ -147,7 +147,7 @@ property.
 | `subunit` | 0 | 0.0% |
 | `superunit` | 0 | 0.0% |
 
-### `citationFields` -- 9102 instances in `data/`
+### `citationFields` -- 9105 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
@@ -173,11 +173,11 @@ property.
 | `corrections.authority` | 2 | 100.0% |
 | `corrections.authority.source` | 2 | 100.0% |
 
-### `identificationFields` -- 6377 instances in `data/`
+### `identificationFields` -- 6380 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `taxon` | 5777 | 90.6% |
+| `taxon` | 5780 | 90.6% |
 | `openTaxon` | 219 | 3.4% |
 | `diagnosis` | 69 | 1.1% |
 | `citedAs` | 52 | 0.8% |
@@ -198,25 +198,25 @@ property.
 | `location` | 0 | 0.0% |
 | `source` | 0 | 0.0% |
 
-### `locationFields` -- 9102 instances in `data/`
+### `locationFields` -- 9105 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `pages` | 223 | 2.5% |
+| `pages` | 223 | 2.4% |
 | `illustrations` | 125 | 1.4% |
 
-### `materialsFields` -- 5583 instances in `data/`
+### `materialsFields` -- 5586 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
 | `specimens` | 91 | 1.6% |
 | `occurrences` | 28 | 0.5% |
 
-### `metaFields` -- 6377 instances in `data/`
+### `metaFields` -- 6380 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `notes` | 381 | 6.0% |
+| `notes` | 382 | 6.0% |
 | `editorial` | 8 | 0.1% |
 
 ### `modularDate` -- 309 instances in `data/`
@@ -281,16 +281,17 @@ property.
 | `notes` | 2 | 1.4% |
 | `type` | 0 | 0.0% |
 
-### `relationalFields` -- 5583 instances in `data/`
+### `relationalFields` -- 5586 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `synonyms` | 361 | 6.5% |
+| `synonyms` | 362 | 6.5% |
 | `moved` | 30 | 0.5% |
 | `corrected` | 5 | 0.1% |
 | `non` | 4 | 0.1% |
 | `or` | 3 | 0.1% |
 | `lapsus` | 1 | 0.0% |
+| `lapsusFor` | 1 | 0.0% |
 | `removed` | 1 | 0.0% |
 | `substituted` | 1 | 0.0% |
 
@@ -328,12 +329,12 @@ property.
 |---|---|---|
 | `by` | 1 | 6.7% |
 
-### `tree` -- 6377 instances in `data/`
+### `tree` -- 6380 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `children` | 2191 | 34.4% |
-| `parents` | 326 | 5.1% |
+| `children` | 2191 | 34.3% |
+| `parents` | 327 | 5.1% |
 | `altPlacements` | 7 | 0.1% |
 | `mergeInto` | 5 | 0.1% |
 
@@ -346,7 +347,7 @@ property.
 | `notes` | 20 | 9.0% |
 | `assumptions` | 1 | 0.5% |
 
-### `uncertaintyFields` -- 6377 instances in `data/`
+### `uncertaintyFields` -- 6380 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
@@ -557,7 +558,7 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/article/properties/series` | integer/string | intx8, strx1 | `A` | - |
 | `phylogeny#/$defs/article/properties/volume` | integer/string | intx225, strx13 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `II` | - |
 | `phylogeny#/$defs/basicOccurrence/properties/unit` | string/array | listx22, strx1 | `Craighead inlier` | - |
-| `phylogeny#/$defs/citationNumber` | integer/string | intx702, strx185 | `IX`, `VIII`, `V`, `b` | - |
+| `phylogeny#/$defs/citationNumber` | integer/string | intx703, strx185 | `IX`, `VIII`, `V`, `b` | - |
 | `phylogeny#/$defs/cladisticFields/properties/matrix/items` | integer/string | intx139, strx5 | `?` | - |
 | `phylogeny#/$defs/editorialObject/properties/inferred` | boolean/array | listx3, boolx3 | - | - |
 | `phylogeny#/$defs/identificationFields/properties/diagnosis` | string/null | strx68, nullx1 | `A cast of it shows a con...`, `Body hemisphæric, slight...`, `A *Pyrgocystis* specimen...`, `Mouth surrounded and cov...` | - |

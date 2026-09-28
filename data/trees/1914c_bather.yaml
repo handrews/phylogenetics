@@ -9,6 +9,19 @@ taxonomies:
       children:
       - taxon: ottawaensis_whiteaves_1897
         pages: 194
+        synonyms:
+        - taxon: canadensis_whiteaves_1898
+          authority:
+            source: 1898_whiteaves
+            pages: 395
+          parents:
+          - taxon: steganoblastus
+          lapsusFor:
+            taxon: ottawaensis_whiteaves_1897
+          notes: |
+            Stated in prose, not a synonymy list: "In this Postscript he
+            inadvertently alluded to the species as Steganoblastus canadensis
+            instead of S. ottawaensis" (p. 193).
         specimens:
           holotype: A -- Victoria Memorial Museum, Ottawa
           syntypes:

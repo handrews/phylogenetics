@@ -240,6 +240,7 @@ class ClaimStore:
           printed=printed.get('citedAs'),
           record=acceptance['subject'] if not acceptance.get('ownName') else None,
           nudum=any(c['kind'] == 'act' and c['actKind'] == 'nomNudum' for c in claims) or None,
+          lapsusFor=self.name(acceptance['lapsusFor']) if acceptance.get('lapsusFor') else None,
           # With an original combination the entry carries the bare epithet
           # (the parents supply the genus); without one, the cited name as the
           # combination the entry falls under; the heading's own name needs
@@ -705,7 +706,10 @@ class ClaimStore:
           under = c.get('under')
           under_path = c['path'].rsplit('/', 2)[0]
           words = self.words.display(c['subject'], source_key, c['path'])
-          if under:
+          if c.get('lapsusFor'):
+            intended = self.words.display(c['lapsusFor'], source_key, under_path)
+            words += f', cited in error for {intended}'
+          elif under:
             words += f', cited as a synonym of {self.words.display(under, source_key, under_path)}'
           entries.append(
             {

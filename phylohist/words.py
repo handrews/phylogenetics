@@ -421,9 +421,13 @@ class Words:
       target = self.display(claim['subject'], claim['source'], claim['path'])
       verb = 'accepts' if claim['stance'] == 'accepts' else 'rejects'
       cited = f' ({self.store.cite(claim["citesSource"])})' if claim.get('citesSource') else ''
+      owner_path = claim['path'].rsplit('/', 2)[0]
+      if claim.get('lapsusFor'):
+        intended = self.display(claim['lapsusFor'], claim['source'], owner_path)
+        return f'cites {target}{cited} in error for {intended}'
       under = ''
       if claim.get('under'):
-        under = self.display(claim['under'], claim['source'], claim['path'].rsplit('/', 2)[0])
+        under = self.display(claim['under'], claim['source'], owner_path)
       return f'{verb} {target}{cited} as {under}' if under else f'{verb} {target}{cited}'
     if kind == 'act':
       return self.act_words(claim)

@@ -376,6 +376,22 @@ def test_senior_synonym_and_designation_shown_as_combinations(store):
   assert '    Rhenopyrgus sp. indet. 1\n' in listing['rendered'] + '\n'
 
 
+def test_lapsus_listed_but_not_a_synonym(store):
+  # Bather 1914 notes Whiteaves's slip "Steganoblastus canadensis": the
+  # synonymy shows it, the statements word it, the closure never follows it.
+  [block] = store.synonymy('ottawaensis_whiteaves_1897', '1914c_bather')
+  assert (
+    '1898 Steganoblastus canadensis (in error for ottawaensis) Whiteaves 1898 p. 395'
+    in block['rendered']
+  )
+  said = store.statements('canadensis_whiteaves_1898', source='1914c_bather')['rendered']
+  assert 'in error for Steganoblastus ottawaensis' in said
+  under = store.descendants(['steganoblastus'], style='json')
+  assert 'canadensis_whiteaves_1898' not in {r['record'] for r in under['rows']}
+  rows = store.placements(['ottawaensis_whiteaves_1897'], style='json')['rows']
+  assert 'canadensis_whiteaves_1898' not in {r.get('record') for r in rows}
+
+
 def test_corrected_form_is_a_synonym_without_a_synonymy(store):
   # Gill & Caster 1960 correct Placocystidae to Placocystitidae and print
   # no synonymy: the correction alone makes the one a synonym of the other.

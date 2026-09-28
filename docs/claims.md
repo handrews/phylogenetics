@@ -20,7 +20,7 @@ Every claim carries:
 
 | field | value |
 |---|---|
-| `id` | `<source>:<path>:<kind>[:<n>]`. `<path>` is the node's position in its tree file as the loader computes it: the taxonomy or phylogeny index, then each step down (`children/2`, `synonyms/0`, `non/1`, `removed/0`, `parents/0`, `moved`, `corrected`, `substituted`, `lapsus`, `or/0`). `<n>` disambiguates several claims of one kind from one node (a node with three `specimens` roles yields three `material` claims). Ids are stable as long as the file is not reordered; the tree keeps printed order, so reordering is a data change. |
+| `id` | `<source>:<path>:<kind>[:<n>]`. `<path>` is the node's position in its tree file as the loader computes it: the taxonomy or phylogeny index, then each step down (`children/2`, `synonyms/0`, `non/1`, `removed/0`, `parents/0`, `moved`, `corrected`, `substituted`, `lapsus`, `lapsusFor`, `or/0`). `<n>` disambiguates several claims of one kind from one node (a node with three `specimens` roles yields three `material` claims). Ids are stable as long as the file is not reordered; the tree keeps printed order, so reordering is a data change. |
 | `kind` | one of `usage`, `placement`, `acceptance`, `act`, `rejection`, `material`, `diagnosis`, `secondhand`, `editorial` |
 | `source` | the tree file's source key |
 | `path` | the node's position and pointer, `0/children/0/children/0`, the same string the id carries |
@@ -125,6 +125,11 @@ this name) and each `non` entry (the source rejects it) (B1). Fields added:
   entry's `parents` (a genus, or a genus and a subgenus).
 - `pars`, `tentative` copied; `ownName: true` when the entry has no name
   of its own.
+- `lapsusFor`: on an entry whose own name is a lapsus, the record the slip
+  was printed for (the entry's `lapsusFor` node). The entry is listed as
+  the source gives it, "Steganoblastus canadensis (in error for
+  ottawaensis) Whiteaves 1898", but it is not a synonym: the closure does
+  not follow it.
 
 ### `act`
 
@@ -161,6 +166,9 @@ is not a synonym, emits no `acceptance`, and does not occupy the name,
 which a later taxon may take without being a homonym. Its place under `lapsus` is its
 protologue, so the record needs no `new: true`; it carries one only when
 the slip also claimed the name as new, and then emits a `new` act.
+Elsewhere a lapsus record appears only as a `synonyms` or `non` entry
+carrying `lapsusFor`, where a later source lists the slip; the loader
+reports any other place, and a `lapsusFor` anywhere but such an entry.
 
 `corrected` and `substituted` imply the synonymy: the incorrect form and
 the replaced name are synonyms of the node's name, and the closure follows
