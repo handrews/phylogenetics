@@ -10,12 +10,19 @@ taxonomies:
       - taxon: gilberti_durham_caster_1963
         type: true
         new: true
-        specimens:
-          holotype: UCMP 37847
-          paratypes:
+        material:
+        - catalogNumbers:
+          - UCMP 37847
+          role: holotype
+        - catalogNumbers:
           - UCMP 37849
+          role: paratype
+        - catalogNumbers:
           - UCMP 37854
+          role: paratype
       - taxon: curtisi_durham_caster_1963
         new: true
-        specimens:
-          holotype: UCMP 37844
+        material:
+        - catalogNumbers:
+          - UCMP 37844
+          role: holotype

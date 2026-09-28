@@ -7,26 +7,28 @@ taxonomies:
     new: true
     pages:
     - [10, 11]
-    illustrations:
+    material:
+    - catalogNumbers:
+      - RVS [Plate 2, Figures 1–4]
+      context: near-kirn-nahe
+      role: holotype
+    figures:
     - plate: 2
       figures:
       - [1, 4]
-    occurrences:
-    - series: Lower Devonian
-      unit:
-      - Roofing Slate facies
-      - Hunsrück Slate
-      location:
-      - near Kirn (Nahe)
-      - Bundenbach
-      - Hunsrück Region
-      - Germany
-      fauna:
-      - Shallow-marine
-      specimens:
-        RVS:
-          holotypes:
-          - "[Plate 2, Figures 1–4]"
-      inferred:
-        stage: Emsian
-        paleocontinent: Laurussia
+    contexts:
+      near-kirn-nahe:
+        series: Lower Devonian
+        unit:
+        - Roofing Slate facies
+        - Hunsrück Slate
+        location:
+        - near Kirn (Nahe)
+        - Bundenbach
+        - Hunsrück Region
+        - Germany
+        fauna:
+        - Shallow-marine
+        inferred:
+          stage: Emsian
+          paleocontinent: Laurussia

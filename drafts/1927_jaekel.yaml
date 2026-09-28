@@ -124,38 +124,37 @@ taxonomies:
             1-3 der Taf. abgebildet ist." (Only one specimen is at hand,
             on which the genus and species are founded, and which is
             figured in Fig. 1-3 of the plate.)
-        specimens:
-          unknowntypes:
-          - "Riksmuseum, Stockholm (\"Orig. Riksmuseum. Stockholm,\" plate
-            caption p. 5): the sole specimen on which the genus and species
-            are founded (p. 1); no catalogue number or type-status word is
-            printed"
-        occurrences:
-        - unit: roter Leptaenakalk
-          location:
-          - Boda
-          - Dalarna
-          notes: |
-            Locality and horizon from the plate caption (p. 5): "roter
-            Leptaenakalk, Boda, Dalarna" (red Leptaena limestone). The
-            body text (p. 2) gives a vaguer, explicitly hedged locality
-            not used in the caption: "aus den roten eisenhaltigen
-            Kalkmergeln im südlichen Schweden, vermutlich aus der Gegend
-            von Boda, Dalarna" (from the red ferruginous limestone marls
-            in southern Sweden, presumably from the vicinity of Boda,
-            Dalarna) -- "Ein genaues Fundort war leider bei diesem Stück
-            nicht angegeben" (no precise locality was recorded for this
-            piece, p. 2). Age, stated separately (p. 5): "Geologische
-            Verbreitung im mittleren und vielleicht schon unteren
-            Ordovicium" (geological range: Middle, and perhaps already
-            Lower, Ordovician).
-        illustrations:
+        material:
+        - catalogNumbers:
+          - 'Riksmuseum, Stockholm ("Orig. Riksmuseum. Stockholm," plate caption p. 5): the sole specimen on which the genus and species are founded (p. 1); no catalogue number or type-status word is printed'
+        figures:
         - plate: 1
           figures: [1, 2, 3]
           notes: |
             "1 von oben, 2 von der einen, 3 von der anderen Seite. etwa
             10:1; 3 a natürl. Grösse" (1 from above, 2 from one side, 3
             from the other side; about 10:1; fig. 3a natural size) (p. 5).
+        contexts:
+          boda:
+            unit:
+            - roter Leptaenakalk
+            location:
+            - Boda
+            - Dalarna
+            notes: |
+              Locality and horizon from the plate caption (p. 5): "roter
+              Leptaenakalk, Boda, Dalarna" (red Leptaena limestone). The
+              body text (p. 2) gives a vaguer, explicitly hedged locality
+              not used in the caption: "aus den roten eisenhaltigen
+              Kalkmergeln im südlichen Schweden, vermutlich aus der Gegend
+              von Boda, Dalarna" (from the red ferruginous limestone marls
+              in southern Sweden, presumably from the vicinity of Boda,
+              Dalarna) -- "Ein genaues Fundort war leider bei diesem Stück
+              nicht angegeben" (no precise locality was recorded for this
+              piece, p. 2). Age, stated separately (p. 5): "Geologische
+              Verbreitung im mittleren und vielleicht schon unteren
+              Ordovicium" (geological range: Middle, and perhaps already
+              Lower, Ordovician).
       - taxon: corallum_jaekel_1918
         citedAs: "Cyathotheca corallum Jaekel sp."
         pages: 5
@@ -174,19 +173,10 @@ taxonomies:
             Palaeont. Zeitschr. III, p. 112). The running text still uses
             this original combination when citing Jaekel's own 1918
             figure.
-        specimens:
-          additional:
-          - Museum Berlin (plate caption, p. 5); cited comparative
-            material, not new here, refigured from Jaekel's 1918 work
-        occurrences:
-        - location:
-          - Petersburg
-          notes: |
-            Plate caption (p. 5): "unteres Ordovicium Gegend von
-            Petersburg" (Lower Ordovician, vicinity of [St.] Petersburg).
-            Comparative material already published by Jaekel in 1918, not
-            new here.
-        illustrations:
+        material:
+        - catalogNumbers:
+          - Museum Berlin (plate caption, p. 5); cited comparative material, not new here, refigured from Jaekel's 1918 work
+        figures:
         - plate: 1
           figures: [4, 5, 6]
           notes: |
@@ -195,6 +185,15 @@ taxonomies:
             5 theca from above; 6 lower attachment surface) (p. 5). OCR of
             the caption's genus name reads "Cyatholheca corallum JAEKEL
             sp."
+        contexts:
+          petersburg:
+            location:
+            - Petersburg
+            notes: |
+              Plate caption (p. 5): "unteres Ordovicium Gegend von
+              Petersburg" (Lower Ordovician, vicinity of [St.] Petersburg).
+              Comparative material already published by Jaekel in 1918, not
+              new here.
         notes: |
           The recombination from Cyathocystis to Cyathotheca is visible
           only by comparing this plate caption against the running text

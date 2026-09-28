@@ -54,13 +54,14 @@ taxonomies:
                 parents:
                 - taxon: rhenopyrgus-subgenus
                 - taxon: pyrgocystis
-              occurrences:
-              - unit:
-                - Hunsrück Slate
-                stage: Emsian
-                series: Lower Devonian
-                location:
-                - Germany
+              contexts:
+                germany:
+                  unit:
+                  - Hunsrück Slate
+                  stage: Emsian
+                  series: Lower Devonian
+                  location:
+                  - Germany
             - taxon: grayae_bather_1915
               synonyms:
               - parents:
@@ -89,102 +90,121 @@ taxonomies:
               - authority:
                   source: 2013_sumrall_heredia_rodríguez.c.m_mestre
                   pages: 773
-              occurrences:
-              - stage: Katian
-                series: Upper Ordovician
-                localSeries: Ardmillan
-                unit:
-                - Farden Member
-                - South Threave Formation
-                - Drummuck Group
-                location:
-                - Lady Burn Starfish Bed
-                - part of the Craighead inlier.
-                - Lady Burn
-                - near Girvan
-                - Scotland
-                - UK
-                specimens:
-                  holotypes:
-                    NHMUK:
-                    - E23470
-                  unspecified:
-                    NHMUK:
-                    - E23674
-                    - E29570
+              material:
+              - catalogNumbers:
+                - NHMUK E23470
+                context: lady-burn-starfish-bed
+                role: holotype
+              - catalogNumbers:
+                - NHMUK E23674
+                context: lady-burn-starfish-bed
+              - catalogNumbers:
+                - NHMUK E29570
+                context: lady-burn-starfish-bed
+              contexts:
+                lady-burn-starfish-bed:
+                  stage: Katian
+                  series: Upper Ordovician
+                  localSeries: Ardmillan
+                  unit:
+                  - Farden Member
+                  - South Threave Formation
+                  - Drummuck Group
+                  location:
+                  - Lady Burn Starfish Bed
+                  - part of the Craighead inlier.
+                  - Lady Burn
+                  - near Girvan
+                  - Scotland
+                  - UK
             - taxon: whitei_holloway_jell_1983
             - taxon: flos_klug_krüger_korn_rücklin_schemm-gregory_debaets_mapes_2008
             - taxon: piojoensis_sumrall_heredia_rodríguez.c.m_mestre_2013
             - taxon: viviani_ewin_martin.m_isotalo_zamora_2020
               pages:
               - [120, 122]
-              illustrations:
+              material:
+              - catalogNumbers:
+                - NHMUK EE16642
+                context: rock-pool-ledge
+                role: holotype
+              - catalogNumbers:
+                - - NHMUK EE15752
+                  - NHMUK EE15755
+                context: rock-pool-ledge
+                role: paratype
+              - catalogNumbers:
+                - MPEP 1126.1
+                context: rock-pool-ledge
+                role: paratype
+              - catalogNumbers:
+                - NHMUK EE15756
+                context: pavillon-river-section
+                role: paratype
+              - catalogNumbers:
+                - MPEP 1143.1
+                context: ctx-2
+              - catalogNumbers:
+                - EE 16642
+                role: holotype
+              figures:
               - figures:
                 - 2
                 - [4, 5]
+              contexts:
+                rock-pool-ledge:
+                  unit:
+                  - Cybèle Member
+                  - Jupiter Formation
+                  stage: Telychian
+                  location:
+                  - Rock Pool Ledge
+                  - Jupiter River Section
+                  - Anticosti Island
+                  - Québec
+                  - Canada
+                pavillon-river-section:
+                  unit:
+                  - Pavillon Member
+                  - Jupiter Formation
+                  stage: Telychian
+                  location:
+                  - Pavillon River Section
+                  - Anticosti Island
+                  - Québec
+                  - Canada
+                ctx-2:
+                  notes: No locality information given for this specimen
               new: true
-              occurrences:
-              - unit:
-                - Cybèle Member
-                - Jupiter Formation
-                stage: Telychian
-                location:
-                - Rock Pool Ledge
-                - Jupiter River Section
-                - Anticosti Island
-                - Québec
-                - Canada
-                specimens:
-                  holotypes:
-                    NHMUK:
-                    - EE16642
-                  paratypes:
-                    NHMUK:
-                    - [EE15752, EE15755]
-                    MPEP:
-                    - "1126.1"
-              - unit:
-                - Pavillon Member
-                - Jupiter Formation
-                stage: Telychian
-                location:
-                - Pavillon River Section
-                - Anticosti Island
-                - Québec
-                - Canada
-                specimens:
-                  paratypes:
-                    NHMUK:
-                    - EE15756
-              - notes: No locality information given for this specimen
-                specimens:
-                  unspecified:
-                    MPEP: "1143.1"
             - openTaxon: rhenopyrgus-sp-1_ewin_martin.m_isotalo_zamora_2020
-              illustrations:
+              material:
+              - catalogNumbers:
+                - E 62751
+                context: newlands-farm
+              - catalogNumbers:
+                - E 62752
+                context: newlands-farm
+              - catalogNumbers:
+                - E 62753
+                context: newlands-farm
+              figures:
               - figures:
                 - "3.3"
                 - "3.4"
-              occurrences:
-              - unit:
-                - Newlands Beds
-                - Newlands Farm Formation
-                - Newlands Subgroup
-                - Saugh Hill Group
-                series: Llandovery
-                # seriesModifier: middle
-                location:
-                - Newlands Farm
-                - Argyle
-                - Scotland
-                notes: |
-                  may extend into the Ardmillan group of the Upper Ordovician
-                specimens:
-                  unspecified:
-                    E:
-                    - "62751"
-                    - "62752"
-                    - "62753"
+              contexts:
+                newlands-farm:
+                  unit:
+                  - Newlands Beds
+                  - Newlands Farm Formation
+                  - Newlands Subgroup
+                  - Saugh Hill Group
+                  series: Llandovery
+                  location:
+                  - Newlands Farm
+                  - Argyle
+                  - Scotland
+                  notes: |
+                    may extend into the Ardmillan group of the Upper Ordovician
               synonyms:
               - taxon: procera_aurivillius_1892
                 parents:
@@ -200,23 +220,25 @@ taxonomies:
                   illustrations:
                   - figures: 1C
             - openTaxon: rhenopyrgus-sp-2_ewin_martin.m_isotalo_zamora_2020
-              illustrations:
+              material:
+              - catalogNumbers:
+                - EE 16254
+                context: girvan
+              figures:
               - figures:
                 - "3.5"
-              occurrences:
-              - unit: Craighead inlier
-                stage: Katian
-                localSeries: Ardmillan
-                location:
-                - ?Girvan
-                - Scotland
-                - UK
-                notes: |
-                  printed "'Ardmillan' [?Girvan], Scotland, UK, Ardmillan Series" (p. 123)
-                specimens:
-                  unspecified:
-                    EE:
-                    - 16254
+              contexts:
+                girvan:
+                  unit:
+                  - Craighead inlier
+                  stage: Katian
+                  localSeries: Ardmillan
+                  location:
+                  - ?Girvan
+                  - Scotland
+                  - UK
+                  notes: |
+                    printed "'Ardmillan' [?Girvan], Scotland, UK, Ardmillan Series" (p. 123)
             - openTaxon: rhenopyrgus-sp-3_ewin_martin.m_isotalo_zamora_2020
               synonyms:
               - openTaxon: pyrgocystis-sp_vizcaïno_lefebvre_1999
@@ -237,7 +259,18 @@ taxonomies:
                 "2013 Rhenopyrgidae Sumrall et al., p. 773" in synonym
                 list with no explanation; that page in the referenced
                 paper does not include this specimen.
-              illustrations:
+              material:
+              - catalogNumbers:
+                - UCBL-FSL 713316
+                context: sw-of-donnadieu
+              - catalogNumbers:
+                - UCBL-FSL 713312
+                context: la-croix-de-roquebrun
+              - catalogNumbers:
+                - - UCBL-FSL 713313
+                  - UCBL-FSL 713315
+                context: pont-sup-rieur
+              figures:
               - page: 121
                 figures:
                 - ["3.6", "3.7"]
@@ -245,52 +278,43 @@ taxonomies:
               - page: 121
                 figures: "3.8"
                 notes: beneath Saint-Chinian formation
-              occurrences:
-              - stage: Tremadocian
-                stageModifier: upper
-                series: Lower Ordovician
-                location:
-                - SW of Donnadieu
-                - Babeau-Bouldoux
-                - Hérault
-                - France
-                unit:
-                - Saint-Chinian Formation
-                biozone: E. filacovi
-                specimens:
-                  unspecified:
-                    UCBL-FSL:
-                    - 713316
-              - stage: Floian
-                stageModifier: middle
-                series: Lower Ordovician
-                location:
-                - la Croix de Roquebrun
-                - Saint-Nazaire-de-Ladarez
-                - Hérault
-                - France
-                unit:
-                - Foulon Formation
-                biozone: N. arenosus
-                specimens:
-                  unspecified:
-                    UCBL-FSL:
-                    - 713312
-              - stage: Floian
-                stageModifier: upper
-                series: Lower Ordovician
-                location:
-                - Pont supérieur
-                - Saint-Nazaire-de-Ladarez
-                - Hérault
-                - France
-                unit:
-                - Landeyran Formation
-                biozone: A. incisus
-                specimens:
-                  unspecified:
-                    UCBL-FSL:
-                    - [713313, 713315]
+              contexts:
+                sw-of-donnadieu:
+                  stage: Tremadocian
+                  stageModifier: upper
+                  series: Lower Ordovician
+                  location:
+                  - SW of Donnadieu
+                  - Babeau-Bouldoux
+                  - Hérault
+                  - France
+                  unit:
+                  - Saint-Chinian Formation
+                  biozone: E. filacovi
+                la-croix-de-roquebrun:
+                  stage: Floian
+                  stageModifier: middle
+                  series: Lower Ordovician
+                  location:
+                  - la Croix de Roquebrun
+                  - Saint-Nazaire-de-Ladarez
+                  - Hérault
+                  - France
+                  unit:
+                  - Foulon Formation
+                  biozone: N. arenosus
+                pont-sup-rieur:
+                  stage: Floian
+                  stageModifier: upper
+                  series: Lower Ordovician
+                  location:
+                  - Pont supérieur
+                  - Saint-Nazaire-de-Ladarez
+                  - Hérault
+                  - France
+                  unit:
+                  - Landeyran Formation
+                  biozone: A. incisus
             - openTaxon: rhenopyrgus-sp-4_ewin_martin.m_isotalo_zamora_2020
               pages: 118
               notes: Only mentioned briefly, no formal description.

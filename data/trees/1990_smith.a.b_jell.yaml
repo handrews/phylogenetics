@@ -26,6 +26,10 @@ taxonomies:
       - taxon: spinosa_smith.a.b_jell_1990
         type: true
         new: true
+        material:
+        - catalogNumbers:
+          - QMF 17944
+          role: holotype
   - taxon: edrioblastoida
     children:
     - taxon: astrocystitidae
@@ -41,6 +45,10 @@ taxonomies:
         - taxon: enubilatus_smith.a.b_jell_1990
           type: true
           new: true
+          material:
+          - catalogNumbers:
+            - QMF 17872
+            role: holotype
 phylogenies:
 - treeType: cladogram
   tree:

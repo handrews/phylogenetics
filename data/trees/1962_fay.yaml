@@ -13,9 +13,10 @@ taxonomies:
       editorial:
         inferred: [type]
         basis: Fay never prints "type species"; the genus is monotypic (p. 201)
-      specimens:
-        syntypes:
+      material:
+      - catalogNumbers:
         - Canadian Geological Survey 752
+        role: syntype
       notes: |
         Captioned "Holotype, 752, Canadian Geological Survey" (p. 201); the text
         says "It is labelled a syntype because another specimen, lent to Mr.

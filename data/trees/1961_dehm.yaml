@@ -6,63 +6,63 @@ taxonomies:
   children:
   - taxon: sardesoni_bather_1915
     type: true
-    occurrences:
-    - period: Ordovician
+    range:
+      period: Ordovician
       notes: Period given as "Lower Silurian (Ordovician)"
-      location:
+      regions:
       - North America
   - taxon: grayae_bather_1915
-    occurrences:
-    - period: Ordovician
+    range:
+      period: Ordovician
       notes: Period given as "Lower Silurian (Ordovician)"
-      location:
+      regions:
       - Scotland
   - taxon: volborthi_hecker_1939
-    occurrences:
-    - period: Ordovician
+    range:
+      period: Ordovician
       notes: Period given as "Lower Silurian (Ordovician)"
-      location:
+      regions:
       - Russia
   - taxon: gracilis_hecker_1939
-    occurrences:
-    - period: Ordovician
+    range:
+      period: Ordovician
       notes: Period given as "Lower Silurian (Ordovician)"
-      location:
+      regions:
       - Russia
   - taxon: pulkovi_hecker_1939
-    occurrences:
-    - period: Ordovician
+    range:
+      period: Ordovician
       notes: Period given as "Lower Silurian (Ordovician)"
-      location:
+      regions:
       - Russia
   - taxon: sulcata_aurivillius_1892
-    occurrences:
-    - localPeriod: Gotlandian
+    range:
+      localPeriod: Gotlandian
       notes: |
         Period given as "Upper Silurian (Gotlandian)", but unknown if this
         "Upper Silurian" is equivalent to the modern Silurian period, or
         to the actual modern Upper Silurian series.
-      location:
+      regions:
       - Gotland
       - Sweden
   - taxon: procera_aurivillius_1892
-    occurrences:
-    - localPeriod: Gotlandian
+    range:
+      localPeriod: Gotlandian
       notes: |
         Period given as "Upper Silurian (Gotlandian)", but unknown if this
         "Upper Silurian" is equivalent to the modern Silurian period, or
         to the actual modern Upper Silurian series.
-      location:
+      regions:
       - Gotland
       - Sweden
   - taxon: cylindrica_aurivillius_1892
-    occurrences:
-    - localPeriod: Gotlandian
+    range:
+      localPeriod: Gotlandian
       notes: |
         Period given as "Upper Silurian (Gotlandian)", but unknown if this
         "Upper Silurian" is equivalent to the modern Silurian period, or
         to the actual modern Upper Silurian series.
-      location:
+      regions:
       - Gotland
       - Sweden
   - taxon: octogona_richter.r_1930
@@ -71,14 +71,15 @@ taxonomies:
       pages: 294
       illustrations:
       - figures: 1h
-    occurrences:
-    - series: Lower Devonian
-      unit:
-      - greywacke slates
-      location:
-      - Bornich
-      - near Weisel on the Rhine
-      - Germany
+    contexts:
+      bornich:
+        series: Lower Devonian
+        unit:
+        - greywacke slates
+        location:
+        - Bornich
+        - near Weisel on the Rhine
+        - Germany
   - taxon: rhenopyrgus-subgenus
     new: true
     citedAs: Rhenopyrgus nov. subgen.
@@ -90,25 +91,17 @@ taxonomies:
     children:
     - taxon: coronaeformis_rievers_1961
       type: true
-      illustrations:
+      figures:
       - plate: 1
         figures:
         - [1, 4]
-      synonyms:
-      - authority:
-          source: 1961_rievers
-          illustrations:
-          - plate: 2
-            figures:
-            - [1, 4]
-        parents:
-        - taxon: pyrgocystis
-      occurrences:
-      - series: Lower Devonian
-        unit:
-        - Hunsrück Slates
-        location:
-        - Bundenbach
+      contexts:
+        bundenbach:
+          series: Lower Devonian
+          unit:
+          - Hunsrück Slates
+          location:
+          - Bundenbach
 # TODO: I'm not sure where the phylogeny came from?
 # phylogenies:
 # - taxon: pyrgocystis
@@ -128,3 +121,12 @@ taxonomies:
 #       rank: subgenus
 #       children:
 #       - taxon: coronaeformis_rievers_1961
+      synonyms:
+      - authority:
+          source: 1961_rievers
+          illustrations:
+          - plate: 2
+            figures:
+            - [1, 4]
+        parents:
+        - taxon: pyrgocystis

@@ -15,68 +15,73 @@ taxonomies:
     - taxon: hamiltonensis_vanuxem_1842
       new: true
       pages: 158
-      illustrations:
+      material:
+      - catalogNumbers:
+        - Page 306, Figure 80
+        context: upper-quarry
+        role: holotype
+      figures:
       - page: 306
         figures:
         - 80
-      occurrences:
-      - unit:
-        - Hamilton group
-        - New York System
-        location:
-        - upper quarry
-        - the hill back of the Seminary
-        - West-Hamilton village
-        - Madison County
-        - New York
-        - United States
-        specimens:
-          "":
-            holotypes:
-            - "Page 306, Figure 80"
-        notes: |
-          Six organisms on the slab, but only one complete.  Three
-          full-size, including the complete fossil, two small, and
-          one in between.  The small are in the angle between two
-          of the large, with the mid-sized adjacent to one large and
-          the third large ont he other side of the first two.
+      contexts:
+        upper-quarry:
+          unit:
+          - Hamilton group
+          - New York System
+          location:
+          - upper quarry
+          - the hill back of the Seminary
+          - West-Hamilton village
+          - Madison County
+          - New York
+          - United States
+          notes: |
+            Six organisms on the slab, but only one complete.  Three
+            full-size, including the complete fossil, two small, and
+            one in between.  The small are in the angle between two
+            of the large, with the mid-sized adjacent to one large and
+            the third large ont he other side of the first two.
   - taxon: nucleocrinus
     notes: It's possible that this came out before Conrad's own 1842 paper.
     children:
     - taxon: hallii_conrad.t.a_1842
       new: true # It's a little unclear how to handle this situation
       notes: No description or figures.
-      occurrences:
-      - unit:
-        - Hamilton Group
-        location:
-        - New York
+      contexts:
+        new-york:
+          unit:
+          - Hamilton Group
+          location:
+          - New York
   - taxon: pentacrinites
     children:
     - taxon: hamptonii_unknown
       pages: 64
-      illustrations:
+      figures:
       - page: 65
         textFigures: 9
         figures: 3
-      occurrences:
-      - unit:
-        - Pulaski shales
-        location:
-        - Oswego
-        - New York
+      contexts:
+        oswego:
+          unit:
+          - Pulaski shales
+          location:
+          - Oswego
+          - New York
   - taxon: lepocrinites
     children:
     - taxon: gebhardi_conrad.t.a_1840
       pages: 117
-      illustrations:
+      figures:
       - page: 117
         textFigures: 25
         figures: 4
-      occurrences:
-      - unit:
-        - between two Pentamerus galeatus beds
-        - Pentamerus Limestone
-        location:
-        - near Cherry-Valley, Sharon Springs, Cooperstown, and Warren
-        - New York
+      contexts:
+        near-cherry-valley-sharon-springs-cooperstown-and-warren:
+          unit:
+          - between two Pentamerus galeatus beds
+          - Pentamerus Limestone
+          location:
+          - near Cherry-Valley, Sharon Springs, Cooperstown, and Warren
+          - New York

@@ -18,14 +18,28 @@ taxonomies:
           - taxon: navicula_whitehouse_1941
             type: true
             new: true
-            specimens:
-              holotype: F. 5404
-              paratypes:
+            material:
+            - catalogNumbers:
+              - F. 5404
+              role: holotype
+            - catalogNumbers:
               - F. 5399
+              role: paratype
+            - catalogNumbers:
               - F. 5400
+              role: paratype
+            - catalogNumbers:
               - F. 5401
+              role: paratype
+            - catalogNumbers:
               - F. 5402
+              role: paratype
+            - catalogNumbers:
               - F. 5403
+              role: paratype
+            - catalogNumbers:
+              - UQF 5404
+              role: holotype
     - taxon: cycloidea
       new: true
       children:
@@ -38,20 +52,34 @@ taxonomies:
           - taxon: craticula_whitehouse_1941
             type: true
             new: true
-            specimens:
-              unknowntypes:
+            material:
+            - catalogNumbers:
               - F. 5409
+            - catalogNumbers:
               - F. 5410
+            - catalogNumbers:
               - F. 5411
+            - catalogNumbers:
               - F. 5412
+            - catalogNumbers:
               - F. 5413
+            - catalogNumbers:
               - F. 5414
+            - catalogNumbers:
               - F. 5415
+            - catalogNumbers:
               - F. 5416
+            - catalogNumbers:
               - F. 5417
+            - catalogNumbers:
               - F. 5418
+            - catalogNumbers:
               - F. 5419
+            - catalogNumbers:
               - F. 5420
+            - catalogNumbers:
+              - UQF 5409
+              role: holotype
   - taxon: homalozoa
     new: true
     children:

@@ -12,16 +12,17 @@ taxonomies:
         new: true
         pages:
         - [318, 320]
-        illustrations:
+        figures:
         - plate: XI
           figures: 5
-        occurrences:
-        - location:
-          - the falls of the Chaudière
-          - Ottawa River
-          - Lower Canada
-          - Canada
-          notes: Specimen from the plates.
+        contexts:
+          the-falls-of-the-chaudi-re:
+            location:
+            - the falls of the Chaudière
+            - Ottawa River
+            - Lower Canada
+            - Canada
+            notes: Specimen from the plates.
   - taxon: crinoidea-family
   - taxon: blastoidea-family
     authority:

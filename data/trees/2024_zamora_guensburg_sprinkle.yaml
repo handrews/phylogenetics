@@ -13,6 +13,7 @@ taxonomies:
         - taxon: spencensis_wen.r.q_babcock_peng.j_robison_2019
           moved:
             taxon: totiglobus
-          specimens:
-            paratypes:
+          material:
+          - catalogNumbers:
             - PE 93415
+            role: paratype

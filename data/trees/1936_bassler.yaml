@@ -12,8 +12,10 @@ taxonomies:
           type: true
         - taxon: magister_bassler_1936
           new: true
-          specimens:
-            holotype: USNM 90755
+          material:
+          - catalogNumbers:
+            - USNM 90755
+            role: holotype
       - taxon: stromatocystites
         children:
         - taxon: pentangularis_pompeckj_1896
@@ -24,8 +26,9 @@ taxonomies:
         - taxon: carteri_bassler_1936
           type: true
           new: true
-          specimens:
-            holotype: Collection New York State Museum
+          material:
+          - label: Collection New York State Museum
+            role: holotype
     - taxon: hemicystitidae
       new: true
       children:
@@ -40,8 +43,10 @@ taxonomies:
             - taxon: hemicystites
         - taxon: ulrichi_bassler_1936
           new: true
-          specimens:
-            holotype: USNM 42138
+          material:
+          - catalogNumbers:
+            - USNM 42138
+            role: holotype
       - taxon: cincinnatidiscus
         children:
         - taxon: hemicystites-subgenus
@@ -72,8 +77,10 @@ taxonomies:
           new: true
           auth: [bassler, Shideler]
           citedAs: 'n. sp. (Bassler and Shideler)'
-          specimens:
-            holotype: USNM S-3965
+          material:
+          - catalogNumbers:
+            - USNM S-3965
+            role: holotype
       - taxon: streptaster
         children:
         - taxon: agelacrinus-subgenus_streptaster
@@ -181,4 +188,4 @@ taxonomies:
     children:
     - taxon: cyclocystoididae
       children:
-        - taxon: cyclocystoides
+      - taxon: cyclocystoides

@@ -18,7 +18,7 @@ taxonomies:
       - taxon: sphaeronites
         children:
         - taxon: pomum_gyllenhaal_1772
-          illustrations:
+          figures:
           - plate: XXV
             figures:
             - 7
@@ -37,7 +37,7 @@ taxonomies:
               pages: 54
         - taxon: citrus_hisinger_1837
           new: true
-          illustrations:
+          figures:
           - plate: XXV
             figures:
             - [8a, 8d]
@@ -59,7 +59,7 @@ taxonomies:
               pages: 52
         - taxon: testudinarius_hisinger_1837
           new: true
-          illustrations:
+          figures:
           - plate: XXV
             figures:
             - [9a, 9b]

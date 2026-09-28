@@ -4203,6 +4203,7 @@ inprep_sprinkle_strimple:
   - bohatý
 2013_smith.a.b_zamora:
   title: Cambrian spiral-plated echinoderms from Gondwana reveal the earliest pentaradial body plan
+  repositoryAbbreviations: {E: NHMUK, EE: NHMUK}
   journal: procrsocb
   volume: 280
   articleNumber: 20131197
@@ -4711,6 +4712,7 @@ inprep_sprinkle_strimple:
     doi: 10.3140/bull.geosci.1730
 2020_ewin_martin.m_isotalo_zamora:
   title: New rhenopyrgid edrioasteroids (Echinodermata) and their implications for taxonomy, functional morphology, and paleoecology
+  repositoryAbbreviations: {E: NHMUK, EE: NHMUK}
   journal: jofpaleo
   volume: 94
   number: 1

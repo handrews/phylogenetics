@@ -10,28 +10,28 @@ taxonomies:
     - taxon: semiglobosa_pander_1830
       pages: 107
       new: true
-      illustrations:
+      figures:
       - plate: II
         figures:
         - 1
     - taxon: triangularis_pander_1830
       pages: 107
       new: true
-      illustrations:
+      figures:
       - plate: II
         figures:
         - 2
     - taxon: uncinata_pander_1830
       pages: 107
       new: true
-      illustrations:
+      figures:
       - plate: II
         figures:
         - 3
     - taxon: mitralis_pander_1830
       pages: 107
       new: true
-      illustrations:
+      figures:
       - plate: II
         figures:
         - 4a
@@ -42,7 +42,7 @@ taxonomies:
   - taxon: aurantium_gyllenhaal_1772
     new: true
     pages: 144
-    illustrations:
+    figures:
     - plate: II
       figures:
       - 21
@@ -67,21 +67,21 @@ taxonomies:
   - taxon: malum_pander_1830
     new: true
     pages: 145
-    illustrations:
+    figures:
     - plate: XXIX
       figures:
       - [1a, 1c]
   - taxon: oblonga_pander_1830
     new: true
     pages: 146
-    illustrations:
+    figures:
     - plate: II
       figures:
       - [22, 23]
   - taxon: angulosa_pander_1830
     new: true
     pages: 146
-    illustrations:
+    figures:
     - plate: II
       figures:
       - [27, 29]
@@ -91,7 +91,7 @@ taxonomies:
   - taxon: striata_pander_1830
     new: true
     pages: 147
-    illustrations:
+    figures:
     - plate: II
       figures:
       - [30, 32]
@@ -111,14 +111,14 @@ taxonomies:
   - taxon: laevis_pander_1830
     new: true
     pages: 147
-    illustrations:
+    figures:
     - plate: II
       figures:
       - [24, 26]
   - affTaxon: laevis_pander_1830
     pages:
     - [147, 148]
-    illustrations:
+    figures:
     - plate: II
       figures:
       - [33, 35]

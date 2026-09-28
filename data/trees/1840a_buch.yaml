@@ -20,7 +20,7 @@ taxonomies:
         other sources.
     children:
     - taxon: aurantium_gyllenhaal_1772
-      illustrations:
+      figures:
       - plate: I
         figures:
         - 14
@@ -40,7 +40,7 @@ taxonomies:
             - 3a
       - taxon: granatum_wahlenberg_1821
     - taxon: pomum_gyllenhaal_1772
-      illustrations:
+      figures:
       - plate: I
         figures:
         - [15, 16]
@@ -58,7 +58,7 @@ taxonomies:
       new: true
       pages:
       - [32, 33]
-      illustrations:
+      figures:
       - plate: I
         figures:
         - [1, 3]

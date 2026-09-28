@@ -11,13 +11,23 @@ taxonomies:
       - taxon: moroccoensis_smith.a.b_zamora_2013
         new: true
         type: true
-        specimens:
-          holotype: NHM UK EE15373
-          paratypes:
-          - [EE15374, EE15376]
+        material:
+        - catalogNumbers:
+          - NHM UK EE15373
+          role: holotype
+        - catalogNumbers:
+          - - EE15374
+            - EE15376
+          role: paratype
+        - catalogNumbers:
           - EE14847
+          role: paratype
+        - catalogNumbers:
           - EE14848
+          role: paratype
+        - catalogNumbers:
           - EE15329
+          role: paratype
 phylogenies:
 - treeType: diagram
   notes: Evolutionary tree of Cambrian echinoderms

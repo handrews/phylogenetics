@@ -10,14 +10,14 @@ taxonomies:
       - taxon: squamosus_billings_1854
         new: true
         pages: 251
-        illustrations:
+        figures:
         - page: 251
           figures:
           - [9, 12]
       - taxon: filitextus_billings_1854
         new: true
         pages: 252
-        illustrations:
+        figures:
         - page: 252
           figures:
           - 13
@@ -25,7 +25,7 @@ taxonomies:
       - taxon: robustus_billings_1854
         new: true
         pages: 252
-        illustrations:
+        figures:
         - page: 252
           figures:
           - 15
