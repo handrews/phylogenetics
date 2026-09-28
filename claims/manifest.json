@@ -2039,7 +2039,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "none",
      "material": "none",
      "newTaxa": "all",
@@ -2085,7 +2084,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "partly",
      "illustrations": "partly",
      "material": "partly",
      "newTaxa": "partly",
@@ -2108,13 +2106,11 @@
    },
    "claims": {
     "act": 3,
-    "diagnosis": 1,
     "material": 8,
     "placement": 8,
     "usage": 9
    },
    "derived": {
-    "diagnoses": 1,
     "illustrations": 3,
     "material": 1,
     "newTaxa": 3,
@@ -2419,7 +2415,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "partly",
      "illustrations": "none",
      "material": "none",
      "newTaxa": "all",
@@ -2453,12 +2448,10 @@
    "claims": {
     "acceptance": 18,
     "act": 17,
-    "diagnosis": 1,
     "placement": 33,
     "usage": 63
    },
    "derived": {
-    "diagnoses": 1,
     "newTaxa": 16,
     "skeleton": 96,
     "synonymy": 18
@@ -2473,7 +2466,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "partly",
      "material": "none",
      "newTaxa": "all",
@@ -2627,7 +2619,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "partly",
      "material": "none",
      "newTaxa": "all",
@@ -2677,7 +2668,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "na",
      "material": "none",
      "newTaxa": "all",
@@ -2819,7 +2809,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "partly",
      "material": "none",
      "newTaxa": "partly",
@@ -3364,7 +3353,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "partly",
      "material": "none",
      "newTaxa": "partly",
@@ -3631,7 +3619,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "none",
      "material": "none",
      "newTaxa": "partly",
@@ -4035,7 +4022,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "none",
      "material": "none",
      "newTaxa": "partly",
@@ -4081,7 +4067,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "none",
      "material": "partly",
      "newTaxa": "partly",
@@ -4262,7 +4247,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "partly",
      "material": "none",
      "newTaxa": "all",
@@ -4316,7 +4300,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "partly",
      "illustrations": "partly",
      "material": "all",
      "newTaxa": "all",
@@ -4344,13 +4327,11 @@
    },
    "claims": {
     "act": 1,
-    "diagnosis": 1,
     "material": 3,
     "placement": 1,
     "usage": 2
    },
    "derived": {
-    "diagnoses": 1,
     "illustrations": 1,
     "material": 1,
     "newTaxa": 1,
@@ -4373,7 +4354,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "none",
      "material": "partly",
      "newTaxa": "all",
@@ -4714,12 +4694,10 @@
    "claims": {
     "acceptance": 3,
     "act": 28,
-    "diagnosis": 1,
     "placement": 65,
     "usage": 69
    },
    "derived": {
-    "diagnoses": 1,
     "skeleton": 134,
     "synonymy": 3,
     "types": 28
@@ -5256,7 +5234,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "none",
      "material": "partly",
      "newTaxa": "all",
@@ -5691,7 +5668,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "partly",
      "illustrations": "none",
      "material": "none",
      "newTaxa": "all",
@@ -5716,12 +5692,10 @@
    "claims": {
     "acceptance": 23,
     "act": 44,
-    "diagnosis": 14,
     "placement": 83,
     "usage": 122
    },
    "derived": {
-    "diagnoses": 14,
     "newTaxa": 22,
     "skeleton": 205,
     "synonymy": 23,
@@ -5776,7 +5750,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "none",
      "material": "none",
      "newTaxa": "all",
@@ -6478,7 +6451,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "none",
      "material": "none",
      "newTaxa": "all",
@@ -6609,7 +6581,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "none",
      "material": "partly",
      "newTaxa": "all",
@@ -6666,7 +6637,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "none",
      "material": "none",
      "newTaxa": "na",
@@ -7067,12 +7037,10 @@
    },
    "claims": {
     "act": 3,
-    "diagnosis": 2,
     "placement": 4,
     "usage": 5
    },
    "derived": {
-    "diagnoses": 2,
     "newTaxa": 2,
     "skeleton": 9,
     "types": 1
@@ -7171,12 +7139,10 @@
    },
    "claims": {
     "act": 3,
-    "diagnosis": 3,
     "placement": 5,
     "usage": 6
    },
    "derived": {
-    "diagnoses": 3,
     "newTaxa": 1,
     "skeleton": 11,
     "types": 1
@@ -7258,7 +7224,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "none",
      "material": "none",
      "newTaxa": "all",
@@ -7568,12 +7533,10 @@
    "claims": {
     "acceptance": 1,
     "act": 17,
-    "diagnosis": 10,
     "placement": 36,
     "usage": 42
    },
    "derived": {
-    "diagnoses": 10,
     "newTaxa": 11,
     "skeleton": 78,
     "synonymy": 1,
@@ -7682,12 +7645,10 @@
    },
    "claims": {
     "act": 15,
-    "diagnosis": 9,
     "placement": 16,
     "usage": 20
    },
    "derived": {
-    "diagnoses": 9,
     "newTaxa": 11,
     "skeleton": 36,
     "types": 4
@@ -7748,12 +7709,10 @@
    },
    "claims": {
     "act": 7,
-    "diagnosis": 1,
     "placement": 9,
     "usage": 14
    },
    "derived": {
-    "diagnoses": 1,
     "newTaxa": 7,
     "skeleton": 23
    },
@@ -8008,12 +7967,10 @@
    },
    "claims": {
     "act": 3,
-    "diagnosis": 2,
     "placement": 2,
     "usage": 3
    },
    "derived": {
-    "diagnoses": 2,
     "newTaxa": 2,
     "skeleton": 5,
     "types": 1
@@ -8177,12 +8134,10 @@
    "claims": {
     "acceptance": 3,
     "act": 6,
-    "diagnosis": 4,
     "placement": 4,
     "usage": 8
    },
    "derived": {
-    "diagnoses": 4,
     "newTaxa": 3,
     "skeleton": 12,
     "synonymy": 3
@@ -8218,12 +8173,10 @@
    "claims": {
     "acceptance": 12,
     "act": 6,
-    "diagnosis": 4,
     "placement": 12,
     "usage": 28
    },
    "derived": {
-    "diagnoses": 4,
     "newTaxa": 2,
     "skeleton": 40,
     "synonymy": 12,
@@ -8259,12 +8212,10 @@
    "claims": {
     "acceptance": 2,
     "act": 7,
-    "diagnosis": 5,
     "placement": 10,
     "usage": 15
    },
    "derived": {
-    "diagnoses": 5,
     "newTaxa": 4,
     "skeleton": 25,
     "synonymy": 2,
@@ -8281,7 +8232,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "none",
      "material": "none",
      "newTaxa": "all",
@@ -8454,12 +8404,10 @@
    },
    "claims": {
     "act": 4,
-    "diagnosis": 2,
     "placement": 5,
     "usage": 6
    },
    "derived": {
-    "diagnoses": 2,
     "newTaxa": 2,
     "skeleton": 11,
     "types": 1
@@ -8633,12 +8581,10 @@
    "claims": {
     "acceptance": 1,
     "act": 5,
-    "diagnosis": 2,
     "placement": 5,
     "usage": 8
    },
    "derived": {
-    "diagnoses": 2,
     "newTaxa": 2,
     "skeleton": 13,
     "synonymy": 1,
@@ -8697,7 +8643,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "none",
      "material": "none",
      "newTaxa": "all",
@@ -8802,12 +8747,10 @@
    },
    "claims": {
     "act": 3,
-    "diagnosis": 1,
     "placement": 8,
     "usage": 9
    },
    "derived": {
-    "diagnoses": 1,
     "newTaxa": 2,
     "skeleton": 17,
     "types": 1
@@ -9012,7 +8955,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "none",
      "material": "partly",
      "newTaxa": "all",
@@ -9087,12 +9029,10 @@
    },
    "claims": {
     "act": 3,
-    "diagnosis": 3,
     "placement": 8,
     "usage": 9
    },
    "derived": {
-    "diagnoses": 3,
     "skeleton": 17,
     "types": 2
    },
@@ -9108,7 +9048,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "none",
      "material": "none",
      "newTaxa": "all",
@@ -9400,7 +9339,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "none",
      "material": "none",
      "newTaxa": "all",
@@ -9758,7 +9696,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "none",
      "material": "none",
      "newTaxa": "all",
@@ -10051,7 +9988,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "none",
      "material": "none",
      "newTaxa": "all",
@@ -10341,7 +10277,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "partly",
      "illustrations": "partly",
      "material": "all",
      "newTaxa": "all",
@@ -10374,13 +10309,11 @@
    "claims": {
     "acceptance": 11,
     "act": 4,
-    "diagnosis": 2,
     "material": 27,
     "placement": 16,
     "usage": 35
    },
    "derived": {
-    "diagnoses": 2,
     "illustrations": 5,
     "material": 12,
     "newTaxa": 1,
@@ -10490,7 +10423,6 @@
    },
    "audit": {
     "coverage": {
-     "diagnoses": "none",
      "illustrations": "none",
      "material": "all",
      "newTaxa": "all",
@@ -10561,12 +10493,10 @@
    },
    "claims": {
     "act": 1,
-    "diagnosis": 1,
     "placement": 15,
     "usage": 16
    },
    "derived": {
-    "diagnoses": 1,
     "newTaxa": 1,
     "skeleton": 31
    },

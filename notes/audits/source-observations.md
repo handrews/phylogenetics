@@ -56,7 +56,7 @@ years on one entry, the second presumably the actual issue date. A8 again.
 
 **Material (p. 48).** "Holotype NYSM 13289, Paratypes, NYSM 13263–13288,
 13290", with a locality to the quarter-section and collectors named, then a
-measurement per paratype (p. 49). A catalogue range plus a stray number is the
+measurement per paratype (p. 49). A catalog range plus a stray number is the
 D1 `ids` shape; the measurements table is D1 `measurements`.
 
 **Tentative combination in prose (p. 34).** "*Agelacrinites* (*sensu lato*)
@@ -1096,7 +1096,7 @@ four sources, `citation` claims when that kind lands.
 
 **Three paratypes and a shared number.** USGD 2308, 2313 and 2314 are
 paratypes in the Material paragraph (p. 515) and were missing from the
-list; three paratype letters share catalogue number 2309.
+list; three paratype letters share catalog number 2309.
 
 Source record: matches (vol. 11 part 4, pp. 513–525).
 
@@ -1117,7 +1117,7 @@ had a record or tree; records are added and drafts prepared in `drafts/`.
 species of cystideans from the Trenton limestone at Ottawa", in a Number
 whose wrapper says "January, 1897" but which the volume's own notice says
 was issued 12 June 1897; Bather 1914 calls the January date "obviously
-erroneous". Three specimens, no catalogue numbers and no type words.
+erroneous". Three specimens, no catalog numbers and no type words.
 
 **The replacement name (1898, pp. 395–396).** Whiteaves: "the writer has
 been informed by Mr. F. A. Bather … that Haeckel in 1896 separated
@@ -1352,7 +1352,7 @@ Printed page = PDF index − 9 (pp. 9–11); a posthumous manuscript (Rievers di
 
 **A two-sentence diagnosis captured only in part (pp. 10–11).** The printed Diagnose reads, in full: "Eine Pyrgocystis von 95 mm Größe mit einem geschuppten Turm..." (dimensions) followed by "Am oberen Ende trägt der Turm die kronenförmige Theka, von der sich, durch 5 Dreiecke gebildet, die Ambulacra abheben" (the crown and five-triangle ambulacral arrangement). The tree's `diagnosis` field stops after the first sentence; the second — diagnostically the more distinctive character — is omitted even though `pages: [[10, 11]]` already spans both pages.
 
-**A holotype identified only by a plate figure, in a private collection (p. 11).** "Holotyp (und einziges Stück): das in Taf. 2, Fig. 1—4 dargestellte Fossil, Sammlung Rievers, Enkirch (Mosel)" — there was never a museum accession number. The dataset's D1 mechanism ("a material entry may have no catalogue number... a `label` and its `illustrations`, and nothing else") is a direct fit, though the current node still uses the pre-D1 `specimens: {RVS: {holotypes: [...]}}` shape with the plate citation standing in for an `ids` value.
+**A holotype identified only by a plate figure, in a private collection (p. 11).** "Holotyp (und einziges Stück): das in Taf. 2, Fig. 1—4 dargestellte Fossil, Sammlung Rievers, Enkirch (Mosel)" — there was never a museum accession number. The dataset's D1 mechanism ("a material entry may have no catalog number... a `label` and its `illustrations`, and nothing else") is a direct fit, though the current node still uses the pre-D1 `specimens: {RVS: {holotypes: [...]}}` shape with the plate citation standing in for an `ids` value.
 
 Source record: title, journal, volume, `pages: [9, 11]`, `pubDate.year: 1961` and author all match the printed article completely.
 
@@ -2150,7 +2150,7 @@ classes into Monorchonia and Pentorchonia.
 **Two dates for one paper (pp. 1, 11).** The text is "Vorgetragen in der
 Sitzung der Medicinisch-Naturwissenschaftlichen Gesellschaft zu Jena am 13.
 December 1895" and signed "Jena, am 15. December 1895."; the offprint
-wrapper and the catalogue give 1896. The key-year rule takes the printing,
+wrapper and the catalog give 1896. The key-year rule takes the printing,
 which needs the Heft's issue date; if that is 1896 the key collides with the
 Festschrift paper and both become `1896a_haeckel`/`1896b_haeckel` (A7,
 A11). The reading date goes in `processDates.read` either way.

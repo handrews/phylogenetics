@@ -90,10 +90,10 @@ Eighteen lines, 1825–1966. The ones that matter for the model:
 | GSC 437 | "Illustrated Specimen of *L. dicksoni* by Grant (1881) and others"; the "Grant specimen" | a role the paper prints as a proper noun; a specimen with a nickname |
 | GSC 1414 | "Holotype of *Lepidoconia loriformis* (Raymond) (1915, p. 56)" | holotype of a name this source synonymizes; the type role belongs to the other name |
 | GSC 1412 | "Illustrated Specimen … by Raymond (1921, pl. 3, fig. 1)"; the "Fitzpatrick specimen" | |
-| ROM 161-t-a | "described by Raymond (1915, 1921) and by Wilson (1946) as 'GSC 1415'"; Wilson "erroneously considered the specimen to be the holotype" (p. 61) | one specimen under two catalogue numbers in two repositories over time; a published error about type status, corrected here |
+| ROM 161-t-a | "described by Raymond (1915, 1921) and by Wilson (1946) as 'GSC 1415'"; Wilson "erroneously considered the specimen to be the holotype" (p. 61) | one specimen under two catalog numbers in two repositories over time; a published error about type status, corrected here |
 | ROM 18848-A, ROM 18855 (A–C) | measured, figured | 18855 is three individuals under one number with letter suffixes |
 | YPM 28451 (old 2361) | "one of ten specimens labeled *Edrioaster*"; only specimen from outside Ottawa | renumbered; formerly misidentified in the collection |
-| the Bigsby specimen | "illustrated and briefly described by Sowerby (1825), mentioned by Forbes (1848), illustrated by Billings (1858), and illustrated and described in detail by Bather (1908)"; "not available for reexamination" (p. 63) | no catalogue number anywhere; identity carried entirely by four works' figures; the first edrioasteroid ever reported (p. 4) |
+| the Bigsby specimen | "illustrated and briefly described by Sowerby (1825), mentioned by Forbes (1848), illustrated by Billings (1858), and illustrated and described in detail by Bather (1908)"; "not available for reexamination" (p. 63) | no catalog number anywhere; identity carried entirely by four works' figures; the first edrioasteroid ever reported (p. 4) |
 | Jaekel 1899 specimen (Breslau); Ami 1905 specimen (Dickson collection) | "Three other representatives … have been reported" | reported, not examined; known only from other works |
 
 Each examined specimen carries text-figure and plate assignments (e.g. GSC
@@ -146,7 +146,7 @@ Recorded here so the roadmap can cite a real page for each:
   1415), be renumbered within a repository (YPM 28451, old 2361), be a fragment
   of a lost original (GSC 1407-B), or have no number at all (the Bigsby
   specimen). Material entries need `formerIds`, `fragmentOf` or a note, and
-  the ability to exist without a catalogue number.
+  the ability to exist without a catalog number.
 - A published statement can be about another work's error (Wilson's holotype
   claim), which is a claim this source makes about that source.
 - Role vocabulary is the author's: "Illustrated Specimen" here; "hypotype"

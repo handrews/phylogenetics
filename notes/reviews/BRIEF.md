@@ -16,7 +16,7 @@ opinions exactly as each publication printed them, with no normalisation.
   `provisional`, `questionable`, `quoted`, `pars`, `emended`, `tentative`,
   `modifier` (e.g. "nomen transl."), `bracket`, `auth`/`year`/`in`/`citedAs`
   (= attribution exactly as printed on that line), `pages`, `illustrations`,
-  `specimens`, `occurrences`, `diagnosis`, `notes` (free text: ALWAYS read),
+  `specimens`, `occurrences`, `notes` (free text: ALWAYS read),
   `editorial` (= the data editor's own inference or resolution, with `basis`).
 - data/taxa.yaml: identity records (name + authority). `altSpellingOf`,
   `altRankOf`, `vulgarSpellingOf` = derivative records that borrow authority.
@@ -40,9 +40,7 @@ sources capture less because the project's scope grew. So:
 
 1. **Coverage, one line per kind**: classification skeleton / new taxa / type
    species / synonymy lists / material / occurrences / illustrations /
-   diagnoses / phylogeny — each marked all, partly, or none. (The
-   `diagnosis` field is being retired, roadmap D10: for diagnoses report
-   only whether one is printed and on which page.) No item-level
+   phylogeny — each marked all, partly, or none. No item-level
    detail; at most one example per row. If nothing beyond the skeleton is
    captured, say so in one sentence.
 2. **Correctness of what IS captured**: check every node in the tree file

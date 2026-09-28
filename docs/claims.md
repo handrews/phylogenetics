@@ -21,14 +21,14 @@ Every claim carries:
 | field | value |
 |---|---|
 | `id` | `<source>:<path>:<kind>[:<n>]`. `<path>` is the node's position in its tree file as the loader computes it: the taxonomy or phylogeny index, then each step down (`children/2`, `synonyms/0`, `non/1`, `removed/0`, `parents/0`, `moved`, `corrected`, `substituted`, `lapsus`, `lapsusFor`, `or/0`). `<n>` disambiguates several claims of one kind from one node (a node with three `specimens` roles yields three `material` claims). Ids are stable as long as the file is not reordered; the tree keeps printed order, so reordering is a data change. |
-| `kind` | one of `usage`, `placement`, `acceptance`, `act`, `rejection`, `material`, `diagnosis`, `secondhand`, `editorial` |
+| `kind` | one of `usage`, `placement`, `acceptance`, `act`, `rejection`, `material`, `secondhand`, `editorial` |
 | `source` | the tree file's source key |
 | `path` | the node's position and pointer, `0/children/0/children/0`, the same string the id carries |
 | `tree` | `taxonomy`, or a phylogeny's `treeType`; a phylogeny's `notes` ride along as `treeNotes` |
 | `pages` | the node's `pages` as written. A node without `pages` takes the nearest ancestor's along the `children` axis only, and the claim then carries `pagesInherited: true`. Entries on any other axis never inherit. On a cited entry (a `synonyms` or `non` entry, or the earlier state of a name under `translated`, `corrected`, `substituted`, `moved` or `removed`) `pages` and `illustrations` locate the cited usage in the cited work, whether written flat or inside an `authority` block, so they appear as `citedPages` and `citedIllustrations` and the claim has no `pages` of its own. |
 | `subject` | the resolved taxon key the claim is about |
 | `printed` | the printed form on that line: `citedAs` verbatim, and `auth`, `year`, `in` as written (A1, A12). Absent `auth` means "as the record"; the claim says so with `printedAttribution: as-record`. |
-| `audit` | the source's `audit.state`; `coverageKind`, the coverage kind the claim counts under (`skeleton` for usage, rejection and a taxonomy placement, `phylogeny` for a placement in a phylogeny, `synonymy` for acceptance, `newTaxa`/`types` for the matching acts, `material`/`occurrences`/`illustrations` by material kind, `diagnoses`); and `coverage`, the declared value for that kind when the source declares one |
+| `audit` | the source's `audit.state`; `coverageKind`, the coverage kind the claim counts under (`skeleton` for usage, rejection and a taxonomy placement, `phylogeny` for a placement in a phylogeny, `synonymy` for acceptance, `newTaxa`/`types` for the matching acts, `material`/`occurrences`/`illustrations` by material kind); and `coverage`, the declared value for that kind when the source declares one |
 | `editorial` | the node's `editorial` block, copied through |
 | `inferred` | `true` when the editorial block says the editor supplied the field this claim comes from (`inferred: true`, or a list naming it). The claim is then the editor's, not the paper's, and the manifest does not count it |
 | `erroneous` | `true` when the editorial block's `corrections` touch the field this claim comes from. The claim stays the paper's and is counted; what the editor reads instead is in `corrected` |
@@ -208,15 +208,6 @@ the role word decides which level is which. The shape follows the YAML as
 it stands; when D1 migrates material, only the extractor's material
 adapter changes and these claims keep their fields.
 
-### `diagnosis`
-
-Emitted for a node's `diagnosis`, `text` verbatim. It is the one tree
-field with a coverage kind (`diagnoses`) and, without a claim, no way to
-be counted. The field is being retired (roadmap D10, decided 2026-09-27):
-diagnoses are outside the data's scope, which is who published what
-systematic information where, with locators. The claim kind and the
-coverage kind stay until the field is removed.
-
 ### `secondhand`
 
 A source's statement about what another source did, accurate or not: "P.
@@ -270,6 +261,9 @@ land unnoticed.
 - No inference from absence: a kind with no claims for a source means
   "not captured", and only the declared coverage can say whether the paper
   prints any.
+- No diagnoses (roadmap D10, done 2026-09-27): who published what
+  systematic information where, with locators, is the data's scope;
+  the text of a printed diagnosis is not.
 
 ## Reading the table
 

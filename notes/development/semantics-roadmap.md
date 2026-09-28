@@ -98,7 +98,7 @@ recorded as a synonym; see [Terminology updates](#terminology-updates-1966--2023
   later author is marked as an act is part of the D design and is not to
   be settled piecemeal.
 - Early works are authoritative by their date and inadequate by every later
-  standard: no catalogue number, sometimes no illustration, a name proposed in
+  standard: no catalog number, sometimes no illustration, a name proposed in
   a sentence. The model must carry such a source with the same fields as a
   modern one and simply leave most of them empty.
 - Consult `notes` before deciding what a value means. YAML comments carry no
@@ -944,7 +944,7 @@ them, in four different specimen shapes.
 - Occurrence-level `specimens` and `possibleSpecimens` (D3) become
   `occurrence` back-references from material entries, so a specimen is written
   once.
-- A material entry may have **no catalogue number**. Bell's "Bigsby specimen"
+- A material entry may have **no catalog number**. Bell's "Bigsby specimen"
   (1976, p. 63) is identified only by the four works that figured it; the
   entry then carries a `label` and its `illustrations`, and nothing else.
 - `formerIds` records renumbering ("YPM 28451 (old 2361)"; "ROM 161-t-a …
@@ -980,7 +980,7 @@ must still record as printed.
 | `kleptotype` | no | never used; drop |
 | (none) | — | material cited without a role; replaces `unknowntypes`, `unknown`, `unspecified`, `additional` |
 
-**Holotypes are singular by definition.** Two catalogue numbers for one holotype
+**Holotypes are singular by definition.** Two catalog numbers for one holotype
 are one specimen with two parts, written as two `ids` on one entry with
 `parts: [part, counterpart]`; the plural `holotypes` role goes away. Integrity
 check across all sources: a name has at most one holotype specimen, unless a
@@ -1026,15 +1026,15 @@ the identifying locator. Older works identify specimens by figure alone
 (Bell's Bigsby specimen), so the locator must be able to stand without a
 number.
 
-**D8. A diagnosis deferred to another node.** "Diagnosis.—Same as for
+**D8. A diagnosis deferred to another node (done 2026-09-27).** "Diagnosis.—Same as for
 species." (Sprinkle & Sumrall 2015 pp. 348, 351), "Diagnosis.—As for genus"
 (Holloway & Jell 1983 p. 1008), "The monotypic genus has the characteristics
 of the type species" (Bell & Sprinkle 1978 p. 247), "distinguished by the
 characters cited in the generic diagnosis below" (Holloway & Jell 1983
 p. 1002), "Same as for species by monotypy" (Zhao et al. 2010 p. 674). Six
-instances in one round. Record the printed phrase verbatim in `diagnosis`;
-the claim table recognises a deferral and does not count the node as
-lacking one. No new field.
+instances in one round. Moot: `diagnosis` was retired under D10 before this
+was built, so the deferral phrases were removed with the field rather than
+recorded.
 
 **D9. Printed type words that contradict each other.** Fay 1962 captions
 No. 752 "Holotype" (p. 201) and writes "It is labelled a syntype because
@@ -1053,14 +1053,14 @@ deprecation flag in the schema until migrated.
 
 ---
 
-**D10. Retire `diagnosis` (decided 2026-09-27, not yet done).** The scope
+**D10. Retire `diagnosis` (decided 2026-09-27, done 2026-09-27).** The scope
 rule excludes diagnoses and descriptions, so the field, its `diagnosis`
 claim kind and the `diagnoses` coverage kind go. D8's deferral phrases go
 with them. If a locator for the diagnosis is ever wanted, it is a page
 number, not text; the node's `pages` already points at the formal
-statement of the name, which is where a diagnosis is printed. Until the
-removal lands, drafts and reviews do not add to the field, and reviewers
-report a diagnosis only as present or absent on a page.
+statement of the name, which is where a diagnosis is printed. Done: the
+field, the claim kind and the coverage kind are removed from the data,
+schema, code, tests and docs.
 
 ## E. Stratigraphic time
 
@@ -1113,9 +1113,10 @@ one age and two regions, not to the occurrence. Each element of a range or
 location list may be written as `{value, tentative: true}` in place of the
 bare string, so the doubt stays where it was printed.
 
-**E7. Delete `geology.yaml`.** Every specimen it records is already on a tree
+**E7. Delete `geology.yaml` (done 2026-09-27).** Every specimen it records is already on a tree
 node. Its formation and member registry is an idea for later (F3), not a file to
-keep loading nothing from.
+keep loading nothing from. Done: the file is removed; nothing in `phylohist`
+or `scripts` ever loaded it.
 
 **E9. Stage qualifiers: stratigraphic and chronological words are one
 field.** Lower, middle and upper (the stratigraphic set) are equivalent to
@@ -1423,7 +1424,7 @@ Each has a home; none needs a new top-level construct.
 | citations by a volume's index numbers | "(31)", "(69)" (S229) | `citedAs`; resolve through that volume's list (A7) |
 | anything else | — | `notes`, on the node, and the audit state records that it was seen |
 
-The example sources are catalogued in
+The example sources are cataloged in
 [`source-observations.md`](source-observations.md).
 | a genus in parentheses meaning the original genus | "Carneyella (Agelacrinus) pileus" (Bassler 1935 pl. 1) | original combination via `parents` (B23) |
 | a genus in parentheses meaning joint authorship | "n. sp. (Bassler and Shideler)" (Bassler 1936 p. 8) | `auth` (B23) |

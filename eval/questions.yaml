@@ -375,26 +375,6 @@
   verified: data/trees/1994_guensburg_sprinkle.yaml has no `occurrences` field on the hintzei node or
     anywhere in the file; notes/audits/source-observations.md "1994_guensburg_sprinkle" section, "Not captured"
     paragraph (line ~925), matches sources.yaml audit.coverage.occurrences = none.
-- id: q015
-  class: uncaptured
-  question: What is the full printed diagnosis of Rhenopyrgus nov. subgen. in Dehm (1961)?
-  scope:
-    taxon: rhenopyrgus-subgenus
-    source: 1961_dehm
-  expected:
-    blocks:
-    - tool: gap
-      parameters: {source: 1961_dehm, kind: diagnoses}
-    shows:
-    - "The diagnoses printed in Dehm 1961 have not yet been entered"
-    answer: |
-      Not captured for Dehm (1961): the diagnosis printed there has not yet been entered. It reads "Pyrgocystis (mit turmförmiger … Theka …) mit folgenden Besonderheiten: Theka groß und schlank, oben kegelförmig erweitert …" and closes by fixing Pyrgocystis coronaeformis Rievers (1961) as the type species (p. 16); only that fixation is held.
-  evidence:
-    source: 1961_dehm
-    pages: 16
-  verified: 'data/trees/1961_dehm.yaml, the rhenopyrgus-subgenus node (keyed `taxon: rhenopyrgus`, `rank:
-    subgenus`) carries `new: true` but no `diagnosis` field; notes/reviews/review_1961_dehm.md sec. 1 and
-    3 quote the p.16 diagnosis in full and confirm coverage "diagnoses | none".'
 - id: q016
   class: uncaptured
   question: What illustrations does Fay (1962) print for Astrocystites ottawaensis?
@@ -415,32 +395,6 @@
   verified: data/trees/1962_fay.yaml has no `illustrations` field on the ottawaensis node or anywhere
     in the file; sources.yaml audit.coverage.illustrations for 1962_fay = none, matching notes/reviews/review_1962_fay.md
     sec. 1.
-- id: q017
-  class: uncaptured
-  question: What diagnosis does Rievers (1961) print for Pyrgocystis coronaeformis?
-  scope:
-    taxon: coronaeformis_rievers_1961
-    source: 1961_rievers
-  expected:
-    blocks:
-      anyOf:
-      - - tool: gap
-          parameters: {source: 1961_rievers, kind: diagnoses}
-      - - tool: statements
-          parameters: {record: coronaeformis_rievers_1961, source: 1961_rievers, kind: diagnosis}
-    shows:
-    - "Rievers 1961"
-    - diagnos
-    answer: |
-      Not captured for Rievers (1961) beyond the first sentence: the printed diagnosis has two sentences, and only the first, on overall dimensions, has been entered. The second reads "Am oberen Ende trägt der Turm die kronenförmige Theka, von der sich, durch 5 Dreiecke gebildet, die Ambulacra abheben" (pp. 10–11).
-  evidence:
-    source: 1961_rievers
-    pages:
-    - 10
-    - 11
-  verified: data/trees/1961_rievers.yaml, taxonomies/0/children/0(coronaeformis_rievers_1961)/diagnosis
-    ends after the first sentence; notes/reviews/review_1961_rievers.md sec. 2-3 quotes both printed sentences
-    and marks coverage "diagnoses | partly".
 - id: q018
   class: uncaptured
   question: Whose holotype does Briggs et al. (2017) cite for Heropyrgus disterminus, and where is it

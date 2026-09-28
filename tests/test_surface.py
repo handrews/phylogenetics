@@ -94,7 +94,7 @@ def test_years_through_call_filter_as_a_tuple_does():
     ('history', {'record': 'rhenopyrgidae', 'years': [1990, 2020]}),
     ('synonymy', {'record': 'grayae_bather_1915'}),
     ('statements', {'record': 'rhenopyrgidae', 'source': 'Dehm 1961'}),
-    ('gap', {'source': 'Dehm 1961', 'kind': 'diagnoses'}),
+    ('gap', {'source': 'Dehm 1961', 'kind': 'illustrations'}),
     ('printed_forms', {'record': 'edrioblastoidina'}),
   ],
 )

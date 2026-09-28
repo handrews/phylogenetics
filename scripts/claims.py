@@ -61,7 +61,6 @@ _KIND_SOURCES = {
   'material': '`specimens` (on a node or inside an occurrence)',
   'occurrences': '`occurrences`',
   'illustrations': '`illustrations` on a node (not on a synonymy line)',
-  'diagnoses': '`diagnosis`',
   'phylogeny': 'children in a phylogeny',
 }
 

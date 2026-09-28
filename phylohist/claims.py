@@ -22,7 +22,6 @@ KINDS = (
   'act',
   'rejection',
   'material',
-  'diagnosis',
   'secondhand',
   'editorial',
 )
@@ -37,7 +36,6 @@ COVERAGE_KINDS = (
   'material',
   'occurrences',
   'illustrations',
-  'diagnoses',
   'phylogeny',
 )
 
@@ -198,8 +196,6 @@ def _coverage_kind(claim):
       'occurrence': 'occurrences',
       'illustration': 'illustrations',
     }[claim['materialKind']]
-  if kind == 'diagnosis':
-    return 'diagnoses'
   return None
 
 
@@ -424,11 +420,6 @@ class _NodeClaims:
       claim['materialKind'] = 'illustration'
       claim['illustration'] = illustration
       self._emit(claim, 'illustrations')
-
-    if 'diagnosis' in data:
-      claim = self._base('diagnosis')
-      claim['text'] = data['diagnosis']
-      self._emit(claim, 'diagnosis')
 
     if 'editorial' in data:
       claim = self._base('editorial')

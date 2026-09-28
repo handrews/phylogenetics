@@ -15,6 +15,9 @@ is the vocabulary their expected answers are written in.
 | trajectory | several sources treat the same question over time | the measured present, then the history, then the dissent; no verdict | the name's history, the sources holding a position, the matrix, or the chains |
 | absent | nothing in the corpus mentions it | "no source in the corpus mentions <x>"; no answer from general knowledge | the gap block for the name or the paper |
 
+q015 and q017 were retired with the `diagnosis` field on 2026-09-27 (roadmap
+D10: diagnoses are out of scope); their ids are not reused.
+
 An expected answer is written as the blocks it is made of, each a tool
 and the parameters that matter, with alternatives under `anyOf` where
 two compositions are both right, and the strings the rendered answer

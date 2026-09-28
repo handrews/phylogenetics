@@ -129,14 +129,6 @@ taxonomies:
         - openTaxon: asteriadae-gen-sp_sowerby.g.b_1825
       - taxon: buchianus_forbes_1848
         new: true
-        diagnosis: |
-          Body hemisphæric, slightly depressed above, with a concave base,
-          the margins of which are rounded. The mouth appears to have been
-          in the centre of the summit, and from it radiate deep canals or
-          grooves, five in number, regularly bordered by close parallel ridges
-          and sulcations.  These canals ( in which the arms are lodged) are
-          each and all curved 
-
   - taxon: crinoideae-order
     synonyms:
     - taxon: crinoidea-order
