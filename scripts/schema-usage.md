@@ -38,9 +38,6 @@ even when its parent is also unreached, so read parents first.
 | `person` | `phylogeny#/$defs/person/properties/suffix` |
 | `publication` | `phylogeny#/$defs/publication/properties/type` |
 | `range` | `phylogeny#/$defs/range`<br>`phylogeny#/$defs/range/allOf/0`<br>`phylogeny#/$defs/range/allOf/1`<br>`phylogeny#/$defs/range/properties/asPrinted`<br>`phylogeny#/$defs/range/properties/inferred`<br>`phylogeny#/$defs/range/properties/notes`<br>`phylogeny#/$defs/range/properties/regions`<br>`phylogeny#/$defs/range/properties/regions/items`<br>`phylogeny#/$defs/range/properties/regions/items/oneOf/0`<br>`phylogeny#/$defs/range/properties/regions/items/oneOf/1`<br>`phylogeny#/$defs/range/properties/regions/items/oneOf/1/properties/tentative`<br>`phylogeny#/$defs/range/properties/regions/items/oneOf/1/properties/value` |
-| `repositories` | `phylogeny#/$defs/repositories`<br>`phylogeny#/$defs/repositories/additionalProperties`<br>`phylogeny#/$defs/repositories/additionalProperties/properties/formerly`<br>`phylogeny#/$defs/repositories/additionalProperties/properties/formerly/items`<br>`phylogeny#/$defs/repositories/additionalProperties/properties/kind`<br>`phylogeny#/$defs/repositories/additionalProperties/properties/name`<br>`phylogeny#/$defs/repositories/additionalProperties/properties/notes`<br>`phylogeny#/$defs/repositories/additionalProperties/properties/place`<br>`phylogeny#/$defs/repositories/propertyNames` |
-| `role` | `phylogeny#/$defs/role` |
-| `roles` | `phylogeny#/$defs/roles`<br>`phylogeny#/$defs/roles/properties/printedWords`<br>`phylogeny#/$defs/roles/properties/printedWords/additionalProperties`<br>`phylogeny#/$defs/roles/properties/printedWords/additionalProperties/properties/era`<br>`phylogeny#/$defs/roles/properties/printedWords/additionalProperties/properties/notes`<br>`phylogeny#/$defs/roles/properties/printedWords/additionalProperties/properties/role`<br>`phylogeny#/$defs/roles/properties/printedWords/additionalProperties/properties/role/oneOf/0`<br>`phylogeny#/$defs/roles/properties/printedWords/additionalProperties/properties/role/oneOf/1`<br>`phylogeny#/$defs/roles/properties/roles`<br>`phylogeny#/$defs/roles/properties/roles/additionalProperties`<br>`phylogeny#/$defs/roles/properties/roles/additionalProperties/properties/article`<br>`phylogeny#/$defs/roles/properties/roles/additionalProperties/properties/meaning`<br>`phylogeny#/$defs/roles/properties/roles/additionalProperties/properties/notes`<br>`phylogeny#/$defs/roles/properties/roles/additionalProperties/properties/regulated`<br>`phylogeny#/$defs/roles/properties/roles/propertyNames` |
 | `seriesRange` | `phylogeny#/$defs/seriesRange`<br>`phylogeny#/$defs/seriesRange/items` |
 | `specimen` | `phylogeny#/$defs/specimen/oneOf/1`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/id`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/illustrations`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/illustrations/items`<br>`phylogeny#/$defs/specimen/oneOf/1/properties/repository` |
 | `specimens` | `phylogeny#/$defs/specimens/properties/allotype`<br>`phylogeny#/$defs/specimens/properties/neotype`<br>`phylogeny#/$defs/specimens/properties/repository` |
@@ -320,6 +317,30 @@ property.
 | `removed` | 1 | 0.0% |
 | `substituted` | 1 | 0.0% |
 
+### `repositories` -- 1 instances in `data/`
+
+| property | data | data % |
+|---|---|---|
+| `/additionalProperties.kind` | 44 | 100.0% |
+| `/additionalProperties.name` | 44 | 100.0% |
+| `/additionalProperties.place` | 34 | 77.3% |
+| `/additionalProperties.notes` | 23 | 52.3% |
+| `/additionalProperties.formerly` | 5 | 11.4% |
+
+### `roles` -- 1 instances in `data/`
+
+| property | data | data % |
+|---|---|---|
+| `printedWords/additionalProperties.role` | 22 | 100.0% |
+| `roles/additionalProperties.meaning` | 9 | 100.0% |
+| `roles/additionalProperties.regulated` | 9 | 100.0% |
+| `printedWords/additionalProperties.notes` | 6 | 27.3% |
+| `roles/additionalProperties.article` | 6 | 66.7% |
+| `roles/additionalProperties.notes` | 4 | 44.4% |
+| `printedWords/additionalProperties.era` | 3 | 13.6% |
+| `printedWords` | 1 | 100.0% |
+| `roles` | 1 | 100.0% |
+
 ### `specimens` -- 91 instances in `data/`
 
 | property | data | data % |
@@ -524,15 +545,29 @@ property.
 
 ### `phylogeny#/$defs/repositories/additionalProperties/properties/kind`
 
-0 of 3 members used, 0 occurrences.
+3 of 3 members used, 44 occurrences.
 
-**Never used (3):** `'institution'`, `'person'`, `'locality'`
+| value | count |
+|---|---|
+| `'institution'` | 41 |
+| `'locality'` | 2 |
+| `'person'` | 1 |
 
 ### `phylogeny#/$defs/role`
 
-0 of 9 members used, 0 occurrences.
+9 of 9 members used, 26 occurrences.
 
-**Never used (9):** `'holotype'`, `'paratype'`, `'syntype'`, `'lectotype'`, `'paralectotype'`, `'neotype'`, `'topotype'`, `'hypotype'`, `'plesiotype'`
+| value | count |
+|---|---|
+| `'syntype'` | 5 |
+| `'holotype'` | 3 |
+| `'plesiotype'` | 3 |
+| `'hypotype'` | 3 |
+| `'topotype'` | 3 |
+| `'paratype'` | 3 |
+| `'neotype'` | 2 |
+| `'paralectotype'` | 2 |
+| `'lectotype'` | 2 |
 
 ### `phylogeny#/$defs/series`
 
