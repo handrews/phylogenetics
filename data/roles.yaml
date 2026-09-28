@@ -1,0 +1,97 @@
+# The type roles the data maps a printed word to, and the printed words.
+# A material entry's `role` is one of the keys under `roles`; the word the
+# source printed goes in `roleAsPrinted` when it differs. `regulated` says
+# whether the Code (ICZN, 4th ed.) governs the role; `article` names where.
+roles:
+  holotype:
+    meaning: >
+      The single specimen fixed as the name-bearing type in the original
+      publication, or the only specimen of the type series.
+    regulated: true
+    article: "73.1"
+  paratype:
+    meaning: >
+      Any other specimen of the type series cited in the original
+      publication once a holotype is fixed.
+    regulated: true
+    article: "72.4.5"
+    notes: The Code regulates the type series; the word itself is a recommendation (73D).
+  syntype:
+    meaning: >
+      Each specimen of a type series from which no holotype was fixed;
+      together they bear the name.
+    regulated: true
+    article: "73.2"
+  lectotype:
+    meaning: A syntype later designated as the single name-bearing type.
+    regulated: true
+    article: "74"
+  paralectotype:
+    meaning: A remaining syntype after a lectotype has been designated.
+    regulated: true
+    article: "73F"
+    notes: Recommendation 73F; the word carries no name-bearing status.
+  neotype:
+    meaning: >
+      A specimen designated as name-bearing type when the original type
+      material is believed lost or destroyed.
+    regulated: true
+    article: "75"
+  topotype:
+    meaning: A specimen from the type locality, cited without name-bearing status.
+    regulated: false
+  hypotype:
+    meaning: >
+      A specimen figured or described in a later work to extend or emend
+      the concept of the species; no name-bearing status.
+    regulated: false
+    notes: North American usage of the 1900s to 1960s (Durham 1966).
+  plesiotype:
+    meaning: The same as hypotype under an older name.
+    regulated: false
+    notes: Older North American usage (Bassler 1935, Sprinkle 1973).
+
+# Words the literature prints, and the role each maps to. `none` means the
+# word confers no role in the data: the entry is written without `role`
+# and the word is kept in `roleAsPrinted`.
+printedWords:
+  holotype: {role: holotype}
+  paratype: {role: paratype}
+  paratypes: {role: paratype}
+  syntype: {role: syntype}
+  syntypes: {role: syntype}
+  lectotype: {role: lectotype}
+  paralectotype: {role: paralectotype}
+  neotype: {role: neotype}
+  topotype: {role: topotype}
+  topotypes: {role: topotype}
+  hypotype: {role: hypotype}
+  hypotypes: {role: hypotype}
+  plesiotype: {role: plesiotype}
+  plesiotypes: {role: plesiotype}
+  cotype:
+    role: syntype
+    era: before 1961
+    notes: >
+      Mostly a syntype; some authors meant a paratype after fixing a
+      holotype. Map case by case from what the source does with it.
+  cotypes:
+    role: syntype
+    era: before 1961
+    notes: As cotype.
+  type:
+    role: holotype
+    notes: >
+      "The type" or "type specimen" is a holotype only on a protologue that
+      cites one specimen; with several specimens and no holotype fixed it is
+      a syntype.
+  chirotype:
+    role: none
+    era: nineteenth century
+    notes: A specimen typified only in manuscript or on a label; no status under the Code.
+  allotype:
+    role: none
+    notes: A paratype of the opposite sex; not applicable to this material.
+  figured specimen: {role: none}
+  illustrated specimen: {role: none}
+  "Orig.": {role: none, notes: The original of a cited figure (German usage).}
