@@ -120,8 +120,8 @@ def test_source_subcommand_and_citations(capsys):
   assert code == 0 and out == '(no source in the corpus is that paper)'
   assert cli.main(['gap', 'Lamarck 1816', 'material']) == 2
   assert '1816a_lamarck, 1816b_lamarck' in capsys.readouterr().err
-  _, by_cite = run(capsys, 'gap', 'Dehm 1961', 'diagnoses')
-  _, by_key = run(capsys, 'gap', '1961_dehm', 'diagnoses')
+  _, by_cite = run(capsys, 'gap', 'Dehm 1961', 'illustrations')
+  _, by_key = run(capsys, 'gap', '1961_dehm', 'illustrations')
   assert by_cite == by_key
 
 

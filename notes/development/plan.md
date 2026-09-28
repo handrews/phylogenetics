@@ -147,7 +147,7 @@ interleaved)
   2026-09-11: `eval/system-prompt.md`, `scripts/eval_run.py`,
   `scripts/eval_grade.py`; see `eval/README.md`, "Running the eval".)
 - Run the eval, keep the failures, and write up the failure modes with the
-  reading rounds' catalogue (OCR errors, misattribution, placement slips,
+  reading rounds' catalog (OCR errors, misattribution, placement slips,
   normalisation of printed forms, gap-filling). That write-up is the
   demonstration (M3c, done 2026-09-11: `eval/findings/prose-eval-writeup.md`, on the
   first Sonnet 5 run; its closing list is the order of the next fixes).
@@ -162,7 +162,7 @@ framing: the model is a planner, execution and assembly are code)
 - Second run (done 2026-09-12: `eval/findings/blocks-eval-writeups.md`, on
   `eval/runs/2026-09-12-claude-sonnet-5.*`): the 49 questions through
   the block tools, Sonnet 5 composing, Opus 5 judging the headers; the
-  write-up catalogues the composition shapes per class.
+  write-up catalogs the composition shapes per class.
 - The eval graded by shapes (2026-09-14): each expected answer is the
   blocks it is made of, tool and parameters, with alternatives, and the
   strings the rendered answer shows; the claim lists are gone. That is

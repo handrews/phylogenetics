@@ -11,12 +11,6 @@ taxonomies:
     - plate: 2
       figures:
       - [1, 4]
-    diagnosis: |
-      A *Pyrgocystis* specimen measuring 95 mm in overall length,
-      featuring a scaly column (stem) approximately 13 mm in diameter,
-      which transitions at its lower end into a rounded, sac-like
-      structure measuring 27 mm in height and approximately 17 mm
-      in diameter.
     occurrences:
     - series: Lower Devonian
       unit:

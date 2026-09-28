@@ -30,7 +30,6 @@ _COVERAGE_OF_KIND = {
   'occurrences': 'occurrences',
   'illustrations': 'illustrations',
   'specimens': 'material',
-  'diagnosis': 'diagnoses',
   'acceptance': 'synonymy',
   'usage': 'skeleton',
   'placement': 'skeleton',

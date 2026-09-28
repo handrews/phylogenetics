@@ -292,12 +292,6 @@ def test_statements_in_words(store):
   )
   assert gap['type'] == 'statement' and gap['parameters']['kind'] == 'material'
   assert gap['parameters']['source'] == '1983_holloway_jell'
-  assert store.statements('rhenopyrgus-subgenus', source='1961_dehm', kind='diagnosis')[
-    'rendered'
-  ] == (
-    'Nothing about Pyrgocystis (Rhenopyrgus) Dehm 1961 is entered from Dehm 1961. '
-    'The diagnoses printed in Dehm 1961 have not yet been entered (none of them is entered so far).'
-  )
   # No kind asked: every kind of the source not fully entered is named,
   # since the record's statements may lie in any of them.
   whole = store.statements('octogona_richter.r_1930', source='Holloway & Jell 1983', style='json')
@@ -306,16 +300,12 @@ def test_statements_in_words(store):
     'material',
     'occurrences',
     'illustrations',
-    'diagnoses',
   ]
   assert store.statements('octogona_richter.r_1930', source='Holloway & Jell 1983')['rendered'] == (
     'Nothing about Pyrgocystis octogona Richter 1930 is entered from Holloway & Jell 1983. '
     'The classification printed in Holloway & Jell 1983 is entered in full. '
-    'Its synonymy is entered in part; its material, occurrences, illustrations and diagnoses '
+    'Its synonymy is entered in part; its material, occurrences and illustrations '
     'have not yet been entered.'
-  )
-  assert store.statements('whitei_holloway_jell_1983', kind='diagnosis')['rendered'].endswith(
-    '(none entered from any source)'
   )
   lines = store.statements('Rhenopyrgus viviani', kind='material')['rendered'].splitlines()
   assert lines[0] == 'Statements about Rhenopyrgus viviani Ewin et al. 2020'

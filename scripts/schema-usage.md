@@ -180,7 +180,6 @@ property.
 |---|---|---|
 | `taxon` | 5780 | 90.6% |
 | `openTaxon` | 219 | 3.4% |
-| `diagnosis` | 69 | 1.1% |
 | `citedAs` | 52 | 0.8% |
 | `affTaxon` | 16 | 0.3% |
 | `cfTaxon` | 15 | 0.2% |
@@ -362,23 +361,22 @@ property.
 
 ### `phylogeny#/$defs/article/properties/audit/properties/coverage/additionalProperties`
 
-4 of 4 members used, 270 occurrences.
+4 of 4 members used, 240 occurrences.
 
 | value | count |
 |---|---|
-| `'none'` | 100 |
+| `'none'` | 75 |
 | `'all'` | 70 |
-| `'partly'` | 55 |
+| `'partly'` | 50 |
 | `'na'` | 45 |
 
 ### `phylogeny#/$defs/article/properties/audit/properties/coverage/propertyNames`
 
-9 of 9 members used, 270 occurrences.
+8 of 8 members used, 240 occurrences.
 
 | value | count |
 |---|---|
 | `'phylogeny'` | 30 |
-| `'diagnoses'` | 30 |
 | `'illustrations'` | 30 |
 | `'occurrences'` | 30 |
 | `'material'` | 30 |
@@ -562,7 +560,6 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/citationNumber` | integer/string | intx703, strx185 | `IX`, `VIII`, `V`, `b` | - |
 | `phylogeny#/$defs/cladisticFields/properties/matrix/items` | integer/string | intx139, strx5 | `?` | - |
 | `phylogeny#/$defs/editorialObject/properties/inferred` | boolean/array | listx3, boolx3 | - | - |
-| `phylogeny#/$defs/identificationFields/properties/diagnosis` | string/null | strx68, nullx1 | `A cast of it shows a con...`, `Body hemisphæric, slight...`, `A *Pyrgocystis* specimen...`, `Mouth surrounded and cov...` | - |
 | `phylogeny#/$defs/person/properties/death` | integer/null | intx80, nullx1 | - | - |
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
 | `phylogeny#/$defs/specimens/additionalProperties/items` | string/array | strx521, listx4 | `an imperfect specimen le...`, `second specimen collecte...`, `first specimen collected...`, `C -- remains in the poss...` | - |

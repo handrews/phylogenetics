@@ -680,7 +680,6 @@
       material: none
       occurrences: none
       illustrations: none
-      diagnoses: none
       phylogeny: na
     notes: Reviewed against the paper 2026-09-10; see docs/reviews/review_1842_conrad.t.a.md
 1842_vanuxem:
@@ -702,7 +701,6 @@
       material: partly
       occurrences: partly
       illustrations: partly
-      diagnoses: partly
       phylogeny: na
     notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1842_vanuxem.md
 1842_volborth:
@@ -843,7 +841,6 @@
       material: none
       occurrences: none
       illustrations: none
-      diagnoses: partly
       phylogeny: none
     notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1848b_forbes.md
 1848_leuckart:
@@ -869,7 +866,6 @@
       material: none
       occurrences: none
       illustrations: partly
-      diagnoses: none
       phylogeny: na
     notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1852_hall.md
 1854a_billings:
@@ -924,7 +920,6 @@
       material: none
       occurrences: none
       illustrations: partly
-      diagnoses: none
       phylogeny: na
     notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1854c_billings.md
 1854_müller.j.p:
@@ -955,7 +950,6 @@
       material: none
       occurrences: none
       illustrations: na
-      diagnoses: none
       phylogeny: na
     notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1857_billings.md
 1858a_billings:
@@ -994,7 +988,6 @@
       material: none
       occurrences: none
       illustrations: partly
-      diagnoses: none
       phylogeny: na
     notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1858b_billings.md
 1858_salter_billings:
@@ -1350,7 +1343,6 @@
       material: none
       occurrences: none
       illustrations: partly
-      diagnoses: none
       phylogeny: na
     notes: Reviewed against the paper 2026-09-10; see docs/reviews/review_1896_pompeckj.md
 1897_whiteaves:
@@ -1464,7 +1456,6 @@
       material: none
       occurrences: none
       illustrations: none
-      diagnoses: none
       phylogeny: na
     notes: Reviewed against the paper 2026-09-10; see docs/reviews/review_1900_bather.md
 1908_bather:
@@ -1695,7 +1686,6 @@
       material: none
       occurrences: none
       illustrations: none
-      diagnoses: none
       phylogeny: na
     notes: |
       Migrated from complete: named=true open=true history=true specimens.basic=null specimens.all=null
@@ -1730,7 +1720,6 @@
       material: partly
       occurrences: none
       illustrations: none
-      diagnoses: none
       phylogeny: na
     notes: |
       Reviewed against the paper 2026-09-09; see docs/reviews/review_1936_bassler.md
@@ -1819,7 +1808,6 @@
       material: none
       occurrences: all
       illustrations: partly
-      diagnoses: none
       phylogeny: na
     notes: |
       Reviewed against the paper 2026-09-09; see docs/reviews/review_1961_dehm.md
@@ -1847,7 +1835,6 @@
       material: all
       occurrences: all
       illustrations: partly
-      diagnoses: partly
       phylogeny: na
     notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1961_rievers.md
 1962_fay:
@@ -1862,7 +1849,6 @@
       material: partly
       occurrences: none
       illustrations: none
-      diagnoses: none
       phylogeny: na
     notes: |
       Migrated from complete: named=true open=null history=true specimens.basic=true specimens.all=true
@@ -2323,7 +2309,6 @@
       material: partly
       occurrences: none
       illustrations: none
-      diagnoses: none
       phylogeny: na
     notes: |
       Migrated from complete: named=true open=true history=true specimens.basic=true specimens.all=true
@@ -2488,7 +2473,6 @@
       material: none
       occurrences: none
       illustrations: none
-      diagnoses: partly
       phylogeny: na
     notes: Audited against the monograph 2026-09-09; see docs/audit-1976_bell.b.m.md
 1976_bell.b.m_petersen.m.s:
@@ -2533,7 +2517,6 @@
       material: none
       occurrences: none
       illustrations: none
-      diagnoses: none
       phylogeny: na
     notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1978_bell.b.m_sprinkle.md
 1978_durham:
@@ -2831,7 +2814,6 @@ inprep_sprinkle_strimple:
       material: none
       occurrences: none
       illustrations: none
-      diagnoses: none
       phylogeny: na
     notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1983_holloway_jell.md
 1983_jell:
@@ -2881,7 +2863,6 @@ inprep_sprinkle_strimple:
       material: partly
       occurrences: none
       illustrations: none
-      diagnoses: none
       phylogeny: na
     notes: |
       Migrated from complete: named=true open=false history=false specimens.basic=false specimens.all=false
@@ -2933,7 +2914,6 @@ inprep_sprinkle_strimple:
       material: none
       occurrences: none
       illustrations: none
-      diagnoses: none
       phylogeny: partly
     notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1985_smith.a.b.md
 1985_sprinkle:
@@ -3183,7 +3163,6 @@ inprep_sprinkle_strimple:
       material: none
       occurrences: none
       illustrations: none
-      diagnoses: none
       phylogeny: all
     notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_1994_guensburg_sprinkle.md
 1994_sprinkle_wahlman:
@@ -3636,7 +3615,6 @@ inprep_sprinkle_strimple:
       material: none
       occurrences: none
       illustrations: none
-      diagnoses: none
       phylogeny: na
     notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_2006_sumrall_brett_cornell.md
 2006_sumrall_gahn:
@@ -3835,7 +3813,6 @@ inprep_sprinkle_strimple:
       material: none
       occurrences: none
       illustrations: none
-      diagnoses: none
       phylogeny: na
     notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_2009_sumrall.md
 2009_sumrall_brett_mckinney:
@@ -4081,7 +4058,6 @@ inprep_sprinkle_strimple:
       material: partly
       occurrences: none
       illustrations: none
-      diagnoses: none
       phylogeny: na
     notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_2010_zhao.y.l_sumrall_parsley_peng.j.md
 2011_sprinkle_parsley_zhao.y.l_peng.j:
@@ -4133,7 +4109,6 @@ inprep_sprinkle_strimple:
       material: none
       occurrences: none
       illustrations: none
-      diagnoses: none
       phylogeny: all
     notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_2011_sumrall_zamora.md
 2012_doweld:
@@ -4292,7 +4267,6 @@ inprep_sprinkle_strimple:
       material: none
       occurrences: none
       illustrations: none
-      diagnoses: none
       phylogeny: partly
     notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_2013_sumrall_heredia_rodríguez.c.m_mestre.md
 2013_zamora:
@@ -4473,7 +4447,6 @@ inprep_sprinkle_strimple:
       material: none
       occurrences: none
       illustrations: none
-      diagnoses: none
       phylogeny: na
     notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_2015_sprinkle_sumrall.md
 2015_sumrall_zamora:
@@ -4600,7 +4573,6 @@ inprep_sprinkle_strimple:
       material: none
       occurrences: none
       illustrations: none
-      diagnoses: none
       phylogeny: na
     notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman.md
 2017_nardin_lefebvre_fatka_nohejlová_kašiča_šinágl_szabad:
@@ -4766,7 +4738,6 @@ inprep_sprinkle_strimple:
       material: all
       occurrences: partly
       illustrations: partly
-      diagnoses: partly
       phylogeny: na
     notes: Reviewed against the paper 2026-09-09; see docs/reviews/review_2020_ewin_martin.m_isotalo_zamora.md
 2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler:
@@ -4820,7 +4791,6 @@ inprep_sprinkle_strimple:
       material: all
       occurrences: none
       illustrations: none
-      diagnoses: none
       phylogeny: na
     notes: |
       Migrated from complete: named=true open=true history=true specimens.basic=true specimens.all=true

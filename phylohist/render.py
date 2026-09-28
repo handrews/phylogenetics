@@ -177,8 +177,7 @@ def _gap_sentence(f):
 
 def _also_sentence(also):
   """The source's other kinds not fully entered, in one sentence: "Its
-  synonymy is entered in part; its diagnoses and material have not yet
-  been entered."
+  synonymy is entered in part; its material has not yet been entered."
   """
 
   def words(items):

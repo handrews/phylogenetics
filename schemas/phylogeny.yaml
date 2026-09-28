@@ -142,7 +142,6 @@ $defs:
               - material
               - occurrences
               - illustrations
-              - diagnoses
               - phylogeny
             additionalProperties:
               type: string
@@ -464,8 +463,6 @@ $defs:
           citation's own attribution goes in `authority` when the work has a
           record in sources.yaml, or in `auth`/`year` when it does not.
         type: string
-      diagnosis:
-        type: [string, "null"]
 
   uncertaintyFields:
     properties:

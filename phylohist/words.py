@@ -23,10 +23,9 @@ COVERAGE_WORDS = {
   'material': 'the material',
   'occurrences': 'the occurrences',
   'illustrations': 'the illustrations',
-  'diagnoses': 'the diagnoses',
   'phylogeny': 'the phylogeny',
 }
-PLURAL_KINDS = {'newTaxa', 'types', 'occurrences', 'illustrations', 'diagnoses'}
+PLURAL_KINDS = {'newTaxa', 'types', 'occurrences', 'illustrations'}
 
 
 def years_span(first, last):
@@ -449,8 +448,6 @@ class Words:
         ]
         return 'occurrence: ' + '; '.join(p for p in parts if p) if parts else 'occurrence'
       return 'illustration: ' + _illustration_words(claim.get('illustration') or {})
-    if kind == 'diagnosis':
-      return 'diagnosis: ' + (claim.get('text') or '').strip().replace('\n', ' ')
     if kind == 'editorial':
       words = "editor's note: " + (claim.get('basis') or '').strip()
       wrong = claim.get('printedErrors')

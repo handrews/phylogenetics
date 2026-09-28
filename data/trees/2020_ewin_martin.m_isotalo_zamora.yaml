@@ -11,20 +11,6 @@ taxonomies:
         children:
         - taxon: rhenopyrgidae
           pages: 118
-          diagnosis: |
-            Pyrgate edrioasteroids with relatively
-            small oral surfaces bearing five, short, straight rapidly tapering
-            ambulacra; interambulacra formed of single tessellate
-            interradial oral plates and biserial and alternating floor plates
-            that may or may not be fused; cover plates, where present, are
-            biserial and tall proximally; sub oral constriction generally
-            short, composed of circlets of poorly organized imbricate,
-            scale-like plates and periproct, sometimes withdrawn behind
-            collar plates; collar plates large, forming a single imbricate
-            circlet at base of suboral constriction; pyrgate zone comprised
-            of highly imbricated scale-like plates often in eight rows
-            arranged in alternating circlets of four; holdfast formed of
-            coriaceous sac comprised of small unorganized platelets.
           emended: true
 #           occurrenceSummary:
 #           - stageRange: [Tremadocian, Eifelian]
@@ -37,14 +23,6 @@ taxonomies:
           children:
           - taxon: rhenopyrgus
             pages: 118
-            diagnosis: |
-              Rhenopyrgids with fused or unfused
-              ambulacral floor and interradial oral plates; suboral
-              constriction, formed of a zone of highly imbricate elongate
-              plates formed between the oral surface and suboral collar, may
-              or may not be exposed. Cover plates present. Pyrgate zone
-              formed of eight rows of imbricated plates arranged in two
-              circlets of four
             emended: true
 #             occurrenceSummary:
 #             - stageRange: [Tremadocian, Emsian]
