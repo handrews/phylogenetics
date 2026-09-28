@@ -24,7 +24,13 @@ import pytest
 import yaml
 
 from phylohist import plan
-from phylohist.claims import corrected_node, extract, manifest, merge_patch
+from phylohist.claims import (
+  corrected_node,
+  derived_material_coverage,
+  extract,
+  manifest,
+  merge_patch,
+)
 from phylohist.evaluation import alternatives, normalise
 from phylohist.loader.taxa import Tree
 from phylohist.render import render_composition
@@ -41,8 +47,13 @@ pytestmark = pytest.mark.skipif(
 
 
 @pytest.fixture(scope='session')
-def claims(load_records):
+def roots(load_records):
   _, _, roots = load_records
+  return roots
+
+
+@pytest.fixture(scope='session')
+def claims(roots):
   return extract(roots)
 
 
@@ -65,10 +76,10 @@ def test_question(question):
         pytest.fail(f'{qid}: the expected answer does not show "{text}"')
 
 
-def test_no_inconsistencies(claims):
+def test_no_inconsistencies(claims, roots):
   rows = {
     source_key: entry['inconsistencies']
-    for source_key, entry in manifest(claims)['sources'].items()
+    for source_key, entry in manifest(claims, roots)['sources'].items()
     if entry['inconsistencies']
   }
   if rows:
@@ -129,8 +140,8 @@ def test_corrections_reach_the_claims(claims):
   assert 'errors' not in note and note['corrections']['authority'] == {'source': '1976_bell.b.m'}
 
 
-def test_manifest_carries_author_surnames(claims):
-  authors = manifest(claims)['authors']
+def test_manifest_carries_author_surnames(claims, roots):
+  authors = manifest(claims, roots)['authors']
   assert authors['bell.b.m'] == 'Bell' and authors['bather'] == 'Bather'
 
 
@@ -164,7 +175,16 @@ def test_earlier_state_entries_are_cited(load_records, caplog, axis):
   # source cites it: as on a synonymy entry, its pages and illustrations
   # locate that earlier use, never this source's own page or figure.
   illustrations = [{'page': 13, 'figures': ['1']}]
-  earlier = {'taxon': 'rhenopyrgidae', 'pages': 12, 'illustrations': illustrations}
+  earlier = {
+    'taxon': 'rhenopyrgidae',
+    'pages': 12,
+    'illustrations': illustrations,
+    # A cited entry locates the cited work's own material (D1): even
+    # though these ride on the node, they emit none of the four claims.
+    'material': [{'catalogNumbers': ['GSC 1']}],
+    'figures': [{'plate': 1, 'figures': [1]}],
+    'contexts': {'somewhere': {'unit': ['Some Fm']}},
+  }
   child = {'taxon': 'rhenopyrgus', axis: [earlier] if axis == 'removed' else earlier}
   root = Tree(
     {'taxon': 'cyathocystidae', 'pages': 100, 'children': [child]},
@@ -287,3 +307,225 @@ def test_recombined_is_the_printed_new_combination(load_records, caplog):
   )
   errors = [r.getMessage() for r in caplog.records if r.levelno >= logging.ERROR]
   assert len(errors) == 1 and 'is not a species-group name' in errors[0]
+
+
+def test_material_adapter(load_records, caplog):
+  # D1: contexts, material, figures, range, in that fixed emission order,
+  # over a node with a file context, a node context (referenced and not),
+  # a numbered entry, a range pair, a label-only entry, an explicit
+  # repository, a tentative context and tied/untied figures.
+  file_contexts = {
+    'division-st': {'unit': ['Trenton Limestone'], 'location': ['Division Street, Ottawa']},
+  }
+  node_data = {
+    'taxon': 'rhenopyrgus',
+    'contexts': {'quarry-x': {'unit': ['Quarry X Beds']}},
+    'material': [
+      {'catalogNumbers': ['GSC 752'], 'role': 'syntype', 'context': 'division-st'},
+      {'catalogNumbers': [['GSC 100', 'GSC 105']], 'role': 'paratype'},
+      {'label': 'the specimen lent to Hudson', 'role': 'syntype', 'status': 'lost'},
+      {'catalogNumbers': ['XYZ 1'], 'repository': 'NHMUK', 'role': 'paratype'},
+      {
+        'catalogNumbers': ['GSC 900'],
+        'context': {'key': 'division-st', 'tentative': True},
+        'role': 'hypotype',
+      },
+    ],
+    'figures': [
+      {'textFigures': [3], 'of': 'GSC 752'},
+      {'plate': 1, 'figures': [2]},
+    ],
+    'range': {
+      'series': 'Middle Ordovician',
+      'regions': ['Ottawa', {'value': 'Quebec', 'tentative': True}],
+    },
+  }
+  root = Tree(
+    node_data,
+    {
+      'source_key': '1961_dehm',
+      'type': 'taxonomy',
+      'position': 90,
+      'file_contexts': file_contexts,
+      'file_unused': (),
+    },
+  )
+  claims = extract({'1961_dehm': [root]})['1961_dehm']
+  assert not [r for r in caplog.records if r.levelno >= logging.ERROR]
+  material_claims = [c for c in claims if c['kind'] == 'material']
+
+  # The fixed order fixes the ids: contexts, material, figures, range.
+  assert [c['materialKind'] for c in material_claims] == [
+    'occurrence',
+    'occurrence',
+    'specimen',
+    'specimen',
+    'specimen',
+    'specimen',
+    'specimen',
+    'illustration',
+    'illustration',
+    'range',
+  ]
+  assert [c['id'] for c in material_claims] == [
+    f'1961_dehm:90:material:{n}' for n in range(len(material_claims))
+  ]
+
+  # A file context referenced by the node, and a node's own context, each
+  # emitted once, with their scope.
+  file_ctx, node_ctx = material_claims[0], material_claims[1]
+  assert file_ctx['contextKey'] == 'division-st' and file_ctx['contextScope'] == 'file'
+  assert file_ctx['occurrence'] == file_contexts['division-st']
+  assert node_ctx['contextKey'] == 'quarry-x' and node_ctx['contextScope'] == 'node'
+  assert node_ctx['occurrence'] == node_data['contexts']['quarry-x']
+
+  numbered, range_pair, label_only, explicit_repo, tentative = material_claims[2:7]
+
+  assert numbered['catalogNumbers'] == ['GSC 752']
+  assert numbered['contextKey'] == 'division-st' and 'contextTentative' not in numbered
+  assert numbered['repository'] == 'GSC' and numbered['repositoryVia'] == 'registry'
+  assert numbered['joinKeys'] == ['GSC:gsc752'] and 'rangeJoin' not in numbered
+
+  assert range_pair['catalogNumbers'] == [['GSC 100', 'GSC 105']]
+  assert range_pair['repository'] == 'GSC' and range_pair['repositoryVia'] == 'registry'
+  assert range_pair['joinKeys'] == ['GSC:gsc100', 'GSC:gsc105']
+  assert range_pair['rangeJoin'] is True
+
+  assert label_only['label'] == 'the specimen lent to Hudson'
+  assert label_only['status'] == 'lost' and label_only['ids'] == []
+  assert 'repository' in label_only and label_only['repository'] is None
+  assert 'joinKeys' not in label_only
+
+  assert explicit_repo['repository'] == 'NHMUK' and explicit_repo['repositoryVia'] == 'explicit'
+  assert explicit_repo['joinKeys'] == ['NHMUK:xyz1']
+
+  assert tentative['contextKey'] == 'division-st' and tentative['contextTentative'] is True
+
+  # Not a protologue node: no entry derives a `roleAct` (see the separate
+  # protologue node below for that derivation).
+  no_role_act = (numbered, range_pair, label_only, explicit_repo, tentative)
+  assert all('roleAct' not in c for c in no_role_act)
+
+  tied, untied = material_claims[7:9]
+  assert tied['illustration'] == {'textFigures': [3]} and tied['of'] == 'GSC 752'
+  assert tied['ofClaim'] == numbered['id']
+  assert numbered['figureClaims'] == [tied['id']]
+  assert 'ofClaim' not in untied and 'specimenIllustrations' not in range_pair
+
+  range_claim = material_claims[9]
+  assert range_claim['range'] == node_data['range']
+
+  # Protologue roleAct (D2), on a `new: true` node: a holotype/paratype/
+  # syntype entry is this source's designation by definition unless it
+  # states its own `roleAct` (the entry's own value wins), and a role
+  # outside that set (here, hypotype) gets none. A placeholder taxon
+  # (`openTaxon`) sidesteps the protologue-source check `taxon` would need.
+  count_node = Tree(
+    {
+      'openTaxon': 'rhenopyrgus-sp-1_ewin_martin.m_isotalo_zamora_2020',
+      'new': True,
+      'material': [
+        {'count': 5, 'role': 'paratype', 'roleAct': 'reported'},
+        {'catalogNumbers': ['GSC 1'], 'role': 'holotype'},
+        {'catalogNumbers': ['GSC 2'], 'role': 'hypotype'},
+      ],
+    },
+    {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 91},
+  )
+  count_claims = [
+    c for c in extract({'1961_dehm': [count_node]})['1961_dehm'] if c['kind'] == 'material'
+  ]
+  assert not [r for r in caplog.records if r.levelno >= logging.ERROR]
+  reported, holotype, hypotype = count_claims
+  assert reported['count'] == 5 and reported['roleAct'] == 'reported'
+  assert holotype['roleAct'] == 'designated'
+  assert 'roleAct' not in hypotype
+
+
+def test_derived_material_coverage():
+  base = {'source_key': '1961_dehm', 'type': 'taxonomy'}
+
+  def tree(data, position, file_unused=()):
+    return Tree(data, {**base, 'position': position, 'file_unused': file_unused})
+
+  # `na`: the file lists the field(s) as unused, whatever the nodes say.
+  na_root = tree({'taxon': 'rhenopyrgus'}, 0, file_unused=('material',))
+  assert derived_material_coverage({'s': [na_root]})['s']['material'] == 'na'
+
+  # `all`: no primary, non-cited, named node lacks the field (value or null).
+  all_root = tree(
+    {
+      'taxon': 'rhenopyrgus',
+      'material': [{'label': 'A'}],
+      'children': [{'taxon': 'grayae_bather_1915', 'material': None}],
+    },
+    1,
+  )
+  assert derived_material_coverage({'s': [all_root]})['s']['material'] == 'all'
+
+  # `all` downgraded to `partly` when a material entry is not list-complete.
+  partial_list_root = tree(
+    {
+      'taxon': 'rhenopyrgus',
+      'material': [{'label': 'A', 'listComplete': False}],
+      'children': [{'taxon': 'grayae_bather_1915', 'material': None}],
+    },
+    2,
+  )
+  assert derived_material_coverage({'s': [partial_list_root]})['s']['material'] == 'partly'
+
+  # `partly`: some nodes have it, some do not.
+  mixed_root = tree(
+    {
+      'taxon': 'rhenopyrgus',
+      'material': [{'label': 'A'}],
+      'children': [{'taxon': 'grayae_bather_1915'}],
+    },
+    3,
+  )
+  assert derived_material_coverage({'s': [mixed_root]})['s']['material'] == 'partly'
+
+  # Nothing declared at all (no unused, no node with a value or a null):
+  # `None`, so the effective value falls back to the declared coverage.
+  none_root = tree({'taxon': 'rhenopyrgus'}, 4)
+  assert derived_material_coverage({'s': [none_root]})['s']['material'] is None
+
+  # `occurrences` reads either `contexts` or `range`.
+  occ_root = tree(
+    {
+      'taxon': 'rhenopyrgus',
+      'range': {'series': 'Ordovician'},
+      'children': [{'taxon': 'grayae_bather_1915', 'contexts': None}],
+    },
+    5,
+  )
+  assert derived_material_coverage({'s': [occ_root]})['s']['occurrences'] == 'all'
+
+  # A cited entry (here, a `synonyms` entry) never counts, whatever it carries.
+  cited_root = tree(
+    {
+      'taxon': 'rhenopyrgus',
+      'material': None,
+      'synonyms': [{'taxon': 'grayae_bather_1915', 'material': [{'label': 'not counted'}]}],
+    },
+    6,
+  )
+  assert derived_material_coverage({'s': [cited_root]})['s']['material'] == 'all'
+
+
+def test_manifest_reports_derived_disagreement(load_records, roots, monkeypatch):
+  # A declared value the derived claims contradict (G11) is an
+  # inconsistency row naming both, and the effective map still prefers
+  # the derived label over the (now wrong) declared one.
+  from phylohist.loader.research import Source
+
+  source = Source.get('1961_dehm')
+  derived = derived_material_coverage(roots)['1961_dehm']
+  assert derived['illustrations'] == 'partly'  # real data, checked once here
+  monkeypatch.setitem(source._data['audit']['coverage'], 'illustrations', 'none')
+
+  claims = extract(roots)
+  entry = manifest(claims, roots)['sources']['1961_dehm']
+  assert 'illustrations: declared none, derived partly' in entry['inconsistencies']
+  assert entry['coverage']['illustrations'] == 'partly'
+  assert entry['derivedCoverage']['illustrations'] == 'partly'

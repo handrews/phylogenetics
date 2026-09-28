@@ -240,6 +240,12 @@ class Source:
     # The declared audit block; a source without one is unaudited.
     return self._data.get('audit') or {'state': 'unaudited'}
 
+  @property
+  def repository_abbreviations(self):
+    """The article's own prefix-to-registry-key map (D3), for a source
+    whose abbreviations differ from `repositories.yaml`'s; default empty."""
+    return self._data.get('repositoryAbbreviations') or {}
+
   @cached_property
   def title(self):
     try:

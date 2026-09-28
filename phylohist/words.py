@@ -68,6 +68,17 @@ def _range_words(items):
   return ', '.join(out)
 
 
+_ILLUSTRATION_LOCATOR_FIELDS = (
+  'plate',
+  'plates',
+  'figures',
+  'figure',
+  'textFigures',
+  'page',
+  'non',
+)
+
+
 def _illustration_words(illustration):
   parts = []
   for field, word in (
@@ -77,13 +88,53 @@ def _illustration_words(illustration):
     ('figure', 'fig.'),
     ('textFigures', 'text-fig.'),
     ('page', 'p.'),
+    ('non', 'non fig.'),
   ):
     if illustration.get(field) is not None:
       parts.append(f'{word} {_range_words(illustration[field])}')
   for field, value in illustration.items():
-    if field not in ('plate', 'plates', 'figures', 'figure', 'textFigures', 'page'):
+    if field not in _ILLUSTRATION_LOCATOR_FIELDS:
       parts.append(f'{field} {_range_words(value)}')
   return ', '.join(parts) or 'unspecified'
+
+
+# `$defs/timeFields` + `$defs/localTimeFields`, in schema order, for a
+# `range` claim's time words.
+_RANGE_TIME_FIELDS = (
+  'eon',
+  'era',
+  'period',
+  'series',
+  'seriesBoundary',
+  'seriesRange',
+  'stage',
+  'stageBoundary',
+  'stageRange',
+  'stageModifier',
+  'localPeriod',
+  'localSeries',
+  'localSeriesBoundary',
+  'localSeriesRange',
+  'localStage',
+  'localStageBoundary',
+  'localStageRange',
+  'localStageModifier',
+)
+
+
+def _field_words(value, fields):
+  """The present fields of ``value``, each joined by ", ", concatenated
+  with "; " in ``fields`` order."""
+  parts = [', '.join(_flat_words(value.get(k))) for k in fields if value.get(k)]
+  return '; '.join(p for p in parts if p)
+
+
+def _region_words(region):
+  """A `range.regions` element, its own `tentative` marked with `?`."""
+  if isinstance(region, dict):
+    word = region.get('value', '')
+    return f'{word}?' if region.get('tentative') else word
+  return region
 
 
 class Words:
@@ -434,20 +485,12 @@ class Words:
     if kind == 'rejection':
       return f'declines a placement in {self.display(claim.get("declinedParent", ""))}'
     if kind == 'material':
-      mk = claim['materialKind']
-      if mk == 'specimen':
-        ids = ', '.join(_flat_words(claim.get('ids')))
-        repo = f' {claim["repository"]}' if claim.get('repository') else ''
-        return f'{claim.get("role", "specimens")}:{repo} {ids}'.strip()
-      if mk == 'occurrence':
-        occ = claim.get('occurrence') or {}
-        parts = [
-          ', '.join(_flat_words(occ.get(k)))
-          for k in ('stage', 'series', 'unit', 'location')
-          if occ.get(k)
-        ]
-        return 'occurrence: ' + '; '.join(p for p in parts if p) if parts else 'occurrence'
-      return 'illustration: ' + _illustration_words(claim.get('illustration') or {})
+      return {
+        'specimen': self._specimen_words,
+        'occurrence': self._occurrence_words,
+        'illustration': self._illustration_claim_words,
+        'range': self._range_claim_words,
+      }[claim['materialKind']](claim)
     if kind == 'editorial':
       words = "editor's note: " + (claim.get('basis') or '').strip()
       wrong = claim.get('printedErrors')
@@ -455,6 +498,59 @@ class Words:
         words = f'{", ".join(wrong)} printed in error; ' + words
       return words
     return kind
+
+  # -- material (D1): one method per `materialKind` ------------------------
+
+  def _specimen_words(self, claim):
+    """ "role: numbers", numbers being the printed catalog numbers (a
+    range pair "a–b"), the label, or "N specimens" for a bare count."""
+    if 'catalogNumbers' in claim:
+      numbers = _range_words(claim['catalogNumbers'])
+    elif 'label' in claim:
+      numbers = claim['label']
+    elif 'count' in claim:
+      numbers = f'{claim["count"]} specimens'
+    else:
+      numbers = ''
+    role = claim.get('role')
+    words = f'{role or "specimens"}: {numbers}'.rstrip()
+    role_as_printed = claim.get('roleAsPrinted')
+    if role_as_printed and role_as_printed != role:
+      words += f' (as printed: {role_as_printed})'
+    if claim.get('repositoryVia') == 'explicit' and claim.get('repository'):
+      words += f' [{claim["repository"]}]'
+    if claim.get('contextTentative') and claim.get('contextKey'):
+      words += f' ({claim["contextKey"]}?)'
+    return words
+
+  def _occurrence_words(self, claim):
+    """ "occurrence <key>: " then the context's stage/series/unit/location
+    words, plus period, localStage and biozone when present."""
+    occ = claim.get('occurrence') or {}
+    fields = ('stage', 'series', 'unit', 'location', 'period', 'localStage', 'biozone')
+    body = _field_words(occ, fields)
+    prefix = f'occurrence {claim["contextKey"]}:' if claim.get('contextKey') else 'occurrence:'
+    return f'{prefix} {body}'.rstrip() if body else prefix.rstrip(':')
+
+  def _illustration_claim_words(self, claim):
+    """ "illustration: pl. 2, figs. 1–4", plus "of <of>" and the medium
+    when it is not a plain specimen photo."""
+    words = 'illustration: ' + _illustration_words(claim.get('illustration') or {})
+    of = claim.get('of')
+    if of:
+      words += f' of {", ".join(of) if isinstance(of, list) else of}'
+    depicts = claim.get('depicts')
+    if depicts and depicts != 'specimen':
+      words += f' ({depicts})'
+    return words
+
+  def _range_claim_words(self, claim):
+    """ "range: <time words>; <regions>", a tentative region marked `?`."""
+    range_value = claim.get('range') or {}
+    time_words = _field_words(range_value, _RANGE_TIME_FIELDS)
+    region_words = ', '.join(_region_words(r) for r in range_value.get('regions') or ())
+    parts = [p for p in (time_words, region_words) if p]
+    return 'range: ' + '; '.join(parts) if parts else 'range'
 
   def error_words(self, claim):
     """The clause for a printed attribution the editor reads as wrong,

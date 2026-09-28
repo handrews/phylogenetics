@@ -32,7 +32,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 DEFAULT_OUT = ROOT / 'claims'
 
 
-def write(out, claims_by_source, full):
+def write(out, claims_by_source, roots, full):
   out.mkdir(parents=True, exist_ok=True)
   if full:
     for stale in out.glob('*.jsonl'):
@@ -44,7 +44,7 @@ def write(out, claims_by_source, full):
         fd.write('\n')
   if full:
     for name, content in (
-      ('manifest.json', manifest(claims_by_source)),
+      ('manifest.json', manifest(claims_by_source, roots)),
       ('names.json', names_index()),
     ):
       with open(out / name, 'w') as fd:
@@ -58,9 +58,9 @@ _KIND_SOURCES = {
   'newTaxa': '`new: true`',
   'types': '`type: true`',
   'synonymy': '`synonyms` and `non` entries',
-  'material': '`specimens` (on a node or inside an occurrence)',
-  'occurrences': '`occurrences`',
-  'illustrations': '`illustrations` on a node (not on a synonymy line)',
+  'material': '`material` entries (G11: derived from node state, not declared)',
+  'occurrences': '`contexts`/`range` (G11: derived from node state, not declared)',
+  'illustrations': '`figures` (G11: derived from node state, not declared)',
   'phylogeny': 'children in a phylogeny',
 }
 
@@ -88,15 +88,17 @@ def _describe(claim):
   )
 
 
-def report_inconsistencies(claims_by_source):
+def report_inconsistencies(claims_by_source, roots):
   """Explain each declared-versus-derived disagreement.
 
   The declared side is the audit block in data/sources.yaml; the derived
-  side is the claims the tree yields, editor-inferred ones excluded. The
-  report names both, and lists the inferred claims so that "no claims
-  derived" beside an obviously flagged node is not a mystery.
+  side is the claims the tree yields (editor-inferred ones excluded) for
+  the five hand-audited kinds, and the raw node state (G11) for
+  `material`/`occurrences`/`illustrations`. The report names both, and
+  lists the inferred claims so that "no claims derived" beside an
+  obviously flagged node is not a mystery.
   """
-  rows = manifest(claims_by_source)['sources']
+  rows = manifest(claims_by_source, roots)['sources']
   found = 0
   for source_key, entry in rows.items():
     if not entry['inconsistencies']:
@@ -184,9 +186,9 @@ def main(argv):
       return 1
   claims_by_source = extract(roots, sources=set(args.source or ()) or None)
   if args.inconsistencies:
-    return 1 if report_inconsistencies(claims_by_source) else 0
+    return 1 if report_inconsistencies(claims_by_source, roots) else 0
   full = args.source is None
-  write(out, claims_by_source, full)
+  write(out, claims_by_source, roots, full)
 
   total = sum(len(c) for c in claims_by_source.values())
   print(f'{total} claims from {len(claims_by_source)} sources -> {out}')

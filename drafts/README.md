@@ -20,13 +20,14 @@ and source keys the draft cites that have no record yet.
 
 The data says who published what systematic information in which paper
 (roadmap, Ground rules, "Scope"). A draft therefore carries names, acts,
-placements, usages, synonymies, specimens with their repository and
-geological context, and the page, plate and figure numbers that locate
-them. It does not carry diagnoses, descriptions, figure captions,
-artists' names, physical descriptions of specimens, or a narration of the
-paper's argument. Everything of that kind that a drafter finds worth
-recording goes into the review file under `notes/reviews/`, where
-quotation with printed page numbers is the expected form.
+placements, usages, synonymies, `material` with its repository and
+geological `contexts` or `range`, and `figures` (D1), and the page
+numbers that locate them. It does not carry diagnoses, descriptions,
+figure captions, artists' names, physical descriptions of specimens, or a
+narration of the paper's argument. Everything of that kind that a
+drafter finds worth recording goes into the review file under
+`notes/reviews/`, where quotation with printed page numbers is the
+expected form.
 
 Conventions the promotion of the Whiteaves and Bather drafts settled:
 
@@ -40,9 +41,9 @@ Conventions the promotion of the Whiteaves and Bather drafts settled:
   paper's usage, with the ranks the paper attributes to it, even where the
   paper places nothing under most of it. The genus is not made the top
   node merely because the paper erected nothing above it.
-- One specimen, one entry, even when the paper gives no number and no
-  type word. Identifiers, a paper's own letters (A, B, C) and the
-  repository are kept; descriptions are not.
+- One specimen, one `material` entry, even when the paper gives no number
+  and no type word (then a `label`). Identifiers, a paper's own letters
+  (A, B, C) and the repository are kept; descriptions are not.
 
 | draft | paper | open points |
 |---|---|---|

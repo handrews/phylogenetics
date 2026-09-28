@@ -45,7 +45,7 @@ def test_source_coverage_backs_refusals(question, store):
     assert coverage['known']
     if not coverage['entered']:
       continue
-    declared = (coverage['audit'].get('coverage') or {}).get(gap['parameters']['kind'])
+    declared = coverage['coverage'].get(gap['parameters']['kind'])
     assert declared in ('none', 'partly'), (question['id'], gap['parameters'], declared)
 
 
@@ -309,8 +309,8 @@ def test_statements_in_words(store):
   )
   lines = store.statements('Rhenopyrgus viviani', kind='material')['rendered'].splitlines()
   assert lines[0] == 'Statements about Rhenopyrgus viviani Ewin et al. 2020'
-  assert '  2020  Ewin et al.  holotypes: NHMUK EE16642 (pp. 120–122)' in lines
-  assert '  2020  Ewin et al.  paratypes: NHMUK EE15752, EE15755 (pp. 120–122)' in lines
+  assert '  2020  Ewin et al.  holotype: NHMUK EE16642 (pp. 120–122)' in lines
+  assert '  2020  Ewin et al.  paratype: NHMUK EE15752–NHMUK EE15755 (pp. 120–122)' in lines
 
 
 def test_rank_variants_linked(store):

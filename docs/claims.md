@@ -194,19 +194,50 @@ on the claim they qualify, as fields. No separate table.
 
 ### `material`
 
-Emitted for each `specimens` role entry, each `occurrences` entry and each
-`illustrations` entry on a node other than a cited entry (see `pages`),
-whose illustrations are the cited work's. Fields added: `materialKind: specimen |
-occurrence | illustration`, `role` as recorded today (`holotype`,
-`paratypes`, `syntypes`, `unknowntypes`, and the occurrence blocks'
-`holotypes` and `unspecified`), `ids`, `repository`, and the occurrence or
-illustration fields copied verbatim (`occurrence`, `illustration`). An
-occurrence's own specimens yield specimen claims too, with `inOccurrence`
-giving the occurrence's index; those blocks nest role then repository in
-most trees and the other way round in two (Vanuxem 1842, Rievers 1961), so
-the role word decides which level is which. The shape follows the YAML as
-it stands; when D1 migrates material, only the extractor's material
-adapter changes and these claims keep their fields.
+Emitted from a node's `contexts`, `material`, `figures` and `range` (D1),
+in that fixed order -- which is what fixes the claim ids -- for every node
+other than a cited entry (see `pages`), whose material, figures and
+illustrations are the cited work's own and never migrate to these four
+(a null `material`/`figures`/`contexts`/`range` on a cited entry is a
+schema error). `materialKind: occurrence | specimen | illustration |
+range` says which; `_coverage_kind` counts `range` under `occurrences`
+along with `occurrence`.
+
+- **Contexts** (`materialKind: occurrence`, field `contexts`): one claim
+  for each context key a node's `material` entries refer to, plus every
+  context the node defines itself, whether referred to or not. `occurrence`
+  carries the context dict verbatim (so `words.py` and
+  `statements(kind='occurrences')` keep reading it as before), with
+  `contextKey` and `contextScope: node | file`. A file-level context is
+  emitted once per node that refers to it: a claim is one source's
+  statement about one node, not about the file.
+- **Material** (`materialKind: specimen`, field `material`): one claim per
+  entry. Kept: `role` (absent when the entry has none), `ids` (the entry's
+  `catalogNumbers`, a range pair still a two-element list), `repository`
+  (the entry's own, else resolved from the prefix, `repositories.yaml`
+  and the source's own `repositoryAbbreviations`; `None` when nothing
+  resolves), `specimenIllustrations` (the locators of the figures whose
+  `of` names this entry). Copied verbatim when present: `catalogNumbers`,
+  `catalogNumbersAsPrinted`, `count`, `label`, `roleAsPrinted`, `holder`,
+  `status`, `formerIds`, `fragmentOf`, `parts`, `examined`,
+  `listComplete`; the entry's `context` resolves to `contextKey` and,
+  for the object form, `contextTentative`; the entry's `notes` becomes
+  `materialNotes`. Derived: `roleAct` is the entry's own value, else
+  `designated` on a protologue node (`new: true`) for a holotype,
+  paratype or syntype entry (D2's "this source's designation by
+  definition"), else absent; `repositoryVia: explicit | source | registry
+  | alias`; `joinKeys`, one `f'{repository}:{fold(number)}'` per catalog
+  number string (`fold` is `phylohist/names.py`'s), a range pair
+  contributing both endpoints with `rangeJoin: true` on the claim.
+- **Figures** (`materialKind: illustration`, field `figures`): one claim
+  per entry; `illustration` holds the locator fields only (`plate`,
+  `page`, `figures`, `textFigures`, `non`, `notes`), with `of` and
+  `depicts` on the claim itself. Once every claim of the node has an id,
+  `figure['ofClaim']` and `specimen['figureClaims']` link a figure to the
+  material entry its `of` names, by exact string against a catalog number
+  (either range endpoint) or a label.
+- **Range** (`materialKind: range`, field `range`): one claim, `range`
+  carrying the dict verbatim.
 
 ### `secondhand`
 
@@ -241,11 +272,35 @@ the counts of claims by kind, by `actKind` and by `materialKind`, the
 counts by coverage kind (`derived`, editor-inferred claims excluded), and
 `inconsistencies`. Per taxon, the sources with any claim about it, in
 publication-year order. And `authors`, every author key with its
-surname, so a printed attribution (`auth: [bell.b.m]`) renders by field. Coverage is declared by a reviewer and counted by
-the extractor; they are cross-checked, never conflated (G1): a source
+surname, so a printed attribution (`auth: [bell.b.m]`) renders by field.
+
+For the five hand-audited kinds (`skeleton`, `newTaxa`, `types`,
+`synonymy`, `phylogeny`), coverage is declared by a reviewer and counted
+by the extractor; they are cross-checked, never conflated (G1): a source
 declaring `all` or `partly` for a kind with no derived claims, or `none`
 or `na` with any, is an inconsistency row for the editor to settle either
-way. `scripts/claims.py --inconsistencies` prints the rows with the
+way.
+
+For `material`, `occurrences` and `illustrations`, coverage is instead
+*derived* from raw node state (G11), since a node's own
+`material`/`figures`/`contexts`/`range` already says whether the source
+prints any: `claims.derived_material_coverage(roots)` walks every
+primary, non-cited, named node of a source and, for each kind
+(`occurrences` reading either `contexts` or `range`), returns `na` when
+the file lists the field(s) as `unused`; `all` (downgraded to `partly`
+when a material entry has `listComplete: false`) when no such node lacks
+the field (every node carries a value or an explicit null); `partly` when
+some do and some do not; and `None` -- so the *effective* coverage falls
+back to the declared `audit.coverage` -- when the file declares nothing
+at all for that field (nothing `unused`, no node writing even a null).
+`manifest()`'s `coverage` is this effective map (declared for the five
+hand-audited kinds, derived-or-declared for the three); `derivedCoverage`
+is the raw derived map. Every claim's `audit.coverage` is the effective
+value for its coverage kind, and `source_coverage()` returns `audit`,
+`coverage` and `derivedCoverage` alongside it. For the three derived
+kinds the inconsistency row reads "declared X, derived Y" whenever both
+exist and differ; the five hand-audited kinds keep the claim-count form
+above. `scripts/claims.py --inconsistencies` prints the rows with the
 claims behind them and the review file to check against, and
 `tests/test_claims.py` fails while any row exists, so a new one cannot
 land unnoticed.
@@ -257,10 +312,10 @@ land unnoticed.
   hyphens and spaces (G10) to find records, and the claims keep the key
   as cited.
 - No rank inference: the record's rank is a convenience until G8.
-- No material redesign: D1 is a later change to one adapter.
 - No inference from absence: a kind with no claims for a source means
-  "not captured", and only the declared coverage can say whether the paper
-  prints any.
+  "not captured", and only the declared (or, for `material`, `occurrences`
+  and `illustrations`, the derived -- "Derived coverage" below) coverage
+  can say whether the paper prints any.
 - No diagnoses (roadmap D10, done 2026-09-27): who published what
   systematic information where, with locators, is the data's scope;
   the text of a printed diagnosis is not.
@@ -426,10 +481,14 @@ each is a usage of *grayae* by the cited source, and each is an
 p. 1004, `1985_smith.a.b` p. 732 with text-figure 11, and two entries for
 `2013_sumrall_heredia_rodríguez.c.m_mestre` (figure 1; p. 773). The first
 and fourth carry `parents: [pyrgocystis]`. None inherits `pages` from the
-species node. The node's `occurrences` yield `material` claims, and the
-specimens inside the first occurrence yield more: the holotype claim has
-`role: holotypes` (the recorded word), `repository: NHMUK`, `ids:
-[E23470]`, `inOccurrence: 0`.
+species node. The node's `contexts` yield `occurrence` claims (D1);
+its `material` entries yield `specimen` claims, one per entry: the
+holotype claim has `role: holotype`, `catalogNumbers: [NHMUK E23470]`,
+`repository: NHMUK` resolved from the prefix (`repositoryVia:
+registry`), `contextKey: lady-burn-starfish-bed`; the words render
+`holotype: NHMUK E23470`. *grayae* is Bather 1915's name, not new here,
+so the claim carries no `roleAct` (D2's `designated` only fires on a
+protologue node).
 
 ### Fay 1962, *ottawaensis* (`data/trees/1962_fay.yaml`)
 
@@ -439,6 +498,8 @@ monotypic (p. 201)"}`, plus a separate `editorial` claim with the same
 block. A question "does Fay fix the type species?" is answered from the
 act claim's `inferred: true`: the flag is the editor's, and the paper
 prints monotypy, so the manifest does not count it against the declared
-`types: na`. The `material` claim has `role: syntypes` and the node's
-`notes` quoting "Holotype, 752" beside "labelled a syntype", so both printed
-words are returned.
+`types: na`. The `material` claim has `role: syntype`,
+`catalogNumbers: [Canadian Geological Survey 752]` (the printed prefix
+resolves to `GSC` through its `formerly` alias, `repositoryVia: alias`),
+and the node's `notes` quoting "Holotype, 752" beside "labelled a
+syntype", so both printed words are returned.

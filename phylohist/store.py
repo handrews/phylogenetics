@@ -30,6 +30,7 @@ _COVERAGE_OF_KIND = {
   'occurrences': 'occurrences',
   'illustrations': 'illustrations',
   'specimens': 'material',
+  'range': 'occurrences',
   'acceptance': 'synonymy',
   'usage': 'skeleton',
   'placement': 'skeleton',
@@ -790,14 +791,15 @@ class ClaimStore:
     if source is not None:
       claims = [c for c in claims if c['source'] == source]
     if kind in ('occurrences', 'illustrations', 'specimens'):
-      # Material kinds a reader asks for by name.
-      material_kind = {
-        'occurrences': 'occurrence',
-        'illustrations': 'illustration',
-        'specimens': 'specimen',
+      # Material kinds a reader asks for by name; `occurrences` covers a
+      # node's own contexts and a bare `range` distribution statement alike.
+      material_kinds = {
+        'occurrences': {'occurrence', 'range'},
+        'illustrations': {'illustration'},
+        'specimens': {'specimen'},
       }[kind]
       claims = [
-        c for c in claims if c['kind'] == 'material' and c.get('materialKind') == material_kind
+        c for c in claims if c['kind'] == 'material' and c.get('materialKind') in material_kinds
       ]
     elif kind is not None:
       claims = [c for c in claims if c['kind'] == kind]
@@ -843,17 +845,19 @@ class ClaimStore:
         fields['about'] = heading
       if gap['kind'] == 'gap' and kind is None and act_kind is None and fields.get('entered'):
         # No kind asked: the record's statements may lie in any kind of the
-        # source not yet entered, so the gap names every such kind.
-        declared = self.sources[source]['audit'].get('coverage') or {}
+        # source not yet entered, so the gap names every such kind. The
+        # effective map (declared, or derived-or-fallback for the three
+        # G11 derives) is what says whether a kind is worth naming.
+        effective = self.sources[source]['coverage']
         also = [
           {
             'kind': k,
             'what': COVERAGE_WORDS[k],
             'plural': k in PLURAL_KINDS,
-            'declared': declared[k],
+            'declared': effective[k],
           }
           for k in COVERAGE_WORDS
-          if k != coverage_kind and declared.get(k) in ('none', 'partly')
+          if k != coverage_kind and effective.get(k) in ('none', 'partly')
         ]
         if also:
           fields['also'] = also
@@ -882,6 +886,10 @@ class ClaimStore:
       'acts': row['acts'],
       'material': row['material'],
       'derived': row['derived'],
+      # The effective (declared, or derived-or-fallback for `material`,
+      # `occurrences`, `illustrations`) and the raw derived labels (G11).
+      'coverage': row['coverage'],
+      'derivedCoverage': row['derivedCoverage'],
       'inconsistencies': row['inconsistencies'],
     }
 
@@ -913,7 +921,9 @@ class ClaimStore:
       'what': what,
       'plural': kind in PLURAL_KINDS,
       'entered': row['tree'],
-      'declared': (row['audit'].get('coverage') or {}).get(kind),
+      # The effective value: declared, or derived-or-fallback for
+      # `material`/`occurrences`/`illustrations` (G11).
+      'declared': row['coverage'].get(kind),
       'auditState': row['audit'].get('state'),
       'derived': row['derived'].get(kind, 0),
     }
