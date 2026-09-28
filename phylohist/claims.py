@@ -376,6 +376,9 @@ class _NodeClaims:
       parents = [p.taxon.key for p in node.related_nodes('parents') if p.taxon is not None]
       if parents:
         claim['parents'] = parents
+      # A lapsus listed in the synonymy: the record it was printed for.
+      if (intended := _related_key(node, 'lapsusFor')) is not None:
+        claim['lapsusFor'] = intended
       for flag in _ACCEPTANCE_FLAGS:
         if data.get(flag):
           claim[flag] = data[flag]
@@ -478,6 +481,8 @@ class _NodeClaims:
       self._act('type', 'type')
     if emended := data.get('emended'):
       self._act('emended', 'emended', **_by(emended))
+    if recombined := data.get('recombined'):
+      self._act('combNov', 'recombined', **_by(recombined))
     if translated := data.get('translated'):
       fields = _by(translated)
       if (earlier := _related_key(node, 'translated')) is not None:

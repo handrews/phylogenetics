@@ -28,6 +28,7 @@ TYPES = ('classification', 'table', 'list', 'statement', 'chains', 'timeline')
 # abbreviations; shared by the tools that word cells and the renderers.
 ACT_MARKS = {
   'emended': 'emend.',
+  'combNov': 'comb. nov.',
   'nomTransl': 'nom. transl.',
   'nomNudum': 'nom. nud.',
   'corrected': 'nom. correct.',
@@ -145,6 +146,7 @@ def list_entry(
   claims=None,
   authors=None,
   nudum=None,
+  lapsusFor=None,
 ):
   """One line of a list: a synonymy entry (parents, name, printed form,
   stance), a printed form, or a statement (kind, sentence)."""
@@ -161,6 +163,7 @@ def list_entry(
     ('claims', claims),
     ('authors', authors),
     ('nudum', nudum),
+    ('lapsusFor', lapsusFor),
   ):
     if value is not None:
       entry[field] = value

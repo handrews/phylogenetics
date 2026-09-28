@@ -81,6 +81,18 @@ def _report_missing_protologues(data):
   logger.info(f'{missing} taxa with an unflagged protologue')
 
 
+def _report_lapsus_records(roots):
+  # A record that exists because of a slip of the pen appears under
+  # `lapsus`, and elsewhere only as a synonymy entry marked `lapsusFor`.
+  nodes = [node for trees in roots.values() for root in trees for node in root.walk()]
+  lapsus = {node.taxon.key for node in nodes if node.axis == 'lapsus' and node.taxon}
+  for node in nodes:
+    if node.taxon is None or node.taxon.key not in lapsus or node.axis == 'lapsus':
+      continue
+    if 'lapsusFor' not in node.data:
+      logger.error(f'Lapsus record {node.taxon.key} at {node} is not under `lapsus` or `lapsusFor`')
+
+
 def _load_trees(data):
   """Build every tree; return ``{source_key: [roots in position order]}``."""
   logger.info(f'Processing {len(data["trees"])} opinions...')
@@ -132,6 +144,7 @@ def _load_trees(data):
 
   _report_merge_targets(data)
   _report_missing_protologues(data)
+  _report_lapsus_records(roots)
   return roots
 
 

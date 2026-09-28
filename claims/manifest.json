@@ -3813,15 +3813,17 @@
     "year": 1914
    },
    "claims": {
+    "acceptance": 1,
     "material": 6,
     "placement": 3,
-    "usage": 4
+    "usage": 7
    },
    "derived": {
     "illustrations": 3,
     "material": 2,
     "occurrences": 1,
-    "skeleton": 7
+    "skeleton": 10,
+    "synonymy": 1
    },
    "inconsistencies": [],
    "material": {
@@ -12326,7 +12328,8 @@
    "1968b_paul.c.r.c"
   ],
   "canadensis_whiteaves_1898": [
-   "1898_whiteaves"
+   "1898_whiteaves",
+   "1914c_bather"
   ],
   "canaliculatus_hall_1852": [
    "1852_hall"

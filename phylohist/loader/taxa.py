@@ -456,6 +456,10 @@ class ProxyTaxon(Taxon):
 RelatedAxis = collections.namedtuple('RelatedAxis', 'name many cited')
 
 
+# The ranks whose names are combinations with a genus.
+_COMBINATION_RANKS = frozenset({'subgenus', 'species', 'subspecies', 'variety'})
+
+
 class Tree:
   _NAMED_FIELDS = {'taxon'}
   _PROXY_FIELDS = {'cfTaxon', 'affTaxon'}
@@ -480,6 +484,7 @@ class Tree:
     RelatedAxis('corrected', many=False, cited=True),
     RelatedAxis('substituted', many=False, cited=True),
     RelatedAxis('lapsus', many=False, cited=False),
+    RelatedAxis('lapsusFor', many=False, cited=False),
     RelatedAxis('translated', many=False, cited=True),
     RelatedAxis('or', many=True, cited=False),
     RelatedAxis('synonyms', many=True, cited=True),
@@ -561,6 +566,9 @@ class Tree:
     self._check_primary_taxon()
 
     self._bracket = self._check_taxon('bracket')
+    # A lapsus is listed only in a synonymy, as the name printed in error.
+    if 'lapsusFor' in self._data and self.axis not in ('synonyms', 'non'):
+      logger.error(f'{self} has `lapsusFor` but is not a `synonyms` or `non` entry')
     for axis in self.RELATED_AXES:
       value = self._data.get(axis.name)
       if axis.many:
@@ -578,6 +586,10 @@ class Tree:
       self._children.append(Tree(child, parent=self, relpath=('children', index)))
 
     if self._taxon:
+      # A new combination is an act on a species-group name.
+      if self._data.get('recombined') and self._taxon.rank.lower() not in _COMBINATION_RANKS:
+        logger.error(f'{self} is `recombined` but is not a species-group name')
+
       if self._taxon.name:
         Tree._taxon_index[self._taxon.name].add(self.root)
 

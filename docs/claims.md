@@ -20,7 +20,7 @@ Every claim carries:
 
 | field | value |
 |---|---|
-| `id` | `<source>:<path>:<kind>[:<n>]`. `<path>` is the node's position in its tree file as the loader computes it: the taxonomy or phylogeny index, then each step down (`children/2`, `synonyms/0`, `non/1`, `removed/0`, `parents/0`, `moved`, `corrected`, `substituted`, `lapsus`, `or/0`). `<n>` disambiguates several claims of one kind from one node (a node with three `specimens` roles yields three `material` claims). Ids are stable as long as the file is not reordered; the tree keeps printed order, so reordering is a data change. |
+| `id` | `<source>:<path>:<kind>[:<n>]`. `<path>` is the node's position in its tree file as the loader computes it: the taxonomy or phylogeny index, then each step down (`children/2`, `synonyms/0`, `non/1`, `removed/0`, `parents/0`, `moved`, `corrected`, `substituted`, `lapsus`, `lapsusFor`, `or/0`). `<n>` disambiguates several claims of one kind from one node (a node with three `specimens` roles yields three `material` claims). Ids are stable as long as the file is not reordered; the tree keeps printed order, so reordering is a data change. |
 | `kind` | one of `usage`, `placement`, `acceptance`, `act`, `rejection`, `material`, `diagnosis`, `secondhand`, `editorial` |
 | `source` | the tree file's source key |
 | `path` | the node's position and pointer, `0/children/0/children/0`, the same string the id carries |
@@ -125,6 +125,11 @@ this name) and each `non` entry (the source rejects it) (B1). Fields added:
   entry's `parents` (a genus, or a genus and a subgenus).
 - `pars`, `tentative` copied; `ownName: true` when the entry has no name
   of its own.
+- `lapsusFor`: on an entry whose own name is a lapsus, the record the slip
+  was printed for (the entry's `lapsusFor` node). The entry is listed as
+  the source gives it, "Steganoblastus canadensis (in error for
+  ottawaensis) Whiteaves 1898", but it is not a synonym: the closure does
+  not follow it.
 
 ### `act`
 
@@ -136,6 +141,7 @@ Something this source does to a name. One claim per flag, `actKind` being:
 | `new: true` on a placeholder | `placeholder` (the source originates the placeholder; C4) |
 | `type: true` | `type` (the fixation method joins when B14 lands) |
 | `emended: true` or `emended: {by}` | `emended`; `by` and `byPages` when the source follows another work's emendation |
+| `recombined: true` or `recombined: {by}` on a species-group node | `combNov` (comb. nov.); `by` and `byPages` when the source follows another work's recombination |
 | `translated: true` or `translated: {taxon: y, by?}` | `nomTransl`; `translatedFrom: y` when the earlier rank is named, `by`/`byPages` when another work made the act, `rankVariants` from the records' `altRankOf` links |
 | `nudum: true` | `nomNudum` |
 | `corrected: {taxon: y}` | `corrected`, `correctedFrom: y`; the node's own name is the corrected form |
@@ -149,9 +155,17 @@ A node under `translated`, `corrected`, `substituted`, `moved` or `removed` is t
 earlier state of the name as this source cites it: its own `authority`,
 `auth`, `year`, `pages` and `illustrations` locate that earlier use, and
 it emits a `usage` claim on its axis like any cited entry. The change is
-this source's act. `emended` and `translated` are the two acts a source
-may follow rather than perform, and `by` (an `authority`) names the work
-that performed it.
+this source's act. `emended`, `recombined` and `translated` are the acts
+a source may follow rather than perform, and `by` (an `authority`) names
+the work that performed it.
+
+`moved` and `recombined` say different things. `moved` is a change of
+placement at any rank, often noted only in prose: the node left the group
+under `moved`, with a `rejection` of that placement. `recombined` is the
+printed nomenclatural act on a species-group name, "comb. nov.", and pairs
+with `moved` when the source names the genus the name leaves. Otherwise a
+combination is not a claim: the tools derive it from where each source
+places the name.
 
 A node under `lapsus` is not an earlier state: it is the name this
 source printed by a slip of the pen for the node's own. Its citation
@@ -161,6 +175,9 @@ is not a synonym, emits no `acceptance`, and does not occupy the name,
 which a later taxon may take without being a homonym. Its place under `lapsus` is its
 protologue, so the record needs no `new: true`; it carries one only when
 the slip also claimed the name as new, and then emits a `new` act.
+Elsewhere a lapsus record appears only as a `synonyms` or `non` entry
+carrying `lapsusFor`, where a later source lists the slip; the loader
+reports any other place, and a `lapsusFor` anywhere but such an entry.
 
 `corrected` and `substituted` imply the synonymy: the incorrect form and
 the replaced name are synonyms of the node's name, and the closure follows
