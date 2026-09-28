@@ -50,11 +50,11 @@ taxonomies:
         new: true
       - taxon: aphrodita
         new: true
-      - taxon: lernæa
+      - taxon: lernaea
         new: true
       - taxon: priapus
         new: true
-      - taxon: scyllæa
+      - taxon: scyllaea
         new: true
       - taxon: holothuria_linnaeus_1758
         new: true
@@ -81,7 +81,7 @@ taxonomies:
           children:
           - taxon: luna_linnaeus_1758
             new: true
-        - taxon: stellatæ
+        - taxon: stellatae
           new: true
           children:
           - taxon: rubens_linnaeus_1758
@@ -96,9 +96,9 @@ taxonomies:
             new: true
           - taxon: equestris_linnaeus_1758
             new: true
-          - taxon: lævigata_linnaeus_1758
+          - taxon: laevigata_linnaeus_1758
             new: true
-        - taxon: radiatæ
+        - taxon: radiatae
           new: true
           children:
           - taxon: planci_linnaeus_1758
@@ -109,7 +109,7 @@ taxonomies:
             new: true
           - taxon: multiradiata_linnaeus_1758
             new: true
-          - taxon: caput medusæ_linnaeus_1758
+          - taxon: caput medusae_linnaeus_1758
             new: true
       - taxon: echinus
         new: true
@@ -121,7 +121,7 @@ taxonomies:
             new: true
           - taxon: globulus_linnaeus_1758
             new: true
-          - taxon: sphæroides_linnaeus_1758
+          - taxon: sphaeroides_linnaeus_1758
             new: true
           - taxon: gratilla_linnaeus_1758
             new: true
@@ -164,7 +164,7 @@ taxonomies:
           new: true
         - taxon: lepas
           new: true
-      - taxon: conchæ
+      - taxon: conchae
         new: true
         notes: Bivalvia
         children:
@@ -196,7 +196,7 @@ taxonomies:
           new: true
         - taxon: pinna
           new: true
-      - taxon: cochleæ
+      - taxon: cochleae
         new: true
         notes: Univalvia
         children:
@@ -206,7 +206,7 @@ taxonomies:
           new: true
         - taxon: conus
           new: true
-        - taxon: cypræa
+        - taxon: cypraea
           new: true
         - taxon: bulla
           new: true
@@ -278,7 +278,7 @@ taxonomies:
         new: true
       - taxon: pennatula
         new: true
-      - taxon: tænia
+      - taxon: taenia
         new: true
       - taxon: volvox
         new: true

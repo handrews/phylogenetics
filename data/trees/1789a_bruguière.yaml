@@ -14,7 +14,7 @@ taxonomies:
     - taxon: enchelis
     - taxon: vibrio
     - taxon: cyclidium
-    - taxon: paramæcium
+    - taxon: paramaecium
     - taxon: kolpoda
     - taxon: gonium
     - taxon: bursaria
@@ -32,7 +32,7 @@ taxonomies:
     - taxon: echynorynchus
     - taxon: sanguisuga
       new: true
-    - taxon: tænia
+    - taxon: taenia
     - taxon: strongylus
     - taxon: lumbricus
     - taxon: nereis
@@ -92,7 +92,7 @@ taxonomies:
     - taxon: planaria
     - taxon: fasciola
     - taxon: tethys
-    - taxon: lærnea
+    - taxon: laernea
     - taxon: biphora                            # Salpa
       synonyms:
       - taxon: salpa
@@ -103,7 +103,7 @@ taxonomies:
       - taxon: democratica_forsskål_1775
       - taxon: macronata_forsskål_1775
       - taxon: punctata_forsskål_1775
-      - taxon: confœderata_forsskål_1775
+      - taxon: confoederata_forsskål_1775
       - taxon: fasciata_forsskål_1775
       - taxon: africana_forsskål_1775
       - taxon: polycratica_forsskål_1775
@@ -136,7 +136,7 @@ taxonomies:
     children:
     - taxon: tubipora
     - taxon: madrepora
-    - taxon: mæandrites
+    - taxon: maeandrites
     - taxon: millepora
     - taxon: flustra
     - taxon: cellaria

@@ -322,8 +322,6 @@ class Taxon:
           f'{self.name} with suffix "{suffix}" expected to have rank of {rank}',
         )
       if self.rank == rank and not self.name.endswith(suffix) and self.name not in exceptions:
-        if suffix == 'idae' and self.name.endswith('idæ'):
-          continue
         logger.warning(
           f'{self.name} of rank {rank} expected to end with suffix "{suffix}"',
         )
@@ -360,7 +358,6 @@ class Taxon:
         'Meandrina',
         'Palasterina',
         'Palaeasterina',
-        'Palæasterina',
         'Tellina',
       }
     )

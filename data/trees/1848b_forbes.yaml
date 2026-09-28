@@ -10,7 +10,7 @@
 taxonomies:
 - taxon: echinodermata-class
   children:
-  - taxon: cystideæ-order
+  - taxon: cystideae-order
     synonyms:
     - taxon: cystidea-order
     children:
@@ -60,23 +60,23 @@ taxonomies:
         synonyms:
         - taxon: malum_pander_1830
           parents:
-          - taxon: echinosphærites
+          - taxon: echinosphaerites
       - taxon: oblongus_pander_1830
         provisional: true
         synonyms:
         - taxon: oblongus_pander_1830
           parents:
-          - taxon: echinosphærites
+          - taxon: echinosphaerites
     - taxon: caryocystites
       children:
       - taxon: granatum_wahlenberg_1821
         synonyms:
         - taxon: granatum_wahlenberg_1821
           parents:
-          - taxon: echinosphærites
+          - taxon: echinosphaerites
         - taxon: testudinarius_hisinger_1837
           parents:
-          - taxon: sphæronites
+          - taxon: sphaeronites
       - taxon: davisii_mccoy_1848
       - taxon: litchi_forbes_1848
         new: true
@@ -85,9 +85,9 @@ taxonomies:
       - taxon: munitus_forbes_1848
         provisional: true
         new: true
-    - taxon: sphæronites
+    - taxon: sphaeronites
       or:
-      - taxon: echino-sphærites
+      - taxon: echino-sphaerites
       children:
       - taxon: aurantium_gyllenhaal_1772
         synonyms:
@@ -96,7 +96,7 @@ taxonomies:
           - taxon: echinus
         - taxon: aurantium_gyllenhaal_1772
           parents:
-          - taxon: echino-sphærites
+          - taxon: echino-sphaerites
         - taxon: strangwaysii_koenig_1825
           parents:
           - taxon: leucopthalmus
@@ -107,14 +107,14 @@ taxonomies:
         synonyms:
         - taxon: balticus_eichwald_1829
           parents:
-          - taxon: echino-sphærites
+          - taxon: echino-sphaerites
         - taxon: balticus_eichwald_1829
           parents:
           - taxon: heliocrinites
         - taxon: aranea_schlotheim_1826
           notes: says Volborth with no date, but cannot find any citation for it
           parents:
-          - taxon: echino-sphærites
+          - taxon: echino-sphaerites
       - taxon: punctatus_forbes_1848
         provisional: true
         new: true
@@ -137,6 +137,6 @@ taxonomies:
           and sulcations.  These canals ( in which the arms are lodged) are
           each and all curved 
 
-  - taxon: crinoideæ-order
+  - taxon: crinoideae-order
     synonyms:
     - taxon: crinoidea-order

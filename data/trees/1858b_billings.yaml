@@ -1,5 +1,5 @@
 taxonomies:
-- taxon: asteriadæ-order
+- taxon: asteriadae-order
   children:
   - taxon: palasterina
     notes: As defined by Mr. Salter, 1857
@@ -7,7 +7,7 @@ taxonomies:
     new: true
   - taxon: petraster
     new: true
-  - taxon: tæniaster
+  - taxon: taeniaster
     new: true
   - taxon: edrioaster
     pages: 82
@@ -55,9 +55,9 @@ taxonomies:
           source: 1857_billings
           pages: 294
 - notes: Speculative tree establishing Edrioasteridæ (Edrioasteroidea)
-  taxon: asteriadæ-order
+  taxon: asteriadae-order
   children:
-  - taxon: edrioasteridæ-suborder
+  - taxon: edrioasteridae-suborder
     questionable: true
     provisional: true
     new: true

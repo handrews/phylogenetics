@@ -86,8 +86,8 @@ def test_resolve_ranks_and_kinds(store):
   assert both[0]['key'] == 'rhenopyrgus', 'the most cited primary record first'
   assert both[0]['variants'] == ['rhenopyrgus-subgenus']
   assert 'sourcesWithStatements' in both[0] and 'sources' not in both[0]
-  spelling = next(c for c in store.resolve_name('Palæaster') if c['key'] == 'palæaster')
-  assert spelling['kind'] == 'altSpellingOf' and spelling['of'] == 'palaeaster'
+  spelling = next(c for c in store.resolve_name('Agelacrinidae') if c['key'] == 'agelacrinidae')
+  assert spelling['kind'] == 'altSpellingOf' and spelling['of'] == 'agelacrinitidae'
 
 
 def test_resolve_absent_is_empty(store):

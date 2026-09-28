@@ -155,7 +155,7 @@ taxonomies:
               - taxon: echinanthus_leske_1778
           - taxon: politus_lamarck_1816
             new: true
-          - taxon: hemisphæricus_lamarck_1816_clypeaster
+          - taxon: hemisphaericus_lamarck_1816_clypeaster
             new: true
           - taxon: stelliferus_lamarck_1816
             new: true
@@ -210,7 +210,7 @@ taxonomies:
               - taxon: echinites
           - taxon: fissuratus_lamarck_1816
             new: true
-          - taxon: hemisphæricus_lamarck_1816_galerites
+          - taxon: hemisphaericus_lamarck_1816_galerites
             new: true
           - taxon: depressus_leske_1778
             synonyms:
@@ -370,7 +370,7 @@ taxonomies:
             new: true
           - taxon: compressus_lamarck_1816
             new: true
-          - taxon: crux andraæ_lamarck_1816
+          - taxon: crux andraae_lamarck_1816
             new: true
           - taxon: sternalis_lamarck_1816
             new: true
@@ -462,7 +462,7 @@ taxonomies:
             new: true
             synonyms:
             - tentative: true
-              taxon: sphæra_müller.o.f_1776
+              taxon: sphaera_müller.o.f_1776
               notes: Given as sphæra Gm. but probably Müller?
           - taxon: fasciatus_lamarck_1816
             new: true
@@ -524,7 +524,7 @@ taxonomies:
             - taxon: variegata_leske_1778
               parents:
               - taxon: cidaris
-          - taxon: subcæruleus_lamarck_1816
+          - taxon: subcaeruleus_lamarck_1816
             new: true
           - taxon: pustulosus_leske_1778_cidaris
             synonyms:
@@ -535,7 +535,7 @@ taxonomies:
             new: true
             synonyms:
             - tentative: true
-              taxon: hemisphærica_leske_1778
+              taxon: hemisphaerica_leske_1778
               parents:
               - taxon: cidaris
           - taxon: miliaris_müller.p.l.s_1776
@@ -677,7 +677,7 @@ taxonomies:
             - taxon: coccinia_müller.o.f_1776
             - taxon: judaica_linnaeus_1761
             - taxon: viduata_müller.o.f_1776
-            - taxon: effœta_linnaeus_1767
+            - taxon: effoeta_linnaeus_1767
             - taxon: senilis_linnaeus_1767
             - taxon: undata_müller.o.f_1784
             - taxon: sulcata_pennant_1777
@@ -724,7 +724,7 @@ taxonomies:
                 parents:
                 - taxon: actinia
             - taxon: fusus_müller.o.f_1776
-            - taxon: inhærens_müller.o.f_1776
+            - taxon: inhaerens_müller.o.f_1776
             - taxon: glutinosa_lamarck_1816
               new: true
               synonyms:

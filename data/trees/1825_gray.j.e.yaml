@@ -10,7 +10,7 @@ taxonomies:
       children:
       - notes: Qunarian "Normal Group"
         children:
-        - taxon: cidaridæ     # Cidaris Lamarck
+        - taxon: cidaridae     # Cidaris Lamarck
           new: true
           children:
           - taxon: cidaris    # Klein, Lamarck
@@ -18,7 +18,7 @@ taxonomies:
             new: true
           - taxon: astropyga
             new: true
-        - taxon: echinidæ
+        - taxon: echinidae
           new: true
           children:
           - taxon: echinus    # Linnaeus, Van Phelsum
@@ -26,7 +26,7 @@ taxonomies:
             new: true
       - notes: Quinarian "Antecetent Group"
         children:
-        - taxon: scutellidæ
+        - taxon: scutellidae
           new: true
           children:
           - taxon: echinanthus  # non Van Phelsum
@@ -37,7 +37,7 @@ taxonomies:
           - taxon: echinodiscus
           - taxon: echinocyamus
           - taxon: cassidulus
-        - taxon: galeritidæ
+        - taxon: galeritidae
           new: true
           children:
           - taxon: galerites
@@ -49,7 +49,7 @@ taxonomies:
             new: true
           - taxon: echinobrissus
             new: true
-        - taxon: spatangidæ
+        - taxon: spatangidae
           new: true
           children:
           - taxon: spatangus  # Apparently non Lamarck, Leske???

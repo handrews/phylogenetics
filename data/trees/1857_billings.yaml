@@ -75,14 +75,14 @@ taxonomies:
         children:
         - taxon: elegans_billings_1857_lecanocrinus
           new: true
-        - taxon: lævis_billings_1857
+        - taxon: laevis_billings_1857
           new: true
       - taxon: porocrinus
         new: true
         children:
         - taxon: conicus_billings_1857_porocrinus
           new: true
-    - taxon: cystideæ-order
+    - taxon: cystideae-order
       children:
       - taxon: glyptocystites
         children:
@@ -111,9 +111,9 @@ taxonomies:
         - taxon: florealis_billings_1854
         - taxon: radiatus_billings_1854
         - taxon: tenuistriatus_billings_1854
-    - taxon: asteriadæ-order
+    - taxon: asteriadae-order
       children:
-      - taxon: palæasterina
+      - taxon: palaeasterina
         children:
         - taxon: stellata_billings_1857
           new: true
@@ -121,11 +121,11 @@ taxonomies:
           new: true
         - taxon: rugosus_billings_1857
           new: true
-      - taxon: palæaster
+      - taxon: palaeaster
         children:
         - taxon: pulchellus_billings_1857
           new: true
-      - taxon: palæocoma
+      - taxon: palaeocoma
         children:
         - taxon: spinosa_billings_1857
           new: true

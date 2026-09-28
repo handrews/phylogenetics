@@ -42,7 +42,7 @@ taxonomies:
       children:
       - taxon: basteri_leske_1778
         new: true
-    - taxon: hemisphærica_leske_1778
+    - taxon: hemisphaerica_leske_1778
       new: true
     - taxon: angulosa_leske_1778_cidaris
       new: true
@@ -57,7 +57,7 @@ taxonomies:
       - taxon: globulus_linnaeus_1758
         parents:
         - taxon: echinus
-      - taxon: sphæroides_linnaeus_1758
+      - taxon: sphaeroides_linnaeus_1758
         parents:
         - taxon: echinus
       - taxon: gratilla_linnaeus_1758
@@ -161,7 +161,7 @@ taxonomies:
     children:
     - taxon: sinuatus_leske_1778
       new: true
-    - taxon: hemisphæricus_leske_1778
+    - taxon: hemisphaericus_leske_1778
       new: true
     - taxon: quinquelabiatus_leske_1778
       notes: species dubia

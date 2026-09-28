@@ -10,7 +10,7 @@ taxonomies:
   - taxon: icthyocrinus
     new: true
     children:
-    - taxon: lævis_conrad.t.a_1842
+    - taxon: laevis_conrad.t.a_1842
       new: true
   - taxon: nucleocrinus
     notes: |

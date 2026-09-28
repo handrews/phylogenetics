@@ -42,12 +42,12 @@ taxonomies:
       pages: 196
       new: true
       children:
-      - taxon: sphæronites
+      - taxon: sphaeronites
         pages: 195
         new: true
         notes: The 1967 Treatise incorrectly gives the page as 185.
         synonyms:
-        - taxon: echinosphærites
+        - taxon: echinosphaerites
           authority:
             source: 1821_wahlenberg
         children:
@@ -66,7 +66,7 @@ taxonomies:
               source: 1772_gyllenhaal
               pages: 245
           - parents:
-            - taxon: echinosphærites
+            - taxon: echinosphaerites
             authority:
               source: 1821_wahlenberg
               pages:
@@ -86,7 +86,7 @@ taxonomies:
                 figures:
                 - 1c
           - parents:
-            - taxon: echinosphærites
+            - taxon: echinosphaerites
             authority:
               source: 1821_wahlenberg
               pages:

@@ -98,24 +98,24 @@ property.
 | `quotes` | 1 | 0.3% |
 | `reading` | 1 | 0.3% |
 
-### `authority` -- 1637 instances in `data/`
+### `authority` -- 1635 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `source` | 1637 | 100.0% |
+| `source` | 1635 | 100.0% |
 | `pages` | 64 | 3.9% |
 | `illustrations` | 28 | 1.7% |
 | `attributedTo` | 24 | 1.5% |
 | `ex` | 2 | 0.1% |
 | `notes` | 2 | 0.1% |
 
-### `authorityFields` -- 9105 instances in `data/`
+### `authorityFields` -- 9082 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `authority` | 1634 | 17.9% |
-| `auth` | 1000 | 11.0% |
-| `year` | 998 | 11.0% |
+| `authority` | 1632 | 18.0% |
+| `auth` | 998 | 11.0% |
+| `year` | 996 | 11.0% |
 | `in` | 28 | 0.3% |
 
 ### `basicOccurrence` -- 35 instances in `data/`
@@ -148,11 +148,11 @@ property.
 | `subunit` | 0 | 0.0% |
 | `superunit` | 0 | 0.0% |
 
-### `citationFields` -- 9105 instances in `data/`
+### `citationFields` -- 9082 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `rank` | 730 | 8.0% |
+| `rank` | 728 | 8.0% |
 | `bracket` | 48 | 0.5% |
 
 ### `cladisticFields` -- 794 instances in `data/`
@@ -199,11 +199,11 @@ property.
 | `location` | 0 | 0.0% |
 | `source` | 0 | 0.0% |
 
-### `locationFields` -- 9105 instances in `data/`
+### `locationFields` -- 9082 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `pages` | 223 | 2.4% |
+| `pages` | 223 | 2.5% |
 | `illustrations` | 125 | 1.4% |
 
 ### `materialsFields` -- 5586 instances in `data/`
@@ -307,16 +307,16 @@ property.
 | `neotype` | 0 | 0.0% |
 | `repository` | 0 | 0.0% |
 
-### `taxonRecord` -- 2725 instances in `data/`
+### `taxonRecord` -- 2702 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `name` | 2686 | 98.6% |
-| `notes` | 217 | 8.0% |
-| `altSpellingOf` | 166 | 6.1% |
+| `name` | 2663 | 98.6% |
+| `notes` | 216 | 8.0% |
+| `altSpellingOf` | 144 | 5.3% |
 | `lang` | 75 | 2.8% |
 | `originalParent` | 65 | 2.4% |
-| `altRankOf` | 61 | 2.2% |
+| `altRankOf` | 61 | 2.3% |
 | `vulgarSpellingOf` | 47 | 1.7% |
 | `homonym` | 16 | 0.6% |
 | `holotype` | 13 | 0.5% |
@@ -448,11 +448,11 @@ property.
 
 ### `phylogeny#/$defs/rank`
 
-24 of 32 members used, 730 occurrences.
+24 of 32 members used, 728 occurrences.
 
 | value | count |
 |---|---|
-| `'Family'` | 178 |
+| `'Family'` | 177 |
 | `'species'` | 115 |
 | `'Order'` | 114 |
 | `'Class'` | 90 |
@@ -463,8 +463,8 @@ property.
 | `'Superfamily'` | 18 |
 | `'subgenus'` | 17 |
 | `'Subclass'` | 15 |
-| `'Suborder'` | 14 |
 | `'Phylum'` | 13 |
+| `'Suborder'` | 13 |
 | `'Subphylum'` | 11 |
 | `'Group'` | 10 |
 | `'Grade'` | 9 |
@@ -567,5 +567,5 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
 | `phylogeny#/$defs/specimens/additionalProperties/items` | string/array | strx521, listx4 | `an imperfect specimen le...`, `second specimen collecte...`, `first specimen collected...`, `C -- remains in the poss...` | - |
 | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items` | array/string/integer | intx10, strx3 | `EE15373`, `EE 1659`, `E23470` | array |
-| `phylogeny#/$defs/taxonRecord/properties/name` | string/null | strx2490, nullx196 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
+| `phylogeny#/$defs/taxonRecord/properties/name` | string/null | strx2467, nullx196 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
 

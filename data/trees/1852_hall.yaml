@@ -5,7 +5,7 @@ taxonomies:
   - taxon: crinoidea-family
     notes: Rank is a guess.  Middle Silurian of Clinton Group.
     synonyms:
-    - taxon: crinoideæ-family
+    - taxon: crinoideae-family
       notes: Alternate spelling used in text.
     children:
     - taxon: closterocrinus
@@ -36,7 +36,7 @@ taxonomies:
   - taxon: crinoidea-family
     notes: Rank is a guess.  Middle Silurian of Niagra Group.
     synonyms:
-    - taxon: crinoideæ-family
+    - taxon: crinoideae-family
       notes: Alternate spelling used in text.
     children:
     - taxon: homocrinus
@@ -79,7 +79,7 @@ taxonomies:
         new: true
     - taxon: ichthyocrinus
       children:
-      - taxon: lævis_conrad.t.a_1842
+      - taxon: laevis_conrad.t.a_1842
     - taxon: lyriocrinus
       new: true
       children:
@@ -121,9 +121,9 @@ taxonomies:
         - taxon: decorus_phillips.j_1839
           parents:
           - taxon: hypanthocrinites
-      - taxon: cælatus_hall_1843
+      - taxon: caelatus_hall_1843
         synonyms:
-        - taxon: cælatus_hall_1843
+        - taxon: caelatus_hall_1843
           parents:
           - taxon: hypanthocrinites
       - taxon: papulosus_hall_1852
@@ -161,7 +161,7 @@ taxonomies:
     - taxon: calceocrinus
       new: true
       notes: Errata and additions; no species defined.
-  - taxon: cystideæ-family
+  - taxon: cystideae-family
     synonyms:
     - taxon: cystidea-family
       notes: Alternate spelling used in text.
@@ -212,10 +212,10 @@ taxonomies:
           - [18, 20]
           - 20†
         new: true
-  - taxon: asteriadæ-family
+  - taxon: asteriadae-family
     children:
-    - taxon: palæaster
+    - taxon: palaeaster
       new: true
       children:
-      - taxon: niagarensis_hall_1852_palæaster
+      - taxon: niagarensis_hall_1852_palaeaster
         new: true
