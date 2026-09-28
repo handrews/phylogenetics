@@ -228,7 +228,11 @@ planner reached 41/47)
 ## Things to keep straight
 
 - **Derived versus declared.** Coverage is derived from the tree; audit
-  state is declared. Do not reintroduce declared coverage flags.
+  state is declared. Do not reintroduce declared coverage flags. G1's
+  declared `coverage` map is the interim exception, kept because the tree
+  lacked the denominator; roadmap G11 is the mechanism that supplies it
+  (per-node nulls and a file-level `unused` list) and retires the
+  declared map for the content kinds.
 - **The extractor is the seam.** Any schema migration touches the
   extractor once and the tools not at all.
 - **Cheap models for the mechanical steps** (corrections, reviews, drafts,

@@ -51,7 +51,9 @@ recorded as a synonym; see [Terminology updates](#terminology-updates-1966--2023
 - Absence of a field is not a statement. A source that does not list a
   synonym, a specimen, or a range has not denied it; the data only records
   what was captured. Nothing may be inferred from a missing value, and the
-  audit state (G1) says how much was looked for.
+  audit state (G1) says how much was looked for. A `null` is a statement,
+  that the source prints nothing of the kind, and only an auditor writes
+  one (G11).
 - Prefer stated uncertainty to confidence. The audience is researchers who
   will follow the citation; the job is access to what was printed, not
   synthesis of it.
@@ -1187,7 +1189,9 @@ holds the denominator; the derived counts of what the tree contains are
 the cross-check (a tree with no synonymy entries and `synonymy: all` has
 one of them wrong). A user's confidence in an answer is the conjunction:
 audited, and complete for the kinds the question touches. An unaudited
-source carries no `coverage`. Default state is `unaudited`. `unauditable` means a copy exists but no
+source carries no `coverage`. (G11 revisits the denominator: per-node
+nulls in the tree can supply it for the content kinds, leaving the block
+with `state`, `notes` and the source-level kinds.) Default state is `unaudited`. `unauditable` means a copy exists but no
 machine-readable text does. `unobtainable` means no copy could be had at all:
 not digitized, or behind institutional access. Palaeontologia Indica n.s. 2(3)
 (1906), where the *Caryocystites* type-species question was settled, is the
@@ -1248,21 +1252,32 @@ Bather prints Pelmatozoa as "Sub-Phylum" in 1899 and "Grade" in 1900. Until
 G8 lands, the draft tree quotes each rank word in `notes`; whether Stage,
 Sub-branch and Sub-stage join the enum is the auditor's call.
 
+**G9. Coverage gaps are scope history, not errors.** Sources entered early
+capture less because the project's scope grew (skeleton first, then
+synonymy, material, occurrences, disarticulated plates). The audit state
+records this; a review should list what is missing without treating it as a
+mistake. Disarticulated plate material belongs in scope: the earliest
+echinoderm records are plates, older than any articulated fossil.
+
 **G10. Typographical variation is not spelling.** Four kinds of variation
 in the printed literature, and the decision for each. The Code treats the
 first three as mandatory corrections (Art. 27, 32.5.2), so they carry no
 nomenclatural information, and the project's own rule is that a printed form
 worth keeping goes in `citedAs`, never into identity.
 
-- **Ligatures (decided).** æ and œ are typesetting: which form appears
-  depends on the compositor's case, not the author, and the Code corrects
-  them to ae and oe (Art. 32.5.2.1). Keys and `name` values use ae/oe. Today
-  67 keys in `taxa.yaml` contain a ligature, 33 of them `altSpellingOf`
-  records that exist only for the ligature and 34 primary records entered
-  from a ligature printing; 27 trees and 7 source keys cite them. Migration:
-  rename the 67 keys, merge the 33 aliases into their bases, and add a loader
-  warning on any key containing æ or œ so the rule holds. A mechanical job
-  with the test gate behind it, as its own commit after `step0` merges.
+- **Ligatures (done 2026-09-27, PR #86).** æ and œ are typesetting: which
+  form appears depends on the compositor's case, not the author, and the
+  Code corrects them to ae and oe (Art. 32.5.2.1). Keys and `name` values
+  use ae/oe. The migration renamed 43 records in place with every
+  reference to them, removed 21 ligature records that duplicated a plain
+  one (20 `altSpellingOf` aliases and one exact copy) and pointed their
+  trees at the plain record, folded the two Asteriadae family records into
+  one `altRankOf` the order, and dropped the unused `diploporitidæ`
+  record. Author names, titles, `citedAs` and `notes` keep their
+  ligatures. The loader's rank-suffix check lost its allowances for
+  "-idæ" and "Palæasterina" instead of gaining a warning; the resolver
+  (`phylohist/names.py`) folds ligatures on lookup, so a printed form
+  still finds its record.
 - **Capitalised epithets (confirmed: not tracked).** Older works capitalise
   a species name formed from a person's name ("Edrioaster Bigsbyi", Billings
   1858). Species-group names are lowercase by rule (Art. 28); when the
@@ -1289,12 +1304,87 @@ worth keeping goes in `citedAs`, never into identity.
   keys exist. Decision: keep them as `altSpellingOf` records, and reconsider
   only if the resolver makes them redundant.
 
-**G9. Coverage gaps are scope history, not errors.** Sources entered early
-capture less because the project's scope grew (skeleton first, then
-synonymy, material, occurrences, disarticulated plates). The audit state
-records this; a review should list what is missing without treating it as a
-mistake. Disarticulated plate material belongs in scope: the earliest
-echinoderm records are plates, older than any articulated fossil.
+**G11. Coverage derived from the tree, through nulls; the audit block
+keeps verification and the source-level kinds (direction agreed
+2026-09-27; to be built with D1, not before).** G1 declares coverage per
+source because the tree never holds the denominator: it cannot say
+whether a node without `synonyms` is a node the paper gives no synonymy
+for or a node whose synonymy is not yet entered. A researcher's question
+is per taxon, though ("does Bassler 1935 give material for
+*Astrocystites*?"), and a per-source "partly" answers nothing about the
+node. The direction is to let the tree carry the denominator for the
+content fields and derive the map G1 declares.
+
+Three states per content field on a node:
+
+- absent: not captured. Absence remains a non-statement (Ground rules).
+- `null`: the source prints nothing of this kind for this node. A
+  statement about the paper, made only by an auditor who looked.
+- a value: captured; `listComplete: false` (B16) when only part of a
+  printed list is entered, which is the node-level form of "partly".
+
+A tree file declares once the fields the source uses nowhere, so that the
+common case costs no per-node nulls:
+
+```yaml
+unused: [synonyms, specimens, occurrences, illustrations]
+taxonomies:
+- ...
+```
+
+Validation: a field listed as unused appears on no node of the file. A
+node in a file that uses the field may still carry `null` for itself.
+
+Fields fall into three classes, and only the third is nullable:
+
+- Structural and editorial, never null: `parents` (a device of the
+  binomial handling, not something a paper uses or omits), `citedAs`,
+  `notes`, `editorial`, and `pages`, since a locator is always wanted
+  and its absence is always "not captured".
+- Act flags, never null: `new`, `type`, `emended`, `provisional` and
+  the rest. Absence means the act is not recorded; whether that can be
+  read as "not made" is the audit state's job, and a flag known to be
+  unreliably recorded (`emended`, at the time of writing) is exactly what
+  `state: unaudited` says.
+- Content, nullable: `synonyms`, `specimens`, `occurrences`,
+  `illustrations`, and whatever D1 makes of the material fields.
+  `children` could join in principle (`children: null` for a taxon the
+  paper places nothing under), but nulling every species is the bloat the
+  file-level list exists to avoid, so skeleton stays source-level.
+
+What stays declared in the audit block: `state` and `notes`, because a
+negative observation is the easiest to get wrong and the nulls carry no
+reliability signal of their own; and the kinds that are not content
+fields, `skeleton` (taxa not in the tree at all), `newTaxa` and `types`
+(flags, whose "partly" means "not every node was checked for the act",
+which has no node-level form). For the content kinds the map is derived:
+`na` when the file lists the field as unused and no node carries it;
+`all` when no node has the field absent; `none` when every node has it
+absent and the file does not list it; `partly` otherwise. The
+cross-check in the claims extractor (a declared `all` against zero
+claims) then inverts into a migration aid comparing the declared map
+with the derived one, and disappears when nothing is declared any more.
+
+Two conventions to fix before the first null is written: `null`, never
+an empty list, spells "prints none", so the statement has one form
+whatever the field's type; and a draft never emits `null`. A model that
+has not found a synonymy will write the null gladly, turning "not
+captured" into a false negative observation. Only the auditor sets nulls.
+
+Migration is incremental. Unaudited trees change nothing: absent already
+means unknown. For audited trees, `na` becomes an entry in the file's
+`unused` list; `all` becomes `null` on each node that lacks a value,
+which is the audit information itself, not bloat; `none` needs nothing;
+`partly` keeps its declaration until a re-read can say which nodes. The
+derived map falls back to the declared one wherever a file declares
+nothing, so the two can coexist for as long as the migration takes.
+
+This is the mechanism behind the plan's "derived versus declared" note,
+which G1 could not honour for want of the denominator. Because the
+material fields are about to be redesigned, the null semantics are
+designed into D1's `material` list rather than retrofitted onto the
+fields it replaces; `synonyms` and `illustrations` can follow the same
+rule once D1 has settled the shape.
 
 ---
 
