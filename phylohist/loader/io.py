@@ -21,6 +21,8 @@ RECORD_FILES = (
   DATA_DIR / 'publications.yaml',
   DATA_DIR / 'sources.yaml',
   DATA_DIR / 'taxa.yaml',
+  DATA_DIR / 'repositories.yaml',
+  DATA_DIR / 'roles.yaml',
 )
 # Each tree file is one source's trees, keyed by the source id it is named
 # for, and checked against this `$defs` entry.

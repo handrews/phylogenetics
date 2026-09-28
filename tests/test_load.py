@@ -103,7 +103,14 @@ def test_data_files_in_load_order():
 
   files = io.data_files(drafts=True)
   names = [name for name, _ in files]
-  assert names[: len(io.RECORD_FILES)] == ['authors', 'publications', 'sources', 'taxa']
+  assert names[: len(io.RECORD_FILES)] == [
+    'authors',
+    'publications',
+    'sources',
+    'taxa',
+    'repositories',
+    'roles',
+  ]
   trees = [path for name, path in files if name == io.TREE_DEF]
   assert trees == io.tree_files(drafts=True)
   dirs = [path.parent for path in trees]

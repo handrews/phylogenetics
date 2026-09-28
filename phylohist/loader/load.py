@@ -12,6 +12,7 @@ data anyway.
 import contextlib
 import logging
 
+from . import material
 from .io import LoadError, load_files
 from .research import Author, Publication, Source
 from .taxa import Taxon, Tree
@@ -107,6 +108,10 @@ def _load_trees(data):
       logger.error(f'Tree file "{ref_key}" has no source record; its trees are skipped')
       continue
     roots[ref_key] = []
+    file_meta = {
+      'file_contexts': opinion.get('contexts') or {},
+      'file_unused': tuple(opinion.get('unused') or ()),
+    }
 
     position = 0
     for tax_tree in opinion.get('taxonomies', {}):
@@ -114,6 +119,7 @@ def _load_trees(data):
         'source_key': ref_key,
         'position': position,
         'type': Tree.TYPE_TAXONOMY,
+        **file_meta,
       }
       position += 1
 
@@ -125,6 +131,7 @@ def _load_trees(data):
       metadata = {
         'source_key': ref_key,
         'position': position,
+        **file_meta,
       }
       position += 1
 
@@ -145,7 +152,40 @@ def _load_trees(data):
   _report_merge_targets(data)
   _report_missing_protologues(data)
   _report_lapsus_records(roots)
+  _report_material(data)
   return roots
+
+
+def _log_material(level, message):
+  (logger.error if level == 'error' else logger.warning)(message)
+
+
+def _report_material(data):
+  """Run every `material.py` check over every node of every opinion,
+  logging each at its level with the source key and, for a per-node
+  check, the node's path."""
+  repositories = data.get('repositories') or {}
+  for source_key, opinion in data['trees'].items():
+    source = Source.get(source_key)
+    abbreviations = (source._data.get('repositoryAbbreviations') if source else None) or {}
+    file_contexts = opinion.get('contexts') or {}
+
+    for level, message in material.unreferenced_file_contexts(opinion):
+      _log_material(level, f'{source_key}: {message}')
+    for level, message in material.unused_fields(opinion):
+      _log_material(level, f'{source_key}: {message}')
+
+    for path, node, is_cited in material.walk_document(opinion):
+      where = f'{source_key} at {path}'
+      node_contexts = node.get('contexts') or {}
+      for level, message in material.context_refs(node, node_contexts, file_contexts):
+        _log_material(level, f'{where}: {message}')
+      for level, message in material.figure_refs(node):
+        _log_material(level, f'{where}: {message}')
+      for level, message in material.catalog_numbers(node, repositories, abbreviations):
+        _log_material(level, f'{where}: {message}')
+      for level, message in material.null_material(node, is_cited):
+        _log_material(level, f'{where}: {message}')
 
 
 class ErrorCount(logging.Handler):
