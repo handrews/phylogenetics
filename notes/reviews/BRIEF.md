@@ -40,7 +40,9 @@ sources capture less because the project's scope grew. So:
 
 1. **Coverage, one line per kind**: classification skeleton / new taxa / type
    species / synonymy lists / material / occurrences / illustrations /
-   diagnoses / phylogeny — each marked all, partly, or none. No item-level
+   diagnoses / phylogeny — each marked all, partly, or none. (The
+   `diagnosis` field is being retired, roadmap D10: for diagnoses report
+   only whether one is printed and on which page.) No item-level
    detail; at most one example per row. If nothing beyond the skeleton is
    captured, say so in one sentence.
 2. **Correctness of what IS captured**: check every node in the tree file
@@ -71,3 +73,12 @@ section so the owner can decide whether to enter it.
   unless the context settles it.
 - Crisp prose, tables where they help, no chatty commentary, no proposals to
   edit YAML beyond naming the discrepancy.
+- The review is where quotation and narration belong. The trees record
+  who published what systematic information where, with page, plate and
+  figure locators, and their `notes` explain only what would otherwise
+  confuse a reader or hide the right source (roadmap, Ground rules,
+  "Scope"). Do not flag a tree for omitting a diagnosis, a description, a
+  caption or the paper's argument; do flag a `notes` value that narrates
+  rather than explains, and a `pages` value that spans a treatment when
+  the convention is the single page where the name is stated or its prose
+  begins.

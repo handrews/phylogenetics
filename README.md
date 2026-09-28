@@ -53,7 +53,13 @@ on the work that really requires a model's reasoning and flexibility.
 </picture>
 
 - **The data.** The curator records each publication's opinions as
-  printed. The model's part is optional and reviewable: it reads a
+  printed: who published what systematic information in which paper.
+  That is names and nomenclatural acts, placements, usages and
+  synonymies, the specimens they rest on with their geological context,
+  and the page, plate and figure numbers that locate each of these. It
+  is not diagnoses, descriptions or a narration of the paper; a
+  researcher who wants those follows the citation to the paper itself.
+  The model's part is optional and reviewable: it reads a
   paper against its tree and writes a review (`notes/reviews/`), or
   drafts a tree (`drafts/`) that code validates and the researcher
   audits before it enters `data/`. The human and the model review each

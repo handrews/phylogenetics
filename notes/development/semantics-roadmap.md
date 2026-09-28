@@ -55,6 +55,46 @@ recorded as a synonym; see [Terminology updates](#terminology-updates-1966--2023
 - Prefer stated uncertainty to confidence. The audience is researchers who
   will follow the citation; the job is access to what was printed, not
   synthesis of it.
+- Scope (stated 2026-09-27): the data says who published what systematic
+  information in which paper. In scope are names and nomenclatural acts,
+  placements, usages, synonymies and rejections, the specimens the
+  systematics rests on with their geological context, and the page, plate
+  and text-figure numbers that locate each of these. Out of scope are
+  diagnoses, descriptions, figure captions, and any narration of a paper's
+  content that is not itself a nomenclatural or systematic act. A correct
+  and complete citation is the product; the paper supplies the rest.
+- `notes` on a tree node, a taxon record or a source explains what would
+  otherwise make the data hard to understand or the right source hard to
+  locate: a conflict between sources, a slip the paper itself made, a
+  spelling the reader will not expect. It does not narrate the paper and
+  does not quote it at length; quotation and argument belong in the
+  review under `notes/reviews/`. The line is a judgement call, and a piece
+  of trivia occasionally lands in a note because the owner found it
+  interesting, but the default is nothing. The Bassler 1935 tree is the
+  model: one sentence recording that Bassler 1915 had already reverted to
+  *Astrocystites*, which a reader following Webby 1968 would otherwise
+  miss.
+- `pages` on a tree node is one page: the page on which the name is
+  formally stated, or, where the taxon is treated only in prose, the page
+  on which that prose begins. The field still takes several pages or a
+  range because exceptional cases exist, but a range covering the whole
+  treatment is not the convention.
+- A classification a paper adopts by citation is that paper's usage, even
+  where the paper places nothing under most of it. Whiteaves 1897 prints
+  no scaffold of its own and cites Nicholson & Lydekker's three orders of
+  the Cystoidea; the tree records the class and all three orders with the
+  ranks the paper attributes to them, two of them empty, and the hedged
+  placement under one of them as `provisional` with its `editorial`
+  basis. The genus is not made the top node merely because the paper
+  erected nothing above it.
+- Specimens are recorded as each paper prints them and are not reconciled
+  across papers. Whiteaves 1897 names three specimens, Bather 1914 three,
+  Fay 1962 two; each tree carries its own paper's count, and the
+  discrepancy is a matter for the reviews. Identifiers, including a
+  paper's own ad hoc letters (A, B, C), and the repository are recorded;
+  physical descriptions of the specimens are not. How type fixation by a
+  later author is marked as an act is part of the D design and is not to
+  be settled piecemeal.
 - Early works are authoritative by their date and inadequate by every later
   standard: no catalogue number, sometimes no illustration, a name proposed in
   a sentence. The model must carry such a source with the same fields as a
@@ -1010,6 +1050,15 @@ Do the gold slice first and leave the rest on the old shape behind a
 deprecation flag in the schema until migrated.
 
 ---
+
+**D10. Retire `diagnosis` (decided 2026-09-27, not yet done).** The scope
+rule excludes diagnoses and descriptions, so the field, its `diagnosis`
+claim kind and the `diagnoses` coverage kind go. D8's deferral phrases go
+with them. If a locator for the diagnosis is ever wanted, it is a page
+number, not text; the node's `pages` already points at the formal
+statement of the name, which is where a diagnosis is printed. Until the
+removal lands, drafts and reviews do not add to the field, and reviewers
+report a diagnosis only as present or absent on a page.
 
 ## E. Stratigraphic time
 
