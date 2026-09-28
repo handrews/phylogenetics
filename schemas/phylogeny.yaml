@@ -536,6 +536,15 @@ $defs:
         oneOf:
         - type: boolean
         - $ref: "#/$defs/citedAct"
+      recombined:
+        description: |
+          Combinatio nova: the source prints this species-group name in a
+          new genus as its act ("comb. nov."), or, when `by` names another
+          work, follows the recombination made there. Pair it with
+          `moved` when the source names the genus the name leaves.
+        oneOf:
+        - type: boolean
+        - $ref: "#/$defs/citedAct"
       translated:
         description: |
           Nomen translatum: the name is used at another rank than the one

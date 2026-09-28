@@ -385,6 +385,7 @@ class Words:
         'placeholder': 'placeholder introduced',
         'type': 'type species',
         'emended': 'emended',
+        'combNov': 'new combination',
         'nomTransl': 'nomen translatum' + (f' from {self.store.name(origin)}' if origin else ''),
         'nomNudum': 'nomen nudum',
         'removed': f'removed from {self.store.name(claim.get("removedFrom", ""))}',

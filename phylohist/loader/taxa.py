@@ -456,6 +456,10 @@ class ProxyTaxon(Taxon):
 RelatedAxis = collections.namedtuple('RelatedAxis', 'name many cited')
 
 
+# The ranks whose names are combinations with a genus.
+_COMBINATION_RANKS = frozenset({'subgenus', 'species', 'subspecies', 'variety'})
+
+
 class Tree:
   _NAMED_FIELDS = {'taxon'}
   _PROXY_FIELDS = {'cfTaxon', 'affTaxon'}
@@ -582,6 +586,10 @@ class Tree:
       self._children.append(Tree(child, parent=self, relpath=('children', index)))
 
     if self._taxon:
+      # A new combination is an act on a species-group name.
+      if self._data.get('recombined') and self._taxon.rank.lower() not in _COMBINATION_RANKS:
+        logger.error(f'{self} is `recombined` but is not a species-group name')
+
       if self._taxon.name:
         Tree._taxon_index[self._taxon.name].add(self.root)
 

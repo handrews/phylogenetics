@@ -645,6 +645,10 @@ def test_followed_acts_and_sensu_words(store):
     == 'substituted for Rhenopyrgidae'
   )
   assert words.act_words({'actKind': 'nomNudum'}) == 'nomen nudum'
+  comb = {'actKind': 'combNov', 'by': '1968b_paul.c.r.c'}
+  assert words.act_words(comb) == 'new combination by Paul 1968'
+  combined = {'key': 'grayae_bather_1915', 'name': 'grayae', 'acts': [{'act': 'combNov'}]}
+  assert node_label(combined) == 'grayae comb. nov.'
   lapsus = {'actKind': 'lapsus', 'lapsusAs': 'canadensis_billings_1866'}
   assert words.act_words(lapsus) == 'printed by lapsus calami as canadensis'
   # A listing shows the slip beside the intended name, as it shows a move.

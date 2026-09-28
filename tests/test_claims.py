@@ -252,3 +252,38 @@ def test_lapsus_records_stay_under_lapsus(load_records, caplog):
   )
   errors = [r.getMessage() for r in caplog.records if r.levelno >= logging.ERROR]
   assert len(errors) == 1 and 'is not a `synonyms` or `non` entry' in errors[0]
+
+
+def test_recombined_is_the_printed_new_combination(load_records, caplog):
+  # "comb. nov.": the act on the species, beside the move out of the genus
+  # it leaves; followed from another work, it names that work.
+  child = {
+    'taxon': 'grayae_bather_1915',
+    'recombined': True,
+    'moved': {'taxon': 'pyrgocystis'},
+  }
+  followed = {
+    'taxon': 'coronaeformis_rievers_1961',
+    'recombined': {'by': {'source': '1983_holloway_jell', 'pages': 12}},
+  }
+  root = Tree(
+    {'taxon': 'rhenopyrgus', 'children': [child, followed]},
+    {'source_key': '1985_jell_burrett_banks', 'type': 'taxonomy', 'position': 94},
+  )
+  claims = extract({'1985_jell_burrett_banks': [root]})['1985_jell_burrett_banks']
+  assert not [r for r in caplog.records if r.levelno >= logging.ERROR]
+  at = collections.defaultdict(list)
+  for claim in claims:
+    at[claim['path']].append(claim)
+  kinds = {(c['kind'], c.get('actKind')) for c in at['94/children/0']}
+  assert {('act', 'combNov'), ('act', 'moved'), ('rejection', None)} <= kinds
+  [act] = [c for c in at['94/children/1'] if c.get('actKind') == 'combNov']
+  assert act['by'] == '1983_holloway_jell' and act['byPages'] == 12
+
+  caplog.clear()
+  Tree(
+    {'taxon': 'rhenopyrgus', 'recombined': True},
+    {'source_key': '1985_jell_burrett_banks', 'type': 'taxonomy', 'position': 93},
+  )
+  errors = [r.getMessage() for r in caplog.records if r.levelno >= logging.ERROR]
+  assert len(errors) == 1 and 'is not a species-group name' in errors[0]

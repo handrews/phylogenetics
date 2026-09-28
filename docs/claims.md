@@ -141,6 +141,7 @@ Something this source does to a name. One claim per flag, `actKind` being:
 | `new: true` on a placeholder | `placeholder` (the source originates the placeholder; C4) |
 | `type: true` | `type` (the fixation method joins when B14 lands) |
 | `emended: true` or `emended: {by}` | `emended`; `by` and `byPages` when the source follows another work's emendation |
+| `recombined: true` or `recombined: {by}` on a species-group node | `combNov` (comb. nov.); `by` and `byPages` when the source follows another work's recombination |
 | `translated: true` or `translated: {taxon: y, by?}` | `nomTransl`; `translatedFrom: y` when the earlier rank is named, `by`/`byPages` when another work made the act, `rankVariants` from the records' `altRankOf` links |
 | `nudum: true` | `nomNudum` |
 | `corrected: {taxon: y}` | `corrected`, `correctedFrom: y`; the node's own name is the corrected form |
@@ -154,9 +155,17 @@ A node under `translated`, `corrected`, `substituted`, `moved` or `removed` is t
 earlier state of the name as this source cites it: its own `authority`,
 `auth`, `year`, `pages` and `illustrations` locate that earlier use, and
 it emits a `usage` claim on its axis like any cited entry. The change is
-this source's act. `emended` and `translated` are the two acts a source
-may follow rather than perform, and `by` (an `authority`) names the work
-that performed it.
+this source's act. `emended`, `recombined` and `translated` are the acts
+a source may follow rather than perform, and `by` (an `authority`) names
+the work that performed it.
+
+`moved` and `recombined` say different things. `moved` is a change of
+placement at any rank, often noted only in prose: the node left the group
+under `moved`, with a `rejection` of that placement. `recombined` is the
+printed nomenclatural act on a species-group name, "comb. nov.", and pairs
+with `moved` when the source names the genus the name leaves. Otherwise a
+combination is not a claim: the tools derive it from where each source
+places the name.
 
 A node under `lapsus` is not an earlier state: it is the name this
 source printed by a slip of the pen for the node's own. Its citation

@@ -481,6 +481,8 @@ class _NodeClaims:
       self._act('type', 'type')
     if emended := data.get('emended'):
       self._act('emended', 'emended', **_by(emended))
+    if recombined := data.get('recombined'):
+      self._act('combNov', 'recombined', **_by(recombined))
     if translated := data.get('translated'):
       fields = _by(translated)
       if (earlier := _related_key(node, 'translated')) is not None:
