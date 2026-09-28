@@ -1355,6 +1355,8 @@ $defs:
     $ref: "#/$defs/timeFields"
     unevaluatedProperties: false
     properties:
+      paleocontinent:
+        type: string
       basis:
         type: string
       sources:
