@@ -1,18 +1,214 @@
-repositories:
-  BMNH: British Museum (Natural History)
-  BSPG: Bayerische Staatssammlung für Paläontologie und Geologie, Germany
-  GIK: Geologischen Instituts der Universität zu Köln
-  GM: Museum of Paleontology, Guizhou University
-  MPEP: Musée de paléontologie et de l’évolution, Québec, Canada
-  NM: National Museum, Prague
-  NHMUK: Natural History Museum (London)
-    # PI department for source 2020_ewin_martin.m_isotalo_zamora ?
-  NMVP: Museum of Victoria, Melbourne
-  QMF: Queensland Museum
-  QML: Queensland Museum
-  RVS: Rievers Collection, Enkirch (Moselle)
-  UCBL-FSL: University Claude Bernard 1, Lyon, France.
-  UQF: University of Queensland
-  USNM: National Museum of Natural History (Smithsonian)
-localities:
-  UQL: University of Queensland
+# Every prefix a catalog number in the trees may carry, keyed by the form
+# the registry prefers. `formerly` lists other printed forms that mean the
+# same holder; a catalog number's prefix resolves against keys and aliases,
+# and a source whose abbreviations differ carries `repositoryAbbreviations`
+# on its record, which wins within that source. An entry marked
+# "unconfirmed" in `notes` has a name the corpus does not state; confirm it
+# against the paper before relying on it.
+AMNH:
+  name: American Museum of Natural History
+  kind: institution
+  place: New York
+ANU:
+  name: Australian National University
+  kind: institution
+  place: Canberra
+  notes: Defined in Jell, Burrett & Banks 1985 (p. 184).
+BC:
+  name: Barrande collection
+  kind: institution
+  place: Prague
+  notes: Unconfirmed; one id in Sprinkle 1973 on a Barrande taxon.
+BSPG:
+  name: Bayerische Staatssammlung für Paläontologie und Geologie
+  kind: institution
+  place: Munich
+CPC:
+  name: Commonwealth Palaeontological Collection
+  kind: institution
+  place: Canberra
+  formerly: [CPCl]
+  notes: >
+    Defined in Jell, Burrett & Banks 1985 (p. 184). The tree prints
+    "CPCl", which the review flags as a possible OCR artefact of "CPC".
+DPO:
+  name: unknown
+  kind: institution
+  notes: Unconfirmed; one id in Müller & Hahn 2010.
+"F.":
+  name: Geological Survey of Queensland fossil register
+  kind: institution
+  place: Brisbane
+  notes: Unconfirmed; the "F." numbers of Whitehouse 1941.
+GCM:
+  name: unknown
+  kind: institution
+  notes: Unconfirmed; Sprinkle 1973.
+GIK:
+  name: Geologisches Institut der Universität zu Köln
+  kind: institution
+  place: Cologne
+GLAHM:
+  name: Hunterian Museum, University of Glasgow
+  kind: institution
+  place: Glasgow
+GM:
+  name: Museum of Paleontology, Guizhou University
+  kind: institution
+  place: Guiyang
+GSC:
+  name: Geological Survey of Canada
+  kind: institution
+  place: Ottawa
+  formerly: [Canadian Geological Survey, Museum of the Geological Survey of Canada]
+GSG:
+  name: unknown
+  kind: institution
+  notes: Unconfirmed; Sprinkle 1973.
+ISU:
+  name: unknown
+  kind: institution
+  notes: Unconfirmed; Sprinkle 1973. Perhaps Idaho State University.
+M:
+  name: unknown
+  kind: institution
+  notes: Unconfirmed; one id in Müller & Hahn 2010.
+MCZ:
+  name: Museum of Comparative Zoology, Harvard University
+  kind: institution
+  place: Cambridge, Massachusetts
+MPEP:
+  name: Musée de paléontologie et de l'évolution
+  kind: institution
+  place: Québec
+MPZ:
+  name: Museo de Paleontología de la Universidad de Zaragoza
+  kind: institution
+  place: Zaragoza
+NHMUK:
+  name: Natural History Museum
+  kind: institution
+  place: London
+  formerly: [BMNH, NHM UK]
+  notes: >
+    The E and EE register prefixes are this museum's in Ewin et al. 2020
+    and Smith & Zamora 2013, and are scoped to those sources through
+    `repositoryAbbreviations`; Sprinkle 1973's "E" numbers on Bohemian
+    taxa are a different register.
+NIGPAS:
+  name: Nanjing Institute of Geology and Palaeontology, Chinese Academy of Sciences
+  kind: institution
+  place: Nanjing
+NM:
+  name: National Museum
+  kind: institution
+  place: Prague
+NMVP:
+  name: Museum of Victoria, palaeontology register
+  kind: institution
+  place: Melbourne
+  notes: Defined in Jell, Burrett & Banks 1985 (p. 184).
+NYSM:
+  name: New York State Museum
+  kind: institution
+  place: Albany
+  formerly: [Collection New York State Museum]
+OF:
+  name: unknown
+  kind: institution
+  notes: Unconfirmed; one id in Fatka & Kordule 1985, perhaps the author's field numbers.
+PE:
+  name: Field Museum of Natural History, palaeontology register
+  kind: institution
+  place: Chicago
+  formerly: [FMNH PE, FMNH]
+PWL:
+  name: unknown
+  kind: institution
+  notes: >
+    Unconfirmed; the Hunsrück Slate numbers of Müller & Hahn 2010, thirty
+    ids. Possibly a Rhineland-Palatinate state collection.
+QMF:
+  name: Queensland Museum, fossil register
+  kind: institution
+  place: Brisbane
+QML:
+  name: Queensland Museum, locality register
+  kind: locality
+  place: Brisbane
+RS:
+  name: unknown
+  kind: institution
+  notes: Unconfirmed; one id in Müller & Hahn 2010.
+RVS:
+  name: Rievers collection
+  kind: person
+  place: Enkirch (Moselle)
+  notes: Private collection of Johannes Rievers; no catalog numbers assigned (Rievers 1961).
+S:
+  name: unknown
+  kind: institution
+  notes: Unconfirmed; Sprinkle 1973.
+SAMP:
+  name: South Australian Museum, palaeontology register
+  kind: institution
+  place: Adelaide
+TMF:
+  name: Tasmanian Museum, fossil register
+  kind: institution
+  place: Hobart
+  notes: Defined in Jell, Burrett & Banks 1985 (p. 184); expansion not quoted in the corpus.
+UC:
+  name: unknown
+  kind: institution
+  notes: Unconfirmed; Sprinkle 1973. University of Chicago (Walker Museum) or University of Cincinnati.
+UCBL-FSL:
+  name: Université Claude Bernard Lyon 1, collections de géologie
+  kind: institution
+  place: Lyon
+UCMP:
+  name: University of California Museum of Paleontology
+  kind: institution
+  place: Berkeley
+  notes: >
+    Bell 1976 uses UCMP for the Museum of Paleontology, University of
+    Cincinnati; that source scopes it through `repositoryAbbreviations`.
+UQF:
+  name: University of Queensland, fossil register
+  kind: institution
+  place: Brisbane
+UQL:
+  name: University of Queensland, locality register
+  kind: locality
+  place: Brisbane
+USGD:
+  name: University of Sydney, Department of Geology
+  kind: institution
+  place: Sydney
+  notes: Unconfirmed; the numbers of Webby 1968.
+USNM:
+  name: National Museum of Natural History, Smithsonian Institution
+  kind: institution
+  place: Washington
+UTGD:
+  name: University of Tasmania, Geology Department
+  kind: institution
+  place: Hobart
+  notes: Defined in Jell, Burrett & Banks 1985 (p. 184).
+UU:
+  name: University of Utah
+  kind: institution
+  place: Salt Lake City
+  notes: Unconfirmed; Sprinkle 1973 and Lefebvre & Lerosey-Aubril 2018.
+VMM:
+  name: Victoria Memorial Museum
+  kind: institution
+  place: Ottawa
+  notes: >
+    The Geological Survey of Canada's museum under its 1910s name (Bather
+    1914); later the National Museum of Canada, now the Canadian Museum
+    of Nature.
+YKLP:
+  name: Yunnan Key Laboratory for Palaeobiology, Yunnan University
+  kind: institution
+  place: Kunming
