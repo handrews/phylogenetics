@@ -15,7 +15,7 @@ taxonomies:
       - taxon: enchelis
       - taxon: vibrio
       - taxon: cyclidium
-      - taxon: paramæcium
+      - taxon: paramaecium
       - taxon: kolpoda
       - taxon: gonium
       - taxon: bursaria
@@ -80,7 +80,7 @@ taxonomies:
       - taxon: lobaria
         new: true
       - taxon: clio
-      - taxon: lernæa
+      - taxon: lernaea
       - taxon: lucernaria
         new: true
       - taxon: myxine
@@ -110,7 +110,7 @@ taxonomies:
           new: true
         - taxon: squamata_müller.o.f_1776
           new: true
-        - taxon: inhærens_müller.o.f_1776
+        - taxon: inhaerens_müller.o.f_1776
           new: true
         # Cannot find a reference for this at all.
         # - taxon: lagenam_
@@ -131,7 +131,7 @@ taxonomies:
       - taxon: medusa
       - taxon: asterias
         children:
-        - taxon: lunatæ
+        - taxon: lunatae
           new: true
           notes: Not entirely clear if this is really new.
           children:
@@ -140,7 +140,7 @@ taxonomies:
             new: true
           - taxon: militaris_müller.o.f_1776
             new: true
-        - taxon: stellatæ
+        - taxon: stellatae
           children:
           - taxon: phrygiana_parelius_1768
           - taxon: rubens_linnaeus_1758
@@ -153,7 +153,7 @@ taxonomies:
           - taxon: minuta_linnaeus_1761
           - taxon: sanguinolenta_müller.o.f_1776
             new: true
-        - taxon: radiatæ
+        - taxon: radiatae
           children:
           - taxon: rosea_müller.o.f_1776
             new: true
@@ -166,12 +166,12 @@ taxonomies:
             new: true
           - taxon: filiformis_müller.o.f_1776
             new: true
-          - taxon: caput medusæ_linnaeus_1758
+          - taxon: caput medusae_linnaeus_1758
     - taxon: testacea-order
       children:
       - taxon: echinus
         children:
-        - taxon: sphæra_müller.o.f_1776
+        - taxon: sphaera_müller.o.f_1776
           new: true
         - taxon: dröbachiensis_müller.o.f_1776
           new: true

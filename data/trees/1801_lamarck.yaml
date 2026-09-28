@@ -58,7 +58,7 @@ taxonomies:
           - taxon: cassidulus
             new: true
             children:
-            - taxon: caribœarum_lamarck_1801
+            - taxon: cariboearum_lamarck_1801
               new: true
             - taxon: scutellatus_lamarck_1801
               new: true
@@ -84,9 +84,9 @@ taxonomies:
               - taxon: ophiura_linnaeus_1758
                 parents:
                 - taxon: asterias
-            - taxon: caput medusæ_linnaeus_1758
+            - taxon: caput medusae_linnaeus_1758
               synonyms:
-              - taxon: caput medusæ_linnaeus_1758
+              - taxon: caput medusae_linnaeus_1758
                 parents:
                 - taxon: asterias
         - taxon: fistulides
@@ -157,7 +157,7 @@ taxonomies:
           - taxon: encrinus
             new: true
             children:
-            - taxon: caput medusæ_lamarck_1801
+            - taxon: caput medusae_lamarck_1801
               new: true
               synonyms:
               - taxon: asteria_linnaeus_1767

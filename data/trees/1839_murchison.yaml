@@ -16,7 +16,7 @@ taxonomies:
     new: true
     notes: not noted as new but credited in IRMNG
     children:
-    - taxon: cælatus_phillips.j_1839
+    - taxon: caelatus_phillips.j_1839
       new: true
       notes: not noted as new but appears to be, no confirmation available
   - taxon: hypanthocrinites

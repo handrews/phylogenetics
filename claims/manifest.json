@@ -10943,7 +10943,7 @@
   "adelphicrinus": [
    "2003_guensburg_sprinkle"
   ],
-  "adeonæ_lamarck_1816": [
+  "adeonae_lamarck_1816": [
    "1816a_lamarck"
   ],
   "aepyaster": [
@@ -11587,7 +11587,8 @@
    "1816a_lamarck"
   ],
   "asteriadae-family": [
-   "1825b_sowerby.g.b"
+   "1825b_sowerby.g.b",
+   "1852_hall"
   ],
   "asteriadae-gen-sp_sowerby.g.b_1825": [
    "1825b_sowerby.g.b",
@@ -11597,10 +11598,7 @@
    "1825b_sowerby.g.b",
    "1848b_forbes"
   ],
-  "asteriadæ-family": [
-   "1852_hall"
-  ],
-  "asteriadæ-order": [
+  "asteriadae-order": [
    "1857_billings",
    "1858_salter_billings",
    "1858b_billings"
@@ -12210,6 +12208,13 @@
   "buttsi_clarke_1901": [
    "1935_bassler"
   ],
+  "caelatus_hall_1843": [
+   "1843_hall",
+   "1852_hall"
+  ],
+  "caelatus_phillips.j_1839": [
+   "1839_murchison"
+  ],
   "calamaria_pallas_1774": [
    "1816b_lamarck"
   ],
@@ -12353,18 +12358,16 @@
   "capsularia": [
    "1798_cuvier"
   ],
-  "caput medusae_linnaeus_1758": [
-   "1760b_linnaeus",
-   "1767_linnaeus"
-  ],
-  "caput medusæ_lamarck_1801": [
+  "caput medusae_lamarck_1801": [
    "1801_lamarck",
    "1816a_lamarck",
    "1820_say",
    "1821_miller.j.s"
   ],
-  "caput medusæ_linnaeus_1758": [
+  "caput medusae_linnaeus_1758": [
    "1758_linnaeus",
+   "1760b_linnaeus",
+   "1767_linnaeus",
    "1776_müller.o.f",
    "1798_cuvier",
    "1801_lamarck",
@@ -12401,7 +12404,7 @@
    "1767_linnaeus",
    "1776_müller.o.f"
   ],
-  "caribœarum_lamarck_1801": [
+  "cariboearum_lamarck_1801": [
    "1801_lamarck"
   ],
   "carinata_lamarck_1816": [
@@ -12496,7 +12499,7 @@
   "caryophyllia": [
    "1801_lamarck"
   ],
-  "caryophyllœus": [
+  "caryophylloeus": [
    "1798_cuvier"
   ],
   "cassidulus": [
@@ -12639,7 +12642,7 @@
   "chrysalis_schuchert_1904": [
    "1967_paul.c.r.c"
   ],
-  "cidaridæ": [
+  "cidaridae": [
    "1825_gray.j.e"
   ],
   "cidaris": [
@@ -12775,7 +12778,7 @@
   "coccinia_müller.o.f_1776": [
    "1816b_lamarck"
   ],
-  "cochleæ": [
+  "cochleae": [
    "1758_linnaeus"
   ],
   "codyensis_sumrall_sprinkle_guensburg_1997": [
@@ -12852,17 +12855,17 @@
   "concentricus_frest_2005": [
    "2005_frest"
   ],
+  "conchae": [
+   "1758_linnaeus"
+  ],
   "conchilega_müller.o.f_1776": [
    "1776_müller.o.f",
    "1789a_bruguière"
   ],
-  "conchæ": [
-   "1758_linnaeus"
-  ],
   "confertus_barrande_1887": [
    "1935_bassler"
   ],
-  "confœderata_forsskål_1775": [
+  "confoederata_forsskål_1775": [
    "1789a_bruguière"
   ],
   "conglomeratus_gaertner_1774": [
@@ -13099,17 +13102,17 @@
   "crinoidea-secondhand-sp_sowerby_1833": [
    "1844_buch"
   ],
+  "crinoideae-family": [
+   "1852_hall"
+  ],
+  "crinoideae-order": [
+   "1848b_forbes"
+  ],
   "crinoideen": [
    "1840_eichwald"
   ],
   "crinoiden": [
    "1854_müller.j.p"
-  ],
-  "crinoideæ-family": [
-   "1852_hall"
-  ],
-  "crinoideæ-order": [
-   "1848b_forbes"
   ],
   "crinozoa": [
    "1965_fell",
@@ -13150,7 +13153,7 @@
   "crustacés-order": [
    "1801_lamarck"
   ],
-  "crux andraæ_lamarck_1816": [
+  "crux andraae_lamarck_1816": [
    "1816b_lamarck"
   ],
   "cryptocrinidae": [
@@ -13432,7 +13435,7 @@
    "1967e_ubaghs",
    "2021_jell_sprinkle"
   ],
-  "cypræa": [
+  "cypraea": [
    "1758_linnaeus",
    "1767_linnaeus"
   ],
@@ -13471,24 +13474,24 @@
   "cystidea-sp_buch_1944": [
    "1844_buch"
   ],
-  "cystideen": [
-   "1854_müller.j.p"
-  ],
-  "cystideæ-family": [
+  "cystideae-family": [
    "1852_hall"
   ],
-  "cystideæ-order": [
+  "cystideae-order": [
    "1848b_forbes",
    "1857_billings",
    "1858_salter_billings"
   ],
-  "cystideæ-unnamed-group_müller.j.p_1854": [
+  "cystideae-unnamed-group_müller.j.p_1854": [
    "1854_müller.j.p"
   ],
-  "cystideæ-unnamed-subgroup-1_müller.j.p_1854": [
+  "cystideae-unnamed-subgroup-1_müller.j.p_1854": [
    "1854_müller.j.p"
   ],
-  "cystideæ-unnamed-subgroup-2_müller.j.p_1854": [
+  "cystideae-unnamed-subgroup-2_müller.j.p_1854": [
+   "1854_müller.j.p"
+  ],
+  "cystideen": [
    "1854_müller.j.p"
   ],
   "cystoidea": [
@@ -13506,13 +13509,6 @@
   ],
   "cystostellaroidea": [
    "1935_bassler"
-  ],
-  "cælatus_hall_1843": [
-   "1843_hall",
-   "1852_hall"
-  ],
-  "cælatus_phillips.j_1839": [
-   "1839_murchison"
   ],
   "céphalopodes-class": [
    "1817b_cuvier"
@@ -13891,14 +13887,14 @@
   "echinida-family": [
    "1825b_sowerby.g.b"
   ],
+  "echinidae": [
+   "1825_gray.j.e"
+  ],
   "echinidea-family": [
    "1825a_say",
    "1847_hall"
   ],
   "echinides": [
-   "1825_gray.j.e"
-  ],
-  "echinidæ": [
    "1825_gray.j.e"
   ],
   "echinites": [
@@ -13921,7 +13917,7 @@
    "1847_hall",
    "1848b_forbes"
   ],
-  "echino-sphærites": [
+  "echino-sphaerites": [
    "1848b_forbes"
   ],
   "echinobrissus": [
@@ -14111,12 +14107,17 @@
   "echinosphaerites": [
    "1821_wahlenberg",
    "1826_schlotheim",
+   "1828_hisinger",
    "1830_pander",
    "1837_hisinger",
    "1840_eichwald",
    "1840a_buch",
    "1840b_buch",
    "1842_volborth",
+   "1844_buch",
+   "1847_hall",
+   "1848b_forbes",
+   "1854_müller.j.p",
    "1981_bockelie",
    "1997_paul.c.r.c"
   ],
@@ -14137,13 +14138,6 @@
   ],
   "echinosphaeritidae": [
    "1997_paul.c.r.c"
-  ],
-  "echinosphærites": [
-   "1828_hisinger",
-   "1844_buch",
-   "1847_hall",
-   "1848b_forbes",
-   "1854_müller.j.p"
   ],
   "echinozoa": [
    "1963_durham_caster",
@@ -14274,11 +14268,11 @@
    "1994_guensburg_sprinkle",
    "2015_sprinkle_sumrall"
   ],
+  "edrioasteridae-suborder": [
+   "1858b_billings"
+  ],
   "edrioasterids": [
    "1990_smith.a.b_jell"
-  ],
-  "edrioasteridæ-suborder": [
-   "1858b_billings"
   ],
   "edrioasterina": [
    "1994_guensburg_sprinkle",
@@ -14421,7 +14415,7 @@
   "edulis_pallas_1774": [
    "1816b_lamarck"
   ],
-  "effœta_linnaeus_1767": [
+  "effoeta_linnaeus_1767": [
    "1816b_lamarck"
   ],
   "eifeliana_müller.p_hahn_bohatý_2013": [
@@ -15043,7 +15037,7 @@
    "1817d_cuvier",
    "1825_gray.j.e"
   ],
-  "galeritidæ": [
+  "galeritidae": [
    "1825_gray.j.e"
   ],
   "gallica_domínguez alonso_1999": [
@@ -15253,7 +15247,7 @@
   "glyptosphaeridae": [
    "1900_bather"
   ],
-  "glyptosphærites": [
+  "glyptosphaerites": [
    "1854_müller.j.p"
   ],
   "gogia": [
@@ -15527,6 +15521,9 @@
   "haefneri_zamora_rahman_sumrall_gibson_thompson_2022": [
    "2022_zamora_rahman_sumrall_gibson_thompson"
   ],
+  "haeruca": [
+   "1798_cuvier"
+  ],
   "haimacystis": [
    "2001_sumrall_sprinkle_guensburg"
   ],
@@ -15720,17 +15717,17 @@
    "1985_smith.a.b",
    "2010_müller.p_hahn"
   ],
-  "hemisphærica_leske_1778": [
+  "hemisphaerica_leske_1778": [
    "1778_leske",
    "1816b_lamarck"
   ],
-  "hemisphæricus_lamarck_1816_clypeaster": [
+  "hemisphaericus_lamarck_1816_clypeaster": [
    "1816b_lamarck"
   ],
-  "hemisphæricus_lamarck_1816_galerites": [
+  "hemisphaericus_lamarck_1816_galerites": [
    "1816b_lamarck"
   ],
-  "hemisphæricus_leske_1778": [
+  "hemisphaericus_leske_1778": [
    "1778_leske"
   ],
   "henicocystidae": [
@@ -15966,9 +15963,6 @@
   "hystrix_lamarck_1816": [
    "1816b_lamarck"
   ],
-  "hæruca": [
-   "1798_cuvier"
-  ],
   "hétéromorphes": [
    "1816b_lamarck"
   ],
@@ -16083,7 +16077,7 @@
    "1776_müller.o.f",
    "1791_bruguière"
   ],
-  "inhærens_müller.o.f_1776": [
+  "inhaerens_müller.o.f_1776": [
    "1776_müller.o.f",
    "1816b_lamarck"
   ],
@@ -16453,12 +16447,25 @@
    "1778_leske",
    "1798_cuvier"
   ],
+  "laernea": [
+   "1789a_bruguière"
+  ],
   "laevigata_linnaeus_1758": [
+   "1758_linnaeus",
    "1760b_linnaeus",
-   "1767_linnaeus"
+   "1767_linnaeus",
+   "1816a_lamarck"
   ],
   "laevis_bather_1914": [
    "1982_bell.b.m"
+  ],
+  "laevis_billings_1857": [
+   "1857_billings"
+  ],
+  "laevis_conrad.t.a_1842": [
+   "1842_conrad.t.a",
+   "1843_hall",
+   "1852_hall"
   ],
   "laevis_hecker_1940": [
    "2012_doweld"
@@ -16467,6 +16474,7 @@
    "1778_leske"
   ],
   "laevis_miller.j.s_1821": [
+   "1821_miller.j.s",
    "1840_eichwald"
   ],
   "laevis_pander_1830": [
@@ -16474,6 +16482,7 @@
    "1840_eichwald",
    "1840a_buch",
    "1840b_buch",
+   "1844_buch",
    "1973_sprinkle",
    "1981_bockelie"
   ],
@@ -16666,10 +16675,8 @@
    "1968b_paul.c.r.c"
   ],
   "lernaea": [
-   "1760b_linnaeus"
-  ],
-  "lernæa": [
    "1758_linnaeus",
+   "1760b_linnaeus",
    "1767_linnaeus",
    "1776_müller.o.f"
   ],
@@ -16891,7 +16898,7 @@
    "1760b_linnaeus",
    "1767_linnaeus"
   ],
-  "lunatæ": [
+  "lunatae": [
    "1776_müller.o.f"
   ],
   "lyracystidae": [
@@ -16909,27 +16916,6 @@
   ],
   "lysocystites": [
    "1973_sprinkle"
-  ],
-  "lærnea": [
-   "1789a_bruguière"
-  ],
-  "lævigata_linnaeus_1758": [
-   "1758_linnaeus",
-   "1816a_lamarck"
-  ],
-  "lævis_billings_1857": [
-   "1857_billings"
-  ],
-  "lævis_conrad.t.a_1842": [
-   "1842_conrad.t.a",
-   "1843_hall",
-   "1852_hall"
-  ],
-  "lævis_miller.j.s_1821": [
-   "1821_miller.j.s"
-  ],
-  "lævis_pander_1830": [
-   "1844_buch"
   ],
   "machaeridia": [
    "1941_whitehouse"
@@ -16986,6 +16972,9 @@
    "1789a_bruguière",
    "1798_cuvier",
    "1801_lamarck"
+  ],
+  "maeandrites": [
+   "1789a_bruguière"
   ],
   "magister_bassler_1936": [
    "1936_bassler",
@@ -17470,9 +17459,6 @@
    "1776_müller.o.f",
    "1789a_bruguière"
   ],
-  "mæandrites": [
-   "1789a_bruguière"
-  ],
   "médusaires": [
    "1816a_lamarck"
   ],
@@ -17566,7 +17552,7 @@
   "nevadensis_sprinkle_1973": [
    "1973_sprinkle"
   ],
-  "niagarensis_hall_1852_palæaster": [
+  "niagarensis_hall_1852_palaeaster": [
    "1852_hall"
   ],
   "nicklesi_bassler_1936": [
@@ -17922,12 +17908,21 @@
    "2018_lefebvre_lerosey-aubril"
   ],
   "palaeaster": [
+   "1852_hall",
+   "1857_billings",
    "1975_kolata"
   ],
   "palaeasteraceae": [
    "1975_kolata"
   ],
+  "palaeasterina": [
+   "1857_billings"
+  ],
+  "palaeocoma": [
+   "1857_billings"
+  ],
   "palaeocystites": [
+   "1858a_billings",
    "1973_sprinkle",
    "1982_broadhead"
   ],
@@ -17947,19 +17942,6 @@
   ],
   "palmiferum_lamarck_1816": [
    "1816a_lamarck"
-  ],
-  "palæaster": [
-   "1852_hall",
-   "1857_billings"
-  ],
-  "palæasterina": [
-   "1857_billings"
-  ],
-  "palæocoma": [
-   "1857_billings"
-  ],
-  "palæocystites": [
-   "1858a_billings"
   ],
   "pannosus_holloway_jell_1983": [
    "1983_holloway_jell"
@@ -18026,7 +18008,7 @@
    "1776_müller.o.f",
    "1789a_bruguière"
   ],
-  "paramæcium": [
+  "paramaecium": [
    "1773_müller.o.f",
    "1776_müller.o.f",
    "1789a_bruguière"
@@ -19033,8 +19015,10 @@
    "1999_ubaghs"
   ],
   "radiatae": [
+   "1758_linnaeus",
    "1760b_linnaeus",
-   "1767_linnaeus"
+   "1767_linnaeus",
+   "1776_müller.o.f"
   ],
   "radiatus_billings_1854": [
    "1854c_billings",
@@ -19053,10 +19037,6 @@
   ],
   "radiatus_sprinkle_wahlman_1994": [
    "1994_sprinkle_wahlman"
-  ],
-  "radiatæ": [
-   "1758_linnaeus",
-   "1776_müller.o.f"
   ],
   "ramosa_bruguière_1789": [
    "1789a_bruguière"
@@ -19632,7 +19612,7 @@
   "scutellatus_lamarck_1801": [
    "1801_lamarck"
   ],
-  "scutellidæ": [
+  "scutellidae": [
    "1825_gray.j.e"
   ],
   "scutiformis_lamarck_1816": [
@@ -19642,10 +19622,8 @@
    "1778_leske"
   ],
   "scyllaea": [
-   "1760b_linnaeus"
-  ],
-  "scyllæa": [
    "1758_linnaeus",
+   "1760b_linnaeus",
    "1767_linnaeus"
   ],
   "scyphocrinus": [
@@ -19861,7 +19839,7 @@
    "1760b_linnaeus",
    "1767_linnaeus"
   ],
-  "spatangidæ": [
+  "spatangidae": [
    "1825_gray.j.e"
   ],
   "spatangites": [
@@ -19887,22 +19865,32 @@
    "2019_wen.r.q_babcock_peng.j_robison",
    "2024_zamora_guensburg_sprinkle"
   ],
+  "sphaera_müller.o.f_1776": [
+   "1776_müller.o.f",
+   "1816b_lamarck"
+  ],
   "sphaerocystites": [
    "1968b_paul.c.r.c"
   ],
   "sphaeroides_linnaeus_1758": [
+   "1758_linnaeus",
    "1760b_linnaeus",
-   "1767_linnaeus"
+   "1767_linnaeus",
+   "1778_leske"
   ],
   "sphaeronidae": [
    "1900_bather"
   ],
   "sphaeronites": [
+   "1828_hisinger",
    "1837_hisinger",
    "1840_eichwald",
    "1840a_buch",
    "1840b_buch",
    "1842_volborth",
+   "1844_buch",
+   "1848b_forbes",
+   "1854_müller.j.p",
    "1997_paul.c.r.c"
   ],
   "sphaeronitida-superfamily": [
@@ -19917,20 +19905,6 @@
   ],
   "sphagoblastus": [
    "1983_jell"
-  ],
-  "sphæra_müller.o.f_1776": [
-   "1776_müller.o.f",
-   "1816b_lamarck"
-  ],
-  "sphæroides_linnaeus_1758": [
-   "1758_linnaeus",
-   "1778_leske"
-  ],
-  "sphæronites": [
-   "1828_hisinger",
-   "1844_buch",
-   "1848b_forbes",
-   "1854_müller.j.p"
   ],
   "spinis claviculatis_leske_1778": [
    "1778_leske",
@@ -20076,8 +20050,10 @@
    "1778_leske"
   ],
   "stellatae": [
+   "1758_linnaeus",
    "1760b_linnaeus",
-   "1767_linnaeus"
+   "1767_linnaeus",
+   "1776_müller.o.f"
   ],
   "stellatus_gaertner_1774": [
    "1789a_bruguière",
@@ -20090,13 +20066,12 @@
    "1966_regnéll",
    "1976_bell.b.m"
   ],
-  "stellatæ": [
-   "1758_linnaeus",
-   "1776_müller.o.f"
-  ],
   "stellerida": [
    "1821_macleay",
    "1825_gray.j.e"
+  ],
+  "stelleridae": [
+   "1821_miller.j.s"
   ],
   "stelleridea": [
    "1837_hisinger"
@@ -20106,9 +20081,6 @@
   ],
   "stelleridica": [
    "1825a_say"
-  ],
-  "stelleridæ": [
-   "1821_miller.j.s"
   ],
   "stelleroidea": [
    "1900_bather",
@@ -20264,7 +20236,7 @@
    "1789a_bruguière",
    "1798_cuvier"
   ],
-  "stylastritæ": [
+  "stylastritae": [
    "1821_miller.j.s"
   ],
   "stylophora": [
@@ -20293,7 +20265,7 @@
   "subbasaltiformis_miller.j.s_1821": [
    "1821_miller.j.s"
   ],
-  "subcæruleus_lamarck_1816": [
+  "subcaeruleus_lamarck_1816": [
    "1816b_lamarck"
   ],
   "subglobosus_hall_1862": [
@@ -20365,6 +20337,15 @@
   ],
   "syringocrinus": [
    "1960_gill_caster"
+  ],
+  "taenia": [
+   "1758_linnaeus",
+   "1767_linnaeus",
+   "1789a_bruguière",
+   "1798_cuvier"
+  ],
+  "taeniaster": [
+   "1858b_billings"
   ],
   "taijiangensis_zhao.y.l_zhu.m.y_1994": [
    "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y"
@@ -20792,15 +20773,6 @@
   ],
   "typus_walcott_1884": [
    "1975_kolata"
-  ],
-  "tænia": [
-   "1758_linnaeus",
-   "1767_linnaeus",
-   "1789a_bruguière",
-   "1798_cuvier"
-  ],
-  "tæniaster": [
-   "1858b_billings"
   ],
   "ubaghsi_fatka_kordule_1990": [
    "1990_fatka_kordule",

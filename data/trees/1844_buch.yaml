@@ -5,7 +5,7 @@ taxonomies:
   - taxon: cystidea-family
     new: true
     children:
-    - taxon: sphæronites
+    - taxon: sphaeronites
       type: true
       children:
       - taxon: aurantium_gyllenhaal_1772
@@ -17,7 +17,7 @@ taxonomies:
         synonyms:
         - taxon: pomum_gyllenhaal_1772
           parents:
-          - taxon: echinosphærites
+          - taxon: echinosphaerites
     - taxon: caryocystites
       new: true
       children:
@@ -25,19 +25,19 @@ taxonomies:
         synonyms:
         - taxon: granatum_wahlenberg_1821
           parents:
-          - taxon: echinosphærites
+          - taxon: echinosphaerites
       - taxon: testudinarius_hisinger_1837
         synonyms:
         - taxon: testudinarius_hisinger_1837
           parents:
-          - taxon: sphæronites
+          - taxon: sphaeronites
     - taxon: hemicosmites
       children:
       - taxon: pyriformis_buch_1840
         synonyms:
         - taxon: malum_pander_1830
           parents:
-          - taxon: echinosphærites
+          - taxon: echinosphaerites
     - taxon: sycocystites
       new: true
       children:
@@ -51,17 +51,17 @@ taxonomies:
           - taxon: echino-encrinus
         - taxon: angulosa_pander_1830
           parents:
-          - taxon: echinosphærites
+          - taxon: echinosphaerites
         - taxon: striata_pander_1830
           parents:
-          - taxon: echinosphærites
+          - taxon: echinosphaerites
     - taxon: cryptocrinites
       children:
       - taxon: cerasus_buch_1840
         synonyms:
-        - taxon: lævis_pander_1830
+        - taxon: laevis_pander_1830
           parents:
-          - taxon: echinosphærites
+          - taxon: echinosphaerites
         - taxon: jacksoni_austen_1843
           parents:
           - taxon: sycocrinites
@@ -78,7 +78,7 @@ taxonomies:
         - taxon: bicopuladigiti_garnet_1844
           parents:
           - taxon: pseudocrinites
-    - affTaxon: sphæronites
+    - affTaxon: sphaeronites
       synonyms:
       - openTaxon: crinoidea-secondhand-genus_sowerby_1833 # date uncertain!
       children:

@@ -1,7 +1,7 @@
 taxonomies:
 - taxon: echinodermata-order
   children:
-  - taxon: stelleridæ
+  - taxon: stelleridae
     children:
     - taxon: asteria
     - taxon: ophiura
@@ -21,7 +21,7 @@ taxonomies:
   - taxon: crinoidea-family
     new: true
     synonyms:
-    - taxon: stylastritæ
+    - taxon: stylastritae
     children:
     - taxon: articulata-division
       new: true
@@ -43,7 +43,7 @@ taxonomies:
         or:
         - taxon: pentacrinus
         children:
-        - taxon: caput medusæ_lamarck_1801
+        - taxon: caput medusae_lamarck_1801
         - taxon: briareus_miller.j.s_1821
           new: true
         - taxon: subangularis_miller.j.s_1821
@@ -73,7 +73,7 @@ taxonomies:
       - taxon: platycrinites
         new: true
         children:
-        - taxon: lævis_miller.j.s_1821
+        - taxon: laevis_miller.j.s_1821
           new: true
         - taxon: rugosus_miller.j.s_1821_platycrinites
           new: true

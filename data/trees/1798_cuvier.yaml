@@ -57,19 +57,19 @@ taxonomies:
       - taxon: ligula_cuvier_1798
         new: true
       - taxon: linguatula_frölich_1789
-      - taxon: tænia
+      - taxon: taenia
         notes: XIII
       - taxon: ascaris
         notes: XIV
       - taxon: trichocephalus
       - taxon: echinorhynchus
-      - taxon: hæruca
+      - taxon: haeruca
       - taxon: strongylus
       - taxon: uncinaria
       - taxon: proboscidea_bruguière_1791
       - taxon: cucullanus
       - taxon: scolex
-      - taxon: caryophyllœus
+      - taxon: caryophylloeus
         new: true
       - taxon: gordius
         notes: XV
@@ -100,7 +100,7 @@ taxonomies:
         children:
         - taxon: rubens_linnaeus_1758
           notes: L’évoile de mer commune. ( A. rubens.)
-        - taxon: caput medusæ_linnaeus_1758
+        - taxon: caput medusae_linnaeus_1758
           notes: La tête de Méduse. (A. caput Medusæ.)
         - taxon: membranacea_retzius_1783
           notes: La patte d'oie. ( A. membranacea.)

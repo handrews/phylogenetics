@@ -113,8 +113,8 @@ adelphicrinus:
   name: Adelphicrinus
   authority:
     source: 2003_guensburg_sprinkle
-adeonæ_lamarck_1816:
-  name: adeonæ
+adeonae_lamarck_1816:
+  name: adeonae
   authority:
     source: 1816a_lamarck
 aepyaster:
@@ -872,17 +872,11 @@ asterias:
 asterias-family:
   rank: Family
   altRankOf: asterias
-asteriadæ-family:
-  rank: Family
-  altRankOf: asteriadæ-order
 asteriadae-family:
-  name: Asteriadae
   rank: Family
-  altSpellingOf: asteriadæ-family
-  auth: [Gray]
-  year: 1840
-asteriadæ-order:
-  name: Asteriadæ
+  altRankOf: asteriadae-order
+asteriadae-order:
+  name: Asteriadae
   rank: Order
   auth: [Gray]
   year: 1840
@@ -1548,8 +1542,8 @@ buttsi_clarke_1901:
   auth: [Clarke]
   year: 1901
 ###################### C
-cælatus_hall_1843:
-  name: cælatus
+caelatus_hall_1843:
+  name: caelatus
   authority:
     source: 1843_hall
 calamaria_pallas_1774:
@@ -1730,13 +1724,10 @@ capsularia:
   name: Capsularia
   auth: [Modeer]
   year: 1793
-caput medusæ_lamarck_1801:
-  name: caput medusæ
+caput medusae_lamarck_1801:
+  name: caput medusae
   authority:
     source: 1801_lamarck
-caput medusæ_linnaeus_1758:
-  name: caput medusæ
-  altSpellingOf: caput medusae_linnaeus_1758
 caput medusae_linnaeus_1758:
   name: caput medusae
   authority:
@@ -1775,8 +1766,8 @@ cardium:
   name: Cardium
   authority:
     source: 1758_linnaeus
-caribœarum_lamarck_1801:
-  name: caribœarum
+cariboearum_lamarck_1801:
+  name: cariboearum
   altSpellingOf: caribaearum_lamarck_1801
   notes: |
     Oritinal spelling, but inadevertent misspelling of caribæarum
@@ -1878,8 +1869,8 @@ caryophyllia:
   name: Caryophyllia
   authority:
     source: 1801_lamarck
-caryophyllœus:
-  name: Caryophyllœus
+caryophylloeus:
+  name: Caryophylloeus
   authority:
     source: 1798_cuvier
   notes: Accepted as Caryophyllæus (Müller, 1878), note different ligature.
@@ -1911,8 +1902,8 @@ cavernata_bosc_1802:
   name: cavernata
   auth: [Bosc]
   year: 1802
-cælatus_phillips.j_1839:
-  name: cælatus
+caelatus_phillips.j_1839:
+  name: caelatus
   authority:
     attributedTo: [phillips.j]
     source: 1839_murchison
@@ -2053,9 +2044,6 @@ cidaridae:
   rank: Family
   authority:
     source: 1825_gray.j.e
-cidaridæ:
-  name: Cidaridæ
-  altSpellingOf: cidaridae
 cidarites:
   name: Cidarites
   authority:
@@ -2231,8 +2219,8 @@ coccinia_müller.o.f_1776:
   name: coccinia
   authority:
     source: 1776_müller.o.f
-cochleæ:
-  name: Cochleæ
+cochleae:
+  name: Cochleae
   rank: section
   authority:
     source: 1758_linnaeus
@@ -2327,8 +2315,8 @@ concentricus_frest_2005:
   name: concentricus
   authority:
     source: 2005_frest
-conchæ:
-  name: Conchæ
+conchae:
+  name: Conchae
   rank: section
   authority:
     source: 1758_linnaeus
@@ -2336,8 +2324,8 @@ conchilega_müller.o.f_1776:
   name: conchilega
   authority:
     source: 1776_müller.o.f
-confœderata_forsskål_1775:
-  name: confœderata
+confoederata_forsskål_1775:
+  name: confoederata
   auth: [forsskål]
   year: 1775
 confertus_barrande_1887:
@@ -2586,21 +2574,21 @@ crinoidea:
     source: 1821_miller.j.s
     pages:
     - 7
-crinoideæ:
-  name: Crinoideæ
+crinoideae:
+  name: Crinoideae
   altSpellingOf: crinoidea
 crinoidea-order:
   rank: Order
   altRankOf: crinoidea
-crinoideæ-order:
-  name: Crinoideæ
+crinoideae-order:
+  name: Crinoideae
   altSpellingOf: crinoidea-order
 crinoidea-family:
   rank: Family
   altRankOf: crinoidea
   notes: Original rank as declared by Miller in 1821
-crinoideæ-family:
-  name: Crinoideæ
+crinoideae-family:
+  name: Crinoideae
   altSpellingOf: crinoidea-family
 crinoiden:
   name: Crinoiden
@@ -2683,8 +2671,8 @@ crustacés-class:
   name: Crustacés
   lang: FR
   vulgarSpellingOf: crustacea-class
-crux andraæ_lamarck_1816:
-  name: crux andraæ
+crux andraae_lamarck_1816:
+  name: crux andraae
   authority:
     source: 1816b_lamarck
 cryptocrinites:
@@ -2958,8 +2946,8 @@ cylindricus_lamarck_1816_galerites:
   originalParent: galerites
   authority:
     source: 1816b_lamarck
-cypræa:
-  name: Cypræa
+cypraea:
+  name: Cypraea
   authority:
     source: 1758_linnaeus
 cystaster:
@@ -2985,8 +2973,8 @@ cystidea:
 cystidea-order:
   rank: Order
   altRankOf: cystidea
-cystideæ-order:
-  name: Cystideæ
+cystideae-order:
+  name: Cystideae
   altSpellingOf: cystidea-order
 cystidea-family:
   name: Cystidea
@@ -2994,8 +2982,8 @@ cystidea-family:
   auth: [buch]
   year: 1844
   notes: Original rank as defined in 1844 (via translation in 1846)
-cystideæ-family:
-  name: Cystideæ
+cystideae-family:
+  name: Cystideae
   altSpellingOf: cystidea-family
 cystideen:
   name: Cystideen
@@ -3006,19 +2994,19 @@ cystidea-sp_buch_1944:
   rank: species
   authority:
     source: 1844_buch
-cystideæ-unnamed-group_müller.j.p_1854:
+cystideae-unnamed-group_müller.j.p_1854:
   name: null
   rank: Unranked
   authority:
     source: 1854_müller.j.p
   notes: Rhombifera, no rank given but Diploporita defined as suborder
-cystideæ-unnamed-subgroup-1_müller.j.p_1854:
+cystideae-unnamed-subgroup-1_müller.j.p_1854:
   name: null
   rank: Unranked
   authority:
     source: 1854_müller.j.p
   notes: Hemicosmitida; rank unstated
-cystideæ-unnamed-subgroup-2_müller.j.p_1854:
+cystideae-unnamed-subgroup-2_müller.j.p_1854:
   name: null
   rank: Unranked
   authority:
@@ -3326,15 +3314,6 @@ diploporiten:
   vulgarSpellingOf: diploporita-suborder
   lang: DE
   notes: Rank not entirely clear, just called a "small group"
-diploporitidæ:
-  name: diploporitidæ
-  rank: Suborder
-  authority:
-    source: 1854_müller.j.p
-  auth: [müller.j.p]
-  year: 1854
-  notes: Rank not entirely clear, just called a "small group"
-  altSpellingOf: diploporita-order
 diploptera_lamarck_1816:
   name: diploptera
   authority:
@@ -3503,12 +3482,9 @@ echinidae:
   rank: Family
   authority:
     source: 1825_gray.j.e
-echinidæ:
-  name: Echinidæ
-  altSpellingOf: echinidae
-echinidæ-order:
+echinidae-order:
   rank: Order
-  altRankOf: echinidæ
+  altRankOf: echinidae
 échinides:
   name: Échinides
   rank: Family
@@ -3750,11 +3726,8 @@ echinosphaerites-sp-2_schlotheim_1826:
   rank: species
   authority:
     source: 1826_schlotheim
-echinosphærites:
-  name: Echinosphærites
-  altSpellingOf: echinosphaerites
-echino-sphærites:
-  name: Echino-sphærites
+echino-sphaerites:
+  name: Echino-sphaerites
   altSpellingOf: echinosphaerites
 echinozoa:
   name: Echinozoa
@@ -3858,8 +3831,8 @@ edrioasteroidea:
   bracket: Edrioasteroids
   authority:
     source: 1858b_billings
-edrioasteridæ-suborder:
-  name: Edrioasteridæ
+edrioasteridae-suborder:
+  name: Edrioasteridae
   rank: Suborder
   altRankOf: edrioasteroidea
 edrioasteroidea-order-uncertain_bassler_1935:
@@ -3941,8 +3914,8 @@ edulis_pallas_1774:
   name: edulis
   auth: [Pallas]
   year: 1774
-effœta_linnaeus_1767:
-  name: effœta
+effoeta_linnaeus_1767:
+  name: effoeta
   authority:
     source: 1767_linnaeus
 eifeliana_müller.p_hahn_bohatý_2013:
@@ -4527,18 +4500,18 @@ fistularia_forsskål_1775:
   notes: |
     Fistularia (Linnaeus 1758) is a ray-finned fish.
     Fistularia (Müller 1776), another homonym, is a cnidarian.
-fistulidæ:
-  name: Fistulidæ
+fistulidae:
+  name: Fistulidae
   rank: Family
   authority:
     source: 1801_lamarck
 fistulida-class:
   name: Fistulida
   rank: Class
-  altRankOf: fistulidæ
+  altRankOf: fistulidae
 fistulides:
   name: Fistulides
-  vulgarSpellingOf: fistulidæ
+  vulgarSpellingOf: fistulidae
 fistuliporita:
   name: Fistuliporita
   rank: Order
@@ -4694,9 +4667,6 @@ galeritidae:
   rank: Family
   authority:
     source: 1825_gray.j.e
-galeritidæ:
-  name: Galeritidæ
-  altSpellingOf: galeritidae
 gallica_domínguez alonso_1999:
   name: gallica
   auth: [domínguez alonso]
@@ -4948,9 +4918,6 @@ glyptosphaerites:
   name: Glyptosphaerites
   authority:
     source: 1854_müller.j.p
-glyptosphærites:
-  name: Glyptosphærites
-  altSpellingOf: glyptosphaerites
 glyptosphaeritidae:
   name: Glyptosphaeritidae
   rank: Family
@@ -5249,8 +5216,8 @@ hadrodiscus:
   name: Hadrodiscus
   authority:
     source: 1990_smith.a.b_jell
-hæruca:
-  name: Hæruca
+haeruca:
+  name: Haeruca
   auth: [Gmelin]
   in: [linnaeus]
   year: 1790
@@ -5490,24 +5457,24 @@ hemicystis:
   name: Hemicystis
   auth: [hall]
   year: 1852
-hemisphærica_leske_1778:
-  name: hemisphærica
+hemisphaerica_leske_1778:
+  name: hemisphaerica
   authority:
     source: 1778_leske
   notes: Cidaris
-hemisphæricus_leske_1778:
-  name: hemisphæricus
+hemisphaericus_leske_1778:
+  name: hemisphaericus
   authority:
     source: 1778_leske
   notes: Clypeus (not Clypeaster)
-hemisphæricus_lamarck_1816_clypeaster:
-  name: hemisphæricus
+hemisphaericus_lamarck_1816_clypeaster:
+  name: hemisphaericus
   originalParent: clypeaster
   authority:
     source: 1816b_lamarck
   notes: Note that Clypeaster is distinct from Clypeus
-hemisphæricus_lamarck_1816_galerites:
-  name: hemisphæricus
+hemisphaericus_lamarck_1816_galerites:
+  name: hemisphaericus
   originalParent: galerites
   authority:
     source: 1816b_lamarck
@@ -5946,8 +5913,8 @@ infusoires-section:
   name: Infusoires
   vulgarSpellingOf: infusoria-section
   lang: FR
-inhærens_müller.o.f_1776:
-  name: inhærens
+inhaerens_müller.o.f_1776:
+  name: inhaerens
   authority:
     source: 1776_müller.o.f
 insecta:
@@ -6284,9 +6251,6 @@ laevigata_linnaeus_1758:
   name: laevigata
   authority:
     source: 1758_linnaeus
-lævigata_linnaeus_1758:
-  name: lævigata
-  altSpellingOf: laevigata_linnaeus_1758
 laevis_bather_1914:
   name: laevis
   auth: [bather]
@@ -6300,28 +6264,22 @@ laevis_leske_1778:
   rank: variety
   authority:
     source: 1778_leske
-lævis_billings_1857:
-  name: lævis
+laevis_billings_1857:
+  name: laevis
   authority:
     source: 1857_billings
-lævis_conrad.t.a_1842:
-  name: lævis
+laevis_conrad.t.a_1842:
+  name: laevis
   auth: [conrad.t.a]
   year: 1842
 laevis_miller.j.s_1821:
   name: laevis
   authority:
     source: 1821_miller.j.s
-lævis_miller.j.s_1821:
-  name: lævis
-  altSpellingOf: laevis_miller.j.s_1821
 laevis_pander_1830:
   name: laevis
   authority:
     source: 1830_pander
-lævis_pander_1830:
-  name: lævis
-  altSpellingOf: laevis_pander_1830
 laevis_paul.c.r.c_1973:
   name: laevis
   auth: [paul.c.r.c]
@@ -6522,11 +6480,8 @@ lernaea:
   name: Lernaea
   authority:
     source: 1758_linnaeus
-lernæa:
-  name: Lernæa
-  altSpellingOf: lernaea
-lærnea:
-  name: Lærnea
+laernea:
+  name: Laernea
   altSpellingOf: lernaea
   notes: IRMNG has as unaccepted taxon but Brug. 1791 instead of 1789?
 leuchtenbergii_volborth_1846:
@@ -6767,8 +6722,8 @@ luna_linnaeus_1758:
   name: luna
   authority:
     source: 1758_linnaeus
-lunatæ:
-  name: Lunatæ
+lunatae:
+  name: Lunatae
   rank: section
   authority:
     source: 1776_müller.o.f
@@ -6845,8 +6800,8 @@ madrepora:
   name: Madrepora
   authority:
     source: 1758_linnaeus
-mæandrites:
-  name: Mæandrites
+maeandrites:
+  name: Maeandrites
   auth: [Guettard]
   year: 1770
   notes: |
@@ -7581,9 +7536,9 @@ nevadensis_sprinkle_1973:
   name: nevadensis
   authority:
     source: 1973_sprinkle
-niagarensis_hall_1852_palæaster:
+niagarensis_hall_1852_palaeaster:
   name: niagarensis
-  originalParent: palæaster
+  originalParent: palaeaster
   authority:
     source: 1852_hall
 nicklesi_bassler_1936:
@@ -8038,9 +7993,6 @@ palaeaster:
   name: Palaeaster
   authority:
     source: 1852_hall
-palæaster:
-  name: Palæaster
-  altSpellingOf: palaeaster
 palaeasteraceae:
   name: Palaeasteraceae
   rank: Superfamily
@@ -8050,22 +8002,12 @@ palaeasterina:
   name: Palaeasterina
   auth: [mccoy]
   year: 1851
-palæasterina:
-  name: Palæasterina
-  altSpellingOf: palaeasterina
 palaeocoma:
   name: Palaeocoma
   auth: [salter]
   year: 1857
-palæocoma:
-  name: Palæocoma
-  altSpellingOf: palaeocoma
 palaeocystites:
   name: Palaeocystites
-  authority:
-    source: 1858a_billings
-palæocystites:
-  name: Palæocystites
   authority:
     source: 1858a_billings
 palaeocystitidae:
@@ -8164,8 +8106,8 @@ parallelogramma_müller.o.f_1776:
   name: parallelogramma
   authority:
     source: 1776_müller.o.f
-paramæcium:
-  name: Paramæcium
+paramaecium:
+  name: Paramaecium
   authority:
     source: 1773_müller.o.f
 parapostibulla:
@@ -9362,9 +9304,6 @@ radiatae:
   rank: section
   authority:
     source: 1758_linnaeus
-radiatæ:
-  name: Radiatæ
-  altSpellingOf: radiatae
 radiatus_billings_1854:
   name: radiatus
   authority:
@@ -10112,9 +10051,6 @@ scutellidae:
   rank: Family
   authority:
     source: 1825_gray.j.e
-scutellidæ:
-  name: Scutellidæ
-  altSpellingOf: scutellidae
 scutiformis_scilla_1759:
   name: scutiformis
   auth: [Scilla]
@@ -10134,9 +10070,6 @@ scyllaea:
   name: Scyllaea
   authority:
     source: 1758_linnaeus
-scyllæa:
-  name: Scyllæa
-  altSpellingOf: scyllaea
 scyphocrinus:
   name: Scyphocrinus
   authority:
@@ -10376,9 +10309,6 @@ spatangidae:
   rank: Family
   authority:
     source: 1825_gray.j.e
-spatangidæ:
-  name: Spatangidæ
-  altSpellingOf: spatangidae
 spatangites:
   name: Spatangites
   altSpellingOf: spatangus_leske_1778
@@ -10404,8 +10334,8 @@ spencensis_wen.r.q_babcock_peng.j_robison_2019:
   name: spencensis
   authority:
     source: 2019_wen.r.q_babcock_peng.j_robison
-sphæra_müller.o.f_1776:
-  name: sphæra
+sphaera_müller.o.f_1776:
+  name: sphaera
   authority:
     source: 1776_müller.o.f
 sphaerocystites:
@@ -10416,9 +10346,6 @@ sphaeroides_linnaeus_1758:
   name: sphaeroides
   authority:
     source: 1758_linnaeus
-sphæroides_linnaeus_1758:
-  name: sphæroides
-  altSpellingOf: sphaeroides_linnaeus_1758
 sphaeronites:
   name: Sphaeronites
   authority:
@@ -10426,9 +10353,6 @@ sphaeronites:
     pages:
     - 195
     notes: The 1967 Treatise incorrectly cites page 185.
-sphæronites:
-  name: Sphæronites
-  altSpellingOf: sphaeronites
 sphaeronitida-superfamily:
   name: Sphaeronitida
   rank: Superfamily
@@ -10616,9 +10540,6 @@ stellatae:
   rank: section
   authority:
     source: 1758_linnaeus
-stellatæ:
-  name: Stellatæ
-  altSpellingOf: stellatae
 stellatus_gaertner_1774:
   name: stellatus
   auth: [Gaertner]
@@ -10630,26 +10551,26 @@ stellatus_hall_1866:
 stellerida:
   name: Stellerida
   rank: Class
-  altRankOf: stelleridæ
+  altRankOf: stelleridae
 stelleridea:
   name: Stelleridea
-  altSpellingOf: stelleridæ
-stelleridæ:
-  name: Stelleridæ
+  altSpellingOf: stelleridae
+stelleridae:
+  name: Stelleridae
   rank: Family
   authority:
     source: 1801_lamarck
 stellérides:
   name: Stellérides
-  vulgarSpellingOf: stelleridæ
+  vulgarSpellingOf: stelleridae
   lang: FR
 stellerides:
   name: Stellerides
-  vulgarSpellingOf: stelleridæ
+  vulgarSpellingOf: stelleridae
   lang: FR
 stelleridica:
   name: Stelleridica
-  altSpellingOf: stelleridæ
+  altSpellingOf: stelleridae
   notes: See 1825a_say; unclear if this is even a real spelling
 stelleroidea:
   name: Stelleroidea
@@ -10807,8 +10728,8 @@ strongylus:
   name: Strongylus
   auth: [müller.o.f]
   year: 1780
-stylastritæ:
-  name: Stylastritæ
+stylastritae:
+  name: Stylastritae
   auth: [martin.w]
   year: 1809
 stylophora:
@@ -10842,8 +10763,8 @@ subbasaltiformis_miller.j.s_1821:
   name: subbasaltiformis
   authority:
     source: 1821_miller.j.s
-subcæruleus_lamarck_1816:
-  name: subcæruleus
+subcaeruleus_lamarck_1816:
+  name: subcaeruleus
   authority:
     source: 1816b_lamarck
 subglobosus_hall_1862:
@@ -10929,8 +10850,8 @@ syringocrinus:
   auth: [billings]
   year: 1850
 ###################### T
-tæniaster:
-  name: Tæniaster
+taeniaster:
+  name: Taeniaster
   authority:
     source: 1858b_billings
 taijiangensis_zhao.y.l_zhu.m.y_1994:
@@ -10941,8 +10862,8 @@ tanaocystis:
   name: Tanaocystis
   authority:
     source: 1982g_sprinkle
-tænia:
-  name: Tænia
+taenia:
+  name: Taenia
   authority:
     source: 1758_linnaeus
 tarentina_lamarck_1816:

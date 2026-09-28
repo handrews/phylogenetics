@@ -17,12 +17,12 @@ taxonomies:
     children:
     - taxon: pyriformis_phillips.j_1839
       synonyms:
-      - taxon: lævis_conrad.t.a_1842
+      - taxon: laevis_conrad.t.a_1842
         parents:
         - taxon: ichthyocrinus
   - taxon: hypanthocrinites
     children:
-    - taxon: cælatus_hall_1843
+    - taxon: caelatus_hall_1843
       new: true
       notes: |
         Also referred to Eucalyptocrinites Goldfuss, but species synonym

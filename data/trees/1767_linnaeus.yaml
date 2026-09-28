@@ -65,8 +65,8 @@ taxonomies:
       - taxon: terebella
         new: true
       - taxon: triton
-      - taxon: lernæa
-      - taxon: scyllæa
+      - taxon: lernaea
+      - taxon: scyllaea
       - taxon: clio
         new: true
       - taxon: sepia
@@ -147,7 +147,7 @@ taxonomies:
       - taxon: argonauta
       - taxon: nautilus
       - taxon: conus
-      - taxon: cypræa
+      - taxon: cypraea
       - taxon: bulla
       - taxon: voluta
       - taxon: buccinum
@@ -195,7 +195,7 @@ taxonomies:
         new: true
       - taxon: hydra
       - taxon: pennatula
-      - taxon: tænia
+      - taxon: taenia
       - taxon: volvox
       - taxon: furia
       - taxon: chaos

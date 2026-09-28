@@ -407,7 +407,7 @@
   "name": "Adelphicrinus",
   "rank": "genus"
  },
- "adeonæ_lamarck_1816": {
+ "adeonae_lamarck_1816": {
   "authority": {
    "authors": [
     "Lamarck"
@@ -420,7 +420,7 @@
    "adeonae"
   ],
   "kind": "primary",
-  "name": "adeonæ",
+  "name": "adeonae",
   "rank": "species"
  },
  "aepyaster": {
@@ -3095,9 +3095,9 @@
    "asteriadae",
    "asteriadaefamily"
   ],
-  "kind": "altSpellingOf",
+  "kind": "altRankOf",
   "name": "Asteriadae",
-  "of": "asteriadæ-family",
+  "of": "asteriadae-order",
   "rank": "Family"
  },
  "asteriadae-gen-sp_sowerby.g.b_1825": {
@@ -3130,24 +3130,7 @@
   "placeholder": "open",
   "rank": "genus"
  },
- "asteriadæ-family": {
-  "authority": {
-   "authors": [
-    "Gray"
-   ],
-   "display": "Gray 1840",
-   "year": 1840
-  },
-  "folded": [
-   "asteriadae",
-   "asteriadaefamily"
-  ],
-  "kind": "altRankOf",
-  "name": "Asteriadæ",
-  "of": "asteriadæ-order",
-  "rank": "Family"
- },
- "asteriadæ-order": {
+ "asteriadae-order": {
   "authority": {
    "authors": [
     "Gray"
@@ -3160,7 +3143,7 @@
    "asteriadaeorder"
   ],
   "kind": "primary",
-  "name": "Asteriadæ",
+  "name": "Asteriadae",
   "rank": "Order"
  },
  "asterias": {
@@ -5615,6 +5598,41 @@
   "name": "buttsi",
   "rank": "species"
  },
+ "caelatus_hall_1843": {
+  "authority": {
+   "authors": [
+    "Hall"
+   ],
+   "display": "Hall 1843",
+   "source": "1843_hall",
+   "year": 1843
+  },
+  "folded": [
+   "caelatus"
+  ],
+  "kind": "primary",
+  "name": "caelatus",
+  "rank": "species"
+ },
+ "caelatus_phillips.j_1839": {
+  "authority": {
+   "authors": [
+    "Phillips"
+   ],
+   "display": "Phillips in Murchison 1839",
+   "in": [
+    "Murchison"
+   ],
+   "source": "1839_murchison",
+   "year": 1839
+  },
+  "folded": [
+   "caelatus"
+  ],
+  "kind": "primary",
+  "name": "caelatus",
+  "rank": "species"
+ },
  "calamaria_pallas_1774": {
   "authority": {
    "authors": [
@@ -6249,6 +6267,22 @@
   "name": "Capsularia",
   "rank": "genus"
  },
+ "caput medusae_lamarck_1801": {
+  "authority": {
+   "authors": [
+    "Lamarck"
+   ],
+   "display": "Lamarck 1801",
+   "source": "1801_lamarck",
+   "year": 1801
+  },
+  "folded": [
+   "caputmedusae"
+  ],
+  "kind": "primary",
+  "name": "caput medusae",
+  "rank": "species"
+ },
  "caput medusae_linnaeus_1758": {
   "authority": {
    "authors": [
@@ -6263,39 +6297,6 @@
   ],
   "kind": "primary",
   "name": "caput medusae",
-  "rank": "species"
- },
- "caput medusæ_lamarck_1801": {
-  "authority": {
-   "authors": [
-    "Lamarck"
-   ],
-   "display": "Lamarck 1801",
-   "source": "1801_lamarck",
-   "year": 1801
-  },
-  "folded": [
-   "caputmedusae"
-  ],
-  "kind": "primary",
-  "name": "caput medusæ",
-  "rank": "species"
- },
- "caput medusæ_linnaeus_1758": {
-  "authority": {
-   "authors": [
-    "Linnaeus"
-   ],
-   "display": "Linnaeus 1758",
-   "source": "1758_linnaeus",
-   "year": 1758
-  },
-  "folded": [
-   "caputmedusae"
-  ],
-  "kind": "altSpellingOf",
-  "name": "caput medusæ",
-  "of": "caput medusae_linnaeus_1758",
   "rank": "species"
  },
  "carabocrinidae": {
@@ -6439,7 +6440,7 @@
   "name": "caribaearum",
   "rank": "species"
  },
- "caribœarum_lamarck_1801": {
+ "cariboearum_lamarck_1801": {
   "authority": {
    "authors": [
     "Lamarck"
@@ -6452,7 +6453,7 @@
    "cariboearum"
   ],
   "kind": "altSpellingOf",
-  "name": "caribœarum",
+  "name": "cariboearum",
   "of": "caribaearum_lamarck_1801",
   "rank": "species"
  },
@@ -6785,7 +6786,7 @@
   "name": "Caryophyllia",
   "rank": "genus"
  },
- "caryophyllœus": {
+ "caryophylloeus": {
   "authority": {
    "authors": [
     "Cuvier"
@@ -6798,7 +6799,7 @@
    "caryophylloeus"
   ],
   "kind": "primary",
-  "name": "Caryophyllœus",
+  "name": "Caryophylloeus",
   "rank": "genus"
  },
  "cassidulus": {
@@ -7418,23 +7419,6 @@
   "name": "Cidaridae",
   "rank": "Family"
  },
- "cidaridæ": {
-  "authority": {
-   "authors": [
-    "Gray"
-   ],
-   "display": "Gray 1825",
-   "source": "1825_gray.j.e",
-   "year": 1825
-  },
-  "folded": [
-   "cidaridae"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Cidaridæ",
-  "of": "cidaridae",
-  "rank": "Family"
- },
  "cidaris": {
   "authority": {
    "authors": [
@@ -8009,7 +7993,7 @@
   "name": "coccinia",
   "rank": "species"
  },
- "cochleæ": {
+ "cochleae": {
   "authority": {
    "authors": [
     "Linnaeus"
@@ -8022,7 +8006,7 @@
    "cochleae"
   ],
   "kind": "primary",
-  "name": "Cochleæ",
+  "name": "Cochleae",
   "rank": "section"
  },
  "codyensis_sumrall_sprinkle_guensburg_1997": {
@@ -8399,6 +8383,22 @@
   "name": "concentricus",
   "rank": "species"
  },
+ "conchae": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "conchae"
+  ],
+  "kind": "primary",
+  "name": "Conchae",
+  "rank": "section"
+ },
  "conchilega_müller.o.f_1776": {
   "authority": {
    "authors": [
@@ -8415,22 +8415,6 @@
   "name": "conchilega",
   "rank": "species"
  },
- "conchæ": {
-  "authority": {
-   "authors": [
-    "Linnaeus"
-   ],
-   "display": "Linnaeus 1758",
-   "source": "1758_linnaeus",
-   "year": 1758
-  },
-  "folded": [
-   "conchae"
-  ],
-  "kind": "primary",
-  "name": "Conchæ",
-  "rank": "section"
- },
  "confertus_barrande_1887": {
   "authority": {
    "authors": [
@@ -8446,7 +8430,7 @@
   "name": "confertus",
   "rank": "species"
  },
- "confœderata_forsskål_1775": {
+ "confoederata_forsskål_1775": {
   "authority": {
    "authors": [
     "Forsskål"
@@ -8458,7 +8442,7 @@
    "confoederata"
   ],
   "kind": "primary",
-  "name": "confœderata",
+  "name": "confoederata",
   "rank": "species"
  },
  "conglomeratus_gaertner_1774": {
@@ -9376,6 +9360,59 @@
   "placeholder": "open",
   "rank": "species"
  },
+ "crinoideae": {
+  "authority": {
+   "authors": [
+    "Miller"
+   ],
+   "display": "Miller 1821",
+   "source": "1821_miller.j.s",
+   "year": 1821
+  },
+  "folded": [
+   "crinoideae"
+  ],
+  "kind": "altSpellingOf",
+  "name": "Crinoideae",
+  "of": "crinoidea",
+  "rank": "Class"
+ },
+ "crinoideae-family": {
+  "authority": {
+   "authors": [
+    "Miller"
+   ],
+   "display": "Miller 1821",
+   "source": "1821_miller.j.s",
+   "year": 1821
+  },
+  "folded": [
+   "crinoideae",
+   "crinoideaefamily"
+  ],
+  "kind": "altSpellingOf",
+  "name": "Crinoideae",
+  "of": "crinoidea-family",
+  "rank": "Family"
+ },
+ "crinoideae-order": {
+  "authority": {
+   "authors": [
+    "Miller"
+   ],
+   "display": "Miller 1821",
+   "source": "1821_miller.j.s",
+   "year": 1821
+  },
+  "folded": [
+   "crinoideae",
+   "crinoideaeorder"
+  ],
+  "kind": "altSpellingOf",
+  "name": "Crinoideae",
+  "of": "crinoidea-order",
+  "rank": "Order"
+ },
  "crinoideen": {
   "authority": {
    "authors": [
@@ -9411,59 +9448,6 @@
   "name": "Crinoiden",
   "of": "crinoidea-family",
   "rank": "Family"
- },
- "crinoideæ": {
-  "authority": {
-   "authors": [
-    "Miller"
-   ],
-   "display": "Miller 1821",
-   "source": "1821_miller.j.s",
-   "year": 1821
-  },
-  "folded": [
-   "crinoideae"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Crinoideæ",
-  "of": "crinoidea",
-  "rank": "Class"
- },
- "crinoideæ-family": {
-  "authority": {
-   "authors": [
-    "Miller"
-   ],
-   "display": "Miller 1821",
-   "source": "1821_miller.j.s",
-   "year": 1821
-  },
-  "folded": [
-   "crinoideae",
-   "crinoideaefamily"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Crinoideæ",
-  "of": "crinoidea-family",
-  "rank": "Family"
- },
- "crinoideæ-order": {
-  "authority": {
-   "authors": [
-    "Miller"
-   ],
-   "display": "Miller 1821",
-   "source": "1821_miller.j.s",
-   "year": 1821
-  },
-  "folded": [
-   "crinoideae",
-   "crinoideaeorder"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Crinoideæ",
-  "of": "crinoidea-order",
-  "rank": "Order"
  },
  "crinozoa": {
   "authority": {
@@ -9638,7 +9622,7 @@
   "of": "crustacea-order",
   "rank": "Order"
  },
- "crux andraæ_lamarck_1816": {
+ "crux andraae_lamarck_1816": {
   "authority": {
    "authors": [
     "Lamarck"
@@ -9651,7 +9635,7 @@
    "cruxandraae"
   ],
   "kind": "primary",
-  "name": "crux andraæ",
+  "name": "crux andraae",
   "rank": "species"
  },
  "cryptocrinidae": {
@@ -10656,7 +10640,7 @@
   "name": "Cymbionitidae",
   "rank": "Family"
  },
- "cypræa": {
+ "cypraea": {
   "authority": {
    "authors": [
     "Linnaeus"
@@ -10669,7 +10653,7 @@
    "cypraea"
   ],
   "kind": "primary",
-  "name": "Cypræa",
+  "name": "Cypraea",
   "rank": "genus"
  },
  "cystaster": {
@@ -10784,6 +10768,86 @@
   "placeholder": "open",
   "rank": "species"
  },
+ "cystideae-family": {
+  "authority": {
+   "authors": [
+    "Buch"
+   ],
+   "display": "Buch 1844",
+   "year": 1844
+  },
+  "folded": [
+   "cystideae",
+   "cystideaefamily"
+  ],
+  "kind": "altSpellingOf",
+  "name": "Cystideae",
+  "of": "cystidea-family",
+  "rank": "Family"
+ },
+ "cystideae-order": {
+  "authority": {
+   "authors": [
+    "Buch"
+   ],
+   "display": "Buch 1844",
+   "source": "1844_buch",
+   "year": 1844
+  },
+  "folded": [
+   "cystideae",
+   "cystideaeorder"
+  ],
+  "kind": "altSpellingOf",
+  "name": "Cystideae",
+  "of": "cystidea-order",
+  "rank": "Order"
+ },
+ "cystideae-unnamed-group_müller.j.p_1854": {
+  "authority": {
+   "authors": [
+    "Müller"
+   ],
+   "display": "Müller 1854",
+   "source": "1854_müller.j.p",
+   "year": 1854
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "unnamed",
+  "rank": "Unranked"
+ },
+ "cystideae-unnamed-subgroup-1_müller.j.p_1854": {
+  "authority": {
+   "authors": [
+    "Müller"
+   ],
+   "display": "Müller 1854",
+   "source": "1854_müller.j.p",
+   "year": 1854
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "unnamed",
+  "rank": "Unranked"
+ },
+ "cystideae-unnamed-subgroup-2_müller.j.p_1854": {
+  "authority": {
+   "authors": [
+    "Müller"
+   ],
+   "display": "Müller 1854",
+   "source": "1854_müller.j.p",
+   "year": 1854
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "unnamed",
+  "rank": "Unranked"
+ },
  "cystideen": {
   "authority": {
    "authors": [
@@ -10800,86 +10864,6 @@
   "name": "Cystideen",
   "of": "cystidea-family",
   "rank": "Family"
- },
- "cystideæ-family": {
-  "authority": {
-   "authors": [
-    "Buch"
-   ],
-   "display": "Buch 1844",
-   "year": 1844
-  },
-  "folded": [
-   "cystideae",
-   "cystideaefamily"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Cystideæ",
-  "of": "cystidea-family",
-  "rank": "Family"
- },
- "cystideæ-order": {
-  "authority": {
-   "authors": [
-    "Buch"
-   ],
-   "display": "Buch 1844",
-   "source": "1844_buch",
-   "year": 1844
-  },
-  "folded": [
-   "cystideae",
-   "cystideaeorder"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Cystideæ",
-  "of": "cystidea-order",
-  "rank": "Order"
- },
- "cystideæ-unnamed-group_müller.j.p_1854": {
-  "authority": {
-   "authors": [
-    "Müller"
-   ],
-   "display": "Müller 1854",
-   "source": "1854_müller.j.p",
-   "year": 1854
-  },
-  "folded": [],
-  "kind": "placeholder",
-  "name": null,
-  "placeholder": "unnamed",
-  "rank": "Unranked"
- },
- "cystideæ-unnamed-subgroup-1_müller.j.p_1854": {
-  "authority": {
-   "authors": [
-    "Müller"
-   ],
-   "display": "Müller 1854",
-   "source": "1854_müller.j.p",
-   "year": 1854
-  },
-  "folded": [],
-  "kind": "placeholder",
-  "name": null,
-  "placeholder": "unnamed",
-  "rank": "Unranked"
- },
- "cystideæ-unnamed-subgroup-2_müller.j.p_1854": {
-  "authority": {
-   "authors": [
-    "Müller"
-   ],
-   "display": "Müller 1854",
-   "source": "1854_müller.j.p",
-   "year": 1854
-  },
-  "folded": [],
-  "kind": "placeholder",
-  "name": null,
-  "placeholder": "unnamed",
-  "rank": "Unranked"
  },
  "cystoidea": {
   "authority": {
@@ -10930,41 +10914,6 @@
   "kind": "primary",
   "name": "Cystostellaroidea",
   "rank": "Order"
- },
- "cælatus_hall_1843": {
-  "authority": {
-   "authors": [
-    "Hall"
-   ],
-   "display": "Hall 1843",
-   "source": "1843_hall",
-   "year": 1843
-  },
-  "folded": [
-   "caelatus"
-  ],
-  "kind": "primary",
-  "name": "cælatus",
-  "rank": "species"
- },
- "cælatus_phillips.j_1839": {
-  "authority": {
-   "authors": [
-    "Phillips"
-   ],
-   "display": "Phillips in Murchison 1839",
-   "in": [
-    "Murchison"
-   ],
-   "source": "1839_murchison",
-   "year": 1839
-  },
-  "folded": [
-   "caelatus"
-  ],
-  "kind": "primary",
-  "name": "cælatus",
-  "rank": "species"
  },
  "céphalopodes-class": {
   "authority": {
@@ -12070,23 +12019,6 @@
   "of": "diploporita-order",
   "rank": "Family"
  },
- "diploporitidæ": {
-  "authority": {
-   "authors": [
-    "Müller"
-   ],
-   "display": "Müller 1854",
-   "source": "1854_müller.j.p",
-   "year": 1854
-  },
-  "folded": [
-   "diploporitidae"
-  ],
-  "kind": "altSpellingOf",
-  "name": "diploporitidæ",
-  "of": "diploporita-order",
-  "rank": "Order"
- },
  "diploptera_lamarck_1816": {
   "authority": {
    "authors": [
@@ -12700,6 +12632,24 @@
   "name": "Echinidae",
   "rank": "Family"
  },
+ "echinidae-order": {
+  "authority": {
+   "authors": [
+    "Gray"
+   ],
+   "display": "Gray 1825",
+   "source": "1825_gray.j.e",
+   "year": 1825
+  },
+  "folded": [
+   "echinidae",
+   "echinidaeorder"
+  ],
+  "kind": "altRankOf",
+  "name": "Echinidae",
+  "of": "echinidae",
+  "rank": "Order"
+ },
  "echinidea-family": {
   "authority": {
    "authors": [
@@ -12735,41 +12685,6 @@
   "name": "Echinides",
   "of": "échinides",
   "rank": "Family"
- },
- "echinidæ": {
-  "authority": {
-   "authors": [
-    "Gray"
-   ],
-   "display": "Gray 1825",
-   "source": "1825_gray.j.e",
-   "year": 1825
-  },
-  "folded": [
-   "echinidae"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Echinidæ",
-  "of": "echinidae",
-  "rank": "Family"
- },
- "echinidæ-order": {
-  "authority": {
-   "authors": [
-    "Gray"
-   ],
-   "display": "Gray 1825",
-   "source": "1825_gray.j.e",
-   "year": 1825
-  },
-  "folded": [
-   "echinidae",
-   "echinidaeorder"
-  ],
-  "kind": "altRankOf",
-  "name": "Echinidæ",
-  "of": "echinidæ",
-  "rank": "Order"
  },
  "echinites": {
   "authority": {
@@ -12836,7 +12751,7 @@
   "of": "echinoencrinus",
   "rank": "genus"
  },
- "echino-sphærites": {
+ "echino-sphaerites": {
   "authority": {
    "authors": [
     "Wahlenberg"
@@ -12848,7 +12763,7 @@
    "echinosphaerites"
   ],
   "kind": "altSpellingOf",
-  "name": "Echino-sphærites",
+  "name": "Echino-sphaerites",
   "of": "echinosphaerites",
   "rank": "genus"
  },
@@ -13559,22 +13474,6 @@
   "name": "Echinosphaeritidae",
   "rank": "Family"
  },
- "echinosphærites": {
-  "authority": {
-   "authors": [
-    "Wahlenberg"
-   ],
-   "display": "Wahlenberg 1821",
-   "year": 1821
-  },
-  "folded": [
-   "echinosphaerites"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Echinosphærites",
-  "of": "echinosphaerites",
-  "rank": "genus"
- },
  "echinozoa": {
   "authority": {
    "authors": [
@@ -13871,6 +13770,24 @@
   "name": "Edrioasteridae",
   "rank": "Family"
  },
+ "edrioasteridae-suborder": {
+  "authority": {
+   "authors": [
+    "Billings"
+   ],
+   "display": "Billings 1858",
+   "source": "1858b_billings",
+   "year": 1858
+  },
+  "folded": [
+   "edrioasteridae",
+   "edrioasteridaesuborder"
+  ],
+  "kind": "altRankOf",
+  "name": "Edrioasteridae",
+  "of": "edrioasteroidea",
+  "rank": "Suborder"
+ },
  "edrioasterids": {
   "authority": {
    "authors": [
@@ -13885,24 +13802,6 @@
   "kind": "primary",
   "name": "Edrioasterids",
   "rank": "Group"
- },
- "edrioasteridæ-suborder": {
-  "authority": {
-   "authors": [
-    "Billings"
-   ],
-   "display": "Billings 1858",
-   "source": "1858b_billings",
-   "year": 1858
-  },
-  "folded": [
-   "edrioasteridae",
-   "edrioasteridaesuborder"
-  ],
-  "kind": "altRankOf",
-  "name": "Edrioasteridæ",
-  "of": "edrioasteroidea",
-  "rank": "Suborder"
  },
  "edrioasterina": {
   "authority": {
@@ -14219,7 +14118,7 @@
   "name": "edulis",
   "rank": "species"
  },
- "effœta_linnaeus_1767": {
+ "effoeta_linnaeus_1767": {
   "authority": {
    "authors": [
     "Linnaeus"
@@ -14232,7 +14131,7 @@
    "effoeta"
   ],
   "kind": "primary",
-  "name": "effœta",
+  "name": "effoeta",
   "rank": "species"
  },
  "eifeliana_müller.p_hahn_bohatý_2013": {
@@ -16262,8 +16161,24 @@
   ],
   "kind": "altRankOf",
   "name": "Fistulida",
-  "of": "fistulidæ",
+  "of": "fistulidae",
   "rank": "Class"
+ },
+ "fistulidae": {
+  "authority": {
+   "authors": [
+    "Lamarck"
+   ],
+   "display": "Lamarck 1801",
+   "source": "1801_lamarck",
+   "year": 1801
+  },
+  "folded": [
+   "fistulidae"
+  ],
+  "kind": "primary",
+  "name": "Fistulidae",
+  "rank": "Family"
  },
  "fistulides": {
   "authority": {
@@ -16279,23 +16194,7 @@
   ],
   "kind": "vulgarSpellingOf",
   "name": "Fistulides",
-  "of": "fistulidæ",
-  "rank": "Family"
- },
- "fistulidæ": {
-  "authority": {
-   "authors": [
-    "Lamarck"
-   ],
-   "display": "Lamarck 1801",
-   "source": "1801_lamarck",
-   "year": 1801
-  },
-  "folded": [
-   "fistulidae"
-  ],
-  "kind": "primary",
-  "name": "Fistulidæ",
+  "of": "fistulidae",
   "rank": "Family"
  },
  "fistuliporita": {
@@ -16879,23 +16778,6 @@
   ],
   "kind": "primary",
   "name": "Galeritidae",
-  "rank": "Family"
- },
- "galeritidæ": {
-  "authority": {
-   "authors": [
-    "Gray"
-   ],
-   "display": "Gray 1825",
-   "source": "1825_gray.j.e",
-   "year": 1825
-  },
-  "folded": [
-   "galeritidae"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Galeritidæ",
-  "of": "galeritidae",
   "rank": "Family"
  },
  "gallica_domínguez alonso_1999": {
@@ -17840,23 +17722,6 @@
   "kind": "primary",
   "name": "Glyptosphaeritidae",
   "rank": "Family"
- },
- "glyptosphærites": {
-  "authority": {
-   "authors": [
-    "Müller"
-   ],
-   "display": "Müller 1854",
-   "source": "1854_müller.j.p",
-   "year": 1854
-  },
-  "folded": [
-   "glyptosphaerites"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Glyptosphærites",
-  "of": "glyptosphaerites",
-  "rank": "genus"
  },
  "gogia": {
   "authority": {
@@ -18948,6 +18813,24 @@
   "name": "haefneri",
   "rank": "species"
  },
+ "haeruca": {
+  "authority": {
+   "authors": [
+    "Gmelin"
+   ],
+   "display": "Gmelin in Linnaeus 1790",
+   "in": [
+    "Linnaeus"
+   ],
+   "year": 1790
+  },
+  "folded": [
+   "haeruca"
+  ],
+  "kind": "primary",
+  "name": "Haeruca",
+  "rank": "genus"
+ },
  "haimacystis": {
   "authority": {
    "authors": [
@@ -19736,7 +19619,7 @@
   "name": "Hemicystitidae",
   "rank": "Family"
  },
- "hemisphærica_leske_1778": {
+ "hemisphaerica_leske_1778": {
   "authority": {
    "authors": [
     "Leske"
@@ -19749,10 +19632,10 @@
    "hemisphaerica"
   ],
   "kind": "primary",
-  "name": "hemisphærica",
+  "name": "hemisphaerica",
   "rank": "species"
  },
- "hemisphæricus_lamarck_1816_clypeaster": {
+ "hemisphaericus_lamarck_1816_clypeaster": {
   "authority": {
    "authors": [
     "Lamarck"
@@ -19765,11 +19648,11 @@
    "hemisphaericus"
   ],
   "kind": "primary",
-  "name": "hemisphæricus",
+  "name": "hemisphaericus",
   "originalParent": "clypeaster",
   "rank": "species"
  },
- "hemisphæricus_lamarck_1816_galerites": {
+ "hemisphaericus_lamarck_1816_galerites": {
   "authority": {
    "authors": [
     "Lamarck"
@@ -19782,11 +19665,11 @@
    "hemisphaericus"
   ],
   "kind": "primary",
-  "name": "hemisphæricus",
+  "name": "hemisphaericus",
   "originalParent": "galerites",
   "rank": "species"
  },
- "hemisphæricus_leske_1778": {
+ "hemisphaericus_leske_1778": {
   "authority": {
    "authors": [
     "Leske"
@@ -19799,7 +19682,7 @@
    "hemisphaericus"
   ],
   "kind": "primary",
-  "name": "hemisphæricus",
+  "name": "hemisphaericus",
   "rank": "species"
  },
  "henicocystidae": {
@@ -20804,24 +20687,6 @@
   "name": "hystrix",
   "rank": "species"
  },
- "hæruca": {
-  "authority": {
-   "authors": [
-    "Gmelin"
-   ],
-   "display": "Gmelin in Linnaeus 1790",
-   "in": [
-    "Linnaeus"
-   ],
-   "year": 1790
-  },
-  "folded": [
-   "haeruca"
-  ],
-  "kind": "primary",
-  "name": "Hæruca",
-  "rank": "genus"
- },
  "hétéromorphes": {
   "authority": {
    "authors": [
@@ -21408,7 +21273,7 @@
   "name": "Infusoria",
   "rank": "section"
  },
- "inhærens_müller.o.f_1776": {
+ "inhaerens_müller.o.f_1776": {
   "authority": {
    "authors": [
     "Müller"
@@ -21421,7 +21286,7 @@
    "inhaerens"
   ],
   "kind": "primary",
-  "name": "inhærens",
+  "name": "inhaerens",
   "rank": "species"
  },
  "insecta": {
@@ -22634,6 +22499,23 @@
   "name": "lacunosus",
   "rank": "species"
  },
+ "laernea": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "laernea"
+  ],
+  "kind": "altSpellingOf",
+  "name": "Laernea",
+  "of": "lernaea",
+  "rank": "genus"
+ },
  "laevigata_linnaeus_1758": {
   "authority": {
    "authors": [
@@ -22657,6 +22539,37 @@
    ],
    "display": "Bather 1914",
    "year": 1914
+  },
+  "folded": [
+   "laevis"
+  ],
+  "kind": "primary",
+  "name": "laevis",
+  "rank": "species"
+ },
+ "laevis_billings_1857": {
+  "authority": {
+   "authors": [
+    "Billings"
+   ],
+   "display": "Billings 1857",
+   "source": "1857_billings",
+   "year": 1857
+  },
+  "folded": [
+   "laevis"
+  ],
+  "kind": "primary",
+  "name": "laevis",
+  "rank": "species"
+ },
+ "laevis_conrad.t.a_1842": {
+  "authority": {
+   "authors": [
+    "Conrad"
+   ],
+   "display": "Conrad 1842",
+   "year": 1842
   },
   "folded": [
    "laevis"
@@ -23444,23 +23357,6 @@
   ],
   "kind": "primary",
   "name": "Lernaea",
-  "rank": "genus"
- },
- "lernæa": {
-  "authority": {
-   "authors": [
-    "Linnaeus"
-   ],
-   "display": "Linnaeus 1758",
-   "source": "1758_linnaeus",
-   "year": 1758
-  },
-  "folded": [
-   "lernaea"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Lernæa",
-  "of": "lernaea",
   "rank": "genus"
  },
  "leuchtenbergii_volborth_1846": {
@@ -24373,7 +24269,7 @@
   "name": "luna",
   "rank": "species"
  },
- "lunatæ": {
+ "lunatae": {
   "authority": {
    "authors": [
     "Müller"
@@ -24386,7 +24282,7 @@
    "lunatae"
   ],
   "kind": "primary",
-  "name": "Lunatæ",
+  "name": "Lunatae",
   "rank": "section"
  },
  "lyracystidae": {
@@ -24453,105 +24349,6 @@
   "kind": "primary",
   "name": "Lysocystites",
   "rank": "genus"
- },
- "lærnea": {
-  "authority": {
-   "authors": [
-    "Linnaeus"
-   ],
-   "display": "Linnaeus 1758",
-   "source": "1758_linnaeus",
-   "year": 1758
-  },
-  "folded": [
-   "laernea"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Lærnea",
-  "of": "lernaea",
-  "rank": "genus"
- },
- "lævigata_linnaeus_1758": {
-  "authority": {
-   "authors": [
-    "Linnaeus"
-   ],
-   "display": "Linnaeus 1758",
-   "source": "1758_linnaeus",
-   "year": 1758
-  },
-  "folded": [
-   "laevigata"
-  ],
-  "kind": "altSpellingOf",
-  "name": "lævigata",
-  "of": "laevigata_linnaeus_1758",
-  "rank": "species"
- },
- "lævis_billings_1857": {
-  "authority": {
-   "authors": [
-    "Billings"
-   ],
-   "display": "Billings 1857",
-   "source": "1857_billings",
-   "year": 1857
-  },
-  "folded": [
-   "laevis"
-  ],
-  "kind": "primary",
-  "name": "lævis",
-  "rank": "species"
- },
- "lævis_conrad.t.a_1842": {
-  "authority": {
-   "authors": [
-    "Conrad"
-   ],
-   "display": "Conrad 1842",
-   "year": 1842
-  },
-  "folded": [
-   "laevis"
-  ],
-  "kind": "primary",
-  "name": "lævis",
-  "rank": "species"
- },
- "lævis_miller.j.s_1821": {
-  "authority": {
-   "authors": [
-    "Miller"
-   ],
-   "display": "Miller 1821",
-   "source": "1821_miller.j.s",
-   "year": 1821
-  },
-  "folded": [
-   "laevis"
-  ],
-  "kind": "altSpellingOf",
-  "name": "lævis",
-  "of": "laevis_miller.j.s_1821",
-  "rank": "species"
- },
- "lævis_pander_1830": {
-  "authority": {
-   "authors": [
-    "Pander"
-   ],
-   "display": "Pander 1830",
-   "source": "1830_pander",
-   "year": 1830
-  },
-  "folded": [
-   "laevis"
-  ],
-  "kind": "altSpellingOf",
-  "name": "lævis",
-  "of": "laevis_pander_1830",
-  "rank": "species"
  },
  "machaeridia": {
   "authority": {
@@ -24739,6 +24536,21 @@
   ],
   "kind": "primary",
   "name": "Madrepora",
+  "rank": "genus"
+ },
+ "maeandrites": {
+  "authority": {
+   "authors": [
+    "Guettard"
+   ],
+   "display": "Guettard 1770",
+   "year": 1770
+  },
+  "folded": [
+   "maeandrites"
+  ],
+  "kind": "primary",
+  "name": "Maeandrites",
   "rank": "genus"
  },
  "magister_bassler_1936": {
@@ -27065,21 +26877,6 @@
   "name": "Myxine",
   "rank": "genus"
  },
- "mæandrites": {
-  "authority": {
-   "authors": [
-    "Guettard"
-   ],
-   "display": "Guettard 1770",
-   "year": 1770
-  },
-  "folded": [
-   "maeandrites"
-  ],
-  "kind": "primary",
-  "name": "Mæandrites",
-  "rank": "genus"
- },
  "médusaires": {
   "authority": {
    "authors": [
@@ -27475,7 +27272,7 @@
   "name": "nevadensis",
   "rank": "species"
  },
- "niagarensis_hall_1852_palæaster": {
+ "niagarensis_hall_1852_palaeaster": {
   "authority": {
    "authors": [
     "Hall"
@@ -27489,7 +27286,7 @@
   ],
   "kind": "primary",
   "name": "niagarensis",
-  "originalParent": "palæaster",
+  "originalParent": "palaeaster",
   "rank": "species"
  },
  "nicklesi_bassler_1936": {
@@ -29268,71 +29065,6 @@
   "name": "palmiferum",
   "rank": "species"
  },
- "palæaster": {
-  "authority": {
-   "authors": [
-    "Hall"
-   ],
-   "display": "Hall 1852",
-   "source": "1852_hall",
-   "year": 1852
-  },
-  "folded": [
-   "palaeaster"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Palæaster",
-  "of": "palaeaster",
-  "rank": "genus"
- },
- "palæasterina": {
-  "authority": {
-   "authors": [
-    "McCoy"
-   ],
-   "display": "McCoy 1851",
-   "year": 1851
-  },
-  "folded": [
-   "palaeasterina"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Palæasterina",
-  "of": "palaeasterina",
-  "rank": "genus"
- },
- "palæocoma": {
-  "authority": {
-   "authors": [
-    "Salter"
-   ],
-   "display": "Salter 1857",
-   "year": 1857
-  },
-  "folded": [
-   "palaeocoma"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Palæocoma",
-  "of": "palaeocoma",
-  "rank": "genus"
- },
- "palæocystites": {
-  "authority": {
-   "authors": [
-    "Billings"
-   ],
-   "display": "Billings 1858",
-   "source": "1858a_billings",
-   "year": 1858
-  },
-  "folded": [
-   "palaeocystites"
-  ],
-  "kind": "primary",
-  "name": "Palæocystites",
-  "rank": "genus"
- },
  "pannosus_holloway_jell_1983": {
   "authority": {
    "authors": [
@@ -29623,7 +29355,7 @@
   "name": "parallelogramma",
   "rank": "species"
  },
- "paramæcium": {
+ "paramaecium": {
   "authority": {
    "authors": [
     "Müller"
@@ -29636,7 +29368,7 @@
    "paramaecium"
   ],
   "kind": "primary",
-  "name": "Paramæcium",
+  "name": "Paramaecium",
   "rank": "genus"
  },
  "parapostibulla": {
@@ -34129,23 +33861,6 @@
   "name": "radiatus",
   "rank": "species"
  },
- "radiatæ": {
-  "authority": {
-   "authors": [
-    "Linnaeus"
-   ],
-   "display": "Linnaeus 1758",
-   "source": "1758_linnaeus",
-   "year": 1758
-  },
-  "folded": [
-   "radiatae"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Radiatæ",
-  "of": "radiatae",
-  "rank": "section"
- },
  "ramosa_bruguière_1789": {
   "authority": {
    "authors": [
@@ -36733,23 +36448,6 @@
   "name": "Scutellidae",
   "rank": "Family"
  },
- "scutellidæ": {
-  "authority": {
-   "authors": [
-    "Gray"
-   ],
-   "display": "Gray 1825",
-   "source": "1825_gray.j.e",
-   "year": 1825
-  },
-  "folded": [
-   "scutellidae"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Scutellidæ",
-  "of": "scutellidae",
-  "rank": "Family"
- },
  "scutiformis_lamarck_1816": {
   "authority": {
    "authors": [
@@ -36795,23 +36493,6 @@
   ],
   "kind": "primary",
   "name": "Scyllaea",
-  "rank": "genus"
- },
- "scyllæa": {
-  "authority": {
-   "authors": [
-    "Linnaeus"
-   ],
-   "display": "Linnaeus 1758",
-   "source": "1758_linnaeus",
-   "year": 1758
-  },
-  "folded": [
-   "scyllaea"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Scyllæa",
-  "of": "scyllaea",
   "rank": "genus"
  },
  "scyphocrinus": {
@@ -37768,23 +37449,6 @@
   "name": "Spatangidae",
   "rank": "Family"
  },
- "spatangidæ": {
-  "authority": {
-   "authors": [
-    "Gray"
-   ],
-   "display": "Gray 1825",
-   "source": "1825_gray.j.e",
-   "year": 1825
-  },
-  "folded": [
-   "spatangidae"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Spatangidæ",
-  "of": "spatangidae",
-  "rank": "Family"
- },
  "spatangites": {
   "authority": {
    "authors": [
@@ -37883,6 +37547,22 @@
   ],
   "kind": "primary",
   "name": "spencensis",
+  "rank": "species"
+ },
+ "sphaera_müller.o.f_1776": {
+  "authority": {
+   "authors": [
+    "Müller"
+   ],
+   "display": "Müller 1776",
+   "source": "1776_müller.o.f",
+   "year": 1776
+  },
+  "folded": [
+   "sphaera"
+  ],
+  "kind": "primary",
+  "name": "sphaera",
   "rank": "species"
  },
  "sphaerocystites": {
@@ -38009,56 +37689,6 @@
   ],
   "kind": "primary",
   "name": "Sphagoblastus",
-  "rank": "genus"
- },
- "sphæra_müller.o.f_1776": {
-  "authority": {
-   "authors": [
-    "Müller"
-   ],
-   "display": "Müller 1776",
-   "source": "1776_müller.o.f",
-   "year": 1776
-  },
-  "folded": [
-   "sphaera"
-  ],
-  "kind": "primary",
-  "name": "sphæra",
-  "rank": "species"
- },
- "sphæroides_linnaeus_1758": {
-  "authority": {
-   "authors": [
-    "Linnaeus"
-   ],
-   "display": "Linnaeus 1758",
-   "source": "1758_linnaeus",
-   "year": 1758
-  },
-  "folded": [
-   "sphaeroides"
-  ],
-  "kind": "altSpellingOf",
-  "name": "sphæroides",
-  "of": "sphaeroides_linnaeus_1758",
-  "rank": "species"
- },
- "sphæronites": {
-  "authority": {
-   "authors": [
-    "Hisinger"
-   ],
-   "display": "Hisinger 1828",
-   "source": "1828_hisinger",
-   "year": 1828
-  },
-  "folded": [
-   "sphaeronites"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Sphæronites",
-  "of": "sphaeronites",
   "rank": "genus"
  },
  "spinis claviculatis_leske_1778": {
@@ -38682,23 +38312,6 @@
   "name": "stellatus",
   "rank": "species"
  },
- "stellatæ": {
-  "authority": {
-   "authors": [
-    "Linnaeus"
-   ],
-   "display": "Linnaeus 1758",
-   "source": "1758_linnaeus",
-   "year": 1758
-  },
-  "folded": [
-   "stellatae"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Stellatæ",
-  "of": "stellatae",
-  "rank": "section"
- },
  "stellerida": {
   "authority": {
    "authors": [
@@ -38713,8 +38326,24 @@
   ],
   "kind": "altRankOf",
   "name": "Stellerida",
-  "of": "stelleridæ",
+  "of": "stelleridae",
   "rank": "Class"
+ },
+ "stelleridae": {
+  "authority": {
+   "authors": [
+    "Lamarck"
+   ],
+   "display": "Lamarck 1801",
+   "source": "1801_lamarck",
+   "year": 1801
+  },
+  "folded": [
+   "stelleridae"
+  ],
+  "kind": "primary",
+  "name": "Stelleridae",
+  "rank": "Family"
  },
  "stelleridea": {
   "authority": {
@@ -38730,7 +38359,7 @@
   ],
   "kind": "altSpellingOf",
   "name": "Stelleridea",
-  "of": "stelleridæ",
+  "of": "stelleridae",
   "rank": "Family"
  },
  "stellerides": {
@@ -38748,7 +38377,7 @@
   "kind": "vulgarSpellingOf",
   "lang": "FR",
   "name": "Stellerides",
-  "of": "stelleridæ",
+  "of": "stelleridae",
   "rank": "Family"
  },
  "stelleridica": {
@@ -38765,23 +38394,7 @@
   ],
   "kind": "altSpellingOf",
   "name": "Stelleridica",
-  "of": "stelleridæ",
-  "rank": "Family"
- },
- "stelleridæ": {
-  "authority": {
-   "authors": [
-    "Lamarck"
-   ],
-   "display": "Lamarck 1801",
-   "source": "1801_lamarck",
-   "year": 1801
-  },
-  "folded": [
-   "stelleridae"
-  ],
-  "kind": "primary",
-  "name": "Stelleridæ",
+  "of": "stelleridae",
   "rank": "Family"
  },
  "stelleroidea": {
@@ -38830,7 +38443,7 @@
   "kind": "vulgarSpellingOf",
   "lang": "FR",
   "name": "Stellérides",
-  "of": "stelleridæ",
+  "of": "stelleridae",
   "rank": "Family"
  },
  "stenaster": {
@@ -39362,7 +38975,7 @@
   "name": "Strongylus",
   "rank": "genus"
  },
- "stylastritæ": {
+ "stylastritae": {
   "authority": {
    "authors": [
     "Martin"
@@ -39374,7 +38987,7 @@
    "stylastritae"
   ],
   "kind": "primary",
-  "name": "Stylastritæ",
+  "name": "Stylastritae",
   "rank": "genus"
  },
  "stylophora": {
@@ -39491,7 +39104,7 @@
   "name": "subbasaltiformis",
   "rank": "species"
  },
- "subcæruleus_lamarck_1816": {
+ "subcaeruleus_lamarck_1816": {
   "authority": {
    "authors": [
     "Lamarck"
@@ -39504,7 +39117,7 @@
    "subcaeruleus"
   ],
   "kind": "primary",
-  "name": "subcæruleus",
+  "name": "subcaeruleus",
   "rank": "species"
  },
  "subglobosus_hall_1862": {
@@ -39820,6 +39433,38 @@
   ],
   "kind": "primary",
   "name": "Syringocrinus",
+  "rank": "genus"
+ },
+ "taenia": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "taenia"
+  ],
+  "kind": "primary",
+  "name": "Taenia",
+  "rank": "genus"
+ },
+ "taeniaster": {
+  "authority": {
+   "authors": [
+    "Billings"
+   ],
+   "display": "Billings 1858",
+   "source": "1858b_billings",
+   "year": 1858
+  },
+  "folded": [
+   "taeniaster"
+  ],
+  "kind": "primary",
+  "name": "Taeniaster",
   "rank": "genus"
  },
  "taijiangensis_zhao.y.l_zhu.m.y_1994": {
@@ -41677,38 +41322,6 @@
   "kind": "primary",
   "name": "typus",
   "rank": "species"
- },
- "tænia": {
-  "authority": {
-   "authors": [
-    "Linnaeus"
-   ],
-   "display": "Linnaeus 1758",
-   "source": "1758_linnaeus",
-   "year": 1758
-  },
-  "folded": [
-   "taenia"
-  ],
-  "kind": "primary",
-  "name": "Tænia",
-  "rank": "genus"
- },
- "tæniaster": {
-  "authority": {
-   "authors": [
-    "Billings"
-   ],
-   "display": "Billings 1858",
-   "source": "1858b_billings",
-   "year": 1858
-  },
-  "folded": [
-   "taeniaster"
-  ],
-  "kind": "primary",
-  "name": "Tæniaster",
-  "rank": "genus"
  },
  "ubaghsi_fatka_kordule_1990": {
   "authority": {

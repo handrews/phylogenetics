@@ -24,7 +24,7 @@ taxonomies:
         new: true
       - taxon: encrinus
         children:
-        - taxon: caput medusæ_lamarck_1801
+        - taxon: caput medusae_lamarck_1801
           synonyms:
           - taxon: asteria_linnaeus_1767
             parents:
@@ -93,7 +93,7 @@ taxonomies:
             new: true
           - taxon: mediterranea_lamarck_1816
             new: true
-          - taxon: adeonæ_lamarck_1816
+          - taxon: adeonae_lamarck_1816
             new: true
           - taxon: brachiolata_lamarck_1816
             new: true
@@ -111,7 +111,7 @@ taxonomies:
             - taxon: euryale_retzius_1783
               parents:
               - taxon: asterias
-            - taxon: caput medusæ_linnaeus_1758
+            - taxon: caput medusae_linnaeus_1758
               parents:
               - taxon: asterias
           - taxon: costosum_lamarck_1816
@@ -236,7 +236,7 @@ taxonomies:
             new: true
           - taxon: bicolor_lamarck_1816
             new: true
-          - taxon: lævigata_linnaeus_1758
+          - taxon: laevigata_linnaeus_1758
           - taxon: arenata_lamarck_1816
             new: true
           - taxon: cylindrica_lamarck_1816

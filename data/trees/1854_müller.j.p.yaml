@@ -7,14 +7,14 @@ taxonomies:
     - taxon: cystideen
       children:
       - notes: Rhombifera, but not named.
-        openTaxon: cystideæ-unnamed-group_müller.j.p_1854
+        openTaxon: cystideae-unnamed-group_müller.j.p_1854
         children:
         - notes: Hemicosmitida, but not named.
-          openTaxon: cystideæ-unnamed-subgroup-1_müller.j.p_1854
+          openTaxon: cystideae-unnamed-subgroup-1_müller.j.p_1854
           children:
           - taxon: hemicosmites
           - taxon: caryocrinus
-        - taxon: echinosphærites
+        - taxon: echinosphaerites
           notes: Caryocystitida, but only one genus at this point.
           children:
           - taxon: granatum_wahlenberg_1821
@@ -31,7 +31,7 @@ taxonomies:
               parents:
               - taxon: caryocystites
         - notes: Glyptocystitida, but not named.
-          openTaxon: cystideæ-unnamed-subgroup-2_müller.j.p_1854
+          openTaxon: cystideae-unnamed-subgroup-2_müller.j.p_1854
           children:
           - taxon: echinoencrinus
             children:
@@ -48,7 +48,7 @@ taxonomies:
       - taxon: diploporiten
         new: true
         children:
-        - taxon: sphæronites
+        - taxon: sphaeronites
           children:
           - taxon: pomum_gyllenhaal_1772
             type: true
@@ -76,7 +76,7 @@ taxonomies:
         - taxon: protocrinites
           children:
           - taxon: oviformis_eichwald_1840
-        - taxon: glyptosphærites
+        - taxon: glyptosphaerites
           new: true
           children:
           - taxon: leuchtenbergii_volborth_1846

@@ -183,7 +183,7 @@ taxonomies:
       - plate: 7
         figures:
         - [2a, 2c]
-  - taxon: palæocystites
+  - taxon: palaeocystites
     new: true
     pages: 68
     children:
