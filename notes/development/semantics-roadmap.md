@@ -977,17 +977,30 @@ Whiteaves' three) or to say a role is merely `reported`. The integrity
 check that a name has at most one holotype across sources, unless a later
 source designates a lectotype or neotype, is F5.
 
-**D3. Repositories.** `data/repositories.yaml` is keyed by the preferred
-prefix, with `kind` (institution, person, locality), `formerly` for the
-other printed forms that mean the same holder (BMNH and "NHM UK" for
-NHMUK; "Canadian Geological Survey" for GSC), and `place`. Resolution
-takes the leading letters of the catalog number and matches the longest
-key or alias at a token boundary; a source whose abbreviations differ
-from the registry's carries `repositoryAbbreviations` on its record,
-which wins within that source (Bell 1976 writes UCMP for Cincinnati and
-CFM, CFMP, CFMPE for the Field Museum). A material entry writes
-`repository` only when the number has no prefix or the prefix is
-ambiguous, and `holder` for a private holder with no registry entry.
+**D3. Repositories.** `data/repositories.yaml` holds every holder a
+catalog number may name, in one place, organised by holder rather than by
+printed prefix. An entry is an institution, a collection inside one
+(`within`), or a person, with `type` saying which and `subject` saying
+what its numbers identify (specimens, localities, samples); either may be
+`unknown` when a paper prints a prefix and nothing more. Keys are slugs,
+like taxon and source keys. `prefixes` lists the printed prefixes that
+resolve to an entry and `formerly` its earlier names, and the prefix
+index is derived from both, because a prefix need not resemble its
+holder's name: Sprinkle 1973's latex casts numbered E and BC belong to
+the Caster Collection at the University of Cincinnati (`uc-caster`,
+`within: uc`). A collection may print its parent's numbers and list no
+prefix of its own, as the Walcott Collection does with USNM numbers; a
+material entry then names it in `repository`. When two entries claim a
+prefix (PE for the Field Museum and for the North Museum at Franklin and
+Marshall College; E for NHMUK's register and the Caster casts; UCMP for
+Berkeley and for Bell 1976's Cincinnati museum), a tree file whose
+numbers use it lists the entry it means under its own `repositories`,
+the analogue of `needsQualification` on a taxon record. Resolution takes
+the leading letters of the catalog number, folding a hyphen or space
+between prefix and number, matches the longest prefix or former name at
+a token boundary, and tries the file's listed entries first; a prefix
+still claimed by two entries, or a listed entry no number uses, is an
+error. `holder` names a private holder with no registry entry.
 Unresolved prefixes are reported now and fail at stage 4 (F2).
 
 **D4. Figures versus illustrations.** The same locator fields serve two
@@ -1019,6 +1032,29 @@ registry does not know.
 (diagnosis) are done, 2026-09-27: the field is gone with the `diagnoses`
 coverage kind.
 
+**D11. Casts, lots, localities and collecting events.** Sprinkle 1973
+showed four things a specimen citation carries that D1 first lacked,
+and the schema now has a field for each, all as printed:
+
+- A cast can be the cited object, with its own number and holder, while
+  the original is elsewhere and may be unnumbered: `preparation` ("latex
+  cast") on the entry, and `castOf` naming the entry for the original
+  when the source cites it (MCZ 629A and B, casts of the specimen to be
+  deposited as PE-199).
+- A lot and its pieces: MCZ 602-D1, 602-RO-5, 602a are pieces of lot MCZ
+  602 with different roles. Each piece is its own entry with the printed
+  string; the lot relation is derivable from the string and is not
+  asserted.
+- Localities come from registers of their own (the author's field codes,
+  USGS and Walcott locality numbers, the Museum of Victoria's NMVPL), and
+  sources print equivalences between them: `localityNumbers` on the
+  context, resolved through entries whose `subject` is localities, with
+  `coordinatesAsPrinted` and `mapSheet` for a grid reference kept
+  verbatim.
+- Collecting is recorded against the specimen as well as the site ("found
+  at locality LV-2 by my field assistant"): `collectedBy` and
+  `collectedDate` on both the material entry and the context.
+
 **Cross-source identity.** Two entries citing the same resolved
 repository and the same catalog number, folded for case and spacing, are
 the same specimen; the tools join on that and no registry is kept. An
@@ -1037,7 +1073,7 @@ reconciled: Whiteaves 1897 names three specimens, Bather 1914 three, Fay
   GSC 1407-B "a fragment of the holotype" is `fragmentOf`; the Bigsby
   specimen is a `label` with the four works that figured it in `notes`;
   "Illustrated Specimen" is `roleAsPrinted` with no role; UCMP meaning
-  Cincinnati is `repositoryAbbreviations`.
+  Cincinnati is `repositories: [uc-museum]` at the top of the tree file.
 - *Fay 1962*: No. 752 captioned "Holotype" and called a syntype in the
   text: `role: syntype`, `roleAsPrinted: Holotype`; the second syntype,
   lent to Hudson and gone, is a `label` with `status: lost`.
@@ -1122,14 +1158,11 @@ fail also exit non-zero.
 `altSpellingOf` / `altRankOf` / `vulgarSpellingOf` target resolves.
 
 **F2. Repository prefixes: report now, fail at stage 4.** Every catalog
-number's prefix resolves against `data/repositories.yaml` (keys and
-`formerly` aliases), after the source's own `repositoryAbbreviations`
-map, which wins within that source: Bell 1976 (p. 2) defines UCMP as the
-University of Cincinnati, where current usage means the University of
-California, and cites the Field Museum as CFM, CFMP, CFMPE and CFMUC. A
-material entry's explicit `repository` bypasses resolution and must be a
-registry key. The catalog number keeps the printed prefix either way
-(D3).
+number's prefix resolves against `data/repositories.yaml` (keys,
+`prefixes` and `formerly`), the tree file's `repositories` list deciding
+between entries that print the same prefix (D3). A material entry's
+explicit `repository` bypasses resolution and must be a registry key.
+The catalog number keeps the printed prefix either way.
 
 **F3. Time values, fail.** Every `stage`, `series`, `period` and regional value
 resolves in `time.yaml` (E6).

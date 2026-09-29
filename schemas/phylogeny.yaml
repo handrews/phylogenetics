@@ -63,6 +63,18 @@ $defs:
         items:
           type: string
           enum: [material, figures, contexts, range, synonyms]
+      repositories:
+        description: |
+          The `repositories.yaml` entries this source's catalog numbers draw
+          on, listed when a printed prefix is claimed by more than one entry
+          (Bell 1976 writes UCMP for Cincinnati: `[uc-museum]`). A prefix
+          resolves against the listed entries first, then the whole
+          registry; a prefix still ambiguous, or a listed entry no number
+          uses, is an error.
+        type: array
+        uniqueItems: true
+        items:
+          $ref: "#/$defs/repositoryKey"
       notes:
         type: string
   person:
@@ -162,17 +174,6 @@ $defs:
               enum: [all, partly, none, na]
           notes:
             type: string
-      repositoryAbbreviations:
-        description: |
-          Printed prefix to `repositories.yaml` key, for a source whose
-          abbreviations differ from the registry's (Bell 1976 writes UCMP for
-          Cincinnati and CFM, CFMP, CFMPE for the Field Museum). Wins within
-          the source when a catalog number's prefix is resolved.
-        type: object
-        propertyNames:
-          type: string
-        additionalProperties:
-          type: string
       journal:
         type: string
       book:
@@ -1274,12 +1275,30 @@ $defs:
         enum: [designated, reported]
       repository:
         description: |
-          A key in `repositories.yaml`, written only when the catalog number
-          carries no prefix, the prefix is ambiguous, or the source's own
-          abbreviation is not the registry's (see `repositoryAbbreviations`).
-        type: string
+          A key in `repositories.yaml`, possibly a collection's, written only
+          when the catalog number carries no prefix, when the source names a
+          collection its prefix does not reveal (the Walcott Collection), or
+          when one entry draws on a different holder than the tree file's
+          `repositories` list resolves its prefix to.
+        $ref: "#/$defs/repositoryKey"
       holder:
         description: A private holder named by the source, with no registry entry.
+        type: string
+      preparation:
+        description: |
+          What the cited object is, as printed, when it is not the fossil
+          itself: "latex cast", "mold", "thin section".
+        type: string
+      castOf:
+        description: |
+          The catalog number or label of the entry on the same node that this
+          cast was taken from, when the source gives the original one.
+        type: string
+      collectedBy:
+        description: The collector or finder of this specimen, as printed.
+        type: string
+      collectedDate:
+        description: When this specimen was collected or found, as printed.
         type: string
       context:
         $ref: "#/$defs/contextRef"
@@ -1404,6 +1423,27 @@ $defs:
         type: array
         items:
           type: string
+      localityNumbers:
+        description: |
+          Locality register numbers for this context, as printed ("SH-1",
+          "USGS 4148 CO", "NMVPL 58"), resolved like catalog numbers through
+          entries whose `subject` is localities. Equivalences the source
+          prints are kept as several numbers on one context.
+        type: array
+        items:
+          type: string
+      coordinatesAsPrinted:
+        description: Coordinates or a grid reference exactly as printed ("GR538142 (yards)").
+        type: string
+      mapSheet:
+        description: The map sheet a grid reference refers to, as printed.
+        type: string
+      collectedBy:
+        description: The collector at this context, as printed.
+        type: string
+      collectedDate:
+        description: When the collecting at this context took place, as printed.
+        type: string
       inferred:
         $ref: "#/$defs/inferredContext"
       sources:
@@ -1452,24 +1492,39 @@ $defs:
 
   repositories:
     description: |
-      `data/repositories.yaml`: every prefix a catalog number may carry,
-      keyed by the form the registry prefers. `formerly` lists the other
-      printed forms that resolve to the same holder ("BMNH" and "NHM UK"
-      for NHMUK; "Canadian Geological Survey" for GSC).
+      `data/repositories.yaml`: every holder a catalog number may name,
+      organised by holder. An entry is an institution, a collection inside
+      one (`within`), or a person; `subject` says what its numbers
+      identify. `prefixes` lists the printed prefixes that resolve to the
+      entry, and `formerly` its earlier names, which resolve too; the
+      prefix index is derived from both, so a key need not be a prefix. A
+      collection may print its parent's prefix and list none of its own
+      (the Walcott Collection prints USNM numbers). When two entries claim
+      the same prefix, a tree file whose numbers use it lists the entry it
+      means under its own `repositories`.
     type: object
     propertyNames:
-      type: string
-      pattern: "^[A-Za-z][A-Za-z0-9 .'-]*$"
+      $ref: "#/$defs/repositoryKey"
     additionalProperties:
       type: object
       additionalProperties: false
-      required: [name, kind]
+      required: [name, type]
       properties:
         name:
           type: string
-        kind:
+        type:
           type: string
-          enum: [institution, person, locality]
+          enum: [institution, collection, person, unknown]
+        subject:
+          description: What the entry's numbers identify.
+          type: string
+          enum: [specimens, localities, samples, unknown]
+        within:
+          $ref: "#/$defs/repositoryKey"
+        prefixes:
+          type: array
+          items:
+            type: string
         formerly:
           type: array
           items:
@@ -1478,6 +1533,9 @@ $defs:
           type: string
         notes:
           type: string
+  repositoryKey:
+    type: string
+    pattern: "^[a-z0-9][a-z0-9-]*$"
   roles:
     description: |
       `data/roles.yaml`: the type roles the data maps to, with their
