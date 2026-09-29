@@ -18,48 +18,115 @@ from phylohist.loader.taxa import Tree
 SCRIPTS = Path(__file__).resolve().parent.parent / 'scripts'
 
 
-@pytest.fixture(scope='module')
+def _entry(*prefixes, formerly=(), within=None):
+  entry = {'name': 'x', 'type': 'institution', 'prefixes': list(prefixes)}
+  if formerly:
+    entry['formerly'] = list(formerly)
+  if within:
+    entry['within'] = within
+  return entry
+
+
+@pytest.fixture
 def repositories():
-  return io.load_yaml(io.DATA_DIR / 'repositories.yaml')
-
-
-# -- repository_of (4) -------------------------------------------------------
-
-
-def test_repository_of_exact_key_match(repositories):
-  assert material.repository_of('GM 9-5-2 165b', repositories) == ('GM', 'registry')
-
-
-def test_repository_of_token_boundary_key_match(repositories):
-  assert material.repository_of('USNM S-3965', repositories) == ('USNM', 'registry')
-
-
-def test_repository_of_hyphenated_prefix(repositories):
-  assert material.repository_of('PWL 2009/5016sub1-LS', repositories) == ('PWL', 'registry')
-
-
-def test_repository_of_alias_match(repositories):
-  assert material.repository_of('NHM UK EE15373', repositories) == ('NHMUK', 'alias')
-
-
-def test_repository_of_source_abbreviation_wins(repositories):
-  abbreviations = {'E': 'NHMUK'}
-  assert material.repository_of('E23470', repositories, abbreviations) == ('NHMUK', 'source')
-
-
-def test_repository_of_source_abbreviation_wins_other_prefix(repositories):
-  abbreviations = {'EE': 'NHMUK'}
-  assert material.repository_of('EE15752', repositories, abbreviations) == ('NHMUK', 'source')
-
-
-def test_repository_of_longest_candidate_wins():
-  # A registry where a shorter and a longer key both match at a token
-  # boundary: the longer one wins.
-  registry = {
-    'GM': {'name': 'short', 'kind': 'institution'},
-    'GM CO': {'name': 'long', 'kind': 'institution'},
+  """A synthetic registry: keys are slugs, and PE, E and UCMP are each
+  claimed by two entries."""
+  return {
+    'fmnh': _entry('FMNH', 'PE', 'FMNH PE'),
+    'north-museum-fm': _entry('PE'),
+    'nhmuk': _entry('NHMUK', 'E', formerly=['BMNH', 'NHM UK']),
+    'uc': _entry('UC'),
+    'uc-caster': _entry('E', 'BC', within='uc'),
+    'uc-museum': _entry('UCMP', within='uc'),
+    'berkeley': _entry('UCMP'),
+    'mcz': _entry('MCZ'),
+    'gm': _entry('GM'),
+    'usnm': _entry('USNM'),
+    'usnm-walcott': {'name': 'x', 'type': 'collection', 'within': 'usnm'},
   }
-  assert material.repository_of('GM CO 12', registry) == ('GM CO', 'registry')
+
+
+# -- repository_of (D3) --------------------------------------------------------
+
+
+def test_repository_of_prefix(repositories):
+  assert material.repository_of('GM 9-5-2 165b', repositories) == ('gm', 'prefix')
+
+
+def test_repository_of_key_is_not_a_prefix(repositories):
+  # `usnm-walcott` is a slug, not something a catalog number prints.
+  assert material.repository_of('usnm-walcott 12', repositories) == (None, None)
+  assert material.repository_of('north-museum-fm 12', repositories) == (None, None)
+
+
+def test_repository_of_formerly(repositories):
+  assert material.repository_of('BMNH 12345', repositories) == ('nhmuk', 'formerly')
+  assert material.repository_of('NHM UK EE15373', repositories) == ('nhmuk', 'formerly')
+
+
+def test_repository_of_case_and_whitespace_folded(repositories):
+  assert material.repository_of('nhm   uk 12', repositories) == ('nhmuk', 'formerly')
+  assert material.repository_of('gm12', repositories) == ('gm', 'prefix')
+
+
+def test_repository_of_trailing_hyphen_folds_like_a_space(repositories):
+  files = ['fmnh']
+  assert material.repository_of('PE-214', repositories, files) == ('fmnh', 'file')
+  assert material.repository_of('PE 214', repositories, files) == ('fmnh', 'file')
+
+
+def test_repository_of_hyphen_inside_the_number_is_untouched(repositories):
+  assert material.repository_of('MCZ 602-D1', repositories) == ('mcz', 'prefix')
+  assert material.repository_of('MCZ 602-RO-5', repositories) == ('mcz', 'prefix')
+
+
+def test_repository_of_token_boundary_prefix(repositories):
+  # "USNM S" is the leading run; USNM matches at a token boundary.
+  assert material.repository_of('USNM S-3965', repositories) == ('usnm', 'prefix')
+  # No boundary after GM, so it is not a match for GMX.
+  assert material.repository_of('GMX 12', repositories) == (None, None)
+
+
+def test_repository_of_longest_candidate_wins(repositories):
+  # FMNH PE is longer than FMNH or PE, and only fmnh claims it.
+  assert material.repository_of('FMNH PE 12', repositories) == ('fmnh', 'prefix')
+
+
+def test_repository_of_file_list_settles_pe_for_either_claimant(repositories):
+  assert material.repository_of('PE 214', repositories, ['fmnh']) == ('fmnh', 'file')
+  assert material.repository_of('PE 214', repositories, ['north-museum-fm']) == (
+    'north-museum-fm',
+    'file',
+  )
+
+
+def test_repository_of_ambiguous_without_a_list(repositories):
+  assert material.repository_of('E23470', repositories) == (
+    ('nhmuk', 'uc-caster'),
+    material.AMBIGUOUS,
+  )
+
+
+def test_repository_of_ambiguous_when_the_list_names_none_or_both(repositories):
+  both = ['nhmuk', 'uc-caster']
+  assert material.repository_of('E 1', repositories, both) == (
+    ('nhmuk', 'uc-caster'),
+    material.AMBIGUOUS,
+  )
+  assert material.repository_of('E 1', repositories, ['gm']) == (
+    ('nhmuk', 'uc-caster'),
+    material.AMBIGUOUS,
+  )
+
+
+def test_repository_of_ucmp_with_the_cincinnati_museum_listed(repositories):
+  assert material.repository_of('UCMP 12', repositories, ['uc-museum']) == ('uc-museum', 'file')
+  assert material.repository_of('UCMP 12', repositories, ['berkeley']) == ('berkeley', 'file')
+
+
+def test_repository_of_an_entry_claiming_a_candidate_twice_is_one_claim():
+  registry = {'a': _entry('AB', formerly=['AB'])}
+  assert material.repository_of('AB 1', registry) == ('a', 'prefix')
 
 
 def test_repository_of_no_prefix(repositories):
@@ -68,6 +135,109 @@ def test_repository_of_no_prefix(repositories):
 
 def test_repository_of_unresolvable_prefix(repositories):
   assert material.repository_of('ZZZZ 12', repositories) == (None, None)
+
+
+# -- registry_links -------------------------------------------------------------
+
+
+def test_registry_links_real_registry_passes():
+  assert material.registry_links(io.load_yaml(io.DATA_DIR / 'repositories.yaml')) == []
+
+
+def test_registry_links_synthetic_registry_passes(repositories):
+  assert material.registry_links(repositories) == []
+
+
+def test_registry_links_within_a_missing_key_is_error():
+  registry = {'a': _entry('A', within='nowhere')}
+  assert material.registry_links(registry) == [
+    ('error', 'repository "a" is within "nowhere", which is not a key'),
+  ]
+
+
+def test_registry_links_within_cycle_is_error_once():
+  registry = {
+    'a': _entry('A', within='b'),
+    'b': _entry('B', within='c'),
+    'c': _entry('C', within='a'),
+  }
+  messages = material.registry_links(registry)
+  assert len(messages) == 1
+  assert messages[0][0] == 'error'
+  assert '`within` cycles' in messages[0][1]
+
+
+def test_registry_links_self_within_is_a_cycle():
+  registry = {'a': _entry('A', within='a')}
+  assert material.registry_links(registry) == [('error', '`within` cycles: a -> a')]
+
+
+def test_registry_links_chain_into_a_cycle_reports_the_cycle():
+  registry = {
+    'a': _entry('A', within='b'),
+    'b': _entry('B', within='c'),
+    'c': _entry('C', within='b'),
+  }
+  assert material.registry_links(registry) == [('error', '`within` cycles: b -> c -> b')]
+
+
+# -- file_repositories_used ------------------------------------------------------
+
+
+def _document(*numbers, **extra):
+  return {
+    'taxonomies': [{'taxon': 'a', 'material': [{'catalogNumbers': list(numbers)}]}],
+    **extra,
+  }
+
+
+def test_file_repositories_used_no_list_is_quiet(repositories):
+  assert material.file_repositories_used(_document('PE 1'), repositories) == []
+
+
+def test_file_repositories_used_listed_and_used_is_quiet(repositories):
+  document = _document('PE 1', repositories=['fmnh'])
+  assert material.file_repositories_used(document, repositories) == []
+
+
+def test_file_repositories_used_range_endpoint_counts(repositories):
+  document = _document(['PE 1', 'PE 5'], repositories=['fmnh'])
+  assert material.file_repositories_used(document, repositories) == []
+
+
+def test_file_repositories_used_explicit_repository_counts(repositories):
+  document = {
+    'taxonomies': [
+      {'taxon': 'a', 'material': [{'catalogNumbers': ['12'], 'repository': 'usnm-walcott'}]}
+    ],
+    'repositories': ['usnm-walcott'],
+  }
+  assert material.file_repositories_used(document, repositories) == []
+
+
+def test_file_repositories_used_missing_key_is_error(repositories):
+  document = _document('GM 1', repositories=['nowhere'])
+  assert material.file_repositories_used(document, repositories) == [
+    ('error', 'listed repository "nowhere" is not a key of the registry'),
+  ]
+
+
+def test_file_repositories_used_listed_but_unused_is_error(repositories):
+  document = _document('GM 1', 'PE 2', repositories=['fmnh', 'mcz'])
+  assert material.file_repositories_used(document, repositories) == [
+    (
+      'error',
+      'repository "mcz" is listed but no catalog number in the file resolves to it',
+    ),
+  ]
+
+
+def test_file_repositories_used_ellipsis_and_ambiguous_do_not_count(repositories):
+  # E is ambiguous against this list, and "PE 1..." carries an ellipsis.
+  document = _document('E 1', 'PE 1...', repositories=['fmnh'])
+  assert material.file_repositories_used(document, repositories) == [
+    ('error', 'repository "fmnh" is listed but no catalog number in the file resolves to it'),
+  ]
 
 
 # -- context_refs -------------------------------------------------------------
@@ -188,22 +358,50 @@ def test_catalog_numbers_ellipsis_is_error(repositories, ellipsis):
 
 
 def test_catalog_numbers_ellipsis_reported_even_with_explicit_repository(repositories):
-  node = {'material': [{'catalogNumbers': ['GM 1...'], 'repository': 'GM'}]}
+  node = {'material': [{'catalogNumbers': ['GM 1...'], 'repository': 'gm'}]}
   assert material.catalog_numbers(node, repositories) == [
     ('error', "catalog number 'GM 1...' contains an ellipsis"),
   ]
 
 
 def test_catalog_numbers_explicit_repository_not_in_registry_is_error(repositories):
-  node = {'material': [{'label': 'A', 'repository': 'NOWHERE'}]}
+  node = {'material': [{'label': 'A', 'repository': 'nowhere'}]}
   assert material.catalog_numbers(node, repositories) == [
-    ('error', 'repository "NOWHERE" is not a key of the registry'),
+    ('error', 'repository "nowhere" is not a key of the registry'),
+  ]
+
+
+def test_catalog_numbers_explicit_repository_is_a_key_not_a_prefix(repositories):
+  # `GM` is a prefix, not a key: only `gm` is.
+  node = {'material': [{'catalogNumbers': ['GM 1'], 'repository': 'GM'}]}
+  assert material.catalog_numbers(node, repositories) == [
+    ('error', 'repository "GM" is not a key of the registry'),
+  ]
+
+
+def test_catalog_numbers_ambiguous_prefix_is_error_naming_the_candidates(repositories):
+  node = {'material': [{'catalogNumbers': ['E 23470']}]}
+  assert material.catalog_numbers(node, repositories) == [
+    ('error', 'catalog number "E 23470" has an ambiguous prefix: nhmuk, uc-caster'),
+  ]
+  assert material.unresolved_catalog_numbers(node, repositories) == []
+
+
+def test_catalog_numbers_file_list_settles_an_ambiguous_prefix(repositories):
+  node = {'material': [{'catalogNumbers': ['E 23470']}]}
+  assert material.catalog_numbers(node, repositories, ['uc-caster']) == []
+
+
+def test_catalog_numbers_range_endpoints_settled_to_different_entries_is_error(repositories):
+  node = {'material': [{'catalogNumbers': [['PE 1', 'FMNH 2']]}]}
+  assert material.catalog_numbers(node, repositories, ['north-museum-fm']) == [
+    ('error', "catalog number range ['PE 1', 'FMNH 2'] resolves to different repositories"),
   ]
 
 
 def test_catalog_numbers_explicit_repository_skips_resolution(repositories):
   # No warning for an unresolvable prefix once `repository` is given.
-  node = {'material': [{'catalogNumbers': ['ZZZZ 1'], 'repository': 'GM'}]}
+  node = {'material': [{'catalogNumbers': ['ZZZZ 1'], 'repository': 'gm'}]}
   assert material.catalog_numbers(node, repositories) == []
 
 
@@ -231,10 +429,57 @@ def test_unresolved_catalog_numbers_lists_values_by_name(repositories):
     'material': [
       {'catalogNumbers': ['GM 1', 'ZZZZ 2...']},
       {'catalogNumbers': [['ZZZZ 3', 'GM 4']]},
-      {'catalogNumbers': ['ZZZZ 5'], 'repository': 'GM'},
+      {'catalogNumbers': ['ZZZZ 5'], 'repository': 'gm'},
     ],
   }
   assert material.unresolved_catalog_numbers(node, repositories) == ['ZZZZ 3']
+
+
+# -- cast_refs -------------------------------------------------------------------
+
+
+def test_cast_refs_matches_a_catalog_number_label_or_range_endpoint():
+  node = {
+    'material': [
+      {'catalogNumbers': ['MCZ 629A'], 'castOf': 'PE 199'},
+      {'catalogNumbers': ['PE 199']},
+      {'catalogNumbers': ['MCZ 700'], 'castOf': 'the holotype'},
+      {'label': 'the holotype'},
+      {'catalogNumbers': ['MCZ 800'], 'castOf': 'PE 205'},
+      {'catalogNumbers': [['PE 201', 'PE 205']]},
+    ],
+  }
+  assert material.cast_refs(node) == []
+
+
+def test_cast_refs_no_match_is_error():
+  node = {'material': [{'catalogNumbers': ['MCZ 629A'], 'castOf': 'PE 199'}]}
+  assert material.cast_refs(node) == [
+    ('error', 'castOf "PE 199" matches 0 material entries, not 1')
+  ]
+
+
+def test_cast_refs_several_matches_is_error():
+  node = {
+    'material': [
+      {'catalogNumbers': ['MCZ 629A'], 'castOf': 'PE 199'},
+      {'catalogNumbers': ['PE 199']},
+      {'label': 'PE 199'},
+    ],
+  }
+  assert material.cast_refs(node) == [
+    ('error', 'castOf "PE 199" matches 2 material entries, not 1')
+  ]
+
+
+def test_cast_refs_own_entry_is_error():
+  node = {'material': [{'catalogNumbers': ['MCZ 629A'], 'castOf': 'MCZ 629A'}]}
+  assert material.cast_refs(node) == [('error', 'castOf "MCZ 629A" names the entry itself')]
+
+
+def test_cast_refs_absent_castof_and_absent_material_are_quiet():
+  assert material.cast_refs({'material': [{'label': 'A'}]}) == []
+  assert material.cast_refs({}) == []
 
 
 # -- null_material --------------------------------------------------------------
@@ -377,16 +622,20 @@ def test_load_reports_material_checks_at_the_right_level(caplog):
   from phylohist.loader.load import _report_material
 
   data = {
-    'repositories': {'GM': {'name': 'x', 'kind': 'institution'}},
+    'repositories': {'gm': _entry('GM'), 'cyc': _entry('CYC', within='cyc')},
     'trees': {
       '_synthetic_source': {
         'contexts': {'stray': {}},
         'unused': ['range'],
+        'repositories': ['gm', 'nowhere'],
         'taxonomies': [
           {
             'taxon': 'cyathocystis',
             'range': None,
-            'material': [{'catalogNumbers': ['ZZZZ 1'], 'context': 'missing-ctx'}],
+            'material': [
+              {'catalogNumbers': ['ZZZZ 1'], 'context': 'missing-ctx'},
+              {'catalogNumbers': ['MCZ 1'], 'castOf': 'MCZ 2'},
+            ],
             'figures': [{'plate': 1, 'of': 'nope'}],
             'synonyms': [{'taxon': 'cyathocystis', 'contexts': None}],
           },
@@ -406,6 +655,10 @@ def test_load_reports_material_checks_at_the_right_level(caplog):
   assert any('context "missing-ctx" is not defined' in m for m in errors)
   assert any('figure "of" value "nope"' in m for m in errors)
   assert any('cited entry carries `contexts`' in m for m in errors)
+  assert any('castOf "MCZ 2" matches 0' in m for m in errors)
+  assert any('repositories: `within` cycles: cyc -> cyc' in m for m in errors)
+  assert any('listed repository "nowhere"' in m for m in errors)
+  assert any('repository "gm" is listed but no catalog number' in m for m in errors)
 
 
 # -- scripts/check_draft.py ---------------------------------------------------
@@ -438,3 +691,30 @@ def test_check_draft_exits_one_on_material_null_on_a_cited_entry(tmp_path):
   result = _run_check_draft(draft)
   assert result.returncode == 1, result.stdout + result.stderr
   assert 'cited entry carries `material`' in result.stdout
+
+
+def test_check_draft_exits_one_on_a_listed_but_unused_repository(tmp_path):
+  draft = tmp_path / '1898_bather.yaml'
+  draft.write_text(
+    'repositories: [nhmuk]\n'
+    'taxonomies:\n'
+    '- taxon: cyathocystis\n'
+    '  material:\n'
+    '  - catalogNumbers: [GSC 1]\n',
+  )
+  result = _run_check_draft(draft)
+  assert result.returncode == 1, result.stdout + result.stderr
+  assert 'repository "nhmuk" is listed but no catalog number' in result.stdout
+
+
+def test_check_draft_exits_one_on_an_ambiguous_prefix_and_zero_once_listed(tmp_path):
+  body = '- taxon: cyathocystis\n  material:\n  - catalogNumbers: [E 23470]\n'
+  draft = tmp_path / '1898_bather.yaml'
+  draft.write_text('taxonomies:\n' + body)
+  result = _run_check_draft(draft)
+  assert result.returncode == 1, result.stdout + result.stderr
+  assert 'ambiguous prefix' in result.stdout
+
+  draft.write_text('repositories: [uc-caster]\ntaxonomies:\n' + body)
+  result = _run_check_draft(draft)
+  assert result.returncode == 0, result.stdout + result.stderr

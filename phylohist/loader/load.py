@@ -161,18 +161,22 @@ def _log_material(level, message):
 
 
 def _report_material(data):
-  """Run every `material.py` check over every node of every opinion,
-  logging each at its level with the source key and, for a per-node
-  check, the node's path."""
+  """Run every `material.py` check over the registry, then over every
+  opinion and its nodes, logging each at its level with the source key
+  and, for a per-node check, the node's path."""
   repositories = data.get('repositories') or {}
+  for level, message in material.registry_links(repositories):
+    _log_material(level, f'repositories: {message}')
+
   for source_key, opinion in data['trees'].items():
-    source = Source.get(source_key)
-    abbreviations = (source._data.get('repositoryAbbreviations') if source else None) or {}
+    file_repositories = opinion.get('repositories') or ()
     file_contexts = opinion.get('contexts') or {}
 
     for level, message in material.unreferenced_file_contexts(opinion):
       _log_material(level, f'{source_key}: {message}')
     for level, message in material.unused_fields(opinion):
+      _log_material(level, f'{source_key}: {message}')
+    for level, message in material.file_repositories_used(opinion, repositories):
       _log_material(level, f'{source_key}: {message}')
 
     for path, node, is_cited in material.walk_document(opinion):
@@ -182,7 +186,9 @@ def _report_material(data):
         _log_material(level, f'{where}: {message}')
       for level, message in material.figure_refs(node):
         _log_material(level, f'{where}: {message}')
-      for level, message in material.catalog_numbers(node, repositories, abbreviations):
+      for level, message in material.catalog_numbers(node, repositories, file_repositories):
+        _log_material(level, f'{where}: {message}')
+      for level, message in material.cast_refs(node):
         _log_material(level, f'{where}: {message}')
       for level, message in material.null_material(node, is_cited):
         _log_material(level, f'{where}: {message}')

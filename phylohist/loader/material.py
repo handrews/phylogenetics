@@ -1,4 +1,5 @@
-"""Material integrity checks: contexts, catalog numbers, figures, nulls.
+"""Material integrity checks: contexts, catalog numbers, casts, figures,
+nulls, and the repository registry and a tree file's `repositories` list.
 
 Pure functions over a raw node dict and the file-level maps, so
 `scripts/check_draft.py` can run the same checks on an unloaded draft; the
@@ -23,9 +24,13 @@ def _fold(text):
 
 
 def _prefix(number):
-  """The leading run before the first digit, stripped; `None` if empty."""
+  """The leading run before the first digit, stripped, with a trailing
+  hyphen dropped ("PE-214" and "PE 214" both give "PE"); `None` if empty.
+  A hyphen inside the number ("MCZ 602-D1") is past the first digit and
+  untouched."""
   match = _DIGIT_RE.search(number)
   prefix = (number[: match.start()] if match else number).strip()
+  prefix = prefix.removesuffix('-').strip()
   return prefix or None
 
 
@@ -36,37 +41,122 @@ def _is_match(candidate, prefix):
   return prefix.startswith(candidate) and prefix[len(candidate)] == ' '
 
 
-def repository_of(number, repositories, abbreviations=None):
-  """`(registry_key, via)` for a catalog number's repository, resolved from
-  its printed prefix; `(None, None)` when nothing matches.
+AMBIGUOUS = 'ambiguous'
 
-  Candidates are `abbreviations` (the citing source's own map, `via`
-  `'source'`), the registry's own keys (`'registry'`), and every
-  registry entry's `formerly` alias (`'alias'`); the longest candidate
-  that matches wins.
+
+def _prefix_index(repositories):
+  """`{folded candidate: {key: via}}` over every entry's `prefixes` (via
+  `'prefix'`) and `formerly` (via `'formerly'`); a key claiming a candidate
+  both ways counts as `'prefix'`. Registry keys are slugs, never
+  candidates."""
+  index = {}
+  for key, entry in repositories.items():
+    for via, values in (('formerly', entry.get('formerly')), ('prefix', entry.get('prefixes'))):
+      for value in values or ():
+        index.setdefault(_fold(value), {})[key] = via
+  return index
+
+
+def repository_of(number, repositories, file_repositories=()):
+  """`(key, via)` for a catalog number's repository, resolved from its
+  printed prefix (see `_prefix`; compared case-insensitively with
+  whitespace collapsed).
+
+  The candidates are every registry entry's `prefixes` and `formerly`; the
+  longest one equal to the prefix or a token-boundary prefix of it wins.
+  When one entry claims it, `via` is `'prefix'` or `'formerly'`. When
+  several claim it, the entries in `file_repositories` (the tree file's
+  own list) are preferred: exactly one left gives `(key, 'file')`.
+
+  Returns `(None, None)` when nothing matches, and `(keys, 'ambiguous')`,
+  `keys` a sorted tuple of the entries still competing, when the file list
+  does not settle it. A caller tests `via == AMBIGUOUS` before using `key`.
   """
   prefix = _prefix(number)
   if prefix is None:
     return None, None
   folded_prefix = _fold(prefix)
 
-  def candidates():
-    for abbreviation, key in (abbreviations or {}).items():
-      yield abbreviation, key, 'source'
-    for key in repositories:
-      yield key, key, 'registry'
-    for key, entry in repositories.items():
-      for alias in entry.get('formerly') or ():
-        yield alias, key, 'alias'
-
   best = None
-  for candidate, key, via in candidates():
-    if not _is_match(_fold(candidate), folded_prefix):
-      continue
-    if best is None or len(candidate) > len(best[0]):
-      best = (candidate, key, via)
+  for candidate, claims in _prefix_index(repositories).items():
+    if _is_match(candidate, folded_prefix) and (best is None or len(candidate) > len(best[0])):
+      best = (candidate, claims)
+  if best is None:
+    return None, None
 
-  return (best[1], best[2]) if best else (None, None)
+  claims = best[1]
+  if len(claims) == 1:
+    ((key, via),) = claims.items()
+    return key, via
+  listed = [key for key in claims if key in file_repositories]
+  if len(listed) == 1:
+    return listed[0], 'file'
+  return tuple(sorted(listed or claims)), AMBIGUOUS
+
+
+def _catalog_values(node):
+  """`(entry, elements)` for every catalog number on every material entry
+  of `node`; `elements` is one printed string or a range pair's two."""
+  for entry in node.get('material') or ():
+    for number in entry.get('catalogNumbers') or ():
+      yield entry, (number if isinstance(number, list) else [number])
+
+
+def _has_ellipsis(elements):
+  return any('...' in e or '…' in e for e in elements)
+
+
+def registry_links(repositories):
+  """Every `within` names an existing key and following `within` never
+  cycles; an error otherwise, a cycle reported once."""
+  messages = []
+  reported = set()
+  for start, entry in repositories.items():
+    within = entry.get('within')
+    if within is not None and within not in repositories:
+      messages.append(('error', f'repository "{start}" is within "{within}", which is not a key'))
+    chain = [start]
+    while (within := repositories.get(chain[-1], {}).get('within')) in repositories:
+      if within in chain:
+        cycle = chain[chain.index(within) :]
+        if frozenset(cycle) not in reported:
+          reported.add(frozenset(cycle))
+          messages.append(('error', f'`within` cycles: {" -> ".join([*cycle, within])}'))
+        break
+      chain.append(within)
+  return messages
+
+
+def file_repositories_used(document, repositories):
+  """Every key in the tree file's `repositories` list is a registry key
+  and is the resolved holder (by prefix, or by an explicit `repository`)
+  of at least one catalog number in the file; an error otherwise."""
+  listed = document.get('repositories') or ()
+  if not listed:
+    return []
+  messages = [
+    ('error', f'listed repository "{key}" is not a key of the registry')
+    for key in listed
+    if key not in repositories
+  ]
+  used = set()
+  for _, node, _ in walk_document(document):
+    for entry, elements in _catalog_values(node):
+      if entry.get('repository') is not None:
+        used.add(entry['repository'])
+        continue
+      if _has_ellipsis(elements):
+        continue
+      for element in elements:
+        key, via = repository_of(element, repositories, listed)
+        if via not in (None, AMBIGUOUS):
+          used.add(key)
+  messages.extend(
+    ('error', f'repository "{key}" is listed but no catalog number in the file resolves to it')
+    for key in listed
+    if key in repositories and key not in used
+  )
+  return messages
 
 
 def _context_key(ref):
@@ -141,53 +231,84 @@ def figure_refs(node):
   return messages
 
 
-def unresolved_catalog_numbers(node, repositories, abbreviations=None):
-  """The printed values of `node`'s catalog numbers whose prefix resolves
-  to no repository, among entries with no explicit `repository`."""
-  unresolved = []
-  for entry in node.get('material') or ():
-    if entry.get('repository') is not None:
+def cast_refs(node):
+  """Every `castOf` names exactly one material entry on the node, by the
+  same rule as figure `of` (exact string against a catalog number, a range
+  endpoint included, or a `label`); no match or several is an error, and
+  an entry naming itself is an error."""
+  messages = []
+  entries = node.get('material') or ()
+  for entry in entries:
+    value = entry.get('castOf')
+    if value is None:
       continue
-    for number in entry.get('catalogNumbers') or ():
-      for value in number if isinstance(number, list) else [number]:
-        if '...' in value or '…' in value:
-          continue
-        if repository_of(value, repositories, abbreviations)[0] is None:
-          unresolved.append(value)
+    matches = [other for other in entries if _entry_identifies(other, value)]
+    if len(matches) != 1:
+      messages.append(
+        ('error', f'castOf "{value}" matches {len(matches)} material entries, not 1'),
+      )
+    elif matches[0] is entry:
+      messages.append(('error', f'castOf "{value}" names the entry itself'))
+  return messages
+
+
+def unresolved_catalog_numbers(node, repositories, file_repositories=()):
+  """The printed values of `node`'s catalog numbers whose prefix resolves
+  to no repository (an ambiguous prefix is not listed: `catalog_numbers`
+  reports it), among entries with no explicit `repository`."""
+  unresolved = []
+  for entry, elements in _catalog_values(node):
+    if entry.get('repository') is not None or _has_ellipsis(elements):
+      continue
+    unresolved.extend(
+      e for e in elements if repository_of(e, repositories, file_repositories)[1] is None
+    )
   return unresolved
 
 
-def catalog_numbers(node, repositories, abbreviations=None):
+def catalog_numbers(node, repositories, file_repositories=()):
   """Catalog-number and repository checks for one node's `material`
-  entries (see 4 for prefix resolution): an explicit `repository` not a
-  registry key is an error; an ellipsis in a printed number is an error;
-  for a number with no explicit `repository`, an unresolved prefix is a
-  warning (stage 4 makes it an error) and a range whose endpoints resolve
-  to different repositories is an error.
+  entries: an explicit `repository` not a registry key is an error; an
+  ellipsis in a printed number is an error; for a number with no explicit
+  `repository`, an unmatched prefix is a warning (stage 4 makes it an
+  error), a prefix still claimed by several entries after
+  `file_repositories` is an error naming them, and a range whose
+  endpoints resolve to different repositories is an error.
   """
   messages = []
   for entry in node.get('material') or ():
     repository = entry.get('repository')
     if repository is not None and repository not in repositories:
       messages.append(('error', f'repository "{repository}" is not a key of the registry'))
-    for number in entry.get('catalogNumbers') or ():
-      elements = number if isinstance(number, list) else [number]
-      if any('...' in e or '…' in e for e in elements):
-        messages.append(('error', f'catalog number {number!r} contains an ellipsis'))
-        continue
-      if repository is not None:
-        continue
-      resolved = [repository_of(e, repositories, abbreviations)[0] for e in elements]
-      for element, key in zip(elements, resolved, strict=True):
-        if key is None:
-          messages.append(
-            ('warning', f'catalog number "{element}" has no resolvable repository prefix'),
-          )
-      if len(resolved) == 2 and None not in resolved and resolved[0] != resolved[1]:
+  for entry, elements in _catalog_values(node):
+    if _has_ellipsis(elements):
+      messages.append(('error', f'catalog number {_shown(elements)!r} contains an ellipsis'))
+      continue
+    if entry.get('repository') is not None:
+      continue
+    resolved = []
+    for element in elements:
+      key, via = repository_of(element, repositories, file_repositories)
+      if via is None:
         messages.append(
-          ('error', f'catalog number range {number!r} resolves to different repositories'),
+          ('warning', f'catalog number "{element}" has no resolvable repository prefix'),
         )
+      elif via == AMBIGUOUS:
+        messages.append(
+          ('error', f'catalog number "{element}" has an ambiguous prefix: {", ".join(key)}'),
+        )
+      else:
+        resolved.append(key)
+    if len(resolved) == 2 and resolved[0] != resolved[1]:
+      messages.append(
+        ('error', f'catalog number range {_shown(elements)!r} resolves to different repositories'),
+      )
   return messages
+
+
+def _shown(elements):
+  """A catalog number as the messages print it: a string, or a range pair."""
+  return elements if len(elements) == 2 else elements[0]
 
 
 _NULLABLE_FIELDS = ('material', 'figures', 'contexts', 'range')
