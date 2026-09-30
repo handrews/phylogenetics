@@ -270,14 +270,14 @@ property.
 | `localStageRange` | 0 | 0.0% |
 | `tentative` | 0 | 0.0% |
 
-### `person` -- 281 instances in `data/`
+### `person` -- 282 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `given` | 281 | 100.0% |
-| `surname` | 281 | 100.0% |
-| `birth` | 82 | 29.2% |
-| `death` | 81 | 28.8% |
+| `given` | 282 | 100.0% |
+| `surname` | 282 | 100.0% |
+| `birth` | 82 | 29.1% |
+| `death` | 81 | 28.7% |
 | `suffix` | 0 | 0.0% |
 
 ### `phylogeny` -- 36 instances in `data/`
@@ -319,14 +319,14 @@ property.
 
 | property | data | data % |
 |---|---|---|
-| `/additionalProperties.name` | 52 | 100.0% |
-| `/additionalProperties.type` | 52 | 100.0% |
-| `/additionalProperties.prefixes` | 47 | 90.4% |
-| `/additionalProperties.place` | 33 | 63.5% |
-| `/additionalProperties.notes` | 16 | 30.8% |
-| `/additionalProperties.within` | 10 | 19.2% |
-| `/additionalProperties.subject` | 9 | 17.3% |
-| `/additionalProperties.formerly` | 3 | 5.8% |
+| `/additionalProperties.name` | 49 | 100.0% |
+| `/additionalProperties.type` | 49 | 100.0% |
+| `/additionalProperties.prefixes` | 45 | 91.8% |
+| `/additionalProperties.place` | 34 | 69.4% |
+| `/additionalProperties.within` | 11 | 22.4% |
+| `/additionalProperties.subject` | 8 | 16.3% |
+| `/additionalProperties.notes` | 6 | 12.2% |
+| `/additionalProperties.otherNames` | 3 | 6.1% |
 
 ### `roles` -- 1 instances in `data/`
 
@@ -547,25 +547,26 @@ property.
 
 ### `phylogeny#/$defs/repositories/additionalProperties/properties/subject`
 
-2 of 4 members used, 9 occurrences.
+2 of 4 members used, 8 occurrences.
 
 | value | count |
 |---|---|
-| `'specimens'` | 6 |
+| `'specimens'` | 5 |
 | `'localities'` | 3 |
 
 **Never used (2):** `'samples'`, `'unknown'`
 
 ### `phylogeny#/$defs/repositories/additionalProperties/properties/type`
 
-4 of 4 members used, 52 occurrences.
+3 of 4 members used, 49 occurrences.
 
 | value | count |
 |---|---|
-| `'institution'` | 32 |
-| `'unknown'` | 10 |
-| `'collection'` | 9 |
-| `'person'` | 1 |
+| `'institution'` | 36 |
+| `'collection'` | 10 |
+| `'person'` | 3 |
+
+**Never used (1):** `'unknown'`
 
 ### `phylogeny#/$defs/role`
 

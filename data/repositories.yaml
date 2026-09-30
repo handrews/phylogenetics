@@ -37,7 +37,7 @@ geo-prague:
   type: institution
   prefixes: [OF]
   place: Prague
-  notes: Abbreviation not explaine; Fatka & Kordule 1985.
+  notes: Abbreviation not explained; Fatka & Kordule 1985.
 gik:
   name: Geologisches Institut der Universität zu Köln
   type: institution
@@ -58,11 +58,17 @@ gsc:
   type: institution
   place: Ottawa
   prefixes: [GSC]
-  formerly: [Canadian Geological Survey, Museum of the Geological Survey of Canada]
+  otherNames: [Canadian Geological Survey, Museum of the Geological Survey of Canada]
 isu:
   name: Idaho State University
   type: institution
   prefixes: [ISU]
+lsn-mainz:
+  name: Landessammlung für Naturkunde
+  type: institution
+  place: Mainz
+  prefixes: [PWL]
+  notes: LS suffix denotes silicone casts (Abgüsse); Müller & Hahn 2010.
 mcz:
   name: Museum of Comparative Zoology, Harvard University
   type: institution
@@ -87,7 +93,7 @@ nhmuk:
   type: institution
   place: London
   prefixes: [NHMUK, E, EE]
-  formerly: [BMNH, NHM UK]
+  otherNames: [BMNH, NHM UK]
 nigpas:
   name: Nanjing Institute of Geology and Palaeontology, Chinese Academy of Sciences
   type: institution
@@ -124,13 +130,7 @@ nysm:
   type: institution
   place: Albany
   prefixes: [NYSM]
-  formerly: [Collection New York State Museum]
-pwl:
-  name: Landessammlung für Naturkunde
-  type: institution
-  place: Mainz
-  prefixes: [PWL]
-  notes: LS suffix denotes silicone casts (Abgüsse); Müller & Hahn 2010.
+  otherNames: [Collection New York State Museum]
 qm:
   name: Queensland Museum
   type: institution
@@ -174,7 +174,7 @@ u-cincinnati:
 u-cincinnati-caster:
   name: Caster Collection
   type: collection
-  within: uc
+  within: u-cincinnati
   subject: specimens
   prefixes: [E, BC]
   notes: >
@@ -183,7 +183,7 @@ u-cincinnati-caster:
 u-cincinnati-museum:
   name: Museum of Paleontology, University of Cincinnati
   type: collection
-  within: uc
+  within: u-cincinnati
   prefixes: [UCMP]
 ucbl-fsl:
   name: Université Claude Bernard Lyon 1, collections de géologie
@@ -224,7 +224,7 @@ usnm:
   prefixes: [USNM]
 usnm-springer:
   name: Springer Collection
-  type: institution
+  type: collection
   within: usnm
   prefixes: [S]
 usnm-walcott:

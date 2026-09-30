@@ -1496,8 +1496,9 @@ $defs:
       organised by holder. An entry is an institution, a collection inside
       one (`within`), or a person; `subject` says what its numbers
       identify. `prefixes` lists the printed prefixes that resolve to the
-      entry, and `formerly` its earlier names, which resolve too; the
-      prefix index is derived from both, so a key need not be a prefix. A
+      entry, and `otherNames` the other names it is printed under, which
+      resolve too; the prefix index is derived from both, so a key need
+      not be a prefix. A
       collection may print its parent's prefix and list none of its own
       (the Walcott Collection prints USNM numbers). When two entries claim
       the same prefix, a tree file whose numbers use it lists the entry it
@@ -1525,7 +1526,11 @@ $defs:
           type: array
           items:
             type: string
-        formerly:
+        otherNames:
+          description: |
+            Other names the holder is printed under, earlier or otherwise
+            ("BMNH", "Canadian Geological Survey"); they resolve like
+            prefixes. No ordering in time is implied.
           type: array
           items:
             type: string
@@ -1534,8 +1539,12 @@ $defs:
         notes:
           type: string
   repositoryKey:
+    description: |
+      Lowercase slugs for institutions and collections (`nhmuk`,
+      `u-cincinnati-caster`); a person's key is their authors.yaml id
+      (`seibert.r`, `müller.p`), so the pattern admits what `authorId` does.
     type: string
-    pattern: "^[a-z0-9][a-z0-9-]*$"
+    pattern: "^[\\w][\\w.-]*$"
   roles:
     description: |
       `data/roles.yaml`: the type roles the data maps to, with their

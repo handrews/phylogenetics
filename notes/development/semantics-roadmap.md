@@ -984,7 +984,7 @@ printed prefix. An entry is an institution, a collection inside one
 what its numbers identify (specimens, localities, samples); either may be
 `unknown` when a paper prints a prefix and nothing more. Keys are slugs,
 like taxon and source keys. `prefixes` lists the printed prefixes that
-resolve to an entry and `formerly` its earlier names, and the prefix
+resolve to an entry and `otherNames` the other names it is printed under, and the prefix
 index is derived from both, because a prefix need not resemble its
 holder's name: Sprinkle 1973's latex casts numbered E and BC belong to
 the Caster Collection at the University of Cincinnati (`uc-caster`,
@@ -1159,7 +1159,7 @@ fail also exit non-zero.
 
 **F2. Repository prefixes: report now, fail at stage 4.** Every catalog
 number's prefix resolves against `data/repositories.yaml` (keys,
-`prefixes` and `formerly`), the tree file's `repositories` list deciding
+`prefixes` and `otherNames`), the tree file's `repositories` list deciding
 between entries that print the same prefix (D3). A material entry's
 explicit `repository` bypasses resolution and must be a registry key.
 The catalog number keeps the printed prefix either way.

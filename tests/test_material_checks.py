@@ -18,10 +18,10 @@ from phylohist.loader.taxa import Tree
 SCRIPTS = Path(__file__).resolve().parent.parent / 'scripts'
 
 
-def _entry(*prefixes, formerly=(), within=None):
+def _entry(*prefixes, other_names=(), within=None):
   entry = {'name': 'x', 'type': 'institution', 'prefixes': list(prefixes)}
-  if formerly:
-    entry['formerly'] = list(formerly)
+  if other_names:
+    entry['otherNames'] = list(other_names)
   if within:
     entry['within'] = within
   return entry
@@ -34,7 +34,7 @@ def repositories():
   return {
     'fmnh': _entry('FMNH', 'PE', 'FMNH PE'),
     'north-museum-fm': _entry('PE'),
-    'nhmuk': _entry('NHMUK', 'E', formerly=['BMNH', 'NHM UK']),
+    'nhmuk': _entry('NHMUK', 'E', other_names=['BMNH', 'NHM UK']),
     'uc': _entry('UC'),
     'uc-caster': _entry('E', 'BC', within='uc'),
     'uc-museum': _entry('UCMP', within='uc'),
@@ -59,13 +59,13 @@ def test_repository_of_key_is_not_a_prefix(repositories):
   assert material.repository_of('north-museum-fm 12', repositories) == (None, None)
 
 
-def test_repository_of_formerly(repositories):
-  assert material.repository_of('BMNH 12345', repositories) == ('nhmuk', 'formerly')
-  assert material.repository_of('NHM UK EE15373', repositories) == ('nhmuk', 'formerly')
+def test_repository_of_other_names(repositories):
+  assert material.repository_of('BMNH 12345', repositories) == ('nhmuk', 'otherNames')
+  assert material.repository_of('NHM UK EE15373', repositories) == ('nhmuk', 'otherNames')
 
 
 def test_repository_of_case_and_whitespace_folded(repositories):
-  assert material.repository_of('nhm   uk 12', repositories) == ('nhmuk', 'formerly')
+  assert material.repository_of('nhm   uk 12', repositories) == ('nhmuk', 'otherNames')
   assert material.repository_of('gm12', repositories) == ('gm', 'prefix')
 
 
@@ -73,6 +73,14 @@ def test_repository_of_trailing_hyphen_folds_like_a_space(repositories):
   files = ['fmnh']
   assert material.repository_of('PE-214', repositories, files) == ('fmnh', 'file')
   assert material.repository_of('PE 214', repositories, files) == ('fmnh', 'file')
+
+
+def test_repository_of_trailing_period_folds_like_a_hyphen():
+  registry = {'uq-f': _entry('UQF', 'F')}
+  for number in ('F. 5404', 'F.5404', 'F 5404', 'F-5404'):
+    assert material.repository_of(number, registry) == ('uq-f', 'prefix'), number
+  # A period inside the number is past the first digit and untouched.
+  assert material.repository_of('UQF 5404.2', registry) == ('uq-f', 'prefix')
 
 
 def test_repository_of_hyphen_inside_the_number_is_untouched(repositories):
@@ -125,7 +133,7 @@ def test_repository_of_ucmp_with_the_cincinnati_museum_listed(repositories):
 
 
 def test_repository_of_an_entry_claiming_a_candidate_twice_is_one_claim():
-  registry = {'a': _entry('AB', formerly=['AB'])}
+  registry = {'a': _entry('AB', other_names=['AB'])}
   assert material.repository_of('AB 1', registry) == ('a', 'prefix')
 
 
@@ -715,6 +723,6 @@ def test_check_draft_exits_one_on_an_ambiguous_prefix_and_zero_once_listed(tmp_p
   assert result.returncode == 1, result.stdout + result.stderr
   assert 'ambiguous prefix' in result.stdout
 
-  draft.write_text('repositories: [uc-caster]\ntaxonomies:\n' + body)
+  draft.write_text('repositories: [u-cincinnati-caster]\ntaxonomies:\n' + body)
   result = _run_check_draft(draft)
   assert result.returncode == 0, result.stdout + result.stderr

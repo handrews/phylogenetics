@@ -25,12 +25,12 @@ def _fold(text):
 
 def _prefix(number):
   """The leading run before the first digit, stripped, with a trailing
-  hyphen dropped ("PE-214" and "PE 214" both give "PE"); `None` if empty.
-  A hyphen inside the number ("MCZ 602-D1") is past the first digit and
-  untouched."""
+  hyphen or period dropped ("PE-214", "PE 214" and "F. 5404" give "PE",
+  "PE" and "F"); `None` if empty. A hyphen inside the number ("MCZ
+  602-D1") is past the first digit and untouched."""
   match = _DIGIT_RE.search(number)
   prefix = (number[: match.start()] if match else number).strip()
-  prefix = prefix.removesuffix('-').strip()
+  prefix = prefix.rstrip('-.').strip()
   return prefix or None
 
 
@@ -46,12 +46,12 @@ AMBIGUOUS = 'ambiguous'
 
 def _prefix_index(repositories):
   """`{folded candidate: {key: via}}` over every entry's `prefixes` (via
-  `'prefix'`) and `formerly` (via `'formerly'`); a key claiming a candidate
-  both ways counts as `'prefix'`. Registry keys are slugs, never
+  `'prefix'`) and `otherNames` (via `'otherNames'`); a key claiming a
+  candidate both ways counts as `'prefix'`. Registry keys are slugs, never
   candidates."""
   index = {}
   for key, entry in repositories.items():
-    for via, values in (('formerly', entry.get('formerly')), ('prefix', entry.get('prefixes'))):
+    for via, values in (('otherNames', entry.get('otherNames')), ('prefix', entry.get('prefixes'))):
       for value in values or ():
         index.setdefault(_fold(value), {})[key] = via
   return index
@@ -62,9 +62,9 @@ def repository_of(number, repositories, file_repositories=()):
   printed prefix (see `_prefix`; compared case-insensitively with
   whitespace collapsed).
 
-  The candidates are every registry entry's `prefixes` and `formerly`; the
-  longest one equal to the prefix or a token-boundary prefix of it wins.
-  When one entry claims it, `via` is `'prefix'` or `'formerly'`. When
+  The candidates are every registry entry's `prefixes` and `otherNames`;
+  the longest one equal to the prefix or a token-boundary prefix of it
+  wins. When one entry claims it, `via` is `'prefix'` or `'otherNames'`. When
   several claim it, the entries in `file_repositories` (the tree file's
   own list) are preferred: exactly one left gives `(key, 'file')`.
 
