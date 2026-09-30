@@ -10,13 +10,28 @@ taxonomies:
       - taxon: adami_gehling_1987
         type: true
         new: true
-        specimens:
-          holotype: SAMP26768
-          paratypes:
+        material:
+        - catalogNumbers:
+          - SAMP26768
+          role: holotype
+        - catalogNumbers:
           - SAMP26769
+          role: paratype
+        - catalogNumbers:
           - SAMP26770
+          role: paratype
+        - catalogNumbers:
           - SAMP26771
+          role: paratype
+        - catalogNumbers:
           - SAMP26772
+          role: paratype
+        - catalogNumbers:
           - SAMP26773
+          role: paratype
+        - catalogNumbers:
           - SAMP26774
+          role: paratype
+        - catalogNumbers:
           - SAMP26775
+          role: paratype

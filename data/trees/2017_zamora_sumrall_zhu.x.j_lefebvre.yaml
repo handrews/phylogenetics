@@ -14,11 +14,16 @@ taxonomies:
           - taxon: sinensis_zamora_sumrall_zhu.x.j_lefebvre_2017
             new: true
             type: true
-            specimens:
-              holotype: NIGPAS163198
-              paratypes:
+            material:
+            - catalogNumbers:
+              - NIGPAS163198
+              role: holotype
+            - catalogNumbers:
               - NIGPAS163199
+              role: paratype
+            - catalogNumbers:
               - NIGPAS163210
+              role: paratype
         - taxon: ridersiidae
           children:
           - taxon: ridersia

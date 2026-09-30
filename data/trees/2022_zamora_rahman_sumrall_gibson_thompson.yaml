@@ -12,10 +12,13 @@ taxonomies:
         - taxon: haefneri_zamora_rahman_sumrall_gibson_thompson_2022
           new: true
           type: true
-          specimens:
-            holotype: NHMUK EE 1659
-            paratypes:
+          material:
+          - catalogNumbers:
+            - NHMUK EE 1659
+            role: holotype
+          - catalogNumbers:
             - NHMUK EE 1660
+            role: paratype
 phylogenies:
 - treeType: cladogram
   methodology: 50% majority-rule consenus Bayesian

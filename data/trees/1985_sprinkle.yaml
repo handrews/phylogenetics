@@ -14,5 +14,7 @@ taxonomies:
           - taxon: lloydi_sprinkle_1985
             provisional: true
             new: true
-            specimens:
-              holotype: USNM 172047
+            material:
+            - catalogNumbers:
+              - USNM 172047
+              role: holotype

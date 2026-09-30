@@ -21,9 +21,8 @@ taxonomies:
             - [253, 256]
             - [257, 258]
             notes: First page range Chinese, second English.
-            illustrations:
+            figures:
             - page: 254
               figures:
               - [3a, 3c]
-            - pages: 255
-              figures: 4
+            - figures: 4

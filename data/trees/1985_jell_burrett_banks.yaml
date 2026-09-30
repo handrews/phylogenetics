@@ -9,44 +9,93 @@ taxonomies:
         type: true
       - taxon: tastudorum_jell_burrett_banks_1985
         new: true
-        specimens:
-          holotype: UTGD122593
-          paratypes:
+        material:
+        - catalogNumbers:
+          - UTGD122593
+          role: holotype
+        - catalogNumbers:
           - UTGD122226
+          role: paratype
+        - catalogNumbers:
           - UTGD122231
+          role: paratype
+        - catalogNumbers:
           - UTGD122233
+          role: paratype
+        - catalogNumbers:
           - NMVP107053
+          role: paratype
+        - catalogNumbers:
           - NMVP107054
+          role: paratype
+        - catalogNumbers:
           - NMVP107055
+          role: paratype
+        - catalogNumbers:
           - NMVP107056
+          role: paratype
+        - catalogNumbers:
           - NMVP107057
+          role: paratype
+        - catalogNumbers:
           - NMVP107059
+          role: paratype
+        - catalogNumbers:
           - NMVP107060
+          role: paratype
+        - catalogNumbers:
           - NMVP107061
+          role: paratype
+        - catalogNumbers:
           - NMVP107062
+          role: paratype
+        - catalogNumbers:
           - NMVP107063
+          role: paratype
+        - catalogNumbers:
           - NMVP107064
+          role: paratype
+        - catalogNumbers:
           - NMVP107065
+          role: paratype
+        - catalogNumbers:
           - NMVP107066
+          role: paratype
+        - catalogNumbers:
           - NMVP107067
+          role: paratype
+        - catalogNumbers:
           - NMVP107068
+          role: paratype
+        - catalogNumbers:
           - NMVP107069
+          role: paratype
+        - catalogNumbers:
           - NMVP107070
+          role: paratype
+        - catalogNumbers:
           - NMVP107071
+          role: paratype
+        - catalogNumbers:
           - NMVP107072
+          role: paratype
       - cfTaxon: tastudorum_jell_burrett_banks_1985
         new: true
-        specimens:
-          unknowntypes:
+        material:
+        - catalogNumbers:
           - UTGD122233
+        - catalogNumbers:
           - UTGD122234
       - openTaxon: cambraster-sp_jell_burrett_banks_1985
         new: true
-        specimens:
-          unknowntypes:
+        material:
+        - catalogNumbers:
           - ANU36957
+        - catalogNumbers:
           - ANU36958
+        - catalogNumbers:
           - ANU36959
+        - catalogNumbers:
           - ANU36960
       - taxon: walcotti_schuchert_1919
         provisional: true
@@ -55,11 +104,14 @@ taxonomies:
       children:
       - taxon: primotica_henderson_shergold_1971
         type: true
-        specimens:
-          holotype: CPC11395
-          paratypes:
+        material:
+        - catalogNumbers:
+          - CPC11395
+          role: holotype
+        - catalogNumbers:
           - CPC11396
-          unknowntypes:
+          role: paratype
+        - catalogNumbers:
           - NMVP107479
         notes: |
           NMVP107479 is this paper's own specimen, "assigned … based on
@@ -75,21 +127,23 @@ taxonomies:
       - openTaxon: stromatocystites-sp_jell_burrett_banks_1985
         provisional: true
         new: true
-        specimens:
-          unknowntypes:
+        material:
+        - catalogNumbers:
           - NMVP107478
     - openTaxon: stromatocystitidae-sp_jell_burrett_banks_1985
       new: true
-      specimens:
-        unknowntypes:
-        - [ANU36949, ANU36956]
+      material:
+      - catalogNumbers:
+        - - ANU36949
+          - ANU36956
   - taxon: isorophida
     children:
     - openTaxon: isorophida-sp_jell_burrett_banks_1985
       new: true
-      specimens:
-        unknowntypes:
+      material:
+      - catalogNumbers:
         - NMVP107129
+      - catalogNumbers:
         - NMVP108990
 - taxon: ctenocystoidea
   children:
@@ -101,12 +155,19 @@ taxonomies:
         type: true
       - taxon: jagoi_jell_burrett_banks_1985
         new: true
-        specimens:
-          holotype: UTGD122594
-          paratypes:
+        material:
+        - catalogNumbers:
+          - UTGD122594
+          role: holotype
+        - catalogNumbers:
           - NMVP107073
+          role: paratype
+        - catalogNumbers:
           - NMVP107075
+          role: paratype
+        - catalogNumbers:
           - NMVP107076
+          role: paratype
 - taxon: eocrinoidea
   children:
   - taxon: ridersiidae
@@ -118,43 +179,104 @@ taxonomies:
       - taxon: watsonae_jell_burrett_banks_1985
         type: true
         new: true
-        specimens:
-          holotype: NMVP107112
-          paratypes:
+        material:
+        - catalogNumbers:
+          - NMVP107112
+          role: holotype
+        - catalogNumbers:
           - NMVP107113
+          role: paratype
+        - catalogNumbers:
           - NMVP107114
+          role: paratype
+        - catalogNumbers:
           - NMVP107115
+          role: paratype
+        - catalogNumbers:
           - NMVP107116
+          role: paratype
+        - catalogNumbers:
           - NMVP107117
+          role: paratype
+        - catalogNumbers:
           - NMVP107118
+          role: paratype
+        - catalogNumbers:
           - NMVP107119
+          role: paratype
+        - catalogNumbers:
           - NMVP107120
+          role: paratype
+        - catalogNumbers:
           - NMVP107121
+          role: paratype
+        - catalogNumbers:
           - NMVP107122
+          role: paratype
+        - catalogNumbers:
           - NMVP107123
+          role: paratype
+        - catalogNumbers:
           - NMVP107124
+          role: paratype
+        - catalogNumbers:
           - NMVP107125
+          role: paratype
+        - catalogNumbers:
           - NMVP107126
+          role: paratype
+        - catalogNumbers:
           - NMVP107127
+          role: paratype
+        - catalogNumbers:
           - NMVP107128
+          role: paratype
+        - catalogNumbers:
           - NMVP107480
+          role: paratype
+        - catalogNumbers:
           - NMVP107481
+          role: paratype
+        - catalogNumbers:
           - NMVP107482
+          role: paratype
+        - catalogNumbers:
           - NMVP107483
+          role: paratype
+        - catalogNumbers:
           - NMVP107484
+          role: paratype
+        - catalogNumbers:
           - NMVP107485
+          role: paratype
+        - catalogNumbers:
           - NMVP107486
+          role: paratype
+        - catalogNumbers:
           - NMVP107487
+          role: paratype
+        - catalogNumbers:
           - NMVP107488
+          role: paratype
+        - catalogNumbers:
           - NMVP107489
+          role: paratype
+        - catalogNumbers:
           - NMVP107490
+          role: paratype
+        - catalogNumbers:
           - NMVP107491
+          role: paratype
+        - catalogNumbers:
           - NMVP107492
+          role: paratype
+        - catalogNumbers:
           - NMVP108991
+          role: paratype
   - taxon: macrocystellidae
     children:
     - openTaxon: macrocystellidae-sp_jell_burrett_banks_1985
       new: true
-      specimens:
-        unknowntypes:
+      material:
+      - catalogNumbers:
         - TMF8342

@@ -55,7 +55,7 @@ taxonomies:
       provisional: true
       new: true
       pages: 504
-      illustrations:
+      figures:
       - plate: XIV
         figures:
         - [1, 2]
@@ -67,7 +67,7 @@ taxonomies:
     - taxon: pentangularis_pompeckj_1896
       new: true
       pages: 506
-      illustrations:
+      figures:
       - plate: XIII
         figures:
         - [1, 6]

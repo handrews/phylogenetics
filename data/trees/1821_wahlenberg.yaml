@@ -7,14 +7,14 @@ taxonomies:
     - taxon: areolatus_wahlenberg_1821
       new: true
       pages: 46
-      illustrations:
+      figures:
       - plate: III
         figures:
         - [4, 5]
     - taxon: peltiformis_wahlenberg_1821
       new: true
       pages: 49
-      illustrations:
+      figures:
       - plate: III
         figures:
         - [1, 3]

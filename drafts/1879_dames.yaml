@@ -54,16 +54,18 @@ taxonomies:
   - taxon: plautinae_schmidt_1879
     citedAs: Cyathocystis Plautinae
     pages: 1001
-    occurrences:
-    - unit: Echinosphäritenkalk
-      location:
-      - Reval
-      notes: |
-        "aus dem Echinosphäritenkalk (= der oberen Abtheilung des
-        Orthocerenkalks nach des Autors neuester Eintheilung des
-        Untersilur) von Reval" (p. 1001) -- "from the Echinosphäritenkalk
-        (= the upper division of the Orthocerenkalk, per the author's
-        newest subdivision of the Lower Silurian), from Reval."
+    contexts:
+      reval:
+        unit:
+        - Echinosphäritenkalk
+        location:
+        - Reval
+        notes: |
+          "aus dem Echinosphäritenkalk (= der oberen Abtheilung des
+          Orthocerenkalks nach des Autors neuester Eintheilung des
+          Untersilur) von Reval" (p. 1001) -- "from the Echinosphäritenkalk
+          (= the upper division of the Orthocerenkalk, per the author's
+          newest subdivision of the Lower Silurian), from Reval."
     notes: |
       "gesammelt von der Generalin Plautin und nach ihr benannt" (p. 1001)
       -- "collected by the Generalin [general's wife] Plautin, and named
@@ -75,13 +77,15 @@ taxonomies:
     auth: [Schmidt]
     year: 1879
     pages: 1001
-    occurrences:
-    - unit: Jewesche Schicht
-      subunit: Hemicosmitenbank
-      notes: |
-        "aus der Hemicosmitenbank der Jeweschen Schicht (1b)" (p. 1001) --
-        "from the Hemicosmites-bank of the Jewe Stage (1b)." No locality is
-        stated beyond the unit name.
+    contexts:
+      jewesche-schicht:
+        unit:
+        - Hemicosmitenbank
+        - Jewesche Schicht
+        notes: |
+          "aus der Hemicosmitenbank der Jeweschen Schicht (1b)" (p. 1001) --
+          "from the Hemicosmites-bank of the Jewe Stage (1b)." No locality is
+          stated beyond the unit name.
     notes: |
       "welche fast stets in mehreren zusammengewachsenen Kelchen vorkommt,
       einen bedeutender entwickelten Wurzelhaftapparat und viel dickere

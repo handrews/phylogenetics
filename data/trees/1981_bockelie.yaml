@@ -14,7 +14,7 @@ taxonomies:
         new: true
         pages:
         - [129, 132]
-        illustrations:
+        figures:
         - page: 129
           figures: 2
         - page: 130
@@ -25,7 +25,7 @@ taxonomies:
         new: true
         pages:
         - [132, 135]
-        illustrations:
+        figures:
         - page: 133
           figures: 5
         - page: 134
@@ -37,7 +37,7 @@ taxonomies:
         new: true
         pages:
         - [135, 138]
-        illustrations:
+        figures:
         - page: 135
           figures: 7E
         - page: 136
@@ -51,7 +51,7 @@ taxonomies:
           - taxon: caryocystis
       - openTaxon: bockia-sp-a_bockelie_1981
         pages: 138
-        illustrations:
+        figures:
         - page: 140
           figures:
           - [11F, 11G]
@@ -75,7 +75,7 @@ taxonomies:
         synonyms:
         - parents:
           - taxon: echinosphaerites
-        illustrations:
+        figures:
         - page: 139
           figures:
           - [10B, 10E]
@@ -86,7 +86,7 @@ taxonomies:
         new: true
         pages:
         - [139, 141]
-        illustrations:
+        figures:
         - page: 139
           figures: 10A
         - page: 140
@@ -103,7 +103,7 @@ taxonomies:
         new: true
         pages:
         - [142, 147]
-        illustrations:
+        figures:
         - page: 140
           figures:
           - [11A, 11F]

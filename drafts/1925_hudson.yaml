@@ -19,10 +19,11 @@ taxonomies:
   - taxon: ottawaensis_whiteaves_1897
     citedAs: Astrocystites (Steganoblastus) ottawaensis
     pages: 642
-    specimens:
-      syntypes:
-      - cotype A
-      - cotype B
+    material:
+    - label: A
+      role: cotype
+    - label: B
+      role: cotype
     notes: |
       The bracketed form is the replacement name Steganoblastus (Whiteaves,
       1898), not a subgenus -- no rank word is attached to either name in

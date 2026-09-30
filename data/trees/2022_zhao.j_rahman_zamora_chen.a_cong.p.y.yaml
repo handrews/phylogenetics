@@ -16,7 +16,10 @@ taxonomies:
             quoted: true
         - taxon: extenuatus_zhao.j_rahman_zamora_chen.a_cong.p.y_2022
           new: true
-          specimens:
-            holotype: YKLP 13397
-            paratypes:
+          material:
+          - catalogNumbers:
+            - YKLP 13397
+            role: holotype
+          - catalogNumbers:
             - YKLP 13553
+            role: paratype

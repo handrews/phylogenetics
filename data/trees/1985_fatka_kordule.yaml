@@ -11,5 +11,7 @@ taxonomies:
       - taxon: briareus_barrande_1887
         parents:
         - taxon: acanthocystites
-      specimens:
-        holotype: OF 002
+      material:
+      - catalogNumbers:
+        - OF 002
+        role: holotype

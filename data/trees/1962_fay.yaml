@@ -13,9 +13,25 @@ taxonomies:
       editorial:
         inferred: [type]
         basis: Fay never prints "type species"; the genus is monotypic (p. 201)
-      specimens:
-        syntypes:
+      material:
+      - catalogNumbers:
         - Canadian Geological Survey 752
+        role: lectotype
+        editorial:
+          inferred: [role]
+          basis: >
+            Fay prints two words for this specimen: the caption calls it
+            "Holotype" (p. 201) and the text says it is labelled a syntype
+            (p. 205). No holotype was fixed by Whiteaves 1897, who cited
+            three specimens, and Bather 1914 (p. 194) selected one of
+            those syntypes as "the holotype", which stands as a lectotype
+            designation. Lectotype is therefore the role if No. 752 is
+            the specimen Bather selected, which Fay does not say and
+            which has not been verified; if it is one of the others it
+            is a paralectotype.
+      - label: the syntype lent to Hudson
+        role: syntype
+        status: lost
       notes: |
         Captioned "Holotype, 752, Canadian Geological Survey" (p. 201); the text
         says "It is labelled a syntype because another specimen, lent to Mr.

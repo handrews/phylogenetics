@@ -22,23 +22,33 @@ taxonomies:
             Stated in prose: "In this Postscript he inadvertently alluded
             to the species as Steganoblastus canadensis instead of
             S. ottawaensis" (p. 193).
-        specimens:
-          holotype: A -- Victoria Memorial Museum, Ottawa
-          syntypes:
-          - B -- Victoria Memorial Museum, Ottawa
-          - C -- remains in the possession of Walter R. Billings
-        occurrences:
-        - unit:
-          - Trenton Limestone
-          location:
-          - Division Street
-          - Ottawa
-          notes: '"The precise horizon has nowhere been stated" (p. 194).'
-        illustrations:
+        material:
+        - label: A
+          role: holotype
+          roleAct: designated
+          repository: vmm
+          context: division-street
+        - label: B
+          role: syntype
+          repository: vmm
+          context: division-street
+        - label: C
+          role: syntype
+          holder: Walter R. Billings
+          context: division-street
+        figures:
         - plate: 15
           figures: [1, 3, 4, 6, 7]
-          notes: specimen A
+          of: A
         - plate: 15
           figures: [2, 5]
-          notes: specimen B
+          of: B
         - textFigures: [[1, 6]]
+        contexts:
+          division-street:
+            unit:
+            - Trenton Limestone
+            location:
+            - Division Street
+            - Ottawa
+            notes: '"The precise horizon has nowhere been stated" (p. 194).'

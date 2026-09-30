@@ -12,7 +12,7 @@ taxonomies:
         new: true
         pages:
         - [609, 612]
-        illustrations:
+        figures:
         - page: 608
           plate: 6
           figures:
@@ -24,7 +24,7 @@ taxonomies:
           textFigures: 4
       - openTaxon: paracryptocrinites-sp_rozhnov_fedorov_2001
         new: true
-        illustrations:
+        figures:
         - page: 608
           plate: 6
           figures:
