@@ -1070,6 +1070,13 @@ and the schema now has a field for each, all as printed:
   at locality LV-2 by my field assistant"): `collectedBy` and
   `collectedDate` on both the material entry and the context.
 
+Deferred from the same review (2026-09-30): a slab carrying several
+specimens, where the source describes their positions on it (Vanuxem
+1842). The slab is itself material, so a note on positions belongs to a
+material entry, and where the slab was found is its context. When the
+case recurs, the shape is a `label` for the slab as an entry of its own,
+with the specimens as entries whose `fragmentOf` names it; no new field.
+
 **Cross-source identity.** Two entries citing the same resolved
 repository and the same catalog number, folded for case and spacing, are
 the same specimen; the tools join on that and no registry is kept. An
