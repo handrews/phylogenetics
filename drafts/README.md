@@ -20,9 +20,12 @@ and source keys the draft cites that have no record yet.
 
 The data says who published what systematic information in which paper
 (roadmap, Ground rules, "Scope"). A draft therefore carries names, acts,
-placements, usages, synonymies, specimens with their repository and
-geological context, and the page, plate and figure numbers that locate
-them. It does not carry diagnoses, descriptions, figure captions,
+placements, usages, synonymies, `material` (specimens with their catalog
+numbers, role and repository) with the `contexts` they came from and the
+`ranges` a source gives for a taxon, this source's `illustrations` on a
+primary node (tied to a material entry by `of`, with `depicts` when the
+figure is not a specimen photograph; on a cited entry an illustration is
+only a locator), and the page, plate and figure numbers that locate them. It does not carry diagnoses, descriptions, figure captions,
 artists' names, physical descriptions of specimens, or a narration of the
 paper's argument. Everything of that kind that a drafter finds worth
 recording goes into the review file under `notes/reviews/`, where

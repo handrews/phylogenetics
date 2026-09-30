@@ -1027,7 +1027,7 @@ keeps 9d as printed, the Treatise's locator is `{plate: 25, figures: 8d,
 non: [9d]}`, and the disagreement is derived, never resolved in place.
 `illustration.source`, `location` and `collectedFrom` are gone.
 
-**D5. Migration (stage 2).** One script over `data/trees`, `drafts` and
+**D5 (done 2026-09-30). Migration (stage 2).** One script over `data/trees`, `drafts` and
 `data/taxa.yaml`, all sources at once: role keys become one entry per
 item with the role singularised; `unknowntypes`, `additional` and
 `unspecified` become entries with no role; nested `[a, b]` items become

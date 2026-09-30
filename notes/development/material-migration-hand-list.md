@@ -41,9 +41,6 @@ Migrated mechanically; re-entry from the paper is stage 3. Until then:
 
 ## Other
 
-- data/trees/2015_zhao.y.l_peng.j_wu.m.y_luo.x.c_wen.r.q_liu.y.j.yaml,
-  yini: an illustration carried a `pages` key (255). Decide whether it
-  is the illustration's `page` or belongs to the node's `pages`.
 - Nodes with exactly one context whose entries carry no `context`: the
   script links an entry to a context only where the old data nested the
   specimen inside the occurrence. Link the rest where the paper says so

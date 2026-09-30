@@ -20,7 +20,7 @@ Every claim carries:
 
 | field | value |
 |---|---|
-| `id` | `<source>:<path>:<kind>[:<n>]`. `<path>` is the node's position in its tree file as the loader computes it: the taxonomy or phylogeny index, then each step down (`children/2`, `synonyms/0`, `non/1`, `removed/0`, `parents/0`, `moved`, `corrected`, `substituted`, `lapsus`, `lapsusFor`, `or/0`). `<n>` disambiguates several claims of one kind from one node (a node with three `specimens` roles yields three `material` claims). Ids are stable as long as the file is not reordered; the tree keeps printed order, so reordering is a data change. |
+| `id` | `<source>:<path>:<kind>[:<n>]`. `<path>` is the node's position in its tree file as the loader computes it: the taxonomy or phylogeny index, then each step down (`children/2`, `synonyms/0`, `non/1`, `removed/0`, `parents/0`, `moved`, `corrected`, `substituted`, `lapsus`, `lapsusFor`, `or/0`). `<n>` disambiguates several claims of one kind from one node (a node with three `material` entries yields three `material` claims). Ids are stable as long as the file is not reordered; the tree keeps printed order, so reordering is a data change. |
 | `kind` | one of `usage`, `placement`, `acceptance`, `act`, `rejection`, `material`, `secondhand`, `editorial` |
 | `source` | the tree file's source key |
 | `path` | the node's position and pointer, `0/children/0/children/0`, the same string the id carries |
@@ -28,7 +28,7 @@ Every claim carries:
 | `pages` | the node's `pages` as written. A node without `pages` takes the nearest ancestor's along the `children` axis only, and the claim then carries `pagesInherited: true`. Entries on any other axis never inherit. On a cited entry (a `synonyms` or `non` entry, or the earlier state of a name under `translated`, `corrected`, `substituted`, `moved` or `removed`) `pages` and `illustrations` locate the cited usage in the cited work, whether written flat or inside an `authority` block, so they appear as `citedPages` and `citedIllustrations` and the claim has no `pages` of its own. |
 | `subject` | the resolved taxon key the claim is about |
 | `printed` | the printed form on that line: `citedAs` verbatim, and `auth`, `year`, `in` as written (A1, A12). Absent `auth` means "as the record"; the claim says so with `printedAttribution: as-record`. |
-| `audit` | the source's `audit.state`; `coverageKind`, the coverage kind the claim counts under (`skeleton` for usage, rejection and a taxonomy placement, `phylogeny` for a placement in a phylogeny, `synonymy` for acceptance, `newTaxa`/`types` for the matching acts, `material`/`occurrences`/`illustrations` by material kind); and `coverage`, the declared value for that kind when the source declares one |
+| `audit` | the source's `audit.state`; `coverageKind`, the coverage kind the claim counts under (`skeleton` for usage, rejection and a taxonomy placement, `phylogeny` for a placement in a phylogeny, `synonymy` for acceptance, `newTaxa`/`types` for the matching acts, `material`/`occurrences`/`illustrations` by material kind); and `coverage`, the effective value for that kind (declared, or derived where "Derived coverage" says so) |
 | `editorial` | the node's `editorial` block, copied through |
 | `inferred` | `true` when the editorial block says the editor supplied the field this claim comes from (`inferred: true`, or a list naming it). The claim is then the editor's, not the paper's, and the manifest does not count it |
 | `erroneous` | `true` when the editorial block's `corrections` touch the field this claim comes from. The claim stays the paper's and is counted; what the editor reads instead is in `corrected` |
@@ -194,19 +194,53 @@ on the claim they qualify, as fields. No separate table.
 
 ### `material`
 
-Emitted for each `specimens` role entry, each `occurrences` entry and each
-`illustrations` entry on a node other than a cited entry (see `pages`),
-whose illustrations are the cited work's. Fields added: `materialKind: specimen |
-occurrence | illustration`, `role` as recorded today (`holotype`,
-`paratypes`, `syntypes`, `unknowntypes`, and the occurrence blocks'
-`holotypes` and `unspecified`), `ids`, `repository`, and the occurrence or
-illustration fields copied verbatim (`occurrence`, `illustration`). An
-occurrence's own specimens yield specimen claims too, with `inOccurrence`
-giving the occurrence's index; those blocks nest role then repository in
-most trees and the other way round in two (Vanuxem 1842, Rievers 1961), so
-the role word decides which level is which. The shape follows the YAML as
-it stands; when D1 migrates material, only the extractor's material
-adapter changes and these claims keep their fields.
+Emitted from four node fields on a primary node; a cited entry (see
+`pages`) emits none, since its `illustrations` are the cited work's and
+its other material is not this source's. A field that is `null` emits
+nothing. One node emits them in a fixed order, which fixes the claim ids
+(`<n>` runs through the `material` claims in this order): `contexts`,
+then `material`, then `illustrations`, then `ranges`. `materialKind`
+says which.
+
+- `occurrence` (field `contexts`): one claim for each context a
+  `material` entry refers to and each context the node defines. `occurrence`
+  is the context verbatim; `contextKey` is its key and `contextScope`
+  (`node` or `file`) where it was defined. A file-level context is
+  emitted once for each node that refers to it.
+- `specimen` (field `material`): one claim per entry. `role` is the
+  entry's role, absent when the source attaches none; `ids` is the entry's
+  `catalogNumbers` (a range pair stays a two-element list); `repository` is
+  the entry's explicit key, else the registry key the first catalog
+  number's prefix resolves to (`null` when none does, or when the prefix
+  is ambiguous); `repositoryVia` says which: `explicit`, `prefix`,
+  `otherNames` or `file` (the tree file's `repositories` list settled a
+  shared prefix), absent when unresolved. `joinKeys` are
+  `<repository>:<folded number>` for every catalog number (a range pair
+  contributes both endpoints and the claim carries `rangeJoin: true`),
+  so the same specimen in two sources shares a key. `roleAct` is the
+  entry's own value, else `designated` for a holotype, paratype, syntype
+  or cotype on a `new: true` node, else absent. The entry's other fields
+  are copied as written: `catalogNumbers`, `catalogNumbersAsPrinted`,
+  `count`, `label`, `holder`, `status`, `formerIds`, `fragmentOf`, `parts`,
+  `examined`, `listComplete`, `preparation`, `castOf`, `collectedBy`,
+  `collectedDate`, `contextKey`, `contextTentative` (from the object form of
+  the entry's `context`), and the entry's `notes` as `materialNotes`. An
+  entry's `editorial` block becomes the claim's `editorial` (the claim is
+  about the entry), with `inferredFields` listing the names in its
+  `inferred`; the claim's own `inferred` flag is unchanged, because the
+  entry is printed and only a field of it is the editor's.
+  `specimenIllustrations` lists the locators of the node's illustrations
+  whose `of` names the entry, and `illustrationClaims` their claim ids.
+- `illustration` (field `illustrations`): one claim per entry, this
+  source's own figure. `illustration` holds the locator fields (`plate`,
+  `page`, `figures`, `textFigures`, `non`, `notes`, `uncertain`); `of`
+  and `depicts` ride on the claim. `ofClaim` lists the ids of the specimen
+  claims `of` names (exact string against a catalog number, a range
+  endpoint included, or a `label`); a figure with no `of` is tied to no
+  specimen.
+- `range` (field `ranges`): one claim per element, `range` the element
+  verbatim. It counts under the `occurrences` coverage kind, and
+  `statements(kind='occurrences')` returns it with the `occurrence` claims.
 
 ### `secondhand`
 
@@ -250,6 +284,23 @@ claims behind them and the review file to check against, and
 `tests/test_claims.py` fails while any row exists, so a new one cannot
 land unnoticed.
 
+Three kinds, `material`, `occurrences` (the node fields `contexts` and
+`ranges`) and `illustrations`, are also read from the tree itself (G11):
+`claims.derived_material_coverage(roots)` walks the primary, non-cited,
+named nodes of a source. A kind whose fields the file lists as `unused` is
+`na`. Otherwise, when no node writes a `null` for the kind's fields, it is
+`None` and declares nothing: a value records what the source prints, not
+that the file was audited for it. When some node writes a null, the kind is
+`all` if no node lacks the fields (`partly` if a material entry has
+`listComplete: false`), and `partly` if some node does. Each source row
+carries `derivedCoverage` (this raw result) and `coverage`, the effective
+map: the declared value for `skeleton`, `newTaxa`, `types`, `synonymy` and
+`phylogeny`, and for the three node-state kinds the derived value when
+there is one, else the declared one. Each claim's `audit.coverage` and
+the gap statements read the effective map. For the three kinds an
+inconsistency row appears only when a declared and a derived value both
+exist and differ ("declared all, derived partly").
+
 ## What the vocabulary does not do
 
 - No consensus and no "current name": every claim is one source's.
@@ -257,7 +308,6 @@ land unnoticed.
   hyphens and spaces (G10) to find records, and the claims keep the key
   as cited.
 - No rank inference: the record's rank is a convenience until G8.
-- No material redesign: D1 is a later change to one adapter.
 - No inference from absence: a kind with no claims for a source means
   "not captured", and only the declared coverage can say whether the paper
   prints any.
@@ -426,10 +476,12 @@ each is a usage of *grayae* by the cited source, and each is an
 p. 1004, `1985_smith.a.b` p. 732 with text-figure 11, and two entries for
 `2013_sumrall_heredia_rodríguez.c.m_mestre` (figure 1; p. 773). The first
 and fourth carry `parents: [pyrgocystis]`. None inherits `pages` from the
-species node. The node's `occurrences` yield `material` claims, and the
-specimens inside the first occurrence yield more: the holotype claim has
-`role: holotypes` (the recorded word), `repository: NHMUK`, `ids:
-[E23470]`, `inOccurrence: 0`.
+species node. The node's one context (`lady-burn-starfish-bed`) yields an
+`occurrence` claim, emitted first, and its `material` entries yield
+`specimen` claims after it: the holotype claim has `role: holotype`,
+`ids: [NHMUK E23470]`, `repository: nhmuk` with
+`repositoryVia: prefix`, `joinKeys: [nhmuk:nhmuke23470]` and the context's
+`contextKey`; the next entry has no role, since the paper attaches none.
 
 ### Fay 1962, *ottawaensis* (`data/trees/1962_fay.yaml`)
 
@@ -439,6 +491,13 @@ monotypic (p. 201)"}`, plus a separate `editorial` claim with the same
 block. A question "does Fay fix the type species?" is answered from the
 act claim's `inferred: true`: the flag is the editor's, and the paper
 prints monotypy, so the manifest does not count it against the declared
-`types: na`. The `material` claim has `role: syntypes` and the node's
-`notes` quoting "Holotype, 752" beside "labelled a syntype", so both printed
-words are returned.
+`types: na`. The first `material` claim is the entry for No. 752: it has
+`role: lectotype`, `repository: gsc` with `repositoryVia: otherNames` (the
+number is printed "Canadian Geological Survey 752"), and an entry-level
+`editorial` block (`inferred: [role]`, with the basis) that is the claim's
+`editorial`, with `inferredFields: [role]`; the paper prints "Holotype" in a
+caption and "syntype" in the text, and the editor reads lectotype. The
+second claim is the lost syntype lent to Hudson, which has a `label` and
+`status: lost` and no catalog number, so `ids` is empty and there are no
+`joinKeys`. Both carry the node's `notes` quoting "Holotype, 752" beside
+"labelled a syntype", so both printed words are returned.
