@@ -145,9 +145,6 @@ taxonomies:
               - catalogNumbers:
                 - MPEP 1143.1
                 context: ctx-2
-              - catalogNumbers:
-                - EE 16642
-                role: holotype
               illustrations:
               - figures:
                 - 2

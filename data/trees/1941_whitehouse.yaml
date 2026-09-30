@@ -37,9 +37,6 @@ taxonomies:
             - catalogNumbers:
               - F. 5403
               role: paratype
-            - catalogNumbers:
-              - UQF 5404
-              role: holotype
     - taxon: cycloidea
       new: true
       children:
@@ -55,6 +52,7 @@ taxonomies:
             material:
             - catalogNumbers:
               - F. 5409
+              role: holotype
             - catalogNumbers:
               - F. 5410
             - catalogNumbers:
@@ -77,9 +75,6 @@ taxonomies:
               - F. 5419
             - catalogNumbers:
               - F. 5420
-            - catalogNumbers:
-              - UQF 5409
-              role: holotype
   - taxon: homalozoa
     new: true
     children:

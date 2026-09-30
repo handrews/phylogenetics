@@ -21,16 +21,8 @@ listed repository no number uses, so run the suite after a batch.
   `label`, with the holder either a new registry entry (Riksmuseum
   Stockholm; Museum Berlin) or `holder`, and the rest in `notes`.
 
-## Record-level holotypes beside a differently prefixed number
+## Record-level holotypes
 
-The script moved each `taxa.yaml` holotype to its protologue node, and
-where the node already had the same number under another prefix it left
-both entries. Keep one.
-
-- craticula_whitehouse_1941 and navicula_whitehouse_1941: "F. 5409",
-  "F. 5404" in the 1941 tree against "UQF 5409", "UQF 5404". Both
-  resolve to `uq-f`; "F." is what Whitehouse prints.
-- viviani in Ewin et al. 2020: "NHMUK EE16642" against "EE 16642".
 - grayae_bather_1915 still carries `holotype:` on its record, because
   source 1915b_bather has no tree. Enter the tree, or move the number to
   the record's `notes`.
