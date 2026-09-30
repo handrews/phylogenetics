@@ -292,12 +292,15 @@ named nodes of a source. A kind whose fields the file lists as `unused` is
 `None` and declares nothing: a value records what the source prints, not
 that the file was audited for it. When some node writes a null, the kind is
 `all` if no node lacks the fields (`partly` if a material entry has
-`listComplete: false`), and `partly` if some node does. Each source row
-carries `derivedCoverage` (this raw result) and `coverage`, the effective
-map: the declared value for `skeleton`, `newTaxa`, `types`, `synonymy` and
-`phylogeny`, and for the three node-state kinds the derived value when
-there is one, else the declared one. Each claim's `audit.coverage` and
-the gap statements read the effective map. For the three kinds an
+`listComplete: false`), and `partly` if some node does. For `material` only
+the species-level nodes (species, subspecies, variety) are counted, since
+specimens are cited for species; `occurrences` and `illustrations` count
+every named node. Each source row carries `derivedCoverage` (this raw
+result) and `coverage`, the effective map: the declared value for
+`skeleton`, `newTaxa`, `types`, `synonymy` and `phylogeny`, and for the
+three node-state kinds the derived value when there is one, else the
+declared one. Each claim's `audit.coverage` and the gap statements read
+the effective map. For the three kinds an
 inconsistency row appears only when a declared and a derived value both
 exist and differ ("declared all, derived partly").
 

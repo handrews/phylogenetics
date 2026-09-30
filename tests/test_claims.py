@@ -474,34 +474,35 @@ def test_derived_material_coverage():
     return derived_material_coverage({'s': [root]})['s'][kind]
 
   child = {'taxon': 'grayae_bather_1915'}
+  other = {'taxon': 'sardesoni_bather_1915'}
   cases = [
     # `na`: the file lists the field as unused, whatever the nodes say.
     ('na', tree({'taxon': 'rhenopyrgus'}, 0, file_unused=('material',))),
-    # null and no node lacks the field: `all`.
+    # A species null and no species lacks the field: `all`. The genus has
+    # no `material` and is not counted.
     (
       'all',
       tree(
         {
           'taxon': 'rhenopyrgus',
-          'material': [{'label': 'A'}],
-          'children': [{**child, 'material': None}],
+          'children': [{**child, 'material': [{'label': 'A'}]}, {**other, 'material': None}],
         },
         1,
       ),
     ),
-    # null and some node lacks it: `partly`.
+    # A species null and another species lacks it: `partly`.
     (
       'partly',
       tree(
         {
           'taxon': 'rhenopyrgus',
-          'material': None,
-          'children': [{**child, 'material': [{'label': 'A'}]}, {'taxon': 'sardesoni_bather_1915'}],
+          'children': [{**child, 'material': None}, other],
         },
         2,
       ),
     ),
-    # `all` downgraded by an entry that is not list-complete.
+    # `all` downgraded by an entry that is not list-complete, read from
+    # every named node.
     (
       'partly',
       tree(
@@ -517,16 +518,31 @@ def test_derived_material_coverage():
     # not that the file was audited for the field.
     (None, tree({'taxon': 'rhenopyrgus', 'material': [{'label': 'A'}], 'children': [child]}, 4)),
     (None, tree({'taxon': 'rhenopyrgus'}, 5)),
-    # A cited entry never counts, whatever it carries.
+    # A cited entry never counts, whatever it carries or lacks.
     (
       'all',
       tree(
         {
           'taxon': 'rhenopyrgus',
-          'material': None,
-          'synonyms': [{**child, 'material': [{'label': 'x'}]}],
+          'children': [{**child, 'material': None}],
+          'synonyms': [other],
         },
         6,
+      ),
+    ),
+    # A null on a genus is not counted: specimens are cited for species.
+    (
+      None,
+      tree(
+        {
+          'taxon': 'rhenopyrgus',
+          'material': None,
+          'children': [
+            {**child, 'material': [{'label': 'A'}]},
+            {**other, 'material': [{'label': 'B'}]},
+          ],
+        },
+        11,
       ),
     ),
   ]
@@ -551,6 +567,11 @@ def test_derived_material_coverage():
   # `illustrations` reads the `illustrations` field.
   ill = tree({'taxon': 'rhenopyrgus', 'illustrations': None}, 10)
   assert derived(ill, 'illustrations') == 'all'
+
+  # Unlike `material`, `illustrations` counts higher nodes: a genus without
+  # the field is not `all`.
+  ill_genus = tree({'taxon': 'rhenopyrgus', 'children': [{**child, 'illustrations': None}]}, 12)
+  assert derived(ill_genus, 'illustrations') == 'partly'
 
 
 def test_manifest_reports_derived_disagreement(load_records, monkeypatch):

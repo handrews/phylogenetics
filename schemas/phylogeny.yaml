@@ -1221,6 +1221,8 @@ $defs:
         $ref: "#/$defs/seriesRange"
       seriesRange:
         $ref: "#/$defs/seriesRange"
+      seriesModifier:
+        $ref: "#/$defs/stageModifier"
       stage:
         $ref: "#/$defs/stage"
       stageBoundary:
@@ -1239,6 +1241,8 @@ $defs:
         $ref: "#/$defs/localSeriesRange"
       localSeriesRange:
         $ref: "#/$defs/localSeriesRange"
+      localSeriesModifier:
+        $ref: "#/$defs/stageModifier"
       localStage:
         $ref: "#/$defs/localStage"
       localStageBoundary:

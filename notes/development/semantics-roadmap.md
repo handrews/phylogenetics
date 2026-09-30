@@ -1125,7 +1125,9 @@ Four distinct statements a source can make about age, plus two scales:
 with a `local` prefix (`localStage`, `localStageRange`, …). Today `series` and
 `stage` have the variants and `period` does not; boundary and range share one
 def though they mean different things. All of this is under 70 instances, so
-the cost of making it uniform is small now and large later.
+the cost of making it uniform is small now and large later. The series
+modifier (`seriesModifier`, `localSeriesModifier`) was added 2026-09-30 for
+Sprinkle 1973's "upper Lower Cambrian"; the rest of E1 is open.
 
 **E2. Biozones follow the same pattern** with one addition: `biozones` (a list)
 means several zones from *different* zonations apply at once, which is neither
@@ -1407,10 +1409,14 @@ fields, `skeleton` (taxa not in the tree at all), `newTaxa` and `types`
 which has no node-level form). For the content kinds the map is derived:
 `na` when the file lists the field as unused and no node carries it;
 `all` when no node has the field absent; `none` when every node has it
-absent and the file does not list it; `partly` otherwise. The
-cross-check in the claims extractor (a declared `all` against zero
-claims) then inverts into a migration aid comparing the declared map
-with the derived one, and disappears when nothing is declared any more.
+absent and the file does not list it; `partly` otherwise. For `material`
+the nodes counted are the species-level ones (species, subspecies,
+variety), since specimens are cited for species; `contexts`, `ranges` and
+`illustrations` count every named node (decided 2026-09-30 with the
+Sprinkle 1973 re-entry). The cross-check in the claims extractor (a
+declared `all` against zero claims) then inverts into a migration aid
+comparing the declared map with the derived one, and disappears when
+nothing is declared any more.
 
 Two conventions to fix before the first null is written: `null`, never
 an empty list, spells "prints none", so the statement has one form
