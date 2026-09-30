@@ -899,168 +899,199 @@ outer node is enough.
 
 ---
 
-## D. Material: specimens, illustrations, occurrences
+## D. Material: specimens, figures, contexts
 
-Principle from `notes/development/graph.md`: specimens are the physical anchors,
-illustrations are proxies for them, occurrences say where specimens came from.
-The current model keeps all three as siblings on the node with no links between
-them, in four different specimen shapes.
+Direction agreed 2026-09-27; stages 0–2 of the plan in force. The four
+shapes the trees used until then (node `specimens` keyed by role,
+occurrence-level `specimens`, taxon-record `holotype`, node
+`illustrations`) are replaced by three flat lists joined by references,
+and a `range` statement that is not material at all. The principle from
+`graph.md` stands: specimens are the physical anchors, figures are proxies
+for them, contexts say where the specimens came from.
 
-**D1. One `material` list per node, one entry per specimen or batch.**
-
-```yaml
-- taxon: coronaeformis_rievers_1961
-  new: true
-  pages: [[10, 11]]
-  material:
-  - ids: [RVS 1]
-    role: holotype
-    illustrations:
-    - {plate: 2, figures: [[1, 4]], depicts: cast}
-    occurrence: bundenbach   # id of one of this node's occurrences
-  - ids: [[QMF 59647, QMF 59653]]   # a batch, ranges allowed
-    role: paratype
-  illustrations:             # only figures the source does not tie to a specimen
-  - {plate: 3, figures: 7, notes: "specimen not identified"}
-  occurrences:
-  - id: bundenbach
-    series: Lower Devonian
-    unit: [Roofing Slate facies, Hunsrück Slate]
-    location: [Bundenbach, Hunsrück Region, Germany]
-```
-
-- Occurrences carry a short `id`, unique within the node, and material entries
-  refer to it by name. Spelling the id twice is a weak check, and F1 makes it a
-  real one: an `occurrence` reference must resolve within its node.
-- An illustration nested under a material entry *depicts* that specimen. A
-  node-level illustration is a figure the source never ties to a specimen,
-  which is the honest state for most pre-1900 work. Migration is therefore
-  incremental: nothing moves until the paper supports the link.
-- `depicts: specimen | cast | reconstruction | drawing` records the medium, so
-  a latex cast is a property of the figure, not a second specimen.
-- The repository is the id prefix, resolved against `repositories.yaml` (F2).
-  An explicit `repository` field is allowed when the prefix is absent or
-  ambiguous (`NHMUK` vs `NHM UK` vs `EE`).
-- Occurrence-level `specimens` and `possibleSpecimens` (D3) become
-  `occurrence` back-references from material entries, so a specimen is written
-  once.
-- A material entry may have **no catalog number**. Bell's "Bigsby specimen"
-  (1976, p. 63) is identified only by the four works that figured it; the
-  entry then carries a `label` and its `illustrations`, and nothing else.
-- `formerIds` records renumbering ("YPM 28451 (old 2361)"; "ROM 161-t-a …
-  described … as 'GSC 1415'", pp. 61–62), including a move between
-  repositories. `fragmentOf` marks a piece of a lost or dispersed specimen
-  (GSC 1407-B, "a fragment of the holotype", p. 60).
-- `roleAsPrinted` keeps the author's word when it is not in the role enum:
-  Bell's "Illustrated Specimen", Bassler's "plesiotype". The enum value is
-  the editorial mapping; the printed word is the fact.
-- `examined: false` for specimens the source reports from other works without
-  seeing them (Bell, p. 62: "Three other representatives … have been
-  reported").
-- `holotypeFixation: monotypy` parallels B14 at the species level; Bell
-  states it explicitly for *L. dicksoni* (p. 62).
-- `measurements` as free text or a small map, since every Bell specimen has
-  two diameters; not a modelling priority.
-
-**D2. Type roles, checked against the Code.** ICZN Art. 72–75 regulate the
-name-bearing types; the rest are conventions the literature uses and the data
-must still record as printed.
-
-| role | regulated | meaning |
-|---|---|---|
-| `holotype` | yes | the single specimen designated as name-bearing type in the original publication |
-| `paratype` | yes | any other specimen of the type series cited in the original publication |
-| `syntype` | yes | each specimen of a type series when no holotype was designated |
-| `lectotype` | yes | a syntype later designated as the name-bearing type |
-| `paralectotype` | yes | a remaining syntype after lectotype designation |
-| `neotype` | yes | designated when the original name-bearing type is lost |
-| `topotype` | no | from the type locality |
-| `hypotype`, `plesiotype` | no | figured or described in a later work; older North American usage; both kept as printed (`hypotype` in Durham 1966) |
-| `allotype` | no | a paratype of the opposite sex; not applicable here, drop |
-| `kleptotype` | no | never used; drop |
-| (none) | — | material cited without a role; replaces `unknowntypes`, `unknown`, `unspecified`, `additional` |
-
-**Holotypes are singular by definition.** Two catalog numbers for one holotype
-are one specimen with two parts, written as two `ids` on one entry with
-`parts: [part, counterpart]`; the plural `holotypes` role goes away. Integrity
-check across all sources: a name has at most one holotype specimen, unless a
-later source records a `lectotype` or `neotype` designation, which is itself a
-nomenclatural act on that source's node.
-
-**D3. Occurrence-level `specimens` and `possibleSpecimens`.** Both are
-validated by nothing today. Under D1 they are replaced by back-references.
-`possibleSpecimens` (2 uses, personal) records that the source is unsure which
-specimens came from this horizon; that becomes `tentative: true` on the
-material entry's occurrence link.
-
-**D4. Illustrations as locators versus depictions.** The same `illustration`
-shape serves two roles, fixed by context: under a synonymy entry's `authority` it
-locates a figure *in the cited work*; under `material` or a node it records what
-a figure *in this source* shows. No rename. Drop `illustration.source`,
-`location` and `collectedFrom`, which were earlier attempts at the specimen link
-and are unused.
-
-**D6. Exclusion at figure level.** Paul et al. 2024 accept "Gutiérrez-Marco
-et al., p. 111, pl. 2, figs. 1–5, 11 (non fig. 6)". Neither `pars` nor a
-`non` entry says which figures. Allow `non` inside an `illustrations` locator:
+**D1. The model.** Three lists on a node, any of them hoistable or null:
 
 ```yaml
-illustrations:
-- {plate: 2, figures: [[1, 5], 11], non: [6]}
+contexts:                      # keyed; at the node, or at the top of the tree file
+  division-st:
+    unit: [Trenton Limestone]
+    location: [Division Street, Ottawa]
+material:
+- catalogNumbers: ["GSC 752"]  # printed strings; a [from, to] pair is a range
+  role: syntype
+  context: division-st
+- label: the specimen lent to Hudson
+  role: syntype
+  status: lost
+figures:
+- {textFigures: [3], of: "GSC 752"}
+- {plate: 1, figures: [2]}     # no `of`: the source never ties it to a specimen
+range:                         # a distribution statement, not provenance
+  series: Middle Ordovician
+  regions: [Ottawa]
 ```
 
-The same shape records a **correction of another work's figure number**:
-Kesling 1967 (S229) writes "HISINGER, 1837, pl. 25, fig. 8d, non fig. 9d"
-because the plate's fig. 8d is drawn level with series 9 and von Buch read it
-as 9d; Hisinger's plate explanation and labels agree with each other (Lethaea
-Suecica pp. 91–92, pl. XXV). Von Buch's tree keeps 9d as printed; the
-Treatise's locator is `{plate: 25, figures: 8d, non: [9d]}` with the
-explanation in `notes`. The disagreement is derived, as in B19, never resolved
-in place.
+- A material entry is one specimen or one batch, identified by
+  `catalogNumbers`, by the source's own `label` when it prints no number
+  (Bather's A, B, C; Bell's "Bigsby specimen"), or by a bare `count`. The
+  catalog number is the printed string, prefix included, never split; the
+  repository is resolved from the prefix (D3). `catalogNumbersAsPrinted`
+  keeps the verbatim form when the list had to normalise it, and `count`
+  is an integer, with vagueness ("over 200") in `notes`.
+- `context` refers to a context by key, on the node first, then the file;
+  `{key, tentative: true}` when the source is unsure which context the
+  specimen came from. A specimen with no stated context has no `context`.
+  A file that gives one locality for thirty taxa states it once.
+- A figure's `of` names a material entry by catalog number (range
+  endpoints count) or label; `depicts` records the medium (cast,
+  reconstruction, drawing). A figure with no `of` is one the source never
+  ties to a specimen, the honest state of most pre-1900 work. A locator
+  inside a synonymy entry's `authority` is still `illustration`: a figure
+  in the cited work (D4).
+- `range` carries the time fields and a `regions` list, with per-element
+  `tentative` where the source prints a query (E8). It never carries a
+  unit or a locality: a context needs one of those, and a statement with
+  neither is a range (Dehm 1961's period-plus-region entries).
+- Nulls (G11): `material: null`, `figures: null`, `contexts: null`,
+  `range: null` say the source prints none for the node; the file-level
+  `unused` list says a field appears nowhere. Only an auditor writes
+  either; a draft never does.
 
-**D7. A type designated by figure.** The same paper selects a lectotype as
-"the original of Barrande, 1867, plate 11, figure 5, now in the National
-Museum, Prague (Reg. no. L13001)". The material entry carries the number, the
-role `lectotype`, the designation as this source's act, and the 1867 figure as
-the identifying locator. Older works identify specimens by figure alone
-(Bell's Bigsby specimen), so the locator must be able to stand without a
-number.
+**D2. Type roles.** `role` is the source's own term, normalised only
+for grammar, from the list `data/roles.yaml` documents: the six the Code
+regulates (holotype, paratype, syntype, lectotype, paralectotype,
+neotype) and the conventions the literature uses beside them (topotype,
+hypotype, plesiotype, cotype, chirotype, and `figured` for a specimen
+cited as the original of a figure). The registry gives each its meaning,
+whether the Code regulates it, and for an older term the current one it
+usually corresponds to (`equivalent`: cotype to syntype, plesiotype to
+hypotype), which guides a search and asserts nothing about any one
+specimen. Absence of `role` is the common case: material cited with no
+role word. There is no separate field for the printed word. A role the
+source implies without printing it, "the type" for one specimen or for
+several, is recorded as the role the editor reads (holotype or syntype)
+with an `editorial` block on the entry: `inferred: [role]` and the
+`basis`. `allotype` and `kleptotype` are gone.
 
-**D8. A diagnosis deferred to another node (done 2026-09-27).** "Diagnosis.—Same as for
-species." (Sprinkle & Sumrall 2015 pp. 348, 351), "Diagnosis.—As for genus"
-(Holloway & Jell 1983 p. 1008), "The monotypic genus has the characteristics
-of the type species" (Bell & Sprinkle 1978 p. 247), "distinguished by the
-characters cited in the generic diagnosis below" (Holloway & Jell 1983
-p. 1002), "Same as for species by monotypy" (Zhao et al. 2010 p. 674). Six
-instances in one round. Moot: `diagnosis` was retired under D10 before this
-was built, so the deferral phrases were removed with the field rather than
-recorded.
+Holotypes are singular: two numbers for one holotype are one entry with
+two `catalogNumbers` and `parts: [part, counterpart]`. Whether a role is
+this source's act or a report of an earlier one: on a protologue node
+(`new: true`) a holotype, paratype or syntype entry is this source's
+designation by definition, and `roleAct` is written only for a later
+designation (`designated`: Bather 1914 selecting A as holotype among
+Whiteaves' three) or to say a role is merely `reported`. The integrity
+check that a name has at most one holotype across sources, unless a later
+source designates a lectotype or neotype, is F5.
 
-**D9. Printed type words that contradict each other.** Fay 1962 captions
-No. 752 "Holotype" (p. 201) and writes "It is labelled a syntype because
-another specimen … was the other syntype. When Hudson died, this specimen
-disappeared" (p. 205). Jell et al. 1985 call NMVP107129 "the holotype" of a
-form left in open nomenclature (p. 196). Rievers 1961 fixes a holotype with
-no number, "das in Taf. 2, Fig. 1–4 dargestellte Fossil" (p. 10), in a
-private collection. `roleAsPrinted` and the no-number entry (D1) carry all
-three; the lost second syntype is an entry with `label` and `notes` only.
+**D3. Repositories.** `data/repositories.yaml` holds every holder a
+catalog number may name, in one place, organised by holder rather than by
+printed prefix. An entry is an institution, a collection inside one
+(`within`), or a person, with `type` saying which and `subject` saying
+what its numbers identify (specimens, localities, samples); either may be
+`unknown` when a paper prints a prefix and nothing more. Keys are slugs,
+like taxon and source keys. `prefixes` lists the printed prefixes that
+resolve to an entry and `otherNames` the other names it is printed under, and the prefix
+index is derived from both, because a prefix need not resemble its
+holder's name: Sprinkle 1973's latex casts numbered E and BC belong to
+the Caster Collection at the University of Cincinnati
+(`u-cincinnati-caster`, `within: u-cincinnati`). A collection may print its parent's numbers and list no
+prefix of its own, as the Walcott Collection does with USNM numbers; a
+material entry then names it in `repository`. When two entries claim a
+prefix (PE for the Field Museum and for the North Museum at Franklin and
+Marshall College; E for NHMUK's register and the Caster casts; UCMP for
+Berkeley and for Bell 1976's Cincinnati museum), a tree file whose
+numbers use it lists the entry it means under its own `repositories`,
+the analogue of `needsQualification` on a taxon record. Resolution takes
+the leading letters of the catalog number, folding a hyphen or space
+between prefix and number, matches the longest prefix or former name at
+a token boundary, and tries the file's listed entries first; a prefix
+still claimed by two entries, or a listed entry no number uses, is an
+error. `holder` names a private holder with no registry entry.
+Unresolved prefixes are reported now and fail at stage 4 (F2).
 
-**D5. Migration.** 88 node-level `specimens` blocks, 13 `taxon.holotype`
-entries, 30 occurrence-level blocks. Mechanical for the typed-role shapes;
-`taxon.holotype` moves onto the protologue node (`new: true`) of the same name.
-Do the gold slice first and leave the rest on the old shape behind a
-deprecation flag in the schema until migrated.
+**D4. Figures versus illustrations.** The same locator fields serve two
+roles, fixed by context: `figures` on a node records what a figure in
+this source shows; `illustrations` under a synonymy entry's `authority`
+locates a figure in the cited work. Both take `non` for a figure-level
+exclusion or a correction of another work's numbering, which D6 keeps as
+the worked case: Kesling 1967 writes "Hisinger, 1837, pl. 25, fig. 8d,
+non fig. 9d" because von Buch read the plate's 8d as 9d; von Buch's tree
+keeps 9d as printed, the Treatise's locator is `{plate: 25, figures: 8d,
+non: [9d]}`, and the disagreement is derived, never resolved in place.
+`illustration.source`, `location` and `collectedFrom` are gone.
+
+**D5. Migration (stage 2).** One script over `data/trees`, `drafts` and
+`data/taxa.yaml`, all sources at once: role keys become one entry per
+item with the role singularised; `unknowntypes`, `additional` and
+`unspecified` become entries with no role; nested `[a, b]` items become
+range pairs; occurrence-level specimens become entries with `context`
+refs; each `occurrences[i]` becomes a keyed context (slug of the first
+location, else the first unit), hoisted when two nodes share one; a
+context with no unit, no locality and no specimen becomes `range`;
+node-level `illustrations` become `figures` with `of` unset; the
+taxon-record `holotype` moves to the protologue node. The script's report
+lists what the owner works by hand: the eight ellipses, free-text
+identifiers to `label`, and prefixes the
+registry does not know.
+
+**D6, D7, D9** are folded into D1, D2 and D4 above; **D8** and **D10**
+(diagnosis) are done, 2026-09-27: the field is gone with the `diagnoses`
+coverage kind.
+
+**D11. Casts, lots, localities and collecting events.** Sprinkle 1973
+showed four things a specimen citation carries that D1 first lacked,
+and the schema now has a field for each, all as printed:
+
+- A cast can be the cited object, with its own number and holder, while
+  the original is elsewhere and may be unnumbered: `preparation` ("latex
+  cast") on the entry, and `castOf` naming the entry for the original
+  when the source cites it (MCZ 629A and B, casts of the specimen to be
+  deposited as PE-199).
+- A lot and its pieces: MCZ 602-D1, 602-RO-5, 602a are pieces of lot MCZ
+  602 with different roles. Each piece is its own entry with the printed
+  string; the lot relation is derivable from the string and is not
+  asserted.
+- Localities come from registers of their own (the author's field codes,
+  USGS and Walcott locality numbers, the Museum of Victoria's NMVPL), and
+  sources print equivalences between them: `localityNumbers` on the
+  context, resolved through entries whose `subject` is localities, with
+  `coordinatesAsPrinted` and `mapSheet` for a grid reference kept
+  verbatim.
+- Collecting is recorded against the specimen as well as the site ("found
+  at locality LV-2 by my field assistant"): `collectedBy` and
+  `collectedDate` on both the material entry and the context.
+
+**Cross-source identity.** Two entries citing the same resolved
+repository and the same catalog number, folded for case and spacing, are
+the same specimen; the tools join on that and no registry is kept. An
+unnumbered specimen links across sources only by an editorial `sameAs`
+when the owner is sure, otherwise not at all. Counts are never
+reconciled: Whiteaves 1897 names three specimens, Bather 1914 three, Fay
+1962 two, and each tree carries its own paper's count.
+
+**Worked cases.**
+
+- *Rievers 1961*: a holotype with no number, "das in Taf. 2, Fig. 1–4
+  dargestellte Fossil", in a private collection: `label`, `holder`, and a
+  figure with `of` naming the label (D7's rule that a locator can stand
+  without a number).
+- *Bell 1976*: ROM 161-t-a "described … as 'GSC 1415'" is `formerIds`;
+  GSC 1407-B "a fragment of the holotype" is `fragmentOf`; the Bigsby
+  specimen is a `label` with the four works that figured it in `notes`;
+  "Illustrated Specimen" is `role: figured`; UCMP meaning Cincinnati is
+  `repositories: [u-cincinnati-museum]` at the top of the tree file.
+- *Fay 1962*: No. 752 captioned "Holotype" and called a syntype in the
+  text, which reports the museum label. Neither word fits: no holotype
+  was fixed in 1897, and Bather 1914 had since selected one of the
+  syntypes. The entry is `role: lectotype` with `editorial: {inferred:
+  [role], basis: …}` giving the caption, the label, Bather's selection,
+  and the doubt whether No. 752 is the specimen Bather chose. The second
+  syntype, lent to Hudson and gone, is a `label` with `status: lost`.
+- *Bather 1914*: A, B and C are labels; A is `role: holotype, roleAct:
+  designated`; C has `holder: Walter R. Billings`; the plate figures carry
+  `of: A` and `of: B`; the one locality is a file-level context.
 
 ---
-
-**D10. Retire `diagnosis` (decided 2026-09-27, done 2026-09-27).** The scope
-rule excludes diagnoses and descriptions, so the field, its `diagnosis`
-claim kind and the `diagnoses` coverage kind go. D8's deferral phrases go
-with them. If a locator for the diagnosis is ever wanted, it is a page
-number, not text; the node's `pages` already points at the formal
-statement of the name, which is where a diagnosis is printed. Done: the
-field, the claim kind and the coverage kind are removed from the data,
-schema, code, tests and docs.
 
 ## E. Stratigraphic time
 
@@ -1084,7 +1115,7 @@ the cost of making it uniform is small now and large later.
 means several zones from *different* zonations apply at once, which is neither
 a range nor a boundary. Document the three.
 
-**E3. Units are one ordered list.** `unit: [member, formation, group]`, most
+**E3 (done 2026-09-27, in `context`). Units are one ordered list.** `unit: [member, formation, group]`, most
 specific first, as the personal tree already does. Drop `superunit`,
 `subunit`, `section`.
 
@@ -1107,7 +1138,7 @@ they validate too; the *Preface* (xxviii–xxx) tabulates the 1966 European and
 North American regional units and is a ready source for the Ordovician and
 Devonian names the corpus uses.
 
-**E8. Doubt on one element of a range.** "M.Ord., ?U.Ord., Asia(China)-Eu.
+**E8 (done 2026-09-27, for `range.regions`). Doubt on one element of a range.** "M.Ord., ?U.Ord., Asia(China)-Eu.
 (Sweden-Est.-?Wales)-?N. Am.(USA)" (Kesling 1967, S229). The "?" attaches to
 one age and two regions, not to the occurrence. Each element of a range or
 location list may be written as `{value, tentative: true}` in place of the
@@ -1136,14 +1167,12 @@ fail also exit non-zero.
 `cfTaxon`, `affTaxon`, `openTaxon`, `mergeInto` targets), author id and
 `altSpellingOf` / `altRankOf` / `vulgarSpellingOf` target resolves.
 
-**F2. Repository prefixes, fail.** Every material id prefix resolves. Resolution
-is **scoped to the source**: Bell 1976 (p. 2) defines UCMP as the University of
-Cincinnati, where current usage means the University of California, and cites
-the Field Museum as CFM, CFMP, CFMPE and CFMUC. So `repositories.yaml` holds
-global defaults with `formerly` aliases (the *Preface 2023*, xxv–xxvi, lists
-"NHMUK (formerly BMNH)"), and a source record may carry its own
-`repositoryAbbreviations` map that wins within that source. The id string
-keeps the printed prefix either way.
+**F2. Repository prefixes: report now, fail at stage 4.** Every catalog
+number's prefix resolves against `data/repositories.yaml` (keys,
+`prefixes` and `otherNames`), the tree file's `repositories` list deciding
+between entries that print the same prefix (D3). A material entry's
+explicit `repository` bypasses resolution and must be a registry key.
+The catalog number keeps the printed prefix either way.
 
 **F3. Time values, fail.** Every `stage`, `series`, `period` and regional value
 resolves in `time.yaml` (E6).
@@ -1347,8 +1376,9 @@ Fields fall into three classes, and only the third is nullable:
   read as "not made" is the audit state's job, and a flag known to be
   unreliably recorded (`emended`, at the time of writing) is exactly what
   `state: unaudited` says.
-- Content, nullable: `synonyms`, `specimens`, `occurrences`,
-  `illustrations`, and whatever D1 makes of the material fields.
+- Content, nullable: `synonyms`, and the material fields as D1 now
+  defines them, `material`, `figures`, `contexts` and `range`; the
+  schema on the material-model branch makes all four nullable.
   `children` could join in principle (`children: null` for a taxon the
   paper places nothing under), but nulling every species is the bloat the
   file-level list exists to avoid, so skeleton stays source-level.
@@ -1404,7 +1434,7 @@ Each has a home; none needs a new top-level construct.
 | specimen identity that moved | ROM 161-t-a formerly GSC 1415 (p. 61) | `formerIds` (D1) |
 | a nickname for a specimen | the "Grant specimen", the "Fitzpatrick specimen" (p. 61) | `label` on the material entry |
 | a printed attribution that is wrong | "Bell, 1974" in Bell 1975 | as printed, plus `editorial.source` (A6) |
-| a role word outside the enum | "Illustrated Specimen" (p. 61) | `roleAsPrinted` (D1) |
+| a role word for a figured specimen | "Illustrated Specimen" (p. 61) | `role: figured` (D2) |
 | horizon given as a quoted local name plus a hierarchy | "'Cobourg beds' (= the 'Cystid beds, about 180 feet below the top of the Trenton')" (p. 65) | `unit` list for the hierarchy; the quoted equivalence in `notes` until E1 has a `localUnit` alias |
 | a list the source says is partial | "not a comprehensive listing", "Genera, e.g." (Parsley 2021, pp. 974–975) | `listComplete: false` (B16) |
 | a list the source hedges as a whole | "other members of this group may include" (Bell 1975, p. 36) | `provisional` on each member (B16) |

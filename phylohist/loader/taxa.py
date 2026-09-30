@@ -813,6 +813,30 @@ class Tree:
     return self.root._metadata.get('notes')
 
   @property
+  def file_contexts(self):
+    """This node's tree file's own `contexts`, shared by every node in it."""
+    return self.root._metadata.get('file_contexts') or {}
+
+  @property
+  def file_unused(self):
+    """This node's tree file's `unused` list, as a tuple."""
+    return self.root._metadata.get('file_unused') or ()
+
+  @cached_property
+  def contexts(self):
+    """This node's own `contexts` merged over the file's, the node
+    winning a key both define."""
+    return {**self.file_contexts, **(self._data.get('contexts') or {})}
+
+  @cached_property
+  def context_scopes(self):
+    """Which scope (`'file'` or `'node'`) each key of `contexts` came
+    from."""
+    scopes = {key: 'file' for key in self.file_contexts}
+    scopes.update({key: 'node' for key in (self._data.get('contexts') or {})})
+    return scopes
+
+  @property
   def bracket(self):
     return self._bracket
 

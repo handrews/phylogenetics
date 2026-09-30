@@ -4,7 +4,14 @@
 
 Validates the draft against the tree schema the loader uses, then lists the
 taxon keys, author keys and source keys the draft cites that have no record
-yet. Exit status 1 on a schema failure, 0 otherwise; the unresolved lists are
+yet, and the catalog numbers whose prefix resolves to no repository (also
+reported by name, like a missing record). It then runs the material checks
+(`phylohist.loader.material`) over the draft's nodes: a null
+`material`/`figures`/`contexts`/`range` on a cited entry, a `unused` field
+still present on a node, an ellipsis or an ambiguous prefix in a catalog
+number, a `repositories` list naming a missing or unused entry, and a
+dangling `context`, figure `of` or `castOf` are all printed with the node's path. Exit status 1
+on a schema failure or any of those, 0 otherwise; the unresolved lists are
 always printed, since a draft normally needs new records.
 """
 
@@ -12,6 +19,7 @@ import pathlib
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+from phylohist.loader import material  # noqa: E402
 from phylohist.loader.io import (  # noqa: E402
   DATA_DIR,
   TREE_DEF,
@@ -48,6 +56,35 @@ def walk(node, taxa, authors, sources):
       walk(value, taxa, authors, sources)
 
 
+def check_material(draft, repositories):
+  """`(messages, prefixes)`: every `material.py` check's `(level, message)`
+  over the draft, the per-node ones prefixed with the node's path, and the
+  catalog numbers among them with no resolvable repository."""
+  messages = [
+    *((lv, f'repositories: {m}') for lv, m in material.registry_links(repositories)),
+    *material.unreferenced_file_contexts(draft),
+    *material.unused_fields(draft),
+    *material.file_repositories_used(draft, repositories),
+  ]
+  prefixes = []
+  file_repositories = draft.get('repositories') or ()
+
+  file_contexts = draft.get('contexts') or {}
+  for path, node, is_cited in material.walk_document(draft):
+    node_contexts = node.get('contexts') or {}
+    for check, args in (
+      (material.context_refs, (node, node_contexts, file_contexts)),
+      (material.figure_refs, (node,)),
+      (material.catalog_numbers, (node, repositories, file_repositories)),
+      (material.cast_refs, (node,)),
+      (material.null_material, (node, is_cited)),
+    ):
+      messages.extend((level, f'{path}: {message}') for level, message in check(*args))
+    prefixes.extend(material.unresolved_catalog_numbers(node, repositories, file_repositories))
+
+  return messages, prefixes
+
+
 def main(argv):
   if len(argv) != 2:
     print(__doc__)
@@ -77,6 +114,20 @@ def main(argv):
     print(f'{label}: {len(cited)} cited, {len(missing)} without a record')
     for key in missing:
       print(f'  {key}')
+
+  repositories = load_yaml(DATA_DIR / 'repositories.yaml')
+  messages, prefixes = check_material(draft, repositories)
+
+  unresolved = sorted(set(prefixes))
+  print(f'prefixes: {len(unresolved)} without a resolvable repository')
+  for value in unresolved:
+    print(f'  {value}')
+
+  for level, message in messages:
+    print(f'{level}: {message}')
+    if level == 'error':
+      status = 1
+
   return status
 
 

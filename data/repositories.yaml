@@ -1,18 +1,259 @@
-repositories:
-  BMNH: British Museum (Natural History)
-  BSPG: Bayerische Staatssammlung für Paläontologie und Geologie, Germany
-  GIK: Geologischen Instituts der Universität zu Köln
-  GM: Museum of Paleontology, Guizhou University
-  MPEP: Musée de paléontologie et de l’évolution, Québec, Canada
-  NM: National Museum, Prague
-  NHMUK: Natural History Museum (London)
-    # PI department for source 2020_ewin_martin.m_isotalo_zamora ?
-  NMVP: Museum of Victoria, Melbourne
-  QMF: Queensland Museum
-  QML: Queensland Museum
-  RVS: Rievers Collection, Enkirch (Moselle)
-  UCBL-FSL: University Claude Bernard 1, Lyon, France.
-  UQF: University of Queensland
-  USNM: National Museum of Natural History (Smithsonian)
-localities:
-  UQL: University of Queensland
+amnh:
+  name: American Museum of Natural History
+  type: institution
+  place: New York
+  prefixes: [AMNH]
+anu:
+  name: Australian National University
+  type: institution
+  place: Canberra
+  prefixes: [ANU]
+bspg:
+  name: Bayerische Staatssammlung für Paläontologie und Geologie
+  type: institution
+  place: Munich
+  prefixes: [BSPG]
+cpc:
+  name: Commonwealth Palaeontological Collection
+  type: institution
+  place: Canberra
+  prefixes: [CPC]
+dpo:
+  name: Oviedo University, Department of Palaeontology
+  type: institution
+  prefixes: [DPO]
+  place: Oviedo, Spain
+fmnh:
+  name: Field Museum of Natural History
+  type: institution
+  place: Chicago
+  prefixes: [FMNH, PE, FMNH PE, CFM, CFMP, CFMPE, CFMUC]
+gcm:
+  name: Grand Canyon Museum
+  type: institution
+  prefixes: [GCM]
+geo-prague:
+  name: Geological Survey, Prague
+  type: institution
+  prefixes: [OF]
+  place: Prague
+  notes: Abbreviation not explained; Fatka & Kordule 1985.
+gik:
+  name: Geologisches Institut der Universität zu Köln
+  type: institution
+  place: Cologne
+  prefixes: [GIK]
+glahm:
+  name: Hunterian Museum, University of Glasgow
+  type: institution
+  place: Glasgow
+  prefixes: [GLAHM]
+gm:
+  name: Museum of Paleontology, Guizhou University
+  type: institution
+  place: Guiyang
+  prefixes: [GM]
+gsc:
+  name: Geological Survey of Canada
+  type: institution
+  place: Ottawa
+  prefixes: [GSC]
+  otherNames: [Canadian Geological Survey, Museum of the Geological Survey of Canada]
+isu:
+  name: Idaho State University
+  type: institution
+  prefixes: [ISU]
+lsn-mainz:
+  name: Landessammlung für Naturkunde
+  type: institution
+  place: Mainz
+  prefixes: [PWL]
+  notes: LS suffix denotes silicone casts (Abgüsse); Müller & Hahn 2010.
+mcz:
+  name: Museum of Comparative Zoology, Harvard University
+  type: institution
+  place: Cambridge, Massachusetts
+  prefixes: [MCZ]
+mpep:
+  name: Musée de paléontologie et de l'évolution
+  type: institution
+  place: Québec
+  prefixes: [MPEP]
+mpz:
+  name: Museo de Paleontología de la Universidad de Zaragoza
+  type: institution
+  place: Zaragoza
+  prefixes: [MPZ]
+müller.p:
+  name: Müller collection
+  type: person
+  prefixes: [M]
+nhmuk:
+  name: Natural History Museum
+  type: institution
+  place: London
+  prefixes: [NHMUK, E, EE]
+  otherNames: [BMNH, NHM UK]
+nigpas:
+  name: Nanjing Institute of Geology and Palaeontology, Chinese Academy of Sciences
+  type: institution
+  place: Nanjing
+  prefixes: [NIGPAS]
+nm-prague:
+  name: National Museum
+  type: institution
+  place: Prague
+  prefixes: [NM]
+nmv:
+  name: Museum of Victoria
+  type: institution
+  place: Melbourne
+nmv-p:
+  name: Museum of Victoria, palaeontology register
+  type: collection
+  within: nmv
+  subject: specimens
+  prefixes: [NMVP]
+nmv-pl:
+  name: Museum of Victoria, fossil locality register
+  type: collection
+  within: nmv
+  subject: localities
+  prefixes: [NMVPL]
+north-museum-fm:
+  name: North Museum, Franklin and Marshall College
+  type: institution
+  place: Lancaster, Pennsylvania
+  prefixes: [PE]
+nysm:
+  name: New York State Museum
+  type: institution
+  place: Albany
+  prefixes: [NYSM]
+  otherNames: [Collection New York State Museum]
+qm:
+  name: Queensland Museum
+  type: institution
+  place: Brisbane
+qm-f:
+  name: Queensland Museum, fossil register
+  type: collection
+  within: qm
+  subject: specimens
+  prefixes: [QMF]
+qm-l:
+  name: Queensland Museum, locality register
+  type: collection
+  within: qm
+  subject: localities
+  prefixes: [QML]
+rievers:
+  name: Rievers collection
+  type: person
+  place: Enkirch (Moselle)
+  prefixes: [RVS]
+sam:
+  name: South Australian Museum
+  type: institution
+  place: Adelaide
+  prefixes: [SAMP]
+seibert.r:
+  name: Seibert collection
+  type: person
+  prefixes: [RS, R]
+tmf:
+  name: Geological Survey of Tasmania
+  type: institution
+  prefixes: [TMF]
+  notes: Possibly in Hobart, Tasmania; Jell, Burrett & Banks 1985.
+u-cincinnati:
+  name: University of Cincinnati
+  type: institution
+  place: Cincinnati
+  prefixes: [UC]
+u-cincinnati-caster:
+  name: Caster Collection
+  type: collection
+  within: u-cincinnati
+  subject: specimens
+  prefixes: [E, BC]
+  notes: >
+    Latex casts; many of the originals are in the National Museum,
+    Prague (Sprinkle 1973).
+u-cincinnati-museum:
+  name: Museum of Paleontology, University of Cincinnati
+  type: collection
+  within: u-cincinnati
+  prefixes: [UCMP]
+ucbl-fsl:
+  name: Université Claude Bernard Lyon 1, collections de géologie
+  type: institution
+  place: Lyon
+  prefixes: [UCBL-FSL]
+ucmp:
+  name: University of California Museum of Paleontology
+  type: institution
+  place: Berkeley
+  prefixes: [UCMP]
+uq:
+  name: University of Queensland
+  type: institution
+  place: Brisbane
+uq-f:
+  name: University of Queensland, fossil register
+  type: collection
+  within: uq
+  subject: specimens
+  prefixes: [UQF, F]
+  notes: Whitehouse 1941 appears to use just "F." in print for this.
+uq-l:
+  name: University of Queensland, locality register
+  type: collection
+  within: uq
+  subject: localities
+  prefixes: [UQL]
+usgd:
+  name: University of Sydney, Geology Department
+  type: institution
+  place: Sydney
+  prefixes: [USGD]
+usnm:
+  name: National Museum of Natural History, Smithsonian Institution
+  type: institution
+  place: Washington
+  prefixes: [USNM]
+usnm-springer:
+  name: Springer Collection
+  type: collection
+  within: usnm
+  prefixes: [S]
+usnm-walcott:
+  name: Walcott Collection
+  type: collection
+  within: usnm
+  subject: specimens
+utgd:
+  name: University of Tasmania, Geology Department
+  type: institution
+  place: Hobart
+  prefixes: [UTGD]
+uu:
+  name: University of Utah
+  type: institution
+  place: Salt Lake City
+  prefixes: [UU]
+vmm:
+  name: Victoria Memorial Museum
+  type: institution
+  within: gsc
+  place: Ottawa
+  prefixes: [VMM]
+  notes: >
+    The Geological Survey of Canada's museum under its 1910s name (Bather
+    1914); later the National Museum of Canada, now the Canadian Museum of
+    Nature.
+yklp:
+  name: Yunnan Key Laboratory for Palaeobiology, Yunnan University
+  type: institution
+  place: Kunming
+  prefixes: [YKLP]

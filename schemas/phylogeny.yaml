@@ -49,6 +49,33 @@ $defs:
         type: array
         items:
           $ref: taxonomyTree
+      contexts:
+        description: |
+          Contexts shared by several nodes of this source, stated once and
+          referred to by key from material entries.
+        $ref: "#/$defs/contexts"
+      unused:
+        description: |
+          Fields the source uses nowhere, so no node need carry a null for
+          them (roadmap G11). A listed field appears on no node of the file.
+        type: array
+        uniqueItems: true
+        items:
+          type: string
+          enum: [material, figures, contexts, range, synonyms]
+      repositories:
+        description: |
+          The `repositories.yaml` entries this source's catalog numbers draw
+          on, listed when a printed prefix is claimed by more than one entry
+          (Bell 1976 writes UCMP for Cincinnati: `[u-cincinnati-museum]`). A
+          prefix
+          resolves against the listed entries first, then the whole
+          registry; a prefix still ambiguous, or a listed entry no number
+          uses, is an error.
+        type: array
+        uniqueItems: true
+        items:
+          $ref: "#/$defs/repositoryKey"
       notes:
         type: string
   person:
@@ -404,6 +431,7 @@ $defs:
         type: boolean
         default: false
       holotype:
+        $comment: LEGACY, moves to the protologue node at stage 2 of the material refactor.
         type: object
         additionalProperties:
           type: array
@@ -597,12 +625,41 @@ $defs:
 
   materialsFields:
     properties:
+      material:
+        description: |
+          This source's specimens for the node, one entry each; `null` when
+          the source cites none (an auditor's statement, roadmap G11).
+        type: [array, "null"]
+        items:
+          $ref: "#/$defs/materialEntry"
+      figures:
+        type: [array, "null"]
+        items:
+          $ref: "#/$defs/figure"
+      contexts:
+        $ref: "#/$defs/contexts"
+      range:
+        $ref: "#/$defs/range"
+      # LEGACY (removed at stage 2): the shapes the migration converts.
       occurrences:
+        $comment: LEGACY
         type: array
         items:
           $ref: "#/$defs/occurrence"
       specimens:
+        $comment: LEGACY
         $ref: "#/$defs/specimens"
+    dependentSchemas:
+      # A node is written in the new shape or the old, never both.
+      material: &newShapeOnly
+        properties:
+          occurrences: false
+          specimens: false
+          illustrations: false
+      figures: *newShapeOnly
+      contexts: *newShapeOnly
+      range: *newShapeOnly
+
 
   citedAct:
     $comment: |
@@ -692,11 +749,8 @@ $defs:
         maxItems: 2
         items:
           $ref: "#/$defs/citationNumber"
-  illustration:
-    type: object
+  figureLocatorFields:
     properties:
-      source:
-        $ref: "#/$defs/sourceId"
       plate:
         $ref: "#/$defs/citationNumber"
       page:
@@ -705,19 +759,56 @@ $defs:
         $ref: "#/$defs/citationNumbers"
       textFigures:
         $ref: "#/$defs/citationNumbers"
-      location:
-        type: [integer, string]
-      collectedFrom:
-        type: string
-      uncertain:
-        description: |
-          If true, the assignment of the specimen to the given taxon
-          is uncertain, but no other identifiable taxon (such as a cf. taxon)
-          was defined.
-        type: boolean
-        default: false
+      non:
+        description: Figures the locator excludes or corrects ("figs. 1–5, non fig. 6").
+        $ref: "#/$defs/citationNumbers"
       notes:
         type: string
+  figure:
+    description: |
+      A figure printed in this source. `of` names the material entry it
+      depicts, by a catalog number or label on the same node; a figure with
+      no `of` is one the source never ties to a specimen.
+    type: object
+    $ref: "#/$defs/figureLocatorFields"
+    unevaluatedProperties: false
+    anyOf:
+    - required: [plate]
+    - required: [page]
+    - required: [figures]
+    - required: [textFigures]
+    properties:
+      of:
+        oneOf:
+        - type: string
+        - type: array
+          minItems: 1
+          items:
+            type: string
+      depicts:
+        type: string
+        enum: [specimen, cast, reconstruction, drawing]
+        default: specimen
+      uncertain:
+        description: |
+          If true, the assignment of the figured specimen to the taxon is
+          uncertain, but no other identifiable taxon was named.
+        type: boolean
+        default: false
+  illustration:
+    description: A locator for a figure in a cited work, inside an authority.
+    $comment: |
+      Until stage 2 of the material refactor this def also serves the legacy
+      node-level `illustrations`, so it stays open to extra properties; it
+      closes (`unevaluatedProperties: false`) when those are migrated to
+      `figures`.
+    type: object
+    $ref: "#/$defs/figureLocatorFields"
+    properties:
+      uncertain:
+        type: boolean
+        default: false
+
   basicOccurrence:
     type: object
     properties:
@@ -783,6 +874,7 @@ $defs:
       notes:
         type: string
       specimens:
+        $comment: LEGACY, removed at stage 2 of the material refactor.
         type: object
         additionalProperties:
           type: object
@@ -1094,7 +1186,406 @@ $defs:
     - Greenlandian
     - Northgrippian
     - Meghalayan
+  catalogNumber:
+    description: |
+      A specimen's catalog number as the source prints it, repository prefix
+      included ("GSC 752", "UQF5409", "GM 9-5-2 165b"), or a two-element
+      list naming the first and last number of a consecutive range. The
+      repository is resolved from the prefix (see `repositories`); the string
+      itself is never split.
+    oneOf:
+    - type: string
+      minLength: 1
+    - type: array
+      minItems: 2
+      maxItems: 2
+      items:
+        type: string
+        minLength: 1
+  role:
+    description: |
+      The role the source gives a specimen, in the source's own term
+      normalised only for grammar; `roles.yaml` gives each its meaning,
+      whether the Code regulates it, and the current term an older one
+      usually corresponds to. A role the source implies without printing
+      the word ("the type") is recorded as the role the editor reads, with
+      an `editorial` block on the entry naming it as inferred.
+    type: string
+    enum:
+    - holotype
+    - paratype
+    - syntype
+    - lectotype
+    - paralectotype
+    - neotype
+    - topotype
+    - hypotype
+    - plesiotype
+    - cotype
+    - chirotype
+    - figured
+  contextRef:
+    description: |
+      A reference to a context by key, looked up on the node first and then
+      at the top of the tree file. The object form says the source is unsure
+      that the specimen came from this context.
+    oneOf:
+    - $ref: "#/$defs/contextKey"
+    - type: object
+      additionalProperties: false
+      required: [key]
+      properties:
+        key:
+          $ref: "#/$defs/contextKey"
+        tentative:
+          type: boolean
+          default: false
+  contextKey:
+    type: string
+    pattern: "^[a-z0-9][a-z0-9-]*$"
+  materialEntry:
+    description: |
+      One specimen, or one batch of specimens the source cites together, as
+      this source cites it. An entry is identified by its catalog numbers,
+      or by the source's own label when it prints none ("A", "the Bigsby
+      specimen"), or by a bare count. Absence of `role` means the source
+      attaches no type word. On a protologue node (`new: true`) a holotype,
+      paratype or syntype entry is this source's own designation; `roleAct`
+      is written only for a later designation (a lectotype selected here)
+      or to say a role is merely reported from an earlier work.
+    type: object
+    additionalProperties: false
+    anyOf:
+    - required: [catalogNumbers]
+    - required: [label]
+    - required: [count]
+    properties:
+      catalogNumbers:
+        type: array
+        minItems: 1
+        items:
+          $ref: "#/$defs/catalogNumber"
+      catalogNumbersAsPrinted:
+        description: The numbers verbatim when `catalogNumbers` had to normalise them.
+        type: string
+      count:
+        description: How many specimens the entry covers; an integer only, vagueness goes in `notes`.
+        type: integer
+        minimum: 1
+      label:
+        type: string
+      role:
+        $ref: "#/$defs/role"
+      roleAct:
+        type: string
+        enum: [designated, reported]
+      repository:
+        description: |
+          A key in `repositories.yaml`, possibly a collection's, written only
+          when the catalog number carries no prefix, when the source names a
+          collection its prefix does not reveal (the Walcott Collection), or
+          when one entry draws on a different holder than the tree file's
+          `repositories` list resolves its prefix to.
+        $ref: "#/$defs/repositoryKey"
+      holder:
+        description: A private holder named by the source, with no registry entry.
+        type: string
+      preparation:
+        description: |
+          What the cited object is, as printed, when it is not the fossil
+          itself: "latex cast", "mold", "thin section".
+        type: string
+      castOf:
+        description: |
+          The catalog number or label of the entry on the same node that this
+          cast was taken from, when the source gives the original one.
+        type: string
+      collectedBy:
+        description: The collector or finder of this specimen, as printed.
+        type: string
+      collectedDate:
+        description: When this specimen was collected or found, as printed.
+        type: string
+      context:
+        $ref: "#/$defs/contextRef"
+      status:
+        type: string
+        enum: [lost, untraced]
+      formerIds:
+        type: array
+        items:
+          $ref: "#/$defs/catalogNumber"
+      fragmentOf:
+        description: The catalog number or label of the specimen this is a fragment of.
+        type: string
+      parts:
+        description: Part names parallel to `catalogNumbers` (part, counterpart).
+        type: array
+        items:
+          type: string
+      examined:
+        type: boolean
+        default: true
+      listComplete:
+        description: False when the source's list of this entry's numbers is only partly entered.
+        type: boolean
+      editorial:
+        description: |
+          The editor's layer for this entry: `inferred` names the entry's
+          fields that are the editor's reading and not the source's words
+          (`[role]` when the source says only "the type"), with the `basis`.
+        $ref: "#/$defs/editorialObject"
+      notes:
+        type: string
+
+  timeFields:
+    properties:
+      eon:
+        $ref: "#/$defs/eon"
+      era:
+        $ref: "#/$defs/era"
+      period:
+        $ref: "#/$defs/period"
+      series:
+        $ref: "#/$defs/series"
+      seriesBoundary:
+        $ref: "#/$defs/seriesRange"
+      seriesRange:
+        $ref: "#/$defs/seriesRange"
+      stage:
+        $ref: "#/$defs/stage"
+      stageBoundary:
+        $ref: "#/$defs/stageRange"
+      stageRange:
+        $ref: "#/$defs/stageRange"
+      stageModifier:
+        $ref: "#/$defs/stageModifier"
+  localTimeFields:
+    properties:
+      localPeriod:
+        type: string
+      localSeries:
+        $ref: "#/$defs/localSeries"
+      localSeriesBoundary:
+        $ref: "#/$defs/localSeriesRange"
+      localSeriesRange:
+        $ref: "#/$defs/localSeriesRange"
+      localStage:
+        $ref: "#/$defs/localStage"
+      localStageBoundary:
+        $ref: "#/$defs/localStageRange"
+      localStageRange:
+        $ref: "#/$defs/localStageRange"
+      localStageModifier:
+        $ref: "#/$defs/stageModifier"
+  inferredContext:
+    description: |
+      An editorial or later source's translation of a regional age to the
+      global scale; `basis` or `sources` says whose (roadmap E5).
+    type: object
+    $ref: "#/$defs/timeFields"
+    unevaluatedProperties: false
+    properties:
+      paleocontinent:
+        type: string
+      basis:
+        type: string
+      sources:
+        type: array
+        items:
+          $ref: "#/$defs/sourceId"
+  context:
+    description: |
+      One geological and geographical context a specimen came from, as the
+      source prints it. `unit` lists lithostratigraphic names most specific
+      first, words like "Formation" kept; `location` likewise from the place
+      outward. Keyed by the node or the tree file; specimens refer to it.
+    type: object
+    allOf:
+    - $ref: "#/$defs/timeFields"
+    - $ref: "#/$defs/localTimeFields"
+    unevaluatedProperties: false
+    properties:
+      unit:
+        type: array
+        items:
+          type: string
+      biota:
+        type: string
+      biozone:
+        type: string
+      biozones:
+        type: array
+        items:
+          type: string
+        minItems: 2
+      biozoneRange:
+        type: array
+        items:
+          type: string
+        minItems: 2
+        maxItems: 2
+      fauna:
+        type: array
+        items:
+          type: string
+      paleocontinent:
+        type: string
+      location:
+        type: array
+        items:
+          type: string
+      localityNumbers:
+        description: |
+          Locality register numbers for this context, as printed ("SH-1",
+          "USGS 4148 CO", "NMVPL 58"), resolved like catalog numbers through
+          entries whose `subject` is localities. Equivalences the source
+          prints are kept as several numbers on one context.
+        type: array
+        items:
+          type: string
+      coordinatesAsPrinted:
+        description: Coordinates or a grid reference exactly as printed ("GR538142 (yards)").
+        type: string
+      mapSheet:
+        description: The map sheet a grid reference refers to, as printed.
+        type: string
+      collectedBy:
+        description: The collector at this context, as printed.
+        type: string
+      collectedDate:
+        description: When the collecting at this context took place, as printed.
+        type: string
+      inferred:
+        $ref: "#/$defs/inferredContext"
+      sources:
+        type: array
+        items:
+          $ref: "#/$defs/sourceId"
+      notes:
+        type: string
+  contexts:
+    type: [object, "null"]
+    propertyNames:
+      $ref: "#/$defs/contextKey"
+    additionalProperties:
+      $ref: "#/$defs/context"
+  range:
+    description: |
+      A distribution statement about the taxon (a period and the regions it
+      is known from), which is not the provenance of any specimen. Each
+      region may be marked tentative where the source prints a query
+      (roadmap E8).
+    type: [object, "null"]
+    allOf:
+    - $ref: "#/$defs/timeFields"
+    - $ref: "#/$defs/localTimeFields"
+    unevaluatedProperties: false
+    properties:
+      regions:
+        type: array
+        items:
+          oneOf:
+          - type: string
+          - type: object
+            additionalProperties: false
+            required: [value]
+            properties:
+              value:
+                type: string
+              tentative:
+                type: boolean
+      inferred:
+        $ref: "#/$defs/inferredContext"
+      asPrinted:
+        type: string
+      notes:
+        type: string
+
+  repositories:
+    description: |
+      `data/repositories.yaml`: every holder a catalog number may name,
+      organised by holder. An entry is an institution, a collection inside
+      one (`within`), or a person; `subject` says what its numbers
+      identify. `prefixes` lists the printed prefixes that resolve to the
+      entry, and `otherNames` the other names it is printed under, which
+      resolve too; the prefix index is derived from both, so a key need
+      not be a prefix. A
+      collection may print its parent's prefix and list none of its own
+      (the Walcott Collection prints USNM numbers). When two entries claim
+      the same prefix, a tree file whose numbers use it lists the entry it
+      means under its own `repositories`.
+    type: object
+    propertyNames:
+      $ref: "#/$defs/repositoryKey"
+    additionalProperties:
+      type: object
+      additionalProperties: false
+      required: [name, type]
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+          enum: [institution, collection, person, unknown]
+        subject:
+          description: What the entry's numbers identify.
+          type: string
+          enum: [specimens, localities, samples, unknown]
+        within:
+          $ref: "#/$defs/repositoryKey"
+        prefixes:
+          type: array
+          items:
+            type: string
+        otherNames:
+          description: |
+            Other names the holder is printed under, earlier or otherwise
+            ("BMNH", "Canadian Geological Survey"); they resolve like
+            prefixes. No ordering in time is implied.
+          type: array
+          items:
+            type: string
+        place:
+          type: string
+        notes:
+          type: string
+  repositoryKey:
+    description: |
+      Lowercase slugs for institutions and collections (`nhmuk`,
+      `u-cincinnati-caster`); a person's key is their authors.yaml id
+      (`seibert.r`, `müller.p`), so the pattern admits what `authorId` does.
+    type: string
+    pattern: "^[\\w][\\w.-]*$"
+  roles:
+    description: |
+      `data/roles.yaml`: the roles a source may give a specimen, each with
+      its meaning, whether the Code regulates it, and for an older term
+      the current one it usually corresponds to.
+    type: object
+    propertyNames:
+      $ref: "#/$defs/role"
+    additionalProperties:
+      type: object
+      additionalProperties: false
+      required: [meaning, regulated]
+      properties:
+        meaning:
+          type: string
+        regulated:
+          type: boolean
+        article:
+          type: string
+        equivalent:
+          description: |
+            The role in current use that this older term usually
+            corresponds to; a guide for searching, not a statement about
+            any one specimen.
+          $ref: "#/$defs/role"
+        notes:
+          type: string
   specimen:
+    $comment: LEGACY, removed at stage 2 of the material refactor.
     oneOf:
     - type: string
     - type: object
@@ -1108,6 +1599,7 @@ $defs:
           items:
             $ref: "#/$defs/illustration"
   specimens:
+    $comment: LEGACY, removed at stage 2 of the material refactor.
     type: object
     properties:
       repository:
