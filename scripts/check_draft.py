@@ -7,9 +7,9 @@ taxon keys, author keys and source keys the draft cites that have no record
 yet, and the catalog numbers whose prefix resolves to no repository (also
 reported by name, like a missing record). It then runs the material checks
 (`phylohist.loader.material`) over the draft's nodes: a cited entry carrying
-`material`/`contexts`/`range`, a null `illustrations`, or an `of`/`depicts`
+`material`/`contexts`/`ranges`, a null `illustrations`, or an `of`/`depicts`
 in its `illustrations` (or in an `authority`'s); a null `material`,
-`illustrations`, `contexts` or `range` on a primary node (only an auditor
+`illustrations`, `contexts` or `ranges` on a primary node (only an auditor
 sets nulls); a `unused` field still present on a node; an ellipsis or an
 ambiguous prefix in a catalog number; a `repositories` list naming a missing
 or unused entry; and a dangling `context`, figure `of` or `castOf`. Each is

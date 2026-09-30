@@ -62,7 +62,7 @@ $defs:
         uniqueItems: true
         items:
           type: string
-          enum: [material, illustrations, contexts, range, synonyms]
+          enum: [material, illustrations, contexts, ranges, synonyms]
       repositories:
         description: |
           The `repositories.yaml` entries this source's catalog numbers draw
@@ -639,8 +639,10 @@ $defs:
           $ref: "#/$defs/materialEntry"
       contexts:
         $ref: "#/$defs/contexts"
-      range:
-        $ref: "#/$defs/range"
+      ranges:
+        type: [array, "null"]
+        items:
+          $ref: "#/$defs/range"
       # LEGACY (removed at stage 2): the shapes the migration converts.
       occurrences:
         $comment: LEGACY
@@ -657,7 +659,7 @@ $defs:
           occurrences: false
           specimens: false
       contexts: *newShapeOnly
-      range: *newShapeOnly
+      ranges: *newShapeOnly
 
 
   citedAct:
@@ -1461,11 +1463,12 @@ $defs:
       $ref: "#/$defs/context"
   range:
     description: |
-      A distribution statement about the taxon (a period and the regions it
-      is known from), which is not the provenance of any specimen. Each
-      region may be marked tentative where the source prints a query
-      (roadmap E8).
-    type: [object, "null"]
+      One distribution statement about the taxon (a period and the regions
+      it is known from), which is not the provenance of any specimen; a
+      node's `ranges` holds one or several, since a taxon may have a
+      different range in each region. Each region may be marked tentative
+      where the source prints a query (roadmap E8).
+    type: object
     allOf:
     - $ref: "#/$defs/timeFields"
     - $ref: "#/$defs/localTimeFields"

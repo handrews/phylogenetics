@@ -317,7 +317,7 @@ def _shown(elements):
   return elements if len(elements) == 2 else elements[0]
 
 
-NULLABLE_FIELDS = ('material', 'illustrations', 'contexts', 'range')
+NULLABLE_FIELDS = ('material', 'illustrations', 'contexts', 'ranges')
 _PRIMARY_ONLY_KEYS = ('of', 'depicts')
 
 
@@ -345,7 +345,7 @@ def _authorities(node):
 def null_material(node, is_cited):
   """A cited entry (a synonymy entry, an earlier state) locates the cited
   work's own material, so it carries none of `material`, `contexts` or
-  `range`, null or not. It may carry `illustrations`, locators for a
+  `ranges`, null or not. It may carry `illustrations`, locators for a
   figure in the cited work, but never null and never with `of` or
   `depicts`; the same ban on `of` and `depicts` holds for
   `authority.illustrations` on any node. A `material: null` node beside an

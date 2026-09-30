@@ -6,38 +6,38 @@ taxonomies:
   children:
   - taxon: sardesoni_bather_1915
     type: true
-    range:
-      period: Ordovician
+    ranges:
+    - period: Ordovician
       notes: Period given as "Lower Silurian (Ordovician)"
       regions:
       - North America
   - taxon: grayae_bather_1915
-    range:
-      period: Ordovician
+    ranges:
+    - period: Ordovician
       notes: Period given as "Lower Silurian (Ordovician)"
       regions:
       - Scotland
   - taxon: volborthi_hecker_1939
-    range:
-      period: Ordovician
+    ranges:
+    - period: Ordovician
       notes: Period given as "Lower Silurian (Ordovician)"
       regions:
       - Russia
   - taxon: gracilis_hecker_1939
-    range:
-      period: Ordovician
+    ranges:
+    - period: Ordovician
       notes: Period given as "Lower Silurian (Ordovician)"
       regions:
       - Russia
   - taxon: pulkovi_hecker_1939
-    range:
-      period: Ordovician
+    ranges:
+    - period: Ordovician
       notes: Period given as "Lower Silurian (Ordovician)"
       regions:
       - Russia
   - taxon: sulcata_aurivillius_1892
-    range:
-      localPeriod: Gotlandian
+    ranges:
+    - localPeriod: Gotlandian
       notes: |
         Period given as "Upper Silurian (Gotlandian)", but unknown if this
         "Upper Silurian" is equivalent to the modern Silurian period, or
@@ -45,8 +45,8 @@ taxonomies:
       regions:
       - Gotland, Sweden
   - taxon: procera_aurivillius_1892
-    range:
-      localPeriod: Gotlandian
+    ranges:
+    - localPeriod: Gotlandian
       notes: |
         Period given as "Upper Silurian (Gotlandian)", but unknown if this
         "Upper Silurian" is equivalent to the modern Silurian period, or
@@ -54,8 +54,8 @@ taxonomies:
       regions:
       - Gotland, Sweden
   - taxon: cylindrica_aurivillius_1892
-    range:
-      localPeriod: Gotlandian
+    ranges:
+    - localPeriod: Gotlandian
       notes: |
         Period given as "Upper Silurian (Gotlandian)", but unknown if this
         "Upper Silurian" is equivalent to the modern Silurian period, or

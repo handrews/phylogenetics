@@ -3,7 +3,7 @@
 
 Converts the legacy node `specimens`, `occurrences`, node-level
 `illustrations` on non-cited nodes, and `taxa.yaml`'s `holotype` to the
-`material` / `illustrations` / `contexts` / `range` model of
+`material` / `illustrations` / `contexts` / `ranges` model of
 `schemas/phylogeny.yaml`, and adds the `repositories` list to the tree
 files whose printed prefixes are claimed by more than one registry entry.
 Kept until stage 4, when the legacy shapes are retired.
@@ -118,8 +118,8 @@ INFERRED_ALLOWED_KEYS = {
   'paleocontinent',
 }
 
-# `$defs/timeFields` and `$defs/localTimeFields`, both of which `range` and
-# `context` support (`range` = timeFields + localTimeFields + regions/etc).
+# `$defs/timeFields` and `$defs/localTimeFields`, both of which a `ranges` item and
+# `context` support (a range = timeFields + localTimeFields + regions/etc).
 TIME_FIELD_KEYS = {
   'eon',
   'era',
@@ -147,7 +147,7 @@ LOCAL_TIME_FIELD_KEYS = {
 # `phylohist.loader.taxa.Tree.RELATED_AXES`/`CITED_AXES` exactly: a node
 # reached through a "cited" axis is a cited entry (a synonymy entry, an
 # earlier state this source cites) and never carries `material`/
-# `contexts`/`range` (`phylohist.loader.material.null_material`), whether or
+# `contexts`/`ranges` (`phylohist.loader.material.null_material`), whether or
 # not it has its own `authority` sub-object. `children` always resets to
 # "not cited", regardless of the current node's own status. `authority`
 # itself is never a recursion target: its `illustrations` locate a figure in
@@ -505,7 +505,7 @@ class Migrator:
       # A distribution statement, not specimen provenance (D1): either
       # no unit/location/specimens at all, or a period/series/stage
       # with a location but no unit, specimens or biozone -- the
-      # latter is D1's own Dehm 1961 example of why `range.regions`
+      # latter is D1's own Dehm 1961 example of why a range's `regions`
       # exists.
       is_plain_range = not has_unit and not has_location and not has_specimens
       is_dated_range = (
@@ -676,7 +676,7 @@ class Migrator:
     if is_cited:
       # A cited entry (a synonymy entry, an earlier state this source
       # cites) locates the CITED work's own material inside its own
-      # `authority`; it never carries `material`/`contexts`/`range`
+      # `authority`; it never carries `material`/`contexts`/`ranges`
       # itself (phylohist.loader.material.null_material), and its
       # `illustrations` locate a figure in the cited work, so they are left
       # exactly as printed.
@@ -755,7 +755,7 @@ class Migrator:
       stats.contexts += len(node_contexts)
       file_context_registry.append((node, taxon))
     if range_result is not None:
-      set_field('range', range_result)
+      set_field('ranges', [range_result])
       stats.ranges += 1
 
     if changed:

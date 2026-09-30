@@ -905,10 +905,10 @@ Direction agreed 2026-09-27; stages 0–2 of the plan in force. The four
 shapes the trees used until then (node `specimens` keyed by role,
 occurrence-level `specimens`, taxon-record `holotype`, node
 `illustrations`) are replaced by three flat lists joined by references,
-and a `range` statement that is not material at all; the node-level list
-of figures keeps the name `illustrations` and gains `of`. The principle
-from `graph.md` stands: specimens are the physical anchors, figures are
-proxies for them, contexts say where the specimens came from.
+and `ranges`, distribution statements that are not material at all; the
+node-level list of figures keeps the name `illustrations` and gains `of`.
+The principle from `graph.md` stands: specimens are the physical anchors,
+figures are proxies for them, contexts say where the specimens came from.
 
 **D1. The model.** Three lists on a node, any of them hoistable or null:
 
@@ -927,8 +927,8 @@ material:
 illustrations:
 - {textFigures: [3], of: "GSC 752"}
 - {plate: 1, figures: [2]}     # no `of`: the source never ties it to a specimen
-range:                         # a distribution statement, not provenance
-  series: Middle Ordovician
+ranges:                        # distribution statements, not provenance
+- series: Middle Ordovician
   regions: [Ottawa]
 ```
 
@@ -949,12 +949,14 @@ range:                         # a distribution statement, not provenance
   figure the source never ties to a specimen, the honest state of most
   pre-1900 work. A locator inside a synonymy entry's `authority` has the
   same shape and the same name: a figure in the cited work (D4).
-- `range` carries the time fields and a `regions` list, with per-element
-  `tentative` where the source prints a query (E8). It never carries a
-  unit or a locality: a context needs one of those, and a statement with
-  neither is a range (Dehm 1961's period-plus-region entries).
+- `ranges` is a list of distribution statements, since a taxon may have a
+  different range in each region; each carries the time fields and a
+  `regions` list, with per-element `tentative` where the source prints a
+  query (E8). A range never carries a unit or a locality: a context needs
+  one of those, and a statement with neither is a range (Dehm 1961's
+  period-plus-region entries).
 - Nulls (G11): `material: null`, `illustrations: null`, `contexts: null`,
-  `range: null` say the source prints none for the node; the file-level
+  `ranges: null` say the source prints none for the node; the file-level
   `unused` list says a field appears nowhere. Only an auditor writes
   either; a draft never does.
 
@@ -1032,7 +1034,8 @@ item with the role singularised; `unknowntypes`, `additional` and
 range pairs; occurrence-level specimens become entries with `context`
 refs; each `occurrences[i]` becomes a keyed context (slug of the first
 location, else the first unit), hoisted when two nodes share one; a
-context with no unit, no locality and no specimen becomes `range`;
+context with no unit, no locality and no specimen becomes one item of
+`ranges`;
 node-level `illustrations` keep their name, their entries normalised,
 with `of` unset; the
 taxon-record `holotype` moves to the protologue node. The script's report
@@ -1144,7 +1147,7 @@ they validate too; the *Preface* (xxviii–xxx) tabulates the 1966 European and
 North American regional units and is a ready source for the Ordovician and
 Devonian names the corpus uses.
 
-**E8 (done 2026-09-27, for `range.regions`). Doubt on one element of a range.** "M.Ord., ?U.Ord., Asia(China)-Eu.
+**E8 (done 2026-09-27, for `regions` of a range). Doubt on one element of a range.** "M.Ord., ?U.Ord., Asia(China)-Eu.
 (Sweden-Est.-?Wales)-?N. Am.(USA)" (Kesling 1967, S229). The "?" attaches to
 one age and two regions, not to the occurrence. Each element of a range or
 location list may be written as `{value, tentative: true}` in place of the
@@ -1383,7 +1386,7 @@ Fields fall into three classes, and only the third is nullable:
   unreliably recorded (`emended`, at the time of writing) is exactly what
   `state: unaudited` says.
 - Content, nullable: `synonyms`, and the material fields as D1 now
-  defines them, `material`, `illustrations`, `contexts` and `range`; the
+  defines them, `material`, `illustrations`, `contexts` and `ranges`; the
   schema on the material-model branch makes all four nullable.
   `children` could join in principle (`children: null` for a taxon the
   paper places nothing under), but nulling every species is the bloat the

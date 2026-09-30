@@ -498,7 +498,7 @@ def test_cast_refs_absent_castof_and_absent_material_are_quiet():
 # -- null_material --------------------------------------------------------------
 
 
-@pytest.mark.parametrize('field', ['material', 'contexts', 'range'])
+@pytest.mark.parametrize('field', ['material', 'contexts', 'ranges'])
 def test_null_material_cited_entry_with_any_field_is_error(field):
   node = {field: None}
   assert material.null_material(node, is_cited=True) == [
@@ -507,8 +507,16 @@ def test_null_material_cited_entry_with_any_field_is_error(field):
 
 
 def test_null_material_not_cited_is_quiet():
-  node = {'material': None, 'illustrations': None, 'contexts': None, 'range': None}
+  node = {'material': None, 'illustrations': None, 'contexts': None, 'ranges': None}
   assert material.null_material(node, is_cited=False) == []
+
+
+def test_null_ranges_is_accepted_on_a_primary_node_and_rejected_on_a_cited_entry():
+  node = {'ranges': None}
+  assert material.null_material(node, is_cited=False) == []
+  assert material.null_material(node, is_cited=True) == [
+    ('error', 'cited entry carries `ranges`'),
+  ]
 
 
 def test_null_material_cited_entry_may_carry_locators():
@@ -581,24 +589,34 @@ def test_null_material_absent_is_quiet():
 
 
 def test_unused_fields_none_declared_is_quiet():
-  document = {'taxonomies': [{'taxon': 'a', 'range': None}]}
+  document = {'taxonomies': [{'taxon': 'a', 'ranges': None}]}
   assert material.unused_fields(document) == []
 
 
 def test_unused_fields_flags_the_node_that_still_carries_it():
   document = {
-    'unused': ['range'],
+    'unused': ['ranges'],
     'taxonomies': [
-      {'taxon': 'a', 'range': None, 'children': [{'taxon': 'b'}]},
+      {'taxon': 'a', 'ranges': None, 'children': [{'taxon': 'b'}]},
     ],
   }
   assert material.unused_fields(document) == [
-    ('error', '`range` is listed as `unused` but appears at 0'),
+    ('error', '`ranges` is listed as `unused` but appears at 0'),
+  ]
+
+
+def test_unused_ranges_with_a_node_carrying_ranges_is_error():
+  document = {
+    'unused': ['ranges'],
+    'taxonomies': [{'taxon': 'a', 'ranges': [{'period': 'Ordovician'}]}],
+  }
+  assert material.unused_fields(document) == [
+    ('error', '`ranges` is listed as `unused` but appears at 0'),
   ]
 
 
 def test_unused_fields_ignores_nodes_without_it():
-  document = {'unused': ['range'], 'taxonomies': [{'taxon': 'a', 'children': [{'taxon': 'b'}]}]}
+  document = {'unused': ['ranges'], 'taxonomies': [{'taxon': 'a', 'children': [{'taxon': 'b'}]}]}
   assert material.unused_fields(document) == []
 
 
@@ -668,14 +686,14 @@ def test_tree_file_contexts_and_unused_read_from_root_metadata(load_records):
     'position': 900,
     'type': 'taxonomy',
     'file_contexts': {'loc': {}},
-    'file_unused': ('range',),
+    'file_unused': ('ranges',),
   }
   root = Tree({'children': [{}]}, metadata)
   assert root.file_contexts == {'loc': {}}
-  assert root.file_unused == ('range',)
+  assert root.file_unused == ('ranges',)
   child = root.children[0]
   assert child.file_contexts == {'loc': {}}
-  assert child.file_unused == ('range',)
+  assert child.file_unused == ('ranges',)
 
 
 def test_tree_contexts_merge_node_over_file_with_scope_map(load_records):
@@ -713,12 +731,12 @@ def test_load_reports_material_checks_at_the_right_level(caplog):
     'trees': {
       '_synthetic_source': {
         'contexts': {'stray': {}},
-        'unused': ['range'],
+        'unused': ['ranges'],
         'repositories': ['gm', 'nowhere'],
         'taxonomies': [
           {
             'taxon': 'cyathocystis',
-            'range': None,
+            'ranges': None,
             'material': [
               {'catalogNumbers': ['ZZZZ 1'], 'context': 'missing-ctx'},
               {'catalogNumbers': ['MCZ 1'], 'castOf': 'MCZ 2'},
@@ -738,7 +756,7 @@ def test_load_reports_material_checks_at_the_right_level(caplog):
   assert any(
     '_synthetic_source at 0' in m and 'no resolvable repository prefix' in m for m in warnings
   )
-  assert any('`range` is listed as `unused`' in m for m in errors)
+  assert any('`ranges` is listed as `unused`' in m for m in errors)
   assert any('context "missing-ctx" is not defined' in m for m in errors)
   assert any('figure "of" value "nope"' in m for m in errors)
   assert any('cited entry carries `contexts`' in m for m in errors)

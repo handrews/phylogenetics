@@ -150,7 +150,7 @@ property.
 |---|---|---|
 | `location` | 24 | 96.0% |
 | `unit` | 23 | 92.0% |
-| `notes` | 8 | 32.0% |
+| `notes` | 7 | 28.0% |
 | `biozone` | 3 | 12.0% |
 | `biozoneRange` | 1 | 4.0% |
 | `fauna` | 1 | 4.0% |
@@ -232,14 +232,14 @@ property.
 | `pages` | 223 | 2.5% |
 | `illustrations` | 125 | 1.4% |
 
-### `materialEntry` -- 611 instances in `data/`
+### `materialEntry` -- 608 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `catalogNumbers` | 605 | 99.0% |
-| `role` | 546 | 89.4% |
+| `catalogNumbers` | 602 | 99.0% |
+| `role` | 544 | 89.5% |
 | `context` | 26 | 4.3% |
-| `notes` | 18 | 2.9% |
+| `notes` | 19 | 3.1% |
 | `label` | 5 | 0.8% |
 | `repository` | 3 | 0.5% |
 | `count` | 1 | 0.2% |
@@ -264,7 +264,7 @@ property.
 |---|---|---|
 | `material` | 104 | 1.9% |
 | `contexts` | 20 | 0.4% |
-| `range` | 9 | 0.2% |
+| `ranges` | 9 | 0.2% |
 | `occurrences` | 0 | 0.0% |
 | `specimens` | 0 | 0.0% |
 
@@ -610,12 +610,12 @@ property.
 
 ### `phylogeny#/$defs/role`
 
-12 of 12 members used, 560 occurrences.
+12 of 12 members used, 558 occurrences.
 
 | value | count |
 |---|---|
 | `'paratype'` | 378 |
-| `'holotype'` | 83 |
+| `'holotype'` | 81 |
 | `'plesiotype'` | 75 |
 | `'syntype'` | 6 |
 | `'hypotype'` | 5 |
@@ -678,7 +678,7 @@ property.
 
 0 of 5 members used, 0 occurrences.
 
-**Never used (5):** `'material'`, `'illustrations'`, `'contexts'`, `'range'`, `'synonyms'`
+**Never used (5):** `'material'`, `'illustrations'`, `'contexts'`, `'ranges'`, `'synonyms'`
 
 ### `phylogeny#/$defs/uncertaintyFields/properties/sensu`
 
@@ -705,9 +705,9 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/editorialObject/properties/inferred` | boolean/array | listx4, boolx3 | - | - |
 | `phylogeny#/$defs/locationFields/properties/illustrations` | array/null | listx125 | - | null |
 | `phylogeny#/$defs/materialsFields/properties/material` | array/null | listx104 | - | null |
+| `phylogeny#/$defs/materialsFields/properties/ranges` | array/null | listx9 | - | null |
 | `phylogeny#/$defs/person/properties/death` | integer/null | intx80, nullx1 | - | - |
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
-| `phylogeny#/$defs/range` | object/null | dictx9 | - | null |
 | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items` | array/string/integer | strx1 | `E23470` | array, integer |
 | `phylogeny#/$defs/taxonRecord/properties/name` | string/null | strx2467, nullx196 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
 

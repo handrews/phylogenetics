@@ -32,8 +32,8 @@ taxonomies:
               - Prüm Basin
               - MTB 5704 Prüm
               - r 329375 / h 635250
-          range:
-            stage: Eifelian
+          ranges:
+          - stage: Eifelian
           new: true
         - taxon: prescheri_grigo_2000
           pages: 94
