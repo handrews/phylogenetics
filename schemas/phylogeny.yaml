@@ -436,7 +436,10 @@ $defs:
         type: boolean
         default: false
       holotype:
-        $comment: LEGACY, moves to the protologue node at stage 2 of the material refactor.
+        $comment: |
+          Survives for one record, grayae_bather_1915, whose protologue
+          (1915b_bather) has no tree; every other holotype is a `material`
+          entry on the protologue node.
         type: object
         additionalProperties:
           type: array
@@ -643,24 +646,6 @@ $defs:
         type: [array, "null"]
         items:
           $ref: "#/$defs/range"
-      # LEGACY (removed at stage 2): the shapes the migration converts.
-      occurrences:
-        $comment: LEGACY
-        type: array
-        items:
-          $ref: "#/$defs/occurrence"
-      specimens:
-        $comment: LEGACY
-        $ref: "#/$defs/specimens"
-    dependentSchemas:
-      # A node is written in the new shape or the old, never both.
-      material: &newShapeOnly
-        properties:
-          occurrences: false
-          specimens: false
-      contexts: *newShapeOnly
-      ranges: *newShapeOnly
-
 
   citedAct:
     $comment: |
@@ -800,87 +785,6 @@ $defs:
         type: boolean
         default: false
 
-  basicOccurrence:
-    type: object
-    properties:
-      eon:
-        $ref: "#/$defs/eon"
-      era:
-        $ref: "#/$defs/era"
-      period:
-        $ref: "#/$defs/period"
-      series:
-        $ref: "#/$defs/series"
-      seriesBoundary:
-        $ref: "#/$defs/seriesRange"
-      seriesRange:
-        $ref: "#/$defs/seriesRange"
-      stage:
-        $ref: "#/$defs/stage"
-      stageBoundary:
-        $ref: "#/$defs/stageRange"
-      stageRange:
-        $ref: "#/$defs/stageRange"
-      stageModifier:
-        $ref: "#/$defs/stageModifier"
-      superunit:
-        type: string
-      unit:
-        type: [string, array]
-        items:
-          type: string
-      subunit:
-        type: string
-      section:
-        type: string
-      biota:
-        type: string
-      biozone:
-        type: string
-      biozones:
-        type: array
-        items:
-          type: string
-        minItems: 2
-      biozoneRange:
-        type: array
-        items:
-          type: string
-        minItems: 2
-        maxItems: 2
-      fauna:
-        type: array
-        items:
-          type: string
-      paleocontinent:
-        type: string
-      location:
-        type: array
-        items:
-          type: string
-      sources:
-        type: array
-        items:
-          $ref: "#/$defs/sourceId"
-      notes:
-        type: string
-      specimens:
-        $comment: LEGACY, removed at stage 2 of the material refactor.
-        type: object
-        additionalProperties:
-          type: object
-          items:
-            type: [string, integer, array]
-            items:
-              type: [string, integer]
-      possibleSpecimens:
-        type: object
-        additionalProperties:
-          type: object
-          items:
-            type: [string, array]
-            items:
-              type: string
   editorialObject:
     description: |
       The editor's layer beside the printed fields, never a replacement
@@ -931,32 +835,6 @@ $defs:
           information for a researcher to determine whether the inference
           or error judgement is correct, or to look up relevant sources.
         type: string
-  occurrence:
-    $ref: "#/$defs/basicOccurrence"
-    properties:
-      tentative:
-        type: boolean
-        default: false
-      localPeriod:
-        type: string
-      localSeries:
-        $ref: "#/$defs/localSeries"
-      localSeriesBoundary:
-        $ref: "#/$defs/localSeriesRange"
-      localSeriesRange:
-        $ref: "#/$defs/localSeriesRange"
-      localStage:
-        $ref: "#/$defs/localStage"
-      localStageBoundary:
-        $ref: "#/$defs/localStageRange"
-      localStageRange:
-        $ref: "#/$defs/localStageRange"
-      localStageModifier:
-        $ref: "#/$defs/stageModifier"
-      inferred:
-        $ref: "#/$defs/basicOccurrence"
-        unevaluatedProperties: false
-    unevaluatedProperties: false
   eon:
     type: string
     enum:
@@ -1576,58 +1454,6 @@ $defs:
           $ref: "#/$defs/role"
         notes:
           type: string
-  specimen:
-    $comment: LEGACY, removed at stage 2 of the material refactor.
-    oneOf:
-    - type: string
-    - type: object
-      properties:
-        repository:
-          type: string
-        id:
-          $ref: "#/$defs/citationNumber"
-        illustrations:
-          type: array
-          items:
-            $ref: "#/$defs/illustration"
-  specimens:
-    $comment: LEGACY, removed at stage 2 of the material refactor.
-    type: object
-    properties:
-      repository:
-        type: string
-      holotype:
-        $ref: "#/$defs/specimen"
-      allotype:
-        $ref: "#/$defs/specimen"
-      lectotype:
-        $ref: "#/$defs/specimen"
-      neotype:
-        $ref: "#/$defs/specimen"
-      syntype:
-        $ref: "#/$defs/specimen"
-    additionalProperties:
-      type: array
-      items:
-        type: [string, array]
-        items:
-          $ref: "#/$defs/specimen"
-    propertyNames:
-      enum:
-      - holotype
-      - allotype
-      - lectotype
-      - neotype
-      - syntype
-      - hypotypes
-      - kleptotypes
-      - paralectotypes
-      - paratypes
-      - plesiotypes
-      - syntypes
-      - topotypes
-      - additional
-      - unknowntypes
   publicationYear:
     $comment: Linnaeus was born in 1707.  The upper bound is fragile but
       helpful for now; apologies to the future.

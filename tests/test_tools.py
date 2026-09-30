@@ -45,7 +45,7 @@ def test_source_coverage_backs_refusals(question, store):
     assert coverage['known']
     if not coverage['entered']:
       continue
-    declared = (coverage['audit'].get('coverage') or {}).get(gap['parameters']['kind'])
+    declared = coverage['coverage'].get(gap['parameters']['kind'])
     assert declared in ('none', 'partly'), (question['id'], gap['parameters'], declared)
 
 
@@ -309,8 +309,10 @@ def test_statements_in_words(store):
   )
   lines = store.statements('Rhenopyrgus viviani', kind='material')['rendered'].splitlines()
   assert lines[0] == 'Statements about Rhenopyrgus viviani Ewin et al. 2020'
-  assert '  2020  Ewin et al.  holotypes: NHMUK EE16642 (pp. 120–122)' in lines
-  assert '  2020  Ewin et al.  paratypes: NHMUK EE15752, EE15755 (pp. 120–122)' in lines
+  assert '  2020  Ewin et al.  holotype: NHMUK EE16642 (pp. 120–122)' in lines
+  assert (
+    '  2020  Ewin et al.  paratype: NHMUK EE15752–NHMUK EE15755, MPEP 1126.1 (pp. 120–122)' in lines
+  )
 
 
 def test_rank_variants_linked(store):
@@ -652,3 +654,66 @@ def test_followed_acts_and_sensu_words(store):
   assert words.claim_words(usage) == 'cites the name sensu stricto'
   node = {'key': 'crinoidea', 'name': 'Crinoidea', 'rank': 'Class', 'sensu': 'stricto'}
   assert node_label(node).endswith('Crinoidea (s. s.)')
+
+
+def test_material_words(store):
+  claim_words = store.words.claim_words
+
+  def material(kind, **fields):
+    return claim_words({'kind': 'material', 'materialKind': kind, **fields})
+
+  assert material('specimen', role='lectotype', ids=['GSC 752']) == 'lectotype: GSC 752'
+  assert material('specimen', ids=[['GSC 100', 'GSC 105'], 'GSC 7']) == (
+    'specimens: GSC 100–GSC 105, GSC 7'
+  )
+  assert material('specimen', label='the Bigsby specimen', role='syntype') == (
+    'syntype: the Bigsby specimen'
+  )
+  assert material('specimen', count=5, role='paratype') == 'paratype: 5 specimens'
+  assert (
+    material(
+      'specimen',
+      ids=['XYZ 1'],
+      repository='nhmuk',
+      repositoryVia='explicit',
+      preparation='latex cast',
+      castOf='XYZ 2',
+      contextKey='quarry',
+      contextTentative=True,
+    )
+    == 'specimens: XYZ 1 (latex cast) cast of XYZ 2 [nhmuk] (quarry?)'
+  )
+  assert material('specimen', ids=['GSC 1'], repository='gsc', repositoryVia='prefix') == (
+    'specimens: GSC 1'
+  )
+  assert (
+    material(
+      'occurrence',
+      contextKey='quarry',
+      occurrence={'stage': 'Telychian', 'unit': ['Cybèle Member'], 'localityNumbers': ['SH-1']},
+    )
+    == 'occurrence quarry: Telychian; Cybèle Member; SH-1'
+  )
+  assert material('occurrence', contextKey='bare', occurrence={'notes': 'none'}) == (
+    'occurrence bare'
+  )
+  assert (
+    material(
+      'illustration',
+      illustration={'plate': 2, 'figures': [[1, 4]], 'non': [6]},
+      of=['GSC 752', 'GSC 753'],
+      depicts='cast',
+    )
+    == 'illustration: pl. 2, fig. 1–4, non fig. 6 of GSC 752, GSC 753 (cast)'
+  )
+  assert material('illustration', illustration={'plate': 1, 'uncertain': True}) == (
+    'illustration: pl. 1?'
+  )
+  assert (
+    material(
+      'range',
+      range={'series': 'Ordovician', 'regions': ['Ottawa', {'value': 'Quebec', 'tentative': True}]},
+    )
+    == 'range: Ordovician; Ottawa, Quebec?'
+  )
+  assert material('range', range={}) == 'range'

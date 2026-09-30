@@ -111,6 +111,7 @@ def _load_trees(data):
     file_meta = {
       'file_contexts': opinion.get('contexts') or {},
       'file_unused': tuple(opinion.get('unused') or ()),
+      'file_repositories': tuple(opinion.get('repositories') or ()),
     }
 
     position = 0
@@ -229,6 +230,7 @@ def load(drafts=False, tolerate=False):
   to see everything before stopping."""
   with counting_errors() as errors:
     data = load_files(drafts=drafts)
+    material.set_repository_registry(data.get('repositories'))
     for field, cls in (
       ('authors', Author),
       ('publications', Publication),

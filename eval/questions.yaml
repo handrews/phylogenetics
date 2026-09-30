@@ -271,7 +271,7 @@
     - tool: statements
       parameters: {record: viviani_ewin_martin.m_isotalo_zamora_2020}
     shows:
-    - "holotypes: NHMUK EE16642"
+    - "holotype: NHMUK EE16642"
     answer: |
       NHMUK EE16642, from the Cybèle Member, Jupiter Formation (Telychian),
       Rock Pool Ledge, Jupiter River Section, Anticosti Island, Québec,
@@ -293,7 +293,7 @@
     - tool: statements
       parameters: {record: grayae_bather_1915, source: 2020_ewin_martin.m_isotalo_zamora}
     shows:
-    - "holotypes: NHMUK E23470"
+    - "holotype: NHMUK E23470"
     answer: |
       NHMUK E23470, from the Lady Burn Starfish Bed, Farden Member, South
       Threave Formation, Drummuck Group, near Girvan, Scotland, UK (Katian,

@@ -6,8 +6,11 @@ Pure functions over a raw node dict and the file-level maps, so
 loader (`load.py`) runs them over the corpus's own documents. Each check
 returns a list of ``(level, message)`` pairs, ``level`` being ``'error'``
 or ``'warning'``; the caller adds the source key and, for a per-node
-check, the node path. `repository_of` is exported for the claims
-extractor (stage 2).
+check, the node path. `repository_of`, `context_key` and
+`entry_identifies` are exported for the claims extractor
+(`phylohist.claims`); `set_repository_registry`/`repository_registry`
+hold the loaded `data/repositories.yaml`, set once by `load.py`, so the
+extractor can reach it the way it reaches `Source`.
 """
 
 import re
@@ -16,6 +19,21 @@ from .taxa import Tree
 
 _DIGIT_RE = re.compile(r'\d')
 _WHITESPACE_RE = re.compile(r'\s+')
+
+
+_registry = {}
+
+
+def set_repository_registry(data):
+  """Register `data/repositories.yaml`'s content once (`loader.load.load`),
+  so the claim extractor can reach it the way it reaches `Source`."""
+  global _registry
+  _registry = dict(data or {})
+
+
+def repository_registry():
+  """The registered repositories, keyed by registry key."""
+  return _registry
 
 
 def _fold(text):
@@ -159,7 +177,7 @@ def file_repositories_used(document, repositories):
   return messages
 
 
-def _context_key(ref):
+def context_key(ref):
   """The key a `contextRef` names, whichever of its two shapes it is."""
   return ref if isinstance(ref, str) else ref.get('key')
 
@@ -173,7 +191,7 @@ def context_refs(node, node_contexts, file_contexts):
     ref = entry.get('context')
     if ref is None:
       continue
-    key = _context_key(ref)
+    key = context_key(ref)
     if key in node_contexts:
       if key in file_contexts:
         messages.append(('warning', f'context "{key}" on the node shadows a file-level context'))
@@ -193,14 +211,14 @@ def unreferenced_file_contexts(document):
     for entry in node.get('material') or ():
       ref = entry.get('context')
       if ref is not None:
-        referenced.add(_context_key(ref))
+        referenced.add(context_key(ref))
   return [
     ('warning', f'context "{key}" is defined but referenced by no material entry')
     for key in sorted(set(file_contexts) - referenced)
   ]
 
 
-def _entry_identifies(entry, value):
+def entry_identifies(entry, value):
   """Whether `value` names `entry`, by `label` or by any element of a
   `catalogNumbers` entry (a range pair's endpoints count separately)."""
   if entry.get('label') == value:
@@ -229,7 +247,7 @@ def figure_refs(node, is_cited=False):
     if of is None:
       continue
     for value in of if isinstance(of, list) else [of]:
-      matches = sum(1 for entry in entries if _entry_identifies(entry, value))
+      matches = sum(1 for entry in entries if entry_identifies(entry, value))
       if matches != 1:
         messages.append(
           ('error', f'figure "of" value "{value}" matches {matches} material entries, not 1'),
@@ -248,7 +266,7 @@ def cast_refs(node):
     value = entry.get('castOf')
     if value is None:
       continue
-    matches = [other for other in entries if _entry_identifies(other, value)]
+    matches = [other for other in entries if entry_identifies(other, value)]
     if len(matches) != 1:
       messages.append(
         ('error', f'castOf "{value}" matches {len(matches)} material entries, not 1'),
