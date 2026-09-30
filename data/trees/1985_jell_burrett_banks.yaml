@@ -56,9 +56,9 @@ taxonomies:
       - taxon: primotica_henderson_shergold_1971
         type: true
         specimens:
-          holotype: CPCl1395
+          holotype: CPC11395
           paratypes:
-          - CPCl1396
+          - CPC11396
           unknowntypes:
           - NMVP107479
         notes: |

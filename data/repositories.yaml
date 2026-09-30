@@ -1,11 +1,3 @@
-# Every holder a catalog number in the trees may name, organised by holder:
-# an institution, a collection inside one (`within`), or a person. `subject`
-# says what an entry's numbers identify. `prefixes` lists the printed
-# prefixes that resolve to the entry and `formerly` its earlier names, which
-# resolve too; a collection may print its parent's prefix and list none of
-# its own. When two entries claim the same prefix, a tree file whose numbers
-# use it lists the entry it means under its own `repositories`. An entry
-# marked "unconfirmed" in `notes` has a name the corpus does not state.
 amnh:
   name: American Museum of Natural History
   type: institution
@@ -27,20 +19,25 @@ cpc:
   place: Canberra
   prefixes: [CPC]
 dpo:
-  name: unknown
-  type: unknown
+  name: Oviedo University, Department of Palaeontology
+  type: institution
   prefixes: [DPO]
-  notes: Unconfirmed; one number in Müller & Hahn 2010.
+  place: Oviedo, Spain
 fmnh:
   name: Field Museum of Natural History
   type: institution
   place: Chicago
   prefixes: [FMNH, PE, FMNH PE, CFM, CFMP, CFMPE, CFMUC]
 gcm:
-  name: unknown
-  type: unknown
+  name: Grand Canyon Museum
+  type: institution
   prefixes: [GCM]
-  notes: Unconfirmed; Sprinkle 1973.
+geo-prague:
+  name: Geological Survey, Prague
+  type: institution
+  prefixes: [OF]
+  place: Prague
+  notes: Abbreviation not explaine; Fatka & Kordule 1985.
 gik:
   name: Geologisches Institut der Universität zu Köln
   type: institution
@@ -62,28 +59,10 @@ gsc:
   place: Ottawa
   prefixes: [GSC]
   formerly: [Canadian Geological Survey, Museum of the Geological Survey of Canada]
-gsg:
-  name: unknown
-  type: unknown
-  prefixes: [GSG]
-  notes: Unconfirmed; Sprinkle 1973.
-gsq-f:
-  name: Geological Survey of Queensland, fossil register
-  type: institution
-  place: Brisbane
-  subject: specimens
-  prefixes: [F.]
-  notes: Unconfirmed; the "F." numbers of Whitehouse 1941.
 isu:
-  name: unknown
-  type: unknown
+  name: Idaho State University
+  type: institution
   prefixes: [ISU]
-  notes: Unconfirmed; Sprinkle 1973. Perhaps Idaho State University.
-m:
-  name: unknown
-  type: unknown
-  prefixes: [M]
-  notes: Unconfirmed; one number in Müller & Hahn 2010.
 mcz:
   name: Museum of Comparative Zoology, Harvard University
   type: institution
@@ -99,6 +78,10 @@ mpz:
   type: institution
   place: Zaragoza
   prefixes: [MPZ]
+müller.p:
+  name: Müller collection
+  type: person
+  prefixes: [M]
 nhmuk:
   name: Natural History Museum
   type: institution
@@ -142,16 +125,12 @@ nysm:
   place: Albany
   prefixes: [NYSM]
   formerly: [Collection New York State Museum]
-of:
-  name: unknown
-  type: unknown
-  prefixes: [OF]
-  notes: Unconfirmed; one number in Fatka & Kordule 1985.
 pwl:
-  name: unknown
-  type: unknown
+  name: Landessammlung für Naturkunde
+  type: institution
+  place: Mainz
   prefixes: [PWL]
-  notes: Unconfirmed; the Hunsrück Slate numbers of Müller & Hahn 2010.
+  notes: LS suffix denotes silicone casts (Abgüsse); Müller & Hahn 2010.
 qm:
   name: Queensland Museum
   type: institution
@@ -173,32 +152,26 @@ rievers:
   type: person
   place: Enkirch (Moselle)
   prefixes: [RVS]
-rs:
-  name: unknown
-  type: unknown
-  prefixes: [RS]
-  notes: Unconfirmed; one number in Müller & Hahn 2010.
-s:
-  name: unknown
-  type: unknown
-  prefixes: [S]
-  notes: Unconfirmed; Sprinkle 1973.
 sam:
   name: South Australian Museum
   type: institution
   place: Adelaide
   prefixes: [SAMP]
+seibert.r:
+  name: Seibert collection
+  type: person
+  prefixes: [RS, R]
 tmf:
-  name: Tasmanian Museum, fossil register
+  name: Geological Survey of Tasmania
   type: institution
-  place: Hobart
   prefixes: [TMF]
-  notes: Unconfirmed.
-uc:
+  notes: Possibly in Hobart, Tasmania; Jell, Burrett & Banks 1985.
+u-cincinnati:
   name: University of Cincinnati
   type: institution
   place: Cincinnati
-uc-caster:
+  prefixes: [UC]
+u-cincinnati-caster:
   name: Caster Collection
   type: collection
   within: uc
@@ -207,18 +180,11 @@ uc-caster:
   notes: >
     Latex casts; many of the originals are in the National Museum,
     Prague (Sprinkle 1973).
-uc-museum:
+u-cincinnati-museum:
   name: Museum of Paleontology, University of Cincinnati
   type: collection
   within: uc
   prefixes: [UCMP]
-uc-unresolved:
-  name: unknown
-  type: unknown
-  prefixes: [UC]
-  notes: >
-    Unconfirmed; Sprinkle 1973 (UC 26022, from near Montreal). The
-    University of Chicago's Walker Museum or the University of Cincinnati.
 ucbl-fsl:
   name: Université Claude Bernard Lyon 1, collections de géologie
   type: institution
@@ -238,7 +204,8 @@ uq-f:
   type: collection
   within: uq
   subject: specimens
-  prefixes: [UQF]
+  prefixes: [UQF, F]
+  notes: Whitehouse 1941 appears to use just "F." in print for this.
 uq-l:
   name: University of Queensland, locality register
   type: collection
@@ -246,16 +213,20 @@ uq-l:
   subject: localities
   prefixes: [UQL]
 usgd:
-  name: University of Sydney, Department of Geology
+  name: University of Sydney, Geology Department
   type: institution
   place: Sydney
   prefixes: [USGD]
-  notes: Unconfirmed; the numbers of Webby 1968.
 usnm:
   name: National Museum of Natural History, Smithsonian Institution
   type: institution
   place: Washington
   prefixes: [USNM]
+usnm-springer:
+  name: Springer Collection
+  type: institution
+  within: usnm
+  prefixes: [S]
 usnm-walcott:
   name: Walcott Collection
   type: collection
@@ -271,7 +242,6 @@ uu:
   type: institution
   place: Salt Lake City
   prefixes: [UU]
-  notes: Unconfirmed; Sprinkle 1973 and Lefebvre & Lerosey-Aubril 2018.
 vmm:
   name: Victoria Memorial Museum
   type: institution
