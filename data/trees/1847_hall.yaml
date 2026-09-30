@@ -94,7 +94,7 @@ taxonomies:
         - taxon: anatiformis_hall_1847
           new: true
           pages: 127
-          figures:
+          illustrations:
           - plate: XXIX
             figures:
             - [4a, 4f]
@@ -109,13 +109,13 @@ taxonomies:
     - taxon: peltatum_hall_1847
       new: true
       pages: 277
-      figures:
+      illustrations:
       - plate: LXXV
         figures:
         - 3
     - openTaxon: discophyllum-sp_hall_1847
       pages: 277
-      figures:
+      illustrations:
       - plate: LXXV
         figures:
         - 4

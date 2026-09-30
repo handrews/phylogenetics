@@ -88,7 +88,7 @@ taxonomies:
     children:
     - taxon: coronaeformis_rievers_1961
       type: true
-      figures:
+      illustrations:
       - plate: 1
         figures:
         - [1, 4]

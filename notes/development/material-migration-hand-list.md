@@ -16,7 +16,7 @@ listed repository no number uses, so run the suite after a batch.
   could take the node's one context.
 - data/trees/1961_rievers.yaml, coronaeformis: the holotype's
   identifier is a figure citation. It wants a `label`, `repository:
-  rievers`, and a figure with `of` naming that label.
+  rievers`, and an `illustrations` entry with `of` naming that label.
 - drafts/1927_jaekel.yaml: two long descriptive strings. Each wants a
   `label`, with the holder either a new registry entry (Riksmuseum
   Stockholm; Museum Berlin) or `holder`, and the rest in `notes`.
@@ -51,7 +51,7 @@ Migrated mechanically; re-entry from the paper is stage 3. Until then:
 
 - data/trees/2015_zhao.y.l_peng.j_wu.m.y_luo.x.c_wen.r.q_liu.y.j.yaml,
   yini: an illustration carried a `pages` key (255). Decide whether it
-  is the figure's `page` or belongs to the node's `pages`.
+  is the illustration's `page` or belongs to the node's `pages`.
 - Nodes with exactly one context whose entries carry no `context`: the
   script links an entry to a context only where the old data nested the
   specimen inside the occurrence. Link the rest where the paper says so
@@ -67,6 +67,6 @@ Migrated mechanically; re-entry from the paper is stage 3. Until then:
 Listed so they can be checked: the Hudson drafts' cotypes (`label: A`,
 `B`, `role: cotype`); Bather 1914's A, B and C (labels, `repository:
 vmm` or `holder`, A as the designated holotype, the context link, and
-`of` on the plate figures); Bassler 1936's holotype (`repository: nysm`,
+`of` on the plate `illustrations`); Bassler 1936's holotype (`repository: nysm`,
 `count: 1`); Fay 1962's No. 752 (`role: lectotype`, inferred, with its
 basis) and the lost second syntype.

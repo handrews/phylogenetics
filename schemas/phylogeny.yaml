@@ -62,7 +62,7 @@ $defs:
         uniqueItems: true
         items:
           type: string
-          enum: [material, figures, contexts, range, synonyms]
+          enum: [material, illustrations, contexts, range, synonyms]
       repositories:
         description: |
           The `repositories.yaml` entries this source's catalog numbers draw
@@ -367,7 +367,12 @@ $defs:
       pages:
         $ref: "#/$defs/citationNumbers"
       illustrations:
-        type: array
+        description: |
+          On a primary node, the figures this source prints for it; `null`
+          says the source prints no figure for the node (roadmap G11). On a
+          cited entry, locators for a figure in the cited work; `null` is
+          not allowed there (the loader checks that).
+        type: [array, "null"]
         items:
           $ref: "#/$defs/illustration"
 
@@ -632,10 +637,6 @@ $defs:
         type: [array, "null"]
         items:
           $ref: "#/$defs/materialEntry"
-      figures:
-        type: [array, "null"]
-        items:
-          $ref: "#/$defs/figure"
       contexts:
         $ref: "#/$defs/contexts"
       range:
@@ -655,8 +656,6 @@ $defs:
         properties:
           occurrences: false
           specimens: false
-          illustrations: false
-      figures: *newShapeOnly
       contexts: *newShapeOnly
       range: *newShapeOnly
 
@@ -764,11 +763,14 @@ $defs:
         $ref: "#/$defs/citationNumbers"
       notes:
         type: string
-  figure:
+  illustration:
     description: |
-      A figure printed in this source. `of` names the material entry it
-      depicts, by a catalog number or label on the same node; a figure with
-      no `of` is one the source never ties to a specimen.
+      A figure printed in this source when on a primary node (`of` names the
+      material entry it depicts, by a catalog number or label on the same
+      node; none means the source never ties it to a specimen), or a locator
+      for a figure in the cited work when on a cited entry or inside
+      `authority`, where `of` and `depicts` are not allowed (the loader
+      checks that).
     type: object
     $ref: "#/$defs/figureLocatorFields"
     unevaluatedProperties: false
@@ -793,19 +795,6 @@ $defs:
         description: |
           If true, the assignment of the figured specimen to the taxon is
           uncertain, but no other identifiable taxon was named.
-        type: boolean
-        default: false
-  illustration:
-    description: A locator for a figure in a cited work, inside an authority.
-    $comment: |
-      Until stage 2 of the material refactor this def also serves the legacy
-      node-level `illustrations`, so it stays open to extra properties; it
-      closes (`unevaluatedProperties: false`) when those are migrated to
-      `figures`.
-    type: object
-    $ref: "#/$defs/figureLocatorFields"
-    properties:
-      uncertain:
         type: boolean
         default: false
 

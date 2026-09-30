@@ -184,7 +184,7 @@ def _report_material(data):
       node_contexts = node.get('contexts') or {}
       for level, message in material.context_refs(node, node_contexts, file_contexts):
         _log_material(level, f'{where}: {message}')
-      for level, message in material.figure_refs(node):
+      for level, message in material.figure_refs(node, is_cited):
         _log_material(level, f'{where}: {message}')
       for level, message in material.catalog_numbers(node, repositories, file_repositories):
         _log_material(level, f'{where}: {message}')

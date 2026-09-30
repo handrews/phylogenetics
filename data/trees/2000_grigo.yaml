@@ -17,7 +17,7 @@ taxonomies:
             - GIK 1585
             context: rommersheim-route-b-51
             role: holotype
-          figures:
+          illustrations:
           - page: 93
             figures: 2
           contexts:
@@ -42,7 +42,7 @@ taxonomies:
             - GIK 1586
             context: railway-embankment-near
             role: holotype
-          figures:
+          illustrations:
           - page: 94
             figures: 4
           - page: 94
@@ -87,7 +87,7 @@ taxonomies:
               - catalogNumbers:
                 - GIK 1857
                 context: auberg-near-gerolstein
-              figures:
+              illustrations:
               - page: 96
                 figures:
                 - [8a, 8f]

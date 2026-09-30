@@ -13,7 +13,7 @@ taxonomies:
         new: true
         pages:
         - [532, 533]
-        figures:
+        illustrations:
         - page: 533
           figures: 3
 - taxon: edrioasteroidea
@@ -30,6 +30,6 @@ taxonomies:
         new: true
         pages:
         - [534, 536]
-        figures:
+        illustrations:
         - page: 535
           figures: 4

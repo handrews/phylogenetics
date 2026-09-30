@@ -19,7 +19,7 @@ taxonomies:
   children:
   - taxon: granatum_wahlenberg_1821
     pages: 311
-    figures:
+    illustrations:
     - plate: I
       figures: [1a, 1c]
     synonyms:
@@ -54,7 +54,7 @@ taxonomies:
     questionable: true
     new: true
     pages: 312
-    figures:
+    illustrations:
     - plate: I
       figures:
       - 2
@@ -63,7 +63,7 @@ taxonomies:
     new: true
     pages:
     - [312, 313]
-    figures:
+    illustrations:
     - plate: I
       figures:
       - 3
@@ -73,7 +73,7 @@ taxonomies:
     pages: 313
   - taxon: pomum_gyllenhaal_1772
     pages: 313
-    figures:
+    illustrations:
     - plate: I
       figures:
       - 5a
@@ -106,7 +106,7 @@ taxonomies:
     questionable: true
     pages:
     - [313, 314]
-    figures:
+    illustrations:
     - plate: I
       figures:
       - 5b
@@ -114,7 +114,7 @@ taxonomies:
     pages:
     - [309, 310]
     - 314
-    figures:
+    illustrations:
     - plate: I
       figures:
       - 6
@@ -123,7 +123,7 @@ taxonomies:
       Notes similarity to "E. costatus, Fig. 3", but no species of
       this name defined; Fig. 3 is associated with E. aranea.
     pages: 314
-    figures:
+    illustrations:
     - plate: I
       figures:
       - 7

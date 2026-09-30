@@ -55,7 +55,7 @@ taxonomies:
           pages:
           - [47, 48]
           - 195
-          figures:
+          illustrations:
           - plate: V
             figures:
             - [2, 4]
@@ -74,7 +74,7 @@ taxonomies:
         - taxon: granatum_wahlenberg_1821
           pages:
           - 196
-          figures:
+          illustrations:
           - plate: V
             figures:
             - 1

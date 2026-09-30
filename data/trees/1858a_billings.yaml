@@ -6,26 +6,26 @@ taxonomies:
     children:
     - taxon: squamosus_billings_1854
       pages: 49
-      figures:
+      illustrations:
       - plate: 1
         figures:
         - [1a, 1d]
     - taxon: robustus_billings_1854
       pages: 49
-      figures:
+      illustrations:
       - plate: 1
         figures:
         - 2a
     - taxon: filitextus_billings_1854
       pages: 50
-      figures:
+      illustrations:
       - plate: 2
         figures:
         - 1a
         - 1b
     - taxon: elegans_billings_1857_pleurocystites
       pages: 51
-      figures:
+      illustrations:
       - plate: 2
         figures:
         - [2a, 2d]
@@ -33,7 +33,7 @@ taxonomies:
       pages: 52
     - taxon: anticostensis_billings_1857
       pages: 52
-      figures:
+      illustrations:
       - plate: 1
         figures:
         - 3
@@ -49,7 +49,7 @@ taxonomies:
     children:
     - taxon: multiporus_billings_1854
       pages: 54
-      figures:
+      illustrations:
       - plate: 3
         notes: |
           There are two figures "g" on the plate
@@ -69,7 +69,7 @@ taxonomies:
       - authority:
           source: 1857_billings
           pages: 282
-      figures:
+      illustrations:
       - plate: 4
         figures:
         - [1a, 1h]
@@ -77,7 +77,7 @@ taxonomies:
       - taxon: gracilis_billings_1858
         new: true
         pages: 59
-        figures:
+        illustrations:
         - plate: 4
           figures:
           - 2
@@ -86,7 +86,7 @@ taxonomies:
       - authority:
           source: 1857_billings
           pages: 283
-      figures:
+      illustrations:
       - plate: 4
         figures:
         - [3a, 3d]
@@ -109,7 +109,7 @@ taxonomies:
       - authority:
           source: 1857_billings
           pages: 288
-      figures:
+      illustrations:
       - plate: 5
         figures:
         - 1
@@ -133,7 +133,7 @@ taxonomies:
       - authority:
           source: 1857_billings
           pages: 289
-      figures:
+      illustrations:
       - plate: 6
         figures:
         - [1a, 1e]
@@ -146,7 +146,7 @@ taxonomies:
       - authority:
           source: 1857_billings
           pages: 289
-      figures:
+      illustrations:
       - plate: 6
         figures:
         - [2a, 2f]
@@ -159,7 +159,7 @@ taxonomies:
       - authority:
           source: 1857_billings
           pages: 289
-      figures:
+      illustrations:
       - plate: 6
         figures:
         - 3a
@@ -172,14 +172,14 @@ taxonomies:
     - taxon: murchisoni_billings_1858
       new: true
       pages: 66
-      figures:
+      illustrations:
       - plate: 7
         figures:
         - [1a, 1i]
     - taxon: barrandi_billings_1858
       new: true
       pages: 67
-      figures:
+      illustrations:
       - plate: 7
         figures:
         - [2a, 2c]
@@ -217,7 +217,7 @@ taxonomies:
     - taxon: huxleyi_billings_1858
       new: true
       pages: 72
-      figures:
+      illustrations:
       - page: 73
         figures:
         - 4

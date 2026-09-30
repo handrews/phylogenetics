@@ -20,7 +20,7 @@ taxonomies:
     children:
     - taxon: bigsbyi_billings_1857
       pages: 82
-      figures:
+      illustrations:
       - plate: 8
         figures:
         - 1
@@ -43,7 +43,7 @@ taxonomies:
     children:
     - taxon: dicksoni_billings_1857
       pages: 84
-      figures:
+      illustrations:
       - plate: 8
         figures:
         - 3

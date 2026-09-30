@@ -20,7 +20,7 @@ taxonomies:
         - Page 306, Figure 80
         context: upper-quarry
         role: holotype
-      figures:
+      illustrations:
       - page: 306
         figures:
         - 80
@@ -58,7 +58,7 @@ taxonomies:
     children:
     - taxon: hamptonii_unknown
       pages: 64
-      figures:
+      illustrations:
       - page: 65
         textFigures: 9
         figures: 3
@@ -73,7 +73,7 @@ taxonomies:
     children:
     - taxon: gebhardi_conrad.t.a_1840
       pages: 117
-      figures:
+      illustrations:
       - page: 117
         textFigures: 25
         figures: 4

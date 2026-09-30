@@ -10,7 +10,7 @@ taxonomies:
       - taxon: multiporata_billings_1854
         pages: 216
         new: true
-        figures:
+        illustrations:
         - page: 216
           figures:
           - [1, 6]

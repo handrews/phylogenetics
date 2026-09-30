@@ -3,7 +3,7 @@
 
 Converts the legacy node `specimens`, `occurrences`, node-level
 `illustrations` on non-cited nodes, and `taxa.yaml`'s `holotype` to the
-`material` / `figures` / `contexts` / `range` model of
+`material` / `illustrations` / `contexts` / `range` model of
 `schemas/phylogeny.yaml`, and adds the `repositories` list to the tree
 files whose printed prefixes are claimed by more than one registry entry.
 Kept until stage 4, when the legacy shapes are retired.
@@ -91,7 +91,7 @@ FILE_REPOSITORIES = {
 ELLIPSES = {'...', '…'}
 
 FIGURE_LOCATOR_KEYS = {'plate', 'page', 'figures', 'textFigures', 'notes', 'non'}
-FIGURE_ALLOWED_EXTRA = {'uncertain'}  # plus 'of'/'depicts', never set by this script
+FIGURE_ALLOWED_EXTRA = {'uncertain', 'of', 'depicts'}  # 'of'/'depicts' are never set by this script
 
 # Fields a legacy `occurrence` carries that become `context` verbatim, minus
 # the ones rule 3 explicitly excludes.
@@ -146,7 +146,7 @@ LOCAL_TIME_FIELD_KEYS = {
 # Child-node-bearing keys we recurse into, mirroring
 # `phylohist.loader.taxa.Tree.RELATED_AXES`/`CITED_AXES` exactly: a node
 # reached through a "cited" axis is a cited entry (a synonymy entry, an
-# earlier state this source cites) and never carries `material`/`figures`/
+# earlier state this source cites) and never carries `material`/
 # `contexts`/`range` (`phylohist.loader.material.null_material`), whether or
 # not it has its own `authority` sub-object. `children` always resets to
 # "not cited", regardless of the current node's own status. `authority`
@@ -644,10 +644,10 @@ class Migrator:
       )
     return rng
 
-  # -- rule 4: node-level illustrations -> figures -------------------------
+  # -- rule 4: node-level illustrations, normalised in place ---------------
 
   def convert_illustrations(self, illustrations, where):
-    figures = []
+    normalised = []
     for ill in illustrations:
       fig = {}
       extra_todo = []
@@ -662,8 +662,8 @@ class Migrator:
           extra_todo.append(f"unrecognised illustration key '{k}' ({v!r})")
       if extra_todo:
         self.add_todo(where, 'figure conversion: ' + '; '.join(extra_todo))
-      figures.append(fig)
-    return figures
+      normalised.append(fig)
+    return normalised
 
   # -- per-node walk -------------------------------------------------------
 
@@ -676,10 +676,10 @@ class Migrator:
     if is_cited:
       # A cited entry (a synonymy entry, an earlier state this source
       # cites) locates the CITED work's own material inside its own
-      # `authority`; it never carries `material`/`figures`/`contexts`/
-      # `range` itself (phylohist.loader.material.null_material), so a
-      # legacy `illustrations` here is left exactly as printed -- it is
-      # the permanent `illustration` locator shape, not migrated.
+      # `authority`; it never carries `material`/`contexts`/`range`
+      # itself (phylohist.loader.material.null_material), and its
+      # `illustrations` locate a figure in the cited work, so they are left
+      # exactly as printed.
       legacy_here = [k for k in ('specimens', 'occurrences', 'illustrations') if k in node]
       if legacy_here:
         if 'specimens' in node or 'occurrences' in node:
@@ -701,7 +701,6 @@ class Migrator:
     node_contexts = {}
     range_result = None
     changed = False
-    figures = None
 
     # Figure out where the legacy blob sat so the new fields can take
     # roughly its place (rule 6: preserve node order for everything else).
@@ -727,10 +726,15 @@ class Migrator:
       del node['occurrences']
       changed = True
 
+    # The node-level list keeps its name and place; only its entries are
+    # normalised (a re-run changes nothing).
     if 'illustrations' in node and isinstance(node['illustrations'], list):
-      figures = self.convert_illustrations(node['illustrations'], where)
-      del node['illustrations']
-      changed = True
+      old = node['illustrations']
+      normalised = self.convert_illustrations(old, where)
+      stats.figures += len(normalised)
+      if normalised != list(old):
+        node['illustrations'] = normalised
+        changed = True
 
     # Insert the new fields at the old blob's position, in a fixed order,
     # so the rest of the node's keys keep their relative order.
@@ -746,9 +750,6 @@ class Migrator:
     if material_entries:
       set_field('material', material_entries)
       stats.entries += len(material_entries)
-    if figures:
-      set_field('figures', figures)
-      stats.figures += len(figures)
     if node_contexts:
       set_field('contexts', node_contexts)
       stats.contexts += len(node_contexts)

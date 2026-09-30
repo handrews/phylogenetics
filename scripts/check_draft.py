@@ -6,13 +6,16 @@ Validates the draft against the tree schema the loader uses, then lists the
 taxon keys, author keys and source keys the draft cites that have no record
 yet, and the catalog numbers whose prefix resolves to no repository (also
 reported by name, like a missing record). It then runs the material checks
-(`phylohist.loader.material`) over the draft's nodes: a null
-`material`/`figures`/`contexts`/`range` on a cited entry, a `unused` field
-still present on a node, an ellipsis or an ambiguous prefix in a catalog
-number, a `repositories` list naming a missing or unused entry, and a
-dangling `context`, figure `of` or `castOf` are all printed with the node's path. Exit status 1
-on a schema failure or any of those, 0 otherwise; the unresolved lists are
-always printed, since a draft normally needs new records.
+(`phylohist.loader.material`) over the draft's nodes: a cited entry carrying
+`material`/`contexts`/`range`, a null `illustrations`, or an `of`/`depicts`
+in its `illustrations` (or in an `authority`'s); a null `material`,
+`illustrations`, `contexts` or `range` on a primary node (only an auditor
+sets nulls); a `unused` field still present on a node; an ellipsis or an
+ambiguous prefix in a catalog number; a `repositories` list naming a missing
+or unused entry; and a dangling `context`, figure `of` or `castOf`. Each is
+printed with the node's path. Exit status 1 on a schema failure or any of
+those, 0 otherwise; the unresolved lists are always printed, since a draft
+normally needs new records.
 """
 
 import pathlib
@@ -56,6 +59,20 @@ def walk(node, taxa, authors, sources):
       walk(value, taxa, authors, sources)
 
 
+def draft_nulls(node, is_cited):
+  """A draft never emits `null` for a nullable field on a primary node
+  (roadmap G11): a model that has not found the content would write a false
+  "the source prints none"; only the auditor sets nulls. (On a cited entry
+  `null_material` already reports them.)"""
+  if is_cited:
+    return []
+  return [
+    ('error', f'draft carries `{field}: null`; only an auditor sets nulls')
+    for field in material.NULLABLE_FIELDS
+    if field in node and node[field] is None
+  ]
+
+
 def check_material(draft, repositories):
   """`(messages, prefixes)`: every `material.py` check's `(level, message)`
   over the draft, the per-node ones prefixed with the node's path, and the
@@ -74,10 +91,11 @@ def check_material(draft, repositories):
     node_contexts = node.get('contexts') or {}
     for check, args in (
       (material.context_refs, (node, node_contexts, file_contexts)),
-      (material.figure_refs, (node,)),
+      (material.figure_refs, (node, is_cited)),
       (material.catalog_numbers, (node, repositories, file_repositories)),
       (material.cast_refs, (node,)),
       (material.null_material, (node, is_cited)),
+      (draft_nulls, (node, is_cited)),
     ):
       messages.extend((level, f'{path}: {message}') for level, message in check(*args))
     prefixes.extend(material.unresolved_catalog_numbers(node, repositories, file_repositories))

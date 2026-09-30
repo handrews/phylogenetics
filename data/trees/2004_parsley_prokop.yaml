@@ -9,7 +9,7 @@ taxonomies:
         type: true
         pages:
         - [151, 152]
-        figures:
+        illustrations:
         - plate: 1
           figures:
           - [1, 7]
@@ -21,7 +21,7 @@ taxonomies:
           year: 1961
           pages: 42
         pages: 152
-        figures:
+        illustrations:
         - plate: 1
           figures:
           - [8, 9]
@@ -34,7 +34,7 @@ taxonomies:
       - taxon: priscus_barrande_1846
         type: true
         pages: 154
-        figures:
+        illustrations:
         - page: 153
           figures:
           - [1D, 1G]
@@ -52,7 +52,7 @@ taxonomies:
             - [7a, 7c]
         pages:
         - [154, 155]
-        figures:
+        illustrations:
         - page: 153
           figures:
           - [1A, 1C]

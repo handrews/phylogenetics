@@ -127,7 +127,7 @@ taxonomies:
         material:
         - catalogNumbers:
           - 'Riksmuseum, Stockholm ("Orig. Riksmuseum. Stockholm," plate caption p. 5): the sole specimen on which the genus and species are founded (p. 1); no catalogue number or type-status word is printed'
-        figures:
+        illustrations:
         - plate: 1
           figures: [1, 2, 3]
           notes: |
@@ -176,7 +176,7 @@ taxonomies:
         material:
         - catalogNumbers:
           - Museum Berlin (plate caption, p. 5); cited comparative material, not new here, refigured from Jaekel's 1918 work
-        figures:
+        illustrations:
         - plate: 1
           figures: [4, 5, 6]
           notes: |

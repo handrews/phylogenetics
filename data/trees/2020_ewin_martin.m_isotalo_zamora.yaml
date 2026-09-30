@@ -148,7 +148,7 @@ taxonomies:
               - catalogNumbers:
                 - EE 16642
                 role: holotype
-              figures:
+              illustrations:
               - figures:
                 - 2
                 - [4, 5]
@@ -188,7 +188,7 @@ taxonomies:
               - catalogNumbers:
                 - E 62753
                 context: newlands-farm
-              figures:
+              illustrations:
               - figures:
                 - "3.3"
                 - "3.4"
@@ -225,7 +225,7 @@ taxonomies:
               - catalogNumbers:
                 - EE 16254
                 context: girvan
-              figures:
+              illustrations:
               - figures:
                 - "3.5"
               contexts:
@@ -271,7 +271,7 @@ taxonomies:
                 - - UCBL-FSL 713313
                   - UCBL-FSL 713315
                 context: pont-sup-rieur
-              figures:
+              illustrations:
               - page: 121
                 figures:
                 - ["3.6", "3.7"]

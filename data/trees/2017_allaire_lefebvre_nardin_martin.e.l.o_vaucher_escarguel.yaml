@@ -18,7 +18,7 @@ taxonomies:
           type: true
           pages:
           - [697, 701]
-          figures:
+          illustrations:
           - page: 698
             figures: 7
           - page: 700
@@ -26,7 +26,7 @@ taxonomies:
         - taxon: fraga_chauvel_1971
           pages:
           - [701, 703]
-          figures:
+          illustrations:
           - page: 702
             figures:
             - ["9.1", "9.4"]
@@ -50,7 +50,7 @@ taxonomies:
         - taxon: grandis_chauvel_1971
           pages:
           - [703, 704]
-          figures:
+          illustrations:
           - page: 702
             figures:
             - ["9.5", "9.7"]
@@ -61,7 +61,7 @@ taxonomies:
         - taxon: havliceki_chauvel_1978
           pages:
           - [704, 707]
-          figures:
+          illustrations:
           - page: 705
             figures: 11
           - page: 706
@@ -81,7 +81,7 @@ taxonomies:
         - taxon: zagoraensis_chauvel_1971
           pages:
           - [707, 712]
-          figures:
+          illustrations:
           - page: 710
             figures: 14
           - page: 712

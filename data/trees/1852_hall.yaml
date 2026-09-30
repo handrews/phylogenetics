@@ -172,7 +172,7 @@ taxonomies:
       children:
       - taxon: jewettii_hall_1852
         pages: 239
-        figures:
+        illustrations:
         - plate: L
           figures:
           - [1, 11]
@@ -180,7 +180,7 @@ taxonomies:
         children:
         - openTaxon: jewettii-var_hall_1852
           questionable: true
-          figures:
+          illustrations:
           - plate: L
             figures:
             - [12, 16]
@@ -188,7 +188,7 @@ taxonomies:
       children:
       - taxon: elegans_hall_1852
         pages: 243
-        figures:
+        illustrations:
         - plate: LI
           figures:
           - [1, 17]
@@ -206,7 +206,7 @@ taxonomies:
       children:
       - taxon: parasitica_hall_1852
         pages: 246
-        figures:
+        illustrations:
         - plate: LI
           figures:
           - [18, 20]
