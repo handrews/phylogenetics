@@ -14,11 +14,17 @@ into the project's own environment.
 
 Usage:
     python scripts/migrate_material.py [--root ROOT] [--write] [--report]
+    python scripts/migrate_material.py --compact [--root ROOT] [--write]
 
     --root ROOT   Repository root containing data/trees, data/taxa.yaml,
                   drafts/ (default: the parent of this script's directory).
     --write       Write the changed files. Without it nothing is written.
     --report      Print the migration report (counts, hoists, TODOs).
+    --compact     Instead of migrating, merge consecutive `material` entries
+                  that carry nothing but `catalogNumbers`, the same `role`
+                  and the same `context` into one entry (see
+                  `compact_material`), in every tree file under data/trees
+                  and drafts; write only the files it changed.
 """
 
 import argparse
@@ -29,8 +35,11 @@ import os
 import re
 from collections import defaultdict
 
-from ruamel.yaml import YAML
-from ruamel.yaml.comments import CommentedMap, CommentedSeq
+try:
+  from ruamel.yaml import YAML
+  from ruamel.yaml.comments import CommentedMap, CommentedSeq
+except ImportError:  # only the pure helpers (`compact_material`) work without it
+  YAML = CommentedMap = CommentedSeq = None
 
 # --------------------------------------------------------------------------
 # YAML I/O tuned to preserve the hand-edited style of these files as far as
@@ -169,6 +178,56 @@ CHILD_SINGLE_KEYS = [
   ('lapsus', False),
   ('lapsusFor', False),
 ]
+
+
+# -- --compact: merge runs of number-only entries ----------------------------
+
+# The only fields a material entry may carry and still be merged into a run.
+COMPACTABLE_KEYS = frozenset({'catalogNumbers', 'role', 'context'})
+
+
+def _has_comment(obj):
+  """True when a ruamel node carries a comment of its own (plain Python
+  objects never do), which a merge would drop."""
+  ca = getattr(obj, 'ca', None)
+  return bool(ca and (ca.comment or any(ca.items.values())))
+
+
+def _run_key(entry):
+  """`(role, context)` when `entry` carries nothing but its numbers, a role
+  and a context, else `None`: an entry with any other field, no numbers or
+  a comment of its own never joins or extends a run."""
+  if not isinstance(entry, dict) or not set(entry) <= COMPACTABLE_KEYS:
+    return None
+  numbers = entry.get('catalogNumbers')
+  if not isinstance(numbers, list) or not numbers:
+    return None
+  if _has_comment(entry) or _has_comment(numbers):
+    return None
+  return entry.get('role'), entry.get('context')
+
+
+def compact_material(material):
+  """Merge, in place, each run of consecutive entries of one node's
+  `material` list that carry only `catalogNumbers`, the same `role` (or
+  none) and the same `context` (or none). The first entry of a run keeps
+  its place and gains the later entries' `catalogNumbers` in order (a range
+  pair `[a, b]` is an element like any other); the later entries are
+  deleted. Returns how many entries were removed. Works on plain lists and
+  dicts and on ruamel's round-trip types alike."""
+  removed = 0
+  i = 0
+  while i < len(material):
+    key = _run_key(material[i])
+    if key is None:
+      i += 1
+      continue
+    while i + 1 < len(material) and _run_key(material[i + 1]) == key:
+      material[i]['catalogNumbers'].extend(material[i + 1]['catalogNumbers'])
+      del material[i + 1]
+      removed += 1
+    i += 1
+  return removed
 
 
 def fold(s):
@@ -1013,6 +1072,51 @@ class Migrator:
           break
     return found[0]
 
+  # -- --compact -------------------------------------------------------------
+
+  def compact_node(self, node):
+    """`compact_material` over `node` and every node under it; returns the
+    number of entries removed and the number seen before."""
+    removed = seen = 0
+    if not isinstance(node, dict):
+      return removed, seen
+    material = node.get('material')
+    if isinstance(material, list):
+      seen += len(material)
+      removed += compact_material(material)
+    for key, _cited in CHILD_LIST_KEYS:
+      if isinstance(node.get(key), list):
+        for child in node[key]:
+          sub_removed, sub_seen = self.compact_node(child)
+          removed += sub_removed
+          seen += sub_seen
+    for key, _cited in CHILD_SINGLE_KEYS:
+      sub_removed, sub_seen = self.compact_node(node.get(key))
+      removed += sub_removed
+      seen += sub_seen
+    return removed, seen
+
+  def compact_tree_file(self, path):
+    """Compact every node of one tree file; `(before, after)` counts of
+    material entries. The parsed document changes only when it returns
+    `before != after`, and only then does the caller write."""
+    entry = self.load_tree(path)
+    doc = entry['doc']
+    top_nodes = []
+    if isinstance(doc, dict):
+      for key in ('taxonomies', 'assumptions'):
+        if isinstance(doc.get(key), list):
+          top_nodes += doc[key]
+      for phylogeny in doc.get('phylogenies') or ():
+        if isinstance(phylogeny, dict):
+          top_nodes.append(phylogeny.get('tree'))
+    removed = seen = 0
+    for node in top_nodes:
+      sub_removed, sub_seen = self.compact_node(node)
+      removed += sub_removed
+      seen += sub_seen
+    return seen, seen - removed
+
   # -- writing --------------------------------------------------------------
 
   def dump(self, doc):
@@ -1085,6 +1189,27 @@ def run(root, write, report):
   return m
 
 
+def run_compact(root, write):
+  """The `--compact` pass over data/trees and drafts; prints per-file
+  entry counts and returns `[(path, before, after)]` for changed files."""
+  m = Migrator(root)
+  changed = []
+  for path in m.discover_tree_files():
+    before, after = m.compact_tree_file(path)
+    if before == after:
+      continue
+    changed.append((path, before, after))
+    if write:
+      with open(path, 'w', encoding='utf-8') as f:
+        f.write(m.dump(m.tree_registry[m.stem(path)]['doc']))
+  for path, before, after in sorted(changed, key=lambda c: c[1] - c[2], reverse=True):
+    print(f'{os.path.relpath(path, root)}: {before} -> {after} entries')
+  total_before = sum(c[1] for c in changed)
+  total_after = sum(c[2] for c in changed)
+  print(f'TOTAL over {len(changed)} changed files: {total_before} -> {total_after} entries')
+  return changed
+
+
 def print_report(m, root):
   print('=' * 78)
   print('MIGRATION REPORT')
@@ -1137,9 +1262,17 @@ def main():
   )
   ap.add_argument('--write', action='store_true', help='write changed files (default: dry run)')
   ap.add_argument('--report', action='store_true', help='print the migration report')
+  ap.add_argument(
+    '--compact',
+    action='store_true',
+    help='merge consecutive number-only material entries instead of migrating',
+  )
   args = ap.parse_args()
 
-  run(args.root, args.write, args.report)
+  if args.compact:
+    run_compact(args.root, args.write)
+  else:
+    run(args.root, args.write, args.report)
 
 
 if __name__ == '__main__':

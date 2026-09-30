@@ -17,10 +17,6 @@ taxonomies:
           role: holotype
         - catalogNumbers:
           - USNM153758
-          role: hypotype
-        - catalogNumbers:
           - USNM153759
-          role: hypotype
-        - catalogNumbers:
           - USNM153760
           role: hypotype

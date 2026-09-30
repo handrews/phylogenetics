@@ -28,29 +28,13 @@ taxonomies:
                 role: holotype
               - catalogNumbers:
                 - UQF5398
-                role: paratype
-              - catalogNumbers:
                 - UQF5399
-                role: paratype
-              - catalogNumbers:
                 - UQF5400
-                role: paratype
-              - catalogNumbers:
                 - UQF5401
-                role: paratype
-              - catalogNumbers:
                 - UQF5402
-                role: paratype
-              - catalogNumbers:
                 - UQF5403
-                role: paratype
-              - catalogNumbers:
                 - UQF5405
-                role: paratype
-              - catalogNumbers:
                 - UQF5406
-                role: paratype
-              - catalogNumbers:
                 - UQF5407
                 role: paratype
               - catalogNumbers:
@@ -68,18 +52,10 @@ taxonomies:
                 role: holotype
               - catalogNumbers:
                 - UQF5408
-                role: paratype
-              - catalogNumbers:
                 - - UQF5410
                   - UQF5431
-                role: paratype
-              - catalogNumbers:
                 - UQF5433
-                role: paratype
-              - catalogNumbers:
                 - UQF5434
-                role: paratype
-              - catalogNumbers:
                 - UQF5435
                 role: paratype
               - catalogNumbers:
@@ -103,8 +79,6 @@ taxonomies:
               - catalogNumbers:
                 - - QMF59374
                   - QMF59525
-                role: paratype
-              - catalogNumbers:
                 - - QMF59527
                   - QMF59586
                 role: paratype

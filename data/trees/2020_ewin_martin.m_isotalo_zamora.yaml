@@ -98,8 +98,6 @@ taxonomies:
                 role: holotype
               - catalogNumbers:
                 - NHMUK E23674
-                context: lady-burn-starfish-bed
-              - catalogNumbers:
                 - NHMUK E29570
                 context: lady-burn-starfish-bed
               contexts:
@@ -132,9 +130,6 @@ taxonomies:
               - catalogNumbers:
                 - - NHMUK EE15752
                   - NHMUK EE15755
-                context: rock-pool-ledge
-                role: paratype
-              - catalogNumbers:
                 - MPEP 1126.1
                 context: rock-pool-ledge
                 role: paratype
@@ -178,11 +173,7 @@ taxonomies:
               material:
               - catalogNumbers:
                 - E 62751
-                context: newlands-farm
-              - catalogNumbers:
                 - E 62752
-                context: newlands-farm
-              - catalogNumbers:
                 - E 62753
                 context: newlands-farm
               illustrations:

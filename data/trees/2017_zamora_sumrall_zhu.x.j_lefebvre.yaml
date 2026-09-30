@@ -20,8 +20,6 @@ taxonomies:
               role: holotype
             - catalogNumbers:
               - NIGPAS163199
-              role: paratype
-            - catalogNumbers:
               - NIGPAS163210
               role: paratype
         - taxon: ridersiidae

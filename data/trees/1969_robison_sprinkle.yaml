@@ -18,16 +18,8 @@ taxonomies:
             role: holotype
           - catalogNumbers:
             - USNM 163253
-            role: paratype
-          - catalogNumbers:
             - USNM 163254
-            role: paratype
-          - catalogNumbers:
             - USNM 163255
-            role: paratype
-          - catalogNumbers:
             - USNM 163256
-            role: paratype
-          - catalogNumbers:
             - USNM 163257
             role: paratype

@@ -232,21 +232,21 @@ property.
 | `pages` | 223 | 2.5% |
 | `illustrations` | 125 | 1.4% |
 
-### `materialEntry` -- 608 instances in `data/`
+### `materialEntry` -- 187 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `catalogNumbers` | 602 | 99.0% |
-| `role` | 544 | 89.5% |
-| `context` | 26 | 4.3% |
-| `notes` | 19 | 3.1% |
-| `label` | 5 | 0.8% |
-| `repository` | 3 | 0.5% |
-| `count` | 1 | 0.2% |
-| `editorial` | 1 | 0.2% |
-| `holder` | 1 | 0.2% |
-| `roleAct` | 1 | 0.2% |
-| `status` | 1 | 0.2% |
+| `catalogNumbers` | 181 | 96.8% |
+| `role` | 159 | 85.0% |
+| `context` | 21 | 11.2% |
+| `notes` | 19 | 10.2% |
+| `label` | 5 | 2.7% |
+| `repository` | 3 | 1.6% |
+| `count` | 1 | 0.5% |
+| `editorial` | 1 | 0.5% |
+| `holder` | 1 | 0.5% |
+| `roleAct` | 1 | 0.5% |
+| `status` | 1 | 0.5% |
 | `castOf` | 0 | 0.0% |
 | `catalogNumbersAsPrinted` | 0 | 0.0% |
 | `collectedBy` | 0 | 0.0% |
@@ -610,17 +610,17 @@ property.
 
 ### `phylogeny#/$defs/role`
 
-12 of 12 members used, 558 occurrences.
+12 of 12 members used, 173 occurrences.
 
 | value | count |
 |---|---|
-| `'paratype'` | 378 |
 | `'holotype'` | 81 |
-| `'plesiotype'` | 75 |
+| `'paratype'` | 61 |
+| `'plesiotype'` | 9 |
 | `'syntype'` | 6 |
-| `'hypotype'` | 5 |
 | `'topotype'` | 4 |
 | `'lectotype'` | 4 |
+| `'hypotype'` | 3 |
 | `'figured'` | 1 |
 | `'chirotype'` | 1 |
 | `'cotype'` | 1 |

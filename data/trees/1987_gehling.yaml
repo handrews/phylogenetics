@@ -16,22 +16,10 @@ taxonomies:
           role: holotype
         - catalogNumbers:
           - SAMP26769
-          role: paratype
-        - catalogNumbers:
           - SAMP26770
-          role: paratype
-        - catalogNumbers:
           - SAMP26771
-          role: paratype
-        - catalogNumbers:
           - SAMP26772
-          role: paratype
-        - catalogNumbers:
           - SAMP26773
-          role: paratype
-        - catalogNumbers:
           - SAMP26774
-          role: paratype
-        - catalogNumbers:
           - SAMP26775
           role: paratype

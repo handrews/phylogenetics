@@ -17,8 +17,6 @@ taxonomies:
           role: holotype
         - catalogNumbers:
           - UCMP 37849
-          role: paratype
-        - catalogNumbers:
           - UCMP 37854
           role: paratype
       - taxon: curtisi_durham_caster_1963

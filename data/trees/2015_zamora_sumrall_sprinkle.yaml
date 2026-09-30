@@ -18,9 +18,6 @@ taxonomies:
             role: holotype
           - catalogNumbers:
             - USNM 178556
-            context: long-valley
-            role: paratype
-          - catalogNumbers:
             - USNM 178554
             context: long-valley
             role: paratype

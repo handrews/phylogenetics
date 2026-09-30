@@ -20,8 +20,6 @@ taxonomies:
           - catalogNumbers:
             - - PE 52750
               - PE 52753
-            role: paratype
-          - catalogNumbers:
             - USNM 165237
             role: paratype
 assumptions:

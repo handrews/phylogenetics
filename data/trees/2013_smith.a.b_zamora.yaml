@@ -18,14 +18,8 @@ taxonomies:
         - catalogNumbers:
           - - EE15374
             - EE15376
-          role: paratype
-        - catalogNumbers:
           - EE14847
-          role: paratype
-        - catalogNumbers:
           - EE14848
-          role: paratype
-        - catalogNumbers:
           - EE15329
           role: paratype
 phylogenies:

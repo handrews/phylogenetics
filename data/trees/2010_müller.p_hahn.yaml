@@ -64,11 +64,7 @@ taxonomies:
             role: holotype
           - catalogNumbers:
             - PWL 2009/5019-LS
-            role: paratype
-          - catalogNumbers:
             - PWL 2009/5020-LS
-            role: paratype
-          - catalogNumbers:
             - PWL 2009/5021-LS
             role: paratype
     - taxon: agelacrinitinae
@@ -109,35 +105,15 @@ taxonomies:
             role: holotype
           - catalogNumbers:
             - PWL 2009/5025-LS
-            role: paratype
-          - catalogNumbers:
             - PWL 2009/5026-LS
-            role: paratype
-          - catalogNumbers:
             - PWL 2009/5027-LS
-            role: paratype
-          - catalogNumbers:
             - PWL 2009/5028a-LS
-            role: paratype
-          - catalogNumbers:
             - PWL 2009/5028b-LS
-            role: paratype
-          - catalogNumbers:
             - PWL 2009/5029-LS
-            role: paratype
-          - catalogNumbers:
             - PWL 2009/5030-LS
-            role: paratype
-          - catalogNumbers:
             - PWL 2009/5031-LS
-            role: paratype
-          - catalogNumbers:
             - PWL 2009/5032-LS
-            role: paratype
-          - catalogNumbers:
             - RS 21
-            role: paratype
-          - catalogNumbers:
             - M 2514
             role: paratype
         - taxon: odin_müller.p_hahn_2010
@@ -161,29 +137,13 @@ taxonomies:
             role: holotype
           - catalogNumbers:
             - PWL 2009/5034-LS
-            role: paratype
-          - catalogNumbers:
             - PWL 2009/5035-LS
-            role: paratype
-          - catalogNumbers:
             - PWL 2009/5016sub2-LS
-            role: paratype
-          - catalogNumbers:
             - PWL 2009/5036-LS
-            role: paratype
-          - catalogNumbers:
             - PWL 2009/5037-LS
-            role: paratype
-          - catalogNumbers:
             - PWL 2009/5038-LS
-            role: paratype
-          - catalogNumbers:
             - PWL 2009/5039-LS
-            role: paratype
-          - catalogNumbers:
             - PWL 2009/5041-LS
-            role: paratype
-          - catalogNumbers:
             - PWL 2009/5042-LS
             role: paratype
     - taxon: discocystinae

@@ -24,17 +24,9 @@ taxonomies:
               role: holotype
             - catalogNumbers:
               - F. 5399
-              role: paratype
-            - catalogNumbers:
               - F. 5400
-              role: paratype
-            - catalogNumbers:
               - F. 5401
-              role: paratype
-            - catalogNumbers:
               - F. 5402
-              role: paratype
-            - catalogNumbers:
               - F. 5403
               role: paratype
     - taxon: cycloidea
@@ -55,25 +47,15 @@ taxonomies:
               role: holotype
             - catalogNumbers:
               - F. 5410
-            - catalogNumbers:
               - F. 5411
-            - catalogNumbers:
               - F. 5412
-            - catalogNumbers:
               - F. 5413
-            - catalogNumbers:
               - F. 5414
-            - catalogNumbers:
               - F. 5415
-            - catalogNumbers:
               - F. 5416
-            - catalogNumbers:
               - F. 5417
-            - catalogNumbers:
               - F. 5418
-            - catalogNumbers:
               - F. 5419
-            - catalogNumbers:
               - F. 5420
   - taxon: homalozoa
     new: true
