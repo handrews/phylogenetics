@@ -67,7 +67,8 @@ $defs:
         description: |
           The `repositories.yaml` entries this source's catalog numbers draw
           on, listed when a printed prefix is claimed by more than one entry
-          (Bell 1976 writes UCMP for Cincinnati: `[uc-museum]`). A prefix
+          (Bell 1976 writes UCMP for Cincinnati: `[u-cincinnati-museum]`). A
+          prefix
           resolves against the listed entries first, then the whole
           registry; a prefix still ambiguous, or a listed entry no number
           uses, is an error.
@@ -1203,8 +1204,12 @@ $defs:
         minLength: 1
   role:
     description: |
-      The type role the editor maps a printed word to; `roles.yaml` gives
-      each its meaning. The printed word itself goes in `roleAsPrinted`.
+      The role the source gives a specimen, in the source's own term
+      normalised only for grammar; `roles.yaml` gives each its meaning,
+      whether the Code regulates it, and the current term an older one
+      usually corresponds to. A role the source implies without printing
+      the word ("the type") is recorded as the role the editor reads, with
+      an `editorial` block on the entry naming it as inferred.
     type: string
     enum:
     - holotype
@@ -1216,6 +1221,9 @@ $defs:
     - topotype
     - hypotype
     - plesiotype
+    - cotype
+    - chirotype
+    - figured
   contextRef:
     description: |
       A reference to a context by key, looked up on the node first and then
@@ -1268,8 +1276,6 @@ $defs:
         type: string
       role:
         $ref: "#/$defs/role"
-      roleAsPrinted:
-        type: string
       roleAct:
         type: string
         enum: [designated, reported]
@@ -1323,6 +1329,12 @@ $defs:
       listComplete:
         description: False when the source's list of this entry's numbers is only partly entered.
         type: boolean
+      editorial:
+        description: |
+          The editor's layer for this entry: `inferred` names the entry's
+          fields that are the editor's reading and not the source's words
+          (`[role]` when the source says only "the type"), with the `basis`.
+        $ref: "#/$defs/editorialObject"
       notes:
         type: string
 
@@ -1547,44 +1559,31 @@ $defs:
     pattern: "^[\\w][\\w.-]*$"
   roles:
     description: |
-      `data/roles.yaml`: the type roles the data maps to, with their
-      meaning, and the printed words that map to them or to none.
+      `data/roles.yaml`: the roles a source may give a specimen, each with
+      its meaning, whether the Code regulates it, and for an older term
+      the current one it usually corresponds to.
     type: object
-    additionalProperties: false
-    required: [roles, printedWords]
-    properties:
-      roles:
-        type: object
-        propertyNames:
+    propertyNames:
+      $ref: "#/$defs/role"
+    additionalProperties:
+      type: object
+      additionalProperties: false
+      required: [meaning, regulated]
+      properties:
+        meaning:
+          type: string
+        regulated:
+          type: boolean
+        article:
+          type: string
+        equivalent:
+          description: |
+            The role in current use that this older term usually
+            corresponds to; a guide for searching, not a statement about
+            any one specimen.
           $ref: "#/$defs/role"
-        additionalProperties:
-          type: object
-          additionalProperties: false
-          required: [meaning, regulated]
-          properties:
-            meaning:
-              type: string
-            regulated:
-              type: boolean
-            article:
-              type: string
-            notes:
-              type: string
-      printedWords:
-        type: object
-        additionalProperties:
-          type: object
-          additionalProperties: false
-          required: [role]
-          properties:
-            role:
-              oneOf:
-              - $ref: "#/$defs/role"
-              - const: none
-            era:
-              type: string
-            notes:
-              type: string
+        notes:
+          type: string
   specimen:
     $comment: LEGACY, removed at stage 2 of the material refactor.
     oneOf:

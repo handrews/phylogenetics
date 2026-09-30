@@ -30,7 +30,7 @@ even when its parent is also unreached, so read parents first.
 | `localSeriesRange` | `phylogeny#/$defs/localSeriesRange`<br>`phylogeny#/$defs/localSeriesRange/items` |
 | `localStageRange` | `phylogeny#/$defs/localStageRange`<br>`phylogeny#/$defs/localStageRange/items` |
 | `localTimeFields` | `phylogeny#/$defs/localTimeFields`<br>`phylogeny#/$defs/localTimeFields/properties/localPeriod`<br>`phylogeny#/$defs/localTimeFields/properties/localSeries`<br>`phylogeny#/$defs/localTimeFields/properties/localSeriesBoundary`<br>`phylogeny#/$defs/localTimeFields/properties/localSeriesRange`<br>`phylogeny#/$defs/localTimeFields/properties/localStage`<br>`phylogeny#/$defs/localTimeFields/properties/localStageBoundary`<br>`phylogeny#/$defs/localTimeFields/properties/localStageModifier`<br>`phylogeny#/$defs/localTimeFields/properties/localStageRange` |
-| `materialEntry` | `phylogeny#/$defs/materialEntry`<br>`phylogeny#/$defs/materialEntry/anyOf/0`<br>`phylogeny#/$defs/materialEntry/anyOf/1`<br>`phylogeny#/$defs/materialEntry/anyOf/2`<br>`phylogeny#/$defs/materialEntry/properties/castOf`<br>`phylogeny#/$defs/materialEntry/properties/catalogNumbers`<br>`phylogeny#/$defs/materialEntry/properties/catalogNumbers/items`<br>`phylogeny#/$defs/materialEntry/properties/catalogNumbersAsPrinted`<br>`phylogeny#/$defs/materialEntry/properties/collectedBy`<br>`phylogeny#/$defs/materialEntry/properties/collectedDate`<br>`phylogeny#/$defs/materialEntry/properties/context`<br>`phylogeny#/$defs/materialEntry/properties/count`<br>`phylogeny#/$defs/materialEntry/properties/examined`<br>`phylogeny#/$defs/materialEntry/properties/formerIds`<br>`phylogeny#/$defs/materialEntry/properties/formerIds/items`<br>`phylogeny#/$defs/materialEntry/properties/fragmentOf`<br>`phylogeny#/$defs/materialEntry/properties/holder`<br>`phylogeny#/$defs/materialEntry/properties/label`<br>`phylogeny#/$defs/materialEntry/properties/listComplete`<br>`phylogeny#/$defs/materialEntry/properties/notes`<br>`phylogeny#/$defs/materialEntry/properties/parts`<br>`phylogeny#/$defs/materialEntry/properties/parts/items`<br>`phylogeny#/$defs/materialEntry/properties/preparation`<br>`phylogeny#/$defs/materialEntry/properties/repository`<br>`phylogeny#/$defs/materialEntry/properties/role`<br>`phylogeny#/$defs/materialEntry/properties/roleAct`<br>`phylogeny#/$defs/materialEntry/properties/roleAsPrinted`<br>`phylogeny#/$defs/materialEntry/properties/status` |
+| `materialEntry` | `phylogeny#/$defs/materialEntry`<br>`phylogeny#/$defs/materialEntry/anyOf/0`<br>`phylogeny#/$defs/materialEntry/anyOf/1`<br>`phylogeny#/$defs/materialEntry/anyOf/2`<br>`phylogeny#/$defs/materialEntry/properties/castOf`<br>`phylogeny#/$defs/materialEntry/properties/catalogNumbers`<br>`phylogeny#/$defs/materialEntry/properties/catalogNumbers/items`<br>`phylogeny#/$defs/materialEntry/properties/catalogNumbersAsPrinted`<br>`phylogeny#/$defs/materialEntry/properties/collectedBy`<br>`phylogeny#/$defs/materialEntry/properties/collectedDate`<br>`phylogeny#/$defs/materialEntry/properties/context`<br>`phylogeny#/$defs/materialEntry/properties/count`<br>`phylogeny#/$defs/materialEntry/properties/editorial`<br>`phylogeny#/$defs/materialEntry/properties/examined`<br>`phylogeny#/$defs/materialEntry/properties/formerIds`<br>`phylogeny#/$defs/materialEntry/properties/formerIds/items`<br>`phylogeny#/$defs/materialEntry/properties/fragmentOf`<br>`phylogeny#/$defs/materialEntry/properties/holder`<br>`phylogeny#/$defs/materialEntry/properties/label`<br>`phylogeny#/$defs/materialEntry/properties/listComplete`<br>`phylogeny#/$defs/materialEntry/properties/notes`<br>`phylogeny#/$defs/materialEntry/properties/parts`<br>`phylogeny#/$defs/materialEntry/properties/parts/items`<br>`phylogeny#/$defs/materialEntry/properties/preparation`<br>`phylogeny#/$defs/materialEntry/properties/repository`<br>`phylogeny#/$defs/materialEntry/properties/role`<br>`phylogeny#/$defs/materialEntry/properties/roleAct`<br>`phylogeny#/$defs/materialEntry/properties/status` |
 | `materialsFields` | `phylogeny#/$defs/materialsFields/properties/contexts`<br>`phylogeny#/$defs/materialsFields/properties/figures`<br>`phylogeny#/$defs/materialsFields/properties/figures/items`<br>`phylogeny#/$defs/materialsFields/properties/material`<br>`phylogeny#/$defs/materialsFields/properties/material/items`<br>`phylogeny#/$defs/materialsFields/properties/range` |
 | `modularDate` | `phylogeny#/$defs/modularDate/then/oneOf/1/properties/month/anyOf/3`<br>`phylogeny#/$defs/modularDate/then/oneOf/2/properties/month/anyOf/5` |
 | `occurrence` | `phylogeny#/$defs/occurrence/properties/localSeriesBoundary`<br>`phylogeny#/$defs/occurrence/properties/localSeriesRange`<br>`phylogeny#/$defs/occurrence/properties/localStageBoundary`<br>`phylogeny#/$defs/occurrence/properties/localStageRange`<br>`phylogeny#/$defs/occurrence/properties/tentative` |
@@ -332,15 +332,11 @@ property.
 
 | property | data | data % |
 |---|---|---|
-| `printedWords/additionalProperties.role` | 22 | 100.0% |
-| `roles/additionalProperties.meaning` | 9 | 100.0% |
-| `roles/additionalProperties.regulated` | 9 | 100.0% |
-| `printedWords/additionalProperties.notes` | 6 | 27.3% |
-| `roles/additionalProperties.article` | 6 | 66.7% |
-| `roles/additionalProperties.notes` | 4 | 44.4% |
-| `printedWords/additionalProperties.era` | 3 | 13.6% |
-| `printedWords` | 1 | 100.0% |
-| `roles` | 1 | 100.0% |
+| `/additionalProperties.meaning` | 12 | 100.0% |
+| `/additionalProperties.regulated` | 12 | 100.0% |
+| `/additionalProperties.article` | 6 | 50.0% |
+| `/additionalProperties.notes` | 6 | 50.0% |
+| `/additionalProperties.equivalent` | 2 | 16.7% |
 
 ### `specimens` -- 91 instances in `data/`
 
@@ -570,19 +566,22 @@ property.
 
 ### `phylogeny#/$defs/role`
 
-9 of 9 members used, 26 occurrences.
+12 of 12 members used, 14 occurrences.
 
 | value | count |
 |---|---|
-| `'syntype'` | 5 |
-| `'holotype'` | 3 |
-| `'plesiotype'` | 3 |
-| `'hypotype'` | 3 |
-| `'topotype'` | 3 |
-| `'paratype'` | 3 |
-| `'neotype'` | 2 |
-| `'paralectotype'` | 2 |
-| `'lectotype'` | 2 |
+| `'hypotype'` | 2 |
+| `'syntype'` | 2 |
+| `'figured'` | 1 |
+| `'chirotype'` | 1 |
+| `'cotype'` | 1 |
+| `'plesiotype'` | 1 |
+| `'topotype'` | 1 |
+| `'neotype'` | 1 |
+| `'paralectotype'` | 1 |
+| `'lectotype'` | 1 |
+| `'paratype'` | 1 |
+| `'holotype'` | 1 |
 
 ### `phylogeny#/$defs/series`
 

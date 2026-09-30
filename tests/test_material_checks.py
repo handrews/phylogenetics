@@ -726,3 +726,14 @@ def test_check_draft_exits_one_on_an_ambiguous_prefix_and_zero_once_listed(tmp_p
   draft.write_text('repositories: [u-cincinnati-caster]\ntaxonomies:\n' + body)
   result = _run_check_draft(draft)
   assert result.returncode == 0, result.stdout + result.stderr
+
+
+def test_roles_registry_matches_the_schema_enum():
+  # Every role the schema allows is documented, and nothing else is; an
+  # `equivalent` names another documented role.
+  schema = io.load_yaml(io.SCHEMA_PATH)
+  roles = io.load_yaml(io.DATA_DIR / 'roles.yaml')
+  assert set(roles) == set(schema['$defs']['role']['enum'])
+  for name, entry in roles.items():
+    equivalent = entry.get('equivalent')
+    assert equivalent is None or (equivalent in roles and equivalent != name), name

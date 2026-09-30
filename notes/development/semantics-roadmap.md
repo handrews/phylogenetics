@@ -919,7 +919,6 @@ contexts:                      # keyed; at the node, or at the top of the tree f
 material:
 - catalogNumbers: ["GSC 752"]  # printed strings; a [from, to] pair is a range
   role: syntype
-  roleAsPrinted: Holotype      # the caption's word (Fay 1962 p. 201)
   context: division-st
 - label: the specimen lent to Hudson
   role: syntype
@@ -958,14 +957,21 @@ range:                         # a distribution statement, not provenance
   `unused` list says a field appears nowhere. Only an auditor writes
   either; a draft never does.
 
-**D2. Type roles.** `role` is the editor's mapping into the enum
-`data/roles.yaml` documents (holotype, paratype, syntype, lectotype,
-paralectotype, neotype, topotype, hypotype, plesiotype), and
-`roleAsPrinted` keeps the source's word when it differs (cotype,
-plesiotype, "Illustrated Specimen", "Orig."). Absence of `role` is the
-common case: material cited with no type word. The registry's
-`printedWords` map records how each historical word is read, so the
-mapping is documented once. `allotype` and `kleptotype` are gone.
+**D2. Type roles.** `role` is the source's own term, normalised only
+for grammar, from the list `data/roles.yaml` documents: the six the Code
+regulates (holotype, paratype, syntype, lectotype, paralectotype,
+neotype) and the conventions the literature uses beside them (topotype,
+hypotype, plesiotype, cotype, chirotype, and `figured` for a specimen
+cited as the original of a figure). The registry gives each its meaning,
+whether the Code regulates it, and for an older term the current one it
+usually corresponds to (`equivalent`: cotype to syntype, plesiotype to
+hypotype), which guides a search and asserts nothing about any one
+specimen. Absence of `role` is the common case: material cited with no
+role word. There is no separate field for the printed word. A role the
+source implies without printing it, "the type" for one specimen or for
+several, is recorded as the role the editor reads (holotype or syntype)
+with an `editorial` block on the entry: `inferred: [role]` and the
+`basis`. `allotype` and `kleptotype` are gone.
 
 Holotypes are singular: two numbers for one holotype are one entry with
 two `catalogNumbers` and `parts: [part, counterpart]`. Whether a role is
@@ -987,8 +993,8 @@ like taxon and source keys. `prefixes` lists the printed prefixes that
 resolve to an entry and `otherNames` the other names it is printed under, and the prefix
 index is derived from both, because a prefix need not resemble its
 holder's name: Sprinkle 1973's latex casts numbered E and BC belong to
-the Caster Collection at the University of Cincinnati (`uc-caster`,
-`within: uc`). A collection may print its parent's numbers and list no
+the Caster Collection at the University of Cincinnati
+(`u-cincinnati-caster`, `within: u-cincinnati`). A collection may print its parent's numbers and list no
 prefix of its own, as the Walcott Collection does with USNM numbers; a
 material entry then names it in `repository`. When two entries claim a
 prefix (PE for the Field Museum and for the North Museum at Franklin and
@@ -1025,7 +1031,7 @@ context with no unit, no locality and no specimen becomes `range`;
 node-level `illustrations` become `figures` with `of` unset; the
 taxon-record `holotype` moves to the protologue node. The script's report
 lists what the owner works by hand: the eight ellipses, free-text
-identifiers to `label`, role words to `roleAsPrinted`, and prefixes the
+identifiers to `label`, and prefixes the
 registry does not know.
 
 **D6, D7, D9** are folded into D1, D2 and D4 above; **D8** and **D10**
@@ -1072,11 +1078,15 @@ reconciled: Whiteaves 1897 names three specimens, Bather 1914 three, Fay
 - *Bell 1976*: ROM 161-t-a "described … as 'GSC 1415'" is `formerIds`;
   GSC 1407-B "a fragment of the holotype" is `fragmentOf`; the Bigsby
   specimen is a `label` with the four works that figured it in `notes`;
-  "Illustrated Specimen" is `roleAsPrinted` with no role; UCMP meaning
-  Cincinnati is `repositories: [uc-museum]` at the top of the tree file.
+  "Illustrated Specimen" is `role: figured`; UCMP meaning Cincinnati is
+  `repositories: [u-cincinnati-museum]` at the top of the tree file.
 - *Fay 1962*: No. 752 captioned "Holotype" and called a syntype in the
-  text: `role: syntype`, `roleAsPrinted: Holotype`; the second syntype,
-  lent to Hudson and gone, is a `label` with `status: lost`.
+  text, which reports the museum label. Neither word fits: no holotype
+  was fixed in 1897, and Bather 1914 had since selected one of the
+  syntypes. The entry is `role: lectotype` with `editorial: {inferred:
+  [role], basis: …}` giving the caption, the label, Bather's selection,
+  and the doubt whether No. 752 is the specimen Bather chose. The second
+  syntype, lent to Hudson and gone, is a `label` with `status: lost`.
 - *Bather 1914*: A, B and C are labels; A is `role: holotype, roleAct:
   designated`; C has `holder: Walter R. Billings`; the plate figures carry
   `of: A` and `of: B`; the one locality is a file-level context.
@@ -1424,7 +1434,7 @@ Each has a home; none needs a new top-level construct.
 | specimen identity that moved | ROM 161-t-a formerly GSC 1415 (p. 61) | `formerIds` (D1) |
 | a nickname for a specimen | the "Grant specimen", the "Fitzpatrick specimen" (p. 61) | `label` on the material entry |
 | a printed attribution that is wrong | "Bell, 1974" in Bell 1975 | as printed, plus `editorial.source` (A6) |
-| a role word outside the enum | "Illustrated Specimen" (p. 61) | `roleAsPrinted` (D1) |
+| a role word for a figured specimen | "Illustrated Specimen" (p. 61) | `role: figured` (D2) |
 | horizon given as a quoted local name plus a hierarchy | "'Cobourg beds' (= the 'Cystid beds, about 180 feet below the top of the Trenton')" (p. 65) | `unit` list for the hierarchy; the quoted equivalence in `notes` until E1 has a `localUnit` alias |
 | a list the source says is partial | "not a comprehensive listing", "Genera, e.g." (Parsley 2021, pp. 974–975) | `listComplete: false` (B16) |
 | a list the source hedges as a whole | "other members of this group may include" (Bell 1975, p. 36) | `provisional` on each member (B16) |
