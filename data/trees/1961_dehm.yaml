@@ -92,6 +92,15 @@ taxonomies:
       - plate: 1
         figures:
         - [1, 4]
+      synonyms:
+      - authority:
+          source: 1961_rievers
+          illustrations:
+          - plate: 2
+            figures:
+            - [1, 4]
+        parents:
+        - taxon: pyrgocystis
       contexts:
         bundenbach:
           series: Lower Devonian
@@ -118,12 +127,3 @@ taxonomies:
 #       rank: subgenus
 #       children:
 #       - taxon: coronaeformis_rievers_1961
-      synonyms:
-      - authority:
-          source: 1961_rievers
-          illustrations:
-          - plate: 2
-            figures:
-            - [1, 4]
-        parents:
-        - taxon: pyrgocystis

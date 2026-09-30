@@ -20,6 +20,12 @@ taxonomies:
         - Page 306, Figure 80
         context: upper-quarry
         role: holotype
+        notes: |
+          Six organisms on the slab, but only one complete.  Three
+          full-size, including the complete fossil, two small, and
+          one in between.  The small are in the angle between two
+          of the large, with the mid-sized adjacent to one large and
+          the third large ont he other side of the first two.
       illustrations:
       - page: 306
         figures:
@@ -36,12 +42,6 @@ taxonomies:
           - Madison County
           - New York
           - United States
-          notes: |
-            Six organisms on the slab, but only one complete.  Three
-            full-size, including the complete fossil, two small, and
-            one in between.  The small are in the angle between two
-            of the large, with the mid-sized adjacent to one large and
-            the third large ont he other side of the first two.
   - taxon: nucleocrinus
     notes: It's possible that this came out before Conrad's own 1842 paper.
     children:
