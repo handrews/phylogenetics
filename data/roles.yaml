@@ -1,9 +1,3 @@
-# The roles a source may give a specimen it cites. A material entry's `role`
-# is the source's own term, normalised only for grammar (singular, lower
-# case). `regulated` says whether the Code (ICZN, 4th ed.) governs the role,
-# and `article` where. `equivalent` names the role in current use that an
-# older term usually corresponds to; it guides a search and asserts nothing
-# about any one specimen.
 holotype:
   meaning: >
     The single specimen fixed as the name-bearing type in the original
