@@ -60,6 +60,19 @@ taxonomies:
                 - MCZ 629B
                 - PE-199
                 - PE-199-A
+                notes: >
+                  Martin Anné has kindly donated his
+                  figured specimen (MCZ 628A, B) to the
+                  Museum of Comparative Zoology. Kraig
+                  Derstler’s figured specimen is now in his
+                  private collection, but will be deposited as
+                  specimen PE-199 and 199-A in the paleon-
+                  tological collections of the North Museum,
+                  Franklin and Marshall College, Lancaster,
+                  Pennsylvania, within the next year. Latex
+                  castings of this latter specimen are on file
+                  at the Museum of Comparative Zoology
+                  (MCZ 629A and B). (page 68)
           - taxon: kinzercystis
             new: true
             children:
@@ -601,10 +614,10 @@ taxonomies:
               type: true
               material:
               - catalogNumbers:
-                - EE 39
+                - E 39
                 notes: casts of two known type specimen
               - catalogNumbers:
-                - EE 51
+                - E 51
                 notes: casts of two known type specimen
         - taxon: rhipidocystidae
           children:
@@ -731,12 +744,12 @@ taxonomies:
             notes: "very questionably referred to Blastoidocrinus"
             material:
             - catalogNumbers:
-              - '610'
+              - MCZ 610
               role: holotype
             - catalogNumbers:
-              - 611a
-              - 611b
-              - 611c
+              - MCZ 611a
+              - MCZ 611b
+              - MCZ 611c
               role: paratype
         - taxon: blastocystis
           children:
