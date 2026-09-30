@@ -1,3 +1,4 @@
+repositories: [u-cincinnati-caster, north-museum-fm]
 taxonomies:
 - taxon: echinodermata
   auth: [Klein]
@@ -22,36 +23,68 @@ taxonomies:
             children:
             - taxon: wanneri_foerste_1938
               type: true
-              specimens:
-                holotype: USNM 90773 # two counterparts
-                paratypes:
-                - USNM 90773A # two counterparts
+              material:
+              - catalogNumbers:
+                - USNM 90773
+                role: holotype
+                notes: two counterparts
+              - catalogNumbers:
+                - USNM 90773A
+                role: paratype
+                notes: two counterparts
+              - catalogNumbers:
                 - USNM 90773B
                 - USNM 90773C1
                 - USNM 90773C2
                 - USNM 90773C3
-                - MCZ 591  # ten specimens from SH-1
-                - MCZ 592  # three specimens from EM-1
-                - MCZ 593  # many new unstudied specimens from SH-2
+                role: paratype
+              - catalogNumbers:
+                - MCZ 591
+                role: paratype
+                notes: ten specimens from SH-1
+              - catalogNumbers:
+                - MCZ 592
+                role: paratype
+                notes: three specimens from EM-1
+              - catalogNumbers:
+                - MCZ 593
+                role: paratype
+                notes: many new unstudied specimens from SH-2
             - cfTaxon: wanneri_foerste_1938
               new: true
-              specimens:
-                unknowntypes:
+              material:
+              - catalogNumbers:
                 - MCZ 628A
                 - MCZ 628B
                 - MCZ 629A
                 - MCZ 629B
                 - PE-199
                 - PE-199-A
+                notes: >
+                  Martin Anné has kindly donated his
+                  figured specimen (MCZ 628A, B) to the
+                  Museum of Comparative Zoology. Kraig
+                  Derstler’s figured specimen is now in his
+                  private collection, but will be deposited as
+                  specimen PE-199 and 199-A in the paleon-
+                  tological collections of the North Museum,
+                  Franklin and Marshall College, Lancaster,
+                  Pennsylvania, within the next year. Latex
+                  castings of this latter specimen are on file
+                  at the Museum of Comparative Zoology
+                  (MCZ 629A and B). (page 68)
           - taxon: kinzercystis
             new: true
             children:
             - taxon: durhami_sprinkle_1973
               type: true
               new: true
-              specimens:
-                holotype: MCZ 581 # two counterparts
-                paratypes:
+              material:
+              - catalogNumbers:
+                - MCZ 581
+                role: holotype
+                notes: two counterparts
+              - catalogNumbers:
                 - MCZ 582
                 - MCZ 583
                 - MCZ 584
@@ -59,6 +92,7 @@ taxonomies:
                 - MCZ 586
                 - MCZ 587
                 - MCZ 729
+                role: paratype
       - openTaxon: eocrinoidea-unnamed-order-1_sprinkle_1973
         children:
         - taxon: eocrinidae
@@ -69,9 +103,11 @@ taxonomies:
             children:
             - taxon: prolifica_walcott_1917
               type: true
-              specimens:
-                lectotype: USNM 64350
-                plesiotypes:
+              material:
+              - catalogNumbers:
+                - USNM 64350
+                role: lectotype
+              - catalogNumbers:
                 - MCZ 656
                 - MCZ 657
                 - MCZ 658
@@ -85,6 +121,7 @@ taxonomies:
                 - MCZ 668
                 - NYSM 12758
                 - NYSM 12759
+                role: plesiotype
             - taxon: longidactylus_walcott_1886
               synonyms:
               - taxon: longidactylus_walcott_1886
@@ -108,10 +145,14 @@ taxonomies:
                 - taxon: gogia
                 auth: [robison]
                 year: 1965
-              specimens:
-                lectotype: USNM 15315
-                syntype: USNM 15315
-                plesiotypes:
+              material:
+              - catalogNumbers:
+                - USNM 15315
+                role: lectotype
+              - catalogNumbers:
+                - USNM 15315
+                role: syntype
+              - catalogNumbers:
                 - AMNH 20001
                 - AMNH 20002
                 - AMNH 20003
@@ -132,9 +173,15 @@ taxonomies:
                 - MCZ 704
                 - MCZ 705
                 - GCM 2641
-                - E-3340 # cast MCZ 669
+                role: plesiotype
+              - catalogNumbers:
+                - E-3340
+                role: plesiotype
+                notes: cast MCZ 669
+              - catalogNumbers:
                 - MCZ 669
                 - MCZ 670
+                role: plesiotype
             - taxon: multibrachiatus_kirk_1945
               synonyms:
               - taxon: multibrachiatus_kirk_1945
@@ -142,16 +189,25 @@ taxonomies:
                 - taxon: eocrinus
                 auth: [kirk]
                 year: 1945
-              specimens:
-                holotype: USNM 108556a # two counterparts
-                paratypes:
-                -  USNM 108556b # two counterparts
-                topotypes:
-                - USNM 165425  # topotype?  (? mark in orig text)
+              material:
+              - catalogNumbers:
+                - USNM 108556a
+                role: holotype
+                notes: two counterparts
+              - catalogNumbers:
+                - USNM 108556b
+                role: paratype
+                notes: two counterparts
+              - catalogNumbers:
+                - USNM 165425
+                role: topotype
+                notes: topotype?  (? mark in orig text)
             - taxon: spiralis_robison_1965
-              specimens:
-                holotype: USNM 139550
-                paratypes:
+              material:
+              - catalogNumbers:
+                - USNM 139550
+                role: holotype
+              - catalogNumbers:
                 - USNM 139551
                 - USNM 139552
                 - USNM 139553
@@ -167,7 +223,8 @@ taxonomies:
                 - USNM 139563
                 - USNM 139564
                 - USNM 139565
-                plesiotypes:
+                role: paratype
+              - catalogNumbers:
                 - MCZ 706
                 - MCZ 707
                 - MCZ 708
@@ -181,6 +238,7 @@ taxonomies:
                 - MCZ 716
                 - MCZ 717
                 - MCZ 730
+                role: plesiotype
             - taxon: granulosa_robison_1965
               synonyms:
               - taxon: longidactylus_walcott_1886
@@ -190,9 +248,11 @@ taxonomies:
                 pars: true
                 auth: [Ressler]
                 year: 1939
-              specimens:
-                holotype: UU 1001
-                plesiotypes:
+              material:
+              - catalogNumbers:
+                - UU 1001
+                role: holotype
+              - catalogNumbers:
                 - MCZ 732
                 - MCZ 733
                 - MCZ 734
@@ -212,11 +272,15 @@ taxonomies:
                 - PE 214
                 - ISU 1440
                 - MCZ 739
+                role: plesiotype
             - taxon: palmeri_sprinkle_1973
               new: true
-              specimens:
-                holotype: USNM 165418 # (USNM 165418A and USNM 165418B)
-                paratypes:
+              material:
+              - catalogNumbers:
+                - USNM 165418
+                role: holotype
+                notes: (USNM 165418A and USNM 165418B)
+              - catalogNumbers:
                 - USNM 165414
                 - USNM 165415
                 - USNM 165416
@@ -238,11 +302,14 @@ taxonomies:
                 - MCZ 688
                 - MCZ 689
                 - MCZ 690
+                role: paratype
             - taxon: guntheri_sprinkle_1973
               new: true
-              specimens:
-                holotype: UU 1010a
-                paratypes:
+              material:
+              - catalogNumbers:
+                - UU 1010a
+                role: holotype
+              - catalogNumbers:
                 - UU 1010c
                 - UU 1010t
                 - UU 1019b
@@ -253,6 +320,7 @@ taxonomies:
                 - MCZ 739
                 - MCZ 740
                 - MCZ 741
+                role: paratype
             - taxon: kitchnerensis_sprinkle_1973
               synonyms:
               - taxon: prolifica_walcott_1917
@@ -266,9 +334,11 @@ taxonomies:
                 - taxon: eocrinus
                 provisional: true
               new: true
-              specimens:
-                holotype: GSC 25934
-                paratypes:
+              material:
+              - catalogNumbers:
+                - GSC 25934
+                role: holotype
+              - catalogNumbers:
                 - GSC 25935
                 - GSC 25936
                 - GSC 25937
@@ -305,15 +375,18 @@ taxonomies:
                 - GSC 10088g
                 - GSC 10088h
                 - UC 24691
+                role: paratype
             - taxon: hobbsi_sprinkle_1973
               new: true
               synonyms:
               - openTaxon: gogia-sp_palmer_1968
                 parents:
                 - taxon: gogia
-              specimens:
-                holotype: MCZ 631
-                paratypes:
+              material:
+              - catalogNumbers:
+                - MCZ 631
+                role: holotype
+              - catalogNumbers:
                 - MCZ 632
                 - MCZ 633
                 - MCZ 634
@@ -326,29 +399,45 @@ taxonomies:
                 - MCZ 641
                 - MCZ 642
                 - MCZ 643
+                role: paratype
             - taxon: radiata_sprinkle_1973
               new: true
               provisional: true
-              specimens:
-                holotype: USNM 165399
-                paratypes:
+              material:
+              - catalogNumbers:
+                - USNM 165399
+                role: holotype
+              - catalogNumbers:
                 - USNM 165400
                 - USNM 165401
                 - USNM 165402
-                - USNM 165403 # ?
-                - USNM 165404 # ?
+                role: paratype
+              - catalogNumbers:
+                - USNM 165403
+                role: paratype
+                notes: '?'
+              - catalogNumbers:
+                - USNM 165404
+                role: paratype
+                notes: '?'
+              - catalogNumbers:
                 - GSC 25954
+                role: paratype
             - openTaxon: gogia-sp_robison_1965
-              specimens:
-                holotype: USNM 165411
+              material:
+              - catalogNumbers:
+                - USNM 165411
+                role: holotype
             - openTaxon: gogia-sp-2_sprinkle_1973
               synonyms:
               - openTaxon: eocystites?-sp_walcott_1917
                 parents:
                 - taxon: eocystites
                 provisional: true
-              specimens:
-                holotype: USNM 63712
+              material:
+              - catalogNumbers:
+                - USNM 63712
+                role: holotype
           - taxon: acanthocystites
             children:
             - taxon: briareus_barrande_1887
@@ -358,8 +447,8 @@ taxonomies:
             - taxon: jani_prokop_1962
               synonyms:
               - taxon: nuntius_prokop_1962
-              specimens:
-                unknowntypes:
+              material:
+              - catalogNumbers:
                 - E62
                 - E40
                 - E41
@@ -371,8 +460,8 @@ taxonomies:
             children:
             - taxon: priscus_barrande_1846
               type: true
-              specimens:
-                unknowntypes:
+              material:
+              - catalogNumbers:
                 - E 11
                 - E 12
                 - E 17
@@ -408,9 +497,11 @@ taxonomies:
             - taxon: minor_sprinkle_1973
               type: true
               new: true
-              specimens:
-                holotype: MCZ 719
-                paratypes:
+              material:
+              - catalogNumbers:
+                - MCZ 719
+                role: holotype
+              - catalogNumbers:
                 - MCZ 720
                 - MCZ 721
                 - MCZ 722
@@ -422,6 +513,7 @@ taxonomies:
                 - MCZ 728
                 - USNM 165423
                 - USNM 165424
+                role: paratype
           - taxon: nolichuckia
             provisional: true
             new: true
@@ -429,13 +521,16 @@ taxonomies:
             - taxon: casteri_sprinkle_1973
               type: true
               new: true
-              specimens:
-                holotype: MCZ 616
-                paratypes:
+              material:
+              - catalogNumbers:
+                - MCZ 616
+                role: holotype
+              - catalogNumbers:
                 - MCZ 617
                 - MCZ 618
                 - MCZ 619
                 - USNM 165410
+                role: paratype
         - taxon: ascocystitidae
           moved:
             taxon: eocrinoidea
@@ -477,8 +572,10 @@ taxonomies:
             children:
             - taxon: resseri_ulrich_1929
               type: true
-              specimens:
-                holotype: USNM 80490
+              material:
+              - catalogNumbers:
+                - USNM 80490
+                role: holotype
       - openTaxon: eocrinoidea-indeterminate-order-2_sprinkle_1973
         children:
         - taxon: cryptocrinitidae
@@ -515,10 +612,13 @@ taxonomies:
             children:
             - taxon: bohemicus_barrande_1887_cardiocystites
               type: true
-              specimens:
-                unknowntypes:
-                - EE 39 # casts of two known type specimen
-                - EE 51 # casts of two known type specimen
+              material:
+              - catalogNumbers:
+                - E 39
+                notes: casts of two known type specimen
+              - catalogNumbers:
+                - E 51
+                notes: casts of two known type specimen
         - taxon: rhipidocystidae
           children:
           - taxon: rhipidocystis
@@ -535,12 +635,15 @@ taxonomies:
             - taxon: ikecanensis_sprinkle_1973
               type: true
               new: true
-              specimens:
-                holotype: MCZ 646
-                paratypes:
+              material:
+              - catalogNumbers:
+                - MCZ 646
+                role: holotype
+              - catalogNumbers:
                 - MCZ 647
                 - MCZ 648
                 - MCZ 649
+                role: paratype
     - openTaxon: blastozoa-indeterminate-class_sprinkle_1973
       children:
       - taxon: cigaria
@@ -550,8 +653,8 @@ taxonomies:
         children:
         - taxon: dusli_barrande_1887
           type: true
-          specimens:
-            unknowntypes:
+          material:
+          - catalogNumbers:
             - E 35
       - taxon: archaeocystites
         moved:
@@ -569,12 +672,13 @@ taxonomies:
         children:
         - taxon: nodosus_hall_1864
           type: true
-          specimens:
-            plesiotypes:
+          material:
+          - catalogNumbers:
             - S3163a
             - S3163b
             - S3163c
             - S3163d
+            role: plesiotype
     - taxon: parablastoidea
       moved:
         taxon: crinozoa
@@ -585,16 +689,21 @@ taxonomies:
           children:
           - taxon: charcariaedens_billings_1859
             type: true
-            specimens:
-              holotype: GSG 1016
-              plesiotypes:
+            material:
+            - catalogNumbers:
+              - GSC 1016
+              role: holotype
+            - catalogNumbers:
               - UC 26022
               - AMNH 25068
+              role: plesiotype
           - taxon: rossi_sprinkle_1973
             new: true
-            specimens:
-              holotype: USNM 165378
-              paratypes:
+            material:
+            - catalogNumbers:
+              - USNM 165378
+              role: holotype
+            - catalogNumbers:
               - USNM 165379
               - USNM 165380
               - USNM 165381
@@ -615,26 +724,33 @@ taxonomies:
               - USNM 165396
               - USNM 165397
               - USNM 165398
+              role: paratype
           - taxon: nevadensis_sprinkle_1973
             provisional: true
             new: true
-            specimens:
-              holotype: MCZ 613
-              paratypes:
+            material:
+            - catalogNumbers:
+              - MCZ 613
+              role: holotype
+            - catalogNumbers:
               - MCZ 614
               - MCZ 615
               - MCZ 643
               - MCZ 644
+              role: paratype
           - taxon: elongatus_sprinkle_1973
             provisional: true
             new: true
             notes: "very questionably referred to Blastoidocrinus"
-            specimens:
-              holotype: "610"
-              paratypes:
-              - 611a
-              - 611b
-              - 611c
+            material:
+            - catalogNumbers:
+              - MCZ 610
+              role: holotype
+            - catalogNumbers:
+              - MCZ 611a
+              - MCZ 611b
+              - MCZ 611c
+              role: paratype
         - taxon: blastocystis
           children:
           - taxon: rossica_jaekel_1918
@@ -648,9 +764,11 @@ taxonomies:
           - taxon: hudsoni_sprinkle_1973
             type: true
             new: true
-            specimens:
-              holotype: MCZ 594
-              paratypes:
+            material:
+            - catalogNumbers:
+              - MCZ 594
+              role: holotype
+            - catalogNumbers:
               - MCZ 595
               - MCZ 596
               - MCZ 597
@@ -660,15 +778,19 @@ taxonomies:
               - MCZ 561
               - MCZ 644
               - MCZ 645
+              role: paratype
           - taxon: fayi_sprinkle_1973
             new: true
-            specimens:
-              holotype: MCZ 602-D1
-              paratypes:
+            material:
+            - catalogNumbers:
+              - MCZ 602-D1
+              role: holotype
+            - catalogNumbers:
               - MCZ 602-D2-3
               - MCZ 602-RO-5
               - MCZ 602a
               - MCZ 602b
+              role: paratype
     - taxon: rhombifera-class
       moved:
         taxon: crinozoa
@@ -700,15 +822,21 @@ taxonomies:
               - taxon: brachiatus_sprinkle_1973
                 type: true
                 new: true
-                specimens:
-                  holotype: GSC 25962
-                  paratypes:
+                material:
+                - catalogNumbers:
+                  - GSC 25962
+                  role: holotype
+                - catalogNumbers:
                   - USNM 165405
                   - USNM 165406
                   - USNM 165407
                   - USNM 165408
                   - USNM 165426
-                  - USNM 165427 # ?
+                  role: paratype
+                - catalogNumbers:
+                  - USNM 165427
+                  role: paratype
+                  notes: '?'
     - taxon: paracrinoidea
       children:
       - taxon: springerocystidae

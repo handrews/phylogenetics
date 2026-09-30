@@ -1,3 +1,4 @@
+repositories: [fmnh]
 taxonomies:
 - taxon: crinoidea
   children:
@@ -12,11 +13,15 @@ taxonomies:
         - taxon: broweri_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler_2020
           new: true
           type: true
-          specimens:
-            holotype: PE 52742
-            paratypes:
-            - [PE 52750, PE 52753]
+          material:
+          - catalogNumbers:
+            - PE 52742
+            role: holotype
+          - catalogNumbers:
+            - - PE 52750
+              - PE 52753
             - USNM 165237
+            role: paratype
 assumptions:
 - taxon: aethocrinus
   children:
@@ -171,21 +176,21 @@ phylogenies:
       - taxon: ceratocystis
       - bracket: crinoidea
         children:
+        - children:
           - children:
             - children:
+              - taxon: aethocrinus
               - children:
-                - taxon: aethocrinus
                 - children:
-                  - children:
-                    - taxon: alphacrinus
-                    - taxon: athenacrinus
-                  - children:
-                    - taxon: carabocrinus
-                    - taxon: hybocrinus
-              - taxon: apektocrinus
-            - taxon: eknomocrinus
-          - taxon: glenocrinus
-          - taxon: titanocrinus
+                  - taxon: alphacrinus
+                  - taxon: athenacrinus
+                - children:
+                  - taxon: carabocrinus
+                  - taxon: hybocrinus
+            - taxon: apektocrinus
+          - taxon: eknomocrinus
+        - taxon: glenocrinus
+        - taxon: titanocrinus
     - children:
       - taxon: totiglobus
         quoted: true

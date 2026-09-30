@@ -21,8 +21,7 @@ taxonomies:
     pages: 311
     illustrations:
     - plate: I
-      figures:
-        [1a, 1c]
+      figures: [1a, 1c]
     synonyms:
     - authority:
         source: 1821_wahlenberg

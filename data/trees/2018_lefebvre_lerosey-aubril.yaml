@@ -13,13 +13,16 @@ taxonomies:
           - taxon: utahensis_lefebvre_lerosey-aubril_2018
             new: true
             type: true
-            specimens:
-              holotype: UU05072.02_01
-              paratypes:
+            material:
+            - catalogNumbers:
+              - UU05072.02_01
+              role: holotype
+            - catalogNumbers:
               - UU05072.01_01
               - UU05072.01_02
               - UU05072.02_02
               - UU05072.03
-              additional:
+              role: paratype
+            - catalogNumbers:
               - USNM 393393
               - USNM 393394

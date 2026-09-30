@@ -22,9 +22,11 @@ taxonomies:
             children:
             - taxon: navicula_whitehouse_1941
               type: true
-              specimens:
-                holotype: UQF5404
-                paratypes:
+              material:
+              - catalogNumbers:
+                - UQF5404
+                role: holotype
+              - catalogNumbers:
                 - UQF5398
                 - UQF5399
                 - UQF5400
@@ -34,28 +36,32 @@ taxonomies:
                 - UQF5405
                 - UQF5406
                 - UQF5407
-                topotypes:
-                - QMF59034
-                - ... # the whole range is over 200 specimens
-                - QMF59220
+                role: paratype
+              - catalogNumbers:
+                - - QMF59034
+                  - QMF59220
+                role: topotype
+                notes: the whole range is over 200 specimens
           - taxon: cymbionites
             children:
             - taxon: craticula_whitehouse_1941
               type: true
-              specimens:
-                holotype: UQF5409
-                paratypes:
+              material:
+              - catalogNumbers:
+                - UQF5409
+                role: holotype
+              - catalogNumbers:
                 - UQF5408
-                - UQF5410
-                - ...
-                - UQF5431
+                - - UQF5410
+                  - UQF5431
                 - UQF5433
                 - UQF5434
                 - UQF5435
-                topotypes:
-                - QMF59221
-                - ...
-                - QMF59373
+                role: paratype
+              - catalogNumbers:
+                - - QMF59221
+                  - QMF59373
+                role: topotype
           - taxon: lichenoides
         - taxon: thorntonitidae
           new: true
@@ -66,15 +72,16 @@ taxonomies:
             - taxon: dowlingi_jell_sprinkle_2021
               type: true
               new: true
-              specimens:
-                holotype: QMF59526
-                paratypes:
-                - QMF59374
-                - ...
-                - QMF59525
-                - QMF59527
-                - ...
-                - QMF59586
+              material:
+              - catalogNumbers:
+                - QMF59526
+                role: holotype
+              - catalogNumbers:
+                - - QMF59374
+                  - QMF59525
+                - - QMF59527
+                  - QMF59586
+                role: paratype
           - openTaxon: lichenoididae-gen_smith.a.b_zamora_álvaro_2013
             provisional: true
             children:
@@ -93,12 +100,14 @@ taxonomies:
           - taxon: edgari_jell_sprinkle_2021
             type: true
             new: true
-            specimens:
-              holotype: QMF59588
-              paratypes:
-              - QMF59587
-              - ...
-              - QMF59646
+            material:
+            - catalogNumbers:
+              - QMF59588
+              role: holotype
+            - catalogNumbers:
+              - - QMF59587
+                - QMF59646
+              role: paratype
       - taxon: stromatocystitida
         children:
         - taxon: stromatocystitidae
@@ -109,11 +118,10 @@ taxonomies:
               type: true
             - openTaxon: cambraster-sp_jell_sprinkle_2021
               new: true
-              specimens:
-                unknowntypes:
-                - QMF59647
-                - ...
-                - QMF59653
+              material:
+              - catalogNumbers:
+                - - QMF59647
+                  - QMF59653
         - openTaxon: stromatocystitida-unknown-family_jell_sprinkle_2021
           children:
           - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
@@ -122,8 +130,7 @@ taxonomies:
               type: true
             - openTaxon: kailidiscus-sp_jell_sprinkle_2021
               new: true
-              specimens:
-                unknowntypes:
-                - QMF59654
-                - ...
-                - QMF59668
+              material:
+              - catalogNumbers:
+                - - QMF59654
+                  - QMF59668

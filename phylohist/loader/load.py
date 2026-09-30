@@ -111,6 +111,7 @@ def _load_trees(data):
     file_meta = {
       'file_contexts': opinion.get('contexts') or {},
       'file_unused': tuple(opinion.get('unused') or ()),
+      'file_repositories': tuple(opinion.get('repositories') or ()),
     }
 
     position = 0
@@ -184,7 +185,7 @@ def _report_material(data):
       node_contexts = node.get('contexts') or {}
       for level, message in material.context_refs(node, node_contexts, file_contexts):
         _log_material(level, f'{where}: {message}')
-      for level, message in material.figure_refs(node):
+      for level, message in material.figure_refs(node, is_cited):
         _log_material(level, f'{where}: {message}')
       for level, message in material.catalog_numbers(node, repositories, file_repositories):
         _log_material(level, f'{where}: {message}')
@@ -229,6 +230,7 @@ def load(drafts=False, tolerate=False):
   to see everything before stopping."""
   with counting_errors() as errors:
     data = load_files(drafts=drafts)
+    material.set_repository_registry(data.get('repositories'))
     for field, cls in (
       ('authors', Author),
       ('publications', Publication),

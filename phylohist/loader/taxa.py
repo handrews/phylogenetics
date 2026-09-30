@@ -822,6 +822,11 @@ class Tree:
     """This node's tree file's `unused` list, as a tuple."""
     return self.root._metadata.get('file_unused') or ()
 
+  @property
+  def file_repositories(self):
+    """This node's tree file's `repositories` list, as a tuple."""
+    return self.root._metadata.get('file_repositories') or ()
+
   @cached_property
   def contexts(self):
     """This node's own `contexts` merged over the file's, the node

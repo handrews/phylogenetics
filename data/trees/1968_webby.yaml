@@ -37,9 +37,11 @@ taxonomies:
           type: true
         - taxon: distans_webby_1968
           new: true
-          specimens:
-            holotype: USGD 2302
-            paratypes:
+          material:
+          - catalogNumbers:
+            - USGD 2302
+            role: holotype
+          - catalogNumbers:
             - USGD 2303
             - USGD 2304
             - USGD 2305
@@ -52,7 +54,8 @@ taxonomies:
             - USGD 2313
             - USGD 2314
             - USGD 3303
+            role: paratype
         - openTaxon: astrocystites-sp_webby_1968
-          specimens:
-            unknowntypes:
+          material:
+          - catalogNumbers:
             - USGD 3304

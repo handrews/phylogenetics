@@ -9,9 +9,11 @@ taxonomies:
         type: true
       - taxon: sporranoides_rahman_stewart_zamora_2015
         new: true
-        specimens:
-          holotype: GLAHM 131255/2
-          paratypes:
+        material:
+        - catalogNumbers:
+          - GLAHM 131255/2
+          role: holotype
+        - catalogNumbers:
           - GLAHM 131255/1
           - GLAHM 131255/3
           - GLAHM 131255/4
@@ -38,3 +40,4 @@ taxonomies:
           - GLAHM 131255/25
           - GLAHM 131255/26
           - GLAHM 131255/27
+          role: paratype

@@ -11,32 +11,35 @@ taxonomies:
         - taxon: wilbernsensis_zamora_sumrall_sprinkle_2015
           type: true
           new: true
-          occurrences:
-          - stage: Jiangshanian
-            localStage: Sunwaptan
-            localStageModifier: lower
-            unit:
-            - Intraformational conglomerate beds
-            - Point Peak Shale Member
-            - Wilberns Formation
-            - NW Llano Uplift
-            notes: |
-              North American lower Sunwaptan Stage.
-              The "boundary between the Idahoia and Ellipsocephaloides
-              Zones occurs near the base of the member" but unclear which
-              zone is upper or lower
-            biozoneRange: [Idahoia, Ellipsocephaloides]
-            location:
-            - Long Valley
-            - 21 km (13 miles) SE of Brady
-            - near the NW edge of the Llano uplift
-            - McCulloch County
-            - Texas
-            specimens:
-              holotypes:
-                USNM:
-                - 178555
-              paratypes:
-                USNM:
-                - 178556
-                - 178554
+          material:
+          - catalogNumbers:
+            - USNM 178555
+            context: long-valley
+            role: holotype
+          - catalogNumbers:
+            - USNM 178556
+            - USNM 178554
+            context: long-valley
+            role: paratype
+          contexts:
+            long-valley:
+              stage: Jiangshanian
+              localStage: Sunwaptan
+              localStageModifier: lower
+              unit:
+              - Intraformational conglomerate beds
+              - Point Peak Shale Member
+              - Wilberns Formation
+              - NW Llano Uplift
+              notes: |
+                North American lower Sunwaptan Stage.
+                The "boundary between the Idahoia and Ellipsocephaloides
+                Zones occurs near the base of the member" but unclear which
+                zone is upper or lower
+              biozoneRange: [Idahoia, Ellipsocephaloides]
+              location:
+              - Long Valley
+              - 21 km (13 miles) SE of Brady
+              - near the NW edge of the Llano uplift
+              - McCulloch County
+              - Texas

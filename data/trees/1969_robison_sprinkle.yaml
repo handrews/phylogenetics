@@ -12,11 +12,14 @@ taxonomies:
         - taxon: utahensis_robison_sprinkle_1969
           new: true
           type: true
-          specimens:
-            holotype: USNM 163252
-            paratypes:
+          material:
+          - catalogNumbers:
+            - USNM 163252
+            role: holotype
+          - catalogNumbers:
             - USNM 163253
             - USNM 163254
             - USNM 163255
             - USNM 163256
             - USNM 163257
+            role: paratype

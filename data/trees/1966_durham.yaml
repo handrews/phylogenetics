@@ -11,9 +11,12 @@ taxonomies:
       children:
       - taxon: roddyi_ruedemann_1933
         type: true
-        specimens:
-          holotype: USNM85181
-          hypotypes:
+        material:
+        - catalogNumbers:
+          - USNM85181
+          role: holotype
+        - catalogNumbers:
           - USNM153758
           - USNM153759
           - USNM153760
+          role: hypotype

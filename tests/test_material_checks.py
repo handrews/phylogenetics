@@ -305,20 +305,20 @@ def test_unreferenced_file_contexts_all_referenced_is_quiet():
 
 
 def test_figure_refs_label_match_is_quiet():
-  node = {'material': [{'label': 'A'}], 'figures': [{'plate': 1, 'of': 'A'}]}
+  node = {'material': [{'label': 'A'}], 'illustrations': [{'plate': 1, 'of': 'A'}]}
   assert material.figure_refs(node) == []
 
 
 def test_figure_refs_range_endpoint_matches():
   node = {
     'material': [{'catalogNumbers': [['GSC 1', 'GSC 5']]}],
-    'figures': [{'plate': 1, 'of': 'GSC 5'}],
+    'illustrations': [{'plate': 1, 'of': 'GSC 5'}],
   }
   assert material.figure_refs(node) == []
 
 
 def test_figure_refs_no_match_is_error():
-  node = {'material': [{'label': 'A'}], 'figures': [{'plate': 1, 'of': 'B'}]}
+  node = {'material': [{'label': 'A'}], 'illustrations': [{'plate': 1, 'of': 'B'}]}
   assert material.figure_refs(node) == [
     ('error', 'figure "of" value "B" matches 0 material entries, not 1'),
   ]
@@ -327,7 +327,7 @@ def test_figure_refs_no_match_is_error():
 def test_figure_refs_several_matches_is_error():
   node = {
     'material': [{'label': 'A'}, {'catalogNumbers': ['A']}],
-    'figures': [{'plate': 1, 'of': 'A'}],
+    'illustrations': [{'plate': 1, 'of': 'A'}],
   }
   assert material.figure_refs(node) == [
     ('error', 'figure "of" value "A" matches 2 material entries, not 1'),
@@ -337,9 +337,14 @@ def test_figure_refs_several_matches_is_error():
 def test_figure_refs_list_of_and_no_of_field():
   node = {
     'material': [{'label': 'A'}, {'label': 'B'}],
-    'figures': [{'plate': 1, 'of': ['A', 'B']}, {'plate': 2}],
+    'illustrations': [{'plate': 1, 'of': ['A', 'B']}, {'plate': 2}],
   }
   assert material.figure_refs(node) == []
+
+
+def test_figure_refs_cited_entry_is_not_read():
+  node = {'material': [{'label': 'A'}], 'illustrations': [{'plate': 1, 'of': 'B'}]}
+  assert material.figure_refs(node, is_cited=True) == []
 
 
 # -- catalog_numbers ------------------------------------------------------------
@@ -493,7 +498,7 @@ def test_cast_refs_absent_castof_and_absent_material_are_quiet():
 # -- null_material --------------------------------------------------------------
 
 
-@pytest.mark.parametrize('field', ['material', 'figures', 'contexts', 'range'])
+@pytest.mark.parametrize('field', ['material', 'contexts', 'ranges'])
 def test_null_material_cited_entry_with_any_field_is_error(field):
   node = {field: None}
   assert material.null_material(node, is_cited=True) == [
@@ -502,19 +507,77 @@ def test_null_material_cited_entry_with_any_field_is_error(field):
 
 
 def test_null_material_not_cited_is_quiet():
-  node = {'material': None, 'figures': None, 'contexts': None, 'range': None}
+  node = {'material': None, 'illustrations': None, 'contexts': None, 'ranges': None}
+  assert material.null_material(node, is_cited=False) == []
+
+
+def test_null_ranges_is_accepted_on_a_primary_node_and_rejected_on_a_cited_entry():
+  node = {'ranges': None}
+  assert material.null_material(node, is_cited=False) == []
+  assert material.null_material(node, is_cited=True) == [
+    ('error', 'cited entry carries `ranges`'),
+  ]
+
+
+def test_null_material_cited_entry_may_carry_locators():
+  node = {'illustrations': [{'plate': 15, 'figures': [1, 3, 4], 'uncertain': True}]}
+  assert material.null_material(node, is_cited=True) == []
+
+
+def test_null_material_cited_entry_with_null_illustrations_is_error():
+  assert material.null_material({'illustrations': None}, is_cited=True) == [
+    ('error', 'cited entry carries `illustrations: null`'),
+  ]
+
+
+def test_null_material_cited_entry_illustration_with_of_is_error():
+  node = {'illustrations': [{'plate': 1, 'of': 'A'}, {'plate': 2}]}
+  assert material.null_material(node, is_cited=True) == [
+    ('error', 'cited entry `illustrations` entry carries `of`'),
+  ]
+
+
+def test_null_material_cited_entry_illustration_with_depicts_is_error():
+  node = {'illustrations': [{'plate': 1, 'depicts': 'cast'}]}
+  assert material.null_material(node, is_cited=True) == [
+    ('error', 'cited entry `illustrations` entry carries `depicts`'),
+  ]
+
+
+def test_null_material_cited_entry_reports_each_offending_entry():
+  node = {'illustrations': [{'plate': 1, 'of': 'A', 'depicts': 'cast'}, {'plate': 2, 'of': 'B'}]}
+  assert len(material.null_material(node, is_cited=True)) == 3
+
+
+@pytest.mark.parametrize('is_cited', [False, True])
+def test_null_material_authority_illustration_with_of_is_error(is_cited):
+  node = {'authority': {'source': 'x', 'illustrations': [{'plate': 1, 'of': 'A'}]}}
+  assert material.null_material(node, is_cited=is_cited) == [
+    ('error', '`authority.illustrations` entry carries `of`'),
+  ]
+
+
+def test_null_material_authority_illustration_with_depicts_is_error():
+  node = {'authority': {'source': 'x', 'illustrations': [{'plate': 1, 'depicts': 'drawing'}]}}
+  assert material.null_material(node, is_cited=False) == [
+    ('error', '`authority.illustrations` entry carries `depicts`'),
+  ]
+
+
+def test_null_material_authority_locators_without_of_are_quiet():
+  node = {'authority': {'source': 'x', 'illustrations': [{'plate': 1, 'figures': 2}]}}
   assert material.null_material(node, is_cited=False) == []
 
 
 def test_null_material_null_beside_figure_of_is_error():
-  node = {'material': None, 'figures': [{'plate': 1, 'of': 'A'}]}
+  node = {'material': None, 'illustrations': [{'plate': 1, 'of': 'A'}]}
   assert material.null_material(node, is_cited=False) == [
     ('error', '`material: null` beside a figure whose `of` names one'),
   ]
 
 
 def test_null_material_not_null_beside_figure_of_is_quiet():
-  node = {'material': [{'label': 'A'}], 'figures': [{'plate': 1, 'of': 'A'}]}
+  node = {'material': [{'label': 'A'}], 'illustrations': [{'plate': 1, 'of': 'A'}]}
   assert material.null_material(node, is_cited=False) == []
 
 
@@ -526,25 +589,59 @@ def test_null_material_absent_is_quiet():
 
 
 def test_unused_fields_none_declared_is_quiet():
-  document = {'taxonomies': [{'taxon': 'a', 'range': None}]}
+  document = {'taxonomies': [{'taxon': 'a', 'ranges': None}]}
   assert material.unused_fields(document) == []
 
 
 def test_unused_fields_flags_the_node_that_still_carries_it():
   document = {
-    'unused': ['range'],
+    'unused': ['ranges'],
     'taxonomies': [
-      {'taxon': 'a', 'range': None, 'children': [{'taxon': 'b'}]},
+      {'taxon': 'a', 'ranges': None, 'children': [{'taxon': 'b'}]},
     ],
   }
   assert material.unused_fields(document) == [
-    ('error', '`range` is listed as `unused` but appears at 0'),
+    ('error', '`ranges` is listed as `unused` but appears at 0'),
+  ]
+
+
+def test_unused_ranges_with_a_node_carrying_ranges_is_error():
+  document = {
+    'unused': ['ranges'],
+    'taxonomies': [{'taxon': 'a', 'ranges': [{'period': 'Ordovician'}]}],
+  }
+  assert material.unused_fields(document) == [
+    ('error', '`ranges` is listed as `unused` but appears at 0'),
   ]
 
 
 def test_unused_fields_ignores_nodes_without_it():
-  document = {'unused': ['range'], 'taxonomies': [{'taxon': 'a', 'children': [{'taxon': 'b'}]}]}
+  document = {'unused': ['ranges'], 'taxonomies': [{'taxon': 'a', 'children': [{'taxon': 'b'}]}]}
   assert material.unused_fields(document) == []
+
+
+def test_unused_illustrations_tolerates_a_cited_entrys_locators():
+  document = {
+    'unused': ['illustrations'],
+    'taxonomies': [{'taxon': 'a', 'synonyms': [{'taxon': 'b', 'illustrations': [{'plate': 1}]}]}],
+  }
+  assert material.unused_fields(document) == []
+
+
+def test_unused_illustrations_flags_a_primary_node_even_with_null():
+  document = {
+    'unused': ['illustrations'],
+    'taxonomies': [
+      {
+        'taxon': 'a',
+        'synonyms': [{'taxon': 'b', 'illustrations': [{'plate': 1}]}],
+        'children': [{'taxon': 'c', 'illustrations': None}],
+      },
+    ],
+  }
+  assert material.unused_fields(document) == [
+    ('error', '`illustrations` is listed as `unused` but appears at 0/children/0'),
+  ]
 
 
 # -- walk_document ------------------------------------------------------------
@@ -589,14 +686,14 @@ def test_tree_file_contexts_and_unused_read_from_root_metadata(load_records):
     'position': 900,
     'type': 'taxonomy',
     'file_contexts': {'loc': {}},
-    'file_unused': ('range',),
+    'file_unused': ('ranges',),
   }
   root = Tree({'children': [{}]}, metadata)
   assert root.file_contexts == {'loc': {}}
-  assert root.file_unused == ('range',)
+  assert root.file_unused == ('ranges',)
   child = root.children[0]
   assert child.file_contexts == {'loc': {}}
-  assert child.file_unused == ('range',)
+  assert child.file_unused == ('ranges',)
 
 
 def test_tree_contexts_merge_node_over_file_with_scope_map(load_records):
@@ -634,17 +731,17 @@ def test_load_reports_material_checks_at_the_right_level(caplog):
     'trees': {
       '_synthetic_source': {
         'contexts': {'stray': {}},
-        'unused': ['range'],
+        'unused': ['ranges'],
         'repositories': ['gm', 'nowhere'],
         'taxonomies': [
           {
             'taxon': 'cyathocystis',
-            'range': None,
+            'ranges': None,
             'material': [
               {'catalogNumbers': ['ZZZZ 1'], 'context': 'missing-ctx'},
               {'catalogNumbers': ['MCZ 1'], 'castOf': 'MCZ 2'},
             ],
-            'figures': [{'plate': 1, 'of': 'nope'}],
+            'illustrations': [{'plate': 1, 'of': 'nope'}],
             'synonyms': [{'taxon': 'cyathocystis', 'contexts': None}],
           },
         ],
@@ -659,7 +756,7 @@ def test_load_reports_material_checks_at_the_right_level(caplog):
   assert any(
     '_synthetic_source at 0' in m and 'no resolvable repository prefix' in m for m in warnings
   )
-  assert any('`range` is listed as `unused`' in m for m in errors)
+  assert any('`ranges` is listed as `unused`' in m for m in errors)
   assert any('context "missing-ctx" is not defined' in m for m in errors)
   assert any('figure "of" value "nope"' in m for m in errors)
   assert any('cited entry carries `contexts`' in m for m in errors)
@@ -699,6 +796,30 @@ def test_check_draft_exits_one_on_material_null_on_a_cited_entry(tmp_path):
   result = _run_check_draft(draft)
   assert result.returncode == 1, result.stdout + result.stderr
   assert 'cited entry carries `material`' in result.stdout
+
+
+def test_check_draft_exits_one_on_illustrations_null_on_a_primary_node(tmp_path):
+  draft = tmp_path / '1898_bather.yaml'
+  draft.write_text('taxonomies:\n- taxon: cyathocystis\n  illustrations: null\n')
+  result = _run_check_draft(draft)
+  assert result.returncode == 1, result.stdout + result.stderr
+  assert 'draft carries `illustrations: null`' in result.stdout
+
+
+def test_check_draft_exits_one_on_of_in_a_cited_entrys_illustrations(tmp_path):
+  draft = tmp_path / '1898_bather.yaml'
+  draft.write_text(
+    'taxonomies:\n'
+    '- taxon: cyathocystis\n'
+    '  synonyms:\n'
+    '  - taxon: cyathocystidae\n'
+    '    illustrations:\n'
+    '    - plate: 1\n'
+    '      of: A\n',
+  )
+  result = _run_check_draft(draft)
+  assert result.returncode == 1, result.stdout + result.stderr
+  assert 'cited entry `illustrations` entry carries `of`' in result.stdout
 
 
 def test_check_draft_exits_one_on_a_listed_but_unused_repository(tmp_path):

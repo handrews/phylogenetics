@@ -15,8 +15,12 @@ opinions exactly as each publication printed them, with no normalisation.
   placement of a synonym), `removed`, `moved`, `corrected`, flags `new`, `type`,
   `provisional`, `questionable`, `quoted`, `pars`, `emended`, `tentative`,
   `modifier` (e.g. "nomen transl."), `bracket`, `auth`/`year`/`in`/`citedAs`
-  (= attribution exactly as printed on that line), `pages`, `illustrations`,
-  `specimens`, `occurrences`, `notes` (free text: ALWAYS read),
+  (= attribution exactly as printed on that line), `pages`, `material` (one entry per specimen
+  or batch: catalog numbers, `role`, `repository`, `context`), `contexts`
+  (keyed localities and horizons the entries refer to), `ranges`
+  (distribution statements), `illustrations` (on a primary node, this
+  source's own figures, with `of` naming the material entry and `depicts`;
+  on a cited entry, a locator for a figure in the cited work), `notes` (free text: ALWAYS read),
   `editorial` (= the data editor's own inference or resolution, with `basis`).
 - data/taxa.yaml: identity records (name + authority). `altSpellingOf`,
   `altRankOf`, `vulgarSpellingOf` = derivative records that borrow authority.

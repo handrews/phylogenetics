@@ -9,9 +9,11 @@ taxonomies:
         type: true
       - taxon: tastudorum_jell_burrett_banks_1985
         new: true
-        specimens:
-          holotype: UTGD122593
-          paratypes:
+        material:
+        - catalogNumbers:
+          - UTGD122593
+          role: holotype
+        - catalogNumbers:
           - UTGD122226
           - UTGD122231
           - UTGD122233
@@ -34,16 +36,17 @@ taxonomies:
           - NMVP107070
           - NMVP107071
           - NMVP107072
+          role: paratype
       - cfTaxon: tastudorum_jell_burrett_banks_1985
         new: true
-        specimens:
-          unknowntypes:
+        material:
+        - catalogNumbers:
           - UTGD122233
           - UTGD122234
       - openTaxon: cambraster-sp_jell_burrett_banks_1985
         new: true
-        specimens:
-          unknowntypes:
+        material:
+        - catalogNumbers:
           - ANU36957
           - ANU36958
           - ANU36959
@@ -55,11 +58,14 @@ taxonomies:
       children:
       - taxon: primotica_henderson_shergold_1971
         type: true
-        specimens:
-          holotype: CPC11395
-          paratypes:
+        material:
+        - catalogNumbers:
+          - CPC11395
+          role: holotype
+        - catalogNumbers:
           - CPC11396
-          unknowntypes:
+          role: paratype
+        - catalogNumbers:
           - NMVP107479
         notes: |
           NMVP107479 is this paper's own specimen, "assigned … based on
@@ -75,20 +81,21 @@ taxonomies:
       - openTaxon: stromatocystites-sp_jell_burrett_banks_1985
         provisional: true
         new: true
-        specimens:
-          unknowntypes:
+        material:
+        - catalogNumbers:
           - NMVP107478
     - openTaxon: stromatocystitidae-sp_jell_burrett_banks_1985
       new: true
-      specimens:
-        unknowntypes:
-        - [ANU36949, ANU36956]
+      material:
+      - catalogNumbers:
+        - - ANU36949
+          - ANU36956
   - taxon: isorophida
     children:
     - openTaxon: isorophida-sp_jell_burrett_banks_1985
       new: true
-      specimens:
-        unknowntypes:
+      material:
+      - catalogNumbers:
         - NMVP107129
         - NMVP108990
 - taxon: ctenocystoidea
@@ -101,12 +108,15 @@ taxonomies:
         type: true
       - taxon: jagoi_jell_burrett_banks_1985
         new: true
-        specimens:
-          holotype: UTGD122594
-          paratypes:
+        material:
+        - catalogNumbers:
+          - UTGD122594
+          role: holotype
+        - catalogNumbers:
           - NMVP107073
           - NMVP107075
           - NMVP107076
+          role: paratype
 - taxon: eocrinoidea
   children:
   - taxon: ridersiidae
@@ -118,9 +128,11 @@ taxonomies:
       - taxon: watsonae_jell_burrett_banks_1985
         type: true
         new: true
-        specimens:
-          holotype: NMVP107112
-          paratypes:
+        material:
+        - catalogNumbers:
+          - NMVP107112
+          role: holotype
+        - catalogNumbers:
           - NMVP107113
           - NMVP107114
           - NMVP107115
@@ -151,10 +163,11 @@ taxonomies:
           - NMVP107491
           - NMVP107492
           - NMVP108991
+          role: paratype
   - taxon: macrocystellidae
     children:
     - openTaxon: macrocystellidae-sp_jell_burrett_banks_1985
       new: true
-      specimens:
-        unknowntypes:
+      material:
+      - catalogNumbers:
         - TMF8342

@@ -1,23 +1,26 @@
 taxonomies:
-  - taxon: blastozoa
+- taxon: blastozoa
+  children:
+  - taxon: eocrinoidea
     children:
-    - taxon: eocrinoidea
+    - taxon: gogiida
       children:
-      - taxon: gogiida
+      - taxon: turbanicystidae
+        new: true
         children:
-        - taxon: turbanicystidae
+        - taxon: turbanicystis
           new: true
           children:
-          - taxon: turbanicystis
+          - taxon: inflatus_parsley_zhao.y.l_2010
             new: true
-            children:
-            - taxon: inflatus_parsley_zhao.y.l_2010
-              new: true
-              type: true
-              specimens:
-                holotype: GM 9-5-2 165b
-                paratypes:
-                - GM 9-3-887
-                - GM 9-5-3235b
-                - GM 10-3-2000
-                - GM 9-5-2165a
+            type: true
+            material:
+            - catalogNumbers:
+              - GM 9-5-2 165b
+              role: holotype
+            - catalogNumbers:
+              - GM 9-3-887
+              - GM 9-5-3235b
+              - GM 10-3-2000
+              - GM 9-5-2165a
+              role: paratype

@@ -11,9 +11,16 @@ per-source coverage counts and cross-checks them against the declared
 import collections
 
 from .acts import RELATED_ACTS
+from .loader.material import (
+  AMBIGUOUS,
+  context_key,
+  entry_identifies,
+  repository_of,
+  repository_registry,
+)
 from .loader.research import Author, Publication, Source
 from .loader.taxa import Taxon
-from .names import fold_forms, key_stem
+from .names import fold, fold_forms, key_stem
 
 KINDS = (
   'usage',
@@ -83,28 +90,47 @@ _PLACEMENT_FLAGS = (
 # rejects (`non`) under the owner's name.
 _SYNONYMY_AXES = ('synonyms', 'non')
 _ACCEPTANCE_FLAGS = ('pars', 'tentative')
-# Role words as recorded today (the schema's enum and the plurals the
-# occurrence blocks use); D1 will fix the vocabulary.
-_SPECIMEN_ROLES = frozenset(
-  {
-    'holotype',
-    'allotype',
-    'lectotype',
-    'neotype',
-    'syntype',
-    'hypotypes',
-    'kleptotypes',
-    'paralectotypes',
-    'paratypes',
-    'plesiotypes',
-    'syntypes',
-    'topotypes',
-    'additional',
-    'unknowntypes',
-    'holotypes',
-    'unspecified',
-  }
+
+# The roles whose entry on a protologue node (`new: true`) is this source's
+# own designation, so the claim derives `roleAct: designated` when the entry
+# is silent.
+_PROTOLOGUE_ROLES = frozenset({'holotype', 'paratype', 'syntype', 'cotype'})
+# The locator fields an illustration claim's `illustration` keeps; `of` and
+# `depicts` ride on the claim itself.
+_ILLUSTRATION_LOCATOR_FIELDS = (
+  'plate',
+  'page',
+  'figures',
+  'textFigures',
+  'non',
+  'notes',
+  'uncertain',
 )
+# `materialEntry` fields copied onto the claim exactly as written.
+_MATERIAL_FIELDS = (
+  'catalogNumbers',
+  'catalogNumbersAsPrinted',
+  'count',
+  'label',
+  'holder',
+  'status',
+  'formerIds',
+  'fragmentOf',
+  'parts',
+  'examined',
+  'listComplete',
+  'preparation',
+  'castOf',
+  'collectedBy',
+  'collectedDate',
+)
+# The three coverage kinds derived from raw node state rather than a
+# reviewer's declaration, and the node fields each reads.
+DERIVED_COVERAGE_FIELDS = {
+  'material': ('material',),
+  'occurrences': ('contexts', 'ranges'),
+  'illustrations': ('illustrations',),
+}
 
 
 _rank_hubs = None
@@ -195,6 +221,7 @@ def _coverage_kind(claim):
       'specimen': 'material',
       'occurrence': 'occurrences',
       'illustration': 'illustrations',
+      'range': 'occurrences',
     }[claim['materialKind']]
   return None
 
@@ -309,9 +336,9 @@ class _NodeClaims:
     audit = {'state': self.audit.get('state', 'unaudited')}
     if coverage_kind is not None:
       audit['coverageKind'] = coverage_kind
-      declared = (self.audit.get('coverage') or {}).get(coverage_kind)
-      if declared is not None:
-        audit['coverage'] = declared
+      effective = (self.audit.get('coverage') or {}).get(coverage_kind)
+      if effective is not None:
+        audit['coverage'] = effective
     claim['audit'] = audit
     self.claims.append(claim)
 
@@ -394,32 +421,8 @@ class _NodeClaims:
       claim['declinedParent'] = moved
       self._emit(claim, 'moved')
 
-    for role, value in (data.get('specimens') or {}).items():
-      if role == 'repository':
-        continue
-      self._material_specimens(role, value, data['specimens'].get('repository'))
-    for index, occurrence in enumerate(data.get('occurrences') or ()):
-      claim = self._base('material')
-      claim['materialKind'] = 'occurrence'
-      claim['occurrence'] = occurrence
-      self._emit(claim, 'occurrences')
-      # An occurrence's specimens are keyed by role, then repository; two
-      # trees nest them the other way round, so the role word is what
-      # decides which level is which.
-      for outer, inner in (occurrence.get('specimens') or {}).items():
-        if not isinstance(inner, dict):
-          self._occurrence_specimens(index, None, outer, inner)
-          continue
-        for key, ids in inner.items():
-          if outer in _SPECIMEN_ROLES:
-            self._occurrence_specimens(index, key, outer, ids)
-          else:
-            self._occurrence_specimens(index, outer, key, ids)
-    for illustration in () if self.cited_entry else data.get('illustrations') or ():
-      claim = self._base('material')
-      claim['materialKind'] = 'illustration'
-      claim['illustration'] = illustration
-      self._emit(claim, 'illustrations')
+    if not self.cited_entry:
+      self._material()
 
     if 'editorial' in data:
       claim = self._base('editorial')
@@ -429,6 +432,7 @@ class _NodeClaims:
       self._emit(claim)
 
     self._number()
+    self._link_illustrations()
     return self.claims
 
   def _usage(self):
@@ -492,43 +496,135 @@ class _NodeClaims:
     if node.axis == 'removed':
       self._act('removed', 'removed', removedFrom=self.owner_key)
 
-  def _material_specimens(self, role, value, block_repository):
-    claim = self._base('material')
-    claim['materialKind'] = 'specimen'
-    claim['role'] = role
-    ids = []
-    repositories = set()
-    entries = value if isinstance(value, list) else [value]
-    for entry in entries:
-      for item in entry if isinstance(entry, list) else [entry]:
-        if isinstance(item, dict):
-          if 'id' in item:
-            ids.append(item['id'])
-          if 'repository' in item:
-            repositories.add(item['repository'])
-          if 'illustrations' in item:
-            claim.setdefault('specimenIllustrations', []).append(
-              item['illustrations'],
-            )
-        else:
-          ids.append(item)
-    claim['ids'] = ids
-    if len(repositories) == 1:
-      claim['repository'] = repositories.pop()
-    elif block_repository is not None:
-      claim['repository'] = block_repository
-    self._emit(claim, 'specimens')
+  # -- material: contexts, material, illustrations, ranges, in that order,
+  # which is what fixes the claim ids ---------------------------------------
 
-  def _occurrence_specimens(self, index, repository, role, ids):
-    claim = self._base('material')
-    claim['materialKind'] = 'specimen'
-    claim['inOccurrence'] = index
-    if repository is not None:
+  def _material(self):
+    self._contexts()
+    self._entries()
+    self._illustrations()
+    self._ranges()
+
+  def _contexts(self):
+    """One claim per context the node's material refers to, and per
+    context the node defines; a file context once per node that refers
+    to it."""
+    data = self.data
+    wanted = set(data.get('contexts') or ())
+    for entry in data.get('material') or ():
+      if entry.get('context') is not None:
+        wanted.add(context_key(entry['context']))
+    scopes = self.node.context_scopes
+    for key, context in self.node.contexts.items():
+      if key not in wanted:
+        continue
+      claim = self._base('material')
+      claim['materialKind'] = 'occurrence'
+      claim['occurrence'] = context
+      claim['contextKey'] = key
+      claim['contextScope'] = scopes[key]
+      self._emit(claim, 'contexts')
+
+  def _repository(self, entry):
+    """`(key, via)` for an entry: its explicit `repository`, else what the
+    first catalog number's prefix resolves to; `(None, None)` when that is
+    absent, unmatched or ambiguous."""
+    if 'repository' in entry:
+      return entry['repository'], 'explicit'
+    numbers = entry.get('catalogNumbers') or ()
+    if not numbers:
+      return None, None
+    first = numbers[0][0] if isinstance(numbers[0], list) else numbers[0]
+    key, via = repository_of(first, repository_registry(), self.node.file_repositories)
+    return (None, None) if via in (None, AMBIGUOUS) else (key, via)
+
+  def _entries(self):
+    """One claim per `material` entry; `self._entry_claims` keeps each
+    beside its entry for the illustrations' `of`."""
+    data = self.data
+    self._entry_claims = []
+    for entry in data.get('material') or ():
+      claim = self._base('material')
+      claim['materialKind'] = 'specimen'
+      if 'role' in entry:
+        claim['role'] = entry['role']
+      for field in _MATERIAL_FIELDS:
+        if field in entry:
+          claim[field] = entry[field]
+      if 'notes' in entry:
+        claim['materialNotes'] = entry['notes']
+      if 'context' in entry:
+        ref = entry['context']
+        claim['contextKey'] = context_key(ref)
+        if isinstance(ref, dict) and ref.get('tentative'):
+          claim['contextTentative'] = True
+      # The claim is about the entry, so the entry's editorial block replaces
+      # the node's; the claim's own `inferred` stays as `_emit` sets it.
+      if 'editorial' in entry:
+        claim['editorial'] = entry['editorial']
+        inferred = entry['editorial'].get('inferred')
+        if isinstance(inferred, list):
+          claim['inferredFields'] = inferred
+      numbers = entry.get('catalogNumbers') or ()
+      claim['ids'] = list(numbers)
+      repository, via = self._repository(entry)
       claim['repository'] = repository
-    if role is not None:
-      claim['role'] = role
-    claim['ids'] = list(ids) if isinstance(ids, list) else [ids]
-    self._emit(claim, 'occurrences')
+      if via is not None:
+        claim['repositoryVia'] = via
+      role_act = entry.get('roleAct')
+      if role_act is None and data.get('new') and entry.get('role') in _PROTOLOGUE_ROLES:
+        role_act = 'designated'
+      if role_act is not None:
+        claim['roleAct'] = role_act
+      if repository is not None and numbers:
+        claim['joinKeys'] = [
+          f'{repository}:{fold(n)}'
+          for number in numbers
+          for n in (number if isinstance(number, list) else [number])
+        ]
+      if any(isinstance(number, list) for number in numbers):
+        claim['rangeJoin'] = True
+      self._emit(claim, 'material')
+      self._entry_claims.append((entry, claim))
+
+  def _illustrations(self):
+    """One claim per `illustrations` entry on a primary node (this
+    source's figures); `self._illustration_links` keeps each beside the
+    material claims its `of` names, for the link made once ids exist."""
+    self._illustration_links = []
+    for figure in self.data.get('illustrations') or ():
+      claim = self._base('material')
+      claim['materialKind'] = 'illustration'
+      claim['illustration'] = {k: v for k, v in figure.items() if k in _ILLUSTRATION_LOCATOR_FIELDS}
+      for field in ('of', 'depicts'):
+        if field in figure:
+          claim[field] = figure[field]
+      of = figure.get('of')
+      named = []
+      for value in of if isinstance(of, list) else [of] if of is not None else ():
+        for entry, specimen in self._entry_claims:
+          if entry_identifies(entry, value) and specimen not in named:
+            named.append(specimen)
+      for specimen in named:
+        specimen.setdefault('specimenIllustrations', []).append(claim['illustration'])
+      self._illustration_links.append((claim, named))
+      self._emit(claim, 'illustrations')
+
+  def _ranges(self):
+    for value in self.data.get('ranges') or ():
+      claim = self._base('material')
+      claim['materialKind'] = 'range'
+      claim['range'] = value
+      self._emit(claim, 'ranges')
+
+  def _link_illustrations(self):
+    """`ofClaim` on each illustration claim and `illustrationClaims` on
+    each specimen claim it depicts, once every claim has its id."""
+    for claim, named in getattr(self, '_illustration_links', ()):
+      if named:
+        claim['ofClaim'] = [specimen['id'] for specimen in named]
+      for specimen in named:
+        specimen.setdefault('illustrationClaims', []).append(claim['id'])
 
   def _number(self):
     # `<source>:<path>:<kind>[:<n>]`; n appears only where the node emits
@@ -544,18 +640,79 @@ class _NodeClaims:
       claim['id'] = claim_id
 
 
+def _node_writes(data, fields):
+  """`(present, null)`: whether the node carries any of `fields`, and
+  whether any of those it carries is an explicit null."""
+  present = [field for field in fields if field in data]
+  return bool(present), any(data[field] is None for field in present)
+
+
+def derived_material_coverage(roots):
+  """Per source, `{kind: value}` for `material`, `occurrences` and
+  `illustrations`, from raw node state over primary, non-cited, named
+  nodes: `na` when the file lists the kind's fields as `unused`; `None`
+  when no node writes a null for them (a value records what the source
+  prints, not that the file was audited for it); else `all` when no node
+  lacks the fields (`partly` if a material entry has `listComplete:
+  false`) and `partly` when some node does."""
+  out = {}
+  for source_key, trees in roots.items():
+    unused = set(trees[0].file_unused) if trees else set()
+    nodes = [
+      node
+      for root in trees
+      for node in root.walk()
+      if node.is_primary and not node.is_cited and node.taxon is not None
+    ]
+    values = {}
+    for kind, fields in DERIVED_COVERAGE_FIELDS.items():
+      if set(fields) <= unused:
+        values[kind] = 'na'
+        continue
+      states = [_node_writes(node.data, fields) for node in nodes]
+      if not any(null for _, null in states):
+        values[kind] = None
+      elif not all(present for present, _ in states):
+        values[kind] = 'partly'
+      elif kind == 'material' and any(
+        entry.get('listComplete') is False
+        for node in nodes
+        for entry in node.data.get('material') or ()
+      ):
+        values[kind] = 'partly'
+      else:
+        values[kind] = 'all'
+    out[source_key] = values
+  return out
+
+
+def _effective_coverage(declared, derived_row):
+  """The declared `audit.coverage`, except that the three kinds derived
+  from node state take the derived value when there is one."""
+  declared = declared or {}
+  derived_row = derived_row or {}
+  coverage = {}
+  for kind in COVERAGE_KINDS:
+    value = derived_row.get(kind) if kind in DERIVED_COVERAGE_FIELDS else None
+    coverage[kind] = value if value is not None else declared.get(kind)
+  return coverage
+
+
 def extract(roots, sources=None):
   """Claims per source, in walk order.
 
   ``roots`` is `main._load_trees`'s result; ``sources`` optionally
-  restricts the output to those keys.
+  restricts the output to those keys. Each claim's `audit.coverage` is
+  the effective value (`_effective_coverage`).
   """
   out = {}
+  derived = derived_material_coverage(roots)
   for source_key, trees in roots.items():
     if sources is not None and source_key not in sources:
       continue
     source = Source.get(source_key)
-    audit = source.audit if source is not None else {'state': 'unaudited'}
+    audit = dict(source.audit) if source is not None else {'state': 'unaudited'}
+    audit['coverage'] = _effective_coverage(audit.get('coverage'), derived.get(source_key))
     claims = []
     for root in trees:
       for node in root.walk():
@@ -638,11 +795,16 @@ def _source_order(source_key):
   return (year, source_key)
 
 
-def manifest(claims_by_source):
+def manifest(claims_by_source, roots):
   """Derived coverage per source and per taxon, cross-checked with the
-  declared audit block (`docs/claims.md`, "Derived coverage")."""
+  declared audit block (`docs/claims.md`, "Derived coverage").
+
+  ``roots`` is what `extract` took; the node-state coverage reads it whole,
+  so a ``claims_by_source`` restricted to some sources does not skew it.
+  """
   sources = {}
   taxa = collections.defaultdict(set)
+  derived_coverage = derived_material_coverage(roots)
 
   for source_key in Source._sources:
     source = Source.get(source_key)
@@ -669,15 +831,22 @@ def manifest(claims_by_source):
 
     # Editor-inferred claims are not the paper's, so they do not count
     # towards what the paper's coverage was declared to be.
-    derived = collections.Counter(
+    claim_counts = collections.Counter(
       c['audit']['coverageKind']
       for c in claims
       if 'coverageKind' in c['audit'] and not c.get('inferred')
     )
     declared = source.audit.get('coverage') or {}
+    derived_row = derived_coverage.get(source_key) or {}
     for kind in COVERAGE_KINDS:
       value = declared.get(kind)
-      count = derived.get(kind, 0)
+      if kind in DERIVED_COVERAGE_FIELDS:
+        # Checked only when a declared and a derived value both exist.
+        derived_value = derived_row.get(kind)
+        if value is not None and derived_value is not None and value != derived_value:
+          entry['inconsistencies'].append(f'{kind}: declared {value}, derived {derived_value}')
+        continue
+      count = claim_counts.get(kind, 0)
       if value in ('all', 'partly') and count == 0:
         entry['inconsistencies'].append(
           f'{kind}: declared {value}, no claims derived',
@@ -686,7 +855,9 @@ def manifest(claims_by_source):
         entry['inconsistencies'].append(
           f'{kind}: declared {value}, {count} claims derived',
         )
-    entry['derived'] = {k: derived[k] for k in COVERAGE_KINDS if derived[k]}
+    entry['derived'] = {k: claim_counts[k] for k in COVERAGE_KINDS if claim_counts[k]}
+    entry['coverage'] = _effective_coverage(declared, derived_row)
+    entry['derivedCoverage'] = derived_row
     sources[source_key] = entry
 
     for claim in claims:

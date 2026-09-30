@@ -28,19 +28,20 @@ taxonomies:
             Type by monotypy.
             Provisional based on "most probably referable to the Dipoporitidae"
             of the three orders named in Nicholson & Lydekker 1889.
+        material:
+        - catalogNumbers:
+          - first specimen collected by John Stewart, 1886, Museum of the Geological Survey of Canada
+          - second specimen collected by John Stewart, 1886, Museum of the Geological Survey of Canada
+        - label: an imperfect specimen lent by Walter R. Billings
         illustrations:
         - page: 287
           textFigures: [1, 2, 3]
-        specimens:
-          unknowntypes:
-          - first specimen collected by John Stewart, 1886, Museum of the Geological Survey of Canada
-          - second specimen collected by John Stewart, 1886, Museum of the Geological Survey of Canada
-          - an imperfect specimen lent by Walter R. Billings
-        occurrences:
-        - unit:
-          - Trenton limestone
-          location:
-          - Division St.
-          - Ottawa
+        contexts:
+          division-st:
+            unit:
+            - Trenton limestone
+            location:
+            - Division St.
+            - Ottawa
   - taxon: rhombiferi
     rank: Order

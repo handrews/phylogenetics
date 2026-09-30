@@ -905,9 +905,10 @@ Direction agreed 2026-09-27; stages 0–2 of the plan in force. The four
 shapes the trees used until then (node `specimens` keyed by role,
 occurrence-level `specimens`, taxon-record `holotype`, node
 `illustrations`) are replaced by three flat lists joined by references,
-and a `range` statement that is not material at all. The principle from
-`graph.md` stands: specimens are the physical anchors, figures are proxies
-for them, contexts say where the specimens came from.
+and `ranges`, distribution statements that are not material at all; the
+node-level list of figures keeps the name `illustrations` and gains `of`.
+The principle from `graph.md` stands: specimens are the physical anchors,
+figures are proxies for them, contexts say where the specimens came from.
 
 **D1. The model.** Three lists on a node, any of them hoistable or null:
 
@@ -923,11 +924,11 @@ material:
 - label: the specimen lent to Hudson
   role: syntype
   status: lost
-figures:
+illustrations:
 - {textFigures: [3], of: "GSC 752"}
 - {plate: 1, figures: [2]}     # no `of`: the source never ties it to a specimen
-range:                         # a distribution statement, not provenance
-  series: Middle Ordovician
+ranges:                        # distribution statements, not provenance
+- series: Middle Ordovician
   regions: [Ottawa]
 ```
 
@@ -942,18 +943,20 @@ range:                         # a distribution statement, not provenance
   `{key, tentative: true}` when the source is unsure which context the
   specimen came from. A specimen with no stated context has no `context`.
   A file that gives one locality for thirty taxa states it once.
-- A figure's `of` names a material entry by catalog number (range
-  endpoints count) or label; `depicts` records the medium (cast,
-  reconstruction, drawing). A figure with no `of` is one the source never
-  ties to a specimen, the honest state of most pre-1900 work. A locator
-  inside a synonymy entry's `authority` is still `illustration`: a figure
-  in the cited work (D4).
-- `range` carries the time fields and a `regions` list, with per-element
-  `tentative` where the source prints a query (E8). It never carries a
-  unit or a locality: a context needs one of those, and a statement with
-  neither is a range (Dehm 1961's period-plus-region entries).
-- Nulls (G11): `material: null`, `figures: null`, `contexts: null`,
-  `range: null` say the source prints none for the node; the file-level
+- An `illustrations` entry's `of` names a material entry on the same node
+  by catalog number (range endpoints count) or label; `depicts` records
+  the medium (cast, reconstruction, drawing). An entry with no `of` is a
+  figure the source never ties to a specimen, the honest state of most
+  pre-1900 work. A locator inside a synonymy entry's `authority` has the
+  same shape and the same name: a figure in the cited work (D4).
+- `ranges` is a list of distribution statements, since a taxon may have a
+  different range in each region; each carries the time fields and a
+  `regions` list, with per-element `tentative` where the source prints a
+  query (E8). A range never carries a unit or a locality: a context needs
+  one of those, and a statement with neither is a range (Dehm 1961's
+  period-plus-region entries).
+- Nulls (G11): `material: null`, `illustrations: null`, `contexts: null`,
+  `ranges: null` say the source prints none for the node; the file-level
   `unused` list says a field appears nowhere. Only an auditor writes
   either; a draft never does.
 
@@ -1009,10 +1012,14 @@ still claimed by two entries, or a listed entry no number uses, is an
 error. `holder` names a private holder with no registry entry.
 Unresolved prefixes are reported now and fail at stage 4 (F2).
 
-**D4. Figures versus illustrations.** The same locator fields serve two
-roles, fixed by context: `figures` on a node records what a figure in
-this source shows; `illustrations` under a synonymy entry's `authority`
-locates a figure in the cited work. Both take `non` for a figure-level
+**D4. One name, two roles.** The same locator fields serve two roles
+under one field name, `illustrations`, fixed by whether the node is a
+cited entry. On a primary node the list records what a figure in this
+source shows; on a cited entry (a synonymy entry, an earlier state) and
+inside an `authority` it locates a figure in the cited work. `of` and
+`depicts` belong only to the primary-node role: a cited entry's or an
+`authority`'s locator carrying either is an error, and a cited entry's
+`illustrations` is never null. Both roles take `non` for a figure-level
 exclusion or a correction of another work's numbering, which D6 keeps as
 the worked case: Kesling 1967 writes "Hisinger, 1837, pl. 25, fig. 8d,
 non fig. 9d" because von Buch read the plate's 8d as 9d; von Buch's tree
@@ -1020,15 +1027,17 @@ keeps 9d as printed, the Treatise's locator is `{plate: 25, figures: 8d,
 non: [9d]}`, and the disagreement is derived, never resolved in place.
 `illustration.source`, `location` and `collectedFrom` are gone.
 
-**D5. Migration (stage 2).** One script over `data/trees`, `drafts` and
+**D5 (done 2026-09-30). Migration (stage 2).** One script over `data/trees`, `drafts` and
 `data/taxa.yaml`, all sources at once: role keys become one entry per
 item with the role singularised; `unknowntypes`, `additional` and
 `unspecified` become entries with no role; nested `[a, b]` items become
 range pairs; occurrence-level specimens become entries with `context`
 refs; each `occurrences[i]` becomes a keyed context (slug of the first
 location, else the first unit), hoisted when two nodes share one; a
-context with no unit, no locality and no specimen becomes `range`;
-node-level `illustrations` become `figures` with `of` unset; the
+context with no unit, no locality and no specimen becomes one item of
+`ranges`;
+node-level `illustrations` keep their name, their entries normalised,
+with `of` unset; the
 taxon-record `holotype` moves to the protologue node. The script's report
 lists what the owner works by hand: the eight ellipses, free-text
 identifiers to `label`, and prefixes the
@@ -1061,6 +1070,13 @@ and the schema now has a field for each, all as printed:
   at locality LV-2 by my field assistant"): `collectedBy` and
   `collectedDate` on both the material entry and the context.
 
+Deferred from the same review (2026-09-30): a slab carrying several
+specimens, where the source describes their positions on it (Vanuxem
+1842). The slab is itself material, so a note on positions belongs to a
+material entry, and where the slab was found is its context. When the
+case recurs, the shape is a `label` for the slab as an entry of its own,
+with the specimens as entries whose `fragmentOf` names it; no new field.
+
 **Cross-source identity.** Two entries citing the same resolved
 repository and the same catalog number, folded for case and spacing, are
 the same specimen; the tools join on that and no registry is kept. An
@@ -1073,7 +1089,7 @@ reconciled: Whiteaves 1897 names three specimens, Bather 1914 three, Fay
 
 - *Rievers 1961*: a holotype with no number, "das in Taf. 2, Fig. 1–4
   dargestellte Fossil", in a private collection: `label`, `holder`, and a
-  figure with `of` naming the label (D7's rule that a locator can stand
+  `illustrations` entry with `of` naming the label (D7's rule that a locator can stand
   without a number).
 - *Bell 1976*: ROM 161-t-a "described … as 'GSC 1415'" is `formerIds`;
   GSC 1407-B "a fragment of the holotype" is `fragmentOf`; the Bigsby
@@ -1088,7 +1104,7 @@ reconciled: Whiteaves 1897 names three specimens, Bather 1914 three, Fay
   and the doubt whether No. 752 is the specimen Bather chose. The second
   syntype, lent to Hudson and gone, is a `label` with `status: lost`.
 - *Bather 1914*: A, B and C are labels; A is `role: holotype, roleAct:
-  designated`; C has `holder: Walter R. Billings`; the plate figures carry
+  designated`; C has `holder: Walter R. Billings`; the plate `illustrations` carry
   `of: A` and `of: B`; the one locality is a file-level context.
 
 ---
@@ -1138,7 +1154,7 @@ they validate too; the *Preface* (xxviii–xxx) tabulates the 1966 European and
 North American regional units and is a ready source for the Ordovician and
 Devonian names the corpus uses.
 
-**E8 (done 2026-09-27, for `range.regions`). Doubt on one element of a range.** "M.Ord., ?U.Ord., Asia(China)-Eu.
+**E8 (done 2026-09-27, for `regions` of a range). Doubt on one element of a range.** "M.Ord., ?U.Ord., Asia(China)-Eu.
 (Sweden-Est.-?Wales)-?N. Am.(USA)" (Kesling 1967, S229). The "?" attaches to
 one age and two regions, not to the occurrence. Each element of a range or
 location list may be written as `{value, tentative: true}` in place of the
@@ -1377,7 +1393,7 @@ Fields fall into three classes, and only the third is nullable:
   unreliably recorded (`emended`, at the time of writing) is exactly what
   `state: unaudited` says.
 - Content, nullable: `synonyms`, and the material fields as D1 now
-  defines them, `material`, `figures`, `contexts` and `range`; the
+  defines them, `material`, `illustrations`, `contexts` and `ranges`; the
   schema on the material-model branch makes all four nullable.
   `children` could join in principle (`children: null` for a taxon the
   paper places nothing under), but nulling every species is the bloat the

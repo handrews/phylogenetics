@@ -298,7 +298,18 @@
     "year": 1734
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -321,9 +332,24 @@
     "placement": 1,
     "usage": 2
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 1,
     "skeleton": 3
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -352,9 +378,24 @@
     "placement": 129,
     "usage": 130
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 128,
     "skeleton": 259
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -379,8 +420,23 @@
     "placement": 6,
     "usage": 7
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 13
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -405,8 +461,23 @@
     "placement": 60,
     "usage": 61
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 121
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -431,8 +502,23 @@
     "placement": 6,
     "usage": 7
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 13
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -464,9 +550,24 @@
     "placement": 3,
     "usage": 5
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 8
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -495,10 +596,25 @@
     "placement": 147,
     "usage": 150
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 29,
     "skeleton": 297,
     "synonymy": 2
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -535,10 +651,25 @@
     "placement": 3,
     "usage": 4
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 3,
     "newTaxa": 2,
     "skeleton": 7
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -568,9 +699,24 @@
     "placement": 16,
     "usage": 17
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 11,
     "skeleton": 33
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -595,9 +741,24 @@
     "act": 2,
     "usage": 2
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 2
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -625,9 +786,24 @@
     "placement": 11,
     "usage": 12
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 23
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -654,9 +830,24 @@
     "placement": 15,
     "usage": 16
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 5,
     "skeleton": 31
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -683,10 +874,25 @@
     "placement": 148,
     "usage": 152
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 50,
     "skeleton": 300,
     "synonymy": 2
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -715,9 +921,24 @@
     "placement": 1,
     "usage": 2
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 1,
     "skeleton": 3
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -744,9 +965,24 @@
     "act": 1,
     "usage": 1
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -774,10 +1010,25 @@
     "placement": 144,
     "usage": 175
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 135,
     "skeleton": 319,
     "synonymy": 12
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -806,10 +1057,25 @@
     "placement": 119,
     "usage": 121
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 11,
     "skeleton": 240,
     "synonymy": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -831,7 +1097,18 @@
     "year": 1789
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -852,7 +1129,18 @@
     "year": 1789
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -877,9 +1165,24 @@
     "placement": 8,
     "usage": 9
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 17
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -905,9 +1208,24 @@
     "placement": 93,
     "usage": 94
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 11,
     "skeleton": 187
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -934,10 +1252,25 @@
     "placement": 108,
     "usage": 116
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 47,
     "skeleton": 224,
     "synonymy": 4
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -971,9 +1304,24 @@
     "placement": 3,
     "usage": 4
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 1,
     "skeleton": 7
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -999,8 +1347,23 @@
     "placement": 4,
     "usage": 5
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 9
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -1028,10 +1391,25 @@
     "placement": 111,
     "usage": 126
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 68,
     "skeleton": 237,
     "synonymy": 7
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -1059,10 +1437,25 @@
     "placement": 218,
     "usage": 409
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 119,
     "skeleton": 627,
     "synonymy": 94
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -1083,7 +1476,18 @@
     "year": 1817
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -1106,8 +1510,23 @@
     "placement": 3,
     "usage": 4
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 7
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -1134,9 +1553,24 @@
     "placement": 15,
     "usage": 16
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 4,
     "skeleton": 31
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -1157,7 +1591,22 @@
     "year": 1817
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
+   },
    "inconsistencies": [],
    "material": {},
    "tree": true
@@ -1184,10 +1633,25 @@
     "placement": 30,
     "usage": 35
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 4,
     "skeleton": 65,
     "synonymy": 4
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -1208,7 +1672,18 @@
     "year": 1818
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -1229,7 +1704,18 @@
     "year": 1819
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -1250,7 +1736,18 @@
     "year": 1819
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -1275,7 +1772,18 @@
     "year": 1819
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -1306,9 +1814,24 @@
     "placement": 1,
     "usage": 3
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 4
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -1328,7 +1851,18 @@
     "year": 1820
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -1356,10 +1890,25 @@
     "placement": 35,
     "usage": 37
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 10,
     "skeleton": 72,
     "synonymy": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -1387,11 +1936,26 @@
     "placement": 48,
     "usage": 52
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 40,
     "skeleton": 100,
     "synonymy": 2,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -1428,11 +1992,26 @@
     "placement": 7,
     "usage": 17
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 2,
     "newTaxa": 4,
     "skeleton": 24,
     "synonymy": 5
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -1454,7 +2033,18 @@
     "year": 1822
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -1475,7 +2065,18 @@
     "year": 1822
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -1495,7 +2096,18 @@
     "year": 1822
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -1523,10 +2135,25 @@
     "placement": 32,
     "usage": 38
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 16,
     "skeleton": 70,
     "synonymy": 5
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -1559,10 +2186,25 @@
     "placement": 16,
     "usage": 18
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 6,
     "skeleton": 34,
     "synonymy": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -1588,7 +2230,18 @@
     "year": 1825
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -1613,7 +2266,18 @@
     "year": 1825
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -1645,11 +2309,26 @@
     "placement": 6,
     "usage": 7
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 1,
     "newTaxa": 2,
     "occurrences": 1,
     "skeleton": 13
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -1683,9 +2362,24 @@
     "placement": 1,
     "usage": 2
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 3
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -1721,11 +2415,26 @@
     "placement": 9,
     "usage": 21
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 7,
     "newTaxa": 3,
     "skeleton": 30,
     "synonymy": 9
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -1749,7 +2458,18 @@
     "year": 1827
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -1778,11 +2498,26 @@
     "placement": 16,
     "usage": 28
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 2,
     "newTaxa": 2,
     "skeleton": 44,
     "synonymy": 8
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -1812,11 +2547,26 @@
     "placement": 12,
     "usage": 18
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 14,
     "newTaxa": 11,
     "skeleton": 30,
     "synonymy": 3
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -1846,11 +2596,26 @@
     "placement": 20,
     "usage": 28
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 3,
     "newTaxa": 2,
     "skeleton": 48,
     "synonymy": 6
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -1880,10 +2645,25 @@
     "placement": 20,
     "usage": 22
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 1,
     "newTaxa": 16,
     "skeleton": 42
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -1912,10 +2692,25 @@
     "placement": 45,
     "usage": 58
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 12,
     "skeleton": 103,
     "synonymy": 7
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -1943,11 +2738,26 @@
     "placement": 8,
     "usage": 23
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 3,
     "newTaxa": 5,
     "skeleton": 31,
     "synonymy": 9
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -1977,9 +2787,24 @@
     "placement": 8,
     "usage": 16
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 24,
     "synonymy": 5
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -2005,7 +2830,18 @@
     "year": 1840
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -2029,7 +2865,18 @@
     "year": 1841
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -2071,9 +2918,24 @@
     "placement": 6,
     "usage": 7
    },
+   "coverage": {
+    "illustrations": "none",
+    "material": "none",
+    "newTaxa": "all",
+    "occurrences": "none",
+    "phylogeny": "na",
+    "skeleton": "all",
+    "synonymy": "na",
+    "types": "na"
+   },
    "derived": {
     "newTaxa": 6,
     "skeleton": 13
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -2111,12 +2973,27 @@
     "placement": 8,
     "usage": 9
    },
+   "coverage": {
+    "illustrations": "partly",
+    "material": "partly",
+    "newTaxa": "partly",
+    "occurrences": "partly",
+    "phylogeny": "na",
+    "skeleton": "partly",
+    "synonymy": "na",
+    "types": "na"
+   },
    "derived": {
     "illustrations": 3,
     "material": 1,
     "newTaxa": 3,
     "occurrences": 4,
     "skeleton": 17
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -2153,9 +3030,24 @@
     "placement": 4,
     "usage": 11
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 15,
     "synonymy": 3
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -2182,10 +3074,25 @@
     "placement": 13,
     "usage": 19
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 4,
     "skeleton": 32,
     "synonymy": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -2212,11 +3119,26 @@
     "placement": 20,
     "usage": 49
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 4,
     "skeleton": 69,
     "synonymy": 14,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -2240,7 +3162,18 @@
     "year": 1846
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -2265,7 +3198,18 @@
     "year": 1846
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -2294,7 +3238,18 @@
     "year": 1846
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -2322,11 +3277,26 @@
     "placement": 31,
     "usage": 41
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 3,
     "newTaxa": 18,
     "skeleton": 72,
     "synonymy": 7
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -2350,7 +3320,18 @@
     "year": 1848
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -2375,9 +3356,24 @@
     "placement": 9,
     "usage": 10
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 19
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -2403,7 +3399,18 @@
     "year": 1848
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -2452,10 +3459,25 @@
     "placement": 33,
     "usage": 63
    },
+   "coverage": {
+    "illustrations": "none",
+    "material": "none",
+    "newTaxa": "all",
+    "occurrences": "none",
+    "phylogeny": "none",
+    "skeleton": "partly",
+    "synonymy": "partly",
+    "types": "none"
+   },
    "derived": {
     "newTaxa": 16,
     "skeleton": 96,
     "synonymy": 18
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -2495,11 +3517,26 @@
     "placement": 65,
     "usage": 80
    },
+   "coverage": {
+    "illustrations": "partly",
+    "material": "none",
+    "newTaxa": "all",
+    "occurrences": "none",
+    "phylogeny": "na",
+    "skeleton": "partly",
+    "synonymy": "partly",
+    "types": "none"
+   },
    "derived": {
     "illustrations": 4,
     "newTaxa": 41,
     "skeleton": 145,
     "synonymy": 9
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -2529,11 +3566,26 @@
     "placement": 30,
     "usage": 42
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 72,
     "synonymy": 6,
     "types": 2
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -2565,10 +3617,25 @@
     "placement": 3,
     "usage": 4
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 1,
     "newTaxa": 2,
     "skeleton": 7
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -2602,10 +3669,25 @@
     "placement": 5,
     "usage": 6
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 3,
     "newTaxa": 4,
     "skeleton": 11
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -2652,10 +3734,25 @@
     "placement": 8,
     "usage": 9
    },
+   "coverage": {
+    "illustrations": "partly",
+    "material": "none",
+    "newTaxa": "all",
+    "occurrences": "none",
+    "phylogeny": "na",
+    "skeleton": "partly",
+    "synonymy": "none",
+    "types": "na"
+   },
    "derived": {
     "illustrations": 5,
     "newTaxa": 6,
     "skeleton": 17
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -2698,9 +3795,24 @@
     "placement": 69,
     "usage": 70
    },
+   "coverage": {
+    "illustrations": "na",
+    "material": "none",
+    "newTaxa": "all",
+    "occurrences": "none",
+    "phylogeny": "na",
+    "skeleton": "all",
+    "synonymy": "na",
+    "types": "na"
+   },
    "derived": {
     "newTaxa": 42,
     "skeleton": 139
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -2732,9 +3844,24 @@
     "placement": 3,
     "usage": 5
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 3,
     "skeleton": 8
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -2767,11 +3894,26 @@
     "placement": 27,
     "usage": 48
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 16,
     "newTaxa": 9,
     "skeleton": 75,
     "synonymy": 19
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -2799,7 +3941,18 @@
     "year": 1858
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -2842,11 +3995,26 @@
     "placement": 12,
     "usage": 18
    },
+   "coverage": {
+    "illustrations": "partly",
+    "material": "none",
+    "newTaxa": "partly",
+    "occurrences": "none",
+    "phylogeny": "na",
+    "skeleton": "partly",
+    "synonymy": "partly",
+    "types": "na"
+   },
    "derived": {
     "illustrations": 2,
     "newTaxa": 6,
     "skeleton": 30,
     "synonymy": 3
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -2874,7 +4042,18 @@
     "year": 1858
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -2899,7 +4078,18 @@
     "year": 1858
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -2924,7 +4114,18 @@
     "year": 1858
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -2949,7 +4150,18 @@
     "year": 1858
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -2974,7 +4186,18 @@
     "year": 1858
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -2998,7 +4221,18 @@
     "year": 1865
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3023,7 +4257,18 @@
     "year": 1866
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3048,7 +4293,18 @@
     "year": 1870
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3073,7 +4329,18 @@
     "year": 1871
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3092,7 +4359,18 @@
     "year": 1872
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3121,7 +4399,18 @@
     "year": 1872
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3151,7 +4440,18 @@
     "year": 1872
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3177,7 +4477,18 @@
     "year": 1872
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3201,7 +4512,18 @@
     "year": 1879
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3222,7 +4544,18 @@
     "year": 1879
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3243,7 +4576,18 @@
     "year": 1879
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3271,10 +4615,25 @@
     "placement": 4,
     "usage": 7
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 4,
     "skeleton": 11,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -3296,7 +4655,18 @@
     "year": 1889
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3317,7 +4687,18 @@
     "year": 1889
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3342,7 +4723,18 @@
     "year": 1891
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3382,11 +4774,26 @@
     "placement": 8,
     "usage": 11
    },
+   "coverage": {
+    "illustrations": "partly",
+    "material": "none",
+    "newTaxa": "partly",
+    "occurrences": "none",
+    "phylogeny": "na",
+    "skeleton": "all",
+    "synonymy": "partly",
+    "types": "na"
+   },
    "derived": {
     "illustrations": 2,
     "newTaxa": 3,
     "skeleton": 19,
     "synonymy": 2
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -3413,7 +4820,18 @@
     "year": 1896
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3436,7 +4854,18 @@
     "year": 1896
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3466,22 +4895,37 @@
    "claims": {
     "act": 3,
     "editorial": 1,
-    "material": 3,
+    "material": 4,
     "placement": 5,
     "usage": 6
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 1,
-    "material": 1,
+    "material": 2,
     "newTaxa": 2,
     "occurrences": 1,
     "skeleton": 11
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
     "illustration": 1,
     "occurrence": 1,
-    "specimen": 1
+    "specimen": 2
    },
    "tree": true
   },
@@ -3509,7 +4953,18 @@
     "year": 1898
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3529,7 +4984,18 @@
     "year": 1898
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3562,9 +5028,24 @@
     "placement": 1,
     "usage": 4
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 5
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -3589,7 +5070,18 @@
     "year": 1899
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3608,7 +5100,18 @@
     "year": 1899
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3646,10 +5149,25 @@
     "placement": 44,
     "usage": 52
    },
+   "coverage": {
+    "illustrations": "none",
+    "material": "none",
+    "newTaxa": "partly",
+    "occurrences": "none",
+    "phylogeny": "na",
+    "skeleton": "all",
+    "synonymy": "partly",
+    "types": "na"
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 96,
     "synonymy": 7
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -3679,7 +5197,18 @@
     "year": 1908
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3700,7 +5229,18 @@
     "year": 1911
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3721,7 +5261,18 @@
     "year": 1911
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3746,7 +5297,18 @@
     "year": 1912
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3771,7 +5333,18 @@
     "year": 1913
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3802,22 +5375,37 @@
    },
    "claims": {
     "acceptance": 1,
-    "material": 6,
+    "material": 7,
     "placement": 3,
     "usage": 7
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 3,
-    "material": 2,
+    "material": 3,
     "occurrences": 1,
     "skeleton": 10,
     "synonymy": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
     "illustration": 3,
     "occurrence": 1,
-    "specimen": 2
+    "specimen": 3
    },
    "tree": true
   },
@@ -3845,7 +5433,18 @@
     "year": 1915
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3874,7 +5473,18 @@
     "year": 1915
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3903,7 +5513,18 @@
     "year": 1925
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3931,7 +5552,18 @@
     "year": 1927
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3961,7 +5593,18 @@
     "year": 1927
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -3986,7 +5629,18 @@
     "year": 1929
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -4010,7 +5664,18 @@
     "year": 1930
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -4051,11 +5716,26 @@
     "placement": 98,
     "usage": 203
    },
+   "coverage": {
+    "illustrations": "none",
+    "material": "none",
+    "newTaxa": "partly",
+    "occurrences": "none",
+    "phylogeny": "na",
+    "skeleton": "all",
+    "synonymy": "partly",
+    "types": "all"
+   },
    "derived": {
     "newTaxa": 10,
     "skeleton": 301,
     "synonymy": 59,
     "types": 22
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -4097,12 +5777,27 @@
     "placement": 87,
     "usage": 93
    },
+   "coverage": {
+    "illustrations": "none",
+    "material": "partly",
+    "newTaxa": "partly",
+    "occurrences": "none",
+    "phylogeny": "na",
+    "skeleton": "all",
+    "synonymy": "partly",
+    "types": "all"
+   },
    "derived": {
     "material": 4,
     "newTaxa": 28,
     "skeleton": 180,
     "synonymy": 2,
     "types": 7
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -4134,20 +5829,35 @@
    },
    "claims": {
     "act": 12,
-    "material": 3,
+    "material": 4,
     "placement": 18,
     "usage": 20
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
-    "material": 3,
+    "material": 4,
     "newTaxa": 10,
     "phylogeny": 6,
     "skeleton": 32,
     "types": 2
    },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
+   },
    "inconsistencies": [],
    "material": {
-    "specimen": 3
+    "specimen": 4
    },
    "tree": true
   },
@@ -4174,7 +5884,18 @@
     "year": 1945
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -4194,7 +5915,18 @@
     "year": 1955
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -4231,11 +5963,26 @@
     "placement": 40,
     "usage": 44
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 15,
     "skeleton": 84,
     "synonymy": 1,
     "types": 5
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -4280,6 +6027,16 @@
     "placement": 11,
     "usage": 14
    },
+   "coverage": {
+    "illustrations": "partly",
+    "material": "none",
+    "newTaxa": "all",
+    "occurrences": "all",
+    "phylogeny": "na",
+    "skeleton": "partly",
+    "synonymy": "all",
+    "types": "all"
+   },
    "derived": {
     "illustrations": 1,
     "newTaxa": 1,
@@ -4288,10 +6045,16 @@
     "synonymy": 1,
     "types": 2
    },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
+   },
    "inconsistencies": [],
    "material": {
     "illustration": 1,
-    "occurrence": 10
+    "occurrence": 2,
+    "range": 8
    },
    "tree": true
   },
@@ -4332,12 +6095,27 @@
     "placement": 1,
     "usage": 2
    },
+   "coverage": {
+    "illustrations": "partly",
+    "material": "all",
+    "newTaxa": "all",
+    "occurrences": "all",
+    "phylogeny": "na",
+    "skeleton": "partly",
+    "synonymy": "na",
+    "types": "na"
+   },
    "derived": {
     "illustrations": 1,
     "material": 1,
     "newTaxa": 1,
     "occurrences": 1,
     "skeleton": 3
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -4385,20 +6163,35 @@
     "acceptance": 1,
     "act": 3,
     "editorial": 1,
-    "material": 1,
+    "material": 2,
     "placement": 2,
     "rejection": 1,
     "usage": 5
    },
+   "coverage": {
+    "illustrations": "none",
+    "material": "partly",
+    "newTaxa": "all",
+    "occurrences": "none",
+    "phylogeny": "na",
+    "skeleton": "all",
+    "synonymy": "partly",
+    "types": "na"
+   },
    "derived": {
-    "material": 1,
+    "material": 2,
     "newTaxa": 1,
     "skeleton": 8,
     "synonymy": 1
    },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
+   },
    "inconsistencies": [],
    "material": {
-    "specimen": 1
+    "specimen": 2
    },
    "tree": true
   },
@@ -4425,10 +6218,25 @@
     "placement": 6,
     "usage": 7
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 13,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -4464,11 +6272,26 @@
     "placement": 4,
     "usage": 5
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "material": 3,
     "newTaxa": 4,
     "skeleton": 9,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -4498,8 +6321,23 @@
     "placement": 20,
     "usage": 21
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 41
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -4536,11 +6374,26 @@
     "rejection": 1,
     "usage": 5
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "material": 2,
     "newTaxa": 1,
     "skeleton": 9,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -4576,10 +6429,25 @@
     "placement": 7,
     "usage": 8
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 15,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -4609,7 +6477,18 @@
     "year": 1966
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -4634,7 +6513,18 @@
     "year": 1966
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -4664,10 +6554,25 @@
     "placement": 19,
     "usage": 26
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 45,
     "synonymy": 4,
     "types": 3
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -4698,10 +6603,25 @@
     "placement": 65,
     "usage": 69
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 134,
     "synonymy": 3,
     "types": 28
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -4726,7 +6646,18 @@
     "year": 1966
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -4749,7 +6680,18 @@
     "year": 1966
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -4772,7 +6714,18 @@
     "year": 1967
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -4796,7 +6749,18 @@
     "year": 1967
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -4822,7 +6786,18 @@
     "year": 1967
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -4859,10 +6834,25 @@
     "placement": 22,
     "usage": 23
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 3,
     "skeleton": 45,
     "types": 7
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -4895,10 +6885,25 @@
     "placement": 5,
     "usage": 7
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 12,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -4930,10 +6935,25 @@
     "placement": 6,
     "usage": 9
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 15,
     "synonymy": 2,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -4957,7 +6977,18 @@
     "year": 1967
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -4983,8 +7014,23 @@
     "placement": 25,
     "usage": 26
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 51
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -5016,10 +7062,25 @@
     "placement": 5,
     "usage": 6
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 11,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -5050,9 +7111,24 @@
     "placement": 7,
     "usage": 8
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 15,
     "types": 2
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -5076,7 +7152,18 @@
     "year": 1967
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -5099,7 +7186,18 @@
     "year": 1967
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -5134,12 +7232,27 @@
     "placement": 11,
     "usage": 13
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "material": 5,
     "newTaxa": 8,
     "skeleton": 24,
     "synonymy": 1,
     "types": 3
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -5165,7 +7278,18 @@
     "year": 1967
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -5188,7 +7312,18 @@
     "year": 1967
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -5220,9 +7355,24 @@
     "rejection": 2,
     "usage": 8
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 15,
     "types": 2
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -5268,12 +7418,27 @@
     "placement": 6,
     "usage": 9
    },
+   "coverage": {
+    "illustrations": "none",
+    "material": "partly",
+    "newTaxa": "all",
+    "occurrences": "none",
+    "phylogeny": "na",
+    "skeleton": "all",
+    "synonymy": "partly",
+    "types": "all"
+   },
    "derived": {
     "material": 3,
     "newTaxa": 1,
     "skeleton": 15,
     "synonymy": 2,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -5308,9 +7473,24 @@
     "placement": 3,
     "usage": 5
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 8,
     "synonymy": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -5348,9 +7528,24 @@
     "placement": 93,
     "usage": 94
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 4,
     "skeleton": 187
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -5386,11 +7581,26 @@
     "placement": 4,
     "usage": 5
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "material": 2,
     "newTaxa": 3,
     "skeleton": 9,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -5425,10 +7635,25 @@
     "placement": 5,
     "usage": 8
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 13,
     "synonymy": 2,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -5455,8 +7680,23 @@
     "placement": 1,
     "usage": 3
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 4
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -5488,8 +7728,23 @@
     "editorial": 1,
     "usage": 2
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -5516,21 +7771,36 @@
    "claims": {
     "acceptance": 12,
     "act": 75,
-    "material": 56,
+    "material": 67,
     "placement": 126,
     "rejection": 19,
     "usage": 170
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
-    "material": 56,
+    "material": 67,
     "newTaxa": 27,
     "skeleton": 315,
     "synonymy": 12,
     "types": 29
    },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
+   },
    "inconsistencies": [],
    "material": {
-    "specimen": 56
+    "specimen": 67
    },
    "tree": true
   },
@@ -5553,7 +7823,18 @@
     "year": 1973
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -5583,10 +7864,25 @@
     "placement": 18,
     "usage": 19
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 37,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -5620,10 +7916,25 @@
     "placement": 5,
     "usage": 6
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 11,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -5652,11 +7963,26 @@
     "placement": 144,
     "usage": 179
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 18,
     "skeleton": 323,
     "synonymy": 18,
     "types": 24
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -5696,11 +8022,26 @@
     "placement": 83,
     "usage": 122
    },
+   "coverage": {
+    "illustrations": "none",
+    "material": "none",
+    "newTaxa": "all",
+    "occurrences": "none",
+    "phylogeny": "na",
+    "skeleton": "all",
+    "synonymy": "partly",
+    "types": "all"
+   },
    "derived": {
     "newTaxa": 22,
     "skeleton": 205,
     "synonymy": 23,
     "types": 22
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -5734,10 +8075,25 @@
     "placement": 6,
     "usage": 7
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 13,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -5783,10 +8139,25 @@
     "placement": 5,
     "usage": 6
    },
+   "coverage": {
+    "illustrations": "none",
+    "material": "none",
+    "newTaxa": "all",
+    "occurrences": "none",
+    "phylogeny": "na",
+    "skeleton": "all",
+    "synonymy": "none",
+    "types": "all"
+   },
    "derived": {
     "newTaxa": 3,
     "skeleton": 11,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -5819,10 +8190,25 @@
     "placement": 3,
     "usage": 4
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 1,
     "newTaxa": 1,
     "skeleton": 7
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -5857,9 +8243,24 @@
     "rejection": 1,
     "usage": 15
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 21,
     "synonymy": 2
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -5890,9 +8291,24 @@
     "placement": 52,
     "usage": 54
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 106
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -5928,12 +8344,27 @@
     "rejection": 1,
     "usage": 23
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 16,
     "newTaxa": 5,
     "skeleton": 40,
     "synonymy": 3,
     "types": 4
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -5962,9 +8393,24 @@
     "placement": 11,
     "usage": 13
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "phylogeny": 11,
     "skeleton": 13
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -5994,9 +8440,24 @@
     "placement": 18,
     "usage": 19
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 37,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -6027,10 +8488,25 @@
     "placement": 27,
     "usage": 30
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 57,
     "synonymy": 2
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -6060,9 +8536,24 @@
     "placement": 6,
     "usage": 7
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 13,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -6091,8 +8582,23 @@
     "placement": 3,
     "usage": 4
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 7
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -6124,10 +8630,25 @@
     "placement": 6,
     "usage": 7
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 3,
     "skeleton": 13,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -6160,11 +8681,26 @@
     "placement": 18,
     "usage": 34
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 3,
     "skeleton": 52,
     "synonymy": 12,
     "types": 4
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -6197,10 +8733,25 @@
     "placement": 9,
     "usage": 14
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 23,
     "synonymy": 2,
     "types": 2
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -6233,10 +8784,25 @@
     "placement": 6,
     "usage": 11
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 17,
     "synonymy": 2,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -6260,7 +8826,18 @@
     "year": 1982
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -6292,11 +8869,26 @@
     "placement": 20,
     "usage": 31
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 10,
     "skeleton": 51,
     "synonymy": 5,
     "types": 6
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -6327,10 +8919,25 @@
     "placement": 6,
     "usage": 7
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 3,
     "skeleton": 13,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -6360,9 +8967,24 @@
     "placement": 8,
     "usage": 9
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 17,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -6397,10 +9019,25 @@
     "placement": 17,
     "usage": 19
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "phylogeny": 3,
     "skeleton": 29,
     "types": 2
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -6436,10 +9073,25 @@
     "placement": 10,
     "usage": 11
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 21,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -6485,11 +9137,26 @@
     "placement": 20,
     "usage": 28
    },
+   "coverage": {
+    "illustrations": "none",
+    "material": "none",
+    "newTaxa": "all",
+    "occurrences": "none",
+    "phylogeny": "na",
+    "skeleton": "all",
+    "synonymy": "partly",
+    "types": "all"
+   },
    "derived": {
     "newTaxa": 6,
     "skeleton": 48,
     "synonymy": 4,
     "types": 4
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -6521,10 +9188,25 @@
     "placement": 17,
     "usage": 20
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 13,
     "skeleton": 37,
     "types": 4
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -6561,12 +9243,27 @@
     "placement": 2,
     "usage": 5
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "material": 1,
     "newTaxa": 2,
     "skeleton": 7,
     "synonymy": 1,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -6617,12 +9314,27 @@
     "placement": 23,
     "usage": 28
    },
+   "coverage": {
+    "illustrations": "none",
+    "material": "partly",
+    "newTaxa": "all",
+    "occurrences": "none",
+    "phylogeny": "na",
+    "skeleton": "partly",
+    "synonymy": "partly",
+    "types": "partly"
+   },
    "derived": {
     "material": 15,
     "newTaxa": 12,
     "skeleton": 51,
     "synonymy": 1,
     "types": 4
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -6670,11 +9382,26 @@
     "placement": 61,
     "usage": 71
    },
+   "coverage": {
+    "illustrations": "none",
+    "material": "none",
+    "newTaxa": "na",
+    "occurrences": "none",
+    "phylogeny": "partly",
+    "skeleton": "all",
+    "synonymy": "partly",
+    "types": "all"
+   },
    "derived": {
     "phylogeny": 14,
     "skeleton": 118,
     "synonymy": 2,
     "types": 5
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -6703,11 +9430,26 @@
     "placement": 6,
     "usage": 7
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "material": 1,
     "newTaxa": 1,
     "skeleton": 13,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -6743,11 +9485,26 @@
     "placement": 3,
     "usage": 4
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "material": 2,
     "newTaxa": 2,
     "skeleton": 7,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -6786,10 +9543,25 @@
     "placement": 6,
     "usage": 7
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 13,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -6820,10 +9592,25 @@
     "placement": 29,
     "usage": 33
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "phylogeny": 25,
     "skeleton": 37,
     "synonymy": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -6855,9 +9642,24 @@
     "placement": 10,
     "usage": 14
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 4,
     "skeleton": 24
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -6891,11 +9693,26 @@
     "placement": 15,
     "usage": 21
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 4,
     "skeleton": 36,
     "synonymy": 3,
     "types": 2
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -6926,11 +9743,26 @@
     "placement": 16,
     "usage": 17
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "material": 3,
     "newTaxa": 4,
     "skeleton": 33,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -6970,10 +9802,25 @@
     "placement": 4,
     "usage": 5
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 9,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -7000,17 +9847,36 @@
    },
    "claims": {
     "act": 13,
+    "material": 2,
     "placement": 65,
     "usage": 78
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
+    "material": 2,
     "newTaxa": 7,
     "phylogeny": 47,
     "skeleton": 96,
     "types": 6
    },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
+   },
    "inconsistencies": [],
-   "material": {},
+   "material": {
+    "specimen": 2
+   },
    "tree": true
   },
   "1990_ubaghs_vizcaïno": {
@@ -7041,10 +9907,25 @@
     "placement": 4,
     "usage": 5
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 9,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -7073,10 +9954,25 @@
     "placement": 5,
     "usage": 6
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 11,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -7105,10 +10001,25 @@
     "placement": 5,
     "usage": 6
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 11,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -7143,10 +10054,25 @@
     "placement": 5,
     "usage": 6
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 11,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -7174,9 +10100,24 @@
     "placement": 19,
     "usage": 22
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "phylogeny": 19,
     "skeleton": 22
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -7208,9 +10149,24 @@
     "placement": 8,
     "usage": 9
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 17
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -7258,12 +10214,27 @@
     "placement": 152,
     "usage": 166
    },
+   "coverage": {
+    "illustrations": "none",
+    "material": "none",
+    "newTaxa": "all",
+    "occurrences": "none",
+    "phylogeny": "all",
+    "skeleton": "all",
+    "synonymy": "partly",
+    "types": "all"
+   },
    "derived": {
     "newTaxa": 10,
     "phylogeny": 67,
     "skeleton": 251,
     "synonymy": 1,
     "types": 5
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -7299,11 +10270,26 @@
     "placement": 20,
     "usage": 23
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 6,
     "skeleton": 43,
     "synonymy": 1,
     "types": 3
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -7330,7 +10316,18 @@
     "year": 1994
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -7355,7 +10352,18 @@
     "year": 1994
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -7388,10 +10396,25 @@
     "placement": 3,
     "usage": 4
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 7,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -7425,11 +10448,26 @@
     "placement": 23,
     "usage": 30
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 7,
     "skeleton": 53,
     "synonymy": 3,
     "types": 5
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -7463,10 +10501,25 @@
     "placement": 7,
     "usage": 8
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 3,
     "skeleton": 15,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -7496,10 +10549,25 @@
     "placement": 75,
     "usage": 78
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 16,
     "skeleton": 153,
     "types": 7
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -7537,11 +10605,26 @@
     "placement": 36,
     "usage": 42
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 11,
     "skeleton": 78,
     "synonymy": 1,
     "types": 4
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -7575,11 +10658,26 @@
     "placement": 12,
     "usage": 14
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "phylogeny": 9,
     "skeleton": 17,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -7612,10 +10710,25 @@
     "rejection": 2,
     "usage": 29
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 15,
     "skeleton": 57,
     "types": 6
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -7649,10 +10762,25 @@
     "placement": 16,
     "usage": 20
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 11,
     "skeleton": 36,
     "types": 4
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -7678,7 +10806,18 @@
     "year": 1999
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -7713,9 +10852,24 @@
     "placement": 9,
     "usage": 14
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 7,
     "skeleton": 23
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -7749,6 +10903,16 @@
     "placement": 13,
     "usage": 14
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 5,
     "material": 3,
@@ -7757,10 +10921,16 @@
     "skeleton": 27,
     "types": 2
    },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
+   },
    "inconsistencies": [],
    "material": {
     "illustration": 5,
-    "occurrence": 5,
+    "occurrence": 4,
+    "range": 1,
     "specimen": 3
    },
    "tree": true
@@ -7793,10 +10963,25 @@
     "placement": 29,
     "usage": 30
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 4,
     "phylogeny": 13,
     "skeleton": 46
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -7832,11 +11017,26 @@
     "placement": 4,
     "usage": 5
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 4,
     "newTaxa": 3,
     "skeleton": 9,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -7871,10 +11071,25 @@
     "placement": 8,
     "usage": 9
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 3,
     "skeleton": 17,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -7909,10 +11124,25 @@
     "placement": 4,
     "usage": 5
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 9,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -7939,7 +11169,18 @@
     "year": 2001
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -7971,10 +11212,25 @@
     "placement": 2,
     "usage": 3
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 5,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -8001,7 +11257,18 @@
     "year": 2002
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -8030,11 +11297,26 @@
     "placement": 44,
     "usage": 48
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 18,
     "phylogeny": 21,
     "skeleton": 71,
     "types": 6
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -8060,9 +11342,24 @@
     "placement": 5,
     "usage": 5
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "phylogeny": 5,
     "skeleton": 5
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -8098,12 +11395,27 @@
     "placement": 8,
     "usage": 12
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 4,
     "newTaxa": 2,
     "skeleton": 20,
     "synonymy": 2,
     "types": 2
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -8138,10 +11450,25 @@
     "placement": 4,
     "usage": 8
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 3,
     "skeleton": 12,
     "synonymy": 3
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -8177,11 +11504,26 @@
     "placement": 12,
     "usage": 28
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 40,
     "synonymy": 12,
     "types": 2
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -8216,11 +11558,26 @@
     "placement": 10,
     "usage": 15
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 4,
     "skeleton": 25,
     "synonymy": 2,
     "types": 3
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -8266,10 +11623,25 @@
     "placement": 6,
     "usage": 7
    },
+   "coverage": {
+    "illustrations": "none",
+    "material": "none",
+    "newTaxa": "all",
+    "occurrences": "none",
+    "phylogeny": "na",
+    "skeleton": "all",
+    "synonymy": "na",
+    "types": "all"
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 13,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -8298,9 +11670,24 @@
     "placement": 37,
     "usage": 38
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "phylogeny": 30,
     "skeleton": 45
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -8334,9 +11721,24 @@
     "placement": 17,
     "usage": 19
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 4,
     "skeleton": 36
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -8371,9 +11773,24 @@
     "placement": 1,
     "usage": 2
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 3
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -8408,10 +11825,25 @@
     "placement": 5,
     "usage": 6
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 11,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -8443,10 +11875,25 @@
     "placement": 7,
     "usage": 8
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 15,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -8478,9 +11925,24 @@
     "placement": 3,
     "usage": 4
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 7,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -8517,11 +11979,26 @@
     "placement": 2,
     "usage": 4
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 6,
     "synonymy": 1,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -8548,7 +12025,18 @@
     "year": 2008
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -8585,11 +12073,26 @@
     "placement": 5,
     "usage": 8
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 13,
     "synonymy": 1,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -8625,12 +12128,27 @@
     "placement": 15,
     "usage": 16
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 10,
     "newTaxa": 3,
     "phylogeny": 10,
     "skeleton": 21,
     "types": 2
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -8675,9 +12193,24 @@
     "placement": 5,
     "usage": 6
    },
+   "coverage": {
+    "illustrations": "none",
+    "material": "none",
+    "newTaxa": "all",
+    "occurrences": "none",
+    "phylogeny": "na",
+    "skeleton": "all",
+    "synonymy": "none",
+    "types": "na"
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 11
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -8712,10 +12245,25 @@
     "placement": 5,
     "usage": 6
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 11,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -8751,10 +12299,25 @@
     "placement": 8,
     "usage": 9
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 17,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -8787,9 +12350,24 @@
     "placement": 6,
     "usage": 7
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 13
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -8820,20 +12398,35 @@
    },
    "claims": {
     "act": 19,
-    "material": 12,
+    "material": 13,
     "placement": 42,
     "rejection": 1,
     "usage": 44
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
-    "material": 12,
+    "material": 13,
     "newTaxa": 9,
     "skeleton": 87,
     "types": 9
    },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
+   },
    "inconsistencies": [],
    "material": {
-    "specimen": 12
+    "specimen": 13
    },
    "tree": true
   },
@@ -8866,11 +12459,26 @@
     "placement": 5,
     "usage": 6
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "material": 2,
     "newTaxa": 3,
     "skeleton": 11,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -8904,9 +12512,24 @@
     "placement": 13,
     "usage": 14
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 27
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -8940,10 +12563,25 @@
     "placement": 6,
     "usage": 7
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 13,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -8991,11 +12629,26 @@
     "placement": 4,
     "usage": 5
    },
+   "coverage": {
+    "illustrations": "none",
+    "material": "partly",
+    "newTaxa": "all",
+    "occurrences": "none",
+    "phylogeny": "na",
+    "skeleton": "all",
+    "synonymy": "na",
+    "types": "all"
+   },
    "derived": {
     "material": 2,
     "newTaxa": 2,
     "skeleton": 9,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -9033,9 +12686,24 @@
     "placement": 8,
     "usage": 9
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 17,
     "types": 2
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -9081,11 +12749,26 @@
     "placement": 47,
     "usage": 49
    },
+   "coverage": {
+    "illustrations": "none",
+    "material": "none",
+    "newTaxa": "all",
+    "occurrences": "none",
+    "phylogeny": "all",
+    "skeleton": "all",
+    "synonymy": "none",
+    "types": "all"
+   },
    "derived": {
     "newTaxa": 14,
     "phylogeny": 18,
     "skeleton": 78,
     "types": 4
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -9118,11 +12801,26 @@
     "placement": 12,
     "usage": 40
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 52,
     "synonymy": 10,
     "types": 2
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -9146,7 +12844,18 @@
     "year": 2012
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -9179,12 +12888,27 @@
     "placement": 18,
     "usage": 20
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "material": 3,
     "newTaxa": 5,
     "phylogeny": 11,
     "skeleton": 27,
     "types": 2
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -9221,11 +12945,26 @@
     "placement": 12,
     "usage": 15
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 27,
     "synonymy": 1,
     "types": 2
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -9261,11 +13000,26 @@
     "placement": 28,
     "usage": 33
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "phylogeny": 16,
     "skeleton": 45,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -9295,12 +13049,27 @@
     "placement": 12,
     "usage": 13
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "material": 2,
     "newTaxa": 3,
     "phylogeny": 9,
     "skeleton": 16,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -9326,7 +13095,18 @@
     "year": 2013
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -9376,12 +13156,27 @@
     "rejection": 1,
     "usage": 30
    },
+   "coverage": {
+    "illustrations": "none",
+    "material": "none",
+    "newTaxa": "all",
+    "occurrences": "none",
+    "phylogeny": "partly",
+    "skeleton": "partly",
+    "synonymy": "partly",
+    "types": "all"
+   },
    "derived": {
     "newTaxa": 1,
     "phylogeny": 16,
     "skeleton": 40,
     "synonymy": 1,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -9414,11 +13209,26 @@
     "placement": 15,
     "usage": 18
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "phylogeny": 13,
     "skeleton": 20,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -9454,10 +13264,25 @@
     "placement": 5,
     "usage": 8
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "skeleton": 13,
     "synonymy": 1,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -9491,10 +13316,25 @@
     "placement": 3,
     "usage": 4
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 7,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -9528,11 +13368,26 @@
     "placement": 6,
     "usage": 8
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 2,
     "newTaxa": 4,
     "skeleton": 14,
     "types": 2
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -9571,11 +13426,26 @@
     "placement": 3,
     "usage": 9
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 12,
     "synonymy": 5,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -9610,10 +13480,25 @@
     "placement": 5,
     "usage": 6
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 11,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -9642,7 +13527,18 @@
     "year": 2015
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -9678,11 +13574,26 @@
     "placement": 4,
     "usage": 5
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "material": 2,
     "newTaxa": 1,
     "skeleton": 9,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -9729,10 +13640,25 @@
     "placement": 9,
     "usage": 10
    },
+   "coverage": {
+    "illustrations": "none",
+    "material": "none",
+    "newTaxa": "all",
+    "occurrences": "none",
+    "phylogeny": "na",
+    "skeleton": "all",
+    "synonymy": "na",
+    "types": "all"
+   },
    "derived": {
     "newTaxa": 4,
     "skeleton": 19,
     "types": 2
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -9766,10 +13692,25 @@
     "placement": 5,
     "usage": 6
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 11,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -9806,11 +13747,26 @@
     "placement": 6,
     "usage": 7
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 3,
     "newTaxa": 1,
     "skeleton": 13,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -9843,7 +13799,18 @@
     "year": 2015
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -9878,12 +13845,27 @@
     "placement": 4,
     "usage": 5
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "material": 2,
     "newTaxa": 2,
     "occurrences": 1,
     "skeleton": 9,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -9925,11 +13907,26 @@
     "placement": 5,
     "usage": 6
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 2,
     "newTaxa": 2,
     "skeleton": 11,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -9970,11 +13967,26 @@
     "placement": 8,
     "usage": 15
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 11,
     "skeleton": 23,
     "synonymy": 6,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -10020,10 +14032,25 @@
     "placement": 6,
     "usage": 7
    },
+   "coverage": {
+    "illustrations": "none",
+    "material": "none",
+    "newTaxa": "all",
+    "occurrences": "none",
+    "phylogeny": "na",
+    "skeleton": "all",
+    "synonymy": "na",
+    "types": "all"
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 13,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -10064,6 +14091,16 @@
     "placement": 24,
     "usage": 31
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "illustrations": 1,
     "newTaxa": 3,
@@ -10071,6 +14108,11 @@
     "skeleton": 40,
     "synonymy": 3,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -10101,7 +14143,18 @@
     "year": 2017
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -10137,12 +14190,27 @@
     "placement": 22,
     "usage": 24
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "material": 2,
     "newTaxa": 2,
     "phylogeny": 15,
     "skeleton": 31,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -10180,11 +14248,26 @@
     "placement": 5,
     "usage": 6
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "material": 3,
     "newTaxa": 2,
     "skeleton": 11,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -10222,10 +14305,25 @@
     "placement": 14,
     "usage": 15
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "phylogeny": 10,
     "skeleton": 19,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -10261,10 +14359,25 @@
     "placement": 5,
     "usage": 6
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 11,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -10310,24 +14423,39 @@
    "claims": {
     "acceptance": 11,
     "act": 4,
-    "material": 27,
+    "material": 26,
     "placement": 16,
     "usage": 35
    },
+   "coverage": {
+    "illustrations": "partly",
+    "material": "all",
+    "newTaxa": "all",
+    "occurrences": "partly",
+    "phylogeny": "na",
+    "skeleton": "all",
+    "synonymy": "all",
+    "types": "all"
+   },
    "derived": {
     "illustrations": 5,
-    "material": 12,
+    "material": 11,
     "newTaxa": 1,
     "occurrences": 10,
     "skeleton": 51,
     "synonymy": 11,
     "types": 1
    },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
+   },
    "inconsistencies": [],
    "material": {
     "illustration": 5,
     "occurrence": 10,
-    "specimen": 12
+    "specimen": 11
    },
    "tree": true
   },
@@ -10365,12 +14493,27 @@
     "placement": 68,
     "usage": 71
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "material": 2,
     "newTaxa": 3,
     "phylogeny": 64,
     "skeleton": 75,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -10407,10 +14550,25 @@
     "placement": 11,
     "usage": 12
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 23,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -10458,12 +14616,27 @@
     "placement": 28,
     "usage": 35
    },
+   "coverage": {
+    "illustrations": "none",
+    "material": "all",
+    "newTaxa": "all",
+    "occurrences": "none",
+    "phylogeny": "na",
+    "skeleton": "all",
+    "synonymy": "partly",
+    "types": "all"
+   },
    "derived": {
     "material": 12,
     "newTaxa": 7,
     "skeleton": 63,
     "synonymy": 6,
     "types": 6
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -10497,9 +14670,24 @@
     "placement": 15,
     "usage": 16
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 31
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -10533,11 +14721,26 @@
     "placement": 1,
     "usage": 5
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 6,
     "synonymy": 2,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -10570,12 +14773,27 @@
     "placement": 33,
     "usage": 37
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "material": 2,
     "newTaxa": 3,
     "phylogeny": 29,
     "skeleton": 41,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -10614,10 +14832,25 @@
     "placement": 6,
     "usage": 7
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 2,
     "skeleton": 13,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -10652,11 +14885,26 @@
     "rejection": 1,
     "usage": 7
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "material": 2,
     "newTaxa": 2,
     "skeleton": 13,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -10693,10 +14941,25 @@
     "placement": 5,
     "usage": 6
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "newTaxa": 1,
     "skeleton": 11,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {},
@@ -10732,10 +14995,25 @@
     "rejection": 1,
     "usage": 7
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {
     "material": 1,
     "skeleton": 13,
     "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null
    },
    "inconsistencies": [],
    "material": {
@@ -10764,7 +15042,18 @@
     "year": 2025
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false
@@ -10783,7 +15072,18 @@
     "year": null
    },
    "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
    "tree": false

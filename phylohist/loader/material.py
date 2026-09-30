@@ -1,4 +1,4 @@
-"""Material integrity checks: contexts, catalog numbers, casts, figures,
+"""Material integrity checks: contexts, catalog numbers, casts, illustrations,
 nulls, and the repository registry and a tree file's `repositories` list.
 
 Pure functions over a raw node dict and the file-level maps, so
@@ -6,8 +6,11 @@ Pure functions over a raw node dict and the file-level maps, so
 loader (`load.py`) runs them over the corpus's own documents. Each check
 returns a list of ``(level, message)`` pairs, ``level`` being ``'error'``
 or ``'warning'``; the caller adds the source key and, for a per-node
-check, the node path. `repository_of` is exported for the claims
-extractor (stage 2).
+check, the node path. `repository_of`, `context_key` and
+`entry_identifies` are exported for the claims extractor
+(`phylohist.claims`); `set_repository_registry`/`repository_registry`
+hold the loaded `data/repositories.yaml`, set once by `load.py`, so the
+extractor can reach it the way it reaches `Source`.
 """
 
 import re
@@ -16,6 +19,21 @@ from .taxa import Tree
 
 _DIGIT_RE = re.compile(r'\d')
 _WHITESPACE_RE = re.compile(r'\s+')
+
+
+_registry = {}
+
+
+def set_repository_registry(data):
+  """Register `data/repositories.yaml`'s content once (`loader.load.load`),
+  so the claim extractor can reach it the way it reaches `Source`."""
+  global _registry
+  _registry = dict(data or {})
+
+
+def repository_registry():
+  """The registered repositories, keyed by registry key."""
+  return _registry
 
 
 def _fold(text):
@@ -159,7 +177,7 @@ def file_repositories_used(document, repositories):
   return messages
 
 
-def _context_key(ref):
+def context_key(ref):
   """The key a `contextRef` names, whichever of its two shapes it is."""
   return ref if isinstance(ref, str) else ref.get('key')
 
@@ -173,7 +191,7 @@ def context_refs(node, node_contexts, file_contexts):
     ref = entry.get('context')
     if ref is None:
       continue
-    key = _context_key(ref)
+    key = context_key(ref)
     if key in node_contexts:
       if key in file_contexts:
         messages.append(('warning', f'context "{key}" on the node shadows a file-level context'))
@@ -193,14 +211,14 @@ def unreferenced_file_contexts(document):
     for entry in node.get('material') or ():
       ref = entry.get('context')
       if ref is not None:
-        referenced.add(_context_key(ref))
+        referenced.add(context_key(ref))
   return [
     ('warning', f'context "{key}" is defined but referenced by no material entry')
     for key in sorted(set(file_contexts) - referenced)
   ]
 
 
-def _entry_identifies(entry, value):
+def entry_identifies(entry, value):
   """Whether `value` names `entry`, by `label` or by any element of a
   `catalogNumbers` entry (a range pair's endpoints count separately)."""
   if entry.get('label') == value:
@@ -212,18 +230,24 @@ def _entry_identifies(entry, value):
   return False
 
 
-def figure_refs(node):
-  """Every `figures[*].of` names exactly one material entry on the node,
-  by exact string against a catalog number (either range endpoint) or the
-  label; no match or several is an error."""
+def figure_refs(node, is_cited=False):
+  """Every `illustrations[*].of` on a primary node names exactly one
+  material entry on the node, by exact string against a catalog number
+  (either range endpoint) or the label; no match or several is an error.
+  A cited entry's locators name nothing on the node (`null_material`
+  rejects an `of` there), so they are not read."""
+  if is_cited:
+    return []
   messages = []
   entries = node.get('material') or ()
-  for figure in node.get('figures') or ():
+  for figure in node.get('illustrations') or ():
+    if not isinstance(figure, dict):
+      continue
     of = figure.get('of')
     if of is None:
       continue
     for value in of if isinstance(of, list) else [of]:
-      matches = sum(1 for entry in entries if _entry_identifies(entry, value))
+      matches = sum(1 for entry in entries if entry_identifies(entry, value))
       if matches != 1:
         messages.append(
           ('error', f'figure "of" value "{value}" matches {matches} material entries, not 1'),
@@ -242,7 +266,7 @@ def cast_refs(node):
     value = entry.get('castOf')
     if value is None:
       continue
-    matches = [other for other in entries if _entry_identifies(other, value)]
+    matches = [other for other in entries if entry_identifies(other, value)]
     if len(matches) != 1:
       messages.append(
         ('error', f'castOf "{value}" matches {len(matches)} material entries, not 1'),
@@ -311,35 +335,71 @@ def _shown(elements):
   return elements if len(elements) == 2 else elements[0]
 
 
-_NULLABLE_FIELDS = ('material', 'figures', 'contexts', 'range')
+NULLABLE_FIELDS = ('material', 'illustrations', 'contexts', 'ranges')
+_PRIMARY_ONLY_KEYS = ('of', 'depicts')
+
+
+def _locator_errors(locators, where):
+  """One error for each `of` or `depicts` on each entry of `locators`, the
+  locators of a figure in a cited work, which depict nothing of this
+  node's own."""
+  return [
+    ('error', f'{where} entry carries `{key}`')
+    for locator in locators or ()
+    if isinstance(locator, dict)
+    for key in _PRIMARY_ONLY_KEYS
+    if key in locator
+  ]
+
+
+def _authorities(node):
+  """`node`'s `authority` and every `ex` authority nested in it."""
+  authority = node.get('authority')
+  while isinstance(authority, dict):
+    yield authority
+    authority = authority.get('ex')
 
 
 def null_material(node, is_cited):
   """A cited entry (a synonymy entry, an earlier state) locates the cited
-  work's own material, so it carries none of `material`, `figures`,
-  `contexts` or `range`, null or not; a `material: null` node beside a
-  figure that still names one (`of` set) contradicts itself."""
+  work's own material, so it carries none of `material`, `contexts` or
+  `ranges`, null or not. It may carry `illustrations`, locators for a
+  figure in the cited work, but never null and never with `of` or
+  `depicts`; the same ban on `of` and `depicts` holds for
+  `authority.illustrations` on any node. A `material: null` node beside an
+  illustration that still names one (`of` set) contradicts itself."""
   messages = []
   if is_cited:
-    for field in _NULLABLE_FIELDS:
-      if field in node:
+    for field in NULLABLE_FIELDS:
+      if field not in node:
+        continue
+      if field != 'illustrations':
         messages.append(('error', f'cited entry carries `{field}`'))
-  if 'material' in node and node.get('material') is None:
-    if any(isinstance(f, dict) and f.get('of') is not None for f in node.get('figures') or ()):
+      elif node[field] is None:
+        messages.append(('error', 'cited entry carries `illustrations: null`'))
+      else:
+        messages.extend(_locator_errors(node[field], 'cited entry `illustrations`'))
+  for authority in _authorities(node):
+    messages.extend(_locator_errors(authority.get('illustrations'), '`authority.illustrations`'))
+  if not is_cited and 'material' in node and node.get('material') is None:
+    if any(
+      isinstance(f, dict) and f.get('of') is not None for f in node.get('illustrations') or ()
+    ):
       messages.append(('error', '`material: null` beside a figure whose `of` names one'))
   return messages
 
 
 def unused_fields(document):
   """A field the file's `unused` lists still appears, even as `null`, on
-  some node: an error naming that node's path."""
+  some node: an error naming that node's path. `illustrations` counts only
+  on a primary node; a cited entry's locators are another use."""
   unused = document.get('unused') or ()
   if not unused:
     return []
   messages = []
-  for path, node, _ in walk_document(document):
+  for path, node, is_cited in walk_document(document):
     for field in unused:
-      if field in node:
+      if field in node and not (field == 'illustrations' and is_cited):
         messages.append(('error', f'`{field}` is listed as `unused` but appears at {path}'))
   return messages
 
