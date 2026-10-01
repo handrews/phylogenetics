@@ -699,6 +699,22 @@ def test_material_words(store):
   )
   assert (
     material(
+      'occurrence',
+      contextKey='sh-1',
+      occurrence={
+        'period': 'Cambrian',
+        'localSeries': 'Lower Cambrian',
+        'localSeriesModifier': 'upper',
+        'stage': 'Wuliuan',
+        'stageModifier': 'lower',
+        'biozoneRange': ['Olenellus', 'Bonnia'],
+      },
+    )
+    == 'occurrence sh-1: lower Wuliuan; Cambrian; upper Lower Cambrian; Olenellus, Bonnia'
+  )
+  assert material('occurrence', occurrence={'localStageModifier': 'lower'}) == ('occurrence: lower')
+  assert (
+    material(
       'illustration',
       illustration={'plate': 2, 'figures': [[1, 4]], 'non': [6]},
       of=['GSC 752', 'GSC 753'],
@@ -715,5 +731,9 @@ def test_material_words(store):
       range={'series': 'Ordovician', 'regions': ['Ottawa', {'value': 'Quebec', 'tentative': True}]},
     )
     == 'range: Ordovician; Ottawa, Quebec?'
+  )
+  assert (
+    material('range', range={'stage': 'Wuliuan', 'stageModifier': 'lower', 'regions': ['China']})
+    == 'range: lower Wuliuan; China'
   )
   assert material('range', range={}) == 'range'
