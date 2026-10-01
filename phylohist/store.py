@@ -16,7 +16,7 @@ import pathlib
 
 from . import blocks
 from .closure import TAXONOMY, Closure, in_years
-from .render import node_label, render
+from .render import node_label, pages_text, render
 from .resolve import Resolver
 from .words import COVERAGE_WORDS, PLURAL_KINDS, Words, short_citation, years_span
 
@@ -39,6 +39,36 @@ _COVERAGE_OF_KIND = {
   'act': 'skeleton',
   'editorial': 'skeleton',
 }
+
+# The `statements` kinds that select material claims, by `materialKind`.
+_MATERIAL_KINDS = {
+  'occurrences': {'occurrence', 'range'},
+  'illustrations': {'illustration'},
+  'specimens': {'specimen'},
+}
+
+# The `absence` claims (by `absenceOf`) a `statements` kind also selects; an
+# explicit `absence` kind selects all of them.
+_ABSENCE_OF_KIND = {
+  'specimens': ('material',),
+  'occurrences': ('occurrences',),
+  'illustrations': ('illustrations',),
+  'material': ('material', 'occurrences', 'illustrations'),
+  'acceptance': ('synonymy',),
+}
+
+# The content kinds `statements` tabulates for a node, in order: the label,
+# the `materialKind`s that count (None: synonymy entries), the `absenceOf`
+# that says none is printed, and the coverage kind the source declares it under.
+_NODE_CONTENT = (
+  ('specimens', {'specimen'}, 'material', 'material'),
+  ('occurrences', {'occurrence', 'range'}, 'occurrences', 'occurrences'),
+  ('figures', {'illustration'}, 'illustrations', 'illustrations'),
+  ('synonymy', None, 'synonymy', 'synonymy'),
+)
+# Specimens and figures are cited for species: above that rank a node with
+# neither says nothing, as in the derived coverage, and the row is left out.
+_SPECIES_LEVEL_CONTENT = frozenset({'specimens', 'figures'})
 
 _RANK_ORDER = (
   'kingdom',
@@ -768,6 +798,29 @@ class ClaimStore:
       for path in self._record_paths(source_key, record):
         entries = self._synonymy_entries(source_key, path)
         if not entries:
+          # A source that was named and printed none, the auditor says so.
+          absence = next(
+            (
+              c
+              for c in self.at_path[source_key].get(path, ())
+              if c['kind'] == 'absence' and c['absenceOf'] == 'synonymy'
+            ),
+            None,
+          )
+          if source and absence is not None:
+            block = blocks.statement(
+              'none',
+              {
+                'cite': self.cite(source_key),
+                'source': source_key,
+                'what': 'synonymy',
+                'about': self.words.display(record, source_key, path),
+                'page': absence.get('pages'),
+              },
+              {'record': record, 'source': source_key, 'path': path},
+              claims=[absence['id']],
+            )
+            out.append(_with_style(block, style))
           continue
         block = blocks.listing(
           {
@@ -783,6 +836,52 @@ class ClaimStore:
         out.append(_with_style(block, style))
     return out
 
+  def _node_page(self, source_key, path):
+    """The page a node's own usage claim carries, if it has one."""
+    for claim in self._node_claims(source_key, path):
+      if claim['kind'] == 'usage' and claim.get('axis') in ('children', 'root'):
+        return claim.get('pages')
+    return None
+
+  def _node_content(self, source_key, record, path):
+    """What a source gives at one node, per content kind: entered (with the
+    count and the claims it rests on), none printed (the auditor's `absence`
+    claim, or a source coverage that leaves nothing to enter), or not
+    entered. Above species rank the specimens and figures rows appear only
+    when the node carries something of the kind."""
+    at = self._node_claims(source_key, path)
+    coverage = self.sources[source_key].get('coverage') or {}
+    species_level = self._rank_of(record) in blocks.SPECIES_GROUP
+    rows = []
+    for label, material_kinds, absence_of, coverage_kind in _NODE_CONTENT:
+      if material_kinds is None:
+        ids = [e['claim'] for e in self._synonymy_entries(source_key, path)]
+        incomplete = False
+      else:
+        found = [
+          c for c in at if c['kind'] == 'material' and c.get('materialKind') in material_kinds
+        ]
+        ids = [c['id'] for c in found]
+        incomplete = label == 'specimens' and any(c.get('listComplete') is False for c in found)
+      absence = [c['id'] for c in at if c['kind'] == 'absence' and c['absenceOf'] == absence_of]
+      if ids:
+        text = f'{len(ids)} entered' + (' (list incomplete)' if incomplete else '')
+        row = {'state': 'entered', 'basis': 'claims', 'count': len(ids), 'claims': ids}
+      elif absence:
+        text = 'none printed'
+        row = {'state': 'none', 'basis': 'null', 'count': None, 'claims': absence}
+      elif label in _SPECIES_LEVEL_CONTENT and not species_level:
+        continue
+      elif coverage.get(coverage_kind) in ('na', 'all'):
+        # The source prints none anywhere, or enters all it prints of the kind.
+        text = 'none printed'
+        row = {'state': 'none', 'basis': 'coverage', 'count': None, 'claims': []}
+      else:
+        text = 'not entered'
+        row = {'state': 'notEntered', 'basis': 'coverage', 'count': None, 'claims': []}
+      rows.append({'kind': label, 'text': text, **row})
+    return rows
+
   def statements(self, record, source=None, kind=None, act_kind=None, style='text'):
     """Every statement the corpus holds about one record, in publication
     order, each as a sentence."""
@@ -791,23 +890,68 @@ class ClaimStore:
     claims = self.by_subject.get(record, [])
     if source is not None:
       claims = [c for c in claims if c['source'] == source]
-    if kind in ('occurrences', 'illustrations', 'specimens'):
-      # Material kinds a reader asks for by name; `occurrences` covers a
-      # node's contexts and its distribution `ranges` alike.
-      material_kinds = {
-        'occurrences': {'occurrence', 'range'},
-        'illustrations': {'illustration'},
-        'specimens': {'specimen'},
-      }[kind]
-      claims = [
-        c for c in claims if c['kind'] == 'material' and c.get('materialKind') in material_kinds
+    if kind is not None:
+      if kind in _MATERIAL_KINDS:
+        # Material kinds a reader asks for by name; `occurrences` covers a
+        # node's contexts and its distribution `ranges` alike.
+        material_kinds = _MATERIAL_KINDS[kind]
+        claims = [
+          c for c in claims if c['kind'] == 'material' and c.get('materialKind') in material_kinds
+        ]
+      else:
+        claims = [c for c in claims if c['kind'] == kind]
+      # The auditor's "none printed" for the kinds asked for goes with them.
+      claims += [
+        c
+        for c in self.by_subject.get(record, ())
+        if c['kind'] == 'absence'
+        and c['absenceOf'] in _ABSENCE_OF_KIND.get(kind, ())
+        and (source is None or c['source'] == source)
       ]
-    elif kind is not None:
-      claims = [c for c in claims if c['kind'] == kind]
     if act_kind is not None:
       claims = [c for c in claims if c.get('actKind') == act_kind]
     claims = sorted(claims, key=lambda c: (self.source_year(c['source']), c['source'], c['path']))
     heading = self.words.heading(record, self.words.asked(raw, record))
+    parameters = {'record': record, 'source': source, 'kind': kind, 'act_kind': act_kind}
+    paths = self._record_paths(source, record) if source is not None and kind == 'absence' else []
+    if paths:
+      # What the source gives for the record per kind of content: the
+      # absences are the auditor's, read beside the counts.
+      cite = self.cite(source)
+      content, rows = [], []
+      for path in paths:
+        page = self._node_page(source, path)
+        node_rows = self._node_content(source, record, path)
+        content.append(
+          {
+            'path': path,
+            'page': page,
+            'rows': [{k: r[k] for k in ('kind', 'state', 'basis', 'count')} for r in node_rows],
+          }
+        )
+        group = None
+        if len(paths) > 1:
+          group = self.words.display(record, source, path)
+          group += f' ({pages_text(page)})' if page is not None else ''
+        for r in node_rows:
+          state = {'value': r['text']}
+          if r['claims']:
+            state['claims'] = r['claims']
+          row = {'cells': [[{'value': r['kind']}], [state]]}
+          if group is not None:
+            row['group'] = group
+          rows.append(row)
+      title = f'{heading} in {cite}'
+      if len(paths) == 1 and content[0]['page'] is not None:
+        title += f' ({pages_text(content[0]["page"])})'
+      block = blocks.table(
+        [{'name': 'kind', 'kind': 'text'}, {'name': 'state', 'kind': 'text'}],
+        rows,
+        parameters,
+        title=title,
+        extra={'source': source, 'cite': cite, 'content': content},
+      )
+      return _with_style(block, style)
     entries = []
     for c in claims:
       page = c.get('pages')
@@ -829,7 +973,6 @@ class ClaimStore:
           printed='editor' if c.get('inferred') else None,
         )
       )
-    parameters = {'record': record, 'source': source, 'kind': kind, 'act_kind': act_kind}
     if not entries and source is not None:
       # Nothing of that kind about the record in that source: the answer
       # is the source's coverage of the kind, the gap block, not an
@@ -844,6 +987,9 @@ class ClaimStore:
       )
       if gap['kind'] == 'gap':
         fields['about'] = heading
+        if any(c['source'] == source for c in self.by_subject.get(record, ())):
+          # The record is in the source, only not under this kind.
+          fields['aboutOther'] = True
       if gap['kind'] == 'gap' and kind is None and act_kind is None and fields.get('entered'):
         # No kind asked: the record's statements may lie in any kind of the
         # source not yet entered, so the gap names every such kind. The

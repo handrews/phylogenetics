@@ -102,15 +102,18 @@ def report_inconsistencies(claims_by_source, roots):
     if not entry['inconsistencies']:
       continue
     found += 1
-    review = ROOT / 'docs' / 'reviews' / f'review_{source_key}.md'
+    review = ROOT / 'notes' / 'reviews' / f'review_{source_key}.md'
     print(source_key + (f'  ({review.relative_to(ROOT)})' if review.exists() else ''))
     for row in entry['inconsistencies']:
       kind, _, rest = row.partition(':')
       declared = entry['audit'].get('coverage', {}).get(kind)
-      print(
-        f'  {kind}: declared {declared} in data/sources.yaml '
-        f'({source_key}.audit.coverage.{kind});{rest.split(",", 1)[1]}'
-      )
+      where = f'in data/sources.yaml ({source_key}.audit.coverage.{kind})'
+      if ' but derived from the tree' in rest:
+        # The tree's nulls derive the kind: the declaration goes, and there
+        # are no claim counts to weigh it against.
+        print(f'  {kind}: declared {declared} {where} but{rest.split(" but", 1)[1]}')
+        continue
+      print(f'  {kind}: declared {declared} {where};{rest.split(",", 1)[1]}')
       counted = [
         c
         for c in claims_by_source.get(source_key, ())

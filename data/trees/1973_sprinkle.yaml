@@ -414,7 +414,6 @@ taxonomies:
   auth: [Klein]
   year: 1734
   pages: 56
-  illustrations: null
   contexts: null
   ranges: null
   children:
@@ -455,7 +454,6 @@ taxonomies:
         synonyms:
         - taxon: lepidocystoidea
           notes: re-ranked
-        illustrations: null
         ranges:
         - period: Cambrian
           localSeries: Lower Cambrian
@@ -472,7 +470,6 @@ taxonomies:
           children:
           - taxon: lepidocystis
             pages: 61
-            illustrations: null
             contexts:
               southeastern-pennsylvania:
                 unit: [Kinzers Formation]
@@ -612,7 +609,6 @@ taxonomies:
           - taxon: kinzercystis
             new: true
             pages: 68
-            illustrations: null
             contexts:
               southeastern-pennsylvania:
                 unit: [Kinzers Formation]
@@ -689,7 +685,6 @@ taxonomies:
                 of: MCZ 582A
       - openTaxon: eocrinoidea-unnamed-order-1_sprinkle_1973
         pages: 76
-        illustrations: null
         ranges:
         - localSeriesRange: [Lower Cambrian, Lower Ordovician]
           asPrinted: Early Cambrian(?)–early Ordovician.
@@ -698,7 +693,6 @@ taxonomies:
           pages: 76
           moved:
             taxon: eocrinoidea
-          illustrations: null
           ranges:
           - period: Cambrian
             localSeriesRange: [Lower Cambrian, Middle Cambrian]
@@ -729,7 +723,7 @@ taxonomies:
                 notes: studied from a University of Cincinnati latex cast
               - label: six to eight additional unnumbered specimens
                 repository: usnm
-              - catalogNumbers: [MCZ 656, MCZ 657, MCZ 658, MCZ 659, MCZ 660, MCZ 661, MCZ 662, MCZ 663, MCZ 664, MCZ 665]
+              - catalogNumbers: [[MCZ 656, MCZ 665]]
                 catalogNumbersAsPrinted: MCZ 656–665
                 role: plesiotype
                 context: gg-1
@@ -1383,7 +1377,7 @@ taxonomies:
                 catalogNumbersAsPrinted: UU 1040b and –f
                 role: paratype
                 context: cataract-canyon
-              - catalogNumbers: [MCZ 739, MCZ 740, MCZ 741]
+              - catalogNumbers: [[MCZ 739, MCZ 741]]
                 catalogNumbersAsPrinted: MCZ 739–741
                 role: paratype
                 context: cf-1
@@ -1472,7 +1466,7 @@ taxonomies:
               - catalogNumbers: [GSC 25934]
                 role: holotype
                 context: kt-1
-              - catalogNumbers: [GSC 25935, GSC 25936, GSC 25937, GSC 25938, GSC 25939, GSC 25940, GSC 25941, GSC 25942, GSC 25943, GSC 25944, GSC 25945, GSC 25946, GSC 25947, GSC 25948, GSC 25949, GSC 25950, GSC 25951, GSC 25952, GSC 25953, GSC 25954, GSC 25955, GSC 25956, GSC 25957, GSC 25958, GSC 25959, GSC 25960, GSC 25961]
+              - catalogNumbers: [[GSC 25935, GSC 25961]]
                 catalogNumbersAsPrinted: GSC 25935–25961
                 role: paratype
                 context: kt-1
@@ -1581,7 +1575,7 @@ taxonomies:
               - catalogNumbers: [MCZ 631]
                 role: holotype
                 context: cl-1
-              - catalogNumbers: [MCZ 632, MCZ 633, MCZ 634, MCZ 635, MCZ 636, MCZ 637, MCZ 638, MCZ 639, MCZ 640, MCZ 641]
+              - catalogNumbers: [[MCZ 632, MCZ 641]]
                 catalogNumbersAsPrinted: MCZ 632–641
                 role: paratype
                 context: cl-1
@@ -1730,7 +1724,6 @@ taxonomies:
                   - British Columbia
           - taxon: acanthocystites
             pages: 105
-            illustrations: null
             contexts:
               jince-beds:
                 unit: [Jince Beds]
@@ -1807,13 +1800,11 @@ taxonomies:
           pages: 108
           moved:
             taxon: eocrinoidea
-          illustrations: null
           contexts: null
           ranges: null
           children:
           - taxon: lichenoides
             pages: 109
-            illustrations: null
             ranges:
             - period: Cambrian
               localSeries: Middle Cambrian
@@ -1869,14 +1860,12 @@ taxonomies:
           pages: 110
           moved:
             taxon: eocrinoidea
-          illustrations: null
           ranges:
           - period: Ordovician
             series: Lower Ordovician
           children:
           - taxon: rhopalocystis
             pages: 110
-            illustrations: null
             ranges:
             - period: Ordovician
               series: Lower Ordovician
@@ -1896,14 +1885,12 @@ taxonomies:
               ranges: null
       - openTaxon: eocrinoidea-unnamed-order-2_sprinkle_1973
         pages: 111
-        illustrations: null
         ranges:
         - localSeriesRange: [Middle Cambrian, Middle Ordovician]
           asPrinted: Middle Cambrian—middle Ordovician.
         children:
         - openTaxon: eocrinoidea-indeterminate-family-1_sprinkle_1973
           pages: 112
-          illustrations: null
           contexts: null
           ranges: null
           children:
@@ -1911,7 +1898,6 @@ taxonomies:
             pages: 112
             moved:
               openTaxon: eocrinoidea-uncertain-family_ubaghs_1967b
-            illustrations: null
             ranges:
             - period: Cambrian
               localSeriesBoundary: [Middle Cambrian, Upper Cambrian]
@@ -2040,7 +2026,6 @@ taxonomies:
             provisional: true
             new: true
             pages: 115
-            illustrations: null
             contexts:
               virginia-and-tennessee:
                 unit: [Nolichucky Formation]
@@ -2127,14 +2112,12 @@ taxonomies:
           pages: 118
           moved:
             taxon: eocrinoidea
-          illustrations: null
           ranges:
           - period: Ordovician
             series: Middle Ordovician
           children:
           - taxon: ascocystites
             pages: 118
-            illustrations: null
             ranges:
             - period: Ordovician
               series: Middle Ordovician
@@ -2158,7 +2141,6 @@ taxonomies:
           pages: 122
           moved:
             taxon: rhombifera-class
-          illustrations: null
           ranges:
           - period: Ordovician
             seriesRange: [Lower Ordovician, Middle Ordovician]
@@ -2167,7 +2149,6 @@ taxonomies:
           children:
           - taxon: macrocystella
             pages: 122
-            illustrations: null
             contexts: null
             ranges: null
             children:
@@ -2180,14 +2161,12 @@ taxonomies:
               ranges: null
         - openTaxon: eocrinoidea-indeterminate-family-2_sprinkle_1973
           pages: 121
-          illustrations: null
           contexts: null
           ranges: null
           children:
           - taxon: cambrocrinus
             pages: 121
             notes: Initially assigned to Eocrinidae, details unclear
-            illustrations: null
             contexts:
               holy-cross-mountains:
                 unit: [Olenus beds]
@@ -2208,7 +2187,6 @@ taxonomies:
             pages: 121
             moved:
               openTaxon: eocrinoidea-uncertain-family_ubaghs_1967b
-            illustrations: null
             contexts:
               saint-john:
                 period: Cambrian
@@ -2230,14 +2208,12 @@ taxonomies:
       - openTaxon: eocrinoidea-indeterminate-order-1_sprinkle_1973
         provisional: true
         pages: 123
-        illustrations: null
         contexts: null
         ranges: null
         children:
         - taxon: trachelocrinidae
           new: true
           pages: 123
-          illustrations: null
           ranges:
           - period: Cambrian
             localSeriesRange: [Middle Cambrian, Upper Cambrian]
@@ -2247,7 +2223,6 @@ taxonomies:
             pages: 123
             moved:
               openTaxon: eocrinoidea-uncertain-family_ubaghs_1967b
-            illustrations: null
             contexts:
               wyoming-and-montana:
                 unit: [Snowy Range Formation]
@@ -2272,7 +2247,6 @@ taxonomies:
                 of: USNM 80490
       - openTaxon: eocrinoidea-indeterminate-order-2_sprinkle_1973
         pages: 126
-        illustrations: null
         contexts: null
         ranges: null
         children:
@@ -2280,14 +2254,12 @@ taxonomies:
           pages: 126
           moved:
             taxon: eocrinoidea
-          illustrations: null
           ranges:
           - period: Ordovician
             series: Middle Ordovician
           children:
           - taxon: cryptocrinites
             pages: 126
-            illustrations: null
             contexts: null
             ranges: null
             children:
@@ -2309,7 +2281,6 @@ taxonomies:
                   location: [Estonia (U.S.S.R.)]
         - openTaxon: eocrinoidea-indeterminate-family-3_sprinkle_1973
           pages: 127
-          illustrations: null
           contexts: null
           ranges: null
           children:
@@ -2317,7 +2288,6 @@ taxonomies:
             pages: 127
             moved:
               taxon: springerocystidae
-            illustrations: null
             ranges:
             - period: Ordovician
               seriesRange: [Lower Ordovician, Middle Ordovician]
@@ -2332,7 +2302,6 @@ taxonomies:
               ranges: null
       - openTaxon: eocrinoidea-indeterminate-order-3_sprinkle_1973
         pages: 127
-        illustrations: null
         contexts: null
         ranges: null
         children:
@@ -2340,7 +2309,6 @@ taxonomies:
           pages: 127
           moved:
             taxon: eocrinoidea
-          illustrations: null
           ranges:
           - period: Ordovician
             series: Lower Ordovician
@@ -2348,7 +2316,6 @@ taxonomies:
           children:
           - taxon: lingulocystis
             pages: 127
-            illustrations: null
             contexts: null
             ranges: null
             children:
@@ -2361,7 +2328,6 @@ taxonomies:
               ranges: null
         - openTaxon: eocrinoidea-indeterminate-family-4_sprinkle_1973
           pages: 127
-          illustrations: null
           contexts: null
           ranges: null
           children:
@@ -2369,7 +2335,6 @@ taxonomies:
             pages: 127
             moved:
               openTaxon: eocrinoidea-uncertain-family_ubaghs_1967b
-            illustrations: null
             ranges:
             - period: Ordovician
               series: Middle Ordovician
@@ -2413,7 +2378,6 @@ taxonomies:
           children:
           - taxon: rhipidocystis
             pages: 130
-            illustrations: null
             ranges:
             - period: Ordovician
               series: Middle Ordovician
@@ -2429,7 +2393,6 @@ taxonomies:
               ranges: null
           - taxon: batherocystis
             pages: 130
-            illustrations: null
             ranges:
             - period: Ordovician
               series: Middle Ordovician
@@ -2446,7 +2409,6 @@ taxonomies:
           - taxon: petalocystites
             new: true
             pages: 131
-            illustrations: null
             ranges:
             - period: Ordovician
               series: Middle Ordovician
@@ -2488,7 +2450,6 @@ taxonomies:
                 depicts: drawing
     - openTaxon: blastozoa-indeterminate-class_sprinkle_1973
       pages: 136
-      illustrations: null
       contexts: null
       ranges: null
       children:
@@ -2497,7 +2458,6 @@ taxonomies:
         moved:
           openTaxon: eocrinoidea-uncertain-family_ubaghs_1967b
         notes: Proper spelling is "Cigara", not "Cigaria"
-        illustrations: null
         contexts:
           jince-beds:
             unit: [Jince Beds]
@@ -2528,7 +2488,6 @@ taxonomies:
         pages: 138
         moved:
           openTaxon: eocrinoidea-uncertain-family_ubaghs_1967b
-        illustrations: null
         contexts: null
         ranges: null
         children:
@@ -2561,7 +2520,6 @@ taxonomies:
       - taxon: palaeocystites
         pages: 139
         notes: Year incorrectly given as 1859
-        illustrations: null
         contexts: null
         ranges: null
         children:
@@ -2618,14 +2576,12 @@ taxonomies:
       children:
       - taxon: blastocystidae
         pages: 144
-        illustrations: null
         ranges:
         - period: Ordovician
           seriesRange: [Lower Ordovician, Middle Ordovician]
         children:
         - taxon: blastoidocrinus
           pages: 144
-          illustrations: null
           ranges:
           - period: Ordovician
             series: Middle Ordovician
@@ -2729,7 +2685,7 @@ taxonomies:
               catalogNumbersAsPrinted: USNM 165379–91
               role: paratype
               notes: deltoid growth series D1–12 and D14
-            - catalogNumbers: [USNM 165392, USNM 165393, USNM 165394]
+            - catalogNumbers: [[USNM 165392, USNM 165394]]
               catalogNumbersAsPrinted: USNM 165392–4
               role: paratype
               context: usgs-d190d-co
@@ -2878,7 +2834,6 @@ taxonomies:
               depicts: drawing
         - taxon: blastocystis
           pages: 155
-          illustrations: null
           contexts:
             near-leningrad:
               unit: [Kunda Formation (B₃)]
@@ -2906,7 +2861,6 @@ taxonomies:
       - taxon: meristoschismatidae
         new: true
         pages: 156
-        illustrations: null
         ranges:
         - period: Ordovician
           series: Middle Ordovician
@@ -2914,7 +2868,6 @@ taxonomies:
         - taxon: meristoschisma
           new: true
           pages: 156
-          illustrations: null
           contexts:
             virginia-and-tennessee:
               unit: [Benbolt Formation]
@@ -3123,40 +3076,33 @@ taxonomies:
       children:
       - taxon: inadunata
         pages: 177
-        illustrations: null
         contexts: null
         ranges: null
       - taxon: camerata
         pages: 177
-        illustrations: null
         contexts: null
         ranges: null
       - taxon: flexibilia
         pages: 177
-        illustrations: null
         contexts: null
         ranges: null
       - taxon: articulata
         pages: 177
-        illustrations: null
         contexts: null
         ranges: null
       - openTaxon: crinoidea-indeterminate-subclass_sprinkle_1973
         pages: 177
-        illustrations: null
         contexts: null
         ranges: null
         children:
         - openTaxon: crinoidea-indeterminate-order_sprinkle_1973
           pages: 177
-          illustrations: null
           contexts: null
           ranges: null
           children:
           - taxon: echmatocrinidae
             new: true
             pages: 177
-            illustrations: null
             ranges:
             - period: Cambrian
               localSeries: Middle Cambrian
@@ -3272,7 +3218,6 @@ taxonomies:
       children:
       - taxon: springerocystidae
         pages: 138
-        illustrations: null
         contexts:
           southern-appalachians:
             unit: [Benbolt Formation ("Ottosee")]
@@ -3280,7 +3225,6 @@ taxonomies:
         children:
         - taxon: springerocystis
           pages: 138
-          illustrations: null
           contexts: null
           ranges: null
       - taxon: columbocystis
@@ -3289,25 +3233,21 @@ taxonomies:
         ranges: null
       - taxon: foerstecystis
         pages: 138
-        illustrations: null
         contexts: null
         ranges: null
       - taxon: ulrichocystis
         provisional: true
         pages: 186
-        illustrations: null
         contexts: null
         ranges: null
       - taxon: palaeocystites
         provisional: true
         pages: 186
-        illustrations: null
         contexts: null
         ranges: null
       - taxon: allocystites
         provisional: true
         pages: 186
-        illustrations: null
         ranges:
         - period: Silurian
           localSeries: Middle Silurian
@@ -3325,7 +3265,6 @@ taxonomies:
         regions: [world-wide]
   - taxon: echinozoa
     pages: 3
-    illustrations: null
     contexts: null
     ranges: null
     children:
@@ -3333,7 +3272,6 @@ taxonomies:
       pages: 187
       moved:
         taxon: crinozoa
-      illustrations: null
       ranges:
       - period: Ordovician
         series: Middle Ordovician
@@ -3341,7 +3279,6 @@ taxonomies:
       children:
       - taxon: astrocystites
         pages: 187
-        illustrations: null
         ranges:
         - period: Ordovician
           series: Middle Ordovician

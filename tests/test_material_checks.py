@@ -347,6 +347,80 @@ def test_figure_refs_cited_entry_is_not_read():
   assert material.figure_refs(node, is_cited=True) == []
 
 
+def test_figure_refs_number_inside_a_run_matches():
+  node = {
+    'material': [{'catalogNumbers': [['MCZ 582', 'MCZ 587']]}, {'catalogNumbers': ['MCZ 600']}],
+    'illustrations': [{'plate': 1, 'of': ['MCZ 584', 'MCZ 582A', 'MCZ  585']}],
+  }
+  assert material.figure_refs(node) == []
+
+
+def test_figure_refs_integer_run_of_five_digits_and_a_stem():
+  node = {
+    'material': [{'catalogNumbers': [['GSC 25935', 'GSC 25961']]}],
+    'illustrations': [{'plate': 1, 'of': 'GSC 25940'}],
+  }
+  assert material.figure_refs(node) == []
+
+
+def test_figure_refs_letter_run_matches_case_sensitively():
+  node = {
+    'material': [{'catalogNumbers': [['GSC 10088c', 'GSC 10088h']]}],
+    'illustrations': [{'plate': 1, 'of': 'GSC 10088d'}, {'plate': 2, 'of': 'GSC 10088D'}],
+  }
+  assert material.figure_refs(node) == [
+    ('error', 'figure "of" value "GSC 10088D" matches 0 material entries, not 1'),
+  ]
+
+
+@pytest.mark.parametrize(
+  'value',
+  ['MCZ 581', 'MCZ 588', 'GM 584', 'MCZ 584-5', 'MCZ584x', 'GSC 10088b', 'GSC 10089d'],
+)
+def test_figure_refs_outside_a_run_or_of_another_stem_is_error(value):
+  node = {
+    'material': [{'catalogNumbers': [['MCZ 582', 'MCZ 587'], ['GSC 10088c', 'GSC 10088h']]}],
+    'illustrations': [{'plate': 1, 'of': value}],
+  }
+  assert material.figure_refs(node) == [
+    ('error', f'figure "of" value "{value}" matches 0 material entries, not 1'),
+  ]
+
+
+def test_figure_refs_a_run_with_a_suffixed_endpoint_is_not_an_integer_run():
+  node = {
+    'material': [{'catalogNumbers': [['MCZ 582A', 'MCZ 587']]}],
+    'illustrations': [{'plate': 1, 'of': 'MCZ 584'}],
+  }
+  assert material.figure_refs(node) == [
+    ('error', 'figure "of" value "MCZ 584" matches 0 material entries, not 1'),
+  ]
+
+
+def test_figure_refs_exact_match_beats_a_run_containing_the_number():
+  node = {
+    'material': [{'catalogNumbers': [['MCZ 582', 'MCZ 587']]}, {'catalogNumbers': ['MCZ 584']}],
+    'illustrations': [{'plate': 1, 'of': 'MCZ 584'}],
+  }
+  assert material.figure_refs(node) == []
+  assert [e['catalogNumbers'] for e in material.entries_named(node['material'], 'MCZ 584')] == [
+    ['MCZ 584']
+  ]
+
+
+def test_figure_refs_two_runs_containing_the_number_is_error():
+  node = {
+    'material': [
+      {'catalogNumbers': [['MCZ 582', 'MCZ 587']]},
+      {'catalogNumbers': [['MCZ 584', 'MCZ 590']]},
+    ],
+    'illustrations': [{'plate': 1, 'of': 'MCZ 585'}],
+  }
+  assert material.figure_refs(node) == [
+    ('error', 'figure "of" value "MCZ 585" matches 2 material entries, not 1'),
+  ]
+
+
 # -- catalog_numbers ------------------------------------------------------------
 
 
@@ -418,6 +492,22 @@ def test_catalog_numbers_explicit_repository_skips_resolution(repositories):
   assert material.catalog_numbers(node, repositories) == []
 
 
+def test_catalog_numbers_holder_needs_no_resolvable_prefix(repositories):
+  node = {'material': [{'catalogNumbers': ['ZZZZ 1', [' 5', ' 9']], 'holder': 'a collector'}]}
+  assert material.catalog_numbers(node, repositories) == []
+  assert material.unresolved_catalog_numbers(node, repositories) == []
+
+
+def test_catalog_numbers_holder_excuses_neither_an_ellipsis_nor_an_ambiguous_prefix(repositories):
+  node = {
+    'material': [
+      {'catalogNumbers': ['ZZZZ 1...'], 'holder': 'a collector'},
+      {'catalogNumbers': ['PE 2'], 'holder': 'a collector'},
+    ]
+  }
+  assert [level for level, _ in material.catalog_numbers(node, repositories)] == ['error', 'error']
+
+
 def test_catalog_numbers_range_same_repository_is_quiet(repositories):
   node = {'material': [{'catalogNumbers': [['GM 1', 'GM 2']]}]}
   assert material.catalog_numbers(node, repositories) == []
@@ -443,6 +533,7 @@ def test_unresolved_catalog_numbers_lists_values_by_name(repositories):
       {'catalogNumbers': ['GM 1', 'ZZZZ 2...']},
       {'catalogNumbers': [['ZZZZ 3', 'GM 4']]},
       {'catalogNumbers': ['ZZZZ 5'], 'repository': 'gm'},
+      {'catalogNumbers': ['ZZZZ 6'], 'holder': 'a collector'},
     ],
   }
   assert material.unresolved_catalog_numbers(node, repositories) == ['ZZZZ 3']
@@ -463,6 +554,22 @@ def test_cast_refs_matches_a_catalog_number_label_or_range_endpoint():
     ],
   }
   assert material.cast_refs(node) == []
+
+
+def test_cast_refs_number_inside_a_run_matches_and_exact_wins():
+  node = {
+    'material': [
+      {'catalogNumbers': ['MCZ 629A'], 'castOf': 'PE 203'},
+      {'catalogNumbers': [['PE 201', 'PE 205']]},
+      {'catalogNumbers': ['MCZ 800'], 'castOf': 'PE 204'},
+      {'catalogNumbers': [['PE 204', 'PE 210']]},
+    ],
+  }
+  assert material.cast_refs(node) == []
+  node['material'].append({'catalogNumbers': [['PE 202', 'PE 206']]})
+  assert material.cast_refs(node) == [
+    ('error', 'castOf "PE 203" matches 2 material entries, not 1'),
+  ]
 
 
 def test_cast_refs_no_match_is_error():
@@ -585,6 +692,30 @@ def test_null_material_absent_is_quiet():
   assert material.null_material({}, is_cited=False) == []
 
 
+def test_null_synonyms_on_a_cited_entry_is_error():
+  assert material.null_material({'synonyms': None}, is_cited=True) == [
+    ('error', 'cited entry carries `synonyms: null`'),
+  ]
+
+
+def test_null_synonyms_beside_a_non_list_is_error():
+  node = {'synonyms': None, 'non': [{'taxon': 'a'}]}
+  assert material.null_material(node, is_cited=False) == [
+    ('error', '`synonyms: null` beside a `non` list'),
+  ]
+
+
+def test_null_synonyms_alone_is_quiet_on_a_primary_node():
+  assert material.null_material({'synonyms': None}, is_cited=False) == []
+  assert material.null_material({'synonyms': None, 'non': []}, is_cited=False) == []
+
+
+def test_a_synonyms_list_on_a_cited_entry_is_quiet():
+  # A nested synonymy exists; only the null is an error.
+  node = {'synonyms': [{'taxon': 'a'}], 'non': [{'taxon': 'b'}]}
+  assert material.null_material(node, is_cited=True) == []
+
+
 # -- unused_fields ---------------------------------------------------------------
 
 
@@ -612,6 +743,14 @@ def test_unused_ranges_with_a_node_carrying_ranges_is_error():
   }
   assert material.unused_fields(document) == [
     ('error', '`ranges` is listed as `unused` but appears at 0'),
+  ]
+
+
+@pytest.mark.parametrize('value', [None, [{'taxon': 'b'}]])
+def test_unused_synonyms_with_a_node_carrying_it_is_error(value):
+  document = {'unused': ['synonyms'], 'taxonomies': [{'taxon': 'a', 'synonyms': value}]}
+  assert material.unused_fields(document) == [
+    ('error', '`synonyms` is listed as `unused` but appears at 0'),
   ]
 
 
@@ -804,6 +943,38 @@ def test_check_draft_exits_one_on_illustrations_null_on_a_primary_node(tmp_path)
   result = _run_check_draft(draft)
   assert result.returncode == 1, result.stdout + result.stderr
   assert 'draft carries `illustrations: null`' in result.stdout
+
+
+def test_check_draft_exits_one_on_synonyms_null_on_a_primary_node(tmp_path):
+  draft = tmp_path / '1898_bather.yaml'
+  draft.write_text('taxonomies:\n- taxon: cyathocystis\n  synonyms: null\n')
+  result = _run_check_draft(draft)
+  assert result.returncode == 1, result.stdout + result.stderr
+  assert 'draft carries `synonyms: null`' in result.stdout
+
+
+def test_check_draft_exits_one_on_synonyms_null_on_a_cited_entry(tmp_path):
+  draft = tmp_path / '1898_bather.yaml'
+  draft.write_text(
+    'taxonomies:\n'
+    '- taxon: cyathocystis\n'
+    '  synonyms:\n'
+    '  - taxon: cyathocystidae\n'
+    '    synonyms: null\n',
+  )
+  result = _run_check_draft(draft)
+  assert result.returncode == 1, result.stdout + result.stderr
+  assert 'cited entry carries `synonyms: null`' in result.stdout
+
+
+def test_check_draft_exits_one_on_synonyms_null_beside_non(tmp_path):
+  draft = tmp_path / '1898_bather.yaml'
+  draft.write_text(
+    'taxonomies:\n- taxon: cyathocystis\n  non:\n  - taxon: cyathocystidae\n  synonyms: null\n',
+  )
+  result = _run_check_draft(draft)
+  assert result.returncode == 1, result.stdout + result.stderr
+  assert '`synonyms: null` beside a `non` list' in result.stdout
 
 
 def test_check_draft_exits_one_on_of_in_a_cited_entrys_illustrations(tmp_path):

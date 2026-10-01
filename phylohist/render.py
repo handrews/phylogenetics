@@ -205,12 +205,16 @@ def _statement_text(block):
   if kind == 'gap':
     text = _gap_sentence(f)
     if f.get('about') and f.get('entered', True):
-      text = f'Nothing about {f["about"]} is entered from {f["cite"]}. ' + text
+      of_kind = 'Nothing of this kind about' if f.get('aboutOther') else 'Nothing about'
+      text = f'{of_kind} {f["about"]} is entered from {f["cite"]}. ' + text
     if f.get('also'):
       text += ' ' + _also_sentence(f['also'])
     return text
   if kind == 'absent':
     return f'No source in the corpus mentions {f["name"]}.'
+  if kind == 'none':
+    page = f' ({pages_text(f["page"])})' if f.get('page') is not None else ''
+    return f'{f["cite"]} gives no {f["what"]} for {f["about"]}{page}.'
   return json.dumps(f, ensure_ascii=False)
 
 

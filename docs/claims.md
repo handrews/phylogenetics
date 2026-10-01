@@ -21,7 +21,7 @@ Every claim carries:
 | field | value |
 |---|---|
 | `id` | `<source>:<path>:<kind>[:<n>]`. `<path>` is the node's position in its tree file as the loader computes it: the taxonomy or phylogeny index, then each step down (`children/2`, `synonyms/0`, `non/1`, `removed/0`, `parents/0`, `moved`, `corrected`, `substituted`, `lapsus`, `lapsusFor`, `or/0`). `<n>` disambiguates several claims of one kind from one node (a node with three `material` entries yields three `material` claims). Ids are stable as long as the file is not reordered; the tree keeps printed order, so reordering is a data change. |
-| `kind` | one of `usage`, `placement`, `acceptance`, `act`, `rejection`, `material`, `secondhand`, `editorial` |
+| `kind` | one of `usage`, `placement`, `acceptance`, `act`, `rejection`, `material`, `secondhand`, `editorial`, `absence` |
 | `source` | the tree file's source key |
 | `path` | the node's position and pointer, `0/children/0/children/0`, the same string the id carries |
 | `tree` | `taxonomy`, or a phylogeny's `treeType`; a phylogeny's `notes` ride along as `treeNotes` |
@@ -231,6 +231,14 @@ says which.
   entry is printed and only a field of it is the editor's.
   `specimenIllustrations` lists the locators of the node's illustrations
   whose `of` names the entry, and `illustrationClaims` their claim ids.
+  `figured: false` marks a specimen no figure names, set only when all
+  four hold: the source's effective coverage for `illustrations` is `all`
+  (so an unaudited tree, whose figure list may be partial, asserts
+  nothing); the node carries `illustrations`, a value or a null; no
+  illustration on the node names the entry through `of` (a number inside a
+  range pair's run names it); and the node has no illustration without an
+  `of`, since an untied figure may show the specimen. It is never set to
+  `true`: a figured specimen has `illustrationClaims`.
 - `illustration` (field `illustrations`): one claim per entry, this
   source's own figure. `illustration` holds the locator fields (`plate`,
   `page`, `figures`, `textFigures`, `non`, `notes`, `uncertain`); `of`
@@ -266,6 +274,35 @@ whole), `basis`. Bell 1975 cites "Bell, 1974" for a paper that appeared in
 1976_bell.b.m`. The claim it qualifies
 carries the same block, so both directions are answerable.
 
+### `absence`
+
+An auditor's statement that the source prints none of a kind for a node:
+a node's `null` (G11) made a claim, so the tools can answer for one taxon.
+Emitted on a primary, non-cited, named node of any rank, after its
+material claims, one per coverage kind the node nulls and carries no value
+for, in this order:
+
+| `absenceOf` | emitted when |
+|---|---|
+| `material` | `material` is null |
+| `occurrences` | `contexts` and/or `ranges` is null, neither has a value, and no `material` entry has a `context` |
+| `illustrations` | `illustrations` is null |
+| `synonymy` | `synonyms` is null |
+
+Fields: the shared record, `absenceOf`, and `fields`, the node's fields
+that are null for that kind (`['contexts', 'ranges']`). Nothing is emitted
+for a file-level `unused`, which the source-level `na` already says. The
+claim has no `audit.coverageKind`, so the manifest's per-kind counts and
+cross-checks ignore it; it does appear in the per-kind `claims` counts.
+Ids are numbered per kind, so no other claim's id depends on it.
+`statements` words it ("no specimens cited", "no locality or range given",
+"not figured", "no synonymy given") and selects it with the kind it
+speaks of: `specimens` and `material` (material), `occurrences`,
+`illustrations`, `acceptance` (synonymy), and every one with
+`kind='absence'`; with a source named, `kind='absence'` instead returns a
+table of the source's content for the record, per node and kind. `synonymy` with a named source answers a node with that
+absence by a `none` statement block, "<cite> gives no synonymy for <name>".
+
 ## Derived coverage
 
 `claims/manifest.json` holds, per source record (every key in
@@ -284,25 +321,37 @@ claims behind them and the review file to check against, and
 `tests/test_claims.py` fails while any row exists, so a new one cannot
 land unnoticed.
 
-Three kinds, `material`, `occurrences` (the node fields `contexts` and
-`ranges`) and `illustrations`, are also read from the tree itself (G11):
-`claims.derived_material_coverage(roots)` walks the primary, non-cited,
-named nodes of a source. A kind whose fields the file lists as `unused` is
-`na`. Otherwise, when no node writes a `null` for the kind's fields, it is
-`None` and declares nothing: a value records what the source prints, not
-that the file was audited for it. When some node writes a null, the kind is
-`all` if no node lacks the fields (`partly` if a material entry has
-`listComplete: false`), and `partly` if some node does. For `material` only
-the species-level nodes (species, subspecies, variety) are counted, since
-specimens are cited for species; `occurrences` and `illustrations` count
-every named node. Each source row carries `derivedCoverage` (this raw
-result) and `coverage`, the effective map: the declared value for
-`skeleton`, `newTaxa`, `types`, `synonymy` and `phylogeny`, and for the
-three node-state kinds the derived value when there is one, else the
+Four kinds, `material`, `occurrences` (the node fields `contexts` and
+`ranges`), `illustrations` and `synonymy` (`synonyms` and `non`), are also
+read from the tree itself (G11): `claims.derived_coverage(roots)` walks the
+primary, non-cited, named nodes of a source's taxonomy trees (a cladogram
+prints no material). A kind whose fields the file lists as `unused` is
+`na` (for `synonymy`, `unused: [synonyms]`). Otherwise, when no node writes
+a `null` for the kind's fields, it is `None` and declares nothing: a value
+records what the source prints, not that the file was audited for it. When
+some node writes a null, the kind is `all` if no node lacks the fields
+(`partly` if a material entry has `listComplete: false`), and `partly` if
+some node does. For `material` and `illustrations` only the species-level
+nodes (species, subspecies, variety) are counted, since specimens are
+cited and figures drawn for species; `occurrences` counts every named
+node, and a node whose `material` entry has a `context` counts as carrying
+it. `synonymy` counts every named node of every rank: a node carrying
+`synonyms` or `non`, as a value or a null, is present (a `non` list is a
+synonymy of rejected names), and only `synonyms: null` writes a null (the
+loader rejects it beside a `non` list). Each source row carries
+`derivedCoverage` (this raw result) and `coverage`, the effective map: the
+declared value for `skeleton`, `newTaxa`, `types` and `phylogeny`, and for
+the four node-state kinds the derived value when there is one, else the
 declared one. Each claim's `audit.coverage` and the gap statements read
-the effective map. For the three kinds an
-inconsistency row appears only when a declared and a derived value both
-exist and differ ("declared all, derived partly").
+the effective map. A kind the tree derives is not declared as well: when
+the derived value is not `None` and `audit.coverage` declares the kind at
+all, an inconsistency row says "declared X but derived from the tree (Y);
+remove the declaration", whether or not the two agree. A source whose
+tree writes nulls therefore declares `skeleton`, `newTaxa`, `types` and
+`phylogeny` only. The three material kinds have no claim-count check;
+`synonymy` keeps it for a source that writes no synonymy null and so
+derives nothing, until a null derives it. `absence` claims are not
+counted under any coverage kind.
 
 ## What the vocabulary does not do
 
@@ -428,7 +477,7 @@ blocks; the CLI (`phylohist <tool>`, `--style`), the MCP server
 | `placed_under(record, parent)` | a chains block of the sources that place the record under the parent, with the taxa between; first and last stated |
 | `history(record, include_related, synonymy)` | a timeline: one line per source in year order with the name as used, its position, the acts and the page; the measurement as the heading; each source's synonymy with `synonymy` |
 | `synonymy(record, source)` | the synonymy a source prints under a record, as a list |
-| `statements(record, source, kind, act_kind)` | every claim about a record as a sentence with source, year and page, the drill-down; with a source named and nothing of that kind entered, the gap block for it, and with no kind asked the gap names every kind of the source not yet entered |
+| `statements(record, source, kind, act_kind)` | every claim about a record as a sentence with source, year and page, the drill-down; with a source named and nothing of that kind entered, the gap block for it ("nothing of this kind" when the source holds other claims about the record), and with no kind asked the gap names every kind of the source not yet entered; with a source and `kind='absence'`, a table of what the source gives for the record per content kind (specimens, occurrences, figures, synonymy; one group per node), each `N entered`, `none printed` (the auditor's `absence` claim, or a source coverage of `na` or `all` that leaves none to enter) or `not entered`; above species rank the specimens and figures rows appear only when the node carries some, since those kinds are cited for species |
 | `gap(source, kind)` / `gap(name=…)` | the contract's sentence for what is not yet entered, or for a name no source carries |
 | `printed_forms(record, source)` | each form a source prints, verbatim (folded to one line in text and markdown; the claim keeps its line breaks), with the page; when the named source recorded no verbatim form, the heading as its listing is entered, marked as such |
 | `source_coverage(key)` | the raw coverage view |

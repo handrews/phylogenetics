@@ -222,7 +222,7 @@ property.
 | property | data | data % |
 |---|---|---|
 | `pages` | 350 | 3.9% |
-| `illustrations` | 249 | 2.7% |
+| `illustrations` | 186 | 2.0% |
 
 ### `materialEntry` -- 280 instances in `data/`
 
@@ -698,11 +698,12 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/cladisticFields/properties/matrix/items` | integer/string | intx139, strx5 | `?` | - |
 | `phylogeny#/$defs/contexts` | object/null | dictx57, nullx41 | - | - |
 | `phylogeny#/$defs/editorialObject/properties/inferred` | boolean/array | listx4, boolx3 | - | - |
-| `phylogeny#/$defs/locationFields/properties/illustrations` | array/null | listx174, nullx75 | - | - |
+| `phylogeny#/$defs/locationFields/properties/illustrations` | array/null | listx174, nullx12 | - | - |
 | `phylogeny#/$defs/materialsFields/properties/material` | array/null | listx110, nullx9 | - | - |
 | `phylogeny#/$defs/materialsFields/properties/ranges` | array/null | listx49, nullx41 | - | - |
 | `phylogeny#/$defs/person/properties/death` | integer/null | intx80, nullx1 | - | - |
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
+| `phylogeny#/$defs/relationalFields/properties/synonyms` | array/null | listx362 | - | null |
 | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items` | array/string/integer | strx1 | `E23470` | array, integer |
 | `phylogeny#/$defs/taxonRecord/properties/name` | string/null | strx2467, nullx196 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
 

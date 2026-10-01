@@ -5,8 +5,6 @@
 1842_vanuxem at 0/children/0/children/0: catalog number "Page 306, Figure 80" has no resolvable repository prefix
 1897_whiteaves at 0/children/1/children/0/children/0: catalog number "first specimen collected by John Stewart, 1886, Museum of the Geological Survey of Canada" has no resolvable repository prefix
 1897_whiteaves at 0/children/1/children/0/children/0: catalog number "second specimen collected by John Stewart, 1886, Museum of the Geological Survey of Canada" has no resolvable repository prefix
-1973_sprinkle at 0/children/0/children/0/children/1/children/0/children/2/children/0: catalog number "500" has no resolvable repository prefix
-1973_sprinkle at 0/children/0/children/0/children/1/children/0/children/2/children/0: catalog number "501" has no resolvable repository prefix
 Placocystida of rank Subfamily expected to end with suffix "inae"
 Protologue not flagged: acalephida in 1817b_cuvier
 Protologue not flagged: acephala-class in 1798_cuvier

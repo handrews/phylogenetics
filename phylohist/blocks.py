@@ -12,9 +12,9 @@ there and needs nothing here.
 Types: `classification` (a tree as a source prints it), `table` (typed
 columns, cells that may hold several values), `list` (a synonymy list,
 printed forms or statements under a heading), `statement` (a gap, a
-printed form, an absence), `chains` (one line per source: the chain of
-taxa from a higher taxon down to a record), `timeline` (one line per
-source in year order: what it does with a name).
+printed form, an absence, a source's "gives no synonymy"), `chains` (one
+line per source: the chain of taxa from a higher taxon down to a record),
+`timeline` (one line per source in year order: what it does with a name).
 """
 
 import hashlib
@@ -224,7 +224,8 @@ def timeline(entries, parameters, title=None, decorations=None, extra=None):
 
 def statement(kind, fields, parameters, claims=()):
   """``kind``: gap (a source's coverage for a kind of statement), absent
-  (nothing in the corpus)."""
+  (nothing in the corpus), none (the source prints none of a kind for one
+  record: an `absence` claim's statement)."""
   return _make('statement', {'kind': kind, 'fields': fields}, parameters, claims)
 
 

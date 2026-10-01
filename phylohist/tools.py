@@ -180,7 +180,9 @@ TOOL_DESCRIPTIONS = {
     'The synonymy a source prints under a record, as a dated list: each '
     'earlier usage accepted or rejected, with the original combination, '
     'the cited work and page, and the printed form. Every source with one '
-    'when no source is named.'
+    'when no source is named. Where a named source prints none and the '
+    'auditor recorded that, the result is the statement "gives no synonymy '
+    'for" the name.'
   ),
   'statements': (
     'Every statement the corpus holds about one record, in publication '
@@ -189,10 +191,20 @@ TOOL_DESCRIPTIONS = {
     'type species), a synonymy acceptance, a rejection, material. '
     'Optionally one source, one kind of statement '
     '(usage, placement, acceptance, act, rejection, material, '
-    'editorial; or occurrences, illustrations, specimens for one kind of '
-    f'material) or one act kind ({", ".join(ACT_KINDS)}). A statement '
+    'editorial, absence; or occurrences, illustrations, specimens for one '
+    f'kind of material) or one act kind ({", ".join(ACT_KINDS)}). A statement '
     'marked "editor" is the '
-    "editor's inference, not the paper's words. When a source is named "
+    "editor's inference, not the paper's words. A line such as \"no "
+    'specimens cited" is the auditor\'s statement that the paper prints '
+    'none for that taxon, which is different from the kind not having been '
+    'entered; "(not figured)" after a specimen says the same of that '
+    "specimen's figures. With a source and kind absence the result is a "
+    'table of what the source gives for the record per kind (specimens, '
+    'occurrences, figures, synonymy), each "N entered", "none printed" or '
+    '"not entered": "none printed" is the auditor\'s statement about the '
+    'paper (or follows from the source\'s coverage), "not entered" is work '
+    'not yet done; above species rank the specimens and figures rows '
+    'appear only when the node has some. When a source is named '
     'and nothing of that kind about the record is entered, the result is '
     'the gap block for that source and kind: compose it as the answer.'
   ),
@@ -200,7 +212,10 @@ TOOL_DESCRIPTIONS = {
     'What the corpus holds of one publication: its citation, whether its '
     'content has been entered at all, the audit state and, per kind of '
     'statement, whether the reviewer declared all, part or none of what '
-    'the paper prints to be entered, and the counts derived. Consult it '
+    'the paper prints to be entered, and the counts derived. `coverage` is '
+    "the effective value per kind (derived from the tree's nulls where "
+    'the file writes them, otherwise as the reviewer declared) and '
+    '`derivedCoverage` the derived part alone. Consult it '
     'before saying anything has not been entered: when the declared '
     'coverage for a kind is complete, a statement you have not found is '
     'one you have not looked for in the right place.'
