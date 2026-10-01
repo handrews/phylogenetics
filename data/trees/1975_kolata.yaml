@@ -31,7 +31,6 @@ taxonomies:
                 type: true
               - openTaxon: pleurocystites-cf-squamosus_kolata_1975
                 cf: squamosus_billings_1854
-                new: true
             - taxon: praepleurocystis
               children:
               - taxon: watkinsi_strimple_1948
@@ -112,7 +111,6 @@ taxonomies:
                   - taxon: pentagonius_meek_worthen_1865
                   - openTaxon: porocrinus-cf-smithi_kolata_1975
                     cf: smithi_grant_1881
-                    new: true
               - taxon: carabocrinidae
                 children:
                 - taxon: carabocrinus
@@ -270,7 +268,6 @@ taxonomies:
                     - taxon: palasterina
                 - openTaxon: hudsonaster-cf-rugosus_kolata_1975
                   cf: rugosus_billings_1857
-                  new: true
                   synonyms:
                   - taxon: rugosus_billings_1857
                     parents:
@@ -300,7 +297,6 @@ taxonomies:
           type: true
         - openTaxon: edrioaster-cf-bigsbyi_kolata_1975
           cf: bigsbyi_billings_1857
-          new: true
           synonyms:
           - taxon: bigsbyi_billings_1857
             parents:

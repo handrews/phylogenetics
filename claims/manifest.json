@@ -8052,7 +8052,7 @@
   "1975_kolata": {
    "acts": {
     "new": 18,
-    "placeholder": 5,
+    "placeholder": 1,
     "type": 24
    },
    "audit": {
@@ -8069,7 +8069,7 @@
    },
    "claims": {
     "acceptance": 18,
-    "act": 47,
+    "act": 43,
     "placement": 144,
     "usage": 179
    },
@@ -8084,7 +8084,7 @@
     "types": null
    },
    "derived": {
-    "newTaxa": 23,
+    "newTaxa": 19,
     "skeleton": 323,
     "synonymy": 18,
     "types": 24
@@ -8537,7 +8537,6 @@
   },
   "1982_bell.b.m": {
    "acts": {
-    "placeholder": 1,
     "type": 1
    },
    "audit": {
@@ -8556,7 +8555,7 @@
     "year": 1982
    },
    "claims": {
-    "act": 2,
+    "act": 1,
     "placement": 18,
     "usage": 19
    },
@@ -8571,7 +8570,6 @@
     "types": null
    },
    "derived": {
-    "newTaxa": 1,
     "skeleton": 37,
     "types": 1
    },
@@ -10634,7 +10632,6 @@
   "1996_sumrall_bowsher": {
    "acts": {
     "new": 3,
-    "placeholder": 1,
     "type": 1
    },
    "audit": {
@@ -10656,9 +10653,10 @@
     "year": 1996
    },
    "claims": {
-    "act": 5,
+    "acceptance": 1,
+    "act": 4,
     "placement": 7,
-    "usage": 8
+    "usage": 9
    },
    "coverage": {
     "illustrations": null,
@@ -10671,8 +10669,9 @@
     "types": null
    },
    "derived": {
-    "newTaxa": 4,
-    "skeleton": 15,
+    "newTaxa": 3,
+    "skeleton": 16,
+    "synonymy": 1,
     "types": 1
    },
    "derivedCoverage": {
@@ -10688,7 +10687,7 @@
   "1997_paul.c.r.c": {
    "acts": {
     "new": 10,
-    "placeholder": 7,
+    "placeholder": 6,
     "type": 7
    },
    "audit": {
@@ -10705,7 +10704,7 @@
     "year": 1997
    },
    "claims": {
-    "act": 24,
+    "act": 23,
     "placement": 75,
     "usage": 77
    },
@@ -10720,7 +10719,7 @@
     "types": null
    },
    "derived": {
-    "newTaxa": 17,
+    "newTaxa": 16,
     "skeleton": 152,
     "types": 7
    },
@@ -11104,8 +11103,7 @@
   },
   "2000_sumrall_garbisch_pope": {
    "acts": {
-    "new": 4,
-    "placeholder": 1
+    "new": 4
    },
    "audit": {
     "state": "unaudited"
@@ -11127,7 +11125,7 @@
     "year": 2000
    },
    "claims": {
-    "act": 5,
+    "act": 4,
     "placement": 29,
     "usage": 30
    },
@@ -11142,7 +11140,7 @@
     "types": null
    },
    "derived": {
-    "newTaxa": 5,
+    "newTaxa": 4,
     "phylogeny": 13,
     "skeleton": 46
    },
@@ -15505,7 +15503,8 @@
    "2013_müller.p_hahn_bohatý"
   ],
   "agelacrinitidae-sp_bell.b.m_1976": [
-   "1976_bell.b.m"
+   "1976_bell.b.m",
+   "1996_sumrall_bowsher"
   ],
   "agelacrinitidae-uncertain-genus_bell.b.m_1976": [
    "1976_bell.b.m"

@@ -13,7 +13,6 @@ taxonomies:
           children:
           - openTaxon: edriophus-cf-laevis_bell.b.m_1982
             cf: laevis_bather_1914
-            new: true
       - taxon: isorophida
         children:
         - taxon: lebetodiscina
