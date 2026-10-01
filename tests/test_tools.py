@@ -1038,3 +1038,11 @@ def test_cited_combination_quotes_its_genus(store):
   finally:
     del acceptance['quotedParent']
   assert any(e.get('parents') == ['"Eocystites"'] for e in entries)
+
+
+def test_cited_open_form_without_a_combination_reads_in_its_own_words(store):
+  # Bell 1976's indeterminate form, cited by Sumrall & Bowsher 1996 under
+  # their cf. form: its own record's words, never the owner's genus.
+  block = store.contents('1996_sumrall_bowsher', 'giganticlavus', synonymy=True, style='text')[0]
+  assert '= 1976 Agelacrinitidae sp. Bell 1976' in block['rendered']
+  assert 'Giganticlavus agelacrinitidae' not in block['rendered']

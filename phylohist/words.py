@@ -221,9 +221,11 @@ class Words:
         if parents:
           genus = parents[0]
           subgenus = parents[1] if len(parents) > 1 else None
-        else:
+        elif not self.store.names[key].get('placeholder'):
           owner = self.combination(source_key, path.rsplit('/', 2)[0])
           genus, subgenus = owner.get('genus'), owner.get('subgenus')
+        # A cited open form with no combination given reads in the words of
+        # its own record ("Agelacrinitidae sp."), never under the owner's genus.
       if rank == 'subgenus':
         genus = genus or self._genus_of_subgenus(key)
         label = (
