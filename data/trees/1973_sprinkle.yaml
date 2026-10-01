@@ -1,4 +1,314 @@
 repositories: [u-cincinnati-caster, north-museum-fm]
+contexts:
+  as-1:
+    unit: [Wheeler Shale]
+    period: Cambrian
+    localSeries: Middle Cambrian
+    localSeriesModifier: upper
+    biozone: Bolaspidella
+    location:
+    - N-S ridge just E of old Antelope Springs "Camp" and hole in two-in. aqueduct pipe
+    - House Range
+    - W of Delta
+    - W. Utah
+    localityNumbers: [AS-1]
+    coordinatesAsPrinted: near middle of sect. 2, T. 17 S, R. 13 W
+    mapSheet: Delta, Utah 1:250,000 topo. sheet
+    notes: Top 100 ft. of the Wheeler Shale.
+  as-2:
+    unit: [Wheeler Shale]
+    period: Cambrian
+    localSeries: Middle Cambrian
+    localSeriesModifier: upper
+    biozone: Bolaspidella
+    location:
+    - S nose of N-S ridge and W side of Wheeler Amphitheater
+    - House Range
+    - W of Delta
+    - W. Utah
+    localityNumbers: [AS-2]
+    coordinatesAsPrinted: near boundary between sect. 1 and 2, T. 17 S, R. 13 W
+    mapSheet: Delta, Utah 1:250,000 topo. sheet
+  cf-1:
+    unit: [Spence Shale Member, Langston Fm.]
+    period: Cambrian
+    localSeries: Middle Cambrian
+    biozoneRange: [Glossopleura, Bathyuriscus-Elrathina]
+    location:
+    - talus slope and shale exposures on W side of Wellsville Mtn.
+    - about 6.3 mi. N of Brigham City
+    - Box Elder Co.
+    - N. Utah
+    localityNumbers: [CF-1]
+    coordinatesAsPrinted: near center of sect. 14, T. 10 N, R. 2 W
+    mapSheet: Brigham City 7½′ Quad.
+  cl-1:
+    unit: [Cash Creek Quartzite]
+    period: Cambrian
+    localSeries: Middle Cambrian
+    biozone: Albertella?
+    location:
+    - summit of 6897 ft. quartzite ridge
+    - W side of Squaw Creek
+    - about 7½ mi. NW of Clayton
+    - central Idaho
+    localityNumbers: [CL-1, USGS 5462]
+    coordinatesAsPrinted: T. 12 N, R. 17 E (unsurveyed)
+    mapSheet: Clayton 7½′ Quad.
+    notes: Basal 6 ft. of red shaly siltstone above top of Cash Creek Quartzite.
+  ec-1:
+    unit: ['"Spence Shale equivalent"']
+    period: Cambrian
+    localSeries: Middle Cambrian
+    biozoneRange: [Glossopleura, Bathyuriscus-Elrathina]
+    location:
+    - small hillside quarry about 300 ft. above N side of rt. 36
+    - Emigration Canyon
+    - about 9.5 mi. W of Ovid
+    - Bear Lake Co.
+    - SE Idaho
+    localityNumbers: [EC-1, USGS 6201]
+    coordinatesAsPrinted: SE¼, sect. 15, T. 12 S, R. 41 E (unsurveyed)
+    mapSheet: Preston, Idaho 1:250,000 topo. sheet
+  em-1:
+    unit: [Kinzers Fm.]
+    period: Cambrian
+    localSeries: Lower Cambrian
+    localSeriesModifier: upper
+    biozone: Olenellus
+    location:
+    - shales near middle of long railroad cut about ¾ mi. SE of Emigsville RR station
+    - north of York
+    - York Co.
+    - SE Pa.
+    localityNumbers: [EM-1]
+    mapSheet: York Haven 7½′ Quad.
+  fc-1:
+    unit: [Carrara Fm.]
+    period: Cambrian
+    localSeries: Middle Cambrian
+    localSeriesModifier: lower
+    biozone: Plagiura-Poliella
+    location:
+    - large shale and limestone ridge above S side of jeep trail in Echo Canyon
+    - Funeral Mts.
+    - Death Valley National Park
+    - E. Calif.
+    localityNumbers: [FC-1, USGS 4148 CO]
+    coordinatesAsPrinted: E½, NW¼, sect. 15, T. 27 N, R. 2 E
+    mapSheet: Furnace Creek 15′ Quad.
+    notes: About 100 ft. below base of middle limestone member.
+  gg-1:
+    unit: [Mt. Whyte Fm.]
+    period: Cambrian
+    localSeries: Middle Cambrian
+    localSeriesModifier: lower
+    biozone: Plagiura-Poliella
+    location:
+    - talus slopes on both sides of small snow glacier at 7500 ft. elevation
+    - just S of the S end of Gog Lake and about 0.4 mi. E of Naiset Pt.
+    - E end of Mt. Assiniboine Prov. Park
+    - SE Br. Col.
+    - Canada
+    localityNumbers: [GG-1]
+    mapSheet: Mt. Assiniboine Prov. Park Map – P.S.–A–2
+  hl-1:
+    unit: [Nolichucky Fm.]
+    period: Cambrian
+    localSeries: Upper Cambrian
+    localSeriesModifier: lower
+    biozone: Cedaria
+    location:
+    - roadcut above house and between Bench Mark SN 256 and sharp curve on Copper Ridge road
+    - ¾ mi. SSW of Hill
+    - Scott Co.
+    - SE Va.
+    localityNumbers: [HL-1]
+    mapSheet: Clinchport 7½′ Quad.
+  ik-2:
+    unit: [Antelope Valley Fm.]
+    period: Ordovician
+    series: Middle Ordovician
+    localStage: Whiterock
+    biozone: Orthidiella
+    location:
+    - about 75-100 ft. below the "Sponge Beds" on ridge near road just W of large gulley
+    - S side of Ikes Canyon
+    - about ½ mi. from mouth
+    - Toquima Range
+    - central Nev.
+    localityNumbers: [IK-2]
+    mapSheet: Dianas Punch Bowl 15′ Quad.
+  kt-1:
+    unit: ['"Stephen Formation"']
+    period: Cambrian
+    localSeries: Middle Cambrian
+    biozone: Bathyuriscus-Elrathina
+    location:
+    - steeply dipping beds about 100-150 ft. above massive dolomite
+    - dip slope and talus piles just below at summer snowline near 8000 ft. level on W side of Mt. Kitchner
+    - N of Dome Glacier and above Sunwapta River and Banff-Jasper Hwy.
+    - 5.6 mi. WNW of Sunwapta Pass
+    - Jasper Park
+    - Alberta
+    - W. Can.
+    localityNumbers: [KT-1]
+    coordinatesAsPrinted: near 52° 14′ 30″ N, 117° 17′ W
+    mapSheet: Jasper Park south map sheet
+  pi-1:
+    unit: [Chisholm Shale]
+    period: Cambrian
+    localSeries: Middle Cambrian
+    biozone: Glossopleura
+    location:
+    - three talus piles in front of Half Moon Mine about 1200 ft. SW of Mt. Ely in Half Moon Gulch
+    - W side of Ely Range
+    - about 2.0 mi. W of Pioche
+    - Lincoln Co.
+    - E. Nev.
+    localityNumbers: [PI-1]
+    coordinatesAsPrinted: E½, sect. 20, T. 1 N, R. 67 E
+    mapSheet: Pioche 7½′ Quad.
+  pi-2:
+    unit: [Chisholm Shale]
+    period: Cambrian
+    localSeries: Middle Cambrian
+    biozone: Glossopleura
+    location:
+    - six talus piles in front of Chisholm Mines, about 1200 ft. W of Mt. Ely in Half Moon Gulch
+    - W side of Ely Range
+    - about 2.0 mi. W of Pioche
+    - Lincoln Co.
+    - E. Nev.
+    localityNumbers: [PI-2]
+    mapSheet: Pioche 7½′ Quad.
+  pi-4:
+    unit: [Chisholm Shale]
+    period: Cambrian
+    localSeries: Middle Cambrian
+    biozone: Glossopleura
+    location:
+    - unnamed small prospect pits near horizontal access road, 3500 ft. SW of Mt. Ely in Half Moon Gulch
+    - W side of Ely Range
+    - about 2.0 mi. W of Pioche
+    - Lincoln Co.
+    - E. Nev.
+    localityNumbers: [PI-4]
+    mapSheet: Pioche 7½′ Quad.
+  pi-6:
+    unit: [Chisholm Shale]
+    period: Cambrian
+    localSeries: Middle Cambrian
+    biozone: Glossopleura
+    location:
+    - three talus piles in front of Alliance Mine on NE side of ridge, about 2000 ft. NW of Mt. Ely
+    - E side of Ely Range
+    - about 2.0 mi. W of Pioche
+    - Lincoln Co.
+    - E. Nev.
+    localityNumbers: [PI-6]
+    mapSheet: Pioche 7½′ Quad.
+  pi-7:
+    unit: [Chisholm Shale]
+    period: Cambrian
+    localSeries: Middle Cambrian
+    biozone: Glossopleura
+    location:
+    - two talus piles in front of Abe Lincoln Mine, about 1750 ft. SSW of Mt. Ely
+    - W side of Ely Range
+    - about 2.0 mi. W of Pioche
+    - Lincoln Co.
+    - E. Nev.
+    localityNumbers: [PI-7]
+    mapSheet: Pioche 7½′ Quad.
+  rp-1:
+    unit: [Snowy Range Fm.]
+    period: Cambrian
+    localSeries: Upper Cambrian
+    localSeriesModifier: middle
+    biozoneRange: [Conaspis, Prosaukia]
+    location:
+    - thin-bedded limestones with green shale partings just above waterfall (top of Pilgrim Fm.?) near Irma Mines
+    - Republic Creek
+    - 1.3 mi. S of Cooke City
+    - SW Mont.
+    localityNumbers: [RP-1, Walcott 37o]
+    mapSheet: Cooke City, Mont.-Wyo. 15′ Quad.
+    notes: (locality is in NW Wyo.)
+  sc-1:
+    unit: [Secret Canyon Fm.]
+    period: Cambrian
+    localSeries: Middle Cambrian
+    localSeriesModifier: upper
+    biozone: Bolaspidella
+    location:
+    - talus pile of small prospect pit in fault slice on S side of Adams Hill about 800 ft. N of main dirt road
+    - about 1.5 mi. WSW of Eureka
+    - central Nev.
+    localityNumbers: [SC-1]
+    coordinatesAsPrinted: NW¼, SW¼, NE¼, NW¼, sect. 22, T. 19 N, R. 53 E
+    mapSheet: 'Nolan, 1962: Plate 1—Geologic Map of the Eureka Mining District, Nevada'
+    notes: Top of the Secret Canyon Fm.
+  sc-3:
+    unit: [Secret Canyon Fm.]
+    period: Cambrian
+    localSeries: Middle Cambrian
+    localSeriesModifier: upper
+    biozone: Bolaspidella
+    location:
+    - steeply dipping and overturned beds at head of New York Canyon
+    - just SW of Eureka Nevada tunnels
+    - about 2.5 mi. SSW of Eureka
+    - central Nev.
+    localityNumbers: [SC-3]
+    coordinatesAsPrinted: NE¼, SE¼, SE¼, sect. 34, T. 19 N, R. 53 E
+    mapSheet: 'Nolan, 1962: Plate 1—Geologic Map of the Eureka Mining District, Nevada'
+  sc-4:
+    unit: [Secret Canyon Fm.]
+    period: Cambrian
+    localSeries: Middle Cambrian
+    localSeriesModifier: upper
+    biozone: Bolaspidella
+    location:
+    - small spur ridge beneath Hamburg Dolomite on E side of Secret Canyon about ¼ mi. N of outlet to E through Hamburg Ridge
+    - 5½-6 mi. S of Eureka
+    - central Nev.
+    localityNumbers: [SC-4]
+    mapSheet: unmapped below 1:200,000 (1968)
+  sc-4a:
+    unit: [Secret Canyon Fm.]
+    period: Cambrian
+    localSeries: Middle Cambrian
+    localSeriesModifier: upper
+    biozone: Bolaspidella
+    location:
+    - side of ridge about 200-400 ft. above road on E side of Secret Canyon about ¼ mi. N of SC-4.
+    - central Nev.
+    localityNumbers: [SC-4A]
+  sh-1:
+    unit: [Kinzers Fm.]
+    period: Cambrian
+    localSeries: Lower Cambrian
+    localSeriesModifier: upper
+    biozone: Olenellus
+    location:
+    - overgrown roadcut on NE side of state rt. 74 approximately 300 ft. SE of the intersection with rt. 238
+    - about 2.0 mi. WNW of York
+    - SE Pa.
+    localityNumbers: [SH-1]
+    mapSheet: West York 7½′ Quad.
+  sh-2:
+    unit: [Kinzers Fm.]
+    period: Cambrian
+    localSeries: Lower Cambrian
+    localSeriesModifier: upper
+    biozone: Olenellus
+    location:
+    - W end of corn field about 500-600 ft. NE of SH-1.
+    - about 2.0 mi. WNW of York
+    - SE Pa.
+    localityNumbers: [SH-2]
+    mapSheet: West York 7½′ Quad.
 taxonomies:
 - taxon: echinodermata
   auth: [Klein]
@@ -8,121 +318,389 @@ taxonomies:
     new: true
     children:
     - taxon: eocrinoidea
+      pages: 58
       moved:
         taxon: crinozoa
+      illustrations:
+      - textFigures: 11A
+        page: 28
+        depicts: drawing
+      - textFigures: 13A
+        page: 36
+        depicts: drawing
+      ranges:
+      - localSeriesRange: [Lower Cambrian, Middle Ordovician]
+        regions: [nearly world-wide]
+        asPrinted: Early Cambrian to middle Ordovician (perhaps later). Nearly world-wide range (but many localities known only from plates).
       children:
       - taxon: imbricata
         new: true
+        pages: 60
         synonyms:
         - taxon: lepidocystoidea
           notes: re-ranked
+        illustrations: null
+        ranges:
+        - period: Cambrian
+          localSeries: Lower Cambrian
         children:
         - taxon: lepidocystidae
+          pages: 61
+          illustrations:
+          - textFigures: 2
+            page: 9
+            depicts: drawing
+          ranges:
+          - period: Cambrian
+            localSeries: Lower Cambrian
           children:
           - taxon: lepidocystis
+            pages: 61
+            illustrations: null
+            contexts:
+              southeastern-pennsylvania:
+                unit: [Kinzers Formation]
+                period: Cambrian
+                localSeries: Lower Cambrian
+                biozone: Olenellus
+                location: [southeastern Pennsylvania]
             children:
             - taxon: wanneri_foerste_1938
               type: true
+              pages: 62
               material:
-              - catalogNumbers:
-                - USNM 90773
+              - catalogNumbers: [USNM 90773]
                 role: holotype
+                context: walcott-8q
                 notes: two counterparts
-              - catalogNumbers:
-                - USNM 90773A
+              - catalogNumbers: [USNM 90773A]
                 role: paratype
+                context: walcott-8q
                 notes: two counterparts
-              - catalogNumbers:
-                - USNM 90773B
-                - USNM 90773C1
-                - USNM 90773C2
-                - USNM 90773C3
+              - catalogNumbers: [USNM 90773B, USNM 90773C1, USNM 90773C2, USNM 90773C3]
+                catalogNumbersAsPrinted: B, C1–3
                 role: paratype
-              - catalogNumbers:
-                - MCZ 591
-                role: paratype
-                notes: ten specimens from SH-1
-              - catalogNumbers:
-                - MCZ 592
-                role: paratype
-                notes: three specimens from EM-1
-              - catalogNumbers:
-                - MCZ 593
-                role: paratype
-                notes: many new unstudied specimens from SH-2
+                context: walcott-8q
+                notes: specimen C4 is apparently a portion of Camptostroma roddyi
+              - catalogNumbers: [MCZ 588A, MCZ 588B]
+                catalogNumbersAsPrinted: MCZ 588–590
+                role: plesiotype
+                context: sh-1
+                parts: [part, counterpart]
+              - catalogNumbers: [MCZ 589]
+                catalogNumbersAsPrinted: MCZ 588–590
+                role: plesiotype
+                context: sh-1
+              - catalogNumbers: [MCZ 590A, MCZ 590B]
+                catalogNumbersAsPrinted: MCZ 588–590
+                role: plesiotype
+                context: sh-2
+              - catalogNumbers: [MCZ 591]
+                count: 10
+                context: sh-1
+              - catalogNumbers: [MCZ 592]
+                count: 3
+                context: em-1
+              - catalogNumbers: [MCZ 593]
+                context: sh-2
+                notes: many new unstudied specimens
+              illustrations:
+              - plate: 1
+                figures: [1, 2]
+                of: USNM 90773
+                depicts: cast
+              - plate: 1
+                figures: 3
+                of: USNM 90773C1
+                depicts: cast
+              - plate: 1
+                figures: 4
+                of: USNM 90773B
+                depicts: cast
+              - plate: 1
+                figures: [5, 6]
+                of: USNM 90773A
+                depicts: cast
+              - plate: 1
+                figures: 7
+                of: USNM 90773C2
+                depicts: cast
+                notes: caption prints "USNM 09773-C2"
+              - plate: 1
+                figures: 8
+                of: USNM 90773C3
+                depicts: cast
+              - plate: 2
+                figures: [[1, 3]]
+                of: [MCZ 588A, MCZ 588B]
+                depicts: cast
+              - plate: 2
+                figures: [4, 5]
+                of: MCZ 589
+                depicts: cast
+              - plate: 2
+                figures: [6, 7]
+                of: [MCZ 590A, MCZ 590B]
+                depicts: cast
+              - textFigures: 21A
+                page: 63
+                of: MCZ 588A
+              - textFigures: 21B
+                page: 63
+                of: USNM 90773B
+              contexts:
+                walcott-8q:
+                  unit: [Kinzers Formation]
+                  period: Cambrian
+                  localSeries: Lower Cambrian
+                  localSeriesModifier: upper
+                  biozone: Olenellus
+                  location:
+                  - Lightners Hill near the contact with the Triassic
+                  - 2.0 mi. NW of York
+                  - Pa.
+                  localityNumbers: [Walcott 8q]
+                  notes: This locality has not been satisfactorily pinpointed, but may have been covered by a large shopping center on route 238 built about five years ago.
             - cfTaxon: wanneri_foerste_1938
               new: true
+              pages: 66
               material:
-              - catalogNumbers:
-                - MCZ 628A
-                - MCZ 628B
-                - MCZ 629A
-                - MCZ 629B
-                - PE-199
-                - PE-199-A
-                notes: >
-                  Martin Anné has kindly donated his
-                  figured specimen (MCZ 628A, B) to the
-                  Museum of Comparative Zoology. Kraig
-                  Derstler’s figured specimen is now in his
-                  private collection, but will be deposited as
-                  specimen PE-199 and 199-A in the paleon-
-                  tological collections of the North Museum,
-                  Franklin and Marshall College, Lancaster,
-                  Pennsylvania, within the next year. Latex
-                  castings of this latter specimen are on file
-                  at the Museum of Comparative Zoology
-                  (MCZ 629A and B). (page 68)
+              - catalogNumbers: [MCZ 628A, MCZ 628B]
+                catalogNumbersAsPrinted: MCZ 628A, B
+                role: figured
+                collectedBy: Martin Anné
+                context: sh-2
+                parts: [part, counterpart]
+              - catalogNumbers: [PE-199, PE-199-A]
+                catalogNumbersAsPrinted: PE-199 and 199-A
+                role: figured
+                holder: Kraig Derstler
+                collectedBy: Kraig Derstler
+                context: sh-1
+                notes: To be deposited in the paleontological collections of the North Museum, Franklin and Marshall College, Lancaster, Pennsylvania, within the next year.
+              - catalogNumbers: [MCZ 629A, MCZ 629B]
+                catalogNumbersAsPrinted: MCZ 629A and B
+                preparation: latex cast
+                castOf: PE-199
+              illustrations:
+              - plate: 3
+                figures: [[1, 4]]
+                of: MCZ 628A
+                depicts: cast
+                notes: latex casts A1 and B1
+              - plate: 3
+                figures: [5, 6]
+                of: MCZ 629A
+                depicts: cast
+                notes: caption prints "latex casts MCZ 629-B1 and A0"
           - taxon: kinzercystis
             new: true
+            pages: 68
+            illustrations: null
+            contexts:
+              southeastern-pennsylvania:
+                unit: [Kinzers Formation]
+                period: Cambrian
+                localSeries: Lower Cambrian
+                localSeriesModifier: upper
+                biozone: Olenellus
+                location: [southeastern Pennsylvania]
             children:
             - taxon: durhami_sprinkle_1973
               type: true
               new: true
+              pages: 70
               material:
-              - catalogNumbers:
-                - MCZ 581
+              - catalogNumbers: [MCZ 581A, MCZ 581B]
+                catalogNumbersAsPrinted: MCZ 581
                 role: holotype
-                notes: two counterparts
-              - catalogNumbers:
-                - MCZ 582
-                - MCZ 583
-                - MCZ 584
-                - MCZ 585
-                - MCZ 586
-                - MCZ 587
-                - MCZ 729
+                context: sh-1
+                parts: [part, counterpart]
+              - catalogNumbers: [MCZ 582A, MCZ 582B, MCZ 583, MCZ 584, MCZ 585, MCZ 586, MCZ 587]
+                catalogNumbersAsPrinted: MCZ 582–587
                 role: paratype
+                context: sh-1
+              - catalogNumbers: [MCZ 729]
+                role: paratype
+                context: sh-1
+              illustrations:
+              - plate: 4
+                figures: [1, 2]
+                of: [MCZ 581A, MCZ 581B]
+                depicts: cast
+                notes: latex casts A3 and B3
+              - plate: 4
+                figures: [3, 4]
+                of: [MCZ 582A, MCZ 582B]
+                depicts: cast
+                notes: latex casts A2 and B7
+              - plate: 5
+                figures: [[1, 3]]
+                of: MCZ 584
+                depicts: cast
+              - plate: 5
+                figures: [4, 5]
+                of: MCZ 583
+                depicts: cast
+              - plate: 5
+                figures: 6
+                of: MCZ 585
+                depicts: cast
+              - plate: 5
+                figures: [7, 8]
+                of: MCZ 586
+                depicts: cast
+              - plate: 6
+                figures: [[1, 5]]
+                of: [MCZ 581A, MCZ 581B]
+                depicts: cast
+              - plate: 6
+                figures: [6, 8]
+                of: [MCZ 582B, MCZ 582A]
+                depicts: cast
+              - plate: 6
+                figures: 7
+                of: MCZ 583
+                depicts: cast
+              - textFigures: 5A
+                page: 16
+                depicts: drawing
+              - textFigures: 22
+                page: 70
+                of: MCZ 581A
+              - textFigures: 23
+                page: 73
+                of: MCZ 582A
       - openTaxon: eocrinoidea-unnamed-order-1_sprinkle_1973
+        pages: 76
+        illustrations: null
+        ranges:
+        - localSeriesRange: [Lower Cambrian, Lower Ordovician]
+          asPrinted: Early Cambrian(?)–early Ordovician.
         children:
         - taxon: eocrinidae
+          pages: 76
           moved:
             taxon: eocrinoidea
+          illustrations: null
+          ranges:
+          - period: Cambrian
+            localSeriesRange: [Lower Cambrian, Middle Cambrian]
+            asPrinted: Early Cambrian(?)–middle Cambrian.
           children:
           - taxon: gogia
+            pages: 76
+            illustrations:
+            - textFigures: 14
+              page: 38
+              depicts: drawing
+            ranges:
+            - period: Cambrian
+              localSeries: Middle Cambrian
+              regions: [western North America]
+              asPrinted: Middle Cambrian (ranges through all zones), western North America.
             children:
             - taxon: prolifica_walcott_1917
               type: true
+              pages: 80
               material:
-              - catalogNumbers:
-                - USNM 64350
+              - catalogNumbers: [USNM 64350]
                 role: lectotype
-              - catalogNumbers:
-                - MCZ 656
-                - MCZ 657
-                - MCZ 658
-                - MCZ 659
-                - MCZ 660
-                - MCZ 661
-                - MCZ 662
-                - MCZ 663
-                - MCZ 664
-                - MCZ 665
-                - MCZ 668
-                - NYSM 12758
-                - NYSM 12759
+                context: walcott-62x
+                notes: studied from two USNM latex casts after preparation, and one University of Cincinnati cast before preparation
+              - catalogNumbers: [USNM 6431]
+                role: syntype
+                notes: studied from a University of Cincinnati latex cast
+              - label: six to eight additional unnumbered specimens
+                repository: usnm
+              - catalogNumbers: [MCZ 656, MCZ 657, MCZ 658, MCZ 659, MCZ 660, MCZ 661, MCZ 662, MCZ 663, MCZ 664, MCZ 665]
+                catalogNumbersAsPrinted: MCZ 656–665
                 role: plesiotype
+                context: gg-1
+              - catalogNumbers: [MCZ 668]
+                count: 24
+              - catalogNumbers: [NYSM 12758, NYSM 12759]
+                catalogNumbersAsPrinted: NYSM 12758–9
+                role: plesiotype
+                context: mt-mumm
+                notes: two (out of four) small specimens from Mount Mumm
+              - label: unnumbered slab of three large specimens from Mount Robson
+                count: 3
+                repository: usnm
+                context: robson-peak
+                notes: possibly belonging to G. prolifica
+              illustrations:
+              - plate: 7
+                figures: [1, 2]
+                of: USNM 64350
+                depicts: cast
+                notes: latex casts from UC collection (Fig. 1) and USNM collection (Fig. 2)
+              - plate: 7
+                figures: 3
+                of: MCZ 656
+                depicts: cast
+              - plate: 7
+                figures: 4
+                of: [MCZ 657, MCZ 658]
+                depicts: cast
+              - plate: 7
+                figures: 5
+                of: MCZ 659
+                depicts: cast
+              - plate: 7
+                figures: 6
+                of: MCZ 660
+                depicts: cast
+              - plate: 8
+                figures: [1, 4, 5]
+                of: MCZ 661
+                depicts: cast
+              - plate: 8
+                figures: 2
+                of: [MCZ 662, MCZ 663]
+                depicts: cast
+              - plate: 8
+                figures: [3, 4]
+                of: MCZ 664
+                depicts: cast
+              - plate: 8
+                figures: 6
+                of: NYSM 12758
+              - plate: 8
+                figures: 7
+                of: MCZ 665
+                depicts: cast
+              - plate: 8
+                figures: 8
+                of: NYSM 12759
+              contexts:
+                walcott-62x:
+                  unit: [Mt. Whyte Formation]
+                  period: Cambrian
+                  localSeries: Middle Cambrian
+                  localSeriesModifier: lower
+                  biozone: Plagiura-Poliella
+                  location:
+                  - Naiset Point above Gog Lake
+                  - Assiniboine Provincial Park
+                  - southeastern British Columbia
+                  localityNumbers: [Walcott 62x]
+                mt-mumm:
+                  unit: [Titkana Fm.]
+                  location:
+                  - N side, Mt. Mumm
+                  - elev. 6500 ft. on creek flowing into Lake Adolphus
+                  - British Columbia
+                  notes: this horizon, if correct, is at least two zones above the Gog Lake horizon
+                robson-peak:
+                  unit: [Chetang Fm.]
+                  period: Cambrian
+                  localSeries: Middle Cambrian
+                  location:
+                  - SW base of Robson Peak
+                  - British Columbia
             - taxon: longidactylus_walcott_1886
+              pages: 83
               synonyms:
               - taxon: longidactylus_walcott_1886
                 parents:
@@ -146,43 +724,144 @@ taxonomies:
                 auth: [robison]
                 year: 1965
               material:
-              - catalogNumbers:
-                - USNM 15315
+              - catalogNumbers: [USNM 15315]
                 role: lectotype
-              - catalogNumbers:
-                - USNM 15315
+              - catalogNumbers: [USNM 15315]
                 role: syntype
-              - catalogNumbers:
-                - AMNH 20001
-                - AMNH 20002
-                - AMNH 20003
-                - MCZ 691
-                - MCZ 692
-                - MCZ 693
-                - MCZ 694
-                - MCZ 695
-                - MCZ 696
-                - MCZ 697
-                - MCZ 698
-                - MCZ 699
-                - MCZ 700
-                - MCZ 700
-                - MCZ 701
-                - MCZ 702
-                - MCZ 703
-                - MCZ 704
-                - MCZ 705
-                - GCM 2641
+              - catalogNumbers: [[AMNH 20001, AMNH 20003]]
+                catalogNumbersAsPrinted: AMNH 20001–20003
                 role: plesiotype
-              - catalogNumbers:
-                - E-3340
+                notes: Pack's 1906 specimens
+              - catalogNumbers: [MCZ 698, MCZ 704A, MCZ 704B]
+                catalogNumbersAsPrinted: MCZ 691–705
                 role: plesiotype
-                notes: cast MCZ 669
-              - catalogNumbers:
-                - MCZ 669
-                - MCZ 670
+                context: pi-1
+              - catalogNumbers: [MCZ 691A, MCZ 691B, MCZ 697, MCZ 699, MCZ 703, MCZ 705]
+                catalogNumbersAsPrinted: MCZ 691–705
                 role: plesiotype
+                context: pi-2
+              - catalogNumbers: [MCZ 692, MCZ 693]
+                catalogNumbersAsPrinted: MCZ 691–705
+                role: plesiotype
+                context: pi-4
+              - catalogNumbers: [MCZ 694, MCZ 700, MCZ 701, MCZ 702]
+                catalogNumbersAsPrinted: MCZ 691–705
+                role: plesiotype
+                context: pi-6
+              - catalogNumbers: [MCZ 696]
+                catalogNumbersAsPrinted: MCZ 691–705
+                role: plesiotype
+                context: pi-7
+              - catalogNumbers: [MCZ 695]
+                catalogNumbersAsPrinted: MCZ 691–705
+                role: plesiotype
+              - catalogNumbers: [GCM 2641]
+                role: plesiotype
+                context: indian-gardens
+              - catalogNumbers: [E-3340]
+                role: plesiotype
+                holder: B. L. Stinchcomb
+                notes: a single specimen loaned from B. L. Stinchcomb
+              - catalogNumbers: [MCZ 669]
+                preparation: cast
+                castOf: E-3340
+              - catalogNumbers: [MCZ 670]
+                notes: unfigured specimens
+              - catalogNumbers: [USNM 256500A]
+                role: plesiotype
+                context: pioche-district
+                notes: Fawcett Coll.
+              illustrations:
+              - plate: 9
+                figures: [[1, 3]]
+                of: [MCZ 691A, MCZ 691B]
+                depicts: cast
+              - plate: 9
+                figures: 4
+                of: MCZ 692
+                depicts: cast
+              - plate: 9
+                figures: [5, 6]
+                of: MCZ 693
+                depicts: cast
+              - plate: 9
+                figures: 7
+                of: MCZ 694
+                depicts: cast
+              - plate: 9
+                figures: 8
+                of: E-3340
+                depicts: cast
+                notes: caption prints "specimen in coll. of B. L. Stinchcomb (cast MCZ 695)"
+              - plate: 9
+                figures: 9
+                of: MCZ 696
+                depicts: cast
+              - plate: 9
+                figures: 10
+                of: MCZ 697
+                depicts: cast
+              - plate: 9
+                figures: 11
+                of: MCZ 698
+                depicts: cast
+              - plate: 9
+                figures: 12
+                of: USNM 256500A
+                depicts: cast
+              - plate: 9
+                figures: 13
+                of: MCZ 699
+                depicts: cast
+              - plate: 9
+                figures: 14
+                of: MCZ 700
+                depicts: cast
+              - plate: 10
+                figures: [1, 2]
+                depicts: cast
+                notes: lectotype USNM 15315 (lectotype selected by Robison)
+              - plate: 10
+                figures: [3, 5, 6]
+                of: [MCZ 701, MCZ 702]
+                depicts: cast
+              - plate: 10
+                figures: 4
+                of: MCZ 703
+                depicts: cast
+              - plate: 10
+                figures: [7, 8]
+                of: [MCZ 704A, MCZ 704B]
+                depicts: cast
+              - plate: 10
+                figures: [9, 10]
+                of: MCZ 705
+                depicts: cast
+              - plate: 10
+                figures: 11
+                of: GCM 2641
+                depicts: cast
+                notes: latex cast MCZ 706 (McKee Coll.)
+              - textFigures: 10
+                page: 26
+                depicts: reconstruction
+              contexts:
+                indian-gardens:
+                  unit: [Bright Angel Shale]
+                  location:
+                  - Tonto Trail, ½ mile northeast of Indian Gardens
+                  - Grand Canyon National Park
+                  - northern Arizona
+                highland-range:
+                  location:
+                  - Highland Range, approximately ten miles further northwest from Pioche
+                pioche-district:
+                  unit: [Chisholm Shale]
+                  location:
+                  - Pioche District
+                  - SE Nevada
             - taxon: multibrachiatus_kirk_1945
+              pages: 85
               synonyms:
               - taxon: multibrachiatus_kirk_1945
                 parents:
@@ -190,56 +869,143 @@ taxonomies:
                 auth: [kirk]
                 year: 1945
               material:
-              - catalogNumbers:
-                - USNM 108556a
+              - catalogNumbers: [USNM 108556a]
                 role: holotype
+                context: walcott-74e
                 notes: two counterparts
-              - catalogNumbers:
-                - USNM 108556b
+              - catalogNumbers: [USNM 108556b]
                 role: paratype
+                context: walcott-74e
                 notes: two counterparts
-              - catalogNumbers:
-                - USNM 165425
-                role: topotype
-                notes: topotype?  (? mark in orig text)
-            - taxon: spiralis_robison_1965
-              material:
-              - catalogNumbers:
-                - USNM 139550
-                role: holotype
-              - catalogNumbers:
-                - USNM 139551
-                - USNM 139552
-                - USNM 139553
-                - USNM 139554
-                - USNM 139555
-                - USNM 139556
-                - USNM 139557
-                - USNM 139558
-                - USNM 139559
-                - USNM 139560
-                - USNM 139561
-                - USNM 139562
-                - USNM 139563
-                - USNM 139564
-                - USNM 139565
-                role: paratype
-              - catalogNumbers:
-                - MCZ 706
-                - MCZ 707
-                - MCZ 708
-                - MCZ 709
-                - MCZ 710
-                - MCZ 711
-                - MCZ 712
-                - MCZ 713
-                - MCZ 714
-                - MCZ 715
-                - MCZ 716
-                - MCZ 717
-                - MCZ 730
+              - catalogNumbers: [USNM 165425]
                 role: plesiotype
+                context: walcott-74e
+                notes: additional specimen (topotype?) unfigured by Kirk
+              illustrations:
+              - plate: 11
+                figures: [1, 2]
+                of: USNM 108556a
+                depicts: cast
+              - plate: 11
+                figures: 3
+                of: USNM 165425
+                depicts: cast
+              - plate: 11
+                figures: [4, 5]
+                of: USNM 108556b
+                depicts: cast
+              contexts:
+                walcott-74e:
+                  unit: [Bright Angel Shale]
+                  period: Cambrian
+                  localSeries: Middle Cambrian
+                  biozone: Glossopleura
+                  location:
+                  - Grand Canyon National Park
+                  - northern Arizona
+                  localityNumbers: [Walcott 74e, USNM 74e]
+                  notes: approximately 135 ft. above the base
+            - taxon: spiralis_robison_1965
+              pages: 86
+              material:
+              - catalogNumbers: [[USNM 139550, USNM 139565]]
+                catalogNumbersAsPrinted: USNM 139550–65
+                notes: Holotype and paratypes (16 specimens)
+              - catalogNumbers: [USNM 165421]
+                catalogNumbersAsPrinted: USNM 165421–22
+                role: plesiotype
+                repository: usnm-walcott
+                context: walcott-11q
+              - catalogNumbers: [USNM 165422]
+                catalogNumbersAsPrinted: USNM 165421–22
+                role: plesiotype
+                repository: usnm-walcott
+                notes: (C-802), indeterminate locality
+              - catalogNumbers: [MCZ 708, MCZ 710, MCZ 711, MCZ 712, MCZ 714, MCZ 715, MCZ 716, MCZ 717]
+                catalogNumbersAsPrinted: MCZ 706–717
+                role: plesiotype
+                context: as-1
+              - catalogNumbers: [MCZ 706, MCZ 707, MCZ 709, MCZ 713]
+                catalogNumbersAsPrinted: MCZ 706–717
+                role: plesiotype
+                context: as-2
+              - catalogNumbers: [MCZ 730]
+                notes: additional unfigured specimens
+              - catalogNumbers: [USNM 111716]
+                role: plesiotype
+                context: walcott-4
+              illustrations:
+              - plate: 12
+                figures: [1, 2]
+                of: USNM 165421
+              - plate: 12
+                figures: 3
+                of: USNM 165422
+              - plate: 12
+                figures: [4, 5]
+                of: [MCZ 706, MCZ 707]
+              - plate: 12
+                figures: 6
+                of: MCZ 708
+              - plate: 12
+                figures: 7
+                of: MCZ 709
+              - plate: 12
+                figures: 8
+                of: MCZ 710
+              - plate: 12
+                figures: [9, 10]
+                of: MCZ 711
+              - plate: 13
+                figures: [1, 2]
+                of: MCZ 712
+              - plate: 13
+                figures: [3, 4]
+                of: MCZ 713
+              - plate: 13
+                figures: 5
+                of: MCZ 714
+              - plate: 13
+                figures: 6
+                of: MCZ 715
+              - plate: 13
+                figures: 7
+                of: MCZ 716
+              - plate: 13
+                figures: 8
+                of: USNM 111716
+              - plate: 13
+                figures: 9
+                of: MCZ 717
+              - textFigures: 5D
+                page: 16
+                depicts: drawing
+              contexts:
+                walcott-11q:
+                  unit: [Marjum Formation]
+                  period: Cambrian
+                  localSeries: Middle Cambrian
+                  localSeriesModifier: upper
+                  biozone: Bolaspidella
+                  location:
+                  - House Range
+                  - W. Utah
+                  localityNumbers: [Walcott 11q]
+                walcott-4:
+                  unit: [Wheeler Shale]
+                  period: Cambrian
+                  localSeries: Middle Cambrian
+                  localSeriesModifier: upper
+                  biozone: Bolaspidella
+                  location:
+                  - House Range
+                  - W. Utah
+                  localityNumbers: [Walcott 4]
+                marjum-pass:
+                  location:
+                  - Marjum Pass in the House Range, just southwest of the above localities
             - taxon: granulosa_robison_1965
+              pages: 88
               synonyms:
               - taxon: longidactylus_walcott_1886
                 parents:
@@ -249,79 +1015,331 @@ taxonomies:
                 auth: [Ressler]
                 year: 1939
               material:
-              - catalogNumbers:
-                - UU 1001
+              - catalogNumbers: [UU 1001]
                 role: holotype
-              - catalogNumbers:
-                - MCZ 732
-                - MCZ 733
-                - MCZ 734
-                - MCZ 735
-                - MCZ 736
-                - MCZ 737
-                - MCZ 738
-                - UU 1010p
-                - UU 1010w
-                - UU 1010x
-                - UU 1011d
-                - UU 1040p
-                - USNM 165433
-                - USNM 165434
-                - USNM 165435
-                - USNM 165436
-                - PE 214
-                - ISU 1440
-                - MCZ 739
+                context: north-calls-fort
+              - catalogNumbers: [MCZ 732]
+                catalogNumbersAsPrinted: MCZ 732–738
                 role: plesiotype
+                preparation: latex cast
+                castOf: PE-214
+              - catalogNumbers: [MCZ 733, MCZ 734A, MCZ 734B, MCZ 735, MCZ 736, MCZ 737, MCZ 738]
+                catalogNumbersAsPrinted: MCZ 732–738
+                role: plesiotype
+                context: cf-1
+              - catalogNumbers: [UU 1010p, UU 1010w, UU 1010x, UU 1011d]
+                catalogNumbersAsPrinted: UU 1010p, -w, and -x, UU 1011d
+                role: plesiotype
+                context: cf-1
+              - catalogNumbers: [UU 1040p]
+                role: plesiotype
+              - catalogNumbers: [USNM 165433, USNM 165434, USNM 165436]
+                catalogNumbersAsPrinted: USNM 165433–165436
+                role: plesiotype
+                context: usgs-55e
+              - catalogNumbers: [USNM 165435]
+                catalogNumbersAsPrinted: USNM 165433–165436
+                role: plesiotype
+              - catalogNumbers: [PE-214]
+                role: plesiotype
+                holder: Derstler Coll.
+                context: near-brigham-city
+              - catalogNumbers: [ISU 1440]
+                role: plesiotype
+                collectedBy: John Cutler
+                context: mill-creek
+                notes: apparently belonging to this species
+              - catalogNumbers: [MCZ 739]
+                notes: additional unfigured specimens
+              illustrations:
+              - plate: 14
+                figures: 1
+                of: UU 1001
+                depicts: cast
+              - plate: 14
+                figures: 2
+                of: MCZ 733
+                depicts: cast
+              - plate: 14
+                figures: 3
+                of: UU 1010p
+                depicts: cast
+              - plate: 14
+                figures: 4
+                of: MCZ 732
+                depicts: cast
+              - plate: 14
+                figures: 5
+                of: MCZ 734A
+                depicts: cast
+              - plate: 14
+                figures: 6
+                of: USNM 165433
+                depicts: cast
+              - plate: 14
+                figures: 7
+                of: MCZ 735
+                depicts: cast
+              - plate: 14
+                figures: 8
+                of: USNM 165434
+                depicts: cast
+              - plate: 14
+                figures: 9
+                of: MCZ 736
+                depicts: cast
+              - plate: 14
+                figures: 10
+                of: MCZ 737
+                depicts: cast
+              - plate: 15
+                figures: 1
+                of: [USNM 165433, USNM 165435, UU 1040p]
+                depicts: cast
+              - plate: 15
+                figures: 2
+                of: ISU 1440
+              - plate: 15
+                figures: 3
+                of: MCZ 738
+                depicts: cast
+              - plate: 15
+                figures: 4
+                of: UU 1010w
+                depicts: cast
+              - plate: 15
+                figures: 5
+                of: UU 1011d
+                depicts: cast
+              - plate: 15
+                figures: 6
+                of: UU 1010x
+                depicts: cast
+              - plate: 15
+                figures: 7
+                of: USNM 165436
+                depicts: cast
+              - plate: 15
+                figures: 8
+                of: MCZ 734B
+                depicts: cast
+              contexts:
+                north-calls-fort:
+                  unit: [Spence Shale]
+                  location:
+                  - near North Calls Fort
+                  - N. Utah
+                near-brigham-city:
+                  location:
+                  - near Brigham City
+                  - N. Utah
+                usgs-55e:
+                  unit: [Spence Shale Member, Langston Formation]
+                  period: Cambrian
+                  localSeries: Middle Cambrian
+                  biozoneRange: [Glossopleura, Bathyuriscus-Elrathina]
+                  location: [northern Utah]
+                  localityNumbers: [USGS 55e, USNM 55e]
+                mill-creek:
+                  unit: [Spence Shale]
+                  location:
+                  - Mill Creek in the Bear River Range
+                  - southeastern Idaho
             - taxon: palmeri_sprinkle_1973
               new: true
+              pages: 90
               material:
-              - catalogNumbers:
-                - USNM 165418
+              - catalogNumbers: [USNM 165418A, USNM 165418B]
+                catalogNumbersAsPrinted: USNM 165418A and B
                 role: holotype
-                notes: (USNM 165418A and USNM 165418B)
-              - catalogNumbers:
-                - USNM 165414
-                - USNM 165415
-                - USNM 165416
-                - USNM 165417
-                - USNM 165419
-                - USNM 165420
-                - MCZ 676
-                - MCZ 677
-                - MCZ 678
-                - MCZ 679
-                - MCZ 680
-                - MCZ 681
-                - MCZ 682
-                - MCZ 683
-                - MCZ 684
-                - MCZ 685
-                - MCZ 686
-                - MCZ 687
-                - MCZ 688
-                - MCZ 689
-                - MCZ 690
+                context: ec-1
+                parts: [part, counterpart]
+              - catalogNumbers: [USNM 165414, USNM 165415, USNM 165416, USNM 165417, USNM 165419]
+                catalogNumbersAsPrinted: USNM 165414–165417, 165419
                 role: paratype
+                context: ec-1
+              - catalogNumbers: [MCZ 676a, MCZ 676b, MCZ 676c, MCZ 676d, MCZ 677, MCZ 678, MCZ 679, MCZ 680a, MCZ 680b, MCZ 680c, MCZ 680d, MCZ 680e, MCZ 680f, MCZ 681, MCZ 682, MCZ 683, MCZ 684, MCZ 685a, MCZ 685b, MCZ 686, MCZ 687, MCZ 688, MCZ 689]
+                catalogNumbersAsPrinted: MCZ 676–689
+                role: paratype
+                context: ec-1
+              - catalogNumbers: [USNM 165420, MCZ 690]
+                catalogNumbersAsPrinted: USNM 165420 and MCZ 690
+                role: paratype
+                context: ec-1
+              illustrations:
+              - plate: 16
+                figures: [[1, 5]]
+                of: [USNM 165418A, USNM 165418B]
+                depicts: cast
+              - plate: 16
+                figures: [1, 2, 6]
+                of: USNM 165419
+                depicts: cast
+              - plate: 17
+                figures: 1
+                of: USNM 165414
+                depicts: cast
+              - plate: 17
+                figures: [2, 3]
+                of: [MCZ 676a, MCZ 676b, MCZ 676c, MCZ 676d]
+                depicts: cast
+              - plate: 17
+                figures: [[4, 6]]
+                of: USNM 165415
+                depicts: cast
+              - plate: 17
+                figures: [7, 8]
+                of: MCZ 677
+                depicts: cast
+              - plate: 17
+                figures: 9
+                of: USNM 165416
+                depicts: cast
+              - plate: 17
+                figures: [10, 11]
+                of: MCZ 678
+                depicts: cast
+              - plate: 17
+                figures: [12, 13]
+                of: MCZ 679
+                depicts: cast
+              - plate: 18
+                figures: [1, 2]
+                of: [MCZ 680a, MCZ 680b, MCZ 680c, MCZ 680d, MCZ 680e, MCZ 680f]
+                depicts: cast
+              - plate: 18
+                figures: 3
+                of: MCZ 681
+                depicts: cast
+              - plate: 18
+                figures: 4
+                of: USNM 165414
+                depicts: cast
+              - plate: 18
+                figures: 5
+                of: MCZ 682
+                depicts: cast
+              - plate: 18
+                figures: 6
+                of: MCZ 683
+                depicts: cast
+              - plate: 18
+                figures: 7
+                of: MCZ 684
+                depicts: cast
+              - plate: 18
+                figures: 8
+                of: [MCZ 685a, MCZ 685b]
+                depicts: cast
+              - plate: 18
+                figures: 9
+                of: MCZ 686
+                depicts: cast
+              - plate: 18
+                figures: 10
+                of: MCZ 687
+                depicts: cast
+              - plate: 18
+                figures: 11
+                of: USNM 165417
+                depicts: cast
+              - plate: 18
+                figures: 12
+                of: MCZ 688
+                depicts: cast
+              - plate: 18
+                figures: 13
+                of: MCZ 689
+                depicts: cast
             - taxon: guntheri_sprinkle_1973
               new: true
+              pages: 93
               material:
-              - catalogNumbers:
-                - UU 1010a
+              - catalogNumbers: [UU 1010a]
                 role: holotype
-              - catalogNumbers:
-                - UU 1010c
-                - UU 1010t
-                - UU 1019b
-                - UU 1019h
-                - UU 1019s
-                - UU 1040b
-                - UU 1040f
-                - MCZ 739
-                - MCZ 740
-                - MCZ 741
+                collectedBy: Lloyd Gunther
+                context: cf-1
+              - catalogNumbers: [UU 1010b, UU 1010h, UU 1010s]
+                catalogNumbersAsPrinted: UU 1010b, –h, and –s
                 role: paratype
+                context: cf-1
+              - catalogNumbers: [UU 1040b, UU 1040f]
+                catalogNumbersAsPrinted: UU 1040b and –f
+                role: paratype
+                context: cataract-canyon
+              - catalogNumbers: [MCZ 739, MCZ 740, MCZ 741]
+                catalogNumbersAsPrinted: MCZ 739–741
+                role: paratype
+                context: cf-1
+              - catalogNumbers: [USNM 189357, UU 1010c, UU 1010t, UU 1040a]
+                catalogNumbersAsPrinted: USNM 189357, UU 1010c and –t, and UU 1040a
+                role: paratype
+              - catalogNumbers: [UU 1010, UU 1011, UU 1040, UU 1041, MCZ 742]
+                catalogNumbersAsPrinted: UU 1010, 1011, 1040, 1041, and MCZ 742
+                notes: several additional unstudied specimens
+              illustrations:
+              - plate: 19
+                figures: 1
+                of: UU 1010a
+                depicts: cast
+              - plate: 19
+                figures: [2, 4]
+                of: UU 1010s
+                depicts: cast
+              - plate: 19
+                figures: 3
+                of: UU 1010h
+                depicts: cast
+              - plate: 19
+                figures: 5
+                of: UU 1040f
+                depicts: cast
+              - plate: 19
+                figures: 6
+                of: UU 1040b
+                depicts: cast
+              - plate: 19
+                figures: 7
+                of: MCZ 739
+                depicts: cast
+              - plate: 19
+                figures: 8
+                of: UU 1010b
+                depicts: cast
+              - plate: 19
+                figures: [[9, 11]]
+                of: MCZ 740
+                depicts: cast
+              - plate: 19
+                figures: 12
+                of: MCZ 741
+                depicts: cast
+              - textFigures: 26
+                page: 94
+                of: UU 1010a
+              contexts:
+                cataract-canyon:
+                  unit: [Spence Shale Member, Langston Formation]
+                  period: Cambrian
+                  localSeries: Middle Cambrian
+                  biozoneRange: [Glossopleura, Bathyuriscus-Elrathina]
+                  location:
+                  - Cataract Canyon
+                  - west side of the Wasatch Range
+                  - just north of Brigham City
+                  - Utah
+                miners-hollow:
+                  unit: [Spence Shale Member, Langston Formation]
+                  period: Cambrian
+                  localSeries: Middle Cambrian
+                  biozoneRange: [Glossopleura, Bathyuriscus-Elrathina]
+                  location:
+                  - Miners Hollow
+                  - west side of the Wasatch Range
+                  - just north of Brigham City
+                  - Utah
             - taxon: kitchnerensis_sprinkle_1973
+              pages: 96
               synonyms:
               - taxon: prolifica_walcott_1917
                 parents:
@@ -335,315 +1353,1023 @@ taxonomies:
                 provisional: true
               new: true
               material:
-              - catalogNumbers:
-                - GSC 25934
+              - catalogNumbers: [GSC 25934]
                 role: holotype
-              - catalogNumbers:
-                - GSC 25935
-                - GSC 25936
-                - GSC 25937
-                - GSC 25938
-                - GSC 25939
-                - GSC 25940
-                - GSC 25941
-                - GSC 25942
-                - GSC 25943
-                - GSC 25944
-                - GSC 25945
-                - GSC 25946
-                - GSC 25947
-                - GSC 25948
-                - GSC 25949
-                - GSC 25950
-                - GSC 25951
-                - GSC 25952
-                - GSC 25953
-                - GSC 25954
-                - GSC 25955
-                - GSC 25956
-                - GSC 25957
-                - GSC 25958
-                - GSC 25959
-                - GSC 25960
-                - GSC 25961
-                - GSC 10088a
-                - GSC 10088b
-                - GSC 10088c
-                - GSC 10088d
-                - GSC 10088e
-                - GSC 10088f
-                - GSC 10088g
-                - GSC 10088h
-                - UC 24691
+                context: kt-1
+              - catalogNumbers: [GSC 25935, GSC 25936, GSC 25937, GSC 25938, GSC 25939, GSC 25940, GSC 25941, GSC 25942, GSC 25943, GSC 25944, GSC 25945, GSC 25946, GSC 25947, GSC 25948, GSC 25949, GSC 25950, GSC 25951, GSC 25952, GSC 25953, GSC 25954, GSC 25955, GSC 25956, GSC 25957, GSC 25958, GSC 25959, GSC 25960, GSC 25961]
+                catalogNumbersAsPrinted: GSC 25935–25961
                 role: paratype
+                context: kt-1
+                notes: (17 specimens)
+              - catalogNumbers: [GSC 10088a, GSC 10088b]
+                catalogNumbersAsPrinted: GSC 10088a–b
+                role: paratype
+                notes: Harker and Hutchinson's specimens
+              - catalogNumbers: [UC 24691]
+                role: paratype
+                context: athabaska-glacier
+              - label: additional specimens collected in 1968
+                repository: gsc
+                collectedDate: '1968'
+                context: kt-1
+              - count: 4
+                collectedBy: L. R. Laudon
+                collectedDate: during the early 1950's
+                context: kt-1
+                notes: at the University of Wisconsin (Laudon Collection)
+              - catalogNumbers: [[GSC 10088c, GSC 10088h]]
+                catalogNumbersAsPrinted: GSC collection 10088c–h
+                notes: six specimens
+              illustrations:
+              - plate: 20
+                figures: [1, 5, 7]
+                of: GSC 25934
+                depicts: cast
+              - plate: 20
+                figures: 2
+                of: GSC 25936
+              - plate: 20
+                figures: 3
+                of: GSC 25937
+                depicts: cast
+              - plate: 20
+                figures: 4
+                of: [GSC 25938, GSC 25939, GSC 25940]
+                depicts: cast
+              - plate: 20
+                figures: 6
+                of: [GSC 25941, GSC 25942]
+              - plate: 20
+                figures: 8
+                of: GSC 25943
+              - plate: 20
+                figures: [9, 11]
+                of: GSC 25944
+                depicts: cast
+              - plate: 20
+                figures: 10
+                of: GSC 25945
+              - plate: 20
+                figures: 12
+                of: GSC 25946
+                depicts: cast
+              - plate: 20
+                figures: 13
+                of: GSC 25947
+              - plate: 21
+                figures: 1
+                of: [GSC 25948, GSC 25949, GSC 25950, GSC 25951, GSC 25952, GSC 25953]
+              - plate: 21
+                figures: 2
+                of: UC 24691
+              - plate: 21
+                figures: 3
+                of: GSC 25955
+              - plate: 21
+                figures: 4
+                of: GSC 25956
+              - plate: 21
+                figures: 5
+                of: GSC 25957
+              - plate: 21
+                figures: 6
+                of: [GSC 25958, GSC 25959]
+              - plate: 21
+                figures: 7
+                of: GSC 25960
+                notes: figured specimen GSC 25960 (fecal or regurgitation wad containing G. kitchnerensis plates)
+              - plate: 21
+                figures: 8
+                of: GSC 25961
+              - textFigures: 15
+                page: 41
+                of: GSC 25935
+              - textFigures: 27
+                page: 98
+                of: GSC 25934
+              contexts:
+                athabaska-glacier:
+                  location:
+                  - moraine below Athabaska Glacier
+                  - Jasper Park
+                  - Alberta
+                  - Canada
             - taxon: hobbsi_sprinkle_1973
               new: true
+              pages: 100
               synonyms:
               - openTaxon: gogia-sp_palmer_1968
                 parents:
                 - taxon: gogia
               material:
-              - catalogNumbers:
-                - MCZ 631
+              - catalogNumbers: [MCZ 631]
                 role: holotype
-              - catalogNumbers:
-                - MCZ 632
-                - MCZ 633
-                - MCZ 634
-                - MCZ 635
-                - MCZ 636
-                - MCZ 637
-                - MCZ 638
-                - MCZ 639
-                - MCZ 640
-                - MCZ 641
-                - MCZ 642
-                - MCZ 643
+                context: cl-1
+              - catalogNumbers: [MCZ 632, MCZ 633, MCZ 634, MCZ 635, MCZ 636, MCZ 637, MCZ 638, MCZ 639, MCZ 640, MCZ 641]
+                catalogNumbersAsPrinted: MCZ 632–641
                 role: paratype
+                context: cl-1
+              - catalogNumbers: [MCZ 642]
+                count: 24
+                role: paratype
+                context: cl-1
+              - catalogNumbers: [MCZ 643]
+                count: 62
+                context: cl-1
+              illustrations:
+              - plate: 22
+                figures: [1, 2]
+                of: MCZ 631
+                depicts: cast
+              - plate: 22
+                figures: 3
+                of: MCZ 632
+                depicts: cast
+              - plate: 22
+                figures: 4
+                of: MCZ 633
+                depicts: cast
+              - plate: 22
+                figures: 5
+                of: MCZ 634
+                depicts: cast
+              - plate: 23
+                figures: [1, 2]
+                of: MCZ 635
+                depicts: cast
+              - plate: 23
+                figures: 3
+                of: MCZ 636
+                depicts: cast
+              - plate: 23
+                figures: [4, 5]
+                of: MCZ 637
+                depicts: cast
+              - plate: 23
+                figures: 6
+                of: MCZ 638
+                depicts: cast
+              - plate: 23
+                figures: 7
+                of: [MCZ 639, MCZ 640]
+                depicts: cast
+              - plate: 23
+                figures: 8
+                of: MCZ 641
+                depicts: cast
             - taxon: radiata_sprinkle_1973
               new: true
               provisional: true
+              pages: 102
               material:
-              - catalogNumbers:
-                - USNM 165399
+              - catalogNumbers: [USNM 165399]
                 role: holotype
-              - catalogNumbers:
-                - USNM 165400
-                - USNM 165401
-                - USNM 165402
+                context: walcott-35k-10
+              - catalogNumbers: [USNM 165400, USNM 165401, USNM 165402, GSC 25954]
+                catalogNumbersAsPrinted: USNM 165400–165402 and GSC 25954
                 role: paratype
-              - catalogNumbers:
-                - USNM 165403
-                role: paratype
-                notes: '?'
-              - catalogNumbers:
-                - USNM 165404
-                role: paratype
-                notes: '?'
-              - catalogNumbers:
-                - GSC 25954
-                role: paratype
+                context: walcott-35k
+              - catalogNumbers: [USNM 165403, USNM 165404]
+                catalogNumbersAsPrinted: USNM 165403–4
+                notes: possible additional specimens
+              illustrations:
+              - plate: 24
+                figures: 1
+                of: USNM 165399
+                depicts: cast
+              - plate: 24
+                figures: [2, 3]
+                of: USNM 165400
+              - plate: 24
+                figures: 4
+                of: USNM 165401
+              - plate: 24
+                figures: [5, 6]
+                of: GSC 25954
+              - plate: 24
+                figures: 7
+                of: USNM 165402
+              contexts:
+                walcott-35k:
+                  unit: [Burgess Shale Member, Stephen Formation]
+                  period: Cambrian
+                  localSeries: Middle Cambrian
+                  biozone: Bathyuriscus-Elrathina
+                  location:
+                  - Burgess Shale Quarries
+                  - near Field
+                  - British Columbia
+                  - Canada
+                  localityNumbers: [Walcott 35k]
+                  notes: 1966 specimen from zone between 6′7½″–7′3″
+                walcott-35k-10:
+                  unit: [Burgess Shale Member, Stephen Formation]
+                  period: Cambrian
+                  localSeries: Middle Cambrian
+                  biozone: Bathyuriscus-Elrathina
+                  location:
+                  - Burgess Shale Quarries
+                  - near Field
+                  - British Columbia
+                  - Canada
+                  localityNumbers: [Walcott 35k/10]
             - openTaxon: gogia-sp_robison_1965
+              pages: 104
               material:
-              - catalogNumbers:
-                - USNM 165411
-                role: holotype
+              - catalogNumbers: [USNM 165411]
+                collectedBy: A. R. Palmer
+                context: fc-1
+              - catalogNumbers: [[MCZ 666a, MCZ 666c]]
+                catalogNumbersAsPrinted: MCZ 666a-c
+                context: fc-1
+              illustrations:
+              - plate: 25
+                figures: 1
+                of: USNM 165411
+                depicts: cast
+              - plate: 25
+                figures: [[2, 7]]
+                of: [MCZ 666a, MCZ 666c]
             - openTaxon: gogia-sp-2_sprinkle_1973
+              pages: 104
               synonyms:
               - openTaxon: eocystites?-sp_walcott_1917
                 parents:
                 - taxon: eocystites
                 provisional: true
               material:
-              - catalogNumbers:
-                - USNM 63712
-                role: holotype
+              - catalogNumbers: [USNM 63712]
+                context: ross-lake
+              illustrations:
+              - plate: 25
+                figures: 8
+                of: USNM 63712
+                depicts: cast
+              contexts:
+                ross-lake:
+                  unit: [Ptarmigan Formation]
+                  biozone: Albertella
+                  location:
+                  - near Ross Lake
+                  - British Columbia
           - taxon: acanthocystites
+            pages: 105
+            illustrations: null
+            contexts:
+              jince-beds:
+                unit: [Jince Beds]
+                period: Cambrian
+                localSeries: Middle Cambrian
+                location: [Czechoslovakia]
             children:
             - taxon: briareus_barrande_1887
               type: true
+              pages: 105
+              material: null
+              illustrations: null
+              contexts: null
+              ranges: null
           - taxon: akadocrinus
+            pages: 105
+            illustrations:
+            - textFigures: 14
+              page: 38
+              depicts: drawing
+            contexts:
+              jince-beds:
+                unit: [Jince Beds]
+                period: Cambrian
+                localSeries: Middle Cambrian
+                biozone: Paradoxides gracilis
+                location: [Czechoslovakia]
             children:
             - taxon: jani_prokop_1962
+              pages: 106
               synonyms:
               - taxon: nuntius_prokop_1962
               material:
-              - catalogNumbers:
-                - E62
-                - E40
-                - E41
+              - catalogNumbers: [E62]
+                preparation: latex cast
+                context: jince-beds
+                notes: a slab with two specimens; made from specimens in the National Museum, Prague
+              - catalogNumbers: [E 40A, E 40B]
+                catalogNumbersAsPrinted: E40
+                preparation: latex cast
+                context: jince-beds
+                parts: [part, counterpart]
+                notes: made from specimens in the National Museum, Prague
+              - catalogNumbers: [E41]
+                preparation: latex cast
+                context: jince-beds
+                notes: a specimen figured by Barrande and Ubaghs; made from specimens in the National Museum, Prague
+              - catalogNumbers: [['500', '501']]
+                catalogNumbersAsPrinted: 500–501
+                preparation: latex cast
+                holder: A. R. Palmer
+                notes: made from specimens in the National Museum, Prague
+              illustrations:
+              - plate: 26
+                figures: [[1, 3]]
+                of: E62
+                depicts: cast
+                notes: inferred specimen of A. jani (left and Fig. 2) and holotype of A. nuntius (right and Fig. 3)
+              - plate: 26
+                figures: 4
+                of: E41
+                depicts: cast
+              - plate: 26
+                figures: [5, 6]
+                of: [E 40A, E 40B]
+                depicts: cast
+              contexts:
+                jince-beds:
+                  unit: [Jince Beds]
+                  period: Cambrian
+                  localSeries: Middle Cambrian
+                  location: [Czechoslovakia]
         - taxon: lichenoididae
+          pages: 108
           moved:
             taxon: eocrinoidea
+          illustrations: null
+          contexts: null
+          ranges: null
           children:
           - taxon: lichenoides
+            pages: 109
+            illustrations: null
+            ranges:
+            - period: Cambrian
+              localSeries: Middle Cambrian
+              regions: [Czechoslovakia]
             children:
             - taxon: priscus_barrande_1846
               type: true
+              pages: 109
               material:
-              - catalogNumbers:
-                - E 11
-                - E 12
-                - E 17
-                - E 21
-                - E 25
-                - E 26
-                - E 27
-                - E 66
-                - E 70A
-                - BC 141A
+              - catalogNumbers: [E 11, E 12, E 17, E 21, E 25, E 26, E 27, E 66, E 70A, BC 141A]
+                preparation: latex cast
+                context: jince-beds
+                notes: Many of the original specimens (natural molds) from which these latex casts were made were studied by Barrande (1887) and are in the National Museum, Prague.
+              - catalogNumbers: [E 13]
+                preparation: latex cast
+                context: jince-beds
+              - catalogNumbers: [BC 141B]
+                preparation: latex cast
+              illustrations:
+              - plate: 27
+                figures: 1
+                of: E 21
+                depicts: cast
+              - plate: 27
+                figures: 2
+                of: E 13
+                depicts: cast
+              - plate: 27
+                figures: 3
+                of: E 70A
+                depicts: cast
+              - plate: 27
+                figures: 4
+                of: E 27
+                depicts: cast
+              - plate: 27
+                figures: 5
+                of: BC 141B
+                depicts: cast
+              - plate: 27
+                figures: 6
+                of: E 25
+                depicts: cast
+              contexts:
+                jince-beds:
+                  unit: [Jince Beds]
+                  period: Cambrian
+                  localSeries: Middle Cambrian
+                  localSeriesModifier: upper
+                  location: [several localities in Czechoslovakia]
         - taxon: rhopalocystidae
           provisional: true
+          pages: 110
           moved:
             taxon: eocrinoidea
+          illustrations: null
+          ranges:
+          - period: Ordovician
+            series: Lower Ordovician
           children:
           - taxon: rhopalocystis
+            pages: 110
+            illustrations: null
+            ranges:
+            - period: Ordovician
+              series: Lower Ordovician
+              stage: Tremadocian
+              stageModifier: upper
+              regions: [Morocco]
             children:
             - taxon: destombesi_ubaghs_1963
               type: true
+              pages: 110
+              material:
+              - count: 3
+                preparation: latex cast
+                notes: latex casts from Ubaghs of three large slabs of specimens
+              illustrations: null
+              contexts: null
+              ranges: null
       - openTaxon: eocrinoidea-unnamed-order-2_sprinkle_1973
+        pages: 111
+        illustrations: null
+        ranges:
+        - localSeriesRange: [Middle Cambrian, Middle Ordovician]
+          asPrinted: Middle Cambrian—middle Ordovician.
         children:
         - openTaxon: eocrinoidea-indeterminate-family-1_sprinkle_1973
+          pages: 112
+          illustrations: null
+          contexts: null
+          ranges: null
           children:
           - taxon: pareocrinus
+            pages: 112
             moved:
               openTaxon: eocrinoidea-uncertain-family_ubaghs_1967b
+            illustrations: null
+            ranges:
+            - period: Cambrian
+              localSeriesBoundary: [Middle Cambrian, Upper Cambrian]
+              regions: [Siberia, U.S.S.R.]
+              asPrinted: Late middle Cambrian or early late Cambrian, Siberia, U.S.S.R.
             children:
             - taxon: ljubzovi_yakovlev_1956
               type: true
+              pages: 112
+              material: null
+              illustrations: null
+              contexts: null
+              ranges: null
           - taxon: eustypocystis
             new: true
+            pages: 112
+            illustrations:
+            - textFigures: 14
+              page: 38
+              depicts: drawing
+            contexts:
+              central-nevada:
+                unit: [Secret Canyon Formation]
+                period: Cambrian
+                localSeries: Middle Cambrian
+                localSeriesModifier: upper
+                biozone: Bolaspidella
+                location: [central Nevada]
             children:
             - taxon: minor_sprinkle_1973
               type: true
               new: true
+              pages: 113
               material:
-              - catalogNumbers:
-                - MCZ 719
+              - catalogNumbers: [MCZ 719]
                 role: holotype
-              - catalogNumbers:
-                - MCZ 720
-                - MCZ 721
-                - MCZ 722
-                - MCZ 723
-                - MCZ 724
-                - MCZ 725
-                - MCZ 726
-                - MCZ 727
-                - MCZ 728
-                - USNM 165423
-                - USNM 165424
+                context: sc-4a
+              - catalogNumbers: [MCZ 720, MCZ 721, MCZ 726]
+                catalogNumbersAsPrinted: MCZ 720–27
                 role: paratype
+                context: sc-4a
+              - catalogNumbers: [MCZ 722]
+                catalogNumbersAsPrinted: MCZ 720–27
+                role: paratype
+                context: sc-3
+              - catalogNumbers: [MCZ 723, MCZ 724]
+                catalogNumbersAsPrinted: MCZ 720–27
+                role: paratype
+                context: sc-4
+              - catalogNumbers: [MCZ 725, MCZ 727]
+                catalogNumbersAsPrinted: MCZ 720–27
+                role: paratype
+                context: sc-1
+              - catalogNumbers: [USNM 165423a, USNM 165423b]
+                catalogNumbersAsPrinted: USNM 165423–4 (three specimens)
+                role: paratype
+                context: usgs-835
+              - catalogNumbers: [USNM 165424]
+                catalogNumbersAsPrinted: USNM 165423–4 (three specimens)
+                role: paratype
+                context: usgs-834
+              - catalogNumbers: [MCZ 728]
+                count: 8
+                notes: poorly preserved specimens
+              illustrations:
+              - plate: 28
+                figures: 1
+                of: [USNM 165423a, USNM 165423b]
+              - plate: 28
+                figures: 2
+                of: MCZ 719
+              - plate: 28
+                figures: 3
+                of: USNM 165424
+              - plate: 28
+                figures: 4
+                of: MCZ 720
+              - plate: 28
+                figures: 5
+                of: MCZ 721
+              - plate: 28
+                figures: 6
+                of: MCZ 722
+              - plate: 28
+                figures: 7
+                of: MCZ 723
+              - plate: 28
+                figures: 8
+                of: MCZ 724
+              - plate: 28
+                figures: 9
+                of: MCZ 725
+              - plate: 28
+                figures: 10
+                of: MCZ 726
+              - plate: 28
+                figures: 11
+                of: MCZ 727
+              - textFigures: 28
+                page: 114
+                of: [MCZ 719, MCZ 722]
+              contexts:
+                usgs-834:
+                  unit: [Secret Canyon Formation]
+                  period: Cambrian
+                  localSeries: Middle Cambrian
+                  localSeriesModifier: upper
+                  biozone: Bolaspidella
+                  location:
+                  - Eureka District
+                  - central Nevada
+                  localityNumbers: [USGS 834]
+                  notes: (= SC-4A?)
+                usgs-835:
+                  unit: [Secret Canyon Formation]
+                  period: Cambrian
+                  localSeries: Middle Cambrian
+                  localSeriesModifier: upper
+                  biozone: Bolaspidella
+                  location:
+                  - Eureka District
+                  - central Nevada
+                  localityNumbers: [USGS 835]
+                  notes: (= SC-4.?)
           - taxon: nolichuckia
             provisional: true
             new: true
+            pages: 115
+            illustrations: null
+            contexts:
+              virginia-and-tennessee:
+                unit: [Nolichucky Formation]
+                period: Cambrian
+                localSeries: Upper Cambrian
+                localSeriesModifier: lower
+                biozone: Cedaria
+                location: [Virginia and Tennessee]
             children:
             - taxon: casteri_sprinkle_1973
               type: true
               new: true
+              pages: 116
               material:
-              - catalogNumbers:
-                - MCZ 616
+              - catalogNumbers: [MCZ 616]
                 role: holotype
-              - catalogNumbers:
-                - MCZ 617
-                - MCZ 618
-                - MCZ 619
-                - USNM 165410
+                context: bristol
+                notes: apparently collected by P. E. Raymond of Harvard University about 1925
+              - catalogNumbers: [MCZ 617]
+                catalogNumbersAsPrinted: MCZ 617–619
                 role: paratype
+                context: bristol
+              - catalogNumbers: [MCZ 618, MCZ 619]
+                catalogNumbersAsPrinted: MCZ 617–619
+                role: paratype
+                context: hl-1
+              - catalogNumbers: [USNM 165410]
+                role: paratype
+                context: walcott-103a
+              - label: fragmentary material in USNM collection 103a
+                repository: usnm
+                context: walcott-103a
+              - catalogNumbers: [[MCZ 630a, MCZ 630b]]
+                catalogNumbersAsPrinted: MCZ 630a–b
+                notes: fragmentary material
+              illustrations:
+              - plate: 29
+                figures: [1, 3, [7, 9]]
+                of: MCZ 616
+              - plate: 29
+                figures: 2
+                of: USNM 165410
+                depicts: cast
+              - plate: 29
+                figures: 4
+                of: MCZ 617
+              - plate: 29
+                figures: [5, 6]
+                of: [MCZ 618, MCZ 619]
+              - textFigures: 5B
+                page: 16
+                depicts: drawing
+              - textFigures: 29
+                page: 117
+                of: MCZ 616
+                depicts: reconstruction
+              contexts:
+                bristol:
+                  unit: [Nolichucky Fm.]
+                  period: Cambrian
+                  localSeries: Upper Cambrian
+                  localSeriesModifier: lower
+                  biozone: Cedaria
+                  location:
+                  - 1 mi NE of Bristol
+                  - SW Va.
+                walcott-103a:
+                  unit: [Nolichucky Formation]
+                  period: Cambrian
+                  localSeries: Upper Cambrian
+                  localSeriesModifier: lower
+                  biozone: Cedaria
+                  location: [NE Tennessee]
+                  localityNumbers: [Walcott 103a]
+              ranges:
+              - period: Cambrian
+                localSeries: Upper Cambrian
+                regions:
+                - value: northwestern Georgia
+                  tentative: true
+                - value: northern Alabama
+                  tentative: true
         - taxon: ascocystitidae
+          pages: 118
           moved:
             taxon: eocrinoidea
+          illustrations: null
+          ranges:
+          - period: Ordovician
+            series: Middle Ordovician
           children:
           - taxon: ascocystites
+            pages: 118
+            illustrations: null
+            ranges:
+            - period: Ordovician
+              series: Middle Ordovician
+              regions: [Czechoslovakia]
             children:
             - taxon: drabowensis_barrande_1887
               type: true
+              pages: 118
+              material:
+              - catalogNumbers: [KR-2]
+                repository: u-cincinnati-caster
+                preparation: latex cast
+              illustrations:
+              - textFigures: 30
+                page: 119
+                of: KR-2
+                depicts: cast
+              contexts: null
+              ranges: null
         - taxon: macrocystellidae
+          pages: 122
           moved:
             taxon: rhombifera-class
+          illustrations: null
+          ranges:
+          - period: Ordovician
+            seriesRange: [Lower Ordovician, Middle Ordovician]
+            regions: [England, Czechoslovakia, France]
+            asPrinted: Early–middle Ordovician, England, Czechoslovakia, France, and other areas.
           children:
           - taxon: macrocystella
+            pages: 122
+            illustrations: null
+            contexts: null
+            ranges: null
             children:
             - taxon: mariae_callaway_1877
               type: true
+              pages: 122
+              material: null
+              illustrations: null
+              contexts: null
+              ranges: null
         - openTaxon: eocrinoidea-indeterminate-family-2_sprinkle_1973
+          pages: 121
+          illustrations: null
+          contexts: null
+          ranges: null
           children:
           - taxon: cambrocrinus
+            pages: 121
             notes: Initially assigned to Eocrinidae, details unclear
+            illustrations: null
+            contexts:
+              holy-cross-mountains:
+                unit: [Olenus beds]
+                period: Cambrian
+                localSeries: Upper Cambrian
+                location:
+                - Holy Cross Mountains
+                - Poland
             children:
             - taxon: regularis_orłowski_1968
               type: true
+              pages: 121
+              material: null
+              illustrations: null
+              contexts: null
+              ranges: null
           - taxon: eocystites
+            pages: 121
             moved:
               openTaxon: eocrinoidea-uncertain-family_ubaghs_1967b
+            illustrations: null
+            contexts:
+              saint-john:
+                period: Cambrian
+                localSeries: Middle Cambrian
+                location:
+                - near Saint John
+                - New Brunswick
+                - eastern Canada
             children:
             - taxon: primaevus_billings_1868
               type: true
+              pages: 121
+              material:
+              - label: the apparent type specimens
+                notes: currently on loan from Cornell University to the University of Cincinnati
+              illustrations: null
+              contexts: null
+              ranges: null
       - openTaxon: eocrinoidea-indeterminate-order-1_sprinkle_1973
         provisional: true
+        pages: 123
+        illustrations: null
+        contexts: null
+        ranges: null
         children:
         - taxon: trachelocrinidae
           new: true
+          pages: 123
+          illustrations: null
+          ranges:
+          - period: Cambrian
+            localSeriesRange: [Middle Cambrian, Upper Cambrian]
+            asPrinted: Middle(?)–late Cambrian.
           children:
           - taxon: trachelocrinus
+            pages: 123
             moved:
               openTaxon: eocrinoidea-uncertain-family_ubaghs_1967b
+            illustrations: null
+            contexts:
+              wyoming-and-montana:
+                unit: [Snowy Range Formation]
+                period: Cambrian
+                localSeries: Upper Cambrian
+                localSeriesModifier: middle
+                location: [Wyoming and Montana]
             children:
             - taxon: resseri_ulrich_1929
               type: true
+              pages: 124
               material:
-              - catalogNumbers:
-                - USNM 80490
+              - catalogNumbers: [USNM 80490]
                 role: holotype
+                context: rp-1
+              - catalogNumbers: [[MCZ 624, MCZ 626]]
+                catalogNumbersAsPrinted: MCZ 624–626
+                notes: additional plates and columnals
+              illustrations:
+              - plate: 30
+                figures: [[1, 4]]
+                of: USNM 80490
       - openTaxon: eocrinoidea-indeterminate-order-2_sprinkle_1973
+        pages: 126
+        illustrations: null
+        contexts: null
+        ranges: null
         children:
         - taxon: cryptocrinitidae
+          pages: 126
           moved:
             taxon: eocrinoidea
+          illustrations: null
+          ranges:
+          - period: Ordovician
+            series: Middle Ordovician
           children:
           - taxon: cryptocrinites
+            pages: 126
+            illustrations: null
+            contexts: null
+            ranges: null
             children:
             - taxon: laevis_pander_1830
               type: true
+              pages: 126
+              material:
+              - catalogNumbers: [MCZ 743a, MCZ 743b]
+                catalogNumbersAsPrinted: MCZ 743a-b
+                context: estonia
+              illustrations:
+              - plate: 33
+                figures: [12, 13]
+                of: [MCZ 743a, MCZ 743b]
+              contexts:
+                estonia:
+                  period: Ordovician
+                  series: Middle Ordovician
+                  location: [Estonia (U.S.S.R.)]
         - openTaxon: eocrinoidea-indeterminate-family-3_sprinkle_1973
+          pages: 127
+          illustrations: null
+          contexts: null
+          ranges: null
           children:
           - taxon: bockia_hecker_1938
+            pages: 127
             moved:
               taxon: springerocystidae
+            illustrations: null
+            ranges:
+            - period: Ordovician
+              seriesRange: [Lower Ordovician, Middle Ordovician]
+              regions: [U.S.S.R., Sweden]
             children:
             - taxon: neglecta_hecker_1940
               type: true
+              pages: 127
+              material: null
+              illustrations: null
+              contexts: null
+              ranges: null
       - openTaxon: eocrinoidea-indeterminate-order-3_sprinkle_1973
+        pages: 127
+        illustrations: null
+        contexts: null
+        ranges: null
         children:
         - taxon: lingulocystidae
+          pages: 127
           moved:
             taxon: eocrinoidea
+          illustrations: null
+          ranges:
+          - period: Ordovician
+            series: Lower Ordovician
+            regions: [France]
           children:
           - taxon: lingulocystis
+            pages: 127
+            illustrations: null
+            contexts: null
+            ranges: null
             children:
             - taxon: elongata_thoral_1935
               type: true
+              pages: 127
+              material: null
+              illustrations: null
+              contexts: null
+              ranges: null
         - openTaxon: eocrinoidea-indeterminate-family-4_sprinkle_1973
+          pages: 127
+          illustrations: null
+          contexts: null
+          ranges: null
           children:
           - taxon: cardiocystites
+            pages: 127
             moved:
               openTaxon: eocrinoidea-uncertain-family_ubaghs_1967b
+            illustrations: null
+            ranges:
+            - period: Ordovician
+              series: Middle Ordovician
+              regions: [Czechoslovakia]
             children:
             - taxon: bohemicus_barrande_1887_cardiocystites
               type: true
+              pages: 129
               material:
-              - catalogNumbers:
-                - E 39
-                notes: casts of two known type specimen
-              - catalogNumbers:
-                - E 51
-                notes: casts of two known type specimen
+              - catalogNumbers: [E 39, E 51]
+                preparation: latex cast
+                context: czechoslovakia
+                notes: Casts of the 2 known type specimens
+              illustrations:
+              - plate: 27
+                figures: [7, 8]
+                of: E 51
+                depicts: cast
+              - plate: 27
+                figures: 9
+                of: E 39
+                depicts: cast
+              contexts:
+                czechoslovakia:
+                  unit: [D₄]
+                  period: Ordovician
+                  series: Middle Ordovician
+                  location: [Czechoslovakia]
         - taxon: rhipidocystidae
+          pages: 130
+          illustrations:
+          - textFigures: 5C
+            page: 16
+            depicts: drawing
+          - plate: 32
+            figures: [[4, 18]]
+            notes: Silicified plates possibly belonging to Petalocystites or some other rhipidocystid genus.
+          ranges:
+          - period: Ordovician
+            seriesRange: [Lower Ordovician, Middle Ordovician]
           children:
           - taxon: rhipidocystis
+            pages: 130
+            illustrations: null
+            ranges:
+            - period: Ordovician
+              series: Middle Ordovician
+              seriesModifier: lower
+              regions: [U.S.S.R.]
             children:
             - taxon: gigas_jaekel_1901
               type: true
+              pages: 130
+              material: null
+              illustrations: null
+              contexts: null
+              ranges: null
           - taxon: batherocystis
+            pages: 130
+            illustrations: null
+            ranges:
+            - period: Ordovician
+              series: Middle Ordovician
+              localStage: Black Riveran
+              regions: [eastern United States]
             children:
             - taxon: appressa_bassler_1950
               type: true
+              pages: 130
+              material: null
+              illustrations: null
+              contexts: null
+              ranges: null
           - taxon: petalocystites
             new: true
+            pages: 131
+            illustrations: null
+            ranges:
+            - period: Ordovician
+              series: Middle Ordovician
+              seriesModifier: lower
+              localStage: Whiterockian
+              regions: [central Nevada]
             children:
             - taxon: ikecanensis_sprinkle_1973
               type: true
               new: true
+              pages: 132
               material:
-              - catalogNumbers:
-                - MCZ 646
+              - catalogNumbers: [MCZ 646]
                 role: holotype
-              - catalogNumbers:
-                - MCZ 647
-                - MCZ 648
-                - MCZ 649
+                context: ik-2
+              - catalogNumbers: [MCZ 647, MCZ 648]
+                catalogNumbersAsPrinted: MCZ 647–649
                 role: paratype
+                context: ik-2
+              - catalogNumbers: [MCZ 649]
+                catalogNumbersAsPrinted: MCZ 647–649
+                role: paratype
+              illustrations:
+              - plate: 31
+                figures: 1
+                of: MCZ 646
+              - plate: 31
+                figures: 2
+                of: MCZ 647
+              - plate: 31
+                figures: 3
+                of: MCZ 648
+              - plate: 32
+                figures: [[1, 3]]
+                of: MCZ 646
+              - textFigures: 31
+                page: 133
+                of: MCZ 646
+                depicts: drawing
     - openTaxon: blastozoa-indeterminate-class_sprinkle_1973
       children:
       - taxon: cigaria
