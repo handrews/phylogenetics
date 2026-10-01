@@ -716,7 +716,9 @@ def test_manifest_synonymy_keeps_the_count_check_unless_a_null_derives_it(monkey
   entry = manifest(extract(nulled), nulled)['sources']['1961_dehm']
   assert entry['derivedCoverage']['synonymy'] == 'partly'
   assert entry['coverage']['synonymy'] == 'partly'
-  assert 'synonymy: declared all, derived partly' in entry['inconsistencies']
+  assert (
+    'synonymy: declared all but derived from the tree (partly); remove the declaration'
+  ) in entry['inconsistencies']
   assert not [r for r in entry['inconsistencies'] if r.startswith('synonymy: declared all, no')]
 
 
@@ -740,9 +742,20 @@ def test_manifest_reports_derived_disagreement(load_records, monkeypatch):
   monkeypatch.setitem(Source.get('1961_dehm')._data['audit']['coverage'], 'illustrations', 'none')
 
   entry = manifest(extract(synthetic), synthetic)['sources']['1961_dehm']
-  assert 'illustrations: declared none, derived partly' in entry['inconsistencies']
+  assert (
+    'illustrations: declared none but derived from the tree (partly); remove the declaration'
+  ) in entry['inconsistencies']
   assert entry['coverage']['illustrations'] == 'partly'
   assert entry['derivedCoverage']['illustrations'] == 'partly'
+
+  # Agreeing values still draw the row: the tree gives the kind its
+  # coverage, so the declaration is redundant.
+  monkeypatch.setitem(Source.get('1961_dehm')._data['audit']['coverage'], 'illustrations', 'partly')
+  entry = manifest(extract(synthetic), synthetic)['sources']['1961_dehm']
+  assert (
+    'illustrations: declared partly but derived from the tree (partly); remove the declaration'
+  ) in entry['inconsistencies']
+  monkeypatch.setitem(Source.get('1961_dehm')._data['audit']['coverage'], 'illustrations', 'none')
 
   # A value alone derives nothing, so the declaration stands and no row fires.
   values_only = {

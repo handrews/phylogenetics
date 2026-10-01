@@ -1357,7 +1357,12 @@ worth keeping goes in `citedAs`, never into identity.
 
 **G11. Coverage derived from the tree, through nulls; the audit block
 keeps verification and the source-level kinds (direction agreed
-2026-09-27; to be built with D1, not before).** G1 declares coverage per
+2026-09-27; to be built with D1, not before).** Built 2026-09-30 to
+2026-10-01: the five content fields are nullable, the four content kinds
+are derived, a null is an `absence` claim; what remains is migrating the
+audited sources' declarations to nulls.
+
+G1 declares coverage per
 source because the tree never holds the denominator: it cannot say
 whether a node without `synonyms` is a node the paper gives no synonymy
 for or a node whose synonymy is not yet entered. A researcher's question
@@ -1413,20 +1418,32 @@ reliability signal of their own; and the kinds that are not content
 fields, `skeleton` (taxa not in the tree at all), `newTaxa` and `types`
 (flags, whose "partly" means "not every node was checked for the act",
 which has no node-level form). For the content kinds the map is derived:
-`na` when the file lists the field as unused and no node carries it;
-`all` when no node has the field absent; `none` when every node has it
-absent and the file does not list it; `partly` otherwise. For `material`
-the nodes counted are the species-level ones (species, subspecies,
-variety), since specimens are cited for species; `contexts` and `ranges`
-count every named node (decided 2026-09-30 with the Sprinkle 1973
-re-entry). Revised 2026-10-01: `illustrations` counts the species-level
-nodes too, since figures are of species (a figure on a higher node is still
-a value and a claim); a node whose `material` entry has a `context` counts
-as carrying `occurrences`, even beside a `contexts: null`; and only
-taxonomy trees are counted, since a cladogram prints no material. The
-cross-check in the claims extractor (a declared `all` against zero claims) then inverts into a migration aid
-comparing the declared map with the derived one, and disappears when
-nothing is declared any more.
+`na` when the file lists the field as unused; `None`, declaring nothing,
+when no node writes a null for it (a value alone records what the source
+prints, not that the file was audited for it); otherwise `all` when no
+counted node lacks the field and `partly` when some node does. For
+`material` the nodes counted are the species-level ones (species,
+subspecies, variety), since specimens are cited for species; `contexts`
+and `ranges` count every named node (decided 2026-09-30 with the Sprinkle
+1973 re-entry). Revised 2026-10-01: `illustrations` counts the
+species-level nodes too, since figures are of species (a figure on a
+higher node is still a value and a claim); a node whose `material` entry
+has a `context` counts as carrying `occurrences`, even beside a
+`contexts: null`; and only taxonomy trees are counted, since a cladogram
+prints no material. `synonymy` (`synonyms` or `non`, value or null, counts
+a node present; `unused: [synonyms]` is `na`) counts every named node of
+every rank. A derived kind that the source also declares is an
+inconsistency row, whether or not the two agree, so the declaration goes
+when the nulls come; a source that writes no null for `synonymy` keeps its
+declared value and the claim-count check on it. The function is
+`claims.derived_coverage`.
+
+A null is also a claim. Each node's null becomes an `absence` claim
+(`absenceOf` `material`, `occurrences`, `illustrations` or `synonymy`),
+which `statements` words ("no specimens cited") and `synonymy` states
+("gives no synonymy"), so the answer for one taxon no longer falls back to
+the source's coverage. Where a source's illustrations are `all`, a
+specimen no figure names is derived as `figured: false` ("(not figured)").
 
 Two conventions to fix before the first null is written: `null`, never
 an empty list, spells "prints none", so the statement has one form
@@ -1439,15 +1456,23 @@ means unknown. For audited trees, `na` becomes an entry in the file's
 `unused` list; `all` becomes `null` on each node that lacks a value,
 which is the audit information itself, not bloat; `none` needs nothing;
 `partly` keeps its declaration until a re-read can say which nodes. The
-derived map falls back to the declared one wherever a file declares
-nothing, so the two can coexist for as long as the migration takes.
+derived map falls back to the declared one wherever a file writes no
+null for a kind, so the two can coexist across sources for as long as the
+migration takes, and a source moves from one to the other kind by kind.
 
 This is the mechanism behind the plan's "derived versus declared" note,
 which G1 could not honour for want of the denominator. Because the
-material fields are about to be redesigned, the null semantics are
-designed into D1's `material` list rather than retrofitted onto the
-fields it replaces; `synonyms` and `illustrations` can follow the same
-rule once D1 has settled the shape.
+material fields were redesigned, the null semantics were designed into
+D1's `material` list rather than retrofitted onto the fields it replaces;
+`illustrations` and `synonyms` followed once D1 had settled the shape.
+
+**What an audited file looks like.** A value or a null for `synonyms` and
+for `contexts` or `ranges` (or a material entry linked to a context) on
+every named node of the taxonomy; a value or a null for `material` and
+`illustrations` on every species-level node; `unused` at the top of the
+file for a field the paper uses nowhere; and on the source record
+`audit: {state: complete, coverage: {skeleton, newTaxa, types,
+phylogeny}, notes}` with no entry for the derived kinds.
 
 ---
 

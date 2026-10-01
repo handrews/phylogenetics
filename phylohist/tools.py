@@ -206,7 +206,10 @@ TOOL_DESCRIPTIONS = {
     'What the corpus holds of one publication: its citation, whether its '
     'content has been entered at all, the audit state and, per kind of '
     'statement, whether the reviewer declared all, part or none of what '
-    'the paper prints to be entered, and the counts derived. Consult it '
+    'the paper prints to be entered, and the counts derived. `coverage` is '
+    "the effective value per kind (derived from the tree's nulls where "
+    'the file writes them, otherwise as the reviewer declared) and '
+    '`derivedCoverage` the derived part alone. Consult it '
     'before saying anything has not been entered: when the declared '
     'coverage for a kind is complete, a statement you have not found is '
     'one you have not looked for in the right place.'

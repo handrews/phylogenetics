@@ -60,18 +60,6 @@ owner, each with its page there:
 
 What the model could not say, for stage 4:
 
-- `of` and `castOf` match a catalog number exactly, so a figure of one
-  specimen inside a printed run ("paratypes GSC 25935–25961", Pl. 20)
-  cannot name it while the run is a range pair; the runs that plates
-  cite into are entered expanded, with the printed form in
-  `catalogNumbersAsPrinted`.
-- A species whose provenance is only file-level contexts linked from
-  its material carries neither `contexts` nor `ranges`, and the derived
-  `occurrences` coverage reads that as not captured (eleven species;
-  the source derives `partly`).
-- A number printed without a prefix and held privately ("500–501 ...
-  borrowed from A. R. Palmer") has `holder` and still draws the
-  unresolved-prefix warning.
 - A queried age ("Middle Ordovician(?)") has no tentative form; the
   "(?)" is in the range's `notes`.
 - One number cited under two species (MCZ 643, MCZ 644, GSC 25954) is

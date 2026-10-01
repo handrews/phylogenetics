@@ -150,7 +150,10 @@ $defs:
           once the source is at least partially audited, and an unaudited
           source carries none. A user's confidence in an answer is the
           conjunction: audited, and complete for the kinds the question
-          touches.
+          touches. For a source whose tree writes nulls (roadmap G11),
+          `material`, `occurrences`, `illustrations` and `synonymy` are
+          derived from the tree and are not declared; `coverage` then
+          carries `skeleton`, `newTaxa`, `types` and `phylogeny`.
         type: object
         additionalProperties: false
         required: [state]

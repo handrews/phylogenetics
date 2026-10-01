@@ -922,9 +922,13 @@ def manifest(claims_by_source, roots):
       value = declared.get(kind)
       derived_value = derived_row.get(kind)
       if derived_value is not None:
-        # Checked only when a declared and a derived value both exist.
-        if value is not None and value != derived_value:
-          entry['inconsistencies'].append(f'{kind}: declared {value}, derived {derived_value}')
+        # The tree's nulls give the kind its coverage, so a declaration of
+        # it is redundant or wrong, whether or not the two agree.
+        if value is not None:
+          entry['inconsistencies'].append(
+            f'{kind}: declared {value} but derived from the tree ({derived_value}); '
+            'remove the declaration'
+          )
         continue
       if kind in DERIVED_KINDS and kind != 'synonymy':
         # The material kinds have no claim-count check; `synonymy` keeps

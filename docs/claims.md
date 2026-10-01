@@ -342,13 +342,15 @@ loader rejects it beside a `non` list). Each source row carries
 declared value for `skeleton`, `newTaxa`, `types` and `phylogeny`, and for
 the four node-state kinds the derived value when there is one, else the
 declared one. Each claim's `audit.coverage` and the gap statements read
-the effective map. For the three material kinds an inconsistency row
-appears only when a declared and a derived value both exist and differ
-("declared all, derived partly"). `synonymy` differs: a source that writes
-no synonymy null derives nothing, so its declared value keeps the
-claim-count check above; once a null derives it, the declared-versus-derived
-comparison replaces that check. `absence` claims are not counted under any
-coverage kind.
+the effective map. A kind the tree derives is not declared as well: when
+the derived value is not `None` and `audit.coverage` declares the kind at
+all, an inconsistency row says "declared X but derived from the tree (Y);
+remove the declaration", whether or not the two agree. A source whose
+tree writes nulls therefore declares `skeleton`, `newTaxa`, `types` and
+`phylogeny` only. The three material kinds have no claim-count check;
+`synonymy` keeps it for a source that writes no synonymy null and so
+derives nothing, until a null derives it. `absence` claims are not
+counted under any coverage kind.
 
 ## What the vocabulary does not do
 
