@@ -16,6 +16,7 @@ import yaml
 
 from phylohist.evaluation import alternatives
 from phylohist.render import node_label
+from phylohist.store import ClaimStore
 
 QUESTIONS_PATH = pathlib.Path(__file__).parent.parent / 'eval' / 'questions.yaml'
 with open(QUESTIONS_PATH) as fd:
@@ -769,7 +770,9 @@ def test_absence_words_and_not_figured_in_statements(store):
   )['entries']
   assert entry['kind'] == 'absence' and entry['page'] == 127
   # The other kinds select their own absences, and `absence` all of them.
-  every = store.statements('neglecta_hecker_1940', source='1973_sprinkle', kind='absence')
+  # With no source named, `absence` still lists the claims as statements.
+  every = store.statements('neglecta_hecker_1940', kind='absence')
+  assert every['type'] == 'list'
   assert [line.rsplit('  ', 1)[-1] for line in _rendered_lines(every)[1:]] == [
     'Bockia neglecta: no specimens cited (p. 127)',
     'Bockia neglecta: no locality or range given (p. 127)',
@@ -794,6 +797,142 @@ def test_absence_words_and_not_figured_in_statements(store):
     store.statements('durhami_sprinkle_1973', source='1973_sprinkle', kind='specimens')
   )
   assert not [line for line in durhami if 'holotype' in line and '(not figured)' in line]
+
+
+def _states(block):
+  """The rendered rows of a content table, runs of spaces folded."""
+  return [' '.join(line.split()) for line in block['rendered'].splitlines()]
+
+
+def test_absence_with_a_source_is_a_table_of_what_it_gives(store):
+  from phylohist import blocks
+
+  block = store.statements('durhami_sprinkle_1973', source='1973_sprinkle', kind='absence')
+  assert block['type'] == 'table' and blocks.validate(block, store) == []
+  assert _states(block) == [
+    'Kinzercystis durhami Sprinkle 1973 in Sprinkle 1973 (p. 70)',
+    'kind state',
+    '----------- -----------',
+    'specimens 3 entered',
+    'occurrences 1 entered',
+    'figures 12 entered',
+    'synonymy not entered',
+  ]
+  assert block['parameters'] == {
+    'record': 'durhami_sprinkle_1973',
+    'source': '1973_sprinkle',
+    'kind': 'absence',
+    'act_kind': None,
+  }
+  specimens, occurrences, figures, synonymy = (row['cells'][1][0] for row in block['rows'])
+  assert len(blocks._claims_of(specimens)) == 3
+  assert len(blocks._claims_of(occurrences)) == 1 and len(blocks._claims_of(figures)) == 12
+  assert blocks._claims_of(synonymy) == [] and 'claims' not in synonymy
+  [node] = block['content']
+  assert node['page'] == 70
+  assert [(r['kind'], r['state'], r['basis'], r['count']) for r in node['rows']] == [
+    ('specimens', 'entered', 'claims', 3),
+    ('occurrences', 'entered', 'claims', 1),
+    ('figures', 'entered', 'claims', 12),
+    ('synonymy', 'notEntered', 'coverage', None),
+  ]
+  assert block['source'] == '1973_sprinkle' and block['cite'] == 'Sprinkle 1973'
+  assert 'group' not in block['rows'][0]
+  assert (
+    '| specimens | 3 entered |'
+    in store.statements(
+      'durhami_sprinkle_1973', source='1973_sprinkle', kind='absence', style='markdown'
+    )['rendered']
+  )
+
+
+def test_absence_table_rests_on_the_auditors_nulls(store):
+  block = store.statements('neglecta_hecker_1940', source='1973_sprinkle', kind='absence')
+  assert _states(block)[3:] == [
+    'specimens none printed',
+    'occurrences none printed',
+    'figures none printed',
+    'synonymy not entered',
+  ]
+  rows = block['content'][0]['rows']
+  assert [(r['state'], r['basis']) for r in rows] == [
+    ('none', 'null'),
+    ('none', 'null'),
+    ('none', 'null'),
+    ('notEntered', 'coverage'),
+  ]
+  absences = [c['id'] for c in store.by_subject['neglecta_hecker_1940'] if c['kind'] == 'absence']
+  assert len(absences) == 3 and block['claims'] == sorted(absences)
+  assert [row['cells'][1][0]['claims'] for row in block['rows'][:3]] == [[a] for a in absences]
+
+
+def test_absence_table_groups_a_record_by_node(store):
+  block = store.statements('wanneri_foerste_1938', source='1973_sprinkle', kind='absence')
+  assert block['title'] == 'Lepidocystis wanneri Foerste 1938 in Sprinkle 1973'
+  assert [row['group'] for row in block['rows']] == ['Lepidocystis wanneri (p. 62)'] * 4 + [
+    'Lepidocystis wanneri (p. 66)'
+  ] * 4
+  assert [len(node['rows']) for node in block['content']] == [4, 4]
+  assert [node['page'] for node in block['content']] == [62, 66]
+  assert '-- Lepidocystis wanneri (p. 66) --' in block['rendered']
+
+
+def test_absence_table_reads_coverage_where_nothing_is_entered(store):
+  # Billings 1857 prints no figures and no synonymy (`na`), and enters
+  # everything Dehm 1961 prints of a synonymy (`all`): none is printed there.
+  for source, record, kinds in (
+    ('1857_billings', 'punctatus_billings_1854', {'figures', 'synonymy'}),
+    ('1961_dehm', 'octogona_richter.r_1930', {'synonymy'}),
+  ):
+    block = store.statements(record, source=source, kind='absence')
+    rows = {r['kind']: r for r in block['content'][0]['rows']}
+    for kind in kinds:
+      assert (rows[kind]['state'], rows[kind]['basis']) == ('none', 'coverage'), (source, kind)
+    cells = {row['cells'][0][0]['value']: row['cells'][1][0] for row in block['rows']}
+    assert all(
+      cells[kind]['value'] == 'none printed' and 'claims' not in cells[kind] for kind in kinds
+    )
+  # A kind the source enters only in part, or has not reviewed, is not entered.
+  block = store.statements('punctatus_billings_1854', source='1857_billings', kind='absence')
+  assert store.sources['1857_billings']['coverage']['material'] not in ('all', 'na')
+  assert block['content'][0]['rows'][0]['state'] == 'notEntered'
+
+
+def test_absence_table_notes_an_incomplete_specimen_list(store):
+  fresh = ClaimStore()
+  [path] = fresh._record_paths('1973_sprinkle', 'durhami_sprinkle_1973')
+  specimen = next(
+    c for c in fresh._node_claims('1973_sprinkle', path) if c.get('materialKind') == 'specimen'
+  )
+  specimen['listComplete'] = False
+  block = fresh.statements('durhami_sprinkle_1973', source='1973_sprinkle', kind='absence')
+  assert _states(block)[3] == 'specimens 3 entered (list incomplete)'
+
+
+def test_absence_with_no_node_in_the_source_is_still_the_gap(store):
+  # Nothing about the record is in that source: the gap block, as before.
+  block = store.statements('durhami_sprinkle_1973', source='1857_billings', kind='absence')
+  assert block['type'] == 'statement' and block['kind'] == 'gap'
+  assert block['rendered'].startswith(
+    'Nothing about Kinzercystis durhami Sprinkle 1973 is entered from Billings 1857. '
+  )
+
+
+def test_gap_says_of_this_kind_when_the_record_is_in_the_source(store):
+  block = store.statements('durhami_sprinkle_1973', source='1973_sprinkle', kind='acceptance')
+  assert block['type'] == 'statement' and block['fields']['aboutOther'] is True
+  assert block['rendered'] == (
+    'Nothing of this kind about Kinzercystis durhami Sprinkle 1973 is entered from '
+    'Sprinkle 1973. How much of the synonymy in Sprinkle 1973 is entered has not been reviewed.'
+  )
+  # A record with no claim in the source keeps the plain sentence.
+  plain = store.statements(
+    'octogona_richter.r_1930', source='1983_holloway_jell', kind='occurrences'
+  )
+  assert plain['rendered'].startswith(
+    'Nothing about Pyrgocystis octogona Richter 1930 is entered from Holloway & Jell 1983.'
+  )
+  assert 'aboutOther' not in plain['fields']
 
 
 def test_synonymy_says_a_source_gives_none(store):

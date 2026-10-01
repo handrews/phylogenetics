@@ -198,7 +198,12 @@ TOOL_DESCRIPTIONS = {
     'specimens cited" is the auditor\'s statement that the paper prints '
     'none for that taxon, which is different from the kind not having been '
     'entered; "(not figured)" after a specimen says the same of that '
-    "specimen's figures. When a source is named "
+    "specimen's figures. With a source and kind absence the result is a "
+    'table of what the source gives for the record per kind (specimens, '
+    'occurrences, figures, synonymy), each "N entered", "none printed" or '
+    '"not entered": "none printed" is the auditor\'s statement about the '
+    'paper (or follows from the source\'s coverage), "not entered" is work '
+    'not yet done. When a source is named '
     'and nothing of that kind about the record is entered, the result is '
     'the gap block for that source and kind: compose it as the answer.'
   ),

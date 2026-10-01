@@ -109,7 +109,7 @@ The answer:
 
     Occurrence data for the new species Lampteroblastus hintzei as printed by Guensburg & Sprinkle (1994)
 
-    Nothing about Lampteroblastus hintzei Guensburg & Sprinkle 1994 is entered from Guensburg & Sprinkle 1994. The occurrences printed in Guensburg & Sprinkle 1994 have not yet been entered (none of them is entered so far).
+    Nothing of this kind about Lampteroblastus hintzei Guensburg & Sprinkle 1994 is entered from Guensburg & Sprinkle 1994. The occurrences printed in Guensburg & Sprinkle 1994 have not yet been entered (none of them is entered so far).
 
 The paper is on record and its classification is entered, but its occurrence data is not. The closed world answers with what the corpus holds and what it does not yet hold, in the community's words, and never says the paper lacks the data. The model asked `statements` for occurrences in that source; the tool answered with the gap.
 
