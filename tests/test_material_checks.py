@@ -692,6 +692,30 @@ def test_null_material_absent_is_quiet():
   assert material.null_material({}, is_cited=False) == []
 
 
+def test_null_synonyms_on_a_cited_entry_is_error():
+  assert material.null_material({'synonyms': None}, is_cited=True) == [
+    ('error', 'cited entry carries `synonyms: null`'),
+  ]
+
+
+def test_null_synonyms_beside_a_non_list_is_error():
+  node = {'synonyms': None, 'non': [{'taxon': 'a'}]}
+  assert material.null_material(node, is_cited=False) == [
+    ('error', '`synonyms: null` beside a `non` list'),
+  ]
+
+
+def test_null_synonyms_alone_is_quiet_on_a_primary_node():
+  assert material.null_material({'synonyms': None}, is_cited=False) == []
+  assert material.null_material({'synonyms': None, 'non': []}, is_cited=False) == []
+
+
+def test_a_synonyms_list_on_a_cited_entry_is_quiet():
+  # A nested synonymy exists; only the null is an error.
+  node = {'synonyms': [{'taxon': 'a'}], 'non': [{'taxon': 'b'}]}
+  assert material.null_material(node, is_cited=True) == []
+
+
 # -- unused_fields ---------------------------------------------------------------
 
 
@@ -719,6 +743,14 @@ def test_unused_ranges_with_a_node_carrying_ranges_is_error():
   }
   assert material.unused_fields(document) == [
     ('error', '`ranges` is listed as `unused` but appears at 0'),
+  ]
+
+
+@pytest.mark.parametrize('value', [None, [{'taxon': 'b'}]])
+def test_unused_synonyms_with_a_node_carrying_it_is_error(value):
+  document = {'unused': ['synonyms'], 'taxonomies': [{'taxon': 'a', 'synonyms': value}]}
+  assert material.unused_fields(document) == [
+    ('error', '`synonyms` is listed as `unused` but appears at 0'),
   ]
 
 
@@ -911,6 +943,38 @@ def test_check_draft_exits_one_on_illustrations_null_on_a_primary_node(tmp_path)
   result = _run_check_draft(draft)
   assert result.returncode == 1, result.stdout + result.stderr
   assert 'draft carries `illustrations: null`' in result.stdout
+
+
+def test_check_draft_exits_one_on_synonyms_null_on_a_primary_node(tmp_path):
+  draft = tmp_path / '1898_bather.yaml'
+  draft.write_text('taxonomies:\n- taxon: cyathocystis\n  synonyms: null\n')
+  result = _run_check_draft(draft)
+  assert result.returncode == 1, result.stdout + result.stderr
+  assert 'draft carries `synonyms: null`' in result.stdout
+
+
+def test_check_draft_exits_one_on_synonyms_null_on_a_cited_entry(tmp_path):
+  draft = tmp_path / '1898_bather.yaml'
+  draft.write_text(
+    'taxonomies:\n'
+    '- taxon: cyathocystis\n'
+    '  synonyms:\n'
+    '  - taxon: cyathocystidae\n'
+    '    synonyms: null\n',
+  )
+  result = _run_check_draft(draft)
+  assert result.returncode == 1, result.stdout + result.stderr
+  assert 'cited entry carries `synonyms: null`' in result.stdout
+
+
+def test_check_draft_exits_one_on_synonyms_null_beside_non(tmp_path):
+  draft = tmp_path / '1898_bather.yaml'
+  draft.write_text(
+    'taxonomies:\n- taxon: cyathocystis\n  non:\n  - taxon: cyathocystidae\n  synonyms: null\n',
+  )
+  result = _run_check_draft(draft)
+  assert result.returncode == 1, result.stdout + result.stderr
+  assert '`synonyms: null` beside a `non` list' in result.stdout
 
 
 def test_check_draft_exits_one_on_of_in_a_cited_entrys_illustrations(tmp_path):

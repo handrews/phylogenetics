@@ -26,7 +26,7 @@ import yaml
 from phylohist import plan
 from phylohist.claims import (
   corrected_node,
-  derived_material_coverage,
+  derived_coverage,
   extract,
   manifest,
   merge_patch,
@@ -464,14 +464,14 @@ def test_material_adapter(load_records, caplog):
   assert new_claims[0]['count'] == 5
 
 
-def test_derived_material_coverage():
+def test_derived_coverage():
   base = {'source_key': '1961_dehm', 'type': 'taxonomy'}
 
   def tree(data, position, file_unused=()):
     return Tree(data, {**base, 'position': position, 'file_unused': file_unused})
 
   def derived(root, kind='material'):
-    return derived_material_coverage({'s': [root]})['s'][kind]
+    return derived_coverage({'s': [root]})['s'][kind]
 
   child = {'taxon': 'grayae_bather_1915'}
   other = {'taxon': 'sardesoni_bather_1915'}
@@ -643,8 +643,81 @@ def test_derived_material_coverage():
     {'taxon': 'rhenopyrgus', 'children': [other]},
     {**base, 'type': 'cladogram', 'position': 20},
   )
-  assert derived_material_coverage({'s': [taxonomy, cladogram]})['s']['material'] == 'all'
-  assert derived_material_coverage({'s': [cladogram]})['s']['material'] is None
+  assert derived_coverage({'s': [taxonomy, cladogram]})['s']['material'] == 'all'
+  assert derived_coverage({'s': [cladogram]})['s']['material'] is None
+
+
+def test_derived_synonymy_coverage():
+  base = {'source_key': '1961_dehm', 'type': 'taxonomy'}
+
+  def derived(data, position, file_unused=(), tree_type='taxonomy'):
+    root = Tree(
+      data, {**base, 'type': tree_type, 'position': 100 + position, 'file_unused': file_unused}
+    )
+    return derived_coverage({'s': [root]})['s']['synonymy']
+
+  child = {'taxon': 'grayae_bather_1915'}
+  other = {'taxon': 'sardesoni_bather_1915'}
+  syn = [{'taxon': 'sardesoni_bather_1915'}]
+  # `unused: [synonyms]` is `na`, whatever the nodes say.
+  assert derived({'taxon': 'rhenopyrgus'}, 0, file_unused=('synonyms',)) == 'na'
+  # A null and values elsewhere, no node lacking both fields: `all`.
+  nulled_root = {'taxon': 'rhenopyrgus', 'synonyms': None, 'children': [{**child, 'synonyms': syn}]}
+  assert derived(nulled_root, 1) == 'all'
+  # A null and a node lacking both fields: `partly` (every rank counts).
+  partly_child = {'taxon': 'rhenopyrgus', 'children': [{**child, 'synonyms': None}, other]}
+  assert derived(partly_child, 2) == 'partly'
+  assert derived({'taxon': 'rhenopyrgus', 'synonyms': None, 'children': [child]}, 3) == 'partly'
+  # `non` alone counts as present.
+  non_root = {'taxon': 'rhenopyrgus', 'non': syn, 'children': [{**child, 'synonyms': None}]}
+  assert derived(non_root, 4) == 'all'
+  # Values alone declare nothing.
+  assert derived({'taxon': 'rhenopyrgus', 'synonyms': syn, 'children': [child]}, 5) is None
+  assert derived({'taxon': 'rhenopyrgus', 'non': syn}, 6) is None
+  # A phylogeny root contributes nothing.
+  assert derived({'taxon': 'rhenopyrgus', 'synonyms': None}, 7, tree_type='cladogram') is None
+  taxonomy = Tree({'taxon': 'rhenopyrgus', 'synonyms': None}, {**base, 'position': 108})
+  cladogram = Tree(
+    {'taxon': 'rhenopyrgus', 'children': [other]}, {**base, 'type': 'cladogram', 'position': 109}
+  )
+  assert derived_coverage({'s': [taxonomy, cladogram]})['s']['synonymy'] == 'all'
+
+
+def test_manifest_synonymy_keeps_the_count_check_unless_a_null_derives_it(monkeypatch):
+  from phylohist.loader.research import Source
+
+  coverage = Source.get('1961_dehm')._data['audit']['coverage']
+  # Declared `all`, no null: nothing derived, and no acceptance claims, so
+  # the claim-count check fires.
+  monkeypatch.setitem(coverage, 'synonymy', 'all')
+  values = {
+    '1961_dehm': [
+      Tree(
+        {'taxon': 'pyrgocystis', 'children': [{'taxon': 'grayae_bather_1915'}]},
+        {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 30},
+      )
+    ]
+  }
+  entry = manifest(extract(values), values)['sources']['1961_dehm']
+  assert entry['derivedCoverage']['synonymy'] is None
+  assert entry['coverage']['synonymy'] == 'all'
+  assert 'synonymy: declared all, no claims derived' in entry['inconsistencies']
+
+  # A null derives the kind: the derived value wins, and the declaration
+  # is compared with it instead of with the claim count.
+  nulled = {
+    '1961_dehm': [
+      Tree(
+        {'taxon': 'pyrgocystis', 'synonyms': None, 'children': [{'taxon': 'grayae_bather_1915'}]},
+        {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 31},
+      )
+    ]
+  }
+  entry = manifest(extract(nulled), nulled)['sources']['1961_dehm']
+  assert entry['derivedCoverage']['synonymy'] == 'partly'
+  assert entry['coverage']['synonymy'] == 'partly'
+  assert 'synonymy: declared all, derived partly' in entry['inconsistencies']
+  assert not [r for r in entry['inconsistencies'] if r.startswith('synonymy: declared all, no')]
 
 
 def test_manifest_reports_derived_disagreement(load_records, monkeypatch):
@@ -663,7 +736,7 @@ def test_manifest_reports_derived_disagreement(load_records, monkeypatch):
     {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 0},
   )
   synthetic = {'1961_dehm': [audited]}
-  assert derived_material_coverage(synthetic)['1961_dehm']['illustrations'] == 'partly'
+  assert derived_coverage(synthetic)['1961_dehm']['illustrations'] == 'partly'
   monkeypatch.setitem(Source.get('1961_dehm')._data['audit']['coverage'], 'illustrations', 'none')
 
   entry = manifest(extract(synthetic), synthetic)['sources']['1961_dehm']

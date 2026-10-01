@@ -124,18 +124,25 @@ _MATERIAL_FIELDS = (
   'collectedBy',
   'collectedDate',
 )
-# The three coverage kinds derived from raw node state rather than a
-# reviewer's declaration, and the node fields each reads.
-DERIVED_COVERAGE_FIELDS = {
-  'material': ('material',),
-  'occurrences': ('contexts', 'ranges'),
-  'illustrations': ('illustrations',),
+# The coverage kinds derived from raw node state rather than a reviewer's
+# declaration. `fields`: the node fields whose presence (a value or a null)
+# counts the node as captured, a null in any being the audit's statement;
+# `unused`: the file-level `unused` fields that make the kind `na` (default
+# `fields`); `species`: count species-level nodes only; `via`: a field whose
+# entries carry a key that also counts as presence (a material entry's
+# `context` is an occurrence).
+DERIVED_KINDS = {
+  'material': {'fields': ('material',), 'species': True},
+  'occurrences': {'fields': ('contexts', 'ranges'), 'via': ('material', 'context')},
+  'illustrations': {'fields': ('illustrations',), 'species': True},
+  'synonymy': {'fields': ('synonyms', 'non'), 'unused': ('synonyms',)},
 }
 
 
 # The ranks below which specimens are cited; `material` coverage counts
 # only nodes at these (phylohist/loader/taxa.py spells the same tuple);
 # `illustrations` coverage counts them too, since figures are of species.
+# `synonymy` and `occurrences` count every named node.
 SPECIES_LEVEL_RANKS = ('species', 'subspecies', 'variety')
 
 _rank_hubs = None
@@ -654,19 +661,21 @@ def _node_writes(data, fields, linked=False):
   return bool(present) or linked, any(data[field] is None for field in present)
 
 
-def derived_material_coverage(roots):
-  """Per source, `{kind: value}` for `material`, `occurrences` and
-  `illustrations`, from raw node state over the primary, non-cited, named
-  nodes of the source's taxonomy trees (a cladogram prints no material):
-  `na` when the file lists the kind's fields as `unused`; `None` when no
-  node writes a null for them (a value records what the source prints, not
-  that the file was audited for it); else `all` when no node lacks the
-  fields (`partly` if a material entry has `listComplete: false`) and
-  `partly` when some node does. For `material` and `illustrations` only the
-  species-level nodes are counted, since specimens are cited and figures
-  drawn for species, and a genus or higher node without either is not an
-  uncaptured field. A node whose `material` entry has a `context` carries
-  `occurrences` through that link, whatever else it writes."""
+def derived_coverage(roots):
+  """Per source, `{kind: value}` for `material`, `occurrences`,
+  `illustrations` and `synonymy`, from raw node state over the primary,
+  non-cited, named nodes of the source's taxonomy trees (a cladogram prints
+  no material): `na` when the file lists the kind's fields as `unused`;
+  `None` when no node writes a null for them (a value records what the
+  source prints, not that the file was audited for it); else `all` when no
+  node lacks the fields (`partly` if a material entry has `listComplete:
+  false`) and `partly` when some node does. For `material` and
+  `illustrations` only the species-level nodes are counted, since specimens
+  are cited and figures drawn for species, and a genus or higher node
+  without either is not an uncaptured field. A node whose `material` entry
+  has a `context` carries `occurrences` through that link, whatever else it
+  writes. For `synonymy` a node's `synonyms` or `non`, value or null,
+  counts it as present; only `synonyms: null` writes a null."""
   out = {}
   for source_key, trees in roots.items():
     unused = set(trees[0].file_unused) if trees else set()
@@ -678,19 +687,20 @@ def derived_material_coverage(roots):
       if node.is_primary and not node.is_cited and node.taxon is not None
     ]
     values = {}
-    for kind, fields in DERIVED_COVERAGE_FIELDS.items():
-      if set(fields) <= unused:
+    for kind, spec in DERIVED_KINDS.items():
+      fields = spec['fields']
+      if set(spec.get('unused', fields)) <= unused:
         values[kind] = 'na'
         continue
       counted = nodes
-      if kind != 'occurrences':
+      if spec.get('species'):
         counted = [node for node in nodes if node.taxon.rank in SPECIES_LEVEL_RANKS]
+      via_field, via_key = spec.get('via', (None, None))
       states = [
         _node_writes(
           node.data,
           fields,
-          linked=kind == 'occurrences'
-          and any(entry.get('context') for entry in node.data.get('material') or ()),
+          linked=any(entry.get(via_key) for entry in node.data.get(via_field) or ()),
         )
         for node in counted
       ]
@@ -711,13 +721,13 @@ def derived_material_coverage(roots):
 
 
 def _effective_coverage(declared, derived_row):
-  """The declared `audit.coverage`, except that the three kinds derived
+  """The declared `audit.coverage`, except that the four kinds derived
   from node state take the derived value when there is one."""
   declared = declared or {}
   derived_row = derived_row or {}
   coverage = {}
   for kind in COVERAGE_KINDS:
-    value = derived_row.get(kind) if kind in DERIVED_COVERAGE_FIELDS else None
+    value = derived_row.get(kind) if kind in DERIVED_KINDS else None
     coverage[kind] = value if value is not None else declared.get(kind)
   return coverage
 
@@ -730,7 +740,7 @@ def extract(roots, sources=None):
   the effective value (`_effective_coverage`).
   """
   out = {}
-  derived = derived_material_coverage(roots)
+  derived = derived_coverage(roots)
   for source_key, trees in roots.items():
     if sources is not None and source_key not in sources:
       continue
@@ -828,7 +838,7 @@ def manifest(claims_by_source, roots):
   """
   sources = {}
   taxa = collections.defaultdict(set)
-  derived_coverage = derived_material_coverage(roots)
+  derived_by_source = derived_coverage(roots)
 
   for source_key in Source._sources:
     source = Source.get(source_key)
@@ -861,14 +871,18 @@ def manifest(claims_by_source, roots):
       if 'coverageKind' in c['audit'] and not c.get('inferred')
     )
     declared = source.audit.get('coverage') or {}
-    derived_row = derived_coverage.get(source_key) or {}
+    derived_row = derived_by_source.get(source_key) or {}
     for kind in COVERAGE_KINDS:
       value = declared.get(kind)
-      if kind in DERIVED_COVERAGE_FIELDS:
+      derived_value = derived_row.get(kind)
+      if derived_value is not None:
         # Checked only when a declared and a derived value both exist.
-        derived_value = derived_row.get(kind)
-        if value is not None and derived_value is not None and value != derived_value:
+        if value is not None and value != derived_value:
           entry['inconsistencies'].append(f'{kind}: declared {value}, derived {derived_value}')
+        continue
+      if kind in DERIVED_KINDS and kind != 'synonymy':
+        # The material kinds have no claim-count check; `synonymy` keeps
+        # it for the sources that declare it and write no null.
         continue
       count = claim_counts.get(kind, 0)
       if value in ('all', 'partly') and count == 0:

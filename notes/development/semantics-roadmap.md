@@ -1399,7 +1399,10 @@ Fields fall into three classes, and only the third is nullable:
   `state: unaudited` says.
 - Content, nullable: `synonyms`, and the material fields as D1 now
   defines them, `material`, `illustrations`, `contexts` and `ranges`; the
-  schema on the material-model branch makes all four nullable.
+  schema on the material-model branch makes all four nullable, and
+  `synonyms` is implemented too (2026-10-01): `synonyms: null` is an error
+  on a cited entry, in a draft, and beside a `non` list (a list of
+  exclusions is a synonymy).
   `children` could join in principle (`children: null` for a taxon the
   paper places nothing under), but nulling every species is the bloat the
   file-level list exists to avoid, so skeleton stays source-level.

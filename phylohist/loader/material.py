@@ -389,6 +389,10 @@ def _shown(elements):
 
 
 NULLABLE_FIELDS = ('material', 'illustrations', 'contexts', 'ranges')
+# Every content field that may be null on a primary node; `synonyms` is the
+# one that cited entries may carry as a list (a nested synonymy), so the
+# cited-entry rule above reads only `NULLABLE_FIELDS`.
+ALL_NULLABLE_FIELDS = (*NULLABLE_FIELDS, 'synonyms')
 _PRIMARY_ONLY_KEYS = ('of', 'depicts')
 
 
@@ -420,7 +424,10 @@ def null_material(node, is_cited):
   figure in the cited work, but never null and never with `of` or
   `depicts`; the same ban on `of` and `depicts` holds for
   `authority.illustrations` on any node. A `material: null` node beside an
-  illustration that still names one (`of` set) contradicts itself."""
+  illustration that still names one (`of` set) contradicts itself. A
+  `synonyms: null` (the source prints no synonymy for the node) is an
+  error on a cited entry, which lists synonymy of its own, and beside a
+  `non` list, which is a synonymy."""
   messages = []
   if is_cited:
     for field in NULLABLE_FIELDS:
@@ -439,6 +446,11 @@ def null_material(node, is_cited):
       isinstance(f, dict) and f.get('of') is not None for f in node.get('illustrations') or ()
     ):
       messages.append(('error', '`material: null` beside a figure whose `of` names one'))
+  if 'synonyms' in node and node['synonyms'] is None:
+    if is_cited:
+      messages.append(('error', 'cited entry carries `synonyms: null`'))
+    if node.get('non'):
+      messages.append(('error', '`synonyms: null` beside a `non` list'))
   return messages
 
 

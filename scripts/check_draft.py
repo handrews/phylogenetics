@@ -68,7 +68,7 @@ def draft_nulls(node, is_cited):
     return []
   return [
     ('error', f'draft carries `{field}: null`; only an auditor sets nulls')
-    for field in material.NULLABLE_FIELDS
+    for field in material.ALL_NULLABLE_FIELDS
     if field in node and node[field] is None
   ]
 

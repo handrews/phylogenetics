@@ -284,27 +284,34 @@ claims behind them and the review file to check against, and
 `tests/test_claims.py` fails while any row exists, so a new one cannot
 land unnoticed.
 
-Three kinds, `material`, `occurrences` (the node fields `contexts` and
-`ranges`) and `illustrations`, are also read from the tree itself (G11):
-`claims.derived_material_coverage(roots)` walks the primary, non-cited,
-named nodes of a source's taxonomy trees (a cladogram prints no material).
-A kind whose fields the file lists as `unused` is
-`na`. Otherwise, when no node writes a `null` for the kind's fields, it is
-`None` and declares nothing: a value records what the source prints, not
-that the file was audited for it. When some node writes a null, the kind is
-`all` if no node lacks the fields (`partly` if a material entry has
-`listComplete: false`), and `partly` if some node does. For `material` and
-`illustrations` only the species-level nodes (species, subspecies, variety)
-are counted, since specimens are cited and figures drawn for species;
-`occurrences` counts every named node, and a node whose `material` entry
-has a `context` counts as carrying it. Each source row carries `derivedCoverage` (this raw
-result) and `coverage`, the effective map: the declared value for
-`skeleton`, `newTaxa`, `types`, `synonymy` and `phylogeny`, and for the
-three node-state kinds the derived value when there is one, else the
+Four kinds, `material`, `occurrences` (the node fields `contexts` and
+`ranges`), `illustrations` and `synonymy` (`synonyms` and `non`), are also
+read from the tree itself (G11): `claims.derived_coverage(roots)` walks the
+primary, non-cited, named nodes of a source's taxonomy trees (a cladogram
+prints no material). A kind whose fields the file lists as `unused` is
+`na` (for `synonymy`, `unused: [synonyms]`). Otherwise, when no node writes
+a `null` for the kind's fields, it is `None` and declares nothing: a value
+records what the source prints, not that the file was audited for it. When
+some node writes a null, the kind is `all` if no node lacks the fields
+(`partly` if a material entry has `listComplete: false`), and `partly` if
+some node does. For `material` and `illustrations` only the species-level
+nodes (species, subspecies, variety) are counted, since specimens are
+cited and figures drawn for species; `occurrences` counts every named
+node, and a node whose `material` entry has a `context` counts as carrying
+it. `synonymy` counts every named node of every rank: a node carrying
+`synonyms` or `non`, as a value or a null, is present (a `non` list is a
+synonymy of rejected names), and only `synonyms: null` writes a null (the
+loader rejects it beside a `non` list). Each source row carries
+`derivedCoverage` (this raw result) and `coverage`, the effective map: the
+declared value for `skeleton`, `newTaxa`, `types` and `phylogeny`, and for
+the four node-state kinds the derived value when there is one, else the
 declared one. Each claim's `audit.coverage` and the gap statements read
-the effective map. For the three kinds an
-inconsistency row appears only when a declared and a derived value both
-exist and differ ("declared all, derived partly").
+the effective map. For the three material kinds an inconsistency row
+appears only when a declared and a derived value both exist and differ
+("declared all, derived partly"). `synonymy` differs: a source that writes
+no synonymy null derives nothing, so its declared value keeps the
+claim-count check above; once a null derives it, the declared-versus-derived
+comparison replaces that check.
 
 ## What the vocabulary does not do
 

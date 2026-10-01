@@ -703,6 +703,7 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/materialsFields/properties/ranges` | array/null | listx49, nullx41 | - | - |
 | `phylogeny#/$defs/person/properties/death` | integer/null | intx80, nullx1 | - | - |
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
+| `phylogeny#/$defs/relationalFields/properties/synonyms` | array/null | listx362 | - | null |
 | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items` | array/string/integer | strx1 | `E23470` | array, integer |
 | `phylogeny#/$defs/taxonRecord/properties/name` | string/null | strx2467, nullx196 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
 

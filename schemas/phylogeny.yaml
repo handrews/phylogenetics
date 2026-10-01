@@ -593,7 +593,12 @@ $defs:
   relationalFields:
     properties:
       synonyms:
-        type: array
+        description: |
+          The names this source lists as synonyms of the node's; `null`
+          says the source prints no synonymy for the node (an auditor's
+          statement, roadmap G11; the loader rejects it on a cited entry
+          and beside a `non` list).
+        type: [array, "null"]
         items:
           $ref: taxonomyTree
       non:
