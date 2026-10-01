@@ -234,6 +234,9 @@ class ClaimStore:
     }
     if usage and usage.get('sensu'):
       node['sensu'] = usage['sensu']
+    if usage and usage.get('compared'):
+      # A cf. or aff. form: the source originates the form, not a new taxon.
+      node['compared'] = usage['compared']['sign']
     if rank_word:
       node['rankWord'] = rank_word[:1].upper() + rank_word[1:]
     also = self.or_names_at.get((source_key, path))
@@ -276,6 +279,15 @@ class ClaimStore:
       year = self.source_year(cited) if cited else printed.get('year')
       # A cited work with no record shows its attribution as printed, by field.
       cite = self.cite(cited) if cited else self.words.attribution_words(printed) or None
+      subject = acceptance['subject']
+      parents = acceptance.get('parents') or ()
+      parent_names = [self.name(p) for p in parents]
+      if parent_names and acceptance.get('quotedParent'):
+        parent_names[0] = f'"{parent_names[0]}"'
+      # An open form cited in its combination ("Gogia cf. longidactylus"):
+      # the words of its key after the genus the parents give.
+      row = self.names.get(subject) or {}
+      open_form = row.get('placeholder') and not row.get('designation')
       entries.append(
         blocks.list_entry(
           source=cited,
@@ -284,9 +296,9 @@ class ClaimStore:
           claim=acceptance['id'],
           page=acceptance.get('citedPages'),
           stance=acceptance['stance'],
-          parents=[self.name(p) for p in acceptance.get('parents') or ()] or None,
+          parents=parent_names or None,
           printed=printed.get('citedAs'),
-          record=acceptance['subject'] if not acceptance.get('ownName') else None,
+          record=subject if not acceptance.get('ownName') else None,
           nudum=any(c['kind'] == 'act' and c['actKind'] == 'nomNudum' for c in claims) or None,
           lapsusFor=self.name(acceptance['lapsusFor']) if acceptance.get('lapsusFor') else None,
           # With an original combination the entry carries the bare epithet
@@ -294,11 +306,11 @@ class ClaimStore:
           # combination the entry falls under; the heading's own name needs
           # neither.
           name=(
-            self.name(acceptance['subject'])
-            if acceptance.get('parents')
+            (self.words._open_tail(subject, parents) if open_form else self.name(subject))
+            if parents
             else None
             if acceptance.get('ownName')
-            else self.words.display(acceptance['subject'], source_key, candidate)
+            else self.words.display(subject, source_key, candidate)
           ),
         )
       )

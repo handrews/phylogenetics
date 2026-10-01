@@ -989,3 +989,49 @@ def test_synonymy_says_a_source_gives_none(store):
   )
   assert render(bare, 'text') == 'Sprinkle 1973 gives no synonymy for X.'
   assert store.synonymy('neglecta_hecker_1940', source='1973_sprinkle') == []
+
+
+# -- open forms as they render from the corpus -------------------------------
+
+
+def test_compared_form_is_not_marked_as_a_new_taxon(store):
+  # A cf. or aff. node carries `new` because the source originates the
+  # form; the listing must not print "sp. nov." after it.
+  block = store.contents('1975_kolata', 'edrioaster', style='text')[0]
+  lines = [line.strip() for line in block['rendered'].splitlines()]
+  assert 'Edrioaster cf. bigsbyi' in lines
+  block = store.contents('1960_gill_caster', 'victoriacystis', style='text')[0]
+  lines = [line.strip() for line in block['rendered'].splitlines()]
+  assert 'Victoriacystis aff. wilkinsi a' in lines and 'Victoriacystis aff. wilkinsi b' in lines
+  # The named species beside them keeps its mark.
+  assert 'Victoriacystis wilkinsi sp. nov.' in lines
+
+
+def test_cited_open_form_reads_in_its_combination(store):
+  # With the original genus given in `parents`, and without it.
+  with_parents = store.synonymy('longidactylus_walcott_1886', source='1973_sprinkle', style='text')
+  assert '1965 Gogia cf. longidactylus Robison, 1965' in with_parents[0]['rendered']
+  without = store.synonymy(
+    'flexibilis_parsley_prokop_2004', source='2004_parsley_prokop', style='text'
+  )
+  assert 'Stromatocystites aff. pentangularis Prokop, 1961' in without[0]['rendered']
+
+
+def test_cited_combination_quotes_its_genus(store):
+  # `quotedParent` on a synonymy entry puts the quotes on the genus the
+  # entry's `parents` give; no entry in the corpus carries it yet.
+  source, record = '1973_sprinkle', 'longidactylus_walcott_1886'
+  path = store._record_paths(source, record)[0]
+  entry_path = next(
+    p
+    for p, claims in store.at_path[source].items()
+    if p.startswith(f'{path}/synonyms/')
+    and any(c['kind'] == 'acceptance' and c.get('parents') == ['eocystites'] for c in claims)
+  )
+  acceptance = next(c for c in store.at_path[source][entry_path] if c['kind'] == 'acceptance')
+  acceptance['quotedParent'] = True
+  try:
+    entries = store._synonymy_entries(source, path)
+  finally:
+    del acceptance['quotedParent']
+  assert any(e.get('parents') == ['"Eocystites"'] for e in entries)
