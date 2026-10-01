@@ -108,6 +108,7 @@ _TIME_FIELDS = (
   'series',
   'seriesBoundary',
   'seriesRange',
+  'seriesModifier',
   'stage',
   'stageBoundary',
   'stageRange',
@@ -116,6 +117,7 @@ _TIME_FIELDS = (
   'localSeries',
   'localSeriesBoundary',
   'localSeriesRange',
+  'localSeriesModifier',
   'localStage',
   'localStageBoundary',
   'localStageRange',
@@ -123,10 +125,30 @@ _TIME_FIELDS = (
 )
 
 
+# Each time modifier with the field it qualifies.
+_MODIFIER_BASE = {
+  'seriesModifier': 'series',
+  'stageModifier': 'stage',
+  'localSeriesModifier': 'localSeries',
+  'localStageModifier': 'localStage',
+}
+
+
 def _field_words(value, fields):
   """The present ones of `fields`, each field's values joined by ", ", the
-  fields joined by "; "."""
-  parts = [', '.join(_flat_words(value.get(k))) for k in fields if value.get(k)]
+  fields joined by "; ". A modifier reads before the field it qualifies as
+  one phrase ("upper Lower Cambrian"); with no such field it stands alone."""
+  modifiers = {
+    base: value[k]
+    for k, base in _MODIFIER_BASE.items()
+    if k in fields and base in fields and value.get(k) and value.get(base)
+  }
+  parts = []
+  for k in fields:
+    if not value.get(k) or (_MODIFIER_BASE.get(k) in modifiers):
+      continue
+    words = ', '.join(_flat_words(value[k]))
+    parts.append(f'{modifiers[k]} {words}' if k in modifiers and words else words)
   return '; '.join(p for p in parts if p)
 
 
@@ -525,9 +547,37 @@ class Words:
     return words
 
   def _occurrence_words(self, claim):
-    """ "occurrence <key>: " and the context's time, unit and place words."""
-    fields = ('stage', 'series', 'unit', 'location', 'period', 'localStage', 'biozone')
-    body = _field_words(claim.get('occurrence') or {}, (*fields, 'localityNumbers'))
+    """ "occurrence <key>: " and the context's time, unit, place and zone
+    words, a modifier read before its unit ("upper Lower Cambrian")."""
+    fields = (
+      'stage',
+      'stageBoundary',
+      'stageRange',
+      'stageModifier',
+      'series',
+      'seriesBoundary',
+      'seriesRange',
+      'seriesModifier',
+      'unit',
+      'location',
+      'eon',
+      'era',
+      'period',
+      'localPeriod',
+      'localSeries',
+      'localSeriesBoundary',
+      'localSeriesRange',
+      'localSeriesModifier',
+      'localStage',
+      'localStageBoundary',
+      'localStageRange',
+      'localStageModifier',
+      'biozone',
+      'biozones',
+      'biozoneRange',
+      'localityNumbers',
+    )
+    body = _field_words(claim.get('occurrence') or {}, fields)
     prefix = f'occurrence {claim["contextKey"]}' if claim.get('contextKey') else 'occurrence'
     return f'{prefix}: {body}' if body else prefix
 
@@ -546,7 +596,7 @@ class Words:
     return words
 
   def _range_claim_words(self, claim):
-    """ "range: <time words>; <regions>"."""
+    """ "range: <time words>; <regions>", a modifier read before its unit."""
     value = claim.get('range') or {}
     regions = ', '.join(_region_words(r) for r in value.get('regions') or ())
     body = '; '.join(p for p in (_field_words(value, _TIME_FIELDS), regions) if p)

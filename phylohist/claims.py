@@ -133,6 +133,10 @@ DERIVED_COVERAGE_FIELDS = {
 }
 
 
+# The ranks below which specimens are cited; `material` coverage counts
+# only nodes at these (phylohist/loader/taxa.py spells the same tuple).
+SPECIES_LEVEL_RANKS = ('species', 'subspecies', 'variety')
+
 _rank_hubs = None
 
 
@@ -654,7 +658,10 @@ def derived_material_coverage(roots):
   when no node writes a null for them (a value records what the source
   prints, not that the file was audited for it); else `all` when no node
   lacks the fields (`partly` if a material entry has `listComplete:
-  false`) and `partly` when some node does."""
+  false`) and `partly` when some node does. For `material` only the
+  species-level nodes are counted, since specimens are cited for species
+  and a genus or higher node without `material` is not an uncaptured
+  field."""
   out = {}
   for source_key, trees in roots.items():
     unused = set(trees[0].file_unused) if trees else set()
@@ -669,7 +676,10 @@ def derived_material_coverage(roots):
       if set(fields) <= unused:
         values[kind] = 'na'
         continue
-      states = [_node_writes(node.data, fields) for node in nodes]
+      counted = nodes
+      if kind == 'material':
+        counted = [node for node in nodes if node.taxon.rank in SPECIES_LEVEL_RANKS]
+      states = [_node_writes(node.data, fields) for node in counted]
       if not any(null for _, null in states):
         values[kind] = None
       elif not all(present for present, _ in states):

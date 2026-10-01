@@ -29,15 +29,53 @@ listed repository no number uses, so run the suite after a batch.
 
 ## Sprinkle 1973
 
-Migrated mechanically; re-entry from the paper is stage 3. Until then:
+Re-entered from the paper on 2026-09-30; the report, with every null
+and its reason, is `notes/reviews/review_1973_sprinkle.md`. Left for the
+owner, each with its page there:
 
-- "EE 39" and "EE 51" resolve to `nhmuk` by prefix, which is probably
-  wrong: the inline comment calls them casts, and the paper's E and BC
-  casts are the Caster Collection's. Check the page.
-- The bare numbers "610", "611a", "611b", "611c" on elongatus are MCZ
-  numbers in the paper ("Holotype MCZ 610; figured paratype MCZ 611a").
-- "PE-199" and "PE-199-A" are the North Museum's, to be deposited; the
-  casts MCZ 629A and B are `castOf` them.
+- Skeleton: the tree has no node for *Lysocystites sculptus*, which is
+  the species all the *Lysocystites* material and figures belong to
+  (pp. 139–142, Pl. 33); `nodosus`, the type species, carries
+  `material: null`. The other figured or cited taxa with no node
+  (*Columbocystis typica*, *Malocystites murchisoni*, *Cystidea
+  nugatula*, the unassigned plates) are listed there.
+- Three `material` nulls are on species whose specimens the paper
+  mentions without citing: *Acanthocystites briareus* ("Only a single
+  specimen ... is known to exist", p. 105), *Pareocrinus ljubzovi*
+  ("based on only a single complete specimen ... No material was
+  available for study", p. 112) and *Cambrocrinus regularis*
+  (Orłowski's "approximately 50 partially complete specimens", p. 121).
+  *Blastocystis rossica*, the same case but figured, has a `label`
+  entry with `examined: false`. Decide which reading the null means.
+- Misprints to read: "syntype USNM 6431" (p. 83); holotype "USNM
+  165478" against 165378 elsewhere (p. 151); "MCZ 602–RO–5" against
+  the plates' "602-R3" and "602-R1-4" (p. 168, Pls. 40–41); the cast
+  numbers of Pl. 3.
+- Suspected errors in the tree itself, not touched: the root's
+  attribution (the paper prints "Bruguière, 1789"), the key
+  `charcariaedens` (printed *carchariaedens*), "Ressler" for Resser,
+  Jaekel "1980", *Bockia neglecta* "Hecker, 1938", the two
+  "incorrectly given as 1859" notes, and the doubled `diploporita-class`
+  and `palaeocystites` nodes.
+
+What the model could not say, for stage 4:
+
+- `of` and `castOf` match a catalog number exactly, so a figure of one
+  specimen inside a printed run ("paratypes GSC 25935–25961", Pl. 20)
+  cannot name it while the run is a range pair; the runs that plates
+  cite into are entered expanded, with the printed form in
+  `catalogNumbersAsPrinted`.
+- A species whose provenance is only file-level contexts linked from
+  its material carries neither `contexts` nor `ranges`, and the derived
+  `occurrences` coverage reads that as not captured (eleven species;
+  the source derives `partly`).
+- A number printed without a prefix and held privately ("500–501 ...
+  borrowed from A. R. Palmer") has `holder` and still draws the
+  unresolved-prefix warning.
+- A queried age ("Middle Ordovician(?)") has no tentative form; the
+  "(?)" is in the range's `notes`.
+- One number cited under two species (MCZ 643, MCZ 644, GSC 25954) is
+  entered under both as printed.
 
 ## Other
 

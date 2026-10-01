@@ -7771,36 +7771,41 @@
    "claims": {
     "acceptance": 12,
     "act": 75,
-    "material": 67,
+    "material": 575,
     "placement": 126,
     "rejection": 19,
     "usage": 170
    },
    "coverage": {
-    "illustrations": null,
-    "material": null,
+    "illustrations": "partly",
+    "material": "partly",
     "newTaxa": null,
-    "occurrences": null,
+    "occurrences": "partly",
     "phylogeny": null,
     "skeleton": null,
     "synonymy": null,
     "types": null
    },
    "derived": {
-    "material": 67,
+    "illustrations": 278,
+    "material": 160,
     "newTaxa": 27,
+    "occurrences": 137,
     "skeleton": 315,
     "synonymy": 12,
     "types": 29
    },
    "derivedCoverage": {
-    "illustrations": null,
-    "material": null,
-    "occurrences": null
+    "illustrations": "partly",
+    "material": "partly",
+    "occurrences": "partly"
    },
    "inconsistencies": [],
    "material": {
-    "specimen": 67
+    "illustration": 278,
+    "occurrence": 94,
+    "range": 43,
+    "specimen": 160
    },
    "tree": true
   },
