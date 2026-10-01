@@ -14,7 +14,7 @@ from .acts import RELATED_ACTS
 from .loader.material import (
   AMBIGUOUS,
   context_key,
-  entry_identifies,
+  entries_named,
   repository_of,
   repository_registry,
 )
@@ -134,7 +134,8 @@ DERIVED_COVERAGE_FIELDS = {
 
 
 # The ranks below which specimens are cited; `material` coverage counts
-# only nodes at these (phylohist/loader/taxa.py spells the same tuple).
+# only nodes at these (phylohist/loader/taxa.py spells the same tuple);
+# `illustrations` coverage counts them too, since figures are of species.
 SPECIES_LEVEL_RANKS = ('species', 'subspecies', 'variety')
 
 _rank_hubs = None
@@ -606,8 +607,9 @@ class _NodeClaims:
       of = figure.get('of')
       named = []
       for value in of if isinstance(of, list) else [of] if of is not None else ():
+        entries = entries_named([entry for entry, _ in self._entry_claims], value)
         for entry, specimen in self._entry_claims:
-          if entry_identifies(entry, value) and specimen not in named:
+          if any(entry is hit for hit in entries) and specimen not in named:
             named.append(specimen)
       for specimen in named:
         specimen.setdefault('specimenIllustrations', []).append(claim['illustration'])
@@ -644,30 +646,34 @@ class _NodeClaims:
       claim['id'] = claim_id
 
 
-def _node_writes(data, fields):
-  """`(present, null)`: whether the node carries any of `fields`, and
-  whether any of those it carries is an explicit null."""
+def _node_writes(data, fields, linked=False):
+  """`(present, null)`: whether the node carries any of `fields` (or
+  `linked`, a value reached some other way), and whether any of those it
+  carries is an explicit null."""
   present = [field for field in fields if field in data]
-  return bool(present), any(data[field] is None for field in present)
+  return bool(present) or linked, any(data[field] is None for field in present)
 
 
 def derived_material_coverage(roots):
   """Per source, `{kind: value}` for `material`, `occurrences` and
-  `illustrations`, from raw node state over primary, non-cited, named
-  nodes: `na` when the file lists the kind's fields as `unused`; `None`
-  when no node writes a null for them (a value records what the source
-  prints, not that the file was audited for it); else `all` when no node
-  lacks the fields (`partly` if a material entry has `listComplete:
-  false`) and `partly` when some node does. For `material` only the
-  species-level nodes are counted, since specimens are cited for species
-  and a genus or higher node without `material` is not an uncaptured
-  field."""
+  `illustrations`, from raw node state over the primary, non-cited, named
+  nodes of the source's taxonomy trees (a cladogram prints no material):
+  `na` when the file lists the kind's fields as `unused`; `None` when no
+  node writes a null for them (a value records what the source prints, not
+  that the file was audited for it); else `all` when no node lacks the
+  fields (`partly` if a material entry has `listComplete: false`) and
+  `partly` when some node does. For `material` and `illustrations` only the
+  species-level nodes are counted, since specimens are cited and figures
+  drawn for species, and a genus or higher node without either is not an
+  uncaptured field. A node whose `material` entry has a `context` carries
+  `occurrences` through that link, whatever else it writes."""
   out = {}
   for source_key, trees in roots.items():
     unused = set(trees[0].file_unused) if trees else set()
     nodes = [
       node
       for root in trees
+      if root.tree_type == 'taxonomy'
       for node in root.walk()
       if node.is_primary and not node.is_cited and node.taxon is not None
     ]
@@ -677,9 +683,17 @@ def derived_material_coverage(roots):
         values[kind] = 'na'
         continue
       counted = nodes
-      if kind == 'material':
+      if kind != 'occurrences':
         counted = [node for node in nodes if node.taxon.rank in SPECIES_LEVEL_RANKS]
-      states = [_node_writes(node.data, fields) for node in counted]
+      states = [
+        _node_writes(
+          node.data,
+          fields,
+          linked=kind == 'occurrences'
+          and any(entry.get('context') for entry in node.data.get('material') or ()),
+        )
+        for node in counted
+      ]
       if not any(null for _, null in states):
         values[kind] = None
       elif not all(present for present, _ in states):

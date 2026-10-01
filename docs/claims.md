@@ -287,15 +287,17 @@ land unnoticed.
 Three kinds, `material`, `occurrences` (the node fields `contexts` and
 `ranges`) and `illustrations`, are also read from the tree itself (G11):
 `claims.derived_material_coverage(roots)` walks the primary, non-cited,
-named nodes of a source. A kind whose fields the file lists as `unused` is
+named nodes of a source's taxonomy trees (a cladogram prints no material).
+A kind whose fields the file lists as `unused` is
 `na`. Otherwise, when no node writes a `null` for the kind's fields, it is
 `None` and declares nothing: a value records what the source prints, not
 that the file was audited for it. When some node writes a null, the kind is
 `all` if no node lacks the fields (`partly` if a material entry has
-`listComplete: false`), and `partly` if some node does. For `material` only
-the species-level nodes (species, subspecies, variety) are counted, since
-specimens are cited for species; `occurrences` and `illustrations` count
-every named node. Each source row carries `derivedCoverage` (this raw
+`listComplete: false`), and `partly` if some node does. For `material` and
+`illustrations` only the species-level nodes (species, subspecies, variety)
+are counted, since specimens are cited and figures drawn for species;
+`occurrences` counts every named node, and a node whose `material` entry
+has a `context` counts as carrying it. Each source row carries `derivedCoverage` (this raw
 result) and `coverage`, the effective map: the declared value for
 `skeleton`, `newTaxa`, `types`, `synonymy` and `phylogeny`, and for the
 three node-state kinds the derived value when there is one, else the

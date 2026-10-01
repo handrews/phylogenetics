@@ -7777,10 +7777,10 @@
     "usage": 170
    },
    "coverage": {
-    "illustrations": "partly",
+    "illustrations": "all",
     "material": "partly",
     "newTaxa": null,
-    "occurrences": "partly",
+    "occurrences": "all",
     "phylogeny": null,
     "skeleton": null,
     "synonymy": null,
@@ -7796,9 +7796,9 @@
     "types": 29
    },
    "derivedCoverage": {
-    "illustrations": "partly",
+    "illustrations": "all",
     "material": "partly",
-    "occurrences": "partly"
+    "occurrences": "all"
    },
    "inconsistencies": [],
    "material": {

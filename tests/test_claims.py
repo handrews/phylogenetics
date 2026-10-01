@@ -565,13 +565,86 @@ def test_derived_material_coverage():
   assert derived(both, 'occurrences') == 'na'
 
   # `illustrations` reads the `illustrations` field.
-  ill = tree({'taxon': 'rhenopyrgus', 'illustrations': None}, 10)
+  ill = tree({'taxon': 'rhenopyrgus', 'children': [{**child, 'illustrations': None}]}, 10)
   assert derived(ill, 'illustrations') == 'all'
 
-  # Unlike `material`, `illustrations` counts higher nodes: a genus without
-  # the field is not `all`.
-  ill_genus = tree({'taxon': 'rhenopyrgus', 'children': [{**child, 'illustrations': None}]}, 12)
-  assert derived(ill_genus, 'illustrations') == 'partly'
+  # Like `material`, `illustrations` counts species-level nodes only: a
+  # genus without the field is not an uncaptured one, so a species value
+  # and a species null are `all`.
+  ill_genus = tree(
+    {
+      'taxon': 'rhenopyrgus',
+      'children': [
+        {**child, 'illustrations': [{'plate': 1}]},
+        {**other, 'illustrations': None},
+      ],
+    },
+    12,
+  )
+  assert derived(ill_genus, 'illustrations') == 'all'
+  # A species lacking the field still makes it `partly`.
+  ill_species = tree(
+    {'taxon': 'rhenopyrgus', 'children': [{**child, 'illustrations': None}, other]}, 13
+  )
+  assert derived(ill_species, 'illustrations') == 'partly'
+  # A figure on a genus is a value, not a null: it does not declare.
+  ill_on_genus = tree({'taxon': 'rhenopyrgus', 'illustrations': [{'plate': 1}]}, 14)
+  assert derived(ill_on_genus, 'illustrations') is None
+
+  # `occurrences` is captured through a material entry's `context`: a
+  # species with no `contexts`/`ranges` but a linked entry counts as
+  # present, beside a species whose `ranges` is null.
+  linked = tree(
+    {
+      'taxon': 'rhenopyrgus',
+      'ranges': [{'series': 'Ordovician'}],
+      'children': [
+        {**child, 'material': [{'label': 'A', 'context': 'x'}]},
+        {**other, 'ranges': None},
+      ],
+    },
+    15,
+  )
+  assert derived(linked, 'occurrences') == 'all'
+  # Without the link the same species is an uncaptured field.
+  unlinked = tree(
+    {
+      'taxon': 'rhenopyrgus',
+      'ranges': [{'series': 'Ordovician'}],
+      'children': [{**child, 'material': [{'label': 'A'}]}, {**other, 'ranges': None}],
+    },
+    16,
+  )
+  assert derived(unlinked, 'occurrences') == 'partly'
+  # A linked node that also writes a null is present and still declares.
+  linked_null = tree(
+    {
+      'taxon': 'rhenopyrgus',
+      'ranges': [{'series': 'Ordovician'}],
+      'children': [{**child, 'material': [{'label': 'A', 'context': 'x'}], 'contexts': None}],
+    },
+    17,
+  )
+  assert derived(linked_null, 'occurrences') == 'all'
+  linked_only = tree(
+    {
+      'taxon': 'rhenopyrgus',
+      'ranges': [{'series': 'Ordovician'}],
+      'children': [{**child, 'material': [{'label': 'A', 'context': 'x'}]}],
+    },
+    18,
+  )
+  assert derived(linked_only, 'occurrences') is None
+
+  # Only taxonomy trees are counted: a cladogram's nodes print no material,
+  # so a root of that type contributes none and cannot make a kind `partly`.
+  taxonomy = tree({'taxon': 'rhenopyrgus', 'children': [{**child, 'material': None}]}, 19)
+  cladogram = Tree(
+    {'taxon': 'rhenopyrgus', 'children': [other]},
+    {**base, 'type': 'cladogram', 'position': 20},
+  )
+  assert derived_material_coverage({'s': [taxonomy, cladogram]})['s']['material'] == 'all'
+  assert derived_material_coverage({'s': [cladogram]})['s']['material'] is None
 
 
 def test_manifest_reports_derived_disagreement(load_records, monkeypatch):
@@ -582,9 +655,8 @@ def test_manifest_reports_derived_disagreement(load_records, monkeypatch):
   audited = Tree(
     {
       'taxon': 'pyrgocystis',
-      'illustrations': None,
       'children': [
-        {'taxon': 'grayae_bather_1915', 'illustrations': [{'plate': 1, 'figures': [2]}]},
+        {'taxon': 'grayae_bather_1915', 'illustrations': None},
         {'taxon': 'sardesoni_bather_1915'},
       ],
     },

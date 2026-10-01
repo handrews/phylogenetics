@@ -7,7 +7,7 @@ loader (`load.py`) runs them over the corpus's own documents. Each check
 returns a list of ``(level, message)`` pairs, ``level`` being ``'error'``
 or ``'warning'``; the caller adds the source key and, for a per-node
 check, the node path. `repository_of`, `context_key` and
-`entry_identifies` are exported for the claims extractor
+`entries_named` are exported for the claims extractor
 (`phylohist.claims`); `set_repository_registry`/`repository_registry`
 hold the loaded `data/repositories.yaml`, set once by `load.py`, so the
 extractor can reach it the way it reaches `Source`.
@@ -120,6 +120,12 @@ def _catalog_values(node):
       yield entry, (number if isinstance(number, list) else [number])
 
 
+def _is_settled(entry):
+  """Whether the entry names its holder outright: an explicit `repository`,
+  or a private `holder` that has no registry entry to resolve to."""
+  return entry.get('repository') is not None or entry.get('holder') is not None
+
+
 def _has_ellipsis(elements):
   return any('...' in e or '…' in e for e in elements)
 
@@ -218,22 +224,67 @@ def unreferenced_file_contexts(document):
   ]
 
 
-def entry_identifies(entry, value):
+_NUMBER_RE = re.compile(r'^(.*?)(\d+)([A-Za-z]?)$')
+
+
+def _split_number(text):
+  """`(stem, digits, suffix)` of a catalog number, the stem's whitespace
+  runs collapsed, or `None` when it does not end in digits and at most one
+  letter."""
+  match = _NUMBER_RE.match(text) if isinstance(text, str) else None
+  if match is None:
+    return None
+  stem, digits, suffix = match.groups()
+  return _WHITESPACE_RE.sub(' ', stem), digits, suffix
+
+
+def _in_run(value, low, high):
+  """Whether `value` lies inside the run `[low, high]`: an integer run
+  (same stem, no suffix, `value` of that stem, a letter suffix allowed on
+  it) or a letter run (same stem and digits, a one-letter suffix on each,
+  the value's letter between the endpoints', case-sensitively)."""
+  parts = [_split_number(text) for text in (value, low, high)]
+  if None in parts:
+    return False
+  (v_stem, v_digits, v_suffix), (l_stem, l_digits, l_suffix), (h_stem, h_digits, h_suffix) = parts
+  if not v_stem == l_stem == h_stem:
+    return False
+  if not l_suffix and not h_suffix:
+    return int(l_digits) <= int(v_digits) <= int(h_digits)
+  if l_suffix and h_suffix and v_suffix and v_digits == l_digits == h_digits:
+    return l_suffix <= v_suffix <= h_suffix
+  return False
+
+
+def entry_identifies(entry, value, exact=False):
   """Whether `value` names `entry`, by `label` or by any element of a
-  `catalogNumbers` entry (a range pair's endpoints count separately)."""
+  `catalogNumbers` entry (a range pair's endpoints count separately). Unless
+  `exact`, a number lying inside a range pair's run also names it."""
   if entry.get('label') == value:
     return True
   for number in entry.get('catalogNumbers') or ():
     elements = number if isinstance(number, list) else [number]
     if value in elements:
       return True
+    if not exact and len(elements) == 2 and _in_run(value, *elements):
+      return True
   return False
+
+
+def entries_named(entries, value):
+  """The entries `value` names: those it names exactly, else those whose
+  range-pair run contains it. Callers read "names exactly one entry" from
+  the length."""
+  exact = [entry for entry in entries if entry_identifies(entry, value, exact=True)]
+  return exact or [entry for entry in entries if entry_identifies(entry, value)]
 
 
 def figure_refs(node, is_cited=False):
   """Every `illustrations[*].of` on a primary node names exactly one
   material entry on the node, by exact string against a catalog number
-  (either range endpoint) or the label; no match or several is an error.
+  (either range endpoint) or the label, or else by a number inside a range
+  pair's run (an exact match takes precedence); no match or several is an
+  error.
   A cited entry's locators name nothing on the node (`null_material`
   rejects an `of` there), so they are not read."""
   if is_cited:
@@ -247,7 +298,7 @@ def figure_refs(node, is_cited=False):
     if of is None:
       continue
     for value in of if isinstance(of, list) else [of]:
-      matches = sum(1 for entry in entries if entry_identifies(entry, value))
+      matches = len(entries_named(entries, value))
       if matches != 1:
         messages.append(
           ('error', f'figure "of" value "{value}" matches {matches} material entries, not 1'),
@@ -257,16 +308,16 @@ def figure_refs(node, is_cited=False):
 
 def cast_refs(node):
   """Every `castOf` names exactly one material entry on the node, by the
-  same rule as figure `of` (exact string against a catalog number, a range
-  endpoint included, or a `label`); no match or several is an error, and
-  an entry naming itself is an error."""
+  same rule as figure `of` (a catalog number, a range endpoint included, or
+  a `label`, else a number inside a range pair's run); no match or several
+  is an error, and an entry naming itself is an error."""
   messages = []
   entries = node.get('material') or ()
   for entry in entries:
     value = entry.get('castOf')
     if value is None:
       continue
-    matches = [other for other in entries if entry_identifies(other, value)]
+    matches = entries_named(entries, value)
     if len(matches) != 1:
       messages.append(
         ('error', f'castOf "{value}" matches {len(matches)} material entries, not 1'),
@@ -279,10 +330,10 @@ def cast_refs(node):
 def unresolved_catalog_numbers(node, repositories, file_repositories=()):
   """The printed values of `node`'s catalog numbers whose prefix resolves
   to no repository (an ambiguous prefix is not listed: `catalog_numbers`
-  reports it), among entries with no explicit `repository`."""
+  reports it), among entries with no explicit `repository` or `holder`."""
   unresolved = []
   for entry, elements in _catalog_values(node):
-    if entry.get('repository') is not None or _has_ellipsis(elements):
+    if _is_settled(entry) or _has_ellipsis(elements):
       continue
     unresolved.extend(
       e for e in elements if repository_of(e, repositories, file_repositories)[1] is None
@@ -295,8 +346,9 @@ def catalog_numbers(node, repositories, file_repositories=()):
   entries: an explicit `repository` not a registry key is an error; an
   ellipsis in a printed number is an error; for a number with no explicit
   `repository`, an unmatched prefix is a warning (stage 4 makes it an
-  error), a prefix still claimed by several entries after
-  `file_repositories` is an error naming them, and a range whose
+  error) unless the entry has a private `holder`, a prefix still claimed
+  by several entries after `file_repositories` is an error naming them
+  (`holder` or not), and a range whose
   endpoints resolve to different repositories is an error.
   """
   messages = []
@@ -314,9 +366,10 @@ def catalog_numbers(node, repositories, file_repositories=()):
     for element in elements:
       key, via = repository_of(element, repositories, file_repositories)
       if via is None:
-        messages.append(
-          ('warning', f'catalog number "{element}" has no resolvable repository prefix'),
-        )
+        if entry.get('holder') is None:
+          messages.append(
+            ('warning', f'catalog number "{element}" has no resolvable repository prefix'),
+          )
       elif via == AMBIGUOUS:
         messages.append(
           ('error', f'catalog number "{element}" has an ambiguous prefix: {", ".join(key)}'),

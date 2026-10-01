@@ -944,8 +944,9 @@ ranges:                        # distribution statements, not provenance
   specimen came from. A specimen with no stated context has no `context`.
   A file that gives one locality for thirty taxa states it once.
 - An `illustrations` entry's `of` names a material entry on the same node
-  by catalog number (range endpoints count) or label; `depicts` records
-  the medium (cast, reconstruction, drawing). An entry with no `of` is a
+  by catalog number (range endpoints count, and so does a number inside a
+  range pair's run, an exact match taking precedence) or label; `depicts`
+  records the medium (cast, reconstruction, drawing). An entry with no `of` is a
   figure the source never ties to a specimen, the honest state of most
   pre-1900 work. A locator inside a synonymy entry's `authority` has the
   same shape and the same name: a figure in the cited work (D4).
@@ -1009,7 +1010,8 @@ the leading letters of the catalog number, folding a hyphen or space
 between prefix and number, matches the longest prefix or former name at
 a token boundary, and tries the file's listed entries first; a prefix
 still claimed by two entries, or a listed entry no number uses, is an
-error. `holder` names a private holder with no registry entry.
+error. `holder` names a private holder with no registry entry, so its
+numbers need no resolvable prefix.
 Unresolved prefixes are reported now and fail at stage 4 (F2).
 
 **D4. One name, two roles.** The same locator fields serve two roles
@@ -1189,7 +1191,8 @@ fail also exit non-zero.
 number's prefix resolves against `data/repositories.yaml` (keys,
 `prefixes` and `otherNames`), the tree file's `repositories` list deciding
 between entries that print the same prefix (D3). A material entry's
-explicit `repository` bypasses resolution and must be a registry key.
+explicit `repository` bypasses resolution and must be a registry key, and a
+`holder` excuses an unresolvable prefix (not an ambiguous one).
 The catalog number keeps the printed prefix either way.
 
 **F3. Time values, fail.** Every `stage`, `series`, `period` and regional value
@@ -1411,10 +1414,14 @@ which has no node-level form). For the content kinds the map is derived:
 `all` when no node has the field absent; `none` when every node has it
 absent and the file does not list it; `partly` otherwise. For `material`
 the nodes counted are the species-level ones (species, subspecies,
-variety), since specimens are cited for species; `contexts`, `ranges` and
-`illustrations` count every named node (decided 2026-09-30 with the
-Sprinkle 1973 re-entry). The cross-check in the claims extractor (a
-declared `all` against zero claims) then inverts into a migration aid
+variety), since specimens are cited for species; `contexts` and `ranges`
+count every named node (decided 2026-09-30 with the Sprinkle 1973
+re-entry). Revised 2026-10-01: `illustrations` counts the species-level
+nodes too, since figures are of species (a figure on a higher node is still
+a value and a claim); a node whose `material` entry has a `context` counts
+as carrying `occurrences`, even beside a `contexts: null`; and only
+taxonomy trees are counted, since a cladogram prints no material. The
+cross-check in the claims extractor (a declared `all` against zero claims) then inverts into a migration aid
 comparing the declared map with the derived one, and disappears when
 nothing is declared any more.
 
