@@ -197,8 +197,10 @@ entries.
 ### `certainty`
 
 Not a kind of its own. The C-axis markers (`provisional`, `questionable`,
-`quoted`, `tentative`, `pars`, `cf.`, `aff.`, `illustration.uncertain`) ride
-on the claim they qualify, as fields. No separate table.
+`quotedParent`, `quoted`, `nonMonophyletic`, `tentative`, `pars`, the
+`compared` link of a cf. or aff. form, `uncertain` and `roleUncertain` on a
+specimen, `illustration.uncertain`) ride on the claim they qualify, as
+fields. No separate table.
 
 ### `material`
 

@@ -845,36 +845,115 @@ which spelling is original.
 
 ## C. Open nomenclature and uncertainty
 
-Ten markers, each hedging a different thing. Keep them distinct but name the
-axis each one sits on.
+Each marker hedges a different thing, and the field is chosen by what is
+hedged, never by the mark alone: the same doubt is printed as "?", as
+quotation marks or in a sentence, and the same mark is printed for
+different doubts. Settled 2026-10-01 against Matthews 1973 (after Richter
+1948), Bengtson 1988 and Code Art. 5.3, and built the same week.
 
-| axis | field | printed form | meaning |
+| what is hedged | field | printed form | meaning |
 |---|---|---|---|
-| identification of material | `cfTaxon` | "cf." (*Preface* xxii: confer, compare) | compared with the named taxon; identification tentative |
-| identification of material | `affTaxon` | "aff." (*Preface* xxii: affinis, related to) | related to but distinct from the named taxon; usually undescribed |
-| identification of material | `illustration.uncertain` | "?" on a figure | figured specimen doubtfully assigned, no cf. target |
-| name in open nomenclature | `openTaxon` + `designation` | "sp.", "sp. indet.", "gen. et sp. nov." | unnamed placeholder |
-| placement | `provisional` | "?" before the parent, "incertae sedis" | assignment to parent tentative |
-| validity of the taxon | `questionable` | "?" before the name | the taxon itself doubtful |
-| validity of the taxon | `quoted` | name in quotation marks | name used informally or as unavailable |
-| acceptance of a usage | `tentative` | "?" before the entry | acceptance tentative |
-| acceptance of a usage | `pars` | "partim" | only part of the cited material |
+| an identification of material against a named taxon | `openTaxon` + `cf` | "cf." | a provisional identification; the form has its own record and a link to the taxon it is compared with |
+| a new, undescribed form related to a named taxon | `openTaxon` + `aff` | "aff.", "n. sp., aff." | a form its author thinks new; own record and link |
+| a name in open nomenclature | `openTaxon` + `designation` | "sp.", "sp. indet.", "Genus and Species Indeterminate" | unnamed placeholder, shown in the words of its key or its printed designation |
+| one specimen's assignment to the taxon | `uncertain` on the material entry | "possible additional specimens", "*Agenus album*?" over one specimen | the specimen is doubtfully this taxon |
+| a figure's assignment | `uncertain` on the illustration | "?" on a figure | the figured specimen is doubtfully this taxon, for a figure tied to no material entry |
+| a specimen's role | `roleUncertain` on the material entry | "topotype?" | the role word is queried, the assignment is not |
+| placement | `provisional` | "*Agenus*? *album*", "?" before the parent, "incertae sedis" | the assignment to the parent is tentative |
+| the genus a species is printed in | `quotedParent` on the species | "Agenus" *album* | the species carries the genus name and the source does not accept that it belongs there |
+| the taxon itself | `questionable` | "?" on the name; quotes with a stated reason | the source doubts the taxon, whether or not it erects it |
+| a group's monophyly | `nonMonophyletic` | a statement, with or without quotes | `true`, `paraphyletic` or `polyphyletic`; absent says nothing |
+| the node's own name in quotes | `quoted` | "Timeischytes" | the literal mark; the reason is in `notes` or in another flag |
+| acceptance of a cited usage | `tentative` | "?" before a synonymy entry | the list author's doubt |
+| acceptance of a cited usage | `pars` | "partim" | only part of the cited material |
 | name identity | `needsQualification` | — | housekeeping only |
 
-**C1 (MVP). The tree encodes where cf. and aff. apply.** Because species are
-entities, "*Gogia* cf. *G. spiralis*" is a genus node with a `cfTaxon` species
-child, and "cf. *Gogia*" is a `cfTaxon` genus node with species children. The
-data already does this: all 29 species-level qualifiers sit under a genus node
-with no children, and both genus-level ones (Buch 1844) carry children. Document
-the convention; no new field.
+**C1 (done 2026-10-01). A cf. or aff. form is an open taxon with a
+link.** The old `cfTaxon` and `affTaxon` nodes borrowed the record of the
+named species, so the specimens of "*Lepidocystis* cf. *L. wanneri*" were
+filed as statements about *L. wanneri*, and two "aff. *wilkinsi*" forms
+in one paper could not be told apart. The signs do not form part of a
+name (Code Art. 5.3), and Richter's convention already treats a piece of
+open nomenclature as a thing with its own author and year (Matthews 1973,
+p. 715: "*Agenus* cf. *album* Anton (cf. Bruno)"), with letters for
+several forms compared with one species (p. 716: "n. sp. a, aff.
+*album*"). So:
 
-**C2 (MVP). Integrity check on cf./aff. targets.** The target key resolves; a
-species-rank target sits under a genus node; a genus-rank target may carry
-children.
+- The node is `openTaxon: <key>` with a record in `taxa.yaml`
+  (`name: null`), made by hand like any other, and `cf: <taxon>` or
+  `aff: <taxon>` on the node. The key is
+  `<genus>-<cf|aff>-<epithet>_<authors>_<year>`, lettered when one
+  source has several; the display comes from the key's words
+  ("Lepidocystis cf. wanneri"), or from `designation` when the printed
+  phrase differs.
+- The two signs differ in kind. "aff." marks "a new, previously
+  undescribed species" and "does not necessarily involve uncertainty";
+  "cf." marks a provisional identification (Bengtson 1988, p. 224). The
+  field name is the printed sign, so neither is interpreted further.
+- The form's claims are its own. A name's `history` lists the forms
+  compared with it under their own names; `statements`, `descendants`
+  and the rest do not pull them in, since a compared form is not the
+  taxon.
+- A later source that cites the form (in a synonymy, or by refining it)
+  uses the same record: von Buch 1840 cites Pander 1830's "aff.
+  *laevis*"; Sumrall & Bowsher 1996 list Bell 1976's "Genus and Species
+  Indeterminate" under their *Giganticlavus* cf. *G. bennisoni*, the
+  same two specimens under a narrower designation. When the cited source
+  has no tree, the record is still made, credited to it.
+- `new: true` on such a node says the source originates the form. It is
+  set from the paper, never by rule: the 1996 cf. form above is a
+  renaming, and carries none.
 
-**C3.** "ex gr.", "?" between genus and species, and the B12/B13 markers appear
-in the literature but not yet in the data. Add fields only when a source prints
-them, on the identification axis.
+**C2 (done 2026-10-01). Integrity checks**
+(`phylohist/loader/nomenclature.py`). `cf` or `aff` only on an
+`openTaxon` node and never both; the target resolves to a named record of
+the same rank group; one open record used with two different links is
+reported; `quotedParent` only on a species-level name; `roleUncertain`
+only beside a `role`.
+
+**C3 (decided 2026-10-01). Position gives the field for "?" and for
+quotation marks.**
+
+- "*Agenus*? *album*" doubts the genus: `provisional` on the species.
+  "*Agenus album*?" doubts the identification (Matthews 1973, pp.
+  714–715): where it heads particular specimens, `uncertain` on their
+  material entries. A "?" on a taxon the source doubts as a taxon is
+  `questionable`, whether the source erects it (Miller 1821) or not (the
+  two orders of Guensburg & Sprinkle 2003).
+- A "?" before a synonymy entry is `tentative`. Richter keeps the two
+  kinds of sign apart: those inside a name "make up an integral part of
+  the name", those to the left of a list entry "express the judgements
+  of the author of the list" (Matthews 1973, pp. 714, 717). The flags
+  follow him: `provisional`, `questionable`, `quotedParent`, `cf` and
+  `aff` on a cited entry reproduce what the citation prints, and
+  `tentative` and `pars` are the citing author's.
+- Quotes on the genus of one species ("Totiglobus" *lloydi*) are
+  `quotedParent` on the species, which stays under the one genus node;
+  the placement carries the hedge as a provisional one does. Bengtson's
+  two reasons, a new genus not yet erected and an obsolete name (pp.
+  224, 226), are the same statement here and go in `notes` when given.
+- Quotes on a node's own name are `quoted`, a literal flag that says
+  nothing by itself. What the source means goes beside it: Müller, Hahn
+  & Bohatý 2013 say of their doubts about the genus, "To indicate this
+  unsatisfying situation, the genus name 'Timeischytes' is placed within
+  quotation marks" (p. 459), which is `questionable`; a quoted nomen
+  nudum has its `nomNudum` act.
+- A group said to be non-monophyletic is `nonMonophyletic`, quoted or
+  not, and quotes on a higher taxon do not set it by themselves.
+- A hedge in prose is the same flag with the wording quoted in `notes`.
+
+Open, each waiting for a source that needs it: a cf. or aff. on a genus
+(none is left in the data: von Buch 1844's two were prose placements); a
+queried affinity ("aff.?", Schlotheim 1826); "ex gr."; a doubtful
+identification with no specimens listed, which belongs with queried ages
+and occurrences (E8); Richter's other list signs (`*`, `.`, `v`, an
+italic year, a year in parentheses), not yet surveyed in the corpus;
+whose doubt a "?" inside an old citation is (Pander 1830); what the
+quotes in Bell 1891's diagram mean. Three things the tools do not do
+yet: an open form cannot be found by name, only by key or through the
+name it is compared with; `provisional` on a synonymy entry is stored
+and not printed; a placeholder's kind (a bin, an unnamed taxon, an open
+species, a compared form) is read from its key (C4).
 
 **C4. Uncertain versus unnamed placeholders.** Two different placeholders
 share the `openTaxon` mechanism. "Uncertain" or "indeterminate" (Smith 1985's
@@ -975,7 +1054,13 @@ role word. There is no separate field for the printed word. A role the
 source implies without printing it, "the type" for one specimen or for
 several, is recorded as the role the editor reads (holotype or syntype)
 with an `editorial` block on the entry: `inferred: [role]` and the
-`basis`. `allotype` and `kleptotype` are gone.
+`basis`. `allotype` and `kleptotype` are gone. The source's own doubt is
+separate from the editor's reading (C3): `uncertain: true` on an entry
+says the specimen is doubtfully assigned to the taxon ("possible
+additional specimens"), and `roleUncertain: true` that only the role is
+queried ("topotype?"). Doubt about the assignment covers the role, so
+"paratype(?)" on a possible additional specimen is `role: paratype` with
+`uncertain`.
 
 Holotypes are singular: two numbers for one holotype are one entry with
 two `catalogNumbers` and `parts: [part, counterpart]`. Whether a role is
@@ -1184,7 +1269,7 @@ The only code this roadmap asks for. Each check reports, and the ones marked
 fail also exit non-zero.
 
 **F1 (MVP). Reference resolution, fail.** Every source id, taxon key (including
-`cfTaxon`, `affTaxon`, `openTaxon`, `mergeInto` targets), author id and
+`openTaxon`, `cf`, `aff` and `mergeInto` targets), author id and
 `altSpellingOf` / `altRankOf` / `vulgarSpellingOf` target resolves.
 
 **F2. Repository prefixes: report now, fail at stage 4.** Every catalog
