@@ -877,6 +877,19 @@ def test_absence_table_groups_a_record_by_node(store):
   assert '-- Lepidocystis wanneri (p. 66) --' in block['rendered']
 
 
+def test_absence_table_leaves_out_species_level_kinds_above_species(store):
+  # Specimens and figures are cited for species: a genus with neither gets
+  # no row for them, and a genus that is figured keeps its figures row.
+  bare = store.statements('lepidocystis', source='1973_sprinkle', kind='absence')
+  assert [r['kind'] for r in bare['content'][0]['rows']] == ['occurrences', 'synonymy']
+  figured = store.statements('gogia', source='1973_sprinkle', kind='absence')
+  assert [(r['kind'], r['state']) for r in figured['content'][0]['rows']] == [
+    ('occurrences', 'entered'),
+    ('figures', 'entered'),
+    ('synonymy', 'notEntered'),
+  ]
+
+
 def test_absence_table_reads_coverage_where_nothing_is_entered(store):
   # Billings 1857 prints no figures and no synonymy (`na`), and enters
   # everything Dehm 1961 prints of a synonymy (`all`): none is printed there.

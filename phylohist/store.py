@@ -66,6 +66,9 @@ _NODE_CONTENT = (
   ('figures', {'illustration'}, 'illustrations', 'illustrations'),
   ('synonymy', None, 'synonymy', 'synonymy'),
 )
+# Specimens and figures are cited for species: above that rank a node with
+# neither says nothing, as in the derived coverage, and the row is left out.
+_SPECIES_LEVEL_CONTENT = frozenset({'specimens', 'figures'})
 
 _RANK_ORDER = (
   'kingdom',
@@ -844,9 +847,11 @@ class ClaimStore:
     """What a source gives at one node, per content kind: entered (with the
     count and the claims it rests on), none printed (the auditor's `absence`
     claim, or a source coverage that leaves nothing to enter), or not
-    entered."""
+    entered. Above species rank the specimens and figures rows appear only
+    when the node carries something of the kind."""
     at = self._node_claims(source_key, path)
     coverage = self.sources[source_key].get('coverage') or {}
+    species_level = self._rank_of(record) in blocks.SPECIES_GROUP
     rows = []
     for label, material_kinds, absence_of, coverage_kind in _NODE_CONTENT:
       if material_kinds is None:
@@ -865,6 +870,8 @@ class ClaimStore:
       elif absence:
         text = 'none printed'
         row = {'state': 'none', 'basis': 'null', 'count': None, 'claims': absence}
+      elif label in _SPECIES_LEVEL_CONTENT and not species_level:
+        continue
       elif coverage.get(coverage_kind) in ('na', 'all'):
         # The source prints none anywhere, or enters all it prints of the kind.
         text = 'none printed'

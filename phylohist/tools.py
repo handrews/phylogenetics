@@ -203,7 +203,8 @@ TOOL_DESCRIPTIONS = {
     'occurrences, figures, synonymy), each "N entered", "none printed" or '
     '"not entered": "none printed" is the auditor\'s statement about the '
     'paper (or follows from the source\'s coverage), "not entered" is work '
-    'not yet done. When a source is named '
+    'not yet done; above species rank the specimens and figures rows '
+    'appear only when the node has some. When a source is named '
     'and nothing of that kind about the record is entered, the result is '
     'the gap block for that source and kind: compose it as the answer.'
   ),
