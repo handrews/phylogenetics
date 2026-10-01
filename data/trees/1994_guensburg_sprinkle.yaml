@@ -29,9 +29,9 @@ taxonomies:
         - taxon: edriodiscus
           citedAs: Edriodiscus Smith, 1985
         - taxon: stromatocystites
-          quoted: true
           children:
           - taxon: walcotti_schuchert_1919
+            quotedParent: true
       - taxon: agelacrinitidae
         emended: true
         children:
@@ -126,10 +126,9 @@ taxonomies:
         - taxon: totiglobidae
           children:
           - taxon: totiglobus
-          - taxon: totiglobus
-            quoted: true
             children:
             - taxon: lloydi_sprinkle_1985
+              quotedParent: true
               provisional: true
               notes: |
                 "'Totiglobus' lloydi was provisionally assigned to genus at the time of its description because of poor preservation (Sprinkle, 1985)" (p. 19)
@@ -202,9 +201,9 @@ phylogenies:
                   - taxon: chatsworthia
                 - taxon: agelacrinitidae
           - taxon: stromatocystites
-            quoted: true
             children:
             - taxon: walcotti_schuchert_1919
+              quotedParent: true
         - children:
           - children:
             - taxon: totiglobus
@@ -216,9 +215,9 @@ phylogenies:
                   - taxon: rhenopyrgus
                   - taxon: cyathocystis
           - taxon: totiglobus
-            quoted: true
             children:
             - taxon: lloydi_sprinkle_1985
+              quotedParent: true
     - taxon: camptostroma
 - treeType: cladogram
   methodology: preferred parsimony B
@@ -241,9 +240,9 @@ phylogenies:
                   - taxon: chatsworthia
                 - taxon: agelacrinitidae
           - taxon: stromatocystites
-            quoted: true
             children:
             - taxon: walcotti_schuchert_1919
+              quotedParent: true
       - children:
         - children:
           - taxon: totiglobus
@@ -255,9 +254,9 @@ phylogenies:
                 - taxon: rhenopyrgus
                 - taxon: cyathocystis
         - taxon: totiglobus
-          quoted: true
           children:
           - taxon: lloydi_sprinkle_1985
+            quotedParent: true
     - taxon: camptostroma
 - treeType: cladogram
   methodology: Adams
@@ -286,13 +285,13 @@ phylogenies:
               - taxon: rhenopyrgus
               - taxon: cyathocystis
         - taxon: totiglobus
-          quoted: true
           children:
           - taxon: lloydi_sprinkle_1985
+            quotedParent: true
       - taxon: stromatocystites
-        quoted: true
         children:
         - taxon: walcotti_schuchert_1919
+          quotedParent: true
     - taxon: camptostroma
 - treeType: cladogram
   methodology: strict consensus
@@ -313,9 +312,9 @@ phylogenies:
               - taxon: chatsworthia
               - taxon: agelacrinitidae
         - taxon: stromatocystites
-          quoted: true
           children:
           - taxon: walcotti_schuchert_1919
+            quotedParent: true
       - children:
         - children:
           - taxon: totiglobus
@@ -326,6 +325,6 @@ phylogenies:
               - taxon: rhenopyrgus
               - taxon: cyathocystis
         - taxon: totiglobus
-          quoted: true
           children:
           - taxon: lloydi_sprinkle_1985
+            quotedParent: true

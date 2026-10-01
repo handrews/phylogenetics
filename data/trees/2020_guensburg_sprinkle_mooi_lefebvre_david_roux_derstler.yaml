@@ -81,9 +81,9 @@ assumptions:
   children:
   - taxon: sumralli_guensburg_sprinkle_2003
 - taxon: totiglobus
-  quoted: true
   children:
   - taxon: lloydi_sprinkle_1985
+    quotedParent: true
     provisional: true
 phylogenies:
 - treeType: cladogram
@@ -193,9 +193,9 @@ phylogenies:
         - taxon: titanocrinus
     - children:
       - taxon: totiglobus
-        quoted: true
         children:
         - taxon: lloydi_sprinkle_1985
+          quotedParent: true
       - taxon: pseudedriophus
     - bracket: blastozoa
       children:

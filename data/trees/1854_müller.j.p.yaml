@@ -22,7 +22,9 @@ taxonomies:
             - taxon: granatum_wahlenberg_1821
               parents:
               - taxon: caryocystites
-          - affTaxon: granatum_wahlenberg_1821
+          - openTaxon: echinosphaerites-aff-granatum_müller.j.p_1854
+            aff: granatum_wahlenberg_1821
+            new: true
           - taxon: aurantium_gyllenhaal_1772
           - taxon: auranea_schlotheim_1826
           - taxon: testudinarius_hisinger_1837

@@ -13,6 +13,8 @@ taxonomies:
           - taxon: bennisoni_sumrall_bowsher_1996
             type: true
             new: true
-          - cfTaxon: bennisoni_sumrall_bowsher_1996
+          - openTaxon: giganticlavus-cf-bennisoni_sumrall_bowsher_1996
+            cf: bennisoni_sumrall_bowsher_1996
+            new: true
           - taxon: gelasinus_sumrall_bowsher_1996
             new: true

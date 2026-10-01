@@ -80,51 +80,33 @@ What the model could not say, for stage 4:
 - One number cited under two species (MCZ 643, MCZ 644, GSC 25954) is
   entered under both as printed.
 
-## Von Buch 1844: the two genus-level `affTaxon` nodes
+## Open nomenclature, after the 2026-10-01 migration
 
-Not a material item; recorded here until the open-nomenclature fields
-are settled. The tree reads two prose notes at the end of the paper as
-"aff." and neither is. The passage, in the 1846 translation:
-
-> Pseudocrinites bicopuladigiti, figured by Mr. R. Garnet [...] and
-> described by Messrs. Bennett and Pearce, is manifestly a Cystidea
-> resembling Caryocystites. [...]
->
-> A species figured and described by Mr. J. Sowerby in the 'Zoological
-> Journal' (ii. 318) also probably belongs to this family. [...] a
-> considerable number of irregular plates surround, as in Sphaeronites,
-> the spheroidal figure. It was discovered by Mr. Bigsby not far from
-> the falls of La Chaudière on the Ottawa river in Lower Canada.
-
-"aff." marks a form its author thinks new and relates to a named taxon
-(Matthews 1973, p. 716; Bengtson 1988, p. 224). Von Buch does neither:
-he makes two placements in his family Cystidea and adds a comparison of
-form to each.
-
-- *Pseudocrinites bicopuladigiti*: "manifestly a Cystidea" is a firm
-  placement. The species goes under a `pseudocrinites` node, as he cites
-  it, directly under `cystidea-family`; "resembling Caryocystites" goes
-  in `notes`, quoted. Today it sits under `affTaxon: caryocystites` with
-  *Pseudocrinites* as a former genus, which reads as a recombination he
-  never makes.
-- Sowerby's species: "also probably belongs to this family" is a
-  provisional placement of a form Sowerby left unnamed. An open species
-  under `cystidea-family` with `provisional: true`; "as in Sphaeronites"
-  describes the plating and goes in `notes` or nowhere. Today it sits
-  under `affTaxon: sphaeronites`.
-- The form is already in the corpus under its own records. "Zoological
-  Journal (ii. 318)" is `1825b_sowerby.g.b`, the Bigsby specimen from
-  the Chaudière falls, whose tree has `asteriadae-gen_sowerby.g.b_1825`
-  and `asteriadae-gen-sp_sowerby.g.b_1825`. Von Buch's tree uses three
-  placeholders made before that source was identified:
-  `cystidea-sp_buch_1944` and the two
-  `crinoidea-secondhand-…_sowerby_1833` records (dated 1933, "date
-  uncertain"). Pointing von Buch's node at Sowerby's own open records
-  replaces all three, and is the worked case for an open record shared
-  by its author's tree and a later source that cites it.
-- These are the only genus-level cf. or aff. nodes in the corpus, so
-  once they go nothing prints one, and how to record a genus-level cf.
-  or aff. can wait for a source that does.
+- Gill & Caster 1960: the two forms entered as "aff. *wilkinsi*" are
+  now `victoriacystis-aff-wilkinsi-a_gill_caster_1960` and `-b`, in
+  tree order. Read what the paper calls them and set each record's
+  `designation` (or rename the keys).
+- Schlotheim 1826: the aff. form of *pomum* still carries
+  `questionable`. Whether the "?" doubts the form or the comparison
+  is for whoever reads that paper.
+- Sprinkle 1973, *Gogia multibrachiatus*: USNM 165425 is "additional
+  specimen (topotype?)" in the text (p. 86) and "plesiotype" on
+  Pl. 11. It is entered as `role: plesiotype` with the query in
+  `notes`. If the text's word is taken, it is `role: topotype` with
+  `roleUncertain: true`.
+- Guensburg & Sprinkle 1994 and Guensburg et al. 2020: *lloydi*
+  carries `provisional` beside `quotedParent`. The note attributes
+  the provisional assignment to Sprinkle 1985; check whether either
+  paper makes it its own.
+- Müller, Hahn & Bohatý 2013: "Timeischytes" *prescheri*? Grigo, 2000
+  is one specimen from the Prescher collection (Grigo's fig. 7). The
+  tree has no material for *prescheri*; when it does, that specimen
+  is an entry with `uncertain: true`.
+- Bell 1891 (draft): "Cystidea" is `quoted` twice, from a diagram.
+  What the quotes mean there is undecided.
+- `provisional` on a synonymy entry (twelve uses) is stored and
+  carried on no claim, so the tools do not print "Eocystites?
+  longidactylus" as cited.
 
 ## Other
 

@@ -2423,7 +2423,8 @@
   },
   "1826_schlotheim": {
    "acts": {
-    "new": 3
+    "new": 3,
+    "placeholder": 1
    },
    "audit": {
     "state": "unaudited"
@@ -2446,7 +2447,7 @@
    },
    "claims": {
     "acceptance": 9,
-    "act": 3,
+    "act": 4,
     "material": 7,
     "placement": 9,
     "usage": 21
@@ -2463,7 +2464,7 @@
    },
    "derived": {
     "illustrations": 7,
-    "newTaxa": 3,
+    "newTaxa": 4,
     "skeleton": 30,
     "synonymy": 9
    },
@@ -2565,7 +2566,8 @@
   },
   "1830_pander": {
    "acts": {
-    "new": 11
+    "new": 11,
+    "placeholder": 1
    },
    "audit": {
     "state": "unaudited"
@@ -2580,7 +2582,7 @@
    },
    "claims": {
     "acceptance": 3,
-    "act": 11,
+    "act": 12,
     "material": 14,
     "placement": 12,
     "usage": 18
@@ -2597,7 +2599,7 @@
    },
    "derived": {
     "illustrations": 14,
-    "newTaxa": 11,
+    "newTaxa": 12,
     "skeleton": 30,
     "synonymy": 3
    },
@@ -2714,7 +2716,8 @@
   },
   "1840_eichwald": {
    "acts": {
-    "new": 12
+    "new": 12,
+    "placeholder": 3
    },
    "audit": {
     "state": "unaudited"
@@ -2729,7 +2732,7 @@
    },
    "claims": {
     "acceptance": 7,
-    "act": 12,
+    "act": 15,
     "placement": 45,
     "usage": 58
    },
@@ -2744,7 +2747,7 @@
     "types": null
    },
    "derived": {
-    "newTaxa": 12,
+    "newTaxa": 15,
     "skeleton": 103,
     "synonymy": 7
    },
@@ -3162,10 +3165,10 @@
     "year": 1844
    },
    "claims": {
-    "acceptance": 14,
+    "acceptance": 11,
     "act": 5,
     "placement": 20,
-    "usage": 49
+    "usage": 44
    },
    "coverage": {
     "illustrations": null,
@@ -3179,8 +3182,8 @@
    },
    "derived": {
     "newTaxa": 4,
-    "skeleton": 69,
-    "synonymy": 14,
+    "skeleton": 64,
+    "synonymy": 11,
     "types": 1
    },
    "derivedCoverage": {
@@ -3600,6 +3603,7 @@
   "1854_müller.j.p": {
    "acts": {
     "new": 2,
+    "placeholder": 1,
     "type": 2
    },
    "audit": {
@@ -3615,7 +3619,7 @@
    },
    "claims": {
     "acceptance": 6,
-    "act": 4,
+    "act": 5,
     "placement": 30,
     "usage": 42
    },
@@ -3630,7 +3634,7 @@
     "types": null
    },
    "derived": {
-    "newTaxa": 2,
+    "newTaxa": 3,
     "skeleton": 72,
     "synonymy": 6,
     "types": 2
@@ -8048,6 +8052,7 @@
   "1975_kolata": {
    "acts": {
     "new": 18,
+    "placeholder": 5,
     "type": 24
    },
    "audit": {
@@ -8064,7 +8069,7 @@
    },
    "claims": {
     "acceptance": 18,
-    "act": 42,
+    "act": 47,
     "placement": 144,
     "usage": 179
    },
@@ -8079,7 +8084,7 @@
     "types": null
    },
    "derived": {
-    "newTaxa": 18,
+    "newTaxa": 23,
     "skeleton": 323,
     "synonymy": 18,
     "types": 24
@@ -8532,6 +8537,7 @@
   },
   "1982_bell.b.m": {
    "acts": {
+    "placeholder": 1,
     "type": 1
    },
    "audit": {
@@ -8550,7 +8556,7 @@
     "year": 1982
    },
    "claims": {
-    "act": 1,
+    "act": 2,
     "placement": 18,
     "usage": 19
    },
@@ -8565,6 +8571,7 @@
     "types": null
    },
    "derived": {
+    "newTaxa": 1,
     "skeleton": 37,
     "types": 1
    },
@@ -10358,8 +10365,8 @@
    "claims": {
     "acceptance": 1,
     "act": 34,
-    "placement": 152,
-    "usage": 166
+    "placement": 151,
+    "usage": 165
    },
    "coverage": {
     "illustrations": "none",
@@ -10374,7 +10381,7 @@
    "derived": {
     "newTaxa": 10,
     "phylogeny": 67,
-    "skeleton": 251,
+    "skeleton": 249,
     "synonymy": 1,
     "types": 5
    },
@@ -10627,6 +10634,7 @@
   "1996_sumrall_bowsher": {
    "acts": {
     "new": 3,
+    "placeholder": 1,
     "type": 1
    },
    "audit": {
@@ -10648,7 +10656,7 @@
     "year": 1996
    },
    "claims": {
-    "act": 4,
+    "act": 5,
     "placement": 7,
     "usage": 8
    },
@@ -10663,7 +10671,7 @@
     "types": null
    },
    "derived": {
-    "newTaxa": 3,
+    "newTaxa": 4,
     "skeleton": 15,
     "types": 1
    },
@@ -10680,7 +10688,7 @@
   "1997_paul.c.r.c": {
    "acts": {
     "new": 10,
-    "placeholder": 6,
+    "placeholder": 7,
     "type": 7
    },
    "audit": {
@@ -10697,9 +10705,9 @@
     "year": 1997
    },
    "claims": {
-    "act": 23,
+    "act": 24,
     "placement": 75,
-    "usage": 78
+    "usage": 77
    },
    "coverage": {
     "illustrations": null,
@@ -10712,8 +10720,8 @@
     "types": null
    },
    "derived": {
-    "newTaxa": 16,
-    "skeleton": 153,
+    "newTaxa": 17,
+    "skeleton": 152,
     "types": 7
    },
    "derivedCoverage": {
@@ -11096,7 +11104,8 @@
   },
   "2000_sumrall_garbisch_pope": {
    "acts": {
-    "new": 4
+    "new": 4,
+    "placeholder": 1
    },
    "audit": {
     "state": "unaudited"
@@ -11118,7 +11127,7 @@
     "year": 2000
    },
    "claims": {
-    "act": 4,
+    "act": 5,
     "placement": 29,
     "usage": 30
    },
@@ -11133,7 +11142,7 @@
     "types": null
    },
    "derived": {
-    "newTaxa": 4,
+    "newTaxa": 5,
     "phylogeny": 13,
     "skeleton": 46
    },
@@ -11208,6 +11217,7 @@
   "2001_sumrall": {
    "acts": {
     "new": 3,
+    "placeholder": 1,
     "type": 1
    },
    "audit": {
@@ -11228,7 +11238,7 @@
     "year": 2001
    },
    "claims": {
-    "act": 4,
+    "act": 5,
     "placement": 8,
     "usage": 9
    },
@@ -11243,7 +11253,7 @@
     "types": null
    },
    "derived": {
-    "newTaxa": 3,
+    "newTaxa": 4,
     "skeleton": 17,
     "types": 1
    },
@@ -15361,6 +15371,9 @@
    "1839_murchison",
    "1840_eichwald"
   ],
+  "actinocrinites-aff-triacontodactylus_eichwald_1840": [
+   "1840_eichwald"
+  ],
   "actinocrinus": [
    "1843_hall",
    "1847_hall",
@@ -16050,10 +16063,12 @@
   ],
   "asteriadae-gen-sp_sowerby.g.b_1825": [
    "1825b_sowerby.g.b",
+   "1844_buch",
    "1848b_forbes"
   ],
   "asteriadae-gen_sowerby.g.b_1825": [
    "1825b_sowerby.g.b",
+   "1844_buch",
    "1848b_forbes"
   ],
   "asteriadae-order": [
@@ -16726,6 +16741,9 @@
    "2013_zamora_sumrall_vizcaïno",
    "2021_jell_sprinkle"
   ],
+  "cambraster-cf-tastudorum_jell_burrett_banks_1985": [
+   "1985_jell_burrett_banks"
+  ],
   "cambraster-sp_jell_burrett_banks_1985": [
    "1985_jell_burrett_banks"
   ],
@@ -16945,6 +16963,9 @@
    "1844_buch",
    "1848b_forbes",
    "1854_müller.j.p",
+   "1997_paul.c.r.c"
+  ],
+  "caryocystites-cf-lagenallis_paul.c.r.c_1997": [
    "1997_paul.c.r.c"
   ],
   "caryocystitida-superfamily": [
@@ -17554,12 +17575,6 @@
    "1848b_forbes",
    "1857_billings"
   ],
-  "crinoidea-secondhand-genus_sowerby_1833": [
-   "1844_buch"
-  ],
-  "crinoidea-secondhand-sp_sowerby_1833": [
-   "1844_buch"
-  ],
   "crinoideae-family": [
    "1852_hall"
   ],
@@ -17834,6 +17849,9 @@
    "1985_jell_burrett_banks",
    "1988_guensburg"
   ],
+  "cyclocystoides-aff-halli_kolata_1975": [
+   "1975_kolata"
+  ],
   "cyclocystoides-sp_kolata_1975": [
    "1975_kolata"
   ],
@@ -17928,9 +17946,6 @@
    "1854b_billings",
    "1854c_billings",
    "1858a_billings"
-  ],
-  "cystidea-sp_buch_1944": [
-   "1844_buch"
   ],
   "cystideae-family": [
    "1852_hall"
@@ -18579,6 +18594,22 @@
    "1981_bockelie",
    "1997_paul.c.r.c"
   ],
+  "echinosphaerites-aff-granatum_müller.j.p_1854": [
+   "1854_müller.j.p"
+  ],
+  "echinosphaerites-aff-laevis_pander_1830": [
+   "1830_pander",
+   "1840a_buch"
+  ],
+  "echinosphaerites-aff-pomum_schlotheim_1826": [
+   "1826_schlotheim"
+  ],
+  "echinosphaerites-cf-arachnoideus_paul.c.r.c_1997": [
+   "1997_paul.c.r.c"
+  ],
+  "echinosphaerites-cf-granulatus_paul.c.r.c_1997": [
+   "1997_paul.c.r.c"
+  ],
   "echinosphaerites-sp-1_schlotheim_1826": [
    "1826_schlotheim"
   ],
@@ -18683,6 +18714,9 @@
    "1994_guensburg_sprinkle",
    "2011_sumrall_zamora",
    "2013_zamora"
+  ],
+  "edrioaster-cf-bigsbyi_kolata_1975": [
+   "1975_kolata"
   ],
   "edrioasterida": [
    "1976_bell.b.m",
@@ -18869,6 +18903,9 @@
    "1985_smith.a.b",
    "1990_smith.a.b_jell",
    "1994_guensburg_sprinkle"
+  ],
+  "edriophus-cf-laevis_bell.b.m_1982": [
+   "1982_bell.b.m"
   ],
   "edulis_pallas_1774": [
    "1816b_lamarck"
@@ -19558,6 +19595,9 @@
    "2003_sumrall_parsley",
    "2006_sumrall_gahn"
   ],
+  "giganticlavus-cf-bennisoni_sumrall_bowsher_1996": [
+   "1996_sumrall_bowsher"
+  ],
   "gigas_bruguière_1798": [
    "1816b_lamarck"
   ],
@@ -19724,6 +19764,9 @@
    "2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler",
    "2021_parsley",
    "2022_zamora_rahman_sumrall_gibson_thompson"
+  ],
+  "gogia-cf-longidactylus_robison_1965": [
+   "1973_sprinkle"
   ],
   "gogia-sp-2_sprinkle_1973": [
    "1973_sprinkle"
@@ -20353,6 +20396,9 @@
   "hudsonaster": [
    "1975_kolata"
   ],
+  "hudsonaster-cf-rugosus_kolata_1975": [
+   "1975_kolata"
+  ],
   "hudsonasteridae": [
    "1975_kolata"
   ],
@@ -20914,9 +20960,6 @@
    "1767_linnaeus",
    "1816a_lamarck"
   ],
-  "laevis_bather_1914": [
-   "1982_bell.b.m"
-  ],
   "laevis_billings_1857": [
    "1857_billings"
   ],
@@ -20932,8 +20975,7 @@
    "1778_leske"
   ],
   "laevis_miller.j.s_1821": [
-   "1821_miller.j.s",
-   "1840_eichwald"
+   "1821_miller.j.s"
   ],
   "laevis_pander_1830": [
    "1830_pander",
@@ -20960,9 +21002,6 @@
   "laganum_leske_1778": [
    "1778_leske",
    "1816b_lamarck"
-  ],
-  "lagenallis_regnéll_1945": [
-   "1997_paul.c.r.c"
   ],
   "lampteroblastus": [
    "1994_guensburg_sprinkle",
@@ -21091,6 +21130,9 @@
    "2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler",
    "2022_zamora_rahman_sumrall_gibson_thompson"
   ],
+  "lepidocystis-cf-wanneri_sprinkle_1973": [
+   "1973_sprinkle"
+  ],
   "lepidocystoidae": [
    "2017_nardin_lefebvre_fatka_nohejlová_kašiča_šinágl_szabad"
   ],
@@ -21147,11 +21189,9 @@
   "leucopthalmus": [
    "1848b_forbes"
   ],
-  "leuniseni_grigo_2000": [
-   "2013_müller.p_hahn_bohatý"
-  ],
   "leunisseni_grigo_2000": [
-   "2000_grigo"
+   "2000_grigo",
+   "2013_müller.p_hahn_bohatý"
   ],
   "levatus_bassler_1943": [
    "1982a_parsley"
@@ -21220,6 +21260,9 @@
   "lingulocystis": [
    "1973_sprinkle",
    "1998_dean.j_smith.a.b",
+   "2007a_nardin"
+  ],
+  "lingulocystis-aff-deani_nardin_2007": [
    "2007a_nardin"
   ],
   "lipsanocystis": [
@@ -22182,6 +22225,9 @@
    "1828_hisinger",
    "1840_eichwald"
   ],
+  "ophiura-aff-schlotheimii_eichwald_1840": [
+   "1840_eichwald"
+  ],
   "ophiura_linnaeus_1758": [
    "1758_linnaeus",
    "1760b_linnaeus",
@@ -22475,6 +22521,9 @@
    "2000_sumrall_garbisch_pope",
    "2006_sumrall_sprinkle_bonem",
    "2010_müller.p_hahn"
+  ],
+  "parapostibulla-cf-hybolopus_sumrall_garbisch_pope_2000": [
+   "2000_sumrall_garbisch_pope"
   ],
   "parapostibulla-sp-a_sumrall_garbisch_pope_2000": [
    "2000_sumrall_garbisch_pope"
@@ -22877,7 +22926,16 @@
   "platycrinus": [
    "1840_eichwald"
   ],
+  "platycrinus-aff-laevis_eichwald_1840": [
+   "1840_eichwald"
+  ],
   "platycystites": [
+   "1982a_parsley"
+  ],
+  "platycystites-cf-bromidensis_bassler_sinclair_1945": [
+   "1982a_parsley"
+  ],
+  "platycystites-cf-levatus_bassler_sinclair_1945": [
    "1982a_parsley"
   ],
   "platycystites-sp_frest_strimple_coney_1979": [
@@ -22921,6 +22979,9 @@
    "2012_zamora_smith.a.b",
    "2013_nardin_bohatý",
    "2017_zamora_sumrall_zhu.x.j_lefebvre"
+  ],
+  "pleurocystites-cf-squamosus_kolata_1975": [
+   "1975_kolata"
   ],
   "pleurocystitida": [
    "1983_jell"
@@ -23027,6 +23088,9 @@
   ],
   "porocrinus": [
    "1857_billings",
+   "1975_kolata"
+  ],
+  "porocrinus-cf-smithi_kolata_1975": [
    "1975_kolata"
   ],
   "porosublastus": [
@@ -23230,8 +23294,7 @@
   "pulaskiensis_miller.s.a_gurley_1894": [
    "1935_bassler",
    "1966_regnéll",
-   "1976_bell.b.m",
-   "2001_sumrall"
+   "1976_bell.b.m"
   ],
   "pulchellus_billings_1857": [
    "1857_billings"
@@ -24010,9 +24073,6 @@
    "1967_paul.c.r.c",
    "1968b_paul.c.r.c"
   ],
-  "schlotheimii_unknown": [
-   "1840_eichwald"
-  ],
   "schuchertocystis": [
    "1982_broadhead"
   ],
@@ -24242,9 +24302,6 @@
    "1801_lamarck",
    "1816b_lamarck",
    "1817d_cuvier"
-  ],
-  "smithi_grant_1881": [
-   "1975_kolata"
   ],
   "smithi_ubaghs_1987": [
    "1987_ubaghs",
@@ -24655,6 +24712,9 @@
    "2019_nohejlová_nardin_fatka_kašiča_szabad",
    "2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler",
    "2022_zamora_rahman_sumrall_gibson_thompson"
+  ],
+  "stromatocystites-aff-pentangularis_prokop_1961": [
+   "2004_parsley_prokop"
   ],
   "stromatocystites-sp_jell_burrett_banks_1985": [
    "1985_jell_burrett_banks"
@@ -25094,9 +25154,6 @@
   "triacontadactylus_miller.j.s_1821": [
    "1821_miller.j.s"
   ],
-  "triacontodactylus_miller.j.s_1821": [
-   "1840_eichwald"
-  ],
   "triangularis_pander_1830": [
    "1830_pander"
   ],
@@ -25270,6 +25327,9 @@
    "2003_sumrall_parsley",
    "2006_sumrall_gahn",
    "2006_sumrall_sprinkle_bonem"
+  ],
+  "ulrichidiscus-aff-pulaskiensis_sumrall_2001": [
+   "2001_sumrall"
   ],
   "ulrichocystis": [
    "1973_sprinkle",
@@ -25462,6 +25522,12 @@
    "1778_leske"
   ],
   "victoriacystis": [
+   "1960_gill_caster"
+  ],
+  "victoriacystis-aff-wilkinsi-a_gill_caster_1960": [
+   "1960_gill_caster"
+  ],
+  "victoriacystis-aff-wilkinsi-b_gill_caster_1960": [
    "1960_gill_caster"
   ],
   "victoriae_gill_caster_1960": [

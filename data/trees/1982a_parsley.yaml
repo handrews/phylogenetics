@@ -43,10 +43,12 @@ taxonomies:
               synonyms:
               - taxon: fimbriatus_bassler_1943
               - taxon: bromidensis_bassler_1943
-              - cfTaxon: bromidensis_bassler_1943
+              - openTaxon: platycystites-cf-bromidensis_bassler_sinclair_1945
+                cf: bromidensis_bassler_1943
                 auth: [bassler, Sinclair]
                 year: 1945
-              - cfTaxon: levatus_bassler_1943
+              - openTaxon: platycystites-cf-levatus_bassler_sinclair_1945
+                cf: levatus_bassler_1943
                 auth: [bassler, Sinclair]
                 year: 1945
               - taxon: cristatus_bassler_1943

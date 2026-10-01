@@ -61,6 +61,11 @@ actinocrinites:
   name: Actinocrinites
   authority:
     source: 1821_miller.j.s
+actinocrinites-aff-triacontodactylus_eichwald_1840:
+  name: null
+  rank: species
+  authority:
+    source: 1840_eichwald
 actinocrinus:
   name: Actinocrinus
   auth: [Agassiz]
@@ -1615,6 +1620,11 @@ cambraster:
   name: Cambraster
   auth: [jaekel]
   year: 1923
+cambraster-cf-tastudorum_jell_burrett_banks_1985:
+  name: null
+  rank: species
+  authority:
+    source: 1985_jell_burrett_banks
 cambrasteridae:
   name: Cambrasteridae
   rank: Family
@@ -1856,6 +1866,11 @@ caryocystites:
   name: Caryocystites
   authority:
     source: 1844_buch
+caryocystites-cf-lagenallis_paul.c.r.c_1997:
+  name: null
+  rank: species
+  authority:
+    source: 1997_paul.c.r.c
 caryocystis:
   name: Caryocystis
   auth: [Angelin]
@@ -2611,18 +2626,6 @@ crinoidea-genus-a_guensburg_sprinkle_2003:
   rank: genus
   authority:
     source: 2003_guensburg_sprinkle
-crinoidea-secondhand-genus_sowerby_1833:
-  name: null
-  rank: genus
-  auth: [Sowerby]
-  year: 1933 # Uncertain, guess by journal name and year
-  notes: Refernced without name or parent taxon in 1944_buch/1046b_buch
-crinoidea-secondhand-sp_sowerby_1833:
-  name: null
-  rank: species
-  auth: [Sowerby]
-  year: 1933 # Uncertain, guess by journal name and year
-  notes: Refernced without name or higher taxa in 1944_buch/1046b_buch
 crinozoa:
   name: Crinozoa
   rank: Subphylum
@@ -2887,6 +2890,11 @@ cyclocystoides:
   authority:
     attributedTo: [billings, salter]
     source: 1858_salter_billings
+cyclocystoides-aff-halli_kolata_1975:
+  name: null
+  rank: species
+  authority:
+    source: 1975_kolata
 cyclocystoides-sp_kolata_1975:
   name: null
   rank: species
@@ -2987,11 +2995,6 @@ cystideen:
   name: Cystideen
   lang: DE
   vulgarSpellingOf: cystidea-family
-cystidea-sp_buch_1944:
-  name: null
-  rank: species
-  authority:
-    source: 1844_buch
 cystideae-unnamed-group_müller.j.p_1854:
   name: null
   rank: Unranked
@@ -3700,6 +3703,31 @@ echinosphaerites:
   name: Echinosphaerites
   auth: [Wahlenberg]
   year: 1821
+echinosphaerites-aff-granatum_müller.j.p_1854:
+  name: null
+  rank: species
+  authority:
+    source: 1854_müller.j.p
+echinosphaerites-aff-laevis_pander_1830:
+  name: null
+  rank: species
+  authority:
+    source: 1830_pander
+echinosphaerites-aff-pomum_schlotheim_1826:
+  name: null
+  rank: species
+  authority:
+    source: 1826_schlotheim
+echinosphaerites-cf-arachnoideus_paul.c.r.c_1997:
+  name: null
+  rank: species
+  authority:
+    source: 1997_paul.c.r.c
+echinosphaerites-cf-granulatus_paul.c.r.c_1997:
+  name: null
+  rank: species
+  authority:
+    source: 1997_paul.c.r.c
 echinosphaerites-subgenus:
   rank: subgenus
   altRankOf: echinosphaerites
@@ -3784,6 +3812,11 @@ edrioaster:
   name: Edrioaster
   authority:
     source: 1858b_billings
+edrioaster-cf-bigsbyi_kolata_1975:
+  name: null
+  rank: species
+  authority:
+    source: 1975_kolata
 edrioasterida:
   name: Edrioasterida
   rank: Order
@@ -3906,6 +3939,11 @@ edriophus:
   name: Edriophus
   authority:
     source: 1976_bell.b.m
+edriophus-cf-laevis_bell.b.m_1982:
+  name: null
+  rank: species
+  authority:
+    source: 1982_bell.b.m
 edulis_pallas_1774:
   name: edulis
   auth: [Pallas]
@@ -4749,6 +4787,11 @@ giganticlavus:
   name: Giganticlavus
   authority:
     source: 1996_sumrall_bowsher
+giganticlavus-cf-bennisoni_sumrall_bowsher_1996:
+  name: null
+  rank: species
+  authority:
+    source: 1996_sumrall_bowsher
 gigas_bruguière_1798:
   name: gigas
   auth: [bruguière]
@@ -4921,6 +4964,11 @@ gogia:
   name: Gogia
   auth: [Walcott]
   year: 1917
+gogia-cf-longidactylus_robison_1965:
+  name: null
+  rank: species
+  auth: [robison]
+  year: 1965
 gogia-sp_palmer_1968:
   name: null
   rank: species
@@ -5682,6 +5730,11 @@ hudsonaster:
   name: Hudsonaster
   auth: [Sturtz]
   year: 1900
+hudsonaster-cf-rugosus_kolata_1975:
+  name: null
+  rank: species
+  authority:
+    source: 1975_kolata
 hudsonasteridae:
   name: Hudsonasteridae
   rank: Family
@@ -6440,6 +6493,11 @@ lepidocystis:
   auth: [foerste]
   in: [Resser, Howell]
   year: 1938
+lepidocystis-cf-wanneri_sprinkle_1973:
+  name: null
+  rank: species
+  authority:
+    source: 1973_sprinkle
 lepidodiscus:
   name: Lepidodiscus
   auth: [Meek, Worthen]
@@ -6500,10 +6558,6 @@ leunisseni_grigo_2000:
   name: leunisseni
   authority:
     source: 2000_grigo
-leuniseni_grigo_2000:
-  name: leuniseni
-  altSpellingOf: leunisseni_grigo_2000
-  notes: Seen in 2013_müller_hahn_bohaty
 lichenoides:
   name: Lichenoides
   auth: [barrande]
@@ -6576,6 +6630,11 @@ lingulocystis:
   name: Lingulocystis
   auth: [Thoral]
   year: 1935
+lingulocystis-aff-deani_nardin_2007:
+  name: null
+  rank: species
+  authority:
+    source: 2007a_nardin
 lipsanocystis:
   name: Lipsanocystis
   auth: [Ehlers, Leighley]
@@ -7753,6 +7812,11 @@ ophiura:
   name: Ophiura
   authority:
     source: 1801_lamarck
+ophiura-aff-schlotheimii_eichwald_1840:
+  name: null
+  rank: species
+  authority:
+    source: 1840_eichwald
 ophiura_linnaeus_1758:
   name: ophiura
   authority:
@@ -8103,6 +8167,11 @@ paramaecium:
     source: 1773_müller.o.f
 parapostibulla:
   name: Parapostibulla
+  authority:
+    source: 2000_sumrall_garbisch_pope
+parapostibulla-cf-hybolopus_sumrall_garbisch_pope_2000:
+  name: null
+  rank: species
   authority:
     source: 2000_sumrall_garbisch_pope
 parapostibulla-sp-a_sumrall_garbisch_pope_2000:
@@ -8590,10 +8659,25 @@ platycrinites:
 platycrinus:
   name: Platycrinus
   altSpellingOf: platycrinites
+platycrinus-aff-laevis_eichwald_1840:
+  name: null
+  rank: species
+  authority:
+    source: 1840_eichwald
 platycystites:
   name: Platycystites
   auth: [miller.s.a]
   year: 1899
+platycystites-cf-bromidensis_bassler_sinclair_1945:
+  name: null
+  rank: species
+  auth: [bassler, Sinclair]
+  year: 1945
+platycystites-cf-levatus_bassler_sinclair_1945:
+  name: null
+  rank: species
+  auth: [bassler, Sinclair]
+  year: 1945
 platycystites-sp_frest_strimple_coney_1979:
   name: null
   rank: species
@@ -8641,6 +8725,11 @@ pleurocystites:
   name: Pleurocystites
   authority:
     source: 1854b_billings
+pleurocystites-cf-squamosus_kolata_1975:
+  name: null
+  rank: species
+  authority:
+    source: 1975_kolata
 pleurocystitida:
   name: Pleurocystitida
   rank: Order
@@ -8773,6 +8862,11 @@ porocrinus:
   name: Porocrinus
   authority:
     source: 1857_billings
+porocrinus-cf-smithi_kolata_1975:
+  name: null
+  rank: species
+  authority:
+    source: 1975_kolata
 porosublastus:
   name: Porosublastus
   authority:
@@ -10696,6 +10790,11 @@ stromatocystites:
   name: Stromatocystites
   authority:
     source: 1896_pompeckj
+stromatocystites-aff-pentangularis_prokop_1961:
+  name: null
+  rank: species
+  auth: [prokop]
+  year: 1961
 stromatocystis:
   name: Stromatocystis
   altSpellingOf: stromatocystites
@@ -11381,6 +11480,11 @@ ulrichidiscus:
   name: Ulrichidiscus
   authority:
     source: 1935_bassler
+ulrichidiscus-aff-pulaskiensis_sumrall_2001:
+  name: null
+  rank: species
+  authority:
+    source: 2001_sumrall
 ulrichocystis:
   name: Ulrichocystis
   auth: [bassler]
@@ -11614,6 +11718,16 @@ vicia_leske_1778:
     source: 1778_leske
 victoriacystis:
   name: Victoriacystis
+  authority:
+    source: 1960_gill_caster
+victoriacystis-aff-wilkinsi-a_gill_caster_1960:
+  name: null
+  rank: species
+  authority:
+    source: 1960_gill_caster
+victoriacystis-aff-wilkinsi-b_gill_caster_1960:
+  name: null
+  rank: species
   authority:
     source: 1960_gill_caster
 victoriae_gill_caster_1960:

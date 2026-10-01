@@ -18,10 +18,14 @@ taxonomies:
       - taxon: mespiliformis_goldfuss_1831  # cannot find this referenced
     - taxon: platycrinus
       children:
-      - affTaxon: laevis_miller.j.s_1821
+      - openTaxon: platycrinus-aff-laevis_eichwald_1840
+        aff: laevis_miller.j.s_1821
+        new: true
     - taxon: actinocrinites
       children:
-      - affTaxon: triacontodactylus_miller.j.s_1821
+      - openTaxon: actinocrinites-aff-triacontodactylus_eichwald_1840
+        aff: triacontodactylus_miller.j.s_1821
+        new: true
       - taxon: granulatus_goldfuss_1831
     - taxon: pentacrinus
       children:
@@ -128,7 +132,9 @@ taxonomies:
         new: true
         pages:
         - [193, 194]
-      - affTaxon: schlotheimii_unknown
+      - openTaxon: ophiura-aff-schlotheimii_eichwald_1840
+        aff: schlotheimii_unknown
+        new: true
         pages: 194
         notes: |
           Given as "Ophiura Schlotheimii Holl. aff", but no clue as to

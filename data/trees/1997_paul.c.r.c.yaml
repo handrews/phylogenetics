@@ -87,7 +87,8 @@ taxonomies:
           children:
           - taxon: dubius_angelin_1878
             type: true
-          - cfTaxon: lagenallis_regnéll_1945
+          - openTaxon: caryocystites-cf-lagenallis_paul.c.r.c_1997
+            cf: lagenallis_regnéll_1945
             new: true
         - taxon: heliocrinites
           children:
@@ -111,9 +112,7 @@ taxonomies:
             new: true
           - openTaxon: heliocrinites-sp_paul.c.r.c_1997
             new: true
-            parents:
-            - taxon: heliocrinites
-              quoted: true
+            quotedParent: true
         - taxon: lophotocystis
           children:
           - taxon: granatum_wahlenberg_1821
@@ -128,7 +127,8 @@ taxonomies:
             - taxon: aurantium_gyllenhaal_1772
               type: true
             - taxon: granulatus_mccoy_1846
-            - cfTaxon: granulatus_mccoy_1846
+            - openTaxon: echinosphaerites-cf-granulatus_paul.c.r.c_1997
+              cf: granulatus_mccoy_1846
               new: true
             - openTaxon: echinosphaerites-sp_paul.c.r.c_1997
           - taxon: striatosphaerites-subgenus
@@ -136,4 +136,6 @@ taxonomies:
             children:
             - taxon: arachnoideus_forbes_1848
               type: true
-            - cfTaxon: arachnoideus_forbes_1848
+            - openTaxon: echinosphaerites-cf-arachnoideus_paul.c.r.c_1997
+              cf: arachnoideus_forbes_1848
+              new: true

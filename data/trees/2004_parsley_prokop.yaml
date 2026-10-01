@@ -16,7 +16,8 @@ taxonomies:
       - taxon: flexibilis_parsley_prokop_2004
         new: true
         synonyms:
-        - affTaxon: pentangularis_pompeckj_1896
+        - openTaxon: stromatocystites-aff-pentangularis_prokop_1961
+          aff: pentangularis_pompeckj_1896
           auth: [prokop]
           year: 1961
           pages: 42

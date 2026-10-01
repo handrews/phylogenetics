@@ -867,14 +867,17 @@ def test_absence_table_rests_on_the_auditors_nulls(store):
 
 
 def test_absence_table_groups_a_record_by_node(store):
-  block = store.statements('wanneri_foerste_1938', source='1973_sprinkle', kind='absence')
-  assert block['title'] == 'Lepidocystis wanneri Foerste 1938 in Sprinkle 1973'
-  assert [row['group'] for row in block['rows']] == ['Lepidocystis wanneri (p. 62)'] * 4 + [
-    'Lepidocystis wanneri (p. 66)'
-  ] * 4
-  assert [len(node['rows']) for node in block['content']] == [4, 4]
-  assert [node['page'] for node in block['content']] == [62, 66]
-  assert '-- Lepidocystis wanneri (p. 66) --' in block['rendered']
+  # Sprinkle 1973 enters `palaeocystites` at two nodes (a doubled node, on
+  # the hand list); `wanneri_foerste_1938` had two until its cf. form became
+  # an open taxon of its own.
+  block = store.statements('palaeocystites', source='1973_sprinkle', kind='absence')
+  assert block['title'] == 'Palaeocystites Billings 1858 in Sprinkle 1973'
+  assert [row['group'] for row in block['rows']] == ['Palaeocystites (p. 139)'] * 2 + [
+    'Palaeocystites (p. 186)'
+  ] * 2
+  assert [len(node['rows']) for node in block['content']] == [2, 2]
+  assert [node['page'] for node in block['content']] == [139, 186]
+  assert '-- Palaeocystites (p. 186) --' in block['rendered']
 
 
 def test_absence_table_leaves_out_species_level_kinds_above_species(store):

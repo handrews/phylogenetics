@@ -71,19 +71,23 @@ taxonomies:
     - taxon: sycocrinites
       children:
       - taxon: clausus_austen_1843
-    - affTaxon: caryocystites
+    - taxon: pseudocrinites
       children:
       - taxon: bicopuladigiti_garnet_1844
-        synonyms:
-        - taxon: bicopuladigiti_garnet_1844
-          parents:
-          - taxon: pseudocrinites
-    - affTaxon: sphaeronites
-      synonyms:
-      - openTaxon: crinoidea-secondhand-genus_sowerby_1833 # date uncertain!
+        notes: |
+          "is manifestly a Cystidea resembling Caryocystites" (1846
+          translation). A comparison of form; von Buch places the
+          species in the family and does not move it to Caryocystites.
+    - openTaxon: asteriadae-gen_sowerby.g.b_1825
+      provisional: true
+      authority:
+        source: 1825b_sowerby.g.b
+        pages: 318
       children:
-      - openTaxon: cystidea-sp_buch_1944
-        synonyms:
-        - openTaxon: crinoidea-secondhand-sp_sowerby_1833 # date uncertain!
-          parents:
-          - openTaxon: crinoidea-secondhand-genus_sowerby_1833
+      - openTaxon: asteriadae-gen-sp_sowerby.g.b_1825
+        notes: |
+          "A species figured and described by Mr. J. Sowerby in the
+          'Zoological Journal' (ii. 318) also probably belongs to this
+          family. [...] a considerable number of irregular plates
+          surround, as in Sphaeronites, the spheroidal figure." (1846
+          translation). The Sphaeronites remark describes the plating.
