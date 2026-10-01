@@ -47,6 +47,21 @@ owner, each with its page there:
   (Orłowski's "approximately 50 partially complete specimens", p. 121).
   *Blastocystis rossica*, the same case but figured, has a `label`
   entry with `examined: false`. Decide which reading the null means.
+- "(not figured)" and a drawing tied to no specimen. *Kinzercystis
+  durhami*'s MCZ 729 is printed "unfigured paratypes MCZ 729" (p. 76),
+  yet the tools do not say "(not figured)" for it. The derived rule
+  marks a specimen only when no figure on the node is without an `of`,
+  since an untied figure might show it, and the node carries Text-fig.
+  5A (p. 16), a drawing whose caption names no specimen. So nothing on
+  the node is marked, MCZ 729 included. Recommended: let only an untied
+  photograph or cast block the statement, and treat an untied `drawing`
+  or `reconstruction` as a generalised diagram that shows no particular
+  specimen. That is one condition in `_NodeClaims._unfigured`
+  (`phylohist/claims.py`) and a sentence in `docs/claims.md`, and it
+  would mark more specimens across the tree. The case against: a line
+  drawing can be of one specimen whose number the caption omits, and
+  the looser rule would then call that specimen unfigured. Decide while
+  reading the text-figure captions.
 - Misprints to read: "syntype USNM 6431" (p. 83); holotype "USNM
   165478" against 165378 elsewhere (p. 151); "MCZ 602–RO–5" against
   the plates' "602-R3" and "602-R1-4" (p. 168, Pls. 40–41); the cast
