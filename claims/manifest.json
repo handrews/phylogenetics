@@ -7771,7 +7771,7 @@
    "claims": {
     "acceptance": 12,
     "act": 75,
-    "material": 424,
+    "material": 575,
     "placement": 126,
     "rejection": 19,
     "usage": 170
@@ -7787,10 +7787,10 @@
     "types": null
    },
    "derived": {
-    "illustrations": 204,
-    "material": 131,
+    "illustrations": 278,
+    "material": 160,
     "newTaxa": 27,
-    "occurrences": 89,
+    "occurrences": 137,
     "skeleton": 315,
     "synonymy": 12,
     "types": 29
@@ -7802,10 +7802,10 @@
    },
    "inconsistencies": [],
    "material": {
-    "illustration": 204,
-    "occurrence": 65,
-    "range": 24,
-    "specimen": 131
+    "illustration": 278,
+    "occurrence": 94,
+    "range": 43,
+    "specimen": 160
    },
    "tree": true
   },

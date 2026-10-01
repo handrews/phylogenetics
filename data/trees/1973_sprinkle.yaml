@@ -56,6 +56,19 @@ contexts:
     coordinatesAsPrinted: T. 12 N, R. 17 E (unsurveyed)
     mapSheet: Clayton 7½′ Quad.
     notes: Basal 6 ft. of red shaly siltstone above top of Cash Creek Quartzite.
+  dt-3:
+    unit: [Benbolt Fm.]
+    period: Ordovician
+    series: Middle Ordovician
+    localStageRange: [Black River, Porterfield]
+    location:
+    - 3 ft. shale band with limestone beds above and below
+    - sharp curve in state rt. 131 about ½ mi. NE of Dotson General Store
+    - 7 mi. NE of Washburn
+    - Grainger Co.
+    - NE Tenn.
+    localityNumbers: [DT-3]
+    mapSheet: Avondale 7½′ Quad.
   ec-1:
     unit: ['"Spence Shale equivalent"']
     period: Cambrian
@@ -139,6 +152,18 @@ contexts:
     - central Nev.
     localityNumbers: [IK-2]
     mapSheet: Dianas Punch Bowl 15′ Quad.
+  ik-3:
+    unit: [Antelope Valley Fm.]
+    period: Ordovician
+    series: Middle Ordovician
+    localStage: Whiterock
+    biozone: Orthidiella(?)
+    location:
+    - '"Sponge Beds" running diagonally up ridge on N side of Ikes Canyon opposite and above IK-2.'
+    - Toquima Range
+    - central Nev.
+    localityNumbers: [IK-3]
+    mapSheet: Dianas Punch Bowl 15′ Quad.
   kt-1:
     unit: ['"Stephen Formation"']
     period: Cambrian
@@ -155,6 +180,45 @@ contexts:
     localityNumbers: [KT-1]
     coordinatesAsPrinted: near 52° 14′ 30″ N, 117° 17′ W
     mapSheet: Jasper Park south map sheet
+  lo-1:
+    unit: [Garden City Fm.]
+    period: Ordovician
+    series: Middle Ordovician
+    localStage: Whiterock
+    biozone: Orthidiella
+    location:
+    - hillside above Meadowville road following Right Fork of Logan River
+    - about 9.5 mi. NE of Logan
+    - N. Utah
+    localityNumbers: [LO-1]
+    coordinatesAsPrinted: W½, NW¼, sect. 17, T. 12 N, R. 3 E
+    mapSheet: old Logan, Utah-Idaho 30′ map
+  lv-2:
+    unit: [Benbolt Fm.]
+    period: Ordovician
+    series: Middle Ordovician
+    localStageRange: [Black River, Porterfield]
+    location:
+    - small shale bank near NE end of roadcut at curve on N side of state rt. 131
+    - 2.3 mi. NE of road intersection at Lee Valley
+    - Hawkins Co.
+    - NE Tenn.
+    localityNumbers: [LV-2]
+    mapSheet: Pressmens Home 7½′ Quad.
+  mj-1:
+    unit: [Antelope Valley Fm.]
+    period: Ordovician
+    series: Middle Ordovician
+    localStage: Whiterock
+    biozone: Orthidiella(?)
+    location:
+    - dipping dark limestone beds just above and beside top of large reef on the SW side of Meiklejohn Peak
+    - about 7 mi. E of Beatty
+    - Nye Co.
+    - W. Nev.
+    localityNumbers: [MJ-1]
+    coordinatesAsPrinted: NE¼, sect. 24, T. 12 S, R. 47 E
+    mapSheet: Bare Mountain 15′ Quad. (U.S.G.S. map GQ-157)
   pi-1:
     unit: [Chisholm Shale]
     period: Cambrian
@@ -221,6 +285,42 @@ contexts:
     - E. Nev.
     localityNumbers: [PI-7]
     mapSheet: Pioche 7½′ Quad.
+  rc-7:
+    unit: [Benbolt Fm.]
+    period: Ordovician
+    series: Middle Ordovician
+    localStageRange: [Black River, Porterfield]
+    location:
+    - small shale bank beside county road 647
+    - about 0.6 mi. SW of Rye Cove main intersection (Bench Mark SN 262)
+    - Scott Co.
+    - SW Va.
+    localityNumbers: [RC-7]
+    mapSheet: Clinchport 7½′ Quad.
+  rc-8:
+    unit: [Benbolt Fm.]
+    period: Ordovician
+    series: Middle Ordovician
+    localStageRange: [Black River, Porterfield]
+    location:
+    - hillside and valley below power line just NE of old Brick Church, N of county road 650
+    - about 1.2 mi. W of Rye Cove main intersection
+    - Scott Co.
+    - SW Va.
+    localityNumbers: [RC-8]
+    mapSheet: Clinchport 7½′ Quad.
+  rc-9:
+    unit: [Benbolt Fm.]
+    period: Ordovician
+    series: Middle Ordovician
+    localStageRange: [Black River, Porterfield]
+    location:
+    - large roadside shale quarry on county road 652 just north of turnoff
+    - about 0.7 mi. N of Rye Cove main intersection
+    - Scott Co.
+    - SW Va.
+    localityNumbers: [RC-9]
+    mapSheet: Clinchport 7½′ Quad.
   rp-1:
     unit: [Snowy Range Fm.]
     period: Cambrian
@@ -313,9 +413,25 @@ taxonomies:
 - taxon: echinodermata
   auth: [Klein]
   year: 1734
+  pages: 56
+  illustrations: null
+  contexts: null
+  ranges: null
   children:
   - taxon: blastozoa
     new: true
+    pages: 56
+    illustrations:
+    - textFigures: 4
+      page: 14
+      depicts: drawing
+    - textFigures: 17A
+      page: 45
+      depicts: drawing
+    ranges:
+    - localSeriesRange: [Lower Cambrian, Upper Permian]
+      regions: [nearly world-wide]
+      asPrinted: Blastozoans range from the early Cambrian to the late Permian, have a nearly world-wide distribution
     children:
     - taxon: eocrinoidea
       pages: 58
@@ -2371,219 +2487,863 @@ taxonomies:
                 of: MCZ 646
                 depicts: drawing
     - openTaxon: blastozoa-indeterminate-class_sprinkle_1973
+      pages: 136
+      illustrations: null
+      contexts: null
+      ranges: null
       children:
       - taxon: cigaria
+        pages: 136
         moved:
           openTaxon: eocrinoidea-uncertain-family_ubaghs_1967b
         notes: Proper spelling is "Cigara", not "Cigaria"
+        illustrations: null
+        contexts:
+          jince-beds:
+            unit: [Jince Beds]
+            period: Cambrian
+            localSeries: Middle Cambrian
+            location: [Czechoslovakia]
         children:
         - taxon: dusli_barrande_1887
           type: true
+          pages: 136
           material:
-          - catalogNumbers:
-            - E 35
+          - catalogNumbers: [E 35]
+            preparation: latex cast
+            context: jince-beds
+            notes: cast of this only known slab of type specimens (two specimens, both incomplete)
+          illustrations:
+          - textFigures: 32
+            page: 137
+            of: E 35
+            depicts: cast
+          contexts:
+            jince-beds:
+              unit: [Jince Beds]
+              period: Cambrian
+              localSeries: Middle Cambrian
+              location: [Czechoslovakia]
       - taxon: archaeocystites
+        pages: 138
         moved:
           openTaxon: eocrinoidea-uncertain-family_ubaghs_1967b
+        illustrations: null
+        contexts: null
+        ranges: null
         children:
         - taxon: medusa_barrande_1887
           type: true
+          pages: 138
+          material:
+          - catalogNumbers: [E 32]
+            role: holotype
+            preparation: latex cast
+            notes: a complete but poorly preserved calyx with appendages
+          - catalogNumbers: [E 33]
+            preparation: latex cast
+            context: czechoslovakia
+            notes: a set of similar appendages apparently from the same species
+          illustrations:
+          - plate: 33
+            figures: 9
+            of: E 33
+            depicts: cast
+          - plate: 33
+            figures: 10
+            of: E 32
+            depicts: cast
+          contexts:
+            czechoslovakia:
+              period: Ordovician
+              series: Middle Ordovician
+              location: [Czechoslovakia]
       - taxon: palaeocystites
+        pages: 139
         notes: Year incorrectly given as 1859
+        illustrations: null
+        contexts: null
+        ranges: null
         children:
         - taxon: dawsoni_billings_1858
+          pages: 139
           notes: Year incorrectly given as 1859
           type: true
+          material:
+          - catalogNumbers: [GSC 1021a, GSC 1021b]
+            catalogNumbersAsPrinted: GSC 1021a–b
+            role: syntype
+          illustrations: null
+          contexts: null
+          ranges: null
       - taxon: lysocystites
+        pages: 139
+        contexts:
+          laurel-limestone:
+            unit: [Laurel Limestone]
+            period: Silurian
+            localSeries: Middle Silurian
+            location: [southeastern Indiana]
+          racine-dolomite:
+            unit: [Racine Dolomite]
+            period: Silurian
+            localSeries: Middle Silurian
+            location: [southeastern Wisconsin]
         children:
         - taxon: nodosus_hall_1864
           type: true
-          material:
-          - catalogNumbers:
-            - S3163a
-            - S3163b
-            - S3163c
-            - S3163d
-            role: plesiotype
+          pages: 139
+          material: null
+          illustrations: null
+          contexts: null
+          ranges: null
     - taxon: parablastoidea
+      pages: 142
       moved:
         taxon: crinozoa
+      illustrations:
+      - textFigures: 6B
+        page: 18
+        depicts: drawing
+      - textFigures: 12B
+        page: 31
+        depicts: drawing
+      - textFigures: 16B
+        page: 43
+        depicts: drawing
+      ranges:
+      - period: Ordovician
+        seriesRange: [Lower Ordovician, Middle Ordovician]
+        regions: [eastern and western North America, Estonia (U.S.S.R.)]
       children:
       - taxon: blastocystidae
+        pages: 144
+        illustrations: null
+        ranges:
+        - period: Ordovician
+          seriesRange: [Lower Ordovician, Middle Ordovician]
         children:
         - taxon: blastoidocrinus
+          pages: 144
+          illustrations: null
+          ranges:
+          - period: Ordovician
+            series: Middle Ordovician
+            seriesModifier: lower
+            regions:
+            - eastern New York and southern Quebec
+            - northern Utah
+            - central and southwestern Nevada
+            - eastern California
+            - western Alberta, Canada
+            asPrinted: Lower middle Ordovician (Chazian and Whiterockian), eastern New York and southern Quebec; northern Utah; central and southwestern Nevada; eastern California; and western Alberta, Canada.
           children:
           - taxon: charcariaedens_billings_1859
             type: true
+            pages: 147
             material:
-            - catalogNumbers:
-              - GSC 1016
+            - catalogNumbers: [GSC 1016]
               role: holotype
-            - catalogNumbers:
-              - UC 26022
-              - AMNH 25068
+              context: montreal
+            - catalogNumbers: [UC 26022]
               role: plesiotype
+              context: village-belanger
+            - label: a large unnumbered specimen apparently belonging to the Geological Survey of Canada
+              context: ile-jesus
+              notes: unnumbered GSC specimen at the Univ. of Kansas
+            - catalogNumbers: [AMNH 25068]
+              role: plesiotype
+              context: valcour-island
+              notes: the complete specimen studied by Hudson for his 1907 paper
+            - catalogNumbers: [NYSM 7396, NYSM 7397, NYSM 7401, NYSM 7407, NYSM 7411, NYSM 7412, NYSM 7413, NYSM 7416, NYSM 7422, NYSM 7427, NYSM 7431, NYSM 7434, NYSM 7437, NYSM 7440]
+              catalogNumbersAsPrinted: NYSM 7390–7450
+              context: valcour-island
+              listComplete: false
+              notes: plates
+            illustrations:
+            - plate: 34
+              figures: [[1, 5]]
+              of: AMNH 25068
+            - plate: 34
+              figures: [[6, 38]]
+              of: [NYSM 7396, NYSM 7397, NYSM 7401, NYSM 7407, NYSM 7411, NYSM 7412, NYSM 7413, NYSM 7416, NYSM 7422, NYSM 7427, NYSM 7431, NYSM 7434, NYSM 7437, NYSM 7440]
+            - plate: 35
+              figures: [[1, 4]]
+              of: GSC 1016
+            - plate: 35
+              figures: 5
+              of: UC 26022
+            - plate: 35
+              figures: [[6, 10]]
+              of: a large unnumbered specimen apparently belonging to the Geological Survey of Canada
+            - textFigures: 37A
+              page: 146
+              depicts: drawing
+            contexts:
+              chazy-group:
+                unit: [Chazy Group]
+                period: Ordovician
+                series: Middle Ordovician
+                seriesModifier: lower
+                location: [Lake Champlain region of New York and Vermont]
+              aylmer-formation:
+                unit: [Aylmer Formation]
+                period: Ordovician
+                series: Middle Ordovician
+                seriesModifier: lower
+                location:
+                - Montreal region
+                - Quebec
+                - Canada
+              montreal:
+                unit: [Chazy Group]
+                location:
+                - near Montreal
+                - Canada
+              village-belanger:
+                unit: [Chazy Formation]
+                location:
+                - Village Belanger
+                - Que.
+                - Canada
+              ile-jesus:
+                unit: [Laval Formation (Chazy)]
+                location:
+                - Ile Jésus
+                - Canada
+              valcour-island:
+                unit: [Chazy Group]
+                location:
+                - Valcour Island
+                - Lake Champlain
+                - New York
           - taxon: rossi_sprinkle_1973
             new: true
+            pages: 150
             material:
-            - catalogNumbers:
-              - USNM 165378
+            - catalogNumbers: [USNM 165378]
               role: holotype
-            - catalogNumbers:
-              - USNM 165379
-              - USNM 165380
-              - USNM 165381
-              - USNM 165382
-              - USNM 165383
-              - USNM 165384
-              - USNM 165385
-              - USNM 165386
-              - USNM 165387
-              - USNM 165388
-              - USNM 165389
-              - USNM 165390
-              - USNM 165391
-              - USNM 165392
-              - USNM 165393
-              - USNM 165394
-              - USNM 165395
-              - USNM 165396
-              - USNM 165397
-              - USNM 165398
+              context: usgs-d190d-co
+              notes: deltoid D13
+            - catalogNumbers: [[USNM 165379, USNM 165391]]
+              catalogNumbersAsPrinted: USNM 165379–91
               role: paratype
+              notes: deltoid growth series D1–12 and D14
+            - catalogNumbers: [USNM 165392, USNM 165393, USNM 165394]
+              catalogNumbersAsPrinted: USNM 165392–4
+              role: paratype
+              context: usgs-d190d-co
+              notes: oral crests
+            - catalogNumbers: [USNM 165395]
+              catalogNumbersAsPrinted: USNM 165395–6
+              role: paratype
+              context: usgs-d190d-co
+              notes: bibrachial
+            - catalogNumbers: [USNM 165396]
+              catalogNumbersAsPrinted: USNM 165395–6
+              role: paratype
+              context: usgs-d190e-co
+              notes: bibrachial
+            - catalogNumbers: [USNM 165397]
+              catalogNumbersAsPrinted: USNM 165397–8
+              role: paratype
+              context: lo-1
+              notes: possible orals
+            - catalogNumbers: [USNM 165398]
+              catalogNumbersAsPrinted: USNM 165397–8
+              role: paratype
+              context: usgs-d190d-co
+              notes: possible orals
+            - label: the remainder of this acid residue material in USGS collection D190d CO (Denver)
+              context: usgs-d190d-co
+            - label: the remainder of this acid residue material in USGS collection D190e CO (Denver)
+              context: usgs-d190e-co
+            - catalogNumbers: [MCZ 612]
+              notes: the remainder of this acid residue material
+            illustrations:
+            - plate: 36
+              figures: [[1, 5]]
+              of: USNM 165378
+            - plate: 36
+              figures: [[6, 8]]
+              of: USNM 165392
+            - plate: 36
+              figures: [9, 10]
+              of: [USNM 165393, USNM 165394]
+            - plate: 36
+              figures: [[11, 13]]
+              of: USNM 165395
+            - plate: 36
+              figures: [[14, 16]]
+              of: USNM 165396
+            - plate: 36
+              figures: 17
+              of: USNM 165397
+            - plate: 36
+              figures: [[18, 22]]
+              of: USNM 165398
+            - plate: 36
+              figures: [[23, 36]]
+              of: [USNM 165379, USNM 165378]
+              notes: holotype in Fig. 35
+            - textFigures: 37B
+              page: 146
+              depicts: drawing
+            contexts:
+              usgs-d190d-co:
+                unit: [Garden City Formation]
+                period: Ordovician
+                series: Middle Ordovician
+                seriesModifier: lower
+                localStage: Whiterockian
+                biozone: Orthidiella
+                location: [northern Utah]
+                localityNumbers: [USGS D190d CO]
+                collectedBy: Ross
+                notes: Trilobite zones K and L
+              usgs-d190e-co:
+                unit: [Garden City Formation]
+                period: Ordovician
+                series: Middle Ordovician
+                seriesModifier: lower
+                localStage: Whiterockian
+                biozone: Orthidiella
+                location: [northern Utah]
+                localityNumbers: [USGS D190e CO]
+                collectedBy: Ross
+                notes: Trilobite zones K and L
           - taxon: nevadensis_sprinkle_1973
             provisional: true
             new: true
+            pages: 152
             material:
-            - catalogNumbers:
-              - MCZ 613
+            - catalogNumbers: [MCZ 613]
               role: holotype
-            - catalogNumbers:
-              - MCZ 614
-              - MCZ 615
-              - MCZ 643
-              - MCZ 644
+              context: mj-1
+              notes: deltoid D7
+            - catalogNumbers: [MCZ 614-D1, MCZ 614-D2, MCZ 614-D3, MCZ 614-D4, MCZ 614-D5, MCZ 614-D6, MCZ 614-D8, MCZ 614-D9]
+              catalogNumbersAsPrinted: MCZ 614 (deltoids D1–6, D8–9)
               role: paratype
+              context: mj-1
+            - catalogNumbers: [MCZ 615]
+              role: paratype
+              context: mj-1
+              notes: oral crest
+            - catalogNumbers: [MCZ 643]
+              context: mj-1
+              notes: approximately 20–30 additional poorly preserved silicified deltoids and oral crests
+            - catalogNumbers: [MCZ 644]
+              context: ik-3
+              notes: several additional deltoid plates
+            illustrations:
+            - plate: 37
+              figures: [[1, 5]]
+              of: MCZ 613
+            - plate: 37
+              figures: [[6, 9]]
+              of: MCZ 615
+            - plate: 37
+              figures: [[10, 18]]
+              of: [MCZ 614-D1, MCZ 613]
+              notes: caption prints "Figs. 10-19"; holotype in Fig. 16
+            - textFigures: 37C
+              page: 146
+              depicts: drawing
           - taxon: elongatus_sprinkle_1973
             provisional: true
             new: true
+            pages: 154
             notes: "very questionably referred to Blastoidocrinus"
             material:
-            - catalogNumbers:
-              - MCZ 610
+            - catalogNumbers: [MCZ 610]
               role: holotype
-            - catalogNumbers:
-              - MCZ 611a
-              - MCZ 611b
-              - MCZ 611c
+              context: mj-1
+            - catalogNumbers: [MCZ 611a]
               role: paratype
+              context: ik-3
+            - catalogNumbers: [MCZ 611b, MCZ 611c]
+              catalogNumbersAsPrinted: MCZ 611b–c (15 specimens)
+              count: 15
+              role: paratype
+            illustrations:
+            - plate: 37
+              figures: [19, 20, 22]
+              of: MCZ 610
+            - plate: 37
+              figures: [21, 23]
+              of: MCZ 611a
+              notes: caption prints "paratype MCZ 611"
+            - textFigures: 37D
+              page: 146
+              depicts: drawing
         - taxon: blastocystis
+          pages: 155
+          illustrations: null
+          contexts:
+            near-leningrad:
+              unit: [Kunda Formation (B₃)]
+              period: Ordovician
+              series: Lower Ordovician
+              seriesModifier: upper
+              location:
+              - near Leningrad
+              - U.S.S.R.
           children:
           - taxon: rossica_jaekel_1918
             type: true
+            pages: 155
+            material:
+            - label: only one incomplete specimen of this genus and species is known to exist
+              notes: not available for study during this project
+            illustrations:
+            - textFigures: 38
+              page: 155
+              of: only one incomplete specimen of this genus and species is known to exist
+              depicts: drawing
+              notes: Original figures, from Schmidt (1874, pl. 3, figs. 1a–c).
+            contexts: null
+            ranges: null
       - taxon: meristoschismatidae
         new: true
+        pages: 156
+        illustrations: null
+        ranges:
+        - period: Ordovician
+          series: Middle Ordovician
         children:
         - taxon: meristoschisma
           new: true
+          pages: 156
+          illustrations: null
+          contexts:
+            virginia-and-tennessee:
+              unit: [Benbolt Formation]
+              period: Ordovician
+              series: Middle Ordovician
+              localStageRange: [Black River, Porterfield]
+              location: [southwestern Virginia and northeastern Tennessee]
           children:
           - taxon: hudsoni_sprinkle_1973
             type: true
             new: true
+            pages: 158
             material:
-            - catalogNumbers:
-              - MCZ 594
+            - catalogNumbers: [MCZ 594]
               role: holotype
-            - catalogNumbers:
-              - MCZ 595
-              - MCZ 596
-              - MCZ 597
-              - MCZ 598
-              - MCZ 599
-              - MCZ 560
-              - MCZ 561
-              - MCZ 644
-              - MCZ 645
+              collectedBy: my field assistant Gary Stuckey
+              collectedDate: during the summer of 1967
+              context: lv-2
+            - catalogNumbers: [MCZ 595]
               role: paratype
+              collectedDate: during the summer of 1967
+              context: rc-8
+            - catalogNumbers: [MCZ 596]
+              catalogNumbersAsPrinted: MCZ 596–601
+              role: paratype
+              context: rc-7
+            - catalogNumbers: [MCZ 597, MCZ 598, MCZ 601A, MCZ 601B, MCZ 601C]
+              catalogNumbersAsPrinted: MCZ 596–601
+              role: paratype
+              context: rc-9
+            - catalogNumbers: [MCZ 599-D1, MCZ 599-D2, MCZ 599-D3, MCZ 599-D4, MCZ 599-D5, MCZ 599-D6, MCZ 599-D7, MCZ 599-D8, MCZ 599-D9, MCZ 600-R1, MCZ 600-R2, MCZ 600-R3, MCZ 600-R4, MCZ 600-R5, MCZ 600-R6, MCZ 600-R7, MCZ 600-R8, MCZ 600-R9, MCZ 600-R10]
+              catalogNumbersAsPrinted: MCZ 596–601
+              role: paratype
+              context: rc-9
+            - catalogNumbers: [MCZ 599-D10]
+              catalogNumbersAsPrinted: MCZ 596–601
+              role: paratype
+              context: lv-2
+            - catalogNumbers: [MCZ 644]
+              role: paratype
+            - catalogNumbers: [MCZ 645]
+              notes: nearly 300 additional separate plates, primarily from locality RC-9.
+            illustrations:
+            - plate: 38
+              figures: [[1, 5]]
+              of: MCZ 594
+            - plate: 38
+              figures: [[6, 8]]
+              of: MCZ 595
+            - plate: 39
+              figures: [[1, 4]]
+              of: MCZ 596
+            - plate: 39
+              figures: [5, 6]
+              of: MCZ 597
+            - plate: 39
+              figures: [[7, 15]]
+              of: [MCZ 601A, MCZ 601B]
+            - plate: 39
+              figures: [[16, 19]]
+              of: MCZ 598
+            - plate: 39
+              figures: 20
+              of: MCZ 601C
+            - plate: 39
+              figures: [[21, 23]]
+              of: MCZ 594
+            - plate: 40
+              figures: [[1, 5]]
+              of: MCZ 599-D7
+            - plate: 40
+              figures: [[6, 10]]
+              of: MCZ 600-R10
+            - plate: 41
+              figures: [[1, 20]]
+              of: [MCZ 599-D1, MCZ 599-D10, MCZ 600-R1]
+            - textFigures: 5G
+              page: 17
+              depicts: drawing
+            - textFigures: 18
+              page: 47
+            - textFigures: 39
+              page: 157
+              of: MCZ 594
+            - textFigures: 40
+              page: 160
+              of: MCZ 594
+              depicts: drawing
+            - textFigures: 41
+              page: 162
+              depicts: reconstruction
+            - textFigures: 42
+              page: 165
+              depicts: drawing
           - taxon: fayi_sprinkle_1973
             new: true
+            pages: 168
             material:
-            - catalogNumbers:
-              - MCZ 602-D1
+            - catalogNumbers: [MCZ 602-D1]
               role: holotype
-            - catalogNumbers:
-              - MCZ 602-D2-3
-              - MCZ 602-RO-5
-              - MCZ 602a
-              - MCZ 602b
+              context: dt-3
+            - catalogNumbers: [MCZ 602-D2, MCZ 602-D3]
+              catalogNumbersAsPrinted: MCZ 602–D2–3
               role: paratype
+              notes: deltoids
+            - catalogNumbers: [MCZ 602-RO-5]
+              catalogNumbersAsPrinted: MCZ 602–RO–5
+              role: paratype
+              notes: radials
+            - catalogNumbers: [MCZ 602a]
+              role: paratype
+              notes: oral plate
+            - catalogNumbers: [MCZ 602b]
+              notes: about ten additional unfigured deltoid and radial plates
+            illustrations:
+            - plate: 40
+              figures: [[11, 15]]
+              of: MCZ 602-D1
+            - plate: 40
+              figures: [[16, 20]]
+              of: MCZ 602-RO-5
+              notes: caption prints "paratype MCZ 602-R3"
+            - plate: 41
+              figures: [[21, 27]]
+              of: [MCZ 602-D1, MCZ 602-D2, MCZ 602-RO-5]
+              notes: caption prints "paratypes MCZ 602-D2-3 (deltoids), and paratypes MCZ 602-R1-4 (radials)"
+            - textFigures: 42
+              page: 165
+              depicts: drawing
     - taxon: rhombifera-class
+      pages: 170
       moved:
         taxon: crinozoa
+      illustrations:
+      - textFigures: 6A
+        page: 18
+        depicts: drawing
+      - textFigures: 12A
+        page: 31
+        depicts: drawing
+      ranges:
+      - seriesRange: [Lower Ordovician, Upper Devonian]
+        regions: [world-wide]
     - taxon: blastoidea
+      pages: 171
       moved:
         taxon: crinozoa
+      illustrations:
+      - textFigures: 6C
+        page: 18
+        depicts: drawing
+      - textFigures: 12C
+        page: 31
+        depicts: drawing
+      - textFigures: 16B
+        page: 43
+        depicts: drawing
+      ranges:
+      - period: Ordovician
+        series: Middle Ordovician
+        notes: Middle Ordovician(?)
+      - localSeriesRange: [Middle Silurian, Upper Permian]
+        regions: [world-wide]
+        asPrinted: Middle Ordovician(?), middle Silurian–late Permian, world-wide distribution.
     - taxon: diploporita-class
       provisional: true
+      pages: 186
       altPlacements:
       - taxon: crinozoa
+      illustrations:
+      - textFigures: 11B
+        page: 28
+        depicts: drawing
+      ranges:
+      - seriesRange: [Lower Ordovician, Lower Devonian]
+        regions: [world-wide]
   - taxon: crinozoa
+    pages: 174
+    illustrations:
+    - textFigures: 17B
+      page: 45
+      depicts: drawing
+    ranges:
+    - localSeriesRange: [Middle Cambrian, Recent]
+      asPrinted: ranging from the middle Cambrian to the Recent
     children:
     - taxon: crinoidea
+      pages: 175
+      illustrations:
+      - textFigures: 3
+        page: 13
+        depicts: drawing
+      - textFigures: 7B
+        page: 22
+        depicts: drawing
+      - textFigures: 13B
+        page: 36
+        depicts: drawing
+      ranges:
+      - period: Cambrian
+        localSeries: Middle Cambrian
+        notes: Middle Cambrian(?)
+      - localSeriesRange: [Lower Ordovician, Recent]
+        regions: [worldwide]
+        asPrinted: Middle Cambrian(?), early Ordovician–Recent, worldwide distribution.
       children:
       - taxon: inadunata
+        pages: 177
+        illustrations: null
+        contexts: null
+        ranges: null
       - taxon: camerata
+        pages: 177
+        illustrations: null
+        contexts: null
+        ranges: null
       - taxon: flexibilia
+        pages: 177
+        illustrations: null
+        contexts: null
+        ranges: null
       - taxon: articulata
+        pages: 177
+        illustrations: null
+        contexts: null
+        ranges: null
       - openTaxon: crinoidea-indeterminate-subclass_sprinkle_1973
+        pages: 177
+        illustrations: null
+        contexts: null
+        ranges: null
         children:
         - openTaxon: crinoidea-indeterminate-order_sprinkle_1973
+          pages: 177
+          illustrations: null
+          contexts: null
+          ranges: null
           children:
           - taxon: echmatocrinidae
             new: true
+            pages: 177
+            illustrations: null
+            ranges:
+            - period: Cambrian
+              localSeries: Middle Cambrian
             children:
             - taxon: echmatocrinus
               new: true
+              pages: 177
+              illustrations:
+              - textFigures: 14
+                page: 38
+                depicts: drawing
+              contexts:
+                burgess-shale:
+                  unit: [Burgess Shale]
+                  period: Cambrian
+                  localSeries: Middle Cambrian
+                  biozone: Bathyuriscus-Elrathina
+                  location: [western Canada]
               children:
               - taxon: brachiatus_sprinkle_1973
                 type: true
                 new: true
+                pages: 180
                 material:
-                - catalogNumbers:
-                  - GSC 25962
+                - catalogNumbers: [GSC 25962A, GSC 25962B]
+                  catalogNumbersAsPrinted: GSC 25962
                   role: holotype
-                - catalogNumbers:
-                  - USNM 165405
-                  - USNM 165406
-                  - USNM 165407
-                  - USNM 165408
-                  - USNM 165426
+                  collectedBy: members of the Geological Survey of Canada and Harry B. Whittington and students
+                  collectedDate: 25 July 1967
+                  context: walcott-35k
+                  parts: [part, counterpart]
+                - catalogNumbers: [USNM 165405A, USNM 165405B, USNM 165406A, USNM 165406B, USNM 165407]
+                  catalogNumbersAsPrinted: USNM 165405–165408
                   role: paratype
-                - catalogNumbers:
-                  - USNM 165427
+                  collectedBy: Walcott
+                  collectedDate: between 1911 and 1917
+                  context: walcott-35k
+                - catalogNumbers: [USNM 165408]
+                  catalogNumbersAsPrinted: USNM 165405–165408
                   role: paratype
-                  notes: '?'
+                  collectedBy: Walcott
+                  collectedDate: between 1911 and 1917
+                  context: walcott-35k-10
+                - catalogNumbers: [USNM 165426]
+                  role: paratype
+                  context: walcott-35k
+                  notes: one additional separate brachial plate
+                - catalogNumbers: [USNM 165427]
+                  context: walcott-35k
+                  notes: one poorly preserved possible additional specimen
+                illustrations:
+                - plate: 42
+                  figures: [1, 2]
+                  of: [GSC 25962B, GSC 25962A]
+                - plate: 42
+                  figures: 3
+                  of: USNM 165408
+                - plate: 43
+                  figures: [1, 2]
+                  of: [USNM 165405A, USNM 165405B]
+                - plate: 43
+                  figures: 3
+                  of: USNM 165407
+                - plate: 43
+                  figures: [4, 5]
+                  of: [USNM 165406B, USNM 165406A]
+                - plate: 43
+                  figures: 6
+                  of: GSC 25962B
+                - plate: 43
+                  figures: 7
+                  of: USNM 165427
+                  notes: caption prints "paratype(?) USNM 165427"
+                - plate: 43
+                  figures: 8
+                  of: USNM 165426
+                - textFigures: 44
+                  page: 179
+                  of: GSC 25962B
+                - textFigures: 45
+                  page: 181
+                  of: GSC 25962B
+                  depicts: drawing
+                contexts:
+                  walcott-35k:
+                    unit: [Burgess Shale Member, Stephen Formation]
+                    period: Cambrian
+                    localSeries: Middle Cambrian
+                    biozone: Bathyuriscus-Elrathina
+                    location:
+                    - Walcott's Quarry
+                    - ridge on the south side of Mt. Wapta
+                    - near Field
+                    - British Columbia
+                    localityNumbers: [USNM loc. 35k]
+                  walcott-35k-10:
+                    unit: [Burgess Shale Member, Stephen Formation]
+                    period: Cambrian
+                    localSeries: Middle Cambrian
+                    biozone: Bathyuriscus-Elrathina
+                    location:
+                    - the smaller quarry about 75 feet above
+                    - ridge on the south side of Mt. Wapta
+                    - near Field
+                    - British Columbia
+                    localityNumbers: [USNM loc. 35k/10]
     - taxon: paracrinoidea
+      pages: 184
+      ranges:
+      - period: Ordovician
+        series: Middle Ordovician
+        regions: [North America, Europe]
       children:
       - taxon: springerocystidae
+        pages: 138
+        illustrations: null
+        contexts:
+          southern-appalachians:
+            unit: [Benbolt Formation ("Ottosee")]
+            location: [southern Appalachians]
         children:
         - taxon: springerocystis
+          pages: 138
+          illustrations: null
+          contexts: null
+          ranges: null
       - taxon: columbocystis
+        pages: 138
+        contexts: null
+        ranges: null
       - taxon: foerstecystis
+        pages: 138
+        illustrations: null
+        contexts: null
+        ranges: null
       - taxon: ulrichocystis
         provisional: true
+        pages: 186
+        illustrations: null
+        contexts: null
+        ranges: null
       - taxon: palaeocystites
         provisional: true
+        pages: 186
+        illustrations: null
+        contexts: null
+        ranges: null
       - taxon: allocystites
         provisional: true
+        pages: 186
+        illustrations: null
+        ranges:
+        - period: Silurian
+          localSeries: Middle Silurian
     - taxon: diploporita-class
       provisional: true
+      pages: 186
       altPlacements:
       - taxon: blastozoa
+      illustrations:
+      - textFigures: 11B
+        page: 28
+        depicts: drawing
+      ranges:
+      - seriesRange: [Lower Ordovician, Lower Devonian]
+        regions: [world-wide]
   - taxon: echinozoa
+    pages: 3
+    illustrations: null
+    contexts: null
+    ranges: null
     children:
     - taxon: edrioblastoidea
+      pages: 187
       moved:
         taxon: crinozoa
+      illustrations: null
+      ranges:
+      - period: Ordovician
+        series: Middle Ordovician
+        regions: [eastern North American, Australia]
       children:
       - taxon: astrocystites
+        pages: 187
+        illustrations: null
+        ranges:
+        - period: Ordovician
+          series: Middle Ordovician
+          regions: [Ottawa region]
+        - regions: [Australia]
