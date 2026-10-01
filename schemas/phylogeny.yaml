@@ -488,10 +488,6 @@ $defs:
     properties:
       taxon:
         type: string
-      affTaxon:
-        type: string
-      cfTaxon:
-        type: string
       openTaxon:
         type: string
       cf:

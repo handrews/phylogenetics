@@ -432,19 +432,6 @@ class Taxon:
     return self._alt
 
 
-class ProxyTaxon(Taxon):
-  def __init__(self, taxon, proxy_type, source):
-    super().__init__(taxon._data, taxon.key)
-    self._name = None
-    self._proxy_type = proxy_type
-    self._proxied_authority = self._authority
-    self._authority = Authority({'authority': {'source': source.key}})
-
-  @property
-  def display_name(self):
-    return f'{self._proxy_type} ' + super().display_name
-
-
 # A subtree of a tree node other than `children`: the field holding it;
 # whether that holds a list of nodes rather than a single one; and whether
 # its nodes cite a use of the name in another work (a synonymy entry, or
@@ -459,9 +446,8 @@ _COMBINATION_RANKS = frozenset({'subgenus', 'species', 'subspecies', 'variety'})
 
 class Tree:
   _NAMED_FIELDS = {'taxon'}
-  _PROXY_FIELDS = {'cfTaxon', 'affTaxon'}
   _UNNAMED_FIELDS = {'openTaxon'}
-  _ALL_TAXON_FIELDS = _NAMED_FIELDS | _PROXY_FIELDS | _UNNAMED_FIELDS
+  _ALL_TAXON_FIELDS = _NAMED_FIELDS | _UNNAMED_FIELDS
 
   TYPE_TAXONOMY = 'taxonomy'
   TYPE_TABLE = 'table'
@@ -633,28 +619,17 @@ class Tree:
       taxon_key = self._data['field'][index]
 
     if taxon_key:
-      if field in self._PROXY_FIELDS:
-        if proxy_target := Taxon.get(taxon_key):
-          taxon = ProxyTaxon(
-            proxy_target,
-            field[: -len('Taxon')] + '.',
-            self._source,
-          )
-        else:
-          raise ValueError(f'Could not get proxy target {taxon_key}')
-      else:
-        taxon = Taxon.get(taxon_key)
-        if taxon is None:
-          # TODO: Is this error message right?
-          logger.error(f'Unrecognized tree {field} {taxon_key} for {self}')
-          return None
+      taxon = Taxon.get(taxon_key)
+      if taxon is None:
+        # TODO: Is this error message right?
+        logger.error(f'Unrecognized tree {field} {taxon_key} for {self}')
+        return None
 
-      unnamed = self._UNNAMED_FIELDS | self._PROXY_FIELDS
-      if field not in unnamed and not taxon.name:
+      if field not in self._UNNAMED_FIELDS and not taxon.name:
         logger.error(
           f'Taxon {taxon} at {self}/{field} expected to be named.',
         )
-      if field in unnamed and taxon.name:
+      if field in self._UNNAMED_FIELDS and taxon.name:
         logger.error(
           f'Taxon {self._taxon} at {self}/{field} expected to not be named.',
         )

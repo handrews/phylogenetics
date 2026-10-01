@@ -34,7 +34,7 @@ from phylohist.loader.io import (  # noqa: E402
   load_yaml,
 )
 
-TAXON_FIELDS = ('taxon', 'openTaxon', 'cfTaxon', 'affTaxon', 'bracket')
+TAXON_FIELDS = ('taxon', 'openTaxon', 'bracket')
 
 
 def walk(node, taxa, authors, sources):

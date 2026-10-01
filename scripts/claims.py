@@ -54,7 +54,7 @@ def write(out, claims_by_source, roots, full):
 
 # Which tree fields a coverage kind is counted from, for the report.
 _KIND_SOURCES = {
-  'skeleton': 'taxon/openTaxon/cfTaxon/affTaxon nodes and their children',
+  'skeleton': 'taxon/openTaxon nodes and their children',
   'newTaxa': '`new: true`',
   'types': '`type: true`',
   'synonymy': '`synonyms` and `non` entries',

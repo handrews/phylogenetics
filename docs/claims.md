@@ -53,17 +53,15 @@ the nested form names a source, the claim adds `citesSource`, `citedPages`,
 
 ### `usage`
 
-Emitted for every node that cites a name: `taxon`, `openTaxon`, `cfTaxon`,
-`affTaxon`, and for every `synonyms`, `non`, `removed`, `parents` and `or`
-entry. Fields added:
+Emitted for every node that cites a name: `taxon`, `openTaxon`, and for
+every `synonyms`, `non`, `removed`, `parents` and `or` entry. Fields added:
 
-- `form`: which field carried the name; `bracket` for a cladogram's
-  bracket label.
+- `form`: which field carried the name (`taxon` or `openTaxon`); `bracket`
+  for a cladogram's bracket label.
 - `spelling`: the key used on the line. Spellings are undirected (B28); the
   claim never substitutes the record the key points at.
 - `axis`: how the node hangs off its parent (`children`, `synonyms`,
   `removed`, `parents`, …; `root` for a tree's top node).
-- `target`: for `cfTaxon` and `affTaxon`, the compared name (C1).
 - `compared`: `{sign: cf | aff, taxon}` on the usage of an `openTaxon` node
   that carries a `cf` or `aff` field: the open form's own record is the
   subject, and `taxon` is the named taxon the node compares it with. A
