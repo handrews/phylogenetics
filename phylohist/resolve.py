@@ -195,6 +195,10 @@ class Resolver:
         entry['authoritySource'] = row['authority']['source']
     if (row['rank'] or '').lower() in blocks.SPECIES_GROUP:
       entry['combinations'] = self.store.words.combinations(key)
+    # An open form says what it is compared with; the link lives on nodes,
+    # so it comes from the store's index, not from the record.
+    if links := self.store.compared_links.get(key):
+      entry['compared'] = {**links[0], 'name': self.store.words.display(links[0]['taxon'])}
     return entry
 
   def _resolve_combination(self, words):

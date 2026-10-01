@@ -867,14 +867,17 @@ def test_absence_table_rests_on_the_auditors_nulls(store):
 
 
 def test_absence_table_groups_a_record_by_node(store):
-  block = store.statements('wanneri_foerste_1938', source='1973_sprinkle', kind='absence')
-  assert block['title'] == 'Lepidocystis wanneri Foerste 1938 in Sprinkle 1973'
-  assert [row['group'] for row in block['rows']] == ['Lepidocystis wanneri (p. 62)'] * 4 + [
-    'Lepidocystis wanneri (p. 66)'
-  ] * 4
-  assert [len(node['rows']) for node in block['content']] == [4, 4]
-  assert [node['page'] for node in block['content']] == [62, 66]
-  assert '-- Lepidocystis wanneri (p. 66) --' in block['rendered']
+  # Sprinkle 1973 enters `palaeocystites` at two nodes (a doubled node, on
+  # the hand list); `wanneri_foerste_1938` had two until its cf. form became
+  # an open taxon of its own.
+  block = store.statements('palaeocystites', source='1973_sprinkle', kind='absence')
+  assert block['title'] == 'Palaeocystites Billings 1858 in Sprinkle 1973'
+  assert [row['group'] for row in block['rows']] == ['Palaeocystites (p. 139)'] * 2 + [
+    'Palaeocystites (p. 186)'
+  ] * 2
+  assert [len(node['rows']) for node in block['content']] == [2, 2]
+  assert [node['page'] for node in block['content']] == [139, 186]
+  assert '-- Palaeocystites (p. 186) --' in block['rendered']
 
 
 def test_absence_table_leaves_out_species_level_kinds_above_species(store):
@@ -989,3 +992,57 @@ def test_synonymy_says_a_source_gives_none(store):
   )
   assert render(bare, 'text') == 'Sprinkle 1973 gives no synonymy for X.'
   assert store.synonymy('neglecta_hecker_1940', source='1973_sprinkle') == []
+
+
+# -- open forms as they render from the corpus -------------------------------
+
+
+def test_compared_form_is_not_marked_as_a_new_taxon(store):
+  # A cf. or aff. node carries `new` because the source originates the
+  # form; the listing must not print "sp. nov." after it.
+  block = store.contents('1975_kolata', 'edrioaster', style='text')[0]
+  lines = [line.strip() for line in block['rendered'].splitlines()]
+  assert 'Edrioaster cf. bigsbyi' in lines
+  block = store.contents('1960_gill_caster', 'victoriacystis', style='text')[0]
+  lines = [line.strip() for line in block['rendered'].splitlines()]
+  assert 'Victoriacystis aff. wilkinsi a' in lines and 'Victoriacystis aff. wilkinsi b' in lines
+  # The named species beside them keeps its mark.
+  assert 'Victoriacystis wilkinsi sp. nov.' in lines
+
+
+def test_cited_open_form_reads_in_its_combination(store):
+  # With the original genus given in `parents`, and without it.
+  with_parents = store.synonymy('longidactylus_walcott_1886', source='1973_sprinkle', style='text')
+  assert '1965 Gogia cf. longidactylus Robison, 1965' in with_parents[0]['rendered']
+  without = store.synonymy(
+    'flexibilis_parsley_prokop_2004', source='2004_parsley_prokop', style='text'
+  )
+  assert 'Stromatocystites aff. pentangularis Prokop, 1961' in without[0]['rendered']
+
+
+def test_cited_combination_quotes_its_genus(store):
+  # `quotedParent` on a synonymy entry puts the quotes on the genus the
+  # entry's `parents` give; no entry in the corpus carries it yet.
+  source, record = '1973_sprinkle', 'longidactylus_walcott_1886'
+  path = store._record_paths(source, record)[0]
+  entry_path = next(
+    p
+    for p, claims in store.at_path[source].items()
+    if p.startswith(f'{path}/synonyms/')
+    and any(c['kind'] == 'acceptance' and c.get('parents') == ['eocystites'] for c in claims)
+  )
+  acceptance = next(c for c in store.at_path[source][entry_path] if c['kind'] == 'acceptance')
+  acceptance['quotedParent'] = True
+  try:
+    entries = store._synonymy_entries(source, path)
+  finally:
+    del acceptance['quotedParent']
+  assert any(e.get('parents') == ['"Eocystites"'] for e in entries)
+
+
+def test_cited_open_form_without_a_combination_reads_in_its_own_words(store):
+  # Bell 1976's indeterminate form, cited by Sumrall & Bowsher 1996 under
+  # their cf. form: its own record's words, never the owner's genus.
+  block = store.contents('1996_sumrall_bowsher', 'giganticlavus', synonymy=True, style='text')[0]
+  assert '= 1976 Agelacrinitidae sp. Bell 1976' in block['rendered']
+  assert 'Giganticlavus agelacrinitidae' not in block['rendered']

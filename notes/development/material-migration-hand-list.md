@@ -80,6 +80,34 @@ What the model could not say, for stage 4:
 - One number cited under two species (MCZ 643, MCZ 644, GSC 25954) is
   entered under both as printed.
 
+## Open nomenclature, after the 2026-10-01 migration
+
+- Gill & Caster 1960: the two forms entered as "aff. *wilkinsi*" are
+  now `victoriacystis-aff-wilkinsi-a_gill_caster_1960` and `-b`, in
+  tree order. Read what the paper calls them and set each record's
+  `designation` (or rename the keys).
+- Schlotheim 1826: the aff. form of *pomum* still carries
+  `questionable`. Whether the "?" doubts the form or the comparison
+  is for whoever reads that paper.
+- Sprinkle 1973, *Gogia multibrachiatus*: USNM 165425 is "additional
+  specimen (topotype?)" in the text (p. 86) and "plesiotype" on
+  Pl. 11. It is entered as `role: plesiotype` with the query in
+  `notes`. If the text's word is taken, it is `role: topotype` with
+  `roleUncertain: true`.
+- Guensburg & Sprinkle 1994 and Guensburg et al. 2020: *lloydi*
+  carries `provisional` beside `quotedParent`. The note attributes
+  the provisional assignment to Sprinkle 1985; check whether either
+  paper makes it its own.
+- Müller, Hahn & Bohatý 2013: "Timeischytes" *prescheri*? Grigo, 2000
+  is one specimen from the Prescher collection (Grigo's fig. 7). The
+  tree has no material for *prescheri*; when it does, that specimen
+  is an entry with `uncertain: true`.
+- Bell 1891 (draft): "Cystidea" is `quoted` twice, from a diagram.
+  What the quotes mean there is undecided.
+- `provisional` on a synonymy entry (twelve uses) is stored and
+  carried on no claim, so the tools do not print "Eocystites?
+  longidactylus" as cited.
+
 ## Other
 
 - Nodes with exactly one context whose entries carry no `context`: the

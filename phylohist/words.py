@@ -196,6 +196,8 @@ class Words:
       key = base['subject']
       rank = self.store._rank_of(key)
       genus = subgenus = species = None
+      # The genus is printed in quotes in this combination.
+      quote_genus = bool((placement or acceptance or {}).get('quotedParent'))
       if placement is not None:
         node = placement
         while node is not None and node.get('parent') and genus is None:
@@ -219,9 +221,11 @@ class Words:
         if parents:
           genus = parents[0]
           subgenus = parents[1] if len(parents) > 1 else None
-        else:
+        elif not self.store.names[key].get('placeholder'):
           owner = self.combination(source_key, path.rsplit('/', 2)[0])
           genus, subgenus = owner.get('genus'), owner.get('subgenus')
+        # A cited open form with no combination given reads in the words of
+        # its own record ("Agelacrinitidae sp."), never under the owner's genus.
       if rank == 'subgenus':
         genus = genus or self._genus_of_subgenus(key)
         label = (
@@ -237,7 +241,8 @@ class Words:
       elif rank in blocks.SPECIES_GROUP:
         parts = []
         if genus:
-          parts.append(self.store.name(genus))
+          genus_name = self.store.name(genus)
+          parts.append(f'"{genus_name}"' if quote_genus else genus_name)
           if subgenus:
             parts.append(f'({self.store.name(subgenus)})')
           if species and rank != 'species':
@@ -493,6 +498,10 @@ class Words:
       parent = claim.get('parent')
       where = self.display(parent) if parent else 'an unnamed group'
       flags = [f for f in ('provisional', 'questionable', 'quoted') if claim.get(f)]
+      if claim.get('quotedParent'):
+        flags.append('genus in quotes')
+      if claim.get('nonMonophyletic'):
+        flags.append(blocks.non_monophyly_words(claim['nonMonophyletic']))
       words = f'places it under {where}'
       if flags:
         words += ' (' + ', '.join(flags) + ')'
@@ -545,7 +554,10 @@ class Words:
       numbers = f'{claim["count"]} specimens'
     else:
       numbers = ''
-    words = f'{claim.get("role") or "specimens"}: {numbers}'.rstrip()
+    role = claim.get('role')
+    if role and claim.get('roleUncertain'):
+      role += '?'
+    words = f'{role or "specimens"}: {numbers}'.rstrip()
     if claim.get('preparation'):
       words += f' ({claim["preparation"]})'
     if claim.get('castOf'):
@@ -554,6 +566,8 @@ class Words:
       words += f' [{claim["repository"]}]'
     if claim.get('contextTentative') and claim.get('contextKey'):
       words += f' ({claim["contextKey"]}?)'
+    if claim.get('uncertain'):
+      words += ' (doubtfully assigned)'
     if claim.get('figured') is False:
       words += ' (not figured)'
     return words

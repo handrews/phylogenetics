@@ -1,6 +1,5 @@
 taxonomies:
 - taxon: eocrinoidea
-  quoted: true
   children:
   - taxon: eocrinidae
     children:

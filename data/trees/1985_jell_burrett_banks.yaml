@@ -37,7 +37,8 @@ taxonomies:
           - NMVP107071
           - NMVP107072
           role: paratype
-      - cfTaxon: tastudorum_jell_burrett_banks_1985
+      - openTaxon: cambraster-cf-tastudorum_jell_burrett_banks_1985
+        cf: tastudorum_jell_burrett_banks_1985
         new: true
         material:
         - catalogNumbers:

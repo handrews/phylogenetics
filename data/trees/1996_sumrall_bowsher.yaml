@@ -13,6 +13,16 @@ taxonomies:
           - taxon: bennisoni_sumrall_bowsher_1996
             type: true
             new: true
-          - cfTaxon: bennisoni_sumrall_bowsher_1996
+          - openTaxon: giganticlavus-cf-bennisoni_sumrall_bowsher_1996
+            cf: bennisoni_sumrall_bowsher_1996
+            synonyms:
+            - openTaxon: agelacrinitidae-sp_bell.b.m_1976
+              authority:
+                source: 1976_bell.b.m
+                illustrations:
+                - plate: 56
+                  figures:
+                  - [1, 11]
+              citedAs: Genus and Species Indeterminate BELL, 1976a. pl. 56, figs. 1–11.
           - taxon: gelasinus_sumrall_bowsher_1996
             new: true

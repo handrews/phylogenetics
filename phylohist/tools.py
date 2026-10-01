@@ -110,7 +110,8 @@ TOOL_DESCRIPTIONS = {
     'literature writes it: "Rhenopyrgus grayae", "Pyrgocystis '
     '(Rhenopyrgus) coronaeformis", "Pyrgocystis (Rhenopyrgus)". An empty list '
     'means no source in the corpus carries the name; it does not mean the '
-    'name does not exist. Optionally restrict by rank word.'
+    'name does not exist. An open form (a cf. or aff. record) says what it '
+    'is compared with. Optionally restrict by rank word.'
   ),
   'resolve_source': (
     'The sources a citation can mean: "Dehm 1961", "Holloway & Jell '
@@ -173,8 +174,9 @@ TOOL_DESCRIPTIONS = {
     'placement), the page; the heading measures the papers, co-author '
     'sets and years, the ranks used and the positions given (which is the '
     "trajectory's present and history). The same name at other ranks is "
-    'included unless include_related is false. With synonymy true each '
-    "source's synonymy entries follow its line."
+    'included unless include_related is false, and so are the forms '
+    'compared with the name (cf., aff.), listed under their own names. '
+    "With synonymy true each source's synonymy entries follow its line."
   ),
   'synonymy': (
     'The synonymy a source prints under a record, as a dated list: each '

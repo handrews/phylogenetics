@@ -99,7 +99,9 @@ taxonomies:
       authority:
         source: 1741_linnaeus
         pages: 156
-  - affTaxon: pomum_gyllenhaal_1772
+  - openTaxon: echinosphaerites-aff-pomum_schlotheim_1826
+    aff: pomum_gyllenhaal_1772
+    new: true
     notes: |
       Included in the E. pomum formal figure list, but in the text
       noted as a possible separate species

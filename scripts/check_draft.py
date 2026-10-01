@@ -12,7 +12,11 @@ in its `illustrations` (or in an `authority`'s); a null `material`,
 `illustrations`, `contexts` or `ranges` on a primary node (only an auditor
 sets nulls); a `unused` field still present on a node; an ellipsis or an
 ambiguous prefix in a catalog number; a `repositories` list naming a missing
-or unused entry; and a dangling `context`, figure `of` or `castOf`. Each is
+or unused entry; and a dangling `context`, figure `of` or `castOf`. The
+open-nomenclature checks (`phylohist.loader.nomenclature`) add a `cf` or `aff`
+off an `openTaxon` node, on both, or aimed at a missing, unnamed or other-rank
+taxon; a `quotedParent` above the species level; a `roleUncertain` with no
+`role`; and an open form linked to two different taxa (a warning). Each is
 printed with the node's path. Exit status 1 on a schema failure or any of
 those, 0 otherwise; the unresolved lists are always printed, since a draft
 normally needs new records.
@@ -22,7 +26,7 @@ import pathlib
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
-from phylohist.loader import material  # noqa: E402
+from phylohist.loader import material, nomenclature  # noqa: E402
 from phylohist.loader.io import (  # noqa: E402
   DATA_DIR,
   TREE_DEF,
@@ -73,11 +77,13 @@ def draft_nulls(node, is_cited):
   ]
 
 
-def check_material(draft, repositories):
-  """`(messages, prefixes)`: every `material.py` check's `(level, message)`
-  over the draft, the per-node ones prefixed with the node's path, and the
-  catalog numbers among them with no resolvable repository."""
+def check_material(draft, repositories, taxa):
+  """`(messages, prefixes)`: every `material.py` and `nomenclature.py`
+  check's `(level, message)` over the draft, the per-node ones prefixed with
+  the node's path, and the catalog numbers among them with no resolvable
+  repository. `taxa` looks a taxon key up (`nomenclature.record_lookup`)."""
   messages = [
+    *nomenclature.compared_link_conflicts([('draft', draft)]),
     *((lv, f'repositories: {m}') for lv, m in material.registry_links(repositories)),
     *material.unreferenced_file_contexts(draft),
     *material.unused_fields(draft),
@@ -96,6 +102,9 @@ def check_material(draft, repositories):
       (material.cast_refs, (node,)),
       (material.null_material, (node, is_cited)),
       (draft_nulls, (node, is_cited)),
+      (nomenclature.compared_links, (node, taxa)),
+      (nomenclature.quoted_parent, (node, taxa)),
+      (nomenclature.role_uncertain, (node,)),
     ):
       messages.extend((level, f'{path}: {message}') for level, message in check(*args))
     prefixes.extend(material.unresolved_catalog_numbers(node, repositories, file_repositories))
@@ -122,8 +131,9 @@ def main(argv):
   # tree whose source has no record.
   taxa, authors, sources = set(), set(), {path.stem}
   walk(draft, taxa, authors, sources)
+  records = load_yaml(DATA_DIR / 'taxa.yaml')
   known = {
-    'taxa': set(load_yaml(DATA_DIR / 'taxa.yaml')),
+    'taxa': set(records),
     'authors': set(load_yaml(DATA_DIR / 'authors.yaml')),
     'sources': set(load_yaml(DATA_DIR / 'sources.yaml')),
   }
@@ -134,7 +144,7 @@ def main(argv):
       print(f'  {key}')
 
   repositories = load_yaml(DATA_DIR / 'repositories.yaml')
-  messages, prefixes = check_material(draft, repositories)
+  messages, prefixes = check_material(draft, repositories, nomenclature.record_lookup(records))
 
   unresolved = sorted(set(prefixes))
   print(f'prefixes: {len(unresolved)} without a resolvable repository')

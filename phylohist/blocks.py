@@ -35,6 +35,14 @@ ACT_MARKS = {
   'substituted': 'nom. subst.',
 }
 SENSU_MARKS = {'stricto': '(s. s.)', 'lato': '(s. l.)', 'emendato': '(s. em.)'}
+
+
+def non_monophyly_words(value):
+  """The words for a `nonMonophyletic` value: `True` says only that the
+  group is not monophyletic, a string says how ("paraphyletic")."""
+  return 'non-monophyletic' if value is True else value
+
+
 _NEW_MARKS = {
   'superfamily': 'superfam. nov.',
   'family': 'fam. nov.',

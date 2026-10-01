@@ -574,7 +574,8 @@ taxonomies:
                   - Pa.
                   localityNumbers: [Walcott 8q]
                   notes: This locality has not been satisfactorily pinpointed, but may have been covered by a large shopping center on route 238 built about five years ago.
-            - cfTaxon: wanneri_foerste_1938
+            - openTaxon: lepidocystis-cf-wanneri_sprinkle_1973
+              cf: wanneri_foerste_1938
               new: true
               pages: 66
               material:
@@ -828,7 +829,8 @@ taxonomies:
                 - taxon: eocrinus
                 auth: [jaekel]
                 year: 1980
-              - cfTaxon: longidactylus_walcott_1886
+              - openTaxon: gogia-cf-longidactylus_robison_1965
+                cf: longidactylus_walcott_1886
                 parents:
                 - taxon: gogia
                 auth: [robison]
@@ -1641,7 +1643,7 @@ taxonomies:
                 context: walcott-35k
               - catalogNumbers: [USNM 165403, USNM 165404]
                 catalogNumbersAsPrinted: USNM 165403–4
-                notes: possible additional specimens
+                uncertain: true
               illustrations:
               - plate: 24
                 figures: 1
@@ -3151,8 +3153,10 @@ taxonomies:
                   context: walcott-35k
                   notes: one additional separate brachial plate
                 - catalogNumbers: [USNM 165427]
+                  role: paratype
+                  uncertain: true
                   context: walcott-35k
-                  notes: one poorly preserved possible additional specimen
+                  notes: one poorly preserved specimen
                 illustrations:
                 - plate: 42
                   figures: [1, 2]

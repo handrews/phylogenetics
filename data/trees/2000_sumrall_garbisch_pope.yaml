@@ -27,7 +27,8 @@ taxonomies:
             - taxon: murphyi_sumrall_garbisch_pope_2000
               new: true
             - taxon: hybolopus_fraunfelter_utgaard_1970
-            - cfTaxon: hybolopus_fraunfelter_utgaard_1970
+            - openTaxon: parapostibulla-cf-hybolopus_sumrall_garbisch_pope_2000
+              cf: hybolopus_fraunfelter_utgaard_1970
             - openTaxon: parapostibulla-sp-a_sumrall_garbisch_pope_2000
               provisional: true
             - openTaxon: parapostibulls-sp-indeterminate_sumrall_garbisch_pope_2000

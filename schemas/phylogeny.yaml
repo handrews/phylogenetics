@@ -494,6 +494,16 @@ $defs:
         type: string
       openTaxon:
         type: string
+      cf:
+        description: |
+          The taxon this open form is compared with, "cf." for a provisional
+          identification; only on an `openTaxon` node.
+        type: string
+      aff:
+        description: |
+          The taxon this open form is compared with, "aff." for a form the
+          source thinks new and related; only on an `openTaxon` node.
+        type: string
       citedAs:
         description: |
           A bibliographic reference exactly as printed in the source being
@@ -506,20 +516,39 @@ $defs:
   uncertaintyFields:
     properties:
       provisional:
-        $comment: The assignment to parent taxon is provisional
+        description: The assignment to the parent taxon is provisional.
         type: boolean
         default: false
       questionable:
-        $comment: The current taxon is questionable
+        description: The taxon itself is doubtful, whether or not this source erects it.
         type: boolean
         default: false
       tentative:
-        $comment: For synonyms / non
+        description: The list author's doubt about a synonymy entry.
         type: boolean
         default: false
       quoted:
+        description: |
+          The node's own name is printed in quotation marks; the reason goes
+          in `notes`.
         type: boolean
         default: false
+      quotedParent:
+        description: |
+          On a species-level node, the genus is printed in quotation marks in
+          this combination ("Totiglobus" lloydi): a hedge on the species'
+          assignment to its genus, like `provisional`.
+        type: boolean
+        default: false
+      nonMonophyletic:
+        description: |
+          The source says the group is not monophyletic: `true`, or
+          `paraphyletic` or `polyphyletic` when it says which. Present is a
+          statement; absent says nothing.
+        oneOf:
+        - const: true
+        - type: string
+          enum: [paraphyletic, polyphyletic]
       sensu:
         description: |
           A printed "s. s." / "s. l." / "s. em." qualifying the name as this
@@ -1156,6 +1185,12 @@ $defs:
       roleAct:
         type: string
         enum: [designated, reported]
+      uncertain:
+        description: The specimen is doubtfully assigned to the taxon.
+        type: boolean
+      roleUncertain:
+        description: The role word is queried in the source ("topotype?").
+        type: boolean
       repository:
         description: |
           A key in `repositories.yaml`, possibly a collection's, written only

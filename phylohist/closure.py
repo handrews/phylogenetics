@@ -103,7 +103,7 @@ class Closure:
     names its key, path, the claim that puts it there (the root's usage
     claim), whether it is a placeholder, the alternative placements the
     source offers at that step, and the provisional and questionable
-    flags."""
+    flags, and the `nonMonophyletic` word where the source gives one."""
     out = []
     for claim in self.placements_of.get(record, ()):
       if not self._wanted(claim, trees, years):
@@ -112,17 +112,18 @@ class Closure:
       nodes = []
       current = claim
       while current is not None:
-        nodes.append(
-          {
-            'key': current['subject'],
-            'path': current['path'],
-            'claim': current['id'],
-            'placeholder': bool(current.get('placeholder')),
-            'alternatives': list(current.get('altPlacements') or ()),
-            'provisional': bool(current.get('provisional')),
-            'questionable': bool(current.get('questionable')),
-          }
-        )
+        node = {
+          'key': current['subject'],
+          'path': current['path'],
+          'claim': current['id'],
+          'placeholder': bool(current.get('placeholder')),
+          'alternatives': list(current.get('altPlacements') or ()),
+          'provisional': bool(current.get('provisional')),
+          'questionable': bool(current.get('questionable')),
+        }
+        if current.get('nonMonophyletic'):
+          node['nonMonophyletic'] = current['nonMonophyletic']
+        nodes.append(node)
         above = self.parent_claim(source_key, current)
         if above is None and current.get('parent'):
           # The root of the tree has a usage claim but no placement.

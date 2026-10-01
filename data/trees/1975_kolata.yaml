@@ -29,7 +29,8 @@ taxonomies:
               children:
               - taxon: squamosus_billings_1854
                 type: true
-              - cfTaxon: squamosus_billings_1854
+              - openTaxon: pleurocystites-cf-squamosus_kolata_1975
+                cf: squamosus_billings_1854
             - taxon: praepleurocystis
               children:
               - taxon: watkinsi_strimple_1948
@@ -108,7 +109,8 @@ taxonomies:
                   - taxon: conicus_billings_1857_porocrinus
                     type: true
                   - taxon: pentagonius_meek_worthen_1865
-                  - cfTaxon: smithi_grant_1881
+                  - openTaxon: porocrinus-cf-smithi_kolata_1975
+                    cf: smithi_grant_1881
               - taxon: carabocrinidae
                 children:
                 - taxon: carabocrinus
@@ -264,7 +266,8 @@ taxonomies:
                   - taxon: rugosus_billings_1857
                     parents:
                     - taxon: palasterina
-                - cfTaxon: rugosus_billings_1857
+                - openTaxon: hudsonaster-cf-rugosus_kolata_1975
+                  cf: rugosus_billings_1857
                   synonyms:
                   - taxon: rugosus_billings_1857
                     parents:
@@ -292,7 +295,8 @@ taxonomies:
         children:
         - taxon: bigsbyi_billings_1857
           type: true
-        - cfTaxon: bigsbyi_billings_1857
+        - openTaxon: edrioaster-cf-bigsbyi_kolata_1975
+          cf: bigsbyi_billings_1857
           synonyms:
           - taxon: bigsbyi_billings_1857
             parents:
@@ -306,7 +310,9 @@ taxonomies:
         children:
         - taxon: halli_billings_1858
           type: true
-        - affTaxon: halli_billings_1858
+        - openTaxon: cyclocystoides-aff-halli_kolata_1975
+          aff: halli_billings_1858
+          new: true
           synonyms:
           - taxon: halli_billings_1858
           - taxon: halli_billings_1858

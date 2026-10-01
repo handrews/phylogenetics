@@ -11,5 +11,6 @@ taxonomies:
           type: true
         - taxon: boliviensis_sprinkle_1973
         - taxon: deani_ubaghs_1994
-        - affTaxon: deani_ubaghs_1994
+        - openTaxon: lingulocystis-aff-deani_nardin_2007
+          aff: deani_ubaghs_1994
           new: true

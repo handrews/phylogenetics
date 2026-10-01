@@ -178,6 +178,21 @@
   "name": "Actinocrinites",
   "rank": "genus"
  },
+ "actinocrinites-aff-triacontodactylus_eichwald_1840": {
+  "authority": {
+   "authors": [
+    "Eichwald"
+   ],
+   "display": "Eichwald 1840",
+   "source": "1840_eichwald",
+   "year": 1840
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
+ },
  "actinocrinus": {
   "authority": {
    "authors": [
@@ -5900,6 +5915,23 @@
   "name": "Cambraster",
   "rank": "genus"
  },
+ "cambraster-cf-tastudorum_jell_burrett_banks_1985": {
+  "authority": {
+   "authors": [
+    "Jell",
+    "Burrett",
+    "Banks"
+   ],
+   "display": "Jell, Burrett, Banks 1985",
+   "source": "1985_jell_burrett_banks",
+   "year": 1985
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
+ },
  "cambraster-sp_jell_burrett_banks_1985": {
   "authority": {
    "authors": [
@@ -6738,6 +6770,21 @@
   "kind": "primary",
   "name": "Caryocystites",
   "rank": "genus"
+ },
+ "caryocystites-cf-lagenallis_paul.c.r.c_1997": {
+  "authority": {
+   "authors": [
+    "Paul"
+   ],
+   "display": "Paul 1997",
+   "source": "1997_paul.c.r.c",
+   "year": 1997
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
  },
  "caryocystitida-superfamily": {
   "authority": {
@@ -9332,34 +9379,6 @@
   "of": "crinoidea",
   "rank": "Order"
  },
- "crinoidea-secondhand-genus_sowerby_1833": {
-  "authority": {
-   "authors": [
-    "Sowerby"
-   ],
-   "display": "Sowerby 1933",
-   "year": 1933
-  },
-  "folded": [],
-  "kind": "placeholder",
-  "name": null,
-  "placeholder": "open",
-  "rank": "genus"
- },
- "crinoidea-secondhand-sp_sowerby_1833": {
-  "authority": {
-   "authors": [
-    "Sowerby"
-   ],
-   "display": "Sowerby 1933",
-   "year": 1933
-  },
-  "folded": [],
-  "kind": "placeholder",
-  "name": null,
-  "placeholder": "open",
-  "rank": "species"
- },
  "crinoideae": {
   "authority": {
    "authors": [
@@ -10386,6 +10405,21 @@
   "name": "Cyclocystoides",
   "rank": "genus"
  },
+ "cyclocystoides-aff-halli_kolata_1975": {
+  "authority": {
+   "authors": [
+    "Kolata"
+   ],
+   "display": "Kolata 1975",
+   "source": "1975_kolata",
+   "year": 1975
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
+ },
  "cyclocystoides-sp_kolata_1975": {
   "authority": {
    "authors": [
@@ -10752,21 +10786,6 @@
   "name": "Cystidea",
   "of": "cystidea",
   "rank": "Order"
- },
- "cystidea-sp_buch_1944": {
-  "authority": {
-   "authors": [
-    "Buch"
-   ],
-   "display": "Buch 1844",
-   "source": "1844_buch",
-   "year": 1844
-  },
-  "folded": [],
-  "kind": "placeholder",
-  "name": null,
-  "placeholder": "open",
-  "rank": "species"
  },
  "cystideae-family": {
   "authority": {
@@ -13382,6 +13401,81 @@
   "name": "Echinosphaerites",
   "rank": "genus"
  },
+ "echinosphaerites-aff-granatum_müller.j.p_1854": {
+  "authority": {
+   "authors": [
+    "Müller"
+   ],
+   "display": "Müller 1854",
+   "source": "1854_müller.j.p",
+   "year": 1854
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
+ },
+ "echinosphaerites-aff-laevis_pander_1830": {
+  "authority": {
+   "authors": [
+    "Pander"
+   ],
+   "display": "Pander 1830",
+   "source": "1830_pander",
+   "year": 1830
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
+ },
+ "echinosphaerites-aff-pomum_schlotheim_1826": {
+  "authority": {
+   "authors": [
+    "Schlotheim"
+   ],
+   "display": "Schlotheim 1826",
+   "source": "1826_schlotheim",
+   "year": 1826
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
+ },
+ "echinosphaerites-cf-arachnoideus_paul.c.r.c_1997": {
+  "authority": {
+   "authors": [
+    "Paul"
+   ],
+   "display": "Paul 1997",
+   "source": "1997_paul.c.r.c",
+   "year": 1997
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
+ },
+ "echinosphaerites-cf-granulatus_paul.c.r.c_1997": {
+  "authority": {
+   "authors": [
+    "Paul"
+   ],
+   "display": "Paul 1997",
+   "source": "1997_paul.c.r.c",
+   "year": 1997
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
+ },
  "echinosphaerites-sp-1_schlotheim_1826": {
   "authority": {
    "authors": [
@@ -13687,6 +13781,21 @@
   "kind": "primary",
   "name": "Edrioaster",
   "rank": "genus"
+ },
+ "edrioaster-cf-bigsbyi_kolata_1975": {
+  "authority": {
+   "authors": [
+    "Kolata"
+   ],
+   "display": "Kolata 1975",
+   "source": "1975_kolata",
+   "year": 1975
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
  },
  "edrioasterida": {
   "authority": {
@@ -14102,6 +14211,21 @@
   "kind": "primary",
   "name": "Edriophus",
   "rank": "genus"
+ },
+ "edriophus-cf-laevis_bell.b.m_1982": {
+  "authority": {
+   "authors": [
+    "Bell"
+   ],
+   "display": "Bell 1982",
+   "source": "1982_bell.b.m",
+   "year": 1982
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
  },
  "edulis_pallas_1774": {
   "authority": {
@@ -17110,6 +17234,22 @@
   "name": "Giganticlavus",
   "rank": "genus"
  },
+ "giganticlavus-cf-bennisoni_sumrall_bowsher_1996": {
+  "authority": {
+   "authors": [
+    "Sumrall",
+    "Bowsher"
+   ],
+   "display": "Sumrall, Bowsher 1996",
+   "source": "1996_sumrall_bowsher",
+   "year": 1996
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
+ },
  "gigas_bruguière_1798": {
   "authority": {
    "authors": [
@@ -17737,6 +17877,20 @@
   "kind": "primary",
   "name": "Gogia",
   "rank": "genus"
+ },
+ "gogia-cf-longidactylus_robison_1965": {
+  "authority": {
+   "authors": [
+    "Robison"
+   ],
+   "display": "Robison 1965",
+   "year": 1965
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
  },
  "gogia-sp-1_sprinkle_1973": {
   "authority": {
@@ -20417,6 +20571,21 @@
   "kind": "primary",
   "name": "Hudsonaster",
   "rank": "genus"
+ },
+ "hudsonaster-cf-rugosus_kolata_1975": {
+  "authority": {
+   "authors": [
+    "Kolata"
+   ],
+   "display": "Kolata 1975",
+   "source": "1975_kolata",
+   "year": 1975
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
  },
  "hudsonasteridae": {
   "authority": {
@@ -23196,6 +23365,21 @@
   "name": "Lepidocystis",
   "rank": "genus"
  },
+ "lepidocystis-cf-wanneri_sprinkle_1973": {
+  "authority": {
+   "authors": [
+    "Sprinkle"
+   ],
+   "display": "Sprinkle 1973",
+   "source": "1973_sprinkle",
+   "year": 1973
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
+ },
  "lepidocystoidae": {
   "authority": {
    "authors": [
@@ -23404,23 +23588,6 @@
   "name": "Leucopthalmus",
   "of": "leucophthalmus",
   "rank": "genus"
- },
- "leuniseni_grigo_2000": {
-  "authority": {
-   "authors": [
-    "Grigo"
-   ],
-   "display": "Grigo 2000",
-   "source": "2000_grigo",
-   "year": 2000
-  },
-  "folded": [
-   "leuniseni"
-  ],
-  "kind": "altSpellingOf",
-  "name": "leuniseni",
-  "of": "leunisseni_grigo_2000",
-  "rank": "species"
  },
  "leunisseni_grigo_2000": {
   "authority": {
@@ -23719,6 +23886,21 @@
   "kind": "primary",
   "name": "Lingulocystis",
   "rank": "genus"
+ },
+ "lingulocystis-aff-deani_nardin_2007": {
+  "authority": {
+   "authors": [
+    "Nardin"
+   ],
+   "display": "Nardin 2007",
+   "source": "2007a_nardin",
+   "year": 2007
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
  },
  "lipsanocystis": {
   "authority": {
@@ -28089,6 +28271,21 @@
   "name": "Ophiura",
   "rank": "genus"
  },
+ "ophiura-aff-schlotheimii_eichwald_1840": {
+  "authority": {
+   "authors": [
+    "Eichwald"
+   ],
+   "display": "Eichwald 1840",
+   "source": "1840_eichwald",
+   "year": 1840
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
+ },
  "ophiura_linnaeus_1758": {
   "authority": {
    "authors": [
@@ -29388,6 +29585,23 @@
   "kind": "primary",
   "name": "Parapostibulla",
   "rank": "genus"
+ },
+ "parapostibulla-cf-hybolopus_sumrall_garbisch_pope_2000": {
+  "authority": {
+   "authors": [
+    "Sumrall",
+    "Garbisch",
+    "Pope"
+   ],
+   "display": "Sumrall, Garbisch, Pope 2000",
+   "source": "2000_sumrall_garbisch_pope",
+   "year": 2000
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
  },
  "parapostibulla-sp-a_sumrall_garbisch_pope_2000": {
   "authority": {
@@ -31197,6 +31411,21 @@
   "of": "platycrinites",
   "rank": "genus"
  },
+ "platycrinus-aff-laevis_eichwald_1840": {
+  "authority": {
+   "authors": [
+    "Eichwald"
+   ],
+   "display": "Eichwald 1840",
+   "source": "1840_eichwald",
+   "year": 1840
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
+ },
  "platycystites": {
   "authority": {
    "authors": [
@@ -31211,6 +31440,36 @@
   "kind": "primary",
   "name": "Platycystites",
   "rank": "genus"
+ },
+ "platycystites-cf-bromidensis_bassler_sinclair_1945": {
+  "authority": {
+   "authors": [
+    "Bassler",
+    "Sinclair"
+   ],
+   "display": "Bassler, Sinclair 1945",
+   "year": 1945
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
+ },
+ "platycystites-cf-levatus_bassler_sinclair_1945": {
+  "authority": {
+   "authors": [
+    "Bassler",
+    "Sinclair"
+   ],
+   "display": "Bassler, Sinclair 1945",
+   "year": 1945
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
  },
  "platycystites-sp_frest_strimple_coney_1979": {
   "authority": {
@@ -31369,6 +31628,21 @@
   "kind": "primary",
   "name": "Pleurocystites",
   "rank": "genus"
+ },
+ "pleurocystites-cf-squamosus_kolata_1975": {
+  "authority": {
+   "authors": [
+    "Kolata"
+   ],
+   "display": "Kolata 1975",
+   "source": "1975_kolata",
+   "year": 1975
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
  },
  "pleurocystitida": {
   "authority": {
@@ -31817,6 +32091,21 @@
   "kind": "primary",
   "name": "Porocrinus",
   "rank": "genus"
+ },
+ "porocrinus-cf-smithi_kolata_1975": {
+  "authority": {
+   "authors": [
+    "Kolata"
+   ],
+   "display": "Kolata 1975",
+   "source": "1975_kolata",
+   "year": 1975
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
  },
  "porosublastus": {
   "authority": {
@@ -38848,6 +39137,20 @@
   "name": "Stromatocystites",
   "rank": "genus"
  },
+ "stromatocystites-aff-pentangularis_prokop_1961": {
+  "authority": {
+   "authors": [
+    "Prokop"
+   ],
+   "display": "Prokop 1961",
+   "year": 1961
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
+ },
  "stromatocystites-sp_jell_burrett_banks_1985": {
   "authority": {
    "authors": [
@@ -41440,6 +41743,21 @@
   "name": "Ulrichidiscus",
   "rank": "genus"
  },
+ "ulrichidiscus-aff-pulaskiensis_sumrall_2001": {
+  "authority": {
+   "authors": [
+    "Sumrall"
+   ],
+   "display": "Sumrall 2001",
+   "source": "2001_sumrall",
+   "year": 2001
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
+ },
  "ulrichocystis": {
   "authority": {
    "authors": [
@@ -42269,6 +42587,38 @@
   "kind": "primary",
   "name": "Victoriacystis",
   "rank": "genus"
+ },
+ "victoriacystis-aff-wilkinsi-a_gill_caster_1960": {
+  "authority": {
+   "authors": [
+    "Gill",
+    "Caster"
+   ],
+   "display": "Gill, Caster 1960",
+   "source": "1960_gill_caster",
+   "year": 1960
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
+ },
+ "victoriacystis-aff-wilkinsi-b_gill_caster_1960": {
+  "authority": {
+   "authors": [
+    "Gill",
+    "Caster"
+   ],
+   "display": "Gill, Caster 1960",
+   "source": "1960_gill_caster",
+   "year": 1960
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
  },
  "victoriae_gill_caster_1960": {
   "authority": {

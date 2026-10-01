@@ -115,7 +115,9 @@ taxonomies:
     - plate: II
       figures:
       - [24, 26]
-  - affTaxon: laevis_pander_1830
+  - openTaxon: echinosphaerites-aff-laevis_pander_1830
+    aff: laevis_pander_1830
+    new: true
     pages:
     - [147, 148]
     illustrations:

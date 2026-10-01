@@ -15,6 +15,8 @@ taxonomies:
             new: true
         - taxon: ulrichidiscus
           children:
-          - affTaxon: pulaskiensis_miller.s.a_gurley_1894
+          - openTaxon: ulrichidiscus-aff-pulaskiensis_sumrall_2001
+            aff: pulaskiensis_miller.s.a_gurley_1894
+            new: true
           - taxon: spinosus_sumrall_2001
             new: true

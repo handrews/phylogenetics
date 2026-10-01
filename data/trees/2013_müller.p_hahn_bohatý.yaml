@@ -7,11 +7,17 @@ taxonomies:
       children:
       - taxon: timeischytes
         quoted: true
+        questionable: true
+        notes: |
+          "To indicate this unsatisfying situation, the genus name
+          'Timeischytes' is placed within quotation marks" (p. 459): the
+          species may be juveniles of other agelacrinitids, and the genus
+          might have to be limited to its type species as a nomen dubium.
         children:
         - taxon: megapinacotus_ehlers_kesling_1958
           type: true
         - taxon: casteri_bell.b.m_1975
-        - taxon: leuniseni_grigo_2000
+        - taxon: leunisseni_grigo_2000
         - taxon: prescheri_grigo_2000
       - taxon: bellastrella
         new: true

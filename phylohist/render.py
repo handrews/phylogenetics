@@ -67,7 +67,7 @@ def node_label(node):
   rank_word = node.get('rankWord')
   if rank_word and rank_word.lower() not in blocks.SPECIES_GROUP and not node.get('placeholder'):
     name = f'{rank_word} {name}'
-  if (node.get('flags') or {}).get('new'):
+  if (node.get('flags') or {}).get('new') and not node.get('compared'):
     mark = node.get('newMark') or blocks.new_mark(rank_word)
     # An open-nomenclature name already ends in "sp."; the mark completes it.
     if name.endswith(' sp.') and mark.startswith('sp. '):
@@ -75,6 +75,8 @@ def node_label(node):
     name += ' ' + mark
   if (node.get('flags') or {}).get('questionable'):
     name += ' ?'
+  if (node.get('flags') or {}).get('nonMonophyletic'):
+    name += f' ({blocks.non_monophyly_words(node["flags"]["nonMonophyletic"])})'
   if node.get('sensu'):
     name += ' ' + blocks.SENSU_MARKS[node['sensu']]
   for act in node.get('acts') or ():
@@ -345,6 +347,8 @@ def _chain_text(chain):
       label = '? ' + label
     if node.get('questionable'):
       label += ' ?'
+    if node.get('nonMonophyletic'):
+      label += f' ({blocks.non_monophyly_words(node["nonMonophyletic"])})'
     if node.get('alternatives'):
       label += ' (or ' + ', '.join(node['alternatives']) + ')'
     parts.append(label)

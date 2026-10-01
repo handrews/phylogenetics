@@ -53,9 +53,11 @@ taxonomies:
                   - taxon: wilkinsi_gill_caster_1960
                     type: true
                     new: true
-                  - affTaxon: wilkinsi_gill_caster_1960
+                  - openTaxon: victoriacystis-aff-wilkinsi-a_gill_caster_1960
+                    aff: wilkinsi_gill_caster_1960
                     new: true
-                  - affTaxon: wilkinsi_gill_caster_1960
+                  - openTaxon: victoriacystis-aff-wilkinsi-b_gill_caster_1960
+                    aff: wilkinsi_gill_caster_1960
                     new: true
                 - taxon: rhenocystis
                 - taxon: placocystella
@@ -102,7 +104,7 @@ taxonomies:
                   provisional: true
                   new: true
               - taxon: rutroclypeus
-                quoted: true
                 children:
                 - taxon: globulus_dehm_1934
+                  quotedParent: true
                   provisional: true
