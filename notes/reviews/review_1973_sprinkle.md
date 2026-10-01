@@ -23,6 +23,13 @@ contexts (the Appendix 1 codes some specimen is tied to) and 57
 node-level ones; 278 illustrations; 43 ranges; 166 nulls (9 `material`,
 75 `illustrations`, 41 `contexts` with 41 `ranges`).
 
+**After the reading (2026-10-01).** Figures are of species, so the
+derived coverage stopped counting higher taxa for `illustrations`, and
+the 63 `illustrations: null` entered on genera and above were removed;
+the table below records them as read. Runs that had been entered
+number by number so that a plate could name one of them went back to
+range pairs once `of` could name a number inside a run.
+
 ## Per node (tree order)
 
 "p." is the page entered in `pages`; the account pages read run from that page to the next heading (all of pp. 54–188, every plate description pp. 198–282, Appendix 1 pp. 193–196, and the morphology text-figures pp. 4–48 were read). Counts are entries; "–" = key absent.
