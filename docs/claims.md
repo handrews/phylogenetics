@@ -21,7 +21,7 @@ Every claim carries:
 | field | value |
 |---|---|
 | `id` | `<source>:<path>:<kind>[:<n>]`. `<path>` is the node's position in its tree file as the loader computes it: the taxonomy or phylogeny index, then each step down (`children/2`, `synonyms/0`, `non/1`, `removed/0`, `parents/0`, `moved`, `corrected`, `substituted`, `lapsus`, `lapsusFor`, `or/0`). `<n>` disambiguates several claims of one kind from one node (a node with three `material` entries yields three `material` claims). Ids are stable as long as the file is not reordered; the tree keeps printed order, so reordering is a data change. |
-| `kind` | one of `usage`, `placement`, `acceptance`, `act`, `rejection`, `material`, `secondhand`, `editorial` |
+| `kind` | one of `usage`, `placement`, `acceptance`, `act`, `rejection`, `material`, `secondhand`, `editorial`, `absence` |
 | `source` | the tree file's source key |
 | `path` | the node's position and pointer, `0/children/0/children/0`, the same string the id carries |
 | `tree` | `taxonomy`, or a phylogeny's `treeType`; a phylogeny's `notes` ride along as `treeNotes` |
@@ -231,6 +231,14 @@ says which.
   entry is printed and only a field of it is the editor's.
   `specimenIllustrations` lists the locators of the node's illustrations
   whose `of` names the entry, and `illustrationClaims` their claim ids.
+  `figured: false` marks a specimen no figure names, set only when all
+  four hold: the source's effective coverage for `illustrations` is `all`
+  (so an unaudited tree, whose figure list may be partial, asserts
+  nothing); the node carries `illustrations`, a value or a null; no
+  illustration on the node names the entry through `of` (a number inside a
+  range pair's run names it); and the node has no illustration without an
+  `of`, since an untied figure may show the specimen. It is never set to
+  `true`: a figured specimen has `illustrationClaims`.
 - `illustration` (field `illustrations`): one claim per entry, this
   source's own figure. `illustration` holds the locator fields (`plate`,
   `page`, `figures`, `textFigures`, `non`, `notes`, `uncertain`); `of`
@@ -265,6 +273,34 @@ whole), `basis`. Bell 1975 cites "Bell, 1974" for a paper that appeared in
 1976: corrections delete `auth` and `year` and set `authority.source:
 1976_bell.b.m`. The claim it qualifies
 carries the same block, so both directions are answerable.
+
+### `absence`
+
+An auditor's statement that the source prints none of a kind for a node:
+a node's `null` (G11) made a claim, so the tools can answer for one taxon.
+Emitted on a primary, non-cited, named node of any rank, after its
+material claims, one per coverage kind the node nulls and carries no value
+for, in this order:
+
+| `absenceOf` | emitted when |
+|---|---|
+| `material` | `material` is null |
+| `occurrences` | `contexts` and/or `ranges` is null, neither has a value, and no `material` entry has a `context` |
+| `illustrations` | `illustrations` is null |
+| `synonymy` | `synonyms` is null |
+
+Fields: the shared record, `absenceOf`, and `fields`, the node's fields
+that are null for that kind (`['contexts', 'ranges']`). Nothing is emitted
+for a file-level `unused`, which the source-level `na` already says. The
+claim has no `audit.coverageKind`, so the manifest's per-kind counts and
+cross-checks ignore it; it does appear in the per-kind `claims` counts.
+Ids are numbered per kind, so no other claim's id depends on it.
+`statements` words it ("no specimens cited", "no locality or range given",
+"not figured", "no synonymy given") and selects it with the kind it
+speaks of: `specimens` and `material` (material), `occurrences`,
+`illustrations`, `acceptance` (synonymy), and every one with
+`kind='absence'`. `synonymy` with a named source answers a node with that
+absence by a `none` statement block, "<cite> gives no synonymy for <name>".
 
 ## Derived coverage
 
@@ -311,7 +347,8 @@ appears only when a declared and a derived value both exist and differ
 ("declared all, derived partly"). `synonymy` differs: a source that writes
 no synonymy null derives nothing, so its declared value keeps the
 claim-count check above; once a null derives it, the declared-versus-derived
-comparison replaces that check.
+comparison replaces that check. `absence` claims are not counted under any
+coverage kind.
 
 ## What the vocabulary does not do
 

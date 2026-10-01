@@ -40,6 +40,23 @@ _COVERAGE_OF_KIND = {
   'editorial': 'skeleton',
 }
 
+# The `statements` kinds that select material claims, by `materialKind`.
+_MATERIAL_KINDS = {
+  'occurrences': {'occurrence', 'range'},
+  'illustrations': {'illustration'},
+  'specimens': {'specimen'},
+}
+
+# The `absence` claims (by `absenceOf`) a `statements` kind also selects; an
+# explicit `absence` kind selects all of them.
+_ABSENCE_OF_KIND = {
+  'specimens': ('material',),
+  'occurrences': ('occurrences',),
+  'illustrations': ('illustrations',),
+  'material': ('material', 'occurrences', 'illustrations'),
+  'acceptance': ('synonymy',),
+}
+
 _RANK_ORDER = (
   'kingdom',
   'phylum',
@@ -768,6 +785,29 @@ class ClaimStore:
       for path in self._record_paths(source_key, record):
         entries = self._synonymy_entries(source_key, path)
         if not entries:
+          # A source that was named and printed none, the auditor says so.
+          absence = next(
+            (
+              c
+              for c in self.at_path[source_key].get(path, ())
+              if c['kind'] == 'absence' and c['absenceOf'] == 'synonymy'
+            ),
+            None,
+          )
+          if source and absence is not None:
+            block = blocks.statement(
+              'none',
+              {
+                'cite': self.cite(source_key),
+                'source': source_key,
+                'what': 'synonymy',
+                'about': self.words.display(record, source_key, path),
+                'page': absence.get('pages'),
+              },
+              {'record': record, 'source': source_key, 'path': path},
+              claims=[absence['id']],
+            )
+            out.append(_with_style(block, style))
           continue
         block = blocks.listing(
           {
@@ -791,19 +831,24 @@ class ClaimStore:
     claims = self.by_subject.get(record, [])
     if source is not None:
       claims = [c for c in claims if c['source'] == source]
-    if kind in ('occurrences', 'illustrations', 'specimens'):
-      # Material kinds a reader asks for by name; `occurrences` covers a
-      # node's contexts and its distribution `ranges` alike.
-      material_kinds = {
-        'occurrences': {'occurrence', 'range'},
-        'illustrations': {'illustration'},
-        'specimens': {'specimen'},
-      }[kind]
-      claims = [
-        c for c in claims if c['kind'] == 'material' and c.get('materialKind') in material_kinds
+    if kind is not None:
+      if kind in _MATERIAL_KINDS:
+        # Material kinds a reader asks for by name; `occurrences` covers a
+        # node's contexts and its distribution `ranges` alike.
+        material_kinds = _MATERIAL_KINDS[kind]
+        claims = [
+          c for c in claims if c['kind'] == 'material' and c.get('materialKind') in material_kinds
+        ]
+      else:
+        claims = [c for c in claims if c['kind'] == kind]
+      # The auditor's "none printed" for the kinds asked for goes with them.
+      claims += [
+        c
+        for c in self.by_subject.get(record, ())
+        if c['kind'] == 'absence'
+        and c['absenceOf'] in _ABSENCE_OF_KIND.get(kind, ())
+        and (source is None or c['source'] == source)
       ]
-    elif kind is not None:
-      claims = [c for c in claims if c['kind'] == kind]
     if act_kind is not None:
       claims = [c for c in claims if c.get('actKind') == act_kind]
     claims = sorted(claims, key=lambda c: (self.source_year(c['source']), c['source'], c['path']))

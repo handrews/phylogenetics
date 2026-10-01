@@ -31,6 +31,7 @@ KINDS = (
   'material',
   'secondhand',
   'editorial',
+  'absence',
 )
 
 # The audit.coverage kind each claim is counted under, for the manifest and
@@ -435,6 +436,8 @@ class _NodeClaims:
 
     if not self.cited_entry:
       self._material()
+      if named and node.is_primary:
+        self._absences()
 
     if 'editorial' in data:
       claim = self._base('editorial')
@@ -516,6 +519,7 @@ class _NodeClaims:
     self._entries()
     self._illustrations()
     self._ranges()
+    self._unfigured()
 
   def _contexts(self):
     """One claim per context the node's material refers to, and per
@@ -629,6 +633,48 @@ class _NodeClaims:
       claim['materialKind'] = 'range'
       claim['range'] = value
       self._emit(claim, 'ranges')
+
+  def _unfigured(self):
+    """`figured: False` on each specimen claim no figure names, where that
+    is a statement about the paper: the source's illustrations are entered
+    in full (effective coverage `all`), this node carries the field (a
+    value or a null), and no figure of the node lacks an `of` (an untied
+    figure may show the specimen, so nothing is said)."""
+    coverage = (self.audit.get('coverage') or {}).get('illustrations')
+    if coverage != 'all' or 'illustrations' not in self.data:
+      return
+    links = self._illustration_links
+    if any(claim.get('of') is None for claim, _ in links):
+      return
+    for _, specimen in self._entry_claims:
+      if not any(specimen is hit for _, named in links for hit in named):
+        specimen['figured'] = False
+
+  def _absences(self):
+    """One `absence` claim per coverage kind the node nulls and carries no
+    value for, in the order material, occurrences, illustrations,
+    synonymy: the auditor's statement that the source prints none for the
+    node, whatever its rank."""
+    data = self.data
+
+    def nulled(*fields):
+      return [f for f in fields if f in data and data[f] is None]
+
+    linked = any(entry.get('context') for entry in data.get('material') or ())
+    occurrences = nulled('contexts', 'ranges')
+    if linked or any(data.get(f) is not None for f in ('contexts', 'ranges')):
+      occurrences = []
+    for absence_of, fields in (
+      ('material', nulled('material')),
+      ('occurrences', occurrences),
+      ('illustrations', nulled('illustrations')),
+      ('synonymy', nulled('synonyms')),
+    ):
+      if fields:
+        claim = self._base('absence')
+        claim['absenceOf'] = absence_of
+        claim['fields'] = fields
+        self._emit(claim)
 
   def _link_illustrations(self):
     """`ofClaim` on each illustration claim and `illustrationClaims` on

@@ -25,6 +25,14 @@ COVERAGE_WORDS = {
   'illustrations': 'the illustrations',
   'phylogeny': 'the phylogeny',
 }
+# What an `absence` claim says, by `absenceOf`: the auditor's statement that
+# the source prints none of the kind for the node.
+ABSENCE_WORDS = {
+  'material': 'no specimens cited',
+  'occurrences': 'no locality or range given',
+  'illustrations': 'not figured',
+  'synonymy': 'no synonymy given',
+}
 PLURAL_KINDS = {'newTaxa', 'types', 'occurrences', 'illustrations'}
 
 
@@ -514,6 +522,8 @@ class Words:
         'illustration': self._illustration_claim_words,
         'range': self._range_claim_words,
       }[claim['materialKind']](claim)
+    if kind == 'absence':
+      return ABSENCE_WORDS[claim['absenceOf']]
     if kind == 'editorial':
       words = "editor's note: " + (claim.get('basis') or '').strip()
       wrong = claim.get('printedErrors')
@@ -544,6 +554,8 @@ class Words:
       words += f' [{claim["repository"]}]'
     if claim.get('contextTentative') and claim.get('contextKey'):
       words += f' ({claim["contextKey"]}?)'
+    if claim.get('figured') is False:
+      words += ' (not figured)'
     return words
 
   def _occurrence_words(self, claim):

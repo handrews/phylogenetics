@@ -211,6 +211,9 @@ def _statement_text(block):
     return text
   if kind == 'absent':
     return f'No source in the corpus mentions {f["name"]}.'
+  if kind == 'none':
+    page = f' ({pages_text(f["page"])})' if f.get('page') is not None else ''
+    return f'{f["cite"]} gives no {f["what"]} for {f["about"]}{page}.'
   return json.dumps(f, ensure_ascii=False)
 
 

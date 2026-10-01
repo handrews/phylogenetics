@@ -180,7 +180,9 @@ TOOL_DESCRIPTIONS = {
     'The synonymy a source prints under a record, as a dated list: each '
     'earlier usage accepted or rejected, with the original combination, '
     'the cited work and page, and the printed form. Every source with one '
-    'when no source is named.'
+    'when no source is named. Where a named source prints none and the '
+    'auditor recorded that, the result is the statement "gives no synonymy '
+    'for" the name.'
   ),
   'statements': (
     'Every statement the corpus holds about one record, in publication '
@@ -189,10 +191,14 @@ TOOL_DESCRIPTIONS = {
     'type species), a synonymy acceptance, a rejection, material. '
     'Optionally one source, one kind of statement '
     '(usage, placement, acceptance, act, rejection, material, '
-    'editorial; or occurrences, illustrations, specimens for one kind of '
-    f'material) or one act kind ({", ".join(ACT_KINDS)}). A statement '
+    'editorial, absence; or occurrences, illustrations, specimens for one '
+    f'kind of material) or one act kind ({", ".join(ACT_KINDS)}). A statement '
     'marked "editor" is the '
-    "editor's inference, not the paper's words. When a source is named "
+    "editor's inference, not the paper's words. A line such as \"no "
+    'specimens cited" is the auditor\'s statement that the paper prints '
+    'none for that taxon, which is different from the kind not having been '
+    'entered; "(not figured)" after a specimen says the same of that '
+    "specimen's figures. When a source is named "
     'and nothing of that kind about the record is entered, the result is '
     'the gap block for that source and kind: compose it as the answer.'
   ),

@@ -757,3 +757,144 @@ def test_manifest_reports_derived_disagreement(load_records, monkeypatch):
   assert entry['derivedCoverage']['illustrations'] is None
   assert entry['coverage']['illustrations'] == 'none'
   assert not [r for r in entry['inconsistencies'] if r.startswith('illustrations')]
+
+
+# -- absence claims and `figured: False` --------------------------------------
+
+_BASE = {'source_key': '1961_dehm', 'type': 'taxonomy'}
+_SPECIES = 'grayae_bather_1915'
+_SISTER = 'sardesoni_bather_1915'
+
+
+def _claims_of(data, position, **metadata):
+  root = Tree(data, {**_BASE, 'position': position, **metadata})
+  return extract({'1961_dehm': [root]})['1961_dehm']
+
+
+def _absences(claims):
+  return [(c['absenceOf'], c['fields']) for c in claims if c['kind'] == 'absence']
+
+
+def test_absence_emission_by_kind():
+  def absences(node, position, **metadata):
+    return _absences(_claims_of({'taxon': _SPECIES, **node}, position, **metadata))
+
+  assert absences({'material': None}, 200) == [('material', ['material'])]
+  assert absences({'illustrations': None}, 201) == [('illustrations', ['illustrations'])]
+  assert absences({'synonyms': None}, 202) == [('synonymy', ['synonyms'])]
+  assert absences({'contexts': None, 'ranges': None}, 203) == [
+    ('occurrences', ['contexts', 'ranges'])
+  ]
+  assert absences({'ranges': None}, 204) == [('occurrences', ['ranges'])]
+  # A value for either field, or a material entry linked to a context,
+  # says the node has occurrences.
+  assert absences({'contexts': None, 'ranges': [{'series': 'Ordovician'}]}, 205) == []
+  linked = {'contexts': None, 'material': [{'label': 'A', 'context': 'x'}]}
+  assert absences(linked, 206, file_contexts={'x': {'unit': ['a']}}) == []
+  # Absent fields and values say nothing.
+  assert absences({}, 207) == []
+  assert absences({'material': [{'label': 'A'}], 'synonyms': [{'taxon': _SISTER}]}, 208) == []
+  # All four, in the fixed order, whatever the order written.
+  everything = {
+    'synonyms': None,
+    'illustrations': None,
+    'ranges': None,
+    'material': None,
+  }
+  assert [kind for kind, _ in absences(everything, 209)] == [
+    'material',
+    'occurrences',
+    'illustrations',
+    'synonymy',
+  ]
+
+
+def test_absence_is_emitted_at_any_rank_and_never_on_a_cited_entry():
+  genus = _claims_of({'taxon': 'rhenopyrgus', 'material': None}, 210)
+  assert _absences(genus) == [('material', ['material'])]
+  cited = _claims_of(
+    {'taxon': _SPECIES, 'synonyms': [{'taxon': _SISTER, 'synonyms': None, 'material': None}]},
+    211,
+  )
+  assert _absences(cited) == []
+
+
+def test_absence_claim_shape_and_effect_on_ids():
+  data = {'taxon': _SPECIES, 'pages': 7, 'notes': 'n', 'material': [{'label': 'A'}]}
+  plain = _claims_of(data, 212)
+  nulled = _claims_of({**data, 'ranges': None, 'synonyms': None}, 213)
+  absences = [c for c in nulled if c['kind'] == 'absence']
+  assert [c['id'] for c in absences] == [
+    '1961_dehm:213:absence:0',
+    '1961_dehm:213:absence:1',
+  ]
+  first = absences[0]
+  assert first['absenceOf'] == 'occurrences' and first['fields'] == ['ranges']
+  assert first['pages'] == 7 and first['notes'] == 'n' and first['subject'] == _SPECIES
+  # No coverage kind: the claim is not counted under any.
+  assert 'coverageKind' not in first['audit']
+
+  def others(claims, position):
+    return [c['id'].replace(f':{position}:', ':P:') for c in claims if c['kind'] != 'absence']
+
+  assert others(plain, 212) == others(nulled, 213)
+  entry = manifest({'1961_dehm': nulled}, {'1961_dehm': []})['sources']['1961_dehm']
+  assert entry['claims']['absence'] == 2
+  assert 'absence' not in entry['derived']
+
+
+def test_unfigured_specimens_are_derived_only_when_illustrations_are_all(monkeypatch):
+  from phylohist.loader.research import Source
+
+  figured = {
+    'taxon': _SPECIES,
+    'material': [{'label': 'A'}, {'label': 'B'}],
+    'illustrations': [{'plate': 1, 'of': 'A'}],
+  }
+  # A sister species whose figures are null makes the kind `all`.
+  sister = {'taxon': _SISTER, 'illustrations': None}
+
+  def specimens(species, position, with_sister=True, **metadata):
+    children = [species, sister] if with_sister else [species]
+    claims = _claims_of({'taxon': 'rhenopyrgus', 'children': children}, position, **metadata)
+    return {
+      c['label']: c.get('figured')
+      for c in claims
+      if c['kind'] == 'material' and c['materialKind'] == 'specimen' and c['subject'] == _SPECIES
+    }
+
+  assert specimens(figured, 220) == {'A': None, 'B': False}
+  # `figured` is never set to True: a figured specimen has illustrationClaims.
+  claims = _claims_of({'taxon': 'rhenopyrgus', 'children': [figured, sister]}, 221)
+  by_label = {c['label']: c for c in claims if c.get('materialKind') == 'specimen'}
+  assert 'illustrationClaims' in by_label['A'] and 'figured' not in by_label['A']
+
+  # Not set when the source's figures are not entered in full.
+  monkeypatch.setitem(Source.get('1961_dehm')._data['audit']['coverage'], 'illustrations', 'partly')
+  assert specimens(figured, 222, with_sister=False) == {'A': None, 'B': None}
+  monkeypatch.undo()
+
+  # Not set with an untied figure on the node: it may show the specimen.
+  untied = {**figured, 'illustrations': [{'plate': 1, 'of': 'A'}, {'plate': 2}]}
+  assert specimens(untied, 223) == {'A': None, 'B': None}
+  # Not set when the node does not carry `illustrations` at all.
+  assert specimens({k: v for k, v in figured.items() if k != 'illustrations'}, 224) == {
+    'A': None,
+    'B': None,
+  }
+  # A null on the node is a value of the field: every entry is unfigured.
+  assert specimens({**figured, 'illustrations': None}, 225) == {'A': False, 'B': False}
+
+
+def test_a_number_inside_a_run_names_its_entry_for_figured():
+  node = {
+    'taxon': _SPECIES,
+    'material': [{'catalogNumbers': [['GSC 100', 'GSC 105']]}, {'label': 'B'}],
+    'illustrations': [{'plate': 1, 'of': 'GSC 103'}],
+  }
+  sister = {'taxon': _SISTER, 'illustrations': None}
+  claims = _claims_of({'taxon': 'rhenopyrgus', 'children': [node, sister]}, 226)
+  specimens = [
+    c for c in claims if c.get('materialKind') == 'specimen' and c['subject'] == _SPECIES
+  ]
+  assert [c.get('figured') for c in specimens] == [None, False]

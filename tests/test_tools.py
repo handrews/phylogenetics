@@ -737,3 +737,103 @@ def test_material_words(store):
     == 'range: lower Wuliuan; China'
   )
   assert material('range', range={}) == 'range'
+
+
+def _rendered_lines(block):
+  return block['rendered'].splitlines()
+
+
+def test_absence_words_and_not_figured_in_statements(store):
+  assert [
+    store.words.claim_words({'kind': 'absence', 'absenceOf': k})
+    for k in (
+      'material',
+      'occurrences',
+      'illustrations',
+      'synonymy',
+    )
+  ] == [
+    'no specimens cited',
+    'no locality or range given',
+    'not figured',
+    'no synonymy given',
+  ]
+  # A node that nulls its material answers a `specimens` question with the
+  # auditor's statement, not with the source's coverage.
+  block = store.statements('neglecta_hecker_1940', source='1973_sprinkle', kind='specimens')
+  assert block['type'] == 'list'
+  [line] = _rendered_lines(block)[1:]
+  assert 'no specimens cited' in line and 'p. 127' in line
+  [entry] = store.statements(
+    'neglecta_hecker_1940', source='1973_sprinkle', kind='specimens', style='json'
+  )['entries']
+  assert entry['kind'] == 'absence' and entry['page'] == 127
+  # The other kinds select their own absences, and `absence` all of them.
+  every = store.statements('neglecta_hecker_1940', source='1973_sprinkle', kind='absence')
+  assert [line.rsplit('  ', 1)[-1] for line in _rendered_lines(every)[1:]] == [
+    'Bockia neglecta: no specimens cited (p. 127)',
+    'Bockia neglecta: no locality or range given (p. 127)',
+    'Bockia neglecta: not figured (p. 127)',
+  ]
+  for kind, words in (
+    ('occurrences', 'no locality or range given'),
+    ('illustrations', 'not figured'),
+    ('material', 'no specimens cited'),
+  ):
+    rendered = store.statements('neglecta_hecker_1940', source='1973_sprinkle', kind=kind)[
+      'rendered'
+    ]
+    assert words in rendered, kind
+  # An unfigured specimen says so; the holotype, which figures name, does not.
+  lines = _rendered_lines(
+    store.statements('hobbsi_sprinkle_1973', source='1973_sprinkle', kind='specimens')
+  )
+  assert any('MCZ 642 (not figured)' in line for line in lines)
+  assert not [line for line in lines if 'holotype' in line and '(not figured)' in line]
+  durhami = _rendered_lines(
+    store.statements('durhami_sprinkle_1973', source='1973_sprinkle', kind='specimens')
+  )
+  assert not [line for line in durhami if 'holotype' in line and '(not figured)' in line]
+
+
+def test_synonymy_says_a_source_gives_none(store):
+  from phylohist import blocks
+  from phylohist.render import render
+  from phylohist.store import ClaimStore
+
+  # Nothing nulls a synonymy in the corpus yet, so a store of its own gets
+  # the auditor's `absence` claim added at a node that lists no synonymy.
+  fresh = ClaimStore()
+  [path] = fresh._record_paths('1973_sprinkle', 'neglecta_hecker_1940')
+  claim = {
+    'kind': 'absence',
+    'absenceOf': 'synonymy',
+    'fields': ['synonyms'],
+    'id': f'1973_sprinkle:{path}:absence:9',
+    'source': '1973_sprinkle',
+    'path': path,
+    'pages': 127,
+    'subject': 'neglecta_hecker_1940',
+  }
+  fresh.at_path['1973_sprinkle'][path].append(claim)
+  [block] = fresh.synonymy('neglecta_hecker_1940', source='1973_sprinkle')
+  assert block['type'] == 'statement' and block['kind'] == 'none'
+  assert block['claims'] == [claim['id']]
+  assert block['fields']['what'] == 'synonymy' and block['fields']['page'] == 127
+  assert block['rendered'] == 'Sprinkle 1973 gives no synonymy for Bockia neglecta (p. 127).'
+  # No source named: as before, only sources with entries are listed.
+  assert all(b['type'] == 'list' for b in fresh.synonymy('neglecta_hecker_1940'))
+  # And the same statement without a page.
+  bare = blocks.statement(
+    'none',
+    {
+      'cite': 'Sprinkle 1973',
+      'source': '1973_sprinkle',
+      'what': 'synonymy',
+      'about': 'X',
+      'page': None,
+    },
+    {},
+  )
+  assert render(bare, 'text') == 'Sprinkle 1973 gives no synonymy for X.'
+  assert store.synonymy('neglecta_hecker_1940', source='1973_sprinkle') == []
