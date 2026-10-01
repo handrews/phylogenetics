@@ -75,6 +75,8 @@ def node_label(node):
     name += ' ' + mark
   if (node.get('flags') or {}).get('questionable'):
     name += ' ?'
+  if (node.get('flags') or {}).get('nonMonophyletic'):
+    name += f' ({blocks.non_monophyly_words(node["flags"]["nonMonophyletic"])})'
   if node.get('sensu'):
     name += ' ' + blocks.SENSU_MARKS[node['sensu']]
   for act in node.get('acts') or ():
@@ -345,6 +347,8 @@ def _chain_text(chain):
       label = '? ' + label
     if node.get('questionable'):
       label += ' ?'
+    if node.get('nonMonophyletic'):
+      label += f' ({blocks.non_monophyly_words(node["nonMonophyletic"])})'
     if node.get('alternatives'):
       label += ' (or ' + ', '.join(node['alternatives']) + ')'
     parts.append(label)

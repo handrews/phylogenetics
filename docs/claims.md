@@ -64,6 +64,12 @@ entry. Fields added:
 - `axis`: how the node hangs off its parent (`children`, `synonyms`,
   `removed`, `parents`, …; `root` for a tree's top node).
 - `target`: for `cfTaxon` and `affTaxon`, the compared name (C1).
+- `compared`: `{sign: cf | aff, taxon}` on the usage of an `openTaxon` node
+  that carries a `cf` or `aff` field: the open form's own record is the
+  subject, and `taxon` is the named taxon the node compares it with. A
+  node's claims belong to the open form, so the compared taxon's
+  statements do not include them; `history` lists the form under its own
+  name, marked `compared`.
 - `sensu`: `stricto`, `lato` or `emendato` when the node prints the
   qualifier.
 - A `synonyms` or `non` entry with no name field of its own is a usage of
@@ -82,8 +88,12 @@ Emitted for every child under its parent in a taxonomy. Fields added:
   word in `citedAs` or `notes`, `rankAsPrinted` holds it; the rule that
   rank belongs to the tree node is G8, not yet in force.
 - Flags copied from the node: `provisional`, `questionable`, `quoted`,
-  `pars`, `tentative`, `outgroup`, `stem`; `altPlacements` as a list of
-  keys. (`listHedged`, `listComplete` (B16) are not in the schema yet.)
+  `quotedParent` (the genus is printed in quotation marks in this
+  combination), `nonMonophyletic` (`true`, `paraphyletic` or `polyphyletic`,
+  copied with its value: the source says the group is not monophyletic;
+  absent says nothing), `pars`, `tentative`, `outgroup`, `stem`;
+  `altPlacements` as a list of keys. (`listHedged`, `listComplete` (B16) are
+  not in the schema yet.)
 
 A phylogeny's nesting produces placements too, marked
 `tree: cladogram | diagram | other` with the phylogeny's `notes`, and a
@@ -123,8 +133,8 @@ this name) and each `non` entry (the source rejects it) (B1). Fields added:
 - `under`: the node whose name the entry is accepted or rejected under.
 - `parents`: the original combination, as the list of keys under the
   entry's `parents` (a genus, or a genus and a subgenus).
-- `pars`, `tentative` copied; `ownName: true` when the entry has no name
-  of its own.
+- `pars`, `tentative` and `quotedParent` copied; `ownName: true` when the
+  entry has no name of its own.
 - `lapsusFor`: on an entry whose own name is a lapsus, the record the slip
   was printed for (the entry's `lapsusFor` node). The entry is listed as
   the source gives it, "Steganoblastus canadensis (in error for
@@ -223,7 +233,9 @@ says which.
   are copied as written: `catalogNumbers`, `catalogNumbersAsPrinted`,
   `count`, `label`, `holder`, `status`, `formerIds`, `fragmentOf`, `parts`,
   `examined`, `listComplete`, `preparation`, `castOf`, `collectedBy`,
-  `collectedDate`, `contextKey`, `contextTentative` (from the object form of
+  `collectedDate`, `uncertain` (the specimen is doubtfully assigned to the
+  taxon), `roleUncertain` (the role word is queried in the source),
+  `contextKey`, `contextTentative` (from the object form of
   the entry's `context`), and the entry's `notes` as `materialNotes`. An
   entry's `editorial` block becomes the claim's `editorial` (the claim is
   about the entry), with `inferredFields` listing the names in its

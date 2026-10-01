@@ -150,6 +150,20 @@ class ClaimStore:
           node_path = claim['path'].rsplit('/or/', 1)[0]
           self.or_usages[claim['subject']].append((claim['source'], node_path, claim))
           self.or_names_at[(claim['source'], node_path)].append(claim['subject'])
+    # The open forms compared with a taxon (`cf.`, `aff.`): for an open
+    # record its links `{sign, taxon}`, for the taxon the open records
+    # compared with it. A compared form is not the taxon, so only `history`
+    # reads these.
+    self.compared_links = collections.defaultdict(list)
+    self.compared_with = collections.defaultdict(list)
+    for claims in self.by_source.values():
+      for claim in claims:
+        if claim['kind'] == 'usage' and claim.get('compared'):
+          link = claim['compared']
+          if link not in self.compared_links[claim['subject']]:
+            self.compared_links[claim['subject']].append(link)
+          if claim['subject'] not in self.compared_with[link['taxon']]:
+            self.compared_with[link['taxon']].append(claim['subject'])
     self.resolver = Resolver(self)
     self.words = Words(self)
 
@@ -198,6 +212,9 @@ class ClaimStore:
       return None
     key = base['subject']
     flags = {f: True for f in _NODE_FLAGS if placement and placement.get(f)}
+    if placement and placement.get('nonMonophyletic'):
+      # The one flag that carries its value: `True`, or what the source says.
+      flags['nonMonophyletic'] = placement['nonMonophyletic']
     for act in acts:
       if act['actKind'] in ('new', 'placeholder'):
         flags['new'] = True
@@ -550,6 +567,7 @@ class ClaimStore:
           'alternatives': [self.words.display(a) for a in n['alternatives']],
           'provisional': n['provisional'],
           'questionable': n['questionable'],
+          **({'nonMonophyletic': n['nonMonophyletic']} if n.get('nonMonophyletic') else {}),
         }
       )
     last = chain['nodes'][-1]
@@ -667,6 +685,17 @@ class ClaimStore:
       words += ' (questionable)'
     return {'key': current['parent'], 'words': words, 'claim': current['id']}
 
+  @staticmethod
+  def _compared_sign(compared, record, at):
+    """The sign (`cf`, `aff`) a compared form's line carries: the node's own
+    link when it is one of the links the history covers, else the record's
+    first."""
+    links = compared.get(record)
+    if not links:
+      return None
+    own = next((c['compared'] for c in at if c['kind'] == 'usage' and c.get('compared')), None)
+    return (own if own in links else links[0])['sign']
+
   def history(
     self, record, include_related=True, synonymy=False, trees=None, years=None, style='text'
   ):
@@ -679,8 +708,17 @@ class ClaimStore:
     trees = tuple(trees) if trees else TAXONOMY
     closure = self.closure
     keys = closure.expand([record], include_related)
+    # The open forms compared with the name or its related records are
+    # listed under their own names, each line marked with its sign.
+    compared = {}
+    if include_related:
+      for key in keys:
+        for open_key in self.compared_with.get(key, ()):
+          if open_key not in keys:
+            found = [link for link in self.compared_links[open_key] if link['taxon'] == key]
+            compared.setdefault(open_key, []).extend(found)
     by_source = collections.defaultdict(list)
-    for key in keys:
+    for key in [*keys, *compared]:
       for claim in self.by_subject.get(key, ()):
         if claim.get('tree') in trees and in_years(self.source_year(claim['source']), years):
           by_source[claim['source']].append(claim)
@@ -724,6 +762,8 @@ class ClaimStore:
             'page': use.get('pages'),
             'claims': sorted({c['id'] for c in at}),
           }
+          if sign := self._compared_sign(compared, use['subject'], at):
+            entry['compared'] = sign
           if synonymy:
             found = self._synonymy_entries(source_key, path)
             if found:
@@ -742,18 +782,20 @@ class ClaimStore:
             words += f', cited in error for {intended}'
           elif under:
             words += f', cited as a synonym of {self.words.display(under, source_key, under_path)}'
-          entries.append(
-            {
-              'year': self.source_year(source_key),
-              'source': source_key,
-              'cite': self.cite(source_key),
-              'authors': self.words.authors(source_key),
-              'record': c['subject'],
-              'line': words,
-              'page': c.get('citedPages'),
-              'claims': [c['id']],
-            }
-          )
+          entry = {
+            'year': self.source_year(source_key),
+            'source': source_key,
+            'cite': self.cite(source_key),
+            'authors': self.words.authors(source_key),
+            'record': c['subject'],
+            'line': words,
+            'page': c.get('citedPages'),
+            'claims': [c['id']],
+          }
+          at = self._node_claims(source_key, c['path'])
+          if sign := self._compared_sign(compared, c['subject'], at):
+            entry['compared'] = sign
+          entries.append(entry)
     m = closure.measurement(record, include_related, trees, years)
     deco = {}
     if m['papers']:

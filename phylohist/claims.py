@@ -82,15 +82,19 @@ _PLACEMENT_FLAGS = (
   'provisional',
   'questionable',
   'quoted',
+  'quotedParent',
+  'nonMonophyletic',
   'pars',
   'tentative',
   'outgroup',
   'stem',
 )
+# The node fields linking an open form to the taxon it is compared with.
+_COMPARED_SIGNS = ('cf', 'aff')
 # The synonymy entries: each is a name the source accepts (`synonyms`) or
 # rejects (`non`) under the owner's name.
 _SYNONYMY_AXES = ('synonyms', 'non')
-_ACCEPTANCE_FLAGS = ('pars', 'tentative')
+_ACCEPTANCE_FLAGS = ('pars', 'tentative', 'quotedParent')
 
 # The roles whose entry on a protologue node (`new: true`) is this source's
 # own designation, so the claim derives `roleAct: designated` when the entry
@@ -124,6 +128,8 @@ _MATERIAL_FIELDS = (
   'castOf',
   'collectedBy',
   'collectedDate',
+  'uncertain',
+  'roleUncertain',
 )
 # The coverage kinds derived from raw node state rather than a reviewer's
 # declaration. `fields`: the node fields whose presence (a value or a null)
@@ -459,6 +465,10 @@ class _NodeClaims:
     claim['axis'] = node.axis
     if field in ('cfTaxon', 'affTaxon'):
       claim['target'] = data[field]
+    # An open form's own link to the taxon it is compared with.
+    for sign in _COMPARED_SIGNS:
+      if field == 'openTaxon' and sign in data:
+        claim['compared'] = {'sign': sign, 'taxon': data[sign]}
     if 'sensu' in data:
       claim['sensu'] = data['sensu']
     self._emit(claim, field)

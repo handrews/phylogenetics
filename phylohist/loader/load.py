@@ -12,7 +12,7 @@ data anyway.
 import contextlib
 import logging
 
-from . import material
+from . import material, nomenclature
 from .io import LoadError, load_files
 from .research import Author, Publication, Source
 from .taxa import Taxon, Tree
@@ -154,6 +154,7 @@ def _load_trees(data):
   _report_missing_protologues(data)
   _report_lapsus_records(roots)
   _report_material(data)
+  _report_nomenclature(data)
   return roots
 
 
@@ -193,6 +194,24 @@ def _report_material(data):
         _log_material(level, f'{where}: {message}')
       for level, message in material.null_material(node, is_cited):
         _log_material(level, f'{where}: {message}')
+
+
+def _report_nomenclature(data):
+  """Run every `nomenclature.py` check over every opinion's nodes, logging
+  each at its level with the source key and the node's path, then the one
+  check across the whole corpus."""
+  for source_key, opinion in data['trees'].items():
+    for path, node, _ in material.walk_document(opinion):
+      where = f'{source_key} at {path}'
+      for check, args in (
+        (nomenclature.compared_links, (node, Taxon.get)),
+        (nomenclature.quoted_parent, (node, Taxon.get)),
+        (nomenclature.role_uncertain, (node,)),
+      ):
+        for level, message in check(*args):
+          _log_material(level, f'{where}: {message}')
+  for level, message in nomenclature.compared_link_conflicts(data['trees'].items()):
+    _log_material(level, message)
 
 
 class ErrorCount(logging.Handler):

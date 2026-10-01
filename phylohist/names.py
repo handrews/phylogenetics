@@ -1,7 +1,7 @@
 """Folding printed names to lookup forms.
 
 G10 in `notes/development/semantics-roadmap.md`: ligatures, capitals, diacritics,
-hyphens and spaces are typographical variation, not spelling, and a
+quotation marks, hyphens and spaces are typographical variation, not spelling, and a
 resolver folds them on lookup while the records keep what was entered.
 Folding is for finding a record; it never changes a key or a name.
 """
@@ -11,11 +11,12 @@ import unicodedata
 
 _LIGATURES = (('æ', 'ae'), ('œ', 'oe'), ('ß', 'ss'))
 _UMLAUTS = (('ä', 'ae'), ('ö', 'oe'), ('ü', 'ue'))
-_SEPARATORS = re.compile(r'[\s\-_.]+')
+_SEPARATORS = re.compile(r'[\s\-_."“”]+')
 
 
 def fold(text):
-  """Lowercase, ligatures expanded, diacritics dropped, separators removed."""
+  """Lowercase, ligatures expanded, diacritics dropped, separators and
+  quotation marks removed."""
   text = text.lower()
   for ligature, plain in _LIGATURES:
     text = text.replace(ligature, plain)

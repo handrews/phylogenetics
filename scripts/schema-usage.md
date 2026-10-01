@@ -21,9 +21,10 @@ even when its parent is also unreached, so read parents first.
 | `eon` | `phylogeny#/$defs/eon` |
 | `era` | `phylogeny#/$defs/era` |
 | `figureLocatorFields` | `phylogeny#/$defs/figureLocatorFields/properties/non` |
+| `identificationFields` | `phylogeny#/$defs/identificationFields/properties/aff`<br>`phylogeny#/$defs/identificationFields/properties/cf` |
 | `inferredContext` | `phylogeny#/$defs/inferredContext/properties/basis`<br>`phylogeny#/$defs/inferredContext/properties/sources`<br>`phylogeny#/$defs/inferredContext/properties/sources/items` |
 | `localTimeFields` | `phylogeny#/$defs/localTimeFields/properties/localStageBoundary` |
-| `materialEntry` | `phylogeny#/$defs/materialEntry/properties/formerIds`<br>`phylogeny#/$defs/materialEntry/properties/formerIds/items`<br>`phylogeny#/$defs/materialEntry/properties/fragmentOf` |
+| `materialEntry` | `phylogeny#/$defs/materialEntry/properties/formerIds`<br>`phylogeny#/$defs/materialEntry/properties/formerIds/items`<br>`phylogeny#/$defs/materialEntry/properties/fragmentOf`<br>`phylogeny#/$defs/materialEntry/properties/roleUncertain`<br>`phylogeny#/$defs/materialEntry/properties/uncertain` |
 | `modularDate` | `phylogeny#/$defs/modularDate/then/oneOf/1/properties/month/anyOf/3`<br>`phylogeny#/$defs/modularDate/then/oneOf/2/properties/month/anyOf/5` |
 | `person` | `phylogeny#/$defs/person/properties/suffix` |
 | `publication` | `phylogeny#/$defs/publication/properties/type` |
@@ -32,7 +33,7 @@ even when its parent is also unreached, so read parents first.
 | `taxonRecord` | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items/items` |
 | `timeFields` | `phylogeny#/$defs/timeFields/properties/eon`<br>`phylogeny#/$defs/timeFields/properties/era`<br>`phylogeny#/$defs/timeFields/properties/seriesBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageRange` |
 | `treeDocument` | `phylogeny#/$defs/treeDocument/properties/unused`<br>`phylogeny#/$defs/treeDocument/properties/unused/items` |
-| `uncertaintyFields` | `phylogeny#/$defs/uncertaintyFields/properties/sensu` |
+| `uncertaintyFields` | `phylogeny#/$defs/uncertaintyFields/properties/nonMonophyletic`<br>`phylogeny#/$defs/uncertaintyFields/properties/nonMonophyletic/oneOf/0`<br>`phylogeny#/$defs/uncertaintyFields/properties/nonMonophyletic/oneOf/1`<br>`phylogeny#/$defs/uncertaintyFields/properties/quotedParent`<br>`phylogeny#/$defs/uncertaintyFields/properties/sensu` |
 
 ## 2. Property frequency by `$defs`
 
@@ -186,6 +187,8 @@ property.
 | `citedAs` | 52 | 0.8% |
 | `affTaxon` | 16 | 0.3% |
 | `cfTaxon` | 15 | 0.2% |
+| `aff` | 0 | 0.0% |
+| `cf` | 0 | 0.0% |
 
 ### `illustration` -- 478 instances in `data/`
 
@@ -249,6 +252,8 @@ property.
 | `status` | 1 | 0.4% |
 | `formerIds` | 0 | 0.0% |
 | `fragmentOf` | 0 | 0.0% |
+| `roleUncertain` | 0 | 0.0% |
+| `uncertain` | 0 | 0.0% |
 
 ### `materialsFields` -- 5586 instances in `data/`
 
@@ -428,6 +433,8 @@ property.
 | `quoted` | 18 | 0.3% |
 | `tentative` | 17 | 0.3% |
 | `questionable` | 12 | 0.2% |
+| `nonMonophyletic` | 0 | 0.0% |
+| `quotedParent` | 0 | 0.0% |
 | `sensu` | 0 | 0.0% |
 
 ## 3. Enum member usage
@@ -674,6 +681,12 @@ property.
 0 of 5 members used, 0 occurrences.
 
 **Never used (5):** `'material'`, `'illustrations'`, `'contexts'`, `'ranges'`, `'synonyms'`
+
+### `phylogeny#/$defs/uncertaintyFields/properties/nonMonophyletic/oneOf/1`
+
+0 of 2 members used, 0 occurrences.
+
+**Never used (2):** `'paraphyletic'`, `'polyphyletic'`
 
 ### `phylogeny#/$defs/uncertaintyFields/properties/sensu`
 
