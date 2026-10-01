@@ -102,7 +102,7 @@ def report_inconsistencies(claims_by_source, roots):
     if not entry['inconsistencies']:
       continue
     found += 1
-    review = ROOT / 'docs' / 'reviews' / f'review_{source_key}.md'
+    review = ROOT / 'notes' / 'reviews' / f'review_{source_key}.md'
     print(source_key + (f'  ({review.relative_to(ROOT)})' if review.exists() else ''))
     for row in entry['inconsistencies']:
       kind, _, rest = row.partition(':')
