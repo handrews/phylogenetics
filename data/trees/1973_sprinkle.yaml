@@ -2894,7 +2894,7 @@ taxonomies:
             pages: 155
             material:
             - label: only one incomplete specimen of this genus and species is known to exist
-              notes: not available for study during this project
+              examined: false
             illustrations:
             - textFigures: 38
               page: 155

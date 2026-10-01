@@ -23,7 +23,7 @@ even when its parent is also unreached, so read parents first.
 | `figureLocatorFields` | `phylogeny#/$defs/figureLocatorFields/properties/non` |
 | `inferredContext` | `phylogeny#/$defs/inferredContext/properties/basis`<br>`phylogeny#/$defs/inferredContext/properties/sources`<br>`phylogeny#/$defs/inferredContext/properties/sources/items` |
 | `localTimeFields` | `phylogeny#/$defs/localTimeFields/properties/localStageBoundary` |
-| `materialEntry` | `phylogeny#/$defs/materialEntry/properties/examined`<br>`phylogeny#/$defs/materialEntry/properties/formerIds`<br>`phylogeny#/$defs/materialEntry/properties/formerIds/items`<br>`phylogeny#/$defs/materialEntry/properties/fragmentOf` |
+| `materialEntry` | `phylogeny#/$defs/materialEntry/properties/formerIds`<br>`phylogeny#/$defs/materialEntry/properties/formerIds/items`<br>`phylogeny#/$defs/materialEntry/properties/fragmentOf` |
 | `modularDate` | `phylogeny#/$defs/modularDate/then/oneOf/1/properties/month/anyOf/3`<br>`phylogeny#/$defs/modularDate/then/oneOf/2/properties/month/anyOf/5` |
 | `person` | `phylogeny#/$defs/person/properties/suffix` |
 | `publication` | `phylogeny#/$defs/publication/properties/type` |
@@ -232,7 +232,7 @@ property.
 | `role` | 208 | 74.3% |
 | `context` | 137 | 48.9% |
 | `catalogNumbersAsPrinted` | 78 | 27.9% |
-| `notes` | 68 | 24.3% |
+| `notes` | 67 | 23.9% |
 | `preparation` | 16 | 5.7% |
 | `label` | 14 | 5.0% |
 | `count` | 11 | 3.9% |
@@ -243,10 +243,10 @@ property.
 | `holder` | 5 | 1.8% |
 | `castOf` | 3 | 1.1% |
 | `editorial` | 1 | 0.4% |
+| `examined` | 1 | 0.4% |
 | `listComplete` | 1 | 0.4% |
 | `roleAct` | 1 | 0.4% |
 | `status` | 1 | 0.4% |
-| `examined` | 0 | 0.0% |
 | `formerIds` | 0 | 0.0% |
 | `fragmentOf` | 0 | 0.0% |
 
