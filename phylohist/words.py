@@ -709,7 +709,8 @@ class Words:
       words += '?'
     of = claim.get('of')
     if of:
-      words += f' of {", ".join(of) if isinstance(of, list) else of}'
+      # A number may be a bare integer in the tree.
+      words += f' of {", ".join(str(v) for v in of) if isinstance(of, list) else of}'
     if claim.get('depicts') not in (None, 'specimen'):
       words += f' ({claim["depicts"]})'
     return words
