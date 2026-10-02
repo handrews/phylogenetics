@@ -12,6 +12,7 @@ import re
 
 from . import blocks
 from .acts import RELATED_ACTS
+from .loader.material import AMBIGUOUS, bare_number, resolve_number
 from .names import fold, fold_forms, key_stem
 
 # The community's words for what the table records.
@@ -572,26 +573,57 @@ class Words:
       words += ' (not figured)'
     return words
 
-  def specimen_history_words(self, claim, number, runs=None):
+  def _names_specimen(self, value, join_key, repository):
+    """Whether a figure's `of` value names the specimen a join key stands
+    for: its holder is the one its prefix resolves to, else the claim's
+    `repository`, as `_NodeClaims._join_key` keys a number."""
+    registry = self.store.repositories
+    key, via, bare = resolve_number(value, registry)
+    if via is None or via == AMBIGUOUS:
+      key, bare = repository, bare_number(value, repository, registry)
+    return f'{key}:{fold(bare)}' == join_key
+
+  def _figures_of(self, claim, join_key):
+    """The locators of the figures that name the specimen a join key
+    stands for among the several numbers a claim carries: each
+    `illustrationClaims` figure whose `of` has a value equal to it."""
+    found = []
+    for figure in map(self.store.by_id.get, claim.get('illustrationClaims') or ()):
+      of = figure.get('of')
+      values = of if isinstance(of, list) else [of]
+      if any(self._names_specimen(v, join_key, claim.get('repository')) for v in values):
+        found.append(figure['illustration'])
+    return found
+
+  def specimen_history_words(self, claim, number, join_key, runs=None):
     """One citation in a specimen's history: the role (queried with "?")
-    or "cited", "of <the taxon as the source uses it>", the doubt about
-    the assignment, the number as the source prints it when that is not
-    the one asked about (or the printed run that holds it, `runs`), then
-    its figures, or "not figured" when the source says so."""
+    "of <the taxon as the source uses it>", or "cited under <the taxon>"
+    without one, the doubt about the assignment, the number as the source
+    prints it when that is not the one asked about (or the printed run that
+    holds it, `runs`), then its figures, or "not figured" when the source
+    says so. A claim with several numbers or a run says what is figured of
+    the number asked about only, from the figures whose own `of` names it
+    (a locator's `notes` are left out); when none does, nothing."""
     role = claim.get('role')
-    if role and claim.get('roleUncertain'):
-      role += '?'
     taxon = self.display(claim['subject'], claim['source'], claim['path'])
-    words = f'{role or "cited"} of {taxon}'
+    if role:
+      words = f'{role}{"?" if claim.get("roleUncertain") else ""} of {taxon}'
+    else:
+      words = f'cited under {taxon}'
     if claim.get('uncertain'):
       words += ' (doubtfully assigned)'
     if runs:
       words += ' in the run ' + ', '.join(_range_words([run]) for run in runs)
     elif claim.get('ids') and _range_words(claim['ids']) != number:
       words += f' as {_range_words(claim["ids"])}'
+    several = claim.get('rangeJoin') or len(claim.get('joinKeys') or ()) > 1
+    figures = (
+      self._figures_of(claim, join_key) if several else claim.get('specimenIllustrations') or ()
+    )
     figures = [
-      _illustration_words(figure) + ('?' if figure.get('uncertain') else '')
-      for figure in claim.get('specimenIllustrations') or ()
+      _illustration_words({k: v for k, v in figure.items() if k != 'notes'})
+      + ('?' if figure.get('uncertain') else '')
+      for figure in figures
     ]
     if figures:
       words += '; figured ' + '; '.join(figures)

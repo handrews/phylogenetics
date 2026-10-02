@@ -1148,7 +1148,7 @@ class ClaimStore:
         page=c.get('pages'),
         kind='material',
         authors=self.words.authors(c['source']),
-        sentence=self.words.specimen_history_words(c, number, in_runs.get(c['id'])),
+        sentence=self.words.specimen_history_words(c, number, join_key, in_runs.get(c['id'])),
       )
       for c in claims
     ]

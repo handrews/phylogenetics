@@ -688,15 +688,32 @@ class _NodeClaims:
     is a statement about the paper: the source's illustrations are entered
     in full (effective coverage `all`), this node carries the field (a
     value or a null), and no figure of the node lacks an `of` (an untied
-    figure may show the specimen, so nothing is said)."""
+    figure may show the specimen, so nothing is said). An entry whose role
+    is `figured` (the source calls it a figured specimen) is never marked,
+    nor is one whose cast, another entry's `castOf` naming it, a figure
+    names: a figure of the cast shows the original."""
     coverage = (self.audit.get('coverage') or {}).get('illustrations')
     if coverage != 'all' or 'illustrations' not in self.data:
       return
     links = self._illustration_links
     if any(claim.get('of') is None for claim, _ in links):
       return
-    for _, specimen in self._entry_claims:
-      if not any(specimen is hit for _, named in links for hit in named):
+    named = [hit for _, hits in links for hit in hits]
+
+    def is_named(claim):
+      return any(claim is hit for hit in named)
+
+    entries = [entry for entry, _ in self._entry_claims]
+    for entry, specimen in self._entry_claims:
+      if is_named(specimen) or entry.get('role') == 'figured':
+        continue
+      casts = [
+        cast
+        for other, cast in self._entry_claims
+        if other.get('castOf') is not None
+        and any(entry is hit for hit in entries_named(entries, other['castOf']))
+      ]
+      if not any(is_named(cast) for cast in casts):
         specimen['figured'] = False
 
   def _absences(self):

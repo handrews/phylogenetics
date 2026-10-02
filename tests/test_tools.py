@@ -1085,14 +1085,14 @@ def test_specimen_history_renders_each_citation_as_a_line(store):
 def test_specimen_history_lists_each_taxon_a_number_is_cited_under(store):
   block = store.specimen_history('MCZ 643')
   assert [e['source'] for e in block['entries']] == ['1973_sprinkle'] * 2
-  assert {e['sentence'].split(';')[0] for e in block['entries']} == {
-    'cited of Gogia hobbsi',
-    'cited of Blastoidocrinus nevadensis',
-  }
-  assert 'cited of Gogia hobbsi; not figured' in block['rendered']
+  assert [e['sentence'] for e in block['entries']] == [
+    'cited under Gogia hobbsi; not figured',
+    'cited under Blastoidocrinus nevadensis',
+  ]
 
 
 def test_specimen_history_names_the_figures_tied_to_a_specimen(store):
+  # Two numbers on the entry: only the figures whose `of` names the one asked about.
   [entry] = store.specimen_history('MCZ 581A')['entries']
   assert entry['sentence'].startswith('holotype of Kinzercystis durhami as MCZ 581A, MCZ 581B')
   assert '; figured pl. 4, fig. 1, 2' in entry['sentence']
@@ -1100,16 +1100,57 @@ def test_specimen_history_names_the_figures_tied_to_a_specimen(store):
 
 
 def test_specimen_history_finds_a_number_inside_a_printed_run(store):
-  block = store.specimen_history('GSC 25940')
-  [entry] = block['entries']
-  assert entry['sentence'].startswith(
-    'paratype of Gogia kitchnerensis in the run GSC 25935–GSC 25961; figured pl. 20, fig. 2'
+  [entry] = store.specimen_history('GSC 25940')['entries']
+  # Only the figure whose own `of` names the number is shown.
+  assert entry['sentence'] == (
+    'paratype of Gogia kitchnerensis in the run GSC 25935–GSC 25961; figured pl. 20, fig. 4'
   )
-  # The bare number finds the run when the repository is given.
-  assert store.specimen_history('25940', repository='gsc')['entries'] == block['entries']
-  # An endpoint is in the run, and a number just outside it is not.
-  assert store.specimen_history('GSC 25961')['entries'] == block['entries']
+  assert entry['page'] == 96
+  [entry] = store.specimen_history('GSC 25936')['entries']
+  assert entry['sentence'].endswith('; figured pl. 20, fig. 2')
+  # The figure of the run's first number is not shown for the second.
+  assert 'text-fig' not in entry['sentence']
+  [entry] = store.specimen_history('GSC 25935')['entries']
+  assert 'text-fig. 15' in entry['sentence']
+  # No figure names the number: nothing is said of figures, not even "not figured".
+  [entry] = [
+    e for e in store.specimen_history('GSC 25954')['entries'] if 'kitchnerensis' in e['sentence']
+  ]
+  assert entry['sentence'] == 'paratype of Gogia kitchnerensis in the run GSC 25935–GSC 25961'
+  # The bare number finds the run when the repository is given, an endpoint is in it,
+  # and a number just outside it is not.
+  assert (
+    store.specimen_history('25940', repository='gsc')['entries']
+    == (store.specimen_history('GSC 25940')['entries'])
+  )
+  assert store.specimen_history('GSC 25961')['entries'][0]['sentence'].endswith('pl. 21, fig. 8')
   assert store.specimen_history('GSC 25962')['kind'] == 'absent'
+  # A locator's note (here a remark on the figured specimen) stays out of the line;
+  # `statements` keeps it.
+  assert 'notes' not in store.specimen_history('GSC 25960')['rendered']
+  assert '; figured pl. 21, fig. 7' in store.specimen_history('GSC 25960')['rendered']
+  assert (
+    'notes figured specimen GSC 25960'
+    in store.statements('kitchnerensis_sprinkle_1973', kind='illustrations')['rendered']
+  )
+
+
+def test_specimen_history_of_a_single_number_takes_all_its_figures(store):
+  [entry] = store.specimen_history('MCZ 719')['entries']
+  assert entry['sentence'] == (
+    'holotype of Eustypocystis minor; figured pl. 28, fig. 2; text-fig. 28, p. 114'
+  )
+
+
+def test_specimen_history_marks_a_queried_role(store):
+  claim = next(
+    c
+    for c in store.by_id.values()
+    if c.get('materialKind') == 'specimen' and c.get('role') and c.get('joinKeys')
+  )
+  words = store.words.specimen_history_words
+  assert words(dict(claim, roleUncertain=True), 'x', 'x:1').startswith(f'{claim["role"]}? of ')
+  assert words(dict(claim, role=None), 'x', 'x:1').startswith('cited under ')
 
 
 def test_specimen_history_asks_for_the_repository_when_the_prefix_is_shared(store):
@@ -1127,7 +1168,10 @@ def test_specimen_history_asks_for_the_repository_when_the_prefix_is_shared(stor
   block = store.specimen_history('PE-199', repository='north-museum-fm')
   assert block['heading']['key'] == 'north-museum-fm:199'
   assert [e['source'] for e in block['entries']] == ['1973_sprinkle']
-  assert block['entries'][0]['sentence'].startswith('figured of Lepidocystis cf. wanneri')
+  # The source calls it a figured specimen, so it is not "not figured" as well.
+  assert block['entries'][0]['sentence'] == (
+    'figured of Lepidocystis cf. wanneri as PE-199, PE-199-A'
+  )
   assert block['parameters'] == {'number': 'PE-199', 'repository': 'north-museum-fm'}
   # A number with no prefix of its own is given its repository.
   assert (

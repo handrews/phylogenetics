@@ -256,12 +256,15 @@ says which.
   `specimenIllustrations` lists the locators of the node's illustrations
   whose `of` names the entry, and `illustrationClaims` their claim ids.
   `figured: false` marks a specimen no figure names, set only when all
-  four hold: the source's effective coverage for `illustrations` is `all`
+  six hold: the source's effective coverage for `illustrations` is `all`
   (so an unaudited tree, whose figure list may be partial, asserts
   nothing); the node carries `illustrations`, a value or a null; no
   illustration on the node names the entry through `of` (a number inside a
-  range pair's run names it); and the node has no illustration without an
-  `of`, since an untied figure may show the specimen. It is never set to
+  range pair's run names it); the node has no illustration without an
+  `of`, since an untied figure may show the specimen; the entry's `role` is
+  not `figured` (the source calls it a figured specimen); and no figure
+  names a cast of it (another entry whose `castOf` names this one), since
+  a figure of the cast shows the original. It is never set to
   `true`: a figured specimen has `illustrationClaims`.
 - `illustration` (field `illustrations`): one claim per entry, this
   source's own figure. `illustration` holds the locator fields (`plate`,
@@ -521,7 +524,7 @@ blocks; the CLI (`phylohist <tool>`, `--style`), the MCP server
 | `history(record, include_related, synonymy)` | a timeline: one line per source in year order with the name as used, its position, the acts and the page; the measurement as the heading; each source's synonymy with `synonymy` |
 | `synonymy(record, source)` | the synonymy a source prints under a record, as a list |
 | `statements(record, source, kind, act_kind)` | every claim about a record as a sentence with source, year and page, the drill-down; with a source named and nothing of that kind entered, the gap block for it ("nothing of this kind" when the source holds other claims about the record), and with no kind asked the gap names every kind of the source not yet entered; with a source and `kind='absence'`, a table of what the source gives for the record per content kind (specimens, occurrences, figures, synonymy; one group per node), each `N entered`, `none printed` (the auditor's `absence` claim, or a source coverage of `na` or `all` that leaves none to enter) or `not entered`; above species rank the specimens and figures rows appear only when the node carries some, since those kinds are cited for species |
-| `specimen_history(number, repository)` | every citation of one specimen, by catalog number as a paper prints it ("UQF 5404", "F. 5404"): a list of the specimen claims whose `joinKeys` hold the number's key (`<repository>:<folded bare number>`, built as the extractor builds it) and those whose printed range contains it, one line per claim in year order: the role or "cited", the taxon as the source uses it, "(doubtfully assigned)", the number as printed when it is not the one asked about (or "in the run …"), and the figures tied to it or "not figured". The prefix names the repository; a number without one, or with a shared prefix, takes `repository` (a registry key), and without it the result is the `absent` statement, naming the competing repositories when the prefix is shared. Unnumbered specimens cannot be followed |
+| `specimen_history(number, repository)` | every citation of one specimen, by catalog number as a paper prints it ("UQF 5404", "F. 5404"): a list of the specimen claims whose `joinKeys` hold the number's key (`<repository>:<folded bare number>`, built as the extractor builds it) and those whose printed range contains it, one line per claim in year order: the role ("holotype of X") or, with none, "cited under X", "(doubtfully assigned)", the number as printed when it is not the one asked about (or "in the run …"), and the figures tied to it (locator notes left out) or "not figured"; for an entry with a run or several numbers only the figures whose own `of` names the number asked about, and nothing about figures when none does unless the claim is `figured: false`. The prefix names the repository; a number without one, or with a shared prefix, takes `repository` (a registry key), and without it the result is the `absent` statement, naming the competing repositories when the prefix is shared. Unnumbered specimens cannot be followed |
 | `gap(source, kind)` / `gap(name=…)` | the contract's sentence for what is not yet entered, or for a name no source carries |
 | `printed_forms(record, source)` | each form a source prints, verbatim (folded to one line in text and markdown; the claim keeps its line breaks), with the page; when the named source recorded no verbatim form, the heading as its listing is entered, marked as such |
 | `source_coverage(key)` | the raw coverage view |

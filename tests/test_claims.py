@@ -1034,6 +1034,53 @@ def test_a_number_inside_a_run_names_its_entry_for_figured():
   assert [c.get('figured') for c in specimens] == [None, False]
 
 
+def test_a_figured_role_or_a_figured_cast_is_never_unfigured():
+  sister = {'taxon': _SISTER, 'illustrations': None}
+
+  def figured(node, position):
+    claims = _claims_of({'taxon': 'rhenopyrgus', 'children': [node, sister]}, position)
+    return {
+      c['label']: c.get('figured')
+      for c in claims
+      if c.get('materialKind') == 'specimen' and c['subject'] == _SPECIES
+    }
+
+  # The source calls the entry a figured specimen, whatever the figures say.
+  node = {
+    'taxon': _SPECIES,
+    'material': [{'label': 'A', 'role': 'figured'}, {'label': 'B'}],
+    'illustrations': [{'plate': 1, 'of': 'B'}],
+  }
+  assert figured(node, 227) == {'A': None, 'B': None}
+  assert figured({**node, 'illustrations': None}, 228) == {'A': None, 'B': False}
+  # A figure of a cast shows its original; the cast's own entry is figured by it.
+  cast = {
+    'taxon': _SPECIES,
+    'material': [{'label': 'A'}, {'label': 'B', 'castOf': 'A'}, {'label': 'C'}],
+    'illustrations': [{'plate': 1, 'of': 'B'}],
+  }
+  assert figured(cast, 229) == {'A': None, 'B': None, 'C': False}
+  # An unfigured cast leaves its original unfigured, and so does a figure
+  # of another entry.
+  unfigured_cast = {**cast, 'illustrations': [{'plate': 1, 'of': 'C'}]}
+  assert figured(unfigured_cast, 230) == {'A': False, 'B': False, 'C': None}
+  # The cast is found by a catalog number or a run as a figure's `of` is.
+  numbered = {
+    'taxon': _SPECIES,
+    'material': [
+      {'catalogNumbers': ['GSC 100']},
+      {'catalogNumbers': ['GSC 101'], 'castOf': 'GSC 100'},
+    ],
+    'illustrations': [{'plate': 1, 'of': 'GSC 101'}],
+  }
+  claims = _claims_of({'taxon': 'rhenopyrgus', 'children': [numbered, sister]}, 231)
+  assert [
+    c.get('figured')
+    for c in claims
+    if c.get('materialKind') == 'specimen' and c['subject'] == _SPECIES
+  ] == [None, None]
+
+
 # -- holotype_conflicts (roadmap F5) ---------------------------------------------
 
 _TAXON = 'navicula_whitehouse_1941'
