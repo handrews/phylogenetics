@@ -1526,7 +1526,7 @@ worth keeping goes in `citedAs`, never into identity.
 **G11. Coverage derived from the tree, through nulls; the audit block
 keeps verification and the source-level kinds (direction agreed
 2026-09-27; to be built with D1, not before).** Built 2026-09-30 to
-2026-10-01: the six content fields are nullable (`type` added 2026-10-02),
+2026-10-01: the six content fields are nullable (`type` the last added),
 the five content kinds are derived, a null is an `absence` claim; what
 remains is migrating the audited sources' declarations to nulls.
 
@@ -1576,7 +1576,7 @@ Fields fall into three classes, and only the third is nullable:
   schema on the material-model branch makes all four nullable, and
   `synonyms` is implemented too (2026-10-01): `synonyms: null` is an error
   on a cited entry, in a draft, and beside a `non` list (a list of
-  exclusions is a synonymy). `type` joins them (2026-10-02): `type: null`
+  exclusions is a synonymy). `type` joins them (2026-10-01): `type: null`
   says the source states no type for the taxon, and is an error on a
   cited entry, in a draft, and beside a child marked `isType`.
   `children` could join in principle (`children: null` for a taxon the
@@ -1589,7 +1589,7 @@ reliability signal of their own; and the kinds that are not content
 fields, `skeleton` (taxa not in the tree at all) and `newTaxa` (a flag,
 whose "partly" means "not every node was checked for the act", which has
 no node-level form). `types` was declared the same way until `type` became
-a content field (2026-10-02). For the content kinds the map is derived:
+a content field (2026-10-01). For the content kinds the map is derived:
 `na` when the file lists the field as unused; `None`, declaring nothing,
 when no node writes a null for it (a value alone records what the source
 prints, not that the file was audited for it); otherwise `all` when no
