@@ -1,4 +1,4 @@
-repositories: [u-cincinnati-caster, north-museum-fm]
+repositories: [u-cincinnati-caster, north-museum-fm, sprinkle-l]
 contexts:
   as-1:
     unit: [Wheeler Shale]

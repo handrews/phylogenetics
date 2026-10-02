@@ -216,7 +216,12 @@ says which.
   `material` entry refers to and each context the node defines. `occurrence`
   is the context verbatim; `contextKey` is its key and `contextScope`
   (`node` or `file`) where it was defined. A file-level context is
-  emitted once for each node that refers to it.
+  emitted once for each node that refers to it. `localityKeys`, when the
+  context has `localityNumbers`, are `<register>:<folded number>` for
+  each number that resolves to one locality register (its printed
+  prefix, or for an author's own field codes the one prefixless locality
+  register the tree file lists), the number folded without its prefix and
+  each key given once, so "Walcott 35k" and "USNM loc. 35k" give one.
 - `specimen` (field `material`): one claim per entry. `role` is the
   entry's role, absent when the source attaches none; `ids` is the entry's
   `catalogNumbers` (a range pair stays a two-element list); `repository` is
@@ -226,8 +231,10 @@ says which.
   `otherNames` or `file` (the tree file's `repositories` list settled a
   shared prefix), absent when unresolved. `joinKeys` are
   `<repository>:<folded number>` for every catalog number (a range pair
-  contributes both endpoints and the claim carries `rangeJoin: true`),
-  so the same specimen in two sources shares a key. `roleAct` is the
+  contributes both endpoints and the claim carries `rangeJoin: true`), the
+  number folded without its printed prefix, so two printed forms of one
+  number ("F. 5404", "UQF5404") meet and the same specimen in two sources
+  shares a key. `roleAct` is the
   entry's own value, else `designated` for a holotype, paratype, syntype
   or cotype on a `new: true` node, else absent. The entry's other fields
   are copied as written: `catalogNumbers`, `catalogNumbersAsPrinted`,
@@ -544,7 +551,7 @@ species node. The node's one context (`lady-burn-starfish-bed`) yields an
 `occurrence` claim, emitted first, and its `material` entries yield
 `specimen` claims after it: the holotype claim has `role: holotype`,
 `ids: [NHMUK E23470]`, `repository: nhmuk` with
-`repositoryVia: prefix`, `joinKeys: [nhmuk:nhmuke23470]` and the context's
+`repositoryVia: prefix`, `joinKeys: [nhmuk:e23470]` and the context's
 `contextKey`; the next entry has no role, since the paper attaches none.
 
 ### Fay 1962, *ottawaensis* (`data/trees/1962_fay.yaml`)

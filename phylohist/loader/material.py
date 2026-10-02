@@ -6,8 +6,8 @@ Pure functions over a raw node dict and the file-level maps, so
 loader (`load.py`) runs them over the corpus's own documents. Each check
 returns a list of ``(level, message)`` pairs, ``level`` being ``'error'``
 or ``'warning'``; the caller adds the source key and, for a per-node
-check, the node path. `repository_of`, `context_key` and
-`entries_named` are exported for the claims extractor
+check, the node path. `resolve_number`, `repository_of`, `bare_number`,
+`context_key` and `entries_named` are exported for the claims extractor
 (`phylohist.claims`); `set_repository_registry`/`repository_registry`
 hold the loaded `data/repositories.yaml`, set once by `load.py`, so the
 extractor can reach it the way it reaches `Source`.
@@ -62,54 +62,123 @@ def _is_match(candidate, prefix):
 AMBIGUOUS = 'ambiguous'
 
 
-def _prefix_index(repositories):
-  """`{folded candidate: {key: via}}` over every entry's `prefixes` (via
-  `'prefix'`) and `otherNames` (via `'otherNames'`); a key claiming a
-  candidate both ways counts as `'prefix'`. Registry keys are slugs, never
-  candidates."""
+def _prefix_index(repositories, localities=False):
+  """`{folded candidate: {key: via}}` over the `prefixes` (via `'prefix'`)
+  and `otherNames` (via `'otherNames'`) of every entry of the right
+  subject: with `localities` the entries whose `subject` is `localities`,
+  else every other entry (specimens, samples, unknown or unstated). A key
+  claiming a candidate both ways counts as `'prefix'`. Registry keys are
+  slugs, never candidates."""
   index = {}
   for key, entry in repositories.items():
+    if (entry.get('subject') == 'localities') != localities:
+      continue
     for via, values in (('otherNames', entry.get('otherNames')), ('prefix', entry.get('prefixes'))):
       for value in values or ():
         index.setdefault(_fold(value), {})[key] = via
   return index
 
 
-def repository_of(number, repositories, file_repositories=()):
-  """`(key, via)` for a catalog number's repository, resolved from its
-  printed prefix (see `_prefix`; compared case-insensitively with
-  whitespace collapsed).
+_LEADING_SEPARATORS_RE = re.compile(r'(?:[\s.-]|no\.)+', re.IGNORECASE)
 
-  The candidates are every registry entry's `prefixes` and `otherNames`;
-  the longest one equal to the prefix or a token-boundary prefix of it
-  wins. When one entry claims it, `via` is `'prefix'` or `'otherNames'`. When
-  several claim it, the entries in `file_repositories` (the tree file's
-  own list) are preferred: exactly one left gives `(key, 'file')`.
 
-  Returns `(None, None)` when nothing matches, and `(keys, 'ambiguous')`,
-  `keys` a sorted tuple of the entries still competing, when the file list
-  does not settle it. A caller tests `via == AMBIGUOUS` before using `key`.
+def _strip_candidate(number, candidate):
+  """`number` without `candidate` at its start (matched case-insensitively,
+  whitespace runs collapsed) and without the separators after it (spaces,
+  hyphens, periods, "No."); `number` unchanged when that leaves nothing or
+  `candidate` is not at its start."""
+  tokens = _fold(candidate).split(' ')
+  pattern = re.compile(r'\s+'.join(re.escape(token) for token in tokens), re.IGNORECASE)
+  text = number.strip()
+  match = pattern.match(text)
+  if match is None:
+    return number
+  rest = text[match.end() :]
+  separators = _LEADING_SEPARATORS_RE.match(rest)
+  rest = rest[separators.end() :] if separators else rest
+  return rest or number
+
+
+def resolve_number(number, repositories, file_repositories=(), localities=False):
+  """`(key, via, bare)` for a printed catalog number, or with `localities`
+  a locality number: its register's key, how it resolved, and the number
+  without the printed prefix ("F. 5404" and "UQF5404" both give "5404").
+
+  The prefix is read by `_prefix` (compared case-insensitively with
+  whitespace collapsed). The candidates are the `prefixes` and `otherNames`
+  of every registry entry whose `subject` is `localities` (with
+  `localities`) or is anything else (without); the longest one equal to the
+  prefix or a token-boundary prefix of it wins, and only that candidate's
+  text is removed to make `bare`. When one entry claims it, `via` is
+  `'prefix'` or `'otherNames'`. When several claim it, the entries in
+  `file_repositories` (the tree file's own list) are preferred: exactly
+  one left gives `(key, 'file', bare)`.
+
+  With `localities`, a number no candidate matches resolves to the one
+  entry of `file_repositories` that is a locality register with no
+  `prefixes` and no `otherNames` (an author's own field codes), `via`
+  `'file'`, `bare` the number unchanged.
+
+  Returns `(None, None, number)` when nothing matches, and `(keys,
+  'ambiguous', number)`, `keys` a sorted tuple of the entries still
+  competing, when the file list does not settle it. A caller tests `via ==
+  AMBIGUOUS` before using `key`.
   """
   prefix = _prefix(number)
-  if prefix is None:
-    return None, None
-  folded_prefix = _fold(prefix)
-
   best = None
-  for candidate, claims in _prefix_index(repositories).items():
-    if _is_match(candidate, folded_prefix) and (best is None or len(candidate) > len(best[0])):
-      best = (candidate, claims)
+  if prefix is not None:
+    folded_prefix = _fold(prefix)
+    for candidate, claims in _prefix_index(repositories, localities).items():
+      if _is_match(candidate, folded_prefix) and (best is None or len(candidate) > len(best[0])):
+        best = (candidate, claims)
   if best is None:
-    return None, None
+    if localities:
+      own = [
+        key
+        for key in file_repositories
+        if (entry := repositories.get(key, {})).get('subject') == 'localities'
+        and not entry.get('prefixes')
+        and not entry.get('otherNames')
+      ]
+      if len(own) == 1:
+        return own[0], 'file', number
+    return None, None, number
 
-  claims = best[1]
+  candidate, claims = best
   if len(claims) == 1:
     ((key, via),) = claims.items()
-    return key, via
+    return key, via, _strip_candidate(number, candidate)
   listed = [key for key in claims if key in file_repositories]
   if len(listed) == 1:
-    return listed[0], 'file'
-  return tuple(sorted(listed or claims)), AMBIGUOUS
+    return listed[0], 'file', _strip_candidate(number, candidate)
+  return tuple(sorted(listed or claims)), AMBIGUOUS, number
+
+
+def repository_of(number, repositories, file_repositories=()):
+  """`(key, via)` for a catalog number's repository: `resolve_number`
+  over the entries that are not locality registers, without the bare
+  number."""
+  key, via, _ = resolve_number(number, repositories, file_repositories)
+  return key, via
+
+
+def bare_number(number, repository, repositories):
+  """The printed `number` without a prefix or other name of `repository`
+  at its start (the same rule as `resolve_number`: the longest such
+  candidate), else `number` unchanged. For an entry that names its
+  `repository` outright."""
+  prefix = _prefix(number)
+  if prefix is None:
+    return number
+  entry = repositories.get(repository) or {}
+  folded_prefix = _fold(prefix)
+  candidates = [
+    _fold(value)
+    for values in (entry.get('prefixes'), entry.get('otherNames'))
+    for value in values or ()
+  ]
+  matching = [c for c in candidates if _is_match(c, folded_prefix)]
+  return _strip_candidate(number, max(matching, key=len)) if matching else number
 
 
 def _catalog_values(node):
@@ -118,6 +187,12 @@ def _catalog_values(node):
   for entry in node.get('material') or ():
     for number in entry.get('catalogNumbers') or ():
       yield entry, (number if isinstance(number, list) else [number])
+
+
+def _locality_values(contexts):
+  """Every `localityNumbers` value on a `{key: context}` map."""
+  for context in (contexts or {}).values():
+    yield from (context or {}).get('localityNumbers') or ()
 
 
 def _is_settled(entry):
@@ -154,7 +229,9 @@ def registry_links(repositories):
 def file_repositories_used(document, repositories):
   """Every key in the tree file's `repositories` list is a registry key
   and is the resolved holder (by prefix, or by an explicit `repository`)
-  of at least one catalog number in the file; an error otherwise."""
+  of at least one catalog number in the file, or the register a locality
+  number in its contexts (on a node or on the file) resolves to; an error
+  otherwise."""
   listed = document.get('repositories') or ()
   if not listed:
     return []
@@ -175,6 +252,14 @@ def file_repositories_used(document, repositories):
         key, via = repository_of(element, repositories, listed)
         if via not in (None, AMBIGUOUS):
           used.add(key)
+    for number in _locality_values(node.get('contexts')):
+      key, via, _ = resolve_number(number, repositories, listed, localities=True)
+      if via not in (None, AMBIGUOUS):
+        used.add(key)
+  for number in _locality_values(document.get('contexts')):
+    key, via, _ = resolve_number(number, repositories, listed, localities=True)
+    if via not in (None, AMBIGUOUS):
+      used.add(key)
   messages.extend(
     ('error', f'repository "{key}" is listed but no catalog number in the file resolves to it')
     for key in listed
@@ -379,6 +464,23 @@ def catalog_numbers(node, repositories, file_repositories=()):
     if len(resolved) == 2 and resolved[0] != resolved[1]:
       messages.append(
         ('error', f'catalog number range {_shown(elements)!r} resolves to different repositories'),
+      )
+  return messages
+
+
+def locality_numbers(contexts, repositories, file_repositories=()):
+  """Locality-number checks for a `{key: context}` map (a node's `contexts`
+  or the tree file's): a `localityNumbers` value that resolves to no
+  locality register is a warning, one claimed by several after
+  `file_repositories` is an error naming them."""
+  messages = []
+  for number in _locality_values(contexts):
+    key, via, _ = resolve_number(number, repositories, file_repositories, localities=True)
+    if via is None:
+      messages.append(('warning', f'locality number "{number}" resolves to no locality register'))
+    elif via == AMBIGUOUS:
+      messages.append(
+        ('error', f'locality number "{number}" has an ambiguous prefix: {", ".join(key)}'),
       )
   return messages
 

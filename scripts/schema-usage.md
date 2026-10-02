@@ -343,14 +343,14 @@ property.
 
 | property | data | data % |
 |---|---|---|
-| `/additionalProperties.name` | 49 | 100.0% |
-| `/additionalProperties.type` | 49 | 100.0% |
-| `/additionalProperties.prefixes` | 45 | 91.8% |
-| `/additionalProperties.place` | 34 | 69.4% |
-| `/additionalProperties.within` | 11 | 22.4% |
-| `/additionalProperties.subject` | 8 | 16.3% |
-| `/additionalProperties.notes` | 6 | 12.2% |
-| `/additionalProperties.otherNames` | 3 | 6.1% |
+| `/additionalProperties.name` | 52 | 100.0% |
+| `/additionalProperties.type` | 52 | 100.0% |
+| `/additionalProperties.prefixes` | 47 | 90.4% |
+| `/additionalProperties.place` | 34 | 65.4% |
+| `/additionalProperties.within` | 12 | 23.1% |
+| `/additionalProperties.subject` | 11 | 21.2% |
+| `/additionalProperties.notes` | 8 | 15.4% |
+| `/additionalProperties.otherNames` | 3 | 5.8% |
 
 ### `roles` -- 1 instances in `data/`
 
@@ -590,24 +590,24 @@ property.
 
 ### `phylogeny#/$defs/repositories/additionalProperties/properties/subject`
 
-2 of 4 members used, 8 occurrences.
+2 of 4 members used, 11 occurrences.
 
 | value | count |
 |---|---|
+| `'localities'` | 6 |
 | `'specimens'` | 5 |
-| `'localities'` | 3 |
 
 **Never used (2):** `'samples'`, `'unknown'`
 
 ### `phylogeny#/$defs/repositories/additionalProperties/properties/type`
 
-3 of 4 members used, 49 occurrences.
+3 of 4 members used, 52 occurrences.
 
 | value | count |
 |---|---|
 | `'institution'` | 36 |
-| `'collection'` | 10 |
-| `'person'` | 3 |
+| `'collection'` | 12 |
+| `'person'` | 4 |
 
 **Never used (1):** `'unknown'`
 

@@ -145,6 +145,142 @@ def test_repository_of_unresolvable_prefix(repositories):
   assert material.repository_of('ZZZZ 12', repositories) == (None, None)
 
 
+# -- resolve_number: the bare number and the register's subject ---------------
+
+
+@pytest.fixture
+def registers(repositories):
+  """`repositories` plus the specimen registers and locality registers the
+  real registry has for the cases below."""
+  return {
+    **repositories,
+    'uq-f': _entry('UQF', 'F'),
+    'gsc': _entry('GSC', other_names=['Canadian Geological Survey']),
+    'usgs-l': {**_entry('USGS'), 'subject': 'localities'},
+    'usnm-l': {
+      **_entry('USNM', 'USNM loc', 'USNM locality', 'Walcott', 'Walcott locality'),
+      'subject': 'localities',
+    },
+    'own-l': {'name': 'x', 'type': 'person', 'subject': 'localities'},
+    'other-l': {'name': 'y', 'type': 'person', 'subject': 'localities'},
+  }
+
+
+@pytest.mark.parametrize(
+  ('number', 'key', 'bare'),
+  [
+    ('F. 5404', 'uq-f', '5404'),
+    ('UQF5404', 'uq-f', '5404'),
+    ('UQF 5404', 'uq-f', '5404'),
+    ('UQF No. 5404', 'uq-f', '5404'),
+    ('FMNH PE 214', 'fmnh', '214'),
+    ('MCZ 602-D1', 'mcz', '602-D1'),
+    ('Canadian Geological Survey 752', 'gsc', '752'),
+    ('canadian  geological survey 752', 'gsc', '752'),
+    ('USNM S-3965', 'usnm', 'S-3965'),
+  ],
+)
+def test_resolve_number_bare_number(registers, number, key, bare):
+  assert material.resolve_number(number, registers)[::2] == (key, bare)
+
+
+def test_resolve_number_bare_number_through_the_file_list(registers):
+  assert material.resolve_number('PE-214', registers, ['fmnh']) == ('fmnh', 'file', '214')
+  assert material.resolve_number('PE 214', registers, ['north-museum-fm']) == (
+    'north-museum-fm',
+    'file',
+    '214',
+  )
+
+
+def test_resolve_number_strips_only_the_matched_candidate(registers):
+  # The prefix is "USGS D", the candidate "USGS": the "D" belongs to the number.
+  assert material.resolve_number('USGS D190d CO', registers, localities=True) == (
+    'usgs-l',
+    'prefix',
+    'D190d CO',
+  )
+
+
+def test_resolve_number_unmatched_and_ambiguous_return_the_number_unchanged(registers):
+  assert material.resolve_number('ZZZZ 12', registers) == (None, None, 'ZZZZ 12')
+  assert material.resolve_number('12345', registers) == (None, None, '12345')
+  assert material.resolve_number('E 1', registers) == (
+    ('nhmuk', 'uc-caster'),
+    material.AMBIGUOUS,
+    'E 1',
+  )
+
+
+def test_resolve_number_a_number_that_is_only_its_prefix_stays_whole(registers):
+  assert material.resolve_number('UQF', registers) == ('uq-f', 'prefix', 'UQF')
+
+
+def test_resolve_number_localities_read_the_locality_registers_only(registers):
+  assert material.resolve_number('USNM loc. 35k', registers, localities=True) == (
+    'usnm-l',
+    'prefix',
+    '35k',
+  )
+  assert material.resolve_number('Walcott 35k', registers, localities=True)[::2] == (
+    'usnm-l',
+    '35k',
+  )
+  assert material.resolve_number('USNM locality 74e', registers, localities=True)[::2] == (
+    'usnm-l',
+    '74e',
+  )
+  assert material.resolve_number('Walcott locality 74e', registers, localities=True)[::2] == (
+    'usnm-l',
+    '74e',
+  )
+
+
+def test_resolve_number_the_subject_filter_works_both_ways(registers):
+  # A locality prefix does not resolve a catalog number ...
+  assert material.resolve_number('USGS 4148', registers) == (None, None, 'USGS 4148')
+  assert material.resolve_number('Walcott 35k', registers) == (None, None, 'Walcott 35k')
+  assert material.repository_of('USNM 35k', registers) == ('usnm', 'prefix')
+  # ... and a specimen prefix does not resolve a locality number.
+  assert material.resolve_number('GM 12', registers, localities=True) == (None, None, 'GM 12')
+  assert material.resolve_number('UQF 12', registers, localities=True) == (None, None, 'UQF 12')
+
+
+def test_resolve_number_locality_fallback_is_the_one_prefixless_register_listed(registers):
+  assert material.resolve_number('SH-1', registers, ['own-l'], localities=True) == (
+    'own-l',
+    'file',
+    'SH-1',
+  )
+  # A listed register that has prefixes is not the author's own codes.
+  assert material.resolve_number('SH-1', registers, ['usgs-l'], localities=True) == (
+    None,
+    None,
+    'SH-1',
+  )
+  # None listed, two listed, or a specimen register listed: unresolved.
+  assert material.resolve_number('SH-1', registers, (), localities=True)[1] is None
+  assert (
+    material.resolve_number('SH-1', registers, ['own-l', 'other-l'], localities=True)[1] is None
+  )
+  assert material.resolve_number('SH-1', registers, ['fmnh'], localities=True)[1] is None
+  # A prefix that matches wins over the fallback; the fallback is for localities only.
+  assert material.resolve_number('USGS 5', registers, ['own-l'], localities=True)[0] == 'usgs-l'
+  assert material.resolve_number('SH-1', registers, ['own-l']) == (None, None, 'SH-1')
+
+
+def test_bare_number_strips_the_named_repositorys_own_prefix_or_name(registers):
+  assert material.bare_number('GSC 752', 'gsc', registers) == '752'
+  assert material.bare_number('Canadian Geological Survey 752', 'gsc', registers) == '752'
+  assert material.bare_number('F. 5404', 'uq-f', registers) == '5404'
+  assert material.bare_number('FMNH PE 214', 'fmnh', registers) == '214'
+  # Another holder's prefix, no prefix at all, or an unknown repository: unchanged.
+  assert material.bare_number('XYZ 1', 'nhmuk', registers) == 'XYZ 1'
+  assert material.bare_number('12345', 'gsc', registers) == '12345'
+  assert material.bare_number('GSC 752', 'nowhere', registers) == 'GSC 752'
+  assert material.bare_number('UQF', 'uq-f', registers) == 'UQF'
+
+
 # -- registry_links -------------------------------------------------------------
 
 
@@ -245,6 +381,21 @@ def test_file_repositories_used_ellipsis_and_ambiguous_do_not_count(repositories
   document = _document('E 1', 'PE 1...', repositories=['fmnh'])
   assert material.file_repositories_used(document, repositories) == [
     ('error', 'repository "fmnh" is listed but no catalog number in the file resolves to it'),
+  ]
+
+
+def test_file_repositories_used_a_locality_number_counts(registers):
+  node = {'contexts': {'a': {'localityNumbers': ['SH-1']}}}
+  document = {'taxonomies': [{'taxon': 'a', **node}], 'repositories': ['own-l']}
+  assert material.file_repositories_used(document, registers) == []
+  # A file-level context counts too, and a listed register no number reaches is an error.
+  document = {
+    'taxonomies': [{'taxon': 'a'}],
+    'contexts': {'a': {'localityNumbers': ['USGS 5462', 'Walcott 35k']}},
+    'repositories': ['usgs-l', 'usnm-l', 'own-l'],
+  }
+  assert material.file_repositories_used(document, registers) == [
+    ('error', 'repository "own-l" is listed but no catalog number in the file resolves to it'),
   ]
 
 
@@ -537,6 +688,38 @@ def test_unresolved_catalog_numbers_lists_values_by_name(repositories):
     ],
   }
   assert material.unresolved_catalog_numbers(node, repositories) == ['ZZZZ 3']
+
+
+# -- locality_numbers -----------------------------------------------------------
+
+
+def test_locality_numbers_unresolved_is_warning(registers):
+  contexts = {'a': {'localityNumbers': ['USGS 5462', 'SH-1']}}
+  assert material.locality_numbers(contexts, registers) == [
+    ('warning', 'locality number "SH-1" resolves to no locality register'),
+  ]
+  assert material.locality_numbers(contexts, registers, ['own-l']) == []
+
+
+def test_locality_numbers_a_catalog_prefix_is_no_locality_register(registers):
+  contexts = {'a': {'localityNumbers': ['GM 12']}}
+  assert material.locality_numbers(contexts, registers) == [
+    ('warning', 'locality number "GM 12" resolves to no locality register'),
+  ]
+
+
+def test_locality_numbers_ambiguous_is_error_naming_the_entries(registers):
+  registers = {**registers, 'usgs-2': {**_entry('USGS'), 'subject': 'localities'}}
+  contexts = {'a': {'localityNumbers': ['USGS 1']}}
+  assert material.locality_numbers(contexts, registers) == [
+    ('error', 'locality number "USGS 1" has an ambiguous prefix: usgs-2, usgs-l'),
+  ]
+  assert material.locality_numbers(contexts, registers, ['usgs-l']) == []
+
+
+def test_locality_numbers_no_contexts_or_numbers_is_quiet(registers):
+  assert material.locality_numbers(None, registers) == []
+  assert material.locality_numbers({'a': {'unit': ['x']}, 'b': None}, registers) == []
 
 
 # -- cast_refs -------------------------------------------------------------------
@@ -905,6 +1088,30 @@ def test_load_reports_material_checks_at_the_right_level(caplog):
   assert any('repository "gm" is listed but no catalog number' in m for m in errors)
 
 
+def test_load_reports_locality_numbers_per_node_and_for_the_file(caplog):
+  from phylohist.loader.load import _report_material
+
+  data = {
+    'repositories': {'usgs-l': {**_entry('USGS'), 'subject': 'localities'}},
+    'trees': {
+      '_synthetic_source': {
+        'contexts': {'f': {'localityNumbers': ['USGS 1', 'ZZ-1']}},
+        'taxonomies': [{'taxon': 'a', 'contexts': {'n': {'localityNumbers': ['YY-2']}}}],
+      },
+    },
+  }
+  with caplog.at_level(logging.WARNING, logger='phylohist'):
+    _report_material(data)
+  warnings = [r.getMessage() for r in caplog.records if r.levelno == logging.WARNING]
+  assert any(
+    m.startswith('_synthetic_source: locality number "ZZ-1" resolves to no') for m in warnings
+  )
+  assert any(
+    m.startswith('_synthetic_source at 0: locality number "YY-2" resolves to no') for m in warnings
+  )
+  assert not any('"USGS 1"' in m for m in warnings)
+
+
 # -- scripts/check_draft.py ---------------------------------------------------
 
 
@@ -991,6 +1198,23 @@ def test_check_draft_exits_one_on_of_in_a_cited_entrys_illustrations(tmp_path):
   result = _run_check_draft(draft)
   assert result.returncode == 1, result.stdout + result.stderr
   assert 'cited entry `illustrations` entry carries `of`' in result.stdout
+
+
+def test_check_draft_warns_on_an_unresolved_locality_number_and_is_quiet_once_listed(tmp_path):
+  body = (
+    'contexts:\n  a:\n    localityNumbers: [SH-1]\n'
+    'taxonomies:\n- taxon: cyathocystis\n  contexts:\n    b:\n      localityNumbers: [IK-3]\n'
+  )
+  draft = tmp_path / '1898_bather.yaml'
+  draft.write_text(body)
+  result = _run_check_draft(draft)
+  assert result.stdout.count('resolves to no locality register') == 2, result.stdout
+  assert 'warning: locality number "SH-1"' in result.stdout
+  assert 'warning: 0: locality number "IK-3"' in result.stdout
+
+  draft.write_text('repositories: [sprinkle-l]\n' + body)
+  result = _run_check_draft(draft)
+  assert 'resolves to no locality register' not in result.stdout, result.stdout
 
 
 def test_check_draft_exits_one_on_a_listed_but_unused_repository(tmp_path):

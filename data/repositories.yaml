@@ -161,6 +161,13 @@ seibert.r:
   name: Seibert collection
   type: person
   prefixes: [RS, R]
+sprinkle-l:
+  name: James Sprinkle, field localities
+  type: person
+  subject: localities
+  notes: >
+    The two-letter field codes of Sprinkle 1973, Appendix 1 (SH-1,
+    IK-3); they carry no register prefix.
 tmf:
   name: Geological Survey of Tasmania
   type: institution
@@ -217,11 +224,26 @@ usgd:
   type: institution
   place: Sydney
   prefixes: [USGD]
+usgs-l:
+  name: U.S. Geological Survey, locality register
+  type: collection
+  subject: localities
+  prefixes: [USGS]
 usnm:
   name: National Museum of Natural History, Smithsonian Institution
   type: institution
   place: Washington
   prefixes: [USNM]
+usnm-l:
+  name: U.S. National Museum, locality register
+  type: collection
+  within: usnm
+  subject: localities
+  prefixes: [USNM, USNM loc, USNM locality, Walcott, Walcott locality]
+  notes: >
+    Walcott's locality numbers. Sprinkle 1973 prints one number as
+    "Walcott locality 74e" in the text and "USNM locality 74e" on the
+    plate, so the two forms are one register here.
 usnm-springer:
   name: Springer Collection
   type: collection

@@ -392,11 +392,11 @@ def test_material_adapter(load_records, caplog):
   assert numbered['catalogNumbers'] == ['GSC 752'] and numbered['contextKey'] == 'division-st'
   assert 'contextTentative' not in numbered
   assert numbered['repository'] == 'gsc' and numbered['repositoryVia'] == 'prefix'
-  assert numbered['joinKeys'] == ['gsc:gsc752'] and 'rangeJoin' not in numbered
+  assert numbered['joinKeys'] == ['gsc:752'] and 'rangeJoin' not in numbered
   assert 'roleAct' not in numbered  # not a protologue node
 
   assert pair['ids'] == [['GSC 100', 'GSC 105']] and pair['formerIds'] == ['G 1']
-  assert pair['joinKeys'] == ['gsc:gsc100', 'gsc:gsc105'] and pair['rangeJoin'] is True
+  assert pair['joinKeys'] == ['gsc:100', 'gsc:105'] and pair['rangeJoin'] is True
 
   assert label_only['label'] == 'the specimen lent to Hudson' and label_only['status'] == 'lost'
   assert label_only['ids'] == [] and label_only['repository'] is None
@@ -462,6 +462,97 @@ def test_material_adapter(load_records, caplog):
     None,
   ]
   assert new_claims[0]['count'] == 5
+
+
+def _specimen(entry, file_repositories=()):
+  root = Tree(
+    {'taxon': 'rhenopyrgus', 'material': entry},
+    {
+      'source_key': '1961_dehm',
+      'type': 'taxonomy',
+      'position': 90,
+      'file_repositories': file_repositories,
+    },
+  )
+  claims = extract({'1961_dehm': [root]})['1961_dehm']
+  return [c for c in claims if c.get('materialKind') == 'specimen']
+
+
+def test_two_printed_forms_of_one_catalog_number_share_a_join_key(load_records):
+  first, second = _specimen([{'catalogNumbers': ['F. 5404']}, {'catalogNumbers': ['UQF5404']}])
+  assert first['joinKeys'] == second['joinKeys'] == ['uq-f:5404']
+  # The printed form stays in `ids`.
+  assert (first['ids'], second['ids']) == (['F. 5404'], ['UQF5404'])
+
+
+def test_a_range_pairs_two_join_keys_are_both_bare(load_records):
+  [pair] = _specimen([{'catalogNumbers': [['UQF 5399', 'F. 5403']]}])
+  assert pair['joinKeys'] == ['uq-f:5399', 'uq-f:5403'] and pair['rangeJoin'] is True
+
+
+def test_an_explicit_repository_strips_its_own_prefix_only(load_records):
+  own, other = _specimen(
+    [
+      {'catalogNumbers': ['GSC 752'], 'repository': 'gsc'},
+      {'catalogNumbers': ['MCZ 690'], 'repository': 'usnm'},
+    ],
+  )
+  assert own['joinKeys'] == ['gsc:752']
+  assert other['joinKeys'] == ['usnm:mcz690']
+
+
+def test_a_file_listed_prefix_strips_to_the_bare_number(load_records):
+  [specimen] = _specimen([{'catalogNumbers': ['PE-214']}], ('fmnh',))
+  assert specimen['repository'] == 'fmnh' and specimen['joinKeys'] == ['fmnh:214']
+
+
+def _occurrence(context, file_repositories=()):
+  root = Tree(
+    {'taxon': 'rhenopyrgus', 'contexts': {'x': context}},
+    {
+      'source_key': '1961_dehm',
+      'type': 'taxonomy',
+      'position': 90,
+      'file_repositories': file_repositories,
+    },
+  )
+  claims = extract({'1961_dehm': [root]})['1961_dehm']
+  [claim] = [c for c in claims if c.get('materialKind') == 'occurrence']
+  return claim
+
+
+def test_locality_keys_join_two_printed_forms_of_one_number(load_records):
+  claim = _occurrence({'localityNumbers': ['Walcott 35k', 'USNM loc. 35k', 'USGS 5462']})
+  assert claim['localityKeys'] == ['usnm-l:35k', 'usgs-l:5462']
+
+
+def test_locality_keys_use_the_listed_field_code_register(load_records):
+  context = {'localityNumbers': ['SH-1', 'USGS 4148 CO', 'unresolvable? 7']}
+  assert _occurrence(context, ('sprinkle-l',))['localityKeys'] == [
+    'sprinkle-l:sh1',
+    'usgs-l:4148co',
+    'sprinkle-l:unresolvable?7',
+  ]
+  # Unlisted, SH-1 resolves to nothing, and a context with none has no field.
+  assert _occurrence(context)['localityKeys'] == ['usgs-l:4148co']
+  assert 'localityKeys' not in _occurrence({'unit': ['Wheeler Shale']})
+  assert 'localityKeys' not in _occurrence({'localityNumbers': ['SH-1']})
+
+
+def test_a_specimen_is_followed_across_sources_by_its_join_key(claims):
+  # Whitehouse 1941's "F. 5404" and Jell & Sprinkle 2021's "UQF5404".
+  keys = {}
+  for source in ('1941_whitehouse', '2021_jell_sprinkle'):
+    [holotype] = [
+      c
+      for c in claims[source]
+      if c['kind'] == 'material'
+      and c['materialKind'] == 'specimen'
+      and c['subject'] == 'navicula_whitehouse_1941'
+      and c.get('role') == 'holotype'
+    ]
+    keys[source] = holotype['joinKeys']
+  assert keys['1941_whitehouse'] == keys['2021_jell_sprinkle'] == ['uq-f:5404']
 
 
 def test_derived_coverage():

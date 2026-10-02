@@ -11,7 +11,8 @@ reported by name, like a missing record). It then runs the material checks
 in its `illustrations` (or in an `authority`'s); a null `material`,
 `illustrations`, `contexts` or `ranges` on a primary node (only an auditor
 sets nulls); a `unused` field still present on a node; an ellipsis or an
-ambiguous prefix in a catalog number; a `repositories` list naming a missing
+ambiguous prefix in a catalog number; a locality number that resolves to no
+locality register (a warning) or to several; a `repositories` list naming a missing
 or unused entry; and a dangling `context`, figure `of` or `castOf`. The
 open-nomenclature checks (`phylohist.loader.nomenclature`) add a `cf` or `aff`
 off an `openTaxon` node, on both, or aimed at a missing, unnamed or other-rank
@@ -93,12 +94,14 @@ def check_material(draft, repositories, taxa):
   file_repositories = draft.get('repositories') or ()
 
   file_contexts = draft.get('contexts') or {}
+  messages.extend(material.locality_numbers(file_contexts, repositories, file_repositories))
   for path, node, is_cited in material.walk_document(draft):
     node_contexts = node.get('contexts') or {}
     for check, args in (
       (material.context_refs, (node, node_contexts, file_contexts)),
       (material.figure_refs, (node, is_cited)),
       (material.catalog_numbers, (node, repositories, file_repositories)),
+      (material.locality_numbers, (node_contexts, repositories, file_repositories)),
       (material.cast_refs, (node,)),
       (material.null_material, (node, is_cited)),
       (draft_nulls, (node, is_cited)),

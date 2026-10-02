@@ -13,10 +13,12 @@ import collections
 from .acts import RELATED_ACTS
 from .loader.material import (
   AMBIGUOUS,
+  bare_number,
   context_key,
   entries_named,
   repository_of,
   repository_registry,
+  resolve_number,
 )
 from .loader.research import Author, Publication, Source
 from .loader.taxa import Taxon
@@ -547,7 +549,22 @@ class _NodeClaims:
       claim['occurrence'] = context
       claim['contextKey'] = key
       claim['contextScope'] = scopes[key]
+      if keys := self._locality_keys(context):
+        claim['localityKeys'] = keys
       self._emit(claim, 'contexts')
+
+  def _locality_keys(self, context):
+    """`<register>:<folded bare number>` for each of the context's
+    `localityNumbers` that resolves to one locality register, once each, in
+    order ("Walcott 35k" and "USNM loc. 35k" give one key)."""
+    keys = []
+    for number in context.get('localityNumbers') or ():
+      register, via, bare = resolve_number(
+        number, repository_registry(), self.node.file_repositories, localities=True
+      )
+      if via not in (None, AMBIGUOUS) and (key := f'{register}:{fold(bare)}') not in keys:
+        keys.append(key)
+    return keys
 
   def _repository(self, entry):
     """`(key, via)` for an entry: its explicit `repository`, else what the
@@ -561,6 +578,16 @@ class _NodeClaims:
     first = numbers[0][0] if isinstance(numbers[0], list) else numbers[0]
     key, via = repository_of(first, repository_registry(), self.node.file_repositories)
     return (None, None) if via in (None, AMBIGUOUS) else (key, via)
+
+  def _bare(self, number, repository):
+    """The printed `number` without its prefix: from its own resolution
+    when that gives `repository`, else by `repository`'s own prefixes and
+    other names."""
+    registry = repository_registry()
+    key, via, bare = resolve_number(number, registry, self.node.file_repositories)
+    if via not in (None, AMBIGUOUS) and key == repository:
+      return bare
+    return bare_number(number, repository, registry)
 
   def _entries(self):
     """One claim per `material` entry; `self._entry_claims` keeps each
@@ -602,7 +629,7 @@ class _NodeClaims:
         claim['roleAct'] = role_act
       if repository is not None and numbers:
         claim['joinKeys'] = [
-          f'{repository}:{fold(n)}'
+          f'{repository}:{fold(self._bare(n, repository))}'
           for number in numbers
           for n in (number if isinstance(number, list) else [number])
         ]
