@@ -1,16 +1,15 @@
-"""Material integrity checks: contexts, catalog numbers, casts, illustrations,
-nulls, the repository registry, a tree file's `repositories` list and, for
-an entry in the `prefix` + `numbers` shape, its `prefixes` map.
+"""Material integrity checks: contexts, material entries, casts, illustrations,
+nulls, the repository registry and a tree file's `prefixes` map.
 
 Pure functions over a raw node dict and the file-level maps, so
 `scripts/check_draft.py` can run the same checks on an unloaded draft; the
 loader (`load.py`) runs them over the corpus's own documents. Each check
 returns a list of ``(level, message)`` pairs, ``level`` being ``'error'``
 or ``'warning'``; the caller adds the source key and, for a per-node
-check, the node path. `resolve_number`, `repository_of`, `bare_number`,
-`context_key`, `flat_numbers` and `entries_named` are exported for the claims
-extractor (`phylohist.claims`), and `resolve_number`, `bare_number` and `in_run`
-for the store (`phylohist.store`, `specimen_history`);
+check, the node path. `context_key`, `flat_numbers`, `entries_named` and
+`same_as_matches` are exported for the claims extractor
+(`phylohist.claims`), and `in_run` for the store (`phylohist.store`,
+`specimen_history`);
 `set_repository_registry`/`repository_registry`
 hold the loaded `data/repositories.yaml`, set once by `load.py`, so the
 extractor can reach it the way it reaches `Source`.
@@ -21,7 +20,6 @@ import re
 from ..names import fold
 from .taxa import Tree
 
-_DIGIT_RE = re.compile(r'\d')
 _WHITESPACE_RE = re.compile(r'\s+')
 
 
@@ -45,192 +43,16 @@ def _fold(text):
   return _WHITESPACE_RE.sub(' ', text.strip()).casefold()
 
 
-def _prefix(number):
-  """The leading run before the first digit, stripped, with a trailing
-  hyphen or period dropped ("PE-214", "PE 214" and "F. 5404" give "PE",
-  "PE" and "F"); `None` if empty. A hyphen inside the number ("MCZ
-  602-D1") is past the first digit and untouched."""
-  match = _DIGIT_RE.search(number)
-  prefix = (number[: match.start()] if match else number).strip()
-  prefix = prefix.rstrip('-.').strip()
-  return prefix or None
-
-
-def _is_match(candidate, prefix):
-  """Whether `candidate` equals `prefix` or is a token-boundary prefix of it."""
-  if candidate == prefix:
-    return True
-  return prefix.startswith(candidate) and prefix[len(candidate)] == ' '
-
-
-AMBIGUOUS = 'ambiguous'
-
-
-def _prefix_index(repositories, localities=False):
-  """`{folded candidate: {key: via}}` over the `prefixes` (via `'prefix'`)
-  and `otherNames` (via `'otherNames'`) of every entry of the right
-  subject: with `localities` the entries whose `subject` is `localities`,
-  else every other entry (specimens, samples, unknown or unstated). A key
-  claiming a candidate both ways counts as `'prefix'`. Registry keys are
-  slugs, never candidates."""
-  index = {}
-  for key, entry in repositories.items():
-    if (entry.get('subject') == 'localities') != localities:
-      continue
-    for via, values in (('otherNames', entry.get('otherNames')), ('prefix', entry.get('prefixes'))):
-      for value in values or ():
-        index.setdefault(_fold(value), {})[key] = via
-  return index
-
-
-_LEADING_SEPARATORS_RE = re.compile(r'(?:[\s.-]|no\.)+', re.IGNORECASE)
-
-
-def _strip_candidate(number, candidate):
-  """`number` without `candidate` at its start (matched case-insensitively,
-  whitespace runs collapsed) and without the separators after it (spaces,
-  hyphens, periods, "No."); `number` unchanged when that leaves nothing or
-  `candidate` is not at its start."""
-  tokens = _fold(candidate).split(' ')
-  pattern = re.compile(r'\s+'.join(re.escape(token) for token in tokens), re.IGNORECASE)
-  text = number.strip()
-  match = pattern.match(text)
-  if match is None:
-    return number
-  rest = text[match.end() :]
-  separators = _LEADING_SEPARATORS_RE.match(rest)
-  rest = rest[separators.end() :] if separators else rest
-  return rest or number
-
-
-def resolve_number(number, repositories, file_repositories=(), localities=False):
-  """`(key, via, bare)` for a printed catalog number, or with `localities`
-  a locality number: its register's key, how it resolved, and the number
-  without the printed prefix ("F. 5404" and "UQF5404" both give "5404").
-
-  The prefix is read by `_prefix` (compared case-insensitively with
-  whitespace collapsed). The candidates are the `prefixes` and `otherNames`
-  of every registry entry whose `subject` is `localities` (with
-  `localities`) or is anything else (without); the longest one equal to the
-  prefix or a token-boundary prefix of it wins, and only that candidate's
-  text is removed to make `bare`. When one entry claims it, `via` is
-  `'prefix'` or `'otherNames'`. When several claim it, the entries in
-  `file_repositories` (the tree file's own list) are preferred: exactly
-  one left gives `(key, 'file', bare)`.
-
-  With `localities`, a number no candidate matches resolves to the one
-  entry of `file_repositories` that is a locality register with no
-  `prefixes` and no `otherNames` (an author's own field codes), `via`
-  `'file'`, `bare` the number unchanged.
-
-  Returns `(None, None, number)` when nothing matches, and `(keys,
-  'ambiguous', number)`, `keys` a sorted tuple of the entries still
-  competing, when the file list does not settle it. A caller tests `via ==
-  AMBIGUOUS` before using `key`.
-  """
-  prefix = _prefix(number)
-  best = None
-  if prefix is not None:
-    folded_prefix = _fold(prefix)
-    for candidate, claims in _prefix_index(repositories, localities).items():
-      if _is_match(candidate, folded_prefix) and (best is None or len(candidate) > len(best[0])):
-        best = (candidate, claims)
-  if best is None:
-    if localities:
-      own = [
-        key
-        for key in file_repositories
-        if (entry := repositories.get(key, {})).get('subject') == 'localities'
-        and not entry.get('prefixes')
-        and not entry.get('otherNames')
-      ]
-      if len(own) == 1:
-        return own[0], 'file', number
-    return None, None, number
-
-  candidate, claims = best
-  if len(claims) == 1:
-    ((key, via),) = claims.items()
-    return key, via, _strip_candidate(number, candidate)
-  listed = [key for key in claims if key in file_repositories]
-  if len(listed) == 1:
-    return listed[0], 'file', _strip_candidate(number, candidate)
-  return tuple(sorted(listed or claims)), AMBIGUOUS, number
-
-
-def repository_of(number, repositories, file_repositories=()):
-  """`(key, via)` for a catalog number's repository: `resolve_number`
-  over the entries that are not locality registers, without the bare
-  number."""
-  key, via, _ = resolve_number(number, repositories, file_repositories)
-  return key, via
-
-
-def bare_number(number, repository, repositories):
-  """The printed `number` without a prefix or other name of `repository`
-  at its start (the same rule as `resolve_number`: the longest such
-  candidate), else `number` unchanged. For an entry that names its
-  `repository` outright."""
-  prefix = _prefix(number)
-  if prefix is None:
-    return number
-  entry = repositories.get(repository) or {}
-  folded_prefix = _fold(prefix)
-  candidates = [
-    _fold(value)
-    for values in (entry.get('prefixes'), entry.get('otherNames'))
-    for value in values or ()
-  ]
-  matching = [c for c in candidates if _is_match(c, folded_prefix)]
-  return _strip_candidate(number, max(matching, key=len)) if matching else number
-
-
-def _catalog_values(node):
-  """`(entry, elements)` for every catalog number on every material entry
-  of `node`; `elements` is one printed string or a range pair's two."""
-  for entry in node.get('material') or ():
-    for number in entry.get('catalogNumbers') or ():
-      yield entry, (number if isinstance(number, list) else [number])
-
-
-def _locality_values(contexts):
-  """Every printed (string) `localityNumbers` value on a `{key: context}`
-  map; the object form is `_locality_objects`'."""
-  for context in (contexts or {}).values():
-    for number in (context or {}).get('localityNumbers') or ():
-      if isinstance(number, str):
-        yield number
-
-
 def _locality_objects(contexts):
-  """Every object-form `localityNumbers` value on a `{key: context}` map."""
+  """Every `localityNumbers` value on a `{key: context}` map."""
   for context in (contexts or {}).values():
-    for number in (context or {}).get('localityNumbers') or ():
-      if isinstance(number, dict):
-        yield number
-
-
-def _new_entries(node):
-  """The material entries of `node` in the `prefix` + `numbers` shape."""
-  for entry in node.get('material') or ():
-    if 'numbers' in entry:
-      yield entry
+    yield from (context or {}).get('localityNumbers') or ()
 
 
 def flat_numbers(entry):
-  """Every number of a new-shape entry, a range pair's two ends included."""
+  """Every number of an entry, a range pair's two ends included."""
   for number in entry.get('numbers') or ():
     yield from number if isinstance(number, list) else [number]
-
-
-def _is_settled(entry):
-  """Whether the entry names its holder outright: an explicit `repository`,
-  or a private `holder` that has no registry entry to resolve to."""
-  return entry.get('repository') is not None or entry.get('holder') is not None
-
-
-def _has_ellipsis(elements):
-  return any('...' in e or '…' in e for e in elements)
 
 
 def registry_links(repositories):
@@ -251,48 +73,6 @@ def registry_links(repositories):
           messages.append(('error', f'`within` cycles: {" -> ".join([*cycle, within])}'))
         break
       chain.append(within)
-  return messages
-
-
-def file_repositories_used(document, repositories):
-  """Every key in the tree file's `repositories` list is a registry key
-  and is the resolved holder (by prefix, or by an explicit `repository`)
-  of at least one catalog number in the file, or the register a locality
-  number in its contexts (on a node or on the file) resolves to; an error
-  otherwise."""
-  listed = document.get('repositories') or ()
-  if not listed:
-    return []
-  messages = [
-    ('error', f'listed repository "{key}" is not a key of the registry')
-    for key in listed
-    if key not in repositories
-  ]
-  used = set()
-  for _, node, _ in walk_document(document):
-    for entry, elements in _catalog_values(node):
-      if entry.get('repository') is not None:
-        used.add(entry['repository'])
-        continue
-      if _has_ellipsis(elements):
-        continue
-      for element in elements:
-        key, via = repository_of(element, repositories, listed)
-        if via not in (None, AMBIGUOUS):
-          used.add(key)
-    for number in _locality_values(node.get('contexts')):
-      key, via, _ = resolve_number(number, repositories, listed, localities=True)
-      if via not in (None, AMBIGUOUS):
-        used.add(key)
-  for number in _locality_values(document.get('contexts')):
-    key, via, _ = resolve_number(number, repositories, listed, localities=True)
-    if via not in (None, AMBIGUOUS):
-      used.add(key)
-  messages.extend(
-    ('error', f'repository "{key}" is listed but no catalog number in the file resolves to it')
-    for key in listed
-    if key in repositories and key not in used
-  )
   return messages
 
 
@@ -370,31 +150,15 @@ def in_run(value, low, high):
 
 
 def entry_identifies(entry, value, exact=False):
-  """Whether `value` names `entry`, by `label` or by any element of a
-  `catalogNumbers` entry (a range pair's endpoints count separately). Unless
-  `exact`, a number lying inside a range pair's run also names it. An entry
-  with `numbers` is named by the folded text of `value` (a string or an
-  integer) equal to its folded `label` or one of its numbers, or, unless
-  `exact`, lying in the run of one of its range pairs."""
-  if 'numbers' in entry:
-    return _numbers_identify(entry, value, exact)
-  if entry.get('label') == value:
-    return True
-  for number in entry.get('catalogNumbers') or ():
-    elements = number if isinstance(number, list) else [number]
-    if value in elements:
-      return True
-    if not exact and len(elements) == 2 and in_run(value, *elements):
-      return True
-  return False
-
-
-def _numbers_identify(entry, value, exact):
+  """Whether `value` names `entry`: the folded text of `value` (a string or
+  an integer) equals its folded `label` or one of its `numbers` (a range
+  pair's endpoints count separately); unless `exact`, a value lying in the
+  run of one of its range pairs names it too."""
   folded = fold(str(value))
   label = entry.get('label')
   if label is not None and fold(str(label)) == folded:
     return True
-  for number in entry['numbers']:
+  for number in entry.get('numbers') or ():
     elements = number if isinstance(number, list) else [number]
     if any(fold(str(element)) == folded for element in elements):
       return True
@@ -411,12 +175,79 @@ def entries_named(entries, value):
   return exact or [entry for entry in entries if entry_identifies(entry, value)]
 
 
+def same_as_matches(entries, link):
+  """The entries a `sameAs` link names among `entries` (raw material
+  entries or specimen claims, which carry the same `label`, `prefix` and
+  `numbers`): those whose folded `label` equals the link's, or, by the
+  link's `number`, those it names exactly before those whose range-pair run
+  holds it (the rule of `entries_named`, over the numbers alone); with a
+  `prefix` on the link, only entries of that prefix. Callers read "names
+  exactly one" from the length."""
+  if 'label' in link:
+    wanted = fold(str(link['label']))
+    return [
+      entry
+      for entry in entries
+      if entry.get('label') is not None and fold(str(entry['label'])) == wanted
+    ]
+  candidates = [
+    entry for entry in entries if 'prefix' not in link or entry.get('prefix') == link['prefix']
+  ]
+  numbered = [({'numbers': entry.get('numbers')}, entry) for entry in candidates]
+  value = link.get('number')
+  exact = [entry for view, entry in numbered if entry_identifies(view, value, exact=True)]
+  return exact or [entry for view, entry in numbered if entry_identifies(view, value)]
+
+
+def same_as_links(documents, source_year):
+  """Every `sameAs` link on a material entry anywhere in `documents`
+  (source key to raw tree document) names a source that has a tree, not
+  the entry's own, published no later than the entry's (`source_year` maps
+  a source key to its year, or `None` when unknown, which is not checked),
+  and exactly one material entry in that tree file (`same_as_matches`).
+  Each message names the source and the node's path."""
+  messages = []
+  targets = {}
+
+  def target_entries(key):
+    if key not in targets:
+      targets[key] = [
+        entry
+        for _, node, _ in walk_document(documents[key])
+        for entry in node.get('material') or ()
+      ]
+    return targets[key]
+
+  for source_key, document in documents.items():
+    for path, node, _ in walk_document(document):
+      for entry in node.get('material') or ():
+        link = entry.get('sameAs')
+        if not isinstance(link, dict):
+          continue
+        where = f'{source_key} at {path}'
+        target = link.get('source')
+        if target not in documents:
+          messages.append(('error', f'{where}: `sameAs` names "{target}", which has no tree'))
+          continue
+        if target == source_key:
+          messages.append(('error', f'{where}: `sameAs` names its own source'))
+          continue
+        own, theirs = source_year(source_key), source_year(target)
+        if own is not None and theirs is not None and theirs > own:
+          messages.append(('error', f'{where}: `sameAs` points at a later source'))
+        matches = len(same_as_matches(target_entries(target), link))
+        if matches != 1:
+          messages.append(
+            ('error', f'{where}: `sameAs` matches {matches} entries in "{target}", not 1')
+          )
+  return messages
+
+
 def figure_refs(node, is_cited=False):
   """Every `illustrations[*].of` on a primary node names exactly one
-  material entry on the node, by exact string against a catalog number
-  (either range endpoint) or the label, or else by a number inside a range
-  pair's run (an exact match takes precedence); no match or several is an
-  error.
+  material entry on the node, by a number (either range endpoint) or the
+  label, or else by a number inside a range pair's run (an exact match
+  takes precedence); no match or several is an error.
   A cited entry's locators name nothing on the node (`null_material`
   rejects an `of` there), so they are not read."""
   if is_cited:
@@ -440,8 +271,8 @@ def figure_refs(node, is_cited=False):
 
 def cast_refs(node):
   """Every `castOf` names exactly one material entry on the node, by the
-  same rule as figure `of` (a catalog number, a range endpoint included, or
-  a `label`, else a number inside a range pair's run); no match or several
+  same rule as figure `of` (a number, a range endpoint included, or a
+  `label`, else a number inside a range pair's run); no match or several
   is an error, and an entry naming itself is an error."""
   messages = []
   entries = node.get('material') or ()
@@ -456,79 +287,6 @@ def cast_refs(node):
       )
     elif matches[0] is entry:
       messages.append(('error', f'castOf "{value}" names the entry itself'))
-  return messages
-
-
-def unresolved_catalog_numbers(node, repositories, file_repositories=()):
-  """The printed values of `node`'s catalog numbers whose prefix resolves
-  to no repository (an ambiguous prefix is not listed: `catalog_numbers`
-  reports it), among entries with no explicit `repository` or `holder`."""
-  unresolved = []
-  for entry, elements in _catalog_values(node):
-    if _is_settled(entry) or _has_ellipsis(elements):
-      continue
-    unresolved.extend(
-      e for e in elements if repository_of(e, repositories, file_repositories)[1] is None
-    )
-  return unresolved
-
-
-def catalog_numbers(node, repositories, file_repositories=()):
-  """Catalog-number and repository checks for one node's `material`
-  entries: an explicit `repository` not a registry key is an error; an
-  ellipsis in a printed number is an error; for a number with no explicit
-  `repository`, an unmatched prefix is a warning (stage 4 makes it an
-  error) unless the entry has a private `holder`, a prefix still claimed
-  by several entries after `file_repositories` is an error naming them
-  (`holder` or not), and a range whose
-  endpoints resolve to different repositories is an error.
-  """
-  messages = []
-  for entry in node.get('material') or ():
-    repository = entry.get('repository')
-    if repository is not None and repository not in repositories:
-      messages.append(('error', f'repository "{repository}" is not a key of the registry'))
-  for entry, elements in _catalog_values(node):
-    if _has_ellipsis(elements):
-      messages.append(('error', f'catalog number {_shown(elements)!r} contains an ellipsis'))
-      continue
-    if entry.get('repository') is not None:
-      continue
-    resolved = []
-    for element in elements:
-      key, via = repository_of(element, repositories, file_repositories)
-      if via is None:
-        if entry.get('holder') is None:
-          messages.append(
-            ('warning', f'catalog number "{element}" has no resolvable repository prefix'),
-          )
-      elif via == AMBIGUOUS:
-        messages.append(
-          ('error', f'catalog number "{element}" has an ambiguous prefix: {", ".join(key)}'),
-        )
-      else:
-        resolved.append(key)
-    if len(resolved) == 2 and resolved[0] != resolved[1]:
-      messages.append(
-        ('error', f'catalog number range {_shown(elements)!r} resolves to different repositories'),
-      )
-  return messages
-
-
-def locality_numbers(contexts, repositories, file_repositories=()):
-  """Locality-number checks for a `{key: context}` map (a node's `contexts`
-  or the tree file's): a `localityNumbers` value that resolves to no
-  locality register is a warning, one claimed by several after
-  `file_repositories` is an error naming them."""
-  messages = []
-  for number in _locality_values(contexts):
-    key, via, _ = resolve_number(number, repositories, file_repositories, localities=True)
-    if via is None:
-      messages.append(('warning', f'locality number "{number}" resolves to no locality register'))
-    elif via == AMBIGUOUS:
-      messages.append(
-        ('error', f'locality number "{number}" has an ambiguous prefix: {", ".join(key)}'),
-      )
   return messages
 
 
@@ -556,7 +314,7 @@ def _begins_with_form(number, entry):
 
 
 def _prefixes_used(document):
-  """Every `prefix` a material entry or an object locality number in the
+  """Every `prefix` a material entry or a locality number in the
   file uses."""
   used = set()
   all_contexts = [document.get('contexts')]
@@ -601,22 +359,26 @@ def file_prefixes(document, repositories):
 
 
 def number_entries(node, prefixes, repositories):
-  """Checks on `node`'s material entries in the `prefix` + `numbers` shape:
-  a `prefix` not in the file's `prefixes` map is an error; `numbers` with no
-  `prefix`, `repository` or `holder` is an error; a string number that
-  begins with a prefix or other name of its own register (the one the map
-  gives the prefix, or the entry's `repository`) is a warning, the split
-  being probably wrong. An explicit `repository` that is no registry key is
-  reported by `catalog_numbers`."""
+  """Checks on `node`'s material entries: an explicit `repository` that is
+  no registry key is an error; a `prefix` not in the file's `prefixes` map
+  is an error; `numbers` with no `prefix`, `repository` or `holder` is an
+  error; a string number that begins with a prefix or other name of its own
+  register (the one the map gives the prefix, or the entry's `repository`)
+  is a warning, the split being probably wrong."""
   messages = []
-  for entry in _new_entries(node):
+  for entry in node.get('material') or ():
+    repository = entry.get('repository')
+    if repository is not None and repository not in repositories:
+      messages.append(('error', f'repository "{repository}" is not a key of the registry'))
+    if 'numbers' not in entry:
+      continue
     prefix = entry.get('prefix')
     if prefix is not None and prefix not in prefixes:
       messages.append(('error', f'prefix "{prefix}" is not in the file\'s `prefixes` map'))
-    if prefix is None and entry.get('repository') is None and entry.get('holder') is None:
+    if prefix is None and repository is None and entry.get('holder') is None:
       messages.append(('error', 'numbers with no prefix, repository or holder'))
     registers = []
-    for register in (prefixes.get(prefix), entry.get('repository')):
+    for register in (prefixes.get(prefix), repository):
       if register in repositories and register not in registers:
         registers.append(register)
     for number in flat_numbers(entry):
@@ -701,11 +463,6 @@ def context_tentatives(contexts, file_level=False):
     if isinstance(context, dict)
     for level, message in tentative_fields(context, 'context', file_level)
   ]
-
-
-def _shown(elements):
-  """A catalog number as the messages print it: a string, or a range pair."""
-  return elements if len(elements) == 2 else elements[0]
 
 
 NULLABLE_FIELDS = ('material', 'illustrations', 'contexts', 'ranges')

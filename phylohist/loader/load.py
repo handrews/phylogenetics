@@ -111,7 +111,6 @@ def _load_trees(data):
     file_meta = {
       'file_contexts': opinion.get('contexts') or {},
       'file_unused': tuple(opinion.get('unused') or ()),
-      'file_repositories': tuple(opinion.get('repositories') or ()),
       'file_prefixes': dict(opinion.get('prefixes') or {}),
       'file_locality_register': opinion.get('localityRegister'),
     }
@@ -167,13 +166,13 @@ def _log_material(level, message):
 def _report_material(data):
   """Run every `material.py` check over the registry, then over every
   opinion and its nodes, logging each at its level with the source key
-  and, for a per-node check, the node's path."""
+  and, for a per-node check, the node's path, then the `sameAs` links
+  across the whole corpus."""
   repositories = data.get('repositories') or {}
   for level, message in material.registry_links(repositories):
     _log_material(level, f'repositories: {message}')
 
   for source_key, opinion in data['trees'].items():
-    file_repositories = opinion.get('repositories') or ()
     file_prefixes = opinion.get('prefixes') or {}
     locality_register = opinion.get('localityRegister')
     file_contexts = opinion.get('contexts') or {}
@@ -181,10 +180,6 @@ def _report_material(data):
     for level, message in material.unreferenced_file_contexts(opinion):
       _log_material(level, f'{source_key}: {message}')
     for level, message in material.unused_fields(opinion):
-      _log_material(level, f'{source_key}: {message}')
-    for level, message in material.file_repositories_used(opinion, repositories):
-      _log_material(level, f'{source_key}: {message}')
-    for level, message in material.locality_numbers(file_contexts, repositories, file_repositories):
       _log_material(level, f'{source_key}: {message}')
     for level, message in material.file_prefixes(opinion, repositories):
       _log_material(level, f'{source_key}: {message}')
@@ -202,12 +197,6 @@ def _report_material(data):
         _log_material(level, f'{where}: {message}')
       for level, message in material.figure_refs(node, is_cited):
         _log_material(level, f'{where}: {message}')
-      for level, message in material.catalog_numbers(node, repositories, file_repositories):
-        _log_material(level, f'{where}: {message}')
-      for level, message in material.locality_numbers(
-        node_contexts, repositories, file_repositories
-      ):
-        _log_material(level, f'{where}: {message}')
       for level, message in material.number_entries(node, file_prefixes, repositories):
         _log_material(level, f'{where}: {message}')
       for level, message in material.locality_objects(
@@ -222,6 +211,18 @@ def _report_material(data):
         _log_material(level, f'{where}: {message}')
       for level, message in material.null_material(node, is_cited):
         _log_material(level, f'{where}: {message}')
+
+  for level, message in material.same_as_links(data['trees'], _source_year):
+    _log_material(level, message)
+
+
+def _source_year(source_key):
+  """A source's publication year, 9999 for a work in preparation, `None`
+  for a key with no source record."""
+  source = Source.get(source_key)
+  if source is None:
+    return None
+  return 9999 if source.in_preparation else source.year
 
 
 def _report_nomenclature(data):

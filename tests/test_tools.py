@@ -20,7 +20,7 @@ from phylohist.claims import extract
 from phylohist.evaluation import alternatives
 from phylohist.loader.taxa import Tree
 from phylohist.render import node_label
-from phylohist.store import CLAIMS_DIR, ClaimStore
+from phylohist.store import AMBIGUOUS, CLAIMS_DIR, ClaimStore, split_typed_number
 
 QUESTIONS_PATH = pathlib.Path(__file__).parent.parent / 'eval' / 'questions.yaml'
 with open(QUESTIONS_PATH) as fd:
@@ -666,9 +666,11 @@ def test_material_words(store):
   def material(kind, **fields):
     return claim_words({'kind': 'material', 'materialKind': kind, **fields})
 
-  assert material('specimen', role='lectotype', ids=['GSC 752']) == 'lectotype: GSC 752'
-  assert material('specimen', ids=[['GSC 100', 'GSC 105'], 'GSC 7']) == (
-    'specimens: GSC 100–GSC 105, GSC 7'
+  assert material('specimen', role='lectotype', prefix='GSC', numbers=[752]) == (
+    'lectotype: GSC 752'
+  )
+  assert material('specimen', prefix='GSC', numbers=[[100, 105], 7]) == (
+    'specimens: GSC 100–105, 7'
   )
   assert material('specimen', label='the Bigsby specimen', role='syntype') == (
     'syntype: the Bigsby specimen'
@@ -677,7 +679,7 @@ def test_material_words(store):
   assert (
     material(
       'specimen',
-      ids=['XYZ 1'],
+      numbers=['XYZ 1'],
       repository='nhmuk',
       repositoryVia='explicit',
       preparation='latex cast',
@@ -687,9 +689,9 @@ def test_material_words(store):
     )
     == 'specimens: XYZ 1 (latex cast) cast of XYZ 2 [nhmuk] (quarry?)'
   )
-  assert material('specimen', ids=['GSC 1'], repository='gsc', repositoryVia='prefix') == (
-    'specimens: GSC 1'
-  )
+  assert material(
+    'specimen', prefix='GSC', numbers=[1], repository='gsc', repositoryVia='file'
+  ) == ('specimens: GSC 1')
   assert (
     material(
       'occurrence',
@@ -1277,6 +1279,106 @@ def test_specimen_history_blocks_validate_and_go_through_call(store):
   assert blocks.validate(store.specimen_history('MCZ 999'), store) == []
 
 
+# -- split_typed_number -------------------------------------------------------
+
+
+def _form_entry(*prefixes, other_names=(), **fields):
+  entry = {'name': 'x', 'type': 'institution', 'prefixes': list(prefixes), **fields}
+  if other_names:
+    entry['otherNames'] = list(other_names)
+  return entry
+
+
+@pytest.fixture
+def typed():
+  """A synthetic registry: PE, E and UCMP are each claimed by two entries, and
+  a locality register shares USNM with a specimen register."""
+  return {
+    'fmnh': _form_entry('FMNH', 'PE', 'FMNH PE'),
+    'north-museum-fm': _form_entry('PE'),
+    'nhmuk': _form_entry('NHMUK', 'E', other_names=['BMNH', 'NHM UK']),
+    'uc-caster': _form_entry('E', 'BC'),
+    'mcz': _form_entry('MCZ'),
+    'gm': _form_entry('GM'),
+    'usnm': _form_entry('USNM'),
+    'usnm-walcott': {'name': 'x', 'type': 'collection'},
+    'uq-f': _form_entry('UQF', 'F'),
+    'gsc': _form_entry('GSC', other_names=['Canadian Geological Survey']),
+    'usgs-l': _form_entry('USGS', subject='localities'),
+    'usnm-l': _form_entry('USNM', 'USNM loc', 'Walcott', subject='localities'),
+  }
+
+
+@pytest.mark.parametrize(
+  ('number', 'key', 'via', 'bare'),
+  [
+    ('GM 9-5-2 165b', 'gm', 'prefix', '9-5-2 165b'),
+    ('F. 5404', 'uq-f', 'prefix', '5404'),
+    ('F.5404', 'uq-f', 'prefix', '5404'),
+    ('F-5404', 'uq-f', 'prefix', '5404'),
+    ('UQF5404', 'uq-f', 'prefix', '5404'),
+    ('UQF No. 5404', 'uq-f', 'prefix', '5404'),
+    ('uqf 5404.2', 'uq-f', 'prefix', '5404.2'),
+    ('FMNH PE 214', 'fmnh', 'prefix', '214'),
+    ('MCZ 602-D1', 'mcz', 'prefix', '602-D1'),
+    ('USNM S-3965', 'usnm', 'prefix', 'S-3965'),
+    ('BMNH 12345', 'nhmuk', 'otherNames', '12345'),
+    ('nhm   uk 12', 'nhmuk', 'otherNames', '12'),
+    ('canadian  geological survey 752', 'gsc', 'otherNames', '752'),
+  ],
+)
+def test_split_typed_number_splits_a_number_as_a_person_types_it(typed, number, key, via, bare):
+  assert split_typed_number(number, typed) == (key, via, bare)
+
+
+def test_split_typed_number_matches_whole_tokens_and_the_longest_form(typed):
+  # No boundary after GM, so GMX is no match.
+  assert split_typed_number('GMX 12', typed) == (None, None, 'GMX 12')
+  # FMNH PE is longer than FMNH or PE, and only fmnh claims it.
+  assert split_typed_number('FMNH PE 12', typed)[::2] == ('fmnh', '12')
+  # A key is a slug, not a printed form.
+  assert split_typed_number('usnm-walcott 12', typed) == (None, None, 'usnm-walcott 12')
+
+
+def test_split_typed_number_returns_the_number_whole_when_it_splits_nothing(typed):
+  assert split_typed_number('ZZZZ 12', typed) == (None, None, 'ZZZZ 12')
+  assert split_typed_number('12345', typed) == (None, None, '12345')
+  # A number that is only its prefix stays whole.
+  assert split_typed_number('UQF', typed) == ('uq-f', 'prefix', 'UQF')
+
+
+def test_split_typed_number_a_shared_prefix_is_ambiguous(typed):
+  assert split_typed_number('E 1', typed) == (('nhmuk', 'uc-caster'), AMBIGUOUS, 'E 1')
+  assert split_typed_number('PE-214', typed) == (('fmnh', 'north-museum-fm'), AMBIGUOUS, 'PE-214')
+
+
+def test_split_typed_number_an_entry_claiming_a_form_twice_is_one_claim():
+  registry = {'a': _form_entry('AB', other_names=['AB'])}
+  assert split_typed_number('AB 1', registry) == ('a', 'prefix', '1')
+
+
+def test_split_typed_number_reads_specimen_registers_only(typed):
+  # A locality register's form splits no specimen number, and does not make USNM ambiguous.
+  assert split_typed_number('USGS 4148', typed) == (None, None, 'USGS 4148')
+  assert split_typed_number('Walcott 35k', typed) == (None, None, 'Walcott 35k')
+  assert split_typed_number('USNM 35k', typed) == ('usnm', 'prefix', '35k')
+
+
+def test_split_typed_number_over_one_entry_strips_that_entrys_own_form(typed):
+  # How the `repository` argument of `specimen_history` reads a number.
+  def bare(number, key):
+    return split_typed_number(number, {key: typed[key]})[2]
+
+  assert bare('GSC 752', 'gsc') == '752'
+  assert bare('Canadian Geological Survey 752', 'gsc') == '752'
+  assert bare('PE-214', 'north-museum-fm') == '214'
+  assert bare('PE-214', 'fmnh') == '214'
+  # Another holder's form, no form at all: unchanged.
+  assert bare('XYZ 1', 'nhmuk') == 'XYZ 1'
+  assert bare('12345', 'gsc') == '12345'
+  assert bare('UQF 5404', 'gsc') == 'UQF 5404'
+
+
 # -- specimen_history over the `prefix` + `numbers` shape ----------------------
 
 NUMBERED = {
@@ -1368,3 +1470,156 @@ def test_specimen_history_finds_a_number_in_a_prefix_and_numbers_run(numbered):
   )
   assert len(_sentences(numbered.specimen_history('GSC 25961'))) == 1
   assert _sentences(numbered.specimen_history('GSC 25962')) == []
+
+
+def test_locality_numbers_read_as_prefix_and_number(store):
+  # A locality number is an object in the tree; the occurrence line prints
+  # the prefix, when there is one, and the number.
+  block = store.statements('hobbsi_sprinkle_1973', source='1973_sprinkle', kind='occurrences')
+  assert 'CL-1, USGS locality 5462' in block['rendered']
+  assert '{' not in block['rendered']
+
+
+# -- `sameAs`: following a link between specimen entries ------------------------
+
+_OTTAWA = 'ottawaensis_whiteaves_1897'
+
+
+def _under_genus(material):
+  return {'taxon': 'astrocystites', 'children': [{'taxon': _OTTAWA, 'material': material}]}
+
+
+LINKED = {
+  '1897_whiteaves': (
+    1320,
+    _under_genus([{'label': 'first specimen'}, {'label': 'second specimen'}]),
+  ),
+  '1914c_bather': (
+    1321,
+    _under_genus(
+      [
+        {
+          'label': 'A',
+          'role': 'holotype',
+          'roleAct': 'designated',
+          'sameAs': {'source': '1897_whiteaves', 'label': 'first specimen'},
+        },
+        {'label': 'B', 'role': 'syntype'},
+      ]
+    ),
+  ),
+  '1962_fay': (
+    1322,
+    _under_genus(
+      [
+        {
+          'prefix': 'GSC',
+          'numbers': [752],
+          'role': 'lectotype',
+          'sameAs': {'source': '1914c_bather', 'label': 'A'},
+          'editorial': {'inferred': ['role', 'sameAs'], 'basis': 'the editor reads No. 752 as A'},
+        }
+      ]
+    ),
+  ),
+}
+
+
+@pytest.fixture(scope='module')
+def linked(load_records, tmp_path_factory):
+  """A `ClaimStore` over a copy of `claims/` whose files for Whiteaves 1897,
+  Bather 1914c and Fay 1962 are replaced by the claims of synthetic trees
+  in which Fay's No. 752 (the editor's inference) is Bather's A, which
+  Bather says is Whiteaves's first specimen."""
+  directory = tmp_path_factory.mktemp('claims')
+  shutil.copytree(CLAIMS_DIR, directory, dirs_exist_ok=True)
+  roots = {
+    source: [
+      Tree(
+        node,
+        {
+          'source_key': source,
+          'type': 'taxonomy',
+          'position': position,
+          'file_prefixes': {'GSC': 'gsc'},
+        },
+      )
+    ]
+    for source, (position, node) in LINKED.items()
+  }
+  for source, claims in extract(roots).items():
+    (directory / f'{source}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
+  return ClaimStore(directory)
+
+
+def test_specimen_history_by_number_lists_the_linked_entries_with_their_authority(linked):
+  block = linked.specimen_history('GSC 752')
+  assert block['rendered'].splitlines() == [
+    'Specimen GSC 752 (Geological Survey of Canada)',
+    '  1897  Whiteaves  cited under Astrocystites ottawaensis '
+    '(the same specimen according to Bather 1914)',
+    '  1914  Bather     holotype of Astrocystites ottawaensis '
+    "(the same specimen, editor's inference)",
+    '  1962  Fay        lectotype of Astrocystites ottawaensis',
+  ]
+  # The entry found directly carries a link and needs no suffix; the others
+  # say whose statement joins them, the earlier one a paper's, the later an inference.
+  assert block['parameters'] == {'number': 'GSC 752', 'repository': None}
+  assert [e['source'] for e in block['entries']] == ['1897_whiteaves', '1914c_bather', '1962_fay']
+  assert block['claims'] == sorted(e['claim'] for e in block['entries'])
+
+
+def test_specimen_history_by_source_and_label_lists_the_chain(linked):
+  block = linked.specimen_history(source='Whiteaves 1897', label='First  Specimen')
+  assert block['rendered'].splitlines() == [
+    'Specimen "First  Specimen" of Whiteaves 1897',
+    '  1897  Whiteaves  cited under Astrocystites ottawaensis',
+    '  1914  Bather     holotype of Astrocystites ottawaensis '
+    '(the same specimen according to Bather 1914)',
+    '  1962  Fay        lectotype of Astrocystites ottawaensis as GSC 752 '
+    "(the same specimen, editor's inference)",
+  ]
+  assert block['parameters'] == {'source': '1897_whiteaves', 'label': 'First  Specimen'}
+  # Asked from the middle, each end is reached by the other's link.
+  middle = linked.specimen_history(source='1914c_bather', label='a')
+  assert [e['source'] for e in middle['entries']] == ['1897_whiteaves', '1914c_bather', '1962_fay']
+  assert middle['heading']['name'] == '"a" of Bather 1914'
+  assert [e['sentence'].endswith(')') for e in middle['entries']] == [True, False, True]
+  # A specimen no link reaches stands alone.
+  [alone] = linked.specimen_history(source='1914c_bather', label='B')['entries']
+  assert alone['sentence'] == 'syntype of Astrocystites ottawaensis'
+
+
+def test_specimen_history_by_label_that_matches_nothing_is_absent(linked):
+  block = linked.specimen_history(source='1914c_bather', label='Z')
+  assert block['kind'] == 'absent'
+  assert block['rendered'] == 'No source in the corpus mentions the specimen "Z" of Bather 1914.'
+  assert block['parameters'] == {'source': '1914c_bather', 'label': 'Z'}
+  # A source with no such entry at all, and one with no tree.
+  assert linked.specimen_history(source='1961_dehm', label='A')['kind'] == 'absent'
+  assert linked.specimen_history(source='1899_nobody', label='A')['kind'] == 'absent'
+
+
+def test_specimen_history_asks_for_a_number_or_a_source_and_a_label(linked):
+  for arguments in ({}, {'source': '1914c_bather'}, {'label': 'A'}, {'repository': 'gsc'}):
+    with pytest.raises(ValueError, match='a catalog number, or a source and a label'):
+      linked.specimen_history(**arguments)
+  with pytest.raises(ValueError, match='can mean several'):
+    linked.specimen_history(source='Müller 1774', label='A')
+
+
+def test_specimen_history_by_label_blocks_validate_and_go_through_call(linked):
+  from phylohist import blocks
+
+  block = linked.specimen_history(source='1897_whiteaves', label='first specimen', style='json')
+  assert blocks.validate(block, linked) == []
+  assert blocks.validate(linked.specimen_history(source='1914c_bather', label='Z'), linked) == []
+
+
+def test_specimen_history_without_links_is_what_the_numbers_alone_find(store):
+  # No `sameAs` is entered in the corpus, and an entry that prints several
+  # numbers joins nothing: every number's lines are those that cite it.
+  assert not any(c.get('sameAs') for c in store.by_id.values())
+  block = store.specimen_history('UQF 5405')
+  assert [e['source'] for e in block['entries']] == ['2021_jell_sprinkle']
+  assert block['rendered'].count('the same specimen') == 0

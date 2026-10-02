@@ -164,8 +164,13 @@ def statements(
 
 
 @server.tool(description=D['specimen_history'])
-def specimen_history(number: str, repository: str | None = None) -> dict:
-  return _call('specimen_history', number=number, repository=repository)
+def specimen_history(
+  number: str | None = None,
+  repository: str | None = None,
+  source: str | None = None,
+  label: str | None = None,
+) -> dict:
+  return _call('specimen_history', number=number, repository=repository, source=source, label=label)
 
 
 @server.tool(description=D['source_coverage'])

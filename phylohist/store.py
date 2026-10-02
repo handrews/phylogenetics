@@ -13,16 +13,100 @@ surface over the store is `tools.py`.
 import collections
 import json
 import pathlib
+import re
 
 from . import blocks
+from .claims import specimen_components
 from .closure import TAXONOMY, Closure, in_years
-from .loader.material import AMBIGUOUS, bare_number, in_run, resolve_number
+from .loader.material import in_run
 from .names import fold
 from .render import node_label, pages_text, render
 from .resolve import Resolver
 from .words import COVERAGE_WORDS, PLURAL_KINDS, Words, short_citation, years_span
 
 CLAIMS_DIR = pathlib.Path(__file__).parent / '..' / 'claims'
+
+AMBIGUOUS = 'ambiguous'
+
+_WHITESPACE_RE = re.compile(r'\s+')
+_DIGIT_RE = re.compile(r'\d')
+_LEADING_SEPARATORS_RE = re.compile(r'(?:[\s.-]|no\.)+', re.IGNORECASE)
+
+
+def _folded(text):
+  """Case- and whitespace-insensitive comparison form."""
+  return _WHITESPACE_RE.sub(' ', text.strip()).casefold()
+
+
+def _typed_prefix(number):
+  """The leading run before the first digit, stripped, with a trailing
+  hyphen or period dropped ("PE-214", "PE 214" and "F. 5404" give "PE",
+  "PE" and "F"); `None` if empty. A hyphen inside the number ("MCZ
+  602-D1") is past the first digit and untouched."""
+  match = _DIGIT_RE.search(number)
+  prefix = (number[: match.start()] if match else number).strip()
+  prefix = prefix.rstrip('-.').strip()
+  return prefix or None
+
+
+def _strip_form(number, form):
+  """`number` without `form` at its start (matched case-insensitively,
+  whitespace runs collapsed) and without the separators after it (spaces,
+  hyphens, periods, "No."); `number` unchanged when that leaves nothing or
+  `form` is not at its start."""
+  tokens = form.split(' ')
+  pattern = re.compile(r'\s+'.join(re.escape(token) for token in tokens), re.IGNORECASE)
+  text = number.strip()
+  match = pattern.match(text)
+  if match is None:
+    return number
+  rest = text[match.end() :]
+  separators = _LEADING_SEPARATORS_RE.match(rest)
+  rest = rest[separators.end() :] if separators else rest
+  return rest or number
+
+
+def split_typed_number(number, repositories):
+  """`(key, via, bare)` for a catalog number as a person types it: the
+  registry key of its holder, how that was found, and the number without
+  its printed prefix ("F. 5404" and "UQF5404" both give "5404").
+
+  The prefix is the run before the first digit (`_typed_prefix`), compared
+  case-insensitively with whitespace collapsed. The known forms are the
+  `prefixes` and `otherNames` of every entry of `repositories` that is not a
+  locality register; the longest one equal to the prefix or a token-boundary
+  prefix of it wins, and only that form's text is removed to make `bare`.
+  `via` is `'prefix'` or `'otherNames'` when one entry claims the form (a
+  form listed both ways counts as `'prefix'`).
+
+  Returns `(None, None, number)` when no form matches, and `(keys,
+  AMBIGUOUS, number)`, `keys` a sorted tuple, when several entries claim
+  the form. A caller tests `via == AMBIGUOUS` before using `key`.
+  """
+  prefix = _typed_prefix(number)
+  if prefix is None:
+    return None, None, number
+  prefix = _folded(prefix)
+  claims = {}
+  for key, entry in repositories.items():
+    if entry.get('subject') == 'localities':
+      continue
+    for via, values in (('otherNames', entry.get('otherNames')), ('prefix', entry.get('prefixes'))):
+      for value in values or ():
+        claims.setdefault(_folded(value), {})[key] = via
+  forms = [
+    form
+    for form in claims
+    if form == prefix or (prefix.startswith(form) and prefix[len(form)] == ' ')
+  ]
+  if not forms:
+    return None, None, number
+  form = max(forms, key=len)
+  if len(claims[form]) > 1:
+    return tuple(sorted(claims[form])), AMBIGUOUS, number
+  ((key, via),) = claims[form].items()
+  return key, via, _strip_form(number, form)
+
 
 _NODE_FLAGS = ('new', 'provisional', 'questionable', 'quoted')
 
@@ -173,10 +257,15 @@ class ClaimStore:
     # number inside a run is found beside the claims that cite it by number.
     self.by_join_key = collections.defaultdict(list)
     self.runs = collections.defaultdict(list)
+    specimens = []
     for claims in self.by_source.values():
       for claim in claims:
         if claim['kind'] == 'material' and claim.get('materialKind') == 'specimen':
           self._index_specimen(claim)
+          specimens.append(claim)
+    # Each specimen claim's component (`specimen_components`): the claims
+    # linked to it by a shared join key or by `sameAs`, in either direction.
+    self.specimen_component = specimen_components(specimens)
     self.resolver = Resolver(self)
     self.words = Words(self)
 
@@ -188,23 +277,18 @@ class ClaimStore:
     if not claim.get('rangeJoin'):
       return
     join_keys = claim.get('joinKeys') or ()
-    # A claim with `numbers` holds the bare numbers already: its runs carry
-    # them as printed, for the words, and folded, to compare.
-    numbers = claim.get('numbers')
+    # The claim's runs carry the numbers as printed, for the words, and
+    # folded, to compare.
     position = 0
-    for number in numbers if numbers is not None else claim['ids']:
+    for number in claim['numbers']:
       pair = number if isinstance(number, list) else [number]
       holders = join_keys[position : position + len(pair)]
       position += len(pair)
       if len(pair) != 2 or len(holders) != 2:
         continue
       holder = holders[0].split(':', 1)[0]
-      if numbers is not None:
-        pair = [str(end) for end in pair]
-        bare = [fold(end) for end in pair]
-      else:
-        bare = [bare_number(end, holder, self.repositories) for end in pair]
-      self.runs[holder].append((*pair, *bare, claim))
+      pair = [str(end) for end in pair]
+      self.runs[holder].append((*pair, *map(fold, pair), claim))
 
   @property
   def closure(self):
@@ -1115,19 +1199,65 @@ class ClaimStore:
       fields['candidates'] = list(candidates)
     return blocks.statement('absent', fields, {'number': number, 'repository': repository})
 
-  def specimen_history(self, number, repository=None, style='text'):
-    """Every citation of one specimen, by catalog number, one line per
-    claim in year order. The number is read as `resolve_number` reads it
-    (or, with `repository`, as that registry entry's own number), and meets
-    the claims' join keys; a number inside a printed run ("GSC
-    25935–25961") is found as well, by the printed form and by the bare
-    one."""
+  def _unfound_label(self, source_key, label):
+    """The `absent` statement for a source with no specimen of that label."""
+    fields = {'name': f'the specimen "{label}" of {self.cite(source_key)}'}
+    return blocks.statement('absent', fields, {'source': source_key, 'label': label})
+
+  def _same_specimen(self, found):
+    """`{claim id: carrier}` for every claim in the component of a claim of
+    `found`: the carrier is the claim whose `sameAs` link first reached it
+    from the claims found directly, `None` for a claim found directly or
+    reached through the join key of a one-number entry from one."""
+    members = {}
+    for claim in found:
+      members.update((c['id'], c) for c in self.specimen_component[claim['id']])
+    edges = collections.defaultdict(list)
+    by_key = collections.defaultdict(list)
+    for claim_id, claim in members.items():
+      keys = claim.get('joinKeys') or ()
+      if len(keys) == 1:
+        by_key[keys[0]].append(claim_id)
+      target = claim.get('sameAsClaim')
+      if target in members:
+        edges[claim_id].append((target, claim))
+        edges[target].append((claim_id, claim))
+    for ids in by_key.values():
+      for one in ids:
+        edges[one].extend((other, None) for other in ids if other != one)
+    carriers = {claim['id']: None for claim in found}
+    queue = collections.deque(carriers)
+    while queue:
+      claim_id = queue.popleft()
+      for other, carrier in edges[claim_id]:
+        if other not in carriers:
+          carriers[other] = carrier or carriers[claim_id]
+          queue.append(other)
+    return carriers
+
+  def specimen_history(self, number=None, repository=None, source=None, label=None, style='text'):
+    """Every citation of one specimen, one line per claim in year order,
+    asked for by catalog number or, for a specimen with no number, by
+    source and label. The number is split by `split_typed_number` (or, with
+    `repository`, as that registry entry's own number) and meets the
+    claims' join keys; a number inside a printed run ("GSC 25935–25961") is
+    found as well. A source and label meet the labels of that source's
+    specimen claims (folded). Either way every claim in the component of a
+    claim found is listed too (`specimen_components`: a `sameAs` link in
+    either direction, through a chain, or the join key of a one-number
+    entry), a line reached only through a link saying on whose authority.
+    With a number, `source` and `label` are not read."""
+    if number is None:
+      if source is None or label is None:
+        raise ValueError('give a catalog number, or a source and a label')
+      return self._label_history(self.resolver.source_key(source), label, style)
     if repository is not None:
-      key, bare = repository, bare_number(number, repository, self.repositories)
+      key = repository
       if key not in self.repositories:
         return _with_style(self._unfound_specimen(number, repository), style)
+      _, _, bare = split_typed_number(number, {key: self.repositories[key]})
     else:
-      key, via, bare = resolve_number(number, self.repositories)
+      key, via, bare = split_typed_number(number, self.repositories)
       if via == AMBIGUOUS:
         block = self._unfound_specimen(number, repository, candidates=key)
         return _with_style(block, style)
@@ -1137,18 +1267,56 @@ class ClaimStore:
     found = {c['id']: c for c in self.by_join_key.get(join_key, ())}
     in_runs = {}
     for low, high, bare_low, bare_high, claim in self.runs.get(key, ()):
-      if 'numbers' in claim:
-        within = in_run(fold(bare), bare_low, bare_high)
-      else:
-        within = in_run(number, low, high) or in_run(bare, bare_low, bare_high)
-      if within:
+      if in_run(fold(bare), bare_low, bare_high):
         found.setdefault(claim['id'], claim)
         in_runs.setdefault(claim['id'], []).append([low, high])
     if not found:
       return _with_style(self._unfound_specimen(number, repository), style)
     entry = self.repositories[key]
+    prefixes = entry.get('prefixes')
+    printed = f'{prefixes[0] if prefixes else entry["name"]} {bare}'
+    block = self._specimen_listing(
+      list(found.values()),
+      {'key': join_key, 'name': printed, 'rank': None},
+      {'number': number, 'repository': repository},
+      {'repository': key, 'holder': entry['name'], 'number': bare},
+      number,
+      join_key,
+      in_runs,
+    )
+    return _with_style(block, style)
+
+  def _label_history(self, source_key, label, style):
+    wanted = fold(str(label))
+    found = [
+      c
+      for c in self.by_source.get(source_key, ())
+      if c['kind'] == 'material'
+      and c.get('materialKind') == 'specimen'
+      and c.get('label') is not None
+      and fold(str(c['label'])) == wanted
+    ]
+    if not found:
+      return _with_style(self._unfound_label(source_key, label), style)
+    name = f'"{label}" of {self.cite(source_key)}'
+    block = self._specimen_listing(
+      found,
+      {'key': f'{source_key}:{wanted}', 'name': name, 'rank': None},
+      {'source': source_key, 'label': label},
+      {},
+      None,
+      None,
+      {},
+    )
+    return _with_style(block, style)
+
+  def _specimen_listing(self, found, heading, parameters, extra, number, join_key, in_runs):
+    """The list block of the claims `found` and the claims linked to them,
+    in year order."""
+    carriers = self._same_specimen(found)
     claims = sorted(
-      found.values(), key=lambda c: (self.source_year(c['source']), c['source'], c['path'])
+      (self.by_id[claim_id] for claim_id in carriers),
+      key=lambda c: (self.source_year(c['source']), c['source'], c['path']),
     )
     entries = [
       blocks.list_entry(
@@ -1159,20 +1327,13 @@ class ClaimStore:
         page=c.get('pages'),
         kind='material',
         authors=self.words.authors(c['source']),
-        sentence=self.words.specimen_history_words(c, number, join_key, in_runs.get(c['id'])),
+        sentence=self.words.specimen_history_words(
+          c, number, join_key, in_runs.get(c['id']), carriers[c['id']]
+        ),
       )
       for c in claims
     ]
-    prefixes = entry.get('prefixes')
-    printed = f'{prefixes[0] if prefixes else entry["name"]} {bare}'
-    block = blocks.listing(
-      {'key': join_key, 'name': printed, 'rank': None},
-      entries,
-      {'number': number, 'repository': repository},
-      kind='specimen',
-      extra={'repository': key, 'holder': entry['name'], 'number': bare},
-    )
-    return _with_style(block, style)
+    return blocks.listing(heading, entries, parameters, kind='specimen', extra=extra)
 
   def source_coverage(self, source):
     """The raw view of one source: citation, whether entered, declared

@@ -58,18 +58,23 @@ def test_report_explains_both_row_forms(load_records, monkeypatch, capsys):
 
 
 def test_report_lists_holotypes_that_differ_without_counting_them(load_records, capsys):
-  def tree(source, number):
+  def tree(source, prefix, number):
     return Tree(
       {
         'taxon': 'navicula_whitehouse_1941',
-        'material': [{'role': 'holotype', 'catalogNumbers': [number]}],
+        'material': [{'role': 'holotype', 'prefix': prefix, 'numbers': [number]}],
       },
-      {'source_key': source, 'type': 'taxonomy', 'position': 0},
+      {
+        'source_key': source,
+        'type': 'taxonomy',
+        'position': 0,
+        'file_prefixes': {prefix: 'uq-f'},
+      },
     )
 
   roots = {
-    '2021_jell_sprinkle': [tree('2021_jell_sprinkle', 'UQF 9')],
-    '1941_whitehouse': [tree('1941_whitehouse', 'F. 5404')],
+    '2021_jell_sprinkle': [tree('2021_jell_sprinkle', 'UQF', 9)],
+    '1941_whitehouse': [tree('1941_whitehouse', 'F.', 5404)],
   }
   found, out = _report(capsys, roots)
   # Per-source rows come first and are all that is counted.
@@ -88,9 +93,14 @@ def test_report_prints_no_holotype_section_when_none_differ(load_records, capsys
       Tree(
         {
           'taxon': 'navicula_whitehouse_1941',
-          'material': [{'role': 'holotype', 'catalogNumbers': ['F. 5404']}],
+          'material': [{'role': 'holotype', 'prefix': 'F.', 'numbers': [5404]}],
         },
-        {'source_key': '1941_whitehouse', 'type': 'taxonomy', 'position': 0},
+        {
+          'source_key': '1941_whitehouse',
+          'type': 'taxonomy',
+          'position': 0,
+          'file_prefixes': {'F.': 'uq-f'},
+        },
       )
     ]
   }

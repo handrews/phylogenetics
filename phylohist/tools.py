@@ -77,8 +77,8 @@ def statements(record, source=None, kind=None, act_kind=None, style='text'):
   return store().statements(record, source, kind, act_kind, style)
 
 
-def specimen_history(number, repository=None, style='text'):
-  return store().specimen_history(number, repository, style)
+def specimen_history(number=None, repository=None, source=None, label=None, style='text'):
+  return store().specimen_history(number, repository, source, label, style)
 
 
 def source_coverage(source):
@@ -220,8 +220,11 @@ TOOL_DESCRIPTIONS = {
     '581A"); the prefix names the repository, or give the repository key '
     'when the number has none or its prefix is shared. One line per citing '
     'source, in year order: the role, the taxon it is cited under, whether '
-    'the assignment is doubtful, the figures tied to it and the page. '
-    'Unnumbered specimens cannot be followed.'
+    'the assignment is doubtful, the figures tied to it and the page. A '
+    'specimen without a number is asked for by source and label (the '
+    'specimen "A" of Bather 1914). Entries that a paper (or the editor) '
+    'identifies with an earlier one are listed together, each such line '
+    'saying on whose authority.'
   ),
   'source_coverage': (
     'What the corpus holds of one publication: its citation, whether its '
@@ -407,13 +410,24 @@ TOOL_SPECS = [
   _spec(
     'specimen_history',
     {
-      'number': {'type': 'string', 'description': 'the catalog number as a paper prints it'},
+      'number': {
+        'type': ['string', 'null'],
+        'description': 'the catalog number as a paper prints it; or give source and label',
+      },
       'repository': {
         'type': ['string', 'null'],
         'description': 'a repository key, for a number with no prefix or a shared one',
       },
+      'source': {
+        'type': ['string', 'null'],
+        'description': 'a source key or citation, with label, for a specimen with no number',
+      },
+      'label': {
+        'type': ['string', 'null'],
+        'description': 'the label the source gives the specimen ("A", "the Bigsby specimen")',
+      },
     },
-    ['number'],
+    [],
   ),
   _spec(
     'source_coverage',

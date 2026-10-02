@@ -319,7 +319,9 @@ def _list_title(block):
     # The synonymy is one source's: the listing says whose.
     title = f'Synonymy under {title} in {block["cite"]}'
   elif block.get('kind') == 'specimen':
-    title = f'Specimen {title} ({block["holder"]})'
+    # A specimen asked for by number is the holder's; one asked for by source
+    # and label is the source's, and needs no holder.
+    title = f'Specimen {title}' + (f' ({block["holder"]})' if block.get('holder') else '')
   return title
 
 

@@ -9,6 +9,7 @@
     phylohist synonymy grayae_bather_1915
     phylohist statements ottawaensis_whiteaves_1897 --source 1962_fay
     phylohist specimen "UQF 5404"
+    phylohist specimen --source 1914c_bather --label A
     phylohist coverage 1983_holloway_jell
     phylohist gap 1983_holloway_jell material
     phylohist printed edrioblastoidina
@@ -136,11 +137,19 @@ def build_parser():
   p.add_argument('--kind')
   p.add_argument('--act', dest='act_kind')
 
-  p = add_parser('specimen', help='every citation of one specimen, by catalog number')
-  p.add_argument('number', help='the number as a paper prints it ("UQF 5404", "F. 5404")')
+  p = add_parser(
+    'specimen', help='every citation of one specimen, by catalog number or by source and label'
+  )
+  p.add_argument(
+    'number',
+    nargs='?',
+    help='the number as a paper prints it ("UQF 5404", "F. 5404"); or give --source and --label',
+  )
   p.add_argument(
     '--repository', help='a repository key, for a number with no prefix or a shared one'
   )
+  p.add_argument('--source', help='with --label, a specimen with no number: its source')
+  p.add_argument('--label', help='the label the source gives the specimen ("A")')
 
   p = add_parser('coverage', help='what the corpus holds of a source')
   p.add_argument('source')

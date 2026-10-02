@@ -17,14 +17,14 @@ even when its parent is also unreached, so read parents first.
 | `catalogNumber` | `phylogeny#/$defs/catalogNumber`<br>`phylogeny#/$defs/catalogNumber/oneOf/0`<br>`phylogeny#/$defs/catalogNumber/oneOf/1`<br>`phylogeny#/$defs/catalogNumber/oneOf/1/items` |
 | `citedAct` | `phylogeny#/$defs/citedAct`<br>`phylogeny#/$defs/citedAct/properties/by` |
 | `cladisticFields` | `phylogeny#/$defs/cladisticFields/properties/data`<br>`phylogeny#/$defs/cladisticFields/properties/data/additionalProperties` |
-| `context` | `phylogeny#/$defs/context/properties/biota`<br>`phylogeny#/$defs/context/properties/biozones`<br>`phylogeny#/$defs/context/properties/biozones/items`<br>`phylogeny#/$defs/context/properties/collectedDate`<br>`phylogeny#/$defs/context/properties/localityNumbers/items/oneOf/0`<br>`phylogeny#/$defs/context/properties/localityNumbers/items/oneOf/1/not`<br>`phylogeny#/$defs/context/properties/localityNumbers/items/oneOf/1/properties/register`<br>`phylogeny#/$defs/context/properties/paleocontinent`<br>`phylogeny#/$defs/context/properties/sources`<br>`phylogeny#/$defs/context/properties/sources/items`<br>`phylogeny#/$defs/context/properties/tentative/oneOf/0` |
+| `context` | `phylogeny#/$defs/context/properties/biota`<br>`phylogeny#/$defs/context/properties/biozones`<br>`phylogeny#/$defs/context/properties/biozones/items`<br>`phylogeny#/$defs/context/properties/collectedDate`<br>`phylogeny#/$defs/context/properties/localityNumbers/items/not`<br>`phylogeny#/$defs/context/properties/localityNumbers/items/properties/register`<br>`phylogeny#/$defs/context/properties/paleocontinent`<br>`phylogeny#/$defs/context/properties/sources`<br>`phylogeny#/$defs/context/properties/sources/items`<br>`phylogeny#/$defs/context/properties/tentative/oneOf/0` |
 | `contextRef` | `phylogeny#/$defs/contextRef/oneOf/1`<br>`phylogeny#/$defs/contextRef/oneOf/1/properties/key`<br>`phylogeny#/$defs/contextRef/oneOf/1/properties/tentative` |
 | `eon` | `phylogeny#/$defs/eon` |
 | `era` | `phylogeny#/$defs/era` |
 | `figureLocatorFields` | `phylogeny#/$defs/figureLocatorFields/properties/non` |
 | `inferredContext` | `phylogeny#/$defs/inferredContext/properties/basis`<br>`phylogeny#/$defs/inferredContext/properties/sources`<br>`phylogeny#/$defs/inferredContext/properties/sources/items` |
 | `localTimeFields` | `phylogeny#/$defs/localTimeFields/properties/localStageBoundary` |
-| `materialEntry` | `phylogeny#/$defs/materialEntry/anyOf/0`<br>`phylogeny#/$defs/materialEntry/not`<br>`phylogeny#/$defs/materialEntry/properties/catalogNumbers`<br>`phylogeny#/$defs/materialEntry/properties/catalogNumbers/items`<br>`phylogeny#/$defs/materialEntry/properties/catalogNumbersAsPrinted`<br>`phylogeny#/$defs/materialEntry/properties/formerIds`<br>`phylogeny#/$defs/materialEntry/properties/formerIds/items`<br>`phylogeny#/$defs/materialEntry/properties/fragmentOf`<br>`phylogeny#/$defs/materialEntry/properties/roleUncertain` |
+| `materialEntry` | `phylogeny#/$defs/materialEntry/properties/formerIds`<br>`phylogeny#/$defs/materialEntry/properties/formerIds/items`<br>`phylogeny#/$defs/materialEntry/properties/fragmentOf`<br>`phylogeny#/$defs/materialEntry/properties/roleUncertain`<br>`phylogeny#/$defs/materialEntry/properties/sameAs`<br>`phylogeny#/$defs/materialEntry/properties/sameAs/oneOf/0`<br>`phylogeny#/$defs/materialEntry/properties/sameAs/oneOf/1`<br>`phylogeny#/$defs/materialEntry/properties/sameAs/properties/label`<br>`phylogeny#/$defs/materialEntry/properties/sameAs/properties/number`<br>`phylogeny#/$defs/materialEntry/properties/sameAs/properties/prefix`<br>`phylogeny#/$defs/materialEntry/properties/sameAs/properties/source` |
 | `modularDate` | `phylogeny#/$defs/modularDate/then/oneOf/1/properties/month/anyOf/3`<br>`phylogeny#/$defs/modularDate/then/oneOf/2/properties/month/anyOf/5` |
 | `person` | `phylogeny#/$defs/person/properties/suffix` |
 | `publication` | `phylogeny#/$defs/publication/properties/type` |
@@ -32,7 +32,7 @@ even when its parent is also unreached, so read parents first.
 | `stageRange` | `phylogeny#/$defs/stageRange`<br>`phylogeny#/$defs/stageRange/items` |
 | `taxonRecord` | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items/items` |
 | `timeFields` | `phylogeny#/$defs/timeFields/properties/eon`<br>`phylogeny#/$defs/timeFields/properties/era`<br>`phylogeny#/$defs/timeFields/properties/seriesBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageRange` |
-| `treeDocument` | `phylogeny#/$defs/treeDocument/properties/repositories`<br>`phylogeny#/$defs/treeDocument/properties/repositories/items`<br>`phylogeny#/$defs/treeDocument/properties/unused`<br>`phylogeny#/$defs/treeDocument/properties/unused/items` |
+| `treeDocument` | `phylogeny#/$defs/treeDocument/properties/unused`<br>`phylogeny#/$defs/treeDocument/properties/unused/items` |
 | `uncertaintyFields` | `phylogeny#/$defs/uncertaintyFields/properties/nonMonophyletic/oneOf/1`<br>`phylogeny#/$defs/uncertaintyFields/properties/sensu` |
 
 ## 2. Property frequency by `$defs`
@@ -142,11 +142,11 @@ property.
 |---|---|---|
 | `location` | 112 | 99.1% |
 | `unit` | 104 | 92.0% |
-| `localityNumbers/items/oneOf/1.number` | 52 | 100.0% |
+| `localityNumbers/items.number` | 52 | 100.0% |
 | `biozone` | 48 | 42.5% |
 | `localityNumbers` | 46 | 40.7% |
 | `mapSheet` | 30 | 26.5% |
-| `localityNumbers/items/oneOf/1.prefix` | 21 | 40.4% |
+| `localityNumbers/items.prefix` | 21 | 40.4% |
 | `notes` | 20 | 17.7% |
 | `coordinatesAsPrinted` | 12 | 10.6% |
 | `biozoneRange` | 7 | 6.2% |
@@ -157,7 +157,7 @@ property.
 | `biota` | 0 | 0.0% |
 | `biozones` | 0 | 0.0% |
 | `collectedDate` | 0 | 0.0% |
-| `localityNumbers/items/oneOf/1.register` | 0 | 0.0% |
+| `localityNumbers/items.register` | 0 | 0.0% |
 | `paleocontinent` | 0 | 0.0% |
 | `sources` | 0 | 0.0% |
 
@@ -254,11 +254,14 @@ property.
 | `listComplete` | 1 | 0.3% |
 | `roleAct` | 1 | 0.3% |
 | `status` | 1 | 0.3% |
-| `catalogNumbers` | 0 | 0.0% |
-| `catalogNumbersAsPrinted` | 0 | 0.0% |
 | `formerIds` | 0 | 0.0% |
 | `fragmentOf` | 0 | 0.0% |
 | `roleUncertain` | 0 | 0.0% |
+| `sameAs` | 0 | 0.0% |
+| `sameAs.label` | 0 | - |
+| `sameAs.number` | 0 | - |
+| `sameAs.prefix` | 0 | - |
+| `sameAs.source` | 0 | - |
 
 ### `materialsFields` -- 5580 instances in `data/`
 
@@ -430,7 +433,6 @@ property.
 | `assumptions` | 1 | 0.5% |
 | `contexts` | 1 | 0.5% |
 | `localityRegister` | 1 | 0.5% |
-| `repositories` | 0 | 0.0% |
 | `unused` | 0 | 0.0% |
 
 ### `uncertaintyFields` -- 6374 instances in `data/`
