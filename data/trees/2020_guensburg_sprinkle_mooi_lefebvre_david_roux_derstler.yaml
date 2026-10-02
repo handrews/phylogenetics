@@ -1,4 +1,6 @@
-repositories: [fmnh]
+prefixes:
+  PE: fmnh-pe
+  USNM: usnm
 taxonomies:
 - taxon: crinoidea
   children:
@@ -14,13 +16,14 @@ taxonomies:
           new: true
           type: true
           material:
-          - catalogNumbers:
-            - PE 52742
+          - prefix: PE
+            numbers: [52742]
             role: holotype
-          - catalogNumbers:
-            - - PE 52750
-              - PE 52753
-            - USNM 165237
+          - prefix: PE
+            numbers: [[52750, 52753]]
+            role: paratype
+          - prefix: USNM
+            numbers: [165237]
             role: paratype
 assumptions:
 - taxon: aethocrinus

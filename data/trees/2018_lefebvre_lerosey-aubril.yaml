@@ -1,3 +1,6 @@
+prefixes:
+  UU: uu
+  USNM: usnm
 taxonomies:
 - taxon: echinodermata
   children:
@@ -14,15 +17,11 @@ taxonomies:
             new: true
             type: true
             material:
-            - catalogNumbers:
-              - UU05072.02_01
+            - prefix: UU
+              numbers: ['05072.02_01']
               role: holotype
-            - catalogNumbers:
-              - UU05072.01_01
-              - UU05072.01_02
-              - UU05072.02_02
-              - UU05072.03
+            - prefix: UU
+              numbers: ['05072.01_01', '05072.01_02', '05072.02_02', '05072.03']
               role: paratype
-            - catalogNumbers:
-              - USNM 393393
-              - USNM 393394
+            - prefix: USNM
+              numbers: [393393, 393394]

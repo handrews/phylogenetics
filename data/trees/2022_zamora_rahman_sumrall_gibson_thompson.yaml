@@ -1,3 +1,5 @@
+prefixes:
+  NHMUK EE: nhmuk-ee
 taxonomies:
 - taxon: echinodermata
   children:
@@ -13,11 +15,11 @@ taxonomies:
           new: true
           type: true
           material:
-          - catalogNumbers:
-            - NHMUK EE 1659
+          - prefix: NHMUK EE
+            numbers: [1659]
             role: holotype
-          - catalogNumbers:
-            - NHMUK EE 1660
+          - prefix: NHMUK EE
+            numbers: [1660]
             role: paratype
 phylogenies:
 - treeType: cladogram

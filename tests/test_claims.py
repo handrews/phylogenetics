@@ -365,7 +365,7 @@ def test_material_adapter(load_records, caplog):
       'position': 90,
       'file_contexts': file_contexts,
       'file_unused': (),
-      'file_repositories': ('fmnh',),
+      'file_repositories': ('fmnh-pe',),
     },
   )
   claims = extract({'1961_dehm': [root]})['1961_dehm']
@@ -408,7 +408,7 @@ def test_material_adapter(load_records, caplog):
   assert 'role' not in explicit
 
   # `PE` belongs to two registry entries; the file's list settles it.
-  assert file_listed['repository'] == 'fmnh' and file_listed['repositoryVia'] == 'file'
+  assert file_listed['repository'] == 'fmnh-pe' and file_listed['repositoryVia'] == 'file'
   assert file_listed['preparation'] == 'latex cast' and file_listed['castOf'] == 'GSC 752'
 
   assert tentative['contextKey'] == 'division-st' and tentative['contextTentative'] is True
@@ -532,8 +532,8 @@ def test_an_explicit_repository_wins_over_the_prefix_of_an_unrelated_holder(load
 
 
 def test_a_file_listed_prefix_strips_to_the_bare_number(load_records):
-  [specimen] = _specimen([{'catalogNumbers': ['PE-214']}], ('fmnh',))
-  assert specimen['repository'] == 'fmnh' and specimen['joinKeys'] == ['fmnh:214']
+  [specimen] = _specimen([{'catalogNumbers': ['PE-214']}], ('fmnh-pe',))
+  assert specimen['repository'] == 'fmnh-pe' and specimen['joinKeys'] == ['fmnh-pe:214']
 
 
 def _occurrence(context, file_repositories=()):
@@ -552,7 +552,7 @@ def _occurrence(context, file_repositories=()):
 
 
 def test_locality_keys_join_two_printed_forms_of_one_number(load_records):
-  claim = _occurrence({'localityNumbers': ['Walcott 35k', 'USNM loc. 35k', 'USGS 5462']})
+  claim = _occurrence({'localityNumbers': ['Walcott locality 35k', 'USNM loc. 35k', 'USGS 5462']})
   assert claim['localityKeys'] == ['usnm-l:35k', 'usgs-l:5462']
 
 

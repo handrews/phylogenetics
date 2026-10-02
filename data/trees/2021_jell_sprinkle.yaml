@@ -1,3 +1,6 @@
+prefixes:
+  UQF: uq-f
+  QMF: qm-f
 taxonomies:
 - taxon: echinodermata
   auth: [bruguière]
@@ -23,23 +26,14 @@ taxonomies:
             - taxon: navicula_whitehouse_1941
               type: true
               material:
-              - catalogNumbers:
-                - UQF5404
+              - prefix: UQF
+                numbers: [5404]
                 role: holotype
-              - catalogNumbers:
-                - UQF5398
-                - UQF5399
-                - UQF5400
-                - UQF5401
-                - UQF5402
-                - UQF5403
-                - UQF5405
-                - UQF5406
-                - UQF5407
+              - prefix: UQF
+                numbers: [5398, 5399, 5400, 5401, 5402, 5403, 5405, 5406, 5407]
                 role: paratype
-              - catalogNumbers:
-                - - QMF59034
-                  - QMF59220
+              - prefix: QMF
+                numbers: [[59034, 59220]]
                 role: topotype
                 notes: the whole range is over 200 specimens
           - taxon: cymbionites
@@ -47,20 +41,14 @@ taxonomies:
             - taxon: craticula_whitehouse_1941
               type: true
               material:
-              - catalogNumbers:
-                - UQF5409
+              - prefix: UQF
+                numbers: [5409]
                 role: holotype
-              - catalogNumbers:
-                - UQF5408
-                - - UQF5410
-                  - UQF5431
-                - UQF5433
-                - UQF5434
-                - UQF5435
+              - prefix: UQF
+                numbers: [5408, [5410, 5431], 5433, 5434, 5435]
                 role: paratype
-              - catalogNumbers:
-                - - QMF59221
-                  - QMF59373
+              - prefix: QMF
+                numbers: [[59221, 59373]]
                 role: topotype
           - taxon: lichenoides
         - taxon: thorntonitidae
@@ -73,14 +61,11 @@ taxonomies:
               type: true
               new: true
               material:
-              - catalogNumbers:
-                - QMF59526
+              - prefix: QMF
+                numbers: [59526]
                 role: holotype
-              - catalogNumbers:
-                - - QMF59374
-                  - QMF59525
-                - - QMF59527
-                  - QMF59586
+              - prefix: QMF
+                numbers: [[59374, 59525], [59527, 59586]]
                 role: paratype
           - openTaxon: lichenoididae-gen_smith.a.b_zamora_álvaro_2013
             provisional: true
@@ -101,12 +86,11 @@ taxonomies:
             type: true
             new: true
             material:
-            - catalogNumbers:
-              - QMF59588
+            - prefix: QMF
+              numbers: [59588]
               role: holotype
-            - catalogNumbers:
-              - - QMF59587
-                - QMF59646
+            - prefix: QMF
+              numbers: [[59587, 59646]]
               role: paratype
       - taxon: stromatocystitida
         children:
@@ -119,9 +103,8 @@ taxonomies:
             - openTaxon: cambraster-sp_jell_sprinkle_2021
               new: true
               material:
-              - catalogNumbers:
-                - - QMF59647
-                  - QMF59653
+              - prefix: QMF
+                numbers: [[59647, 59653]]
         - openTaxon: stromatocystitida-unknown-family_jell_sprinkle_2021
           children:
           - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
@@ -131,6 +114,5 @@ taxonomies:
             - openTaxon: kailidiscus-sp_jell_sprinkle_2021
               new: true
               material:
-              - catalogNumbers:
-                - - QMF59654
-                  - QMF59668
+              - prefix: QMF
+                numbers: [[59654, 59668]]

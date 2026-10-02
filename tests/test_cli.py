@@ -157,7 +157,7 @@ def test_specimen_subcommand(capsys):
   assert code == 0
   assert out == tools.specimen_history('UQF 5404')['rendered']
   assert out.splitlines()[0] == 'Specimen UQF 5404 (University of Queensland, fossil register)'
-  assert '2021  Jell & Sprinkle  holotype of Peridionites navicula as UQF5404' in out
+  assert '2021  Jell & Sprinkle  holotype of Peridionites navicula' in out
   code, out = run(capsys, 'specimen', 'PE-199')
   assert code == 0 and 'give the repository.' in out
   code, out = run(capsys, 'specimen', 'PE-199', '--repository', 'north-museum-fm')

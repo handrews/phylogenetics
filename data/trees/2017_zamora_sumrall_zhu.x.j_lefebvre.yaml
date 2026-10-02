@@ -1,3 +1,5 @@
+prefixes:
+  NIGPAS: nigpas
 taxonomies:
 - taxon: echinodermata
   children:
@@ -15,12 +17,11 @@ taxonomies:
             new: true
             type: true
             material:
-            - catalogNumbers:
-              - NIGPAS163198
+            - prefix: NIGPAS
+              numbers: [163198]
               role: holotype
-            - catalogNumbers:
-              - NIGPAS163199
-              - NIGPAS163210
+            - prefix: NIGPAS
+              numbers: [163199, 163210]
               role: paratype
         - taxon: ridersiidae
           children:

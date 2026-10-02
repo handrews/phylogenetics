@@ -1,4 +1,5 @@
-repositories: [ucmp]
+prefixes:
+  UCMP: ucmp
 taxonomies:
 - taxon: echinozoa
   children:
@@ -12,16 +13,15 @@ taxonomies:
         type: true
         new: true
         material:
-        - catalogNumbers:
-          - UCMP 37847
+        - prefix: UCMP
+          numbers: [37847]
           role: holotype
-        - catalogNumbers:
-          - UCMP 37849
-          - UCMP 37854
+        - prefix: UCMP
+          numbers: [37849, 37854]
           role: paratype
       - taxon: curtisi_durham_caster_1963
         new: true
         material:
-        - catalogNumbers:
-          - UCMP 37844
+        - prefix: UCMP
+          numbers: [37844]
           role: holotype

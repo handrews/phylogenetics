@@ -1,3 +1,5 @@
+prefixes:
+  USNM: usnm
 taxonomies:
 - taxon: echinozoa
   children:
@@ -15,6 +17,6 @@ taxonomies:
             provisional: true
             new: true
             material:
-            - catalogNumbers:
-              - USNM 172047
+            - prefix: USNM
+              numbers: [172047]
               role: holotype

@@ -44,17 +44,19 @@
   "place": "Chicago",
   "prefixes": [
    "FMNH",
-   "PE",
-   "FMNH PE",
    "CFM",
    "CFMP",
-   "CFMPE",
    "CFMUC"
   ],
   "type": "institution"
  },
  "fmnh-pe": {
   "name": "Field Museum of Natural History, PE register",
+  "prefixes": [
+   "PE",
+   "FMNH PE",
+   "CFMPE"
+  ],
   "subject": "specimens",
   "type": "collection",
   "within": "fmnh"
@@ -164,20 +166,29 @@
   ],
   "place": "London",
   "prefixes": [
-   "NHMUK",
-   "E",
-   "EE"
+   "NHMUK"
   ],
   "type": "institution"
  },
  "nhmuk-e": {
   "name": "Natural History Museum, E register",
+  "prefixes": [
+   "E",
+   "NHMUK E",
+   "NHM UK E",
+   "BMNH E"
+  ],
   "subject": "specimens",
   "type": "collection",
   "within": "nhmuk"
  },
  "nhmuk-ee": {
   "name": "Natural History Museum, EE register",
+  "prefixes": [
+   "EE",
+   "NHMUK EE",
+   "NHM UK EE"
+  ],
   "subject": "specimens",
   "type": "collection",
   "within": "nhmuk"
@@ -376,6 +387,7 @@
  "usgs-l": {
   "name": "U.S. Geological Survey, locality register",
   "prefixes": [
+   "USGS locality",
    "USGS"
   ],
   "subject": "localities",
@@ -392,10 +404,8 @@
  "usnm-l": {
   "name": "U.S. National Museum, locality register",
   "prefixes": [
-   "USNM",
-   "USNM loc",
    "USNM locality",
-   "Walcott",
+   "USNM loc.",
    "Walcott locality"
   ],
   "subject": "localities",

@@ -8,8 +8,8 @@ taxonomies:
     pages:
     - [10, 11]
     material:
-    - catalogNumbers:
-      - RVS [Plate 2, Figures 1–4]
+    - label: RVS [Plate 2, Figures 1–4]
+      repository: rievers
       context: near-kirn-nahe
       role: holotype
     illustrations:

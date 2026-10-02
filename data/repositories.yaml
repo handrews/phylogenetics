@@ -27,12 +27,13 @@ fmnh:
   name: Field Museum of Natural History
   type: institution
   place: Chicago
-  prefixes: [FMNH, PE, FMNH PE, CFM, CFMP, CFMPE, CFMUC]
+  prefixes: [FMNH, CFM, CFMP, CFMUC]
 fmnh-pe:
   name: Field Museum of Natural History, PE register
   type: collection
   within: fmnh
   subject: specimens
+  prefixes: [PE, FMNH PE, CFMPE]
 gcm:
   name: Grand Canyon Museum
   type: institution
@@ -97,18 +98,20 @@ nhmuk:
   name: Natural History Museum
   type: institution
   place: London
-  prefixes: [NHMUK, E, EE]
+  prefixes: [NHMUK]
   otherNames: [BMNH, NHM UK]
 nhmuk-e:
   name: Natural History Museum, E register
   type: collection
   within: nhmuk
   subject: specimens
+  prefixes: [E, NHMUK E, NHM UK E, BMNH E]
 nhmuk-ee:
   name: Natural History Museum, EE register
   type: collection
   within: nhmuk
   subject: specimens
+  prefixes: [EE, NHMUK EE, NHM UK EE]
 nigpas:
   name: Nanjing Institute of Geology and Palaeontology, Chinese Academy of Sciences
   type: institution
@@ -243,7 +246,7 @@ usgs-l:
   name: U.S. Geological Survey, locality register
   type: collection
   subject: localities
-  prefixes: [USGS]
+  prefixes: [USGS locality, USGS]
 usnm:
   name: National Museum of Natural History, Smithsonian Institution
   type: institution
@@ -254,7 +257,7 @@ usnm-l:
   type: collection
   within: usnm
   subject: localities
-  prefixes: [USNM, USNM loc, USNM locality, Walcott, Walcott locality]
+  prefixes: [USNM locality, USNM loc., Walcott locality]
   notes: >
     Walcott's locality numbers. Sprinkle 1973 prints one number as
     "Walcott locality 74e" in the text and "USNM locality 74e" on the

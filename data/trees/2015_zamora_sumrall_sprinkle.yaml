@@ -1,3 +1,5 @@
+prefixes:
+  USNM: usnm
 taxonomies:
 - taxon: blastozoa
   children:
@@ -12,13 +14,12 @@ taxonomies:
           type: true
           new: true
           material:
-          - catalogNumbers:
-            - USNM 178555
+          - prefix: USNM
+            numbers: [178555]
             context: long-valley
             role: holotype
-          - catalogNumbers:
-            - USNM 178556
-            - USNM 178554
+          - prefix: USNM
+            numbers: [178556, 178554]
             context: long-valley
             role: paratype
           contexts:

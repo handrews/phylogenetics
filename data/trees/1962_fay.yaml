@@ -14,8 +14,9 @@ taxonomies:
         inferred: [type]
         basis: Fay never prints "type species"; the genus is monotypic (p. 201)
       material:
-      - catalogNumbers:
-        - Canadian Geological Survey 752
+      - numbers: [752]
+        repository: gsc
+        asPrinted: Canadian Geological Survey 752
         role: lectotype
         editorial:
           inferred: [role]

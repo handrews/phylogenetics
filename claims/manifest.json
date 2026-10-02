@@ -4963,7 +4963,7 @@
    "claims": {
     "act": 3,
     "editorial": 1,
-    "material": 4,
+    "material": 5,
     "placement": 5,
     "usage": 6
    },
@@ -4979,7 +4979,7 @@
    },
    "derived": {
     "illustrations": 1,
-    "material": 2,
+    "material": 3,
     "newTaxa": 2,
     "occurrences": 1,
     "skeleton": 11
@@ -4994,7 +4994,7 @@
    "material": {
     "illustration": 1,
     "occurrence": 1,
-    "specimen": 2
+    "specimen": 3
    },
    "tree": true
   },
@@ -7873,7 +7873,7 @@
     "absence": 62,
     "acceptance": 12,
     "act": 75,
-    "material": 575,
+    "material": 580,
     "placement": 126,
     "rejection": 19,
     "usage": 170
@@ -7890,7 +7890,7 @@
    },
    "derived": {
     "illustrations": 278,
-    "material": 160,
+    "material": 165,
     "newTaxa": 27,
     "occurrences": 137,
     "skeleton": 315,
@@ -7908,7 +7908,7 @@
     "illustration": 278,
     "occurrence": 94,
     "range": 43,
-    "specimen": 160
+    "specimen": 165
    },
    "tree": true
   },
@@ -9446,7 +9446,7 @@
    "claims": {
     "acceptance": 1,
     "act": 16,
-    "material": 15,
+    "material": 16,
     "placement": 23,
     "usage": 28
    },
@@ -9461,7 +9461,7 @@
     "types": "partly"
    },
    "derived": {
-    "material": 15,
+    "material": 16,
     "newTaxa": 12,
     "skeleton": 51,
     "synonymy": 1,
@@ -9475,7 +9475,7 @@
    },
    "inconsistencies": [],
    "material": {
-    "specimen": 15
+    "specimen": 16
    },
    "tree": true
   },
@@ -12591,7 +12591,7 @@
    },
    "claims": {
     "act": 19,
-    "material": 13,
+    "material": 15,
     "placement": 42,
     "rejection": 1,
     "usage": 44
@@ -12607,7 +12607,7 @@
     "types": null
    },
    "derived": {
-    "material": 13,
+    "material": 15,
     "newTaxa": 9,
     "skeleton": 87,
     "types": 9
@@ -12620,7 +12620,7 @@
    },
    "inconsistencies": [],
    "material": {
-    "specimen": 13
+    "specimen": 15
    },
    "tree": true
   },
@@ -14648,7 +14648,7 @@
    "claims": {
     "acceptance": 11,
     "act": 4,
-    "material": 26,
+    "material": 27,
     "placement": 16,
     "usage": 35
    },
@@ -14664,7 +14664,7 @@
    },
    "derived": {
     "illustrations": 5,
-    "material": 11,
+    "material": 12,
     "newTaxa": 1,
     "occurrences": 10,
     "skeleton": 51,
@@ -14681,7 +14681,7 @@
    "material": {
     "illustration": 5,
     "occurrence": 10,
-    "specimen": 11
+    "specimen": 12
    },
    "tree": true
   },
@@ -14715,7 +14715,7 @@
    },
    "claims": {
     "act": 4,
-    "material": 2,
+    "material": 3,
     "placement": 68,
     "usage": 71
    },
@@ -14730,7 +14730,7 @@
     "types": null
    },
    "derived": {
-    "material": 2,
+    "material": 3,
     "newTaxa": 3,
     "phylogeny": 64,
     "skeleton": 75,
@@ -14744,7 +14744,7 @@
    },
    "inconsistencies": [],
    "material": {
-    "specimen": 2
+    "specimen": 3
    },
    "tree": true
   },

@@ -1,4 +1,10 @@
-repositories: [nhmuk]
+prefixes:
+  NHMUK E: nhmuk-e
+  NHMUK EE: nhmuk-ee
+  MPEP: mpep
+  E: nhmuk-e
+  EE: nhmuk-ee
+  UCBL-FSL: ucbl-fsl
 taxonomies:
 - taxon: echinodermata
   children:
@@ -92,13 +98,12 @@ taxonomies:
                   source: 2013_sumrall_heredia_rodríguez.c.m_mestre
                   pages: 773
               material:
-              - catalogNumbers:
-                - NHMUK E23470
+              - prefix: NHMUK E
+                numbers: [23470]
                 context: lady-burn-starfish-bed
                 role: holotype
-              - catalogNumbers:
-                - NHMUK E23674
-                - NHMUK E29570
+              - prefix: NHMUK E
+                numbers: [23674, 29570]
                 context: lady-burn-starfish-bed
               contexts:
                 lady-burn-starfish-bed:
@@ -123,22 +128,24 @@ taxonomies:
               pages:
               - [120, 122]
               material:
-              - catalogNumbers:
-                - NHMUK EE16642
+              - prefix: NHMUK EE
+                numbers: [16642]
                 context: rock-pool-ledge
                 role: holotype
-              - catalogNumbers:
-                - - NHMUK EE15752
-                  - NHMUK EE15755
-                - MPEP 1126.1
+              - prefix: NHMUK EE
+                numbers: [[15752, 15755]]
                 context: rock-pool-ledge
                 role: paratype
-              - catalogNumbers:
-                - NHMUK EE15756
+              - prefix: MPEP
+                numbers: ['1126.1']
+                context: rock-pool-ledge
+                role: paratype
+              - prefix: NHMUK EE
+                numbers: [15756]
                 context: pavillon-river-section
                 role: paratype
-              - catalogNumbers:
-                - MPEP 1143.1
+              - prefix: MPEP
+                numbers: ['1143.1']
                 context: ctx-2
               illustrations:
               - figures:
@@ -171,10 +178,8 @@ taxonomies:
               new: true
             - openTaxon: rhenopyrgus-sp-1_ewin_martin.m_isotalo_zamora_2020
               material:
-              - catalogNumbers:
-                - E 62751
-                - E 62752
-                - E 62753
+              - prefix: E
+                numbers: [62751, 62752, 62753]
                 context: newlands-farm
               illustrations:
               - figures:
@@ -210,8 +215,8 @@ taxonomies:
                   - figures: 1C
             - openTaxon: rhenopyrgus-sp-2_ewin_martin.m_isotalo_zamora_2020
               material:
-              - catalogNumbers:
-                - EE 16254
+              - prefix: EE
+                numbers: [16254]
                 context: girvan
               illustrations:
               - figures:
@@ -249,15 +254,14 @@ taxonomies:
                 list with no explanation; that page in the referenced
                 paper does not include this specimen.
               material:
-              - catalogNumbers:
-                - UCBL-FSL 713316
+              - prefix: UCBL-FSL
+                numbers: [713316]
                 context: sw-of-donnadieu
-              - catalogNumbers:
-                - UCBL-FSL 713312
+              - prefix: UCBL-FSL
+                numbers: [713312]
                 context: la-croix-de-roquebrun
-              - catalogNumbers:
-                - - UCBL-FSL 713313
-                  - UCBL-FSL 713315
+              - prefix: UCBL-FSL
+                numbers: [[713313, 713315]]
                 context: pont-sup-rieur
               illustrations:
               - page: 121

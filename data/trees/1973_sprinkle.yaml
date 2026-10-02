@@ -1,4 +1,20 @@
-repositories: [u-cincinnati-caster, north-museum-fm, sprinkle-l]
+prefixes:
+  USNM: usnm
+  MCZ: mcz
+  PE: north-museum-fm
+  NYSM: nysm
+  AMNH: amnh
+  GCM: gcm
+  E: u-cincinnati-caster
+  UU: uu
+  ISU: isu
+  GSC: gsc
+  UC: u-cincinnati
+  BC: u-cincinnati-caster
+  USGS locality: usgs-l
+  Walcott locality: usnm-l
+  USNM locality: usnm-l
+localityRegister: sprinkle-l
 contexts:
   as-1:
     unit: [Wheeler Shale]
@@ -11,7 +27,7 @@ contexts:
     - House Range
     - W of Delta
     - W. Utah
-    localityNumbers: [AS-1]
+    localityNumbers: [{number: AS-1}]
     coordinatesAsPrinted: near middle of sect. 2, T. 17 S, R. 13 W
     mapSheet: Delta, Utah 1:250,000 topo. sheet
     notes: Top 100 ft. of the Wheeler Shale.
@@ -26,7 +42,7 @@ contexts:
     - House Range
     - W of Delta
     - W. Utah
-    localityNumbers: [AS-2]
+    localityNumbers: [{number: AS-2}]
     coordinatesAsPrinted: near boundary between sect. 1 and 2, T. 17 S, R. 13 W
     mapSheet: Delta, Utah 1:250,000 topo. sheet
   cf-1:
@@ -39,7 +55,7 @@ contexts:
     - about 6.3 mi. N of Brigham City
     - Box Elder Co.
     - N. Utah
-    localityNumbers: [CF-1]
+    localityNumbers: [{number: CF-1}]
     coordinatesAsPrinted: near center of sect. 14, T. 10 N, R. 2 W
     mapSheet: Brigham City 7½′ Quad.
   cl-1:
@@ -52,7 +68,7 @@ contexts:
     - W side of Squaw Creek
     - about 7½ mi. NW of Clayton
     - central Idaho
-    localityNumbers: [CL-1, USGS 5462]
+    localityNumbers: [{number: CL-1}, {prefix: USGS locality, number: 5462}]
     coordinatesAsPrinted: T. 12 N, R. 17 E (unsurveyed)
     mapSheet: Clayton 7½′ Quad.
     tentative: [biozone]
@@ -68,7 +84,7 @@ contexts:
     - 7 mi. NE of Washburn
     - Grainger Co.
     - NE Tenn.
-    localityNumbers: [DT-3]
+    localityNumbers: [{number: DT-3}]
     mapSheet: Avondale 7½′ Quad.
   ec-1:
     unit: ['"Spence Shale equivalent"']
@@ -81,7 +97,7 @@ contexts:
     - about 9.5 mi. W of Ovid
     - Bear Lake Co.
     - SE Idaho
-    localityNumbers: [EC-1, USGS 6201]
+    localityNumbers: [{number: EC-1}, {prefix: USGS locality, number: 6201}]
     coordinatesAsPrinted: SE¼, sect. 15, T. 12 S, R. 41 E (unsurveyed)
     mapSheet: Preston, Idaho 1:250,000 topo. sheet
   em-1:
@@ -95,7 +111,7 @@ contexts:
     - north of York
     - York Co.
     - SE Pa.
-    localityNumbers: [EM-1]
+    localityNumbers: [{number: EM-1}]
     mapSheet: York Haven 7½′ Quad.
   fc-1:
     unit: [Carrara Fm.]
@@ -108,7 +124,7 @@ contexts:
     - Funeral Mts.
     - Death Valley National Park
     - E. Calif.
-    localityNumbers: [FC-1, USGS 4148 CO]
+    localityNumbers: [{number: FC-1}, {prefix: USGS locality, number: 4148 CO}]
     coordinatesAsPrinted: E½, NW¼, sect. 15, T. 27 N, R. 2 E
     mapSheet: Furnace Creek 15′ Quad.
     notes: About 100 ft. below base of middle limestone member.
@@ -124,7 +140,7 @@ contexts:
     - E end of Mt. Assiniboine Prov. Park
     - SE Br. Col.
     - Canada
-    localityNumbers: [GG-1]
+    localityNumbers: [{number: GG-1}]
     mapSheet: Mt. Assiniboine Prov. Park Map – P.S.–A–2
   hl-1:
     unit: [Nolichucky Fm.]
@@ -137,7 +153,7 @@ contexts:
     - ¾ mi. SSW of Hill
     - Scott Co.
     - SE Va.
-    localityNumbers: [HL-1]
+    localityNumbers: [{number: HL-1}]
     mapSheet: Clinchport 7½′ Quad.
   ik-2:
     unit: [Antelope Valley Fm.]
@@ -151,7 +167,7 @@ contexts:
     - about ½ mi. from mouth
     - Toquima Range
     - central Nev.
-    localityNumbers: [IK-2]
+    localityNumbers: [{number: IK-2}]
     mapSheet: Dianas Punch Bowl 15′ Quad.
   ik-3:
     unit: [Antelope Valley Fm.]
@@ -163,7 +179,7 @@ contexts:
     - '"Sponge Beds" running diagonally up ridge on N side of Ikes Canyon opposite and above IK-2.'
     - Toquima Range
     - central Nev.
-    localityNumbers: [IK-3]
+    localityNumbers: [{number: IK-3}]
     mapSheet: Dianas Punch Bowl 15′ Quad.
     tentative: [biozone]
   kt-1:
@@ -179,7 +195,7 @@ contexts:
     - Jasper Park
     - Alberta
     - W. Can.
-    localityNumbers: [KT-1]
+    localityNumbers: [{number: KT-1}]
     coordinatesAsPrinted: near 52° 14′ 30″ N, 117° 17′ W
     mapSheet: Jasper Park south map sheet
   lo-1:
@@ -192,7 +208,7 @@ contexts:
     - hillside above Meadowville road following Right Fork of Logan River
     - about 9.5 mi. NE of Logan
     - N. Utah
-    localityNumbers: [LO-1]
+    localityNumbers: [{number: LO-1}]
     coordinatesAsPrinted: W½, NW¼, sect. 17, T. 12 N, R. 3 E
     mapSheet: old Logan, Utah-Idaho 30′ map
   lv-2:
@@ -205,7 +221,7 @@ contexts:
     - 2.3 mi. NE of road intersection at Lee Valley
     - Hawkins Co.
     - NE Tenn.
-    localityNumbers: [LV-2]
+    localityNumbers: [{number: LV-2}]
     mapSheet: Pressmens Home 7½′ Quad.
   mj-1:
     unit: [Antelope Valley Fm.]
@@ -218,7 +234,7 @@ contexts:
     - about 7 mi. E of Beatty
     - Nye Co.
     - W. Nev.
-    localityNumbers: [MJ-1]
+    localityNumbers: [{number: MJ-1}]
     coordinatesAsPrinted: NE¼, sect. 24, T. 12 S, R. 47 E
     mapSheet: Bare Mountain 15′ Quad. (U.S.G.S. map GQ-157)
     tentative: [biozone]
@@ -233,7 +249,7 @@ contexts:
     - about 2.0 mi. W of Pioche
     - Lincoln Co.
     - E. Nev.
-    localityNumbers: [PI-1]
+    localityNumbers: [{number: PI-1}]
     coordinatesAsPrinted: E½, sect. 20, T. 1 N, R. 67 E
     mapSheet: Pioche 7½′ Quad.
   pi-2:
@@ -247,7 +263,7 @@ contexts:
     - about 2.0 mi. W of Pioche
     - Lincoln Co.
     - E. Nev.
-    localityNumbers: [PI-2]
+    localityNumbers: [{number: PI-2}]
     mapSheet: Pioche 7½′ Quad.
   pi-4:
     unit: [Chisholm Shale]
@@ -260,7 +276,7 @@ contexts:
     - about 2.0 mi. W of Pioche
     - Lincoln Co.
     - E. Nev.
-    localityNumbers: [PI-4]
+    localityNumbers: [{number: PI-4}]
     mapSheet: Pioche 7½′ Quad.
   pi-6:
     unit: [Chisholm Shale]
@@ -273,7 +289,7 @@ contexts:
     - about 2.0 mi. W of Pioche
     - Lincoln Co.
     - E. Nev.
-    localityNumbers: [PI-6]
+    localityNumbers: [{number: PI-6}]
     mapSheet: Pioche 7½′ Quad.
   pi-7:
     unit: [Chisholm Shale]
@@ -286,7 +302,7 @@ contexts:
     - about 2.0 mi. W of Pioche
     - Lincoln Co.
     - E. Nev.
-    localityNumbers: [PI-7]
+    localityNumbers: [{number: PI-7}]
     mapSheet: Pioche 7½′ Quad.
   rc-7:
     unit: [Benbolt Fm.]
@@ -298,7 +314,7 @@ contexts:
     - about 0.6 mi. SW of Rye Cove main intersection (Bench Mark SN 262)
     - Scott Co.
     - SW Va.
-    localityNumbers: [RC-7]
+    localityNumbers: [{number: RC-7}]
     mapSheet: Clinchport 7½′ Quad.
   rc-8:
     unit: [Benbolt Fm.]
@@ -310,7 +326,7 @@ contexts:
     - about 1.2 mi. W of Rye Cove main intersection
     - Scott Co.
     - SW Va.
-    localityNumbers: [RC-8]
+    localityNumbers: [{number: RC-8}]
     mapSheet: Clinchport 7½′ Quad.
   rc-9:
     unit: [Benbolt Fm.]
@@ -322,7 +338,7 @@ contexts:
     - about 0.7 mi. N of Rye Cove main intersection
     - Scott Co.
     - SW Va.
-    localityNumbers: [RC-9]
+    localityNumbers: [{number: RC-9}]
     mapSheet: Clinchport 7½′ Quad.
   rp-1:
     unit: [Snowy Range Fm.]
@@ -335,7 +351,7 @@ contexts:
     - Republic Creek
     - 1.3 mi. S of Cooke City
     - SW Mont.
-    localityNumbers: [RP-1, Walcott 37o]
+    localityNumbers: [{number: RP-1}, {prefix: Walcott locality, number: 37o}]
     mapSheet: Cooke City, Mont.-Wyo. 15′ Quad.
     notes: (locality is in NW Wyo.)
   sc-1:
@@ -348,7 +364,7 @@ contexts:
     - talus pile of small prospect pit in fault slice on S side of Adams Hill about 800 ft. N of main dirt road
     - about 1.5 mi. WSW of Eureka
     - central Nev.
-    localityNumbers: [SC-1]
+    localityNumbers: [{number: SC-1}]
     coordinatesAsPrinted: NW¼, SW¼, NE¼, NW¼, sect. 22, T. 19 N, R. 53 E
     mapSheet: 'Nolan, 1962: Plate 1—Geologic Map of the Eureka Mining District, Nevada'
     notes: Top of the Secret Canyon Fm.
@@ -363,7 +379,7 @@ contexts:
     - just SW of Eureka Nevada tunnels
     - about 2.5 mi. SSW of Eureka
     - central Nev.
-    localityNumbers: [SC-3]
+    localityNumbers: [{number: SC-3}]
     coordinatesAsPrinted: NE¼, SE¼, SE¼, sect. 34, T. 19 N, R. 53 E
     mapSheet: 'Nolan, 1962: Plate 1—Geologic Map of the Eureka Mining District, Nevada'
   sc-4:
@@ -376,7 +392,7 @@ contexts:
     - small spur ridge beneath Hamburg Dolomite on E side of Secret Canyon about ¼ mi. N of outlet to E through Hamburg Ridge
     - 5½-6 mi. S of Eureka
     - central Nev.
-    localityNumbers: [SC-4]
+    localityNumbers: [{number: SC-4}]
     mapSheet: unmapped below 1:200,000 (1968)
   sc-4a:
     unit: [Secret Canyon Fm.]
@@ -387,7 +403,7 @@ contexts:
     location:
     - side of ridge about 200-400 ft. above road on E side of Secret Canyon about ¼ mi. N of SC-4.
     - central Nev.
-    localityNumbers: [SC-4A]
+    localityNumbers: [{number: SC-4A}]
   sh-1:
     unit: [Kinzers Fm.]
     period: Cambrian
@@ -398,7 +414,7 @@ contexts:
     - overgrown roadcut on NE side of state rt. 74 approximately 300 ft. SE of the intersection with rt. 238
     - about 2.0 mi. WNW of York
     - SE Pa.
-    localityNumbers: [SH-1]
+    localityNumbers: [{number: SH-1}]
     mapSheet: West York 7½′ Quad.
   sh-2:
     unit: [Kinzers Fm.]
@@ -410,7 +426,7 @@ contexts:
     - W end of corn field about 500-600 ft. NE of SH-1.
     - about 2.0 mi. WNW of York
     - SE Pa.
-    localityNumbers: [SH-2]
+    localityNumbers: [{number: SH-2}]
     mapSheet: West York 7½′ Quad.
 taxonomies:
 - taxon: echinodermata
@@ -485,85 +501,94 @@ taxonomies:
               type: true
               pages: 62
               material:
-              - catalogNumbers: [USNM 90773]
+              - prefix: USNM
+                numbers: [90773]
                 role: holotype
                 context: walcott-8q
                 notes: two counterparts
-              - catalogNumbers: [USNM 90773A]
+              - prefix: USNM
+                numbers: [90773A]
                 role: paratype
                 context: walcott-8q
                 notes: two counterparts
-              - catalogNumbers: [USNM 90773B, USNM 90773C1, USNM 90773C2, USNM 90773C3]
-                catalogNumbersAsPrinted: B, C1–3
+              - prefix: USNM
+                numbers: [90773B, 90773C1, 90773C2, 90773C3]
+                asPrinted: B, C1–3
                 role: paratype
                 context: walcott-8q
                 notes: specimen C4 is apparently a portion of Camptostroma roddyi
-              - catalogNumbers: [MCZ 588A, MCZ 588B]
-                catalogNumbersAsPrinted: MCZ 588–590
+              - prefix: MCZ
+                numbers: [588A, 588B]
+                asPrinted: MCZ 588–590
                 role: plesiotype
                 context: sh-1
                 parts: [part, counterpart]
-              - catalogNumbers: [MCZ 589]
-                catalogNumbersAsPrinted: MCZ 588–590
+              - prefix: MCZ
+                numbers: [589]
+                asPrinted: MCZ 588–590
                 role: plesiotype
                 context: sh-1
-              - catalogNumbers: [MCZ 590A, MCZ 590B]
-                catalogNumbersAsPrinted: MCZ 588–590
+              - prefix: MCZ
+                numbers: [590A, 590B]
+                asPrinted: MCZ 588–590
                 role: plesiotype
                 context: sh-2
-              - catalogNumbers: [MCZ 591]
+              - prefix: MCZ
+                numbers: [591]
                 count: 10
                 context: sh-1
-              - catalogNumbers: [MCZ 592]
+              - prefix: MCZ
+                numbers: [592]
                 count: 3
                 context: em-1
-              - catalogNumbers: [MCZ 593]
+              - prefix: MCZ
+                numbers: [593]
                 context: sh-2
                 notes: many new unstudied specimens
               illustrations:
               - plate: 1
                 figures: [1, 2]
-                of: USNM 90773
+                of: 90773
                 depicts: cast
               - plate: 1
                 figures: 3
-                of: USNM 90773C1
+                of: 90773C1
                 depicts: cast
               - plate: 1
                 figures: 4
-                of: USNM 90773B
+                of: 90773B
                 depicts: cast
               - plate: 1
                 figures: [5, 6]
-                of: USNM 90773A
+                of: 90773A
                 depicts: cast
               - plate: 1
                 figures: 7
-                of: USNM 90773C2
+                of: 90773C2
                 depicts: cast
                 notes: caption prints "USNM 09773-C2"
               - plate: 1
                 figures: 8
-                of: USNM 90773C3
+                of: 90773C3
                 depicts: cast
               - plate: 2
                 figures: [[1, 3]]
-                of: [MCZ 588A, MCZ 588B]
+                of: [588A, 588B]
                 depicts: cast
               - plate: 2
                 figures: [4, 5]
-                of: MCZ 589
+                of: 589
                 depicts: cast
               - plate: 2
                 figures: [6, 7]
-                of: [MCZ 590A, MCZ 590B]
+                of: [590A, 590B]
                 depicts: cast
               - textFigures: 21A
                 page: 63
-                of: MCZ 588A
+                of: 588A
               - textFigures: 21B
                 page: 63
-                of: USNM 90773B
+                of: 90773B
               contexts:
                 walcott-8q:
                   unit: [Kinzers Formation]
@@ -575,39 +600,42 @@ taxonomies:
                   - Lightners Hill near the contact with the Triassic
                   - 2.0 mi. NW of York
                   - Pa.
-                  localityNumbers: [Walcott 8q]
+                  localityNumbers: [{prefix: Walcott locality, number: 8q}]
                   notes: This locality has not been satisfactorily pinpointed, but may have been covered by a large shopping center on route 238 built about five years ago.
             - openTaxon: lepidocystis-cf-wanneri_sprinkle_1973
               cf: wanneri_foerste_1938
               new: true
               pages: 66
               material:
-              - catalogNumbers: [MCZ 628A, MCZ 628B]
-                catalogNumbersAsPrinted: MCZ 628A, B
+              - prefix: MCZ
+                numbers: [628A, 628B]
+                asPrinted: MCZ 628A, B
                 role: figured
                 collectedBy: Martin Anné
                 context: sh-2
                 parts: [part, counterpart]
-              - catalogNumbers: [PE-199, PE-199-A]
-                catalogNumbersAsPrinted: PE-199 and 199-A
+              - prefix: PE
+                numbers: [199, 199-A]
+                asPrinted: PE-199 and 199-A
                 role: figured
                 holder: Kraig Derstler
                 collectedBy: Kraig Derstler
                 context: sh-1
                 notes: To be deposited in the paleontological collections of the North Museum, Franklin and Marshall College, Lancaster, Pennsylvania, within the next year.
-              - catalogNumbers: [MCZ 629A, MCZ 629B]
-                catalogNumbersAsPrinted: MCZ 629A and B
+              - prefix: MCZ
+                numbers: [629A, 629B]
+                asPrinted: MCZ 629A and B
                 preparation: latex cast
-                castOf: PE-199
+                castOf: 199
               illustrations:
               - plate: 3
                 figures: [[1, 4]]
-                of: MCZ 628A
+                of: 628A
                 depicts: cast
                 notes: latex casts A1 and B1
               - plate: 3
                 figures: [5, 6]
-                of: MCZ 629A
+                of: 629A
                 depicts: cast
                 notes: caption prints "latex casts MCZ 629-B1 and A0"
           - taxon: kinzercystis
@@ -627,66 +655,69 @@ taxonomies:
               new: true
               pages: 70
               material:
-              - catalogNumbers: [MCZ 581A, MCZ 581B]
-                catalogNumbersAsPrinted: MCZ 581
+              - prefix: MCZ
+                numbers: [581A, 581B]
+                asPrinted: MCZ 581
                 role: holotype
                 context: sh-1
                 parts: [part, counterpart]
-              - catalogNumbers: [MCZ 582A, MCZ 582B, MCZ 583, MCZ 584, MCZ 585, MCZ 586, MCZ 587]
-                catalogNumbersAsPrinted: MCZ 582–587
+              - prefix: MCZ
+                numbers: [582A, 582B, 583, 584, 585, 586, 587]
+                asPrinted: MCZ 582–587
                 role: paratype
                 context: sh-1
-              - catalogNumbers: [MCZ 729]
+              - prefix: MCZ
+                numbers: [729]
                 role: paratype
                 context: sh-1
               illustrations:
               - plate: 4
                 figures: [1, 2]
-                of: [MCZ 581A, MCZ 581B]
+                of: [581A, 581B]
                 depicts: cast
                 notes: latex casts A3 and B3
               - plate: 4
                 figures: [3, 4]
-                of: [MCZ 582A, MCZ 582B]
+                of: [582A, 582B]
                 depicts: cast
                 notes: latex casts A2 and B7
               - plate: 5
                 figures: [[1, 3]]
-                of: MCZ 584
+                of: 584
                 depicts: cast
               - plate: 5
                 figures: [4, 5]
-                of: MCZ 583
+                of: 583
                 depicts: cast
               - plate: 5
                 figures: 6
-                of: MCZ 585
+                of: 585
                 depicts: cast
               - plate: 5
                 figures: [7, 8]
-                of: MCZ 586
+                of: 586
                 depicts: cast
               - plate: 6
                 figures: [[1, 5]]
-                of: [MCZ 581A, MCZ 581B]
+                of: [581A, 581B]
                 depicts: cast
               - plate: 6
                 figures: [6, 8]
-                of: [MCZ 582B, MCZ 582A]
+                of: [582B, 582A]
                 depicts: cast
               - plate: 6
                 figures: 7
-                of: MCZ 583
+                of: 583
                 depicts: cast
               - textFigures: 5A
                 page: 16
                 depicts: drawing
               - textFigures: 22
                 page: 70
-                of: MCZ 581A
+                of: 581A
               - textFigures: 23
                 page: 73
-                of: MCZ 582A
+                of: 582A
       - openTaxon: eocrinoidea-unnamed-order-1_sprinkle_1973
         pages: 76
         ranges:
@@ -720,23 +751,27 @@ taxonomies:
               type: true
               pages: 80
               material:
-              - catalogNumbers: [USNM 64350]
+              - prefix: USNM
+                numbers: [64350]
                 role: lectotype
                 context: walcott-62x
                 notes: studied from two USNM latex casts after preparation, and one University of Cincinnati cast before preparation
-              - catalogNumbers: [USNM 6431]
+              - prefix: USNM
+                numbers: [6431]
                 role: syntype
                 notes: studied from a University of Cincinnati latex cast
               - label: six to eight additional unnumbered specimens
                 repository: usnm
-              - catalogNumbers: [[MCZ 656, MCZ 665]]
-                catalogNumbersAsPrinted: MCZ 656–665
+              - prefix: MCZ
+                numbers: [[656, 665]]
                 role: plesiotype
                 context: gg-1
-              - catalogNumbers: [MCZ 668]
+              - prefix: MCZ
+                numbers: [668]
                 count: 24
-              - catalogNumbers: [NYSM 12758, NYSM 12759]
-                catalogNumbersAsPrinted: NYSM 12758–9
+              - prefix: NYSM
+                numbers: [12758, 12759]
+                asPrinted: NYSM 12758–9
                 role: plesiotype
                 context: mt-mumm
                 notes: two (out of four) small specimens from Mount Mumm
@@ -748,47 +783,47 @@ taxonomies:
               illustrations:
               - plate: 7
                 figures: [1, 2]
-                of: USNM 64350
+                of: 64350
                 depicts: cast
                 notes: latex casts from UC collection (Fig. 1) and USNM collection (Fig. 2)
               - plate: 7
                 figures: 3
-                of: MCZ 656
+                of: 656
                 depicts: cast
               - plate: 7
                 figures: 4
-                of: [MCZ 657, MCZ 658]
+                of: [657, 658]
                 depicts: cast
               - plate: 7
                 figures: 5
-                of: MCZ 659
+                of: 659
                 depicts: cast
               - plate: 7
                 figures: 6
-                of: MCZ 660
+                of: 660
                 depicts: cast
               - plate: 8
                 figures: [1, 4, 5]
-                of: MCZ 661
+                of: 661
                 depicts: cast
               - plate: 8
                 figures: 2
-                of: [MCZ 662, MCZ 663]
+                of: [662, 663]
                 depicts: cast
               - plate: 8
                 figures: [3, 4]
-                of: MCZ 664
+                of: 664
                 depicts: cast
               - plate: 8
                 figures: 6
-                of: NYSM 12758
+                of: 12758
               - plate: 8
                 figures: 7
-                of: MCZ 665
+                of: 665
                 depicts: cast
               - plate: 8
                 figures: 8
-                of: NYSM 12759
+                of: 12759
               contexts:
                 walcott-62x:
                   unit: [Mt. Whyte Formation]
@@ -800,7 +835,7 @@ taxonomies:
                   - Naiset Point above Gog Lake
                   - Assiniboine Provincial Park
                   - southeastern British Columbia
-                  localityNumbers: [Walcott 62x]
+                  localityNumbers: [{prefix: Walcott locality, number: 62x}]
                 mt-mumm:
                   unit: [Titkana Fm.]
                   location:
@@ -841,98 +876,111 @@ taxonomies:
                 auth: [robison]
                 year: 1965
               material:
-              - catalogNumbers: [USNM 15315]
+              - prefix: USNM
+                numbers: [15315]
                 role: lectotype
-              - catalogNumbers: [USNM 15315]
+              - prefix: USNM
+                numbers: [15315]
                 role: syntype
-              - catalogNumbers: [[AMNH 20001, AMNH 20003]]
-                catalogNumbersAsPrinted: AMNH 20001–20003
+              - prefix: AMNH
+                numbers: [[20001, 20003]]
                 role: plesiotype
                 notes: Pack's 1906 specimens
-              - catalogNumbers: [MCZ 698, MCZ 704A, MCZ 704B]
-                catalogNumbersAsPrinted: MCZ 691–705
+              - prefix: MCZ
+                numbers: [698, 704A, 704B]
+                asPrinted: MCZ 691–705
                 role: plesiotype
                 context: pi-1
-              - catalogNumbers: [MCZ 691A, MCZ 691B, MCZ 697, MCZ 699, MCZ 703, MCZ 705]
-                catalogNumbersAsPrinted: MCZ 691–705
+              - prefix: MCZ
+                numbers: [691A, 691B, 697, 699, 703, 705]
+                asPrinted: MCZ 691–705
                 role: plesiotype
                 context: pi-2
-              - catalogNumbers: [MCZ 692, MCZ 693]
-                catalogNumbersAsPrinted: MCZ 691–705
+              - prefix: MCZ
+                numbers: [692, 693]
+                asPrinted: MCZ 691–705
                 role: plesiotype
                 context: pi-4
-              - catalogNumbers: [MCZ 694, MCZ 700, MCZ 701, MCZ 702]
-                catalogNumbersAsPrinted: MCZ 691–705
+              - prefix: MCZ
+                numbers: [694, 700, 701, 702]
+                asPrinted: MCZ 691–705
                 role: plesiotype
                 context: pi-6
-              - catalogNumbers: [MCZ 696]
-                catalogNumbersAsPrinted: MCZ 691–705
+              - prefix: MCZ
+                numbers: [696]
+                asPrinted: MCZ 691–705
                 role: plesiotype
                 context: pi-7
-              - catalogNumbers: [MCZ 695]
-                catalogNumbersAsPrinted: MCZ 691–705
+              - prefix: MCZ
+                numbers: [695]
+                asPrinted: MCZ 691–705
                 role: plesiotype
-              - catalogNumbers: [GCM 2641]
+              - prefix: GCM
+                numbers: [2641]
                 role: plesiotype
                 context: indian-gardens
-              - catalogNumbers: [E-3340]
+              - prefix: E
+                numbers: [3340]
                 role: plesiotype
                 holder: B. L. Stinchcomb
                 notes: a single specimen loaned from B. L. Stinchcomb
-              - catalogNumbers: [MCZ 669]
+              - prefix: MCZ
+                numbers: [669]
                 preparation: cast
-                castOf: E-3340
-              - catalogNumbers: [MCZ 670]
+                castOf: 3340
+              - prefix: MCZ
+                numbers: [670]
                 notes: unfigured specimens
-              - catalogNumbers: [USNM 256500A]
+              - prefix: USNM
+                numbers: [256500A]
                 role: plesiotype
                 context: pioche-district
                 notes: Fawcett Coll.
               illustrations:
               - plate: 9
                 figures: [[1, 3]]
-                of: [MCZ 691A, MCZ 691B]
+                of: [691A, 691B]
                 depicts: cast
               - plate: 9
                 figures: 4
-                of: MCZ 692
+                of: 692
                 depicts: cast
               - plate: 9
                 figures: [5, 6]
-                of: MCZ 693
+                of: 693
                 depicts: cast
               - plate: 9
                 figures: 7
-                of: MCZ 694
+                of: 694
                 depicts: cast
               - plate: 9
                 figures: 8
-                of: E-3340
+                of: 3340
                 depicts: cast
                 notes: caption prints "specimen in coll. of B. L. Stinchcomb (cast MCZ 695)"
               - plate: 9
                 figures: 9
-                of: MCZ 696
+                of: 696
                 depicts: cast
               - plate: 9
                 figures: 10
-                of: MCZ 697
+                of: 697
                 depicts: cast
               - plate: 9
                 figures: 11
-                of: MCZ 698
+                of: 698
                 depicts: cast
               - plate: 9
                 figures: 12
-                of: USNM 256500A
+                of: 256500A
                 depicts: cast
               - plate: 9
                 figures: 13
-                of: MCZ 699
+                of: 699
                 depicts: cast
               - plate: 9
                 figures: 14
-                of: MCZ 700
+                of: 700
                 depicts: cast
               - plate: 10
                 figures: [1, 2]
@@ -940,23 +988,23 @@ taxonomies:
                 notes: lectotype USNM 15315 (lectotype selected by Robison)
               - plate: 10
                 figures: [3, 5, 6]
-                of: [MCZ 701, MCZ 702]
+                of: [701, 702]
                 depicts: cast
               - plate: 10
                 figures: 4
-                of: MCZ 703
+                of: 703
                 depicts: cast
               - plate: 10
                 figures: [7, 8]
-                of: [MCZ 704A, MCZ 704B]
+                of: [704A, 704B]
                 depicts: cast
               - plate: 10
                 figures: [9, 10]
-                of: MCZ 705
+                of: 705
                 depicts: cast
               - plate: 10
                 figures: 11
-                of: GCM 2641
+                of: 2641
                 depicts: cast
                 notes: latex cast MCZ 706 (McKee Coll.)
               - textFigures: 10
@@ -986,30 +1034,33 @@ taxonomies:
                 auth: [kirk]
                 year: 1945
               material:
-              - catalogNumbers: [USNM 108556a]
+              - prefix: USNM
+                numbers: [108556a]
                 role: holotype
                 context: walcott-74e
                 notes: two counterparts
-              - catalogNumbers: [USNM 108556b]
+              - prefix: USNM
+                numbers: [108556b]
                 role: paratype
                 context: walcott-74e
                 notes: two counterparts
-              - catalogNumbers: [USNM 165425]
+              - prefix: USNM
+                numbers: [165425]
                 role: plesiotype
                 context: walcott-74e
                 notes: additional specimen (topotype?) unfigured by Kirk
               illustrations:
               - plate: 11
                 figures: [1, 2]
-                of: USNM 108556a
+                of: 108556a
                 depicts: cast
               - plate: 11
                 figures: 3
-                of: USNM 165425
+                of: 165425
                 depicts: cast
               - plate: 11
                 figures: [4, 5]
-                of: USNM 108556b
+                of: 108556b
                 depicts: cast
               contexts:
                 walcott-74e:
@@ -1020,80 +1071,87 @@ taxonomies:
                   location:
                   - Grand Canyon National Park
                   - northern Arizona
-                  localityNumbers: [Walcott 74e, USNM 74e]
+                  localityNumbers: [{prefix: Walcott locality, number: 74e}, {prefix: USNM locality, number: 74e}]
                   notes: approximately 135 ft. above the base
             - taxon: spiralis_robison_1965
               pages: 86
               material:
-              - catalogNumbers: [[USNM 139550, USNM 139565]]
-                catalogNumbersAsPrinted: USNM 139550–65
+              - prefix: USNM
+                numbers: [[139550, 139565]]
+                asPrinted: USNM 139550–65
                 notes: Holotype and paratypes (16 specimens)
-              - catalogNumbers: [USNM 165421]
-                catalogNumbersAsPrinted: USNM 165421–22
+              - prefix: USNM
+                numbers: [165421]
+                asPrinted: USNM 165421–22
                 role: plesiotype
                 repository: usnm-walcott
                 context: walcott-11q
-              - catalogNumbers: [USNM 165422]
-                catalogNumbersAsPrinted: USNM 165421–22
+              - prefix: USNM
+                numbers: [165422]
+                asPrinted: USNM 165421–22
                 role: plesiotype
                 repository: usnm-walcott
                 notes: (C-802), indeterminate locality
-              - catalogNumbers: [MCZ 708, MCZ 710, MCZ 711, MCZ 712, MCZ 714, MCZ 715, MCZ 716, MCZ 717]
-                catalogNumbersAsPrinted: MCZ 706–717
+              - prefix: MCZ
+                numbers: [708, 710, 711, 712, 714, 715, 716, 717]
+                asPrinted: MCZ 706–717
                 role: plesiotype
                 context: as-1
-              - catalogNumbers: [MCZ 706, MCZ 707, MCZ 709, MCZ 713]
-                catalogNumbersAsPrinted: MCZ 706–717
+              - prefix: MCZ
+                numbers: [706, 707, 709, 713]
+                asPrinted: MCZ 706–717
                 role: plesiotype
                 context: as-2
-              - catalogNumbers: [MCZ 730]
+              - prefix: MCZ
+                numbers: [730]
                 notes: additional unfigured specimens
-              - catalogNumbers: [USNM 111716]
+              - prefix: USNM
+                numbers: [111716]
                 role: plesiotype
                 context: walcott-4
               illustrations:
               - plate: 12
                 figures: [1, 2]
-                of: USNM 165421
+                of: 165421
               - plate: 12
                 figures: 3
-                of: USNM 165422
+                of: 165422
               - plate: 12
                 figures: [4, 5]
-                of: [MCZ 706, MCZ 707]
+                of: [706, 707]
               - plate: 12
                 figures: 6
-                of: MCZ 708
+                of: 708
               - plate: 12
                 figures: 7
-                of: MCZ 709
+                of: 709
               - plate: 12
                 figures: 8
-                of: MCZ 710
+                of: 710
               - plate: 12
                 figures: [9, 10]
-                of: MCZ 711
+                of: 711
               - plate: 13
                 figures: [1, 2]
-                of: MCZ 712
+                of: 712
               - plate: 13
                 figures: [3, 4]
-                of: MCZ 713
+                of: 713
               - plate: 13
                 figures: 5
-                of: MCZ 714
+                of: 714
               - plate: 13
                 figures: 6
-                of: MCZ 715
+                of: 715
               - plate: 13
                 figures: 7
-                of: MCZ 716
+                of: 716
               - plate: 13
                 figures: 8
-                of: USNM 111716
+                of: 111716
               - plate: 13
                 figures: 9
-                of: MCZ 717
+                of: 717
               - textFigures: 5D
                 page: 16
                 depicts: drawing
@@ -1107,7 +1165,7 @@ taxonomies:
                   location:
                   - House Range
                   - W. Utah
-                  localityNumbers: [Walcott 11q]
+                  localityNumbers: [{prefix: Walcott locality, number: 11q}]
                 walcott-4:
                   unit: [Wheeler Shale]
                   period: Cambrian
@@ -1117,7 +1175,7 @@ taxonomies:
                   location:
                   - House Range
                   - W. Utah
-                  localityNumbers: [Walcott 4]
+                  localityNumbers: [{prefix: Walcott locality, number: 4}]
                 marjum-pass:
                   location:
                   - Marjum Pass in the House Range, just southwest of the above localities
@@ -1132,113 +1190,123 @@ taxonomies:
                 auth: [Ressler]
                 year: 1939
               material:
-              - catalogNumbers: [UU 1001]
+              - prefix: UU
+                numbers: [1001]
                 role: holotype
                 context: north-calls-fort
-              - catalogNumbers: [MCZ 732]
-                catalogNumbersAsPrinted: MCZ 732–738
+              - prefix: MCZ
+                numbers: [732]
+                asPrinted: MCZ 732–738
                 role: plesiotype
                 preparation: latex cast
-                castOf: PE-214
-              - catalogNumbers: [MCZ 733, MCZ 734A, MCZ 734B, MCZ 735, MCZ 736, MCZ 737, MCZ 738]
-                catalogNumbersAsPrinted: MCZ 732–738
+                castOf: 214
+              - prefix: MCZ
+                numbers: [733, 734A, 734B, 735, 736, 737, 738]
+                asPrinted: MCZ 732–738
                 role: plesiotype
                 context: cf-1
-              - catalogNumbers: [UU 1010p, UU 1010w, UU 1010x, UU 1011d]
-                catalogNumbersAsPrinted: UU 1010p, -w, and -x, UU 1011d
+              - prefix: UU
+                numbers: [1010p, 1010w, 1010x, 1011d]
+                asPrinted: UU 1010p, -w, and -x, UU 1011d
                 role: plesiotype
                 context: cf-1
-              - catalogNumbers: [UU 1040p]
+              - prefix: UU
+                numbers: [1040p]
                 role: plesiotype
-              - catalogNumbers: [USNM 165433, USNM 165434, USNM 165436]
-                catalogNumbersAsPrinted: USNM 165433–165436
+              - prefix: USNM
+                numbers: [165433, 165434, 165436]
+                asPrinted: USNM 165433–165436
                 role: plesiotype
                 context: usgs-55e
-              - catalogNumbers: [USNM 165435]
-                catalogNumbersAsPrinted: USNM 165433–165436
+              - prefix: USNM
+                numbers: [165435]
+                asPrinted: USNM 165433–165436
                 role: plesiotype
-              - catalogNumbers: [PE-214]
+              - prefix: PE
+                numbers: [214]
                 role: plesiotype
                 holder: Derstler Coll.
                 context: near-brigham-city
-              - catalogNumbers: [ISU 1440]
+              - prefix: ISU
+                numbers: [1440]
                 role: plesiotype
                 collectedBy: John Cutler
                 context: mill-creek
                 notes: apparently belonging to this species
-              - catalogNumbers: [MCZ 739]
+              - prefix: MCZ
+                numbers: [739]
                 notes: additional unfigured specimens
               illustrations:
               - plate: 14
                 figures: 1
-                of: UU 1001
+                of: 1001
                 depicts: cast
               - plate: 14
                 figures: 2
-                of: MCZ 733
+                of: 733
                 depicts: cast
               - plate: 14
                 figures: 3
-                of: UU 1010p
+                of: 1010p
                 depicts: cast
               - plate: 14
                 figures: 4
-                of: MCZ 732
+                of: 732
                 depicts: cast
               - plate: 14
                 figures: 5
-                of: MCZ 734A
+                of: 734A
                 depicts: cast
               - plate: 14
                 figures: 6
-                of: USNM 165433
+                of: 165433
                 depicts: cast
               - plate: 14
                 figures: 7
-                of: MCZ 735
+                of: 735
                 depicts: cast
               - plate: 14
                 figures: 8
-                of: USNM 165434
+                of: 165434
                 depicts: cast
               - plate: 14
                 figures: 9
-                of: MCZ 736
+                of: 736
                 depicts: cast
               - plate: 14
                 figures: 10
-                of: MCZ 737
+                of: 737
                 depicts: cast
               - plate: 15
                 figures: 1
-                of: [USNM 165433, USNM 165435, UU 1040p]
+                of: [165433, 165435, 1040p]
                 depicts: cast
               - plate: 15
                 figures: 2
-                of: ISU 1440
+                of: 1440
               - plate: 15
                 figures: 3
-                of: MCZ 738
+                of: 738
                 depicts: cast
               - plate: 15
                 figures: 4
-                of: UU 1010w
+                of: 1010w
                 depicts: cast
               - plate: 15
                 figures: 5
-                of: UU 1011d
+                of: 1011d
                 depicts: cast
               - plate: 15
                 figures: 6
-                of: UU 1010x
+                of: 1010x
                 depicts: cast
               - plate: 15
                 figures: 7
-                of: USNM 165436
+                of: 165436
                 depicts: cast
               - plate: 15
                 figures: 8
-                of: MCZ 734B
+                of: 734B
                 depicts: cast
               contexts:
                 north-calls-fort:
@@ -1256,7 +1324,7 @@ taxonomies:
                   localSeries: Middle Cambrian
                   biozoneRange: [Glossopleura, Bathyuriscus-Elrathina]
                   location: [northern Utah]
-                  localityNumbers: [USGS 55e, USNM 55e]
+                  localityNumbers: [{prefix: USGS locality, number: 55e}, {prefix: USNM locality, number: 55e}]
                 mill-creek:
                   unit: [Spence Shale]
                   location:
@@ -1266,174 +1334,192 @@ taxonomies:
               new: true
               pages: 90
               material:
-              - catalogNumbers: [USNM 165418A, USNM 165418B]
-                catalogNumbersAsPrinted: USNM 165418A and B
+              - prefix: USNM
+                numbers: [165418A, 165418B]
+                asPrinted: USNM 165418A and B
                 role: holotype
                 context: ec-1
                 parts: [part, counterpart]
-              - catalogNumbers: [USNM 165414, USNM 165415, USNM 165416, USNM 165417, USNM 165419]
-                catalogNumbersAsPrinted: USNM 165414–165417, 165419
+              - prefix: USNM
+                numbers: [165414, 165415, 165416, 165417, 165419]
+                asPrinted: USNM 165414–165417, 165419
                 role: paratype
                 context: ec-1
-              - catalogNumbers: [MCZ 676a, MCZ 676b, MCZ 676c, MCZ 676d, MCZ 677, MCZ 678, MCZ 679, MCZ 680a, MCZ 680b, MCZ 680c, MCZ 680d, MCZ 680e, MCZ 680f, MCZ 681, MCZ 682, MCZ 683, MCZ 684, MCZ 685a, MCZ 685b, MCZ 686, MCZ 687, MCZ 688, MCZ 689]
-                catalogNumbersAsPrinted: MCZ 676–689
+              - prefix: MCZ
+                numbers: [676a, 676b, 676c, 676d, 677, 678, 679, 680a, 680b, 680c, 680d, 680e, 680f, 681, 682, 683, 684, 685a, 685b, 686, 687, 688, 689]
+                asPrinted: MCZ 676–689
                 role: paratype
                 context: ec-1
-              - catalogNumbers: [USNM 165420, MCZ 690]
-                catalogNumbersAsPrinted: USNM 165420 and MCZ 690
+              - prefix: USNM
+                numbers: [165420]
+                asPrinted: USNM 165420 and MCZ 690
+                role: paratype
+                context: ec-1
+              - prefix: MCZ
+                numbers: [690]
                 role: paratype
                 context: ec-1
               illustrations:
               - plate: 16
                 figures: [[1, 5]]
-                of: [USNM 165418A, USNM 165418B]
+                of: [165418A, 165418B]
                 depicts: cast
               - plate: 16
                 figures: [1, 2, 6]
-                of: USNM 165419
+                of: 165419
                 depicts: cast
               - plate: 17
                 figures: 1
-                of: USNM 165414
+                of: 165414
                 depicts: cast
               - plate: 17
                 figures: [2, 3]
-                of: [MCZ 676a, MCZ 676b, MCZ 676c, MCZ 676d]
+                of: [676a, 676b, 676c, 676d]
                 depicts: cast
               - plate: 17
                 figures: [[4, 6]]
-                of: USNM 165415
+                of: 165415
                 depicts: cast
               - plate: 17
                 figures: [7, 8]
-                of: MCZ 677
+                of: 677
                 depicts: cast
               - plate: 17
                 figures: 9
-                of: USNM 165416
+                of: 165416
                 depicts: cast
               - plate: 17
                 figures: [10, 11]
-                of: MCZ 678
+                of: 678
                 depicts: cast
               - plate: 17
                 figures: [12, 13]
-                of: MCZ 679
+                of: 679
                 depicts: cast
               - plate: 18
                 figures: [1, 2]
-                of: [MCZ 680a, MCZ 680b, MCZ 680c, MCZ 680d, MCZ 680e, MCZ 680f]
+                of: [680a, 680b, 680c, 680d, 680e, 680f]
                 depicts: cast
               - plate: 18
                 figures: 3
-                of: MCZ 681
+                of: 681
                 depicts: cast
               - plate: 18
                 figures: 4
-                of: USNM 165414
+                of: 165414
                 depicts: cast
               - plate: 18
                 figures: 5
-                of: MCZ 682
+                of: 682
                 depicts: cast
               - plate: 18
                 figures: 6
-                of: MCZ 683
+                of: 683
                 depicts: cast
               - plate: 18
                 figures: 7
-                of: MCZ 684
+                of: 684
                 depicts: cast
               - plate: 18
                 figures: 8
-                of: [MCZ 685a, MCZ 685b]
+                of: [685a, 685b]
                 depicts: cast
               - plate: 18
                 figures: 9
-                of: MCZ 686
+                of: 686
                 depicts: cast
               - plate: 18
                 figures: 10
-                of: MCZ 687
+                of: 687
                 depicts: cast
               - plate: 18
                 figures: 11
-                of: USNM 165417
+                of: 165417
                 depicts: cast
               - plate: 18
                 figures: 12
-                of: MCZ 688
+                of: 688
                 depicts: cast
               - plate: 18
                 figures: 13
-                of: MCZ 689
+                of: 689
                 depicts: cast
             - taxon: guntheri_sprinkle_1973
               new: true
               pages: 93
               material:
-              - catalogNumbers: [UU 1010a]
+              - prefix: UU
+                numbers: [1010a]
                 role: holotype
                 collectedBy: Lloyd Gunther
                 context: cf-1
-              - catalogNumbers: [UU 1010b, UU 1010h, UU 1010s]
-                catalogNumbersAsPrinted: UU 1010b, –h, and –s
+              - prefix: UU
+                numbers: [1010b, 1010h, 1010s]
+                asPrinted: UU 1010b, –h, and –s
                 role: paratype
                 context: cf-1
-              - catalogNumbers: [UU 1040b, UU 1040f]
-                catalogNumbersAsPrinted: UU 1040b and –f
+              - prefix: UU
+                numbers: [1040b, 1040f]
+                asPrinted: UU 1040b and –f
                 role: paratype
                 context: cataract-canyon
-              - catalogNumbers: [[MCZ 739, MCZ 741]]
-                catalogNumbersAsPrinted: MCZ 739–741
+              - prefix: MCZ
+                numbers: [[739, 741]]
                 role: paratype
                 context: cf-1
-              - catalogNumbers: [USNM 189357, UU 1010c, UU 1010t, UU 1040a]
-                catalogNumbersAsPrinted: USNM 189357, UU 1010c and –t, and UU 1040a
+              - prefix: USNM
+                numbers: [189357]
+                asPrinted: USNM 189357, UU 1010c and –t, and UU 1040a
                 role: paratype
-              - catalogNumbers: [UU 1010, UU 1011, UU 1040, UU 1041, MCZ 742]
-                catalogNumbersAsPrinted: UU 1010, 1011, 1040, 1041, and MCZ 742
+              - prefix: UU
+                numbers: [1010c, 1010t, 1040a]
+                role: paratype
+              - prefix: UU
+                numbers: [1010, 1011, 1040, 1041]
+                asPrinted: UU 1010, 1011, 1040, 1041, and MCZ 742
                 notes: several additional unstudied specimens
+              - prefix: MCZ
+                numbers: [742]
               illustrations:
               - plate: 19
                 figures: 1
-                of: UU 1010a
+                of: 1010a
                 depicts: cast
               - plate: 19
                 figures: [2, 4]
-                of: UU 1010s
+                of: 1010s
                 depicts: cast
               - plate: 19
                 figures: 3
-                of: UU 1010h
+                of: 1010h
                 depicts: cast
               - plate: 19
                 figures: 5
-                of: UU 1040f
+                of: 1040f
                 depicts: cast
               - plate: 19
                 figures: 6
-                of: UU 1040b
+                of: 1040b
                 depicts: cast
               - plate: 19
                 figures: 7
-                of: MCZ 739
+                of: 739
                 depicts: cast
               - plate: 19
                 figures: 8
-                of: UU 1010b
+                of: 1010b
                 depicts: cast
               - plate: 19
                 figures: [[9, 11]]
-                of: MCZ 740
+                of: 740
                 depicts: cast
               - plate: 19
                 figures: 12
-                of: MCZ 741
+                of: 741
                 depicts: cast
               - textFigures: 26
                 page: 94
-                of: UU 1010a
+                of: 1010a
               contexts:
                 cataract-canyon:
                   unit: [Spence Shale Member, Langston Formation]
@@ -1470,19 +1556,22 @@ taxonomies:
                 provisional: true
               new: true
               material:
-              - catalogNumbers: [GSC 25934]
+              - prefix: GSC
+                numbers: [25934]
                 role: holotype
                 context: kt-1
-              - catalogNumbers: [[GSC 25935, GSC 25961]]
-                catalogNumbersAsPrinted: GSC 25935–25961
+              - prefix: GSC
+                numbers: [[25935, 25961]]
                 role: paratype
                 context: kt-1
                 notes: (17 specimens)
-              - catalogNumbers: [GSC 10088a, GSC 10088b]
-                catalogNumbersAsPrinted: GSC 10088a–b
+              - prefix: GSC
+                numbers: [10088a, 10088b]
+                asPrinted: GSC 10088a–b
                 role: paratype
                 notes: Harker and Hutchinson's specimens
-              - catalogNumbers: [UC 24691]
+              - prefix: UC
+                numbers: [24691]
                 role: paratype
                 context: athabaska-glacier
               - label: additional specimens collected in 1968
@@ -1494,76 +1583,77 @@ taxonomies:
                 collectedDate: during the early 1950's
                 context: kt-1
                 notes: at the University of Wisconsin (Laudon Collection)
-              - catalogNumbers: [[GSC 10088c, GSC 10088h]]
-                catalogNumbersAsPrinted: GSC collection 10088c–h
+              - prefix: GSC
+                numbers: [[10088c, 10088h]]
+                asPrinted: GSC collection 10088c–h
                 notes: six specimens
               illustrations:
               - plate: 20
                 figures: [1, 5, 7]
-                of: GSC 25934
+                of: 25934
                 depicts: cast
               - plate: 20
                 figures: 2
-                of: GSC 25936
+                of: 25936
               - plate: 20
                 figures: 3
-                of: GSC 25937
+                of: 25937
                 depicts: cast
               - plate: 20
                 figures: 4
-                of: [GSC 25938, GSC 25939, GSC 25940]
+                of: [25938, 25939, 25940]
                 depicts: cast
               - plate: 20
                 figures: 6
-                of: [GSC 25941, GSC 25942]
+                of: [25941, 25942]
               - plate: 20
                 figures: 8
-                of: GSC 25943
+                of: 25943
               - plate: 20
                 figures: [9, 11]
-                of: GSC 25944
+                of: 25944
                 depicts: cast
               - plate: 20
                 figures: 10
-                of: GSC 25945
+                of: 25945
               - plate: 20
                 figures: 12
-                of: GSC 25946
+                of: 25946
                 depicts: cast
               - plate: 20
                 figures: 13
-                of: GSC 25947
+                of: 25947
               - plate: 21
                 figures: 1
-                of: [GSC 25948, GSC 25949, GSC 25950, GSC 25951, GSC 25952, GSC 25953]
+                of: [25948, 25949, 25950, 25951, 25952, 25953]
               - plate: 21
                 figures: 2
-                of: UC 24691
+                of: 24691
               - plate: 21
                 figures: 3
-                of: GSC 25955
+                of: 25955
               - plate: 21
                 figures: 4
-                of: GSC 25956
+                of: 25956
               - plate: 21
                 figures: 5
-                of: GSC 25957
+                of: 25957
               - plate: 21
                 figures: 6
-                of: [GSC 25958, GSC 25959]
+                of: [25958, 25959]
               - plate: 21
                 figures: 7
-                of: GSC 25960
+                of: 25960
                 notes: figured specimen GSC 25960 (fecal or regurgitation wad containing G. kitchnerensis plates)
               - plate: 21
                 figures: 8
-                of: GSC 25961
+                of: 25961
               - textFigures: 15
                 page: 41
-                of: GSC 25935
+                of: 25935
               - textFigures: 27
                 page: 98
-                of: GSC 25934
+                of: 25934
               contexts:
                 athabaska-glacier:
                   location:
@@ -1579,93 +1669,103 @@ taxonomies:
                 parents:
                 - taxon: gogia
               material:
-              - catalogNumbers: [MCZ 631]
+              - prefix: MCZ
+                numbers: [631]
                 role: holotype
                 context: cl-1
-              - catalogNumbers: [[MCZ 632, MCZ 641]]
-                catalogNumbersAsPrinted: MCZ 632–641
+              - prefix: MCZ
+                numbers: [[632, 641]]
                 role: paratype
                 context: cl-1
-              - catalogNumbers: [MCZ 642]
+              - prefix: MCZ
+                numbers: [642]
                 count: 24
                 role: paratype
                 context: cl-1
-              - catalogNumbers: [MCZ 643]
+              - prefix: MCZ
+                numbers: [643]
                 count: 62
                 context: cl-1
               illustrations:
               - plate: 22
                 figures: [1, 2]
-                of: MCZ 631
+                of: 631
                 depicts: cast
               - plate: 22
                 figures: 3
-                of: MCZ 632
+                of: 632
                 depicts: cast
               - plate: 22
                 figures: 4
-                of: MCZ 633
+                of: 633
                 depicts: cast
               - plate: 22
                 figures: 5
-                of: MCZ 634
+                of: 634
                 depicts: cast
               - plate: 23
                 figures: [1, 2]
-                of: MCZ 635
+                of: 635
                 depicts: cast
               - plate: 23
                 figures: 3
-                of: MCZ 636
+                of: 636
                 depicts: cast
               - plate: 23
                 figures: [4, 5]
-                of: MCZ 637
+                of: 637
                 depicts: cast
               - plate: 23
                 figures: 6
-                of: MCZ 638
+                of: 638
                 depicts: cast
               - plate: 23
                 figures: 7
-                of: [MCZ 639, MCZ 640]
+                of: [639, 640]
                 depicts: cast
               - plate: 23
                 figures: 8
-                of: MCZ 641
+                of: 641
                 depicts: cast
             - taxon: radiata_sprinkle_1973
               new: true
               provisional: true
               pages: 102
               material:
-              - catalogNumbers: [USNM 165399]
+              - prefix: USNM
+                numbers: [165399]
                 role: holotype
                 context: walcott-35k-10
-              - catalogNumbers: [USNM 165400, USNM 165401, USNM 165402, GSC 25954]
-                catalogNumbersAsPrinted: USNM 165400–165402 and GSC 25954
+              - prefix: USNM
+                numbers: [165400, 165401, 165402]
+                asPrinted: USNM 165400–165402 and GSC 25954
                 role: paratype
                 context: walcott-35k
-              - catalogNumbers: [USNM 165403, USNM 165404]
-                catalogNumbersAsPrinted: USNM 165403–4
+              - prefix: GSC
+                numbers: [25954]
+                role: paratype
+                context: walcott-35k
+              - prefix: USNM
+                numbers: [165403, 165404]
+                asPrinted: USNM 165403–4
                 uncertain: true
               illustrations:
               - plate: 24
                 figures: 1
-                of: USNM 165399
+                of: 165399
                 depicts: cast
               - plate: 24
                 figures: [2, 3]
-                of: USNM 165400
+                of: 165400
               - plate: 24
                 figures: 4
-                of: USNM 165401
+                of: 165401
               - plate: 24
                 figures: [5, 6]
-                of: GSC 25954
+                of: 25954
               - plate: 24
                 figures: 7
-                of: USNM 165402
+                of: 165402
               contexts:
                 walcott-35k:
                   unit: [Burgess Shale Member, Stephen Formation]
@@ -1677,7 +1777,7 @@ taxonomies:
                   - near Field
                   - British Columbia
                   - Canada
-                  localityNumbers: [Walcott 35k]
+                  localityNumbers: [{prefix: Walcott locality, number: 35k}]
                   notes: 1966 specimen from zone between 6′7½″–7′3″
                 walcott-35k-10:
                   unit: [Burgess Shale Member, Stephen Formation]
@@ -1689,24 +1789,26 @@ taxonomies:
                   - near Field
                   - British Columbia
                   - Canada
-                  localityNumbers: [Walcott 35k/10]
+                  localityNumbers: [{prefix: Walcott locality, number: 35k/10}]
             - openTaxon: gogia-sp_robison_1965
               pages: 104
               material:
-              - catalogNumbers: [USNM 165411]
+              - prefix: USNM
+                numbers: [165411]
                 collectedBy: A. R. Palmer
                 context: fc-1
-              - catalogNumbers: [[MCZ 666a, MCZ 666c]]
-                catalogNumbersAsPrinted: MCZ 666a-c
+              - prefix: MCZ
+                numbers: [[666a, 666c]]
+                asPrinted: MCZ 666a-c
                 context: fc-1
               illustrations:
               - plate: 25
                 figures: 1
-                of: USNM 165411
+                of: 165411
                 depicts: cast
               - plate: 25
                 figures: [[2, 7]]
-                of: [MCZ 666a, MCZ 666c]
+                of: [666a, 666c]
             - openTaxon: gogia-sp-2_sprinkle_1973
               pages: 104
               synonyms:
@@ -1715,12 +1817,13 @@ taxonomies:
                 - taxon: eocystites
                 provisional: true
               material:
-              - catalogNumbers: [USNM 63712]
+              - prefix: USNM
+                numbers: [63712]
                 context: ross-lake
               illustrations:
               - plate: 25
                 figures: 8
-                of: USNM 63712
+                of: 63712
                 depicts: cast
               contexts:
                 ross-lake:
@@ -1764,38 +1867,40 @@ taxonomies:
               synonyms:
               - taxon: nuntius_prokop_1962
               material:
-              - catalogNumbers: [E62]
+              - prefix: E
+                numbers: [62]
                 preparation: latex cast
                 context: jince-beds
                 notes: a slab with two specimens; made from specimens in the National Museum, Prague
-              - catalogNumbers: [E 40A, E 40B]
-                catalogNumbersAsPrinted: E40
+              - prefix: E
+                numbers: [40A, 40B]
+                asPrinted: E40
                 preparation: latex cast
                 context: jince-beds
                 parts: [part, counterpart]
                 notes: made from specimens in the National Museum, Prague
-              - catalogNumbers: [E41]
+              - prefix: E
+                numbers: [41]
                 preparation: latex cast
                 context: jince-beds
                 notes: a specimen figured by Barrande and Ubaghs; made from specimens in the National Museum, Prague
-              - catalogNumbers: [['500', '501']]
-                catalogNumbersAsPrinted: 500–501
+              - numbers: [[500, 501]]
                 preparation: latex cast
                 holder: A. R. Palmer
                 notes: made from specimens in the National Museum, Prague
               illustrations:
               - plate: 26
                 figures: [[1, 3]]
-                of: E62
+                of: 62
                 depicts: cast
                 notes: inferred specimen of A. jani (left and Fig. 2) and holotype of A. nuntius (right and Fig. 3)
               - plate: 26
                 figures: 4
-                of: E41
+                of: 41
                 depicts: cast
               - plate: 26
                 figures: [5, 6]
-                of: [E 40A, E 40B]
+                of: [40A, 40B]
                 depicts: cast
               contexts:
                 jince-beds:
@@ -1821,39 +1926,46 @@ taxonomies:
               type: true
               pages: 109
               material:
-              - catalogNumbers: [E 11, E 12, E 17, E 21, E 25, E 26, E 27, E 66, E 70A, BC 141A]
+              - prefix: E
+                numbers: [11, 12, 17, 21, 25, 26, 27, 66, 70A]
                 preparation: latex cast
                 context: jince-beds
                 notes: Many of the original specimens (natural molds) from which these latex casts were made were studied by Barrande (1887) and are in the National Museum, Prague.
-              - catalogNumbers: [E 13]
+              - prefix: BC
+                numbers: [141A]
                 preparation: latex cast
                 context: jince-beds
-              - catalogNumbers: [BC 141B]
+              - prefix: E
+                numbers: [13]
+                preparation: latex cast
+                context: jince-beds
+              - prefix: BC
+                numbers: [141B]
                 preparation: latex cast
               illustrations:
               - plate: 27
                 figures: 1
-                of: E 21
+                of: 21
                 depicts: cast
               - plate: 27
                 figures: 2
-                of: E 13
+                of: 13
                 depicts: cast
               - plate: 27
                 figures: 3
-                of: E 70A
+                of: 70A
                 depicts: cast
               - plate: 27
                 figures: 4
-                of: E 27
+                of: 27
                 depicts: cast
               - plate: 27
                 figures: 5
-                of: BC 141B
+                of: 141B
                 depicts: cast
               - plate: 27
                 figures: 6
-                of: E 25
+                of: 25
                 depicts: cast
               contexts:
                 jince-beds:
@@ -1939,73 +2051,81 @@ taxonomies:
               new: true
               pages: 113
               material:
-              - catalogNumbers: [MCZ 719]
+              - prefix: MCZ
+                numbers: [719]
                 role: holotype
                 context: sc-4a
-              - catalogNumbers: [MCZ 720, MCZ 721, MCZ 726]
-                catalogNumbersAsPrinted: MCZ 720–27
+              - prefix: MCZ
+                numbers: [720, 721, 726]
+                asPrinted: MCZ 720–27
                 role: paratype
                 context: sc-4a
-              - catalogNumbers: [MCZ 722]
-                catalogNumbersAsPrinted: MCZ 720–27
+              - prefix: MCZ
+                numbers: [722]
+                asPrinted: MCZ 720–27
                 role: paratype
                 context: sc-3
-              - catalogNumbers: [MCZ 723, MCZ 724]
-                catalogNumbersAsPrinted: MCZ 720–27
+              - prefix: MCZ
+                numbers: [723, 724]
+                asPrinted: MCZ 720–27
                 role: paratype
                 context: sc-4
-              - catalogNumbers: [MCZ 725, MCZ 727]
-                catalogNumbersAsPrinted: MCZ 720–27
+              - prefix: MCZ
+                numbers: [725, 727]
+                asPrinted: MCZ 720–27
                 role: paratype
                 context: sc-1
-              - catalogNumbers: [USNM 165423a, USNM 165423b]
-                catalogNumbersAsPrinted: USNM 165423–4 (three specimens)
+              - prefix: USNM
+                numbers: [165423a, 165423b]
+                asPrinted: USNM 165423–4 (three specimens)
                 role: paratype
                 context: usgs-835
-              - catalogNumbers: [USNM 165424]
-                catalogNumbersAsPrinted: USNM 165423–4 (three specimens)
+              - prefix: USNM
+                numbers: [165424]
+                asPrinted: USNM 165423–4 (three specimens)
                 role: paratype
                 context: usgs-834
-              - catalogNumbers: [MCZ 728]
+              - prefix: MCZ
+                numbers: [728]
                 count: 8
                 notes: poorly preserved specimens
               illustrations:
               - plate: 28
                 figures: 1
-                of: [USNM 165423a, USNM 165423b]
+                of: [165423a, 165423b]
               - plate: 28
                 figures: 2
-                of: MCZ 719
+                of: 719
               - plate: 28
                 figures: 3
-                of: USNM 165424
+                of: 165424
               - plate: 28
                 figures: 4
-                of: MCZ 720
+                of: 720
               - plate: 28
                 figures: 5
-                of: MCZ 721
+                of: 721
               - plate: 28
                 figures: 6
-                of: MCZ 722
+                of: 722
               - plate: 28
                 figures: 7
-                of: MCZ 723
+                of: 723
               - plate: 28
                 figures: 8
-                of: MCZ 724
+                of: 724
               - plate: 28
                 figures: 9
-                of: MCZ 725
+                of: 725
               - plate: 28
                 figures: 10
-                of: MCZ 726
+                of: 726
               - plate: 28
                 figures: 11
-                of: MCZ 727
+                of: 727
               - textFigures: 28
                 page: 114
-                of: [MCZ 719, MCZ 722]
+                of: [719, 722]
               contexts:
                 usgs-834:
                   unit: [Secret Canyon Formation]
@@ -2016,7 +2136,7 @@ taxonomies:
                   location:
                   - Eureka District
                   - central Nevada
-                  localityNumbers: [USGS 834]
+                  localityNumbers: [{prefix: USGS locality, number: 834}]
                   notes: (= SC-4A?)
                 usgs-835:
                   unit: [Secret Canyon Formation]
@@ -2027,7 +2147,7 @@ taxonomies:
                   location:
                   - Eureka District
                   - central Nevada
-                  localityNumbers: [USGS 835]
+                  localityNumbers: [{prefix: USGS locality, number: 835}]
                   notes: (= SC-4.?)
           - taxon: nolichuckia
             provisional: true
@@ -2047,47 +2167,52 @@ taxonomies:
               new: true
               pages: 116
               material:
-              - catalogNumbers: [MCZ 616]
+              - prefix: MCZ
+                numbers: [616]
                 role: holotype
                 context: bristol
                 notes: apparently collected by P. E. Raymond of Harvard University about 1925
-              - catalogNumbers: [MCZ 617]
-                catalogNumbersAsPrinted: MCZ 617–619
+              - prefix: MCZ
+                numbers: [617]
+                asPrinted: MCZ 617–619
                 role: paratype
                 context: bristol
-              - catalogNumbers: [MCZ 618, MCZ 619]
-                catalogNumbersAsPrinted: MCZ 617–619
+              - prefix: MCZ
+                numbers: [618, 619]
+                asPrinted: MCZ 617–619
                 role: paratype
                 context: hl-1
-              - catalogNumbers: [USNM 165410]
+              - prefix: USNM
+                numbers: [165410]
                 role: paratype
                 context: walcott-103a
               - label: fragmentary material in USNM collection 103a
                 repository: usnm
                 context: walcott-103a
-              - catalogNumbers: [[MCZ 630a, MCZ 630b]]
-                catalogNumbersAsPrinted: MCZ 630a–b
+              - prefix: MCZ
+                numbers: [[630a, 630b]]
+                asPrinted: MCZ 630a–b
                 notes: fragmentary material
               illustrations:
               - plate: 29
                 figures: [1, 3, [7, 9]]
-                of: MCZ 616
+                of: 616
               - plate: 29
                 figures: 2
-                of: USNM 165410
+                of: 165410
                 depicts: cast
               - plate: 29
                 figures: 4
-                of: MCZ 617
+                of: 617
               - plate: 29
                 figures: [5, 6]
-                of: [MCZ 618, MCZ 619]
+                of: [618, 619]
               - textFigures: 5B
                 page: 16
                 depicts: drawing
               - textFigures: 29
                 page: 117
-                of: MCZ 616
+                of: 616
                 depicts: reconstruction
               contexts:
                 bristol:
@@ -2106,7 +2231,7 @@ taxonomies:
                   localSeriesModifier: lower
                   biozone: Cedaria
                   location: [NE Tennessee]
-                  localityNumbers: [Walcott 103a]
+                  localityNumbers: [{prefix: Walcott locality, number: 103a}]
               ranges:
               - period: Cambrian
                 localSeries: Upper Cambrian
@@ -2134,7 +2259,7 @@ taxonomies:
               type: true
               pages: 118
               material:
-              - catalogNumbers: [KR-2]
+              - numbers: [KR-2]
                 repository: u-cincinnati-caster
                 preparation: latex cast
               illustrations:
@@ -2243,16 +2368,17 @@ taxonomies:
               type: true
               pages: 124
               material:
-              - catalogNumbers: [USNM 80490]
+              - prefix: USNM
+                numbers: [80490]
                 role: holotype
                 context: rp-1
-              - catalogNumbers: [[MCZ 624, MCZ 626]]
-                catalogNumbersAsPrinted: MCZ 624–626
+              - prefix: MCZ
+                numbers: [[624, 626]]
                 notes: additional plates and columnals
               illustrations:
               - plate: 30
                 figures: [[1, 4]]
-                of: USNM 80490
+                of: 80490
       - openTaxon: eocrinoidea-indeterminate-order-2_sprinkle_1973
         pages: 126
         contexts: null
@@ -2275,13 +2401,14 @@ taxonomies:
               type: true
               pages: 126
               material:
-              - catalogNumbers: [MCZ 743a, MCZ 743b]
-                catalogNumbersAsPrinted: MCZ 743a-b
+              - prefix: MCZ
+                numbers: [743a, 743b]
+                asPrinted: MCZ 743a-b
                 context: estonia
               illustrations:
               - plate: 33
                 figures: [12, 13]
-                of: [MCZ 743a, MCZ 743b]
+                of: [743a, 743b]
               contexts:
                 estonia:
                   period: Ordovician
@@ -2352,18 +2479,19 @@ taxonomies:
               type: true
               pages: 129
               material:
-              - catalogNumbers: [E 39, E 51]
+              - prefix: E
+                numbers: [39, 51]
                 preparation: latex cast
                 context: czechoslovakia
                 notes: Casts of the 2 known type specimens
               illustrations:
               - plate: 27
                 figures: [7, 8]
-                of: E 51
+                of: 51
                 depicts: cast
               - plate: 27
                 figures: 9
-                of: E 39
+                of: 39
                 depicts: cast
               contexts:
                 czechoslovakia:
@@ -2429,32 +2557,35 @@ taxonomies:
               new: true
               pages: 132
               material:
-              - catalogNumbers: [MCZ 646]
+              - prefix: MCZ
+                numbers: [646]
                 role: holotype
                 context: ik-2
-              - catalogNumbers: [MCZ 647, MCZ 648]
-                catalogNumbersAsPrinted: MCZ 647–649
+              - prefix: MCZ
+                numbers: [647, 648]
+                asPrinted: MCZ 647–649
                 role: paratype
                 context: ik-2
-              - catalogNumbers: [MCZ 649]
-                catalogNumbersAsPrinted: MCZ 647–649
+              - prefix: MCZ
+                numbers: [649]
+                asPrinted: MCZ 647–649
                 role: paratype
               illustrations:
               - plate: 31
                 figures: 1
-                of: MCZ 646
+                of: 646
               - plate: 31
                 figures: 2
-                of: MCZ 647
+                of: 647
               - plate: 31
                 figures: 3
-                of: MCZ 648
+                of: 648
               - plate: 32
                 figures: [[1, 3]]
-                of: MCZ 646
+                of: 646
               - textFigures: 31
                 page: 133
-                of: MCZ 646
+                of: 646
                 depicts: drawing
     - openTaxon: blastozoa-indeterminate-class_sprinkle_1973
       pages: 136
@@ -2477,14 +2608,15 @@ taxonomies:
           type: true
           pages: 136
           material:
-          - catalogNumbers: [E 35]
+          - prefix: E
+            numbers: [35]
             preparation: latex cast
             context: jince-beds
             notes: cast of this only known slab of type specimens (two specimens, both incomplete)
           illustrations:
           - textFigures: 32
             page: 137
-            of: E 35
+            of: 35
             depicts: cast
           contexts:
             jince-beds:
@@ -2503,22 +2635,24 @@ taxonomies:
           type: true
           pages: 138
           material:
-          - catalogNumbers: [E 32]
+          - prefix: E
+            numbers: [32]
             role: holotype
             preparation: latex cast
             notes: a complete but poorly preserved calyx with appendages
-          - catalogNumbers: [E 33]
+          - prefix: E
+            numbers: [33]
             preparation: latex cast
             context: czechoslovakia
             notes: a set of similar appendages apparently from the same species
           illustrations:
           - plate: 33
             figures: 9
-            of: E 33
+            of: 33
             depicts: cast
           - plate: 33
             figures: 10
-            of: E 32
+            of: 32
             depicts: cast
           contexts:
             czechoslovakia:
@@ -2536,8 +2670,9 @@ taxonomies:
           notes: Year incorrectly given as 1859
           type: true
           material:
-          - catalogNumbers: [GSC 1021a, GSC 1021b]
-            catalogNumbersAsPrinted: GSC 1021a–b
+          - prefix: GSC
+            numbers: [1021a, 1021b]
+            asPrinted: GSC 1021a–b
             role: syntype
           illustrations: null
           contexts: null
@@ -2606,37 +2741,41 @@ taxonomies:
             type: true
             pages: 147
             material:
-            - catalogNumbers: [GSC 1016]
+            - prefix: GSC
+              numbers: [1016]
               role: holotype
               context: montreal
-            - catalogNumbers: [UC 26022]
+            - prefix: UC
+              numbers: [26022]
               role: plesiotype
               context: village-belanger
             - label: a large unnumbered specimen apparently belonging to the Geological Survey of Canada
               context: ile-jesus
               notes: unnumbered GSC specimen at the Univ. of Kansas
-            - catalogNumbers: [AMNH 25068]
+            - prefix: AMNH
+              numbers: [25068]
               role: plesiotype
               context: valcour-island
               notes: the complete specimen studied by Hudson for his 1907 paper
-            - catalogNumbers: [NYSM 7396, NYSM 7397, NYSM 7401, NYSM 7407, NYSM 7411, NYSM 7412, NYSM 7413, NYSM 7416, NYSM 7422, NYSM 7427, NYSM 7431, NYSM 7434, NYSM 7437, NYSM 7440]
-              catalogNumbersAsPrinted: NYSM 7390–7450
+            - prefix: NYSM
+              numbers: [7396, 7397, 7401, 7407, 7411, 7412, 7413, 7416, 7422, 7427, 7431, 7434, 7437, 7440]
+              asPrinted: NYSM 7390–7450
               context: valcour-island
               listComplete: false
               notes: plates
             illustrations:
             - plate: 34
               figures: [[1, 5]]
-              of: AMNH 25068
+              of: 25068
             - plate: 34
               figures: [[6, 38]]
-              of: [NYSM 7396, NYSM 7397, NYSM 7401, NYSM 7407, NYSM 7411, NYSM 7412, NYSM 7413, NYSM 7416, NYSM 7422, NYSM 7427, NYSM 7431, NYSM 7434, NYSM 7437, NYSM 7440]
+              of: [7396, 7397, 7401, 7407, 7411, 7412, 7413, 7416, 7422, 7427, 7431, 7434, 7437, 7440]
             - plate: 35
               figures: [[1, 4]]
-              of: GSC 1016
+              of: 1016
             - plate: 35
               figures: 5
-              of: UC 26022
+              of: 26022
             - plate: 35
               figures: [[6, 10]]
               of: a large unnumbered specimen apparently belonging to the Geological Survey of Canada
@@ -2685,36 +2824,43 @@ taxonomies:
             new: true
             pages: 150
             material:
-            - catalogNumbers: [USNM 165378]
+            - prefix: USNM
+              numbers: [165378]
               role: holotype
               context: usgs-d190d-co
               notes: deltoid D13
-            - catalogNumbers: [[USNM 165379, USNM 165391]]
-              catalogNumbersAsPrinted: USNM 165379–91
+            - prefix: USNM
+              numbers: [[165379, 165391]]
+              asPrinted: USNM 165379–91
               role: paratype
               notes: deltoid growth series D1–12 and D14
-            - catalogNumbers: [[USNM 165392, USNM 165394]]
-              catalogNumbersAsPrinted: USNM 165392–4
+            - prefix: USNM
+              numbers: [[165392, 165394]]
+              asPrinted: USNM 165392–4
               role: paratype
               context: usgs-d190d-co
               notes: oral crests
-            - catalogNumbers: [USNM 165395]
-              catalogNumbersAsPrinted: USNM 165395–6
+            - prefix: USNM
+              numbers: [165395]
+              asPrinted: USNM 165395–6
               role: paratype
               context: usgs-d190d-co
               notes: bibrachial
-            - catalogNumbers: [USNM 165396]
-              catalogNumbersAsPrinted: USNM 165395–6
+            - prefix: USNM
+              numbers: [165396]
+              asPrinted: USNM 165395–6
               role: paratype
               context: usgs-d190e-co
               notes: bibrachial
-            - catalogNumbers: [USNM 165397]
-              catalogNumbersAsPrinted: USNM 165397–8
+            - prefix: USNM
+              numbers: [165397]
+              asPrinted: USNM 165397–8
               role: paratype
               context: lo-1
               notes: possible orals
-            - catalogNumbers: [USNM 165398]
-              catalogNumbersAsPrinted: USNM 165397–8
+            - prefix: USNM
+              numbers: [165398]
+              asPrinted: USNM 165397–8
               role: paratype
               context: usgs-d190d-co
               notes: possible orals
@@ -2722,33 +2868,34 @@ taxonomies:
               context: usgs-d190d-co
             - label: the remainder of this acid residue material in USGS collection D190e CO (Denver)
               context: usgs-d190e-co
-            - catalogNumbers: [MCZ 612]
+            - prefix: MCZ
+              numbers: [612]
               notes: the remainder of this acid residue material
             illustrations:
             - plate: 36
               figures: [[1, 5]]
-              of: USNM 165378
+              of: 165378
             - plate: 36
               figures: [[6, 8]]
-              of: USNM 165392
+              of: 165392
             - plate: 36
               figures: [9, 10]
-              of: [USNM 165393, USNM 165394]
+              of: [165393, 165394]
             - plate: 36
               figures: [[11, 13]]
-              of: USNM 165395
+              of: 165395
             - plate: 36
               figures: [[14, 16]]
-              of: USNM 165396
+              of: 165396
             - plate: 36
               figures: 17
-              of: USNM 165397
+              of: 165397
             - plate: 36
               figures: [[18, 22]]
-              of: USNM 165398
+              of: 165398
             - plate: 36
               figures: [[23, 36]]
-              of: [USNM 165379, USNM 165378]
+              of: [165379, 165378]
               notes: holotype in Fig. 35
             - textFigures: 37B
               page: 146
@@ -2762,7 +2909,7 @@ taxonomies:
                 localStage: Whiterockian
                 biozone: Orthidiella
                 location: [northern Utah]
-                localityNumbers: [USGS D190d CO]
+                localityNumbers: [{prefix: USGS locality, number: D190d CO}]
                 collectedBy: Ross
                 notes: Trilobite zones K and L
               usgs-d190e-co:
@@ -2773,7 +2920,7 @@ taxonomies:
                 localStage: Whiterockian
                 biozone: Orthidiella
                 location: [northern Utah]
-                localityNumbers: [USGS D190e CO]
+                localityNumbers: [{prefix: USGS locality, number: D190e CO}]
                 collectedBy: Ross
                 notes: Trilobite zones K and L
           - taxon: nevadensis_sprinkle_1973
@@ -2781,34 +2928,39 @@ taxonomies:
             new: true
             pages: 152
             material:
-            - catalogNumbers: [MCZ 613]
+            - prefix: MCZ
+              numbers: [613]
               role: holotype
               context: mj-1
               notes: deltoid D7
-            - catalogNumbers: [MCZ 614-D1, MCZ 614-D2, MCZ 614-D3, MCZ 614-D4, MCZ 614-D5, MCZ 614-D6, MCZ 614-D8, MCZ 614-D9]
-              catalogNumbersAsPrinted: MCZ 614 (deltoids D1–6, D8–9)
+            - prefix: MCZ
+              numbers: [614-D1, 614-D2, 614-D3, 614-D4, 614-D5, 614-D6, 614-D8, 614-D9]
+              asPrinted: MCZ 614 (deltoids D1–6, D8–9)
               role: paratype
               context: mj-1
-            - catalogNumbers: [MCZ 615]
+            - prefix: MCZ
+              numbers: [615]
               role: paratype
               context: mj-1
               notes: oral crest
-            - catalogNumbers: [MCZ 643]
+            - prefix: MCZ
+              numbers: [643]
               context: mj-1
               notes: approximately 20–30 additional poorly preserved silicified deltoids and oral crests
-            - catalogNumbers: [MCZ 644]
+            - prefix: MCZ
+              numbers: [644]
               context: ik-3
               notes: several additional deltoid plates
             illustrations:
             - plate: 37
               figures: [[1, 5]]
-              of: MCZ 613
+              of: 613
             - plate: 37
               figures: [[6, 9]]
-              of: MCZ 615
+              of: 615
             - plate: 37
               figures: [[10, 18]]
-              of: [MCZ 614-D1, MCZ 613]
+              of: [614-D1, 613]
               notes: caption prints "Figs. 10-19"; holotype in Fig. 16
             - textFigures: 37C
               page: 146
@@ -2819,23 +2971,26 @@ taxonomies:
             pages: 154
             notes: "very questionably referred to Blastoidocrinus"
             material:
-            - catalogNumbers: [MCZ 610]
+            - prefix: MCZ
+              numbers: [610]
               role: holotype
               context: mj-1
-            - catalogNumbers: [MCZ 611a]
+            - prefix: MCZ
+              numbers: [611a]
               role: paratype
               context: ik-3
-            - catalogNumbers: [MCZ 611b, MCZ 611c]
-              catalogNumbersAsPrinted: MCZ 611b–c (15 specimens)
+            - prefix: MCZ
+              numbers: [611b, 611c]
+              asPrinted: MCZ 611b–c (15 specimens)
               count: 15
               role: paratype
             illustrations:
             - plate: 37
               figures: [19, 20, 22]
-              of: MCZ 610
+              of: 610
             - plate: 37
               figures: [21, 23]
-              of: MCZ 611a
+              of: 611a
               notes: caption prints "paratype MCZ 611"
             - textFigures: 37D
               page: 146
@@ -2889,69 +3044,77 @@ taxonomies:
             new: true
             pages: 158
             material:
-            - catalogNumbers: [MCZ 594]
+            - prefix: MCZ
+              numbers: [594]
               role: holotype
               collectedBy: my field assistant Gary Stuckey
               collectedDate: during the summer of 1967
               context: lv-2
-            - catalogNumbers: [MCZ 595]
+            - prefix: MCZ
+              numbers: [595]
               role: paratype
               collectedDate: during the summer of 1967
               context: rc-8
-            - catalogNumbers: [MCZ 596]
-              catalogNumbersAsPrinted: MCZ 596–601
+            - prefix: MCZ
+              numbers: [596]
+              asPrinted: MCZ 596–601
               role: paratype
               context: rc-7
-            - catalogNumbers: [MCZ 597, MCZ 598, MCZ 601A, MCZ 601B, MCZ 601C]
-              catalogNumbersAsPrinted: MCZ 596–601
+            - prefix: MCZ
+              numbers: [597, 598, 601A, 601B, 601C]
+              asPrinted: MCZ 596–601
               role: paratype
               context: rc-9
-            - catalogNumbers: [MCZ 599-D1, MCZ 599-D2, MCZ 599-D3, MCZ 599-D4, MCZ 599-D5, MCZ 599-D6, MCZ 599-D7, MCZ 599-D8, MCZ 599-D9, MCZ 600-R1, MCZ 600-R2, MCZ 600-R3, MCZ 600-R4, MCZ 600-R5, MCZ 600-R6, MCZ 600-R7, MCZ 600-R8, MCZ 600-R9, MCZ 600-R10]
-              catalogNumbersAsPrinted: MCZ 596–601
+            - prefix: MCZ
+              numbers: [599-D1, 599-D2, 599-D3, 599-D4, 599-D5, 599-D6, 599-D7, 599-D8, 599-D9, 600-R1, 600-R2, 600-R3, 600-R4, 600-R5, 600-R6, 600-R7, 600-R8, 600-R9, 600-R10]
+              asPrinted: MCZ 596–601
               role: paratype
               context: rc-9
-            - catalogNumbers: [MCZ 599-D10]
-              catalogNumbersAsPrinted: MCZ 596–601
+            - prefix: MCZ
+              numbers: [599-D10]
+              asPrinted: MCZ 596–601
               role: paratype
               context: lv-2
-            - catalogNumbers: [MCZ 644]
+            - prefix: MCZ
+              numbers: [644]
               role: paratype
-            - catalogNumbers: [MCZ 645]
+            - prefix: MCZ
+              numbers: [645]
               notes: nearly 300 additional separate plates, primarily from locality RC-9.
             illustrations:
             - plate: 38
               figures: [[1, 5]]
-              of: MCZ 594
+              of: 594
             - plate: 38
               figures: [[6, 8]]
-              of: MCZ 595
+              of: 595
             - plate: 39
               figures: [[1, 4]]
-              of: MCZ 596
+              of: 596
             - plate: 39
               figures: [5, 6]
-              of: MCZ 597
+              of: 597
             - plate: 39
               figures: [[7, 15]]
-              of: [MCZ 601A, MCZ 601B]
+              of: [601A, 601B]
             - plate: 39
               figures: [[16, 19]]
-              of: MCZ 598
+              of: 598
             - plate: 39
               figures: 20
-              of: MCZ 601C
+              of: 601C
             - plate: 39
               figures: [[21, 23]]
-              of: MCZ 594
+              of: 594
             - plate: 40
               figures: [[1, 5]]
-              of: MCZ 599-D7
+              of: 599-D7
             - plate: 40
               figures: [[6, 10]]
-              of: MCZ 600-R10
+              of: 600-R10
             - plate: 41
               figures: [[1, 20]]
-              of: [MCZ 599-D1, MCZ 599-D10, MCZ 600-R1]
+              of: [599-D1, 599-D10, 600-R1]
             - textFigures: 5G
               page: 17
               depicts: drawing
@@ -2959,10 +3122,10 @@ taxonomies:
               page: 47
             - textFigures: 39
               page: 157
-              of: MCZ 594
+              of: 594
             - textFigures: 40
               page: 160
-              of: MCZ 594
+              of: 594
               depicts: drawing
             - textFigures: 41
               page: 162
@@ -2974,33 +3137,37 @@ taxonomies:
             new: true
             pages: 168
             material:
-            - catalogNumbers: [MCZ 602-D1]
+            - prefix: MCZ
+              numbers: [602-D1]
               role: holotype
               context: dt-3
-            - catalogNumbers: [MCZ 602-D2, MCZ 602-D3]
-              catalogNumbersAsPrinted: MCZ 602–D2–3
+            - prefix: MCZ
+              numbers: [602-D2, 602-D3]
+              asPrinted: MCZ 602–D2–3
               role: paratype
               notes: deltoids
-            - catalogNumbers: [MCZ 602-RO-5]
-              catalogNumbersAsPrinted: MCZ 602–RO–5
+            - prefix: MCZ
+              numbers: [602-RO-5]
               role: paratype
               notes: radials
-            - catalogNumbers: [MCZ 602a]
+            - prefix: MCZ
+              numbers: [602a]
               role: paratype
               notes: oral plate
-            - catalogNumbers: [MCZ 602b]
+            - prefix: MCZ
+              numbers: [602b]
               notes: about ten additional unfigured deltoid and radial plates
             illustrations:
             - plate: 40
               figures: [[11, 15]]
-              of: MCZ 602-D1
+              of: 602-D1
             - plate: 40
               figures: [[16, 20]]
-              of: MCZ 602-RO-5
+              of: 602-RO-5
               notes: caption prints "paratype MCZ 602-R3"
             - plate: 41
               figures: [[21, 27]]
-              of: [MCZ 602-D1, MCZ 602-D2, MCZ 602-RO-5]
+              of: [602-D1, 602-D2, 602-RO-5]
               notes: caption prints "paratypes MCZ 602-D2-3 (deltoids), and paratypes MCZ 602-R1-4 (radials)"
             - textFigures: 42
               page: 165
@@ -3135,30 +3302,35 @@ taxonomies:
                 new: true
                 pages: 180
                 material:
-                - catalogNumbers: [GSC 25962A, GSC 25962B]
-                  catalogNumbersAsPrinted: GSC 25962
+                - prefix: GSC
+                  numbers: [25962A, 25962B]
+                  asPrinted: GSC 25962
                   role: holotype
                   collectedBy: members of the Geological Survey of Canada and Harry B. Whittington and students
                   collectedDate: 25 July 1967
                   context: walcott-35k
                   parts: [part, counterpart]
-                - catalogNumbers: [USNM 165405A, USNM 165405B, USNM 165406A, USNM 165406B, USNM 165407]
-                  catalogNumbersAsPrinted: USNM 165405–165408
+                - prefix: USNM
+                  numbers: [165405A, 165405B, 165406A, 165406B, 165407]
+                  asPrinted: USNM 165405–165408
                   role: paratype
                   collectedBy: Walcott
                   collectedDate: between 1911 and 1917
                   context: walcott-35k
-                - catalogNumbers: [USNM 165408]
-                  catalogNumbersAsPrinted: USNM 165405–165408
+                - prefix: USNM
+                  numbers: [165408]
+                  asPrinted: USNM 165405–165408
                   role: paratype
                   collectedBy: Walcott
                   collectedDate: between 1911 and 1917
                   context: walcott-35k-10
-                - catalogNumbers: [USNM 165426]
+                - prefix: USNM
+                  numbers: [165426]
                   role: paratype
                   context: walcott-35k
                   notes: one additional separate brachial plate
-                - catalogNumbers: [USNM 165427]
+                - prefix: USNM
+                  numbers: [165427]
                   role: paratype
                   uncertain: true
                   context: walcott-35k
@@ -3166,35 +3338,35 @@ taxonomies:
                 illustrations:
                 - plate: 42
                   figures: [1, 2]
-                  of: [GSC 25962B, GSC 25962A]
+                  of: [25962B, 25962A]
                 - plate: 42
                   figures: 3
-                  of: USNM 165408
+                  of: 165408
                 - plate: 43
                   figures: [1, 2]
-                  of: [USNM 165405A, USNM 165405B]
+                  of: [165405A, 165405B]
                 - plate: 43
                   figures: 3
-                  of: USNM 165407
+                  of: 165407
                 - plate: 43
                   figures: [4, 5]
-                  of: [USNM 165406B, USNM 165406A]
+                  of: [165406B, 165406A]
                 - plate: 43
                   figures: 6
-                  of: GSC 25962B
+                  of: 25962B
                 - plate: 43
                   figures: 7
-                  of: USNM 165427
+                  of: 165427
                   notes: caption prints "paratype(?) USNM 165427"
                 - plate: 43
                   figures: 8
-                  of: USNM 165426
+                  of: 165426
                 - textFigures: 44
                   page: 179
-                  of: GSC 25962B
+                  of: 25962B
                 - textFigures: 45
                   page: 181
-                  of: GSC 25962B
+                  of: 25962B
                   depicts: drawing
                 contexts:
                   walcott-35k:
@@ -3207,7 +3379,7 @@ taxonomies:
                     - ridge on the south side of Mt. Wapta
                     - near Field
                     - British Columbia
-                    localityNumbers: [USNM loc. 35k]
+                    localityNumbers: [{prefix: USNM locality, number: 35k}]
                   walcott-35k-10:
                     unit: [Burgess Shale Member, Stephen Formation]
                     period: Cambrian
@@ -3218,7 +3390,7 @@ taxonomies:
                     - ridge on the south side of Mt. Wapta
                     - near Field
                     - British Columbia
-                    localityNumbers: [USNM loc. 35k/10]
+                    localityNumbers: [{prefix: USNM locality, number: 35k/10}]
     - taxon: paracrinoidea
       pages: 184
       ranges:

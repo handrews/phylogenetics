@@ -314,10 +314,9 @@ def test_statements_in_words(store):
   )
   lines = store.statements('Rhenopyrgus viviani', kind='material')['rendered'].splitlines()
   assert lines[0] == 'Statements about Rhenopyrgus viviani Ewin et al. 2020'
-  assert '  2020  Ewin et al.  holotype: NHMUK EE16642 (pp. 120–122)' in lines
-  assert (
-    '  2020  Ewin et al.  paratype: NHMUK EE15752–NHMUK EE15755, MPEP 1126.1 (pp. 120–122)' in lines
-  )
+  assert '  2020  Ewin et al.  holotype: NHMUK EE 16642 (pp. 120–122)' in lines
+  assert '  2020  Ewin et al.  paratype: NHMUK EE 15752–15755 (pp. 120–122)' in lines
+  assert '  2020  Ewin et al.  paratype: MPEP 1126.1 (pp. 120–122)' in lines
 
 
 def test_rank_variants_linked(store):
@@ -1153,7 +1152,7 @@ def test_specimen_history_renders_each_citation_as_a_line(store):
   assert lines == [
     'Specimen UQF 5404 (University of Queensland, fossil register)',
     '  1941  Whitehouse       holotype of Peridionites navicula as F. 5404',
-    '  2021  Jell & Sprinkle  holotype of Peridionites navicula as UQF5404',
+    '  2021  Jell & Sprinkle  holotype of Peridionites navicula',
   ]
   # The number as a source prints it is not repeated.
   assert _lines(store.specimen_history('F. 5404'))[1].endswith('holotype of Peridionites navicula')
@@ -1174,7 +1173,7 @@ def test_specimen_history_lists_each_taxon_a_number_is_cited_under(store):
 def test_specimen_history_names_the_figures_tied_to_a_specimen(store):
   # Two numbers on the entry: only the figures whose `of` names the one asked about.
   [entry] = store.specimen_history('MCZ 581A')['entries']
-  assert entry['sentence'].startswith('holotype of Kinzercystis durhami as MCZ 581A, MCZ 581B')
+  assert entry['sentence'].startswith('holotype of Kinzercystis durhami as MCZ 581A, 581B')
   assert '; figured pl. 4, fig. 1, 2' in entry['sentence']
   assert entry['page'] == 70
 
@@ -1183,7 +1182,7 @@ def test_specimen_history_finds_a_number_inside_a_printed_run(store):
   [entry] = store.specimen_history('GSC 25940')['entries']
   # Only the figure whose own `of` names the number is shown.
   assert entry['sentence'] == (
-    'paratype of Gogia kitchnerensis in the run GSC 25935–GSC 25961; figured pl. 20, fig. 4'
+    'paratype of Gogia kitchnerensis in the run GSC 25935–25961; figured pl. 20, fig. 4'
   )
   assert entry['page'] == 96
   [entry] = store.specimen_history('GSC 25936')['entries']
@@ -1196,7 +1195,7 @@ def test_specimen_history_finds_a_number_inside_a_printed_run(store):
   [entry] = [
     e for e in store.specimen_history('GSC 25954')['entries'] if 'kitchnerensis' in e['sentence']
   ]
-  assert entry['sentence'] == 'paratype of Gogia kitchnerensis in the run GSC 25935–GSC 25961'
+  assert entry['sentence'] == 'paratype of Gogia kitchnerensis in the run GSC 25935–25961'
   # The bare number finds the run when the repository is given, an endpoint is in it,
   # and a number just outside it is not.
   assert (
@@ -1238,26 +1237,26 @@ def test_specimen_history_asks_for_the_repository_when_the_prefix_is_shared(stor
   assert block['type'] == 'statement' and block['kind'] == 'absent'
   assert block['fields'] == {
     'name': 'the specimen PE-199',
-    'candidates': ['fmnh', 'north-museum-fm'],
+    'candidates': ['fmnh-pe', 'north-museum-fm'],
   }
   assert block['parameters'] == {'number': 'PE-199', 'repository': None}
   assert block['rendered'] == (
     'No source in the corpus mentions the specimen PE-199. '
-    'Its prefix is claimed by fmnh and north-museum-fm: give the repository.'
+    'Its prefix is claimed by fmnh-pe and north-museum-fm: give the repository.'
   )
   block = store.specimen_history('PE-199', repository='north-museum-fm')
   assert block['heading']['key'] == 'north-museum-fm:199'
   assert [e['source'] for e in block['entries']] == ['1973_sprinkle']
   # The source calls it a figured specimen, so it is not "not figured" as well.
   assert block['entries'][0]['sentence'] == (
-    'figured specimen of Lepidocystis cf. wanneri as PE-199, PE-199-A'
+    'figured specimen of Lepidocystis cf. wanneri as PE 199, 199-A'
   )
   assert block['parameters'] == {'number': 'PE-199', 'repository': 'north-museum-fm'}
-  # A number with no prefix of its own is given its repository.
-  assert (
-    store.specimen_history('5404', repository='uq-f')['entries']
-    == (store.specimen_history('UQF 5404')['entries'])
-  )
+  # A number with no prefix of its own is given its repository: the same citations
+  # (the 2021 line says "as UQF 5404" only because the query did not print it so).
+  assert [
+    (e['source'], e['claim']) for e in store.specimen_history('5404', repository='uq-f')['entries']
+  ] == [(e['source'], e['claim']) for e in store.specimen_history('UQF 5404')['entries']]
 
 
 def test_specimen_history_of_an_unknown_specimen_is_absent(store):

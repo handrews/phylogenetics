@@ -1,3 +1,5 @@
+prefixes:
+  YKLP: yklp
 taxonomies:
 - taxon: echinodermata
   children:
@@ -17,9 +19,9 @@ taxonomies:
         - taxon: extenuatus_zhao.j_rahman_zamora_chen.a_cong.p.y_2022
           new: true
           material:
-          - catalogNumbers:
-            - YKLP 13397
+          - prefix: YKLP
+            numbers: [13397]
             role: holotype
-          - catalogNumbers:
-            - YKLP 13553
+          - prefix: YKLP
+            numbers: [13553]
             role: paratype
