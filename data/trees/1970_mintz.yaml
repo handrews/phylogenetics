@@ -12,5 +12,5 @@ taxonomies:
         - taxon: steganoblastus
         children:
         - taxon: ottawaensis_whiteaves_1897
-          type: true
+          isType: true
         - taxon: distans_webby_1968

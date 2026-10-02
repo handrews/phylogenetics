@@ -9,7 +9,7 @@ taxonomies:
     - taxon: helicoplacus
       children:
       - taxon: gilberti_durham_caster_1963
-        type: true
+        isType: true
       - taxon: curtisi_durham_caster_1963
       - taxon: everndeni_durham_1967
         new: true
@@ -30,7 +30,7 @@ taxonomies:
       new: true
       children:
       - taxon: nelsoni_durham_1967
-        type: true
+        isType: true
         new: true
         material:
         - prefix: UCMP
@@ -43,7 +43,7 @@ taxonomies:
       new: true
       children:
       - taxon: kilmeri_durham_1967
-        type: true
+        isType: true
         new: true
         material:
         - prefix: UCMP

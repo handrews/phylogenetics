@@ -14,7 +14,7 @@ taxonomies:
         children:
         - taxon: purujoensis_zamora_smith.a.b_2012
           new: true
-          type: true
+          isType: true
           material:
           - prefix: MPZ
             numbers: [2009/1230]
@@ -26,7 +26,7 @@ taxonomies:
         new: true
         children:
         - taxon: languedocianus_ubaghs_1987
-          type: true
+          isType: true
         - taxon: moncaiensis_zamora_smith.a.b_2012
           new: true
           material:

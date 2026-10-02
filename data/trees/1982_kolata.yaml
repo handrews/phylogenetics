@@ -12,5 +12,5 @@ taxonomies:
         - taxon: cyclocystoides
           children:
           - taxon: halli_billings_1858
-            type: true
+            isType: true
           - openTaxon: cyclocystoides-sp_kolata_1982

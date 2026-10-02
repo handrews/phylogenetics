@@ -13,5 +13,5 @@ taxonomies:
             new: true
             children:
             - taxon: branagani_brown.i.a_1963
-              type: true
+              isType: true
               new: true

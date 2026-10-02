@@ -5,7 +5,7 @@ taxonomies:
   #   taxon: sardesoni_bather_1915
   children:
   - taxon: sardesoni_bather_1915
-    type: true
+    isType: true
     ranges:
     - period: Ordovician
       notes: Period given as "Lower Silurian (Ordovician)"
@@ -87,7 +87,7 @@ taxonomies:
     #   - taxon: pyrgocystis
     children:
     - taxon: coronaeformis_rievers_1961
-      type: true
+      isType: true
       illustrations:
       - plate: 1
         figures:

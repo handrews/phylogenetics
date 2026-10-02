@@ -15,7 +15,7 @@ taxonomies:
           children:
           - taxon: utahensis_lefebvre_lerosey-aubril_2018
             new: true
-            type: true
+            isType: true
             material:
             - prefix: UU
               numbers: ['05072.02_01']

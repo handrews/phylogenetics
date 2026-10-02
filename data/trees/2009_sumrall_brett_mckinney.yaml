@@ -12,5 +12,5 @@ taxonomies:
           new: true
           children:
           - taxon: mckenziensis_sumrall_brett_mckinney_2009
-            type: true
+            isType: true
             new: true

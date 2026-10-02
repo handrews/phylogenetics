@@ -42,7 +42,7 @@ taxonomies:
         - taxon: cothurnocystis
           children:
           - taxon: elizae_bather_1913
-            type: true
+            isType: true
           - taxon: bifida_ubaghs_robison_1988
             provisional: true
             new: true

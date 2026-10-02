@@ -53,7 +53,7 @@ taxonomies:
         - taxon: sphaeronites
           children:
           - taxon: pomum_gyllenhaal_1772
-            type: true
+            isType: true
           - taxon: litchii_forbes_1848  # litchi in original
             provisional: true
             notes: allied to S. pomum requiring further investigation
@@ -82,5 +82,5 @@ taxonomies:
           new: true
           children:
           - taxon: leuchtenbergii_volborth_1846
-            type: true
+            isType: true
           - taxon: pomum_leuchtenberg_1843 # actually non?

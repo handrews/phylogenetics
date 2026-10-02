@@ -12,4 +12,4 @@ taxonomies:
         - taxon: lepidocystis
           children:
           - taxon: wanneri_foerste_1938
-            type: true
+            isType: true

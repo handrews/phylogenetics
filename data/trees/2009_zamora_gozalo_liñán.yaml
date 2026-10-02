@@ -12,7 +12,7 @@ taxonomies:
           - taxon: gogia
             children:
             - taxon: prolifica_walcott_1917
-              type: true
+              isType: true
             - taxon: parsleyi_zamora_2009
               new: true
             - openTaxon: gogia-sp_zamora_gozalo_liñán_2009

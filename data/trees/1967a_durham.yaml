@@ -19,4 +19,4 @@ taxonomies:
           notes: Species other than roddyi not actually Camptostroma
           children:
           - taxon: roddyi_ruedemann_1933
-            type: true
+            isType: true

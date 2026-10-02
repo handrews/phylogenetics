@@ -10,7 +10,7 @@ taxonomies:
         - taxon: lepidodiscus
           children:
           - taxon: squamosus_meek_worthen_1868
-            type: true
+            isType: true
           - openTaxon: lepidodiscus-sp-1_sumrall_1996
             provisional: true
           - openTaxon: lepidodiscus-sp-2_sumrall_1996
@@ -21,12 +21,12 @@ taxonomies:
           - taxon: discocystis
             children:
             - taxon: kaskaskiensis_hall_1858
-              type: true
+              isType: true
           - taxon: clavidiscus
             new: true
             children:
             - taxon: laudoni_bassler_1936
-              type: true
+              isType: true
               synonyms:
               - taxon: laudoni_bassler_1936
                 parents:
@@ -35,7 +35,7 @@ taxonomies:
             new: true
             children:
             - taxon: huntsvillensis_sumrall_1996
-              type: true
+              isType: true
               new: true
             - taxon: priesti_strimple_1968
             - taxon: kinsleyi_sumrall_1996
@@ -56,6 +56,6 @@ taxonomies:
           - taxon: spiraclavus
             children:
             - taxon: nacoensis_sumrall_1992
-              type: true
+              isType: true
           - taxon: dinocystis
           - taxon: lispidecodus

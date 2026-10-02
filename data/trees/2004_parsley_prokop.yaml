@@ -6,7 +6,7 @@ taxonomies:
     - taxon: stromatocystites
       children:
       - taxon: pentangularis_pompeckj_1896
-        type: true
+        isType: true
         pages:
         - [151, 152]
         illustrations:
@@ -33,7 +33,7 @@ taxonomies:
     - taxon: lichenoides
       children:
       - taxon: priscus_barrande_1846
-        type: true
+        isType: true
         pages: 154
         illustrations:
         - page: 153

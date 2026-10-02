@@ -12,7 +12,7 @@ taxonomies:
         - taxon: totiglobus
           children:
           - taxon: nimius_bell.b.m_sprinkle_1978
-            type: true
+            isType: true
           - taxon: lloydi_sprinkle_1985
             provisional: true
             new: true

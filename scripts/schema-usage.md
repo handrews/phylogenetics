@@ -29,10 +29,12 @@ even when its parent is also unreached, so read parents first.
 | `person` | `phylogeny#/$defs/person/properties/suffix` |
 | `publication` | `phylogeny#/$defs/publication/properties/type` |
 | `range` | `phylogeny#/$defs/range/properties/inferred`<br>`phylogeny#/$defs/range/properties/tentative/oneOf/0` |
+| `relationalFields` | `phylogeny#/$defs/relationalFields/properties/type` |
 | `stageRange` | `phylogeny#/$defs/stageRange`<br>`phylogeny#/$defs/stageRange/items` |
 | `taxonRecord` | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items/items` |
 | `timeFields` | `phylogeny#/$defs/timeFields/properties/eon`<br>`phylogeny#/$defs/timeFields/properties/era`<br>`phylogeny#/$defs/timeFields/properties/seriesBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageRange` |
 | `treeDocument` | `phylogeny#/$defs/treeDocument/properties/unused`<br>`phylogeny#/$defs/treeDocument/properties/unused/items` |
+| `typeNode` | `phylogeny#/$defs/typeNode`<br>`phylogeny#/$defs/typeNode/properties/fixation`<br>`phylogeny#/$defs/typeNode/properties/fixedBy` |
 | `uncertaintyFields` | `phylogeny#/$defs/uncertaintyFields/properties/nonMonophyletic/oneOf/1`<br>`phylogeny#/$defs/uncertaintyFields/properties/sensu` |
 
 ## 2. Property frequency by `$defs`
@@ -45,7 +47,7 @@ property.
 | property | data | data % |
 |---|---|---|
 | `new` | 1472 | 26.4% |
-| `type` | 369 | 6.6% |
+| `isType` | 369 | 6.6% |
 | `emended` | 54 | 1.0% |
 | `pars` | 19 | 0.3% |
 | `translated` | 16 | 0.3% |
@@ -350,6 +352,7 @@ property.
 | `lapsusFor` | 1 | 0.0% |
 | `removed` | 1 | 0.0% |
 | `substituted` | 1 | 0.0% |
+| `type` | 0 | 0.0% |
 
 ### `repositories` -- 1 instances in `data/`
 
@@ -691,6 +694,12 @@ property.
 0 of 5 members used, 0 occurrences.
 
 **Never used (5):** `'material'`, `'illustrations'`, `'contexts'`, `'ranges'`, `'synonyms'`
+
+### `phylogeny#/$defs/typeNode/properties/fixation`
+
+0 of 8 members used, 0 occurrences.
+
+**Never used (8):** `'originalDesignation'`, `'monotypy'`, `'subsequentDesignation'`, `'subsequentMonotypy'`, `'objectiveSynonymy'`, `'tautonymy'`, `'typus'`, `'iczn'`
 
 ### `phylogeny#/$defs/uncertaintyFields/properties/nonMonophyletic/oneOf/1`
 

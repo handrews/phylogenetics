@@ -12,9 +12,9 @@ taxonomies:
           notes: Says "Revised diagnosis" rather than emended.
           children:
           - taxon: rotundus_parsley_zhao.y.l_2006
-            type: true
+            isType: true
         - taxon: lyracystis
           children:
           - taxon: radiata_sprinkle_1973
-            type: true
+            isType: true
           - taxon: reesei_sprinkle_collins.d_2006

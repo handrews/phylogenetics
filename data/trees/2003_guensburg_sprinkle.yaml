@@ -14,7 +14,7 @@ taxonomies:
           new: true
           children:
           - taxon: sumralli_guensburg_sprinkle_2003
-            type: true
+            isType: true
             new: true
           - openTaxon: titanocrinus-sp_guensburg_sprinkle_2003
             new: true
@@ -22,7 +22,7 @@ taxonomies:
           new: true
           children:
           - taxon: globularis_guensburg_sprinkle_2003
-            type: true
+            isType: true
             new: true
     - taxon: camerata
       children:
@@ -36,7 +36,7 @@ taxonomies:
             new: true
             children:
             - taxon: fillmorensis_guensburg_sprinkle_2003
-              type: true
+              isType: true
               new: true
       - taxon: monobathrida
         questionable: true
@@ -48,7 +48,7 @@ taxonomies:
             new: true
             children:
             - taxon: wahwahensis_guensburg_sprinkle_2003
-              type: true
+              isType: true
               new: true
         - openTaxon: monobathrida-uncertain-family_guensburg_sprinkle_2003
           new: true
@@ -57,7 +57,7 @@ taxonomies:
             new: true
             children:
             - taxon: fortuitus_guensburg_sprinkle_2003
-              type: true
+              isType: true
               new: true
         - taxon: habrotecrinidae
           new: true
@@ -66,7 +66,7 @@ taxonomies:
             new: true
             children:
             - taxon: ibexensis_guensburg_sprinkle_2003
-              type: true
+              isType: true
               new: true
 phylogenies:
 - treeType: cladogram

@@ -14,7 +14,7 @@ taxonomies:
           - taxon: myeinocystites
             children:
             - taxon: natus_strimple_1953
-              type: true
+              isType: true
   - taxon: crinozoa
     children:
     - taxon: cystoidea
@@ -28,20 +28,20 @@ taxonomies:
             - taxon: pleurocystites
               children:
               - taxon: squamosus_billings_1854
-                type: true
+                isType: true
               - openTaxon: pleurocystites-cf-squamosus_kolata_1975
                 cf: squamosus_billings_1854
             - taxon: praepleurocystis
               children:
               - taxon: watkinsi_strimple_1948
-                type: true
+                isType: true
               - openTaxon: praepleurocystis-sp_kolata_1975
           - taxon: cheirocrinidae
             children:
             - taxon: coronocystis
               children:
               - taxon: angulatus_wood_1909
-                type: true
+                isType: true
               - taxon: durandensis_kolata_1975
                 new: true
     - taxon: crinoidea
@@ -57,7 +57,7 @@ taxonomies:
               - taxon: cremacrinus
                 children:
                 - taxon: punctatus_ulrich_1886
-                  type: true
+                  isType: true
                 - taxon: arctus_sardeson_1928
                 - taxon: guttenbergensis_kolata_1975
                   new: true
@@ -65,7 +65,7 @@ taxonomies:
               - taxon: anulocrinus
                 children:
                 - taxon: thraivensis_ramsbottom_1961
-                  type: true
+                  isType: true
                 - taxon: forrestonensis_kolata_1975
                   new: true
           - taxon: heterocrinacea
@@ -75,7 +75,7 @@ taxonomies:
               - taxon: isotomocrinus
                 children:
                 - taxon: typus_ulrich_1924
-                  type: true
+                  isType: true
                 - taxon: tenuis_billings_1857
                   synonyms:
                   - taxon: tenuis_billings_1857
@@ -95,7 +95,7 @@ taxonomies:
               - taxon: hybocrinus
                 children:
                 - taxon: conicus_billings_1857_hybocrinus
-                  type: true
+                  isType: true
         - taxon: cladida
           children:
           - taxon: cyathocrinina
@@ -107,7 +107,7 @@ taxonomies:
                 - taxon: porocrinus
                   children:
                   - taxon: conicus_billings_1857_porocrinus
-                    type: true
+                    isType: true
                   - taxon: pentagonius_meek_worthen_1865
                   - openTaxon: porocrinus-cf-smithi_kolata_1975
                     cf: smithi_grant_1881
@@ -116,7 +116,7 @@ taxonomies:
                 - taxon: carabocrinus
                   children:
                   - taxon: radiatus_billings_1857
-                    type: true
+                    isType: true
                   - taxon: oogyi_kolata_1975
                     new: true
                   - openTaxon: carabocrinus-sp_kolata_1975
@@ -129,7 +129,7 @@ taxonomies:
                 - taxon: dendrocrinus
                   children:
                   - taxon: longidactylus_hall_1852
-                    type: true
+                    isType: true
                   - taxon: springeri_kolata_1975
                     provisional: true
                     new: true
@@ -142,7 +142,7 @@ taxonomies:
                 - taxon: merocrinus
                   children:
                   - taxon: typus_walcott_1884
-                    type: true
+                    isType: true
                   - taxon: britonensis_kolata_1975
                     new: true
               - taxon: cupulocrinidae
@@ -150,7 +150,7 @@ taxonomies:
                 - taxon: cupulocrinus
                   children:
                   - taxon: heterocostalis_hall_1847
-                    type: true
+                    isType: true
                     synonyms:
                     - taxon: heterocostalis_hall_1847
                       parents:
@@ -192,7 +192,7 @@ taxonomies:
             - taxon: reteocrinus
               children:
               - taxon: stellaris_billings_1859
-                type: true
+                isType: true
               - taxon: rocktonensis_kolata_1975
                 new: true
               - taxon: spinosus_kolata_1975
@@ -201,14 +201,14 @@ taxonomies:
               new: true
               children:
               - taxon: mahlburgi_kolata_1975
-                type: true
+                isType: true
                 new: true
           - taxon: archaeocrinidae
             children:
             - taxon: raphanocrinus
               children:
               - taxon: subnodosus_walcott_1884
-                type: true
+                isType: true
                 synonyms:
                 - taxon: subnodosus_walcott_1884
                   parents:
@@ -222,7 +222,7 @@ taxonomies:
             - taxon: glyptocrinus
               children:
               - taxon: decadactylus_hall_1847
-                type: true
+                isType: true
               - taxon: charltoni_kolata_1975
                 new: true
               - taxon: pustulosis_kolata_1975
@@ -243,7 +243,7 @@ taxonomies:
               - taxon: promopalaeaster
                 children:
                 - taxon: granulosus_meek_1872
-                  type: true
+                  isType: true
                   synonyms:
                   - taxon: granulosus_meek_1872
                     parents:
@@ -261,7 +261,7 @@ taxonomies:
               - taxon: hudsonaster
                 children:
                 - taxon: rugosus_billings_1857
-                  type: true
+                  isType: true
                   synonyms:
                   - taxon: rugosus_billings_1857
                     parents:
@@ -284,7 +284,7 @@ taxonomies:
             - taxon: urasterella
               children:
               - taxon: ruthveni_mccoy_1851
-                type: true
+                isType: true
               - openTaxon: urasterella-sp_kolata_1975
                 provisional: true
   - taxon: edrioasteroidea
@@ -294,7 +294,7 @@ taxonomies:
       - taxon: edrioaster
         children:
         - taxon: bigsbyi_billings_1857
-          type: true
+          isType: true
         - openTaxon: edrioaster-cf-bigsbyi_kolata_1975
           cf: bigsbyi_billings_1857
           synonyms:
@@ -309,7 +309,7 @@ taxonomies:
       - taxon: cyclocystoides
         children:
         - taxon: halli_billings_1858
-          type: true
+          isType: true
         - openTaxon: cyclocystoides-aff-halli_kolata_1975
           aff: halli_billings_1858
           new: true
@@ -330,13 +330,13 @@ taxonomies:
           - taxon: bothriocidaris
             children:
             - taxon: globulus_eichwald_1860
-              type: true
+              isType: true
             - taxon: solemni_kolata_1975
               new: true
           - taxon: neobothriocidaris
             children:
             - taxon: peculiaris_paul.c.r.c_1967
-              type: true
+              isType: true
             - taxon: templetoni_kolata_1975
               new: true
             - openTaxon: neobothriocidaris-sp_kolata_1975

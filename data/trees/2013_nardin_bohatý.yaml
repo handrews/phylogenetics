@@ -21,7 +21,7 @@ taxonomies:
             - taxon: regulaecystis
               children:
               - taxon: pleurocystoides_dehm_1932
-                type: true
+                isType: true
               - taxon: testudineus_nardin_bohatý_2013
                 new: true
         - openTaxon: pleurocystitidae-indeterminate-genus_nardin_bohatý_2013

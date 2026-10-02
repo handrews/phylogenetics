@@ -12,5 +12,5 @@ taxonomies:
           new: true
           children:
           - taxon: yui_zhao.y.l_parsley_peng.j_2007
-            type: true
+            isType: true
             new: true

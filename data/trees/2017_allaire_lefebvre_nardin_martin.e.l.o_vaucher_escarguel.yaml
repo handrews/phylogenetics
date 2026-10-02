@@ -15,7 +15,7 @@ taxonomies:
         pages: 697
         children:
         - taxon: destombesi_ubaghs_1963
-          type: true
+          isType: true
           pages:
           - [697, 701]
           illustrations:

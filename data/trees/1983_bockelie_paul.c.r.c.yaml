@@ -10,7 +10,7 @@ taxonomies:
       - taxon: cyathocystis
         children:
         - taxon: plautinae_schmidt_1879
-          type: true
+          isType: true
         - taxon: rhizophora_schmidt_1889
           notes: Given as Jaekel (1899)?
         - taxon: oklahomae_strimple_graffham_1955
@@ -18,7 +18,7 @@ taxonomies:
       - taxon: cyathotheca
         children:
         - taxon: suecica_jaekel_1927
-          type: true
+          isType: true
         - taxon: corallum_jaekel_1918
   - notes: |
       On page 262 the paper states:

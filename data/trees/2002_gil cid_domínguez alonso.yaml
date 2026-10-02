@@ -6,5 +6,5 @@ taxonomies:
     new: true
     children:
     - taxon: segurae_gil cid_domínguez alonso_2002
-      type: true
+      isType: true
       new: true

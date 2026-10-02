@@ -9,7 +9,7 @@ taxonomies:
       - [531, 532]
       children:
       - taxon: roadsidensis_jell_2014
-        type: true
+        isType: true
         new: true
         pages:
         - [532, 533]
@@ -26,7 +26,7 @@ taxonomies:
       - [533, 534]
       children:
       - taxon: transambus_jell_2014
-        type: true
+        isType: true
         new: true
         pages:
         - [534, 536]

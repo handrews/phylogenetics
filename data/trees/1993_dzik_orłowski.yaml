@@ -9,6 +9,6 @@ taxonomies:
       - taxon: cambrocrinus
         children:
         - taxon: regularis_orłowski_1968
-          type: true
+          isType: true
           emended: true
       - taxon: eocystites

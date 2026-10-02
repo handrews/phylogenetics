@@ -8,7 +8,7 @@ taxonomies:
     - taxon: conollia
       children:
       - taxon: staffordi_domínguez alonso_1999
-        type: true
+        isType: true
       - taxon: sporranoides_rahman_stewart_zamora_2015
         new: true
         material:

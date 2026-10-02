@@ -6,7 +6,7 @@ taxonomies:
     new: true
     children:
     - taxon: sphaeronites
-      type: true
+      isType: true
       children:
       - taxon: aurantium_gyllenhaal_1772
         synonyms:

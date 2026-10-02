@@ -7,7 +7,7 @@ taxonomies:
     new: true
     children:
     - taxon: bohemica_fatka_kordule_1985
-      type: true
+      isType: true
       new: true
       synonyms:
       - taxon: briareus_barrande_1887

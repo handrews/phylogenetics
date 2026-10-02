@@ -15,5 +15,5 @@ taxonomies:
             new: true
             children:
             - taxon: dockeryi_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley_1987
-              type: true
+              isType: true
               new: true

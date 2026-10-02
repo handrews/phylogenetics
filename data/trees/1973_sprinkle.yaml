@@ -498,7 +498,7 @@ taxonomies:
                 location: [southeastern Pennsylvania]
             children:
             - taxon: wanneri_foerste_1938
-              type: true
+              isType: true
               pages: 62
               material:
               - prefix: USNM
@@ -651,7 +651,7 @@ taxonomies:
                 location: [southeastern Pennsylvania]
             children:
             - taxon: durhami_sprinkle_1973
-              type: true
+              isType: true
               new: true
               pages: 70
               material:
@@ -748,7 +748,7 @@ taxonomies:
               asPrinted: Middle Cambrian (ranges through all zones), western North America.
             children:
             - taxon: prolifica_walcott_1917
-              type: true
+              isType: true
               pages: 80
               material:
               - prefix: USNM
@@ -1842,7 +1842,7 @@ taxonomies:
                 location: [Czechoslovakia]
             children:
             - taxon: briareus_barrande_1887
-              type: true
+              isType: true
               pages: 105
               material: null
               illustrations: null
@@ -1923,7 +1923,7 @@ taxonomies:
               regions: [Czechoslovakia]
             children:
             - taxon: priscus_barrande_1846
-              type: true
+              isType: true
               pages: 109
               material:
               - prefix: E
@@ -1993,7 +1993,7 @@ taxonomies:
               regions: [Morocco]
             children:
             - taxon: destombesi_ubaghs_1963
-              type: true
+              isType: true
               pages: 110
               material:
               - count: 3
@@ -2024,7 +2024,7 @@ taxonomies:
               asPrinted: Late middle Cambrian or early late Cambrian, Siberia, U.S.S.R.
             children:
             - taxon: ljubzovi_yakovlev_1956
-              type: true
+              isType: true
               pages: 112
               material: null
               illustrations: null
@@ -2047,7 +2047,7 @@ taxonomies:
                 location: [central Nevada]
             children:
             - taxon: minor_sprinkle_1973
-              type: true
+              isType: true
               new: true
               pages: 113
               material:
@@ -2163,7 +2163,7 @@ taxonomies:
                 location: [Virginia and Tennessee]
             children:
             - taxon: casteri_sprinkle_1973
-              type: true
+              isType: true
               new: true
               pages: 116
               material:
@@ -2256,7 +2256,7 @@ taxonomies:
               regions: [Czechoslovakia]
             children:
             - taxon: drabowensis_barrande_1887
-              type: true
+              isType: true
               pages: 118
               material:
               - numbers: [KR-2]
@@ -2285,7 +2285,7 @@ taxonomies:
             ranges: null
             children:
             - taxon: mariae_callaway_1877
-              type: true
+              isType: true
               pages: 122
               material: null
               illustrations: null
@@ -2309,7 +2309,7 @@ taxonomies:
                 - Poland
             children:
             - taxon: regularis_orłowski_1968
-              type: true
+              isType: true
               pages: 121
               material: null
               illustrations: null
@@ -2329,7 +2329,7 @@ taxonomies:
                 - eastern Canada
             children:
             - taxon: primaevus_billings_1868
-              type: true
+              isType: true
               pages: 121
               material:
               - label: the apparent type specimens
@@ -2365,7 +2365,7 @@ taxonomies:
                 location: [Wyoming and Montana]
             children:
             - taxon: resseri_ulrich_1929
-              type: true
+              isType: true
               pages: 124
               material:
               - prefix: USNM
@@ -2398,7 +2398,7 @@ taxonomies:
             ranges: null
             children:
             - taxon: laevis_pander_1830
-              type: true
+              isType: true
               pages: 126
               material:
               - prefix: MCZ
@@ -2429,7 +2429,7 @@ taxonomies:
               regions: [U.S.S.R., Sweden]
             children:
             - taxon: neglecta_hecker_1940
-              type: true
+              isType: true
               pages: 127
               material: null
               illustrations: null
@@ -2455,7 +2455,7 @@ taxonomies:
             ranges: null
             children:
             - taxon: elongata_thoral_1935
-              type: true
+              isType: true
               pages: 127
               material: null
               illustrations: null
@@ -2476,7 +2476,7 @@ taxonomies:
               regions: [Czechoslovakia]
             children:
             - taxon: bohemicus_barrande_1887_cardiocystites
-              type: true
+              isType: true
               pages: 129
               material:
               - prefix: E
@@ -2521,7 +2521,7 @@ taxonomies:
               regions: [U.S.S.R.]
             children:
             - taxon: gigas_jaekel_1901
-              type: true
+              isType: true
               pages: 130
               material: null
               illustrations: null
@@ -2536,7 +2536,7 @@ taxonomies:
               regions: [eastern United States]
             children:
             - taxon: appressa_bassler_1950
-              type: true
+              isType: true
               pages: 130
               material: null
               illustrations: null
@@ -2553,7 +2553,7 @@ taxonomies:
               regions: [central Nevada]
             children:
             - taxon: ikecanensis_sprinkle_1973
-              type: true
+              isType: true
               new: true
               pages: 132
               material:
@@ -2605,7 +2605,7 @@ taxonomies:
             location: [Czechoslovakia]
         children:
         - taxon: dusli_barrande_1887
-          type: true
+          isType: true
           pages: 136
           material:
           - prefix: E
@@ -2632,7 +2632,7 @@ taxonomies:
         ranges: null
         children:
         - taxon: medusa_barrande_1887
-          type: true
+          isType: true
           pages: 138
           material:
           - prefix: E
@@ -2668,7 +2668,7 @@ taxonomies:
         - taxon: dawsoni_billings_1858
           pages: 139
           notes: Year incorrectly given as 1859
-          type: true
+          isType: true
           material:
           - prefix: GSC
             numbers: [1021a, 1021b]
@@ -2692,7 +2692,7 @@ taxonomies:
             location: [southeastern Wisconsin]
         children:
         - taxon: nodosus_hall_1864
-          type: true
+          isType: true
           pages: 139
           material: null
           illustrations: null
@@ -2738,7 +2738,7 @@ taxonomies:
             asPrinted: Lower middle Ordovician (Chazian and Whiterockian), eastern New York and southern Quebec; northern Utah; central and southwestern Nevada; eastern California; and western Alberta, Canada.
           children:
           - taxon: charcariaedens_billings_1859
-            type: true
+            isType: true
             pages: 147
             material:
             - prefix: GSC
@@ -3008,7 +3008,7 @@ taxonomies:
               - U.S.S.R.
           children:
           - taxon: rossica_jaekel_1918
-            type: true
+            isType: true
             pages: 155
             material:
             - label: only one incomplete specimen of this genus and species is known to exist
@@ -3040,7 +3040,7 @@ taxonomies:
               location: [southwestern Virginia and northeastern Tennessee]
           children:
           - taxon: hudsoni_sprinkle_1973
-            type: true
+            isType: true
             new: true
             pages: 158
             material:
@@ -3298,7 +3298,7 @@ taxonomies:
                   location: [western Canada]
               children:
               - taxon: brachiatus_sprinkle_1973
-                type: true
+                isType: true
                 new: true
                 pages: 180
                 material:

@@ -80,11 +80,11 @@ taxonomies:
             citedAs: GeoI. Mag. (n.s.) , dec. 5, 5
           children:
           - taxon: dicksoni_billings_1857
-            type: true
+            isType: true
         - taxon: foerstediscus
           children:
           - taxon: grandis_bassler_1935
-            type: true
+            isType: true
           - taxon: splendens_bassler_1936
           - taxon: solitarius_bell.b.m_1976
             new: true
@@ -92,12 +92,12 @@ taxonomies:
           new: true
           children:
           - taxon: orthokolus_bell.b.m_1976
-            type: true
+            isType: true
             new: true
         - taxon: streptaster
           children:
           - taxon: vorticellatus_hall_1866
-            type: true
+            isType: true
             synonyms:
             - taxon: vorticellata_hall_1866
               parents:
@@ -105,7 +105,7 @@ taxonomies:
         - taxon: cystaster
           children:
           - taxon: granulatus_hall_1871
-            type: true
+            isType: true
           - taxon: stellatus_hall_1866
       - taxon: carneyellidae
         new: true
@@ -113,7 +113,7 @@ taxonomies:
         - taxon: carneyella
           children:
           - taxon: pilea_hall_1866
-            type: true
+            isType: true
             synonyms:
             - taxon: pileus_hall_1866
               parents:
@@ -126,7 +126,7 @@ taxonomies:
           new: true
           children:
           - taxon: chapmani_raymond_1915
-            type: true
+            isType: true
             synonyms:
             - taxon: chapmani_raymond_1915
               parents:
@@ -146,7 +146,7 @@ taxonomies:
         - taxon: isorophus
           children:
           - taxon: cincinnatiensis_roemer_1851
-            type: true
+            isType: true
             synonyms:
             - taxon: cincinnatiensis_roemer_1851
               parents:
@@ -156,7 +156,7 @@ taxonomies:
         - taxon: isorophusella
           children:
           - taxon: incondita_raymond_1915
-            type: true
+            isType: true
             synonyms:
             - taxon: inconditus_raymond_1915
               parents:
@@ -166,18 +166,18 @@ taxonomies:
         - taxon: hemicystites
           children:
           - taxon: parasiticus_hall_1852
-            type: true
+            isType: true
         - taxon: rectitriordo
           new: true
           children:
           - taxon: kirkfieldensis_bell.b.m_1976
-            type: true
+            isType: true
             new: true
         - taxon: curvitriordo
           new: true
           children:
           - taxon: kentuckyensis_bassler_1936
-            type: true
+            isType: true
             synonyms:
             - taxon: kentuckyensis_bassler_1936
               parents:
@@ -188,17 +188,17 @@ taxonomies:
         - taxon: agelacrinites
           children:
           - taxon: hamiltonensis_vanuxem_1842
-            type: true
+            isType: true
         - taxon: krama
           new: true
           children:
           - taxon: devonicum_bassler_1936
-            type: true
+            isType: true
         - taxon: postibulla
           new: true
           children:
           - taxon: legrandensis_miller.s.a_gurley_1894
-            type: true
+            isType: true
             synonyms:
             - taxon: legrandensis_miller.s.a_gurley_1894
               parents:
@@ -212,7 +212,7 @@ taxonomies:
         - taxon: discocystis
           children:
           - taxon: kaskaskiensis_hall_1858
-            type: true
+            isType: true
             synonyms:
             - taxon: kaskaskiensis_hall_1858
               parents:
@@ -223,7 +223,7 @@ taxonomies:
         - taxon: lepidodiscus
           children:
           - taxon: squamosus_meek_worthen_1868
-            type: true
+            isType: true
             synonyms:
             - taxon: squamosus_meek_worthen_1868
               parents:
@@ -234,7 +234,7 @@ taxonomies:
         - taxon: ulrichidiscus
           children:
           - taxon: pulaskiensis_miller.s.a_gurley_1894
-            type: true
+            isType: true
             synonyms:
             - taxon: pulaskiensis_miller.s.a_gurley_1894
               parents:
@@ -242,7 +242,7 @@ taxonomies:
         - taxon: cooperidiscus
           children:
           - taxon: alleganius_clarke_1901
-            type: true
+            isType: true
             synonyms:
             - taxon: alleganius_clarke_1901
               parents:
@@ -256,7 +256,7 @@ taxonomies:
           new: true
           children:
           - taxon: commensalus_bell.b.m_1976
-            type: true
+            isType: true
             new: true
     - openTaxon: isorophida-uncertain-suborder_bell.b.m_1976
       children:
@@ -274,7 +274,7 @@ taxonomies:
       - taxon: edrioaster
         children:
         - taxon: bigsbyi_billings_1857
-          type: true
+          isType: true
           synonyms:
           - taxon: bigsbyi_billings_1857
             parents:
@@ -284,7 +284,7 @@ taxonomies:
         new: true
         children:
         - taxon: levis_bather_1914
-          type: true
+          isType: true
           synonyms:
           - taxon: levis_bather_1914
             parents:

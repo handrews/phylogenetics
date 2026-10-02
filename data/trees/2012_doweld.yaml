@@ -20,10 +20,10 @@ taxonomies:
             - taxon: bockiidae
           children:
           - taxon: neglectus_hecker_1940
-            type: true
+            isType: true
             synonyms:
             - taxon: neglecta_hecker_1940
-              type: true
+              isType: true
               parents:
               - taxon: bockia_hecker_1938
               - taxon: bockiidae

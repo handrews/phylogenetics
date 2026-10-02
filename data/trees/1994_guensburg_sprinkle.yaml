@@ -45,7 +45,7 @@ taxonomies:
           new: true
           children:
           - taxon: superbus_guensburg_sprinkle_1994
-            type: true
+            isType: true
             new: true
         - taxon: dinocystis
         - taxon: discocystis
@@ -105,14 +105,14 @@ taxonomies:
             new: true
             children:
             - taxon: anitae_guensburg_sprinkle_1994
-              type: true
+              isType: true
               new: true
           - taxon: epipaston
           - taxon: fanulodiscus
             new: true
             children:
             - taxon: crystalensis_guensburg_sprinkle_1994
-              type: true
+              isType: true
               new: true
           - taxon: pyrgocystis
     - taxon: edrioasterida
@@ -140,7 +140,7 @@ taxonomies:
             new: true
             children:
             - taxon: elongatus_guensburg_sprinkle_1994
-              type: true
+              isType: true
               new: true
       - taxon: edrioblastoidina
         translated:
@@ -156,7 +156,7 @@ taxonomies:
             new: true
             children:
             - taxon: hintzei_guensburg_sprinkle_1994
-              type: true
+              isType: true
               new: true
         - taxon: cyathocystidae
           emended: true

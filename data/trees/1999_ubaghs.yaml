@@ -10,7 +10,7 @@ taxonomies:
         new: true
         children:
         - taxon: vizcainoi_ubaghs_1999
-          type: true
+          isType: true
           new: true
     - openTaxon: cornuta-incertae-sedis_ubaghs_1999
       children:
@@ -27,13 +27,13 @@ taxonomies:
         new: true
         children:
         - taxon: radiata_ubaghs_1999
-          type: true
+          isType: true
           new: true
       - taxon: velieuxicystis
         new: true
         children:
         - taxon: ornata_ubaghs_1999
-          type: true
+          isType: true
           new: true
 - taxon: edrioasteroidea
   notes: Also has a "?", in addition to Stromatocystites having one
@@ -49,5 +49,5 @@ taxonomies:
     new: true
     children:
     - taxon: cambriensis_ubaghs_1999
-      type: true
+      isType: true
       new: true

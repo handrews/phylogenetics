@@ -9,10 +9,10 @@ taxonomies:
   - taxon: pyrgocystidae
     children:
     - taxon: pyrgocystis
-      type: true
+      isType: true
       children:
       - taxon: sardesoni_bather_1915
-        type: true
+        isType: true
       - taxon: volborthi_hecker_1939
         provisional: true # with reservations
       - taxon: petalus_holloway_jell_1983
@@ -36,7 +36,7 @@ taxonomies:
     - taxon: postibullinae
       children:
       - taxon: postibulla
-        type: true
+        isType: true
         children:
         - taxon: legrandensis_miller.s.a_gurley_1894
         - taxon: lukei_bell.b.m_petersen.m.s_1976
@@ -61,7 +61,7 @@ taxonomies:
         new: true
         children:
         - taxon: pustulata_müller.p_hahn_2010
-          type: true
+          isType: true
           new: true
           material:
           - prefix: PWL
@@ -71,14 +71,14 @@ taxonomies:
             numbers: [2009/5019-LS, 2009/5020-LS, 2009/5021-LS]
             role: paratype
     - taxon: agelacrinitinae
-      type: true
+      isType: true
       children:
       - taxon: agelacrinites
         notes: Agelacrinites is given as type of Agelacrinitidae as well
-        type: true
+        isType: true
         children:
         - taxon: hamiltonensis_vanuxem_1842
-          type: true
+          isType: true
         - taxon: blairi_miller_1894
         - taxon: curvatus_grigo_1995
         - taxon: rhenanus_roemer_1851
@@ -93,7 +93,7 @@ taxonomies:
       - taxon: krama
         children:
         - taxon: devonica_bassler_1936
-          type: true
+          isType: true
         - taxon: hispanica_müller.p_hahn_2010
           new: true
           material:
@@ -128,7 +128,7 @@ taxonomies:
         new: true
         children:
         - taxon: grebelae_müller.p_hahn_2010
-          type: true
+          isType: true
           new: true
           material:
           - prefix: PWL

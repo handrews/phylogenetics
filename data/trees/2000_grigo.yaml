@@ -11,7 +11,7 @@ taxonomies:
         pages: 91
         children:
         - taxon: megapinacotus_ehlers_kesling_1958
-          type: true
+          isType: true
         - taxon: leunisseni_grigo_2000
           pages: 92
           material:
@@ -81,7 +81,7 @@ taxonomies:
             pages: 95
             children:
             - taxon: coronaeformis_rievers_1961
-              type: true
+              isType: true
             - openTaxon: rhenopyrgus-sp_grigo_2000
               new: true
               pages: 96

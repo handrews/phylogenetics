@@ -25,7 +25,7 @@ taxonomies:
             - taxon: pyrgocystis
               children:
               - taxon: sardesoni_bather_1915
-                type: true
+                isType: true
               - openTaxon: pyrgocystis-sp-a_bell.b.m_1982
               - openTaxon: pyrgocystis-sp-b_bell.b.m_1982
         - taxon: cyathocystina

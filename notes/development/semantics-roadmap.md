@@ -129,7 +129,7 @@ says on what evidence. Two kinds:
   the source's (B20). When the node is printed but one of its fields is
   not, `inferred` names the fields instead: Fay 1962 prints *Astrocystites
   ottawaensis* but never "type species", so its node has
-  `inferred: [type]`.
+  `inferred: [isType]`.
 
 What it is not for: an apparently intentional change of spelling, which is
 an `altSpellingOf` record; nor the name's true authority, which lives on
@@ -399,7 +399,8 @@ an ordinary resolved citation that needs no `editorial` block.
 | `removed` | "removed from", "excluded" | explicit exclusion of a member | the removed member | keep; fix recursion (B5) |
 | `mergeInto` | multi-part work | continuation of a taxonomy | — | keep; integrity: target exists |
 | `new` | "n. gen.", "sp. nov." | protologue here | — (flag) | keep |
-| `type` | "*" before the type species (*Preface* xix) | name-bearing type at genus/family level | — (flag) | keep; see B3, B14 |
+| `isType` | "*" before the type species (*Preface* xix) | name-bearing type at genus/family level | — (flag) | kept until each source is re-read; see B3, B14 |
+| `type` | "Type species.", "*" in the Treatise | the name-bearing type, as a node on the taxon it types | the type, cited in its original combination | built 2026-10-01; see B3, B14 |
 | `emended` | "emend." (*Preface* xix: scope change only) | emended diagnosis, same name | — (flag) | keep; drop `null` from its type |
 | `modifier` | "nom. transl.", "nomen nudum", "n. comb." | nomenclatural act or name group | — | replaced by `translated` and `nudum` (B6) |
 | `stem` | "stem-group" | stem-group usage | — (flag) | keep |
@@ -436,15 +437,20 @@ carrying the cited work, pages, figures, and the combination from `parents`.
 When the entry's name differs from the node's name it additionally derives a
 `junior-synonym` claim between the two names. No data change.
 
-**B3 (MVP). `type: true` on a synonymy entry** means the species was the type
+**B3 (MVP). `isType: true` on a synonymy entry** means the species was the type
 species of the genus given in that entry's `parents`, at the time of the cited
 usage. All three uses fit: Kesling 1966 lists *cincinnatiensis* and *ornatus*
 as types of *Narrawayella* and *Savagella*, which became junior synonyms of
 *Cyclocystoides* when their types moved; Doweld 2012 lists *neglecta* as type
-of *Bockia*, replaced by *Heckerocrinus*. Rule: on a synonymy entry `type`
+of *Bockia*, replaced by *Heckerocrinus*. Rule: on a synonymy entry `isType`
 requires `parents`, and the claim table emits "type species of `parents[0]`"
 for the entry rather than a type claim about the node. This is distinct from
-`type: true` on a `children` node, which is the type of the node's own parent.
+`isType: true` on a `children` node, which is the type of the node's own parent.
+
+Since 2026-10-01 the parent can carry its type as a node (`type`, B14), which
+says what `isType` cannot: that the source states the type, and in which
+combination. `isType` keeps both meanings above until each source is re-read; a
+node with `type` has no `isType` child.
 
 **B4 (MVP). `tentative` defaults to `true`.** Every sibling flag defaults to
 `false`, code never reads it, and all 16 uses set it explicitly. Change the
@@ -621,9 +627,15 @@ pre-1931 "n. gen., n. sp." on a single species), M (monotypy), SD (subsequent
 designation, with author, date and page), typus/typicus, tautonymy, and ICZN
 (with the Opinion number). Historical forms (*Preface*, xx): SM (subsequent
 monotypy) and OS (objective synonymy). This volume prints them: "Lebetodiscus
-BATHER, 1908 [*Agelacrinites dicksoni BILLINGS, 1857; OD]". Add `typeFixation`
-with the union of both lists and `typeFixedBy` (an `authority`) for SD and
-ICZN, on the `type: true` node. Two rules from the 2023 text affect identity:
+BATHER, 1908 [*Agelacrinites dicksoni BILLINGS, 1857; OD]". Built 2026-10-01 as
+two fields on the `type` node (a node on the taxon it types, written like a
+synonymy entry, so the type is cited in its original combination): `fixation`,
+with the union of both lists (`originalDesignation`, `monotypy`,
+`subsequentDesignation`, `subsequentMonotypy`, `objectiveSynonymy`,
+`tautonymy`, `typus`, `iczn`), and `fixedBy` (an `authority`) for SD, SM and
+ICZN. A type named only in `type` and not listed among the children is still
+placed under the taxon (`via: type` on the placement claim), and the tools mark
+it as named only as the type. Two rules from the 2023 text affect identity:
 a genus published after 1930 without a fixed type is unavailable, and a later
 fixation makes the name available under the later author and date, which the
 model expresses as a second taxon record with its own authority. Doweld 2012
@@ -1551,7 +1563,7 @@ Fields fall into three classes, and only the third is nullable:
   binomial handling, not something a paper uses or omits), `citedAs`,
   `notes`, `editorial`, and `pages`, since a locator is always wanted
   and its absence is always "not captured".
-- Act flags, never null: `new`, `type`, `emended`, `provisional` and
+- Act flags, never null: `new`, `isType`, `emended`, `provisional` and
   the rest. Absence means the act is not recorded; whether that can be
   read as "not made" is the audit state's job, and a flag known to be
   unreliably recorded (`emended`, at the time of writing) is exactly what

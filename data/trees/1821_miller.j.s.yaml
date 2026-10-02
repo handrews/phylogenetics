@@ -62,7 +62,7 @@ taxonomies:
         new: true
         children:
         - taxon: crassus_miller.j.s_1821
-          type: true
+          isType: true
           new: true
         - taxon: tenuis_miller.j.s_1821
           new: true

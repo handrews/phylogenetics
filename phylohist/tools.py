@@ -153,9 +153,11 @@ TOOL_DESCRIPTIONS = {
     'Everything any source has ever placed under the given records, '
     'transitively within each source, including names accepted as their '
     'synonyms and the same names at other ranks: a table of records with '
-    'rank, which sources place them and under what, and a count. This is '
-    'how "what belongs to the edrioblastoids" is answered; feed its '
-    'records to placements or ancestors.'
+    'rank, which sources place them and under what, and a count. A taxon '
+    'a source names only as the type of another, and does not list '
+    'among its members, is listed and marked as named only as the type. '
+    'This is how "what belongs to the edrioblastoids" is answered; feed '
+    'its records to placements or ancestors.'
   ),
   'ancestors': (
     'The chain of taxa above the given records in every source that '

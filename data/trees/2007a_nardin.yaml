@@ -8,7 +8,7 @@ taxonomies:
       - taxon: lingulocystis
         children:
         - taxon: elongata_thoral_1935
-          type: true
+          isType: true
         - taxon: boliviensis_sprinkle_1973
         - taxon: deani_ubaghs_1994
         - openTaxon: lingulocystis-aff-deani_nardin_2007

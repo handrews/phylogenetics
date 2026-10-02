@@ -20,12 +20,12 @@ Every claim carries:
 
 | field | value |
 |---|---|
-| `id` | `<source>:<path>:<kind>[:<n>]`. `<path>` is the node's position in its tree file as the loader computes it: the taxonomy or phylogeny index, then each step down (`children/2`, `synonyms/0`, `non/1`, `removed/0`, `parents/0`, `moved`, `corrected`, `substituted`, `lapsus`, `lapsusFor`, `or/0`). `<n>` disambiguates several claims of one kind from one node (a node with three `material` entries yields three `material` claims). Ids are stable as long as the file is not reordered; the tree keeps printed order, so reordering is a data change. |
+| `id` | `<source>:<path>:<kind>[:<n>]`. `<path>` is the node's position in its tree file as the loader computes it: the taxonomy or phylogeny index, then each step down (`children/2`, `synonyms/0`, `non/1`, `removed/0`, `parents/0`, `moved`, `corrected`, `substituted`, `lapsus`, `lapsusFor`, `type`, `or/0`). `<n>` disambiguates several claims of one kind from one node (a node with three `material` entries yields three `material` claims). Ids are stable as long as the file is not reordered; the tree keeps printed order, so reordering is a data change. |
 | `kind` | one of `usage`, `placement`, `acceptance`, `act`, `rejection`, `material`, `secondhand`, `editorial`, `absence` |
 | `source` | the tree file's source key |
 | `path` | the node's position and pointer, `0/children/0/children/0`, the same string the id carries |
 | `tree` | `taxonomy`, or a phylogeny's `treeType`; a phylogeny's `notes` ride along as `treeNotes` |
-| `pages` | the node's `pages` as written. A node without `pages` takes the nearest ancestor's along the `children` axis only, and the claim then carries `pagesInherited: true`. Entries on any other axis never inherit. On a cited entry (a `synonyms` or `non` entry, or the earlier state of a name under `translated`, `corrected`, `substituted`, `moved` or `removed`) `pages` and `illustrations` locate the cited usage in the cited work, whether written flat or inside an `authority` block, so they appear as `citedPages` and `citedIllustrations` and the claim has no `pages` of its own. |
+| `pages` | the node's `pages` as written. A node without `pages` takes the nearest ancestor's along the `children` axis only, and the claim then carries `pagesInherited: true`. Entries on any other axis never inherit. On a cited entry (a `synonyms` or `non` entry, a `type` node, or the earlier state of a name under `translated`, `corrected`, `substituted`, `moved` or `removed`) `pages` and `illustrations` locate the cited usage in the cited work, whether written flat or inside an `authority` block, so they appear as `citedPages` and `citedIllustrations` and the claim has no `pages` of its own. |
 | `subject` | the resolved taxon key the claim is about |
 | `printed` | the printed form on that line: `citedAs` verbatim, and `auth`, `year`, `in` as written (A1, A12). Absent `auth` means "as the record"; the claim says so with `printedAttribution: as-record`. |
 | `audit` | the source's `audit.state`; `coverageKind`, the coverage kind the claim counts under (`skeleton` for usage, rejection and a taxonomy placement, `phylogeny` for a placement in a phylogeny, `synonymy` for acceptance, `newTaxa`/`types` for the matching acts, `material`/`occurrences`/`illustrations` by material kind); and `coverage`, the effective value for that kind (declared, or derived where "Derived coverage" says so) |
@@ -54,14 +54,16 @@ the nested form names a source, the claim adds `citesSource`, `citedPages`,
 ### `usage`
 
 Emitted for every node that cites a name: `taxon`, `openTaxon`, and for
-every `synonyms`, `non`, `removed`, `parents` and `or` entry. Fields added:
+every `synonyms`, `non`, `removed`, `parents`, `or` and `type` entry. Fields added:
 
 - `form`: which field carried the name (`taxon` or `openTaxon`); `bracket`
   for a cladogram's bracket label.
 - `spelling`: the key used on the line. Spellings are undirected (B28); the
   claim never substitutes the record the key points at.
 - `axis`: how the node hangs off its parent (`children`, `synonyms`,
-  `removed`, `parents`, …; `root` for a tree's top node).
+  `removed`, `parents`, `type`, …; `root` for a tree's top node). A `type`
+  node is a cited entry: its usage is the type under the name the source
+  cites it by, and it is no primary node of the tree.
 - `compared`: `{sign: cf | aff, taxon}` on the usage of an `openTaxon` node
   that carries a `cf` or `aff` field: the open form's own record is the
   subject, and `taxon` is the named taxon the node compares it with. A
@@ -97,6 +99,15 @@ A phylogeny's nesting produces placements too, marked
 `tree: cladogram | diagram | other` with the phylogeny's `notes`, and a
 `bracket` label is a second placement of the node's name whose parent is
 the bracket's key, marked `via: bracket`.
+
+A `type` node is a placement marked `via: type` when the taxon that carries
+it is a primary node of a taxonomy and the same record is not also one of
+that taxon's `children`: naming the type places it, whether or not the
+tree lists it. The parent is the carrying taxon, there is no `position`,
+and the path ends in `/type`. When the record is also a child node, the
+child is the placement and the `type` node adds none; a `type` on a cited
+entry (a synonym genus) places nothing. The tools list a record placed this
+way and mark the line as named only as the type.
 
 A source can also say where a name does *not* belong. Two printed shapes,
 one claim: "we are confining the family Cyathocystidae to Cyathocystis and
@@ -147,7 +158,8 @@ Something this source does to a name. One claim per flag, `actKind` being:
 |---|---|
 | `new: true` on a named node | `new` (the protologue; F6 checks it) |
 | `new: true` on a placeholder | `placeholder` (the source originates the placeholder; C4) |
-| `type: true` | `type` (the fixation method joins when B14 lands) |
+| `isType: true` | `type` |
+| `type: {taxon: y, …}` on the parent | `type`, at the `type` node, the subject being `y`: `typeOf` (the carrying node's record), `parents` (the genus, and subgenus, `y` is cited in), `fixation`, `fixedBy` and `fixedByPages` (the work that fixed it, with its pages), and `listed` (`true` when a `children` node of the carrying node has the same record). `inferred: true` when `editorial.inferred` is `true`; `inferredFields: [fixation]` when it lists `fixation` (the editor's method, not the paper's). It is a cited entry, so its `usage` is on axis `type`, and it emits no `acceptance`. |
 | `emended: true` or `emended: {by}` | `emended`; `by` and `byPages` when the source follows another work's emendation |
 | `recombined: true` or `recombined: {by}` on a species-group node | `combNov` (comb. nov.); `by` and `byPages` when the source follows another work's recombination |
 | `translated: true` or `translated: {taxon: y, by?}` | `nomTransl`; `translatedFrom: y` when the earlier rank is named, `by`/`byPages` when another work made the act, `rankVariants` from the records' `altRankOf` links |
@@ -603,7 +615,7 @@ species node. The node's one context (`lady-burn-starfish-bed`) yields an
 ### Fay 1962, *ottawaensis* (`data/trees/1962_fay.yaml`)
 
 `act` `type` on `ottawaensis_whiteaves_1897`, carrying `editorial:
-{inferred: [type], basis: "Fay never prints \"type species\"; the genus is
+{inferred: [isType], basis: "Fay never prints \"type species\"; the genus is
 monotypic (p. 201)"}`, plus a separate `editorial` claim with the same
 block. A question "does Fay fix the type species?" is answered from the
 act claim's `inferred: true`: the flag is the editor's, and the paper

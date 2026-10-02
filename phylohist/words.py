@@ -34,6 +34,18 @@ ABSENCE_WORDS = {
   'synonymy': 'no synonymy given',
 }
 PLURAL_KINDS = {'newTaxa', 'types', 'occurrences', 'illustrations'}
+# How a `type` node's `fixation` reads after the type, the Treatise's
+# abbreviations in words.
+FIXATION_WORDS = {
+  'originalDesignation': 'by original designation',
+  'monotypy': 'by monotypy',
+  'subsequentDesignation': 'by subsequent designation',
+  'subsequentMonotypy': 'by subsequent monotypy',
+  'objectiveSynonymy': 'by objective synonymy',
+  'tautonymy': 'by tautonymy',
+  'typus': 'by its name ("typus" or "typicus")',
+  'iczn': 'by ruling of the ICZN',
+}
 
 
 def years_span(first, last):
@@ -202,7 +214,9 @@ class Words:
     nearest genus up the chain, a subgenus between in parentheses, the
     species above a variety, then the epithet; for a subgenus "Genus
     (Subgenus)"; otherwise the record's name. Where the chain gives no
-    genus the printed form is used, else the epithet alone."""
+    genus the printed form is used, else the epithet alone. A `type` node
+    reads in the combination the source cites it in, whether or not it is
+    also a placement (`_type_genus`)."""
     cached = self.store._combinations_at.get((source_key, path))
     if cached is not None:
       return cached
@@ -218,7 +232,9 @@ class Words:
       genus = subgenus = species = None
       # The genus is printed in quotes in this combination.
       quote_genus = bool((placement or acceptance or {}).get('quotedParent'))
-      if placement is not None:
+      if path.rsplit('/', 1)[-1] == 'type':
+        genus, subgenus = self._type_genus(source_key, path, key, at)
+      elif placement is not None:
         node = placement
         while node is not None and node.get('parent') and genus is None:
           parent = node['parent']
@@ -296,6 +312,25 @@ class Words:
       }
     self.store._combinations_at[(source_key, path)] = result or {}
     return result or {}
+
+  def _type_genus(self, source_key, path, key, at):
+    """`(genus, subgenus)` for the type at a `type` node: the genus the
+    node cites it under (its `parents`, the genus first), else the genus
+    the node it types is (a subgenus gives its genus and itself). None when
+    the type is not a species-level name: a type genus prints by its name."""
+    act = next((c for c in at if c['kind'] == 'act' and c['actKind'] == 'type'), None)
+    parents = (act or {}).get('parents') or []
+    if parents:
+      return parents[0], parents[1] if len(parents) > 1 else None
+    if self.store._rank_of(key) not in blocks.SPECIES_GROUP:
+      return None, None
+    owner = self.combination(source_key, path.rsplit('/', 1)[0])
+    owner_rank = self.store._rank_of(owner.get('record'))
+    if owner_rank == 'genus':
+      return owner['record'], None
+    if owner_rank == 'subgenus':
+      return owner.get('genus'), owner['record']
+    return None, None
 
   def _genus_of_subgenus(self, key):
     """The genus a subgenus sits in, from its own placements, for the
@@ -408,7 +443,9 @@ class Words:
           if combo.get('genus'):
             return combo['label']
     for c in self.store.by_subject.get(key, ()):
-      parents = c.get('parents') if c['kind'] == 'acceptance' else None
+      # A synonymy entry or a `type` node cites the name in a combination.
+      cites = c['kind'] == 'acceptance' or (c['kind'] == 'act' and c['actKind'] == 'type')
+      parents = c.get('parents') if cites else None
       if parents:
         parts = [self.store.name(parents[0])]
         if len(parents) > 1:
@@ -485,11 +522,12 @@ class Words:
     if kind in RELATED_ACTS:
       field, phrase = RELATED_ACTS[kind]
       words = f'{phrase} {self.store.name(claim.get(field, ""))}'
+    elif kind == 'type':
+      words = self._type_words(claim)
     else:
       words = {
         'new': 'named as new',
         'placeholder': 'placeholder introduced',
-        'type': 'type species',
         'emended': 'emended',
         'combNov': 'new combination',
         'nomTransl': 'nomen translatum' + (f' from {self.store.name(origin)}' if origin else ''),
@@ -505,6 +543,49 @@ class Words:
       basis = (claim.get('editorial') or {}).get('basis', '').strip()
       words += ' (inferred by the editor' + (f': {basis}' if basis else '') + ')'
     return words
+
+  def type_noun(self, key):
+    """What a type is called by the rank of the name that bears it: the
+    type species of a genus, the type genus of a family."""
+    rank = self.store._rank_of(key)
+    if rank in blocks.SPECIES_GROUP:
+      return 'type species'
+    return 'type genus' if rank in ('genus', 'subgenus') else 'type'
+
+  def fixation_words(self, claim, note=True):
+    """How a type was fixed, as a `type` claim says it: the method, the work
+    or ruling that fixed it, and, with `note`, that the editor inferred the
+    method; empty when the claim gives none."""
+    words = FIXATION_WORDS.get(claim.get('fixation'), '')
+    if note and words and 'fixation' in (claim.get('inferredFields') or ()):
+      words += ' (method inferred by the editor)'
+    if claim.get('fixedBy'):
+      cite = self.store.cite(claim['fixedBy'])
+      if claim.get('fixedByPages') is not None:
+        cite += f', p. {_range_words(claim["fixedByPages"])}'
+      words += f' ({cite})' if words else f'({cite})'
+    return words
+
+  def _type_words(self, claim):
+    """ "type species" (or genus), and for a `type` node's claim " of
+    <taxon>" and how it was fixed."""
+    words = self.type_noun(claim['subject'])
+    if claim.get('typeOf'):
+      owner_path = claim['path'].rsplit('/', 1)[0]
+      words += f' of {self.display(claim["typeOf"], claim["source"], owner_path)}'
+      if method := self.fixation_words(claim):
+        words += f', {method}'
+    return words
+
+  def type_mark(self, key):
+    """The mark on a listing line for a record the source names only as
+    the type of a taxon (a `via: type` placement), by the record's rank."""
+    rank = self.store._rank_of(key)
+    if rank in blocks.SPECIES_GROUP:
+      return '(named as the type species; not listed among the species)'
+    if rank in ('genus', 'subgenus'):
+      return '(named as the type genus; not listed among the genera)'
+    return '(named as the type; not listed)'
 
   def claim_words(self, claim):
     kind = claim['kind']
@@ -738,8 +819,17 @@ class Words:
         f'{parents}: {s["papers"]} paper{"s" if s["papers"] != 1 else ""} '
         f'({span}), {len(s["coauthorSets"])} co-author set'
         f'{"s" if len(s["coauthorSets"]) != 1 else ""}, last {self.store.cite(s["lastSource"])}'
+        + self._scheme_mark(s)
       )
     return lines
+
+  def _scheme_mark(self, scheme):
+    """The mark, with a leading space, for a scheme every paper of which
+    names the record only as the type (`via: type`); else empty."""
+    entries = scheme['entries']
+    if entries and all(e.get('via') == 'type' for e in entries):
+      return ' ' + self.type_mark(entries[0]['record'])
+    return ''
 
   def variant_words(self, key, base):
     """How a record reached by a variant edge relates to the record it
@@ -804,5 +894,6 @@ class Words:
         f'in {parents} {span} ({s["papers"]} paper{"s" if s["papers"] != 1 else ""}'
         + (f', {sets} co-author sets' if sets != s['papers'] else '')
         + ')'
+        + self._scheme_mark(s)
       )
     return ', '.join(parts)

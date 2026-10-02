@@ -13,7 +13,7 @@ taxonomies:
         children:
         - taxon: utahensis_robison_sprinkle_1969
           new: true
-          type: true
+          isType: true
           material:
           - prefix: USNM
             numbers: [163252]

@@ -9,7 +9,7 @@ taxonomies:
         emended: true
         children:
         - taxon: ubaghsi_fatka_kordule_1990
-          type: true
+          isType: true
         - taxon: spinosa_wang.d.z_nohejlová_sun.z.x_zeng.h_lefebvre_yang.x.l_zhao.f.c_2024
           provisional: true
           new: true

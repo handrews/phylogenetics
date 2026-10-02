@@ -12,7 +12,7 @@ taxonomies:
     - taxon: cambraster
       children:
       - taxon: cannati_miquel_1894
-        type: true
+        isType: true
       - taxon: tastudorum_jell_burrett_banks_1985
         new: true
         material:
@@ -42,7 +42,7 @@ taxonomies:
       new: true
       children:
       - taxon: primotica_henderson_shergold_1971
-        type: true
+        isType: true
         material:
         - prefix: CPC
           numbers: [11395]
@@ -88,7 +88,7 @@ taxonomies:
     - taxon: ctenocystis
       children:
       - taxon: utahensis_robison_sprinkle_1969
-        type: true
+        isType: true
       - taxon: jagoi_jell_burrett_banks_1985
         new: true
         material:
@@ -107,7 +107,7 @@ taxonomies:
       new: true
       children:
       - taxon: watsonae_jell_burrett_banks_1985
-        type: true
+        isType: true
         new: true
         material:
         - prefix: NMVP

@@ -72,29 +72,29 @@ taxonomies:
   - taxon: stromatocystites
     children:
     - taxon: pentangularis_pompeckj_1896
-      type: true
+      isType: true
     - taxon: walcotti_schuchert_1919
     - taxon: balticus_jaekel_1899
       notes: Recommend treating as nomen dubium due to lost specimens.
   - taxon: walcottidiscus
     children:
     - taxon: typicalis_bassler_1935
-      type: true
+      isType: true
       synonyms:
       - taxon: magister_bassler_1936
   - taxon: totiglobus
     children:
     - taxon: nimius_bell.b.m_sprinkle_1978
-      type: true
+      isType: true
   - taxon: cambraster
     children:
     - taxon: cannati_miquel_1894
-      type: true
+      isType: true
     - taxon: tastudorum_jell_burrett_banks_1985
   - taxon: edriodiscus
     children:
     - taxon: primotica_henderson_shergold_1971
-      type: true
+      isType: true
 phylogenies:
 - treeType: cladogram
   tree:

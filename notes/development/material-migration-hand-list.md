@@ -133,6 +133,29 @@ the paper's own words (or an editorial block saying it is inferred):
 - Grigo 2000's doubtfully assigned specimen (fig. 7) and Müller, Hahn
   & Bohatý 2013's "Timeischytes" *prescheri*?.
 
+## `isType` flags to migrate
+
+Every `isType: true` (370, in 133 files) predates the `type` node.
+Each needs the paper: whether it states the type at all, the
+combination it cites it in, and the method (`fixation`). A node that
+gets `type` loses the `isType` child flag.
+
+- Three sit on synonymy entries (B3) and mean "type of the genus in
+  `parents`": Kesling 1966 (*cincinnatiensis* of *Narrawayella*,
+  *ornatus* of *Savagella*) and Doweld 2012 (*neglecta* of *Bockia*).
+  The `type` node belongs on the genus where the source lists it (a
+  synonymy entry of the senior genus), if it does.
+- Four are the editor's (`editorial.inferred: [isType]`): Whiteaves
+  1897, Billings 1854c, Fay 1962 and the Jaekel draft. As a `type`
+  node the inference is `editorial: {inferred: true}` on that node.
+- Eight are not species: seven genera marked as the type of a family
+  or subfamily (Buch 1844 *Sphaeronites*, Bockelie 1981 *Bockia*,
+  Sprinkle & Collins 2006 *Lyracystis*, Guensburg & Sprinkle 2009
+  *Apektocrinus*, Müller & Hahn 2010 *Pyrgocystis*, *Postibulla* and
+  *Agelacrinites*), which now print "Type genus."; and Müller & Hahn
+  2010's subfamily Agelacrinitinae, marked under its family, which
+  prints "Type." and needs the paper: a family's type is a genus.
+
 ## Other
 
 - Nodes with exactly one context whose entries carry no `context`: the

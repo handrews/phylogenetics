@@ -13,7 +13,11 @@ opinions exactly as each publication printed them, with no normalisation.
   `taxon` (key into taxa.yaml), `openTaxon` (placeholders and open
   nomenclature; with `cf` or `aff` naming the taxon a "cf." or "aff." form
   is compared with), `children`, `synonyms`, `non`, `parents` (original
-  placement of a synonym), `removed`, `moved`, `corrected`, flags `new`, `type`,
+  placement of a synonym), `removed`, `moved`, `corrected`, `type` (the node's
+  type, a node written like a `synonyms` entry, so it cites the type in the
+  combination the paper prints for it, with `fixation` when the paper gives the
+  method; new entry marks a type this way and never with `isType`, which
+  survives only in the entries not yet re-read), flags `new`, `isType`,
   `provisional` (placement), `questionable` (the taxon itself),
   `quotedParent` (a species whose genus is printed in quotes), `quoted`
   (the node's own name in quotes), `nonMonophyletic`, `pars`, `emended`,

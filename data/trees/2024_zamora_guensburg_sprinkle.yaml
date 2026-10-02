@@ -11,7 +11,7 @@ taxonomies:
         provisional: true
         children:
         - taxon: lloydi_sprinkle_1985
-          type: true
+          isType: true
         - taxon: spencensis_wen.r.q_babcock_peng.j_robison_2019
           moved:
             taxon: totiglobus

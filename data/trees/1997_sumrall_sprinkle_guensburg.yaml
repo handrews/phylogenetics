@@ -9,7 +9,7 @@ taxonomies:
         new: true
         children:
         - taxon: delticus_sumrall_sprinkle_guensburg_1997
-          type: true
+          isType: true
           new: true
         - taxon: republicensis_sumrall_sprinkle_guensburg_1997
           provisional: true
@@ -18,7 +18,7 @@ taxonomies:
         new: true
         children:
         - taxon: bifida_ubaghs_robison_1988
-          type: true
+          isType: true
           synonyms:
           - taxon: bifida_ubaghs_robison_1988
             parents:
@@ -54,13 +54,13 @@ taxonomies:
         emended: true
         children:
         - taxon: resseri_ulrich_1929
-          type: true
+          isType: true
         - openTaxon: trachelocrinus-sp_sumrall_sprinkle_guensburg_1997
       - taxon: tatonkacystis
         new: true
         children:
         - taxon: codyensis_sumrall_sprinkle_guensburg_1997
-          type: true
+          isType: true
           new: true
     - taxon: bockiidae
       children:

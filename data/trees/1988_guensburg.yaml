@@ -25,7 +25,7 @@ taxonomies:
         new: true
         children:
         - taxon: sandersi_guensburg_1988
-          type: true
+          isType: true
           new: true
     - taxon: lebetodiscidae
       children:
@@ -33,7 +33,7 @@ taxonomies:
         new: true
         children:
         - taxon: diktyotos_guensburg_1988
-          type: true
+          isType: true
           new: true
   - openTaxon: edrioasteroidea-order-uncertain_guensburg_1988
     children:

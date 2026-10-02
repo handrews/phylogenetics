@@ -10,6 +10,6 @@ taxonomies:
         - taxon: postibulla
           children:
           - taxon: legrandensis_miller.s.a_gurley_1894
-            type: true
+            isType: true
           - taxon: lukei_bell.b.m_petersen.m.s_1976
             new: true

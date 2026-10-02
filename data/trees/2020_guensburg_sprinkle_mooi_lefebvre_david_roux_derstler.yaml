@@ -14,7 +14,7 @@ taxonomies:
         children:
         - taxon: broweri_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler_2020
           new: true
-          type: true
+          isType: true
           material:
           - prefix: PE
             numbers: [52742]

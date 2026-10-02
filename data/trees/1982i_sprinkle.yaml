@@ -14,6 +14,6 @@ taxonomies:
           - taxon: astrocystites
             children:
             - taxon: ottawaensis_whiteaves_1897
-              type: true
+              isType: true
             - openTaxon: astrocystites-sp-a_sprinkle_1982i
             - openTaxon: astrocystites-sp-b_sprinkle_1982i

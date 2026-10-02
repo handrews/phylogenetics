@@ -8,6 +8,6 @@ taxonomies:
       - taxon: ubaghsicystis
         children:
         - taxon: segurae_gil cid_domínguez alonso_2002
-          type: true
+          isType: true
         - openTaxon: ubaghsicystis-sp_sumrall_zamora_2015
           new: true

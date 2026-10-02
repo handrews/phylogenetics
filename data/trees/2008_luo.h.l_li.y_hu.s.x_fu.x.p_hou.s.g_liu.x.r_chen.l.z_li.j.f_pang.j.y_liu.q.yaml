@@ -6,7 +6,7 @@ taxonomies:
     new: true
     children:
     - taxon: rarus_hu.s.x_luo.h.l_2008
-      type: true
+      isType: true
       new: true
       synonyms:
       - openTaxon: eocrinoidea-sp_hu.s.x_luo.h.l_hou.s.g_erdtmann_2007

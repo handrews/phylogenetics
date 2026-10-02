@@ -4,7 +4,7 @@ taxonomies:
   - taxon: cardiocystites
     children:
     - taxon: bohemicus_barrande_1887_cardiocystites
-      type: true
+      isType: true
     - taxon: pleuricostatus_dean.j_smith.a.b_1998
       new: true
 phylogenies:

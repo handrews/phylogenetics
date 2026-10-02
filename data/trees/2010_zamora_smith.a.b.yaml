@@ -9,7 +9,7 @@ taxonomies:
         new: true
         children:
         - taxon: hispanicus_zamora_smith.a.b_2010
-          type: true
+          isType: true
           new: true
       - openTaxon: isorophida-genus-indeterminate_zamora_smith.a.b_2010
         children:

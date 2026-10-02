@@ -211,16 +211,20 @@ def _nearest_named_ancestor(node):
   return ancestor
 
 
+def _cited_work(authority, field):
+  """The claim fields for a work an `authority` names: its source under
+  `field`, its pages under `<field>Pages`."""
+  fields = {field: authority['source']}
+  if 'pages' in authority:
+    fields[f'{field}Pages'] = authority['pages']
+  return fields
+
+
 def _by(value):
   """The work an act is followed from: `by`'s source and pages, when the
   field's value is an object naming one."""
   by = value.get('by') if isinstance(value, dict) else None
-  if not by:
-    return {}
-  fields = {'by': by['source']}
-  if 'pages' in by:
-    fields['byPages'] = by['pages']
-  return fields
+  return _cited_work(by, 'by') if by else {}
 
 
 def _coverage_kind(claim):
@@ -420,6 +424,13 @@ class _NodeClaims:
       claim['position'] = node.relpath[1]
       self._emit(claim, 'children')
 
+    if named and self._places_type():
+      # Naming the type places it, when the tree does not list it as well.
+      claim = self._placement_base()
+      claim['parent'] = self.owner_key
+      claim['via'] = 'type'
+      self._emit(claim)
+
     if node.axis in _SYNONYMY_AXES:
       claim = self._base('acceptance')
       if not named:
@@ -497,6 +508,45 @@ class _NodeClaims:
       claim['altPlacements'] = alt
     return claim
 
+  def _type_listed(self):
+    """Whether a `children` node of the owner has the type's record."""
+    return any(
+      child.taxon is not None and child.taxon.key == self.subject for child in self.owner.children
+    )
+
+  def _places_type(self):
+    """Whether this `type` node is itself a placement: the taxon it types
+    is a primary node of a taxonomy and does not also list it."""
+    return (
+      self.node.axis == 'type'
+      and self.owner_key is not None
+      and self.owner.is_primary
+      and self.tree == 'taxonomy'
+      and not self._type_listed()
+    )
+
+  def _type_act(self):
+    """The act of a `type` node: the record is the type of the owner, with
+    the genus it is cited in, how it was fixed and by whom, and whether the
+    owner also lists it as a child."""
+    data = self.data
+    fields = {}
+    if self.owner_key is not None:
+      fields['typeOf'] = self.owner_key
+    parents = [p.taxon.key for p in self.node.related_nodes('parents') if p.taxon is not None]
+    if parents:
+      fields['parents'] = parents
+    if 'fixation' in data:
+      fields['fixation'] = data['fixation']
+    if data.get('fixedBy'):
+      fields.update(_cited_work(data['fixedBy'], 'fixedBy'))
+    fields['listed'] = self._type_listed()
+    # The editor's method, apart from an inferred statement (`_emit`).
+    inferred = (data.get('editorial') or {}).get('inferred')
+    if isinstance(inferred, list) and 'fixation' in inferred:
+      fields['inferredFields'] = ['fixation']
+    self._act('type', None, **fields)
+
   def _act(self, act_kind, field, **fields):
     claim = self._base('act')
     claim['actKind'] = act_kind
@@ -507,8 +557,10 @@ class _NodeClaims:
     node, data = self.node, self.data
     if data.get('new'):
       self._act('placeholder' if self.placeholder else 'new', 'new')
-    if data.get('type'):
-      self._act('type', 'type')
+    if node.axis == 'type':
+      self._type_act()
+    elif data.get('isType'):
+      self._act('type', 'isType')
     if emended := data.get('emended'):
       self._act('emended', 'emended', **_by(emended))
     if recombined := data.get('recombined'):

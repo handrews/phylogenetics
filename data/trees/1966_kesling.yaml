@@ -13,17 +13,17 @@ taxonomies:
           - taxon: savagella
           children:
           - taxon: halli_billings_1858
-            type: true
+            isType: true
           - taxon: cincinnatiensis_miller.s.a_faber_1892
             synonyms:
             - taxon: cincinnatiensis_miller.s.a_faber_1892
-              type: true
+              isType: true
               parents:
               - taxon: narrawayella
           - taxon: ornatus_savage_1917
             synonyms:
             - taxon: ornatus_savage_1917
-              type: true
+              isType: true
               parents:
               - taxon: savagella
           - taxon: raymondi_foerste_1920

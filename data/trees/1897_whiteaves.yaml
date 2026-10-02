@@ -21,9 +21,9 @@ taxonomies:
       - taxon: ottawaensis_whiteaves_1897
         new: true
         provisional: true
-        type: true
+        isType: true
         editorial:
-          inferred: [type, provisional]
+          inferred: [isType, provisional]
           basis: >
             Type by monotypy.
             Provisional based on "most probably referable to the Dipoporitidae"

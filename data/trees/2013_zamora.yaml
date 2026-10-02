@@ -5,7 +5,7 @@ taxonomies:
     new: true
     children:
     - taxon: belli_zamora_2013
-      type: true
+      isType: true
       new: true
 phylogenies:
 - treeType: cladogram
