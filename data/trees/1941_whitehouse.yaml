@@ -18,7 +18,7 @@ taxonomies:
           new: true
           children:
           - taxon: navicula_whitehouse_1941
-            type: true
+            isType: true
             new: true
             material:
             - prefix: F.
@@ -37,7 +37,7 @@ taxonomies:
           new: true
           children:
           - taxon: craticula_whitehouse_1941
-            type: true
+            isType: true
             new: true
             material:
             - prefix: F.

@@ -580,7 +580,14 @@ $defs:
 
   actAndModifierFields:
     properties:
-      type:
+      isType:
+        description: |
+          The node is the name-bearing type of another: on a `children`
+          node, of its parent node's taxon; on a `synonyms` entry, of the
+          genus given in the entry's `parents`, at the time of the cited
+          usage (roadmap B3). The form the corpus used before the parent
+          could carry its type as a node; kept until each source is
+          re-read.
         type: boolean
         default: false
       new:

@@ -8,6 +8,6 @@ taxonomies:
       - taxon: cambroblastus
         children:
         - taxon: enubilatus_smith.a.b_jell_1990
-          type: true
+          isType: true
         - taxon: guolensis_zhu.x.j_zamora_lefebvre_2014
           new: true

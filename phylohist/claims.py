@@ -507,8 +507,8 @@ class _NodeClaims:
     node, data = self.node, self.data
     if data.get('new'):
       self._act('placeholder' if self.placeholder else 'new', 'new')
-    if data.get('type'):
-      self._act('type', 'type')
+    if data.get('isType'):
+      self._act('type', 'isType')
     if emended := data.get('emended'):
       self._act('emended', 'emended', **_by(emended))
     if recombined := data.get('recombined'):

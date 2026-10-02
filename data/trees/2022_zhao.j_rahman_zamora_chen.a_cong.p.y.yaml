@@ -12,7 +12,7 @@ taxonomies:
         new: true
         children:
         - taxon: lloydi_sprinkle_1985
-          type: true
+          isType: true
           moved:
             taxon: totiglobus
             quoted: true

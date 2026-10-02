@@ -6,7 +6,7 @@ taxonomies:
     - taxon: ascocystites
       children:
       - taxon: drabowensis_barrande_1887
-        type: true
+        isType: true
         synonyms:
         - taxon: micraster_barrande_1887
         - taxon: barrandei_jaekel_1918

@@ -16,5 +16,5 @@ taxonomies:
             new: true
             children:
             - taxon: belli_sumrall_brett_cornell_2006
-              type: true
+              isType: true
               new: true

@@ -8,7 +8,7 @@ taxonomies:
       - taxon: vyscystis
         children:
         - taxon: ubaghsi_fatka_kordule_1990
-          type: true
+          isType: true
 phylogenies:
 - treeType: cladogram
   tree:

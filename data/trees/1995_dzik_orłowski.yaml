@@ -11,5 +11,5 @@ taxonomies:
       new: true
       children:
       - taxon: archaeocyathoides_dzik_orłowski_1995
-        type: true
+        isType: true
         new: true

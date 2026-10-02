@@ -13,7 +13,7 @@ taxonomies:
       children:
       - taxon: moroccoensis_smith.a.b_zamora_2013
         new: true
-        type: true
+        isType: true
         material:
         - prefix: NHM UK EE
           numbers: [15373]

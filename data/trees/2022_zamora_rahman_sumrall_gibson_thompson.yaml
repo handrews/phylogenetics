@@ -13,7 +13,7 @@ taxonomies:
         children:
         - taxon: haefneri_zamora_rahman_sumrall_gibson_thompson_2022
           new: true
-          type: true
+          isType: true
           material:
           - prefix: NHMUK EE
             numbers: [1659]

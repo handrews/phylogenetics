@@ -13,7 +13,7 @@ opinions exactly as each publication printed them, with no normalisation.
   `taxon` (key into taxa.yaml), `openTaxon` (placeholders and open
   nomenclature; with `cf` or `aff` naming the taxon a "cf." or "aff." form
   is compared with), `children`, `synonyms`, `non`, `parents` (original
-  placement of a synonym), `removed`, `moved`, `corrected`, flags `new`, `type`,
+  placement of a synonym), `removed`, `moved`, `corrected`, flags `new`, `isType`,
   `provisional` (placement), `questionable` (the taxon itself),
   `quotedParent` (a species whose genus is printed in quotes), `quoted`
   (the node's own name in quotes), `nonMonophyletic`, `pars`, `emended`,

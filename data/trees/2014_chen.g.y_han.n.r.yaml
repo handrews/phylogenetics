@@ -8,5 +8,5 @@ taxonomies:
       new: true
       children:
       - taxon: guoleensis_chen.g.y_han.n.r_2014
-        type: true
+        isType: true
         new: true

@@ -24,7 +24,7 @@ taxonomies:
           new: true
           children:
           - taxon: inexpectata_paul.c.r.c_1997
-            type: true
+            isType: true
             new: true
     - taxon: holocystitidae
       children:
@@ -42,7 +42,7 @@ taxonomies:
       - taxon: eumorphocystis
         children:
         - taxon: multiporata_branson_peck_1940
-          type: true
+          isType: true
         - taxon: coxi_paul.c.r.c_1997
           new: true
   - openTaxon: diploporita-incertae-sedis
@@ -86,14 +86,14 @@ taxonomies:
         - taxon: caryocystites
           children:
           - taxon: dubius_angelin_1878
-            type: true
+            isType: true
           - openTaxon: caryocystites-cf-lagenallis_paul.c.r.c_1997
             cf: lagenallis_regnéll_1945
             new: true
         - taxon: heliocrinites
           children:
           - taxon: balticus_eichwald_1829
-            type: true
+            isType: true
           - taxon: triangulatus_paul.c.r.c_1997
             new: true
           - openTaxon: heliocrinites-sp-a_paul.c.r.c_1997
@@ -116,7 +116,7 @@ taxonomies:
         - taxon: lophotocystis
           children:
           - taxon: granatum_wahlenberg_1821
-            type: true
+            isType: true
           - taxon: malaisei_regnéll_1951
       - taxon: echinosphaeritidae
         children:
@@ -125,7 +125,7 @@ taxonomies:
           - taxon: echinosphaerites-subgenus
             children:
             - taxon: aurantium_gyllenhaal_1772
-              type: true
+              isType: true
             - taxon: granulatus_mccoy_1846
             - openTaxon: echinosphaerites-cf-granulatus_paul.c.r.c_1997
               cf: granulatus_mccoy_1846
@@ -135,6 +135,6 @@ taxonomies:
             new: true
             children:
             - taxon: arachnoideus_forbes_1848
-              type: true
+              isType: true
             - openTaxon: echinosphaerites-cf-arachnoideus_paul.c.r.c_1997
               cf: arachnoideus_forbes_1848

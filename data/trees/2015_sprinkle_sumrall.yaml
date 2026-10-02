@@ -15,7 +15,7 @@ taxonomies:
           new: true
           children:
           - taxon: guensburgi_sprinkle_sumrall_2015
-            type: true
+            isType: true
             new: true
     - taxon: edrioblastoidina
       children:
@@ -25,5 +25,5 @@ taxonomies:
           new: true
           children:
           - taxon: inexpectus_sprinkle_sumrall_2015
-            type: true
+            isType: true
             new: true

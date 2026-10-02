@@ -6,4 +6,4 @@ taxonomies:
     - taxon: cardiocystites
       children:
       - taxon: bohemicus_barrande_1887_cardiocystites
-        type: true
+        isType: true

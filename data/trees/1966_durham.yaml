@@ -12,7 +12,7 @@ taxonomies:
         provisional: true
       children:
       - taxon: roddyi_ruedemann_1933
-        type: true
+        isType: true
         material:
         - prefix: USNM
           numbers: [85181]

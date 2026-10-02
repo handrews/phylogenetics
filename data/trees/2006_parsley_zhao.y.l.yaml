@@ -26,7 +26,7 @@ taxonomies:
           - taxon: curteocrinus
           children:
           - taxon: lui_zhao.y.l_huang.y.z_gong.x.y_1994
-            type: true
+            isType: true
             notes: Page numbers from English translation, which is 2nd half of paper
             synonyms:
             - taxon: curtobrachiolus_zhao.y.l_huang.y.z_gong.x.y_1994
@@ -47,7 +47,7 @@ taxonomies:
           new: true
           children:
           - taxon: rotundus_parsley_zhao.y.l_2006
-            type: true
+            isType: true
             new: true
             synonyms:
             - openTaxon: crinozoa-sp_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999

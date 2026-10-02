@@ -14,7 +14,7 @@ taxonomies:
           - taxon: sinclairocystis
             children:
             - taxon: praedicta_bassler_1950
-              type: true
+              isType: true
         - taxon: amygdalocystitidae
           emended: true
           notes: Emended Parsley and Mintz, 1975
@@ -23,7 +23,7 @@ taxonomies:
             emended: true
             children:
             - taxon: tribrachiatus_bassler_1943
-              type: true
+              isType: true
               synonyms:
               - taxon: tribrachiatus_bassler_1943
                 parents:
@@ -38,7 +38,7 @@ taxonomies:
           - taxon: platycystites
             children:
             - taxon: faberi_miller.s.a_1899
-              type: true
+              isType: true
             - taxon: levatus_bassler_1943
               synonyms:
               - taxon: fimbriatus_bassler_1943
@@ -76,5 +76,5 @@ taxonomies:
             new: true
             children:
             - taxon: pyriformis_parsley_sprinkle_1982
-              type: true
+              isType: true
               new: true

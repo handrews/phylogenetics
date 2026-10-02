@@ -16,5 +16,5 @@ taxonomies:
             new: true
             children:
             - taxon: cupuliformis_zhao.j_guo.j_selden_cong.p.y_li.y.j_2022
-              type: true
+              isType: true
               new: true

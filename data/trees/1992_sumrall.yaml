@@ -11,5 +11,5 @@ taxonomies:
           new: true
           children:
           - taxon: nacoensis_sumrall_1992
-            type: true
+            isType: true
             new: true

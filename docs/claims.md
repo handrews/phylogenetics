@@ -147,7 +147,7 @@ Something this source does to a name. One claim per flag, `actKind` being:
 |---|---|
 | `new: true` on a named node | `new` (the protologue; F6 checks it) |
 | `new: true` on a placeholder | `placeholder` (the source originates the placeholder; C4) |
-| `type: true` | `type` (the fixation method joins when B14 lands) |
+| `isType: true` | `type` (the fixation method joins when B14 lands) |
 | `emended: true` or `emended: {by}` | `emended`; `by` and `byPages` when the source follows another work's emendation |
 | `recombined: true` or `recombined: {by}` on a species-group node | `combNov` (comb. nov.); `by` and `byPages` when the source follows another work's recombination |
 | `translated: true` or `translated: {taxon: y, by?}` | `nomTransl`; `translatedFrom: y` when the earlier rank is named, `by`/`byPages` when another work made the act, `rankVariants` from the records' `altRankOf` links |
@@ -603,7 +603,7 @@ species node. The node's one context (`lady-burn-starfish-bed`) yields an
 ### Fay 1962, *ottawaensis* (`data/trees/1962_fay.yaml`)
 
 `act` `type` on `ottawaensis_whiteaves_1897`, carrying `editorial:
-{inferred: [type], basis: "Fay never prints \"type species\"; the genus is
+{inferred: [isType], basis: "Fay never prints \"type species\"; the genus is
 monotypic (p. 201)"}`, plus a separate `editorial` claim with the same
 block. A question "does Fay fix the type species?" is answered from the
 act claim's `inferred: true`: the flag is the editor's, and the paper

@@ -45,7 +45,7 @@ property.
 | property | data | data % |
 |---|---|---|
 | `new` | 1472 | 26.4% |
-| `type` | 369 | 6.6% |
+| `isType` | 369 | 6.6% |
 | `emended` | 54 | 1.0% |
 | `pars` | 19 | 0.3% |
 | `translated` | 16 | 0.3% |

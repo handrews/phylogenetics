@@ -32,7 +32,7 @@ taxonomies:
             - taxon: glyptocystella
               children:
               - taxon: loeblichi_bassler_1943
-                type: true
+                isType: true
                 synonyms:
                 - taxon: loeblichi_bassler_1943
                   provisional: true
@@ -51,7 +51,7 @@ taxonomies:
               new: true
               children:
               - taxon: strimplei_sprinkle_1982
-                type: true
+                isType: true
                 new: true
               - taxon: cooki_sprinkle_1982
                 new: true
@@ -71,22 +71,22 @@ taxonomies:
             - taxon: hesperocystis
               children:
               - taxon: deckeri_sinclair_1945
-                type: true
+                isType: true
             - taxon: strabocystis
               new: true
               children:
               - taxon: fayi_sprinkle_1982
-                type: true
+                isType: true
                 new: true
             - taxon: tanaocystis
               new: true
               children:
               - taxon: watkinsi_sprinkle_1982
-                type: true
+                isType: true
                 new: true
             - taxon: quadrocystis
               new: true
               children:
               - taxon: graffhami_sprinkle_1982
-                type: true
+                isType: true
                 new: true

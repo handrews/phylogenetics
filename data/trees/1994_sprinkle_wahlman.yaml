@@ -21,7 +21,7 @@ taxonomies:
             new: true
             children:
             - taxon: floweri_sprinkle_wahlman_1994
-              type: true
+              isType: true
               new: true
   - taxon: eocrinoidea
     children:
@@ -32,7 +32,7 @@ taxonomies:
         - taxon: bockia_hecker_1938
           children:
           - taxon: neglecta_hecker_1940
-            type: true
+            isType: true
             year: 1938
             notes: Year appears wrong?  1940?
             synonyms:
@@ -62,5 +62,5 @@ taxonomies:
                 new: true
                 children:
                 - taxon: radiatus_sprinkle_wahlman_1994
-                  type: true
+                  isType: true
                   new: true

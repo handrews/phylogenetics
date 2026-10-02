@@ -11,7 +11,7 @@ taxonomies:
         - taxon: helicoplacus
           children:
           - taxon: gilberti_durham_caster_1963
-            type: true
+            isType: true
           - taxon: curtisi_durham_caster_1963
           - openTaxon: helicoplacus-sp_durham_caster_1966
             new: true

@@ -114,9 +114,9 @@ taxonomies:
         new: true
         citedAs: "Cyathotheca suecica n. g. n. sp."
         pages: [[1, 5]]
-        type: true
+        isType: true
         editorial:
-          inferred: [type]
+          inferred: [isType]
           basis: |
             Jaekel never prints "Genotyp"/"Typus" for suecica itself; the
             species is monotypic (p. 1): "Es liegt nur ein Exemplar vor,

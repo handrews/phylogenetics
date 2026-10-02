@@ -13,7 +13,7 @@ taxonomies:
       new: true
       children:
       - taxon: luckae_nardin_lefebvre_fatka_nohejlová_kašiča_šinágl_szabad_2017
-        type: true
+        isType: true
         new: true
         synonyms:
         - openTaxon: undescribed-genus_fatka_kordule_szabad_2004

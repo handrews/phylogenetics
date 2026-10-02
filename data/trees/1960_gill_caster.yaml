@@ -51,7 +51,7 @@ taxonomies:
                   new: true
                   children:
                   - taxon: wilkinsi_gill_caster_1960
-                    type: true
+                    isType: true
                     new: true
                   - openTaxon: victoriacystis-aff-wilkinsi-a_gill_caster_1960
                     aff: wilkinsi_gill_caster_1960
@@ -78,18 +78,18 @@ taxonomies:
                 new: true
                 children:
                 - taxon: kukersiana_hecker_1940
-                  type: true
+                  isType: true
               - taxon: syringocrinus
                 children:
                 - taxon: paradoxicus_billings_1859
-                  type: true
+                  isType: true
             - taxon: iowacystidae
               new: true
               children:
               - taxon: iowacystis
                 children:
                 - taxon: sagittaria_thomas_ladd_1926
-                  type: true
+                  isType: true
             - taxon: rutroclypeidae
               new: true
               children:
@@ -97,7 +97,7 @@ taxonomies:
                 notes: emend. Gill and Caster
                 children:
                 - taxon: junori_withers_1933
-                  type: true
+                  isType: true
                 - taxon: victoriae_gill_caster_1960
                   new: true
                 - taxon: withersi_gill_caster_1960

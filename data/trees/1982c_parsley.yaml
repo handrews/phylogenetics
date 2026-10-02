@@ -23,7 +23,7 @@ taxonomies:
           - taxon: eumorphocystis
             children:
             - taxon: multiporata_branson_peck_1940
-              type: true
+              isType: true
               synonyms:
               - taxon: typicalis_bassler_1950
                 parents:

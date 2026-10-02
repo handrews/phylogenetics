@@ -15,7 +15,7 @@ taxonomies:
           children:
           - taxon: sinensis_zamora_sumrall_zhu.x.j_lefebvre_2017
             new: true
-            type: true
+            isType: true
             material:
             - prefix: NIGPAS
               numbers: [163198]

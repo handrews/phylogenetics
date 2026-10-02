@@ -55,7 +55,7 @@ taxonomies:
 #                 - Germany
             children:
             - taxon: coronaeformis_rievers_1961
-              type: true
+              isType: true
               synonyms:
               - taxon: coronaeformis_rievers_1961
                 parents:

@@ -8,10 +8,10 @@ taxonomies:
         taxon: cymbionitidae
       children:
       - taxon: craticula_whitehouse_1941
-        type: true
+        isType: true
     - taxon: peridionites
       moved:
         taxon: peridionitidae
       children:
       - taxon: navicula_whitehouse_1941
-        type: true
+        isType: true

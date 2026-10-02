@@ -3,7 +3,7 @@ taxonomies:
   new: true
   children:
   - taxon: typus_billings.w.r_1887
-    type: true
+    isType: true
     new: true
 - taxon: calceocrinus
   children:

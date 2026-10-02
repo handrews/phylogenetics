@@ -8,7 +8,7 @@ taxonomies:
       - taxon: akadocrinus
         children:
         - taxon: jani_prokop_1962
-          type: true
+          isType: true
         - taxon: knizeki_fatka_1991
           new: true
           notes: There is a "Description" but no "Diagnosis"

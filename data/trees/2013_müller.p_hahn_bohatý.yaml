@@ -15,7 +15,7 @@ taxonomies:
           might have to be limited to its type species as a nomen dubium.
         children:
         - taxon: megapinacotus_ehlers_kesling_1958
-          type: true
+          isType: true
         - taxon: casteri_bell.b.m_1975
         - taxon: leunisseni_grigo_2000
         - taxon: prescheri_grigo_2000
@@ -23,7 +23,7 @@ taxonomies:
         new: true
         children:
         - taxon: eifeliana_müller.p_hahn_bohatý_2013
-          type: true
+          isType: true
           new: true
       - taxon: krama
         children:

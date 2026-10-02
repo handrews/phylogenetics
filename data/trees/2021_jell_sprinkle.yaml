@@ -24,7 +24,7 @@ taxonomies:
           - taxon: peridionites
             children:
             - taxon: navicula_whitehouse_1941
-              type: true
+              isType: true
               material:
               - prefix: UQF
                 numbers: [5404]
@@ -39,7 +39,7 @@ taxonomies:
           - taxon: cymbionites
             children:
             - taxon: craticula_whitehouse_1941
-              type: true
+              isType: true
               material:
               - prefix: UQF
                 numbers: [5409]
@@ -58,7 +58,7 @@ taxonomies:
             new: true
             children:
             - taxon: dowlingi_jell_sprinkle_2021
-              type: true
+              isType: true
               new: true
               material:
               - prefix: QMF
@@ -83,7 +83,7 @@ taxonomies:
           new: true
           children:
           - taxon: edgari_jell_sprinkle_2021
-            type: true
+            isType: true
             new: true
             material:
             - prefix: QMF
@@ -99,7 +99,7 @@ taxonomies:
           - taxon: cambraster
             children:
             - taxon: cannati_miquel_1894
-              type: true
+              isType: true
             - openTaxon: cambraster-sp_jell_sprinkle_2021
               new: true
               material:
@@ -110,7 +110,7 @@ taxonomies:
           - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
             children:
             - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
-              type: true
+              isType: true
             - openTaxon: kailidiscus-sp_jell_sprinkle_2021
               new: true
               material:

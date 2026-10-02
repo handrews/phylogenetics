@@ -10,7 +10,7 @@ taxonomies:
       new: true
       children:
       - taxon: gilberti_durham_caster_1963
-        type: true
+        isType: true
         new: true
         material:
         - prefix: UCMP

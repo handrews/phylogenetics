@@ -16,5 +16,5 @@ taxonomies:
             new: true
             children:
             - taxon: globosa_sprinkle_parsley_1982
-              type: true
+              isType: true
               new: true

@@ -11,7 +11,7 @@ taxonomies:
         - taxon: cambraster
           children:
           - taxon: cannati_miquel_1894
-            type: true
+            isType: true
             synonyms:
             - taxon: cannati_miquel_1894
               parents:

@@ -20,7 +20,7 @@ taxonomies:
             - taxon: praepleurocystis
               children:
               - taxon: watkinsi_strimple_1948
-                type: true
+                isType: true
                 synonyms:
                 - taxon: watkinsi_strimple_1948
                   parents:
@@ -29,4 +29,4 @@ taxonomies:
             - taxon: pleurocystites
               children:
               - taxon: squamosus_billings_1854
-                type: true
+                isType: true

@@ -15,7 +15,7 @@ taxonomies:
           notes: First page range Chinese, second English.
           children:
           - taxon: yini_zhao.y.l_peng.j_wu.m.y_2015
-            type: true
+            isType: true
             new: true
             pages:
             - [253, 256]

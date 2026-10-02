@@ -15,6 +15,6 @@ taxonomies:
         - taxon: stephanocrinus
           children:
           - taxon: angulatus_conrad.t.a_1842
-            type: true
+            isType: true
           - taxon: gemmiformis_hall_1852
             provisional: true

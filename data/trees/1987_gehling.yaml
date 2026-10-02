@@ -10,7 +10,7 @@ taxonomies:
       new: true
       children:
       - taxon: adami_gehling_1987
-        type: true
+        isType: true
         new: true
         material:
         - prefix: SAMP

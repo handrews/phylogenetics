@@ -15,7 +15,7 @@ taxonomies:
           children:
           - taxon: inflatus_parsley_zhao.y.l_2010
             new: true
-            type: true
+            isType: true
             material:
             - prefix: GM
               numbers: [9-5-2 165b]

@@ -9,5 +9,5 @@ taxonomies:
         new: true
         children:
         - taxon: ubaghsi_fatka_kordule_1990
-          type: true
+          isType: true
           new: true

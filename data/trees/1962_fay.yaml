@@ -9,9 +9,9 @@ taxonomies:
     - taxon: steganoblastus
     children:
     - taxon: ottawaensis_whiteaves_1897
-      type: true
+      isType: true
       editorial:
-        inferred: [type]
+        inferred: [isType]
         basis: Fay never prints "type species"; the genus is monotypic (p. 201)
       material:
       - numbers: [752]

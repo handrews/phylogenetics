@@ -18,5 +18,5 @@ taxonomies:
             new: true
             children:
             - taxon: americana_zamora_sprinkle_sumrall_2020
-              type: true
+              isType: true
               new: true

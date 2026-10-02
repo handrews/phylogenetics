@@ -11,7 +11,7 @@ taxonomies:
           new: true
           children:
           - taxon: bennisoni_sumrall_bowsher_1996
-            type: true
+            isType: true
             new: true
           - openTaxon: giganticlavus-cf-bennisoni_sumrall_bowsher_1996
             cf: bennisoni_sumrall_bowsher_1996

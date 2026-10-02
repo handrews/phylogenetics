@@ -8,7 +8,7 @@ taxonomies:
       pages: 609
       children:
       - taxon: bockeliei_rozhnov_fedorov_2001
-        type: true
+        isType: true
         new: true
         pages:
         - [609, 612]

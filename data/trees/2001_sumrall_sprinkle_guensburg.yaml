@@ -9,5 +9,5 @@ taxonomies:
         new: true
         children:
         - taxon: rozhnovi_sumrall_sprinkle_guensburg_2001
-          type: true
+          isType: true
           new: true

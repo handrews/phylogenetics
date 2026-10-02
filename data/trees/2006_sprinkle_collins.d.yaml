@@ -9,11 +9,11 @@ taxonomies:
         new: true
         children:
         - taxon: lyracystis
-          type: true
+          isType: true
           new: true
           children:
           - taxon: radiata_sprinkle_1973
-            type: true
+            isType: true
             synonyms:
             - taxon: radiata_sprinkle_1973
               pars: true
@@ -27,7 +27,7 @@ taxonomies:
         - taxon: gogia
           children:
           - taxon: prolifica_walcott_1917
-            type: true
+            isType: true
           - taxon: stephenensis_sprinkle_collins.d_2006
             new: true
           synonyms:

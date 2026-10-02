@@ -22,7 +22,7 @@ taxonomies:
         notes: post-dates correct Stromatocystites
       children:
       - taxon: pentangularis_pompeckj_1896
-        type: true
+        isType: true
       - taxon: balticus_jaekel_1899
       - taxon: walcotti_schuchert_1919
         children:
@@ -31,14 +31,14 @@ taxonomies:
       new: true
       children:
       - taxon: typicalis_bassler_1935
-        type: true
+        isType: true
         new: true
     - taxon: cystaster
       synonyms:
       - taxon: thecocystis
       children:
       - taxon: granulatus_hall_1871
-        type: true
+        isType: true
         synonyms:
         - taxon: granulatus_hall_1871
           parents:
@@ -52,7 +52,7 @@ taxonomies:
         notes: given as "Hemicystites of authors not Hall"
       children:
       - taxon: stellatus_hall_1866
-        type: true
+        isType: true
         synonyms:
         - taxon: stellatus_hall_1866
           parents:
@@ -62,7 +62,7 @@ taxonomies:
     - taxon: carneyella
       children:
       - taxon: pilea_hall_1866
-        type: true
+        isType: true
         synonyms:
         - taxon: pileus_hall_1866
           parents:
@@ -90,7 +90,7 @@ taxonomies:
     - taxon: isorophus
       children:
       - taxon: cincinnatiensis_roemer_1851
-        type: true
+        isType: true
         synonyms:
         - taxon: cincinnatiensis_roemer_1851
           parents:
@@ -119,7 +119,7 @@ taxonomies:
       new: true
       children:
       - taxon: inconditus_raymond_1915
-        type: true
+        isType: true
         synonyms:
         - taxon: inconditus_raymond_1915
           parents:
@@ -127,7 +127,7 @@ taxonomies:
     - taxon: streptaster
       children:
       - taxon: vorticellatus_hall_1866
-        type: true
+        isType: true
         synonyms:
         - taxon: vorticellata_hall_1866
           parents:
@@ -137,7 +137,7 @@ taxonomies:
     - taxon: lebetodiscus
       children:
       - taxon: dicksoni_billings_1857
-        type: true
+        isType: true
         synonyms:
         - taxon: dicksoni_billings_1857
           parents:
@@ -147,12 +147,12 @@ taxonomies:
       new: true
       children:
       - taxon: grandis_bassler_1935
-        type: true
+        isType: true
         new: true
     - taxon: pyrgocystis
       children:
       - taxon: sardesoni_bather_1915
-        type: true
+        isType: true
       - taxon: sulcatum_aurivillius_1892
         synonyms:
         - taxon: sulcatum_aurivillius_1892
@@ -177,7 +177,7 @@ taxonomies:
       - taxon: hemicystis
       children:
       - taxon: parasitica_hall_1852
-        type: true
+        isType: true
       - taxon: bellulus_barrande_1887
         synonyms:
         - taxon: bellulus_barrande_1887
@@ -236,7 +236,7 @@ taxonomies:
     - taxon: thresherodiscus
       children:
       - taxon: ramosus_foerste_1914
-        type: true
+        isType: true
     - taxon: agelacrinites
       synonyms:
       - taxon: agelacystis
@@ -251,7 +251,7 @@ taxonomies:
           first Agelacrinus and later Agelacystis."
       children:
       - taxon: hamiltonensis_vanuxem_1842
-        type: true
+        isType: true
       - taxon: ephraemovianus_bogolubov_1926
       - taxon: hanoveri_thomas_1924
       - taxon: rhenanus_roemer_1851
@@ -262,7 +262,7 @@ taxonomies:
       - taxon: ageladiscus
       children:
       - taxon: optatus_worthen_miller_1883
-        type: true
+        isType: true
         synonyms:
         - taxon: optatus_worthen_miller_1883
           parents:
@@ -280,7 +280,7 @@ taxonomies:
       new: true
       children:
       - taxon: alleganius_clarke_1901
-        type: true
+        isType: true
         synonyms:
         - taxon: alleganius_clarke_1901
           parents:
@@ -288,7 +288,7 @@ taxonomies:
     - taxon: lepidodiscus
       children:
       - taxon: squamosus_meek_worthen_1868
-        type: true
+        isType: true
         synonyms:
         - taxon: squamosus_meek_worthen_1868
           parents:
@@ -309,7 +309,7 @@ taxonomies:
       new: true
       children:
       - taxon: pulaskiensis_miller.s.a_gurley_1894
-        type: true
+        isType: true
         synonyms:
         - taxon: pulaskiensis_miller.s.a_gurley_1894
           parents:
@@ -327,7 +327,7 @@ taxonomies:
         pars: true
       children:
       - taxon: bigsbyi_billings_1857
-        type: true
+        isType: true
         synonyms:
         - taxon: bigsbyi_billings_1857
           parents:
@@ -347,17 +347,17 @@ taxonomies:
     - taxon: dinocystis
       children:
       - taxon: barroisi_bather_1898
-        type: true
+        isType: true
   - taxon: cyathocystidae
     children:
     - taxon: cyathocystis
       children:
       - taxon: plautini_schmidt_1880
-        type: true
+        isType: true
     - taxon: cyathotheca
       children:
       - taxon: suecica_jaekel_1927
-        type: true
+        isType: true
   - taxon: astrocystitidae
     new: true
     citedAs: |

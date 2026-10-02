@@ -6,10 +6,10 @@ taxonomies:
     - taxon: trachelocrinidae
     children:
     - taxon: bockia_hecker_1938
-      type: true
+      isType: true
       children:
       - taxon: neglecta_hecker_1940
-        type: true
+        isType: true
       - taxon: mirabilis_bockelie_1981
         new: true
         pages:
@@ -71,7 +71,7 @@ taxonomies:
     - taxon: cryptocrinites
       children:
       - taxon: laevis_pander_1830
-        type: true
+        isType: true
         synonyms:
         - parents:
           - taxon: echinosphaerites
@@ -98,7 +98,7 @@ taxonomies:
     - taxon: rhipidocystis
       children:
       - taxon: gigas_jaekel_1901
-        type: true
+        isType: true
       - taxon: norvegica_bockelie_1981
         new: true
         pages:

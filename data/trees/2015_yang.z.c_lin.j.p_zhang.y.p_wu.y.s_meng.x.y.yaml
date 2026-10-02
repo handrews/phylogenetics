@@ -10,7 +10,7 @@ taxonomies:
         - taxon: globoeocrinus
           children:
           - taxon: globulus_zhao.y.l_parsley_peng.j_2008
-            type: true
+            isType: true
           - taxon: zhaoyuanlongensis_yang.z.c_lin.j.p_zhang.y.p_wu.y.s_meng.x.y_2015
             new: true
             pages: 433

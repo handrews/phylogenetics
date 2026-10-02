@@ -5,7 +5,7 @@ taxonomies:
   - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
   children:
   - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
-    type: true
+    isType: true
     synonyms:
     - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
       parents:

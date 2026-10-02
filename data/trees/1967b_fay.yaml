@@ -10,8 +10,8 @@ taxonomies:
         - taxon: blastocystis
           children:
           - taxon: rossica_jaekel_1918
-            type: true
+            isType: true
         - taxon: blastoidocrinus
           children:
           - taxon: carchariaedens_billings_1859
-            type: true
+            isType: true

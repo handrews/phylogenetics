@@ -63,7 +63,7 @@ taxonomies:
           provisional: true
           children:
           - taxon: megapinacotus_ehlers_kesling_1958
-            type: true
+            isType: true
           - taxon: casteri_bell.b.m_1975
             new: true
       - taxon: postibulla

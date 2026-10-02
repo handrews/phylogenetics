@@ -12,12 +12,12 @@ taxonomies:
         pages: 353
         children:
         - taxon: apektocrinus
-          type: true
+          isType: true
           new: true
           pages: 353
           children:
           - taxon: ubaghsi_guensburg_sprinkle_2009
-            type: true
+            isType: true
             new: true
             pages:
             - [353, 357]
