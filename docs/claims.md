@@ -222,6 +222,9 @@ says which.
   prefix, or for an author's own field codes the one prefixless locality
   register the tree file lists), the number folded without its prefix and
   each key given once, so "Walcott 35k" and "USNM loc. 35k" give one.
+  A `tentative` the context carries (`true` for the whole statement, a
+  list of the fields whose values are queried) rides inside `occurrence`
+  as written.
 - `specimen` (field `material`): one claim per entry. `role` is the
   entry's role, absent when the source attaches none; `ids` is the entry's
   `catalogNumbers` (a range pair stays a two-element list); `repository` is
@@ -274,7 +277,7 @@ says which.
   endpoint included, or a `label`); a figure with no `of` is tied to no
   specimen.
 - `range` (field `ranges`): one claim per element, `range` the element
-  verbatim. It counts under the `occurrences` coverage kind, and
+  verbatim, a `tentative` it carries included. It counts under the `occurrences` coverage kind, and
   `statements(kind='occurrences')` returns it with the `occurrence` claims.
 
 ### `secondhand`

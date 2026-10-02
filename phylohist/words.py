@@ -146,18 +146,26 @@ _MODIFIER_BASE = {
 def _field_words(value, fields):
   """The present ones of `fields`, each field's values joined by ", ", the
   fields joined by "; ". A modifier reads before the field it qualifies as
-  one phrase ("upper Lower Cambrian"); with no such field it stands alone."""
+  one phrase ("upper Lower Cambrian"); with no such field it stands alone.
+  A field named in the object's `tentative` list is queried: its words (the
+  joined phrase, when either the field or its modifier is named) read after
+  a "?"."""
   modifiers = {
     base: value[k]
     for k, base in _MODIFIER_BASE.items()
     if k in fields and base in fields and value.get(k) and value.get(base)
   }
+  queried = value.get('tentative')
+  queried = set(queried) if isinstance(queried, list) else set()
   parts = []
   for k in fields:
     if not value.get(k) or (_MODIFIER_BASE.get(k) in modifiers):
       continue
     words = ', '.join(_flat_words(value[k]))
-    parts.append(f'{modifiers[k]} {words}' if k in modifiers and words else words)
+    if k in modifiers and words:
+      words = f'{modifiers[k]} {words}'
+    doubted = k in queried or any(m in queried for m, base in _MODIFIER_BASE.items() if base == k)
+    parts.append(f'?{words}' if words and doubted else words)
   return '; '.join(p for p in parts if p)
 
 
@@ -635,7 +643,8 @@ class Words:
 
   def _occurrence_words(self, claim):
     """ "occurrence <key>: " and the context's time, unit, place and zone
-    words, a modifier read before its unit ("upper Lower Cambrian")."""
+    words, a modifier read before its unit ("upper Lower Cambrian"); "?"
+    follows the key when the whole context is `tentative`."""
     fields = (
       'stage',
       'stageBoundary',
@@ -666,6 +675,8 @@ class Words:
     )
     body = _field_words(claim.get('occurrence') or {}, fields)
     prefix = f'occurrence {claim["contextKey"]}' if claim.get('contextKey') else 'occurrence'
+    if (claim.get('occurrence') or {}).get('tentative') is True:
+      prefix += '?'
     return f'{prefix}: {body}' if body else prefix
 
   def _illustration_claim_words(self, claim):
@@ -683,11 +694,13 @@ class Words:
     return words
 
   def _range_claim_words(self, claim):
-    """ "range: <time words>; <regions>", a modifier read before its unit."""
+    """ "range: <time words>; <regions>", a modifier read before its unit;
+    "range?" when the whole range is `tentative`."""
     value = claim.get('range') or {}
     regions = ', '.join(_region_words(r) for r in value.get('regions') or ())
     body = '; '.join(p for p in (_field_words(value, _TIME_FIELDS), regions) if p)
-    return f'range: {body}' if body else 'range'
+    label = 'range?' if value.get('tentative') is True else 'range'
+    return f'{label}: {body}' if body else label
 
   def error_words(self, claim):
     """The clause for a printed attribution the editor reads as wrong,

@@ -427,6 +427,75 @@ def test_context_refs_object_form_and_no_context():
   assert material.context_refs(node, {'here': {}}, {}) == []
 
 
+# -- tentative_fields ---------------------------------------------------------
+
+
+def test_tentative_names_a_field_the_range_does_not_carry():
+  rng = {'period': 'Ordovician', 'tentative': ['series']}
+  assert material.tentative_fields(rng, 'range') == [
+    ('error', '`tentative` names `series`, which the range does not carry'),
+  ]
+  context = {'unit': ['A Fm.'], 'tentative': ['unit', 'biozone']}
+  assert material.tentative_fields(context, 'context') == [
+    ('error', '`tentative` names `biozone`, which the context does not carry'),
+  ]
+
+
+def test_tentative_cannot_name_a_key_that_is_no_printed_value():
+  rng = {'series': 'Middle Ordovician', 'regions': ['Ottawa'], 'asPrinted': 'x', 'notes': 'y'}
+  rng['tentative'] = ['tentative', 'notes', 'asPrinted', 'inferred', 'sources', 'regions']
+  messages = material.tentative_fields(rng, 'range')
+  assert [level for level, _ in messages] == ['error'] * 6
+  assert [m.split('`')[3] for _, m in messages] == rng['tentative']
+
+
+def test_tentative_true_on_a_file_level_context_is_error():
+  context = {'unit': ['A Fm.'], 'tentative': True}
+  assert material.tentative_fields(context, 'context', file_level=True) == [
+    (
+      'error',
+      'a file-level context cannot be `tentative: true`; the doubt belongs to the node '
+      'or the specimen that uses it',
+    ),
+  ]
+
+
+def test_tentative_clean_cases():
+  # A list on a range, a list on a node and a file-level context, `true`
+  # on a node-level context and on a range, and no `tentative` at all.
+  assert material.tentative_fields({'series': 'X', 'tentative': ['series']}, 'range') == []
+  assert material.tentative_fields({'series': 'X', 'tentative': True}, 'range') == []
+  assert material.tentative_fields({'biozone': 'X', 'tentative': ['biozone']}, 'context') == []
+  assert (
+    material.tentative_fields({'biozone': 'X', 'tentative': ['biozone']}, 'context', True) == []
+  )
+  assert material.tentative_fields({'unit': ['A']}, 'context', True) == []
+  assert material.tentative_fields(None, 'context') == []
+  node = {
+    'ranges': [{'series': 'X', 'tentative': ['series']}, {'period': 'Y', 'tentative': True}, None],
+    'contexts': {'a': {'biozone': 'X', 'tentative': ['biozone']}, 'b': {'tentative': True}},
+  }
+  assert material.range_tentatives(node) == []
+  assert material.context_tentatives(node['contexts']) == []
+  assert material.range_tentatives({'ranges': None}) == []
+
+
+def test_tentative_checks_name_the_context_and_run_over_the_lists():
+  node = {'ranges': [{'period': 'Y', 'tentative': ['series']}]}
+  assert material.range_tentatives(node) == [
+    ('error', '`tentative` names `series`, which the range does not carry'),
+  ]
+  contexts = {'a': {'unit': ['A'], 'tentative': True}, 'b': {'tentative': ['biozone']}, 'c': None}
+  assert material.context_tentatives(contexts) == [
+    ('error', 'context "b": `tentative` names `biozone`, which the context does not carry'),
+  ]
+  assert [m for _, m in material.context_tentatives(contexts, file_level=True)] == [
+    'context "a": a file-level context cannot be `tentative: true`; the doubt belongs to the '
+    'node or the specimen that uses it',
+    'context "b": `tentative` names `biozone`, which the context does not carry',
+  ]
+
+
 # -- unreferenced_file_contexts -----------------------------------------------
 
 
@@ -1112,6 +1181,36 @@ def test_load_reports_locality_numbers_per_node_and_for_the_file(caplog):
   assert not any('"USGS 1"' in m for m in warnings)
 
 
+def test_load_reports_tentative_on_ranges_and_contexts(caplog):
+  from phylohist.loader.load import _report_material
+
+  data = {
+    'trees': {
+      '_synthetic_source': {
+        'contexts': {'f': {'biozone': 'X', 'tentative': True}},
+        'taxonomies': [
+          {
+            'taxon': 'a',
+            'contexts': {'n': {'tentative': ['biozone']}},
+            'ranges': [{'period': 'Y', 'tentative': ['series']}],
+          },
+        ],
+      },
+    },
+  }
+  with caplog.at_level(logging.ERROR, logger='phylohist'):
+    _report_material(data)
+  errors = [r.getMessage() for r in caplog.records if r.levelno == logging.ERROR]
+  assert any(m.startswith('_synthetic_source: context "f": a file-level context') for m in errors)
+  assert any(
+    m.startswith('_synthetic_source at 0: context "n": `tentative` names `biozone`') for m in errors
+  )
+  assert any(
+    m.startswith('_synthetic_source at 0: `tentative` names `series`, which the range')
+    for m in errors
+  )
+
+
 # -- scripts/check_draft.py ---------------------------------------------------
 
 
@@ -1142,6 +1241,19 @@ def test_check_draft_exits_one_on_material_null_on_a_cited_entry(tmp_path):
   result = _run_check_draft(draft)
   assert result.returncode == 1, result.stdout + result.stderr
   assert 'cited entry carries `material`' in result.stdout
+
+
+def test_check_draft_exits_one_on_a_tentative_naming_an_absent_field(tmp_path):
+  draft = tmp_path / '1898_bather.yaml'
+  draft.write_text(
+    'contexts:\n  f:\n    tentative: true\n'
+    'taxonomies:\n- taxon: cyathocystis\n'
+    '  ranges:\n  - period: Cambrian\n    tentative: [series]\n',
+  )
+  result = _run_check_draft(draft)
+  assert result.returncode == 1, result.stdout + result.stderr
+  assert 'a file-level context cannot be `tentative: true`' in result.stdout
+  assert '`tentative` names `series`, which the range does not carry' in result.stdout
 
 
 def test_check_draft_exits_one_on_illustrations_null_on_a_primary_node(tmp_path):

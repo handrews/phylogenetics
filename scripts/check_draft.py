@@ -95,6 +95,7 @@ def check_material(draft, repositories, taxa):
 
   file_contexts = draft.get('contexts') or {}
   messages.extend(material.locality_numbers(file_contexts, repositories, file_repositories))
+  messages.extend(material.context_tentatives(file_contexts, file_level=True))
   for path, node, is_cited in material.walk_document(draft):
     node_contexts = node.get('contexts') or {}
     for check, args in (
@@ -102,6 +103,8 @@ def check_material(draft, repositories, taxa):
       (material.figure_refs, (node, is_cited)),
       (material.catalog_numbers, (node, repositories, file_repositories)),
       (material.locality_numbers, (node_contexts, repositories, file_repositories)),
+      (material.context_tentatives, (node_contexts,)),
+      (material.range_tentatives, (node,)),
       (material.cast_refs, (node,)),
       (material.null_material, (node, is_cited)),
       (draft_nulls, (node, is_cited)),

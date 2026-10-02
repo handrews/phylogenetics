@@ -46,7 +46,7 @@ contexts:
     unit: [Cash Creek Quartzite]
     period: Cambrian
     localSeries: Middle Cambrian
-    biozone: Albertella?
+    biozone: Albertella
     location:
     - summit of 6897 ft. quartzite ridge
     - W side of Squaw Creek
@@ -55,6 +55,7 @@ contexts:
     localityNumbers: [CL-1, USGS 5462]
     coordinatesAsPrinted: T. 12 N, R. 17 E (unsurveyed)
     mapSheet: Clayton 7½′ Quad.
+    tentative: [biozone]
     notes: Basal 6 ft. of red shaly siltstone above top of Cash Creek Quartzite.
   dt-3:
     unit: [Benbolt Fm.]
@@ -157,13 +158,14 @@ contexts:
     period: Ordovician
     series: Middle Ordovician
     localStage: Whiterock
-    biozone: Orthidiella(?)
+    biozone: Orthidiella
     location:
     - '"Sponge Beds" running diagonally up ridge on N side of Ikes Canyon opposite and above IK-2.'
     - Toquima Range
     - central Nev.
     localityNumbers: [IK-3]
     mapSheet: Dianas Punch Bowl 15′ Quad.
+    tentative: [biozone]
   kt-1:
     unit: ['"Stephen Formation"']
     period: Cambrian
@@ -210,7 +212,7 @@ contexts:
     period: Ordovician
     series: Middle Ordovician
     localStage: Whiterock
-    biozone: Orthidiella(?)
+    biozone: Orthidiella
     location:
     - dipping dark limestone beds just above and beside top of large reef on the SW side of Meiklejohn Peak
     - about 7 mi. E of Beatty
@@ -219,6 +221,7 @@ contexts:
     localityNumbers: [MJ-1]
     coordinatesAsPrinted: NE¼, sect. 24, T. 12 S, R. 47 E
     mapSheet: Bare Mountain 15′ Quad. (U.S.G.S. map GQ-157)
+    tentative: [biozone]
   pi-1:
     unit: [Chisholm Shale]
     period: Cambrian
@@ -688,6 +691,7 @@ taxonomies:
         pages: 76
         ranges:
         - localSeriesRange: [Lower Cambrian, Lower Ordovician]
+          tentative: [localSeriesRange]
           asPrinted: Early Cambrian(?)–early Ordovician.
         children:
         - taxon: eocrinidae
@@ -697,6 +701,7 @@ taxonomies:
           ranges:
           - period: Cambrian
             localSeriesRange: [Lower Cambrian, Middle Cambrian]
+            tentative: [localSeriesRange]
             asPrinted: Early Cambrian(?)–middle Cambrian.
           children:
           - taxon: gogia
@@ -2219,6 +2224,7 @@ taxonomies:
           ranges:
           - period: Cambrian
             localSeriesRange: [Middle Cambrian, Upper Cambrian]
+            tentative: [localSeriesRange]
             asPrinted: Middle(?)–late Cambrian.
           children:
           - taxon: trachelocrinus
@@ -3030,7 +3036,7 @@ taxonomies:
       ranges:
       - period: Ordovician
         series: Middle Ordovician
-        notes: Middle Ordovician(?)
+        tentative: [series]
       - localSeriesRange: [Middle Silurian, Upper Permian]
         regions: [world-wide]
         asPrinted: Middle Ordovician(?), middle Silurian–late Permian, world-wide distribution.
@@ -3071,7 +3077,7 @@ taxonomies:
       ranges:
       - period: Cambrian
         localSeries: Middle Cambrian
-        notes: Middle Cambrian(?)
+        tentative: [localSeries]
       - localSeriesRange: [Lower Ordovician, Recent]
         regions: [worldwide]
         asPrinted: Middle Cambrian(?), early Ordovician–Recent, worldwide distribution.

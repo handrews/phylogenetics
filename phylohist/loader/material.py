@@ -487,6 +487,61 @@ def locality_numbers(contexts, repositories, file_repositories=()):
   return messages
 
 
+# What a `tentative` list may not name: the marker itself, and the keys that
+# are not printed values (a range's regions carry their own per-element form).
+_NOT_QUERIABLE = ('tentative', 'notes', 'asPrinted', 'inferred', 'sources', 'regions')
+
+
+def tentative_fields(obj, kind, file_level=False):
+  """The `tentative` marker of one range or context (`kind` is "range" or
+  "context", for the messages): a name in the list that the object does not
+  carry is an error, and so is one that is not a printed value
+  (`_NOT_QUERIABLE`); `tentative: true` on a file-level context is an error,
+  since the doubt belongs to the node or the specimen that uses it."""
+  tentative = (obj or {}).get('tentative')
+  if tentative is None:
+    return []
+  if tentative is True:
+    if file_level:
+      return [
+        (
+          'error',
+          'a file-level context cannot be `tentative: true`; the doubt belongs to the node '
+          'or the specimen that uses it',
+        )
+      ]
+    return []
+  messages = []
+  for name in tentative if isinstance(tentative, list) else ():
+    if name in _NOT_QUERIABLE:
+      messages.append(('error', f'`tentative` cannot name `{name}`, which is not a printed value'))
+    elif name not in obj:
+      messages.append(('error', f'`tentative` names `{name}`, which the {kind} does not carry'))
+  return messages
+
+
+def range_tentatives(node):
+  """`tentative_fields` over every range on `node`."""
+  return [
+    message
+    for rng in node.get('ranges') or ()
+    if isinstance(rng, dict)
+    for message in tentative_fields(rng, 'range')
+  ]
+
+
+def context_tentatives(contexts, file_level=False):
+  """`tentative_fields` over every context of a `{key: context}` map (a
+  node's `contexts` or, with `file_level`, the tree file's), each message
+  naming its context."""
+  return [
+    (level, f'context "{key}": {message}')
+    for key, context in (contexts or {}).items()
+    if isinstance(context, dict)
+    for level, message in tentative_fields(context, 'context', file_level)
+  ]
+
+
 def _shown(elements):
   """A catalog number as the messages print it: a string, or a range pair."""
   return elements if len(elements) == 2 else elements[0]

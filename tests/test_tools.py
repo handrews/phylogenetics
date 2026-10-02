@@ -738,10 +738,86 @@ def test_material_words(store):
     == 'range: lower Wuliuan; China'
   )
   assert material('range', range={}) == 'range'
+  # A queried value reads after "?"; a modifier joins its base under one.
+  assert (
+    material('range', range={'series': 'Middle Ordovician', 'tentative': ['series']})
+    == 'range: ?Middle Ordovician'
+  )
+  assert (
+    material(
+      'occurrence',
+      contextKey='sh-1',
+      occurrence={
+        'localSeries': 'Lower Cambrian',
+        'localSeriesModifier': 'upper',
+        'period': 'Cambrian',
+        'tentative': ['localSeries'],
+      },
+    )
+    == 'occurrence sh-1: Cambrian; ?upper Lower Cambrian'
+  )
+  assert (
+    material(
+      'range',
+      range={
+        'localSeries': 'Lower Cambrian',
+        'localSeriesModifier': 'upper',
+        'tentative': ['localSeriesModifier'],
+      },
+    )
+    == 'range: ?upper Lower Cambrian'
+  )
+  assert (
+    material(
+      'range',
+      range={
+        'period': 'Cambrian',
+        'localSeriesRange': ['Lower Cambrian', 'Lower Ordovician'],
+        'tentative': ['localSeriesRange'],
+        'regions': ['world-wide'],
+      },
+    )
+    == 'range: Cambrian; ?Lower Cambrian, Lower Ordovician; world-wide'
+  )
+  assert (
+    material(
+      'occurrence',
+      contextKey='ik-3',
+      occurrence={
+        'unit': ['Antelope Valley Fm.'],
+        'biozone': 'Orthidiella',
+        'tentative': ['biozone'],
+      },
+    )
+    == 'occurrence ik-3: Antelope Valley Fm.; ?Orthidiella'
+  )
+  # `true` queries the whole statement.
+  assert (
+    material('range', range={'series': 'Ordovician', 'tentative': True}) == 'range?: Ordovician'
+  )
+  assert material('range', range={'tentative': True}) == 'range?'
+  assert (
+    material('occurrence', contextKey='x', occurrence={'period': 'Silurian', 'tentative': True})
+    == 'occurrence x?: Silurian'
+  )
+  assert material('occurrence', occurrence={'period': 'Silurian', 'tentative': True}) == (
+    'occurrence?: Silurian'
+  )
 
 
 def _rendered_lines(block):
   return block['rendered'].splitlines()
+
+
+def test_queried_values_of_sprinkle_1973_print_the_question_mark(store):
+  # Blastoidea's range, queried in the paper as "Middle Ordovician(?)".
+  block = store.statements('blastoidea', source='1973_sprinkle', kind='occurrences')
+  assert any('range: Ordovician; ?Middle Ordovician' in line for line in _rendered_lines(block)[1:])
+  # A locality's queried biozone ("Orthidiella(?) zone").
+  block = store.statements('nevadensis_sprinkle_1973', source='1973_sprinkle', kind='occurrences')
+  assert any(
+    'occurrence ik-3:' in line and '; ?Orthidiella;' in line for line in _rendered_lines(block)
+  )
 
 
 def test_absence_words_and_not_figured_in_statements(store):

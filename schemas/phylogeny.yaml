@@ -1368,6 +1368,19 @@ $defs:
       collectedDate:
         description: When the collecting at this context took place, as printed.
         type: string
+      tentative:
+        description: |
+          The source queries this context: `true` queries the whole statement,
+          a list queries the values of the fields it names, which are fields
+          of this same context ("Middle Ordovician(?)" is `series` named in
+          the list). Roadmap E8.
+        oneOf:
+        - const: true
+        - type: array
+          minItems: 1
+          uniqueItems: true
+          items:
+            type: string
       inferred:
         $ref: "#/$defs/inferredContext"
       sources:
@@ -1388,7 +1401,8 @@ $defs:
       it is known from), which is not the provenance of any specimen; a
       node's `ranges` holds one or several, since a taxon may have a
       different range in each region. Each region may be marked tentative
-      where the source prints a query (roadmap E8).
+      where the source prints a query, and `tentative` queries other values
+      or the whole range (roadmap E8).
     type: object
     allOf:
     - $ref: "#/$defs/timeFields"
@@ -1408,6 +1422,19 @@ $defs:
                 type: string
               tentative:
                 type: boolean
+      tentative:
+        description: |
+          The source queries this range: `true` queries the whole statement,
+          a list queries the values of the fields it names, which are fields
+          of this same range ("Middle Ordovician(?)" is `series` named in
+          the list). Roadmap E8.
+        oneOf:
+        - const: true
+        - type: array
+          minItems: 1
+          uniqueItems: true
+          items:
+            type: string
       inferred:
         $ref: "#/$defs/inferredContext"
       asPrinted:

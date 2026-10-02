@@ -182,6 +182,8 @@ def _report_material(data):
       _log_material(level, f'{source_key}: {message}')
     for level, message in material.locality_numbers(file_contexts, repositories, file_repositories):
       _log_material(level, f'{source_key}: {message}')
+    for level, message in material.context_tentatives(file_contexts, file_level=True):
+      _log_material(level, f'{source_key}: {message}')
 
     for path, node, is_cited in material.walk_document(opinion):
       where = f'{source_key} at {path}'
@@ -195,6 +197,10 @@ def _report_material(data):
       for level, message in material.locality_numbers(
         node_contexts, repositories, file_repositories
       ):
+        _log_material(level, f'{where}: {message}')
+      for level, message in material.context_tentatives(node_contexts):
+        _log_material(level, f'{where}: {message}')
+      for level, message in material.range_tentatives(node):
         _log_material(level, f'{where}: {message}')
       for level, message in material.cast_refs(node):
         _log_material(level, f'{where}: {message}')
