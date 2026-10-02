@@ -148,6 +148,13 @@ gets `type` loses the `isType` child flag.
 - Four are the editor's (`editorial.inferred: [isType]`): Whiteaves
   1897, Billings 1854c, Fay 1962 and the Jaekel draft. As a `type`
   node the inference is `editorial: {inferred: true}` on that node.
+- Eight are not species: seven genera marked as the type of a family
+  or subfamily (Buch 1844 *Sphaeronites*, Bockelie 1981 *Bockia*,
+  Sprinkle & Collins 2006 *Lyracystis*, Guensburg & Sprinkle 2009
+  *Apektocrinus*, Müller & Hahn 2010 *Pyrgocystis*, *Postibulla* and
+  *Agelacrinites*), which now print "Type genus."; and Müller & Hahn
+  2010's subfamily Agelacrinitinae, marked under its family, which
+  prints "Type." and needs the paper: a family's type is a genus.
 
 ## Other
 
