@@ -1170,7 +1170,7 @@ def test_specimen_history_asks_for_the_repository_when_the_prefix_is_shared(stor
   assert [e['source'] for e in block['entries']] == ['1973_sprinkle']
   # The source calls it a figured specimen, so it is not "not figured" as well.
   assert block['entries'][0]['sentence'] == (
-    'figured of Lepidocystis cf. wanneri as PE-199, PE-199-A'
+    'figured specimen of Lepidocystis cf. wanneri as PE-199, PE-199-A'
   )
   assert block['parameters'] == {'number': 'PE-199', 'repository': 'north-museum-fm'}
   # A number with no prefix of its own is given its repository.

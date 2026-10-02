@@ -607,7 +607,9 @@ class Words:
     role = claim.get('role')
     taxon = self.display(claim['subject'], claim['source'], claim['path'])
     if role:
-      words = f'{role}{"?" if claim.get("roleUncertain") else ""} of {taxon}'
+      # `figured` is the one role that is not a noun: "figured specimen of".
+      noun = 'figured specimen' if role == 'figured' else role
+      words = f'{noun}{"?" if claim.get("roleUncertain") else ""} of {taxon}'
     else:
       words = f'cited under {taxon}'
     if claim.get('uncertain'):
