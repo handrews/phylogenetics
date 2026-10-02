@@ -112,6 +112,8 @@ def _load_trees(data):
       'file_contexts': opinion.get('contexts') or {},
       'file_unused': tuple(opinion.get('unused') or ()),
       'file_repositories': tuple(opinion.get('repositories') or ()),
+      'file_prefixes': dict(opinion.get('prefixes') or {}),
+      'file_locality_register': opinion.get('localityRegister'),
     }
 
     position = 0
@@ -172,6 +174,8 @@ def _report_material(data):
 
   for source_key, opinion in data['trees'].items():
     file_repositories = opinion.get('repositories') or ()
+    file_prefixes = opinion.get('prefixes') or {}
+    locality_register = opinion.get('localityRegister')
     file_contexts = opinion.get('contexts') or {}
 
     for level, message in material.unreferenced_file_contexts(opinion):
@@ -181,6 +185,12 @@ def _report_material(data):
     for level, message in material.file_repositories_used(opinion, repositories):
       _log_material(level, f'{source_key}: {message}')
     for level, message in material.locality_numbers(file_contexts, repositories, file_repositories):
+      _log_material(level, f'{source_key}: {message}')
+    for level, message in material.file_prefixes(opinion, repositories):
+      _log_material(level, f'{source_key}: {message}')
+    for level, message in material.locality_objects(
+      file_contexts, file_prefixes, locality_register, repositories
+    ):
       _log_material(level, f'{source_key}: {message}')
     for level, message in material.context_tentatives(file_contexts, file_level=True):
       _log_material(level, f'{source_key}: {message}')
@@ -196,6 +206,12 @@ def _report_material(data):
         _log_material(level, f'{where}: {message}')
       for level, message in material.locality_numbers(
         node_contexts, repositories, file_repositories
+      ):
+        _log_material(level, f'{where}: {message}')
+      for level, message in material.number_entries(node, file_prefixes, repositories):
+        _log_material(level, f'{where}: {message}')
+      for level, message in material.locality_objects(
+        node_contexts, file_prefixes, locality_register, repositories
       ):
         _log_material(level, f'{where}: {message}')
       for level, message in material.context_tentatives(node_contexts):

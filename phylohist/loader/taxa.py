@@ -802,6 +802,16 @@ class Tree:
     """This node's tree file's `repositories` list, as a tuple."""
     return self.root._metadata.get('file_repositories') or ()
 
+  @property
+  def file_prefixes(self):
+    """This node's tree file's `prefixes` map (printed prefix to register)."""
+    return self.root._metadata.get('file_prefixes') or {}
+
+  @property
+  def file_locality_register(self):
+    """This node's tree file's `localityRegister`, or `None`."""
+    return self.root._metadata.get('file_locality_register')
+
   @cached_property
   def contexts(self):
     """This node's own `contexts` merged over the file's, the node

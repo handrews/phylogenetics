@@ -188,15 +188,22 @@ class ClaimStore:
     if not claim.get('rangeJoin'):
       return
     join_keys = claim.get('joinKeys') or ()
+    # A claim with `numbers` holds the bare numbers already: its runs carry
+    # them as printed, for the words, and folded, to compare.
+    numbers = claim.get('numbers')
     position = 0
-    for number in claim['ids']:
+    for number in numbers if numbers is not None else claim['ids']:
       pair = number if isinstance(number, list) else [number]
       holders = join_keys[position : position + len(pair)]
       position += len(pair)
       if len(pair) != 2 or len(holders) != 2:
         continue
       holder = holders[0].split(':', 1)[0]
-      bare = [bare_number(end, holder, self.repositories) for end in pair]
+      if numbers is not None:
+        pair = [str(end) for end in pair]
+        bare = [fold(end) for end in pair]
+      else:
+        bare = [bare_number(end, holder, self.repositories) for end in pair]
       self.runs[holder].append((*pair, *bare, claim))
 
   @property
@@ -1130,7 +1137,11 @@ class ClaimStore:
     found = {c['id']: c for c in self.by_join_key.get(join_key, ())}
     in_runs = {}
     for low, high, bare_low, bare_high, claim in self.runs.get(key, ()):
-      if in_run(number, low, high) or in_run(bare, bare_low, bare_high):
+      if 'numbers' in claim:
+        within = in_run(fold(bare), bare_low, bare_high)
+      else:
+        within = in_run(number, low, high) or in_run(bare, bare_low, bare_high)
+      if within:
         found.setdefault(claim['id'], claim)
         in_runs.setdefault(claim['id'], []).append([low, high])
     if not found:

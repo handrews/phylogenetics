@@ -8,15 +8,19 @@ current, so these tests read the committed files rather than
 re-extracting.
 """
 
+import json
 import os
 import pathlib
+import shutil
 
 import pytest
 import yaml
 
+from phylohist.claims import extract
 from phylohist.evaluation import alternatives
+from phylohist.loader.taxa import Tree
 from phylohist.render import node_label
-from phylohist.store import ClaimStore
+from phylohist.store import CLAIMS_DIR, ClaimStore
 
 QUESTIONS_PATH = pathlib.Path(__file__).parent.parent / 'eval' / 'questions.yaml'
 with open(QUESTIONS_PATH) as fd:
@@ -1272,3 +1276,96 @@ def test_specimen_history_blocks_validate_and_go_through_call(store):
   assert blocks.validate(block, store) == []
   assert block['blockId'] == store.specimen_history('UQF 5404', style='json')['blockId']
   assert blocks.validate(store.specimen_history('MCZ 999'), store) == []
+
+
+# -- specimen_history over the `prefix` + `numbers` shape ----------------------
+
+NUMBERED = {
+  'taxon': 'rhenopyrgus',
+  'material': [
+    {'prefix': 'MCZ', 'numbers': ['581A', '581B'], 'role': 'holotype'},
+    {'prefix': 'GSC', 'numbers': [[25935, 25961]], 'asPrinted': 'GSC 25935–25961'},
+    {'prefix': 'GSC', 'numbers': [25940], 'role': 'paratype'},
+    {'prefix': 'USNM', 'numbers': ['S-3965'], 'role': 'figured'},
+    {'repository': 'u-cincinnati-caster', 'numbers': ['KR-2']},
+    {'holder': 'A. R. Palmer', 'numbers': [[500, 501]], 'castOf': 500},
+  ],
+  'illustrations': [
+    {'plate': 4, 'figures': [1], 'of': '581A'},
+    {'plate': 20, 'figures': [4], 'of': 25940},
+    {'plate': 21, 'figures': [8], 'of': 'S-3965'},
+  ],
+}
+
+
+@pytest.fixture(scope='module')
+def numbered(load_records, tmp_path_factory):
+  """A `ClaimStore` over a copy of `claims/` whose `1961_dehm` file is
+  replaced by the claims of one synthetic tree in the new material shape."""
+  directory = tmp_path_factory.mktemp('claims')
+  shutil.copytree(CLAIMS_DIR, directory, dirs_exist_ok=True)
+  root = Tree(
+    NUMBERED,
+    {
+      'source_key': '1961_dehm',
+      'type': 'taxonomy',
+      'position': 230,
+      'file_prefixes': {'MCZ': 'mcz', 'GSC': 'gsc', 'USNM': 'usnm'},
+    },
+  )
+  claims = extract({'1961_dehm': [root]})['1961_dehm']
+  (directory / '1961_dehm.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
+  return ClaimStore(directory)
+
+
+def _specimen_claims(store):
+  return [c for c in store.by_source['1961_dehm'] if c.get('materialKind') == 'specimen']
+
+
+def test_specimen_lines_print_the_prefix_once(numbered):
+  words = [numbered.words.claim_words(c) for c in _specimen_claims(numbered)]
+  assert words == [
+    'holotype: MCZ 581A, 581B',
+    'specimens: GSC 25935–25961',
+    'paratype: GSC 25940',
+    'figured: USNM S-3965',
+    'specimens: KR-2 [u-cincinnati-caster]',
+    'specimens: 500–501 cast of 500',
+  ]
+
+
+def _sentences(block):
+  """The sentences of the synthetic source's own citations (the real corpus
+  cites some of the same specimens)."""
+  return [e['sentence'] for e in block.get('entries', []) if e['source'] == '1961_dehm']
+
+
+def test_specimen_history_follows_a_prefix_and_numbers_entry(numbered):
+  block = numbered.specimen_history('MCZ 581B')
+  assert block['heading']['key'] == 'mcz:581b'
+  # The number as the source prints it is shown when it is not the one asked.
+  [sentence] = _sentences(block)
+  assert sentence == 'holotype of Rhenopyrgus as MCZ 581A, 581B'
+  # Only the figure whose own `of` names the number asked about.
+  assert _sentences(numbered.specimen_history('MCZ 581A')) == [
+    'holotype of Rhenopyrgus as MCZ 581A, 581B; figured pl. 4, fig. 1'
+  ]
+  assert _sentences(numbered.specimen_history('USNM S-3965')) == [
+    'figured specimen of Rhenopyrgus; figured pl. 21, fig. 8'
+  ]
+
+
+def test_specimen_history_finds_a_number_in_a_prefix_and_numbers_run(numbered):
+  assert _sentences(numbered.specimen_history('GSC 25940')) == [
+    'paratype of Rhenopyrgus; figured pl. 20, fig. 4',
+    'cited under Rhenopyrgus in the run GSC 25935–25961',
+  ]
+  assert _sentences(numbered.specimen_history('GSC 25950')) == [
+    'cited under Rhenopyrgus in the run GSC 25935–25961'
+  ]
+  # An end of the run, and the bare number given its repository, find it as well.
+  assert _sentences(numbered.specimen_history('GSC 25961')) == _sentences(
+    numbered.specimen_history('25961', repository='gsc')
+  )
+  assert len(_sentences(numbered.specimen_history('GSC 25961'))) == 1
+  assert _sentences(numbered.specimen_history('GSC 25962')) == []

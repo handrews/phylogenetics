@@ -53,6 +53,12 @@
   ],
   "type": "institution"
  },
+ "fmnh-pe": {
+  "name": "Field Museum of Natural History, PE register",
+  "subject": "specimens",
+  "type": "collection",
+  "within": "fmnh"
+ },
  "gcm": {
   "name": "Grand Canyon Museum",
   "prefixes": [
@@ -163,6 +169,18 @@
    "EE"
   ],
   "type": "institution"
+ },
+ "nhmuk-e": {
+  "name": "Natural History Museum, E register",
+  "subject": "specimens",
+  "type": "collection",
+  "within": "nhmuk"
+ },
+ "nhmuk-ee": {
+  "name": "Natural History Museum, EE register",
+  "subject": "specimens",
+  "type": "collection",
+  "within": "nhmuk"
  },
  "nigpas": {
   "name": "Nanjing Institute of Geology and Palaeontology, Chinese Academy of Sciences",

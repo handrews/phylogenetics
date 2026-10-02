@@ -1,5 +1,6 @@
 """Material integrity checks: contexts, catalog numbers, casts, illustrations,
-nulls, and the repository registry and a tree file's `repositories` list.
+nulls, the repository registry, a tree file's `repositories` list and, for
+an entry in the `prefix` + `numbers` shape, its `prefixes` map.
 
 Pure functions over a raw node dict and the file-level maps, so
 `scripts/check_draft.py` can run the same checks on an unloaded draft; the
@@ -7,8 +8,8 @@ loader (`load.py`) runs them over the corpus's own documents. Each check
 returns a list of ``(level, message)`` pairs, ``level`` being ``'error'``
 or ``'warning'``; the caller adds the source key and, for a per-node
 check, the node path. `resolve_number`, `repository_of`, `bare_number`,
-`context_key` and `entries_named` are exported for the claims extractor
-(`phylohist.claims`), and `resolve_number`, `bare_number` and `in_run`
+`context_key`, `flat_numbers` and `entries_named` are exported for the claims
+extractor (`phylohist.claims`), and `resolve_number`, `bare_number` and `in_run`
 for the store (`phylohist.store`, `specimen_history`);
 `set_repository_registry`/`repository_registry`
 hold the loaded `data/repositories.yaml`, set once by `load.py`, so the
@@ -17,6 +18,7 @@ extractor can reach it the way it reaches `Source`.
 
 import re
 
+from ..names import fold
 from .taxa import Tree
 
 _DIGIT_RE = re.compile(r'\d')
@@ -192,9 +194,33 @@ def _catalog_values(node):
 
 
 def _locality_values(contexts):
-  """Every `localityNumbers` value on a `{key: context}` map."""
+  """Every printed (string) `localityNumbers` value on a `{key: context}`
+  map; the object form is `_locality_objects`'."""
   for context in (contexts or {}).values():
-    yield from (context or {}).get('localityNumbers') or ()
+    for number in (context or {}).get('localityNumbers') or ():
+      if isinstance(number, str):
+        yield number
+
+
+def _locality_objects(contexts):
+  """Every object-form `localityNumbers` value on a `{key: context}` map."""
+  for context in (contexts or {}).values():
+    for number in (context or {}).get('localityNumbers') or ():
+      if isinstance(number, dict):
+        yield number
+
+
+def _new_entries(node):
+  """The material entries of `node` in the `prefix` + `numbers` shape."""
+  for entry in node.get('material') or ():
+    if 'numbers' in entry:
+      yield entry
+
+
+def flat_numbers(entry):
+  """Every number of a new-shape entry, a range pair's two ends included."""
+  for number in entry.get('numbers') or ():
+    yield from number if isinstance(number, list) else [number]
 
 
 def _is_settled(entry):
@@ -346,7 +372,12 @@ def in_run(value, low, high):
 def entry_identifies(entry, value, exact=False):
   """Whether `value` names `entry`, by `label` or by any element of a
   `catalogNumbers` entry (a range pair's endpoints count separately). Unless
-  `exact`, a number lying inside a range pair's run also names it."""
+  `exact`, a number lying inside a range pair's run also names it. An entry
+  with `numbers` is named by the folded text of `value` (a string or an
+  integer) equal to its folded `label` or one of its numbers, or, unless
+  `exact`, lying in the run of one of its range pairs."""
+  if 'numbers' in entry:
+    return _numbers_identify(entry, value, exact)
   if entry.get('label') == value:
     return True
   for number in entry.get('catalogNumbers') or ():
@@ -354,6 +385,20 @@ def entry_identifies(entry, value, exact=False):
     if value in elements:
       return True
     if not exact and len(elements) == 2 and in_run(value, *elements):
+      return True
+  return False
+
+
+def _numbers_identify(entry, value, exact):
+  folded = fold(str(value))
+  label = entry.get('label')
+  if label is not None and fold(str(label)) == folded:
+    return True
+  for number in entry['numbers']:
+    elements = number if isinstance(number, list) else [number]
+    if any(fold(str(element)) == folded for element in elements):
+      return True
+    if not exact and len(elements) == 2 and in_run(str(value), *map(str, elements)):
       return True
   return False
 
@@ -484,6 +529,122 @@ def locality_numbers(contexts, repositories, file_repositories=()):
       messages.append(
         ('error', f'locality number "{number}" has an ambiguous prefix: {", ".join(key)}'),
       )
+  return messages
+
+
+def _known_forms(entry):
+  """The folded `prefixes` and `otherNames` of a registry entry, each also
+  without a trailing period."""
+  forms = set()
+  for values in (entry.get('prefixes'), entry.get('otherNames')):
+    for value in values or ():
+      form = _fold(value)
+      forms.update({form, form.rstrip('.').rstrip()} - {''})
+  return forms
+
+
+def _begins_with_form(number, entry):
+  """Whether `number` begins with a form of `entry` followed by a space,
+  hyphen, period or digit."""
+  text = _fold(number)
+  for form in _known_forms(entry):
+    if text.startswith(form) and len(text) > len(form):
+      following = text[len(form)]
+      if following in ' -.' or following.isdigit():
+        return True
+  return False
+
+
+def _prefixes_used(document):
+  """Every `prefix` a material entry or an object locality number in the
+  file uses."""
+  used = set()
+  all_contexts = [document.get('contexts')]
+  for _, node, _ in walk_document(document):
+    used.update(e['prefix'] for e in node.get('material') or () if e.get('prefix') is not None)
+    all_contexts.append(node.get('contexts'))
+  for contexts in all_contexts:
+    used.update(n['prefix'] for n in _locality_objects(contexts) if n.get('prefix') is not None)
+  return used
+
+
+def file_prefixes(document, repositories):
+  """The tree file's `prefixes` map and `localityRegister`: each value and
+  the register must be a registry key (errors); each prefix is used by a
+  material entry or a locality number in the file (an error otherwise); and
+  the registry entry lists the prefix among its `prefixes` or `otherNames`
+  (a warning when it does not, unless the entry lists none at all, as the
+  registers for series a holder numbers separately do until their forms are
+  entered)."""
+  prefixes = document.get('prefixes') or {}
+  messages = []
+  register = document.get('localityRegister')
+  if register is not None and register not in repositories:
+    messages.append(('error', f'localityRegister "{register}" is not a key of the registry'))
+  if not prefixes:
+    return messages
+  used = _prefixes_used(document)
+  for prefix, key in prefixes.items():
+    if key not in repositories:
+      messages.append(
+        ('error', f'prefix "{prefix}" is mapped to "{key}", which is not a key of the registry')
+      )
+    elif (forms := _known_forms(repositories[key])) and _fold(prefix).rstrip(
+      '.'
+    ).rstrip() not in forms:
+      messages.append(('warning', f'prefix "{prefix}" is not a known form of "{key}"'))
+    if prefix not in used:
+      messages.append(
+        ('error', f'prefix "{prefix}" in the file\'s `prefixes` map is used by nothing')
+      )
+  return messages
+
+
+def number_entries(node, prefixes, repositories):
+  """Checks on `node`'s material entries in the `prefix` + `numbers` shape:
+  a `prefix` not in the file's `prefixes` map is an error; `numbers` with no
+  `prefix`, `repository` or `holder` is an error; a string number that
+  begins with a prefix or other name of its own register (the one the map
+  gives the prefix, or the entry's `repository`) is a warning, the split
+  being probably wrong. An explicit `repository` that is no registry key is
+  reported by `catalog_numbers`."""
+  messages = []
+  for entry in _new_entries(node):
+    prefix = entry.get('prefix')
+    if prefix is not None and prefix not in prefixes:
+      messages.append(('error', f'prefix "{prefix}" is not in the file\'s `prefixes` map'))
+    if prefix is None and entry.get('repository') is None and entry.get('holder') is None:
+      messages.append(('error', 'numbers with no prefix, repository or holder'))
+    registers = []
+    for register in (prefixes.get(prefix), entry.get('repository')):
+      if register in repositories and register not in registers:
+        registers.append(register)
+    for number in flat_numbers(entry):
+      if not isinstance(number, str):
+        continue
+      for register in registers:
+        if _begins_with_form(number, repositories[register]):
+          messages.append(
+            ('warning', f'number "{number}" begins with a prefix of its register "{register}"')
+          )
+          break
+  return messages
+
+
+def locality_objects(contexts, prefixes, locality_register, repositories):
+  """Checks on the object-form locality numbers of a `{key: context}` map:
+  a `prefix` not in the file's `prefixes` map is an error, a `register`
+  that is no registry key is an error, and a number with neither, in a file
+  with no `localityRegister`, is a warning."""
+  messages = []
+  for number in _locality_objects(contexts):
+    prefix, register = number.get('prefix'), number.get('register')
+    if prefix is not None and prefix not in prefixes:
+      messages.append(('error', f'prefix "{prefix}" is not in the file\'s `prefixes` map'))
+    if register is not None and register not in repositories:
+      messages.append(('error', f'locality register "{register}" is not a key of the registry'))
+    if prefix is None and register is None and locality_register is None:
+      messages.append(('warning', f'locality number "{number.get("number")}" has no register'))
   return messages
 
 

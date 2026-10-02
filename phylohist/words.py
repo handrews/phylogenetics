@@ -77,6 +77,14 @@ def _range_words(items):
   return ', '.join(out)
 
 
+def _numbers_words(claim, numbers=None):
+  """The numbers of a claim in the `prefix` + `numbers` shape as printed,
+  the prefix once ("MCZ 581A, 581B", "GSC 25935–25961"); without a prefix
+  just the numbers. `numbers` overrides the claim's own (a printed run)."""
+  words = _range_words(claim['numbers'] if numbers is None else numbers)
+  return f'{claim["prefix"]} {words}' if claim.get('prefix') else words
+
+
 def _illustration_words(illustration):
   parts = []
   for field, word in (
@@ -555,7 +563,9 @@ class Words:
   def _specimen_words(self, claim):
     """ "role: numbers" as printed (a range pair "a–b"), the label, or "N
     specimens" for a bare count."""
-    if claim.get('ids'):
+    if claim.get('numbers'):
+      numbers = _numbers_words(claim)
+    elif claim.get('ids'):
       numbers = _range_words(claim['ids'])
     elif 'label' in claim:
       numbers = claim['label']
@@ -594,12 +604,17 @@ class Words:
   def _figures_of(self, claim, join_key):
     """The locators of the figures that name the specimen a join key
     stands for among the several numbers a claim carries: each
-    `illustrationClaims` figure whose `of` has a value equal to it."""
+    `illustrationClaims` figure whose `of` has a value equal to it (for a
+    claim with `numbers`, a number equal to the key's, folded)."""
     found = []
     for figure in map(self.store.by_id.get, claim.get('illustrationClaims') or ()):
       of = figure.get('of')
       values = of if isinstance(of, list) else [of]
-      if any(self._names_specimen(v, join_key, claim.get('repository')) for v in values):
+      if 'numbers' in claim:
+        names = any(fold(str(v)) == join_key.partition(':')[2] for v in values)
+      else:
+        names = any(self._names_specimen(v, join_key, claim.get('repository')) for v in values)
+      if names:
         found.append(figure['illustration'])
     return found
 
@@ -622,10 +637,16 @@ class Words:
       words = f'cited under {taxon}'
     if claim.get('uncertain'):
       words += ' (doubtfully assigned)'
+    if claim.get('numbers'):
+      printed = _numbers_words(claim)
+      run_words = [_numbers_words(claim, [run]) for run in runs or ()]
+    else:
+      printed = _range_words(claim['ids']) if claim.get('ids') else None
+      run_words = [_range_words([run]) for run in runs or ()]
     if runs:
-      words += ' in the run ' + ', '.join(_range_words([run]) for run in runs)
-    elif claim.get('ids') and _range_words(claim['ids']) != number:
-      words += f' as {_range_words(claim["ids"])}'
+      words += ' in the run ' + ', '.join(run_words)
+    elif printed and printed != number:
+      words += f' as {printed}'
     several = claim.get('rangeJoin') or len(claim.get('joinKeys') or ()) > 1
     figures = (
       self._figures_of(claim, join_key) if several else claim.get('specimenIllustrations') or ()

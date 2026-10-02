@@ -569,6 +569,172 @@ def test_locality_keys_use_the_listed_field_code_register(load_records):
   assert 'localityKeys' not in _occurrence({'localityNumbers': ['SH-1']})
 
 
+def _numbered(entries, prefixes=None, locality_register=None, **node):
+  """The specimen claims of a node whose tree file carries a `prefixes` map
+  (and a `localityRegister`)."""
+  root = Tree(
+    {'taxon': 'rhenopyrgus', 'material': entries, **node},
+    {
+      'source_key': '1961_dehm',
+      'type': 'taxonomy',
+      'position': 90,
+      'file_prefixes': prefixes or {},
+      'file_locality_register': locality_register,
+    },
+  )
+  claims = extract({'1961_dehm': [root]})['1961_dehm']
+  return [c for c in claims if c.get('materialKind') == 'specimen']
+
+
+def test_a_prefix_and_numbers_entry_carries_its_fields_and_display_ids(load_records):
+  [claim] = _numbered(
+    [{'prefix': 'MCZ', 'numbers': ['581A', 581], 'asPrinted': 'MCZ 581A, 581', 'role': 'holotype'}],
+    {'MCZ': 'mcz'},
+  )
+  assert (claim['prefix'], claim['numbers'], claim['asPrinted']) == (
+    'MCZ',
+    ['581A', 581],
+    'MCZ 581A, 581',
+  )
+  assert claim['ids'] == ['MCZ 581A', 'MCZ 581']
+  assert claim['repository'] == 'mcz' and claim['repositoryVia'] == 'file'
+  assert claim['joinKeys'] == ['mcz:581a', 'mcz:581']
+  assert 'rangeJoin' not in claim and 'catalogNumbers' not in claim
+
+
+def test_two_printed_prefixes_of_one_register_share_a_join_key(load_records):
+  first, second = _numbered(
+    [{'prefix': 'F.', 'numbers': [5404]}, {'prefix': 'UQF', 'numbers': ['5404']}],
+    {'F.': 'uq-f', 'UQF': 'uq-f'},
+  )
+  assert first['joinKeys'] == second['joinKeys'] == ['uq-f:5404']
+  assert (first['ids'], second['ids']) == (['F. 5404'], ['UQF 5404'])
+
+
+def test_a_range_pair_gives_both_ends_and_stays_a_pair_in_ids(load_records):
+  [claim] = _numbered(
+    [{'prefix': 'GSC', 'numbers': [[25935, 25961], 'A-1'], 'asPrinted': 'GSC 25935–25961'}],
+    {'GSC': 'gsc'},
+  )
+  assert claim['ids'] == [['GSC 25935', 'GSC 25961'], 'GSC A-1']
+  assert claim['joinKeys'] == ['gsc:25935', 'gsc:25961', 'gsc:a1']
+  assert claim['rangeJoin'] is True and claim['asPrinted'] == 'GSC 25935–25961'
+  assert claim['numbers'] == [[25935, 25961], 'A-1']
+
+
+def test_an_explicit_repository_within_the_prefixs_register_keys_under_the_register(load_records):
+  [specimen] = _numbered(
+    [{'prefix': 'USNM', 'numbers': [165421], 'repository': 'usnm-walcott'}],
+    {'USNM': 'usnm'},
+  )
+  assert specimen['repository'] == 'usnm-walcott' and specimen['repositoryVia'] == 'explicit'
+  assert specimen['joinKeys'] == ['usnm:165421']
+  # The register itself is within itself.
+  [same] = _numbered([{'prefix': 'USNM', 'numbers': [1], 'repository': 'usnm'}], {'USNM': 'usnm'})
+  assert same['joinKeys'] == ['usnm:1']
+
+
+def test_an_explicit_repository_outside_the_prefixs_register_wins(load_records):
+  [specimen] = _numbered(
+    [{'prefix': 'MCZ', 'numbers': [690], 'repository': 'usnm-walcott'}], {'MCZ': 'mcz'}
+  )
+  assert specimen['repository'] == 'usnm-walcott' and specimen['repositoryVia'] == 'explicit'
+  assert specimen['joinKeys'] == ['usnm-walcott:690']
+  # A collection above the register is not within it either.
+  [above] = _numbered(
+    [{'prefix': 'USNM', 'numbers': [1], 'repository': 'usnm'}], {'USNM': 'usnm-walcott'}
+  )
+  assert above['joinKeys'] == ['usnm:1']
+
+
+def test_numbers_with_no_prefix_key_under_the_repository_or_not_at_all(load_records):
+  repo, holder, nothing = _numbered(
+    [
+      {'repository': 'u-cincinnati-caster', 'numbers': ['KR-2']},
+      {'holder': 'A. R. Palmer', 'numbers': [[500, 501]]},
+      {'prefix': 'ZZ', 'numbers': [1]},
+    ],
+    {'MCZ': 'mcz'},
+  )
+  assert repo['ids'] == ['KR-2'] and repo['repository'] == 'u-cincinnati-caster'
+  assert repo['repositoryVia'] == 'explicit' and repo['joinKeys'] == ['u-cincinnati-caster:kr2']
+  assert holder['ids'] == [['500', '501']] and holder['holder'] == 'A. R. Palmer'
+  assert holder['repository'] is None and 'repositoryVia' not in holder
+  assert 'joinKeys' not in holder and holder['rangeJoin'] is True
+  # A prefix the file's map lacks (an error for the loader) keys nothing.
+  assert nothing['repository'] is None and 'joinKeys' not in nothing
+  assert nothing['ids'] == ['ZZ 1']
+
+
+def test_a_figure_names_a_prefix_and_numbers_entry_by_a_number(load_records):
+  [claim] = _numbered(
+    [{'prefix': 'MCZ', 'numbers': [581, ['600', '610']]}],
+    {'MCZ': 'mcz'},
+    illustrations=[{'plate': 1, 'of': 581}, {'plate': 2, 'of': 605}, {'plate': 3, 'of': 'x'}],
+  )
+  assert [f['plate'] for f in claim['specimenIllustrations']] == [1, 2]
+
+
+def test_the_old_and_new_shapes_may_share_a_node(load_records):
+  old, new = _numbered(
+    [{'catalogNumbers': ['MCZ 1']}, {'prefix': 'MCZ', 'numbers': [1]}], {'MCZ': 'mcz'}
+  )
+  assert old['joinKeys'] == new['joinKeys'] == ['mcz:1']
+  assert 'numbers' not in old and 'prefix' not in old
+
+
+def _locality(context, prefixes=None, locality_register=None):
+  root = Tree(
+    {'taxon': 'rhenopyrgus', 'contexts': {'x': context}},
+    {
+      'source_key': '1961_dehm',
+      'type': 'taxonomy',
+      'position': 90,
+      'file_prefixes': prefixes or {},
+      'file_locality_register': locality_register,
+    },
+  )
+  claims = extract({'1961_dehm': [root]})['1961_dehm']
+  [claim] = [c for c in claims if c.get('materialKind') == 'occurrence']
+  return claim
+
+
+def test_locality_keys_of_object_numbers(load_records):
+  context = {
+    'localityNumbers': [
+      {'number': 'FC-1'},
+      {'prefix': 'USGS', 'number': '4148 CO'},
+      {'register': 'usnm-l', 'number': '35k'},
+      {'prefix': 'Walcott', 'number': 35},
+      {'register': 'usgs-l', 'number': 'D190d CO'},
+      'USGS 5462',
+      {'prefix': 'ZZ', 'number': 9},
+    ]
+  }
+  prefixes = {'USGS': 'usgs-l', 'Walcott': 'usnm-l'}
+  claim = _locality(context, prefixes, 'sprinkle-l')
+  assert claim['localityKeys'] == [
+    'sprinkle-l:fc1',
+    'usgs-l:4148co',
+    'usnm-l:35k',
+    'usnm-l:35',
+    'usgs-l:d190dco',
+    'usgs-l:5462',
+  ]
+  # With no `localityRegister` a number with neither prefix nor register is skipped;
+  # a prefix the map lacks never falls to it.
+  assert _locality(context, prefixes)['localityKeys'] == [
+    'usgs-l:4148co',
+    'usnm-l:35k',
+    'usnm-l:35',
+    'usgs-l:d190dco',
+    'usgs-l:5462',
+  ]
+  # An object and a string form of one number give one key.
+  both = {'localityNumbers': ['USGS 4148 CO', {'prefix': 'USGS', 'number': '4148 co'}]}
+  assert _locality(both, prefixes)['localityKeys'] == ['usgs-l:4148co']
+
+
 def test_a_specimen_is_followed_across_sources_by_its_join_key(claims):
   # Whitehouse 1941's "F. 5404" and Jell & Sprinkle 2021's "UQF5404".
   keys = {}

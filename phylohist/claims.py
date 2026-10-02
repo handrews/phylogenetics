@@ -16,6 +16,7 @@ from .loader.material import (
   bare_number,
   context_key,
   entries_named,
+  flat_numbers,
   repository_of,
   repository_registry,
   resolve_number,
@@ -115,6 +116,9 @@ _ILLUSTRATION_LOCATOR_FIELDS = (
 )
 # `materialEntry` fields copied onto the claim exactly as written.
 _MATERIAL_FIELDS = (
+  'prefix',
+  'numbers',
+  'asPrinted',
   'catalogNumbers',
   'catalogNumbersAsPrinted',
   'count',
@@ -569,10 +573,19 @@ class _NodeClaims:
     order ("Walcott 35k" and "USNM loc. 35k" give one key)."""
     keys = []
     for number in context.get('localityNumbers') or ():
-      register, via, bare = resolve_number(
-        number, repository_registry(), self.node.file_repositories, localities=True
-      )
-      if via not in (None, AMBIGUOUS) and (key := f'{register}:{fold(bare)}') not in keys:
+      if isinstance(number, dict):
+        register = number.get('register')
+        if register is None and number.get('prefix') is not None:
+          register = self.node.file_prefixes.get(number['prefix'])
+        elif register is None:
+          register = self.node.file_locality_register
+        key = register and f'{register}:{fold(str(number["number"]))}'
+      else:
+        register, via, bare = resolve_number(
+          number, repository_registry(), self.node.file_repositories, localities=True
+        )
+        key = via not in (None, AMBIGUOUS) and f'{register}:{fold(bare)}'
+      if key and key not in keys:
         keys.append(key)
     return keys
 
@@ -603,6 +616,36 @@ class _NodeClaims:
         return f'{key}:{fold(bare)}'
     return f'{repository}:{fold(bare_number(number, repository, registry))}'
 
+  def _numbers_register(self, entry):
+    """The register an entry in the `prefix` + `numbers` shape keys its
+    numbers under: the one the file's `prefixes` map gives its prefix, or
+    its explicit `repository` (which wins when it lies outside that
+    register), else `None`."""
+    mapped = self.node.file_prefixes.get(entry.get('prefix'))
+    explicit = entry.get('repository')
+    if mapped is not None and explicit is not None:
+      return mapped if mapped in _within_chain(explicit, repository_registry()) else explicit
+    return mapped or explicit
+
+  def _numbers_fields(self, entry, claim):
+    """`ids`, `repository` and `repositoryVia` of a claim for an entry with
+    `numbers`; nothing is parsed out of a number."""
+    prefix = entry.get('prefix')
+
+    def shown(number):
+      return f'{prefix} {number}' if prefix else str(number)
+
+    claim['ids'] = [
+      [shown(n) for n in number] if isinstance(number, list) else shown(number)
+      for number in entry['numbers']
+    ]
+    if 'repository' in entry:
+      claim['repository'], claim['repositoryVia'] = entry['repository'], 'explicit'
+    elif (mapped := self.node.file_prefixes.get(prefix)) is not None:
+      claim['repository'], claim['repositoryVia'] = mapped, 'file'
+    else:
+      claim['repository'] = None
+
   def _entries(self):
     """One claim per `material` entry; `self._entry_claims` keeps each
     beside its entry for the illustrations' `of`."""
@@ -630,18 +673,25 @@ class _NodeClaims:
         inferred = entry['editorial'].get('inferred')
         if isinstance(inferred, list):
           claim['inferredFields'] = inferred
-      numbers = entry.get('catalogNumbers') or ()
-      claim['ids'] = list(numbers)
-      repository, via = self._repository(entry)
-      claim['repository'] = repository
-      if via is not None:
-        claim['repositoryVia'] = via
+      if 'numbers' in entry:
+        numbers = entry['numbers']
+        self._numbers_fields(entry, claim)
+      else:
+        numbers = entry.get('catalogNumbers') or ()
+        claim['ids'] = list(numbers)
+        repository, via = self._repository(entry)
+        claim['repository'] = repository
+        if via is not None:
+          claim['repositoryVia'] = via
       role_act = entry.get('roleAct')
       if role_act is None and data.get('new') and entry.get('role') in _PROTOLOGUE_ROLES:
         role_act = 'designated'
       if role_act is not None:
         claim['roleAct'] = role_act
-      if repository is not None and numbers:
+      if 'numbers' in entry:
+        if (register := self._numbers_register(entry)) is not None:
+          claim['joinKeys'] = [f'{register}:{fold(str(n))}' for n in flat_numbers(entry)]
+      elif repository is not None and numbers:
         claim['joinKeys'] = [
           self._join_key(n, repository, via == 'explicit')
           for number in numbers

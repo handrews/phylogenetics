@@ -222,6 +222,13 @@ says which.
   prefix, or for an author's own field codes the one prefixless locality
   register the tree file lists), the number folded without its prefix and
   each key given once, so "Walcott 35k" and "USNM loc. 35k" give one.
+  A locality number written as an object (`{number, prefix?, register?}`)
+  gives `<register>:<folded number>` too, the register being its
+  `register`, else the tree file's `prefixes` map for its `prefix`, else the
+  file's `localityRegister` when it has neither `prefix` nor `register`;
+  one with no register gives no key, and the folded number is of the whole
+  `number` (an integer as its digits). String and object forms meet in one
+  list, each key once.
   A `tentative` the context carries (`true` for the whole statement, a
   list of the fields whose values are queried) rides inside `occurrence`
   as written.
@@ -244,7 +251,24 @@ says which.
   under the institution (`usnm-walcott` with "USNM 165421" gives
   `usnm:165421`). `roleAct` is the
   entry's own value, else `designated` for a holotype, paratype, syntype
-  or cotype on a `new: true` node, else absent. The entry's other fields
+  or cotype on a `new: true` node, else absent. An entry in the other
+  shape, `prefix` and `numbers` (a number a string or an integer, a range
+  pair a two-element list), keeps `prefix`, `numbers` and `asPrinted` as
+  written, and nothing is read out of a string: `ids` are the numbers as
+  display strings, `"<prefix> <number>"` when the entry has a `prefix`, else
+  the number alone, a range pair staying a two-element list; the *register*
+  of a prefix is what the tree file's `prefixes` map gives it;
+  `repository` is the entry's explicit `repository`
+  (`repositoryVia: explicit`), else the register of its prefix
+  (`repositoryVia: file`), else `null`; `joinKeys` are
+  `<register>:<folded number>` for every number (both ends of a pair, with
+  `rangeJoin: true`), the register being the prefix's, except that an
+  explicit `repository` that is neither that register nor within it
+  (`within`, as for a collection) replaces it, and the explicit
+  `repository` alone when there is no prefix; an entry with only a
+  `holder` has none. Two printed prefixes the file maps to one register
+  give one key. An entry with `catalogNumbers` is read as above, and a node may
+  carry both kinds. The entry's other fields
   are copied as written: `catalogNumbers`, `catalogNumbersAsPrinted`,
   `count`, `label`, `holder`, `status`, `formerIds`, `fragmentOf`, `parts`,
   `examined`, `listComplete`, `preparation`, `castOf`, `collectedBy`,
@@ -274,7 +298,9 @@ says which.
   `page`, `figures`, `textFigures`, `non`, `notes`, `uncertain`); `of`
   and `depicts` ride on the claim. `ofClaim` lists the ids of the specimen
   claims `of` names (exact string against a catalog number, a range
-  endpoint included, or a `label`); a figure with no `of` is tied to no
+  endpoint included, or a `label`; for an entry with `numbers`, a string
+  or an integer folded and compared with the folded number or label, a
+  number inside a pair's run also naming it); a figure with no `of` is tied to no
   specimen.
 - `range` (field `ranges`): one claim per element, `range` the element
   verbatim, a `tentative` it carries included. It counts under the `occurrences` coverage kind, and

@@ -28,6 +28,11 @@ fmnh:
   type: institution
   place: Chicago
   prefixes: [FMNH, PE, FMNH PE, CFM, CFMP, CFMPE, CFMUC]
+fmnh-pe:
+  name: Field Museum of Natural History, PE register
+  type: collection
+  within: fmnh
+  subject: specimens
 gcm:
   name: Grand Canyon Museum
   type: institution
@@ -94,6 +99,16 @@ nhmuk:
   place: London
   prefixes: [NHMUK, E, EE]
   otherNames: [BMNH, NHM UK]
+nhmuk-e:
+  name: Natural History Museum, E register
+  type: collection
+  within: nhmuk
+  subject: specimens
+nhmuk-ee:
+  name: Natural History Museum, EE register
+  type: collection
+  within: nhmuk
+  subject: specimens
 nigpas:
   name: Nanjing Institute of Geology and Palaeontology, Chinese Academy of Sciences
   type: institution
