@@ -914,6 +914,16 @@ class ClaimStore:
           if position:
             words += f', in {position["words"]}'
           acts = [self.words.act_words(c) for c in at if c['kind'] == 'act']
+          # A type the taxon also lists: the statement sits on the taxon's
+          # `type` node and belongs on the line of the child it names.
+          stated = [
+            c
+            for c in self._node_claims(source_key, f'{Closure.parent_path(use)}/type')
+            if c['kind'] == 'act' and c.get('listed') and c['subject'] == use['subject']
+          ]
+          if use.get('axis') == 'children' and stated:
+            acts += [self.words.act_words(c) for c in stated]
+            at = [*at, *stated]
           acts += [self.words.claim_words(c) for c in at if c['kind'] == 'rejection']
           if acts:
             words += '; ' + '; '.join(acts)

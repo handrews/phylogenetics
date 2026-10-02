@@ -351,7 +351,12 @@ class Closure:
     for key in keys:
       rank = (self.rank(key) or '').lower() or 'unranked'
       for claim in self.store.by_subject.get(key, ()):
-        if claim['kind'] != 'usage' or claim.get('axis') not in ('children', 'root'):
+        if claim['kind'] != 'usage':
+          continue
+        # A name a source cites only as a type is used there too: the
+        # `type` node is its placement.
+        placed = self.by_path[claim['source']].get(claim['path']) or {}
+        if claim.get('axis') not in ('children', 'root') and placed.get('via') != 'type':
           continue
         if not self._wanted(claim, trees, years):
           continue

@@ -985,9 +985,11 @@ def test_history_of_the_unlisted_type_shows_the_marked_line(synthetic):
     '(named as the type species; not listed among the species)'
   )
   assert '1985_jell_burrett_banks:321/children/0/children/0/type:act' in entry['claims']
-  # The listed type is the child's own line, with no mark.
+  # The listed type is the child's own line, with the statement the genus
+  # carries and no mark.
   [listed] = [e for e in block['entries'] if e['source'] == '1961_dehm']
-  assert listed['line'] == 'Edrioaster bigsbyi'
+  assert listed['line'] == 'Edrioaster bigsbyi; type species of Edrioaster, by monotypy'
+  assert '1961_dehm:320/type:act' in listed['claims']
   assert 'named as the type' in block['rendered']
   # The sources that list the type as a child, or only name its genus,
   # carry no mark.
@@ -1171,3 +1173,9 @@ def test_the_corpus_type_genera_now_read_type_genus(store):
   assert words[('2010_müller.p_hahn', '0/children/1/children/1')] == 'type'
   assert words[('2010_müller.p_hahn', '0/children/0/children/0')] == 'type genus'
   assert words[('1844_buch', '0/children/1/children/0')] == 'type genus'
+
+
+def test_a_paper_that_names_the_type_only_counts_among_the_papers(synthetic):
+  measured = synthetic.closure.measurement(BIGSBYI, include_related=False)
+  assert '1985_jell_burrett_banks' in measured['sources']
+  assert '1961_dehm' in measured['sources']
