@@ -1,3 +1,9 @@
+prefixes:
+  UTGD: utgd
+  NMVP: nmv-p
+  ANU: anu
+  CPC: cpc
+  TMF: tmf
 taxonomies:
 - taxon: edrioasteroidea
   children:
@@ -10,48 +16,26 @@ taxonomies:
       - taxon: tastudorum_jell_burrett_banks_1985
         new: true
         material:
-        - catalogNumbers:
-          - UTGD122593
+        - prefix: UTGD
+          numbers: [122593]
           role: holotype
-        - catalogNumbers:
-          - UTGD122226
-          - UTGD122231
-          - UTGD122233
-          - NMVP107053
-          - NMVP107054
-          - NMVP107055
-          - NMVP107056
-          - NMVP107057
-          - NMVP107059
-          - NMVP107060
-          - NMVP107061
-          - NMVP107062
-          - NMVP107063
-          - NMVP107064
-          - NMVP107065
-          - NMVP107066
-          - NMVP107067
-          - NMVP107068
-          - NMVP107069
-          - NMVP107070
-          - NMVP107071
-          - NMVP107072
+        - prefix: UTGD
+          numbers: [122226, 122231, 122233]
+          role: paratype
+        - prefix: NMVP
+          numbers: [107053, 107054, 107055, 107056, 107057, 107059, 107060, 107061, 107062, 107063, 107064, 107065, 107066, 107067, 107068, 107069, 107070, 107071, 107072]
           role: paratype
       - openTaxon: cambraster-cf-tastudorum_jell_burrett_banks_1985
         cf: tastudorum_jell_burrett_banks_1985
         new: true
         material:
-        - catalogNumbers:
-          - UTGD122233
-          - UTGD122234
+        - prefix: UTGD
+          numbers: [122233, 122234]
       - openTaxon: cambraster-sp_jell_burrett_banks_1985
         new: true
         material:
-        - catalogNumbers:
-          - ANU36957
-          - ANU36958
-          - ANU36959
-          - ANU36960
+        - prefix: ANU
+          numbers: [36957, 36958, 36959, 36960]
       - taxon: walcotti_schuchert_1919
         provisional: true
     - taxon: edriodiscus
@@ -60,14 +44,14 @@ taxonomies:
       - taxon: primotica_henderson_shergold_1971
         type: true
         material:
-        - catalogNumbers:
-          - CPC11395
+        - prefix: CPC
+          numbers: [11395]
           role: holotype
-        - catalogNumbers:
-          - CPC11396
+        - prefix: CPC
+          numbers: [11396]
           role: paratype
-        - catalogNumbers:
-          - NMVP107479
+        - prefix: NMVP
+          numbers: [107479]
         notes: |
           NMVP107479 is this paper's own specimen, "assigned … based on
           comparison" (p. 190), not part of the 1971 type series
@@ -83,22 +67,20 @@ taxonomies:
         provisional: true
         new: true
         material:
-        - catalogNumbers:
-          - NMVP107478
+        - prefix: NMVP
+          numbers: [107478]
     - openTaxon: stromatocystitidae-sp_jell_burrett_banks_1985
       new: true
       material:
-      - catalogNumbers:
-        - - ANU36949
-          - ANU36956
+      - prefix: ANU
+        numbers: [[36949, 36956]]
   - taxon: isorophida
     children:
     - openTaxon: isorophida-sp_jell_burrett_banks_1985
       new: true
       material:
-      - catalogNumbers:
-        - NMVP107129
-        - NMVP108990
+      - prefix: NMVP
+        numbers: [107129, 108990]
 - taxon: ctenocystoidea
   children:
   - taxon: ctenocystidae
@@ -110,13 +92,11 @@ taxonomies:
       - taxon: jagoi_jell_burrett_banks_1985
         new: true
         material:
-        - catalogNumbers:
-          - UTGD122594
+        - prefix: UTGD
+          numbers: [122594]
           role: holotype
-        - catalogNumbers:
-          - NMVP107073
-          - NMVP107075
-          - NMVP107076
+        - prefix: NMVP
+          numbers: [107073, 107075, 107076]
           role: paratype
 - taxon: eocrinoidea
   children:
@@ -130,45 +110,16 @@ taxonomies:
         type: true
         new: true
         material:
-        - catalogNumbers:
-          - NMVP107112
+        - prefix: NMVP
+          numbers: [107112]
           role: holotype
-        - catalogNumbers:
-          - NMVP107113
-          - NMVP107114
-          - NMVP107115
-          - NMVP107116
-          - NMVP107117
-          - NMVP107118
-          - NMVP107119
-          - NMVP107120
-          - NMVP107121
-          - NMVP107122
-          - NMVP107123
-          - NMVP107124
-          - NMVP107125
-          - NMVP107126
-          - NMVP107127
-          - NMVP107128
-          - NMVP107480
-          - NMVP107481
-          - NMVP107482
-          - NMVP107483
-          - NMVP107484
-          - NMVP107485
-          - NMVP107486
-          - NMVP107487
-          - NMVP107488
-          - NMVP107489
-          - NMVP107490
-          - NMVP107491
-          - NMVP107492
-          - NMVP108991
+        - prefix: NMVP
+          numbers: [107113, 107114, 107115, 107116, 107117, 107118, 107119, 107120, 107121, 107122, 107123, 107124, 107125, 107126, 107127, 107128, 107480, 107481, 107482, 107483, 107484, 107485, 107486, 107487, 107488, 107489, 107490, 107491, 107492, 108991]
           role: paratype
   - taxon: macrocystellidae
     children:
     - openTaxon: macrocystellidae-sp_jell_burrett_banks_1985
       new: true
       material:
-      - catalogNumbers:
-        - TMF8342
+      - prefix: TMF
+        numbers: [8342]

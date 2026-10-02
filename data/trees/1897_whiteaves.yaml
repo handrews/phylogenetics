@@ -29,9 +29,8 @@ taxonomies:
             Provisional based on "most probably referable to the Dipoporitidae"
             of the three orders named in Nicholson & Lydekker 1889.
         material:
-        - catalogNumbers:
-          - first specimen collected by John Stewart, 1886, Museum of the Geological Survey of Canada
-          - second specimen collected by John Stewart, 1886, Museum of the Geological Survey of Canada
+        - label: first specimen collected by John Stewart, 1886, Museum of the Geological Survey of Canada
+        - label: second specimen collected by John Stewart, 1886, Museum of the Geological Survey of Canada
         - label: an imperfect specimen lent by Walter R. Billings
         illustrations:
         - page: 287

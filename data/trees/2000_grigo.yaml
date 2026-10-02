@@ -1,3 +1,5 @@
+prefixes:
+  GIK: gik
 taxonomies:
 - taxon: edrioasteroidea
   children:
@@ -13,8 +15,8 @@ taxonomies:
         - taxon: leunisseni_grigo_2000
           pages: 92
           material:
-          - catalogNumbers:
-            - GIK 1585
+          - prefix: GIK
+            numbers: [1585]
             context: rommersheim-route-b-51
             role: holotype
           illustrations:
@@ -38,8 +40,8 @@ taxonomies:
         - taxon: prescheri_grigo_2000
           pages: 94
           material:
-          - catalogNumbers:
-            - GIK 1586
+          - prefix: GIK
+            numbers: [1586]
             context: railway-embankment-near
             role: holotype
           illustrations:
@@ -84,8 +86,8 @@ taxonomies:
               new: true
               pages: 96
               material:
-              - catalogNumbers:
-                - GIK 1857
+              - prefix: GIK
+                numbers: [1857]
                 context: auberg-near-gerolstein
               illustrations:
               - page: 96

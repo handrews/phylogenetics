@@ -216,7 +216,22 @@ says which.
   `material` entry refers to and each context the node defines. `occurrence`
   is the context verbatim; `contextKey` is its key and `contextScope`
   (`node` or `file`) where it was defined. A file-level context is
-  emitted once for each node that refers to it.
+  emitted once for each node that refers to it. `localityKeys`, when the
+  context has `localityNumbers`, are `<register>:<folded number>` for
+  each number that resolves to one locality register (its printed
+  prefix, or for an author's own field codes the one prefixless locality
+  register the tree file lists), the number folded without its prefix and
+  each key given once, so "Walcott 35k" and "USNM loc. 35k" give one.
+  A locality number written as an object (`{number, prefix?, register?}`)
+  gives `<register>:<folded number>` too, the register being its
+  `register`, else the tree file's `prefixes` map for its `prefix`, else the
+  file's `localityRegister` when it has neither `prefix` nor `register`;
+  one with no register gives no key, and the folded number is of the whole
+  `number` (an integer as its digits). String and object forms meet in one
+  list, each key once.
+  A `tentative` the context carries (`true` for the whole statement, a
+  list of the fields whose values are queried) rides inside `occurrence`
+  as written.
 - `specimen` (field `material`): one claim per entry. `role` is the
   entry's role, absent when the source attaches none; `ids` is the entry's
   `catalogNumbers` (a range pair stays a two-element list); `repository` is
@@ -226,10 +241,34 @@ says which.
   `otherNames` or `file` (the tree file's `repositories` list settled a
   shared prefix), absent when unresolved. `joinKeys` are
   `<repository>:<folded number>` for every catalog number (a range pair
-  contributes both endpoints and the claim carries `rangeJoin: true`),
-  so the same specimen in two sources shares a key. `roleAct` is the
+  contributes both endpoints and the claim carries `rangeJoin: true`), each
+  number keyed under its own holder (the one its prefix resolves to; the
+  entry's `repository` when it resolves to none, or when the entry names
+  its `repository` and the prefix belongs to an unrelated holder) and
+  folded without its printed prefix, so two printed forms of one number
+  ("F. 5404", "UQF5404") meet and the same specimen in two sources shares
+  a key. A collection's number printed with its institution's prefix keys
+  under the institution (`usnm-walcott` with "USNM 165421" gives
+  `usnm:165421`). `roleAct` is the
   entry's own value, else `designated` for a holotype, paratype, syntype
-  or cotype on a `new: true` node, else absent. The entry's other fields
+  or cotype on a `new: true` node, else absent. An entry in the other
+  shape, `prefix` and `numbers` (a number a string or an integer, a range
+  pair a two-element list), keeps `prefix`, `numbers` and `asPrinted` as
+  written, and nothing is read out of a string: `ids` are the numbers as
+  display strings, `"<prefix> <number>"` when the entry has a `prefix`, else
+  the number alone, a range pair staying a two-element list; the *register*
+  of a prefix is what the tree file's `prefixes` map gives it;
+  `repository` is the entry's explicit `repository`
+  (`repositoryVia: explicit`), else the register of its prefix
+  (`repositoryVia: file`), else `null`; `joinKeys` are
+  `<register>:<folded number>` for every number (both ends of a pair, with
+  `rangeJoin: true`), the register being the prefix's, except that an
+  explicit `repository` that is neither that register nor within it
+  (`within`, as for a collection) replaces it, and the explicit
+  `repository` alone when there is no prefix; an entry with only a
+  `holder` has none. Two printed prefixes the file maps to one register
+  give one key. An entry with `catalogNumbers` is read as above, and a node may
+  carry both kinds. The entry's other fields
   are copied as written: `catalogNumbers`, `catalogNumbersAsPrinted`,
   `count`, `label`, `holder`, `status`, `formerIds`, `fragmentOf`, `parts`,
   `examined`, `listComplete`, `preparation`, `castOf`, `collectedBy`,
@@ -244,22 +283,27 @@ says which.
   `specimenIllustrations` lists the locators of the node's illustrations
   whose `of` names the entry, and `illustrationClaims` their claim ids.
   `figured: false` marks a specimen no figure names, set only when all
-  four hold: the source's effective coverage for `illustrations` is `all`
+  six hold: the source's effective coverage for `illustrations` is `all`
   (so an unaudited tree, whose figure list may be partial, asserts
   nothing); the node carries `illustrations`, a value or a null; no
   illustration on the node names the entry through `of` (a number inside a
-  range pair's run names it); and the node has no illustration without an
-  `of`, since an untied figure may show the specimen. It is never set to
+  range pair's run names it); the node has no illustration without an
+  `of`, since an untied figure may show the specimen; the entry's `role` is
+  not `figured` (the source calls it a figured specimen); and no figure
+  names a cast of it (another entry whose `castOf` names this one), since
+  a figure of the cast shows the original. It is never set to
   `true`: a figured specimen has `illustrationClaims`.
 - `illustration` (field `illustrations`): one claim per entry, this
   source's own figure. `illustration` holds the locator fields (`plate`,
   `page`, `figures`, `textFigures`, `non`, `notes`, `uncertain`); `of`
   and `depicts` ride on the claim. `ofClaim` lists the ids of the specimen
   claims `of` names (exact string against a catalog number, a range
-  endpoint included, or a `label`); a figure with no `of` is tied to no
+  endpoint included, or a `label`; for an entry with `numbers`, a string
+  or an integer folded and compared with the folded number or label, a
+  number inside a pair's run also naming it); a figure with no `of` is tied to no
   specimen.
 - `range` (field `ranges`): one claim per element, `range` the element
-  verbatim. It counts under the `occurrences` coverage kind, and
+  verbatim, a `tentative` it carries included. It counts under the `occurrences` coverage kind, and
   `statements(kind='occurrences')` returns it with the `occurrence` claims.
 
 ### `secondhand`
@@ -324,7 +368,8 @@ the counts of claims by kind, by `actKind` and by `materialKind`, the
 counts by coverage kind (`derived`, editor-inferred claims excluded), and
 `inconsistencies`. Per taxon, the sources with any claim about it, in
 publication-year order. And `authors`, every author key with its
-surname, so a printed attribution (`auth: [bell.b.m]`) renders by field. Coverage is declared by a reviewer and counted by
+surname, so a printed attribution (`auth: [bell.b.m]`) renders by field,
+and `holotypeConflicts`. Coverage is declared by a reviewer and counted by
 the extractor; they are cross-checked, never conflated (G1): a source
 declaring `all` or `partly` for a kind with no derived claims, or `none`
 or `na` with any, is an inconsistency row for the editor to settle either
@@ -365,6 +410,19 @@ tree writes nulls therefore declares `skeleton`, `newTaxa`, `types` and
 derives nothing, until a null derives it. `absence` claims are not
 counted under any coverage kind.
 
+`holotypeConflicts` is roadmap F5, a report and never a failure: one row
+per taxon (`subject`) whose holotype is a different specimen in two
+sources, `{taxon, holotypes: [{source, ids, joinKeys, claim}]}` with one
+entry per holotype claim, in source year order (an unnumbered holotype's
+`label` rides beside). A holotype's identity is the set of its `joinKeys`,
+else its `label`, else its printed `ids`; two are the same specimen when
+those sets intersect. A claim marked `uncertain` is ignored, and a source
+that gives the taxon a `lectotype` or `neotype` does not enter the
+comparison, since its selection supersedes the earlier holotype.
+`scripts/claims.py --inconsistencies` prints the rows after the per-source
+ones; they add nothing to its exit status and `tests/test_claims.py` does
+not fail on them.
+
 ## What the vocabulary does not do
 
 - No consensus and no "current name": every claim is one source's.
@@ -381,7 +439,12 @@ counted under any coverage kind.
 
 ## Reading the table
 
-Two more generated files sit beside the claims. `claims/names.json` has
+Three more generated files sit beside the claims. `claims/repositories.json`
+is the repository registry as loaded (`data/repositories.yaml`), keys sorted,
+each entry's `name`, `type`, `subject`, `within`, `prefixes`, `otherNames` and
+`place` as present: the store reads it to resolve a catalog number a reader
+types, the way the extractor resolved the numbers the claims carry.
+`claims/names.json` has
 one row per taxon record: name, rank, kind (`primary`, `altSpellingOf`,
 `altRankOf`, `vulgarSpellingOf`, `placeholder`), the base record of a
 variant, the authority as displayed and its resolved source, and the
@@ -397,8 +460,8 @@ tree as a source prints it), `chains` (one line per source: the taxa
 from a higher taxon down to a record), `timeline` (one line per source
 in year order: what it does with a name), `table` (typed columns; a
 cell holds several values when one source places a record twice),
-`list` (a synonymy, the printed forms, or the statements about a
-record, under a heading), `statement` (a gap, an absence). `validate`
+`list` (a synonymy, the printed forms, the statements about a
+record, or the citations of one specimen, under a heading), `statement` (a gap, an absence). `validate`
 confirms every id and key against the store; `compose` makes an answer
 of blocks with a one-line header and an optional question back.
 Rendering is a registry of styles (`phylohist/render.py`): `text` and
@@ -490,6 +553,7 @@ blocks; the CLI (`phylohist <tool>`, `--style`), the MCP server
 | `history(record, include_related, synonymy)` | a timeline: one line per source in year order with the name as used, its position, the acts and the page; the measurement as the heading; each source's synonymy with `synonymy` |
 | `synonymy(record, source)` | the synonymy a source prints under a record, as a list |
 | `statements(record, source, kind, act_kind)` | every claim about a record as a sentence with source, year and page, the drill-down; with a source named and nothing of that kind entered, the gap block for it ("nothing of this kind" when the source holds other claims about the record), and with no kind asked the gap names every kind of the source not yet entered; with a source and `kind='absence'`, a table of what the source gives for the record per content kind (specimens, occurrences, figures, synonymy; one group per node), each `N entered`, `none printed` (the auditor's `absence` claim, or a source coverage of `na` or `all` that leaves none to enter) or `not entered`; above species rank the specimens and figures rows appear only when the node carries some, since those kinds are cited for species |
+| `specimen_history(number, repository)` | every citation of one specimen, by catalog number as a paper prints it ("UQF 5404", "F. 5404"): a list of the specimen claims whose `joinKeys` hold the number's key (`<repository>:<folded bare number>`, built as the extractor builds it) and those whose printed range contains it, one line per claim in year order: the role ("holotype of X") or, with none, "cited under X", "(doubtfully assigned)", the number as printed when it is not the one asked about (or "in the run …"), and the figures tied to it (locator notes left out) or "not figured"; for an entry with a run or several numbers only the figures whose own `of` names the number asked about, and nothing about figures when none does unless the claim is `figured: false`. The prefix names the repository; a number without one, or with a shared prefix, takes `repository` (a registry key), and without it the result is the `absent` statement, naming the competing repositories when the prefix is shared. Unnumbered specimens cannot be followed |
 | `gap(source, kind)` / `gap(name=…)` | the contract's sentence for what is not yet entered, or for a name no source carries |
 | `printed_forms(record, source)` | each form a source prints, verbatim (folded to one line in text and markdown; the claim keeps its line breaks), with the page; when the named source recorded no verbatim form, the heading as its listing is entered, marked as such |
 | `source_coverage(key)` | the raw coverage view |
@@ -544,7 +608,7 @@ species node. The node's one context (`lady-burn-starfish-bed`) yields an
 `occurrence` claim, emitted first, and its `material` entries yield
 `specimen` claims after it: the holotype claim has `role: holotype`,
 `ids: [NHMUK E23470]`, `repository: nhmuk` with
-`repositoryVia: prefix`, `joinKeys: [nhmuk:nhmuke23470]` and the context's
+`repositoryVia: prefix`, `joinKeys: [nhmuk:e23470]` and the context's
 `contextKey`; the next entry has no role, since the paper attaches none.
 
 ### Fay 1962, *ottawaensis* (`data/trees/1962_fay.yaml`)

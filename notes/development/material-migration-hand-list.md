@@ -75,8 +75,6 @@ owner, each with its page there:
 
 What the model could not say, for stage 4:
 
-- A queried age ("Middle Ordovician(?)") has no tentative form; the
-  "(?)" is in the range's `notes`.
 - One number cited under two species (MCZ 643, MCZ 644, GSC 25954) is
   entered under both as printed.
 

@@ -1,3 +1,5 @@
+prefixes:
+  QMF: qm-f
 taxonomies:
 - taxon: edrioasteroidea
   children:
@@ -27,8 +29,8 @@ taxonomies:
         type: true
         new: true
         material:
-        - catalogNumbers:
-          - QMF 17944
+        - prefix: QMF
+          numbers: [17944]
           role: holotype
   - taxon: edrioblastoida
     children:
@@ -46,8 +48,8 @@ taxonomies:
           type: true
           new: true
           material:
-          - catalogNumbers:
-            - QMF 17872
+          - prefix: QMF
+            numbers: [17872]
             role: holotype
 phylogenies:
 - treeType: cladogram

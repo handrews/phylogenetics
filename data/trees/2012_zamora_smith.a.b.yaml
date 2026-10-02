@@ -1,3 +1,5 @@
+prefixes:
+  MPZ: mpz
 taxonomies:
 - taxon: echinodermata
   children:
@@ -14,12 +16,11 @@ taxonomies:
           new: true
           type: true
           material:
-          - catalogNumbers:
-            - MPZ2009/1230
+          - prefix: MPZ
+            numbers: [2009/1230]
             role: holotype
-          - catalogNumbers:
-            - - MPZ2011/2
-              - MPZ2011/6
+          - prefix: MPZ
+            numbers: [[2011/2, 2011/6]]
             role: paratype
       - taxon: vizcainoia
         new: true
@@ -29,8 +30,8 @@ taxonomies:
         - taxon: moncaiensis_zamora_smith.a.b_2012
           new: true
           material:
-          - catalogNumbers:
-            - MPZ2011/7
+          - prefix: MPZ
+            numbers: [2011/7]
             role: holotype
 phylogenies:
 - treeType: cladogram

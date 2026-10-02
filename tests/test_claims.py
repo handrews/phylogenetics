@@ -28,6 +28,7 @@ from phylohist.claims import (
   corrected_node,
   derived_coverage,
   extract,
+  holotype_conflicts,
   manifest,
   merge_patch,
 )
@@ -364,7 +365,7 @@ def test_material_adapter(load_records, caplog):
       'position': 90,
       'file_contexts': file_contexts,
       'file_unused': (),
-      'file_repositories': ('fmnh',),
+      'file_repositories': ('fmnh-pe',),
     },
   )
   claims = extract({'1961_dehm': [root]})['1961_dehm']
@@ -392,11 +393,11 @@ def test_material_adapter(load_records, caplog):
   assert numbered['catalogNumbers'] == ['GSC 752'] and numbered['contextKey'] == 'division-st'
   assert 'contextTentative' not in numbered
   assert numbered['repository'] == 'gsc' and numbered['repositoryVia'] == 'prefix'
-  assert numbered['joinKeys'] == ['gsc:gsc752'] and 'rangeJoin' not in numbered
+  assert numbered['joinKeys'] == ['gsc:752'] and 'rangeJoin' not in numbered
   assert 'roleAct' not in numbered  # not a protologue node
 
   assert pair['ids'] == [['GSC 100', 'GSC 105']] and pair['formerIds'] == ['G 1']
-  assert pair['joinKeys'] == ['gsc:gsc100', 'gsc:gsc105'] and pair['rangeJoin'] is True
+  assert pair['joinKeys'] == ['gsc:100', 'gsc:105'] and pair['rangeJoin'] is True
 
   assert label_only['label'] == 'the specimen lent to Hudson' and label_only['status'] == 'lost'
   assert label_only['ids'] == [] and label_only['repository'] is None
@@ -407,7 +408,7 @@ def test_material_adapter(load_records, caplog):
   assert 'role' not in explicit
 
   # `PE` belongs to two registry entries; the file's list settles it.
-  assert file_listed['repository'] == 'fmnh' and file_listed['repositoryVia'] == 'file'
+  assert file_listed['repository'] == 'fmnh-pe' and file_listed['repositoryVia'] == 'file'
   assert file_listed['preparation'] == 'latex cast' and file_listed['castOf'] == 'GSC 752'
 
   assert tentative['contextKey'] == 'division-st' and tentative['contextTentative'] is True
@@ -462,6 +463,292 @@ def test_material_adapter(load_records, caplog):
     None,
   ]
   assert new_claims[0]['count'] == 5
+
+
+def _specimen(entry, file_repositories=()):
+  root = Tree(
+    {'taxon': 'rhenopyrgus', 'material': entry},
+    {
+      'source_key': '1961_dehm',
+      'type': 'taxonomy',
+      'position': 90,
+      'file_repositories': file_repositories,
+    },
+  )
+  claims = extract({'1961_dehm': [root]})['1961_dehm']
+  return [c for c in claims if c.get('materialKind') == 'specimen']
+
+
+def test_two_printed_forms_of_one_catalog_number_share_a_join_key(load_records):
+  first, second = _specimen([{'catalogNumbers': ['F. 5404']}, {'catalogNumbers': ['UQF5404']}])
+  assert first['joinKeys'] == second['joinKeys'] == ['uq-f:5404']
+  # The printed form stays in `ids`.
+  assert (first['ids'], second['ids']) == (['F. 5404'], ['UQF5404'])
+
+
+def test_a_range_pairs_two_join_keys_are_both_bare(load_records):
+  [pair] = _specimen([{'catalogNumbers': [['UQF 5399', 'F. 5403']]}])
+  assert pair['joinKeys'] == ['uq-f:5399', 'uq-f:5403'] and pair['rangeJoin'] is True
+
+
+def test_an_explicit_repository_strips_its_own_prefix_only(load_records):
+  own, other = _specimen(
+    [
+      {'catalogNumbers': ['GSC 752'], 'repository': 'gsc'},
+      {'catalogNumbers': ['MCZ 690'], 'repository': 'usnm'},
+    ],
+  )
+  assert own['joinKeys'] == ['gsc:752']
+  assert other['joinKeys'] == ['usnm:mcz690']
+
+
+def test_each_number_of_an_entry_keys_under_its_own_holder(load_records):
+  [mixed] = _specimen([{'catalogNumbers': ['UTGD 122233', 'NMVP 107053', ['UQF 1', 'QMF 2']]}])
+  assert mixed['repository'] == 'utgd' and mixed['repositoryVia'] == 'prefix'
+  assert mixed['joinKeys'] == ['utgd:122233', 'nmv-p:107053', 'uq-f:1', 'qm-f:2']
+
+
+def test_a_number_that_resolves_to_nothing_keys_under_the_entrys_repository(load_records):
+  [mixed] = _specimen([{'catalogNumbers': ['GSC 752', 'ZZZ 5', 'Specimen 9']}])
+  assert mixed['joinKeys'] == ['gsc:752', 'gsc:zzz5', 'gsc:specimen9']
+
+
+def test_an_explicit_collection_keys_a_parent_prefix_under_the_institution(load_records):
+  [specimen] = _specimen([{'catalogNumbers': ['USNM 165421'], 'repository': 'usnm-walcott'}])
+  assert specimen['repository'] == 'usnm-walcott' and specimen['repositoryVia'] == 'explicit'
+  assert specimen['joinKeys'] == ['usnm:165421']
+
+
+def test_an_explicit_repository_wins_over_the_prefix_of_an_unrelated_holder(load_records):
+  [specimen] = _specimen(
+    [
+      {'catalogNumbers': ['MCZ 690', 'USNM 5', 'UQF 9'], 'repository': 'usnm'},
+    ],
+  )
+  # A sibling collection is not an ancestor: the explicit holder keeps it.
+  assert specimen['joinKeys'] == ['usnm:mcz690', 'usnm:5', 'usnm:uqf9']
+  [sibling] = _specimen([{'catalogNumbers': ['S 7'], 'repository': 'usnm-walcott'}])
+  assert sibling['joinKeys'] == ['usnm-walcott:s7']
+
+
+def test_a_file_listed_prefix_strips_to_the_bare_number(load_records):
+  [specimen] = _specimen([{'catalogNumbers': ['PE-214']}], ('fmnh-pe',))
+  assert specimen['repository'] == 'fmnh-pe' and specimen['joinKeys'] == ['fmnh-pe:214']
+
+
+def _occurrence(context, file_repositories=()):
+  root = Tree(
+    {'taxon': 'rhenopyrgus', 'contexts': {'x': context}},
+    {
+      'source_key': '1961_dehm',
+      'type': 'taxonomy',
+      'position': 90,
+      'file_repositories': file_repositories,
+    },
+  )
+  claims = extract({'1961_dehm': [root]})['1961_dehm']
+  [claim] = [c for c in claims if c.get('materialKind') == 'occurrence']
+  return claim
+
+
+def test_locality_keys_join_two_printed_forms_of_one_number(load_records):
+  claim = _occurrence({'localityNumbers': ['Walcott locality 35k', 'USNM loc. 35k', 'USGS 5462']})
+  assert claim['localityKeys'] == ['usnm-l:35k', 'usgs-l:5462']
+
+
+def test_locality_keys_use_the_listed_field_code_register(load_records):
+  context = {'localityNumbers': ['SH-1', 'USGS 4148 CO', 'unresolvable? 7']}
+  assert _occurrence(context, ('sprinkle-l',))['localityKeys'] == [
+    'sprinkle-l:sh1',
+    'usgs-l:4148co',
+    'sprinkle-l:unresolvable?7',
+  ]
+  # Unlisted, SH-1 resolves to nothing, and a context with none has no field.
+  assert _occurrence(context)['localityKeys'] == ['usgs-l:4148co']
+  assert 'localityKeys' not in _occurrence({'unit': ['Wheeler Shale']})
+  assert 'localityKeys' not in _occurrence({'localityNumbers': ['SH-1']})
+
+
+def _numbered(entries, prefixes=None, locality_register=None, **node):
+  """The specimen claims of a node whose tree file carries a `prefixes` map
+  (and a `localityRegister`)."""
+  root = Tree(
+    {'taxon': 'rhenopyrgus', 'material': entries, **node},
+    {
+      'source_key': '1961_dehm',
+      'type': 'taxonomy',
+      'position': 90,
+      'file_prefixes': prefixes or {},
+      'file_locality_register': locality_register,
+    },
+  )
+  claims = extract({'1961_dehm': [root]})['1961_dehm']
+  return [c for c in claims if c.get('materialKind') == 'specimen']
+
+
+def test_a_prefix_and_numbers_entry_carries_its_fields_and_display_ids(load_records):
+  [claim] = _numbered(
+    [{'prefix': 'MCZ', 'numbers': ['581A', 581], 'asPrinted': 'MCZ 581A, 581', 'role': 'holotype'}],
+    {'MCZ': 'mcz'},
+  )
+  assert (claim['prefix'], claim['numbers'], claim['asPrinted']) == (
+    'MCZ',
+    ['581A', 581],
+    'MCZ 581A, 581',
+  )
+  assert claim['ids'] == ['MCZ 581A', 'MCZ 581']
+  assert claim['repository'] == 'mcz' and claim['repositoryVia'] == 'file'
+  assert claim['joinKeys'] == ['mcz:581a', 'mcz:581']
+  assert 'rangeJoin' not in claim and 'catalogNumbers' not in claim
+
+
+def test_two_printed_prefixes_of_one_register_share_a_join_key(load_records):
+  first, second = _numbered(
+    [{'prefix': 'F.', 'numbers': [5404]}, {'prefix': 'UQF', 'numbers': ['5404']}],
+    {'F.': 'uq-f', 'UQF': 'uq-f'},
+  )
+  assert first['joinKeys'] == second['joinKeys'] == ['uq-f:5404']
+  assert (first['ids'], second['ids']) == (['F. 5404'], ['UQF 5404'])
+
+
+def test_a_range_pair_gives_both_ends_and_stays_a_pair_in_ids(load_records):
+  [claim] = _numbered(
+    [{'prefix': 'GSC', 'numbers': [[25935, 25961], 'A-1'], 'asPrinted': 'GSC 25935–25961'}],
+    {'GSC': 'gsc'},
+  )
+  assert claim['ids'] == [['GSC 25935', 'GSC 25961'], 'GSC A-1']
+  assert claim['joinKeys'] == ['gsc:25935', 'gsc:25961', 'gsc:a1']
+  assert claim['rangeJoin'] is True and claim['asPrinted'] == 'GSC 25935–25961'
+  assert claim['numbers'] == [[25935, 25961], 'A-1']
+
+
+def test_an_explicit_repository_within_the_prefixs_register_keys_under_the_register(load_records):
+  [specimen] = _numbered(
+    [{'prefix': 'USNM', 'numbers': [165421], 'repository': 'usnm-walcott'}],
+    {'USNM': 'usnm'},
+  )
+  assert specimen['repository'] == 'usnm-walcott' and specimen['repositoryVia'] == 'explicit'
+  assert specimen['joinKeys'] == ['usnm:165421']
+  # The register itself is within itself.
+  [same] = _numbered([{'prefix': 'USNM', 'numbers': [1], 'repository': 'usnm'}], {'USNM': 'usnm'})
+  assert same['joinKeys'] == ['usnm:1']
+
+
+def test_an_explicit_repository_outside_the_prefixs_register_wins(load_records):
+  [specimen] = _numbered(
+    [{'prefix': 'MCZ', 'numbers': [690], 'repository': 'usnm-walcott'}], {'MCZ': 'mcz'}
+  )
+  assert specimen['repository'] == 'usnm-walcott' and specimen['repositoryVia'] == 'explicit'
+  assert specimen['joinKeys'] == ['usnm-walcott:690']
+  # A collection above the register is not within it either.
+  [above] = _numbered(
+    [{'prefix': 'USNM', 'numbers': [1], 'repository': 'usnm'}], {'USNM': 'usnm-walcott'}
+  )
+  assert above['joinKeys'] == ['usnm:1']
+
+
+def test_numbers_with_no_prefix_key_under_the_repository_or_not_at_all(load_records):
+  repo, holder, nothing = _numbered(
+    [
+      {'repository': 'u-cincinnati-caster', 'numbers': ['KR-2']},
+      {'holder': 'A. R. Palmer', 'numbers': [[500, 501]]},
+      {'prefix': 'ZZ', 'numbers': [1]},
+    ],
+    {'MCZ': 'mcz'},
+  )
+  assert repo['ids'] == ['KR-2'] and repo['repository'] == 'u-cincinnati-caster'
+  assert repo['repositoryVia'] == 'explicit' and repo['joinKeys'] == ['u-cincinnati-caster:kr2']
+  assert holder['ids'] == [['500', '501']] and holder['holder'] == 'A. R. Palmer'
+  assert holder['repository'] is None and 'repositoryVia' not in holder
+  assert 'joinKeys' not in holder and holder['rangeJoin'] is True
+  # A prefix the file's map lacks (an error for the loader) keys nothing.
+  assert nothing['repository'] is None and 'joinKeys' not in nothing
+  assert nothing['ids'] == ['ZZ 1']
+
+
+def test_a_figure_names_a_prefix_and_numbers_entry_by_a_number(load_records):
+  [claim] = _numbered(
+    [{'prefix': 'MCZ', 'numbers': [581, ['600', '610']]}],
+    {'MCZ': 'mcz'},
+    illustrations=[{'plate': 1, 'of': 581}, {'plate': 2, 'of': 605}, {'plate': 3, 'of': 'x'}],
+  )
+  assert [f['plate'] for f in claim['specimenIllustrations']] == [1, 2]
+
+
+def test_the_old_and_new_shapes_may_share_a_node(load_records):
+  old, new = _numbered(
+    [{'catalogNumbers': ['MCZ 1']}, {'prefix': 'MCZ', 'numbers': [1]}], {'MCZ': 'mcz'}
+  )
+  assert old['joinKeys'] == new['joinKeys'] == ['mcz:1']
+  assert 'numbers' not in old and 'prefix' not in old
+
+
+def _locality(context, prefixes=None, locality_register=None):
+  root = Tree(
+    {'taxon': 'rhenopyrgus', 'contexts': {'x': context}},
+    {
+      'source_key': '1961_dehm',
+      'type': 'taxonomy',
+      'position': 90,
+      'file_prefixes': prefixes or {},
+      'file_locality_register': locality_register,
+    },
+  )
+  claims = extract({'1961_dehm': [root]})['1961_dehm']
+  [claim] = [c for c in claims if c.get('materialKind') == 'occurrence']
+  return claim
+
+
+def test_locality_keys_of_object_numbers(load_records):
+  context = {
+    'localityNumbers': [
+      {'number': 'FC-1'},
+      {'prefix': 'USGS', 'number': '4148 CO'},
+      {'register': 'usnm-l', 'number': '35k'},
+      {'prefix': 'Walcott', 'number': 35},
+      {'register': 'usgs-l', 'number': 'D190d CO'},
+      'USGS 5462',
+      {'prefix': 'ZZ', 'number': 9},
+    ]
+  }
+  prefixes = {'USGS': 'usgs-l', 'Walcott': 'usnm-l'}
+  claim = _locality(context, prefixes, 'sprinkle-l')
+  assert claim['localityKeys'] == [
+    'sprinkle-l:fc1',
+    'usgs-l:4148co',
+    'usnm-l:35k',
+    'usnm-l:35',
+    'usgs-l:d190dco',
+    'usgs-l:5462',
+  ]
+  # With no `localityRegister` a number with neither prefix nor register is skipped;
+  # a prefix the map lacks never falls to it.
+  assert _locality(context, prefixes)['localityKeys'] == [
+    'usgs-l:4148co',
+    'usnm-l:35k',
+    'usnm-l:35',
+    'usgs-l:d190dco',
+    'usgs-l:5462',
+  ]
+  # An object and a string form of one number give one key.
+  both = {'localityNumbers': ['USGS 4148 CO', {'prefix': 'USGS', 'number': '4148 co'}]}
+  assert _locality(both, prefixes)['localityKeys'] == ['usgs-l:4148co']
+
+
+def test_a_specimen_is_followed_across_sources_by_its_join_key(claims):
+  # Whitehouse 1941's "F. 5404" and Jell & Sprinkle 2021's "UQF5404".
+  keys = {}
+  for source in ('1941_whitehouse', '2021_jell_sprinkle'):
+    [holotype] = [
+      c
+      for c in claims[source]
+      if c['kind'] == 'material'
+      and c['materialKind'] == 'specimen'
+      and c['subject'] == 'navicula_whitehouse_1941'
+      and c.get('role') == 'holotype'
+    ]
+    keys[source] = holotype['joinKeys']
+  assert keys['1941_whitehouse'] == keys['2021_jell_sprinkle'] == ['uq-f:5404']
 
 
 def test_derived_coverage():
@@ -911,3 +1198,148 @@ def test_a_number_inside_a_run_names_its_entry_for_figured():
     c for c in claims if c.get('materialKind') == 'specimen' and c['subject'] == _SPECIES
   ]
   assert [c.get('figured') for c in specimens] == [None, False]
+
+
+def test_a_figured_role_or_a_figured_cast_is_never_unfigured():
+  sister = {'taxon': _SISTER, 'illustrations': None}
+
+  def figured(node, position):
+    claims = _claims_of({'taxon': 'rhenopyrgus', 'children': [node, sister]}, position)
+    return {
+      c['label']: c.get('figured')
+      for c in claims
+      if c.get('materialKind') == 'specimen' and c['subject'] == _SPECIES
+    }
+
+  # The source calls the entry a figured specimen, whatever the figures say.
+  node = {
+    'taxon': _SPECIES,
+    'material': [{'label': 'A', 'role': 'figured'}, {'label': 'B'}],
+    'illustrations': [{'plate': 1, 'of': 'B'}],
+  }
+  assert figured(node, 227) == {'A': None, 'B': None}
+  assert figured({**node, 'illustrations': None}, 228) == {'A': None, 'B': False}
+  # A figure of a cast shows its original; the cast's own entry is figured by it.
+  cast = {
+    'taxon': _SPECIES,
+    'material': [{'label': 'A'}, {'label': 'B', 'castOf': 'A'}, {'label': 'C'}],
+    'illustrations': [{'plate': 1, 'of': 'B'}],
+  }
+  assert figured(cast, 229) == {'A': None, 'B': None, 'C': False}
+  # An unfigured cast leaves its original unfigured, and so does a figure
+  # of another entry.
+  unfigured_cast = {**cast, 'illustrations': [{'plate': 1, 'of': 'C'}]}
+  assert figured(unfigured_cast, 230) == {'A': False, 'B': False, 'C': None}
+  # The cast is found by a catalog number or a run as a figure's `of` is.
+  numbered = {
+    'taxon': _SPECIES,
+    'material': [
+      {'catalogNumbers': ['GSC 100']},
+      {'catalogNumbers': ['GSC 101'], 'castOf': 'GSC 100'},
+    ],
+    'illustrations': [{'plate': 1, 'of': 'GSC 101'}],
+  }
+  claims = _claims_of({'taxon': 'rhenopyrgus', 'children': [numbered, sister]}, 231)
+  assert [
+    c.get('figured')
+    for c in claims
+    if c.get('materialKind') == 'specimen' and c['subject'] == _SPECIES
+  ] == [None, None]
+
+
+# -- holotype_conflicts (roadmap F5) ---------------------------------------------
+
+_TAXON = 'navicula_whitehouse_1941'
+
+
+def _claim(source, role='holotype', taxon=_TAXON, **fields):
+  return {
+    'id': f'{source}:{taxon}:{role}:{len(fields)}',
+    'kind': 'material',
+    'materialKind': 'specimen',
+    'source': source,
+    'subject': taxon,
+    'role': role,
+    **fields,
+  }
+
+
+def _conflicts(*claims):
+  by_source = {}
+  for claim in claims:
+    by_source.setdefault(claim['source'], []).append(claim)
+  return holotype_conflicts(by_source)
+
+
+def test_one_specimen_under_two_printed_forms_is_no_conflict(load_records):
+  first = _claim('1941_whitehouse', ids=['F. 5404'], joinKeys=['uq-f:5404'])
+  second = _claim('2021_jell_sprinkle', ids=['UQF5404'], joinKeys=['uq-f:5404'])
+  assert _conflicts(first, second) == []
+
+
+def test_two_different_numbers_are_a_conflict_in_year_order(load_records):
+  later = _claim('2021_jell_sprinkle', ids=['UQF 9'], joinKeys=['uq-f:9'])
+  first = _claim('1941_whitehouse', ids=['F. 5404'], joinKeys=['uq-f:5404'])
+  [row] = _conflicts(later, first)
+  assert row['taxon'] == _TAXON
+  assert row['holotypes'] == [
+    {
+      'source': '1941_whitehouse',
+      'ids': ['F. 5404'],
+      'joinKeys': ['uq-f:5404'],
+      'claim': first['id'],
+    },
+    {
+      'source': '2021_jell_sprinkle',
+      'ids': ['UQF 9'],
+      'joinKeys': ['uq-f:9'],
+      'claim': later['id'],
+    },
+  ]
+
+
+def test_a_later_lectotype_or_neotype_is_no_conflict(load_records):
+  holotype = _claim('1941_whitehouse', ids=['F. 5404'], joinKeys=['uq-f:5404'])
+  for role in ('lectotype', 'neotype'):
+    later = _claim('2021_jell_sprinkle', role=role, ids=['UQF 9'], joinKeys=['uq-f:9'])
+    assert _conflicts(holotype, later) == []
+  # A source that designates a lectotype leaves the comparison whole, even
+  # when it also reports the old holotype entry.
+  report = _claim('2021_jell_sprinkle', ids=['UQF 9'], joinKeys=['uq-f:9'])
+  assert _conflicts(holotype, later, report) == []
+
+
+def test_an_uncertain_holotype_is_ignored(load_records):
+  holotype = _claim('1941_whitehouse', ids=['F. 5404'], joinKeys=['uq-f:5404'])
+  doubtful = _claim('2021_jell_sprinkle', ids=['UQF 9'], joinKeys=['uq-f:9'], uncertain=True)
+  assert _conflicts(holotype, doubtful) == []
+  # An uncertain lectotype does not excuse a conflict either.
+  lectotype = _claim('2021_jell_sprinkle', role='lectotype', ids=['UQF 9'], uncertain=True)
+  assert _conflicts(holotype, lectotype) == []
+
+
+def test_other_roles_and_a_single_source_are_no_conflict(load_records):
+  holotype = _claim('1941_whitehouse', ids=['F. 5404'], joinKeys=['uq-f:5404'])
+  paratype = _claim('2021_jell_sprinkle', role='paratype', ids=['UQF 9'], joinKeys=['uq-f:9'])
+  assert _conflicts(holotype, paratype) == []
+  other = _claim('1941_whitehouse', ids=['F. 5405'], joinKeys=['uq-f:5405'], count=1)
+  assert _conflicts(holotype, other) == []
+
+
+def test_unnumbered_holotypes_are_compared_by_label_then_printed_ids(load_records):
+  first = _claim('1941_whitehouse', label='the Taf. 2 fossil')
+  same = _claim('2021_jell_sprinkle', label='the Taf. 2 fossil')
+  assert _conflicts(first, same) == []
+  [row] = _conflicts(first, _claim('2021_jell_sprinkle', label='the Taf. 3 fossil'))
+  assert row['holotypes'][0]['joinKeys'] == [] and row['holotypes'][0]['label'] == first['label']
+  # No join keys and no label: the printed ids, a range pair's endpoints included.
+  ids = _claim('1941_whitehouse', ids=[['XX 1', 'XX 2']])
+  assert _conflicts(ids, _claim('2021_jell_sprinkle', ids=['XX 2'])) == []
+  [row] = _conflicts(ids, _claim('2021_jell_sprinkle', ids=['XX 3']))
+  assert row['holotypes'][0]['ids'] == [['XX 1', 'XX 2']]
+
+
+def test_the_manifest_reports_holotype_conflicts(claims, roots):
+  # The real corpus: the function runs and the manifest carries what it returns.
+  assert isinstance(holotype_conflicts(claims), list)
+  assert manifest(claims, roots)['holotypeConflicts'] == holotype_conflicts(claims)

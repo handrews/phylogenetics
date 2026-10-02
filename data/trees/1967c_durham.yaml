@@ -1,4 +1,5 @@
-repositories: [ucmp]
+prefixes:
+  UCMP: ucmp
 taxonomies:
 - taxon: helicoplacoidea
   children:
@@ -16,14 +17,14 @@ taxonomies:
         - taxon: curtisi_durham_caster_1963
           pars: true
         material:
-        - catalogNumbers:
-          - UCMP 14770
+        - prefix: UCMP
+          numbers: [14770]
           role: holotype
       - taxon: firbyi_durham_1967
         new: true
         material:
-        - catalogNumbers:
-          - UCMP 30143
+        - prefix: UCMP
+          numbers: [30143]
           role: holotype
     - taxon: waucobella
       new: true
@@ -32,8 +33,8 @@ taxonomies:
         type: true
         new: true
         material:
-        - catalogNumbers:
-          - UCMP 14769
+        - prefix: UCMP
+          numbers: [14769]
           role: holotype
   - taxon: polyplacida
     new: true
@@ -45,9 +46,9 @@ taxonomies:
         type: true
         new: true
         material:
-        - catalogNumbers:
-          - UCMP 14767
+        - prefix: UCMP
+          numbers: [14767]
           role: holotype
-        - catalogNumbers:
-          - UCMP 14768
+        - prefix: UCMP
+          numbers: [14768]
           role: paratype

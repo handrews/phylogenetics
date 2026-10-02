@@ -1,3 +1,6 @@
+prefixes:
+  NHM UK EE: nhmuk-ee
+  EE: nhmuk-ee
 taxonomies:
 - taxon: echinodermata
   stem: true
@@ -12,15 +15,11 @@ taxonomies:
         new: true
         type: true
         material:
-        - catalogNumbers:
-          - NHM UK EE15373
+        - prefix: NHM UK EE
+          numbers: [15373]
           role: holotype
-        - catalogNumbers:
-          - - EE15374
-            - EE15376
-          - EE14847
-          - EE14848
-          - EE15329
+        - prefix: EE
+          numbers: [[15374, 15376], 14847, 14848, 15329]
           role: paratype
 phylogenies:
 - treeType: diagram

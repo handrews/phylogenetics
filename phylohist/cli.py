@@ -8,6 +8,7 @@
     phylohist history rhenopyrgus
     phylohist synonymy grayae_bather_1915
     phylohist statements ottawaensis_whiteaves_1897 --source 1962_fay
+    phylohist specimen "UQF 5404"
     phylohist coverage 1983_holloway_jell
     phylohist gap 1983_holloway_jell material
     phylohist printed edrioblastoidina
@@ -43,6 +44,7 @@ SUBCOMMANDS = {
   'history': 'history',
   'synonymy': 'synonymy',
   'statements': 'statements',
+  'specimen': 'specimen_history',
   'coverage': 'source_coverage',
   'gap': 'gap',
   'printed': 'printed_forms',
@@ -133,6 +135,12 @@ def build_parser():
   p.add_argument('--source')
   p.add_argument('--kind')
   p.add_argument('--act', dest='act_kind')
+
+  p = add_parser('specimen', help='every citation of one specimen, by catalog number')
+  p.add_argument('number', help='the number as a paper prints it ("UQF 5404", "F. 5404")')
+  p.add_argument(
+    '--repository', help='a repository key, for a number with no prefix or a shared one'
+  )
 
   p = add_parser('coverage', help='what the corpus holds of a source')
   p.add_argument('source')

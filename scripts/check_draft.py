@@ -11,8 +11,13 @@ reported by name, like a missing record). It then runs the material checks
 in its `illustrations` (or in an `authority`'s); a null `material`,
 `illustrations`, `contexts` or `ranges` on a primary node (only an auditor
 sets nulls); a `unused` field still present on a node; an ellipsis or an
-ambiguous prefix in a catalog number; a `repositories` list naming a missing
-or unused entry; and a dangling `context`, figure `of` or `castOf`. The
+ambiguous prefix in a catalog number; a locality number that resolves to no
+locality register (a warning) or to several; a `repositories` list naming a missing
+or unused entry; for the `prefix` + `numbers` shape, a `prefix` missing from
+the file's `prefixes` map, a map entry that is unused, not a registry key or
+not a known form of its register, numbers with no prefix, repository or holder,
+a number that begins with its register's own prefix, and a locality number
+with no register; and a dangling `context`, figure `of` or `castOf`. The
 open-nomenclature checks (`phylohist.loader.nomenclature`) add a `cf` or `aff`
 off an `openTaxon` node, on both, or aimed at a missing, unnamed or other-rank
 taxon; a `quotedParent` above the species level; a `roleUncertain` with no
@@ -88,17 +93,33 @@ def check_material(draft, repositories, taxa):
     *material.unreferenced_file_contexts(draft),
     *material.unused_fields(draft),
     *material.file_repositories_used(draft, repositories),
+    *material.file_prefixes(draft, repositories),
   ]
   prefixes = []
   file_repositories = draft.get('repositories') or ()
+  file_prefixes = draft.get('prefixes') or {}
+  locality_register = draft.get('localityRegister')
 
   file_contexts = draft.get('contexts') or {}
+  messages.extend(material.locality_numbers(file_contexts, repositories, file_repositories))
+  messages.extend(
+    material.locality_objects(file_contexts, file_prefixes, locality_register, repositories)
+  )
+  messages.extend(material.context_tentatives(file_contexts, file_level=True))
   for path, node, is_cited in material.walk_document(draft):
     node_contexts = node.get('contexts') or {}
     for check, args in (
       (material.context_refs, (node, node_contexts, file_contexts)),
       (material.figure_refs, (node, is_cited)),
       (material.catalog_numbers, (node, repositories, file_repositories)),
+      (material.locality_numbers, (node_contexts, repositories, file_repositories)),
+      (material.number_entries, (node, file_prefixes, repositories)),
+      (
+        material.locality_objects,
+        (node_contexts, file_prefixes, locality_register, repositories),
+      ),
+      (material.context_tentatives, (node_contexts,)),
+      (material.range_tentatives, (node,)),
       (material.cast_refs, (node,)),
       (material.null_material, (node, is_cited)),
       (draft_nulls, (node, is_cited)),

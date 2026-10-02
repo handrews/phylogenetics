@@ -1,3 +1,5 @@
+prefixes:
+  GM: gm
 taxonomies:
 - taxon: edrioasteroidea
   children:
@@ -12,23 +14,9 @@ taxonomies:
           type: true
           new: true
           material:
-          - catalogNumbers:
-            - GM 3428
+          - prefix: GM
+            numbers: [3428]
             role: holotype
-          - catalogNumbers:
-            - GM 70
-            - GM 746
-            - GM 1331
-            - GM 1670
-            - GM 1898
-            - GM 2103
-            - GM 2146
-            - GM 3295a
-            - GM 3295b
-            - GM 3295c
-            - GM 3035
-            - GM 3600
-            - GM 3665
-            - GM 8052
-            - GM 9292
+          - prefix: GM
+            numbers: [70, 746, 1331, 1670, 1898, 2103, 2146, 3295a, 3295b, 3295c, 3035, 3600, 3665, 8052, 9292]
             role: paratype

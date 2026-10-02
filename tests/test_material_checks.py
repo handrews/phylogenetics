@@ -145,6 +145,142 @@ def test_repository_of_unresolvable_prefix(repositories):
   assert material.repository_of('ZZZZ 12', repositories) == (None, None)
 
 
+# -- resolve_number: the bare number and the register's subject ---------------
+
+
+@pytest.fixture
+def registers(repositories):
+  """`repositories` plus the specimen registers and locality registers the
+  real registry has for the cases below."""
+  return {
+    **repositories,
+    'uq-f': _entry('UQF', 'F'),
+    'gsc': _entry('GSC', other_names=['Canadian Geological Survey']),
+    'usgs-l': {**_entry('USGS'), 'subject': 'localities'},
+    'usnm-l': {
+      **_entry('USNM', 'USNM loc', 'USNM locality', 'Walcott', 'Walcott locality'),
+      'subject': 'localities',
+    },
+    'own-l': {'name': 'x', 'type': 'person', 'subject': 'localities'},
+    'other-l': {'name': 'y', 'type': 'person', 'subject': 'localities'},
+  }
+
+
+@pytest.mark.parametrize(
+  ('number', 'key', 'bare'),
+  [
+    ('F. 5404', 'uq-f', '5404'),
+    ('UQF5404', 'uq-f', '5404'),
+    ('UQF 5404', 'uq-f', '5404'),
+    ('UQF No. 5404', 'uq-f', '5404'),
+    ('FMNH PE 214', 'fmnh', '214'),
+    ('MCZ 602-D1', 'mcz', '602-D1'),
+    ('Canadian Geological Survey 752', 'gsc', '752'),
+    ('canadian  geological survey 752', 'gsc', '752'),
+    ('USNM S-3965', 'usnm', 'S-3965'),
+  ],
+)
+def test_resolve_number_bare_number(registers, number, key, bare):
+  assert material.resolve_number(number, registers)[::2] == (key, bare)
+
+
+def test_resolve_number_bare_number_through_the_file_list(registers):
+  assert material.resolve_number('PE-214', registers, ['fmnh']) == ('fmnh', 'file', '214')
+  assert material.resolve_number('PE 214', registers, ['north-museum-fm']) == (
+    'north-museum-fm',
+    'file',
+    '214',
+  )
+
+
+def test_resolve_number_strips_only_the_matched_candidate(registers):
+  # The prefix is "USGS D", the candidate "USGS": the "D" belongs to the number.
+  assert material.resolve_number('USGS D190d CO', registers, localities=True) == (
+    'usgs-l',
+    'prefix',
+    'D190d CO',
+  )
+
+
+def test_resolve_number_unmatched_and_ambiguous_return_the_number_unchanged(registers):
+  assert material.resolve_number('ZZZZ 12', registers) == (None, None, 'ZZZZ 12')
+  assert material.resolve_number('12345', registers) == (None, None, '12345')
+  assert material.resolve_number('E 1', registers) == (
+    ('nhmuk', 'uc-caster'),
+    material.AMBIGUOUS,
+    'E 1',
+  )
+
+
+def test_resolve_number_a_number_that_is_only_its_prefix_stays_whole(registers):
+  assert material.resolve_number('UQF', registers) == ('uq-f', 'prefix', 'UQF')
+
+
+def test_resolve_number_localities_read_the_locality_registers_only(registers):
+  assert material.resolve_number('USNM loc. 35k', registers, localities=True) == (
+    'usnm-l',
+    'prefix',
+    '35k',
+  )
+  assert material.resolve_number('Walcott 35k', registers, localities=True)[::2] == (
+    'usnm-l',
+    '35k',
+  )
+  assert material.resolve_number('USNM locality 74e', registers, localities=True)[::2] == (
+    'usnm-l',
+    '74e',
+  )
+  assert material.resolve_number('Walcott locality 74e', registers, localities=True)[::2] == (
+    'usnm-l',
+    '74e',
+  )
+
+
+def test_resolve_number_the_subject_filter_works_both_ways(registers):
+  # A locality prefix does not resolve a catalog number ...
+  assert material.resolve_number('USGS 4148', registers) == (None, None, 'USGS 4148')
+  assert material.resolve_number('Walcott 35k', registers) == (None, None, 'Walcott 35k')
+  assert material.repository_of('USNM 35k', registers) == ('usnm', 'prefix')
+  # ... and a specimen prefix does not resolve a locality number.
+  assert material.resolve_number('GM 12', registers, localities=True) == (None, None, 'GM 12')
+  assert material.resolve_number('UQF 12', registers, localities=True) == (None, None, 'UQF 12')
+
+
+def test_resolve_number_locality_fallback_is_the_one_prefixless_register_listed(registers):
+  assert material.resolve_number('SH-1', registers, ['own-l'], localities=True) == (
+    'own-l',
+    'file',
+    'SH-1',
+  )
+  # A listed register that has prefixes is not the author's own codes.
+  assert material.resolve_number('SH-1', registers, ['usgs-l'], localities=True) == (
+    None,
+    None,
+    'SH-1',
+  )
+  # None listed, two listed, or a specimen register listed: unresolved.
+  assert material.resolve_number('SH-1', registers, (), localities=True)[1] is None
+  assert (
+    material.resolve_number('SH-1', registers, ['own-l', 'other-l'], localities=True)[1] is None
+  )
+  assert material.resolve_number('SH-1', registers, ['fmnh'], localities=True)[1] is None
+  # A prefix that matches wins over the fallback; the fallback is for localities only.
+  assert material.resolve_number('USGS 5', registers, ['own-l'], localities=True)[0] == 'usgs-l'
+  assert material.resolve_number('SH-1', registers, ['own-l']) == (None, None, 'SH-1')
+
+
+def test_bare_number_strips_the_named_repositorys_own_prefix_or_name(registers):
+  assert material.bare_number('GSC 752', 'gsc', registers) == '752'
+  assert material.bare_number('Canadian Geological Survey 752', 'gsc', registers) == '752'
+  assert material.bare_number('F. 5404', 'uq-f', registers) == '5404'
+  assert material.bare_number('FMNH PE 214', 'fmnh', registers) == '214'
+  # Another holder's prefix, no prefix at all, or an unknown repository: unchanged.
+  assert material.bare_number('XYZ 1', 'nhmuk', registers) == 'XYZ 1'
+  assert material.bare_number('12345', 'gsc', registers) == '12345'
+  assert material.bare_number('GSC 752', 'nowhere', registers) == 'GSC 752'
+  assert material.bare_number('UQF', 'uq-f', registers) == 'UQF'
+
+
 # -- registry_links -------------------------------------------------------------
 
 
@@ -248,6 +384,21 @@ def test_file_repositories_used_ellipsis_and_ambiguous_do_not_count(repositories
   ]
 
 
+def test_file_repositories_used_a_locality_number_counts(registers):
+  node = {'contexts': {'a': {'localityNumbers': ['SH-1']}}}
+  document = {'taxonomies': [{'taxon': 'a', **node}], 'repositories': ['own-l']}
+  assert material.file_repositories_used(document, registers) == []
+  # A file-level context counts too, and a listed register no number reaches is an error.
+  document = {
+    'taxonomies': [{'taxon': 'a'}],
+    'contexts': {'a': {'localityNumbers': ['USGS 5462', 'Walcott 35k']}},
+    'repositories': ['usgs-l', 'usnm-l', 'own-l'],
+  }
+  assert material.file_repositories_used(document, registers) == [
+    ('error', 'repository "own-l" is listed but no catalog number in the file resolves to it'),
+  ]
+
+
 # -- context_refs -------------------------------------------------------------
 
 
@@ -274,6 +425,75 @@ def test_context_refs_node_key_shadows_file_key_is_warning():
 def test_context_refs_object_form_and_no_context():
   node = {'material': [{'label': 'A', 'context': {'key': 'here', 'tentative': True}}, {'count': 1}]}
   assert material.context_refs(node, {'here': {}}, {}) == []
+
+
+# -- tentative_fields ---------------------------------------------------------
+
+
+def test_tentative_names_a_field_the_range_does_not_carry():
+  rng = {'period': 'Ordovician', 'tentative': ['series']}
+  assert material.tentative_fields(rng, 'range') == [
+    ('error', '`tentative` names `series`, which the range does not carry'),
+  ]
+  context = {'unit': ['A Fm.'], 'tentative': ['unit', 'biozone']}
+  assert material.tentative_fields(context, 'context') == [
+    ('error', '`tentative` names `biozone`, which the context does not carry'),
+  ]
+
+
+def test_tentative_cannot_name_a_key_that_is_no_printed_value():
+  rng = {'series': 'Middle Ordovician', 'regions': ['Ottawa'], 'asPrinted': 'x', 'notes': 'y'}
+  rng['tentative'] = ['tentative', 'notes', 'asPrinted', 'inferred', 'sources', 'regions']
+  messages = material.tentative_fields(rng, 'range')
+  assert [level for level, _ in messages] == ['error'] * 6
+  assert [m.split('`')[3] for _, m in messages] == rng['tentative']
+
+
+def test_tentative_true_on_a_file_level_context_is_error():
+  context = {'unit': ['A Fm.'], 'tentative': True}
+  assert material.tentative_fields(context, 'context', file_level=True) == [
+    (
+      'error',
+      'a file-level context cannot be `tentative: true`; the doubt belongs to the node '
+      'or the specimen that uses it',
+    ),
+  ]
+
+
+def test_tentative_clean_cases():
+  # A list on a range, a list on a node and a file-level context, `true`
+  # on a node-level context and on a range, and no `tentative` at all.
+  assert material.tentative_fields({'series': 'X', 'tentative': ['series']}, 'range') == []
+  assert material.tentative_fields({'series': 'X', 'tentative': True}, 'range') == []
+  assert material.tentative_fields({'biozone': 'X', 'tentative': ['biozone']}, 'context') == []
+  assert (
+    material.tentative_fields({'biozone': 'X', 'tentative': ['biozone']}, 'context', True) == []
+  )
+  assert material.tentative_fields({'unit': ['A']}, 'context', True) == []
+  assert material.tentative_fields(None, 'context') == []
+  node = {
+    'ranges': [{'series': 'X', 'tentative': ['series']}, {'period': 'Y', 'tentative': True}, None],
+    'contexts': {'a': {'biozone': 'X', 'tentative': ['biozone']}, 'b': {'tentative': True}},
+  }
+  assert material.range_tentatives(node) == []
+  assert material.context_tentatives(node['contexts']) == []
+  assert material.range_tentatives({'ranges': None}) == []
+
+
+def test_tentative_checks_name_the_context_and_run_over_the_lists():
+  node = {'ranges': [{'period': 'Y', 'tentative': ['series']}]}
+  assert material.range_tentatives(node) == [
+    ('error', '`tentative` names `series`, which the range does not carry'),
+  ]
+  contexts = {'a': {'unit': ['A'], 'tentative': True}, 'b': {'tentative': ['biozone']}, 'c': None}
+  assert material.context_tentatives(contexts) == [
+    ('error', 'context "b": `tentative` names `biozone`, which the context does not carry'),
+  ]
+  assert [m for _, m in material.context_tentatives(contexts, file_level=True)] == [
+    'context "a": a file-level context cannot be `tentative: true`; the doubt belongs to the '
+    'node or the specimen that uses it',
+    'context "b": `tentative` names `biozone`, which the context does not carry',
+  ]
 
 
 # -- unreferenced_file_contexts -----------------------------------------------
@@ -537,6 +757,38 @@ def test_unresolved_catalog_numbers_lists_values_by_name(repositories):
     ],
   }
   assert material.unresolved_catalog_numbers(node, repositories) == ['ZZZZ 3']
+
+
+# -- locality_numbers -----------------------------------------------------------
+
+
+def test_locality_numbers_unresolved_is_warning(registers):
+  contexts = {'a': {'localityNumbers': ['USGS 5462', 'SH-1']}}
+  assert material.locality_numbers(contexts, registers) == [
+    ('warning', 'locality number "SH-1" resolves to no locality register'),
+  ]
+  assert material.locality_numbers(contexts, registers, ['own-l']) == []
+
+
+def test_locality_numbers_a_catalog_prefix_is_no_locality_register(registers):
+  contexts = {'a': {'localityNumbers': ['GM 12']}}
+  assert material.locality_numbers(contexts, registers) == [
+    ('warning', 'locality number "GM 12" resolves to no locality register'),
+  ]
+
+
+def test_locality_numbers_ambiguous_is_error_naming_the_entries(registers):
+  registers = {**registers, 'usgs-2': {**_entry('USGS'), 'subject': 'localities'}}
+  contexts = {'a': {'localityNumbers': ['USGS 1']}}
+  assert material.locality_numbers(contexts, registers) == [
+    ('error', 'locality number "USGS 1" has an ambiguous prefix: usgs-2, usgs-l'),
+  ]
+  assert material.locality_numbers(contexts, registers, ['usgs-l']) == []
+
+
+def test_locality_numbers_no_contexts_or_numbers_is_quiet(registers):
+  assert material.locality_numbers(None, registers) == []
+  assert material.locality_numbers({'a': {'unit': ['x']}, 'b': None}, registers) == []
 
 
 # -- cast_refs -------------------------------------------------------------------
@@ -905,6 +1157,60 @@ def test_load_reports_material_checks_at_the_right_level(caplog):
   assert any('repository "gm" is listed but no catalog number' in m for m in errors)
 
 
+def test_load_reports_locality_numbers_per_node_and_for_the_file(caplog):
+  from phylohist.loader.load import _report_material
+
+  data = {
+    'repositories': {'usgs-l': {**_entry('USGS'), 'subject': 'localities'}},
+    'trees': {
+      '_synthetic_source': {
+        'contexts': {'f': {'localityNumbers': ['USGS 1', 'ZZ-1']}},
+        'taxonomies': [{'taxon': 'a', 'contexts': {'n': {'localityNumbers': ['YY-2']}}}],
+      },
+    },
+  }
+  with caplog.at_level(logging.WARNING, logger='phylohist'):
+    _report_material(data)
+  warnings = [r.getMessage() for r in caplog.records if r.levelno == logging.WARNING]
+  assert any(
+    m.startswith('_synthetic_source: locality number "ZZ-1" resolves to no') for m in warnings
+  )
+  assert any(
+    m.startswith('_synthetic_source at 0: locality number "YY-2" resolves to no') for m in warnings
+  )
+  assert not any('"USGS 1"' in m for m in warnings)
+
+
+def test_load_reports_tentative_on_ranges_and_contexts(caplog):
+  from phylohist.loader.load import _report_material
+
+  data = {
+    'trees': {
+      '_synthetic_source': {
+        'contexts': {'f': {'biozone': 'X', 'tentative': True}},
+        'taxonomies': [
+          {
+            'taxon': 'a',
+            'contexts': {'n': {'tentative': ['biozone']}},
+            'ranges': [{'period': 'Y', 'tentative': ['series']}],
+          },
+        ],
+      },
+    },
+  }
+  with caplog.at_level(logging.ERROR, logger='phylohist'):
+    _report_material(data)
+  errors = [r.getMessage() for r in caplog.records if r.levelno == logging.ERROR]
+  assert any(m.startswith('_synthetic_source: context "f": a file-level context') for m in errors)
+  assert any(
+    m.startswith('_synthetic_source at 0: context "n": `tentative` names `biozone`') for m in errors
+  )
+  assert any(
+    m.startswith('_synthetic_source at 0: `tentative` names `series`, which the range')
+    for m in errors
+  )
+
+
 # -- scripts/check_draft.py ---------------------------------------------------
 
 
@@ -935,6 +1241,19 @@ def test_check_draft_exits_one_on_material_null_on_a_cited_entry(tmp_path):
   result = _run_check_draft(draft)
   assert result.returncode == 1, result.stdout + result.stderr
   assert 'cited entry carries `material`' in result.stdout
+
+
+def test_check_draft_exits_one_on_a_tentative_naming_an_absent_field(tmp_path):
+  draft = tmp_path / '1898_bather.yaml'
+  draft.write_text(
+    'contexts:\n  f:\n    tentative: true\n'
+    'taxonomies:\n- taxon: cyathocystis\n'
+    '  ranges:\n  - period: Cambrian\n    tentative: [series]\n',
+  )
+  result = _run_check_draft(draft)
+  assert result.returncode == 1, result.stdout + result.stderr
+  assert 'a file-level context cannot be `tentative: true`' in result.stdout
+  assert '`tentative` names `series`, which the range does not carry' in result.stdout
 
 
 def test_check_draft_exits_one_on_illustrations_null_on_a_primary_node(tmp_path):
@@ -993,6 +1312,23 @@ def test_check_draft_exits_one_on_of_in_a_cited_entrys_illustrations(tmp_path):
   assert 'cited entry `illustrations` entry carries `of`' in result.stdout
 
 
+def test_check_draft_warns_on_an_unresolved_locality_number_and_is_quiet_once_listed(tmp_path):
+  body = (
+    'contexts:\n  a:\n    localityNumbers: [SH-1]\n'
+    'taxonomies:\n- taxon: cyathocystis\n  contexts:\n    b:\n      localityNumbers: [IK-3]\n'
+  )
+  draft = tmp_path / '1898_bather.yaml'
+  draft.write_text(body)
+  result = _run_check_draft(draft)
+  assert result.stdout.count('resolves to no locality register') == 2, result.stdout
+  assert 'warning: locality number "SH-1"' in result.stdout
+  assert 'warning: 0: locality number "IK-3"' in result.stdout
+
+  draft.write_text('repositories: [sprinkle-l]\n' + body)
+  result = _run_check_draft(draft)
+  assert 'resolves to no locality register' not in result.stdout, result.stdout
+
+
 def test_check_draft_exits_one_on_a_listed_but_unused_repository(tmp_path):
   draft = tmp_path / '1898_bather.yaml'
   draft.write_text(
@@ -1029,3 +1365,460 @@ def test_roles_registry_matches_the_schema_enum():
   for name, entry in roles.items():
     equivalent = entry.get('equivalent')
     assert equivalent is None or (equivalent in roles and equivalent != name), name
+
+
+# -- the `prefix` + `numbers` shape --------------------------------------------
+
+
+@pytest.fixture
+def numbered(registers):
+  """`registers` plus a register that lists its prefix, a collection that
+  lists none, and an institution of the same name as one of its series."""
+  return {
+    **registers,
+    'mcz-bare': {'name': 'x', 'type': 'collection', 'within': 'mcz', 'subject': 'specimens'},
+    'nhmuk-ee': {
+      'name': 'x',
+      'type': 'collection',
+      'within': 'nhmuk',
+      'subject': 'specimens',
+      'prefixes': ['EE'],
+      'otherNames': ['Reg  E E'],
+    },
+  }
+
+
+def _node(*entries, **extra):
+  return {'material': list(entries), **extra}
+
+
+def test_number_entries_prefix_missing_from_the_map_is_error(numbered):
+  node = _node({'prefix': 'XX', 'numbers': [1]})
+  assert material.number_entries(node, {'MCZ': 'mcz'}, numbered) == [
+    ('error', 'prefix "XX" is not in the file\'s `prefixes` map'),
+  ]
+  assert material.number_entries(node, {'XX': 'mcz'}, numbered) == []
+  # No map at all is the same error.
+  assert material.number_entries(node, {}, numbered)[0][0] == 'error'
+
+
+def test_number_entries_numbers_need_a_prefix_a_repository_or_a_holder(numbered):
+  assert material.number_entries(_node({'numbers': ['5']}), {}, numbered) == [
+    ('error', 'numbers with no prefix, repository or holder'),
+  ]
+  for entry in (
+    {'numbers': ['5'], 'repository': 'gsc'},
+    {'numbers': ['5'], 'holder': 'A. R. Palmer'},
+    {'numbers': ['5'], 'prefix': 'GSC'},
+  ):
+    assert material.number_entries(_node(entry), {'GSC': 'gsc'}, numbered) == []
+
+
+def test_number_entries_a_number_that_begins_with_its_registers_prefix_warns(numbered):
+  prefixes = {'EE': 'nhmuk-ee', 'F.': 'uq-f'}
+  node = _node(
+    {'prefix': 'EE', 'numbers': ['EE16642', 'EE-1', 'EE.2', 'ee 3', 'reg e e 4', ['EE5', 7]]},
+    {'prefix': 'F.', 'numbers': ['F. 5404', 'F5405', 'FE 6']},
+  )
+  assert material.number_entries(node, prefixes, numbered) == [
+    ('warning', f'number "{n}" begins with a prefix of its register "{r}"')
+    for r, n in (
+      ('nhmuk-ee', 'EE16642'),
+      ('nhmuk-ee', 'EE-1'),
+      ('nhmuk-ee', 'EE.2'),
+      ('nhmuk-ee', 'ee 3'),
+      ('nhmuk-ee', 'reg e e 4'),
+      ('nhmuk-ee', 'EE5'),
+      ('uq-f', 'F. 5404'),
+      ('uq-f', 'F5405'),
+    )
+  ]
+
+
+def test_number_entries_a_clean_number_and_other_cases_are_quiet(numbered):
+  prefixes = {'EE': 'nhmuk-ee', 'MCZ': 'mcz-bare'}
+  node = _node(
+    {'prefix': 'EE', 'numbers': ['16642', 16643, 'EEx1', [10, 12]]},
+    # A register that lists no form has nothing to begin with.
+    {'prefix': 'MCZ', 'numbers': ['MCZ 1']},
+    # The old shape is not read.
+    {'catalogNumbers': ['EE 1', 'numbers 2']},
+  )
+  assert material.number_entries(node, prefixes, numbered) == []
+  assert material.number_entries({}, prefixes, numbered) == []
+
+
+def test_number_entries_reads_the_explicit_repository_register_too(numbered):
+  node = _node({'prefix': 'USNM', 'numbers': ['EE 1'], 'repository': 'nhmuk-ee'})
+  assert material.number_entries(node, {'USNM': 'usnm'}, numbered) == [
+    ('warning', 'number "EE 1" begins with a prefix of its register "nhmuk-ee"'),
+  ]
+
+
+def test_catalog_numbers_leaves_the_new_shape_alone_but_checks_its_repository(numbered):
+  node = _node({'prefix': 'MCZ', 'numbers': ['ZZZ 1']}, {'numbers': ['1'], 'repository': 'nope'})
+  assert material.catalog_numbers(node, numbered) == [
+    ('error', 'repository "nope" is not a key of the registry'),
+  ]
+  assert material.unresolved_catalog_numbers(node, numbered) == []
+
+
+def _prefix_document(prefixes, *entries, **extra):
+  return {'prefixes': prefixes, 'taxonomies': [{'taxon': 'a', 'material': list(entries)}], **extra}
+
+
+def test_file_prefixes_clean_file_is_quiet(numbered):
+  document = _prefix_document(
+    {'MCZ': 'mcz', 'F.': 'uq-f', 'USGS': 'usgs-l', 'EE': 'nhmuk-ee'},
+    {'prefix': 'MCZ', 'numbers': [1]},
+    {'prefix': 'F.', 'numbers': [2]},
+    {'prefix': 'EE', 'numbers': [3]},
+    contexts={'a': {'localityNumbers': [{'prefix': 'USGS', 'number': 1}]}},
+    localityRegister='usgs-l',
+  )
+  assert material.file_prefixes(document, numbered) == []
+  assert material.file_prefixes({'taxonomies': []}, numbered) == []
+
+
+def test_file_prefixes_a_value_that_is_no_registry_key_is_error(numbered):
+  document = _prefix_document({'MCZ': 'mcz-nowhere'}, {'prefix': 'MCZ', 'numbers': [1]})
+  assert material.file_prefixes(document, numbered) == [
+    ('error', 'prefix "MCZ" is mapped to "mcz-nowhere", which is not a key of the registry'),
+  ]
+
+
+def test_file_prefixes_a_prefix_nothing_uses_is_error(numbered):
+  document = _prefix_document(
+    {'MCZ': 'mcz', 'GM': 'gm', 'USGS': 'usgs-l', 'NMV': 'gm'},
+    {'prefix': 'MCZ', 'numbers': [1]},
+    {'catalogNumbers': ['GM 1']},
+  )
+  document['taxonomies'][0]['contexts'] = {
+    'b': {'localityNumbers': [{'prefix': 'USGS', 'number': 1}]}
+  }
+  assert [m for _, m in material.file_prefixes(document, numbered)] == [
+    'prefix "GM" in the file\'s `prefixes` map is used by nothing',
+    'prefix "NMV" is not a known form of "gm"',
+    'prefix "NMV" in the file\'s `prefixes` map is used by nothing',
+  ]
+
+
+def test_file_prefixes_a_prefix_the_register_does_not_list_is_warning(numbered):
+  document = _prefix_document(
+    {'MCZ': 'gm', 'U.S.N.M.': 'usnm', 'BMNH': 'nhmuk'},
+    {'prefix': 'MCZ', 'numbers': [1]},
+    {'prefix': 'U.S.N.M.', 'numbers': [2]},
+    {'prefix': 'BMNH', 'numbers': [3]},
+  )
+  assert material.file_prefixes(document, numbered) == [
+    ('warning', 'prefix "MCZ" is not a known form of "gm"'),
+    ('warning', 'prefix "U.S.N.M." is not a known form of "usnm"'),
+  ]
+
+
+def test_file_prefixes_forms_compare_folded_with_a_trailing_period_ignored(numbered):
+  document = _prefix_document(
+    {'F.': 'uq-f', 'uqf': 'uq-f', 'Nhm  Uk': 'nhmuk', 'bmnh.': 'nhmuk'},
+    *({'prefix': p, 'numbers': [1]} for p in ('F.', 'uqf', 'Nhm  Uk', 'bmnh.')),
+  )
+  assert material.file_prefixes(document, numbered) == []
+
+
+def test_file_prefixes_a_register_with_no_forms_is_not_warned_about(numbered):
+  # The registers for series a holder numbers separately list no prefix yet.
+  document = _prefix_document({'PE': 'mcz-bare'}, {'prefix': 'PE', 'numbers': [1]})
+  assert material.file_prefixes(document, numbered) == []
+
+
+def test_file_prefixes_locality_register_must_be_a_registry_key(numbered):
+  assert material.file_prefixes({'localityRegister': 'usgs-l'}, numbered) == []
+  assert material.file_prefixes({'localityRegister': 'nope-l'}, numbered) == [
+    ('error', 'localityRegister "nope-l" is not a key of the registry'),
+  ]
+
+
+def test_locality_objects(numbered):
+  contexts = {
+    'a': {
+      'localityNumbers': [
+        'FC-1',
+        {'number': 'FC-2'},
+        {'prefix': 'USGS', 'number': '4148 CO'},
+        {'prefix': 'ZZ', 'number': 1},
+        {'register': 'usgs-l', 'number': 'D190d CO'},
+        {'register': 'nope-l', 'number': 7},
+      ]
+    },
+    'b': None,
+  }
+  prefixes = {'USGS': 'usgs-l'}
+  assert material.locality_objects(contexts, prefixes, None, numbered) == [
+    ('warning', 'locality number "FC-2" has no register'),
+    ('error', 'prefix "ZZ" is not in the file\'s `prefixes` map'),
+    ('error', 'locality register "nope-l" is not a key of the registry'),
+  ]
+  # A file `localityRegister` gives the bare number its register.
+  assert [m for _, m in material.locality_objects(contexts, prefixes, 'sprinkle-l', numbered)] == [
+    'prefix "ZZ" is not in the file\'s `prefixes` map',
+    'locality register "nope-l" is not a key of the registry',
+  ]
+  assert material.locality_objects(None, prefixes, None, numbered) == []
+
+
+def test_locality_numbers_leaves_the_object_form_to_its_own_check(registers):
+  contexts = {'a': {'localityNumbers': [{'number': 'SH-1'}, {'prefix': 'USGS', 'number': 1}]}}
+  assert material.locality_numbers(contexts, registers) == []
+  document = {'repositories': ['own-l'], 'contexts': contexts}
+  assert material.file_repositories_used(document, registers) == [
+    ('error', 'repository "own-l" is listed but no catalog number in the file resolves to it'),
+  ]
+
+
+# -- entries_named for the `prefix` + `numbers` shape ---------------------------
+
+
+def test_entries_named_by_label_number_or_integer():
+  entries = [
+    {'prefix': 'MCZ', 'numbers': ['581A', 582, 'KR-2'], 'label': 'The Type'},
+    {'prefix': 'MCZ', 'numbers': [600]},
+  ]
+  assert material.entries_named(entries, 'The Type') == entries[:1]
+  assert material.entries_named(entries, 'the  type') == entries[:1]
+  assert material.entries_named(entries, '581A') == entries[:1]
+  assert material.entries_named(entries, '581a') == entries[:1]
+  assert material.entries_named(entries, 582) == entries[:1]
+  assert material.entries_named(entries, '582') == entries[:1]
+  assert material.entries_named(entries, 'kr 2') == entries[:1]
+  assert material.entries_named(entries, 600) == entries[1:]
+  assert material.entries_named(entries, 601) == []
+  # The prefix is no part of a number.
+  assert material.entries_named(entries, 'MCZ 600') == []
+
+
+def test_entries_named_inside_a_pair_and_exact_before_in_run():
+  entries = [
+    {'prefix': 'GSC', 'numbers': [[25935, 25961]]},
+    {'prefix': 'GSC', 'numbers': [['A12', 'A20'], 25950]},
+    {'prefix': 'GSC', 'numbers': [25940, ['25960', '25970']]},
+  ]
+  # An end of a pair counts exactly.
+  assert material.entries_named(entries, 25935) == entries[:1]
+  assert material.entries_named(entries, '25961') == entries[:1]
+  # Inside a run only, by the run.
+  assert material.entries_named(entries, 25936) == entries[:1]
+  assert material.entries_named(entries, 'A15') == entries[1:2]
+  assert material.entries_named(entries, 'a15') == []
+  # Exact before in-run: 25940 is a number of the third and in the run of the first.
+  assert material.entries_named(entries, 25940) == entries[2:]
+  assert material.entries_named(entries, 25950) == entries[1:2]
+  assert material.entries_named(entries, 25965) == entries[2:]
+  assert material.entries_named(entries, 30000) == []
+
+
+def test_entries_named_keeps_the_old_rule_for_the_old_shape_beside_the_new():
+  old = {'catalogNumbers': [['GSC 1', 'GSC 5']], 'label': 'A'}
+  new = {'prefix': 'GSC', 'numbers': [3]}
+  entries = [old, new]
+  assert material.entries_named(entries, 'GSC 3') == [old]
+  assert material.entries_named(entries, 'GSC 5') == [old]
+  assert material.entries_named(entries, 3) == [new]
+  assert material.entries_named(entries, 'a') == []
+
+
+def test_figure_and_cast_refs_read_the_new_shape():
+  node = {
+    'material': [
+      {'prefix': 'MCZ', 'numbers': [581, 'B2']},
+      {'prefix': 'MCZ', 'numbers': [[600, 610]], 'castOf': 581},
+      {'prefix': 'MCZ', 'numbers': [700], 'castOf': 'no-such'},
+    ],
+    'illustrations': [
+      {'plate': 1, 'of': 581},
+      {'plate': 2, 'of': [605, 'B2']},
+      {'plate': 3, 'of': 999},
+    ],
+  }
+  assert material.figure_refs(node) == [
+    ('error', 'figure "of" value "999" matches 0 material entries, not 1'),
+  ]
+  assert material.cast_refs(node) == [
+    ('error', 'castOf "no-such" matches 0 material entries, not 1'),
+  ]
+
+
+# -- the schema ------------------------------------------------------------------
+
+
+def _schema_accepts(document):
+  return io.build_schema()[io.TREE_DEF].check(document)
+
+
+def _numbers_document(*entries, **extra):
+  return {'taxonomies': [{'taxon': 'cyathocystis', 'material': list(entries)}], **extra}
+
+
+def test_schema_accepts_the_new_shape():
+  document = _numbers_document(
+    {'prefix': 'MCZ', 'numbers': ['581A', 581, [1, 5], ['A1', 'A5']], 'parts': ['part']},
+    {'prefix': 'GSC', 'numbers': [[25935, 25961]], 'asPrinted': 'GSC 25935–25961'},
+    {'repository': 'u-cincinnati-caster', 'numbers': ['KR-2']},
+    {'holder': 'A. R. Palmer', 'numbers': [[500, 501]]},
+    {'prefix': 'USNM', 'repository': 'usnm-walcott', 'numbers': [1], 'castOf': 5, 'fragmentOf': 6},
+    prefixes={'MCZ': 'mcz', 'GSC': 'gsc', 'USNM': 'usnm'},
+    localityRegister='sprinkle-l',
+    contexts={
+      'a': {
+        'localityNumbers': [
+          'USGS 1',
+          {'number': 'FC-1'},
+          {'prefix': 'USGS', 'number': '4148 CO'},
+          {'register': 'usgs-l', 'number': 'D190d CO'},
+          {'number': 7},
+        ]
+      }
+    },
+  )
+  document['taxonomies'][0]['illustrations'] = [
+    {'plate': 1, 'of': 581},
+    {'plate': 2, 'of': [1, 'a']},
+  ]
+  assert _schema_accepts(document)
+
+
+@pytest.mark.parametrize(
+  'entry',
+  [
+    {'catalogNumbers': ['MCZ 1'], 'numbers': [1]},
+    {'prefix': 'MCZ'},
+    {'prefix': 'MCZ', 'catalogNumbers': ['MCZ 1']},
+    {'prefix': '', 'numbers': [1]},
+    {'prefix': 'MCZ', 'numbers': []},
+    {'prefix': 'MCZ', 'numbers': [[1, 2, 3]]},
+    {'prefix': 'MCZ', 'numbers': [[1]]},
+    {'prefix': 'MCZ', 'numbers': [1.5]},
+    {'prefix': 'MCZ', 'numbers': [[1, [2]]]},
+    {'prefix': 'MCZ', 'numbers': [1], 'asPrinted': 3},
+  ],
+)
+def test_schema_rejects_a_malformed_or_mixed_entry(entry):
+  assert not _schema_accepts(_numbers_document(entry))
+
+
+@pytest.mark.parametrize(
+  'extra',
+  [
+    {'prefixes': {'': 'mcz'}},
+    {'prefixes': {'MCZ': 'Not A Key'}},
+    {'prefixes': {'MCZ': 5}},
+    {'prefixes': ['MCZ']},
+    {'localityRegister': ['sprinkle-l']},
+    {'contexts': {'a': {'localityNumbers': [{'prefix': 'A'}]}}},
+    {'contexts': {'a': {'localityNumbers': [{'number': 1, 'prefix': 'A', 'register': 'usgs-l'}]}}},
+    {'contexts': {'a': {'localityNumbers': [{'number': 1, 'other': 'x'}]}}},
+    {'contexts': {'a': {'localityNumbers': [{'number': 1, 'prefix': ''}]}}},
+    {'contexts': {'a': {'localityNumbers': [{'number': 1, 'register': 'Not A Key'}]}}},
+  ],
+)
+def test_schema_rejects_a_malformed_prefix_map_or_locality_number(extra):
+  assert not _schema_accepts(_numbers_document({'label': 'A'}, **extra))
+
+
+# -- Tree metadata, the loader and the draft checker ---------------------------
+
+
+def test_tree_reads_the_prefix_map_and_locality_register_from_root_metadata(load_records):
+  metadata = {
+    'source_key': '1961_dehm',
+    'position': 903,
+    'type': 'taxonomy',
+    'file_prefixes': {'MCZ': 'mcz'},
+    'file_locality_register': 'sprinkle-l',
+  }
+  root = Tree({'children': [{}]}, metadata)
+  child = root.children[0]
+  assert (child.file_prefixes, child.file_locality_register) == ({'MCZ': 'mcz'}, 'sprinkle-l')
+  bare = Tree({}, {'source_key': '1961_dehm', 'position': 904, 'type': 'taxonomy'})
+  assert (bare.file_prefixes, bare.file_locality_register) == ({}, None)
+
+
+def test_load_reports_the_new_shape_checks(caplog):
+  from phylohist.loader.load import _report_material
+
+  data = {
+    'repositories': {
+      'mcz': _entry('MCZ'),
+      'usgs-l': {**_entry('USGS'), 'subject': 'localities'},
+    },
+    'trees': {
+      '_synthetic_source': {
+        'prefixes': {'MCZ': 'mcz', 'GM': 'mcz', 'USGS': 'usgs-l'},
+        'contexts': {'f': {'localityNumbers': [{'prefix': 'QQ', 'number': 1}]}},
+        'taxonomies': [
+          {
+            'taxon': 'a',
+            'material': [
+              {'prefix': 'MCZ', 'numbers': ['MCZ 1']},
+              {'prefix': 'ZZ', 'numbers': [2]},
+              {'numbers': [3]},
+            ],
+            'contexts': {
+              'n': {'localityNumbers': [{'number': 'FC-1'}, {'prefix': 'USGS', 'number': 1}]}
+            },
+          },
+        ],
+      },
+    },
+  }
+  with caplog.at_level(logging.WARNING, logger='phylohist'):
+    _report_material(data)
+  warnings = [r.getMessage() for r in caplog.records if r.levelno == logging.WARNING]
+  errors = [r.getMessage() for r in caplog.records if r.levelno == logging.ERROR]
+  assert '_synthetic_source: prefix "GM" is not a known form of "mcz"' in warnings
+  assert (
+    '_synthetic_source at 0: number "MCZ 1" begins with a prefix of its register "mcz"' in warnings
+  )
+  assert '_synthetic_source at 0: locality number "FC-1" has no register' in warnings
+  assert '_synthetic_source: prefix "GM" in the file\'s `prefixes` map is used by nothing' in errors
+  assert '_synthetic_source at 0: prefix "ZZ" is not in the file\'s `prefixes` map' in errors
+  assert '_synthetic_source at 0: numbers with no prefix, repository or holder' in errors
+  assert '_synthetic_source: prefix "QQ" is not in the file\'s `prefixes` map' in errors
+  # The file's own contexts are read as a file: no `localityRegister`, no prefix.
+  assert not any('resolves to no locality register' in m for m in warnings)
+
+
+def test_check_draft_reports_the_new_shape_checks(tmp_path):
+  draft = tmp_path / '1898_bather.yaml'
+  draft.write_text(
+    'prefixes:\n  MCZ: mcz\n  XX: usnm\n'
+    'localityRegister: sprinkle-l\n'
+    'contexts:\n  a:\n    localityNumbers:\n    - {number: FC-1}\n    - {prefix: ZZ, number: 1}\n'
+    'taxonomies:\n- taxon: cyathocystis\n  material:\n'
+    '  - {prefix: MCZ, numbers: [581A]}\n  - {numbers: [3]}\n  - {prefix: QQ, numbers: [4]}\n'
+  )
+  result = _run_check_draft(draft)
+  assert result.returncode == 1, result.stdout + result.stderr
+  for line in (
+    'error: prefix "ZZ" is not in the file\'s `prefixes` map',
+    'error: prefix "XX" in the file\'s `prefixes` map is used by nothing',
+    'warning: prefix "XX" is not a known form of "usnm"',
+    'error: 0: numbers with no prefix, repository or holder',
+    'error: 0: prefix "QQ" is not in the file\'s `prefixes` map',
+  ):
+    assert line in result.stdout, line
+  assert 'locality number "FC-1" has no register' not in result.stdout
+  # `numbers` is no catalog number: nothing is listed as unresolved.
+  assert 'prefixes: 0 without a resolvable repository' in result.stdout
+
+
+def test_check_draft_is_quiet_on_a_clean_new_shape_draft(tmp_path):
+  draft = tmp_path / '1898_bather.yaml'
+  draft.write_text(
+    'prefixes:\n  MCZ: mcz\n  USGS: usgs-l\n'
+    'contexts:\n  a:\n    localityNumbers:\n    - {prefix: USGS, number: 4148 CO}\n'
+    'taxonomies:\n- taxon: cyathocystis\n  material:\n'
+    '  - {prefix: MCZ, numbers: [581A, [1, 5]], context: a}\n'
+    '  - {holder: A. R. Palmer, numbers: [500]}\n'
+  )
+  result = _run_check_draft(draft)
+  assert result.returncode == 0, result.stdout + result.stderr
+  assert 'warning' not in result.stdout and 'error' not in result.stdout

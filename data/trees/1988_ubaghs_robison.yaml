@@ -1,3 +1,5 @@
+prefixes:
+  USNM: usnm
 taxonomies:
 - taxon: homalozoa
   children:
@@ -13,8 +15,8 @@ taxonomies:
           - taxon: colodon_ubaghs_robison_1988
             new: true
             material:
-            - catalogNumbers:
-              - USNM 423874
+            - prefix: USNM
+              numbers: [423874]
               role: holotype
   - taxon: homoiostelea
     children:
@@ -28,8 +30,8 @@ taxonomies:
             provisional: true
             new: true
             material:
-            - catalogNumbers:
-              - USNM 423877
+            - prefix: USNM
+              numbers: [423877]
               role: holotype
   - taxon: stylophora
     children:
@@ -45,6 +47,6 @@ taxonomies:
             provisional: true
             new: true
             material:
-            - catalogNumbers:
-              - USNM 415804
+            - prefix: USNM
+              numbers: [415804]
               role: holotype

@@ -125,8 +125,7 @@ taxonomies:
             on which the genus and species are founded, and which is
             figured in Fig. 1-3 of the plate.)
         material:
-        - catalogNumbers:
-          - 'Riksmuseum, Stockholm ("Orig. Riksmuseum. Stockholm," plate caption p. 5): the sole specimen on which the genus and species are founded (p. 1); no catalogue number or type-status word is printed'
+        - label: 'Riksmuseum, Stockholm ("Orig. Riksmuseum. Stockholm," plate caption p. 5): the sole specimen on which the genus and species are founded (p. 1); no catalogue number or type-status word is printed'
         illustrations:
         - plate: 1
           figures: [1, 2, 3]
@@ -174,8 +173,7 @@ taxonomies:
             this original combination when citing Jaekel's own 1918
             figure.
         material:
-        - catalogNumbers:
-          - Museum Berlin (plate caption, p. 5); cited comparative material, not new here, refigured from Jaekel's 1918 work
+        - label: Museum Berlin (plate caption, p. 5); cited comparative material, not new here, refigured from Jaekel's 1918 work
         illustrations:
         - plate: 1
           figures: [4, 5, 6]

@@ -7,14 +7,17 @@
     poetry run python scripts/claims.py --inconsistencies
 
 Writes one `<source>.jsonl` per tree file, one claim per line,
-`manifest.json` and `names.json`; `docs/claims.md` defines all three. CI reruns the script and
+`manifest.json`, `names.json` and `repositories.json`; `docs/claims.md`
+defines all four. CI reruns the script and
 fails if `claims/` changes, so every data commit regenerates it.
 `--draft` also loads `drafts/` and therefore refuses to write into the
 committed directory. `--inconsistencies` writes nothing: it prints each
 source whose declared coverage disagrees with the derived claims, with
 the claims behind the disagreement, for the owner to settle either way,
 and exits 1 when there are any; `tests/test_claims.py` fails on the same
-rows, so CI catches a new one.
+rows, so CI catches a new one. It then lists the taxa whose holotype is a
+different specimen in two sources (roadmap F5), a report that neither
+counts towards that exit status nor fails a test.
 """
 
 import argparse
@@ -27,9 +30,23 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
 from phylohist.claims import extract, manifest, names_index  # noqa: E402
 from phylohist.loader import LoadError, counting_errors, load  # noqa: E402
+from phylohist.loader.material import repository_registry  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DEFAULT_OUT = ROOT / 'claims'
+
+
+# The registry fields `repositories.json` keeps.
+_REPOSITORY_FIELDS = ('name', 'type', 'subject', 'within', 'prefixes', 'otherNames', 'place')
+
+
+def _repositories():
+  """The loaded registry for `claims/repositories.json`: the fields the
+  store reads, as present."""
+  return {
+    key: {field: entry[field] for field in _REPOSITORY_FIELDS if field in entry}
+    for key, entry in sorted(repository_registry().items())
+  }
 
 
 def write(out, claims_by_source, roots, full):
@@ -46,6 +63,7 @@ def write(out, claims_by_source, roots, full):
     for name, content in (
       ('manifest.json', manifest(claims_by_source, roots)),
       ('names.json', names_index()),
+      ('repositories.json', _repositories()),
     ):
       with open(out / name, 'w') as fd:
         json.dump(content, fd, ensure_ascii=False, indent=1, sort_keys=True)
@@ -88,6 +106,13 @@ def _describe(claim):
   )
 
 
+def _describe_holotype(holotype):
+  """A source and the catalog numbers it prints for the holotype (a range
+  pair as "a–b"), else its label."""
+  numbers = [n if isinstance(n, str) else '–'.join(n) for n in holotype['ids']]
+  return f'{holotype["source"]} {", ".join(numbers) or holotype.get("label", "(unnumbered)")}'
+
+
 def report_inconsistencies(claims_by_source, roots):
   """Explain each declared-versus-derived disagreement.
 
@@ -96,7 +121,8 @@ def report_inconsistencies(claims_by_source, roots):
   report names both, and lists the inferred claims so that "no claims
   derived" beside an obviously flagged node is not a mystery.
   """
-  rows = manifest(claims_by_source, roots)['sources']
+  report = manifest(claims_by_source, roots)
+  rows = report['sources']
   found = 0
   for source_key, entry in rows.items():
     if not entry['inconsistencies']:
@@ -150,6 +176,10 @@ def report_inconsistencies(claims_by_source, roots):
           'they are not what the paper prints'
         )
   print(f'{found} sources with inconsistencies')
+  if report['holotypeConflicts']:
+    print('holotypes that differ between sources:')
+    for row in report['holotypeConflicts']:
+      print(f'  {row["taxon"]}: ' + '; '.join(_describe_holotype(h) for h in row['holotypes']))
   return found
 
 

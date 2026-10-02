@@ -1,3 +1,5 @@
+prefixes:
+  USNM: usnm
 taxonomies:
 - taxon: echinodermata
   children:
@@ -13,13 +15,9 @@ taxonomies:
           new: true
           type: true
           material:
-          - catalogNumbers:
-            - USNM 163252
+          - prefix: USNM
+            numbers: [163252]
             role: holotype
-          - catalogNumbers:
-            - USNM 163253
-            - USNM 163254
-            - USNM 163255
-            - USNM 163256
-            - USNM 163257
+          - prefix: USNM
+            numbers: [163253, 163254, 163255, 163256, 163257]
             role: paratype

@@ -942,12 +942,14 @@ quotation marks.**
   not, and quotes on a higher taxon do not set it by themselves.
 - A hedge in prose is the same flag with the wording quoted in `notes`.
 
+A doubtful identification with no specimens listed is a node-level
+context with `tentative: true` (E8).
+
 Open, each waiting for a source that needs it: a cf. or aff. on a genus
 (none is left in the data: von Buch 1844's two were prose placements); a
-queried affinity ("aff.?", Schlotheim 1826); "ex gr."; a doubtful
-identification with no specimens listed, which belongs with queried ages
-and occurrences (E8); Richter's other list signs (`*`, `.`, `v`, an
-italic year, a year in parentheses), not yet surveyed in the corpus;
+queried affinity ("aff.?", Schlotheim 1826); "ex gr."; Richter's other
+list signs (`*`, `.`, `v`, an italic year, a year in parentheses), not
+yet surveyed in the corpus;
 whose doubt a "?" inside an old citation is (Pander 1830); what the
 quotes in Bell 1891's diagram mean. Three things the tools do not do
 yet: an open form cannot be found by name, only by key or through the
@@ -1032,9 +1034,10 @@ ranges:                        # distribution statements, not provenance
 - `ranges` is a list of distribution statements, since a taxon may have a
   different range in each region; each carries the time fields and a
   `regions` list, with per-element `tentative` where the source prints a
-  query (E8). A range never carries a unit or a locality: a context needs
-  one of those, and a statement with neither is a range (Dehm 1961's
-  period-plus-region entries).
+  query (E8) and a `tentative` list for queried time values. A range
+  never carries a unit or a locality: a context needs one of those, and a
+  statement with neither is a range (Dehm 1961's period-plus-region
+  entries).
 - Nulls (G11): `material: null`, `illustrations: null`, `contexts: null`,
   `ranges: null` say the source prints none for the node; the file-level
   `unused` list says a field appears nowhere. Only an auditor writes
@@ -1128,7 +1131,8 @@ with `of` unset; the
 taxon-record `holotype` moves to the protologue node. The script's report
 lists what the owner works by hand: the eight ellipses, free-text
 identifiers to `label`, and prefixes the
-registry does not know.
+registry does not know. The script was deleted on 2026-10-01; it is in
+the history at `scripts/migrate_material.py`.
 
 **D6, D7, D9** are folded into D1, D2 and D4 above; **D8** and **D10**
 (diagnosis) are done, 2026-09-27: the field is gone with the `diagnoses`
@@ -1249,6 +1253,27 @@ one age and two regions, not to the occurrence. Each element of a range or
 location list may be written as `{value, tentative: true}` in place of the
 bare string, so the doubt stays where it was printed.
 
+Queried values other than a region are named in a `tentative` list on the
+range or the context, and `tentative: true` queries the whole statement
+(done 2026-10-01):
+
+```yaml
+ranges:
+- series: Middle Ordovician      # "Middle Ordovician(?)"
+  tentative: [series]
+contexts:
+  ik-3:
+    unit: [Antelope Valley Fm.]
+    biozone: Orthidiella         # "Orthidiella(?) zone"
+    tentative: [biozone]
+```
+
+A file-level context takes only the list form, since a doubt about the
+whole statement belongs to the node or the specimen that uses it. Where
+one end of a range field is queried ("Early Cambrian(?)–early
+Ordovician") the field is named (`tentative: [localSeriesRange]`) and
+`asPrinted` keeps which end.
+
 **E7. Delete `geology.yaml` (done 2026-09-27).** Every specimen it records is already on a tree
 node. Its formation and member registry is an idea for later (F3), not a file to
 keep loading nothing from. Done: the file is removed; nothing in `phylohist`
@@ -1285,7 +1310,7 @@ resolves in `time.yaml` (E6).
 
 **F4 (MVP). Attribution redundancy, report** (A2).
 
-**F5. Holotype uniqueness, report** (D2).
+**F5. Holotype uniqueness, report** (D2) (done 2026-10-01: `holotypeConflicts` in the manifest, printed by `scripts/claims.py --inconsistencies`; a report, never a failure).
 
 **F6 (MVP). Protologue consistency, fail.** Exactly one `new: true` node per
 name across all sources, and its source equals the name's authority source. The

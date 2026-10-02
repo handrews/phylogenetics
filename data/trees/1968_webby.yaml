@@ -1,3 +1,5 @@
+prefixes:
+  USGD: usgd
 taxonomies:
 - taxon: pelmatozoa
   children:
@@ -38,24 +40,13 @@ taxonomies:
         - taxon: distans_webby_1968
           new: true
           material:
-          - catalogNumbers:
-            - USGD 2302
+          - prefix: USGD
+            numbers: [2302]
             role: holotype
-          - catalogNumbers:
-            - USGD 2303
-            - USGD 2304
-            - USGD 2305
-            - USGD 2306
-            - USGD 2308
-            - USGD 2309
-            - USGD 2310
-            - USGD 2311
-            - USGD 2312
-            - USGD 2313
-            - USGD 2314
-            - USGD 3303
+          - prefix: USGD
+            numbers: [2303, 2304, 2305, 2306, 2308, 2309, 2310, 2311, 2312, 2313, 2314, 3303]
             role: paratype
         - openTaxon: astrocystites-sp_webby_1968
           material:
-          - catalogNumbers:
-            - USGD 3304
+          - prefix: USGD
+            numbers: [3304]

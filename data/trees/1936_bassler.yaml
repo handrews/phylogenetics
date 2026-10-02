@@ -1,3 +1,5 @@
+prefixes:
+  USNM: usnm
 taxonomies:
 - taxon: pelmatozoa
   children:
@@ -13,8 +15,8 @@ taxonomies:
         - taxon: magister_bassler_1936
           new: true
           material:
-          - catalogNumbers:
-            - USNM 90755
+          - prefix: USNM
+            numbers: [90755]
             role: holotype
       - taxon: stromatocystites
         children:
@@ -45,8 +47,8 @@ taxonomies:
         - taxon: ulrichi_bassler_1936
           new: true
           material:
-          - catalogNumbers:
-            - USNM 42138
+          - prefix: USNM
+            numbers: [42138]
             role: holotype
       - taxon: cincinnatidiscus
         children:
@@ -79,8 +81,8 @@ taxonomies:
           auth: [bassler, Shideler]
           citedAs: 'n. sp. (Bassler and Shideler)'
           material:
-          - catalogNumbers:
-            - USNM S-3965
+          - prefix: USNM
+            numbers: [S-3965]
             role: holotype
       - taxon: streptaster
         children:

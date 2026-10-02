@@ -16,8 +16,7 @@ taxonomies:
       new: true
       pages: 158
       material:
-      - catalogNumbers:
-        - Page 306, Figure 80
+      - label: Page 306, Figure 80
         context: upper-quarry
         role: holotype
         notes: |

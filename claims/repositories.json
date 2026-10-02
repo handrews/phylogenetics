@@ -1,0 +1,462 @@
+{
+ "amnh": {
+  "name": "American Museum of Natural History",
+  "place": "New York",
+  "prefixes": [
+   "AMNH"
+  ],
+  "type": "institution"
+ },
+ "anu": {
+  "name": "Australian National University",
+  "place": "Canberra",
+  "prefixes": [
+   "ANU"
+  ],
+  "type": "institution"
+ },
+ "bspg": {
+  "name": "Bayerische Staatssammlung für Paläontologie und Geologie",
+  "place": "Munich",
+  "prefixes": [
+   "BSPG"
+  ],
+  "type": "institution"
+ },
+ "cpc": {
+  "name": "Commonwealth Palaeontological Collection",
+  "place": "Canberra",
+  "prefixes": [
+   "CPC"
+  ],
+  "type": "institution"
+ },
+ "dpo": {
+  "name": "Oviedo University, Department of Palaeontology",
+  "place": "Oviedo, Spain",
+  "prefixes": [
+   "DPO"
+  ],
+  "type": "institution"
+ },
+ "fmnh": {
+  "name": "Field Museum of Natural History",
+  "place": "Chicago",
+  "prefixes": [
+   "FMNH",
+   "CFM",
+   "CFMP",
+   "CFMUC"
+  ],
+  "type": "institution"
+ },
+ "fmnh-pe": {
+  "name": "Field Museum of Natural History, PE register",
+  "prefixes": [
+   "PE",
+   "FMNH PE",
+   "CFMPE"
+  ],
+  "subject": "specimens",
+  "type": "collection",
+  "within": "fmnh"
+ },
+ "gcm": {
+  "name": "Grand Canyon Museum",
+  "prefixes": [
+   "GCM"
+  ],
+  "type": "institution"
+ },
+ "geo-prague": {
+  "name": "Geological Survey, Prague",
+  "place": "Prague",
+  "prefixes": [
+   "OF"
+  ],
+  "type": "institution"
+ },
+ "gik": {
+  "name": "Geologisches Institut der Universität zu Köln",
+  "place": "Cologne",
+  "prefixes": [
+   "GIK"
+  ],
+  "type": "institution"
+ },
+ "glahm": {
+  "name": "Hunterian Museum, University of Glasgow",
+  "place": "Glasgow",
+  "prefixes": [
+   "GLAHM"
+  ],
+  "type": "institution"
+ },
+ "gm": {
+  "name": "Museum of Paleontology, Guizhou University",
+  "place": "Guiyang",
+  "prefixes": [
+   "GM"
+  ],
+  "type": "institution"
+ },
+ "gsc": {
+  "name": "Geological Survey of Canada",
+  "otherNames": [
+   "Canadian Geological Survey",
+   "Museum of the Geological Survey of Canada"
+  ],
+  "place": "Ottawa",
+  "prefixes": [
+   "GSC"
+  ],
+  "type": "institution"
+ },
+ "isu": {
+  "name": "Idaho State University",
+  "prefixes": [
+   "ISU"
+  ],
+  "type": "institution"
+ },
+ "lsn-mainz": {
+  "name": "Landessammlung für Naturkunde",
+  "place": "Mainz",
+  "prefixes": [
+   "PWL"
+  ],
+  "type": "institution"
+ },
+ "mcz": {
+  "name": "Museum of Comparative Zoology, Harvard University",
+  "place": "Cambridge, Massachusetts",
+  "prefixes": [
+   "MCZ"
+  ],
+  "type": "institution"
+ },
+ "mpep": {
+  "name": "Musée de paléontologie et de l'évolution",
+  "place": "Québec",
+  "prefixes": [
+   "MPEP"
+  ],
+  "type": "institution"
+ },
+ "mpz": {
+  "name": "Museo de Paleontología de la Universidad de Zaragoza",
+  "place": "Zaragoza",
+  "prefixes": [
+   "MPZ"
+  ],
+  "type": "institution"
+ },
+ "müller.p": {
+  "name": "Müller collection",
+  "prefixes": [
+   "M"
+  ],
+  "type": "person"
+ },
+ "nhmuk": {
+  "name": "Natural History Museum",
+  "otherNames": [
+   "BMNH",
+   "NHM UK"
+  ],
+  "place": "London",
+  "prefixes": [
+   "NHMUK"
+  ],
+  "type": "institution"
+ },
+ "nhmuk-e": {
+  "name": "Natural History Museum, E register",
+  "prefixes": [
+   "E",
+   "NHMUK E",
+   "NHM UK E",
+   "BMNH E"
+  ],
+  "subject": "specimens",
+  "type": "collection",
+  "within": "nhmuk"
+ },
+ "nhmuk-ee": {
+  "name": "Natural History Museum, EE register",
+  "prefixes": [
+   "EE",
+   "NHMUK EE",
+   "NHM UK EE"
+  ],
+  "subject": "specimens",
+  "type": "collection",
+  "within": "nhmuk"
+ },
+ "nigpas": {
+  "name": "Nanjing Institute of Geology and Palaeontology, Chinese Academy of Sciences",
+  "place": "Nanjing",
+  "prefixes": [
+   "NIGPAS"
+  ],
+  "type": "institution"
+ },
+ "nm-prague": {
+  "name": "National Museum",
+  "place": "Prague",
+  "prefixes": [
+   "NM"
+  ],
+  "type": "institution"
+ },
+ "nmv": {
+  "name": "Museum of Victoria",
+  "place": "Melbourne",
+  "type": "institution"
+ },
+ "nmv-p": {
+  "name": "Museum of Victoria, palaeontology register",
+  "prefixes": [
+   "NMVP"
+  ],
+  "subject": "specimens",
+  "type": "collection",
+  "within": "nmv"
+ },
+ "nmv-pl": {
+  "name": "Museum of Victoria, fossil locality register",
+  "prefixes": [
+   "NMVPL"
+  ],
+  "subject": "localities",
+  "type": "collection",
+  "within": "nmv"
+ },
+ "north-museum-fm": {
+  "name": "North Museum, Franklin and Marshall College",
+  "place": "Lancaster, Pennsylvania",
+  "prefixes": [
+   "PE"
+  ],
+  "type": "institution"
+ },
+ "nysm": {
+  "name": "New York State Museum",
+  "otherNames": [
+   "Collection New York State Museum"
+  ],
+  "place": "Albany",
+  "prefixes": [
+   "NYSM"
+  ],
+  "type": "institution"
+ },
+ "qm": {
+  "name": "Queensland Museum",
+  "place": "Brisbane",
+  "type": "institution"
+ },
+ "qm-f": {
+  "name": "Queensland Museum, fossil register",
+  "prefixes": [
+   "QMF"
+  ],
+  "subject": "specimens",
+  "type": "collection",
+  "within": "qm"
+ },
+ "qm-l": {
+  "name": "Queensland Museum, locality register",
+  "prefixes": [
+   "QML"
+  ],
+  "subject": "localities",
+  "type": "collection",
+  "within": "qm"
+ },
+ "rievers": {
+  "name": "Rievers collection",
+  "place": "Enkirch (Moselle)",
+  "prefixes": [
+   "RVS"
+  ],
+  "type": "person"
+ },
+ "sam": {
+  "name": "South Australian Museum",
+  "place": "Adelaide",
+  "prefixes": [
+   "SAMP"
+  ],
+  "type": "institution"
+ },
+ "seibert.r": {
+  "name": "Seibert collection",
+  "prefixes": [
+   "RS",
+   "R"
+  ],
+  "type": "person"
+ },
+ "sprinkle-l": {
+  "name": "James Sprinkle, field localities",
+  "subject": "localities",
+  "type": "person"
+ },
+ "tmf": {
+  "name": "Geological Survey of Tasmania",
+  "prefixes": [
+   "TMF"
+  ],
+  "type": "institution"
+ },
+ "u-cincinnati": {
+  "name": "University of Cincinnati",
+  "place": "Cincinnati",
+  "prefixes": [
+   "UC"
+  ],
+  "type": "institution"
+ },
+ "u-cincinnati-caster": {
+  "name": "Caster Collection",
+  "prefixes": [
+   "E",
+   "BC"
+  ],
+  "subject": "specimens",
+  "type": "collection",
+  "within": "u-cincinnati"
+ },
+ "u-cincinnati-museum": {
+  "name": "Museum of Paleontology, University of Cincinnati",
+  "prefixes": [
+   "UCMP"
+  ],
+  "type": "collection",
+  "within": "u-cincinnati"
+ },
+ "ucbl-fsl": {
+  "name": "Université Claude Bernard Lyon 1, collections de géologie",
+  "place": "Lyon",
+  "prefixes": [
+   "UCBL-FSL"
+  ],
+  "type": "institution"
+ },
+ "ucmp": {
+  "name": "University of California Museum of Paleontology",
+  "place": "Berkeley",
+  "prefixes": [
+   "UCMP"
+  ],
+  "type": "institution"
+ },
+ "uq": {
+  "name": "University of Queensland",
+  "place": "Brisbane",
+  "type": "institution"
+ },
+ "uq-f": {
+  "name": "University of Queensland, fossil register",
+  "prefixes": [
+   "UQF",
+   "F"
+  ],
+  "subject": "specimens",
+  "type": "collection",
+  "within": "uq"
+ },
+ "uq-l": {
+  "name": "University of Queensland, locality register",
+  "prefixes": [
+   "UQL"
+  ],
+  "subject": "localities",
+  "type": "collection",
+  "within": "uq"
+ },
+ "usgd": {
+  "name": "University of Sydney, Geology Department",
+  "place": "Sydney",
+  "prefixes": [
+   "USGD"
+  ],
+  "type": "institution"
+ },
+ "usgs-l": {
+  "name": "U.S. Geological Survey, locality register",
+  "prefixes": [
+   "USGS locality",
+   "USGS"
+  ],
+  "subject": "localities",
+  "type": "collection"
+ },
+ "usnm": {
+  "name": "National Museum of Natural History, Smithsonian Institution",
+  "place": "Washington",
+  "prefixes": [
+   "USNM"
+  ],
+  "type": "institution"
+ },
+ "usnm-l": {
+  "name": "U.S. National Museum, locality register",
+  "prefixes": [
+   "USNM locality",
+   "USNM loc.",
+   "Walcott locality"
+  ],
+  "subject": "localities",
+  "type": "collection",
+  "within": "usnm"
+ },
+ "usnm-springer": {
+  "name": "Springer Collection",
+  "prefixes": [
+   "S"
+  ],
+  "type": "collection",
+  "within": "usnm"
+ },
+ "usnm-walcott": {
+  "name": "Walcott Collection",
+  "subject": "specimens",
+  "type": "collection",
+  "within": "usnm"
+ },
+ "utgd": {
+  "name": "University of Tasmania, Geology Department",
+  "place": "Hobart",
+  "prefixes": [
+   "UTGD"
+  ],
+  "type": "institution"
+ },
+ "uu": {
+  "name": "University of Utah",
+  "place": "Salt Lake City",
+  "prefixes": [
+   "UU"
+  ],
+  "type": "institution"
+ },
+ "vmm": {
+  "name": "Victoria Memorial Museum",
+  "place": "Ottawa",
+  "prefixes": [
+   "VMM"
+  ],
+  "type": "institution",
+  "within": "gsc"
+ },
+ "yklp": {
+  "name": "Yunnan Key Laboratory for Palaeobiology, Yunnan University",
+  "place": "Kunming",
+  "prefixes": [
+   "YKLP"
+  ],
+  "type": "institution"
+ }
+}

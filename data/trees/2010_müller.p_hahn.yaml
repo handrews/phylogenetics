@@ -1,3 +1,8 @@
+prefixes:
+  PWL: lsn-mainz
+  DPO: dpo
+  RS: seibert.r
+  M: müller.p
 taxonomies:
 - taxon: isorophida
   children:
@@ -16,15 +21,15 @@ taxonomies:
         provisional: true # following convention of petalus
         new: true
         material:
-        - catalogNumbers:
-          - PWL 2009/5016sub1-LS
+        - prefix: PWL
+          numbers: [2009/5016sub1-LS]
           role: holotype
-        - catalogNumbers:
-          - PWL 2009/5017-LS
+        - prefix: PWL
+          numbers: [2009/5017-LS]
           role: paratype
           notes: 517 but surely a typo
-        - catalogNumbers:
-          - PWL 2009/5018-LS
+        - prefix: PWL
+          numbers: [2009/5018-LS]
           role: paratype
   - taxon: agelacrinitidae
     children:
@@ -59,13 +64,11 @@ taxonomies:
           type: true
           new: true
           material:
-          - catalogNumbers:
-            - PWL 2009/5022-LS
+          - prefix: PWL
+            numbers: [2009/5022-LS]
             role: holotype
-          - catalogNumbers:
-            - PWL 2009/5019-LS
-            - PWL 2009/5020-LS
-            - PWL 2009/5021-LS
+          - prefix: PWL
+            numbers: [2009/5019-LS, 2009/5020-LS, 2009/5021-LS]
             role: paratype
     - taxon: agelacrinitinae
       type: true
@@ -84,8 +87,8 @@ taxonomies:
         - taxon: thor_müller.p_hahn_2010
           new: true
           material:
-          - catalogNumbers:
-            - PWL 2009/5023-LS
+          - prefix: PWL
+            numbers: [2009/5023-LS]
             role: holotype
       - taxon: krama
         children:
@@ -94,36 +97,32 @@ taxonomies:
         - taxon: hispanica_müller.p_hahn_2010
           new: true
           material:
-          - catalogNumbers:
-            - DPO 14001
+          - prefix: DPO
+            numbers: [14001]
             role: holotype
         - taxon: germanica_müller.p_hahn_2010
           new: true
           material:
-          - catalogNumbers:
-            - PWL 2009/5024-LS
+          - prefix: PWL
+            numbers: [2009/5024-LS]
             role: holotype
-          - catalogNumbers:
-            - PWL 2009/5025-LS
-            - PWL 2009/5026-LS
-            - PWL 2009/5027-LS
-            - PWL 2009/5028a-LS
-            - PWL 2009/5028b-LS
-            - PWL 2009/5029-LS
-            - PWL 2009/5030-LS
-            - PWL 2009/5031-LS
-            - PWL 2009/5032-LS
-            - RS 21
-            - M 2514
+          - prefix: PWL
+            numbers: [2009/5025-LS, 2009/5026-LS, 2009/5027-LS, 2009/5028a-LS, 2009/5028b-LS, 2009/5029-LS, 2009/5030-LS, 2009/5031-LS, 2009/5032-LS]
+            role: paratype
+          - prefix: RS
+            numbers: [21]
+            role: paratype
+          - prefix: M
+            numbers: [2514]
             role: paratype
         - taxon: odin_müller.p_hahn_2010
           new: true
           material:
-          - catalogNumbers:
-            - PWL 2009/5033sub1-LS
+          - prefix: PWL
+            numbers: [2009/5033sub1-LS]
             role: holotype
-          - catalogNumbers:
-            - PWL 2009/5033sub2-LS
+          - prefix: PWL
+            numbers: [2009/5033sub2-LS]
             role: paratype
       - taxon: parakrama
         new: true
@@ -132,19 +131,11 @@ taxonomies:
           type: true
           new: true
           material:
-          - catalogNumbers:
-            - PWL 2009/5040-LS
+          - prefix: PWL
+            numbers: [2009/5040-LS]
             role: holotype
-          - catalogNumbers:
-            - PWL 2009/5034-LS
-            - PWL 2009/5035-LS
-            - PWL 2009/5016sub2-LS
-            - PWL 2009/5036-LS
-            - PWL 2009/5037-LS
-            - PWL 2009/5038-LS
-            - PWL 2009/5039-LS
-            - PWL 2009/5041-LS
-            - PWL 2009/5042-LS
+          - prefix: PWL
+            numbers: [2009/5034-LS, 2009/5035-LS, 2009/5016sub2-LS, 2009/5036-LS, 2009/5037-LS, 2009/5038-LS, 2009/5039-LS, 2009/5041-LS, 2009/5042-LS]
             role: paratype
     - taxon: discocystinae
   - taxon: hemicystitidae

@@ -13,10 +13,13 @@ import collections
 from .acts import RELATED_ACTS
 from .loader.material import (
   AMBIGUOUS,
+  bare_number,
   context_key,
   entries_named,
+  flat_numbers,
   repository_of,
   repository_registry,
+  resolve_number,
 )
 from .loader.research import Author, Publication, Source
 from .loader.taxa import Taxon
@@ -113,6 +116,9 @@ _ILLUSTRATION_LOCATOR_FIELDS = (
 )
 # `materialEntry` fields copied onto the claim exactly as written.
 _MATERIAL_FIELDS = (
+  'prefix',
+  'numbers',
+  'asPrinted',
   'catalogNumbers',
   'catalogNumbersAsPrinted',
   'count',
@@ -243,6 +249,16 @@ def _coverage_kind(claim):
       'range': 'occurrences',
     }[claim['materialKind']]
   return None
+
+
+def _within_chain(repository, registry):
+  """`repository` and every entry above it through `within`, nearest first."""
+  chain = [repository]
+  while (parent := (registry.get(chain[-1]) or {}).get('within')) is not None:
+    if parent in chain:
+      break
+    chain.append(parent)
+  return chain
 
 
 class _NodeClaims:
@@ -547,7 +563,31 @@ class _NodeClaims:
       claim['occurrence'] = context
       claim['contextKey'] = key
       claim['contextScope'] = scopes[key]
+      if keys := self._locality_keys(context):
+        claim['localityKeys'] = keys
       self._emit(claim, 'contexts')
+
+  def _locality_keys(self, context):
+    """`<register>:<folded bare number>` for each of the context's
+    `localityNumbers` that resolves to one locality register, once each, in
+    order ("Walcott 35k" and "USNM loc. 35k" give one key)."""
+    keys = []
+    for number in context.get('localityNumbers') or ():
+      if isinstance(number, dict):
+        register = number.get('register')
+        if register is None and number.get('prefix') is not None:
+          register = self.node.file_prefixes.get(number['prefix'])
+        elif register is None:
+          register = self.node.file_locality_register
+        key = register and f'{register}:{fold(str(number["number"]))}'
+      else:
+        register, via, bare = resolve_number(
+          number, repository_registry(), self.node.file_repositories, localities=True
+        )
+        key = via not in (None, AMBIGUOUS) and f'{register}:{fold(bare)}'
+      if key and key not in keys:
+        keys.append(key)
+    return keys
 
   def _repository(self, entry):
     """`(key, via)` for an entry: its explicit `repository`, else what the
@@ -561,6 +601,50 @@ class _NodeClaims:
     first = numbers[0][0] if isinstance(numbers[0], list) else numbers[0]
     key, via = repository_of(first, repository_registry(), self.node.file_repositories)
     return (None, None) if via in (None, AMBIGUOUS) else (key, via)
+
+  def _join_key(self, number, repository, explicit):
+    """`<holder>:<folded bare number>` for one catalog number of an entry
+    held by `repository`. The number's own prefix decides the holder when
+    it resolves; for an entry with an explicit `repository` only when that
+    holder is `repository` or an institution above it through `within` (a
+    collection prints its parent's numbers). Otherwise the entry's
+    `repository` stands, and strips its own prefixes and other names."""
+    registry = repository_registry()
+    key, via, bare = resolve_number(number, registry, self.node.file_repositories)
+    if via not in (None, AMBIGUOUS):
+      if not explicit or key in _within_chain(repository, registry):
+        return f'{key}:{fold(bare)}'
+    return f'{repository}:{fold(bare_number(number, repository, registry))}'
+
+  def _numbers_register(self, entry):
+    """The register an entry in the `prefix` + `numbers` shape keys its
+    numbers under: the one the file's `prefixes` map gives its prefix, or
+    its explicit `repository` (which wins when it lies outside that
+    register), else `None`."""
+    mapped = self.node.file_prefixes.get(entry.get('prefix'))
+    explicit = entry.get('repository')
+    if mapped is not None and explicit is not None:
+      return mapped if mapped in _within_chain(explicit, repository_registry()) else explicit
+    return mapped or explicit
+
+  def _numbers_fields(self, entry, claim):
+    """`ids`, `repository` and `repositoryVia` of a claim for an entry with
+    `numbers`; nothing is parsed out of a number."""
+    prefix = entry.get('prefix')
+
+    def shown(number):
+      return f'{prefix} {number}' if prefix else str(number)
+
+    claim['ids'] = [
+      [shown(n) for n in number] if isinstance(number, list) else shown(number)
+      for number in entry['numbers']
+    ]
+    if 'repository' in entry:
+      claim['repository'], claim['repositoryVia'] = entry['repository'], 'explicit'
+    elif (mapped := self.node.file_prefixes.get(prefix)) is not None:
+      claim['repository'], claim['repositoryVia'] = mapped, 'file'
+    else:
+      claim['repository'] = None
 
   def _entries(self):
     """One claim per `material` entry; `self._entry_claims` keeps each
@@ -589,20 +673,27 @@ class _NodeClaims:
         inferred = entry['editorial'].get('inferred')
         if isinstance(inferred, list):
           claim['inferredFields'] = inferred
-      numbers = entry.get('catalogNumbers') or ()
-      claim['ids'] = list(numbers)
-      repository, via = self._repository(entry)
-      claim['repository'] = repository
-      if via is not None:
-        claim['repositoryVia'] = via
+      if 'numbers' in entry:
+        numbers = entry['numbers']
+        self._numbers_fields(entry, claim)
+      else:
+        numbers = entry.get('catalogNumbers') or ()
+        claim['ids'] = list(numbers)
+        repository, via = self._repository(entry)
+        claim['repository'] = repository
+        if via is not None:
+          claim['repositoryVia'] = via
       role_act = entry.get('roleAct')
       if role_act is None and data.get('new') and entry.get('role') in _PROTOLOGUE_ROLES:
         role_act = 'designated'
       if role_act is not None:
         claim['roleAct'] = role_act
-      if repository is not None and numbers:
+      if 'numbers' in entry:
+        if (register := self._numbers_register(entry)) is not None:
+          claim['joinKeys'] = [f'{register}:{fold(str(n))}' for n in flat_numbers(entry)]
+      elif repository is not None and numbers:
         claim['joinKeys'] = [
-          f'{repository}:{fold(n)}'
+          self._join_key(n, repository, via == 'explicit')
           for number in numbers
           for n in (number if isinstance(number, list) else [number])
         ]
@@ -647,15 +738,32 @@ class _NodeClaims:
     is a statement about the paper: the source's illustrations are entered
     in full (effective coverage `all`), this node carries the field (a
     value or a null), and no figure of the node lacks an `of` (an untied
-    figure may show the specimen, so nothing is said)."""
+    figure may show the specimen, so nothing is said). An entry whose role
+    is `figured` (the source calls it a figured specimen) is never marked,
+    nor is one whose cast, another entry's `castOf` naming it, a figure
+    names: a figure of the cast shows the original."""
     coverage = (self.audit.get('coverage') or {}).get('illustrations')
     if coverage != 'all' or 'illustrations' not in self.data:
       return
     links = self._illustration_links
     if any(claim.get('of') is None for claim, _ in links):
       return
-    for _, specimen in self._entry_claims:
-      if not any(specimen is hit for _, named in links for hit in named):
+    named = [hit for _, hits in links for hit in hits]
+
+    def is_named(claim):
+      return any(claim is hit for hit in named)
+
+    entries = [entry for entry, _ in self._entry_claims]
+    for entry, specimen in self._entry_claims:
+      if is_named(specimen) or entry.get('role') == 'figured':
+        continue
+      casts = [
+        cast
+        for other, cast in self._entry_claims
+        if other.get('castOf') is not None
+        and any(entry is hit for hit in entries_named(entries, other['castOf']))
+      ]
+      if not any(is_named(cast) for cast in casts):
         specimen['figured'] = False
 
   def _absences(self):
@@ -883,6 +991,75 @@ def _source_order(source_key):
   return (year, source_key)
 
 
+def _flat_ids(ids):
+  """The printed catalog numbers of a claim, a range pair's endpoints
+  included, as one flat list."""
+  return [n for number in ids or () for n in (number if isinstance(number, list) else [number])]
+
+
+def _specimen_identity(claim):
+  """What makes two holotype claims one specimen: the set of the claim's
+  join keys; without any, its label; without either, its printed ids."""
+  if claim.get('joinKeys'):
+    return set(claim['joinKeys'])
+  if claim.get('label') is not None:
+    return {claim['label']}
+  return set(_flat_ids(claim.get('ids')))
+
+
+def holotype_conflicts(claims_by_source):
+  """One row per taxon whose holotype is a different specimen in two
+  sources (roadmap F5): `{'taxon', 'holotypes': [{'source', 'ids',
+  'joinKeys', 'claim'}]}`, sources in year order, every holotype claim of
+  the taxon on the row. Two holotypes are one specimen when their
+  identities (`_specimen_identity`) intersect. A claim marked `uncertain`
+  is ignored, and a source that gives the taxon a lectotype or neotype
+  does not enter the comparison: its holotype entry reports an earlier
+  designation that its own later selection supersedes. A report, never a
+  failure."""
+  by_taxon = collections.defaultdict(lambda: collections.defaultdict(list))
+  for source_key, claims in claims_by_source.items():
+    for claim in claims:
+      if (
+        claim['kind'] == 'material'
+        and claim['materialKind'] == 'specimen'
+        and claim['subject'] is not None
+        and not claim.get('uncertain')
+      ):
+        by_taxon[claim['subject']][source_key].append(claim)
+  rows = []
+  for taxon, by_source in sorted(by_taxon.items()):
+    holotypes = []
+    for source_key in sorted(by_source, key=_source_order):
+      claims = by_source[source_key]
+      if any(c.get('role') in ('lectotype', 'neotype') for c in claims):
+        continue
+      holotypes.extend(c for c in claims if c.get('role') == 'holotype')
+    identities = [_specimen_identity(c) for c in holotypes]
+    differ = any(
+      holotypes[i]['source'] != holotypes[j]['source'] and not identities[i] & identities[j]
+      for i in range(len(holotypes))
+      for j in range(i + 1, len(holotypes))
+    )
+    if differ:
+      rows.append(
+        {
+          'taxon': taxon,
+          'holotypes': [
+            {
+              'source': c['source'],
+              'ids': c.get('ids') or [],
+              'joinKeys': c.get('joinKeys') or [],
+              'claim': c['id'],
+              **({'label': c['label']} if c.get('label') is not None else {}),
+            }
+            for c in holotypes
+          ],
+        }
+      )
+  return rows
+
+
 def manifest(claims_by_source, roots):
   """Derived coverage per source and per taxon, cross-checked with the
   declared audit block (`docs/claims.md`, "Derived coverage").
@@ -965,4 +1142,5 @@ def manifest(claims_by_source, roots):
     'authors': {key: author.surname for key, author in sorted(Author._authors.items())},
     'sources': dict(sorted(sources.items())),
     'taxa': {key: sorted(keys, key=_source_order) for key, keys in sorted(taxa.items())},
+    'holotypeConflicts': holotype_conflicts(claims_by_source),
   }

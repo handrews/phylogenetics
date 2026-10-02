@@ -12,6 +12,7 @@ import re
 
 from . import blocks
 from .acts import RELATED_ACTS
+from .loader.material import AMBIGUOUS, bare_number, resolve_number
 from .names import fold, fold_forms, key_stem
 
 # The community's words for what the table records.
@@ -74,6 +75,14 @@ def _range_words(items):
     else:
       out.append(str(item))
   return ', '.join(out)
+
+
+def _numbers_words(claim, numbers=None):
+  """The numbers of a claim in the `prefix` + `numbers` shape as printed,
+  the prefix once ("MCZ 581A, 581B", "GSC 25935–25961"); without a prefix
+  just the numbers. `numbers` overrides the claim's own (a printed run)."""
+  words = _range_words(claim['numbers'] if numbers is None else numbers)
+  return f'{claim["prefix"]} {words}' if claim.get('prefix') else words
 
 
 def _illustration_words(illustration):
@@ -145,18 +154,26 @@ _MODIFIER_BASE = {
 def _field_words(value, fields):
   """The present ones of `fields`, each field's values joined by ", ", the
   fields joined by "; ". A modifier reads before the field it qualifies as
-  one phrase ("upper Lower Cambrian"); with no such field it stands alone."""
+  one phrase ("upper Lower Cambrian"); with no such field it stands alone.
+  A field named in the object's `tentative` list is queried: its words (the
+  joined phrase, when either the field or its modifier is named) read after
+  a "?"."""
   modifiers = {
     base: value[k]
     for k, base in _MODIFIER_BASE.items()
     if k in fields and base in fields and value.get(k) and value.get(base)
   }
+  queried = value.get('tentative')
+  queried = set(queried) if isinstance(queried, list) else set()
   parts = []
   for k in fields:
     if not value.get(k) or (_MODIFIER_BASE.get(k) in modifiers):
       continue
     words = ', '.join(_flat_words(value[k]))
-    parts.append(f'{modifiers[k]} {words}' if k in modifiers and words else words)
+    if k in modifiers and words:
+      words = f'{modifiers[k]} {words}'
+    doubted = k in queried or any(m in queried for m, base in _MODIFIER_BASE.items() if base == k)
+    parts.append(f'?{words}' if words and doubted else words)
   return '; '.join(p for p in parts if p)
 
 
@@ -546,7 +563,9 @@ class Words:
   def _specimen_words(self, claim):
     """ "role: numbers" as printed (a range pair "a–b"), the label, or "N
     specimens" for a bare count."""
-    if claim.get('ids'):
+    if claim.get('numbers'):
+      numbers = _numbers_words(claim)
+    elif claim.get('ids'):
       numbers = _range_words(claim['ids'])
     elif 'label' in claim:
       numbers = claim['label']
@@ -572,9 +591,81 @@ class Words:
       words += ' (not figured)'
     return words
 
+  def _names_specimen(self, value, join_key, repository):
+    """Whether a figure's `of` value names the specimen a join key stands
+    for: its holder is the one its prefix resolves to, else the claim's
+    `repository`, as `_NodeClaims._join_key` keys a number."""
+    registry = self.store.repositories
+    key, via, bare = resolve_number(value, registry)
+    if via is None or via == AMBIGUOUS:
+      key, bare = repository, bare_number(value, repository, registry)
+    return f'{key}:{fold(bare)}' == join_key
+
+  def _figures_of(self, claim, join_key):
+    """The locators of the figures that name the specimen a join key
+    stands for among the several numbers a claim carries: each
+    `illustrationClaims` figure whose `of` has a value equal to it (for a
+    claim with `numbers`, a number equal to the key's, folded)."""
+    found = []
+    for figure in map(self.store.by_id.get, claim.get('illustrationClaims') or ()):
+      of = figure.get('of')
+      values = of if isinstance(of, list) else [of]
+      if 'numbers' in claim:
+        names = any(fold(str(v)) == join_key.partition(':')[2] for v in values)
+      else:
+        names = any(self._names_specimen(v, join_key, claim.get('repository')) for v in values)
+      if names:
+        found.append(figure['illustration'])
+    return found
+
+  def specimen_history_words(self, claim, number, join_key, runs=None):
+    """One citation in a specimen's history: the role (queried with "?")
+    "of <the taxon as the source uses it>", or "cited under <the taxon>"
+    without one, the doubt about the assignment, the number as the source
+    prints it when that is not the one asked about (or the printed run that
+    holds it, `runs`), then its figures, or "not figured" when the source
+    says so. A claim with several numbers or a run says what is figured of
+    the number asked about only, from the figures whose own `of` names it
+    (a locator's `notes` are left out); when none does, nothing."""
+    role = claim.get('role')
+    taxon = self.display(claim['subject'], claim['source'], claim['path'])
+    if role:
+      # `figured` is the one role that is not a noun: "figured specimen of".
+      noun = 'figured specimen' if role == 'figured' else role
+      words = f'{noun}{"?" if claim.get("roleUncertain") else ""} of {taxon}'
+    else:
+      words = f'cited under {taxon}'
+    if claim.get('uncertain'):
+      words += ' (doubtfully assigned)'
+    if claim.get('numbers'):
+      printed = _numbers_words(claim)
+      run_words = [_numbers_words(claim, [run]) for run in runs or ()]
+    else:
+      printed = _range_words(claim['ids']) if claim.get('ids') else None
+      run_words = [_range_words([run]) for run in runs or ()]
+    if runs:
+      words += ' in the run ' + ', '.join(run_words)
+    elif printed and printed != number:
+      words += f' as {printed}'
+    several = claim.get('rangeJoin') or len(claim.get('joinKeys') or ()) > 1
+    figures = (
+      self._figures_of(claim, join_key) if several else claim.get('specimenIllustrations') or ()
+    )
+    figures = [
+      _illustration_words({k: v for k, v in figure.items() if k != 'notes'})
+      + ('?' if figure.get('uncertain') else '')
+      for figure in figures
+    ]
+    if figures:
+      words += '; figured ' + '; '.join(figures)
+    elif claim.get('figured') is False:
+      words += '; not figured'
+    return words
+
   def _occurrence_words(self, claim):
     """ "occurrence <key>: " and the context's time, unit, place and zone
-    words, a modifier read before its unit ("upper Lower Cambrian")."""
+    words, a modifier read before its unit ("upper Lower Cambrian"); "?"
+    follows the key when the whole context is `tentative`."""
     fields = (
       'stage',
       'stageBoundary',
@@ -605,6 +696,8 @@ class Words:
     )
     body = _field_words(claim.get('occurrence') or {}, fields)
     prefix = f'occurrence {claim["contextKey"]}' if claim.get('contextKey') else 'occurrence'
+    if (claim.get('occurrence') or {}).get('tentative') is True:
+      prefix += '?'
     return f'{prefix}: {body}' if body else prefix
 
   def _illustration_claim_words(self, claim):
@@ -616,17 +709,20 @@ class Words:
       words += '?'
     of = claim.get('of')
     if of:
-      words += f' of {", ".join(of) if isinstance(of, list) else of}'
+      # A number may be a bare integer in the tree.
+      words += f' of {", ".join(str(v) for v in of) if isinstance(of, list) else of}'
     if claim.get('depicts') not in (None, 'specimen'):
       words += f' ({claim["depicts"]})'
     return words
 
   def _range_claim_words(self, claim):
-    """ "range: <time words>; <regions>", a modifier read before its unit."""
+    """ "range: <time words>; <regions>", a modifier read before its unit;
+    "range?" when the whole range is `tentative`."""
     value = claim.get('range') or {}
     regions = ', '.join(_region_words(r) for r in value.get('regions') or ())
     body = '; '.join(p for p in (_field_words(value, _TIME_FIELDS), regions) if p)
-    return f'range: {body}' if body else 'range'
+    label = 'range?' if value.get('tentative') is True else 'range'
+    return f'{label}: {body}' if body else label
 
   def error_words(self, claim):
     """The clause for a printed attribution the editor reads as wrong,

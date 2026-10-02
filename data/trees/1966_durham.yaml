@@ -1,3 +1,5 @@
+prefixes:
+  USNM: usnm
 taxonomies:
 - taxon: echinozoa
   children:
@@ -12,11 +14,9 @@ taxonomies:
       - taxon: roddyi_ruedemann_1933
         type: true
         material:
-        - catalogNumbers:
-          - USNM85181
+        - prefix: USNM
+          numbers: [85181]
           role: holotype
-        - catalogNumbers:
-          - USNM153758
-          - USNM153759
-          - USNM153760
+        - prefix: USNM
+          numbers: [153758, 153759, 153760]
           role: hypotype

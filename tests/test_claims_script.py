@@ -55,3 +55,51 @@ def test_report_explains_both_row_forms(load_records, monkeypatch, capsys):
   assert f'  synonymy: declared all {_WHERE.format("synonymy")}; no claims derived' in out
   assert 'nothing in data/trees/1961_dehm.yaml yields a countable claim of this kind' in out
   assert 'to resolve: enter what the paper prints, or declare na or none' in out
+
+
+def test_report_lists_holotypes_that_differ_without_counting_them(load_records, capsys):
+  def tree(source, number):
+    return Tree(
+      {
+        'taxon': 'navicula_whitehouse_1941',
+        'material': [{'role': 'holotype', 'catalogNumbers': [number]}],
+      },
+      {'source_key': source, 'type': 'taxonomy', 'position': 0},
+    )
+
+  roots = {
+    '2021_jell_sprinkle': [tree('2021_jell_sprinkle', 'UQF 9')],
+    '1941_whitehouse': [tree('1941_whitehouse', 'F. 5404')],
+  }
+  found, out = _report(capsys, roots)
+  # Per-source rows come first and are all that is counted.
+  assert out.index(f'{found} sources with inconsistencies') < out.index(
+    'holotypes that differ between sources:'
+  )
+  assert out.endswith(
+    'holotypes that differ between sources:\n'
+    '  navicula_whitehouse_1941: 1941_whitehouse F. 5404; 2021_jell_sprinkle UQF 9\n'
+  )
+
+
+def test_report_prints_no_holotype_section_when_none_differ(load_records, capsys):
+  roots = {
+    '1941_whitehouse': [
+      Tree(
+        {
+          'taxon': 'navicula_whitehouse_1941',
+          'material': [{'role': 'holotype', 'catalogNumbers': ['F. 5404']}],
+        },
+        {'source_key': '1941_whitehouse', 'type': 'taxonomy', 'position': 0},
+      )
+    ]
+  }
+  _, out = _report(capsys, roots)
+  assert 'holotypes that differ' not in out
+
+
+def test_repositories_file_keeps_the_registry_fields_the_store_reads(load_records):
+  registry = claims_script._repositories()
+  assert list(registry) == sorted(registry)
+  assert registry['uq-f']['prefixes'] == ['UQF', 'F']
+  assert all(set(entry) <= set(claims_script._REPOSITORY_FIELDS) for entry in registry.values())

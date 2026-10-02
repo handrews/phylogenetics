@@ -1,3 +1,5 @@
+prefixes:
+  GM: gm
 taxonomies:
 - taxon: blastozoa
   children:
@@ -15,12 +17,9 @@ taxonomies:
             new: true
             type: true
             material:
-            - catalogNumbers:
-              - GM 9-5-2 165b
+            - prefix: GM
+              numbers: [9-5-2 165b]
               role: holotype
-            - catalogNumbers:
-              - GM 9-3-887
-              - GM 9-5-3235b
-              - GM 10-3-2000
-              - GM 9-5-2165a
+            - prefix: GM
+              numbers: [9-3-887, 9-5-3235b, 10-3-2000, 9-5-2165a]
               role: paratype

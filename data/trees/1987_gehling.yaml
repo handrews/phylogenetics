@@ -1,3 +1,5 @@
+prefixes:
+  SAMP: sam
 taxonomies:
 - taxon: echinodermata
   children:
@@ -11,15 +13,9 @@ taxonomies:
         type: true
         new: true
         material:
-        - catalogNumbers:
-          - SAMP26768
+        - prefix: SAMP
+          numbers: [26768]
           role: holotype
-        - catalogNumbers:
-          - SAMP26769
-          - SAMP26770
-          - SAMP26771
-          - SAMP26772
-          - SAMP26773
-          - SAMP26774
-          - SAMP26775
+        - prefix: SAMP
+          numbers: [26769, 26770, 26771, 26772, 26773, 26774, 26775]
           role: paratype

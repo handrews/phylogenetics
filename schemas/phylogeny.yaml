@@ -76,6 +76,25 @@ $defs:
         uniqueItems: true
         items:
           $ref: "#/$defs/repositoryKey"
+      prefixes:
+        description: |
+          The prefixes this source prints before its catalog numbers, each
+          mapped to the `repositories.yaml` entry (the register) its numbers
+          belong to, the way a paper's own abbreviation list reads
+          (`MCZ: mcz`, `F.: uq-f`). A material entry's `prefix` is a key of
+          this map; a prefix no entry or locality number uses, or one the
+          registry entry does not list as a form of itself, is reported by
+          the loader.
+        type: object
+        propertyNames:
+          minLength: 1
+        additionalProperties:
+          $ref: "#/$defs/repositoryKey"
+      localityRegister:
+        description: |
+          The register of a locality number that has neither `prefix` nor
+          `register`: the author's own field codes (`sprinkle-l`).
+        $ref: "#/$defs/repositoryKey"
       notes:
         type: string
   person:
@@ -802,11 +821,11 @@ $defs:
     properties:
       of:
         oneOf:
-        - type: string
+        - type: [string, integer]
         - type: array
           minItems: 1
           items:
-            type: string
+            type: [string, integer]
       depicts:
         type: string
         enum: [specimen, cast, reconstruction, drawing]
@@ -1104,6 +1123,22 @@ $defs:
       items:
         type: string
         minLength: 1
+  printedNumber:
+    description: |
+      One number as printed after a prefix (or alone), a string or, when
+      it is only digits, an integer.
+    type: [string, integer]
+  numberOrRun:
+    description: |
+      An item of a material entry's `numbers`: one number, or a
+      two-element list naming the first and last number of a run.
+    oneOf:
+    - $ref: "#/$defs/printedNumber"
+    - type: array
+      minItems: 2
+      maxItems: 2
+      items:
+        $ref: "#/$defs/printedNumber"
   role:
     description: |
       The role the source gives a specimen, in the source's own term
@@ -1159,9 +1194,37 @@ $defs:
     additionalProperties: false
     anyOf:
     - required: [catalogNumbers]
+    - required: [numbers]
     - required: [label]
     - required: [count]
+    not:
+      required: [catalogNumbers, numbers]
+    dependentRequired:
+      prefix: [numbers]
     properties:
+      prefix:
+        description: |
+          The prefix the source prints before the numbers ("MCZ", "F."),
+          a key of the tree file's `prefixes` map, which gives the register
+          the numbers belong to. At most one per entry; none when the source
+          prints no prefix (the entry then names a `repository` or a
+          `holder`).
+        type: string
+        minLength: 1
+      numbers:
+        description: |
+          The catalog numbers after the prefix, as printed, each a string
+          or an integer, or a two-element `[from, to]` list for a printed
+          run. Nothing is parsed out of a string in this shape: the join
+          key is the register and the number. Used instead of
+          `catalogNumbers`, never beside it.
+        type: array
+        minItems: 1
+        items:
+          $ref: "#/$defs/numberOrRun"
+      asPrinted:
+        description: The numbers verbatim as printed ("GSC 25935–25961"), prefix included.
+        type: string
       catalogNumbers:
         type: array
         minItems: 1
@@ -1193,7 +1256,10 @@ $defs:
           when the catalog number carries no prefix, when the source names a
           collection its prefix does not reveal (the Walcott Collection), or
           when one entry draws on a different holder than the tree file's
-          `repositories` list resolves its prefix to.
+          `repositories` list resolves its prefix to. Beside `prefix` it
+          names a collection the prefix hides (`prefix: USNM`,
+          `repository: usnm-walcott`); with `numbers` and no prefix it is the
+          holder of the numbers.
         $ref: "#/$defs/repositoryKey"
       holder:
         description: A private holder named by the source, with no registry entry.
@@ -1206,8 +1272,9 @@ $defs:
       castOf:
         description: |
           The catalog number or label of the entry on the same node that this
-          cast was taken from, when the source gives the original one.
-        type: string
+          cast was taken from, when the source gives the original one. With
+          `numbers` the number alone, without its prefix.
+        type: [string, integer]
       collectedBy:
         description: The collector or finder of this specimen, as printed.
         type: string
@@ -1224,10 +1291,12 @@ $defs:
         items:
           $ref: "#/$defs/catalogNumber"
       fragmentOf:
-        description: The catalog number or label of the specimen this is a fragment of.
-        type: string
+        description: |
+          The catalog number or label of the specimen this is a fragment of.
+          With `numbers` the number alone, without its prefix.
+        type: [string, integer]
       parts:
-        description: Part names parallel to `catalogNumbers` (part, counterpart).
+        description: Part names parallel to `catalogNumbers` or `numbers` (part, counterpart).
         type: array
         items:
           type: string
@@ -1352,10 +1421,28 @@ $defs:
           Locality register numbers for this context, as printed ("SH-1",
           "USGS 4148 CO", "NMVPL 58"), resolved like catalog numbers through
           entries whose `subject` is localities. Equivalences the source
-          prints are kept as several numbers on one context.
+          prints are kept as several numbers on one context. An object gives
+          the number apart from its prefix (`{prefix: USGS, number: 4148
+          CO}`, resolved through the tree file's `prefixes` map) or names its
+          register outright (`{register: usgs-l, number: D190d CO}`); with
+          neither, the number belongs to the file's `localityRegister`.
         type: array
         items:
-          type: string
+          oneOf:
+          - type: string
+          - type: object
+            additionalProperties: false
+            required: [number]
+            not:
+              required: [prefix, register]
+            properties:
+              number:
+                $ref: "#/$defs/printedNumber"
+              prefix:
+                type: string
+                minLength: 1
+              register:
+                $ref: "#/$defs/repositoryKey"
       coordinatesAsPrinted:
         description: Coordinates or a grid reference exactly as printed ("GR538142 (yards)").
         type: string
@@ -1368,6 +1455,19 @@ $defs:
       collectedDate:
         description: When the collecting at this context took place, as printed.
         type: string
+      tentative:
+        description: |
+          The source queries this context: `true` queries the whole statement,
+          a list queries the values of the fields it names, which are fields
+          of this same context ("Middle Ordovician(?)" is `series` named in
+          the list). Roadmap E8.
+        oneOf:
+        - const: true
+        - type: array
+          minItems: 1
+          uniqueItems: true
+          items:
+            type: string
       inferred:
         $ref: "#/$defs/inferredContext"
       sources:
@@ -1388,7 +1488,8 @@ $defs:
       it is known from), which is not the provenance of any specimen; a
       node's `ranges` holds one or several, since a taxon may have a
       different range in each region. Each region may be marked tentative
-      where the source prints a query (roadmap E8).
+      where the source prints a query, and `tentative` queries other values
+      or the whole range (roadmap E8).
     type: object
     allOf:
     - $ref: "#/$defs/timeFields"
@@ -1408,6 +1509,19 @@ $defs:
                 type: string
               tentative:
                 type: boolean
+      tentative:
+        description: |
+          The source queries this range: `true` queries the whole statement,
+          a list queries the values of the fields it names, which are fields
+          of this same range ("Middle Ordovician(?)" is `series` named in
+          the list). Roadmap E8.
+        oneOf:
+        - const: true
+        - type: array
+          minItems: 1
+          uniqueItems: true
+          items:
+            type: string
       inferred:
         $ref: "#/$defs/inferredContext"
       asPrinted:
