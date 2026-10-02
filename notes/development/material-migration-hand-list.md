@@ -1,25 +1,35 @@
 # Material migration: the hand list
 
-Items the stage 2 migration could not settle without the paper. Each is a
-small YAML edit. The loader's material checks and `scripts/check_draft.py`
-report a dangling `context`, `of` or `castOf`, an ambiguous prefix, and a
-listed repository no number uses, so run the suite after a batch.
+Items the material migrations could not settle without the paper. Each
+is a small YAML edit. The loader's material checks and
+`scripts/check_draft.py` report a dangling `context`, `of` or `castOf`,
+a `prefix` missing from the file's `prefixes` map, and a map entry
+nothing uses, so run the suite after a batch.
 
 ## Free-text identifiers
 
-- data/trees/1897_whiteaves.yaml, ottawaensis: three entries whose
-  "catalog numbers" are descriptions of the specimens. They want a
-  `label` each, `repository: gsc` for the two Survey specimens (the
-  registry's `otherNames` covers "Museum of the Geological Survey of
-  Canada"), `holder: Walter R. Billings` for the third, and
-  `collectedBy` / `collectedDate` for "John Stewart, 1886". All three
-  could take the node's one context.
-- data/trees/1961_rievers.yaml, coronaeformis: the holotype's
-  identifier is a figure citation. It wants a `label`, `repository:
-  rievers`, and an `illustrations` entry with `of` naming that label.
-- drafts/1927_jaekel.yaml: two long descriptive strings. Each wants a
-  `label`, with the holder either a new registry entry (Riksmuseum
-  Stockholm; Museum Berlin) or `holder`, and the rest in `notes`.
+When numbers moved to `prefix` and `numbers` (2026-10-01), a string
+that described a specimen became its `label`, text unchanged. Each
+still wants a proper entry.
+
+- data/trees/1897_whiteaves.yaml, ottawaensis: three labels that are
+  descriptions of the specimens. They want a short `label` each,
+  `repository: gsc` for the two Survey specimens, `holder: Walter R.
+  Billings` for the third, and `collectedBy` / `collectedDate` for "John
+  Stewart, 1886". All three could take the node's one context.
+- data/trees/1961_rievers.yaml, coronaeformis: the holotype's label is
+  a figure citation ("RVS [Plate 2, Figures 1–4]"). It wants a `label`
+  of its own and an `illustrations` entry with `of` naming it.
+- data/trees/1842_vanuxem.yaml: the holotype's label is "Page 306,
+  Figure 80", a figure citation in the same way.
+- drafts/1927_jaekel.yaml: two long descriptive labels. Each wants a
+  short `label`, with the holder either a new registry entry
+  (Riksmuseum Stockholm; Museum Berlin) or `holder`, and the rest in
+  `notes`.
+- data/trees/1962_fay.yaml: No. 752 is `repository: gsc`, `numbers:
+  [752]`, with `asPrinted: Canadian Geological Survey 752`. The caption
+  prints "Holotype, 752, Canadian Geological Survey" (p. 201); set
+  `asPrinted` to what is printed, or drop it.
 
 ## Record-level holotypes
 

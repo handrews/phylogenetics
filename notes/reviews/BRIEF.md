@@ -20,7 +20,8 @@ opinions exactly as each publication printed them, with no normalisation.
   `tentative` (the list author's doubt about a synonymy entry),
   `modifier` (e.g. "nomen transl."), `bracket`, `auth`/`year`/`in`/`citedAs`
   (= attribution exactly as printed on that line), `pages`, `material` (one entry per specimen
-  or batch: catalog numbers, `role`, `repository`, `context`; `uncertain`
+  or batch: `prefix` and `numbers` (the prefix resolved by the `prefixes` map at
+  the top of the tree file), `role`, `repository`, `context`; `uncertain`
   for a doubtfully assigned specimen, `roleUncertain` for a queried role), `contexts`
   (keyed localities and horizons the entries refer to), `ranges`
   (distribution statements), `illustrations` (on a primary node, this

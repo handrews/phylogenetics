@@ -20,8 +20,10 @@ and source keys the draft cites that have no record yet.
 
 The data says who published what systematic information in which paper
 (roadmap, Ground rules, "Scope"). A draft therefore carries names, acts,
-placements, usages, synonymies, `material` (specimens with their catalog
-numbers, role and repository) with the `contexts` they came from and the
+placements, usages, synonymies, `material` (specimens with their printed
+prefix and numbers, entered separately, their role and holder; the file's
+`prefixes` map says which registry entry each prefix means) with the
+`contexts` they came from and the
 `ranges` a source gives for a taxon, this source's `illustrations` on a
 primary node (tied to a material entry by `of`, with `depicts` when the
 figure is not a specimen photograph; on a cited entry an illustration is

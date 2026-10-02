@@ -999,34 +999,44 @@ contexts:                      # keyed; at the node, or at the top of the tree f
     unit: [Trenton Limestone]
     location: [Division Street, Ottawa]
 material:
-- catalogNumbers: ["GSC 752"]  # printed strings; a [from, to] pair is a range
+- prefix: GSC                  # a key of the tree file's `prefixes` map
+  numbers: [752]               # a [from, to] pair is a printed run
   role: syntype
   context: division-st
 - label: the specimen lent to Hudson
   role: syntype
   status: lost
 illustrations:
-- {textFigures: [3], of: "GSC 752"}
+- {textFigures: [3], of: 752}
 - {plate: 1, figures: [2]}     # no `of`: the source never ties it to a specimen
 ranges:                        # distribution statements, not provenance
 - series: Middle Ordovician
   regions: [Ottawa]
 ```
 
-- A material entry is one specimen or one batch, identified by
-  `catalogNumbers`, by the source's own `label` when it prints no number
-  (Bather's A, B, C; Bell's "Bigsby specimen"), or by a bare `count`. The
-  catalog number is the printed string, prefix included, never split; the
-  repository is resolved from the prefix (D3). `catalogNumbersAsPrinted`
-  keeps the verbatim form when the list had to normalise it, and `count`
-  is an integer, with vagueness ("over 200") in `notes`.
+- A material entry is one specimen or one batch, identified by its
+  `numbers`, by the source's own `label` when it prints no number
+  (Bather's A, B, C; Bell's "Bigsby specimen"), or by a bare `count`.
+  The printed prefix and the number are entered separately (decided
+  2026-10-01, replacing a printed string that code had to split):
+  `prefix` is the prefix as printed, resolved through the tree file's
+  own `prefixes` map (D3), and `numbers` holds what follows it, series
+  letters and suffixes included ("S-3965", "581A", "602-D1"). An entry
+  has one prefix, so a citation that mixes two holders is two entries.
+  A number printed with no prefix takes `repository` or `holder`. A
+  list says the source cites each number; a `[from, to]` pair says it
+  prints a run without enumerating it, which is not the same claim
+  (Sprinkle 1973: "GSC 25935–25961 (17 specimens)"). `asPrinted` keeps
+  a run's own notation where that says more, and `count` is an integer,
+  with vagueness ("over 200") in `notes`. Spacing and hyphens between
+  prefix and number are typography and are not kept.
 - `context` refers to a context by key, on the node first, then the file;
   `{key, tentative: true}` when the source is unsure which context the
   specimen came from. A specimen with no stated context has no `context`.
   A file that gives one locality for thirty taxa states it once.
 - An `illustrations` entry's `of` names a material entry on the same node
-  by catalog number (range endpoints count, and so does a number inside a
-  range pair's run, an exact match taking precedence) or label; `depicts`
+  by one of its numbers, without the prefix (a number inside a range
+  pair's run counts, an exact match taking precedence) or by label; `depicts`
   records the medium (cast, reconstruction, drawing). An entry with no `of` is a
   figure the source never ties to a specimen, the honest state of most
   pre-1900 work. A locator inside a synonymy entry's `authority` has the
@@ -1066,7 +1076,7 @@ queried ("topotype?"). Doubt about the assignment covers the role, so
 `uncertain`.
 
 Holotypes are singular: two numbers for one holotype are one entry with
-two `catalogNumbers` and `parts: [part, counterpart]`. Whether a role is
+two `numbers` and `parts: [part, counterpart]`. Whether a role is
 this source's act or a report of an earlier one: on a protologue node
 (`new: true`) a holotype, paratype or syntype entry is this source's
 designation by definition, and `roleAct` is written only for a later
@@ -1076,31 +1086,58 @@ check that a name has at most one holotype across sources, unless a later
 source designates a lectotype or neotype, is F5.
 
 **D3. Repositories.** `data/repositories.yaml` holds every holder a
-catalog number may name, in one place, organised by holder rather than by
-printed prefix. An entry is an institution, a collection inside one
-(`within`), or a person, with `type` saying which and `subject` saying
-what its numbers identify (specimens, localities, samples); either may be
-`unknown` when a paper prints a prefix and nothing more. Keys are slugs,
-like taxon and source keys. `prefixes` lists the printed prefixes that
-resolve to an entry and `otherNames` the other names it is printed under, and the prefix
-index is derived from both, because a prefix need not resemble its
-holder's name: Sprinkle 1973's latex casts numbered E and BC belong to
-the Caster Collection at the University of Cincinnati
-(`u-cincinnati-caster`, `within: u-cincinnati`). A collection may print its parent's numbers and list no
-prefix of its own, as the Walcott Collection does with USNM numbers; a
-material entry then names it in `repository`. When two entries claim a
-prefix (PE for the Field Museum and for the North Museum at Franklin and
-Marshall College; E for NHMUK's register and the Caster casts; UCMP for
-Berkeley and for Bell 1976's Cincinnati museum), a tree file whose
-numbers use it lists the entry it means under its own `repositories`,
-the analogue of `needsQualification` on a taxon record. Resolution takes
-the leading letters of the catalog number, folding a hyphen or space
-between prefix and number, matches the longest prefix or former name at
-a token boundary, and tries the file's listed entries first; a prefix
-still claimed by two entries, or a listed entry no number uses, is an
-error. `holder` names a private holder with no registry entry, so its
-numbers need no resolvable prefix.
-Unresolved prefixes are reported now and fail at stage 4 (F2).
+catalog number may name, in one place, organised by holder. An entry is
+an institution, a collection inside one (`within`), or a person, with
+`type` saying which and `subject` saying what its numbers identify
+(specimens, localities, samples); either may be `unknown` when a paper
+prints a prefix and nothing more. Keys are slugs, like taxon and source
+keys.
+
+A tree file says which holder each printed prefix means, in a
+`prefixes` map at its top, the way a paper's own list of abbreviations
+does (Sprinkle 1973, p. 56, footnote 1; Jell, Burrett & Banks 1985,
+p. 184):
+
+```yaml
+prefixes:
+  MCZ: mcz
+  PE: north-museum-fm
+  E: u-cincinnati-caster
+  USGS locality: usgs-l
+localityRegister: sprinkle-l
+```
+
+So a prefix two holders print is no difficulty: PE is the North Museum
+in Sprinkle 1973 and the Field Museum's register in Guensburg et al.
+2020, E is the Caster casts in one file and NHMUK's register in another,
+and Bell 1976's UCMP is Cincinnati in that file alone. Nothing is
+parsed: an entry's `prefix` is a key of its file's map, and the join
+key is the entry the map names and the number.
+
+The prefix is whatever resolves to a registry entry, and the number is
+everything after it. Where a holder numbers several series, each series
+is therefore an entry of its own (`nhmuk-e`, `nhmuk-ee`, `fmnh-pe`, as
+`uq-f` and `qm-f` were from the start), so that "NHMUK EE16642" and
+"EE 16642" split to the same register and the same number, and E 16642
+stays a different specimen. Where the registry has only the institution,
+series letters stay in the number ("USNM S-3965").
+
+A registry entry's `prefixes` and `otherNames` are the printed forms
+known for it. They resolve nothing in the trees. They are checked
+against: a file that maps a prefix to an entry not listing it is
+reported (a typo, or a form to add), and so is a number that begins
+with a prefix of its own register (a split in the wrong place). They
+also split a number a person types into the specimen lookup, which is
+the one place a string is still parsed.
+
+A collection may print its parent's numbers, as the Walcott Collection
+does with USNM numbers: the entry has `prefix: USNM` and names the
+collection in `repository`, and joins under the prefix's register.
+`holder` names a private holder with no registry entry. A locality
+number takes the same shape on a context, `{prefix, number}`, with
+`register` naming a registry entry directly; an unprefixed code (an
+author's own field numbers) belongs to the file's `localityRegister`.
+
 
 **D4. One name, two roles.** The same locator fields serve two roles
 under one field name, `illustrations`, fixed by whether the node is a
@@ -1148,15 +1185,18 @@ and the schema now has a field for each, all as printed:
   when the source cites it (MCZ 629A and B, casts of the specimen to be
   deposited as PE-199).
 - A lot and its pieces: MCZ 602-D1, 602-RO-5, 602a are pieces of lot MCZ
-  602 with different roles. Each piece is its own entry with the printed
-  string; the lot relation is derivable from the string and is not
+  602 with different roles. Each piece is its own entry with its number
+  as printed; the lot relation is derivable from the number and is not
   asserted.
 - Localities come from registers of their own (the author's field codes,
   USGS and Walcott locality numbers, the Museum of Victoria's NMVPL), and
   sources print equivalences between them: `localityNumbers` on the
-  context, resolved through entries whose `subject` is localities, with
+  context, each a prefix and a number resolved like a specimen's (D3)
+  to an entry whose `subject` is localities, with
   `coordinatesAsPrinted` and `mapSheet` for a grid reference kept
-  verbatim.
+  verbatim. Sprinkle 1973 prints "USGS locality 4148 CO" and "USNM
+  locality 55e"; the prefix is entered with the word, which keeps
+  `USNM` for specimens in the same map.
 - Collecting is recorded against the specimen as well as the site ("found
   at locality LV-2 by my field assistant"): `collectedBy` and
   `collectedDate` on both the material entry and the context.
@@ -1168,11 +1208,11 @@ material entry, and where the slab was found is its context. When the
 case recurs, the shape is a `label` for the slab as an entry of its own,
 with the specimens as entries whose `fragmentOf` names it; no new field.
 
-**Cross-source identity.** Two entries citing the same resolved
-repository and the same catalog number, folded for case and spacing, are
-the same specimen; the tools join on that and no registry is kept. An
-unnumbered specimen links across sources only by an editorial `sameAs`
-when the owner is sure, otherwise not at all. Counts are never
+**Cross-source identity.** Two entries whose prefixes map to the same
+registry entry and whose numbers agree, folded for case and spacing, are
+the same specimen; the tools join on that (`specimen_history`) and no
+registry of specimens is kept. An unnumbered specimen links across
+sources only by `sameAs`, otherwise not at all. Counts are never
 reconciled: Whiteaves 1897 names three specimens, Bather 1914 three, Fay
 1962 two, and each tree carries its own paper's count.
 
@@ -1186,7 +1226,7 @@ reconciled: Whiteaves 1897 names three specimens, Bather 1914 three, Fay
   GSC 1407-B "a fragment of the holotype" is `fragmentOf`; the Bigsby
   specimen is a `label` with the four works that figured it in `notes`;
   "Illustrated Specimen" is `role: figured`; UCMP meaning Cincinnati is
-  `repositories: [u-cincinnati-museum]` at the top of the tree file.
+  `UCMP: u-cincinnati-museum` in the tree file's `prefixes` map.
 - *Fay 1962*: No. 752 captioned "Holotype" and called a syntype in the
   text, which reports the museum label. Neither word fits: no holotype
   was fixed in 1897, and Bather 1914 had since selected one of the
@@ -1297,13 +1337,13 @@ fail also exit non-zero.
 `openTaxon`, `cf`, `aff` and `mergeInto` targets), author id and
 `altSpellingOf` / `altRankOf` / `vulgarSpellingOf` target resolves.
 
-**F2. Repository prefixes: report now, fail at stage 4.** Every catalog
-number's prefix resolves against `data/repositories.yaml` (keys,
-`prefixes` and `otherNames`), the tree file's `repositories` list deciding
-between entries that print the same prefix (D3). A material entry's
-explicit `repository` bypasses resolution and must be a registry key, and a
-`holder` excuses an unresolvable prefix (not an ambiguous one).
-The catalog number keeps the printed prefix either way.
+**F2. Repository prefixes (done 2026-10-01, by removing the thing to
+check).** An entry's `prefix` must be a key of its tree file's
+`prefixes` map and the map's values must be registry keys; both fail. A
+prefix the registry does not list for that entry, and a number that
+begins with a prefix of its own register, are reported. There is no
+prefix left to resolve out of a string, so the "fail at stage 4" step
+has nothing to do (D3).
 
 **F3. Time values, fail.** Every `stage`, `series`, `period` and regional value
 resolves in `time.yaml` (E6).
