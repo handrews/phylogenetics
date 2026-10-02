@@ -501,6 +501,35 @@ def test_an_explicit_repository_strips_its_own_prefix_only(load_records):
   assert other['joinKeys'] == ['usnm:mcz690']
 
 
+def test_each_number_of_an_entry_keys_under_its_own_holder(load_records):
+  [mixed] = _specimen([{'catalogNumbers': ['UTGD 122233', 'NMVP 107053', ['UQF 1', 'QMF 2']]}])
+  assert mixed['repository'] == 'utgd' and mixed['repositoryVia'] == 'prefix'
+  assert mixed['joinKeys'] == ['utgd:122233', 'nmv-p:107053', 'uq-f:1', 'qm-f:2']
+
+
+def test_a_number_that_resolves_to_nothing_keys_under_the_entrys_repository(load_records):
+  [mixed] = _specimen([{'catalogNumbers': ['GSC 752', 'ZZZ 5', 'Specimen 9']}])
+  assert mixed['joinKeys'] == ['gsc:752', 'gsc:zzz5', 'gsc:specimen9']
+
+
+def test_an_explicit_collection_keys_a_parent_prefix_under_the_institution(load_records):
+  [specimen] = _specimen([{'catalogNumbers': ['USNM 165421'], 'repository': 'usnm-walcott'}])
+  assert specimen['repository'] == 'usnm-walcott' and specimen['repositoryVia'] == 'explicit'
+  assert specimen['joinKeys'] == ['usnm:165421']
+
+
+def test_an_explicit_repository_wins_over_the_prefix_of_an_unrelated_holder(load_records):
+  [specimen] = _specimen(
+    [
+      {'catalogNumbers': ['MCZ 690', 'USNM 5', 'UQF 9'], 'repository': 'usnm'},
+    ],
+  )
+  # A sibling collection is not an ancestor: the explicit holder keeps it.
+  assert specimen['joinKeys'] == ['usnm:mcz690', 'usnm:5', 'usnm:uqf9']
+  [sibling] = _specimen([{'catalogNumbers': ['S 7'], 'repository': 'usnm-walcott'}])
+  assert sibling['joinKeys'] == ['usnm-walcott:s7']
+
+
 def test_a_file_listed_prefix_strips_to_the_bare_number(load_records):
   [specimen] = _specimen([{'catalogNumbers': ['PE-214']}], ('fmnh',))
   assert specimen['repository'] == 'fmnh' and specimen['joinKeys'] == ['fmnh:214']

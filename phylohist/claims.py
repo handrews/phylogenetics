@@ -247,6 +247,16 @@ def _coverage_kind(claim):
   return None
 
 
+def _within_chain(repository, registry):
+  """`repository` and every entry above it through `within`, nearest first."""
+  chain = [repository]
+  while (parent := (registry.get(chain[-1]) or {}).get('within')) is not None:
+    if parent in chain:
+      break
+    chain.append(parent)
+  return chain
+
+
 class _NodeClaims:
   """Builds the claims of one node; the shared fields are computed once."""
 
@@ -579,15 +589,19 @@ class _NodeClaims:
     key, via = repository_of(first, repository_registry(), self.node.file_repositories)
     return (None, None) if via in (None, AMBIGUOUS) else (key, via)
 
-  def _bare(self, number, repository):
-    """The printed `number` without its prefix: from its own resolution
-    when that gives `repository`, else by `repository`'s own prefixes and
-    other names."""
+  def _join_key(self, number, repository, explicit):
+    """`<holder>:<folded bare number>` for one catalog number of an entry
+    held by `repository`. The number's own prefix decides the holder when
+    it resolves; for an entry with an explicit `repository` only when that
+    holder is `repository` or an institution above it through `within` (a
+    collection prints its parent's numbers). Otherwise the entry's
+    `repository` stands, and strips its own prefixes and other names."""
     registry = repository_registry()
     key, via, bare = resolve_number(number, registry, self.node.file_repositories)
-    if via not in (None, AMBIGUOUS) and key == repository:
-      return bare
-    return bare_number(number, repository, registry)
+    if via not in (None, AMBIGUOUS):
+      if not explicit or key in _within_chain(repository, registry):
+        return f'{key}:{fold(bare)}'
+    return f'{repository}:{fold(bare_number(number, repository, registry))}'
 
   def _entries(self):
     """One claim per `material` entry; `self._entry_claims` keeps each
@@ -629,7 +643,7 @@ class _NodeClaims:
         claim['roleAct'] = role_act
       if repository is not None and numbers:
         claim['joinKeys'] = [
-          f'{repository}:{fold(self._bare(n, repository))}'
+          self._join_key(n, repository, via == 'explicit')
           for number in numbers
           for n in (number if isinstance(number, list) else [number])
         ]

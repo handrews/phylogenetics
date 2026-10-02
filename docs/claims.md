@@ -231,10 +231,15 @@ says which.
   `otherNames` or `file` (the tree file's `repositories` list settled a
   shared prefix), absent when unresolved. `joinKeys` are
   `<repository>:<folded number>` for every catalog number (a range pair
-  contributes both endpoints and the claim carries `rangeJoin: true`), the
-  number folded without its printed prefix, so two printed forms of one
-  number ("F. 5404", "UQF5404") meet and the same specimen in two sources
-  shares a key. `roleAct` is the
+  contributes both endpoints and the claim carries `rangeJoin: true`), each
+  number keyed under its own holder (the one its prefix resolves to; the
+  entry's `repository` when it resolves to none, or when the entry names
+  its `repository` and the prefix belongs to an unrelated holder) and
+  folded without its printed prefix, so two printed forms of one number
+  ("F. 5404", "UQF5404") meet and the same specimen in two sources shares
+  a key. A collection's number printed with its institution's prefix keys
+  under the institution (`usnm-walcott` with "USNM 165421" gives
+  `usnm:165421`). `roleAct` is the
   entry's own value, else `designated` for a holotype, paratype, syntype
   or cotype on a `new: true` node, else absent. The entry's other fields
   are copied as written: `catalogNumbers`, `catalogNumbersAsPrinted`,
