@@ -577,7 +577,7 @@ class Tree:
       if self._data.get('recombined') and self._taxon.rank.lower() not in _COMBINATION_RANKS:
         logger.error(f'{self} is `recombined` but is not a species-group name')
 
-      if self._related['type'] and self._taxon.rank.lower() in _SPECIES_LEVEL_RANKS:
+      if 'type' in self._data and self._taxon.rank.lower() in _SPECIES_LEVEL_RANKS:
         logger.error(f'{self} carries `type` but is a species-level name; its type is a specimen')
 
       if self._taxon.name:

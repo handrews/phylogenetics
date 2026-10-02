@@ -29,7 +29,7 @@ even when its parent is also unreached, so read parents first.
 | `person` | `phylogeny#/$defs/person/properties/suffix` |
 | `publication` | `phylogeny#/$defs/publication/properties/type` |
 | `range` | `phylogeny#/$defs/range/properties/inferred`<br>`phylogeny#/$defs/range/properties/tentative/oneOf/0` |
-| `relationalFields` | `phylogeny#/$defs/relationalFields/properties/type` |
+| `relationalFields` | `phylogeny#/$defs/relationalFields/properties/type`<br>`phylogeny#/$defs/relationalFields/properties/type/oneOf/0`<br>`phylogeny#/$defs/relationalFields/properties/type/oneOf/1` |
 | `stageRange` | `phylogeny#/$defs/stageRange`<br>`phylogeny#/$defs/stageRange/items` |
 | `taxonRecord` | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items/items` |
 | `timeFields` | `phylogeny#/$defs/timeFields/properties/eon`<br>`phylogeny#/$defs/timeFields/properties/era`<br>`phylogeny#/$defs/timeFields/properties/seriesBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageRange` |
@@ -691,9 +691,9 @@ property.
 
 ### `phylogeny#/$defs/treeDocument/properties/unused/items`
 
-0 of 5 members used, 0 occurrences.
+0 of 6 members used, 0 occurrences.
 
-**Never used (5):** `'material'`, `'illustrations'`, `'contexts'`, `'ranges'`, `'synonyms'`
+**Never used (6):** `'material'`, `'illustrations'`, `'contexts'`, `'ranges'`, `'synonyms'`, `'type'`
 
 ### `phylogeny#/$defs/typeNode/properties/fixation`
 

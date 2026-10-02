@@ -141,20 +141,28 @@ _ABSENCE_OF_KIND = {
   'illustrations': ('illustrations',),
   'material': ('material', 'occurrences', 'illustrations'),
   'acceptance': ('synonymy',),
+  'act': ('types',),
 }
 
 # The content kinds `statements` tabulates for a node, in order: the label,
 # the `materialKind`s that count (None: synonymy entries), the `absenceOf`
 # that says none is printed, and the coverage kind the source declares it under.
+# `'type'` for the `materialKind`s stands for the node's type statement (its
+# `type` node's act claim, else that of a child marked `isType`).
 _NODE_CONTENT = (
   ('specimens', {'specimen'}, 'material', 'material'),
   ('occurrences', {'occurrence', 'range'}, 'occurrences', 'occurrences'),
   ('figures', {'illustration'}, 'illustrations', 'illustrations'),
   ('synonymy', None, 'synonymy', 'synonymy'),
+  ('type', 'type', 'types', 'types'),
 )
 # Specimens and figures are cited for species: above that rank a node with
 # neither says nothing, as in the derived coverage, and the row is left out.
 _SPECIES_LEVEL_CONTENT = frozenset({'specimens', 'figures'})
+# A type is stated for a genus or subgenus: at another rank a node with no
+# type statement and no `types` absence leaves the row out.
+_GENUS_LEVEL_CONTENT = frozenset({'type'})
+_GENUS_LEVEL_RANKS = ('genus', 'subgenus')
 
 _RANK_ORDER = (
   'kingdom',
@@ -1062,19 +1070,48 @@ class ClaimStore:
         return claim.get('pages')
     return None
 
+  def _type_statements(self, source_key, path):
+    """The ids of the node's type statement: the act claim of its `type`
+    node, else that of a child marked `isType`."""
+    at_path = self.at_path[source_key]
+    own = [
+      c['id']
+      for c in at_path.get(f'{path}/type', ())
+      if c['kind'] == 'act' and c['actKind'] == 'type'
+    ]
+    if own:
+      return own
+    prefix = f'{path}/children/'
+    return [
+      c['id']
+      for candidate, claims in at_path.items()
+      if candidate.startswith(prefix) and candidate[len(prefix) :].isdigit()
+      for c in claims
+      if c['kind'] == 'act' and c['actKind'] == 'type'
+    ]
+
   def _node_content(self, source_key, record, path):
     """What a source gives at one node, per content kind: entered (with the
     count and the claims it rests on), none printed (the auditor's `absence`
     claim, or a source coverage that leaves nothing to enter), or not
     entered. Above species rank the specimens and figures rows appear only
-    when the node carries something of the kind."""
+    when the node carries something of the kind, and the type row appears
+    for a genus or subgenus, and at any other rank only with a type
+    statement or a `types` absence."""
     at = self._node_claims(source_key, path)
     coverage = self.sources[source_key].get('coverage') or {}
     species_level = self._rank_of(record) in blocks.SPECIES_GROUP
+    # A placeholder (an unnamed or open genus) has no type to state.
+    genus_level = self._rank_of(record) in _GENUS_LEVEL_RANKS and not (
+      self.names.get(record) or {}
+    ).get('placeholder')
     rows = []
     for label, material_kinds, absence_of, coverage_kind in _NODE_CONTENT:
       if material_kinds is None:
         ids = [e['claim'] for e in self._synonymy_entries(source_key, path)]
+        incomplete = False
+      elif material_kinds == 'type':
+        ids = self._type_statements(source_key, path)
         incomplete = False
       else:
         found = [
@@ -1090,6 +1127,8 @@ class ClaimStore:
         text = 'none printed'
         row = {'state': 'none', 'basis': 'null', 'count': None, 'claims': absence}
       elif label in _SPECIES_LEVEL_CONTENT and not species_level:
+        continue
+      elif label in _GENUS_LEVEL_CONTENT and not genus_level:
         continue
       elif coverage.get(coverage_kind) in ('na', 'all'):
         # The source prints none anywhere, or enters all it prints of the kind.
@@ -1128,7 +1167,16 @@ class ClaimStore:
         and (source is None or c['source'] == source)
       ]
     if act_kind is not None:
-      claims = [c for c in claims if c.get('actKind') == act_kind]
+      # The `types` absence is the statement that no type is printed, so it
+      # answers a question about the `type` act.
+      claims = [
+        c
+        for c in claims
+        if c.get('actKind') == act_kind
+        or act_kind == 'type'
+        and c['kind'] == 'absence'
+        and c['absenceOf'] == 'types'
+      ]
     claims = sorted(claims, key=lambda c: (self.source_year(c['source']), c['source'], c['path']))
     heading = self.words.heading(record, self.words.asked(raw, record))
     parameters = {'record': record, 'source': source, 'kind': kind, 'act_kind': act_kind}

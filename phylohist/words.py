@@ -32,6 +32,7 @@ ABSENCE_WORDS = {
   'occurrences': 'no locality or range given',
   'illustrations': 'not figured',
   'synonymy': 'no synonymy given',
+  'types': 'no type stated',
 }
 PLURAL_KINDS = {'newTaxa', 'types', 'occurrences', 'illustrations'}
 # How a `type` node's `fixation` reads after the type, the Treatise's

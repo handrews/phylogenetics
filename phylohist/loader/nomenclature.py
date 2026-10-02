@@ -125,17 +125,29 @@ def role_uncertain(node):
   ]
 
 
-def type_node(node):
+def type_node(node, is_cited):
   """The `type` node names a taxon, the type is not also stated by a child
   marked `isType`, and `fixedBy` goes with a fixation it can explain; an
-  error otherwise."""
+  error otherwise. `type: null` (the source states no type for the taxon,
+  roadmap G11) is an auditor's statement about the taxon the node is on, so
+  it is an error on a cited entry and beside a child marked `isType`, and
+  otherwise says nothing more."""
   if 'type' not in node:
     return []
   type_data = node['type']
   messages = []
+  type_child = any(
+    isinstance(child, dict) and child.get('isType') for child in node.get('children') or ()
+  )
+  if type_data is None:
+    if is_cited:
+      messages.append(('error', 'cited entry carries `type: null`'))
+    if type_child:
+      messages.append(('error', '`type: null` beside a child marked `isType`'))
+    return messages
   if not isinstance(type_data, dict) or not type_data.get('taxon'):
     messages.append(('error', '`type` names no taxon'))
-  if any(isinstance(child, dict) and child.get('isType') for child in node.get('children') or ()):
+  if type_child:
     messages.append(('error', '`type` beside a child marked `isType`: the type is stated twice'))
   if (
     isinstance(type_data, dict)

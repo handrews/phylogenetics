@@ -19,12 +19,16 @@ from pathlib import Path
 
 import pytest
 
-from phylohist.claims import extract
-from phylohist.loader import io, nomenclature
+from phylohist.claims import derived_coverage, extract, manifest
+from phylohist.loader import io, material, nomenclature
 from phylohist.loader.load import _report_nomenclature
 from phylohist.loader.material import walk_document
 from phylohist.loader.taxa import Tree
 from phylohist.store import CLAIMS_DIR, ClaimStore
+from phylohist.words import ABSENCE_WORDS
+
+# The synthetic trees name real records, so every test needs the corpus loaded.
+pytestmark = pytest.mark.usefixtures('load_records')
 
 SCRIPTS = Path(__file__).parent.parent / 'scripts'
 
@@ -134,32 +138,37 @@ def _messages(result):
 
 
 def test_type_node_clean_cases():
-  assert nomenclature.type_node({'taxon': GENUS}) == []
-  assert nomenclature.type_node({'taxon': GENUS, 'type': {'taxon': BIGSBYI}}) == []
-  assert nomenclature.type_node({'taxon': GENUS, 'children': [{'taxon': BIGSBYI}]}) == []
+  assert nomenclature.type_node({'taxon': GENUS}, is_cited=False) == []
+  assert nomenclature.type_node({'taxon': GENUS, 'type': {'taxon': BIGSBYI}}, is_cited=False) == []
+  assert (
+    nomenclature.type_node({'taxon': GENUS, 'children': [{'taxon': BIGSBYI}]}, is_cited=False) == []
+  )
   # A child's flag with no `type` is the old form, which is still allowed.
   old = {'taxon': GENUS, 'children': [{'taxon': BIGSBYI, 'isType': True}]}
-  assert nomenclature.type_node(old) == []
+  assert nomenclature.type_node(old, is_cited=False) == []
   assert (
     nomenclature.type_node(
       {
         'taxon': GENUS,
         'type': {'taxon': BIGSBYI, 'fixation': 'iczn', 'fixedBy': {'source': '1899_bather'}},
         'children': [{'taxon': BIGSBYI, 'isType': False}],
-      }
+      },
+      is_cited=False,
     )
     == []
   )
 
 
 def test_type_node_without_a_taxon():
-  assert nomenclature.type_node({'taxon': GENUS, 'type': {'fixation': 'monotypy'}}) == [
+  assert nomenclature.type_node(
+    {'taxon': GENUS, 'type': {'fixation': 'monotypy'}}, is_cited=False
+  ) == [
     ('error', '`type` names no taxon'),
   ]
-  assert _messages(nomenclature.type_node({'taxon': GENUS, 'type': {}})) == [
+  assert _messages(nomenclature.type_node({'taxon': GENUS, 'type': {}}, is_cited=False)) == [
     '`type` names no taxon'
   ]
-  assert _messages(nomenclature.type_node({'taxon': GENUS, 'type': True})) == [
+  assert _messages(nomenclature.type_node({'taxon': GENUS, 'type': True}, is_cited=False)) == [
     '`type` names no taxon'
   ]
 
@@ -170,7 +179,7 @@ def test_type_beside_a_child_marked_is_type():
     'type': {'taxon': BIGSBYI},
     'children': [{'taxon': PRIORITY}, {'taxon': BIGSBYI, 'isType': True}],
   }
-  assert nomenclature.type_node(node) == [
+  assert nomenclature.type_node(node, is_cited=False) == [
     ('error', '`type` beside a child marked `isType`: the type is stated twice'),
   ]
 
@@ -178,7 +187,7 @@ def test_type_beside_a_child_marked_is_type():
 @pytest.mark.parametrize('fixation', ['subsequentDesignation', 'subsequentMonotypy', 'iczn'])
 def test_fixed_by_goes_with_a_fixation_it_can_explain(fixation):
   type_node = {'taxon': BIGSBYI, 'fixation': fixation, 'fixedBy': {'source': '1899_bather'}}
-  assert nomenclature.type_node({'type': type_node}) == []
+  assert nomenclature.type_node({'type': type_node}, is_cited=False) == []
 
 
 @pytest.mark.parametrize('fixation', [None, 'monotypy', 'originalDesignation', 'typus'])
@@ -186,7 +195,7 @@ def test_fixed_by_without_such_a_fixation_is_an_error(fixation):
   type_node = {'taxon': BIGSBYI, 'fixedBy': {'source': '1899_bather'}}
   if fixation:
     type_node['fixation'] = fixation
-  assert nomenclature.type_node({'type': type_node}) == [
+  assert nomenclature.type_node({'type': type_node}, is_cited=False) == [
     (
       'error',
       '`fixedBy` needs a `fixation` of subsequentDesignation, subsequentMonotypy or iczn',
@@ -199,7 +208,7 @@ def test_the_checks_can_all_fire_on_one_node():
     'type': {'fixedBy': {'source': '1899_bather'}},
     'children': [{'taxon': BIGSBYI, 'isType': True}],
   }
-  assert len(nomenclature.type_node(node)) == 3
+  assert len(nomenclature.type_node(node, is_cited=False)) == 3
 
 
 def test_load_reports_the_type_checks_with_the_nodes_path(load_records, caplog):
@@ -254,8 +263,8 @@ def test_the_corpus_has_no_type_node_messages(load_records):
   data, _, _ = load_records
   found = []
   for opinion in data['trees'].values():
-    for _, node, _ in walk_document(opinion):
-      found += nomenclature.type_node(node)
+    for _, node, is_cited in walk_document(opinion):
+      found += nomenclature.type_node(node, is_cited)
       assert 'type' not in node
   assert found == []
 
@@ -1179,3 +1188,437 @@ def test_a_paper_that_names_the_type_only_counts_among_the_papers(synthetic):
   measured = synthetic.closure.measurement(BIGSBYI, include_related=False)
   assert '1985_jell_burrett_banks' in measured['sources']
   assert '1961_dehm' in measured['sources']
+
+
+# -- `type: null` and the derived `types` coverage ------------------------------
+
+SUBGENUS_KEY = 'agelacrinus-subgenus_carneyella'
+PLACEHOLDER = 'agelacrinitidae-uncertain-genus_bell.b.m_1976'
+NULL_TYPE_SOURCE = '1927_jaekel'
+
+
+def test_schema_accepts_a_null_type_and_unused_type():
+  assert _valid(_tree({'type': None}))
+  assert _valid({'unused': ['type'], 'taxonomies': [{'taxon': GENUS}]})
+  assert not _valid({'unused': ['types'], 'taxonomies': [{'taxon': GENUS}]})
+
+
+def test_type_null_is_no_error_on_a_primary_node():
+  assert nomenclature.type_node({'taxon': GENUS, 'type': None}, is_cited=False) == []
+  node = {'taxon': GENUS, 'type': None, 'children': [{'taxon': BIGSBYI, 'isType': False}]}
+  assert nomenclature.type_node(node, is_cited=False) == []
+
+
+def test_type_null_on_a_cited_entry_is_an_error():
+  assert nomenclature.type_node({'taxon': CYCLASTER, 'type': None}, is_cited=True) == [
+    ('error', 'cited entry carries `type: null`'),
+  ]
+  # A type node on a cited entry is allowed, as before.
+  node = {'taxon': CYCLASTER, 'type': {'taxon': BIGSBYI}}
+  assert nomenclature.type_node(node, is_cited=True) == []
+
+
+def test_type_null_beside_a_child_marked_is_type_is_an_error():
+  node = {'taxon': GENUS, 'type': None, 'children': [{'taxon': BIGSBYI, 'isType': True}]}
+  assert nomenclature.type_node(node, is_cited=False) == [
+    ('error', '`type: null` beside a child marked `isType`'),
+  ]
+  assert len(nomenclature.type_node(node, is_cited=True)) == 2
+
+
+def test_load_reports_a_null_type_with_the_nodes_path(load_records, caplog):
+  data = {
+    'trees': {
+      'src1': {
+        'taxonomies': [
+          {
+            'taxon': FAMILY,
+            'children': [
+              {'taxon': GENUS, 'type': None},
+              {
+                'taxon': 'cyclaster',
+                'type': None,
+                'children': [{'taxon': BIGSBYI, 'isType': True}],
+              },
+              {'taxon': 'carneyella', 'synonyms': [{'taxon': CYCLASTER, 'type': None}]},
+            ],
+          }
+        ],
+      },
+    },
+  }
+  with caplog.at_level(logging.WARNING, logger='phylohist'):
+    _report_nomenclature(data)
+  errors = [r.getMessage() for r in caplog.records if r.levelno == logging.ERROR]
+  assert any(
+    'src1 at 0/children/1: `type: null` beside a child marked `isType`' in m for m in errors
+  )
+  assert any(
+    'src1 at 0/children/2/synonyms/0: cited entry carries `type: null`' in m for m in errors
+  )
+  assert len(errors) == 2
+
+
+def test_a_species_level_name_cannot_carry_a_null_type_either(load_records, caplog):
+  root = {'taxon': BIGSBYI, 'type': None}
+  with caplog.at_level(logging.ERROR, logger='phylohist'):
+    Tree(root, {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 950})
+  [error] = [r.getMessage() for r in caplog.records if r.levelno == logging.ERROR]
+  assert 'carries `type` but is a species-level name; its type is a specimen' in error
+
+
+def test_a_genus_may_carry_a_null_type_and_places_nothing(load_records, caplog):
+  root = {'taxon': FAMILY, 'children': [{'taxon': GENUS, 'type': None}]}
+  with caplog.at_level(logging.ERROR, logger='phylohist'):
+    tree = Tree(root, {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 951})
+  assert not [r for r in caplog.records if r.levelno >= logging.ERROR]
+  [node] = [n for n in tree.walk() if n.taxon is not None and n.taxon.key == GENUS]
+  assert node.related_node('type') is None
+
+
+@pytest.mark.parametrize(
+  'node',
+  [
+    {'taxon': GENUS, 'type': {'taxon': BIGSBYI}},
+    {'taxon': GENUS, 'type': None},
+    {'taxon': GENUS, 'synonyms': [{'taxon': CYCLASTER, 'type': {'taxon': BIGSBYI}}]},
+    {'taxon': GENUS, 'synonyms': [{'taxon': CYCLASTER, 'type': None}]},
+  ],
+)
+def test_unused_type_beside_a_type_node_or_a_null_is_an_error(node):
+  [(level, message)] = material.unused_fields({'unused': ['type'], 'taxonomies': [node]})
+  assert level == 'error'
+  assert message.startswith('`type` is listed as `unused` but appears at 0')
+
+
+def test_unused_type_beside_an_is_type_child_is_an_error():
+  document = {
+    'unused': ['type'],
+    'taxonomies': [
+      {'taxon': GENUS, 'children': [{'taxon': PRIORITY}, {'taxon': BIGSBYI, 'isType': True}]}
+    ],
+  }
+  assert material.unused_fields(document) == [
+    ('error', '`type` is listed as `unused` but a child at 0/children/1 is marked `isType`'),
+  ]
+  # Another field's `unused` says nothing of the flag; a clean file is quiet.
+  assert material.unused_fields({**document, 'unused': ['synonyms']}) == []
+  clean = {'unused': ['type'], 'taxonomies': [{'taxon': GENUS, 'children': [{'taxon': BIGSBYI}]}]}
+  assert material.unused_fields(clean) == []
+
+
+def test_check_draft_rejects_a_null_type(tmp_path):
+  result = _draft(tmp_path, '  - taxon: pyrgocystis\n    type: null\n')
+  assert result.returncode == 1, result.stdout + result.stderr
+  assert 'children/0: draft carries `type: null`; only an auditor sets nulls' in result.stdout
+
+
+def test_check_draft_reports_a_null_type_on_a_cited_entry(tmp_path):
+  result = _draft(
+    tmp_path,
+    '  - taxon: pyrgocystis\n    synonyms:\n    - taxon: grayae_bather_1915\n      type: null\n',
+  )
+  assert result.returncode == 1, result.stdout + result.stderr
+  assert 'cited entry carries `type: null`' in result.stdout
+
+
+def test_a_cited_entry_may_still_carry_a_type_node_in_a_draft(tmp_path):
+  result = _draft(
+    tmp_path,
+    '  - taxon: pyrgocystis\n'
+    '    synonyms:\n'
+    '    - taxon: grayae_bather_1915\n'
+    '      type:\n'
+    '        taxon: sardesoni_bather_1915\n',
+  )
+  assert result.returncode == 0, result.stdout + result.stderr
+
+
+# -- derived `types` coverage ----------------------------------------------------
+
+_BASE = {'source_key': '1961_dehm', 'type': 'taxonomy'}
+_TYPE = {'taxon': BIGSBYI}
+
+
+def _derived(node, position, file_unused=(), tree_type='taxonomy'):
+  root = Tree(node, {**_BASE, 'type': tree_type, 'position': position, 'file_unused': file_unused})
+  return derived_coverage({'s': [root]})['s']['types']
+
+
+def _family(*genera):
+  return {'taxon': FAMILY, 'children': list(genera)}
+
+
+def test_types_coverage_declares_nothing_without_a_null():
+  assert _derived(_family({'taxon': GENUS, 'type': _TYPE}), 960) is None
+  assert _derived(_family({'taxon': GENUS}), 961) is None
+  assert _derived(_family({'taxon': GENUS, 'children': [{**_TYPE, 'isType': True}]}), 962) is None
+
+
+def test_types_coverage_all_when_every_genus_states_a_type_or_a_null():
+  family = _family(
+    {'taxon': GENUS, 'type': _TYPE},
+    {'taxon': 'cyclaster', 'type': None},
+    {'taxon': 'carneyella', 'children': [{'taxon': PRIORITY, 'isType': True}]},
+  )
+  assert _derived(family, 963) == 'all'
+
+
+def test_types_coverage_partly_when_a_genus_has_none():
+  family = _family({'taxon': GENUS, 'type': None}, {'taxon': 'cyclaster', 'children': []})
+  assert _derived(family, 964) == 'partly'
+  # A child that is not marked `isType` is no statement.
+  family = _family(
+    {'taxon': GENUS, 'type': None},
+    {'taxon': 'cyclaster', 'children': [{'taxon': PRIORITY, 'isType': False}]},
+  )
+  assert _derived(family, 965) == 'partly'
+
+
+def test_types_coverage_na_when_unused_lists_type():
+  family = _family({'taxon': GENUS, 'type': None})
+  assert _derived(family, 966, file_unused=('type',)) == 'na'
+  assert _derived(_family({'taxon': GENUS}), 967, file_unused=('type',)) == 'na'
+  assert _derived(_family({'taxon': GENUS}), 968, file_unused=('synonyms',)) is None
+
+
+def test_a_family_without_a_type_is_not_counted():
+  genus = {'taxon': GENUS, 'type': None}
+  assert _derived({'taxon': FAMILY, 'children': [genus]}, 969) == 'all'
+  # A family's own type, a node or a null, is written and not counted.
+  assert _derived({'taxon': FAMILY, 'type': {'taxon': GENUS}, 'children': [genus]}, 970) == 'all'
+  assert _derived({'taxon': FAMILY, 'type': None, 'children': []}, 971) is None
+
+
+def test_a_placeholder_genus_is_not_counted():
+  family = _family({'taxon': GENUS, 'type': None}, {'taxon': PLACEHOLDER})
+  assert _derived(family, 972) == 'all'
+
+
+def test_a_subgenus_is_counted():
+  family = _family(
+    {'taxon': 'carneyella', 'type': None, 'children': [{'taxon': SUBGENUS_KEY}]},
+  )
+  assert _derived(family, 973) == 'partly'
+  family = _family(
+    {'taxon': 'carneyella', 'type': None, 'children': [{'taxon': SUBGENUS_KEY, 'type': _TYPE}]}
+  )
+  assert _derived(family, 974) == 'all'
+
+
+def test_a_species_is_not_counted_and_a_cladogram_contributes_nothing():
+  family = _family(
+    {'taxon': GENUS, 'type': None, 'children': [{'taxon': BIGSBYI}, {'taxon': PRIORITY}]}
+  )
+  assert _derived(family, 975) == 'all'
+  assert _derived(family, 976, tree_type='cladogram') is None
+
+
+def test_a_null_type_is_an_absence_claim():
+  root = {'taxon': FAMILY, 'children': [{'taxon': GENUS, 'type': None}]}
+  claims = _claims(root, 977, '1961_dehm')
+  [absence] = _of_kind(claims, 'absence')
+  assert absence['absenceOf'] == 'types'
+  assert absence['fields'] == ['type']
+  assert absence['path'] == '977/children/0'
+  assert absence['subject'] == GENUS
+  assert not _of_kind(claims, 'act')
+  # The words of an absence say what the null says.
+  assert ABSENCE_WORDS['types'] == 'no type stated'
+  # A type node, or a node with no `type`, is no absence.
+  assert not _of_kind(_claims({'taxon': GENUS, 'type': _TYPE}, 978, '1961_dehm'), 'absence')
+  assert not _of_kind(_claims({'taxon': GENUS}, 979, '1961_dehm'), 'absence')
+
+
+def test_a_null_type_is_the_last_of_a_nodes_absences():
+  node = {'taxon': BIGSBYI, 'synonyms': None, 'material': None}
+  claims = _claims(
+    {'taxon': GENUS, **{k: v for k, v in node.items() if k != 'taxon'}}, 980, '1961_dehm'
+  )
+  assert [c['absenceOf'] for c in _of_kind(claims, 'absence')] == ['material', 'synonymy']
+  claims = _claims({'taxon': GENUS, 'synonyms': None, 'type': None}, 981, '1961_dehm')
+  assert [c['absenceOf'] for c in _of_kind(claims, 'absence')] == ['synonymy', 'types']
+
+
+def _manifest_entry(values):
+  entry = manifest(extract(values), values)['sources']['1961_dehm']
+  return entry
+
+
+def test_manifest_types_declared_beside_a_derived_value_is_inconsistent(monkeypatch):
+  from phylohist.loader.research import Source
+
+  coverage = Source.get('1961_dehm')._data['audit']['coverage']
+  monkeypatch.setitem(coverage, 'types', 'all')
+  values = {
+    '1961_dehm': [
+      Tree(
+        _family({'taxon': GENUS, 'type': None}, {'taxon': 'cyclaster'}),
+        {**_BASE, 'position': 982},
+      )
+    ]
+  }
+  entry = _manifest_entry(values)
+  assert entry['derivedCoverage']['types'] == 'partly'
+  assert entry['coverage']['types'] == 'partly'
+  assert (
+    'types: declared all but derived from the tree (partly); remove the declaration'
+    in (entry['inconsistencies'])
+  )
+  assert not [r for r in entry['inconsistencies'] if r.startswith('types: declared all, no')]
+
+
+def test_manifest_types_keeps_the_claim_count_check_for_a_source_that_derives_nothing(
+  monkeypatch,
+):
+  from phylohist.loader.research import Source
+
+  coverage = Source.get('1961_dehm')._data['audit']['coverage']
+  # Declared, nothing written and no type claim: the check fires, as for `synonymy`.
+  monkeypatch.setitem(coverage, 'types', 'all')
+  values = {'1961_dehm': [Tree(_family({'taxon': GENUS}), {**_BASE, 'position': 983})]}
+  entry = _manifest_entry(values)
+  assert entry['derivedCoverage']['types'] is None
+  assert entry['coverage']['types'] == 'all'
+  assert 'types: declared all, no claims derived' in entry['inconsistencies']
+  # Declared none beside a type node: the other direction.
+  monkeypatch.setitem(coverage, 'types', 'none')
+  values = {
+    '1961_dehm': [Tree(_family({'taxon': GENUS, 'type': _TYPE}), {**_BASE, 'position': 984})]
+  }
+  entry = _manifest_entry(values)
+  assert any(r.startswith('types: declared none, ') for r in entry['inconsistencies'])
+
+
+# -- the tools -------------------------------------------------------------------
+
+# One source with a genus of each state, the old form, a family with a type
+# node, a species, and a type null on a genus and on a subgenus.
+NULLS = {
+  'taxon': FAMILY,
+  'type': {'taxon': GENUS},
+  'children': [
+    {'taxon': GENUS, 'type': _TYPE, 'children': [{'taxon': BIGSBYI}, {'taxon': PRIORITY}]},
+    {'taxon': 'cyclaster', 'type': None, 'children': []},
+    {'taxon': 'carneyella', 'children': [{'taxon': PRIORITY, 'isType': True}]},
+    {'taxon': 'rhenopyrgus', 'children': [{'taxon': SUBGENUS_KEY, 'type': None}]},
+    {'taxon': 'pyrgocystis', 'children': []},
+    {'taxon': 'agelacrinitidae', 'children': []},
+    {'taxon': 'agelacrinidae', 'type': None, 'children': []},
+  ],
+}
+
+
+@pytest.fixture(scope='module')
+def nulled(load_records, tmp_path_factory):
+  """A `ClaimStore` over a copy of `claims/` with the claims of 1961 Dehm
+  replaced by those of `NULLS`, its `types` coverage `partly`."""
+  directory = tmp_path_factory.mktemp('claims_nulls')
+  shutil.copytree(CLAIMS_DIR, directory, dirs_exist_ok=True)
+  claims = _claims(NULLS, 985, '1961_dehm')
+  (directory / '1961_dehm.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
+  store = ClaimStore(directory)
+  store.sources['1961_dehm']['coverage'] = {
+    **store.sources['1961_dehm']['coverage'],
+    'types': 'partly',
+  }
+  return store
+
+
+def _type_rows(block):
+  """`{displayed group or record: (state, basis, count)}` of the type rows."""
+  return [
+    (
+      node['path'],
+      [(r['state'], r['basis'], r['count']) for r in node['rows'] if r['kind'] == 'type'],
+    )
+    for node in block['content']
+  ]
+
+
+def test_the_type_row_in_its_three_states(nulled):
+  entered = nulled.statements(GENUS, source='1961_dehm', kind='absence')
+  assert _type_rows(entered) == [('985/children/0', [('entered', 'claims', 1)])]
+  [row] = [r for r in entered['rows'] if r['cells'][0][0]['value'] == 'type']
+  assert row['cells'][1][0]['value'] == '1 entered'
+  assert row['cells'][1][0]['claims'] == ['1961_dehm:985/children/0/type:act']
+
+  null = nulled.statements('cyclaster', source='1961_dehm', kind='absence')
+  [row] = [r for r in null['rows'] if r['cells'][0][0]['value'] == 'type']
+  assert row['cells'][1][0]['value'] == 'none printed'
+  assert row['cells'][1][0]['claims'] == ['1961_dehm:985/children/1:absence']
+  assert _type_rows(null) == [('985/children/1', [('none', 'null', None)])]
+
+  bare = nulled.statements('pyrgocystis', source='1961_dehm', kind='absence')
+  [row] = [r for r in bare['rows'] if r['cells'][0][0]['value'] == 'type']
+  assert row['cells'][1][0]['value'] == 'not entered'
+  assert 'claims' not in row['cells'][1][0]
+  assert _type_rows(bare) == [('985/children/4', [('notEntered', 'coverage', None)])]
+
+
+@pytest.mark.parametrize('declared', ['all', 'na'])
+def test_the_type_row_reads_coverage_where_nothing_is_entered(nulled, monkeypatch, declared):
+  monkeypatch.setitem(nulled.sources['1961_dehm']['coverage'], 'types', declared)
+  block = nulled.statements('pyrgocystis', source='1961_dehm', kind='absence')
+  assert _type_rows(block) == [('985/children/4', [('none', 'coverage', None)])]
+  [row] = [r for r in block['rows'] if r['cells'][0][0]['value'] == 'type']
+  assert row['cells'][1][0]['value'] == 'none printed' and 'claims' not in row['cells'][1][0]
+
+
+def test_the_type_row_reads_an_is_type_child_as_entered(nulled):
+  block = nulled.statements('carneyella', source='1961_dehm', kind='absence')
+  [(_, [(state, basis, count)])] = _type_rows(block)
+  assert (state, basis, count) == ('entered', 'claims', 1)
+  [row] = [r for r in block['rows'] if r['cells'][0][0]['value'] == 'type']
+  [claim] = row['cells'][1][0]['claims']
+  assert claim == '1961_dehm:985/children/2/children/0:act'
+
+
+def test_the_type_row_of_a_subgenus_and_a_family(nulled):
+  sub = nulled.statements(SUBGENUS_KEY, source='1961_dehm', kind='absence')
+  assert _type_rows(sub) == [('985/children/3/children/0', [('none', 'null', None)])]
+  family = nulled.statements(FAMILY, source='1961_dehm', kind='absence')
+  assert _type_rows(family) == [('985', [('entered', 'claims', 1)])]
+
+
+def test_no_type_row_for_a_species(nulled):
+  block = nulled.statements(BIGSBYI, source='1961_dehm', kind='absence')
+  assert 'type' not in [r['kind'] for node in block['content'] for r in node['rows']]
+
+
+def test_the_type_row_appears_above_genus_only_when_there_is_something(nulled):
+  # A family with neither a type statement nor a `types` absence has no
+  # type row (and so no row at all here); a family's null is a row.
+  bare = nulled.statements('agelacrinitidae', source='1961_dehm', kind='absence')
+  assert 'type' not in [r['kind'] for node in bare['content'] for r in node['rows']]
+  null = nulled.statements('agelacrinidae', source='1961_dehm', kind='absence')
+  assert _type_rows(null) == [('985/children/6', [('none', 'null', None)])]
+
+
+def test_statements_by_act_include_the_types_absence(nulled):
+  block = nulled.statements('cyclaster', source='1961_dehm', kind='act')
+  assert [e['sentence'] for e in block['entries']] == ['no type stated']
+  assert block['entries'][0]['kind'] == 'absence'
+  block = nulled.statements('cyclaster', source='1961_dehm', act_kind='type')
+  assert [e['sentence'] for e in block['entries']] == ['no type stated']
+  # Another act kind does not select it, and no kind selects it for a genus with a type.
+  block = nulled.statements('cyclaster', source='1961_dehm', kind='act', act_kind='new')
+  assert block['type'] == 'statement'
+  block = nulled.statements(GENUS, source='1961_dehm', kind='act')
+  assert 'no type stated' not in [e['sentence'] for e in block['entries']]
+  # `absence` selects it too, and no other kind does.
+  block = nulled.statements('cyclaster', kind='absence')
+  assert [e['sentence'] for e in block['entries']] == ['no type stated']
+  block = nulled.statements('cyclaster', source='1961_dehm', kind='placement')
+  assert 'no type stated' not in [e['sentence'] for e in block['entries']]
+
+
+def test_contents_prints_no_type_line_for_a_null_type(nulled):
+  [block] = nulled.contents('1961_dehm', 'cyclaster')
+  assert not [line for line in _lines(block) if 'ype' in line]
+
+
+def test_the_absence_table_has_no_type_row_for_a_placeholder_genus(store):
+  record = 'agelacrinitidae-uncertain-genus_bell.b.m_1976'
+  block = store.statements(record, '1976_bell.b.m', kind='absence')
+  assert [row['kind'] for row in block['content'][0]['rows']] == ['occurrences', 'synonymy']

@@ -643,7 +643,8 @@ applies exactly this: *Bockia* Hecker 1938 "failed to publish an available
 name" for want of a type (Art. 13.3), so he dates it 1940, where the type was
 fixed. The 2012 tree's "Reason for erroneous year unclear" is answered: the
 year is a printed re-dating, and the tree records it as printed with Doweld's
-reason in `notes`.
+reason in `notes`. `type: null` says the source states no type for the taxon,
+and `types` coverage is derived from the genus-group nodes (G11).
 
 The reading round adds printed forms for the union list: "by original
 monotypy" and "by original designation" (Smith 1985, pp. 736–753), "by
@@ -1061,7 +1062,8 @@ ranges:                        # distribution statements, not provenance
   statement with neither is a range (Dehm 1961's period-plus-region
   entries).
 - Nulls (G11): `material: null`, `illustrations: null`, `contexts: null`,
-  `ranges: null` say the source prints none for the node; the file-level
+  `ranges: null` (and `synonyms: null`, `type: null`) say the source prints
+  none for the node; the file-level
   `unused` list says a field appears nowhere. Only an auditor writes
   either; a draft never does.
 
@@ -1524,9 +1526,9 @@ worth keeping goes in `citedAs`, never into identity.
 **G11. Coverage derived from the tree, through nulls; the audit block
 keeps verification and the source-level kinds (direction agreed
 2026-09-27; to be built with D1, not before).** Built 2026-09-30 to
-2026-10-01: the five content fields are nullable, the four content kinds
-are derived, a null is an `absence` claim; what remains is migrating the
-audited sources' declarations to nulls.
+2026-10-01: the six content fields are nullable (`type` the last added),
+the five content kinds are derived, a null is an `absence` claim; what
+remains is migrating the audited sources' declarations to nulls.
 
 G1 declares coverage per
 source because the tree never holds the denominator: it cannot say
@@ -1564,8 +1566,9 @@ Fields fall into three classes, and only the third is nullable:
   `notes`, `editorial`, and `pages`, since a locator is always wanted
   and its absence is always "not captured".
 - Act flags, never null: `new`, `isType`, `emended`, `provisional` and
-  the rest. Absence means the act is not recorded; whether that can be
-  read as "not made" is the audit state's job, and a flag known to be
+  the rest (`isType` stays an act flag; the null for the type is `type`).
+  Absence means the act is not recorded; whether that can be read as
+  "not made" is the audit state's job, and a flag known to be
   unreliably recorded (`emended`, at the time of writing) is exactly what
   `state: unaudited` says.
 - Content, nullable: `synonyms`, and the material fields as D1 now
@@ -1573,7 +1576,9 @@ Fields fall into three classes, and only the third is nullable:
   schema on the material-model branch makes all four nullable, and
   `synonyms` is implemented too (2026-10-01): `synonyms: null` is an error
   on a cited entry, in a draft, and beside a `non` list (a list of
-  exclusions is a synonymy).
+  exclusions is a synonymy). `type` joins them (2026-10-01): `type: null`
+  says the source states no type for the taxon, and is an error on a
+  cited entry, in a draft, and beside a child marked `isType`.
   `children` could join in principle (`children: null` for a taxon the
   paper places nothing under), but nulling every species is the bloat the
   file-level list exists to avoid, so skeleton stays source-level.
@@ -1581,9 +1586,10 @@ Fields fall into three classes, and only the third is nullable:
 What stays declared in the audit block: `state` and `notes`, because a
 negative observation is the easiest to get wrong and the nulls carry no
 reliability signal of their own; and the kinds that are not content
-fields, `skeleton` (taxa not in the tree at all), `newTaxa` and `types`
-(flags, whose "partly" means "not every node was checked for the act",
-which has no node-level form). For the content kinds the map is derived:
+fields, `skeleton` (taxa not in the tree at all) and `newTaxa` (a flag,
+whose "partly" means "not every node was checked for the act", which has
+no node-level form). `types` was declared the same way until `type` became
+a content field (2026-10-01). For the content kinds the map is derived:
 `na` when the file lists the field as unused; `None`, declaring nothing,
 when no node writes a null for it (a value alone records what the source
 prints, not that the file was audited for it); otherwise `all` when no
@@ -1598,15 +1604,19 @@ has a `context` counts as carrying `occurrences`, even beside a
 `contexts: null`; and only taxonomy trees are counted, since a cladogram
 prints no material. `synonymy` (`synonyms` or `non`, value or null, counts
 a node present; `unused: [synonyms]` is `na`) counts every named node of
-every rank. A derived kind that the source also declares is an
-inconsistency row, whether or not the two agree, so the declaration goes
-when the nulls come; a source that writes no null for `synonymy` keeps its
-declared value and the claim-count check on it. The function is
-`claims.derived_coverage`.
+every rank. `types` counts the named genus and subgenus nodes (a
+placeholder has no type, a family's `type` is written and not counted): a
+node carrying `type`, a node or a null, or a child marked `isType` (the
+older form of the same statement) is present, only `type: null` writes a
+null, and `unused: [type]` is `na`. A derived kind that the source also
+declares is an inconsistency row, whether or not the two agree, so the
+declaration goes when the nulls come; a source that writes no null for
+`synonymy` or `types` keeps its declared value and the claim-count check on
+it. The function is `claims.derived_coverage`.
 
 A null is also a claim. Each node's null becomes an `absence` claim
-(`absenceOf` `material`, `occurrences`, `illustrations` or `synonymy`),
-which `statements` words ("no specimens cited") and `synonymy` states
+(`absenceOf` `material`, `occurrences`, `illustrations`, `synonymy` or
+`types`), which `statements` words ("no specimens cited") and `synonymy` states
 ("gives no synonymy"), so the answer for one taxon no longer falls back to
 the source's coverage. Where a source's illustrations are `all`, a
 specimen no figure names is derived as `figured: false` ("(not figured)").
@@ -1635,10 +1645,12 @@ D1's `material` list rather than retrofitted onto the fields it replaces;
 **What an audited file looks like.** A value or a null for `synonyms` and
 for `contexts` or `ranges` (or a material entry linked to a context) on
 every named node of the taxonomy; a value or a null for `material` and
-`illustrations` on every species-level node; `unused` at the top of the
-file for a field the paper uses nowhere; and on the source record
-`audit: {state: complete, coverage: {skeleton, newTaxa, types,
-phylogeny}, notes}` with no entry for the derived kinds.
+`illustrations` on every species-level node; a value or a null for `type`
+on every named genus and subgenus (an `isType` child counts until the
+source is re-read); `unused` at the top of the file for a field the paper
+uses nowhere; and on the source record
+`audit: {state: complete, coverage: {skeleton, newTaxa, phylogeny},
+notes}` with no entry for the derived kinds.
 
 ---
 
