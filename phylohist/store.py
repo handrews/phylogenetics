@@ -1101,7 +1101,10 @@ class ClaimStore:
     at = self._node_claims(source_key, path)
     coverage = self.sources[source_key].get('coverage') or {}
     species_level = self._rank_of(record) in blocks.SPECIES_GROUP
-    genus_level = self._rank_of(record) in _GENUS_LEVEL_RANKS
+    # A placeholder (an unnamed or open genus) has no type to state.
+    genus_level = self._rank_of(record) in _GENUS_LEVEL_RANKS and not (
+      self.names.get(record) or {}
+    ).get('placeholder')
     rows = []
     for label, material_kinds, absence_of, coverage_kind in _NODE_CONTENT:
       if material_kinds is None:

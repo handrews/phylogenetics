@@ -27,6 +27,9 @@ from phylohist.loader.taxa import Tree
 from phylohist.store import CLAIMS_DIR, ClaimStore
 from phylohist.words import ABSENCE_WORDS
 
+# The synthetic trees name real records, so every test needs the corpus loaded.
+pytestmark = pytest.mark.usefixtures('load_records')
+
 SCRIPTS = Path(__file__).parent.parent / 'scripts'
 
 # The records of the examples: a genus (Edrioaster) with two species, the
@@ -1613,3 +1616,9 @@ def test_statements_by_act_include_the_types_absence(nulled):
 def test_contents_prints_no_type_line_for_a_null_type(nulled):
   [block] = nulled.contents('1961_dehm', 'cyclaster')
   assert not [line for line in _lines(block) if 'ype' in line]
+
+
+def test_the_absence_table_has_no_type_row_for_a_placeholder_genus(store):
+  record = 'agelacrinitidae-uncertain-genus_bell.b.m_1976'
+  block = store.statements(record, '1976_bell.b.m', kind='absence')
+  assert [row['kind'] for row in block['content'][0]['rows']] == ['occurrences', 'synonymy']
