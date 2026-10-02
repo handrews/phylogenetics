@@ -466,10 +466,11 @@ def context_tentatives(contexts, file_level=False):
 
 
 NULLABLE_FIELDS = ('material', 'illustrations', 'contexts', 'ranges')
-# Every content field that may be null on a primary node; `synonyms` is the
-# one that cited entries may carry as a list (a nested synonymy), so the
-# cited-entry rule above reads only `NULLABLE_FIELDS`.
-ALL_NULLABLE_FIELDS = (*NULLABLE_FIELDS, 'synonyms')
+# Every content field that may be null on a primary node; `synonyms` and
+# `type` are the ones that cited entries may carry as a list or a node (a
+# nested synonymy, the type of a synonym), so the cited-entry rule above
+# reads only `NULLABLE_FIELDS` (`nomenclature.type_node` has `type: null`).
+ALL_NULLABLE_FIELDS = (*NULLABLE_FIELDS, 'synonyms', 'type')
 _PRIMARY_ONLY_KEYS = ('of', 'depicts')
 
 
@@ -534,7 +535,8 @@ def null_material(node, is_cited):
 def unused_fields(document):
   """A field the file's `unused` lists still appears, even as `null`, on
   some node: an error naming that node's path. `illustrations` counts only
-  on a primary node; a cited entry's locators are another use."""
+  on a primary node; a cited entry's locators are another use. A node
+  marked `isType` is a use of `type` too, the older form of the statement."""
   unused = document.get('unused') or ()
   if not unused:
     return []
@@ -543,6 +545,10 @@ def unused_fields(document):
     for field in unused:
       if field in node and not (field == 'illustrations' and is_cited):
         messages.append(('error', f'`{field}` is listed as `unused` but appears at {path}'))
+    if 'type' in unused and node.get('isType'):
+      messages.append(
+        ('error', f'`type` is listed as `unused` but a child at {path} is marked `isType`')
+      )
   return messages
 
 

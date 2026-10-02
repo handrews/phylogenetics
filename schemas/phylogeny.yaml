@@ -62,7 +62,7 @@ $defs:
         uniqueItems: true
         items:
           type: string
-          enum: [material, illustrations, contexts, ranges, synonyms]
+          enum: [material, illustrations, contexts, ranges, synonyms, type]
       prefixes:
         description: |
           The prefixes this source prints before its catalog numbers, each
@@ -157,9 +157,9 @@ $defs:
           source carries none. A user's confidence in an answer is the
           conjunction: audited, and complete for the kinds the question
           touches. For a source whose tree writes nulls (roadmap G11),
-          `material`, `occurrences`, `illustrations` and `synonymy` are
-          derived from the tree and are not declared; `coverage` then
-          carries `skeleton`, `newTaxa`, `types` and `phylogeny`.
+          `material`, `occurrences`, `illustrations`, `synonymy` and `types`
+          are derived from the tree and are not declared; `coverage` then
+          carries `skeleton`, `newTaxa` and `phylogeny`.
         type: object
         additionalProperties: false
         required: [state]
@@ -653,8 +653,13 @@ $defs:
           (`parents` for the genus it was cited in). Naming the type places
           it: with no child node for it, the `type` node is itself a
           placement under the taxon. On a `synonyms` entry it is the type of
-          that synonym and places nothing (roadmap B3, B14).
-        $ref: "#/$defs/typeNode"
+          that synonym and places nothing (roadmap B3, B14). `null` says the
+          source states no type for the node's taxon (an auditor's statement,
+          roadmap G11; the loader rejects it on a cited entry and beside a
+          child marked `isType`).
+        oneOf:
+        - $ref: "#/$defs/typeNode"
+        - type: "null"
       or:
         type: array
         items:

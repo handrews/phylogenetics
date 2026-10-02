@@ -208,7 +208,7 @@ TOOL_DESCRIPTIONS = {
     'entered; "(not figured)" after a specimen says the same of that '
     "specimen's figures. With a source and kind absence the result is a "
     'table of what the source gives for the record per kind (specimens, '
-    'occurrences, figures, synonymy), each "N entered", "none printed" or '
+    'occurrences, figures, synonymy, type), each "N entered", "none printed" or '
     '"not entered": "none printed" is the auditor\'s statement about the '
     'paper (or follows from the source\'s coverage), "not entered" is work '
     'not yet done; above species rank the specimens and figures rows '

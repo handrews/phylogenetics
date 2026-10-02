@@ -230,13 +230,13 @@ def _report_nomenclature(data):
   each at its level with the source key and the node's path, then the one
   check across the whole corpus."""
   for source_key, opinion in data['trees'].items():
-    for path, node, _ in material.walk_document(opinion):
+    for path, node, is_cited in material.walk_document(opinion):
       where = f'{source_key} at {path}'
       for check, args in (
         (nomenclature.compared_links, (node, Taxon.get)),
         (nomenclature.quoted_parent, (node, Taxon.get)),
         (nomenclature.role_uncertain, (node,)),
-        (nomenclature.type_node, (node,)),
+        (nomenclature.type_node, (node, is_cited)),
       ):
         for level, message in check(*args):
           _log_material(level, f'{where}: {message}')
