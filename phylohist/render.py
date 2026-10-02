@@ -226,6 +226,20 @@ def _statement_text(block):
 # -- text ------------------------------------------------------------------
 
 
+def _type_line(type_line):
+  """The type under its taxon: "Type species. Cyclaster bigsbyi, by
+  monotypy", the word following the type's rank; "(editor)" when the editor
+  inferred the whole statement, "(method: editor)" when only the method."""
+  text = f'{type_line["word"]}. {type_line["label"]}'
+  if type_line.get('method'):
+    text += ', ' + type_line['method']
+  if type_line.get('inferred'):
+    text += ' (editor)'
+  if type_line.get('methodInferred'):
+    text += ' (method: editor)'
+  return text
+
+
 @style('text', 'classification')
 def _text_classification(block):
   # The source above its tree, the tree indented under it, so a list of
@@ -247,12 +261,7 @@ def _text_classification(block):
     for entry in node.get('synonymy') or ():
       lines.append(indent + '  = ' + _entry_line(entry, node.get('name')))
     if node.get('typeSpecies'):
-      lines.append(
-        indent
-        + '  Type species. '
-        + node['typeSpecies']['label']
-        + (' (editor)' if node['typeSpecies'].get('inferred') else '')
-      )
+      lines.append(indent + '  ' + _type_line(node['typeSpecies']))
   return '\n'.join(lines)
 
 
@@ -354,6 +363,8 @@ def _chain_text(chain):
   parts = []
   for node in chain:
     label = node['label']
+    if node.get('mark'):
+      label += ' ' + node['mark']
     if node.get('provisional'):
       label = '? ' + label
     if node.get('questionable'):

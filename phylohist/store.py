@@ -452,17 +452,25 @@ class ClaimStore:
     if max_depth is None or depth < max_depth:
       for child in self._children_paths(source_key, path):
         nodes += self._subtree(source_key, child, depth + 1, max_depth, synonymy)
-    # The type species as its own line under the genus, as a Systematic
-    # Paleontology section prints it, named as this source combines it.
-    for child_path in self._children_paths(source_key, path):
-      for claim in self._node_claims(source_key, child_path):
+    # The type as its own line under the taxon, as a Systematic Paleontology
+    # section prints it, named as this source combines it: the taxon's own
+    # `type` node first, else a child marked `isType`. It never replaces
+    # the child's line.
+    for type_path in [f'{path}/type', *self._children_paths(source_key, path)]:
+      for claim in self._node_claims(source_key, type_path):
         if claim['kind'] == 'act' and claim.get('actKind') == 'type':
           node['typeSpecies'] = {
             'key': claim['subject'],
             'claim': claim['id'],
-            'label': self.words.display(claim['subject'], source_key, child_path),
+            'word': self.words.type_noun(claim['subject']).capitalize(),
+            'label': self.words.display(claim['subject'], source_key, type_path),
             'inferred': bool(claim.get('inferred')),
           }
+          # How it was fixed, and whether the editor inferred the method.
+          if method := self.words.fixation_words(claim, note=False):
+            node['typeSpecies']['method'] = method
+          if 'fixation' in (claim.get('inferredFields') or ()):
+            node['typeSpecies']['methodInferred'] = True
           break
       if node.get('typeSpecies'):
         break
@@ -540,7 +548,7 @@ class ClaimStore:
         if sources and claim['source'] not in sources:
           continue
         parent = claim.get('parent')
-        parent_path = claim['path'].rsplit('/children/', 1)[0]
+        parent_path = closure.parent_path(claim)
         value = (
           self.words.display(parent, claim['source'], parent_path) if parent else '(unnamed group)'
         )
@@ -548,6 +556,8 @@ class ClaimStore:
           value = '? ' + value
         if claim.get('questionable'):
           value += ' ?'
+        if claim.get('via') == 'type':
+          value += ' ' + self.words.type_mark(key)
         # Every claim at the node rides with the cell: the usage, the acts,
         # a rejection, which the cell also shows.
         at = self._node_claims(claim['source'], claim['path'])
@@ -633,8 +643,10 @@ class ClaimStore:
         for via in vias:
           if 'parent' in via:
             claim = self.by_id[via['claim']]
-            parent_path = claim['path'].rsplit('/children/', 1)[0]
+            parent_path = self.closure.parent_path(claim)
             under = self.words.display(via['parent'], via['source'], parent_path)
+            if via.get('via') == 'type':
+              under += ' ' + self.words.type_mark(key)
             how.append(
               {
                 'value': f'{self.cite(via["source"])}: under {under}',
@@ -703,6 +715,11 @@ class ClaimStore:
           'provisional': n['provisional'],
           'questionable': n['questionable'],
           **({'nonMonophyletic': n['nonMonophyletic']} if n.get('nonMonophyletic') else {}),
+          **(
+            {'via': 'type', 'mark': self.words.type_mark(n['key'])}
+            if n.get('via') == 'type'
+            else {}
+          ),
         }
       )
     last = chain['nodes'][-1]
@@ -797,6 +814,14 @@ class ClaimStore:
     )
     return _with_style(block, style)
 
+  def _unlisted_type(self, usage):
+    """Whether a usage claim is of a `type` node whose record the node it
+    types does not also list as a child."""
+    return usage.get('axis') == 'type' and any(
+      c['kind'] == 'act' and c.get('actKind') == 'type' and c.get('listed') is False
+      for c in self._node_claims(usage['source'], usage['path'])
+    )
+
   def _position_above(self, source_key, path):
     """The taxon a node sits under, above what its combination already
     says: for a species the parent of its genus, for a subgenus the
@@ -812,7 +837,7 @@ class ClaimStore:
       current = closure.parent_claim(source_key, current)
     if current is None or not current.get('parent'):
       return None
-    parent_path = current['path'].rsplit('/children/', 1)[0]
+    parent_path = closure.parent_path(current)
     words = self.words.display(current['parent'], source_key, parent_path)
     if current.get('provisional'):
       words += ' (provisional)'
@@ -862,6 +887,11 @@ class ClaimStore:
     for source_key in sorted(by_source, key=lambda s: (self.source_year(s), s)):
       claims = by_source[source_key]
       uses = [c for c in claims if c['kind'] == 'usage' and c.get('axis') in ('children', 'root')]
+      primary = bool(uses)
+      # A name the source cites only as a type, in the combination it cites
+      # it in, is a use of its own; a type the taxon also lists is the
+      # child's use.
+      uses += [c for c in claims if c['kind'] == 'usage' and self._unlisted_type(c)]
       # An `or` name is used at the node it belongs to; when the node's own
       # name is also in the history the two share one line.
       node_paths = {c['path'] for c in uses}
@@ -887,6 +917,8 @@ class ClaimStore:
           acts += [self.words.claim_words(c) for c in at if c['kind'] == 'rejection']
           if acts:
             words += '; ' + '; '.join(acts)
+          if any(c['kind'] == 'placement' and c.get('via') == 'type' for c in at):
+            words += ' ' + self.words.type_mark(use['subject'])
           entry = {
             'year': self.source_year(source_key),
             'source': source_key,
@@ -904,7 +936,7 @@ class ClaimStore:
             if found:
               entry['synonymy'] = found
           entries.append(entry)
-      else:
+      if not primary:
         # A source that only cites the name, in a synonymy.
         for c in claims:
           if c['kind'] != 'acceptance':

@@ -90,12 +90,21 @@ class Closure:
             keys.append(variant)
     return keys
 
+  @staticmethod
+  def parent_path(claim):
+    """The path of the node a placement claim hangs under: the node above
+    along the children axis, or, for a `type` node that is itself a
+    placement, the node that carries it."""
+    if claim.get('via') == 'type':
+      return claim['path'].removesuffix('/type')
+    return claim['path'].rsplit('/children/', 1)[0]
+
   def parent_claim(self, source_key, claim):
-    """The placement claim of the node above, along the children axis."""
-    path = claim['path']
-    if '/children/' not in path:
+    """The placement claim of the node above, along the children axis (or,
+    for a `via: type` placement, of the node that carries the `type`)."""
+    if claim.get('via') != 'type' and '/children/' not in claim['path']:
       return None
-    return self.by_path[source_key].get(path.rsplit('/children/', 1)[0])
+    return self.by_path[source_key].get(self.parent_path(claim))
 
   def chains_of(self, record, trees=TAXONOMY, years=None):
     """The chain of taxa above a record in every source that places it,
@@ -123,11 +132,13 @@ class Closure:
         }
         if current.get('nonMonophyletic'):
           node['nonMonophyletic'] = current['nonMonophyletic']
+        if current.get('via') == 'type':
+          node['via'] = 'type'
         nodes.append(node)
         above = self.parent_claim(source_key, current)
         if above is None and current.get('parent'):
           # The root of the tree has a usage claim but no placement.
-          path = current['path'].rsplit('/children/', 1)[0]
+          path = self.parent_path(current)
           usage = next(
             (c for c in self.store.at_path[source_key].get(path, ()) if c['kind'] == 'usage'), None
           )
@@ -178,14 +189,15 @@ class Closure:
             if not self._wanted(claim, trees, years):
               continue
             key = claim['subject']
-            found.setdefault(key, []).append(
-              {
-                'source': source_key,
-                'year': self.year(source_key),
-                'parent': parent,
-                'claim': claim['id'],
-              }
-            )
+            via = {
+              'source': source_key,
+              'year': self.year(source_key),
+              'parent': parent,
+              'claim': claim['id'],
+            }
+            if claim.get('via') == 'type':
+              via['via'] = 'type'
+            found.setdefault(key, []).append(via)
             if key not in seen:
               seen.add(key)
               nxt.append(key)
@@ -237,16 +249,17 @@ class Closure:
           depth += 1
           parent = current['parent']
           kind = 'placeholder' if current.get('parentPlaceholder') else 'placement'
-          found.setdefault(parent, []).append(
-            {
-              'source': source_key,
-              'year': self.year(source_key),
-              'of': key,
-              'depth': depth,
-              'claim': current['id'],
-              'kind': kind,
-            }
-          )
+          via = {
+            'source': source_key,
+            'year': self.year(source_key),
+            'of': key,
+            'depth': depth,
+            'claim': current['id'],
+            'kind': kind,
+          }
+          if current.get('via') == 'type':
+            via['via'] = 'type'
+          found.setdefault(parent, []).append(via)
           for alt in current.get('altPlacements') or ():
             found.setdefault(alt, []).append(
               {
@@ -294,16 +307,17 @@ class Closure:
             'rank': self.rank(parent),
           },
         )
-        group['entries'].append(
-          {
-            'source': claim['source'],
-            'year': self.year(claim['source']),
-            'record': key,
-            'rank': claim.get('rank'),
-            'claim': claim['id'],
-            'placeholder': claim.get('parentPlaceholder'),
-          }
-        )
+        entry = {
+          'source': claim['source'],
+          'year': self.year(claim['source']),
+          'record': key,
+          'rank': claim.get('rank'),
+          'claim': claim['id'],
+          'placeholder': claim.get('parentPlaceholder'),
+        }
+        if claim.get('via') == 'type':
+          entry['via'] = 'type'
+        group['entries'].append(entry)
     schemes = []
     for group in groups.values():
       entries = sorted(group['entries'], key=lambda e: (e['year'], e['source']))

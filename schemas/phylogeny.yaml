@@ -646,6 +646,15 @@ $defs:
         type: array
         items:
           $ref: taxonomyTree
+      type:
+        description: |
+          The name-bearing type of the node's taxon, at any rank above the
+          species, cited under its original name like a `synonyms` entry
+          (`parents` for the genus it was cited in). Naming the type places
+          it: with no child node for it, the `type` node is itself a
+          placement under the taxon. On a `synonyms` entry it is the type of
+          that synonym and places nothing (roadmap B3, B14).
+        $ref: "#/$defs/typeNode"
       or:
         type: array
         items:
@@ -709,6 +718,33 @@ $defs:
     unevaluatedProperties: false
     properties:
       by:
+        $ref: "#/$defs/authority"
+
+  typeNode:
+    $ref: "#/$defs/baseTaxonomyTree"
+    unevaluatedProperties: false
+    required: [taxon]
+    properties:
+      fixation:
+        description: |
+          How the type was fixed: by original designation (OD), monotypy
+          (M), subsequent designation (SD), subsequent monotypy (SM),
+          objective synonymy (OS), tautonymy, the name ("typus" or
+          "typicus"), or ruling of the ICZN.
+        type: string
+        enum:
+        - originalDesignation
+        - monotypy
+        - subsequentDesignation
+        - subsequentMonotypy
+        - objectiveSynonymy
+        - tautonymy
+        - typus
+        - iczn
+      fixedBy:
+        description: |
+          The work that designated the type, or the Opinion that ruled on it;
+          only with `subsequentDesignation`, `subsequentMonotypy` or `iczn`.
         $ref: "#/$defs/authority"
 
   phylogenyTree:

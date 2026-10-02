@@ -74,7 +74,7 @@ def write(out, claims_by_source, roots, full):
 _KIND_SOURCES = {
   'skeleton': 'taxon/openTaxon nodes and their children',
   'newTaxa': '`new: true`',
-  'types': '`isType: true`',
+  'types': '`isType: true` or a `type` node',
   'synonymy': '`synonyms` and `non` entries',
   'material': '`material` entries',
   'occurrences': '`contexts` and `ranges`',

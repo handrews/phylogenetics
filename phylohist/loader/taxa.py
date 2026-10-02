@@ -440,8 +440,11 @@ class Taxon:
 RelatedAxis = collections.namedtuple('RelatedAxis', 'name many cited')
 
 
+# The ranks of a species-level name, whose type is a specimen.
+_SPECIES_LEVEL_RANKS = frozenset({'species', 'subspecies', 'variety'})
+
 # The ranks whose names are combinations with a genus.
-_COMBINATION_RANKS = frozenset({'subgenus', 'species', 'subspecies', 'variety'})
+_COMBINATION_RANKS = _SPECIES_LEVEL_RANKS | {'subgenus'}
 
 
 class Tree:
@@ -472,6 +475,7 @@ class Tree:
     RelatedAxis('or', many=True, cited=False),
     RelatedAxis('synonyms', many=True, cited=True),
     RelatedAxis('non', many=True, cited=True),
+    RelatedAxis('type', many=False, cited=True),
     RelatedAxis('removed', many=True, cited=True),
     RelatedAxis('parents', many=True, cited=False),
     RelatedAxis('altPlacements', many=True, cited=False),
@@ -572,6 +576,9 @@ class Tree:
       # A new combination is an act on a species-group name.
       if self._data.get('recombined') and self._taxon.rank.lower() not in _COMBINATION_RANKS:
         logger.error(f'{self} is `recombined` but is not a species-group name')
+
+      if self._related['type'] and self._taxon.rank.lower() in _SPECIES_LEVEL_RANKS:
+        logger.error(f'{self} carries `type` but is a species-level name; its type is a specimen')
 
       if self._taxon.name:
         Tree._taxon_index[self._taxon.name].add(self.root)

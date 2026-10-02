@@ -1,5 +1,5 @@
 """Open-nomenclature integrity checks: the `cf`/`aff` link of an open form,
-`quotedParent`, and a queried role.
+`quotedParent`, a queried role, and the `type` node.
 
 Pure functions over a raw node dict, in the way of `material.py`: the
 loader (`load.py`) runs them over the corpus's own documents and
@@ -21,6 +21,8 @@ from .material import walk_document
 SIGNS = ('cf', 'aff')
 _SPECIES_RANKS = ('species', 'subspecies', 'variety')
 _OWN_FIELDS = ('taxon', 'openTaxon')
+# The `fixation` values that a `fixedBy` work or ruling can explain.
+_FIXED_BY_FIXATIONS = ('subsequentDesignation', 'subsequentMonotypy', 'iczn')
 
 _Record = collections.namedtuple('_Record', 'name rank')
 
@@ -121,6 +123,32 @@ def role_uncertain(node):
     for entry in node.get('material') or ()
     if isinstance(entry, dict) and entry.get('roleUncertain') and not entry.get('role')
   ]
+
+
+def type_node(node):
+  """The `type` node names a taxon, the type is not also stated by a child
+  marked `isType`, and `fixedBy` goes with a fixation it can explain; an
+  error otherwise."""
+  if 'type' not in node:
+    return []
+  type_data = node['type']
+  messages = []
+  if not isinstance(type_data, dict) or not type_data.get('taxon'):
+    messages.append(('error', '`type` names no taxon'))
+  if any(isinstance(child, dict) and child.get('isType') for child in node.get('children') or ()):
+    messages.append(('error', '`type` beside a child marked `isType`: the type is stated twice'))
+  if (
+    isinstance(type_data, dict)
+    and 'fixedBy' in type_data
+    and type_data.get('fixation') not in _FIXED_BY_FIXATIONS
+  ):
+    messages.append(
+      (
+        'error',
+        '`fixedBy` needs a `fixation` of subsequentDesignation, subsequentMonotypy or iczn',
+      ),
+    )
+  return messages
 
 
 def compared_link_conflicts(documents):

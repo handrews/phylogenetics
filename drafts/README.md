@@ -45,6 +45,11 @@ Conventions the promotion of the Whiteaves and Bather drafts settled:
   paper's usage, with the ranks the paper attributes to it, even where the
   paper places nothing under most of it. The genus is not made the top
   node merely because the paper erected nothing above it.
+- A type is a `type` node on the taxon it types, written like a
+  `synonyms` entry: the type cited in the combination the paper prints
+  for it (`parents` for the genus), with `fixation` when the paper gives
+  the method. A draft never writes `isType`, which only the entries not
+  yet re-read still carry.
 - One specimen, one entry, even when the paper gives no number and no
   type word. Identifiers, a paper's own letters (A, B, C) and the
   repository are kept; descriptions are not.
