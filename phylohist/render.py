@@ -213,7 +213,10 @@ def _statement_text(block):
       text += ' ' + _also_sentence(f['also'])
     return text
   if kind == 'absent':
-    return f'No source in the corpus mentions {f["name"]}.'
+    text = f'No source in the corpus mentions {f["name"]}.'
+    if f.get('candidates'):
+      text += f' Its prefix is claimed by {" and ".join(f["candidates"])}: give the repository.'
+    return text
   if kind == 'none':
     page = f' ({pages_text(f["page"])})' if f.get('page') is not None else ''
     return f'{f["cite"]} gives no {f["what"]} for {f["about"]}{page}.'
@@ -301,6 +304,10 @@ def _statement_line(entry):
   return parts
 
 
+# The list kinds whose entries are statements: year, authors, sentence, page.
+_STATEMENT_KINDS = ('statements', 'specimen')
+
+
 def _list_title(block):
   heading = block['heading']
   title = heading.get('name') or f'[{heading["key"]}]'
@@ -311,6 +318,8 @@ def _list_title(block):
   elif block.get('kind') == 'synonymy':
     # The synonymy is one source's: the listing says whose.
     title = f'Synonymy under {title} in {block["cite"]}'
+  elif block.get('kind') == 'specimen':
+    title = f'Specimen {title} ({block["holder"]})'
   return title
 
 
@@ -318,7 +327,7 @@ def _list_title(block):
 def _text_list(block):
   heading = block['heading']
   lines = [_list_title(block)]
-  if block.get('kind') == 'statements':
+  if block.get('kind') in _STATEMENT_KINDS:
     rows = [_statement_line(e) for e in block['entries']]
     width = max([len(r[1]) for r in rows] + [0])
     for year, authors, sentence in rows:
@@ -422,7 +431,7 @@ def _md_table(block):
 def _md_list(block):
   heading = block['heading']
   lines = [f'**{_list_title(block)}**', '']
-  if block.get('kind') == 'statements':
+  if block.get('kind') in _STATEMENT_KINDS:
     for year, authors, sentence in (_statement_line(e) for e in block['entries']):
       lines.append(f'- {year} {authors}: {sentence}')
     if not block['entries']:

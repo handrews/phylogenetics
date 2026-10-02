@@ -163,6 +163,11 @@ def statements(
   return _call('statements', record=record, source=source, kind=kind, act_kind=act_kind)
 
 
+@server.tool(description=D['specimen_history'])
+def specimen_history(number: str, repository: str | None = None) -> dict:
+  return _call('specimen_history', number=number, repository=repository)
+
+
 @server.tool(description=D['source_coverage'])
 def source_coverage(source: str) -> dict:
   return _call('source_coverage', source=source)

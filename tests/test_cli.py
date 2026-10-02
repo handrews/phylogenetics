@@ -150,3 +150,15 @@ def test_bad_argument_exits_2(capsys):
   with pytest.raises(SystemExit) as exc:
     cli.main(['gap', '1983_holloway_jell', 'no-such-kind'])
   assert exc.value.code == 2
+
+
+def test_specimen_subcommand(capsys):
+  code, out = run(capsys, 'specimen', 'UQF 5404')
+  assert code == 0
+  assert out == tools.specimen_history('UQF 5404')['rendered']
+  assert out.splitlines()[0] == 'Specimen UQF 5404 (University of Queensland, fossil register)'
+  assert '2021  Jell & Sprinkle  holotype of Peridionites navicula as UQF5404' in out
+  code, out = run(capsys, 'specimen', 'PE-199')
+  assert code == 0 and 'give the repository.' in out
+  code, out = run(capsys, 'specimen', 'PE-199', '--repository', 'north-museum-fm')
+  assert code == 0 and out.splitlines()[0].startswith('Specimen PE 199 (North Museum')

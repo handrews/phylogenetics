@@ -8,7 +8,9 @@ returns a list of ``(level, message)`` pairs, ``level`` being ``'error'``
 or ``'warning'``; the caller adds the source key and, for a per-node
 check, the node path. `resolve_number`, `repository_of`, `bare_number`,
 `context_key` and `entries_named` are exported for the claims extractor
-(`phylohist.claims`); `set_repository_registry`/`repository_registry`
+(`phylohist.claims`), and `resolve_number`, `bare_number` and `in_run`
+for the store (`phylohist.store`, `specimen_history`);
+`set_repository_registry`/`repository_registry`
 hold the loaded `data/repositories.yaml`, set once by `load.py`, so the
 extractor can reach it the way it reaches `Source`.
 """
@@ -323,7 +325,7 @@ def _split_number(text):
   return _WHITESPACE_RE.sub(' ', stem), digits, suffix
 
 
-def _in_run(value, low, high):
+def in_run(value, low, high):
   """Whether `value` lies inside the run `[low, high]`: an integer run
   (same stem, no suffix, `value` of that stem, a letter suffix allowed on
   it) or a letter run (same stem and digits, a one-letter suffix on each,
@@ -351,7 +353,7 @@ def entry_identifies(entry, value, exact=False):
     elements = number if isinstance(number, list) else [number]
     if value in elements:
       return True
-    if not exact and len(elements) == 2 and _in_run(value, *elements):
+    if not exact and len(elements) == 2 and in_run(value, *elements):
       return True
   return False
 

@@ -11,7 +11,7 @@ there and needs nothing here.
 
 Types: `classification` (a tree as a source prints it), `table` (typed
 columns, cells that may hold several values), `list` (a synonymy list,
-printed forms or statements under a heading), `statement` (a gap, a
+printed forms, statements or the citations of one specimen under a heading), `statement` (a gap, a
 printed form, an absence, a source's "gives no synonymy"), `chains` (one
 line per source: the chain of taxa from a higher taxon down to a record),
 `timeline` (one line per source in year order: what it does with a name).
@@ -302,7 +302,9 @@ def validate(block, store):
           elif column['kind'] == 'source' and 'source' in v:
             check_source(v['source'])
   elif kind == 'list':
-    check_key((block.get('heading') or {}).get('key'))
+    # A specimen's heading key is its join key, not a record.
+    if block.get('kind') != 'specimen':
+      check_key((block.get('heading') or {}).get('key'))
     for entry in block.get('entries', ()):
       check_source(entry.get('source'))
       check_key(entry.get('record'))

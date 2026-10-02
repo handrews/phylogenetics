@@ -924,6 +924,75 @@ def _source_order(source_key):
   return (year, source_key)
 
 
+def _flat_ids(ids):
+  """The printed catalog numbers of a claim, a range pair's endpoints
+  included, as one flat list."""
+  return [n for number in ids or () for n in (number if isinstance(number, list) else [number])]
+
+
+def _specimen_identity(claim):
+  """What makes two holotype claims one specimen: the set of the claim's
+  join keys; without any, its label; without either, its printed ids."""
+  if claim.get('joinKeys'):
+    return set(claim['joinKeys'])
+  if claim.get('label') is not None:
+    return {claim['label']}
+  return set(_flat_ids(claim.get('ids')))
+
+
+def holotype_conflicts(claims_by_source):
+  """One row per taxon whose holotype is a different specimen in two
+  sources (roadmap F5): `{'taxon', 'holotypes': [{'source', 'ids',
+  'joinKeys', 'claim'}]}`, sources in year order, every holotype claim of
+  the taxon on the row. Two holotypes are one specimen when their
+  identities (`_specimen_identity`) intersect. A claim marked `uncertain`
+  is ignored, and a source that gives the taxon a lectotype or neotype
+  does not enter the comparison: its holotype entry reports an earlier
+  designation that its own later selection supersedes. A report, never a
+  failure."""
+  by_taxon = collections.defaultdict(lambda: collections.defaultdict(list))
+  for source_key, claims in claims_by_source.items():
+    for claim in claims:
+      if (
+        claim['kind'] == 'material'
+        and claim['materialKind'] == 'specimen'
+        and claim['subject'] is not None
+        and not claim.get('uncertain')
+      ):
+        by_taxon[claim['subject']][source_key].append(claim)
+  rows = []
+  for taxon, by_source in sorted(by_taxon.items()):
+    holotypes = []
+    for source_key in sorted(by_source, key=_source_order):
+      claims = by_source[source_key]
+      if any(c.get('role') in ('lectotype', 'neotype') for c in claims):
+        continue
+      holotypes.extend(c for c in claims if c.get('role') == 'holotype')
+    identities = [_specimen_identity(c) for c in holotypes]
+    differ = any(
+      holotypes[i]['source'] != holotypes[j]['source'] and not identities[i] & identities[j]
+      for i in range(len(holotypes))
+      for j in range(i + 1, len(holotypes))
+    )
+    if differ:
+      rows.append(
+        {
+          'taxon': taxon,
+          'holotypes': [
+            {
+              'source': c['source'],
+              'ids': c.get('ids') or [],
+              'joinKeys': c.get('joinKeys') or [],
+              'claim': c['id'],
+              **({'label': c['label']} if c.get('label') is not None else {}),
+            }
+            for c in holotypes
+          ],
+        }
+      )
+  return rows
+
+
 def manifest(claims_by_source, roots):
   """Derived coverage per source and per taxon, cross-checked with the
   declared audit block (`docs/claims.md`, "Derived coverage").
@@ -1006,4 +1075,5 @@ def manifest(claims_by_source, roots):
     'authors': {key: author.surname for key, author in sorted(Author._authors.items())},
     'sources': dict(sorted(sources.items())),
     'taxa': {key: sorted(keys, key=_source_order) for key, keys in sorted(taxa.items())},
+    'holotypeConflicts': holotype_conflicts(claims_by_source),
   }

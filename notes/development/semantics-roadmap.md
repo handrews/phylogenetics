@@ -1285,7 +1285,7 @@ resolves in `time.yaml` (E6).
 
 **F4 (MVP). Attribution redundancy, report** (A2).
 
-**F5. Holotype uniqueness, report** (D2).
+**F5. Holotype uniqueness, report** (D2) (done 2026-10-01: `holotypeConflicts` in the manifest, printed by `scripts/claims.py --inconsistencies`; a report, never a failure).
 
 **F6 (MVP). Protologue consistency, fail.** Exactly one `new: true` node per
 name across all sources, and its source equals the name's authority source. The

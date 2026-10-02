@@ -77,6 +77,10 @@ def statements(record, source=None, kind=None, act_kind=None, style='text'):
   return store().statements(record, source, kind, act_kind, style)
 
 
+def specimen_history(number, repository=None, style='text'):
+  return store().specimen_history(number, repository, style)
+
+
 def source_coverage(source):
   return store().source_coverage(source)
 
@@ -209,6 +213,15 @@ TOOL_DESCRIPTIONS = {
     'appear only when the node has some. When a source is named '
     'and nothing of that kind about the record is entered, the result is '
     'the gap block for that source and kind: compose it as the answer.'
+  ),
+  'specimen_history': (
+    'Every citation of one specimen across the corpus, by catalog number: '
+    'give the number as a paper prints it ("UQF 5404", "F. 5404", "MCZ '
+    '581A"); the prefix names the repository, or give the repository key '
+    'when the number has none or its prefix is shared. One line per citing '
+    'source, in year order: the role, the taxon it is cited under, whether '
+    'the assignment is doubtful, the figures tied to it and the page. '
+    'Unnumbered specimens cannot be followed.'
   ),
   'source_coverage': (
     'What the corpus holds of one publication: its citation, whether its '
@@ -392,6 +405,17 @@ TOOL_SPECS = [
     ['record'],
   ),
   _spec(
+    'specimen_history',
+    {
+      'number': {'type': 'string', 'description': 'the catalog number as a paper prints it'},
+      'repository': {
+        'type': ['string', 'null'],
+        'description': 'a repository key, for a number with no prefix or a shared one',
+      },
+    },
+    ['number'],
+  ),
+  _spec(
     'source_coverage',
     {
       'source': {'type': 'string', 'description': 'a source key or citation'},
@@ -443,6 +467,7 @@ TOOLS = {
   'history': history,
   'synonymy': synonymy,
   'statements': statements,
+  'specimen_history': specimen_history,
   'source_coverage': source_coverage,
   'gap': gap,
   'printed_forms': printed_forms,

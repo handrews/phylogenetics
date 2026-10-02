@@ -28,6 +28,7 @@ from phylohist.claims import (
   corrected_node,
   derived_coverage,
   extract,
+  holotype_conflicts,
   manifest,
   merge_patch,
 )
@@ -1031,3 +1032,101 @@ def test_a_number_inside_a_run_names_its_entry_for_figured():
     c for c in claims if c.get('materialKind') == 'specimen' and c['subject'] == _SPECIES
   ]
   assert [c.get('figured') for c in specimens] == [None, False]
+
+
+# -- holotype_conflicts (roadmap F5) ---------------------------------------------
+
+_TAXON = 'navicula_whitehouse_1941'
+
+
+def _claim(source, role='holotype', taxon=_TAXON, **fields):
+  return {
+    'id': f'{source}:{taxon}:{role}:{len(fields)}',
+    'kind': 'material',
+    'materialKind': 'specimen',
+    'source': source,
+    'subject': taxon,
+    'role': role,
+    **fields,
+  }
+
+
+def _conflicts(*claims):
+  by_source = {}
+  for claim in claims:
+    by_source.setdefault(claim['source'], []).append(claim)
+  return holotype_conflicts(by_source)
+
+
+def test_one_specimen_under_two_printed_forms_is_no_conflict(load_records):
+  first = _claim('1941_whitehouse', ids=['F. 5404'], joinKeys=['uq-f:5404'])
+  second = _claim('2021_jell_sprinkle', ids=['UQF5404'], joinKeys=['uq-f:5404'])
+  assert _conflicts(first, second) == []
+
+
+def test_two_different_numbers_are_a_conflict_in_year_order(load_records):
+  later = _claim('2021_jell_sprinkle', ids=['UQF 9'], joinKeys=['uq-f:9'])
+  first = _claim('1941_whitehouse', ids=['F. 5404'], joinKeys=['uq-f:5404'])
+  [row] = _conflicts(later, first)
+  assert row['taxon'] == _TAXON
+  assert row['holotypes'] == [
+    {
+      'source': '1941_whitehouse',
+      'ids': ['F. 5404'],
+      'joinKeys': ['uq-f:5404'],
+      'claim': first['id'],
+    },
+    {
+      'source': '2021_jell_sprinkle',
+      'ids': ['UQF 9'],
+      'joinKeys': ['uq-f:9'],
+      'claim': later['id'],
+    },
+  ]
+
+
+def test_a_later_lectotype_or_neotype_is_no_conflict(load_records):
+  holotype = _claim('1941_whitehouse', ids=['F. 5404'], joinKeys=['uq-f:5404'])
+  for role in ('lectotype', 'neotype'):
+    later = _claim('2021_jell_sprinkle', role=role, ids=['UQF 9'], joinKeys=['uq-f:9'])
+    assert _conflicts(holotype, later) == []
+  # A source that designates a lectotype leaves the comparison whole, even
+  # when it also reports the old holotype entry.
+  report = _claim('2021_jell_sprinkle', ids=['UQF 9'], joinKeys=['uq-f:9'])
+  assert _conflicts(holotype, later, report) == []
+
+
+def test_an_uncertain_holotype_is_ignored(load_records):
+  holotype = _claim('1941_whitehouse', ids=['F. 5404'], joinKeys=['uq-f:5404'])
+  doubtful = _claim('2021_jell_sprinkle', ids=['UQF 9'], joinKeys=['uq-f:9'], uncertain=True)
+  assert _conflicts(holotype, doubtful) == []
+  # An uncertain lectotype does not excuse a conflict either.
+  lectotype = _claim('2021_jell_sprinkle', role='lectotype', ids=['UQF 9'], uncertain=True)
+  assert _conflicts(holotype, lectotype) == []
+
+
+def test_other_roles_and_a_single_source_are_no_conflict(load_records):
+  holotype = _claim('1941_whitehouse', ids=['F. 5404'], joinKeys=['uq-f:5404'])
+  paratype = _claim('2021_jell_sprinkle', role='paratype', ids=['UQF 9'], joinKeys=['uq-f:9'])
+  assert _conflicts(holotype, paratype) == []
+  other = _claim('1941_whitehouse', ids=['F. 5405'], joinKeys=['uq-f:5405'], count=1)
+  assert _conflicts(holotype, other) == []
+
+
+def test_unnumbered_holotypes_are_compared_by_label_then_printed_ids(load_records):
+  first = _claim('1941_whitehouse', label='the Taf. 2 fossil')
+  same = _claim('2021_jell_sprinkle', label='the Taf. 2 fossil')
+  assert _conflicts(first, same) == []
+  [row] = _conflicts(first, _claim('2021_jell_sprinkle', label='the Taf. 3 fossil'))
+  assert row['holotypes'][0]['joinKeys'] == [] and row['holotypes'][0]['label'] == first['label']
+  # No join keys and no label: the printed ids, a range pair's endpoints included.
+  ids = _claim('1941_whitehouse', ids=[['XX 1', 'XX 2']])
+  assert _conflicts(ids, _claim('2021_jell_sprinkle', ids=['XX 2'])) == []
+  [row] = _conflicts(ids, _claim('2021_jell_sprinkle', ids=['XX 3']))
+  assert row['holotypes'][0]['ids'] == [['XX 1', 'XX 2']]
+
+
+def test_the_manifest_reports_holotype_conflicts(claims, roots):
+  # The real corpus: the function runs and the manifest carries what it returns.
+  assert isinstance(holotype_conflicts(claims), list)
+  assert manifest(claims, roots)['holotypeConflicts'] == holotype_conflicts(claims)

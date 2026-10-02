@@ -1046,3 +1046,109 @@ def test_cited_open_form_without_a_combination_reads_in_its_own_words(store):
   block = store.contents('1996_sumrall_bowsher', 'giganticlavus', synonymy=True, style='text')[0]
   assert '= 1976 Agelacrinitidae sp. Bell 1976' in block['rendered']
   assert 'Giganticlavus agelacrinitidae' not in block['rendered']
+
+
+# -- specimen_history ---------------------------------------------------------
+
+
+def _lines(block):
+  return block['rendered'].splitlines()
+
+
+@pytest.mark.parametrize('number', ['UQF 5404', 'F. 5404', 'uqf5404'])
+def test_specimen_history_follows_one_specimen_under_any_printed_form(store, number):
+  block = store.specimen_history(number)
+  assert block['type'] == 'list' and block['kind'] == 'specimen'
+  assert block['heading'] == {'key': 'uq-f:5404', 'name': 'UQF 5404', 'rank': None}
+  assert (block['repository'], block['number']) == ('uq-f', '5404')
+  assert [e['source'] for e in block['entries']] == ['1941_whitehouse', '2021_jell_sprinkle']
+  assert all(
+    e['sentence'].startswith('holotype of Peridionites navicula') for e in block['entries']
+  )
+  assert block['claims'] == sorted(e['claim'] for e in block['entries'])
+
+
+def test_specimen_history_renders_each_citation_as_a_line(store):
+  lines = _lines(store.specimen_history('UQF 5404'))
+  assert lines == [
+    'Specimen UQF 5404 (University of Queensland, fossil register)',
+    '  1941  Whitehouse       holotype of Peridionites navicula as F. 5404',
+    '  2021  Jell & Sprinkle  holotype of Peridionites navicula as UQF5404',
+  ]
+  # The number as a source prints it is not repeated.
+  assert _lines(store.specimen_history('F. 5404'))[1].endswith('holotype of Peridionites navicula')
+  markdown = store.specimen_history('UQF 5404', style='markdown')['rendered']
+  assert markdown.startswith('**Specimen UQF 5404 (University of Queensland, fossil register)**')
+  assert '- 1941 Whitehouse: holotype of Peridionites navicula as F. 5404' in markdown
+
+
+def test_specimen_history_lists_each_taxon_a_number_is_cited_under(store):
+  block = store.specimen_history('MCZ 643')
+  assert [e['source'] for e in block['entries']] == ['1973_sprinkle'] * 2
+  assert {e['sentence'].split(';')[0] for e in block['entries']} == {
+    'cited of Gogia hobbsi',
+    'cited of Blastoidocrinus nevadensis',
+  }
+  assert 'cited of Gogia hobbsi; not figured' in block['rendered']
+
+
+def test_specimen_history_names_the_figures_tied_to_a_specimen(store):
+  [entry] = store.specimen_history('MCZ 581A')['entries']
+  assert entry['sentence'].startswith('holotype of Kinzercystis durhami as MCZ 581A, MCZ 581B')
+  assert '; figured pl. 4, fig. 1, 2' in entry['sentence']
+  assert entry['page'] == 70
+
+
+def test_specimen_history_finds_a_number_inside_a_printed_run(store):
+  block = store.specimen_history('GSC 25940')
+  [entry] = block['entries']
+  assert entry['sentence'].startswith(
+    'paratype of Gogia kitchnerensis in the run GSC 25935–GSC 25961; figured pl. 20, fig. 2'
+  )
+  # The bare number finds the run when the repository is given.
+  assert store.specimen_history('25940', repository='gsc')['entries'] == block['entries']
+  # An endpoint is in the run, and a number just outside it is not.
+  assert store.specimen_history('GSC 25961')['entries'] == block['entries']
+  assert store.specimen_history('GSC 25962')['kind'] == 'absent'
+
+
+def test_specimen_history_asks_for_the_repository_when_the_prefix_is_shared(store):
+  block = store.specimen_history('PE-199')
+  assert block['type'] == 'statement' and block['kind'] == 'absent'
+  assert block['fields'] == {
+    'name': 'the specimen PE-199',
+    'candidates': ['fmnh', 'north-museum-fm'],
+  }
+  assert block['parameters'] == {'number': 'PE-199', 'repository': None}
+  assert block['rendered'] == (
+    'No source in the corpus mentions the specimen PE-199. '
+    'Its prefix is claimed by fmnh and north-museum-fm: give the repository.'
+  )
+  block = store.specimen_history('PE-199', repository='north-museum-fm')
+  assert block['heading']['key'] == 'north-museum-fm:199'
+  assert [e['source'] for e in block['entries']] == ['1973_sprinkle']
+  assert block['entries'][0]['sentence'].startswith('figured of Lepidocystis cf. wanneri')
+  assert block['parameters'] == {'number': 'PE-199', 'repository': 'north-museum-fm'}
+  # A number with no prefix of its own is given its repository.
+  assert (
+    store.specimen_history('5404', repository='uq-f')['entries']
+    == (store.specimen_history('UQF 5404')['entries'])
+  )
+
+
+def test_specimen_history_of_an_unknown_specimen_is_absent(store):
+  for number, repository in (('MCZ 999', None), ('ZZZ 12', None), ('UQF 5404', 'no-such-key')):
+    block = store.specimen_history(number, repository)
+    assert block['kind'] == 'absent' and 'candidates' not in block['fields']
+    assert block['rendered'] == f'No source in the corpus mentions the specimen {number}.'
+    assert block['parameters'] == {'number': number, 'repository': repository}
+
+
+def test_specimen_history_blocks_validate_and_go_through_call(store):
+  from phylohist import blocks, tools
+
+  block = tools.call('specimen_history', {'number': 'UQF 5404'}, style='json')
+  assert block['tool'] == 'specimen_history' and 'rendered' not in block
+  assert blocks.validate(block, store) == []
+  assert block['blockId'] == store.specimen_history('UQF 5404', style='json')['blockId']
+  assert blocks.validate(store.specimen_history('MCZ 999'), store) == []

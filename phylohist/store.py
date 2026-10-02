@@ -2,12 +2,12 @@
 built from it.
 
 `ClaimStore` reads `claims/` (the JSONL per source, `manifest.json`,
-`names.json`) into indices, holds the closure over them, and builds
-every block a tool returns: the listing a source prints, the matrix,
-the descendants and ancestors, the timeline, the statements, the gap
-sentence. Name and citation resolution is `resolve.py`; the words the
-blocks carry are `words.py`; the tool surface over the store is
-`tools.py`.
+`names.json`, `repositories.json`) into indices, holds the closure over
+them, and builds every block a tool returns: the listing a source prints, the matrix,
+the descendants and ancestors, the timeline, the statements, the
+history of one specimen, the gap sentence. Name and citation resolution
+is `resolve.py`; the words the blocks carry are `words.py`; the tool
+surface over the store is `tools.py`.
 """
 
 import collections
@@ -16,6 +16,8 @@ import pathlib
 
 from . import blocks
 from .closure import TAXONOMY, Closure, in_years
+from .loader.material import AMBIGUOUS, bare_number, in_run, resolve_number
+from .names import fold
 from .render import node_label, pages_text, render
 from .resolve import Resolver
 from .words import COVERAGE_WORDS, PLURAL_KINDS, Words, short_citation, years_span
@@ -115,6 +117,8 @@ class ClaimStore:
       self.manifest = json.load(fd)
     with open(directory / 'names.json') as fd:
       self.names = json.load(fd)
+    with open(directory / 'repositories.json') as fd:
+      self.repositories = json.load(fd)
     self.sources = self.manifest['sources']
     self.authors = self.manifest.get('authors') or {}
 
@@ -164,8 +168,36 @@ class ClaimStore:
             self.compared_links[claim['subject']].append(link)
           if claim['subject'] not in self.compared_with[link['taxon']]:
             self.compared_with[link['taxon']].append(claim['subject'])
+    # The specimen claims by join key, and the printed runs ("GSC 25935–25961")
+    # per holder, each as `(low, high, bare low, bare high, claim)`, so a
+    # number inside a run is found beside the claims that cite it by number.
+    self.by_join_key = collections.defaultdict(list)
+    self.runs = collections.defaultdict(list)
+    for claims in self.by_source.values():
+      for claim in claims:
+        if claim['kind'] == 'material' and claim.get('materialKind') == 'specimen':
+          self._index_specimen(claim)
     self.resolver = Resolver(self)
     self.words = Words(self)
+
+  def _index_specimen(self, claim):
+    """File a specimen claim under each of its join keys and, for each
+    range pair it prints, under the holder of the pair's endpoints."""
+    for key in claim.get('joinKeys') or ():
+      self.by_join_key[key].append(claim)
+    if not claim.get('rangeJoin'):
+      return
+    join_keys = claim.get('joinKeys') or ()
+    position = 0
+    for number in claim['ids']:
+      pair = number if isinstance(number, list) else [number]
+      holders = join_keys[position : position + len(pair)]
+      position += len(pair)
+      if len(pair) != 2 or len(holders) != 2:
+        continue
+      holder = holders[0].split(':', 1)[0]
+      bare = [bare_number(end, holder, self.repositories) for end in pair]
+      self.runs[holder].append((*pair, *bare, claim))
 
   @property
   def closure(self):
@@ -1066,6 +1098,69 @@ class ClaimStore:
       gap = blocks.statement(gap['kind'], fields, params)
       return _with_style(gap, style)
     block = blocks.listing({'key': record, 'name': heading}, entries, parameters, kind='statements')
+    return _with_style(block, style)
+
+  def _unfound_specimen(self, number, repository, candidates=None):
+    """The `absent` statement for a specimen no source mentions (or, with
+    `candidates`, whose prefix several repositories claim)."""
+    fields = {'name': f'the specimen {number}'}
+    if candidates:
+      fields['candidates'] = list(candidates)
+    return blocks.statement('absent', fields, {'number': number, 'repository': repository})
+
+  def specimen_history(self, number, repository=None, style='text'):
+    """Every citation of one specimen, by catalog number, one line per
+    claim in year order. The number is read as `resolve_number` reads it
+    (or, with `repository`, as that registry entry's own number), and meets
+    the claims' join keys; a number inside a printed run ("GSC
+    25935–25961") is found as well, by the printed form and by the bare
+    one."""
+    if repository is not None:
+      key, bare = repository, bare_number(number, repository, self.repositories)
+      if key not in self.repositories:
+        return _with_style(self._unfound_specimen(number, repository), style)
+    else:
+      key, via, bare = resolve_number(number, self.repositories)
+      if via == AMBIGUOUS:
+        block = self._unfound_specimen(number, repository, candidates=key)
+        return _with_style(block, style)
+      if via is None:
+        return _with_style(self._unfound_specimen(number, repository), style)
+    join_key = f'{key}:{fold(bare)}'
+    found = {c['id']: c for c in self.by_join_key.get(join_key, ())}
+    in_runs = {}
+    for low, high, bare_low, bare_high, claim in self.runs.get(key, ()):
+      if in_run(number, low, high) or in_run(bare, bare_low, bare_high):
+        found.setdefault(claim['id'], claim)
+        in_runs.setdefault(claim['id'], []).append([low, high])
+    if not found:
+      return _with_style(self._unfound_specimen(number, repository), style)
+    entry = self.repositories[key]
+    claims = sorted(
+      found.values(), key=lambda c: (self.source_year(c['source']), c['source'], c['path'])
+    )
+    entries = [
+      blocks.list_entry(
+        source=c['source'],
+        cite=self.cite(c['source']),
+        year=self.source_year(c['source']),
+        claim=c['id'],
+        page=c.get('pages'),
+        kind='material',
+        authors=self.words.authors(c['source']),
+        sentence=self.words.specimen_history_words(c, number, in_runs.get(c['id'])),
+      )
+      for c in claims
+    ]
+    prefixes = entry.get('prefixes')
+    printed = f'{prefixes[0] if prefixes else entry["name"]} {bare}'
+    block = blocks.listing(
+      {'key': join_key, 'name': printed, 'rank': None},
+      entries,
+      {'number': number, 'repository': repository},
+      kind='specimen',
+      extra={'repository': key, 'holder': entry['name'], 'number': bare},
+    )
     return _with_style(block, style)
 
   def source_coverage(self, source):

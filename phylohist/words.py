@@ -572,6 +572,33 @@ class Words:
       words += ' (not figured)'
     return words
 
+  def specimen_history_words(self, claim, number, runs=None):
+    """One citation in a specimen's history: the role (queried with "?")
+    or "cited", "of <the taxon as the source uses it>", the doubt about
+    the assignment, the number as the source prints it when that is not
+    the one asked about (or the printed run that holds it, `runs`), then
+    its figures, or "not figured" when the source says so."""
+    role = claim.get('role')
+    if role and claim.get('roleUncertain'):
+      role += '?'
+    taxon = self.display(claim['subject'], claim['source'], claim['path'])
+    words = f'{role or "cited"} of {taxon}'
+    if claim.get('uncertain'):
+      words += ' (doubtfully assigned)'
+    if runs:
+      words += ' in the run ' + ', '.join(_range_words([run]) for run in runs)
+    elif claim.get('ids') and _range_words(claim['ids']) != number:
+      words += f' as {_range_words(claim["ids"])}'
+    figures = [
+      _illustration_words(figure) + ('?' if figure.get('uncertain') else '')
+      for figure in claim.get('specimenIllustrations') or ()
+    ]
+    if figures:
+      words += '; figured ' + '; '.join(figures)
+    elif claim.get('figured') is False:
+      words += '; not figured'
+    return words
+
   def _occurrence_words(self, claim):
     """ "occurrence <key>: " and the context's time, unit, place and zone
     words, a modifier read before its unit ("upper Lower Cambrian")."""
