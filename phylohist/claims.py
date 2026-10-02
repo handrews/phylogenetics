@@ -16,6 +16,7 @@ from .loader.material import (
   entries_named,
   flat_numbers,
   repository_registry,
+  same_as_matches,
 )
 from .loader.research import Author, Publication, Source
 from .loader.taxa import Taxon
@@ -126,6 +127,7 @@ _MATERIAL_FIELDS = (
   'listComplete',
   'preparation',
   'castOf',
+  'sameAs',
   'collectedBy',
   'collectedDate',
   'uncertain',
@@ -861,7 +863,60 @@ def extract(roots, sources=None):
       for node in root.walk():
         claims.extend(_NodeClaims(node, source_key, audit).build())
     out[source_key] = claims
+  _link_same_as(out)
   return out
+
+
+def _specimen_claims(claims):
+  return [c for c in claims if c['kind'] == 'material' and c.get('materialKind') == 'specimen']
+
+
+def _link_same_as(claims_by_source):
+  """`sameAsClaim` on each specimen claim whose `sameAs` names exactly one
+  specimen claim of its target source (`same_as_matches`, the loader's
+  matching over the claims); a link whose target source is not in
+  `claims_by_source`, or that does not resolve, is left without it."""
+  specimens = {key: _specimen_claims(claims) for key, claims in claims_by_source.items()}
+  for claims in specimens.values():
+    for claim in claims:
+      link = claim.get('sameAs')
+      if link is None:
+        continue
+      matches = same_as_matches(specimens.get(link['source'], ()), link)
+      if len(matches) == 1:
+        claim['sameAsClaim'] = matches[0]['id']
+
+
+def specimen_components(claims):
+  """The connected components of `claims`, specimen claims: two are
+  connected when they share a join key or one's `sameAsClaim` is the
+  other's id. A claim that prints several numbers (or a run) is a batch of
+  specimens, not one, so it is connected by its `sameAsClaim` only: its
+  numbers join nothing beyond the claims that cite them. `{claim id: the
+  component, a list of claims in the order given}`; a claim with no
+  connection is a component of its own."""
+  parent = {claim['id']: claim['id'] for claim in claims}
+
+  def find(item):
+    while parent[item] != item:
+      parent[item] = parent[parent[item]]
+      item = parent[item]
+    return item
+
+  def join(first, second):
+    parent[find(first)] = find(second)
+
+  first_with_key = {}
+  for claim in claims:
+    keys = claim.get('joinKeys') or ()
+    if len(keys) == 1:
+      join(claim['id'], first_with_key.setdefault(keys[0], claim['id']))
+    if claim.get('sameAsClaim') in parent:
+      join(claim['id'], claim['sameAsClaim'])
+  members = collections.defaultdict(list)
+  for claim in claims:
+    members[find(claim['id'])].append(claim)
+  return {claim['id']: members[find(claim['id'])] for claim in claims}
 
 
 def citation(source):
@@ -959,11 +1014,16 @@ def holotype_conflicts(claims_by_source):
   sources (roadmap F5): `{'taxon', 'holotypes': [{'source', 'ids',
   'joinKeys', 'claim'}]}`, sources in year order, every holotype claim of
   the taxon on the row. Two holotypes are one specimen when their
-  identities (`_specimen_identity`) intersect. A claim marked `uncertain`
+  identities (`_specimen_identity`) intersect or they lie in one component
+  of `specimen_components` (linked by `sameAs`, directly or through a
+  chain, or by the join key of a one-number entry). A claim marked `uncertain`
   is ignored, and a source that gives the taxon a lectotype or neotype
   does not enter the comparison: its holotype entry reports an earlier
   designation that its own later selection supersedes. A report, never a
   failure."""
+  component = specimen_components(
+    [c for claims in claims_by_source.values() for c in _specimen_claims(claims)]
+  )
   by_taxon = collections.defaultdict(lambda: collections.defaultdict(list))
   for source_key, claims in claims_by_source.items():
     for claim in claims:
@@ -984,7 +1044,9 @@ def holotype_conflicts(claims_by_source):
       holotypes.extend(c for c in claims if c.get('role') == 'holotype')
     identities = [_specimen_identity(c) for c in holotypes]
     differ = any(
-      holotypes[i]['source'] != holotypes[j]['source'] and not identities[i] & identities[j]
+      holotypes[i]['source'] != holotypes[j]['source']
+      and not identities[i] & identities[j]
+      and component[holotypes[i]['id']] is not component[holotypes[j]['id']]
       for i in range(len(holotypes))
       for j in range(i + 1, len(holotypes))
     )

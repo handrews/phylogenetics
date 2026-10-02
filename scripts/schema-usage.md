@@ -24,7 +24,7 @@ even when its parent is also unreached, so read parents first.
 | `figureLocatorFields` | `phylogeny#/$defs/figureLocatorFields/properties/non` |
 | `inferredContext` | `phylogeny#/$defs/inferredContext/properties/basis`<br>`phylogeny#/$defs/inferredContext/properties/sources`<br>`phylogeny#/$defs/inferredContext/properties/sources/items` |
 | `localTimeFields` | `phylogeny#/$defs/localTimeFields/properties/localStageBoundary` |
-| `materialEntry` | `phylogeny#/$defs/materialEntry/properties/formerIds`<br>`phylogeny#/$defs/materialEntry/properties/formerIds/items`<br>`phylogeny#/$defs/materialEntry/properties/fragmentOf`<br>`phylogeny#/$defs/materialEntry/properties/roleUncertain` |
+| `materialEntry` | `phylogeny#/$defs/materialEntry/properties/formerIds`<br>`phylogeny#/$defs/materialEntry/properties/formerIds/items`<br>`phylogeny#/$defs/materialEntry/properties/fragmentOf`<br>`phylogeny#/$defs/materialEntry/properties/roleUncertain`<br>`phylogeny#/$defs/materialEntry/properties/sameAs`<br>`phylogeny#/$defs/materialEntry/properties/sameAs/oneOf/0`<br>`phylogeny#/$defs/materialEntry/properties/sameAs/oneOf/1`<br>`phylogeny#/$defs/materialEntry/properties/sameAs/properties/label`<br>`phylogeny#/$defs/materialEntry/properties/sameAs/properties/number`<br>`phylogeny#/$defs/materialEntry/properties/sameAs/properties/prefix`<br>`phylogeny#/$defs/materialEntry/properties/sameAs/properties/source` |
 | `modularDate` | `phylogeny#/$defs/modularDate/then/oneOf/1/properties/month/anyOf/3`<br>`phylogeny#/$defs/modularDate/then/oneOf/2/properties/month/anyOf/5` |
 | `person` | `phylogeny#/$defs/person/properties/suffix` |
 | `publication` | `phylogeny#/$defs/publication/properties/type` |
@@ -257,6 +257,11 @@ property.
 | `formerIds` | 0 | 0.0% |
 | `fragmentOf` | 0 | 0.0% |
 | `roleUncertain` | 0 | 0.0% |
+| `sameAs` | 0 | 0.0% |
+| `sameAs.label` | 0 | - |
+| `sameAs.number` | 0 | - |
+| `sameAs.prefix` | 0 | - |
+| `sameAs.source` | 0 | - |
 
 ### `materialsFields` -- 5580 instances in `data/`
 

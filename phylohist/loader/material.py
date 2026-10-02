@@ -6,9 +6,10 @@ Pure functions over a raw node dict and the file-level maps, so
 loader (`load.py`) runs them over the corpus's own documents. Each check
 returns a list of ``(level, message)`` pairs, ``level`` being ``'error'``
 or ``'warning'``; the caller adds the source key and, for a per-node
-check, the node path. `context_key`, `flat_numbers` and `entries_named` are
-exported for the claims extractor (`phylohist.claims`), and `in_run` for the
-store (`phylohist.store`, `specimen_history`);
+check, the node path. `context_key`, `flat_numbers`, `entries_named` and
+`same_as_matches` are exported for the claims extractor
+(`phylohist.claims`), and `in_run` for the store (`phylohist.store`,
+`specimen_history`);
 `set_repository_registry`/`repository_registry`
 hold the loaded `data/repositories.yaml`, set once by `load.py`, so the
 extractor can reach it the way it reaches `Source`.
@@ -172,6 +173,74 @@ def entries_named(entries, value):
   the length."""
   exact = [entry for entry in entries if entry_identifies(entry, value, exact=True)]
   return exact or [entry for entry in entries if entry_identifies(entry, value)]
+
+
+def same_as_matches(entries, link):
+  """The entries a `sameAs` link names among `entries` (raw material
+  entries or specimen claims, which carry the same `label`, `prefix` and
+  `numbers`): those whose folded `label` equals the link's, or, by the
+  link's `number`, those it names exactly before those whose range-pair run
+  holds it (the rule of `entries_named`, over the numbers alone); with a
+  `prefix` on the link, only entries of that prefix. Callers read "names
+  exactly one" from the length."""
+  if 'label' in link:
+    wanted = fold(str(link['label']))
+    return [
+      entry
+      for entry in entries
+      if entry.get('label') is not None and fold(str(entry['label'])) == wanted
+    ]
+  candidates = [
+    entry for entry in entries if 'prefix' not in link or entry.get('prefix') == link['prefix']
+  ]
+  numbered = [({'numbers': entry.get('numbers')}, entry) for entry in candidates]
+  value = link.get('number')
+  exact = [entry for view, entry in numbered if entry_identifies(view, value, exact=True)]
+  return exact or [entry for view, entry in numbered if entry_identifies(view, value)]
+
+
+def same_as_links(documents, source_year):
+  """Every `sameAs` link on a material entry anywhere in `documents`
+  (source key to raw tree document) names a source that has a tree, not
+  the entry's own, published no later than the entry's (`source_year` maps
+  a source key to its year, or `None` when unknown, which is not checked),
+  and exactly one material entry in that tree file (`same_as_matches`).
+  Each message names the source and the node's path."""
+  messages = []
+  targets = {}
+
+  def target_entries(key):
+    if key not in targets:
+      targets[key] = [
+        entry
+        for _, node, _ in walk_document(documents[key])
+        for entry in node.get('material') or ()
+      ]
+    return targets[key]
+
+  for source_key, document in documents.items():
+    for path, node, _ in walk_document(document):
+      for entry in node.get('material') or ():
+        link = entry.get('sameAs')
+        if not isinstance(link, dict):
+          continue
+        where = f'{source_key} at {path}'
+        target = link.get('source')
+        if target not in documents:
+          messages.append(('error', f'{where}: `sameAs` names "{target}", which has no tree'))
+          continue
+        if target == source_key:
+          messages.append(('error', f'{where}: `sameAs` names its own source'))
+          continue
+        own, theirs = source_year(source_key), source_year(target)
+        if own is not None and theirs is not None and theirs > own:
+          messages.append(('error', f'{where}: `sameAs` points at a later source'))
+        matches = len(same_as_matches(target_entries(target), link))
+        if matches != 1:
+          messages.append(
+            ('error', f'{where}: `sameAs` matches {matches} entries in "{target}", not 1')
+          )
+  return messages
 
 
 def figure_refs(node, is_cited=False):

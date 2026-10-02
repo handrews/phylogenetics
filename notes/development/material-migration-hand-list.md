@@ -116,6 +116,23 @@ What the model could not say, for stage 4:
   carried on no claim, so the tools do not print "Eocystites?
   longidactylus" as cited.
 
+## `sameAs` links to enter
+
+The mechanism is built and no link is entered. Each of these needs
+the paper's own words (or an editorial block saying it is inferred):
+
+- *Astrocystites ottawaensis*: Whiteaves 1897's three specimens,
+  Bather 1914's A, B and C, Fay 1962's No. 752 and the specimen lent
+  to Hudson.
+- The Bigsby specimen: Sowerby 1825, the later Billings papers, Bell
+  1976.
+- Bell 1976's two UCLAPC fragments ("Genus and Species
+  Indeterminate") and Sumrall & Bowsher 1996's *Giganticlavus* cf.
+  *G. bennisoni*. These carry numbers, so they join by number once
+  the 1996 tree has its material.
+- Grigo 2000's doubtfully assigned specimen (fig. 7) and Müller, Hahn
+  & Bohatý 2013's "Timeischytes" *prescheri*?.
+
 ## Other
 
 - Nodes with exactly one context whose entries carry no `context`: the

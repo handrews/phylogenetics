@@ -16,6 +16,7 @@ import pathlib
 import re
 
 from . import blocks
+from .claims import specimen_components
 from .closure import TAXONOMY, Closure, in_years
 from .loader.material import in_run
 from .names import fold
@@ -256,10 +257,15 @@ class ClaimStore:
     # number inside a run is found beside the claims that cite it by number.
     self.by_join_key = collections.defaultdict(list)
     self.runs = collections.defaultdict(list)
+    specimens = []
     for claims in self.by_source.values():
       for claim in claims:
         if claim['kind'] == 'material' and claim.get('materialKind') == 'specimen':
           self._index_specimen(claim)
+          specimens.append(claim)
+    # Each specimen claim's component (`specimen_components`): the claims
+    # linked to it by a shared join key or by `sameAs`, in either direction.
+    self.specimen_component = specimen_components(specimens)
     self.resolver = Resolver(self)
     self.words = Words(self)
 
@@ -1193,12 +1199,58 @@ class ClaimStore:
       fields['candidates'] = list(candidates)
     return blocks.statement('absent', fields, {'number': number, 'repository': repository})
 
-  def specimen_history(self, number, repository=None, style='text'):
-    """Every citation of one specimen, by catalog number, one line per
-    claim in year order. The number is split by `split_typed_number` (or,
-    with `repository`, as that registry entry's own number) and meets the
+  def _unfound_label(self, source_key, label):
+    """The `absent` statement for a source with no specimen of that label."""
+    fields = {'name': f'the specimen "{label}" of {self.cite(source_key)}'}
+    return blocks.statement('absent', fields, {'source': source_key, 'label': label})
+
+  def _same_specimen(self, found):
+    """`{claim id: carrier}` for every claim in the component of a claim of
+    `found`: the carrier is the claim whose `sameAs` link first reached it
+    from the claims found directly, `None` for a claim found directly or
+    reached through the join key of a one-number entry from one."""
+    members = {}
+    for claim in found:
+      members.update((c['id'], c) for c in self.specimen_component[claim['id']])
+    edges = collections.defaultdict(list)
+    by_key = collections.defaultdict(list)
+    for claim_id, claim in members.items():
+      keys = claim.get('joinKeys') or ()
+      if len(keys) == 1:
+        by_key[keys[0]].append(claim_id)
+      target = claim.get('sameAsClaim')
+      if target in members:
+        edges[claim_id].append((target, claim))
+        edges[target].append((claim_id, claim))
+    for ids in by_key.values():
+      for one in ids:
+        edges[one].extend((other, None) for other in ids if other != one)
+    carriers = {claim['id']: None for claim in found}
+    queue = collections.deque(carriers)
+    while queue:
+      claim_id = queue.popleft()
+      for other, carrier in edges[claim_id]:
+        if other not in carriers:
+          carriers[other] = carrier or carriers[claim_id]
+          queue.append(other)
+    return carriers
+
+  def specimen_history(self, number=None, repository=None, source=None, label=None, style='text'):
+    """Every citation of one specimen, one line per claim in year order,
+    asked for by catalog number or, for a specimen with no number, by
+    source and label. The number is split by `split_typed_number` (or, with
+    `repository`, as that registry entry's own number) and meets the
     claims' join keys; a number inside a printed run ("GSC 25935–25961") is
-    found as well."""
+    found as well. A source and label meet the labels of that source's
+    specimen claims (folded). Either way every claim in the component of a
+    claim found is listed too (`specimen_components`: a `sameAs` link in
+    either direction, through a chain, or the join key of a one-number
+    entry), a line reached only through a link saying on whose authority.
+    With a number, `source` and `label` are not read."""
+    if number is None:
+      if source is None or label is None:
+        raise ValueError('give a catalog number, or a source and a label')
+      return self._label_history(self.resolver.source_key(source), label, style)
     if repository is not None:
       key = repository
       if key not in self.repositories:
@@ -1221,8 +1273,50 @@ class ClaimStore:
     if not found:
       return _with_style(self._unfound_specimen(number, repository), style)
     entry = self.repositories[key]
+    prefixes = entry.get('prefixes')
+    printed = f'{prefixes[0] if prefixes else entry["name"]} {bare}'
+    block = self._specimen_listing(
+      list(found.values()),
+      {'key': join_key, 'name': printed, 'rank': None},
+      {'number': number, 'repository': repository},
+      {'repository': key, 'holder': entry['name'], 'number': bare},
+      number,
+      join_key,
+      in_runs,
+    )
+    return _with_style(block, style)
+
+  def _label_history(self, source_key, label, style):
+    wanted = fold(str(label))
+    found = [
+      c
+      for c in self.by_source.get(source_key, ())
+      if c['kind'] == 'material'
+      and c.get('materialKind') == 'specimen'
+      and c.get('label') is not None
+      and fold(str(c['label'])) == wanted
+    ]
+    if not found:
+      return _with_style(self._unfound_label(source_key, label), style)
+    name = f'"{label}" of {self.cite(source_key)}'
+    block = self._specimen_listing(
+      found,
+      {'key': f'{source_key}:{wanted}', 'name': name, 'rank': None},
+      {'source': source_key, 'label': label},
+      {},
+      None,
+      None,
+      {},
+    )
+    return _with_style(block, style)
+
+  def _specimen_listing(self, found, heading, parameters, extra, number, join_key, in_runs):
+    """The list block of the claims `found` and the claims linked to them,
+    in year order."""
+    carriers = self._same_specimen(found)
     claims = sorted(
-      found.values(), key=lambda c: (self.source_year(c['source']), c['source'], c['path'])
+      (self.by_id[claim_id] for claim_id in carriers),
+      key=lambda c: (self.source_year(c['source']), c['source'], c['path']),
     )
     entries = [
       blocks.list_entry(
@@ -1233,20 +1327,13 @@ class ClaimStore:
         page=c.get('pages'),
         kind='material',
         authors=self.words.authors(c['source']),
-        sentence=self.words.specimen_history_words(c, number, join_key, in_runs.get(c['id'])),
+        sentence=self.words.specimen_history_words(
+          c, number, join_key, in_runs.get(c['id']), carriers[c['id']]
+        ),
       )
       for c in claims
     ]
-    prefixes = entry.get('prefixes')
-    printed = f'{prefixes[0] if prefixes else entry["name"]} {bare}'
-    block = blocks.listing(
-      {'key': join_key, 'name': printed, 'rank': None},
-      entries,
-      {'number': number, 'repository': repository},
-      kind='specimen',
-      extra={'repository': key, 'holder': entry['name'], 'number': bare},
-    )
-    return _with_style(block, style)
+    return blocks.listing(heading, entries, parameters, kind='specimen', extra=extra)
 
   def source_coverage(self, source):
     """The raw view of one source: citation, whether entered, declared

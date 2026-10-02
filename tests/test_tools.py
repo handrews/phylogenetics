@@ -1478,3 +1478,148 @@ def test_locality_numbers_read_as_prefix_and_number(store):
   block = store.statements('hobbsi_sprinkle_1973', source='1973_sprinkle', kind='occurrences')
   assert 'CL-1, USGS locality 5462' in block['rendered']
   assert '{' not in block['rendered']
+
+
+# -- `sameAs`: following a link between specimen entries ------------------------
+
+_OTTAWA = 'ottawaensis_whiteaves_1897'
+
+
+def _under_genus(material):
+  return {'taxon': 'astrocystites', 'children': [{'taxon': _OTTAWA, 'material': material}]}
+
+
+LINKED = {
+  '1897_whiteaves': (
+    1320,
+    _under_genus([{'label': 'first specimen'}, {'label': 'second specimen'}]),
+  ),
+  '1914c_bather': (
+    1321,
+    _under_genus(
+      [
+        {
+          'label': 'A',
+          'role': 'holotype',
+          'roleAct': 'designated',
+          'sameAs': {'source': '1897_whiteaves', 'label': 'first specimen'},
+        },
+        {'label': 'B', 'role': 'syntype'},
+      ]
+    ),
+  ),
+  '1962_fay': (
+    1322,
+    _under_genus(
+      [
+        {
+          'prefix': 'GSC',
+          'numbers': [752],
+          'role': 'lectotype',
+          'sameAs': {'source': '1914c_bather', 'label': 'A'},
+          'editorial': {'inferred': ['role', 'sameAs'], 'basis': 'the editor reads No. 752 as A'},
+        }
+      ]
+    ),
+  ),
+}
+
+
+@pytest.fixture(scope='module')
+def linked(load_records, tmp_path_factory):
+  """A `ClaimStore` over a copy of `claims/` whose files for Whiteaves 1897,
+  Bather 1914c and Fay 1962 are replaced by the claims of synthetic trees
+  in which Fay's No. 752 (the editor's inference) is Bather's A, which
+  Bather says is Whiteaves's first specimen."""
+  directory = tmp_path_factory.mktemp('claims')
+  shutil.copytree(CLAIMS_DIR, directory, dirs_exist_ok=True)
+  roots = {
+    source: [
+      Tree(
+        node,
+        {
+          'source_key': source,
+          'type': 'taxonomy',
+          'position': position,
+          'file_prefixes': {'GSC': 'gsc'},
+        },
+      )
+    ]
+    for source, (position, node) in LINKED.items()
+  }
+  for source, claims in extract(roots).items():
+    (directory / f'{source}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
+  return ClaimStore(directory)
+
+
+def test_specimen_history_by_number_lists_the_linked_entries_with_their_authority(linked):
+  block = linked.specimen_history('GSC 752')
+  assert block['rendered'].splitlines() == [
+    'Specimen GSC 752 (Geological Survey of Canada)',
+    '  1897  Whiteaves  cited under Astrocystites ottawaensis '
+    '(the same specimen according to Bather 1914)',
+    '  1914  Bather     holotype of Astrocystites ottawaensis '
+    "(the same specimen, editor's inference)",
+    '  1962  Fay        lectotype of Astrocystites ottawaensis',
+  ]
+  # The entry found directly carries a link and needs no suffix; the others
+  # say whose statement joins them, the earlier one a paper's, the later an inference.
+  assert block['parameters'] == {'number': 'GSC 752', 'repository': None}
+  assert [e['source'] for e in block['entries']] == ['1897_whiteaves', '1914c_bather', '1962_fay']
+  assert block['claims'] == sorted(e['claim'] for e in block['entries'])
+
+
+def test_specimen_history_by_source_and_label_lists_the_chain(linked):
+  block = linked.specimen_history(source='Whiteaves 1897', label='First  Specimen')
+  assert block['rendered'].splitlines() == [
+    'Specimen "First  Specimen" of Whiteaves 1897',
+    '  1897  Whiteaves  cited under Astrocystites ottawaensis',
+    '  1914  Bather     holotype of Astrocystites ottawaensis '
+    '(the same specimen according to Bather 1914)',
+    '  1962  Fay        lectotype of Astrocystites ottawaensis as GSC 752 '
+    "(the same specimen, editor's inference)",
+  ]
+  assert block['parameters'] == {'source': '1897_whiteaves', 'label': 'First  Specimen'}
+  # Asked from the middle, each end is reached by the other's link.
+  middle = linked.specimen_history(source='1914c_bather', label='a')
+  assert [e['source'] for e in middle['entries']] == ['1897_whiteaves', '1914c_bather', '1962_fay']
+  assert middle['heading']['name'] == '"a" of Bather 1914'
+  assert [e['sentence'].endswith(')') for e in middle['entries']] == [True, False, True]
+  # A specimen no link reaches stands alone.
+  [alone] = linked.specimen_history(source='1914c_bather', label='B')['entries']
+  assert alone['sentence'] == 'syntype of Astrocystites ottawaensis'
+
+
+def test_specimen_history_by_label_that_matches_nothing_is_absent(linked):
+  block = linked.specimen_history(source='1914c_bather', label='Z')
+  assert block['kind'] == 'absent'
+  assert block['rendered'] == 'No source in the corpus mentions the specimen "Z" of Bather 1914.'
+  assert block['parameters'] == {'source': '1914c_bather', 'label': 'Z'}
+  # A source with no such entry at all, and one with no tree.
+  assert linked.specimen_history(source='1961_dehm', label='A')['kind'] == 'absent'
+  assert linked.specimen_history(source='1899_nobody', label='A')['kind'] == 'absent'
+
+
+def test_specimen_history_asks_for_a_number_or_a_source_and_a_label(linked):
+  for arguments in ({}, {'source': '1914c_bather'}, {'label': 'A'}, {'repository': 'gsc'}):
+    with pytest.raises(ValueError, match='a catalog number, or a source and a label'):
+      linked.specimen_history(**arguments)
+  with pytest.raises(ValueError, match='can mean several'):
+    linked.specimen_history(source='Müller 1774', label='A')
+
+
+def test_specimen_history_by_label_blocks_validate_and_go_through_call(linked):
+  from phylohist import blocks
+
+  block = linked.specimen_history(source='1897_whiteaves', label='first specimen', style='json')
+  assert blocks.validate(block, linked) == []
+  assert blocks.validate(linked.specimen_history(source='1914c_bather', label='Z'), linked) == []
+
+
+def test_specimen_history_without_links_is_what_the_numbers_alone_find(store):
+  # No `sameAs` is entered in the corpus, and an entry that prints several
+  # numbers joins nothing: every number's lines are those that cite it.
+  assert not any(c.get('sameAs') for c in store.by_id.values())
+  block = store.specimen_history('UQF 5405')
+  assert [e['source'] for e in block['entries']] == ['2021_jell_sprinkle']
+  assert block['rendered'].count('the same specimen') == 0

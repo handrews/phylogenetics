@@ -166,7 +166,8 @@ def _log_material(level, message):
 def _report_material(data):
   """Run every `material.py` check over the registry, then over every
   opinion and its nodes, logging each at its level with the source key
-  and, for a per-node check, the node's path."""
+  and, for a per-node check, the node's path, then the `sameAs` links
+  across the whole corpus."""
   repositories = data.get('repositories') or {}
   for level, message in material.registry_links(repositories):
     _log_material(level, f'repositories: {message}')
@@ -210,6 +211,18 @@ def _report_material(data):
         _log_material(level, f'{where}: {message}')
       for level, message in material.null_material(node, is_cited):
         _log_material(level, f'{where}: {message}')
+
+  for level, message in material.same_as_links(data['trees'], _source_year):
+    _log_material(level, message)
+
+
+def _source_year(source_key):
+  """A source's publication year, 9999 for a work in preparation, `None`
+  for a key with no source record."""
+  source = Source.get(source_key)
+  if source is None:
+    return None
+  return 9999 if source.in_preparation else source.year
 
 
 def _report_nomenclature(data):

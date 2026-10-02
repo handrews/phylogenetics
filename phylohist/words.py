@@ -605,7 +605,7 @@ class Words:
         found.append(figure['illustration'])
     return found
 
-  def specimen_history_words(self, claim, number, join_key, runs=None):
+  def specimen_history_words(self, claim, number, join_key, runs=None, carrier=None):
     """One citation in a specimen's history: the role (queried with "?")
     "of <the taxon as the source uses it>", or "cited under <the taxon>"
     without one, the doubt about the assignment, the number as the source
@@ -613,7 +613,10 @@ class Words:
     holds it, `runs`), then its figures, or "not figured" when the source
     says so. A claim with several numbers or a run says what is figured of
     the number asked about only, from the figures whose own `of` names it
-    (a locator's `notes` are left out); when none does, nothing."""
+    (a locator's `notes` are left out); when none does, nothing. A claim
+    reached only through a `sameAs` link (`carrier` is the claim that
+    carries it) ends with whose statement the link is: the carrier's source,
+    or the editor's inference."""
     role = claim.get('role')
     taxon = self.display(claim['subject'], claim['source'], claim['path'])
     if role:
@@ -632,7 +635,9 @@ class Words:
       words += f' as {printed}'
     several = claim.get('rangeJoin') or len(claim.get('joinKeys') or ()) > 1
     figures = (
-      self._figures_of(claim, join_key) if several else claim.get('specimenIllustrations') or ()
+      self._figures_of(claim, join_key)
+      if several and join_key is not None
+      else claim.get('specimenIllustrations') or ()
     )
     figures = [
       _illustration_words({k: v for k, v in figure.items() if k != 'notes'})
@@ -643,6 +648,11 @@ class Words:
       words += '; figured ' + '; '.join(figures)
     elif claim.get('figured') is False:
       words += '; not figured'
+    if carrier is not None:
+      if carrier.get('inferred') or 'sameAs' in (carrier.get('inferredFields') or ()):
+        words += " (the same specimen, editor's inference)"
+      else:
+        words += f' (the same specimen according to {self.store.cite(carrier["source"])})'
     return words
 
   def _occurrence_words(self, claim):

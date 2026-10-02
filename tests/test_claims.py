@@ -33,6 +33,7 @@ from phylohist.claims import (
   merge_patch,
 )
 from phylohist.evaluation import alternatives, normalise
+from phylohist.loader.research import Source
 from phylohist.loader.taxa import Tree
 from phylohist.render import render_composition
 
@@ -1242,3 +1243,147 @@ def test_the_manifest_reports_holotype_conflicts(claims, roots):
   # The real corpus: the function runs and the manifest carries what it returns.
   assert isinstance(holotype_conflicts(claims), list)
   assert manifest(claims, roots)['holotypeConflicts'] == holotype_conflicts(claims)
+
+
+# -- `sameAs`: a link from one specimen entry to an earlier source's ------------
+
+_EARLY, _LATE, _LATEST = '1897_whiteaves', '1914c_bather', '1962_fay'
+_OTTAWA = 'ottawaensis_whiteaves_1897'
+
+
+def _linked_claims(trees, sources=None):
+  """`extract` over synthetic trees of real sources: `trees` maps a source
+  key to `(position, node)`; each position is used once, since `Tree` keeps
+  class-level registries."""
+  roots = {
+    source: [Tree(node, {'source_key': source, 'type': 'taxonomy', 'position': position})]
+    for source, (position, node) in trees.items()
+  }
+  return extract(roots, sources)
+
+
+def _specimens(claims, source):
+  return [c for c in claims[source] if c.get('materialKind') == 'specimen']
+
+
+def test_the_linked_sources_are_in_year_order():
+  assert [Source.get(k).year for k in (_EARLY, _LATE, _LATEST)] == [1897, 1914, 1962]
+
+
+def test_same_as_is_copied_and_resolved_to_the_earlier_claim(load_records):
+  link = {'source': _EARLY, 'label': 'First  specimen'}
+  claims = _linked_claims(
+    {
+      _EARLY: (1300, {'taxon': _OTTAWA, 'material': [{'label': 'first specimen'}, {'label': 'x'}]}),
+      _LATE: (
+        1301,
+        {'taxon': _OTTAWA, 'material': [{'label': 'A', 'role': 'holotype', 'sameAs': link}]},
+      ),
+    }
+  )
+  first, _ = _specimens(claims, _EARLY)
+  [later] = _specimens(claims, _LATE)
+  assert later['sameAs'] == link
+  assert later['sameAsClaim'] == first['id']
+  assert 'sameAs' not in first and 'sameAsClaim' not in first
+
+
+def test_same_as_by_number_within_a_prefix(load_records):
+  entries = [
+    {'prefix': 'GSC', 'numbers': [5]},
+    {'prefix': 'ROM', 'numbers': [5]},
+    {'prefix': 'GSC', 'numbers': [[100, 110]]},
+  ]
+  trees = {_EARLY: (1302, {'taxon': _OTTAWA, 'material': entries})}
+
+  def resolved(link, position):
+    node = {'taxon': _OTTAWA, 'material': [{'label': 'A', 'sameAs': {'source': _EARLY, **link}}]}
+    claims = _linked_claims({**trees, _LATE: (position, node)})
+    return _specimens(claims, _LATE)[0].get('sameAsClaim'), _specimens(claims, _EARLY)
+
+  target, early = resolved({'number': 5, 'prefix': 'ROM'}, 1303)
+  assert target == early[1]['id']
+  # No prefix: the number names two entries, so it names none.
+  assert resolved({'number': 5}, 1304)[0] is None
+  # A number inside a run names the run's entry.
+  target, early = resolved({'number': 105, 'prefix': 'GSC'}, 1305)
+  assert target == early[2]['id']
+
+
+def test_same_as_stays_unresolved_when_the_target_is_not_extracted_or_not_found(load_records):
+  link = {'source': _EARLY, 'label': 'first specimen'}
+  trees = {
+    _EARLY: (1306, {'taxon': _OTTAWA, 'material': [{'label': 'first specimen'}]}),
+    _LATE: (1307, {'taxon': _OTTAWA, 'material': [{'label': 'A', 'sameAs': link}]}),
+  }
+  [later] = _specimens(_linked_claims(trees, sources=[_LATE]), _LATE)
+  assert later['sameAs'] == link and 'sameAsClaim' not in later
+  lost = {'taxon': _OTTAWA, 'material': [{'label': 'A', 'sameAs': {**link, 'label': 'nope'}}]}
+  claims = _linked_claims({**trees, _LATE: (1308, lost)})
+  assert 'sameAsClaim' not in _specimens(claims, _LATE)[0]
+
+
+def test_an_inferred_same_as_is_listed_in_inferred_fields(load_records):
+  editorial = {'inferred': ['role', 'sameAs'], 'basis': 'the editor reads No. 752 as the lectotype'}
+  node = {
+    'taxon': _OTTAWA,
+    'material': [
+      {
+        'prefix': 'GSC',
+        'numbers': [752],
+        'role': 'lectotype',
+        'sameAs': {'source': _LATE, 'label': 'A'},
+        'editorial': editorial,
+      }
+    ],
+  }
+  [claim] = _specimens(_linked_claims({_LATEST: (1309, node)}), _LATEST)
+  assert claim['inferredFields'] == ['role', 'sameAs']
+  assert claim['sameAs'] == {'source': _LATE, 'label': 'A'}
+  # The entry is printed and only its fields are the editor's.
+  assert 'inferred' not in claim
+
+
+def _holotype_chain(middle_role):
+  early = _claim(_EARLY, id='early', label='first specimen')
+  middle = _claim(_LATE, role=middle_role, id='middle', label='A', sameAsClaim='early')
+  late = _claim(
+    _LATEST, id='late', ids=['GSC 752'], joinKeys=['gsc:752'], sameAsClaim='middle', role='holotype'
+  )
+  return early, middle, late
+
+
+def test_holotypes_linked_by_same_as_are_one_specimen(load_records):
+  early = _claim(_EARLY, id='early', label='first specimen')
+  later = _claim(_LATE, id='later', label='A', sameAsClaim='early')
+  assert _conflicts(early, later) == []
+  # The link is read in either direction.
+  early['sameAsClaim'], later['sameAsClaim'] = 'later', None
+  assert _conflicts(early, later) == []
+  # Unlinked, different labels are two specimens.
+  [row] = _conflicts(_claim(_EARLY, id='early', label='first specimen'), _claim(_LATE, label='A'))
+  assert [h['source'] for h in row['holotypes']] == [_EARLY, _LATE]
+
+
+@pytest.mark.parametrize('middle_role', ['holotype', 'syntype'])
+def test_holotypes_linked_through_a_chain_are_one_specimen(load_records, middle_role):
+  assert _conflicts(*_holotype_chain(middle_role)) == []
+  # Without the middle link the ends are two specimens.
+  early, middle, late = _holotype_chain(middle_role)
+  late['sameAsClaim'] = None
+  assert len(_conflicts(early, middle, late)) == 1
+
+
+def test_a_shared_join_key_joins_one_number_entries_but_a_batch_joins_nothing(load_records):
+  one = _claim('1941_whitehouse', id='one', ids=['F. 1'], joinKeys=['uq-f:1'])
+  two = _claim('2021_jell_sprinkle', id='two', ids=['UQF 2'], joinKeys=['uq-f:2'])
+  # A paratype entry printing both numbers does not make them one specimen.
+  batch = _claim(
+    '1960_gill_caster', role='paratype', id='batch', joinKeys=['uq-f:1', 'uq-f:2'], rangeJoin=True
+  )
+  assert len(_conflicts(one, two, batch)) == 1
+  # A one-number entry that links to the earlier label joins the two.
+  early = _claim(_EARLY, id='early', label='first specimen')
+  bridge = _claim(_LATE, role='paratype', id='bridge', joinKeys=['uq-f:1'], sameAsClaim='early')
+  same = _claim('2021_jell_sprinkle', id='same', ids=['UQF 1'], joinKeys=['uq-f:1'])
+  assert _conflicts(early, bridge, same) == []

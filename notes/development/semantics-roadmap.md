@@ -1210,11 +1210,15 @@ with the specimens as entries whose `fragmentOf` names it; no new field.
 
 **Cross-source identity.** Two entries whose prefixes map to the same
 registry entry and whose numbers agree, folded for case and spacing, are
-the same specimen; the tools join on that (`specimen_history`) and no
-registry of specimens is kept. An unnumbered specimen links across
-sources only by `sameAs`, otherwise not at all. Counts are never
-reconciled: Whiteaves 1897 names three specimens, Bather 1914 three, Fay
-1962 two, and each tree carries its own paper's count.
+the same specimen; the tools join on that (`specimen_history`). An
+unnumbered specimen links across sources by `sameAs` (done 2026-10-01):
+the link sits on the later entry and names the earlier one by source and
+label or number; it is the paper's statement unless the entry's editorial
+block marks it inferred; the tools follow it in both directions; the
+holotype report treats linked holotypes as one; no registry of specimens
+is kept. Counts are never reconciled: Whiteaves 1897 names three
+specimens, Bather 1914 three, Fay 1962 two, and each tree carries its own
+paper's count.
 
 **Worked cases.**
 

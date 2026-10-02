@@ -162,3 +162,21 @@ def test_specimen_subcommand(capsys):
   assert code == 0 and 'give the repository.' in out
   code, out = run(capsys, 'specimen', 'PE-199', '--repository', 'north-museum-fm')
   assert code == 0 and out.splitlines()[0].startswith('Specimen PE 199 (North Museum')
+
+
+def test_specimen_subcommand_by_source_and_label(capsys):
+  # No `sameAs` is entered in the corpus, so a label finds the source's own entries.
+  code, out = run(capsys, 'specimen', '--source', '1914c_bather', '--label', 'Z')
+  assert code == 0
+  assert out == 'No source in the corpus mentions the specimen "Z" of Bather 1914.'
+  code, out = run(capsys, 'specimen', '--source', 'Bather 1914c', '--label', 'a')
+  assert code == 0
+  assert out == tools.specimen_history(source='1914c_bather', label='a')['rendered']
+  assert out.splitlines()[0] == 'Specimen "a" of Bather 1914'
+  assert '1914  Bather  holotype of ' in out
+
+
+def test_specimen_subcommand_without_a_number_or_a_source_and_label_exits_2(capsys):
+  assert cli.main(['specimen']) == 2
+  assert 'a catalog number, or a source and a label' in capsys.readouterr().err
+  assert cli.main(['specimen', '--source', '1914c_bather']) == 2

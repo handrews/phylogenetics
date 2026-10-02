@@ -1313,3 +1313,170 @@ def test_check_draft_is_quiet_on_a_clean_new_shape_draft(tmp_path):
   result = _run_check_draft(draft)
   assert result.returncode == 0, result.stdout + result.stderr
   assert 'warning' not in result.stdout and 'error' not in result.stdout
+
+
+# -- `sameAs` -------------------------------------------------------------------
+
+YEARS = {'1897_whiteaves': 1897, '1914c_bather': 1914, '1962_fay': 1962, 'x_a': 1900, 'x_b': 1900}
+
+
+def _same_as_document(*entries):
+  return {'taxonomies': [{'taxon': 'a', 'children': [{'taxon': 'b', 'material': list(entries)}]}]}
+
+
+def _same_as_errors(documents, years=YEARS):
+  return [message for _, message in material.same_as_links(documents, years.get)]
+
+
+def test_same_as_by_label_is_clean():
+  documents = {
+    '1897_whiteaves': _same_as_document({'label': 'first specimen'}, {'label': 'second'}),
+    '1914c_bather': _same_as_document(
+      {'label': 'A', 'sameAs': {'source': '1897_whiteaves', 'label': 'First  Specimen'}}
+    ),
+  }
+  assert _same_as_errors(documents) == []
+  # Every node of every taxonomy and phylogeny is read.
+  link = {'source': '1897_whiteaves', 'label': 'nope'}
+  documents['1914c_bather']['phylogenies'] = [
+    {'treeType': 'cladogram', 'tree': {'taxon': 'a', 'material': [{'label': 'Q', 'sameAs': link}]}}
+  ]
+  assert _same_as_errors(documents) == [
+    '1914c_bather at 1: `sameAs` matches 0 entries in "1897_whiteaves", not 1'
+  ]
+
+
+def test_same_as_by_number_exact_before_a_run_and_by_prefix():
+  early = _same_as_document(
+    {'prefix': 'GSC', 'numbers': [[100, 110]]},
+    {'prefix': 'GSC', 'numbers': [105]},
+    {'prefix': 'GSC', 'numbers': [5]},
+    {'prefix': 'ROM', 'numbers': ['5']},
+    {'label': '777'},
+  )
+
+  def check(link):
+    entry = {'label': 'A', 'sameAs': {'source': '1897_whiteaves', **link}}
+    return _same_as_errors({'1897_whiteaves': early, '1914c_bather': _same_as_document(entry)})
+
+  # An exact number first: 105 is a number of the second entry and in the first's run.
+  assert check({'number': 105}) == []
+  assert check({'number': '102', 'prefix': 'GSC'}) == []
+  assert check({'number': 5, 'prefix': 'ROM'}) == []
+  # The prefix is what tells two entries with one number apart.
+  assert check({'number': 5}) == [
+    '1914c_bather at 0/children/0: `sameAs` matches 2 entries in "1897_whiteaves", not 1'
+  ]
+  assert len(check({'number': 999})) == 1
+  # A number names no label; a label names no number.
+  assert len(check({'number': 777})) == 1
+  assert len(check({'label': '105'})) == 1
+  assert check({'label': '777'}) == []
+
+
+def test_same_as_label_matching_nothing_or_several_is_an_error():
+  early = _same_as_document({'label': 'A'}, {'label': 'a'})
+  documents = {
+    '1897_whiteaves': early,
+    '1914c_bather': _same_as_document(
+      {'label': 'Z', 'sameAs': {'source': '1897_whiteaves', 'label': 'A'}},
+      {'label': 'Y', 'sameAs': {'source': '1897_whiteaves', 'label': 'B'}},
+    ),
+  }
+  assert _same_as_errors(documents) == [
+    '1914c_bather at 0/children/0: `sameAs` matches 2 entries in "1897_whiteaves", not 1',
+    '1914c_bather at 0/children/0: `sameAs` matches 0 entries in "1897_whiteaves", not 1',
+  ]
+
+
+def test_same_as_source_with_no_tree_or_the_entrys_own_source_is_an_error():
+  def entry(source):
+    return _same_as_document({'label': 'A', 'sameAs': {'source': source, 'label': 'A'}})
+
+  documents = {'1914c_bather': entry('1897_whiteaves'), '1962_fay': entry('1962_fay')}
+  assert _same_as_errors(documents) == [
+    '1914c_bather at 0/children/0: `sameAs` names "1897_whiteaves", which has no tree',
+    '1962_fay at 0/children/0: `sameAs` names its own source',
+  ]
+
+
+def test_same_as_pointing_at_a_later_source_is_an_error_but_equal_years_are_allowed():
+  def entry(source):
+    return _same_as_document({'label': 'A', 'sameAs': {'source': source, 'label': 'A'}})
+
+  target = _same_as_document({'label': 'A'})
+  later = {'1897_whiteaves': entry('1914c_bather'), '1914c_bather': target}
+  assert _same_as_errors(later) == [
+    '1897_whiteaves at 0/children/0: `sameAs` points at a later source'
+  ]
+  assert _same_as_errors({'x_a': entry('x_b'), 'x_b': target}) == []
+  # A year that is not known is not compared.
+  assert _same_as_errors(later, {}) == []
+
+
+def test_the_loader_reports_same_as_links_across_the_corpus(caplog):
+  from phylohist.loader.load import _report_material
+
+  data = {
+    'repositories': {},
+    'trees': {
+      '1914c_bather': _same_as_document(
+        {'label': 'A', 'sameAs': {'source': '1897_whiteaves', 'label': 'nope'}}
+      ),
+      '1897_whiteaves': _same_as_document({'label': 'first'}),
+    },
+  }
+  with caplog.at_level(logging.WARNING, logger='phylohist'):
+    _report_material(data)
+  errors = [r.getMessage() for r in caplog.records if r.levelno == logging.ERROR]
+  # The corpus's own years come from the source records, 1897 before 1914.
+  assert errors == [
+    '1914c_bather at 0/children/0: `sameAs` matches 0 entries in "1897_whiteaves", not 1'
+  ]
+
+
+def test_schema_accepts_and_rejects_same_as():
+  def entry(link):
+    return _numbers_document({'label': 'A', 'sameAs': link})
+
+  assert _schema_accepts(entry({'source': '1897_whiteaves', 'label': 'first specimen'}))
+  assert _schema_accepts(entry({'source': '1897_whiteaves', 'number': 752}))
+  assert _schema_accepts(entry({'source': '1897_whiteaves', 'number': '752A', 'prefix': 'GSC'}))
+  for bad in (
+    {'label': 'first specimen'},
+    {'source': '1897_whiteaves'},
+    {'source': '1897_whiteaves', 'label': 'A', 'number': 1},
+    {'source': '1897_whiteaves', 'label': 'A', 'prefix': 'GSC'},
+    {'source': 'Not A Key', 'label': 'A'},
+    {'source': '1897_whiteaves', 'label': 'A', 'other': 1},
+    {'source': '1897_whiteaves', 'number': 1.5},
+  ):
+    assert not _schema_accepts(entry(bad)), bad
+
+
+def test_check_draft_checks_same_as_against_the_corpus(tmp_path):
+  def draft(link):
+    path = tmp_path / '1914c_bather.yaml'
+    path.write_text(
+      f'taxonomies:\n- taxon: cyathocystis\n  material:\n  - {{label: A, sameAs: {link}}}\n'
+    )
+    return _run_check_draft(path)
+
+  first = (
+    'first specimen collected by John Stewart, 1886, Museum of the Geological Survey of Canada'
+  )
+  clean = draft(f'{{source: 1897_whiteaves, label: "{first}"}}')
+  assert clean.returncode == 0, clean.stdout + clean.stderr
+  assert 'error' not in clean.stdout
+  for link, line in (
+    (
+      '{source: 1897_whiteaves, label: nope}',
+      '`sameAs` matches 0 entries in "1897_whiteaves", not 1',
+    ),
+    ('{source: 1962_fay, label: A}', '`sameAs` points at a later source'),
+    ('{source: 1914c_bather, label: A}', '`sameAs` names its own source'),
+    ('{source: 1899_nobody, label: A}', '`sameAs` names "1899_nobody", which has no tree'),
+  ):
+    result = draft(link)
+    assert result.returncode == 1, result.stdout + result.stderr
+    assert f'error: 1914c_bather at 0: {line}' in result.stdout

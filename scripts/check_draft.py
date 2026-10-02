@@ -18,8 +18,11 @@ register; and a dangling `context`, figure `of` or `castOf`. The
 open-nomenclature checks (`phylohist.loader.nomenclature`) add a `cf` or `aff`
 off an `openTaxon` node, on both, or aimed at a missing, unnamed or other-rank
 taxon; a `quotedParent` above the species level; a `roleUncertain` with no
-`role`; and an open form linked to two different taxa (a warning). Each is
-printed with the node's path. Exit status 1 on a schema failure or any of
+`role`; and an open form linked to two different taxa (a warning). The
+`sameAs` links (`phylohist.loader.material.same_as_links`) are checked against
+the tree files in `data/trees/` that the draft's links name: a source with no
+tree, the draft's own source, a later source, or a target that is not exactly
+one entry. Each is printed with the node's path. Exit status 1 on a schema failure or any of
 those, 0 otherwise; the lists of records without an entry are always printed,
 since a draft normally needs new records.
 """
@@ -32,6 +35,7 @@ from phylohist.loader import material, nomenclature  # noqa: E402
 from phylohist.loader.io import (  # noqa: E402
   DATA_DIR,
   TREE_DEF,
+  TREE_DIR,
   build_schema,
   load_yaml,
 )
@@ -122,6 +126,34 @@ def check_material(draft, repositories, taxa):
   return messages
 
 
+def check_same_as(key, draft, sources):
+  """The `sameAs` links of the draft (the tree file of source `key`), read
+  against the tree file `data/trees/<source>.yaml` of each source they name
+  when it exists; `sources` is the raw `data/sources.yaml`. Only messages
+  about the draft are returned."""
+  documents = {key: draft}
+  for _, node, _ in material.walk_document(draft):
+    for entry in node.get('material') or ():
+      link = entry.get('sameAs')
+      target = link.get('source') if isinstance(link, dict) else None
+      if isinstance(target, str) and target not in documents:
+        tree = TREE_DIR / f'{target}.yaml'
+        if tree.exists():
+          documents[target] = load_yaml(tree)
+
+  def source_year(source_key):
+    source = sources.get(source_key)
+    if source is None:
+      return None
+    return 9999 if source.get('inPrep') else (source.get('pubDate') or {}).get('year')
+
+  return [
+    (level, message)
+    for level, message in material.same_as_links(documents, source_year)
+    if message.startswith(f'{key} at ')
+  ]
+
+
 def main(argv):
   if len(argv) != 2:
     print(__doc__)
@@ -142,10 +174,11 @@ def main(argv):
   taxa, authors, sources = set(), set(), {path.stem}
   walk(draft, taxa, authors, sources)
   records = load_yaml(DATA_DIR / 'taxa.yaml')
+  source_records = load_yaml(DATA_DIR / 'sources.yaml')
   known = {
     'taxa': set(records),
     'authors': set(load_yaml(DATA_DIR / 'authors.yaml')),
-    'sources': set(load_yaml(DATA_DIR / 'sources.yaml')),
+    'sources': set(source_records),
   }
   for label, cited in (('taxa', taxa), ('authors', authors), ('sources', sources)):
     missing = sorted(cited - known[label])
@@ -155,6 +188,7 @@ def main(argv):
 
   repositories = load_yaml(DATA_DIR / 'repositories.yaml')
   messages = check_material(draft, repositories, nomenclature.record_lookup(records))
+  messages.extend(check_same_as(path.stem, draft, source_records))
 
   for level, message in messages:
     print(f'{level}: {message}')

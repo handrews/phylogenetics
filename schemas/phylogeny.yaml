@@ -1268,6 +1268,31 @@ $defs:
           The catalog number or label of the specimen this is a fragment of.
           With `numbers` the number alone, without its prefix.
         type: [string, integer]
+      sameAs:
+        description: |
+          The earlier source's entry this one is the same specimen as, named
+          by that source's key and the entry's `label` or one of its numbers
+          (`prefix` picks between entries that carry the same number under
+          two prefixes). It sits on the later entry and always points to an
+          earlier source (or one of the same year). It is this source's own
+          statement unless the entry's `editorial.inferred` lists `sameAs`.
+        type: object
+        additionalProperties: false
+        required: [source]
+        oneOf:
+        - required: [label]
+        - required: [number]
+        dependentRequired:
+          prefix: [number]
+        properties:
+          source:
+            $ref: "#/$defs/sourceId"
+          label:
+            type: string
+          number:
+            $ref: "#/$defs/printedNumber"
+          prefix:
+            type: string
       parts:
         description: Part names parallel to `numbers` (part, counterpart).
         type: array
