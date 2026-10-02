@@ -383,16 +383,19 @@ def test_usage_claim_carries_the_compared_link(load_records, caplog):
   assert 'compared' not in _one(at['200/children/2'], 'usage')
 
 
-def test_old_cf_and_aff_taxon_nodes_keep_their_target(load_records, caplog):
-  root = {
-    'taxon': 'rhenopyrgus',
-    'children': [{'cfTaxon': 'grayae_bather_1915'}, {'affTaxon': 'sardesoni_bather_1915'}],
-  }
+@pytest.mark.parametrize('field', ['cfTaxon', 'affTaxon'])
+def test_the_retired_cf_and_aff_taxon_fields_are_rejected(field):
+  assert not _valid({'taxonomies': [{'taxon': 'rhenopyrgus', 'children': [{field: 'x'}]}]})
+
+
+@pytest.mark.parametrize('field', ['cfTaxon', 'affTaxon'])
+def test_the_loader_does_not_read_the_retired_fields_as_a_name(field, load_records, caplog):
+  # As for any node with no recognised taxon field: it has no taxon of its
+  # own and states no usage; the schema is what rejects it.
+  root = {'taxon': 'rhenopyrgus', 'children': [{field: 'grayae_bather_1915'}]}
   at = _by_path(_claims(root, 201))
-  cf = _one(at['201/children/0'], 'usage')
-  assert cf['form'] == 'cfTaxon' and cf['target'] == 'grayae_bather_1915'
-  assert 'compared' not in cf
-  assert _one(at['201/children/1'], 'usage')['target'] == 'sardesoni_bather_1915'
+  assert not [r for r in caplog.records if r.levelno >= logging.ERROR]
+  assert not [c for c in at['201/children/0'] if c['kind'] == 'usage']
 
 
 def test_placement_claim_carries_quoted_parent_and_non_monophyly(load_records):

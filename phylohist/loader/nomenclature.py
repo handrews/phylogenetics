@@ -20,7 +20,7 @@ from .material import walk_document
 # it is compared with.
 SIGNS = ('cf', 'aff')
 _SPECIES_RANKS = ('species', 'subspecies', 'variety')
-_OWN_FIELDS = ('taxon', 'openTaxon', 'cfTaxon', 'affTaxon')
+_OWN_FIELDS = ('taxon', 'openTaxon')
 
 _Record = collections.namedtuple('_Record', 'name rank')
 

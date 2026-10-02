@@ -47,7 +47,7 @@ COVERAGE_KINDS = (
   'phylogeny',
 )
 
-_TAXON_FIELDS = ('taxon', 'openTaxon', 'cfTaxon', 'affTaxon')
+_TAXON_FIELDS = ('taxon', 'openTaxon')
 _PRINTED_FIELDS = ('citedAs', 'auth', 'year', 'in')
 # The node fields a correction can touch that bear on attribution.
 _ATTRIBUTION_FIELDS = tuple(_PRINTED_FIELDS) + ('authority',)
@@ -463,8 +463,6 @@ class _NodeClaims:
     claim['form'] = field
     claim['spelling'] = data[field]
     claim['axis'] = node.axis
-    if field in ('cfTaxon', 'affTaxon'):
-      claim['target'] = data[field]
     # An open form's own link to the taxon it is compared with.
     for sign in _COMPARED_SIGNS:
       if field == 'openTaxon' and sign in data:

@@ -10,13 +10,18 @@ The repository holds hand-edited YAML capturing taxonomic
 opinions exactly as each publication printed them, with no normalisation.
 - data/trees/<sourceId>.yaml: one file per source. `taxonomies` = one tree per
   printed classification; `phylogenies` = cladograms/diagrams. Node fields:
-  `taxon` (key into taxa.yaml), `openTaxon`/`cfTaxon`/`affTaxon` (placeholders
-  and open nomenclature), `children`, `synonyms`, `non`, `parents` (original
+  `taxon` (key into taxa.yaml), `openTaxon` (placeholders and open
+  nomenclature; with `cf` or `aff` naming the taxon a "cf." or "aff." form
+  is compared with), `children`, `synonyms`, `non`, `parents` (original
   placement of a synonym), `removed`, `moved`, `corrected`, flags `new`, `type`,
-  `provisional`, `questionable`, `quoted`, `pars`, `emended`, `tentative`,
+  `provisional` (placement), `questionable` (the taxon itself),
+  `quotedParent` (a species whose genus is printed in quotes), `quoted`
+  (the node's own name in quotes), `nonMonophyletic`, `pars`, `emended`,
+  `tentative` (the list author's doubt about a synonymy entry),
   `modifier` (e.g. "nomen transl."), `bracket`, `auth`/`year`/`in`/`citedAs`
   (= attribution exactly as printed on that line), `pages`, `material` (one entry per specimen
-  or batch: catalog numbers, `role`, `repository`, `context`), `contexts`
+  or batch: catalog numbers, `role`, `repository`, `context`; `uncertain`
+  for a doubtfully assigned specimen, `roleUncertain` for a queried role), `contexts`
   (keyed localities and horizons the entries refer to), `ranges`
   (distribution statements), `illustrations` (on a primary node, this
   source's own figures, with `of` naming the material entry and `depicts`;

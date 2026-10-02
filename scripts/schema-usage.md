@@ -21,7 +21,6 @@ even when its parent is also unreached, so read parents first.
 | `eon` | `phylogeny#/$defs/eon` |
 | `era` | `phylogeny#/$defs/era` |
 | `figureLocatorFields` | `phylogeny#/$defs/figureLocatorFields/properties/non` |
-| `identificationFields` | `phylogeny#/$defs/identificationFields/properties/affTaxon`<br>`phylogeny#/$defs/identificationFields/properties/cfTaxon` |
 | `inferredContext` | `phylogeny#/$defs/inferredContext/properties/basis`<br>`phylogeny#/$defs/inferredContext/properties/sources`<br>`phylogeny#/$defs/inferredContext/properties/sources/items` |
 | `localTimeFields` | `phylogeny#/$defs/localTimeFields/properties/localStageBoundary` |
 | `materialEntry` | `phylogeny#/$defs/materialEntry/properties/formerIds`<br>`phylogeny#/$defs/materialEntry/properties/formerIds/items`<br>`phylogeny#/$defs/materialEntry/properties/fragmentOf`<br>`phylogeny#/$defs/materialEntry/properties/roleUncertain` |
@@ -187,8 +186,6 @@ property.
 | `citedAs` | 53 | 0.8% |
 | `cf` | 15 | 0.2% |
 | `aff` | 14 | 0.2% |
-| `affTaxon` | 0 | 0.0% |
-| `cfTaxon` | 0 | 0.0% |
 
 ### `illustration` -- 479 instances in `data/`
 
