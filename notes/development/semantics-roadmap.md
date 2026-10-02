@@ -1131,7 +1131,8 @@ with `of` unset; the
 taxon-record `holotype` moves to the protologue node. The script's report
 lists what the owner works by hand: the eight ellipses, free-text
 identifiers to `label`, and prefixes the
-registry does not know.
+registry does not know. The script was deleted on 2026-10-01; it is in
+the history at `scripts/migrate_material.py`.
 
 **D6, D7, D9** are folded into D1, D2 and D4 above; **D8** and **D10**
 (diagnosis) are done, 2026-09-27: the field is gone with the `diagnoses`
