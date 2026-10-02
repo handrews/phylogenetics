@@ -218,59 +218,37 @@ says which.
   (`node` or `file`) where it was defined. A file-level context is
   emitted once for each node that refers to it. `localityKeys`, when the
   context has `localityNumbers`, are `<register>:<folded number>` for
-  each number that resolves to one locality register (its printed
-  prefix, or for an author's own field codes the one prefixless locality
-  register the tree file lists), the number folded without its prefix and
-  each key given once, so "Walcott 35k" and "USNM loc. 35k" give one.
-  A locality number written as an object (`{number, prefix?, register?}`)
-  gives `<register>:<folded number>` too, the register being its
-  `register`, else the tree file's `prefixes` map for its `prefix`, else the
-  file's `localityRegister` when it has neither `prefix` nor `register`;
-  one with no register gives no key, and the folded number is of the whole
-  `number` (an integer as its digits). String and object forms meet in one
-  list, each key once.
+  each locality number that has a register: its `register`, else the tree
+  file's `prefixes` map for its `prefix`, else the file's
+  `localityRegister` when it has neither `prefix` nor `register`. The
+  number is folded whole (an integer as its digits), one with no register
+  gives no key, and each key is given once.
   A `tentative` the context carries (`true` for the whole statement, a
   list of the fields whose values are queried) rides inside `occurrence`
   as written.
 - `specimen` (field `material`): one claim per entry. `role` is the
-  entry's role, absent when the source attaches none; `ids` is the entry's
-  `catalogNumbers` (a range pair stays a two-element list); `repository` is
-  the entry's explicit key, else the registry key the first catalog
-  number's prefix resolves to (`null` when none does, or when the prefix
-  is ambiguous); `repositoryVia` says which: `explicit`, `prefix`,
-  `otherNames` or `file` (the tree file's `repositories` list settled a
-  shared prefix), absent when unresolved. `joinKeys` are
-  `<repository>:<folded number>` for every catalog number (a range pair
-  contributes both endpoints and the claim carries `rangeJoin: true`), each
-  number keyed under its own holder (the one its prefix resolves to; the
-  entry's `repository` when it resolves to none, or when the entry names
-  its `repository` and the prefix belongs to an unrelated holder) and
-  folded without its printed prefix, so two printed forms of one number
-  ("F. 5404", "UQF5404") meet and the same specimen in two sources shares
-  a key. A collection's number printed with its institution's prefix keys
-  under the institution (`usnm-walcott` with "USNM 165421" gives
-  `usnm:165421`). `roleAct` is the
-  entry's own value, else `designated` for a holotype, paratype, syntype
-  or cotype on a `new: true` node, else absent. An entry in the other
-  shape, `prefix` and `numbers` (a number a string or an integer, a range
-  pair a two-element list), keeps `prefix`, `numbers` and `asPrinted` as
-  written, and nothing is read out of a string: `ids` are the numbers as
-  display strings, `"<prefix> <number>"` when the entry has a `prefix`, else
-  the number alone, a range pair staying a two-element list; the *register*
-  of a prefix is what the tree file's `prefixes` map gives it;
-  `repository` is the entry's explicit `repository`
-  (`repositoryVia: explicit`), else the register of its prefix
-  (`repositoryVia: file`), else `null`; `joinKeys` are
-  `<register>:<folded number>` for every number (both ends of a pair, with
-  `rangeJoin: true`), the register being the prefix's, except that an
+  entry's role, absent when the source attaches none. `prefix`, `numbers`
+  (a number a string or an integer, a range pair a two-element list) and
+  `asPrinted` are kept as written, and nothing is read out of a string.
+  `ids` are the numbers as display strings, `"<prefix> <number>"` when the
+  entry has a `prefix`, else the number alone, a range pair staying a
+  two-element list; an entry with no `numbers` has none. The *register* of
+  a prefix is what the tree file's `prefixes` map gives it. `repository` is
+  the entry's explicit `repository` (`repositoryVia: explicit`), else the
+  register of its prefix (`repositoryVia: file`), else `null`. `joinKeys`
+  are `<register>:<folded number>` for every number (both ends of a pair,
+  with `rangeJoin: true`), the register being the prefix's, except that an
   explicit `repository` that is neither that register nor within it
   (`within`, as for a collection) replaces it, and the explicit
   `repository` alone when there is no prefix; an entry with only a
   `holder` has none. Two printed prefixes the file maps to one register
-  give one key. An entry with `catalogNumbers` is read as above, and a node may
-  carry both kinds. The entry's other fields
-  are copied as written: `catalogNumbers`, `catalogNumbersAsPrinted`,
-  `count`, `label`, `holder`, `status`, `formerIds`, `fragmentOf`, `parts`,
+  give one key, and the same specimen in two sources shares a key. A
+  collection's number printed with its institution's prefix keys under
+  the institution (`prefix: USNM` with `repository: usnm-walcott` gives
+  `usnm:165421`). `roleAct` is the entry's own value, else `designated` for
+  a holotype, paratype, syntype or cotype on a `new: true` node, else
+  absent. The entry's other fields are copied as written: `count`,
+  `label`, `holder`, `status`, `formerIds`, `fragmentOf`, `parts`,
   `examined`, `listComplete`, `preparation`, `castOf`, `collectedBy`,
   `collectedDate`, `uncertain` (the specimen is doubtfully assigned to the
   taxon), `roleUncertain` (the role word is queried in the source),
@@ -297,11 +275,10 @@ says which.
   source's own figure. `illustration` holds the locator fields (`plate`,
   `page`, `figures`, `textFigures`, `non`, `notes`, `uncertain`); `of`
   and `depicts` ride on the claim. `ofClaim` lists the ids of the specimen
-  claims `of` names (exact string against a catalog number, a range
-  endpoint included, or a `label`; for an entry with `numbers`, a string
-  or an integer folded and compared with the folded number or label, a
-  number inside a pair's run also naming it); a figure with no `of` is tied to no
-  specimen.
+  claims `of` names (a string or an integer, folded and compared with the
+  folded numbers, a range endpoint included, and the folded `label`; a
+  number inside a pair's run also names it); a figure with no `of` is tied
+  to no specimen.
 - `range` (field `ranges`): one claim per element, `range` the element
   verbatim, a `tentative` it carries included. It counts under the `occurrences` coverage kind, and
   `statements(kind='occurrences')` returns it with the `occurrence` claims.
@@ -442,8 +419,8 @@ not fail on them.
 Three more generated files sit beside the claims. `claims/repositories.json`
 is the repository registry as loaded (`data/repositories.yaml`), keys sorted,
 each entry's `name`, `type`, `subject`, `within`, `prefixes`, `otherNames` and
-`place` as present: the store reads it to resolve a catalog number a reader
-types, the way the extractor resolved the numbers the claims carry.
+`place` as present: the store reads it to split a catalog number a reader
+types into its holder and its bare number.
 `claims/names.json` has
 one row per taxon record: name, rank, kind (`primary`, `altSpellingOf`,
 `altRankOf`, `vulgarSpellingOf`, `placeholder`), the base record of a
@@ -607,8 +584,9 @@ and fourth carry `parents: [pyrgocystis]`. None inherits `pages` from the
 species node. The node's one context (`lady-burn-starfish-bed`) yields an
 `occurrence` claim, emitted first, and its `material` entries yield
 `specimen` claims after it: the holotype claim has `role: holotype`,
-`ids: [NHMUK E23470]`, `repository: nhmuk` with
-`repositoryVia: prefix`, `joinKeys: [nhmuk:e23470]` and the context's
+`prefix: NHMUK E`, `numbers: [23470]`, `ids: [NHMUK E 23470]`,
+`repository: nhmuk-e` with `repositoryVia: file` (the file's `prefixes` map),
+`joinKeys: [nhmuk-e:23470]` and the context's
 `contextKey`; the next entry has no role, since the paper attaches none.
 
 ### Fay 1962, *ottawaensis* (`data/trees/1962_fay.yaml`)
@@ -620,8 +598,9 @@ block. A question "does Fay fix the type species?" is answered from the
 act claim's `inferred: true`: the flag is the editor's, and the paper
 prints monotypy, so the manifest does not count it against the declared
 `types: na`. The first `material` claim is the entry for No. 752: it has
-`role: lectotype`, `repository: gsc` with `repositoryVia: otherNames` (the
-number is printed "Canadian Geological Survey 752"), and an entry-level
+`role: lectotype`, `numbers: [752]`, `repository: gsc` with
+`repositoryVia: explicit` (the number is printed "Canadian Geological Survey
+752", kept as `asPrinted`, with no prefix to map), `joinKeys: [gsc:752]`, and an entry-level
 `editorial` block (`inferred: [role]`, with the basis) that is the claim's
 `editorial`, with `inferredFields: [role]`; the paper prints "Holotype" in a
 caption and "syntype" in the text, and the editor reads lectotype. The

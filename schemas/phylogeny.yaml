@@ -63,19 +63,6 @@ $defs:
         items:
           type: string
           enum: [material, illustrations, contexts, ranges, synonyms]
-      repositories:
-        description: |
-          The `repositories.yaml` entries this source's catalog numbers draw
-          on, listed when a printed prefix is claimed by more than one entry
-          (Bell 1976 writes UCMP for Cincinnati: `[u-cincinnati-museum]`). A
-          prefix
-          resolves against the listed entries first, then the whole
-          registry; a prefix still ambiguous, or a listed entry no number
-          uses, is an error.
-        type: array
-        uniqueItems: true
-        items:
-          $ref: "#/$defs/repositoryKey"
       prefixes:
         description: |
           The prefixes this source prints before its catalog numbers, each
@@ -1109,11 +1096,9 @@ $defs:
     - Meghalayan
   catalogNumber:
     description: |
-      A specimen's catalog number as the source prints it, repository prefix
-      included ("GSC 752", "UQF5409", "GM 9-5-2 165b"), or a two-element
-      list naming the first and last number of a consecutive range. The
-      repository is resolved from the prefix (see `repositories`); the string
-      itself is never split.
+      A catalog number as the source prints it, prefix included ("GSC 752",
+      "UQF5409", "GM 9-5-2 165b"), or a two-element list naming the first
+      and last number of a consecutive range. The string is never split.
     oneOf:
     - type: string
       minLength: 1
@@ -1183,7 +1168,7 @@ $defs:
   materialEntry:
     description: |
       One specimen, or one batch of specimens the source cites together, as
-      this source cites it. An entry is identified by its catalog numbers,
+      this source cites it. An entry is identified by its numbers,
       or by the source's own label when it prints none ("A", "the Bigsby
       specimen"), or by a bare count. Absence of `role` means the source
       attaches no type word. On a protologue node (`new: true`) a holotype,
@@ -1193,12 +1178,9 @@ $defs:
     type: object
     additionalProperties: false
     anyOf:
-    - required: [catalogNumbers]
     - required: [numbers]
     - required: [label]
     - required: [count]
-    not:
-      required: [catalogNumbers, numbers]
     dependentRequired:
       prefix: [numbers]
     properties:
@@ -1215,23 +1197,14 @@ $defs:
         description: |
           The catalog numbers after the prefix, as printed, each a string
           or an integer, or a two-element `[from, to]` list for a printed
-          run. Nothing is parsed out of a string in this shape: the join
-          key is the register and the number. Used instead of
-          `catalogNumbers`, never beside it.
+          run. Nothing is parsed out of a string: the join key is the register
+          and the number.
         type: array
         minItems: 1
         items:
           $ref: "#/$defs/numberOrRun"
       asPrinted:
         description: The numbers verbatim as printed ("GSC 25935–25961"), prefix included.
-        type: string
-      catalogNumbers:
-        type: array
-        minItems: 1
-        items:
-          $ref: "#/$defs/catalogNumber"
-      catalogNumbersAsPrinted:
-        description: The numbers verbatim when `catalogNumbers` had to normalise them.
         type: string
       count:
         description: How many specimens the entry covers; an integer only, vagueness goes in `notes`.
@@ -1253,10 +1226,10 @@ $defs:
       repository:
         description: |
           A key in `repositories.yaml`, possibly a collection's, written only
-          when the catalog number carries no prefix, when the source names a
+          when the numbers carry no prefix, when the source names a
           collection its prefix does not reveal (the Walcott Collection), or
           when one entry draws on a different holder than the tree file's
-          `repositories` list resolves its prefix to. Beside `prefix` it
+          `prefixes` map gives its prefix. Beside `prefix` it
           names a collection the prefix hides (`prefix: USNM`,
           `repository: usnm-walcott`); with `numbers` and no prefix it is the
           holder of the numbers.
@@ -1296,7 +1269,7 @@ $defs:
           With `numbers` the number alone, without its prefix.
         type: [string, integer]
       parts:
-        description: Part names parallel to `catalogNumbers` or `numbers` (part, counterpart).
+        description: Part names parallel to `numbers` (part, counterpart).
         type: array
         items:
           type: string
@@ -1419,30 +1392,27 @@ $defs:
       localityNumbers:
         description: |
           Locality register numbers for this context, as printed ("SH-1",
-          "USGS 4148 CO", "NMVPL 58"), resolved like catalog numbers through
-          entries whose `subject` is localities. Equivalences the source
-          prints are kept as several numbers on one context. An object gives
-          the number apart from its prefix (`{prefix: USGS, number: 4148
-          CO}`, resolved through the tree file's `prefixes` map) or names its
-          register outright (`{register: usgs-l, number: D190d CO}`); with
-          neither, the number belongs to the file's `localityRegister`.
+          "USGS 4148 CO", "NMVPL 58"). Each gives the number apart from its
+          prefix (`{prefix: USGS, number: 4148 CO}`, resolved through the
+          tree file's `prefixes` map) or names its register outright
+          (`{register: usgs-l, number: D190d CO}`); with neither, the number
+          belongs to the file's `localityRegister`. Equivalences the source
+          prints are kept as several numbers on one context.
         type: array
         items:
-          oneOf:
-          - type: string
-          - type: object
-            additionalProperties: false
-            required: [number]
-            not:
-              required: [prefix, register]
-            properties:
-              number:
-                $ref: "#/$defs/printedNumber"
-              prefix:
-                type: string
-                minLength: 1
-              register:
-                $ref: "#/$defs/repositoryKey"
+          type: object
+          additionalProperties: false
+          required: [number]
+          not:
+            required: [prefix, register]
+          properties:
+            number:
+              $ref: "#/$defs/printedNumber"
+            prefix:
+              type: string
+              minLength: 1
+            register:
+              $ref: "#/$defs/repositoryKey"
       coordinatesAsPrinted:
         description: Coordinates or a grid reference exactly as printed ("GR538142 (yards)").
         type: string
@@ -1534,14 +1504,13 @@ $defs:
       `data/repositories.yaml`: every holder a catalog number may name,
       organised by holder. An entry is an institution, a collection inside
       one (`within`), or a person; `subject` says what its numbers
-      identify. `prefixes` lists the printed prefixes that resolve to the
-      entry, and `otherNames` the other names it is printed under, which
-      resolve too; the prefix index is derived from both, so a key need
-      not be a prefix. A
-      collection may print its parent's prefix and list none of its own
-      (the Walcott Collection prints USNM numbers). When two entries claim
-      the same prefix, a tree file whose numbers use it lists the entry it
-      means under its own `repositories`.
+      identify. `prefixes` lists the printed forms known for the entry, and
+      `otherNames` the other names it is printed under; the loader checks a
+      tree file's `prefixes` map against them, and the specimen lookup
+      splits a number a reader types by them. A tree file maps the prefixes
+      it prints through its own `prefixes` map, so a prefix two entries
+      share is settled there. A collection may print its parent's prefix and
+      list none of its own (the Walcott Collection prints USNM numbers).
     type: object
     propertyNames:
       $ref: "#/$defs/repositoryKey"
@@ -1568,7 +1537,7 @@ $defs:
         otherNames:
           description: |
             Other names the holder is printed under, earlier or otherwise
-            ("BMNH", "Canadian Geological Survey"); they resolve like
+            ("BMNH", "Canadian Geological Survey"); they are known forms like
             prefixes. No ordering in time is implied.
           type: array
           items:

@@ -12,7 +12,6 @@ import re
 
 from . import blocks
 from .acts import RELATED_ACTS
-from .loader.material import AMBIGUOUS, bare_number, resolve_number
 from .names import fold, fold_forms, key_stem
 
 # The community's words for what the table records.
@@ -565,8 +564,6 @@ class Words:
     specimens" for a bare count."""
     if claim.get('numbers'):
       numbers = _numbers_words(claim)
-    elif claim.get('ids'):
-      numbers = _range_words(claim['ids'])
     elif 'label' in claim:
       numbers = claim['label']
     elif 'count' in claim:
@@ -591,30 +588,16 @@ class Words:
       words += ' (not figured)'
     return words
 
-  def _names_specimen(self, value, join_key, repository):
-    """Whether a figure's `of` value names the specimen a join key stands
-    for: its holder is the one its prefix resolves to, else the claim's
-    `repository`, as `_NodeClaims._join_key` keys a number."""
-    registry = self.store.repositories
-    key, via, bare = resolve_number(value, registry)
-    if via is None or via == AMBIGUOUS:
-      key, bare = repository, bare_number(value, repository, registry)
-    return f'{key}:{fold(bare)}' == join_key
-
   def _figures_of(self, claim, join_key):
     """The locators of the figures that name the specimen a join key
     stands for among the several numbers a claim carries: each
-    `illustrationClaims` figure whose `of` has a value equal to it (for a
-    claim with `numbers`, a number equal to the key's, folded)."""
+    `illustrationClaims` figure whose `of` has a value equal to the key's
+    number, folded."""
     found = []
     for figure in map(self.store.by_id.get, claim.get('illustrationClaims') or ()):
       of = figure.get('of')
       values = of if isinstance(of, list) else [of]
-      if 'numbers' in claim:
-        names = any(fold(str(v)) == join_key.partition(':')[2] for v in values)
-      else:
-        names = any(self._names_specimen(v, join_key, claim.get('repository')) for v in values)
-      if names:
+      if any(fold(str(v)) == join_key.partition(':')[2] for v in values):
         found.append(figure['illustration'])
     return found
 
@@ -637,12 +620,8 @@ class Words:
       words = f'cited under {taxon}'
     if claim.get('uncertain'):
       words += ' (doubtfully assigned)'
-    if claim.get('numbers'):
-      printed = _numbers_words(claim)
-      run_words = [_numbers_words(claim, [run]) for run in runs or ()]
-    else:
-      printed = _range_words(claim['ids']) if claim.get('ids') else None
-      run_words = [_range_words([run]) for run in runs or ()]
+    printed = _numbers_words(claim) if claim.get('numbers') else None
+    run_words = [_numbers_words(claim, [run]) for run in runs or ()]
     if runs:
       words += ' in the run ' + ', '.join(run_words)
     elif printed and printed != number:

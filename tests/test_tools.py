@@ -20,7 +20,7 @@ from phylohist.claims import extract
 from phylohist.evaluation import alternatives
 from phylohist.loader.taxa import Tree
 from phylohist.render import node_label
-from phylohist.store import CLAIMS_DIR, ClaimStore
+from phylohist.store import AMBIGUOUS, CLAIMS_DIR, ClaimStore, split_typed_number
 
 QUESTIONS_PATH = pathlib.Path(__file__).parent.parent / 'eval' / 'questions.yaml'
 with open(QUESTIONS_PATH) as fd:
@@ -666,9 +666,11 @@ def test_material_words(store):
   def material(kind, **fields):
     return claim_words({'kind': 'material', 'materialKind': kind, **fields})
 
-  assert material('specimen', role='lectotype', ids=['GSC 752']) == 'lectotype: GSC 752'
-  assert material('specimen', ids=[['GSC 100', 'GSC 105'], 'GSC 7']) == (
-    'specimens: GSC 100–GSC 105, GSC 7'
+  assert material('specimen', role='lectotype', prefix='GSC', numbers=[752]) == (
+    'lectotype: GSC 752'
+  )
+  assert material('specimen', prefix='GSC', numbers=[[100, 105], 7]) == (
+    'specimens: GSC 100–105, 7'
   )
   assert material('specimen', label='the Bigsby specimen', role='syntype') == (
     'syntype: the Bigsby specimen'
@@ -677,7 +679,7 @@ def test_material_words(store):
   assert (
     material(
       'specimen',
-      ids=['XYZ 1'],
+      numbers=['XYZ 1'],
       repository='nhmuk',
       repositoryVia='explicit',
       preparation='latex cast',
@@ -687,9 +689,9 @@ def test_material_words(store):
     )
     == 'specimens: XYZ 1 (latex cast) cast of XYZ 2 [nhmuk] (quarry?)'
   )
-  assert material('specimen', ids=['GSC 1'], repository='gsc', repositoryVia='prefix') == (
-    'specimens: GSC 1'
-  )
+  assert material(
+    'specimen', prefix='GSC', numbers=[1], repository='gsc', repositoryVia='file'
+  ) == ('specimens: GSC 1')
   assert (
     material(
       'occurrence',
@@ -1275,6 +1277,106 @@ def test_specimen_history_blocks_validate_and_go_through_call(store):
   assert blocks.validate(block, store) == []
   assert block['blockId'] == store.specimen_history('UQF 5404', style='json')['blockId']
   assert blocks.validate(store.specimen_history('MCZ 999'), store) == []
+
+
+# -- split_typed_number -------------------------------------------------------
+
+
+def _form_entry(*prefixes, other_names=(), **fields):
+  entry = {'name': 'x', 'type': 'institution', 'prefixes': list(prefixes), **fields}
+  if other_names:
+    entry['otherNames'] = list(other_names)
+  return entry
+
+
+@pytest.fixture
+def typed():
+  """A synthetic registry: PE, E and UCMP are each claimed by two entries, and
+  a locality register shares USNM with a specimen register."""
+  return {
+    'fmnh': _form_entry('FMNH', 'PE', 'FMNH PE'),
+    'north-museum-fm': _form_entry('PE'),
+    'nhmuk': _form_entry('NHMUK', 'E', other_names=['BMNH', 'NHM UK']),
+    'uc-caster': _form_entry('E', 'BC'),
+    'mcz': _form_entry('MCZ'),
+    'gm': _form_entry('GM'),
+    'usnm': _form_entry('USNM'),
+    'usnm-walcott': {'name': 'x', 'type': 'collection'},
+    'uq-f': _form_entry('UQF', 'F'),
+    'gsc': _form_entry('GSC', other_names=['Canadian Geological Survey']),
+    'usgs-l': _form_entry('USGS', subject='localities'),
+    'usnm-l': _form_entry('USNM', 'USNM loc', 'Walcott', subject='localities'),
+  }
+
+
+@pytest.mark.parametrize(
+  ('number', 'key', 'via', 'bare'),
+  [
+    ('GM 9-5-2 165b', 'gm', 'prefix', '9-5-2 165b'),
+    ('F. 5404', 'uq-f', 'prefix', '5404'),
+    ('F.5404', 'uq-f', 'prefix', '5404'),
+    ('F-5404', 'uq-f', 'prefix', '5404'),
+    ('UQF5404', 'uq-f', 'prefix', '5404'),
+    ('UQF No. 5404', 'uq-f', 'prefix', '5404'),
+    ('uqf 5404.2', 'uq-f', 'prefix', '5404.2'),
+    ('FMNH PE 214', 'fmnh', 'prefix', '214'),
+    ('MCZ 602-D1', 'mcz', 'prefix', '602-D1'),
+    ('USNM S-3965', 'usnm', 'prefix', 'S-3965'),
+    ('BMNH 12345', 'nhmuk', 'otherNames', '12345'),
+    ('nhm   uk 12', 'nhmuk', 'otherNames', '12'),
+    ('canadian  geological survey 752', 'gsc', 'otherNames', '752'),
+  ],
+)
+def test_split_typed_number_splits_a_number_as_a_person_types_it(typed, number, key, via, bare):
+  assert split_typed_number(number, typed) == (key, via, bare)
+
+
+def test_split_typed_number_matches_whole_tokens_and_the_longest_form(typed):
+  # No boundary after GM, so GMX is no match.
+  assert split_typed_number('GMX 12', typed) == (None, None, 'GMX 12')
+  # FMNH PE is longer than FMNH or PE, and only fmnh claims it.
+  assert split_typed_number('FMNH PE 12', typed)[::2] == ('fmnh', '12')
+  # A key is a slug, not a printed form.
+  assert split_typed_number('usnm-walcott 12', typed) == (None, None, 'usnm-walcott 12')
+
+
+def test_split_typed_number_returns_the_number_whole_when_it_splits_nothing(typed):
+  assert split_typed_number('ZZZZ 12', typed) == (None, None, 'ZZZZ 12')
+  assert split_typed_number('12345', typed) == (None, None, '12345')
+  # A number that is only its prefix stays whole.
+  assert split_typed_number('UQF', typed) == ('uq-f', 'prefix', 'UQF')
+
+
+def test_split_typed_number_a_shared_prefix_is_ambiguous(typed):
+  assert split_typed_number('E 1', typed) == (('nhmuk', 'uc-caster'), AMBIGUOUS, 'E 1')
+  assert split_typed_number('PE-214', typed) == (('fmnh', 'north-museum-fm'), AMBIGUOUS, 'PE-214')
+
+
+def test_split_typed_number_an_entry_claiming_a_form_twice_is_one_claim():
+  registry = {'a': _form_entry('AB', other_names=['AB'])}
+  assert split_typed_number('AB 1', registry) == ('a', 'prefix', '1')
+
+
+def test_split_typed_number_reads_specimen_registers_only(typed):
+  # A locality register's form splits no specimen number, and does not make USNM ambiguous.
+  assert split_typed_number('USGS 4148', typed) == (None, None, 'USGS 4148')
+  assert split_typed_number('Walcott 35k', typed) == (None, None, 'Walcott 35k')
+  assert split_typed_number('USNM 35k', typed) == ('usnm', 'prefix', '35k')
+
+
+def test_split_typed_number_over_one_entry_strips_that_entrys_own_form(typed):
+  # How the `repository` argument of `specimen_history` reads a number.
+  def bare(number, key):
+    return split_typed_number(number, {key: typed[key]})[2]
+
+  assert bare('GSC 752', 'gsc') == '752'
+  assert bare('Canadian Geological Survey 752', 'gsc') == '752'
+  assert bare('PE-214', 'north-museum-fm') == '214'
+  assert bare('PE-214', 'fmnh') == '214'
+  # Another holder's form, no form at all: unchanged.
+  assert bare('XYZ 1', 'nhmuk') == 'XYZ 1'
+  assert bare('12345', 'gsc') == '12345'
+  assert bare('UQF 5404', 'gsc') == 'UQF 5404'
 
 
 # -- specimen_history over the `prefix` + `numbers` shape ----------------------

@@ -182,7 +182,7 @@ def test_earlier_state_entries_are_cited(load_records, caplog, axis):
     'illustrations': illustrations,
     # The cited work's own material is not this source's: none of the four
     # material fields on a cited entry emits a claim.
-    'material': [{'catalogNumbers': ['GSC 1']}],
+    'material': [{'prefix': 'GSC', 'numbers': [1]}],
     'contexts': {'somewhere': {'unit': ['Some Formation']}},
     'ranges': [{'series': 'Ordovician'}],
   }
@@ -313,8 +313,8 @@ def test_recombined_is_the_printed_new_combination(load_records, caplog):
 def test_material_adapter(load_records, caplog):
   # Contexts, material, illustrations, ranges, in that fixed order, over a
   # node with a file context, a node context, a numbered entry, a range
-  # pair, a label-only entry, an explicit repository, a repository resolved
-  # through the file's list, a tentative context, tied and untied
+  # pair, a label-only entry, an explicit repository, a prefix the file's
+  # map gives a register, a tentative context, tied and untied
   # illustrations, and two ranges.
   file_contexts = {
     'division-st': {'unit': ['Trenton Limestone'], 'location': ['Division Street, Ottawa']},
@@ -323,28 +323,30 @@ def test_material_adapter(load_records, caplog):
     'taxon': 'rhenopyrgus',
     'contexts': {'quarry-x': {'unit': ['Quarry X Beds']}},
     'material': [
-      {'catalogNumbers': ['GSC 752'], 'role': 'lectotype', 'context': 'division-st'},
-      {'catalogNumbers': [['GSC 100', 'GSC 105']], 'role': 'paratype', 'formerIds': ['G 1']},
+      {'prefix': 'GSC', 'numbers': [752], 'role': 'lectotype', 'context': 'division-st'},
+      {'prefix': 'GSC', 'numbers': [[100, 105]], 'role': 'paratype', 'formerIds': ['G 1']},
       {'label': 'the specimen lent to Hudson', 'role': 'syntype', 'status': 'lost'},
-      {'catalogNumbers': ['XYZ 1'], 'repository': 'nhmuk', 'notes': 'lent'},
-      {'catalogNumbers': ['PE 7'], 'preparation': 'latex cast', 'castOf': 'GSC 752'},
+      {'numbers': ['XYZ 1'], 'repository': 'nhmuk', 'notes': 'lent'},
+      {'prefix': 'PE', 'numbers': [7], 'preparation': 'latex cast', 'castOf': 752},
       {
-        'catalogNumbers': ['GSC 900'],
+        'prefix': 'GSC',
+        'numbers': [900],
         'context': {'key': 'division-st', 'tentative': True},
         'role': 'hypotype',
       },
       {
-        'catalogNumbers': ['GSC 901'],
+        'prefix': 'GSC',
+        'numbers': [901],
         'role': 'syntype',
         'editorial': {'inferred': ['role'], 'basis': 'Only "the type" is printed.'},
       },
     ],
     'illustrations': [
-      {'textFigures': [3], 'of': 'GSC 752'},
+      {'textFigures': [3], 'of': 752},
       {
         'plate': 1,
         'figures': [2],
-        'of': ['GSC 100', 'the specimen lent to Hudson'],
+        'of': [100, 'the specimen lent to Hudson'],
         'depicts': 'cast',
       },
       {'plate': 2, 'uncertain': True},
@@ -365,7 +367,7 @@ def test_material_adapter(load_records, caplog):
       'position': 90,
       'file_contexts': file_contexts,
       'file_unused': (),
-      'file_repositories': ('fmnh-pe',),
+      'file_prefixes': {'GSC': 'gsc', 'PE': 'fmnh-pe'},
     },
   )
   claims = extract({'1961_dehm': [root]})['1961_dehm']
@@ -390,9 +392,9 @@ def test_material_adapter(load_records, caplog):
   numbered, pair, label_only, explicit, file_listed, tentative, inferred = material[2:9]
 
   assert numbered['role'] == 'lectotype' and numbered['ids'] == ['GSC 752']
-  assert numbered['catalogNumbers'] == ['GSC 752'] and numbered['contextKey'] == 'division-st'
+  assert numbered['numbers'] == [752] and numbered['contextKey'] == 'division-st'
   assert 'contextTentative' not in numbered
-  assert numbered['repository'] == 'gsc' and numbered['repositoryVia'] == 'prefix'
+  assert numbered['repository'] == 'gsc' and numbered['repositoryVia'] == 'file'
   assert numbered['joinKeys'] == ['gsc:752'] and 'rangeJoin' not in numbered
   assert 'roleAct' not in numbered  # not a protologue node
 
@@ -403,13 +405,14 @@ def test_material_adapter(load_records, caplog):
   assert label_only['ids'] == [] and label_only['repository'] is None
   assert 'joinKeys' not in label_only and 'repositoryVia' not in label_only
 
+  assert explicit['ids'] == ['XYZ 1']
   assert explicit['repository'] == 'nhmuk' and explicit['repositoryVia'] == 'explicit'
   assert explicit['joinKeys'] == ['nhmuk:xyz1'] and explicit['materialNotes'] == 'lent'
   assert 'role' not in explicit
 
-  # `PE` belongs to two registry entries; the file's list settles it.
+  # `PE` belongs to two registry entries; the file's map settles it.
   assert file_listed['repository'] == 'fmnh-pe' and file_listed['repositoryVia'] == 'file'
-  assert file_listed['preparation'] == 'latex cast' and file_listed['castOf'] == 'GSC 752'
+  assert file_listed['preparation'] == 'latex cast' and file_listed['castOf'] == 752
 
   assert tentative['contextKey'] == 'division-st' and tentative['contextTentative'] is True
 
@@ -418,9 +421,9 @@ def test_material_adapter(load_records, caplog):
   assert inferred['inferredFields'] == ['role']
 
   tied, list_tied, untied = material[9:12]
-  assert tied['illustration'] == {'textFigures': [3]} and tied['of'] == 'GSC 752'
+  assert tied['illustration'] == {'textFigures': [3]} and tied['of'] == 752
   assert tied['ofClaim'] == [numbered['id']]
-  assert list_tied['of'] == ['GSC 100', 'the specimen lent to Hudson']
+  assert list_tied['of'] == [100, 'the specimen lent to Hudson']
   assert list_tied['depicts'] == 'cast' and 'depicts' not in tied
   assert list_tied['illustration'] == {'plate': 1, 'figures': [2]}
   assert list_tied['ofClaim'] == [pair['id'], label_only['id']]
@@ -443,10 +446,10 @@ def test_material_adapter(load_records, caplog):
       'new': True,
       'material': [
         {'count': 5, 'role': 'paratype', 'roleAct': 'reported'},
-        {'catalogNumbers': ['GSC 1'], 'role': 'holotype'},
-        {'catalogNumbers': ['GSC 2'], 'role': 'cotype'},
-        {'catalogNumbers': ['GSC 3'], 'role': 'hypotype'},
-        {'catalogNumbers': ['GSC 4']},
+        {'prefix': 'GSC', 'numbers': [1], 'role': 'holotype'},
+        {'prefix': 'GSC', 'numbers': [2], 'role': 'cotype'},
+        {'prefix': 'GSC', 'numbers': [3], 'role': 'hypotype'},
+        {'prefix': 'GSC', 'numbers': [4]},
       ],
     },
     {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 91},
@@ -463,110 +466,6 @@ def test_material_adapter(load_records, caplog):
     None,
   ]
   assert new_claims[0]['count'] == 5
-
-
-def _specimen(entry, file_repositories=()):
-  root = Tree(
-    {'taxon': 'rhenopyrgus', 'material': entry},
-    {
-      'source_key': '1961_dehm',
-      'type': 'taxonomy',
-      'position': 90,
-      'file_repositories': file_repositories,
-    },
-  )
-  claims = extract({'1961_dehm': [root]})['1961_dehm']
-  return [c for c in claims if c.get('materialKind') == 'specimen']
-
-
-def test_two_printed_forms_of_one_catalog_number_share_a_join_key(load_records):
-  first, second = _specimen([{'catalogNumbers': ['F. 5404']}, {'catalogNumbers': ['UQF5404']}])
-  assert first['joinKeys'] == second['joinKeys'] == ['uq-f:5404']
-  # The printed form stays in `ids`.
-  assert (first['ids'], second['ids']) == (['F. 5404'], ['UQF5404'])
-
-
-def test_a_range_pairs_two_join_keys_are_both_bare(load_records):
-  [pair] = _specimen([{'catalogNumbers': [['UQF 5399', 'F. 5403']]}])
-  assert pair['joinKeys'] == ['uq-f:5399', 'uq-f:5403'] and pair['rangeJoin'] is True
-
-
-def test_an_explicit_repository_strips_its_own_prefix_only(load_records):
-  own, other = _specimen(
-    [
-      {'catalogNumbers': ['GSC 752'], 'repository': 'gsc'},
-      {'catalogNumbers': ['MCZ 690'], 'repository': 'usnm'},
-    ],
-  )
-  assert own['joinKeys'] == ['gsc:752']
-  assert other['joinKeys'] == ['usnm:mcz690']
-
-
-def test_each_number_of_an_entry_keys_under_its_own_holder(load_records):
-  [mixed] = _specimen([{'catalogNumbers': ['UTGD 122233', 'NMVP 107053', ['UQF 1', 'QMF 2']]}])
-  assert mixed['repository'] == 'utgd' and mixed['repositoryVia'] == 'prefix'
-  assert mixed['joinKeys'] == ['utgd:122233', 'nmv-p:107053', 'uq-f:1', 'qm-f:2']
-
-
-def test_a_number_that_resolves_to_nothing_keys_under_the_entrys_repository(load_records):
-  [mixed] = _specimen([{'catalogNumbers': ['GSC 752', 'ZZZ 5', 'Specimen 9']}])
-  assert mixed['joinKeys'] == ['gsc:752', 'gsc:zzz5', 'gsc:specimen9']
-
-
-def test_an_explicit_collection_keys_a_parent_prefix_under_the_institution(load_records):
-  [specimen] = _specimen([{'catalogNumbers': ['USNM 165421'], 'repository': 'usnm-walcott'}])
-  assert specimen['repository'] == 'usnm-walcott' and specimen['repositoryVia'] == 'explicit'
-  assert specimen['joinKeys'] == ['usnm:165421']
-
-
-def test_an_explicit_repository_wins_over_the_prefix_of_an_unrelated_holder(load_records):
-  [specimen] = _specimen(
-    [
-      {'catalogNumbers': ['MCZ 690', 'USNM 5', 'UQF 9'], 'repository': 'usnm'},
-    ],
-  )
-  # A sibling collection is not an ancestor: the explicit holder keeps it.
-  assert specimen['joinKeys'] == ['usnm:mcz690', 'usnm:5', 'usnm:uqf9']
-  [sibling] = _specimen([{'catalogNumbers': ['S 7'], 'repository': 'usnm-walcott'}])
-  assert sibling['joinKeys'] == ['usnm-walcott:s7']
-
-
-def test_a_file_listed_prefix_strips_to_the_bare_number(load_records):
-  [specimen] = _specimen([{'catalogNumbers': ['PE-214']}], ('fmnh-pe',))
-  assert specimen['repository'] == 'fmnh-pe' and specimen['joinKeys'] == ['fmnh-pe:214']
-
-
-def _occurrence(context, file_repositories=()):
-  root = Tree(
-    {'taxon': 'rhenopyrgus', 'contexts': {'x': context}},
-    {
-      'source_key': '1961_dehm',
-      'type': 'taxonomy',
-      'position': 90,
-      'file_repositories': file_repositories,
-    },
-  )
-  claims = extract({'1961_dehm': [root]})['1961_dehm']
-  [claim] = [c for c in claims if c.get('materialKind') == 'occurrence']
-  return claim
-
-
-def test_locality_keys_join_two_printed_forms_of_one_number(load_records):
-  claim = _occurrence({'localityNumbers': ['Walcott locality 35k', 'USNM loc. 35k', 'USGS 5462']})
-  assert claim['localityKeys'] == ['usnm-l:35k', 'usgs-l:5462']
-
-
-def test_locality_keys_use_the_listed_field_code_register(load_records):
-  context = {'localityNumbers': ['SH-1', 'USGS 4148 CO', 'unresolvable? 7']}
-  assert _occurrence(context, ('sprinkle-l',))['localityKeys'] == [
-    'sprinkle-l:sh1',
-    'usgs-l:4148co',
-    'sprinkle-l:unresolvable?7',
-  ]
-  # Unlisted, SH-1 resolves to nothing, and a context with none has no field.
-  assert _occurrence(context)['localityKeys'] == ['usgs-l:4148co']
-  assert 'localityKeys' not in _occurrence({'unit': ['Wheeler Shale']})
-  assert 'localityKeys' not in _occurrence({'localityNumbers': ['SH-1']})
 
 
 def _numbered(entries, prefixes=None, locality_register=None, **node):
@@ -599,7 +498,7 @@ def test_a_prefix_and_numbers_entry_carries_its_fields_and_display_ids(load_reco
   assert claim['ids'] == ['MCZ 581A', 'MCZ 581']
   assert claim['repository'] == 'mcz' and claim['repositoryVia'] == 'file'
   assert claim['joinKeys'] == ['mcz:581a', 'mcz:581']
-  assert 'rangeJoin' not in claim and 'catalogNumbers' not in claim
+  assert 'rangeJoin' not in claim
 
 
 def test_two_printed_prefixes_of_one_register_share_a_join_key(load_records):
@@ -675,14 +574,6 @@ def test_a_figure_names_a_prefix_and_numbers_entry_by_a_number(load_records):
   assert [f['plate'] for f in claim['specimenIllustrations']] == [1, 2]
 
 
-def test_the_old_and_new_shapes_may_share_a_node(load_records):
-  old, new = _numbered(
-    [{'catalogNumbers': ['MCZ 1']}, {'prefix': 'MCZ', 'numbers': [1]}], {'MCZ': 'mcz'}
-  )
-  assert old['joinKeys'] == new['joinKeys'] == ['mcz:1']
-  assert 'numbers' not in old and 'prefix' not in old
-
-
 def _locality(context, prefixes=None, locality_register=None):
   root = Tree(
     {'taxon': 'rhenopyrgus', 'contexts': {'x': context}},
@@ -707,7 +598,7 @@ def test_locality_keys_of_object_numbers(load_records):
       {'register': 'usnm-l', 'number': '35k'},
       {'prefix': 'Walcott', 'number': 35},
       {'register': 'usgs-l', 'number': 'D190d CO'},
-      'USGS 5462',
+      {'prefix': 'USGS', 'number': 5462},
       {'prefix': 'ZZ', 'number': 9},
     ]
   }
@@ -730,9 +621,17 @@ def test_locality_keys_of_object_numbers(load_records):
     'usgs-l:d190dco',
     'usgs-l:5462',
   ]
-  # An object and a string form of one number give one key.
-  both = {'localityNumbers': ['USGS 4148 CO', {'prefix': 'USGS', 'number': '4148 co'}]}
+  # Two printed forms of one number give one key.
+  both = {
+    'localityNumbers': [
+      {'prefix': 'USGS', 'number': '4148 CO'},
+      {'register': 'usgs-l', 'number': '4148 co'},
+    ]
+  }
   assert _locality(both, prefixes)['localityKeys'] == ['usgs-l:4148co']
+  # A context with no locality numbers has no field.
+  assert 'localityKeys' not in _locality({'unit': ['Wheeler Shale']}, prefixes, 'sprinkle-l')
+  assert 'localityKeys' not in _locality({'localityNumbers': [{'number': 'SH-1'}]}, prefixes)
 
 
 def test_a_specimen_is_followed_across_sources_by_its_join_key(claims):
@@ -1189,8 +1088,8 @@ def test_unfigured_specimens_are_derived_only_when_illustrations_are_all(monkeyp
 def test_a_number_inside_a_run_names_its_entry_for_figured():
   node = {
     'taxon': _SPECIES,
-    'material': [{'catalogNumbers': [['GSC 100', 'GSC 105']]}, {'label': 'B'}],
-    'illustrations': [{'plate': 1, 'of': 'GSC 103'}],
+    'material': [{'prefix': 'GSC', 'numbers': [[100, 105]]}, {'label': 'B'}],
+    'illustrations': [{'plate': 1, 'of': 103}],
   }
   sister = {'taxon': _SISTER, 'illustrations': None}
   claims = _claims_of({'taxon': 'rhenopyrgus', 'children': [node, sister]}, 226)
@@ -1230,14 +1129,14 @@ def test_a_figured_role_or_a_figured_cast_is_never_unfigured():
   # of another entry.
   unfigured_cast = {**cast, 'illustrations': [{'plate': 1, 'of': 'C'}]}
   assert figured(unfigured_cast, 230) == {'A': False, 'B': False, 'C': None}
-  # The cast is found by a catalog number or a run as a figure's `of` is.
+  # The cast is found by a number or a run as a figure's `of` is.
   numbered = {
     'taxon': _SPECIES,
     'material': [
-      {'catalogNumbers': ['GSC 100']},
-      {'catalogNumbers': ['GSC 101'], 'castOf': 'GSC 100'},
+      {'prefix': 'GSC', 'numbers': [100]},
+      {'prefix': 'GSC', 'numbers': [101], 'castOf': 100},
     ],
-    'illustrations': [{'plate': 1, 'of': 'GSC 101'}],
+    'illustrations': [{'plate': 1, 'of': 101}],
   }
   claims = _claims_of({'taxon': 'rhenopyrgus', 'children': [numbered, sister]}, 231)
   assert [

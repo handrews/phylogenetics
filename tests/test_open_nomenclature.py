@@ -67,7 +67,7 @@ def test_schema_accepts_the_new_node_and_material_fields():
         'taxon': 'grayae_bather_1915',
         'quotedParent': True,
         'nonMonophyletic': 'paraphyletic',
-        'material': [{'catalogNumbers': ['USNM 1'], 'role': 'topotype', 'roleUncertain': True}],
+        'material': [{'prefix': 'USNM', 'numbers': [1], 'role': 'topotype', 'roleUncertain': True}],
       },
       {'taxon': 'sardesoni_bather_1915', 'nonMonophyletic': 'polyphyletic'},
       {'taxon': 'sardesoni_bather_1915', 'material': [{'label': 'A', 'uncertain': True}]},
@@ -433,9 +433,9 @@ def test_specimen_claim_carries_uncertain_and_role_uncertain(load_records):
   root = {
     'taxon': 'grayae_bather_1915',
     'material': [
-      {'catalogNumbers': ['USNM 165425'], 'role': 'topotype', 'roleUncertain': True},
-      {'catalogNumbers': ['USNM 165426'], 'uncertain': True},
-      {'catalogNumbers': ['USNM 165427']},
+      {'prefix': 'USNM', 'numbers': [165425], 'role': 'topotype', 'roleUncertain': True},
+      {'prefix': 'USNM', 'numbers': [165426], 'uncertain': True},
+      {'prefix': 'USNM', 'numbers': [165427]},
     ],
   }
   first, second, third = [c for c in _claims(root, 204) if c['kind'] == 'material']
@@ -569,7 +569,8 @@ def test_specimen_words_for_a_queried_role_and_a_doubtful_assignment(synthetic):
     'kind': 'material',
     'materialKind': 'specimen',
     'role': 'topotype',
-    'ids': ['USNM 165425'],
+    'prefix': 'USNM',
+    'numbers': [165425],
   }
   assert words.claim_words(claim) == 'topotype: USNM 165425'
   assert words.claim_words({**claim, 'roleUncertain': True}) == 'topotype?: USNM 165425'

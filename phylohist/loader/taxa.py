@@ -798,11 +798,6 @@ class Tree:
     return self.root._metadata.get('file_unused') or ()
 
   @property
-  def file_repositories(self):
-    """This node's tree file's `repositories` list, as a tuple."""
-    return self.root._metadata.get('file_repositories') or ()
-
-  @property
   def file_prefixes(self):
     """This node's tree file's `prefixes` map (printed prefix to register)."""
     return self.root._metadata.get('file_prefixes') or {}

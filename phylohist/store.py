@@ -13,16 +13,99 @@ surface over the store is `tools.py`.
 import collections
 import json
 import pathlib
+import re
 
 from . import blocks
 from .closure import TAXONOMY, Closure, in_years
-from .loader.material import AMBIGUOUS, bare_number, in_run, resolve_number
+from .loader.material import in_run
 from .names import fold
 from .render import node_label, pages_text, render
 from .resolve import Resolver
 from .words import COVERAGE_WORDS, PLURAL_KINDS, Words, short_citation, years_span
 
 CLAIMS_DIR = pathlib.Path(__file__).parent / '..' / 'claims'
+
+AMBIGUOUS = 'ambiguous'
+
+_WHITESPACE_RE = re.compile(r'\s+')
+_DIGIT_RE = re.compile(r'\d')
+_LEADING_SEPARATORS_RE = re.compile(r'(?:[\s.-]|no\.)+', re.IGNORECASE)
+
+
+def _folded(text):
+  """Case- and whitespace-insensitive comparison form."""
+  return _WHITESPACE_RE.sub(' ', text.strip()).casefold()
+
+
+def _typed_prefix(number):
+  """The leading run before the first digit, stripped, with a trailing
+  hyphen or period dropped ("PE-214", "PE 214" and "F. 5404" give "PE",
+  "PE" and "F"); `None` if empty. A hyphen inside the number ("MCZ
+  602-D1") is past the first digit and untouched."""
+  match = _DIGIT_RE.search(number)
+  prefix = (number[: match.start()] if match else number).strip()
+  prefix = prefix.rstrip('-.').strip()
+  return prefix or None
+
+
+def _strip_form(number, form):
+  """`number` without `form` at its start (matched case-insensitively,
+  whitespace runs collapsed) and without the separators after it (spaces,
+  hyphens, periods, "No."); `number` unchanged when that leaves nothing or
+  `form` is not at its start."""
+  tokens = form.split(' ')
+  pattern = re.compile(r'\s+'.join(re.escape(token) for token in tokens), re.IGNORECASE)
+  text = number.strip()
+  match = pattern.match(text)
+  if match is None:
+    return number
+  rest = text[match.end() :]
+  separators = _LEADING_SEPARATORS_RE.match(rest)
+  rest = rest[separators.end() :] if separators else rest
+  return rest or number
+
+
+def split_typed_number(number, repositories):
+  """`(key, via, bare)` for a catalog number as a person types it: the
+  registry key of its holder, how that was found, and the number without
+  its printed prefix ("F. 5404" and "UQF5404" both give "5404").
+
+  The prefix is the run before the first digit (`_typed_prefix`), compared
+  case-insensitively with whitespace collapsed. The known forms are the
+  `prefixes` and `otherNames` of every entry of `repositories` that is not a
+  locality register; the longest one equal to the prefix or a token-boundary
+  prefix of it wins, and only that form's text is removed to make `bare`.
+  `via` is `'prefix'` or `'otherNames'` when one entry claims the form (a
+  form listed both ways counts as `'prefix'`).
+
+  Returns `(None, None, number)` when no form matches, and `(keys,
+  AMBIGUOUS, number)`, `keys` a sorted tuple, when several entries claim
+  the form. A caller tests `via == AMBIGUOUS` before using `key`.
+  """
+  prefix = _typed_prefix(number)
+  if prefix is None:
+    return None, None, number
+  prefix = _folded(prefix)
+  claims = {}
+  for key, entry in repositories.items():
+    if entry.get('subject') == 'localities':
+      continue
+    for via, values in (('otherNames', entry.get('otherNames')), ('prefix', entry.get('prefixes'))):
+      for value in values or ():
+        claims.setdefault(_folded(value), {})[key] = via
+  forms = [
+    form
+    for form in claims
+    if form == prefix or (prefix.startswith(form) and prefix[len(form)] == ' ')
+  ]
+  if not forms:
+    return None, None, number
+  form = max(forms, key=len)
+  if len(claims[form]) > 1:
+    return tuple(sorted(claims[form])), AMBIGUOUS, number
+  ((key, via),) = claims[form].items()
+  return key, via, _strip_form(number, form)
+
 
 _NODE_FLAGS = ('new', 'provisional', 'questionable', 'quoted')
 
@@ -188,23 +271,18 @@ class ClaimStore:
     if not claim.get('rangeJoin'):
       return
     join_keys = claim.get('joinKeys') or ()
-    # A claim with `numbers` holds the bare numbers already: its runs carry
-    # them as printed, for the words, and folded, to compare.
-    numbers = claim.get('numbers')
+    # The claim's runs carry the numbers as printed, for the words, and
+    # folded, to compare.
     position = 0
-    for number in numbers if numbers is not None else claim['ids']:
+    for number in claim['numbers']:
       pair = number if isinstance(number, list) else [number]
       holders = join_keys[position : position + len(pair)]
       position += len(pair)
       if len(pair) != 2 or len(holders) != 2:
         continue
       holder = holders[0].split(':', 1)[0]
-      if numbers is not None:
-        pair = [str(end) for end in pair]
-        bare = [fold(end) for end in pair]
-      else:
-        bare = [bare_number(end, holder, self.repositories) for end in pair]
-      self.runs[holder].append((*pair, *bare, claim))
+      pair = [str(end) for end in pair]
+      self.runs[holder].append((*pair, *map(fold, pair), claim))
 
   @property
   def closure(self):
@@ -1117,17 +1195,17 @@ class ClaimStore:
 
   def specimen_history(self, number, repository=None, style='text'):
     """Every citation of one specimen, by catalog number, one line per
-    claim in year order. The number is read as `resolve_number` reads it
-    (or, with `repository`, as that registry entry's own number), and meets
-    the claims' join keys; a number inside a printed run ("GSC
-    25935–25961") is found as well, by the printed form and by the bare
-    one."""
+    claim in year order. The number is split by `split_typed_number` (or,
+    with `repository`, as that registry entry's own number) and meets the
+    claims' join keys; a number inside a printed run ("GSC 25935–25961") is
+    found as well."""
     if repository is not None:
-      key, bare = repository, bare_number(number, repository, self.repositories)
+      key = repository
       if key not in self.repositories:
         return _with_style(self._unfound_specimen(number, repository), style)
+      _, _, bare = split_typed_number(number, {key: self.repositories[key]})
     else:
-      key, via, bare = resolve_number(number, self.repositories)
+      key, via, bare = split_typed_number(number, self.repositories)
       if via == AMBIGUOUS:
         block = self._unfound_specimen(number, repository, candidates=key)
         return _with_style(block, style)
@@ -1137,11 +1215,7 @@ class ClaimStore:
     found = {c['id']: c for c in self.by_join_key.get(join_key, ())}
     in_runs = {}
     for low, high, bare_low, bare_high, claim in self.runs.get(key, ()):
-      if 'numbers' in claim:
-        within = in_run(fold(bare), bare_low, bare_high)
-      else:
-        within = in_run(number, low, high) or in_run(bare, bare_low, bare_high)
-      if within:
+      if in_run(fold(bare), bare_low, bare_high):
         found.setdefault(claim['id'], claim)
         in_runs.setdefault(claim['id'], []).append([low, high])
     if not found:
