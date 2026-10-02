@@ -1470,3 +1470,11 @@ def test_specimen_history_finds_a_number_in_a_prefix_and_numbers_run(numbered):
   )
   assert len(_sentences(numbered.specimen_history('GSC 25961'))) == 1
   assert _sentences(numbered.specimen_history('GSC 25962')) == []
+
+
+def test_locality_numbers_read_as_prefix_and_number(store):
+  # A locality number is an object in the tree; the occurrence line prints
+  # the prefix, when there is one, and the number.
+  block = store.statements('hobbsi_sprinkle_1973', source='1973_sprinkle', kind='occurrences')
+  assert 'CL-1, USGS locality 5462' in block['rendered']
+  assert '{' not in block['rendered']

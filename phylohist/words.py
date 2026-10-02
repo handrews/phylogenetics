@@ -57,11 +57,15 @@ def short_citation(citation):
 
 
 def _flat_words(value):
-  """Strings from a value that may be a string, a number, or nested lists."""
+  """Strings from a value that may be a string, a number, nested lists, or a
+  locality number (`{prefix, number}`: the prefix, when printed, then the
+  number)."""
   if value is None:
     return []
   if isinstance(value, (list, tuple)):
     return [w for v in value for w in _flat_words(v)]
+  if isinstance(value, dict) and 'number' in value:
+    return [' '.join(str(v) for v in (value.get('prefix'), value['number']) if v is not None)]
   return [str(value)]
 
 
