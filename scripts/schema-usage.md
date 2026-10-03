@@ -31,8 +31,9 @@ even when its parent is also unreached, so read parents first.
 | `range` | `phylogeny#/$defs/range/properties/inferred`<br>`phylogeny#/$defs/range/properties/tentative/oneOf/0` |
 | `relationalFields` | `phylogeny#/$defs/relationalFields/properties/type`<br>`phylogeny#/$defs/relationalFields/properties/type/oneOf/0`<br>`phylogeny#/$defs/relationalFields/properties/type/oneOf/1` |
 | `stageRange` | `phylogeny#/$defs/stageRange`<br>`phylogeny#/$defs/stageRange/items` |
-| `taxonRecord` | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items/items` |
+| `taxonRecord` | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items/items`<br>`phylogeny#/$defs/taxonRecord/properties/pages` |
 | `timeFields` | `phylogeny#/$defs/timeFields/properties/eon`<br>`phylogeny#/$defs/timeFields/properties/era`<br>`phylogeny#/$defs/timeFields/properties/seriesBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageRange` |
+| `tree` | `tree#/properties/pages/oneOf/1`<br>`tree#/properties/rank/oneOf/1` |
 | `treeDocument` | `phylogeny#/$defs/treeDocument/properties/unused`<br>`phylogeny#/$defs/treeDocument/properties/unused/items` |
 | `typeNode` | `phylogeny#/$defs/typeNode`<br>`phylogeny#/$defs/typeNode/properties/fixation`<br>`phylogeny#/$defs/typeNode/properties/fixedBy` |
 | `uncertaintyFields` | `phylogeny#/$defs/uncertaintyFields/properties/nonMonophyletic/oneOf/1`<br>`phylogeny#/$defs/uncertaintyFields/properties/sensu` |
@@ -126,7 +127,6 @@ property.
 
 | property | data | data % |
 |---|---|---|
-| `rank` | 752 | 8.3% |
 | `bracket` | 48 | 0.5% |
 
 ### `cladisticFields` -- 794 instances in `data/`
@@ -228,7 +228,6 @@ property.
 
 | property | data | data % |
 |---|---|---|
-| `pages` | 350 | 3.8% |
 | `illustrations` | 186 | 2.0% |
 
 ### `materialEntry` -- 291 instances in `data/`
@@ -382,6 +381,7 @@ property.
 | property | data | data % |
 |---|---|---|
 | `name` | 2686 | 98.6% |
+| `rank` | 740 | 27.2% |
 | `notes` | 213 | 7.8% |
 | `altSpellingOf` | 143 | 5.2% |
 | `lang` | 75 | 2.8% |
@@ -393,6 +393,7 @@ property.
 | `status` | 5 | 0.2% |
 | `designation` | 4 | 0.1% |
 | `holotype` | 1 | 0.0% |
+| `pages` | 0 | 0.0% |
 
 ### `timeFields` -- 166 instances in `data/`
 
@@ -421,7 +422,9 @@ property.
 | property | data | data % |
 |---|---|---|
 | `children` | 2191 | 34.4% |
+| `pages` | 350 | 5.5% |
 | `parents` | 324 | 5.1% |
+| `rank` | 12 | 0.2% |
 | `altPlacements` | 7 | 0.1% |
 | `mergeInto` | 5 | 0.1% |
 

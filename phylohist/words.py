@@ -605,6 +605,8 @@ class Words:
       if claim.get('nonMonophyletic'):
         flags.append(blocks.non_monophyly_words(claim['nonMonophyletic']))
       words = f'places it under {where}'
+      if 'rankAsPrinted' in claim and claim['rankAsPrinted'] is None:
+        words += ', unranked'
       if flags:
         words += ' (' + ', '.join(flags) + ')'
       if claim.get('tree') != 'taxonomy':

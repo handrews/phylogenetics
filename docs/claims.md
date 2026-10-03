@@ -25,7 +25,7 @@ Every claim carries:
 | `source` | the tree file's source key |
 | `path` | the node's position and pointer, `0/children/0/children/0`, the same string the id carries |
 | `tree` | `taxonomy`, or a phylogeny's `treeType`; a phylogeny's `notes` ride along as `treeNotes` |
-| `pages` | the node's `pages` as written. A node without `pages` takes the nearest ancestor's along the `children` axis only, and the claim then carries `pagesInherited: true`. Entries on any other axis never inherit. On a cited entry (a `synonyms` or `non` entry, a `type` node, or the earlier state of a name under `translated`, `corrected`, `substituted`, `moved` or `removed`) `pages` and `illustrations` locate the cited usage in the cited work, whether written flat or inside an `authority` block, so they appear as `citedPages` and `citedIllustrations` and the claim has no `pages` of its own. |
+| `pages` | the node's `pages` as written. A node without `pages` takes the nearest ancestor's along the `children` axis only, and the claim then carries `pagesInherited: true`. An inferred node written `pages: null` (it has no page in this source) carries none and passes none down: its children without `pages` carry none either. Entries on any other axis never inherit. On a cited entry (a `synonyms` or `non` entry, a `type` node, or the earlier state of a name under `translated`, `corrected`, `substituted`, `moved` or `removed`) `pages` and `illustrations` locate the cited usage in the cited work, whether written flat or inside an `authority` block, so they appear as `citedPages` and `citedIllustrations` and the claim has no `pages` of its own. |
 | `subject` | the resolved taxon key the claim is about |
 | `printed` | the printed form on that line: `citedAs` verbatim, and `auth`, `year`, `in` as written (A1, A12). Absent `auth` means "as the record"; the claim says so with `printedAttribution: as-record`. |
 | `audit` | the source's `audit.state`; `coverageKind`, the coverage kind the claim counts under (`skeleton` for usage, rejection and a taxonomy placement, `phylogeny` for a placement in a phylogeny, `synonymy` for acceptance, `newTaxa`/`types` for the matching acts, `material`/`occurrences`/`illustrations` by material kind); and `coverage`, the effective value for that kind (declared, or derived where "Derived coverage" says so) |
@@ -86,7 +86,9 @@ Emitted for every child under its parent in a taxonomy. Fields added:
   named ancestor is further up, `parentPath` says so too.
 - `rank`: the record's rank today. When the tree carries a printed rank
   word in `citedAs` or `notes`, `rankAsPrinted` holds it; the rule that
-  rank belongs to the tree node is G8, not yet in force.
+  rank belongs to the tree node is G8, not yet in force. A node written
+  `rank: null` (the source places the taxon with no rank word) carries
+  `rankAsPrinted: null`; `rank` is the record's, as ever.
 - Flags copied from the node: `provisional`, `questionable`, `quoted`,
   `quotedParent` (the genus is printed in quotation marks in this
   combination), `nonMonophyletic` (`true`, `paraphyletic` or `polyphyletic`,

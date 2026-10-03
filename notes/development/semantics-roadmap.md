@@ -406,7 +406,7 @@ an ordinary resolved citation that needs no `editorial` block.
 | `stem` | "stem-group" | stem-group usage | — (flag) | keep |
 | `outgroup` | cladogram outgroup | outgroup | — (flag) | keep |
 | `bracket` (tree) | clade bracket / label | named clade in a cladogram | — | keep |
-| `rank` (tree) | rank as printed here | rank as used by this source | — | keep; overrides taxon rank |
+| `rank` (tree) | rank as printed here | rank as used by this source | — | keep; overrides taxon rank; `null` says the source places the taxon with no rank word (2026-10-03) |
 
 Taxon-record relations:
 
@@ -757,7 +757,8 @@ Agelacrinitidae". An inferred node needs a marker the claim table can read:
 ```
 
 The claim table emits the placement as editorial, not as the source's. See
-"The `editorial` block" under Ground rules.
+"The `editorial` block" under Ground rules. An inferred node has no page in
+the source, so it writes `pages: null` (done 2026-10-03).
 
 **B21. A `non` entry that says where the usage belongs.** "non S. citrus
 HISINGER, 1837, p. 91, = Echinosphaerites aurantium (GYLLENHAAL)" (S229).
@@ -1564,7 +1565,11 @@ Fields fall into three classes, and only the third is nullable:
 - Structural and editorial, never null: `parents` (a device of the
   binomial handling, not something a paper uses or omits), `citedAs`,
   `notes`, `editorial`, and `pages`, since a locator is always wanted
-  and its absence is always "not captured".
+  and its absence is always "not captured". The one exception is
+  `pages: null` on an inferred node (2026-10-03): it says the editor's
+  node has no page in this source; it is not a content null. (`rank` is
+  not a content field either; `rank: null` on a node is a printed
+  statement, that the source places the taxon with no rank.)
 - Act flags, never null: `new`, `isType`, `emended`, `provisional` and
   the rest (`isType` stays an act flag; the null for the type is `type`).
   Absence means the act is not recorded; whether that can be read as

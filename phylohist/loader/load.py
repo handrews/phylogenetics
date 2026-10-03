@@ -237,6 +237,7 @@ def _report_nomenclature(data):
         (nomenclature.quoted_parent, (node, Taxon.get)),
         (nomenclature.role_uncertain, (node,)),
         (nomenclature.type_node, (node, is_cited)),
+        (nomenclature.inferred_pages, (node,)),
       ):
         for level, message in check(*args):
           _log_material(level, f'{where}: {message}')

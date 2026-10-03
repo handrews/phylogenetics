@@ -368,6 +368,10 @@ class ClaimStore:
     if usage and usage.get('compared'):
       # A cf. or aff. form: the source originates the form, not a new taxon.
       node['compared'] = usage['compared']['sign']
+    if placement and 'rankAsPrinted' in placement and placement['rankAsPrinted'] is None:
+      # `rank: null`: the source places the taxon with no rank word.
+      rank_word = None
+      node['unranked'] = True
     if rank_word:
       node['rankWord'] = rank_word[:1].upper() + rank_word[1:]
     also = self.or_names_at.get((source_key, path))

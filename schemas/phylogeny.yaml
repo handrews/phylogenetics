@@ -345,9 +345,10 @@ $defs:
     - Unranked
 
   citationFields:
+    $comment: |
+      What a tree node and a taxon record share. `rank` and `pages` are
+      declared by each (a node's may be `null`), so neither is here.
     properties:
-      rank:
-        $ref: "#/$defs/rank"
       bracket:
         ### TODO: Replace this property name
         type: string
@@ -373,8 +374,6 @@ $defs:
 
   locationFields:
     properties:
-      pages:
-        $ref: "#/$defs/citationNumbers"
       illustrations:
         description: |
           On a primary node, the figures this source prints for it; `null`
@@ -418,6 +417,10 @@ $defs:
       - required: [altSpellingOf, name]
       - required: [vulgarSpellingOf, name]
     properties:
+      rank:
+        $ref: "#/$defs/rank"
+      pages:
+        $ref: "#/$defs/citationNumbers"
       name:
         type: [string, "null"]
         pattern: ^[\w][\w._ -]*$
@@ -469,6 +472,20 @@ $defs:
     - $ref: "phylogeny#/$defs/uncertaintyFields"
     - $ref: "phylogeny#/$defs/metaFields"
     properties:
+      rank:
+        description: |
+          `null`: the source places the taxon with no rank word.
+        oneOf:
+        - $ref: "phylogeny#/$defs/rank"
+        - type: "null"
+      pages:
+        description: |
+          `null` only on an inferred node (`editorial.inferred: true`): the
+          editor supplied the node and it has no page in this source (the
+          loader checks this).
+        oneOf:
+        - $ref: "phylogeny#/$defs/citationNumbers"
+        - type: "null"
       mergeInto:
         type: array
         minItems: 2
