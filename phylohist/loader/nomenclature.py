@@ -163,6 +163,15 @@ def type_node(node, is_cited):
   return messages
 
 
+def children_null(node, is_cited):
+  """`children: null` says the source places nothing under the node's taxon
+  (roadmap G11), an auditor's statement about a primary node, so it is an
+  error on a cited entry. (`Tree` checks the rank.)"""
+  if 'children' in node and node['children'] is None and is_cited:
+    return [('error', 'cited entry carries `children: null`')]
+  return []
+
+
 def inferred_pages(node):
   """`pages: null` says the node has no page in this source because the
   editor inferred it, so it is an error on a node whose `editorial.inferred`

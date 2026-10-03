@@ -157,9 +157,9 @@ $defs:
           source carries none. A user's confidence in an answer is the
           conjunction: audited, and complete for the kinds the question
           touches. For a source whose tree writes nulls (roadmap G11),
-          `material`, `occurrences`, `illustrations`, `synonymy` and `types`
-          are derived from the tree and are not declared; `coverage` then
-          carries `skeleton`, `newTaxa` and `phylogeny`.
+          `material`, `occurrences`, `illustrations`, `synonymy`, `types` and
+          `skeleton` are derived from the tree and are not declared;
+          `coverage` then carries `newTaxa` and `phylogeny`.
         type: object
         additionalProperties: false
         required: [state]
@@ -495,7 +495,11 @@ $defs:
         - type: integer
           minimum: 0
       children:
-        type: array
+        description: |
+          The nodes the source places under this one. `null`, on a primary
+          node above genus rank, says the source places nothing under it
+          (roadmap G11); absent, the subtree is not entered.
+        type: [array, "null"]
         items:
           $dynamicRef: "#tree"
       parents:

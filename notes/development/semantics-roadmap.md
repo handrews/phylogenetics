@@ -1063,8 +1063,9 @@ ranges:                        # distribution statements, not provenance
   statement with neither is a range (Dehm 1961's period-plus-region
   entries).
 - Nulls (G11): `material: null`, `illustrations: null`, `contexts: null`,
-  `ranges: null` (and `synonyms: null`, `type: null`) say the source prints
-  none for the node; the file-level
+  `ranges: null` (and `synonyms: null`, `type: null`; `children: null`
+  says the source places nothing under a node above genus rank) say the
+  source prints none for the node; the file-level
   `unused` list says a field appears nowhere. Only an auditor writes
   either; a draft never does.
 
@@ -1527,9 +1528,10 @@ worth keeping goes in `citedAs`, never into identity.
 **G11. Coverage derived from the tree, through nulls; the audit block
 keeps verification and the source-level kinds (direction agreed
 2026-09-27; to be built with D1, not before).** Built 2026-09-30 to
-2026-10-01: the six content fields are nullable (`type` the last added),
-the five content kinds are derived, a null is an `absence` claim; what
-remains is migrating the audited sources' declarations to nulls.
+2026-10-03: the seven content fields are nullable (`type` and `children`
+the last added), the six content kinds are derived, a null is an `absence`
+claim; what remains is migrating the audited sources' declarations to
+nulls.
 
 G1 declares coverage per
 source because the tree never holds the denominator: it cannot say
@@ -1584,17 +1586,27 @@ Fields fall into three classes, and only the third is nullable:
   exclusions is a synonymy). `type` joins them (2026-10-01): `type: null`
   says the source states no type for the taxon, and is an error on a
   cited entry, in a draft, and beside a child marked `isType`.
-  `children` could join in principle (`children: null` for a taxon the
-  paper places nothing under), but nulling every species is the bloat the
-  file-level list exists to avoid, so skeleton stays source-level.
+  `children` joins them (2026-10-03): `children: null` on a primary node
+  above genus rank says the source places nothing under the taxon (the
+  tree stops there), a list is what it places, and absent is, as the
+  ground rules already say, not entered, so the subtree is not read as
+  empty. A genus with no `children` says nothing, since a source often
+  lists no species, and nulling every species would be the bloat the
+  file-level list exists to avoid; so the null is an error on a genus-group
+  or species-level node, as on a cited entry, in a draft, and on a node of
+  a cladogram or other tree that is not a taxonomy. `Unranked`, `section`
+  and the other informal ranks count as above genus. There is no `unused`
+  form: a source lists its members, if only to say it lists none, at every
+  node above genus, so `skeleton` is never `na`.
 
 What stays declared in the audit block: `state` and `notes`, because a
 negative observation is the easiest to get wrong and the nulls carry no
 reliability signal of their own; and the kinds that are not content
-fields, `skeleton` (taxa not in the tree at all) and `newTaxa` (a flag,
-whose "partly" means "not every node was checked for the act", which has
-no node-level form). `types` was declared the same way until `type` became
-a content field (2026-10-01). For the content kinds the map is derived:
+fields, `newTaxa` (a flag, whose "partly" means "not every node was
+checked for the act", which has no node-level form) and `phylogeny`.
+`types` was declared the same way until `type` became a content field
+(2026-10-01), and `skeleton` until `children` did (2026-10-03). For the
+content kinds the map is derived:
 `na` when the file lists the field as unused; `None`, declaring nothing,
 when no node writes a null for it (a value alone records what the source
 prints, not that the file was audited for it); otherwise `all` when no
@@ -1613,17 +1625,23 @@ every rank. `types` counts the named genus and subgenus nodes (a
 placeholder has no type, a family's `type` is written and not counted): a
 node carrying `type`, a node or a null, or a child marked `isType` (the
 older form of the same statement) is present, only `type: null` writes a
-null, and `unused: [type]` is `na`. A derived kind that the source also
-declares is an inconsistency row, whether or not the two agree, so the
+null, and `unused: [type]` is `na`. `skeleton` counts the named nodes above
+genus rank (any rank but the genus-group and species-level ones; a
+placeholder is a bin with no members of its own and is not counted): a node
+carrying `children`, a list or a null, is present, only `children: null`
+writes a null, and the kind is never `na`. A derived kind that the source
+also declares is an inconsistency row, whether or not the two agree, so the
 declaration goes when the nulls come; a source that writes no null for
-`synonymy` or `types` keeps its declared value and the claim-count check on
-it. The function is `claims.derived_coverage`.
+`synonymy`, `types` or `skeleton` keeps its declared value and the
+claim-count check on it. The function is `claims.derived_coverage`.
 
 A null is also a claim. Each node's null becomes an `absence` claim
-(`absenceOf` `material`, `occurrences`, `illustrations`, `synonymy` or
-`types`), which `statements` words ("no specimens cited") and `synonymy` states
-("gives no synonymy"), so the answer for one taxon no longer falls back to
-the source's coverage. Where a source's illustrations are `all`, a
+(`absenceOf` `material`, `occurrences`, `illustrations`, `synonymy`,
+`types` or `skeleton`), which `statements` words ("no specimens cited",
+"nothing placed under it") and `synonymy` states ("gives no synonymy"), so
+the answer for one taxon no longer falls back to the source's coverage; the
+absence table's first row, `members`, says how many nodes the source places
+under the taxon, or that it places none. Where a source's illustrations are `all`, a
 specimen no figure names is derived as `figured: false` ("(not figured)").
 
 Two conventions to fix before the first null is written: `null`, never
@@ -1652,10 +1670,11 @@ for `contexts` or `ranges` (or a material entry linked to a context) on
 every named node of the taxonomy; a value or a null for `material` and
 `illustrations` on every species-level node; a value or a null for `type`
 on every named genus and subgenus (an `isType` child counts until the
-source is re-read); `unused` at the top of the file for a field the paper
-uses nowhere; and on the source record
-`audit: {state: complete, coverage: {skeleton, newTaxa, phylogeny},
-notes}` with no entry for the derived kinds.
+source is re-read); `children`, a list or null, on every named node above
+genus; `unused` at the top of the file for a field the paper uses
+nowhere; and on the source record
+`audit: {state: complete, coverage: {newTaxa, phylogeny}, notes}` with no
+entry for the derived kinds.
 
 ---
 

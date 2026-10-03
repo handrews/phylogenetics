@@ -1621,4 +1621,9 @@ def test_contents_prints_no_type_line_for_a_null_type(nulled):
 def test_the_absence_table_has_no_type_row_for_a_placeholder_genus(store):
   record = 'agelacrinitidae-uncertain-genus_bell.b.m_1976'
   block = store.statements(record, '1976_bell.b.m', kind='absence')
-  assert [row['kind'] for row in block['content'][0]['rows']] == ['occurrences', 'synonymy']
+  # It has no type row, and a members row for the species placed under it.
+  assert [row['kind'] for row in block['content'][0]['rows']] == [
+    'members',
+    'occurrences',
+    'synonymy',
+  ]

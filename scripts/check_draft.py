@@ -8,8 +8,8 @@ yet. It then runs the material checks
 (`phylohist.loader.material`) over the draft's nodes: a cited entry carrying
 `material`/`contexts`/`ranges`, a null `illustrations`, or an `of`/`depicts`
 in its `illustrations` (or in an `authority`'s); a null `material`,
-`illustrations`, `contexts`, `ranges`, `synonyms` or `type` on a primary
-node (only an auditor sets nulls); a `unused` field still present on a node; an explicit
+`illustrations`, `contexts`, `ranges`, `synonyms`, `type` or `children` on a
+primary node (only an auditor sets nulls); a `unused` field still present on a node; an explicit
 `repository` that is no registry key; a `prefix` missing from the file's
 `prefixes` map, a map entry that is unused, not a registry key or not a known
 form of its register, numbers with no prefix, repository or holder, a number
@@ -124,6 +124,7 @@ def check_material(draft, repositories, taxa):
       (nomenclature.quoted_parent, (node, taxa)),
       (nomenclature.role_uncertain, (node,)),
       (nomenclature.type_node, (node, is_cited)),
+      (nomenclature.children_null, (node, is_cited)),
       (nomenclature.inferred_pages, (node,)),
     ):
       messages.extend((level, f'{path}: {message}') for level, message in check(*args))

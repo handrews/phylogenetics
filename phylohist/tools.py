@@ -207,12 +207,13 @@ TOOL_DESCRIPTIONS = {
     'none for that taxon, which is different from the kind not having been '
     'entered; "(not figured)" after a specimen says the same of that '
     "specimen's figures. With a source and kind absence the result is a "
-    'table of what the source gives for the record per kind (specimens, '
-    'occurrences, figures, synonymy, type), each "N entered", "none printed" or '
-    '"not entered": "none printed" is the auditor\'s statement about the '
-    'paper (or follows from the source\'s coverage), "not entered" is work '
-    'not yet done; above species rank the specimens and figures rows '
-    'appear only when the node has some. When a source is named '
+    'table of what the source gives for the record per kind (members, '
+    'specimens, occurrences, figures, synonymy, type), each "N entered", '
+    '"none printed" or "not entered": "none printed" is the auditor\'s '
+    "statement about the paper (or follows from the source's coverage), "
+    '"not entered" is work not yet done; above species rank the specimens '
+    'and figures rows appear only when the node has some, and at genus rank '
+    'or below the members row does too. When a source is named '
     'and nothing of that kind about the record is entered, the result is '
     'the gap block for that source and kind: compose it as the answer.'
   ),

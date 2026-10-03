@@ -745,4 +745,5 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/relationalFields/properties/synonyms` | array/null | listx360 | - | null |
 | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items` | array/string/integer | strx1 | `E23470` | array, integer |
 | `phylogeny#/$defs/taxonRecord/properties/name` | string/null | strx2466, nullx220 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
+| `tree#/properties/children` | array/null | listx2191 | - | null |
 
