@@ -165,12 +165,13 @@ DERIVED_KINDS = {
     'named': True,
     'via': ('children', 'isType'),
   },
-  # Every named node above genus rank: a list of `children` or a null is the
-  # source's say about its members, and a placeholder has none of its own.
+  # Every named node above the species level (genus and subgenus included): a
+  # list of `children` or a null is the source's say about its members, and a
+  # placeholder has none of its own.
   'skeleton': {
     'fields': ('children',),
     'unused': None,
-    'excludeRanks': GENUS_LEVEL_RANKS + SPECIES_LEVEL_RANKS,
+    'excludeRanks': SPECIES_LEVEL_RANKS,
     'named': True,
   },
 }
@@ -870,11 +871,12 @@ def derived_coverage(roots):
   may be written and is not, and a placeholder has no type); a node
   carrying `type`, a node or a null, or a child marked `isType` (the older
   form of the statement) counts as present, and only `type: null` writes a
-  null; `unused: [type]` is `na`. For `skeleton` every named node above genus
-  rank is counted (any rank but the genus-group and species-level ones; an
-  `Unranked` or `section` node counts, a genus with no `children` says
-  nothing and does not); a node carrying `children`, a list or a null, is
-  present, and only `children: null` writes a null. It has no `unused` form
+  null; `unused: [type]` is `na`. For `skeleton` every named node above the
+  species level (genus and subgenus included) is counted (any rank but the
+  species-level ones; an `Unranked` or `section` node counts, a genus with
+  no `children` is one whose species are not yet entered); a node carrying
+  `children`, a list or a null, is present, and only `children: null` writes
+  a null. It has no `unused` form
   and is never `na`."""
   out = {}
   for source_key, trees in roots.items():

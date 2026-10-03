@@ -212,8 +212,8 @@ TOOL_DESCRIPTIONS = {
     '"none printed" or "not entered": "none printed" is the auditor\'s '
     "statement about the paper (or follows from the source's coverage), "
     '"not entered" is work not yet done; above species rank the specimens '
-    'and figures rows appear only when the node has some, and at genus rank '
-    'or below the members row does too. When a source is named '
+    'and figures rows appear only when the node has some, and at species '
+    'level the members row does too. When a source is named '
     'and nothing of that kind about the record is entered, the result is '
     'the gap block for that source and kind: compose it as the answer.'
   ),

@@ -443,11 +443,6 @@ RelatedAxis = collections.namedtuple('RelatedAxis', 'name many cited')
 # The ranks of a species-level name, whose type is a specimen.
 _SPECIES_LEVEL_RANKS = frozenset({'species', 'subspecies', 'variety'})
 
-# The ranks of a genus-group name; with the species-level ranks, those at
-# which `children: null` is an error (phylohist/claims.py spells the same
-# tuple).
-_GENUS_LEVEL_RANKS = frozenset({'genus', 'subgenus'})
-
 # The ranks whose names are combinations with a genus.
 _COMBINATION_RANKS = _SPECIES_LEVEL_RANKS | {'subgenus'}
 
@@ -589,10 +584,10 @@ class Tree:
       if 'type' in self._data and self._taxon.rank.lower() in _SPECIES_LEVEL_RANKS:
         logger.error(f'{self} carries `type` but is a species-level name; its type is a specimen')
 
-      if children_null and self._taxon.rank.lower() in _GENUS_LEVEL_RANKS | _SPECIES_LEVEL_RANKS:
+      if children_null and self._taxon.rank.lower() in _SPECIES_LEVEL_RANKS:
         logger.error(
-          f'{self} carries `children: null` but is a genus or species-level name; '
-          'only a higher taxon says the tree stops'
+          f'{self} carries `children: null` but is a species-level name; '
+          'only a taxon above the species says the tree stops'
         )
 
       if self._taxon.name:

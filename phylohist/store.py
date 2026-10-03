@@ -166,10 +166,11 @@ _SPECIES_LEVEL_CONTENT = frozenset({'specimens', 'figures'})
 # type statement and no `types` absence leaves the row out.
 _GENUS_LEVEL_CONTENT = frozenset({'type'})
 _GENUS_LEVEL_RANKS = ('genus', 'subgenus')
-# The members of a taxon above genus rank are its subtree; at genus or
-# species level (a source often lists no species) and for a placeholder the
-# row appears only with children entered or the `skeleton` absence.
-_ABOVE_GENUS_CONTENT = frozenset({'members'})
+# The members of a taxon above the species level are its subtree (a genus's
+# species, which a source often lists none of); at species level (infraspecific
+# names are entered when present) and for a placeholder the row appears only
+# with children entered or the `skeleton` absence.
+_ABOVE_SPECIES_CONTENT = frozenset({'members'})
 
 _RANK_ORDER = (
   'kingdom',
@@ -1119,8 +1120,8 @@ class ClaimStore:
     when the node carries something of the kind, and the type row appears
     for a genus or subgenus, and at any other rank only with a type
     statement or a `types` absence. The members row appears for a named
-    node above genus rank, and at any other rank only with children
-    entered or a `skeleton` absence."""
+    node above the species level (genus and subgenus included), and at
+    species level only with children entered or a `skeleton` absence."""
     at = self._node_claims(source_key, path)
     coverage = self.sources[source_key].get('coverage') or {}
     species_level = self._rank_of(record) in blocks.SPECIES_GROUP
@@ -1129,10 +1130,9 @@ class ClaimStore:
       self.names.get(record) or {}
     ).get('placeholder')
     # A placeholder (an unnamed or open taxon) has no members of its own.
-    above_genus = self._rank_of(record) not in (
-      *_GENUS_LEVEL_RANKS,
-      *blocks.SPECIES_GROUP,
-    ) and not (self.names.get(record) or {}).get('placeholder')
+    above_species = self._rank_of(record) not in blocks.SPECIES_GROUP and not (
+      self.names.get(record) or {}
+    ).get('placeholder')
     rows = []
     for label, material_kinds, absence_of, coverage_kind in _NODE_CONTENT:
       if material_kinds is None:
@@ -1161,7 +1161,7 @@ class ClaimStore:
         continue
       elif label in _GENUS_LEVEL_CONTENT and not genus_level:
         continue
-      elif label in _ABOVE_GENUS_CONTENT and not above_genus:
+      elif label in _ABOVE_SPECIES_CONTENT and not above_species:
         continue
       elif coverage.get(coverage_kind) in ('na', 'all'):
         # The source prints none anywhere, or enters all it prints of the kind.

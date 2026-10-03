@@ -508,7 +508,7 @@ $defs:
       children:
         description: |
           The nodes the source places under this one. `null`, on a primary
-          node above genus rank, says the source places nothing under it
+          node above the species level (a genus and a subgenus included), says the source places nothing under it
           (roadmap G11); absent, the subtree is not entered.
         type: [array, "null"]
         items:

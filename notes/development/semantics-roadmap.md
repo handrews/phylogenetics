@@ -1064,8 +1064,8 @@ ranges:                        # distribution statements, not provenance
   entries).
 - Nulls (G11): `material: null`, `illustrations: null`, `contexts: null`,
   `ranges: null` (and `synonyms: null`, `type: null`; `children: null`
-  says the source places nothing under a node above genus rank) say the
-  source prints none for the node; the file-level
+  says the source places nothing under a node above the species level)
+  say the source prints none for the node; the file-level
   `unused` list says a field appears nowhere. Only an auditor writes
   either; a draft never does.
 
@@ -1597,17 +1597,18 @@ Fields fall into three classes, and only the third is nullable:
   says the source states no type for the taxon, and is an error on a
   cited entry, in a draft, and beside a child marked `isType`.
   `children` joins them (2026-10-03): `children: null` on a primary node
-  above genus rank says the source places nothing under the taxon (the
-  tree stops there), a list is what it places, and absent is, as the
-  ground rules already say, not entered, so the subtree is not read as
-  empty. A genus with no `children` says nothing, since a source often
-  lists no species, and nulling every species would be the bloat the
-  file-level list exists to avoid; so the null is an error on a genus-group
-  or species-level node, as on a cited entry, in a draft, and on a node of
-  a cladogram or other tree that is not a taxonomy. `Unranked`, `section`
-  and the other informal ranks count as above genus. There is no `unused`
-  form: a source lists its members, if only to say it lists none, at every
-  node above genus, so `skeleton` is never `na`.
+  above the species level (a genus and a subgenus included) says the
+  source places nothing under the taxon (the tree stops there), a list is
+  what it places, and absent is, as the ground rules already say, not
+  entered, so the subtree is not read as empty. A genus with no `children`
+  is a genus whose species are not yet entered (many genera of Linnaeus
+  1758 are in that state). Only a species-level node may not write the
+  null: infraspecific names are rare enough to be entered when present, so
+  their absence says nothing. The null is also an error on a cited entry,
+  in a draft, and on a node of a cladogram or other tree that is not a
+  taxonomy. `Unranked`, `section` and the other informal ranks count as
+  above the species level. There is no `unused` form: the tree's own nulls
+  say where it stops, so `skeleton` is never `na`.
 
 What stays declared in the audit block: `state` and `notes`, because a
 negative observation is the easiest to get wrong and the nulls carry no
@@ -1636,10 +1637,10 @@ placeholder has no type, a family's `type` is written and not counted): a
 node carrying `type`, a node or a null, or a child marked `isType` (the
 older form of the same statement) is present, only `type: null` writes a
 null, and `unused: [type]` is `na`. `skeleton` counts the named nodes above
-genus rank (any rank but the genus-group and species-level ones; a
-placeholder is a bin with no members of its own and is not counted): a node
-carrying `children`, a list or a null, is present, only `children: null`
-writes a null, and the kind is never `na`. A derived kind that the source
+the species level, genus and subgenus included (any rank but the
+species-level ones; a placeholder is a bin with no members of its own and
+is not counted): a node carrying `children`, a list or a null, is present,
+only `children: null` writes a null, and the kind is never `na`. A derived kind that the source
 also declares is an inconsistency row, whether or not the two agree, so the
 declaration goes when the nulls come; a source that writes no null for
 `synonymy`, `types` or `skeleton` keeps its declared value and the
@@ -1681,8 +1682,8 @@ every named node of the taxonomy; a value or a null for `material` and
 `illustrations` on every species-level node; a value or a null for `type`
 on every named genus and subgenus (an `isType` child counts until the
 source is re-read); `children`, a list or null, on every named node above
-genus; `unused` at the top of the file for a field the paper uses
-nowhere; and on the source record
+the species level; `unused` at the top of the file for a field the paper
+uses nowhere; and on the source record
 `audit: {state: complete, coverage: {newTaxa, phylogeny}, notes}` with no
 entry for the derived kinds.
 

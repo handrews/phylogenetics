@@ -331,14 +331,18 @@ def test_an_unranked_root_prints_its_name_alone(load_records, tmp_path):
 # -- `children: null` and the derived `skeleton` coverage -----------------------
 
 # The records of the examples: an order (Lithophyta), a class, a family, a
-# genus with two species, a `section`, an order that is only a placeholder.
+# genus with two species, a subgenus, a `section`, an order that is only a
+# placeholder.
 ORDER = 'lithophyta'
 CLASS = 'eocrinoidea'
 FAMILY = 'edrioasteridae'
 GENUS = 'edrioaster'
 GENUS_2 = 'cyclaster'
+GENUS_3 = 'agelacrinus'
 SPECIES = 'bigsbyi_billings_1857'
 SPECIES_2 = 'priscus_miller.s.a_gurley_1894'
+SUBGENUS = 'agelacrinus-subgenus_carneyella'
+VARIETY = 'anglicum_leske_1778'
 SECTION = 'anomales'
 PLACEHOLDER = 'edrioasteroidea-order-uncertain_bassler_1935'
 PHYLUM = 'echinodermata'
@@ -380,34 +384,40 @@ def test_children_null_on_an_order_is_clean(caplog):
 
 @pytest.mark.parametrize(
   'field, taxon',
-  [('taxon', t) for t in (SECTION, PHYLUM, CLASS, FAMILY)] + [('openTaxon', PLACEHOLDER)],
+  [('taxon', t) for t in (SECTION, PHYLUM, CLASS, FAMILY, GENUS, GENUS_2, SUBGENUS)]
+  + [('openTaxon', PLACEHOLDER)],
 )
-def test_children_null_is_allowed_above_genus_rank(caplog, field, taxon):
+def test_children_null_is_allowed_above_the_species_level(caplog, field, taxon):
   _load({field: taxon, 'children': None}, 1101, caplog)
   assert _errors(caplog) == []
 
 
-def test_children_null_on_a_genus_is_an_error(caplog):
-  _load({'taxon': FAMILY, 'children': [{'taxon': GENUS_2, 'children': None}]}, 1102, caplog)
+def test_children_null_on_a_genus_or_subgenus_is_clean(caplog):
+  tree = _load(
+    {
+      'taxon': FAMILY,
+      'children': [{'taxon': GENUS_2, 'children': None}, {'taxon': SUBGENUS, 'children': None}],
+    },
+    1102,
+    caplog,
+  )
+  assert _errors(caplog) == []
+  assert [n.taxon.key for n in tree.walk()] == [FAMILY, GENUS_2, SUBGENUS]
+
+
+def test_children_null_on_a_species_is_an_error(caplog):
+  _load({'taxon': GENUS, 'children': [{'taxon': SPECIES, 'children': None}]}, 1104, caplog)
   [error] = _errors(caplog)
   assert error.endswith(
-    'carries `children: null` but is a genus or species-level name; '
-    'only a higher taxon says the tree stops'
+    'carries `children: null` but is a species-level name; '
+    'only a taxon above the species says the tree stops'
   )
-  assert GENUS_2 in error
-
-
-def test_children_null_on_a_subgenus_or_species_is_an_error(caplog):
-  for position, taxon in ((1103, 'agelacrinus-subgenus_carneyella'), (1104, SPECIES)):
-    caplog.clear()
-    _load({'taxon': taxon, 'children': None}, position, caplog)
-    [error] = _errors(caplog)
-    assert 'carries `children: null` but is a genus or species-level name' in error
+  assert SPECIES in error
 
 
 def test_children_null_is_compared_lower_cased(monkeypatch, caplog):
-  monkeypatch.setattr(Taxon.get(GENUS_2), '_rank', 'Genus')
-  _load({'taxon': GENUS_2, 'children': None}, 1105, caplog)
+  monkeypatch.setattr(Taxon.get(SPECIES), '_rank', 'Species')
+  _load({'taxon': SPECIES, 'children': None}, 1105, caplog)
   assert len(_errors(caplog)) == 1
 
 
@@ -539,18 +549,19 @@ def test_skeleton_coverage_declares_nothing_without_a_null():
   assert _skeleton(_phylum({'taxon': ORDER, 'children': []}), 1122) is None
 
 
-def test_skeleton_coverage_all_when_every_node_above_genus_has_a_list_or_a_null():
+def test_skeleton_coverage_all_when_every_node_above_species_has_a_list_or_a_null():
+  genus = {'taxon': GENUS, 'children': [{'taxon': SPECIES}]}
   tree = {
     'taxon': PHYLUM,
     'children': [
       {'taxon': ORDER, 'children': None},
-      {'taxon': CLASS, 'children': [{'taxon': FAMILY, 'children': [{'taxon': GENUS}]}]},
+      {'taxon': CLASS, 'children': [{'taxon': FAMILY, 'children': [genus]}]},
     ],
   }
   assert _skeleton(tree, 1123) == 'all'
 
 
-def test_skeleton_coverage_partly_when_a_node_above_genus_lacks_children():
+def test_skeleton_coverage_partly_when_a_node_above_species_lacks_children():
   tree = _phylum({'taxon': ORDER, 'children': None}, {'taxon': CLASS})
   assert _skeleton(tree, 1124) == 'partly'
   # A node lower down is counted as well.
@@ -559,23 +570,32 @@ def test_skeleton_coverage_partly_when_a_node_above_genus_lacks_children():
   assert _skeleton({'taxon': ORDER, 'children': None}, 1126) == 'all'
 
 
-def test_a_genus_without_children_does_not_count():
+def test_a_genus_or_subgenus_counts():
+  # A genus with no `children` is one whose species are not yet entered.
   tree = {
     'taxon': PHYLUM,
     'children': [{'taxon': ORDER, 'children': None}, {'taxon': GENUS}, {'taxon': GENUS_2}],
   }
-  assert _skeleton(tree, 1127) == 'all'
+  assert _skeleton(tree, 1127) == 'partly'
+  tree = {
+    'taxon': PHYLUM,
+    'children': [
+      {'taxon': ORDER, 'children': None},
+      {'taxon': GENUS, 'children': [{'taxon': SPECIES}]},
+      {'taxon': GENUS_2, 'children': None},
+      {'taxon': SUBGENUS, 'children': []},
+    ],
+  }
+  assert _skeleton(tree, 1128) == 'all'
   tree = {'taxon': ORDER, 'children': [{'taxon': GENUS}, {'taxon': GENUS_2, 'children': []}]}
-  assert _skeleton(_phylum(tree, {'taxon': CLASS, 'children': None}), 1128) == 'all'
-  tree = {'taxon': ORDER, 'children': [{'taxon': GENUS}, {'taxon': GENUS_2, 'children': []}]}
-  assert _skeleton(tree, 1129) is None
-  # A species counts for nothing either.
-  assert (
-    _skeleton(
-      {'taxon': ORDER, 'children': [{'taxon': GENUS, 'children': [{'taxon': SPECIES}]}]}, 1130
-    )
-    is None
-  )
+  assert _skeleton(_phylum(tree, {'taxon': CLASS, 'children': None}), 1129) == 'partly'
+  assert _skeleton({'taxon': ORDER, 'children': [{'taxon': SUBGENUS}]}, 1144) is None
+  # Without a null anywhere the coverage declares nothing, whatever the genera say.
+  assert _skeleton({'taxon': GENUS, 'children': [{'taxon': SPECIES}]}, 1145) is None
+  # A species counts for nothing.
+  assert _skeleton({'taxon': GENUS, 'children': None}, 1130) == 'all'
+  tree = {'taxon': GENUS, 'children': [{'taxon': SPECIES}, {'taxon': SPECIES_2}]}
+  assert _skeleton(_phylum({'taxon': ORDER, 'children': None}, tree), 1143) == 'all'
 
 
 def test_a_section_and_an_unranked_node_count(monkeypatch):
@@ -587,7 +607,7 @@ def test_a_section_and_an_unranked_node_count(monkeypatch):
   assert _skeleton(_phylum(tree, {'taxon': SECTION, 'children': None}), 1134) == 'all'
 
 
-def test_a_placeholder_above_genus_does_not_count():
+def test_a_placeholder_above_the_species_level_does_not_count():
   tree = _phylum({'taxon': ORDER, 'children': None}, {'openTaxon': PLACEHOLDER})
   assert _skeleton(tree, 1135) == 'all'
   # A placeholder's own null is allowed and writes the null; it is not counted as a node.
@@ -660,7 +680,8 @@ def test_manifest_skeleton_keeps_the_claim_count_check_for_a_source_that_derives
 
 # One source with an order that says nothing is placed under it, one that
 # lists a class, a family and a genus with species, one that is not entered,
-# a section, a genus with no species and a species.
+# a section, and a genus listing a genus with no species entered, one that
+# says it has none and a subgenus that says so.
 STOPS = {
   'taxon': PHYLUM,
   'children': [
@@ -670,14 +691,29 @@ STOPS = {
       'children': [
         {
           'taxon': FAMILY,
-          'children': [{'taxon': GENUS, 'children': [{'taxon': SPECIES}, {'taxon': SPECIES_2}]}],
+          'children': [
+            {
+              'taxon': GENUS,
+              'children': [
+                {'taxon': SPECIES},
+                {'taxon': SPECIES_2, 'children': [{'taxon': VARIETY}]},
+              ],
+            }
+          ],
         }
       ],
     },
     {'taxon': 'agelacrinoidea'},
     {'taxon': SECTION, 'children': None},
     {'openTaxon': PLACEHOLDER, 'children': None},
-    {'taxon': 'carneyella', 'children': [{'taxon': GENUS_2}]},
+    {
+      'taxon': 'carneyella',
+      'children': [
+        {'taxon': GENUS_2},
+        {'taxon': GENUS_3, 'children': None},
+        {'taxon': SUBGENUS, 'children': None},
+      ],
+    },
   ],
 }
 
@@ -741,7 +777,7 @@ def test_the_members_row_counts_the_children_of_a_phylum_and_a_genus(stopped):
   assert _members(_table(stopped, GENUS)) == [
     ('1150/children/1/children/0/children/0', 'entered', 'claims', 2)
   ]
-  assert _members(_table(stopped, 'carneyella')) == [('1150/children/5', 'entered', 'claims', 1)]
+  assert _members(_table(stopped, 'carneyella')) == [('1150/children/5', 'entered', 'claims', 3)]
 
 
 def test_the_members_row_of_a_section(stopped):
@@ -752,10 +788,26 @@ def test_the_members_row_of_a_placeholder_appears_only_with_a_statement(stopped)
   assert _members(_table(stopped, PLACEHOLDER)) == [('1150/children/4', 'none', 'null', None)]
 
 
-def test_no_members_row_for_a_genus_or_species_without_the_absence(stopped):
-  for record in (GENUS_2, SPECIES, SPECIES_2):
-    block = _table(stopped, record)
-    assert 'members' not in [r['kind'] for node in block['content'] for r in node['rows']], record
+def test_the_members_row_of_a_genus_or_subgenus_has_three_states(stopped):
+  genus = '1150/children/1/children/0/children/0'
+  assert _members(_table(stopped, GENUS)) == [(genus, 'entered', 'claims', 2)]
+  assert _members(_table(stopped, GENUS_3)) == [
+    ('1150/children/5/children/1', 'none', 'null', None)
+  ]
+  assert _members(_table(stopped, GENUS_2)) == [
+    ('1150/children/5/children/0', 'notEntered', 'coverage', None)
+  ]
+  assert _members(_table(stopped, SUBGENUS)) == [
+    ('1150/children/5/children/2', 'none', 'null', None)
+  ]
+
+
+def test_the_members_row_of_a_species_appears_only_with_content(stopped):
+  # Infraspecific names are entered when present: a species with none says nothing.
+  assert _members(_table(stopped, SPECIES)) == []
+  assert _members(_table(stopped, SPECIES_2)) == [
+    ('1150/children/1/children/0/children/0/children/1', 'entered', 'claims', 1)
+  ]
 
 
 def test_statements_by_placement_include_the_skeleton_absence(stopped):

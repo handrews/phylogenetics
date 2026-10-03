@@ -953,11 +953,14 @@ def test_absence_table_groups_a_record_by_node(store):
   # an open taxon of its own.
   block = store.statements('palaeocystites', source='1973_sprinkle', kind='absence')
   assert block['title'] == 'Palaeocystites Billings 1858 in Sprinkle 1973'
-  # The first node has a species under it (a members row); the second has none.
+  # The first node has a species under it (a members row `entered`); the
+  # second has none, and its members row is `not entered`.
   assert [row['group'] for row in block['rows']] == ['Palaeocystites (p. 139)'] * 4 + [
     'Palaeocystites (p. 186)'
-  ] * 3
-  assert [len(node['rows']) for node in block['content']] == [4, 3]
+  ] * 4
+  assert [len(node['rows']) for node in block['content']] == [4, 4]
+  assert [node['rows'][0]['kind'] for node in block['content']] == ['members', 'members']
+  assert [node['rows'][0]['state'] for node in block['content']] == ['entered', 'notEntered']
   assert [node['page'] for node in block['content']] == [139, 186]
   assert '-- Palaeocystites (p. 186) --' in block['rendered']
 
