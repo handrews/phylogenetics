@@ -189,7 +189,8 @@ def report_inconsistencies(claims_by_source, roots):
 
 class _Held(logging.Handler):
   """Keeps the records of WARNING and above instead of letting them print;
-  `release` prints the errors alone when there are any, else every one."""
+  `replay` prints the errors alone when there are any, else every one.
+  (Not `release`: `logging.Handler` uses that name for its lock.)"""
 
   def __init__(self):
     super().__init__(level=logging.WARNING)
@@ -198,7 +199,7 @@ class _Held(logging.Handler):
   def emit(self, record):
     self.records.append(record)
 
-  def release(self, logger):
+  def replay(self, logger):
     errors = [r for r in self.records if r.levelno >= logging.ERROR]
     for record in errors or self.records:
       logger.callHandlers(record)
@@ -222,7 +223,7 @@ def _holding(enabled):
   finally:
     package.handlers[:] = printing
     package.propagate = True
-    held.release(package)
+    held.replay(package)
 
 
 def main(argv):
