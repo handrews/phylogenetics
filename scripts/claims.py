@@ -5,6 +5,7 @@
     poetry run python scripts/claims.py --source 1962_fay 1983_holloway_jell
     poetry run python scripts/claims.py --draft --out /tmp/claims-with-drafts
     poetry run python scripts/claims.py --inconsistencies
+    poetry run python scripts/claims.py --errors-only
 
 Writes one `<source>.jsonl` per tree file, one claim per line,
 `manifest.json`, `names.json` and `repositories.json`; `docs/claims.md`
@@ -17,10 +18,13 @@ the claims behind the disagreement, for the owner to settle either way,
 and exits 1 when there are any; `tests/test_claims.py` fails on the same
 rows, so CI catches a new one. It then lists the taxa whose holotype is a
 different specimen in two sources (roadmap F5), a report that neither
-counts towards that exit status nor fails a test.
+counts towards that exit status nor fails a test. `--errors-only` holds the
+load's log until it ends, then shows only its errors when there are any
+and its warnings otherwise, so that the errors are not lost among them.
 """
 
 import argparse
+import contextlib
 import json
 import logging
 import pathlib
@@ -183,6 +187,44 @@ def report_inconsistencies(claims_by_source, roots):
   return found
 
 
+class _Held(logging.Handler):
+  """Keeps the records of WARNING and above instead of letting them print;
+  `release` prints the errors alone when there are any, else every one."""
+
+  def __init__(self):
+    super().__init__(level=logging.WARNING)
+    self.records = []
+
+  def emit(self, record):
+    self.records.append(record)
+
+  def release(self, logger):
+    errors = [r for r in self.records if r.levelno >= logging.ERROR]
+    for record in errors or self.records:
+      logger.callHandlers(record)
+
+
+@contextlib.contextmanager
+def _holding(enabled):
+  """A block whose log records are shown, on leaving it, as `--errors-only`
+  asks. The package logger prints its own records (every INFO line too)
+  and passes them to the root; while it holds, only the holder sees them."""
+  if not enabled:
+    yield
+    return
+  package = logging.getLogger('phylohist')
+  printing = package.handlers[:]
+  held = _Held()
+  package.handlers[:] = [held]
+  package.propagate = False
+  try:
+    yield
+  finally:
+    package.handlers[:] = printing
+    package.propagate = True
+    held.release(package)
+
+
 def main(argv):
   parser = argparse.ArgumentParser(description=__doc__.split('\n\n')[0])
   parser.add_argument('--out', type=pathlib.Path, default=DEFAULT_OUT)
@@ -202,6 +244,11 @@ def main(argv):
     action='store_true',
     help='write the claims even when the load logs integrity errors; the exit status is still 1',
   )
+  parser.add_argument(
+    '--errors-only',
+    action='store_true',
+    help='show only the load errors when there are any, else its warnings',
+  )
   args = parser.parse_args(argv)
 
   out = args.out.resolve()
@@ -209,12 +256,15 @@ def main(argv):
     parser.error('--draft needs --out pointing outside claims/')
 
   logging.basicConfig(level=logging.WARNING)
-  with counting_errors() as errors:
+  failure = None
+  with _holding(args.errors_only), counting_errors() as errors:
     try:
       _, roots = load(drafts=args.draft, tolerate=args.tolerate)
     except LoadError as exc:
-      print(f'error: {exc}', file=sys.stderr)
-      return 1
+      failure = exc
+  if failure:
+    print(f'error: {failure}', file=sys.stderr)
+    return 1
   claims_by_source = extract(roots, sources=set(args.source or ()) or None)
   if args.inconsistencies:
     return 1 if report_inconsistencies(claims_by_source, roots) else 0

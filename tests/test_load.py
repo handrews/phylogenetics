@@ -96,6 +96,21 @@ def test_invalid_tree_raises(tmp_path):
     schema['trees']
 
 
+def test_schema_error_names_its_file(tmp_path, caplog):
+  # The file name was only on the INFO line above the dump.
+  from phylohist.loader import io
+
+  schema = io.build_schema()
+  broken = tmp_path / 'broken.yaml'
+  broken.write_text('tree:\n  rnak: genus\n')
+  with caplog.at_level(logging.ERROR, logger='phylohist'), pytest.raises(io.LoadError):
+    io.load_checked(broken, schema[io.TREE_DEF])
+  errors = [r.getMessage() for r in caplog.records if r.levelno == logging.ERROR]
+  assert errors and all(m.startswith(f'"{broken}" is not valid:\n') for m in errors)
+  # A file under the repository is named by its path from the root.
+  assert io.display_path(io.TREE_DIR / '1761_linnaeus.yaml') == 'data/trees/1761_linnaeus.yaml'
+
+
 def test_data_files_in_load_order():
   # The record files, then the audited trees, then the drafts: a draft
   # loads last so that it replaces the audited tree of its source.

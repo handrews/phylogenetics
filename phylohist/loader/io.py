@@ -100,11 +100,13 @@ class Validator:
     self._uri = uri
     self._validate = compile_validator(engine, uri).validate
 
-  def check(self, instance):
-    """True, or False once the reasons have been logged."""
+  def check(self, instance, where=None):
+    """True, or False once the reasons have been logged, each headed by
+    `where` (the file the instance came from) when given."""
     if self._validate(instance):
       return True
-    log_schema_errors(self._engine.evaluate(self._uri, instance, output='detailed'))
+    result = self._engine.evaluate(self._uri, instance, output='detailed')
+    log_schema_errors(result, where)
     return False
 
 
@@ -170,7 +172,7 @@ def load_checked(path, validator):
   """One data file, checked; LoadError naming the file if it fails."""
   logger.info(f'Checking "{path}"...')
   document = load_yaml(path)
-  if not validator.check(document):
+  if not validator.check(document, where=display_path(path)):
     raise LoadError(f'"{path}" is not valid against the schema')
   logger.debug(f'"{path}" is valid.')
   return document
@@ -198,18 +200,28 @@ def load_files(drafts=False):
   return data
 
 
-def log_error_node(error):
+def display_path(path):
+  """A path as the log names it: relative to the repository root when it
+  is under it, else as given."""
+  try:
+    return str(pathlib.Path(path).resolve().relative_to(FILEDIR))
+  except ValueError:
+    return str(path)
+
+
+def log_error_node(error, heading=''):
   if isinstance(error, list):
     for e in error:
-      log_error_node(e)
+      log_error_node(e, heading)
   else:
     to_log = error
     if 'errors' in error:
-      log_error_node(error['errors'])
+      log_error_node(error['errors'], heading)
       to_log = {k: v for k, v in error.items() if k != 'errors'}
-    logger.error('\n' + yaml.safe_dump(to_log))
+    logger.error(heading + '\n' + yaml.safe_dump(to_log))
 
 
-def log_schema_errors(result):
+def log_schema_errors(result, where=None):
+  heading = f'"{where}" is not valid:' if where is not None else ''
   for error in result.output_document.get('errors', []):
-    log_error_node(error)
+    log_error_node(error, heading)
