@@ -427,9 +427,17 @@ $defs:
       - required: [altRankOf, rank]
       - required: [altSpellingOf, name]
       - required: [vulgarSpellingOf, name]
+    dependentRequired:
+      pages: [rank]
     properties:
       rank:
-        $ref: "#/$defs/rank"
+        description: |
+          Explicit on a record that gives its protologue `pages`, where the
+          tree node leaves a genus or species implicit; `null` says the
+          protologue placed the taxon with no rank word.
+        oneOf:
+        - $ref: "#/$defs/rank"
+        - type: "null"
       pages:
         $ref: "#/$defs/citationNumbers"
       name:

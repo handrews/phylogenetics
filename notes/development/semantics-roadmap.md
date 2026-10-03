@@ -1382,9 +1382,14 @@ marked `new` for it in its authority's tree, for `rank`, `pages`,
 prints no `citedAs` and declares none leaves the record free to carry one);
 a record may not carry a value for a field its tree file lists as `unused`.
 `citedAs` on a record is the name as its protologue prints it, when that
-differs from `name`. A `rank: null` node agrees with the rank `Unranked`, and
-a node's `pages: null` (an inferred node) never agrees with a record's pages.
-(`_report_protologue_mismatches`, in `phylohist/loader/load.py`.)
+differs from `name`. A record with `pages` spells its `rank` (the schema
+requires it; `null` says the protologue placed the taxon with no rank word),
+where a tree node leaves a genus or species implicit: a node with no `rank`
+implies a species when its name is lower-case, else a genus, and the record
+must say the same. A `rank: null` node agrees with a record's `null` or
+`Unranked`, and a node's `pages: null` (an inferred node) never agrees with
+a record's pages. (`_report_protologue_mismatches`, in
+`phylohist/loader/load.py`.)
 
 **F7 (MVP). `removed` recursion** (B5).
 

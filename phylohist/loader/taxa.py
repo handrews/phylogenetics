@@ -199,6 +199,9 @@ class Taxon:
     self._name = self._data.get('name')
     self._rank = self._data.get('rank')
 
+    if 'rank' in self._data and self._rank is None:
+      # An explicit null: the protologue placed the taxon with no rank word.
+      self._rank = 'Unranked'
     if not self._rank:
       if self._name is None:
         logger.error(f'Unnamed, unranked taxon {taxon_key}!')

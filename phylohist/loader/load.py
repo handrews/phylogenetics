@@ -104,9 +104,15 @@ def _page_form(value):
   )
 
 
+def _implicit_rank(node):
+  """The rank a node leaves unsaid, as `Taxon` reads a record without one:
+  a species when the name is lower-case, else a genus."""
+  return 'species' if (node.taxon.name or '').islower() else 'genus'
+
+
 def _same_protologue_value(field, record_value, node_value):
   if field == 'rank':
-    # A node with no rank word is the record's `Unranked`.
+    # A node with no rank word is the record's null or `Unranked`.
     return record_value == node_value or (node_value is None and record_value == 'Unranked')
   if field == 'pages':
     # An inferred node's null has no page to agree with the record's.
@@ -146,6 +152,17 @@ def _report_protologue_mismatches(data, roots):
     )
     for node in nodes:
       for field, verb in _PROTOLOGUE_FIELDS:
+        if field == 'rank' and field not in node.data:
+          # The node leaves a genus or species implicit; the record, which
+          # has `pages`, spells its rank, and the two must agree.
+          implied = _implicit_rank(node)
+          if taxon._data.get('rank') != implied:
+            logger.error(
+              f'{where}: rank {_protologue_value(taxon._data.get("rank"))} but its '
+              f'protologue node in {tree_file} implies "{implied}"'
+            )
+            mismatches += 1
+          continue
         if field not in node.data:
           continue
         record_value, node_value = taxon._data.get(field), node.data[field]

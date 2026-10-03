@@ -65,10 +65,12 @@ def test_schema_accepts_a_null_rank_and_a_null_pages_on_a_node():
   assert _valid({'taxonomies': [{'taxon': 'vermes', 'rank': None, 'synonyms': [{'taxon': 'x'}]}]})
 
 
-@pytest.mark.parametrize('field', ['rank', 'pages'])
-def test_schema_rejects_a_null_on_a_taxon_record(field):
+def test_schema_rejects_null_pages_on_a_taxon_record():
+  # A record's `rank` may be null (the protologue placed it with no rank
+  # word); its `pages` may not.
   assert _record_valid(RECORD)
-  assert not _record_valid({**RECORD, field: None})
+  assert _record_valid({**RECORD, 'rank': None})
+  assert not _record_valid({**RECORD, 'pages': None})
 
 
 def test_schema_rejects_a_null_authority_pages():

@@ -31,7 +31,7 @@ even when its parent is also unreached, so read parents first.
 | `range` | `phylogeny#/$defs/range/properties/inferred`<br>`phylogeny#/$defs/range/properties/tentative/oneOf/0` |
 | `relationalFields` | `phylogeny#/$defs/relationalFields/properties/type`<br>`phylogeny#/$defs/relationalFields/properties/type/oneOf/0`<br>`phylogeny#/$defs/relationalFields/properties/type/oneOf/1` |
 | `stageRange` | `phylogeny#/$defs/stageRange`<br>`phylogeny#/$defs/stageRange/items` |
-| `taxonRecord` | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items/items`<br>`phylogeny#/$defs/taxonRecord/properties/pages` |
+| `taxonRecord` | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items/items`<br>`phylogeny#/$defs/taxonRecord/properties/pages`<br>`phylogeny#/$defs/taxonRecord/properties/rank/oneOf/1` |
 | `timeFields` | `phylogeny#/$defs/timeFields/properties/eon`<br>`phylogeny#/$defs/timeFields/properties/era`<br>`phylogeny#/$defs/timeFields/properties/seriesBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageRange` |
 | `tree` | `tree#/properties/pages/oneOf/1`<br>`tree#/properties/rank/oneOf/1` |
 | `treeDocument` | `phylogeny#/$defs/treeDocument/properties/unused`<br>`phylogeny#/$defs/treeDocument/properties/unused/items` |
