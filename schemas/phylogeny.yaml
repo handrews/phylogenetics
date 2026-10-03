@@ -352,6 +352,17 @@ $defs:
       bracket:
         ### TODO: Replace this property name
         type: string
+      citedAs:
+        description: |
+          A bibliographic reference exactly as printed in the source being
+          transcribed, including any errors or OCR artifacts.  Used for synonymy
+          lists, where the point is to record what that paper listed.  The
+          citation's own attribution goes in `authority` when the work has a
+          record in sources.yaml, or in `auth`/`year` when it does not.
+          On a taxa record, the name as its protologue prints it, when that
+          differs from `name` (the heading REGNUM ANIMALE for Animalia; a
+          variety printed as 'Afer δ').
+        type: string
     allOf:
     - $ref: "#/$defs/authorityFields"
     - $ref: "#/$defs/locationFields"
@@ -526,14 +537,6 @@ $defs:
         description: |
           The taxon this open form is compared with, "aff." for a form the
           source thinks new and related; only on an `openTaxon` node.
-        type: string
-      citedAs:
-        description: |
-          A bibliographic reference exactly as printed in the source being
-          transcribed, including any errors or OCR artifacts.  Used for synonymy
-          lists, where the point is to record what that paper listed.  The
-          citation's own attribution goes in `authority` when the work has a
-          record in sources.yaml, or in `auth`/`year` when it does not.
         type: string
 
   uncertaintyFields:

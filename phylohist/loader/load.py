@@ -10,10 +10,11 @@ data anyway.
 """
 
 import contextlib
+import json
 import logging
 
 from . import material, nomenclature
-from .io import LoadError, load_files
+from .io import TREE_DIR, LoadError, display_path, load_files
 from .research import Author, Publication, Source
 from .taxa import Taxon, Tree
 
@@ -80,6 +81,82 @@ def _report_missing_protologues(data):
       logger.warning(f'Protologue not flagged: {taxon.key} in {source.key}')
       missing += 1
   logger.info(f'{missing} taxa with an unflagged protologue')
+
+
+# The fields a taxa record and its protologue node both give, and the verb the
+# message uses for the node's side.
+_PROTOLOGUE_FIELDS = (
+  ('rank', 'has'),
+  ('pages', 'has'),
+  ('illustrations', 'has'),
+  ('citedAs', 'prints'),
+)
+
+
+def _page_form(value):
+  """`pages` as a comparable value: a number and its digits are one, and a
+  bare locator is a one-entry list (the schema says `52` and `[52]` agree)."""
+  if not isinstance(value, list):
+    value = [value]
+  return tuple(
+    _page_form(v) if isinstance(v, list) else int(v) if isinstance(v, str) and v.isdigit() else v
+    for v in value
+  )
+
+
+def _same_protologue_value(field, record_value, node_value):
+  if field == 'rank':
+    # A node with no rank word is the record's `Unranked`.
+    return record_value == node_value or (node_value is None and record_value == 'Unranked')
+  if field == 'pages':
+    # An inferred node's null has no page to agree with the record's.
+    return node_value is not None and _page_form(record_value) == _page_form(node_value)
+  return record_value == node_value
+
+
+def _protologue_value(value):
+  return 'none' if value is None else json.dumps(value, ensure_ascii=False)
+
+
+def _report_protologue_mismatches(data, roots):
+  # A record that gives its protologue page must agree with the node marked
+  # new for it, on the fields that node declares; and it may not give a
+  # field its tree file lists as unused.
+  mismatches = 0
+  for taxon in Taxon._taxa.values():
+    if 'pages' not in taxon._data:
+      continue
+    source = taxon.authority.source
+    if source is None or source.key not in data['trees']:
+      continue
+    trees = roots.get(source.key, ())
+    tree_file = display_path(TREE_DIR / f'{source.key}.yaml')
+    where = f'taxa.yaml {taxon.key}'
+
+    for field, _ in _PROTOLOGUE_FIELDS:
+      if trees and field in trees[0].file_unused and taxon._data.get(field) is not None:
+        logger.error(f'{where}: {field} given but {tree_file} lists it as unused')
+        mismatches += 1
+
+    nodes = (
+      node
+      for root in trees
+      for node in root.walk()
+      if node.is_primary and not node.is_cited and node.taxon is taxon and node.data.get('new')
+    )
+    for node in nodes:
+      for field, verb in _PROTOLOGUE_FIELDS:
+        if field not in node.data:
+          continue
+        record_value, node_value = taxon._data.get(field), node.data[field]
+        if _same_protologue_value(field, record_value, node_value):
+          continue
+        logger.error(
+          f'{where}: {field} {_protologue_value(record_value)} but its protologue node '
+          f'in {tree_file} {verb} {_protologue_value(node_value)}'
+        )
+        mismatches += 1
+  logger.info(f'{mismatches} disagreements between a taxa record and its protologue node')
 
 
 def _report_lapsus_records(roots):
@@ -153,6 +230,7 @@ def _load_trees(data):
 
   _report_merge_targets(data)
   _report_missing_protologues(data)
+  _report_protologue_mismatches(data, roots)
   _report_lapsus_records(roots)
   _report_material(data)
   _report_nomenclature(data)

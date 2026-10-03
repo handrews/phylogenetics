@@ -1376,6 +1376,16 @@ resolves in `time.yaml` (E6).
 name across all sources, and its source equals the name's authority source. The
 second half exists in `Tree._check_primary_taxon`; the first does not.
 
+Built 2026-10-03: a taxa record that has `pages` is checked against the node
+marked `new` for it in its authority's tree, for `rank`, `pages`,
+`illustrations` and `citedAs`, on the fields the node declares (a node that
+prints no `citedAs` and declares none leaves the record free to carry one);
+a record may not carry a value for a field its tree file lists as `unused`.
+`citedAs` on a record is the name as its protologue prints it, when that
+differs from `name`. A `rank: null` node agrees with the rank `Unranked`, and
+a node's `pages: null` (an inferred node) never agrees with a record's pages.
+(`_report_protologue_mismatches`, in `phylohist/loader/load.py`.)
+
 **F7 (MVP). `removed` recursion** (B5).
 
 **F8 (MVP). cf./aff. position** (C2).

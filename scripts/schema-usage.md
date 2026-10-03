@@ -127,6 +127,7 @@ property.
 
 | property | data | data % |
 |---|---|---|
+| `citedAs` | 53 | 0.6% |
 | `bracket` | 48 | 0.5% |
 
 ### `cladisticFields` -- 794 instances in `data/`
@@ -190,7 +191,6 @@ property.
 |---|---|---|
 | `taxon` | 5777 | 90.6% |
 | `openTaxon` | 247 | 3.9% |
-| `citedAs` | 53 | 0.8% |
 | `cf` | 15 | 0.2% |
 | `aff` | 14 | 0.2% |
 
