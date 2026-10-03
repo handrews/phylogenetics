@@ -17,13 +17,15 @@ taxonomies:
       rank: Order
       new: true
       pages: 1
-      citeAs: I. MAGNATES
+      citedAs: I. MAGNATES
       substituted:
         taxon: primates
       editorial:
         inferred: [substituted]
         basis: Due to the matching Order number and contents.
-      notes: 
+      notes: >
+        Apparently political/theological concerns led to Linnaeus
+        replacing Primates awith Magnates in just this one publication.
     - taxon: ferae
       rank: Order
       pages: 2

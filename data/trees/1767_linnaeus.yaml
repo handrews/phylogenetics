@@ -150,7 +150,7 @@ taxonomies:
         - taxon: papposa_linnaeus_1767
           new: true
           pages: 1098
-        - taxon: rubens_linnaeus_1758
+        - taxon: rubens_linnaeus_1758_linnaeus_1758
           pages: 1099
           children:
           - taxon: β_linnaeus_1758_rubens

@@ -21,7 +21,7 @@ taxonomies:
   children:
   - taxon: frondosa_gunnerus_1767
     new: true
-    page: 115
+    pages: 115
     illustrations:
     - plate: IV
       figures: [1, 2]

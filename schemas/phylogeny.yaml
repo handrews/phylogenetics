@@ -834,6 +834,7 @@ $defs:
       `figure`/`figures`, `textFigure`/`textFigures`), which existed only so a
       lone number need not be written as a one-element array.
     anyOf:
+    - type: "null"
     - $ref: "#/$defs/citationNumber"
     - $ref: "#/$defs/multiRanges"
   multiRanges:
