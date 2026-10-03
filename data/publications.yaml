@@ -95,6 +95,8 @@ e-faunas-bromide:
   name: Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma
   editors:
   - sprinkle
+fauna-svecica:
+  name: Fauna svecica - sistens animalia sveciae regni
 fieldiana:
   name: Fieldiana, Geology
 fig-desc-can:

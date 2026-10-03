@@ -1,3 +1,33 @@
+α_linnaeus_1758_orbiculus_linnaeus_1758:
+  name: α
+  rank: variety
+  authority:
+    source: 1758_linnaeus
+  originalParent: orbiculus_linnaeus_1758
+β_linnaeus_1758_orbiculus_linnaeus_1758:
+  name: β
+  rank: variety
+  authority:
+    source: 1758_linnaeus
+  originalParent: orbiculus_linnaeus_1758
+β_linnaeus_1758_rubens_linnaeus_1758:
+  name: β
+  rank: variety
+  authority:
+    source: 1758_linnaeus
+  originalParent: rubens_linnaeus_1758
+γ_linnaeus_1758_orbiculus_linnaeus_1758:
+  name: γ
+  rank: variety
+  authority:
+    source: 1758_linnaeus
+  originalParent: orbiculus_linnaeus_1758
+δ_linnaeus_1758_orbiculus_linnaeus_1758:
+  name: δ
+  rank: variety
+  authority:
+    source: 1758_linnaeus
+  originalParent: orbiculus_linnaeus_1758
 ###################### A
 abbreviatus_lamarck_1816:
   name: abbreviatus
@@ -47,8 +77,10 @@ actinia:
   authority:
     source: 1767_linnaeus
   notes: |
-    Possibly 1767_gunnerus?  But ICZN Opinion 1295 suppressing
-    Actinia (Pallas) does not mention Gunnerus.
+    Gunnerus 1767 uses this genus based on Linnaeus having shown him
+    a preview of the 12th Edition of the Systema Naturae.  As Gunnerus
+    does not claim to have erected the genus, it is credited to Linnaeus
+    even though the 12th edition came out later in the year.
 actinia_pallas_1766:
   name: Actinia
   homonym: true
@@ -618,6 +650,7 @@ aplysia:
   name: Aplysia
   authority:
     source: 1767_linnaeus
+  notes: Original spelling was Laplysia, but Aplysia ratified by ICZN.
 aporita:
   name: Aporita
   rank: Order
@@ -6373,7 +6406,7 @@ lapis cancri_leske_1778:
 laplysia:
   name: Laplysia
   altSpellingOf: aplysia
-  notes: IRMNG deems this an alternate spelling
+  notes: Original spelling, but Aplysia ratified by ICZN.
 late carinatus_leske_1778:
   name: late carinatus
   rank: variety
@@ -10203,11 +10236,10 @@ senegalensis_lamarck_1816:
   name: senegalensis
   authority:
     source: 1816a_lamarck
-senilis_linnaeus_1767:
+senilis_linnaeus_1761:
   name: senilis
   authority:
-    source: 1767_linnaeus
-  notes: possibly 1767_gunnerus?
+    source: 1761_linnaeus
 sepia:
   name: Sepia
   authority:
@@ -11263,16 +11295,10 @@ treadwelli_sinclair_1945:
   name: treadwelli
   auth: [Sinclair]
   year: 1945
-tremula_linnaeus_1767:
-  name: tremula
-  authority:
-    source: 1767_linnaeus
-  notes: Possibly 1767_gunnerus was first?
 tremula_gunnerus_1767:
   name: tremula
-  auth: [gunnerus]
-  year: 1767
-  notes: Possibly 1767_linnaeus was first?
+  authority:
+    source: 1767_gunnerus
 trentonensis_bassler_1936:
   name: trentonensis
   authority:

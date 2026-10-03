@@ -27,6 +27,7 @@
   - linnaeus
   identifiers:
     url: https://www.biodiversitylibrary.org/page/726886#page/3/mode/1up
+  notes: The first formal source of Linnaeant taxonomy.
 1760a_linnaeus:
   book: systema-naturae-11th-ed
   volume: 1
@@ -37,6 +38,10 @@
   - linnaeus
   identifiers:
     url: https://www.biodiversitylibrary.org/item/31224#page/5/mode/1up
+  notes: >
+    Essentially a reprint of the 10th edition, but in two parts
+    with minor typographcial changes such as conversion of ligatures
+    to separate letters.  Even the page numbers appear to be identical.
 1760b_linnaeus:
   book: systema-naturae-11th-ed
   volume: 1
@@ -47,6 +52,18 @@
   - linnaeus
   identifiers:
     url: https://www.biodiversitylibrary.org/item/31242#page/7/mode/1up
+  notes: >
+    Essentially a reprint of the 10th edition, but in two parts
+    with minor typographcial changes such as conversion of ligatures
+    to separate letters.  Even the page numbers appear to be identical.
+1761_linnaeus:
+  book: fauna-svecica
+  pubDate:
+    year: 1761
+  authors:
+  - linnaeus
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/100333#page/11/mode/1up
 1766_linnaeus:
   book: systema-naturae-12th-ed
   volume: 1

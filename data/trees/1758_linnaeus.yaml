@@ -1,284 +1,862 @@
 taxonomies:
 - taxon: animalia
+  rank: Kingdom
   new: true
+  pages: 9
   children:
   - taxon: mammalia
+    rank: Class
     new: true
-  - taxon: aves
-    new: true
-  - taxon: amphibia_linnaeus_1758
-    new: true
-  - taxon: pisces
-    new: true
-  - taxon: insecta
-    new: true
-  - taxon: vermes
-    new: true
+    pages: 14
     children:
-    - taxon: intestina-order
+    - taxon: primates
+      rank: Order
       new: true
+      pages: 20
+      children:
+      - taxon: homo
+        new: true
+        pages: 20
+        children:
+        - taxon: sapiens_linnaeus_1758
+          new: true
+          pages: 20
+          children:
+          - taxon: ferus_linnaeus_1758
+            rank: variety
+            new: true
+            pages: 20
+          - taxon: americanus_linnaeus_1758
+            rank: variety
+            new: true
+            pages: 20
+          - taxon: europaeus_linnaeus_1758
+            rank: variety
+            new: true
+            pages: 21
+          - taxon: asiasticus_linnaeus_1758
+            rank: variety
+            new: true
+            pages: 21
+          - taxon: afer_linnaeus_1758
+            rank: variety
+            new: true
+            pages: 22
+          - taxon: monstrosus_linnaeus_1758
+            rank: variety
+            new: true
+            pages: 22
+        - taxon: troglodytes_linnaeus_1758
+          new: true
+          pages: 24
+      - taxon: simia
+        new: true
+        pages: 25
+        children:
+        - taxon: satyrus_linnaeus_1758
+          new: true
+          pages: 25
+        - taxon: sylvanus_linnaeus_1758
+          new: true
+          pages: 25
+        - taxon: sphinx_linnaeus_1758
+          new: true
+          pages: 25
+        - taxon: apedia_linnaeus_1758
+          new: true
+          pages: 25
+        - taxon: silenus_linnaeus_1758
+          new: true
+          pages: 26
+        - taxon: faunus_linnaeus_1758
+          new: true
+          pages: 26
+        - taxon: paniscus_linnaeus_1758
+          new: true
+          pages: 26
+        - taxon: diana_linnaeus_1758
+          new: true
+          pages: 26
+        - taxon: cephus_linnaeus_1758
+          new: true
+          pages: 27
+        - taxon: aygula_linnaeus_1758
+          new: true
+          pages: 27
+        - taxon: hamadryas_linnaeus_1758
+          new: true
+          pages: 27
+        - taxon: jacchus_linnaeus_1758
+          new: true
+          pages: 27
+        - taxon: oedipus_linnaeus_1758
+          new: true
+          pages: 28
+        - taxon: aethiops_linnaeus_1758
+          new: true
+          pages: 28
+        - taxon: midas_linnaeus_1758
+          new: true
+          pages: 28
+        - taxon: cynamolgos_linnaeus_1758
+          new: true
+          pages: 28
+        - taxon: apella_linnaeus_1758
+          new: true
+          pages: 28
+        - taxon: morta_linnaeus_1758
+          new: true
+          pages: 29
+        - taxon: capucina_linnaeus_1758
+          new: true
+          pages: 29
+        - taxon: sciurea_linnaeus_1758
+          new: true
+          pages: 29
+        - taxon: syrichta_linnaeus_1758
+          new: true
+          pages: 29
+      - taxon: lemur
+        new: true
+        pages: 30
+        children:
+        - taxon: tardigradus_linnaeus_1758
+          new: true
+          pages: 29
+        - taxon: catta_linnaeus_1758
+          new: true
+          pages: 30
+        - taxon: volans_linnaeus_1758
+          new: true
+          pages: 30
+      - taxon: vespertilio
+        new: true
+        pages: 31
+        children:
+        - taxon: vampyrus_linnaeus_1758
+          new: true
+          pages: 31
+        - taxon: spectrum_linnaeus_1758
+          new: true
+          pages: 31
+        - taxon: perspicillatus_linnaeus_1758
+          new: true
+          pages: 31
+        - taxon: spasma_linnaeus_1758
+          new: true
+          pages: 32
+        - taxon: leporinus_linnaeus_1758
+          new: true
+          pages: 32
+        - taxon: auritus_linnaeus_1758
+          new: true
+          pages: 32
+        - taxon: murinus_linnaeus_1758
+          new: true
+          pages: 32
+    - taxon: bruta
+      rank: Order
+      new: true
+      page: 33
+      children:
+      - taxon: elephas
+        new: true
+        page: 33
+        children:
+        - taxon: maximus_linnaeus_1758
+          new: true
+          pages: 33
+      - taxon: trichechus
+        new: true
+        pages: 34
+        children:
+        - taxon: manatus_linnaeus_1758
+          new: true
+          pages: 34
+      - taxon: bradypus
+        new: true
+        pages: 34
+        children:
+        - taxon: tridactylus_linnaeus_1758
+          new: true
+          pages: 34
+        - taxon: didactylus_linnaeus_1758
+          new: true
+          pages: 35
+      - taxon: myrmecophaga
+        new: true
+        pages: 35
+        children:
+        - taxon: didactyla_linnaeus_1758
+          new: true
+          pages: 35
+        - taxon: tridactyla_linnaeus_1758
+          new: true
+          pages: 35
+        - taxon: tetradactyla_linnaeus_1758
+          new: true
+          pages: 35
+      - taxon: manis
+        new: true
+        pages: 36
+        children:
+        - taxon: pentadactyla_linnaeus_1758
+          new: true
+          pages: 36
+    - taxon: ferae
+      rank: Order
+      new: true
+      pages: 37
+      children:
+      - taxon: phoca
+        new: true
+        pages: 37
+        children:
+        - taxon: ursina_linnaeus_1758
+          new: true
+          pages: 37
+        - taxon: leonina_linnaeus_1758
+          new: true
+          pages: 37
+        - taxon: rosmarus_linnaeus_1758
+          new: true
+          pages: 38
+        - taxon: vitulina_linnaeus_1758
+          new: true
+          pages: 38
+      - taxon: canis
+        new: true
+        pages: 38
+      - taxon: felis
+        new: true
+        pages: 41
+      - taxon: viverra
+        new: true
+        pages: 43
+      - taxon: mustela
+        new: true
+        pages: 45
+      - taxon: ursus
+        new: true
+        pages: 47
+    - taxon: bestiae
+      rank: Order
+      new: true
+      pages: 49
+      children:
+      - taxon: sus
+        new: true
+        pages: 49
+      - taxon: dasypus
+        new: true
+        pages: 50
+      - taxon: erinaceus
+        new: true
+        pages: 52
+      - taxon: talpa
+        new: true
+        pages: 52
+      - taxon: sorex
+        new: true
+        pags: 53
+      - taxon: didelphis
+        new: true
+        pages: 54
+    - taxon: glires
+      rank: Order
+      new: true
+      pages: 56
+      children:
+      - taxon: rhinoceros
+        new: true
+        pages: 56
+      - taxon: hystrix
+        new: true
+        pages: 56
+      - taxon: lepus
+        new: true
+        pages: 57
+      - taxon: castor
+        new: true
+        pages: 58
+      - taxon: mus
+        new: true
+        pages: 59
+      - taxon: sciurus
+        new: true
+        pages: 63
+    - taxon: pecora
+      rank: Order
+      new: true
+      pages: 65
+      children:
+      - taxon: camelus
+        new: true
+        pages: 65
+      - taxon: moschus
+        new: true
+        pages: 66
+      - taxon: cervus
+        new: true
+        pages: 66
+      - taxon: capra
+        new: true
+        pages: 68
+      - taxon: ovis
+        new: true
+        pages: 70
+      - taxon: bos
+        new: true
+        pages: 71
+    - taxon: belluae
+      rank: Order
+      new: true
+      pages: 73
+      children:
+      - taxon: equus
+        new: true
+        pages: 73
+      - taxon: hippopotomus
+        new: true
+        pages: 74
+    - taxon: cete
+      rank: Order
+      new: true
+      pages: 75
+      children:
+      - taxon: monodon
+        new: true
+        pages: 75
+      - taxon: balaena
+        new: true
+        pages: 75
+      - taxon: physeter
+        new: true
+        pages: 76
+      - taxon: delphinus
+        new: true
+        pages: 77
+  - taxon: aves
+    rank: Class
+    new: true
+    pages: 78
+    children:
+    - taxon: accipitres
+      rank: Order
+      new: true
+      pages: 86
+    - taxon: picae
+      rank: Order
+      new: true
+      pages: 96
+    - taxon: anseres
+      rank: Order
+      new: true
+      pages: 122
+    - taxon: grallae
+      rank: Order
+      new: true
+      pages: 139
+    - taxon: gallinae
+      rank: Order
+      new: true
+      pages: 156
+    - taxon: passeres
+      rank: Order
+      new: true
+      pages: 162
+  - taxon: amphibia_linnaeus_1758
+    rank: Class
+    new: true
+    pages: 194
+    children:
+    - taxon: reptiles
+      rank: Order
+      new: true
+      pages: 197
+    - taxon: serpentes
+      rank: Order
+      new: true
+      pages: 214
+    - taxon: nantes
+      rank: Order
+      new: true
+      pages: 230
+  - taxon: pisces
+    rank: Class
+    new: true
+    pages: 239
+    children:
+    - taxon: apodes
+      rank: Order
+      new: true
+      pages: 244
+    - taxon: jugulares
+      rank: Order
+      new: true
+      pages: 249
+    - taxon: thoracici
+      rank: Order
+      new: true
+      pages: 260
+    - taxon: abdominales
+      rank: Order
+      new: true
+      pages: 303
+    - taxon: branchiostegi
+      rank: Order
+      new: true
+      pages: 327
+  - taxon: insecta
+    rank: Class
+    new: true
+    pages: 339
+    children:
+    - taxon: coleoptera
+      rank: Order
+      new: true
+      pages: 345
+    - taxon: hemiptera
+      rank: Order
+      new: true
+      pages: 434
+    - taxon: lepidoptera
+      rank: Order
+      new: true
+      pages: 458
+    - taxon: neuroptera
+      rank: Order
+      new: true
+      pages: 543
+    - taxon: hymenoptera
+      rank: Order
+      new: true
+      pages: 553
+    - taxon: diptera
+      rank: Order
+      new: true
+      pages: 584
+    - taxon: aptera
+      rank: Order
+      new: true
+      pages: 608
+  - taxon: vermes
+    rank: Class
+    new: true
+    pages: 641
+    children:
+    - taxon: intestina
+      rank: Order
+      new: true
+      pages: 647
       children:
       - taxon: gordius
         new: true
+        pages: 647
       - taxon: furia
         new: true
+        pages: 647
       - taxon: lumbricus
         new: true
+        pages: 647
       - taxon: ascaris
         new: true
+        pages: 648
       - taxon: fasciola
         new: true
+        pages: 648
       - taxon: hirudo
         new: true
+        pages: 649
       - taxon: myxine
         new: true
+        pages: 650
         children:
         - taxon: glutinosa_linnaeus_1758
           new: true
+          pagees: 650
       - taxon: teredo
         new: true
-    - taxon: mollusca-order
+        pages: 651
+    - taxon: mollusca
+      rank: Order
       new: true
+      pages: 652
       children:
       - taxon: limax
         new: true
+        pages: 652
       - taxon: doris
         new: true
+        pages: 653
       - taxon: tethys
         new: true
+        pages: 653
+        notes: >
+          Formally ratified over the common alternate spelling Tethis in
+          ICZN Opinion 200 (1954).
       - taxon: nereis
         new: true
+        pages: 654
       - taxon: aphrodita
         new: true
+        pages: 655
       - taxon: lernaea
         new: true
+        pages: 655
       - taxon: priapus
         new: true
+        pages: 656
       - taxon: scyllaea
         new: true
+        pages: 656
       - taxon: holothuria_linnaeus_1758
         new: true
+        pages: 657
+        notes: >
+          Does not contain echinoderms.  Suppressed by ICZN Opinion 85 (1925)
+          in favor of Holothuria Linnaeus 1767.  ICZN Direction 37 (1956)
+          more formally reinforced this and entered Holothuria Linnaeus 1758
+          into the "Official Index of Rejected and Invalid Generic Names
+          in Zoology".
         children:
         - taxon: physalis_linnaeus_1758
           new: true
+          pages: 657
         - taxon: thalia_linnaeus_1758
           new: true
+          pages: 657
         - taxon: caudata_linnaeus_1758
           new: true
+          pages: 657
         - taxon: denudata_linnaeus_1758
           new: true
+          pages: 657
       - taxon: triton
         new: true
+        pages: 658
       - taxon: sepia
         new: true
+        pages: 658
       - taxon: medusa
         new: true
+        pages: 659
       - taxon: asterias
         new: true
+        pages: 661
+        notes: >
+          Three headings divide the species into groups without establishing
+          an intermedia taxon: "Integra" for A. luna, "Stellatae" for
+          A. rubens through A. laevigata, and "Radiatae" for A. ophiura
+          through A. caput medusae; A. planci is from an appendix and
+          not clearly associated with a section (see its notes for details).
         children:
-        - taxon: integra
+        - taxon: luna_linnaeus_1758
           new: true
-          children:
-          - taxon: luna_linnaeus_1758
-            new: true
-        - taxon: stellatae
+          pages: 661
+        - taxon: rubens_linnaeus_1758
           new: true
+          pages: 661
           children:
-          - taxon: rubens_linnaeus_1758
+          - taxon: β_linnaeus_1758_rubens
+            rank: variety
             new: true
-          - taxon: glacialis_linnaeus_1758
-            new: true
-          - taxon: reticulata_linnaeus_1758
-            new: true
-          - taxon: nodosa_linnaeus_1758
-            new: true
-          - taxon: aranciaca_linnaeus_1758
-            new: true
-          - taxon: equestris_linnaeus_1758
-            new: true
-          - taxon: laevigata_linnaeus_1758
-            new: true
-        - taxon: radiatae
+            pages: 661
+        - taxon: glacialis_linnaeus_1758
           new: true
-          children:
-          - taxon: planci_linnaeus_1758
-            new: true
-          - taxon: ophiura_linnaeus_1758
-            new: true
-          - taxon: pectinata_linnaeus_1758
-            new: true
-          - taxon: multiradiata_linnaeus_1758
-            new: true
-          - taxon: caput medusae_linnaeus_1758
-            new: true
+          pages: 661
+        - taxon: reticulata_linnaeus_1758
+          new: true
+          pages: 661
+        - taxon: nodosa_linnaeus_1758
+          new: true
+          pages: 661
+        - taxon: aranciaca_linnaeus_1758
+          new: true
+          pages: 662
+        - taxon: equestris_linnaeus_1758
+          new: true
+          pages: 662
+        - taxon: laevigata_linnaeus_1758
+          new: true
+          pages: 662
+        - taxon: planci_linnaeus_1758
+          new: true
+          provisional: true
+          pages: 823
+          notes: >
+            Added in the appendix, which apparently indicate uncertainty
+            regarding placement.  Noted with "p. 662, n. 8 - 9", which seems to
+            indicate this position between 8. A. laevigata and 9. A. ophiura.
+            This is where "Radiatae" divides the list and there is no mention
+            of whether A. planci is intended to be among the Stellatae or
+            the Radiatae.
+        - taxon: ophiura_linnaeus_1758
+          new: true
+          pages: 662
+        - taxon: pectinata_linnaeus_1758
+          new: true
+          pages: 663
+        - taxon: multiradiata_linnaeus_1758
+          new: true
+          pages: 663
+        - taxon: caput medusae_linnaeus_1758
+          new: true
+          pages: 663
       - taxon: echinus
         new: true
+        pages: 663
+        notes: >
+          Two headings divide the species into groups without establishing
+          an intermediate taxon: "Regulares ano verticali" for E. esculentus
+          through E. atratus, and "Irregulares: apurtura ani subtus uti os"
+          for E. spatagus through E. orbiculus.
         children:
-        - taxon: regulares
+        - taxon: esculentus_linnaeus_1758
           new: true
-          children:
-          - taxon: esculentus_linnaeus_1758
-            new: true
-          - taxon: globulus_linnaeus_1758
-            new: true
-          - taxon: sphaeroides_linnaeus_1758
-            new: true
-          - taxon: gratilla_linnaeus_1758
-            new: true
-          - taxon: lixula_linnaeus_1758
-            new: true
-          - taxon: saxatilis_linnaeus_1758
-            new: true
-          - taxon: diadema_linnaeus_1758
-            new: true
-          - taxon: cidaris_linnaeus_1758
-            new: true
-          - taxon: mamillatus_linnaeus_1758
-            new: true
-          - taxon: lucunter_linnaeus_1758
-            new: true
-          - taxon: atratus_linnaeus_1758
-            new: true
-        - taxon: irregulares
+          pages: 663
+        - taxon: globulus_linnaeus_1758
           new: true
+          pages: 664
+        - taxon: sphaeroides_linnaeus_1758
+          new: true
+          pages: 664
+        - taxon: gratilla_linnaeus_1758
+          new: true
+          pages: 664
+        - taxon: lixula_linnaeus_1758
+          new: true
+          pages: 664
+        - taxon: saxatilis_linnaeus_1758
+          new: true
+          pages: 664
+        - taxon: diadema_linnaeus_1758
+          new: true
+          pages: 664
+        - taxon: cidaris_linnaeus_1758
+          new: true
+          pages: 664
+        - taxon: mamillatus_linnaeus_1758
+          new: true
+          pages: 664
+        - taxon: lucunter_linnaeus_1758
+          new: true
+          pages: 665
+        - taxon: atratus_linnaeus_1758
+          new: true
+          pages: 665
+        - taxon: spatagus_linnaeus_1758
+          new: true
+          pages: 665
+        - taxon: lacunosus_linnaeus_1758
+          new: true
+        - taxon: rosaceus_linnaeus_1758
+          new: true
+          pages: 665
+        - taxon: reticulatus_linnaeus_1758
+          new: true
+          pages: 666
+        - taxon: placenta_linnaeus_1758
+          new: true
+          pages: 666
+        - taxon: orbiculus_linnaeus_1758
+          new: true
+          pages: 666
           children:
-          - taxon: spatagus_linnaeus_1758
+          - taxon: α_linnaeus_1758_orbiculus_linnaeus_1758
+            rank: variety
             new: true
-          - taxon: lacunosus_linnaeus_1758
+            pages: 666
+          - taxon: β_linnaeus_1758_orbiculus_linnaeus_1758
+            rank: variety
             new: true
-          - taxon: rosaceus_linnaeus_1758
+            pages: 666
+          - taxon: γ_linnaeus_1758_orbiculus_linnaeus_1758
+            rank: variety
             new: true
-          - taxon: reticulatus_linnaeus_1758
+            pages: 666
+          - taxon: δ_linnaeus_1758_orbiculus_linnaeus_1758
+            rank: variety
             new: true
-          - taxon: placenta_linnaeus_1758
-            new: true
-          - taxon: orbiculus_linnaeus_1758
-            new: true
-    - taxon: testacea-order
+            pages: 666
+    - taxon: testacea
+      rank: Order
       new: true
+      pages: 667
+      notes: >
+        In the initial genus list on page 654, there are sections grouping
+        the genera without establishing taxa.  "Multivalvia" for Chiton
+        and Lepas, "Bivalvia Conchae" for Pholas through Pinna, "Univalvia
+        Spiralia Cochleae" for Argonauta through Haliotis, and "Univalvia
+        absque spira regulari" for Patella, Dentalium, and Serpula.  The
+        words "Conchae" and "Cochleae" are not italicized, unlike the other
+        words in these headings.
       children:
-      - openTaxon: testacea-unnamed-section-1_linnaeus_1758
-        notes: Multivalvia
-        children:
-        - taxon: chiton
-          new: true
-        - taxon: lepas
-          new: true
-      - taxon: conchae
+      - taxon: chiton
         new: true
-        notes: Bivalvia
-        children:
-        - taxon: pholas
-          new: true
-        - taxon: mya
-          new: true
-        - taxon: solen
-          new: true
-        - taxon: tellina
-          new: true
-        - taxon: cardium
-          new: true
-        - taxon: donax
-          new: true
-        - taxon: venus
-          new: true
-        - taxon: spondylus
-          new: true
-        - taxon: chama
-          new: true
-        - taxon: arca
-          new: true
-        - taxon: ostrea
-          new: true
-        - taxon: anomia
-          new: true
-        - taxon: mytilus
-          new: true
-        - taxon: pinna
-          new: true
-      - taxon: cochleae
+        pages: 667
+      - taxon: lepas
         new: true
-        notes: Univalvia
-        children:
-        - taxon: argonauta
-          new: true
-        - taxon: nautilus
-          new: true
-        - taxon: conus
-          new: true
-        - taxon: cypraea
-          new: true
-        - taxon: bulla
-          new: true
-        - taxon: voluta
-          new: true
-        - taxon: buccinum
-          new: true
-        - taxon: strombus
-          new: true
-        - taxon: murex
-          new: true
-        - taxon: trochus
-          new: true
-        - taxon: turbo
-          new: true
-        - taxon: helix
-          new: true
-        - taxon: nerita
-          new: true
-        - taxon: haliotis
-          new: true
-      - openTaxon: testacea-unnamed-section-2_linnaeus_1758
-        notes: Univalvia absque spira regulari
-        children:
-        - taxon: patella
-          new: true
-        - taxon: dentalium
-          new: true
-        - taxon: serpula
-          new: true
+        pages: 667
+      - taxon: pholas
+        new: true
+        pages: 669
+      - taxon: mya
+        new: true
+        pages: 670
+      - taxon: solen
+        new: true
+        pages: 672
+      - taxon: tellina
+        new: true
+        pages: 674
+      - taxon: cardium
+        new: true
+        pages: 678
+      - taxon: donax
+        new: true
+        pages: 682
+      - taxon: venus
+        new: true
+        pages: 684
+      - taxon: spondylus
+        new: true
+        pages: 690
+      - taxon: chama
+        new: true
+        pages: 691
+      - taxon: arca
+        new: true
+        pages: 693
+      - taxon: ostrea
+        new: true
+        pages: 696
+      - taxon: anomia
+        new: true
+        pages: 700
+      - taxon: mytilus
+        new: true
+        pages: 704
+      - taxon: pinna
+        new: true
+        pages: 707
+      - taxon: argonauta
+        new: true
+        pages: 708
+      - taxon: nautilus
+        new: true
+        pages: 709
+      - taxon: conus
+        new: true
+        pages: 712
+      - taxon: cypraea
+        new: true
+        pages: 718
+      - taxon: bulla
+        new: true
+        pages: 725
+      - taxon: voluta
+        new: true
+        pages: 729
+      - taxon: buccinum
+        new: true
+        pages: 734
+      - taxon: strombus
+        new: true
+        pages: 742
+      - taxon: murex
+        new: true
+        pages: 745
+      - taxon: trochus
+        new: true
+        pages: 756
+      - taxon: turbo
+        new: true
+        pages: 761
+      - taxon: helix
+        new: true
+        pages: 768
+      - taxon: nerita
+        new: true
+        pages: 776
+      - taxon: haliotis
+        new: true
+        pages: 779
+      - taxon: patella
+        new: true
+        pages: 780
+      - taxon: dentalium
+        new: true
+        pages: 785
+      - taxon: serpula
+        new: true
+        pages: 786
     - taxon: lithophyta
+      rank: Order
       new: true
+      pages: 789
       children:
       - taxon: tubipora
         new: true
+        pages: 789
       - taxon: millepora
         new: true
+        pages: 790
       - taxon: madrepora
         new: true
+        pages: 793
     - taxon: zoophyta
+      rank: Order
       new: true
+      pages: 799
       children:
       - taxon: isis
         new: true
+        pages: 799
         children:
         - taxon: hippuris_linnaeus_1758
           new: true
+          pages: 799
         - taxon: dichotoma_linnaeus_1758
           new: true
+          pages: 799
         - taxon: ocracea_linnaeus_1758
           new: true
+          pages: 799
         - taxon: anastacia_linnaeus_1758
           new: true
-        - taxon: encrinus_linnaeus_1758  # A coral, not a crinoid
+          pages: 800
+        - taxon: encrinus_linnaeus_1758
           new: true
+          pages: 800
+          notes: A coral, not a crinoid.
       - taxon: gorgonia
         new: true
+        pages: 800
       - taxon: alcyonium
         new: true
+        pages: 803
       - taxon: tubularia
         new: true
+        pages: 803
       - taxon: eschara
         new: true
+        pages: 804
       - taxon: corallina
         new: true
+        pages: 805
       - taxon: sertularia
         new: true
+        pages: 807
       - taxon: hydra
         new: true
+        pages: 816
       - taxon: pennatula
         new: true
+        pages: 818
       - taxon: taenia
         new: true
+        pages: 819
       - taxon: volvox
         new: true
+        pages: 820

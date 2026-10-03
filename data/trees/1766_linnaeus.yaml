@@ -1,10 +1,18 @@
-notes: Only the vertabrates are covered in detail in this part.
 taxonomies:
 - taxon: animalia
+  rank: Kingdom
+  pages: 15
+  notes: The classes Insecta an Vermes are in Volume 2 (1967).
   children:
   - taxon: mammalia
+    rank: Class
+    pages: 21
   - taxon: aves
+    rank: Class
+    pages: 109
   - taxon: amphibia_linnaeus_1758
+    rank: Class
+    pages: 347
   - taxon: pisces
-  - taxon: insecta
-  - taxon: vermes
+    rank: Class
+    pages: 419

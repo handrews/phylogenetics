@@ -1,0 +1,185 @@
+taxonomies:
+- taxon: animalia
+  rank: Kingdom
+  pages: null
+  editorial:
+    inferred: true
+    basis: >
+      10th and 12th editions of Systema Naturae, plus frequent mentions
+      of "Animalia" despite no obvious page defining the taxon.
+  children:
+  - taxon: mammalia
+    rank: Class
+    pages: 1
+    citedAs: Classis I. MAMMALIA
+    children:
+    - taxon: magnates
+      rank: Order
+      new: true
+      pages: 1
+      citeAs: I. MAGNATES
+      substituted:
+        taxon: primates
+      editorial:
+        inferred: [substituted]
+        basis: Due to the matching Order number and contents.
+      notes: 
+    - taxon: ferae
+      rank: Order
+      pages: 2
+      citedAs: III. FERAE
+      notes: Order II was skipped as no animals from it live in Sweden.
+    - taxon: bestiae
+      rank: Order
+      pages: 8
+      citedAs: IV. BESTIAE
+    - taxon: glires
+      rank: Order
+      pages: 9
+      citedAs: V. GLIRES
+    - taxon: pecora
+      rank: Order
+      pages: 13
+      citedAs: VI. PECORA
+    - taxon: belluae
+      rank: Order
+      pages: 15
+      citedAs: VII. BELLUAE
+    - taxon: cete
+      rank: Order
+      pages: 16
+      citedAs: VIII. CETE
+  - taxon: aves
+    rank: Class
+    pages: 19
+    citedAs: Classis II. AVES
+  - taxon: amphibia_linnaeus_1758
+    rank: Class
+    pages: 101
+    citedAs: Classis III. AMPHIBIA
+  - taxon: pisces
+    rank: Class
+    pages: 109
+    citedAs: Classis IV. PISCES
+  - taxon: insecta
+    rank: Class
+    pages: 133
+    citedAs: Classis V. INSECTA
+  - taxon: vermes
+    rank: Class
+    pages: 503
+    citedAs: Classis VI. VERMES
+    children:
+    - taxon: intestina
+      rank: Order
+      pages: 503
+      citedAs: I. INTESTINA
+    - taxon: mollusca
+      rank: Order
+      citedAs: II. MOLLUSA
+      pages: 507
+      notes: The "C" is omitted in the heading, but present everywhere else.
+      children:
+      - taxon: limax
+        pages: 507
+      - taxon: nereis
+        pages: 508
+      - taxon: aphrodita
+        pages: 509
+      - taxon: lernaea
+        pages: 509
+      - taxon: priapus
+        pages: 510
+        children:
+        - taxon: senilis_linnaeus_1761
+          new: true
+          pages: 510
+        - taxon: judaicus_linnaeus_1761
+          new: true
+          pages: 510
+        - taxon: felinus_linnaeus_1761
+          new: true
+          pages: 510
+      - taxon: sepia
+        pages: 510
+      - taxon: medusa
+        pages: 511
+      - taxon: asterias
+        pages: 512
+        children:
+        - taxon: rubens_linnaeus_1758
+          pages: 512
+        - taxon: minuta_linnaeus_1761
+          new: true
+          pages: 512
+        - taxon: glacialis_linnaeus_1758
+          pages: 512
+        - taxon: ophiura_linnaeus_1758
+          pages: 513
+        - taxon: caput medusae_linnaeus_1758
+          pages: 513
+      - taxon: echinus
+        pages: 513
+        children:
+        - taxon: esculentus_linnaeus_1758
+          pages: 513
+        - taxon: spatagus_linnaeus_1758
+          pages: 513
+        - taxon: cidaris_linnaeus_1758
+          pages: 513
+    - taxon: testacea
+      rank: Order
+      pages: 513
+      citedAs: III. TESTACEA
+    - taxon: lithophyta
+      rank: Order
+      pages: 536
+      citedAs: IV. LITHOPHYTA
+    - taxon: zoophyta
+      rank: Order
+      pages: 537
+      citedAs: V. ZOOPHYTA
+      children:
+      - taxon: isis
+        pages: 537
+        children:
+        - taxon: hippuris_linnaeus_1758
+          pages: 537
+        - taxon: anastatica_linnaeus_1758
+          pages: 537
+      - taxon: gorgonia
+        pages: 538
+      - taxon: alcyonium
+        pages: 538
+      - taxon: tubularia
+        pages: 539
+      - taxon: flustra
+        pages: 539
+      - taxon: corallina
+        pages: 539
+      - taxon: sertularia
+        pages: 540
+      - taxon: hydra
+        pages: 542
+      - taxon: pennatula
+        pages: 543
+      - taxon: taenia
+        pages: 543
+      - taxon: volvox
+        pages: 544
+- notes: >
+    Seposita (Set Aside) "Animals formerly unknown, and not yet discovered
+    by us — awaiting further examination."
+  taxon: animalia
+  rank: Kingdom
+  pages: null
+  editorial:
+    inferred: true
+    basis: Same as for main tree.
+  children:
+  - taxon: Insecta
+    rank: Class
+    pages: 545
+  - taxon: Vermes
+    rank: Class
+    pages: 555
