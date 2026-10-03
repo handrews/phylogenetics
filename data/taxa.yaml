@@ -510,7 +510,7 @@ anapeptamenus_austen_1843:
   auth: [Austen]
   year: 1843
 anastatica_linnaeus_1758:
-  name: anastacia
+  name: anastatica
   rank: species
   pages: 800
   authority:
@@ -950,7 +950,7 @@ ascocystitidae:
   rank: Family
   auth: [ubaghs]
   year: 1967
-asiastricus_linnaeus_1758:
+asiasticus_linnaeus_1758:
   name: asiasticus
   rank: variety
   pages: 21
