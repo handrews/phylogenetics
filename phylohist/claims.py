@@ -503,6 +503,10 @@ class _NodeClaims:
         claim['compared'] = {'sign': sign, 'taxon': data[sign]}
     if 'sensu' in data:
       claim['sensu'] = data['sensu']
+    # A root has no placement claim to carry `rankAsPrinted`; its usage
+    # carries the one statement a root makes about rank, that it has none.
+    if node.axis == 'root' and 'rank' in data and data['rank'] is None:
+      claim['rankAsPrinted'] = None
     self._emit(claim, field)
 
   def _placement_base(self):

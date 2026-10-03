@@ -310,3 +310,16 @@ def test_the_placements_table_keeps_the_records_rank(synthetic):
   assert row['cells'][1] == [{'value': 'Class'}]
   [cell] = [c for cells in row['cells'][2:] for c in cells if SOURCE in c['claim']]
   assert cell['value'] == 'Animalia' and cell['rank'] == 'Class'
+
+
+def test_an_unranked_root_prints_its_name_alone(load_records, tmp_path):
+  # A root has no placement claim: its usage carries the null printed rank.
+  root = {'taxon': 'vermes', 'rank': None, 'pages': 12, 'children': [{'taxon': 'mollusca'}]}
+  claims = _claims(root, 341)
+  assert _at(claims, '341', kind='usage')['rankAsPrinted'] is None
+  directory = tmp_path / 'claims'
+  shutil.copytree(CLAIMS_DIR, directory)
+  (directory / f'{SOURCE}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
+  [block] = ClaimStore(directory).contents(SOURCE, 'vermes')
+  assert block['rendered'].splitlines()[1] == '  Vermes'
+  assert block['nodes'][0]['unranked'] is True
