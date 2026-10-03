@@ -198,13 +198,14 @@ aethiops_linnaeus_1758:
   pages: 28
   authority:
     source: 1758_linnaeus
+  citedAs: Æthiops. 14.
 afer_linnaeus_1758:
   name: afer
   rank: variety
   pages: 22
   authority:
     source: 1758_linnaeus
-  citedAs: Afer δ
+  citedAs: Afer. δ.
 africana_forsskål_1775:
   name: africana
   auth: [forsskål]
@@ -420,7 +421,7 @@ americanus_linnaeus_1758:
   pages: 20
   authority:
     source: 1758_linnaeus
-  citedAs: Americanus α
+  citedAs: Americanus. α.
 ametabola:
   name: Ametabola
   rank: Class
@@ -671,6 +672,7 @@ apedia_linnaeus_1758:
   pages: 25
   authority:
     source: 1758_linnaeus
+  citedAs: Apedia. 4.
 apektocrinidae:
   name: Apektocrinidae
   rank: Family
@@ -686,6 +688,7 @@ apella_linnaeus_1758:
   pages: 28
   authority:
     source: 1758_linnaeus
+  citedAs: Apella. 17.
 aphrodita:
   name: Aphrodita
   authority:
@@ -956,7 +959,7 @@ asiasticus_linnaeus_1758:
   pages: 21
   authority:
     source: 1758_linnaeus
-  citedAs: Aſiasticus γ
+  citedAs: Aſiasticus. γ.
 aspera_müller.o.f_1776:
   name: aspera
   authority:
@@ -1139,6 +1142,7 @@ auritus_linnaeus_1758:
   pages: 32
   authority:
     source: 1758_linnaeus
+  citedAs: auritus. 6.
 auritus_leske_1778:
   name: auritus
   authority:
@@ -1175,6 +1179,7 @@ aygula_linnaeus_1758:
   pages: 27
   authority:
     source: 1758_linnaeus
+  citedAs: Aygula. 10.
 azaisei_thoral_1935:
   name: azaisei
   auth: [Thoral]
@@ -1685,6 +1690,7 @@ bruta:
   pages: 33
   authority:
     source: 1758_linnaeus
+  citedAs: II. BRUTA.
 buccinum:
   name: Buccinum
   authority:
@@ -1921,6 +1927,7 @@ capucina_linnaeus_1758:
   pages: 29
   authority:
     source: 1758_linnaeus
+  citedAs: Capucina. 19.
 caput medusae_lamarck_1801:
   name: caput medusae
   authority:
@@ -2109,6 +2116,13 @@ caelatus_phillips.j_1839:
   authority:
     attributedTo: [phillips.j]
     source: 1839_murchison
+catta_linnaeus_1758:
+  name: catta
+  rank: species
+  pages: 30
+  authority:
+    source: 1758_linnaeus
+  citedAs: Catta. 2.
 cellaria:
   name: Cellaria
   auth: [Ellis, Solander]
@@ -2153,6 +2167,7 @@ cephus_linnaeus_1758:
   pages: 27
   authority:
     source: 1758_linnaeus
+  citedAs: Cephus. 9.
 cerasus_buch_1840:
   name: cerasus
   auth: [buch]
@@ -3151,6 +3166,7 @@ cynamologos_linnaeus_1758:
   pages: 28
   authority:
     source: 1758_linnaeus
+  citedAs: Cynamologos. 16.
 cypraea:
   name: Cypraea
   authority:
@@ -3433,6 +3449,7 @@ diana_linnaeus_1758:
   pages: 26
   authority:
     source: 1758_linnaeus
+  citedAs: Diana. 8.
 dibrachycystidae:
   name: Dibrachycystidae
   rank: Family
@@ -4569,7 +4586,7 @@ europaeus_linnaeus_1758:
   pages: 21
   authority:
     source: 1758_linnaeus
-  citedAs: Europæus β
+  citedAs: Europæus. β.
 euryale:
   name: Euryale
   authority:
@@ -4677,6 +4694,7 @@ faunus_linnaeus_1758:
   pages: 26
   authority:
     source: 1758_linnaeus
+  citedAs: Faunus. 6.
 fayi_sprinkle_1973:
   name: fayi
   authority:
@@ -4704,7 +4722,7 @@ ferus_linnaeus_1758:
   pages: 20
   authority:
     source: 1758_linnaeus
-  citedAs: Ferus
+  citedAs: Ferus. 1.
 fibularia:
   name: Fibularia
   authority:
@@ -5522,6 +5540,7 @@ hamadryas_linnaeus_1758:
   pages: 27
   authority:
     source: 1758_linnaeus
+  citedAs: Hamadryas. 11.
 hamiltonensis_vanuxem_1842:
   name: hamiltonensis
   auth: [Vanuxem]
@@ -5932,7 +5951,7 @@ homo:
   pages: 20
   authority:
     source: 1758_linnaeus
-  citedAs: 1. HOMO
+  citedAs: 1. HOMO.
 homocrinus:
   name: Homocrinus
   authority:
@@ -6381,6 +6400,7 @@ jacchus_linnaeus_1758:
   pages: 27
   authority:
     source: 1758_linnaeus
+  citedAs: Jacchus. 12.
 jacksoni_austen_1843:
   name: jacksoni
   auth: [Austen]
@@ -6700,6 +6720,13 @@ lepocrinites:
   in: [vanuxem]
   year: 1840
   notes: 4th annual report geol survey of new york
+leporinus_linnaeus_1758:
+  name: leporinus
+  rank: species
+  pages: 32
+  authority:
+    source: 1758_linnaeus
+  citedAs: leporinus. 5.
 lepadiformis_müller.o.f_1776:
   name: lepadiformis
   authority:
@@ -6781,6 +6808,13 @@ laernea:
   name: Laernea
   altSpellingOf: lernaea
   notes: IRMNG has as unaccepted taxon but Brug. 1791 instead of 1789?
+lemur:
+  name: Lemur
+  rank: genus
+  pages: 29
+  authority:
+    source: 1758_linnaeus
+  citedAs: 3. LEMUR.
 leuchtenbergii_volborth_1846:
   name: leuchtenbergii
   auth: [Volborth]
@@ -7156,7 +7190,7 @@ mammalia:
   pages: 14
   authority:
     source: 1758_linnaeus
-  citedAs: Classis I. MAMMALIA
+  citedAs: Classis I. MAMMALIA.
 mammaux:
   name: Mammaux
   vulgarSpellingOf: mammalia
@@ -7289,6 +7323,7 @@ midas_linnaeus_1758:
   pages: 28
   authority:
     source: 1758_linnaeus
+  citedAs: Midas. 15.
 mimus_sumrall_zamora_2011:
   name: mimus
   authority:
@@ -7640,7 +7675,7 @@ monstrosus_linnaeus_1758:
   pages: 22
   authority:
     source: 1758_linnaeus
-  citedAs: Monſtroſus ε
+  citedAs: Monſtroſus. ε.
 moorei_meek_1871:
   name: moorei
   auth: [Meek]
@@ -7667,6 +7702,7 @@ morta_linnaeus_1758:
   pages: 29
   authority:
     source: 1758_linnaeus
+  citedAs: Morta. 18.
 münsteri_eichwald_1840:
   name: münsteri
   authority:
@@ -7729,6 +7765,13 @@ murex:
   name: Murex
   authority:
     source: 1758_linnaeus
+murinus_linnaeus_1758:
+  name: murinus
+  rank: species
+  pages: 32
+  authority:
+    source: 1758_linnaeus
+  citedAs: murinus. 7.
 murphyi_sumrall_garbisch_pope_2000:
   name: murphyi
   auth: [sumrall, Garbisch, Pope]
@@ -8044,6 +8087,7 @@ oedipus_linnaeus_1758:
   pages: 28
   authority:
     source: 1758_linnaeus
+  citedAs: Oedipus. 13.
 oiseaux:
   name: Oiseaux
   vulgarSpellingOf: aves
@@ -8364,6 +8408,7 @@ paniscus_linnaeus_1758:
   pages: 26
   authority:
     source: 1758_linnaeus
+  citedAs: Paniſcus. 7.
 pannosus_holloway_jell_1983:
   name: pannosus
   authority:
@@ -8753,6 +8798,13 @@ perneri_jaekel_1901:
   name: perneri
   auth: [jaekel]
   year: 1901
+perspicillatus_linnaeus_1758:
+  name: perspicillatus
+  rank: species
+  pages: 31
+  authority:
+    source: 1758_linnaeus
+  citedAs: perſpicillatus. 3.
 pertusa_müller.o.f_1776:
   name: pertusa
   authority:
@@ -9224,7 +9276,7 @@ primates:
   pages: 20
   authority:
     source: 1758_linnaeus
-  citedAs: I. PRIMATES
+  citedAs: I. PRIMATES.
 primotica_henderson_shergold_1971:
   name: primotica
   auth: [Henderson, Shergold]
@@ -10292,7 +10344,7 @@ sapiens:
   pages: 20
   authority:
     source: 1758_linnaeus
-  citedAs: Sapiens 1.
+  citedAs: Sapiens. 1.
 saratogensis_ruedemann_1912:
   name: saratogensis
   auth: [ruedemann]
@@ -10314,6 +10366,7 @@ satyrus_linnaeus_1758:
   pages: 25
   authority:
     source: 1758_linnaeus
+  citedAs: Satyrus. 1.
 savagella:
   name: Savagella
   auth: [Foerste]
@@ -10360,6 +10413,13 @@ schuchertocystis:
   name: Schuchertocystis
   auth: [bassler]
   year: 1950
+sciuria_linnaeus_1758:
+  name: sciuria
+  rank: species
+  pages: 29
+  authority:
+    source: 1758_linnaeus
+  citedAs: ſciurea. 20.
 scolex:
   name: Scolex
   auth: [müller.o.f]
@@ -10575,12 +10635,14 @@ silenus_linnaeus_1758:
   pages: 26
   authority:
     source: 1758_linnaeus
+  citedAs: Silenus. 5.
 simia:
   name: Simia
-  rank: Order
+  rank: genus
   pages: 25
   authority:
     source: 1758_linnaeus
+  citedAs: 2. SIMIA.
 similis_billings_1857:
   name: similis
   authority:
@@ -10691,6 +10753,13 @@ spaskii_eichwald_1840:
   name: spaskii
   authority:
     source: 1840_eichwald
+spasma_linnaeus_1758:
+  name: spasma
+  rank: species
+  pages: 32
+  authority:
+    source: 1758_linnaeus
+  citedAs: Spaſma. 4.
 spatagus:
   name: Spatagus
   authority:
@@ -10725,6 +10794,14 @@ speciosus_hall_1852:
   name: speciosus
   authority:
     source: 1852_hall
+spectrum_linnaeus_1758:
+  name: spectrum
+  rank: species
+  pages: 31
+  authority:
+    source: 1758_linnaeus
+  citedAs: Spectrum. 2.
+  notes: There is a non-Unicode "ct" ligature in the citedAs.
 spencensis_wen.r.q_babcock_peng.j_robison_2019:
   name: spencensis
   authority:
@@ -10776,6 +10853,7 @@ sphinx_linnaeus_1758:
   pages: 25
   authority:
     source: 1758_linnaeus
+  citedAs: Sphinx. 3.
 spinis claviculatis_leske_1778:
   name: spinis claviculatis
   rank: variety
@@ -11247,10 +11325,18 @@ sylvanus_linnaeus_1758:
   pages: 25
   authority:
     source: 1758_linnaeus
+  citedAs: Sylvanus. 2.
 sypho_forsskål_1775:
   name: sypho
   auth: [forsskål]
   year: 1775
+syrichta_linnaeus_1758:
+  name: syrichta
+  rank: species
+  pages: 29
+  authority:
+    source: 1758_linnaeus
+  citedAs: Syrichta. 21.
 syringocrinida:
   name: Syringocrinida
   rank: Order
@@ -11277,6 +11363,13 @@ taenia:
   name: Taenia
   authority:
     source: 1758_linnaeus
+tardigradus_linnaeus_1758:
+  name: tardigradus
+  rank: species
+  pages: 29
+  authority:
+    source: 1758_linnaeus
+  citedAs: tardigradus. 1.
 tarentina_lamarck_1816:
   name: tarentina
   authority:
@@ -11670,7 +11763,7 @@ troglodytes_linnaeus_1758:
   pages: 24
   authority:
     source: 1758_linnaeus
-  citedAs: Troglodytes 2.
+  citedAs: Troglodytes. 2.
 tubaria_lamarck_1816:
   name: tubaria
   authority:
@@ -11921,6 +12014,13 @@ valvatida:
   rank: Order
   auth: [Perrier]
   year: 1884
+vampyrus_linnaeus_1758:
+  name: vampyrus
+  rank: species
+  pages: 31
+  authority:
+    source: 1758_linnaeus
+  citedAs: Vampyrus. 1.
 variegata_leske_1778:
   name: variegata
   authority:
@@ -12027,6 +12127,13 @@ vésiculaires:
   lang: FR
   authority:
     source: 1816b_lamarck
+vespertilio:
+  name: Vespertilio
+  rank: genus
+  pages: 31
+  authority:
+    source: 1758_linnaeus
+  citedAs: 4. VESPERTILIO.
 vetusta_foerste_1914:
   name: vetusta
   auth: [foerste]
@@ -12118,6 +12225,13 @@ vizcainoia:
   name: Vizcainoia
   auth: [zamora, smith.a.b]
   year: 2012
+volans_linnaeus_1758:
+  name: volans
+  rank: species
+  pages: 30
+  authority:
+    source: 1758_linnaeus
+  citedAs: volans. 3.
 volborthi_hecker_1939:
   name: volborthi
   auth: [Hecker]
