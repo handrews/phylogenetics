@@ -469,8 +469,9 @@ NULLABLE_FIELDS = ('material', 'illustrations', 'contexts', 'ranges')
 # Every content field that may be null on a primary node; `synonyms` and
 # `type` are the ones that cited entries may carry as a list or a node (a
 # nested synonymy, the type of a synonym), so the cited-entry rule above
-# reads only `NULLABLE_FIELDS` (`nomenclature.type_node` has `type: null`).
-ALL_NULLABLE_FIELDS = (*NULLABLE_FIELDS, 'synonyms', 'type')
+# reads only `NULLABLE_FIELDS` (`nomenclature.type_node` has `type: null`,
+# `nomenclature.children_null` `children: null`).
+ALL_NULLABLE_FIELDS = (*NULLABLE_FIELDS, 'synonyms', 'type', 'children')
 _PRIMARY_ONLY_KEYS = ('of', 'depicts')
 
 

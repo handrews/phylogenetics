@@ -148,10 +148,12 @@ GENUS_LEVEL_RANKS = ('genus', 'subgenus')
 # declaration. `fields`: the node fields whose presence (a value or a null)
 # counts the node as captured, a null in any being the audit's statement;
 # `unused`: the file-level `unused` fields that make the kind `na` (default
-# `fields`); `ranks`: count only the nodes of these ranks; `named`: leave
-# out the placeholders (an unnamed or open taxon); `via`: a field whose
-# entries carry a key that also counts as presence (a material entry's
-# `context` is an occurrence, a child's `isType` the type statement).
+# `fields`; `None`: the kind has no such form and is never `na`); `ranks`:
+# count only the nodes of these ranks; `excludeRanks`: count every node but
+# those of these ranks; `named`: leave out the placeholders (an unnamed or
+# open taxon); `via`: a field whose entries carry a key that also counts as
+# presence (a material entry's `context` is an occurrence, a child's
+# `isType` the type statement).
 DERIVED_KINDS = {
   'material': {'fields': ('material',), 'ranks': SPECIES_LEVEL_RANKS},
   'occurrences': {'fields': ('contexts', 'ranges'), 'via': ('material', 'context')},
@@ -162,6 +164,15 @@ DERIVED_KINDS = {
     'ranks': GENUS_LEVEL_RANKS,
     'named': True,
     'via': ('children', 'isType'),
+  },
+  # Every named node above the species level (genus and subgenus included): a
+  # list of `children` or a null is the source's say about its members, and a
+  # placeholder has none of its own.
+  'skeleton': {
+    'fields': ('children',),
+    'unused': None,
+    'excludeRanks': SPECIES_LEVEL_RANKS,
+    'named': True,
   },
 }
 
@@ -503,6 +514,10 @@ class _NodeClaims:
         claim['compared'] = {'sign': sign, 'taxon': data[sign]}
     if 'sensu' in data:
       claim['sensu'] = data['sensu']
+    # A root has no placement claim to carry `rankAsPrinted`; its usage
+    # carries the one statement a root makes about rank, that it has none.
+    if node.axis == 'root' and 'rank' in data and data['rank'] is None:
+      claim['rankAsPrinted'] = None
     self._emit(claim, field)
 
   def _placement_base(self):
@@ -781,7 +796,7 @@ class _NodeClaims:
   def _absences(self):
     """One `absence` claim per coverage kind the node nulls and carries no
     value for, in the order material, occurrences, illustrations, synonymy,
-    types: the auditor's statement that the source prints none for the node,
+    types, skeleton: the auditor's statement that the source prints none for the node,
     whatever its rank."""
     data = self.data
 
@@ -798,6 +813,7 @@ class _NodeClaims:
       ('illustrations', nulled('illustrations')),
       ('synonymy', nulled('synonyms')),
       ('types', nulled('type')),
+      ('skeleton', nulled('children')),
     ):
       if fields:
         claim = self._base('absence')
@@ -838,8 +854,8 @@ def _node_writes(data, fields, linked=False):
 
 def derived_coverage(roots):
   """Per source, `{kind: value}` for `material`, `occurrences`,
-  `illustrations`, `synonymy` and `types`, from raw node state over the primary,
-  non-cited, named nodes of the source's taxonomy trees (a cladogram prints
+  `illustrations`, `synonymy`, `types` and `skeleton`, from raw node state over
+  the primary, non-cited, named nodes of the source's taxonomy trees (a cladogram prints
   no material): `na` when the file lists the kind's fields as `unused`;
   `None` when no node writes a null for them (a value records what the
   source prints, not that the file was audited for it); else `all` when no
@@ -855,7 +871,13 @@ def derived_coverage(roots):
   may be written and is not, and a placeholder has no type); a node
   carrying `type`, a node or a null, or a child marked `isType` (the older
   form of the statement) counts as present, and only `type: null` writes a
-  null; `unused: [type]` is `na`."""
+  null; `unused: [type]` is `na`. For `skeleton` every named node above the
+  species level (genus and subgenus included) is counted (any rank but the
+  species-level ones; an `Unranked` or `section` node counts, a genus with
+  no `children` is one whose species are not yet entered); a node carrying
+  `children`, a list or a null, is present, and only `children: null` writes
+  a null. It has no `unused` form
+  and is never `na`."""
   out = {}
   for source_key, trees in roots.items():
     unused = set(trees[0].file_unused) if trees else set()
@@ -869,12 +891,15 @@ def derived_coverage(roots):
     values = {}
     for kind, spec in DERIVED_KINDS.items():
       fields = spec['fields']
-      if set(spec.get('unused', fields)) <= unused:
+      unused_fields = spec.get('unused', fields)
+      if unused_fields is not None and set(unused_fields) <= unused:
         values[kind] = 'na'
         continue
       counted = nodes
       if 'ranks' in spec:
         counted = [node for node in counted if node.taxon.rank in spec['ranks']]
+      if 'excludeRanks' in spec:
+        counted = [node for node in counted if node.taxon.rank.lower() not in spec['excludeRanks']]
       if spec.get('named'):
         counted = [node for node in counted if placeholder_kind(node.taxon) is None]
       via_field, via_key = spec.get('via', (None, None))
@@ -903,7 +928,7 @@ def derived_coverage(roots):
 
 
 def _effective_coverage(declared, derived_row):
-  """The declared `audit.coverage`, except that the five kinds derived
+  """The declared `audit.coverage`, except that the six kinds derived
   from node state take the derived value when there is one."""
   declared = declared or {}
   derived_row = derived_row or {}
@@ -1195,10 +1220,10 @@ def manifest(claims_by_source, roots):
             'remove the declaration'
           )
         continue
-      if kind in DERIVED_KINDS and kind not in ('synonymy', 'types'):
-        # The material kinds have no claim-count check; `synonymy` and
-        # `types` keep it for the sources that declare them and write no
-        # null.
+      if kind in DERIVED_KINDS and kind not in ('synonymy', 'types', 'skeleton'):
+        # The material kinds have no claim-count check; `synonymy`, `types`
+        # and `skeleton` keep it for the sources that declare them and write
+        # no null.
         continue
       count = claim_counts.get(kind, 0)
       if value in ('all', 'partly') and count == 0:

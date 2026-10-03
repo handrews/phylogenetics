@@ -33,6 +33,7 @@ ABSENCE_WORDS = {
   'illustrations': 'not figured',
   'synonymy': 'no synonymy given',
   'types': 'no type stated',
+  'skeleton': 'nothing placed under it',
 }
 PLURAL_KINDS = {'newTaxa', 'types', 'occurrences', 'illustrations'}
 # How a `type` node's `fixation` reads after the type, the Treatise's
@@ -605,6 +606,8 @@ class Words:
       if claim.get('nonMonophyletic'):
         flags.append(blocks.non_monophyly_words(claim['nonMonophyletic']))
       words = f'places it under {where}'
+      if 'rankAsPrinted' in claim and claim['rankAsPrinted'] is None:
+        words += ', unranked'
       if flags:
         words += ' (' + ', '.join(flags) + ')'
       if claim.get('tree') != 'taxonomy':

@@ -142,14 +142,17 @@ _ABSENCE_OF_KIND = {
   'material': ('material', 'occurrences', 'illustrations'),
   'acceptance': ('synonymy',),
   'act': ('types',),
+  'placement': ('skeleton',),
 }
 
 # The content kinds `statements` tabulates for a node, in order: the label,
 # the `materialKind`s that count (None: synonymy entries), the `absenceOf`
 # that says none is printed, and the coverage kind the source declares it under.
 # `'type'` for the `materialKind`s stands for the node's type statement (its
-# `type` node's act claim, else that of a child marked `isType`).
+# `type` node's act claim, else that of a child marked `isType`), `'children'`
+# for the placements of the node's children.
 _NODE_CONTENT = (
+  ('members', 'children', 'skeleton', 'skeleton'),
   ('specimens', {'specimen'}, 'material', 'material'),
   ('occurrences', {'occurrence', 'range'}, 'occurrences', 'occurrences'),
   ('figures', {'illustration'}, 'illustrations', 'illustrations'),
@@ -163,6 +166,11 @@ _SPECIES_LEVEL_CONTENT = frozenset({'specimens', 'figures'})
 # type statement and no `types` absence leaves the row out.
 _GENUS_LEVEL_CONTENT = frozenset({'type'})
 _GENUS_LEVEL_RANKS = ('genus', 'subgenus')
+# The members of a taxon above the species level are its subtree (a genus's
+# species, which a source often lists none of); at species level (infraspecific
+# names are entered when present) and for a placeholder the row appears only
+# with children entered or the `skeleton` absence.
+_ABOVE_SPECIES_CONTENT = frozenset({'members'})
 
 _RANK_ORDER = (
   'kingdom',
@@ -368,6 +376,11 @@ class ClaimStore:
     if usage and usage.get('compared'):
       # A cf. or aff. form: the source originates the form, not a new taxon.
       node['compared'] = usage['compared']['sign']
+    stated = placement or usage or {}
+    if 'rankAsPrinted' in stated and stated['rankAsPrinted'] is None:
+      # `rank: null`: the source places the taxon with no rank word.
+      rank_word = None
+      node['unranked'] = True
     if rank_word:
       node['rankWord'] = rank_word[:1].upper() + rank_word[1:]
     also = self.or_names_at.get((source_key, path))
@@ -1090,6 +1103,15 @@ class ClaimStore:
       if c['kind'] == 'act' and c['actKind'] == 'type'
     ]
 
+  def _children_placements(self, source_key, path):
+    """The ids of the placement claims of the node's `children` nodes."""
+    return [
+      c['id']
+      for child in self._children_paths(source_key, path)
+      for c in self._node_claims(source_key, child)
+      if c['kind'] == 'placement' and not c.get('via')
+    ]
+
   def _node_content(self, source_key, record, path):
     """What a source gives at one node, per content kind: entered (with the
     count and the claims it rests on), none printed (the auditor's `absence`
@@ -1097,12 +1119,18 @@ class ClaimStore:
     entered. Above species rank the specimens and figures rows appear only
     when the node carries something of the kind, and the type row appears
     for a genus or subgenus, and at any other rank only with a type
-    statement or a `types` absence."""
+    statement or a `types` absence. The members row appears for a named
+    node above the species level (genus and subgenus included), and at
+    species level only with children entered or a `skeleton` absence."""
     at = self._node_claims(source_key, path)
     coverage = self.sources[source_key].get('coverage') or {}
     species_level = self._rank_of(record) in blocks.SPECIES_GROUP
     # A placeholder (an unnamed or open genus) has no type to state.
     genus_level = self._rank_of(record) in _GENUS_LEVEL_RANKS and not (
+      self.names.get(record) or {}
+    ).get('placeholder')
+    # A placeholder (an unnamed or open taxon) has no members of its own.
+    above_species = self._rank_of(record) not in blocks.SPECIES_GROUP and not (
       self.names.get(record) or {}
     ).get('placeholder')
     rows = []
@@ -1112,6 +1140,9 @@ class ClaimStore:
         incomplete = False
       elif material_kinds == 'type':
         ids = self._type_statements(source_key, path)
+        incomplete = False
+      elif material_kinds == 'children':
+        ids = self._children_placements(source_key, path)
         incomplete = False
       else:
         found = [
@@ -1129,6 +1160,8 @@ class ClaimStore:
       elif label in _SPECIES_LEVEL_CONTENT and not species_level:
         continue
       elif label in _GENUS_LEVEL_CONTENT and not genus_level:
+        continue
+      elif label in _ABOVE_SPECIES_CONTENT and not above_species:
         continue
       elif coverage.get(coverage_kind) in ('na', 'all'):
         # The source prints none anywhere, or enters all it prints of the kind.

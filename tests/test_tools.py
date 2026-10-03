@@ -953,10 +953,14 @@ def test_absence_table_groups_a_record_by_node(store):
   # an open taxon of its own.
   block = store.statements('palaeocystites', source='1973_sprinkle', kind='absence')
   assert block['title'] == 'Palaeocystites Billings 1858 in Sprinkle 1973'
-  assert [row['group'] for row in block['rows']] == ['Palaeocystites (p. 139)'] * 3 + [
+  # The first node has a species under it (a members row `entered`); the
+  # second has none, and its members row is `not entered`.
+  assert [row['group'] for row in block['rows']] == ['Palaeocystites (p. 139)'] * 4 + [
     'Palaeocystites (p. 186)'
-  ] * 3
-  assert [len(node['rows']) for node in block['content']] == [3, 3]
+  ] * 4
+  assert [len(node['rows']) for node in block['content']] == [4, 4]
+  assert [node['rows'][0]['kind'] for node in block['content']] == ['members', 'members']
+  assert [node['rows'][0]['state'] for node in block['content']] == ['entered', 'notEntered']
   assert [node['page'] for node in block['content']] == [139, 186]
   assert '-- Palaeocystites (p. 186) --' in block['rendered']
 
@@ -964,11 +968,18 @@ def test_absence_table_groups_a_record_by_node(store):
 def test_absence_table_leaves_out_species_level_kinds_above_species(store):
   # Specimens and figures are cited for species: a genus with neither gets
   # no row for them, and a genus that is figured keeps its figures row. The
-  # genus has a type row, entered here from the child marked `isType`.
+  # genus has a type row, entered here from the child marked `isType`, and
+  # a members row for the species placed under it.
   bare = store.statements('lepidocystis', source='1973_sprinkle', kind='absence')
-  assert [r['kind'] for r in bare['content'][0]['rows']] == ['occurrences', 'synonymy', 'type']
+  assert [r['kind'] for r in bare['content'][0]['rows']] == [
+    'members',
+    'occurrences',
+    'synonymy',
+    'type',
+  ]
   figured = store.statements('gogia', source='1973_sprinkle', kind='absence')
   assert [(r['kind'], r['state']) for r in figured['content'][0]['rows']] == [
+    ('members', 'entered'),
     ('occurrences', 'entered'),
     ('figures', 'entered'),
     ('synonymy', 'notEntered'),

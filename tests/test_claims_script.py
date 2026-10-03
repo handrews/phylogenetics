@@ -1,7 +1,9 @@
 """`report_inconsistencies` in scripts/claims.py: the explanation it prints
-for each kind of manifest inconsistency row, on a synthetic tree."""
+for each kind of manifest inconsistency row, on a synthetic tree; and
+`--errors-only`, over a load that logs what the test says."""
 
 import importlib.util
+import logging
 import pathlib
 
 from phylohist.claims import extract
@@ -113,3 +115,38 @@ def test_repositories_file_keeps_the_registry_fields_the_store_reads(load_record
   assert list(registry) == sorted(registry)
   assert registry['uq-f']['prefixes'] == ['UQF', 'F']
   assert all(set(entry) <= set(claims_script._REPOSITORY_FIELDS) for entry in registry.values())
+
+
+def _run(monkeypatch, caplog, tmp_path, flag, *, error):
+  """Run the script over a load that logs a warning, and an error when
+  `error`; the messages that come out, in order."""
+
+  def fake_load(drafts=False, tolerate=False):
+    log = logging.getLogger('phylohist.loader.load')
+    log.warning('a warning')
+    if error:
+      log.error('an error')
+    log.info('a note')
+    return {}, {}
+
+  monkeypatch.setattr(claims_script, 'load', fake_load)
+  argv = ['--out', str(tmp_path), *flag]
+  with caplog.at_level(logging.WARNING):
+    claims_script.main(argv)
+  return [r.getMessage() for r in caplog.records if r.name == 'phylohist.loader.load']
+
+
+def test_errors_only_shows_the_errors_when_there_are_any(
+  load_records, monkeypatch, caplog, tmp_path, capsys
+):
+  assert _run(monkeypatch, caplog, tmp_path, [], error=True) == ['a warning', 'an error']
+  caplog.clear()
+  assert _run(monkeypatch, caplog, tmp_path, ['--errors-only'], error=True) == ['an error']
+  # The final count is the script's own and stays.
+  assert '1 integrity errors while loading (tolerated)' in capsys.readouterr().err
+
+
+def test_errors_only_shows_the_warnings_when_there_are_no_errors(
+  load_records, monkeypatch, caplog, tmp_path
+):
+  assert _run(monkeypatch, caplog, tmp_path, ['--errors-only'], error=False) == ['a warning']

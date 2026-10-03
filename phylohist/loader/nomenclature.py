@@ -1,5 +1,5 @@
 """Open-nomenclature integrity checks: the `cf`/`aff` link of an open form,
-`quotedParent`, a queried role, and the `type` node.
+`quotedParent`, a queried role, the `type` node, and `pages: null`.
 
 Pure functions over a raw node dict, in the way of `material.py`: the
 loader (`load.py`) runs them over the corpus's own documents and
@@ -161,6 +161,28 @@ def type_node(node, is_cited):
       ),
     )
   return messages
+
+
+def children_null(node, is_cited):
+  """`children: null` says the source places nothing under the node's taxon
+  (roadmap G11), an auditor's statement about a primary node, so it is an
+  error on a cited entry. (`Tree` checks the rank.)"""
+  if 'children' in node and node['children'] is None and is_cited:
+    return [('error', 'cited entry carries `children: null`')]
+  return []
+
+
+def inferred_pages(node):
+  """`pages: null` says the node has no page in this source because the
+  editor inferred it, so it is an error on a node whose `editorial.inferred`
+  is not `true`."""
+  if 'pages' not in node or node['pages'] is not None:
+    return []
+  if (node.get('editorial') or {}).get('inferred') is True:
+    return []
+  return [
+    ('error', '`pages: null` on a node the source prints; only an inferred node has no page'),
+  ]
 
 
 def compared_link_conflicts(documents):

@@ -157,9 +157,9 @@ $defs:
           source carries none. A user's confidence in an answer is the
           conjunction: audited, and complete for the kinds the question
           touches. For a source whose tree writes nulls (roadmap G11),
-          `material`, `occurrences`, `illustrations`, `synonymy` and `types`
-          are derived from the tree and are not declared; `coverage` then
-          carries `skeleton`, `newTaxa` and `phylogeny`.
+          `material`, `occurrences`, `illustrations`, `synonymy`, `types` and
+          `skeleton` are derived from the tree and are not declared;
+          `coverage` then carries `newTaxa` and `phylogeny`.
         type: object
         additionalProperties: false
         required: [state]
@@ -345,11 +345,23 @@ $defs:
     - Unranked
 
   citationFields:
+    $comment: |
+      What a tree node and a taxon record share. `rank` and `pages` are
+      declared by each (a node's may be `null`), so neither is here.
     properties:
-      rank:
-        $ref: "#/$defs/rank"
       bracket:
         ### TODO: Replace this property name
+        type: string
+      citedAs:
+        description: |
+          A bibliographic reference exactly as printed in the source being
+          transcribed, including any errors or OCR artifacts.  Used for synonymy
+          lists, where the point is to record what that paper listed.  The
+          citation's own attribution goes in `authority` when the work has a
+          record in sources.yaml, or in `auth`/`year` when it does not.
+          On a taxa record, the name as its protologue prints it, when that
+          differs from `name` (the heading REGNUM ANIMALE for Animalia; a
+          variety printed as 'Afer δ').
         type: string
     allOf:
     - $ref: "#/$defs/authorityFields"
@@ -373,8 +385,6 @@ $defs:
 
   locationFields:
     properties:
-      pages:
-        $ref: "#/$defs/citationNumbers"
       illustrations:
         description: |
           On a primary node, the figures this source prints for it; `null`
@@ -417,7 +427,19 @@ $defs:
       - required: [altRankOf, rank]
       - required: [altSpellingOf, name]
       - required: [vulgarSpellingOf, name]
+    dependentRequired:
+      pages: [rank]
     properties:
+      rank:
+        description: |
+          Explicit on a record that gives its protologue `pages`, where the
+          tree node leaves a genus or species implicit; `null` says the
+          protologue placed the taxon with no rank word.
+        oneOf:
+        - $ref: "#/$defs/rank"
+        - type: "null"
+      pages:
+        $ref: "#/$defs/citationNumbers"
       name:
         type: [string, "null"]
         pattern: ^[\w][\w._ -]*$
@@ -469,6 +491,20 @@ $defs:
     - $ref: "phylogeny#/$defs/uncertaintyFields"
     - $ref: "phylogeny#/$defs/metaFields"
     properties:
+      rank:
+        description: |
+          `null`: the source places the taxon with no rank word.
+        oneOf:
+        - $ref: "phylogeny#/$defs/rank"
+        - type: "null"
+      pages:
+        description: |
+          `null` only on an inferred node (`editorial.inferred: true`): the
+          editor supplied the node and it has no page in this source (the
+          loader checks this).
+        oneOf:
+        - $ref: "phylogeny#/$defs/citationNumbers"
+        - type: "null"
       mergeInto:
         type: array
         minItems: 2
@@ -478,7 +514,11 @@ $defs:
         - type: integer
           minimum: 0
       children:
-        type: array
+        description: |
+          The nodes the source places under this one. `null`, on a primary
+          node above the species level (a genus and a subgenus included), says the source places nothing under it
+          (roadmap G11); absent, the subtree is not entered.
+        type: [array, "null"]
         items:
           $dynamicRef: "#tree"
       parents:
@@ -505,14 +545,6 @@ $defs:
         description: |
           The taxon this open form is compared with, "aff." for a form the
           source thinks new and related; only on an `openTaxon` node.
-        type: string
-      citedAs:
-        description: |
-          A bibliographic reference exactly as printed in the source being
-          transcribed, including any errors or OCR artifacts.  Used for synonymy
-          lists, where the point is to record what that paper listed.  The
-          citation's own attribution goes in `authority` when the work has a
-          record in sources.yaml, or in `auth`/`year` when it does not.
         type: string
 
   uncertaintyFields:

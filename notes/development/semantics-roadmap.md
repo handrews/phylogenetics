@@ -406,7 +406,7 @@ an ordinary resolved citation that needs no `editorial` block.
 | `stem` | "stem-group" | stem-group usage | — (flag) | keep |
 | `outgroup` | cladogram outgroup | outgroup | — (flag) | keep |
 | `bracket` (tree) | clade bracket / label | named clade in a cladogram | — | keep |
-| `rank` (tree) | rank as printed here | rank as used by this source | — | keep; overrides taxon rank |
+| `rank` (tree) | rank as printed here | rank as used by this source | — | keep; overrides taxon rank; `null` says the source places the taxon with no rank word (2026-10-03) |
 
 Taxon-record relations:
 
@@ -757,7 +757,8 @@ Agelacrinitidae". An inferred node needs a marker the claim table can read:
 ```
 
 The claim table emits the placement as editorial, not as the source's. See
-"The `editorial` block" under Ground rules.
+"The `editorial` block" under Ground rules. An inferred node has no page in
+the source, so it writes `pages: null` (done 2026-10-03).
 
 **B21. A `non` entry that says where the usage belongs.** "non S. citrus
 HISINGER, 1837, p. 91, = Echinosphaerites aurantium (GYLLENHAAL)" (S229).
@@ -1062,8 +1063,9 @@ ranges:                        # distribution statements, not provenance
   statement with neither is a range (Dehm 1961's period-plus-region
   entries).
 - Nulls (G11): `material: null`, `illustrations: null`, `contexts: null`,
-  `ranges: null` (and `synonyms: null`, `type: null`) say the source prints
-  none for the node; the file-level
+  `ranges: null` (and `synonyms: null`, `type: null`; `children: null`
+  says the source places nothing under a node above the species level)
+  say the source prints none for the node; the file-level
   `unused` list says a field appears nowhere. Only an auditor writes
   either; a draft never does.
 
@@ -1374,6 +1376,21 @@ resolves in `time.yaml` (E6).
 name across all sources, and its source equals the name's authority source. The
 second half exists in `Tree._check_primary_taxon`; the first does not.
 
+Built 2026-10-03: a taxa record that has `pages` is checked against the node
+marked `new` for it in its authority's tree, for `rank`, `pages`,
+`illustrations` and `citedAs`, on the fields the node declares (a node that
+prints no `citedAs` and declares none leaves the record free to carry one);
+a record may not carry a value for a field its tree file lists as `unused`.
+`citedAs` on a record is the name as its protologue prints it, when that
+differs from `name`. A record with `pages` spells its `rank` (the schema
+requires it; `null` says the protologue placed the taxon with no rank word),
+where a tree node leaves a genus or species implicit: a node with no `rank`
+implies a species when its name is lower-case, else a genus, and the record
+must say the same. A `rank: null` node agrees with a record's `null` or
+`Unranked`, and a node's `pages: null` (an inferred node) never agrees with
+a record's pages. (`_report_protologue_mismatches`, in
+`phylohist/loader/load.py`.)
+
 **F7 (MVP). `removed` recursion** (B5).
 
 **F8 (MVP). cf./aff. position** (C2).
@@ -1526,9 +1543,10 @@ worth keeping goes in `citedAs`, never into identity.
 **G11. Coverage derived from the tree, through nulls; the audit block
 keeps verification and the source-level kinds (direction agreed
 2026-09-27; to be built with D1, not before).** Built 2026-09-30 to
-2026-10-01: the six content fields are nullable (`type` the last added),
-the five content kinds are derived, a null is an `absence` claim; what
-remains is migrating the audited sources' declarations to nulls.
+2026-10-03: the seven content fields are nullable (`type` and `children`
+the last added), the six content kinds are derived, a null is an `absence`
+claim; what remains is migrating the audited sources' declarations to
+nulls.
 
 G1 declares coverage per
 source because the tree never holds the denominator: it cannot say
@@ -1564,7 +1582,11 @@ Fields fall into three classes, and only the third is nullable:
 - Structural and editorial, never null: `parents` (a device of the
   binomial handling, not something a paper uses or omits), `citedAs`,
   `notes`, `editorial`, and `pages`, since a locator is always wanted
-  and its absence is always "not captured".
+  and its absence is always "not captured". The one exception is
+  `pages: null` on an inferred node (2026-10-03): it says the editor's
+  node has no page in this source; it is not a content null. (`rank` is
+  not a content field either; `rank: null` on a node is a printed
+  statement, that the source places the taxon with no rank.)
 - Act flags, never null: `new`, `isType`, `emended`, `provisional` and
   the rest (`isType` stays an act flag; the null for the type is `type`).
   Absence means the act is not recorded; whether that can be read as
@@ -1579,17 +1601,28 @@ Fields fall into three classes, and only the third is nullable:
   exclusions is a synonymy). `type` joins them (2026-10-01): `type: null`
   says the source states no type for the taxon, and is an error on a
   cited entry, in a draft, and beside a child marked `isType`.
-  `children` could join in principle (`children: null` for a taxon the
-  paper places nothing under), but nulling every species is the bloat the
-  file-level list exists to avoid, so skeleton stays source-level.
+  `children` joins them (2026-10-03): `children: null` on a primary node
+  above the species level (a genus and a subgenus included) says the
+  source places nothing under the taxon (the tree stops there), a list is
+  what it places, and absent is, as the ground rules already say, not
+  entered, so the subtree is not read as empty. A genus with no `children`
+  is a genus whose species are not yet entered (many genera of Linnaeus
+  1758 are in that state). Only a species-level node may not write the
+  null: infraspecific names are rare enough to be entered when present, so
+  their absence says nothing. The null is also an error on a cited entry,
+  in a draft, and on a node of a cladogram or other tree that is not a
+  taxonomy. `Unranked`, `section` and the other informal ranks count as
+  above the species level. There is no `unused` form: the tree's own nulls
+  say where it stops, so `skeleton` is never `na`.
 
 What stays declared in the audit block: `state` and `notes`, because a
 negative observation is the easiest to get wrong and the nulls carry no
 reliability signal of their own; and the kinds that are not content
-fields, `skeleton` (taxa not in the tree at all) and `newTaxa` (a flag,
-whose "partly" means "not every node was checked for the act", which has
-no node-level form). `types` was declared the same way until `type` became
-a content field (2026-10-01). For the content kinds the map is derived:
+fields, `newTaxa` (a flag, whose "partly" means "not every node was
+checked for the act", which has no node-level form) and `phylogeny`.
+`types` was declared the same way until `type` became a content field
+(2026-10-01), and `skeleton` until `children` did (2026-10-03). For the
+content kinds the map is derived:
 `na` when the file lists the field as unused; `None`, declaring nothing,
 when no node writes a null for it (a value alone records what the source
 prints, not that the file was audited for it); otherwise `all` when no
@@ -1608,17 +1641,23 @@ every rank. `types` counts the named genus and subgenus nodes (a
 placeholder has no type, a family's `type` is written and not counted): a
 node carrying `type`, a node or a null, or a child marked `isType` (the
 older form of the same statement) is present, only `type: null` writes a
-null, and `unused: [type]` is `na`. A derived kind that the source also
-declares is an inconsistency row, whether or not the two agree, so the
+null, and `unused: [type]` is `na`. `skeleton` counts the named nodes above
+the species level, genus and subgenus included (any rank but the
+species-level ones; a placeholder is a bin with no members of its own and
+is not counted): a node carrying `children`, a list or a null, is present,
+only `children: null` writes a null, and the kind is never `na`. A derived kind that the source
+also declares is an inconsistency row, whether or not the two agree, so the
 declaration goes when the nulls come; a source that writes no null for
-`synonymy` or `types` keeps its declared value and the claim-count check on
-it. The function is `claims.derived_coverage`.
+`synonymy`, `types` or `skeleton` keeps its declared value and the
+claim-count check on it. The function is `claims.derived_coverage`.
 
 A null is also a claim. Each node's null becomes an `absence` claim
-(`absenceOf` `material`, `occurrences`, `illustrations`, `synonymy` or
-`types`), which `statements` words ("no specimens cited") and `synonymy` states
-("gives no synonymy"), so the answer for one taxon no longer falls back to
-the source's coverage. Where a source's illustrations are `all`, a
+(`absenceOf` `material`, `occurrences`, `illustrations`, `synonymy`,
+`types` or `skeleton`), which `statements` words ("no specimens cited",
+"nothing placed under it") and `synonymy` states ("gives no synonymy"), so
+the answer for one taxon no longer falls back to the source's coverage; the
+absence table's first row, `members`, says how many nodes the source places
+under the taxon, or that it places none. Where a source's illustrations are `all`, a
 specimen no figure names is derived as `figured: false` ("(not figured)").
 
 Two conventions to fix before the first null is written: `null`, never
@@ -1647,10 +1686,11 @@ for `contexts` or `ranges` (or a material entry linked to a context) on
 every named node of the taxonomy; a value or a null for `material` and
 `illustrations` on every species-level node; a value or a null for `type`
 on every named genus and subgenus (an `isType` child counts until the
-source is re-read); `unused` at the top of the file for a field the paper
+source is re-read); `children`, a list or null, on every named node above
+the species level; `unused` at the top of the file for a field the paper
 uses nowhere; and on the source record
-`audit: {state: complete, coverage: {skeleton, newTaxa, phylogeny},
-notes}` with no entry for the derived kinds.
+`audit: {state: complete, coverage: {newTaxa, phylogeny}, notes}` with no
+entry for the derived kinds.
 
 ---
 

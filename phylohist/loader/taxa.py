@@ -199,6 +199,9 @@ class Taxon:
     self._name = self._data.get('name')
     self._rank = self._data.get('rank')
 
+    if 'rank' in self._data and self._rank is None:
+      # An explicit null: the protologue placed the taxon with no rank word.
+      self._rank = 'Unranked'
     if not self._rank:
       if self._name is None:
         logger.error(f'Unnamed, unranked taxon {taxon_key}!')
@@ -569,8 +572,12 @@ class Tree:
       else:
         self._related[axis.name] = []
 
-    for index, child in enumerate(self._data.get('children', ())):
+    for index, child in enumerate(self._data.get('children') or ()):
       self._children.append(Tree(child, parent=self, relpath=('children', index)))
+
+    children_null = 'children' in self._data and self._data['children'] is None
+    if children_null and self._type != self.TYPE_TAXONOMY:
+      logger.error(f'{self}: `children: null` outside a taxonomy')
 
     if self._taxon:
       # A new combination is an act on a species-group name.
@@ -579,6 +586,12 @@ class Tree:
 
       if 'type' in self._data and self._taxon.rank.lower() in _SPECIES_LEVEL_RANKS:
         logger.error(f'{self} carries `type` but is a species-level name; its type is a specimen')
+
+      if children_null and self._taxon.rank.lower() in _SPECIES_LEVEL_RANKS:
+        logger.error(
+          f'{self} carries `children: null` but is a species-level name; '
+          'only a taxon above the species says the tree stops'
+        )
 
       if self._taxon.name:
         Tree._taxon_index[self._taxon.name].add(self.root)

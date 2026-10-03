@@ -8,8 +8,8 @@ yet. It then runs the material checks
 (`phylohist.loader.material`) over the draft's nodes: a cited entry carrying
 `material`/`contexts`/`ranges`, a null `illustrations`, or an `of`/`depicts`
 in its `illustrations` (or in an `authority`'s); a null `material`,
-`illustrations`, `contexts`, `ranges`, `synonyms` or `type` on a primary
-node (only an auditor sets nulls); a `unused` field still present on a node; an explicit
+`illustrations`, `contexts`, `ranges`, `synonyms`, `type` or `children` on a
+primary node (only an auditor sets nulls); a `unused` field still present on a node; an explicit
 `repository` that is no registry key; a `prefix` missing from the file's
 `prefixes` map, a map entry that is unused, not a registry key or not a known
 form of its register, numbers with no prefix, repository or holder, a number
@@ -19,7 +19,8 @@ open-nomenclature checks (`phylohist.loader.nomenclature`) add a `cf` or `aff`
 off an `openTaxon` node, on both, or aimed at a missing, unnamed or other-rank
 taxon; a `quotedParent` above the species level; a `roleUncertain` with no
 `role`; a `type` node with no taxon, beside a child marked `isType`, or with
-a `fixedBy` its `fixation` cannot explain; and an open form linked to two
+a `fixedBy` its `fixation` cannot explain; a `pages: null` on a node that is
+not marked `editorial.inferred: true`; and an open form linked to two
 different taxa (a warning). The
 `sameAs` links (`phylohist.loader.material.same_as_links`) are checked against
 the tree files in `data/trees/` that the draft's links name: a source with no
@@ -123,6 +124,8 @@ def check_material(draft, repositories, taxa):
       (nomenclature.quoted_parent, (node, taxa)),
       (nomenclature.role_uncertain, (node,)),
       (nomenclature.type_node, (node, is_cited)),
+      (nomenclature.children_null, (node, is_cited)),
+      (nomenclature.inferred_pages, (node,)),
     ):
       messages.extend((level, f'{path}: {message}') for level, message in check(*args))
 
