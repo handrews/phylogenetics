@@ -27,26 +27,90 @@
   - linnaeus
   identifiers:
     url: https://www.biodiversitylibrary.org/page/726886#page/3/mode/1up
-1760a_linnaeus:
-  book: systema-naturae-11th-ed
+1759_baster:
+  book: natuurkundige
   volume: 1
   number: 1
+  pages:
+  - 1
+  - 56
   pubDate:
-    year: 1760
+    year: 1759
   authors:
-  - linnaeus
+  - baster
   identifiers:
-    url: https://www.biodiversitylibrary.org/item/31224#page/5/mode/1up
-1760b_linnaeus:
-  book: systema-naturae-11th-ed
+    url: https://archive.org/details/natuurkundigeuit01bast/page/n7/mode/2up
+  notes: Simultaneously published in Latin; did not use binomial nomenclature
+1760_baster:
+  book: natuurkundige
   volume: 1
   number: 2
+  pages:
+  - 61
+  - 112
   pubDate:
     year: 1760
   authors:
-  - linnaeus
+  - baster
   identifiers:
-    url: https://www.biodiversitylibrary.org/item/31242#page/7/mode/1up
+    url: https://archive.org/details/natuurkundigeuit01bast/page/n77/mode/2up
+  notes: Simultaneously published in Latin; did not use binomial nomenclature
+1761_baster:
+  book: natuurkundige
+  volume: 1
+  number: 3
+  pages:
+  - 113
+  - 174
+  pubDate:
+    year: 1761
+  authors:
+  - baster
+  identifiers:
+    url: https://archive.org/details/natuurkundigeuit01bast/page/n141/mode/2up
+  notes: Simultaneously published in Latin; did not use binomial nomenclature
+1762_baster:
+  book: natuurkundige
+  volume: 2
+  number: 1
+  pages:
+  - 1
+  - 52
+  pubDate:
+    year: 1762
+  authors:
+  - baster
+  identifiers:
+    url: https://archive.org/details/natuurkundigeuit02bast/page/n7/mode/2up
+  notes: Simultaneously published in Latin; did not use binomial nomenclature
+1765a_baster:
+  book: natuurkundige
+  volume: 2
+  number: 2
+  pages:
+  - 53
+  - 110
+  pubDate:
+    year: 1765
+  authors:
+  - baster
+  identifiers:
+    url: https://archive.org/details/natuurkundigeuit02bast/page/n67/mode/2up
+  notes: Simultaneously published in Latin; did not use binomial nomenclature
+1765b_baster:
+  book: natuurkundige
+  volume: 2
+  number: 3
+  pages:
+  - 111
+  - 171
+  pubDate:
+    year: 1765
+  authors:
+  - baster
+  identifiers:
+    url: https://archive.org/details/natuurkundigeuit02bast/page/110/mode/2up
+  notes: Simultaneously published in Latin; did not use binomial nomenclature
 1766_linnaeus:
   book: systema-naturae-12th-ed
   volume: 1
