@@ -424,7 +424,7 @@ taxonomies:
         citedAs: 34. EQVUS.
         new: true
         pages: 73
-      - taxon: hippopotomus
+      - taxon: hippopotamus
         citedAs: 35. HIPPOPOTAMUS.
         new: true
         pages: 74
@@ -625,6 +625,7 @@ taxonomies:
         new: true
         pages: 651
     - taxon: mollusca
+      citedAs: II. MOLLUSCA.
       rank: Order
       new: true
       pages: 652
@@ -826,6 +827,7 @@ taxonomies:
             new: true
             pages: 666
     - taxon: testacea
+      citedAs: III. TESTACEA.
       rank: Order
       new: true
       pages: 667

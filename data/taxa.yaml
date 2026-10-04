@@ -2520,7 +2520,7 @@ coelomocoela-grade:
 coleoptera:
   name: Coleoptera
   rank: Order
-  page: 345
+  pages: 345
   authority:
     source: 1758_linnaeus
   citedAs: I. COLEOPTERA.
@@ -3329,13 +3329,13 @@ dawsoni_billings_1858:
   name: dawsoni
   authority:
     source: 1858a_billings
-daysypus:
-  name: Daysypus
+dasypus:
+  name: Dasypus
   rank: genus
   pages: 50
   authority:
     source: 1758_linnaeus
-  citedAs: 17. DAYSYPUS
+  citedAs: 17. DASYPUS
 deani_ubaghs_1994:
   name: deani
   auth: [ubaghs]
@@ -6432,9 +6432,13 @@ intestina:
   authority:
     source: 1758_linnaeus
   citedAs: I. INTESTINA.
+intestina-order:
+  rank: Order
+  altRankOf: intestina
+  notes: Temporary during migration.
 intestina-class:
   rank: Class
-  altRankOf: intestina-order
+  altRankOf: intestina
 intestinaux-class:
   name: Intestinaux
   rank: Class
@@ -7457,8 +7461,8 @@ mammillata-var-4_leske_1778:
   authority:
     source: 1778_leske
 manatus_linnaeus_1758:
-  name: Manatus
-  rank: genus
+  name: manatus
+  rank: species
   pages: 33
   authority:
     source: 1758_linnaeus
@@ -7828,9 +7832,11 @@ mollasses_vers:
     source: 1816a_lamarck
 mollusca:
   name: Mollusca
-  rank: Phylum
+  rank: Order
+  pages: 652
   authority:
     source: 1758_linnaeus
+  citedAs: II. MOLLUSCA.
 mollusques-phylum:
   name: Mollusques
   vulgarSpellingOf: mollusca
@@ -8093,7 +8099,7 @@ nantes:
   pages: 230
   authority:
     source: 1758_linnaeus
-  citesAs: III. NANTES.
+  citedAs: III. NANTES.
 narrawayella:
   name: Narrawayella
   auth: [foerste]
@@ -10698,7 +10704,7 @@ sans vertébrés:
     but it has been argued that this source established Vertebrata, and I've
     translated Cuvier's "embranchement" as "phylum" (as have others), and
     Cuvier treated Vertébrés as such.
-sapiensl_linnaeus_1758:
+sapiens_linnaeus_1758:
   name: sapiens
   rank: species
   pages: 20
@@ -11867,11 +11873,13 @@ tessellata_leske_1778:
   authority:
     source: 1778_leske
   notes: Cidaris
-testacea-order:
+testacea:
   name: Testacea
   rank: Order
+  pages: 667
   authority:
     source: 1758_linnaeus
+  citedAs: III. TESTACEA.
 testacea-unnamed-section-1_linnaeus_1758:
   name: null
   rank: section
@@ -11907,7 +11915,7 @@ tetracystis:
   auth: [schuchert]
   year: 1904
 tetradactyla_linnaeus_1758:
-  name: tetradactylus
+  name: tetradactyla
   rank: species
   pages: 35
   authority:
@@ -12654,8 +12662,8 @@ vittata_forsskål_1775:
   name: vittata
   auth: [forsskål]
   year: 1775
-vitulina_linnaeus_1748:
-  name: vitullina
+vitulina_linnaeus_1758:
+  name: vitulina
   rank: species
   pages: 38
   authority:
