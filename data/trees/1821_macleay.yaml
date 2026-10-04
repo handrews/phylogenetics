@@ -42,10 +42,12 @@ taxonomies:
   - taxon: vertebrata
     children:
     - taxon: reptilia
+      notes: Probably sensu Blainville 1816 but not immediately clear.
     - taxon: aves
     - taxon: mammalia
     - taxon: pisces
     - taxon: amphibia
+      notes: Possibly sensu Blainville 1816 but not immediately clear.
   - taxon: cephalopoda-class
   - taxon: mollusca
     rank: Order
