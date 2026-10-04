@@ -1,0 +1,154 @@
+notes: >
+  Trees published as diagrams but intended as taxonomies.
+  Exact punctuation and capitalization varies across the tree, so
+  while the "citedAs" fields are intended to be exact, they may
+  not be consistent and subtle errors distinct from the intentional
+  inconsistencies are likely.
+- taxon: animaux
+  citedAs: ANIMAUX.
+  rank: Kingdom
+  pages:
+  children:
+  - taxon: artiomorphes
+    citedAs: I.ᵉʳ Sous-règne Pairs ou ARTIOMORPHES
+    rank: Subkingdom
+    children:
+    - taxon: ostéozoaires
+      citedAs: Type I. Vertèbrés ou OSTÉOZOAIRES.
+      rank: Type
+      children:
+      - taxon: mastozoaiers
+        citedAs: I.ᵉʳ Sous-type Vivipares out MASTOZOAIRES.
+        rank: Subtype
+        children:
+        - taxon: pilifères
+          citedAs: I. PILIFÈRES, les Mammifères.
+          rank: Class
+      - taxon: amastozoaires
+        citedAs: II.ᵉ Sous-type. Ovipares pourvus. ou AMASTOZOAIRES.
+        rank: Subtype
+        children:
+        - taxon: pennifères
+          citedAs: de plumes II. PENNIFÈRES., les Ouiseaux.
+          rank: Class
+        - taxon: squammifères
+          citedAs: d'écailles III. SQUAMMIFÈRES, les Reptiles.
+          rank: Class
+          notes: Bracketed under REPTILES. on page 111.
+        - taxon: nudipellifères
+          citedAs: d'une peau nue IV. NUDIPELLIFÈRES, les Amphibiens.
+          rank: Class
+          notes: Bracketed under REPTILES. on page 111.
+        - taxon: branchifères
+          citedAs: de branchies V. BRANCHIFÈRES, les Poissons.
+          rank: Class
+    - taxon: anostéozoaires
+      citedAs: Type II. Invertèbrés ou ANOSTÉOZOAIRES.
+      rank: Type
+      children:
+      - taxon: malacozoaires
+        citedAs: I.ᵉʳ Sous-type. non articulés; Mollusques MALACOZOAIRES.
+        rank: Subtype
+        children:
+        - taxon: céphalophores
+          citedAs: distincte. VI. CÉPHALOPHORES.
+          rank: Class
+        - taxon: acéphalophores
+          citedAs: mulle. VII. ACÉPHALOPHORES.
+          rank: Class
+      - taxon: sub-entomozoaires
+        citedAs: II.ᵉ Sous-type. Sub-articules ou SUB-ENTOMOZOAIRES.
+        rank: Subtype
+        children:
+        - taxon: polyplaxiphores
+          citedAs: VIII. POLYPLAXIPHORES.
+          rank: Class
+        - taxon: cirrhipodes
+          citedAs: IX. CIRRHIPODES.
+          rank: Class
+      - taxon: entomozoaires
+        citedAs: III.ᵉ Sous-type. Articules à Append. ENTOMOZOAIRES.
+        rank: Subtype
+        children:
+        - taxon: héxapodes
+          citedAs: 6 X. HÉXAPODES.
+          rank: Class
+        - taxon: octopodes
+          citedAs: 8 XI. OCTOPODES.
+          rank: Class
+        - taxon: décapodes
+          citedAs: 10 XII. DÉCAPODES.
+          rank: Class
+        - taxon: hétéropodes
+          citedAs: var XIII. HÉTÉROPODES.
+          rank: Class
+        - taxon: tètradécapodes
+          citedAs: 14 XIV. TÈTRADÉCAPODES.
+          rank: Class
+        - taxon: myriapodes
+          citedAs: nombr XV. MYRIAPODES.
+          rank: Class
+        - taxon: sétipodes
+          citedAs: non art XVI. SÉTIPODES.
+          rank: Class
+        - taxon: apodes
+          citedAs: nulles XVII. APODES.
+          rank: Class
+  - taxon: actinomorphes
+    citedAs: II.ᵉ Sous-règne Rayonnes ou ACTINOMORPHES.
+    rank: Subkingdom
+    children:
+    - openTaxon: unnamed-actinomorphes-subtype-1_blainville_1816
+      designation: Sub-articulés
+      citedAs: I.ᵉʳ Sous-type, Sub-articulés.
+      rank: Subtype
+      children:
+      - taxon: annulaires
+        citedAs: XVIII. ANNULAIRES.
+        rank: Class
+    - openTaxon: unnamed-actinomorphes-subtype-2_blainville_1816
+      designation: Vrais
+      citedAs: II.ᵉ Sous-type. Vrais.
+      rank: Subtype
+      children:
+      - taxon: echinodermaires
+        citedAs: XIX. ECHINODERMAIRES.
+        rank: Class
+        children:
+        - taxon: cylindroïdes
+          citedAs: CYLINDROÏDES.
+          rank: Order
+          pages: 124
+          children: null
+        - taxon: sphéroides
+          rank: Order
+          citedAs: SPHÉROIDES.
+          pages: 124
+          children: null
+        - taxon: stellérides
+          rank: Order
+          citedAs: STELLÉRIDES.
+          pages: 124
+          children: null
+      - taxon: arachnodermaires
+        citedAs: XX. ARACHNODERMAIRES.
+        rank: Class
+      - taxon: actiniaires
+        citedAs: XXI. ACTINIAIRES.
+        rank: Class
+      - taxon: polypiaires
+        citedAs: XXII. POLYPIAIRES.
+        rank: Class
+      - taxon: zoophytaires
+        citedAs: XXIII. ZOOPHYTAIRES.
+        rank: Class
+  - taxon: heteromorphes
+    citedAs: III.ᵉ Sous-règne Sans forme régularière ou HÉTÉROMORPHES.
+    rank: Subkingdom
+    children:
+    - taxon: spongiaires
+      citedAs: XXIV. SPONGIAIRES.
+      rank: Class
+    - taxon: agastraires
+      citedAs: XXV. AGASTRAIRES.
+      rank: Class
