@@ -281,6 +281,19 @@
   - lamarck
   identifiers:
     url: https://www.biodiversitylibrary.org/item/89352
+1816_blainville:
+  title: Prodrome d'une nouvelle distribution systématique du règne animal
+  journal: bulldessci
+  volume: 8
+  pages:
+  - 113
+  - 124
+  pubDate:
+    year: 1816
+  authors:
+  - blainville
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/4439803#page/117/mode/1up
 1816a_lamarck:
   book: hist-sans-vert
   volume: 2
@@ -459,16 +472,56 @@
   - parkinson
   identifiers:
     url: https://darwin-online.org.uk/converted/pdf/1822_fossil_CUL-DAR.LIB.490.pdf
-1825_gray.j.e:
+# Gray published frequently in annals-phil-ns vol. 9 and 10 (both 1825),
+# so spaces have been left for other articles not yet under consideration.
+# a. (not relevant to taxonomy)
+# b. Mr. Gray on some Species of Shells not taken Notice of by Lamarck
+#    in vol. 9 Number II. — February
+# (nothing in Numbers III – V)
+# c. Mr. Gray on some Species of Shells not taken Notice of by Lamarck
+#    (concluded) in vol. 9 Number VI. — June
+# d. Mr. Gray on the Genus Ursus of Cuvier, with its Divisions into Subgenera
+#    in vol. 10 Number I. — July
+# e. Mr. Gray's Synopsis of the Genera of Cirripedes arranged in Natural
+#    Families, with a Description of some new Species
+#    in vol. 10 Number II. — August
+# f. [see below]
+# g. Mr. Gray on the Synomina of the Genera Anomia, Crania Orbicula, and
+#   Descina in vol. 10 Number IV. October
+# h. Mr. Gray on Mammalia in vol. 10 Number V. November
+# i. [see below]
+1825f_gray.j.e:
+  title: >
+    A Synopsis of the genera of Reptiles and Amphibia, with a description
+    of some new species
+  journal: annals-phil-ns
+  volume: 10
+  number: 3
+  pubDate:
+    year: 1825
+    month: 9
+  pages:
+  - 193
+  - 217
+  authors:
+  - gray.j.e
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/2531387#page/207/mode/1up
+1825i_gray.j.e:
   title: An Attempt to divide the Echinida, or Sea Eggs, into Natural Families
   journal: annals-phil-ns
   volume: 10
   number: 6
+  pages:
+  - 423
+  - 431
   pubDate:
     year: 1825
     month: 12
   authors:
   - gray.j.e
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/20125#page/439/mode/1up
 1825a_say:
   title: On two genera and several species of Crinoidea
   journal: jofacnatsci-philadelphia

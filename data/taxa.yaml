@@ -44,6 +44,7 @@ abdominales:
   pages: 303
   authority:
     source: 1758_linnaeus
+  citedAs: IV. ABDOMINALES.
 acalephida:
   name: Acalephida
   rank: Class
@@ -67,6 +68,7 @@ accipitres:
   pages: 86
   authority:
     source: 1758_linnaeus
+  citedAs: I. ACCIPITRES.
 acephala-class:
   name: Acephala
   rank: Class
@@ -447,20 +449,22 @@ ampheristocystis:
   name: Ampheristocystis
   authority:
     source: 2005_frest
-amphibia_linnaeus_1758:
-  name: Amphibia
-  rank: Class
-  needsQualification: true
-  authority:
-    source: 1758_linnaeus
 amphibia:
   name: Amphibia
   rank: Class
-  auth: [Gray]
-  year: 1825
-  notes: |
-    Defined substantially differently from Linnaeus, see also
-    de Blainville (1816) for another possibility
+  pages: 194
+  authority:
+    source: 1758_linnaeus
+  citedAs: CLASSIS III. AMPHIBIA.
+  notes: >
+    Linnaeus included reptiles and some fish in his Amphibia.
+    Gray 1825 is credited with a rigorous redefinition of Amphibia with
+    proper use of Latin, while de Blainville 1816 had previously
+    narrowed Linnaeus's taxon to the modern concept, but in French,
+    which Macleay 1821 latinized. Latrielle published a similar concept
+    later in 1825 in Familles naturelles du règne animal but omitted
+    caecilians.  Some modern sources choose to credit Blainville 1816,
+    and others Gray 1825
 amphinome:
   name: Amphinome
   authority:
@@ -597,7 +601,7 @@ animalia:
   pages: 9
   authority:
     source: 1758_linnaeus
-  citedAs: REGNUM ANIMALE
+  citedAs: REGNUM ANIMALE.
   notes: The form "Animalia" is used except in the heading.
 animaux:
   name: Animaux
@@ -650,6 +654,7 @@ anseres:
   pages: 122
   authority:
     source: 1758_linnaeus
+  citedAs: III. ANSERES.
 ansticei_bather_1915:
   name: ansticei
   auth: [bather]
@@ -720,6 +725,7 @@ apodes:
   pages: 244
   authority:
     source: 1758_linnaeus
+  citedAs: I. APODES.
 aporita:
   name: Aporita
   rank: Order
@@ -739,6 +745,7 @@ aptera:
   pages: 608
   authority:
     source: 1758_linnaeus
+  citedAs: VII. APTERA.
 arachnida:
   name: Arachnida
   rank: Class
@@ -1079,7 +1086,7 @@ astrocystitidae:
 astropyga:
   name: Astropyga
   authority:
-    source: 1825_gray.j.e
+    source: 1825i_gray.j.e
 asturicystis:
   name: Asturicystis
   auth: [Sdzuy]
@@ -1171,8 +1178,10 @@ australocystis:
 aves:
   name: Aves
   rank: Class
+  pages: 78
   authority:
     source: 1758_linnaeus
+  citedAs: CLASSIS II. AVES.
 aygula_linnaeus_1758:
   name: aygula
   rank: species
@@ -1324,6 +1333,17 @@ bellicostata_walcott_1924:
   name: bellicostata
   auth: [walcott]
   year: 1924
+belluae:
+  name: Belluae
+  rank: Order
+  pages: 78
+  authority:
+    source: 1758_linnaeus
+  citedAs: VII. BELLUA
+  notes: >
+    Spelled "Bellua" in the declaration but "Belluæ" in lists; apparently
+    "Belluae" is the accepted form and Bellua is a grammatical quirk in how
+    Linnaeus thought of his lists.
 bellulus_barrande_1887:
   name: bellulus
   auth: [barrande]
@@ -1357,6 +1377,7 @@ bestiae:
   pages: 49
   authority:
     source: 1758_linnaeus
+  citedAs: IV. BESTIÆ.
 bibrachiatus_parsley_1982:
   name: bibrachiatus
   authority:
@@ -1542,6 +1563,7 @@ bos:
   pages: 71
   authority:
     source: 1758_linnaeus
+  citedAs: 33. BOS.
 bostryclavus:
   name: Bostryclavus
   authority:
@@ -1626,6 +1648,7 @@ bradypus:
   pages: 34
   authority:
     source: 1758_linnaeus
+  citedAs: 7. BRADYPUS
 branagani_brown.i.a_1963:
   name: branagani
   authority:
@@ -1636,6 +1659,7 @@ branchiostegi:
   pages: 327
   authority:
     source: 1758_linnaeus
+  citedAs: V. BRANCHIOSTEGI.
 briareus_barrande_1887:
   name: briareus
   auth: [barrande]
@@ -1840,6 +1864,7 @@ camelus:
   pages: 65
   authority:
     source: 1758_linnaeus
+  citedAs: 28. CAMELUS.
 camerata:
   name: Camerata
   rank: Subclass
@@ -1902,6 +1927,7 @@ canis:
   pages: 38
   authority:
     source: 1758_linnaeus
+  citedAs: 11. CANIS.
 cannati_miquel_1894:
   name: cannati
   auth: [Miquel]
@@ -1917,6 +1943,7 @@ capra:
   pages: 68
   authority:
     source: 1758_linnaeus
+  citedAs: 31. CAPRA.
 capsularia:
   name: Capsularia
   auth: [Modeer]
@@ -2116,6 +2143,13 @@ caelatus_phillips.j_1839:
   authority:
     attributedTo: [phillips.j]
     source: 1839_murchison
+castor:
+  name: Castor
+  rank: genus
+  pages: 58
+  authority:
+    source: 1758_linnaeus
+  citedAs: 25. CASTOR.
 catta_linnaeus_1758:
   name: catta
   rank: species
@@ -2187,10 +2221,24 @@ cercaria:
   name: Cercaria
   authority:
     source: 1773_müller.o.f
+cervus:
+  name: Cervus
+  rank: genus
+  pages: 66
+  authority:
+    source: 1758_linnaeus
+  citedAs: 30. CERVUS.
 cestum:
   name: Cestum
   auth: [Lesueur]
   year: 1813
+cete:
+  name: Cete
+  rank: Order
+  pages: 75
+  authority:
+    source: 1758_linnaeus
+  citedAs: VIII. CETE.
 chama:
   name: Chama
   authority:
@@ -2266,7 +2314,7 @@ cidaridae:
   name: Cidaridae
   rank: Family
   authority:
-    source: 1825_gray.j.e
+    source: 1825i_gray.j.e
 cidarites:
   name: Cidarites
   authority:
@@ -2469,6 +2517,13 @@ coelomocoela-grade:
   rank: Grade
   auth: [lankester]
   year: 1900
+coleoptera:
+  name: Coleoptera
+  rank: Order
+  page: 345
+  authority:
+    source: 1758_linnaeus
+  citedAs: I. COLEOPTERA.
 collaspidae:
   name: Collaspidae
   rank: Family
@@ -3274,6 +3329,13 @@ dawsoni_billings_1858:
   name: dawsoni
   authority:
     source: 1858a_billings
+daysypus:
+  name: Daysypus
+  rank: genus
+  pages: 50
+  authority:
+    source: 1758_linnaeus
+  citedAs: 17. DAYSYPUS
 deani_ubaghs_1994:
   name: deani
   auth: [ubaghs]
@@ -3316,6 +3378,13 @@ decussatum_begg_1934:
 decussatus_begg_1934:
   name: decussatus
   altSpellingOf: decussatum_begg_1934
+delphinus:
+  name: Delphinus
+  rank: genus
+  pages: 77
+  authority:
+    source: 1758_linnaeus
+  citedAs: 39. DELPHINUS.
 deltacystinae:
   name: Deltacystinae
   rank: Subfamily
@@ -3433,7 +3502,7 @@ devonicus_sieverts-doreck_1951:
 diadema:
   name: Diadema
   authority:
-    source: 1825_gray.j.e
+    source: 1825i_gray.j.e
 diadema_leske_1778:
   name: diadema
   authority:
@@ -3472,6 +3541,29 @@ dicksoni_billings_1857:
   name: dicksoni
   auth: [billings]
   year: 1857
+didactyla_linnaeus_1758:
+  name: didactyla
+  rank: species
+  pages: 35
+  authority:
+    source: 1758_linnaeus
+  citedAs: didactyla. 1.
+  notes: There is a non-Unicode "ct" ligature in the citedAs.
+didactylus_linnaeus_1758:
+  name: didactylus
+  rank: species
+  pages: 35
+  authority:
+    source: 1758_linnaeus
+  citedAs: didactylus. 2.
+  notes: There is a non-Unicode "ct" ligature in the citedAs.
+didelphis:
+  name: Didelphis
+  rank: genus
+  pages: 54
+  authority:
+    source: 1758_linnaeus
+  citedAs: 21. DIDELPHIS.
 digitata:
   name: Digitata
   rank: Order
@@ -3550,6 +3642,13 @@ diplosphaeronis:
   name: Diplosphaeronis
   auth: [paul.c.r.c]
   year: 1973
+diptera:
+  name: Diptera
+  rank: Order
+  pages: 584
+  authority:
+    source: 1758_linnaeus
+  citedAs: VI. DIPTERA.
 diraphora_bell_1941:
   name: diraphora
   auth: [Bell]
@@ -3566,7 +3665,7 @@ discocystis:
 discodea:
   name: Discodea
   authority:
-    source: 1825_gray.j.e
+    source: 1825i_gray.j.e
 discoidea_lamarck_1816:
   name: discoidea
   authority:
@@ -3661,7 +3760,7 @@ echinanaus:
 echinanthus:
   name: Echinanthus
   authority:
-    source: 1825_gray.j.e
+    source: 1825i_gray.j.e
 echinanthus_leske_1778:
   name: Echinanthus
   needsQualification: true
@@ -3670,7 +3769,7 @@ echinanthus_leske_1778:
 echinarachnius:
   name: Echinarachnius
   authority:
-    source: 1825_gray.j.e
+    source: 1825i_gray.j.e
   notes: Credits Leske by ICZN suppresses Leske for both priority and homonymy?
 echinarachnius_leske_1778:
   name: Echinarachnius
@@ -3703,7 +3802,7 @@ echinidae:
   name: Echinidae
   rank: Family
   authority:
-    source: 1825_gray.j.e
+    source: 1825i_gray.j.e
 echinidae-order:
   rank: Order
   altRankOf: echinidae
@@ -3728,11 +3827,11 @@ echinites_ellis_solander_1786:
 echinobrissus:
   name: Echinobrissus
   authority:
-    source: 1825_gray.j.e
+    source: 1825i_gray.j.e
 echinocardium:
   name: Echinocardium
   authority:
-    source: 1825_gray.j.e
+    source: 1825i_gray.j.e
 echinocorys:
   name: Echinocorys
   authority:
@@ -3880,14 +3979,14 @@ echinoidea-family:
 echinolampas:
   name: Echinolampas
   authority:
-    source: 1825_gray.j.e
+    source: 1825i_gray.j.e
 echinolampus:
   name: Echinolampus
   altSpellingOf: echinolampas
 echinometra:
   name: Echinometra
   authority:
-    source: 1825_gray.j.e
+    source: 1825i_gray.j.e
   notes: Mentions Bryerius and Van Phelsum, but IRMNG credits Gray?
 echinoneus:
   name: Echinoneus
@@ -4209,6 +4308,13 @@ elegans_müller.o.f_1776:
   name: elegans
   authority:
     source: 1776_müller.o.f
+elephas:
+  name: Elephas
+  rank: genus
+  pages: 33
+  authority:
+    source: 1758_linnaeus
+  citedAs: 5. ELEPHAS.
 eleutherozoa:
   name: Eleutherozoa
   rank: Subphylum
@@ -4512,6 +4618,20 @@ equinus_leske_1778:
   name: equinus
   authority:
     source: 1778_leske
+equus:
+  name: Equus
+  rank: genus
+  pages: 73
+  authority:
+    source: 1758_linnaeus
+  citedAs: 34. EQVUS.
+erinaceus:
+  name: Erinaceus
+  rank: genus
+  pages: 52
+  authority:
+    source: 1758_linnaeus
+  citedAs: 18. ERINACEUS.
 erinocystis:
   name: Erinocystis
   auth: [jaekel]
@@ -4712,10 +4832,24 @@ felbabkacystidae:
   rank: Family
   authority:
     source: 2017_nardin_lefebvre_fatka_nohejlová_kašiča_šinágl_szabad
+felis:
+  name: Felis
+  rank: genus
+  pages: 41
+  authority:
+    source: 1758_linnaeus
+  citedAs: 12. FELIS.
 fenestrata_leske_1778:
   name: fenestrata
   authority:
     source: 1778_leske
+ferae:
+  name: Ferae
+  rank: Order
+  pages: 37
+  authority:
+    source: 1758_linnaeus
+  citedAs: III. FERÆ.
 ferus_linnaeus_1758:
   name: ferus
   rank: variety
@@ -4943,11 +5077,18 @@ galeritidae:
   name: Galeritidae
   rank: Family
   authority:
-    source: 1825_gray.j.e
+    source: 1825i_gray.j.e
 gallica_domínguez alonso_1999:
   name: gallica
   auth: [domínguez alonso]
   year: 1999
+gallinae:
+  name: Gallinae
+  rank: Order
+  pages: 156
+  authority:
+    source: 1758_linnaeus
+  citedAs: V. GALLINÆ.
 gasterocomacea:
   name: Gasterocomacea
   rank: Superfamily
@@ -5069,6 +5210,13 @@ glenocrinus:
   name: Glenocrinus
   authority:
     source: 2003_guensburg_sprinkle
+glires:
+  name: Glires
+  rank: Order
+  pages: 56
+  authority:
+    source: 1758_linnaeus
+  citedAs: V. GLIRES.
 globiformis_lamarck_1816:
   name: globiformis
   authority:
@@ -5352,6 +5500,13 @@ graffhami_sprinkle_1982:
   name: graffhami
   authority:
     source: 1982g_sprinkle
+grallae:
+  name: Grallae
+  rank: Order
+  pages: 139
+  authority:
+    source: 1758_linnaeus
+  citedAs: IV. GRALLÆ.
 granatum_mccoy_1846:
   name: granatum
   auth: [mccoy]
@@ -5750,6 +5905,13 @@ hemicystis:
   name: Hemicystis
   auth: [hall]
   year: 1852
+hemiptera:
+  name: Hemiptera
+  rank: Order
+  pages: 434
+  authority:
+    source: 1758_linnaeus
+  citedAs: II. HEMIPTERA.
 hemisphaerica_leske_1778:
   name: hemisphaerica
   authority:
@@ -5864,6 +6026,13 @@ hintzei_guensburg_sprinkle_1994:
   name: hintzei
   authority:
     source: 1994_guensburg_sprinkle
+hippopotamus:
+  name: Hippopotamus
+  rank: genus
+  pages: 74
+  authority:
+    source: 1758_linnaeus
+  citedAs: 35. HIPPOPOTAMUS.
 hippuris_linnaeus_1758:
   name: hippuris
   authority:
@@ -6050,6 +6219,13 @@ hydra:
   name: Hydra
   authority:
     source: 1758_linnaeus
+hymenoptera:
+  name: Hymenoptera
+  rank: Order
+  pages: 553
+  authority:
+    source: 1758_linnaeus
+  citedAs: V. HYMENOPTERA.
 hypanthocrinites:
   name: Hypanthocrinites
   authority:
@@ -6063,6 +6239,13 @@ hystrichopsydrax:
   name: Hystrichopsydrax
   authority:
     source: 1988_guensburg
+hystrix:
+  name: Hystrix
+  rank: genus
+  pages: 56
+  authority:
+    source: 1758_linnaeus
+  citedAs: 23. HYSTRIX.
 hystrix_lamarck_1816:
   name: hystrix
   authority:
@@ -6225,8 +6408,10 @@ inhaerens_müller.o.f_1776:
 insecta:
   name: Insecta
   rank: Class
+  pages: 339
   authority:
     source: 1758_linnaeus
+  citedAs: CLASSIS V. INSECTA.
 insectes:
   name: Insectes
   vulgarSpellingOf: insecta
@@ -6240,11 +6425,13 @@ integra:
   rank: section
   authority:
     source: 1758_linnaeus
-intestina-order:
+intestina:
   name: Intestina
   rank: Order
+  pages: 647
   authority:
     source: 1758_linnaeus
+  citedAs: I. INTESTINA.
 intestina-class:
   rank: Class
   altRankOf: intestina-order
@@ -6454,6 +6641,13 @@ jugoszoviidae:
   rank: Family
   auth: [dzik, orłowski]
   year: 1995
+jugulares:
+  name: Jugulares
+  rank: Order
+  pages: 249
+  authority:
+    source: 1758_linnaeus
+  citedAs: II. JUGULARES.
 junori_withers_1933:
   name: junori
   auth: [Withers]
@@ -6714,6 +6908,13 @@ lenticularis_lamarck_1816:
   name: lenticularis
   authority:
     source: 1816b_lamarck
+leonina_linnaeus_1758:
+  name: leonina
+  rank: species
+  pages: 37
+  authority:
+    source: 1758_linnaeus
+  citedAs: Leonina. 2.
 lepocrinites:
   name: Lepocrinites
   auth: [conrad.t.a]
@@ -6748,6 +6949,13 @@ lepidocystidae:
   rank: Family
   auth: [durham]
   year: 1967
+lepidoptera:
+  name: Lepidoptera
+  rank: Order
+  pages: 458
+  authority:
+    source: 1758_linnaeus
+  citedAs: III. LEPIDOPTERA.
 lepidocystoidae:
   name: Lepidocystoidae
   altSpellingOf: lepidocystidae
@@ -6800,6 +7008,13 @@ lepidus_zhao.y.l_huang.y.z_gong.x.y_1994:
   name: lepidus
   authority:
     source: 1994_zhao.y.l_huang.y.z_gong.x.y
+lepus:
+  name: Lepus
+  rank: genus
+  pages: 57
+  authority:
+    source: 1758_linnaeus
+  citedAs: 24. LEPUS
 lernaea:
   name: Lernaea
   authority:
@@ -7190,7 +7405,7 @@ mammalia:
   pages: 14
   authority:
     source: 1758_linnaeus
-  citedAs: Classis I. MAMMALIA.
+  citedAs: CLASSIS I. MAMMALIA.
 mammaux:
   name: Mammaux
   vulgarSpellingOf: mammalia
@@ -7241,6 +7456,13 @@ mammillata-var-4_leske_1778:
   rank: variety
   authority:
     source: 1778_leske
+manatus_linnaeus_1758:
+  name: Manatus
+  rank: genus
+  pages: 33
+  authority:
+    source: 1758_linnaeus
+  citedAs: Manatus. 1.
 mandalacystis:
   name: Mandalacystis
   authority:
@@ -7250,6 +7472,13 @@ mandibulata:
   rank: Class
   authority:
     source: 1821_macleay
+manis:
+  name: Manis
+  rank: genus
+  pages: 36
+  authority:
+    source: 1758_linnaeus
+  citedAs: 9. MANIS.
 mansfieldi_guensburg_2010:
   name: mansfieldi
   auth: [guensburg]
@@ -7305,6 +7534,13 @@ maxima_forsskål_1775:
   name: maxima
   auth: [forsskål]
   year: 1775
+maximus_linnaeus_1758:
+  name: maximus
+  rank: species
+  pages: 33
+  authority:
+    source: 1758_linnaeus
+  citedAs: maximus. 1.
 maydena:
   name: Maydena
   authority:
@@ -7664,6 +7900,13 @@ monobrachiolata_paul.c.r.c_1967:
   name: monobrachiolata
   auth: [paul.c.r.c]
   year: 1967  # Not the current 1967_paul.c.r.c
+monodon:
+  name: Monodon
+  rank: genus
+  pages: 75
+  authority:
+    source: 1758_linnaeus
+  citedAs: 36. MONODON
 monozonida:
   name: Monozonida
   rank: Order
@@ -7703,6 +7946,13 @@ morta_linnaeus_1758:
   authority:
     source: 1758_linnaeus
   citedAs: Morta. 18.
+moschus:
+  name: Moschus
+  rank: genus
+  pages: 66
+  authority:
+    source: 1758_linnaeus
+  citedAs: 29. MOSCHUS
 münsteri_eichwald_1840:
   name: münsteri
   authority:
@@ -7776,6 +8026,20 @@ murphyi_sumrall_garbisch_pope_2000:
   name: murphyi
   auth: [sumrall, Garbisch, Pope]
   year: 2000
+mus:
+  name: Mus
+  rank: genus
+  pages: 59
+  authority:
+    source: 1758_linnaeus
+  citedAs: 26. MUS.
+mustela:
+  name: Mustela
+  rank: genus
+  pages: 45
+  authority:
+    source: 1758_linnaeus
+  citedAs: 14. MUSTELA.
 mya:
   name: Mya
   authority:
@@ -7793,6 +8057,13 @@ myelodactylus-sp_hall_1852:
   rank: species
   authority:
     source: 1852_hall
+myrmecophaga:
+  name: Myrmecophaga
+  rank: genus
+  pages: 35
+  authority:
+    source: 1758_linnaeus
+  citedAs: 8. MYRMECOPHAGA.
 mytilus:
   name: Mytilus
   authority:
@@ -7816,6 +8087,13 @@ naïs:
   auth: [müller.o.f]
   year: 1771
   notes: IRMNG treats this separately as wrong spelling from Nais (Müller 1774)
+nantes:
+  name: Nantes
+  rank: Order
+  pages: 230
+  authority:
+    source: 1758_linnaeus
+  citesAs: III. NANTES.
 narrawayella:
   name: Narrawayella
   auth: [foerste]
@@ -7892,6 +8170,13 @@ nerita:
   name: Nerita
   authority:
     source: 1758_linnaeus
+neuroptera:
+  name: Neuroptera
+  rank: Order
+  pages: 543
+  authority:
+    source: 1758_linnaeus
+  citedAs: IV. NEUROPTERA.
 nevadensis_sprinkle_1973:
   name: nevadensis
   authority:
@@ -8269,7 +8554,7 @@ ottawacrinus:
 ova:
   name: Ova
   authority:
-    source: 1825_gray.j.e
+    source: 1825i_gray.j.e
 ovalis_leske_1778_echinocyamus:
   name: ovalis
   originalParent: echinocyamus
@@ -8334,6 +8619,13 @@ oviformis_lamarck_1801:
   name: oviformis
   authority:
     source: 1801_lamarck
+ovis:
+  name: Ovis
+  rank: genus
+  pages: 70
+  authority:
+    source: 1758_linnaeus
+  citedAs: 32. OVIS.
 ovulum_lamarck_1816_fibularia:
   name: ovulum
   originalParent: fibularia
@@ -8579,6 +8871,13 @@ parvus_hall_1852:
   name: parvus
   authority:
     source: 1852_hall
+passeres:
+  name: Passeres
+  rank: Order
+  pages: 162
+  authority:
+    source: 1758_linnaeus
+  citedAs: VI. PASSERES.
 patella:
   name: Patella
   authority:
@@ -8607,6 +8906,13 @@ pavona:
   name: Pavona
   authority:
     source: 1801_lamarck
+pecora:
+  name: Pecora
+  rank: Order
+  pages: 65
+  authority:
+    source: 1758_linnaeus
+  citedAs: VI. PECORA.
 pecten:
   name: Pecten
   authority:
@@ -8718,6 +9024,14 @@ pentacystida:
   rank: Order
   auth: [jaekel]
   year: 1918
+pentadactyla_linnaeus_1758:
+  name: pentadactyla
+  rank: species
+  pages: 36
+  authority:
+    source: 1758_linnaeus
+  citedAs: pentadactyla. 1.
+  notes: There is a non-Unicode "ct" ligature in the citedAs.
 pentagonius_meek_worthen_1865:
   name: pentagonius
   auth: [meek, worthen]
@@ -8838,6 +9152,13 @@ phantapus_strussenfelt_1765:
   name: phantapus
   auth: [Strussenfelt]
   year: 1765
+phoca:
+  name: Phoca
+  rank: genus
+  pages: 37
+  authority:
+    source: 1758_linnaeus
+  citedAs: 10. PHOCA
 pholas:
   name: Pholas
   authority:
@@ -8859,10 +9180,24 @@ physalis_linnaeus_1758:
   name: physalis
   authority:
     source: 1758_linnaeus
+physeter:
+  name: Physeter
+  rank: genus
+  pages: 75
+  authority:
+    source: 1758_linnaeus
+  citedAs: 38. PHYSETER.
 physsophora:
   name: Physsophora
   auth: [forsskål]
   year: 1775
+picae:
+  name: Picae
+  rank: Order
+  pages: 96
+  authority:
+    source: 1758_linnaeus
+  citedAs: II. PICÆ.
 pilea_hall_1866:
   name: pilea
   auth: [Hall]
@@ -8905,8 +9240,10 @@ pirocystella:
 pisces:
   name: Pisces
   rank: Class
+  pages: 239
   authority:
     source: 1758_linnaeus
+  citedAs: CLASSIS IV. PISCES.
 pistillaris_lamarck_1816:
   name: pistillaris
   authority:
@@ -9884,9 +10221,17 @@ renilla:
     source: 1816a_lamarck
 reptilia:
   name: Reptilia
-  rank: Class
-  auth: [Laurenti]
-  year: 1768
+  rank: Order
+  pages: 197
+  authority:
+    source: 1758_linnaeus
+  citedAs: I. REPTILES.
+  notes: >
+    Linnaeus is considered to have established Reptilia, with the heading
+    "Reptiles" being considered a grammatical quirk of how Linnaeus organized
+    his structure.  The running header for the section is "AMPHIBIA REPTILIA",
+    which is apparently sufficient.
+    Laurenti 1768 defined Reptilia as a class in the modern sense.
 reptiles:
   name: Reptiles
   vulgarSpellingOf: reptilia
@@ -10016,6 +10361,13 @@ rhenopyrgus-sp-4_ewin_martin.m_isotalo_zamora_2020:
     a prevoius open nomenclature description.
   authority:
     source: 2020_ewin_martin.m_isotalo_zamora
+rhinoceros:
+  name: Rhinoceros
+  rank: genus
+  pages: 56
+  authority:
+    source: 1758_linnaeus
+  citedAs: 22. RHINOCEROS
 rhipidocystidae:
   name: Rhipidocystidae
   rank: Family
@@ -10165,6 +10517,14 @@ rosea_müller.o.f_1776:
   name: rosea
   authority:
     source: 1776_müller.o.f
+rosmarus_linnaeus_1758:
+  name: rosmarus
+  rank: species
+  pages: 38
+  authority:
+    source: 1758_linnaeus
+  citedAs: Rosmarus. 3.
+  notes: No "ſ" in the 3rd position, actually "s".
 rossi_sprinkle_1973:
   name: rossi
   authority:
@@ -10338,7 +10698,7 @@ sans vertébrés:
     but it has been argued that this source established Vertebrata, and I've
     translated Cuvier's "embranchement" as "phylum" (as have others), and
     Cuvier treated Vertébrés as such.
-sapiens:
+sapiensl_linnaeus_1758:
   name: sapiens
   rank: species
   pages: 20
@@ -10413,13 +10773,20 @@ schuchertocystis:
   name: Schuchertocystis
   auth: [bassler]
   year: 1950
-sciuria_linnaeus_1758:
-  name: sciuria
+sciurea_linnaeus_1758:
+  name: sciurea
   rank: species
   pages: 29
   authority:
     source: 1758_linnaeus
   citedAs: ſciurea. 20.
+sciurus:
+  name: Sciurus
+  rank: genus
+  pages: 63
+  authority:
+    source: 1758_linnaeus
+  citedAs: 27. SCIURUS.
 scolex:
   name: Scolex
   auth: [müller.o.f]
@@ -10494,7 +10861,7 @@ scutellidae:
   name: Scutellidae
   rank: Family
   authority:
-    source: 1825_gray.j.e
+    source: 1825i_gray.j.e
 scutiformis_scilla_1759:
   name: scutiformis
   auth: [Scilla]
@@ -10585,6 +10952,13 @@ septentrionallis_regnéll_1945:
   name: septentrionallis
   auth: [regnéll]
   year: 1945
+serpentes:
+  name: Serpentes
+  rank: Order
+  pages: 214
+  authority:
+    source: 1758_linnaeus
+  citedAs: II. SERPENTES.
 serpula:
   name: Serpula
   authority:
@@ -10745,6 +11119,13 @@ somasteroidea:
 somasteroidea-subclass:
   rank: Subclass
   altRankOf: somasteroidea
+sorex:
+  name: Sorex
+  rank: genus
+  pages: 53
+  authority:
+    source: 1758_linnaeus
+  citedAs: 20. SOREX.
 southworthi_bassler_1936:
   name: southworthi
   authority:
@@ -10772,14 +11153,14 @@ spatangidae:
   name: Spatangidae
   rank: Family
   authority:
-    source: 1825_gray.j.e
+    source: 1825i_gray.j.e
 spatangites:
   name: Spatangites
   altSpellingOf: spatangus_leske_1778
 spatangus:
   name: spatangus
   authority:
-    source: 1825_gray.j.e
+    source: 1825i_gray.j.e
 spatangus_lamarck_1816:
   name: spatangus
   authority:
@@ -11311,6 +11692,13 @@ superbus_guensburg_sprinkle_1994:
   name: superbus
   authority:
     source: 1994_guensburg_sprinkle
+sus:
+  name: Sus
+  rank: genus
+  pages: 49
+  authority:
+    source: 1758_linnaeus
+  citedAs: 16. SUS.
 sycocrinites:
   name: Sycocrinites
   auth: [Austen]
@@ -11347,6 +11735,10 @@ syringocrinus:
   auth: [billings]
   year: 1850
 ###################### T
+taenia:
+  name: Taenia
+  authority:
+    source: 1758_linnaeus
 taeniaster:
   name: Taeniaster
   authority:
@@ -11355,14 +11747,17 @@ taijiangensis_zhao.y.l_zhu.m.y_1994:
   name: taijiangensis
   authority:
     source: 1994_zhao.y.l_zhu.m.y
+talpa:
+  name: Talpa
+  rank: genus
+  pages: 52
+  authority:
+    source: 1758_linnaeus
+  citedAs: 19. TALPA.
 tanaocystis:
   name: Tanaocystis
   authority:
     source: 1982g_sprinkle
-taenia:
-  name: Taenia
-  authority:
-    source: 1758_linnaeus
 tardigradus_linnaeus_1758:
   name: tardigradus
   rank: species
@@ -11511,6 +11906,14 @@ tetracystis:
   name: Tetracystis
   auth: [schuchert]
   year: 1904
+tetradactyla_linnaeus_1758:
+  name: tetradactylus
+  rank: species
+  pages: 35
+  authority:
+    source: 1758_linnaeus
+  citedAs: tetradactyla. 3.
+  notes: There is a non-Unicode "ct" ligature in the citedAs.
 tetraporus_gmelin_1791:
   name: tetraporus
   auth: [Gmelin]
@@ -11550,6 +11953,13 @@ thor_müller.p_hahn_2010:
   name: thor
   authority:
     source: 2010_müller.p_hahn
+thoracici:
+  name: Thoracici
+  rank: Order
+  pages: 260
+  authority:
+    source: 1758_linnaeus
+  citedAs: III. THORACICI.
 thorntonites:
   name: Thorntonites
   authority:
@@ -11693,6 +12103,22 @@ triacontadactylus_miller.j.s_1821:
 triacontodactylus_miller.j.s_1821:
   name: triacontodactylus
   altSpellingOf: triacontadactylus_miller.j.s_1821
+tridactyla_linnaeus_1758:
+  name: tridactyla
+  rank: species
+  pages: 35
+  authority:
+    source: 1758_linnaeus
+  citedAs: tridactyla. 2.
+  notes: There is a non-Unicode "ct" ligature in the citedAs.
+tridactylus_linnaeus_1758:
+  name: tridactylus
+  rank: species
+  pages: 34
+  authority:
+    source: 1758_linnaeus
+  citedAs: tridactylus. 1.
+  notes: There is a non-Unicode "ct" ligature in the citedAs.
 triangularis_pander_1830:
   name: triangularis
   authority:
@@ -11709,6 +12135,13 @@ tribuloides_lamarck_1816:
   name: tribuloides
   authority:
     source: 1816b_lamarck
+trichechus:
+  name: Trichechus
+  rank: genus
+  pages: 34
+  authority:
+    source: 1758_linnaeus
+  citedAs: 6. TRICHECHUS.
 trichocephalus:
   name: Trichocephalus
   auth: [müller.o.f]
@@ -11980,6 +12413,20 @@ urceolaria_lamarck_1801:
   homonym: true
   authority:
     source: 1801_lamarck
+ursina_linnaeus_1758:
+  name: ursina
+  rank: species
+  pages: 37
+  authority:
+    source: 1758_linnaeus
+  citedAs: Urſina. 1.
+ursus:
+  name: Ursus
+  rank: genus
+  pages: 47
+  authority:
+    source: 1758_linnaeus
+  citedAs: 15. URSUS.
 utahensis_lefebvre_lerosey-aubril_2018:
   name: utahensis
   auth: [lefebvre, lerosey-aubril]
@@ -12078,8 +12525,10 @@ veretillum:
 vermes:
   name: Vermes
   rank: Class
+  pages: 641
   authority:
     source: 1758_linnaeus
+  citedAs: CLASSIS VI. VERMES.
 vernicina_lamarck_1816:
   name: vernicina
   authority:
@@ -12205,6 +12654,20 @@ vittata_forsskål_1775:
   name: vittata
   auth: [forsskål]
   year: 1775
+vitulina_linnaeus_1748:
+  name: vitullina
+  rank: species
+  pages: 38
+  authority:
+    source: 1758_linnaeus
+  citedAs: Vitulina. 4.
+viverra:
+  name: Viverra
+  rank: genus
+  pages: 43
+  authority:
+    source: 1758_linnaeus
+  citedAs: 13. VIVERRA
 viviani_ewin_martin.m_isotalo_zamora_2020:
   name: viviani
   authority:

@@ -1,157 +1,157 @@
 unused: [illustrations, type]
 taxonomies:
 - taxon: animalia
+  citedAs: REGNUM ANIMALE.
   rank: Kingdom
   new: true
   pages: 9
-  citedAs: REGNUM ANIMALE
   notes: The form "Animalia" is used except in the heading.
   children:
   - taxon: mammalia
+    citedAs: CLASSIS I. MAMMALIA.
     rank: Class
     new: true
     pages: 14
-    citedAs: Classis I. MAMMALIA.
     children:
     - taxon: primates
+      citedAs: I. PRIMATES.
       rank: Order
       new: true
       pages: 20
-      citedAs: I. PRIMATES.
       children:
       - taxon: homo
+        citedAs: 1. HOMO.
         new: true
         pages: 20
-        citedAs: 1. HOMO.
         children:
         - taxon: sapiens_linnaeus_1758
+          citedAs: Sapiens. 1.
           new: true
           pages: 20
-          citedAs: Sapiens. 1.
           children:
           - taxon: ferus_linnaeus_1758
-            rank: variety
-            new: true
-            pages: 20
             citedAs: Ferus.
-          - taxon: americanus_linnaeus_1758
             rank: variety
             new: true
             pages: 20
+          - taxon: americanus_linnaeus_1758
             citedAs: Americanus. α.
+            rank: variety
+            new: true
+            pages: 20
           - taxon: europaeus_linnaeus_1758
-            rank: variety
-            new: true
-            pages: 21
             citedAs: Europæus. β.
-          - taxon: asiasticus_linnaeus_1758
             rank: variety
             new: true
             pages: 21
+          - taxon: asiasticus_linnaeus_1758
             citedAs: Aſiasticus. γ.
+            rank: variety
+            new: true
+            pages: 21
           - taxon: afer_linnaeus_1758
-            rank: variety
-            new: true
-            pages: 22
             citedAs: Afer. δ.
-          - taxon: monstrosus_linnaeus_1758
             rank: variety
             new: true
             pages: 22
+          - taxon: monstrosus_linnaeus_1758
             citedAs: Monſtroſus. ε.
+            rank: variety
+            new: true
+            pages: 22
         - taxon: troglodytes_linnaeus_1758
+          citedAs: Troglodytes. 2.
           new: true
           pages: 24
-          citedAs: Troglodytes. 2.
       - taxon: simia
+        citedAs: 2. SIMIA.
         new: true
         pages: 25
-        citedAs: 2. SIMIA.
         children:
         - taxon: satyrus_linnaeus_1758
-          new: true
-          pages: 25
           citedAs: Satyrus. 1.
+          new: true
+          pages: 25
         - taxon: sylvanus_linnaeus_1758
-          new: true
-          pages: 25
           citedAs: Sylvanus. 2.
+          new: true
+          pages: 25
         - taxon: sphinx_linnaeus_1758
-          new: true
-          pages: 25
           citedAs: Sphinx. 3.
-        - taxon: apedia_linnaeus_1758
           new: true
           pages: 25
+        - taxon: apedia_linnaeus_1758
           citedAs: Apedia. 4.
+          new: true
+          pages: 25
         - taxon: silenus_linnaeus_1758
-          new: true
-          pages: 26
           citedAs: Silenus. 5.
+          new: true
+          pages: 26
         - taxon: faunus_linnaeus_1758
-          new: true
-          pages: 26
           citedAs: Faunus. 6.
+          new: true
+          pages: 26
         - taxon: paniscus_linnaeus_1758
-          new: true
-          pages: 26
           citedAs: Paniſcus. 7.
-        - taxon: diana_linnaeus_1758
           new: true
           pages: 26
+        - taxon: diana_linnaeus_1758
           citedAs: Diana. 8.
+          new: true
+          pages: 26
         - taxon: cephus_linnaeus_1758
-          new: true
-          pages: 27
           citedAs: Cephus. 9.
+          new: true
+          pages: 27
         - taxon: aygula_linnaeus_1758
-          new: true
-          pages: 27
           citedAs: Aygula. 10.
+          new: true
+          pages: 27
         - taxon: hamadryas_linnaeus_1758
-          new: true
-          pages: 27
           citedAs: Hamadryas. 11.
-        - taxon: jacchus_linnaeus_1758
           new: true
           pages: 27
+        - taxon: jacchus_linnaeus_1758
           citedAs: Jacchus. 12.
+          new: true
+          pages: 27
         - taxon: oedipus_linnaeus_1758
-          new: true
-          pages: 28
           citedAs: Oedipus. 13.
+          new: true
+          pages: 28
         - taxon: aethiops_linnaeus_1758
-          new: true
-          pages: 28
           citedAs: Æthiops. 14.
+          new: true
+          pages: 28
         - taxon: midas_linnaeus_1758
-          new: true
-          pages: 28
           citedAs: Midas. 15.
-        - taxon: cynamolgos_linnaeus_1758
           new: true
           pages: 28
+        - taxon: cynamologos_linnaeus_1758
           citedAs: Cynamologos. 16.
-        - taxon: apella_linnaeus_1758
           new: true
           pages: 28
+        - taxon: apella_linnaeus_1758
           citedAs: Apella. 17.
+          new: true
+          pages: 28
         - taxon: morta_linnaeus_1758
-          new: true
-          pages: 29
           citedAs: Morta. 18.
+          new: true
+          pages: 29
         - taxon: capucina_linnaeus_1758
-          new: true
-          pages: 29
           citedAs: Capucina. 19.
+          new: true
+          pages: 29
         - taxon: sciurea_linnaeus_1758
-          new: true
-          pages: 29
           citedAs: ſciurea. 20.
-        - taxon: syrichta_linnaeus_1758
           new: true
           pages: 29
+        - taxon: syrichta_linnaeus_1758
           citedAs: Syrichta. 21.
+          new: true
+          pages: 29
       - taxon: lemur
         new: true
         pages: 29
@@ -170,363 +170,428 @@ taxonomies:
           pages: 30
           citedAs: volans. 3.
       - taxon: vespertilio
+        citedAs: 4. VESPERTILIO.
         new: true
         pages: 31
-        citedAs: 4. VESPERTILIO.
         children:
         - taxon: vampyrus_linnaeus_1758
-          new: true
-          pages: 31
           citedAs: Vampyrus. 1.
-        - taxon: spectrum_linnaeus_1758
           new: true
           pages: 31
+        - taxon: spectrum_linnaeus_1758
           citedAs: Spectrum. 2.
+          new: true
+          pages: 31
           notes: There is a non-Unicode "ct" ligature in the citedAs.
         - taxon: perspicillatus_linnaeus_1758
+          citedAs: perſpicillatus. 3.
           new: true
           pages: 31
-          citedAs: perſpicillatus. 3.
         - taxon: spasma_linnaeus_1758
-          new: true
-          pages: 32
           citedAs: Spaſma. 4.
+          new: true
+          pages: 32
         - taxon: leporinus_linnaeus_1758
-          new: true
-          pages: 32
           citedAs: leporinus. 5.
+          new: true
+          pages: 32
         - taxon: auritus_linnaeus_1758
-          new: true
-          pages: 32
           citedAs: auritus. 6.
-        - taxon: murinus_linnaeus_1758
           new: true
           pages: 32
+        - taxon: murinus_linnaeus_1758
           citedAs: murinus. 7.
+          new: true
+          pages: 32
     - taxon: bruta
+      citedAs: II. BRUTA.
       rank: Order
       new: true
       pages: 33
-      citedAs: II. BRUTA.
       children:
       - taxon: elephas
+        citedAs: 5. ELEPHAS.
         new: true
         pages: 33
-        citedAs: 5. ELEPHAS.
         children:
         - taxon: maximus_linnaeus_1758
+          citedAs: maximus. 1.
           new: true
           pages: 33
-          citedAs: maximus. 1.
       - taxon: trichechus
+        citedAs: 6. TRICHECHUS.
         new: true
         pages: 34
-        citedAs: 6. TRICHECHUS.
         children:
         - taxon: manatus_linnaeus_1758
+          citedAs: Manatus. 1.
           new: true
           pages: 34
-          citedAs: Manatus. 1.
       - taxon: bradypus
+        citedAs: 7. BRADYPUS.
         new: true
         pages: 34
-        citedAs: 7. BRADYPUS.
         children:
         - taxon: tridactylus_linnaeus_1758
+          citedAs: tridactylus. 1.
           new: true
           pages: 34
-          citedAs: tridactylus. 1.
           notes: There is a non-Unicode "ct" ligature in the citedAs.
         - taxon: didactylus_linnaeus_1758
+          citedAs: didactylus. 2.
           new: true
           pages: 35
-          citedAs: didactylus. 2.
           notes: There is a non-Unicode "ct" ligature in the citedAs.
       - taxon: myrmecophaga
+        citedAs: 8. MYRMECOPHAGA.
         new: true
         pages: 35
-        citedAs: 8. MYRMECOPHAGA.
         children:
         - taxon: didactyla_linnaeus_1758
+          citedAs: didactyla. 1.
           new: true
           pages: 35
-          citedAs: didactyla. 1.
           notes: There is a non-Unicode "ct" ligature in the citedAs.
         - taxon: tridactyla_linnaeus_1758
+          citedAs: tridactyla. 2.
           new: true
           pages: 35
-          citedAs: tridactyla. 2.
           notes: There is a non-Unicode "ct" ligature in the citedAs.
         - taxon: tetradactyla_linnaeus_1758
+          citedAs: tetradactyla. 3.
           new: true
           pages: 35
-          citedAs: tetradactyla. 3.
           notes: There is a non-Unicode "ct" ligature in the citedAs.
       - taxon: manis
+        citedAs: 9. MANIS.
         new: true
         pages: 36
-        citedAs: 9. MANIS.
         children:
         - taxon: pentadactyla_linnaeus_1758
+          citedAs: pentadactyla. 1.
           new: true
           pages: 36
-          citedAs: pentadactyla. 1.
           notes: There is a non-Unicode "ct" ligature in the citedAs.
     - taxon: ferae
+      citedAs: III. FERÆ.
       rank: Order
       new: true
       pages: 37
-      citedAs: III. FERÆ.
       children:
       - taxon: phoca
+        citedAs: 10. PHOCA.
         new: true
         pages: 37
-        citedAs: 10. PHOCA.
         children:
         - taxon: ursina_linnaeus_1758
-          new: true
-          pages: 37
           citedAs: Urſina. 1.
-        - taxon: leonina_linnaeus_1758
           new: true
           pages: 37
+        - taxon: leonina_linnaeus_1758
           citedAs: Leonina. 2.
+          new: true
+          pages: 37
         - taxon: rosmarus_linnaeus_1758
+          citedAs: Rosmarus. 3.
           new: true
           pages: 38
-          citedAs: Rosmarus. 3.
           notes: No "ſ" in the 3rd position, actually "s".
         - taxon: vitulina_linnaeus_1758
+          citedAs: Vitulina. 4.
           new: true
           pages: 38
-          citedAs: Vitulina. 4.
       - taxon: canis
+        citedAs: 11. CANIS.
         new: true
         pages: 38
-        citedAs: 11. CANIS.
       - taxon: felis
+        citedAs: 12. FELIS.
         new: true
         pages: 41
-        citedAs: 12. FELIS.
       - taxon: viverra
+        citedAs: 13. VIVERRA.
         new: true
         pages: 43
-        citedAs: 13. VIVERRA.
       - taxon: mustela
+        citedAs: 14. MUSTELA.
         new: true
         pages: 45
-        citedAs: 14. MUSTELA.
       - taxon: ursus
+        citedAs: 15. URSUS.
         new: true
         pages: 47
-        citedAs: 15. URSUS.
     - taxon: bestiae
+      citedAs: IV. BESTIÆ.
       rank: Order
       new: true
       pages: 49
       children:
       - taxon: sus
+        citedAs: 16. SUS.
         new: true
         pages: 49
       - taxon: dasypus
+        citedAs: 17. DASYPUS.
         new: true
         pages: 50
       - taxon: erinaceus
+        citedAs: 18. ERINACEUS.
         new: true
         pages: 52
       - taxon: talpa
+        citedAs: 19. TALPA.
         new: true
         pages: 52
       - taxon: sorex
+        citedAs: 20. SOREX.
         new: true
         pages: 53
       - taxon: didelphis
+        citedAs: 21. DIDELPHIS.
         new: true
         pages: 54
     - taxon: glires
+      citedAs: V. GLIRES.
       rank: Order
       new: true
       pages: 56
       children:
       - taxon: rhinoceros
+        citedAs: 22. RHINOCEROS.
         new: true
         pages: 56
       - taxon: hystrix
+        citedAs: 23. HYSTRIX.
         new: true
         pages: 56
       - taxon: lepus
+        citedAs: 24. LEPUS.
         new: true
         pages: 57
       - taxon: castor
+        citedAs: 25. CASTOR.
         new: true
         pages: 58
       - taxon: mus
+        citedAs: 26. MUS.
         new: true
         pages: 59
       - taxon: sciurus
+        citedAs: 27. SCIURUS.
         new: true
         pages: 63
     - taxon: pecora
+      citedAs: VI. PECORA.
       rank: Order
       new: true
       pages: 65
       children:
       - taxon: camelus
+        citedAs: 28. CAMELUS.
         new: true
         pages: 65
       - taxon: moschus
+        citedAs: 29. MOSCHUS.
         new: true
         pages: 66
       - taxon: cervus
+        citedAs: 30. CERVUS.
         new: true
         pages: 66
       - taxon: capra
+        citedAs: 31. CAPRA.
         new: true
         pages: 68
       - taxon: ovis
+        citedAs: 32. OVIS.
         new: true
         pages: 70
       - taxon: bos
+        citedAs: 33. BOS.
         new: true
         pages: 71
     - taxon: belluae
+      citedAs: VII. BELLUA
       rank: Order
       new: true
       pages: 73
+      notes: >
+        Spelled "Bellua" in the declaration but "Belluæ" in lists; apparently
+        "Belluae" is the accepted form and Bellua is a grammatical quirk in how
+        Linnaeus thought of his lists.
       children:
       - taxon: equus
+        citedAs: 34. EQVUS.
         new: true
         pages: 73
       - taxon: hippopotomus
+        citedAs: 35. HIPPOPOTAMUS.
         new: true
         pages: 74
     - taxon: cete
+      citedAs: VIII. CETE.
       rank: Order
       new: true
       pages: 75
       children:
       - taxon: monodon
+        citedAs: 36. MONODON.
         new: true
         pages: 75
       - taxon: balaena
+        citedAs: 37. BALÆNA.
         new: true
         pages: 75
       - taxon: physeter
+        citedAs: 38. PHYSETER.
         new: true
         pages: 76
       - taxon: delphinus
+        citedAs: 39. DELPHINUS.
         new: true
         pages: 77
   - taxon: aves
+    citedAs: CLASSIS II. AVES.
     rank: Class
     new: true
     pages: 78
     children:
     - taxon: accipitres
+      citedAs: I. ACCIPITRES.
       rank: Order
       new: true
       pages: 86
     - taxon: picae
+      citedAs: II. PICÆ.
       rank: Order
       new: true
       pages: 96
     - taxon: anseres
+      citedAs: III. ANSERES.
       rank: Order
       new: true
       pages: 122
     - taxon: grallae
+      citedAs: IV. GRALLÆ.
       rank: Order
       new: true
       pages: 139
     - taxon: gallinae
+      citedAs: V. GALLINÆ.
       rank: Order
       new: true
       pages: 156
     - taxon: passeres
+      citedAs: VI. PASSERES.
       rank: Order
       new: true
       pages: 162
-  - taxon: amphibia_linnaeus_1758
+  - taxon: amphibia
+    citedAs: CLASSIS III. AMPHIBIA.
     rank: Class
     new: true
     pages: 194
     children:
-    - taxon: reptiles
+    - taxon: reptilia
+      citedAs: I. REPTILES.
       rank: Order
       new: true
       pages: 197
+      notes: >
+        Linnaeus is considered to have established Reptilia, with the heading
+        "Reptiles" being considered a grammatical quirk of how Linnaeus
+        organized his structure.  The running header for the section is
+        "AMPHIBIA REPTILIA", which is apparently sufficient.
     - taxon: serpentes
+      citedAs: II. SERPENTES.
       rank: Order
       new: true
       pages: 214
     - taxon: nantes
+      citedAs: III. NANTES.
       rank: Order
       new: true
       pages: 230
   - taxon: pisces
+    citedAs: CLASSIS IV. PISCES.
     rank: Class
     new: true
     pages: 239
     children:
     - taxon: apodes
+      citedAs: I. APODES.
       rank: Order
       new: true
       pages: 244
     - taxon: jugulares
+      citedAs: II. JUGULARES.
       rank: Order
       new: true
       pages: 249
     - taxon: thoracici
+      citedAs: III. THORACICI.
       rank: Order
       new: true
       pages: 260
     - taxon: abdominales
+      citedAs: IV. ABDOMINALES.
       rank: Order
       new: true
       pages: 303
     - taxon: branchiostegi
+      citedAs: V. BRANCHIOSTEGI.
       rank: Order
       new: true
       pages: 327
   - taxon: insecta
+    citedAs: CLASSIS V. INSECTA.
     rank: Class
     new: true
     pages: 339
     children:
     - taxon: coleoptera
+      citedAs: I. COLEOPTERA.
       rank: Order
       new: true
       pages: 345
     - taxon: hemiptera
+      citedAs: II. HEMIPTERA.
       rank: Order
       new: true
       pages: 434
     - taxon: lepidoptera
+      citedAs: III. LEPIDOPTERA.
       rank: Order
       new: true
       pages: 458
     - taxon: neuroptera
+      citedAs: IV. NEUROPTERA.
       rank: Order
       new: true
       pages: 543
     - taxon: hymenoptera
+      citedAs: V. HYMENOPTERA.
       rank: Order
       new: true
       pages: 553
     - taxon: diptera
+      citedAs: VI. DIPTERA.
       rank: Order
       new: true
       pages: 584
     - taxon: aptera
+      citedAs: VII. APTERA.
       rank: Order
       new: true
       pages: 608
   - taxon: vermes
+    citedAs: CLASSIS VI. VERMES.
     rank: Class
     new: true
     pages: 641
     children:
     - taxon: intestina
+      citedAs: I. INTESTINA.
       rank: Order
       new: true
       pages: 647
