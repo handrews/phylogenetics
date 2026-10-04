@@ -674,14 +674,14 @@ files = [
 
 [[package]]
 name = "json-schema-engine"
-version = "0.0.3"
+version = "0.0.5"
 description = "A spec-complete, annotation-first JSON Schema engine for Python: interpreter, compiler, formats, every standard output format."
 optional = false
 python-versions = ">=3.12"
 groups = ["main"]
 files = [
-    {file = "json_schema_engine-0.0.3-py3-none-any.whl", hash = "sha256:c1b73334985f67cf1facc8f52937058bc3cfda393931519e12582366e39d9bad"},
-    {file = "json_schema_engine-0.0.3.tar.gz", hash = "sha256:f3e72770d652ee0ca68eddd687cbe4d42182545f01ac3ecd94b7e2ef53136ee6"},
+    {file = "json_schema_engine-0.0.5-py3-none-any.whl", hash = "sha256:2a7cee17d938ca7bef4c94353bd7ad5356c88b112a7550d483a2365aa08882f9"},
+    {file = "json_schema_engine-0.0.5.tar.gz", hash = "sha256:e20bc44b2389c992b743b3814273b81d5c34bc52030b935e9e1a0f1a3d50ca95"},
 ]
 
 [package.dependencies]
@@ -1467,4 +1467,4 @@ standard = ["httptools (>=0.8.0)", "python-dotenv (>=0.13)", "pyyaml (>=5.1)", "
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12,<4"
-content-hash = "7955c2b904e3766ff560e28d9dfe8a7e4246043af982e523f8d74a75a828580b"
+content-hash = "f4d73ef5a598ea8546c75443e79a83f90305c7409dec362138f0cb1a2f2db16c"
