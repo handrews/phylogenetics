@@ -50,6 +50,10 @@ Conventions the promotion of the Whiteaves and Bather drafts settled:
   for it (`parents` for the genus), with `fixation` when the paper gives
   the method. A draft never writes `isType`, which only the entries not
   yet re-read still carry.
+- An informal heading over some siblings (Linnaeus's "Integra" within
+  *Asterias*) is a section: `sectionStart` on the first sibling and
+  `sectionEnd` on the last, the record's key in `data/sections.yaml`
+  (listed by the checker when it has none). It is no taxon and no `rank`.
 - One specimen, one entry, even when the paper gives no number and no
   type word. Identifiers, a paper's own letters (A, B, C) and the
   repository are kept; descriptions are not.

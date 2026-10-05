@@ -1,7 +1,7 @@
 """Loading the corpus into the object model.
 
 `load()` reads every data file through `phylohist.loader.io`, registers
-authors, publications and sources, builds the taxa and then every tree,
+authors, publications and sources, builds the taxa, the sections and then every tree,
 and returns the raw data with the tree roots per source. The scripts,
 the tests and the extractor all come through here. Every integrity
 problem is logged where it is found so that one run reports them all;
@@ -16,7 +16,7 @@ import logging
 from . import material, nomenclature
 from .io import TREE_DIR, LoadError, display_path, load_files
 from .research import Author, Publication, Source
-from .taxa import Taxon, Tree
+from .taxa import Section, Taxon, Tree
 
 logger = logging.getLogger(__name__)
 
@@ -384,6 +384,7 @@ def load(drafts=False, tolerate=False):
     ):
       _basic_load(data, field, cls)
     _load_taxa(data)
+    _basic_load(data, 'sections', Section)
     roots = _load_trees(data)
   if errors.count and not tolerate:
     plural = 's' if errors.count != 1 else ''

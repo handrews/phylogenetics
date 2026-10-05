@@ -435,6 +435,68 @@ class Taxon:
     return self._alt
 
 
+class Section:
+  """An informal division of a formal group (`data/sections.yaml`): a
+  heading such as Linnaeus's "Integra" within *Asterias*. It has no
+  taxonomic status; a taxonomy marks its span of siblings with
+  `sectionStart` and `sectionEnd`."""
+
+  _sections = {}
+
+  @classmethod
+  def add(cls, section_data, section_key):
+    cls._sections[section_key] = Section(section_data, section_key)
+
+  @classmethod
+  def get(cls, section_key):
+    return cls._sections.get(section_key)
+
+  def __init__(self, section_data, section_key):
+    self._data = section_data
+    self._key = section_key
+    self._name = section_data.get('name')
+    self._designation = section_data.get('designation')
+    if self._name is None and not self._designation:
+      logger.error(f'Unnamed section {section_key} has no designation!')
+    # A section may leave its attribution to the work that prints it.
+    if 'authority' in section_data or 'auth' in section_data:
+      self._authority = Authority(section_data)
+    else:
+      self._authority = None
+
+  def __repr__(self):
+    return f'Section({self._key!r})'
+
+  @property
+  def key(self):
+    return self._key
+
+  @property
+  def name(self):
+    return self._name
+
+  @property
+  def designation(self):
+    return self._designation
+
+  @property
+  def label(self):
+    """What the section is called: its name, else its designation."""
+    return self._name or self._designation
+
+  @property
+  def authority(self):
+    return self._authority
+
+  @property
+  def cited_as(self):
+    return self._data.get('citedAs')
+
+  @property
+  def notes(self):
+    return self._data.get('notes')
+
+
 # A subtree of a tree node other than `children`: the field holding it;
 # whether that holds a list of nodes rather than a single one; and whether
 # its nodes cite a use of the name in another work (a synonymy entry, or
@@ -496,6 +558,65 @@ def bracket_spans(entries):
     (label, 'unclosed', key) for key, (label, end_depth) in opened.items() if end_depth is None
   )
   return brackets, errors, spans
+
+
+# What each problem `section_spans` finds says of the node it is labeled with.
+SECTION_ERRORS = {
+  'open': 'opens a section for {key} that is already open',
+  'closed': 'closes a section for {key} that is not open',
+  'unclosed': 'opens a section for {key} that its sibling list never closes',
+  'interleaved': (
+    'closes the section for {key} while the section for {other}, opened inside it, is still open'
+  ),
+}
+
+# What a section marker on a node that cannot carry one says.
+SECTION_NOT_TAXONOMY = 'has `{field}` but is in a {tree_type}; sections belong to taxonomies'
+SECTION_NOT_CHILD = (
+  'has `{field}` but is not a `children` entry; a root or a cited entry '
+  'cannot start or end a section'
+)
+
+
+def section_spans(entries):
+  """Pair the `sectionStart`/`sectionEnd` markers of one sibling list.
+
+  `entries` is the list's nodes in order, each ``(label, start, end)``:
+  `label` names the node in a message, `start` and `end` are the section
+  keys of its markers or `None`. A section runs from the node that opens it
+  to the node that closes it, inclusive; sections of one list may nest but
+  not interleave. Returns ``(sections, errors, spans)``: for each entry,
+  the tuple of keys of the sections it lies in, outermost first; the
+  problems, each ``(label, kind, key, other)`` with `kind` ``'open'`` (a
+  start for a key already open), ``'closed'`` (an end for a key not open),
+  ``'unclosed'`` (a start the list never closes, labeled with the start
+  node) or ``'interleaved'`` (an end for `key` while `other`, opened inside
+  it, is still open; the end still closes `key`); and the pairs, each
+  ``(start index, end index, key)``, of a section the list closes. Loader
+  and draft checker share this one pairing."""
+  # [key, label of the start node, index of the start node]
+  opened = []
+  sections = []
+  errors = []
+  spans = []
+  for index, (label, start, end) in enumerate(entries):
+    if start is not None:
+      if any(key == start for key, _, _ in opened):
+        errors.append((label, 'open', start, None))
+      else:
+        opened.append((start, label, index))
+    sections.append(tuple(key for key, _, _ in opened))
+    if end is not None:
+      at = next((i for i, (key, _, _) in enumerate(opened) if key == end), None)
+      if at is None:
+        errors.append((label, 'closed', end, None))
+      else:
+        if at + 1 < len(opened):
+          errors.append((label, 'interleaved', end, opened[at + 1][0]))
+        spans.append((opened[at][2], index, end))
+        del opened[at]
+  errors.extend((label, 'unclosed', key, None) for key, label, _ in opened)
+  return sections, errors, spans
 
 
 # The ranks of a species-level name, whose type is a specimen.
@@ -615,6 +736,12 @@ class Tree:
     # The brackets this node lies in, set for the whole tree by its root.
     self._brackets = ()
     self._bracket_end_node = None
+    self._section_start = self._check_section_start()
+    self._section_end = self._check_section_end()
+    # The sections this node lies in, set for the whole tree by its root;
+    # on a node that opens one, the node that closes it.
+    self._sections = ()
+    self._section_end_node = None
     # A lapsus is listed only in a synonymy, as the name printed in error.
     if 'lapsusFor' in self._data and self.axis not in ('synonyms', 'non'):
       logger.error(f'{self} has `lapsusFor` but is not a `synonyms` or `non` entry')
@@ -673,6 +800,7 @@ class Tree:
 
     if self._parent is None:
       self._pair_brackets()
+      self._pair_sections()
       Tree._type_index[self._type].add(self)
 
   def _pair_brackets(self):
@@ -701,6 +829,63 @@ class Tree:
       start._bracket_end_node = end
     for node, kind, key in errors:
       logger.error(f'{node} {BRACKET_ERRORS[kind].format(key=key)}')
+
+  def _pair_sections(self):
+    """Pair the section markers of each sibling list (`section_spans`), log
+    what does not pair, and give every primary node the sections it lies
+    in: those of its siblings' span, below those its ancestors lie in."""
+    for parent in self._primary_walk():
+      children = parent._children
+      entries = [
+        (
+          child,
+          child._section_start and child._section_start.key,
+          child._section_end and child._section_end.key,
+        )
+        for child in children
+      ]
+      sections, errors, spans = section_spans(entries)
+      keys = {
+        marker.key: marker
+        for child in children
+        for marker in (child._section_start, child._section_end)
+        if marker is not None
+      }
+      for child, in_keys in zip(children, sections, strict=True):
+        child._sections = parent._sections + tuple(keys[key] for key in in_keys)
+      for start, end, _ in spans:
+        children[start]._section_end_node = children[end]
+      for node, kind, key, other in errors:
+        logger.error(f'{node} {SECTION_ERRORS[kind].format(key=key, other=other)}')
+
+  def _check_section_marker(self, field):
+    """Whether this node may carry `field`; logs why not."""
+    if self._type != self.TYPE_TAXONOMY:
+      logger.error(f'{self} ' + SECTION_NOT_TAXONOMY.format(field=field, tree_type=self._type))
+      return False
+    if not (self.is_primary and self.axis == 'children'):
+      logger.error(f'{self} ' + SECTION_NOT_CHILD.format(field=field))
+      return False
+    return True
+
+  def _check_section(self, field, key):
+    """The `Section` a marker names; logs a key with no record."""
+    section = Section.get(key)
+    if section is None:
+      logger.error(f'Unrecognized tree {field} {key} for {self}')
+    return section
+
+  def _check_section_start(self):
+    marker = self._data.get('sectionStart')
+    if marker is None or not self._check_section_marker('sectionStart'):
+      return None
+    return self._check_section('sectionStart', marker.get('section'))
+
+  def _check_section_end(self):
+    key = self._data.get('sectionEnd')
+    if key is None or not self._check_section_marker('sectionEnd'):
+      return None
+    return self._check_section('sectionEnd', key)
 
   def _check_metadata(self):
     if self._metadata:
@@ -949,6 +1134,34 @@ class Tree:
     """The taxa whose brackets this node lies in, outermost first: from a
     start node to the last descendant of its end node."""
     return self._brackets
+
+  @property
+  def section_start(self):
+    """The `Section` this node opens, or `None`."""
+    return self._section_start
+
+  @property
+  def section_start_marker(self):
+    """The `sectionStart` object as written (`section`, `citedAs`, `pages`,
+    `notes`), or `None`."""
+    return self._data.get('sectionStart')
+
+  @property
+  def section_end(self):
+    """The `Section` this node closes, or `None`."""
+    return self._section_end
+
+  @property
+  def section_end_node(self):
+    """On a node that opens a section, the node that closes it (itself for
+    a one-node span); `None` elsewhere, or when the list never closes it."""
+    return self._section_end_node
+
+  @property
+  def sections(self):
+    """The sections this node lies in, outermost first: its own siblings'
+    spans, each with its subtree, below those its ancestors lie in."""
+    return self._sections
 
   def related_node(self, axis):
     """The node under a single-node axis (``moved``, ``corrected``, ...),

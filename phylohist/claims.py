@@ -32,6 +32,7 @@ KINDS = (
   'secondhand',
   'editorial',
   'absence',
+  'section',
 )
 
 # The audit.coverage kind each claim is counted under, for the manifest and
@@ -436,6 +437,9 @@ class _NodeClaims:
         claim['via'] = 'bracket'
         self._emit(claim)
 
+    if node.section_start is not None and node.section_end_node is not None:
+      self._section()
+
     if named and node.axis == 'children':
       claim = self._placement_base()
       ancestor = _nearest_named_ancestor(node)
@@ -506,6 +510,32 @@ class _NodeClaims:
     self._number()
     self._link_illustrations()
     return self.claims
+
+  def _section(self):
+    """One claim for the span of siblings a `sectionStart` opens: the
+    section's record, the named siblings in it and where it ends."""
+    node = self.node
+    section, marker = node.section_start, node.section_start_marker
+    end = node.section_end_node
+    siblings = node.parent.children[node.relpath[1] : end.relpath[1] + 1]
+    claim = {
+      'kind': 'section',
+      'source': self.source_key,
+      'path': self.path,
+      'tree': self.tree,
+    }
+    if self.tree_notes is not None:
+      claim['treeNotes'] = self.tree_notes
+    claim['subject'] = section.key
+    claim['section'] = section.key
+    claim['name'] = section.label
+    claim['members'] = [s.taxon.key for s in siblings if s.taxon is not None]
+    claim['memberPaths'] = [f'{s.position}{s.pointer}' for s in siblings]
+    claim['endPath'] = f'{end.position}{end.pointer}'
+    for field in ('citedAs', 'pages', 'notes'):
+      if field in marker:
+        claim[field] = marker[field]
+    self._emit(claim, 'sectionStart')
 
   def _usage(self):
     node, data = self.node, self.data
@@ -1246,7 +1276,8 @@ def manifest(claims_by_source, roots):
     sources[source_key] = entry
 
     for claim in claims:
-      if claim['subject'] is not None:
+      # A section's subject is its own record's key, no taxon's.
+      if claim['subject'] is not None and claim['kind'] != 'section':
         taxa[claim['subject']].add(source_key)
 
   return {

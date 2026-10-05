@@ -18,7 +18,15 @@ extractor can reach it the way it reaches `Source`.
 import re
 
 from ..names import fold
-from .taxa import BRACKET_ERRORS, Tree, bracket_spans
+from .taxa import (
+  BRACKET_ERRORS,
+  SECTION_ERRORS,
+  SECTION_NOT_CHILD,
+  SECTION_NOT_TAXONOMY,
+  Tree,
+  bracket_spans,
+  section_spans,
+)
 
 _WHITESPACE_RE = re.compile(r'\s+')
 
@@ -573,6 +581,49 @@ def bracket_errors(document):
     _, errors, _ = bracket_spans(entries)
     messages.extend(
       ('error', f'{path}: {BRACKET_ERRORS[kind].format(key=key)}') for path, kind, key in errors
+    )
+  return messages
+
+
+def section_errors(document):
+  """The section markers of each taxonomy in a raw tree file that break a
+  rule, as ``('error', message)`` pairs naming the node's path: a marker in
+  a tree that is no taxonomy or on a node that is no `children` entry, and,
+  in each `children` list, the markers that do not pair (`taxa.section_spans`:
+  a start for a key already open, an end with no open start, a start the
+  list never closes, an interleaving); the loader finds the same in each
+  loaded `Tree`. Only the `children` axis is read."""
+  taxonomies = len(document.get('taxonomies') or ())
+  tree_types = {
+    taxonomies + index: str((phylogeny or {}).get('treeType') or '').lower()
+    for index, phylogeny in enumerate(document.get('phylogenies') or ())
+  }
+  messages = []
+  lists = {}
+  for path, node, _ in walk_document(document):
+    position, _, pointer = path.partition('/')
+    segments = pointer.split('/') if pointer else []
+    marks = {f: node.get(f) for f in ('sectionStart', 'sectionEnd') if node.get(f) is not None}
+    start = node.get('sectionStart')
+    start = start.get('section') if isinstance(start, dict) else None
+    end = node.get('sectionEnd')
+    keys = (start if isinstance(start, str) else None, end if isinstance(end, str) else None)
+    tree_type = tree_types.get(int(position), 'taxonomy')
+    primary = all(s == 'children' or s.isdigit() for s in segments)
+    for field in marks:
+      if tree_type != 'taxonomy':
+        messages.append(
+          ('error', f'{path}: ' + SECTION_NOT_TAXONOMY.format(field=field, tree_type=tree_type))
+        )
+      elif not (primary and segments):
+        messages.append(('error', f'{path}: ' + SECTION_NOT_CHILD.format(field=field)))
+    if tree_type == 'taxonomy' and primary and segments:
+      lists.setdefault((position, tuple(segments[:-2])), []).append((path, *keys))
+  for entries in lists.values():
+    _, errors, _ = section_spans(entries)
+    messages.extend(
+      ('error', f'{path}: {SECTION_ERRORS[kind].format(key=key, other=other)}')
+      for path, kind, key, other in errors
     )
   return messages
 

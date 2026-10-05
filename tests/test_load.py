@@ -123,6 +123,7 @@ def test_data_files_in_load_order():
     'publications',
     'sources',
     'taxa',
+    'sections',
     'repositories',
     'roles',
   ]
@@ -144,7 +145,7 @@ def test_load_fails_on_logged_errors(monkeypatch):
 
   def broken(drafts=False):
     logging.getLogger('phylohist.loader.taxa').error('a check fired')
-    return {k: {} for k in ('authors', 'publications', 'sources', 'taxa', 'trees')}
+    return {k: {} for k in ('authors', 'publications', 'sources', 'taxa', 'sections', 'trees')}
 
   monkeypatch.setattr(loading, 'load_files', broken)
   with pytest.raises(LoadError, match='1 integrity error while loading'):
@@ -173,7 +174,7 @@ def test_tree_without_a_source_record_is_skipped(monkeypatch):
   loading = importlib.import_module('phylohist.loader.load')
 
   def orphan(drafts=False):
-    data = {k: {} for k in ('authors', 'publications', 'sources', 'taxa')}
+    data = {k: {} for k in ('authors', 'publications', 'sources', 'taxa', 'sections')}
     data['trees'] = {'9999_nobody': {'taxonomies': [{'taxon': 'cyathocystis'}]}}
     return data
 
