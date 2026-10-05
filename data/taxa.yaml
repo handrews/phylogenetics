@@ -6539,32 +6539,16 @@ infundus_frest_strimple_mcginnis_1976:
   name: infundus
   auth: [frest, Strimple, McGinnis]
   year: 1976
-infusoria-class:
-  name: Infusoria
-  rank: Class
-  auth: [Ledermüller]
-  year: 1763
-infusoria-order:
+infusoria:
   name: Infusoria
   rank: Order
-  auth: [Ledermüller]
-  year: 1763
-infusoria-section:
-  name: Infusoria
-  rank: section
-  auth: [Ledermüller]
-  year: 1763
-infusoires-class:
-  name: Infusoires
-  vulgarSpellingOf: infusoria-class
-  lang: FR
+  authority:
+    source: 1773_müller.o.f
+  notes: >
+    Term used by Ledermüller 1763 but apparently not formalized.
 infusoires:
   name: Infusoires
-  vulgarSpellingOf: infusoria-order
-  lang: FR
-infusoires-section:
-  name: Infusoires
-  vulgarSpellingOf: infusoria-section
+  vulgarSpellingOf: infusoria
   lang: FR
 inhaerens_müller.o.f_1776:
   name: inhaerens
