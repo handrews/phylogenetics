@@ -3,18 +3,22 @@
     poetry run python scripts/check_draft.py drafts/1891_bell.f.j.yaml
 
 Validates the draft against the tree schema the loader uses, then lists the
-taxon keys, author keys and source keys the draft cites that have no record
+taxon keys, author keys, source keys and section keys the draft cites that have no record
 yet. It then runs the material checks
 (`phylohist.loader.material`) over the draft's nodes: a cited entry carrying
 `material`/`contexts`/`ranges`, a null `illustrations`, or an `of`/`depicts`
 in its `illustrations` (or in an `authority`'s); a null `material`,
 `illustrations`, `contexts`, `ranges`, `synonyms`, `type` or `children` on a
-primary node (only an auditor sets nulls); a `unused` field still present on a node; an explicit
-`repository` that is no registry key; a `prefix` missing from the file's
-`prefixes` map, a map entry that is unused, not a registry key or not a known
-form of its register, numbers with no prefix, repository or holder, a number
-that begins with its register's own prefix, and a locality number with no
-register; and a dangling `context`, figure `of` or `castOf`. The
+primary node (only an auditor sets nulls); a `unused` field still present on a node; a
+`bracketStart` for a taxon whose bracket is already open, a `bracketEnd` with no
+open start, or a start the tree never closes; a `sectionStart` or `sectionEnd`
+outside a taxonomy's `children` lists, or one that does not pair within its
+list (a key already open, an end with no open start, a start never closed, an
+interleaving); an explicit `repository` that is no registry key; a `prefix`
+missing from the file's `prefixes` map, a map entry that is unused, not a
+registry key or not a known form of its register, numbers with no prefix,
+repository or holder, a number that begins with its register's own prefix, and a
+locality number with no register; and a dangling `context`, figure `of` or `castOf`. The
 open-nomenclature checks (`phylohist.loader.nomenclature`) add a `cf` or `aff`
 off an `openTaxon` node, on both, or aimed at a missing, unnamed or other-rank
 taxon; a `quotedParent` above the species level; a `roleUncertain` with no
@@ -43,14 +47,20 @@ from phylohist.loader.io import (  # noqa: E402
   load_yaml,
 )
 
-TAXON_FIELDS = ('taxon', 'openTaxon', 'bracket')
+TAXON_FIELDS = ('taxon', 'openTaxon', 'bracketStart', 'bracketEnd')
 
 
-def walk(node, taxa, authors, sources):
+def walk(node, taxa, authors, sources, sections=None):
   if isinstance(node, dict):
     for field in TAXON_FIELDS:
       if isinstance(node.get(field), str):
         taxa.add(node[field])
+    if sections is not None:
+      start = node.get('sectionStart')
+      if isinstance(start, dict) and isinstance(start.get('section'), str):
+        sections.add(start['section'])
+      if isinstance(node.get('sectionEnd'), str):
+        sections.add(node['sectionEnd'])
     for author in node.get('auth') or ():
       # A capitalised author string is the convention for an author with no
       # record; only key-form strings are expected to resolve.
@@ -66,10 +76,10 @@ def walk(node, taxa, authors, sources):
       if isinstance(corrected.get('source'), str):
         sources.add(corrected['source'])
     for value in node.values():
-      walk(value, taxa, authors, sources)
+      walk(value, taxa, authors, sources, sections)
   elif isinstance(node, list):
     for value in node:
-      walk(value, taxa, authors, sources)
+      walk(value, taxa, authors, sources, sections)
 
 
 def draft_nulls(node, is_cited):
@@ -95,6 +105,8 @@ def check_material(draft, repositories, taxa):
     *((lv, f'repositories: {m}') for lv, m in material.registry_links(repositories)),
     *material.unreferenced_file_contexts(draft),
     *material.unused_fields(draft),
+    *material.bracket_errors(draft),
+    *material.section_errors(draft),
     *material.file_prefixes(draft, repositories),
   ]
   file_prefixes = draft.get('prefixes') or {}
@@ -177,16 +189,22 @@ def main(argv):
 
   # The draft's own source is named by its file, and the loader skips a
   # tree whose source has no record.
-  taxa, authors, sources = set(), set(), {path.stem}
-  walk(draft, taxa, authors, sources)
+  taxa, authors, sources, sections = set(), set(), {path.stem}, set()
+  walk(draft, taxa, authors, sources, sections)
   records = load_yaml(DATA_DIR / 'taxa.yaml')
   source_records = load_yaml(DATA_DIR / 'sources.yaml')
   known = {
     'taxa': set(records),
     'authors': set(load_yaml(DATA_DIR / 'authors.yaml')),
     'sources': set(source_records),
+    'sections': set(load_yaml(DATA_DIR / 'sections.yaml')),
   }
-  for label, cited in (('taxa', taxa), ('authors', authors), ('sources', sources)):
+  for label, cited in (
+    ('taxa', taxa),
+    ('authors', authors),
+    ('sources', sources),
+    ('sections', sections),
+  ):
     missing = sorted(cited - known[label])
     print(f'{label}: {len(cited)} cited, {len(missing)} without a record')
     for key in missing:

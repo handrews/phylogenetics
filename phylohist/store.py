@@ -233,7 +233,8 @@ class ClaimStore:
           claim = json.loads(line)
           claims.append(claim)
           self.by_id[claim['id']] = claim
-          if claim.get('subject') is not None:
+          # A section's subject is its own record's key, no taxon's.
+          if claim.get('subject') is not None and claim['kind'] != 'section':
             self.by_subject[claim['subject']].append(claim)
           self.at_path[path.stem][claim['path']].append(claim)
       self.by_source[path.stem] = claims

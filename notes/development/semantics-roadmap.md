@@ -405,7 +405,8 @@ an ordinary resolved citation that needs no `editorial` block.
 | `modifier` | "nom. transl.", "nomen nudum", "n. comb." | nomenclatural act or name group | — | replaced by `translated` and `nudum` (B6) |
 | `stem` | "stem-group" | stem-group usage | — (flag) | keep |
 | `outgroup` | cladogram outgroup | outgroup | — (flag) | keep |
-| `bracket` (tree) | clade bracket / label | named clade in a cladogram | — | keep |
+| `bracketStart` / `bracketEnd` (tree) | clade bracket / label | named clade in a cladogram: a span in reading order, from the start node to the end node's last descendant (2026-10-05) | — | replaces the node-level `bracket` |
+| `sectionStart` / `sectionEnd` (taxonomy tree) | an informal heading over some sibling taxa ("Integra", "Stellatae", "Radiatae") | a span of siblings in one `children` list, start to end inclusive with their subtrees, named by a record in `sections.yaml` (2026-10-05) | — | built; see C6 |
 | `rank` (tree) | rank as printed here | rank as used by this source | — | keep; overrides taxon rank; `null` says the source places the taxon with no rank word (2026-10-03) |
 
 Taxon-record relations:
@@ -991,6 +992,44 @@ Uncertain" (Guensburg & Sprinkle 1994, p. 42) is English shorthand for an
 uncertain order and an uncertain family; two nested placeholders are the
 right reading, not an editorial invention. A note quoting the heading on the
 outer node is enough.
+
+**C6 (built 2026-10-05). Sections.** Early taxonomists divided formal
+groups informally: Linnaeus 1758 splits *Asterias* into "Integra",
+"Stellatae" and "Radiatae", and *Echinus* and the genus list of *Testacea*
+by descriptive headings. These have no taxonomic status, but they recur
+across works and are often the seed of later taxa. The corpus entered them
+as taxa of `rank: section`, which made them placements and gave them the
+standing of a name. A **section** is instead a span of siblings in a
+taxonomy with a record of its own:
+
+- Two markers on nodes of the same `children` list (both may sit on one
+  node), the end at or after the start in list order: `sectionStart`, an
+  object (`section`, the record's key; `citedAs`, `pages`, `notes` as this
+  source prints it), and `sectionEnd`, the key. The span is those
+  siblings, start to end inclusive, each with its subtree; unlike a
+  bracket, a section never crosses a level. Sections of one sibling list
+  may nest and may not interleave. The loader and the draft checker report
+  an end with no open start of its key in the list, a start the list never
+  closes, a start for a key already open, and an interleaving; and a
+  marker in a tree that is no taxonomy or on a node that is no `children`
+  entry (a root, a cited entry). The schema allows the markers on a
+  taxonomy node only.
+- `data/sections.yaml`, keyed like `taxa.yaml`: `name` (or `null` with a
+  `designation` for a heading that is only a descriptive phrase),
+  `authority` (the source that prints it) or `auth`/`year`, `citedAs`,
+  `notes`. The file is empty today; the loader reads it after the taxa
+  (`taxa.Section`).
+- One `section` claim per span, emitted by the start node: the section's
+  key as `subject` and `section`, its `name`, `members` (the record keys of
+  the named siblings), `memberPaths`, `endPath`, and the marker's
+  `citedAs`, `pages`, `notes` (`docs/claims.md`). The manifest's per-taxon
+  source lists and the store's `by_subject` index leave it out, since its
+  subject is no taxon.
+- The 22 `rank: section` records in `taxa.yaml` (the Linnaeus 1758 ones
+  among them) are for the owner to re-enter as sections on the `linnaeus`
+  branch, with `sectionStart` and `sectionEnd` in the trees; they are
+  untouched here.
+- Queries and output over sections are deferred: no tool reads the claim.
 
 ---
 

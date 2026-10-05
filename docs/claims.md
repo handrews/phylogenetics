@@ -21,12 +21,12 @@ Every claim carries:
 | field | value |
 |---|---|
 | `id` | `<source>:<path>:<kind>[:<n>]`. `<path>` is the node's position in its tree file as the loader computes it: the taxonomy or phylogeny index, then each step down (`children/2`, `synonyms/0`, `non/1`, `removed/0`, `parents/0`, `moved`, `corrected`, `substituted`, `lapsus`, `lapsusFor`, `type`, `or/0`). `<n>` disambiguates several claims of one kind from one node (a node with three `material` entries yields three `material` claims). Ids are stable as long as the file is not reordered; the tree keeps printed order, so reordering is a data change. |
-| `kind` | one of `usage`, `placement`, `acceptance`, `act`, `rejection`, `material`, `secondhand`, `editorial`, `absence` |
+| `kind` | one of `usage`, `placement`, `acceptance`, `act`, `rejection`, `material`, `secondhand`, `editorial`, `absence`, `section` |
 | `source` | the tree file's source key |
 | `path` | the node's position and pointer, `0/children/0/children/0`, the same string the id carries |
 | `tree` | `taxonomy`, or a phylogeny's `treeType`; a phylogeny's `notes` ride along as `treeNotes` |
 | `pages` | the node's `pages` as written. A node without `pages` takes the nearest ancestor's along the `children` axis only, and the claim then carries `pagesInherited: true`. An inferred node written `pages: null` (it has no page in this source) carries none and passes none down: its children without `pages` carry none either. Entries on any other axis never inherit. On a cited entry (a `synonyms` or `non` entry, a `type` node, or the earlier state of a name under `translated`, `corrected`, `substituted`, `moved` or `removed`) `pages` and `illustrations` locate the cited usage in the cited work, whether written flat or inside an `authority` block, so they appear as `citedPages` and `citedIllustrations` and the claim has no `pages` of its own. |
-| `subject` | the resolved taxon key the claim is about |
+| `subject` | the resolved taxon key the claim is about; a `section` claim's is the section's key (a record of `data/sections.yaml`, no taxon) |
 | `printed` | the printed form on that line: `citedAs` verbatim, and `auth`, `year`, `in` as written (A1, A12). Absent `auth` means "as the record"; the claim says so with `printedAttribution: as-record`. |
 | `audit` | the source's `audit.state`; `coverageKind`, the coverage kind the claim counts under (`skeleton` for usage, rejection and a taxonomy placement, `phylogeny` for a placement in a phylogeny, `synonymy` for acceptance, `newTaxa`/`types` for the matching acts, `material`/`occurrences`/`illustrations` by material kind); and `coverage`, the effective value for that kind (declared, or derived where "Derived coverage" says so) |
 | `editorial` | the node's `editorial` block, copied through |
@@ -57,7 +57,10 @@ Emitted for every node that cites a name: `taxon`, `openTaxon`, and for
 every `synonyms`, `non`, `removed`, `parents`, `or` and `type` entry. Fields added:
 
 - `form`: which field carried the name (`taxon` or `openTaxon`); `bracket`
-  for a cladogram's bracket label.
+  for a cladogram's bracket, emitted at the start of a bracket span (the
+  node with `bracketStart`), with `bracketEnd` the path where the span ends
+  (the node with the matching `bracketEnd`; the same path for a one-node
+  span).
 - `spelling`: the key used on the line. Spellings are undirected (B28); the
   claim never substitutes the record the key points at.
 - `axis`: how the node hangs off its parent (`children`, `synonyms`,
@@ -99,8 +102,15 @@ Emitted for every child under its parent in a taxonomy. Fields added:
 
 A phylogeny's nesting produces placements too, marked
 `tree: cladogram | diagram | other` with the phylogeny's `notes`, and a
-`bracket` label is a second placement of the node's name whose parent is
-the bracket's key, marked `via: bracket`.
+bracket is a second placement of the name, marked `via: bracket`, whose
+parent is the bracket's key. A bracket is a span in the tree's reading order
+(a node, its descendants, then its next sibling): from the node that carries
+`bracketStart` to the last descendant of the node that carries the matching
+`bracketEnd`, so an end on an internal node takes its whole subtree and
+every node in between lies in the span, unnamed ones included. Every named
+node in the span carries one such placement, one per bracket it lies in when
+spans nest, so a bracket over part of an unnamed clade places the named
+nodes below it as well.
 
 A `type` node is a placement marked `via: type` when the taxon that carries
 it is a primary node of a taxonomy and the same record is not also one of
@@ -362,6 +372,43 @@ it") and selects it with the kind it speaks of: `specimens` and `material`
 table of the source's content for the record, per node and kind. `synonymy` with a named source answers a node with that
 absence by a `none` statement block, "<cite> gives no synonymy for <name>".
 
+### `section`
+
+An informal division of a formal group, such as Linnaeus 1758's "Integra",
+"Stellatae" and "Radiatae" within *Asterias* or a descriptive heading in a
+genus list. A section has no taxonomic status, so it is no placement; it is
+a span of siblings in a taxonomy with a record of its own in
+`data/sections.yaml`, keyed like `taxa.yaml`. The tree marks it with
+`sectionStart` (an object: `section`, the record's key, and optionally
+`citedAs`, `pages`, `notes`) on its first sibling and `sectionEnd` (the key)
+on its last, both in one `children` list, both markers on one node for a
+one-sibling section. The span is those siblings from start to end,
+inclusive, each with its subtree; a section never crosses a level. Within
+one sibling list sections may nest but not interleave, and the loader and
+the draft checker report an end with no open start, a start never closed, a
+start for a key already open and an interleaving. A section is valid in a
+taxonomy only.
+
+One claim per span, emitted by the start node (a start the list never
+closes emits none; the loader reports it). Fields: the shared record (`id`,
+`source`, `path`, `tree`, `audit`; no `printedAttribution`) and
+
+- `subject` and `section`: the section's key. The subject is no taxon's, so
+  the manifest's per-taxon source lists and the store's `by_subject` index
+  leave a `section` claim out.
+- `name`: the record's `name`, or its `designation` when the name is null.
+- `members`: the record keys of the named siblings in the span, in list
+  order; a sibling with no `taxon` or `openTaxon` is a member by path only.
+- `memberPaths`: the path of every sibling in the span, in list order (a
+  sibling's subtree is no member).
+- `endPath`: the path of the node that closes the span (the start node's
+  own for a one-sibling span).
+- `citedAs`, `pages`, `notes`: from the `sectionStart` marker, when given.
+
+The claim has no `audit.coverageKind`; it appears in the per-kind `claims`
+counts only. No tool reads it yet: the tools, `statements` included, leave
+it out, and queries and output over sections are deferred.
+
 ## Derived coverage
 
 `claims/manifest.json` holds, per source record (every key in
@@ -469,7 +516,9 @@ types into its holder and its bare number.
 one row per taxon record: name, rank, kind (`primary`, `altSpellingOf`,
 `altRankOf`, `vulgarSpellingOf`, `placeholder`), the base record of a
 variant, the authority as displayed and its resolved source, and the
-folded lookup forms (`phylohist/names.py`). Each manifest source row
+folded lookup forms (`phylohist/names.py`). A section has no row there: its
+record is in `data/sections.yaml` and only its `section` claim names it.
+Each manifest source row
 carries a `citation` so a source can be named as a reader cites it.
 
 Answers are assembled from **blocks** (`phylohist/blocks.py`): data,

@@ -9766,7 +9766,7 @@
    "claims": {
     "acceptance": 2,
     "act": 8,
-    "placement": 61,
+    "placement": 90,
     "usage": 71
    },
    "coverage": {
@@ -9780,7 +9780,7 @@
     "types": "all"
    },
    "derived": {
-    "phylogeny": 14,
+    "phylogeny": 43,
     "skeleton": 118,
     "synonymy": 2,
     "types": 5
@@ -11113,7 +11113,7 @@
    },
    "claims": {
     "act": 2,
-    "placement": 12,
+    "placement": 17,
     "usage": 14
    },
    "coverage": {
@@ -11128,7 +11128,7 @@
    },
    "derived": {
     "newTaxa": 1,
-    "phylogeny": 9,
+    "phylogeny": 14,
     "skeleton": 17,
     "types": 1
    },
@@ -11783,8 +11783,8 @@
    },
    "claims": {
     "act": 24,
-    "placement": 44,
-    "usage": 48
+    "placement": 54,
+    "usage": 44
    },
    "coverage": {
     "illustrations": null,
@@ -11798,8 +11798,8 @@
    },
    "derived": {
     "newTaxa": 18,
-    "phylogeny": 21,
-    "skeleton": 71,
+    "phylogeny": 31,
+    "skeleton": 67,
     "types": 6
    },
    "derivedCoverage": {
@@ -13576,8 +13576,8 @@
    },
    "claims": {
     "act": 5,
-    "placement": 28,
-    "usage": 33
+    "placement": 36,
+    "usage": 31
    },
    "coverage": {
     "illustrations": null,
@@ -13591,8 +13591,8 @@
    },
    "derived": {
     "newTaxa": 1,
-    "phylogeny": 16,
-    "skeleton": 45,
+    "phylogeny": 24,
+    "skeleton": 43,
     "types": 1
    },
    "derivedCoverage": {
@@ -14718,8 +14718,8 @@
     "acceptance": 3,
     "act": 4,
     "material": 1,
-    "placement": 24,
-    "usage": 31
+    "placement": 32,
+    "usage": 30
    },
    "coverage": {
     "illustrations": null,
@@ -14734,8 +14734,8 @@
    "derived": {
     "illustrations": 1,
     "newTaxa": 3,
-    "phylogeny": 15,
-    "skeleton": 40,
+    "phylogeny": 23,
+    "skeleton": 39,
     "synonymy": 3,
     "types": 1
    },
@@ -14820,7 +14820,7 @@
    "claims": {
     "act": 3,
     "material": 2,
-    "placement": 22,
+    "placement": 35,
     "usage": 24
    },
    "coverage": {
@@ -14836,7 +14836,7 @@
    "derived": {
     "material": 2,
     "newTaxa": 2,
-    "phylogeny": 15,
+    "phylogeny": 28,
     "skeleton": 31,
     "types": 1
    },
@@ -15138,7 +15138,7 @@
    "claims": {
     "act": 4,
     "material": 3,
-    "placement": 68,
+    "placement": 83,
     "usage": 71
    },
    "coverage": {
@@ -15154,7 +15154,7 @@
    "derived": {
     "material": 3,
     "newTaxa": 3,
-    "phylogeny": 64,
+    "phylogeny": 79,
     "skeleton": 75,
     "types": 1
    },
@@ -15433,7 +15433,7 @@
    "claims": {
     "act": 4,
     "material": 2,
-    "placement": 33,
+    "placement": 43,
     "usage": 37
    },
    "coverage": {
@@ -15449,7 +15449,7 @@
    "derived": {
     "material": 2,
     "newTaxa": 3,
-    "phylogeny": 29,
+    "phylogeny": 39,
     "skeleton": 41,
     "types": 1
    },

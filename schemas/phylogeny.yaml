@@ -33,6 +33,14 @@ $defs:
     type: object
     additionalProperties:
       $ref: "#/$defs/taxonRecord"
+  sections:
+    description: |
+      The informal divisions of a formal group, keyed like `taxa` and
+      referred to by key from a taxonomy node's `sectionStart` and
+      `sectionEnd`.
+    type: object
+    additionalProperties:
+      $ref: "#/$defs/sectionRecord"
   treeDocument:
     type: object
     additionalProperties: false
@@ -349,9 +357,6 @@ $defs:
       What a tree node and a taxon record share. `rank` and `pages` are
       declared by each (a node's may be `null`), so neither is here.
     properties:
-      bracket:
-        ### TODO: Replace this property name
-        type: string
       citedAs:
         description: |
           A bibliographic reference exactly as printed in the source being
@@ -430,6 +435,9 @@ $defs:
     dependentRequired:
       pages: [rank]
     properties:
+      bracket:
+        ### TODO: Replace this property name (roadmap B7: to be renamed `vernacular`)
+        type: string
       rank:
         description: |
           Explicit on a record that gives its protologue `pages`, where the
@@ -481,6 +489,79 @@ $defs:
       notes:
         type: string
 
+  sectionRecord:
+    description: |
+      An informal division of a formal group, the way Linnaeus 1758 splits
+      *Asterias* into "Integra", "Stellatae" and "Radiatae" or lists the
+      genera of Testacea under unnamed headings. A section has no
+      taxonomic status; it is a span of siblings in a taxonomy
+      (`sectionStart`, `sectionEnd`) and a record of its own, so the same
+      division can be recognised across works. `name` is the heading as a
+      name, or `null` for a heading that is only a descriptive phrase,
+      given as `designation`.
+    type: object
+    $ref: "#/$defs/authorityFields"
+    unevaluatedProperties: false
+    required: [name]
+    if:
+      required: [name]
+      properties:
+        name:
+          type: "null"
+    then:
+      required: [designation]
+    properties:
+      name:
+        type: [string, "null"]
+        minLength: 1
+      designation:
+        description: |
+          The phrase that stands for the section when it has no name;
+          required when `name` is `null`.
+        type: string
+        minLength: 1
+      citedAs:
+        description: |
+          The heading as its protologue prints it, when that differs from
+          `name`.
+        type: string
+      notes:
+        type: string
+
+  sectionFields:
+    properties:
+      sectionStart:
+        description: |
+          Opens the section `section` (a key of `sections.yaml`) at this
+          node. A section is a span of siblings: from the node that
+          carries `sectionStart` to the node, in the same `children`
+          list, that carries the matching `sectionEnd`, inclusive, each
+          with its subtree. A section never crosses a level. Both markers
+          may sit on one node; the end is at or after the start in list
+          order. Sections of one sibling list may nest but not
+          interleave, and the loader reports a `sectionEnd` with no open
+          start of its key in the list, a start the list never closes, a
+          start for a key already open and an interleaving. Valid on a
+          `children` entry of a taxonomy only. `citedAs` is the heading as
+          printed here, `pages` where it is printed.
+        type: object
+        required: [section]
+        additionalProperties: false
+        properties:
+          section:
+            type: string
+          citedAs:
+            type: string
+          pages:
+            $ref: "#/$defs/citationNumbers"
+          notes:
+            type: string
+      sectionEnd:
+        description: |
+          Closes the open section for this key at this node: the last
+          sibling of the span (see `sectionStart`).
+        type: string
+
   tree:
     $id: tree
     $dynamicAnchor: tree
@@ -505,6 +586,24 @@ $defs:
         oneOf:
         - $ref: "phylogeny#/$defs/citationNumbers"
         - type: "null"
+      bracketStart:
+        description: |
+          Opens a bracket for this taxon (a key naming a named record) at this
+          node. A bracket is a span in the tree's reading order (a node, its
+          descendants, then its next sibling): from the node that carries
+          `bracketStart` to the last descendant of the node that carries the
+          matching `bracketEnd`, so an end on an internal node takes its whole
+          subtree. Every node in between lies in the span, unnamed ones
+          included. Both markers may sit on one node. Spans of different
+          taxa may nest; one taxon's spans are disjoint (a polyphyletic
+          bracket is two spans), and the loader reports a start for a taxon
+          already open, an end with no open start and a start never closed.
+        type: string
+      bracketEnd:
+        description: |
+          Closes the open bracket for this taxon at this node: the span
+          reaches the last descendant of this node (see `bracketStart`).
+        type: string
       mergeInto:
         type: array
         minItems: 2
@@ -609,6 +708,7 @@ $defs:
     - $ref: "#/$defs/actAndModifierFields"
     - $ref: "#/$defs/relationalFields"
     - $ref: "#/$defs/materialsFields"
+    - $ref: "#/$defs/sectionFields"
 
   actAndModifierFields:
     properties:

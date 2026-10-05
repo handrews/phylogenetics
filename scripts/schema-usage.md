@@ -30,6 +30,9 @@ even when its parent is also unreached, so read parents first.
 | `publication` | `phylogeny#/$defs/publication/properties/type` |
 | `range` | `phylogeny#/$defs/range/properties/inferred`<br>`phylogeny#/$defs/range/properties/tentative/oneOf/0` |
 | `relationalFields` | `phylogeny#/$defs/relationalFields/properties/type`<br>`phylogeny#/$defs/relationalFields/properties/type/oneOf/0`<br>`phylogeny#/$defs/relationalFields/properties/type/oneOf/1` |
+| `sectionFields` | `phylogeny#/$defs/sectionFields/properties/sectionEnd`<br>`phylogeny#/$defs/sectionFields/properties/sectionStart`<br>`phylogeny#/$defs/sectionFields/properties/sectionStart/properties/citedAs`<br>`phylogeny#/$defs/sectionFields/properties/sectionStart/properties/notes`<br>`phylogeny#/$defs/sectionFields/properties/sectionStart/properties/pages`<br>`phylogeny#/$defs/sectionFields/properties/sectionStart/properties/section` |
+| `sectionRecord` | `phylogeny#/$defs/sectionRecord`<br>`phylogeny#/$defs/sectionRecord/if`<br>`phylogeny#/$defs/sectionRecord/if/properties/name`<br>`phylogeny#/$defs/sectionRecord/properties/citedAs`<br>`phylogeny#/$defs/sectionRecord/properties/designation`<br>`phylogeny#/$defs/sectionRecord/properties/name`<br>`phylogeny#/$defs/sectionRecord/properties/notes`<br>`phylogeny#/$defs/sectionRecord/then` |
+| `sections` | `phylogeny#/$defs/sections/additionalProperties` |
 | `stageRange` | `phylogeny#/$defs/stageRange`<br>`phylogeny#/$defs/stageRange/items` |
 | `taxonRecord` | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items/items`<br>`phylogeny#/$defs/taxonRecord/properties/pages`<br>`phylogeny#/$defs/taxonRecord/properties/rank/oneOf/1` |
 | `timeFields` | `phylogeny#/$defs/timeFields/properties/eon`<br>`phylogeny#/$defs/timeFields/properties/era`<br>`phylogeny#/$defs/timeFields/properties/seriesBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageRange` |
@@ -128,7 +131,6 @@ property.
 | property | data | data % |
 |---|---|---|
 | `citedAs` | 53 | 0.6% |
-| `bracket` | 48 | 0.5% |
 
 ### `cladisticFields` -- 794 instances in `data/`
 
@@ -389,6 +391,7 @@ property.
 | `altRankOf` | 61 | 2.2% |
 | `vulgarSpellingOf` | 47 | 1.7% |
 | `homonym` | 16 | 0.6% |
+| `bracket` | 13 | 0.5% |
 | `needsQualification` | 12 | 0.4% |
 | `status` | 5 | 0.2% |
 | `designation` | 4 | 0.1% |
@@ -424,6 +427,8 @@ property.
 | `children` | 2191 | 34.4% |
 | `pages` | 350 | 5.5% |
 | `parents` | 324 | 5.1% |
+| `bracketEnd` | 28 | 0.4% |
+| `bracketStart` | 28 | 0.4% |
 | `rank` | 12 | 0.2% |
 | `altPlacements` | 7 | 0.1% |
 | `mergeInto` | 5 | 0.1% |

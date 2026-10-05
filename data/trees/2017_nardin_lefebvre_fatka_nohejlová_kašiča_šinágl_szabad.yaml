@@ -49,27 +49,30 @@ phylogenies:
     - taxon: stromatocystites
       outgroup: true
     - children:
-      - bracket: lepidocystoidae
+      - bracketStart: lepidocystoidae
+        bracketEnd: lepidocystoidae
         children:
         - taxon: kinzercystis
         - taxon: vyscystis
         - taxon: lepidocystis
       - children:
-        - bracket: felbabkacystidae
+        - bracketStart: felbabkacystidae
+          bracketEnd: felbabkacystidae
           children:
           - taxon: felbabkacystis
         - children:
-          - bracket: eocrinidae
+          - bracketStart: eocrinidae
             taxon: lyracystis
           - children:
-            - bracket: eocrinidae
+            - bracketEnd: eocrinidae
               children:
               - taxon: akadocrinus
               - taxon: gogia
               - taxon: sinoeocrinus
               - taxon: ubaghsicystis
             - children:
-              - bracket: lichenoidae
+              - bracketStart: lichenoidae
+                bracketEnd: lichenoidae
                 taxon: lichenoides
               - notes: bracket "derived blastozoa"
                 children:

@@ -90,14 +90,16 @@ phylogenies:
         ]
       - children:
         - taxon: lingulocystis
-          bracket: lingulocystidae
+          bracketStart: lingulocystidae
+          bracketEnd: lingulocystidae
           matrix: [
             1, 1, 1, 2, 1,
             0, 1, 0, 1, 0,
             1, 0, 1, 0, 0,
             0, 0, 0,
           ]
-        - bracket: rhipidocystidae
+        - bracketStart: rhipidocystidae
+          bracketEnd: rhipidocystidae
           children:
           - children:
             - taxon: mandalacystis

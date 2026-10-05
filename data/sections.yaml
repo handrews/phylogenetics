@@ -1,0 +1,6 @@
+# Sections: the informal divisions of a formal group (Linnaeus's "Integra",
+# "Stellatae" and "Radiatae" within Asterias), which have no taxonomic
+# status but recur across works. Keyed like taxa.yaml; a taxonomy node
+# refers to a record by key from `sectionStart` and `sectionEnd`, and the
+# span of siblings between the two markers is the section.
+{}

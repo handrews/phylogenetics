@@ -21,6 +21,7 @@ RECORD_FILES = (
   DATA_DIR / 'publications.yaml',
   DATA_DIR / 'sources.yaml',
   DATA_DIR / 'taxa.yaml',
+  DATA_DIR / 'sections.yaml',
   DATA_DIR / 'repositories.yaml',
   DATA_DIR / 'roles.yaml',
 )
