@@ -57,7 +57,10 @@ Emitted for every node that cites a name: `taxon`, `openTaxon`, and for
 every `synonyms`, `non`, `removed`, `parents`, `or` and `type` entry. Fields added:
 
 - `form`: which field carried the name (`taxon` or `openTaxon`); `bracket`
-  for a cladogram's bracket label.
+  for a cladogram's bracket, emitted at the start of a bracket span (the
+  node with `bracketStart`), with `bracketEnd` the path where the span ends
+  (the node with the matching `bracketEnd`; the same path for a one-node
+  span).
 - `spelling`: the key used on the line. Spellings are undirected (B28); the
   claim never substitutes the record the key points at.
 - `axis`: how the node hangs off its parent (`children`, `synonyms`,
@@ -99,8 +102,15 @@ Emitted for every child under its parent in a taxonomy. Fields added:
 
 A phylogeny's nesting produces placements too, marked
 `tree: cladogram | diagram | other` with the phylogeny's `notes`, and a
-`bracket` label is a second placement of the node's name whose parent is
-the bracket's key, marked `via: bracket`.
+bracket is a second placement of the name, marked `via: bracket`, whose
+parent is the bracket's key. A bracket is a span in the tree's reading order
+(a node, its descendants, then its next sibling): from the node that carries
+`bracketStart` to the last descendant of the node that carries the matching
+`bracketEnd`, so an end on an internal node takes its whole subtree and
+every node in between lies in the span, unnamed ones included. Every named
+node in the span carries one such placement, one per bracket it lies in when
+spans nest, so a bracket over part of an unnamed clade places the named
+nodes below it as well.
 
 A `type` node is a placement marked `via: type` when the taxon that carries
 it is a primary node of a taxonomy and the same record is not also one of

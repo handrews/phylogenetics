@@ -51,7 +51,8 @@ phylogenies:
     children:
     - children:
       - children:
-        - bracket: edrioasteroidea
+        - bracketStart: edrioasteroidea
+          bracketEnd: edrioasteroidea
           children:
           - children:
             - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
@@ -61,20 +62,25 @@ phylogenies:
             - taxon: isorophus
         - children:
           - children:
-            - bracket: blastozoa
+            - bracketStart: blastozoa
+              bracketEnd: blastozoa
               children:
               - taxon: lepidocystis
               - taxon: vyscystis
               - taxon: ridersia
               - taxon: gogia
-            - bracket: crinoidea
+            - bracketStart: crinoidea
+              bracketEnd: crinoidea
               children:
               - taxon: titanocrinus
               - taxon: apektocrinus
           - taxon: stromatocystites
-            bracket: edrioasteroidea
+            bracketStart: edrioasteroidea
+            bracketEnd: edrioasteroidea
       - taxon: helicocystis
-        bracket: helicocystoidea
+        bracketStart: helicocystoidea
+        bracketEnd: helicocystoidea
     - taxon: helicoplacus
-      bracket: helicoplacoidea
+      bracketStart: helicoplacoidea
+      bracketEnd: helicoplacoidea
       outgroup: true

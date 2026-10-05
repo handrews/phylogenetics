@@ -41,23 +41,24 @@ phylogenies:
     - children:
       - children:
         - children:
-          - bracket: henicocystinae
+          - bracketStart: henicocystinae
+            bracketEnd: henicocystinae
             children:
             - taxon: coopericystis
             - taxon: henicocystis
             - taxon: regulaecystis
           - taxon: hillocystis
-          - bracket: pleurocystitinae
+          - bracketStart: pleurocystitinae
             taxon: turgidacystis
-        - bracket: pleurocystitinae
-          taxon: amecystis
-        - bracket: pleurocystitinae
+        - taxon: amecystis
+        - bracketEnd: pleurocystitinae
           children:
           - children:
             - taxon: pleurocystites
             - taxon: praepleurocystis
           - taxon: pygecystis
-      - bracket: deltacystinae
+      - bracketStart: deltacystinae
+        bracketEnd: deltacystinae
         children:
         - taxon: deltacystis
         - taxon: plethoschisma

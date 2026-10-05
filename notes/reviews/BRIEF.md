@@ -22,7 +22,9 @@ opinions exactly as each publication printed them, with no normalisation.
   `quotedParent` (a species whose genus is printed in quotes), `quoted`
   (the node's own name in quotes), `nonMonophyletic`, `pars`, `emended`,
   `tentative` (the list author's doubt about a synonymy entry),
-  `modifier` (e.g. "nomen transl."), `bracket`, `auth`/`year`/`in`/`citedAs`
+  `modifier` (e.g. "nomen transl."), `bracketStart`/`bracketEnd` (a cladogram's
+  bracket is the span in reading order from the start node to the last
+  descendant of the end node), `auth`/`year`/`in`/`citedAs`
   (= attribution exactly as printed on that line), `pages`, `material` (one entry per specimen
   or batch: `prefix` and `numbers` (the prefix resolved by the `prefixes` map at
   the top of the tree file), `role`, `repository`, `context`; `uncertain`

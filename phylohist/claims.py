@@ -416,19 +416,25 @@ class _NodeClaims:
       claim['ownName'] = True
       self._emit(claim, node.axis)
 
-    if node.bracket is not None:
+    if node.bracket_start is not None:
       claim = self._base('usage')
-      claim['subject'] = node.bracket.key
+      claim['subject'] = node.bracket_start.key
       claim['form'] = 'bracket'
-      claim['spelling'] = data['bracket']
+      claim['spelling'] = data['bracketStart']
       claim['axis'] = node.axis
       claim.pop('placeholder', None)
-      self._emit(claim, 'bracket')
-      if named:
+      end = node.bracket_end_node
+      if end is not None:
+        claim['bracketEnd'] = f'{end.position}{end.pointer}'.rstrip('/')
+      self._emit(claim, 'bracketStart')
+    if named:
+      # Every named node in a span, a nested one included, is placed under
+      # the bracket's taxon.
+      for taxon in node.brackets:
         claim = self._placement_base()
-        claim['parent'] = node.bracket.key
+        claim['parent'] = taxon.key
         claim['via'] = 'bracket'
-        self._emit(claim, 'bracket')
+        self._emit(claim)
 
     if named and node.axis == 'children':
       claim = self._placement_base()

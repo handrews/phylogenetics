@@ -128,7 +128,6 @@ property.
 | property | data | data % |
 |---|---|---|
 | `citedAs` | 53 | 0.6% |
-| `bracket` | 48 | 0.5% |
 
 ### `cladisticFields` -- 794 instances in `data/`
 
@@ -389,6 +388,7 @@ property.
 | `altRankOf` | 61 | 2.2% |
 | `vulgarSpellingOf` | 47 | 1.7% |
 | `homonym` | 16 | 0.6% |
+| `bracket` | 13 | 0.5% |
 | `needsQualification` | 12 | 0.4% |
 | `status` | 5 | 0.2% |
 | `designation` | 4 | 0.1% |
@@ -424,6 +424,8 @@ property.
 | `children` | 2191 | 34.4% |
 | `pages` | 350 | 5.5% |
 | `parents` | 324 | 5.1% |
+| `bracketEnd` | 28 | 0.4% |
+| `bracketStart` | 28 | 0.4% |
 | `rank` | 12 | 0.2% |
 | `altPlacements` | 7 | 0.1% |
 | `mergeInto` | 5 | 0.1% |

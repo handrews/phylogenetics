@@ -252,7 +252,8 @@ phylogenies:
     are two labelled branches of Cystidea, matching the two Cystidea
     placements in the linear arrangement.
   tree:
-    bracket: echinodermata
+    bracketStart: echinodermata
+    bracketEnd: echinodermata
     pages: 211
     children:
     - taxon: holothuroidea

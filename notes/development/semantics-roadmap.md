@@ -405,7 +405,7 @@ an ordinary resolved citation that needs no `editorial` block.
 | `modifier` | "nom. transl.", "nomen nudum", "n. comb." | nomenclatural act or name group | — | replaced by `translated` and `nudum` (B6) |
 | `stem` | "stem-group" | stem-group usage | — (flag) | keep |
 | `outgroup` | cladogram outgroup | outgroup | — (flag) | keep |
-| `bracket` (tree) | clade bracket / label | named clade in a cladogram | — | keep |
+| `bracketStart` / `bracketEnd` (tree) | clade bracket / label | named clade in a cladogram: a span in reading order, from the start node to the end node's last descendant (2026-10-05) | — | replaces the node-level `bracket` |
 | `rank` (tree) | rank as printed here | rank as used by this source | — | keep; overrides taxon rank; `null` says the source places the taxon with no rank word (2026-10-03) |
 
 Taxon-record relations:

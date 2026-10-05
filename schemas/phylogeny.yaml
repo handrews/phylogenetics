@@ -349,9 +349,6 @@ $defs:
       What a tree node and a taxon record share. `rank` and `pages` are
       declared by each (a node's may be `null`), so neither is here.
     properties:
-      bracket:
-        ### TODO: Replace this property name
-        type: string
       citedAs:
         description: |
           A bibliographic reference exactly as printed in the source being
@@ -430,6 +427,9 @@ $defs:
     dependentRequired:
       pages: [rank]
     properties:
+      bracket:
+        ### TODO: Replace this property name (roadmap B7: to be renamed `vernacular`)
+        type: string
       rank:
         description: |
           Explicit on a record that gives its protologue `pages`, where the
@@ -505,6 +505,24 @@ $defs:
         oneOf:
         - $ref: "phylogeny#/$defs/citationNumbers"
         - type: "null"
+      bracketStart:
+        description: |
+          Opens a bracket for this taxon (a key naming a named record) at this
+          node. A bracket is a span in the tree's reading order (a node, its
+          descendants, then its next sibling): from the node that carries
+          `bracketStart` to the last descendant of the node that carries the
+          matching `bracketEnd`, so an end on an internal node takes its whole
+          subtree. Every node in between lies in the span, unnamed ones
+          included. Both markers may sit on one node. Spans of different
+          taxa may nest; one taxon's spans are disjoint (a polyphyletic
+          bracket is two spans), and the loader reports a start for a taxon
+          already open, an end with no open start and a start never closed.
+        type: string
+      bracketEnd:
+        description: |
+          Closes the open bracket for this taxon at this node: the span
+          reaches the last descendant of this node (see `bracketStart`).
+        type: string
       mergeInto:
         type: array
         minItems: 2

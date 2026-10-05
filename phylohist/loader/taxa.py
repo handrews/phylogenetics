@@ -443,6 +443,61 @@ class Taxon:
 RelatedAxis = collections.namedtuple('RelatedAxis', 'name many cited')
 
 
+# What each problem `bracket_spans` finds says of the node it is labeled with.
+BRACKET_ERRORS = {
+  'open': 'opens a bracket for {key} that is already open',
+  'closed': 'closes a bracket for {key} that is not open',
+  'unclosed': 'opens a bracket for {key} that the tree never closes',
+}
+
+
+def bracket_spans(entries):
+  """Pair the `bracketStart`/`bracketEnd` markers of one tree.
+
+  `entries` is the tree's primary nodes in reading order (a node, its
+  descendants, then its next sibling), each ``(label, depth, start, end)``:
+  `label` names the node in a message, `depth` counts its `children` steps
+  from the root, `start` and `end` are the taxon keys of its markers or
+  `None`. A bracket runs from the node that opens it to the last descendant
+  of the node that closes it, so an end on an internal node takes its whole
+  subtree. Returns ``(brackets, errors, spans)``: for each entry, the tuple of
+  keys of the brackets it lies in, outermost first; the problems, each
+  ``(label, kind, key)`` with `kind` ``'open'`` (a start for a taxon whose
+  bracket is already open), ``'closed'`` (an end for a taxon with no open
+  bracket) or ``'unclosed'`` (a start the tree never closes, labeled with
+  the start node); and the pairs, each ``(start label, end label, key)``,
+  of a bracket the tree closes. Loader and draft checker share this one
+  pairing."""
+  # key -> [label of the start node, depth of the end node or None]
+  opened = {}
+  brackets = []
+  errors = []
+  spans = []
+  for label, depth, start, end in entries:
+    done = [
+      k for k, (_, end_depth) in opened.items() if end_depth is not None and depth <= end_depth
+    ]
+    for key in done:
+      del opened[key]
+    if start is not None:
+      if start in opened:
+        errors.append((label, 'open', start))
+      else:
+        opened[start] = [label, None]
+    brackets.append(tuple(opened))
+    if end is not None:
+      state = opened.get(end)
+      if state is None or state[1] is not None:
+        errors.append((label, 'closed', end))
+      else:
+        state[1] = depth
+        spans.append((state[0], label, end))
+  errors.extend(
+    (label, 'unclosed', key) for key, (label, end_depth) in opened.items() if end_depth is None
+  )
+  return brackets, errors, spans
+
+
 # The ranks of a species-level name, whose type is a specimen.
 _SPECIES_LEVEL_RANKS = frozenset({'species', 'subspecies', 'variety'})
 
@@ -555,7 +610,11 @@ class Tree:
     self._check_metadata()
     self._check_primary_taxon()
 
-    self._bracket = self._check_taxon('bracket')
+    self._bracket_start = self._check_taxon('bracketStart')
+    self._bracket_end = self._check_taxon('bracketEnd')
+    # The brackets this node lies in, set for the whole tree by its root.
+    self._brackets = ()
+    self._bracket_end_node = None
     # A lapsus is listed only in a synonymy, as the name printed in error.
     if 'lapsusFor' in self._data and self.axis not in ('synonyms', 'non'):
       logger.error(f'{self} has `lapsusFor` but is not a `synonyms` or `non` entry')
@@ -613,7 +672,35 @@ class Tree:
           Tree._author_index[author.key].add(self.root)
 
     if self._parent is None:
+      self._pair_brackets()
       Tree._type_index[self._type].add(self)
+
+  def _pair_brackets(self):
+    """Pair the tree's bracket markers (`bracket_spans`), log what does not
+    pair, and give every primary node the brackets it lies in."""
+    nodes = list(self._primary_walk())
+    entries = [
+      (
+        node,
+        len(node.path) // 2,
+        node._bracket_start and node._bracket_start.key,
+        node._bracket_end and node._bracket_end.key,
+      )
+      for node in nodes
+    ]
+    brackets, errors, spans = bracket_spans(entries)
+    taxa = {
+      marker.key: marker
+      for node in nodes
+      for marker in (node._bracket_start, node._bracket_end)
+      if marker is not None
+    }
+    for node, keys in zip(nodes, brackets, strict=True):
+      node._brackets = tuple(taxa[key] for key in keys)
+    for start, end, _ in spans:
+      start._bracket_end_node = end
+    for node, kind, key in errors:
+      logger.error(f'{node} {BRACKET_ERRORS[kind].format(key=key)}')
 
   def _check_metadata(self):
     if self._metadata:
@@ -842,8 +929,26 @@ class Tree:
     return scopes
 
   @property
-  def bracket(self):
-    return self._bracket
+  def bracket_start(self):
+    """The `Taxon` whose bracket this node opens, or `None`."""
+    return self._bracket_start
+
+  @property
+  def bracket_end(self):
+    """The `Taxon` whose bracket this node closes, or `None`."""
+    return self._bracket_end
+
+  @property
+  def bracket_end_node(self):
+    """On a node that opens a bracket, the node that closes it (itself for
+    a one-node span); `None` elsewhere, or when the tree never closes it."""
+    return self._bracket_end_node
+
+  @property
+  def brackets(self):
+    """The taxa whose brackets this node lies in, outermost first: from a
+    start node to the last descendant of its end node."""
+    return self._brackets
 
   def related_node(self, axis):
     """The node under a single-node axis (``moved``, ``corrected``, ...),
@@ -863,6 +968,13 @@ class Tree:
     for axis in self.RELATED_AXES:
       for node in self._related[axis.name]:
         yield axis.name, node
+
+  def _primary_walk(self):
+    """Yield this node and its `children` descendants in reading order,
+    leaving the related axes out."""
+    yield self
+    for child in self._children:
+      yield from child._primary_walk()
 
   def walk(self):
     """Yield this node and every descendant, related subtrees before

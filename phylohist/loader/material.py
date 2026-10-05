@@ -18,7 +18,7 @@ extractor can reach it the way it reaches `Source`.
 import re
 
 from ..names import fold
-from .taxa import Tree
+from .taxa import BRACKET_ERRORS, Tree, bracket_spans
 
 _WHITESPACE_RE = re.compile(r'\s+')
 
@@ -550,6 +550,30 @@ def unused_fields(document):
       messages.append(
         ('error', f'`type` is listed as `unused` but a child at {path} is marked `isType`')
       )
+  return messages
+
+
+def bracket_errors(document):
+  """The bracket markers of each tree in a raw tree file that do not pair
+  (`taxa.bracket_spans`: a start for a taxon already open, an end with no
+  open start, a start the tree never closes), as ``('error', message)``
+  pairs naming the node's path; the loader finds the same in each loaded
+  `Tree`. Only the `children` axis is read."""
+  trees = {}
+  for path, node, _ in walk_document(document):
+    position, _, pointer = path.partition('/')
+    segments = pointer.split('/') if pointer else []
+    if all(s == 'children' or s.isdigit() for s in segments):
+      marks = (node.get('bracketStart'), node.get('bracketEnd'))
+      trees.setdefault(position, []).append(
+        (path, len(segments) // 2, *(m if isinstance(m, str) else None for m in marks))
+      )
+  messages = []
+  for entries in trees.values():
+    _, errors, _ = bracket_spans(entries)
+    messages.extend(
+      ('error', f'{path}: {BRACKET_ERRORS[kind].format(key=key)}') for path, kind, key in errors
+    )
   return messages
 
 

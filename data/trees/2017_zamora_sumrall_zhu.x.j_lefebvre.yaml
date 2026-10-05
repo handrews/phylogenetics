@@ -30,7 +30,8 @@ phylogenies:
 - treeType: cladogram
   tree:
     children:
-    - bracket: glyptocystitida-order
+    - bracketStart: glyptocystitida-order
+      bracketEnd: glyptocystitida-order
       children:
       - taxon: ridersia
       - children:

@@ -9,12 +9,13 @@ yet. It then runs the material checks
 `material`/`contexts`/`ranges`, a null `illustrations`, or an `of`/`depicts`
 in its `illustrations` (or in an `authority`'s); a null `material`,
 `illustrations`, `contexts`, `ranges`, `synonyms`, `type` or `children` on a
-primary node (only an auditor sets nulls); a `unused` field still present on a node; an explicit
-`repository` that is no registry key; a `prefix` missing from the file's
-`prefixes` map, a map entry that is unused, not a registry key or not a known
-form of its register, numbers with no prefix, repository or holder, a number
-that begins with its register's own prefix, and a locality number with no
-register; and a dangling `context`, figure `of` or `castOf`. The
+primary node (only an auditor sets nulls); a `unused` field still present on a node; a
+`bracketStart` for a taxon whose bracket is already open, a `bracketEnd` with no
+open start, or a start the tree never closes; an explicit `repository` that is no
+registry key; a `prefix` missing from the file's `prefixes` map, a map entry that is
+unused, not a registry key or not a known form of its register, numbers with no prefix,
+repository or holder, a number that begins with its register's own prefix, and a
+locality number with no register; and a dangling `context`, figure `of` or `castOf`. The
 open-nomenclature checks (`phylohist.loader.nomenclature`) add a `cf` or `aff`
 off an `openTaxon` node, on both, or aimed at a missing, unnamed or other-rank
 taxon; a `quotedParent` above the species level; a `roleUncertain` with no
@@ -43,7 +44,7 @@ from phylohist.loader.io import (  # noqa: E402
   load_yaml,
 )
 
-TAXON_FIELDS = ('taxon', 'openTaxon', 'bracket')
+TAXON_FIELDS = ('taxon', 'openTaxon', 'bracketStart', 'bracketEnd')
 
 
 def walk(node, taxa, authors, sources):
@@ -95,6 +96,7 @@ def check_material(draft, repositories, taxa):
     *((lv, f'repositories: {m}') for lv, m in material.registry_links(repositories)),
     *material.unreferenced_file_contexts(draft),
     *material.unused_fields(draft),
+    *material.bracket_errors(draft),
     *material.file_prefixes(draft, repositories),
   ]
   file_prefixes = draft.get('prefixes') or {}

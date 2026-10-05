@@ -100,22 +100,27 @@ phylogenies:
   tree:
     children:
     - taxon: stromatocystites
-    - bracket: edrioasteroidea
+    - bracketStart: edrioasteroidea
+      bracketEnd: edrioasteroidea
       children:
-      - bracket: edrioasterida
+      - bracketStart: edrioasterida
+        bracketEnd: edrioasterida
         children:
-        - bracket: edrioasteridae
+        - bracketStart: edrioasteridae
+          bracketEnd: edrioasteridae
           children:
           - children:
             - taxon: edriophus
             - taxon: edrioaster
           - taxon: walcottidiscus
         - taxon: totiglobus
-      - bracket: cyathocystida
+      - bracketStart: cyathocystida
+        bracketEnd: cyathocystida
         children:
         - taxon: cyathocystidae
         - taxon: pyrgocystidae
-      - bracket: isorophida
+      - bracketStart: isorophida
+        bracketEnd: isorophida
         children:
         - taxon: cambraster
         - children:
@@ -123,7 +128,8 @@ phylogenies:
             children:
             - taxon: cyclocystoididae
               children:
-              - bracket: agelacrinitidae
+              - bracketStart: agelacrinitidae
+                bracketEnd: agelacrinitidae
                 taxon: savagella
                 children:
                 - taxon: isorophinae
