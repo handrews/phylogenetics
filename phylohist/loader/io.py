@@ -62,7 +62,10 @@ class UniqueKeyNoDatesLoader(yaml.SafeLoader):
         continue
       key = self.construct_object(key_node, deep=deep)
       if key in mapping:
-        raise ValueError(f'Duplicate {key!r} key found in YAML.')
+        raise LoadError(
+          f'Duplicate key {key!r} (starting {node.start_mark}, '
+          f'ending {node.end_mark}) found in YAML.'
+        )
       mapping.add(key)
     return super().construct_mapping(node, deep)
 
