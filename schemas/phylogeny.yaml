@@ -586,6 +586,14 @@ $defs:
             minLength: 1
           notes:
             type: string
+          editorial:
+            description: |
+              The editor's layer on the marker, as on a node. Whether a
+              source introduces a section is rarely explicit, so `new` is
+              usually the editor's: `editorial: {inferred: [new], basis:
+              "No earlier source is known"}` keeps that uncertainty on
+              the record.
+            $ref: "#/$defs/editorialObject"
       sectionEnd:
         description: |
           Closes the open section for this key at this node: the last
