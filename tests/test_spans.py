@@ -24,6 +24,8 @@ import pytest
 from phylohist.claims import extract, manifest
 from phylohist.closure import Closure
 from phylohist.loader import io, material
+from phylohist.loader.load import _report_section_protologues
+from phylohist.loader.research import Source
 from phylohist.loader.taxa import Section, Tree
 from phylohist.store import CLAIMS_DIR, ClaimStore
 
@@ -679,7 +681,6 @@ def test_the_sections_schema_takes_a_name_or_a_designation():
     {'name': None, 'authority': {'source': '1758_linnaeus'}},
     {'designation': 'Multivalvia'},
     {'name': 'Integra', 'rank': 'section'},
-    {'name': 'Integra', 'pages': 661},
     {'name': 'Integra', 'authority': {'source': 'nope'}},
     {'name': 'Integra', 'children': []},
     {'name': 'Integra', 'needsQualification': 'yes'},
@@ -1231,3 +1232,242 @@ def test_a_claim_store_over_a_section_claim_loads_and_the_tools_run_clean(sectio
   closure = Closure(store)
   assert closure.by_path[SOURCE][claim['path']]['subject'] == 'luna_linnaeus_1758'
   assert store.words.claim_words(claim) == 'section'
+
+
+# -- a section's protologue and `designation` -----------------------------------
+
+PROTOLOGUE_SOURCE = '1758_linnaeus'
+PROTOLOGUE_FILE = 'data/trees/1758_linnaeus.yaml'
+OPEN = 'testacea-unnamed-section-1_linnaeus_1758'
+
+
+def _protologue(caplog, record=None, marker=None, tree_source=PROTOLOGUE_SOURCE, new=True):
+  """The (errors, warnings, infos) `_report_section_protologues` logs for the
+  section `integra` with `pages: 661` and `record` fields on top, whose
+  marker in a taxonomy of `tree_source` has `marker` on top (flagged `new`
+  unless `new` is false)."""
+  Section.add(
+    {
+      'name': 'Integra',
+      'authority': {'source': PROTOLOGUE_SOURCE},
+      'pages': 661,
+      **(record or {}),
+    },
+    INTEGRA,
+  )
+  start = _start(INTEGRA, **({'new': True} if new else {}), **(marker or {}))
+  node = {'taxon': 'luna_linnaeus_1758', 'sectionStart': start, 'sectionEnd': INTEGRA}
+  tree = Tree(
+    {'taxon': 'asterias', 'children': [node]},
+    {'source_key': tree_source, 'type': 'taxonomy', 'position': next(POSITIONS)},
+  )
+  with caplog.at_level(logging.INFO, logger='phylohist'):
+    caplog.clear()
+    _report_section_protologues(
+      {'trees': {PROTOLOGUE_SOURCE: {}}}, {PROTOLOGUE_SOURCE: [tree], tree_source: [tree]}
+    )
+  return tuple(
+    [r.getMessage() for r in caplog.records if r.levelno == level]
+    for level in (logging.ERROR, logging.WARNING, logging.INFO)
+  )
+
+
+def test_a_section_matching_its_marker_on_all_three_fields_is_clean(sections, caplog):
+  record = {'citedAs': 'Integra', 'designation': 'Integra'}
+  marker = {'pages': 661, 'citedAs': 'Integra', 'designation': 'Integra'}
+  errors, warnings, info = _protologue(caplog, record, marker)
+  assert (errors, warnings) == ([], [])
+  assert info == ['0 disagreements between a section record and its protologue marker']
+
+
+@pytest.mark.parametrize(
+  'record, marker, message',
+  [
+    ({}, {'pages': 662}, 'pages 661 but its protologue marker in {file} has 662'),
+    (
+      {'citedAs': 'Integra'},
+      {'citedAs': 'Integrae'},
+      'citedAs "Integra" but its protologue marker in {file} prints "Integrae"',
+    ),
+    (
+      {'designation': 'Integra'},
+      {'designation': 'Entire'},
+      'designation "Integra" but its protologue marker in {file} prints "Entire"',
+    ),
+    (
+      {},
+      {'citedAs': 'Integra'},
+      'citedAs none but its protologue marker in {file} prints "Integra"',
+    ),
+    (
+      {},
+      {'designation': 'Entire'},
+      'designation none but its protologue marker in {file} prints "Entire"',
+    ),
+  ],
+)
+def test_a_field_differing_from_the_marker_is_named_with_both_values(
+  sections, caplog, record, marker, message
+):
+  errors, warnings, info = _protologue(caplog, record, marker)
+  assert errors == [f'sections.yaml {INTEGRA}: ' + message.format(file=PROTOLOGUE_FILE)]
+  assert warnings == []
+  assert info == ['1 disagreements between a section record and its protologue marker']
+
+
+def test_each_differing_field_has_its_own_message(sections, caplog):
+  errors, _, info = _protologue(
+    caplog,
+    {'citedAs': 'Integra', 'designation': 'Integra'},
+    {'pages': 662, 'citedAs': 'Integrae', 'designation': 'Entire'},
+  )
+  assert [e.split(': ')[1].split(' ')[0] for e in errors] == ['pages', 'citedAs', 'designation']
+  assert info == ['3 disagreements between a section record and its protologue marker']
+
+
+def test_pages_of_a_section_agree_across_forms(sections, caplog):
+  assert _protologue(caplog, {'pages': '661'}, {'pages': [661]})[0] == []
+
+
+def test_a_marker_declaring_none_of_the_fields_says_nothing(sections, caplog):
+  errors, warnings, _ = _protologue(caplog, {'citedAs': 'Integra', 'designation': 'Integra'})
+  assert (errors, warnings) == ([], [])
+
+
+def test_a_section_without_pages_is_not_checked(sections, caplog):
+  Section.add({'name': 'Integra', 'authority': {'source': PROTOLOGUE_SOURCE}}, INTEGRA)
+  with caplog.at_level(logging.INFO, logger='phylohist'):
+    caplog.clear()
+    _report_section_protologues({'trees': {PROTOLOGUE_SOURCE: {}}}, {})
+  assert [r.levelno for r in caplog.records] == [logging.INFO]
+
+
+def test_a_section_with_pages_and_no_new_marker_is_not_flagged(sections, caplog):
+  errors, warnings, info = _protologue(caplog, None, {'pages': 662}, new=False)
+  assert errors == []
+  assert warnings == [f'Protologue not flagged: {INTEGRA} in {PROTOLOGUE_SOURCE}']
+  assert info == ['0 disagreements between a section record and its protologue marker']
+
+
+def test_a_new_marker_in_another_source_is_an_error(sections, caplog):
+  with caplog.at_level(logging.ERROR, logger='phylohist'):
+    Section.add({'name': 'Integra', 'authority': {'source': PROTOLOGUE_SOURCE}}, INTEGRA)
+    _taxonomy(
+      [{'taxon': 'luna_linnaeus_1758', 'sectionStart': _start(INTEGRA, new=True)}],
+    )
+  assert _errors(caplog)[:1] == [
+    f'Expected source {Source.get(SOURCE)} for new section {INTEGRA}, '
+    f'got source {Source.get(PROTOLOGUE_SOURCE)}'
+  ]
+
+
+def test_a_marker_without_new_or_a_record_without_authority_is_no_error(sections, caplog):
+  with caplog.at_level(logging.ERROR, logger='phylohist'):
+    _taxonomy(
+      [
+        {
+          'taxon': 'luna_linnaeus_1758',
+          'sectionStart': _start(INTEGRA),
+          'sectionEnd': INTEGRA,
+        }
+      ]
+    )
+    Section.add({'name': 'Stellatae'}, STELLATAE)
+    _taxonomy(
+      [
+        {
+          'taxon': 'luna_linnaeus_1758',
+          'sectionStart': _start(STELLATAE, new=True),
+          'sectionEnd': STELLATAE,
+        }
+      ]
+    )
+  assert _errors(caplog) == []
+
+
+def test_designation_is_for_an_open_taxon_node_only(caplog):
+  with caplog.at_level(logging.ERROR, logger='phylohist'):
+    tree = _tree(
+      {'taxon': 'asterias', 'children': [{'taxon': 'luna_linnaeus_1758', 'designation': 'x'}]},
+      tree_type='taxonomy',
+    )
+  [error] = _errors(caplog)
+  assert error.endswith('has `designation` but is not an `openTaxon` node')
+  assert str(_listed(tree)[0]) in error
+  caplog.clear()
+  with caplog.at_level(logging.ERROR, logger='phylohist'):
+    _tree(
+      {'taxon': 'asterias', 'children': [{'openTaxon': OPEN, 'designation': 'Multivalvia'}]},
+      tree_type='taxonomy',
+    )
+  assert _errors(caplog) == []
+
+
+def test_the_section_claim_carries_new_and_designation(sections):
+  tree = _taxonomy(
+    [
+      {
+        'taxon': 'luna_linnaeus_1758',
+        'sectionStart': _start(UNNAMED, new=True, designation='Multivalvia', pages=654),
+        'sectionEnd': UNNAMED,
+      },
+      {
+        'taxon': 'rubens_linnaeus_1758',
+        'sectionStart': _start(INTEGRA),
+        'sectionEnd': INTEGRA,
+      },
+    ]
+  )
+  marked, plain = _section_claims(tree)
+  assert marked['new'] is True
+  assert marked['designation'] == 'Multivalvia'
+  assert marked['pages'] == 654
+  assert 'new' not in plain
+  assert 'designation' not in plain
+
+
+def test_the_usage_of_an_open_taxon_node_carries_its_designation():
+  tree = _taxonomy(
+    [{'openTaxon': OPEN, 'designation': 'Multivalvia'}, {'openTaxon': OPEN}],
+  )
+  with_phrase, without = [
+    c for c in _claims(tree) if c['kind'] == 'usage' and c['form'] == 'openTaxon'
+  ]
+  assert with_phrase['designation'] == 'Multivalvia'
+  assert 'designation' not in without
+  phylogeny = _tree({'children': [{'openTaxon': OPEN, 'designation': 'Multivalvia'}]})
+  [usage] = [c for c in _claims(phylogeny) if c['kind'] == 'usage' and c['form'] == 'openTaxon']
+  assert usage['designation'] == 'Multivalvia'
+
+
+def test_the_schema_takes_pages_on_a_section_record_and_the_new_marker():
+  schema = io.build_schema()['sections']
+  authority = {'source': PROTOLOGUE_SOURCE}
+  record = {'name': None, 'designation': 'Multivalvia', 'authority': authority, 'pages': 654}
+  assert schema.check({UNNAMED: record})
+  assert schema.check({UNNAMED: {**record, 'pages': [654, 655]}})
+  assert not schema.check({UNNAMED: {**record, 'pages': {'a': 1}}})
+  marker = _start(UNNAMED, new=True, designation='Multivalvia', pages=654)
+  node = {'taxon': 'luna_linnaeus_1758', 'sectionStart': marker, 'sectionEnd': UNNAMED}
+  assert _valid({'taxonomies': [{'taxon': 'asterias', 'children': [node]}]})
+  for bad in ({'new': 'yes'}, {'designation': 1}, {'designation': ''}):
+    node = {'taxon': 'luna_linnaeus_1758', 'sectionStart': _start(UNNAMED, **bad)}
+    assert not _valid({'taxonomies': [{'taxon': 'asterias', 'children': [node]}]})
+
+
+def test_the_schema_takes_designation_on_a_node_and_still_on_a_taxa_record():
+  for document in (
+    {'taxonomies': [{'taxon': 'asterias', 'children': [{'openTaxon': OPEN, 'designation': 'x'}]}]},
+    {
+      'phylogenies': [
+        {'treeType': 'cladogram', 'tree': {'children': [{'openTaxon': OPEN, 'designation': 'x'}]}}
+      ]
+    },
+  ):
+    assert _valid(document)
+    node = document['taxonomies' if 'taxonomies' in document else 'phylogenies'][0]
+    child = (node.get('tree') or node)['children'][0]
+    child['designation'] = 1
+    assert not _valid(document)
+  record = {'name': None, 'designation': 'Genus A', 'authority': {'source': PROTOLOGUE_SOURCE}}
+  assert io.build_schema()['taxa'].check({'x': record})

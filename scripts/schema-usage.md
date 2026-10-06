@@ -22,6 +22,7 @@ even when its parent is also unreached, so read parents first.
 | `eon` | `phylogeny#/$defs/eon` |
 | `era` | `phylogeny#/$defs/era` |
 | `figureLocatorFields` | `phylogeny#/$defs/figureLocatorFields/properties/non` |
+| `identificationFields` | `phylogeny#/$defs/identificationFields/properties/designation` |
 | `inferredContext` | `phylogeny#/$defs/inferredContext/properties/basis`<br>`phylogeny#/$defs/inferredContext/properties/sources`<br>`phylogeny#/$defs/inferredContext/properties/sources/items` |
 | `localTimeFields` | `phylogeny#/$defs/localTimeFields/properties/localStageBoundary` |
 | `materialEntry` | `phylogeny#/$defs/materialEntry/properties/formerIds`<br>`phylogeny#/$defs/materialEntry/properties/formerIds/items`<br>`phylogeny#/$defs/materialEntry/properties/fragmentOf`<br>`phylogeny#/$defs/materialEntry/properties/roleUncertain`<br>`phylogeny#/$defs/materialEntry/properties/sameAs`<br>`phylogeny#/$defs/materialEntry/properties/sameAs/oneOf/0`<br>`phylogeny#/$defs/materialEntry/properties/sameAs/oneOf/1`<br>`phylogeny#/$defs/materialEntry/properties/sameAs/properties/label`<br>`phylogeny#/$defs/materialEntry/properties/sameAs/properties/number`<br>`phylogeny#/$defs/materialEntry/properties/sameAs/properties/prefix`<br>`phylogeny#/$defs/materialEntry/properties/sameAs/properties/source` |
@@ -30,8 +31,8 @@ even when its parent is also unreached, so read parents first.
 | `publication` | `phylogeny#/$defs/publication/properties/type` |
 | `range` | `phylogeny#/$defs/range/properties/inferred`<br>`phylogeny#/$defs/range/properties/tentative/oneOf/0` |
 | `relationalFields` | `phylogeny#/$defs/relationalFields/properties/type`<br>`phylogeny#/$defs/relationalFields/properties/type/oneOf/0`<br>`phylogeny#/$defs/relationalFields/properties/type/oneOf/1` |
-| `sectionFields` | `phylogeny#/$defs/sectionFields/properties/sectionEnd`<br>`phylogeny#/$defs/sectionFields/properties/sectionStart`<br>`phylogeny#/$defs/sectionFields/properties/sectionStart/properties/citedAs`<br>`phylogeny#/$defs/sectionFields/properties/sectionStart/properties/notes`<br>`phylogeny#/$defs/sectionFields/properties/sectionStart/properties/pages`<br>`phylogeny#/$defs/sectionFields/properties/sectionStart/properties/section` |
-| `sectionRecord` | `phylogeny#/$defs/sectionRecord`<br>`phylogeny#/$defs/sectionRecord/if`<br>`phylogeny#/$defs/sectionRecord/if/properties/name`<br>`phylogeny#/$defs/sectionRecord/properties/citedAs`<br>`phylogeny#/$defs/sectionRecord/properties/designation`<br>`phylogeny#/$defs/sectionRecord/properties/name`<br>`phylogeny#/$defs/sectionRecord/properties/needsQualification`<br>`phylogeny#/$defs/sectionRecord/properties/notes`<br>`phylogeny#/$defs/sectionRecord/then` |
+| `sectionFields` | `phylogeny#/$defs/sectionFields/properties/sectionEnd`<br>`phylogeny#/$defs/sectionFields/properties/sectionStart`<br>`phylogeny#/$defs/sectionFields/properties/sectionStart/properties/citedAs`<br>`phylogeny#/$defs/sectionFields/properties/sectionStart/properties/designation`<br>`phylogeny#/$defs/sectionFields/properties/sectionStart/properties/new`<br>`phylogeny#/$defs/sectionFields/properties/sectionStart/properties/notes`<br>`phylogeny#/$defs/sectionFields/properties/sectionStart/properties/pages`<br>`phylogeny#/$defs/sectionFields/properties/sectionStart/properties/section` |
+| `sectionRecord` | `phylogeny#/$defs/sectionRecord`<br>`phylogeny#/$defs/sectionRecord/if`<br>`phylogeny#/$defs/sectionRecord/if/properties/name`<br>`phylogeny#/$defs/sectionRecord/properties/citedAs`<br>`phylogeny#/$defs/sectionRecord/properties/designation`<br>`phylogeny#/$defs/sectionRecord/properties/name`<br>`phylogeny#/$defs/sectionRecord/properties/needsQualification`<br>`phylogeny#/$defs/sectionRecord/properties/notes`<br>`phylogeny#/$defs/sectionRecord/properties/pages`<br>`phylogeny#/$defs/sectionRecord/then` |
 | `sections` | `phylogeny#/$defs/sections/additionalProperties` |
 | `stageRange` | `phylogeny#/$defs/stageRange`<br>`phylogeny#/$defs/stageRange/items` |
 | `taxonRecord` | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items/items`<br>`phylogeny#/$defs/taxonRecord/properties/pages`<br>`phylogeny#/$defs/taxonRecord/properties/rank/oneOf/1` |
@@ -195,6 +196,7 @@ property.
 | `openTaxon` | 247 | 3.9% |
 | `cf` | 15 | 0.2% |
 | `aff` | 14 | 0.2% |
+| `designation` | 0 | 0.0% |
 
 ### `illustration` -- 479 instances in `data/`
 

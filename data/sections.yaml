@@ -5,5 +5,6 @@
 # (`integra_linnaeus_1758`), since a section's first user is often
 # unknowable. A taxonomy node refers to a record by key from `sectionStart`
 # and `sectionEnd`, and the span of siblings between the two markers is
-# the section.
+# the section. A record that gives `pages` is checked against its protologue,
+# the `sectionStart` marker flagged `new: true` in its authority's trees.
 {}

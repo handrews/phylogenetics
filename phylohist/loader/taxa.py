@@ -512,6 +512,10 @@ class Section:
     return self._data.get('citedAs')
 
   @property
+  def pages(self):
+    return self._data.get('pages')
+
+  @property
   def notes(self):
     return self._data.get('notes')
 
@@ -749,6 +753,8 @@ class Tree:
 
     self._check_metadata()
     self._check_primary_taxon()
+    if 'designation' in self._data and 'taxon' in self._data:
+      logger.error(f'{self} has `designation` but is not an `openTaxon` node')
 
     self._bracket_start = self._check_taxon('bracketStart')
     self._bracket_end = self._check_taxon('bracketEnd')
@@ -898,7 +904,19 @@ class Tree:
     marker = self._data.get('sectionStart')
     if marker is None or not self._check_section_marker('sectionStart'):
       return None
-    return self._check_section('sectionStart', marker.get('section'))
+    section = self._check_section('sectionStart', marker.get('section'))
+    if (
+      section is not None
+      and marker.get('new')
+      and section.authority is not None
+      and section.authority.source is not None
+      and section.authority.source != self._source
+    ):
+      logger.error(
+        f'Expected source {self._source} for new section {section.key}, '
+        f'got source {section.authority.source}',
+      )
+    return section
 
   def _check_section_end(self):
     key = self._data.get('sectionEnd')

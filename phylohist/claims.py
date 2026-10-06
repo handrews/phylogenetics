@@ -532,7 +532,9 @@ class _NodeClaims:
     claim['members'] = [s.taxon.key for s in siblings if s.taxon is not None]
     claim['memberPaths'] = [f'{s.position}{s.pointer}' for s in siblings]
     claim['endPath'] = f'{end.position}{end.pointer}'
-    for field in ('citedAs', 'pages', 'notes'):
+    if marker.get('new'):
+      claim['new'] = True
+    for field in ('citedAs', 'designation', 'pages', 'notes'):
       if field in marker:
         claim[field] = marker[field]
     self._emit(claim, 'sectionStart')
@@ -550,6 +552,8 @@ class _NodeClaims:
         claim['compared'] = {'sign': sign, 'taxon': data[sign]}
     if 'sensu' in data:
       claim['sensu'] = data['sensu']
+    if 'designation' in data:
+      claim['designation'] = data['designation']
     # A root has no placement claim to carry `rankAsPrinted`; its usage
     # carries the one statement a root makes about rank, that it has none.
     if node.axis == 'root' and 'rank' in data and data['rank'] is None:
