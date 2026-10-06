@@ -256,7 +256,8 @@ def main(argv):
   if args.draft and out == DEFAULT_OUT.resolve():
     parser.error('--draft needs --out pointing outside claims/')
 
-  logging.basicConfig(level=logging.WARNING)
+  # The package logger prints its own records (phylohist/__init__.py); a
+  # root handler would print each of them a second time.
   failure = None
   with _holding(args.errors_only), counting_errors() as errors:
     try:
