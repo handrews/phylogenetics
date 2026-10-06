@@ -439,7 +439,8 @@ class Section:
   """An informal division of a formal group (`data/sections.yaml`): a
   heading such as Linnaeus's "Integra" within *Asterias*. It has no
   taxonomic status; a taxonomy marks its span of siblings with
-  `sectionStart` and `sectionEnd`."""
+  `sectionStart` and `sectionEnd`. Its key is its name lower-cased, like a
+  genus's, or with the authority suffix when `needsQualification` is set."""
 
   _sections = {}
 
@@ -463,6 +464,24 @@ class Section:
       self._authority = Authority(section_data)
     else:
       self._authority = None
+
+    if self._name is not None:
+      valid, valid_set = self._check_expected_key()
+      if not valid:
+        logger.error(f'"{section_key}" not in expected set: {valid_set}')
+
+  def _check_expected_key(self):
+    expected = self._name.lower()
+    expected_set = {expected}
+    if self._data.get('needsQualification'):
+      if self._authority is None:
+        logger.error(f'Section {self._key} needs qualification but has no authority')
+      else:
+        suffix_expected = expected + '_' + self._authority.taxon_suffix
+        expected_set = {suffix_expected}
+        if self._authority.source:
+          expected_set.add(suffix_expected + self._authority.source.disambiguator)
+    return self._key in expected_set, expected_set
 
   def __repr__(self):
     return f'Section({self._key!r})'

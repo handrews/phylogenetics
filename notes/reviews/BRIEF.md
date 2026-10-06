@@ -26,7 +26,8 @@ opinions exactly as each publication printed them, with no normalisation.
   bracket is the span in reading order from the start node to the last
   descendant of the end node), `sectionStart`/`sectionEnd` (an informal
   heading over a span of siblings in one `children` list, named by a record
-  in `data/sections.yaml`), `auth`/`year`/`in`/`citedAs`
+  in `data/sections.yaml`, keyed by its name lower-cased),
+  `auth`/`year`/`in`/`citedAs`
   (= attribution exactly as printed on that line), `pages`, `material` (one entry per specimen
   or batch: `prefix` and `numbers` (the prefix resolved by the `prefixes` map at
   the top of the tree file), `role`, `repository`, `context`; `uncertain`

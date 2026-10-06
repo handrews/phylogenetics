@@ -378,7 +378,10 @@ An informal division of a formal group, such as Linnaeus 1758's "Integra",
 "Stellatae" and "Radiatae" within *Asterias* or a descriptive heading in a
 genus list. A section has no taxonomic status, so it is no placement; it is
 a span of siblings in a taxonomy with a record of its own in
-`data/sections.yaml`, keyed like `taxa.yaml`. The tree marks it with
+`data/sections.yaml`, keyed by its name like a genus (`integra`);
+`needsQualification: true` adds the authority suffix
+(`integra_linnaeus_1758`), since a section's first user is often
+unknowable. The tree marks it with
 `sectionStart` (an object: `section`, the record's key, and optionally
 `citedAs`, `pages`, `notes`) on its first sibling and `sectionEnd` (the key)
 on its last, both in one `children` list, both markers on one node for a

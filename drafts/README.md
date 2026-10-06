@@ -53,7 +53,8 @@ Conventions the promotion of the Whiteaves and Bather drafts settled:
 - An informal heading over some siblings (Linnaeus's "Integra" within
   *Asterias*) is a section: `sectionStart` on the first sibling and
   `sectionEnd` on the last, the record's key in `data/sections.yaml`
-  (listed by the checker when it has none). It is no taxon and no `rank`.
+  (the name lower-cased, as `integra`; listed by the checker when it has
+  none). It is no taxon and no `rank`.
 - One specimen, one entry, even when the paper gives no number and no
   type word. Identifiers, a paper's own letters (A, B, C) and the
   repository are kept; descriptions are not.
