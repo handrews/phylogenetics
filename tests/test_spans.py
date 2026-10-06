@@ -712,6 +712,14 @@ def test_the_markers_schema_refuses_a_malformed_marker(node):
   assert not _valid({'taxonomies': [{'taxon': 'asterias', 'children': [node]}]})
 
 
+def test_a_marker_takes_an_editorial_block_with_a_basis():
+  block = {'inferred': ['new'], 'basis': 'No earlier source is known.'}
+  node = {'taxon': 'luna_linnaeus_1758', 'sectionStart': _start(INTEGRA, new=True, editorial=block)}
+  assert _valid({'taxonomies': [{'taxon': 'asterias', 'children': [node]}]})
+  node['sectionStart']['editorial'] = {'inferred': ['new']}
+  assert not _valid({'taxonomies': [{'taxon': 'asterias', 'children': [node]}]})
+
+
 def test_the_markers_are_valid_in_a_taxonomy_only():
   node = {'taxon': 'luna_linnaeus_1758', 'sectionStart': _start(INTEGRA), 'sectionEnd': INTEGRA}
   assert not _valid(
@@ -1166,6 +1174,36 @@ def test_a_section_claim_names_an_unnamed_section_by_its_designation(sections):
   [claim] = _section_claims(tree)
   assert claim['name'] == 'Multivalvia'
   assert claim['members'] == ['luna_linnaeus_1758']
+
+
+def test_a_section_claim_carries_the_markers_editorial_block(sections):
+  block = {'inferred': ['new'], 'basis': 'No earlier source is known.'}
+  tree = _taxonomy(
+    [
+      {
+        'taxon': 'luna_linnaeus_1758',
+        'sectionStart': _start(INTEGRA, new=True, editorial=block),
+        'sectionEnd': INTEGRA,
+      }
+    ]
+  )
+  [claim] = _section_claims(tree)
+  assert claim['new'] is True
+  assert claim['editorial'] == block
+  assert claim['inferredFields'] == ['new']
+  assert 'inferred' not in claim
+  whole = {'inferred': True, 'basis': "The heading is the editor's reading."}
+  tree = _taxonomy(
+    [
+      {
+        'taxon': 'luna_linnaeus_1758',
+        'sectionStart': _start(INTEGRA, editorial=whole),
+        'sectionEnd': INTEGRA,
+      }
+    ]
+  )
+  [claim] = _section_claims(tree)
+  assert claim['inferred'] is True and 'inferredFields' not in claim
 
 
 def test_a_node_opening_two_sections_has_a_numbered_claim_for_each(sections):

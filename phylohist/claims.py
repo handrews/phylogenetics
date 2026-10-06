@@ -537,6 +537,15 @@ class _NodeClaims:
     for field in ('citedAs', 'designation', 'pages', 'notes'):
       if field in marker:
         claim[field] = marker[field]
+    # The claim is about the marker, so the marker's editorial block
+    # replaces the node's: `new` is usually the editor's inference.
+    if 'editorial' in marker:
+      claim['editorial'] = marker['editorial']
+      inferred = marker['editorial'].get('inferred')
+      if inferred is True:
+        claim['inferred'] = True
+      elif isinstance(inferred, list):
+        claim['inferredFields'] = inferred
     self._emit(claim, 'sectionStart')
 
   def _usage(self):

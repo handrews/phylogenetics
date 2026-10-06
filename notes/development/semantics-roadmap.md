@@ -1005,7 +1005,9 @@ taxonomy with a record of its own:
 - Two markers on nodes of the same `children` list (both may sit on one
   node), the end at or after the start in list order: `sectionStart`, an
   object (`section`, the record's key; `citedAs`, `pages`, `designation`,
-  `new`, `notes` as this source prints it), and `sectionEnd`, the key. The span is those
+  `new`, `notes` as this source prints it, and an `editorial` block of its
+  own, since `new` is rarely explicit and is usually
+  `inferred: [new]` with a `basis`), and `sectionEnd`, the key. The span is those
   siblings, start to end inclusive, each with its subtree; unlike a
   bracket, a section never crosses a level. Sections of one sibling list
   may nest and may not interleave. The loader and the draft checker report

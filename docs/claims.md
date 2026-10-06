@@ -414,6 +414,10 @@ closes emits none; the loader reports it). Fields: the shared record (`id`,
   own for a one-sibling span).
 - `new` (`true`), `citedAs`, `designation`, `pages`, `notes`: from the
   `sectionStart` marker, when given.
+- `editorial`: the marker's own block, which replaces the node's on this
+  claim; `inferred: true` on it makes the claim `inferred`, and a list
+  gives `inferredFields` (usually `[new]`: whether a source introduces a
+  section is rarely explicit).
 
 The claim has no `audit.coverageKind`; it appears in the per-kind `claims`
 counts only. No tool reads it yet: the tools, `statements` included, leave
