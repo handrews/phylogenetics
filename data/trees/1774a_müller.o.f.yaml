@@ -13,4 +13,5 @@ taxonomies:
     - taxon: ascaris
     - taxon: hirudo
     - taxon: fasciola
-  - taxon: testacea-order
+  - taxon: testacea
+    rank: Order

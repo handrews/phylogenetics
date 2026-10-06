@@ -50,10 +50,8 @@ Protologue not flagged: jewetti_hall_1852 in 1852_hall
 Protologue not flagged: koenigii_murchison_1839 in 1839_murchison
 Protologue not flagged: mollasses_radiares in 1801_lamarck
 Protologue not flagged: mollasses_vers in 1816a_lamarck
-Protologue not flagged: mollusca in 1758_linnaeus
 Protologue not flagged: nudus_linnaeus_1767 in 1767_linnaeus
 Protologue not flagged: oblongus_pander_1830 in 1830_pander
-Protologue not flagged: ochracea_linnaeus_1758 in 1758_linnaeus
 Protologue not flagged: ostracion in 1758_linnaeus
 Protologue not flagged: pelmatozoa in 1848_leuckart
 Protologue not flagged: penicillus_bruguière_1789 in 1789a_bruguière
@@ -67,7 +65,6 @@ Protologue not flagged: pustulosa_leske_1778_ananchytes in 1778_leske
 Protologue not flagged: radiata in 1801_lamarck
 Protologue not flagged: rufa_müller.o.f_1776 in 1776_müller.o.f
 Protologue not flagged: saccatus_linnaeus_1767 in 1767_linnaeus
-Protologue not flagged: senilis_linnaeus_1767 in 1767_linnaeus
 Protologue not flagged: stelleridae in 1801_lamarck
 Protologue not flagged: subrotunda_leske_1778 in 1778_leske
 Protologue not flagged: toreumaticus_leske_1778 in 1778_leske

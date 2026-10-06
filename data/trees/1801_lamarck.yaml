@@ -11,7 +11,8 @@ taxonomies:
   - taxon: sans vertébrés
     new: true
     children:
-    - taxon: mollusques-class
+    - taxon: mollusques
+      rank: Class
     - taxon: crustacés-order
     - taxon: arachnides
       new: true
@@ -21,6 +22,7 @@ taxonomies:
       - taxon: externes
         new: true
       - taxon: intestins
+        rank: Order
     - taxon: radiares
       new: true
       children:
@@ -49,7 +51,7 @@ taxonomies:
           - taxon: ananchites
             new: true
             children:
-            - taxon: ovatus_gmelin_1791
+            - taxon: ovatus_gmelin_1791a
               notes: It's possible this should be leske_1778.
           - taxon: spatangus_leske_1778
             children:
@@ -68,7 +70,7 @@ taxonomies:
             new: true
             children:
             - taxon: rosaceus_linnaeus_1758
-            - taxon: pentaporus_gmelin_1791
+            - taxon: pentaporus_gmelin_1791a
         - taxon: stellérides
           new: true
           children:
@@ -84,9 +86,9 @@ taxonomies:
               - taxon: ophiura_linnaeus_1758
                 parents:
                 - taxon: asterias
-            - taxon: caput medusae_linnaeus_1758
+            - taxon: caputmedusae_linnaeus_1758
               synonyms:
-              - taxon: caput medusae_linnaeus_1758
+              - taxon: caputmedusae_linnaeus_1758
                 parents:
                 - taxon: asterias
         - taxon: fistulides
@@ -94,7 +96,7 @@ taxonomies:
           children:
           - taxon: holothuria
             children:
-            - taxon: tubulosa_gmelin_1791
+            - taxon: tubulosa_gmelin_1791a
           - taxon: sipunculus
             children:
             - taxon: nudus_linnaeus_1767

@@ -205,7 +205,7 @@ def _report_section_protologues(data, roots):
       if node.section_start is section and node.section_start_marker.get('new')
     ]
     if not markers:
-      logger.warning(f'Protologue not flagged: {section.key} in {source.key}')
+      logger.warning(f'Section protologue not flagged: {section.key} in {source.key}')
       continue
     for marker in markers:
       for field, verb in _SECTION_PROTOLOGUE_FIELDS:

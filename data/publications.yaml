@@ -59,6 +59,8 @@ bullamp:
   name: Bulletins of American Paleontology
 bullbrgeo:
   name: Bulletin of the British Museum (Natural History) Geology
+bulldessci:
+  name: Bulletin des Sciences, par la Société Philomathique de Paris
 bullgeo:
   name: Bulletin of Geosciences
 canadian-journal:
@@ -95,6 +97,8 @@ e-faunas-bromide:
   name: Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma
   editors:
   - sprinkle
+fauna-svecica:
+  name: Fauna svecica - sistens animalia sveciae regni
 fieldiana:
   name: Fieldiana, Geology
 fig-desc-can:
@@ -277,6 +281,8 @@ systema-naturae-11th-ed:
   name: Systema Naturae, Ad editionem decimam reformatam
 systema-naturae-12th-ed:
   name: Systema Naturæ, Editio Duodecima, reformata
+systema-naturae-13th-ed:
+  name: Systema Naturae, Ed. 13., aucta, reformata. Cura Jo. Frid. Gmelin.
 systeme-sans-vertebres:
   name: Systéme des Animaux sans Vertèbres
 tableau:

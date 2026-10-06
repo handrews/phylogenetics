@@ -87,6 +87,7 @@
   "gibson": "Gibson",
   "gil cid": "Gil Cid",
   "gill": "Gill",
+  "gmelin": "Gmelin",
   "goldfuss": "Goldfuss",
   "gong.x.y": "Gong",
   "gong.y.m": "Gong",
@@ -363,7 +364,8 @@
   },
   "1758_linnaeus": {
    "acts": {
-    "new": 128
+    "lapsus": 1,
+    "new": 247
    },
    "audit": {
     "state": "unaudited"
@@ -378,10 +380,52 @@
     "year": 1758
    },
    "claims": {
-    "act": 128,
-    "placement": 129,
-    "usage": 130
+    "act": 248,
+    "placement": 246,
+    "section": 9,
+    "usage": 248
    },
+   "coverage": {
+    "illustrations": "na",
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": "na"
+   },
+   "derived": {
+    "newTaxa": 247,
+    "skeleton": 494
+   },
+   "derivedCoverage": {
+    "illustrations": "na",
+    "material": null,
+    "occurrences": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": "na"
+   },
+   "inconsistencies": [],
+   "material": {},
+   "tree": true
+  },
+  "1759_linnaeus": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Linnaeus"
+    ],
+    "in": "Systema Naturæ, Editio Decima, reformata",
+    "title": "Regnum Animalia",
+    "volume": 2,
+    "year": 1759
+   },
+   "claims": {},
    "coverage": {
     "illustrations": null,
     "material": null,
@@ -392,21 +436,11 @@
     "synonymy": null,
     "types": null
    },
-   "derived": {
-    "newTaxa": 128,
-    "skeleton": 259
-   },
-   "derivedCoverage": {
-    "illustrations": null,
-    "material": null,
-    "occurrences": null,
-    "skeleton": null,
-    "synonymy": null,
-    "types": null
-   },
+   "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
-   "tree": true
+   "tree": false
   },
   "1760a_linnaeus": {
    "acts": {},
@@ -423,10 +457,7 @@
     "volume": 1,
     "year": 1760
    },
-   "claims": {
-    "placement": 6,
-    "usage": 7
-   },
+   "claims": {},
    "coverage": {
     "illustrations": null,
     "material": null,
@@ -437,20 +468,11 @@
     "synonymy": null,
     "types": null
    },
-   "derived": {
-    "skeleton": 13
-   },
-   "derivedCoverage": {
-    "illustrations": null,
-    "material": null,
-    "occurrences": null,
-    "skeleton": null,
-    "synonymy": null,
-    "types": null
-   },
+   "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
-   "tree": true
+   "tree": false
   },
   "1760b_linnaeus": {
    "acts": {},
@@ -467,10 +489,7 @@
     "volume": 1,
     "year": 1760
    },
-   "claims": {
-    "placement": 60,
-    "usage": 61
-   },
+   "claims": {},
    "coverage": {
     "illustrations": null,
     "material": null,
@@ -481,16 +500,55 @@
     "synonymy": null,
     "types": null
    },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1761_linnaeus": {
+   "acts": {
+    "new": 5,
+    "substituted": 1
+   },
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Linnaeus"
+    ],
+    "in": "Fauna svecica - sistens animalia sveciae regni",
+    "title": null,
+    "year": 1761
+   },
+   "claims": {
+    "act": 6,
+    "editorial": 3,
+    "placement": 53,
+    "usage": 56
+   },
+   "coverage": {
+    "illustrations": "na",
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": "na"
+   },
    "derived": {
-    "skeleton": 121
+    "newTaxa": 5,
+    "skeleton": 107
    },
    "derivedCoverage": {
-    "illustrations": null,
+    "illustrations": "na",
     "material": null,
     "occurrences": null,
     "skeleton": null,
     "synonymy": null,
-    "types": null
+    "types": "na"
    },
    "inconsistencies": [],
    "material": {},
@@ -512,29 +570,29 @@
     "year": 1766
    },
    "claims": {
-    "placement": 6,
-    "usage": 7
+    "placement": 4,
+    "usage": 5
    },
    "coverage": {
-    "illustrations": null,
+    "illustrations": "na",
     "material": null,
     "newTaxa": null,
     "occurrences": null,
     "phylogeny": null,
     "skeleton": null,
     "synonymy": null,
-    "types": null
+    "types": "na"
    },
    "derived": {
-    "skeleton": 13
+    "skeleton": 9
    },
    "derivedCoverage": {
-    "illustrations": null,
+    "illustrations": "na",
     "material": null,
     "occurrences": null,
     "skeleton": null,
     "synonymy": null,
-    "types": null
+    "types": "na"
    },
    "inconsistencies": [],
    "material": {},
@@ -542,7 +600,9 @@
   },
   "1767_gunnerus": {
    "acts": {
-    "new": 1
+    "combNov": 1,
+    "moved": 1,
+    "new": 2
    },
    "audit": {
     "state": "unaudited"
@@ -562,9 +622,11 @@
     "year": 1767
    },
    "claims": {
-    "act": 1,
+    "act": 4,
+    "material": 3,
     "placement": 3,
-    "usage": 5
+    "rejection": 1,
+    "usage": 6
    },
    "coverage": {
     "illustrations": null,
@@ -574,11 +636,12 @@
     "phylogeny": null,
     "skeleton": null,
     "synonymy": null,
-    "types": null
+    "types": "na"
    },
    "derived": {
-    "newTaxa": 1,
-    "skeleton": 8
+    "illustrations": 3,
+    "newTaxa": 2,
+    "skeleton": 10
    },
    "derivedCoverage": {
     "illustrations": null,
@@ -586,15 +649,17 @@
     "occurrences": null,
     "skeleton": null,
     "synonymy": null,
-    "types": null
+    "types": "na"
    },
    "inconsistencies": [],
-   "material": {},
+   "material": {
+    "illustration": 3
+   },
    "tree": true
   },
   "1767_linnaeus": {
    "acts": {
-    "new": 29
+    "new": 26
    },
    "audit": {
     "state": "unaudited"
@@ -610,33 +675,33 @@
     "year": 1767
    },
    "claims": {
-    "acceptance": 2,
-    "act": 29,
+    "act": 26,
+    "editorial": 1,
     "placement": 147,
-    "usage": 150
+    "section": 11,
+    "usage": 148
    },
    "coverage": {
-    "illustrations": null,
+    "illustrations": "na",
     "material": null,
     "newTaxa": null,
     "occurrences": null,
     "phylogeny": null,
     "skeleton": null,
     "synonymy": null,
-    "types": null
+    "types": "na"
    },
    "derived": {
-    "newTaxa": 29,
-    "skeleton": 297,
-    "synonymy": 2
+    "newTaxa": 26,
+    "skeleton": 294
    },
    "derivedCoverage": {
-    "illustrations": null,
+    "illustrations": "na",
     "material": null,
     "occurrences": null,
     "skeleton": null,
     "synonymy": null,
-    "types": null
+    "types": "na"
    },
    "inconsistencies": [],
    "material": {},
@@ -892,7 +957,7 @@
   },
   "1776_müller.o.f": {
    "acts": {
-    "new": 50
+    "new": 49
    },
    "audit": {
     "state": "unaudited"
@@ -907,9 +972,10 @@
    },
    "claims": {
     "acceptance": 2,
-    "act": 50,
-    "placement": 148,
-    "usage": 152
+    "act": 49,
+    "placement": 145,
+    "section": 3,
+    "usage": 149
    },
    "coverage": {
     "illustrations": null,
@@ -922,8 +988,8 @@
     "types": null
    },
    "derived": {
-    "newTaxa": 50,
-    "skeleton": 300,
+    "newTaxa": 49,
+    "skeleton": 294,
     "synonymy": 2
    },
    "derivedCoverage": {
@@ -1083,6 +1149,116 @@
    "material": {},
    "tree": true
   },
+  "1788a_gmelin": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Gmelin"
+    ],
+    "in": "Systema Naturae, Ed. 13., aucta, reformata. Cura Jo. Frid. Gmelin.",
+    "number": 1,
+    "pages": [
+     "i",
+     "xii",
+     1,
+     500
+    ],
+    "title": null,
+    "volume": 1,
+    "year": 1788
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1788b_gmelin": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Gmelin"
+    ],
+    "in": "Systema Naturae, Ed. 13., aucta, reformata. Cura Jo. Frid. Gmelin.",
+    "number": 2,
+    "pages": [
+     501,
+     1032
+    ],
+    "title": null,
+    "volume": 1,
+    "year": 1788
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1789_gmelin": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Gmelin"
+    ],
+    "in": "Systema Naturae, Ed. 13., aucta, reformata. Cura Jo. Frid. Gmelin.",
+    "number": 3,
+    "pages": [
+     1033,
+     1516
+    ],
+    "title": null,
+    "volume": 1,
+    "year": 1789
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1789a_bruguière": {
    "acts": {
     "new": 11
@@ -1197,6 +1373,78 @@
    "material": {},
    "tree": false
   },
+  "1790a_gmelin": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Gmelin"
+    ],
+    "in": "Systema Naturae, Ed. 13., aucta, reformata. Cura Jo. Frid. Gmelin.",
+    "number": 4,
+    "pages": [
+     1517,
+     2224
+    ],
+    "title": null,
+    "volume": 1,
+    "year": 1790
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1790b_gmelin": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Gmelin"
+    ],
+    "in": "Systema Naturae, Ed. 13., aucta, reformata. Cura Jo. Frid. Gmelin.",
+    "number": 5,
+    "pages": [
+     2225,
+     3020
+    ],
+    "title": null,
+    "volume": 1,
+    "year": 1790
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1791_bruguière": {
    "acts": {
     "new": 1
@@ -1242,6 +1490,187 @@
    "inconsistencies": [],
    "material": {},
    "tree": true
+  },
+  "1791a_gmelin": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Gmelin"
+    ],
+    "in": "Systema Naturae, Ed. 13., aucta, reformata. Cura Jo. Frid. Gmelin.",
+    "number": 6,
+    "pages": [
+     3021,
+     3910
+    ],
+    "title": null,
+    "volume": 1,
+    "year": 1791
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1791b_gmelin": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Gmelin"
+    ],
+    "in": "Systema Naturae, Ed. 13., aucta, reformata. Cura Jo. Frid. Gmelin.",
+    "number": 1,
+    "pages": [
+     "i",
+     "xl",
+     1,
+     884
+    ],
+    "title": null,
+    "volume": 2,
+    "year": 1791
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1791c_gmelin": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Gmelin"
+    ],
+    "in": "Systema Naturae, Ed. 13., aucta, reformata. Cura Jo. Frid. Gmelin.",
+    "number": 2,
+    "pages": [
+     885,
+     1661
+    ],
+    "title": null,
+    "volume": 2,
+    "year": 1791
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1792_gmelin": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Gmelin"
+    ],
+    "in": "Systema Naturae, Ed. 13., aucta, reformata. Cura Jo. Frid. Gmelin.",
+    "number": 7,
+    "pages": [
+     3911,
+     4120
+    ],
+    "title": null,
+    "volume": 1,
+    "year": 1792
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1793_gmelin": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Gmelin"
+    ],
+    "in": "Systema Naturae, Ed. 13., aucta, reformata. Cura Jo. Frid. Gmelin.",
+    "pages": [
+     1,
+     476
+    ],
+    "title": null,
+    "volume": 3,
+    "year": 1793
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
   },
   "1798_cuvier": {
    "acts": {
@@ -1435,6 +1864,41 @@
    "inconsistencies": [],
    "material": {},
    "tree": true
+  },
+  "1816_blainville": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Blainville"
+    ],
+    "in": "Bulletin des Sciences, par la Société Philomathique de Paris",
+    "pages": [
+     113,
+     124
+    ],
+    "title": "Prodrome d'une nouvelle distribution systématique du règne animal",
+    "volume": 8,
+    "year": 1816
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
   },
   "1816a_lamarck": {
    "acts": {
@@ -2209,56 +2673,6 @@
    "material": {},
    "tree": false
   },
-  "1825_gray.j.e": {
-   "acts": {
-    "new": 16
-   },
-   "audit": {
-    "state": "unaudited"
-   },
-   "citation": {
-    "authors": [
-     "Gray"
-    ],
-    "in": "The Annals of Philosophy. New Series.",
-    "number": 6,
-    "title": "An Attempt to divide the Echinida, or Sea Eggs, into Natural Families",
-    "volume": 10,
-    "year": 1825
-   },
-   "claims": {
-    "acceptance": 5,
-    "act": 16,
-    "placement": 32,
-    "usage": 38
-   },
-   "coverage": {
-    "illustrations": null,
-    "material": null,
-    "newTaxa": null,
-    "occurrences": null,
-    "phylogeny": null,
-    "skeleton": null,
-    "synonymy": null,
-    "types": null
-   },
-   "derived": {
-    "newTaxa": 16,
-    "skeleton": 70,
-    "synonymy": 5
-   },
-   "derivedCoverage": {
-    "illustrations": null,
-    "material": null,
-    "occurrences": null,
-    "skeleton": null,
-    "synonymy": null,
-    "types": null
-   },
-   "inconsistencies": [],
-   "material": {},
-   "tree": true
-  },
   "1825a_say": {
    "acts": {
     "new": 6
@@ -2441,6 +2855,96 @@
     "illustration": 1,
     "occurrence": 1
    },
+   "tree": true
+  },
+  "1825f_gray.j.e": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Gray"
+    ],
+    "in": "The Annals of Philosophy. New Series.",
+    "number": 3,
+    "pages": [
+     193,
+     217
+    ],
+    "title": "A Synopsis of the genera of Reptiles and Amphibia, with a description of some new species\n",
+    "volume": 10,
+    "year": 1825
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1825i_gray.j.e": {
+   "acts": {
+    "new": 16
+   },
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Gray"
+    ],
+    "in": "The Annals of Philosophy. New Series.",
+    "number": 6,
+    "pages": [
+     423,
+     431
+    ],
+    "title": "An Attempt to divide the Echinida, or Sea Eggs, into Natural Families",
+    "volume": 10,
+    "year": 1825
+   },
+   "claims": {
+    "acceptance": 5,
+    "act": 16,
+    "placement": 32,
+    "usage": 38
+   },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {
+    "newTaxa": 16,
+    "skeleton": 70,
+    "synonymy": 5
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "inconsistencies": [],
+   "material": {},
    "tree": true
   },
   "1826_meyer": {
@@ -15771,9 +16275,12 @@
   "abbreviatus_lamarck_1816": [
    "1816b_lamarck"
   ],
+  "abdominales": [
+   "1758_linnaeus"
+  ],
   "acalephida": [
    "1821_macleay",
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "acalèphes": [
    "1817d_cuvier"
@@ -15786,6 +16293,9 @@
    "1982_broadhead",
    "1985_fatka_kordule",
    "2006_parsley_zhao.y.l"
+  ],
+  "accipitres": [
+   "1758_linnaeus"
   ],
   "acephala-class": [
    "1821_macleay"
@@ -15867,11 +16377,17 @@
   "aesiocystites": [
    "1935_bassler"
   ],
+  "aethiops_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
   "aethocrinus": [
    "2003_guensburg_sprinkle",
    "2009_guensburg_sprinkle",
    "2012_zamora_smith.a.b",
    "2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler"
+  ],
+  "afer_linnaeus_1758": [
+   "1758_linnaeus"
   ],
   "africana_forsskål_1775": [
    "1789a_bruguière"
@@ -16021,6 +16537,7 @@
   ],
   "alcyonium": [
    "1758_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1789a_bruguière",
    "1798_cuvier",
@@ -16074,6 +16591,9 @@
    "1975_bell.b.m",
    "1982_bell.b.m"
   ],
+  "americanus_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
   "ametabola": [
    "1821_macleay"
   ],
@@ -16090,14 +16610,12 @@
    "2005_frest"
   ],
   "amphibia": [
-   "1821_macleay"
-  ],
-  "amphibia_linnaeus_1758": [
    "1758_linnaeus",
-   "1760a_linnaeus",
+   "1761_linnaeus",
    "1766_linnaeus",
    "1776_müller.o.f",
-   "1798_cuvier"
+   "1798_cuvier",
+   "1821_macleay"
   ],
   "amphinome": [
    "1789a_bruguière"
@@ -16139,8 +16657,9 @@
   "anapeptamenus_austen_1843": [
    "1844_buch"
   ],
-  "anastacia_linnaeus_1758": [
-   "1758_linnaeus"
+  "anastatica_linnaeus_1758": [
+   "1758_linnaeus",
+   "1761_linnaeus"
   ],
   "anatiformis_hall_1847": [
    "1847_hall"
@@ -16202,8 +16721,7 @@
   ],
   "animalia": [
    "1758_linnaeus",
-   "1760a_linnaeus",
-   "1760b_linnaeus",
+   "1761_linnaeus",
    "1766_linnaeus",
    "1767_linnaeus",
    "1776_müller.o.f",
@@ -16240,7 +16758,7 @@
   ],
   "anomales": [
    "1816a_lamarck",
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "anomalocystidae": [
    "1900_bather"
@@ -16249,6 +16767,9 @@
    "1758_linnaeus",
    "1767_linnaeus",
    "1776_müller.o.f"
+  ],
+  "anseres": [
+   "1758_linnaeus"
   ],
   "ansticei_bather_1915": [
    "1935_bassler"
@@ -16265,6 +16786,9 @@
   "anulocrinus": [
    "1975_kolata"
   ],
+  "apedia_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
   "apektocrinidae": [
    "2009_guensburg_sprinkle"
   ],
@@ -16273,9 +16797,12 @@
    "2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler",
    "2022_zamora_rahman_sumrall_gibson_thompson"
   ],
+  "apella_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
   "aphrodita": [
    "1758_linnaeus",
-   "1760b_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1789a_bruguière",
    "1798_cuvier"
@@ -16294,8 +16821,8 @@
   "apiocystitinae": [
    "1967_paul.c.r.c"
   ],
-  "aplysia": [
-   "1767_linnaeus"
+  "apodes": [
+   "1758_linnaeus"
   ],
   "aporita": [
    "1900_bather"
@@ -16305,6 +16832,9 @@
   ],
   "appressa_bassler_1950": [
    "1973_sprinkle"
+  ],
+  "aptera": [
+   "1758_linnaeus"
   ],
   "arachnida": [
    "1821_macleay"
@@ -16322,7 +16852,6 @@
   ],
   "aranciaca_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus",
    "1776_müller.o.f",
    "1816a_lamarck"
@@ -16477,6 +17006,9 @@
    "2014_makhlouf_lefebvre_nardin_nedjari_régnault_ferhi",
    "2021_parsley"
   ],
+  "asiasticus_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
   "aspera_müller.o.f_1776": [
    "1776_müller.o.f"
   ],
@@ -16491,7 +17023,6 @@
    "1816b_lamarck"
   ],
   "asteria": [
-   "1767_linnaeus",
    "1821_miller.j.s"
   ],
   "asteria_linnaeus_1767": [
@@ -16520,7 +17051,7 @@
   ],
   "asterias": [
    "1758_linnaeus",
-   "1760b_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1776_müller.o.f",
    "1789a_bruguière",
@@ -16599,7 +17130,7 @@
    "2015_sprinkle_sumrall"
   ],
   "astropyga": [
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "asturicystis": [
    "2013_smith.a.b_zamora"
@@ -16624,7 +17155,6 @@
   ],
   "atratus_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus",
    "1798_cuvier",
    "1816b_lamarck"
@@ -16661,6 +17191,9 @@
    "1778_leske",
    "1816b_lamarck"
   ],
+  "auritus_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
   "austini_foerste_1914": [
    "1935_bassler",
    "1936_bassler",
@@ -16680,11 +17213,14 @@
   ],
   "aves": [
    "1758_linnaeus",
-   "1760a_linnaeus",
+   "1761_linnaeus",
    "1766_linnaeus",
    "1776_müller.o.f",
    "1798_cuvier",
    "1821_macleay"
+  ],
+  "aygula_linnaeus_1758": [
+   "1758_linnaeus"
   ],
   "azaisei_thoral_1935": [
    "1968b_paul.c.r.c"
@@ -16701,6 +17237,9 @@
   ],
   "baculosa_lamarck_1816": [
    "1816b_lamarck"
+  ],
+  "balaena": [
+   "1758_linnaeus"
   ],
   "balangicystis": [
    "2006_parsley_zhao.y.l",
@@ -16784,6 +17323,10 @@
   "belli_zamora_2013": [
    "2013_zamora"
   ],
+  "belluae": [
+   "1758_linnaeus",
+   "1761_linnaeus"
+  ],
   "bellulus_barrande_1887": [
    "1935_bassler"
   ],
@@ -16808,6 +17351,10 @@
   ],
   "beroe_linnaeus_1758": [
    "1776_müller.o.f"
+  ],
+  "bestiae": [
+   "1758_linnaeus",
+   "1761_linnaeus"
   ],
   "bibrachiatus_parsley_1982": [
    "1982a_parsley"
@@ -16834,13 +17381,13 @@
    "1988_ubaghs_robison",
    "1997_sumrall_sprinkle_guensburg"
   ],
-  "bifissa_gmelin_1791": [
+  "bifissa_audouin_1806": [
    "1816b_lamarck"
   ],
-  "bifora_gmelin_1791": [
+  "bifora_gmelin_1791a": [
    "1816b_lamarck"
   ],
-  "biforis_gmelin_1791": [
+  "biforis_gmelin_1791a": [
    "1816b_lamarck"
   ],
   "bigranularis_lamarck_1816": [
@@ -17000,6 +17547,9 @@
   "boliviensis_sprinkle_1973": [
    "2007a_nardin"
   ],
+  "bos": [
+   "1758_linnaeus"
+  ],
   "bostryclavus": [
    "1996_sumrall"
   ],
@@ -17054,8 +17604,14 @@
   "brachiopodes-class": [
    "1817b_cuvier"
   ],
+  "bradypus": [
+   "1758_linnaeus"
+  ],
   "branagani_brown.i.a_1963": [
    "1963_brown.i.a"
+  ],
+  "branchiostegi": [
+   "1758_linnaeus"
   ],
   "briareus_barrande_1887": [
    "1973_sprinkle",
@@ -17072,7 +17628,7 @@
   ],
   "brissus": [
    "1817d_cuvier",
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "brissus_leske_1778": [
    "1778_leske",
@@ -17096,6 +17652,9 @@
   ],
   "broweri_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler_2020": [
    "2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler"
+  ],
+  "bruta": [
+   "1758_linnaeus"
   ],
   "buccinum": [
    "1758_linnaeus",
@@ -17216,6 +17775,9 @@
   "cambrocystidae": [
    "2021_parsley"
   ],
+  "camelus": [
+   "1758_linnaeus"
+  ],
   "camerata": [
    "1973_sprinkle",
    "1975_kolata",
@@ -17264,6 +17826,9 @@
    "1776_müller.o.f",
    "1789a_bruguière"
   ],
+  "canis": [
+   "1758_linnaeus"
+  ],
   "cannati_miquel_1894": [
    "1985_jell_burrett_banks",
    "1985_smith.a.b",
@@ -17273,8 +17838,14 @@
   "capillaris_phillips.j_1839": [
    "1839_murchison"
   ],
+  "capra": [
+   "1758_linnaeus"
+  ],
   "capsularia": [
    "1798_cuvier"
+  ],
+  "capucina_linnaeus_1758": [
+   "1758_linnaeus"
   ],
   "caput medusae_lamarck_1801": [
    "1801_lamarck",
@@ -17282,9 +17853,9 @@
    "1820_say",
    "1821_miller.j.s"
   ],
-  "caput medusae_linnaeus_1758": [
+  "caputmedusae_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1776_müller.o.f",
    "1798_cuvier",
@@ -17427,7 +17998,7 @@
    "1801_lamarck",
    "1816b_lamarck",
    "1817d_cuvier",
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "casteri_bell.b.m_1975": [
    "1975_bell.b.m",
@@ -17440,9 +18011,14 @@
    "1988_ubaghs_robison",
    "2013_smith.a.b_zamora"
   ],
+  "castor": [
+   "1758_linnaeus"
+  ],
+  "catta_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
   "caudata_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus"
   ],
   "caudatus_lamarck_1816": [
@@ -17472,6 +18048,9 @@
   "cephalopoda-class": [
    "1821_macleay"
   ],
+  "cephus_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
   "cerasus_buch_1840": [
    "1840_eichwald",
    "1840a_buch",
@@ -17488,8 +18067,15 @@
    "1789a_bruguière",
    "1801_lamarck"
   ],
+  "cervus": [
+   "1758_linnaeus"
+  ],
   "cestum": [
    "1816a_lamarck"
+  ],
+  "cete": [
+   "1758_linnaeus",
+   "1761_linnaeus"
   ],
   "chama": [
    "1758_linnaeus",
@@ -17564,17 +18150,17 @@
    "1967_paul.c.r.c"
   ],
   "cidaridae": [
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "cidaris": [
    "1778_leske",
    "1816b_lamarck",
    "1817d_cuvier",
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "cidaris_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1798_cuvier"
   ],
@@ -17699,9 +18285,6 @@
   "coccinia_müller.o.f_1776": [
    "1816b_lamarck"
   ],
-  "cochleae": [
-   "1758_linnaeus"
-  ],
   "codyensis_sumrall_sprinkle_guensburg_1997": [
    "1997_sumrall_sprinkle_guensburg"
   ],
@@ -17713,6 +18296,9 @@
   ],
   "coelomocoela-grade": [
    "1900_bather"
+  ],
+  "coleoptera": [
+   "1758_linnaeus"
   ],
   "collaspididae": [
    "1966_durham"
@@ -17764,7 +18350,7 @@
   "complanata_fabricius_1780": [
    "1789a_bruguière"
   ],
-  "complanatus_gmelin_1791": [
+  "complanatus_gmelin_1791a": [
    "1816b_lamarck"
   ],
   "complanatus_lamarck_1816": [
@@ -17775,9 +18361,6 @@
   ],
   "concentricus_frest_2005": [
    "2005_frest"
-  ],
-  "conchae": [
-   "1758_linnaeus"
   ],
   "conchilega_müller.o.f_1776": [
    "1776_müller.o.f",
@@ -17860,6 +18443,7 @@
   ],
   "corallina": [
    "1758_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1798_cuvier",
    "1801_lamarck"
@@ -18353,6 +18937,9 @@
    "1967e_ubaghs",
    "2021_jell_sprinkle"
   ],
+  "cynamologos_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
   "cypraea": [
    "1758_linnaeus",
    "1767_linnaeus"
@@ -18438,6 +19025,9 @@
   "darraghi_jell_1983": [
    "1983_jell"
   ],
+  "dasypus": [
+   "1758_linnaeus"
+  ],
   "davisii_mccoy_1848": [
    "1848b_forbes",
    "1997_paul.c.r.c"
@@ -18453,7 +19043,7 @@
   "deani_ubaghs_1994": [
    "2007a_nardin"
   ],
-  "decadactylos_gmelin_1791": [
+  "decadactylos_gmelin_1791a": [
    "1816b_lamarck"
   ],
   "decadactylus_hall_1847": [
@@ -18480,6 +19070,9 @@
   ],
   "decussatus_begg_1934": [
    "1966_kesling"
+  ],
+  "delphinus": [
+   "1758_linnaeus"
   ],
   "deltacystinae": [
    "2013_nardin_bohatý"
@@ -18546,7 +19139,6 @@
   ],
   "denudata_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus",
    "1776_müller.o.f"
   ],
@@ -18579,7 +19171,7 @@
    "1966_kesling"
   ],
   "diadema": [
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "diadema_leske_1778": [
    "1778_leske",
@@ -18587,8 +19179,10 @@
   ],
   "diadema_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus"
+  ],
+  "diana_linnaeus_1758": [
+   "1758_linnaeus"
   ],
   "dibrachycystidae": [
    "2012_zamora_smith.a.b"
@@ -18615,6 +19209,15 @@
    "1936_bassler",
    "1966_regnéll",
    "1976_bell.b.m"
+  ],
+  "didactyla_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
+  "didactylus_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
+  "didelphis": [
+   "1758_linnaeus"
   ],
   "digitata": [
    "1960_gill_caster",
@@ -18680,6 +19283,9 @@
   "diplosphaeronis": [
    "1997_paul.c.r.c"
   ],
+  "diptera": [
+   "1758_linnaeus"
+  ],
   "discocystinae": [
    "1993_sumrall",
    "1996_sumrall",
@@ -18698,7 +19304,7 @@
    "1996_sumrall"
   ],
   "discodea": [
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "discoidea_lamarck_1816": [
    "1816a_lamarck"
@@ -18738,7 +19344,6 @@
   ],
   "doris": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus",
    "1776_müller.o.f",
    "1789a_bruguière"
@@ -18771,18 +19376,18 @@
    "1973_sprinkle"
   ],
   "echinanaus": [
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "echinanthus": [
    "1817d_cuvier",
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "echinanthus_leske_1778": [
    "1778_leske",
    "1816b_lamarck"
   ],
   "echinarachnius": [
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "echinarachnius_leske_1778": [
    "1778_leske"
@@ -18797,20 +19402,20 @@
   ],
   "echinida": [
    "1821_macleay",
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "echinida-family": [
    "1825b_sowerby.g.b"
   ],
   "echinidae": [
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "echinidea-family": [
    "1825a_say",
    "1847_hall"
   ],
   "echinides": [
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "echinites": [
    "1778_leske",
@@ -18836,15 +19441,15 @@
    "1848b_forbes"
   ],
   "echinobrissus": [
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "echinocardium": [
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "echinocorys": [
    "1778_leske",
    "1816b_lamarck",
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "echinocorys-sp_leske_1778": [
    "1778_leske"
@@ -18856,7 +19461,7 @@
   "echinocyamus": [
    "1774_van phelsum",
    "1778_leske",
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "echinocyamus-sp_leske_1778": [
    "1778_leske"
@@ -18865,7 +19470,7 @@
    "1900_bather"
   ],
   "echinodermata": [
-   "1825_gray.j.e",
+   "1825i_gray.j.e",
    "1848_leuckart",
    "1941_whitehouse",
    "1960_gill_caster",
@@ -18954,7 +19559,7 @@
   "echinodiscus": [
    "1778_leske",
    "1816b_lamarck",
-   "1825_gray.j.e",
+   "1825i_gray.j.e",
    "1935_bassler",
    "1976_bell.b.m",
    "1996_sumrall"
@@ -18993,10 +19598,10 @@
    "1848_leuckart"
   ],
   "echinolampas": [
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "echinometra": [
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "echinoneus": [
    "1778_leske",
@@ -19091,7 +19696,7 @@
   "echinus": [
    "1741_linnaeus",
    "1758_linnaeus",
-   "1760b_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1772_gyllenhaal",
    "1776_müller.o.f",
@@ -19104,7 +19709,7 @@
    "1816b_lamarck",
    "1817d_cuvier",
    "1821_wahlenberg",
-   "1825_gray.j.e",
+   "1825i_gray.j.e",
    "1826_schlotheim",
    "1828_hisinger",
    "1830_pander",
@@ -19382,6 +19987,9 @@
    "1776_müller.o.f",
    "1816b_lamarck"
   ],
+  "elephas": [
+   "1758_linnaeus"
+  ],
   "eleutherozoa": [
    "1941_whitehouse"
   ],
@@ -19632,13 +20240,21 @@
   ],
   "equestris_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus",
    "1776_müller.o.f",
    "1816a_lamarck"
   ],
   "equinus_leske_1778": [
    "1778_leske"
+  ],
+  "equinus_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
+  "equus": [
+   "1758_linnaeus"
+  ],
+  "erinaceus": [
+   "1758_linnaeus"
   ],
   "erinocystis": [
    "1968b_paul.c.r.c"
@@ -19661,7 +20277,7 @@
   ],
   "esculentus_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1798_cuvier",
    "1801_lamarck",
@@ -19703,6 +20319,9 @@
   ],
   "eumorphocystoidea": [
    "1982c_parsley"
+  ],
+  "europaeus_linnaeus_1758": [
+   "1758_linnaeus"
   ],
   "euryale": [
    "1816a_lamarck",
@@ -19779,6 +20398,9 @@
    "1789a_bruguière",
    "1798_cuvier"
   ],
+  "faunus_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
   "fayi_sprinkle_1973": [
    "1973_sprinkle"
   ],
@@ -19792,8 +20414,21 @@
    "2017_nardin_lefebvre_fatka_nohejlová_kašiča_šinágl_szabad",
    "2019_nohejlová_nardin_fatka_kašiča_szabad"
   ],
+  "felinus_linnaeus_1761": [
+   "1761_linnaeus"
+  ],
+  "felis": [
+   "1758_linnaeus"
+  ],
   "fenestrata_leske_1778": [
    "1778_leske"
+  ],
+  "ferae": [
+   "1758_linnaeus",
+   "1761_linnaeus"
+  ],
+  "ferus_linnaeus_1758": [
+   "1758_linnaeus"
   ],
   "fibularia": [
    "1816b_lamarck",
@@ -19838,12 +20473,12 @@
   ],
   "fistulida-class": [
    "1821_macleay",
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "fistulides": [
    "1801_lamarck",
    "1816b_lamarck",
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "fistuliporita": [
    "1968b_paul.c.r.c",
@@ -19893,6 +20528,7 @@
    "1994_sprinkle_wahlman"
   ],
   "flustra": [
+   "1761_linnaeus",
    "1767_linnaeus",
    "1789a_bruguière",
    "1798_cuvier",
@@ -19972,13 +20608,16 @@
    "1801_lamarck",
    "1816b_lamarck",
    "1817d_cuvier",
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "galeritidae": [
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "gallica_domínguez alonso_1999": [
    "1999_domínguez alonso"
+  ],
+  "gallinae": [
+   "1758_linnaeus"
   ],
   "gasterocomacea": [
    "1975_kolata"
@@ -20060,7 +20699,7 @@
   ],
   "glacialis_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1776_müller.o.f",
    "1816a_lamarck"
@@ -20072,6 +20711,10 @@
   "glenocrinus": [
    "2003_guensburg_sprinkle",
    "2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler"
+  ],
+  "glires": [
+   "1758_linnaeus",
+   "1761_linnaeus"
   ],
   "globiformis_lamarck_1816": [
    "1816b_lamarck"
@@ -20105,7 +20748,6 @@
   ],
   "globulus_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus",
    "1778_leske"
   ],
@@ -20300,6 +20942,7 @@
   ],
   "gorgonia": [
    "1758_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1789a_bruguière",
    "1798_cuvier",
@@ -20323,6 +20966,9 @@
   ],
   "graffhami_sprinkle_1982": [
    "1982g_sprinkle"
+  ],
+  "grallae": [
+   "1758_linnaeus"
   ],
   "granatum_volborth_1842": [
    "1854_müller.j.p"
@@ -20384,7 +21030,6 @@
   ],
   "gratilla_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus",
    "1778_leske"
   ],
@@ -20486,6 +21131,9 @@
   ],
   "hallii_conrad.t.a_1842": [
    "1842_vanuxem"
+  ],
+  "hamadryas_linnaeus_1758": [
+   "1758_linnaeus"
   ],
   "hamiltonensis_vanuxem_1842": [
    "1842_vanuxem",
@@ -20660,6 +21308,9 @@
    "1985_smith.a.b",
    "2010_müller.p_hahn"
   ],
+  "hemiptera": [
+   "1758_linnaeus"
+  ],
   "hemisphaerica_leske_1778": [
    "1778_leske",
    "1816b_lamarck"
@@ -20718,7 +21369,7 @@
   "hexagonus_modeer_1790": [
    "1789a_bruguière"
   ],
-  "hexaporus_gmelin_1791": [
+  "hexaporus_gmelin_1791a": [
    "1798_cuvier",
    "1816b_lamarck"
   ],
@@ -20741,8 +21392,12 @@
   "hintzei_guensburg_sprinkle_1994": [
    "1994_guensburg_sprinkle"
   ],
+  "hippopotamus": [
+   "1758_linnaeus"
+  ],
   "hippuris_linnaeus_1758": [
    "1758_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1798_cuvier",
    "1801_lamarck"
@@ -20787,8 +21442,7 @@
    "1848_leuckart"
   ],
   "holothuria_linnaeus_1758": [
-   "1758_linnaeus",
-   "1760b_linnaeus"
+   "1758_linnaeus"
   ],
   "holothuroidea": [
    "1900_bather",
@@ -20809,6 +21463,9 @@
    "1969_robison_sprinkle",
    "1975_kolata",
    "1988_ubaghs_robison"
+  ],
+  "homo": [
+   "1758_linnaeus"
   ],
   "homocrinus": [
    "1852_hall"
@@ -20846,6 +21503,9 @@
   ],
   "hudsoni_sprinkle_1973": [
    "1973_sprinkle"
+  ],
+  "humanus_linnaeus_1758": [
+   "1758_linnaeus"
   ],
   "humilis_billings_1857": [
    "1857_billings",
@@ -20885,12 +21545,16 @@
   ],
   "hydra": [
    "1758_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1774a_müller.o.f",
    "1776_müller.o.f",
    "1789a_bruguière",
    "1798_cuvier",
    "1801_lamarck"
+  ],
+  "hymenoptera": [
+   "1758_linnaeus"
   ],
   "hypanthocrinites": [
    "1839_murchison",
@@ -20905,6 +21569,9 @@
   "hystrichopsydrax": [
    "1988_guensburg",
    "1994_guensburg_sprinkle"
+  ],
+  "hystrix": [
+   "1758_linnaeus"
   ],
   "hystrix_lamarck_1816": [
    "1816b_lamarck"
@@ -20967,7 +21634,7 @@
    "1821_miller.j.s",
    "1825a_say"
   ],
-  "inauritus_gmelin_1791": [
+  "inauritus_gmelin_1791a": [
    "1816b_lamarck"
   ],
   "inauritus_leske_1778": [
@@ -21029,9 +21696,7 @@
   ],
   "insecta": [
    "1758_linnaeus",
-   "1760a_linnaeus",
-   "1760b_linnaeus",
-   "1766_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1776_müller.o.f",
    "1798_cuvier"
@@ -21043,29 +21708,22 @@
   "insularis_regnéll_1945": [
    "1966_kesling"
   ],
-  "integra": [
-   "1758_linnaeus",
-   "1760b_linnaeus",
-   "1767_linnaeus"
-  ],
   "interruptus_jaekel_1899": [
    "1968b_paul.c.r.c"
   ],
-  "intestina-class": [
-   "1821_macleay"
-  ],
-  "intestina-order": [
+  "intestina": [
    "1758_linnaeus",
-   "1760b_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
-   "1791_bruguière"
+   "1791_bruguière",
+   "1821_macleay"
   ],
   "intestinalis_linnaeus_1767": [
    "1767_linnaeus",
    "1776_müller.o.f",
    "1789a_bruguière"
   ],
-  "intestinaux-class": [
+  "intestinaux": [
    "1817d_cuvier"
   ],
   "intestins": [
@@ -21079,17 +21737,13 @@
   "iowacystis": [
    "1960_gill_caster"
   ],
-  "irregulares": [
-   "1758_linnaeus",
-   "1760b_linnaeus",
-   "1767_linnaeus"
-  ],
   "ischadites": [
    "1839_murchison",
    "1840b_buch"
   ],
   "isis": [
    "1758_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1789a_bruguière",
    "1798_cuvier",
@@ -21240,6 +21894,9 @@
   "ixine_holloway_jell_1983": [
    "1983_holloway_jell"
   ],
+  "jacchus_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
   "jacksoni_austen_1843": [
    "1844_buch"
   ],
@@ -21277,6 +21934,9 @@
   "judaica_linnaeus_1761": [
    "1816b_lamarck"
   ],
+  "judaicus_linnaeus_1761": [
+   "1761_linnaeus"
+  ],
   "jugoszovia": [
    "1995_dzik_orłowski",
    "1999_domínguez alonso"
@@ -21284,6 +21944,9 @@
   "jugoszoviidae": [
    "1995_dzik_orłowski",
    "1999_domínguez alonso"
+  ],
+  "jugulares": [
+   "1758_linnaeus"
   ],
   "junori_withers_1933": [
    "1960_gill_caster"
@@ -21388,7 +22051,6 @@
   ],
   "lacunosus_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus",
    "1778_leske",
    "1798_cuvier"
@@ -21398,7 +22060,6 @@
   ],
   "laevigata_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus",
    "1816a_lamarck"
   ],
@@ -21439,7 +22100,7 @@
    "1975_broadhead_strimple"
   ],
   "lagana": [
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "laganum_leske_1778": [
    "1778_leske",
@@ -21458,6 +22119,7 @@
    "1816b_lamarck"
   ],
   "laplysia": [
+   "1767_linnaeus",
    "1789a_bruguière"
   ],
   "late carinatus_leske_1778": [
@@ -21536,8 +22198,14 @@
   "lehmani_chauvel_régnault_1986": [
    "2017_allaire_lefebvre_nardin_martin.e.l.o_vaucher_escarguel"
   ],
+  "lemur": [
+   "1758_linnaeus"
+  ],
   "lenticularis_lamarck_1816": [
    "1816b_lamarck"
+  ],
+  "leonina_linnaeus_1758": [
+   "1758_linnaeus"
   ],
   "lepadiformis_müller.o.f_1776": [
    "1776_müller.o.f",
@@ -21608,6 +22276,9 @@
    "1935_bassler",
    "1976_bell.b.m"
   ],
+  "lepidoptera": [
+   "1758_linnaeus"
+  ],
   "lepidus_zhao.y.l_huang.y.z_gong.x.y_1994": [
    "2006_parsley_zhao.y.l"
   ],
@@ -21616,9 +22287,15 @@
    "1843_hall",
    "1968b_paul.c.r.c"
   ],
+  "leporinus_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
+  "lepus": [
+   "1758_linnaeus"
+  ],
   "lernaea": [
    "1758_linnaeus",
-   "1760b_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1776_müller.o.f"
   ],
@@ -21682,7 +22359,7 @@
   ],
   "limax": [
    "1758_linnaeus",
-   "1760b_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1774b_müller.o.f",
    "1776_müller.o.f",
@@ -21729,7 +22406,7 @@
   ],
   "lithophyta": [
    "1758_linnaeus",
-   "1760b_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus"
   ],
   "lithophytes": [
@@ -21743,7 +22420,6 @@
   ],
   "lixula_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus",
    "1778_leske"
   ],
@@ -21816,7 +22492,6 @@
   ],
   "lucunter_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus",
    "1816b_lamarck"
   ],
@@ -21838,11 +22513,7 @@
   ],
   "luna_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus"
-  ],
-  "lunatae": [
-   "1776_müller.o.f"
   ],
   "lyracystidae": [
    "2006_sprinkle_collins.d",
@@ -21923,6 +22594,9 @@
    "1936_bassler",
    "1985_smith.a.b"
   ],
+  "magnates": [
+   "1761_linnaeus"
+  ],
   "magnificus_forbes_1848": [
    "1848b_forbes"
   ],
@@ -21955,12 +22629,11 @@
   ],
   "mamillatus_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus"
   ],
   "mammalia": [
    "1758_linnaeus",
-   "1760a_linnaeus",
+   "1761_linnaeus",
    "1766_linnaeus",
    "1776_müller.o.f",
    "1798_cuvier",
@@ -21999,6 +22672,9 @@
   "mammillatus_linnaeus_1758": [
    "1816b_lamarck"
   ],
+  "manatus_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
   "mandalacystis": [
    "1987_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley",
    "1998_dean.j_smith.a.b",
@@ -22006,6 +22682,9 @@
   ],
   "mandibulata": [
    "1821_macleay"
+  ],
+  "manis": [
+   "1758_linnaeus"
   ],
   "mansfieldi_guensburg_2010": [
    "2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler"
@@ -22050,6 +22729,9 @@
    "1789a_bruguière",
    "1816b_lamarck"
   ],
+  "maximus_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
   "maydena": [
    "2014_jell"
   ],
@@ -22064,7 +22746,7 @@
   ],
   "medusa": [
    "1758_linnaeus",
-   "1760b_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1776_müller.o.f",
    "1789a_bruguière",
@@ -22074,11 +22756,11 @@
    "1973_sprinkle"
   ],
   "medusaires": [
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "medusida": [
    "1821_macleay",
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "megapinacotus_ehlers_kesling_1958": [
    "1966_regnéll",
@@ -22136,6 +22818,9 @@
   ],
   "microbasalis_billings_1857": [
    "1857_billings"
+  ],
+  "midas_linnaeus_1758": [
+   "1758_linnaeus"
   ],
   "miliaris_müller.p.l.s_1776": [
    "1816b_lamarck"
@@ -22203,6 +22888,7 @@
    "2006_parsley_zhao.y.l"
   ],
   "minuta_linnaeus_1761": [
+   "1761_linnaeus",
    "1767_linnaeus",
    "1776_müller.o.f"
   ],
@@ -22244,18 +22930,14 @@
    "1816b_lamarck"
   ],
   "mollusca": [
-   "1821_macleay"
-  ],
-  "mollusca-class": [
-   "1798_cuvier"
-  ],
-  "mollusca-order": [
    "1758_linnaeus",
-   "1760b_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1772_gyllenhaal",
    "1776_müller.o.f",
-   "1791_bruguière"
+   "1791_bruguière",
+   "1798_cuvier",
+   "1821_macleay"
   ],
   "mollusca-unknown-class-1_macleay_1821": [
    "1821_macleay"
@@ -22263,13 +22945,9 @@
   "mollusca-unknown-class-2_macleay_1821": [
    "1821_macleay"
   ],
-  "mollusques-class": [
-   "1801_lamarck"
-  ],
-  "mollusques-order": [
-   "1789a_bruguière"
-  ],
-  "mollusques-phylum": [
+  "mollusques": [
+   "1789a_bruguière",
+   "1801_lamarck",
    "1817b_cuvier"
   ],
   "molpadia": [
@@ -22304,8 +22982,14 @@
   "monobrachiolata_paul.c.r.c_1967": [
    "1968b_paul.c.r.c"
   ],
+  "monodon": [
+   "1758_linnaeus"
+  ],
   "monozonida": [
    "1999_domínguez alonso"
+  ],
+  "monstrosus_linnaeus_1758": [
+   "1758_linnaeus"
   ],
   "moorei_meek_1871": [
    "1968b_paul.c.r.c"
@@ -22321,6 +23005,12 @@
   ],
   "moroccopyrgus": [
    "2011_sumrall_zamora"
+  ],
+  "morta_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
+  "moschus": [
+   "1758_linnaeus"
   ],
   "multibrachiatus_kirk_1945": [
    "1973_sprinkle"
@@ -22356,7 +23046,6 @@
   ],
   "multiradiata_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus",
    "1816a_lamarck"
   ],
@@ -22371,9 +23060,18 @@
    "1758_linnaeus",
    "1767_linnaeus"
   ],
+  "murinus_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
   "murphyi_sumrall_garbisch_pope_2000": [
    "2000_sumrall_garbisch_pope",
    "2010_müller.p_hahn"
+  ],
+  "mus": [
+   "1758_linnaeus"
+  ],
+  "mustela": [
+   "1758_linnaeus"
   ],
   "mya": [
    "1758_linnaeus",
@@ -22389,6 +23087,9 @@
   ],
   "myelodactylus-sp_hall_1852": [
    "1852_hall"
+  ],
+  "myrmecophaga": [
+   "1758_linnaeus"
   ],
   "mytilus": [
    "1758_linnaeus",
@@ -22416,6 +23117,9 @@
    "1774a_müller.o.f",
    "1789a_bruguière",
    "1798_cuvier"
+  ],
+  "nantes": [
+   "1758_linnaeus"
   ],
   "narrawayella": [
    "1935_bassler",
@@ -22480,7 +23184,7 @@
   ],
   "nereis": [
    "1758_linnaeus",
-   "1760b_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1776_müller.o.f",
    "1789a_bruguière",
@@ -22491,6 +23195,9 @@
    "1767_linnaeus",
    "1774b_müller.o.f",
    "1776_müller.o.f"
+  ],
+  "neuroptera": [
+   "1758_linnaeus"
   ],
   "nevadensis_sprinkle_1973": [
    "1973_sprinkle"
@@ -22525,7 +23232,6 @@
   ],
   "nodosa_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus",
    "1816a_lamarck"
   ],
@@ -22602,6 +23308,7 @@
    "1816a_lamarck"
   ],
   "ochracea_linnaeus_1758": [
+   "1758_linnaeus",
    "1767_linnaeus"
   ],
   "ocracea_linnaeus_1758": [
@@ -22611,7 +23318,7 @@
    "1778_leske",
    "1816b_lamarck"
   ],
-  "octodactylos_gmelin_1791": [
+  "octodactylos_gmelin_1791a": [
    "1816b_lamarck"
   ],
   "octodentata_gunnerus_1770": [
@@ -22627,6 +23334,9 @@
   ],
   "odin_müller.p_hahn_2010": [
    "2010_müller.p_hahn"
+  ],
+  "oedipus_linnaeus_1758": [
+   "1758_linnaeus"
   ],
   "oiseaux": [
    "1801_lamarck",
@@ -22672,7 +23382,7 @@
   ],
   "ophiura_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1776_müller.o.f",
    "1801_lamarck"
@@ -22694,11 +23404,9 @@
    "1935_bassler",
    "1976_bell.b.m"
   ],
-  "orbicularis_gmelin_1791": [
-   "1816b_lamarck"
-  ],
   "orbicularis_leske_1778": [
-   "1778_leske"
+   "1778_leske",
+   "1816b_lamarck"
   ],
   "orbicularis_müller.o.f_1784": [
    "1789a_bruguière"
@@ -22708,7 +23416,6 @@
   ],
   "orbiculus_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus",
    "1816b_lamarck"
   ],
@@ -22786,7 +23493,7 @@
    "1990_smith.a.b_jell"
   ],
   "ova": [
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "ovalis_leske_1778_echinocyamus": [
    "1778_leske"
@@ -22804,7 +23511,7 @@
    "1789a_bruguière",
    "1816a_lamarck"
   ],
-  "ovatus_gmelin_1791": [
+  "ovatus_gmelin_1791a": [
    "1801_lamarck"
   ],
   "ovatus_lamarck_1816": [
@@ -22832,11 +23539,14 @@
    "1840_eichwald",
    "1854_müller.j.p"
   ],
-  "oviformis_gmelin_1791": [
+  "oviformis_gmelin_1791a": [
    "1816b_lamarck"
   ],
   "oviformis_lamarck_1801": [
    "1801_lamarck"
+  ],
+  "ovis": [
+   "1758_linnaeus"
   ],
   "ovulum_lamarck_1816_fibularia": [
    "1816b_lamarck"
@@ -22888,6 +23598,9 @@
   ],
   "palmiferum_lamarck_1816": [
    "1816a_lamarck"
+  ],
+  "paniscus_linnaeus_1758": [
+   "1758_linnaeus"
   ],
   "pannosus_holloway_jell_1983": [
    "1983_holloway_jell"
@@ -23016,6 +23729,9 @@
   "parvus_hall_1852": [
    "1852_hall"
   ],
+  "passeres": [
+   "1758_linnaeus"
+  ],
   "patella": [
    "1758_linnaeus",
    "1767_linnaeus",
@@ -23040,12 +23756,15 @@
   "pavona": [
    "1801_lamarck"
   ],
+  "pecora": [
+   "1758_linnaeus",
+   "1761_linnaeus"
+  ],
   "pecten": [
    "1776_müller.o.f"
   ],
   "pectinata_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus"
   ],
   "pectoralis_lamarck_1816": [
@@ -23108,6 +23827,7 @@
   ],
   "pennatula": [
    "1758_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1789a_bruguière",
    "1798_cuvier",
@@ -23123,7 +23843,7 @@
    "1821_miller.j.s",
    "1840_eichwald"
   ],
-  "pentacta_gmelin_1791": [
+  "pentacta_gmelin_1791a": [
    "1798_cuvier",
    "1816b_lamarck"
   ],
@@ -23134,6 +23854,9 @@
   "pentacystida": [
    "1967a_fay",
    "1982i_sprinkle"
+  ],
+  "pentadactyla_linnaeus_1758": [
+   "1758_linnaeus"
   ],
   "pentagonius_meek_worthen_1865": [
    "1975_kolata"
@@ -23161,13 +23884,13 @@
   "pentapetala_pennant_1777": [
    "1816b_lamarck"
   ],
-  "pentaphorus_gmelin_1791": [
+  "pentaphorus_gmelin_1791a": [
    "1816b_lamarck"
   ],
   "pentaporus_eichwald_1840": [
    "1840_eichwald"
   ],
-  "pentaporus_gmelin_1791": [
+  "pentaporus_gmelin_1791a": [
    "1801_lamarck"
   ],
   "pentrematoides_forbes_1848": [
@@ -23204,6 +23927,9 @@
   "perneri_jaekel_1901": [
    "2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler"
   ],
+  "perspicillatus_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
   "pertusa_müller.o.f_1776": [
    "1776_müller.o.f"
   ],
@@ -23232,6 +23958,9 @@
    "1776_müller.o.f",
    "1816b_lamarck"
   ],
+  "phoca": [
+   "1758_linnaeus"
+  ],
   "pholas": [
    "1758_linnaeus",
    "1767_linnaeus",
@@ -23248,12 +23977,17 @@
   ],
   "physalis_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus"
+  ],
+  "physeter": [
+   "1758_linnaeus"
   ],
   "physsophora": [
    "1789a_bruguière",
    "1816a_lamarck"
+  ],
+  "picae": [
+   "1758_linnaeus"
   ],
   "pilea_hall_1866": [
    "1935_bassler",
@@ -23297,7 +24031,7 @@
   ],
   "pisces": [
    "1758_linnaeus",
-   "1760a_linnaeus",
+   "1761_linnaeus",
    "1766_linnaeus",
    "1776_müller.o.f",
    "1798_cuvier",
@@ -23308,7 +24042,6 @@
   ],
   "placenta_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus",
    "1816b_lamarck"
   ],
@@ -23342,8 +24075,7 @@
    "1798_cuvier"
   ],
   "planci_linnaeus_1758": [
-   "1758_linnaeus",
-   "1760b_linnaeus"
+   "1758_linnaeus"
   ],
   "planorbis": [
    "1774b_müller.o.f",
@@ -23596,7 +24328,8 @@
   ],
   "priapus": [
    "1758_linnaeus",
-   "1760b_linnaeus",
+   "1761_linnaeus",
+   "1767_gunnerus",
    "1816b_lamarck"
   ],
   "priapus_linnaeus_1767": [
@@ -23609,6 +24342,10 @@
   ],
   "primaevus_billings_1868": [
    "1973_sprinkle"
+  ],
+  "primates": [
+   "1758_linnaeus",
+   "1761_linnaeus"
   ],
   "primotica_henderson_shergold_1971": [
    "1985_jell_burrett_banks",
@@ -23956,7 +24693,7 @@
    "1825b_sowerby.g.b"
   ],
   "radiata": [
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "radiata-phylum": [
    "1821_macleay"
@@ -23977,12 +24714,6 @@
   "radiata_ubaghs_1999": [
    "1999_ubaghs"
   ],
-  "radiatae": [
-   "1758_linnaeus",
-   "1760b_linnaeus",
-   "1767_linnaeus",
-   "1776_müller.o.f"
-  ],
   "radiatus_billings_1854": [
    "1854c_billings",
    "1857_billings",
@@ -23995,7 +24726,7 @@
   "radiatus_eichwald_1840": [
    "1840_eichwald"
   ],
-  "radiatus_gmelin_1791": [
+  "radiatus_gmelin_1791a": [
    "1816b_lamarck"
   ],
   "radiatus_sprinkle_wahlman_1994": [
@@ -24075,11 +24806,6 @@
    "1997_paul.c.r.c",
    "2013_nardin_bohatý"
   ],
-  "regulares": [
-   "1758_linnaeus",
-   "1760b_linnaeus",
-   "1767_linnaeus"
-  ],
   "regularis_buch_1840": [
    "1840_eichwald",
    "1840a_buch",
@@ -24097,6 +24823,7 @@
    "1817b_cuvier"
   ],
   "reptilia": [
+   "1758_linnaeus",
    "1821_macleay"
   ],
   "republicensis_sumrall_sprinkle_guensburg_1997": [
@@ -24121,7 +24848,6 @@
   ],
   "reticulata_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus",
    "1816a_lamarck"
   ],
@@ -24136,7 +24862,6 @@
   ],
   "reticulatus_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus"
   ],
   "retusus_lamarck_1816": [
@@ -24199,6 +24924,9 @@
    "1966_regnéll",
    "2013_sumrall_heredia_rodríguez.c.m_mestre",
    "2020_ewin_martin.m_isotalo_zamora"
+  ],
+  "rhinoceros": [
+   "1758_linnaeus"
   ],
   "rhipidocystidae": [
    "1973_sprinkle",
@@ -24326,7 +25054,6 @@
   ],
   "rosaceus_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus",
    "1798_cuvier",
    "1801_lamarck",
@@ -24334,6 +25061,9 @@
   ],
   "rosea_müller.o.f_1776": [
    "1776_müller.o.f"
+  ],
+  "rosmarus_linnaeus_1758": [
+   "1758_linnaeus"
   ],
   "rossi_sprinkle_1973": [
    "1973_sprinkle"
@@ -24366,7 +25096,7 @@
   ],
   "rubens_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1776_müller.o.f",
    "1798_cuvier",
@@ -24463,6 +25193,9 @@
   "sans vertébrés": [
    "1801_lamarck"
   ],
+  "sapiens_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
   "saratogensis_ruedemann_1912": [
    "1935_bassler",
    "1976_bell.b.m"
@@ -24482,6 +25215,9 @@
   "sardicus_leske_1778": [
    "1816b_lamarck"
   ],
+  "satyrus_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
   "savagella": [
    "1935_bassler",
    "1966_kesling",
@@ -24495,7 +25231,6 @@
   ],
   "saxatilis_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus",
    "1776_müller.o.f",
    "1778_leske",
@@ -24517,6 +25252,12 @@
   ],
   "schuchertocystis": [
    "1982_broadhead"
+  ],
+  "sciurea_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
+  "sciurus": [
+   "1758_linnaeus"
   ],
   "scolex": [
    "1798_cuvier"
@@ -24573,7 +25314,7 @@
    "1801_lamarck"
   ],
   "scutellidae": [
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "scutiformis_lamarck_1816": [
    "1816b_lamarck"
@@ -24583,7 +25324,6 @@
   ],
   "scyllaea": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus"
   ],
   "scyphocrinus": [
@@ -24609,7 +25349,7 @@
   "semiglobosa_pander_1830": [
    "1830_pander"
   ],
-  "semilunaris_gmelin_1791": [
+  "semilunaris_gmelin_1791a": [
    "1816b_lamarck"
   ],
   "senckenbergii_meyer_1826": [
@@ -24620,7 +25360,8 @@
   "senegalensis_lamarck_1816": [
    "1816a_lamarck"
   ],
-  "senilis_linnaeus_1767": [
+  "senilis_linnaeus_1761": [
+   "1761_linnaeus",
    "1767_gunnerus",
    "1816b_lamarck"
   ],
@@ -24629,7 +25370,7 @@
   ],
   "sepia": [
    "1758_linnaeus",
-   "1760b_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1776_müller.o.f",
    "1789a_bruguière"
@@ -24646,6 +25387,9 @@
   "septentrionallis_regnéll_1945": [
    "1968b_paul.c.r.c"
   ],
+  "serpentes": [
+   "1758_linnaeus"
+  ],
   "serpula": [
    "1758_linnaeus",
    "1767_linnaeus",
@@ -24657,6 +25401,7 @@
   ],
   "sertularia": [
    "1758_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1789a_bruguière",
    "1798_cuvier",
@@ -24666,7 +25411,7 @@
    "1778_leske",
    "1816b_lamarck"
   ],
-  "sexfasciatus_gmelin_1791": [
+  "sexfasciatus_gmelin_1791a": [
    "1816b_lamarck"
   ],
   "sexforis_lamarck_1816": [
@@ -24688,6 +25433,12 @@
   ],
   "siderolites": [
    "1801_lamarck"
+  ],
+  "silenus_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
+  "simia": [
+   "1758_linnaeus"
   ],
   "similis_billings_1857": [
    "1857_billings"
@@ -24782,28 +25533,34 @@
   "somasteroidea-subclass": [
    "1965_fell"
   ],
+  "sorex": [
+   "1758_linnaeus"
+  ],
   "southworthi_bassler_1936": [
    "1936_bassler"
   ],
   "spaskii_eichwald_1840": [
    "1840_eichwald"
   ],
+  "spasma_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
   "spatagus": [
    "1776_müller.o.f"
   ],
   "spatagus_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus"
   ],
   "spatangidae": [
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "spatangites": [
    "1816b_lamarck"
   ],
   "spatangus": [
-   "1825_gray.j.e",
+   "1825i_gray.j.e",
    "1837_hisinger"
   ],
   "spatangus_lamarck_1816": [
@@ -24818,6 +25575,9 @@
   "speciosus_hall_1852": [
    "1852_hall"
   ],
+  "spectrum_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
   "spencensis_wen.r.q_babcock_peng.j_robison_2019": [
    "2019_wen.r.q_babcock_peng.j_robison",
    "2024_zamora_guensburg_sprinkle"
@@ -24831,7 +25591,6 @@
   ],
   "sphaeroides_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus",
    "1778_leske"
   ],
@@ -24862,6 +25621,9 @@
   ],
   "sphagoblastus": [
    "1983_jell"
+  ],
+  "sphinx_linnaeus_1758": [
+   "1758_linnaeus"
   ],
   "spinis claviculatis_leske_1778": [
    "1778_leske",
@@ -25006,12 +25768,6 @@
   "stellata_leske_1778": [
    "1778_leske"
   ],
-  "stellatae": [
-   "1758_linnaeus",
-   "1760b_linnaeus",
-   "1767_linnaeus",
-   "1776_müller.o.f"
-  ],
   "stellatus_gaertner_1774": [
    "1789a_bruguière",
    "1798_cuvier",
@@ -25025,7 +25781,7 @@
   ],
   "stellerida": [
    "1821_macleay",
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "stelleridae": [
    "1821_miller.j.s"
@@ -25034,7 +25790,7 @@
    "1837_hisinger"
   ],
   "stellerides": [
-   "1825_gray.j.e"
+   "1825i_gray.j.e"
   ],
   "stelleridica": [
    "1825a_say"
@@ -25281,6 +26037,9 @@
   "superbus_guensburg_sprinkle_1994": [
    "1994_guensburg_sprinkle"
   ],
+  "sus": [
+   "1758_linnaeus"
+  ],
   "sycocrinites": [
    "1844_buch"
   ],
@@ -25289,8 +26048,14 @@
    "1847_hall",
    "1848b_forbes"
   ],
+  "sylvanus_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
   "sypho_forsskål_1775": [
    "1789a_bruguière"
+  ],
+  "syrichta_linnaeus_1758": [
+   "1758_linnaeus"
   ],
   "syringocrinida": [
    "2018_lefebvre_lerosey-aubril"
@@ -25300,6 +26065,7 @@
   ],
   "taenia": [
    "1758_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1789a_bruguière",
    "1798_cuvier"
@@ -25310,8 +26076,14 @@
   "taijiangensis_zhao.y.l_zhu.m.y_1994": [
    "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y"
   ],
+  "talpa": [
+   "1758_linnaeus"
+  ],
   "tanaocystis": [
    "1982g_sprinkle"
+  ],
+  "tardigradus_linnaeus_1758": [
+   "1758_linnaeus"
   ],
   "tarentina_lamarck_1816": [
    "1816b_lamarck"
@@ -25383,7 +26155,7 @@
    "1758_linnaeus",
    "1767_linnaeus"
   ],
-  "teres_gmelin_1791": [
+  "teres_gmelin_1791a": [
    "1816b_lamarck"
   ],
   "tessellata_lamarck_1816": [
@@ -25392,21 +26164,15 @@
   "tessellata_leske_1778": [
    "1778_leske"
   ],
-  "testacea-order": [
+  "testacea": [
    "1758_linnaeus",
-   "1760b_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1773_müller.o.f",
    "1774a_müller.o.f",
    "1774b_müller.o.f",
    "1776_müller.o.f",
    "1791_bruguière"
-  ],
-  "testacea-unnamed-section-1_linnaeus_1758": [
-   "1758_linnaeus"
-  ],
-  "testacea-unnamed-section-2_linnaeus_1758": [
-   "1758_linnaeus"
   ],
   "testacés": [
    "1789a_bruguière"
@@ -25420,12 +26186,8 @@
   "testudineus_nardin_bohatý_2013": [
    "2013_nardin_bohatý"
   ],
-  "tethis": [
-   "1767_linnaeus"
-  ],
   "tethys": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus",
    "1789a_bruguière"
   ],
@@ -25433,7 +26195,10 @@
    "1967_paul.c.r.c",
    "1968b_paul.c.r.c"
   ],
-  "tetraporus_gmelin_1791": [
+  "tetradactyla_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
+  "tetraporus_gmelin_1791a": [
    "1816b_lamarck"
   ],
   "texturata_lamarck_1816": [
@@ -25441,7 +26206,6 @@
   ],
   "thalia_linnaeus_1758": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus"
   ],
   "thecocystidae": [
@@ -25465,6 +26229,9 @@
   ],
   "thor_müller.p_hahn_2010": [
    "2010_müller.p_hahn"
+  ],
+  "thoracici": [
+   "1758_linnaeus"
   ],
   "thorntonites": [
    "2021_jell_sprinkle"
@@ -25582,12 +26349,10 @@
    "2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler"
   ],
   "tremula_gunnerus_1767": [
-   "1816b_lamarck"
-  ],
-  "tremula_linnaeus_1767": [
    "1767_gunnerus",
    "1767_linnaeus",
-   "1776_müller.o.f"
+   "1776_müller.o.f",
+   "1816b_lamarck"
   ],
   "trentonensis_bassler_1936": [
    "1936_bassler",
@@ -25608,6 +26373,9 @@
   "tribuloides_lamarck_1816": [
    "1816b_lamarck"
   ],
+  "trichechus": [
+   "1758_linnaeus"
+  ],
   "trichocephalus": [
    "1798_cuvier"
   ],
@@ -25620,6 +26388,12 @@
    "1789a_bruguière",
    "1801_lamarck"
   ],
+  "tridactyla_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
+  "tridactylus_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
   "trigona_lamarck_1816": [
    "1816b_lamarck"
   ],
@@ -25631,7 +26405,6 @@
   ],
   "triton": [
    "1758_linnaeus",
-   "1760b_linnaeus",
    "1767_linnaeus"
   ],
   "tritonium": [
@@ -25645,6 +26418,9 @@
    "1758_linnaeus",
    "1767_linnaeus",
    "1776_müller.o.f"
+  ],
+  "troglodytes_linnaeus_1758": [
+   "1758_linnaeus"
   ],
   "tubaria_lamarck_1816": [
    "1816b_lamarck"
@@ -25673,13 +26449,14 @@
   ],
   "tubularia": [
    "1758_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1774a_müller.o.f",
    "1789a_bruguière",
    "1798_cuvier",
    "1801_lamarck"
   ],
-  "tubulosa_gmelin_1791": [
+  "tubulosa_gmelin_1791a": [
    "1798_cuvier",
    "1801_lamarck"
   ],
@@ -25824,6 +26601,12 @@
   "urceolaria_lamarck_1801": [
    "1801_lamarck"
   ],
+  "ursina_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
+  "ursus": [
+   "1758_linnaeus"
+  ],
   "utahensis_lefebvre_lerosey-aubril_2018": [
    "2018_lefebvre_lerosey-aubril"
   ],
@@ -25851,6 +26634,9 @@
   ],
   "valvatida": [
    "1975_kolata"
+  ],
+  "vampyrus_linnaeus_1758": [
+   "1758_linnaeus"
   ],
   "variegata_leske_1778": [
    "1778_leske",
@@ -25901,9 +26687,7 @@
   ],
   "vermes": [
    "1758_linnaeus",
-   "1760a_linnaeus",
-   "1760b_linnaeus",
-   "1766_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1773_müller.o.f",
    "1774a_müller.o.f",
@@ -25948,6 +26732,9 @@
   ],
   "verus_miller.j.s_1821": [
    "1821_miller.j.s"
+  ],
+  "vespertilio": [
+   "1758_linnaeus"
   ],
   "vetusta_foerste_1914": [
    "1935_bassler",
@@ -26007,6 +26794,12 @@
   "vittata_forsskål_1775": [
    "1816b_lamarck"
   ],
+  "vitulina_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
+  "viverra": [
+   "1758_linnaeus"
+  ],
   "viviani_ewin_martin.m_isotalo_zamora_2020": [
    "2020_ewin_martin.m_isotalo_zamora"
   ],
@@ -26022,6 +26815,9 @@
   "vizcainoia": [
    "2012_zamora_smith.a.b"
   ],
+  "volans_linnaeus_1758": [
+   "1758_linnaeus"
+  ],
   "volborthi_hecker_1939": [
    "1961_dehm",
    "2010_müller.p_hahn"
@@ -26032,6 +26828,7 @@
   ],
   "volvox": [
    "1758_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1773_müller.o.f",
    "1776_müller.o.f",
@@ -26194,7 +26991,7 @@
   ],
   "zoophyta": [
    "1758_linnaeus",
-   "1760b_linnaeus",
+   "1761_linnaeus",
    "1767_linnaeus",
    "1791_bruguière"
   ],
@@ -26221,6 +27018,26 @@
    "1798_cuvier",
    "1801_lamarck",
    "1816a_lamarck"
+  ],
+  "α_linnaeus_1758_orbiculus_linnaeus_1758": [
+   "1758_linnaeus",
+   "1767_linnaeus"
+  ],
+  "β_linnaeus_1758_orbiculus_linnaeus_1758": [
+   "1758_linnaeus",
+   "1767_linnaeus"
+  ],
+  "β_linnaeus_1758_rubens_linnaeus_1758": [
+   "1758_linnaeus",
+   "1767_linnaeus"
+  ],
+  "γ_linnaeus_1758_orbiculus_linnaeus_1758": [
+   "1758_linnaeus",
+   "1767_linnaeus"
+  ],
+  "δ_linnaeus_1758_orbiculus_linnaeus_1758": [
+   "1758_linnaeus",
+   "1767_linnaeus"
   ]
  }
 }

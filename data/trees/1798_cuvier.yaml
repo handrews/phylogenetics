@@ -10,11 +10,12 @@ taxonomies:
     notes: des mammifères
   - taxon: aves
     notes: des oiseaux
-  - taxon: amphibia_linnaeus_1758
+  - taxon: amphibia
     notes: des reptiles, explicitly synnonomized with Linnaeus's Amphibia
   - taxon: pisces
     notes: des poissons
-  - taxon: mollusca-class
+  - taxon: mollusca
+    rank: Class
     notes: des mollusques
   - taxon: insecta
     notes: des insectes
@@ -50,6 +51,7 @@ taxonomies:
       - taxon: planaria
         notes: XI
     - taxon: intestins
+      rank: Order
       notes: intestina
       children:
       - taxon: fasciola
@@ -89,9 +91,9 @@ taxonomies:
       - taxon: holothuria
         notes: I les holothuries
         children:
-        - taxon: tubulosa_gmelin_1791
+        - taxon: tubulosa_gmelin_1791a
           notes: L'holothurie timide (H. tubulosa. Lin.)
-        - taxon: pentacta_gmelin_1791
+        - taxon: pentacta_gmelin_1791a
           notes: |
             Le concombre de mer. (H. pentacta.)
             Translation — "The sea cucumbre."
@@ -100,7 +102,7 @@ taxonomies:
         children:
         - taxon: rubens_linnaeus_1758
           notes: L’évoile de mer commune. ( A. rubens.)
-        - taxon: caput medusae_linnaeus_1758
+        - taxon: caputmedusae_linnaeus_1758
           notes: La tête de Méduse. (A. caput Medusæ.)
         - taxon: membranacea_retzius_1783
           notes: La patte d'oie. ( A. membranacea.)
@@ -119,7 +121,7 @@ taxonomies:
             notes: L’oursin violer, (Echinüs atratus.)
           - taxon: rosaceus_linnaeus_1758
             notes: La rosace. (Echinus rosaceus.)
-          - taxon: hexaporus_gmelin_1791
+          - taxon: hexaporus_gmelin_1791a
             notes: Le gâteau. (Echinus hexaporus.)
         - notes: les spatagues
           children:

@@ -3,7 +3,7 @@ taxonomies:
   children:
   - taxon: mammalia
   - taxon: aves
-  - taxon: amphibia_linnaeus_1758
+  - taxon: amphibia
   - taxon: pisces
   - taxon: insecta
   - taxon: vermes
@@ -31,7 +31,8 @@ taxonomies:
       - taxon: lumbricus
       - taxon: amphitrite
       - taxon: nereis
-    - taxon: mollusca-order
+    - taxon: mollusca
+      rank: Order
       children:
       - taxon: planaria
         new: true
@@ -99,7 +100,7 @@ taxonomies:
         - taxon: elegans_müller.o.f_1776
           new: true
           synonyms:
-          - taxon: tremula_linnaeus_1767
+          - taxon: tremula_gunnerus_1767
         - taxon: denudata_linnaeus_1758
           provisional: true
         - taxon: pentactes_linnaeus_1767
@@ -130,44 +131,61 @@ taxonomies:
           new: true
       - taxon: medusa
       - taxon: asterias
+        notes: >
+          Like Linnaeus, Müller uses informal headings to group the species:
+          Lunatae (A. equestris – A. militaris), Stellatae (A. phrygiana –
+          A. sanguinolenta), and Radiatae (A. rosea – A. caputmedusae).
+          Note that his Lunatae appears to replace Linnaeus's Integra,
+          which contained only A. luna which is not included here.
+          A. equestris was in Linnaeus's Stellatae; otherwise those
+          species included both here and in Linnaeus's 12th edition appear
+          to be in the same sections.
         children:
-        - taxon: lunatae
+        - taxon: equestris_linnaeus_1758
+          sectionStart:
+            section: lunatae
+            new: true
+            pages: 233
+            citedAs: "* Lunatæ."
+            editorial:
+              inferred: [new]
+              basis: No known prior source.
+        - taxon: pulvillus_müller.o.f_1776
           new: true
-          notes: Not entirely clear if this is really new.
-          children:
-          - taxon: equestris_linnaeus_1758
-          - taxon: pulvillus_müller.o.f_1776
-            new: true
-          - taxon: militaris_müller.o.f_1776
-            new: true
-        - taxon: stellatae
-          children:
-          - taxon: phrygiana_parelius_1768
-          - taxon: rubens_linnaeus_1758
-          - taxon: aranciaca_linnaeus_1758
-          - taxon: papposa_linnaeus_1767
-          - taxon: aspera_müller.o.f_1776
-            new: true
-          - taxon: perforata_müller.o.f_1776
-            new: true
-          - taxon: minuta_linnaeus_1761
-          - taxon: sanguinolenta_müller.o.f_1776
-            new: true
-        - taxon: radiatae
-          children:
-          - taxon: rosea_müller.o.f_1776
-            new: true
-          - taxon: glacialis_linnaeus_1758
-          - taxon: pertusa_müller.o.f_1776
-            new: true
-          - taxon: ophiura_linnaeus_1758
-          - taxon: aculeata_linnaeus_1767
-          - taxon: ciliata_müller.o.f_1776
-            new: true
-          - taxon: filiformis_müller.o.f_1776
-            new: true
-          - taxon: caput medusae_linnaeus_1758
-    - taxon: testacea-order
+        - taxon: militaris_müller.o.f_1776
+          new: true
+          sectionEnd: lunatae
+        - taxon: phrygiana_parelius_1768
+          sectionStart:
+            section: stellatae
+        - taxon: rubens_linnaeus_1758
+        - taxon: aranciaca_linnaeus_1758
+        - taxon: papposa_linnaeus_1767
+        - taxon: aspera_müller.o.f_1776
+          new: true
+        - taxon: perforata_müller.o.f_1776
+          new: true
+        - taxon: minuta_linnaeus_1761
+        - taxon: sanguinolenta_müller.o.f_1776
+          new: true
+          sectionEnd: stellatae
+        - taxon: rosea_müller.o.f_1776
+          new: true
+          sectionStart:
+            section: radiatae
+        - taxon: glacialis_linnaeus_1758
+        - taxon: pertusa_müller.o.f_1776
+          new: true
+        - taxon: ophiura_linnaeus_1758
+        - taxon: aculeata_linnaeus_1767
+        - taxon: ciliata_müller.o.f_1776
+          new: true
+        - taxon: filiformis_müller.o.f_1776
+          new: true
+        - taxon: caputmedusae_linnaeus_1758
+          sectionEnd: radiatae
+    - taxon: testacea
+      rank: Order
       children:
       - taxon: echinus
         children:

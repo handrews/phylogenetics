@@ -8,7 +8,8 @@ taxonomies:
       new: true
       synonyms:
       - taxon: infusoria-class
-    - taxon: intestina-class
+    - taxon: intestina
+      rank: Class
     - taxon: natantes-class
     - taxon: vaginati-class
     - taxon: rudes-class
@@ -47,6 +48,7 @@ taxonomies:
     - taxon: amphibia
   - taxon: cephalopoda-class
   - taxon: mollusca
+    rank: Order
     children:
     - taxon: acephala-class
     - taxon: brachiopoda-class

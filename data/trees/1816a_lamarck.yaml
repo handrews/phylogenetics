@@ -111,7 +111,7 @@ taxonomies:
             - taxon: euryale_retzius_1783
               parents:
               - taxon: asterias
-            - taxon: caput medusae_linnaeus_1758
+            - taxon: caputmedusae_linnaeus_1758
               parents:
               - taxon: asterias
           - taxon: costosum_lamarck_1816
