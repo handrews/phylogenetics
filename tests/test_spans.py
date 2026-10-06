@@ -931,11 +931,11 @@ def test_an_unnamed_section_has_any_key(caplog):
     ),
     (
       [{'taxon': 'luna_linnaeus_1758', 'sectionStart': _start('no-such-section')}],
-      'Unrecognized tree sectionStart no-such-section for',
+      'Unrecognized section "no-such-section" in field "sectionStart"',
     ),
     (
       [{'taxon': 'luna_linnaeus_1758', 'sectionEnd': 'no-such-section'}],
-      'Unrecognized tree sectionEnd no-such-section for',
+      'Unrecognized section "no-such-section" in field "sectionEnd"',
     ),
   ],
 )

@@ -895,7 +895,7 @@ class Tree:
     """The `Section` a marker names; logs a key with no record."""
     section = Section.get(key)
     if section is None:
-      logger.error(f'Unrecognized tree {field} {key} for {self}')
+      logger.error(f'Unrecognized section "{key}" in field "{field}" for {self}')
     return section
 
   def _check_section_start(self):
