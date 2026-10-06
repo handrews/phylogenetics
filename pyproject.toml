@@ -23,7 +23,7 @@ regenerate = "phylohist.regenerate:main"
 packages = [{include = "phylohist"}]
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8"
+pytest = "^9"
 ruff = "^0.16.7"
 pytest-cov = "^7.1.0"
 
