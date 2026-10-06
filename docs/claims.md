@@ -75,6 +75,9 @@ every `synonyms`, `non`, `removed`, `parents`, `or` and `type` entry. Fields add
   name, marked `compared`.
 - `sensu`: `stricto`, `lato` or `emendato` when the node prints the
   qualifier.
+- `designation`: the phrase the node prints for an open taxon, when it
+  declares one (an `openTaxon` node only; the loader rejects it beside
+  `taxon`).
 - A `synonyms` or `non` entry with no name field of its own is a usage of
   the node's own name by the cited source (the 2020 tree's stacked
   citations of *grayae* are this shape); it carries `ownName: true`.
@@ -383,14 +386,17 @@ a span of siblings in a taxonomy with a record of its own in
 (`integra_linnaeus_1758`), since a section's first user is often
 unknowable. The tree marks it with
 `sectionStart` (an object: `section`, the record's key, and optionally
-`citedAs`, `pages`, `notes`) on its first sibling and `sectionEnd` (the key)
+`citedAs`, `pages`, `new`, `designation`, `notes`) on its first sibling and `sectionEnd` (the key)
 on its last, both in one `children` list, both markers on one node for a
 one-sibling section. The span is those siblings from start to end,
 inclusive, each with its subtree; a section never crosses a level. Within
 one sibling list sections may nest but not interleave, and the loader and
 the draft checker report an end with no open start, a start never closed, a
 start for a key already open and an interleaving. A section is valid in a
-taxonomy only.
+taxonomy only. A marker flagged `new: true` is the section's protologue: the
+record's `authority` must be that source. A section record that gives
+`pages` is checked against its `new` marker, which must agree on `pages`,
+`citedAs` and `designation` where it declares them.
 
 One claim per span, emitted by the start node (a start the list never
 closes emits none; the loader reports it). Fields: the shared record (`id`,
@@ -406,7 +412,8 @@ closes emits none; the loader reports it). Fields: the shared record (`id`,
   sibling's subtree is no member).
 - `endPath`: the path of the node that closes the span (the start node's
   own for a one-sibling span).
-- `citedAs`, `pages`, `notes`: from the `sectionStart` marker, when given.
+- `new` (`true`), `citedAs`, `designation`, `pages`, `notes`: from the
+  `sectionStart` marker, when given.
 
 The claim has no `audit.coverageKind`; it appears in the per-kind `claims`
 counts only. No tool reads it yet: the tools, `statements` included, leave

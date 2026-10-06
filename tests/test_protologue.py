@@ -1,6 +1,6 @@
 """A taxa record that gives its protologue page agrees with the node marked
 `new` for it, on the fields the node declares (`rank`, `pages`,
-`illustrations`, `citedAs`), and gives nothing its tree file lists as
+`illustrations`, `citedAs`, `designation`), and gives nothing its tree file lists as
 unused; `citedAs` validates on a record.
 
 The records and trees are synthetic, built on the session's loaded corpus
@@ -269,3 +269,45 @@ def test_a_record_with_pages_spells_its_rank():
   assert schema['taxa'].check(
     {'afer_linnaeus_1758': {'name': 'afer', 'authority': {'source': SOURCE}}}
   )
+
+
+# -- `designation` --------------------------------------------------------------
+
+OPEN_KEY = 'testum-genus-a_linnaeus_1758'
+
+
+def _check_open(record=None, node=None, caplog=None):
+  """As `_check`, for an open taxon: a record with a `designation` and a
+  protologue `openTaxon` node."""
+  data = {
+    'name': None,
+    'designation': 'Genus A',
+    'rank': 'genus',
+    'pages': 22,
+    'authority': {'source': SOURCE},
+  }
+  Taxon.add({**data, **(record or {})}, OPEN_KEY)
+  tree = Tree(
+    {'openTaxon': OPEN_KEY, 'new': True, **(node or {})},
+    {'source_key': SOURCE, 'type': 'taxonomy', 'position': next(POSITIONS)},
+  )
+  with caplog.at_level(logging.INFO, logger='phylohist'):
+    caplog.clear()
+    _report_protologue_mismatches({'trees': {SOURCE: {}}}, {SOURCE: [tree]})
+  return [r.getMessage() for r in caplog.records if r.levelno == logging.ERROR]
+
+
+def test_a_matching_designation_says_nothing(caplog):
+  assert _check_open(None, {'designation': 'Genus A'}, caplog=caplog) == []
+
+
+def test_a_differing_designation_is_named_with_both_values_and_the_file(caplog):
+  errors = _check_open(None, {'designation': 'Genus B'}, caplog=caplog)
+  assert errors == [
+    f'taxa.yaml {OPEN_KEY}: designation "Genus A" but its protologue node in {FILE} '
+    'prints "Genus B"'
+  ]
+
+
+def test_a_node_declaring_no_designation_says_nothing(caplog):
+  assert _check_open(None, None, caplog=caplog) == []

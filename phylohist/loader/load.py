@@ -90,6 +90,7 @@ _PROTOLOGUE_FIELDS = (
   ('pages', 'has'),
   ('illustrations', 'has'),
   ('citedAs', 'prints'),
+  ('designation', 'prints'),
 )
 
 
@@ -176,6 +177,51 @@ def _report_protologue_mismatches(data, roots):
   logger.info(f'{mismatches} disagreements between a taxa record and its protologue node')
 
 
+# The fields a section record and its protologue marker both give.
+_SECTION_PROTOLOGUE_FIELDS = (
+  ('pages', 'has'),
+  ('citedAs', 'prints'),
+  ('designation', 'prints'),
+)
+
+
+def _report_section_protologues(data, roots):
+  # A section record that gives `pages` must agree with the `sectionStart`
+  # marker flagged `new` for it in its authority's trees, on the fields that
+  # marker declares.
+  mismatches = 0
+  for section in Section._sections.values():
+    if 'pages' not in section._data:
+      continue
+    source = section.authority.source if section.authority else None
+    if source is None or source.key not in data['trees']:
+      continue
+    tree_file = display_path(TREE_DIR / f'{source.key}.yaml')
+    where = f'sections.yaml {section.key}'
+    markers = [
+      node.section_start_marker
+      for root in roots.get(source.key, ())
+      for node in root.walk()
+      if node.section_start is section and node.section_start_marker.get('new')
+    ]
+    if not markers:
+      logger.warning(f'Protologue not flagged: {section.key} in {source.key}')
+      continue
+    for marker in markers:
+      for field, verb in _SECTION_PROTOLOGUE_FIELDS:
+        if field not in marker:
+          continue
+        record_value, node_value = section._data.get(field), marker[field]
+        if _same_protologue_value(field, record_value, node_value):
+          continue
+        logger.error(
+          f'{where}: {field} {_protologue_value(record_value)} but its protologue marker '
+          f'in {tree_file} {verb} {_protologue_value(node_value)}'
+        )
+        mismatches += 1
+  logger.info(f'{mismatches} disagreements between a section record and its protologue marker')
+
+
 def _report_lapsus_records(roots):
   # A record that exists because of a slip of the pen appears under
   # `lapsus`, and elsewhere only as a synonymy entry marked `lapsusFor`.
@@ -248,6 +294,7 @@ def _load_trees(data):
   _report_merge_targets(data)
   _report_missing_protologues(data)
   _report_protologue_mismatches(data, roots)
+  _report_section_protologues(data, roots)
   _report_lapsus_records(roots)
   _report_material(data)
   _report_nomenclature(data)

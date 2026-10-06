@@ -454,6 +454,8 @@ $defs:
       designation:
         description: |
           The phrase given in place of a name for taxa in open nomenclature
+        type: string
+        minLength: 1
       needsQualification:
         type: boolean
         default: false
@@ -526,6 +528,14 @@ $defs:
           The heading as its protologue prints it, when that differs from
           `name`.
         type: string
+      pages:
+        description: |
+          The page of the section's protologue; giving it makes the record
+          subject to the protologue check: the `sectionStart` marker
+          flagged `new: true` for this key in the authority's trees must
+          agree on `pages`, `citedAs` and `designation` where it declares
+          them.
+        $ref: "#/$defs/citationNumbers"
       needsQualification:
         description: |
           The key takes the authority suffix (`<name>_<author>_<year>`), as
@@ -562,6 +572,18 @@ $defs:
             type: string
           pages:
             $ref: "#/$defs/citationNumbers"
+          new:
+            description: |
+              This source introduces the section; the marker is its
+              protologue, and the record's `authority` must be this source.
+            type: boolean
+            default: false
+          designation:
+            description: |
+              The heading's phrase as this source prints it, for a section
+              that has no name.
+            type: string
+            minLength: 1
           notes:
             type: string
       sectionEnd:
@@ -653,6 +675,12 @@ $defs:
           The taxon this open form is compared with, "aff." for a form the
           source thinks new and related; only on an `openTaxon` node.
         type: string
+      designation:
+        description: |
+          The phrase this source prints for an open taxon; only on an
+          `openTaxon` node (the loader rejects it beside `taxon`).
+        type: string
+        minLength: 1
 
   uncertaintyFields:
     properties:

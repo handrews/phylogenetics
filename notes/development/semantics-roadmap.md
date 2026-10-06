@@ -1004,8 +1004,8 @@ taxonomy with a record of its own:
 
 - Two markers on nodes of the same `children` list (both may sit on one
   node), the end at or after the start in list order: `sectionStart`, an
-  object (`section`, the record's key; `citedAs`, `pages`, `notes` as this
-  source prints it), and `sectionEnd`, the key. The span is those
+  object (`section`, the record's key; `citedAs`, `pages`, `designation`,
+  `new`, `notes` as this source prints it), and `sectionEnd`, the key. The span is those
   siblings, start to end inclusive, each with its subtree; unlike a
   bracket, a section never crosses a level. Sections of one sibling list
   may nest and may not interleave. The loader and the draft checker report
@@ -1019,6 +1019,7 @@ taxonomy with a record of its own:
   a section's first user is often unknowable: `name` (or `null` with a
   `designation` for a heading that is only a descriptive phrase),
   `authority` (the source that prints it) or `auth`/`year`, `citedAs`,
+  `pages` (the protologue page; checked against the `new` marker),
   `notes`. The file is empty today; the loader reads it after the taxa
   (`taxa.Section`).
 - One `section` claim per span, emitted by the start node: the section's
@@ -1430,7 +1431,12 @@ implies a species when its name is lower-case, else a genus, and the record
 must say the same. A `rank: null` node agrees with a record's `null` or
 `Unranked`, and a node's `pages: null` (an inferred node) never agrees with
 a record's pages. (`_report_protologue_mismatches`, in
-`phylohist/loader/load.py`.)
+`phylohist/loader/load.py`.) `designation` is among the checked fields
+(2026-10-05), declared on an `openTaxon` node or a marker. A section record
+with `pages` is checked the same way against the `sectionStart` marker
+flagged `new: true` in its authority's trees, and a `new` marker under
+another source than the record's authority is an error.
+(`_report_section_protologues`.)
 
 **F7 (MVP). `removed` recursion** (B5).
 
