@@ -1014,7 +1014,9 @@ taxonomy with a record of its own:
   marker in a tree that is no taxonomy or on a node that is no `children`
   entry (a root, a cited entry). The schema allows the markers on a
   taxonomy node only.
-- `data/sections.yaml`, keyed like `taxa.yaml`: `name` (or `null` with a
+- `data/sections.yaml`, keyed by name, like a genus or higher taxon
+  (`integra`); `needsQualification: true` adds the authority suffix, since
+  a section's first user is often unknowable: `name` (or `null` with a
   `designation` for a heading that is only a descriptive phrase),
   `authority` (the source that prints it) or `auth`/`year`, `citedAs`,
   `notes`. The file is empty today; the loader reads it after the taxa

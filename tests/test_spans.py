@@ -597,9 +597,9 @@ def test_the_2003_camerata_and_disparida_placements(store):
 
 # -- sections -----------------------------------------------------------------
 
-INTEGRA = 'integra_linnaeus_1758'
-STELLATAE = 'stellatae_linnaeus_1758'
-RADIATAE = 'radiatae_linnaeus_1758'
+INTEGRA = 'integra'
+STELLATAE = 'stellatae'
+RADIATAE = 'radiatae'
 UNNAMED = 'testacea-multivalvia_linnaeus_1758'
 
 
@@ -670,6 +670,7 @@ def test_the_sections_schema_takes_a_name_or_a_designation():
   )
   assert schema.check({INTEGRA: {'name': 'Integra', 'auth': ['linnaeus'], 'year': 1758}})
   assert schema.check({INTEGRA: {'name': 'Integra'}})
+  assert schema.check({INTEGRA: {'name': 'Integra', 'needsQualification': True}})
 
 
 @pytest.mark.parametrize(
@@ -681,6 +682,7 @@ def test_the_sections_schema_takes_a_name_or_a_designation():
     {'name': 'Integra', 'pages': 661},
     {'name': 'Integra', 'authority': {'source': 'nope'}},
     {'name': 'Integra', 'children': []},
+    {'name': 'Integra', 'needsQualification': 'yes'},
   ],
 )
 def test_the_sections_schema_refuses_what_a_section_is_not(record):
@@ -828,10 +830,9 @@ def test_sections_of_different_lists_do_not_pair(sections, caplog):
     )
   messages = _errors(caplog)
   assert len(messages) == 2
-  assert any('closes a section for integra_linnaeus_1758 that is not open' in m for m in messages)
+  assert any('closes a section for integra that is not open' in m for m in messages)
   assert any(
-    'opens a section for integra_linnaeus_1758 that its sibling list never closes' in m
-    for m in messages
+    'opens a section for integra that its sibling list never closes' in m for m in messages
   )
 
 
@@ -842,6 +843,43 @@ def test_the_section_of_an_unnamed_heading_has_a_designation(sections):
   assert Section.get(INTEGRA).authority.source.key == '1758_linnaeus'
   assert Section.get(INTEGRA).cited_as == 'Integra'
   assert Section.get('nope') is None
+
+
+def _section_errors(caplog, key, record):
+  with caplog.at_level(logging.ERROR, logger='phylohist'):
+    Section.add(record, key)
+  return _errors(caplog)
+
+
+def test_a_sections_key_is_its_name(caplog):
+  record = {'name': 'Integra', 'authority': {'source': '1758_linnaeus'}}
+  assert _section_errors(caplog, 'integra', record) == []
+  [error] = _section_errors(caplog, 'integra_linnaeus_1758', record)
+  assert error == '"integra_linnaeus_1758" not in expected set: {\'integra\'}'
+  assert len(_section_errors(caplog, 'stellatae', record)) == 2
+
+
+def test_a_section_that_needs_qualification_takes_the_authority_suffix(caplog):
+  record = {
+    'name': 'Integra',
+    'authority': {'source': '1758_linnaeus'},
+    'needsQualification': True,
+  }
+  assert _section_errors(caplog, 'integra_linnaeus_1758', record) == []
+  [error] = _section_errors(caplog, 'integra', record)
+  assert error == '"integra" not in expected set: {\'integra_linnaeus_1758\'}'
+
+
+def test_a_section_that_needs_qualification_has_an_authority(caplog):
+  record = {'name': 'Integra', 'needsQualification': True}
+  assert _section_errors(caplog, 'integra', record) == [
+    'Section integra needs qualification but has no authority'
+  ]
+
+
+def test_an_unnamed_section_has_any_key(caplog):
+  record = {'name': None, 'designation': 'Multivalvia'}
+  assert _section_errors(caplog, 'any-key-at-all', record) == []
 
 
 @pytest.mark.parametrize(
@@ -1185,8 +1223,9 @@ def test_a_claim_store_over_a_section_claim_loads_and_the_tools_run_clean(sectio
   store = ClaimStore(directory)
   [claim] = [c for c in store.by_source[SOURCE] if c.get('section') == INTEGRA]
   assert store.by_id[claim['id']] is claim
-  assert INTEGRA not in store.by_subject
-  assert store.name(INTEGRA) == f'[{INTEGRA}]'
+  # The real `taxa.yaml` still has `rank: section` taxa under these keys, so
+  # the test looks for the section claim, not for the key.
+  assert claim not in store.by_subject.get(INTEGRA, [])
   assert store.at_path[SOURCE][claim['path']]
   # The tools that read a taxon's claims by path are unmoved by it.
   closure = Closure(store)

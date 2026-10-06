@@ -498,7 +498,8 @@ $defs:
       (`sectionStart`, `sectionEnd`) and a record of its own, so the same
       division can be recognised across works. `name` is the heading as a
       name, or `null` for a heading that is only a descriptive phrase,
-      given as `designation`.
+      given as `designation`. The key is the name lower-cased (`integra`,
+      `stellatae`, `radiatae`) unless `needsQualification` is set.
     type: object
     $ref: "#/$defs/authorityFields"
     unevaluatedProperties: false
@@ -525,6 +526,13 @@ $defs:
           The heading as its protologue prints it, when that differs from
           `name`.
         type: string
+      needsQualification:
+        description: |
+          The key takes the authority suffix (`<name>_<author>_<year>`), as
+          a taxon record's does; a section's first user is often
+          unknowable, so by default the key is the name alone, like a genus.
+        type: boolean
+        default: false
       notes:
         type: string
 
@@ -532,8 +540,8 @@ $defs:
     properties:
       sectionStart:
         description: |
-          Opens the section `section` (a key of `sections.yaml`) at this
-          node. A section is a span of siblings: from the node that
+          Opens the section `section` (a key of `sections.yaml`, such as
+          `integra`) at this node. A section is a span of siblings: from the node that
           carries `sectionStart` to the node, in the same `children`
           list, that carries the matching `sectionEnd`, inclusive, each
           with its subtree. A section never crosses a level. Both markers
