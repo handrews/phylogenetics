@@ -3944,23 +3944,29 @@ echinoderma:
 echinodermata:
   # or Bruguière 1789
   # Encyclopédie Méthodique. Histoire Naturelle des Vers. Tome Premier
+  # or Bruguière 1791 ex Klein 1734
   name: Echinodermata
-  rank: Phylum
-  status: monophyletic
+  rank: null
   authority:
-    source: 1791_bruguière
-    ex:
-      source: 1734_klein
+    source: 1778_klein
+  notes: >
+    The 1778 reprint of Klein 1734 is the earliest
+    post-10th Edition Systema Naturae use of "Echinodermata",
+    which does appear in that form (as well as "Echinodermatum"),
+    in the text.  It is the unranked overall descriptor
+    of the set of classes Klein established, but it is not
+    entirely clear if he intended it as a taxon of some sort.
+    Nevertheless, Stokes 2021 argues that this is the proper
+    credit given the looseness of ICZN regulations above the
+    Family rank group.
+
+    Common alternatives are Bruguière 1789 or
+    Bruguière 1791 [ex Klein 1734].
 echinodermata_klein_1778:
   name: Echinodermata
   needsQualification: true
   authority:
     source: 1778_klein
-echinodermatum:
-  name: Echinodermatum
-  authority:
-    source: 1734_klein
-  altSpellingOf: echinodermata
 echinodermata-class:
   rank: Class
   altRankOf: echinodermata

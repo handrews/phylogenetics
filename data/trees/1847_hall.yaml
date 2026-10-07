@@ -9,7 +9,7 @@ taxonomies:
       - taxon: tenuiradiatus_hall_1847
         new: true
       - openTaxon: actinocrinus-sp_hall_1847
-- taxon: echinodermata-class
+- taxon: echinodermata
   notes: |
     Trenton limestone
     Echinodermata described as a family in text, but also as containing
