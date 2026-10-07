@@ -1383,7 +1383,7 @@ def test_a_section_without_pages_is_not_checked(sections, caplog):
 def test_a_section_with_pages_and_no_new_marker_is_not_flagged(sections, caplog):
   errors, warnings, info = _protologue(caplog, None, {'pages': 662}, new=False)
   assert errors == []
-  assert warnings == [f'Protologue not flagged: {INTEGRA} in {PROTOLOGUE_SOURCE}']
+  assert warnings == [f'Section protologue not flagged: {INTEGRA} in {PROTOLOGUE_SOURCE}']
   assert info == ['0 disagreements between a section record and its protologue marker']
 
 

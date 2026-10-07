@@ -1,10 +1,87 @@
-# Sections: the informal divisions of a formal group (Linnaeus's "Integra",
-# "Stellatae" and "Radiatae" within Asterias), which have no taxonomic
-# status but recur across works. Keyed by name, like a genus (`integra`);
-# `needsQualification: true` adds the authority suffix
-# (`integra_linnaeus_1758`), since a section's first user is often
-# unknowable. A taxonomy node refers to a record by key from `sectionStart`
-# and `sectionEnd`, and the span of siblings between the two markers is
-# the section. A record that gives `pages` is checked against its protologue,
-# the `sectionStart` marker flagged `new: true` in its authority's trees.
-{}
+# Sections: the informal divisions of a formal group, which have
+# no taxonomic status but recur across works.  The interpretation
+# of a word in the # section heading is highly subjective, as lone
+# words that look like names # may not be, while one word in a
+# multi-word heading may be capitalized # in a way that makes it seem
+# like it is important as a name beyond the description..
+cochleae:
+  name: Cochleae
+  citedAs: "* * * Univalvia Spiralia COCHLEÆ."
+  authority:
+    source: 1758_linnaeus
+  pages: 645
+  notes: Only present in the genus-level outline of Vermes.
+conchae:
+  name: Conchae
+  citedAs: "* * Bivalvia CONCHÆ."
+  authority:
+    source: 1758_linnaeus
+  pages: 645
+  notes: Only present in the genus-level outline of Vermes.
+echinus-irregulares:
+  name: null
+  designation: Irregular opening of the anus beneath the mouth
+  pages: 665
+  authority:
+    source: 1758_linnaeus
+  citedAs: "* * Irregulares: apertura ani ſubtus uti os."
+echinus-regulares:
+  name: null
+  designation: Regular vertical anus
+  pages: 663
+  authority:
+    source: 1758_linnaeus
+  citedAs: "* Regulares ano verticali."
+fixata:
+  name: Fixata
+  pages: 1074
+  authority:
+    source: 1767_linnaeus
+  citedAs: "* Fixata."
+  notes: Only present in the genus-level outline of Vermes.
+integra:
+  name: Integra
+  pages: 661
+  authority:
+    source: 1758_linnaeus
+  citedAs: "* Integra."
+locomotiva:
+  name: Locomotiva
+  pages: 1074
+  authority:
+    source: 1767_linnaeus
+  citedAs: Locomotiva.
+  notes: >
+    No "* *" before the word for citedAs.
+    Only present in the genus-level outline of Vermes.
+lunatae:
+  name: Lunatae
+  pages: 233
+  authority:
+    source: 1776_müller.o.f
+  citedAs: "* Lunatæ."
+multivalvia:
+  name: Multivalvia
+  pages: 645
+  citedAs: "* Multivalvia."
+  notes: Only present in the genus-level outline of Vermes.
+radiatae:
+  name: Radiatae
+  pages: 662
+  authority:
+    source: 1758_linnaeus
+  citedAs: "* * * Radiatæ."
+stellatae:
+  name: Stellatae
+  pages: 661
+  authority:
+    source: 1758_linnaeus
+  citedAs: "* * Stellatæ."
+testacea-section-4_linnaeus_1758:
+  name: null
+  designation: Univalves without a regular spire.
+  needsQualification: true
+  pages: 645
+  authority:
+    source: 1758_linnaeus
+  citedAs: "* * * * Univalvia absque ſpira regulari."

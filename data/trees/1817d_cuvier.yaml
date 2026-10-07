@@ -44,7 +44,8 @@ taxonomies:
           new: true
         - taxon: priapulus # Lamarck
         - taxon: sipunculus # "Gra."
-    - taxon: intestinaux-class
+    - taxon: intestinaux
+      rank: Class
       synonyms:
       - taxon: entozoa
     - taxon: acalèphes

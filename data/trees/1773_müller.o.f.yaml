@@ -28,4 +28,5 @@ taxonomies:
     - taxon: brachionus
   - taxon: helminthica-order
     new: true
-  - taxon: testacea-order
+  - taxon: testacea
+    rank: Order

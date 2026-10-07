@@ -3,7 +3,8 @@ taxonomies:
   children:
   - taxon: infusoria-order
   - taxon: helminthica-order
-  - taxon: testacea-order
+  - taxon: testacea
+    rank: Order
     children:
     - taxon: limax
     - taxon: helix

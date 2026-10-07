@@ -327,6 +327,11 @@ gil cid:
 gill:
   surname: Gill
   given: Edmund D.
+gmelin:
+  surname: Gmelin
+  given: Johann Friedrich
+  birth: 1748
+  death: 1804
 goldfuss:
   surname: Goldfuss
   given: Georg

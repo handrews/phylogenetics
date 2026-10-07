@@ -12,12 +12,15 @@ taxonomies:
 - taxon: vermes
   children:
   - taxon: infusoria-order
-  - taxon: intestina-order
-  - taxon: mollusca-order
+  - taxon: intestina
+    rank: Order
+  - taxon: mollusca
+    rank: Order
   - taxon: echinodermata-order
     new: true
     children:
     - taxon: asterias
     - taxon: echinus
-  - taxon: testacea-order
+  - taxon: testacea
+    rank: Order
   - taxon: zoophyta

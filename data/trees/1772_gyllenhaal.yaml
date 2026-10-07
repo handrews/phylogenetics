@@ -1,5 +1,6 @@
 taxonomies:
-- taxon: mollusca-order
+- taxon: mollusca
+  rank: Order
   children:
   - taxon: echinus
     children:

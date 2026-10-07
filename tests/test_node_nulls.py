@@ -290,12 +290,12 @@ def test_contents_prints_an_unranked_node_as_its_name_alone(synthetic):
     '  Kingdom Animalia',
     '    Vermes',
     '    Echinodermata nov.',
-    '    Phylum Mollusca',
+    '    Order Mollusca',
   ]
   vermes, echinodermata, mollusca = block['nodes'][1:]
   assert vermes['unranked'] is True and 'rankWord' not in vermes
   assert echinodermata['unranked'] is True and 'rankWord' not in echinodermata
-  assert 'unranked' not in mollusca and mollusca['rankWord'] == 'Phylum'
+  assert 'unranked' not in mollusca and mollusca['rankWord'] == 'Order'
   assert 'pages' not in block['nodes'][0]
 
 

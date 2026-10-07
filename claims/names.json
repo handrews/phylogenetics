@@ -15,6 +15,22 @@
   "name": "abbreviatus",
   "rank": "species"
  },
+ "abdominales": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "abdominales"
+  ],
+  "kind": "primary",
+  "name": "Abdominales",
+  "rank": "Order"
+ },
  "acalephida": {
   "authority": {
    "authors": [
@@ -78,6 +94,22 @@
   "kind": "primary",
   "name": "Acanthocystites",
   "rank": "genus"
+ },
+ "accipitres": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "accipitres"
+  ],
+  "kind": "primary",
+  "name": "Accipitres",
+  "rank": "Order"
  },
  "acephala-class": {
   "authority": {
@@ -487,6 +519,22 @@
   "name": "Aesiocystites",
   "rank": "genus"
  },
+ "aethiops_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "aethiops"
+  ],
+  "kind": "primary",
+  "name": "aethiops",
+  "rank": "species"
+ },
  "aethocrinus": {
   "authority": {
    "authors": [
@@ -501,6 +549,22 @@
   "kind": "primary",
   "name": "Aethocrinus",
   "rank": "genus"
+ },
+ "afer_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "afer"
+  ],
+  "kind": "primary",
+  "name": "afer",
+  "rank": "variety"
  },
  "africana_forsskål_1775": {
   "authority": {
@@ -1236,6 +1300,22 @@
   "name": "americanus",
   "rank": "species"
  },
+ "americanus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "americanus"
+  ],
+  "kind": "primary",
+  "name": "americanus",
+  "rank": "variety"
+ },
  "ametabola": {
   "authority": {
    "authors": [
@@ -1317,21 +1397,6 @@
   "rank": "genus"
  },
  "amphibia": {
-  "authority": {
-   "authors": [
-    "Gray"
-   ],
-   "display": "Gray 1825",
-   "year": 1825
-  },
-  "folded": [
-   "amphibia"
-  ],
-  "kind": "primary",
-  "name": "Amphibia",
-  "rank": "Class"
- },
- "amphibia_linnaeus_1758": {
   "authority": {
    "authors": [
     "Linnaeus"
@@ -1537,7 +1602,7 @@
   "name": "anapeptamenus",
   "rank": "species"
  },
- "anastacia_linnaeus_1758": {
+ "anastatica_linnaeus_1758": {
   "authority": {
    "authors": [
     "Linnaeus"
@@ -1547,10 +1612,10 @@
    "year": 1758
   },
   "folded": [
-   "anastacia"
+   "anastatica"
   ],
   "kind": "primary",
-  "name": "anastacia",
+  "name": "anastatica",
   "rank": "species"
  },
  "anatiformis_hall_1847": {
@@ -2006,6 +2071,22 @@
   "name": "Anomia",
   "rank": "genus"
  },
+ "anseres": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "anseres"
+  ],
+  "kind": "primary",
+  "name": "Anseres",
+  "rank": "Order"
+ },
  "ansticei_bather_1915": {
   "authority": {
    "authors": [
@@ -2067,6 +2148,22 @@
   "name": "Anulocrinus",
   "rank": "genus"
  },
+ "apedia_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "apedia"
+  ],
+  "kind": "primary",
+  "name": "apedia",
+  "rank": "species"
+ },
  "apektocrinidae": {
   "authority": {
    "authors": [
@@ -2100,6 +2197,22 @@
   "kind": "primary",
   "name": "Apektocrinus",
   "rank": "genus"
+ },
+ "apella_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "apella"
+  ],
+  "kind": "primary",
+  "name": "apella",
+  "rank": "species"
  },
  "aphrodita": {
   "authority": {
@@ -2192,9 +2305,26 @@
   "folded": [
    "aplysia"
   ],
-  "kind": "primary",
+  "kind": "altSpellingOf",
   "name": "Aplysia",
+  "of": "laplysia",
   "rank": "genus"
+ },
+ "apodes": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "apodes"
+  ],
+  "kind": "primary",
+  "name": "Apodes",
+  "rank": "Order"
  },
  "aporita": {
   "authority": {
@@ -2241,6 +2371,22 @@
   "kind": "primary",
   "name": "appressa",
   "rank": "species"
+ },
+ "aptera": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "aptera"
+  ],
+  "kind": "primary",
+  "name": "Aptera",
+  "rank": "Order"
  },
  "arachnida": {
   "authority": {
@@ -3002,6 +3148,22 @@
   "name": "Ascocystitidae",
   "rank": "Family"
  },
+ "asiasticus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "asiasticus"
+  ],
+  "kind": "primary",
+  "name": "asiasticus",
+  "rank": "variety"
+ },
  "aspera_müller.o.f_1776": {
   "authority": {
    "authors": [
@@ -3071,15 +3233,16 @@
    "authors": [
     "Linnaeus"
    ],
-   "display": "Linnaeus 1767",
-   "source": "1767_linnaeus",
-   "year": 1767
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
   },
   "folded": [
    "asteria"
   ],
-  "kind": "primary",
+  "kind": "altSpellingOf",
   "name": "Asteria",
+  "of": "asterias",
   "rank": "genus"
  },
  "asteria_linnaeus_1767": {
@@ -3404,7 +3567,7 @@
     "Gray"
    ],
    "display": "Gray 1825",
-   "source": "1825_gray.j.e",
+   "source": "1825i_gray.j.e",
    "year": 1825
   },
   "folded": [
@@ -3647,6 +3810,22 @@
   "name": "auritus",
   "rank": "species"
  },
+ "auritus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "auritus"
+  ],
+  "kind": "primary",
+  "name": "auritus",
+  "rank": "species"
+ },
  "austini_foerste_1914": {
   "authority": {
    "authors": [
@@ -3739,6 +3918,22 @@
   "kind": "primary",
   "name": "Aves",
   "rank": "Class"
+ },
+ "aygula_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "aygula"
+  ],
+  "kind": "primary",
+  "name": "aygula",
+  "rank": "species"
  },
  "azaisei_thoral_1935": {
   "authority": {
@@ -3851,6 +4046,22 @@
   "name": "bafteri",
   "of": "basteri_leske_1778",
   "rank": "variety"
+ },
+ "balaena": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "balaena"
+  ],
+  "kind": "primary",
+  "name": "Balaena",
+  "rank": "genus"
  },
  "balangicystis": {
   "authority": {
@@ -4263,6 +4474,22 @@
   "name": "bellicostata",
   "rank": "species"
  },
+ "belluae": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "belluae"
+  ],
+  "kind": "primary",
+  "name": "Belluae",
+  "rank": "Order"
+ },
  "bellulus_barrande_1887": {
   "authority": {
    "authors": [
@@ -4376,6 +4603,22 @@
   "name": "beroe",
   "rank": "species"
  },
+ "bestiae": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "bestiae"
+  ],
+  "kind": "primary",
+  "name": "Bestiae",
+  "rank": "Order"
+ },
  "bibrachiatus_parsley_1982": {
   "authority": {
    "authors": [
@@ -4487,13 +4730,13 @@
   "name": "bifida",
   "rank": "species"
  },
- "bifissa_gmelin_1791": {
+ "bifissa_audouin_1806": {
   "authority": {
    "authors": [
-    "Gmelin"
+    "Audouin"
    ],
-   "display": "Gmelin 1791",
-   "year": 1791
+   "display": "Audouin 1806",
+   "year": 1806
   },
   "folded": [
    "bifissa"
@@ -4502,12 +4745,13 @@
   "name": "bifissa",
   "rank": "species"
  },
- "bifora_gmelin_1791": {
+ "bifora_gmelin_1791a": {
   "authority": {
    "authors": [
     "Gmelin"
    ],
    "display": "Gmelin 1791",
+   "source": "1791a_gmelin",
    "year": 1791
   },
   "folded": [
@@ -4517,12 +4761,13 @@
   "name": "bifora",
   "rank": "species"
  },
- "biforis_gmelin_1791": {
+ "biforis_gmelin_1791a": {
   "authority": {
    "authors": [
     "Gmelin"
    ],
    "display": "Gmelin 1791",
+   "source": "1791a_gmelin",
    "year": 1791
   },
   "folded": [
@@ -5041,6 +5286,22 @@
   "name": "boliviensis",
   "rank": "species"
  },
+ "bos": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "bos"
+  ],
+  "kind": "primary",
+  "name": "Bos",
+  "rank": "genus"
+ },
  "bostryclavus": {
   "authority": {
    "authors": [
@@ -5310,6 +5571,22 @@
   "of": "brachiopoda-class",
   "rank": "Class"
  },
+ "bradypus": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "bradypus"
+  ],
+  "kind": "primary",
+  "name": "Bradypus",
+  "rank": "genus"
+ },
  "branagani_brown.i.a_1963": {
   "authority": {
    "authors": [
@@ -5325,6 +5602,22 @@
   "kind": "primary",
   "name": "branagani",
   "rank": "species"
+ },
+ "branchiostegi": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "branchiostegi"
+  ],
+  "kind": "primary",
+  "name": "Branchiostegi",
+  "rank": "Order"
  },
  "briareus_barrande_1887": {
   "authority": {
@@ -5517,6 +5810,22 @@
   "kind": "primary",
   "name": "broweri",
   "rank": "species"
+ },
+ "bruta": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "bruta"
+  ],
+  "kind": "primary",
+  "name": "Bruta",
+  "rank": "Order"
  },
  "buccinum": {
   "authority": {
@@ -6079,6 +6388,22 @@
   "of": "cambrocrinidae",
   "rank": "Family"
  },
+ "camelus": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "camelus"
+  ],
+  "kind": "primary",
+  "name": "Camelus",
+  "rank": "genus"
+ },
  "camerata": {
   "authority": {
    "authors": [
@@ -6250,6 +6575,22 @@
   "name": "canina",
   "rank": "species"
  },
+ "canis": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "canis"
+  ],
+  "kind": "primary",
+  "name": "Canis",
+  "rank": "genus"
+ },
  "cannati_miquel_1894": {
   "authority": {
    "authors": [
@@ -6284,6 +6625,22 @@
   "name": "capillaris",
   "rank": "species"
  },
+ "capra": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "capra"
+  ],
+  "kind": "primary",
+  "name": "Capra",
+  "rank": "genus"
+ },
  "capsularia": {
   "authority": {
    "authors": [
@@ -6298,6 +6655,22 @@
   "kind": "primary",
   "name": "Capsularia",
   "rank": "genus"
+ },
+ "capucina_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "capucina"
+  ],
+  "kind": "primary",
+  "name": "capucina",
+  "rank": "species"
  },
  "caput medusae_lamarck_1801": {
   "authority": {
@@ -6315,7 +6688,7 @@
   "name": "caput medusae",
   "rank": "species"
  },
- "caput medusae_linnaeus_1758": {
+ "caputmedusae_linnaeus_1758": {
   "authority": {
    "authors": [
     "Linnaeus"
@@ -6328,7 +6701,7 @@
    "caputmedusae"
   ],
   "kind": "primary",
-  "name": "caput medusae",
+  "name": "caputmedusae",
   "rank": "species"
  },
  "carabocrinidae": {
@@ -6913,6 +7286,38 @@
   "name": "Castericystis",
   "rank": "genus"
  },
+ "castor": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "castor"
+  ],
+  "kind": "primary",
+  "name": "Castor",
+  "rank": "genus"
+ },
+ "catta_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "catta"
+  ],
+  "kind": "primary",
+  "name": "catta",
+  "rank": "species"
+ },
  "caudata_linnaeus_1758": {
   "authority": {
    "authors": [
@@ -7075,6 +7480,22 @@
   "name": "Cephalopoda",
   "rank": "Order"
  },
+ "cephus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "cephus"
+  ],
+  "kind": "primary",
+  "name": "cephus",
+  "rank": "species"
+ },
  "cerasus_buch_1840": {
   "authority": {
    "authors": [
@@ -7121,6 +7542,22 @@
   "name": "Cercaria",
   "rank": "genus"
  },
+ "cervus": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "cervus"
+  ],
+  "kind": "primary",
+  "name": "Cervus",
+  "rank": "genus"
+ },
  "cestum": {
   "authority": {
    "authors": [
@@ -7135,6 +7572,22 @@
   "kind": "primary",
   "name": "Cestum",
   "rank": "genus"
+ },
+ "cete": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "cete"
+  ],
+  "kind": "primary",
+  "name": "Cete",
+  "rank": "Order"
  },
  "chama": {
   "authority": {
@@ -7456,7 +7909,7 @@
     "Gray"
    ],
    "display": "Gray 1825",
-   "source": "1825_gray.j.e",
+   "source": "1825i_gray.j.e",
    "year": 1825
   },
   "folded": [
@@ -8040,22 +8493,6 @@
   "name": "coccinia",
   "rank": "species"
  },
- "cochleae": {
-  "authority": {
-   "authors": [
-    "Linnaeus"
-   ],
-   "display": "Linnaeus 1758",
-   "source": "1758_linnaeus",
-   "year": 1758
-  },
-  "folded": [
-   "cochleae"
-  ],
-  "kind": "primary",
-  "name": "Cochleae",
-  "rank": "section"
- },
  "codyensis_sumrall_sprinkle_guensburg_1997": {
   "authority": {
    "authors": [
@@ -8131,6 +8568,22 @@
   "kind": "primary",
   "name": "Coelomocoela",
   "rank": "Grade"
+ },
+ "coleoptera": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "coleoptera"
+  ],
+  "kind": "primary",
+  "name": "Coleoptera",
+  "rank": "Order"
  },
  "collaspidae": {
   "authority": {
@@ -8367,12 +8820,13 @@
   "name": "complanata",
   "rank": "species"
  },
- "complanatus_gmelin_1791": {
+ "complanatus_gmelin_1791a": {
   "authority": {
    "authors": [
     "Gmelin"
    ],
    "display": "Gmelin 1791",
+   "source": "1791a_gmelin",
    "year": 1791
   },
   "folded": [
@@ -8429,22 +8883,6 @@
   "kind": "primary",
   "name": "concentricus",
   "rank": "species"
- },
- "conchae": {
-  "authority": {
-   "authors": [
-    "Linnaeus"
-   ],
-   "display": "Linnaeus 1758",
-   "source": "1758_linnaeus",
-   "year": 1758
-  },
-  "folded": [
-   "conchae"
-  ],
-  "kind": "primary",
-  "name": "Conchae",
-  "rank": "section"
  },
  "conchilega_müller.o.f_1776": {
   "authority": {
@@ -10674,6 +11112,22 @@
   "name": "Cymbionitidae",
   "rank": "Family"
  },
+ "cynamologos_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "cynamologos"
+  ],
+  "kind": "primary",
+  "name": "cynamologos",
+  "rank": "species"
+ },
  "cypraea": {
   "authority": {
    "authors": [
@@ -11021,6 +11475,22 @@
   "name": "darraghi",
   "rank": "species"
  },
+ "dasypus": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "dasypus"
+  ],
+  "kind": "primary",
+  "name": "Dasypus",
+  "rank": "genus"
+ },
  "davisii_mccoy_1848": {
   "authority": {
    "authors": [
@@ -11087,12 +11557,13 @@
   "name": "deani",
   "rank": "species"
  },
- "decadactylos_gmelin_1791": {
+ "decadactylos_gmelin_1791a": {
   "authority": {
    "authors": [
     "Gmelin"
    ],
    "display": "Gmelin 1791",
+   "source": "1791a_gmelin",
    "year": 1791
   },
   "folded": [
@@ -11233,6 +11704,22 @@
   "name": "decussatus",
   "of": "decussatum_begg_1934",
   "rank": "species"
+ },
+ "delphinus": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "delphinus"
+  ],
+  "kind": "primary",
+  "name": "Delphinus",
+  "rank": "genus"
  },
  "deltacystinae": {
   "authority": {
@@ -11668,7 +12155,7 @@
     "Gray"
    ],
    "display": "Gray 1825",
-   "source": "1825_gray.j.e",
+   "source": "1825i_gray.j.e",
    "year": 1825
   },
   "folded": [
@@ -11708,6 +12195,22 @@
   ],
   "kind": "primary",
   "name": "diadema",
+  "rank": "species"
+ },
+ "diana_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "diana"
+  ],
+  "kind": "primary",
+  "name": "diana",
   "rank": "species"
  },
  "dibrachycystidae": {
@@ -11788,6 +12291,54 @@
   "kind": "primary",
   "name": "dicksoni",
   "rank": "species"
+ },
+ "didactyla_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "didactyla"
+  ],
+  "kind": "primary",
+  "name": "didactyla",
+  "rank": "species"
+ },
+ "didactylus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "didactylus"
+  ],
+  "kind": "primary",
+  "name": "didactylus",
+  "rank": "species"
+ },
+ "didelphis": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "didelphis"
+  ],
+  "kind": "primary",
+  "name": "Didelphis",
+  "rank": "genus"
  },
  "digitata": {
   "authority": {
@@ -12085,6 +12636,22 @@
   "name": "Diplosphaeronis",
   "rank": "genus"
  },
+ "diptera": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "diptera"
+  ],
+  "kind": "primary",
+  "name": "Diptera",
+  "rank": "Order"
+ },
  "diraphora_bell_1941": {
   "authority": {
    "authors": [
@@ -12136,7 +12703,7 @@
     "Gray"
    ],
    "display": "Gray 1825",
-   "source": "1825_gray.j.e",
+   "source": "1825i_gray.j.e",
    "year": 1825
   },
   "folded": [
@@ -12510,7 +13077,7 @@
     "Gray"
    ],
    "display": "Gray 1825",
-   "source": "1825_gray.j.e",
+   "source": "1825i_gray.j.e",
    "year": 1825
   },
   "folded": [
@@ -12542,7 +13109,7 @@
     "Gray"
    ],
    "display": "Gray 1825",
-   "source": "1825_gray.j.e",
+   "source": "1825i_gray.j.e",
    "year": 1825
   },
   "folded": [
@@ -12641,7 +13208,7 @@
     "Gray"
    ],
    "display": "Gray 1825",
-   "source": "1825_gray.j.e",
+   "source": "1825i_gray.j.e",
    "year": 1825
   },
   "folded": [
@@ -12657,7 +13224,7 @@
     "Gray"
    ],
    "display": "Gray 1825",
-   "source": "1825_gray.j.e",
+   "source": "1825i_gray.j.e",
    "year": 1825
   },
   "folded": [
@@ -12792,7 +13359,7 @@
     "Gray"
    ],
    "display": "Gray 1825",
-   "source": "1825_gray.j.e",
+   "source": "1825i_gray.j.e",
    "year": 1825
   },
   "folded": [
@@ -12808,7 +13375,7 @@
     "Gray"
    ],
    "display": "Gray 1825",
-   "source": "1825_gray.j.e",
+   "source": "1825i_gray.j.e",
    "year": 1825
   },
   "folded": [
@@ -13246,7 +13813,7 @@
     "Gray"
    ],
    "display": "Gray 1825",
-   "source": "1825_gray.j.e",
+   "source": "1825i_gray.j.e",
    "year": 1825
   },
   "folded": [
@@ -13262,7 +13829,7 @@
     "Gray"
    ],
    "display": "Gray 1825",
-   "source": "1825_gray.j.e",
+   "source": "1825i_gray.j.e",
    "year": 1825
   },
   "folded": [
@@ -13279,7 +13846,7 @@
     "Gray"
    ],
    "display": "Gray 1825",
-   "source": "1825_gray.j.e",
+   "source": "1825i_gray.j.e",
    "year": 1825
   },
   "folded": [
@@ -14392,6 +14959,22 @@
   "name": "elegans",
   "rank": "species"
  },
+ "elephas": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "elephas"
+  ],
+  "kind": "primary",
+  "name": "Elephas",
+  "rank": "genus"
+ },
  "eleutherozoa": {
   "authority": {
    "authors": [
@@ -15368,6 +15951,54 @@
   "name": "equinus",
   "rank": "species"
  },
+ "equinus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "equinus"
+  ],
+  "kind": "primary",
+  "name": "equinus",
+  "rank": "species"
+ },
+ "equus": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "equus"
+  ],
+  "kind": "primary",
+  "name": "Equus",
+  "rank": "genus"
+ },
+ "erinaceus": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "erinaceus"
+  ],
+  "kind": "primary",
+  "name": "Erinaceus",
+  "rank": "genus"
+ },
  "erinocystis": {
   "authority": {
    "authors": [
@@ -15639,6 +16270,22 @@
   "name": "Eumorphocystoidea",
   "of": "eumorphocystidae",
   "rank": "Superfamily"
+ },
+ "europaeus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "europaeus"
+  ],
+  "kind": "primary",
+  "name": "europaeus",
+  "rank": "variety"
  },
  "euryale": {
   "authority": {
@@ -15987,6 +16634,22 @@
   "name": "Fasciola",
   "rank": "genus"
  },
+ "faunus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "faunus"
+  ],
+  "kind": "primary",
+  "name": "faunus",
+  "rank": "species"
+ },
  "fayi_sprinkle_1973": {
   "authority": {
    "authors": [
@@ -16063,6 +16726,38 @@
   "name": "Felbabkacystis",
   "rank": "genus"
  },
+ "felinus_linnaeus_1761": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1761",
+   "source": "1761_linnaeus",
+   "year": 1761
+  },
+  "folded": [
+   "felinus"
+  ],
+  "kind": "primary",
+  "name": "felinus",
+  "rank": "species"
+ },
+ "felis": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "felis"
+  ],
+  "kind": "primary",
+  "name": "Felis",
+  "rank": "genus"
+ },
  "fenestrata_leske_1778": {
   "authority": {
    "authors": [
@@ -16078,6 +16773,38 @@
   "kind": "primary",
   "name": "fenestrata",
   "rank": "species"
+ },
+ "ferae": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "ferae"
+  ],
+  "kind": "primary",
+  "name": "Ferae",
+  "rank": "Order"
+ },
+ "ferus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "ferus"
+  ],
+  "kind": "primary",
+  "name": "ferus",
+  "rank": "variety"
  },
  "fibularia": {
   "authority": {
@@ -16894,7 +17621,7 @@
     "Gray"
    ],
    "display": "Gray 1825",
-   "source": "1825_gray.j.e",
+   "source": "1825i_gray.j.e",
    "year": 1825
   },
   "folded": [
@@ -16918,6 +17645,22 @@
   "kind": "primary",
   "name": "gallica",
   "rank": "species"
+ },
+ "gallinae": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "gallinae"
+  ],
+  "kind": "primary",
+  "name": "Gallinae",
+  "rank": "Order"
  },
  "gasterocomacea": {
   "authority": {
@@ -17376,6 +18119,22 @@
   "kind": "primary",
   "name": "Glenocrinus",
   "rank": "genus"
+ },
+ "glires": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "glires"
+  ],
+  "kind": "primary",
+  "name": "Glires",
+  "rank": "Order"
  },
  "globiformis_lamarck_1816": {
   "authority": {
@@ -18367,6 +19126,22 @@
   "name": "graffhami",
   "rank": "species"
  },
+ "grallae": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "grallae"
+  ],
+  "kind": "primary",
+  "name": "Grallae",
+  "rank": "Order"
+ },
  "granatum_mccoy_1846": {
   "authority": {
    "authors": [
@@ -19073,6 +19848,22 @@
   "name": "hallii",
   "rank": "species"
  },
+ "hamadryas_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "hamadryas"
+  ],
+  "kind": "primary",
+  "name": "hamadryas",
+  "rank": "species"
+ },
  "hamiltonensis_vanuxem_1842": {
   "authority": {
    "authors": [
@@ -19773,6 +20564,22 @@
   "name": "Hemicystitidae",
   "rank": "Family"
  },
+ "hemiptera": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "hemiptera"
+  ],
+  "kind": "primary",
+  "name": "Hemiptera",
+  "rank": "Order"
+ },
  "hemisphaerica_leske_1778": {
   "authority": {
    "authors": [
@@ -20047,12 +20854,13 @@
   "name": "hexagonus",
   "rank": "species"
  },
- "hexaporus_gmelin_1791": {
+ "hexaporus_gmelin_1791a": {
   "authority": {
    "authors": [
     "Gmelin"
    ],
    "display": "Gmelin 1791",
+   "source": "1791a_gmelin",
    "year": 1791
   },
   "folded": [
@@ -20175,6 +20983,22 @@
   "kind": "primary",
   "name": "hintzei",
   "rank": "species"
+ },
+ "hippopotamus": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "hippopotamus"
+  ],
+  "kind": "primary",
+  "name": "Hippopotamus",
+  "rank": "genus"
  },
  "hippuris_linnaeus_1758": {
   "authority": {
@@ -20444,6 +21268,22 @@
   "name": "Homalozoa",
   "rank": "Subphylum"
  },
+ "homo": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "homo"
+  ],
+  "kind": "primary",
+  "name": "Homo",
+  "rank": "genus"
+ },
  "homocrinus": {
   "authority": {
    "authors": [
@@ -20618,6 +21458,22 @@
   "name": "hudsoni",
   "rank": "species"
  },
+ "humanus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "humanus"
+  ],
+  "kind": "primary",
+  "name": "humanus",
+  "rank": "species"
+ },
  "humilis_billings_1857": {
   "authority": {
    "authors": [
@@ -20789,6 +21645,22 @@
   "name": "Hydra",
   "rank": "genus"
  },
+ "hymenoptera": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "hymenoptera"
+  ],
+  "kind": "primary",
+  "name": "Hymenoptera",
+  "rank": "Order"
+ },
  "hypanthocrinites": {
   "authority": {
    "authors": [
@@ -20838,6 +21710,22 @@
   ],
   "kind": "primary",
   "name": "Hystrichopsydrax",
+  "rank": "genus"
+ },
+ "hystrix": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "hystrix"
+  ],
+  "kind": "primary",
+  "name": "Hystrix",
   "rank": "genus"
  },
  "hystrix_lamarck_1816": {
@@ -21130,12 +22018,13 @@
   "name": "Inarticulata",
   "rank": "Division"
  },
- "inauritus_gmelin_1791": {
+ "inauritus_gmelin_1791a": {
   "authority": {
    "authors": [
     "Gmelin"
    ],
    "display": "Gmelin 1791",
+   "source": "1791a_gmelin",
    "year": 1791
   },
   "folded": [
@@ -21507,22 +22396,6 @@
   "name": "insularis",
   "rank": "species"
  },
- "integra": {
-  "authority": {
-   "authors": [
-    "Linnaeus"
-   ],
-   "display": "Linnaeus 1758",
-   "source": "1758_linnaeus",
-   "year": 1758
-  },
-  "folded": [
-   "integra"
-  ],
-  "kind": "primary",
-  "name": "Integra",
-  "rank": "section"
- },
  "interruptus_jaekel_1899": {
   "authority": {
    "authors": [
@@ -21538,7 +22411,7 @@
   "name": "interruptus",
   "rank": "species"
  },
- "intestina-class": {
+ "intestina": {
   "authority": {
    "authors": [
     "Linnaeus"
@@ -21548,26 +22421,7 @@
    "year": 1758
   },
   "folded": [
-   "intestina",
-   "intestinaclass"
-  ],
-  "kind": "altRankOf",
-  "name": "Intestina",
-  "of": "intestina-order",
-  "rank": "Class"
- },
- "intestina-order": {
-  "authority": {
-   "authors": [
-    "Linnaeus"
-   ],
-   "display": "Linnaeus 1758",
-   "source": "1758_linnaeus",
-   "year": 1758
-  },
-  "folded": [
-   "intestina",
-   "intestinaorder"
+   "intestina"
   ],
   "kind": "primary",
   "name": "Intestina",
@@ -21589,7 +22443,7 @@
   "name": "intestinalis",
   "rank": "species"
  },
- "intestinaux-class": {
+ "intestinaux": {
   "authority": {
    "authors": [
     "Linnaeus"
@@ -21599,14 +22453,13 @@
    "year": 1758
   },
   "folded": [
-   "intestinaux",
-   "intestinauxclass"
+   "intestinaux"
   ],
   "kind": "vulgarSpellingOf",
   "lang": "FR",
   "name": "Intestinaux",
-  "of": "intestina-class",
-  "rank": "Class"
+  "of": "intestina",
+  "rank": "Order"
  },
  "intestins": {
   "authority": {
@@ -21623,7 +22476,7 @@
   "kind": "vulgarSpellingOf",
   "lang": "FR",
   "name": "Intestins",
-  "of": "intestina-order",
+  "of": "intestina",
   "rank": "Order"
  },
  "iowacystidae": {
@@ -21658,22 +22511,6 @@
   "kind": "primary",
   "name": "Iowacystis",
   "rank": "genus"
- },
- "irregulares": {
-  "authority": {
-   "authors": [
-    "Linnaeus"
-   ],
-   "display": "Linnaeus 1758",
-   "source": "1758_linnaeus",
-   "year": 1758
-  },
-  "folded": [
-   "irregulares"
-  ],
-  "kind": "primary",
-  "name": "Irregulares",
-  "rank": "section"
  },
  "ischadites": {
   "authority": {
@@ -22056,6 +22893,22 @@
   "name": "ixine",
   "rank": "species"
  },
+ "jacchus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "jacchus"
+  ],
+  "kind": "primary",
+  "name": "jacchus",
+  "rank": "species"
+ },
  "jacksoni_austen_1843": {
   "authority": {
    "authors": [
@@ -22219,13 +23072,31 @@
     "Linnaeus"
    ],
    "display": "Linnaeus 1761",
+   "source": "1761_linnaeus",
    "year": 1761
   },
   "folded": [
    "judaica"
   ],
-  "kind": "primary",
+  "kind": "altSpellingOf",
   "name": "judaica",
+  "of": "judaicus_linnaeus_1761",
+  "rank": "species"
+ },
+ "judaicus_linnaeus_1761": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1761",
+   "source": "1761_linnaeus",
+   "year": 1761
+  },
+  "folded": [
+   "judaicus"
+  ],
+  "kind": "primary",
+  "name": "judaicus",
   "rank": "species"
  },
  "jugoszovia": {
@@ -22259,6 +23130,22 @@
   "kind": "primary",
   "name": "Jugoszoviidae",
   "rank": "Family"
+ },
+ "jugulares": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "jugulares"
+  ],
+  "kind": "primary",
+  "name": "Jugulares",
+  "rank": "Order"
  },
  "junori_withers_1933": {
   "authority": {
@@ -22993,9 +23880,8 @@
   "folded": [
    "laplysia"
   ],
-  "kind": "altSpellingOf",
+  "kind": "primary",
   "name": "Laplysia",
-  "of": "aplysia",
   "rank": "genus"
  },
  "late carinatus_leske_1778": {
@@ -23253,6 +24139,22 @@
   "name": "lehmani",
   "rank": "species"
  },
+ "lemur": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "lemur"
+  ],
+  "kind": "primary",
+  "name": "Lemur",
+  "rank": "genus"
+ },
  "lenticularis_lamarck_1816": {
   "authority": {
    "authors": [
@@ -23267,6 +24169,22 @@
   ],
   "kind": "primary",
   "name": "lenticularis",
+  "rank": "species"
+ },
+ "leonina_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "leonina"
+  ],
+  "kind": "primary",
+  "name": "leonina",
   "rank": "species"
  },
  "lepadiformis_müller.o.f_1776": {
@@ -23491,6 +24409,22 @@
   "name": "Lepidodiscus",
   "rank": "subgenus"
  },
+ "lepidoptera": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "lepidoptera"
+  ],
+  "kind": "primary",
+  "name": "Lepidoptera",
+  "rank": "Order"
+ },
  "lepidus_zhao.y.l_huang.y.z_gong.x.y_1994": {
   "authority": {
    "authors": [
@@ -23525,6 +24459,38 @@
   ],
   "kind": "primary",
   "name": "Lepocrinites",
+  "rank": "genus"
+ },
+ "leporinus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "leporinus"
+  ],
+  "kind": "primary",
+  "name": "leporinus",
+  "rank": "species"
+ },
+ "lepus": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "lepus"
+  ],
+  "kind": "primary",
+  "name": "Lepus",
   "rank": "genus"
  },
  "lernaea": {
@@ -24451,22 +25417,6 @@
   "name": "luna",
   "rank": "species"
  },
- "lunatae": {
-  "authority": {
-   "authors": [
-    "Müller"
-   ],
-   "display": "Müller 1776",
-   "source": "1776_müller.o.f",
-   "year": 1776
-  },
-  "folded": [
-   "lunatae"
-  ],
-  "kind": "primary",
-  "name": "Lunatae",
-  "rank": "section"
- },
  "lyracystidae": {
   "authority": {
    "authors": [
@@ -24750,6 +25700,22 @@
   "kind": "primary",
   "name": "magister",
   "rank": "species"
+ },
+ "magnates": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1761",
+   "source": "1761_linnaeus",
+   "year": 1761
+  },
+  "folded": [
+   "magnates"
+  ],
+  "kind": "primary",
+  "name": "Magnates",
+  "rank": "Order"
  },
  "magnificus_forbes_1848": {
   "authority": {
@@ -25102,6 +26068,22 @@
   "of": "mamillatus_linnaeus_1758",
   "rank": "species"
  },
+ "manatus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "manatus"
+  ],
+  "kind": "primary",
+  "name": "manatus",
+  "rank": "species"
+ },
  "mandalacystis": {
   "authority": {
    "authors": [
@@ -25137,6 +26119,22 @@
   "kind": "primary",
   "name": "Mandibulata",
   "rank": "Class"
+ },
+ "manis": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "manis"
+  ],
+  "kind": "primary",
+  "name": "Manis",
+  "rank": "genus"
  },
  "mansfieldi_guensburg_2010": {
   "authority": {
@@ -25348,6 +26346,22 @@
   ],
   "kind": "primary",
   "name": "maxima",
+  "rank": "species"
+ },
+ "maximus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "maximus"
+  ],
+  "kind": "primary",
+  "name": "maximus",
   "rank": "species"
  },
  "maydena": {
@@ -25773,6 +26787,22 @@
   ],
   "kind": "primary",
   "name": "microbasalis",
+  "rank": "species"
+ },
+ "midas_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "midas"
+  ],
+  "kind": "primary",
+  "name": "midas",
   "rank": "species"
  },
  "milesia_paradoxididae": {
@@ -26330,42 +27360,6 @@
   ],
   "kind": "primary",
   "name": "Mollusca",
-  "rank": "Phylum"
- },
- "mollusca-class": {
-  "authority": {
-   "authors": [
-    "Linnaeus"
-   ],
-   "display": "Linnaeus 1758",
-   "source": "1758_linnaeus",
-   "year": 1758
-  },
-  "folded": [
-   "mollusca",
-   "molluscaclass"
-  ],
-  "kind": "altRankOf",
-  "name": "Mollusca",
-  "of": "mollusca",
-  "rank": "Class"
- },
- "mollusca-order": {
-  "authority": {
-   "authors": [
-    "Linnaeus"
-   ],
-   "display": "Linnaeus 1758",
-   "source": "1758_linnaeus",
-   "year": 1758
-  },
-  "folded": [
-   "mollusca",
-   "molluscaorder"
-  ],
-  "kind": "altRankOf",
-  "name": "Mollusca",
-  "of": "mollusca",
   "rank": "Order"
  },
  "mollusca-unknown-class-1_macleay_1821": {
@@ -26398,7 +27392,7 @@
   "placeholder": "open",
   "rank": "Class"
  },
- "mollusques-class": {
+ "mollusques": {
   "authority": {
    "authors": [
     "Linnaeus"
@@ -26408,52 +27402,13 @@
    "year": 1758
   },
   "folded": [
-   "mollusques",
-   "mollusquesclass"
-  ],
-  "kind": "vulgarSpellingOf",
-  "lang": "FR",
-  "name": "Mollusques",
-  "of": "mollusca-class",
-  "rank": "Class"
- },
- "mollusques-order": {
-  "authority": {
-   "authors": [
-    "Linnaeus"
-   ],
-   "display": "Linnaeus 1758",
-   "source": "1758_linnaeus",
-   "year": 1758
-  },
-  "folded": [
-   "mollusques",
-   "mollusquesorder"
-  ],
-  "kind": "vulgarSpellingOf",
-  "lang": "FR",
-  "name": "Mollusques",
-  "of": "mollusca-order",
-  "rank": "Order"
- },
- "mollusques-phylum": {
-  "authority": {
-   "authors": [
-    "Linnaeus"
-   ],
-   "display": "Linnaeus 1758",
-   "source": "1758_linnaeus",
-   "year": 1758
-  },
-  "folded": [
-   "mollusques",
-   "mollusquesphylum"
+   "mollusques"
   ],
   "kind": "vulgarSpellingOf",
   "lang": "FR",
   "name": "Mollusques",
   "of": "mollusca",
-  "rank": "Phylum"
+  "rank": "Order"
  },
  "molpadia": {
   "authority": {
@@ -26614,6 +27569,22 @@
   "name": "monobrachiolata",
   "rank": "species"
  },
+ "monodon": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "monodon"
+  ],
+  "kind": "primary",
+  "name": "Monodon",
+  "rank": "genus"
+ },
  "monozonida": {
   "authority": {
    "authors": [
@@ -26628,6 +27599,22 @@
   "kind": "primary",
   "name": "Monozonida",
   "rank": "Order"
+ },
+ "monstrosus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "monstrosus"
+  ],
+  "kind": "primary",
+  "name": "monstrosus",
+  "rank": "variety"
  },
  "moorei_meek_1871": {
   "authority": {
@@ -26707,6 +27694,38 @@
   ],
   "kind": "primary",
   "name": "Moroccopyrgus",
+  "rank": "genus"
+ },
+ "morta_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "morta"
+  ],
+  "kind": "primary",
+  "name": "morta",
+  "rank": "species"
+ },
+ "moschus": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "moschus"
+  ],
+  "kind": "primary",
+  "name": "Moschus",
   "rank": "genus"
  },
  "muensteri_eichwald_1840": {
@@ -26948,6 +27967,22 @@
   "name": "Murex",
   "rank": "genus"
  },
+ "murinus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "murinus"
+  ],
+  "kind": "primary",
+  "name": "murinus",
+  "rank": "species"
+ },
  "murphyi_sumrall_garbisch_pope_2000": {
   "authority": {
    "authors": [
@@ -26964,6 +27999,38 @@
   "kind": "primary",
   "name": "murphyi",
   "rank": "species"
+ },
+ "mus": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "mus"
+  ],
+  "kind": "primary",
+  "name": "Mus",
+  "rank": "genus"
+ },
+ "mustela": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "mustela"
+  ],
+  "kind": "primary",
+  "name": "Mustela",
+  "rank": "genus"
  },
  "mya": {
   "authority": {
@@ -27026,6 +28093,22 @@
   "name": null,
   "placeholder": "open",
   "rank": "species"
+ },
+ "myrmecophaga": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "myrmecophaga"
+  ],
+  "kind": "primary",
+  "name": "Myrmecophaga",
+  "rank": "genus"
  },
  "mytilus": {
   "authority": {
@@ -27123,6 +28206,22 @@
   "kind": "primary",
   "name": "Nais",
   "rank": "genus"
+ },
+ "nantes": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "nantes"
+  ],
+  "kind": "primary",
+  "name": "Nantes",
+  "rank": "Order"
  },
  "narrawayella": {
   "authority": {
@@ -27437,6 +28536,22 @@
   "kind": "primary",
   "name": "Nerita",
   "rank": "genus"
+ },
+ "neuroptera": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "neuroptera"
+  ],
+  "kind": "primary",
+  "name": "Neuroptera",
+  "rank": "Order"
  },
  "nevadensis_sprinkle_1973": {
   "authority": {
@@ -28033,12 +29148,13 @@
   "name": "octies digitatus",
   "rank": "species"
  },
- "octodactylos_gmelin_1791": {
+ "octodactylos_gmelin_1791a": {
   "authority": {
    "authors": [
     "Gmelin"
    ],
    "display": "Gmelin 1791",
+   "source": "1791a_gmelin",
    "year": 1791
   },
   "folded": [
@@ -28110,6 +29226,22 @@
   ],
   "kind": "primary",
   "name": "odin",
+  "rank": "species"
+ },
+ "oedipus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "oedipus"
+  ],
+  "kind": "primary",
+  "name": "oedipus",
   "rank": "species"
  },
  "oiseaux": {
@@ -28378,21 +29510,6 @@
   ],
   "kind": "primary",
   "name": "optatus",
-  "rank": "species"
- },
- "orbicularis_gmelin_1791": {
-  "authority": {
-   "authors": [
-    "Gmelin"
-   ],
-   "display": "Gmelin 1791",
-   "year": 1791
-  },
-  "folded": [
-   "orbicularis"
-  ],
-  "kind": "primary",
-  "name": "orbicularis",
   "rank": "species"
  },
  "orbicularis_leske_1778": {
@@ -28767,7 +29884,7 @@
     "Gray"
    ],
    "display": "Gray 1825",
-   "source": "1825_gray.j.e",
+   "source": "1825i_gray.j.e",
    "year": 1825
   },
   "folded": [
@@ -28861,12 +29978,13 @@
   "name": "ovatus",
   "rank": "species"
  },
- "ovatus_gmelin_1791": {
+ "ovatus_gmelin_1791a": {
   "authority": {
    "authors": [
     "Gmelin"
    ],
    "display": "Gmelin 1791",
+   "source": "1791a_gmelin",
    "year": 1791
   },
   "folded": [
@@ -28993,12 +30111,13 @@
   "name": "oviformis",
   "rank": "species"
  },
- "oviformis_gmelin_1791": {
+ "oviformis_gmelin_1791a": {
   "authority": {
    "authors": [
     "Gmelin"
    ],
    "display": "Gmelin 1791",
+   "source": "1791a_gmelin",
    "year": 1791
   },
   "folded": [
@@ -29023,6 +30142,22 @@
   "kind": "primary",
   "name": "oviformis",
   "rank": "species"
+ },
+ "ovis": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "ovis"
+  ],
+  "kind": "primary",
+  "name": "Ovis",
+  "rank": "genus"
  },
  "ovulum_lamarck_1816_fibularia": {
   "authority": {
@@ -29260,6 +30395,22 @@
   ],
   "kind": "primary",
   "name": "palmiferum",
+  "rank": "species"
+ },
+ "paniscus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "paniscus"
+  ],
+  "kind": "primary",
+  "name": "paniscus",
   "rank": "species"
  },
  "pannosus_holloway_jell_1983": {
@@ -29886,6 +31037,22 @@
   "name": "parvus",
   "rank": "species"
  },
+ "passeres": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "passeres"
+  ],
+  "kind": "primary",
+  "name": "Passeres",
+  "rank": "Order"
+ },
  "patella": {
   "authority": {
    "authors": [
@@ -29997,6 +31164,22 @@
   "kind": "primary",
   "name": "Pavona",
   "rank": "genus"
+ },
+ "pecora": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "pecora"
+  ],
+  "kind": "primary",
+  "name": "Pecora",
+  "rank": "Order"
  },
  "pecten": {
   "authority": {
@@ -30348,12 +31531,13 @@
   "of": "pentacrinites",
   "rank": "genus"
  },
- "pentacta_gmelin_1791": {
+ "pentacta_gmelin_1791a": {
   "authority": {
    "authors": [
     "Gmelin"
    ],
    "display": "Gmelin 1791",
+   "source": "1791a_gmelin",
    "year": 1791
   },
   "folded": [
@@ -30393,6 +31577,22 @@
   "kind": "primary",
   "name": "Pentacystida",
   "rank": "Order"
+ },
+ "pentadactyla_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "pentadactyla"
+  ],
+  "kind": "primary",
+  "name": "pentadactyla",
+  "rank": "species"
  },
  "pentagonius_meek_worthen_1865": {
   "authority": {
@@ -30489,12 +31689,13 @@
   "name": "pentapetala",
   "rank": "species"
  },
- "pentaphorus_gmelin_1791": {
+ "pentaphorus_gmelin_1791a": {
   "authority": {
    "authors": [
     "Gmelin"
    ],
    "display": "Gmelin 1791",
+   "source": "1791a_gmelin",
    "year": 1791
   },
   "folded": [
@@ -30502,7 +31703,7 @@
   ],
   "kind": "altSpellingOf",
   "name": "pentaphorus",
-  "of": "pentaporus_gmelin_1791",
+  "of": "pentaporus_gmelin_1791a",
   "rank": "species"
  },
  "pentaporus_eichwald_1840": {
@@ -30521,12 +31722,13 @@
   "name": "pentaporus",
   "rank": "species"
  },
- "pentaporus_gmelin_1791": {
+ "pentaporus_gmelin_1791a": {
   "authority": {
    "authors": [
     "Gmelin"
    ],
    "display": "Gmelin 1791",
+   "source": "1791a_gmelin",
    "year": 1791
   },
   "folded": [
@@ -30710,6 +31912,22 @@
   "name": "perneri",
   "rank": "species"
  },
+ "perspicillatus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "perspicillatus"
+  ],
+  "kind": "primary",
+  "name": "perspicillatus",
+  "rank": "species"
+ },
  "pertusa_müller.o.f_1776": {
   "authority": {
    "authors": [
@@ -30839,6 +32057,22 @@
   "name": "phantapus",
   "rank": "species"
  },
+ "phoca": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "phoca"
+  ],
+  "kind": "primary",
+  "name": "Phoca",
+  "rank": "genus"
+ },
  "pholas": {
   "authority": {
    "authors": [
@@ -30917,6 +32151,22 @@
   "name": "physalis",
   "rank": "species"
  },
+ "physeter": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "physeter"
+  ],
+  "kind": "primary",
+  "name": "Physeter",
+  "rank": "genus"
+ },
  "physsophora": {
   "authority": {
    "authors": [
@@ -30931,6 +32181,22 @@
   "kind": "primary",
   "name": "Physsophora",
   "rank": "genus"
+ },
+ "picae": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "picae"
+  ],
+  "kind": "primary",
+  "name": "Picae",
+  "rank": "Order"
  },
  "pilea_hall_1866": {
   "authority": {
@@ -32376,6 +33642,22 @@
   "kind": "primary",
   "name": "primaevus",
   "rank": "species"
+ },
+ "primates": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "primates"
+  ],
+  "kind": "primary",
+  "name": "Primates",
+  "rank": "Order"
  },
  "primotica_henderson_shergold_1971": {
   "authority": {
@@ -34054,22 +35336,6 @@
   "name": "radiata",
   "rank": "species"
  },
- "radiatae": {
-  "authority": {
-   "authors": [
-    "Linnaeus"
-   ],
-   "display": "Linnaeus 1758",
-   "source": "1758_linnaeus",
-   "year": 1758
-  },
-  "folded": [
-   "radiatae"
-  ],
-  "kind": "primary",
-  "name": "Radiatae",
-  "rank": "section"
- },
  "radiatus_billings_1854": {
   "authority": {
    "authors": [
@@ -34118,12 +35384,13 @@
   "name": "radiatus",
   "rank": "species"
  },
- "radiatus_gmelin_1791": {
+ "radiatus_gmelin_1791a": {
   "authority": {
    "authors": [
     "Gmelin"
    ],
    "display": "Gmelin 1791",
+   "source": "1791a_gmelin",
    "year": 1791
   },
   "folded": [
@@ -34585,22 +35852,6 @@
   "name": "Regulaecystis",
   "rank": "genus"
  },
- "regulares": {
-  "authority": {
-   "authors": [
-    "Linnaeus"
-   ],
-   "display": "Linnaeus 1758",
-   "source": "1758_linnaeus",
-   "year": 1758
-  },
-  "folded": [
-   "regulares"
-  ],
-  "kind": "primary",
-  "name": "Regulares",
-  "rank": "section"
- },
  "regularis_buch_1840": {
   "authority": {
    "authors": [
@@ -34650,10 +35901,11 @@
  "reptiles": {
   "authority": {
    "authors": [
-    "Laurenti"
+    "Linnaeus"
    ],
-   "display": "Laurenti 1768",
-   "year": 1768
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
   },
   "folded": [
    "reptiles"
@@ -34662,22 +35914,23 @@
   "lang": "FR",
   "name": "Reptiles",
   "of": "reptilia",
-  "rank": "Class"
+  "rank": "Order"
  },
  "reptilia": {
   "authority": {
    "authors": [
-    "Laurenti"
+    "Linnaeus"
    ],
-   "display": "Laurenti 1768",
-   "year": 1768
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
   },
   "folded": [
    "reptilia"
   ],
   "kind": "primary",
   "name": "Reptilia",
-  "rank": "Class"
+  "rank": "Order"
  },
  "republicensis_sumrall_sprinkle_guensburg_1997": {
   "authority": {
@@ -35104,6 +36357,22 @@
   "kind": "primary",
   "name": "Rhenopyrgus",
   "rank": "subgenus"
+ },
+ "rhinoceros": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "rhinoceros"
+  ],
+  "kind": "primary",
+  "name": "Rhinoceros",
+  "rank": "genus"
  },
  "rhipidocystidae": {
   "authority": {
@@ -35622,6 +36891,22 @@
   ],
   "kind": "primary",
   "name": "rosea",
+  "rank": "species"
+ },
+ "rosmarus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "rosmarus"
+  ],
+  "kind": "primary",
+  "name": "rosmarus",
   "rank": "species"
  },
  "rossi_sprinkle_1973": {
@@ -36236,6 +37521,22 @@
   "name": "Sans Vertébrés",
   "rank": "Phylum"
  },
+ "sapiens_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "sapiens"
+  ],
+  "kind": "primary",
+  "name": "sapiens",
+  "rank": "species"
+ },
  "saratogensis_ruedemann_1912": {
   "authority": {
    "authors": [
@@ -36297,6 +37598,22 @@
   "kind": "altSpellingOf",
   "name": "sardicus",
   "of": "sardica_leske_1778",
+  "rank": "species"
+ },
+ "satyrus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "satyrus"
+  ],
+  "kind": "primary",
+  "name": "satyrus",
   "rank": "species"
  },
  "savagella": {
@@ -36444,6 +37761,38 @@
   ],
   "kind": "primary",
   "name": "Schuchertocystis",
+  "rank": "genus"
+ },
+ "sciurea_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "sciurea"
+  ],
+  "kind": "primary",
+  "name": "sciurea",
+  "rank": "species"
+ },
+ "sciurus": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "sciurus"
+  ],
+  "kind": "primary",
+  "name": "Sciurus",
   "rank": "genus"
  },
  "scolex": {
@@ -36727,7 +38076,7 @@
     "Gray"
    ],
    "display": "Gray 1825",
-   "source": "1825_gray.j.e",
+   "source": "1825i_gray.j.e",
    "year": 1825
   },
   "folded": [
@@ -36898,12 +38247,13 @@
   "name": "semiglobosa",
   "rank": "species"
  },
- "semilunaris_gmelin_1791": {
+ "semilunaris_gmelin_1791a": {
   "authority": {
    "authors": [
     "Gmelin"
    ],
    "display": "Gmelin 1791",
+   "source": "1791a_gmelin",
    "year": 1791
   },
   "folded": [
@@ -36945,14 +38295,14 @@
   "name": "senegalensis",
   "rank": "species"
  },
- "senilis_linnaeus_1767": {
+ "senilis_linnaeus_1761": {
   "authority": {
    "authors": [
     "Linnaeus"
    ],
-   "display": "Linnaeus 1767",
-   "source": "1767_linnaeus",
-   "year": 1767
+   "display": "Linnaeus 1761",
+   "source": "1761_linnaeus",
+   "year": 1761
   },
   "folded": [
    "senilis"
@@ -37057,6 +38407,22 @@
   "name": "septentrionallis",
   "rank": "species"
  },
+ "serpentes": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "serpentes"
+  ],
+  "kind": "primary",
+  "name": "Serpentes",
+  "rank": "Order"
+ },
  "serpula": {
   "authority": {
    "authors": [
@@ -37121,12 +38487,13 @@
   "name": "setosa",
   "rank": "variety"
  },
- "sexfasciatus_gmelin_1791": {
+ "sexfasciatus_gmelin_1791a": {
   "authority": {
    "authors": [
     "Gmelin"
    ],
    "display": "Gmelin 1791",
+   "source": "1791a_gmelin",
    "year": 1791
   },
   "folded": [
@@ -37231,6 +38598,38 @@
   ],
   "kind": "primary",
   "name": "Siderolites",
+  "rank": "genus"
+ },
+ "silenus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "silenus"
+  ],
+  "kind": "primary",
+  "name": "silenus",
+  "rank": "species"
+ },
+ "simia": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "simia"
+  ],
+  "kind": "primary",
+  "name": "Simia",
   "rank": "genus"
  },
  "similis_billings_1857": {
@@ -37658,6 +39057,22 @@
   "of": "somasteroidea",
   "rank": "Subclass"
  },
+ "sorex": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "sorex"
+  ],
+  "kind": "primary",
+  "name": "Sorex",
+  "rank": "genus"
+ },
  "southworthi_bassler_1936": {
   "authority": {
    "authors": [
@@ -37688,6 +39103,22 @@
   ],
   "kind": "primary",
   "name": "spaskii",
+  "rank": "species"
+ },
+ "spasma_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "spasma"
+  ],
+  "kind": "primary",
+  "name": "spasma",
   "rank": "species"
  },
  "spatagus": {
@@ -37728,7 +39159,7 @@
     "Gray"
    ],
    "display": "Gray 1825",
-   "source": "1825_gray.j.e",
+   "source": "1825i_gray.j.e",
    "year": 1825
   },
   "folded": [
@@ -37761,7 +39192,7 @@
     "Gray"
    ],
    "display": "Gray 1825",
-   "source": "1825_gray.j.e",
+   "source": "1825i_gray.j.e",
    "year": 1825
   },
   "folded": [
@@ -37817,6 +39248,22 @@
   ],
   "kind": "primary",
   "name": "speciosus",
+  "rank": "species"
+ },
+ "spectrum_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "spectrum"
+  ],
+  "kind": "primary",
+  "name": "spectrum",
   "rank": "species"
  },
  "spencensis_wen.r.q_babcock_peng.j_robison_2019": {
@@ -37979,6 +39426,22 @@
   "kind": "primary",
   "name": "Sphagoblastus",
   "rank": "genus"
+ },
+ "sphinx_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "sphinx"
+  ],
+  "kind": "primary",
+  "name": "sphinx",
+  "rank": "species"
  },
  "spinis claviculatis_leske_1778": {
   "authority": {
@@ -38199,6 +39662,7 @@
     "Linnaeus"
    ],
    "display": "Linnaeus 1759",
+   "source": "1759_linnaeus",
    "year": 1759
   },
   "folded": [
@@ -38553,22 +40017,6 @@
   "kind": "primary",
   "name": "stellata",
   "rank": "species"
- },
- "stellatae": {
-  "authority": {
-   "authors": [
-    "Linnaeus"
-   ],
-   "display": "Linnaeus 1758",
-   "source": "1758_linnaeus",
-   "year": 1758
-  },
-  "folded": [
-   "stellatae"
-  ],
-  "kind": "primary",
-  "name": "Stellatae",
-  "rank": "section"
  },
  "stellatus_gaertner_1774": {
   "authority": {
@@ -39661,6 +41109,22 @@
   "name": "superbus",
   "rank": "species"
  },
+ "sus": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "sus"
+  ],
+  "kind": "primary",
+  "name": "Sus",
+  "rank": "genus"
+ },
  "sycocrinites": {
   "authority": {
    "authors": [
@@ -39692,6 +41156,22 @@
   "name": "Sycocystites",
   "rank": "genus"
  },
+ "sylvanus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "sylvanus"
+  ],
+  "kind": "primary",
+  "name": "sylvanus",
+  "rank": "species"
+ },
  "sypho_forsskål_1775": {
   "authority": {
    "authors": [
@@ -39705,6 +41185,22 @@
   ],
   "kind": "primary",
   "name": "sypho",
+  "rank": "species"
+ },
+ "syrichta_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "syrichta"
+  ],
+  "kind": "primary",
+  "name": "syrichta",
   "rank": "species"
  },
  "syringocrinida": {
@@ -39787,6 +41283,22 @@
   "name": "taijiangensis",
   "rank": "species"
  },
+ "talpa": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "talpa"
+  ],
+  "kind": "primary",
+  "name": "Talpa",
+  "rank": "genus"
+ },
  "tanaocystis": {
   "authority": {
    "authors": [
@@ -39802,6 +41314,22 @@
   "kind": "primary",
   "name": "Tanaocystis",
   "rank": "genus"
+ },
+ "tardigradus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "tardigradus"
+  ],
+  "kind": "primary",
+  "name": "tardigradus",
+  "rank": "species"
  },
  "tarentina_lamarck_1816": {
   "authority": {
@@ -40137,12 +41665,13 @@
   "name": "Teredo",
   "rank": "genus"
  },
- "teres_gmelin_1791": {
+ "teres_gmelin_1791a": {
   "authority": {
    "authors": [
     "Gmelin"
    ],
    "display": "Gmelin 1791",
+   "source": "1791a_gmelin",
    "year": 1791
   },
   "folded": [
@@ -40184,7 +41713,7 @@
   "name": "tessellata",
   "rank": "species"
  },
- "testacea-order": {
+ "testacea": {
   "authority": {
    "authors": [
     "Linnaeus"
@@ -40194,8 +41723,7 @@
    "year": 1758
   },
   "folded": [
-   "testacea",
-   "testaceaorder"
+   "testacea"
   ],
   "kind": "primary",
   "name": "Testacea",
@@ -40246,7 +41774,7 @@
   "kind": "vulgarSpellingOf",
   "lang": "FR",
   "name": "Testacés",
-  "of": "testacea-order",
+  "of": "testacea",
   "rank": "Order"
  },
  "testudinarius_hisinger_1837": {
@@ -40330,12 +41858,29 @@
   "name": "Tetracystis",
   "rank": "genus"
  },
- "tetraporus_gmelin_1791": {
+ "tetradactyla_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "tetradactyla"
+  ],
+  "kind": "primary",
+  "name": "tetradactyla",
+  "rank": "species"
+ },
+ "tetraporus_gmelin_1791a": {
   "authority": {
    "authors": [
     "Gmelin"
    ],
    "display": "Gmelin 1791",
+   "source": "1791a_gmelin",
    "year": 1791
   },
   "folded": [
@@ -40468,6 +42013,22 @@
   "kind": "primary",
   "name": "thor",
   "rank": "species"
+ },
+ "thoracici": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "thoracici"
+  ],
+  "kind": "primary",
+  "name": "Thoracici",
+  "rank": "Order"
  },
  "thorntonites": {
   "authority": {
@@ -40930,22 +42491,7 @@
     "Gunnerus"
    ],
    "display": "Gunnerus 1767",
-   "year": 1767
-  },
-  "folded": [
-   "tremula"
-  ],
-  "kind": "primary",
-  "name": "tremula",
-  "rank": "species"
- },
- "tremula_linnaeus_1767": {
-  "authority": {
-   "authors": [
-    "Linnaeus"
-   ],
-   "display": "Linnaeus 1767",
-   "source": "1767_linnaeus",
+   "source": "1767_gunnerus",
    "year": 1767
   },
   "folded": [
@@ -41067,6 +42613,22 @@
   "name": "tribuloides",
   "rank": "species"
  },
+ "trichechus": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "trichechus"
+  ],
+  "kind": "primary",
+  "name": "Trichechus",
+  "rank": "genus"
+ },
  "trichocephalus": {
   "authority": {
    "authors": [
@@ -41113,6 +42675,38 @@
   "kind": "primary",
   "name": "Trichoda",
   "rank": "genus"
+ },
+ "tridactyla_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "tridactyla"
+  ],
+  "kind": "primary",
+  "name": "tridactyla",
+  "rank": "species"
+ },
+ "tridactylus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "tridactylus"
+  ],
+  "kind": "primary",
+  "name": "tridactylus",
+  "rank": "species"
  },
  "trigona_lamarck_1816": {
   "authority": {
@@ -41239,6 +42833,22 @@
   "kind": "primary",
   "name": "Trochus",
   "rank": "genus"
+ },
+ "troglodytes_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "troglodytes"
+  ],
+  "kind": "primary",
+  "name": "troglodytes",
+  "rank": "species"
  },
  "tubaria_lamarck_1816": {
   "authority": {
@@ -41370,12 +42980,13 @@
   "name": "Tubularia",
   "rank": "genus"
  },
- "tubulosa_gmelin_1791": {
+ "tubulosa_gmelin_1791a": {
   "authority": {
    "authors": [
     "Gmelin"
    ],
    "display": "Gmelin 1791",
+   "source": "1791a_gmelin",
    "year": 1791
   },
   "folded": [
@@ -42010,6 +43621,38 @@
   "name": "Urceolaria",
   "rank": "genus"
  },
+ "ursina_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "ursina"
+  ],
+  "kind": "primary",
+  "name": "ursina",
+  "rank": "species"
+ },
+ "ursus": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "ursus"
+  ],
+  "kind": "primary",
+  "name": "Ursus",
+  "rank": "genus"
+ },
  "utahensis_lefebvre_lerosey-aubril_2018": {
   "authority": {
    "authors": [
@@ -42138,6 +43781,22 @@
   "kind": "primary",
   "name": "Valvatida",
   "rank": "Order"
+ },
+ "vampyrus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "vampyrus"
+  ],
+  "kind": "primary",
+  "name": "vampyrus",
+  "rank": "species"
  },
  "variegata_leske_1778": {
   "authority": {
@@ -42524,6 +44183,22 @@
   "name": "verus",
   "rank": "species"
  },
+ "vespertilio": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "vespertilio"
+  ],
+  "kind": "primary",
+  "name": "Vespertilio",
+  "rank": "genus"
+ },
  "vetusta_foerste_1914": {
   "authority": {
    "authors": [
@@ -42794,6 +44469,38 @@
   "name": "vittata",
   "rank": "species"
  },
+ "vitulina_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "vitulina"
+  ],
+  "kind": "primary",
+  "name": "vitulina",
+  "rank": "species"
+ },
+ "viverra": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "viverra"
+  ],
+  "kind": "primary",
+  "name": "Viverra",
+  "rank": "genus"
+ },
  "viviani_ewin_martin.m_isotalo_zamora_2020": {
   "authority": {
    "authors": [
@@ -42874,6 +44581,22 @@
   "kind": "primary",
   "name": "Vizcainoia",
   "rank": "genus"
+ },
+ "volans_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "volans"
+  ],
+  "kind": "primary",
+  "name": "volans",
+  "rank": "species"
  },
  "volborthi_hecker_1939": {
   "authority": {
@@ -43781,5 +45504,90 @@
   "name": "Échinodermes",
   "of": "echinodermata-order",
   "rank": "Order"
+ },
+ "α_linnaeus_1758_orbiculus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "α"
+  ],
+  "kind": "primary",
+  "name": "α",
+  "originalParent": "orbiculus_linnaeus_1758",
+  "rank": "variety"
+ },
+ "β_linnaeus_1758_orbiculus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "β"
+  ],
+  "kind": "primary",
+  "name": "β",
+  "originalParent": "orbiculus_linnaeus_1758",
+  "rank": "variety"
+ },
+ "β_linnaeus_1758_rubens_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "β"
+  ],
+  "kind": "primary",
+  "name": "β",
+  "originalParent": "rubens_linnaeus_1758",
+  "rank": "variety"
+ },
+ "γ_linnaeus_1758_orbiculus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "γ"
+  ],
+  "kind": "primary",
+  "name": "γ",
+  "originalParent": "orbiculus_linnaeus_1758",
+  "rank": "variety"
+ },
+ "δ_linnaeus_1758_orbiculus_linnaeus_1758": {
+  "authority": {
+   "authors": [
+    "Linnaeus"
+   ],
+   "display": "Linnaeus 1758",
+   "source": "1758_linnaeus",
+   "year": 1758
+  },
+  "folded": [
+   "δ"
+  ],
+  "kind": "primary",
+  "name": "δ",
+  "originalParent": "orbiculus_linnaeus_1758",
+  "rank": "variety"
  }
 }

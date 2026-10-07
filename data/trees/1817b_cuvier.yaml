@@ -6,7 +6,9 @@ taxonomies:
     children:
     - taxon: reptiles
     - taxon: poissons
-  - taxon: mollusques-phylum
+  - taxon: mollusques
+    rank: Division
+    citedAs: DEUXIEME GRANDE DIVISION DU REGNE ANIMAL. LES MOLLUSQUES (i).
     children:
     - taxon: céphalopodes-class
     - taxon: ptéropodes-class

@@ -27,6 +27,16 @@
   - linnaeus
   identifiers:
     url: https://www.biodiversitylibrary.org/page/726886#page/3/mode/1up
+  notes: The first formal source of Linnaeant taxonomy. (volume 1)
+1759_linnaeus:
+  title: Regnum Animalia
+  book: systema-naturae-10th-ed
+  volume: 2
+  pubDate:
+    year: 1759
+  authors:
+  - linnaeus
+  notes: The first formal source of Linnaeant taxonomy. (volume 2)
 1760a_linnaeus:
   book: systema-naturae-11th-ed
   volume: 1
@@ -37,6 +47,10 @@
   - linnaeus
   identifiers:
     url: https://www.biodiversitylibrary.org/item/31224#page/5/mode/1up
+  notes: >
+    Essentially a reprint of the 10th edition, but in two parts
+    with minor typographcial changes such as conversion of ligatures
+    to separate letters.  Even the page numbers appear to be identical.
 1760b_linnaeus:
   book: systema-naturae-11th-ed
   volume: 1
@@ -47,6 +61,18 @@
   - linnaeus
   identifiers:
     url: https://www.biodiversitylibrary.org/item/31242#page/7/mode/1up
+  notes: >
+    Essentially a reprint of the 10th edition, but in two parts
+    with minor typographcial changes such as conversion of ligatures
+    to separate letters.  Even the page numbers appear to be identical.
+1761_linnaeus:
+  book: fauna-svecica
+  pubDate:
+    year: 1761
+  authors:
+  - linnaeus
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/100333#page/11/mode/1up
 1766_linnaeus:
   book: systema-naturae-12th-ed
   volume: 1
@@ -177,6 +203,38 @@
     year: 1778
   authors:
   - leske
+1788a_gmelin:
+  book: systema-naturae-13th-ed
+  volume: 1
+  number: 1
+  pages:
+  - i
+  - xii
+  - 1
+  - 500
+  pubDate:
+    year: 1788
+    month: 7
+    day: 25
+  authors:
+  - gmelin
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/36932
+1788b_gmelin:
+  book: systema-naturae-13th-ed
+  volume: 1
+  number: 2
+  pages:
+  - 501
+  - 1032
+  pubDate:
+    year: 1788
+    month: 4
+    day: 20
+  authors:
+  - gmelin
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/36932
 1789a_bruguière:
   book: methodique
   volume: 1
@@ -213,6 +271,98 @@
     No scan of volume 3 of the 1789 edition available online.
   identifiers:
     url: https://www.google.com/books/edition/Encyclop%C3%A9die_m%C3%A9thodique/Qm_zzAEACAAJ
+1789_gmelin:
+  book: systema-naturae-13th-ed
+  volume: 1
+  number: 3
+  pages:
+  - 1033
+  - 1516
+  pubDate:
+    year: 1789
+    month: 11
+    day: 20
+  authors:
+  - gmelin
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/36932
+1790a_gmelin:
+  book: systema-naturae-13th-ed
+  volume: 1
+  number: 4
+  pages:
+  - 1517
+  - 2224
+  pubDate:
+    year: 1790
+    month: 5
+    day: 21
+  authors:
+  - gmelin
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/36932
+1790b_gmelin:
+  book: systema-naturae-13th-ed
+  volume: 1
+  number: 5
+  pages:
+  - 2225
+  - 3020
+  pubDate:
+    year: 1790
+    month: 12
+    day: 6
+  authors:
+  - gmelin
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/36932
+1791a_gmelin:
+  book: systema-naturae-13th-ed
+  volume: 1
+  number: 6
+  pages:
+  - 3021
+  - 3910
+  pubDate:
+    year: 1791
+    month: 5
+    day: 14
+  authors:
+  - gmelin
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/36932
+1791b_gmelin:
+  book: systema-naturae-13th-ed
+  volume: 2
+  number: 1
+  pages:
+  - i
+  - xl
+  - 1
+  - 884
+  pubDate:
+    year: 1791
+    month: 9
+    day: 25
+  authors:
+  - gmelin
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/36932
+  notes: Date is announced availability, publication may have been later.
+1791c_gmelin:
+  book: systema-naturae-13th-ed
+  volume: 2
+  number: 2
+  pages:
+  - 885
+  - 1661
+  pubDate:
+    year: 1791
+  authors:
+  - gmelin
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/36932
+  notes: Publication date uncertain, announced with Part 1, may have been later.
 1791_bruguière:
   book: tableau
   pubDate:
@@ -222,6 +372,33 @@
   notes: Officially recognized use of "Echinodermata" (in Latin), revived from Klein
   identifiers:
     url: https://www.biodiversitylibrary.org/bibliography/64072
+1792_gmelin:
+  book: systema-naturae-13th-ed
+  volume: 1
+  number: 7
+  pages:
+  - 3911
+  - 4120
+  pubDate:
+    year: 1792
+    month: 7
+    day: 2
+  authors:
+  - gmelin
+  identifiers:
+    url: https://archive.org/details/rcin.org.pl.WA058_75006_K4125-1-VII_Linn-Syst-natur-Ind_56297/page/n5/mode/2up
+1793_gmelin:
+  book: systema-naturae-13th-ed
+  volume: 3
+  pages:
+  - 1
+  - 476
+  pubDate:
+    year: 1793
+  authors:
+  - gmelin
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/36932
 1798_cuvier:
   book: tableau-cuvier
   notes: Date may be 1797 or 1798
@@ -264,6 +441,19 @@
   - lamarck
   identifiers:
     url: https://www.biodiversitylibrary.org/item/89352
+1816_blainville:
+  title: Prodrome d'une nouvelle distribution systématique du règne animal
+  journal: bulldessci
+  volume: 8
+  pages:
+  - 113
+  - 124
+  pubDate:
+    year: 1816
+  authors:
+  - blainville
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/4439803#page/117/mode/1up
 1816a_lamarck:
   book: hist-sans-vert
   volume: 2
@@ -442,16 +632,56 @@
   - parkinson
   identifiers:
     url: https://darwin-online.org.uk/converted/pdf/1822_fossil_CUL-DAR.LIB.490.pdf
-1825_gray.j.e:
+# Gray published frequently in annals-phil-ns vol. 9 and 10 (both 1825),
+# so spaces have been left for other articles not yet under consideration.
+# a. (not relevant to taxonomy)
+# b. Mr. Gray on some Species of Shells not taken Notice of by Lamarck
+#    in vol. 9 Number II. — February
+# (nothing in Numbers III – V)
+# c. Mr. Gray on some Species of Shells not taken Notice of by Lamarck
+#    (concluded) in vol. 9 Number VI. — June
+# d. Mr. Gray on the Genus Ursus of Cuvier, with its Divisions into Subgenera
+#    in vol. 10 Number I. — July
+# e. Mr. Gray's Synopsis of the Genera of Cirripedes arranged in Natural
+#    Families, with a Description of some new Species
+#    in vol. 10 Number II. — August
+# f. [see below]
+# g. Mr. Gray on the Synomina of the Genera Anomia, Crania Orbicula, and
+#   Descina in vol. 10 Number IV. October
+# h. Mr. Gray on Mammalia in vol. 10 Number V. November
+# i. [see below]
+1825f_gray.j.e:
+  title: >
+    A Synopsis of the genera of Reptiles and Amphibia, with a description
+    of some new species
+  journal: annals-phil-ns
+  volume: 10
+  number: 3
+  pubDate:
+    year: 1825
+    month: 9
+  pages:
+  - 193
+  - 217
+  authors:
+  - gray.j.e
+  identifiers:
+    url: https://www.biodiversitylibrary.org/page/2531387#page/207/mode/1up
+1825i_gray.j.e:
   title: An Attempt to divide the Echinida, or Sea Eggs, into Natural Families
   journal: annals-phil-ns
   volume: 10
   number: 6
+  pages:
+  - 423
+  - 431
   pubDate:
     year: 1825
     month: 12
   authors:
   - gray.j.e
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/20125#page/439/mode/1up
 1825a_say:
   title: On two genera and several species of Crinoidea
   journal: jofacnatsci-philadelphia

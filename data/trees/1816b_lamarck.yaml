@@ -21,13 +21,13 @@ taxonomies:
           - taxon: digitata_lamarck_1816
             new: true
             synonyms:
-            - taxon: decadactylos_gmelin_1791
+            - taxon: decadactylos_gmelin_1791a
               parents:
               - taxon: echinus
             - taxon: decies digitatus_leske_1778
               parents:
               - taxon: echinodiscus
-            - taxon: octodactylos_gmelin_1791
+            - taxon: octodactylos_gmelin_1791a
               parents:
               - taxon: echinus
             - taxon: octies digitatus_leske_1778
@@ -41,7 +41,7 @@ taxonomies:
           - taxon: sexforis_lamarck_1816
             new: true
             synonyms:
-            - taxon: hexaporus_gmelin_1791
+            - taxon: hexaporus_gmelin_1791a
               parents:
               - taxon: echinus
             - taxon: sexies perforatus_leske_1778
@@ -50,7 +50,7 @@ taxonomies:
           - taxon: quinquefora_lamarck_1816
             new: true
             synonyms:
-            - taxon: pentaphorus_gmelin_1791
+            - taxon: pentaphorus_gmelin_1791a
               notes: Proper spelling "pentaporus"
               parents:
               - taxon: echinus
@@ -60,23 +60,23 @@ taxonomies:
           - taxon: quadrifora_lamarck_1816
             new: true
             synonyms:
-            - taxon: tetraporus_gmelin_1791
+            - taxon: tetraporus_gmelin_1791a
               parents:
               - taxon: echinus
             - taxon: quater perforatus_leske_1778
               parents:
               - taxon: echinodiscus
-          - taxon: bifora_gmelin_1791
+          - taxon: bifora_gmelin_1791a
             synonyms:
-            - taxon: biforis_gmelin_1791
+            - taxon: biforis_gmelin_1791a
               parents:
               - taxon: echinus
             - taxon: biperforatus_leske_1778
               parents:
               - taxon: echinodiscus
-          - taxon: bifissa_gmelin_1791
+          - taxon: bifissa_audouin_1806
             synonyms:
-            - taxon: inauritus_gmelin_1791
+            - taxon: inauritus_gmelin_1791a
               parents:
               - taxon: echinus
             - taxon: auritus_leske_1778
@@ -87,9 +87,13 @@ taxonomies:
               - taxon: echinus
           - taxon: lenticularis_lamarck_1816
             new: true
-          - taxon: orbicularis_gmelin_1791
+          - taxon: orbicularis_leske_1778
             synonyms:
-            - taxon: orbicularis_gmelin_1791
+            - notes: >
+                It is unclear what citing Gmelin here meant as Gmelin
+                does not seem to have an E. orbicularis?
+              authority:
+                source: 1791a_gmelin
               parents:
               - taxon: echinus
           - taxon: fibularis_lamarck_1816
@@ -145,9 +149,9 @@ taxonomies:
               - taxon: echinodiscus
           - taxon: excentricus_lamarck_1816_clypeaster
             new: true
-          - taxon: oviformis_gmelin_1791
+          - taxon: oviformis_gmelin_1791a
             synonyms:
-            - taxon: oviformis_gmelin_1791
+            - taxon: oviformis_gmelin_1791a
               parents:
               - taxon: echinus
             - taxon: ovatus_leske_1778_echinanthus_leske_1778
@@ -175,7 +179,7 @@ taxonomies:
             - taxon: cyclostomus_leske_1778
               parents:
               - taxon: echinus
-          - taxon: semilunaris_gmelin_1791
+          - taxon: semilunaris_gmelin_1791a
             synonyms:
             - taxon: minor_leske_1778_echinoneus
           - taxon: gibbosus_lamarck_1816
@@ -200,9 +204,9 @@ taxonomies:
               - taxon: echinites
           - taxon: abbreviatus_lamarck_1816
             new: true
-          - taxon: sexfasciatus_gmelin_1791
+          - taxon: sexfasciatus_gmelin_1791a
             synonyms:
-            - taxon: sexfasciatus_gmelin_1791
+            - taxon: sexfasciatus_gmelin_1791a
               parents:
               - taxon: echinus
             - taxon: sexies fasciculatus_leske_1778
@@ -325,7 +329,7 @@ taxonomies:
             new: true
             synonyms:
             - tentative: true
-              taxon: teres_gmelin_1791
+              taxon: teres_gmelin_1791a
               parents:
               - taxon: echinus
             - tentative: true
@@ -398,7 +402,7 @@ taxonomies:
             notes: attribution uncertain
             new: true
             synonyms:
-            - taxon: complanatus_gmelin_1791
+            - taxon: complanatus_gmelin_1791a
               parents:
               - taxon: echinus
           - taxon: subglobosus_leske_1778
@@ -408,10 +412,10 @@ taxonomies:
           - taxon: prunella_lamarck_1816
             notes: attribution uncertain
             new: true
-          - taxon: radiatus_gmelin_1791
+          - taxon: radiatus_gmelin_1791a
             synonyms:
             - taxon: striato-radiatus_leske_1778
-            - taxon: radiatus_gmelin_1791
+            - taxon: radiatus_gmelin_1791a
               parents:
               - taxon: echinus
         - taxon: cassidulus
@@ -678,7 +682,7 @@ taxonomies:
             - taxon: judaica_linnaeus_1761
             - taxon: viduata_müller.o.f_1776
             - taxon: effoeta_linnaeus_1767
-            - taxon: senilis_linnaeus_1767
+            - taxon: senilis_linnaeus_1761
             - taxon: undata_müller.o.f_1784
             - taxon: sulcata_pennant_1777
             - taxon: gigas_bruguière_1798
@@ -717,7 +721,7 @@ taxonomies:
             children:
             - taxon: frondosa_gunnerus_1767
             - taxon: phantapus_strussenfelt_1765
-            - taxon: pentacta_gmelin_1791
+            - taxon: pentacta_gmelin_1791a
             - taxon: doliolum_pallas_1766
               synonyms:
               - taxon: doliolum_pallas_1766

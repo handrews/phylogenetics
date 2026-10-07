@@ -1,17 +1,54 @@
-notes: |
-  Some confusion regarding date of this vs 12th ed. of Linnaeus.
-  Holothuria in the sense of sea cucumbers, as well as all of the
-  other names, are all new either here or in Linnaeus 12th edition,
-  depending on publication order.  The consensus seems to be to
-  credit frondosa to Gunnerus and everything else to Linnaeus, although
-  I cannot figure out why.  For that reason, the Holothuria here is
-  treated as Holothuria (Linnaeus 1767) instead of (Linnaeus 1758).
+unused: [type]
+notes: >
+  There is a lot of confusion over this paper vs Systema Naturae 12th edition.
+  Gunnerus showed Linnaeus an early draft of some sort, with his two
+  new Holothuria species and a new species Priapus polypus.
+  Linnaeus apparently convinced Gunnerus that this "new" species was
+  actually Priapus senilis.  Linnaeus also must have told Gunnerus
+  about the genus Actinia he was planning to include in the 12th edition.
+  Based on the work of Job Baster ("Natuurkundige uitspanningen, behelzende
+  eenige waarneemingen over sommige zee-planten en zee-insecten" in Dutch or
+  "Opuscula subseciva, observationes miscellaneas de animalculis et plantis
+  quibusdam marinis, eorumque ovariis et seminibus continentia" in Latin,
+  published in several pieces simultaneously in both languages between 1759
+  and 1765), Gunnerus explicitly re-assigns senilis to Actinia, despite
+  Actinia not having been published yet.  As this paper came out before
+  the 12th edition, the two Holothuria species are attributed to Gunnerus.
+  But as Gunnerus did not claim authorship of Actinia, it is attributed
+  to Linnaeus even though the 12th edition came out a few months later.
 taxonomies:
 - taxon: holothuria
+  pages: 115
+  notes: >
+    Emendation to the modern sense yet published, but used based on
+    a preview of its publication.
   children:
   - taxon: frondosa_gunnerus_1767
+    citedAs: HOLOTHURIA frondoſa.
     new: true
-  - taxon: tremula_linnaeus_1767
+    pages: 115
+    illustrations:
+    - plate: IV
+      figures: [1, 2]
+  - taxon: tremula_gunnerus_1767
+    citedAs: HOLOTHURIA tremula.
+    new: true
+    pages: 119
+    illustrations:
+    - plate: IV
+      figures: 3
 - taxon: actinia
+  pages: 121
+  notes: >
+    Not yet published, but used based on a preview of its publication
+    so not considered new.
   children:
-  - taxon: senilis_linnaeus_1767
+  - taxon: senilis_linnaeus_1761
+    citedAs: ACTINIA ſenilis.
+    recombined: true
+    pages: 121
+    moved:
+      taxon: priapus
+    illustrations:
+    - plate: IV
+      figures: [4, 5]

@@ -25,6 +25,7 @@ taxonomies:
     - taxon: vorticella
     - taxon: brachionus
   - taxon: intestins
+    rank: Order
     children:
     - taxon: gordius
     - taxon: cuculanus
@@ -41,7 +42,8 @@ taxonomies:
     - taxon: amphinome
       new: true
     - taxon: aphrodita
-  - taxon: mollusques-order
+  - taxon: mollusques
+    rank: Order
     children:
     - taxon: mammaria
     - taxon: ascidia
@@ -132,6 +134,7 @@ taxonomies:
     - taxon: echinus
       notes: Volume 2/3 not available for species (filed under Oursin).
   - taxon: testacés
+    rank: Order
   - taxon: zoophites
     children:
     - taxon: tubipora

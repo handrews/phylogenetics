@@ -320,10 +320,6 @@ class Taxon:
         ),
       ),
     ):
-      if self.name.endswith(suffix) and self.rank != rank:
-        logger.warning(
-          f'{self.name} with suffix "{suffix}" expected to have rank of {rank}',
-        )
       if self.rank == rank and not self.name.endswith(suffix) and self.name not in exceptions:
         logger.warning(
           f'{self.name} of rank {rank} expected to end with suffix "{suffix}"',
@@ -358,6 +354,7 @@ class Taxon:
         'Corallina',
         'Craterina',
         'Funiculina',
+        'Intestina',
         'Meandrina',
         'Palasterina',
         'Palaeasterina',
@@ -366,7 +363,8 @@ class Taxon:
     )
 
     for suffix, ranks, exceptions in (
-      ('acea', ('Superfamily',), frozenset({'Crustacea'})),
+      ('inae', ('Subfamily',), frozenset({'Gallinae'})),
+      ('acea', ('Superfamily',), frozenset({'Crustacea', 'Testacea'})),
       ('ina', ('Suborder',), ina_exceptions),
       ('ida', ('Order',), ida_exceptions),
       (
@@ -378,7 +376,7 @@ class Taxon:
       if self.name.endswith(suffix) and self.rank not in ranks and self.name not in exceptions:
         logger.warning(
           f'{self.name} with suffix "{suffix}" expected to have one of ranks '
-          f'{ranks} but has rank {self.rank}',
+          f'{ranks} but has rank {self.rank} and is not in {exceptions}',
         )
 
     # TODO: More ranks, but they get increasingly inconsistent.
