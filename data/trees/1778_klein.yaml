@@ -1,9 +1,13 @@
 taxonomies:
-- taxon: echinodermata_klein_1778
+- taxon: echinodermata
+  rank: null
   new: true
   notes: |
-    The intended rank is unclear.  It might have been Order, but the
-    subgroups were called Classes, although perhaps the ranks were not
-    settled at the time.  Phylum seems unlikely, if it was even in use.
-    No other taxa defined in this (reprinted from 1734) work are
-    available per ICZN rules.
+    Klein used "Echinodermata" (and "Echinodermatum") as a description
+    of echinoid tests rather than as a taxon, which perhaps contributes
+    to the question of whether this reprint of Klein's 1734 work establishes
+    the taxon or not.  All other taxa defined here are unavailable even
+    with this reprint as Klein did not consistently use binomial nomenclature,
+    which Leske corrected in his lengthy "addendum", gaining authorship
+    of the taxa in the process.  However, Leske did not address
+    the term Echinodermata, leaving it to be revived later by Bruguière.
