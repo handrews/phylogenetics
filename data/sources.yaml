@@ -432,6 +432,32 @@
   - hisinger
   identifiers:
     url: https://www.biodiversitylibrary.org/page/46952850
+1802_lamarck:
+  book: recherches
+  pubDate:
+    year: 1802
+  authors:
+  - lamarck
+  identifiers:
+    url: https://www.google.com/books/edition/Recherches_sur_l_organisation_des_corps/z7pt8MaIh1cC
+1809a_lamarck:
+  book: phil-zool
+  volume: 1
+  pubDate:
+    year: 1809
+  authors:
+  - lamarck
+  identifiers:
+    url: https://archive.org/details/Lamarck2001aj56E
+1809b_lamarck:
+  book: phil-zool
+  volume: 2
+  pubDate:
+    year: 1809
+  authors:
+  - lamarck
+  identifiers:
+    url: https://archive.org/details/b2203948x_0002
 1815_lamarck:
   book: hist-sans-vert
   volume: 1
@@ -441,6 +467,7 @@
   - lamarck
   identifiers:
     url: https://www.biodiversitylibrary.org/item/89352
+  notes: AI says March 1815
 1816_blainville:
   title: Prodrome d'une nouvelle distribution systématique du règne animal
   journal: bulldessci
@@ -454,6 +481,7 @@
   - blainville
   identifiers:
     url: https://www.biodiversitylibrary.org/page/4439803#page/117/mode/1up
+  notes: AI says "late 1816" between vols. 3 and 4 of Lamarck.
 1816a_lamarck:
   book: hist-sans-vert
   volume: 2
@@ -463,6 +491,7 @@
   - lamarck
   identifiers:
     url: https://www.biodiversitylibrary.org/item/89354
+  notes: AI says March 1816
 1816b_lamarck:
   book: hist-sans-vert
   volume: 3
@@ -472,6 +501,7 @@
   - lamarck
   identifiers:
     url: https://www.biodiversitylibrary.org/item/89345
+  notes: AI says August 1816
 1817_lamarck:
   book: hist-sans-vert
   volume: 4
@@ -481,6 +511,7 @@
   - lamarck
   identifiers:
     url: https://www.biodiversitylibrary.org/item/89218
+  notes: AI says April 1817
 1817a_cuvier:
   book: regne-animal
   volume: 1
@@ -518,6 +549,7 @@
   - lamarck
   identifiers:
     url: https://www.biodiversitylibrary.org/item/89220
+  notes: AI says July 1818
 1819_lamarck:
   book: hist-sans-vert
   volume: 6
@@ -528,6 +560,7 @@
   - lamarck
   identifiers:
     url: https://www.biodiversitylibrary.org/item/89219
+  notes: AI says June 1819
 1819_macleay:
   book: horae
   volume: 1
@@ -612,9 +645,9 @@
     year: 1822
   authors:
   - lamarck
-  notes: Parts 1 and 2 bound in the same book on BDL
   identifiers:
     url: https://www.biodiversitylibrary.org/item/89219
+  notes: AI says April 1822; Parts 1 and 2 bound in the same book on BDL
 1822b_lamarck:
   book: hist-sans-vert
   volume: 7
@@ -624,6 +657,7 @@
   - lamarck
   identifiers:
     url: https://www.biodiversitylibrary.org/item/89350
+  notes: AI says August 1822
 1822_parkinson:
   book: outlines-of-oryctology
   pubDate:
@@ -682,6 +716,14 @@
   - gray.j.e
   identifiers:
     url: https://www.biodiversitylibrary.org/item/20125#page/439/mode/1up
+1825_latreille:
+  book: fam-nat
+  pubDate:
+    year: 1825
+  authors:
+  - latreille
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/16094
 1825a_say:
   title: On two genera and several species of Crinoidea
   journal: jofacnatsci-philadelphia
@@ -776,6 +818,18 @@
     year: 1826
   authors:
   - schlotheim
+1827_baer:
+  title: Beiträge zur Kenntniss der Niedern Thiere
+  journal: leopoldo
+  volume: 13
+  number: Part 2
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/113872#page/149/mode/1up
+  pubDate:
+    year: 1827
+  authors:
+  - baer
+  notes: Unclear if the two parts of the volume are made of distinct issues.
 1827_say:
   title: On the species of the Linnean genus Echinus, inhabiting the coast of the United States
   journal: jofacnatsci-philadelphia
@@ -798,6 +852,41 @@
   - hisinger
   identifiers:
     url: https://www.google.com/books/edition/Anteckningar_i_Physik_och_Geognosi_under/LotfAAAAcAAJ?hl=en
+1829a_cuvier:
+  book: regne-animal-2nd
+  volume: 1
+  pubDate:
+    year: 1829
+  authors:
+  - cuvier
+1829b_cuvier:
+  book: regne-animal-2nd
+  volume: 2
+  pubDate:
+    year: 1829
+  authors:
+  - cuvier
+1829c_cuvier:
+  book: regne-animal-2nd
+  volume: 4
+  pubDate:
+    year: 1829
+  authors:
+  - cuvier
+1829d_cuvier:
+  book: regne-animal-2nd
+  volume: 5
+  pubDate:
+    year: 1829
+  authors:
+  - cuvier
+1830_cuvier:
+  book: regne-animal-2nd
+  volume: 3
+  pubDate:
+    year: 1830
+  authors:
+  - cuvier
 1830_pander:
   book: beitrage
   pubDate:
@@ -806,6 +895,44 @@
   - pander
   identifiers:
     url: https://www.google.com/books/edition/Beitr%C3%A4ge_zur_geognosie_des_russischen_r/yJ0_AAAAYAAJ?hl=en
+1836_burmeister:
+  book: handbuch-nat
+  volume: 1
+  pages:
+  - 1
+  - 103
+  pubDate:
+    year: 1836
+  authors:
+  - burmeister
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/100177
+  notes: Minerologie
+1837a_burmeister:
+  book: handbuch-nat
+  volume: 2
+  pages:
+  - 104
+  - 368
+  pubDate:
+    year: 1837
+  authors:
+  - burmeister
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/100177
+1837c_burmeister:
+  book: handbuch-nat
+  volume: 3
+  pages:
+  - 369
+  - 858
+  pubDate:
+    year: 1837
+  authors:
+  - burmeister
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/100177
+  notes: Zoologie
 1837_hisinger:
   book: lethaea-suecica
   authors:

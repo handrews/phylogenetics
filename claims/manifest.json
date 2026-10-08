@@ -6,6 +6,7 @@
   "ausich": "Ausich",
   "austin.t": "Austin",
   "babcock": "Babcock",
+  "baer": "Baer",
   "bailey.j.b": "Bailey",
   "banks": "Banks",
   "barrande": "Barrande",
@@ -28,6 +29,7 @@
   "brown.i.a": "Brown",
   "bruguière": "Bruguière",
   "buch": "Buch",
+  "burmeister": "Burmeister",
   "burrett": "Burrett",
   "calvin.s": "Calvin",
   "candia carnevali": "Candia Carnevali",
@@ -1822,6 +1824,98 @@
    },
    "tree": true
   },
+  "1802_lamarck": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Lamarck"
+    ],
+    "in": "Recherches sur l'organisation des corps vivans",
+    "title": null,
+    "year": 1802
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1809a_lamarck": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Lamarck"
+    ],
+    "in": "Philosophie zoologique",
+    "title": null,
+    "volume": 1,
+    "year": 1809
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1809b_lamarck": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Lamarck"
+    ],
+    "in": "Philosophie zoologique",
+    "title": null,
+    "volume": 2,
+    "year": 1809
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1815_lamarck": {
    "acts": {},
    "audit": {
@@ -2673,6 +2767,36 @@
    "material": {},
    "tree": false
   },
+  "1825_latreille": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Latreille"
+    ],
+    "in": "Familles naturelles du règne animal, exposées succinctement et dans un ordre analytique, avec lindication de leurs genres\n",
+    "title": null,
+    "year": 1825
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1825a_say": {
    "acts": {
     "new": 6
@@ -3059,6 +3183,38 @@
    },
    "tree": true
   },
+  "1827_baer": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Baer"
+    ],
+    "in": "Nova acta physico-medica Academiae Caesareae Leopoldino-Carolinae Naturae Curiosum\n",
+    "number": "Part 2",
+    "title": "Beiträge zur Kenntniss der Niedern Thiere",
+    "volume": 13,
+    "year": 1827
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1827_say": {
    "acts": {},
    "audit": {
@@ -3145,6 +3301,161 @@
    },
    "tree": true
   },
+  "1829a_cuvier": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Cuvier"
+    ],
+    "in": "Le règne animal distribué d'après son organisation, 2nd Ed.",
+    "title": null,
+    "volume": 1,
+    "year": 1829
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1829b_cuvier": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Cuvier"
+    ],
+    "in": "Le règne animal distribué d'après son organisation, 2nd Ed.",
+    "title": null,
+    "volume": 2,
+    "year": 1829
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1829c_cuvier": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Cuvier"
+    ],
+    "in": "Le règne animal distribué d'après son organisation, 2nd Ed.",
+    "title": null,
+    "volume": 4,
+    "year": 1829
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1829d_cuvier": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Cuvier"
+    ],
+    "in": "Le règne animal distribué d'après son organisation, 2nd Ed.",
+    "title": null,
+    "volume": 5,
+    "year": 1829
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1830_cuvier": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Cuvier"
+    ],
+    "in": "Le règne animal distribué d'après son organisation, 2nd Ed.",
+    "title": null,
+    "volume": 3,
+    "year": 1830
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1830_pander": {
    "acts": {
     "new": 11,
@@ -3198,6 +3509,41 @@
    },
    "tree": true
   },
+  "1836_burmeister": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Burmeister"
+    ],
+    "in": "Handbuch der Naturgeschichte. Zum Gebrauch bei vorlesungen",
+    "pages": [
+     1,
+     103
+    ],
+    "title": null,
+    "volume": 1,
+    "year": 1836
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1837_hisinger": {
    "acts": {
     "new": 2
@@ -3249,6 +3595,76 @@
     "illustration": 3
    },
    "tree": true
+  },
+  "1837a_burmeister": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Burmeister"
+    ],
+    "in": "Handbuch der Naturgeschichte. Zum Gebrauch bei vorlesungen",
+    "pages": [
+     104,
+     368
+    ],
+    "title": null,
+    "volume": 2,
+    "year": 1837
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1837c_burmeister": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Burmeister"
+    ],
+    "in": "Handbuch der Naturgeschichte. Zum Gebrauch bei vorlesungen",
+    "pages": [
+     369,
+     858
+    ],
+    "title": null,
+    "volume": 3,
+    "year": 1837
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
   },
   "1839_murchison": {
    "acts": {
@@ -13001,7 +13417,7 @@
      "Pang",
      "Liu"
     ],
-    "in": "Early Cambrian Malong Fauna and Guanshan Fauna from Eastern Yunnan, China",
+    "in": "Early Cambrian Malong Fauna and Guanshan Fauna from Eastern Yunnan, China\n",
     "title": null,
     "year": 2008
    },

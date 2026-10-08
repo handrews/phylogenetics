@@ -11162,9 +11162,8 @@ scyphocrinus:
 scytodermata:
   name: Scytodermata
   rank: Class
-  auth: [Burmeister]
-  year: 1837
-  notes: Rank based on 1848_leuckart's usage
+  authority:
+    source: 1837a_burmeister
 segurae_gil cid_domínguez alonso_2002:
   name: segurae
   authority:
