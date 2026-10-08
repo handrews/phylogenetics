@@ -56,21 +56,21 @@ property.
 | `recombined` | 1 | 0.0% |
 | `stem` | 1 | 0.0% |
 
-### `article` -- 337 instances in `data/`
+### `article` -- 338 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `authors` | 337 | 100.0% |
-| `pubDate` | 336 | 99.7% |
-| `volume` | 262 | 77.7% |
-| `title` | 259 | 76.9% |
-| `identifiers` | 235 | 69.7% |
-| `pages` | 232 | 68.8% |
-| `journal` | 216 | 64.1% |
-| `number` | 166 | 49.3% |
+| `authors` | 338 | 100.0% |
+| `pubDate` | 337 | 99.7% |
+| `volume` | 263 | 77.8% |
+| `title` | 259 | 76.6% |
+| `identifiers` | 235 | 69.5% |
+| `pages` | 233 | 68.9% |
+| `journal` | 216 | 63.9% |
+| `number` | 166 | 49.1% |
 | `identifiers.url` | 153 | 65.1% |
-| `book` | 119 | 35.3% |
-| `processDates` | 98 | 29.1% |
+| `book` | 120 | 35.5% |
+| `processDates` | 98 | 29.0% |
 | `processDates.accepted` | 63 | 64.3% |
 | `identifiers.doi` | 61 | 26.0% |
 | `notes` | 54 | 16.0% |
@@ -92,9 +92,9 @@ property.
 | `processDates.conferenceStart` | 3 | 3.1% |
 | `processDates.issued` | 3 | 3.1% |
 | `processDates.submitted` | 3 | 3.1% |
+| `chapter` | 2 | 0.6% |
 | `translationOf` | 2 | 0.6% |
 | `translations` | 2 | 0.6% |
-| `chapter` | 1 | 0.3% |
 | `editors` | 1 | 0.3% |
 | `inPrep` | 1 | 0.3% |
 | `processDates.printed` | 1 | 1.0% |
@@ -279,12 +279,12 @@ property.
 | `notes` | 410 | 6.3% |
 | `editorial` | 11 | 0.2% |
 
-### `modularDate` -- 336 instances in `data/`
+### `modularDate` -- 337 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `year` | 336 | 100.0% |
-| `month` | 82 | 24.4% |
+| `year` | 337 | 100.0% |
+| `month` | 82 | 24.3% |
 | `day` | 32 | 9.5% |
 | `/then/oneOf/2.day` | 19 | 100.0% |
 | `/then/oneOf/2.month` | 19 | 100.0% |
@@ -315,11 +315,11 @@ property.
 | `notes` | 6 | 16.7% |
 | `characteristics` | 1 | 2.8% |
 
-### `publication` -- 147 instances in `data/`
+### `publication` -- 148 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `name` | 147 | 100.0% |
+| `name` | 148 | 100.0% |
 | `editors` | 9 | 6.1% |
 | `place` | 8 | 5.4% |
 | `publisher` | 8 | 5.4% |
@@ -757,12 +757,12 @@ Tests whether each multi-type declaration is actually needed.
 | location | declared | observed | string examples | declared but unseen |
 |---|---|---|---|---|
 | `phylogeny#/$defs/article/properties/articleNumber` | integer/string | intx5, strx2 | `e1465`, `e38296` | - |
-| `phylogeny#/$defs/article/properties/chapter` | integer/string | strx1 | `Report of E. Billings, E...` | integer |
+| `phylogeny#/$defs/article/properties/chapter` | integer/string | strx2 | `III. Stamm. Echinodermat...`, `Report of E. Billings, E...` | integer |
 | `phylogeny#/$defs/article/properties/number` | integer/string | intx156, strx10 | `Supplement`, `1/2`, `Adv. Pr.`, `1–2` | - |
-| `phylogeny#/$defs/article/properties/pages/items` | integer/string | intx430, strx46 | `S637`, `S634`, `S631`, `S627` | - |
+| `phylogeny#/$defs/article/properties/pages/items` | integer/string | intx432, strx46 | `S637`, `S634`, `S631`, `S627` | - |
 | `phylogeny#/$defs/article/properties/plates/items` | integer/string | intx29, strx12 | `II`, `I`, `VI`, `V` | - |
 | `phylogeny#/$defs/article/properties/series` | integer/string | intx8, strx1 | `A` | - |
-| `phylogeny#/$defs/article/properties/volume` | integer/string | intx249, strx13 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `II` | - |
+| `phylogeny#/$defs/article/properties/volume` | integer/string | intx249, strx14 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `II` | - |
 | `phylogeny#/$defs/citationNumber` | integer/string | intx2206, strx218 | `IV`, `II`, `IX`, `VIII` | - |
 | `phylogeny#/$defs/cladisticFields/properties/matrix/items` | integer/string | intx139, strx5 | `?` | - |
 | `phylogeny#/$defs/contexts` | object/null | dictx57, nullx41 | - | - |
