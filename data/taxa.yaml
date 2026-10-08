@@ -4242,6 +4242,10 @@ edrioasteridae:
   auth: [bather]
   year: 1899
   notes: from the 1898 meeting paper, published 1899; cited as both 1898 and 1899
+edrioasteriden:
+  name: Edrioasteridn
+  lang: DE
+  vulgarSpellingOf: edrioasteroidea
 edrioasterids:
   name: Edrioasterids
   rank: Group
