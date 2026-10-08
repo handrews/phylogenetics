@@ -22,11 +22,11 @@ page and contents page are unnumbered.
 |---|---|---|
 | classification skeleton | all | the Edrioasteriden group with its four listed members and the new genus with two species; nothing else is placed |
 | new taxa | all | *Cyathocystis*, *C. Plautinae*, *C. rhizophora*, all `new: true` |
-| type species | partly | `type: true` on *C. Plautinae* rests on "der typischen Art" (p. 7); see §3 |
+| type species | partly | a `type` node on *Cyathocystis* naming *C. Plautinae* rests on "der typischen Art" (p. 7); see §3 |
 | synonymy lists | na | none printed |
-| material | all that is printed | no numbers, no repository, no type words; the figured pieces and the 1863 Wassalem specimens are listed as `unknowntypes` |
-| occurrences | all | both units with their localities and the stratigraphic gloss, quoted |
-| illustrations | all | Holzschnitt I–III with captions |
+| material | all that is printed | no numbers, no repository, no type words; one `material` entry per figured piece, labelled by the paper's figure citation, and one for the 1863 Wassalem lot with the Volborth collection as `holder` |
+| contexts | all | both units with their localities and the stratigraphic gloss, quoted; the Reval collector and date on the context |
+| illustrations | all | Holzschnitt I–III, each figure tied to its specimen by `of`, as `depicts: drawing`; captions in §2a |
 | diagnoses | none | no diagnosis is set apart; the descriptive prose (pp. 2–7) is not captured beyond the two quoted sentences on the genus |
 | phylogeny | na | none printed |
 
@@ -57,6 +57,29 @@ the Volborth collection, now the Academy's (p. 7).
 Every node of the draft was written from these pages; the quoted wording
 is in the draft's notes with the page.
 
+### 2a. Woodcut captions
+
+Holzschnitt I (p. 2): "Fig. 1, 2. Cyathocystis Plautinae n. sp. von Reval,
+nat. Gr. Fig. 3. Ein Deckel von Fig. 2, vergrössert: a, Ambulacren; b,
+Interambulacralplatte; c, Mundplatte; d, Marginalplättchen; e,
+Klappenpyramide. Ausserhalb der Marginalplatten ist der Kelchrand sichtbar
+der im Versehn auch mit a bezeichnet ist. Fig. 4. Cyathocystis rhizophora
+n. sp. von Wassalem, nat. Gr."
+
+Holzschnitt II (p. 4): "Fig. 1. Ein Theil des andern Deckels von F. I, 2,
+vergrössert. Die Pyramide ist ausgefallen, bei a sieht man die innern
+Ambulacralplättchen (?). — Fig. 2, 3. Kelche der Cyathocystis Plautinae von
+Reval, ohne Deckel; bei a Verticalfugen sichtbar, nat. gr."
+
+Holzschnitt III (p. 6): "Cyathocystis rhizophora von Wassalem. Alles nat.
+Gr. Fig. 1. Ein Zwillingskelch mit deutlicher Epitheca. Fig. 2. Eine
+Kelchbasis oben mit dem Grunde der Höhlung und unten mit breiten
+Wurzelausläufern, bei a Löcher in d. Wand. Fig. 3. Ein gebogener Kelch mit
+seitlichen Verticalfugen und knotigen Wachsthumsansätzen auf den Kanten, a
+wie in vor. Fig. b, Verticalfuge. Fig. 4. Drei zusammenhängende Kelche; bei
+4 b Seitendurchschnitt, an dem der durchgehende Kanal am Grunde sichtbar
+ist."
+
 ## 3. Cases for the data model
 
 **1879 or 1880.** The title page prints 1880 and the volume's Protocolle
@@ -73,8 +96,9 @@ says so.
 
 **"der typischen Art" as a type designation.** The paper never prints
 "type species"; p. 7 calls *C. Plautinae* "der typischen Art" in a
-comparison of epithecae. The draft sets `type: true` on that phrase rather
-than the editor's inference (the Fay 1962 precedent, `inferred: [type]`,
+comparison of epithecae. The draft writes a `type` node on the genus naming
+*C. Plautinae*, with no `fixation`, on that phrase rather than the editor's
+inference (the Fay 1962 precedent, `inferred: [type]`,
 was for a monotypic genus with no phrase at all). Whether a passing
 "typical species" is a designation is for the owner; the alternative is
 `editorial: {inferred: [type], basis: ...}`.
@@ -116,19 +140,32 @@ the paper's year, whichever of 1879 and 1880 the source key takes.
 
 **Substrate has no field.** "auf Callopora heterosolen Dyb. (Chaetetes
 heterosole Keys.) aufgewachsen" (p. 1) and "auf allerhand Korallen und
-Bryozoen festsitzt" (p. 5) are host statements the occurrence block cannot
-carry except in `notes`, where the draft puts them.
+Bryozoen festsitzt" (p. 5) are host statements the context cannot carry
+except in `notes`, where the draft puts them.
 
 **Specimens with no numbers and a stated destination.** As in
 `1897_whiteaves`: figured pieces, a donor, a collection, but no catalogue
-numbers and no type words, so `unknowntypes` with descriptive strings.
-"Sämmtliche Originalstücke gehn noch zu Prof. Lovén nach Stockholm" (p. 4)
-is a statement about where the material was going, not a repository.
+numbers and no type words. The paper names a specimen only by its figure
+("am Original von I 1", p. 5; "im Original von F. III 1", p. 7), so each
+figured piece is one `material` entry labelled by that citation ("F. I, 1")
+with no `role`; F. I, 3 and F. II, 1 are lids of the twin specimen F. I, 2
+and so are figures of it, not entries. The Reval collector and summer 1878
+sit on the context, since they are stated once for all four pieces (p. 1).
+The 1863 Wassalem lot ("mehrere Exemplare", p. 7) is one entry with the
+author as collector and the Volborth collection, now the Academy's, as
+`holder`, since `data/repositories.yaml` has no entry for either; on
+promotion that becomes a `repository`. Whether the figured *rhizophora*
+pieces are among that lot is not said. "Sämmtliche Originalstücke gehn
+noch zu Prof. Lovén nach Stockholm" (p. 4) is a statement about where the
+material was going, not a repository, and stays in `notes`.
 
 **Two woodcut numberings.** The text cites figures as "F. I, 2", "F. II
 1", "F. III 3 b"; the woodcuts are unnumbered on the page except by their
-own captions. The draft records them as `page` + `textFigures` under the
-captioned woodcut, naming the Holzschnitt in `notes`.
+own captions. The draft records them as `page` + `textFigures`, one entry
+per specimen with `of` naming its label, and `depicts: drawing`, since a
+woodcut is not a photograph of the specimen; whether a woodcut drawn from
+the specimen should rather be the default `specimen` is for the owner. The
+captions are in §2a above.
 
 ## 4. Source record
 
