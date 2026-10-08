@@ -108,9 +108,12 @@ actinia:
     even though the 12th edition came out later in the year.
 actinia_pallas_1766:
   name: Actinia
-  homonym: true
-  auth: [Pallas]
-  year: 1766
+  needsQualification: true
+  rank: genus
+  pages: 154
+  authority:
+    source: 1766_pallas
+  citedAs: ACTINIÆ
   notes: |
     Established for the sea cucumber A. doliolum, now Pentacta doliolum.
     Suppressed by ICZN Opinion 1295, replaced by Pentacta (Goldfuss 1820).
@@ -143,10 +146,16 @@ acutus_lamarck_1816:
   name: acutus
   authority:
     source: 1816b_lamarck
+aculeata_linnaeus_1758:
+  name: aculeata
+  authourit:
+    source: 1758_linnaeus
+  notes: A species of Aphrodita.
 aculeata_linnaeus_1767:
   name: aculeata
   authority:
     source: 1767_linnaeus
+  notes: A brittle star.
 aculeata_pennant_1777:
   name: aculeata
   auth: [Pennant]
@@ -870,6 +879,12 @@ argonauta:
   authority:
     source: 1758_linnaeus
   citedAs: 282. ARGONAUTA.
+argus_bohadsch_1761:
+  name: Argus
+  rank: genus
+  auth: [Bohadsch]
+  year: 1761
+  notes: ICZN suppressed.
 aristocystitida-superfamily:
   name: Aristocystitida
   rank: Superfamily
@@ -2228,6 +2243,13 @@ celtocrinus:
   name: Celtocrinus
   auth: [Donovan, Cope]
   year: 1989
+centronia:
+  name: Centronia
+  rank: Order
+  pages: 153
+  authority:
+    source: 1766_pallas
+  citedAs: Centroniarum
 cephalopoda-order:
   name: Cephalopoda
   rank: Order
@@ -3772,8 +3794,11 @@ dockeryi_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley_1987:
     source: 1987_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley
 doliolum_pallas_1766:
   name: doliolum
-  auth: [Pallas]
-  year: 1766
+  rank: species
+  pages: 154
+  authority:
+    source: 1766_pallas
+  citedAs: ACTINIÆ DOLIOLI.
 donax:
   name: Donax
   rank: genus
@@ -7202,6 +7227,12 @@ laernea:
   name: Laernea
   altSpellingOf: lernaea
   notes: IRMNG has as unaccepted taxon but Brug. 1791 instead of 1789?
+lernaea_bohadsch_1761:
+  name: Lernaea
+  rank: genus
+  auth: [Bohadsch]
+  year: 1761
+  notes: ICZN suppressed.
 lemur:
   name: Lemur
   rank: genus
@@ -11627,6 +11658,11 @@ sprinkleoglobus:
   name: Sprinkleoglobus
   auth: [zamora, guensburg, sprinkle]
   year: 2024
+squamata_linnaeus_1758:
+  name: squamata
+  rank: species
+  authority:
+    source: 1758_linnaeus
 squamata_lamarck_1816:
   name: squamata
   authority:
@@ -12204,6 +12240,10 @@ testudineus_nardin_bohatý_2013:
   name: testudineus
   authority:
     source: 2013_nardin_bohatý
+tethis:
+  name: Tethis
+  altSpellingOf: tethys
+  notes: Not treated as separate from Tethys in IRMNG, unlike Asteria/s
 tethys:
   name: Tethys
   rank: genus
@@ -12211,10 +12251,12 @@ tethys:
   authority:
     source: 1758_linnaeus
   citedAs: 254. TETHYS.
-tethis:
-  name: Tethis
-  altSpellingOf: tethys
-  notes: Not treated as separate from Tethys in IRMNG, unlike Asteria/s
+tethyum:
+  name: Tethyum
+  rank: genus
+  auth: [Bohadsch]
+  year: 1761
+  notes: Ascidian; not Linnaeus's Tethys or Lamarck's Tethya.  ICZN suppressed.
 tetracystis:
   name: Tetracystis
   auth: [schuchert]
