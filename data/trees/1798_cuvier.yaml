@@ -78,9 +78,9 @@ taxonomies:
   - taxon: zoophytes-class
     notes: zoophyta-class
     children:
-    - taxon: échinodermes-order
+    - taxon: échinodermes
+      rank: Order
       notes: |
-        echinodermata-order
         Chapter II, Des Zoophytes qui ont une enveloppe cortace ou calcaire,
         un organe respiratoire intérieur distinct,etsouvent despieds
         rétracuiles nombreux; ou des ÉCHINODERMES.

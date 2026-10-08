@@ -1,5 +1,8 @@
 taxonomies:
-- taxon: echinodermata-order
+- taxon: echinodermata
+  editorial:
+    inferred: true
+    basis: General assumption, needs validating.
   children:
   - taxon: crinoidea-family
   - taxon: cystidea-family
