@@ -1,16 +1,131 @@
 taxonomies:
-- taxon: echinodermata
+- taxon: animalia
+  rank: Kingdom
+  removed:
+    taxon: infusoria
+  pages: 10
+  editorial:
+    inferred: true
+    basis: >
+      Based on our current understanding... the divisions of
+      Coelenterata, Echinodermata, Vermes, Arthropoda, Mollusca, and Vertebrata
+      appear to represent the various fundamental types of the animal kingdom
+      created by nature.
+
+      We leave the infusoria out of consideration here. Despite the classic
+      studies by Ehrenberg, our knowledge of them remains too limited to
+      justify forming a reasonably well-founded judgment about them.
+      However, it seems highly probable to me that the entire division
+      of these enigmatic creatures — at least as a distinct, cohesive group —
+      will eventually be removed from the zoological classification system.
+      (via Google Translate).
   children:
-  - taxon: pelmatozoa-class
-    new: true
+  - taxon: coelenterata
+    citedAs: Coelenterata
+    rank: Division
+    pages: 13
+  - taxon: echinodermata
+    citedAs: Echinodermata
+    rank: Division
+    sensu: emendato
+    emended:
+      by:
+        source: cuvier_1817d
+    non:
+      authority:
+        source: bruguière_1789a
+    pages: 31
+    editorial:
+      inferred: [sensu, emended, non]
+      basis: >
+        Leuckart explicitly notes Cuvier as the first to recognize
+        the interrelationships of the Echinodermata, and contrasts
+        Cuvier's definition with the less comprehsensive definition first
+        established as an Order by Bruguière in the Encyclopédie Méthodique.
+
+        Leuckart also notes Cuvier treating Echinodermata as a Class,
+        which he first did in Cuvier 1817d (after previously treating
+        it as an Order in Cuvier 1798), which is also where he first
+        included the Crinoidea (as the genus Encrinus), which Leuckart
+        addresses here, so Cuvier 1817d seems like the most accurate
+        citation.  Leuckart does not reference a specific workl
     children:
-    - taxon: cystoidea-order
-    - taxon: crinoidea-order
-  - taxon: actinozoa
-    children:
-    - taxon: echinoidea-order
-    - taxon: asteroidea-order
-  - taxon: scytodermata
-    children:
-    - taxon: holothuria-order
-    - taxon: sipunculida-order
+    - taxon: pelmatozoa
+      citedAs: >
+        Die erste dieser drei Klassen, für welche ich die Bezeichnung Pelmatozoa
+      rank: Class
+      pages: 42
+      new: true
+      children:
+      - taxon: cystideen
+        citedAs: >
+          In der einen Ordnung dieser Klasse, in den Cystideen
+        rank: Order
+        pages: 42
+      - taxon: crinoideen
+        citedAs: >
+          in der andern Ordnung, welche die eigentlichen Crinoideen umfasst
+        rank: Order
+        pages: 43
+    - taxon: actinozoa
+      citedAs: >
+        Die zweite Klasse der Echinodermen, die ich mit dem Latreilleschen
+        Namen der Actinozoa bezeichen möchte
+      rank: Class
+      authority:
+        source: latreille_1825
+      pages: 43
+      notes: >
+        Elsewhere, Latreille is cited as "Natürliche Familien des Thierreichs.
+        Uebers. von Berthol d. Weimar 1827." which is a German translation
+        of Latreille 1825.  No exact citation is provide here, only the mention
+        given in the "citedAs" field.
+      children:
+      - taxon: echiniden
+        citedAs: >
+          wird von zwei ganz entsprechenden Ordnungen, von den Echiniden
+          und Asteriden, zusammengesetzt
+        rank: Order
+        pages: 43
+      - taxon: asteriden
+        citedAs: >
+          wird von zwei ganz entsprechenden Ordnungen, von den Echiniden
+        rank: Order
+        pages: 43
+    - taxon: scytodermata
+      citedAs: Die dritte Klasse, die der Scytodermata Brmstr.
+      rank: Class
+      authority:
+        source: 1837_burmeister
+      pages: 43
+      children:
+      - taxon: holothuriae
+        citedAs: umfasst als Ordnungen die Holothuriae und Sipunculida.
+        rank: Order
+        pages: 43
+      - taxon: sipunculida
+        citedAs: umfasst als Ordnungen die Holothuriae und Sipunculida.
+        rank: Order
+        pages: 43
+  - taxon: vermes
+    citedAs: Vermes
+    rank: Division
+    pages: 44
+  - taxon: arthropoda
+    citedAs: Arthropoda
+    rank: Division
+    pages: 77
+  - taxon: mollusca
+    citedAs: Mollusca
+    rank: Division
+    pages: 123
+  - taxon: vertebrata
+    citedAs: Vertebrata
+    rank: Division 
+    pages: 10
+    editorial:
+      inferred: true
+      basis: >
+        Listed on page 10 but excluded from the main work on the grounds
+        of being better-understood than the invertebrates.
+  
