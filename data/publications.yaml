@@ -97,6 +97,10 @@ e-faunas-bromide:
   name: Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma
   editors:
   - sprinkle
+fam-nat:
+  name: >
+    Familles naturelles du règne animal, exposées succinctement
+    et dans un ordre analytique, avec lindication de leurs genres
 fauna-svecica:
   name: Fauna svecica - sistens animalia sveciae regni
 fieldiana:
@@ -129,6 +133,8 @@ geo-soc-am-abs-prog:
   name: Geological Society of America, Abstracts With Programs
 geo-survey-canada:
   name: Geological Survey of Canada. Report of Progress for the years 1853–54–55–56
+handbuch-nat:
+  name: Handbuch der Naturgeschichte. Zum Gebrauch bei vorlesungen
 hist-nat-bulg:
   name: Historia Naturalis Bulgarica
 hist-sans-vert:
@@ -161,6 +167,10 @@ konglinga:
   name: Kongliga Vetenskaps Academiens Handlingar
 kungliga-svenska:
   name: Kungliga Svenska vetenskapsakademiens handlingar
+leopoldo:
+  name: >
+    Nova acta physico-medica Academiae Caesareae Leopoldino-Carolinae
+    Naturae Curiosum
 lethaea-suecica:
   name: Lethaea Suecica
 lethaia:
@@ -168,7 +178,8 @@ lethaia:
 lund-medd:
   name: Meddelanden från Lunds Geologisk-Mineralogiska Institution
 malong-guanshan:
-  name: Early Cambrian Malong Fauna and Guanshan Fauna from Eastern Yunnan, China
+  name: >
+    Early Cambrian Malong Fauna and Guanshan Fauna from Eastern Yunnan, China
 manual-1st:
   name: A Manual of Paleontology for the Use of Students
 manual-2nd:
@@ -253,6 +264,8 @@ reports-british-advancement:
   name: Reports of the Meetings of the British Association for the Advancement of Science
 regne-animal:
   name: Le règne animal distribué d'après son organisation
+regne-animal-2nd:
+  name: Le règne animal distribué d'après son organisation, 2nd Ed.
 senckenbergiana:
   name: Senckenbergiana
 series-geol:

@@ -1,6 +1,11 @@
 allaire:
   surname: Allaire
   given: Ninon
+baer:
+  surname: Baer
+  given: Karl Ernst von
+  birth: 1792
+  death: 1876
 bell.f.j:
   surname: Bell
   given: Francis Jeffrey
@@ -126,6 +131,11 @@ buch:
   birth: 1774
   death: 1853
   notes: Usually cited as Leopold von Buch, von Buch, or just Buch
+burmeister:
+  surname: Burmeister
+  given: Hermann
+  birth: 1807
+  death: 1892
 burrett:
   surname: Burrett
   given: C. F.

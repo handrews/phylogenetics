@@ -682,6 +682,13 @@
   - gray.j.e
   identifiers:
     url: https://www.biodiversitylibrary.org/item/20125#page/439/mode/1up
+1825_latreille:
+  book: fam-nat
+  pubDate:
+    year: 1825
+  authors: latreille
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/16094
 1825a_say:
   title: On two genera and several species of Crinoidea
   journal: jofacnatsci-philadelphia
@@ -776,6 +783,18 @@
     year: 1826
   authors:
   - schlotheim
+1827_baer:
+  title: Beiträge zur Kenntniss der Niedern Thiere
+  journal: leopoldo
+  volume: 13
+  number: Part 2
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/113872#page/149/mode/1up
+  pubDate:
+    year: 1827
+  authors:
+  - baer
+  notes: Unclear if the two parts of the volume are made of distinct issues.
 1827_say:
   title: On the species of the Linnean genus Echinus, inhabiting the coast of the United States
   journal: jofacnatsci-philadelphia
@@ -798,6 +817,41 @@
   - hisinger
   identifiers:
     url: https://www.google.com/books/edition/Anteckningar_i_Physik_och_Geognosi_under/LotfAAAAcAAJ?hl=en
+1829a_cuvier:
+  book: regne-animal-2nd
+  volume: 1
+  pubDate:
+    year: 1829
+  authors:
+  - cuvier
+1829b_cuvier:
+  book: regne-animal-2nd
+  volume: 2
+  pubDate:
+    year: 1829
+  authors:
+  - cuvier
+1829c_cuvier:
+  book: regne-animal-2nd
+  volume: 4
+  pubDate:
+    year: 1829
+  authors:
+  - cuvier
+1829d_cuvier:
+  book: regne-animal-2nd
+  volume: 5
+  pubDate:
+    year: 1829
+  authors:
+  - cuvier
+1830_cuvier:
+  book: regne-animal-2nd
+  volume: 3
+  pubDate:
+    year: 1830
+  authors:
+  - cuvier
 1830_pander:
   book: beitrage
   pubDate:
@@ -806,6 +860,44 @@
   - pander
   identifiers:
     url: https://www.google.com/books/edition/Beitr%C3%A4ge_zur_geognosie_des_russischen_r/yJ0_AAAAYAAJ?hl=en
+1836_burmeister:
+  book: handbuch-nat
+  volume: 1
+  pages:
+  - 1
+  - 103
+  pubDate:
+    year: 1836
+  authors:
+  - burmeister
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/100177
+  notes: Minerologie
+1837a_burmeister:
+  book: handbuch-nat
+  volume: 2
+  pages:
+  - 104
+  - 368
+  pubDate:
+    year: 1837
+  authors:
+  - burmeister
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/100177
+1837c_burmeister:
+  book: handbuch-nat
+  volume: 3
+  pages:
+  - 369
+  - 858
+  pubDate:
+    year: 1837
+  authors:
+  - burmeister
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/100177
+  notes: Zoologie
 1837_hisinger:
   book: lethaea-suecica
   authors:
