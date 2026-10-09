@@ -1,15 +1,31 @@
 taxonomies:
-- taxon: echinodermata_klein_1778
+- taxon: echinodermata
+  citedAs: Phylum Echinodermata Klein, 1778.
+  rank: Phylum
+  authority:
+    source: 1778_klein
+  pages: 3
   children:
   - taxon: blastozoa
+    citedAs: Subphylum Blastozoa Sprinkle, 1973.
+    rank: Subphylum
+    pages: 3
     children:
     - taxon: lepidocystidae
+      citedAs: Family Lepidocystidae Durham, 1968.
+      rank: Family
+      pages: 3
       children:
       - taxon: vyscystis
+        citedAs: Genus Vyscystis Fatka and Kordule, 1990.
         emended: true
+        pages: 3
+        type:
+          taxon: ubaghsi_fatka_kordule_1990
+          citedAs: Type Species. Vyscystis ubaghsi Fatka and Kordule, 1990.
         children:
-        - taxon: ubaghsi_fatka_kordule_1990
-          isType: true
         - taxon: spinosa_wang.d.z_nohejlová_sun.z.x_zeng.h_lefebvre_yang.x.l_zhao.f.c_2024
+          citedAs: Vyscystis? spinosa sp. nov.
           provisional: true
           new: true
+          pages: 3

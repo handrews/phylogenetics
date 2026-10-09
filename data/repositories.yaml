@@ -165,6 +165,14 @@ qm-l:
   within: qm
   subject: localities
   prefixes: [QML]
+ras:
+  name: Russian Acadmen of Sciences
+  type: institution
+  place: St. Petersburg
+ras-volborth:
+  name: Volborth Collection
+  type: collection
+  within: ras
 rievers:
   name: Rievers collection
   type: person
@@ -210,6 +218,10 @@ u-cincinnati-museum:
   type: collection
   within: u-cincinnati
   prefixes: [UCMP]
+u-kansas-mip:
+  name: University of Cansas Museum of Invertebrate Paleontology
+  type: institution
+  prefixes: [KUMIP]
 ucbl-fsl:
   name: Université Claude Bernard Lyon 1, collections de géologie
   type: institution

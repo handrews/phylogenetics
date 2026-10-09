@@ -17,7 +17,7 @@ even when its parent is also unreached, so read parents first.
 | `catalogNumber` | `phylogeny#/$defs/catalogNumber`<br>`phylogeny#/$defs/catalogNumber/oneOf/0`<br>`phylogeny#/$defs/catalogNumber/oneOf/1`<br>`phylogeny#/$defs/catalogNumber/oneOf/1/items` |
 | `citedAct` | `phylogeny#/$defs/citedAct`<br>`phylogeny#/$defs/citedAct/properties/by` |
 | `cladisticFields` | `phylogeny#/$defs/cladisticFields/properties/data`<br>`phylogeny#/$defs/cladisticFields/properties/data/additionalProperties` |
-| `context` | `phylogeny#/$defs/context/properties/biota`<br>`phylogeny#/$defs/context/properties/biozones`<br>`phylogeny#/$defs/context/properties/biozones/items`<br>`phylogeny#/$defs/context/properties/collectedDate`<br>`phylogeny#/$defs/context/properties/localityNumbers/items/not`<br>`phylogeny#/$defs/context/properties/localityNumbers/items/properties/register`<br>`phylogeny#/$defs/context/properties/paleocontinent`<br>`phylogeny#/$defs/context/properties/sources`<br>`phylogeny#/$defs/context/properties/sources/items`<br>`phylogeny#/$defs/context/properties/tentative/oneOf/0` |
+| `context` | `phylogeny#/$defs/context/properties/biozones`<br>`phylogeny#/$defs/context/properties/biozones/items`<br>`phylogeny#/$defs/context/properties/collectedDate`<br>`phylogeny#/$defs/context/properties/localityNumbers/items/not`<br>`phylogeny#/$defs/context/properties/localityNumbers/items/properties/register`<br>`phylogeny#/$defs/context/properties/paleocontinent`<br>`phylogeny#/$defs/context/properties/sources`<br>`phylogeny#/$defs/context/properties/sources/items`<br>`phylogeny#/$defs/context/properties/tentative/oneOf/0` |
 | `contextRef` | `phylogeny#/$defs/contextRef/oneOf/1`<br>`phylogeny#/$defs/contextRef/oneOf/1/properties/key`<br>`phylogeny#/$defs/contextRef/oneOf/1/properties/tentative` |
 | `eon` | `phylogeny#/$defs/eon` |
 | `era` | `phylogeny#/$defs/era` |
@@ -30,12 +30,12 @@ even when its parent is also unreached, so read parents first.
 | `person` | `phylogeny#/$defs/person/properties/suffix` |
 | `publication` | `phylogeny#/$defs/publication/properties/type` |
 | `range` | `phylogeny#/$defs/range/properties/inferred`<br>`phylogeny#/$defs/range/properties/tentative/oneOf/0` |
-| `relationalFields` | `phylogeny#/$defs/relationalFields/properties/type`<br>`phylogeny#/$defs/relationalFields/properties/type/oneOf/0`<br>`phylogeny#/$defs/relationalFields/properties/type/oneOf/1` |
+| `relationalFields` | `phylogeny#/$defs/relationalFields/properties/type/oneOf/1` |
 | `stageRange` | `phylogeny#/$defs/stageRange`<br>`phylogeny#/$defs/stageRange/items` |
-| `taxonRecord` | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items/items`<br>`phylogeny#/$defs/taxonRecord/properties/rank/oneOf/1` |
+| `taxonRecord` | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items/items` |
 | `timeFields` | `phylogeny#/$defs/timeFields/properties/eon`<br>`phylogeny#/$defs/timeFields/properties/era`<br>`phylogeny#/$defs/timeFields/properties/seriesBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageRange` |
-| `tree` | `tree#/if`<br>`tree#/if/properties/authority`<br>`tree#/properties/authority/oneOf/1`<br>`tree#/properties/rank/oneOf/1`<br>`tree#/then`<br>`tree#/then/not`<br>`tree#/then/not/anyOf/0`<br>`tree#/then/not/anyOf/1`<br>`tree#/then/not/anyOf/2` |
-| `typeNode` | `phylogeny#/$defs/typeNode`<br>`phylogeny#/$defs/typeNode/properties/fixation`<br>`phylogeny#/$defs/typeNode/properties/fixedBy` |
+| `tree` | `tree#/then/not`<br>`tree#/then/not/anyOf/0`<br>`tree#/then/not/anyOf/1`<br>`tree#/then/not/anyOf/2` |
+| `typeNode` | `phylogeny#/$defs/typeNode/properties/fixedBy` |
 | `uncertaintyFields` | `phylogeny#/$defs/uncertaintyFields/properties/nonMonophyletic/oneOf/1`<br>`phylogeny#/$defs/uncertaintyFields/properties/sensu` |
 
 ## 2. Property frequency by `$defs`
@@ -43,39 +43,39 @@ even when its parent is also unreached, so read parents first.
 `data %` is the share of that container's instances carrying the
 property.
 
-### `actAndModifierFields` -- 5676 instances in `data/`
+### `actAndModifierFields` -- 5679 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `new` | 1593 | 28.1% |
-| `isType` | 369 | 6.5% |
-| `emended` | 55 | 1.0% |
+| `new` | 1592 | 28.0% |
+| `isType` | 366 | 6.4% |
+| `emended` | 56 | 1.0% |
 | `pars` | 19 | 0.3% |
 | `translated` | 17 | 0.3% |
 | `nudum` | 4 | 0.1% |
-| `recombined` | 1 | 0.0% |
+| `recombined` | 2 | 0.0% |
 | `stem` | 1 | 0.0% |
 
-### `article` -- 338 instances in `data/`
+### `article` -- 340 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `authors` | 338 | 100.0% |
-| `pubDate` | 337 | 99.7% |
-| `volume` | 263 | 77.8% |
-| `title` | 259 | 76.6% |
-| `identifiers` | 235 | 69.5% |
-| `pages` | 233 | 68.9% |
-| `journal` | 216 | 63.9% |
-| `number` | 166 | 49.1% |
-| `identifiers.url` | 153 | 65.1% |
-| `book` | 120 | 35.5% |
-| `processDates` | 98 | 29.0% |
+| `authors` | 340 | 100.0% |
+| `pubDate` | 339 | 99.7% |
+| `volume` | 265 | 77.9% |
+| `title` | 261 | 76.8% |
+| `identifiers` | 236 | 69.4% |
+| `pages` | 235 | 69.1% |
+| `journal` | 218 | 64.1% |
+| `number` | 167 | 49.1% |
+| `identifiers.url` | 154 | 65.3% |
+| `book` | 120 | 35.3% |
+| `processDates` | 98 | 28.8% |
 | `processDates.accepted` | 63 | 64.3% |
-| `identifiers.doi` | 61 | 26.0% |
-| `notes` | 54 | 16.0% |
+| `identifiers.doi` | 61 | 25.8% |
+| `notes` | 56 | 16.5% |
 | `processDates.received` | 53 | 54.1% |
-| `audit` | 48 | 14.2% |
+| `audit` | 48 | 14.1% |
 | `audit.notes` | 48 | 100.0% |
 | `audit.state` | 48 | 100.0% |
 | `audit.coverage` | 30 | 62.5% |
@@ -83,7 +83,7 @@ property.
 | `identifiers.jstor` | 24 | 10.2% |
 | `plates` | 21 | 6.2% |
 | `processDates.revised` | 18 | 18.4% |
-| `series` | 9 | 2.7% |
+| `series` | 11 | 3.2% |
 | `processDates.read` | 8 | 8.2% |
 | `articleNumber` | 7 | 2.1% |
 | `seen` | 5 | 1.5% |
@@ -103,30 +103,30 @@ property.
 | `quotes` | 1 | 0.3% |
 | `reading` | 1 | 0.3% |
 
-### `authority` -- 1815 instances in `data/`
+### `authority` -- 1825 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `source` | 1815 | 100.0% |
+| `source` | 1825 | 100.0% |
 | `pages` | 65 | 3.6% |
-| `illustrations` | 30 | 1.7% |
+| `illustrations` | 30 | 1.6% |
 | `attributedTo` | 24 | 1.3% |
-| `ex` | 2 | 0.1% |
+| `ex` | 3 | 0.2% |
 | `notes` | 2 | 0.1% |
 
-### `authorityFields` -- 9319 instances in `data/`
+### `authorityFields` -- 9322 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `auth` | 974 | 10.5% |
-| `year` | 972 | 10.4% |
+| `auth` | 969 | 10.4% |
+| `year` | 967 | 10.4% |
 | `in` | 28 | 0.3% |
 
-### `citationFields` -- 9307 instances in `data/`
+### `citationFields` -- 9310 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `citedAs` | 579 | 6.2% |
+| `citedAs` | 608 | 6.5% |
 
 ### `cladisticFields` -- 794 instances in `data/`
 
@@ -137,68 +137,68 @@ property.
 | `bootstrap` | 6 | 0.8% |
 | `data` | 0 | 0.0% |
 
-### `context` -- 113 instances in `data/`
+### `context` -- 114 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `location` | 112 | 99.1% |
-| `unit` | 104 | 92.0% |
+| `location` | 113 | 99.1% |
+| `unit` | 105 | 92.1% |
 | `localityNumbers/items.number` | 52 | 100.0% |
-| `biozone` | 48 | 42.5% |
-| `localityNumbers` | 46 | 40.7% |
-| `mapSheet` | 30 | 26.5% |
+| `biozone` | 48 | 42.1% |
+| `localityNumbers` | 46 | 40.4% |
+| `mapSheet` | 30 | 26.3% |
 | `localityNumbers/items.prefix` | 21 | 40.4% |
-| `notes` | 20 | 17.7% |
-| `coordinatesAsPrinted` | 12 | 10.6% |
-| `biozoneRange` | 7 | 6.2% |
-| `tentative` | 3 | 2.7% |
+| `notes` | 20 | 17.5% |
+| `coordinatesAsPrinted` | 12 | 10.5% |
+| `biozoneRange` | 7 | 6.1% |
+| `tentative` | 3 | 2.6% |
 | `collectedBy` | 2 | 1.8% |
+| `biota` | 1 | 0.9% |
 | `fauna` | 1 | 0.9% |
 | `inferred` | 1 | 0.9% |
-| `biota` | 0 | 0.0% |
 | `biozones` | 0 | 0.0% |
 | `collectedDate` | 0 | 0.0% |
 | `localityNumbers/items.register` | 0 | 0.0% |
 | `paleocontinent` | 0 | 0.0% |
 | `sources` | 0 | 0.0% |
 
-### `editorialObject` -- 13 instances in `data/`
+### `editorialObject` -- 17 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `basis` | 13 | 100.0% |
-| `inferred` | 10 | 76.9% |
-| `corrections` | 3 | 23.1% |
-| `corrections.authority` | 2 | 66.7% |
-| `corrections.authority.source` | 2 | 100.0% |
+| `basis` | 17 | 100.0% |
+| `inferred` | 12 | 70.6% |
+| `corrections` | 5 | 29.4% |
+| `corrections.authority` | 4 | 80.0% |
+| `corrections.authority.source` | 4 | 100.0% |
 
-### `figureLocatorFields` -- 485 instances in `data/`
+### `figureLocatorFields` -- 490 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `figures` | 420 | 86.6% |
-| `plate` | 346 | 71.3% |
-| `page` | 126 | 26.0% |
-| `textFigures` | 65 | 13.4% |
+| `figures` | 425 | 86.7% |
+| `plate` | 346 | 70.6% |
+| `page` | 131 | 26.7% |
+| `textFigures` | 65 | 13.3% |
 | `notes` | 24 | 4.9% |
 | `non` | 0 | 0.0% |
 
-### `identificationFields` -- 6470 instances in `data/`
+### `identificationFields` -- 6473 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `taxon` | 5876 | 90.8% |
+| `taxon` | 5879 | 90.8% |
 | `openTaxon` | 243 | 3.8% |
 | `cf` | 15 | 0.2% |
 | `aff` | 14 | 0.2% |
 | `designation` | 0 | 0.0% |
 
-### `illustration` -- 485 instances in `data/`
+### `illustration` -- 490 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `of` | 241 | 49.7% |
-| `depicts` | 171 | 35.3% |
+| `of` | 246 | 50.2% |
+| `depicts` | 174 | 35.5% |
 | `uncertain` | 2 | 0.4% |
 
 ### `inferredContext` -- 1 instances in `data/`
@@ -209,36 +209,36 @@ property.
 | `basis` | 0 | 0.0% |
 | `sources` | 0 | 0.0% |
 
-### `localTimeFields` -- 165 instances in `data/`
+### `localTimeFields` -- 166 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `localSeries` | 65 | 39.4% |
-| `localSeriesModifier` | 26 | 15.8% |
-| `localSeriesRange` | 9 | 5.5% |
-| `localStage` | 9 | 5.5% |
+| `localSeries` | 65 | 39.2% |
+| `localSeriesModifier` | 26 | 15.7% |
+| `localSeriesRange` | 9 | 5.4% |
+| `localStage` | 9 | 5.4% |
 | `localStageRange` | 6 | 3.6% |
 | `localPeriod` | 3 | 1.8% |
 | `localSeriesBoundary` | 1 | 0.6% |
 | `localStageModifier` | 1 | 0.6% |
 | `localStageBoundary` | 0 | 0.0% |
 
-### `locationFields` -- 9307 instances in `data/`
+### `locationFields` -- 9310 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `illustrations` | 191 | 2.1% |
+| `illustrations` | 192 | 2.1% |
 
-### `materialEntry` -- 291 instances in `data/`
+### `materialEntry` -- 292 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `numbers` | 270 | 92.8% |
-| `prefix` | 267 | 91.8% |
-| `role` | 217 | 74.6% |
-| `context` | 141 | 48.5% |
-| `asPrinted` | 71 | 24.4% |
-| `notes` | 66 | 22.7% |
+| `numbers` | 271 | 92.8% |
+| `prefix` | 268 | 91.8% |
+| `role` | 218 | 74.7% |
+| `context` | 143 | 49.0% |
+| `asPrinted` | 71 | 24.3% |
+| `notes` | 67 | 22.9% |
 | `label` | 18 | 6.2% |
 | `preparation` | 17 | 5.8% |
 | `repository` | 12 | 4.1% |
@@ -263,28 +263,28 @@ property.
 | `sameAs.prefix` | 0 | - |
 | `sameAs.source` | 0 | - |
 
-### `materialsFields` -- 5676 instances in `data/`
+### `materialsFields` -- 5679 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
 | `material` | 119 | 2.1% |
-| `contexts` | 97 | 1.7% |
+| `contexts` | 98 | 1.7% |
 | `ranges` | 90 | 1.6% |
 
-### `metaFields` -- 6470 instances in `data/`
+### `metaFields` -- 6473 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `notes` | 410 | 6.3% |
-| `editorial` | 11 | 0.2% |
+| `notes` | 413 | 6.4% |
+| `editorial` | 15 | 0.2% |
 
-### `modularDate` -- 337 instances in `data/`
+### `modularDate` -- 339 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `year` | 337 | 100.0% |
-| `month` | 82 | 24.3% |
-| `day` | 32 | 9.5% |
+| `year` | 339 | 100.0% |
+| `month` | 82 | 24.2% |
+| `day` | 32 | 9.4% |
 | `/then/oneOf/2.day` | 19 | 100.0% |
 | `/then/oneOf/2.month` | 19 | 100.0% |
 | `/then/oneOf/1.day` | 11 | 100.0% |
@@ -294,14 +294,14 @@ property.
 | `/then/oneOf/0.month` | 2 | 100.0% |
 | `season` | 1 | 0.3% |
 
-### `person` -- 285 instances in `data/`
+### `person` -- 286 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `given` | 285 | 100.0% |
-| `surname` | 285 | 100.0% |
-| `birth` | 85 | 29.8% |
-| `death` | 84 | 29.5% |
+| `given` | 286 | 100.0% |
+| `surname` | 286 | 100.0% |
+| `birth` | 86 | 30.1% |
+| `death` | 85 | 29.7% |
 | `suffix` | 0 | 0.0% |
 
 ### `phylogeny` -- 36 instances in `data/`
@@ -314,15 +314,15 @@ property.
 | `notes` | 6 | 16.7% |
 | `characteristics` | 1 | 2.8% |
 
-### `publication` -- 148 instances in `data/`
+### `publication` -- 149 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `name` | 148 | 100.0% |
-| `editors` | 9 | 6.1% |
+| `name` | 149 | 100.0% |
+| `editors` | 9 | 6.0% |
 | `place` | 8 | 5.4% |
 | `publisher` | 8 | 5.4% |
-| `notes` | 2 | 1.4% |
+| `notes` | 2 | 1.3% |
 | `type` | 0 | 0.0% |
 
 ### `range` -- 52 instances in `data/`
@@ -337,33 +337,33 @@ property.
 | `regions/items/oneOf/1.value` | 2 | 100.0% |
 | `inferred` | 0 | 0.0% |
 
-### `relationalFields` -- 5676 instances in `data/`
+### `relationalFields` -- 5679 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `synonyms` | 358 | 6.3% |
+| `synonyms` | 357 | 6.3% |
 | `moved` | 31 | 0.5% |
 | `corrected` | 5 | 0.1% |
 | `non` | 5 | 0.1% |
 | `or` | 3 | 0.1% |
+| `type` | 3 | 0.1% |
 | `lapsus` | 2 | 0.0% |
 | `removed` | 2 | 0.0% |
 | `substituted` | 2 | 0.0% |
 | `lapsusFor` | 1 | 0.0% |
-| `type` | 0 | 0.0% |
 
 ### `repositories` -- 1 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `/additionalProperties.name` | 55 | 100.0% |
-| `/additionalProperties.type` | 55 | 100.0% |
-| `/additionalProperties.prefixes` | 50 | 90.9% |
-| `/additionalProperties.place` | 34 | 61.8% |
-| `/additionalProperties.within` | 15 | 27.3% |
-| `/additionalProperties.subject` | 14 | 25.5% |
-| `/additionalProperties.notes` | 8 | 14.5% |
-| `/additionalProperties.otherNames` | 3 | 5.5% |
+| `/additionalProperties.name` | 58 | 100.0% |
+| `/additionalProperties.type` | 58 | 100.0% |
+| `/additionalProperties.prefixes` | 51 | 87.9% |
+| `/additionalProperties.place` | 35 | 60.3% |
+| `/additionalProperties.within` | 16 | 27.6% |
+| `/additionalProperties.subject` | 14 | 24.1% |
+| `/additionalProperties.notes` | 8 | 13.8% |
+| `/additionalProperties.otherNames` | 3 | 5.2% |
 
 ### `roles` -- 1 instances in `data/`
 
@@ -375,7 +375,7 @@ property.
 | `/additionalProperties.notes` | 6 | 50.0% |
 | `/additionalProperties.equivalent` | 2 | 16.7% |
 
-### `sectionFields` -- 5676 instances in `data/`
+### `sectionFields` -- 5679 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
@@ -407,29 +407,29 @@ property.
 | property | data | data % |
 |---|---|---|
 | `name` | 2801 | 98.7% |
-| `authority` | 1698 | 59.9% |
+| `authority` | 1702 | 60.0% |
 | `rank` | 972 | 34.3% |
-| `pages` | 255 | 9.0% |
-| `notes` | 224 | 7.9% |
-| `altSpellingOf` | 146 | 5.1% |
-| `lang` | 73 | 2.6% |
+| `pages` | 256 | 9.0% |
+| `notes` | 229 | 8.1% |
+| `altSpellingOf` | 145 | 5.1% |
+| `lang` | 74 | 2.6% |
 | `originalParent` | 70 | 2.5% |
-| `altRankOf` | 58 | 2.0% |
-| `vulgarSpellingOf` | 45 | 1.6% |
+| `altRankOf` | 57 | 2.0% |
+| `vulgarSpellingOf` | 46 | 1.6% |
 | `homonym` | 16 | 0.6% |
 | `bracket` | 13 | 0.5% |
-| `needsQualification` | 11 | 0.4% |
-| `status` | 5 | 0.2% |
+| `needsQualification` | 12 | 0.4% |
 | `designation` | 4 | 0.1% |
+| `status` | 4 | 0.1% |
 | `holotype` | 1 | 0.0% |
 
-### `timeFields` -- 166 instances in `data/`
+### `timeFields` -- 167 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `period` | 110 | 66.3% |
-| `series` | 47 | 28.3% |
-| `stage` | 15 | 9.0% |
+| `period` | 110 | 65.9% |
+| `series` | 48 | 28.7% |
+| `stage` | 16 | 9.6% |
 | `seriesModifier` | 8 | 4.8% |
 | `seriesRange` | 8 | 4.8% |
 | `stageModifier` | 4 | 2.4% |
@@ -445,20 +445,20 @@ property.
 |---|---|---|
 | `by` | 1 | 6.2% |
 
-### `tree` -- 6470 instances in `data/`
+### `tree` -- 6473 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
 | `children` | 2198 | 34.0% |
-| `pages` | 810 | 12.5% |
-| `parents` | 324 | 5.0% |
-| `rank` | 126 | 1.9% |
-| `authority` | 103 | 1.6% |
+| `pages` | 830 | 12.8% |
+| `parents` | 325 | 5.0% |
+| `rank` | 143 | 2.2% |
+| `authority` | 109 | 1.7% |
 | `bracketEnd` | 28 | 0.4% |
 | `bracketStart` | 28 | 0.4% |
 | `altPlacements` | 7 | 0.1% |
 | `mergeInto` | 4 | 0.1% |
-| `/if.authority` | 0 | - |
+| `/if.authority` | 1 | 100.0% |
 
 ### `treeDocument` -- 220 instances in `data/`
 
@@ -473,16 +473,23 @@ property.
 | `contexts` | 1 | 0.5% |
 | `localityRegister` | 1 | 0.5% |
 
-### `uncertaintyFields` -- 6470 instances in `data/`
+### `typeNode` -- 3 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `provisional` | 124 | 1.9% |
+| `fixation` | 2 | 66.7% |
+| `fixedBy` | 0 | 0.0% |
+
+### `uncertaintyFields` -- 6473 instances in `data/`
+
+| property | data | data % |
+|---|---|---|
+| `provisional` | 126 | 1.9% |
 | `tentative` | 17 | 0.3% |
 | `quotedParent` | 14 | 0.2% |
 | `questionable` | 13 | 0.2% |
-| `quoted` | 2 | 0.0% |
 | `nonMonophyletic` | 1 | 0.0% |
+| `quoted` | 1 | 0.0% |
 | `sensu` | 0 | 0.0% |
 
 ## 3. Enum member usage
@@ -537,12 +544,12 @@ property.
 
 ### `phylogeny#/$defs/illustration/properties/depicts`
 
-3 of 4 members used, 171 occurrences.
+3 of 4 members used, 174 occurrences.
 
 | value | count |
 |---|---|
-| `'cast'` | 130 |
-| `'drawing'` | 38 |
+| `'cast'` | 131 |
+| `'drawing'` | 40 |
 | `'reconstruction'` | 3 |
 
 **Never used (1):** `'specimen'`
@@ -608,24 +615,24 @@ property.
 
 ### `phylogeny#/$defs/rank`
 
-24 of 32 members used, 1098 occurrences.
+24 of 32 members used, 1113 occurrences.
 
 | value | count |
 |---|---|
 | `'species'` | 236 |
-| `'Order'` | 211 |
-| `'Family'` | 177 |
+| `'Order'` | 215 |
+| `'Family'` | 178 |
 | `'genus'` | 132 |
-| `'Class'` | 110 |
+| `'Class'` | 114 |
 | `'variety'` | 59 |
 | `'Subfamily'` | 26 |
 | `'Superfamily'` | 18 |
 | `'subgenus'` | 17 |
+| `'Phylum'` | 16 |
+| `'Suborder'` | 15 |
 | `'Subclass'` | 15 |
 | `'section'` | 14 |
-| `'Suborder'` | 14 |
-| `'Phylum'` | 12 |
-| `'Subphylum'` | 11 |
+| `'Subphylum'` | 12 |
 | `'Group'` | 10 |
 | `'Grade'` | 9 |
 | `'Division'` | 7 |
@@ -652,24 +659,24 @@ property.
 
 ### `phylogeny#/$defs/repositories/additionalProperties/properties/type`
 
-3 of 4 members used, 55 occurrences.
+3 of 4 members used, 58 occurrences.
 
 | value | count |
 |---|---|
-| `'institution'` | 36 |
-| `'collection'` | 15 |
+| `'institution'` | 38 |
+| `'collection'` | 16 |
 | `'person'` | 4 |
 
 **Never used (1):** `'unknown'`
 
 ### `phylogeny#/$defs/role`
 
-12 of 12 members used, 231 occurrences.
+12 of 12 members used, 232 occurrences.
 
 | value | count |
 |---|---|
 | `'paratype'` | 95 |
-| `'holotype'` | 79 |
+| `'holotype'` | 80 |
 | `'plesiotype'` | 32 |
 | `'syntype'` | 8 |
 | `'lectotype'` | 4 |
@@ -683,7 +690,7 @@ property.
 
 ### `phylogeny#/$defs/series`
 
-7 of 38 members used, 63 occurrences.
+8 of 38 members used, 64 occurrences.
 
 | value | count |
 |---|---|
@@ -694,12 +701,13 @@ property.
 | `'Upper Devonian'` | 1 |
 | `'Llandovery'` | 1 |
 | `'Upper Ordovician'` | 1 |
+| `'Cambrian Series 2'` | 1 |
 
-**Never used (31):** `'Terrenuevian'`, `'Cambrian Series 2'`, `'Miaolingian'`, `'Furongian'`, `'Wenlock'`, `'Ludlow'`, `'Přídolí'`, `'Lower Mississippian'`, `'Middle Mississippian'`, `'Upper Mississippian'`, `'Lower Pennsylvanian'`, `'Middle Pennsylvanian'`, `'Upper Pennsylvanian'`, `'Cisuralian'`, `'Guadalupian'`, `'Lopingian'`, `'Lower Triassic'`, `'Middle Triassic'`, `'Upper Triassic'`, `'Lower Jurassic'`, `'Middle Jurassic'`, `'Upper Jurassic'`, `'Lower Cretaceous'`, `'Upper Cretaceous'`, `'Paleocene'`, `'Eocene'`, `'Oligocene'`, `'Miocene'`, `'Pliocene'`, `'Pleistocene'`, `'Holocene'`
+**Never used (30):** `'Terrenuevian'`, `'Miaolingian'`, `'Furongian'`, `'Wenlock'`, `'Ludlow'`, `'Přídolí'`, `'Lower Mississippian'`, `'Middle Mississippian'`, `'Upper Mississippian'`, `'Lower Pennsylvanian'`, `'Middle Pennsylvanian'`, `'Upper Pennsylvanian'`, `'Cisuralian'`, `'Guadalupian'`, `'Lopingian'`, `'Lower Triassic'`, `'Middle Triassic'`, `'Upper Triassic'`, `'Lower Jurassic'`, `'Middle Jurassic'`, `'Upper Jurassic'`, `'Lower Cretaceous'`, `'Upper Cretaceous'`, `'Paleocene'`, `'Eocene'`, `'Oligocene'`, `'Miocene'`, `'Pliocene'`, `'Pleistocene'`, `'Holocene'`
 
 ### `phylogeny#/$defs/stage`
 
-8 of 100 members used, 15 occurrences.
+9 of 100 members used, 16 occurrences.
 
 | value | count |
 |---|---|
@@ -711,8 +719,9 @@ property.
 | `'Telychian'` | 2 |
 | `'Givetian'` | 1 |
 | `'Jiangshanian'` | 1 |
+| `'Cambrian Stage 3'` | 1 |
 
-**Never used (92):** `'Fortunian'`, `'Cambrian Stage 2'`, `'Cambrian Stage 3'`, `'Cambrian Stage 4'`, `'Wuliuan'`, `'Drumian'`, `'Guzhangian'`, `'Paibian'`, `'Cambrian Stage 10'`, `'Dapingian'`, `'Darriwilian'`, `'Sandbian'`, `'Hirnantian'`, `'Rhuddanian'`, `'Aeronian'`, `'Sheinwoodian'`, `'Homerian'`, `'Gorstian'`, `'Ludfordian'`, `'Lochkovian'`, `'Pragian'`, `'Frasnian'`, `'Famennian'`, `'Touraisian'`, `'Viséan'`, `'Serpukhovian'`, `'Baskirian'`, `'Moscovian'`, `'Kasimovian'`, `'Gzhelian'`, `'Asselian'`, `'Sakmarian'`, `'Artinskian'`, `'Kungurian'`, `'Roadian'`, `'Wordian'`, `'Capitanian'`, `'Wuchiapingian'`, `'Changhsingian'`, `'Induan'`, `'Olenekian'`, `'Anisian'`, `'Ladinian'`, `'Carnian'`, `'Norian'`, `'Rhaetian'`, `'Hettangian'`, `'Sinemurian'`, `'Toarcian'`, `'Aalenian'`, `'Bajocian'`, `'Bathonian'`, `'Callovian'`, `'Oxfordian'`, `'Kimmeridgian'`, `'Tithonian'`, `'Berriasian'`, `'Valanginian'`, `'Hauterivian'`, `'Barremian'`, `'Aptian'`, `'Albian'`, `'Cenomanian'`, `'Turonian'`, `'Coniacian'`, `'Santonian'`, `'Campanian'`, `'Maastrichtian'`, `'Danian'`, `'Selanian'`, `'Thanetian'`, `'Ypresian'`, `'Lutetian'`, `'Bartonian'`, `'Priabonian'`, `'Rupelian'`, `'Chattian'`, `'Aquitanian'`, `'Burdigalian'`, `'Langhian'`, `'Serravallian'`, `'Tortonian'`, `'Messinian'`, `'Zanclean'`, `'Piacenzian'`, `'Gelasian'`, `'Calabrian'`, `'Chibanian'`, `'Upper Pleistocene'`, `'Greenlandian'`, `'Northgrippian'`, `'Meghalayan'`
+**Never used (91):** `'Fortunian'`, `'Cambrian Stage 2'`, `'Cambrian Stage 4'`, `'Wuliuan'`, `'Drumian'`, `'Guzhangian'`, `'Paibian'`, `'Cambrian Stage 10'`, `'Dapingian'`, `'Darriwilian'`, `'Sandbian'`, `'Hirnantian'`, `'Rhuddanian'`, `'Aeronian'`, `'Sheinwoodian'`, `'Homerian'`, `'Gorstian'`, `'Ludfordian'`, `'Lochkovian'`, `'Pragian'`, `'Frasnian'`, `'Famennian'`, `'Touraisian'`, `'Viséan'`, `'Serpukhovian'`, `'Baskirian'`, `'Moscovian'`, `'Kasimovian'`, `'Gzhelian'`, `'Asselian'`, `'Sakmarian'`, `'Artinskian'`, `'Kungurian'`, `'Roadian'`, `'Wordian'`, `'Capitanian'`, `'Wuchiapingian'`, `'Changhsingian'`, `'Induan'`, `'Olenekian'`, `'Anisian'`, `'Ladinian'`, `'Carnian'`, `'Norian'`, `'Rhaetian'`, `'Hettangian'`, `'Sinemurian'`, `'Toarcian'`, `'Aalenian'`, `'Bajocian'`, `'Bathonian'`, `'Callovian'`, `'Oxfordian'`, `'Kimmeridgian'`, `'Tithonian'`, `'Berriasian'`, `'Valanginian'`, `'Hauterivian'`, `'Barremian'`, `'Aptian'`, `'Albian'`, `'Cenomanian'`, `'Turonian'`, `'Coniacian'`, `'Santonian'`, `'Campanian'`, `'Maastrichtian'`, `'Danian'`, `'Selanian'`, `'Thanetian'`, `'Ypresian'`, `'Lutetian'`, `'Bartonian'`, `'Priabonian'`, `'Rupelian'`, `'Chattian'`, `'Aquitanian'`, `'Burdigalian'`, `'Langhian'`, `'Serravallian'`, `'Tortonian'`, `'Messinian'`, `'Zanclean'`, `'Piacenzian'`, `'Gelasian'`, `'Calabrian'`, `'Chibanian'`, `'Upper Pleistocene'`, `'Greenlandian'`, `'Northgrippian'`, `'Meghalayan'`
 
 ### `phylogeny#/$defs/stageModifier`
 
@@ -737,9 +746,13 @@ property.
 
 ### `phylogeny#/$defs/typeNode/properties/fixation`
 
-0 of 8 members used, 0 occurrences.
+1 of 8 members used, 2 occurrences.
 
-**Never used (8):** `'originalDesignation'`, `'monotypy'`, `'subsequentDesignation'`, `'subsequentMonotypy'`, `'objectiveSynonymy'`, `'tautonymy'`, `'typus'`, `'iczn'`
+| value | count |
+|---|---|
+| `'originalDesignation'` | 2 |
+
+**Never used (7):** `'monotypy'`, `'subsequentDesignation'`, `'subsequentMonotypy'`, `'objectiveSynonymy'`, `'tautonymy'`, `'typus'`, `'iczn'`
 
 ### `phylogeny#/$defs/uncertaintyFields/properties/nonMonophyletic/oneOf/1`
 
@@ -761,25 +774,25 @@ Tests whether each multi-type declaration is actually needed.
 |---|---|---|---|---|
 | `phylogeny#/$defs/article/properties/articleNumber` | integer/string | intx5, strx2 | `e1465`, `e38296` | - |
 | `phylogeny#/$defs/article/properties/chapter` | integer/string | strx2 | `III. Stamm. Echinodermat...`, `Report of E. Billings, E...` | integer |
-| `phylogeny#/$defs/article/properties/number` | integer/string | intx156, strx10 | `Supplement`, `1/2`, `Adv. Pr.`, `1–2` | - |
-| `phylogeny#/$defs/article/properties/pages/items` | integer/string | intx432, strx46 | `S637`, `S634`, `S631`, `S627` | - |
+| `phylogeny#/$defs/article/properties/number` | integer/string | intx156, strx11 | `Supplement`, `1/2`, `Adv. Pr.`, `1–2` | - |
+| `phylogeny#/$defs/article/properties/pages/items` | integer/string | intx436, strx46 | `S637`, `S634`, `S631`, `S627` | - |
 | `phylogeny#/$defs/article/properties/plates/items` | integer/string | intx29, strx12 | `II`, `I`, `VI`, `V` | - |
-| `phylogeny#/$defs/article/properties/series` | integer/string | intx8, strx1 | `A` | - |
-| `phylogeny#/$defs/article/properties/volume` | integer/string | intx249, strx14 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `II` | - |
-| `phylogeny#/$defs/citationNumber` | integer/string | intx2206, strx218 | `IV`, `II`, `IX`, `VIII` | - |
+| `phylogeny#/$defs/article/properties/series` | integer/string | intx10, strx1 | `A` | - |
+| `phylogeny#/$defs/article/properties/volume` | integer/string | intx251, strx14 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `II` | - |
+| `phylogeny#/$defs/citationNumber` | integer/string | intx2233, strx225 | `IV`, `II`, `IX`, `VIII` | - |
 | `phylogeny#/$defs/cladisticFields/properties/matrix/items` | integer/string | intx139, strx5 | `?` | - |
-| `phylogeny#/$defs/contexts` | object/null | dictx57, nullx41 | - | - |
-| `phylogeny#/$defs/editorialObject/properties/inferred` | boolean/array | listx6, boolx4 | - | - |
-| `phylogeny#/$defs/illustration/properties/of/oneOf/0` | string/integer | intx160, strx43 | `B`, `A`, `25962B`, `602-RO-5` | - |
+| `phylogeny#/$defs/contexts` | object/null | dictx58, nullx41 | - | - |
+| `phylogeny#/$defs/editorialObject/properties/inferred` | boolean/array | listx7, boolx5 | - | - |
+| `phylogeny#/$defs/illustration/properties/of/oneOf/0` | string/integer | intx165, strx43 | `B`, `A`, `25962B`, `602-RO-5` | - |
 | `phylogeny#/$defs/illustration/properties/of/oneOf/1/items` | string/integer | strx54, intx48 | `165406A`, `165406B`, `165405B`, `165405A` | - |
-| `phylogeny#/$defs/locationFields/properties/illustrations` | array/null | listx179, nullx12 | - | - |
+| `phylogeny#/$defs/locationFields/properties/illustrations` | array/null | listx180, nullx12 | - | - |
 | `phylogeny#/$defs/materialEntry/properties/castOf` | string/integer | intx3 | - | string |
 | `phylogeny#/$defs/materialsFields/properties/material` | array/null | listx110, nullx9 | - | - |
 | `phylogeny#/$defs/materialsFields/properties/ranges` | array/null | listx49, nullx41 | - | - |
-| `phylogeny#/$defs/person/properties/death` | integer/null | intx83, nullx1 | - | - |
+| `phylogeny#/$defs/person/properties/death` | integer/null | intx84, nullx1 | - | - |
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
-| `phylogeny#/$defs/printedNumber` | string/integer | intx437, strx246 | `S-3965`, `SH-2`, `SH-1`, `SC-4A` | - |
-| `phylogeny#/$defs/relationalFields/properties/synonyms` | array/null | listx358 | - | null |
+| `phylogeny#/$defs/printedNumber` | string/integer | intx437, strx248 | `S-3965`, `SH-2`, `SH-1`, `SC-4A` | - |
+| `phylogeny#/$defs/relationalFields/properties/synonyms` | array/null | listx357 | - | null |
 | `phylogeny#/$defs/sectionRecord/properties/name` | string/null | strx9, nullx3 | `Stellatae`, `Radiatae`, `Multivalvia`, `Lunatae` | - |
 | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items` | array/string/integer | strx1 | `E23470` | array, integer |
 | `phylogeny#/$defs/taxonRecord/properties/name` | string/null | strx2581, nullx220 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |

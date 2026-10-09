@@ -2,6 +2,10 @@ prefixes:
   NHMUK EE: nhmuk-ee
 taxonomies:
 - taxon: echinodermata
+  citedAs: 'Phylum: Echinodermata'
+  rank: Phylum
+  authority: null
+  pages: 6
   children:
   - taxon: edrioasteroidea
     children:

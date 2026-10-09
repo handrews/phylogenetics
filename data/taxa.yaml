@@ -4242,6 +4242,24 @@ edrioasterida-sp_sumrall_sprinkle_guensburg_1997:
   rank: species
   authority:
     source: 1997_sumrall_sprinkle_guensburg
+edrioasteridae_billings_1858b:
+  name: Edrioasteridae
+  needsQualification: true
+  rank: Suborder
+  pages: 85
+  authority:
+    source: 1858b_billings
+  citedAs: a sub-order, for which the name Edrioasteridæ would be appropriate
+  notes: >
+    This Suborder named like a Family is the precursor to the
+    Class Edrioasteriodea, and not Bather's Family Edrioasteridae
+edrioasteriden:
+  name: Edrioasteriden
+  lang: DE
+  vulgarSpellingOf: edrioasteridae_billings_1858b
+  notes: >
+    Used in Schmidt 1879; unclear if anyone had modified Billings'
+    original taxon in the intervening years.
 edrioasteridae:
   name: Edrioasteridae
   rank: Family
@@ -4265,10 +4283,6 @@ edrioasteroidea:
   bracket: Edrioasteroids
   authority:
     source: 1858b_billings
-edrioasteridae-suborder:
-  name: Edrioasteridae
-  rank: Suborder
-  altRankOf: edrioasteroidea
 edrioasteroidea-order-uncertain_bassler_1935:
   name: null
   rank: Order

@@ -222,6 +222,7 @@
   "savage": "Savage",
   "say": "Say",
   "schlotheim": "Schlotheim",
+  "schmidt.c.f": "Schmidt",
   "schuchert": "Schuchert",
   "seibert.r": "Seibert",
   "selden": "Selden",
@@ -5636,6 +5637,43 @@
    "material": {},
    "tree": false
   },
+  "1879_schmidt.c.f": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Schmidt"
+    ],
+    "in": "Verhandlungen der Russisch-Kaiserlichen Mineralogischen Gesellschaft\nzu St. Petersburg\n",
+    "number": "Adv. Pr.",
+    "pages": [
+     1,
+     7
+    ],
+    "series": 2,
+    "title": "Ueber Cyathocystis Plautinae,eine neue Cystideenform aus Reval",
+    "volume": 15,
+    "year": 1879
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1879_zittel": {
    "acts": {},
    "audit": {
@@ -5717,6 +5755,42 @@
     "title": null,
     "volume": "II",
     "year": 1879
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1880_schmidt.c.f": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Schmidt"
+    ],
+    "in": "Verhandlungen der Russisch-Kaiserlichen Mineralogischen Gesellschaft\nzu St. Petersburg\n",
+    "pages": [
+     1,
+     7
+    ],
+    "series": 2,
+    "title": "Ueber Cyathocystis Plautinae,eine neue Cystideenform aus Reval",
+    "volume": 15,
+    "year": 1880
    },
    "claims": {},
    "coverage": {
@@ -9117,7 +9191,7 @@
    },
    "claims": {
     "act": 4,
-    "editorial": 2,
+    "editorial": 4,
     "placement": 18,
     "usage": 19
    },
@@ -16507,10 +16581,10 @@
    },
    "claims": {
     "act": 4,
-    "material": 2,
+    "material": 8,
     "placement": 5,
     "rejection": 1,
-    "usage": 7
+    "usage": 8
    },
    "coverage": {
     "illustrations": null,
@@ -16523,9 +16597,11 @@
     "types": null
    },
    "derived": {
+    "illustrations": 5,
     "material": 2,
     "newTaxa": 2,
-    "skeleton": 13,
+    "occurrences": 1,
+    "skeleton": 14,
     "types": 1
    },
    "derivedCoverage": {
@@ -16538,6 +16614,8 @@
    },
    "inconsistencies": [],
    "material": {
+    "illustration": 5,
+    "occurrence": 1,
     "specimen": 2
    },
    "tree": true
@@ -16600,6 +16678,8 @@
   },
   "2024_zamora_guensburg_sprinkle": {
    "acts": {
+    "combNov": 1,
+    "emended": 1,
     "moved": 1,
     "type": 1
    },
@@ -16622,11 +16702,11 @@
     "year": 2024
    },
    "claims": {
-    "act": 2,
-    "material": 1,
-    "placement": 5,
+    "act": 4,
+    "material": 2,
+    "placement": 6,
     "rejection": 1,
-    "usage": 7
+    "usage": 10
    },
    "coverage": {
     "illustrations": null,
@@ -16639,8 +16719,8 @@
     "types": null
    },
    "derived": {
-    "material": 1,
-    "skeleton": 13,
+    "material": 2,
+    "skeleton": 17,
     "types": 1
    },
    "derivedCoverage": {
@@ -16653,7 +16733,7 @@
    },
    "inconsistencies": [],
    "material": {
-    "specimen": 1
+    "specimen": 2
    },
    "tree": true
   },
@@ -19973,6 +20053,7 @@
    "2022_zamora_rahman_sumrall_gibson_thompson",
    "2022_zhao.j_guo.j_selden_cong.p.y_li.y.j",
    "2022_zhao.j_rahman_zamora_chen.a_cong.p.y",
+   "2024_wang.d.z_nohejlová_sun.z.x_zeng.h_lefebvre_yang.x.l_zhao.f.c",
    "2024_zamora_guensburg_sprinkle"
   ],
   "echinodermata-class": [
@@ -20004,8 +20085,7 @@
    "1837_hisinger"
   ],
   "echinodermata_klein_1778": [
-   "1778_klein",
-   "2024_wang.d.z_nohejlová_sun.z.x_zeng.h_lefebvre_yang.x.l_zhao.f.c"
+   "1778_klein"
   ],
   "echinodermen": [
    "1854_müller.j.p"
@@ -20261,7 +20341,7 @@
    "1994_guensburg_sprinkle",
    "2015_sprinkle_sumrall"
   ],
-  "edrioasteridae-suborder": [
+  "edrioasteridae_billings_1858b": [
    "1858b_billings"
   ],
   "edrioasterids": [
@@ -20818,7 +20898,8 @@
    "1839_murchison"
   ],
   "extenuatus_zhao.j_rahman_zamora_chen.a_cong.p.y_2022": [
-   "2022_zhao.j_rahman_zamora_chen.a_cong.p.y"
+   "2022_zhao.j_rahman_zamora_chen.a_cong.p.y",
+   "2024_zamora_guensburg_sprinkle"
   ],
   "externes": [
    "1801_lamarck"
@@ -24572,12 +24653,12 @@
   "platys_raymond_1915": [
    "1976_bell.b.m"
   ],
-  "plautinae_schmidt_1879": [
+  "plautinae_schmidt.c.f_1879": [
    "1966_regnéll",
    "1975_bell.b.m",
    "1983_bockelie_paul.c.r.c"
   ],
-  "plautini_schmidt_1880": [
+  "plautini_schmidt.c.f_1879": [
    "1935_bassler"
   ],
   "pleiadae_sinclair_bolton_1965": [
@@ -25388,7 +25469,7 @@
    "1998_dean.j_smith.a.b",
    "2020_zamora_sprinkle_sumrall"
   ],
-  "rhizophora_schmidt_1889": [
+  "rhizophora_schmidt.c.f_1879": [
    "1975_bell.b.m"
   ],
   "rhizophysa": [
