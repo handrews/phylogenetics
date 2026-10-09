@@ -2,6 +2,7 @@ taxonomies:
 - taxon: echinodermata
   rank: null
   new: true
+  pages: 9
   notes: |
     Klein used "Echinodermata" (and "Echinodermatum") as a description
     of echinoid tests rather than as a taxon, which perhaps contributes

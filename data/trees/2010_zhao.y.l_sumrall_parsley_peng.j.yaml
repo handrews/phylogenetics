@@ -2,6 +2,9 @@ prefixes:
   GM: gm
 taxonomies:
 - taxon: edrioasteroidea
+  citedAs: Class EDRIOASTEROIDEA Billings, 1858
+  rank: Class
+  pages: 674
   children:
   - openTaxon: edrioasteroidea-order-uncertain_zhao.y.l_sumrall_parsley_peng.j_2010
     children:

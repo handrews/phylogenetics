@@ -920,8 +920,31 @@ arthriticus_phillips.j_1839:
 arthropoda:
   name: Arthropoda
   rank: Phylum
-  auth: [von Siebold]
+  auth: [Siebold]
   year: 1848
+  notes: >
+    Also seen credited to Siebold and Stannius 1845 or Gravenhorst 1843
+arthropoda-class-uncertain_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010:
+  name: null
+  rank: Class
+  pages: 394
+  authority:
+    source: 2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l
+  citedAs: Class, Order and Family Uncertain
+arthropoda-order-uncertain_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010:
+  name: null
+  rank: Order
+  pages: 394
+  authority:
+    source: 2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l
+  citedAs: Class, Order and Family Uncertain
+arthropoda-family-uncertain_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010:
+  name: null
+  rank: Family
+  pages: 394
+  authority:
+    source: 2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l
+  citedAs: Class, Order and Family Uncertain
 articulata:
   name: Articulata
   rank: Subclass
@@ -2531,6 +2554,20 @@ clypeatus_lamarck_1801:
   name: clypeatus
   authority:
     source: 1801_lamarck
+clypecaris:
+  name: Clypecaris
+  auth: [Hou]
+  year: 1999
+  notes: >
+    Seen in 2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l
+    (mostly in Chinese) but no exact match in bibliography.
+clypecaris-sp_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010:
+  name: null
+  rank: genus
+  pages: 394
+  authority:
+    source: 2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l
+  citedAs: Clypecaris? sp.
 clypeus:
   name: Clypeus
   authority:
@@ -3962,11 +3999,6 @@ echinodermata:
 
     Common alternatives are Bruguière 1789 or
     Bruguière 1791 [ex Klein 1734].
-echinodermata_klein_1778:
-  name: Echinodermata
-  needsQualification: true
-  authority:
-    source: 1778_klein
 echinodermata-class:
   rank: Class
   altRankOf: echinodermata

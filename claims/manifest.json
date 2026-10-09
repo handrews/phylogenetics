@@ -13901,7 +13901,7 @@
   },
   "2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l": {
    "acts": {
-    "placeholder": 1
+    "placeholder": 5
    },
    "audit": {
     "state": "unaudited"
@@ -13922,9 +13922,9 @@
     "year": 2010
    },
    "claims": {
-    "act": 1,
-    "placement": 6,
-    "usage": 7
+    "act": 5,
+    "placement": 11,
+    "usage": 13
    },
    "coverage": {
     "illustrations": null,
@@ -13937,8 +13937,8 @@
     "types": null
    },
    "derived": {
-    "newTaxa": 1,
-    "skeleton": 13
+    "newTaxa": 5,
+    "skeleton": 24
    },
    "derivedCoverage": {
     "illustrations": null,
@@ -17483,6 +17483,18 @@
   "arthriticus_phillips.j_1839": [
    "1839_murchison"
   ],
+  "arthropoda": [
+   "2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l"
+  ],
+  "arthropoda-class-uncertain_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010": [
+   "2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l"
+  ],
+  "arthropoda-family-uncertain_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010": [
+   "2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l"
+  ],
+  "arthropoda-order-uncertain_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010": [
+   "2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l"
+  ],
   "articulata": [
    "1973_sprinkle"
   ],
@@ -18803,6 +18815,12 @@
   ],
   "clypeatus_lamarck_1801": [
    "1801_lamarck"
+  ],
+  "clypecaris": [
+   "2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l"
+  ],
+  "clypecaris-sp_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010": [
+   "2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l"
   ],
   "clypeus": [
    "1778_leske",
