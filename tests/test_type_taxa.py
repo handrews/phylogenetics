@@ -265,7 +265,6 @@ def test_the_corpus_has_no_type_node_messages(load_records):
   for opinion in data['trees'].values():
     for _, node, is_cited in walk_document(opinion):
       found += nomenclature.type_node(node, is_cited)
-      assert 'type' not in node
   assert found == []
 
 
@@ -1163,13 +1162,15 @@ def test_the_corpus_lines_are_unmarked_and_rank_worded(store):
           else 'Type'
         )
         assert line['word'] == word
-        assert f'{word}. {line["label"]}' + (' (editor)' if line['inferred'] else '') in [
-          ln.strip().lstrip('?').strip() for ln in block['rendered'].splitlines()
-        ]
-        # No data uses the `type` node yet: no method, no placement of its kind.
-        assert 'method' not in line
+        expected = f'{word}. {line["label"]}'
+        if line.get('method'):
+          expected += ', ' + line['method']
+        if line['inferred']:
+          expected += ' (editor)'
+        if line.get('methodInferred'):
+          expected += ' (method: editor)'
+        assert expected in [ln.strip().lstrip('?').strip() for ln in block['rendered'].splitlines()]
   assert checked > 300
-  assert not [c for claims in store.by_source.values() for c in claims if c.get('via') == 'type']
 
 
 def test_the_corpus_type_genera_now_read_type_genus(store):
