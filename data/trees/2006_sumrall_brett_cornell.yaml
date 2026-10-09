@@ -1,20 +1,40 @@
 taxonomies:
-- notes: No rank words above genus; "Genus" is printed (p. 190)
-  taxon: edrioasteroidea
+- taxon: edrioasteroidea
+  citedAs: Edrioasteroidea Billings, 1858
+  rank: null
+  pages: 190
   children:
   - taxon: isorophida
-    notes: Isorophida and Isorophina are switched, surely by error.
+    citedAs: Isorophina Bell, 1976b
+    lapsus:
+      taxon: isorophina
+    rank: null
+    pages: 190
     children:
     - taxon: isorophina
-      notes: Isorophida and Isorophina are switched, surely by error.
+      citedAs: Isorophida Bell, 1976a
+      lapsus:
+        taxon: isorophida
+      rank: null
+      pages: 190
       children:
       - taxon: agelacrinitidae
+        citedAs: Agelacrinitidae Chapman, 1860
+        rank: null
+        pages: 190
         children:
         - taxon: postibullinae
+          citedAs: Postibullinae Sumrall et al., 2000
+          rank: null
+          pages: 190
           children:
           - taxon: pyrgopostibulla
+            citedAs: Genus Pyrgopostibulla new genus
             new: true
+            pages: 190
             children:
             - taxon: belli_sumrall_brett_cornell_2006
+              citedAs: Pyrgopostibulla belli new species
               isType: true
               new: true
+              pages: 190

@@ -1,5 +1,8 @@
 taxonomies:
 - taxon: edrioasteroidea
+  citedAs: Class Edrioasteroidea Billings, 1958
+  rank: Class
+  pages: 151
   children:
   - taxon: edrioasterida
     children:

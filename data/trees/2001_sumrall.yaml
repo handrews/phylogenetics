@@ -1,5 +1,8 @@
 taxonomies:
 - taxon: edrioasteroidea
+  citedAs: Class Edrioasteroidea Billings, 1858
+  rank: Class
+  pages: 141
   children:
   - taxon: isorophida
     children:

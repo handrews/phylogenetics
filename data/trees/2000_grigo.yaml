@@ -2,6 +2,9 @@ prefixes:
   GIK: gik
 taxonomies:
 - taxon: edrioasteroidea
+  citedAs: Klasse Edrioasteroidea BILLINGS 1858
+  rank: Class
+  pages: 91
   children:
   - taxon: isorophida
     children:
