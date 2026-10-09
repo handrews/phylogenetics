@@ -3,9 +3,11 @@ prefixes:
   QMF: qm-f
 taxonomies:
 - taxon: echinodermata
-  auth: [bruguière]
-  citedAs: Brugière, 1791
-  year: 1791
+  citedAs: Phylum ECHINODERMATA Brugiere, 1791
+  rank: Phylum
+  authority:
+    source: 1791_bruguière
+  pages: 6
   children:
   - taxon: blastozoa
     children:
@@ -76,6 +78,9 @@ taxonomies:
   - taxon: echinozoa
     children:
     - taxon: edrioasteroidea
+      citedAs: Class EDRIOASTEROIDEA Billings, 1858
+      rank: Class
+      pages: 27
       children:
       - taxon: edrioblastoida
         children:
