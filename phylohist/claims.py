@@ -376,7 +376,10 @@ class _NodeClaims:
       ):
         if field in data:
           claim[name] = data[field]
-    if not printed and not authority:
+    if 'authority' in data and authority is None:
+      # `authority: null`: the source cites the name with no authority.
+      claim['printedAttribution'] = 'none'
+    elif not printed and not authority:
       claim['printedAttribution'] = 'as-record'
 
   def _emit(self, claim, field=None):

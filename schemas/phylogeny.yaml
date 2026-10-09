@@ -354,8 +354,9 @@ $defs:
 
   citationFields:
     $comment: |
-      What a tree node and a taxon record share. `rank` and `pages` are
-      declared by each (a node's may be `null`), so neither is here.
+      What a tree node and a taxon record share. `rank`, `pages` and
+      `authority` are declared by each (a node's may be `null`), so none
+      is here.
     properties:
       citedAs:
         description: |
@@ -373,9 +374,9 @@ $defs:
     - $ref: "#/$defs/locationFields"
 
   authorityFields:
+    $comment: |
+      `authority` is declared by each user (a tree node's may be `null`).
     properties:
-      authority:
-        $ref: "#/$defs/authority"
       auth:
         type: array
         items:
@@ -448,6 +449,8 @@ $defs:
         - type: "null"
       pages:
         $ref: "#/$defs/citationNumbers"
+      authority:
+        $ref: "#/$defs/authority"
       name:
         type: [string, "null"]
         pattern: ^[\w][\w._ -]*$
@@ -514,6 +517,8 @@ $defs:
     then:
       required: [designation]
     properties:
+      authority:
+        $ref: "#/$defs/authority"
       name:
         type: [string, "null"]
         minLength: 1
@@ -609,7 +614,26 @@ $defs:
     - $ref: "phylogeny#/$defs/citationFields"
     - $ref: "phylogeny#/$defs/uncertaintyFields"
     - $ref: "phylogeny#/$defs/metaFields"
+    if:
+      required: [authority]
+      properties:
+        authority:
+          type: "null"
+    then:
+      not:
+        anyOf:
+        - required: [auth]
+        - required: [year]
+        - required: [in]
     properties:
+      authority:
+        description: |
+          `null`: the source cites the taxon with no authority (on a cited
+          entry, with no reference), so `auth`, `year` and `in` are not
+          allowed beside it. Absent, with no `auth`, means as the record.
+        oneOf:
+        - $ref: "phylogeny#/$defs/authority"
+        - type: "null"
       rank:
         description: |
           `null`: the source places the taxon with no rank word.

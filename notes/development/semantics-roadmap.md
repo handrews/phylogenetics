@@ -354,7 +354,9 @@ p. 246) and "Bather, 1899" (Sprinkle & Sumrall 2015 p. 348) against Bather
 "Bassler, 1935" (Zamora et al. 2015) against 1936; *Echino-encrinites* "Von
 Meyer" (Forbes 1848 p. 504) against Volborth 1842. Rule: absence of `auth`
 on a node means "as the record"; whenever the printed line differs, the
-node records the printed form. The claim table's citation-error class is
+node records the printed form; `authority: null` on a node says the
+source prints no authority at all (2026-10-08), and the claim carries
+`printedAttribution: none`. The claim table's citation-error class is
 built from exactly these nodes. Where the source itself prints two years
 for one name (Cyathocystidae 1898/1899 in Smith's Table 3; Edrioasterina
 1898 and Edrioasteridae 1899 four lines apart in Sprinkle & Sumrall 2015),
@@ -1635,7 +1637,8 @@ Fields fall into three classes, and only the third is nullable:
   `pages: null` on an inferred node (2026-10-03): it says the editor's
   node has no page in this source; it is not a content null. (`rank` is
   not a content field either; `rank: null` on a node is a printed
-  statement, that the source places the taxon with no rank.)
+  statement, that the source places the taxon with no rank; likewise
+  `authority: null`, that the source cites it with no authority.)
 - Act flags, never null: `new`, `isType`, `emended`, `provisional` and
   the rest (`isType` stays an act flag; the null for the type is `type`).
   Absence means the act is not recorded; whether that can be read as
