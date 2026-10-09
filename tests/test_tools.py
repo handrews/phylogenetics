@@ -1167,6 +1167,7 @@ def test_specimen_history_renders_each_citation_as_a_line(store):
   assert lines == [
     'Specimen UQF 5404 (University of Queensland, fossil register)',
     '  1941  Whitehouse       holotype of Peridionites navicula as F. 5404',
+    # The species node has no `pages`, and a node never takes its parent's.
     '  2021  Jell & Sprinkle  holotype of Peridionites navicula',
   ]
   # The number as a source prints it is not repeated.
