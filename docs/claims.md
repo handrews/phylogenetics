@@ -25,7 +25,7 @@ Every claim carries:
 | `source` | the tree file's source key |
 | `path` | the node's position and pointer, `0/children/0/children/0`, the same string the id carries |
 | `tree` | `taxonomy`, or a phylogeny's `treeType`; a phylogeny's `notes` ride along as `treeNotes` |
-| `pages` | the node's `pages` as written. A node without `pages` takes the nearest ancestor's along the `children` axis only, and the claim then carries `pagesInherited: true`. An inferred node written `pages: null` (it has no page in this source) carries none and passes none down: its children without `pages` carry none either. Entries on any other axis never inherit. On a cited entry (a `synonyms` or `non` entry, a `type` node, or the earlier state of a name under `translated`, `corrected`, `substituted`, `moved` or `removed`) `pages` and `illustrations` locate the cited usage in the cited work, whether written flat or inside an `authority` block, so they appear as `citedPages` and `citedIllustrations` and the claim has no `pages` of its own. |
+| `pages` | the node's `pages` as written; a node without `pages` has none, since a parent's page says where the parent is printed, not its children. An inferred node written `pages: null` (it has no page in this source) carries none. On a cited entry (a `synonyms` or `non` entry, a `type` node, or the earlier state of a name under `translated`, `corrected`, `substituted`, `moved` or `removed`) `pages` and `illustrations` locate the cited usage in the cited work, whether written flat or inside an `authority` block, so they appear as `citedPages` and `citedIllustrations` and the claim has no `pages` of its own. |
 | `subject` | the resolved taxon key the claim is about; a `section` claim's is the section's key (a record of `data/sections.yaml`, no taxon) |
 | `printed` | the printed form on that line: `citedAs` verbatim, and `auth`, `year`, `in` as written (A1, A12). Absent `auth` means "as the record"; the claim says so with `printedAttribution: as-record`. A node written `authority: null` (the source cites the name with no authority; on a cited entry, with no reference) says so with `printedAttribution: none`, whether or not it has a `citedAs`. |
 | `audit` | the source's `audit.state`; `coverageKind`, the coverage kind the claim counts under (`skeleton` for usage, rejection and a taxonomy placement, `phylogeny` for a placement in a phylogeny, `synonymy` for acceptance, `newTaxa`/`types` for the matching acts, `material`/`occurrences`/`illustrations` by material kind); and `coverage`, the effective value for that kind (declared, or derived where "Derived coverage" says so) |
@@ -667,8 +667,8 @@ Edrioasteroidea, placeholder "order uncertain", family Rhenopyrgidae,
 genus *Rhenopyrgus*. It yields:
 
 - `placement`: subject `rhenopyrgus`, parent `rhenopyrgidae`, position 0,
-  `printedAttribution: as-record`, `pagesInherited: true` if the family
-  node has pages (it does not today, so `pages` is absent).
+  `printedAttribution: as-record`; the genus node has no `pages`, so the
+  claim has none.
 - The parent yields `act` `new` (Rhenopyrgidae is `new: true`) and its own
   `placement` under `edrioasteroidea-order-uncertain_holloway_jell_1983`
   with `parentPlaceholder: uncertain`; the placeholder's own claims carry
@@ -687,8 +687,8 @@ each is a usage of *grayae* by the cited source, and each is an
 `1915b_bather` p. 58 with plate 3 figures 1–2, `1983_holloway_jell`
 p. 1004, `1985_smith.a.b` p. 732 with text-figure 11, and two entries for
 `2013_sumrall_heredia_rodríguez.c.m_mestre` (figure 1; p. 773). The first
-and fourth carry `parents: [pyrgocystis]`. None inherits `pages` from the
-species node. The node's one context (`lady-burn-starfish-bed`) yields an
+and fourth carry `parents: [pyrgocystis]`. None carries the species
+node's `pages`. The node's one context (`lady-burn-starfish-bed`) yields an
 `occurrence` claim, emitted first, and its `material` entries yield
 `specimen` claims after it: the holotype claim has `role: holotype`,
 `prefix: NHMUK E`, `numbers: [23470]`, `ids: [NHMUK E 23470]`,

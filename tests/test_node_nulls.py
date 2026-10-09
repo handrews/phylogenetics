@@ -211,50 +211,36 @@ def test_a_null_rank_is_a_null_rank_as_printed(load_records):
   assert 'rankAsPrinted' not in _at(claims, '330', 'usage')
 
 
-def test_an_inferred_node_with_null_pages_passes_none_down(load_records):
+def test_an_inferred_node_with_null_pages_has_none(load_records):
   root = {
     'taxon': 'animalia',
     'rank': 'Kingdom',
     'pages': None,
     'editorial': INFERRED,
-    'children': [
-      {'taxon': 'vermes', 'pages': 12, 'children': [{'taxon': 'echinodermata'}]},
-      {'taxon': 'mollusca'},
-    ],
+    'children': [{'taxon': 'vermes', 'pages': 12}, {'taxon': 'mollusca'}],
   }
   claims = _claims(root, 331)
   root_claim = _at(claims, '331', 'usage')
-  assert 'pages' not in root_claim and 'pagesInherited' not in root_claim
+  assert 'pages' not in root_claim
   assert root_claim['inferred'] is True
   vermes = _at(claims, '331/children/0')
-  assert vermes['pages'] == 12 and 'pagesInherited' not in vermes
+  assert vermes['pages'] == 12
   assert 'inferred' not in vermes
-  # A child with its own pages passes them on, as before; one without,
-  # under a root that has none, gets none.
-  assert _at(claims, '331/children/0/children/0')['pages'] == 12
-  assert _at(claims, '331/children/0/children/0')['pagesInherited'] is True
   assert 'pages' not in _at(claims, '331/children/1')
-  assert 'pagesInherited' not in _at(claims, '331/children/1')
 
 
-def test_null_pages_stops_inheritance_at_the_node(load_records):
+def test_a_node_without_pages_does_not_take_its_parents(load_records):
+  # A parent's page says where the parent is printed, not its children.
   root = {
     'taxon': 'animalia',
     'pages': 5,
-    'children': [
-      {
-        'taxon': 'vermes',
-        'pages': None,
-        'editorial': INFERRED,
-        'children': [{'taxon': 'echinodermata'}],
-      }
-    ],
+    'children': [{'taxon': 'vermes', 'children': [{'taxon': 'echinodermata', 'pages': 7}]}],
   }
   claims = _claims(root, 332)
   assert _at(claims, '332', 'usage')['pages'] == 5
   assert 'pages' not in _at(claims, '332/children/0')
-  assert _at(claims, '332/children/0')['inferred'] is True
-  assert 'pages' not in _at(claims, '332/children/0/children/0')
+  assert _at(claims, '332/children/0/children/0')['pages'] == 7
+  assert not [c for c in claims if 'pagesInherited' in c]
 
 
 # -- the tools ----------------------------------------------------------------

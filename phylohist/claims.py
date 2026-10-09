@@ -211,16 +211,6 @@ def placeholder_kind(taxon):
   return 'open'
 
 
-def _effective_pages(node):
-  """The node's own `pages`, else the nearest `children`-axis ancestor's."""
-  if 'pages' in node.data:
-    return node.data['pages'], False
-  if node.axis == 'children' and node.parent is not None:
-    pages, _ = _effective_pages(node.parent)
-    return pages, pages is not None
-  return None, False
-
-
 def _related_key(node, axis):
   """The record named by the node under a single-node axis, if any."""
   related = node.related_node(axis)
@@ -301,7 +291,9 @@ class _NodeClaims:
     # A cited entry's `pages` and `illustrations` locate the cited usage in
     # the cited work, never the citing source's own page or figure.
     self.cited_entry = node.is_cited
-    self.pages, self.pages_inherited = (None, False) if self.cited_entry else _effective_pages(node)
+    # A node's pages are its own: a parent's page says where the parent is
+    # printed, not its children.
+    self.pages = None if self.cited_entry else self.data.get('pages')
     self.subject = node.taxon.key if node.taxon is not None else None
     self.placeholder = placeholder_kind(node.taxon)
 
@@ -325,8 +317,6 @@ class _NodeClaims:
       claim['treeNotes'] = self.tree_notes
     if self.pages is not None:
       claim['pages'] = self.pages
-      if self.pages_inherited:
-        claim['pagesInherited'] = True
     claim['subject'] = self.subject
     if self.placeholder is not None:
       claim['placeholder'] = self.placeholder
