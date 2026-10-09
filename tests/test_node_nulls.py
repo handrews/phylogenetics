@@ -835,3 +835,54 @@ def test_contents_prints_no_child_line_under_a_null_children(stopped):
   lines = block['rendered'].splitlines()
   index = lines.index('    Order Lithophyta')
   assert lines[index + 1].startswith('    ') and not lines[index + 1].startswith('     ')
+
+
+# -- `authority: null` ----------------------------------------------------------
+
+
+def test_schema_accepts_a_null_authority_on_a_node_and_a_cited_entry():
+  assert _valid({'taxonomies': [{'taxon': 'vermes', 'authority': None, 'citedAs': 'Vermes'}]})
+  assert _valid(
+    {'taxonomies': [{'taxon': 'vermes', 'synonyms': [{'taxon': 'mollusca', 'authority': None}]}]}
+  )
+
+
+@pytest.mark.parametrize('field', [{'auth': ['linnaeus']}, {'year': 1758}, {'in': ['linnaeus']}])
+def test_schema_rejects_a_printed_attribution_beside_a_null_authority(field):
+  assert _valid({'taxonomies': [{'taxon': 'vermes', **field}]})
+  assert not _valid({'taxonomies': [{'taxon': 'vermes', 'authority': None, **field}]})
+
+
+def test_schema_rejects_a_null_authority_on_a_record_or_a_section():
+  assert not _record_valid({**RECORD, 'authority': None})
+  section = {'name': 'Integra', 'authority': {'source': '1758_linnaeus'}}
+  assert io.build_schema()['sections'].check({'integra': section})
+  assert not io.build_schema()['sections'].check({'integra': {**section, 'authority': None}})
+
+
+def test_a_null_authority_says_none_was_printed(load_records):
+  root = {
+    'taxon': 'animalia',
+    'authority': None,
+    'children': [
+      {'taxon': 'vermes', 'authority': None, 'citedAs': 'VERMES'},
+      {'taxon': 'mollusca'},
+      {'taxon': 'echinodermata', 'auth': ['linnaeus']},
+    ],
+  }
+  claims = _claims(root, 342)
+  assert _at(claims, '342', 'usage')['printedAttribution'] == 'none'
+  assert 'citesSource' not in _at(claims, '342', 'usage')
+  vermes = _at(claims, '342/children/0')
+  assert vermes['printedAttribution'] == 'none'
+  assert vermes['printed'] == {'citedAs': 'VERMES'}
+  # Absent means as the record; a printed `auth` says neither.
+  assert _at(claims, '342/children/1')['printedAttribution'] == 'as-record'
+  assert 'printedAttribution' not in _at(claims, '342/children/2')
+
+
+def test_the_usage_sentence_says_without_an_authority(synthetic):
+  claim = {'kind': 'usage', 'printedAttribution': 'none'}
+  assert synthetic.words.claim_words(claim) == 'cites the name without an authority'
+  claim = {'kind': 'usage', 'printedAttribution': 'as-record'}
+  assert synthetic.words.claim_words(claim) == 'cites the name'

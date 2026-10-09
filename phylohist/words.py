@@ -594,6 +594,8 @@ class Words:
     if kind == 'usage':
       attributed = self.attribution_words(claim.get('printed') or {})
       words = f'cites the name, attributed to {attributed}' if attributed else 'cites the name'
+      if claim.get('printedAttribution') == 'none':
+        words += ' without an authority'
       if claim.get('sensu'):
         words += f' sensu {claim["sensu"]}'
       return words + self.error_words(claim)

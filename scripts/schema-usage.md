@@ -34,7 +34,7 @@ even when its parent is also unreached, so read parents first.
 | `stageRange` | `phylogeny#/$defs/stageRange`<br>`phylogeny#/$defs/stageRange/items` |
 | `taxonRecord` | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items/items`<br>`phylogeny#/$defs/taxonRecord/properties/rank/oneOf/1` |
 | `timeFields` | `phylogeny#/$defs/timeFields/properties/eon`<br>`phylogeny#/$defs/timeFields/properties/era`<br>`phylogeny#/$defs/timeFields/properties/seriesBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageRange` |
-| `tree` | `tree#/properties/rank/oneOf/1` |
+| `tree` | `tree#/if`<br>`tree#/if/properties/authority`<br>`tree#/properties/authority/oneOf/1`<br>`tree#/properties/rank/oneOf/1`<br>`tree#/then`<br>`tree#/then/not`<br>`tree#/then/not/anyOf/0`<br>`tree#/then/not/anyOf/1`<br>`tree#/then/not/anyOf/2` |
 | `typeNode` | `phylogeny#/$defs/typeNode`<br>`phylogeny#/$defs/typeNode/properties/fixation`<br>`phylogeny#/$defs/typeNode/properties/fixedBy` |
 | `uncertaintyFields` | `phylogeny#/$defs/uncertaintyFields/properties/nonMonophyletic/oneOf/1`<br>`phylogeny#/$defs/uncertaintyFields/properties/sensu` |
 
@@ -118,7 +118,6 @@ property.
 
 | property | data | data % |
 |---|---|---|
-| `authority` | 1812 | 19.4% |
 | `auth` | 974 | 10.5% |
 | `year` | 972 | 10.4% |
 | `in` | 28 | 0.3% |
@@ -397,6 +396,7 @@ property.
 | `citedAs` | 12 | 100.0% |
 | `name` | 12 | 100.0% |
 | `pages` | 12 | 100.0% |
+| `authority` | 11 | 91.7% |
 | `notes` | 5 | 41.7% |
 | `/if.name` | 3 | 100.0% |
 | `designation` | 3 | 25.0% |
@@ -407,6 +407,7 @@ property.
 | property | data | data % |
 |---|---|---|
 | `name` | 2801 | 98.7% |
+| `authority` | 1698 | 59.9% |
 | `rank` | 972 | 34.3% |
 | `pages` | 255 | 9.0% |
 | `notes` | 224 | 7.9% |
@@ -452,10 +453,12 @@ property.
 | `pages` | 810 | 12.5% |
 | `parents` | 324 | 5.0% |
 | `rank` | 126 | 1.9% |
+| `authority` | 103 | 1.6% |
 | `bracketEnd` | 28 | 0.4% |
 | `bracketStart` | 28 | 0.4% |
 | `altPlacements` | 7 | 0.1% |
 | `mergeInto` | 4 | 0.1% |
+| `/if.authority` | 0 | - |
 
 ### `treeDocument` -- 220 instances in `data/`
 
