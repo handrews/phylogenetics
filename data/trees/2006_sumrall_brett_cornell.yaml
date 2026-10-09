@@ -4,17 +4,21 @@ taxonomies:
   rank: null
   pages: 190
   children:
-  - taxon: isorophida
+  - taxon: isorophina
     citedAs: Isorophina Bell, 1976b
-    lapsus:
-      taxon: isorophina
+    editorial:
+      corrections:
+        taxon: isorophida
+      basis: Isorophida and Isorophina were clearly reversed in error.
     rank: null
     pages: 190
     children:
-    - taxon: isorophina
+    - taxon: isorophida
       citedAs: Isorophida Bell, 1976a
-      lapsus:
-        taxon: isorophida
+      editorial:
+        corrections:
+          taxon: isorophina
+        basis: Isorophida and Isorophina were clearly reversed in error.
       rank: null
       pages: 190
       children:
