@@ -103,30 +103,30 @@ property.
 | `quotes` | 1 | 0.3% |
 | `reading` | 1 | 0.3% |
 
-### `authority` -- 1825 instances in `data/`
+### `authority` -- 1846 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `source` | 1825 | 100.0% |
-| `pages` | 65 | 3.6% |
+| `source` | 1846 | 100.0% |
+| `pages` | 65 | 3.5% |
 | `illustrations` | 30 | 1.6% |
 | `attributedTo` | 24 | 1.3% |
-| `ex` | 3 | 0.2% |
+| `ex` | 13 | 0.7% |
 | `notes` | 2 | 0.1% |
 
-### `authorityFields` -- 9322 instances in `data/`
+### `authorityFields` -- 9323 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `auth` | 969 | 10.4% |
-| `year` | 967 | 10.4% |
+| `auth` | 968 | 10.4% |
+| `year` | 966 | 10.4% |
 | `in` | 28 | 0.3% |
 
-### `citationFields` -- 9310 instances in `data/`
+### `citationFields` -- 9311 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `citedAs` | 608 | 6.5% |
+| `citedAs` | 630 | 6.8% |
 
 ### `cladisticFields` -- 794 instances in `data/`
 
@@ -223,7 +223,7 @@ property.
 | `localStageModifier` | 1 | 0.6% |
 | `localStageBoundary` | 0 | 0.0% |
 
-### `locationFields` -- 9310 instances in `data/`
+### `locationFields` -- 9311 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
@@ -275,7 +275,7 @@ property.
 
 | property | data | data % |
 |---|---|---|
-| `notes` | 413 | 6.4% |
+| `notes` | 415 | 6.4% |
 | `editorial` | 15 | 0.2% |
 
 ### `modularDate` -- 339 instances in `data/`
@@ -402,20 +402,20 @@ property.
 | `designation` | 3 | 25.0% |
 | `needsQualification` | 1 | 8.3% |
 
-### `taxonRecord` -- 2837 instances in `data/`
+### `taxonRecord` -- 2838 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `name` | 2801 | 98.7% |
+| `name` | 2802 | 98.7% |
 | `authority` | 1702 | 60.0% |
-| `rank` | 972 | 34.3% |
+| `rank` | 972 | 34.2% |
 | `pages` | 256 | 9.0% |
 | `notes` | 229 | 8.1% |
 | `altSpellingOf` | 145 | 5.1% |
-| `lang` | 74 | 2.6% |
+| `lang` | 75 | 2.6% |
 | `originalParent` | 70 | 2.5% |
 | `altRankOf` | 57 | 2.0% |
-| `vulgarSpellingOf` | 46 | 1.6% |
+| `vulgarSpellingOf` | 47 | 1.7% |
 | `homonym` | 16 | 0.6% |
 | `bracket` | 13 | 0.5% |
 | `needsQualification` | 12 | 0.4% |
@@ -450,15 +450,15 @@ property.
 | property | data | data % |
 |---|---|---|
 | `children` | 2198 | 34.0% |
-| `pages` | 830 | 12.8% |
+| `pages` | 853 | 13.2% |
 | `parents` | 325 | 5.0% |
-| `rank` | 143 | 2.2% |
-| `authority` | 109 | 1.7% |
+| `rank` | 167 | 2.6% |
+| `authority` | 123 | 1.9% |
 | `bracketEnd` | 28 | 0.4% |
 | `bracketStart` | 28 | 0.4% |
 | `altPlacements` | 7 | 0.1% |
+| `/if.authority` | 4 | 100.0% |
 | `mergeInto` | 4 | 0.1% |
-| `/if.authority` | 1 | 100.0% |
 
 ### `treeDocument` -- 220 instances in `data/`
 
@@ -615,7 +615,7 @@ property.
 
 ### `phylogeny#/$defs/rank`
 
-24 of 32 members used, 1113 occurrences.
+24 of 32 members used, 1136 occurrences.
 
 | value | count |
 |---|---|
@@ -623,12 +623,12 @@ property.
 | `'Order'` | 215 |
 | `'Family'` | 178 |
 | `'genus'` | 132 |
-| `'Class'` | 114 |
+| `'Class'` | 125 |
 | `'variety'` | 59 |
+| `'Phylum'` | 28 |
 | `'Subfamily'` | 26 |
 | `'Superfamily'` | 18 |
 | `'subgenus'` | 17 |
-| `'Phylum'` | 16 |
 | `'Suborder'` | 15 |
 | `'Subclass'` | 15 |
 | `'section'` | 14 |
@@ -779,7 +779,7 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/article/properties/plates/items` | integer/string | intx29, strx12 | `II`, `I`, `VI`, `V` | - |
 | `phylogeny#/$defs/article/properties/series` | integer/string | intx10, strx1 | `A` | - |
 | `phylogeny#/$defs/article/properties/volume` | integer/string | intx251, strx14 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `II` | - |
-| `phylogeny#/$defs/citationNumber` | integer/string | intx2233, strx225 | `IV`, `II`, `IX`, `VIII` | - |
+| `phylogeny#/$defs/citationNumber` | integer/string | intx2256, strx225 | `IV`, `II`, `IX`, `VIII` | - |
 | `phylogeny#/$defs/cladisticFields/properties/matrix/items` | integer/string | intx139, strx5 | `?` | - |
 | `phylogeny#/$defs/contexts` | object/null | dictx58, nullx41 | - | - |
 | `phylogeny#/$defs/editorialObject/properties/inferred` | boolean/array | listx7, boolx5 | - | - |
@@ -795,6 +795,6 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/relationalFields/properties/synonyms` | array/null | listx357 | - | null |
 | `phylogeny#/$defs/sectionRecord/properties/name` | string/null | strx9, nullx3 | `Stellatae`, `Radiatae`, `Multivalvia`, `Lunatae` | - |
 | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items` | array/string/integer | strx1 | `E23470` | array, integer |
-| `phylogeny#/$defs/taxonRecord/properties/name` | string/null | strx2581, nullx220 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
+| `phylogeny#/$defs/taxonRecord/properties/name` | string/null | strx2582, nullx220 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
 | `tree#/properties/children` | array/null | listx2198 | - | null |
 

@@ -17,6 +17,8 @@ taxonomies:
         - page: 533
           figures: 3
 - taxon: edrioasteroidea
+  rank: Class
+  authority: null
   children:
   - taxon: isorophida
     children:

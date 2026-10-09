@@ -13484,28 +13484,27 @@
  "echinodermata": {
   "authority": {
    "authors": [
-    "Bruguière"
+    "Klein"
    ],
-   "display": "Bruguière 1791",
-   "source": "1791_bruguière",
-   "year": 1791
+   "display": "Klein 1778",
+   "source": "1778_klein",
+   "year": 1778
   },
   "folded": [
    "echinodermata"
   ],
   "kind": "primary",
   "name": "Echinodermata",
-  "rank": "Phylum",
-  "status": "monophyletic"
+  "rank": "Unranked"
  },
  "echinodermata-class": {
   "authority": {
    "authors": [
-    "Bruguière"
+    "Klein"
    ],
-   "display": "Bruguière 1791",
-   "source": "1791_bruguière",
-   "year": 1791
+   "display": "Klein 1778",
+   "source": "1778_klein",
+   "year": 1778
   },
   "folded": [
    "echinodermata",
@@ -13564,11 +13563,11 @@
  "echinodermata-order": {
   "authority": {
    "authors": [
-    "Bruguière"
+    "Klein"
    ],
-   "display": "Bruguière 1791",
-   "source": "1791_bruguière",
-   "year": 1791
+   "display": "Klein 1778",
+   "source": "1778_klein",
+   "year": 1778
   },
   "folded": [
    "echinodermata",
@@ -13610,31 +13609,14 @@
   "name": "Echinodermata",
   "rank": "genus"
  },
- "echinodermatum": {
+ "echinodermen": {
   "authority": {
    "authors": [
     "Klein"
    ],
-   "display": "Klein 1734",
-   "source": "1734_klein",
-   "year": 1734
-  },
-  "folded": [
-   "echinodermatum"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Echinodermatum",
-  "of": "echinodermata",
-  "rank": "Phylum"
- },
- "echinodermen": {
-  "authority": {
-   "authors": [
-    "Bruguière"
-   ],
-   "display": "Bruguière 1791",
-   "source": "1791_bruguière",
-   "year": 1791
+   "display": "Klein 1778",
+   "source": "1778_klein",
+   "year": 1778
   },
   "folded": [
    "echinodermen"
@@ -45491,14 +45473,32 @@
   "name": "Échinides",
   "rank": "Family"
  },
+ "échinodermes": {
+  "authority": {
+   "authors": [
+    "Klein"
+   ],
+   "display": "Klein 1778",
+   "source": "1778_klein",
+   "year": 1778
+  },
+  "folded": [
+   "echinodermes"
+  ],
+  "kind": "vulgarSpellingOf",
+  "lang": "FR",
+  "name": "Échinodermes",
+  "of": "echinodermata",
+  "rank": "Unranked"
+ },
  "échinodermes-class": {
   "authority": {
    "authors": [
-    "Bruguière"
+    "Klein"
    ],
-   "display": "Bruguière 1791",
-   "source": "1791_bruguière",
-   "year": 1791
+   "display": "Klein 1778",
+   "source": "1778_klein",
+   "year": 1778
   },
   "folded": [
    "echinodermes",

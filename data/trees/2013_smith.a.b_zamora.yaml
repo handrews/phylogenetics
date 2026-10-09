@@ -3,7 +3,11 @@ prefixes:
   EE: nhmuk-ee
 taxonomies:
 - taxon: echinodermata
+  citedAs: Stem group Echinodermata
   stem: true
+  rank: null
+  authority: null
+  pages: 5
   children:
   - taxon: helicocystitidae
     new: true

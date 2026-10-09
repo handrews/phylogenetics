@@ -1,7 +1,19 @@
 taxonomies:
 - taxon: echinodermata
+  citedAs: Phylum Echinodermata [20] (ex [21])
+  rank: Phylum
+  authority:
+    source: 1791_bruguière
+    ex:
+      source: 1734_klein
+  pages: 2
+  notes: Source 20 is Bruguière 1791 and 21 is Klein 1734.
   children:
   - taxon: edrioasteroidea
+    citedAs: Class Edrioasteroidea [22]
+    rank: Class
+    pages: 2
+    notes: Source 22 is Billings 1858.
     children:
     - taxon: edrioasterida
       children:

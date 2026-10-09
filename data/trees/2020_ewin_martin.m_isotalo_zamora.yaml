@@ -7,8 +7,18 @@ prefixes:
   UCBL-FSL: ucbl-fsl
 taxonomies:
 - taxon: echinodermata
+  citedAs: Phylum Echinodermata de Bruguière, 1791 (ex. Klein, 1734)
+  rank: Phylum
+  authority:
+    source: 1791_bruguière
+    ex:
+      source: 1734_klein
+  pages: 118
   children:
   - taxon: edrioasteroidea
+    citedAs: Class Edrioasteroidea Billings, 1858
+    rank: Class
+    pages: 118
     children:
     - taxon: edrioasterida
       children:

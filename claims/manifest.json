@@ -1449,9 +1449,7 @@
    "tree": false
   },
   "1791_bruguière": {
-   "acts": {
-    "new": 1
-   },
+   "acts": {},
    "audit": {
     "state": "unaudited"
    },
@@ -1464,7 +1462,6 @@
     "year": 1791
    },
    "claims": {
-    "act": 1,
     "placement": 8,
     "usage": 9
    },
@@ -1479,7 +1476,6 @@
     "types": null
    },
    "derived": {
-    "newTaxa": 1,
     "skeleton": 17
    },
    "derivedCoverage": {
@@ -3266,11 +3262,12 @@
     "year": 1828
    },
    "claims": {
-    "acceptance": 8,
+    "acceptance": 7,
     "act": 2,
+    "editorial": 1,
     "material": 2,
     "placement": 16,
-    "usage": 28
+    "usage": 27
    },
    "coverage": {
     "illustrations": null,
@@ -3285,8 +3282,8 @@
    "derived": {
     "illustrations": 2,
     "newTaxa": 2,
-    "skeleton": 44,
-    "synonymy": 8
+    "skeleton": 43,
+    "synonymy": 7
    },
    "derivedCoverage": {
     "illustrations": null,
@@ -4185,6 +4182,7 @@
    "claims": {
     "acceptance": 11,
     "act": 5,
+    "editorial": 1,
     "placement": 20,
     "usage": 44
    },
@@ -4200,7 +4198,7 @@
    },
    "derived": {
     "newTaxa": 4,
-    "skeleton": 64,
+    "skeleton": 63,
     "synonymy": 11,
     "types": 1
    },
@@ -20004,7 +20002,14 @@
    "1900_bather"
   ],
   "echinodermata": [
+   "1778_klein",
+   "1791_bruguière",
+   "1821_miller.j.s",
    "1825i_gray.j.e",
+   "1828_hisinger",
+   "1837_hisinger",
+   "1844_buch",
+   "1847_hall",
    "1848_leuckart",
    "1941_whitehouse",
    "1960_gill_caster",
@@ -20057,9 +20062,6 @@
    "2024_zamora_guensburg_sprinkle"
   ],
   "echinodermata-class": [
-   "1828_hisinger",
-   "1837_hisinger",
-   "1847_hall",
    "1848b_forbes",
    "1854a_billings",
    "1854b_billings",
@@ -20075,17 +20077,11 @@
    "1982_bell.b.m"
   ],
   "echinodermata-order": [
-   "1791_bruguière",
-   "1821_miller.j.s",
-   "1844_buch",
    "1852_hall"
   ],
   "echinodermata-unnamed-family_hisinger_1828": [
    "1828_hisinger",
    "1837_hisinger"
-  ],
-  "echinodermata_klein_1778": [
-   "1778_klein"
   ],
   "echinodermen": [
    "1854_müller.j.p"
@@ -27536,13 +27532,14 @@
    "1801_lamarck",
    "1816b_lamarck"
   ],
+  "échinodermes": [
+   "1798_cuvier"
+  ],
   "échinodermes-class": [
-   "1817d_cuvier",
-   "1828_hisinger"
+   "1817d_cuvier"
   ],
   "échinodermes-order": [
    "1789a_bruguière",
-   "1798_cuvier",
    "1801_lamarck",
    "1816a_lamarck"
   ],

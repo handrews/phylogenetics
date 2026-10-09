@@ -3997,6 +3997,10 @@ echinodermen:
   name: Echinodermen
   lang: DE
   vulgarSpellingOf: echinodermata-order # maybe?  Rank not at all clear
+échinodermes:
+  name: Échinodermes
+  vulgarSpellingOf: echinodermata
+  lang: FR
 échinodermes-order:
   name: Échinodermes
   vulgarSpellingOf: echinodermata-order

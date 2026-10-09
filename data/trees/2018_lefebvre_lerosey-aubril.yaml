@@ -3,6 +3,13 @@ prefixes:
   USNM: usnm
 taxonomies:
 - taxon: echinodermata
+  citedAs: Phylum ECHINODERMATA Bruguière, 1791 (ex Klein, 1734)
+  rank: Phylum
+  authority:
+    source: 1791_bruguière
+    ex:
+      source: 1734_klein
+  pages: 1192
   children:
   - taxon: blastozoa
     children:
