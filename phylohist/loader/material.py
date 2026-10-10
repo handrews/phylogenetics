@@ -1,5 +1,6 @@
-"""Material integrity checks: contexts, material entries, casts, illustrations,
-nulls, the repository registry and a tree file's `prefixes` map.
+"""Material integrity checks: contexts, material entries, casts, fragments,
+illustrations, nulls, the repository registry and a tree file's `prefixes`
+map.
 
 Pure functions over a raw node dict and the file-level maps, so
 `scripts/check_draft.py` can run the same checks on an unloaded draft; the
@@ -51,10 +52,13 @@ def _fold(text):
   return _WHITESPACE_RE.sub(' ', text.strip()).casefold()
 
 
-def _locality_objects(contexts):
-  """Every `localityNumbers` value on a `{key: context}` map."""
+def _locality_objects(contexts, entries=()):
+  """Every `localityNumbers` value on a `{key: context}` map and on each
+  material entry of `entries`."""
   for context in (contexts or {}).values():
     yield from (context or {}).get('localityNumbers') or ()
+  for entry in entries or ():
+    yield from (entry or {}).get('localityNumbers') or ()
 
 
 def flat_numbers(entry):
@@ -157,11 +161,30 @@ def in_run(value, low, high):
   return False
 
 
+def ref_text(value):
+  """A reference to an entry as words for a message: an `entryRef` object
+  as "<prefix> <number>" or its label, a bare value as itself."""
+  if isinstance(value, dict):
+    if 'label' in value:
+      return str(value['label'])
+    return ' '.join(str(v) for v in (value.get('prefix'), value.get('number')) if v is not None)
+  return str(value)
+
+
 def entry_identifies(entry, value, exact=False):
   """Whether `value` names `entry`: the folded text of `value` (a string or
   an integer) equals its folded `label` or one of its `numbers` (a range
   pair's endpoints count separately); unless `exact`, a value lying in the
-  run of one of its range pairs names it too."""
+  run of one of its range pairs names it too. An `entryRef` object names
+  it by `label` alone, or by `number` the same way over the numbers alone,
+  and only when its `prefix`, if given, is the entry's."""
+  if isinstance(value, dict):
+    if 'label' in value:
+      label = entry.get('label')
+      return label is not None and fold(str(label)) == fold(str(value['label']))
+    if 'prefix' in value and entry.get('prefix') != value['prefix']:
+      return False
+    return entry_identifies({'numbers': entry.get('numbers')}, value.get('number'), exact)
   folded = fold(str(value))
   label = entry.get('label')
   if label is not None and fold(str(label)) == folded:
@@ -176,9 +199,9 @@ def entry_identifies(entry, value, exact=False):
 
 
 def entries_named(entries, value):
-  """The entries `value` names: those it names exactly, else those whose
-  range-pair run contains it. Callers read "names exactly one entry" from
-  the length."""
+  """The entries `value` (a bare number or label, or an `entryRef` object)
+  names: those it names exactly, else those whose range-pair run contains
+  it. Callers read "names exactly one entry" from the length."""
   exact = [entry for entry in entries if entry_identifies(entry, value, exact=True)]
   return exact or [entry for entry in entries if entry_identifies(entry, value)]
 
@@ -186,25 +209,27 @@ def entries_named(entries, value):
 def same_as_matches(entries, link):
   """The entries a `sameAs` link names among `entries` (raw material
   entries or specimen claims, which carry the same `label`, `prefix` and
-  `numbers`): those whose folded `label` equals the link's, or, by the
-  link's `number`, those it names exactly before those whose range-pair run
-  holds it (the rule of `entries_named`, over the numbers alone); with a
-  `prefix` on the link, only entries of that prefix. Callers read "names
-  exactly one" from the length."""
-  if 'label' in link:
-    wanted = fold(str(link['label']))
-    return [
-      entry
-      for entry in entries
-      if entry.get('label') is not None and fold(str(entry['label'])) == wanted
-    ]
-  candidates = [
-    entry for entry in entries if 'prefix' not in link or entry.get('prefix') == link['prefix']
-  ]
-  numbered = [({'numbers': entry.get('numbers')}, entry) for entry in candidates]
-  value = link.get('number')
-  exact = [entry for view, entry in numbered if entry_identifies(view, value, exact=True)]
-  return exact or [entry for view, entry in numbered if entry_identifies(view, value)]
+  `numbers`): the link's `label`, `number` and `prefix` read as an
+  `entryRef` by `entries_named`. Callers read "names exactly one" from the
+  length."""
+  return entries_named(entries, {k: link[k] for k in ('label', 'number', 'prefix') if k in link})
+
+
+def _match_error(field, value, entries):
+  """The error for a `field` value that names no entry or several of
+  `entries`, or `None` when it names one; when the value is bare and the
+  several differ in `prefix`, or one is named by its label, the message
+  says the object form picks one."""
+  matches = entries_named(entries, value)
+  if len(matches) == 1:
+    return None
+  message = f'{field} "{ref_text(value)}" matches {len(matches)} material entries, not 1'
+  if not isinstance(value, dict) and (
+    len({entry.get('prefix') for entry in matches}) > 1
+    or any(entry_identifies({'label': entry.get('label')}, value) for entry in matches)
+  ):
+    message += '; `{number, prefix}` or `{label}` picks one'
+  return ('error', message)
 
 
 def same_as_links(documents, source_year):
@@ -255,7 +280,8 @@ def figure_refs(node, is_cited=False):
   """Every `illustrations[*].of` on a primary node names exactly one
   material entry on the node, by a number (either range endpoint) or the
   label, or else by a number inside a range pair's run (an exact match
-  takes precedence); no match or several is an error.
+  takes precedence), or by an `entryRef` object, whose `prefix` narrows the
+  match; no match or several is an error.
   A cited entry's locators name nothing on the node (`null_material`
   rejects an `of` there), so they are not read."""
   if is_cited:
@@ -269,32 +295,28 @@ def figure_refs(node, is_cited=False):
     if of is None:
       continue
     for value in of if isinstance(of, list) else [of]:
-      matches = len(entries_named(entries, value))
-      if matches != 1:
-        messages.append(
-          ('error', f'figure "of" value "{value}" matches {matches} material entries, not 1'),
-        )
+      if (error := _match_error('figure "of" value', value, entries)) is not None:
+        messages.append(error)
   return messages
 
 
 def cast_refs(node):
-  """Every `castOf` names exactly one material entry on the node, by the
-  same rule as figure `of` (a number, a range endpoint included, or a
-  `label`, else a number inside a range pair's run); no match or several
-  is an error, and an entry naming itself is an error."""
+  """Every `castOf` and `fragmentOf` names exactly one material entry on
+  the node, by the same rule as figure `of` (a number, a range endpoint
+  included, or a `label`, else a number inside a range pair's run, or an
+  `entryRef` object); no match or several is an error, and an entry naming
+  itself is an error."""
   messages = []
   entries = node.get('material') or ()
   for entry in entries:
-    value = entry.get('castOf')
-    if value is None:
-      continue
-    matches = entries_named(entries, value)
-    if len(matches) != 1:
-      messages.append(
-        ('error', f'castOf "{value}" matches {len(matches)} material entries, not 1'),
-      )
-    elif matches[0] is entry:
-      messages.append(('error', f'castOf "{value}" names the entry itself'))
+    for field in ('castOf', 'fragmentOf'):
+      value = entry.get(field)
+      if value is None:
+        continue
+      if (error := _match_error(field, value, entries)) is not None:
+        messages.append(error)
+      elif entries_named(entries, value)[0] is entry:
+        messages.append(('error', f'{field} "{ref_text(value)}" names the entry itself'))
   return messages
 
 
@@ -322,15 +344,17 @@ def _begins_with_form(number, entry):
 
 
 def _prefixes_used(document):
-  """Every `prefix` a material entry or a locality number in the
-  file uses."""
+  """Every `prefix` a material entry or a locality number (on a context or
+  an entry) in the file uses."""
   used = set()
-  all_contexts = [document.get('contexts')]
+  scopes = [(document.get('contexts'), ())]
   for _, node, _ in walk_document(document):
     used.update(e['prefix'] for e in node.get('material') or () if e.get('prefix') is not None)
-    all_contexts.append(node.get('contexts'))
-  for contexts in all_contexts:
-    used.update(n['prefix'] for n in _locality_objects(contexts) if n.get('prefix') is not None)
+    scopes.append((node.get('contexts'), node.get('material') or ()))
+  for contexts, entries in scopes:
+    used.update(
+      n['prefix'] for n in _locality_objects(contexts, entries) if n.get('prefix') is not None
+    )
   return used
 
 
@@ -401,13 +425,14 @@ def number_entries(node, prefixes, repositories):
   return messages
 
 
-def locality_objects(contexts, prefixes, locality_register, repositories):
-  """Checks on the object-form locality numbers of a `{key: context}` map:
-  a `prefix` not in the file's `prefixes` map is an error, a `register`
-  that is no registry key is an error, and a number with neither, in a file
-  with no `localityRegister`, is a warning."""
+def locality_objects(contexts, prefixes, locality_register, repositories, entries=()):
+  """Checks on the locality numbers of a `{key: context}` map and of the
+  material `entries` beside it: a `prefix` not in the file's `prefixes` map
+  is an error, a `register` that is no registry key is an error, and a
+  number with neither, in a file with no `localityRegister`, is a
+  warning."""
   messages = []
-  for number in _locality_objects(contexts):
+  for number in _locality_objects(contexts, entries):
     prefix, register = number.get('prefix'), number.get('register')
     if prefix is not None and prefix not in prefixes:
       messages.append(('error', f'prefix "{prefix}" is not in the file\'s `prefixes` map'))

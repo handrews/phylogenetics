@@ -3088,6 +3088,9 @@ cupulocrinus:
   year: 1849
 curteocrinus:
   name: Curteocrinus
+  altSpellingOf: curtoeocrinus
+curtoeocrinus:
+  name: Curtoeocrinus
   authority:
     source: 1994_zhao.y.l_huang.y.z_gong.x.y
 curtisi_durham_caster_1963:
@@ -6303,6 +6306,12 @@ homoiostelea:
   rank: Class
   auth: [Gill, Caster]
   year: 1960
+homoiostenea:
+  name: Homoiostenea
+  altSpellingOf: homoiostelea
+  notes: >
+    Lapsus calami in
+    1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y
 homoiostelea-subclass:
   name: Homoiostelea
   rank: Subclass
@@ -9039,19 +9048,17 @@ pararotadiscus:
   name: Pararotadiscus
   authority:
     source: 2002_zhu.m.y_zhao.y.l_chen.j.y
-pararotadiscus_zhao.y.l_zhu.m.y_1994:
+pararotadiscus_zhu.m.y_erdtmann_zhao.y.l_1999:
   name: Pararotadiscus
   needsQualification: true
   rank: genus
-  notes: |
-    All online sources use Pararotadiscus (Zhu M.-Y., Zhao Y.-L., Chen J.-Y. 2002),
-    but a 1999 paper in Acta Geological Sinica credits (Zhao Y.-L., Zhu M.-Y. 1994).
-    This may have been Rotadiscus guizhouensis or similar, with a "nomen nudum"?
-    Or possibly the 1999 paper was the first using Pararotadiscus, and doing so
-    as a "nomen nudum" as no description was provided?  But the species was also different
-    (tainjiangensis instead of guizhouensis).
+  notes: >
+    Cited in
+    1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y
+    without description, and the original source is an abstract for
+    a conference talk, also without formally published description.
   authority:
-    source: 1994_zhao.y.l_zhu.m.y
+    source: 1999_zhu.m.y_erdtmann_zhao.y.l
 parasitica_hall_1852:
   name: parasitica
   authority:
@@ -12049,6 +12056,11 @@ taijiangensis_zhao.y.l_zhu.m.y_1994:
   name: taijiangensis
   authority:
     source: 1994_zhao.y.l_zhu.m.y
+  notes: >
+    Used as Pararotadiscus taijiangensis in
+    1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y
+    without formal description.  Apparently this is actually
+    guizhouensis_zhao.y.l_zhu.m.y_1994.
 talpa:
   name: Talpa
   rank: genus

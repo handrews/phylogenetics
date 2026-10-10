@@ -18,7 +18,8 @@ interleaving); an explicit `repository` that is no registry key; a `prefix`
 missing from the file's `prefixes` map, a map entry that is unused, not a
 registry key or not a known form of its register, numbers with no prefix,
 repository or holder, a number that begins with its register's own prefix, and a
-locality number with no register; and a dangling `context`, figure `of` or `castOf`. The
+locality number (on a context or a material entry) with no register; and a
+dangling `context`, figure `of`, `castOf` or `fragmentOf`. The
 open-nomenclature checks (`phylohist.loader.nomenclature`) add a `cf` or `aff`
 off an `openTaxon` node, on both, or aimed at a missing, unnamed or other-rank
 taxon; a `quotedParent` above the species level; a `roleUncertain` with no
@@ -125,7 +126,7 @@ def check_material(draft, repositories, taxa):
       (material.number_entries, (node, file_prefixes, repositories)),
       (
         material.locality_objects,
-        (node_contexts, file_prefixes, locality_register, repositories),
+        (node_contexts, file_prefixes, locality_register, repositories, node.get('material') or ()),
       ),
       (material.context_tentatives, (node_contexts,)),
       (material.range_tentatives, (node,)),
