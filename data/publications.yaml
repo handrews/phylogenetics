@@ -129,6 +129,8 @@ geo-j:
   name: Geological Journal
 geomag:
   name: Geological Magazine
+geo-studies:
+  name: Geological Studies
 geo-soc-am-abs-prog:
   name: Geological Society of America, Abstracts With Programs
 geo-survey-canada:
