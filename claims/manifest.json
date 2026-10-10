@@ -12249,7 +12249,9 @@
   },
   "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y": {
    "acts": {
+    "lapsus": 1,
     "new": 1,
+    "nomNudum": 3,
     "placeholder": 6
    },
    "audit": {
@@ -12273,10 +12275,63 @@
     "year": 1999
    },
    "claims": {
-    "act": 7,
-    "placement": 9,
-    "usage": 14
+    "absence": 3,
+    "act": 11,
+    "editorial": 3,
+    "material": 24,
+    "placement": 19,
+    "usage": 22
    },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": "all",
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {
+    "illustrations": 7,
+    "material": 7,
+    "newTaxa": 7,
+    "occurrences": 10,
+    "skeleton": 41
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null,
+    "skeleton": "all",
+    "synonymy": null,
+    "types": null
+   },
+   "inconsistencies": [],
+   "material": {
+    "illustration": 7,
+    "occurrence": 7,
+    "range": 3,
+    "specimen": 7
+   },
+   "tree": true
+  },
+  "1999_zhu.m.y_erdtmann_zhao.y.l": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Zhu",
+     "Erdtmann",
+     "Zhao"
+    ],
+    "in": "The Origins of Animal Body Plans and Their Fossil Records (Abstracts)",
+    "title": "Body-plan and phylogenetic affinity of a medusiform animal from the Middle Cambrian Kaili Lagerstättein Guizhou, China\n",
+    "year": 1999
+   },
+   "claims": {},
    "coverage": {
     "illustrations": null,
     "material": null,
@@ -12287,21 +12342,11 @@
     "synonymy": null,
     "types": null
    },
-   "derived": {
-    "newTaxa": 7,
-    "skeleton": 23
-   },
-   "derivedCoverage": {
-    "illustrations": null,
-    "material": null,
-    "occurrences": null,
-    "skeleton": null,
-    "synonymy": null,
-    "types": null
-   },
+   "derived": {},
+   "derivedCoverage": {},
    "inconsistencies": [],
    "material": {},
-   "tree": true
+   "tree": false
   },
   "2000_grigo": {
    "acts": {
@@ -19206,6 +19251,9 @@
   "curtobrachiolus_zhao.y.l_huang.y.z_gong.x.y_1994": [
    "2006_parsley_zhao.y.l"
   ],
+  "curtoeocrinus": [
+   "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y"
+  ],
   "curtus_bassler_1936": [
    "1936_bassler"
   ],
@@ -19954,6 +20002,7 @@
    "1982i_sprinkle",
    "1987_gehling",
    "1987_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley",
+   "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y",
    "2009_zamora_gozalo_liñán",
    "2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l",
    "2010_zamora_smith.a.b",
@@ -20145,6 +20194,7 @@
    "1983_jell",
    "1985_sprinkle",
    "1994_guensburg_sprinkle",
+   "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y",
    "2021_jell_sprinkle"
   ],
   "echinus": [
@@ -20569,6 +20619,7 @@
    "1993_young.t.p_donovan.s.k",
    "1994_sprinkle_wahlman",
    "1997_sumrall_sprinkle_guensburg",
+   "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y",
    "2001_rozhnov_fedorov",
    "2001_sumrall_sprinkle_guensburg",
    "2002_gil cid_domínguez alonso",
@@ -21916,7 +21967,8 @@
    "1967a_ubaghs",
    "1969_robison_sprinkle",
    "1975_kolata",
-   "1988_ubaghs_robison"
+   "1988_ubaghs_robison",
+   "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y"
   ],
   "homo": [
    "1758_linnaeus"
@@ -21932,13 +21984,17 @@
    "1967a_ubaghs",
    "1975_kolata",
    "1988_ubaghs_robison",
-   "1997_sumrall_sprinkle_guensburg"
+   "1997_sumrall_sprinkle_guensburg",
+   "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y"
   ],
   "homoiostelea-indeterminate-family_ubaghs_robison_1988": [
    "1988_ubaghs_robison"
   ],
   "homoiostelea-subclass": [
    "1960_gill_caster"
+  ],
+  "homoiostenea": [
+   "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y"
   ],
   "homostelea": [
    "1967a_ubaghs"
@@ -24105,6 +24161,7 @@
    "2006_sumrall_sprinkle_bonem"
   ],
   "paragogia": [
+   "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y",
    "2006_parsley_zhao.y.l"
   ],
   "parakrama": [
@@ -24133,7 +24190,7 @@
   "parapostibulls-sp-indeterminate_sumrall_garbisch_pope_2000": [
    "2000_sumrall_garbisch_pope"
   ],
-  "pararotadiscus_zhao.y.l_zhu.m.y_1994": [
+  "pararotadiscus_zhu.m.y_erdtmann_zhao.y.l_1999": [
    "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y"
   ],
   "parasitica_hall_1852": [
