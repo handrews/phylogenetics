@@ -16,7 +16,7 @@ taxonomies:
     rank: Subphylum
     pages: 233
     children:
-    - taxon: rhombifera-group
+    - taxon: rhombifera_zittel_1879
       citedAs: Class RHOMBIFERA Zittel, 1879 Emended Paul, 1968b
       rank: Class
       authority:

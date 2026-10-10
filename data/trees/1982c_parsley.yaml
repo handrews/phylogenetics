@@ -14,7 +14,8 @@ taxonomies:
     notes: From the Table of Contents.
   - taxon: blastozoa
     children:
-    - taxon: diploporita-class
+    - taxon: diploporita
+      rank: Class
       translated:
         by:
           source: 1968b_paul.c.r.c

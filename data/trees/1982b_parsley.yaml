@@ -5,13 +5,15 @@ taxonomies:
   children:
   - taxon: blastozoa
     children:
-    - taxon: rhombifera-class
+    - taxon: rhombifera_zittel_1879
+      rank: Class
       emended: true
       notes: Emended Paul 1968
       children:
       - taxon: dichoporita
         children:
-        - taxon: glyptocystitida-superfamily
+        - taxon: glyptocystitida
+          rank: Superfamily
           translated:
             taxon: glyptocystitidae
           children:

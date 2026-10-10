@@ -5,7 +5,8 @@ taxonomies:
     children:
     - taxon: cystoidea
       children:
-      - taxon: diploporita-order
+      - taxon: diploporita
+        rank: Order
         children:
         - taxon: sphaeronitidae
           children:

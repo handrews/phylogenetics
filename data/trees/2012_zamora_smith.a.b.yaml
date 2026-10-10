@@ -7,7 +7,7 @@ taxonomies:
   authority: null
   pages: 297
   children:
-  - taxon: rhombifera-class
+  - taxon: rhombifera_zittel_1879
     rank: Plesion
     children:
     - taxon: dibrachycystidae

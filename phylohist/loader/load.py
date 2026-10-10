@@ -140,8 +140,13 @@ def _report_missing_protologues(data):
     # An authority may cite its protologue's source by an alias.
     source = source.canonical
     if source.key not in Tree._new_index.get(taxon.key, ()):
-      logger.warning(f'Protologue not flagged: {taxon.key} in {source.key}')
-      missing += 1
+      if source.key in Tree._taxon_index.get(taxon.key, ()):
+        # We recorded the taxon but did not acknowledge its new-ness.
+        logger.error(f'Protologue not flagged: {taxon.key} in {source.key}')
+        missing += 1
+      else:
+        # We have not recorded that part of the tree, which is fine.
+        logger.debug(f'Protologue not recorded: {taxon.key} in {source.key}')
   logger.info(f'{missing} taxa with an unflagged protologue')
 
 

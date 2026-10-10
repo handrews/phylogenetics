@@ -871,7 +871,7 @@ argonauta:
   authority:
     source: 1758_linnaeus
   citedAs: 282. ARGONAUTA.
-aristocystitida-superfamily:
+aristocystitida:
   name: Aristocystitida
   rank: Superfamily
   auth: [neumayr]
@@ -884,10 +884,6 @@ aristocystitidae:
 aristocystidae:
   name: Aristocystidae
   altSpellingOf: aristocystitidae
-aristocystitidae-superfamily:
-  name: Aristocystitidae
-  rank: Superfamily
-  altRankOf: aristocystitidae
 aristocystis:
   name: Aristocystis
   auth: [barrande]
@@ -2143,7 +2139,7 @@ caryocrinidae:
   auth: [Bernard]
   year: 1895
   altSpellingOf: caryocrinitidae
-caryocystitida-superfamily:
+caryocystitida:
   name: Caryocystitida
   rank: Superfamily
   auth: [jaekel]
@@ -3708,24 +3704,12 @@ diplobathrida:
 diplobathra:
   name: Diplobathra
   altSpellingOf: diplobathrida
-diploporita-group:
-  name: Diploporita
-  rank: null
-  authority:
-    source: 1854_müller.j.p
-diploporita-class:
-  rank: Class
-  altRankOf: diploporita-group
-diploporita-order:
-  rank: Order
-  altRankOf: diploporita-class
-diploporita-suborder:
-  rank: Suborder
-  altRankOf: diploporita-class
 diploporitidae:
   name: Diploporitidae
-  rank: Family
-  altRankOf: diploporita-order
+  altSpellingOf: diploporiten
+diploporita:
+  name: Diploporita
+  altSpellingOf: diploporitidae
 diploporita-incertae-sedis:
   name: null
   rank: Superfamily
@@ -3738,9 +3722,12 @@ diploporita-sp-e_paul.c.r.c_1997:
     source: 1997_paul.c.r.c
 diploporiten:
   name: Diploporiten
-  vulgarSpellingOf: diploporita-suborder
-  lang: DE
-  notes: Rank not entirely clear, just called a "small group"
+  rank: Group
+  # TODO: Support for vulgar name being first.
+  # vulgarSpellingOf: diploporitidae
+  # lang: DE
+  authority:
+    source: 1854_müller.j.p
 diploptera_lamarck_1816:
   name: diploptera
   authority:
@@ -5519,17 +5506,6 @@ glyptocystites:
   name: Glyptocystites
   authority:
     source: 1854a_billings
-glyptocystitida-superfamily:
-  name: Glyptocystitida
-  bracket: Glyptocystitids
-  rank: Superfamily
-  altRankOf: glyptocystitidae
-glyptocystitida-order:
-  name: Glyptocystitida
-  bracket: Glyptocystitids
-  rank: Order
-  auth: [Bather]
-  year: 1899
 glyptosphaeridae:
   name: Glyptosphaeridae
   rank: Family
@@ -6074,22 +6050,11 @@ hemicosmites-sp-3_paul.c.r.c_1968:
   rank: species
   authority:
     source: 1968b_paul.c.r.c
-hemicosmitida-order:
+hemicosmitida:
   name: Hemicosmitida
   rank: Order
   auth: [jaekel]
   year: 1918
-hemicosmitoida-order:
-  name: Hemicosmitoida
-  altSpellingOf: hemicosmitida-order
-hemicosmitida-superfamily:
-  name: Hemicosmitida
-  rank: Superfamily
-  auth: [jaekel]
-  year: 1918
-hemicosmitoida-superfamily:
-  name: Hemicosmitoida
-  altSpellingOf: hemicosmitida-superfamily
 hemicosmitidae:
   name: Hemicosmitidae
   rank: Family
@@ -10742,32 +10707,15 @@ rhombifera:
   name: Rhombifera
   auth: [barrande]
   year: 1867
-rhombifera-group:
+rhombifera_zittel_1879:
   name: Rhombifera
-  rank: Group
-  status: informal
-  authority:
-    source: 1879_zittel
-  notes: Authority uncertain.  Original rank uncertain.  Much TBD.
-rhombifera-order:
-  name: Rhombifera
-  bracket: Rhombiferans
-  rank: Order
-  status: informal
-  auth: [zittel]
-  year: 1870
-  notes: to be migrated to rhombifera-group
-rhombifera-class:
-  name: Rhombifera
-  bracket: Rhombiferans
-  rank: Class
-  status: informal
-  auth: [zittel]
-  year: 1870
-  notes: to be migrated to rhombifera-group
+  needsQualification: true
+  altSpellingOf: rhombiferi
 rhombiferi:
   name: Rhombiferi
-  altSpellingOf: rhombifera-order
+  rank: Group
+  authority:
+    source: 1879_zittel
 rhombiferidae:
   name: Rhombiferidae
   rank: Family
@@ -11590,7 +11538,7 @@ sphaeronites:
     pages:
     - 195
     notes: The 1967 Treatise incorrectly cites page 185.
-sphaeronitida-superfamily:
+sphaeronitida:
   name: Sphaeronitida
   rank: Superfamily
   auth: [neumayr]

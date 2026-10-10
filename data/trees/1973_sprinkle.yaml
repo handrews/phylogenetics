@@ -2272,7 +2272,8 @@ taxonomies:
         - taxon: macrocystellidae
           pages: 122
           moved:
-            taxon: rhombifera-class
+            taxon: rhombifera_zittel_1879
+            rank: Class
           ranges:
           - period: Ordovician
             seriesRange: [Lower Ordovician, Middle Ordovician]
@@ -3172,7 +3173,8 @@ taxonomies:
             - textFigures: 42
               page: 165
               depicts: drawing
-    - taxon: rhombifera-class
+    - taxon: rhombifera_zittel_1879
+      rank: Class
       pages: 170
       moved:
         taxon: crinozoa
@@ -3207,7 +3209,8 @@ taxonomies:
       - localSeriesRange: [Middle Silurian, Upper Permian]
         regions: [world-wide]
         asPrinted: Middle Ordovician(?), middle Silurian–late Permian, world-wide distribution.
-    - taxon: diploporita-class
+    - taxon: diploporita
+      rank: Class
       provisional: true
       pages: 186
       altPlacements:
@@ -3433,7 +3436,8 @@ taxonomies:
         ranges:
         - period: Silurian
           localSeries: Middle Silurian
-    - taxon: diploporita-class
+    - taxon: diploporita
+      rank: Class
       provisional: true
       pages: 186
       altPlacements:

@@ -34,7 +34,7 @@ taxonomies:
                     - taxon: eocystidae
                       new: true
                     - taxon: anomalocystidae
-                  - taxon: rhombifera-order
+                  - taxon: rhombifera_zittel_1879
                     emended: true
                     notes: 'Zittel (1879, emend.)'
                     children:
@@ -54,7 +54,8 @@ taxonomies:
                     emended: true
                     children:
                     - taxon: cryptocrinidae
-                  - taxon: diploporita-order
+                  - taxon: diploporita
+                    rank: Order
                     notes: "Zittel (1879, emend.)"
                     emended: true
                     children:

@@ -1,7 +1,9 @@
 taxonomies:
-- taxon: rhombifera-class
+- taxon: rhombifera_zittel_1879
+  rank: Class
   children:
-  - taxon: glyptocystitida-order
+  - taxon: glyptocystitida
+    rank: Order
     children:
     - taxon: pleurocystitidae
       children:
