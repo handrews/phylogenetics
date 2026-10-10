@@ -228,6 +228,9 @@ nova-acta-ups:
   name: Nova Acta Regiæ Societatis Scientarium Upsaliensis
 nysm:
   name: New York State Museum and Science Service Memoirs
+origins-body-plans:
+  name: The Origins of Animal Body Plans and Their Fossil Records (Abstracts)
+  notes: Chen J.Y., Chien P., Bottjer D. J., LiG .X. and Gao F. eds.
 ottawa-naturalist:
   name: The Ottawa Naturalist
 outlines-of-oryctology:

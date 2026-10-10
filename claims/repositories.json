@@ -112,6 +112,23 @@
   ],
   "type": "institution"
  },
+ "gut-ipbm": {
+  "name": "Institute of Paleontology and Biomineralization, Department of Resource Engineering, Guizhou University of Technology\n",
+  "prefixes": [
+   "GK"
+  ],
+  "type": "institution"
+ },
+ "gut-ipbm-l": {
+  "name": "Institute of Paleontology and Biomineralization, locality register",
+  "prefixes": [
+   "GTB",
+   "GTBM"
+  ],
+  "subject": "localities",
+  "type": "collection",
+  "within": "gut-ipbm"
+ },
  "isu": {
   "name": "Idaho State University",
   "prefixes": [
