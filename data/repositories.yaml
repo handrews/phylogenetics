@@ -65,6 +65,19 @@ gsc:
   place: Ottawa
   prefixes: [GSC]
   otherNames: [Canadian Geological Survey, Museum of the Geological Survey of Canada]
+gut-ipbm:
+  name: >
+    Institute of Paleontology and Biomineralization, Department of Resource
+    Engineering, Guizhou University of Technology
+  type: institution
+  notes: Merged into Guizhou University in 2004.
+  prefixes: [GK]
+gut-ipbm-l:
+  name: Institute of Paleontology and Biomineralization, locality register
+  type: collection
+  within: gut-ipbm
+  subject: localities
+  prefixes: [GTB, GTBM]
 isu:
   name: Idaho State University
   type: institution

@@ -1,36 +1,383 @@
-notes: Only echinoderms and cambroernids added here so far, many others defined
+notes: >
+  Only echinoderms and cambroernids added here so far, many others defined.
+prefixes:
+  GK: gut-ipbm
+  GTB: gut-ipbm-l
+  GTBM: gut-ipbm-l
+localityRegister: gut-ipbm-l
+contexts:
+  miaobanpo-8-5-1365:
+    biota: kaili
+    unit:
+    - immediately adjacent to the Lower-Middle Cambrian boundary
+    - middle-upper
+    - Kaili Formation
+    location:
+    - Miaobanpo Section
+    - Balang
+    - Taijiang County
+    - Guizhou
+    - China
+    localityNumbers:
+    - prefix: GTBM
+      number: 8-5-1365
+  miaobanpo-9-1-526a:
+    biota: kaili
+    unit:
+    - 22m above Lower Cambrian boundary
+    - middle-upper
+    - Kaili Formation
+    location:
+    - Miaobanpo Section
+    - Balang
+    - Taijiang County
+    - Guizhou
+    - China
+    localityNumbers:
+    - prefix: GTBM
+      number: 9-10526a
+  miaobanpo-9-2-12:
+    biota: kaili
+    unit:
+    - middle-upper
+    - Kaili Formation
+    location:
+    - Miaobanpo Section
+    - Balang
+    - Taijiang County
+    - Guizhou
+    - China
+    localityNumbers:
+    - prefix: GTBM
+      number: 9-2-12
+  miaobanpo-9-3-170:
+    biota: kaili
+    unit:
+    - middle-upper
+    - Kaili Formation
+    location:
+    - Miaobanpo Section
+    - Balang
+    - Taijiang County
+    - Guizhou
+    - China
+    localityNumbers:
+    - prefix: GTBM
+      number: 9-3-170
+  miaobanpo-20-33:
+    biota: kaili
+    unit:
+    - middle-upper
+    - Kaili Formation
+    location:
+    - Miaobanpo Section
+    - Balang
+    - Taijiang County
+    - Guizhou
+    - China
+    localityNumbers:
+    - prefix: GTBM
+      number: 20-33
+  miaobanpo-24-3-633:
+    biota: kaili
+    unit:
+    - middle-upper
+    - Kaili Formation
+    location:
+    - Miaobanpo Section
+    - Balang
+    - Taijiang County
+    - Guizhou
+    - China
+    localityNumbers:
+    - prefix: GTBM
+      number: 24-3-633
+  balang24-60a:
+    biota: kaili
+    unit:
+    - middle-upper
+    - Kaili Formation
+    location:
+    - Balang Wuliu Section
+    - Balang
+    - Taijiang County
+    - Guizhou
+    - China
+    localityNumbers:
+    - prefix: GTB
+      number: 24-60-a
 taxonomies:
-- taxon: sinoeocrinus
+- taxon: echinodermata
+  citedAs: 棘皮动物
+  rank: Phylum
+  authority: null
+  pages:
+  - 5
+  - 12
+  notes: >
+    In Chinese on p. 4 (citedAs), in English on p. 5.
+    Rank comes from list describing "12 Phyla" represented, although
+    not all names in the list are technically Phyly (Algae, Coelenterata,
+    "worms", and "medusiform animals" in the English section).
   children:
-  - taxon: minus_zhao.y.l_huang.y.z_gong.x.y_1994
-  - taxon: globus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
-    new: true
-- taxon: edrioasteroidea
-  children:
-  - openTaxon: edrioasteroidea-genus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
-    new: true
+  - taxon: crinozoa
+    citedAs: 包括海百合亚门 (Crinozoa)
+    rank: Subphylum
+    authority: null
+    pages:
+    - 5
+    - 12
+    notes: >
+      In Chinese on p. 4 (citedAs), in English on p. 5.
     children:
-    - openTaxon: edrioasteroidea-sp_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
-      new: true
-- taxon: crinozoa
-  children:
-  - openTaxon: crinozoa-genus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
-    new: true
+    - taxon: eocrinoidea
+      citedAs: 的始海百合纲 (Eocrinoidea)
+      rank: Class
+      authority: null
+      pages:
+      - 5
+      - 12
+      notes: >
+        In Chinese on p. 4 (citedAs), in English on p. 5.
+      children:
+      - openTaxon: crinozoa-genus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
+        citedAs: Crinozoa, gen. et sp. nov.
+        new: true
+        pages: 14
+        notes: >
+          Stated to be Sinoeocrinus, Curtoeocrinus, or Paragogia in both
+          languages but the plate caption is as cited here; note that
+          Curtoeocrinus and Paragogia were later synonymized with Sinoeocrius.
+        children:
+        - openTaxon: crinozoa-sp_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
+          citedAs: Crinozoa, gen. et sp. nov.
+          new: true
+          pages: 14
+          notes: >
+            In both languages, this figure and figure 7 on the same plate
+            is associated with the Eocrinoid genera Sinoeocrinus, Paragogia,
+            and Curteocrinus, but figure 7 is S. minus and figure 2's caption
+            is as cited here.
+          illustrations:
+          - plate: IV
+            figures: 2
+            of: 1731
+          material:
+          - prefix: GK
+            numbers: [1731]
+            asPrinted: GTBM-9-1-526a, GK1731。
+            context: miaobanpo-9-1-526a
+      - taxon: sinoeocrinus
+        citedAs: Sinoeocrinus Zhao, Huang and Gong, 1994
+        authority:
+          source: 1994_zhao.y.l_huang.y.z_gong.x.y
+        pages:
+        - 5
+        - 12
+        notes: >
+          In Chinese on p. 4, in English on p. 5 (citedAs).
+          Authority only present in English version.
+        children:
+        - taxon: globus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
+          citedAs: Sinoeocrinus globus sp. nov.
+          new: true
+          nudum: true
+          pages: 13
+          editorial:
+            inferred: [nudum]
+            basis: >
+              No formal description given.
+          illustrations:
+          - plate: II
+            figures: 6
+            of: 1730
+          material:
+          - prefix: GK
+            numbers: [1730]
+            asPrinted: GTBM-9-2-12, GK1730.
+            context: miaobanpo-9-2-12
+        - taxon: minus_zhao.y.l_huang.y.z_gong.x.y_1994
+          citedAs: Sinoeocrinus minus Zhao, Huang and Gong
+          pages: 14
+          illustrations:
+          - plate: IV
+            figures: 7
+            of: 1707
+          material:
+          - prefix: GK
+            numbers: [1707]
+            asPrinted: GTB24-60a, GK1707。
+            context: balang24-60a
+      - taxon: paragogia
+        citedAs: Paragogia Zhao, Huang and Gong, 1994
+        authority:
+          source: 1994_zhao.y.l_huang.y.z_gong.x.y
+        pages:
+        - 5
+        - 12
+        notes: >
+          In Chinese on p. 4, in English on p. 5 (citedAs).
+          Authority only present in English version.
+          Associated along with Sinoeocrinus and Curtoeocrinus with Plate IV
+          figures 2 and 7 in both languages, but figure 7 is S. minus and
+          figure 2 is described as "Crinozoa, gen. et sp. nov."
+        ranges:
+        - stage: Wuliuan
+          regions:
+          - Guizhou, China
+        children: null
+      - taxon: curtoeocrinus
+        citedAs: Curtoeocrinus Zhao, Huang and Gong, 1994
+        authority:
+          source: 1994_zhao.y.l_huang.y.z_gong.x.y
+        pages:
+        - 5
+        - 12
+        notes: >
+          In Chinese on p. 4, in English on p. 5 (citedAs).
+          Authority only present in English version.
+          Associated along with Sinoeocrinus and Paragogia with Plate IV
+          figures 2 and 7 in both languages, but figure 7 is S. minus and
+          figure 2 is described as "Crinozoa, gen. et sp. nov."
+        ranges:
+        - stage: Wuliuan
+          regions:
+          - Guizhou, China
+        children: null
+  - taxon: homalozoa
+    citedAs: 海扁果亚门 (Homalozoa)
+    rank: Subphylum
+    authority: null
+    pages:
+    - 5
+    - 12
+    notes: >
+      In Chinese on p. 4 (citedAs), in English on p. 5.
     children:
-    - openTaxon: crinozoa-sp_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
-      new: true
-- taxon: holothuroidea
-  children:
-  - openTaxon: holothuroidea-genus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
-    provisional: true
-    new: true
+    - taxon: homoiostelea
+      citedAs: 海箭纲 (Homoiostenea)
+      lapsus:
+        taxon: homoiostenea
+      rank: Class
+      authority: null
+      pages:
+      - 5
+      - 12
+      notes: >
+        In Chinese on p. 4 (citedAs), in English on p. 5.
+        No illustration or specimen identification provided.
+      ranges:
+      - stage: Wuliuan
+        regions:
+        - Guizhou, China
+      children: null
+  - taxon: echinozoa
+    citedAs: 海胆亚门 (Echinozoa)
+    rank: Subphylum
+    authority: null
+    pages:
+    - 5
+    - 12
+    notes: >
+      In Chinese on p. 4 (citedAs), in English on p. 5.
     children:
-    - openTaxon: holothuroidea-sp_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
-      new: true
-- taxon: pararotadiscus_zhao.y.l_zhu.m.y_1994
-  notes: |
-    Pararotadiscus generally credited to Zhu, Zhao, & Chen (2002).
-    This may be a "nomen nudum" for Pararotadiscus.
+    - taxon: edrioasteroidea
+      citedAs: 海座星纲 (Edrioasteroidea)
+      rank: Class
+      authority: null
+      pages:
+      - 5
+      - 12
+      notes: >
+        In Chinese on p. 4 (citedAs), in English on p. 5.
+      children:
+      - openTaxon: edrioasteroidea-genus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
+        citedAs: Edrioasteroidea, gen. et sp. nov.
+        new: true
+        pages: 14
+        children:
+        - openTaxon: edrioasteroidea-sp_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
+          citedAs: Edrioasteroidea, gen. et sp. nov.
+          new: true
+          pages: 14
+          illustrations:
+          - plate: III
+            figures: 3
+            of: 1725
+          material:
+          - prefix: GK
+            numbers: [1725]
+            asPrinted: GTBM-8-5-1365, GK1725。
+            context: miaobanpo-8-5-1365
+    - taxon: holothuroidea
+      citedAs: 及海参纲 (Holothuroidea)
+      rank: Class
+      authority: null
+      pages:
+      - 5
+      - 12
+      notes: >
+        In Chinese on p. 4 (citedAs), in English on p. 5.
+      children:
+      - openTaxon: holothuroidea-genus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
+        citedAs: Holothuroidea?, gen. et. sp. nov.
+        provisional: true
+        new: true
+        pages: 14
+        children:
+        - openTaxon: holothuroidea-sp_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999
+          citedAs: Holothuroidea?, gen. et. sp. nov.
+          new: true
+          pages: 14
+          illustrations:
+          - plate: IV
+            figures: 5
+          material:
+          - prefix: GK
+            numbers: [1730]
+            asPrinted: GTBM-9-3-170, GK1730。
+            context: miaobanpo-9-3-170
+- taxon: pararotadiscus_zhu.m.y_erdtmann_zhao.y.l_1999
+  nudum: true
+  pages: 4
+  editorial:
+    inferred: [nudum]
+    basis: >
+      The citation is an abstract with no formal description, and no such
+      description is given here either.
+      Pararotadiscus is properly credited to Zhu, Zhao, & Chen (2002).
+  notes: >
+    Classified as "medusiform animals" in the English section.  The
+    Chinese section references a prior assignment to or near what
+    seems to be Lophophorata based on the included phyla (Bryozoa,
+    Brachiopoda, Phoronida, and Entoprocta), but does not appear
+    to defnitively endorse a position.
   children:
   - taxon: taijiangensis_zhao.y.l_zhu.m.y_1994
-    notes: Possibly a nomen nudum renamed Rotadiscus guizhouensis?
+    nudum: true
+    pages: 13
+    editorial:
+      inferred: [nudum]
+      basis: >
+        Apparently intended to reference
+        Rotadiscus guizhouensis Zhao & Zhu 1994,
+        which in 2002 was validly recombined as Pararotadiscus guizhouensis.
+        Since it appears to be a distinct name but without description,
+        it is considered a nomen nudum rather than a lapsus calami in modern
+        taxonomy (contrast with Steganoblastus canadensis).
+    illustrations:
+    - plate: III
+      figures: 1
+      of: 112
+    - plate: III
+      figures: 6
+      of: 113
+    material:
+    - prefix: GK
+      numbers: [112]
+      asPrinted: GTBM-20-33, GK112
+      context: miaobanpo-20-33
+    - prefix: GK
+      numbers: [113]
+      asPrinted: GTBM-24-3-633, GK113。
+      context: miaobanpo-24-3-633

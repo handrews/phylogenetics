@@ -10446,8 +10446,9 @@
   "folded": [
    "curteocrinus"
   ],
-  "kind": "primary",
+  "kind": "altSpellingOf",
   "name": "Curteocrinus",
+  "of": "curtoeocrinus",
   "rank": "genus"
  },
  "curtisi_durham_caster_1963": {
@@ -10484,6 +10485,24 @@
   "kind": "primary",
   "name": "curtobrachiolus",
   "rank": "species"
+ },
+ "curtoeocrinus": {
+  "authority": {
+   "authors": [
+    "Zhao",
+    "Huang",
+    "Gong"
+   ],
+   "display": "Zhao, Huang, Gong 1994",
+   "source": "1994_zhao.y.l_huang.y.z_gong.x.y",
+   "year": 1994
+  },
+  "folded": [
+   "curtoeocrinus"
+  ],
+  "kind": "primary",
+  "name": "Curtoeocrinus",
+  "rank": "genus"
  },
  "curtus_bassler_1936": {
   "authority": {
@@ -21367,6 +21386,23 @@
   "name": "Homoiostelea",
   "rank": "Subclass"
  },
+ "homoiostenea": {
+  "authority": {
+   "authors": [
+    "Gill",
+    "Caster"
+   ],
+   "display": "Gill, Caster 1960",
+   "year": 1960
+  },
+  "folded": [
+   "homoiostenea"
+  ],
+  "kind": "altSpellingOf",
+  "name": "Homoiostenea",
+  "of": "homoiostelea",
+  "rank": "Class"
+ },
  "homostelea": {
   "authority": {
    "authors": [
@@ -30809,15 +30845,16 @@
   "name": "Pararotadiscus",
   "rank": "genus"
  },
- "pararotadiscus_zhao.y.l_zhu.m.y_1994": {
+ "pararotadiscus_zhu.m.y_erdtmann_zhao.y.l_1999": {
   "authority": {
    "authors": [
-    "Zhao",
-    "Zhu"
+    "Zhu",
+    "Erdtmann",
+    "Zhao"
    ],
-   "display": "Zhao, Zhu 1994",
-   "source": "1994_zhao.y.l_zhu.m.y",
-   "year": 1994
+   "display": "Zhu, Erdtmann, Zhao 1999",
+   "source": "1999_zhu.m.y_erdtmann_zhao.y.l",
+   "year": 1999
   },
   "folded": [
    "pararotadiscus"
