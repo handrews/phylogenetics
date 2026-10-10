@@ -19,6 +19,7 @@
   "billings.w.r": "Billings",
   "blainville": "Blainville",
   "bockelie": "Bockelie",
+  "bohadsch": "Bohadsch",
   "bohatý": "Bohatý",
   "bonasoro": "Bonasoro",
   "bonem": "Bonem",
@@ -83,6 +84,7 @@
   "frest": "Frest",
   "frizzell": "Frizzell",
   "fu.x.p": "Fu",
+  "gaertner": "Gaertner",
   "gahn": "Gahn",
   "garbisch": "Garbisch",
   "gehling": "Gehling",
@@ -490,6 +492,71 @@
     "title": null,
     "volume": 1,
     "year": 1760
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1761_bohadsch": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Bohadsch"
+    ],
+    "in": "De quibusdam animalibus marinis",
+    "title": null,
+    "year": 1761
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1761_gaertner": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Gaertner"
+    ],
+    "in": "Philosophical Transactions, giving some account of the present undertakings, studies, and labours of the ingenious, in many considerable parts of the world.\n",
+    "pages": [
+     75,
+     85
+    ],
+    "title": "An Account of the Urtica Marina: In a Letter to Mr. Peter Collinson, F. R. S. from Joseph Gaertner, M. D.\n",
+    "volume": 52,
+    "year": 1761
    },
    "claims": {},
    "coverage": {
@@ -2492,7 +2559,7 @@
     "authors": [
      "Schlotheim"
     ],
-    "in": "Die Petrefactenkunde auf ihrem jetzigen Standpunkte durch die Beschreibung seiner Sammlung versteinerter und fossiler Überreste des Thier-und pflanzenreichs der Vorwelt erläutert",
+    "in": "Die Petrefactenkunde auf ihrem jetzigen Standpunkte durch die Beschreibung seiner Sammlung versteinerter und fossiler Überreste des Thier-und pflanzenreichs der Vorwelt erläutert\n",
     "title": null,
     "year": 1820
    },

@@ -1638,7 +1638,7 @@ botryoides_leske_1778:
     source: 1778_leske
 botryllus:
   name: Botryllus
-  auth: [Gaertner]
+  auth: [gaertner]
   year: 1774
 brachiatus_hall_1852_glyptaster:
   name: brachiatus
@@ -2659,7 +2659,7 @@ confertus_barrande_1887:
   year: 1887
 conglomeratus_gaertner_1774:
   name: conglomeratus
-  auth: [Gaertner]
+  auth: [gaertner]
   year: 1774
 conicus_billings_1857_hybocrinus:
   originalParent: hybocrinus
@@ -2833,7 +2833,7 @@ corrugata_müller.o.f_1776:
     source: 1776_müller.o.f
 coryne:
   name: Coryne
-  auth: [Gaertner]
+  auth: [gaertner]
   in: [Pallas]
   year: 1774
 costosum_lamarck_1816:
@@ -11697,7 +11697,7 @@ stellata_leske_1778:
     source: 1778_leske
 stellatus_gaertner_1774:
   name: stellatus
-  auth: [Gaertner]
+  auth: [gaertner]
   year: 1774
 stellatus_hall_1866:
   name: stellatus

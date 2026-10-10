@@ -65,6 +65,30 @@
     Essentially a reprint of the 10th edition, but in two parts
     with minor typographcial changes such as conversion of ligatures
     to separate letters.  Even the page numbers appear to be identical.
+1761_bohadsch:
+  book: quibusdam
+  pubDate:
+    year: 1761
+  authors:
+  - bohadsch
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/11527
+  notes: Suppressed by ICZN Opinion 185. (1944)
+1761_gaertner:
+  title: >
+    An Account of the Urtica Marina: In a Letter to
+    Mr. Peter Collinson, F. R. S. from Joseph Gaertner, M. D.
+  journal: phil-trans
+  volume: 52
+  pages:
+  - 75
+  - 85
+  pubDate:
+    year: 1761
+  authors:
+  - gaertner
+  identifiers:
+    url: https://archive.org/details/philtrans08475937
 1761_linnaeus:
   book: fauna-svecica
   pubDate:

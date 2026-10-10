@@ -56,34 +56,34 @@ property.
 | `recombined` | 1 | 0.0% |
 | `stem` | 1 | 0.0% |
 
-### `article` -- 338 instances in `data/`
+### `article` -- 340 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `authors` | 338 | 100.0% |
-| `pubDate` | 337 | 99.7% |
-| `volume` | 263 | 77.8% |
-| `title` | 259 | 76.6% |
-| `identifiers` | 235 | 69.5% |
-| `pages` | 233 | 68.9% |
-| `journal` | 216 | 63.9% |
-| `number` | 166 | 49.1% |
-| `identifiers.url` | 153 | 65.1% |
-| `book` | 120 | 35.5% |
-| `processDates` | 98 | 29.0% |
+| `authors` | 340 | 100.0% |
+| `pubDate` | 339 | 99.7% |
+| `volume` | 264 | 77.6% |
+| `title` | 260 | 76.5% |
+| `identifiers` | 237 | 69.7% |
+| `pages` | 234 | 68.8% |
+| `journal` | 217 | 63.8% |
+| `number` | 166 | 48.8% |
+| `identifiers.url` | 155 | 65.4% |
+| `book` | 121 | 35.6% |
+| `processDates` | 98 | 28.8% |
 | `processDates.accepted` | 63 | 64.3% |
-| `identifiers.doi` | 61 | 26.0% |
-| `notes` | 54 | 16.0% |
+| `identifiers.doi` | 61 | 25.7% |
+| `notes` | 55 | 16.2% |
 | `processDates.received` | 53 | 54.1% |
-| `audit` | 48 | 14.2% |
+| `audit` | 48 | 14.1% |
 | `audit.notes` | 48 | 100.0% |
 | `audit.state` | 48 | 100.0% |
 | `audit.coverage` | 30 | 62.5% |
 | `processDates.online` | 28 | 28.6% |
-| `identifiers.jstor` | 24 | 10.2% |
+| `identifiers.jstor` | 24 | 10.1% |
 | `plates` | 21 | 6.2% |
 | `processDates.revised` | 18 | 18.4% |
-| `series` | 9 | 2.7% |
+| `series` | 9 | 2.6% |
 | `processDates.read` | 8 | 8.2% |
 | `articleNumber` | 7 | 2.1% |
 | `seen` | 5 | 1.5% |
@@ -278,13 +278,13 @@ property.
 | `notes` | 410 | 6.3% |
 | `editorial` | 11 | 0.2% |
 
-### `modularDate` -- 337 instances in `data/`
+### `modularDate` -- 339 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `year` | 337 | 100.0% |
-| `month` | 82 | 24.3% |
-| `day` | 32 | 9.5% |
+| `year` | 339 | 100.0% |
+| `month` | 82 | 24.2% |
+| `day` | 32 | 9.4% |
 | `/then/oneOf/2.day` | 19 | 100.0% |
 | `/then/oneOf/2.month` | 19 | 100.0% |
 | `/then/oneOf/1.day` | 11 | 100.0% |
@@ -294,14 +294,14 @@ property.
 | `/then/oneOf/0.month` | 2 | 100.0% |
 | `season` | 1 | 0.3% |
 
-### `person` -- 285 instances in `data/`
+### `person` -- 287 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `given` | 285 | 100.0% |
-| `surname` | 285 | 100.0% |
-| `birth` | 85 | 29.8% |
-| `death` | 84 | 29.5% |
+| `given` | 287 | 100.0% |
+| `surname` | 287 | 100.0% |
+| `birth` | 87 | 30.3% |
+| `death` | 85 | 29.6% |
 | `suffix` | 0 | 0.0% |
 
 ### `phylogeny` -- 36 instances in `data/`
@@ -314,15 +314,15 @@ property.
 | `notes` | 6 | 16.7% |
 | `characteristics` | 1 | 2.8% |
 
-### `publication` -- 148 instances in `data/`
+### `publication` -- 151 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `name` | 148 | 100.0% |
-| `editors` | 9 | 6.1% |
-| `place` | 8 | 5.4% |
-| `publisher` | 8 | 5.4% |
-| `notes` | 2 | 1.4% |
+| `name` | 151 | 100.0% |
+| `editors` | 9 | 6.0% |
+| `place` | 8 | 5.3% |
+| `publisher` | 8 | 5.3% |
+| `notes` | 2 | 1.3% |
 | `type` | 0 | 0.0% |
 
 ### `range` -- 52 instances in `data/`
@@ -762,10 +762,10 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/article/properties/articleNumber` | integer/string | intx5, strx2 | `e1465`, `e38296` | - |
 | `phylogeny#/$defs/article/properties/chapter` | integer/string | strx2 | `III. Stamm. Echinodermat...`, `Report of E. Billings, E...` | integer |
 | `phylogeny#/$defs/article/properties/number` | integer/string | intx156, strx10 | `Supplement`, `1/2`, `Adv. Pr.`, `1–2` | - |
-| `phylogeny#/$defs/article/properties/pages/items` | integer/string | intx432, strx46 | `S637`, `S634`, `S631`, `S627` | - |
+| `phylogeny#/$defs/article/properties/pages/items` | integer/string | intx434, strx46 | `S637`, `S634`, `S631`, `S627` | - |
 | `phylogeny#/$defs/article/properties/plates/items` | integer/string | intx29, strx12 | `II`, `I`, `VI`, `V` | - |
 | `phylogeny#/$defs/article/properties/series` | integer/string | intx8, strx1 | `A` | - |
-| `phylogeny#/$defs/article/properties/volume` | integer/string | intx249, strx14 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `II` | - |
+| `phylogeny#/$defs/article/properties/volume` | integer/string | intx250, strx14 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `II` | - |
 | `phylogeny#/$defs/citationNumber` | integer/string | intx2206, strx218 | `IV`, `II`, `IX`, `VIII` | - |
 | `phylogeny#/$defs/cladisticFields/properties/matrix/items` | integer/string | intx139, strx5 | `?` | - |
 | `phylogeny#/$defs/contexts` | object/null | dictx57, nullx41 | - | - |
@@ -776,7 +776,7 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/materialEntry/properties/castOf` | string/integer | intx3 | - | string |
 | `phylogeny#/$defs/materialsFields/properties/material` | array/null | listx110, nullx9 | - | - |
 | `phylogeny#/$defs/materialsFields/properties/ranges` | array/null | listx49, nullx41 | - | - |
-| `phylogeny#/$defs/person/properties/death` | integer/null | intx83, nullx1 | - | - |
+| `phylogeny#/$defs/person/properties/death` | integer/null | intx84, nullx1 | - | - |
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
 | `phylogeny#/$defs/printedNumber` | string/integer | intx437, strx246 | `S-3965`, `SH-2`, `SH-1`, `SC-4A` | - |
 | `phylogeny#/$defs/relationalFields/properties/synonyms` | array/null | listx358 | - | null |
