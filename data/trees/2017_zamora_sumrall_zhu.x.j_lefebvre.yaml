@@ -5,10 +5,12 @@ taxonomies:
   children:
   - taxon: blastozoa
     children:
-    - taxon: rhombifera-class
+    - taxon: rhombifera_zittel_1879
+      rank: Class
       nonMonophyletic: true
       children:
-      - taxon: glyptocystitida-order
+      - taxon: glyptocystitida
+        rank: Order
         children:
         - taxon: sanducystis
           new: true
@@ -30,8 +32,8 @@ phylogenies:
 - treeType: cladogram
   tree:
     children:
-    - bracketStart: glyptocystitida-order
-      bracketEnd: glyptocystitida-order
+    - bracketStart: glyptocystitida
+      bracketEnd: glyptocystitida
       children:
       - taxon: ridersia
       - children:

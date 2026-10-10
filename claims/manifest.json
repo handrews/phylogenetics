@@ -9038,7 +9038,7 @@
    "claims": {
     "act": 1,
     "editorial": 1,
-    "usage": 2
+    "usage": 1
    },
    "coverage": {
     "illustrations": null,
@@ -17527,13 +17527,10 @@
    "1900_bather",
    "1997_paul.c.r.c"
   ],
-  "aristocystitida-superfamily": [
+  "aristocystitida": [
    "1997_paul.c.r.c"
   ],
   "aristocystitidae": [
-   "1971_paul.c.r.c"
-  ],
-  "aristocystitidae-superfamily": [
    "1971_paul.c.r.c"
   ],
   "arkarua": [
@@ -18583,7 +18580,7 @@
   "caryocystites-cf-lagenallis_paul.c.r.c_1997": [
    "1997_paul.c.r.c"
   ],
-  "caryocystitida-superfamily": [
+  "caryocystitida": [
    "1968b_paul.c.r.c",
    "1997_paul.c.r.c"
   ],
@@ -19855,7 +19852,9 @@
   "diplobathrida": [
    "2003_guensburg_sprinkle"
   ],
-  "diploporita-class": [
+  "diploporita": [
+   "1900_bather",
+   "1963_brown.i.a",
    "1971_paul.c.r.c",
    "1972_paul.c.r.c",
    "1973_sprinkle",
@@ -19864,11 +19863,6 @@
   ],
   "diploporita-incertae-sedis": [
    "1997_paul.c.r.c"
-  ],
-  "diploporita-order": [
-   "1900_bather",
-   "1963_brown.i.a",
-   "1972_paul.c.r.c"
   ],
   "diploporita-sp-e_paul.c.r.c_1997": [
    "1997_paul.c.r.c"
@@ -21411,23 +21405,19 @@
    "2017_zamora_sumrall_zhu.x.j_lefebvre"
   ],
   "glyptocystitida": [
-   "1982g_sprinkle",
-   "1994_sprinkle_wahlman"
-  ],
-  "glyptocystitida-order": [
-   "1975_broadhead_strimple",
-   "2017_zamora_sumrall_zhu.x.j_lefebvre"
-  ],
-  "glyptocystitida-superfamily": [
    "1967_paul.c.r.c",
    "1968a_paul.c.r.c",
    "1968b_paul.c.r.c",
+   "1975_broadhead_strimple",
    "1975_kolata",
    "1982b_parsley",
+   "1982g_sprinkle",
    "1987_ubaghs",
+   "1994_sprinkle_wahlman",
    "1997_paul.c.r.c",
    "1999_ubaghs",
-   "2013_nardin_bohatý"
+   "2013_nardin_bohatý",
+   "2017_zamora_sumrall_zhu.x.j_lefebvre"
   ],
   "glyptocystitidae": [
    "1968b_paul.c.r.c",
@@ -21879,7 +21869,7 @@
   "hemicosmites-sp-3_paul.c.r.c_1968": [
    "1968b_paul.c.r.c"
   ],
-  "hemicosmitida-superfamily": [
+  "hemicosmitida": [
    "1968b_paul.c.r.c",
    "1997_paul.c.r.c"
   ],
@@ -25561,26 +25551,22 @@
    "1857_billings"
   ],
   "rhombifera": [
-   "1968b_paul.c.r.c",
-   "2013_nardin_bohatý"
+   "1968b_paul.c.r.c"
   ],
-  "rhombifera-class": [
+  "rhombifera_zittel_1879": [
+   "1900_bather",
    "1968b_paul.c.r.c",
    "1973_sprinkle",
    "1975_broadhead_strimple",
+   "1975_kolata",
    "1982b_parsley",
+   "1982g_sprinkle",
    "1983_jell",
    "1994_sprinkle_wahlman",
    "1997_paul.c.r.c",
    "2012_zamora_smith.a.b",
+   "2013_nardin_bohatý",
    "2017_zamora_sumrall_zhu.x.j_lefebvre"
-  ],
-  "rhombifera-group": [
-   "1982g_sprinkle"
-  ],
-  "rhombifera-order": [
-   "1900_bather",
-   "1975_kolata"
   ],
   "rhombiferi": [
    "1897_whiteaves"
@@ -26217,7 +26203,7 @@
    "1854_müller.j.p",
    "1997_paul.c.r.c"
   ],
-  "sphaeronitida-superfamily": [
+  "sphaeronitida": [
    "1997_paul.c.r.c"
   ],
   "sphaeronitidae": [

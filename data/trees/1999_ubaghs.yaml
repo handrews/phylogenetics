@@ -18,7 +18,8 @@ taxonomies:
         new: true
 - taxon: cystoidea
   children:
-  - taxon: glyptocystitida-superfamily
+  - taxon: glyptocystitida
+    rank: Superfamily
     children:
     - taxon: barroubiocystidae
       new: true

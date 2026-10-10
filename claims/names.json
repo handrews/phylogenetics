@@ -2806,7 +2806,7 @@
   "name": "Aristocystites",
   "rank": "genus"
  },
- "aristocystitida-superfamily": {
+ "aristocystitida": {
   "authority": {
    "authors": [
     "Neumayr"
@@ -2815,8 +2815,7 @@
    "year": 1889
   },
   "folded": [
-   "aristocystitida",
-   "aristocystitidasuperfamily"
+   "aristocystitida"
   ],
   "kind": "primary",
   "name": "Aristocystitida",
@@ -2836,23 +2835,6 @@
   "kind": "primary",
   "name": "Aristocystitidae",
   "rank": "Family"
- },
- "aristocystitidae-superfamily": {
-  "authority": {
-   "authors": [
-    "Neumayr"
-   ],
-   "display": "Neumayr 1889",
-   "year": 1889
-  },
-  "folded": [
-   "aristocystitidae",
-   "aristocystitidaesuperfamily"
-  ],
-  "kind": "altRankOf",
-  "name": "Aristocystitidae",
-  "of": "aristocystitidae",
-  "rank": "Superfamily"
  },
  "arkarua": {
   "authority": {
@@ -7159,7 +7141,7 @@
   "placeholder": "open",
   "rank": "species"
  },
- "caryocystitida-superfamily": {
+ "caryocystitida": {
   "authority": {
    "authors": [
     "Jaekel"
@@ -7168,8 +7150,7 @@
    "year": 1918
   },
   "folded": [
-   "caryocystitida",
-   "caryocystitidasuperfamily"
+   "caryocystitida"
   ],
   "kind": "primary",
   "name": "Caryocystitida",
@@ -12491,7 +12472,7 @@
   "name": "Diplobathrida",
   "rank": "Order"
  },
- "diploporita-class": {
+ "diploporita": {
   "authority": {
    "authors": [
     "Müller"
@@ -12501,12 +12482,12 @@
    "year": 1854
   },
   "folded": [
-   "diploporita",
-   "diploporitaclass"
+   "diploporita"
   ],
-  "kind": "primary",
+  "kind": "altSpellingOf",
   "name": "Diploporita",
-  "rank": "Class"
+  "of": "diploporitidae",
+  "rank": "Group"
  },
  "diploporita-incertae-sedis": {
   "authority": {
@@ -12523,24 +12504,6 @@
   "placeholder": "open",
   "rank": "Superfamily"
  },
- "diploporita-order": {
-  "authority": {
-   "authors": [
-    "Müller"
-   ],
-   "display": "Müller 1854",
-   "source": "1854_müller.j.p",
-   "year": 1854
-  },
-  "folded": [
-   "diploporita",
-   "diploporitaorder"
-  ],
-  "kind": "altRankOf",
-  "name": "Diploporita",
-  "of": "diploporita-class",
-  "rank": "Order"
- },
  "diploporita-sp-e_paul.c.r.c_1997": {
   "authority": {
    "authors": [
@@ -12555,24 +12518,6 @@
   "name": null,
   "placeholder": "open",
   "rank": "species"
- },
- "diploporita-suborder": {
-  "authority": {
-   "authors": [
-    "Müller"
-   ],
-   "display": "Müller 1854",
-   "source": "1854_müller.j.p",
-   "year": 1854
-  },
-  "folded": [
-   "diploporita",
-   "diploporitasuborder"
-  ],
-  "kind": "altRankOf",
-  "name": "Diploporita",
-  "of": "diploporita-class",
-  "rank": "Suborder"
  },
  "diploporiten": {
   "authority": {
@@ -12589,8 +12534,8 @@
   "kind": "vulgarSpellingOf",
   "lang": "DE",
   "name": "Diploporiten",
-  "of": "diploporita-suborder",
-  "rank": "Suborder"
+  "of": "diploporitidae",
+  "rank": "Group"
  },
  "diploporitidae": {
   "authority": {
@@ -12604,10 +12549,9 @@
   "folded": [
    "diploporitidae"
   ],
-  "kind": "altRankOf",
+  "kind": "primary",
   "name": "Diploporitidae",
-  "of": "diploporita-order",
-  "rank": "Family"
+  "rank": "Group"
  },
  "diploptera_lamarck_1816": {
   "authority": {
@@ -18547,39 +18491,6 @@
   "name": "Glyptocystitida",
   "rank": "Superfamily"
  },
- "glyptocystitida-order": {
-  "authority": {
-   "authors": [
-    "Bather"
-   ],
-   "display": "Bather 1899",
-   "year": 1899
-  },
-  "folded": [
-   "glyptocystitida",
-   "glyptocystitidaorder"
-  ],
-  "kind": "primary",
-  "name": "Glyptocystitida",
-  "rank": "Order"
- },
- "glyptocystitida-superfamily": {
-  "authority": {
-   "authors": [
-    "Bather"
-   ],
-   "display": "Bather 1899",
-   "year": 1899
-  },
-  "folded": [
-   "glyptocystitida",
-   "glyptocystitidasuperfamily"
-  ],
-  "kind": "altRankOf",
-  "name": "Glyptocystitida",
-  "of": "glyptocystitidae",
-  "rank": "Superfamily"
- },
  "glyptocystitidae": {
   "authority": {
    "authors": [
@@ -20424,7 +20335,7 @@
   "placeholder": "open",
   "rank": "species"
  },
- "hemicosmitida-order": {
+ "hemicosmitida": {
   "authority": {
    "authors": [
     "Jaekel"
@@ -20433,28 +20344,11 @@
    "year": 1918
   },
   "folded": [
-   "hemicosmitida",
-   "hemicosmitidaorder"
+   "hemicosmitida"
   ],
   "kind": "primary",
   "name": "Hemicosmitida",
   "rank": "Order"
- },
- "hemicosmitida-superfamily": {
-  "authority": {
-   "authors": [
-    "Jaekel"
-   ],
-   "display": "Jaekel 1918",
-   "year": 1918
-  },
-  "folded": [
-   "hemicosmitida",
-   "hemicosmitidasuperfamily"
-  ],
-  "kind": "primary",
-  "name": "Hemicosmitida",
-  "rank": "Superfamily"
  },
  "hemicosmitidae": {
   "authority": {
@@ -20470,40 +20364,6 @@
   "kind": "primary",
   "name": "Hemicosmitidae",
   "rank": "Family"
- },
- "hemicosmitoida-order": {
-  "authority": {
-   "authors": [
-    "Jaekel"
-   ],
-   "display": "Jaekel 1918",
-   "year": 1918
-  },
-  "folded": [
-   "hemicosmitoida",
-   "hemicosmitoidaorder"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Hemicosmitoida",
-  "of": "hemicosmitida-order",
-  "rank": "Order"
- },
- "hemicosmitoida-superfamily": {
-  "authority": {
-   "authors": [
-    "Jaekel"
-   ],
-   "display": "Jaekel 1918",
-   "year": 1918
-  },
-  "folded": [
-   "hemicosmitoida",
-   "hemicosmitoidasuperfamily"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Hemicosmitoida",
-  "of": "hemicosmitida-superfamily",
-  "rank": "Superfamily"
  },
  "hemicystis": {
   "authority": {
@@ -36541,24 +36401,7 @@
   "name": "Rhombifera",
   "rank": "genus"
  },
- "rhombifera-class": {
-  "authority": {
-   "authors": [
-    "Zittel"
-   ],
-   "display": "Zittel 1870",
-   "year": 1870
-  },
-  "folded": [
-   "rhombifera",
-   "rhombiferaclass"
-  ],
-  "kind": "primary",
-  "name": "Rhombifera",
-  "rank": "Class",
-  "status": "informal"
- },
- "rhombifera-group": {
+ "rhombifera_zittel_1879": {
   "authority": {
    "authors": [
     "Zittel"
@@ -36568,46 +36411,28 @@
    "year": 1879
   },
   "folded": [
-   "rhombifera",
-   "rhombiferagroup"
+   "rhombifera"
   ],
-  "kind": "primary",
+  "kind": "altSpellingOf",
   "name": "Rhombifera",
-  "rank": "Order",
-  "status": "informal"
- },
- "rhombifera-order": {
-  "authority": {
-   "authors": [
-    "Zittel"
-   ],
-   "display": "Zittel 1870",
-   "year": 1870
-  },
-  "folded": [
-   "rhombifera",
-   "rhombiferaorder"
-  ],
-  "kind": "primary",
-  "name": "Rhombifera",
-  "rank": "Order",
-  "status": "informal"
+  "of": "rhombiferi",
+  "rank": "Group"
  },
  "rhombiferi": {
   "authority": {
    "authors": [
     "Zittel"
    ],
-   "display": "Zittel 1870",
-   "year": 1870
+   "display": "Zittel 1879",
+   "source": "1879_zittel",
+   "year": 1879
   },
   "folded": [
    "rhombiferi"
   ],
-  "kind": "altSpellingOf",
+  "kind": "primary",
   "name": "Rhombiferi",
-  "of": "rhombifera-order",
-  "rank": "Order"
+  "rank": "Group"
  },
  "rhombiferidae": {
   "authority": {
@@ -39423,7 +39248,7 @@
   "name": "Sphaeronites",
   "rank": "genus"
  },
- "sphaeronitida-superfamily": {
+ "sphaeronitida": {
   "authority": {
    "authors": [
     "Neumayr"
@@ -39432,8 +39257,7 @@
    "year": 1889
   },
   "folded": [
-   "sphaeronitida",
-   "sphaeronitidasuperfamily"
+   "sphaeronitida"
   ],
   "kind": "primary",
   "name": "Sphaeronitida",

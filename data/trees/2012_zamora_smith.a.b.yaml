@@ -3,7 +3,7 @@ prefixes:
 taxonomies:
 - taxon: echinodermata
   children:
-  - taxon: rhombifera-class
+  - taxon: rhombifera_zittel_1879
     rank: Plesion
     children:
     - taxon: dibrachycystidae

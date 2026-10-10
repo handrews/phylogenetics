@@ -19,9 +19,11 @@ taxonomies:
     children:
     - taxon: cystoidea
       children:
-      - taxon: rhombifera-order
+      - taxon: rhombifera_zittel_1879
+        rank: Order
         children:
-        - taxon: glyptocystitida-superfamily
+        - taxon: glyptocystitida
+          rank: Superfamily
           children:
           - taxon: pleurocystitidae
             children:
