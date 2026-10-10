@@ -95,6 +95,12 @@ blainville:
 bockelie:
   surname: Bockelie
   given: Johan Fredrik
+bohadsch:
+  surname: Bohadsch
+  given: Johann Baptist
+  birth: 1724
+  death: 1768
+  notes: Jan Křtitel Boháč (Czech)
 bohatý:
   surname: Bohatý
   given: Jan
@@ -319,6 +325,11 @@ frizzell:
 fu.x.p:
   surname: Fu
   given: X.-P.
+gaertner:
+  surname: Gaertner
+  given: Joseph
+  birth: 1732
+  deat: 1791
 gahn:
   surname: Gahn
   given: Forest J.
