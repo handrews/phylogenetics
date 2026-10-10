@@ -4,9 +4,8 @@ prefixes:
   GK: gut-ipbm
   GTB: gut-ipbm-l
   GTBM: gut-ipbm-l
-localityRegister: gut-ipbm-l
 contexts:
-  miaobanpo-8-5-1365:
+  miaobanpo:
     biota: kaili
     unit:
     - immediately adjacent to the Lower-Middle Cambrian boundary
@@ -18,83 +17,10 @@ contexts:
     - Taijiang County
     - Guizhou
     - China
-    localityNumbers:
-    - prefix: GTBM
-      number: 8-5-1365
-  miaobanpo-9-1-526a:
+  balang-wuliu:
     biota: kaili
     unit:
     - 22m above Lower Cambrian boundary
-    - middle-upper
-    - Kaili Formation
-    location:
-    - Miaobanpo Section
-    - Balang
-    - Taijiang County
-    - Guizhou
-    - China
-    localityNumbers:
-    - prefix: GTBM
-      number: 9-10526a
-  miaobanpo-9-2-12:
-    biota: kaili
-    unit:
-    - middle-upper
-    - Kaili Formation
-    location:
-    - Miaobanpo Section
-    - Balang
-    - Taijiang County
-    - Guizhou
-    - China
-    localityNumbers:
-    - prefix: GTBM
-      number: 9-2-12
-  miaobanpo-9-3-170:
-    biota: kaili
-    unit:
-    - middle-upper
-    - Kaili Formation
-    location:
-    - Miaobanpo Section
-    - Balang
-    - Taijiang County
-    - Guizhou
-    - China
-    localityNumbers:
-    - prefix: GTBM
-      number: 9-3-170
-  miaobanpo-20-33:
-    biota: kaili
-    unit:
-    - middle-upper
-    - Kaili Formation
-    location:
-    - Miaobanpo Section
-    - Balang
-    - Taijiang County
-    - Guizhou
-    - China
-    localityNumbers:
-    - prefix: GTBM
-      number: 20-33
-  miaobanpo-24-3-633:
-    biota: kaili
-    unit:
-    - middle-upper
-    - Kaili Formation
-    location:
-    - Miaobanpo Section
-    - Balang
-    - Taijiang County
-    - Guizhou
-    - China
-    localityNumbers:
-    - prefix: GTBM
-      number: 24-3-633
-  balang24-60a:
-    biota: kaili
-    unit:
     - middle-upper
     - Kaili Formation
     location:
@@ -103,9 +29,6 @@ contexts:
     - Taijiang County
     - Guizhou
     - China
-    localityNumbers:
-    - prefix: GTB
-      number: 24-60-a
 taxonomies:
 - taxon: echinodermata
   citedAs: 棘皮动物
@@ -166,7 +89,10 @@ taxonomies:
           - prefix: GK
             numbers: [1731]
             asPrinted: GTBM-9-1-526a, GK1731。
-            context: miaobanpo-9-1-526a
+            context: miaobanpo
+            localityNumbers:
+            - prefix: GTBM
+              number: 9-1-526a
       - taxon: sinoeocrinus
         citedAs: Sinoeocrinus Zhao, Huang and Gong, 1994
         authority:
@@ -195,7 +121,10 @@ taxonomies:
           - prefix: GK
             numbers: [1730]
             asPrinted: GTBM-9-2-12, GK1730.
-            context: miaobanpo-9-2-12
+            context: miaobanpo
+            localityNumbers:
+            - prefix: GTBM
+              number: 9-2-12
         - taxon: minus_zhao.y.l_huang.y.z_gong.x.y_1994
           citedAs: Sinoeocrinus minus Zhao, Huang and Gong
           pages: 14
@@ -207,7 +136,10 @@ taxonomies:
           - prefix: GK
             numbers: [1707]
             asPrinted: GTB24-60a, GK1707。
-            context: balang24-60a
+            context: balang-wuliu
+            localityNumbers:
+            - prefix: GTB
+              number: 24-60a
       - taxon: paragogia
         citedAs: Paragogia Zhao, Huang and Gong, 1994
         authority:
@@ -308,7 +240,10 @@ taxonomies:
           - prefix: GK
             numbers: [1725]
             asPrinted: GTBM-8-5-1365, GK1725。
-            context: miaobanpo-8-5-1365
+            context: miaobanpo
+            localityNumbers:
+            - prefix: GTBM
+              number: 8-5-1365
     - taxon: holothuroidea
       citedAs: 及海参纲 (Holothuroidea)
       rank: Class
@@ -336,7 +271,10 @@ taxonomies:
           - prefix: GK
             numbers: [1730]
             asPrinted: GTBM-9-3-170, GK1730。
-            context: miaobanpo-9-3-170
+            context: miaobanpo
+            localityNumbers:
+            - prefix: GTBM
+              number: 9-3-170
 - taxon: pararotadiscus_zhu.m.y_erdtmann_zhao.y.l_1999
   nudum: true
   pages: 4
@@ -376,8 +314,14 @@ taxonomies:
     - prefix: GK
       numbers: [112]
       asPrinted: GTBM-20-33, GK112
-      context: miaobanpo-20-33
+      context: miaobanpo
+      localityNumbers:
+      - prefix: GTBM
+        number: 20-33
     - prefix: GK
       numbers: [113]
       asPrinted: GTBM-24-3-633, GK113。
-      context: miaobanpo-24-3-633
+      context: miaobanpo
+      localityNumbers:
+      - prefix: GTBM
+        number: 24-3-633

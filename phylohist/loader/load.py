@@ -342,7 +342,7 @@ def _report_material(data):
       for level, message in material.number_entries(node, file_prefixes, repositories):
         _log_material(level, f'{where}: {message}')
       for level, message in material.locality_objects(
-        node_contexts, file_prefixes, locality_register, repositories
+        node_contexts, file_prefixes, locality_register, repositories, node.get('material') or ()
       ):
         _log_material(level, f'{where}: {message}')
       for level, message in material.context_tentatives(node_contexts):

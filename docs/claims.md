@@ -277,10 +277,16 @@ says which.
   absent. The entry's other fields are copied as written: `count`,
   `label`, `holder`, `status`, `formerIds`, `fragmentOf`, `parts`,
   `examined`, `listComplete`, `preparation`, `castOf`, `sameAs`,
-  `collectedBy`, `collectedDate`, `uncertain` (the specimen is doubtfully assigned to the
+  `collectedBy`, `collectedDate`, `localityNumbers`, `uncertain` (the specimen is doubtfully assigned to the
   taxon), `roleUncertain` (the role word is queried in the source),
   `contextKey`, `contextTentative` (from the object form of
-  the entry's `context`), and the entry's `notes` as `materialNotes`. An
+  the entry's `context`), and the entry's `notes` as `materialNotes`.
+  `localityKeys`, when the entry has `localityNumbers` (the specimen's own
+  locality numbers within its context), are built from them by the rule
+  the occurrence claim uses for a context's. `castOf` and `fragmentOf` are
+  copied as written: a bare number or label, or the object form
+  (`{number, prefix}` or `{label}`) that names an entry on the same node
+  within a prefix. An
   entry's `editorial` block becomes the claim's `editorial` (the claim is
   about the entry), with `inferredFields` listing the names in its
   `inferred`; the claim's own `inferred` flag is unchanged, because the
@@ -289,8 +295,8 @@ says which.
   (`{source, label}` or `{source, number[, prefix]}`), is copied as
   written and is the source's own statement unless `inferredFields` lists
   it; `sameAsClaim` is the id of the one specimen claim in that source it
-  names (matched by folded `label`, or by `number` the way a figure's `of`
-  is, within `prefix` when given), set once every source's claims are
+  names (matched the way a figure's object `of` is: by folded `label`, or
+  by `number` within `prefix` when given), set once every source's claims are
   built and absent when the source is not among those extracted or the link
   names no entry or several.
   `specimenIllustrations` lists the locators of the node's illustrations
@@ -312,8 +318,9 @@ says which.
   and `depicts` ride on the claim. `ofClaim` lists the ids of the specimen
   claims `of` names (a string or an integer, folded and compared with the
   folded numbers, a range endpoint included, and the folded `label`; a
-  number inside a pair's run also names it); a figure with no `of` is tied
-  to no specimen.
+  number inside a pair's run also names it; an object `{number, prefix}`
+  names by number among the entries of that prefix alone, and `{label}` by
+  label alone); a figure with no `of` is tied to no specimen.
 - `range` (field `ranges`): one claim per element, `range` the element
   verbatim, a `tentative` it carries included. It counts under the `occurrences` coverage kind, and
   `statements(kind='occurrences')` returns it with the `occurrence` claims.

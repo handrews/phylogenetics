@@ -88,7 +88,10 @@ $defs:
       localityRegister:
         description: |
           The register of a locality number that has neither `prefix` nor
-          `register`: the author's own field codes (`sprinkle-l`).
+          `register`: the author's own field codes (`sprinkle-l`). It is
+          only that default: a prefixed number resolves through `prefixes`,
+          and a number may name its `register` outright, so one file may
+          draw on any number of locality registers.
         $ref: "#/$defs/repositoryKey"
       notes:
         type: string
@@ -1041,10 +1044,11 @@ $defs:
     description: |
       A figure printed in this source when on a primary node (`of` names the
       material entry it depicts, by a catalog number or label on the same
-      node; none means the source never ties it to a specimen), or a locator
-      for a figure in the cited work when on a cited entry or inside
-      `authority`, where `of` and `depicts` are not allowed (the loader
-      checks that).
+      node, or by an `entryRef` object when a bare number would match
+      entries under two prefixes; none means the source never ties it to a
+      specimen), or a locator for a figure in the cited work when on a cited
+      entry or inside `authority`, where `of` and `depicts` are not allowed
+      (the loader checks that).
     type: object
     $ref: "#/$defs/figureLocatorFields"
     unevaluatedProperties: false
@@ -1056,11 +1060,11 @@ $defs:
     properties:
       of:
         oneOf:
-        - type: [string, integer]
+        - $ref: "#/$defs/entryRefOrNumber"
         - type: array
           minItems: 1
           items:
-            type: [string, integer]
+            $ref: "#/$defs/entryRefOrNumber"
       depicts:
         type: string
         enum: [specimen, cast, reconstruction, drawing]
@@ -1413,6 +1417,42 @@ $defs:
   contextKey:
     type: string
     pattern: "^[a-z0-9][a-z0-9-]*$"
+  entryRefFields:
+    description: |
+      The fields that name one material entry: its `label`, or one of its
+      numbers (a range endpoint included, or a number inside a run), with
+      `prefix` restricting the match to entries of that prefix. The loader
+      resolves them the way it resolves a bare `of`, within the prefix when
+      one is given.
+    oneOf:
+    - required: [label]
+    - required: [number]
+    dependentRequired:
+      prefix: [number]
+    properties:
+      label:
+        type: string
+      number:
+        $ref: "#/$defs/printedNumber"
+      prefix:
+        type: string
+        minLength: 1
+  entryRef:
+    description: |
+      A reference to a material entry on the same node by `label`, or by
+      `number` with an optional `prefix`: the object form of `of`, `castOf`
+      and `fragmentOf`, for when the bare number would match entries under
+      two prefixes.
+    type: object
+    $ref: "#/$defs/entryRefFields"
+    unevaluatedProperties: false
+  entryRefOrNumber:
+    description: |
+      A catalog number or label of an entry on the same node, or an
+      `entryRef` naming it with its prefix.
+    oneOf:
+    - $ref: "#/$defs/printedNumber"
+    - $ref: "#/$defs/entryRef"
   materialEntry:
     description: |
       One specimen, or one batch of specimens the source cites together, as
@@ -1494,8 +1534,9 @@ $defs:
         description: |
           The catalog number or label of the entry on the same node that this
           cast was taken from, when the source gives the original one. With
-          `numbers` the number alone, without its prefix.
-        type: [string, integer]
+          `numbers` the number alone, without its prefix, or an `entryRef`
+          object when the bare number would match entries under two prefixes.
+        $ref: "#/$defs/entryRefOrNumber"
       collectedBy:
         description: The collector or finder of this specimen, as printed.
         type: string
@@ -1504,6 +1545,18 @@ $defs:
         type: string
       context:
         $ref: "#/$defs/contextRef"
+      localityNumbers:
+        description: |
+          Locality register numbers printed against this specimen, as
+          printed, each resolved the way a context's are (`localityNumber`).
+          They say where this specimen came from within the context it refers
+          to; the context keeps only the numbers that identify it as a whole.
+          Equivalences the source prints are kept as several numbers on one
+          entry.
+        type: array
+        minItems: 1
+        items:
+          $ref: "#/$defs/localityNumber"
       status:
         type: string
         enum: [lost, untraced]
@@ -1513,34 +1566,26 @@ $defs:
           $ref: "#/$defs/catalogNumber"
       fragmentOf:
         description: |
-          The catalog number or label of the specimen this is a fragment of.
-          With `numbers` the number alone, without its prefix.
-        type: [string, integer]
+          The catalog number or label of the entry on the same node this is
+          a fragment of. With `numbers` the number alone, without its prefix,
+          or an `entryRef` object when the bare number would match entries
+          under two prefixes.
+        $ref: "#/$defs/entryRefOrNumber"
       sameAs:
         description: |
           The earlier source's entry this one is the same specimen as, named
-          by that source's key and the entry's `label` or one of its numbers
-          (`prefix` picks between entries that carry the same number under
+          by that source's key and an `entryRef` (`label`, or `number` with
+          `prefix` picking between entries that carry the same number under
           two prefixes). It sits on the later entry and always points to an
           earlier source (or one of the same year). It is this source's own
           statement unless the entry's `editorial.inferred` lists `sameAs`.
         type: object
-        additionalProperties: false
+        $ref: "#/$defs/entryRefFields"
+        unevaluatedProperties: false
         required: [source]
-        oneOf:
-        - required: [label]
-        - required: [number]
-        dependentRequired:
-          prefix: [number]
         properties:
           source:
             $ref: "#/$defs/sourceId"
-          label:
-            type: string
-          number:
-            $ref: "#/$defs/printedNumber"
-          prefix:
-            type: string
       parts:
         description: Part names parallel to `numbers` (part, counterpart).
         type: array
@@ -1664,28 +1709,15 @@ $defs:
           type: string
       localityNumbers:
         description: |
-          Locality register numbers for this context, as printed ("SH-1",
-          "USGS 4148 CO", "NMVPL 58"). Each gives the number apart from its
-          prefix (`{prefix: USGS, number: 4148 CO}`, resolved through the
-          tree file's `prefixes` map) or names its register outright
-          (`{register: usgs-l, number: D190d CO}`); with neither, the number
-          belongs to the file's `localityRegister`. Equivalences the source
-          prints are kept as several numbers on one context.
+          Locality register numbers that identify this context as a whole,
+          as printed ("SH-1", "USGS 4148 CO", "NMVPL 58"). Equivalences the
+          source prints are kept as several numbers on one context. A number
+          printed against one specimen goes on that material entry's
+          `localityNumbers` instead, so that several specimens of one unit
+          and place share one context.
         type: array
         items:
-          type: object
-          additionalProperties: false
-          required: [number]
-          not:
-            required: [prefix, register]
-          properties:
-            number:
-              $ref: "#/$defs/printedNumber"
-            prefix:
-              type: string
-              minLength: 1
-            register:
-              $ref: "#/$defs/repositoryKey"
+          $ref: "#/$defs/localityNumber"
       coordinatesAsPrinted:
         description: Coordinates or a grid reference exactly as printed ("GR538142 (yards)").
         type: string
@@ -1719,6 +1751,26 @@ $defs:
           $ref: "#/$defs/sourceId"
       notes:
         type: string
+  localityNumber:
+    description: |
+      One locality register number, as printed. It gives the number apart
+      from its prefix (`{prefix: USGS, number: 4148 CO}`, resolved through
+      the tree file's `prefixes` map) or names its register outright
+      (`{register: usgs-l, number: D190d CO}`); with neither, the number
+      belongs to the file's `localityRegister`.
+    type: object
+    additionalProperties: false
+    required: [number]
+    not:
+      required: [prefix, register]
+    properties:
+      number:
+        $ref: "#/$defs/printedNumber"
+      prefix:
+        type: string
+        minLength: 1
+      register:
+        $ref: "#/$defs/repositoryKey"
   contexts:
     type: [object, "null"]
     propertyNames:
