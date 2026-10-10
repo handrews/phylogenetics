@@ -607,6 +607,8 @@ class Words:
         flags.append('genus in quotes')
       if claim.get('nonMonophyletic'):
         flags.append(blocks.non_monophyly_words(claim['nonMonophyletic']))
+      if claim.get('mutable'):
+        flags.append('sedis mutabilis')
       words = f'places it under {where}'
       if 'rankAsPrinted' in claim and claim['rankAsPrinted'] is None:
         words += ', unranked'

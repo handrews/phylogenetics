@@ -95,7 +95,8 @@ Emitted for every child under its parent in a taxonomy. Fields added:
   rank belongs to the tree node is G8, not yet in force. A node written
   `rank: null` (the source places the taxon with no rank word) carries
   `rankAsPrinted: null`; `rank` is the record's, as ever.
-- Flags copied from the node: `provisional`, `questionable`, `quoted`,
+- Flags copied from the node: `provisional`, `mutable` (the source
+  prints "sedis mutabilis"), `questionable`, `quoted`,
   `quotedParent` (the genus is printed in quotation marks in this
   combination), `nonMonophyletic` (`true`, `paraphyletic` or `polyphyletic`,
   copied with its value: the source says the group is not monophyletic;
@@ -223,11 +224,11 @@ entries.
 
 ### `certainty`
 
-Not a kind of its own. The C-axis markers (`provisional`, `questionable`,
-`quotedParent`, `quoted`, `nonMonophyletic`, `tentative`, `pars`, the
-`compared` link of a cf. or aff. form, `uncertain` and `roleUncertain` on a
-specimen, `illustration.uncertain`) ride on the claim they qualify, as
-fields. No separate table.
+Not a kind of its own. The C-axis markers (`provisional`, `mutable`,
+`questionable`, `quotedParent`, `quoted`, `nonMonophyletic`, `tentative`,
+`pars`, the `compared` link of a cf. or aff. form, `uncertain` and
+`roleUncertain` on a specimen, `illustration.uncertain`) ride on the claim
+they qualify, as fields. No separate table.
 
 ### `material`
 

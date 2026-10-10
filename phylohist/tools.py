@@ -132,7 +132,8 @@ TOOL_DESCRIPTIONS = {
     'classification block laid out as a Systematic Paleontology section '
     '(rank words on the headings, the type species under its genus, new '
     'names marked as the source prints them or by rank: fam. nov., gen. '
-    'nov., sp. nov.; provisional or questionable names ?), optionally '
+    'nov., sp. nov.; provisional or questionable names ?; (sedis mutabilis) '
+    'where printed), optionally '
     "with each name's synonymy. Use it to see the genera a source puts in a family, the "
     'species in a genus, or a whole scheme. With no source, one block per '
     "source that places the record. When a source's declared coverage of "

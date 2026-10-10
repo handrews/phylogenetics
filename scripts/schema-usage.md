@@ -36,7 +36,7 @@ even when its parent is also unreached, so read parents first.
 | `timeFields` | `phylogeny#/$defs/timeFields/properties/eon`<br>`phylogeny#/$defs/timeFields/properties/era`<br>`phylogeny#/$defs/timeFields/properties/seriesBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageRange` |
 | `tree` | `tree#/if`<br>`tree#/if/properties/authority`<br>`tree#/properties/authority/oneOf/1`<br>`tree#/properties/rank/oneOf/1`<br>`tree#/then`<br>`tree#/then/not`<br>`tree#/then/not/anyOf/0`<br>`tree#/then/not/anyOf/1`<br>`tree#/then/not/anyOf/2` |
 | `typeNode` | `phylogeny#/$defs/typeNode`<br>`phylogeny#/$defs/typeNode/properties/fixation`<br>`phylogeny#/$defs/typeNode/properties/fixedBy` |
-| `uncertaintyFields` | `phylogeny#/$defs/uncertaintyFields/properties/nonMonophyletic/oneOf/1`<br>`phylogeny#/$defs/uncertaintyFields/properties/sensu` |
+| `uncertaintyFields` | `phylogeny#/$defs/uncertaintyFields/properties/mutable`<br>`phylogeny#/$defs/uncertaintyFields/properties/nonMonophyletic/oneOf/1`<br>`phylogeny#/$defs/uncertaintyFields/properties/sensu` |
 
 ## 2. Property frequency by `$defs`
 
@@ -483,6 +483,7 @@ property.
 | `questionable` | 13 | 0.2% |
 | `quoted` | 2 | 0.0% |
 | `nonMonophyletic` | 1 | 0.0% |
+| `mutable` | 0 | 0.0% |
 | `sensu` | 0 | 0.0% |
 
 ## 3. Enum member usage

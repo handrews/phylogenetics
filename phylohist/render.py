@@ -2,10 +2,11 @@
 
 `render(block, style)` looks up ``(block type, style)``. Two styles ship:
 ``text`` (the classification as the old CLI drew it: two-space indent,
-``*`` new, ``?`` provisional and questionable, brackets for a
-placeholder, ``=`` lines for synonyms; tables as aligned columns; lists
-and statements as lines) and ``markdown`` (tables as Markdown, the tree
-in a fenced block, lists as bullets). ``json`` is the block itself.
+``*`` new, ``?`` provisional and questionable, ``(sedis mutabilis)``,
+brackets for a placeholder, ``=`` lines for synonyms; tables as aligned
+columns; lists and statements as lines) and ``markdown`` (tables as
+Markdown, the tree in a fenced block, lists as bullets). ``json`` is the
+block itself.
 
 Adding a style is a function and a registration: intended additions are
 a modern "Systematic Paleontology" listing for classifications, and a
@@ -77,6 +78,8 @@ def node_label(node):
     name += ' ?'
   if (node.get('flags') or {}).get('nonMonophyletic'):
     name += f' ({blocks.non_monophyly_words(node["flags"]["nonMonophyletic"])})'
+  if (node.get('flags') or {}).get('mutable'):
+    name += ' (sedis mutabilis)'
   if node.get('sensu'):
     name += ' ' + blocks.SENSU_MARKS[node['sensu']]
   for act in node.get('acts') or ():
@@ -371,6 +374,8 @@ def _chain_text(chain):
       label += ' ?'
     if node.get('nonMonophyletic'):
       label += f' ({blocks.non_monophyly_words(node["nonMonophyletic"])})'
+    if node.get('mutable'):
+      label += ' (sedis mutabilis)'
     if node.get('alternatives'):
       label += ' (or ' + ', '.join(node['alternatives']) + ')'
     parts.append(label)
