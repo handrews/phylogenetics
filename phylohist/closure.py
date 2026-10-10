@@ -132,6 +132,8 @@ class Closure:
         }
         if current.get('nonMonophyletic'):
           node['nonMonophyletic'] = current['nonMonophyletic']
+        if current.get('mutable'):
+          node['mutable'] = True
         if current.get('via') == 'type':
           node['via'] = 'type'
         nodes.append(node)

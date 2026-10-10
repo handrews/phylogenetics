@@ -1,6 +1,7 @@
 """Open nomenclature: the `cf`/`aff` link of an open form, `quotedParent`,
-`nonMonophyletic`, and a material entry's `uncertain` and `roleUncertain`:
-the schema, the loader checks, the claims, and the words the tools say.
+`nonMonophyletic`, `mutable`, and a material entry's `uncertain` and
+`roleUncertain`: the schema, the loader checks, the claims, and the words
+the tools say.
 
 Synthetic trees are built on the session's loaded corpus under positions
 200 and up (`Tree` keeps class-level registries), and the tool tests read a
@@ -60,6 +61,7 @@ def test_schema_accepts_the_new_node_and_material_fields():
   node = {
     'taxon': 'lepidocystis',
     'nonMonophyletic': True,
+    'mutable': True,
     'children': [
       {'openTaxon': 'gogia-sp_robison_1965', 'cf': 'grayae_bather_1915', 'new': True},
       {'openTaxon': 'gogia-sp_robison_1965', 'aff': 'grayae_bather_1915'},
@@ -82,6 +84,7 @@ def test_schema_accepts_the_new_node_and_material_fields():
     {'taxon': 'a', 'nonMonophyletic': 'monophyletic'},
     {'taxon': 'a', 'nonMonophyletic': False},
     {'taxon': 'a', 'quotedParent': 'yes'},
+    {'taxon': 'a', 'mutable': 'yes'},
     {'taxon': 'a', 'cf': True},
     {'taxon': 'a', 'material': [{'label': 'A', 'uncertain': 'maybe'}]},
     {'taxon': 'a', 'material': [{'label': 'A', 'roleUncertain': 1}]},
@@ -417,6 +420,16 @@ def test_placement_claim_carries_quoted_parent_and_non_monophyly(load_records):
   assert 'quotedParent' not in plain and 'nonMonophyletic' not in plain
 
 
+def test_placement_claim_carries_mutable(load_records):
+  root = {
+    'taxon': 'cyathocystidae',
+    'children': [{'taxon': 'rhenopyrgus', 'mutable': True}, {'taxon': 'pyrgocystis'}],
+  }
+  at = _by_path(_claims(root, 205))
+  assert _one(at['205/children/0'], 'placement')['mutable'] is True
+  assert 'mutable' not in _one(at['205/children/1'], 'placement')
+
+
 def test_acceptance_claim_carries_quoted_parent(load_records):
   root = {
     'taxon': 'grayae_bather_1915',
@@ -453,6 +466,7 @@ SYNTHETIC = {
     {
       'taxon': 'rhenopyrgus',
       'nonMonophyletic': 'paraphyletic',
+      'mutable': True,
       'children': [
         {'taxon': 'grayae_bather_1915', 'quotedParent': True},
         {
@@ -537,6 +551,15 @@ def test_non_monophyly_in_a_classification_line_and_a_chain(synthetic):
   assert 'Rhenopyrgus (paraphyletic)' in chain
 
 
+def test_sedis_mutabilis_in_a_classification_line_and_a_chain(synthetic):
+  [block] = synthetic.contents(SOURCE, 'cyathocystidae')
+  lines = block['rendered'].splitlines()
+  assert any('Rhenopyrgus (paraphyletic) (sedis mutabilis)' in ln for ln in lines)
+  assert not any('Pyrgocystis' in ln and 'sedis mutabilis' in ln for ln in lines)
+  chain = synthetic.ancestors(['grayae_bather_1915'])['rendered']
+  assert 'Rhenopyrgus (paraphyletic) (sedis mutabilis)' in chain
+
+
 def test_non_monophyly_in_a_placement_sentence(synthetic):
   words = synthetic.words
   assert words.claim_words(
@@ -552,6 +575,9 @@ def test_non_monophyly_in_a_placement_sentence(synthetic):
     }
   ) == ('places it under Cyathocystidae (provisional, paraphyletic)')
   assert words.claim_words(
+    {'kind': 'placement', 'parent': 'cyathocystidae', 'tree': 'taxonomy', 'mutable': True}
+  ) == ('places it under Cyathocystidae (sedis mutabilis)')
+  assert words.claim_words(
     {'kind': 'placement', 'parent': 'rhenopyrgus', 'tree': 'taxonomy', 'quotedParent': True}
   ) == ('places it under Rhenopyrgus (genus in quotes)')
   # The placement claim of a synthetic node reads the same way.
@@ -560,7 +586,9 @@ def test_non_monophyly_in_a_placement_sentence(synthetic):
     for c in synthetic.by_subject['rhenopyrgus']
     if c['kind'] == 'placement' and c['source'] == SOURCE
   )
-  assert words.claim_words(claim) == 'places it under Cyathocystidae (paraphyletic)'
+  assert words.claim_words(claim) == (
+    'places it under Cyathocystidae (paraphyletic, sedis mutabilis)'
+  )
 
 
 def test_specimen_words_for_a_queried_role_and_a_doubtful_assignment(synthetic):

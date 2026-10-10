@@ -96,7 +96,7 @@ def _make(kind, payload, parameters, claims, extra=None):
 
 def classification(nodes, parameters, source=None, root=None, extra=None):
   """``nodes`` in document order, each: key, name, rank, depth, flags
-  (new, provisional, questionable, quoted), placeholder kind, printed
+  (new, provisional, mutable, questionable, quoted), placeholder kind, printed
   form, pages, claim, and optional ``synonymy`` entries as `list_entry`
   makes them."""
   claims = [n['claim'] for n in nodes if n.get('claim')]

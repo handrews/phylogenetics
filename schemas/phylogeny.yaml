@@ -720,6 +720,12 @@ $defs:
         description: The assignment to the parent taxon is provisional.
         type: boolean
         default: false
+      mutable:
+        description: |
+          The source prints "sedis mutabilis": it expects the assignment to
+          the parent taxon to change.
+        type: boolean
+        default: false
       questionable:
         description: The taxon itself is doubtful, whether or not this source erects it.
         type: boolean

@@ -108,7 +108,7 @@ def split_typed_number(number, repositories):
   return key, via, _strip_form(number, form)
 
 
-_NODE_FLAGS = ('new', 'provisional', 'questionable', 'quoted')
+_NODE_FLAGS = ('new', 'provisional', 'mutable', 'questionable', 'quoted')
 
 # The coverage kind a kind of statement is declared under.
 _COVERAGE_OF_KIND = {
@@ -737,6 +737,7 @@ class ClaimStore:
           'provisional': n['provisional'],
           'questionable': n['questionable'],
           **({'nonMonophyletic': n['nonMonophyletic']} if n.get('nonMonophyletic') else {}),
+          **({'mutable': True} if n.get('mutable') else {}),
           **(
             {'via': 'type', 'mark': self.words.type_mark(n['key'])}
             if n.get('via') == 'type'
@@ -865,6 +866,8 @@ class ClaimStore:
       words += ' (provisional)'
     if current.get('questionable'):
       words += ' (questionable)'
+    if current.get('mutable'):
+      words += ' (sedis mutabilis)'
     return {'key': current['parent'], 'words': words, 'claim': current['id']}
 
   @staticmethod

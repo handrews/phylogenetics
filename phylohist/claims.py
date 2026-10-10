@@ -81,6 +81,7 @@ def corrected_node(data):
 
 _PLACEMENT_FLAGS = (
   'provisional',
+  'mutable',
   'questionable',
   'quoted',
   'quotedParent',
