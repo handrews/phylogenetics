@@ -87,6 +87,9 @@ def node_label(node):
     mark = blocks.ACT_MARKS.get(kind)
     if kind in ('moved', 'removed', 'lapsus'):
       mark = f'({act.get("words")})'
+    elif mark and act.get('by'):
+      # An act the source follows names the work that made it.
+      mark += ' ' + act['by']
     if mark:
       name += ' ' + mark + (' (inferred)' if act.get('inferred') else '')
   return name

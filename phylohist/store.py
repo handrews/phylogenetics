@@ -367,7 +367,12 @@ class ClaimStore:
       'flags': flags,
       'claim': base['id'],
       'acts': [
-        {'act': a['actKind'], 'words': self.words.act_words(a), 'inferred': bool(a.get('inferred'))}
+        {
+          'act': a['actKind'],
+          'words': self.words.act_words(a),
+          'inferred': bool(a.get('inferred')),
+          **({'by': self.cite(a['by'])} if a.get('by') else {}),
+        }
         for a in acts
       ],
       'actClaims': [a['id'] for a in acts],

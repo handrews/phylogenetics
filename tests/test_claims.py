@@ -33,6 +33,7 @@ from phylohist.claims import (
   merge_patch,
 )
 from phylohist.evaluation import alternatives, normalise
+from phylohist.loader import io
 from phylohist.loader.research import Source
 from phylohist.loader.taxa import Tree
 from phylohist.render import render_composition
@@ -309,6 +310,36 @@ def test_recombined_is_the_printed_new_combination(load_records, caplog):
   )
   errors = [r.getMessage() for r in caplog.records if r.levelno >= logging.ERROR]
   assert len(errors) == 1 and 'is not a species-group name' in errors[0]
+
+
+def test_emended_by_lists_the_emendations_followed(load_records, caplog):
+  # "Emended Paul, 1972b, and herein": each emendation the source follows
+  # names its work, in printed order, before the source's own.
+  root = Tree(
+    {
+      'taxon': 'rhenopyrgus',
+      'emended': True,
+      'emendedBy': [{'source': '1968b_paul.c.r.c', 'pages': 700}, {'source': '1983_holloway_jell'}],
+    },
+    {'source_key': '1985_jell_burrett_banks', 'type': 'taxonomy', 'position': 92},
+  )
+  claims = extract({'1985_jell_burrett_banks': [root]})['1985_jell_burrett_banks']
+  assert not [r for r in caplog.records if r.levelno >= logging.ERROR]
+  acts = [c for c in claims if c.get('actKind') == 'emended']
+  assert [(a.get('by'), a.get('byPages')) for a in acts] == [
+    ('1968b_paul.c.r.c', 700),
+    ('1983_holloway_jell', None),
+    (None, None),
+  ]
+
+  schema = io.build_schema()[io.TREE_DEF]
+  followed = {'taxon': 'rhenopyrgus', 'emendedBy': [{'source': '1968b_paul.c.r.c'}]}
+  assert schema.check({'taxonomies': [followed]})
+  # The object form is gone; an emendation followed is an `emendedBy` entry.
+  assert not schema.check(
+    {'taxonomies': [{'taxon': 'rhenopyrgus', 'emended': {'by': {'source': '1968b_paul.c.r.c'}}}]}
+  )
+  assert not schema.check({'taxonomies': [{'taxon': 'rhenopyrgus', 'emendedBy': []}]})
 
 
 def test_material_adapter(load_records, caplog):

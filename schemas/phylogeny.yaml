@@ -831,11 +831,19 @@ $defs:
         default: false
       emended:
         description: |
-          The diagnosis is emended, by this source (`true`) or, when `by`
-          names another work, as done there and followed here.
-        oneOf:
-        - type: boolean
-        - $ref: "#/$defs/citedAct"
+          This source emends the diagnosis. An emendation it follows from
+          another work goes in `emendedBy`.
+        type: boolean
+        default: false
+      emendedBy:
+        description: |
+          The earlier works whose emendation of the diagnosis this source
+          cites and follows, in the order printed, each with its pages.
+          With `emended: true` the source emends it further.
+        type: array
+        minItems: 1
+        items:
+          $ref: "#/$defs/authority"
       recombined:
         description: |
           Combinatio nova: the source prints this species-group name in a

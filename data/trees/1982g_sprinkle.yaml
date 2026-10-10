@@ -7,7 +7,7 @@ taxonomies:
   citedAs: Phylum ECHINODERMATA Bruguiere, 1791
   rank: Phylum
   authority:
-    source: 1791_bruguiére
+    source: 1791_bruguière
   pages: v
   notes: From the Table of Contents.
   children:
@@ -66,6 +66,7 @@ taxonomies:
               children:
               - taxon: strimplei_sprinkle_1982
                 isType: true
+                new: true
                 pages: 241
               - taxon: cooki_sprinkle_1982
                 new: true

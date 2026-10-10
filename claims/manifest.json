@@ -9065,6 +9065,42 @@
    "material": {},
    "tree": true
   },
+  "1972b_paul.c.r.c": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Paul"
+    ],
+    "in": "Geological Studies",
+    "number": 1,
+    "pages": [
+     15,
+     63
+    ],
+    "title": "Cheirocystella anti gua gen. et sp. nov. from the Lower Ordovician of western Utah, and its bearing on the evolution of the Cheirocrinidae (Rhombifera, Glyptocystitida)\n",
+    "volume": 19,
+    "year": 1972
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1973_sprinkle": {
    "acts": {
     "moved": 19,
@@ -10227,7 +10263,7 @@
   },
   "1982g_sprinkle": {
    "acts": {
-    "emended": 2,
+    "emended": 3,
     "new": 10,
     "type": 6
    },
@@ -10248,7 +10284,7 @@
    },
    "claims": {
     "acceptance": 5,
-    "act": 18,
+    "act": 19,
     "placement": 20,
     "usage": 31
    },
@@ -21375,6 +21411,7 @@
    "2017_zamora_sumrall_zhu.x.j_lefebvre"
   ],
   "glyptocystitida": [
+   "1982g_sprinkle",
    "1994_sprinkle_wahlman"
   ],
   "glyptocystitida-order": [
@@ -21387,7 +21424,6 @@
    "1968b_paul.c.r.c",
    "1975_kolata",
    "1982b_parsley",
-   "1982g_sprinkle",
    "1987_ubaghs",
    "1997_paul.c.r.c",
    "1999_ubaghs",
@@ -25533,12 +25569,14 @@
    "1973_sprinkle",
    "1975_broadhead_strimple",
    "1982b_parsley",
-   "1982g_sprinkle",
    "1983_jell",
    "1994_sprinkle_wahlman",
    "1997_paul.c.r.c",
    "2012_zamora_smith.a.b",
    "2017_zamora_sumrall_zhu.x.j_lefebvre"
+  ],
+  "rhombifera-group": [
+   "1982g_sprinkle"
   ],
   "rhombifera-order": [
    "1900_bather",

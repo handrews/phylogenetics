@@ -631,8 +631,10 @@ class _NodeClaims:
       self._type_act()
     elif data.get('isType'):
       self._act('type', 'isType')
-    if emended := data.get('emended'):
-      self._act('emended', 'emended', **_by(emended))
+    for by in data.get('emendedBy') or ():
+      self._act('emended', 'emendedBy', **_cited_work(by, 'by'))
+    if data.get('emended'):
+      self._act('emended', 'emended')
     if recombined := data.get('recombined'):
       self._act('combNov', 'recombined', **_by(recombined))
     if translated := data.get('translated'):
