@@ -253,7 +253,11 @@ def test_figure_refs_several_matches_is_error():
     'illustrations': [{'plate': 1, 'of': 'A'}],
   }
   assert material.figure_refs(node) == [
-    ('error', 'figure "of" value "A" matches 2 material entries, not 1'),
+    (
+      'error',
+      'figure "of" value "A" matches 2 material entries, not 1; '
+      '`{number, prefix}` or `{label}` picks one',
+    ),
   ]
 
 
@@ -339,6 +343,52 @@ def test_figure_refs_two_runs_containing_the_number_is_error():
   ]
 
 
+def test_figure_refs_object_of_disambiguates_prefix():
+  node = {
+    'material': [
+      {'prefix': 'GK', 'numbers': [112]},
+      {'prefix': 'GTB', 'numbers': [112, [200, 210]]},
+      {'label': 'the slab'},
+    ],
+    'illustrations': [{'plate': 1, 'of': 112}],
+  }
+  assert material.figure_refs(node) == [
+    (
+      'error',
+      'figure "of" value "112" matches 2 material entries, not 1; '
+      '`{number, prefix}` or `{label}` picks one',
+    ),
+  ]
+  # The object form picks by prefix, by a number inside a run, or by label.
+  node['illustrations'] = [
+    {'plate': 1, 'of': {'number': 112, 'prefix': 'GK'}},
+    {'plate': 2, 'of': [{'number': '112', 'prefix': 'GTB'}, {'number': 205, 'prefix': 'GTB'}]},
+    {'plate': 3, 'of': {'label': 'the slab'}},
+  ]
+  assert material.figure_refs(node) == []
+  assert (
+    material.entries_named(node['material'], {'number': 112, 'prefix': 'GK'})
+    == (node['material'][:1])
+  )
+  # Without a prefix the object form reads as the bare number, numbers only.
+  assert material.entries_named(node['material'], {'number': 112}) == node['material'][:2]
+  assert material.entries_named(node['material'], {'number': 'the slab'}) == []
+  assert material.entries_named(node['material'], {'label': '112'}) == []
+  # A prefix no entry of that number carries matches nothing, named as words.
+  node['illustrations'] = [{'plate': 1, 'of': {'number': 112, 'prefix': 'MCZ'}}]
+  assert material.figure_refs(node) == [
+    ('error', 'figure "of" value "MCZ 112" matches 0 material entries, not 1'),
+  ]
+  # Two runs under one prefix get no hint: the object form would not help.
+  node = {
+    'material': [{'prefix': 'GTB', 'numbers': [[1, 5]]}, {'prefix': 'GTB', 'numbers': [[3, 9]]}],
+    'illustrations': [{'plate': 1, 'of': 4}],
+  }
+  assert material.figure_refs(node) == [
+    ('error', 'figure "of" value "4" matches 2 material entries, not 1'),
+  ]
+
+
 # -- cast_refs -------------------------------------------------------------------
 
 
@@ -385,12 +435,45 @@ def test_cast_refs_several_matches_is_error():
       {'label': '199'},
     ],
   }
-  assert material.cast_refs(node) == [('error', 'castOf "199" matches 2 material entries, not 1')]
+  assert material.cast_refs(node) == [
+    (
+      'error',
+      'castOf "199" matches 2 material entries, not 1; `{number, prefix}` or `{label}` picks one',
+    )
+  ]
 
 
 def test_cast_refs_own_entry_is_error():
   node = {'material': [{'prefix': 'MCZ', 'numbers': ['629A'], 'castOf': '629A'}]}
   assert material.cast_refs(node) == [('error', 'castOf "629A" names the entry itself')]
+
+
+def test_cast_and_fragment_refs_object_form():
+  entries = [
+    {'prefix': 'GK', 'numbers': [112]},
+    {'prefix': 'GTB', 'numbers': [112]},
+    {'prefix': 'MCZ', 'numbers': ['629A'], 'castOf': {'number': 112, 'prefix': 'GTB'}},
+    {'prefix': 'MCZ', 'numbers': ['629B'], 'fragmentOf': {'number': 112, 'prefix': 'GK'}},
+  ]
+  assert material.cast_refs({'material': entries}) == []
+  node = _node(
+    {'prefix': 'GK', 'numbers': [112]},
+    {'prefix': 'GTB', 'numbers': [112]},
+    {'prefix': 'MCZ', 'numbers': [1], 'fragmentOf': 112},
+    {'prefix': 'MCZ', 'numbers': [2], 'fragmentOf': {'number': 112, 'prefix': 'QQ'}},
+    {'prefix': 'MCZ', 'numbers': [3], 'fragmentOf': {'number': 3, 'prefix': 'MCZ'}},
+    {'prefix': 'MCZ', 'numbers': [4], 'castOf': {'label': 'A'}, 'fragmentOf': {'label': 'A'}},
+    {'label': 'A'},
+  )
+  assert material.cast_refs(node) == [
+    (
+      'error',
+      'fragmentOf "112" matches 2 material entries, not 1; '
+      '`{number, prefix}` or `{label}` picks one',
+    ),
+    ('error', 'fragmentOf "QQ 112" matches 0 material entries, not 1'),
+    ('error', 'fragmentOf "MCZ 3" names the entry itself'),
+  ]
 
 
 def test_cast_refs_absent_castof_and_absent_material_are_quiet():
@@ -1013,6 +1096,14 @@ def test_file_prefixes_a_prefix_nothing_uses_is_error(numbered):
   ]
 
 
+def test_file_prefixes_a_prefix_only_a_specimen_locality_uses_is_used(numbered):
+  document = _prefix_document(
+    {'MCZ': 'mcz', 'USGS': 'usgs-l'},
+    {'prefix': 'MCZ', 'numbers': [1], 'localityNumbers': [{'prefix': 'USGS', 'number': 1}]},
+  )
+  assert material.file_prefixes(document, numbered) == []
+
+
 def test_file_prefixes_a_prefix_the_register_does_not_list_is_warning(numbered):
   document = _prefix_document(
     {'MCZ': 'gm', 'U.S.N.M.': 'usnm', 'BMNH': 'nhmuk'},
@@ -1072,6 +1163,34 @@ def test_locality_objects(numbered):
     'locality register "nope-l" is not a key of the registry',
   ]
   assert material.locality_objects(None, prefixes, None, numbered) == []
+
+
+def test_locality_objects_reads_material_entries(numbered):
+  entries = [
+    {
+      'prefix': 'MCZ',
+      'numbers': [1],
+      'localityNumbers': [
+        {'number': 'FC-2'},
+        {'prefix': 'ZZ', 'number': 1},
+        {'register': 'nope-l', 'number': 7},
+        {'prefix': 'USGS', 'number': '4148 CO'},
+      ],
+    },
+    {'label': 'A'},
+  ]
+  prefixes = {'USGS': 'usgs-l', 'MCZ': 'mcz'}
+  assert material.locality_objects(None, prefixes, None, numbered, entries) == [
+    ('warning', 'locality number "FC-2" has no register'),
+    ('error', 'prefix "ZZ" is not in the file\'s `prefixes` map'),
+    ('error', 'locality register "nope-l" is not a key of the registry'),
+  ]
+  assert [
+    m for _, m in material.locality_objects({}, prefixes, 'sprinkle-l', numbered, entries)
+  ] == [
+    'prefix "ZZ" is not in the file\'s `prefixes` map',
+    'locality register "nope-l" is not a key of the registry',
+  ]
 
 
 # -- entries_named for the `prefix` + `numbers` shape ---------------------------
@@ -1452,6 +1571,48 @@ def test_schema_accepts_and_rejects_same_as():
     {'source': '1897_whiteaves', 'number': 1.5},
   ):
     assert not _schema_accepts(entry(bad)), bad
+
+
+def test_schema_accepts_and_rejects_entry_refs_and_entry_locality_numbers():
+  def entry(**fields):
+    return _numbers_document({'prefix': 'GK', 'numbers': [112], **fields}, prefixes={'GK': 'mcz'})
+
+  for good in (
+    {'castOf': {'number': 112, 'prefix': 'GTB'}},
+    {'castOf': {'number': '112'}},
+    {'fragmentOf': {'label': 'the slab'}},
+    {'fragmentOf': 'B'},
+    {
+      'localityNumbers': [
+        {'prefix': 'GTBM', 'number': '9-2-12'},
+        {'register': 'usgs-l', 'number': 1},
+      ]
+    },
+  ):
+    assert _schema_accepts(entry(**good)), good
+  for bad in (
+    {'castOf': {'prefix': 'GTB'}},
+    {'castOf': {'label': 'A', 'number': 1}},
+    {'castOf': {'number': 1, 'other': 1}},
+    {'castOf': {'number': 1.5}},
+    {'fragmentOf': {'label': 'A', 'prefix': 'GK'}},
+    {'fragmentOf': {}},
+    {'localityNumbers': []},
+    {'localityNumbers': [{'prefix': 'GTBM'}]},
+    {'localityNumbers': [{'number': 1, 'prefix': 'A', 'register': 'usgs-l'}]},
+  ):
+    assert not _schema_accepts(entry(**bad)), bad
+
+  def figure(of):
+    document = entry()
+    document['taxonomies'][0]['illustrations'] = [{'plate': 1, 'of': of}]
+    return document
+
+  assert _schema_accepts(figure({'number': 112, 'prefix': 'GK'}))
+  assert _schema_accepts(figure([112, {'label': 'A'}, {'number': '112', 'prefix': 'GTB'}]))
+  assert not _schema_accepts(figure({'prefix': 'GK'}))
+  assert not _schema_accepts(figure([{'number': 1, 'label': 'A'}]))
+  assert not _schema_accepts(figure([]))
 
 
 def test_check_draft_checks_same_as_against_the_corpus(tmp_path):

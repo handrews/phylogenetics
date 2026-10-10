@@ -71,15 +71,17 @@ def short_citation(citation):
 
 
 def _flat_words(value):
-  """Strings from a value that may be a string, a number, nested lists, or a
-  locality number (`{prefix, number}`: the prefix, when printed, then the
-  number)."""
+  """Strings from a value that may be a string, a number, nested lists, a
+  locality number or an entry reference (`{prefix, number}`: the prefix,
+  when printed, then the number; `{label}`: the label)."""
   if value is None:
     return []
   if isinstance(value, (list, tuple)):
     return [w for v in value for w in _flat_words(v)]
   if isinstance(value, dict) and 'number' in value:
     return [' '.join(str(v) for v in (value.get('prefix'), value['number']) if v is not None)]
+  if isinstance(value, dict) and 'label' in value:
+    return [str(value['label'])]
   return [str(value)]
 
 
@@ -668,11 +670,15 @@ class Words:
     if claim.get('preparation'):
       words += f' ({claim["preparation"]})'
     if claim.get('castOf'):
-      words += f' cast of {claim["castOf"]}'
+      words += f' cast of {" ".join(_flat_words(claim["castOf"]))}'
+    if claim.get('fragmentOf'):
+      words += f' fragment of {" ".join(_flat_words(claim["fragmentOf"]))}'
     if claim.get('repositoryVia') == 'explicit' and claim.get('repository'):
       words += f' [{claim["repository"]}]'
     if claim.get('contextTentative') and claim.get('contextKey'):
       words += f' ({claim["contextKey"]}?)'
+    if claim.get('localityNumbers'):
+      words += f' (locality {", ".join(_flat_words(claim["localityNumbers"]))})'
     if claim.get('uncertain'):
       words += ' (doubtfully assigned)'
     if claim.get('figured') is False:
@@ -688,7 +694,8 @@ class Words:
     for figure in map(self.store.by_id.get, claim.get('illustrationClaims') or ()):
       of = figure.get('of')
       values = of if isinstance(of, list) else [of]
-      if any(fold(str(v)) == join_key.partition(':')[2] for v in values):
+      numbers = [v.get('number') if isinstance(v, dict) else v for v in values]
+      if any(n is not None and fold(str(n)) == join_key.partition(':')[2] for n in numbers):
         found.append(figure['illustration'])
     return found
 
@@ -789,8 +796,8 @@ class Words:
       words += '?'
     of = claim.get('of')
     if of:
-      # A number may be a bare integer in the tree.
-      words += f' of {", ".join(str(v) for v in of) if isinstance(of, list) else of}'
+      # A number may be a bare integer or an `entryRef` object in the tree.
+      words += f' of {", ".join(_flat_words(of))}'
     if claim.get('depicts') not in (None, 'specimen'):
       words += f' ({claim["depicts"]})'
     return words

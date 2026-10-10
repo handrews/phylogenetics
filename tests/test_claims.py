@@ -575,6 +575,56 @@ def test_a_figure_names_a_prefix_and_numbers_entry_by_a_number(load_records):
   assert [f['plate'] for f in claim['specimenIllustrations']] == [1, 2]
 
 
+def test_locality_keys_on_specimen_claims(load_records):
+  entries = [
+    {
+      'prefix': 'GK',
+      'numbers': [1731],
+      'context': 'miaobanpo',
+      'localityNumbers': [
+        {'prefix': 'GTBM', 'number': '9-1-526a'},
+        {'register': 'usgs-l', 'number': '4148 CO'},
+        {'number': 'FC-1'},
+        {'prefix': 'ZZ', 'number': 9},
+      ],
+    },
+    {'prefix': 'GK', 'numbers': [1732], 'context': 'miaobanpo'},
+  ]
+  prefixes = {'GK': 'mcz', 'GTBM': 'usgs-l'}
+  with_default, without = _numbered(
+    entries, prefixes, 'sprinkle-l', contexts={'miaobanpo': {'unit': ['Kaili Formation']}}
+  )
+  assert with_default['localityKeys'] == ['usgs-l:91526a', 'usgs-l:4148co', 'sprinkle-l:fc1']
+  assert with_default['localityNumbers'] == entries[0]['localityNumbers']
+  assert 'localityKeys' not in without and 'localityNumbers' not in without
+  # Without a file `localityRegister` the bare number keys nothing.
+  [claim, _] = _numbered(entries, prefixes, contexts={'miaobanpo': {'unit': ['Kaili Formation']}})
+  assert claim['localityKeys'] == ['usgs-l:91526a', 'usgs-l:4148co']
+
+
+def test_an_object_of_names_one_specimen_by_prefix_or_label(load_records):
+  gk, gtb, slab = _numbered(
+    [
+      {'prefix': 'GK', 'numbers': [112]},
+      {'prefix': 'GTB', 'numbers': [112]},
+      {'label': 'the slab'},
+    ],
+    {'GK': 'mcz', 'GTB': 'gsc'},
+    illustrations=[
+      {'plate': 1, 'of': {'number': 112, 'prefix': 'GK'}},
+      {'plate': 2, 'of': [{'number': '112', 'prefix': 'GTB'}, {'label': 'the slab'}]},
+      {'plate': 3, 'of': 112},
+    ],
+  )
+  assert [f['plate'] for f in gk['specimenIllustrations']] == [1, 3]
+  assert [f['plate'] for f in gtb['specimenIllustrations']] == [2, 3]
+  assert [f['plate'] for f in slab['specimenIllustrations']] == [2]
+  assert (
+    len(gk['illustrationClaims']) == 2
+    and gk['illustrationClaims'][0] != gtb['illustrationClaims'][0]
+  )
+
+
 def _locality(context, prefixes=None, locality_register=None):
   root = Tree(
     {'taxon': 'rhenopyrgus', 'contexts': {'x': context}},

@@ -131,6 +131,7 @@ _MATERIAL_FIELDS = (
   'sameAs',
   'collectedBy',
   'collectedDate',
+  'localityNumbers',
   'uncertain',
   'roleUncertain',
 )
@@ -683,13 +684,13 @@ class _NodeClaims:
         claim['localityKeys'] = keys
       self._emit(claim, 'contexts')
 
-  def _locality_keys(self, context):
-    """`<register>:<folded number>` for each of the context's
-    `localityNumbers` that has a register, once each, in order: the number's
-    own `register`, else the tree file's `prefixes` map for its `prefix`,
-    else the file's `localityRegister` when it has neither."""
+  def _locality_keys(self, carrier):
+    """`<register>:<folded number>` for each of the `localityNumbers` of a
+    context or a material entry that has a register, once each, in order:
+    the number's own `register`, else the tree file's `prefixes` map for its
+    `prefix`, else the file's `localityRegister` when it has neither."""
     keys = []
-    for number in context.get('localityNumbers') or ():
+    for number in carrier.get('localityNumbers') or ():
       register = number.get('register')
       if register is None and number.get('prefix') is not None:
         register = self.node.file_prefixes.get(number['prefix'])
@@ -768,6 +769,8 @@ class _NodeClaims:
         claim['joinKeys'] = [f'{register}:{fold(str(n))}' for n in flat_numbers(entry)]
       if any(isinstance(number, list) for number in numbers):
         claim['rangeJoin'] = True
+      if keys := self._locality_keys(entry):
+        claim['localityKeys'] = keys
       self._emit(claim, 'material')
       self._entry_claims.append((entry, claim))
 

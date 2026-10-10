@@ -1096,7 +1096,10 @@ ranges:                        # distribution statements, not provenance
   A file that gives one locality for thirty taxa states it once.
 - An `illustrations` entry's `of` names a material entry on the same node
   by one of its numbers, without the prefix (a number inside a range
-  pair's run counts, an exact match taking precedence) or by label; `depicts`
+  pair's run counts, an exact match taking precedence) or by label, or,
+  when two prefixes on the node share a number, by the object form
+  `{number, prefix}` or `{label}` (decided 2026-10-10; `castOf` and
+  `fragmentOf` take the same form); `depicts`
   records the medium (cast, reconstruction, drawing). An entry with no `of` is a
   figure the source never ties to a specimen, the honest state of most
   pre-1900 work. A locator inside a synonymy entry's `authority` has the
@@ -1198,7 +1201,10 @@ collection in `repository`, and joins under the prefix's register.
 `holder` names a private holder with no registry entry. A locality
 number takes the same shape on a context, `{prefix, number}`, with
 `register` naming a registry entry directly; an unprefixed code (an
-author's own field numbers) belongs to the file's `localityRegister`.
+author's own field numbers) belongs to the file's `localityRegister`,
+which is only that default: one file may draw on any number of locality
+registers. A locality number printed against one specimen sits on its
+material entry, in the same shape (D11).
 
 
 **D4. One name, two roles.** The same locator fields serve two roles
@@ -1262,6 +1268,18 @@ and the schema now has a field for each, all as printed:
 - Collecting is recorded against the specimen as well as the site ("found
   at locality LV-2 by my field assistant"): `collectedBy` and
   `collectedDate` on both the material entry and the context.
+- A locality number printed against each specimen (decided 2026-10-10):
+  `localityNumbers` on the material entry, the same shape and resolution
+  as the context's, which keeps only the numbers that identify the
+  context as a whole. Zhao et al. 1999 prints a field number with every
+  specimen ("GTBM-9-2-12, GK1730"); with the numbers on the context, each
+  needed a context of its own, seven for two units and places, and listing
+  them on one context would have asserted an equivalence the paper does
+  not print. The specimen claim carries `localityKeys` built by the
+  occurrence rule. The same review found that `of`, `castOf` and
+  `fragmentOf` named an entry by its bare number, with no way to pick
+  between two prefixes sharing a number on one node; they now take the
+  object form `sameAs` already had (D1, D4).
 
 Deferred from the same review (2026-09-30): a slab carrying several
 specimens, where the source describes their positions on it (Vanuxem

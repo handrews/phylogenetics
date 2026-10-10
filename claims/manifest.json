@@ -12345,7 +12345,7 @@
     "absence": 3,
     "act": 11,
     "editorial": 3,
-    "material": 24,
+    "material": 23,
     "placement": 19,
     "usage": 22
    },
@@ -12363,7 +12363,7 @@
     "illustrations": 7,
     "material": 7,
     "newTaxa": 7,
-    "occurrences": 10,
+    "occurrences": 9,
     "skeleton": 41
    },
    "derivedCoverage": {
@@ -12377,7 +12377,7 @@
    "inconsistencies": [],
    "material": {
     "illustration": 7,
-    "occurrence": 7,
+    "occurrence": 6,
     "range": 3,
     "specimen": 7
    },

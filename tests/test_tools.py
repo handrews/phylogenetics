@@ -689,6 +689,18 @@ def test_material_words(store):
     )
     == 'specimens: XYZ 1 (latex cast) cast of XYZ 2 [nhmuk] (quarry?)'
   )
+  assert (
+    material(
+      'specimen',
+      prefix='GK',
+      numbers=[1707],
+      castOf={'number': 112, 'prefix': 'GTB'},
+      fragmentOf={'label': 'the slab'},
+      contextKey='balang-wuliu',
+      localityNumbers=[{'prefix': 'GTB', 'number': '24-60a'}, {'number': 'X-1'}],
+    )
+    == 'specimens: GK 1707 cast of GTB 112 fragment of the slab (locality GTB 24-60a, X-1)'
+  )
   assert material(
     'specimen', prefix='GSC', numbers=[1], repository='gsc', repositoryVia='file'
   ) == ('specimens: GSC 1')
@@ -728,6 +740,9 @@ def test_material_words(store):
     )
     == 'illustration: pl. 2, fig. 1–4, non fig. 6 of GSC 752, GSC 753 (cast)'
   )
+  assert material(
+    'illustration', illustration={'plate': 4}, of=[{'number': 112, 'prefix': 'GK'}, {'label': 'A'}]
+  ) == ('illustration: pl. 4 of GK 112, A')
   assert material('illustration', illustration={'plate': 1, 'uncertain': True}) == (
     'illustration: pl. 1?'
   )
