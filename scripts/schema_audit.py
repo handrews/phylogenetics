@@ -207,7 +207,7 @@ def run_census():
     data = load_yaml(path)
     if data is None:
       continue
-    result = schema.engine.evaluate(schema.uri(def_name), data, output='verbose', annotations=True)
+    result = schema.evaluator(def_name).evaluate(data, output='verbose')
     if not result.valid:
       census.invalid.append(path.name)
     census.absorb(result.output_document, data, corpus, f'{path.name}:')

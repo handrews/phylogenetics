@@ -2,7 +2,7 @@ import logging
 import pathlib
 
 import yaml
-from json_schema_engine.compiler import compile_validator
+from json_schema_engine.compiler import compile_evaluator, compile_validator
 from json_schema_engine.core import create_engine
 from json_schema_engine.core.errors import SchemaValidationError
 
@@ -140,8 +140,9 @@ class Validator:
 class Schema:
   """The registered phylogeny schema, indexed by ``$defs`` entry name.
 
-  Compiling costs more than a single evaluation, so validators are built on
-  first use and kept; one ``Schema`` serves a whole load.
+  Compiling costs more than a single evaluation, so validators and
+  evaluators are built on first use and kept; one ``Schema`` serves a
+  whole load.
   """
 
   def __init__(self, engine, base, defs):
@@ -149,18 +150,32 @@ class Schema:
     self.base = base
     self._defs = defs
     self._validators = {}
+    self._evaluators = {}
 
   def uri(self, name):
     """The absolute URI of the ``$defs`` entry ``name``."""
     return f'{self.base}#/$defs/{name}'
 
+  def _named(self, name):
+    if name not in self._defs:
+      raise LoadError(f'no schema definition for "{name}"')
+
   def __getitem__(self, name):
     """The validator for ``$defs/<name>``; LoadError if the schema has none."""
     if name not in self._validators:
-      if name not in self._defs:
-        raise LoadError(f'no schema definition for "{name}"')
+      self._named(name)
       self._validators[name] = Validator(self.engine, self.uri(name))
     return self._validators[name]
+
+  def evaluator(self, name):
+    """The compiled evaluator for ``$defs/<name>``, recording annotations:
+    the interpreter's result for every output format but ``flag``, in less
+    time (the schema census asks it for ``verbose``); LoadError if the
+    schema has none."""
+    if name not in self._evaluators:
+      self._named(name)
+      self._evaluators[name] = compile_evaluator(self.engine, self.uri(name), annotations=True)
+    return self._evaluators[name]
 
 
 def build_schema():
