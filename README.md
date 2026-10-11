@@ -178,14 +178,16 @@ git-ignored `.env` at the repository root. Nothing else needs a key.
 ## Checks
 
 CI runs these on Python 3.12 and 3.14 and fails if the generated
-schema census or claim table is stale; after editing `data/` or the
-schema, `poetry run regenerate` rewrites both:
+schema census, the claim table or the expected-warnings file is stale;
+after editing `data/` or the schema, `poetry run regenerate` rewrites all
+three (a warning the load no longer produces leaves the file; a new one
+is added with `scripts/expected_warnings.py --add`):
 
     poetry run ruff check .
     poetry run ruff format --check .
     poetry run pytest --cov=phylohist --cov-fail-under=90
     poetry run regenerate
-    git diff --exit-code scripts/schema-usage.md claims/
+    git diff --exit-code scripts/schema-usage.md claims/ tests/expected-warnings.txt
     poetry run python scripts/check_draft.py drafts/<file>.yaml
 
 The tests run over the frozen copy of the data under `tests/corpus/`;

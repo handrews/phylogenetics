@@ -2,10 +2,11 @@
 
 Fails on any ERROR-level log record. Compares WARNING-level messages against
 ``tests/expected-warnings.txt``: a new line there is allowed only in a commit
-that adds a check, and every line is a resolution owed. Regenerate with
-``PHYLOHIST_UPDATE_EXPECTED=1 poetry run pytest``. The load itself is the
-``production`` fixture in ``conftest.py``; these are the tests about the
-curated corpus, marked ``production``.
+that adds a check, and every line is a resolution owed, so a line the load
+no longer produces is only a warning here; ``poetry run regenerate`` drops it
+(`scripts/expected_warnings.py`). The load itself is the ``production``
+fixture in ``conftest.py``; these are the tests about the curated corpus,
+marked ``production``.
 
 ``PHYLOHIST_DRAFTS=1`` also loads the unaudited trees under ``drafts/``
 (the CLI's ``--draft``). Drafts are expected to produce errors and
@@ -16,17 +17,13 @@ compared in that mode; the error test still reports what a draft needs.
 import logging
 import os
 import pathlib
+import warnings
 
 import pytest
 
-EXPECTED_WARNINGS_PATH = pathlib.Path(__file__).parent / 'expected-warnings.txt'
+from tests import support
 
-EXPECTED_WARNINGS_HEADER = """\
-# Expected WARNING-level messages from loading all data files.
-# A new line here is allowed only in a commit that adds a check; every line
-# is a resolution owed. Regenerate with:
-#   PHYLOHIST_UPDATE_EXPECTED=1 poetry run pytest
-"""
+EXPECTED_WARNINGS_PATH = pathlib.Path(__file__).parent / 'expected-warnings.txt'
 
 
 @pytest.mark.production
@@ -46,41 +43,24 @@ def test_data_loaded(production):
 def test_expected_warnings(production):
   if os.getenv('PHYLOHIST_DRAFTS'):
     pytest.skip('drafts loaded; the warning snapshot covers data/ only')
-  actual = sorted({r.getMessage() for r in production.records if r.levelno == logging.WARNING})
+  actual = {r.getMessage() for r in production.records if r.levelno == logging.WARNING}
+  expected = support.script('expected_warnings').read_expected(EXPECTED_WARNINGS_PATH)
 
-  if os.getenv('PHYLOHIST_UPDATE_EXPECTED') and not os.getenv('CI'):
-    # Regenerate the snapshot; never on CI, where it would hide a regression.
-    with open(EXPECTED_WARNINGS_PATH, 'w') as fd:
-      fd.write(EXPECTED_WARNINGS_HEADER)
-      for message in actual:
-        fd.write(f'{message}\n')
-    return
-
-  expected = set()
-  if EXPECTED_WARNINGS_PATH.exists():
-    with open(EXPECTED_WARNINGS_PATH) as fd:
-      for line in fd:
-        line = line.strip()
-        if not line or line.startswith('#'):
-          continue
-        expected.add(line)
-
-  actual_set = set(actual)
-  unexpected = actual_set - expected
-  stale = expected - actual_set
-
-  if unexpected or stale:
-    parts = []
-    if unexpected:
-      parts.append(
-        'Unexpected warnings (not in tests/expected-warnings.txt):\n'
-        + '\n'.join(sorted(unexpected)),
-      )
-    if stale:
-      parts.append(
-        'Stale expected warnings (no longer produced):\n' + '\n'.join(sorted(stale)),
-      )
-    pytest.fail('\n\n'.join(parts))
+  stale = expected - actual
+  if stale:
+    # A resolved warning is progress: `regenerate` drops its line, and CI's
+    # diff of the derived files catches a line left behind.
+    warnings.warn(
+      f'{len(stale)} expected warnings are no longer produced; run `poetry run regenerate`:\n'
+      + '\n'.join(sorted(stale)),
+      stacklevel=1,
+    )
+  unexpected = actual - expected
+  if unexpected:
+    pytest.fail(
+      'Unexpected warnings (not in tests/expected-warnings.txt; a new line there is allowed '
+      'only in a commit that adds a check):\n' + '\n'.join(sorted(unexpected))
+    )
 
 
 def test_invalid_tree_raises(tmp_path):
