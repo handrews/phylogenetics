@@ -1,7 +1,16 @@
 taxonomies:
-- notes: |
+- notes: >
     Traditional classification (based on Bell 1980, but with later additions)
   taxon: edrioasteroidea
+  rank: Class
+  editorial:
+    inferred: true
+    basis: >
+      Table heading is "Classification of the Edrioasteroidea."
+      This is the "traditional" classification column, and page 733
+      notes "Edrioasteroids have... since 1899, been assigned the
+      status of class (Bather 1899)."  The typical authority of
+      Billings, 1858 is used in the other column of the table.
   children:
   - taxon: stromatocystitida
     notes: |
@@ -11,6 +20,10 @@ taxonomies:
     - taxon: stromatocystitidae
     - taxon: cambrasteridae
   - taxon: edrioasterida
+    citedAs: Order EDRIOASTEROIDA Bell, 1976
+    lapsus:
+      taxon: edrioasteroida
+    notes: Correctly spelled Edrioasterida in the other column.
     children:
     - taxon: edrioasteridae
     - taxon: totiglobidae
@@ -38,17 +51,29 @@ taxonomies:
       to an order.
     children:
     - taxon: cyathocystidae
-- notes: Revised classification (A. B. Smith 1985)
+- notes: >
+    Revised classification (A. B. Smith 1985)
+    This is the 2nd column of the table.
   children:
   - taxon: stromatocystites
   - taxon: edrioasteroidea
+    citedAs: Plesion (Class) EDRIOASTEROIDEA Billings, 1858
     rank: Plesion
+    mutable: true
+    pages: 734
     children:
     - taxon: edrioasterida
+      citedAs: Order EDRIOASTERIDA Bell, 1976 (sedis mutabilis)
+      rank: Order
       children:
       - taxon: totiglobidae
       - taxon: edrioasteridae
+        citedAs: Family EDRIOASTERIDAE Bather, 1898
+        authority:
+          source: 1898_bather
     - taxon: isorophida
+      emended: true
+      mutable: true
       children:
       - taxon: cambraster
       - taxon: edriodiscus
@@ -63,7 +88,7 @@ taxonomies:
             taxon: lebetodiscina
     - taxon: cyathocystida
       emended: true
-      notes: sedis mutabilis
+      mutable: true
       children:
       - taxon: pyrgocystidae
       - taxon: cyathocystidae

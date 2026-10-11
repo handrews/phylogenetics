@@ -2,10 +2,19 @@ prefixes:
   USNM: usnm
 taxonomies:
 - taxon: echinozoa
+  citedAs: Subphylum ECHINOZOA Zittel, 1895
+  rank: Subphylum
+  pages: 2
   children:
   - taxon: edrioasteroidea
+    citedAs: Class EDRIOASTEROIDEA Billings, 1858
+    rank: Class
+    pages: 2
     children:
     - taxon: edrioasterida
+      citedAs: Order EDRIOASTERIDA Bell, 1976
+      rank: Order
+      pages: 2
       children:
       - taxon: totiglobidae
         children:

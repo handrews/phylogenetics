@@ -1,7 +1,10 @@
 taxonomies:
 - taxon: echinodermata
+  citedAs: Phylum Echinodermata Klein, 1734
+  rank: Phylum
   authority:
     source: 1734_klein
+  pages: 186
   children:
   - taxon: blastozoa
     children:

@@ -1,19 +1,47 @@
 taxonomies:
 - taxon: echinodermata
-  auth: [bruguiére]
-  year: 1791
+  citedAs: Phylum ECHINODERMATA Bruguiere, 1791
+  rank: Phylum
+  authority:
+    source: 1791_bruguière
+  pages: v
+  notes: From the Table of Contents.
   children:
   - taxon: echinozoa
+    citedAs: Subphylum ECHINOZOA Zittel, 1895
+    rank: Subphylum
+    pages: 307
+    notes: Also in Table of Contents, identical citation.
     children:
     - taxon: edrioblastoidea
+      citedAs: Class EDRIOBLASTOIDEA Fay, 1962
+      rank: Class
+      pages: 307
+      notes: Also in Table of Contents, identical citation.
       children:
       - taxon: pentacystida
+        citedAs: Order PENTACYSTIDA Jaekel, 1918
+        rank: Order
+        pages: 307
         children:
         - taxon: steganoblastidae
+          citedAs: Family STEGANOBLASTIDAE Bather, 1900
+          rank: Family
+          pages: 307
           children:
           - taxon: astrocystites
+            citedAs: Genus ASTROCYSTITES Whiteaves, 1897
+            pages: 307
+            type:
+              taxon: ottawaensis_whiteaves_1897
+              citedAs: Type species.--Astrocystites ottawaensis Whiteaves, 1897.
+              pages: 307
             children:
-            - taxon: ottawaensis_whiteaves_1897
-              isType: true
             - openTaxon: astrocystites-sp-a_sprinkle_1982i
+              citedAs: ASTROCYSTITES sp. A
+              new: true
+              pages: 307
             - openTaxon: astrocystites-sp-b_sprinkle_1982i
+              citedAs: ASTROCYSTITES sp. B
+              new: true
+              pages: 307

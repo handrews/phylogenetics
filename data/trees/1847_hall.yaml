@@ -9,7 +9,7 @@ taxonomies:
       - taxon: tenuiradiatus_hall_1847
         new: true
       - openTaxon: actinocrinus-sp_hall_1847
-- taxon: echinodermata-class
+- taxon: echinodermata
   notes: |
     Trenton limestone
     Echinodermata described as a family in text, but also as containing
@@ -74,7 +74,7 @@ taxonomies:
           pages:
           - [232, 237]
         - taxon: echinosphaerites
-          auth: [Pander]
+          auth: [pander]
           year: 1830
           notes: '"Sp."'
         - taxon: echinosphaerites
@@ -82,10 +82,10 @@ taxonomies:
           year: 1835
           notes: '"Sp."'
         - taxon: goniocrinites
-          auth: [Eichwald]
+          auth: [eichwald]
           year: 1840
         - taxon: echino-encrinus
-          auth: [Volborth]
+          auth: [volborth]
           year: 1842
         - taxon: sycocystites
           auth: [buch]
