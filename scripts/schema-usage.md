@@ -420,12 +420,12 @@ property.
 | `authority` | 1699 | 60.0% |
 | `rank` | 964 | 34.1% |
 | `pages` | 255 | 9.0% |
-| `notes` | 226 | 8.0% |
-| `altSpellingOf` | 147 | 5.2% |
-| `lang` | 73 | 2.6% |
+| `notes` | 225 | 8.0% |
+| `altSpellingOf` | 148 | 5.2% |
+| `lang` | 72 | 2.5% |
 | `originalParent` | 70 | 2.5% |
 | `altRankOf` | 53 | 1.9% |
-| `vulgarSpellingOf` | 45 | 1.6% |
+| `vulgarSpellingOf` | 44 | 1.6% |
 | `homonym` | 16 | 0.6% |
 | `needsQualification` | 12 | 0.4% |
 | `bracket` | 9 | 0.3% |

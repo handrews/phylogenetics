@@ -74,22 +74,22 @@ taxonomies:
           pages:
           - [232, 237]
         - taxon: echinosphaerites
-          auth: [Pander]
-          year: 1830
+          authority:
+            source: 1830_pander
           notes: '"Sp."'
         - taxon: echinosphaerites
           auth: [Bronn]
           year: 1835
           notes: '"Sp."'
         - taxon: goniocrinites
-          auth: [Eichwald]
-          year: 1840
+          authority:
+            source: 1840_eichwald
         - taxon: echino-encrinus
-          auth: [Volborth]
-          year: 1842
+          authority:
+            source: 1842_volborth
         - taxon: sycocystites
-          auth: [buch]
-          year: 1844
+          authority:
+            source: 1844_buch
         children:
         - taxon: anatiformis_hall_1847
           new: true

@@ -355,7 +355,9 @@ gmelin:
   death: 1804
 goldfuss:
   surname: Goldfuss
-  given: Georg
+  given: Georg August
+  birth: 1782
+  death: 1848
 gong.x.y:
   surname: Gong
   given: X.-Y.
@@ -688,6 +690,11 @@ müller.p.l.s:
   given: Philipp Ludwig Statius
   birth: 1725
   death: 1776
+münster:
+  surname: Münster
+  given: Georg zu
+  birth: 1770
+  death: 1844
 murchison:
   surname: Murchison
   given: Roderick Impey

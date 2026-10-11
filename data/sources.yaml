@@ -919,6 +919,26 @@
   - pander
   identifiers:
     url: https://www.google.com/books/edition/Beitr%C3%A4ge_zur_geognosie_des_russischen_r/yJ0_AAAAYAAJ?hl=en
+1831_goldfuss:
+  book: petrefacta-germaniae
+  pubDate:
+    year: 1831
+  authors:
+  - goldfuss
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/115962
+  notes: >
+    Same as 1831_goldfuss_münster but used when only Goldfuss
+    is attributed.  This will get a better solution soon.
+1831_goldfuss_münster:
+  book: petrefacta-germaniae
+  pubDate:
+    year: 1831
+  authors:
+  - goldfuss
+  - münster
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/115962
 1836_burmeister:
   book: handbuch-nat
   volume: 1
