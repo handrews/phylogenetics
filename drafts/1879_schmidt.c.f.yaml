@@ -1,210 +1,90 @@
 # DRAFT -- for human audit only, not ready to commit.
 #
 # RECORDS NEEDED:
-# - author `schmidt`: printed "Mag. Fr. Schmidt" (p. 1); no record in
-#   data/authors.yaml (the taxa records write `auth: [Schmidt]` as an
-#   unregistered string).
-# - source `1880_schmidt` (or `1879_schmidt`, see the review): Verhandlungen
-#   der Russisch-Kaiserlichen Mineralogischen Gesellschaft zu St. Petersburg,
-#   Zweite Serie, Fünfzehnter Band, pp. 1-7; the journal has no record in
-#   data/publications.yaml.
 # - repository: the "Volborth'sche Sammlung (jetzt der Akademie der
 #   Wissenschaften gehörig)" (p. 7) has no entry in data/repositories.yaml
 #   (neither the Academy of Sciences, St. Petersburg, nor the Volborth
 #   collection within it); the entry below names it as `holder` until one
 #   exists. No catalog numbers are printed, so no `prefixes` map.
-# - taxa: cyathocystis, plautinae_schmidt_1879, rhizophora_schmidt_1889,
-#   edrioasteroidea, agelacrinus, edrioaster, hemicystis and cystaster all
-#   exist. This paper is the protologue of all three Cyathocystis names; the
-#   record rhizophora_schmidt_1889 carries a year this paper does not print.
-#   "Hemicystites (subgen. Cystaster) granulatus Hall" (p. 4) has no species
-#   record and is kept in notes, not entered as a node.
 
-notes: |
-  Article I of the volume, pp. 1-7, "Ueber Cyathocystis Plautinae, eine neue
-  Cystideenform aus Reval. Von Mag. Fr. Schmidt." (p. 1). The volume's title
-  page is dated 1880; its Protocolle section covers the Society's sittings of
-  1879 (contents page). The running foot of p. 1 reads "XV. 1".
-
-  The text is a single description in prose with no headings, no diagnosis
-  set apart and no "n. gen." notation; the two species are marked "n. sp."
-  only in the captions of Holzschnitt I (p. 2). Three woodcuts in the text:
-  Holzschnitt I (p. 2, figs. 1-4), II (p. 4, figs. 1-3), III (p. 6, figs. 1-4).
-  The text cites them as "F. I, 2", "F. II 1", "F. III 3 b"; specimens are
-  named only by their figures ("am Original von I 1", p. 5; "im Original von
-  F. III 1", p. 7), so the material entries take those citations as labels.
 
 taxonomies:
-- taxon: edrioasteridae
-  citedAs: Edrioasteriden
-  auth: [Billings]
-  pages: [[1, 2]]
-  notes: |
-    Printed as a group, with no rank word: "In den obenerwähnten Fundstücken
-    erkannte ich bald eine neue Cystideenform aus der Verwandtschaft von
-    Agelacrinus Van. im weitern Sinn, oder eine neue Gattung aus der von
-    Billings aufgestellten Gruppe der Edrioasteriden ¹), zu der ausser
-    Agelacrinus Van. noch Edrioaster Bill., Hemicystis Hall und Cystaster
-    Hall gehören, und die nach ihm den Asteroiden näher als den Cystideen
-    verwandt ist." (pp. 1-2) -- "In the finds mentioned above I soon
-    recognised a new cystid form from the relationship of Agelacrinus Van.
-    in the wider sense, or a new genus from the group of the Edrioasterids
-    set up by Billings, to which besides Agelacrinus Van. also Edrioaster
-    Bill., Hemicystis Hall and Cystaster Hall belong, and which according to
-    him is more nearly related to the Asteroids than to the Cystids."
-    Footnote 1 (p. 1): "Billings, Canadian organic remains. Dec. III, p. 85."
-    The title calls the new form "eine neue Cystideenform" (p. 1).
+- taxon: cystideen
+  citedAs: eine neue Cystideenform
+  pages: 1
   children:
-  - taxon: agelacrinus
-    citedAs: Agelacrinus Van.
-    pages: [[1, 2]]
-  - taxon: edrioaster
-    citedAs: Edrioaster Bill.
-    authority:
-      source: 1858b_billings
-      pages: 85
-      illustrations:
-        plate: xv
-    pages: 2
-  - taxon: hemicystis
-    citedAs: Hemicystis Hall
-    pages: 2
-    notes: |
-      On p. 4 the same genus is printed "Hemicystites", with Cystaster as a
-      subgenus and a species, in a comparison of figures: "Die angeführten
-      Figuren gehören zu Hemicystites (subgen. Cystaster) granulatus Hall,
-      der eine gewisse Analogie mit unsrer Cyathocystis zeigt." (p. 4) --
-      "The figures cited belong to Hemicystites (subgen. Cystaster)
-      granulatus Hall, which shows a certain analogy with our Cyathocystis."
-      The figures cited are "Hall (report of New York state museum pl. VI
-      F. 1, 2, 3)" (p. 4).
-    or:
-    - taxon: hemicystites
-    children:
-    - taxon: cystatster-subgenus
-      children:
-      - taxon: granulatus_hall_1871
-  - taxon: cystaster
-    citedAs: Cystaster Hall
-    auth: [Hall]
-    pages: 2
-    notes: Listed as a member of the group beside Hemicystis (p. 2); see the note on hemicystis for p. 4.
   - taxon: cyathocystis
-    new: true
     citedAs: Cyathocystis
-    pages: [[1, 7]]
+    new: true
+    altPlacements:
+    - taxon: edrioasteriden
+      citedAs: Billings aufgestellten Gruppe der Edrioasteriden
+      rank: Group
+      pages: 1
+    pages:
+    - [1, 7]
     type:
-      taxon: plautinae_schmidt_1879
-      parents:
-      - taxon: cyathocystis
+      taxon: plautinae_schmidt.c.f_1879
+      fixation: originalDesignation
       pages: 7
-      notes: |
-        The only type wording: "Die runzliche Epitheca ist eben so wie bei
-        der typischen Art vorhanden" (p. 7, of C. rhizophora) -- "The
-        wrinkled epitheca is present just as in the typical species." "Type
-        species" is not printed and no method is stated; this node rests on
-        that phrase (see the review).
-    notes: |
-      "Ich nenne die Gattung Cyathocystis, nach ihrer becherartigen Form und
-      die Art C. Plautinae." (p. 2) -- "I name the genus Cyathocystis, after
-      its cup-like form, and the species C. Plautinae." No diagnosis is set
-      apart; the description runs pp. 2-5 for the first species and pp. 5-7
-      for the second. The character the author singles out for the genus:
-      "Die grösste Eigenthümlichkeit unsrer Cyathocystis, durch die sie sich
-      vor allen ihren Verwandten auszeichnet, bleibt der aus Einem Stück
-      bestehende solide Kelch, der auf andern Petrefakten (meist Chaetetiden)
-      parasitisch aufsitzt und auf ihnen durch kurze Haftwurzeln (F. II, 3)
-      befestigt ist." (p. 5) -- "The greatest peculiarity of our
-      Cyathocystis, by which it is distinguished from all its relatives,
-      remains the solid calyx consisting of one piece, which sits
-      parasitically on other fossils (mostly Chaetetids) and is fixed to them
-      by short holdfast roots." "Von regelmässigen Poren, wie bei den meisten
-      Cystideen, ist bei Cyathocystis Nichts zu sehn." (p. 3) -- "Of regular
-      pores, as in most Cystids, nothing is to be seen in Cyathocystis."
+      notes: >
+        C. rhizophora is contrasted with "the typical species", and
+        C. plautinae is the only other species described.
     children:
-    - taxon: plautinae_schmidt_1879
+    - taxon: plautinae_schmidt.c.f_1879
       new: true
       citedAs: Cyathocystis Plautinae n. sp.
-      pages: [[1, 5], 7]
+      pages: 2
+      notes: The "n. sp." listing is the figure captions.
       material:
       - label: 'F. I, 1'
         context: reval
-        notes: |
-          One of "die beiden, F. I, 1, 2 abgebildeten vollständigen
-          Exemplare" (p. 7), calyx with lid; vertical furrows "auch am
-          Original von I 1" (p. 5).
       - label: 'F. I, 2'
         context: reval
-        notes: |
-          The other complete specimen (p. 7): two calyces grown together,
-          "zuw. zwei Kelche verwachsen, wie Fig. 2" (p. 2), each with a lid;
-          F. I, 3 is one lid and F. II, 1 part of the other (captions pp. 2,
-          4).
       - label: 'F. II, 2'
         context: reval
-        notes: Calyx without lid (caption p. 4); "nebst den Fig. II 2, 3 abgebildeten Stücken" (p. 1).
       - label: 'F. II, 3'
         context: reval
-        notes: Calyx without lid (caption p. 4), the piece showing the holdfast roots (p. 5).
       illustrations:
       - page: 2
         textFigures: 1
         of: 'F. I, 1'
         depicts: drawing
-        notes: Holzschnitt I, "nat. Gr." (p. 2).
+        notes: Holzschnitt I
       - page: 2
         textFigures: [2, 3]
         of: 'F. I, 2'
         depicts: drawing
-        notes: Holzschnitt I; fig. 3 is "Ein Deckel von Fig. 2, vergrössert" with the plates lettered a-e (p. 2).
+        notes: Holzschnitt I
       - page: 4
         textFigures: 1
         of: 'F. I, 2'
         depicts: drawing
-        notes: Holzschnitt II, "Ein Theil des andern Deckels von F. I, 2, vergrössert" (p. 4).
+        notes: Holzschnitt II
       - page: 4
         textFigures: 2
         of: 'F. II, 2'
         depicts: drawing
-        notes: Holzschnitt II, "nat. gr." (p. 4).
+        notes: Holzschnitt II
       - page: 4
         textFigures: 3
         of: 'F. II, 3'
         depicts: drawing
-        notes: Holzschnitt II, "nat. gr." (p. 4).
+        notes: Holzschnitt II
       contexts:
         reval:
           unit:
-          - Echinosphaeritenschicht
+          - Echinosphaerites bed
+          - Estonian Glint
           location:
           - Reval
           collectedBy: Frau Generalin Plautin
           collectedDate: Sommer 1878
           notes: |
-            "Sie sind auf Callopora heterosolen Dyb. (Chaetetes heterosole
-            Keys.) aufgewachsen und gehören der jetzt von mir so genannten
-            Echinosphaeritenschicht (C₁) an, die die oberste Schicht des
-            Estländischen Glints bildet und dem ächten Vaginaten- oder
-            Orthocerenkalk (B) aufgelagert ist. Meine Echinosphaeritenschicht
-            entspricht grösstentheils dem Schwedischen Chasmopskalk." (p. 1)
-            -- "They are grown on Callopora heterosolen Dyb. (Chaetetes
-            heterosole Keys.) and belong to the Echinosphaerites bed (C₁),
-            which I now so name, which forms the uppermost bed of the
-            Estonian Glint and lies on the true Vaginaten- or Orthoceren
-            limestone (B). My Echinosphaerites bed corresponds for the most
-            part to the Swedish Chasmops limestone." Collected "im
-            verflossenen Sommer 1878" by the household of Major-General
-            S. A. Plautin at the baths of Reval, the Generalin with particular
-            zeal, to whose kindness the author owes the four pieces (p. 1).
-      notes: |
-        "der zu Ehren wir auch unsre Cyathocystis Plautinae benannt haben"
-        (p. 7) -- "in whose honour we have also named our Cyathocystis
-        Plautinae." No specimen number, repository or type word is printed;
-        "Sämmtliche Originalstücke gehn noch zu Prof. Lovén nach Stockholm,
-        der sie bei seiner grossen Arbeit über Cystideen benutzen wird."
-        (p. 4) -- "All the original pieces are still going to Prof. Lovén in
-        Stockholm, who will use them in his great work on Cystids."
-    - taxon: rhizophora_schmidt_1879
+            Ech. bed is uppermost bed of Estonian Glint and lies on the
+            Vaginatus or Orthoceren limestone.  Ech. bed corresponds
+            "for the most part" to the Swedish Chasmps limestone.
+    - taxon: rhizophora_schmidt.c.f_1879
       new: true
       citedAs: Cyathocystis rhizophora n. sp.
       pages: [2, [5, 7]]
@@ -213,16 +93,12 @@ taxonomies:
         context: wassalem
       - label: 'F. III, 1'
         context: wassalem
-        notes: '"Ein Zwillingskelch mit deutlicher Epitheca" (caption p. 6); the epitheca "besonders deutlich im Original von F. III 1" (p. 7).'
       - label: 'F. III, 2'
         context: wassalem
-        notes: A calyx base with root runners (caption p. 6).
       - label: 'F. III, 3'
         context: wassalem
-        notes: A bent calyx with vertical furrows and knobby growth bosses (caption p. 6; p. 7).
       - label: 'F. III, 4'
         context: wassalem
-        notes: Three connected calyces, fig. 4 b a side section (caption p. 6; p. 6).
       - label: mehrere Exemplare, 1863
         collectedBy: the author
         collectedDate: '1863'

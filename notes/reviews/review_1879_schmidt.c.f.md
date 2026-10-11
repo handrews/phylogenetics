@@ -202,3 +202,66 @@ dates from these pages.
   reliably in the figures themselves in the OCR; the draft cites captions
   only.
 - Nothing in the paper dates itself; the 1879/1880 question (§3) stands.
+
+## From draft
+
+Article I of the volume, pp. 1-7, "Ueber Cyathocystis Plautinae, eine neue
+Cystideenform aus Reval. Von Mag. Fr. Schmidt." (p. 1). The volume's title
+page is dated 1880; its Protocolle section covers the Society's sittings of
+1879 (contents page). The running foot of p. 1 reads "XV. 1".
+
+The text is a single description in prose with no headings, no diagnosis
+set apart and no "n. gen." notation; the two species are marked "n. sp."
+only in the captions of Holzschnitt I (p. 2). Three woodcuts in the text:
+Holzschnitt I (p. 2, figs. 1-4), II (p. 4, figs. 1-3), III (p. 6, figs. 1-4).
+The text cites them as "F. I, 2", "F. II 1", "F. III 3 b"; specimens are
+named only by their figures ("am Original von I 1", p. 5; "im Original von
+F. III 1", p. 7), so the material entries take those citations as labels.
+
+
+### Taxon edrioasteriden
+
+Printed as a group, with no rank word: "In den obenerwähnten Fundstücken
+erkannte ich bald eine neue Cystideenform aus der Verwandtschaft von
+Agelacrinus Van. im weitern Sinn, oder eine neue Gattung aus der von
+Billings aufgestellten Gruppe der Edrioasteriden ¹), zu der ausser
+Agelacrinus Van. noch Edrioaster Bill., Hemicystis Hall und Cystaster
+Hall gehören, und die nach ihm den Asteroiden näher als den Cystideen
+verwandt ist." (pp. 1-2) -- "In the finds mentioned above I soon
+recognised a new cystid form from the relationship of Agelacrinus Van.
+in the wider sense, or a new genus from the group of the Edrioasterids
+set up by Billings, to which besides Agelacrinus Van. also Edrioaster
+Bill., Hemicystis Hall and Cystaster Hall belong, and which according to
+him is more nearly related to the Asteroids than to the Cystids."
+Footnote 1 (p. 1): "Billings, Canadian organic remains. Dec. III, p. 85."
+The title calls the new form "eine neue Cystideenform" (p. 1).
+
+### Taxon hemicyst(is|ites)
+
+On p. 4 the same genus is printed "Hemicystites", with Cystaster as a
+subgenus and a species, in a comparison of figures: "Die angeführten
+Figuren gehören zu Hemicystites (subgen. Cystaster) granulatus Hall,
+der eine gewisse Analogie mit unsrer Cyathocystis zeigt." (p. 4) --
+"The figures cited belong to Hemicystites (subgen. Cystaster)
+granulatus Hall, which shows a certain analogy with our Cyathocystis."
+The figures cited are "Hall (report of New York state museum pl. VI
+F. 1, 2, 3)" (p. 4).
+
+### Taxon cyathocystis
+
+"Ich nenne die Gattung Cyathocystis, nach ihrer becherartigen Form und
+die Art C. Plautinae." (p. 2) -- "I name the genus Cyathocystis, after
+its cup-like form, and the species C. Plautinae." No diagnosis is set
+apart; the description runs pp. 2-5 for the first species and pp. 5-7
+for the second. The character the author singles out for the genus:
+"Die grösste Eigenthümlichkeit unsrer Cyathocystis, durch die sie sich
+vor allen ihren Verwandten auszeichnet, bleibt der aus Einem Stück
+bestehende solide Kelch, der auf andern Petrefakten (meist Chaetetiden)
+parasitisch aufsitzt und auf ihnen durch kurze Haftwurzeln (F. II, 3)
+befestigt ist." (p. 5) -- "The greatest peculiarity of our
+Cyathocystis, by which it is distinguished from all its relatives,
+remains the solid calyx consisting of one piece, which sits
+parasitically on other fossils (mostly Chaetetids) and is fixed to them
+by short holdfast roots." "Von regelmässigen Poren, wie bei den meisten
+Cystideen, ist bei Cyathocystis Nichts zu sehn." (p. 3) -- "Of regular
+pores, as in most Cystids, nothing is to be seen in Cyathocystis."

@@ -10716,6 +10716,7 @@
     "Schmidt"
    ],
    "display": "Schmidt 1879",
+   "source": "1879_schmidt.c.f",
    "year": 1879
   },
   "folded": [
@@ -32840,12 +32841,13 @@
   "name": "platys",
   "rank": "species"
  },
- "plautinae_schmidt_1879": {
+ "plautinae_schmidt.c.f_1879": {
   "authority": {
    "authors": [
     "Schmidt"
    ],
    "display": "Schmidt 1879",
+   "source": "1879_schmidt.c.f",
    "year": 1879
   },
   "folded": [
@@ -32855,20 +32857,21 @@
   "name": "plautinae",
   "rank": "species"
  },
- "plautini_schmidt_1880": {
+ "plautini_schmidt.c.f_1879": {
   "authority": {
    "authors": [
     "Schmidt"
    ],
-   "display": "Schmidt 1880",
-   "year": 1880
+   "display": "Schmidt 1879",
+   "source": "1879_schmidt.c.f",
+   "year": 1879
   },
   "folded": [
    "plautini"
   ],
   "kind": "altSpellingOf",
   "name": "plautini",
-  "of": "plautinae_schmidt_1879",
+  "of": "plautinae_schmidt.c.f_1879",
   "rank": "species"
  },
  "pleiadae_sinclair_bolton_1965": {
@@ -36444,13 +36447,14 @@
   "name": "Rhipidocystis",
   "rank": "genus"
  },
- "rhizophora_schmidt_1889": {
+ "rhizophora_schmidt.c.f_1879": {
   "authority": {
    "authors": [
     "Schmidt"
    ],
-   "display": "Schmidt 1889",
-   "year": 1889
+   "display": "Schmidt 1879",
+   "source": "1879_schmidt.c.f",
+   "year": 1879
   },
   "folded": [
    "rhizophora"
