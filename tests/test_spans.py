@@ -6,7 +6,7 @@ schema, and the corpus. A section is a span of siblings, `sectionStart`
 through `sectionEnd`, with a record in `data/sections.yaml`: the same
 for sections (the last part of the file).
 
-Synthetic trees are built on the session's loaded corpus under positions
+Synthetic trees are built on the loaded test corpus under positions
 2000 and up (`Tree` keeps class-level registries); the closure test reads
 a `ClaimStore` over a copy of `claims/` whose file for `1766_linnaeus` is
 replaced by the claims of one of them.
@@ -26,10 +26,6 @@ from phylohist.loader.research import Source
 from phylohist.loader.taxa import Section, Tree
 from phylohist.store import ClaimStore
 from tests import support
-
-# The synthetic trees name real records, so every test needs the corpus loaded.
-pytestmark = pytest.mark.usefixtures('load_records')
-
 
 SOURCE = '1766_linnaeus'
 
@@ -602,7 +598,7 @@ UNNAMED = 'testacea-multivalvia_linnaeus_1758'
 
 @pytest.fixture
 def sections(monkeypatch):
-  """A synthetic sections registry, in place of the (empty) real one."""
+  """A synthetic sections registry, in place of the corpus's."""
   monkeypatch.setattr(Section, '_sections', {})
   authority = {'source': '1758_linnaeus'}
   Section.add({'name': 'Integra', 'authority': authority, 'citedAs': 'Integra'}, INTEGRA)

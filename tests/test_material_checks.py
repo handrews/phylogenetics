@@ -697,9 +697,9 @@ def test_walk_document_ignores_non_dict_and_absent_axes():
 # -- Tree.file_contexts / file_unused / contexts / context_scopes -------------
 
 
-def test_tree_file_contexts_and_unused_read_from_root_metadata(load_records):
+def test_tree_file_contexts_and_unused_read_from_root_metadata():
   # No `taxon` field: only a registered source is needed (`Tree` hashes by
-  # it), which `load_records` guarantees for real source key '1961_dehm'.
+  # it), which the corpus provides for source key '1961_dehm'.
   metadata = {
     'source_key': '1961_dehm',
     'position': 900,
@@ -715,7 +715,7 @@ def test_tree_file_contexts_and_unused_read_from_root_metadata(load_records):
   assert child.file_unused == ('ranges',)
 
 
-def test_tree_contexts_merge_node_over_file_with_scope_map(load_records):
+def test_tree_contexts_merge_node_over_file_with_scope_map():
   metadata = {
     'source_key': '1961_dehm',
     'position': 901,
@@ -727,7 +727,7 @@ def test_tree_contexts_merge_node_over_file_with_scope_map(load_records):
   assert root.context_scopes == {'loc': 'node', 'file-only': 'file'}
 
 
-def test_tree_file_contexts_defaults_when_absent(load_records):
+def test_tree_file_contexts_defaults_when_absent():
   metadata = {'source_key': '1961_dehm', 'position': 902, 'type': 'taxonomy'}
   root = Tree({}, metadata)
   assert root.file_contexts == {}
@@ -1350,7 +1350,7 @@ def test_schema_rejects_a_malformed_prefix_map_or_locality_number(extra):
 # -- Tree metadata, the loader and the draft checker ---------------------------
 
 
-def test_tree_reads_the_prefix_map_and_locality_register_from_root_metadata(load_records):
+def test_tree_reads_the_prefix_map_and_locality_register_from_root_metadata():
   metadata = {
     'source_key': '1961_dehm',
     'position': 903,

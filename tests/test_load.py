@@ -92,27 +92,34 @@ def test_schema_error_names_its_file(tmp_path, caplog):
   assert io.display_path(io.TREE_DIR / '1761_linnaeus.yaml') == 'data/trees/1761_linnaeus.yaml'
 
 
-def test_data_files_in_load_order():
+def test_data_files_in_load_order(tmp_path, monkeypatch):
   # The record files, then the audited trees, then the drafts: a draft
   # loads last so that it replaces the audited tree of its source.
   from phylohist.loader import io
 
-  files = io.data_files(drafts=True)
-  names = [name for name, _ in files]
-  assert names[: len(io.RECORD_FILES)] == [
-    'authors',
-    'publications',
-    'sources',
-    'taxa',
-    'sections',
-    'repositories',
-    'roles',
+  data_dir = tmp_path / 'data'
+  (data_dir / 'trees').mkdir(parents=True)
+  drafts = tmp_path / 'drafts'
+  drafts.mkdir()
+  audited = [data_dir / 'trees' / f'{key}.yaml' for key in ('1761_linnaeus', '1962_fay')]
+  for path in (*audited, drafts / '1962_fay.yaml'):
+    path.write_text('')
+  monkeypatch.setattr(io, 'DRAFT_DIR', drafts)
+
+  files = io.data_files(drafts=True, data_dir=data_dir)
+  assert [name for name, _ in files] == [*io.RECORD_NAMES, *[io.TREE_DEF] * 3]
+  assert io.RECORD_NAMES[:3] == ('authors', 'publications', 'sources')
+  assert [path for _, path in files] == [
+    *io.record_files(data_dir),
+    *audited,
+    drafts / '1962_fay.yaml',
   ]
-  trees = [path for name, path in files if name == io.TREE_DEF]
-  assert trees == io.tree_files(drafts=True)
-  dirs = [path.parent for path in trees]
-  assert dirs == sorted(dirs, key=lambda d: d != io.TREE_DIR) and io.DRAFT_DIR in dirs
-  assert [path for _, path in io.data_files()] == [*io.RECORD_FILES, *io.tree_files()]
+  assert [path for _, path in io.data_files(data_dir=data_dir)] == [
+    *io.record_files(data_dir),
+    *audited,
+  ]
+  # The defaults are the repository's own data.
+  assert io.RECORD_FILES == io.record_files() and io.RECORD_FILES[0] == io.DATA_DIR / 'authors.yaml'
 
 
 def test_load_fails_on_logged_errors(monkeypatch):

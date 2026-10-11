@@ -3,7 +3,7 @@
 `illustrations`, `citedAs`, `designation`), and gives nothing its tree file lists as
 unused; `citedAs` validates on a record.
 
-The records and trees are synthetic, built on the session's loaded corpus
+The records and trees are synthetic, built on the loaded test corpus
 (`Taxon` and `Tree` keep class-level registries, so each test gets
 its own copies, restored afterwards).
 """
@@ -18,8 +18,6 @@ from phylohist.loader import io
 from phylohist.loader.load import _report_protologue_mismatches
 from phylohist.loader.taxa import Taxon, Tree
 from tests import support
-
-pytestmark = pytest.mark.usefixtures('load_records')
 
 SOURCE = '1758_linnaeus'
 FILE = 'data/trees/1758_linnaeus.yaml'

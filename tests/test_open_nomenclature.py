@@ -3,7 +3,7 @@
 `roleUncertain`: the schema, the loader checks, the claims, and the words
 the tools say.
 
-Synthetic trees are built on the session's loaded corpus under positions
+Synthetic trees are built on the loaded test corpus under positions
 200 and up (`Tree` keeps class-level registries), and the tool tests read a
 `ClaimStore` over a copy of the corpus claims whose `1961_dehm` file is
 replaced by the claims of one synthetic tree, with its own `…-cf-…` record
@@ -103,9 +103,8 @@ def test_record_lookup_computes_the_rank_as_the_loader_does():
   assert nomenclature.record_lookup({'x': {}})('x').rank is None
 
 
-def test_record_lookup_agrees_with_the_loaded_taxa(load_records):
-  data, _, _ = load_records
-  lookup = nomenclature.record_lookup(data['taxa'])
+def test_record_lookup_agrees_with_the_loaded_taxa(corpus):
+  lookup = nomenclature.record_lookup(corpus.data['taxa'])
   for key in ('grayae_bather_1915', 'rhenopyrgus', 'gogia-sp_robison_1965', 'cyathocystidae'):
     assert lookup(key).rank == Taxon.get(key).rank
     assert lookup(key).name == Taxon.get(key).name
@@ -214,7 +213,7 @@ def test_compared_link_conflicts_leave_agreement_and_unlinked_uses_alone():
   assert nomenclature.compared_link_conflicts([]) == []
 
 
-def test_load_reports_nomenclature_checks_at_the_right_level(load_records, caplog):
+def test_load_reports_nomenclature_checks_at_the_right_level(caplog):
   # Direct call, as for `_report_material`: a synthetic corpus routed
   # through `load()` would leak into the session's registries.
   data = {
@@ -345,7 +344,7 @@ def _one(claims, kind):
   return claim
 
 
-def test_usage_claim_carries_the_compared_link(load_records, caplog):
+def test_usage_claim_carries_the_compared_link(caplog):
   root = {
     'taxon': 'rhenopyrgus',
     'children': [
@@ -370,7 +369,7 @@ def test_the_retired_cf_and_aff_taxon_fields_are_rejected(field):
 
 
 @pytest.mark.parametrize('field', ['cfTaxon', 'affTaxon'])
-def test_the_loader_does_not_read_the_retired_fields_as_a_name(field, load_records, caplog):
+def test_the_loader_does_not_read_the_retired_fields_as_a_name(field, caplog):
   # As for any node with no recognised taxon field: it has no taxon of its
   # own and states no usage; the schema is what rejects it.
   root = {'taxon': 'rhenopyrgus', 'children': [{field: 'grayae_bather_1915'}]}
@@ -379,7 +378,7 @@ def test_the_loader_does_not_read_the_retired_fields_as_a_name(field, load_recor
   assert not [c for c in at['201/children/0'] if c['kind'] == 'usage']
 
 
-def test_placement_claim_carries_quoted_parent_and_non_monophyly(load_records):
+def test_placement_claim_carries_quoted_parent_and_non_monophyly():
   root = {
     'taxon': 'cyathocystidae',
     'children': [
@@ -398,7 +397,7 @@ def test_placement_claim_carries_quoted_parent_and_non_monophyly(load_records):
   assert 'quotedParent' not in plain and 'nonMonophyletic' not in plain
 
 
-def test_placement_claim_carries_mutable(load_records):
+def test_placement_claim_carries_mutable():
   root = {
     'taxon': 'cyathocystidae',
     'children': [{'taxon': 'rhenopyrgus', 'mutable': True}, {'taxon': 'pyrgocystis'}],
@@ -408,7 +407,7 @@ def test_placement_claim_carries_mutable(load_records):
   assert 'mutable' not in _one(at['205/children/1'], 'placement')
 
 
-def test_acceptance_claim_carries_quoted_parent(load_records):
+def test_acceptance_claim_carries_quoted_parent():
   root = {
     'taxon': 'grayae_bather_1915',
     'synonyms': [
@@ -420,7 +419,7 @@ def test_acceptance_claim_carries_quoted_parent(load_records):
   assert 'nonMonophyletic' not in entry
 
 
-def test_specimen_claim_carries_uncertain_and_role_uncertain(load_records):
+def test_specimen_claim_carries_uncertain_and_role_uncertain():
   root = {
     'taxon': 'grayae_bather_1915',
     'material': [

@@ -19,7 +19,7 @@ def _report(capsys, roots):
   return found, capsys.readouterr().out
 
 
-def test_report_explains_both_row_forms(load_records, monkeypatch, capsys):
+def test_report_explains_both_row_forms(monkeypatch, capsys):
   coverage = Source.get('1961_dehm')._data['audit']['coverage']
   roots = {
     '1961_dehm': [
@@ -55,7 +55,7 @@ def test_report_explains_both_row_forms(load_records, monkeypatch, capsys):
   assert 'to resolve: enter what the paper prints, or declare na or none' in out
 
 
-def test_report_lists_holotypes_that_differ_without_counting_them(load_records, capsys):
+def test_report_lists_holotypes_that_differ_without_counting_them(capsys):
   def tree(source, prefix, number):
     return Tree(
       {
@@ -85,7 +85,7 @@ def test_report_lists_holotypes_that_differ_without_counting_them(load_records, 
   )
 
 
-def test_report_prints_no_holotype_section_when_none_differ(load_records, capsys):
+def test_report_prints_no_holotype_section_when_none_differ(capsys):
   roots = {
     '1941_whitehouse': [
       Tree(
@@ -106,7 +106,7 @@ def test_report_prints_no_holotype_section_when_none_differ(load_records, capsys
   assert 'holotypes that differ' not in out
 
 
-def test_repositories_file_keeps_the_registry_fields_the_store_reads(load_records):
+def test_repositories_file_keeps_the_registry_fields_the_store_reads():
   registry = claims_script._repositories()
   assert list(registry) == sorted(registry)
   assert registry['uq-f']['prefixes'] == ['UQF', 'F']
@@ -132,9 +132,7 @@ def _run(monkeypatch, caplog, tmp_path, flag, *, error):
   return [r.getMessage() for r in caplog.records if r.name == 'phylohist.loader.load']
 
 
-def test_errors_only_shows_the_errors_when_there_are_any(
-  load_records, monkeypatch, caplog, tmp_path, capsys
-):
+def test_errors_only_shows_the_errors_when_there_are_any(monkeypatch, caplog, tmp_path, capsys):
   assert _run(monkeypatch, caplog, tmp_path, [], error=True) == ['a warning', 'an error']
   caplog.clear()
   assert _run(monkeypatch, caplog, tmp_path, ['--errors-only'], error=True) == ['an error']
@@ -142,7 +140,5 @@ def test_errors_only_shows_the_errors_when_there_are_any(
   assert '1 integrity errors while loading (tolerated)' in capsys.readouterr().err
 
 
-def test_errors_only_shows_the_warnings_when_there_are_no_errors(
-  load_records, monkeypatch, caplog, tmp_path
-):
+def test_errors_only_shows_the_warnings_when_there_are_no_errors(monkeypatch, caplog, tmp_path):
   assert _run(monkeypatch, caplog, tmp_path, ['--errors-only'], error=False) == ['a warning']

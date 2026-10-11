@@ -4,12 +4,10 @@ Jell, Burrett & Banks 1985). Its key's year and letter are the target's, its
 authors a strict subset of the target's in their order; everything else is
 the target's.
 
-The aliases are synthetic, built on the session's loaded corpus (`Source`,
-`Taxon` and `Tree` keep class-level registries, so each test gets its own
-copies, restored afterwards).
+The aliases are synthetic, built on the test corpus; the registries they
+write to are restored before every test (`conftest.py`).
 """
 
-import collections
 import importlib
 import logging
 import types
@@ -23,19 +21,7 @@ from phylohist.loader.research import Source
 from phylohist.loader.taxa import Authority, Taxon, Tree
 from phylohist.resolve import Resolver
 
-pytestmark = pytest.mark.usefixtures('load_records')
-
 TARGET = '1985_jell_burrett_banks'
-
-
-@pytest.fixture(autouse=True)
-def registries(monkeypatch):
-  """Private copies of the class-level registries the tests write to."""
-  monkeypatch.setattr(Source, '_sources', dict(Source._sources))
-  monkeypatch.setattr(Taxon, '_taxa', dict(Taxon._taxa))
-  for name in ('_taxon_index', '_new_index', '_author_index'):
-    monkeypatch.setattr(Tree, name, collections.defaultdict(set))
-  monkeypatch.setattr(Tree, '_type_index', {k: set() for k in Tree._type_index})
 
 
 def _add(key, target=TARGET, caplog=None):

@@ -1,11 +1,11 @@
-"""The tools answer from the committed claim table.
+"""The tools answer from the claim table, here the test corpus's.
 
 `source_coverage` must return the declared value an uncaptured
 question's gap block relies on; the resolver must fold the
 typographical variation G10 names; `contents`, `history`, `gap` and the
-rest must render what the worked examples say. CI proves `claims/`
-current, so these tests read the committed files rather than
-re-extracting.
+rest must render what the worked examples say. The store is the one
+`conftest.py` writes from `tests/corpus/`, so the data cannot drift under
+these tests.
 """
 
 import json
@@ -1459,7 +1459,7 @@ def test_specimen_lines_print_the_prefix_once(numbered):
 
 
 def _sentences(block):
-  """The sentences of the synthetic source's own citations (the real corpus
+  """The sentences of the synthetic source's own citations (the corpus
   cites some of the same specimens)."""
   return [e['sentence'] for e in block.get('entries', []) if e['source'] == '1961_dehm']
 

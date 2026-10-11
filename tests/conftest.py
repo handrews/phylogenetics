@@ -100,12 +100,6 @@ def _isolated(corpus):
 
 
 @pytest.fixture(scope='session')
-def load_records(corpus):
-  """``(data, records, roots)`` of the corpus: the older name of the load."""
-  return corpus.data, corpus.records, corpus.roots
-
-
-@pytest.fixture(scope='session')
 def store(corpus):
   return corpus.store
 

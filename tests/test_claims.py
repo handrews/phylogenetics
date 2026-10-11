@@ -174,7 +174,7 @@ def test_change_node_acts(claims):
 
 
 @pytest.mark.parametrize('axis', ['translated', 'corrected', 'substituted', 'moved', 'removed'])
-def test_earlier_state_entries_are_cited(load_records, caplog, axis):
+def test_earlier_state_entries_are_cited(caplog, axis):
   # The node under a change is the earlier state of the name as this
   # source cites it: as on a synonymy entry, its pages and illustrations
   # locate that earlier use, never this source's own page or figure.
@@ -203,7 +203,7 @@ def test_earlier_state_entries_are_cited(load_records, caplog, axis):
     assert claim['citedPages'] == 12 and claim['citedIllustrations'] == illustrations
 
 
-def test_lapsus_is_the_slip_not_a_synonym(load_records, caplog):
+def test_lapsus_is_the_slip_not_a_synonym(caplog):
   # The intended name stands in the tree and the name printed by a slip of
   # the pen hangs under `lapsus`: the intended name's node names the slip,
   # and the slip is used as printed here but neither accepted as a synonym
@@ -242,7 +242,7 @@ def test_lapsus_listed_in_a_synonymy(claims):
   assert entry['parents'] == ['steganoblastus'] and entry['citedPages'] == 395
 
 
-def test_lapsus_records_stay_under_lapsus(load_records, caplog):
+def test_lapsus_records_stay_under_lapsus(caplog):
   # A lapsus record appears under `lapsus`, or as a synonymy entry marked
   # `lapsusFor`; anywhere else, and a `lapsusFor` off a synonymy entry, is
   # an error.
@@ -278,7 +278,7 @@ def test_lapsus_records_stay_under_lapsus(load_records, caplog):
   assert len(errors) == 1 and 'is not a `synonyms` or `non` entry' in errors[0]
 
 
-def test_recombined_is_the_printed_new_combination(load_records, caplog):
+def test_recombined_is_the_printed_new_combination(caplog):
   # "comb. nov.": the act on the species, beside the move out of the genus
   # it leaves; followed from another work, it names that work.
   child = {
@@ -313,7 +313,7 @@ def test_recombined_is_the_printed_new_combination(load_records, caplog):
   assert len(errors) == 1 and 'is not a species-group name' in errors[0]
 
 
-def test_emended_by_lists_the_emendations_followed(load_records, caplog):
+def test_emended_by_lists_the_emendations_followed(caplog):
   # "Emended Paul, 1972b, and herein": each emendation the source follows
   # names its work, in printed order, before the source's own.
   root = Tree(
@@ -343,7 +343,7 @@ def test_emended_by_lists_the_emendations_followed(load_records, caplog):
   assert not schema.check({'taxonomies': [{'taxon': 'rhenopyrgus', 'emendedBy': []}]})
 
 
-def test_material_adapter(load_records, caplog):
+def test_material_adapter(caplog):
   # Contexts, material, illustrations, ranges, in that fixed order, over a
   # node with a file context, a node context, a numbered entry, a range
   # pair, a label-only entry, an explicit repository, a prefix the file's
@@ -518,7 +518,7 @@ def _numbered(entries, prefixes=None, locality_register=None, **node):
   return [c for c in claims if c.get('materialKind') == 'specimen']
 
 
-def test_a_prefix_and_numbers_entry_carries_its_fields_and_display_ids(load_records):
+def test_a_prefix_and_numbers_entry_carries_its_fields_and_display_ids():
   [claim] = _numbered(
     [{'prefix': 'MCZ', 'numbers': ['581A', 581], 'asPrinted': 'MCZ 581A, 581', 'role': 'holotype'}],
     {'MCZ': 'mcz'},
@@ -534,7 +534,7 @@ def test_a_prefix_and_numbers_entry_carries_its_fields_and_display_ids(load_reco
   assert 'rangeJoin' not in claim
 
 
-def test_two_printed_prefixes_of_one_register_share_a_join_key(load_records):
+def test_two_printed_prefixes_of_one_register_share_a_join_key():
   first, second = _numbered(
     [{'prefix': 'F.', 'numbers': [5404]}, {'prefix': 'UQF', 'numbers': ['5404']}],
     {'F.': 'uq-f', 'UQF': 'uq-f'},
@@ -543,7 +543,7 @@ def test_two_printed_prefixes_of_one_register_share_a_join_key(load_records):
   assert (first['ids'], second['ids']) == (['F. 5404'], ['UQF 5404'])
 
 
-def test_a_range_pair_gives_both_ends_and_stays_a_pair_in_ids(load_records):
+def test_a_range_pair_gives_both_ends_and_stays_a_pair_in_ids():
   [claim] = _numbered(
     [{'prefix': 'GSC', 'numbers': [[25935, 25961], 'A-1'], 'asPrinted': 'GSC 25935–25961'}],
     {'GSC': 'gsc'},
@@ -554,7 +554,7 @@ def test_a_range_pair_gives_both_ends_and_stays_a_pair_in_ids(load_records):
   assert claim['numbers'] == [[25935, 25961], 'A-1']
 
 
-def test_an_explicit_repository_within_the_prefixs_register_keys_under_the_register(load_records):
+def test_an_explicit_repository_within_the_prefixs_register_keys_under_the_register():
   [specimen] = _numbered(
     [{'prefix': 'USNM', 'numbers': [165421], 'repository': 'usnm-walcott'}],
     {'USNM': 'usnm'},
@@ -566,7 +566,7 @@ def test_an_explicit_repository_within_the_prefixs_register_keys_under_the_regis
   assert same['joinKeys'] == ['usnm:1']
 
 
-def test_an_explicit_repository_outside_the_prefixs_register_wins(load_records):
+def test_an_explicit_repository_outside_the_prefixs_register_wins():
   [specimen] = _numbered(
     [{'prefix': 'MCZ', 'numbers': [690], 'repository': 'usnm-walcott'}], {'MCZ': 'mcz'}
   )
@@ -579,7 +579,7 @@ def test_an_explicit_repository_outside_the_prefixs_register_wins(load_records):
   assert above['joinKeys'] == ['usnm:1']
 
 
-def test_numbers_with_no_prefix_key_under_the_repository_or_not_at_all(load_records):
+def test_numbers_with_no_prefix_key_under_the_repository_or_not_at_all():
   repo, holder, nothing = _numbered(
     [
       {'repository': 'u-cincinnati-caster', 'numbers': ['KR-2']},
@@ -598,7 +598,7 @@ def test_numbers_with_no_prefix_key_under_the_repository_or_not_at_all(load_reco
   assert nothing['ids'] == ['ZZ 1']
 
 
-def test_a_figure_names_a_prefix_and_numbers_entry_by_a_number(load_records):
+def test_a_figure_names_a_prefix_and_numbers_entry_by_a_number():
   [claim] = _numbered(
     [{'prefix': 'MCZ', 'numbers': [581, ['600', '610']]}],
     {'MCZ': 'mcz'},
@@ -607,7 +607,7 @@ def test_a_figure_names_a_prefix_and_numbers_entry_by_a_number(load_records):
   assert [f['plate'] for f in claim['specimenIllustrations']] == [1, 2]
 
 
-def test_locality_keys_on_specimen_claims(load_records):
+def test_locality_keys_on_specimen_claims():
   entries = [
     {
       'prefix': 'GK',
@@ -634,7 +634,7 @@ def test_locality_keys_on_specimen_claims(load_records):
   assert claim['localityKeys'] == ['usgs-l:91526a', 'usgs-l:4148co']
 
 
-def test_an_object_of_names_one_specimen_by_prefix_or_label(load_records):
+def test_an_object_of_names_one_specimen_by_prefix_or_label():
   gk, gtb, slab = _numbered(
     [
       {'prefix': 'GK', 'numbers': [112]},
@@ -673,7 +673,7 @@ def _locality(context, prefixes=None, locality_register=None):
   return claim
 
 
-def test_locality_keys_of_object_numbers(load_records):
+def test_locality_keys_of_object_numbers():
   context = {
     'localityNumbers': [
       {'number': 'FC-1'},
@@ -991,7 +991,7 @@ def test_manifest_synonymy_keeps_the_count_check_unless_a_null_derives_it(monkey
   assert not [r for r in entry['inconsistencies'] if r.startswith('synonymy: declared all, no')]
 
 
-def test_manifest_reports_derived_disagreement(load_records, monkeypatch):
+def test_manifest_reports_derived_disagreement(monkeypatch):
   # A declared value that the file's nulls contradict is an inconsistency
   # row naming both, and the effective map carries the derived label.
   from phylohist.loader.research import Source
@@ -1253,13 +1253,13 @@ def _conflicts(*claims):
   return holotype_conflicts(by_source)
 
 
-def test_one_specimen_under_two_printed_forms_is_no_conflict(load_records):
+def test_one_specimen_under_two_printed_forms_is_no_conflict():
   first = _claim('1941_whitehouse', ids=['F. 5404'], joinKeys=['uq-f:5404'])
   second = _claim('2021_jell_sprinkle', ids=['UQF5404'], joinKeys=['uq-f:5404'])
   assert _conflicts(first, second) == []
 
 
-def test_two_different_numbers_are_a_conflict_in_year_order(load_records):
+def test_two_different_numbers_are_a_conflict_in_year_order():
   later = _claim('2021_jell_sprinkle', ids=['UQF 9'], joinKeys=['uq-f:9'])
   first = _claim('1941_whitehouse', ids=['F. 5404'], joinKeys=['uq-f:5404'])
   [row] = _conflicts(later, first)
@@ -1280,7 +1280,7 @@ def test_two_different_numbers_are_a_conflict_in_year_order(load_records):
   ]
 
 
-def test_a_later_lectotype_or_neotype_is_no_conflict(load_records):
+def test_a_later_lectotype_or_neotype_is_no_conflict():
   holotype = _claim('1941_whitehouse', ids=['F. 5404'], joinKeys=['uq-f:5404'])
   for role in ('lectotype', 'neotype'):
     later = _claim('2021_jell_sprinkle', role=role, ids=['UQF 9'], joinKeys=['uq-f:9'])
@@ -1291,7 +1291,7 @@ def test_a_later_lectotype_or_neotype_is_no_conflict(load_records):
   assert _conflicts(holotype, later, report) == []
 
 
-def test_an_uncertain_holotype_is_ignored(load_records):
+def test_an_uncertain_holotype_is_ignored():
   holotype = _claim('1941_whitehouse', ids=['F. 5404'], joinKeys=['uq-f:5404'])
   doubtful = _claim('2021_jell_sprinkle', ids=['UQF 9'], joinKeys=['uq-f:9'], uncertain=True)
   assert _conflicts(holotype, doubtful) == []
@@ -1300,7 +1300,7 @@ def test_an_uncertain_holotype_is_ignored(load_records):
   assert _conflicts(holotype, lectotype) == []
 
 
-def test_other_roles_and_a_single_source_are_no_conflict(load_records):
+def test_other_roles_and_a_single_source_are_no_conflict():
   holotype = _claim('1941_whitehouse', ids=['F. 5404'], joinKeys=['uq-f:5404'])
   paratype = _claim('2021_jell_sprinkle', role='paratype', ids=['UQF 9'], joinKeys=['uq-f:9'])
   assert _conflicts(holotype, paratype) == []
@@ -1308,7 +1308,7 @@ def test_other_roles_and_a_single_source_are_no_conflict(load_records):
   assert _conflicts(holotype, other) == []
 
 
-def test_unnumbered_holotypes_are_compared_by_label_then_printed_ids(load_records):
+def test_unnumbered_holotypes_are_compared_by_label_then_printed_ids():
   first = _claim('1941_whitehouse', label='the Taf. 2 fossil')
   same = _claim('2021_jell_sprinkle', label='the Taf. 2 fossil')
   assert _conflicts(first, same) == []
@@ -1322,7 +1322,7 @@ def test_unnumbered_holotypes_are_compared_by_label_then_printed_ids(load_record
 
 
 def test_the_manifest_reports_holotype_conflicts(claims, roots):
-  # The real corpus: the function runs and the manifest carries what it returns.
+  # The corpus: the function runs and the manifest carries what it returns.
   assert isinstance(holotype_conflicts(claims), list)
   assert manifest(claims, roots)['holotypeConflicts'] == holotype_conflicts(claims)
 
@@ -1352,7 +1352,7 @@ def test_the_linked_sources_are_in_year_order():
   assert [Source.get(k).year for k in (_EARLY, _LATE, _LATEST)] == [1897, 1914, 1962]
 
 
-def test_same_as_is_copied_and_resolved_to_the_earlier_claim(load_records):
+def test_same_as_is_copied_and_resolved_to_the_earlier_claim():
   link = {'source': _EARLY, 'label': 'First  specimen'}
   claims = _linked_claims(
     {
@@ -1370,7 +1370,7 @@ def test_same_as_is_copied_and_resolved_to_the_earlier_claim(load_records):
   assert 'sameAs' not in first and 'sameAsClaim' not in first
 
 
-def test_same_as_by_number_within_a_prefix(load_records):
+def test_same_as_by_number_within_a_prefix():
   entries = [
     {'prefix': 'GSC', 'numbers': [5]},
     {'prefix': 'ROM', 'numbers': [5]},
@@ -1392,7 +1392,7 @@ def test_same_as_by_number_within_a_prefix(load_records):
   assert target == early[2]['id']
 
 
-def test_same_as_stays_unresolved_when_the_target_is_not_extracted_or_not_found(load_records):
+def test_same_as_stays_unresolved_when_the_target_is_not_extracted_or_not_found():
   link = {'source': _EARLY, 'label': 'first specimen'}
   trees = {
     _EARLY: (1306, {'taxon': _OTTAWA, 'material': [{'label': 'first specimen'}]}),
@@ -1405,7 +1405,7 @@ def test_same_as_stays_unresolved_when_the_target_is_not_extracted_or_not_found(
   assert 'sameAsClaim' not in _specimens(claims, _LATE)[0]
 
 
-def test_an_inferred_same_as_is_listed_in_inferred_fields(load_records):
+def test_an_inferred_same_as_is_listed_in_inferred_fields():
   editorial = {'inferred': ['role', 'sameAs'], 'basis': 'the editor reads No. 752 as the lectotype'}
   node = {
     'taxon': _OTTAWA,
@@ -1435,7 +1435,7 @@ def _holotype_chain(middle_role):
   return early, middle, late
 
 
-def test_holotypes_linked_by_same_as_are_one_specimen(load_records):
+def test_holotypes_linked_by_same_as_are_one_specimen():
   early = _claim(_EARLY, id='early', label='first specimen')
   later = _claim(_LATE, id='later', label='A', sameAsClaim='early')
   assert _conflicts(early, later) == []
@@ -1448,7 +1448,7 @@ def test_holotypes_linked_by_same_as_are_one_specimen(load_records):
 
 
 @pytest.mark.parametrize('middle_role', ['holotype', 'syntype'])
-def test_holotypes_linked_through_a_chain_are_one_specimen(load_records, middle_role):
+def test_holotypes_linked_through_a_chain_are_one_specimen(middle_role):
   assert _conflicts(*_holotype_chain(middle_role)) == []
   # Without the middle link the ends are two specimens.
   early, middle, late = _holotype_chain(middle_role)
@@ -1456,7 +1456,7 @@ def test_holotypes_linked_through_a_chain_are_one_specimen(load_records, middle_
   assert len(_conflicts(early, middle, late)) == 1
 
 
-def test_a_shared_join_key_joins_one_number_entries_but_a_batch_joins_nothing(load_records):
+def test_a_shared_join_key_joins_one_number_entries_but_a_batch_joins_nothing():
   one = _claim('1941_whitehouse', id='one', ids=['F. 1'], joinKeys=['uq-f:1'])
   two = _claim('2021_jell_sprinkle', id='two', ids=['UQF 2'], joinKeys=['uq-f:2'])
   # A paratype entry printing both numbers does not make them one specimen.

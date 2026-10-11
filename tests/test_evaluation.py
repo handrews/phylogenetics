@@ -3,7 +3,7 @@
 `phylohist.evaluation` decides where the key comes from, what a
 submission becomes, whether a composition meets an expected answer,
 and how a judge's reply is read; each decision is checked here on
-small synthetic records over the real store.
+small synthetic records over the corpus store.
 """
 
 from phylohist import evaluation as ev

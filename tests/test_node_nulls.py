@@ -2,7 +2,7 @@
 schema, the loader check, the claims, the derived `skeleton` coverage, and
 the listing, sentence and table the tools say.
 
-Synthetic trees are built on the session's loaded corpus under positions
+Synthetic trees are built on the loaded test corpus under positions
 330 and up (`Tree` keeps class-level registries); the tool tests read a
 `ClaimStore` over a copy of `claims/` whose file for `1766_linnaeus` is
 replaced by the claims of those trees, since no data uses the nulls yet.
@@ -22,10 +22,6 @@ from phylohist.loader.taxa import Taxon, Tree
 from phylohist.store import ClaimStore
 from phylohist.words import ABSENCE_WORDS
 from tests import support
-
-# The synthetic trees name real records, so every test needs the corpus loaded.
-pytestmark = pytest.mark.usefixtures('load_records')
-
 
 SOURCE = '1766_linnaeus'
 INFERRED = {'inferred': True, 'basis': 'Carried over from the first part, published 1766.'}
@@ -189,7 +185,7 @@ def _at(claims, path, kind='placement'):
   return claim
 
 
-def test_a_null_rank_is_a_null_rank_as_printed(load_records):
+def test_a_null_rank_is_a_null_rank_as_printed():
   root = {
     'taxon': 'animalia',
     'rank': 'Kingdom',
@@ -204,7 +200,7 @@ def test_a_null_rank_is_a_null_rank_as_printed(load_records):
   assert 'rankAsPrinted' not in _at(claims, '330', 'usage')
 
 
-def test_an_inferred_node_with_null_pages_has_none(load_records):
+def test_an_inferred_node_with_null_pages_has_none():
   root = {
     'taxon': 'animalia',
     'rank': 'Kingdom',
@@ -222,7 +218,7 @@ def test_an_inferred_node_with_null_pages_has_none(load_records):
   assert 'pages' not in _at(claims, '331/children/1')
 
 
-def test_a_node_without_pages_does_not_take_its_parents(load_records):
+def test_a_node_without_pages_does_not_take_its_parents():
   # A parent's page says where the parent is printed, not its children.
   root = {
     'taxon': 'animalia',
@@ -839,7 +835,7 @@ def test_schema_rejects_a_null_authority_on_a_record_or_a_section():
   assert not support.schema()['sections'].check({'integra': {**section, 'authority': None}})
 
 
-def test_a_null_authority_says_none_was_printed(load_records):
+def test_a_null_authority_says_none_was_printed():
   root = {
     'taxon': 'animalia',
     'authority': None,
