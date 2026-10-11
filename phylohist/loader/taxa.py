@@ -908,7 +908,7 @@ class Tree:
       and marker.get('new')
       and section.authority is not None
       and section.authority.source is not None
-      and section.authority.source != self._source
+      and section.authority.source.canonical != self._source
     ):
       logger.error(
         f'Expected source {self._source} for new section {section.key}, '
@@ -985,7 +985,8 @@ class Tree:
         and self._taxon.authority.source
       ):
         is_new = self._data.get('new')
-        tsource = self._taxon._authority.source
+        # An authority may cite the tree's source by an alias.
+        tsource = self._taxon._authority.source.canonical
 
         if is_new and self._source != tsource:
           logger.error(

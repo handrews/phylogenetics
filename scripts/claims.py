@@ -129,7 +129,7 @@ def report_inconsistencies(claims_by_source, roots):
   rows = report['sources']
   found = 0
   for source_key, entry in rows.items():
-    if not entry['inconsistencies']:
+    if not entry.get('inconsistencies'):
       continue
     found += 1
     review = ROOT / 'notes' / 'reviews' / f'review_{source_key}.md'

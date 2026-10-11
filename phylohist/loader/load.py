@@ -28,6 +28,21 @@ def _basic_load(data, field, cls):
   logger.info(f'...{field} loaded.')
 
 
+def _load_sources(data):
+  # An alias resolves its target on construction, so aliases load last,
+  # wherever they sit in the file.
+  logger.info(f'Loading {len(data["sources"])} sources...')
+  deferred = []
+  for source_key, source_data in data['sources'].items():
+    if 'aliasOf' in source_data:
+      deferred.append((source_key, source_data))
+      continue
+    Source.add(source_data, source_key)
+  for source_key, source_data in deferred:
+    Source.add(source_data, source_key)
+  logger.info('...sources loaded.')
+
+
 def _load_taxa(data):
   logger.info(f'Processing {len(data["taxa"])} taxa...')
   deferred = []
@@ -75,8 +90,10 @@ def _report_missing_protologues(data):
     if taxon.name is None or taxon.derivative_of is not None:
       continue
     source = taxon.authority.source
-    if source is None or source.key not in data['trees']:
+    if source is None or source.canonical.key not in data['trees']:
       continue
+    # An authority may cite its protologue's source by an alias.
+    source = source.canonical
     if source.key not in Tree._new_index.get(taxon.key, ()):
       logger.warning(f'Protologue not flagged: {taxon.key} in {source.key}')
       missing += 1
@@ -134,8 +151,9 @@ def _report_protologue_mismatches(data, roots):
     if 'pages' not in taxon._data:
       continue
     source = taxon.authority.source
-    if source is None or source.key not in data['trees']:
+    if source is None or source.canonical.key not in data['trees']:
       continue
+    source = source.canonical
     trees = roots.get(source.key, ())
     tree_file = display_path(TREE_DIR / f'{source.key}.yaml')
     where = f'taxa.yaml {taxon.key}'
@@ -194,8 +212,9 @@ def _report_section_protologues(data, roots):
     if 'pages' not in section._data:
       continue
     source = section.authority.source if section.authority else None
-    if source is None or source.key not in data['trees']:
+    if source is None or source.canonical.key not in data['trees']:
       continue
+    source = source.canonical
     tree_file = display_path(TREE_DIR / f'{source.key}.yaml')
     where = f'sections.yaml {section.key}'
     markers = [
@@ -246,6 +265,12 @@ def _load_trees(data):
       # not built half-way, so a draft without its record fails the load
       # cleanly instead of crashing it.
       logger.error(f'Tree file "{ref_key}" has no source record; its trees are skipped')
+      continue
+    if Source.get(ref_key).canonical.key != ref_key:
+      logger.error(
+        f'Tree file "{ref_key}" is named by an alias; name it '
+        f'"{Source.get(ref_key).canonical.key}". Its trees are skipped',
+      )
       continue
     roots[ref_key] = []
     file_meta = {
@@ -427,9 +452,9 @@ def load(drafts=False, tolerate=False):
     for field, cls in (
       ('authors', Author),
       ('publications', Publication),
-      ('sources', Source),
     ):
       _basic_load(data, field, cls)
+    _load_sources(data)
     _load_taxa(data)
     _basic_load(data, 'sections', Section)
     roots = _load_trees(data)

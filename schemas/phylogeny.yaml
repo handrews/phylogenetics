@@ -28,7 +28,9 @@ $defs:
     propertyNames:
       $ref: "#/$defs/sourceId"
     additionalProperties:
-      $ref: "#/$defs/article"
+      oneOf:
+      - $ref: "#/$defs/article"
+      - $ref: "#/$defs/sourceAlias"
   taxa:
     type: object
     additionalProperties:
@@ -294,6 +296,21 @@ $defs:
           type: string
       notes:
         type: string
+  sourceAlias:
+    description: |
+      A key under which a source is cited by only some of its authors, as
+      ICZN attribution requires ("Goldfuss, 1831" for a name Goldfuss alone
+      established in Goldfuss and Münster, 1831). The alias key's year and
+      disambiguation letter are the target's, and its authors are a strict
+      subset of the target's, in the target's order. Everything but the
+      authors is the target's; the target is a source record, never another
+      alias.
+    type: object
+    required: [aliasOf]
+    additionalProperties: false
+    properties:
+      aliasOf:
+        $ref: "#/$defs/sourceId"
   authority:
     type: object
     required: [source]
