@@ -1,8 +1,17 @@
 taxonomies:
 - taxon: echinodermata
-  auth: [bruguiére]
-  year: 1791
+  citedAs: Phylum ECHINODERMATA Bruguiere, 1791
+  rank: Phylum
+  authority:
+    source: 1791_bruguière
+  pages: v
+  notes: From the Table of Contents.
   children:
+  - taxon: blastozoa
+    citedAs: Subphylum BLASTOZOA Sprinkle, 1973
+    rank: Subphylum
+    pages: v
+    notes: From the Table of Contents.
   - taxon: blastozoa
     children:
     - taxon: diploporita-class

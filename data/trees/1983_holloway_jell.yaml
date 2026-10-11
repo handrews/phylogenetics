@@ -1,5 +1,9 @@
 taxonomies:
 - taxon: edrioasteroidea
+  citedAs: Class EDRIOASTEROIDEA
+  rank: Class
+  authority: null
+  pages: 1002
   children:
   - openTaxon: edrioasteroidea-order-uncertain_holloway_jell_1983
     children:

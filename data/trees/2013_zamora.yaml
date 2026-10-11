@@ -1,5 +1,8 @@
 taxonomies:
 - taxon: edrioasteroidea
+  citedAs: Class EDRIOASTEROIDEA Billings, 1858
+  rank: Class
+  pages: 423
   children:
   - taxon: aragocystites
     new: true

@@ -2,15 +2,25 @@ prefixes:
   SAMP: sam
 taxonomies:
 - taxon: echinodermata
+  citedAs: Phylum ECHINODERMATA
+  rank: Phylum
+  authority: null
+  pages: 339
   children:
   - taxon: edrioasteroidea
+    citedAs: Class EDRIOASTEROIDEA?
+    rank: Class
+    authority: null
     children:
     - taxon: arkarua
+      citedAs: Arkarua gen. nov.
       provisional: true
       new: true
+      type:
+        taxon: adami_gehling_1987
       children:
       - taxon: adami_gehling_1987
-        isType: true
+        citedAs: Arkarua adami gen. et sp. nov. (Figs 3-6)
         new: true
         material:
         - prefix: SAMP
@@ -19,3 +29,15 @@ taxonomies:
         - prefix: SAMP
           numbers: [26769, 26770, 26771, 26772, 26773, 26774, 26775]
           role: paratype
+        illustrations:
+        - page: 340
+          textFigures: 3
+          depicts: drawing
+          of: 26768
+        - page: 341
+          textFigures: 4
+          depicts: cast
+          of: 26768
+        - page: 343
+          textFigures: 5
+          depicts: reconstruction

@@ -1,17 +1,70 @@
 taxonomies:
+- taxon: arthropoda
+  citedAs: Phylum Arthropoda Siebold and Stannius, 1845
+  rank: Phylum
+  auth: [Siebold, Stannius]
+  year: 1845
+  pages: 392
+  children:
+  - openTaxon: arthropoda-class-uncertain_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010
+    citedAs: Class, Order and Family Uncertain
+    rank: Class
+    new: true
+    pages: 394
+    children:
+    - openTaxon: arthropoda-order-uncertain_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010
+      citedAs: Class, Order and Family Uncertain
+      rank: Order
+      new: true
+      pages: 394
+      children:
+      - openTaxon: arthropoda-family-uncertain_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010
+        citedAs: Class, Order and Family Uncertain
+        rank: Family
+        new: true
+        pages: 394
+        children:
+        - taxon: clypecaris
+          citedAs: Genus Clypecaris? Hou, 1999
+          pages: 394
+          children:
+          - openTaxon: clypecaris-sp_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010
+            citedAs: Clypecaris? sp.
+            new: true
+            provisional: true
+            pages: 394
 - taxon: echinodermata
+  citedAs: Echinodermata Klein, 1734
+  rank: null
   authority:
     source: 1734_klein
+  pages: 394
   children:
   - taxon: blastozoa
+    citedAs: Subphylum Blastozoa Sprinkle, 1973
+    rank: Subphylum
+    pages: 394
     children:
     - taxon: eocrinoidea
+      citedAs: Class Eocrinoidea Jaekel, 1918
+      rank: Class
+      pages: 394
       children:
       - taxon: gogiida
+        citedAs: Order Gogiida Broadhead, 1982
+        rank: Order
+        pages: 394
         children:
         - taxon: eocrinidae
+          citedAs: Family Eocrinidae Jaekel, 1918
+          rank: Family
+          pages: 394
           children:
           - taxon: sinoeocrinus
+            citedAs: Genus Sinoeocrinus Zhao et al., 1994
+            pages: 394
             children:
             - openTaxon: sinoeocrinus-sp_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010
+              citedAs: Sinoeocrinus sp.
               new: true
+              pages: 394

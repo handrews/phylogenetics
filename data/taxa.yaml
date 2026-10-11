@@ -920,8 +920,31 @@ arthriticus_phillips.j_1839:
 arthropoda:
   name: Arthropoda
   rank: Phylum
-  auth: [von Siebold]
+  auth: [Siebold]
   year: 1848
+  notes: >
+    Also seen credited to Siebold and Stannius 1845 or Gravenhorst 1843
+arthropoda-class-uncertain_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010:
+  name: null
+  rank: Class
+  pages: 394
+  authority:
+    source: 2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l
+  citedAs: Class, Order and Family Uncertain
+arthropoda-order-uncertain_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010:
+  name: null
+  rank: Order
+  pages: 394
+  authority:
+    source: 2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l
+  citedAs: Class, Order and Family Uncertain
+arthropoda-family-uncertain_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010:
+  name: null
+  rank: Family
+  pages: 394
+  authority:
+    source: 2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l
+  citedAs: Class, Order and Family Uncertain
 articulata:
   name: Articulata
   rank: Subclass
@@ -2531,6 +2554,20 @@ clypeatus_lamarck_1801:
   name: clypeatus
   authority:
     source: 1801_lamarck
+clypecaris:
+  name: Clypecaris
+  auth: [Hou]
+  year: 1999
+  notes: >
+    Seen in 2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l
+    (mostly in Chinese) but no exact match in bibliography.
+clypecaris-sp_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010:
+  name: null
+  rank: genus
+  pages: 394
+  authority:
+    source: 2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l
+  citedAs: Clypecaris? sp.
 clypeus:
   name: Clypeus
   authority:
@@ -3671,11 +3708,14 @@ diplobathrida:
 diplobathra:
   name: Diplobathra
   altSpellingOf: diplobathrida
-diploporita-class:
+diploporita-group:
   name: Diploporita
-  rank: Class
+  rank: null
   authority:
     source: 1854_müller.j.p
+diploporita-class:
+  rank: Class
+  altRankOf: diploporita-group
 diploporita-order:
   rank: Order
   altRankOf: diploporita-class
@@ -3947,23 +3987,24 @@ echinoderma:
 echinodermata:
   # or Bruguière 1789
   # Encyclopédie Méthodique. Histoire Naturelle des Vers. Tome Premier
+  # or Bruguière 1791 ex Klein 1734
   name: Echinodermata
-  rank: Phylum
-  status: monophyletic
-  authority:
-    source: 1791_bruguière
-    ex:
-      source: 1734_klein
-echinodermata_klein_1778:
-  name: Echinodermata
-  needsQualification: true
+  rank: null
   authority:
     source: 1778_klein
-echinodermatum:
-  name: Echinodermatum
-  authority:
-    source: 1734_klein
-  altSpellingOf: echinodermata
+  notes: >
+    The 1778 reprint of Klein 1734 is the earliest
+    post-10th Edition Systema Naturae use of "Echinodermata",
+    which does appear in that form (as well as "Echinodermatum"),
+    in the text.  It is the unranked overall descriptor
+    of the set of classes Klein established, but it is not
+    entirely clear if he intended it as a taxon of some sort.
+    Nevertheless, Stokes 2021 argues that this is the proper
+    credit given the looseness of ICZN regulations above the
+    Family rank group.
+
+    Common alternatives are Bruguière 1789 or
+    Bruguière 1791 [ex Klein 1734].
 echinodermata-class:
   rank: Class
   altRankOf: echinodermata
@@ -3994,6 +4035,10 @@ echinodermen:
   name: Echinodermen
   lang: DE
   vulgarSpellingOf: echinodermata-order # maybe?  Rank not at all clear
+échinodermes:
+  name: Échinodermes
+  vulgarSpellingOf: echinodermata
+  lang: FR
 échinodermes-order:
   name: Échinodermes
   vulgarSpellingOf: echinodermata-order
@@ -4224,6 +4269,10 @@ edrioasterida:
   rank: Order
   authority:
     source: 1976_bell.b.m
+edrioasteroida:
+  name: Edrioasteroida
+  altSpellingOf: edrioasterida
+  notes: Lapsus calami for Edrioasterida in Smith 1985
 edrioasterida-indeterminate-family_sumrall_sprinkle_guensburg_1997:
   name: null
   rank: Family
@@ -4239,6 +4288,24 @@ edrioasterida-sp_sumrall_sprinkle_guensburg_1997:
   rank: species
   authority:
     source: 1997_sumrall_sprinkle_guensburg
+edrioasteridae_billings_1858b:
+  name: Edrioasteridae
+  needsQualification: true
+  rank: Suborder
+  pages: 85
+  authority:
+    source: 1858b_billings
+  citedAs: a sub-order, for which the name Edrioasteridæ would be appropriate
+  notes: >
+    This Suborder named like a Family is the precursor to the
+    Class Edrioasteriodea, and not Bather's Family Edrioasteridae
+edrioasteriden:
+  name: Edrioasteriden
+  lang: DE
+  vulgarSpellingOf: edrioasteridae_billings_1858b
+  notes: >
+    Used in Schmidt 1879; unclear if anyone had modified Billings'
+    original taxon in the intervening years.
 edrioasteridae:
   name: Edrioasteridae
   rank: Family
@@ -4262,10 +4329,6 @@ edrioasteroidea:
   bracket: Edrioasteroids
   authority:
     source: 1858b_billings
-edrioasteridae-suborder:
-  name: Edrioasteridae
-  rank: Suborder
-  altRankOf: edrioasteroidea
 edrioasteroidea-order-uncertain_bassler_1935:
   name: null
   rank: Order
