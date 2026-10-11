@@ -1,9 +1,19 @@
 taxonomies:
-- taxon: echinodermata
+- mergeInto: [1967a_ubaghs, 0]
+  taxon: echinodermata
+  rank: Phylum
+  authority:
+    source: 1789a_bruguière
+  editorial:
+    inferred: true
+    basis: The whole volume is about echinoderms.
   children:
   - taxon: echinozoa
     children:
     - taxon: edrioasteroidea
+      citedAs: Class EDRIOASTEROIDEA Billings, 1858
+      rank: Class
+      pages: U136
       # occurrenceSummary:
       # - seriesRange: [Lower Cambrian, Upper Mississippian]
       children:
@@ -140,6 +150,9 @@ taxonomies:
           - taxon: pulaskiensis_miller.s.a_gurley_1894
             isType: true
       - taxon: edrioasteridae
+        citedAs: Family EDRIOASTERIDAE Bather, 1898
+        rank: Family
+        pages: U171
         children:
         - taxon: edrioaster
           children:

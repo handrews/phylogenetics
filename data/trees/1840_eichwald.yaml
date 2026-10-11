@@ -10,8 +10,8 @@ taxonomies:
     - taxon: cyathocrinites
       children:
       - taxon: planus_miller.j.s_1821
-        auth: [Goldfuss]
-        year: 1831
+        authority:
+          source: 1831_goldfuss
       - taxon: pinnatus_goldfuss_1831
     - taxon: eugeniacrinites
       children:

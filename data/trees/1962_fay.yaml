@@ -1,6 +1,9 @@
 taxonomies:
 - taxon: edrioblastoidea
+  rank: Class
   new: true
+  pages: 201
+  notes: No formal declaration, just prose.
   children:
   - taxon: astrocystites
     moved:

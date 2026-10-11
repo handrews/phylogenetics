@@ -1,10 +1,15 @@
 taxonomies:
 - taxon: edrioasteroidea
+  citedAs: Class EDRIOASTEROIDEA Billings, 1858
+  rank: Class
+  pages: 35
   children:
   - taxon: isorophida
     auth: [bell.b.m]
     year: 1974
-    citedAs: Bell, 1974
+    citedAs: Order ISOROPHIDA Bell, 1974
+    rank: Order
+    pages: 35
     editorial:
       corrections:
         auth: null
@@ -18,11 +23,17 @@ taxonomies:
       as it was not actually published until 1976.
     children:
     - taxon: cyathocystina
+      citedAs: Suborder CYATHOCYSTINA, new subord.
+      rank: Suborder
       new: true
+      pages: 35
       children:
       - taxon: cyathocystidae
+        citedAs: Family CYATHOCYSTIDAE Bather, 1899
+        rank: Family
         authority:
           source: 1899_bather
+        pages: 36
         children:
         - taxon: cyathocystis
           children:

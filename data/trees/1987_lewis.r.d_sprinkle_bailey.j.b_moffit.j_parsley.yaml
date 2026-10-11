@@ -1,7 +1,10 @@
 taxonomies:
 - taxon: echinodermata
+  citedAs: Phylum ECHINODERMATA Bruguiere, 1789
+  rank: Phylum
   authority:
     source: 1789a_bruguière
+  pages: 1233
   children:
   - taxon: blastozoa
     children:

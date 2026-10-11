@@ -1,13 +1,28 @@
 taxonomies:
 - taxon: echinodermata
-  auth: [bruguiére]
-  year: 1791
+  citedAs: Phylum ECHINODERMATA Bruguiere, 1791
+  rank: Phylum
+  authority:
+    source: 1791_bruguière
+  pages: v
+  notes: From the Table of Contents.
   children:
   - taxon: echinozoa
+    citedAs: Subphylum ECHINOZOA Zittel, 1895
+    rank: Subphylum
+    pages: vi
+    notes: From the Table of Contents.
     children:
     - taxon: cyclocystoidea
+      citedAs: Class CYCLOCYSTOIDEA Miller and Gurley, 1895
+      rank: Class
+      pages: 309
+      notes: Also in Table of Contents, identical citation.
       children:
       - taxon: cyclocystoididae
+        citedAs: Family CYCLOCYSTOIDIDAE Miller, 1882
+        rank: Family
+        pages: 309
         children:
         - taxon: cyclocystoides
           children:

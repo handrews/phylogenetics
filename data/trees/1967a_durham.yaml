@@ -1,5 +1,12 @@
 taxonomies:
-- taxon: echinodermata
+- mergeInto: [1967a_ubaghs, 0]
+  taxon: echinodermata
+  rank: Phylum
+  authority:
+    source: 1789a_bruguière
+  editorial:
+    inferred: true
+    basis: The whole volume is about echinoderms.
   children:
   - taxon: echinozoa
     children:

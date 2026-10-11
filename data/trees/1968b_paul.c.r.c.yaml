@@ -1,10 +1,12 @@
 taxonomies:
-- taxon: rhombifera-class
+- taxon: rhombifera_zittel_1879
+  rank: Class
   children:
   - taxon: dichoporita
     emended: true
     children:
-    - taxon: glyptocystitida-superfamily
+    - taxon: glyptocystitida
+      rank: Superfamily
       children:
       - taxon: macrocystellidae
         emended: true
@@ -150,7 +152,8 @@ taxonomies:
           # - taxon: perdewi_schuchert_
           # - taxon: stellatus_schuchert_
           # - taxon: clarki_schuchert_
-    - taxon: hemicosmitida-superfamily
+    - taxon: hemicosmitida
+      rank: Superfamily
       children:
       - taxon: hemicosmitidae
         children:
@@ -180,4 +183,5 @@ taxonomies:
   - taxon: fistuliporita
     new: true
     children:
-    - taxon: caryocystitida-superfamily
+    - taxon: caryocystitida
+      rank: Superfamily

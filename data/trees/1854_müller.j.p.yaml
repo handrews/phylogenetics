@@ -1,10 +1,16 @@
 taxonomies:
 - notes: Partially based on the translation in 1958a_billings
   taxon: echinodermen
+  rank: null
+  authority: null
   children:
   - taxon: crinoiden
+    rank: null
+    authority: null
     children:
     - taxon: cystideen
+      citedAs: the group of the Cystideen of L. v. Buch
+      rank: null
       children:
       - notes: Rhombifera, but not named.
         openTaxon: cystideae-unnamed-group_müller.j.p_1854

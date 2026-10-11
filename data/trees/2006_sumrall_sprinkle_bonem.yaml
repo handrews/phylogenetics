@@ -1,24 +1,32 @@
 taxonomies:
-- notes: No ranks
-  taxon: crinoidea
+- taxon: crinoidea
+  rank: null
   children:
   - taxon: cladida
+    rank: null
     children:
     - taxon: ampelocrinidae
+      rank: null
       children:
       - taxon: paragassizocrininae
+        rank: null
         children:
         - taxon: paragassizocrinus
           children:
           - taxon: tarri_strimple_1938
 - notes: no ranks
   taxon: edrioasteroidea
+  citedAs: Edrioasteroidea Billings, 1858
+  rank: null
   children:
   - taxon: isorophida
+    rank: null
     children:
     - taxon: isorophina
+      rank: null
       children:
       - taxon: agelacrinitidae
+        rank: null
         children:
         - taxon: neoisorophusella
           children:
@@ -29,6 +37,7 @@ taxonomies:
           - taxon: forbesi_sumrall_sprinkle_bonem_2006
             new: true
         - taxon: postibullinae
+          rank: null
           children:
           - taxon: postibulla
             children:

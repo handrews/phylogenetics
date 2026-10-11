@@ -3,12 +3,28 @@ prefixes:
   USNM: usnm
 taxonomies:
 - taxon: echinodermata
+  citedAs: Phylum ECHINODERMATA Bruguière, 1791 (ex Klein, 1734)
+  rank: Phylum
+  authority:
+    source: 1791_bruguière
+    ex:
+      source: 1734_klein
+  pages: 1192
   children:
   - taxon: blastozoa
+    citedAs: Subphylum BLASTOZOA Sprinkle, 1973
+    rank: Subphylum
+    pages: 1192
     children:
-    - taxon: soluta-class
+    - taxon: soluta
+      citedAs: Class SOLUTA Jaekel, 1901
+      rank: Class
+      pages: 1192
       children:
       - taxon: syringocrinida
+        citedAs: Order SYRINGOCRINIDA Parsley & Caster, 1965
+        rank: Order
+        pages: 1192
         children:
         - taxon: pahvanticystis
           new: true

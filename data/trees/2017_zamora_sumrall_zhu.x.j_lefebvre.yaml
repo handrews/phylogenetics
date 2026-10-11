@@ -2,13 +2,22 @@ prefixes:
   NIGPAS: nigpas
 taxonomies:
 - taxon: echinodermata
+  citedAs: Phylum ECHINODERMATA Bruguière, 1791 (ex Klein, 1734)
+  rank: Phylum
+  authority:
+    source: 1791_bruguière
+    ex:
+      source: 1734_klein
+  pages: 468
   children:
   - taxon: blastozoa
     children:
-    - taxon: rhombifera-class
+    - taxon: rhombifera_zittel_1879
+      rank: Class
       nonMonophyletic: true
       children:
-      - taxon: glyptocystitida-order
+      - taxon: glyptocystitida
+        rank: Order
         children:
         - taxon: sanducystis
           new: true
@@ -30,8 +39,8 @@ phylogenies:
 - treeType: cladogram
   tree:
     children:
-    - bracketStart: glyptocystitida-order
-      bracketEnd: glyptocystitida-order
+    - bracketStart: glyptocystitida
+      bracketEnd: glyptocystitida
       children:
       - taxon: ridersia
       - children:

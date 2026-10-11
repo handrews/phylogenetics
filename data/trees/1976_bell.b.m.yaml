@@ -1,5 +1,8 @@
 taxonomies:
 - taxon: edrioasteroidea
+  citedAs: Class Edrioasteroidea Billings, 1858
+  rank: Class
+  pages: 49
   children:
   - taxon: isorophida
     new: true
@@ -136,7 +139,7 @@ taxonomies:
           - taxon: multibrachiatus_raymond_1915
           - taxon: youngi_raymond_1915
           - taxon: platys_raymond_1915
-          - taxon: billingsi_chapman_1860
+          - taxon: billingsi_chapman.e.j_1860
     - taxon: isorophina
       new: true
       children:
@@ -267,9 +270,15 @@ taxonomies:
           - taxon: carbonarius_bassler_1936
             provisional: true
   - taxon: edrioasterida
+    citedAs: Order Edrioasterida Bell, ord. nov.
+    rank: Order
     new: true
+    pages: 287
     children:
     - taxon: edrioasteridae
+      citedAs: Family Edrioasteridae BATHER, 1898
+      rank: Family
+      pages: 290
       children:
       - taxon: edrioaster
         children:

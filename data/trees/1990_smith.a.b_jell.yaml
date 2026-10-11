@@ -2,6 +2,9 @@ prefixes:
   QMF: qm-f
 taxonomies:
 - taxon: edrioasteroidea
+  citedAs: Class EDRIOASTEROIDEA Billings, 1858
+  rank: Class
+  pages: 720
   children:
   - taxon: stromatocystites
     children:

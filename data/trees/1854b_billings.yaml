@@ -1,7 +1,10 @@
 taxonomies:
-- taxon: echinodermata-class
+- mergeInto: [1854a_billings, 0]
+  taxon: echinodermata
+  rank: null
   children:
-  - taxon: cystidea-order
+  - taxon: cystidea
+    rank: Order
     children:
     - taxon: pleurocystites
       pages: 251

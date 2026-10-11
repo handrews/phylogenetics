@@ -1,7 +1,8 @@
 taxonomies:
 - taxon: blastozoa
   children:
-  - taxon: rhombifera-class
+  - taxon: rhombifera_zittel_1879
+    rank: Class
     emended: true
     authority:
       source: 1968b_paul.c.r.c

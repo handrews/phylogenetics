@@ -1,23 +1,49 @@
 taxonomies:
 - taxon: echinodermata
-  auth: [bruguiére]
-  year: 1791
+  citedAs: Phylum ECHINODERMATA Bruguiere, 1791
+  rank: Phylum
+  authority:
+    source: 1791_bruguière
+  pages: v
+  notes: From the Table of Contents.
   children:
   - openTaxon: echinodermata-indeterminate-subphylum_bell.b.m_1982
+    citedAs: Subphylum Indeterminate
+    rank: Subphylum
+    new: true
+    pages: 297
+    notes: The Table of Contents implies Subphylum Echinozoa.
     children:
     - taxon: edrioasteroidea
+      citedAs: Class EDRIOASTEROIDEA Billings, 1858
+      rank: Class
+      pages: 297
       children:
       - taxon: edrioasterida
+        citedAs: Order EDRIOASTERIDA Bell, 1976
+        rank: Order
+        pages: 297
         children:
         - taxon: edriophus
           children:
           - openTaxon: edriophus-cf-laevis_bell.b.m_1982
             cf: laevis_bather_1914
+            citedAs: EDRIOPHUS sp. cf. E. LAEVIS (Bather), 1914
+            pages: 297
       - taxon: isorophida
+        citedAs: Order ISOROPHIDA Bell, 1976
+        rank: Order
+        pages: 297
         children:
         - taxon: lebetodiscina
+          citedAs: Suborder LEBETODISCINA Bell, 1976
+          rank: Suborder
+          pages: 297
           children:
           - taxon: lebetodiscidae
+            citedAs: Family LEBETODISCIDAE Bell, 1976
+            rank: Family
+            pages: 297
             children:
             - taxon: foerstediscus
               children:
@@ -29,8 +55,14 @@ taxonomies:
               - openTaxon: pyrgocystis-sp-a_bell.b.m_1982
               - openTaxon: pyrgocystis-sp-b_bell.b.m_1982
         - taxon: cyathocystina
+          citedAs: Suborder CYATHOCYSTINA Bell, 1975
+          rank: Suborder
+          pages: 303
           children:
           - taxon: cyathocystidae
+            citedAs: Family CYATHOCYSTIDAE Bather, 1899
+            rank: Family
+            pages: 303
             children:
             - taxon: cyathocystis
               children:

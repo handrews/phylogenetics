@@ -1,35 +1,6 @@
 allaire:
   surname: Allaire
   given: Ninon
-baer:
-  surname: Baer
-  given: Karl Ernst von
-  birth: 1792
-  death: 1876
-bell.f.j:
-  surname: Bell
-  given: Francis Jeffrey
-  birth: 1855
-  death: 1924
-dames:
-  surname: Dames
-  given: Wilhelm
-  birth: 1843
-  death: 1898
-franzen:
-  surname: Franzen
-  given: Christina
-hoşgör:
-  surname: Hoşgör
-  given: İzzet
-hudson:
-  surname: Hudson
-  given: George H.
-whitfield:
-  surname: Whitfield
-  given: Robert Parr
-  birth: 1828
-  death: 1910
 álvaro:
   surname: Álvaro
   given: J. Javier
@@ -47,9 +18,17 @@ ausich:
 austin.t:
   surname: Austin
   given: Thomas
+austin.t.j:
+  surname: Austin
+  given: Thomas Jr.
 babcock:
   surname: Babcock
   given: Loren E.
+baer:
+  surname: Baer
+  given: Karl Ernst von
+  birth: 1792
+  death: 1876
 bailey.j.b:
   surname: Bailey
   given: J. Bowman
@@ -79,6 +58,16 @@ beecher:
 bell.b.m:
   surname: Bell
   given: Bruce M.
+bell.f.j:
+  surname: Bell
+  given: Francis Jeffrey
+  birth: 1855
+  death: 1924
+bernard.f:
+  surname: Bernard
+  given: Félix
+  birth: 1863
+  death: 1898
 billings:
   surname: Billings
   given: Elkahna
@@ -119,18 +108,23 @@ brett:
 briggs.d.e.g:
   surname: Briggs
   given: Derek E. G.
+broadhead:
+  surname: Broadhead
+  given: Thomas W.
+bronn.h.g:
+  surname: Bronn
+  given: Heinrich Georg
+  birth: 1800
+  death: 1862
+brown.i.a:
+  surname: Brown
+  given: Ida A.
+  notes: Credited as "Ida A. Brown (Mrs. W. R. Browne)" in at least one paper.
 bruguière:
   surname: Bruguière
   given: Jean Guillaume
   birth: 1749
   death: 1798
-broadhead:
-  surname: Broadhead
-  given: Thomas W.
-brown.i.a:
-  surname: Brown
-  given: Ida A.
-  notes: Credited as "Ida A. Brown (Mrs. W. R. Browne)" in at least one paper.
 buch:
   surname: Buch
   given: Christian Leopold von
@@ -156,6 +150,16 @@ caster:
   given: Kenneth E.
   birth: 1908
   death: 1992
+chapman.e.j:
+  surname: Chapman
+  given: Edward John
+  birth: 1821
+  death: 1904
+chapman.f:
+  surname: Chapman
+  given: Frederick
+  birth: 1864
+  death: 1943
 chen.a:
   surname: Chen
   given: Ailin
@@ -225,6 +229,11 @@ cuvier:
   given: Georges
   birth: 1769
   death: 1832
+dames:
+  surname: Dames
+  given: Wilhelm
+  birth: 1843
+  death: 1898
 david:
   surname: David
   given: Bruno
@@ -243,6 +252,11 @@ derstler:
 deshmukh:
   surname: Deshmukh
   given: Umakant Bhoopati
+döderlein:
+  surname: Döderlein
+  given: Ludwig
+  birth: 1855
+  death: 1936
 domínguez alonso:
   surname: Domínguez Alonso
   given: Patricio
@@ -298,6 +312,11 @@ ferhi:
 fischer:
   surname: Fischer
   given: A. G.
+fleming.j:
+  surname: Fleming
+  given: John
+  birth: 1785
+  death: 1857
 foerste:
   surname: Foerste
   given: August
@@ -316,6 +335,9 @@ forsskål:
 forsstrand:
   surname: Forsstrand
   given: Carl
+franzen:
+  surname: Franzen
+  given: Christina
 frest:
   surname: Frest
   given: T. J.
@@ -339,6 +361,12 @@ garbisch:
 gehling:
   surname: Gehling
   given: J. G.
+gekker:
+  surname: Gekker
+  given: Anatoly Ilyich
+  birth: 1888
+  death: 1937
+  notes: Анато́лий Ильи́ч Ге́ккер (sometimes credited as Hekker).
 gibson:
   surname: Gibson
   given: Adam P.
@@ -355,7 +383,9 @@ gmelin:
   death: 1804
 goldfuss:
   surname: Goldfuss
-  given: Georg
+  given: Georg August
+  birth: 1782
+  death: 1848
 gong.x.y:
   surname: Gong
   given: X.-Y.
@@ -368,6 +398,11 @@ gozalo:
 grant:
   surname: Grant
   given: J. A.
+gravenhorst:
+  surname: Gravenhorst
+  given: Johann Ludwig Christian
+  birth: 1777
+  death: 1857
 gray.g.r:
   surname: Gray
   given: George Robert
@@ -437,6 +472,9 @@ holland:
 holloway:
   surname: Holloway
   given: David J.
+hoşgör:
+  surname: Hoşgör
+  given: İzzet
 hou.s.g:
   surname: Hou
   given: Shu-Guang
@@ -458,9 +496,17 @@ huang.y.l:
 huang.y.z:
   surname: Huang
   given: You-Zhuang
+hudson:
+  surname: Hudson
+  given: George H.
 hughes:
   surname: Hughes
   given: N. F.
+huxley.t.h:
+  surname: Huxley
+  given: Thomas Henry
+  birth: 1825
+  death: 1895
 hyman:
   surname: Hyman
   given: Libbie Henrietta
@@ -516,6 +562,8 @@ lamarck:
 lankester:
   surname: Lankester
   given: E. Ray
+  birth: 1847
+  death: 1929
 latreille:
   surname: Latreille
   given: Pierre André
@@ -552,9 +600,6 @@ li.y:
 li.y.j:
   surname: Li
   given: Yu-Jing
-liñán:
-  surname: Liñán
-  given: Eladio
 lin.j.p:
   surname: Lin
   given: Jih-Pai
@@ -563,6 +608,9 @@ linnaeus:
   given: Carl
   birth: 1707
   death: 1778
+liñán:
+  surname: Liñán
+  given: Eladio
 liu.q:
   surname: Liu
   given: Qi
@@ -572,6 +620,9 @@ liu.x.r:
 liu.y.j:
   surname: Liu
   given: Yu-Juan
+longman:
+  surname: Longman
+  given: H. A.
 luo.h.l:
   surname: Luo
   given: Hui-Lin
@@ -581,9 +632,6 @@ luo.h.l:
 luo.x.c:
   surname: Luo
   given: Xiu-Chun
-longman:
-  surname: Longman
-  given: H. A.
 lydekker:
   surname: Lydekker
   given: Richard
@@ -688,6 +736,11 @@ müller.p.l.s:
   given: Philipp Ludwig Statius
   birth: 1725
   death: 1776
+münster:
+  surname: Münster
+  given: Georg zu
+  birth: 1770
+  death: 1844
 murchison:
   surname: Murchison
   given: Roderick Impey
@@ -757,7 +810,10 @@ pompeckj:
   given: Josef Felix
   birth: 1867
   death: 1930
-pope:
+pope.j.k:
+  surname: Pope
+  given: John K.
+pope.j.p:
   surname: Pope
   given: John Paul
 prokop:
@@ -854,9 +910,12 @@ seibert.r:
 selden:
   surname: Selden
   given: Paul A.
-šinágl:
-  surname: Šinágl
-  given: Miroslav
+siebold:
+  surname: Siebold
+  given: carl Theodor Ernst von
+  birth: 1804
+  death: 1885
+  notes: or Carl
 siveter.da.j:
   surname: Siveter
   given: David J.
@@ -866,6 +925,11 @@ siveter.de.j:
 smith.a.b:
   surname: Smith
   given: Andrew B.
+sollas:
+  surname: Sollas
+  given: William Johnson
+  birth: 1849
+  death: 1936
 sowerby.g.b:
   surname: Sowerby
   given: G. B.
@@ -885,6 +949,22 @@ springer:
 sprinkle:
   surname: Sprinkle
   given: James
+st. john:
+  surname: St. John
+  given: Orestes Hawley
+  birth: 1841
+  death: 1921
+stannius:
+  surname: Stannius
+  given: Hermann Friedrich
+  birth: 1808
+  death: 1883
+steinmann.g:
+  surname: Steinmann
+  given: Gustav
+  birth: 1856
+  death: 1929
+  notes: Full name Johann Heinrich Conrad Gottfried Gustav Steinmann
 stewart:
   surname: Stewart
   given: Sarah E.
@@ -903,6 +983,9 @@ sutton.m.d:
 szabad:
   surname: Szabad
   given: Michal
+šinágl:
+  surname: Šinágl
+  given: Miroslav
 tao.j.l:
   surname: Tao
   given: Jian-Li
@@ -944,6 +1027,11 @@ volborth:
   birth: 1800
   death: 1876
   notes: Alternatively, Aleksandr Fedorovich von Volborth
+wachsmuth:
+  surname: Wachsmuth
+  given: Charles
+  birth: 1829
+  death: 1896
 wahlenberg:
   surname: Wahlenberg
   given: Göran
@@ -987,6 +1075,11 @@ whiteaves:
   given: Joseph Frederick
   birth: 1835
   death: 1909
+whitfield:
+  surname: Whitfield
+  given: Robert Parr
+  birth: 1828
+  death: 1910
 whitehouse:
   surname: Whitehouse
   given: Frederick William

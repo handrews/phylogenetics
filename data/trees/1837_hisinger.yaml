@@ -1,7 +1,15 @@
 taxonomies:
 - taxon: radiata-subkingdom  # Cuv
   children:
-  - taxon: echinodermata-class # Cuv
+  - taxon: echinodermata
+    citedAs: A. ECHINODERMATA. Cuv.
+    rank: Class
+    authority:
+      source: 1830_cuvier
+    notes: >
+      "Cuv." is given as the 1829 edition of Le Règne Animal
+      in the cited authors list, although note that Echinoderms
+      were covered in Volum III which was delayed until 1830.
     children:
     - taxon: stelleridea # Lam
       children:

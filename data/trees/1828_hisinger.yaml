@@ -1,12 +1,18 @@
 taxonomies:
-- taxon: echinodermata-class
-  synonyms:
-  - taxon: échinodermes-class
-    authority:
-      source: 1817d_cuvier
-  notes: |
-    Hisinger explicitly assignes to "Echinodermata Cuvier", using
-    the latin rather than French name.
+- taxon: echinodermata
+  citedAs: Echinodermata Cuvier
+  rank: Class
+  authority:
+    source: 1817d_cuvier
+  editorial:
+    inferred: [authority]
+    basis: >
+      Cuvier first used "Échinodermes" as an Order in 1798, but
+      treated it as a Class in the 1817 1st Edition of Le Règne Animal.
+      Unlike Hisinger 1837, there does not appear to be a list of
+      cited works, but given that the 1837 paper cites the 1829 2nd
+      Edition, it seems likely that the 1st Edition rather than the
+      1798 work is intended.
   children:
   - taxon: pédicellés-order
     notes: |

@@ -1,19 +1,44 @@
 taxonomies:
 - taxon: echinodermata
-  auth: [bruguiére]
-  year: 1791
+  citedAs: Phylum ECHINODERMATA Bruguiere, 1791
+  rank: Phylum
+  authority:
+    source: 1791_bruguière
+  pages: v
+  notes: From the Table of Contents.
   children:
   - taxon: blastozoa
+    citedAs: Subphylum BLASTOZOA Sprinkle, 1973
+    rank: Subphylum
+    pages: v
+    notes: From the Table of Contents.
     children:
     - taxon: eocrinoidea
+      citedAs: Class EOCRINOIDEA Jaekel, 1918
+      rank: Class
+      pages: 289
+      notes: Also in Table of Contents, identical citation.
       children:
       - taxon: palaeocystitidae
+        citedAs: Family PALAEOCYSTITIDAE Ubaghs, 1968
+        rank: Family
+        pages: 289
+        notes: Also in Table of Contents, identical citation.
         children:
         - taxon: bromidocystis
+          citedAs: Genus BROMIDOCYSTIS Sprinkle, new
           new: true
+          pages: 289
+          type:
+            taxon: bassleri_sprinkle_1982h
+            citedAs: Type species.--Bromidocystis bassleri Sprinkle, n. sp.
+            pages: 289
           children:
           - taxon: bassleri_sprinkle_1982h
-            isType: true
+            citedAs: BROMIDOCYSTIS BASSLERI Sprinkle, n. sp.
             new: true
+            pages: 291
           - taxon: sinclairi_sprinkle_1982h
+            citedAs: BROMIDOCYSTIS SINCLAIRI Sprinkle, n. sp.
             new: true
+            pages: 295

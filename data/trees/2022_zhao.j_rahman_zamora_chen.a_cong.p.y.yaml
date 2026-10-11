@@ -2,26 +2,95 @@ prefixes:
   YKLP: yklp
 taxonomies:
 - taxon: echinodermata
+  citedAs: Phylum ECHINODERMATA Bruguiere, 1791 (ex Klein 1734)
+  rank: Phylum
+  authority:
+    source: 1791_bruguière
+    ex:
+      source: 1734_klein
+  pages: 2
   children:
   - taxon: edrioasteroidea
+    citedAs: Class EDRIOASTEROIDEA Billings, 1858
+    rank: Class
+    pages: 2
     children:
     - taxon: edrioasterida
+      citedAs: ?Order EDRIOASTERIDA Bell, 1976
+      rank: Order
+      pages: 2
       children:
       - taxon: sprinkleoglobus
+        citedAs: Genus SPRINKLEOGLOBUS nov.
         provisional: true
         new: true
+        type:
+          taxon: extenuatus_zhao.j_rahman_zamora_chen.a_cong.p.y_2022
+          citedAs: Type species. Sprinkleoglobus extenuatus sp. nov.
+          fixation: originalDesignation
+          pages: 2
+          notes: >
+            The "by original designation" modifier is attached to
+            "Other species. Totiglobus? lloydi Sprinkle 1985",
+            presumably in error.
         children:
         - taxon: lloydi_sprinkle_1985
-          isType: true
+          citedAs: Totiglobus? lloydi Sprinkle, 1985
           moved:
             taxon: totiglobus
-            quoted: true
+            provisional: true
+          pages: 2
+          notes: >
+            Listed as "Other species. Totiglobus? lloydi Sprinkle,
+            1985, by original designation." The "by original designation"
+            was presumably meant for the type designation.
         - taxon: extenuatus_zhao.j_rahman_zamora_chen.a_cong.p.y_2022
+          citedAs: Sprinkleoglobus extenuatus sp. nov.
           new: true
+          pages: 2
+          contexts:
+            jianshan:
+              series: Cambrian Series 2
+              stage: Cambrian Stage 3
+              unit:
+              - Maotianshan Shale Member
+              - Yu'anshan Formation
+              location:
+              - 24.77036°N, 102.57877°E
+              - Jianshan section
+              - Haikou area
+              - Kunming
+              - Yunnan
+              - China
+              biota: Chengjiang
+          illustrations:
+          - page: 3
+            figures: 1
+            of: 13397
+          - page: 4
+            figures:
+            - [2A, 2B]
+            of: 13397
+            depicts: cast
+          - page: 4
+            figures:
+            - [2C, 2D]
+            of: 13397
+            depicts: drawing
+          - page: 5
+            figures:
+            - [3A, 3C]
+            of: 13553
+          - page: 5
+            figures: 3D
+            of: 13553
+            depicts: drawing
           material:
           - prefix: YKLP
             numbers: [13397]
             role: holotype
+            context: jianshan
           - prefix: YKLP
             numbers: [13553]
+            context: jianshan
             role: paratype

@@ -15,7 +15,8 @@ taxonomies:
         - taxon: smithi_ubaghs_1987
           new: true
 - taxon: stylophora
-  notes: Unclear if higher tree present
+  rank: Class
+  notes: Rank presumed, unclear if higher tree present
   children:
   - taxon: ceratocystis
     notes: Unclear if intervening taxa present
@@ -30,8 +31,9 @@ taxonomies:
     children:
     - taxon: gondi_ubaghs_1987
       new: true
-- taxon: glyptocystitida-superfamily
-  notes: Unclear if higher tree present, unclera if supefamily or order.
+- taxon: glyptocystitida
+  rank: Superfamily
+  notes: Unclear if higher tree present, unclear if supefamily or order.
   children:
   - taxon: eocystites # with angle quotes?
     notes: Unclear if intervening taxa present
