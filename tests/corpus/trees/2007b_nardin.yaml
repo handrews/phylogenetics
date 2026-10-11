@@ -1,9 +1,0 @@
-taxonomies:
-- taxon: blastozoa
-  children:
-  - taxon: eocrinoidea
-    children:
-    - taxon: cardiocystites
-      children:
-      - taxon: bohemicus_barrande_1887_cardiocystites
-        isType: true

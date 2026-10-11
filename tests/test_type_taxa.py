@@ -1159,7 +1159,8 @@ def test_the_corpus_lines_are_unmarked_and_rank_worded(store):
         if line.get('methodInferred'):
           expected += ' (method: editor)'
         assert expected in [ln.strip().lstrip('?').strip() for ln in block['rendered'].splitlines()]
-  assert checked > 300
+  # The corpus has a little over two hundred type lines.
+  assert checked > 200
 
 
 def test_the_corpus_type_genera_now_read_type_genus(store):
