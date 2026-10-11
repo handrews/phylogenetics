@@ -130,7 +130,7 @@ def test_a_taxon_by_alias_in_the_target_tree_must_be_new(caplog):
 def test_a_tree_file_named_by_an_alias_is_skipped(monkeypatch, caplog):
   loading = importlib.import_module('phylohist.loader.load')
 
-  def aliased(drafts=False):
+  def aliased(drafts=False, **_):
     data = {k: {} for k in ('authors', 'publications', 'taxa', 'sections')}
     data['sources'] = {'1985_banks': {'aliasOf': TARGET}}
     data['trees'] = {'1985_banks': {'taxonomies': [{'taxon': 'cyathocystis'}]}}

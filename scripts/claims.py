@@ -4,6 +4,7 @@
     poetry run python scripts/claims.py                # -> claims/
     poetry run python scripts/claims.py --source 1962_fay 1983_holloway_jell
     poetry run python scripts/claims.py --draft --out /tmp/claims-with-drafts
+    poetry run python scripts/claims.py --data tests/corpus --out /tmp/corpus-claims
     poetry run python scripts/claims.py --inconsistencies
     poetry run python scripts/claims.py --errors-only
 
@@ -34,6 +35,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
 from phylohist.claims import extract, manifest, names_index  # noqa: E402
 from phylohist.loader import LoadError, counting_errors, load  # noqa: E402
+from phylohist.loader.io import DATA_DIR  # noqa: E402
 from phylohist.loader.material import repository_registry  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -229,6 +231,12 @@ def _holding(enabled):
 def main(argv):
   parser = argparse.ArgumentParser(description=__doc__.split('\n\n')[0])
   parser.add_argument('--out', type=pathlib.Path, default=DEFAULT_OUT)
+  parser.add_argument(
+    '--data',
+    type=pathlib.Path,
+    default=DATA_DIR,
+    help='the directory of record files and trees to load (default: data/)',
+  )
   parser.add_argument('--source', nargs='+', help='only these source keys')
   parser.add_argument(
     '--draft',
@@ -261,7 +269,7 @@ def main(argv):
   failure = None
   with _holding(args.errors_only), counting_errors() as errors:
     try:
-      _, roots = load(drafts=args.draft, tolerate=args.tolerate)
+      _, roots = load(drafts=args.draft, tolerate=args.tolerate, data_dir=args.data)
     except LoadError as exc:
       failure = exc
   if failure:

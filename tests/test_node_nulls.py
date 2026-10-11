@@ -11,9 +11,6 @@ replaced by the claims of those trees, since no data uses the nulls yet.
 import json
 import logging
 import shutil
-import subprocess
-import sys
-from pathlib import Path
 
 import pytest
 
@@ -24,11 +21,11 @@ from phylohist.loader.research import Source
 from phylohist.loader.taxa import Taxon, Tree
 from phylohist.store import CLAIMS_DIR, ClaimStore
 from phylohist.words import ABSENCE_WORDS
+from tests import support
 
 # The synthetic trees name real records, so every test needs the corpus loaded.
 pytestmark = pytest.mark.usefixtures('load_records')
 
-SCRIPTS = Path(__file__).parent.parent / 'scripts'
 
 SOURCE = '1766_linnaeus'
 INFERRED = {'inferred': True, 'basis': 'Carried over from the first part, published 1766.'}
@@ -38,14 +35,14 @@ INFERRED = {'inferred': True, 'basis': 'Carried over from the first part, publis
 
 
 def _valid(document):
-  return io.build_schema()[io.TREE_DEF].check(document)
+  return support.schema()[io.TREE_DEF].check(document)
 
 
 RECORD = {'name': 'Vermes', 'authority': {'source': '1758_linnaeus'}, 'rank': 'Class', 'pages': 5}
 
 
 def _record_valid(record):
-  return io.build_schema()['taxa'].check({'x': record})
+  return support.schema()['taxa'].check({'x': record})
 
 
 def test_schema_accepts_a_null_rank_and_a_null_pages_on_a_node():
@@ -147,11 +144,7 @@ def test_load_reports_the_null_pages_with_the_nodes_path(caplog):
 def _check_draft(tmp_path, body):
   draft = tmp_path / '1766_linnaeus.yaml'
   draft.write_text('taxonomies:\n' + body)
-  return subprocess.run(
-    [sys.executable, str(SCRIPTS / 'check_draft.py'), str(draft)],
-    capture_output=True,
-    text=True,
-  )
+  return support.run_check_draft(draft)
 
 
 def test_check_draft_allows_an_inferred_node_with_null_pages(tmp_path):
@@ -842,8 +835,8 @@ def test_schema_rejects_a_printed_attribution_beside_a_null_authority(field):
 def test_schema_rejects_a_null_authority_on_a_record_or_a_section():
   assert not _record_valid({**RECORD, 'authority': None})
   section = {'name': 'Integra', 'authority': {'source': '1758_linnaeus'}}
-  assert io.build_schema()['sections'].check({'integra': section})
-  assert not io.build_schema()['sections'].check({'integra': {**section, 'authority': None}})
+  assert support.schema()['sections'].check({'integra': section})
+  assert not support.schema()['sections'].check({'integra': {**section, 'authority': None}})
 
 
 def test_a_null_authority_says_none_was_printed(load_records):

@@ -14,6 +14,7 @@ import pytest
 
 from phylohist.loader import io, material
 from phylohist.loader.taxa import Tree
+from tests import support
 
 SCRIPTS = Path(__file__).resolve().parent.parent / 'scripts'
 
@@ -819,11 +820,21 @@ def test_load_reports_tentative_on_ranges_and_contexts(caplog):
 
 
 def _run_check_draft(path):
-  return subprocess.run(
-    [sys.executable, str(SCRIPTS / 'check_draft.py'), str(path)],
+  return support.run_check_draft(path)
+
+
+def test_check_draft_runs_as_a_program(tmp_path):
+  # The script itself, as CI runs it over `drafts/`: a draft the schema
+  # rejects exits 1.
+  draft = tmp_path / '1898_bather.yaml'
+  draft.write_text('taxonomies:\n- rnak: genus\n')
+  result = subprocess.run(
+    [sys.executable, str(SCRIPTS / 'check_draft.py'), str(draft)],
     capture_output=True,
     text=True,
   )
+  assert result.returncode == 1, result.stdout + result.stderr
+  assert 'not valid against the tree schema' in result.stdout
 
 
 def test_check_draft_exits_zero_on_a_clean_draft(tmp_path):
@@ -1259,7 +1270,7 @@ def test_figure_and_cast_refs_read_the_new_shape():
 
 
 def _schema_accepts(document):
-  return io.build_schema()[io.TREE_DEF].check(document)
+  return support.schema()[io.TREE_DEF].check(document)
 
 
 def _numbers_document(*entries, **extra):

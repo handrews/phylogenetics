@@ -9,7 +9,6 @@ here as a module.
 """
 
 import argparse
-import importlib.util
 import inspect
 import os
 import pathlib
@@ -18,23 +17,20 @@ import pytest
 
 from phylohist import blocks, cli, tools
 from phylohist.acts import ACT_KINDS
+from tests import support
 
 pytestmark = pytest.mark.skipif(
   bool(os.getenv('PHYLOHIST_DRAFTS')),
   reason='the committed claim table covers data/ only',
 )
 
-SERVER = pathlib.Path(__file__).parent.parent / 'scripts' / 'mcp_server.py'
 PLANNER_PROMPT = pathlib.Path(__file__).parent.parent / 'eval' / 'planner-prompt.md'
 SPECS = {spec['name']: spec for spec in tools.TOOL_SPECS}
 
 
 @pytest.fixture(scope='module')
 def mcp():
-  spec = importlib.util.spec_from_file_location('mcp_server', SERVER)
-  module = importlib.util.module_from_spec(spec)
-  spec.loader.exec_module(module)
-  return module
+  return support.script('mcp_server')
 
 
 def _parameters(function):

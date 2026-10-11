@@ -14,7 +14,7 @@ import json
 import logging
 
 from . import material, nomenclature
-from .io import TREE_DIR, LoadError, display_path, load_files
+from .io import DATA_DIR, TREE_DIR, LoadError, display_path, load_files
 from .research import Author, Publication, Source
 from .taxa import Section, Taxon, Tree
 
@@ -440,14 +440,15 @@ def counting_errors():
     package.removeHandler(counter)
 
 
-def load(drafts=False, tolerate=False):
+def load(drafts=False, tolerate=False, data_dir=DATA_DIR, fast=False):
   """``(data, roots)``: the loaded data files and ``{source: [roots]}``.
   Raises `LoadError` when any integrity check logged an error, with the
   count, so a caller cannot take a broken load for a good one; with
   ``tolerate`` the data comes back regardless, for a caller that wants
-  to see everything before stopping."""
+  to see everything before stopping. ``data_dir`` and ``fast`` are
+  `load_files`'s: another directory shaped like `data/`, and libyaml."""
   with counting_errors() as errors:
-    data = load_files(drafts=drafts)
+    data = load_files(drafts=drafts, data_dir=data_dir, fast=fast)
     material.set_repository_registry(data.get('repositories'))
     for field, cls in (
       ('authors', Author),

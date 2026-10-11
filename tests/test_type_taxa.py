@@ -13,9 +13,6 @@ import collections
 import json
 import logging
 import shutil
-import subprocess
-import sys
-from pathlib import Path
 
 import pytest
 
@@ -26,11 +23,11 @@ from phylohist.loader.material import walk_document
 from phylohist.loader.taxa import Tree
 from phylohist.store import CLAIMS_DIR, ClaimStore
 from phylohist.words import ABSENCE_WORDS
+from tests import support
 
 # The synthetic trees name real records, so every test needs the corpus loaded.
 pytestmark = pytest.mark.usefixtures('load_records')
 
-SCRIPTS = Path(__file__).parent.parent / 'scripts'
 
 # The records of the examples: a genus (Edrioaster) with two species, the
 # genus a species was first described in (Cyclaster Billings 1857) and a
@@ -48,7 +45,7 @@ ORIGINAL = {'taxon': BIGSBYI, 'parents': [{'taxon': CYCLASTER}], 'fixation': 'mo
 
 
 def _valid(document):
-  return io.build_schema()[io.TREE_DEF].check(document)
+  return support.schema()[io.TREE_DEF].check(document)
 
 
 def _tree(node):
@@ -289,11 +286,7 @@ def test_a_genus_or_family_may_carry_a_type(load_records, caplog):
 def _draft(tmp_path, body):
   draft = tmp_path / '1898_bather.yaml'
   draft.write_text('taxonomies:\n- taxon: rhenopyrgus\n  children:\n' + body)
-  return subprocess.run(
-    [sys.executable, str(SCRIPTS / 'check_draft.py'), str(draft)],
-    capture_output=True,
-    text=True,
-  )
+  return support.run_check_draft(draft)
 
 
 def test_check_draft_accepts_a_type_node(tmp_path):

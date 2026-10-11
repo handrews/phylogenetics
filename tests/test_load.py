@@ -143,7 +143,7 @@ def test_load_fails_on_logged_errors(monkeypatch):
 
   loading = importlib.import_module('phylohist.loader.load')
 
-  def broken(drafts=False):
+  def broken(drafts=False, **_):
     logging.getLogger('phylohist.loader.taxa').error('a check fired')
     return {k: {} for k in ('authors', 'publications', 'sources', 'taxa', 'sections', 'trees')}
 
@@ -173,7 +173,7 @@ def test_tree_without_a_source_record_is_skipped(monkeypatch):
 
   loading = importlib.import_module('phylohist.loader.load')
 
-  def orphan(drafts=False):
+  def orphan(drafts=False, **_):
     data = {k: {} for k in ('authors', 'publications', 'sources', 'taxa', 'sections')}
     data['trees'] = {'9999_nobody': {'taxonomies': [{'taxon': 'cyathocystis'}]}}
     return data

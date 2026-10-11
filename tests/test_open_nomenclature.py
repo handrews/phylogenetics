@@ -14,9 +14,6 @@ import collections
 import json
 import logging
 import shutil
-import subprocess
-import sys
-from pathlib import Path
 
 import pytest
 
@@ -26,8 +23,8 @@ from phylohist.loader.load import _report_nomenclature
 from phylohist.loader.material import walk_document
 from phylohist.loader.taxa import Taxon, Tree
 from phylohist.store import CLAIMS_DIR, ClaimStore
+from tests import support
 
-SCRIPTS = Path(__file__).parent.parent / 'scripts'
 SOURCE = '1961_dehm'
 CF_KEY = 'lepidocystis-cf-wanneri_sprinkle_1973'
 CF_RECORD = {'name': None, 'rank': 'species', 'auth': ['sprinkle'], 'year': 1973}
@@ -54,7 +51,7 @@ def _messages(result):
 
 
 def _valid(document):
-  return io.build_schema()[io.TREE_DEF].check(document)
+  return support.schema()[io.TREE_DEF].check(document)
 
 
 def test_schema_accepts_the_new_node_and_material_fields():
@@ -279,11 +276,7 @@ def test_the_corpus_has_no_nomenclature_messages(load_records):
 
 
 def _run_check_draft(path):
-  return subprocess.run(
-    [sys.executable, str(SCRIPTS / 'check_draft.py'), str(path)],
-    capture_output=True,
-    text=True,
-  )
+  return support.run_check_draft(path)
 
 
 def _draft(tmp_path, body):

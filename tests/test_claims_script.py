@@ -2,18 +2,14 @@
 for each kind of manifest inconsistency row, on a synthetic tree; and
 `--errors-only`, over a load that logs what the test says."""
 
-import importlib.util
 import logging
-import pathlib
 
 from phylohist.claims import extract
 from phylohist.loader.research import Source
 from phylohist.loader.taxa import Tree
+from tests import support
 
-SCRIPT = pathlib.Path(__file__).resolve().parent.parent / 'scripts' / 'claims.py'
-_spec = importlib.util.spec_from_file_location('claims_script', SCRIPT)
-claims_script = importlib.util.module_from_spec(_spec)
-_spec.loader.exec_module(claims_script)
+claims_script = support.script('claims')
 
 _WHERE = 'in data/sources.yaml (1961_dehm.audit.coverage.{})'
 
@@ -121,7 +117,7 @@ def _run(monkeypatch, caplog, tmp_path, flag, *, error):
   """Run the script over a load that logs a warning, and an error when
   `error`; the messages that come out, in order."""
 
-  def fake_load(drafts=False, tolerate=False):
+  def fake_load(drafts=False, tolerate=False, **_):
     log = logging.getLogger('phylohist.loader.load')
     log.warning('a warning')
     if error:

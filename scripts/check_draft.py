@@ -1,6 +1,7 @@
 """Check an AI-drafted tree file before a human audit.
 
     poetry run python scripts/check_draft.py drafts/1891_bell.f.j.yaml
+    poetry run python scripts/check_draft.py --data tests/corpus some-draft.yaml
 
 Validates the draft against the tree schema the loader uses, then lists the
 taxon keys, author keys, source keys and section keys the draft cites that have no record
@@ -32,9 +33,11 @@ the tree files in `data/trees/` that the draft's links name: a source with no
 tree, the draft's own source, a later source, or a target that is not exactly
 one entry. Each is printed with the node's path. Exit status 1 on a schema failure or any of
 those, 0 otherwise; the lists of records without an entry are always printed,
-since a draft normally needs new records.
+since a draft normally needs new records. `--data` names another directory
+shaped like `data/` to check against.
 """
 
+import argparse
 import pathlib
 import sys
 
@@ -145,10 +148,10 @@ def check_material(draft, repositories, taxa):
   return messages
 
 
-def check_same_as(key, draft, sources):
+def check_same_as(key, draft, sources, tree_dir=TREE_DIR):
   """The `sameAs` links of the draft (the tree file of source `key`), read
-  against the tree file `data/trees/<source>.yaml` of each source they name
-  when it exists; `sources` is the raw `data/sources.yaml`. Only messages
+  against the tree file `<tree_dir>/<source>.yaml` of each source they name
+  when it exists; `sources` is the raw `sources.yaml`. Only messages
   about the draft are returned."""
   documents = {key: draft}
   for _, node, _ in material.walk_document(draft):
@@ -156,7 +159,7 @@ def check_same_as(key, draft, sources):
       link = entry.get('sameAs')
       target = link.get('source') if isinstance(link, dict) else None
       if isinstance(target, str) and target not in documents:
-        tree = TREE_DIR / f'{target}.yaml'
+        tree = tree_dir / f'{target}.yaml'
         if tree.exists():
           documents[target] = load_yaml(tree)
 
@@ -174,10 +177,17 @@ def check_same_as(key, draft, sources):
 
 
 def main(argv):
-  if len(argv) != 2:
-    print(__doc__)
-    return 2
-  path = pathlib.Path(argv[1])
+  parser = argparse.ArgumentParser(description=__doc__.split('\n\n')[0])
+  parser.add_argument('draft', type=pathlib.Path, help='the tree file to check')
+  parser.add_argument(
+    '--data',
+    type=pathlib.Path,
+    default=DATA_DIR,
+    help='the directory of record files and trees to check against (default: data/)',
+  )
+  args = parser.parse_args(argv)
+  path = args.draft
+  data_dir = args.data
   schema = build_schema()
   draft = load_yaml(path)
   # `check` logs the reasons for whatever it rejects.
@@ -192,13 +202,13 @@ def main(argv):
   # tree whose source has no record.
   taxa, authors, sources, sections = set(), set(), {path.stem}, set()
   walk(draft, taxa, authors, sources, sections)
-  records = load_yaml(DATA_DIR / 'taxa.yaml')
-  source_records = load_yaml(DATA_DIR / 'sources.yaml')
+  records = load_yaml(data_dir / 'taxa.yaml')
+  source_records = load_yaml(data_dir / 'sources.yaml')
   known = {
     'taxa': set(records),
-    'authors': set(load_yaml(DATA_DIR / 'authors.yaml')),
+    'authors': set(load_yaml(data_dir / 'authors.yaml')),
     'sources': set(source_records),
-    'sections': set(load_yaml(DATA_DIR / 'sections.yaml')),
+    'sections': set(load_yaml(data_dir / 'sections.yaml')),
   }
   for label, cited in (
     ('taxa', taxa),
@@ -211,9 +221,9 @@ def main(argv):
     for key in missing:
       print(f'  {key}')
 
-  repositories = load_yaml(DATA_DIR / 'repositories.yaml')
+  repositories = load_yaml(data_dir / 'repositories.yaml')
   messages = check_material(draft, repositories, nomenclature.record_lookup(records))
-  messages.extend(check_same_as(path.stem, draft, source_records))
+  messages.extend(check_same_as(path.stem, draft, source_records, data_dir / 'trees'))
 
   for level, message in messages:
     print(f'{level}: {message}')
@@ -224,4 +234,4 @@ def main(argv):
 
 
 if __name__ == '__main__':
-  sys.exit(main(sys.argv))
+  sys.exit(main(sys.argv[1:]))
