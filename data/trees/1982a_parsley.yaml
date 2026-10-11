@@ -1,23 +1,47 @@
 taxonomies:
 - taxon: echinodermata
-  auth: [bruguiére]
-  year: 1791
+  citedAs: Phylum ECHINODERMATA Bruguiere, 1791
+  rank: Phylum
+  authority:
+    source: 1791_bruguière
+  pages: v
+  notes: From the Table of Contents.
   children:
   - taxon: crinozoa
+    citedAs: Subphylum CRINOZOA Matsumoto, 1929
+    rank: Subphylum
+    pages: v
+    notes: From the Table of Contents.
     children:
     - taxon: paracrinoidea
+      citedAs: Class PARACRINOIDEA Regnéll, 1945
+      rank: Class
+      pages: 212
+      notes: >
+        Also in Table of Contents as "Class PARACRINOIDEA Regnéll" (no year).
       children:
       - taxon: comarocystitida
+        citedAs: Order COMAROCYSTITIDA Parsley and Mintz, 1975
+        rank: Order
+        pages: 212
         children:
         - taxon: comarocystitidae
+          citedAs: Family COMAROCYSTITIDAE Bather, 1899
+          rank: Family
+          pages: 212
           children:
           - taxon: sinclairocystis
             children:
             - taxon: praedicta_bassler_1950
               isType: true
         - taxon: amygdalocystitidae
-          emended: true
-          notes: Emended Parsley and Mintz, 1975
+          citedAs: >
+            Family AMYGDALOCYSTITIDAE Jackel, 1900
+            Emended Parsley and Mintz, 1975
+          emendedBy:
+          - source: 1975_parsley_mintz
+          rank: Family
+          pages: 215
           children:
           - taxon: oklahomacystis
             emended: true
@@ -31,9 +55,15 @@ taxonomies:
             - taxon: bibrachiatus_parsley_1982
               new: true
       - taxon: platycystitida
+        citedAs: Order PLATYCYSTITIDA Parsley and Mintz, 1975 Emended herein
         emended: true
+        rank: Order
+        pages: 219
         children:
         - taxon: platycystitidae
+          citedAs: Family PLATYCYSTITIDAE Parsley and Mintz, 1975
+          rank: Family
+          pages: 219
           children:
           - taxon: platycystites
             children:

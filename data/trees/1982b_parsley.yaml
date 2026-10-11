@@ -1,21 +1,42 @@
 taxonomies:
 - taxon: echinodermata
-  auth: [bruguiére]
-  year: 1791
+  citedAs: Phylum ECHINODERMATA Bruguiere, 1791
+  rank: Phylum
+  authority:
+    source: 1791_bruguière
+  pages: v
+  notes: From the Table of Contents.
   children:
   - taxon: blastozoa
+    citedAs: Subphylum BLASTOZOA Sprinkle, 1973
+    rank: Subphylum
+    pages: v
+    notes: From the Table of Contents.
     children:
     - taxon: rhombifera_zittel_1879
+      citedAs: Class RHOMBIFERA Zittel, 1879 Emended Paul, 1968b
       rank: Class
-      emended: true
-      notes: Emended Paul 1968
+      authority:
+        source: 1879_zittel
+      emendedBy:
+      - source: 1968b_paul.c.r.c
+      pages: v
+      notes: From the Table of Contents.
       children:
       - taxon: dichoporita
+        citedAs: Order DICHOPORITA Jaekel, 1899
+        rank: Order
+        pages: v
+        notes: From the Table of Contents.
         children:
         - taxon: glyptocystitida
+          citedAs: Superfamily GLYPTOCYSTITIDA Bather, 1899, nom. transl.
           rank: Superfamily
-          translated:
-            taxon: glyptocystitidae
+          translated: true
+          pages: 275
+          notes: >
+            The reason for "nom. transl." is unclear as Glyptocystitida
+            had been used since at least the late 1960s if not earlier.
           children:
           - taxon: pleurocystitidae
             children:
