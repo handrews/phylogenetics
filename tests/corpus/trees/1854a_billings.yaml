@@ -1,0 +1,16 @@
+taxonomies:
+- taxon: echinodermata-class
+  children:
+  - taxon: cystidea-order
+    children:
+    - taxon: glyptocystites
+      pages: 215
+      new: true
+      children:
+      - taxon: multiporata_billings_1854
+        pages: 216
+        new: true
+        illustrations:
+        - page: 216
+          figures:
+          - [1, 6]

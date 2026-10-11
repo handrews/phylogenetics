@@ -63,7 +63,7 @@ def registers(repositories):
 
 
 def test_registry_links_real_registry_passes():
-  assert material.registry_links(io.load_yaml(io.DATA_DIR / 'repositories.yaml')) == []
+  assert material.registry_links(io.load_yaml(support.CORPUS / 'repositories.yaml')) == []
 
 
 def test_registry_links_synthetic_registry_passes(repositories):
@@ -955,6 +955,7 @@ def test_check_draft_exits_one_on_an_explicit_repository_that_is_no_registry_key
   assert 'repository "GSC" is not a key of the registry' in result.stdout
 
 
+@pytest.mark.production
 def test_roles_registry_matches_the_schema_enum():
   # Every role the schema allows is documented, and nothing else is; an
   # `equivalent` names another documented role.

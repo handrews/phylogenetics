@@ -1,0 +1,44 @@
+taxonomies:
+- taxon: blastozoa
+  children:
+  - taxon: eocrinoidea
+    notes: nom. transl. Regnéll, 1945 ex Subclass Eocrinoidea Jaekel, 1918
+    children:
+    - taxon: ampheristocystidae
+      new: true
+      children:
+      - taxon: ampheristocystis
+        new: true
+        synonyms:
+        - taxon: ampheristocystis
+          nudum: true
+          auth: [frest]
+          year: 1984
+          pages: 2097
+          citedAs: |
+            Studies of Silurian echinoderms. Dissertation Abstracts
+            International B44
+        - taxon: ampheristocystis
+          nudum: true
+          auth: [frest, brett, witzke]
+          year: 1999
+          pages: [728, 729]
+          citedAs: |
+            "Caradocian-Gedinnian echinoderm associations of central and
+            eastern North America. In Paleocommunity Analysis: A
+            Silurian-Lower Devonian Example, Boucot AJ, Lawson JD (eds).
+            Cambridge University Press: Cambridge; 638–783."
+        children:
+        - taxon: concentricus_frest_2005
+          new: true
+          synonyms:
+          - taxon: concentricus_frest_2005
+            nudum: true
+            year: 1999
+            pages: 729
+            citedAs: |
+              "Caradocian-Gedinnian echinoderm associations of central and
+              eastern North America. In Paleocommunity Analysis: A
+              Silurian-Lower Devonian Example, Boucot AJ, Lawson JD (eds).
+              Cambridge University Press: Cambridge; 638–783."
+            notes: Also cites Frest & Strimple, but unclear what paper.

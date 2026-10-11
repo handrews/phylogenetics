@@ -1,0 +1,53 @@
+taxonomies:
+- taxon: stylophora
+  children:
+  - taxon: cornuta
+    children:
+    - taxon: phyllocystidae
+      children:
+      - taxon: lobocarpus
+        provisional: true
+        new: true
+        children:
+        - taxon: vizcainoi_ubaghs_1999
+          isType: true
+          new: true
+    - openTaxon: cornuta-incertae-sedis_ubaghs_1999
+      children:
+      - openTaxon: cornuta-sp_ubaghs_1999
+        new: true
+- taxon: cystoidea
+  children:
+  - taxon: glyptocystitida-superfamily
+    children:
+    - taxon: barroubiocystidae
+      new: true
+      children:
+      - taxon: barroubiocystis
+        new: true
+        children:
+        - taxon: radiata_ubaghs_1999
+          isType: true
+          new: true
+      - taxon: velieuxicystis
+        new: true
+        children:
+        - taxon: ornata_ubaghs_1999
+          isType: true
+          new: true
+- taxon: edrioasteroidea
+  notes: Also has a "?", in addition to Stromatocystites having one
+  children:
+  - taxon: stromatocystites
+    children:
+    - openTaxon: stromatocystites-sp_ubaghs_1999
+      provisional: true
+      new: true
+- openTaxon: echinodermata-incertae-sedis_ubaghs_1999
+  children:
+  - taxon: scoteinocystis
+    new: true
+    children:
+    - taxon: cambriensis_ubaghs_1999
+      isType: true
+      new: true

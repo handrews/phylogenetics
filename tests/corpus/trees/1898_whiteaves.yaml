@@ -1,0 +1,14 @@
+taxonomies:
+- taxon: steganoblastus
+  new: true
+  pages:
+  - [395, 396]
+  substituted:
+    taxon: astrocystites
+  children:
+  - taxon: ottawaensis_whiteaves_1897
+    citedAs: Steganoblastus Canadensis
+    lapsus:
+      taxon: canadensis_whiteaves_1898
+      notes: |
+        Whiteaves's inadvertent error noted by Bather 1914 (p. 193).

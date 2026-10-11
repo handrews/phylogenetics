@@ -161,9 +161,13 @@ never from the repository.
 - A question is added with its `verified` line, its blocks and its
   shows; a question whose expected answer stops matching the data is
   either updated with the data change that broke it or removed, never
-  left stale. `tests/test_claims.py` enforces this: every expected block
-  must build from the corpus and rest on claims, and every shows string
-  must appear in the rendered expectation.
+  left stale. The questions and their expected answers hold for the
+  data as it stood when their checked-in results were produced, so the
+  check is a demo, not part of the default suite or CI: `poetry run
+  pytest --demo tests/test_claims.py` builds every expected block over
+  the committed `claims/` and looks for every shows string in the
+  rendered expectation. The automated tests run over the frozen corpus
+  under `tests/corpus/` instead.
 - When a source gains coverage, its uncaptured questions turn into
   answerable ones; keep the id and change the class.
 - The mix (roughly 12 answerable, 9 uncaptured, 8 as-published, 17

@@ -1,0 +1,67 @@
+prefixes:
+  F.: uq-f
+taxonomies:
+- taxon: echinodermata
+  auth: [klein]
+  year: 1734
+  children:
+  - taxon: haplozoa
+    new: true
+    children:
+    - taxon: cyamoidea
+      new: true
+      children:
+      - taxon: peridionitidae
+        new: true
+        children:
+        - taxon: peridionites
+          new: true
+          children:
+          - taxon: navicula_whitehouse_1941
+            isType: true
+            new: true
+            material:
+            - prefix: F.
+              numbers: [5404]
+              role: holotype
+            - prefix: F.
+              numbers: [5399, 5400, 5401, 5402, 5403]
+              role: paratype
+    - taxon: cycloidea
+      new: true
+      children:
+      - taxon: cymbionitidae
+        new: true
+        children:
+        - taxon: cymbionites
+          new: true
+          children:
+          - taxon: craticula_whitehouse_1941
+            isType: true
+            new: true
+            material:
+            - prefix: F.
+              numbers: [5409]
+              role: holotype
+            - prefix: F.
+              numbers: [5410, 5411, 5412, 5413, 5414, 5415, 5416, 5417, 5418, 5419, 5420]
+  - taxon: homalozoa
+    new: true
+    children:
+    - taxon: carpoidea
+    - taxon: machaeridia
+phylogenies:
+- treeType: diagram
+  tree:
+    taxon: echinodermata
+    children:
+    - taxon: haplozoa
+      children:
+      - taxon: cyamoidea
+        children:
+        - children:
+          - taxon: pelmatozoa
+          - taxon: cycloidea
+            children:
+            - taxon: eleutherozoa
+        - taxon: homalozoa

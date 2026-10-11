@@ -21,7 +21,7 @@ from phylohist.loader import io, material, nomenclature
 from phylohist.loader.load import _report_nomenclature
 from phylohist.loader.material import walk_document
 from phylohist.loader.taxa import Tree
-from phylohist.store import CLAIMS_DIR, ClaimStore
+from phylohist.store import ClaimStore
 from phylohist.words import ABSENCE_WORDS
 from tests import support
 
@@ -662,11 +662,11 @@ TREES = {
 
 
 @pytest.fixture(scope='module')
-def synthetic(load_records, tmp_path_factory):
+def synthetic(corpus, tmp_path_factory):
   """A `ClaimStore` over a copy of `claims/` with the claims of each source
   of `TREES` replaced by those of its tree."""
   directory = tmp_path_factory.mktemp('claims')
-  shutil.copytree(CLAIMS_DIR, directory, dirs_exist_ok=True)
+  shutil.copytree(corpus.claims, directory, dirs_exist_ok=True)
   for source_key, (root, position) in TREES.items():
     claims = _claims(root, position, source_key)
     (directory / f'{source_key}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
@@ -1504,11 +1504,11 @@ NULLS = {
 
 
 @pytest.fixture(scope='module')
-def nulled(load_records, tmp_path_factory):
+def nulled(corpus, tmp_path_factory):
   """A `ClaimStore` over a copy of `claims/` with the claims of 1961 Dehm
   replaced by those of `NULLS`, its `types` coverage `partly`."""
   directory = tmp_path_factory.mktemp('claims_nulls')
-  shutil.copytree(CLAIMS_DIR, directory, dirs_exist_ok=True)
+  shutil.copytree(corpus.claims, directory, dirs_exist_ok=True)
   claims = _claims(NULLS, 985, '1961_dehm')
   (directory / '1961_dehm.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
   store = ClaimStore(directory)

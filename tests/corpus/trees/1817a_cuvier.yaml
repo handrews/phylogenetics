@@ -1,0 +1,7 @@
+taxonomies:
+- taxon: animaux
+  children:
+  - taxon: vertébrés
+    children:
+    - taxon: mammifères
+    - taxon: oiseaux

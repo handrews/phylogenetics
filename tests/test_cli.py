@@ -7,16 +7,10 @@ unresolved name is an answer with exit 0, and a bad argument exits 2.
 """
 
 import json
-import os
 
 import pytest
 
 from phylohist import cli, tools
-
-pytestmark = pytest.mark.skipif(
-  bool(os.getenv('PHYLOHIST_DRAFTS')),
-  reason='the committed claim table covers data/ only',
-)
 
 
 def run(capsys, *argv):

@@ -1,0 +1,15 @@
+notes: |
+  Entire article not translated, only enough for Echinus/Echinosphaerites.
+taxonomies:
+- taxon: echinus
+  children:
+  - taxon: pomum_gyllenhaal_1772
+  - taxon: aurantium_gyllenhaal_1772
+  - openTaxon: echinus-sp_hisinger_1802
+    notes: Compared with aurantium_gyllenhaal_1772
+    pages:
+    - [189, 190]
+    illustrations:
+    - plate: VII
+      figures:
+      - b

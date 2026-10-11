@@ -1,23 +1,25 @@
-"""Every eval question's expected answer must still build from the corpus.
+"""The claim table: what the extractor derives from a tree, the manifest,
+and the eval questions as a demo over the committed `claims/`.
 
-`eval/README.md` promises that a question whose expected answer stops
-matching the data is updated or removed, never left stale; this test
-makes that mechanical. An expected answer is the blocks it is made of
-(a tool and the parameters that matter) and the strings the rendered
-answer shows. Each alternative is a plan that `phylohist.plan.execute`
-must build in full, every block resting on claims or being a gap or
-absence statement; the rendered composition of each alternative
-must contain every `shows` string, the question's and its own.
+`test_question` (marked `demo`, run with `--demo`) checks that every eval
+question's expected answer still builds over `claims/`. An expected
+answer is the blocks it is made of (a tool and the parameters that
+matter) and the strings the rendered answer shows. Each alternative is a
+plan that `phylohist.plan.execute` must build in full, every block
+resting on claims or being a gap or absence statement; the rendered
+composition of each alternative must contain every `shows` string, the
+question's and its own. The questions hold for the data they were last
+refreshed against (`eval/README.md`), so the default suite skips them.
 
-The manifest's inconsistency rows are gated too: a declared coverage
-value that the derived claims contradict fails until the declaration or
-the tree is corrected (`scripts/claims.py --inconsistencies` explains
-each row).
+The curated corpus's manifest is gated (marked `production`): a declared
+coverage value that the derived claims contradict fails until the
+declaration or the tree is corrected (`scripts/claims.py
+--inconsistencies` explains each row). Everything else here runs over the
+test corpus.
 """
 
 import collections
 import logging
-import os
 import pathlib
 
 import pytest
@@ -43,23 +45,19 @@ QUESTIONS_PATH = pathlib.Path(__file__).parent.parent / 'eval' / 'questions.yaml
 with open(QUESTIONS_PATH) as fd:
   QUESTIONS = yaml.safe_load(fd)
 
-pytestmark = pytest.mark.skipif(
-  bool(os.getenv('PHYLOHIST_DRAFTS')),
-  reason='the eval set is written against data/ only',
-)
+
+@pytest.fixture(scope='session')
+def roots(corpus):
+  return corpus.roots
 
 
 @pytest.fixture(scope='session')
-def roots(load_records):
-  _, _, roots = load_records
-  return roots
+def claims(corpus):
+  return corpus.claims_by_source
 
 
-@pytest.fixture(scope='session')
-def claims(roots):
-  return extract(roots)
-
-
+@pytest.mark.demo
+@pytest.mark.usefixtures('demo_store')
 @pytest.mark.parametrize('question', QUESTIONS, ids=[q['id'] for q in QUESTIONS])
 def test_question(question):
   expected = question['expected']
@@ -79,10 +77,13 @@ def test_question(question):
         pytest.fail(f'{qid}: the expected answer does not show "{text}"')
 
 
-def test_no_inconsistencies(claims, roots):
+@pytest.mark.production
+def test_no_inconsistencies(production):
+  if production.manifest is None:
+    pytest.fail('the load logged errors; see test_no_errors')
   rows = {
     source_key: entry['inconsistencies']
-    for source_key, entry in manifest(claims, roots)['sources'].items()
+    for source_key, entry in production.manifest['sources'].items()
     if entry.get('inconsistencies')
   }
   if rows:

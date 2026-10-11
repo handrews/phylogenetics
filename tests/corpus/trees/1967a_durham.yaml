@@ -1,0 +1,22 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: echinozoa
+    children:
+    - taxon: camptostromatoidea
+      corrected:
+        taxon: camptostromoidea
+      citedAs: |
+        Class CAMPTOSTROMATOIDEA
+        Durham, 1966
+        [nom. correct. DURHAM, herein (pro Camptostromoidea
+        DURHAM, 1966, p. 1219)]
+      children:
+      - taxon: camptostromatidae
+        new: true
+        children:
+        - taxon: camptostroma
+          notes: Species other than roddyi not actually Camptostroma
+          children:
+          - taxon: roddyi_ruedemann_1933
+            isType: true

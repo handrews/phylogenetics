@@ -24,6 +24,7 @@ from phylohist.loader.taxa import Section, Taxon, Tree
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SCRIPTS = ROOT / 'scripts'
+CORPUS = ROOT / 'tests' / 'corpus'
 
 _schema = None
 
@@ -49,7 +50,7 @@ def script(name):
   return _scripts[name]
 
 
-def run_check_draft(path, data_dir=io.DATA_DIR):
+def run_check_draft(path, data_dir=CORPUS):
   """`scripts/check_draft.py <path> --data <data_dir>` run in this process
   with the session's schema and libyaml: the exit status, what it printed,
   and what the loader logged at WARNING or above, named as a subprocess

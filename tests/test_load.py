@@ -4,7 +4,8 @@ Fails on any ERROR-level log record. Compares WARNING-level messages against
 ``tests/expected-warnings.txt``: a new line there is allowed only in a commit
 that adds a check, and every line is a resolution owed. Regenerate with
 ``PHYLOHIST_UPDATE_EXPECTED=1 poetry run pytest``. The load itself is the
-session fixture in ``conftest.py``.
+``production`` fixture in ``conftest.py``; these are the tests about the
+curated corpus, marked ``production``.
 
 ``PHYLOHIST_DRAFTS=1`` also loads the unaudited trees under ``drafts/``
 (the CLI's ``--draft``). Drafts are expected to produce errors and
@@ -28,24 +29,24 @@ EXPECTED_WARNINGS_HEADER = """\
 """
 
 
-def test_no_errors(load_records):
-  _, records, _ = load_records
-  errors = [r for r in records if r.levelno >= logging.ERROR]
+@pytest.mark.production
+def test_no_errors(production):
+  errors = [r for r in production.records if r.levelno >= logging.ERROR]
   if errors:
     message = '\n'.join(r.getMessage() for r in errors)
     pytest.fail(f'{len(errors)} ERROR-level log records:\n{message}')
 
 
-def test_data_loaded(load_records):
-  data, _, _ = load_records
-  assert data['trees'], 'load produced no trees; check for a silent empty load'
+@pytest.mark.production
+def test_data_loaded(production):
+  assert production.data['trees'], 'load produced no trees; check for a silent empty load'
 
 
-def test_expected_warnings(load_records):
+@pytest.mark.production
+def test_expected_warnings(production):
   if os.getenv('PHYLOHIST_DRAFTS'):
     pytest.skip('drafts loaded; the warning snapshot covers data/ only')
-  _, records, _ = load_records
-  actual = sorted({r.getMessage() for r in records if r.levelno == logging.WARNING})
+  actual = sorted({r.getMessage() for r in production.records if r.levelno == logging.WARNING})
 
   if os.getenv('PHYLOHIST_UPDATE_EXPECTED') and not os.getenv('CI'):
     # Regenerate the snapshot; never on CI, where it would hide a regression.

@@ -1,0 +1,10 @@
+notes: |
+  It's unclear if any species were defined.  Presumably yes for Echinocyamus
+  as the ICZN accepts it, but suppresses Echinoneus in favor of Leske (1778)
+  on the grounds of inconsistent binomial usage. But I can't make heads or
+  tails of the text, so just the genera are recorded here.
+taxonomies:
+- taxon: echinocyamus
+  new: true
+- taxon: echinoneus_van phelsum_1774
+  new: true

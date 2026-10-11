@@ -1,0 +1,183 @@
+taxonomies:
+- taxon: rhombifera-class
+  children:
+  - taxon: dichoporita
+    emended: true
+    children:
+    - taxon: glyptocystitida-superfamily
+      children:
+      - taxon: macrocystellidae
+        emended: true
+        children:
+        - taxon: macrocystella
+          children:
+          - taxon: mariae_callaway_1877
+          - taxon: bohemicus_barrande_1887_mimocystites
+          - taxon: azaisei_thoral_1935
+      - taxon: cheirocrinidae
+        children:
+        - taxon: cheirocrinus
+          children:
+          - openTaxon: cheirocrinus-sp-1_paul.c.r.c_1968
+          - taxon: atavus_jaekel_1899
+          - taxon: giganteus_leuchtenberg_1943
+          # - taxon: languedocianus_thoral_
+          - taxon: granulatus_jaekel_1899
+          # - taxon: anatiformis_hall_
+          - openTaxon: cheirocrinus-sp-2_paul.c.r.c_1968
+            new: true
+          - openTaxon: cheirocrinus-sp-3_paul.c.r.c_1968
+          - taxon: interruptus_jaekel_1899
+          # - taxon: jamesi_mccoy_
+        - taxon: homocystites
+          children:
+          - taxon: alter_barrande_1887
+          # - taxon: constrictus_bather_
+      - taxon: echinoencrinitidae
+        children:
+        - taxon: echinoencrinitinae
+          children:
+          - taxon: angulosus_pander_1830
+          - taxon: senckenbergii_meyer_1826
+          - taxon: reticulatus_jaekel_1899
+        - taxon: erinocystis
+          children:
+          - openTaxon: erinocystis-sp_paul.c.r.c_1968
+        - taxon: scoliocystinae
+          emended: true
+          children:
+          - taxon: schizocystis
+            children:
+            - taxon: armata_forbes_1848
+          - taxon: glansicystis
+            children:
+            - taxon: baccata_forbes_1848
+          - taxon: osculocystis
+            children:
+            - taxon: monobrachiolata_paul.c.r.c_1967
+      - taxon: rhombiferidae
+        children:
+        - taxon: rhombifera
+          children:
+          - taxon: bohemica_barrande_1867
+      - taxon: pleurocystitidae
+        children:
+        - taxon: amecystis
+          children:
+          - taxon: laevis_raymond_1921
+          - openTaxon: amecystis-sp_paul.c.r.c_1968
+            new: true
+        - taxon: praepleurocystis
+          children:
+          - taxon: watkinsi_strimple_1948
+        - taxon: pleurocystites
+          children:
+          # - taxon: elegans_billings_
+          - taxon: filitextus_billings_1854
+          - taxon: squamosus_billings_1854
+          # - taxon: rugeri_salter_
+          # - taxon: quadratus_bather_
+          # - taxon: gibbus_bather_
+        - taxon: regulaecystis
+          children:
+          - taxon: pleurocystoides_dehm_1932
+      - taxon: glyptocystitidae
+        children:
+        - taxon: glyptocystites
+          children:
+          # - taxon: ehlersi_kesling_
+          - taxon: multiporus_billings_1854
+          - taxon: regnelli_sinclair_1948
+          - taxon: batheri_sinclair_1948
+      - taxon: callocystitidae
+        children:
+        - taxon: callocystites
+          children:
+          - taxon: jewetti_hall_1852
+          - taxon: canadensis_billings_1866
+          - taxon: subglobosus_hall_1862
+        - taxon: sphaerocystites
+          children:
+          - taxon: multifasciatus_hall_1859
+          # - taxon: bloomfieldensis_schuchert_
+        - taxon: hallicystis
+          # children:
+          # - taxon: imago_hall_
+          # - taxon: elongata_jaekel_
+          # - taxon: attenuata_paul.c.r.c_
+        - taxon: lepadocystis
+          children:
+          - taxon: moorei_meek_1871
+        - taxon: brockocystis
+          # children:
+          # - taxon: tecumseh_billings_
+        - taxon: jaekelocystis
+          # children:
+          # - taxon: hartleyi_schuchert_
+        - taxon: lovenicystis
+          children:
+          - taxon: angelini_jaekel_1899
+        - taxon: apiocystites
+          # children:
+          # - taxon: pentrematoides_forbes_
+        - taxon: lepocrinites
+          # children:
+          # - taxon: gebhardii_conrad_
+        - taxon: prunocystites
+          # children:
+          # - taxon: fletcheri_forbes_
+        - taxon: lipsanocystis
+          # children:
+          # - taxon: traversensis_ehlers_leighley_
+          # - taxon: magnus_stumm_
+        - taxon: tetracystis
+          # children:
+          # - taxon: fenestratus_troost_
+          # - taxon: chrysalis_schuchert_
+          # - taxon: oblongus_forbes_
+          # - taxon: elegans_hall_
+        - taxon: strobilocystites
+          children:
+          - taxon: calvini_white_1876
+        - taxon: staurocystis
+          children:
+          - taxon: quadrifasciatus_pearce_1843
+        - taxon: pseudocrinites
+          children:
+          - taxon: bifasciatus_pearce_1843
+          - taxon: pyriformis_paul.c.r.c_1967
+          # - taxon: gordoni_schuchert_
+          # - taxon: perdewi_schuchert_
+          # - taxon: stellatus_schuchert_
+          # - taxon: clarki_schuchert_
+    - taxon: hemicosmitida-superfamily
+      children:
+      - taxon: hemicosmitidae
+        children:
+        - taxon: hemicosmites
+          children:
+          - taxon: pyriformis_buch_1840
+          # - taxon: extraneus_eichwald_
+          - openTaxon: hemicosmites-sp-1_paul.c.r.c_1968
+            new: true
+          - taxon: malum_pander_1830
+          # - cfTaxon: verrucosus_eichwald_
+          - openTaxon: hemicosmites-sp-2_paul.c.r.c_1968
+          - openTaxon: hemicosmites-sp-3_paul.c.r.c_1968
+      - taxon: caryocrinitidae
+        children:
+        - taxon: caryocrinites
+          children:
+          - taxon: ornatus_say_1825
+          # - taxon: roemeri_jaekel_
+          - taxon: septentrionallis_regnéll_1945
+          # - taxon: elongatus_rowley_
+      - taxon: thomacystidae
+        children:
+        - taxon: thomacystis
+          # children:
+          # - taxon: tuberculata_paul.c.r.c_
+  - taxon: fistuliporita
+    new: true
+    children:
+    - taxon: caryocystitida-superfamily

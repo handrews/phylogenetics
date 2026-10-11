@@ -1,0 +1,20 @@
+taxonomies:
+- taxon: blastozoa
+  children:
+  - taxon: eocrinoidea
+    children:
+    - taxon: gogiida
+      children:
+      - taxon: lyracystidae
+        children:
+        - taxon: balangicystis
+          emended: true
+          notes: Says "Revised diagnosis" rather than emended.
+          children:
+          - taxon: rotundus_parsley_zhao.y.l_2006
+            isType: true
+        - taxon: lyracystis
+          children:
+          - taxon: radiata_sprinkle_1973
+            isType: true
+          - taxon: reesei_sprinkle_collins.d_2006

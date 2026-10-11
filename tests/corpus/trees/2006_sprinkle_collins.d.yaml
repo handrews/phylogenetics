@@ -1,0 +1,38 @@
+taxonomies:
+- taxon: blastozoa
+  children:
+  - taxon: eocrinoidea
+    children:
+    - taxon: gogiida
+      children:
+      - taxon: lyracystidae
+        new: true
+        children:
+        - taxon: lyracystis
+          isType: true
+          new: true
+          children:
+          - taxon: radiata_sprinkle_1973
+            isType: true
+            synonyms:
+            - taxon: radiata_sprinkle_1973
+              pars: true
+              parents:
+              - taxon: gogia
+                provisional: true
+          - taxon: reesei_sprinkle_collins.d_2006
+            new: true
+      - taxon: eocrinidae
+        children:
+        - taxon: gogia
+          children:
+          - taxon: prolifica_walcott_1917
+            isType: true
+          - taxon: stephenensis_sprinkle_collins.d_2006
+            new: true
+          synonyms:
+          - taxon: radiata_sprinkle_1973
+            pars: true
+            provisional: true
+            parents:
+            - taxon: gogia

@@ -1,0 +1,17 @@
+taxonomies:
+- taxon: echinodermata
+  authority:
+    source: 1734_klein
+  children:
+  - taxon: blastozoa
+    children:
+    - taxon: eocrinoidea
+      children:
+      - taxon: gogiida
+        children:
+        - taxon: eocrinidae
+          children:
+          - taxon: sinoeocrinus
+            children:
+            - openTaxon: sinoeocrinus-sp_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010
+              new: true

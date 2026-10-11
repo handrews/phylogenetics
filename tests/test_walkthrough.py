@@ -1,12 +1,12 @@
 """The walkthrough's answers are what the code renders.
 
 `docs/walkthrough.md` pastes, for each plan file under `docs/walkthrough/`,
-the answer the plan renders; this test renders each plan and looks for
-the text, so the page cannot drift from the code, and checks that every
-plan file is the page's.
+the answer the plan renders over the committed `claims/`; this test
+renders each plan and looks for the text, and checks that every plan file
+is the page's. The page holds for the data it was last refreshed against,
+so the test is a demo (marked `demo`, run with `--demo`).
 """
 
-import os
 import pathlib
 
 import pytest
@@ -15,10 +15,7 @@ import yaml
 from phylohist import plan
 from phylohist.render import render_composition
 
-pytestmark = pytest.mark.skipif(
-  bool(os.getenv('PHYLOHIST_DRAFTS')),
-  reason='the committed claim table covers data/ only',
-)
+pytestmark = [pytest.mark.demo, pytest.mark.usefixtures('demo_store')]
 
 DOCS = pathlib.Path(__file__).parent.parent / 'docs'
 PLANS = sorted((DOCS / 'walkthrough').glob('*.yaml'))

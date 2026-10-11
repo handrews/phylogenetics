@@ -1,0 +1,57 @@
+notes: |
+  This is a shortened yet enhanced version of part of 1840a_buch,
+  as now Cryptocrinites regularis is defintely rather than tentatively
+  a species, and Ischadites koenigii Murchison is now synonymized
+  with Sphaeronites aurantium.
+taxonomies:
+- taxon: crinoidea-family
+  children:
+  - taxon: sphaeronites
+    notes: |
+      No formal definitions or figures, just mentions in text.
+    synonyms:
+    - taxon: echinosphaerites
+    - taxon: ischadites
+    children:
+    - taxon: aurantium_gyllenhaal_1772
+      synonyms:
+      - taxon: granatum_wahlenberg_1821
+      - taxon: koenigii_murchison_1839
+        parents:
+        - taxon: ischadites
+        authority:
+          source: 1839_murchison
+          illustrations:
+          - plate: XXVI
+            figures:
+            - 11
+    - taxon: pomum_gyllenhaal_1772
+  - taxon: hemicosmites
+    pages:
+    - [59, 60]
+    children:
+    - taxon: pyriformis_buch_1840
+      pages:
+      - [59, 60]
+  - taxon: cryptocrinites
+    pages: 60
+    children:
+    - taxon: regularis_buch_1840
+      pages: 60
+      notes: |
+        No longer tentative, but no figures cited, even though
+        Buch's previous paper included figure 33 from Pander's
+        unnamed species similar to E. laevis which is no longer
+        synonymized with C. cerasus.
+    - taxon: cerasus_buch_1840
+      pages: 60
+      synonyms:
+      - taxon: laevis_pander_1830
+        parents:
+        - taxon: echinosphaerites
+        authority:
+          source: 1830_pander
+          illustrations:
+          - plate: II
+            figures:
+            - [24, 26]

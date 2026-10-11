@@ -6,17 +6,8 @@ what could not be built. Every eval question's expected blocks are a
 plan that executes and shows its strings (the claims test covers that).
 """
 
-import os
-
-import pytest
-
 from phylohist import plan
 from phylohist.render import render_composition
-
-pytestmark = pytest.mark.skipif(
-  bool(os.getenv('PHYLOHIST_DRAFTS')),
-  reason='the committed claim table covers data/ only',
-)
 
 
 def test_validate_rejects_what_the_tools_lack():

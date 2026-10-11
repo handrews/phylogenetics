@@ -1,0 +1,16 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: pelmatozoa-class
+    new: true
+    children:
+    - taxon: cystoidea-order
+    - taxon: crinoidea-order
+  - taxon: actinozoa
+    children:
+    - taxon: echinoidea-order
+    - taxon: asteroidea-order
+  - taxon: scytodermata
+    children:
+    - taxon: holothuria-order
+    - taxon: sipunculida-order

@@ -1,0 +1,22 @@
+taxonomies:
+- taxon: crinoidea-family
+  children:
+  - taxon: echino-encrinites
+    children:
+    # - taxon: senkenbergii_meyer_1826
+    - taxon: angulosus_pander_1830
+      synonyms:
+      - taxon: angulosa_pander_1830
+        parents:
+        - taxon: echinosphaerites
+    - taxon: striatus_pander_1830
+      synonyms:
+      - taxon: striata_pander_1830
+        parents:
+        - taxon: echinosphaerites
+    - taxon: granatum_wahlenberg_1821
+      synonyms:
+      - parents:
+        - authority:
+            source: 1828_hisinger
+          taxon: sphaeronites

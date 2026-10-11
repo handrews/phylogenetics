@@ -24,7 +24,7 @@ from phylohist.loader import io, material
 from phylohist.loader.load import _report_section_protologues
 from phylohist.loader.research import Source
 from phylohist.loader.taxa import Section, Tree
-from phylohist.store import CLAIMS_DIR, ClaimStore
+from phylohist.store import ClaimStore
 from tests import support
 
 # The synthetic trees name real records, so every test needs the corpus loaded.
@@ -473,7 +473,7 @@ def test_the_placement_is_under_the_bracket_via_bracket():
   ]
 
 
-def test_the_nodes_own_placement_wins_by_path(tmp_path):
+def test_the_nodes_own_placement_wins_by_path(corpus, tmp_path):
   tree = _tree(
     {
       'taxon': 'crinoidea',
@@ -486,7 +486,7 @@ def test_the_nodes_own_placement_wins_by_path(tmp_path):
   )
   claims = _claims(tree)
   directory = tmp_path / 'claims'
-  shutil.copytree(CLAIMS_DIR, directory)
+  shutil.copytree(corpus.claims, directory)
   (directory / f'{SOURCE}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
   closure = Closure(ClaimStore(directory))
   for index in (0, 1):
@@ -567,9 +567,11 @@ def _marked(value, field):
 
 @pytest.mark.parametrize('source', MIGRATED)
 def test_a_migrated_trees_bracket_placements_are_under_the_taxa_it_brackets(source, store):
-  bracketed = set(_marked(io.load_yaml(io.TREE_DIR / f'{source}.yaml'), 'bracketStart'))
+  bracketed = set(
+    _marked(io.load_yaml(support.CORPUS / 'trees' / f'{source}.yaml'), 'bracketStart')
+  )
   assert bracketed
-  assert set(_marked(io.load_yaml(io.TREE_DIR / f'{source}.yaml'), 'bracket')) == set()
+  assert set(_marked(io.load_yaml(support.CORPUS / 'trees' / f'{source}.yaml'), 'bracket')) == set()
   claims = store.by_source[source]
   placements = [c for c in claims if c['kind'] == 'placement' and c.get('via') == 'bracket']
   assert placements
@@ -1239,7 +1241,9 @@ def test_a_section_is_no_placement_or_usage_and_the_nodes_claims_are_unchanged(s
   assert strip(marked) == strip(plain)
 
 
-def test_a_claim_store_over_a_section_claim_loads_and_the_tools_run_clean(sections, tmp_path):
+def test_a_claim_store_over_a_section_claim_loads_and_the_tools_run_clean(
+  corpus, sections, tmp_path
+):
   tree = _taxonomy(ASTERIAS)
   claims = _claims(tree)
   roots = {SOURCE: [tree]}
@@ -1250,7 +1254,7 @@ def test_a_claim_store_over_a_section_claim_loads_and_the_tools_run_clean(sectio
   assert SOURCE in table['taxa']['luna_linnaeus_1758']
 
   directory = tmp_path / 'claims'
-  shutil.copytree(CLAIMS_DIR, directory)
+  shutil.copytree(corpus.claims, directory)
   (directory / f'{SOURCE}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
   store = ClaimStore(directory)
   [claim] = [c for c in store.by_source[SOURCE] if c.get('section') == INTEGRA]

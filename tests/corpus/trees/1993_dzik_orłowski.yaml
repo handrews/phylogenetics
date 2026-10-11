@@ -1,0 +1,14 @@
+taxonomies:
+- taxon: cystoidea
+  children:
+  - taxon: eocrinida
+    children:
+    - taxon: cambrocrinidae
+      new: true
+      children:
+      - taxon: cambrocrinus
+        children:
+        - taxon: regularis_orłowski_1968
+          isType: true
+          emended: true
+      - taxon: eocystites

@@ -1,0 +1,22 @@
+prefixes:
+  GM: gm
+taxonomies:
+- taxon: edrioasteroidea
+  children:
+  - openTaxon: edrioasteroidea-order-uncertain_zhao.y.l_sumrall_parsley_peng.j_2010
+    children:
+    - openTaxon: edrioasteroidea-family-uncertain_zhao.y.l_sumrall_parsley_peng.j_2010
+      children:
+      - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
+        new: true
+        children:
+        - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
+          isType: true
+          new: true
+          material:
+          - prefix: GM
+            numbers: [3428]
+            role: holotype
+          - prefix: GM
+            numbers: [70, 746, 1331, 1670, 1898, 2103, 2146, 3295a, 3295b, 3295c, 3035, 3600, 3665, 8052, 9292]
+            role: paratype

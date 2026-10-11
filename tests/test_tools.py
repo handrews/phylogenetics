@@ -9,7 +9,6 @@ re-extracting.
 """
 
 import json
-import os
 import pathlib
 import shutil
 
@@ -20,16 +19,11 @@ from phylohist.claims import extract
 from phylohist.evaluation import alternatives
 from phylohist.loader.taxa import Tree
 from phylohist.render import node_label
-from phylohist.store import AMBIGUOUS, CLAIMS_DIR, ClaimStore, split_typed_number
+from phylohist.store import AMBIGUOUS, ClaimStore, split_typed_number
 
 QUESTIONS_PATH = pathlib.Path(__file__).parent.parent / 'eval' / 'questions.yaml'
 with open(QUESTIONS_PATH) as fd:
   QUESTIONS = yaml.safe_load(fd)
-
-pytestmark = pytest.mark.skipif(
-  bool(os.getenv('PHYLOHIST_DRAFTS')),
-  reason='the committed claim table covers data/ only',
-)
 
 UNCAPTURED = [q for q in QUESTIONS if q['class'] == 'uncaptured']
 
@@ -1023,8 +1017,8 @@ def test_absence_table_reads_coverage_where_nothing_is_entered(store):
   assert block['content'][0]['rows'][0]['state'] == 'notEntered'
 
 
-def test_absence_table_notes_an_incomplete_specimen_list(store):
-  fresh = ClaimStore()
+def test_absence_table_notes_an_incomplete_specimen_list(corpus):
+  fresh = ClaimStore(corpus.claims)
   [path] = fresh._record_paths('1973_sprinkle', 'durhami_sprinkle_1973')
   specimen = next(
     c for c in fresh._node_claims('1973_sprinkle', path) if c.get('materialKind') == 'specimen'
@@ -1060,14 +1054,14 @@ def test_gap_says_of_this_kind_when_the_record_is_in_the_source(store):
   assert 'aboutOther' not in plain['fields']
 
 
-def test_synonymy_says_a_source_gives_none(store):
+def test_synonymy_says_a_source_gives_none(store, corpus):
   from phylohist import blocks
   from phylohist.render import render
   from phylohist.store import ClaimStore
 
   # Nothing nulls a synonymy in the corpus yet, so a store of its own gets
   # the auditor's `absence` claim added at a node that lists no synonymy.
-  fresh = ClaimStore()
+  fresh = ClaimStore(corpus.claims)
   [path] = fresh._record_paths('1973_sprinkle', 'neglecta_hecker_1940')
   claim = {
     'kind': 'absence',
@@ -1429,11 +1423,11 @@ NUMBERED = {
 
 
 @pytest.fixture(scope='module')
-def numbered(load_records, tmp_path_factory):
+def numbered(corpus, tmp_path_factory):
   """A `ClaimStore` over a copy of `claims/` whose `1961_dehm` file is
   replaced by the claims of one synthetic tree in the new material shape."""
   directory = tmp_path_factory.mktemp('claims')
-  shutil.copytree(CLAIMS_DIR, directory, dirs_exist_ok=True)
+  shutil.copytree(corpus.claims, directory, dirs_exist_ok=True)
   root = Tree(
     NUMBERED,
     {
@@ -1555,13 +1549,13 @@ LINKED = {
 
 
 @pytest.fixture(scope='module')
-def linked(load_records, tmp_path_factory):
+def linked(corpus, tmp_path_factory):
   """A `ClaimStore` over a copy of `claims/` whose files for Whiteaves 1897,
   Bather 1914c and Fay 1962 are replaced by the claims of synthetic trees
   in which Fay's No. 752 (the editor's inference) is Bather's A, which
   Bather says is Whiteaves's first specimen."""
   directory = tmp_path_factory.mktemp('claims')
-  shutil.copytree(CLAIMS_DIR, directory, dirs_exist_ok=True)
+  shutil.copytree(corpus.claims, directory, dirs_exist_ok=True)
   roots = {
     source: [
       Tree(
@@ -1646,9 +1640,8 @@ def test_specimen_history_by_label_blocks_validate_and_go_through_call(linked):
 
 
 def test_specimen_history_without_links_is_what_the_numbers_alone_find(store):
-  # No `sameAs` is entered in the corpus, and an entry that prints several
-  # numbers joins nothing: every number's lines are those that cite it.
-  assert not any(c.get('sameAs') for c in store.by_id.values())
+  # An entry that prints several numbers joins nothing without a `sameAs`:
+  # every number's lines are those that cite it.
   block = store.specimen_history('UQF 5405')
   assert [e['source'] for e in block['entries']] == ['2021_jell_sprinkle']
   assert block['rendered'].count('the same specimen') == 0

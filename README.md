@@ -188,6 +188,12 @@ schema, `poetry run regenerate` rewrites both:
     git diff --exit-code scripts/schema-usage.md claims/
     poetry run python scripts/check_draft.py drafts/<file>.yaml
 
+The tests run over the frozen copy of the data under `tests/corpus/`;
+only those marked `production` load `data/` itself, so improving the
+data cannot break a test of the code. `poetry run pytest --demo` adds the
+eval questions and the walkthrough over the committed `claims/`, which
+hold for the data they were last refreshed against.
+
 ## Where things are
 
 * `docs/` will contain user documentation; for now it explains how

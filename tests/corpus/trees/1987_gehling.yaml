@@ -1,0 +1,21 @@
+prefixes:
+  SAMP: sam
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: arkarua
+      provisional: true
+      new: true
+      children:
+      - taxon: adami_gehling_1987
+        isType: true
+        new: true
+        material:
+        - prefix: SAMP
+          numbers: [26768]
+          role: holotype
+        - prefix: SAMP
+          numbers: [26769, 26770, 26771, 26772, 26773, 26774, 26775]
+          role: paratype

@@ -1,0 +1,69 @@
+holotype:
+  meaning: >
+    The single specimen fixed as the name-bearing type in the original
+    publication, or the only specimen of the type series.
+  regulated: true
+  article: "73.1"
+paratype:
+  meaning: >
+    Any other specimen of the type series cited in the original
+    publication once a holotype is fixed.
+  regulated: true
+  article: "72.4.5"
+  notes: The Code regulates the type series; the word itself is a recommendation (73D).
+syntype:
+  meaning: >
+    Each specimen of a type series from which no holotype was fixed;
+    together they bear the name.
+  regulated: true
+  article: "73.2"
+lectotype:
+  meaning: A syntype later designated as the single name-bearing type.
+  regulated: true
+  article: "74"
+paralectotype:
+  meaning: A remaining syntype after a lectotype has been designated.
+  regulated: true
+  article: "73F"
+  notes: Recommendation 73F; the word carries no name-bearing status.
+neotype:
+  meaning: >
+    A specimen designated as name-bearing type when the original type
+    material is believed lost or destroyed.
+  regulated: true
+  article: "75"
+topotype:
+  meaning: A specimen from the type locality, cited without name-bearing status.
+  regulated: false
+hypotype:
+  meaning: >
+    A specimen figured or described in a later work to extend or emend
+    the concept of the species; no name-bearing status.
+  regulated: false
+  notes: North American usage of the 1900s to 1960s.
+plesiotype:
+  meaning: The same as hypotype under an older name.
+  regulated: false
+  equivalent: hypotype
+  notes: Older North American usage.
+cotype:
+  meaning: >
+    An older word for a specimen of a type series, used before "syntype"
+    and "paratype" were distinguished.
+  regulated: false
+  equivalent: syntype
+  notes: >
+    Mostly a syntype; some authors meant a paratype after fixing a
+    holotype.
+chirotype:
+  meaning: >
+    A specimen on which a name rests only in manuscript or on a label;
+    no status under the Code.
+  regulated: false
+  notes: Nineteenth-century usage.
+figured:
+  meaning: >
+    A specimen cited as the one a figure was drawn from ("figured
+    specimen", "illustrated specimen", "original" of a figure); not a
+    type role.
+  regulated: false

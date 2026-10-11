@@ -1,0 +1,22 @@
+prefixes:
+  USNM: usnm
+taxonomies:
+- taxon: echinozoa
+  children:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: edrioasterida
+      children:
+      - taxon: totiglobidae
+        children:
+        - taxon: totiglobus
+          children:
+          - taxon: nimius_bell.b.m_sprinkle_1978
+            isType: true
+          - taxon: lloydi_sprinkle_1985
+            provisional: true
+            new: true
+            material:
+            - prefix: USNM
+              numbers: [172047]
+              role: holotype

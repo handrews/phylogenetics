@@ -1,0 +1,47 @@
+phylogenies:
+- treeType: cladogram
+  methodology: Adams consensus of the eight most parsimonious trees
+  tree:
+    taxon: isorophida
+    notes: subclavate
+    children:
+    - taxon: foerstediscus
+    - children:
+      - taxon: isorophina
+      - children:
+        - taxon: carneyella
+        - taxon: isorophidae
+          notes: misspelled isorophinidae but spelled correctly in text
+          children:
+          - notes: domal
+            children:
+            - taxon: neoisorophusella
+            - taxon: isorophusella
+          - taxon: isorophus
+        - taxon: agelacrinitidae
+          children:
+          - taxon: agelacrinites
+          - children:
+            - taxon: postibulla
+            - children:
+              - taxon: stalticodiscus
+              - children:
+                - taxon: squamosus_meek_worthen_1868
+                  parents:
+                  - taxon: lepidodiscus
+                - children:
+                  - taxon: ulrichidiscus
+                  - children:
+                    - taxon: cooperidiscus
+                    - taxon: discocystinae
+                      notes: |
+                        clavate; name not formally established until
+                        Sumrall (1996)
+                      children:
+                      - taxon: laudoni_bassler_1936
+                        parents:
+                        - taxon: lepidodiscus
+                      - children:
+                        - openTaxon: laudoni-chester-l_sumrall_1993
+                        - taxon: lispidecodus
+                        - taxon: discocystis

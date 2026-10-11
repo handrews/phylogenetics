@@ -1,0 +1,7 @@
+taxonomies:
+- taxon: eocrinoidea
+  children:
+  - openTaxon: eocrinoidea-incertae-sedis_smith.a.b_1982
+    children:
+    - taxon: cymbionites
+    - taxon: peridionites

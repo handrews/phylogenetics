@@ -5,9 +5,9 @@ the tools say.
 
 Synthetic trees are built on the session's loaded corpus under positions
 200 and up (`Tree` keeps class-level registries), and the tool tests read a
-`ClaimStore` over a copy of `claims/` whose `1961_dehm` file is replaced by
-the claims of one synthetic tree, since no `…-cf-…` record exists in the
-data yet.
+`ClaimStore` over a copy of the corpus claims whose `1961_dehm` file is
+replaced by the claims of one synthetic tree, with its own `…-cf-…` record
+registered while they are built.
 """
 
 import collections
@@ -20,9 +20,8 @@ import pytest
 from phylohist.claims import extract
 from phylohist.loader import io, nomenclature
 from phylohist.loader.load import _report_nomenclature
-from phylohist.loader.material import walk_document
 from phylohist.loader.taxa import Taxon, Tree
-from phylohist.store import CLAIMS_DIR, ClaimStore
+from phylohist.store import ClaimStore
 from tests import support
 
 SOURCE = '1961_dehm'
@@ -258,20 +257,6 @@ def test_load_reports_nomenclature_checks_at_the_right_level(load_records, caplo
   assert 'open form "gogia-sp_robison_1965"' in conflict and 'src2 at 0' in conflict
 
 
-def test_the_corpus_has_no_nomenclature_messages(load_records):
-  # The data does not use the new fields yet; the loader's own logs
-  # (`test_no_errors`) carry the rest.
-  data, _, _ = load_records
-  found = []
-  for opinion in data['trees'].values():
-    for _, node, _ in walk_document(opinion):
-      found += nomenclature.compared_links(node, Taxon.get)
-      found += nomenclature.quoted_parent(node, Taxon.get)
-      found += nomenclature.role_uncertain(node)
-  assert found == []
-  assert nomenclature.compared_link_conflicts(data['trees'].items()) == []
-
-
 # -- scripts/check_draft.py ---------------------------------------------------
 
 
@@ -489,11 +474,11 @@ CITING_TREE = {
 
 
 @pytest.fixture(scope='module')
-def synthetic(load_records, tmp_path_factory):
+def synthetic(corpus, tmp_path_factory):
   """A `ClaimStore` over a copy of `claims/` with `SOURCE`'s claims
   replaced by those of `SYNTHETIC`, and the record `CF_KEY` registered."""
   directory = tmp_path_factory.mktemp('claims')
-  shutil.copytree(CLAIMS_DIR, directory, dirs_exist_ok=True)
+  shutil.copytree(corpus.claims, directory, dirs_exist_ok=True)
   with pytest.MonkeyPatch.context() as patch:
     patch.setitem(Taxon._taxa, CF_KEY, Taxon(dict(CF_RECORD), CF_KEY))
     written = {SOURCE: _claims(SYNTHETIC, 220), CITING: _claims(CITING_TREE, 221, CITING)}

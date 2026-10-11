@@ -1,0 +1,52 @@
+prefixes:
+  USGD: usgd
+taxonomies:
+- taxon: pelmatozoa
+  children:
+  - taxon: edrioblastoidea
+    children:
+    - taxon: steganoblastidae
+      citedAs: Family steganoblastidae Bather 1900
+      pages: 513
+      synonyms:
+      - taxon: astrocystitidae
+        tentative: true
+        notes: |
+          Bassler 1935 "introduced a new family name, Astrocystitidae, to
+          replace Steganoblastidae. However, since Steganoblastidae, which is
+          based on a junior objective synonym, has priority and has been a
+          more widely used name, it would seem desirable that it be retained.
+          This view accords with Art. 40 of the International Code of
+          Zoological Nomenclature." (p. 514)
+      children:
+      - taxon: astrocystites
+        citedAs: Genus astrocystites Whiteaves 1897 (= steganoblastus Whiteaves 1898)
+        pages: 513
+        notes: |
+          "In the same year Bather raised objections to Whiteaves's generic
+          name on the grounds of possible confusion with Asterocystis
+          Haeckel, and suggested that Whiteaves substitute the name
+          Steganoblastus. The new generic name was introduced by Whiteaves
+          (1898)" (p. 514).
+        synonyms:
+        - taxon: steganoblastus
+          citedAs: steganoblastus Whiteaves 1898
+          authority:
+            source: 1898_whiteaves
+            pages: 395
+        children:
+        - taxon: ottawaensis_whiteaves_1897
+          isType: true
+        - taxon: distans_webby_1968
+          new: true
+          material:
+          - prefix: USGD
+            numbers: [2302]
+            role: holotype
+          - prefix: USGD
+            numbers: [2303, 2304, 2305, 2306, 2308, 2309, 2310, 2311, 2312, 2313, 2314, 3303]
+            role: paratype
+        - openTaxon: astrocystites-sp_webby_1968
+          material:
+          - prefix: USGD
+            numbers: [3304]

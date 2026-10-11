@@ -19,7 +19,7 @@ from phylohist.loader import io, material, nomenclature
 from phylohist.loader.load import _report_nomenclature
 from phylohist.loader.research import Source
 from phylohist.loader.taxa import Taxon, Tree
-from phylohist.store import CLAIMS_DIR, ClaimStore
+from phylohist.store import ClaimStore
 from phylohist.words import ABSENCE_WORDS
 from tests import support
 
@@ -252,11 +252,11 @@ TREE = {
 
 
 @pytest.fixture(scope='module')
-def synthetic(load_records, tmp_path_factory):
+def synthetic(corpus, tmp_path_factory):
   """A `ClaimStore` over a copy of `claims/` with the claims of `SOURCE`
   replaced by those of `TREE`."""
   directory = tmp_path_factory.mktemp('claims')
-  shutil.copytree(CLAIMS_DIR, directory, dirs_exist_ok=True)
+  shutil.copytree(corpus.claims, directory, dirs_exist_ok=True)
   claims = _claims(TREE, 340)
   (directory / f'{SOURCE}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
   return ClaimStore(directory)
@@ -296,13 +296,13 @@ def test_the_placements_table_keeps_the_records_rank(synthetic):
   assert cell['value'] == 'Animalia' and cell['rank'] == 'Class'
 
 
-def test_an_unranked_root_prints_its_name_alone(load_records, tmp_path):
+def test_an_unranked_root_prints_its_name_alone(corpus, tmp_path):
   # A root has no placement claim: its usage carries the null printed rank.
   root = {'taxon': 'vermes', 'rank': None, 'pages': 12, 'children': [{'taxon': 'mollusca'}]}
   claims = _claims(root, 341)
   assert _at(claims, '341', kind='usage')['rankAsPrinted'] is None
   directory = tmp_path / 'claims'
-  shutil.copytree(CLAIMS_DIR, directory)
+  shutil.copytree(corpus.claims, directory)
   (directory / f'{SOURCE}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
   [block] = ClaimStore(directory).contents(SOURCE, 'vermes')
   assert block['rendered'].splitlines()[1] == '  Vermes'
@@ -700,11 +700,11 @@ STOPS = {
 
 
 @pytest.fixture(scope='module')
-def stopped(load_records, tmp_path_factory):
+def stopped(corpus, tmp_path_factory):
   """A `ClaimStore` over a copy of `claims/` with the claims of 1961 Dehm
   replaced by those of `STOPS`, its `skeleton` coverage `partly`."""
   directory = tmp_path_factory.mktemp('claims_stops')
-  shutil.copytree(CLAIMS_DIR, directory, dirs_exist_ok=True)
+  shutil.copytree(corpus.claims, directory, dirs_exist_ok=True)
   claims = _claims(STOPS, 1150, DEHM)
   (directory / f'{DEHM}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
   store = ClaimStore(directory)

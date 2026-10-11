@@ -1,0 +1,9 @@
+taxonomies:
+- taxon: echinodermata_klein_1778
+  new: true
+  notes: |
+    The intended rank is unclear.  It might have been Order, but the
+    subgroups were called Classes, although perhaps the ranks were not
+    settled at the time.  Phylum seems unlikely, if it was even in use.
+    No other taxa defined in this (reprinted from 1734) work are
+    available per ICZN rules.

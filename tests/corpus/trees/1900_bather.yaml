@@ -1,0 +1,98 @@
+taxonomies:
+- taxon: animalia
+  children:
+  - taxon: protozoa-grade
+    children:
+    - taxon: metazoa-grade
+      children:
+      - taxon: parazoa-branch
+      - taxon: enterozoa-branch
+        children:
+        - taxon: enterocoela-grade
+          synonyms:
+          - taxon: coelentera-grade
+          children:
+          - taxon: coelomocoela-grade
+            synonyms:
+            - taxon: coelomata-grade
+            children:
+            - taxon: echinoderma
+              children:
+              - taxon: pelmatozoa-grade
+                children:
+                - taxon: cystidea
+                  children:
+                  - taxon: amphoridea
+                    synonyms:
+                    - authority:
+                        source: 1896b_haeckel
+                      pars: true
+                      citedAs: "Haeckel (1896, pars)"
+                    children:
+                    - taxon: aristocystidae
+                    - taxon: dendrocystidae
+                    - taxon: eocystidae
+                      new: true
+                    - taxon: anomalocystidae
+                  - taxon: rhombifera-order
+                    emended: true
+                    notes: 'Zittel (1879, emend.)'
+                    children:
+                    - taxon: echinosphaeridae
+                    - taxon: comarocystidae
+                    - taxon: macrocystellidae
+                    - taxon: tiaracrinidae
+                    - taxon: malocystidae
+                    - taxon: glyptocystidae
+                      children:
+                      - taxon: echinoencrininae
+                      - taxon: callocystinae
+                      - taxon: glyptocystinae
+                    - taxon: caryocrinidae
+                  - taxon: aporita
+                    notes: "Zittel (1879, restr.)"
+                    emended: true
+                    children:
+                    - taxon: cryptocrinidae
+                  - taxon: diploporita-order
+                    notes: "Zittel (1879, emend.)"
+                    emended: true
+                    children:
+                    - taxon: sphaeronidae
+                    - taxon: glyptosphaeridae
+                    - taxon: protocrinidae
+                    - taxon: mesocystidae
+                    - taxon: gomphocystidae
+                - taxon: blastoidea
+                  notes: |
+                    Their line of evolution, though in some respects
+                    parallel to those of the Callocystinae and
+                    Edrioasteroidea, was independently derived through
+                    the Diploporita from the primitive Amphoridea.
+                - taxon: crinoidea
+                - taxon: edrioasteroidea
+                  citedAs: 'E. Billings (1854,-58; Huxley, 1877; and Bather, 1899)'
+                  synonyms:
+                  - taxon: thyroida
+                    auth: [Chapman]
+                    year: 1860
+                    citedAs: Thyroida, Chapman, 1860
+                  - taxon: agelacrinoidea
+                    citedAs: Agelacrinoidea, S. A. Miller, 1877-83; Worthen, 1883
+                  - taxon: cystasteroidea
+                    citedAs: Cystasteroidea, Steinmann, 1888; F. Bernard, 1893
+                  - taxon: thecoidea
+                    auth: [jaekel]
+                    year: 1895
+                    citedAs: Thecoidea, Jaekel, 1895
+                  children:
+                  - taxon: agelacrinidae
+                  - taxon: cyathocystidae
+                  - taxon: edrioasteridae
+                  - taxon: steganoblastidae
+                    new: true
+                - taxon: eleutherozoa-grade
+                  children:
+                  - taxon: holothuroidea
+                  - taxon: stelleroidea
+                  - taxon: echinoidea

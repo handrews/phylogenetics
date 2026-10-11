@@ -1,0 +1,27 @@
+taxonomies:
+- notes: Ranks included only due to editorial policy
+  taxon: edrioasteroidea
+  children:
+  - taxon: isorophida
+    children:
+    - taxon: lebetodiscina
+      children:
+      - taxon: lebetodiscidae
+        children:
+        - taxon: streptaster
+          children:
+          - taxon: vorticellatus_hall_1866
+      - taxon: carneyellidae
+        children:
+        - taxon: carneyella
+          children:
+          - taxon: ulrichi_bassler_shideler_1936
+          - taxon: pilea_hall_1866
+    - taxon: isorophina
+      children:
+      - taxon: isorophidae
+        children:
+        - taxon: curvitriordo
+          children:
+          - taxon: stecki_sumrall_2010
+            new: true

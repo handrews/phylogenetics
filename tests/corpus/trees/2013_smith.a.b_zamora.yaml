@@ -1,0 +1,44 @@
+prefixes:
+  NHM UK EE: nhmuk-ee
+  EE: nhmuk-ee
+taxonomies:
+- taxon: echinodermata
+  stem: true
+  children:
+  - taxon: helicocystitidae
+    new: true
+    children:
+    - taxon: helicocystis
+      new: true
+      children:
+      - taxon: moroccoensis_smith.a.b_zamora_2013
+        new: true
+        isType: true
+        material:
+        - prefix: NHM UK EE
+          numbers: [15373]
+          role: holotype
+        - prefix: EE
+          numbers: [[15374, 15376], 14847, 14848, 15329]
+          role: paratype
+phylogenies:
+- treeType: diagram
+  notes: Evolutionary tree of Cambrian echinoderms
+  tree:
+    children:
+    - taxon: courtessolea
+    - children:
+      - taxon: asturicystis
+      - children:
+        - taxon: castericystis
+        - children:
+          - taxon: helicoplacus
+          - children:
+            - taxon: helicocystis
+            - children:
+              - taxon: camptostroma
+              - children:
+                - children:
+                  - taxon: lepidocystis
+                  - taxon: gogia
+                - taxon: stromatocystites

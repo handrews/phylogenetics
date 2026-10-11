@@ -1,0 +1,90 @@
+taxonomies:
+- taxon: vermes
+  notes: Intervening taxa not specified.
+  children:
+  - taxon: echinites
+    children:
+    - taxon: areolatus_wahlenberg_1821
+      new: true
+      pages: 46
+      illustrations:
+      - plate: III
+        figures:
+        - [4, 5]
+    - taxon: peltiformis_wahlenberg_1821
+      new: true
+      pages: 49
+      illustrations:
+      - plate: III
+        figures:
+        - [1, 3]
+  - taxon: echinosphaerites
+    new: true
+    pages: 52
+    children:
+    - taxon: aurantium_gyllenhaal_1772
+      pages: 52
+      notes: |
+        Tilas in Vet. Ac. Handl. 1740, p. 196. Plate II. f. 18 is an
+        additional "synonym", but described and figured as a mineral
+        formation rather than a fossil.  The page number (196) is an
+        error; Tilas has two articles in the journal, one on pages
+        198–201, and one on pages 202–209 with plate II.  The correct
+        page number is 204; the plate and figure are correct as given.
+      synonyms:
+      - taxon: aurantium_gyllenhaal_1772
+        parents:
+        - taxon: echinus
+        authority:
+          source: 1772_gyllenhaal
+          pages:
+          - 245
+          - 253
+          illustrations:
+          - plate: 8
+            figures:
+            - [4, 5]
+          - plate: 9
+            figures:
+            - [6, 9]
+      - openTaxon: ostracion-sp_walch_1776
+        provisional: true
+        parents:
+        - taxon: ostracion
+        pages: 259
+        illustrations:
+        - plate: 5
+          figures:
+          - [1, 2]
+    - taxon: granatum_wahlenberg_1821
+      pages: 53
+      new: true
+      notes: Not figured in this publication.
+      synonyms:
+      - openTaxon: echinus-sp_hisinger_1802
+        parents:
+        - taxon: echinus
+        pages: 189
+        illustrations:
+        - plate: VII
+          figures:
+          - b
+    - taxon: pomum_gyllenhaal_1772
+      synonyms:
+      - taxon: pomum_gyllenhaal_1772
+        parents:
+        - taxon: echinus
+        authority:
+          source: 1772_gyllenhaal
+          pages:
+          - 242
+          - 253
+          illustrations:
+          - plate: 8
+            figures:
+            - [1, 3]
+      - openTaxon: echinus-sp_linnaeus_1741
+        authority:
+          source: 1741_linnaeus
+          pages: 136
+        notes: Described as "en valvulam echini", actually on page 134.

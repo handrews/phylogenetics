@@ -1,0 +1,29 @@
+phylogenies:
+- treeType: diagram
+  tree:
+    taxon: echinodermata
+    children:
+    - notes: early cambrian
+      children:
+      - taxon: edrioasteroidea
+      - taxon: helicoplacoidea
+      - taxon: blastozoa
+    - notes: early cambrian
+      taxon: soluta-class
+    - notes: middle cambrian
+      taxon: cincta-class
+    - notes: middle cambrian
+      taxon: ctenocystoidea
+    - notes: middle cambrian
+      taxon: stylophora
+    - notes: middle cambrian
+      taxon: cyclocystoidea
+      provisional: true
+      altPlacements:
+      - taxon: edrioasteroidea
+    - notes: middle cambrian or upper cambrian
+      taxon: crinoidea
+    - notes: ordovician
+      taxon: asterozoa
+    - notes: ordovician
+      taxon: echinozoa

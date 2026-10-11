@@ -1,0 +1,28 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: homalozoa
+    children:
+    - taxon: carpoidea
+  - taxon: crinozoa
+    children:
+    - taxon: cystoidea
+    - taxon: eocrinoidea
+    - taxon: paracrinoidea
+    - taxon: blastoidea
+    - taxon: edrioblastoidea
+    - taxon: crinoidea
+  - taxon: echinozoa
+    children:
+    - taxon: helicoplacoidea
+    - taxon: edrioasteroidea
+    - taxon: ophiocistioidea
+    - taxon: echinoidea
+    - taxon: holothuroidea
+  - taxon: asterozoa
+    children:
+    - taxon: stelleroidea
+      children:
+      - taxon: somasteroidea-subclass
+      - taxon: asteroidea-subclass
+      - taxon: ophiuroidea-subclass

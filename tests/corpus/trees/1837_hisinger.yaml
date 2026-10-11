@@ -1,0 +1,85 @@
+taxonomies:
+- taxon: radiata-subkingdom  # Cuv
+  children:
+  - taxon: echinodermata-class # Cuv
+    children:
+    - taxon: stelleridea # Lam
+      children:
+      - taxon: asterias
+    - taxon: crinoidea-family # Mil
+      children:
+      - taxon: apiocrinites
+      - taxon: cyathocrinites
+      - taxon: actinocrinites
+      - taxon: eucalyptocrinites
+      - taxon: eugeniacrinites
+    - openTaxon: echinodermata-unnamed-family_hisinger_1828
+      children:
+      - taxon: sphaeronites
+        children:
+        - taxon: pomum_gyllenhaal_1772
+          illustrations:
+          - plate: XXV
+            figures:
+            - 7
+          synonyms:
+          - authority:
+              source: 1772_gyllenhaal
+              pages: 242
+              illustrations:
+              - plate: VIII
+                figures:
+                - [1, 3]
+          - parents:
+            - taxon: echinosphaerites
+            authority:
+              source: 1821_wahlenberg
+              pages: 54
+        - taxon: citrus_hisinger_1837
+          new: true
+          illustrations:
+          - plate: XXV
+            figures:
+            - [8a, 8d]
+          synonyms:
+          - taxon: aurantium_gyllenhaal_1772
+            authority:
+              source: 1772_gyllenhaal
+              pages: 245
+              illustrations:
+              - plate: VIII
+                figures:
+                - [4, 5]
+              - plate: IX
+                figures:
+                - [6, 9]
+          - taxon: aurantium_gyllenhaal_1772
+            authority:
+              source: 1821_wahlenberg
+              pages: 52
+        - taxon: testudinarius_hisinger_1837
+          new: true
+          illustrations:
+          - plate: XXV
+            figures:
+            - [9a, 9b]
+          synonyms:
+          - taxon: granatum_wahlenberg_1821
+            authority:
+              source: 1821_wahlenberg
+              pages: 53
+          - taxon: granatum_wahlenberg_1821
+            authority:
+              source: 1828_hisinger
+              pages: 195
+              illustrations:
+              - plate: VIII
+                figures:
+                - 1
+    - taxon: echinoidea-family # [none]
+      children:
+      - taxon: echinus
+      - taxon: clypeaster
+      - taxon: ananchytes
+      - taxon: spatangus
+  - taxon: polypi

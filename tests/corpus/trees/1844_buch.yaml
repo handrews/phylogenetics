@@ -1,0 +1,93 @@
+taxonomies:
+- taxon: echinodermata-order
+  children:
+  - taxon: crinoidea-family
+  - taxon: cystidea-family
+    new: true
+    children:
+    - taxon: sphaeronites
+      isType: true
+      children:
+      - taxon: aurantium_gyllenhaal_1772
+        synonyms:
+        - taxon: aurantium_gyllenhaal_1772
+          parents:
+          - taxon: echinus
+      - taxon: pomum_gyllenhaal_1772
+        synonyms:
+        - taxon: pomum_gyllenhaal_1772
+          parents:
+          - taxon: echinosphaerites
+    - taxon: caryocystites
+      new: true
+      children:
+      - taxon: granatum_wahlenberg_1821
+        synonyms:
+        - taxon: granatum_wahlenberg_1821
+          parents:
+          - taxon: echinosphaerites
+      - taxon: testudinarius_hisinger_1837
+        synonyms:
+        - taxon: testudinarius_hisinger_1837
+          parents:
+          - taxon: sphaeronites
+    - taxon: hemicosmites
+      children:
+      - taxon: pyriformis_buch_1840
+        synonyms:
+        - taxon: malum_pander_1830
+          parents:
+          - taxon: echinosphaerites
+    - taxon: sycocystites
+      new: true
+      children:
+      - taxon: angulosus_buch_1844
+        new: true
+        or:
+        - taxon: senckenbergii_meyer_1826
+        synonyms:
+        - taxon: senckenbergii_meyer_1826
+          parents:
+          - taxon: echino-encrinus
+        - taxon: angulosa_pander_1830
+          parents:
+          - taxon: echinosphaerites
+        - taxon: striata_pander_1830
+          parents:
+          - taxon: echinosphaerites
+    - taxon: cryptocrinites
+      children:
+      - taxon: cerasus_buch_1840
+        synonyms:
+        - taxon: laevis_pander_1830
+          parents:
+          - taxon: echinosphaerites
+        - taxon: jacksoni_austen_1843
+          parents:
+          - taxon: sycocrinites
+        - taxon: anapeptamenus_austen_1843
+          parents:
+          - taxon: sycocrinites
+    - taxon: sycocrinites
+      children:
+      - taxon: clausus_austen_1843
+    - taxon: pseudocrinites
+      children:
+      - taxon: bicopuladigiti_garnet_1844
+        notes: |
+          "is manifestly a Cystidea resembling Caryocystites" (1846
+          translation). A comparison of form; von Buch places the
+          species in the family and does not move it to Caryocystites.
+    - openTaxon: asteriadae-gen_sowerby.g.b_1825
+      provisional: true
+      authority:
+        source: 1825b_sowerby.g.b
+        pages: 318
+      children:
+      - openTaxon: asteriadae-gen-sp_sowerby.g.b_1825
+        notes: |
+          "A species figured and described by Mr. J. Sowerby in the
+          'Zoological Journal' (ii. 318) also probably belongs to this
+          family. [...] a considerable number of irregular plates
+          surround, as in Sphaeronites, the spheroidal figure." (1846
+          translation). The Sphaeronites remark describes the plating.

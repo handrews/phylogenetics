@@ -10,7 +10,6 @@ here as a module.
 
 import argparse
 import inspect
-import os
 import pathlib
 
 import pytest
@@ -18,11 +17,6 @@ import pytest
 from phylohist import blocks, cli, tools
 from phylohist.acts import ACT_KINDS
 from tests import support
-
-pytestmark = pytest.mark.skipif(
-  bool(os.getenv('PHYLOHIST_DRAFTS')),
-  reason='the committed claim table covers data/ only',
-)
 
 PLANNER_PROMPT = pathlib.Path(__file__).parent.parent / 'eval' / 'planner-prompt.md'
 SPECS = {spec['name']: spec for spec in tools.TOOL_SPECS}
