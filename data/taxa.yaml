@@ -10672,6 +10672,13 @@ rhombifera:
   name: Rhombifera
   auth: [barrande]
   year: 1867
+rhombifera-group:
+  name: Rhombifera
+  rank: Group
+  status: informal
+  authority:
+    source: 1879_zittel
+  notes: Authority uncertain.  Original rank uncertain.  Much TBD.
 rhombifera-order:
   name: Rhombifera
   bracket: Rhombiferans
@@ -10679,6 +10686,7 @@ rhombifera-order:
   status: informal
   auth: [zittel]
   year: 1870
+  notes: to be migrated to rhombifera-group
 rhombifera-class:
   name: Rhombifera
   bracket: Rhombiferans
@@ -10686,6 +10694,7 @@ rhombifera-class:
   status: informal
   auth: [zittel]
   year: 1870
+  notes: to be migrated to rhombifera-group
 rhombiferi:
   name: Rhombiferi
   altSpellingOf: rhombifera-order

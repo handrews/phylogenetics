@@ -176,7 +176,8 @@ Something this source does to a name. One claim per flag, `actKind` being:
 | `new: true` on a placeholder | `placeholder` (the source originates the placeholder; C4) |
 | `isType: true` | `type` |
 | `type: {taxon: y, …}` on the parent | `type`, at the `type` node, the subject being `y`: `typeOf` (the carrying node's record), `parents` (the genus, and subgenus, `y` is cited in), `fixation`, `fixedBy` and `fixedByPages` (the work that fixed it, with its pages), and `listed` (`true` when a `children` node of the carrying node has the same record). `inferred: true` when `editorial.inferred` is `true`; `inferredFields: [fixation]` when it lists `fixation` (the editor's method, not the paper's). It is a cited entry, so its `usage` is on axis `type`, and it emits no `acceptance`. |
-| `emended: true` or `emended: {by}` | `emended`; `by` and `byPages` when the source follows another work's emendation |
+| `emendedBy: [authority, …]` | `emended`, one per entry in printed order, each with `by` and `byPages`: an emendation the source follows from that work |
+| `emended: true` | `emended`, this source's own emendation; after any `emendedBy` acts on the node |
 | `recombined: true` or `recombined: {by}` on a species-group node | `combNov` (comb. nov.); `by` and `byPages` when the source follows another work's recombination |
 | `translated: true` or `translated: {taxon: y, by?}` | `nomTransl`; `translatedFrom: y` when the earlier rank is named, `by`/`byPages` when another work made the act, `rankVariants` from the records' `altRankOf` links |
 | `nudum: true` | `nomNudum` |
@@ -192,8 +193,10 @@ earlier state of the name as this source cites it: its own `authority`,
 `auth`, `year`, `pages` and `illustrations` locate that earlier use, and
 it emits a `usage` claim on its axis like any cited entry. The change is
 this source's act. `emended`, `recombined` and `translated` are the acts
-a source may follow rather than perform, and `by` (an `authority`) names
-the work that performed it.
+a source may follow rather than perform: `emendedBy` lists the works whose
+emendations it follows, and `by` (an `authority`) on `recombined` and
+`translated` names the work that performed the act. A classification line
+names that work after the act's mark.
 
 `moved` and `recombined` say different things. `moved` is a change of
 placement at any rank, often noted only in prose: the node left the group

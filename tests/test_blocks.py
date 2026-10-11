@@ -54,6 +54,15 @@ def test_provisional_and_placeholder_marks(store):
   assert lines[2] == '    Order uncertain'
 
 
+def test_an_act_followed_from_another_work_names_it():
+  node = {
+    'name': 'Glyptocystitidae',
+    'rankWord': 'Family',
+    'acts': [{'act': 'emended', 'by': 'Paul 1972'}, {'act': 'emended'}],
+  }
+  assert render.node_label(node) == 'Family Glyptocystitidae emend. Paul 1972 emend.'
+
+
 def test_table_text_and_markdown(store):
   found = store.descendants(['edrioblastoidea'], style='json')
   text = render.render(found, 'text').splitlines()

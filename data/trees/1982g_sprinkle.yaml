@@ -4,30 +4,44 @@ notes: |
   fit into the given systematic paleontology declarations.
 taxonomies:
 - taxon: echinodermata
-  auth: [bruguiére]
-  year: 1791
+  citedAs: Phylum ECHINODERMATA Bruguiere, 1791
+  rank: Phylum
+  authority:
+    source: 1791_bruguière
+  pages: v
+  notes: From the Table of Contents.
   children:
   - taxon: blastozoa
+    citedAs: Subphylum BLASTOZOA Sprinkle, 1973
+    rank: Subphylum
+    pages: 233
     children:
-    - taxon: rhombifera-class
-      emended: true
-      notes: |
-        Emended Paul, 1968b
-        Morphology and function of dichoporite pore-structures in cystoids
-        Palaeontology, v. 11, pt. 5, p. 697–730
+    - taxon: rhombifera-group
+      citedAs: Class RHOMBIFERA Zittel, 1879 Emended Paul, 1968b
+      rank: Class
+      authority:
+        source: 1879_zittel
+      emendedBy:
+      - source: 1968b_paul.c.r.c
+      pages: 233
       children:
       - taxon: dichoporita
+        citedAs: Order DICHOPORITA Jaekel, 1899
+        rank: Order
+        pages: 233
         children:
-        - taxon: glyptocystitida-superfamily
+        - taxon: glyptocystitida
+          citedAs: Superfamily GLYPTOCYSTITIDA Bather, 1899
+          rank: Superfamily
+          pages: 233
           children:
           - taxon: glyptocystitidae
+            citedAs: >
+              Family GLYPTOCYSTITIDAE Bather, 1899
+              Emended Paul, 1972b, and herein
             emended: true
-            notes: |
-              Emended Paul 1972b and here; Paul 1972b is
-              Cheirocystella anti gua gen. et sp. nov. from the Lower
-              Ordovician of western Utah, and its bearing on the evolution
-              of the Cheirocrinidae (Rhombifera, Glyptocystitida)
-              Brigham Young Univ., Geol. Stud., V. 19, no. 1, p. 15-63
+            emendedBy:
+            - source: 1972b_paul.c.r.c
             children:
             - taxon: glyptocystella
               children:
@@ -43,8 +57,8 @@ taxonomies:
                   - taxon: glyptocystites
                 - taxon: loeblichi_bassler_1943
                   pars: true
-                  auth: [paul.c.r.c]
-                  year: 1972
+                  authority:
+                    source: 1972b_paul.c.r.c
                   parents:
                   - taxon: glyptocystella
             - taxon: pirocystella
@@ -53,6 +67,7 @@ taxonomies:
               - taxon: strimplei_sprinkle_1982
                 isType: true
                 new: true
+                pages: 241
               - taxon: cooki_sprinkle_1982
                 new: true
               - taxon: bassleri_sprinkle_1982g

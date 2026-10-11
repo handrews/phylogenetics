@@ -36558,6 +36558,24 @@
   "rank": "Class",
   "status": "informal"
  },
+ "rhombifera-group": {
+  "authority": {
+   "authors": [
+    "Zittel"
+   ],
+   "display": "Zittel 1879",
+   "source": "1879_zittel",
+   "year": 1879
+  },
+  "folded": [
+   "rhombifera",
+   "rhombiferagroup"
+  ],
+  "kind": "primary",
+  "name": "Rhombifera",
+  "rank": "Group",
+  "status": "informal"
+ },
  "rhombifera-order": {
   "authority": {
    "authors": [
