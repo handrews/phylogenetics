@@ -146,7 +146,12 @@ class Source:
 
   @classmethod
   def add(cls, source_data, source_key):
-    cls._sources[source_key] = Source(source_data, source_key)
+    if 'aliasOf' in source_data:
+      alias = SourceAlias(source_data, source_key)
+      if alias.canonical is not None:
+        cls._sources[source_key] = alias
+    else:
+      cls._sources[source_key] = Source(source_data, source_key)
 
   @classmethod
   def get(cls, source_key):
@@ -214,6 +219,11 @@ class Source:
     return self._key
 
   @property
+  def canonical(self):
+    """The source record itself; an alias's is its target."""
+    return self
+
+  @property
   def year(self):
     return self._pub_date.year
 
@@ -246,3 +256,59 @@ class Source:
       return self._data['title']
     except KeyError:
       return Publication.get(self._data['book']).name
+
+
+class SourceAlias(Source):
+  """A key citing a source by some of its authors (`aliasOf`): the authors
+  are the key's own, everything else is the target's."""
+
+  def __init__(self, source_data, source_key):
+    self._key = source_key
+    self._target = None
+    logger.debug(f'Processing source alias "{source_key}"')
+
+    target_key = source_data['aliasOf']
+    target = Source.get(target_key)
+    if target is None:
+      logger.error(f'Alias "{source_key}" names source "{target_key}", which does not exist')
+      return
+    if target.canonical is not target:
+      logger.error(f'Alias "{source_key}" names "{target_key}", which is itself an alias')
+      return
+    self._target = target
+
+    # Everything but the authors is the target's.
+    self._data = target._data
+    self._pub_date = target._pub_date
+    self._editors = target._editors
+
+    prefix, _, authors = source_key.partition('_')
+    if prefix != target_key.partition('_')[0]:
+      logger.error(
+        f'Alias "{source_key}" year "{prefix}" does not match "{target_key}"',
+      )
+
+    self._author_keys = tuple(authors.split('_'))
+    self._authors = []
+    for author_key in self._author_keys:
+      if (author := Author.get(author_key)) is None:
+        logger.error(f'Author "{author_key}" not found for source alias {source_key}!')
+      self._authors.append(author)
+    self._authors = tuple(self._authors)
+
+    # A strict subset of the target's authors, in the target's order.
+    remaining = iter(target._author_keys)
+    in_order = all(key in remaining for key in self._author_keys)
+    if not in_order or len(self._author_keys) >= len(target._author_keys):
+      logger.error(
+        f'Alias "{source_key}" authors must be a strict subset of '
+        f'"{target_key}" authors, in their order',
+      )
+
+  @property
+  def canonical(self):
+    return self._target
+
+  @property
+  def alias_of(self):
+    return self._target.key
