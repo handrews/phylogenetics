@@ -1,10 +1,11 @@
 """What every test module shares: one load of `data/`, one claim store.
 
-`Taxon` and `Tree` keep class-level registries, so the data must be loaded
-once per process; `load_records` returns the loaded data, the log records
-the load produced, and the tree roots per source. `store` reads the
-committed `claims/` once for every test over the tools, and `closure` is
-its closure.
+`Taxon` and `Tree` keep class-level registries, so the data is loaded once
+per process; `load_records` returns the loaded data, the log records the
+load produced, and the tree roots per source, and every test starts with
+the registries as that load left them (`support.restore`), whatever the
+tests before it added. `store` reads the committed `claims/` once for
+every test over the tools, and `closure` is its closure.
 """
 
 import logging
@@ -15,6 +16,7 @@ import pytest
 from phylohist.closure import Closure
 from phylohist.loader import load
 from phylohist.tools import ClaimStore
+from tests import support
 
 
 class _CollectingHandler(logging.Handler):
@@ -38,6 +40,17 @@ def load_records():
     logger.removeHandler(handler)
 
   return data, handler.records, roots
+
+
+@pytest.fixture(scope='session')
+def _registries(load_records):
+  return support.snapshot()
+
+
+@pytest.fixture(autouse=True)
+def _isolated(_registries):
+  """The registries as the load left them, before every test."""
+  support.restore(_registries)
 
 
 @pytest.fixture(scope='session')
