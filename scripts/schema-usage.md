@@ -35,8 +35,6 @@ even when its parent is also unreached, so read parents first.
 | `publication` | `phylogeny#/$defs/publication/properties/type` |
 | `range` | `phylogeny#/$defs/range/properties/inferred`<br>`phylogeny#/$defs/range/properties/tentative/oneOf/0` |
 | `relationalFields` | `phylogeny#/$defs/relationalFields/properties/type`<br>`phylogeny#/$defs/relationalFields/properties/type/oneOf/0`<br>`phylogeny#/$defs/relationalFields/properties/type/oneOf/1` |
-| `sourceAlias` | `phylogeny#/$defs/sourceAlias`<br>`phylogeny#/$defs/sourceAlias/properties/aliasOf` |
-| `sources` | `phylogeny#/$defs/sources/additionalProperties/oneOf/1` |
 | `stageRange` | `phylogeny#/$defs/stageRange`<br>`phylogeny#/$defs/stageRange/items` |
 | `taxonRecord` | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items/items`<br>`phylogeny#/$defs/taxonRecord/properties/rank/oneOf/1` |
 | `timeFields` | `phylogeny#/$defs/timeFields/properties/eon`<br>`phylogeny#/$defs/timeFields/properties/era`<br>`phylogeny#/$defs/timeFields/properties/seriesBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageRange` |
@@ -63,24 +61,24 @@ property.
 | `recombined` | 1 | 0.0% |
 | `stem` | 1 | 0.0% |
 
-### `article` -- 342 instances in `data/`
+### `article` -- 343 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `authors` | 342 | 100.0% |
-| `pubDate` | 341 | 99.7% |
-| `volume` | 265 | 77.5% |
-| `title` | 262 | 76.6% |
-| `identifiers` | 237 | 69.3% |
-| `pages` | 235 | 68.7% |
-| `journal` | 219 | 64.0% |
-| `number` | 167 | 48.8% |
-| `identifiers.url` | 155 | 65.4% |
-| `book` | 121 | 35.4% |
-| `processDates` | 98 | 28.7% |
+| `authors` | 343 | 100.0% |
+| `pubDate` | 342 | 99.7% |
+| `volume` | 265 | 77.3% |
+| `title` | 262 | 76.4% |
+| `identifiers` | 238 | 69.4% |
+| `pages` | 235 | 68.5% |
+| `journal` | 219 | 63.8% |
+| `number` | 167 | 48.7% |
+| `identifiers.url` | 156 | 65.5% |
+| `book` | 122 | 35.6% |
+| `processDates` | 98 | 28.6% |
 | `processDates.accepted` | 63 | 64.3% |
-| `identifiers.doi` | 61 | 25.7% |
-| `notes` | 56 | 16.4% |
+| `identifiers.doi` | 61 | 25.6% |
+| `notes` | 56 | 16.3% |
 | `processDates.received` | 53 | 54.1% |
 | `audit` | 48 | 14.0% |
 | `audit.notes` | 48 | 100.0% |
@@ -110,11 +108,11 @@ property.
 | `quotes` | 1 | 0.3% |
 | `reading` | 1 | 0.3% |
 
-### `authority` -- 1824 instances in `data/`
+### `authority` -- 1829 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `source` | 1824 | 100.0% |
+| `source` | 1829 | 100.0% |
 | `pages` | 65 | 3.6% |
 | `illustrations` | 30 | 1.6% |
 | `attributedTo` | 24 | 1.3% |
@@ -125,8 +123,8 @@ property.
 
 | property | data | data % |
 |---|---|---|
-| `auth` | 968 | 10.4% |
-| `year` | 966 | 10.4% |
+| `auth` | 963 | 10.3% |
+| `year` | 961 | 10.3% |
 | `in` | 28 | 0.3% |
 
 ### `citationFields` -- 9308 instances in `data/`
@@ -288,11 +286,11 @@ property.
 | `notes` | 421 | 6.5% |
 | `editorial` | 14 | 0.2% |
 
-### `modularDate` -- 341 instances in `data/`
+### `modularDate` -- 342 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `year` | 341 | 100.0% |
+| `year` | 342 | 100.0% |
 | `month` | 82 | 24.0% |
 | `day` | 32 | 9.4% |
 | `/then/oneOf/2.day` | 19 | 100.0% |
@@ -304,14 +302,14 @@ property.
 | `/then/oneOf/0.month` | 2 | 100.0% |
 | `season` | 1 | 0.3% |
 
-### `person` -- 287 instances in `data/`
+### `person` -- 288 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `given` | 287 | 100.0% |
-| `surname` | 287 | 100.0% |
-| `birth` | 87 | 30.3% |
-| `death` | 85 | 29.6% |
+| `given` | 288 | 100.0% |
+| `surname` | 288 | 100.0% |
+| `birth` | 89 | 30.9% |
+| `death` | 87 | 30.2% |
 | `suffix` | 0 | 0.0% |
 
 ### `phylogeny` -- 36 instances in `data/`
@@ -324,15 +322,15 @@ property.
 | `notes` | 6 | 16.7% |
 | `characteristics` | 1 | 2.8% |
 
-### `publication` -- 153 instances in `data/`
+### `publication` -- 154 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `name` | 153 | 100.0% |
-| `editors` | 9 | 5.9% |
+| `name` | 154 | 100.0% |
+| `editors` | 9 | 5.8% |
 | `place` | 8 | 5.2% |
 | `publisher` | 8 | 5.2% |
-| `notes` | 3 | 2.0% |
+| `notes` | 3 | 1.9% |
 | `type` | 0 | 0.0% |
 
 ### `range` -- 55 instances in `data/`
@@ -412,6 +410,12 @@ property.
 | `designation` | 3 | 25.0% |
 | `needsQualification` | 1 | 8.3% |
 
+### `sourceAlias` -- 1 instances in `data/`
+
+| property | data | data % |
+|---|---|---|
+| `aliasOf` | 1 | 100.0% |
+
 ### `taxonRecord` -- 2830 instances in `data/`
 
 | property | data | data % |
@@ -463,7 +467,7 @@ property.
 | `pages` | 837 | 12.9% |
 | `parents` | 324 | 5.0% |
 | `rank` | 178 | 2.7% |
-| `authority` | 117 | 1.8% |
+| `authority` | 122 | 1.9% |
 | `bracketEnd` | 28 | 0.4% |
 | `bracketStart` | 28 | 0.4% |
 | `/if.authority` | 8 | 100.0% |
@@ -785,7 +789,7 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/locationFields/properties/illustrations` | array/null | listx185, nullx12 | - | - |
 | `phylogeny#/$defs/materialsFields/properties/material` | array/null | listx116, nullx9 | - | - |
 | `phylogeny#/$defs/materialsFields/properties/ranges` | array/null | listx52, nullx41 | - | - |
-| `phylogeny#/$defs/person/properties/death` | integer/null | intx84, nullx1 | - | - |
+| `phylogeny#/$defs/person/properties/death` | integer/null | intx86, nullx1 | - | - |
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
 | `phylogeny#/$defs/printedNumber` | string/integer | intx661, strx350 | `B`, `A`, `S-3965`, `SH-2` | - |
 | `phylogeny#/$defs/relationalFields/properties/synonyms` | array/null | listx358 | - | null |

@@ -3578,10 +3578,7 @@
    "tree": true
   },
   "1831_goldfuss": {
-   "acts": {},
-   "audit": {
-    "state": "unaudited"
-   },
+   "aliasOf": "1831_goldfuss_münster",
    "citation": {
     "authors": [
      "Goldfuss"
@@ -3589,23 +3586,7 @@
     "in": "Petrefacta Germaniæ tam ea: quae in Museo Universitatis Regiae Borussicae Fridericiae Wilhelmiae Rhenanae servantur quam alia quaecunque in Museis Hoeninghusiano Muensteriano aliisque extant, iconibus et descriptionibus illustrata = Abbildungen und Beschreibungen der petrefacten Deutschlands und der angränzenden Länder\n",
     "title": null,
     "year": 1831
-   },
-   "claims": {},
-   "coverage": {
-    "illustrations": null,
-    "material": null,
-    "newTaxa": null,
-    "occurrences": null,
-    "phylogeny": null,
-    "skeleton": null,
-    "synonymy": null,
-    "types": null
-   },
-   "derived": {},
-   "derivedCoverage": {},
-   "inconsistencies": [],
-   "material": {},
-   "tree": false
+   }
   },
   "1831_goldfuss_münster": {
    "acts": {},
