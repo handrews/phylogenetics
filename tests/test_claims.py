@@ -39,6 +39,7 @@ from phylohist.loader import io
 from phylohist.loader.research import Source
 from phylohist.loader.taxa import Tree
 from phylohist.render import render_composition
+from tests import support
 
 QUESTIONS_PATH = pathlib.Path(__file__).parent.parent / 'eval' / 'questions.yaml'
 
@@ -333,7 +334,7 @@ def test_emended_by_lists_the_emendations_followed(caplog):
     (None, None),
   ]
 
-  schema = io.build_schema()[io.TREE_DEF]
+  schema = support.schema()[io.TREE_DEF]
   followed = {'taxon': 'rhenopyrgus', 'emendedBy': [{'source': '1968b_paul.c.r.c'}]}
   assert schema.check({'taxonomies': [followed]})
   # The object form is gone; an emendation followed is an `emendedBy` entry.
