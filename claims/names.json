@@ -12531,10 +12531,8 @@
   "folded": [
    "diploporiten"
   ],
-  "kind": "vulgarSpellingOf",
-  "lang": "DE",
+  "kind": "primary",
   "name": "Diploporiten",
-  "of": "diploporitidae",
   "rank": "Group"
  },
  "diploporitidae": {
@@ -12549,8 +12547,9 @@
   "folded": [
    "diploporitidae"
   ],
-  "kind": "primary",
+  "kind": "altSpellingOf",
   "name": "Diploporitidae",
+  "of": "diploporiten",
   "rank": "Group"
  },
  "diploptera_lamarck_1816": {

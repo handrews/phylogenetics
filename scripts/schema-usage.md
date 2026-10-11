@@ -121,15 +121,15 @@ property.
 | `ex` | 2 | 0.1% |
 | `notes` | 2 | 0.1% |
 
-### `authorityFields` -- 9330 instances in `data/`
+### `authorityFields` -- 9320 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `auth` | 972 | 10.4% |
-| `year` | 970 | 10.4% |
+| `auth` | 968 | 10.4% |
+| `year` | 966 | 10.4% |
 | `in` | 28 | 0.3% |
 
-### `citationFields` -- 9318 instances in `data/`
+### `citationFields` -- 9308 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
@@ -191,7 +191,7 @@ property.
 
 | property | data | data % |
 |---|---|---|
-| `taxon` | 5884 | 90.8% |
+| `taxon` | 5883 | 90.8% |
 | `openTaxon` | 243 | 3.8% |
 | `cf` | 15 | 0.2% |
 | `aff` | 14 | 0.2% |
@@ -235,7 +235,7 @@ property.
 | `prefix` | 28 | 47.5% |
 | `register` | 0 | 0.0% |
 
-### `locationFields` -- 9318 instances in `data/`
+### `locationFields` -- 9308 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
@@ -412,25 +412,25 @@ property.
 | `designation` | 3 | 25.0% |
 | `needsQualification` | 1 | 8.3% |
 
-### `taxonRecord` -- 2840 instances in `data/`
+### `taxonRecord` -- 2830 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `name` | 2804 | 98.7% |
-| `authority` | 1699 | 59.8% |
-| `rank` | 973 | 34.3% |
+| `name` | 2796 | 98.8% |
+| `authority` | 1699 | 60.0% |
+| `rank` | 964 | 34.1% |
 | `pages` | 255 | 9.0% |
-| `notes` | 229 | 8.1% |
-| `altSpellingOf` | 148 | 5.2% |
+| `notes` | 226 | 8.0% |
+| `altSpellingOf` | 147 | 5.2% |
 | `lang` | 73 | 2.6% |
 | `originalParent` | 70 | 2.5% |
-| `altRankOf` | 58 | 2.0% |
+| `altRankOf` | 53 | 1.9% |
 | `vulgarSpellingOf` | 45 | 1.6% |
 | `homonym` | 16 | 0.6% |
-| `bracket` | 13 | 0.5% |
-| `needsQualification` | 11 | 0.4% |
-| `status` | 6 | 0.2% |
+| `needsQualification` | 12 | 0.4% |
+| `bracket` | 9 | 0.3% |
 | `designation` | 4 | 0.1% |
+| `status` | 3 | 0.1% |
 | `holotype` | 1 | 0.0% |
 
 ### `timeFields` -- 171 instances in `data/`
@@ -462,7 +462,7 @@ property.
 | `children` | 2205 | 34.0% |
 | `pages` | 837 | 12.9% |
 | `parents` | 324 | 5.0% |
-| `rank` | 139 | 2.1% |
+| `rank` | 178 | 2.7% |
 | `authority` | 117 | 1.8% |
 | `bracketEnd` | 28 | 0.4% |
 | `bracketStart` | 28 | 0.4% |
@@ -619,25 +619,25 @@ property.
 
 ### `phylogeny#/$defs/rank`
 
-24 of 32 members used, 1112 occurrences.
+24 of 32 members used, 1142 occurrences.
 
 | value | count |
 |---|---|
 | `'species'` | 236 |
-| `'Order'` | 213 |
+| `'Order'` | 215 |
 | `'Family'` | 177 |
 | `'genus'` | 132 |
-| `'Class'` | 115 |
+| `'Class'` | 129 |
 | `'variety'` | 59 |
+| `'Superfamily'` | 32 |
 | `'Subfamily'` | 26 |
-| `'Superfamily'` | 19 |
 | `'subgenus'` | 17 |
 | `'Subphylum'` | 15 |
 | `'Subclass'` | 15 |
 | `'Phylum'` | 14 |
 | `'section'` | 14 |
-| `'Suborder'` | 14 |
-| `'Group'` | 10 |
+| `'Suborder'` | 13 |
+| `'Group'` | 12 |
 | `'Grade'` | 9 |
 | `'Division'` | 7 |
 | `'Kingdom'` | 6 |
@@ -791,6 +791,6 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/relationalFields/properties/synonyms` | array/null | listx358 | - | null |
 | `phylogeny#/$defs/sectionRecord/properties/name` | string/null | strx9, nullx3 | `Stellatae`, `Radiatae`, `Multivalvia`, `Lunatae` | - |
 | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items` | array/string/integer | strx1 | `E23470` | array, integer |
-| `phylogeny#/$defs/taxonRecord/properties/name` | string/null | strx2584, nullx220 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
+| `phylogeny#/$defs/taxonRecord/properties/name` | string/null | strx2576, nullx220 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
 | `tree#/properties/children` | array/null | listx2202, nullx3 | - | - |
 

@@ -330,11 +330,8 @@ class Taxon:
       {
         'Acalephida',
         'Arachnida',
-        'Caryocystitida',
         'Echinida',
         'Fistulida',
-        'Glyptocystitida',
-        'Hemicosmitida',
         'Medusida',
         'Stellerida',
         'Zoanthida',
@@ -343,7 +340,17 @@ class Taxon:
     ida_subclasses = frozenset({'Disparida', 'Helicoplacida', 'Polyplacida'})
     ida_parvclasses = frozenset({'Cladida'})
     ida_suborders = frozenset({'Placocystida'})
-    ida_superfamilies = frozenset({'Protocrinitida'})
+    ida_superfamilies = frozenset(
+      {
+        'Aristocystitida',
+        'Caryocystitida',
+        'Glyptocystitida',
+        'Glyptosphaeritida',
+        'Hemicosmitida',
+        'Protocrinitida',
+        'Sphaeronitida',
+      }
+    )
     ida_exceptions = (
       ida_classes | ida_subclasses | ida_parvclasses | ida_suborders | ida_superfamilies
     )

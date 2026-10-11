@@ -3667,14 +3667,12 @@ diplobathrida:
 diplobathra:
   name: Diplobathra
   altSpellingOf: diplobathrida
+diploporitidae:
+  name: Diploporitidae
+  altSpellingOf: diploporiten
 diploporita:
   name: Diploporita
   altSpellingOf: diploporitidae
-diploporitidae:
-  name: Diploporitidae
-  rank: Group
-  authority:
-    source: 1854_müller.j.p
 diploporita-incertae-sedis:
   name: null
   rank: Superfamily
@@ -3687,9 +3685,12 @@ diploporita-sp-e_paul.c.r.c_1997:
     source: 1997_paul.c.r.c
 diploporiten:
   name: Diploporiten
-  vulgarSpellingOf: diploporitidae
-  lang: DE
-  notes: Rank not entirely clear, just called a "small group"
+  rank: Group
+  # TODO: Support for vulgar name being first.
+  # vulgarSpellingOf: diploporitidae
+  # lang: DE
+  authority:
+    source: 1854_müller.j.p
 diploptera_lamarck_1816:
   name: diploptera
   authority:
