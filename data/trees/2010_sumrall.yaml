@@ -1,25 +1,46 @@
 taxonomies:
 - notes: Ranks included only due to editorial policy
   taxon: edrioasteroidea
+  citedAs: Class EDRIOASTEROIDEA Billings, 1858
+  rank: null
+  pages: 787
   children:
   - taxon: isorophida
+    citedAs: Order Isorophida Bell, 1976a
+    rank: null
+    pages: 787
     children:
     - taxon: lebetodiscina
+      citedAs: Suborder Lebetodiscina Bell, 1976a
+      rank: null
+      pages: 787
       children:
       - taxon: lebetodiscidae
+        citedAs: Family Lebetodiscidae Bell, 1976a
+        rank: null
+        pages: 787
         children:
         - taxon: streptaster
           children:
           - taxon: vorticellatus_hall_1866
       - taxon: carneyellidae
+        citedAs: Family Carneyellidae Bell, 1976a
+        rank: null
+        pages: 788
         children:
         - taxon: carneyella
           children:
           - taxon: ulrichi_bassler_shideler_1936
           - taxon: pilea_hall_1866
     - taxon: isorophina
+      citedAs: Suborder Isorophina Bell, 1976a
+      rank: null
+      pages: 789
       children:
       - taxon: isorophidae
+        citedAs: Family Isorophidae Bell, 1976a
+        rank: null
+        pages: 789
         children:
         - taxon: curvitriordo
           children:

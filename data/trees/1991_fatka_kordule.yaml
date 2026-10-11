@@ -1,0 +1,22 @@
+taxonomies:
+- taxon: eocrinoidea
+  citedAs: Class Eocrinoidae Jaekel, 1918
+  rank: Class
+  editorial:
+    corrections:
+      citedAs: Class Eocrinoidea Jaekel, 1918
+    basis: >
+      Note "ea"/"ae" reversal.
+      The previous year, Fatka and Kordule spelled this correctly.
+  children:
+  - taxon: gogiida
+    children:
+    - taxon: eocrinidae
+      children:
+      - taxon: akadocrinus
+        children:
+        - taxon: jani_prokop_1962
+          isType: true
+        - taxon: knizeki_fatka_kordule_1991
+          new: true
+          notes: There is a "Description" but no "Diagnosis"

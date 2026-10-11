@@ -57,11 +57,16 @@ taxonomies:
 - notes: Speculative tree establishing Edrioasteridæ (Edrioasteroidea)
   taxon: asteriadae-order
   children:
-  - taxon: edrioasteridae-suborder
+  - taxon: edrioasteridae_billings_1858b
+    citedAs: a sub-order, for which the name Edrioasteridæ would be appropriate
+    rank: Suborder
+    new: true
     questionable: true
     provisional: true
-    new: true
     pages: 85
+    notes: >
+      Tentative/questionable pending knowing more of the structure of the
+      included genera.
     children:
     - taxon: edrioaster
       new: true  # code does not understand this appearing in two trees.

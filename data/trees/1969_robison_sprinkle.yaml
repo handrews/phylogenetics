@@ -4,9 +4,23 @@ taxonomies:
 - taxon: echinodermata
   children:
   - taxon: homalozoa
+    rank: Subphylum
+    authority: null
+    notes: >
+      No formal "Sytematic Paleontology" but the diagnosis of the
+      new class starts with "Mobile benthonic Homalozoa".  No attribution,
+      but the introduction mentions the rank of Subphylum for it.
     children:
     - taxon: ctenocystoidea
+      citedAs: >
+        Ctenocystoidea: New Class
+      rank: Class
       new: true
+      pages: 1512
+      notes: >
+        "citedAs" is the title of the paper, no formal
+        "Systematic Paleontology", although the format is followed
+        starting with the genus Ctenocystis.
       children:
       - taxon: ctenocystis
         new: true

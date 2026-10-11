@@ -6,6 +6,10 @@ prefixes:
   TMF: tmf
 taxonomies:
 - taxon: edrioasteroidea
+  citedAs: Class EDRIOASTEROIDEA
+  rank: Class
+  authority: null
+  pages: 185
   children:
   - taxon: stromatocystitidae
     children:

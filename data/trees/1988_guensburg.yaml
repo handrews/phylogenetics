@@ -1,5 +1,14 @@
 taxonomies:
 - taxon: edrioasteroidea
+  rank: Class
+  authority: null
+  pages: 116
+  editorial:
+    inferred: true
+    basis: >
+      Not in formal tree, but "cyclocystoids and isorophids are best
+      viewed as sister groups within the class Edrioasteroidea" makes
+      the position clear.
   children:
   - taxon: isorophida
     children:

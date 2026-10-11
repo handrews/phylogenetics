@@ -1,8 +1,21 @@
 taxonomies:
 - taxon: echinozoa
-  notes: Credited to Matsumoto 1929
+  citedAs: Subphylum ECHINOZOA Matsumoto, 1929
+  rank: Subphylum
+  authority:
+    source: 1929_matsumoto
+  pages: 13
+  notes: >
+    Matsumoto 1929 did not originate this taxon but cited it as
+    "Subphylum II. ECHINOZOA auctt." meaning in the then-current
+    generally accepted sense.  So this doesn't seem to fit as
+    an emended-by as Matsumoto explicity avoided emending the taxon.
+    But it's not the usual attribution either.
   children:
   - taxon: edrioasteroidea
+    citedAs: Class EDRIOASTEROIDEA Billings, 1858
+    rank: Class
+    pages: 13
     children:
     - taxon: camptostromatoida
       children:

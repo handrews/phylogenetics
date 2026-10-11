@@ -7,7 +7,9 @@ acta-p-polonica:
 acta-p-sinica:
   name: Acta Palaeontologica Sinica
 additamenta-klein:
-  name: Additamenta ad Iacobi Theodori Klein Naturalem Dispositionem Echinodermatum et Lucubratiunculam de Aculeis Echinorum Marinorum
+  name: >
+    Additamenta ad Iacobi Theodori Klein Naturalem Dispositionem
+    Echinodermatum et Lucubratiunculam de Aculeis Echinorum Marinorum
 akademie:
   name: Akademie der Wissenschaften
 alcheringa:
@@ -18,11 +20,20 @@ am-j-sci-c:
   name: "The American Journal of Science, &c."
 am-nat:
   name: The American Naturalist
+am-palaeo-fossils:
+  name: >
+    The American Palæozoic Fossils: A Catalogue of the Genera and Species,
+    with Names of Authors, Dates, Places of Publication, Groups of Rocks
+    in which Found, and the Etymology and Signification of the Words.
 amph-und-cyst:
-  name: "Die Amphorideen und Cystoideen: beiträge zur Morphologie und Phylogenie der Echinodermen"
+  name: >
+    Die Amphorideen und Cystoideen: beiträge zur Morphologie und
+    Phylogenie der Echinodermen
   publisher: Wilhelm Engelmann
   place: Leipzig
-  notes: Separately paginated contribution to the Festschrift zum siebenzigsten Geburtstage von Carl Gegenbaur.
+  notes: >
+    Separately paginated contribution to the Festschrift zum siebenzigsten
+    Geburtstage von Carl Gegenbaur.
 annals:
   name: Annales de Paleontologie
 annales-nord:
@@ -46,7 +57,9 @@ arkiv-zool:
 atlantic-geo:
   name: Atlantic Geology
 bericht-berlin:
-  name: Bericht über die zur Bekanntmachung geeigneten Verhandlungen der Königl. Preufs. Akademie der Wissenschaften zu Berlin.
+  name: >
+    Bericht über die zur Bekanntmachung geeigneten Verhandlungen der Königl.
+    Preufs. Akademie der Wissenschaften zu Berlin.
 beitrage:
   name: Beiträge zur geognosie des russischen reiches
 beitrage-russland:
@@ -67,6 +80,8 @@ canadian-journal:
   name: The Canadian Journal
 can-j-earth-sci:
   name: Canadian Journal of Earth Sciences
+can-j-ind-sci-art:
+  name: The Canadian Journal of Industry, Science, and Art
 canadian-record-sci:
   name: The Canadian Record of Science
   publisher: Natural History Society of Montreal
@@ -77,6 +92,12 @@ cl-olandska:
   name: Carl von Linnés öländska resa, förrättad 1741
 coloquios:
   name: Coloquios de Paleontología
+die-klassen:
+  name: >
+    Die Klassen und Ordnungen des Thier-Reichs, wissenschaftlich dargestellt
+doklady:
+  name: Doklady Akademii Nauk SSSR
+  notes: Proceedings of the Academy of Sciences of the USSR
 e-research-1998:
   name: Echinoderm Research 1998
   notes: Conference proceedings
@@ -91,10 +112,15 @@ e-tampa-bay:
   place: Rotterdam
 earth-science:
   name: Earth Science
+elements-de:
+  name: Elemente der Paläontologie
+elements-fr:
+  name: Éléments de paléontologie
 es-rev:
   name: Earth-Science Reviews
 e-faunas-bromide:
-  name: Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma
+  name: >
+    Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma
   editors:
   - sprinkle
 fam-nat:
@@ -135,10 +161,14 @@ geo-soc-am-abs-prog:
   name: Geological Society of America, Abstracts With Programs
 geo-survey-canada:
   name: Geological Survey of Canada. Report of Progress for the years 1853–54–55–56
+geo-survey-illinois:
+  name: Geological Survey of Illinois
 handbuch:
   name: Handbuch der Palaeontologie
 handbuch-nat:
   name: Handbuch der Naturgeschichte. Zum Gebrauch bei vorlesungen
+hist-brit:
+  name: A history of British animals
 hist-nat-bulg:
   name: Historia Naturalis Bulgarica
 hist-sans-vert:
@@ -171,6 +201,11 @@ konglinga:
   name: Kongliga Vetenskaps Academiens Handlingar
 kungliga-svenska:
   name: Kungliga Svenska vetenskapsakademiens handlingar
+lehrbuch:
+  name: Lehrbuch der vergleichenden Anatomie
+  editors:
+  - siebold
+  - stannius
 leopoldo:
   name: >
     Nova acta physico-medica Academiae Caesareae Leopoldino-Carolinae
@@ -190,8 +225,12 @@ manual-2nd:
   name: A Manual of Paleontology for the Use of Students, 2nd Ed.
 manual-3rd:
   name: A Manual of Paleontology for the Use of Students, 3rd Ed.
+manual-inv:
+  name: A manual of the anatomy of invertebrated animals
 mem-aust:
   name: Memoirs of the Association of the Australian Palaeontologists
+mem-comp-zool:
+  name: Memoirs of the Museum of Comparative Zoology at Harvard College
 mem-geol-gb:
   name: Memoirs of the Geological Survey of Great Britain, and of the Museum of Practical Geology in London
 mem-q:
@@ -253,6 +292,13 @@ paleo-memoir:
   name: Paleontological Society Memoir
 papersinpalaeo:
   name: Papers in Palaeontology
+petrefacta-germaniae:
+  name: >
+    Petrefacta Germaniæ tam ea: quae in Museo Universitatis Regiae Borussicae
+    Fridericiae Wilhelmiae Rhenanae servantur quam alia quaecunque in Museis
+    Hoeninghusiano Muensteriano aliisque extant, iconibus et descriptionibus
+    illustrata = Abbildungen und Beschreibungen der petrefacten Deutschlands
+    und der angränzenden Länder
 petrefactenkunde:
   name: >
     Die Petrefactenkunde auf ihrem jetzigen Standpunkte durch die
@@ -267,6 +313,8 @@ phil-trans-royal:
   name: Philosophical Transactions of the Royal Society of London
 phil-zool:
   name: Philosophie zoologique
+phy-sys-pelm:
+  name: Phylogenie und System der Pelmatoloen
 plos-one:
   name: PLoS ONE
 ppp:
@@ -274,13 +322,17 @@ ppp:
 procrsocb:
   name: Proceedings of the Royal Society B
 proclinn-nsw:
-  name: Proceddings of the Linnaean Society of New South Wales
+  name: Proceedings of the Linnaean Society of New South Wales
+proc-vic:
+  name: Proceedings of the Royal Society of Victoria
 pworld:
   name: Palaeoworld
 p-z:
   name: Paläontologische Zeitschrift
 quart-jour-geol-soc:
   name: Quarterly Journal of the Geological Society
+quart-jour-mic-sci:
+  name: Quarterly Juornal of Microscopal Science
 quibusdam:
   name: De quibusdam animalibus marinis
 recherches:
@@ -291,6 +343,8 @@ regne-animal:
   name: Le règne animal distribué d'après son organisation
 regne-animal-2nd:
   name: Le règne animal distribué d'après son organisation, 2nd Ed.
+rev-pcrin:
+  name: Revision of the Palaeocrinoidea
 russisch-kaiserlichen:
   name: |
     Verhandlungen der Russisch-Kaiserlichen Mineralogischen Gesellschaft
@@ -349,18 +403,29 @@ treatise-zoo:
   - lankester
   publisher: Adam & Charles Black
   place: London
+uber-cystideen:
+  name: >
+    Über Cystideen, eingeleitet durch die Entwicklung der Eigenthümlichkeiten
+    von Caryocrinus ornatus Say
+  notes: Monograph of a paper published several other ways.
 uber-den-bau:
   name: Über den Bau der Echinodermen
 uber-morph:
   name: Uber die Morphologie der wirbellosen Thiere
 ueber-esthland:
   name: Ueber das silurische Schichtensystem in Esthland
+verg-zool:
+  name: Vergleichende Zoologie
+verhandlungen:
+  name: Verhandlungen der Deutschen Zoologischen Gesellschaft
 vermium-t-e-f:
   name: Vermivm Terrestrium Et Fluviatilium, Seu Animalium Infusoriorum, Helminthicorum et Testaceorum 
 vermont-geol:
   name: Report of the Vermont State Geologist
 vestnik:
   name: Věstník Ústředního ústavu geologického
+zeitschrift:
+  name: Zeitschrift der Deutschen Geologischen Gesellschaft
 zoo-dan:
   name: Zoologiæ Danicæ prodromus, seu animalium Daniæ et Norvegiæ indigenarum characteres, nomina, et synonyma imprimis popularium
 zoolj:

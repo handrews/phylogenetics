@@ -3,7 +3,7 @@ notes: |
   but only order and genus captured here so far as the others are
   rather confusing.
 taxonomies:
-- taxon: echinus-order
+- taxon: echinus_leske_1778
   new: true
   children:
   - taxon: oculus

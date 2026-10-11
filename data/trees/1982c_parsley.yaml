@@ -1,24 +1,41 @@
 taxonomies:
 - taxon: echinodermata
-  auth: [bruguiére]
-  year: 1791
+  citedAs: Phylum ECHINODERMATA Bruguiere, 1791
+  rank: Phylum
+  authority:
+    source: 1791_bruguière
+  pages: v
+  notes: From the Table of Contents.
   children:
   - taxon: blastozoa
+    citedAs: Subphylum BLASTOZOA Sprinkle, 1973
+    rank: Subphylum
+    pages: v
+    notes: From the Table of Contents.
+  - taxon: blastozoa
     children:
-    - taxon: diploporita-class
+    - taxon: diploporita
+      citedAs: Class DIPLOPORITA Muller, 1854, nom. transl. Paul, 1968
+      rank: Class
       translated:
+        rank: Order
         by:
           source: 1968b_paul.c.r.c
-      notes:
-        Printed "nom. tranls. Paul 1968b" where this paper's Paul 1968b is
-        "Morphology and function of dichoporite pore-structures in cystoids"
-        in Palaeontology v. 9 pt. 5 p. 697–730.
+      pages: 280
+      notes: Also in Table of Contents, identical citation.
       children:
       - taxon: eumorphocystoidea
+        citedAs: >
+          Superfamily EUMORPHOCYSTOIDEA Branson and Peck, 1940, nom. transl.
+        rank: Superfamily
         translated: true
+        pages: 280
         children:
         - taxon: eumorphocystidae
+          citedAs: Famlly EUMORPHOCYSTIDAE Branson and Peck, 1940, emend.
+          rank: Family
           emended: true
+          pages: 281
           children:
           - taxon: eumorphocystis
             children:

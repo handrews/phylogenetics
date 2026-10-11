@@ -40,7 +40,7 @@ taxonomies:
         children:
         - taxon: legrandensis_miller.s.a_gurley_1894
         - taxon: lukei_bell.b.m_petersen.m.s_1976
-        - taxon: alabamensis_sumrall_garbisch_pope_2000
+        - taxon: alabamensis_sumrall_garbisch_pope.j.p_2000
         - taxon: westergaardi_sumrall_sprinkle_bonem_2006
         - taxon: jasperensis_harker_1953
           provisional: true
@@ -48,7 +48,7 @@ taxonomies:
           provisional: true
       - taxon: parapostibulla
         children:
-        - taxon: murphyi_sumrall_garbisch_pope_2000
+        - taxon: murphyi_sumrall_garbisch_pope.j.p_2000
         - taxon: hybolopus_fraunfelter_utgaard_1970
         - taxon: neglecta_smith.a.b_1983
           moved:

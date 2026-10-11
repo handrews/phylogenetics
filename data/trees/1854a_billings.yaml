@@ -1,7 +1,22 @@
 taxonomies:
-- taxon: echinodermata-class
+- taxon: echinodermata
+  citedAs: Echinodermata
+  rank: null
+  authority: null
+  pages: 215
   children:
-  - taxon: cystidea-order
+  - taxon: cystidea
+    citedAs: >
+      The Cystidea were first set apart as a separate order of the
+      Echinodermata by the late illustrious geologist, Leopold Von
+      Buch, in a memoir which appeared in 1845 in the Transactions
+      of the Royal Academy of Sciences of Berlin, and afterwards in
+      1846 translated and published in the Journal of the Geological
+      Society of London. 
+    rank: Order
+    authority:
+      source: 1845_buch
+    pages: 215
     children:
     - taxon: glyptocystites
       pages: 215

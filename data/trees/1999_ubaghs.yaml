@@ -1,9 +1,17 @@
 taxonomies:
 - taxon: stylophora
+  citedAs: Classe STYLOPHORA Gill & Caster, 1960
+  rank: Class
+  pages: 811
   children:
   - taxon: cornuta
+    citedAs: Ordre CORNUTA Jaekel, 1901
+    rank: Order
+    pages: 811
     children:
     - taxon: phyllocystidae
+      citedAs: Famille ? PHYLLOCYSTIDAE Derstler, 1979
+      pages: 811
       children:
       - taxon: lobocarpus
         provisional: true
@@ -17,8 +25,19 @@ taxonomies:
       - openTaxon: cornuta-sp_ubaghs_1999
         new: true
 - taxon: cystoidea
+  citedAs: Classe CYSTOIDEA Von Buch, 1846
+  rank: Class
+  authority:
+    source: 1846c_buch
+  pages: 816
+  notes: Ubaghs explicitly cites the German version.
   children:
-  - taxon: glyptocystitida-superfamily
+  - taxon: glyptocystitida
+    citedAs: Superfamille GLYPTOCYSTITIDA Bather, 1899
+    rank: Superfamily
+    authority:
+      source: 1899_bather
+    pages: 816
     children:
     - taxon: barroubiocystidae
       new: true
@@ -36,14 +55,20 @@ taxonomies:
           isType: true
           new: true
 - taxon: edrioasteroidea
-  notes: Also has a "?", in addition to Stromatocystites having one
+  citedAs: Classe ? EDRIOASTEROIDEA Billings, 1858
+  rank: Class
+  pages: 823
   children:
   - taxon: stromatocystites
+    citedAs: >
+      ? Stromatocystites POMPECKJ, 1896
     children:
     - openTaxon: stromatocystites-sp_ubaghs_1999
+      citedAs: Un unique specimen, VCMN 432
       provisional: true
       new: true
 - openTaxon: echinodermata-incertae-sedis_ubaghs_1999
+  new: true
   children:
   - taxon: scoteinocystis
     new: true

@@ -13,7 +13,8 @@ taxonomies:
           isType: true
           new: true
 - notes: From abstract and 2nd-hand from Nardin and Bohatý (2013)
-  taxon: rhombifera-class
+  taxon: rhombifera_zittel_1879
+  rank: Class
   children:
   - taxon: hillocystida
     new: true

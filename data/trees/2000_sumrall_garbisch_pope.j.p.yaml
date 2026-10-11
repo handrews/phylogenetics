@@ -1,5 +1,8 @@
 taxonomies:
 - taxon: edrioasteroidea
+  citedAs: Class Edrioasteroidea Billings, 1858
+  rank: Class
+  pages: 75
   children:
   - taxon: isorophida
     children:
@@ -19,19 +22,19 @@ taxonomies:
             - taxon: legrandensis_miller.s.a_gurley_1894
             - taxon: lukei_bell.b.m_petersen.m.s_1976
             - taxon: neglecta_smith.a.b_1983
-            - taxon: alabamensis_sumrall_garbisch_pope_2000
+            - taxon: alabamensis_sumrall_garbisch_pope.j.p_2000
               new: true
           - taxon: parapostibulla
             new: true
             children:
-            - taxon: murphyi_sumrall_garbisch_pope_2000
+            - taxon: murphyi_sumrall_garbisch_pope.j.p_2000
               new: true
             - taxon: hybolopus_fraunfelter_utgaard_1970
-            - openTaxon: parapostibulla-cf-hybolopus_sumrall_garbisch_pope_2000
+            - openTaxon: parapostibulla-cf-hybolopus_sumrall_garbisch_pope.j.p_2000
               cf: hybolopus_fraunfelter_utgaard_1970
-            - openTaxon: parapostibulla-sp-a_sumrall_garbisch_pope_2000
+            - openTaxon: parapostibulla-sp-a_sumrall_garbisch_pope.j.p_2000
               provisional: true
-            - openTaxon: parapostibulls-sp-indeterminate_sumrall_garbisch_pope_2000
+            - openTaxon: parapostibulls-sp-indeterminate_sumrall_garbisch_pope.j.p_2000
               provisional: true
 phylogenies:
 - treeType: cladogram
@@ -54,7 +57,7 @@ phylogenies:
       - taxon: postibulla
         children:
         - children:
-          - taxon: alabamensis_sumrall_garbisch_pope_2000
+          - taxon: alabamensis_sumrall_garbisch_pope.j.p_2000
           - taxon: legrandensis_miller.s.a_gurley_1894
           - children:
             - taxon: lukei_bell.b.m_petersen.m.s_1976
@@ -62,4 +65,4 @@ phylogenies:
       - taxon: parapostibulla
         children:
         - taxon: hybolopus_fraunfelter_utgaard_1970
-        - taxon: murphyi_sumrall_garbisch_pope_2000
+        - taxon: murphyi_sumrall_garbisch_pope.j.p_2000

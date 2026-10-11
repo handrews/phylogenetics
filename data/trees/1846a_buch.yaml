@@ -1,0 +1,9 @@
+taxonomies:
+- taxon: cystidea
+  rank: Family
+  synonyms:
+  - taxon: cystideen
+  editorial:
+    inferred: [synonyms]
+    basis: >
+      This notice in English is the first appearance of the Latin form in print.

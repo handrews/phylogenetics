@@ -2,13 +2,25 @@ prefixes:
   USNM: usnm
 taxonomies:
 - taxon: homalozoa
+  citedAs: Subphylum HOMALOZOA Whitehouse, 1941
+  rank: Subphylum
+  pages: 4
   children:
   - taxon: ctenocystoidea
+    citedAs: Class CTENOCYSTOIDEA Robison and Sprinkle, 1969
+    rank: Class
+    pages: 4
     children:
     - taxon: ctenocystida
+      citedAs: Order CTENOCYSTIDA Ubaghs and Robison, new
+      rank: Order
       new: true
+      pages: 4
       children:
       - taxon: ctenocystidae
+        citedAs: Family CTENOCYSTIDAE Sprinkle and Robison, 1978
+        rank: Family
+        pages: 4
         children:
         - taxon: ctenocystis
           children:
@@ -19,10 +31,19 @@ taxonomies:
               numbers: [423874]
               role: holotype
   - taxon: homoiostelea
+    citedAs: Class HOMOIOSTELEA Gill and Caster, 1960
+    rank: Class
+    pages: 5
     children:
-    - taxon: soluta-order
+    - taxon: soluta
+      citedAs: Order SOLUTA Jaekel, 1901
+      rank: Order
+      pages: 5
       children:
       - openTaxon: homoiostelea-indeterminate-family_ubaghs_robison_1988
+        rank: Family
+        new: true
+        pages: 5
         children:
         - taxon: castericystis
           children:
@@ -34,10 +55,19 @@ taxonomies:
               numbers: [423877]
               role: holotype
   - taxon: stylophora
+    citedAs: Class STYLOPHORA Gill and Caster, 1960
+    rank: Class
+    pages: 6
     children:
     - taxon: cornuta
+      citedAs: Order CORNUTA Jaekel, 1901
+      rank: Order
+      pages: 6
       children:
       - taxon: cothurnocystidae
+        citedAs: Family COTHURNOCYSTIDAE Bather, 1913
+        rank: Family
+        pages: 6
         children:
         - taxon: cothurnocystis
           children:

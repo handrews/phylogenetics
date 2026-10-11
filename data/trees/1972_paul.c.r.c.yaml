@@ -1,7 +1,8 @@
 taxonomies:
-- taxon: diploporita-class
+- taxon: diploporita
+  rank: Class
   translated:
-    taxon: diploporita-order
+    rank: Order
     editorial:
       inferred: true
       basis: >

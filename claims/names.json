@@ -261,6 +261,7 @@
     "Latreille"
    ],
    "display": "Latreille 1825",
+   "source": "1825_latreille",
    "year": 1825
   },
   "folded": [
@@ -636,6 +637,7 @@
     "Chapman"
    ],
    "display": "Chapman 1860",
+   "source": "1860b_chapman.e.j",
    "year": 1860
   },
   "folded": [
@@ -698,6 +700,7 @@
     "Vanuxem"
    ],
    "display": "Vanuxem 1842",
+   "source": "1842_vanuxem",
    "year": 1842
   },
   "folded": [
@@ -714,6 +717,7 @@
     "Chapman"
    ],
    "display": "Chapman 1860",
+   "source": "1860b_chapman.e.j",
    "year": 1860
   },
   "folded": [
@@ -930,7 +934,7 @@
   "name": "Akera",
   "rank": "genus"
  },
- "alabamensis_sumrall_garbisch_pope_2000": {
+ "alabamensis_sumrall_garbisch_pope.j.p_2000": {
   "authority": {
    "authors": [
     "Sumrall",
@@ -938,6 +942,7 @@
     "Pope"
    ],
    "display": "Sumrall, Garbisch, Pope 2000",
+   "source": "2000_sumrall_garbisch_pope.j.p",
    "year": 2000
   },
   "folded": [
@@ -1512,6 +1517,7 @@
     "Jaekel"
    ],
    "display": "Jaekel 1900",
+   "source": "1900_jaekel",
    "year": 1900
   },
   "folded": [
@@ -1705,6 +1711,7 @@
     "Jaekel"
    ],
    "display": "Jaekel 1899",
+   "source": "1899_jaekel",
    "year": 1899
   },
   "folded": [
@@ -2027,10 +2034,10 @@
  "anomalocystidae": {
   "authority": {
    "authors": [
-    "Hall"
+    "Meek"
    ],
-   "display": "Hall 1859",
-   "year": 1859
+   "display": "Meek 1872",
+   "year": 1872
   },
   "folded": [
    "anomalocystidae"
@@ -2252,6 +2259,7 @@
     "Jaekel"
    ],
    "display": "Jaekel 1899",
+   "source": "1899_jaekel",
    "year": 1899
   },
   "folded": [
@@ -2284,6 +2292,7 @@
     "Jaekel"
    ],
    "display": "Jaekel 1899",
+   "source": "1899_jaekel",
    "year": 1899
   },
   "folded": [
@@ -2625,6 +2634,7 @@
     "Jaekel"
    ],
    "display": "Jaekel 1899",
+   "source": "1899_jaekel",
    "year": 1899
   },
   "folded": [
@@ -2806,7 +2816,7 @@
   "name": "Aristocystites",
   "rank": "genus"
  },
- "aristocystitida-superfamily": {
+ "aristocystitida": {
   "authority": {
    "authors": [
     "Neumayr"
@@ -2815,8 +2825,7 @@
    "year": 1889
   },
   "folded": [
-   "aristocystitida",
-   "aristocystitidasuperfamily"
+   "aristocystitida"
   ],
   "kind": "primary",
   "name": "Aristocystitida",
@@ -2836,23 +2845,6 @@
   "kind": "primary",
   "name": "Aristocystitidae",
   "rank": "Family"
- },
- "aristocystitidae-superfamily": {
-  "authority": {
-   "authors": [
-    "Neumayr"
-   ],
-   "display": "Neumayr 1889",
-   "year": 1889
-  },
-  "folded": [
-   "aristocystitidae",
-   "aristocystitidaesuperfamily"
-  ],
-  "kind": "altRankOf",
-  "name": "Aristocystitidae",
-  "of": "aristocystitidae",
-  "rank": "Superfamily"
  },
  "arkarua": {
   "authority": {
@@ -2941,17 +2933,78 @@
  "arthropoda": {
   "authority": {
    "authors": [
-    "von Siebold"
+    "Gravenhorst"
    ],
-   "display": "von Siebold 1848",
-   "year": 1848
+   "display": "Gravenhorst 1843",
+   "source": "1843_gravenhorst",
+   "year": 1843
   },
   "folded": [
    "arthropoda"
   ],
   "kind": "primary",
   "name": "Arthropoda",
-  "rank": "Phylum"
+  "rank": "Class"
+ },
+ "arthropoda-class-uncertain_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010": {
+  "authority": {
+   "authors": [
+    "Liu",
+    "Hu",
+    "Zhang",
+    "Cuevas-Castell",
+    "Gong",
+    "Tao"
+   ],
+   "display": "Liu, Hu, Zhang, Cuevas-Castell, Gong, Tao 2010",
+   "source": "2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l",
+   "year": 2010
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "uncertain",
+  "rank": "Class"
+ },
+ "arthropoda-family-uncertain_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010": {
+  "authority": {
+   "authors": [
+    "Liu",
+    "Hu",
+    "Zhang",
+    "Cuevas-Castell",
+    "Gong",
+    "Tao"
+   ],
+   "display": "Liu, Hu, Zhang, Cuevas-Castell, Gong, Tao 2010",
+   "source": "2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l",
+   "year": 2010
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "uncertain",
+  "rank": "Family"
+ },
+ "arthropoda-order-uncertain_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010": {
+  "authority": {
+   "authors": [
+    "Liu",
+    "Hu",
+    "Zhang",
+    "Cuevas-Castell",
+    "Gong",
+    "Tao"
+   ],
+   "display": "Liu, Hu, Zhang, Cuevas-Castell, Gong, Tao 2010",
+   "source": "2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l",
+   "year": 2010
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "uncertain",
+  "rank": "Order"
  },
  "articulata": {
   "authority": {
@@ -3033,6 +3086,23 @@
   ],
   "kind": "primary",
   "name": "Ascidia",
+  "rank": "genus"
+ },
+ "ascidiastella": {
+  "authority": {
+   "authors": [
+    "Austin",
+    "Austin"
+   ],
+   "display": "Austin, Austin 1842",
+   "source": "1842_austin.t_austin.t.j",
+   "year": 1842
+  },
+  "folded": [
+   "ascidiastella"
+  ],
+  "kind": "primary",
+  "name": "Ascidiastella",
   "rank": "genus"
  },
  "ascidiens": {
@@ -3358,6 +3428,21 @@
   "of": "asterias",
   "rank": "Family"
  },
+ "asterias-sp_hall_1847": {
+  "authority": {
+   "authors": [
+    "Hall"
+   ],
+   "display": "Hall 1847",
+   "source": "1847_hall",
+   "year": 1847
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
+ },
  "asterizans_leske_1778": {
   "authority": {
    "authors": [
@@ -3392,9 +3477,9 @@
  "asteroidea": {
   "authority": {
    "authors": [
-    "de Blainville"
+    "Blainville"
    ],
-   "display": "de Blainville 1830",
+   "display": "Blainville 1830",
    "year": 1830
   },
   "folded": [
@@ -3407,9 +3492,9 @@
  "asteroidea-order": {
   "authority": {
    "authors": [
-    "de Blainville"
+    "Blainville"
    ],
-   "display": "de Blainville 1830",
+   "display": "Blainville 1830",
    "year": 1830
   },
   "folded": [
@@ -3424,9 +3509,9 @@
  "asteroidea-subclass": {
   "authority": {
    "authors": [
-    "de Blainville"
+    "Blainville"
    ],
-   "display": "de Blainville 1830",
+   "display": "Blainville 1830",
    "year": 1830
   },
   "folded": [
@@ -3441,9 +3526,9 @@
  "asteroids": {
   "authority": {
    "authors": [
-    "de Blainville"
+    "Blainville"
    ],
-   "display": "de Blainville 1830",
+   "display": "Blainville 1830",
    "year": 1830
   },
   "folded": [
@@ -3615,6 +3700,7 @@
     "Jaekel"
    ],
    "display": "Jaekel 1899",
+   "source": "1899_jaekel",
    "year": 1899
   },
   "folded": [
@@ -4111,13 +4197,14 @@
   "name": "Balantiocystis",
   "rank": "genus"
  },
- "baltica_jaekel_1901": {
+ "baltica_jaekel_1900": {
   "authority": {
    "authors": [
     "Jaekel"
    ],
-   "display": "Jaekel 1901",
-   "year": 1901
+   "display": "Jaekel 1900",
+   "source": "1900_jaekel",
+   "year": 1900
   },
   "folded": [
    "baltica"
@@ -4147,6 +4234,7 @@
     "Jaekel"
    ],
    "display": "Jaekel 1899",
+   "source": "1899_jaekel",
    "year": 1899
   },
   "folded": [
@@ -4809,12 +4897,13 @@
   "name": "bigsbyi",
   "rank": "species"
  },
- "billingsi_chapman_1860": {
+ "billingsi_chapman.e.j_1860": {
   "authority": {
    "authors": [
     "Chapman"
    ],
    "display": "Chapman 1860",
+   "source": "1860b_chapman.e.j",
    "year": 1860
   },
   "folded": [
@@ -5048,24 +5137,6 @@
   "name": "Blastozoa",
   "rank": "Subphylum"
  },
- "blastozoa-class": {
-  "authority": {
-   "authors": [
-    "Sprinkle"
-   ],
-   "display": "Sprinkle 1973",
-   "source": "1973_sprinkle",
-   "year": 1973
-  },
-  "folded": [
-   "blastozoa",
-   "blastozoaclass"
-  ],
-  "kind": "altRankOf",
-  "name": "Blastozoa",
-  "of": "blastozoa",
-  "rank": "Class"
- },
  "blastozoa-indeterminate-class_sprinkle_1973": {
   "authority": {
    "authors": [
@@ -5166,6 +5237,7 @@
     "Kordule"
    ],
    "display": "Fatka, Kordule 1985",
+   "source": "1985_fatka_kordule",
    "year": 1985
   },
   "folded": [
@@ -5802,6 +5874,7 @@
     "Derstler"
    ],
    "display": "Guensburg, Sprinkle, Mooi, Lefebvre, David, Roux, Derstler 2020",
+   "source": "2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler",
    "year": 2020
   },
   "folded": [
@@ -6411,6 +6484,7 @@
     "Springer"
    ],
    "display": "Wachsmuth, Springer 1885",
+   "source": "1885_wachsmuth_springer",
    "year": 1885
   },
   "folded": [
@@ -6710,6 +6784,7 @@
     "Bather"
    ],
    "display": "Bather 1899",
+   "source": "1899_bather",
    "year": 1899
   },
   "folded": [
@@ -6996,6 +7071,7 @@
     "Jaekel"
    ],
    "display": "Jaekel 1900",
+   "source": "1900_jaekel",
    "year": 1900
   },
   "folded": [
@@ -7159,7 +7235,7 @@
   "placeholder": "open",
   "rank": "species"
  },
- "caryocystitida-superfamily": {
+ "caryocystitida": {
   "authority": {
    "authors": [
     "Jaekel"
@@ -7168,8 +7244,7 @@
    "year": 1918
   },
   "folded": [
-   "caryocystitida",
-   "caryocystitidasuperfamily"
+   "caryocystitida"
   ],
   "kind": "primary",
   "name": "Caryocystitida",
@@ -8140,33 +8215,17 @@
   "name": "cincinnatiensis",
   "rank": "species"
  },
- "cincta-class": {
+ "cincta": {
   "authority": {
    "authors": [
     "Jaekel"
    ],
    "display": "Jaekel 1918",
+   "source": "1918_jaekel",
    "year": 1918
   },
   "folded": [
-   "cincta",
-   "cinctaclass"
-  ],
-  "kind": "primary",
-  "name": "Cincta",
-  "rank": "Class"
- },
- "cincta-order": {
-  "authority": {
-   "authors": [
-    "Jaekel"
-   ],
-   "display": "Jaekel 1918",
-   "year": 1918
-  },
-  "folded": [
-   "cincta",
-   "cinctaorder"
+   "cincta"
   ],
   "kind": "primary",
   "name": "Cincta",
@@ -8428,6 +8487,41 @@
   "name": "clypeatus",
   "rank": "species"
  },
+ "clypecaris": {
+  "authority": {
+   "authors": [
+    "Hou"
+   ],
+   "display": "Hou 1999",
+   "year": 1999
+  },
+  "folded": [
+   "clypecaris"
+  ],
+  "kind": "primary",
+  "name": "Clypecaris",
+  "rank": "genus"
+ },
+ "clypecaris-sp_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010": {
+  "authority": {
+   "authors": [
+    "Liu",
+    "Hu",
+    "Zhang",
+    "Cuevas-Castell",
+    "Gong",
+    "Tao"
+   ],
+   "display": "Liu, Hu, Zhang, Cuevas-Castell, Gong, Tao 2010",
+   "source": "2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l",
+   "year": 2010
+  },
+  "folded": [],
+  "kind": "placeholder",
+  "name": null,
+  "placeholder": "open",
+  "rank": "species"
+ },
  "clypeus": {
   "authority": {
    "authors": [
@@ -8527,33 +8621,15 @@
   "name": "Coelentera",
   "rank": "Phylum"
  },
- "coelentera-grade": {
-  "authority": {
-   "authors": [
-    "Frey",
-    "Leuckart"
-   ],
-   "display": "Frey, Leuckart 1847",
-   "year": 1847
-  },
+ "coelomata": {
   "folded": [
-   "coelentera",
-   "coelenteragrade"
-  ],
-  "kind": "primary",
-  "name": "Coelentera",
-  "rank": "Grade"
- },
- "coelomata-grade": {
-  "folded": [
-   "coelomata",
-   "coelomatagrade"
+   "coelomata"
   ],
   "kind": "primary",
   "name": "Coelomata",
   "rank": "Grade"
  },
- "coelomocoela-grade": {
+ "coelomocoela": {
   "authority": {
    "authors": [
     "Lankester"
@@ -8562,8 +8638,7 @@
    "year": 1900
   },
   "folded": [
-   "coelomocoela",
-   "coelomocoelagrade"
+   "coelomocoela"
   ],
   "kind": "primary",
   "name": "Coelomocoela",
@@ -8701,6 +8776,7 @@
     "Bather"
    ],
    "display": "Bather 1899",
+   "source": "1899_bather",
    "year": 1899
   },
   "folded": [
@@ -8734,6 +8810,7 @@
     "Mintz"
    ],
    "display": "Parsley, Mintz 1975",
+   "source": "1975_parsley_mintz",
    "year": 1975
   },
   "folded": [
@@ -8749,6 +8826,7 @@
     "Bather"
    ],
    "display": "Bather 1899",
+   "source": "1899_bather",
    "year": 1899
   },
   "folded": [
@@ -9316,15 +9394,16 @@
    "authors": [
     "Jaekel"
    ],
-   "display": "Jaekel 1901",
-   "year": 1901
+   "display": "Jaekel 1900",
+   "source": "1900_jaekel",
+   "year": 1900
   },
   "folded": [
    "cornuta"
   ],
   "kind": "primary",
   "name": "Cornuta",
-  "rank": "Order"
+  "rank": "Suborder"
  },
  "cornuta-incertae-sedis_ubaghs_1999": {
   "authority": {
@@ -9378,6 +9457,7 @@
     "Rievers"
    ],
    "display": "Rievers 1961",
+   "source": "1961_rievers",
    "year": 1961
   },
   "folded": [
@@ -10372,6 +10452,7 @@
     "Goldfuss"
    ],
    "display": "Goldfuss 1831",
+   "source": "1831_goldfuss",
    "year": 1831
   },
   "folded": [
@@ -10589,6 +10670,7 @@
     "Bather"
    ],
    "display": "Bather 1899",
+   "source": "1899_bather",
    "year": 1899
   },
   "folded": [
@@ -10653,6 +10735,7 @@
     "Bather"
    ],
    "display": "Bather 1899",
+   "source": "1899_bather",
    "year": 1899
   },
   "folded": [
@@ -10700,6 +10783,7 @@
     "Bather"
    ],
    "display": "Bather 1899",
+   "source": "1899_bather",
    "year": 1899
   },
   "folded": [
@@ -10748,6 +10832,7 @@
     "Bather"
    ],
    "display": "Bather 1899",
+   "source": "1899_bather",
    "year": 1899
   },
   "folded": [
@@ -11224,27 +11309,12 @@
   "folded": [
    "cystidea"
   ],
-  "kind": "primary",
+  "kind": "altSpellingOf",
   "name": "Cystidea",
-  "rank": "Class"
+  "of": "cystideen",
+  "rank": "Unranked"
  },
- "cystidea-family": {
-  "authority": {
-   "authors": [
-    "Buch"
-   ],
-   "display": "Buch 1844",
-   "year": 1844
-  },
-  "folded": [
-   "cystidea",
-   "cystideafamily"
-  ],
-  "kind": "primary",
-  "name": "Cystidea",
-  "rank": "Family"
- },
- "cystidea-order": {
+ "cystideae": {
   "authority": {
    "authors": [
     "Buch"
@@ -11254,48 +11324,12 @@
    "year": 1844
   },
   "folded": [
-   "cystidea",
-   "cystideaorder"
-  ],
-  "kind": "altRankOf",
-  "name": "Cystidea",
-  "of": "cystidea",
-  "rank": "Order"
- },
- "cystideae-family": {
-  "authority": {
-   "authors": [
-    "Buch"
-   ],
-   "display": "Buch 1844",
-   "year": 1844
-  },
-  "folded": [
-   "cystideae",
-   "cystideaefamily"
+   "cystideae"
   ],
   "kind": "altSpellingOf",
   "name": "Cystideae",
-  "of": "cystidea-family",
-  "rank": "Family"
- },
- "cystideae-order": {
-  "authority": {
-   "authors": [
-    "Buch"
-   ],
-   "display": "Buch 1844",
-   "source": "1844_buch",
-   "year": 1844
-  },
-  "folded": [
-   "cystideae",
-   "cystideaeorder"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Cystideae",
-  "of": "cystidea-order",
-  "rank": "Order"
+  "of": "cystideen",
+  "rank": "Unranked"
  },
  "cystideae-unnamed-group_müller.j.p_1854": {
   "authority": {
@@ -11348,16 +11382,15 @@
     "Buch"
    ],
    "display": "Buch 1844",
+   "source": "1844_buch",
    "year": 1844
   },
   "folded": [
    "cystideen"
   ],
-  "kind": "vulgarSpellingOf",
-  "lang": "DE",
+  "kind": "primary",
   "name": "Cystideen",
-  "of": "cystidea-family",
-  "rank": "Family"
+  "rank": "Unranked"
  },
  "cystoidea": {
   "authority": {
@@ -11374,25 +11407,7 @@
   "kind": "altSpellingOf",
   "name": "Cystoidea",
   "of": "cystidea",
-  "rank": "Class"
- },
- "cystoidea-order": {
-  "authority": {
-   "authors": [
-    "Buch"
-   ],
-   "display": "Buch 1844",
-   "source": "1844_buch",
-   "year": 1844
-  },
-  "folded": [
-   "cystoidea",
-   "cystoideaorder"
-  ],
-  "kind": "altRankOf",
-  "name": "Cystoidea",
-  "of": "cystoidea",
-  "rank": "Order"
+  "rank": "Unranked"
  },
  "cystostellaroidea": {
   "authority": {
@@ -11830,6 +11845,7 @@
     "Springer"
    ],
    "display": "Wachsmuth, Springer 1886",
+   "source": "1886_wachsmuth_springer",
    "year": 1886
   },
   "folded": [
@@ -11846,6 +11862,7 @@
     "Springer"
    ],
    "display": "Wachsmuth, Springer 1886",
+   "source": "1886_wachsmuth_springer",
    "year": 1886
   },
   "folded": [
@@ -11861,6 +11878,7 @@
     "Bather"
    ],
    "display": "Bather 1899",
+   "source": "1899_bather",
    "year": 1899
   },
   "folded": [
@@ -12492,7 +12510,7 @@
   "name": "Diplobathrida",
   "rank": "Order"
  },
- "diploporita-class": {
+ "diploporita": {
   "authority": {
    "authors": [
     "Müller"
@@ -12502,12 +12520,12 @@
    "year": 1854
   },
   "folded": [
-   "diploporita",
-   "diploporitaclass"
+   "diploporita"
   ],
-  "kind": "primary",
+  "kind": "altSpellingOf",
   "name": "Diploporita",
-  "rank": "Class"
+  "of": "diploporitidae",
+  "rank": "Group"
  },
  "diploporita-incertae-sedis": {
   "authority": {
@@ -12524,24 +12542,6 @@
   "placeholder": "open",
   "rank": "Superfamily"
  },
- "diploporita-order": {
-  "authority": {
-   "authors": [
-    "Müller"
-   ],
-   "display": "Müller 1854",
-   "source": "1854_müller.j.p",
-   "year": 1854
-  },
-  "folded": [
-   "diploporita",
-   "diploporitaorder"
-  ],
-  "kind": "altRankOf",
-  "name": "Diploporita",
-  "of": "diploporita-class",
-  "rank": "Order"
- },
  "diploporita-sp-e_paul.c.r.c_1997": {
   "authority": {
    "authors": [
@@ -12557,24 +12557,6 @@
   "placeholder": "open",
   "rank": "species"
  },
- "diploporita-suborder": {
-  "authority": {
-   "authors": [
-    "Müller"
-   ],
-   "display": "Müller 1854",
-   "source": "1854_müller.j.p",
-   "year": 1854
-  },
-  "folded": [
-   "diploporita",
-   "diploporitasuborder"
-  ],
-  "kind": "altRankOf",
-  "name": "Diploporita",
-  "of": "diploporita-class",
-  "rank": "Suborder"
- },
  "diploporiten": {
   "authority": {
    "authors": [
@@ -12587,11 +12569,9 @@
   "folded": [
    "diploporiten"
   ],
-  "kind": "vulgarSpellingOf",
-  "lang": "DE",
+  "kind": "primary",
   "name": "Diploporiten",
-  "of": "diploporita-suborder",
-  "rank": "Suborder"
+  "rank": "Group"
  },
  "diploporitidae": {
   "authority": {
@@ -12605,10 +12585,10 @@
   "folded": [
    "diploporitidae"
   ],
-  "kind": "altRankOf",
+  "kind": "altSpellingOf",
   "name": "Diploporitidae",
-  "of": "diploporita-order",
-  "rank": "Family"
+  "of": "diploporiten",
+  "rank": "Group"
  },
  "diploptera_lamarck_1816": {
   "authority": {
@@ -13503,28 +13483,27 @@
  "echinodermata": {
   "authority": {
    "authors": [
-    "Bruguière"
+    "Klein"
    ],
-   "display": "Bruguière 1791",
-   "source": "1791_bruguière",
-   "year": 1791
+   "display": "Klein 1778",
+   "source": "1778_klein",
+   "year": 1778
   },
   "folded": [
    "echinodermata"
   ],
   "kind": "primary",
   "name": "Echinodermata",
-  "rank": "Phylum",
-  "status": "monophyletic"
+  "rank": "Unranked"
  },
  "echinodermata-class": {
   "authority": {
    "authors": [
-    "Bruguière"
+    "Klein"
    ],
-   "display": "Bruguière 1791",
-   "source": "1791_bruguière",
-   "year": 1791
+   "display": "Klein 1778",
+   "source": "1778_klein",
+   "year": 1778
   },
   "folded": [
    "echinodermata",
@@ -13583,11 +13562,11 @@
  "echinodermata-order": {
   "authority": {
    "authors": [
-    "Bruguière"
+    "Klein"
    ],
-   "display": "Bruguière 1791",
-   "source": "1791_bruguière",
-   "year": 1791
+   "display": "Klein 1778",
+   "source": "1778_klein",
+   "year": 1778
   },
   "folded": [
    "echinodermata",
@@ -13613,7 +13592,7 @@
   "placeholder": "unnamed",
   "rank": "Family"
  },
- "echinodermata_klein_1778": {
+ "echinodermen": {
   "authority": {
    "authors": [
     "Klein"
@@ -13621,39 +13600,6 @@
    "display": "Klein 1778",
    "source": "1778_klein",
    "year": 1778
-  },
-  "folded": [
-   "echinodermata"
-  ],
-  "kind": "primary",
-  "name": "Echinodermata",
-  "rank": "genus"
- },
- "echinodermatum": {
-  "authority": {
-   "authors": [
-    "Klein"
-   ],
-   "display": "Klein 1734",
-   "source": "1734_klein",
-   "year": 1734
-  },
-  "folded": [
-   "echinodermatum"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Echinodermatum",
-  "of": "echinodermata",
-  "rank": "Phylum"
- },
- "echinodermen": {
-  "authority": {
-   "authors": [
-    "Bruguière"
-   ],
-   "display": "Bruguière 1791",
-   "source": "1791_bruguière",
-   "year": 1791
   },
   "folded": [
    "echinodermen"
@@ -13736,6 +13682,7 @@
     "Bather"
    ],
    "display": "Bather 1899",
+   "source": "1899_bather",
    "year": 1899
   },
   "folded": [
@@ -13788,8 +13735,9 @@
   "folded": [
    "echinoidea"
   ],
-  "kind": "primary",
+  "kind": "altRankOf",
   "name": "Echinoidea",
+  "of": "echinus_leske_1778",
   "rank": "Class"
  },
  "echinoidea-family": {
@@ -14205,23 +14153,6 @@
   "of": "echinus",
   "rank": "Family"
  },
- "echinus-order": {
-  "authority": {
-   "authors": [
-    "Leske"
-   ],
-   "display": "Leske 1778",
-   "source": "1778_leske",
-   "year": 1778
-  },
-  "folded": [
-   "echinus",
-   "echinusorder"
-  ],
-  "kind": "primary",
-  "name": "Echinus",
-  "rank": "Order"
- },
  "echinus-sp_hisinger_1802": {
   "authority": {
    "authors": [
@@ -14251,6 +14182,22 @@
   "name": null,
   "placeholder": "open",
   "rank": "species"
+ },
+ "echinus_leske_1778": {
+  "authority": {
+   "authors": [
+    "Leske"
+   ],
+   "display": "Leske 1778",
+   "source": "1778_leske",
+   "year": 1778
+  },
+  "folded": [
+   "echinus"
+  ],
+  "kind": "primary",
+  "name": "Echinus",
+  "rank": "Order"
  },
  "echmatocrinidae": {
   "authority": {
@@ -14467,7 +14414,7 @@
   "name": "Edrioasteridae",
   "rank": "Family"
  },
- "edrioasteridae-suborder": {
+ "edrioasteridae_billings_1858b": {
   "authority": {
    "authors": [
     "Billings"
@@ -14477,12 +14424,28 @@
    "year": 1858
   },
   "folded": [
-   "edrioasteridae",
-   "edrioasteridaesuborder"
+   "edrioasteridae"
   ],
-  "kind": "altRankOf",
+  "kind": "primary",
   "name": "Edrioasteridae",
-  "of": "edrioasteroidea",
+  "rank": "Suborder"
+ },
+ "edrioasteriden": {
+  "authority": {
+   "authors": [
+    "Billings"
+   ],
+   "display": "Billings 1858",
+   "source": "1858b_billings",
+   "year": 1858
+  },
+  "folded": [
+   "edrioasteriden"
+  ],
+  "kind": "vulgarSpellingOf",
+  "lang": "DE",
+  "name": "Edrioasteriden",
+  "of": "edrioasteridae_billings_1858b",
   "rank": "Suborder"
  },
  "edrioasterids": {
@@ -14515,6 +14478,23 @@
   "name": "Edrioasterina",
   "of": "edrioasteridae",
   "rank": "Suborder"
+ },
+ "edrioasteroida": {
+  "authority": {
+   "authors": [
+    "Bell"
+   ],
+   "display": "Bell 1976",
+   "source": "1976_bell.b.m",
+   "year": 1976
+  },
+  "folded": [
+   "edrioasteroida"
+  ],
+  "kind": "altSpellingOf",
+  "name": "Edrioasteroida",
+  "of": "edrioasterida",
+  "rank": "Order"
  },
  "edrioasteroidea": {
   "authority": {
@@ -15333,16 +15313,38 @@
   "name": "endeca",
   "rank": "species"
  },
- "enterocoela-grade": {
+ "enterocoela": {
+  "authority": {
+   "authors": [
+    "Hatschek"
+   ],
+   "display": "Hatschek 1888",
+   "year": 1888
+  },
   "folded": [
-   "enterocoela",
-   "enterocoelagrade"
+   "enterocoela"
+  ],
+  "kind": "altSpellingOf",
+  "name": "Enterocoela",
+  "of": "enterocoelia",
+  "rank": "Division"
+ },
+ "enterocoelia": {
+  "authority": {
+   "authors": [
+    "Hatschek"
+   ],
+   "display": "Hatschek 1888",
+   "year": 1888
+  },
+  "folded": [
+   "enterocoelia"
   ],
   "kind": "primary",
-  "name": "Enterocoela",
-  "rank": "Grade"
+  "name": "Enterocoelia",
+  "rank": "Division"
  },
- "enterozoa-branch": {
+ "enterozoa": {
   "authority": {
    "authors": [
     "Lankester"
@@ -15351,12 +15353,11 @@
    "year": 1877
   },
   "folded": [
-   "enterozoa",
-   "enterozoabranch"
+   "enterozoa"
   ],
   "kind": "primary",
   "name": "Enterozoa",
-  "rank": "Branch"
+  "rank": "Grade"
  },
  "entozoa": {
   "authority": {
@@ -15451,23 +15452,6 @@
   "name": "Eocrinoidae",
   "of": "eocrinidae",
   "rank": "Family"
- },
- "eocrinoidae-class": {
-  "authority": {
-   "authors": [
-    "Jaekel"
-   ],
-   "display": "Jaekel 1918",
-   "year": 1918
-  },
-  "folded": [
-   "eocrinoidae",
-   "eocrinoidaeclass"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Eocrinoidae",
-  "of": "eocrinoidea",
-  "rank": "Class"
  },
  "eocrinoidea": {
   "authority": {
@@ -15797,7 +15781,7 @@
   "name": "Eocrinus",
   "rank": "genus"
  },
- "eocrinus?-sp_caster_pope_1960": {
+ "eocrinus?-sp_caster_pope.j.k_1960": {
   "authority": {
    "authors": [
     "Caster",
@@ -16165,12 +16149,29 @@
   "name": "Etoctenocystis",
   "rank": "genus"
  },
+ "eublastoidea": {
+  "authority": {
+   "authors": [
+    "Bather"
+   ],
+   "display": "Bather 1899",
+   "source": "1899_bather",
+   "year": 1899
+  },
+  "folded": [
+   "eublastoidea"
+  ],
+  "kind": "primary",
+  "name": "Eublastoidea",
+  "rank": "Grade"
+ },
  "eucalyptocrinites": {
   "authority": {
    "authors": [
     "Goldfuss"
    ],
    "display": "Goldfuss 1831",
+   "source": "1831_goldfuss",
    "year": 1831
   },
   "folded": [
@@ -16186,6 +16187,7 @@
     "Goldfuss"
    ],
    "display": "Goldfuss 1831",
+   "source": "1831_goldfuss",
    "year": 1831
   },
   "folded": [
@@ -18492,6 +18494,7 @@
     "Bather"
    ],
    "display": "Bather 1899",
+   "source": "1899_bather",
    "year": 1899
   },
   "folded": [
@@ -18539,6 +18542,7 @@
     "Bather"
    ],
    "display": "Bather 1899",
+   "source": "1899_bather",
    "year": 1899
   },
   "folded": [
@@ -18548,45 +18552,13 @@
   "name": "Glyptocystitida",
   "rank": "Superfamily"
  },
- "glyptocystitida-order": {
-  "authority": {
-   "authors": [
-    "Bather"
-   ],
-   "display": "Bather 1899",
-   "year": 1899
-  },
-  "folded": [
-   "glyptocystitida",
-   "glyptocystitidaorder"
-  ],
-  "kind": "primary",
-  "name": "Glyptocystitida",
-  "rank": "Order"
- },
- "glyptocystitida-superfamily": {
-  "authority": {
-   "authors": [
-    "Bather"
-   ],
-   "display": "Bather 1899",
-   "year": 1899
-  },
-  "folded": [
-   "glyptocystitida",
-   "glyptocystitidasuperfamily"
-  ],
-  "kind": "altRankOf",
-  "name": "Glyptocystitida",
-  "of": "glyptocystitidae",
-  "rank": "Superfamily"
- },
  "glyptocystitidae": {
   "authority": {
    "authors": [
     "Bather"
    ],
    "display": "Bather 1899",
+   "source": "1899_bather",
    "year": 1899
   },
   "folded": [
@@ -19293,6 +19265,7 @@
     "Goldfuss"
    ],
    "display": "Goldfuss 1831",
+   "source": "1831_goldfuss",
    "year": 1831
   },
   "folded": [
@@ -19754,6 +19727,7 @@
     "Thompson"
    ],
    "display": "Zamora, Rahman, Sumrall, Gibson, Thompson 2022",
+   "source": "2022_zamora_rahman_sumrall_gibson_thompson",
    "year": 2022
   },
   "folded": [
@@ -19891,6 +19865,7 @@
     "Vanuxem"
    ],
    "display": "Vanuxem 1842",
+   "source": "1842_vanuxem",
    "year": 1842
   },
   "folded": [
@@ -20133,6 +20108,7 @@
     "Zamora"
    ],
    "display": "Smith, Zamora 2013",
+   "source": "2013_smith.a.b_zamora",
    "year": 2013
   },
   "folded": [
@@ -20149,6 +20125,7 @@
     "Zamora"
    ],
    "display": "Smith, Zamora 2013",
+   "source": "2013_smith.a.b_zamora",
    "year": 2013
   },
   "folded": [
@@ -20165,15 +20142,16 @@
     "Zamora"
    ],
    "display": "Smith, Zamora 2013",
+   "source": "2013_smith.a.b_zamora",
    "year": 2013
   },
   "folded": [
    "helicocystoidea"
   ],
-  "kind": "primary",
+  "kind": "altRankOf",
   "name": "Helicocystoidea",
-  "rank": "Class",
-  "status": "unregistered"
+  "of": "helicocystitidae",
+  "rank": "Class"
  },
  "helicoplacida": {
   "authority": {
@@ -20215,6 +20193,7 @@
     "Caster"
    ],
    "display": "Durham, Caster 1963",
+   "source": "1963_durham_caster",
    "year": 1963
   },
   "folded": [
@@ -20231,6 +20210,7 @@
     "Caster"
    ],
    "display": "Durham, Caster 1963",
+   "source": "1963_durham_caster",
    "year": 1963
   },
   "folded": [
@@ -20425,7 +20405,7 @@
   "placeholder": "open",
   "rank": "species"
  },
- "hemicosmitida-order": {
+ "hemicosmitida": {
   "authority": {
    "authors": [
     "Jaekel"
@@ -20434,28 +20414,11 @@
    "year": 1918
   },
   "folded": [
-   "hemicosmitida",
-   "hemicosmitidaorder"
+   "hemicosmitida"
   ],
   "kind": "primary",
   "name": "Hemicosmitida",
   "rank": "Order"
- },
- "hemicosmitida-superfamily": {
-  "authority": {
-   "authors": [
-    "Jaekel"
-   ],
-   "display": "Jaekel 1918",
-   "year": 1918
-  },
-  "folded": [
-   "hemicosmitida",
-   "hemicosmitidasuperfamily"
-  ],
-  "kind": "primary",
-  "name": "Hemicosmitida",
-  "rank": "Superfamily"
  },
  "hemicosmitidae": {
   "authority": {
@@ -20471,40 +20434,6 @@
   "kind": "primary",
   "name": "Hemicosmitidae",
   "rank": "Family"
- },
- "hemicosmitoida-order": {
-  "authority": {
-   "authors": [
-    "Jaekel"
-   ],
-   "display": "Jaekel 1918",
-   "year": 1918
-  },
-  "folded": [
-   "hemicosmitoida",
-   "hemicosmitoidaorder"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Hemicosmitoida",
-  "of": "hemicosmitida-order",
-  "rank": "Order"
- },
- "hemicosmitoida-superfamily": {
-  "authority": {
-   "authors": [
-    "Jaekel"
-   ],
-   "display": "Jaekel 1918",
-   "year": 1918
-  },
-  "folded": [
-   "hemicosmitoida",
-   "hemicosmitoidasuperfamily"
-  ],
-  "kind": "altSpellingOf",
-  "name": "Hemicosmitoida",
-  "of": "hemicosmitida-superfamily",
-  "rank": "Superfamily"
  },
  "hemicystis": {
   "authority": {
@@ -21186,9 +21115,9 @@
  "holothuria-order": {
   "authority": {
    "authors": [
-    "de Blainville"
+    "Blainville"
    ],
-   "display": "de Blainville 1834",
+   "display": "Blainville 1834",
    "year": 1834
   },
   "folded": [
@@ -21216,12 +21145,28 @@
   "name": "Holothuria",
   "rank": "genus"
  },
+ "holothurioidea": {
+  "authority": {
+   "authors": [
+    "Blainville"
+   ],
+   "display": "Blainville 1834",
+   "year": 1834
+  },
+  "folded": [
+   "holothurioidea"
+  ],
+  "kind": "altSpellingOf",
+  "name": "Holothurioidea",
+  "of": "holothuroidea",
+  "rank": "Class"
+ },
  "holothuroidea": {
   "authority": {
    "authors": [
-    "de Blainville"
+    "Blainville"
    ],
-   "display": "de Blainville 1834",
+   "display": "Blainville 1834",
    "year": 1834
   },
   "folded": [
@@ -21345,6 +21290,7 @@
     "Caster"
    ],
    "display": "Gill, Caster 1960",
+   "source": "1960_gill_caster",
    "year": 1960
   },
   "folded": [
@@ -21377,6 +21323,7 @@
     "Caster"
    ],
    "display": "Gill, Caster 1960",
+   "source": "1960_gill_caster",
    "year": 1960
   },
   "folded": [
@@ -21394,6 +21341,7 @@
     "Caster"
    ],
    "display": "Gill, Caster 1960",
+   "source": "1960_gill_caster",
    "year": 1960
   },
   "folded": [
@@ -21411,6 +21359,7 @@
     "Caster"
    ],
    "display": "Gill, Caster 1960",
+   "source": "1960_gill_caster",
    "year": 1960
   },
   "folded": [
@@ -21427,6 +21376,7 @@
     "Caster"
    ],
    "display": "Gill, Caster 1960",
+   "source": "1960_gill_caster",
    "year": 1960
   },
   "folded": [
@@ -22017,6 +21967,7 @@
     "Springer"
    ],
    "display": "Wachsmuth, Springer 1897",
+   "source": "1897a_wachsmuth_springer",
    "year": 1897
   },
   "folded": [
@@ -23237,6 +23188,22 @@
   "name": "Kailidiscus",
   "rank": "genus"
  },
+ "kalckballar_tilas_1740": {
+  "authority": {
+   "authors": [
+    "Tilas"
+   ],
+   "display": "Tilas 1740",
+   "source": "1740_tilas",
+   "year": 1740
+  },
+  "folded": [
+   "kalckballar"
+  ],
+  "kind": "primary",
+  "name": "kalckballar",
+  "rank": "Unranked"
+ },
  "kaskaskiensis_hall_1858": {
   "authority": {
    "authors": [
@@ -23396,13 +23363,14 @@
   "name": "kitchnerensis",
   "rank": "species"
  },
- "knizeki_fatka_1991": {
+ "knizeki_fatka_kordule_1991": {
   "authority": {
    "authors": [
-    "Fatka"
+    "Fatka",
+    "Kordule"
    ],
-   "display": "Fatka 1991",
-   "source": "1991_fatka",
+   "display": "Fatka, Kordule 1991",
+   "source": "1991_fatka_kordule",
    "year": 1991
   },
   "folded": [
@@ -25558,6 +25526,7 @@
     "Bather"
    ],
    "display": "Bather 1899",
+   "source": "1899_bather",
    "year": 1899
   },
   "folded": [
@@ -25842,6 +25811,7 @@
     "Bather"
    ],
    "display": "Bather 1899",
+   "source": "1899_bather",
    "year": 1899
   },
   "folded": [
@@ -25874,6 +25844,7 @@
     "Bather"
    ],
    "display": "Bather 1899",
+   "source": "1899_bather",
    "year": 1899
   },
   "folded": [
@@ -26261,6 +26232,7 @@
     "Robison"
    ],
    "display": "Ubaghs, Robison 1985",
+   "source": "1985_ubaghs_robison",
    "year": 1985
   },
   "folded": [
@@ -26573,6 +26545,7 @@
     "Goldfuss"
    ],
    "display": "Goldfuss 1831",
+   "source": "1831_goldfuss",
    "year": 1831
   },
   "folded": [
@@ -26696,6 +26669,7 @@
     "Bather"
    ],
    "display": "Bather 1899",
+   "source": "1899_bather",
    "year": 1899
   },
   "folded": [
@@ -26711,6 +26685,7 @@
     "Goldfuss"
    ],
    "display": "Goldfuss 1831",
+   "source": "1831_goldfuss",
    "year": 1831
   },
   "folded": [
@@ -26749,38 +26724,6 @@
   "kind": "primary",
   "name": "Metazoa",
   "rank": "Subkingdom"
- },
- "metazoa-grade": {
-  "authority": {
-   "authors": [
-    "Haeckel"
-   ],
-   "display": "Haeckel 1874",
-   "year": 1874
-  },
-  "folded": [
-   "metazoa",
-   "metazoagrade"
-  ],
-  "kind": "primary",
-  "name": "Metazoa",
-  "rank": "Grade"
- },
- "mettae_ubaghs_robison_1988": {
-  "authority": {
-   "authors": [
-    "Ubaghs",
-    "Robison"
-   ],
-   "display": "Ubaghs, Robison 1988",
-   "year": 1988
-  },
-  "folded": [
-   "mettae"
-  ],
-  "kind": "primary",
-  "name": "mettae",
-  "rank": "species"
  },
  "metularia_lamarck_1816": {
   "authority": {
@@ -26851,6 +26794,7 @@
     "Chapman"
    ],
    "display": "Chapman 1929",
+   "source": "1929_chapman.f",
    "year": 1929
   },
   "folded": [
@@ -27263,6 +27207,7 @@
     "Jaekel"
    ],
    "display": "Jaekel 1918",
+   "source": "1918_jaekel",
    "year": 1918
   },
   "folded": [
@@ -27607,6 +27552,22 @@
   ],
   "kind": "primary",
   "name": "monobrachiolata",
+  "rank": "species"
+ },
+ "monocyclica": {
+  "authority": {
+   "authors": [
+    "Bather"
+   ],
+   "display": "Bather 1899",
+   "source": "1899_bather",
+   "year": 1899
+  },
+  "folded": [
+   "monocyclica"
+  ],
+  "kind": "primary",
+  "name": "monocyclica",
   "rank": "species"
  },
  "monodon": {
@@ -28023,7 +27984,7 @@
   "name": "murinus",
   "rank": "species"
  },
- "murphyi_sumrall_garbisch_pope_2000": {
+ "murphyi_sumrall_garbisch_pope.j.p_2000": {
   "authority": {
    "authors": [
     "Sumrall",
@@ -28031,6 +27992,7 @@
     "Pope"
    ],
    "display": "Sumrall, Garbisch, Pope 2000",
+   "source": "2000_sumrall_garbisch_pope.j.p",
    "year": 2000
   },
   "folded": [
@@ -29325,6 +29287,7 @@
     "Mintz"
    ],
    "display": "Parsley, Mintz 1975",
+   "source": "1975_parsley_mintz",
    "year": 1975
   },
   "folded": [
@@ -29412,19 +29375,37 @@
   "name": "ophidiana",
   "rank": "species"
  },
+ "ophiocistia": {
+  "authority": {
+   "authors": [
+    "Sollas"
+   ],
+   "display": "Sollas 1899",
+   "source": "1899_sollas",
+   "year": 1899
+  },
+  "folded": [
+   "ophiocistia"
+  ],
+  "kind": "primary",
+  "name": "Ophiocistia",
+  "rank": "Order"
+ },
  "ophiocistioidea": {
   "authority": {
    "authors": [
     "Sollas"
    ],
    "display": "Sollas 1899",
+   "source": "1899_sollas",
    "year": 1899
   },
   "folded": [
    "ophiocistioidea"
   ],
-  "kind": "primary",
+  "kind": "altRankOf",
   "name": "Ophiocistioidea",
+  "of": "ophiocistia",
   "rank": "Class"
  },
  "ophiura": {
@@ -30272,6 +30253,7 @@
     "Lerosey-Aubril"
    ],
    "display": "Lefebvre, Lerosey-Aubril 2018",
+   "source": "2018_lefebvre_lerosey-aubril",
    "year": 2018
   },
   "folded": [
@@ -30767,7 +30749,7 @@
     "Pope"
    ],
    "display": "Sumrall, Garbisch, Pope 2000",
-   "source": "2000_sumrall_garbisch_pope",
+   "source": "2000_sumrall_garbisch_pope.j.p",
    "year": 2000
   },
   "folded": [
@@ -30777,7 +30759,7 @@
   "name": "Parapostibulla",
   "rank": "genus"
  },
- "parapostibulla-cf-hybolopus_sumrall_garbisch_pope_2000": {
+ "parapostibulla-cf-hybolopus_sumrall_garbisch_pope.j.p_2000": {
   "authority": {
    "authors": [
     "Sumrall",
@@ -30785,7 +30767,7 @@
     "Pope"
    ],
    "display": "Sumrall, Garbisch, Pope 2000",
-   "source": "2000_sumrall_garbisch_pope",
+   "source": "2000_sumrall_garbisch_pope.j.p",
    "year": 2000
   },
   "folded": [],
@@ -30794,7 +30776,7 @@
   "placeholder": "open",
   "rank": "species"
  },
- "parapostibulla-sp-a_sumrall_garbisch_pope_2000": {
+ "parapostibulla-sp-a_sumrall_garbisch_pope.j.p_2000": {
   "authority": {
    "authors": [
     "Sumrall",
@@ -30802,7 +30784,7 @@
     "Pope"
    ],
    "display": "Sumrall, Garbisch, Pope 2000",
-   "source": "2000_sumrall_garbisch_pope",
+   "source": "2000_sumrall_garbisch_pope.j.p",
    "year": 2000
   },
   "folded": [],
@@ -30811,7 +30793,7 @@
   "placeholder": "open",
   "rank": "species"
  },
- "parapostibulls-sp-indeterminate_sumrall_garbisch_pope_2000": {
+ "parapostibulls-sp-indeterminate_sumrall_garbisch_pope.j.p_2000": {
   "authority": {
    "authors": [
     "Sumrall",
@@ -30819,7 +30801,7 @@
     "Pope"
    ],
    "display": "Sumrall, Garbisch, Pope 2000",
-   "source": "2000_sumrall_garbisch_pope",
+   "source": "2000_sumrall_garbisch_pope.j.p",
    "year": 2000
   },
   "folded": [],
@@ -30897,39 +30879,21 @@
   "of": "parasitica_hall_1852",
   "rank": "species"
  },
- "parazoa-branch": {
+ "parazoa": {
   "authority": {
    "authors": [
-    "Grant",
-    "Todd"
+    "Sollas"
    ],
-   "display": "Grant, Todd 1883",
-   "year": 1883
+   "display": "Sollas 1884",
+   "source": "1884_sollas",
+   "year": 1884
   },
   "folded": [
-   "parazoa",
-   "parazoabranch"
+   "parazoa"
   ],
   "kind": "primary",
   "name": "Parazoa",
-  "rank": "Branch"
- },
- "parazoa-subkingdom": {
-  "authority": {
-   "authors": [
-    "Grant",
-    "Todd"
-   ],
-   "display": "Grant, Todd 1883",
-   "year": 1883
-  },
-  "folded": [
-   "parazoa",
-   "parazoasubkingdom"
-  ],
-  "kind": "primary",
-  "name": "Parazoa",
-  "rank": "Subkingdom"
+  "rank": "Phylum"
  },
  "paredriophus": {
   "authority": {
@@ -31366,24 +31330,6 @@
   "of": "pelmatozoa",
   "rank": "Class"
  },
- "pelmatozoa-grade": {
-  "authority": {
-   "authors": [
-    "Leuckart"
-   ],
-   "display": "Leuckart 1848",
-   "source": "1848_leuckart",
-   "year": 1848
-  },
-  "folded": [
-   "pelmatozoa",
-   "pelmatozoagrade"
-  ],
-  "kind": "altRankOf",
-  "name": "Pelmatozoa",
-  "of": "pelmatozoa",
-  "rank": "Grade"
- },
  "pelmatozoa-uncertain-order_bassler_1936": {
   "authority": {
    "authors": [
@@ -31405,6 +31351,7 @@
     "Leuckart"
    ],
    "display": "Leuckart 1848",
+   "source": "1848_leuckart",
    "year": 1848
   },
   "folded": [
@@ -32355,6 +32302,7 @@
     "Goldfuss"
    ],
    "display": "Goldfuss 1831",
+   "source": "1831_goldfuss",
    "year": 1831
   },
   "folded": [
@@ -32801,6 +32749,7 @@
     "Mintz"
    ],
    "display": "Parsley, Mintz 1975",
+   "source": "1975_parsley_mintz",
    "year": 1975
   },
   "folded": [
@@ -32817,6 +32766,7 @@
     "Mintz"
    ],
    "display": "Parsley, Mintz 1975",
+   "source": "1975_parsley_mintz",
    "year": 1975
   },
   "folded": [
@@ -33489,7 +33439,7 @@
     "Pope"
    ],
    "display": "Sumrall, Garbisch, Pope 2000",
-   "source": "2000_sumrall_garbisch_pope",
+   "source": "2000_sumrall_garbisch_pope.j.p",
    "year": 2000
   },
   "folded": [
@@ -33771,6 +33721,7 @@
     "Goldfuss"
    ],
    "display": "Goldfuss 1831",
+   "source": "1831_goldfuss",
    "year": 1831
   },
   "folded": [
@@ -33972,6 +33923,7 @@
     "Bather"
    ],
    "display": "Bather 1899",
+   "source": "1899_bather",
    "year": 1899
   },
   "folded": [
@@ -33987,6 +33939,7 @@
     "Bather"
    ],
    "display": "Bather 1899",
+   "source": "1899_bather",
    "year": 1899
   },
   "folded": [
@@ -34019,6 +33972,7 @@
     "Bather"
    ],
    "display": "Bather 1899",
+   "source": "1899_bather",
    "year": 1899
   },
   "folded": [
@@ -34034,6 +33988,7 @@
     "Bather"
    ],
    "display": "Bather 1899",
+   "source": "1899_bather",
    "year": 1899
   },
   "folded": [
@@ -34098,37 +34053,21 @@
   "name": "Protorophus",
   "rank": "genus"
  },
- "protozoa-class": {
+ "protozoa": {
   "authority": {
    "authors": [
     "Goldfuss"
    ],
    "display": "Goldfuss 1818",
+   "source": "1818_goldfuss",
    "year": 1818
   },
   "folded": [
-   "protozoa",
-   "protozoaclass"
+   "protozoa"
   ],
   "kind": "primary",
   "name": "Protozoa",
   "rank": "Class"
- },
- "protozoa-grade": {
-  "authority": {
-   "authors": [
-    "Goldfuss"
-   ],
-   "display": "Goldfuss 1818",
-   "year": 1818
-  },
-  "folded": [
-   "protozoa",
-   "protozoagrade"
-  ],
-  "kind": "primary",
-  "name": "Protozoa",
-  "rank": "Grade"
  },
  "prunella_lamarck_1816": {
   "authority": {
@@ -35545,6 +35484,7 @@
     "Springer"
    ],
    "display": "Wachsmuth, Springer 1885",
+   "source": "1885_wachsmuth_springer",
    "year": 1885
   },
   "folded": [
@@ -36015,6 +35955,7 @@
     "Springer"
    ],
    "display": "Wachsmuth, Springer 1885",
+   "source": "1885_wachsmuth_springer",
    "year": 1885
   },
   "folded": [
@@ -36205,8 +36146,9 @@
     "Holloway",
     "Jell"
    ],
-   "display": "Holloway, Jell 1984",
-   "year": 1984
+   "display": "Holloway, Jell 1983",
+   "source": "1983_holloway_jell",
+   "year": 1983
   },
   "folded": [
    "rhenocystidae"
@@ -36237,6 +36179,7 @@
     "Jell"
    ],
    "display": "Holloway, Jell 1983",
+   "source": "1983_holloway_jell",
    "year": 1983
   },
   "folded": [
@@ -36253,6 +36196,7 @@
     "Jell"
    ],
    "display": "Holloway, Jell 1983",
+   "source": "1983_holloway_jell",
    "year": 1983
   },
   "folded": [
@@ -36269,6 +36213,7 @@
     "Jell"
    ],
    "display": "Holloway, Jell 1983",
+   "source": "1983_holloway_jell",
    "year": 1983
   },
   "folded": [
@@ -36545,24 +36490,7 @@
   "name": "Rhombifera",
   "rank": "genus"
  },
- "rhombifera-class": {
-  "authority": {
-   "authors": [
-    "Zittel"
-   ],
-   "display": "Zittel 1870",
-   "year": 1870
-  },
-  "folded": [
-   "rhombifera",
-   "rhombiferaclass"
-  ],
-  "kind": "primary",
-  "name": "Rhombifera",
-  "rank": "Class",
-  "status": "informal"
- },
- "rhombifera-group": {
+ "rhombifera_zittel_1879": {
   "authority": {
    "authors": [
     "Zittel"
@@ -36572,46 +36500,28 @@
    "year": 1879
   },
   "folded": [
-   "rhombifera",
-   "rhombiferagroup"
+   "rhombifera"
   ],
-  "kind": "primary",
+  "kind": "altSpellingOf",
   "name": "Rhombifera",
-  "rank": "Group",
-  "status": "informal"
- },
- "rhombifera-order": {
-  "authority": {
-   "authors": [
-    "Zittel"
-   ],
-   "display": "Zittel 1870",
-   "year": 1870
-  },
-  "folded": [
-   "rhombifera",
-   "rhombiferaorder"
-  ],
-  "kind": "primary",
-  "name": "Rhombifera",
-  "rank": "Order",
-  "status": "informal"
+  "of": "rhombiferi",
+  "rank": "Group"
  },
  "rhombiferi": {
   "authority": {
    "authors": [
     "Zittel"
    ],
-   "display": "Zittel 1870",
-   "year": 1870
+   "display": "Zittel 1879",
+   "source": "1879_zittel",
+   "year": 1879
   },
   "folded": [
    "rhombiferi"
   ],
-  "kind": "altSpellingOf",
+  "kind": "primary",
   "name": "Rhombiferi",
-  "of": "rhombifera-order",
-  "rank": "Order"
+  "rank": "Group"
  },
  "rhombiferidae": {
   "authority": {
@@ -36769,6 +36679,7 @@
     "Banks"
    ],
    "display": "Jell, Burrett, Banks 1985",
+   "source": "1985_jell_burrett_banks",
    "year": 1985
   },
   "folded": [
@@ -36786,6 +36697,7 @@
     "Banks"
    ],
    "display": "Jell, Burrett, Banks 1985",
+   "source": "1985_jell_burrett_banks",
    "year": 1985
   },
   "folded": [
@@ -38211,6 +38123,22 @@
   "name": "Scyphocrinus",
   "rank": "genus"
  },
+ "scytactinota": {
+  "authority": {
+   "authors": [
+    "Bronn"
+   ],
+   "display": "Bronn 1860",
+   "source": "1860_bronn.h.g",
+   "year": 1860
+  },
+  "folded": [
+   "scytactinota"
+  ],
+  "kind": "primary",
+  "name": "Scytactinota",
+  "rank": "Class"
+ },
  "scytodermata": {
   "authority": {
    "authors": [
@@ -39056,37 +38984,21 @@
   "name": "solitarius",
   "rank": "species"
  },
- "soluta-class": {
+ "soluta": {
   "authority": {
    "authors": [
     "Jaekel"
    ],
-   "display": "Jaekel 1901",
-   "year": 1901
+   "display": "Jaekel 1900",
+   "source": "1900_jaekel",
+   "year": 1900
   },
   "folded": [
-   "soluta",
-   "solutaclass"
+   "soluta"
   ],
   "kind": "primary",
   "name": "Soluta",
-  "rank": "Class"
- },
- "soluta-order": {
-  "authority": {
-   "authors": [
-    "Jaekel"
-   ],
-   "display": "Jaekel 1901",
-   "year": 1901
-  },
-  "folded": [
-   "soluta",
-   "solutaorder"
-  ],
-  "kind": "primary",
-  "name": "Soluta",
-  "rank": "Order"
+  "rank": "Suborder"
  },
  "somasteroidea": {
   "authority": {
@@ -39427,7 +39339,7 @@
   "name": "Sphaeronites",
   "rank": "genus"
  },
- "sphaeronitida-superfamily": {
+ "sphaeronitida": {
   "authority": {
    "authors": [
     "Neumayr"
@@ -39436,8 +39348,7 @@
    "year": 1889
   },
   "folded": [
-   "sphaeronitida",
-   "sphaeronitidasuperfamily"
+   "sphaeronitida"
   ],
   "kind": "primary",
   "name": "Sphaeronitida",
@@ -39962,6 +39873,7 @@
     "Jaekel"
    ],
    "display": "Jaekel 1899",
+   "source": "1899_jaekel",
    "year": 1899
   },
   "folded": [
@@ -40283,6 +40195,7 @@
     "Jaekel"
    ],
    "display": "Jaekel 1918",
+   "source": "1918_jaekel",
    "year": 1918
   },
   "folded": [
@@ -40299,6 +40212,7 @@
     "Springer"
    ],
    "display": "Wachsmuth, Springer 1886",
+   "source": "1886_wachsmuth_springer",
    "year": 1886
   },
   "folded": [
@@ -40811,6 +40725,7 @@
     "Caster"
    ],
    "display": "Gill, Caster 1960",
+   "source": "1960_gill_caster",
    "year": 1960
   },
   "folded": [
@@ -40818,7 +40733,7 @@
   ],
   "kind": "primary",
   "name": "Stylophora",
-  "rank": "Class"
+  "rank": "Superorder"
  },
  "stylophora-sp-indeterminate_sumrall_sprinkle_guensburg_1997": {
   "authority": {
@@ -40836,23 +40751,6 @@
   "name": null,
   "placeholder": "uncertain",
   "rank": "species"
- },
- "stylophora-superorder": {
-  "authority": {
-   "authors": [
-    "Gill",
-    "Caster"
-   ],
-   "display": "Gill, Caster 1960",
-   "year": 1960
-  },
-  "folded": [
-   "stylophora",
-   "stylophorasuperorder"
-  ],
-  "kind": "primary",
-  "name": "Stylophora",
-  "rank": "Superorder"
  },
  "subangularis_leske_1778": {
   "authority": {
@@ -41450,6 +41348,7 @@
     "Guensburg"
    ],
    "display": "Sumrall, Sprinkle, Guensburg 1997",
+   "source": "1997_sumrall_sprinkle_guensburg",
    "year": 1997
   },
   "folded": [
@@ -41490,12 +41389,13 @@
   "name": "Tellina",
   "rank": "genus"
  },
- "templetonensis_chapman_1929": {
+ "templetonensis_chapman.f_1929": {
   "authority": {
    "authors": [
     "Chapman"
    ],
    "display": "Chapman 1929",
+   "source": "1929_chapman.f",
    "year": 1929
   },
   "folded": [
@@ -41991,6 +41891,7 @@
     "Jaekel"
    ],
    "display": "Jaekel 1899",
+   "source": "1899_jaekel",
    "year": 1899
   },
   "folded": [
@@ -42006,6 +41907,7 @@
     "Jaekel"
    ],
    "display": "Jaekel 1899",
+   "source": "1899_jaekel",
    "year": 1899
   },
   "folded": [
@@ -42021,6 +41923,7 @@
     "Jaekel"
    ],
    "display": "Jaekel 1895",
+   "source": "1895_jaekel",
    "year": 1895
   },
   "folded": [
@@ -42163,6 +42066,7 @@
     "Chapman"
    ],
    "display": "Chapman 1860",
+   "source": "1860b_chapman.e.j",
    "year": 1860
   },
   "folded": [
@@ -42179,6 +42083,7 @@
     "Chapman"
    ],
    "display": "Chapman 1860",
+   "source": "1860b_chapman.e.j",
    "year": 1860
   },
   "folded": [
@@ -45279,6 +45184,7 @@
     "Thompson"
    ],
    "display": "Zamora, Rahman, Sumrall, Gibson, Thompson 2022",
+   "source": "2022_zamora_rahman_sumrall_gibson_thompson",
    "year": 2022
   },
   "folded": [
@@ -45298,6 +45204,7 @@
     "Thompson"
    ],
    "display": "Zamora, Rahman, Sumrall, Gibson, Thompson 2022",
+   "source": "2022_zamora_rahman_sumrall_gibson_thompson",
    "year": 2022
   },
   "folded": [
@@ -45530,14 +45437,32 @@
   "name": "Échinides",
   "rank": "Family"
  },
+ "échinodermes": {
+  "authority": {
+   "authors": [
+    "Klein"
+   ],
+   "display": "Klein 1778",
+   "source": "1778_klein",
+   "year": 1778
+  },
+  "folded": [
+   "echinodermes"
+  ],
+  "kind": "vulgarSpellingOf",
+  "lang": "FR",
+  "name": "Échinodermes",
+  "of": "echinodermata",
+  "rank": "Unranked"
+ },
  "échinodermes-class": {
   "authority": {
    "authors": [
-    "Bruguière"
+    "Klein"
    ],
-   "display": "Bruguière 1791",
-   "source": "1791_bruguière",
-   "year": 1791
+   "display": "Klein 1778",
+   "source": "1778_klein",
+   "year": 1778
   },
   "folded": [
    "echinodermes",

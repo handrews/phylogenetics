@@ -1,13 +1,49 @@
 taxonomies:
 - taxon: echinodermata
+  citedAs: Phylum ECHINODERMATA.
+  rank: Phylum
+  authority: null
+  pages: 388
   children:
   - taxon: pelmatozoa
+    citedAs: Subphylum PELMATOZOA.
+    rank: Subphylum
+    authority: null
+    pages: 388
     children:
     - taxon: cystoidea
+      citedAs: Class CYSTOIDEA von Buch, 1846.
+      rank: Class
+      authority:
+        source: 1846c_buch
+      editorial:
+        inferred: [authority]
+        basis: >
+          von Buch's paper was first published as a monograph in 1845,
+          but is often cited as a journal article from 1846.  I am
+          assuming that the German article is intended, although it
+          actually reached print after the English translation (1846b_buch).
+      pages: 388
       children:
-      - taxon: diploporita-order
+      - taxon: diploporita
+        citedAs: Order DIPLOPORITA J. Müller, 1954.
+        rank: Order
+        auth: [müller.j.p]
+        year: 1954
+        editorial:
+          corrections:
+            auth: null
+            year: null
+            authority:
+              source: 1854_müller.j.p
+          basis:
+            The year "1954" is used in the paper but clearly an error.
+        pages: 388
         children:
         - taxon: sphaeronitidae
+          citedAs: Family SPHAERONITIDAE Neumayr, 1889.
+          rank: Family
+          pages: 388
           children:
           - taxon: austrocystites
             new: true
