@@ -1,0 +1,33 @@
+taxonomies:
+- taxon: echinodermata
+  auth: [bruguiére]
+  year: 1791
+  children:
+  - taxon: blastozoa
+    children:
+    - taxon: diploporita-class
+      translated:
+        by:
+          source: 1968b_paul.c.r.c
+      notes:
+        Printed "nom. tranls. Paul 1968b" where this paper's Paul 1968b is
+        "Morphology and function of dichoporite pore-structures in cystoids"
+        in Palaeontology v. 9 pt. 5 p. 697–730.
+      children:
+      - taxon: eumorphocystoidea
+        translated: true
+        children:
+        - taxon: eumorphocystidae
+          emended: true
+          children:
+          - taxon: eumorphocystis
+            children:
+            - taxon: multiporata_branson_peck_1940
+              isType: true
+              synonyms:
+              - taxon: typicalis_bassler_1950
+                parents:
+                - taxon: regnellicystis
+              - taxon: oklahomensis_bassler_1950
+                parents:
+                - taxon: strimplecystis

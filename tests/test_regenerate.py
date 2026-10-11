@@ -16,12 +16,16 @@ def _fake_run(calls, failing=None):
   return run
 
 
-def test_regenerate_runs_both_generators(monkeypatch):
+def test_regenerate_runs_every_generator(monkeypatch):
   calls = []
   monkeypatch.setattr(regenerate.subprocess, 'run', _fake_run(calls))
   assert regenerate.main() == 0
-  assert [c[0] for c in calls] == [sys.executable, sys.executable]
-  assert [pathlib.Path(c[1]).name for c in calls] == ['claims.py', 'schema_audit.py']
+  assert [c[0] for c in calls] == [sys.executable] * 3
+  assert [pathlib.Path(c[1]).name for c in calls] == [
+    'claims.py',
+    'schema_audit.py',
+    'expected_warnings.py',
+  ]
   assert calls[1][2:] == ['--markdown', str(regenerate.SCRIPTS / 'schema-usage.md')]
 
 
@@ -29,4 +33,4 @@ def test_regenerate_runs_every_step_when_one_fails(monkeypatch):
   calls = []
   monkeypatch.setattr(regenerate.subprocess, 'run', _fake_run(calls, failing='claims.py'))
   assert regenerate.main() == 1
-  assert len(calls) == 2
+  assert len(calls) == 3

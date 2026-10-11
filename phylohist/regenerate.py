@@ -1,5 +1,6 @@
 """Regenerate the files derived from the data: the claim table under
-`claims/` and the schema census `scripts/schema-usage.md`.
+`claims/`, the schema census `scripts/schema-usage.md`, and the lines of
+`tests/expected-warnings.txt` that the load no longer produces.
 
     poetry run regenerate
 
@@ -17,6 +18,7 @@ SCRIPTS = FILEDIR / 'scripts'
 STEPS = (
   ('claims.py',),
   ('schema_audit.py', '--markdown', str(SCRIPTS / 'schema-usage.md')),
+  ('expected_warnings.py',),
 )
 
 

@@ -6,16 +6,9 @@ a tampered block, ids stable across calls, and a style registered at
 test time rendering through the registry like the shipped ones.
 """
 
-import os
-
 import pytest
 
 from phylohist import blocks, render
-
-pytestmark = pytest.mark.skipif(
-  bool(os.getenv('PHYLOHIST_DRAFTS')),
-  reason='the committed claim table covers data/ only',
-)
 
 
 def test_classification_text_and_markdown(store):

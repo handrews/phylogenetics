@@ -43,3 +43,9 @@ select = ["E", "F", "W", "I", "B", "UP"]
 [tool.ruff.format]
 quote-style = "single"
 indent-style = "space"
+
+[tool.pytest.ini_options]
+markers = [
+  "production: a check of the curated corpus under data/ itself",
+  "demo: the eval questions and the walkthrough over the committed claims/; run with --demo",
+]

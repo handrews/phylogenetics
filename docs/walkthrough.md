@@ -13,10 +13,13 @@ without a model:
 
     poetry run phylohist plan docs/walkthrough/01-listing.yaml
 
-`tests/test_walkthrough.py` renders every plan and checks that the
-answers pasted here are what the code prints, so this page cannot go
-stale. The eval's own account of the run, and of the six that came
-before it, is under `eval/findings/`.
+The answers pasted here are the data as it stood when they were last
+refreshed; `poetry run pytest --demo tests/test_walkthrough.py` renders
+every plan over the committed `claims/` and checks that the page still
+shows what the code prints. It is not part of the default suite, which
+runs over the frozen corpus under `tests/corpus/`. The eval's own account
+of the run, and of the six that came before it, is under
+`eval/findings/`.
 
 ## What new genus and type species do Sprinkle & Sumrall (2015) place in family Astrocystitidae?
 

@@ -6,7 +6,7 @@ schema, and the corpus. A section is a span of siblings, `sectionStart`
 through `sectionEnd`, with a record in `data/sections.yaml`: the same
 for sections (the last part of the file).
 
-Synthetic trees are built on the session's loaded corpus under positions
+Synthetic trees are built on the loaded test corpus under positions
 2000 and up (`Tree` keeps class-level registries); the closure test reads
 a `ClaimStore` over a copy of `claims/` whose file for `1766_linnaeus` is
 replaced by the claims of one of them.
@@ -15,9 +15,6 @@ replaced by the claims of one of them.
 import json
 import logging
 import shutil
-import subprocess
-import sys
-from pathlib import Path
 
 import pytest
 
@@ -27,12 +24,8 @@ from phylohist.loader import io, material
 from phylohist.loader.load import _report_section_protologues
 from phylohist.loader.research import Source
 from phylohist.loader.taxa import Section, Tree
-from phylohist.store import CLAIMS_DIR, ClaimStore
-
-# The synthetic trees name real records, so every test needs the corpus loaded.
-pytestmark = pytest.mark.usefixtures('load_records')
-
-SCRIPTS = Path(__file__).parent.parent / 'scripts'
+from phylohist.store import ClaimStore
+from tests import support
 
 SOURCE = '1766_linnaeus'
 
@@ -393,11 +386,7 @@ def test_each_tree_of_a_file_pairs_alone():
 def _check_draft(tmp_path, body):
   draft = tmp_path / '1766_linnaeus.yaml'
   draft.write_text('taxonomies:\n' + body)
-  return subprocess.run(
-    [sys.executable, str(SCRIPTS / 'check_draft.py'), str(draft)],
-    capture_output=True,
-    text=True,
-  )
+  return support.run_check_draft(draft)
 
 
 def test_check_draft_accepts_a_span_and_checks_the_markers_keys(tmp_path):
@@ -480,7 +469,7 @@ def test_the_placement_is_under_the_bracket_via_bracket():
   ]
 
 
-def test_the_nodes_own_placement_wins_by_path(tmp_path):
+def test_the_nodes_own_placement_wins_by_path(corpus, tmp_path):
   tree = _tree(
     {
       'taxon': 'crinoidea',
@@ -493,7 +482,7 @@ def test_the_nodes_own_placement_wins_by_path(tmp_path):
   )
   claims = _claims(tree)
   directory = tmp_path / 'claims'
-  shutil.copytree(CLAIMS_DIR, directory)
+  shutil.copytree(corpus.claims, directory)
   (directory / f'{SOURCE}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
   closure = Closure(ClaimStore(directory))
   for index in (0, 1):
@@ -519,7 +508,7 @@ def test_the_nodes_own_placement_follows_its_bracket_placements():
 
 
 def _valid(document):
-  return io.build_schema()[io.TREE_DEF].check(document)
+  return support.schema()[io.TREE_DEF].check(document)
 
 
 def test_the_schema_takes_the_markers_on_any_node_and_refuses_the_old_field():
@@ -540,7 +529,7 @@ def test_the_taxa_schema_keeps_bracket_on_a_record():
     'rank': 'Class',
     'bracket': 'Edrioasteroids',
   }
-  schema = io.build_schema()['taxa']
+  schema = support.schema()['taxa']
   assert schema.check({'x': record})
   assert not schema.check({'x': {**record, 'bracketStart': 'camerata'}})
 
@@ -574,9 +563,11 @@ def _marked(value, field):
 
 @pytest.mark.parametrize('source', MIGRATED)
 def test_a_migrated_trees_bracket_placements_are_under_the_taxa_it_brackets(source, store):
-  bracketed = set(_marked(io.load_yaml(io.TREE_DIR / f'{source}.yaml'), 'bracketStart'))
+  bracketed = set(
+    _marked(io.load_yaml(support.CORPUS / 'trees' / f'{source}.yaml'), 'bracketStart')
+  )
   assert bracketed
-  assert set(_marked(io.load_yaml(io.TREE_DIR / f'{source}.yaml'), 'bracket')) == set()
+  assert set(_marked(io.load_yaml(support.CORPUS / 'trees' / f'{source}.yaml'), 'bracket')) == set()
   claims = store.by_source[source]
   placements = [c for c in claims if c['kind'] == 'placement' and c.get('via') == 'bracket']
   assert placements
@@ -607,7 +598,7 @@ UNNAMED = 'testacea-multivalvia_linnaeus_1758'
 
 @pytest.fixture
 def sections(monkeypatch):
-  """A synthetic sections registry, in place of the (empty) real one."""
+  """A synthetic sections registry, in place of the corpus's."""
   monkeypatch.setattr(Section, '_sections', {})
   authority = {'source': '1758_linnaeus'}
   Section.add({'name': 'Integra', 'authority': authority, 'citedAs': 'Integra'}, INTEGRA)
@@ -663,7 +654,7 @@ def _section_claims(tree):
 
 
 def test_the_sections_schema_takes_a_name_or_a_designation():
-  schema = io.build_schema()['sections']
+  schema = support.schema()['sections']
   authority = {'source': '1758_linnaeus'}
   assert schema.check({})
   assert schema.check({INTEGRA: {'name': 'Integra', 'authority': authority, 'citedAs': 'Integra'}})
@@ -687,7 +678,7 @@ def test_the_sections_schema_takes_a_name_or_a_designation():
   ],
 )
 def test_the_sections_schema_refuses_what_a_section_is_not(record):
-  assert not io.build_schema()['sections'].check({INTEGRA: record})
+  assert not support.schema()['sections'].check({INTEGRA: record})
 
 
 def test_the_markers_validate_on_a_taxonomy_node():
@@ -1246,7 +1237,9 @@ def test_a_section_is_no_placement_or_usage_and_the_nodes_claims_are_unchanged(s
   assert strip(marked) == strip(plain)
 
 
-def test_a_claim_store_over_a_section_claim_loads_and_the_tools_run_clean(sections, tmp_path):
+def test_a_claim_store_over_a_section_claim_loads_and_the_tools_run_clean(
+  corpus, sections, tmp_path
+):
   tree = _taxonomy(ASTERIAS)
   claims = _claims(tree)
   roots = {SOURCE: [tree]}
@@ -1257,7 +1250,7 @@ def test_a_claim_store_over_a_section_claim_loads_and_the_tools_run_clean(sectio
   assert SOURCE in table['taxa']['luna_linnaeus_1758']
 
   directory = tmp_path / 'claims'
-  shutil.copytree(CLAIMS_DIR, directory)
+  shutil.copytree(corpus.claims, directory)
   (directory / f'{SOURCE}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
   store = ClaimStore(directory)
   [claim] = [c for c in store.by_source[SOURCE] if c.get('section') == INTEGRA]
@@ -1479,7 +1472,7 @@ def test_the_usage_of_an_open_taxon_node_carries_its_designation():
 
 
 def test_the_schema_takes_pages_on_a_section_record_and_the_new_marker():
-  schema = io.build_schema()['sections']
+  schema = support.schema()['sections']
   authority = {'source': PROTOLOGUE_SOURCE}
   record = {'name': None, 'designation': 'Multivalvia', 'authority': authority, 'pages': 654}
   assert schema.check({UNNAMED: record})
@@ -1508,4 +1501,4 @@ def test_the_schema_takes_designation_on_a_node_and_still_on_a_taxa_record():
     child['designation'] = 1
     assert not _valid(document)
   record = {'name': None, 'designation': 'Genus A', 'authority': {'source': PROTOLOGUE_SOURCE}}
-  assert io.build_schema()['taxa'].check({'x': record})
+  assert support.schema()['taxa'].check({'x': record})

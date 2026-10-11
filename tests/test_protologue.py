@@ -3,7 +3,7 @@
 `illustrations`, `citedAs`, `designation`), and gives nothing its tree file lists as
 unused; `citedAs` validates on a record.
 
-The records and trees are synthetic, built on the session's loaded corpus
+The records and trees are synthetic, built on the loaded test corpus
 (`Taxon` and `Tree` keep class-level registries, so each test gets
 its own copies, restored afterwards).
 """
@@ -17,8 +17,7 @@ import pytest
 from phylohist.loader import io
 from phylohist.loader.load import _report_protologue_mismatches
 from phylohist.loader.taxa import Taxon, Tree
-
-pytestmark = pytest.mark.usefixtures('load_records')
+from tests import support
 
 SOURCE = '1758_linnaeus'
 FILE = 'data/trees/1758_linnaeus.yaml'
@@ -234,7 +233,7 @@ def test_a_source_without_a_tree_is_not_checked(caplog):
 
 
 def test_schema_accepts_cited_as_on_a_record_and_a_node():
-  schema = io.build_schema()
+  schema = support.schema()
   record = {'name': 'afer', 'rank': 'variety', 'pages': 22, 'authority': {'source': SOURCE}}
   assert schema['taxa'].check({'afer_linnaeus_1758': {**record, 'citedAs': 'Afer δ'}})
   assert not schema['taxa'].check({'afer_linnaeus_1758': {**record, 'citedAs': 1}})
@@ -261,7 +260,7 @@ def test_a_node_without_a_rank_implies_a_species_or_a_genus(caplog):
 
 
 def test_a_record_with_pages_spells_its_rank():
-  schema = io.build_schema()
+  schema = support.schema()
   record = {'name': 'afer', 'pages': 22, 'authority': {'source': SOURCE}}
   assert not schema['taxa'].check({'afer_linnaeus_1758': record})
   assert schema['taxa'].check({'afer_linnaeus_1758': {**record, 'rank': 'variety'}})

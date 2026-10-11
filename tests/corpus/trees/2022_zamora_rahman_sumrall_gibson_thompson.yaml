@@ -1,0 +1,86 @@
+prefixes:
+  NHMUK EE: nhmuk-ee
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: yorkicystitidae
+      new: true
+      children:
+      - taxon: yorkicystis
+        new: true
+        children:
+        - taxon: haefneri_zamora_rahman_sumrall_gibson_thompson_2022
+          new: true
+          isType: true
+          material:
+          - prefix: NHMUK EE
+            numbers: [1659]
+            role: holotype
+          - prefix: NHMUK EE
+            numbers: [1660]
+            role: paratype
+phylogenies:
+- treeType: cladogram
+  methodology: 50% majority-rule consenus Bayesian
+  tree:
+    children:
+    - children:
+      - taxon: helicocystis
+      - children:
+        - taxon: lepidocystis
+        - taxon: vyscystis
+        - children:
+          - taxon: titanocrinus
+          - taxon: apektocrinus
+        - taxon: ridersia
+        - taxon: gogia
+        - taxon: stromatocystites
+        - children:
+          - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
+          - taxon: yorkicystis
+          - children:
+            - taxon: argodiscus
+            - taxon: isorophus
+    - taxon: helicoplacus
+      outgroup: true
+- treeType: cladogram
+  methodology: strict consensus of four most parsimonious trees parsimony analysis
+  tree:
+    children:
+    - children:
+      - children:
+        - bracketStart: edrioasteroidea
+          bracketEnd: edrioasteroidea
+          children:
+          - children:
+            - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
+            - taxon: yorkicystis
+          - children:
+            - taxon: argodiscus
+            - taxon: isorophus
+        - children:
+          - children:
+            - bracketStart: blastozoa
+              bracketEnd: blastozoa
+              children:
+              - taxon: lepidocystis
+              - taxon: vyscystis
+              - taxon: ridersia
+              - taxon: gogia
+            - bracketStart: crinoidea
+              bracketEnd: crinoidea
+              children:
+              - taxon: titanocrinus
+              - taxon: apektocrinus
+          - taxon: stromatocystites
+            bracketStart: edrioasteroidea
+            bracketEnd: edrioasteroidea
+      - taxon: helicocystis
+        bracketStart: helicocystoidea
+        bracketEnd: helicocystoidea
+    - taxon: helicoplacus
+      bracketStart: helicoplacoidea
+      bracketEnd: helicoplacoidea
+      outgroup: true

@@ -1,22 +1,16 @@
 """Each CLI subcommand prints what the library renders, and nothing else.
 
-Runs the parser and `main` in-process over the committed claim table:
+Runs the parser and `main` in-process over the test corpus's claim table:
 the output of a subcommand equals the rendered block from the library
 call with the same parameters, `--style` works on any subcommand, an
 unresolved name is an answer with exit 0, and a bad argument exits 2.
 """
 
 import json
-import os
 
 import pytest
 
 from phylohist import cli, tools
-
-pytestmark = pytest.mark.skipif(
-  bool(os.getenv('PHYLOHIST_DRAFTS')),
-  reason='the committed claim table covers data/ only',
-)
 
 
 def run(capsys, *argv):

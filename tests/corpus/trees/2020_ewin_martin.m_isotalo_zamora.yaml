@@ -1,0 +1,316 @@
+prefixes:
+  NHMUK E: nhmuk-e
+  NHMUK EE: nhmuk-ee
+  MPEP: mpep
+  E: nhmuk-e
+  EE: nhmuk-ee
+  UCBL-FSL: ucbl-fsl
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: edrioasteroidea
+    children:
+    - taxon: edrioasterida
+      children:
+      - taxon: edrioblastoidina
+        citedAs: Suborder Edrioblastoidina Fay, 1962
+        pages: 118
+        children:
+        - taxon: rhenopyrgidae
+          pages: 118
+          emended: true
+#           occurrenceSummary:
+#           - stageRange: [Tremadocian, Eifelian]
+#             locationRange:
+#               North Africa: [Morocco]
+#               Europe: [Germany, UK, France, Russia, Sweden]
+#               Americas: []
+#             possiblLocationRange:
+#               Europe: [Spain]
+          children:
+          - taxon: rhenopyrgus
+            pages: 118
+            emended: true
+#             occurrenceSummary:
+#             - stageRange: [Tremadocian, Emsian]
+#             - stage: Tremadocian
+#               stageModifier: upper
+#               location:
+#               - France
+#             - stage: Floian
+#               location:
+#               - France
+#             typeTaxon:
+#               taxon: coronaeformis_rievers_1961
+#               authority:
+#                 source: 1961_rievers
+#               parents:
+#               - taxon: rhenopyrgus-subgenus
+#               - taxon: pyrgocystis
+#               occurrences:
+#               - unit:
+#                 - Hunsrück Slate
+#                 stage: Emsian
+#                 location:
+#                 - Germany
+            children:
+            - taxon: coronaeformis_rievers_1961
+              isType: true
+              synonyms:
+              - taxon: coronaeformis_rievers_1961
+                parents:
+                - taxon: rhenopyrgus-subgenus
+                - taxon: pyrgocystis
+              contexts:
+                germany:
+                  unit:
+                  - Hunsrück Slate
+                  stage: Emsian
+                  series: Lower Devonian
+                  location:
+                  - Germany
+            - taxon: grayae_bather_1915
+              synonyms:
+              - parents:
+                - taxon: pyrgocystis
+                authority:
+                  source: 1915b_bather
+                  pages: 58
+                  illustrations:
+                  - plate: 3
+                    figures:
+                    - [1, 2]
+              - authority:
+                  source: 1983_holloway_jell
+                  pages: 1004
+              - authority:
+                  source: 1985_smith.a.b
+                  pages: 732
+                  illustrations:
+                  - textFigures: 11
+              - parents:
+                - taxon: pyrgocystis
+                authority:
+                  source: 2013_sumrall_heredia_rodríguez.c.m_mestre
+                  illustrations:
+                  - figures: 1
+              - authority:
+                  source: 2013_sumrall_heredia_rodríguez.c.m_mestre
+                  pages: 773
+              material:
+              - prefix: NHMUK E
+                numbers: [23470]
+                context: lady-burn-starfish-bed
+                role: holotype
+              - prefix: NHMUK E
+                numbers: [23674, 29570]
+                context: lady-burn-starfish-bed
+              contexts:
+                lady-burn-starfish-bed:
+                  stage: Katian
+                  series: Upper Ordovician
+                  localSeries: Ardmillan
+                  unit:
+                  - Farden Member
+                  - South Threave Formation
+                  - Drummuck Group
+                  location:
+                  - Lady Burn Starfish Bed
+                  - part of the Craighead inlier.
+                  - Lady Burn
+                  - near Girvan
+                  - Scotland
+                  - UK
+            - taxon: whitei_holloway_jell_1983
+            - taxon: flos_klug_krüger_korn_rücklin_schemm-gregory_debaets_mapes_2008
+            - taxon: piojoensis_sumrall_heredia_rodríguez.c.m_mestre_2013
+            - taxon: viviani_ewin_martin.m_isotalo_zamora_2020
+              pages:
+              - [120, 122]
+              material:
+              - prefix: NHMUK EE
+                numbers: [16642]
+                context: rock-pool-ledge
+                role: holotype
+              - prefix: NHMUK EE
+                numbers: [[15752, 15755]]
+                context: rock-pool-ledge
+                role: paratype
+              - prefix: MPEP
+                numbers: ['1126.1']
+                context: rock-pool-ledge
+                role: paratype
+              - prefix: NHMUK EE
+                numbers: [15756]
+                context: pavillon-river-section
+                role: paratype
+              - prefix: MPEP
+                numbers: ['1143.1']
+                context: ctx-2
+              illustrations:
+              - figures:
+                - 2
+                - [4, 5]
+              contexts:
+                rock-pool-ledge:
+                  unit:
+                  - Cybèle Member
+                  - Jupiter Formation
+                  stage: Telychian
+                  location:
+                  - Rock Pool Ledge
+                  - Jupiter River Section
+                  - Anticosti Island
+                  - Québec
+                  - Canada
+                pavillon-river-section:
+                  unit:
+                  - Pavillon Member
+                  - Jupiter Formation
+                  stage: Telychian
+                  location:
+                  - Pavillon River Section
+                  - Anticosti Island
+                  - Québec
+                  - Canada
+                ctx-2:
+                  notes: No locality information given for this specimen
+              new: true
+            - openTaxon: rhenopyrgus-sp-1_ewin_martin.m_isotalo_zamora_2020
+              material:
+              - prefix: E
+                numbers: [62751, 62752, 62753]
+                context: newlands-farm
+              illustrations:
+              - figures:
+                - "3.3"
+                - "3.4"
+              contexts:
+                newlands-farm:
+                  unit:
+                  - Newlands Beds
+                  - Newlands Farm Formation
+                  - Newlands Subgroup
+                  - Saugh Hill Group
+                  series: Llandovery
+                  location:
+                  - Newlands Farm
+                  - Argyle
+                  - Scotland
+                  notes: |
+                    may extend into the Ardmillan group of the Upper Ordovician
+              synonyms:
+              - taxon: procera_aurivillius_1892
+                parents:
+                - taxon: pyrgocystis
+                authority:
+                  source: 1915b_bather
+                  pages: 59
+              - taxon: procera_aurivillius_1892
+                provisional: true
+                authority:
+                  source: 2013_sumrall_heredia_rodríguez.c.m_mestre
+                  pages: 764
+                  illustrations:
+                  - figures: 1C
+            - openTaxon: rhenopyrgus-sp-2_ewin_martin.m_isotalo_zamora_2020
+              material:
+              - prefix: EE
+                numbers: [16254]
+                context: girvan
+              illustrations:
+              - figures:
+                - "3.5"
+              contexts:
+                girvan:
+                  unit:
+                  - Craighead inlier
+                  stage: Katian
+                  localSeries: Ardmillan
+                  location:
+                  - ?Girvan
+                  - Scotland
+                  - UK
+                  notes: |
+                    printed "'Ardmillan' [?Girvan], Scotland, UK, Ardmillan Series" (p. 123)
+            - openTaxon: rhenopyrgus-sp-3_ewin_martin.m_isotalo_zamora_2020
+              synonyms:
+              - openTaxon: pyrgocystis-sp_vizcaïno_lefebvre_1999
+                provisional: true
+                pages: 356
+                parents:
+                - taxon: pyrgocystis
+                  authority:
+                    source: 1915a_bather
+              - openTaxon: pyrgocystis-sp_vizcaïno_álvaro_lefebvre_2001
+                provisional: true
+                pages: 218
+                parents:
+                - taxon: pyrgocystis
+                  authority:
+                    source: 1915a_bather
+              notes: |
+                "2013 Rhenopyrgidae Sumrall et al., p. 773" in synonym
+                list with no explanation; that page in the referenced
+                paper does not include this specimen.
+              material:
+              - prefix: UCBL-FSL
+                numbers: [713316]
+                context: sw-of-donnadieu
+              - prefix: UCBL-FSL
+                numbers: [713312]
+                context: la-croix-de-roquebrun
+              - prefix: UCBL-FSL
+                numbers: [[713313, 713315]]
+                context: pont-sup-rieur
+              illustrations:
+              - page: 121
+                figures:
+                - ["3.6", "3.7"]
+                notes: Foulon Formation specimen
+              - page: 121
+                figures: "3.8"
+                notes: beneath Saint-Chinian formation
+              contexts:
+                sw-of-donnadieu:
+                  stage: Tremadocian
+                  stageModifier: upper
+                  series: Lower Ordovician
+                  location:
+                  - SW of Donnadieu
+                  - Babeau-Bouldoux
+                  - Hérault
+                  - France
+                  unit:
+                  - Saint-Chinian Formation
+                  biozone: E. filacovi
+                la-croix-de-roquebrun:
+                  stage: Floian
+                  stageModifier: middle
+                  series: Lower Ordovician
+                  location:
+                  - la Croix de Roquebrun
+                  - Saint-Nazaire-de-Ladarez
+                  - Hérault
+                  - France
+                  unit:
+                  - Foulon Formation
+                  biozone: N. arenosus
+                pont-sup-rieur:
+                  stage: Floian
+                  stageModifier: upper
+                  series: Lower Ordovician
+                  location:
+                  - Pont supérieur
+                  - Saint-Nazaire-de-Ladarez
+                  - Hérault
+                  - France
+                  unit:
+                  - Landeyran Formation
+                  biozone: A. incisus
+            - openTaxon: rhenopyrgus-sp-4_ewin_martin.m_isotalo_zamora_2020
+              pages: 118
+              notes: Only mentioned briefly, no formal description.
+              synonyms:
+              - openTaxon: rhenopyrgus-sp_grigo_2000
+          - taxon: heropyrgus

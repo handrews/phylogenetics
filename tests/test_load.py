@@ -2,9 +2,11 @@
 
 Fails on any ERROR-level log record. Compares WARNING-level messages against
 ``tests/expected-warnings.txt``: a new line there is allowed only in a commit
-that adds a check, and every line is a resolution owed. Regenerate with
-``PHYLOHIST_UPDATE_EXPECTED=1 poetry run pytest``. The load itself is the
-session fixture in ``conftest.py``.
+that adds a check, and every line is a resolution owed, so a line the load
+no longer produces is only a warning here; ``poetry run regenerate`` drops it
+(`scripts/expected_warnings.py`). The load itself is the ``production``
+fixture in ``conftest.py``; these are the tests about the curated corpus,
+marked ``production``.
 
 ``PHYLOHIST_DRAFTS=1`` also loads the unaudited trees under ``drafts/``
 (the CLI's ``--draft``). Drafts are expected to produce errors and
@@ -15,71 +17,50 @@ compared in that mode; the error test still reports what a draft needs.
 import logging
 import os
 import pathlib
+import warnings
 
 import pytest
 
+from tests import support
+
 EXPECTED_WARNINGS_PATH = pathlib.Path(__file__).parent / 'expected-warnings.txt'
 
-EXPECTED_WARNINGS_HEADER = """\
-# Expected WARNING-level messages from loading all data files.
-# A new line here is allowed only in a commit that adds a check; every line
-# is a resolution owed. Regenerate with:
-#   PHYLOHIST_UPDATE_EXPECTED=1 poetry run pytest
-"""
 
-
-def test_no_errors(load_records):
-  _, records, _ = load_records
-  errors = [r for r in records if r.levelno >= logging.ERROR]
+@pytest.mark.production
+def test_no_errors(production):
+  errors = [r for r in production.records if r.levelno >= logging.ERROR]
   if errors:
     message = '\n'.join(r.getMessage() for r in errors)
     pytest.fail(f'{len(errors)} ERROR-level log records:\n{message}')
 
 
-def test_data_loaded(load_records):
-  data, _, _ = load_records
-  assert data['trees'], 'load produced no trees; check for a silent empty load'
+@pytest.mark.production
+def test_data_loaded(production):
+  assert production.data['trees'], 'load produced no trees; check for a silent empty load'
 
 
-def test_expected_warnings(load_records):
+@pytest.mark.production
+def test_expected_warnings(production):
   if os.getenv('PHYLOHIST_DRAFTS'):
     pytest.skip('drafts loaded; the warning snapshot covers data/ only')
-  _, records, _ = load_records
-  actual = sorted({r.getMessage() for r in records if r.levelno == logging.WARNING})
+  actual = {r.getMessage() for r in production.records if r.levelno == logging.WARNING}
+  expected = support.script('expected_warnings').read_expected(EXPECTED_WARNINGS_PATH)
 
-  if os.getenv('PHYLOHIST_UPDATE_EXPECTED') and not os.getenv('CI'):
-    # Regenerate the snapshot; never on CI, where it would hide a regression.
-    with open(EXPECTED_WARNINGS_PATH, 'w') as fd:
-      fd.write(EXPECTED_WARNINGS_HEADER)
-      for message in actual:
-        fd.write(f'{message}\n')
-    return
-
-  expected = set()
-  if EXPECTED_WARNINGS_PATH.exists():
-    with open(EXPECTED_WARNINGS_PATH) as fd:
-      for line in fd:
-        line = line.strip()
-        if not line or line.startswith('#'):
-          continue
-        expected.add(line)
-
-  actual_set = set(actual)
-  unexpected = actual_set - expected
-  stale = expected - actual_set
-
-  if unexpected or stale:
-    parts = []
-    if unexpected:
-      parts.append(
-        'Unexpected warnings (not in tests/expected-warnings.txt):\n'
-        + '\n'.join(sorted(unexpected)),
-      )
-    if stale:
-      parts.append(
-        'Stale expected warnings (no longer produced):\n' + '\n'.join(sorted(stale)),
-      )
-    pytest.fail('\n\n'.join(parts))
+  stale = expected - actual
+  if stale:
+    # A resolved warning is progress: `regenerate` drops its line, and CI's
+    # diff of the derived files catches a line left behind.
+    warnings.warn(
+      f'{len(stale)} expected warnings are no longer produced; run `poetry run regenerate`:\n'
+      + '\n'.join(sorted(stale)),
+      stacklevel=1,
+    )
+  unexpected = actual - expected
+  if unexpected:
+    pytest.fail(
+      'Unexpected warnings (not in tests/expected-warnings.txt; a new line there is allowed '
+      'only in a commit that adds a check):\n' + '\n'.join(sorted(unexpected))
+    )
 
 
 def test_invalid_tree_raises(tmp_path):
@@ -111,27 +92,34 @@ def test_schema_error_names_its_file(tmp_path, caplog):
   assert io.display_path(io.TREE_DIR / '1761_linnaeus.yaml') == 'data/trees/1761_linnaeus.yaml'
 
 
-def test_data_files_in_load_order():
+def test_data_files_in_load_order(tmp_path, monkeypatch):
   # The record files, then the audited trees, then the drafts: a draft
   # loads last so that it replaces the audited tree of its source.
   from phylohist.loader import io
 
-  files = io.data_files(drafts=True)
-  names = [name for name, _ in files]
-  assert names[: len(io.RECORD_FILES)] == [
-    'authors',
-    'publications',
-    'sources',
-    'taxa',
-    'sections',
-    'repositories',
-    'roles',
+  data_dir = tmp_path / 'data'
+  (data_dir / 'trees').mkdir(parents=True)
+  drafts = tmp_path / 'drafts'
+  drafts.mkdir()
+  audited = [data_dir / 'trees' / f'{key}.yaml' for key in ('1761_linnaeus', '1962_fay')]
+  for path in (*audited, drafts / '1962_fay.yaml'):
+    path.write_text('')
+  monkeypatch.setattr(io, 'DRAFT_DIR', drafts)
+
+  files = io.data_files(drafts=True, data_dir=data_dir)
+  assert [name for name, _ in files] == [*io.RECORD_NAMES, *[io.TREE_DEF] * 3]
+  assert io.RECORD_NAMES[:3] == ('authors', 'publications', 'sources')
+  assert [path for _, path in files] == [
+    *io.record_files(data_dir),
+    *audited,
+    drafts / '1962_fay.yaml',
   ]
-  trees = [path for name, path in files if name == io.TREE_DEF]
-  assert trees == io.tree_files(drafts=True)
-  dirs = [path.parent for path in trees]
-  assert dirs == sorted(dirs, key=lambda d: d != io.TREE_DIR) and io.DRAFT_DIR in dirs
-  assert [path for _, path in io.data_files()] == [*io.RECORD_FILES, *io.tree_files()]
+  assert [path for _, path in io.data_files(data_dir=data_dir)] == [
+    *io.record_files(data_dir),
+    *audited,
+  ]
+  # The defaults are the repository's own data.
+  assert io.RECORD_FILES == io.record_files() and io.RECORD_FILES[0] == io.DATA_DIR / 'authors.yaml'
 
 
 def test_load_fails_on_logged_errors(monkeypatch):
@@ -143,7 +131,7 @@ def test_load_fails_on_logged_errors(monkeypatch):
 
   loading = importlib.import_module('phylohist.loader.load')
 
-  def broken(drafts=False):
+  def broken(drafts=False, **_):
     logging.getLogger('phylohist.loader.taxa').error('a check fired')
     return {k: {} for k in ('authors', 'publications', 'sources', 'taxa', 'sections', 'trees')}
 
@@ -152,6 +140,27 @@ def test_load_fails_on_logged_errors(monkeypatch):
     load()
   data, roots = load(tolerate=True)
   assert data['trees'] == {} and roots == {}
+
+
+@pytest.mark.parametrize(
+  'field, relation',
+  [
+    ('altSpellingOf', 'alt spelling'),
+    ('vulgarSpellingOf', 'vulgar spelling'),
+    ('altRankOf', 'alt rank'),
+  ],
+)
+def test_an_unknown_spelling_or_rank_target_is_named(field, relation, caplog):
+  # The record a taxon is a spelling or rank of must exist: the error names
+  # both keys and ends the load, as a file that fails the schema does.
+  from phylohist.loader import LoadError
+  from phylohist.loader.taxa import Taxon
+
+  with caplog.at_level(logging.ERROR, logger='phylohist'), pytest.raises(LoadError):
+    Taxon.add({'name': 'Testum', field: 'nobody_nowhere'}, 'testum')
+  [message] = [r.getMessage() for r in caplog.records if r.levelno == logging.ERROR]
+  assert message == f'Taxon testum {relation} of unknown nobody_nowhere'
+  assert Taxon.get('testum') is None
 
 
 def test_counting_errors_counts_only_errors():
@@ -173,7 +182,7 @@ def test_tree_without_a_source_record_is_skipped(monkeypatch):
 
   loading = importlib.import_module('phylohist.loader.load')
 
-  def orphan(drafts=False):
+  def orphan(drafts=False, **_):
     data = {k: {} for k in ('authors', 'publications', 'sources', 'taxa', 'sections')}
     data['trees'] = {'9999_nobody': {'taxonomies': [{'taxon': 'cyathocystis'}]}}
     return data

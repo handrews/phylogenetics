@@ -27,7 +27,12 @@ jobs:
     - run: poetry install
     - run: poetry run ruff check .
     - run: poetry run ruff format --check .
+    # coverage measures through sys.monitoring by default from 3.14 only; its
+    # tracer on 3.12 costs the suite two thirds again (it does not do branches,
+    # which are not measured).
     - run: poetry run pytest --cov=phylohist --cov-report=term-missing:skip-covered --cov-fail-under=90
+      env:
+        COVERAGE_CORE: sysmon
     - run: poetry run regenerate
-    - run: git diff --exit-code scripts/schema-usage.md claims/
+    - run: git diff --exit-code scripts/schema-usage.md claims/ tests/expected-warnings.txt
     - run: for f in drafts/*.yaml; do poetry run python scripts/check_draft.py "$f" || exit 1; done

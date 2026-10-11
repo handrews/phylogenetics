@@ -14,6 +14,7 @@ import pytest
 
 from phylohist.loader import io, material
 from phylohist.loader.taxa import Tree
+from tests import support
 
 SCRIPTS = Path(__file__).resolve().parent.parent / 'scripts'
 
@@ -62,7 +63,7 @@ def registers(repositories):
 
 
 def test_registry_links_real_registry_passes():
-  assert material.registry_links(io.load_yaml(io.DATA_DIR / 'repositories.yaml')) == []
+  assert material.registry_links(io.load_yaml(support.CORPUS / 'repositories.yaml')) == []
 
 
 def test_registry_links_synthetic_registry_passes(repositories):
@@ -696,9 +697,9 @@ def test_walk_document_ignores_non_dict_and_absent_axes():
 # -- Tree.file_contexts / file_unused / contexts / context_scopes -------------
 
 
-def test_tree_file_contexts_and_unused_read_from_root_metadata(load_records):
+def test_tree_file_contexts_and_unused_read_from_root_metadata():
   # No `taxon` field: only a registered source is needed (`Tree` hashes by
-  # it), which `load_records` guarantees for real source key '1961_dehm'.
+  # it), which the corpus provides for source key '1961_dehm'.
   metadata = {
     'source_key': '1961_dehm',
     'position': 900,
@@ -714,7 +715,7 @@ def test_tree_file_contexts_and_unused_read_from_root_metadata(load_records):
   assert child.file_unused == ('ranges',)
 
 
-def test_tree_contexts_merge_node_over_file_with_scope_map(load_records):
+def test_tree_contexts_merge_node_over_file_with_scope_map():
   metadata = {
     'source_key': '1961_dehm',
     'position': 901,
@@ -726,7 +727,7 @@ def test_tree_contexts_merge_node_over_file_with_scope_map(load_records):
   assert root.context_scopes == {'loc': 'node', 'file-only': 'file'}
 
 
-def test_tree_file_contexts_defaults_when_absent(load_records):
+def test_tree_file_contexts_defaults_when_absent():
   metadata = {'source_key': '1961_dehm', 'position': 902, 'type': 'taxonomy'}
   root = Tree({}, metadata)
   assert root.file_contexts == {}
@@ -819,11 +820,21 @@ def test_load_reports_tentative_on_ranges_and_contexts(caplog):
 
 
 def _run_check_draft(path):
-  return subprocess.run(
-    [sys.executable, str(SCRIPTS / 'check_draft.py'), str(path)],
+  return support.run_check_draft(path)
+
+
+def test_check_draft_runs_as_a_program(tmp_path):
+  # The script itself, as CI runs it over `drafts/`: a draft the schema
+  # rejects exits 1.
+  draft = tmp_path / '1898_bather.yaml'
+  draft.write_text('taxonomies:\n- rnak: genus\n')
+  result = subprocess.run(
+    [sys.executable, str(SCRIPTS / 'check_draft.py'), str(draft)],
     capture_output=True,
     text=True,
   )
+  assert result.returncode == 1, result.stdout + result.stderr
+  assert 'not valid against the tree schema' in result.stdout
 
 
 def test_check_draft_exits_zero_on_a_clean_draft(tmp_path):
@@ -944,6 +955,7 @@ def test_check_draft_exits_one_on_an_explicit_repository_that_is_no_registry_key
   assert 'repository "GSC" is not a key of the registry' in result.stdout
 
 
+@pytest.mark.production
 def test_roles_registry_matches_the_schema_enum():
   # Every role the schema allows is documented, and nothing else is; an
   # `equivalent` names another documented role.
@@ -1259,7 +1271,7 @@ def test_figure_and_cast_refs_read_the_new_shape():
 
 
 def _schema_accepts(document):
-  return io.build_schema()[io.TREE_DEF].check(document)
+  return support.schema()[io.TREE_DEF].check(document)
 
 
 def _numbers_document(*entries, **extra):
@@ -1338,7 +1350,7 @@ def test_schema_rejects_a_malformed_prefix_map_or_locality_number(extra):
 # -- Tree metadata, the loader and the draft checker ---------------------------
 
 
-def test_tree_reads_the_prefix_map_and_locality_register_from_root_metadata(load_records):
+def test_tree_reads_the_prefix_map_and_locality_register_from_root_metadata():
   metadata = {
     'source_key': '1961_dehm',
     'position': 903,

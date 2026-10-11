@@ -2,7 +2,7 @@
 schema, the loader check, the claims, the derived `skeleton` coverage, and
 the listing, sentence and table the tools say.
 
-Synthetic trees are built on the session's loaded corpus under positions
+Synthetic trees are built on the loaded test corpus under positions
 330 and up (`Tree` keeps class-level registries); the tool tests read a
 `ClaimStore` over a copy of `claims/` whose file for `1766_linnaeus` is
 replaced by the claims of those trees, since no data uses the nulls yet.
@@ -11,9 +11,6 @@ replaced by the claims of those trees, since no data uses the nulls yet.
 import json
 import logging
 import shutil
-import subprocess
-import sys
-from pathlib import Path
 
 import pytest
 
@@ -22,13 +19,9 @@ from phylohist.loader import io, material, nomenclature
 from phylohist.loader.load import _report_nomenclature
 from phylohist.loader.research import Source
 from phylohist.loader.taxa import Taxon, Tree
-from phylohist.store import CLAIMS_DIR, ClaimStore
+from phylohist.store import ClaimStore
 from phylohist.words import ABSENCE_WORDS
-
-# The synthetic trees name real records, so every test needs the corpus loaded.
-pytestmark = pytest.mark.usefixtures('load_records')
-
-SCRIPTS = Path(__file__).parent.parent / 'scripts'
+from tests import support
 
 SOURCE = '1766_linnaeus'
 INFERRED = {'inferred': True, 'basis': 'Carried over from the first part, published 1766.'}
@@ -38,14 +31,14 @@ INFERRED = {'inferred': True, 'basis': 'Carried over from the first part, publis
 
 
 def _valid(document):
-  return io.build_schema()[io.TREE_DEF].check(document)
+  return support.schema()[io.TREE_DEF].check(document)
 
 
 RECORD = {'name': 'Vermes', 'authority': {'source': '1758_linnaeus'}, 'rank': 'Class', 'pages': 5}
 
 
 def _record_valid(record):
-  return io.build_schema()['taxa'].check({'x': record})
+  return support.schema()['taxa'].check({'x': record})
 
 
 def test_schema_accepts_a_null_rank_and_a_null_pages_on_a_node():
@@ -147,11 +140,7 @@ def test_load_reports_the_null_pages_with_the_nodes_path(caplog):
 def _check_draft(tmp_path, body):
   draft = tmp_path / '1766_linnaeus.yaml'
   draft.write_text('taxonomies:\n' + body)
-  return subprocess.run(
-    [sys.executable, str(SCRIPTS / 'check_draft.py'), str(draft)],
-    capture_output=True,
-    text=True,
-  )
+  return support.run_check_draft(draft)
 
 
 def test_check_draft_allows_an_inferred_node_with_null_pages(tmp_path):
@@ -196,7 +185,7 @@ def _at(claims, path, kind='placement'):
   return claim
 
 
-def test_a_null_rank_is_a_null_rank_as_printed(load_records):
+def test_a_null_rank_is_a_null_rank_as_printed():
   root = {
     'taxon': 'animalia',
     'rank': 'Kingdom',
@@ -211,7 +200,7 @@ def test_a_null_rank_is_a_null_rank_as_printed(load_records):
   assert 'rankAsPrinted' not in _at(claims, '330', 'usage')
 
 
-def test_an_inferred_node_with_null_pages_has_none(load_records):
+def test_an_inferred_node_with_null_pages_has_none():
   root = {
     'taxon': 'animalia',
     'rank': 'Kingdom',
@@ -229,7 +218,7 @@ def test_an_inferred_node_with_null_pages_has_none(load_records):
   assert 'pages' not in _at(claims, '331/children/1')
 
 
-def test_a_node_without_pages_does_not_take_its_parents(load_records):
+def test_a_node_without_pages_does_not_take_its_parents():
   # A parent's page says where the parent is printed, not its children.
   root = {
     'taxon': 'animalia',
@@ -259,11 +248,11 @@ TREE = {
 
 
 @pytest.fixture(scope='module')
-def synthetic(load_records, tmp_path_factory):
+def synthetic(corpus, tmp_path_factory):
   """A `ClaimStore` over a copy of `claims/` with the claims of `SOURCE`
   replaced by those of `TREE`."""
   directory = tmp_path_factory.mktemp('claims')
-  shutil.copytree(CLAIMS_DIR, directory, dirs_exist_ok=True)
+  shutil.copytree(corpus.claims, directory, dirs_exist_ok=True)
   claims = _claims(TREE, 340)
   (directory / f'{SOURCE}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
   return ClaimStore(directory)
@@ -303,13 +292,13 @@ def test_the_placements_table_keeps_the_records_rank(synthetic):
   assert cell['value'] == 'Animalia' and cell['rank'] == 'Class'
 
 
-def test_an_unranked_root_prints_its_name_alone(load_records, tmp_path):
+def test_an_unranked_root_prints_its_name_alone(corpus, tmp_path):
   # A root has no placement claim: its usage carries the null printed rank.
   root = {'taxon': 'vermes', 'rank': None, 'pages': 12, 'children': [{'taxon': 'mollusca'}]}
   claims = _claims(root, 341)
   assert _at(claims, '341', kind='usage')['rankAsPrinted'] is None
   directory = tmp_path / 'claims'
-  shutil.copytree(CLAIMS_DIR, directory)
+  shutil.copytree(corpus.claims, directory)
   (directory / f'{SOURCE}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
   [block] = ClaimStore(directory).contents(SOURCE, 'vermes')
   assert block['rendered'].splitlines()[1] == '  Vermes'
@@ -707,11 +696,11 @@ STOPS = {
 
 
 @pytest.fixture(scope='module')
-def stopped(load_records, tmp_path_factory):
+def stopped(corpus, tmp_path_factory):
   """A `ClaimStore` over a copy of `claims/` with the claims of 1961 Dehm
   replaced by those of `STOPS`, its `skeleton` coverage `partly`."""
   directory = tmp_path_factory.mktemp('claims_stops')
-  shutil.copytree(CLAIMS_DIR, directory, dirs_exist_ok=True)
+  shutil.copytree(corpus.claims, directory, dirs_exist_ok=True)
   claims = _claims(STOPS, 1150, DEHM)
   (directory / f'{DEHM}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
   store = ClaimStore(directory)
@@ -842,11 +831,11 @@ def test_schema_rejects_a_printed_attribution_beside_a_null_authority(field):
 def test_schema_rejects_a_null_authority_on_a_record_or_a_section():
   assert not _record_valid({**RECORD, 'authority': None})
   section = {'name': 'Integra', 'authority': {'source': '1758_linnaeus'}}
-  assert io.build_schema()['sections'].check({'integra': section})
-  assert not io.build_schema()['sections'].check({'integra': {**section, 'authority': None}})
+  assert support.schema()['sections'].check({'integra': section})
+  assert not support.schema()['sections'].check({'integra': {**section, 'authority': None}})
 
 
-def test_a_null_authority_says_none_was_printed(load_records):
+def test_a_null_authority_says_none_was_printed():
   root = {
     'taxon': 'animalia',
     'authority': None,

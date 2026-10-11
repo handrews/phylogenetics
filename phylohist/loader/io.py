@@ -2,7 +2,7 @@ import logging
 import pathlib
 
 import yaml
-from json_schema_engine.compiler import compile_validator
+from json_schema_engine.compiler import compile_evaluator, compile_validator
 from json_schema_engine.core import create_engine
 from json_schema_engine.core.errors import SchemaValidationError
 
@@ -16,15 +16,23 @@ DRAFT_DIR = FILEDIR / 'drafts'
 
 # The record files, each checked against the `$defs` entry named for its
 # stem and loaded under that name.
-RECORD_FILES = (
-  DATA_DIR / 'authors.yaml',
-  DATA_DIR / 'publications.yaml',
-  DATA_DIR / 'sources.yaml',
-  DATA_DIR / 'taxa.yaml',
-  DATA_DIR / 'sections.yaml',
-  DATA_DIR / 'repositories.yaml',
-  DATA_DIR / 'roles.yaml',
+RECORD_NAMES = (
+  'authors',
+  'publications',
+  'sources',
+  'taxa',
+  'sections',
+  'repositories',
+  'roles',
 )
+
+
+def record_files(data_dir=DATA_DIR):
+  """The record files of a data directory, in load order."""
+  return tuple(data_dir / f'{name}.yaml' for name in RECORD_NAMES)
+
+
+RECORD_FILES = record_files()
 # Each tree file is one source's trees, keyed by the source id it is named
 # for, and checked against this `$defs` entry.
 TREE_DEF = 'treeDocument'
@@ -34,7 +42,10 @@ class LoadError(ValueError):
   """The schema or a data file failed validation; the errors were logged."""
 
 
-class UniqueKeyNoDatesLoader(yaml.SafeLoader):
+class _Checks:
+  """What both loaders add to PyYAML's safe loading: dates stay strings,
+  and a duplicate key is an error."""
+
   # and https://stackoverflow.com/questions/34667108/ignore-dates-and-times-while-parsing-yaml
   @classmethod
   def remove_implicit_resolver(cls, tag_to_remove):
@@ -71,15 +82,27 @@ class UniqueKeyNoDatesLoader(yaml.SafeLoader):
     return super().construct_mapping(node, deep)
 
 
-UniqueKeyNoDatesLoader.remove_implicit_resolver('tag:yaml.org,2002:timestamp')
+class UniqueKeyNoDatesLoader(_Checks, yaml.SafeLoader):
+  """The default loader, in pure Python: slow, but a duplicate key is
+  reported with its line and a caret under it."""
 
 
-def load_yaml(filename):
+class FastLoader(_Checks, getattr(yaml, 'CSafeLoader', yaml.SafeLoader)):
+  """The same checks over libyaml, several times as fast, for a caller
+  that does not need a duplicate key located that precisely (the tests
+  ask for it). Pure Python again where PyYAML was built without libyaml."""
+
+
+for _loader in (UniqueKeyNoDatesLoader, FastLoader):
+  _loader.remove_implicit_resolver('tag:yaml.org,2002:timestamp')
+
+
+def load_yaml(filename, fast=False):
   """Parse a YAML file, keeping dates as strings and refusing duplicate
-  keys."""
+  keys; ``fast`` parses with libyaml."""
   with open(filename) as fd:
     logger.debug(f'Loading "{filename}"...')
-    data = yaml.load(fd, Loader=UniqueKeyNoDatesLoader)
+    data = yaml.load(fd, Loader=FastLoader if fast else UniqueKeyNoDatesLoader)
     logger.debug(f'...loaded "{filename}"')
     return data
 
@@ -117,8 +140,9 @@ class Validator:
 class Schema:
   """The registered phylogeny schema, indexed by ``$defs`` entry name.
 
-  Compiling costs more than a single evaluation, so validators are built on
-  first use and kept; one ``Schema`` serves a whole load.
+  Compiling costs more than a single evaluation, so validators and
+  evaluators are built on first use and kept; one ``Schema`` serves a
+  whole load.
   """
 
   def __init__(self, engine, base, defs):
@@ -126,18 +150,32 @@ class Schema:
     self.base = base
     self._defs = defs
     self._validators = {}
+    self._evaluators = {}
 
   def uri(self, name):
     """The absolute URI of the ``$defs`` entry ``name``."""
     return f'{self.base}#/$defs/{name}'
 
+  def _named(self, name):
+    if name not in self._defs:
+      raise LoadError(f'no schema definition for "{name}"')
+
   def __getitem__(self, name):
     """The validator for ``$defs/<name>``; LoadError if the schema has none."""
     if name not in self._validators:
-      if name not in self._defs:
-        raise LoadError(f'no schema definition for "{name}"')
+      self._named(name)
       self._validators[name] = Validator(self.engine, self.uri(name))
     return self._validators[name]
+
+  def evaluator(self, name):
+    """The compiled evaluator for ``$defs/<name>``, recording annotations:
+    the interpreter's result for every output format but ``flag``, in less
+    time (the schema census asks it for ``verbose``); LoadError if the
+    schema has none."""
+    if name not in self._evaluators:
+      self._named(name)
+      self._evaluators[name] = compile_evaluator(self.engine, self.uri(name), annotations=True)
+    return self._evaluators[name]
 
 
 def build_schema():
@@ -158,49 +196,51 @@ def build_schema():
   return Schema(engine, base, document['$defs'])
 
 
-def tree_files(drafts=False):
-  """Every tree file, in load order: `data/trees/`, then `drafts/` when
-  asked, so that a draft replaces the audited tree of its source."""
-  directories = (TREE_DIR, DRAFT_DIR) if drafts else (TREE_DIR,)
+def tree_files(drafts=False, data_dir=DATA_DIR):
+  """Every tree file, in load order: `<data_dir>/trees/`, then `drafts/`
+  when asked, so that a draft replaces the audited tree of its source."""
+  tree_dir = data_dir / 'trees'
+  directories = (tree_dir, DRAFT_DIR) if drafts else (tree_dir,)
   return [path for directory in directories for path in sorted(directory.glob('*.yaml'))]
 
 
-def data_files(drafts=False):
+def data_files(drafts=False, data_dir=DATA_DIR):
   """``(def name, path)`` for every file the loader checks, in load order."""
-  return [(path.stem, path) for path in RECORD_FILES] + [
-    (TREE_DEF, path) for path in tree_files(drafts)
+  return [(path.stem, path) for path in record_files(data_dir)] + [
+    (TREE_DEF, path) for path in tree_files(drafts, data_dir)
   ]
 
 
-def load_checked(path, validator):
+def load_checked(path, validator, fast=False):
   """One data file, checked; LoadError naming the file if it fails."""
   logger.info(f'Checking "{path}"...')
-  document = load_yaml(path)
+  document = load_yaml(path, fast=fast)
   if not validator.check(document, where=display_path(path)):
     raise LoadError(f'"{path}" is not valid against the schema')
   logger.debug(f'"{path}" is valid.')
   return document
 
 
-def load_files(drafts=False):
+def load_files(drafts=False, data_dir=DATA_DIR, fast=False):
   """Load and schema-check every data file.
 
   The record files load under their stems, and the tree files under
   ``trees``, each keyed by its source id. With ``drafts`` true, the
   AI-drafted trees under ``drafts/`` are loaded after the audited ones, so
   that a draft can be run through the same integrity checks before it is
-  promoted.
+  promoted. ``data_dir`` is another directory shaped like `data/`;
+  ``fast`` parses the files with libyaml (`load_yaml`).
   """
   logger.info('Checking schema...')
   schema = build_schema()
   logger.debug('Schema is valid.')
 
-  data = {path.stem: load_checked(path, schema[path.stem]) for path in RECORD_FILES}
+  data = {path.stem: load_checked(path, schema[path.stem], fast) for path in record_files(data_dir)}
   data['trees'] = {}
-  for path in tree_files(drafts):
+  for path in tree_files(drafts, data_dir):
     if path.stem in data['trees']:
       logger.warning(f'File "{path}" overwrites another tree file.')
-    data['trees'][path.stem] = load_checked(path, schema[TREE_DEF])
+    data['trees'][path.stem] = load_checked(path, schema[TREE_DEF], fast)
   return data
 
 

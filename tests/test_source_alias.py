@@ -4,12 +4,10 @@ Jell, Burrett & Banks 1985). Its key's year and letter are the target's, its
 authors a strict subset of the target's in their order; everything else is
 the target's.
 
-The aliases are synthetic, built on the session's loaded corpus (`Source`,
-`Taxon` and `Tree` keep class-level registries, so each test gets its own
-copies, restored afterwards).
+The aliases are synthetic, built on the test corpus; the registries they
+write to are restored before every test (`conftest.py`).
 """
 
-import collections
 import importlib
 import logging
 import types
@@ -23,19 +21,7 @@ from phylohist.loader.research import Source
 from phylohist.loader.taxa import Authority, Taxon, Tree
 from phylohist.resolve import Resolver
 
-pytestmark = pytest.mark.usefixtures('load_records')
-
 TARGET = '1985_jell_burrett_banks'
-
-
-@pytest.fixture(autouse=True)
-def registries(monkeypatch):
-  """Private copies of the class-level registries the tests write to."""
-  monkeypatch.setattr(Source, '_sources', dict(Source._sources))
-  monkeypatch.setattr(Taxon, '_taxa', dict(Taxon._taxa))
-  for name in ('_taxon_index', '_new_index', '_author_index'):
-    monkeypatch.setattr(Tree, name, collections.defaultdict(set))
-  monkeypatch.setattr(Tree, '_type_index', {k: set() for k in Tree._type_index})
 
 
 def _add(key, target=TARGET, caplog=None):
@@ -130,7 +116,7 @@ def test_a_taxon_by_alias_in_the_target_tree_must_be_new(caplog):
 def test_a_tree_file_named_by_an_alias_is_skipped(monkeypatch, caplog):
   loading = importlib.import_module('phylohist.loader.load')
 
-  def aliased(drafts=False):
+  def aliased(drafts=False, **_):
     data = {k: {} for k in ('authors', 'publications', 'taxa', 'sections')}
     data['sources'] = {'1985_banks': {'aliasOf': TARGET}}
     data['trees'] = {'1985_banks': {'taxonomies': [{'taxon': 'cyathocystis'}]}}

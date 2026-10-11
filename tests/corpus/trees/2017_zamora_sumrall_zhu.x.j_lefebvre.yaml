@@ -1,0 +1,59 @@
+prefixes:
+  NIGPAS: nigpas
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: blastozoa
+    children:
+    - taxon: rhombifera-class
+      nonMonophyletic: true
+      children:
+      - taxon: glyptocystitida-order
+        children:
+        - taxon: sanducystis
+          new: true
+          children:
+          - taxon: sinensis_zamora_sumrall_zhu.x.j_lefebvre_2017
+            new: true
+            isType: true
+            material:
+            - prefix: NIGPAS
+              numbers: [163198]
+              role: holotype
+            - prefix: NIGPAS
+              numbers: [163199, 163210]
+              role: paratype
+        - taxon: ridersiidae
+          children:
+          - taxon: ridersia
+phylogenies:
+- treeType: cladogram
+  tree:
+    children:
+    - bracketStart: glyptocystitida-order
+      bracketEnd: glyptocystitida-order
+      children:
+      - taxon: ridersia
+      - children:
+        - taxon: sanducystis
+        - children:
+          - children:
+            - taxon: macrocystella
+            - taxon: cuniculocystis
+            - children:
+              - children:
+                - children:
+                  - taxon: pleurocystites
+                  - children:
+                    - taxon: lepadocystis
+                    - taxon: scoliocystis
+                    - taxon: echinoencrinites
+                - taxon: cheirocystis
+                - taxon: glyptocystites
+              - taxon: cheirocrinus
+          - taxon: barroubiocystis
+          - taxon: velieuxicystis
+    - taxon: stephanocrinus
+      outgroup: true
+    - taxon: hemicosmites
+      outgroup: true

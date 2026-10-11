@@ -1,0 +1,118 @@
+prefixes:
+  UQF: uq-f
+  QMF: qm-f
+taxonomies:
+- taxon: echinodermata
+  auth: [bruguière]
+  citedAs: Brugière, 1791
+  year: 1791
+  children:
+  - taxon: blastozoa
+    children:
+    - taxon: eocrinoidea
+      children:
+      - taxon: gogiida
+        children:
+        - taxon: lichenoididae
+          synonyms:
+          - taxon: haplozoa
+          - taxon: cyamoidea
+          - taxon: cycloidea
+          - taxon: peridionitidae
+          - taxon: cymbionitidae
+          children:
+          - taxon: peridionites
+            children:
+            - taxon: navicula_whitehouse_1941
+              isType: true
+              material:
+              - prefix: UQF
+                numbers: [5404]
+                role: holotype
+              - prefix: UQF
+                numbers: [5398, 5399, 5400, 5401, 5402, 5403, 5405, 5406, 5407]
+                role: paratype
+              - prefix: QMF
+                numbers: [[59034, 59220]]
+                role: topotype
+                notes: the whole range is over 200 specimens
+          - taxon: cymbionites
+            children:
+            - taxon: craticula_whitehouse_1941
+              isType: true
+              material:
+              - prefix: UQF
+                numbers: [5409]
+                role: holotype
+              - prefix: UQF
+                numbers: [5408, [5410, 5431], 5433, 5434, 5435]
+                role: paratype
+              - prefix: QMF
+                numbers: [[59221, 59373]]
+                role: topotype
+          - taxon: lichenoides
+        - taxon: thorntonitidae
+          new: true
+          children:
+          - taxon: thorntonites
+            new: true
+            children:
+            - taxon: dowlingi_jell_sprinkle_2021
+              isType: true
+              new: true
+              material:
+              - prefix: QMF
+                numbers: [59526]
+                role: holotype
+              - prefix: QMF
+                numbers: [[59374, 59525], [59527, 59586]]
+                role: paratype
+          - openTaxon: lichenoididae-gen_smith.a.b_zamora_álvaro_2013
+            provisional: true
+            children:
+            - openTaxon: lichenoididae-gen-sp_smith.a.b_zamora_álvaro_2013
+              synonyms:
+              - openTaxon: lichenoides-sp_zamora_deline_álvaro_rahman_2017
+  - taxon: echinozoa
+    children:
+    - taxon: edrioasteroidea
+      children:
+      - taxon: edrioblastoida
+        children:
+        - taxon: ikerus
+          new: true
+          children:
+          - taxon: edgari_jell_sprinkle_2021
+            isType: true
+            new: true
+            material:
+            - prefix: QMF
+              numbers: [59588]
+              role: holotype
+            - prefix: QMF
+              numbers: [[59587, 59646]]
+              role: paratype
+      - taxon: stromatocystitida
+        children:
+        - taxon: stromatocystitidae
+          children:
+          - taxon: cambraster
+            children:
+            - taxon: cannati_miquel_1894
+              isType: true
+            - openTaxon: cambraster-sp_jell_sprinkle_2021
+              new: true
+              material:
+              - prefix: QMF
+                numbers: [[59647, 59653]]
+        - openTaxon: stromatocystitida-unknown-family_jell_sprinkle_2021
+          children:
+          - taxon: kailidiscus_zhao.y.l_sumrall_parsley_peng.j_2010
+            children:
+            - taxon: chinensis_zhao.y.l_sumrall_parsley_peng.j_2010
+              isType: true
+            - openTaxon: kailidiscus-sp_jell_sprinkle_2021
+              new: true
+              material:
+              - prefix: QMF
+                numbers: [[59654, 59668]]

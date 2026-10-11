@@ -3,18 +3,9 @@
 "Under what higher taxa have edrioblastoids been placed across the
 corpus?": the records that constitute the group, everything any source
 places under them, everything any source places them under, and the
-measurement of a name's trajectory, all computed from the committed
+measurement of a name's trajectory, all computed from the test corpus's
 claim table.
 """
-
-import os
-
-import pytest
-
-pytestmark = pytest.mark.skipif(
-  bool(os.getenv('PHYLOHIST_DRAFTS')),
-  reason='the committed claim table covers data/ only',
-)
 
 
 def test_group_resolves_to_rank_variants(closure):

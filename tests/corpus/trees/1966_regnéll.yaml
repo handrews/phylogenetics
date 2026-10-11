@@ -1,0 +1,151 @@
+taxonomies:
+- taxon: echinodermata
+  children:
+  - taxon: echinozoa
+    children:
+    - taxon: edrioasteroidea
+      # occurrenceSummary:
+      # - seriesRange: [Lower Cambrian, Upper Mississippian]
+      children:
+      - taxon: stromatocystitidae
+        authority:
+          source: 1936_bassler
+          notes: Should be 1935_bassler?
+        pages: U160
+        # occurrenceSummary:
+        # - seriesRange: [Lower Cambrian, Upper Devonian]
+        children:
+        - taxon: stromatocystites
+          auth: [pompeckj]
+          year: 1896
+          synonyms:
+          - taxon: stromatocystis
+            authority:
+              source: 1900_bather
+          children:
+          - taxon: pentangularis_pompeckj_1896
+            isType: true
+        - taxon: walcottidiscus
+          children:
+          - taxon: typicalis_bassler_1935
+            isType: true
+        - taxon: xenocystites
+          children:
+          - taxon: carteri_bassler_1936
+            isType: true
+            notes: G. W. Sinclair suggests may belong to Cooperidiscus
+      - taxon: cyathocystidae
+        synonyms:
+        - taxon: thecocystidae
+        - taxon: cyathothecidae
+        children:
+        - taxon: cyathocystis
+          children:
+          - taxon: plautinae_schmidt_1879
+            isType: true
+            notes: Type by SD Haeckel (1896)
+        - taxon: cyathotheca
+          children:
+          - taxon: suecica_jaekel_1927
+            isType: true
+      - taxon: hemicystitidae
+        children:
+        - taxon: hemicystites
+          children:
+          - taxon: parasiticus_hall_1852
+            isType: true
+        - taxon: anglidiscus
+          children:
+          - taxon: fistulosus_anderson_1939
+            isType: true
+        - taxon: bassleridiscus
+          children:
+          - taxon: mohawkensis_fisher_1951
+            isType: true
+        - taxon: carneyella
+          children:
+          - taxon: pileus_hall_1866
+            isType: true
+        - taxon: cincinnatidiscus
+          children:
+          - taxon: stellatus_hall_1866
+            isType: true
+        - taxon: cystaster
+          children:
+          - taxon: granulatus_hall_1871
+            isType: true
+        - taxon: foerstediscus
+          children:
+          - taxon: grandis_bassler_1935
+            isType: true
+        - taxon: lebetodiscus
+          children:
+          - taxon: dicksoni_billings_1857
+            isType: true
+        - taxon: lepidoconia
+          children:
+          - taxon: loriformis_raymond_1915
+            isType: true
+        - taxon: pyrgocystis
+          children:
+          - taxon: pyrgocystis-subgenus
+            children:
+            - taxon: sardesoni_bather_1915
+              isType: true
+            - taxon: sulcata_aurivillius_1892
+          - taxon: rhenopyrgus-subgenus
+            children:
+            - taxon: coronaeformis_rievers_1961
+              isType: true
+        - taxon: streptaster
+          children:
+          - taxon: vorticellatus_hall_1866
+            isType: true
+        - taxon: timeischytes
+          children:
+          - taxon: megapinacotus_ehlers_kesling_1958
+            isType: true
+      - taxon: agelacrinitidae
+        children:
+        - taxon: agelacrinites
+          children:
+          - taxon: hamiltonensis_vanuxem_1842
+            isType: true
+        - taxon: cooperidiscus
+          children:
+          - taxon: alleganius_clarke_1901
+            isType: true
+        - taxon: discocystis
+          children:
+          - taxon: kaskaskiensis_hall_1858
+            isType: true
+        - taxon: isorophus
+          children:
+          - taxon: cincinnatiensis_roemer_1851
+            isType: true
+        - taxon: isorophusella
+          children:
+          - taxon: inconditus_raymond_1915
+            isType: true
+        - taxon: lepidodiscus
+          children:
+          - taxon: squamosus_meek_worthen_1868
+            isType: true
+        - taxon: thresherodiscus
+          children:
+          - taxon: ramosus_foerste_1914
+            isType: true
+        - taxon: ulrichidiscus
+          children:
+          - taxon: pulaskiensis_miller.s.a_gurley_1894
+            isType: true
+      - taxon: edrioasteridae
+        children:
+        - taxon: edrioaster
+          children:
+          - taxon: bigsbyi_billings_1857
+            isType: true
+        - taxon: dinocystis
+          children:
+          - taxon: barroisi_bather_1898
+            isType: true

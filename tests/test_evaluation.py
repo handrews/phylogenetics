@@ -3,19 +3,10 @@
 `phylohist.evaluation` decides where the key comes from, what a
 submission becomes, whether a composition meets an expected answer,
 and how a judge's reply is read; each decision is checked here on
-small synthetic records over the real store.
+small synthetic records over the corpus store.
 """
 
-import os
-
-import pytest
-
 from phylohist import evaluation as ev
-
-pytestmark = pytest.mark.skipif(
-  bool(os.getenv('PHYLOHIST_DRAFTS')),
-  reason='the committed claim table covers data/ only',
-)
 
 
 def test_api_key_from_environment_or_dotenv(tmp_path):

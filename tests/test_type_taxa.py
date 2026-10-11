@@ -2,7 +2,7 @@
 synonymy entry: the schema, the loader checks, the claims, and the words
 and listings the tools say.
 
-Synthetic trees are built on the session's loaded corpus under positions
+Synthetic trees are built on the loaded test corpus under positions
 300 and up (`Tree` keeps class-level registries); the tool tests read a
 `ClaimStore` over a copy of `claims/` whose files for the sources named in
 `TREES` are replaced by the claims of those trees, since no data uses
@@ -13,9 +13,6 @@ import collections
 import json
 import logging
 import shutil
-import subprocess
-import sys
-from pathlib import Path
 
 import pytest
 
@@ -24,13 +21,9 @@ from phylohist.loader import io, material, nomenclature
 from phylohist.loader.load import _report_nomenclature
 from phylohist.loader.material import walk_document
 from phylohist.loader.taxa import Tree
-from phylohist.store import CLAIMS_DIR, ClaimStore
+from phylohist.store import ClaimStore
 from phylohist.words import ABSENCE_WORDS
-
-# The synthetic trees name real records, so every test needs the corpus loaded.
-pytestmark = pytest.mark.usefixtures('load_records')
-
-SCRIPTS = Path(__file__).parent.parent / 'scripts'
+from tests import support
 
 # The records of the examples: a genus (Edrioaster) with two species, the
 # genus a species was first described in (Cyclaster Billings 1857) and a
@@ -48,7 +41,7 @@ ORIGINAL = {'taxon': BIGSBYI, 'parents': [{'taxon': CYCLASTER}], 'fixation': 'mo
 
 
 def _valid(document):
-  return io.build_schema()[io.TREE_DEF].check(document)
+  return support.schema()[io.TREE_DEF].check(document)
 
 
 def _tree(node):
@@ -211,7 +204,7 @@ def test_the_checks_can_all_fire_on_one_node():
   assert len(nomenclature.type_node(node, is_cited=False)) == 3
 
 
-def test_load_reports_the_type_checks_with_the_nodes_path(load_records, caplog):
+def test_load_reports_the_type_checks_with_the_nodes_path(caplog):
   data = {
     'trees': {
       'src1': {
@@ -259,8 +252,8 @@ def test_the_type_node_is_walked_as_a_cited_entry():
   }
 
 
-def test_the_corpus_has_no_type_node_messages(load_records):
-  data, _, _ = load_records
+def test_the_corpus_has_no_type_node_messages(corpus):
+  data = corpus.data
   found = []
   for opinion in data['trees'].values():
     for _, node, is_cited in walk_document(opinion):
@@ -268,7 +261,7 @@ def test_the_corpus_has_no_type_node_messages(load_records):
   assert found == []
 
 
-def test_a_species_level_name_cannot_carry_a_type(load_records, caplog):
+def test_a_species_level_name_cannot_carry_a_type(caplog):
   root = {'taxon': BIGSBYI, 'type': {'taxon': PRIORITY}}
   with caplog.at_level(logging.ERROR, logger='phylohist'):
     Tree(root, {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 290})
@@ -276,7 +269,7 @@ def test_a_species_level_name_cannot_carry_a_type(load_records, caplog):
   assert 'carries `type` but is a species-level name; its type is a specimen' in error
 
 
-def test_a_genus_or_family_may_carry_a_type(load_records, caplog):
+def test_a_genus_or_family_may_carry_a_type(caplog):
   root = {'taxon': FAMILY, 'type': {'taxon': GENUS}, 'children': [{'taxon': GENUS}]}
   with caplog.at_level(logging.ERROR, logger='phylohist'):
     Tree(root, {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 291})
@@ -289,11 +282,7 @@ def test_a_genus_or_family_may_carry_a_type(load_records, caplog):
 def _draft(tmp_path, body):
   draft = tmp_path / '1898_bather.yaml'
   draft.write_text('taxonomies:\n- taxon: rhenopyrgus\n  children:\n' + body)
-  return subprocess.run(
-    [sys.executable, str(SCRIPTS / 'check_draft.py'), str(draft)],
-    capture_output=True,
-    text=True,
-  )
+  return support.run_check_draft(draft)
 
 
 def test_check_draft_accepts_a_type_node(tmp_path):
@@ -375,7 +364,7 @@ def _plain(claim):
   return {k: v for k, v in claim.items() if k not in ('audit', 'treeNotes')}
 
 
-def test_a_type_that_is_also_a_child_is_listed_and_places_nothing(load_records):
+def test_a_type_that_is_also_a_child_is_listed_and_places_nothing():
   root = {
     'taxon': GENUS,
     'type': {**ORIGINAL, 'pages': 12},
@@ -405,7 +394,7 @@ def test_a_type_that_is_also_a_child_is_listed_and_places_nothing(load_records):
   assert not _of_kind(at['300/children/0'], 'act')
 
 
-def test_a_type_that_is_no_child_is_a_placement_of_its_own(load_records):
+def test_a_type_that_is_no_child_is_a_placement_of_its_own():
   root = {'taxon': FAMILY, 'children': [{'taxon': GENUS, 'type': ORIGINAL, 'children': []}]}
   at = _by_path(_claims(root, 301, '1985_jell_burrett_banks'))
   claims = at['301/children/0/type']
@@ -423,14 +412,14 @@ def test_a_type_that_is_no_child_is_a_placement_of_its_own(load_records):
   assert genus['parent'] == FAMILY and 'via' not in genus
 
 
-def test_a_type_on_a_root_node_is_placed_under_the_root(load_records):
+def test_a_type_on_a_root_node_is_placed_under_the_root():
   root = {'taxon': GENUS, 'type': ORIGINAL, 'children': []}
   claims = _by_path(_claims(root, 302, '1891_bell.f.j'))['302/type']
   placement = _one(claims, 'placement')
   assert placement['parent'] == GENUS and placement['via'] == 'type'
 
 
-def test_a_type_on_a_cited_entry_places_nothing(load_records):
+def test_a_type_on_a_cited_entry_places_nothing():
   root = {
     'taxon': GENUS,
     'synonyms': [{'taxon': CYCLASTER, 'type': {'taxon': BIGSBYI, 'fixation': 'monotypy'}}],
@@ -450,7 +439,7 @@ def test_a_type_on_a_cited_entry_places_nothing(load_records):
   assert _one(at['303/synonyms/0'], 'acceptance')['under'] == GENUS
 
 
-def test_a_type_under_a_non_taxonomy_places_nothing(load_records):
+def test_a_type_under_a_non_taxonomy_places_nothing():
   root = {'taxon': GENUS, 'type': ORIGINAL, 'children': []}
   claims = extract(
     {
@@ -463,13 +452,13 @@ def test_a_type_under_a_non_taxonomy_places_nothing(load_records):
   assert not _of_kind(claims, 'placement')
 
 
-def test_a_type_names_a_record_not_a_rank_variant(load_records):
+def test_a_type_names_a_record_not_a_rank_variant():
   # "The same record": a child of another record does not list the type.
   root = {'taxon': GENUS, 'type': ORIGINAL, 'children': [{'taxon': PRIORITY}]}
   assert _act(_by_path(_claims(root, 305, '1927_jaekel'))['305/type'])['listed'] is False
 
 
-def test_fixed_by_rides_on_the_act_as_a_source_and_pages(load_records):
+def test_fixed_by_rides_on_the_act_as_a_source_and_pages():
   node = {
     'taxon': BIGSBYI,
     'fixation': 'subsequentDesignation',
@@ -485,7 +474,7 @@ def test_fixed_by_rides_on_the_act_as_a_source_and_pages(load_records):
   assert act['fixedBy'] == '1899_bather' and 'fixedByPages' not in act
 
 
-def test_an_inferred_type_statement_is_inferred_throughout(load_records):
+def test_an_inferred_type_statement_is_inferred_throughout():
   node = {**ORIGINAL, 'editorial': {'inferred': True, 'basis': 'one species listed'}}
   root = {'taxon': GENUS, 'type': node, 'children': []}
   claims = _by_path(_claims(root, 308, '1927_jaekel'))['308/type']
@@ -494,7 +483,7 @@ def test_an_inferred_type_statement_is_inferred_throughout(load_records):
   assert _one(claims, 'placement')['inferred'] is True
 
 
-def test_an_inferred_method_is_the_acts_alone(load_records):
+def test_an_inferred_method_is_the_acts_alone():
   node = {**ORIGINAL, 'editorial': {'inferred': ['fixation'], 'basis': 'one species listed'}}
   root = {'taxon': GENUS, 'type': node, 'children': []}
   claims = _by_path(_claims(root, 309, '1927_jaekel'))['309/type']
@@ -511,7 +500,7 @@ def test_an_inferred_method_is_the_acts_alone(load_records):
   assert _one(claims, 'usage')['inferred'] is True
 
 
-def test_the_type_act_counts_as_a_type_designation(load_records):
+def test_the_type_act_counts_as_a_type_designation():
   from phylohist.claims import _coverage_kind
 
   root = {'taxon': GENUS, 'type': ORIGINAL, 'children': [{'taxon': BIGSBYI}]}
@@ -520,7 +509,7 @@ def test_the_type_act_counts_as_a_type_designation(load_records):
   assert _act(claims)['audit']['coverageKind'] == 'types'
 
 
-def test_an_is_type_childs_claim_is_what_it_was(load_records):
+def test_an_is_type_childs_claim_is_what_it_was():
   root = {
     'taxon': GENUS,
     'children': [{'taxon': BIGSBYI, 'isType': True}, {'taxon': PRIORITY}],
@@ -541,13 +530,13 @@ def test_an_is_type_childs_claim_is_what_it_was(load_records):
   assert placement['position'] == 0 and 'via' not in placement
 
 
-def test_a_type_node_does_not_emit_a_second_act_from_is_type(load_records):
+def test_a_type_node_does_not_emit_a_second_act_from_is_type():
   node = {**ORIGINAL, 'isType': True}
   claims = _by_path(_claims({'taxon': GENUS, 'type': node}, 313, '1927_jaekel'))['313/type']
   assert len([c for c in claims if c['kind'] == 'act']) == 1
 
 
-def test_a_type_has_no_acceptance_and_no_synonymy(load_records):
+def test_a_type_has_no_acceptance_and_no_synonymy():
   root = {'taxon': GENUS, 'type': ORIGINAL, 'children': []}
   claims = _claims(root, 314, '1927_jaekel')
   assert not _of_kind(claims, 'acceptance')
@@ -669,11 +658,11 @@ TREES = {
 
 
 @pytest.fixture(scope='module')
-def synthetic(load_records, tmp_path_factory):
+def synthetic(corpus, tmp_path_factory):
   """A `ClaimStore` over a copy of `claims/` with the claims of each source
   of `TREES` replaced by those of its tree."""
   directory = tmp_path_factory.mktemp('claims')
-  shutil.copytree(CLAIMS_DIR, directory, dirs_exist_ok=True)
+  shutil.copytree(corpus.claims, directory, dirs_exist_ok=True)
   for source_key, (root, position) in TREES.items():
     claims = _claims(root, position, source_key)
     (directory / f'{source_key}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
@@ -1132,7 +1121,7 @@ def test_the_tool_descriptions_name_the_marked_type():
   assert 'named only as the type' in TOOL_DESCRIPTIONS['descendants']
 
 
-# -- the real corpus ----------------------------------------------------------
+# -- the corpus ---------------------------------------------------------------
 
 
 def test_the_corpus_lines_are_unmarked_and_rank_worded(store):
@@ -1170,7 +1159,8 @@ def test_the_corpus_lines_are_unmarked_and_rank_worded(store):
         if line.get('methodInferred'):
           expected += ' (method: editor)'
         assert expected in [ln.strip().lstrip('?').strip() for ln in block['rendered'].splitlines()]
-  assert checked > 300
+  # The corpus has a little over two hundred type lines.
+  assert checked > 200
 
 
 def test_the_corpus_type_genera_now_read_type_genus(store):
@@ -1227,7 +1217,7 @@ def test_type_null_beside_a_child_marked_is_type_is_an_error():
   assert len(nomenclature.type_node(node, is_cited=True)) == 2
 
 
-def test_load_reports_a_null_type_with_the_nodes_path(load_records, caplog):
+def test_load_reports_a_null_type_with_the_nodes_path(caplog):
   data = {
     'trees': {
       'src1': {
@@ -1260,7 +1250,7 @@ def test_load_reports_a_null_type_with_the_nodes_path(load_records, caplog):
   assert len(errors) == 2
 
 
-def test_a_species_level_name_cannot_carry_a_null_type_either(load_records, caplog):
+def test_a_species_level_name_cannot_carry_a_null_type_either(caplog):
   root = {'taxon': BIGSBYI, 'type': None}
   with caplog.at_level(logging.ERROR, logger='phylohist'):
     Tree(root, {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 950})
@@ -1268,7 +1258,7 @@ def test_a_species_level_name_cannot_carry_a_null_type_either(load_records, capl
   assert 'carries `type` but is a species-level name; its type is a specimen' in error
 
 
-def test_a_genus_may_carry_a_null_type_and_places_nothing(load_records, caplog):
+def test_a_genus_may_carry_a_null_type_and_places_nothing(caplog):
   root = {'taxon': FAMILY, 'children': [{'taxon': GENUS, 'type': None}]}
   with caplog.at_level(logging.ERROR, logger='phylohist'):
     tree = Tree(root, {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 951})
@@ -1511,11 +1501,11 @@ NULLS = {
 
 
 @pytest.fixture(scope='module')
-def nulled(load_records, tmp_path_factory):
+def nulled(corpus, tmp_path_factory):
   """A `ClaimStore` over a copy of `claims/` with the claims of 1961 Dehm
   replaced by those of `NULLS`, its `types` coverage `partly`."""
   directory = tmp_path_factory.mktemp('claims_nulls')
-  shutil.copytree(CLAIMS_DIR, directory, dirs_exist_ok=True)
+  shutil.copytree(corpus.claims, directory, dirs_exist_ok=True)
   claims = _claims(NULLS, 985, '1961_dehm')
   (directory / '1961_dehm.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
   store = ClaimStore(directory)

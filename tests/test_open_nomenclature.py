@@ -3,31 +3,27 @@
 `roleUncertain`: the schema, the loader checks, the claims, and the words
 the tools say.
 
-Synthetic trees are built on the session's loaded corpus under positions
+Synthetic trees are built on the loaded test corpus under positions
 200 and up (`Tree` keeps class-level registries), and the tool tests read a
-`ClaimStore` over a copy of `claims/` whose `1961_dehm` file is replaced by
-the claims of one synthetic tree, since no `…-cf-…` record exists in the
-data yet.
+`ClaimStore` over a copy of the corpus claims whose `1961_dehm` file is
+replaced by the claims of one synthetic tree, with its own `…-cf-…` record
+registered while they are built.
 """
 
 import collections
 import json
 import logging
 import shutil
-import subprocess
-import sys
-from pathlib import Path
 
 import pytest
 
 from phylohist.claims import extract
 from phylohist.loader import io, nomenclature
 from phylohist.loader.load import _report_nomenclature
-from phylohist.loader.material import walk_document
 from phylohist.loader.taxa import Taxon, Tree
-from phylohist.store import CLAIMS_DIR, ClaimStore
+from phylohist.store import ClaimStore
+from tests import support
 
-SCRIPTS = Path(__file__).parent.parent / 'scripts'
 SOURCE = '1961_dehm'
 CF_KEY = 'lepidocystis-cf-wanneri_sprinkle_1973'
 CF_RECORD = {'name': None, 'rank': 'species', 'auth': ['sprinkle'], 'year': 1973}
@@ -54,7 +50,7 @@ def _messages(result):
 
 
 def _valid(document):
-  return io.build_schema()[io.TREE_DEF].check(document)
+  return support.schema()[io.TREE_DEF].check(document)
 
 
 def test_schema_accepts_the_new_node_and_material_fields():
@@ -107,9 +103,8 @@ def test_record_lookup_computes_the_rank_as_the_loader_does():
   assert nomenclature.record_lookup({'x': {}})('x').rank is None
 
 
-def test_record_lookup_agrees_with_the_loaded_taxa(load_records):
-  data, _, _ = load_records
-  lookup = nomenclature.record_lookup(data['taxa'])
+def test_record_lookup_agrees_with_the_loaded_taxa(corpus):
+  lookup = nomenclature.record_lookup(corpus.data['taxa'])
   for key in ('grayae_bather_1915', 'rhenopyrgus', 'gogia-sp_robison_1965', 'cyathocystidae'):
     assert lookup(key).rank == Taxon.get(key).rank
     assert lookup(key).name == Taxon.get(key).name
@@ -218,7 +213,7 @@ def test_compared_link_conflicts_leave_agreement_and_unlinked_uses_alone():
   assert nomenclature.compared_link_conflicts([]) == []
 
 
-def test_load_reports_nomenclature_checks_at_the_right_level(load_records, caplog):
+def test_load_reports_nomenclature_checks_at_the_right_level(caplog):
   # Direct call, as for `_report_material`: a synthetic corpus routed
   # through `load()` would leak into the session's registries.
   data = {
@@ -261,29 +256,11 @@ def test_load_reports_nomenclature_checks_at_the_right_level(load_records, caplo
   assert 'open form "gogia-sp_robison_1965"' in conflict and 'src2 at 0' in conflict
 
 
-def test_the_corpus_has_no_nomenclature_messages(load_records):
-  # The data does not use the new fields yet; the loader's own logs
-  # (`test_no_errors`) carry the rest.
-  data, _, _ = load_records
-  found = []
-  for opinion in data['trees'].values():
-    for _, node, _ in walk_document(opinion):
-      found += nomenclature.compared_links(node, Taxon.get)
-      found += nomenclature.quoted_parent(node, Taxon.get)
-      found += nomenclature.role_uncertain(node)
-  assert found == []
-  assert nomenclature.compared_link_conflicts(data['trees'].items()) == []
-
-
 # -- scripts/check_draft.py ---------------------------------------------------
 
 
 def _run_check_draft(path):
-  return subprocess.run(
-    [sys.executable, str(SCRIPTS / 'check_draft.py'), str(path)],
-    capture_output=True,
-    text=True,
-  )
+  return support.run_check_draft(path)
 
 
 def _draft(tmp_path, body):
@@ -367,7 +344,7 @@ def _one(claims, kind):
   return claim
 
 
-def test_usage_claim_carries_the_compared_link(load_records, caplog):
+def test_usage_claim_carries_the_compared_link(caplog):
   root = {
     'taxon': 'rhenopyrgus',
     'children': [
@@ -392,7 +369,7 @@ def test_the_retired_cf_and_aff_taxon_fields_are_rejected(field):
 
 
 @pytest.mark.parametrize('field', ['cfTaxon', 'affTaxon'])
-def test_the_loader_does_not_read_the_retired_fields_as_a_name(field, load_records, caplog):
+def test_the_loader_does_not_read_the_retired_fields_as_a_name(field, caplog):
   # As for any node with no recognised taxon field: it has no taxon of its
   # own and states no usage; the schema is what rejects it.
   root = {'taxon': 'rhenopyrgus', 'children': [{field: 'grayae_bather_1915'}]}
@@ -401,7 +378,7 @@ def test_the_loader_does_not_read_the_retired_fields_as_a_name(field, load_recor
   assert not [c for c in at['201/children/0'] if c['kind'] == 'usage']
 
 
-def test_placement_claim_carries_quoted_parent_and_non_monophyly(load_records):
+def test_placement_claim_carries_quoted_parent_and_non_monophyly():
   root = {
     'taxon': 'cyathocystidae',
     'children': [
@@ -420,7 +397,7 @@ def test_placement_claim_carries_quoted_parent_and_non_monophyly(load_records):
   assert 'quotedParent' not in plain and 'nonMonophyletic' not in plain
 
 
-def test_placement_claim_carries_mutable(load_records):
+def test_placement_claim_carries_mutable():
   root = {
     'taxon': 'cyathocystidae',
     'children': [{'taxon': 'rhenopyrgus', 'mutable': True}, {'taxon': 'pyrgocystis'}],
@@ -430,7 +407,7 @@ def test_placement_claim_carries_mutable(load_records):
   assert 'mutable' not in _one(at['205/children/1'], 'placement')
 
 
-def test_acceptance_claim_carries_quoted_parent(load_records):
+def test_acceptance_claim_carries_quoted_parent():
   root = {
     'taxon': 'grayae_bather_1915',
     'synonyms': [
@@ -442,7 +419,7 @@ def test_acceptance_claim_carries_quoted_parent(load_records):
   assert 'nonMonophyletic' not in entry
 
 
-def test_specimen_claim_carries_uncertain_and_role_uncertain(load_records):
+def test_specimen_claim_carries_uncertain_and_role_uncertain():
   root = {
     'taxon': 'grayae_bather_1915',
     'material': [
@@ -496,11 +473,11 @@ CITING_TREE = {
 
 
 @pytest.fixture(scope='module')
-def synthetic(load_records, tmp_path_factory):
+def synthetic(corpus, tmp_path_factory):
   """A `ClaimStore` over a copy of `claims/` with `SOURCE`'s claims
   replaced by those of `SYNTHETIC`, and the record `CF_KEY` registered."""
   directory = tmp_path_factory.mktemp('claims')
-  shutil.copytree(CLAIMS_DIR, directory, dirs_exist_ok=True)
+  shutil.copytree(corpus.claims, directory, dirs_exist_ok=True)
   with pytest.MonkeyPatch.context() as patch:
     patch.setitem(Taxon._taxa, CF_KEY, Taxon(dict(CF_RECORD), CF_KEY))
     written = {SOURCE: _claims(SYNTHETIC, 220), CITING: _claims(CITING_TREE, 221, CITING)}

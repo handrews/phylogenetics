@@ -2,18 +2,14 @@
 for each kind of manifest inconsistency row, on a synthetic tree; and
 `--errors-only`, over a load that logs what the test says."""
 
-import importlib.util
 import logging
-import pathlib
 
 from phylohist.claims import extract
 from phylohist.loader.research import Source
 from phylohist.loader.taxa import Tree
+from tests import support
 
-SCRIPT = pathlib.Path(__file__).resolve().parent.parent / 'scripts' / 'claims.py'
-_spec = importlib.util.spec_from_file_location('claims_script', SCRIPT)
-claims_script = importlib.util.module_from_spec(_spec)
-_spec.loader.exec_module(claims_script)
+claims_script = support.script('claims')
 
 _WHERE = 'in data/sources.yaml (1961_dehm.audit.coverage.{})'
 
@@ -23,7 +19,7 @@ def _report(capsys, roots):
   return found, capsys.readouterr().out
 
 
-def test_report_explains_both_row_forms(load_records, monkeypatch, capsys):
+def test_report_explains_both_row_forms(monkeypatch, capsys):
   coverage = Source.get('1961_dehm')._data['audit']['coverage']
   roots = {
     '1961_dehm': [
@@ -59,7 +55,7 @@ def test_report_explains_both_row_forms(load_records, monkeypatch, capsys):
   assert 'to resolve: enter what the paper prints, or declare na or none' in out
 
 
-def test_report_lists_holotypes_that_differ_without_counting_them(load_records, capsys):
+def test_report_lists_holotypes_that_differ_without_counting_them(capsys):
   def tree(source, prefix, number):
     return Tree(
       {
@@ -89,7 +85,7 @@ def test_report_lists_holotypes_that_differ_without_counting_them(load_records, 
   )
 
 
-def test_report_prints_no_holotype_section_when_none_differ(load_records, capsys):
+def test_report_prints_no_holotype_section_when_none_differ(capsys):
   roots = {
     '1941_whitehouse': [
       Tree(
@@ -110,7 +106,7 @@ def test_report_prints_no_holotype_section_when_none_differ(load_records, capsys
   assert 'holotypes that differ' not in out
 
 
-def test_repositories_file_keeps_the_registry_fields_the_store_reads(load_records):
+def test_repositories_file_keeps_the_registry_fields_the_store_reads():
   registry = claims_script._repositories()
   assert list(registry) == sorted(registry)
   assert registry['uq-f']['prefixes'] == ['UQF', 'F']
@@ -121,7 +117,7 @@ def _run(monkeypatch, caplog, tmp_path, flag, *, error):
   """Run the script over a load that logs a warning, and an error when
   `error`; the messages that come out, in order."""
 
-  def fake_load(drafts=False, tolerate=False):
+  def fake_load(drafts=False, tolerate=False, **_):
     log = logging.getLogger('phylohist.loader.load')
     log.warning('a warning')
     if error:
@@ -136,9 +132,7 @@ def _run(monkeypatch, caplog, tmp_path, flag, *, error):
   return [r.getMessage() for r in caplog.records if r.name == 'phylohist.loader.load']
 
 
-def test_errors_only_shows_the_errors_when_there_are_any(
-  load_records, monkeypatch, caplog, tmp_path, capsys
-):
+def test_errors_only_shows_the_errors_when_there_are_any(monkeypatch, caplog, tmp_path, capsys):
   assert _run(monkeypatch, caplog, tmp_path, [], error=True) == ['a warning', 'an error']
   caplog.clear()
   assert _run(monkeypatch, caplog, tmp_path, ['--errors-only'], error=True) == ['an error']
@@ -146,7 +140,5 @@ def test_errors_only_shows_the_errors_when_there_are_any(
   assert '1 integrity errors while loading (tolerated)' in capsys.readouterr().err
 
 
-def test_errors_only_shows_the_warnings_when_there_are_no_errors(
-  load_records, monkeypatch, caplog, tmp_path
-):
+def test_errors_only_shows_the_warnings_when_there_are_no_errors(monkeypatch, caplog, tmp_path):
   assert _run(monkeypatch, caplog, tmp_path, ['--errors-only'], error=False) == ['a warning']

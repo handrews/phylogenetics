@@ -1,0 +1,125 @@
+prefixes:
+  UTGD: utgd
+  NMVP: nmv-p
+  ANU: anu
+  CPC: cpc
+  TMF: tmf
+taxonomies:
+- taxon: edrioasteroidea
+  children:
+  - taxon: stromatocystitidae
+    children:
+    - taxon: cambraster
+      children:
+      - taxon: cannati_miquel_1894
+        isType: true
+      - taxon: tastudorum_jell_burrett_banks_1985
+        new: true
+        material:
+        - prefix: UTGD
+          numbers: [122593]
+          role: holotype
+        - prefix: UTGD
+          numbers: [122226, 122231, 122233]
+          role: paratype
+        - prefix: NMVP
+          numbers: [107053, 107054, 107055, 107056, 107057, 107059, 107060, 107061, 107062, 107063, 107064, 107065, 107066, 107067, 107068, 107069, 107070, 107071, 107072]
+          role: paratype
+      - openTaxon: cambraster-cf-tastudorum_jell_burrett_banks_1985
+        cf: tastudorum_jell_burrett_banks_1985
+        new: true
+        material:
+        - prefix: UTGD
+          numbers: [122233, 122234]
+      - openTaxon: cambraster-sp_jell_burrett_banks_1985
+        new: true
+        material:
+        - prefix: ANU
+          numbers: [36957, 36958, 36959, 36960]
+      - taxon: walcotti_schuchert_1919
+        provisional: true
+    - taxon: edriodiscus
+      new: true
+      children:
+      - taxon: primotica_henderson_shergold_1971
+        isType: true
+        material:
+        - prefix: CPC
+          numbers: [11395]
+          role: holotype
+        - prefix: CPC
+          numbers: [11396]
+          role: paratype
+        - prefix: NMVP
+          numbers: [107479]
+        notes: |
+          NMVP107479 is this paper's own specimen, "assigned … based on
+          comparison" (p. 190), not part of the 1971 type series
+        synonyms:
+        - taxon: primotica_henderson_shergold_1971
+          auth: [Henderson, Shergold]
+          year: 1971
+          parents:
+          - taxon: cyclocystoides
+    - taxon: stromatocystites
+      children:
+      - openTaxon: stromatocystites-sp_jell_burrett_banks_1985
+        provisional: true
+        new: true
+        material:
+        - prefix: NMVP
+          numbers: [107478]
+    - openTaxon: stromatocystitidae-sp_jell_burrett_banks_1985
+      new: true
+      material:
+      - prefix: ANU
+        numbers: [[36949, 36956]]
+  - taxon: isorophida
+    children:
+    - openTaxon: isorophida-sp_jell_burrett_banks_1985
+      new: true
+      material:
+      - prefix: NMVP
+        numbers: [107129, 108990]
+- taxon: ctenocystoidea
+  children:
+  - taxon: ctenocystidae
+    children:
+    - taxon: ctenocystis
+      children:
+      - taxon: utahensis_robison_sprinkle_1969
+        isType: true
+      - taxon: jagoi_jell_burrett_banks_1985
+        new: true
+        material:
+        - prefix: UTGD
+          numbers: [122594]
+          role: holotype
+        - prefix: NMVP
+          numbers: [107073, 107075, 107076]
+          role: paratype
+- taxon: eocrinoidea
+  children:
+  - taxon: ridersiidae
+    new: true
+    children:
+    - taxon: ridersia
+      new: true
+      children:
+      - taxon: watsonae_jell_burrett_banks_1985
+        isType: true
+        new: true
+        material:
+        - prefix: NMVP
+          numbers: [107112]
+          role: holotype
+        - prefix: NMVP
+          numbers: [107113, 107114, 107115, 107116, 107117, 107118, 107119, 107120, 107121, 107122, 107123, 107124, 107125, 107126, 107127, 107128, 107480, 107481, 107482, 107483, 107484, 107485, 107486, 107487, 107488, 107489, 107490, 107491, 107492, 108991]
+          role: paratype
+  - taxon: macrocystellidae
+    children:
+    - openTaxon: macrocystellidae-sp_jell_burrett_banks_1985
+      new: true
+      material:
+      - prefix: TMF
+        numbers: [8342]
