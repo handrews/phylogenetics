@@ -1224,6 +1224,11 @@ def manifest(claims_by_source, roots):
 
   for source_key in Source._sources:
     source = Source.get(source_key)
+    if source.canonical is not source:
+      # An alias cites its target by some of its authors; the rest of the
+      # row is the target's.
+      sources[source_key] = {'citation': citation(source), 'aliasOf': source.alias_of}
+      continue
     entry = {
       'citation': citation(source),
       'tree': source_key in claims_by_source,

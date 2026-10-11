@@ -440,6 +440,8 @@ class Words:
     with it. None otherwise."""
     row = self.store.names.get(key) or {}
     auth_source = (row.get('authority') or {}).get('source')
+    # An authority may cite its paper by an alias; claims carry the paper's key.
+    auth_source = (self.store.sources.get(auth_source) or {}).get('aliasOf', auth_source)
     if auth_source in self.store.sources:
       for c in self.store.by_subject.get(key, ()):
         if c['source'] == auth_source and c['kind'] == 'placement':

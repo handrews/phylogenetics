@@ -438,7 +438,9 @@ it out, and queries and output over sections are deferred.
 paper is recorded but not yet entered" is derived), the declared `audit`,
 the counts of claims by kind, by `actKind` and by `materialKind`, the
 counts by coverage kind (`derived`, editor-inferred claims excluded), and
-`inconsistencies`. Per taxon, the sources with any claim about it, in
+`inconsistencies`. A source alias (`aliasOf`, a key citing a paper by
+some of its authors) has a row with only its `citation` and `aliasOf`,
+and the resolver answers it with its target. Per taxon, the sources with any claim about it, in
 publication-year order. And `authors`, every author key with its
 surname, so a printed attribution (`auth: [bell.b.m]`) renders by field,
 and `holotypeConflicts`. Coverage is declared by a reviewer and counted by

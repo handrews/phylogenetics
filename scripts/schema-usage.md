@@ -409,6 +409,12 @@ property.
 | `designation` | 3 | 25.0% |
 | `needsQualification` | 1 | 8.3% |
 
+### `sourceAlias` -- 2 instances in `data/`
+
+| property | data | data % |
+|---|---|---|
+| `aliasOf` | 2 | 100.0% |
+
 ### `taxonRecord` -- 2839 instances in `data/`
 
 | property | data | data % |

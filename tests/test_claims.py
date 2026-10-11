@@ -82,7 +82,7 @@ def test_no_inconsistencies(claims, roots):
   rows = {
     source_key: entry['inconsistencies']
     for source_key, entry in manifest(claims, roots)['sources'].items()
-    if entry['inconsistencies']
+    if entry.get('inconsistencies')
   }
   if rows:
     listing = '\n'.join(f'{source_key}: {"; ".join(found)}' for source_key, found in rows.items())

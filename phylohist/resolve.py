@@ -47,11 +47,12 @@ class Resolver:
     corpus holds nothing that matches."""
     index_name, resolve, plural = self._KINDS[kind]
     index = getattr(self.store, index_name)
-    if value is None or value in index:
+    if value is None:
       return value
-    lowered = str(value).lower()
-    if lowered in index:
-      return lowered
+    for key in (value, str(value).lower()):
+      if key in index:
+        # A source alias names its target.
+        return self._unaliased(key) if kind == 'source' else key
     candidates = getattr(self, resolve)(str(value))
     if len(candidates) == 1:
       return candidates[0]['key']
@@ -109,13 +110,14 @@ class Resolver:
     """The sources a citation can mean: the papers of that year (and
     letter, "Fay 1967a") whose authors begin with the authors named, in
     the order named. "Sumrall et al. 2013" names one author; "Holloway &
-    Jell 1983" two. A key is its own answer."""
+    Jell 1983" two. A key is its own answer; an alias (`aliasOf`) answers
+    with its target."""
     query = html.unescape((query or '').strip())
     if not query:
       return []
     if query in self.store.sources or query.lower() in self.store.sources:
       key = query if query in self.store.sources else query.lower()
-      return [self._source_candidate(key)]
+      return [self._source_candidate(self._unaliased(key))]
     sig = self.source_signature(query)
     if sig['year'] is None and not sig['inprep']:
       return []
@@ -133,9 +135,16 @@ class Resolver:
       authors = [fold(a) for a in citation.get('authors') or ()]
       if authors[: len(sig['authors'])] != sig['authors']:
         continue
-      found.append(self._source_candidate(key))
+      # An alias and its target found together are one paper.
+      key = self._unaliased(key)
+      if all(c['key'] != key for c in found):
+        found.append(self._source_candidate(key))
     found.sort(key=lambda c: (c['year'] or 9999, c['key']))
     return found
+
+  def _unaliased(self, key):
+    """The source a key names: an alias's target, else the key itself."""
+    return self.store.sources[key].get('aliasOf', key)
 
   def _source_candidate(self, key):
     row = self.store.sources[key]
