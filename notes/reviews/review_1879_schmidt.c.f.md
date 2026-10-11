@@ -1,0 +1,267 @@
+# Review: 1880_schmidt (draft)
+
+**NOTE: the accessible source is the 1880 reprint.**
+
+Schmidt, Fr. "Ueber Cyathocystis Plautinae, eine neue Cystideenform aus
+Reval." *Verhandlungen der Russisch-Kaiserlichen Mineralogischen
+Gesellschaft zu St. Petersburg*, Zweite Serie, Fünfzehnter Band: 1–7, three
+woodcuts in the text. Title page dated 1880.
+
+Reviewed from nine PDFs in `example-publications/09-18/` (title page,
+contents, seven article pages), each with an OCR text layer. This is the
+paper Dames abstracted in `1879_dames` and the draft `drafts/1879_dames.yaml`
+records secondhand; the draft `drafts/1880_schmidt.yaml` is written from
+the paper itself and is what §1–3 below check.
+
+**Page mapping.** The seven article PDFs are one printed page each, "p 01"
+to "p 07" = printed pages 1–7; the printed folios read "- 2", "- 3", "4",
+"5", "- -6", "7 -", and p. 1 carries the running foot "XV. 1". The title
+page and contents page are unnumbered.
+
+## 1. Coverage of the draft
+
+| kind | captured | example |
+|---|---|---|
+| classification skeleton | all | the Edrioasteriden group with its four listed members and the new genus with two species; nothing else is placed |
+| new taxa | all | *Cyathocystis*, *C. Plautinae*, *C. rhizophora*, all `new: true` |
+| type species | partly | a `type` node on *Cyathocystis* naming *C. Plautinae* rests on "der typischen Art" (p. 7); see §3 |
+| synonymy lists | na | none printed |
+| material | all that is printed | no numbers, no repository, no type words; one `material` entry per figured piece, labelled by the paper's figure citation, and one for the 1863 Wassalem lot with the Volborth collection as `holder` |
+| contexts | all | both units with their localities and the stratigraphic gloss, quoted; the Reval collector and date on the context |
+| illustrations | all | Holzschnitt I–III, each figure tied to its specimen by `of`, as `depicts: drawing`; captions in §2a |
+| diagnoses | none | no diagnosis is set apart; the descriptive prose (pp. 2–7) is not captured beyond the two quoted sentences on the genus |
+| phylogeny | na | none printed |
+
+## 2. What the paper prints
+
+A single description in prose, no headings. The finds (summer 1878,
+Reval, the Plautin family) are assigned to "eine neue Cystideenform aus der
+Verwandtschaft von Agelacrinus Van. im weitern Sinn, oder eine neue
+Gattung aus der von Billings aufgestellten Gruppe der Edrioasteriden" (pp.
+1–2), the group's members being listed as *Agelacrinus* Van., *Edrioaster*
+Bill., *Hemicystis* Hall and *Cystaster* Hall, with Billings's view that
+the group stands nearer the Asteroids than the Cystids. The genus is named
+for its cup form and the species for the Generalin Plautin (p. 2, p. 7).
+The lid is described plate by plate (pp. 2–4), with the oral plates
+compared to Asterids and to *Glyptosphaerites Leuchtenbergi* Volb., the
+marginal plates to Asterids, and the valve pyramid called "die
+charakteristische Klappenpyramide der Cystideen" (p. 3); no pores (p. 3).
+Hall's figures of "Hemicystites (subgen. Cystaster) granulatus Hall" are
+compared (p. 4). The one-piece solid calyx, attached by holdfast roots, is
+given as the genus's chief peculiarity (p. 5); twinned calyces are read as
+budding (p. 5). The second species, *C. rhizophora* from the Hemicosmites
+limestone of Wassalem, has never been found with a lid, has thicker walls
+and a stronger root apparatus, and occurs in groups of two and three
+calyces sharing a canal at the base (pp. 5–7). All originals were going
+to Lovén in Stockholm (p. 4); the 1863 Wassalem material went largely to
+the Volborth collection, now the Academy's (p. 7).
+
+Every node of the draft was written from these pages; the quoted wording
+is in the draft's notes with the page.
+
+### 2a. Woodcut captions
+
+Holzschnitt I (p. 2): "Fig. 1, 2. Cyathocystis Plautinae n. sp. von Reval,
+nat. Gr. Fig. 3. Ein Deckel von Fig. 2, vergrössert: a, Ambulacren; b,
+Interambulacralplatte; c, Mundplatte; d, Marginalplättchen; e,
+Klappenpyramide. Ausserhalb der Marginalplatten ist der Kelchrand sichtbar
+der im Versehn auch mit a bezeichnet ist. Fig. 4. Cyathocystis rhizophora
+n. sp. von Wassalem, nat. Gr."
+
+Holzschnitt II (p. 4): "Fig. 1. Ein Theil des andern Deckels von F. I, 2,
+vergrössert. Die Pyramide ist ausgefallen, bei a sieht man die innern
+Ambulacralplättchen (?). — Fig. 2, 3. Kelche der Cyathocystis Plautinae von
+Reval, ohne Deckel; bei a Verticalfugen sichtbar, nat. gr."
+
+Holzschnitt III (p. 6): "Cyathocystis rhizophora von Wassalem. Alles nat.
+Gr. Fig. 1. Ein Zwillingskelch mit deutlicher Epitheca. Fig. 2. Eine
+Kelchbasis oben mit dem Grunde der Höhlung und unten mit breiten
+Wurzelausläufern, bei a Löcher in d. Wand. Fig. 3. Ein gebogener Kelch mit
+seitlichen Verticalfugen und knotigen Wachsthumsansätzen auf den Kanten, a
+wie in vor. Fig. b, Verticalfuge. Fig. 4. Drei zusammenhängende Kelche; bei
+4 b Seitendurchschnitt, an dem der durchgehende Kanal am Grunde sichtbar
+ist."
+
+## 3. Cases for the data model
+
+**1879 or 1880.** The title page prints 1880 and the volume's Protocolle
+are those of 1879. Dames's Referat, in a Heft whose closing notice is
+dated 15 October 1879, cites the paper as "Petersburger Mineralog.
+Gesellschaft 1879" (`1879_dames`), so the article was in print by then.
+The taxa records date the names 1879 and note that Bassler 1935 and Bell
+1975 print 1880 (`cyathocystis`, `plautinae_schmidt_1880`). The source key
+should carry the year of publication (roadmap ground rules), which the
+paper does not settle: the volume as bound is 1880, the article as issued
+is 1879 on Dames's evidence. Cannot verify from these pages alone which is
+right; the draft is keyed 1880 after the title page and the header comment
+says so.
+
+**"der typischen Art" as a type designation.** The paper never prints
+"type species"; p. 7 calls *C. Plautinae* "der typischen Art" in a
+comparison of epithecae. The draft writes a `type` node on the genus naming
+*C. Plautinae*, with no `fixation`, on that phrase rather than the editor's
+inference (the Fay 1962 precedent, `inferred: [type]`,
+was for a monotypic genus with no phrase at all). Whether a passing
+"typical species" is a designation is for the owner; the alternative is
+`editorial: {inferred: [type], basis: ...}`.
+
+**One genus, two spellings and two structures in one paper.** On p. 2
+*Hemicystis* Hall and *Cystaster* Hall are listed as separate members of
+the group; on p. 4 the combination is "Hemicystites (subgen. Cystaster)
+granulatus Hall". The draft enters the p. 2 list as nodes (records
+`hemicystis` and `cystaster` both exist) and keeps the p. 4 combination in
+the `hemicystis` note, since entering it would place *Cystaster* twice, as
+a genus and as a subgenus, in one tree. The species has no record
+(`granulatus_hall_*` is absent). The parenthetical subgenus notation is the
+case the brief asks about: the tree's `taxon: hemicystites-subgenus` /
+`cystaster-subgenus` records could carry it if the owner wants the usage
+as a node.
+
+**A rankless group with a vernacular plural.** "Gruppe der Edrioasteriden"
+is neither a rank word nor a Latin name. The draft resolves it to
+`edrioasteroidea` with `citedAs: Edrioasteriden` and `auth: [Billings]`
+as printed. The dataset's `vulgarSpellingOf` records (e.g. the German
+plurals under `acalephida`) are the other way to say it: a record
+`edrioasteriden` with `lang: de`, `vulgarSpellingOf: edrioasteroidea`.
+Also, the title calls the form a Cystid while the placement puts it with
+a group "den Asteroiden näher als den Cystideen verwandt" (p. 2): both are
+kept as printed, the tension is the author's.
+
+**Abbreviated authors on a printed line.** "Agelacrinus Van." and
+"Edrioaster Bill." print the authors abbreviated. The draft keeps the
+abbreviations in `citedAs` and sets `auth` only where the surname is
+printed in full ("Hemicystis Hall", "Cystaster Hall"); `auth: [Van.]`
+would be the literal alternative, and the rule "attribution exactly as
+printed on that line" does not say which.
+
+**`rhizophora_schmidt_1889`.** This paper is the protologue of
+*rhizophora* ("n. sp.", p. 2; "die wir C. rhizophora ... nennen", p. 5).
+The record's year 1889 is printed nowhere here; the companion review of
+`1879_dames` traced it to Jaekel 1927's citation. The record should carry
+the paper's year, whichever of 1879 and 1880 the source key takes.
+
+**Substrate has no field.** "auf Callopora heterosolen Dyb. (Chaetetes
+heterosole Keys.) aufgewachsen" (p. 1) and "auf allerhand Korallen und
+Bryozoen festsitzt" (p. 5) are host statements the context cannot carry
+except in `notes`, where the draft puts them.
+
+**Specimens with no numbers and a stated destination.** As in
+`1897_whiteaves`: figured pieces, a donor, a collection, but no catalogue
+numbers and no type words. The paper names a specimen only by its figure
+("am Original von I 1", p. 5; "im Original von F. III 1", p. 7), so each
+figured piece is one `material` entry labelled by that citation ("F. I, 1")
+with no `role`; F. I, 3 and F. II, 1 are lids of the twin specimen F. I, 2
+and so are figures of it, not entries. The Reval collector and summer 1878
+sit on the context, since they are stated once for all four pieces (p. 1).
+The 1863 Wassalem lot ("mehrere Exemplare", p. 7) is one entry with the
+author as collector and the Volborth collection, now the Academy's, as
+`holder`, since `data/repositories.yaml` has no entry for either; on
+promotion that becomes a `repository`. Whether the figured *rhizophora*
+pieces are among that lot is not said. "Sämmtliche Originalstücke gehn
+noch zu Prof. Lovén nach Stockholm" (p. 4) is a statement about where the
+material was going, not a repository, and stays in `notes`.
+
+**Two woodcut numberings.** The text cites figures as "F. I, 2", "F. II
+1", "F. III 3 b"; the woodcuts are unnumbered on the page except by their
+own captions. The draft records them as `page` + `textFigures`, one entry
+per specimen with `of` naming its label, and `depicts: drawing`, since a
+woodcut is not a photograph of the specimen; whether a woodcut drawn from
+the specimen should rather be the default `specimen` is for the owner. The
+captions are in §2a above.
+
+## 4. Source record
+
+None exists. From the title and contents pages:
+
+    1880_schmidt:
+      title: Ueber Cyathocystis Plautinae, eine neue Cystideenform aus Reval
+      journal: verh-min-ges-spb   # new: Verhandlungen der Russisch-Kaiserlichen
+                                  # Mineralogischen Gesellschaft zu St. Petersburg
+      series: 2
+      volume: 15
+      pages: [1, 7]
+      pubDate: {year: 1880}       # title page; see §3 for 1879
+      authors: [schmidt]          # new author record: Schmidt, Friedrich ("Mag. Fr. Schmidt")
+
+The contents page gives article I as beginning on p. 1 and article II on
+p. 8. The author's given name is not printed beyond "Fr."; cannot verify
+dates from these pages.
+
+## 5. Uncertainties
+
+- OCR is clean enough to read every sentence; artefacts seen and corrected
+  from context: "nnd" for "und" (p. 1), "Petrafakten" (p. 1, which may be
+  the printed spelling; "Petrefakten" on p. 5), "F. 36" for "F. 3 b"
+  (p. 3), "3 6" for "3 b" (p. 7), "ans" for "aus" (p. 7). The species
+  names "Callopora heterosolen Dyb." and "Chaetetes heterosole Keys."
+  (p. 1) are transcribed as OCR'd; the epithet's ending cannot be verified.
+- The stratigraphic labels "(C₁)" and "(B)" (p. 1) are read as printed;
+  Dames's Referat gives the second species' bed as "Hemicosmitenbank ...
+  (1b)", where this paper prints "Hemicosmitenkalk" and no code.
+- Woodcut figure letters ("a", "b") are legible in the captions but not
+  reliably in the figures themselves in the OCR; the draft cites captions
+  only.
+- Nothing in the paper dates itself; the 1879/1880 question (§3) stands.
+
+## From draft
+
+Article I of the volume, pp. 1-7, "Ueber Cyathocystis Plautinae, eine neue
+Cystideenform aus Reval. Von Mag. Fr. Schmidt." (p. 1). The volume's title
+page is dated 1880; its Protocolle section covers the Society's sittings of
+1879 (contents page). The running foot of p. 1 reads "XV. 1".
+
+The text is a single description in prose with no headings, no diagnosis
+set apart and no "n. gen." notation; the two species are marked "n. sp."
+only in the captions of Holzschnitt I (p. 2). Three woodcuts in the text:
+Holzschnitt I (p. 2, figs. 1-4), II (p. 4, figs. 1-3), III (p. 6, figs. 1-4).
+The text cites them as "F. I, 2", "F. II 1", "F. III 3 b"; specimens are
+named only by their figures ("am Original von I 1", p. 5; "im Original von
+F. III 1", p. 7), so the material entries take those citations as labels.
+
+
+### Taxon edrioasteriden
+
+Printed as a group, with no rank word: "In den obenerwähnten Fundstücken
+erkannte ich bald eine neue Cystideenform aus der Verwandtschaft von
+Agelacrinus Van. im weitern Sinn, oder eine neue Gattung aus der von
+Billings aufgestellten Gruppe der Edrioasteriden ¹), zu der ausser
+Agelacrinus Van. noch Edrioaster Bill., Hemicystis Hall und Cystaster
+Hall gehören, und die nach ihm den Asteroiden näher als den Cystideen
+verwandt ist." (pp. 1-2) -- "In the finds mentioned above I soon
+recognised a new cystid form from the relationship of Agelacrinus Van.
+in the wider sense, or a new genus from the group of the Edrioasterids
+set up by Billings, to which besides Agelacrinus Van. also Edrioaster
+Bill., Hemicystis Hall and Cystaster Hall belong, and which according to
+him is more nearly related to the Asteroids than to the Cystids."
+Footnote 1 (p. 1): "Billings, Canadian organic remains. Dec. III, p. 85."
+The title calls the new form "eine neue Cystideenform" (p. 1).
+
+### Taxon hemicyst(is|ites)
+
+On p. 4 the same genus is printed "Hemicystites", with Cystaster as a
+subgenus and a species, in a comparison of figures: "Die angeführten
+Figuren gehören zu Hemicystites (subgen. Cystaster) granulatus Hall,
+der eine gewisse Analogie mit unsrer Cyathocystis zeigt." (p. 4) --
+"The figures cited belong to Hemicystites (subgen. Cystaster)
+granulatus Hall, which shows a certain analogy with our Cyathocystis."
+The figures cited are "Hall (report of New York state museum pl. VI
+F. 1, 2, 3)" (p. 4).
+
+### Taxon cyathocystis
+
+"Ich nenne die Gattung Cyathocystis, nach ihrer becherartigen Form und
+die Art C. Plautinae." (p. 2) -- "I name the genus Cyathocystis, after
+its cup-like form, and the species C. Plautinae." No diagnosis is set
+apart; the description runs pp. 2-5 for the first species and pp. 5-7
+for the second. The character the author singles out for the genus:
+"Die grösste Eigenthümlichkeit unsrer Cyathocystis, durch die sie sich
+vor allen ihren Verwandten auszeichnet, bleibt der aus Einem Stück
+bestehende solide Kelch, der auf andern Petrefakten (meist Chaetetiden)
+parasitisch aufsitzt und auf ihnen durch kurze Haftwurzeln (F. II, 3)
+befestigt ist." (p. 5) -- "The greatest peculiarity of our
+Cyathocystis, by which it is distinguished from all its relatives,
+remains the solid calyx consisting of one piece, which sits
+parasitically on other fossils (mostly Chaetetids) and is fixed to them
+by short holdfast roots." "Von regelmässigen Poren, wie bei den meisten
+Cystideen, ist bei Cyathocystis Nichts zu sehn." (p. 3) -- "Of regular
+pores, as in most Cystids, nothing is to be seen in Cyathocystis."

@@ -1,6 +1,6 @@
 # DRAFT -- for human audit only, not ready to commit.
 #
-# NEW TAXA RECORDS NEEDED: none -- cyathocystis, plautinae_schmidt_1879,
+# NEW TAXA RECORDS NEEDED: none -- cyathocystis, plautinae_schmidt.c.f_1879,
 # rhizophora_schmidt_1889, agelacrinus, edrioaster, hemicystis and cystaster
 # all already exist in data/taxa.yaml.
 
@@ -51,7 +51,7 @@ taxonomies:
     Whether that tension is Schmidt's own hedge or Dames's editorial gloss
     cannot be told from a third-person review.
   children:
-  - taxon: plautinae_schmidt_1879
+  - taxon: plautinae_schmidt.c.f_1879
     citedAs: Cyathocystis Plautinae
     pages: 1001
     contexts:
@@ -72,7 +72,7 @@ taxonomies:
       after her." No catalogue number, repository or specimen count is
       printed; this is the only collecting information given, an eponym
       note rather than a specimen record.
-  - taxon: rhizophora_schmidt_1889
+  - taxon: rhizophora_schmidt.c.f_1879
     citedAs: Cyathocystis rhizophora
     auth: [Schmidt]
     year: 1879

@@ -224,6 +224,7 @@
   "savage": "Savage",
   "say": "Say",
   "schlotheim": "Schlotheim",
+  "schmidt.c.f": "Schmidt",
   "schuchert": "Schuchert",
   "seibert.r": "Seibert",
   "selden": "Selden",
@@ -5703,6 +5704,43 @@
    "material": {},
    "tree": false
   },
+  "1879_schmidt.c.f": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Schmidt"
+    ],
+    "in": "Verhandlungen der Russisch-Kaiserlichen Mineralogischen Gesellschaft\nzu St. Petersburg\n",
+    "number": "Adv. Pr.",
+    "pages": [
+     1,
+     7
+    ],
+    "series": 2,
+    "title": "Ueber Cyathocystis Plautinae,eine neue Cystideenform aus Reval",
+    "volume": 15,
+    "year": 1879
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1879_zittel": {
    "acts": {},
    "audit": {
@@ -5784,6 +5822,42 @@
     "title": null,
     "volume": "II",
     "year": 1879
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1880_schmidt.c.f": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Schmidt"
+    ],
+    "in": "Verhandlungen der Russisch-Kaiserlichen Mineralogischen Gesellschaft\nzu St. Petersburg\n",
+    "pages": [
+     1,
+     7
+    ],
+    "series": 2,
+    "title": "Ueber Cyathocystis Plautinae,eine neue Cystideenform aus Reval",
+    "volume": 15,
+    "year": 1880
    },
    "claims": {},
    "coverage": {
@@ -9220,7 +9294,7 @@
    },
    "claims": {
     "act": 4,
-    "editorial": 2,
+    "editorial": 4,
     "placement": 18,
     "usage": 19
    },
@@ -24732,12 +24806,12 @@
   "platys_raymond_1915": [
    "1976_bell.b.m"
   ],
-  "plautinae_schmidt_1879": [
+  "plautinae_schmidt.c.f_1879": [
    "1966_regnéll",
    "1975_bell.b.m",
    "1983_bockelie_paul.c.r.c"
   ],
-  "plautini_schmidt_1880": [
+  "plautini_schmidt.c.f_1879": [
    "1935_bassler"
   ],
   "pleiadae_sinclair_bolton_1965": [
@@ -25548,7 +25622,7 @@
    "1998_dean.j_smith.a.b",
    "2020_zamora_sprinkle_sumrall"
   ],
-  "rhizophora_schmidt_1889": [
+  "rhizophora_schmidt.c.f_1879": [
    "1975_bell.b.m"
   ],
   "rhizophysa": [

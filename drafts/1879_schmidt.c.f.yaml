@@ -1,0 +1,165 @@
+# DRAFT -- for human audit only, not ready to commit.
+#
+# RECORDS NEEDED:
+# - repository: the "Volborth'sche Sammlung (jetzt der Akademie der
+#   Wissenschaften gehörig)" (p. 7) has no entry in data/repositories.yaml
+#   (neither the Academy of Sciences, St. Petersburg, nor the Volborth
+#   collection within it); the entry below names it as `holder` until one
+#   exists. No catalog numbers are printed, so no `prefixes` map.
+
+
+taxonomies:
+- taxon: cystideen
+  citedAs: eine neue Cystideenform
+  pages: 1
+  children:
+  - taxon: cyathocystis
+    citedAs: Cyathocystis
+    new: true
+    altPlacements:
+    - taxon: edrioasteriden
+      citedAs: Billings aufgestellten Gruppe der Edrioasteriden
+      rank: Group
+      pages: 1
+    pages:
+    - [1, 7]
+    type:
+      taxon: plautinae_schmidt.c.f_1879
+      fixation: originalDesignation
+      pages: 7
+      notes: >
+        C. rhizophora is contrasted with "the typical species", and
+        C. plautinae is the only other species described.
+    children:
+    - taxon: plautinae_schmidt.c.f_1879
+      new: true
+      citedAs: Cyathocystis Plautinae n. sp.
+      pages: 2
+      notes: The "n. sp." listing is the figure captions.
+      material:
+      - label: 'F. I, 1'
+        context: reval
+      - label: 'F. I, 2'
+        context: reval
+      - label: 'F. II, 2'
+        context: reval
+      - label: 'F. II, 3'
+        context: reval
+      illustrations:
+      - page: 2
+        textFigures: 1
+        of: 'F. I, 1'
+        depicts: drawing
+        notes: Holzschnitt I
+      - page: 2
+        textFigures: [2, 3]
+        of: 'F. I, 2'
+        depicts: drawing
+        notes: Holzschnitt I
+      - page: 4
+        textFigures: 1
+        of: 'F. I, 2'
+        depicts: drawing
+        notes: Holzschnitt II
+      - page: 4
+        textFigures: 2
+        of: 'F. II, 2'
+        depicts: drawing
+        notes: Holzschnitt II
+      - page: 4
+        textFigures: 3
+        of: 'F. II, 3'
+        depicts: drawing
+        notes: Holzschnitt II
+      contexts:
+        reval:
+          unit:
+          - Echinosphaerites bed
+          - Estonian Glint
+          location:
+          - Reval
+          collectedBy: Frau Generalin Plautin
+          collectedDate: Sommer 1878
+          notes: |
+            Ech. bed is uppermost bed of Estonian Glint and lies on the
+            Vaginatus or Orthoceren limestone.  Ech. bed corresponds
+            "for the most part" to the Swedish Chasmps limestone.
+    - taxon: rhizophora_schmidt.c.f_1879
+      new: true
+      citedAs: Cyathocystis rhizophora n. sp.
+      pages: [2, [5, 7]]
+      material:
+      - label: 'F. I, 4'
+        context: wassalem
+      - label: 'F. III, 1'
+        context: wassalem
+      - label: 'F. III, 2'
+        context: wassalem
+      - label: 'F. III, 3'
+        context: wassalem
+      - label: 'F. III, 4'
+        context: wassalem
+      - label: mehrere Exemplare, 1863
+        collectedBy: the author
+        collectedDate: '1863'
+        holder: Volborth'sche Sammlung (jetzt der Akademie der Wissenschaften gehörig)
+        context: wassalem
+        notes: |
+          "ich sammelte damals mehrere Exemplare, die grösstentheils in die
+          Volborth'sche Sammlung (jetzt der Akademie der Wissenschaften
+          gehörig) mit meiner ganzen damaligen Ausbeute abgeliefert wurden"
+          (p. 7) -- "I collected several specimens at that time, which for
+          the most part were delivered to the Volborth collection (now
+          belonging to the Academy of Sciences) with my whole yield of that
+          time." No count; whether the figured pieces are among them is not
+          said.
+      illustrations:
+      - page: 2
+        textFigures: 4
+        of: 'F. I, 4'
+        depicts: drawing
+        notes: Holzschnitt I, "nat. Gr." (p. 2).
+      - page: 6
+        textFigures: 1
+        of: 'F. III, 1'
+        depicts: drawing
+        notes: Holzschnitt III, "Alles nat. Gr." (p. 6).
+      - page: 6
+        textFigures: 2
+        of: 'F. III, 2'
+        depicts: drawing
+      - page: 6
+        textFigures: 3
+        of: 'F. III, 3'
+        depicts: drawing
+      - page: 6
+        textFigures: 4
+        of: 'F. III, 4'
+        depicts: drawing
+        notes: Fig. 4 b, a side section, is cited in the text as "F. III 4 b" (p. 6).
+      contexts:
+        wassalem:
+          unit:
+          - Hemicosmitenkalk
+          - Jewesche Schicht
+          location:
+          - Wassalem
+          notes: |
+            "aus dem Hemicosmitenkalk von Wassalem (in der Jeweschen Schicht
+            Estlands)" (p. 5); "aus dem Hemicosmitenkalk von Wassalem (der
+            obersten Stufe der Jeweschen Schicht angehörig)" (p. 7) -- "from
+            the Hemicosmites limestone of Wassalem (belonging to the uppermost
+            stage of the Jewe bed)". "Aehnliche Stücke wurden später auch bei
+            Reval gefunden und nicht genauer beachtet" (p. 7) -- "Similar
+            pieces were later also found near Reval and not examined more
+            closely"; which species those are is not said.
+      notes: |
+        "die wir C. rhizophora (F. III, 1-4 und F. I, 4) nennen nach der
+        stärkern Entwicklung ihres Wurzelapparats, mit dem sie auf allerhand
+        Korallen und Bryozoen festsitzt" (p. 5) -- "which we name C.
+        rhizophora after the stronger development of its root apparatus,
+        with which it sits fast on all kinds of corals and bryozoans." "die
+        bisher noch nie mit dem Deckel gefunden wurde" (p. 6) -- "which has so
+        far never been found with the lid." Known to the author "schon seit
+        längerer Zeit (seit 1863)" (p. 7). No year is printed for the name
+        beyond the volume's.
