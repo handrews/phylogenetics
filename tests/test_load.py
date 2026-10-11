@@ -142,6 +142,27 @@ def test_load_fails_on_logged_errors(monkeypatch):
   assert data['trees'] == {} and roots == {}
 
 
+@pytest.mark.parametrize(
+  'field, relation',
+  [
+    ('altSpellingOf', 'alt spelling'),
+    ('vulgarSpellingOf', 'vulgar spelling'),
+    ('altRankOf', 'alt rank'),
+  ],
+)
+def test_an_unknown_spelling_or_rank_target_is_named(field, relation, caplog):
+  # The record a taxon is a spelling or rank of must exist: the error names
+  # both keys and ends the load, as a file that fails the schema does.
+  from phylohist.loader import LoadError
+  from phylohist.loader.taxa import Taxon
+
+  with caplog.at_level(logging.ERROR, logger='phylohist'), pytest.raises(LoadError):
+    Taxon.add({'name': 'Testum', field: 'nobody_nowhere'}, 'testum')
+  [message] = [r.getMessage() for r in caplog.records if r.levelno == logging.ERROR]
+  assert message == f'Taxon testum {relation} of unknown nobody_nowhere'
+  assert Taxon.get('testum') is None
+
+
 def test_counting_errors_counts_only_errors():
   from phylohist.loader import counting_errors
 

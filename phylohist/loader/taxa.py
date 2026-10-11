@@ -2,6 +2,7 @@ import collections
 import logging
 from functools import cached_property, reduce
 
+from .io import LoadError
 from .research import Author, Source
 
 logger = logging.getLogger(__name__)
@@ -212,8 +213,7 @@ class Taxon:
     logger.debug(f'  Processing taxon "{taxon_key}"...')
 
     if alt_key := taxon_data.get('altSpellingOf'):
-      if not (alt := Taxon.get(alt_key)):
-        raise ValueError(f'Taxon {taxon_key} alt spelling of unknown {alt_key}')
+      alt = self._known(alt_key, 'alt spelling')
       self._alt = alt
       self._rank = alt.rank
       if 'auth' in self._data or 'authority' in self._data:
@@ -225,8 +225,7 @@ class Taxon:
           self._data[field] = alt._data[field]
 
     elif latin_key := taxon_data.get('vulgarSpellingOf'):
-      if not (latin := Taxon.get(latin_key)):
-        logger.error(f'Taxon {taxon_key} vulgar spelling of unknown {alt_key}')
+      latin = self._known(latin_key, 'vulgar spelling')
       self._alt = latin
       self._rank = latin.rank
       if 'auth' in self._data or 'authority' in self._data:
@@ -235,8 +234,7 @@ class Taxon:
         self._authority = latin.authority
 
     elif alt_key := taxon_data.get('altRankOf'):
-      if not (alt := Taxon.get(alt_key)):
-        logger.error(f'Taxon {taxon_key} alt rank of unknown {alt_key}')
+      alt = self._known(alt_key, 'alt rank')
       self._alt = alt
       if 'name' in self._data:
         self._name = self._data['name']
@@ -261,6 +259,16 @@ class Taxon:
       self._check_rank()
 
     logger.debug(f'    ...all authorities for "{taxon_key}" processed')
+
+  def _known(self, target_key, relation):
+    """The record this one is a `relation` of, which `_load_taxa` loads
+    first; an unknown key is logged and ends the load, as a file that
+    fails the schema does."""
+    target = Taxon.get(target_key)
+    if target is None:
+      logger.error(f'Taxon {self._key} {relation} of unknown {target_key}')
+      raise LoadError(f'taxon {self._key} is a {relation} of an unknown record')
+    return target
 
   def _check_expected_taxon(self, expected):
     if self._key == expected:
