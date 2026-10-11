@@ -624,7 +624,7 @@ property.
 | value | count |
 |---|---|
 | `'species'` | 236 |
-| `'Order'` | 213 |
+| `'Order'` | 212 |
 | `'Family'` | 177 |
 | `'genus'` | 132 |
 | `'Class'` | 115 |
@@ -637,7 +637,7 @@ property.
 | `'Phylum'` | 14 |
 | `'section'` | 14 |
 | `'Suborder'` | 14 |
-| `'Group'` | 10 |
+| `'Group'` | 11 |
 | `'Grade'` | 9 |
 | `'Division'` | 7 |
 | `'Kingdom'` | 6 |
