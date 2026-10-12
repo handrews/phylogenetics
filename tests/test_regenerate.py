@@ -1,4 +1,5 @@
-"""`regenerate` rewrites every derived file and reports any step that failed."""
+"""`regenerate` rewrites every derived file and reports any step that failed;
+`prune_expected` keeps the expected-warnings file to the warnings produced."""
 
 import pathlib
 import subprocess
@@ -20,12 +21,8 @@ def test_regenerate_runs_every_generator(monkeypatch):
   calls = []
   monkeypatch.setattr(regenerate.subprocess, 'run', _fake_run(calls))
   assert regenerate.main() == 0
-  assert [c[0] for c in calls] == [sys.executable] * 3
-  assert [pathlib.Path(c[1]).name for c in calls] == [
-    'claims.py',
-    'schema_audit.py',
-    'expected_warnings.py',
-  ]
+  assert [c[0] for c in calls] == [sys.executable] * 2
+  assert [pathlib.Path(c[1]).name for c in calls] == ['claims.py', 'schema_audit.py']
   assert calls[1][2:] == ['--markdown', str(regenerate.SCRIPTS / 'schema-usage.md')]
 
 
@@ -33,4 +30,23 @@ def test_regenerate_runs_every_step_when_one_fails(monkeypatch):
   calls = []
   monkeypatch.setattr(regenerate.subprocess, 'run', _fake_run(calls, failing='claims.py'))
   assert regenerate.main() == 1
-  assert len(calls) == 3
+  assert len(calls) == 2
+
+
+def test_prune_expected_drops_stale_lines_and_adds_new_ones_only_when_asked(tmp_path):
+  path = tmp_path / 'expected.txt'
+  regenerate.write_expected({'kept', 'stale'}, path)
+  assert regenerate.read_expected(path) == {'kept', 'stale'}
+  assert regenerate.prune_expected({'kept', 'new'}, path) == ({'stale'}, {'new'})
+  assert regenerate.read_expected(path) == {'kept'}
+  assert regenerate.prune_expected({'kept', 'new'}, path, add=True) == (set(), {'new'})
+  assert regenerate.read_expected(path) == {'kept', 'new'}
+  assert path.read_text().startswith(regenerate.EXPECTED_HEADER)
+  assert regenerate.read_expected(tmp_path / 'missing.txt') == set()
+
+
+def test_the_committed_expected_warnings_have_the_header_and_sorted_lines():
+  text = regenerate.EXPECTED_WARNINGS.read_text()
+  assert text.startswith(regenerate.EXPECTED_HEADER)
+  lines = text[len(regenerate.EXPECTED_HEADER) :].splitlines()
+  assert lines == sorted(lines)

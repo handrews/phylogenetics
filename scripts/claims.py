@@ -22,6 +22,11 @@ different specimen in two sources (roadmap F5), a report that neither
 counts towards that exit status nor fails a test. `--errors-only` holds the
 load's log until it ends, then shows only its errors when there are any
 and its warnings otherwise, so that the errors are not lost among them.
+A full run over `data/` into `claims/` also drops from
+`tests/expected-warnings.txt` the warnings the load no longer produces
+(`phylohist.regenerate.prune_expected`), so that `regenerate` loads the
+data once; a new warning is added only with `scripts/expected_warnings.py
+--add`.
 """
 
 import argparse
@@ -37,6 +42,7 @@ from phylohist.claims import extract, manifest, names_index  # noqa: E402
 from phylohist.loader import LoadError, counting_errors, load  # noqa: E402
 from phylohist.loader.io import DATA_DIR  # noqa: E402
 from phylohist.loader.material import repository_registry  # noqa: E402
+from phylohist.regenerate import EXPECTED_WARNINGS, prune_expected  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DEFAULT_OUT = ROOT / 'claims'
@@ -208,6 +214,17 @@ class _Held(logging.Handler):
 
 
 @contextlib.contextmanager
+def _attached(handler):
+  """A block whose records the package logger also hands to `handler`."""
+  package = logging.getLogger('phylohist')
+  package.addHandler(handler)
+  try:
+    yield handler
+  finally:
+    package.removeHandler(handler)
+
+
+@contextlib.contextmanager
 def _holding(enabled):
   """A block whose log records are shown, on leaving it, as `--errors-only`
   asks. The package logger prints its own records (every INFO line too)
@@ -258,6 +275,9 @@ def main(argv):
     action='store_true',
     help='show only the load errors when there are any, else its warnings',
   )
+  # The expected-warnings file to prune; by default the committed one, and
+  # only on a full run over data/ into claims/.
+  parser.add_argument('--expected', type=pathlib.Path, help=argparse.SUPPRESS)
   args = parser.parse_args(argv)
 
   out = args.out.resolve()
@@ -267,7 +287,7 @@ def main(argv):
   # The package logger prints its own records (phylohist/__init__.py); a
   # root handler would print each of them a second time.
   failure = None
-  with _holding(args.errors_only), counting_errors() as errors:
+  with _holding(args.errors_only), counting_errors() as errors, _attached(_Held()) as logged:
     try:
       _, roots = load(drafts=args.draft, tolerate=args.tolerate, data_dir=args.data)
     except LoadError as exc:
@@ -283,6 +303,22 @@ def main(argv):
 
   total = sum(len(c) for c in claims_by_source.values())
   print(f'{total} claims from {len(claims_by_source)} sources -> {out}')
+
+  expected = args.expected
+  if expected is None and full and not args.draft and out == DEFAULT_OUT.resolve():
+    if args.data.resolve() == DATA_DIR.resolve():
+      expected = EXPECTED_WARNINGS
+  if expected is not None:
+    if errors.count:
+      print(f'{expected.name} is left as it is: the load logged errors', file=sys.stderr)
+    else:
+      produced = {r.getMessage() for r in logged.records if r.levelno == logging.WARNING}
+      stale, new = prune_expected(produced, expected)
+      print(f'{len(stale)} stale expected warnings removed from {expected.name}')
+      if new:
+        print(
+          f'{len(new)} new warnings not expected; add them with scripts/expected_warnings.py --add'
+        )
   if errors.count:
     print(f'{errors.count} integrity errors while loading (tolerated)', file=sys.stderr)
     return 1

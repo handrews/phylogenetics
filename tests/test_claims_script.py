@@ -1,9 +1,11 @@
 """`report_inconsistencies` in scripts/claims.py: the explanation it prints
-for each kind of manifest inconsistency row, on a synthetic tree; and
-`--errors-only`, over a load that logs what the test says."""
+for each kind of manifest inconsistency row, on a synthetic tree;
+`--errors-only`, over a load that logs what the test says; and the pruning
+of the expected-warnings file from the same load."""
 
 import logging
 
+from phylohist import regenerate
 from phylohist.claims import extract
 from phylohist.loader.research import Source
 from phylohist.loader.taxa import Tree
@@ -142,3 +144,43 @@ def test_errors_only_shows_the_errors_when_there_are_any(monkeypatch, caplog, tm
 
 def test_errors_only_shows_the_warnings_when_there_are_no_errors(monkeypatch, caplog, tmp_path):
   assert _run(monkeypatch, caplog, tmp_path, ['--errors-only'], error=False) == ['a warning']
+
+
+def _prune_run(monkeypatch, tmp_path, *flags, error=False):
+  """Run the script over a load that logs 'a warning' (and an error when
+  `error`), pruning an expected-warnings file that lists 'a warning' and
+  'stale'; the exit status and the file's lines afterwards."""
+
+  def fake_load(drafts=False, tolerate=False, **_):
+    log = logging.getLogger('phylohist.loader.load')
+    log.warning('a warning')
+    if error:
+      log.error('an error')
+    return {}, {}
+
+  monkeypatch.setattr(claims_script, 'load', fake_load)
+  expected = tmp_path / 'expected.txt'
+  regenerate.write_expected({'a warning', 'stale'}, expected)
+  argv = ['--out', str(tmp_path / 'claims'), '--expected', str(expected), *flags]
+  return claims_script.main(argv), regenerate.read_expected(expected)
+
+
+def test_a_run_drops_the_expected_warnings_the_load_no_longer_produces(
+  monkeypatch, tmp_path, capsys
+):
+  status, lines = _prune_run(monkeypatch, tmp_path)
+  assert status == 0 and lines == {'a warning'}
+  assert '1 stale expected warnings removed from expected.txt' in capsys.readouterr().out
+
+
+def test_a_load_with_errors_leaves_the_expected_warnings(monkeypatch, tmp_path, capsys):
+  status, lines = _prune_run(monkeypatch, tmp_path, '--tolerate', error=True)
+  assert status == 1 and lines == {'a warning', 'stale'}
+  assert 'expected.txt is left as it is' in capsys.readouterr().err
+
+
+def test_a_run_elsewhere_leaves_the_committed_expected_warnings(monkeypatch, caplog, tmp_path):
+  # Only the full run into claims/ prunes the committed file by default.
+  before = regenerate.EXPECTED_WARNINGS.read_text()
+  _run(monkeypatch, caplog, tmp_path, [], error=False)
+  assert regenerate.EXPECTED_WARNINGS.read_text() == before

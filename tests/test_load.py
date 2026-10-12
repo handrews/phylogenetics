@@ -21,7 +21,7 @@ import warnings
 
 import pytest
 
-from tests import support
+from phylohist import regenerate
 
 EXPECTED_WARNINGS_PATH = pathlib.Path(__file__).parent / 'expected-warnings.txt'
 
@@ -44,7 +44,7 @@ def test_expected_warnings(production):
   if os.getenv('PHYLOHIST_DRAFTS'):
     pytest.skip('drafts loaded; the warning snapshot covers data/ only')
   actual = {r.getMessage() for r in production.records if r.levelno == logging.WARNING}
-  expected = support.script('expected_warnings').read_expected(EXPECTED_WARNINGS_PATH)
+  expected = regenerate.read_expected(EXPECTED_WARNINGS_PATH)
 
   stale = expected - actual
   if stale:
