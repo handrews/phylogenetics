@@ -1,26 +1,28 @@
 taxonomies:
-- notes: From a paragraph in an abstract.  Higher classification assumed.
-  taxon: edrioasteroidea
+- notes: From a paragraph in an abstract.
+  taxon: isorophidae
+  citedAs: Isorophidae Bell, 1976
   children:
-  - taxon: isorophida
+  - taxon: savagella
+    moved:
+      taxon: cyclocystoididae
+      editorial:
+        inferred: [taxon]
+        basis: >
+          Source says "transferred from the cyclocystoids" and the
+          family Cyclocystoididae is the only plausible parent
+          for Savagella based on the 1967 Treatise and this
+          abstract's note that both species had most recently been
+          under the type genus of that family..
     children:
-    - taxon: isorophina
-      children:
-      - taxon: isorophidae
-        children:
-        - taxon: savagella
-          moved:
-            taxon: cyclocystoididae
-          children:
-          - taxon: illinoisensis_miller.s.a_gurley_1895
-            synonyms:
-            - taxon: illinoisensis_miller.s.a_gurley_1895
-              parents:
-              - taxon: cyclocystoides
-              - taxon: cyclocystoididae
-              - taxon: cyclocystoidea
-            - taxon: ornatus_savage_1917
-              parents:
-              - taxon: cyclocystoides
-              - taxon: cyclocystoididae
-              - taxon: cyclocystoidea
+    - taxon: illinoisensis_miller.s.a_gurley_1895
+      recombined: true
+      moved:
+        taxon: cyclocystoides
+      synonyms:
+      - taxon: illinoisensis_miller.s.a_gurley_1895
+        parents:
+        - taxon: cyclocystoides
+      - taxon: ornatus_savage_1917
+        parents:
+        - taxon: cyclocystoides
