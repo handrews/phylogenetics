@@ -119,6 +119,7 @@ class Authority:
           and not (a.surname == 'Klein' and self._year == 1778)
           and not (a.surname == 'Linnaeus' and self._year == 1790)
           and not (a.surname == 'Forsskål' and self._year == 1775)
+          and not (a.surname == 'Spencer' and self._year == 1966)
         ):
           logger.error(
             f'Source {self} year {self._year} too far outside of {a} lifespan!',
