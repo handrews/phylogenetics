@@ -470,7 +470,7 @@ amphibia:
   notes: >
     Linnaeus included reptiles and some fish in his Amphibia.
     Gray 1825 is credited with a rigorous redefinition of Amphibia with
-    proper use of Latin, while de Blainville 1816 had previously
+    proper use of Latin, while blainville 1816 had previously
     narrowed Linnaeus's taxon to the modern concept, but in French,
     which Macleay 1821 latinized. Latrielle published a similar concept
     later in 1825 in Familles naturelles du règne animal but omitted
@@ -1060,7 +1060,7 @@ asteriadae-order:
   notes: |
     There is some confusion about this taxon as order vs family, and whether
     it was re-ranked to the modern similarly-spelled family, or re-spelled
-    to Asteroidea, although that is always credited to de Blainville.
+    to Asteroidea, although that is always credited to blainville.
 asteriadae-gen_sowerby.g.b_1825:
   name: null
   rank: genus
@@ -1077,12 +1077,12 @@ asterizans_leske_1778:
     source: 1778_leske
 asterocrinus:
   name: Asterocrinus
-  auth: [Münster]
+  auth: münster
   year: 1839
 asteroidea:
   name: Asteroidea
   rank: Class
-  auth: [de Blainville]
+  auth: [blainville]
   year: 1830
 asteroidea-subclass:
   rank: Subclass
@@ -1093,7 +1093,7 @@ asteroidea-order:
 asteroids:
   name: Asteroids
   rank: Group
-  auth: [de Blainville]
+  auth: [blainville]
   year: 1830
 asterozoa:
   name: Asterozoa
@@ -6281,7 +6281,7 @@ holothuria-order:
 holothuroidea:
   name: Holothuroidea
   rank: Class
-  auth: [de Blainville]
+  auth: [blainville]
   year: 1834
 holothuroidea-genus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999:
   name: null
