@@ -1550,7 +1550,7 @@ taxonomies:
                 pars: true
                 auth: [Harker, Hutchinson]
                 year: 1953
-              - openTaxon: eocrinus?-sp_caster_pope_1960
+              - openTaxon: eocrinus?-sp_caster_pope.j.k_1960
                 parents:
                 - taxon: eocrinus
                 provisional: true

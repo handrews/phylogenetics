@@ -769,7 +769,10 @@ pompeckj:
   given: Josef Felix
   birth: 1867
   death: 1930
-pope:
+pope.j.k:
+  surname: Pope
+  given: John K.
+pope.j.p:
   surname: Pope
   given: John Paul
 prokop:

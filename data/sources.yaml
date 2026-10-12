@@ -2945,6 +2945,51 @@
   - kolata
   identifiers:
     doi: 10.1017/S0022336000061734
+1975_parsley:
+  title: >
+    Systematics and functional morphology of Columbocystis, a Middle
+    Ordovician “Cystidean” (Echinodermata) of uncertain affinities
+  journal: bullamp
+  volume: 67
+  number: 287
+  pages:
+  - 349
+  - 361
+  pubDate:
+    year: 1975
+  authors:
+  - parsley
+1975_parsley_mintz:
+  title: >
+    North American Paracrinoidea: Ordovician Echinodermata
+  journal: bullamp
+  volume: 68
+  number: 288
+  pages:
+  - 1
+  - 116
+  plates:
+  - 1
+  - 13
+  pubDate:
+    year: 1975
+  authors:
+  - parsley
+  - mintz
+1975_pope.j.k:
+  title: >
+    Evidence for relating the Lepidocoleidae, machaeridian echinoderms,
+    to the mitrate carpoids
+  journal: bullamp
+  volume: 67
+  number: 287
+  pages:
+  - 385
+  - 406
+  pubDate:
+    year: 1975
+  authors:
+  - pope.j.k
 1976_bell.b.m:
   title: A Study of North American Edrioasteroidea
   journal: nysm
@@ -3905,7 +3950,7 @@ inprep_sprinkle_strimple:
     accepted: 2000-03-30
   authors:
   - grigo
-2000_sumrall_garbisch_pope:
+2000_sumrall_garbisch_pope.j.p:
   title: The Systematics of Postibullinid Edrioasteroids
   journal: jofpaleo
   volume: 74
@@ -3919,7 +3964,7 @@ inprep_sprinkle_strimple:
   authors:
   - sumrall
   - garbisch
-  - pope
+  - pope.j.p
   identifiers:
     jstor: 1306885
 2001_rozhnov_fedorov:

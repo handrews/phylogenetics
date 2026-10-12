@@ -333,10 +333,10 @@ akera:
   name: Akera
   authority:
     source: 1776_müller.o.f
-alabamensis_sumrall_garbisch_pope_2000:
+alabamensis_sumrall_garbisch_pope.j.p_2000:
   name: alabamensis
-  auth: [sumrall, Garbisch, Pope]
-  year: 2000
+  authority:
+    source: 2000_sumrall_garbisch_pope.j.p
 alanisicystis:
   name: Alanisicystis
   authority:
@@ -4691,10 +4691,10 @@ eocrinus:
   auth: [jaekel]
   year: 1918
   notes: Junior synonym of Gogia, yet type genus of Eocrinidae
-eocrinus?-sp_caster_pope_1960:
+eocrinus?-sp_caster_pope.j.k_1960:
   name: null
   rank: species
-  auth: [Caster, Pope]
+  auth: [caster, pope.j.k]
   year: 1960
 eocystidae:
   name: Eocystidae
@@ -8253,10 +8253,10 @@ murinus_linnaeus_1758:
   authority:
     source: 1758_linnaeus
   citedAs: murinus. 7.
-murphyi_sumrall_garbisch_pope_2000:
+murphyi_sumrall_garbisch_pope.j.p_2000:
   name: murphyi
-  auth: [sumrall, Garbisch, Pope]
-  year: 2000
+  authority:
+    source: 2000_sumrall_garbisch_pope.j.p
 mus:
   name: Mus
   rank: genus
@@ -9050,22 +9050,22 @@ paramaecium:
 parapostibulla:
   name: Parapostibulla
   authority:
-    source: 2000_sumrall_garbisch_pope
-parapostibulla-cf-hybolopus_sumrall_garbisch_pope_2000:
+    source: 2000_sumrall_garbisch_pope.j.p
+parapostibulla-cf-hybolopus_sumrall_garbisch_pope.j.p_2000:
   name: null
   rank: species
   authority:
-    source: 2000_sumrall_garbisch_pope
-parapostibulla-sp-a_sumrall_garbisch_pope_2000:
+    source: 2000_sumrall_garbisch_pope.j.p
+parapostibulla-sp-a_sumrall_garbisch_pope.j.p_2000:
   name: null
   rank: species
   authority:
-    source: 2000_sumrall_garbisch_pope
-parapostibulls-sp-indeterminate_sumrall_garbisch_pope_2000:
+    source: 2000_sumrall_garbisch_pope.j.p
+parapostibulls-sp-indeterminate_sumrall_garbisch_pope.j.p_2000:
   name: null
   rank: species
   authority:
-    source: 2000_sumrall_garbisch_pope
+    source: 2000_sumrall_garbisch_pope.j.p
 pararotadiscus:
   name: Pararotadiscus
   authority:
@@ -9855,7 +9855,7 @@ postibullinae:
   name: Postibullinae
   rank: Subfamily
   authority:
-    source: 2000_sumrall_garbisch_pope
+    source: 2000_sumrall_garbisch_pope.j.p
 postpetalus_müller.p_hahn_2010:
   name: postpetalus
   authority:
