@@ -8,24 +8,33 @@ taxonomies:
     used "Echinodermata".
   children:
   - taxon: pelmatozoa
+    rank: Subphylum
     children:
     - taxon: carpoidea
+      rank: Class
       synonyms:
       - taxon: heterostelea
       children:
-      - taxon: homostelea-subclass
+      - taxon: homostelea
+        rank: Subclass
         new: true
         children:
-        - taxon: cincta-order
+        - taxon: cincta
+          rank: Order
         - taxon: digitata
-      - taxon: homoiostelea-subclass
+          rank: Order
+      - taxon: homoiostelea
+        rank: Subclass
         new: true
         children:
-        - taxon: stylophora-superorder
+        - taxon: stylophora
+          rank: Superorder
           new: true
           children:
           - taxon: cornuta
+            rank: Order
           - taxon: mitrata
+            rank: Order
             children:
             - taxon: placocystida
               children:
@@ -65,9 +74,11 @@ taxonomies:
                   children:
                   - taxon: australocystis
         - taxon: astylophora
+          rank: Superorder
           new: true
           children:
-          - taxon: soluta-order
+          - taxon: soluta
+            rank: Order
             notes: emend. 1921
             children:
             - taxon: dendrocystitidae

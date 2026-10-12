@@ -1,13 +1,25 @@
 taxonomies:
 - taxon: echinodermata
-  auth: [Fleming] # WTF????
-  year: 1828
+  citedAs: Phylum ECHINODERMATA Fleming, 1828
+  rank: Phylum
+  authority:
+    source: 1828_fleming.j
+  pages: 14
   children:
   - taxon: homalozoa
+    citedAs: Subphylum HOMALOZOA Whitehouse, 1941
+    rank: Subphylum
+    pages: 14
     children:
     - taxon: homoiostelea
+      citedAs: Class HOMOIOSTELEA Gill and Caster, 1960
+      rank: Class
+      pages: 14
       children:
-      - taxon: soluta-order
+      - taxon: soluta
+        citedAs: Order SOLUTA Jaekel, 1901
+        rank: Order
+        pages: 14
         children:
         - taxon: belemnocystitidae
           children:

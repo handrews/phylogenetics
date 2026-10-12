@@ -12,10 +12,19 @@ taxonomies:
   pages: 1192
   children:
   - taxon: blastozoa
+    citedAs: Subphylum BLASTOZOA Sprinkle, 1973
+    rank: Subphylum
+    pages: 1192
     children:
-    - taxon: soluta-class
+    - taxon: soluta
+      citedAs: Class SOLUTA Jaekel, 1901
+      rank: Class
+      pages: 1192
       children:
       - taxon: syringocrinida
+        citedAs: Order SYRINGOCRINIDA Parsley & Caster, 1965
+        rank: Order
+        pages: 1192
         children:
         - taxon: pahvanticystis
           new: true

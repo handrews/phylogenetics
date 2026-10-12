@@ -1,29 +1,58 @@
 taxonomies:
 - taxon: edrioasteroidea
+  citedAs: Class Edrioasteroidea Billings, 1858
+  rank: Class
+  pages: 162
   children:
   - taxon: stromatocystitida
+    citedAs: Order Stromatocystitida n.o.
+    rank: Order
     new: true
+    pages: 162
     children:
     - taxon: stromatocystitidae
+      citedAs: Family Stromatocystitidae Bassler, 1935
+      rank: Family
+      pages: 163
       children:
       - taxon: stromatocystites
       - taxon: camptostroma
       - taxon: walcottidiscus
   - taxon: edrioasterida
+    citedAs: Order Edrioasterida Bell, 1976a
+    rank: Order
+    pages: 163
     children:
     - taxon: edrioasteridae
+      citedAs: Family Edrioasteridae Bell, 1976a
+      rank: Family
+      authority:
+        source: 1976_bell.b.m
       children:
       - taxon: edrioaster
       - taxon: edriophus
     - taxon: totiglobidae
+      citedAs: Family Totiglobidae Bell and Sprinkle, 1978
+      rank: Family
+      pages: 163
       children:
       - taxon: totiglobus
       - taxon: aepyaster
   - taxon: isorophida
+    citedAs: Order Isorophida
+    rank: Order
+    authority: null
+    pages: 164
     children:
     - taxon: lebetodiscina
+      citedAs: Suborder Lebetodiscina Bell, 1976a
+      rank: Suborder
+      pages: 164
       children:
       - taxon: lebetodiscidae
+        citedAs: Family Lebetodiscidae Bell, 1976a
+        rank: Family
+        pages: 164
         children:
         - taxon: lebetodiscus
         - taxon: belochthus
@@ -33,12 +62,21 @@ taxonomies:
           provisional: true
         - taxon: streptaster
       - taxon: carneyellidae
+        citedAs: Family Carneyellidae Bell, 1976a
+        rank: Family
+        pages: 165
         children:
         - taxon: carneyella
         - taxon: cryptogoleus
     - taxon: isorophina
+      citedAs: Suborder Isorophina Bell, 1976a
+      rank: Suborder
+      pages: 165
       children:
       - taxon: isorophidae
+        citedAs: Family Isorophidae Bell, 1976a
+        rank: Family
+        pages: 166
         children:
         - taxon: isorophus
         - taxon: curvitriordo
@@ -46,6 +84,9 @@ taxonomies:
         - taxon: isorophusella
         - taxon: rectitriordo
       - taxon: agelacrinitidae
+        citedAs: Family Age1acrinitidae Chapman, 1860
+        rank: Family
+        pages: 166
         children:
         - taxon: agelacrinites
         - taxon: anglidiscus
@@ -60,8 +101,14 @@ taxonomies:
         - taxon: ulrichidiscus
         - taxon: xenocystites
     - taxon: cyathocystina
+      citedAs: Suborder Cyathocystina Bell, 1975
+      rank: Suborder
+      pages: 167
       children:
       - taxon: cyathocystidae
+        citedAs: Family Cyathocystidae Bather, 1899
+        rank: Family
+        pages: 167
         children:
         - taxon: cyathocystis
         - taxon: cyathotheca
@@ -69,7 +116,13 @@ taxonomies:
           provisional: true
         - taxon: timeischytes
 - taxon: edrioblastoidea
+  citedAs: Class Edrioblastoidea Fay, 1962
+  rank: Class
+  pages: 167
   children:
   - taxon: astrocystitidae
+    citedAs: Family Astrocystitidae Bassler, 1938
+    rank: Family
+    pages: 168
     children:
     - taxon: astrocystites

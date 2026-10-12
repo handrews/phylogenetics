@@ -4,8 +4,11 @@ taxonomies:
   - taxon: homalozoa
     children:
     - taxon: homostelea
+      rank: Class
     - taxon: homoiostelea
+      rank: Class
     - taxon: stylophora
+      rank: Class
   - taxon: crinozoa
     children:
     - taxon: eocrinoidea

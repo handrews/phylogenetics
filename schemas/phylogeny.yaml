@@ -1261,6 +1261,9 @@ $defs:
   series:
     type: string
     enum:
+    - Lower Cambrian
+    - Middle Cambrian
+    - Upper Cambrian
     - Terrenuevian
     - Cambrian Series 2
     - Miaolingian
@@ -1268,6 +1271,9 @@ $defs:
     - Lower Ordovician
     - Middle Ordovician
     - Upper Ordovician
+    - Lower Silurian
+    - Middle Silurian
+    - Upper Silurian
     - Llandovery
     - Wenlock
     - Ludlow
@@ -1281,6 +1287,9 @@ $defs:
     - Lower Pennsylvanian
     - Middle Pennsylvanian
     - Upper Pennsylvanian
+    - Lower Permian
+    - Middle Permian
+    - Upper Permian
     - Cisuralian
     - Guadalupian
     - Lopingian

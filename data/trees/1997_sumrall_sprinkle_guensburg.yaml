@@ -44,7 +44,7 @@ taxonomies:
   rank: Class
   pages: 1101
   children:
-  - taxon: soluta-order
+  - taxon: soluta
     citedAs: Order SOLUTA Jaekel, 1901
     rank: Order
     pages: 1101

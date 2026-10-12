@@ -505,8 +505,8 @@ amygdalocystites:
 amygdalocystitidae:
   name: Amygdalocystitidae
   rank: Family
-  auth: [jaekel]
-  year: 1900
+  authority:
+    source: 1900_jaekel
 ananchites:
   name: Ananchites
   authority:
@@ -555,8 +555,8 @@ anemone_ellis_1768:
   year: 1768
 angelini_jaekel_1899:
   name: angelini
-  auth: [jaekel]
-  year: 1899
+  authority:
+    source: 1899_jaekel
 anglicum_leske_1778:
   name: anglicum
   rank: variety
@@ -730,8 +730,8 @@ apiocystites:
 apiocystitinae:
   name: Apiocystitinae
   rank: Subfamily
-  auth: [jaekel]
-  year: 1899
+  authority:
+    source: 1899_jaekel
 aplysia:
   name: Aplysia
   altSpellingOf: laplysia
@@ -828,8 +828,8 @@ archaeocystites:
   year: 1887
 archegocystis:
   name: Archegocystis
-  auth: [jaekel]
-  year: 1899
+  authority:
+    source: 1899_jaekel
 archaepyrgus:
   name: Archaepyrgus
   authority:
@@ -1148,8 +1148,8 @@ astylophora:
     source: 1960_gill_caster
 atavus_jaekel_1899:
   name: atavus
-  auth: [jaekel]
-  year: 1899
+  authority:
+    source: 1899_jaekel
 ateleocystites:
   name: Ateleocystites
   authority:
@@ -1288,15 +1288,15 @@ balantiocystis:
   name: Balantiocystis
   auth: [Chauvel]
   year: 1966
-baltica_jaekel_1901:
+baltica_jaekel_1900:
   name: baltica
-  auth: [jaekel]
-  year: 1901
+  authority:
+    source: 1900_jaekel
   notes: Rhipidocystis
 balticus_jaekel_1899:
   name: balticus
-  auth: [jaekel]
-  year: 1899
+  authority:
+    source: 1899_jaekel
   notes: Stromatocystites
 balticus_eichwald_1829:
   name: balticus
@@ -2470,16 +2470,11 @@ chiton:
   authority:
     source: 1758_linnaeus
   citedAs: 266. CHITON.
-cincta-class:
-  name: Cincta
-  rank: Class
-  auth: [jaekel]
-  year: 1918
-cincta-order:
+cincta:
   name: Cincta
   rank: Order
-  auth: [jaekel]
-  year: 1918
+  authority:
+    source: 1918_jaekel
 circinnatus_leske_1778:
   name: circinnatus
   authority:
@@ -4077,9 +4072,7 @@ echino-encrinus:
 echinoidea:
   name: Echinoidea
   rank: Class
-  authority:
-    source: 1778_leske
-  notes: Originally appeared as Order Echinus
+  altRankOf: echinus_leske_1778
 echinoidea-order:
   rank: Order
   altRankOf: echinoidea
@@ -4200,8 +4193,9 @@ echinus:
 echinus-family:
   rank: Family
   altRankOf: echinus
-echinus-order:
+echinus_leske_1778:
   name: Echinus
+  needsQualification: true
   rank: Order
   authority:
     source: 1778_leske
@@ -11427,16 +11421,12 @@ solen:
   authority:
     source: 1758_linnaeus
   citedAs: 270. SOLEN.
-soluta-class:
+soluta:
   name: Soluta
-  rank: Class
-  auth: [jaekel]
-  year: 1901
-soluta-order:
-  name: Soluta
-  rank: Order
-  auth: [jaekel]
-  year: 1901
+  rank: Suborder
+  authority:
+    source: 1900_jaekel
+  notes: Some sources incorrectly cite 1901 based on the collected volume.
 somasteroidea:
   name: Somasteroidea
   rank: Class
@@ -11696,8 +11686,8 @@ stalticodiscus:
 staurocystinae:
   name: Staurocystinae
   rank: Subfamily
-  auth: [jaekel]
-  year: 1899
+  authority:
+    source: 1899_jaekel
 staurocystis:
   name: Staurocystis
   auth: [haeckel]
@@ -11784,8 +11774,8 @@ stenuroidea:
   year: 1941
 stephanoblastus:
   name: Stephanoblastus
-  auth: [jaekel]
-  year: 1918
+  authority:
+    source: 1918_jaekel
 stephanocrinidae:
   name: Stephanocrinidae
   rank: Family
@@ -11931,14 +11921,9 @@ stylastritae:
   year: 1809
 stylophora:
   name: Stylophora
-  rank: Class
-  auth: [Gill, Caster]
-  year: 1960
-stylophora-superorder:
-  name: Stylophora
   rank: Superorder
-  auth: [Gill, Caster]
-  year: 1960
+  authority:
+    source: 1960_gill_caster
 stylophora-sp-indeterminate_sumrall_sprinkle_guensburg_1997:
   name: null
   rank: species
@@ -12284,17 +12269,17 @@ thalia_linnaeus_1758:
 thecocystidae:
   name: Thecocystidae
   rank: Family
-  auth: [jaekel]
-  year: 1899
+  authority:
+    source: 1899_jaekel
 thecocystis:
   name: Thecocystis
-  auth: [jaekel]
-  year: 1899
+  authority:
+    source: 1899_jaekel
 thecoidea:
   name: Thecoidea
   rank: Class
-  auth: [jaekel]
-  year: 1895
+  authority:
+    source: 1895_jaekel
 thomacystidae:
   name: Thomacystidae
   rank: Family
