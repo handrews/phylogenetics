@@ -28,14 +28,26 @@ taxonomies:
             - taxon: natus_strimple_1953
               isType: true
   - taxon: crinozoa
+    citedAs: Subphylum CRINOZOA Matsumoto, 1929
+    rank: Subphylum
+    pages: 15
     children:
     - taxon: cystoidea
+      citedAs: Class CYSTOIDEA von Buch, 1846
+      rank: Class
+      authority:
+        source: 1846a_buch
+      pages: 15
       children:
       - taxon: rhombifera_zittel_1879
+        citedAs: Order RHOMBIFERA Zittel, 1879
         rank: Order
+        pages: 15
         children:
         - taxon: glyptocystitida
+          citedAs: Superfamily GLYPTOCYSTITIDA Bather, 1899
           rank: Superfamily
+          pages: 15
           children:
           - taxon: pleurocystitidae
             children:
@@ -59,6 +71,9 @@ taxonomies:
               - taxon: durandensis_kolata_1975
                 new: true
     - taxon: crinoidea
+      citedAs: Class CRINOIDEA Miller, 1821
+      rank: Class
+      pages: 20
       children:
       - taxon: inadunata
         children:
@@ -243,8 +258,15 @@ taxonomies:
                 new: true
               - openTaxon: glyptocrinus-sp_kolata_1975
   - taxon: stelleroidea
+    citedAs: Class STELLEROIDEA Lamark, 1816
+    rank: Class
+    pages: 54
+    notes: Lamarck misspelled Lamark.
     children:
-    - taxon: asteroidea-subclass
+    - taxon: asteroidea
+      citedAs: Subclass ASTEROIDEA de Blainville, 1830
+      rank: Subclass
+      pages: 54
       children:
       - taxon: valvatida
         children:
@@ -302,8 +324,14 @@ taxonomies:
               - openTaxon: urasterella-sp_kolata_1975
                 provisional: true
   - taxon: edrioasteroidea
+    citedAs: Class EDRIOASTEROIDEA Billings, 1858
+    rank: Class
+    pages: 56
     children:
     - taxon: edrioasteridae
+      citedAs: Family EDRIOASTERIDAE Bather, 1898
+      rank: Family
+      pages: 56
       children:
       - taxon: edrioaster
         children:
@@ -317,8 +345,14 @@ taxonomies:
             - taxon: cyclaster
           - taxon: bigsbyi_billings_1857
   - taxon: cyclocystoidea
+    citedAs: Class CYCLOCYSTOIDEA Miller and Gurley, 1895
+    rank: Class
+    pages: 56
     children:
     - taxon: cyclocystoididae
+      citedAs: Family CYCLOCYSTOIDIDAE S. A. Miller, 1882
+      rank: Family
+      pages: 57
       children:
       - taxon: cyclocystoides
         children:
@@ -334,10 +368,19 @@ taxonomies:
             - taxon: narrawayella
         - openTaxon: cyclocystoides-sp_kolata_1975
   - taxon: echinoidea
+    citedAs: Class ECHINOIDEA Leske, 1778
+    rank: Class
+    pages: 65
     children:
     - taxon: perishoechinoidea
+      citedAs: Subclass PERISHOECHINOIDEA M'Coy, 1849
+      rank: Subclass
+      pages: 65
       children:
       - taxon: bothriocidaroida
+        citedAs: Order BOTHRIOCIDAROIDA Zittel, 1879
+        rank: Order
+        pages: 65
         children:
         - taxon: bothriocidaridae
           children:
