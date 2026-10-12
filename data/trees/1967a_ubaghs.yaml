@@ -1,7 +1,21 @@
 taxonomies:
 - taxon: echinodermata
+  authority:
+    source: 1789a_bruguière
+  pages: S5
+  editorial:
+    inferred: [authority]
+    basis: >
+      The taxon is never formally declared despite being the subject of this
+      and the following two volumes.  There closest to an attribution is:
+      'It was not until 1789, however, that BRUGUIERE established the order
+      of the "Vers echinodermes"'.
+  notes: >
+    This chapter outlines the classification as shown below, but without
+    formal attributions which are done in each chapter.
   children:
   - taxon: homalozoa
+    rank: Subphylum
     children:
     - taxon: homostelea
       rank: Class
@@ -10,26 +24,47 @@ taxonomies:
     - taxon: stylophora
       rank: Class
   - taxon: crinozoa
+    rank: Subphylum
     children:
     - taxon: eocrinoidea
+      rank: Class
     - taxon: paracrinoidea
+      rank: Class
     - taxon: cystoidea
+      rank: Class
     - taxon: blastoidea
+      rank: Class
     - taxon: parablastoidea
+      rank: Class
     - taxon: edrioblastoidea
+      rank: Class
     - taxon: lepidocystoidea
+      rank: Class
     - taxon: crinoidea
+      rank: Class
   - taxon: asterozoa
+    rank: Subphylum
     children:
     - taxon: asteroidea
+      rank: Class
     - taxon: ophiuroidea
+      rank: Class
     - taxon: somasteroidea
+      rank: Class
   - taxon: echinozoa
+    rank: Subphylum
     children:
     - taxon: helicoplacoidea
+      rank: Class
     - taxon: holothuroidea
+      rank: Class
     - taxon: ophiocistioidea
+      rank: Class
     - taxon: cyclocystoidea
+      rank: Class
     - taxon: edrioasteroidea
+      rank: Class
     - taxon: camptostromatoidea
+      rank: Class
     - taxon: echinoidea
+      rank: Class
