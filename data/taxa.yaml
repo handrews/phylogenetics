@@ -1077,7 +1077,7 @@ asterizans_leske_1778:
     source: 1778_leske
 asterocrinus:
   name: Asterocrinus
-  auth: münster
+  auth: [münster]
   year: 1839
 asteroidea:
   name: Asteroidea
