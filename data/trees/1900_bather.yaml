@@ -5,7 +5,8 @@ taxonomies:
     children:
     - taxon: metazoa-grade
       children:
-      - taxon: parazoa-branch
+      - taxon: parazoa
+        rank: Branch
       - taxon: enterozoa-branch
         children:
         - taxon: enterocoela-grade

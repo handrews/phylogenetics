@@ -1690,6 +1690,24 @@
   notes: |
     Regular printing of 1879_schmidt.c.f, sometimes erroneously cited as
     the authority for its contents.
+1884_sollas:
+  title: On the Development of Halisarca lobularis (O. Schmidt)
+  journal: quart-jour-mic-sci
+  series: New Series
+  volume: 24
+  number: 96
+  pages:
+  - 603
+  - 621
+  plates:
+  - XXXVII
+  pubDate:
+    year: 1884
+    month: 10
+  authors:
+  - sollas
+  identifiers:
+    url: https://archive.org/details/quarterlyjournal241884lond/page/602/mode/2up
 1887_billings.w.r:
   title: A new genus and three new species of crinoids from the Trenton Formation with notes on a large specimen of Dendrocrinus proboscidiatus
   journal: ottawa-naturalist
@@ -1894,6 +1912,26 @@
   - jaekel
   identifiers:
     url: https://www.google.com/books/edition/Stammesgeschichte_der_Pelmatozoen/cvdaAAAAQAAJ
+1899_sollas:
+  title: >
+    Fossils in the University Museum, Oxford: I. On Silurian Eocrinoidea
+    and Ophiuroidea
+  journal: quart-jour-geol-soc
+  volume: 55
+  number: Part 4, No. 220
+  pages:
+  - 692
+  - 715
+  pubDate:
+    year: 1899
+    month: 11
+    day: 4
+  processDates:
+    read: 1899-04-12
+  authors:
+  - sollas
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/35448220
 1900_bather:
   title: Part III — The Echinoderma
   book: treatise-zoo
@@ -2208,6 +2246,26 @@
       "C. (Hemicystites) granulatus" (p. 4) and "L. (Agelacrinites) dicksoni"
       (p. 9) is a synonymy of the earlier combination and is captured; the
       two-line citation under Discocystis kaskaskiensis (p. 21) is not.
+1938_gekker:
+  title: >
+    Новые данные о роде Rhipidocystis Jkl. (отряд Digitata n. o., класс
+    Carpoidea Jkl.) и новый род Bockia n. g. (подкласс Eocrinoidea Jkl.,
+    класс Crinoidea Mill.) из ордовика Ленинградской области СССР и Эстонии
+  journal: doklady
+  volume: 19
+  number: 5
+  pages:
+  - 421
+  - 425
+  pubDate:
+    year: 1938
+  authors:
+  - gekker
+  notes: >
+    New data on the genus Rhipidocystis Jkl. (order Digitata n. o., class
+    Carpoidea Jkl.) and a new genus Bockia n. g. (subclass Eocrinoidea Jkl.,
+    class Crinoidea Mill.) from the Ordovician of Leningrad Province, USSR,
+    and Estonia
 1941_whitehouse:
   title: "The Cambrian faunas of north-eastern Australia, Part 4: Early Cambrian echinoderms similar to the larval stages of Recent forms"
   journal: mem-q
@@ -3482,6 +3540,19 @@ inprep_sprinkle_strimple:
   - sprinkle
   identifiers:
     url: https://kuscholarworks.ku.edu/entities/publication/de425cc9-1319-41f5-b1b4-0c6a6e13757a
+1985_ubaghs_robison:
+  title: A homoiostelean and a new eocrinoid from the Middle Cambrian of Utah
+  journal: kansas
+  number: 112
+  pubDate:
+    year: 1985
+    month: 9
+    day: 12
+  authors:
+  - ubaghs
+  - robison
+  identifiers:
+    url: https://www.researchgate.net/publication/29444224_A_homoiostelean_and_a_new_eocrinoid_from_the_Middle_Cambrian_of_Utah
 1987_gehling:
   title: Earliest known echinoderm — a new Ediacaran fossil from the Pound Subgroup of South Australia
   journal: alcheringa

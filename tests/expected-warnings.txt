@@ -2,9 +2,3 @@
 # A new line here is allowed only in a commit that adds a check; every line
 # is a resolution owed. `poetry run regenerate` drops the lines no longer
 # produced; `poetry run python scripts/expected_warnings.py --add` adds new ones.
-Unregistered author "Grant" matches registered key "grant"
-Unregistered author "Hall" matches registered key "hall"
-Unregistered author "Moore" matches registered key "moore"
-Unregistered author "Robison" matches registered key "robison"
-Unregistered author "Spencer" matches registered key "spencer"
-Unregistered author "Worthen" matches registered key "worthen"

@@ -77,6 +77,9 @@ cl-olandska:
   name: Carl von Linnés öländska resa, förrättad 1741
 coloquios:
   name: Coloquios de Paleontología
+doklady:
+  name: Doklady Akademii Nauk SSSR
+  notes: Proceedings of the Academy of Sciences of the USSR
 e-research-1998:
   name: Echinoderm Research 1998
   notes: Conference proceedings
@@ -292,6 +295,8 @@ p-z:
   name: Paläontologische Zeitschrift
 quart-jour-geol-soc:
   name: Quarterly Journal of the Geological Society
+quart-jour-mic-sci:
+  name: Quarterly Juornal of Microscopal Science
 quibusdam:
   name: De quibusdam animalibus marinis
 recherches:

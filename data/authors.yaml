@@ -333,6 +333,12 @@ garbisch:
 gehling:
   surname: Gehling
   given: J. G.
+gekker:
+  surname: Gekker
+  given: Anatoly Ilyich
+  birth: 1888
+  death: 1937
+  notes: Анато́лий Ильи́ч Ге́ккер (sometimes credited as Hekker).
 gibson:
   surname: Gibson
   given: Adam P.
@@ -873,6 +879,11 @@ siveter.de.j:
 smith.a.b:
   surname: Smith
   given: Andrew B.
+sollas:
+  surname: Sollas
+  given: William Johnson
+  birth: 1849
+  death: 1936
 sowerby.g.b:
   surname: Sowerby
   given: G. B.

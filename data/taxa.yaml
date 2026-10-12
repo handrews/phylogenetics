@@ -656,9 +656,13 @@ anomales:
 anomalocystidae:
   name: Anomalocystidae
   rank: Family
-  auth: [Hall]
-  year: 1859
-  notes: Other sources (zittel) credit Meek?
+  auth: [meek]
+  year: 1872
+  notes: >
+    For some reason I had Hall 1859 but I can't find why now.
+    I don't seem to have a Hall 1859 paper so I need to find that.
+    It seems that this form is credited to Meek but Anomalocystitidae
+    is credited to Bassler.  Needs further investigation.
   altSpellingOf: anomalocystitidae
 anomalocystitidae:
   name: Anomalocystitidae
@@ -818,7 +822,7 @@ archaeocothurnis:
 archaeocrinidae:
   name: Archaeocrinidae
   rank: Family
-  auth: [Moore, Laudon]
+  auth: [moore, Laudon]
   year: 1943
 archaeocyathoides_dzik_orłowski_1995:
   name: archaeocyathoides
@@ -2444,7 +2448,7 @@ cincinnatiensis_bassler_1935:
     Probably an error of some sort, meaning cincinnatiensis_hall_1866
 cincinnatiensis_hall_1866:
   name: cincinnatiensis
-  auth: [Hall]
+  auth: [hall]
   year: 1866
   notes: |
     Probably correct version of cincinnatiensis_bassler_1935,
@@ -2500,7 +2504,7 @@ citrus_hisinger_1837:
 cladida:
   name: Cladida
   rank: Parvclass
-  auth: [Moore, Laudon]
+  auth: [moore, Laudon]
   year: 1943
 cladida-order-uncertain_guensburg_sprinkle_2009:
   name: null
@@ -3111,7 +3115,7 @@ cupuliformis_zhao.j_guo.j_selden_cong.p.y_li.y.j_2022:
 cupulocrinidae:
   name: Cupulocrinidae
   rank: Family
-  auth: [Moore, Laudon]
+  auth: [moore, Laudon]
   year: 1943
 cupulocrinus:
   name: Cupulocrinus
@@ -3696,7 +3700,7 @@ dinocystis:
 diplobathrida:
   name: Diplobathrida
   rank: Order
-  auth: [Moore, Laudon]
+  auth: [moore, Laudon]
   year: 1943
 diplobathra:
   name: Diplobathra
@@ -3778,7 +3782,7 @@ discophyllum-sp_hall_1847:
 disparida:
   name: Disparida
   rank: Subclass
-  auth: [Moore, Laudon]
+  auth: [moore, Laudon]
   year: 1943
 distans_webby_1968:
   name: distans
@@ -6857,7 +6861,7 @@ kailidiscus-sp_jell_sprinkle_2021:
     source: 2021_jell_sprinkle
 kaskaskiensis_hall_1858:
   name: kaskaskiensis
-  auth: [Hall]
+  auth: [hall]
   year: 1858
 kentuckyensis_bassler_1936:
   name: kentuckyensis
@@ -7727,8 +7731,8 @@ mariae_callaway_1877:
   year: 1877
 marjumicystis:
   name: Marjumicystis
-  auth: [ubaghs, Robison]
-  year: 1985
+  authority:
+    source: 1985_ubaghs_robison
 marmorata_lamarck_1816:
   name: marmorata
   authority:
@@ -7898,10 +7902,6 @@ metazoa-grade:
   rank: Grade
   auth: [haeckel]
   year: 1874
-mettae_ubaghs_robison_1988:
-  name: mettae
-  auth: [ubaghs, Robison]
-  year: 1988
 metularia_lamarck_1816:
   name: metularia
   authority:
@@ -8106,7 +8106,7 @@ moniliformis_miller.j.s_1821:
 monobathrida:
   name: Monobathrida
   rank: Order
-  auth: [Moore, Loudon]
+  auth: [moore, Loudon]
   year: 1943
 monobathra:
   name: Monobathra
@@ -8483,7 +8483,7 @@ nodosus_hall_1847:
     source: 1847_hall
 nodosus_hall_1864:
   name: nodosus
-  auth: [Hall]
+  auth: [hall]
   year: 1864
 nodosus_sumrall_zamora_2011:
   name: nodosus
@@ -8661,11 +8661,15 @@ ophidiana_lamarck_1816:
   name: ophidiana
   authority:
     source: 1816a_lamarck
+ophiocistia:
+  name: Ophiocistia
+  rank: Order
+  authority:
+    source: 1899_sollas
 ophiocistioidea:
   name: Ophiocistioidea
   rank: Class
-  auth: [Sollas]
-  year: 1899
+  altRankOf: ophiocistia
 ophiura:
   name: Ophiura
   authority:
@@ -8702,7 +8706,7 @@ ophiuroids:
   year: 1840
 optatus_worthen_miller_1883:
   name: optatus
-  auth: [Worthen, Miller]
+  auth: [worthen, Miller]
   year: 1883
 orbicularis_leske_1778:
   name: orbicularis
@@ -9024,7 +9028,7 @@ paragassizocrininae:
   year: 1969
 paragassizocrinus:
   name: Paragassizocrinus
-  auth: [Moore, Plummer]
+  auth: [moore, Plummer]
   year: 1940
 paragogia:
   name: Paragogia
@@ -9083,16 +9087,11 @@ parasitica_hall_1852:
 parasiticus_hall_1852:
   name: parasiticus
   altSpellingOf: parasitica_hall_1852
-parazoa-branch:
+parazoa:
   name: Parazoa
-  rank: Branch
-  auth: [Grant, Todd]
-  year: 1883
-parazoa-subkingdom:
-  name: Parazoa
-  rank: Subkingdom
-  auth: [Grant, Todd]
-  year: 1883
+  rank: Phylum
+  authority:
+    source: 1884_sollas
 paredriophus:
   name: Paredriophus
   authority:
@@ -9475,7 +9474,7 @@ picae:
   citedAs: II. PICÆ.
 pilea_hall_1866:
   name: pilea
-  auth: [Hall]
+  auth: [hall]
   year: 1866
 pileolus_lamarck_1816:
   name: pileolus
@@ -10126,7 +10125,7 @@ pustulosus_leske_1778_echinocorys:
 pustulosina:
   name: Pustulosina
   rank: Suborder
-  auth: [Spencer]
+  auth: [spencer]
   year: 1951
 pustulosis_kolata_1975:
   name: pustulosis
@@ -11396,7 +11395,7 @@ sipunculus:
     source: 1767_linnaeus
 smithi_grant_1881:
   name: smithi
-  auth: [Grant]
+  auth: [grant]
   year: 1881
 smithi_ubaghs_1987:
   name: smithi
@@ -12749,7 +12748,7 @@ unicolor_leske_1778:
 uractinina:
   name: Uractinina
   rank: Suborder
-  auth: [Spencer, wright.c.w]  # Need exception for much-posthumous Spencer pub
+  auth: [spencer, wright.c.w]
   year: 1966
 urasterella:
   name: Urasterella
@@ -13079,7 +13078,7 @@ vorticella:
     source: 1767_linnaeus
 vorticellata_hall_1866:
   name: vorticellata
-  auth: [Hall]
+  auth: [hall]
   year: 1866
 vorticellatus_hall_1866:
   name: vorticellatus
