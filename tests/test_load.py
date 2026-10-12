@@ -163,6 +163,27 @@ def test_an_unknown_spelling_or_rank_target_is_named(field, relation, caplog):
   assert Taxon.get('testum') is None
 
 
+def test_the_colour_handler_colours_a_copy_of_the_record(caplog):
+  # `coloredlog` writes its codes into the record it formats; the package's
+  # handler hands it a copy, so a handler after it (caplog here, the
+  # expected-warnings collectors in the scripts) sees the message as logged.
+  import io as stdio
+
+  import phylohist
+
+  coloured = phylohist.ColourHandler(stream=stdio.StringIO())
+  package = logging.getLogger('phylohist')
+  package.addHandler(coloured)
+  try:
+    with caplog.at_level(logging.WARNING, logger='phylohist'):
+      logging.getLogger('phylohist.loader.taxa').warning('as logged')
+  finally:
+    package.removeHandler(coloured)
+  [record] = [r for r in caplog.records if r.name == 'phylohist.loader.taxa']
+  assert record.getMessage() == 'as logged'
+  assert '\x1b[' in coloured.stream.getvalue() and 'as logged' in coloured.stream.getvalue()
+
+
 def test_counting_errors_counts_only_errors():
   from phylohist.loader import counting_errors
 
