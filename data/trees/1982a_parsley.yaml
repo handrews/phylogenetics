@@ -86,11 +86,11 @@ taxonomies:
             - taxon: cristatus_bassler_1943
               non:
               - taxon: cristatus_bassler_1943
-                auth: [parsley, Mintz]
-                year: 1975
+                authority:
+                  source: 1975_parsley_mintz
                 pars: true
               - taxon: cristatus_bassler_1943
-                auth: [frest, Strimple, Coney]
+                auth: [frest, strimple, Coney]
                 year: 1979
                 parents:
                 - taxon: globulocystites

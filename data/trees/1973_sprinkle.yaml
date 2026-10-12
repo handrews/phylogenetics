@@ -430,13 +430,17 @@ contexts:
     mapSheet: West York 7½′ Quad.
 taxonomies:
 - taxon: echinodermata
-  auth: [Klein]
-  year: 1734
+  citedAs: Phylum ECHINODERMATA Bruguière, 1789
+  rank: Phylum
+  authority:
+    source: 1789a_bruguière
   pages: 56
   contexts: null
   ranges: null
   children:
   - taxon: blastozoa
+    citedAs: Subphylum BLASTOZOA new subphylum
+    rank: Subphylum
     new: true
     pages: 56
     illustrations:
@@ -3174,6 +3178,7 @@ taxonomies:
               page: 165
               depicts: drawing
     - taxon: rhombifera_zittel_1879
+      citedAs: Class RHOMBIFERA Zittel, 1879
       rank: Class
       pages: 170
       moved:
@@ -3210,6 +3215,7 @@ taxonomies:
         regions: [world-wide]
         asPrinted: Middle Ordovician(?), middle Silurian–late Permian, world-wide distribution.
     - taxon: diploporita
+      citedAs: Class DIPLOPORITA Müller, 1854
       rank: Class
       provisional: true
       pages: 186
@@ -3437,6 +3443,7 @@ taxonomies:
         - period: Silurian
           localSeries: Middle Silurian
     - taxon: diploporita
+      citedAs: Class DIPLOPORITA Müller, 1854
       rank: Class
       provisional: true
       pages: 186
@@ -3455,6 +3462,8 @@ taxonomies:
     ranges: null
     children:
     - taxon: edrioblastoidea
+      citedAs: Class EDRIOBLASTOIDEA Fay, 1962
+      rank: Class
       pages: 187
       moved:
         taxon: crinozoa

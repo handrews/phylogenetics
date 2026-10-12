@@ -308,7 +308,7 @@ class Taxon:
       return
 
     for suffix, rank, exceptions in (
-      ('inae', 'Subfamily', frozenset()),
+      ('inae', 'Subfamily', frozenset({'Placocystida'})),
       (
         'idae',
         'Family',
@@ -347,7 +347,6 @@ class Taxon:
     )
     ida_subclasses = frozenset({'Disparida', 'Helicoplacida', 'Polyplacida'})
     ida_parvclasses = frozenset({'Cladida'})
-    ida_suborders = frozenset({'Placocystida'})
     ida_superfamilies = frozenset(
       {
         'Aristocystitida',
@@ -359,8 +358,9 @@ class Taxon:
         'Sphaeronitida',
       }
     )
+    ida_subfamilies = frozenset({'Placocystida'})
     ida_exceptions = (
-      ida_classes | ida_subclasses | ida_parvclasses | ida_suborders | ida_superfamilies
+      ida_classes | ida_subclasses | ida_parvclasses | ida_superfamilies | ida_subfamilies
     )
 
     ina_exceptions = frozenset(
