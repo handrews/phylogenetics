@@ -81,6 +81,51 @@ def _report_merge_targets(data):
         )
 
 
+# A node's own branches, which `material.walk_document` visits as nodes of
+# their own; `_source_ids` does not descend into them.
+_NODE_BRANCHES = frozenset({'children', *(axis.name for axis in Tree.RELATED_AXES)})
+
+
+def _source_ids(value, pointer=()):
+  """``(pointer, key)`` for every source id under `value`, as the schema
+  types them (`$defs/sourceId`): a `source` field, which is an authority's
+  (a node's, `fixedBy`, an `emendedBy` entry, a `by`, an editorial
+  correction) or a `sameAs` link's, and the `sources` of a context."""
+  if isinstance(value, dict):
+    for field, item in value.items():
+      if not pointer and field in _NODE_BRANCHES:
+        continue
+      if field == 'source' and isinstance(item, str):
+        yield (*pointer, field), item
+      elif field == 'sources' and isinstance(item, list):
+        for index, key in enumerate(item):
+          if isinstance(key, str):
+            yield (*pointer, field, index), key
+      else:
+        yield from _source_ids(item, (*pointer, field))
+  elif isinstance(value, list):
+    for index, item in enumerate(value):
+      yield from _source_ids(item, (*pointer, index))
+
+
+def _report_cited_sources(data):
+  """Every source id a tree file carries names a source record (an alias
+  counts). The schema's pattern cannot tell a typo or a stale id from a
+  key; only the registry can, and the store indexes these keys directly
+  when it renders, so an unknown one is an error here with its path.
+  `mergeInto` names a tree and is `_report_merge_targets`'s."""
+  for ref_key, opinion in data['trees'].items():
+    file_level = {k: v for k, v in opinion.items() if k not in ('taxonomies', 'phylogenies')}
+    found = [(None, pointer, key) for pointer, key in _source_ids(file_level)]
+    for path, node, _ in material.walk_document(opinion):
+      found.extend((path, pointer, key) for pointer, key in _source_ids(node))
+    for path, pointer, key in found:
+      if Source.get(key) is None:
+        where = f'{ref_key} at {path}' if path is not None else ref_key
+        field = '/'.join(str(p) for p in pointer)
+        logger.error(f'{where}: `{field}` names "{key}", which has no source record')
+
+
 def _report_missing_protologues(data):
   # A protologue is the source that names a taxon; if that source is one of
   # our trees, the taxon should show up flagged `new` in it.
@@ -317,6 +362,7 @@ def _load_trees(data):
   logger.info('...opinions processed.')
 
   _report_merge_targets(data)
+  _report_cited_sources(data)
   _report_missing_protologues(data)
   _report_protologue_mismatches(data, roots)
   _report_section_protologues(data, roots)

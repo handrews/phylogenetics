@@ -163,6 +163,61 @@ def test_an_unknown_spelling_or_rank_target_is_named(field, relation, caplog):
   assert Taxon.get('testum') is None
 
 
+def test_a_tree_cites_only_sources_with_a_record(caplog):
+  # Every source id a tree file carries must name a record: an authority's
+  # `source` wherever the authority sits, a `sameAs` link's, and a context's
+  # `sources`; an alias counts. The census says the same of the data after
+  # the fact; the loader says it beside its other errors, with the path.
+  import importlib
+
+  from phylohist.loader.research import Source
+
+  loading = importlib.import_module('phylohist.loader.load')
+  Source.add({'aliasOf': '1985_jell_burrett_banks'}, '1985_banks')
+  nobody = {'source': '1899_nobody'}
+  document = {
+    'contexts': {'f': {'sources': ['1961_dehm', '1899_nobody']}},
+    'taxonomies': [
+      {
+        'taxon': 'rhenopyrgus',
+        'authority': {'source': '1961_dehm'},
+        'emendedBy': [{'source': '1983_holloway_jell'}, {'source': '1975_parsley_mintz'}],
+        'type': {'taxon': 'grayae_bather_1915', 'fixedBy': nobody},
+        'children': [
+          {
+            'taxon': 'grayae_bather_1915',
+            'authority': nobody,
+            'material': [{'label': 'A', 'sameAs': {**nobody, 'label': 'B'}}],
+            'editorial': {'corrections': {'authority': nobody}},
+            'contexts': {'n': {'sources': ['1985_banks']}},
+          },
+        ],
+      },
+    ],
+    'phylogenies': [
+      {
+        'tree': {
+          'taxon': 'rhenopyrgus',
+          'children': [{'taxon': 'grayae_bather_1915', 'authority': {'source': '1985_banks'}}],
+        }
+      }
+    ],
+  }
+  with caplog.at_level(logging.ERROR, logger='phylohist'):
+    loading._report_cited_sources({'trees': {'1961_dehm': document}})
+  errors = sorted(r.getMessage() for r in caplog.records if r.levelno == logging.ERROR)
+  tail = ', which has no source record'
+  child = '1961_dehm at 0/children/0'
+  assert errors == [
+    f'{child}: `authority/source` names "1899_nobody"{tail}',
+    f'{child}: `editorial/corrections/authority/source` names "1899_nobody"{tail}',
+    f'{child}: `material/0/sameAs/source` names "1899_nobody"{tail}',
+    f'1961_dehm at 0/type: `fixedBy/source` names "1899_nobody"{tail}',
+    f'1961_dehm at 0: `emendedBy/1/source` names "1975_parsley_mintz"{tail}',
+    f'1961_dehm: `contexts/f/sources/1` names "1899_nobody"{tail}',
+  ]
+
+
 def test_the_colour_handler_colours_a_copy_of_the_record(caplog):
   # `coloredlog` writes its codes into the record it formats; the package's
   # handler hands it a copy, so a handler after it (caplog here, the
