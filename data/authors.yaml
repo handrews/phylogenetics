@@ -1,35 +1,6 @@
 allaire:
   surname: Allaire
   given: Ninon
-baer:
-  surname: Baer
-  given: Karl Ernst von
-  birth: 1792
-  death: 1876
-bell.f.j:
-  surname: Bell
-  given: Francis Jeffrey
-  birth: 1855
-  death: 1924
-dames:
-  surname: Dames
-  given: Wilhelm
-  birth: 1843
-  death: 1898
-franzen:
-  surname: Franzen
-  given: Christina
-hoşgör:
-  surname: Hoşgör
-  given: İzzet
-hudson:
-  surname: Hudson
-  given: George H.
-whitfield:
-  surname: Whitfield
-  given: Robert Parr
-  birth: 1828
-  death: 1910
 álvaro:
   surname: Álvaro
   given: J. Javier
@@ -50,6 +21,11 @@ austin.t:
 babcock:
   surname: Babcock
   given: Loren E.
+baer:
+  surname: Baer
+  given: Karl Ernst von
+  birth: 1792
+  death: 1876
 bailey.j.b:
   surname: Bailey
   given: J. Bowman
@@ -79,6 +55,11 @@ beecher:
 bell.b.m:
   surname: Bell
   given: Bruce M.
+bell.f.j:
+  surname: Bell
+  given: Francis Jeffrey
+  birth: 1855
+  death: 1924
 billings:
   surname: Billings
   given: Elkahna
@@ -119,11 +100,6 @@ brett:
 briggs.d.e.g:
   surname: Briggs
   given: Derek E. G.
-bruguière:
-  surname: Bruguière
-  given: Jean Guillaume
-  birth: 1749
-  death: 1798
 broadhead:
   surname: Broadhead
   given: Thomas W.
@@ -131,6 +107,11 @@ brown.i.a:
   surname: Brown
   given: Ida A.
   notes: Credited as "Ida A. Brown (Mrs. W. R. Browne)" in at least one paper.
+bruguière:
+  surname: Bruguière
+  given: Jean Guillaume
+  birth: 1749
+  death: 1798
 buch:
   surname: Buch
   given: Christian Leopold von
@@ -225,6 +206,11 @@ cuvier:
   given: Georges
   birth: 1769
   death: 1832
+dames:
+  surname: Dames
+  given: Wilhelm
+  birth: 1843
+  death: 1898
 david:
   surname: David
   given: Bruno
@@ -321,6 +307,9 @@ forsskål:
 forsstrand:
   surname: Forsstrand
   given: Carl
+franzen:
+  surname: Franzen
+  given: Christina
 frest:
   surname: Frest
   given: T. J.
@@ -444,6 +433,9 @@ holland:
 holloway:
   surname: Holloway
   given: David J.
+hoşgör:
+  surname: Hoşgör
+  given: İzzet
 hou.s.g:
   surname: Hou
   given: Shu-Guang
@@ -465,6 +457,9 @@ huang.y.l:
 huang.y.z:
   surname: Huang
   given: You-Zhuang
+hudson:
+  surname: Hudson
+  given: George H.
 hughes:
   surname: Hughes
   given: N. F.
@@ -559,9 +554,6 @@ li.y:
 li.y.j:
   surname: Li
   given: Yu-Jing
-liñán:
-  surname: Liñán
-  given: Eladio
 lin.j.p:
   surname: Lin
   given: Jih-Pai
@@ -570,6 +562,9 @@ linnaeus:
   given: Carl
   birth: 1707
   death: 1778
+liñán:
+  surname: Liñán
+  given: Eladio
 liu.q:
   surname: Liu
   given: Qi
@@ -579,6 +574,9 @@ liu.x.r:
 liu.y.j:
   surname: Liu
   given: Yu-Juan
+longman:
+  surname: Longman
+  given: H. A.
 luo.h.l:
   surname: Luo
   given: Hui-Lin
@@ -588,9 +586,6 @@ luo.h.l:
 luo.x.c:
   surname: Luo
   given: Xiu-Chun
-longman:
-  surname: Longman
-  given: H. A.
 lydekker:
   surname: Lydekker
   given: Richard
@@ -869,9 +864,6 @@ seibert.r:
 selden:
   surname: Selden
   given: Paul A.
-šinágl:
-  surname: Šinágl
-  given: Miroslav
 siveter.da.j:
   surname: Siveter
   given: David J.
@@ -918,6 +910,9 @@ sutton.m.d:
 szabad:
   surname: Szabad
   given: Michal
+šinágl:
+  surname: Šinágl
+  given: Miroslav
 tao.j.l:
   surname: Tao
   given: Jian-Li
@@ -1002,6 +997,11 @@ whiteaves:
   given: Joseph Frederick
   birth: 1835
   death: 1909
+whitfield:
+  surname: Whitfield
+  given: Robert Parr
+  birth: 1828
+  death: 1910
 whitehouse:
   surname: Whitehouse
   given: Frederick William
