@@ -806,7 +806,7 @@ $defs:
           A printed "s. s." / "s. l." / "s. em." qualifying the name as this
           source uses it.
         type: string
-        enum: [stricto, lato, emendato]
+        enum: [stricto, lato, emendato, extenso]
 
   metaFields:
     properties:

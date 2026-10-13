@@ -9225,9 +9225,6 @@ pelmatozoa:
 pelmatozoa-class:
   rank: Class
   altRankOf: pelmatozoa
-pelmatozoa-grade:
-  rank: Grade
-  altRankOf: pelmatozoa
 pelmatozoa-uncertain-order_bassler_1936:
   name: null
   rank: Order

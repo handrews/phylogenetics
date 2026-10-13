@@ -1,5 +1,6 @@
 taxonomies:
 - taxon: edrioasteroidea
+  notes: No formal declaration, just prose.
   children:
   - taxon: steganoblastidae
     children:
