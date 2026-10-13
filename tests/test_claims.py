@@ -344,6 +344,40 @@ def test_emended_by_lists_the_emendations_followed(caplog):
   assert not schema.check({'taxonomies': [{'taxon': 'rhenopyrgus', 'emendedBy': []}]})
 
 
+def test_restricted_by_lists_the_restrictions_followed(caplog):
+  # A restriction is its own act beside an emendation: each restriction
+  # the source follows names its work, in printed order, before its own.
+  root = Tree(
+    {
+      'taxon': 'rhenopyrgus',
+      'emended': True,
+      'restricted': True,
+      'restrictedBy': [
+        {'source': '1968b_paul.c.r.c', 'pages': 700},
+        {'source': '1983_holloway_jell'},
+      ],
+    },
+    {'source_key': '1985_jell_burrett_banks', 'type': 'taxonomy', 'position': 92},
+  )
+  claims = extract({'1985_jell_burrett_banks': [root]})['1985_jell_burrett_banks']
+  assert not [r for r in caplog.records if r.levelno >= logging.ERROR]
+  acts = [(c['actKind'], c.get('by'), c.get('byPages')) for c in claims if c['kind'] == 'act']
+  assert acts == [
+    ('emended', None, None),
+    ('restricted', '1968b_paul.c.r.c', 700),
+    ('restricted', '1983_holloway_jell', None),
+    ('restricted', None, None),
+  ]
+
+  schema = support.schema()[io.TREE_DEF]
+  followed = {'taxon': 'rhenopyrgus', 'restrictedBy': [{'source': '1968b_paul.c.r.c'}]}
+  assert schema.check({'taxonomies': [followed]})
+  assert not schema.check(
+    {'taxonomies': [{'taxon': 'rhenopyrgus', 'restricted': {'by': {'source': '1968b_paul.c.r.c'}}}]}
+  )
+  assert not schema.check({'taxonomies': [{'taxon': 'rhenopyrgus', 'restrictedBy': []}]})
+
+
 def test_material_adapter(caplog):
   # Contexts, material, illustrations, ranges, in that fixed order, over a
   # node with a file context, a node context, a numbered entry, a range

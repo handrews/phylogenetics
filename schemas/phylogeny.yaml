@@ -844,6 +844,23 @@ $defs:
         minItems: 1
         items:
           $ref: "#/$defs/authority"
+      restricted:
+        description: |
+          This source restricts the taxon's definition: a tightening of
+          it. An emendation, which may also expand or shift it, is
+          `emended`. A restriction it follows from another work goes in
+          `restrictedBy`.
+        type: boolean
+        default: false
+      restrictedBy:
+        description: |
+          The earlier works whose restriction of the definition this
+          source cites and follows, in the order printed, each with its
+          pages. With `restricted: true` the source restricts it further.
+        type: array
+        minItems: 1
+        items:
+          $ref: "#/$defs/authority"
       recombined:
         description: |
           Combinatio nova: the source prints this species-group name in a

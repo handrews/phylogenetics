@@ -54,6 +54,8 @@ def test_an_act_followed_from_another_work_names_it():
     'acts': [{'act': 'emended', 'by': 'Paul 1972'}, {'act': 'emended'}],
   }
   assert render.node_label(node) == 'Family Glyptocystitidae emend. Paul 1972 emend.'
+  node['acts'] = [{'act': 'restricted', 'by': 'Paul 1972'}, {'act': 'restricted'}]
+  assert render.node_label(node) == 'Family Glyptocystitidae restr. Paul 1972 restr.'
 
 
 def test_table_text_and_markdown(store):

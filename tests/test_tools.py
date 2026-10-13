@@ -631,6 +631,10 @@ def test_followed_acts_and_sensu_words(store):
     == 'emended by Paul 1968, p. 697–730'
   )
   assert (
+    words.act_words({'actKind': 'restricted', 'by': '1968b_paul.c.r.c', 'byPages': 700})
+    == 'restricted by Paul 1968, p. 700'
+  )
+  assert (
     words.act_words({'actKind': 'substituted', 'substitutedFor': 'rhenopyrgidae'})
     == 'substituted for Rhenopyrgidae'
   )
