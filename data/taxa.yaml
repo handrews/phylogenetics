@@ -2115,8 +2115,12 @@ carneyellinae:
 carpoidea:
   name: Carpoidea
   rank: Class
-  auth: [jaekel]
-  year: 1900
+  authority:
+    source: 1900_jaekel
+  notes: >
+    The new class is mentioned in Jaekel 1899 as intended to be
+    covered by the never-published volume II of that work.
+    Instead it is clearly designated a new class in Jaekel 1900.
 carteri_bassler_1936:
   name: carteri
   authority:
@@ -2819,9 +2823,9 @@ cornulites:
     source: 1820_schlotheim
 cornuta:
   name: Cornuta
-  rank: Order
-  auth: [jaekel]
-  year: 1901
+  rank: Suborder
+  authority:
+    source: 1900_jaekel
 cornuta-incertae-sedis_ubaghs_1999:
   name: null
   rank: genus
@@ -8022,8 +8026,8 @@ mitralis_pander_1830:
 mitrata:
   name: Mitrata
   rank: Order
-  auth: [jaekel]
-  year: 1918
+  authority:
+    source: 1918_jaekel
 mitrocystites:
   name: Mitrocystites
   auth: [barrande]

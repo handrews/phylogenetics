@@ -3,40 +3,96 @@ taxonomies:
   authority:
     source: 1734_klein
   citedAs: Phylum ECHINODERMATA Klein, 1734 (in form ‘“Echinodermatum” )
+  pages: 11
   notes: |
-    Says "as Echinodermatum", but Klein 1734 at least sometimes
-    used "Echinodermata".
+    Says "in form Echinodermatum", but Klein 1734 at least sometimes
+    used "Echinodermata" including as a huge chapter heading in red ink.
+
+    The formal Systematic Paleontology in this paper skips many ranks,
+    so most of the page numbers are from the taxonomy outlines,
+    which have full citations, for consistency.
   children:
   - taxon: pelmatozoa
+    citedAs: Subphylum PELMATOZOA Leuckart, 1848
     rank: Subphylum
+    pages: 11
     children:
     - taxon: carpoidea
+      citedAs: Class CARPOIDEA Jaekel, 1900, emend. 1921 (=Heterostelea)
+      emendedBy:
+      - source: 1921_jaekel
       rank: Class
+      pages: 11
       synonyms:
       - taxon: heterostelea
       children:
       - taxon: homostelea
+        citedAs: I. Subclass HOMOSTELEA, new
         rank: Subclass
         new: true
+        pages: 11
         children:
         - taxon: cincta
+          citedAs: 1. Order Cincta Jaekel, 1921
           rank: Order
+          authority:
+            source: 1921_jaekel
+          pages: 11
+          editorial:
+            corrections:
+              auth: null
+              year: null
+              authority:
+                source: 1918_jaekel
+            basis: >
+              There's no clear evidence that this was meant to indicate as
+              emended in 1921, as Carpoidea and Soluta explicitly note this.
+              Jaekel definitely established Cincta in 1918.
         - taxon: digitata
+          citedAs: 2. Order Digitata Hecker, 1940
           rank: Order
+          pages: 11
       - taxon: homoiostelea
+        citedAs: II. Subclass HOMOIOSTELEA, new
         rank: Subclass
         new: true
+        pages: 11
         children:
         - taxon: stylophora
+          citedAs: A. Superorder STYLOPHORA, new
           rank: Superorder
+          pages: 11
           new: true
           children:
           - taxon: cornuta
+            citedAs: 3. Order Cornuta Jaekel, 1900
             rank: Order
+            pages: 11
           - taxon: mitrata
+            citedAs: 4. Order Mitrata Jaekel, 1921
             rank: Order
+            authority:
+              source: 1921_jaekel
+            pages: 11
+            editorial:
+              corrections:
+                auth: null
+                year: null
+                authority:
+                  source: 1918_jaekel
+              basis: >
+                There's no clear evidence that this was meant to indicate as
+                emended in 1921, as Carpoidea and Soluta explicitly note this.
+                Jaekel definitely established Mitrata in 1918.
             children:
             - taxon: placocystida
+              citedAs: Suborder PLACOCYSTIDA Haeckel, 1896
+              rank: Suborder
+              pages: 43
+              notes: >
+                There is a footnote about ICZN Article 5 requiring corrections
+                up to the Family group, but not higher, which is presumably
+                why this has not been changed to Placocystitida.
               children:
               - taxon: placocystitidae
                 new: true
@@ -74,12 +130,18 @@ taxonomies:
                   children:
                   - taxon: australocystis
         - taxon: astylophora
+          citedAs: B. Superorder ASTYLOPHORA, new
           rank: Superorder
           new: true
+          pages: 11
           children:
           - taxon: soluta
+            citedAs: 5. Order Soluta Jaekel, 1900, emend. 1921
+            emendedBy:
+            - source: 1921_jaekel
             rank: Order
-            notes: emend. 1921
+            pages: 15
+            notes: The emendation is not included in the table on page 11.
             children:
             - taxon: dendrocystitidae
               children:

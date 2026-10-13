@@ -2110,6 +2110,19 @@
     year: 1918
   authors:
   - jaekel
+1921_jaekel:
+  title: Phylogenie und System der Pelmatozoen
+  journal: p-z
+  volume: 3
+  pages:
+  - 1
+  - 128
+  pubDate:
+    year: 1921
+  authors:
+  - jaekel
+  identifiers:
+    doi: 10.1007/BF03190413
 1925_hudson:
   title: The Need of Improved Technique in Illustration
   journal: jofgeol-chicago
