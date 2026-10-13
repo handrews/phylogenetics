@@ -28,6 +28,7 @@ TYPES = ('classification', 'table', 'list', 'statement', 'chains', 'timeline')
 # abbreviations; shared by the tools that word cells and the renderers.
 ACT_MARKS = {
   'emended': 'emend.',
+  'restricted': 'restr.',
   'combNov': 'comb. nov.',
   'nomTransl': 'nom. transl.',
   'nomNudum': 'nom. nud.',

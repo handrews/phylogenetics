@@ -535,6 +535,7 @@ class Words:
         'new': 'named as new',
         'placeholder': 'placeholder introduced',
         'emended': 'emended',
+        'restricted': 'restricted',
         'combNov': 'new combination',
         'nomTransl': 'nomen translatum' + (f' from {self.store.name(origin)}' if origin else ''),
         'nomNudum': 'nomen nudum',

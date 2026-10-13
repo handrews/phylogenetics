@@ -21,6 +21,7 @@ ACT_KINDS = (
   'placeholder',
   'type',
   'emended',
+  'restricted',
   'combNov',
   'nomTransl',
   'nomNudum',

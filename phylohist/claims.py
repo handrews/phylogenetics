@@ -635,6 +635,10 @@ class _NodeClaims:
       self._act('emended', 'emendedBy', **_cited_work(by, 'by'))
     if data.get('emended'):
       self._act('emended', 'emended')
+    for by in data.get('restrictedBy') or ():
+      self._act('restricted', 'restrictedBy', **_cited_work(by, 'by'))
+    if data.get('restricted'):
+      self._act('restricted', 'restricted')
     if recombined := data.get('recombined'):
       self._act('combNov', 'recombined', **_by(recombined))
     if translated := data.get('translated'):

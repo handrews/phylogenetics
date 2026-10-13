@@ -89,8 +89,8 @@ _NODE_BRANCHES = frozenset({'children', *(axis.name for axis in Tree.RELATED_AXE
 def _source_ids(value, pointer=()):
   """``(pointer, key)`` for every source id under `value`, as the schema
   types them (`$defs/sourceId`): a `source` field, which is an authority's
-  (a node's, `fixedBy`, an `emendedBy` entry, a `by`, an editorial
-  correction) or a `sameAs` link's, and the `sources` of a context."""
+  (a node's, `fixedBy`, an `emendedBy` or `restrictedBy` entry, a `by`, an
+  editorial correction) or a `sameAs` link's, and the `sources` of a context."""
   if isinstance(value, dict):
     for field, item in value.items():
       if not pointer and field in _NODE_BRANCHES:
