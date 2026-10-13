@@ -324,6 +324,15 @@ class ClaimStore:
       return source_key
     return short_citation(row['citation'])
 
+  def cite_work(self, claim, field):
+    """The work a claim names under `field` ("by", "citesSource"), cited;
+    "auctt." for an `auctt` authority given under `<field>Auctt`; `None`
+    when it names neither. `citesSource` pairs with `citesAuctt`."""
+    if claim.get(field):
+      return self.cite(claim[field])
+    auctt = claim.get(field.removesuffix('Source') + 'Auctt')
+    return blocks.auctt_words(auctt) if auctt else None
+
   def name(self, key):
     """The record's name; an unnamed record's printed designation
     ("Rhenopyrgus sp. indet. 1") when it has one, else its key in
@@ -371,7 +380,7 @@ class ClaimStore:
           'act': a['actKind'],
           'words': self.words.act_words(a),
           'inferred': bool(a.get('inferred')),
-          **({'by': self.cite(a['by'])} if a.get('by') else {}),
+          **({'by': by} if (by := self.cite_work(a, 'by')) else {}),
         }
         for a in acts
       ],
@@ -428,7 +437,9 @@ class ClaimStore:
       printed = acceptance.get('printed') or {}
       year = self.source_year(cited) if cited else printed.get('year')
       # A cited work with no record shows its attribution as printed, by field.
-      cite = self.cite(cited) if cited else self.words.attribution_words(printed) or None
+      cite = (
+        self.cite_work(acceptance, 'citesSource') or self.words.attribution_words(printed) or None
+      )
       subject = acceptance['subject']
       parents = acceptance.get('parents') or ()
       parent_names = [self.name(p) for p in parents]

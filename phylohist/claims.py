@@ -228,7 +228,10 @@ def _nearest_named_ancestor(node):
 
 def _cited_work(authority, field):
   """The claim fields for a work an `authority` names: its source under
-  `field`, its pages under `<field>Pages`."""
+  `field`, its pages under `<field>Pages`; an `auctt` authority names no
+  work, and gives its value under `<field>Auctt`."""
+  if 'auctt' in authority:
+    return {f'{field}Auctt': authority['auctt']}
   fields = {field: authority['source']}
   if 'pages' in authority:
     fields[f'{field}Pages'] = authority['pages']
@@ -353,7 +356,10 @@ class _NodeClaims:
     if printed:
       claim['printed'] = printed
     if authority:
-      claim['citesSource'] = authority.get('source')
+      if 'auctt' in authority:
+        claim['citesAuctt'] = authority['auctt']
+      else:
+        claim['citesSource'] = authority.get('source')
       for field, name in (
         ('pages', 'citedPages'),
         ('illustrations', 'citedIllustrations'),

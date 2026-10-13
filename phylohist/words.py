@@ -541,11 +541,14 @@ class Words:
         'nomNudum': 'nomen nudum',
         'removed': f'removed from {self.store.name(claim.get("removedFrom", ""))}',
       }.get(kind, kind or '')
-    # An act the source follows rather than performs names the work.
+    # An act the source follows rather than performs names the work, or
+    # the authors (auctt.) it follows.
     if claim.get('by'):
       words += f' by {self.store.cite(claim["by"])}'
       if claim.get('byPages') is not None:
         words += f', p. {_range_words(claim["byPages"])}'
+    elif claim.get('byAuctt'):
+      words += ' ' + blocks.auctt_words(claim['byAuctt'])
     if claim.get('inferred'):
       basis = (claim.get('editorial') or {}).get('basis', '').strip()
       words += ' (inferred by the editor' + (f': {basis}' if basis else '') + ')'
@@ -566,8 +569,7 @@ class Words:
     words = FIXATION_WORDS.get(claim.get('fixation'), '')
     if note and words and 'fixation' in (claim.get('inferredFields') or ()):
       words += ' (method inferred by the editor)'
-    if claim.get('fixedBy'):
-      cite = self.store.cite(claim['fixedBy'])
+    if cite := self.store.cite_work(claim, 'fixedBy'):
       if claim.get('fixedByPages') is not None:
         cite += f', p. {_range_words(claim["fixedByPages"])}'
       words += f' ({cite})' if words else f'({cite})'
@@ -625,7 +627,8 @@ class Words:
     if kind == 'acceptance':
       target = self.display(claim['subject'], claim['source'], claim['path'])
       verb = 'accepts' if claim['stance'] == 'accepts' else 'rejects'
-      cited = f' ({self.store.cite(claim["citesSource"])})' if claim.get('citesSource') else ''
+      cite = self.store.cite_work(claim, 'citesSource')
+      cited = f' ({cite})' if cite else ''
       owner_path = claim['path'].rsplit('/', 2)[0]
       if claim.get('lapsusFor'):
         intended = self.display(claim['lapsusFor'], claim['source'], owner_path)
@@ -823,9 +826,12 @@ class Words:
     if not errors:
       return ''
     words = f'printed {", ".join(errors)} in error'
-    source = (claim.get('corrected') or {}).get('citesSource')
+    corrected = claim.get('corrected') or {}
+    source = corrected.get('citesSource')
     if source and source in self.store.sources:
       words += f'; read as {self.store.cite(source)}'
+    elif corrected.get('citesAuctt'):
+      words += f'; read as {blocks.auctt_words(corrected["citesAuctt"])}'
     return f' ({words})'
 
   def scheme_lines(self, schemes):

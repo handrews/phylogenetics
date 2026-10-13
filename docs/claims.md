@@ -47,7 +47,12 @@ Attribution appears in trees in two shapes and both produce the same
 nested form (`authority: {source, pages, illustrations}`), which also
 resolves the citation to a source record and carries the cited pages. When
 the nested form names a source, the claim adds `citesSource`, `citedPages`,
-`citedIllustrations` and `citedAttributedTo` as present.
+`citedIllustrations` and `citedAttributedTo` as present. An authority may
+give `auctt` in place of a source: the name cited auctorum, "of authors",
+in its general current sense (`auctt: true`, printed "auctt.") or of the
+authors it qualifies (`auctt: veterum`, "auctt. veterum"). It names no
+work, so it has no pages, illustrations or attribution, and the claim
+carries `citesAuctt` with its value in place of `citesSource`.
 
 ## The kinds
 
@@ -199,7 +204,10 @@ are the acts a source may follow rather than perform: `emendedBy` and
 `restrictedBy` list the works whose emendations and restrictions it
 follows, and `by` (an `authority`) on `recombined` and `translated` names
 the work that performed the act. A classification line names that work
-after the act's mark.
+after the act's mark. Any of these authorities, and `fixedBy`, may be
+`auctt` in place of a work: the act then carries `byAuctt` (or
+`fixedByAuctt`) in place of `by` and `byPages`, and the mark reads
+"emend. auctt.".
 
 `moved` and `recombined` say different things. `moved` is a change of
 placement at any rank, often noted only in prose: the node left the group
