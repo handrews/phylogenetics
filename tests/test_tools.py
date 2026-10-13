@@ -639,6 +639,31 @@ def test_followed_acts_and_sensu_words(store):
     == 'substituted for Rhenopyrgidae'
   )
   assert words.act_words({'actKind': 'nomNudum'}) == 'nomen nudum'
+  # An authority may name authors generally (auctt.) in place of a work.
+  assert words.act_words({'actKind': 'emended', 'byAuctt': True}) == 'emended auctt.'
+  assert words.act_words({'actKind': 'restricted', 'byAuctt': 'veterum'}) == (
+    'restricted auctt. veterum'
+  )
+  assert store.cite_work({'byAuctt': True}, 'by') == 'auctt.'
+  assert store.cite_work({'citesAuctt': 'veterum'}, 'citesSource') == 'auctt. veterum'
+  assert store.cite_work({'citesSource': '1968b_paul.c.r.c'}, 'citesSource') == 'Paul 1968'
+  assert store.cite_work({}, 'by') is None
+  assert words.fixation_words({'fixation': 'subsequentDesignation', 'fixedByAuctt': True}).endswith(
+    '(auctt.)'
+  )
+  claim = {'printedErrors': ['authority'], 'corrected': {'citesAuctt': True}}
+  assert words.error_words(claim) == ' (printed authority in error; read as auctt.)'
+  accepted = {
+    'kind': 'acceptance',
+    'stance': 'accepts',
+    'subject': 'rhenopyrgus',
+    'source': '1985_jell_burrett_banks',
+    'path': '92/synonyms/0',
+    'citesAuctt': 'veterum',
+  }
+  assert words.claim_words(accepted) == 'accepts Rhenopyrgus (auctt. veterum)'
+  followed = {'name': 'Glyptocystitidae', 'acts': [{'act': 'emended', 'by': 'auctt.'}]}
+  assert node_label(followed) == 'Glyptocystitidae emend. auctt.'
   comb = {'actKind': 'combNov', 'by': '1968b_paul.c.r.c'}
   assert words.act_words(comb) == 'new combination by Paul 1968'
   combined = {'key': 'grayae_bather_1915', 'name': 'grayae', 'acts': [{'act': 'combNov'}]}

@@ -35,7 +35,14 @@ ACT_MARKS = {
   'corrected': 'nom. correct.',
   'substituted': 'nom. subst.',
 }
+
 SENSU_MARKS = {'stricto': '(s. s.)', 'lato': '(s. l.)', 'emendato': '(s. em.)'}
+
+
+def auctt_words(value):
+  """An `auctt` authority as printed: "auctt.", or "auctt. veterum" for
+  the authors it qualifies."""
+  return 'auctt.' if value is True else f'auctt. {value}'
 
 
 def non_monophyly_words(value):

@@ -313,11 +313,32 @@ $defs:
         $ref: "#/$defs/sourceId"
   authority:
     type: object
-    required: [source]
+    oneOf:
+    - required: [source]
+    - required: [auctt]
+    dependentSchemas:
+      auctt:
+        $comment: These locate or qualify a particular work.
+        not:
+          anyOf:
+          - required: [attributedTo]
+          - required: [ex]
+          - required: [pages]
+          - required: [illustrations]
     unevaluatedProperties: false
     properties:
       source:
         $ref: "#/$defs/sourceId"
+      auctt:
+        description: |
+          In place of `source`: the source cites the name auctorum, "of
+          authors", in its general current sense (`true`, "auctt."), or
+          of a group of authors it qualifies ("auctt. veterum" is
+          `veterum`).
+        oneOf:
+        - const: true
+        - type: string
+          minLength: 1
       attributedTo:
         $comment: |
           The authors credited with the taxon, when they differ from the authors
@@ -470,7 +491,9 @@ $defs:
       pages:
         $ref: "#/$defs/citationNumbers"
       authority:
+        $comment: A protologue is a particular work, so never `auctt`.
         $ref: "#/$defs/authority"
+        required: [source]
       name:
         type: [string, "null"]
         pattern: ^[\w][\w._ -]*$
@@ -538,7 +561,9 @@ $defs:
       required: [designation]
     properties:
       authority:
+        $comment: A protologue is a particular work, so never `auctt`.
         $ref: "#/$defs/authority"
+        required: [source]
       name:
         type: [string, "null"]
         minLength: 1

@@ -1504,3 +1504,46 @@ def test_a_shared_join_key_joins_one_number_entries_but_a_batch_joins_nothing():
   bridge = _claim(_LATE, role='paratype', id='bridge', joinKeys=['uq-f:1'], sameAsClaim='early')
   same = _claim('2021_jell_sprinkle', id='same', ids=['UQF 1'], joinKeys=['uq-f:1'])
   assert _conflicts(early, bridge, same) == []
+
+
+def test_auctt_cites_authors_in_place_of_a_work(caplog):
+  # "Echinozoa auctt.": the name in the sense of authors generally, cited
+  # in place of a work; "auctt. veterum" qualifies the authors.
+  root = Tree(
+    {
+      'taxon': 'rhenopyrgus',
+      'authority': {'auctt': 'veterum'},
+      'emendedBy': [{'auctt': True}, {'source': '1968b_paul.c.r.c'}],
+    },
+    {'source_key': '1985_jell_burrett_banks', 'type': 'taxonomy', 'position': 92},
+  )
+  claims = extract({'1985_jell_burrett_banks': [root]})['1985_jell_burrett_banks']
+  assert not [r for r in caplog.records if r.levelno >= logging.ERROR]
+  [usage] = [c for c in claims if c['kind'] == 'usage']
+  assert usage['citesAuctt'] == 'veterum' and 'citesSource' not in usage
+  assert 'printedAttribution' not in usage
+  acts = [(c.get('by'), c.get('byAuctt')) for c in claims if c['kind'] == 'act']
+  assert acts == [(None, True), ('1968b_paul.c.r.c', None)]
+
+  schema = support.schema()
+  tree = schema[io.TREE_DEF]
+  assert tree.check({'taxonomies': [{'taxon': 'rhenopyrgus', 'authority': {'auctt': True}}]})
+  assert tree.check({'taxonomies': [root.data | {'authority': {'auctt': 'veterum', 'notes': 'n'}}]})
+  for authority in (
+    {'auctt': True, 'source': '1968b_paul.c.r.c'},
+    {'auctt': True, 'pages': 12},
+    {'auctt': True, 'attributedTo': ['paul.c.r.c']},
+    {'auctt': False},
+    {'auctt': ''},
+    {},
+  ):
+    assert not tree.check({'taxonomies': [{'taxon': 'rhenopyrgus', 'authority': authority}]})
+  # A protologue is a particular work.
+  record = {'name': 'Rhenopyrgus', 'rank': 'genus'}
+  assert schema['taxa'].check(
+    {'rhenopyrgus': record | {'authority': {'source': '1968b_paul.c.r.c'}}}
+  )
+  assert not schema['taxa'].check({'rhenopyrgus': record | {'authority': {'auctt': True}}})
+  section = {'name': 'Integra', 'authority': {'source': '1968b_paul.c.r.c'}}
+  assert schema['sections'].check({'integra': section})
+  assert not schema['sections'].check({'integra': section | {'authority': {'auctt': True}}})

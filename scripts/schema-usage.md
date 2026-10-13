@@ -14,6 +14,7 @@ even when its parent is also unreached, so read parents first.
 | `$defs` | unreached locations |
 |---|---|
 | `actAndModifierFields` | `phylogeny#/$defs/actAndModifierFields/properties/recombined/oneOf/1`<br>`phylogeny#/$defs/actAndModifierFields/properties/restricted`<br>`phylogeny#/$defs/actAndModifierFields/properties/restrictedBy`<br>`phylogeny#/$defs/actAndModifierFields/properties/restrictedBy/items` |
+| `authority` | `phylogeny#/$defs/authority/oneOf/1`<br>`phylogeny#/$defs/authority/properties/auctt`<br>`phylogeny#/$defs/authority/properties/auctt/oneOf/0`<br>`phylogeny#/$defs/authority/properties/auctt/oneOf/1` |
 | `catalogNumber` | `phylogeny#/$defs/catalogNumber`<br>`phylogeny#/$defs/catalogNumber/oneOf/0`<br>`phylogeny#/$defs/catalogNumber/oneOf/1`<br>`phylogeny#/$defs/catalogNumber/oneOf/1/items` |
 | `citedAct` | `phylogeny#/$defs/citedAct`<br>`phylogeny#/$defs/citedAct/properties/by` |
 | `cladisticFields` | `phylogeny#/$defs/cladisticFields/properties/data`<br>`phylogeny#/$defs/cladisticFields/properties/data/additionalProperties` |
@@ -122,6 +123,7 @@ property.
 | `attributedTo` | 24 | 1.3% |
 | `ex` | 2 | 0.1% |
 | `notes` | 2 | 0.1% |
+| `auctt` | 0 | 0.0% |
 
 ### `authorityFields` -- 9330 instances in `data/`
 
