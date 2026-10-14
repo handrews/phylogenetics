@@ -230,9 +230,9 @@ taxonomies:
         - taxon: rectiradiatus_shideler_1918
           parents:
           - taxon: agelacrinites
-      - taxon: billingsi_chapman_1860
+      - taxon: billingsi_chapman.e.j_1860
         synonyms:
-        - taxon: billingsi_chapman_1860
+        - taxon: billingsi_chapman.e.j_1860
           parents:
           - taxon: agelacrinus
       - taxon: youngi_raymond_1915

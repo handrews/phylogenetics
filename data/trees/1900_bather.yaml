@@ -45,10 +45,10 @@ taxonomies:
                 synonyms:
                 - taxon: crinoidea
                   citedAs: (= CRINOIDEA, sensu lato Auctt.).
-                  rank: null
+                  authority:
+                    auctt: true
                   sensu: lato
-                  auth: [Auctt.]
-                  year: 1900
+                  rank: null
                 children:
                 - taxon: cystidea
                   citedAs: CLASS I. CYSTIDEA, Von Buch (1844).
@@ -126,31 +126,62 @@ taxonomies:
                     synonyms:
                     - taxon: blastoidea
                       citedAs: (=BLASTOIDEA, Auctt.).
-                      auth: [Auctt.]
-                      year: 1900
+                      authority:
+                        auctt: true
                     pages: 81
                 - taxon: crinoidea
                   citedAs: >
                     CLASS III. CRINOIDEA, MILLER (1821)
-                    (=CRINOIDEA BRACHIATA, Auctt. veterum;
-                    EUCRINOIDEA, Zittel, 1879).
                   rank: Class
                   pages: 94
                   synonyms:
+                  - taxon: crinoidea brachiata
+                    citedAs: (=CRINOIDEA BRACHIATA, Auctt. veterum;
+                    authority:
+                      auctt: veterum
+                  - taxon: eucrinoidea
+                    citedAs: =EUCRINOIDEA, Zittel, 1879
+                    authority:
+                      source: 1879_zittel
                 - taxon: edrioasteroidea
-                  citedAs: 'E. Billings (1854,-58; Huxley, 1877; and Bather, 1899)'
+                  citedAs: >
+                    CLASS IV. EDRIOASTEROIDEA,
+                    E.  Billings (1854,-58; Huxley, 1877; and Bather, 1899)
+                  authority:
+                    source: 1858b_billings
+                    notes:
+                      1854 is the date of Billings's description of what is
+                      now Edrioaster bigsbyi, but no precursor to
+                      edrioasteroidea was declared until 1858.
+                  emendedBy:
+                  - source: 1877_huxley.t.h
+                  - source: 1899_bather
+                  editorial:
+                    inferred: [emendedBy]
+                    basis: >
+                      Emendations seem to be the best way to capture Bather's
+                      complex attribution, although there may be a subtle
+                      formal difference here.
                   synonyms:
                   - taxon: thyroida
-                    auth: [Chapman]
-                    year: 1860
-                    citedAs: Thyroida, Chapman, 1860
+                    authority:
+                      source: 1860b_chapman.e.j
+                    citedAs: =Thyroida, Chapman, 1860
                   - taxon: agelacrinoidea
-                    citedAs: Agelacrinoidea, S. A. Miller, 1877-83; Worthen, 1883
+                    citedAs: >
+                      Agelacrinoidea, S. A. Miller, 1877-83; Worthen, 1883
+                    authority:
+                      source: 1877_miller.s.a
+                    emendedBy:
+                    - source: 1883_miller.s.a
+                    - source: 1883_worthen
                   - taxon: cystasteroidea
                     citedAs: Cystasteroidea, Steinmann, 1888; F. Bernard, 1893
+                    authority:
+                      source: 1888_steinmnn.g
+                    emendedBy:
+                    - source: 1893_bernard.f
                   - taxon: thecoidea
-                    auth: [jaekel]
-                    year: 1895
                     citedAs: Thecoidea, Jaekel, 1895
                   children:
                   - taxon: agelacrinidae
@@ -159,7 +190,17 @@ taxonomies:
                   - taxon: steganoblastidae
                     new: true
                 - taxon: eleutherozoa-grade
+                  citedAs: GRADE B. ELEUTHEROZOA.
+                  pages: 217
+                  rank: Grade
                   children:
                   - taxon: holothuroidea
+                    citedAs: >
+                      CLASS I. HOLOTHURIOIDEA, C. T. v. Siebold (1848)
+                      (= FISTULIDES, Lamarck, 1801;
+                      SCYTODERMATA, Burmeister, 1837;
+                      ASCIDIASTELLA, T. & T. Austin, 1840;
+                      SCYTACTTINOTA, Bronn, 1860).
+                    pages: 218
                   - taxon: stelleroidea
                   - taxon: echinoidea

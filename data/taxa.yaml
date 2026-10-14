@@ -238,14 +238,14 @@ agastria:
 agelacrinidae:
   name: Agelacrinidae
   rank: Family
-  auth: [Chapman]
-  year: 1860
+  authority:
+    source: 1860b_chapman.e.j
   altSpellingOf: agelacrinitidae
 agelacrinitidae:
   name: Agelacrinitidae
   rank: Family
-  auth: [Chapman]
-  year: 1860
+  authority:
+    source: 1860b_chapman.e.j
 agelacrinitidae-uncertain-genus_bell.b.m_1976:
   name: null
   rank: genus
@@ -1485,10 +1485,10 @@ bigsbyi_billings_1857:
   name: bigsbyi
   authority:
     source: 1857_billings
-billingsi_chapman_1860:
+billingsi_chapman.e.j_1860:
   name: billingsi
-  auth: [Chapman]
-  year: 1860
+  authority:
+    source: 1860b_chapman.e.j
 billingsi_wilson_1946:
   name: billingsi
   auth: [Wilson]
@@ -2035,8 +2035,8 @@ caputmedusae_linnaeus_1758:
 carabocrinidae:
   name: Carabocrinidae
   rank: Family
-  auth: [bather]
-  year: 1899
+  authority:
+    source: 1899_bather
 carabocrinus:
   name: Carabocrinus
   authority:
@@ -2659,8 +2659,8 @@ comarocystitida:
 comarocystitidae:
   name: Comarocystitidae
   rank: Family
-  auth: [bather]
-  year: 1899
+  authority:
+    source: 1899_bather
 comarocystidae:
   name: Comarocystidae
   altSpellingOf: comarocystitidae
@@ -3164,8 +3164,8 @@ cyamoidea:
 cyathocrinina:
   name: Cyathocrinina
   rank: Suborder
-  auth: [bather]
-  year: 1899
+  authority:
+    source: 1899_bather
 cyathocrinites:
   name: Cyathocrinites
   authority:
@@ -3186,8 +3186,8 @@ cyathocystida:
 cyathocystidae:
   name: Cyathocystidae
   rank: Family
-  auth: [bather]
-  year: 1899
+  authority:
+    source: 1899_bather
   notes: In Bassler (1936), Bassler gives himself as authority, with no year.
 cyathocystids:
   name: Cyathocystids
@@ -3517,8 +3517,8 @@ dendrocrinidae:
 dendrocrinina:
   name: Dendrocrinina
   rank: Suborder
-  auth: [bather]
-  year: 1899
+  authority:
+    source: 1899_bather
 dendrocrinus:
   name: Dendrocrinus
   authority:
@@ -4053,8 +4053,8 @@ echinodiscus_worthen_miller_1883:
 echinoencrinitidae:
   name: Echinoencrinitidae
   rank: Family
-  auth: [bather]
-  year: 1899
+  authority:
+    source: 1899_bather
 echinoencrinitinae:
   name: Echinoencrinitinae
   rank: Subfamily
@@ -5487,8 +5487,8 @@ glyptocystella:
 glyptocystidae:
   name: Glyptocystidae
   rank: Family
-  auth: [bather]
-  year: 1899
+  authority:
+    source: 1899_bather
   altSpellingOf: glyptocystitidae
 glyptocystinae:
   name: Glyptocystinae
@@ -5499,13 +5499,13 @@ glyptocystinae:
 glyptocystitida:
   name: Glyptocystitida
   rank: Superfamily
-  auth: [bather]
-  year: 1899
+  authority:
+    source: 1899_bather
 glyptocystitidae:
   name: Glyptocystitidae
   rank: Family
-  auth: [bather]
-  year: 1899
+  authority:
+    source: 1899_bather
 glyptocystites:
   name: Glyptocystites
   authority:
@@ -7528,8 +7528,8 @@ macrocystella:
 macrocystellidae:
   name: Macrocystellidae
   rank: Family
-  auth: [bather]
-  year: 1899
+  authority:
+    source: 1899_bather
 macrocystellidae-sp_jell_burrett_banks_1985:
   name: null
   rank: species
@@ -7618,14 +7618,14 @@ malocystites:
 malocystidae:
   name: Malocystidae
   rank: Family
-  auth: [bather]
-  year: 1899
+  authority:
+    source: 1899_bather
   altSpellingOf: malocystitidae
 malocystitidae:
   name: Malocystitidae
   rank: Family
-  auth: [bather]
-  year: 1899
+  authority:
+    source: 1899_bather
 malum_pander_1830:
   name: malum
   authority:
@@ -7886,8 +7886,8 @@ merocrinus:
 mesocystidae:
   name: Mesocystidae
   rank: Family
-  auth: [bather]
-  year: 1899
+  authority:
+    source: 1899_bather
 mespiliformis_goldfuss_1831:
   name: mespiliformis
   authority:
@@ -7933,8 +7933,8 @@ milleporella_lamarck_1816:
     source: 1816a_lamarck
 milesia_paradoxididae:
   name: Milesia
-  auth: [Chapman]
-  year: 1929
+  authority:
+    source: 1929_chapman.f
   originalParent: Paradoxididae
   notes: Junior homonym of an insect genus.
 milleri_sharman_newton_1892:
@@ -9986,13 +9986,13 @@ proteus_müller.o.f_1786:
 protoblastoidea:
   name: Protoblastoidea
   rank: Grade
-  auth: [bather]
-  year: 1899
+  authority:
+    source: 1899_bather
 protocrinidae:
   name: Protocrinidae
   rank: Family
-  auth: [bather]
-  year: 1899
+  authority:
+    source: 1899_bather
   altSpellingOf: protocrinitidae
 protocrinites:
   name: Protocrinites
@@ -10001,13 +10001,13 @@ protocrinites:
 protocrinitida:
   name: Protocrinitida
   rank: Superfamily
-  auth: [bather]
-  year: 1899
+  authority:
+    source: 1899_bather
 protocrinitidae:
   name: Protocrinitidae
   rank: Family
-  auth: [bather]
-  year: 1899
+  authority:
+    source: 1899_bather
 protocrinoida:
   name: Protocrinoida
   rank: Order
@@ -12114,10 +12114,10 @@ tellina:
   authority:
     source: 1758_linnaeus
   citedAs: 271. TELLINA.
-templetonensis_chapman_1929:
+templetonensis_chapman.f_1929:
   name: templetonensis
-  auth: [Chapman]
-  year: 1929
+  authority:
+    source: 1929_chapman.f
 templetoni_kolata_1975:
   name: templetoni
   authority:
@@ -12316,13 +12316,13 @@ thresherodiscus:
 thyroidea:
   name: Thyroidea
   rank: Order
-  auth: [Chapman]
-  year: 1860
+  authority:
+    source: 1860b_chapman.e.j
 thyroida:
   name: Thyroida
   rank: Order
-  auth: [Chapman]
-  year: 1860
+  authority:
+    source: 1860b_chapman.e.j
   notes: Some sources list order Thyroidea, Thyroida is probably an error
   altSpellingOf: thyroidea
 thysanocrinus:

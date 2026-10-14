@@ -1476,6 +1476,43 @@
     year: 1858
   authors:
   - hall
+1860a_chapman.e.j:
+  title: Agelacrinities billingsi.  A new species.  Preliminary notice of.
+  journal: can-j-ind-sci-art
+  series: New Series
+  volume: 5
+  number: 26
+  pages:
+  - 204
+  - 205
+  pubDate:
+    year: 1860
+    month: 3
+  authors:
+  - chapman.e.j
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/30850724
+  notes: >
+    Apparently the awkwardly formatted title is cited in brackets as
+    "[Preliminary Notice of a New Species of Agelacrinites]"
+1860b_chapman.e.j:
+  title: On a new species of Agelacrinites, and on the structural relations of that genus
+  journal: can-j-ind-sci-art
+  series: New Series
+  volume: 5
+  number: 28
+  pages:
+  - 358
+  - 365
+  pubDate:
+    year: 1860
+    month: 7
+  processDates:
+    read: 1860-03-17
+  authors:
+  - chapman.e.j
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/30850886
 1865_norman:
   title: On the genera and species of British Echinodermata
   journal: annals-and-mag
@@ -1609,6 +1646,21 @@
   - nicholson
   identifiers:
     url: https://www.biodiversitylibrary.org/item/6241
+1877_huxley.t.h:
+  book: manual-inv
+  pubDate:
+    year: 1877
+  authors:
+  - huxley.t.h
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/11276
+  note: There is an American reprint dated 1878.
+1877_miller.s.a:
+  book: am-palaeo-fossils
+  pubDate:
+    year: 1877
+  authors:
+  - miller.s.a
 1879_dames:
   title: "Fr. Schmidt: Über Cyathocystis Plautinae (Referat)"
   journal: neues-jahrbuch
@@ -1690,6 +1742,21 @@
   notes: |
     Regular printing of 1879_schmidt.c.f, sometimes erroneously cited as
     the authority for its contents.
+1883_miller.s.a:
+  aliasOf: 1883_worthen_st-john_miller.s.a
+1883_worthen:
+  aliasOf: 1883_worthen_st-john_miller.s.a
+1883_worthen_st-john_miller.s.a:
+  book: geo-survey-illinois
+  volume: VII, Geology and Palæontology
+  pubDate:
+    year: 1883
+  authors:
+  - worthen
+  - st-john
+  - miller.s.a
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/64668#page/7/mode/1up
 1884_sollas:
   title: On the Development of Halisarca lobularis (O. Schmidt)
   journal: quart-jour-mic-sci
@@ -1719,6 +1786,17 @@
   - billings.w.r
   identifiers:
     url: https://www.biodiversitylibrary.org/page/30200108
+1888_steinmann.g:
+  aliasOf: 1888_steinmann.g_döderlin
+1888_steinmann.g_döderlin:
+  book: elements-de
+  pubDate:
+    year: 1888
+  authors:
+  - steinmann.g
+  - döderlin
+  identifiers:
+    url: https://archive.org/details/elementederpal00stei/page/n7/mode/2up
 1889a_nicholson_lydekker:
   book: manual-3rd
   volume: I
@@ -1753,6 +1831,14 @@
   - bell.f.j
   identifiers:
     doi: 10.1080/00222939109460422
+1893_bernard.f:
+  book: elements-fr
+  pubDate:
+    year: 1893
+  authors:
+  - bernard.f
+  identifiers:
+    url: https://www.google.com/books/edition/%C3%89l%C3%A9ments_de_pal%C3%A9ontologie/OXxGAQAAMAAJ?hl=en
 1895_jaekel:
   title: Über die Organisation der Cystoideen
   journal: verhandlungen
@@ -2179,6 +2265,17 @@
   notes: |
     "Tryckt den 21 februari 1927" (p. 5), the separate printing; communicated
     27 October 1926; Häfte 2 of Band 19 issued 3 November 1927.
+1929_chapman.f:
+  title: On some trilobites and brachiopods from the Mount Isa district, N.W. Queensland
+  journal: proc-vic
+  volume: 41
+  pages:
+  - 202
+  - 216
+  pubDate:
+    year: 1929
+  authors:
+  - chapman.f
 1929_matsumoto:
   title: Outline of a classification of Echinoermata
   journal: tohoku

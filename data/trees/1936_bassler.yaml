@@ -127,7 +127,7 @@ taxonomies:
         - taxon: youngi_raymond_1915
       - taxon: agelacrinites-subgenus
         children:
-        - taxon: billingsi_chapman_1860
+        - taxon: billingsi_chapman.e.j_1860
         - taxon: rectiradiatus_shideler_1918
       - taxon: curtus_bassler_1936
         new: true

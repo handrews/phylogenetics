@@ -18,8 +18,15 @@ am-j-sci-c:
   name: "The American Journal of Science, &c."
 am-nat:
   name: The American Naturalist
+am-palaeo-fossils:
+  name: >
+    The American Palæozoic Fossils: A Catalogue of the Genera and Species,
+    with Names of Authors, Dates, Places of Publication, Groups of Rocks
+    in which Found, and the Etymology and Signification of the Words.
 amph-und-cyst:
-  name: "Die Amphorideen und Cystoideen: beiträge zur Morphologie und Phylogenie der Echinodermen"
+  name: >
+    Die Amphorideen und Cystoideen: beiträge zur Morphologie und
+    Phylogenie der Echinodermen
   publisher: Wilhelm Engelmann
   place: Leipzig
   notes: Separately paginated contribution to the Festschrift zum siebenzigsten Geburtstage von Carl Gegenbaur.
@@ -67,6 +74,8 @@ canadian-journal:
   name: The Canadian Journal
 can-j-earth-sci:
   name: Canadian Journal of Earth Sciences
+can-j-ind-sci-art:
+  name: The Canadian Journal of Industry, Science, and Art
 canadian-record-sci:
   name: The Canadian Record of Science
   publisher: Natural History Society of Montreal
@@ -94,6 +103,10 @@ e-tampa-bay:
   place: Rotterdam
 earth-science:
   name: Earth Science
+elements-de:
+  name: Elemente der Paläontologie
+elements-fr:
+  name: Éléments de paléontologie
 es-rev:
   name: Earth-Science Reviews
 e-faunas-bromide:
@@ -138,6 +151,8 @@ geo-soc-am-abs-prog:
   name: Geological Society of America, Abstracts With Programs
 geo-survey-canada:
   name: Geological Survey of Canada. Report of Progress for the years 1853–54–55–56
+geo-survey-illinois:
+  name: Geological Survey of Illinois
 handbuch:
   name: Handbuch der Palaeontologie
 handbuch-nat:
@@ -195,6 +210,8 @@ manual-2nd:
   name: A Manual of Paleontology for the Use of Students, 2nd Ed.
 manual-3rd:
   name: A Manual of Paleontology for the Use of Students, 3rd Ed.
+manual-inv:
+  name: A manual of the anatomy of invertebrated animals
 mem-aust:
   name: Memoirs of the Association of the Australian Palaeontologists
 mem-geol-gb:
@@ -288,7 +305,9 @@ ppp:
 procrsocb:
   name: Proceedings of the Royal Society B
 proclinn-nsw:
-  name: Proceddings of the Linnaean Society of New South Wales
+  name: Proceedings of the Linnaean Society of New South Wales
+proc-vic:
+  name: Proceedings of the Royal Society of Victoria
 pworld:
   name: Palaeoworld
 p-z:

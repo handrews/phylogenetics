@@ -139,7 +139,7 @@ taxonomies:
           - taxon: multibrachiatus_raymond_1915
           - taxon: youngi_raymond_1915
           - taxon: platys_raymond_1915
-          - taxon: billingsi_chapman_1860
+          - taxon: billingsi_chapman.e.j_1860
     - taxon: isorophina
       new: true
       children:

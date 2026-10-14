@@ -60,6 +60,11 @@ bell.f.j:
   given: Francis Jeffrey
   birth: 1855
   death: 1924
+bernard.f:
+  surname: Bernard
+  given: Félix
+  birth: 1863
+  death: 1898
 billings:
   surname: Billings
   given: Elkahna
@@ -137,6 +142,16 @@ caster:
   given: Kenneth E.
   birth: 1908
   death: 1992
+chapman.e.j:
+  surname: Chapman
+  given: Edward John
+  birth: 1821
+  death: 1904
+chapman.f:
+  surname: Chapman
+  given: Frederick
+  birth: 1864
+  death: 1943
 chen.a:
   surname: Chen
   given: Ailin
@@ -229,6 +244,11 @@ derstler:
 deshmukh:
   surname: Deshmukh
   given: Umakant Bhoopati
+döderlein:
+  surname: Döderlein
+  given: Ludwig
+  birth: 1855
+  death: 1936
 domínguez alonso:
   surname: Domínguez Alonso
   given: Patricio
@@ -469,6 +489,11 @@ hudson:
 hughes:
   surname: Hughes
   given: N. F.
+huxley.t.h:
+  surname: Huxley
+  given: Thomas Henry
+  birth: 1825
+  death: 1895
 hyman:
   surname: Hyman
   given: Libbie Henrietta
@@ -903,6 +928,17 @@ springer:
 sprinkle:
   surname: Sprinkle
   given: James
+st-john:
+  surname: St. John
+  given: Orestes Hawley
+  birth: 1841
+  death: 1921
+steinmann.g:
+  surname: Steinmann
+  given: Gustav
+  birth: 1856
+  death: 1929
+  notes: Full name Johann Heinrich Conrad Gottfried Gustav Steinmann
 stewart:
   surname: Stewart
   given: Sarah E.
