@@ -134,19 +134,11 @@ taxonomies:
                     CLASS III. CRINOIDEA, MILLER (1821)
                   rank: Class
                   pages: 94
-                  synonyms:
-                  - taxon: crinoidea brachiata
-                    citedAs: (=CRINOIDEA BRACHIATA, Auctt. veterum;
-                    authority:
-                      auctt: veterum
-                  - taxon: eucrinoidea
-                    citedAs: =EUCRINOIDEA, Zittel, 1879
-                    authority:
-                      source: 1879_zittel
                 - taxon: edrioasteroidea
                   citedAs: >
                     CLASS IV. EDRIOASTEROIDEA,
                     E.  Billings (1854,-58; Huxley, 1877; and Bather, 1899)
+                  rank: Class
                   authority:
                     source: 1858b_billings
                     notes:
@@ -156,12 +148,7 @@ taxonomies:
                   emendedBy:
                   - source: 1877_huxley.t.h
                   - source: 1899_bather
-                  editorial:
-                    inferred: [emendedBy]
-                    basis: >
-                      Emendations seem to be the best way to capture Bather's
-                      complex attribution, although there may be a subtle
-                      formal difference here.
+                  pages: 205
                   synonyms:
                   - taxon: thyroida
                     authority:
@@ -189,18 +176,60 @@ taxonomies:
                   - taxon: edrioasteridae
                   - taxon: steganoblastidae
                     new: true
-                - taxon: eleutherozoa-grade
+                - taxon: eleutherozoa
                   citedAs: GRADE B. ELEUTHEROZOA.
-                  pages: 217
                   rank: Grade
+                  authority: null
+                  pages: 217
                   children:
-                  - taxon: holothuroidea
+                  - taxon: holothurioidea
                     citedAs: >
                       CLASS I. HOLOTHURIOIDEA, C. T. v. Siebold (1848)
-                      (= FISTULIDES, Lamarck, 1801;
-                      SCYTODERMATA, Burmeister, 1837;
-                      ASCIDIASTELLA, T. & T. Austin, 1840;
-                      SCYTACTTINOTA, Bronn, 1860).
+                    rank: Class
+                    authority:
+                      source: 1848_siebold
                     pages: 218
+                    notes: By E. S. Goodrich, M. A.
+                    synonyms:
+                    - taxon: fistulides
+                      citedAs: =FISTULIDES, Lamarck, 1801
+                    - taxon: scytodermata
+                      citedAs: =SCYTODERMATA, Burmeister, 1837
+                    - taxon: ascidiastella
+                      citedAs: =ASCIDIASTELLA, T. & T. Austin, 1840
+                      auth: [austin.t, austin.t.j]
+                      year: 1840
+                      editorial:
+                        corrections:
+                          auth: null
+                          year: null
+                          authority:
+                            source: 1842_austin.t_austin.t.j
+                        basis: >
+                          T. & T. Austin, 1842 mentions that the classification
+                          was developed in 1840, but while there was apparently
+                          a talk that year, there was not a real pre-print.
+                    - taxon: scytactinota
+                      citedAs: =SCYTACTINOTA, Bronn, 1860
                   - taxon: stelleroidea
+                    citedAs: CLASS II. STELLEROIDEA.
+                    rank: Class
+                    authority: null
+                    pages: 237
+                    notes: By J. W. Gregory, D.Sc.
+                    children:
+                    - taxon: asteroidea
+                      citedAs: SUB-CLASS 1. ASTEROIDEA.
+                      rank: Subclass
+                      authority: null
+                      pages: 239
+                    - taxon: SUB-CLASS 2. OPHIUROIDEA.
+                      rank: Subclass
+                      authority: null
+                      pages: 259
                   - taxon: echinoidea
+                    citedAs: CLASS III. ECHINOIDEA.
+                    rank: Class
+                    authority: null
+                    pages: 282
+                    notes: By J. W. Gregory, D.Sc.

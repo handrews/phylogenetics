@@ -1056,6 +1056,25 @@
   - buch
   identifiers:
     url: https://www.biodiversitylibrary.org/page/49045685
+1842_austin.t_austin.t.j:
+  title: >
+    Proposed Arrangement of the Echinodermata, particularly as regards the
+    Crinoidea, and a Scooping out of the Alveoli
+  journal: annals-and-mag
+  volume: 10
+  number: 63
+  pages:
+  - 106
+  - 113
+  pubDate:
+    year: 1942
+    month: 10
+  authors:
+  - austin.t
+  - austin.t.j
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/2323940
+  notes: Often credited as 1840 becuase of an in-manuscript date.
 1842_conrad.t.a:
   title: Descriptions of new Species of Organic Remains belonging to the Silurian, Devonian, and Carboniferous Systems of the United States
   journal: jofacnatsci-philadelphia
@@ -1249,6 +1268,12 @@
     year: 1848
   authors:
   - leuckart
+1848_siebold:
+  book: lehrbuch
+  pubDate:
+    year: 1848
+  authors:
+  - siebold
 1852_hall:
   book: paleo-ny
   volume: 2
@@ -1476,6 +1501,15 @@
     year: 1858
   authors:
   - hall
+1860_bronn.h.g:
+  book: die-klassen
+  volume: 2
+  pubDate:
+    year: 1860
+  authors:
+  - bronn.h.g
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/43997#page/8/mode/1up
 1860a_chapman.e.j:
   title: Agelacrinities billingsi.  A new species.  Preliminary notice of.
   journal: can-j-ind-sci-art
@@ -1714,6 +1748,15 @@
   notes: |
     Pre-print of 1880_schmidt.c.f, and the more broadly cited authority
     for Cyathocystis and C. plautinae.
+1879_springer:
+  book: rev-pcrin
+  volume: Part I
+  pubDate:
+    year: 1879
+  authors:
+  - springer
+  identifier:
+    url: https://archive.org/details/jstor-4060328/page/n1/mode/2up
 1879_zittel:
   book: handbuch
   volume: II
@@ -1742,6 +1785,15 @@
   notes: |
     Regular printing of 1879_schmidt.c.f, sometimes erroneously cited as
     the authority for its contents.
+1881_springer:
+  book: rev-pcrin
+  volume: Part II
+  pubDate:
+    year: 1881
+  authors:
+  - springer
+  identifier:
+    url: https://archive.org/details/jstor-4060543/page/n1/mode/2up
 1883_miller.s.a:
   aliasOf: 1883_worthen_st-john_miller.s.a
 1883_worthen:
@@ -1775,6 +1827,25 @@
   - sollas
   identifiers:
     url: https://archive.org/details/quarterlyjournal241884lond/page/602/mode/2up
+1885_wachsmuth_springer:
+  book: rev-pcrin
+  volume: Part III, Section I
+  pubDate:
+    year: 1885
+  authors:
+  - wachsmuth
+  - springer
+  identifier:
+    url: https://archive.org/details/revisionpalaeoc00sprigoog/page/n12/mode/2up
+1886_springer:
+  book: rev-pcrin
+  volume: Part III, Section II
+  pubDate:
+    year: 1886
+  authors:
+  - springer
+  identifier:
+    url: https://archive.org/details/jstor-4061335/page/n1/mode/2up
 1887_billings.w.r:
   title: A new genus and three new species of crinoids from the Trenton Formation with notes on a large specimen of Dendrocrinus proboscidiatus
   journal: ottawa-naturalist
@@ -1906,6 +1977,39 @@
       illustrations: partly
       phylogeny: na
     notes: Reviewed against the paper 2026-09-10; see notes/reviews/review_1896_pompeckj.md
+1897a_wachsmuth_springer:
+  title: The North American Crinoidea Camerata, Vol. I
+  journal: mem-comp-zool
+  volume: 20
+  pubDate:
+    year: 1897
+  authors:
+  - wachsmuth
+  - springer
+  identifiers:
+    url: https://archive.org/details/NorthAmericanCrIWach/page/n11/mode/2up
+1897b_wachsmuth_springer:
+  title: The North American Crinoidea Camerata, Vol. II
+  journal: mem-comp-zool
+  volume: 21
+  pubDate:
+    year: 1897
+  authors:
+  - wachsmuth
+  - springer
+  identifiers:
+    url: https://archive.org/details/NorthAmericanCrIIWach/page/n1/mode/2up
+1897c_wachsmuth_springer:
+  title: The North American Crinoidea Camerata, Plates and Descriptions
+  journal: mem-comp-zool
+  volume: Eighty-Three Plates to Accomany Vols. XX and XXI
+  pubDate:
+    year: 1897
+  authors:
+  - wachsmuth
+  - springer
+  identifiers:
+    url: https://archive.org/details/NorthAmericanCrAtlaWach/page/n7/mode/2up
 1897_whiteaves:
   title: Description of a new genus and species of cystideans from the Trenton limestone at Ottawa
   journal: canadian-record-sci

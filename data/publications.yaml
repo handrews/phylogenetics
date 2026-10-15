@@ -7,7 +7,9 @@ acta-p-polonica:
 acta-p-sinica:
   name: Acta Palaeontologica Sinica
 additamenta-klein:
-  name: Additamenta ad Iacobi Theodori Klein Naturalem Dispositionem Echinodermatum et Lucubratiunculam de Aculeis Echinorum Marinorum
+  name: >
+    Additamenta ad Iacobi Theodori Klein Naturalem Dispositionem
+    Echinodermatum et Lucubratiunculam de Aculeis Echinorum Marinorum
 akademie:
   name: Akademie der Wissenschaften
 alcheringa:
@@ -30,6 +32,7 @@ amph-und-cyst:
   publisher: Wilhelm Engelmann
   place: Leipzig
   notes: Separately paginated contribution to the Festschrift zum siebenzigsten Geburtstage von Carl Gegenbaur.
+    in Wort und Bild. Zweiter Band: Aktinozoen
 annals:
   name: Annales de Paleontologie
 annales-nord:
@@ -53,7 +56,9 @@ arkiv-zool:
 atlantic-geo:
   name: Atlantic Geology
 bericht-berlin:
-  name: Bericht über die zur Bekanntmachung geeigneten Verhandlungen der Königl. Preufs. Akademie der Wissenschaften zu Berlin.
+  name: >
+    Bericht über die zur Bekanntmachung geeigneten Verhandlungen der Königl.
+    Preufs. Akademie der Wissenschaften zu Berlin.
 beitrage:
   name: Beiträge zur geognosie des russischen reiches
 beitrage-russland:
@@ -86,6 +91,9 @@ cl-olandska:
   name: Carl von Linnés öländska resa, förrättad 1741
 coloquios:
   name: Coloquios de Paleontología
+die-klassen:
+  name: >
+    Die Klassen und Ordnungen des Thier-Reichs, wissenschaftlich dargestellt
 doklady:
   name: Doklady Akademii Nauk SSSR
   notes: Proceedings of the Academy of Sciences of the USSR
@@ -110,7 +118,8 @@ elements-fr:
 es-rev:
   name: Earth-Science Reviews
 e-faunas-bromide:
-  name: Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma
+  name: >
+    Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma
   editors:
   - sprinkle
 fam-nat:
@@ -191,6 +200,8 @@ konglinga:
   name: Kongliga Vetenskaps Academiens Handlingar
 kungliga-svenska:
   name: Kungliga Svenska vetenskapsakademiens handlingar
+lehrbuch:
+  name: Lehrbuch der vergleichenden Anatomie der wirbellosen Thiere
 leopoldo:
   name: >
     Nova acta physico-medica Academiae Caesareae Leopoldino-Carolinae
@@ -214,6 +225,8 @@ manual-inv:
   name: A manual of the anatomy of invertebrated animals
 mem-aust:
   name: Memoirs of the Association of the Australian Palaeontologists
+mem-comp-zool:
+  name: Memoirs of the Museum of Comparative Zoology at Harvard College
 mem-geol-gb:
   name: Memoirs of the Geological Survey of Great Britain, and of the Museum of Practical Geology in London
 mem-q:
@@ -326,6 +339,8 @@ regne-animal:
   name: Le règne animal distribué d'après son organisation
 regne-animal-2nd:
   name: Le règne animal distribué d'après son organisation, 2nd Ed.
+rev-pcrin:
+  name: Revision of the Palaeocrinoidea
 russisch-kaiserlichen:
   name: |
     Verhandlungen der Russisch-Kaiserlichen Mineralogischen Gesellschaft

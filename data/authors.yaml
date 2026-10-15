@@ -18,6 +18,9 @@ ausich:
 austin.t:
   surname: Austin
   given: Thomas
+austin.t.j:
+  surname: Austin
+  given: Thomas Jr.
 babcock:
   surname: Babcock
   given: Loren E.
@@ -108,6 +111,11 @@ briggs.d.e.g:
 broadhead:
   surname: Broadhead
   given: Thomas W.
+bronn.h.g:
+  surname: Bronn
+  given: Heinrich Georg
+  birth: 1800
+  death: 1862
 brown.i.a:
   surname: Brown
   given: Ida A.
@@ -895,6 +903,12 @@ seibert.r:
 selden:
   surname: Selden
   given: Paul A.
+siebold:
+  surname: Siebold
+  given: carl Theodor Ernst von
+  birth: 1804
+  death: 1885
+  notes: or Carl
 siveter.da.j:
   surname: Siveter
   given: David J.
@@ -1001,6 +1015,11 @@ volborth:
   birth: 1800
   death: 1876
   notes: Alternatively, Aleksandr Fedorovich von Volborth
+wachsmuth:
+  surname: Wachsmuth
+  given: Charles
+  birth: 1829
+  death: 1896
 wahlenberg:
   surname: Wahlenberg
   given: Göran

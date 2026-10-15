@@ -975,6 +975,10 @@ ascidia:
   name: Ascidia
   authority:
     source: 1767_linnaeus
+ascidiastella:
+  name: Ascidiastella
+  authority:
+    source: 1842_austin.t_austin.t.j
 ascidiens:
   name: Ascidiens
   rank: Order
@@ -6281,6 +6285,10 @@ holothuria-order:
   notes: |
     Treating this as a weirdly-named Holothuroidea rather than
     a "promoted" genus.
+holothurioidea:
+  name: Holothurioidea
+  altSpellingOf: holothuroidea
+  notes: Unclear where this variant originated, perhaps Siebold 1848?
 holothuroidea:
   name: Holothuroidea
   rank: Class
@@ -8124,6 +8132,10 @@ monobrachiolata_paul.c.r.c_1967:
   name: monobrachiolata
   auth: [paul.c.r.c]
   year: 1967  # Not the current 1967_paul.c.r.c
+monocyclica:
+  name: monocyclica
+  authority:
+    source: 1899_bather
 monodon:
   name: Monodon
   rank: genus
@@ -11187,6 +11199,11 @@ scyphocrinus:
   name: Scyphocrinus
   authority:
     source: 1847_hall
+scytactinota:
+  name: Scytactinota:
+  rank: Class
+  authority:
+    source: 1860_bronn.h.g
 scytodermata:
   name: Scytodermata
   rank: Class
