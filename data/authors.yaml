@@ -398,6 +398,11 @@ gozalo:
 grant:
   surname: Grant
   given: J. A.
+gravenhorst:
+  surname: Gravenhorst
+  given: Johann Ludwig Christian
+  birth: 1777
+  death: 1857
 gray.g.r:
   surname: Gray
   given: George Robert
@@ -557,6 +562,8 @@ lamarck:
 lankester:
   surname: Lankester
   given: E. Ray
+  birth: 1847
+  death: 1929
 latreille:
   surname: Latreille
   given: Pierre André
@@ -942,11 +949,16 @@ springer:
 sprinkle:
   surname: Sprinkle
   given: James
-st-john:
+st. john:
   surname: St. John
   given: Orestes Hawley
   birth: 1841
   death: 1921
+stannius:
+  surname: Stannius
+  given: Hermann Friedrich
+  birth: 1808
+  death: 1883
 steinmann.g:
   surname: Steinmann
   given: Gustav

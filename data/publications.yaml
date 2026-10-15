@@ -31,8 +31,9 @@ amph-und-cyst:
     Phylogenie der Echinodermen
   publisher: Wilhelm Engelmann
   place: Leipzig
-  notes: Separately paginated contribution to the Festschrift zum siebenzigsten Geburtstage von Carl Gegenbaur.
-    in Wort und Bild. Zweiter Band: Aktinozoen
+  notes: >
+    Separately paginated contribution to the Festschrift zum siebenzigsten
+    Geburtstage von Carl Gegenbaur.
 annals:
   name: Annales de Paleontologie
 annales-nord:
@@ -201,7 +202,10 @@ konglinga:
 kungliga-svenska:
   name: Kungliga Svenska vetenskapsakademiens handlingar
 lehrbuch:
-  name: Lehrbuch der vergleichenden Anatomie der wirbellosen Thiere
+  name: Lehrbuch der vergleichenden Anatomie
+  editors:
+  - siebold
+  - stannius
 leopoldo:
   name: >
     Nova acta physico-medica Academiae Caesareae Leopoldino-Carolinae
@@ -405,6 +409,8 @@ uber-morph:
   name: Uber die Morphologie der wirbellosen Thiere
 ueber-esthland:
   name: Ueber das silurische Schichtensystem in Esthland
+verg-zool:
+  name: Vergleichende Zoologie
 verhandlungen:
   name: Verhandlungen der Deutschen Zoologischen Gesellschaft
 vermium-t-e-f:

@@ -2,8 +2,17 @@ taxonomies:
 - taxon: arthropoda
   citedAs: Phylum Arthropoda Siebold and Stannius, 1845
   rank: Phylum
-  auth: [Siebold, Stannius]
+  auth: [siebold, stannius]
   year: 1845
+  editorial:
+    corrections:
+      auth: null
+      year: null
+      authority:
+        source: 1845_siebold
+    basis: >
+      Siebold and Stannius were the editors of the series, but each
+      volume was written by one or the other alone, in this case Siebold.
   pages: 392
   children:
   - openTaxon: arthropoda-class-uncertain_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010

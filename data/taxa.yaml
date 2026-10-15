@@ -921,11 +921,12 @@ arthriticus_phillips.j_1839:
     source: 1839_murchison
 arthropoda:
   name: Arthropoda
-  rank: Phylum
-  auth: [Siebold]
-  year: 1848
+  rank: Class
+  authority:
+    source: 1843_gravenhorst
   notes: >
-    Also seen credited to Siebold and Stannius 1845 or Gravenhorst 1843
+    Complicated attribution history, see "The correct authorship of
+    Arthropoda—A reappraisal" Carlos A. Martínez-Muñoz 2023.
 arthropoda-class-uncertain_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010:
   name: null
   rank: Class
@@ -1938,8 +1939,8 @@ camelus:
 camerata:
   name: Camerata
   rank: Subclass
-  auth: [Wachsmuth, springer]
-  year: 1885
+  authority:
+    source: 1885_wachsmuth_springer
 camptostroma:
   name: Camptostroma
   auth: [ruedemann]
@@ -2599,16 +2600,13 @@ coelentera:
   rank: Phylum
   auth: [Frey, leuckart]
   year: 1847
-coelentera-grade:
-  name: Coelentera
-  rank: Grade
-  auth: [Frey, leuckart]
-  year: 1847
-coelomata-grade:
+  notes: Original rank unclear
+coelomata:
   name: Coelomata
   rank: Grade
   auth: []
-coelomocoela-grade:
+  notes: Original rank unclear
+coelomocoela:
   name: Coelomocoela
   rank: Grade
   auth: [lankester]
@@ -3511,13 +3509,13 @@ democratica_forsskål_1775:
 dendrocrinacea:
   name: Dendrocrinacea
   rank: Superfamily
-  auth: [Wachsmuth, springer]
-  year: 1886
+  authority:
+    source: 1886_wachsmuth_springer
 dendrocrinidae:
   name: Dendrocrinidae
   rank: Family
-  auth: [Wachsmuth, springer]
-  year: 1886
+  authority:
+    source: 1886_wachsmuth_springer
 dendrocrinina:
   name: Dendrocrinina
   rank: Suborder
@@ -4556,16 +4554,21 @@ endeca_linnaeus_1771:
   name: endeca
   auth: [linnaeus]
   year: 1771
-enterocoela-grade:
+enterocoelia:
+  name: Enterocoelia
+  rank: Division
+  auth: [Hatschek]
+  year: 1888
+  notes: Rank unclear
+enterocoela:
   name: Enterocoela
-  rank: Grade
-  auth: []
-enterozoa-branch:
+  altSpellingOf: enterocoelia
+enterozoa:
   name: Enterozoa
-  rank: Branch
+  rank: Grade
   auth: [lankester]
   year: 1877
-  notes: Subkingdom? "emend. Beklemishev 1944" on Wikipedia
+  notes: Wikipedia adds "emend. Beklemishev 1944"
 entozoa:
   name: Entozoa
   rank: Class
@@ -4825,6 +4828,12 @@ etoctenocystis:
   name: Etoctenocystis
   auth: [fatka, kordule]
   year: 1985
+eublastoidea:
+  name: Eublastoidea
+  rank: Grade
+  authority:
+    source: 1899_bather
+  notes: Rank based on Bather 1900
 eucalyptocrinites:
   name: Eucalyptocrinites
   authority:
@@ -6288,7 +6297,9 @@ holothuria-order:
 holothurioidea:
   name: Holothurioidea
   altSpellingOf: holothuroidea
-  notes: Unclear where this variant originated, perhaps Siebold 1848?
+  notes: >
+    Unclear where this variant originated, perhaps Siebold 1845, sometimes
+    credited based on the 1848 collected edition?
 holothuroidea:
   name: Holothuroidea
   rank: Class
@@ -6519,8 +6530,8 @@ imperialis_lamarck_1816:
 inadunata:
   name: Inadunata
   rank: Subclass
-  auth: [Wachsmuth, springer]
-  year: 1897
+  authority:
+    source: 1897a_wachsmuth_springer
 inaequalis_leske_1778:
   name: inaequalis
   authority:
@@ -7907,11 +7918,6 @@ mespilocystites:
 metazoa:
   name: Metazoa
   rank: Subkingdom
-  auth: [haeckel]
-  year: 1874
-metazoa-grade:
-  name: Metazoa
-  rank: Grade
   auth: [haeckel]
   year: 1874
 metularia_lamarck_1816:
@@ -10034,16 +10040,11 @@ protorophus:
   name: protorophus
   authority:
     source: 2010_zamora_smith.a.b
-protozoa-class:
+protozoa:
   name: Protozoa
   rank: Class
-  auth: [goldfuss]
-  year: 1818
-protozoa-grade:
-  name: Protozoa
-  rank: Grade
-  auth: [goldfuss]
-  year: 1818
+  authority:
+    source: 1818_goldfuss
 prunella_lamarck_1816:
   name: prunella
   authority:
@@ -10413,8 +10414,8 @@ rapa_bruguière_1789:
     source: 1789a_bruguière
 raphanocrinus:
   name: Raphanocrinus
-  auth: [Wachsmuth, springer]
-  year: 1885
+  authority:
+    source: 1885_wachsmuth_springer
 raripunctata_angelin_1878:
   name: raripunctata
   auth: [Angelin]
@@ -10547,8 +10548,8 @@ resseri_ulrich_1929:
 reteocrinidae:
   name: Reteocrinidae
   rank: Family
-  auth: [Wachsmuth, springer]
-  year: 1885
+  authority:
+    source: 1885_wachsmuth_springer
 retepora:
   name: Retepora
   authority:
@@ -11200,7 +11201,7 @@ scyphocrinus:
   authority:
     source: 1847_hall
 scytactinota:
-  name: Scytactinota:
+  name: Scytactinota
   rank: Class
   authority:
     source: 1860_bronn.h.g
@@ -11792,8 +11793,8 @@ stephanoblastus:
 stephanocrinidae:
   name: Stephanocrinidae
   rank: Family
-  auth: [Wachsmuth, springer]
-  year: 1886
+  authority:
+    source: 1886_wachsmuth_springer
 stephanocrinus:
   name: Stephanocrinus
   auth: [Conrad]

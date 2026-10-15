@@ -165,7 +165,7 @@ taxonomies:
                   - taxon: cystasteroidea
                     citedAs: Cystasteroidea, Steinmann, 1888; F. Bernard, 1893
                     authority:
-                      source: 1888_steinmnn.g
+                      source: 1888_steinmann.g
                     emendedBy:
                     - source: 1893_bernard.f
                   - taxon: thecoidea
@@ -186,10 +186,14 @@ taxonomies:
                     citedAs: >
                       CLASS I. HOLOTHURIOIDEA, C. T. v. Siebold (1848)
                     rank: Class
+                    auth: [siebold]
                     authority:
-                      source: 1848_siebold
+                      source: 1848b_siebold
                     pages: 218
-                    notes: By E. S. Goodrich, M. A.
+                    notes: >
+                      By E. S. Goodrich, M. A.
+                      Siebold 1848 is the collected edition; the section
+                      on echinoderms was first published in 1845.
                     synonyms:
                     - taxon: fistulides
                       citedAs: =FISTULIDES, Lamarck, 1801
@@ -223,7 +227,8 @@ taxonomies:
                       rank: Subclass
                       authority: null
                       pages: 239
-                    - taxon: SUB-CLASS 2. OPHIUROIDEA.
+                    - taxon: ophiuroidea
+                      citedAs: SUB-CLASS 2. OPHIUROIDEA.
                       rank: Subclass
                       authority: null
                       pages: 259

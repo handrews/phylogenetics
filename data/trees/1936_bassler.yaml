@@ -5,7 +5,7 @@ taxonomies:
   citedAs: Class EDRIOASTEROIDEA Billings, 1854–58
   rank: Class
   authority:
-    source: 1858_billings
+    source: 1858b_billings
   pages: 2
   editorial:
     inferred: [authority]
