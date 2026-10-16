@@ -28,8 +28,9 @@ taxonomies:
   citedAs: Classe CYSTOIDEA Von Buch, 1846
   rank: Class
   authority:
-    source: 1846a_buch
+    source: 1846c_buch
   pages: 816
+  notes: Ubaghs explicitly cites the German version.
   children:
   - taxon: glyptocystitida
     citedAs: Superfamille GLYPTOCYSTITIDA Bather, 1899

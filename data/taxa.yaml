@@ -3343,28 +3343,26 @@ cystasteroidea:
   notes: Actually "Gruppe" (3rd group of class Cystoidea)
 cystidea:
   name: Cystidea
-  rank: Class
-  authority:
-    source: 1844_buch
-cystidea-order:
-  rank: Order
-  altRankOf: cystidea
-cystideae-order:
-  name: Cystideae
-  altSpellingOf: cystidea-order
-cystidea-family:
-  name: Cystidea
+  altSpellingOf: cystideen
   rank: Family
-  auth: [buch]
-  year: 1844
-  notes: Original rank as defined in 1844 (via translation in 1846)
-cystideae-family:
+  authority:
+    source: 1845_buch
+cystideae:
   name: Cystideae
-  altSpellingOf: cystidea-family
+  altSpellingOf: cystideen
 cystideen:
   name: Cystideen
-  lang: DE
-  vulgarSpellingOf: cystidea-family
+  # TODO: Support for vulgar name being first.
+  # vulgarSpellingOf: cystidea
+  # lang: DE
+  rank: Family
+  authority:
+    source: 1845_buch
+  notes: >
+    Original rank as defined in 1844 reading / 1845 monograph
+    (via translation in 1846).  It seems like 1845 is the most official
+    earliest publication for ICZN purposes, although this is one
+    of the murkiest attributions out there.
 cystideae-unnamed-group_müller.j.p_1854:
   name: null
   rank: Unranked
@@ -3386,9 +3384,6 @@ cystideae-unnamed-subgroup-2_müller.j.p_1854:
 cystoidea:
   name: Cystoidea
   altSpellingOf: cystidea
-cystoidea-order:
-  rank: Order
-  altRankOf: cystoidea
 cystostellaroidea:
   name: Cystostellaroidea
   rank: Order

@@ -1172,13 +1172,25 @@
 1844_buch:
   title: Über Cystideen eingeleitet durch die Entwicklung der Eigenthümlichkeiten von Caryocrinus ornatus
   reading: akademie
-  notes: Some sources incorrectly give May 3rd instead of March 3rd due to an early typo.
   pubDate:
     year: 1844
     month: 3
     day: 3
   authors:
   - buch
+  notes: >
+    This reading is sometimes cited but other times not considered ICZN-valid.
+    Some sources incorrectly give May 3rd instead of March 3rd due to an
+    early typo. (TODO: Verify.  Found even more disagreement on this but
+    no longer recall where).
+1845_buch:
+  book: uber-cystideen
+  pubDate:
+    year: 1845
+  authors:
+  - buch
+  notes: >
+    The first undeniably publicly distributed printing of 1844_buch.
 1845_siebold:
   book: lehrbuch
   volume: 1 Wirbellosen Thiere
@@ -1190,16 +1202,6 @@
   notes: >
     Siebold & Stannius were the editors, but are sometimes cited as authors.
 1846a_buch:
-  title: Über Cystideen eingeleitet durch die Entwicklung der Eigenthümlichkeiten von Caryocrinus ornatus SAY
-  journal: abh-k-akad-wiss-berlin
-  pubDate:
-    year: 1846
-  pages:
-  - 89
-  - 116
-  authors:
-  - buch
-1846b_buch:
   title: Notice of a New Family of Crinoidal Animals, called Cystidea
   journal: jofgeol-london
   volume: 2
@@ -1213,9 +1215,12 @@
   - buch
   identifiers:
     url: https://www.biodiversitylibrary.org/page/35336362
-1846c_buch:
+  notes: >
+    This states that the German proceedings have still not been published,
+    and that 1846b_buch in the same volume is a translation of 1845_buch.
+1846b_buch:
   title: On the Cystidea (a new family of radiated animals), introduced by Account of the Caryocrinus ornatus, Say
-  translationOf: 1846a_buch
+  translationOf: 1845_buch
   journal: jofgeol-london
   volume: 2
   number: Part 2
@@ -1231,6 +1236,19 @@
   - buch
   identifiers:
     url: https://www.biodiversitylibrary.org/page/35336917
+1846c_buch:
+  title: Über Cystideen eingeleitet durch die Entwicklung der Eigenthümlichkeiten von Caryocrinus ornatus SAY
+  journal: abh-k-akad-wiss-berlin
+  pubDate:
+    year: 1846
+  pages:
+  - 89
+  - 116
+  authors:
+  - buch
+  notes: >
+    The actual proceedings from the 1844 reading, the printing of which
+    was delayed.
 1846_stannius:
   book: lehrbuch
   volume: 2 Wirbellthiere
@@ -4222,7 +4240,9 @@ inprep_sprinkle_strimple:
   authors:
   - domínguez alonso
 1999_ubaghs:
-  title: Échinodermes nouveaux du Cambrien supérieur de la Montagne Noire (France méridionale)
+  title: >
+    Échinodermes nouveaux du Cambrien supérieur de la Montagne Noire
+    (France méridionale)
   journal: geobios
   volume: 31
   number: 6
@@ -4237,7 +4257,7 @@ inprep_sprinkle_strimple:
   authors:
   - ubaghs
 1999_vizcaïno_lefebvre:
-  title: |
+  title: >
     Les échinodermes du Paléozoïque inférieur
     de Montagne Noire: biostratigraphie et paléodiversité
   journal: geobios

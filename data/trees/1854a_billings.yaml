@@ -10,18 +10,6 @@ taxonomies:
       Cystidea ... separate order of the Echinodermata ... Von Buch,
       in a memoir which appeared in 1845
     rank: Order
-    auth: [buch]
-    year: 1845
-    editorial:
-      corrections:
-        auth: null
-        year: null
-        authority:
-          source: 1846a_buch
-      basis: >
-        Cites the 1846a publication by name as being published in 1845,
-        as well as the 1846c translation.  Note that most sources now
-        consider the 1844 reading copy as the proper authority.
     pages: 215
     children:
     - taxon: glyptocystites

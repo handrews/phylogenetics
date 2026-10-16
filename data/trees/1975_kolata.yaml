@@ -36,7 +36,14 @@ taxonomies:
       citedAs: Class CYSTOIDEA von Buch, 1846
       rank: Class
       authority:
-        source: 1846a_buch
+        source: 1846c_buch
+      editorial:
+        inferred: [authority]
+        basis: >
+          von Buch's paper was first published as a monograph in 1845,
+          but is often cited as a journal article from 1846.  I am
+          assuming that the German article is intended, although it
+          actually reached print after the English translation (1846b_buch).
       pages: 15
       children:
       - taxon: rhombifera_zittel_1879
