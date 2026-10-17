@@ -94,7 +94,10 @@ taxonomies:
         children:
         - taxon: conicus_billings_1857_porocrinus
           new: true
-    - taxon: cystideae-order
+    - taxon: cystideae
+      citedAs: Order CYSTIDEÆ.
+      rank: Order
+      pages: 280
       children:
       - taxon: glyptocystites
         children:

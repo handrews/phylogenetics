@@ -1060,6 +1060,11 @@ asterias:
 asterias-family:
   rank: Family
   altRankOf: asterias
+asterias-sp_hall_1847:
+  name: null
+  rank: species
+  authority:
+    source: 1847_hall
 asteriadae-family:
   rank: Family
   altRankOf: asteriadae-order
@@ -3345,8 +3350,6 @@ cystidea:
   name: Cystidea
   altSpellingOf: cystideen
   rank: Family
-  authority:
-    source: 1845_buch
 cystideae:
   name: Cystideae
   altSpellingOf: cystideen
@@ -3355,14 +3358,14 @@ cystideen:
   # TODO: Support for vulgar name being first.
   # vulgarSpellingOf: cystidea
   # lang: DE
-  rank: Family
+  rank: null
   authority:
-    source: 1845_buch
+    source: 1844_buch
   notes: >
-    Original rank as defined in 1844 reading / 1845 monograph
-    (via translation in 1846).  It seems like 1845 is the most official
-    earliest publication for ICZN purposes, although this is one
-    of the murkiest attributions out there.
+    The original German account of the read paper does not mention
+    a clear rank.  Nor does the formal German paper published in 1845
+    as a monograph or 1846 in a journal.  The "Family" comes from
+    the 1846 English notice and translation.
 cystideae-unnamed-group_müller.j.p_1854:
   name: null
   rank: Unranked

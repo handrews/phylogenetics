@@ -1,5 +1,13 @@
 taxonomies:
-- taxon: cystidea-order
+- taxon: cystideae
+  citedAs: >
+    in his second essay, L. von Buch founded the order Cystidee@ (1844)
+  rank: Order
+  notes: >
+    Billings also mentions the 1845 edition of von Buch, and the English
+    translation in the Quarterly Journal, although he also attributes
+    the translation to 1845 rather than 1846.
+  pages: 40
   children:
   - taxon: pleurocystites
     pages: 46

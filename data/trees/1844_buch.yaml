@@ -1,0 +1,200 @@
+taxonomies:
+- taxon: cystideen
+  citedAs: Von Cystideen.
+  rank: null
+  new: true
+  pages: 124
+  children:
+  - taxon: sphaeronites
+    citedAs: SPHAERONITES
+    isType: true
+    pages: 126
+    notes: >
+      Die Sphaeroniten können als das Symbol oder als der Typus aller
+      Cystideen angesehen werden; denn sie entfernen sich am weitesten
+      von Allem, was an Crinoideen erinnern könnte; und die kugelrunde
+      Form läfst eher auf eine Entwickelung schliefsen vom Mittelpunkt
+      fast gleichförmig nach allen Seiten hin, als auf eine in einer
+      bestimmten Richtung nach Oben hinauf, wie bei den Crinoideen.
+
+      Via Google Translate:
+
+      Sphaeronites can be regarded as the symbol or the archetype
+      of all cystoids; for they depart most significantly from anything
+      that might recall the crinoids, and their spherical form suggests
+      a development that proceeds almost uniformly from the center in all
+      directions, rather than one directed upward along a specific axis,
+      as is the case with the crinoids.
+    children:
+    - taxon: aurantium_gyllenhaal_1772
+      citedAs: >
+        1) SPHAERONITES Aurantium
+      pages: 126
+      synonyms:
+      - citedAs: Tilas, Vet. Acad. Hand. 1840. t. XI. f.18.
+        editorial:
+          corrections:
+            citedAs: Tilas, Vet. Acad. Hand. 1740. t. II. f.18.
+          basis: >
+            Tilas published in 1740 but not a century later, and the relevant
+            figure 18 is on plate II; there is no pate XI.
+        auth: [Tilas]
+        year: 1740
+        illustrations:
+        - plate: XI
+          figures: 18
+      - citedAs: Gyllenhal, Vet. Acad. Nya Handl. 1772, 242. t. VII f.4,5.
+        authority:
+          source: 1772_gyllenhaal
+          illustrations:
+          - plate: VII
+            figures: [4, 5]
+      - citedAs: Wahlenberg, Acta Acad. Ups. VII. 52.
+        authority:
+          source: 1821_wahlenberg
+          pages: 52
+          illustrations:
+          - plate: VII
+      - citedAs: Pander, t. XXIX. f. 2, 3.
+        authority:
+          source: 1830_pander
+          illustrations:
+          - plate: XXIX
+            figures: [2, 3]
+      - citedAs: Herzog von Leuchtenberg, t. II. f. 17.
+        auth: [Leuchtenberg]
+        illustrations:
+        - plate: II
+          figures: 17
+      - citedAs: Buch, Beitr. zur Kenntn. der Geb. in Ruſsland, t. I. f. 14
+        authority:
+          source: 1840a_buch
+          illustrations:
+          - plate: I
+            figures: 14
+    - taxon: pomum_gyllenhaal_1772
+      pages: 127
+  - citedAs: CARYOCYSTITES
+    new: true
+    pages: 128
+    children:
+    - taxon: granatum_wahlenberg_1821
+      citedAs: Caryocystites Granatum Wahl.
+      pages: 128
+      synonyms:
+      - taxon: granatum_wahlenberg_1821
+        citedAs: >
+          Echinosphaerites Granatum, Wahlenberg, Acta Soc. Upsal. VII. 53.
+        parents:
+        - taxon: echinosphaerites
+      - taxon: testudinarius_hisinger_1837
+        citedAs: >
+          Sphaeronites testudinarius, Hisinger, Lethaea Suecica,
+          p. 92. t. XXV. f.9. a).
+        parents:
+        - taxon: sphaeronites
+        pars: true
+        authority:
+          source: 1837_hisinger
+          pages: 92
+          illustrations:
+          - plate: XXV
+            figures: 9a
+    - taxon: testudinarius_hisinger_1837
+      citedAs: Caryocystites testudinarius His.
+      pages: 129
+      synonyms:
+      - taxon: testudinarius_hisinger_1837
+        citedAs: >
+          Sphaeronites testudinarius, Hisinger, Lethaea Suecica, t. XXV.
+          f. 9. .d
+        parents:
+        - taxon: sphaeronites
+        pars: true
+        authority:
+          source: 1837_hisinger
+          illustrations:
+          - plate: XXV
+            figures: 9d
+  - taxon: hemicosmites
+    citedAs: HEMICOSMITES
+    pages: 129
+    children:
+    - taxon: pyriformis_buch_1840
+      citedAs: HEMICOSMITES pyriformis
+      pages: 129
+      synonyms:
+      - taxon: malum_pander_1830
+        citedAs: >
+          Echinosphaerites Malum, Pander, t. XXIX. f. 1, 2, 3,
+          mit dem Stiel oben, den Mund unten.
+        authority:
+          source: 1830_pander
+          illustrations:
+          - plate: XXIX
+            figures: [1, 2, 3]
+            notes: >
+              "mit em Stieloben, den Mund unten" translates to
+              "with the stalk at the top and the mouth at the bottom"
+        parents:
+        - taxon: echinosphaerites
+      - citedAs: Buch, Ber. zur Kenntn. der Geb. in Ruſsland, t. 1. f. 1—13
+        authority:
+          source: 1840a_buch
+          illustrations:
+          - plate: 1
+            figures:
+            - [1, 13]
+  - taxon: sycocystites
+    new: true
+    children:
+    - taxon: angulosus_buch_1844
+      new: true
+      or:
+      - taxon: senckenbergii_meyer_1826
+      synonyms:
+      - taxon: senckenbergii_meyer_1826
+        parents:
+        - taxon: echino-encrinus
+      - taxon: angulosa_pander_1830
+        parents:
+        - taxon: echinosphaerites
+      - taxon: striata_pander_1830
+        parents:
+        - taxon: echinosphaerites
+  - taxon: cryptocrinites
+    children:
+    - taxon: cerasus_buch_1840
+      synonyms:
+      - taxon: laevis_pander_1830
+        parents:
+        - taxon: echinosphaerites
+      - taxon: jacksoni_austen_1843
+        parents:
+        - taxon: sycocrinites
+      - taxon: anapeptamenus_austen_1843
+        parents:
+        - taxon: sycocrinites
+  - taxon: sycocrinites
+    children:
+    - taxon: clausus_austen_1843
+  - taxon: pseudocrinites
+    children:
+    - taxon: bicopuladigiti_garnet_1844
+      notes: |
+        "is manifestly a Cystidea resembling Caryocystites" (1846
+        translation). A comparison of form; von Buch places the
+        species in the family and does not move it to Caryocystites.
+  - openTaxon: asteriadae-gen_sowerby.g.b_1825
+    provisional: true
+    authority:
+      source: 1825b_sowerby.g.b
+      pages: 318
+    children:
+    - openTaxon: asteriadae-gen-sp_sowerby.g.b_1825
+      notes: |
+        "A species figured and described by Mr. J. Sowerby in the
+        'Zoological Journal' (ii. 318) also probably belongs to this
+        family. [...] a considerable number of irregular plates
+        surround, as in Sphaeronites, the spheroidal figure." (1846
+        translation). The Sphaeronites remark describes the plating.

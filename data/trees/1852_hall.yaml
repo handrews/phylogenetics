@@ -1,11 +1,12 @@
 taxonomies:
-- taxon: echinodermata-order
-  notes: rank is a guess, presence implied from text.
+- taxon: echinodermata
+  rank: null
   children:
-  - taxon: crinoidea-family
-    notes: Rank is a guess.  Middle Silurian of Clinton Group.
+  - taxon: crinoidea
+    rank: Order
+    notes: Rank based on that of Cystidea mentioned relative to Crinoidea
     synonyms:
-    - taxon: crinoideae-family
+    - taxon: crinoideae
       notes: Alternate spelling used in text.
     children:
     - taxon: closterocrinus
@@ -161,10 +162,16 @@ taxonomies:
     - taxon: calceocrinus
       new: true
       notes: Errata and additions; no species defined.
-  - taxon: cystideae-family
+  - taxon: cystideae
+    citedAs: >
+      CYSTIDEÆ ... to which the name of Cystidee has been given by
+      M. Von Buch, who regards them as forming a distinct order of Echinoderms,
+    rank: Order
+    pages: 233
     synonyms:
-    - taxon: cystidea-family
-      notes: Alternate spelling used in text.
+    - taxon: cystidea
+      notes: >
+        On page 223: "The Cystidea of Von Buch, properly so called,"
     children:
     - taxon: callocystites
       pages: 238

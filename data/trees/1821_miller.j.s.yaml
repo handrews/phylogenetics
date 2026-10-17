@@ -1,5 +1,6 @@
 taxonomies:
 - taxon: echinodermata
+  rank: Division
   citedAs: >
     "...which may be usefully applied to the investigation of the other
     families of that important and hitherto imperfecly understood natural

@@ -1,110 +1,204 @@
+notes: >
+  Hall is maddeningly unclear regarding higher echinoderm taxa.
+  On page 80:
+
+    "In addition to the CRINOIDEA of this ancient period, we have,
+    in the Family ECHINODERMATA, the Genus ASTERIAS,"
+
+  which seems to indicate that Echinodermata and Crinoidea are
+  sibling taxa, with Asterias under Echinodermata.  On page 87:
+
+    "Von Buch has included in his family CYSTIDEA, a group
+    intermediate between the ECHINIDEA and the true CRINOIDEA, ...
+    the peculiar forms of ECHINODERMATA, the CRINOIDEA,
+    flourished in considerable numbers, a genus also existed which
+    indicated a structure intermediate between that then numerous family,
+    and the future ECHINIDEA, a portion of this great group being at
+    the same geological period represented by a true ASTERIAS."
+
+  which seems to indicate that Crinoidea is within Echinodermata,
+  but also seems to make a distinction between Crinoidea as a whole
+  and "true Crinoidea".  It also does not dispute (but does not clearly
+  endorse Cystidea as a Family, and describes Crinoidea as a Family
+  as well, probably meaning "true Crinoidea" but again this is not
+  entirely clear to the modern reader.  In this sense, at least, Echinidea,
+  which is not given a rank although Family seems reasonable, is distinct
+  from the Family Crinoidea.  What "a true Asterias" means and why it
+  is only addressed as a Genus and not otherwise classified is also unclear.
+
+  In the summary table on page 323, all genera described in the book are
+  listed under the heading "Crinoidea", including the genus Asterias.
+  In the alternative table on page 330, "Crinoidea" appears in the column
+  labeled "CLASS or ORDER".
+
+  Because the actual declarations are organized by formation and locality,
+  the table on page 323 is used to organize the tree.  Echinodermata and
+  Echinidea are omitted due ot lack of clarity, and Crinoidea is given
+  as both an Order (sensu lato), on the grounds that that seems more viable
+  than Class, and as a Family (sensu stricto) for the "true Crinoidea".
+
+  This may or may not resemble Hall's intentions.
+
+  Note also that Tentaculites (Emmons 1842) flexuosa n. sp. is placed
+  in chapters on Crinoids or on both Corals and Crinoids, and is said
+  to be "more nearly with Crinoideans than with Corals", but is placed
+  under Zoophyta with undisputed corals in the summary tables and so
+  is omitted here.
 taxonomies:
-- taxon: crinoidea-order
-  notes: Chazy limestone
+- taxon: crinoidea
+  rank: Order
+  sensu: lato
+  pages: 15, 80, 278, 323, 330
+  editorial:
+    inferred: [rank, sensu]
+    basis: >
+      In the summary table on page 330, Crinoidea appears in the
+      "Class or Order" column, and all crinoid, cystoid, or asteroid
+      genera are included under the Crinoidea heading in the table
+      on page 323.  Order seems reasonable if Echinodermata is indeed
+      considered the parent of Crinoidea sensu lato, as Echinodermata
+      would be the Class since the concept of Phylum was not yet
+      well-developed.
   children:
-  - taxon: crinoidea-family
+  - taxon: crinoidea
+    citedAs: the true Crinoidea
+    rank: Family
+    sensu: stricto
+    pages: 87
+    editorial:
+      inferred: [rank, sensu]
+      basis: >
+        Crinoidea is referred to as a Family at least once, and there
+        is definitely a distinction between Crinoidea in general and
+        "the true Crinoidea", which is interpreted here as a sensu
+        lato vs stricto.
     children:
     - taxon: actinocrinus
+      notes: Chazy Limestone
       children:
       - taxon: tenuiradiatus_hall_1847
         new: true
       - openTaxon: actinocrinus-sp_hall_1847
-- taxon: echinodermata
-  notes: |
-    Trenton limestone
-    Echinodermata described as a family in text, but also as containing
-    the families Crinoidea, Cystidea, Echinidea and the genus Asterias,
-    although Crinoidea is also described as an "Order or Class" in a table,
-    and even Asterias is included there..
-  children:
-  - taxon: crinoidea-order
+    - taxon: schizocrinus
+      new: true
+      notes: Trenton Limestone
+      children:
+      - taxon: nodosus_hall_1847
+        new: true
+    - taxon: poteriocrinus
+      notes: Trenton Limestone
+      children:
+      - taxon: alternatus_hall_1847
+        new: true
+      - taxon: gracilis_hall_1847_poteriocrinus
+        new: true
+    - taxon: scyphocrinus
+      new: true
+      notes: Trenton Limestone
+      children:
+      - taxon: heterocostalis_hall_1847
+        new: true
+    - taxon: heterocrinus
+      new: true
+      notes: Hudson River Group
+      children:
+      - taxon: heterodactylus_hall_1847
+        new: true
+      - taxon: simplex_hall_1847
+        new: true
+      - taxon: gracilis_hall_1847_heterocrinus
+        provisional: true
+        new: true
+    - taxon: glyptocrinus
+      new: true
+      notes: Hudson River Group
+      children:
+      - taxon: decadactylus_hall_1847
+        new: true
+  - taxon: cystidea
+    rank: Family
+    authority:
+      source: 1846b_buch
+    pages: 89
+    notes: |
+      English translation of von Buch explicitly cited on page 89.
+      Trenton Limestone
     children:
-    - taxon: asterias
-      notes: |
-        No mention of Asteriadea, or its ordered relationship to the
-        Crinoidea -> Cystidea -> Echinidea sequence, but phrases like
-        "approaching a true Asterias" suggest it is veiwed as higher?
-      children:
-      - taxon: matunita_hall_1847
-        new: true
-    - taxon: crinoidea-family
-      notes: Seems to use Crinoidea as both Order and Family?
-      children:
-      - taxon: schizocrinus
-        new: true
-        children:
-        - taxon: nodosus_hall_1847
-          new: true
-      - taxon: poteriocrinus
-        children:
-        - taxon: alternatus_hall_1847
-          new: true
-        - taxon: gracilis_hall_1847_poteriocrinus
-          new: true
-      - taxon: scyphocrinus
-        new: true
-        children:
-        - taxon: heterocostalis_hall_1847
-          new: true
-    - taxon: cystidea-family
-      notes: |
-        Mostly described as a separate family from Crinoidea, noting it
-        as intermediate between them and the Echinidea, but sometimes
-        spoken of compared to "true Crinoidea" implying containment?
-        Seems to use Crinoidea as both Order and Family?
-      children:
+    - taxon: echino-encrinites
+      synonyms:
       - taxon: echino-encrinites
-        synonyms:
-        - taxon: echino-encrinites
-          auth: [von Meyer]
-          in: [Karstner]
-          year: 1826
-          notes: volume ii; specimen has since been lost
-          pages:
-          - [185, 192]
-          illustrations:
-          - plate: 2
-            figures:
-            - [1, 5]
-        - taxon: echino-encrinites
-          auth: [von Meyer]
-          in: [Karstner]
-          year: 1826
-          notes: volume iii
-          pages:
-          - [232, 237]
-        - taxon: echinosphaerites
-          authority:
-            source: 1830_pander
-          notes: '"Sp."'
-        - taxon: echinosphaerites
-          auth: [Bronn]
-          year: 1835
-          notes: '"Sp."'
-        - taxon: goniocrinites
-          authority:
-            source: 1840_eichwald
-        - taxon: echino-encrinus
-          authority:
-            source: 1842_volborth
-        - taxon: sycocystites
-          authority:
-            source: 1844_buch
-        children:
-        - taxon: anatiformis_hall_1847
-          new: true
-          pages: 127
-          illustrations:
-          - plate: XXIX
-            figures:
-            - [4a, 4f]
-    - taxon: echinidea-family
-      notes: Included due to mention as the destination of Cystidia transtion.
-- notes: Corals of the Hudson River Group (exact higher taxon unclear?)
+        auth: [von Meyer]
+        in: [Karstner]
+        year: 1826
+        notes: volume ii; specimen has since been lost
+        pages:
+        - [185, 192]
+        illustrations:
+        - plate: 2
+          figures:
+          - [1, 5]
+      - taxon: echino-encrinites
+        auth: [von Meyer]
+        in: [Karstner]
+        year: 1826
+        notes: volume iii
+        pages:
+        - [232, 237]
+      - taxon: echinosphaerites
+        authority:
+          source: 1830_pander
+        notes: '"Sp."'
+      - taxon: echinosphaerites
+        auth: [Bronn]
+        year: 1835
+        notes: '"Sp."'
+      - taxon: goniocrinites
+        authority:
+          source: 1840_eichwald
+      - taxon: echino-encrinus
+        authority:
+          source: 1842_volborth
+      - taxon: sycocystites
+        citedAs: Sycocystites, Von Buch, 1844.
+        authority:
+          source: 1844_buch
+        notes: >
+          1844 despite 1846b on the same page for Cystidea.  If there
+          is another "memoir" from von Buch in 1844 I have not found it.
+      children:
+      - taxon: anatiformis_hall_1847
+        new: true
+        pages: 127
+        illustrations:
+        - plate: XXIX
+          figures:
+          - [4a, 4f]
+  - taxon: asterias
+    children:
+    - openTaxon: asterias-sp_hall_1847
+      new: true
+      pages: 18
+      notes: Chazy Limestone
+    - taxon: matunita_hall_1847
+      new: true
+      notes: Trenton Limestone
+- taxon: zoophyta
+  rank: Class
+  pages: 322
+  editorial:
+    inferred: [rank]
+    basis: >
+      Zoophyta is listed in the "Class or Order" column of the table
+      on page 330, and Class seems more likely for this very high-level taxon.
+      Discophyllum appears in the "Corals of the Hudson River Group" chapter,
+      and other taxa from that chapter are also grouped in Zoophyta without
+      subdivision in the charts on pages 322–329, so the ordinal level appears
+      to be absent for Zoophyta.
   children:
   - taxon: discophyllum
     new: true
     pages: 277
+    notes: Hudson River Group
     children:
     - taxon: peltatum_hall_1847
       new: true
@@ -119,27 +213,3 @@ taxonomies:
       - plate: LXXV
         figures:
         - 4
-- taxon: crinoidea-order
-  notes: Crinoidea of the Hudson River Group
-  children:
-  - taxon: crinoidea-family
-    children:
-    - taxon: heterocrinus
-      new: true
-      children:
-      - taxon: heterodactylus_hall_1847
-        new: true
-      - taxon: simplex_hall_1847
-        new: true
-      - taxon: gracilis_hall_1847_heterocrinus
-        provisional: true
-        new: true
-    - taxon: glyptocrinus
-      new: true
-      children:
-      - taxon: decadactylus_hall_1847
-        new: true
-    - taxon: tentaculites_emmons_1842
-      children:
-      - taxon: flexulosa_hall_1847
-        new: true

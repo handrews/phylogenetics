@@ -1,10 +1,15 @@
 taxonomies:
 - taxon: cystideen
-  rank: Family
-  new: true
+  rank: null
   children:
   - taxon: sphaeronites
     isType: true
+    notes: >
+      From the English translation, page 32:
+
+      The Spheronites may be looked upon as the type of the whole
+      family of Cystidea, for they are in all respects the most widely
+      removed from the crinoidal type.
     children:
     - taxon: aurantium_gyllenhaal_1772
       synonyms:
@@ -17,7 +22,6 @@ taxonomies:
         parents:
         - taxon: echinosphaerites
   - taxon: caryocystites
-    new: true
     children:
     - taxon: granatum_wahlenberg_1821
       synonyms:
@@ -37,10 +41,8 @@ taxonomies:
         parents:
         - taxon: echinosphaerites
   - taxon: sycocystites
-    new: true
     children:
     - taxon: angulosus_buch_1844
-      new: true
       or:
       - taxon: senckenbergii_meyer_1826
       synonyms:

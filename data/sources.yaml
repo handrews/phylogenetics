@@ -1161,7 +1161,9 @@
   identifiers:
     url: https://www.biodiversitylibrary.org/bibliography/58729
 1843_hall:
-  title: Geology of New-York. Part IV. Comprising the Survey of the Fourth Geological District
+  title: >
+    Geology of New-York. Part IV. Comprising the Survey of the
+    Fourth Geological District
   book: nat-hist-ny
   pubDate:
     year: 1843
@@ -1170,27 +1172,46 @@
   identifiers:
     url: https://www.biodiversitylibrary.org/page/55361977
 1844_buch:
-  title: Über Cystideen eingeleitet durch die Entwicklung der Eigenthümlichkeiten von Caryocrinus ornatus
-  reading: akademie
+  title: >
+    Hr. v. Buch las über Cystideen, eingeleitet durch die Entwickelung
+    der Eigenthümlichkeiten des Caryocrinus ornatus.
+  journal: bericht-berlin
+  volume: 1844
+  number: March
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/11052820
   pubDate:
     year: 1844
     month: 3
-    day: 3
+  processDates:
+    read: 1844-03-03
+  # TODO: Should we keep the "reading" field?  Currently breaks schema.
+  # reading: akademie
   authors:
   - buch
   notes: >
-    This reading is sometimes cited but other times not considered ICZN-valid.
-    Some sources incorrectly give May 3rd instead of March 3rd due to an
-    early typo. (TODO: Verify.  Found even more disagreement on this but
-    no longer recall where).
+    This notice includes the text of the paper as read, but does not
+    include any plates and is therefore not always considered an
+    authoritative source by ICZN rules.  1845_buch is the first with plates.
+    Some sources incorrectly give May 3rd for the reading instead of
+    March 3rd due to an early typo, but this clearly states that it
+    was read March 3rd and is in the issue for the March proceedings.
 1845_buch:
   book: uber-cystideen
   pubDate:
     year: 1845
+  pages:
+  - 1
+  - 28
+  plates:
+  - I
+  - II
   authors:
   - buch
   notes: >
-    The first undeniably publicly distributed printing of 1844_buch.
+    The first publication of the work to include plates, and therefore
+    the first that qualifies for species authority by ICZN rules.  This,
+    rather than 1844_buch is the source of later reprints and translations.
 1845_siebold:
   book: lehrbuch
   volume: 1 Wirbellosen Thiere
@@ -1244,11 +1265,18 @@
   pages:
   - 89
   - 116
+  plates:
+  - II
+  - III
   authors:
   - buch
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/30226010
   notes: >
     The actual proceedings from the 1844 reading, the printing of which
-    was delayed.
+    was delayed.  The pages and plates are said to correspond exactly
+    to the 1845 monograph aside from their numbers, but this has not
+    been independently verified.
 1846_stannius:
   book: lehrbuch
   volume: 2 Wirbellthiere
