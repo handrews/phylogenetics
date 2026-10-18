@@ -1,9 +1,12 @@
 taxonomies:
 - taxon: echinodermata_klein_1778
+  rank: Phylum
   children:
   - taxon: blastozoa
+    rank: Subphylum
     children:
     - taxon: lepidocystidae
+      rank: Family
       children:
       - taxon: vyscystis
         emended: true

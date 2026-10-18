@@ -2,6 +2,7 @@ taxonomies:
 - taxon: blastozoa
   children:
   - taxon: rhombifera
+    rank: Class
     emended: true
     notes: Emended Paul, 1968
     children:

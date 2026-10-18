@@ -41,7 +41,7 @@ even when its parent is also unreached, so read parents first.
 | `stageRange` | `phylogeny#/$defs/stageRange`<br>`phylogeny#/$defs/stageRange/items` |
 | `taxonRecord` | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items/items`<br>`phylogeny#/$defs/taxonRecord/properties/rank/oneOf/1` |
 | `timeFields` | `phylogeny#/$defs/timeFields/properties/eon`<br>`phylogeny#/$defs/timeFields/properties/era`<br>`phylogeny#/$defs/timeFields/properties/seriesBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageRange` |
-| `tree` | `tree#/properties/rank/oneOf/1`<br>`tree#/then/not`<br>`tree#/then/not/anyOf/0`<br>`tree#/then/not/anyOf/1`<br>`tree#/then/not/anyOf/2` |
+| `tree` | `tree#/then/not`<br>`tree#/then/not/anyOf/0`<br>`tree#/then/not/anyOf/1`<br>`tree#/then/not/anyOf/2` |
 | `typeNode` | `phylogeny#/$defs/typeNode`<br>`phylogeny#/$defs/typeNode/properties/fixation`<br>`phylogeny#/$defs/typeNode/properties/fixedBy` |
 | `uncertaintyFields` | `phylogeny#/$defs/uncertaintyFields/properties/mutable`<br>`phylogeny#/$defs/uncertaintyFields/properties/nonMonophyletic/oneOf/1`<br>`phylogeny#/$defs/uncertaintyFields/properties/sensu` |
 
@@ -50,13 +50,13 @@ even when its parent is also unreached, so read parents first.
 `data %` is the share of that container's instances carrying the
 property.
 
-### `actAndModifierFields` -- 5684 instances in `data/`
+### `actAndModifierFields` -- 5686 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
 | `new` | 1593 | 28.0% |
 | `isType` | 369 | 6.5% |
-| `emended` | 54 | 1.0% |
+| `emended` | 54 | 0.9% |
 | `pars` | 19 | 0.3% |
 | `translated` | 17 | 0.3% |
 | `nudum` | 7 | 0.1% |
@@ -125,7 +125,7 @@ property.
 | `notes` | 2 | 0.1% |
 | `auctt` | 0 | 0.0% |
 
-### `authorityFields` -- 9330 instances in `data/`
+### `authorityFields` -- 9332 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
@@ -133,7 +133,7 @@ property.
 | `year` | 965 | 10.3% |
 | `in` | 28 | 0.3% |
 
-### `citationFields` -- 9318 instances in `data/`
+### `citationFields` -- 9320 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
@@ -191,11 +191,11 @@ property.
 | `notes` | 24 | 4.9% |
 | `non` | 0 | 0.0% |
 
-### `identificationFields` -- 6478 instances in `data/`
+### `identificationFields` -- 6480 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `taxon` | 5884 | 90.8% |
+| `taxon` | 5886 | 90.8% |
 | `openTaxon` | 243 | 3.8% |
 | `cf` | 15 | 0.2% |
 | `aff` | 14 | 0.2% |
@@ -239,7 +239,7 @@ property.
 | `prefix` | 28 | 47.5% |
 | `register` | 0 | 0.0% |
 
-### `locationFields` -- 9318 instances in `data/`
+### `locationFields` -- 9320 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
@@ -277,7 +277,7 @@ property.
 | `sameAs` | 0 | 0.0% |
 | `sameAs.source` | 0 | - |
 
-### `materialsFields` -- 5684 instances in `data/`
+### `materialsFields` -- 5686 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
@@ -285,7 +285,7 @@ property.
 | `contexts` | 97 | 1.7% |
 | `ranges` | 93 | 1.6% |
 
-### `metaFields` -- 6478 instances in `data/`
+### `metaFields` -- 6480 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
@@ -351,12 +351,12 @@ property.
 | `regions/items/oneOf/1.value` | 2 | 100.0% |
 | `inferred` | 0 | 0.0% |
 
-### `relationalFields` -- 5684 instances in `data/`
+### `relationalFields` -- 5686 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
 | `synonyms` | 358 | 6.3% |
-| `moved` | 31 | 0.5% |
+| `moved` | 33 | 0.6% |
 | `corrected` | 5 | 0.1% |
 | `non` | 5 | 0.1% |
 | `lapsus` | 3 | 0.1% |
@@ -389,7 +389,7 @@ property.
 | `/additionalProperties.notes` | 6 | 50.0% |
 | `/additionalProperties.equivalent` | 2 | 16.7% |
 
-### `sectionFields` -- 5684 instances in `data/`
+### `sectionFields` -- 5686 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
@@ -459,14 +459,14 @@ property.
 |---|---|---|
 | `by` | 1 | 6.2% |
 
-### `tree` -- 6478 instances in `data/`
+### `tree` -- 6480 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
 | `children` | 2205 | 34.0% |
 | `pages` | 837 | 12.9% |
 | `parents` | 324 | 5.0% |
-| `rank` | 139 | 2.1% |
+| `rank` | 150 | 2.3% |
 | `authority` | 118 | 1.8% |
 | `bracketEnd` | 28 | 0.4% |
 | `bracketStart` | 28 | 0.4% |
@@ -487,7 +487,7 @@ property.
 | `assumptions` | 1 | 0.5% |
 | `localityRegister` | 1 | 0.5% |
 
-### `uncertaintyFields` -- 6478 instances in `data/`
+### `uncertaintyFields` -- 6480 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
@@ -623,22 +623,22 @@ property.
 
 ### `phylogeny#/$defs/rank`
 
-24 of 32 members used, 1112 occurrences.
+24 of 32 members used, 1121 occurrences.
 
 | value | count |
 |---|---|
 | `'species'` | 236 |
-| `'Order'` | 212 |
-| `'Family'` | 177 |
+| `'Order'` | 213 |
+| `'Family'` | 180 |
 | `'genus'` | 132 |
-| `'Class'` | 115 |
+| `'Class'` | 117 |
 | `'variety'` | 59 |
 | `'Subfamily'` | 26 |
 | `'Superfamily'` | 19 |
 | `'subgenus'` | 17 |
-| `'Subphylum'` | 15 |
+| `'Phylum'` | 16 |
+| `'Subphylum'` | 16 |
 | `'Subclass'` | 15 |
-| `'Phylum'` | 14 |
 | `'section'` | 14 |
 | `'Suborder'` | 14 |
 | `'Group'` | 11 |

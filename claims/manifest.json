@@ -10038,7 +10038,9 @@
    "tree": true
   },
   "1982_smith.a.b": {
-   "acts": {},
+   "acts": {
+    "moved": 2
+   },
    "audit": {
     "state": "unaudited"
    },
@@ -10057,8 +10059,10 @@
     "year": 1982
    },
    "claims": {
+    "act": 2,
     "placement": 3,
-    "usage": 4
+    "rejection": 2,
+    "usage": 6
    },
    "coverage": {
     "illustrations": null,
@@ -10071,7 +10075,7 @@
     "types": null
    },
    "derived": {
-    "skeleton": 7
+    "skeleton": 11
    },
    "derivedCoverage": {
     "illustrations": null,
@@ -19614,6 +19618,7 @@
   "cymbionitidae": [
    "1941_whitehouse",
    "1967e_ubaghs",
+   "1982_smith.a.b",
    "2021_jell_sprinkle"
   ],
   "cynamologos_linnaeus_1758": [
@@ -24594,6 +24599,7 @@
   "peridionitidae": [
    "1941_whitehouse",
    "1967e_ubaghs",
+   "1982_smith.a.b",
    "2021_jell_sprinkle"
   ],
   "perishoechinoidea": [
