@@ -1,9 +1,12 @@
 taxonomies:
 - taxon: echinodermata
+  rank: Phylum
   children:
   - taxon: edrioasteroidea
+    rank: Class
     children:
     - taxon: isorophida
+      rank: Order
       children:
       - taxon: protorophus
         new: true

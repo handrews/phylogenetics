@@ -1,7 +1,15 @@
 taxonomies:
 - taxon: eocrinoidea
+  rank: null
   children:
   - openTaxon: eocrinoidea-incertae-sedis_smith.a.b_1982
+    rank: null
     children:
     - taxon: cymbionites
+      moved:
+        taxon: cymbionitidae
+        rank: Family
     - taxon: peridionites
+      moved:
+        taxon: peridionitidae
+        rank: Family

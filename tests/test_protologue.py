@@ -310,3 +310,10 @@ def test_a_differing_designation_is_named_with_both_values_and_the_file(caplog):
 
 def test_a_node_declaring_no_designation_says_nothing(caplog):
   assert _check_open(None, None, caplog=caplog) == []
+
+
+def test_an_unnamed_record_implies_no_rank_by_its_name(caplog):
+  # An open form has no name to read a genus or species from; its record
+  # spells its rank, which `_report_rank_order` checks against the parent.
+  assert _check_open({'rank': 'species'}, caplog=caplog) == []
+  assert _check_open({'rank': 'genus'}, caplog=caplog) == []
