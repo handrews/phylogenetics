@@ -12,7 +12,9 @@ opinions exactly as each publication printed them, with no normalisation.
   printed classification; `phylogenies` = cladograms/diagrams. Node fields:
   `taxon` (key into taxa.yaml), `openTaxon` (placeholders and open
   nomenclature; with `cf` or `aff` naming the taxon a "cf." or "aff." form
-  is compared with), `children`, `synonyms`, `non`, `parents` (original
+  is compared with), `mineralTaxon` (a record with `mineral: true`: a mineral
+  formation's name under which a fossil was once described, which no other
+  field may name), `children`, `synonyms`, `non`, `parents` (original
   placement of a synonym), `removed`, `moved`, `corrected`, `type` (the node's
   type, a node written like a `synonyms` entry, so it cites the type in the
   combination the paper prints for it, with `fixation` when the paper gives the

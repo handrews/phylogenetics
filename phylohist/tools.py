@@ -115,7 +115,9 @@ TOOL_DESCRIPTIONS = {
     '(Rhenopyrgus) coronaeformis", "Pyrgocystis (Rhenopyrgus)". An empty list '
     'means no source in the corpus carries the name; it does not mean the '
     'name does not exist. An open form (a cf. or aff. record) says what it '
-    'is compared with. Optionally restrict by rank word.'
+    "is compared with. A mineral formation's name, under which a fossil was "
+    'once described, resolves like any named record and is marked "mineral". '
+    'Optionally restrict by rank word.'
   ),
   'resolve_source': (
     'The sources a citation can mean: "Dehm 1961", "Holloway & Jell '

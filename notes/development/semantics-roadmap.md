@@ -1791,6 +1791,7 @@ Each has a home; none needs a new top-level construct.
 | a tentative recombination in prose | "*Agelacrinites* (*sensu lato*) *hanoveri* may belong to the genus *Postibulla*" (Bell 1975, p. 34) | placement with `provisional` and `sensu: lato` |
 | a citation whose year and page come from different printings | "VON BUCH, 1846, p. 128" (Kesling 1967, S229) | printings as separate records; `editorial.source` names the one the page fits (A11) |
 | a name used for the wrong specimen | "*C. testudinarius* VON BUCH … nom. in errore pro …" (S229) | a misidentification record (B10) |
+| a fossil first described as a mineral formation, cited by that name in a synonymy | *kalckballar* (Tilas 1740) under *Sphaeronites aurantium* (Buch 1844, p. 126) | a record with `mineral: true` and `rank: null`, named only by `mineralTaxon` (built 2026-10-18) |
 | one author's name meaning another's genus | Jaekel's *Caryocystites* = *Heliocrinites* (S229) | genus-level misidentification record (B10); Jaekel's tree unchanged |
 | a corrected figure number in a cited work | "pl. 25, fig. 8d, non fig. 9d" (S229) | `non` in the locator (D6) |
 | an exclusion that names the right home | "non S. citrus … = Echinosphaerites aurantium" (S229) | `identifiedAs` on the `non` entry (B21) |

@@ -23,8 +23,10 @@ locality number (on a context or a material entry) with no register; and a
 dangling `context`, figure `of`, `castOf` or `fragmentOf`. The
 open-nomenclature checks (`phylohist.loader.nomenclature`) add a `cf` or `aff`
 off an `openTaxon` node, on both, or aimed at a missing, unnamed or other-rank
-taxon; a `quotedParent` above the species level; a `roleUncertain` with no
-`role`; a `type` node with no taxon, beside a child marked `isType`, or with
+taxon; a `quotedParent` above the species level; a `mineralTaxon` naming a
+record that is no mineral, or a mineral record named by any other field; a
+`roleUncertain` with no `role`; a `type` node with no taxon, beside a child
+marked `isType`, or with
 a `fixedBy` its `fixation` cannot explain; a `pages: null` on a node that is
 not marked `editorial.inferred: true`; and an open form linked to two
 different taxa (a warning). The
@@ -51,7 +53,7 @@ from phylohist.loader.io import (  # noqa: E402
   load_yaml,
 )
 
-TAXON_FIELDS = ('taxon', 'openTaxon', 'bracketStart', 'bracketEnd')
+TAXON_FIELDS = ('taxon', 'openTaxon', 'mineralTaxon', 'bracketStart', 'bracketEnd')
 
 
 def walk(node, taxa, authors, sources, sections=None):
@@ -138,6 +140,7 @@ def check_material(draft, repositories, taxa):
       (draft_nulls, (node, is_cited)),
       (nomenclature.compared_links, (node, taxa)),
       (nomenclature.quoted_parent, (node, taxa)),
+      (nomenclature.mineral_fields, (node, taxa)),
       (nomenclature.role_uncertain, (node,)),
       (nomenclature.type_node, (node, is_cited)),
       (nomenclature.children_null, (node, is_cited)),

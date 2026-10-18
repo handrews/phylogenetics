@@ -48,7 +48,7 @@ COVERAGE_KINDS = (
   'phylogeny',
 )
 
-_TAXON_FIELDS = ('taxon', 'openTaxon')
+_TAXON_FIELDS = ('taxon', 'openTaxon', 'mineralTaxon')
 _PRINTED_FIELDS = ('citedAs', 'auth', 'year', 'in')
 # The node fields a correction can touch that bear on attribution.
 _ATTRIBUTION_FIELDS = tuple(_PRINTED_FIELDS) + ('authority',)
@@ -1128,6 +1128,8 @@ def names_index():
     for field in ('homonym', 'originalParent', 'lang', 'status'):
       if field in data:
         row[field] = data[field]
+    if taxon.mineral:
+      row['mineral'] = True
     placeholder = placeholder_kind(taxon)
     if placeholder is not None:
       row['placeholder'] = placeholder

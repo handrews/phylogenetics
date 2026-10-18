@@ -172,10 +172,13 @@ class Resolver:
     if row is None:
       return []
     keys = set()
-    if not _species_group(row.get('rank')):
+    # A mineral formation's name is no taxon's name at another rank.
+    if not _species_group(row.get('rank')) and not row.get('mineral'):
       for form in row['folded']:
         keys.update(
-          k for k in self.store.by_folded.get(form, ()) if not _species_group(self.store.rank(k))
+          k
+          for k in self.store.by_folded.get(form, ())
+          if not _species_group(self.store.rank(k)) and not self.store.names[k].get('mineral')
         )
     if 'of' in row:
       keys.add(row['of'])
@@ -195,7 +198,7 @@ class Resolver:
       'sourcesWithStatements': len({c['source'] for c in self.store.by_subject.get(key, ())}),
       'variants': self.related_keys(key),
     }
-    for field in ('of', 'placeholder', 'homonym', 'originalParent'):
+    for field in ('of', 'placeholder', 'homonym', 'originalParent', 'mineral'):
       if field in row:
         entry[field] = row[field]
     if 'authority' in row:
