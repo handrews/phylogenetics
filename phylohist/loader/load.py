@@ -126,9 +126,17 @@ def _report_cited_sources(data):
         logger.error(f'{where}: `{field}` names "{key}", which has no source record')
 
 
-def _report_missing_protologues(data):
+def _report_missing_protologues(data, roots):
   # A protologue is the source that names a taxon; if that source is one of
-  # our trees, the taxon should show up flagged `new` in it.
+  # our trees, the taxon should show up flagged `new` in it. `Tree._taxon_index`
+  # is by name and holds roots, so the keys each tree uses come from a walk.
+  used = {
+    (node.taxon.key, source_key)
+    for source_key, trees in roots.items()
+    for root in trees
+    for node in root.walk()
+    if node.taxon is not None
+  }
   missing = 0
   for taxon in Taxon._taxa.values():
     # Open taxa and derivative records have no protologue to flag.
@@ -140,7 +148,7 @@ def _report_missing_protologues(data):
     # An authority may cite its protologue's source by an alias.
     source = source.canonical
     if source.key not in Tree._new_index.get(taxon.key, ()):
-      if source.key in Tree._taxon_index.get(taxon.key, ()):
+      if (taxon.key, source.key) in used:
         # We recorded the taxon but did not acknowledge its new-ness.
         logger.error(f'Protologue not flagged: {taxon.key} in {source.key}')
         missing += 1
@@ -422,7 +430,7 @@ def _load_trees(data):
 
   _report_merge_targets(data)
   _report_cited_sources(data)
-  _report_missing_protologues(data)
+  _report_missing_protologues(data, roots)
   _report_protologue_mismatches(data, roots)
   _report_rank_order(roots)
   _report_section_protologues(data, roots)
