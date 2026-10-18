@@ -1,19 +1,31 @@
 taxonomies:
 - taxon: edrioasteroidea
+  citedAs: Class Edrioasteroidea Billings, 1858
+  rank: Class
+  pages: 245
   children:
   - taxon: edrioasterida
+    citedAs: Order Edrioasterida Bell, 1976 [emend. herein]
     emended: true
+    rank: Order
+    pages: 245
     children:
     - taxon: edrioasteridae
-      emended: true
       citedAs: Family Edrioasteridae Bell, 1976 [emend. herein]
+      rank: Family
+      emended: true
       pages: 246
     - taxon: totiglobidae
+      citedAs: Family TOTIGLOBIDAE n. fam.
+      rank: Family
       new: true
+      pages: 246
       children:
       - taxon: totiglobus
         new: true
+        pages: 247
         children:
         - taxon: nimius_bell.b.m_sprinkle_1978
           isType: true
           new: true
+          pages: 247

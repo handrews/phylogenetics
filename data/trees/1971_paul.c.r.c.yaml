@@ -1,7 +1,10 @@
 taxonomies:
-- taxon: diploporita-class
+- taxon: diploporita
+  rank: Class
   children:
-  - taxon: aristocystitidae-superfamily
+  - taxon: aristocystitidae
+    rank: Superfamily
     translated:
       taxon: aristocystitidae
+      rank: Family
     notes: Should have been modified to Aristocystitida (not -dae)

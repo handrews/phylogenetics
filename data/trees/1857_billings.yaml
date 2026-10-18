@@ -3,11 +3,23 @@ notes: |
   recorded so far.  Sub-kingdoms Mollusca and Articulata also represented
   in the text, as is kingdom Plantæ.
 taxonomies:
-- taxon: radiata-subkingdom
+- taxon: radiata
+  citedAs: Sub-kingdom, RADIATA
+  rank: Subkingdom
+  authority: null
+  pages: 256
   children:
-  - taxon: echinodermata-class
+  - taxon: echinodermata
+    citedAs: Class, ECHINODERMATA
+    rank: Class
+    authority: null
+    pages: 256
     children:
-    - taxon: crinoidea-order
+    - taxon: crinoidea
+      citedAs: Order, CRINOIDEA
+      rank: Order
+      authority: null
+      pages: 256
       children:
       - taxon: glyptocrinus
         children:
@@ -82,7 +94,10 @@ taxonomies:
         children:
         - taxon: conicus_billings_1857_porocrinus
           new: true
-    - taxon: cystideae-order
+    - taxon: cystideae
+      citedAs: Order CYSTIDEÆ.
+      rank: Order
+      pages: 280
       children:
       - taxon: glyptocystites
         children:

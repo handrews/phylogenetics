@@ -8,6 +8,26 @@
   identifiers:
     doi: 10.5962/bhl.title.65731
     url: https://www.biodiversitylibrary.org/bibliography/65731
+1740_tilas:
+  title: >
+    Mineral-historia öfwer Osmundsberget uti Rättwiks Socken och Öster-Dalarne
+  journal: kungliga-svenska
+  volume: 1
+  number: 2
+  pages:
+  - 196
+  - 203
+  pubDate:
+    year: 1740
+    months:
+    - 4
+    - 5
+    - 6
+  authors:
+  - tilas
+  notes: >
+    The pages are for the first printing of the journal issue.  Later
+    printings have the article on pages 202–209.
 1741_linnaeus:
   book: cl-olandska
   pubDate:
@@ -564,6 +584,20 @@
     year: 1817
   authors:
   - cuvier
+1818_goldfuss:
+  title: Ueber die Classification der Zoophyten
+  journal: isis-von-oken
+  volume: 2
+  number: 6
+  pages:
+  - 1008
+  - 1013
+  pubDate:
+    year: 1818
+  authors:
+  - goldfuss
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/13264182
 1818_lamarck:
   book: hist-sans-vert
   volume: 5
@@ -867,6 +901,14 @@
   - say
   identifiers:
     url: https://www.biodiversitylibrary.org/page/24657283
+1828_fleming.j:
+  book: hist-brit
+  pubDate:
+    year: 1828
+  authors:
+  - fleming.j
+  identifiers:
+    url: https://archive.org/details/historyofbritish1828flem/page/n5/mode/2up
 1828_hisinger:
   book: anteck
   volume: 4
@@ -919,6 +961,17 @@
   - pander
   identifiers:
     url: https://www.google.com/books/edition/Beitr%C3%A4ge_zur_geognosie_des_russischen_r/yJ0_AAAAYAAJ?hl=en
+1831_goldfuss:
+  aliasOf: 1831_goldfuss_münster
+1831_goldfuss_münster:
+  book: petrefacta-germaniae
+  pubDate:
+    year: 1831
+  authors:
+  - goldfuss
+  - münster
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/115962
 1836_burmeister:
   book: handbuch-nat
   volume: 1
@@ -1037,6 +1090,25 @@
   - buch
   identifiers:
     url: https://www.biodiversitylibrary.org/page/49045685
+1842_austin.t_austin.t.j:
+  title: >
+    Proposed Arrangement of the Echinodermata, particularly as regards the
+    Crinoidea, and a Scooping out of the Alveoli
+  journal: annals-and-mag
+  volume: 10
+  number: 63
+  pages:
+  - 106
+  - 113
+  pubDate:
+    year: 1842
+    month: 10
+  authors:
+  - austin.t
+  - austin.t.j
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/2323940
+  notes: Often credited as 1840 becuase of an in-manuscript date.
 1842_conrad.t.a:
   title: Descriptions of new Species of Organic Remains belonging to the Silurian, Devonian, and Carboniferous Systems of the United States
   journal: jofacnatsci-philadelphia
@@ -1100,8 +1172,18 @@
     year: 1842
   identifiers:
     url: https://www.biodiversitylibrary.org/page/44263691
+1843_gravenhorst:
+  book: verg-zool
+  pubDate:
+    year: 1843
+  authors:
+  - gravenhorst
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/58729
 1843_hall:
-  title: Geology of New-York. Part IV. Comprising the Survey of the Fourth Geological District
+  title: >
+    Geology of New-York. Part IV. Comprising the Survey of the
+    Fourth Geological District
   book: nat-hist-ny
   pubDate:
     year: 1843
@@ -1110,26 +1192,57 @@
   identifiers:
     url: https://www.biodiversitylibrary.org/page/55361977
 1844_buch:
-  title: Über Cystideen eingeleitet durch die Entwicklung der Eigenthümlichkeiten von Caryocrinus ornatus
-  reading: akademie
-  notes: Some sources incorrectly give May 3rd instead of March 3rd due to an early typo.
+  title: >
+    Hr. v. Buch las über Cystideen, eingeleitet durch die Entwickelung
+    der Eigenthümlichkeiten des Caryocrinus ornatus.
+  journal: bericht-berlin
+  volume: 1844
+  number: March
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/11052820
   pubDate:
     year: 1844
     month: 3
-    day: 3
+  processDates:
+    read: 1844-03-03
+  # TODO: Should we keep the "reading" field?  Currently breaks schema.
+  # reading: akademie
   authors:
   - buch
-1846a_buch:
-  title: Über Cystideen eingeleitet durch die Entwicklung der Eigenthümlichkeiten von Caryocrinus ornatus SAY
-  journal: abh-k-akad-wiss-berlin
+  notes: >
+    This notice includes the text of the paper as read, but does not
+    include any plates and is therefore not always considered an
+    authoritative source by ICZN rules.  1845_buch is the first with plates.
+    Some sources incorrectly give May 3rd for the reading instead of
+    March 3rd due to an early typo, but this clearly states that it
+    was read March 3rd and is in the issue for the March proceedings.
+1845_buch:
+  book: uber-cystideen
   pubDate:
-    year: 1846
+    year: 1845
   pages:
-  - 89
-  - 116
+  - 1
+  - 28
+  plates:
+  - I
+  - II
   authors:
   - buch
-1846b_buch:
+  notes: >
+    The first publication of the work to include plates, and therefore
+    the first that qualifies for species authority by ICZN rules.  This,
+    rather than 1844_buch is the source of later reprints and translations.
+1845_siebold:
+  book: lehrbuch
+  volume: 1 Wirbellosen Thiere
+  number: 1
+  pubDate:
+    year: 1845
+  authors:
+  - siebold
+  notes: >
+    Siebold & Stannius were the editors, but are sometimes cited as authors.
+1846a_buch:
   title: Notice of a New Family of Crinoidal Animals, called Cystidea
   journal: jofgeol-london
   volume: 2
@@ -1143,9 +1256,12 @@
   - buch
   identifiers:
     url: https://www.biodiversitylibrary.org/page/35336362
-1846c_buch:
+  notes: >
+    This states that the German proceedings have still not been published,
+    and that 1846b_buch in the same volume is a translation of 1845_buch.
+1846b_buch:
   title: On the Cystidea (a new family of radiated animals), introduced by Account of the Caryocrinus ornatus, Say
-  translationOf: 1846a_buch
+  translationOf: 1845_buch
   journal: jofgeol-london
   volume: 2
   number: Part 2
@@ -1161,6 +1277,37 @@
   - buch
   identifiers:
     url: https://www.biodiversitylibrary.org/page/35336917
+1846c_buch:
+  title: Über Cystideen eingeleitet durch die Entwicklung der Eigenthümlichkeiten von Caryocrinus ornatus SAY
+  journal: abh-k-akad-wiss-berlin
+  pubDate:
+    year: 1846
+  pages:
+  - 89
+  - 116
+  plates:
+  - II
+  - III
+  authors:
+  - buch
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/30226010
+  notes: >
+    The actual proceedings from the 1844 reading, the printing of which
+    was delayed.  The pages and plates are said to correspond exactly
+    to the 1845 monograph aside from their numbers, but this has not
+    been independently verified.
+1846_stannius:
+  book: lehrbuch
+  volume: 2 Wirbellthiere
+  pubDate:
+    year: 1846
+  authors:
+  - stannius
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/205997#page/9/mode/1up
+  notes: >
+    Siebold & Stannius were the editors, but are sometimes cited as authors.
 1847_hall:
   book: paleo-ny
   volume: 1
@@ -1168,6 +1315,16 @@
     year: 1847
   authors:
   - hall
+1847_siebold:
+  book: lehrbuch
+  volume: 1 Wirbellosen Thiere
+  number: 2
+  pubDate:
+    year: 1847
+  authors:
+  - siebold
+  notes: >
+    Siebold & Stannius were the editors, but are sometimes cited as authors.
 1848_austin.t:
   title: Observations on the Cystidea of M. von Buch, and the Crinoidea generally
   journal: quart-jour-geol-soc
@@ -1230,6 +1387,28 @@
     year: 1848
   authors:
   - leuckart
+1848a_siebold:
+  book: lehrbuch
+  volume: 1 Wirbellosen Thiere
+  number: 3
+  pubDate:
+    year: 1848
+  authors:
+  - siebold
+  notes: >
+    Siebold & Stannius were the editors, but are sometimes cited as authors.
+1848b_siebold:
+  book: lehrbuch
+  volume: 1 Wirbellosen Thiere
+  pubDate:
+    year: 1848
+  authors:
+  - siebold
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/41783#page/7/mode/1up
+  notes: >
+    Collected edition of which Siebold & Stannius were the editors,
+    but are sometimes cited as authors.
 1852_hall:
   book: paleo-ny
   volume: 2
@@ -1457,6 +1636,52 @@
     year: 1858
   authors:
   - hall
+1860_bronn.h.g:
+  book: die-klassen
+  volume: 2
+  pubDate:
+    year: 1860
+  authors:
+  - bronn.h.g
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/43997#page/8/mode/1up
+1860a_chapman.e.j:
+  title: Agelacrinities billingsi.  A new species.  Preliminary notice of.
+  journal: can-j-ind-sci-art
+  series: New Series
+  volume: 5
+  number: 26
+  pages:
+  - 204
+  - 205
+  pubDate:
+    year: 1860
+    month: 3
+  authors:
+  - chapman.e.j
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/30850724
+  notes: >
+    Apparently the awkwardly formatted title is cited in brackets as
+    "[Preliminary Notice of a New Species of Agelacrinites]"
+1860b_chapman.e.j:
+  title: On a new species of Agelacrinites, and on the structural relations of that genus
+  journal: can-j-ind-sci-art
+  series: New Series
+  volume: 5
+  number: 28
+  pages:
+  - 358
+  - 365
+  pubDate:
+    year: 1860
+    month: 7
+  processDates:
+    read: 1860-03-17
+  authors:
+  - chapman.e.j
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/30850886
 1865_norman:
   title: On the genera and species of British Echinodermata
   journal: annals-and-mag
@@ -1590,6 +1815,21 @@
   - nicholson
   identifiers:
     url: https://www.biodiversitylibrary.org/item/6241
+1877_huxley.t.h:
+  book: manual-inv
+  pubDate:
+    year: 1877
+  authors:
+  - huxley.t.h
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/11276
+  notes: There is an American reprint dated 1878.
+1877_miller.s.a:
+  book: am-palaeo-fossils
+  pubDate:
+    year: 1877
+  authors:
+  - miller.s.a
 1879_dames:
   title: "Fr. Schmidt: Über Cyathocystis Plautinae (Referat)"
   journal: neues-jahrbuch
@@ -1603,10 +1843,7 @@
   - dames
   notes: |
     A Referat by W. Dames of the pre-print of Schmidt's paper in the
-    Verhandlungen der Mineralogischen Gesellschaft zu St. Petersburg, 1879,
-    1879_schmidt.c.f.  Every statement here is Dames's account of Schmidt.
-    The Heft's issue date is not printed; the volume's closing notice is dated
-    15 October 1879.
+    Verhandlungen der Mineralogischen Gesellschaft zu St. Petersburg, 1879.
 1879a_nicholson_lydekker:
   book: manual-2nd
   volume: I
@@ -1643,6 +1880,15 @@
   notes: |
     Pre-print of 1880_schmidt.c.f, and the more broadly cited authority
     for Cyathocystis and C. plautinae.
+1879_springer:
+  book: rev-pcrin
+  volume: Part I
+  pubDate:
+    year: 1879
+  authors:
+  - springer
+  identifiers:
+    url: https://archive.org/details/jstor-4060328/page/n1/mode/2up
 1879_zittel:
   book: handbuch
   volume: II
@@ -1671,6 +1917,68 @@
   notes: |
     Regular printing of 1879_schmidt.c.f, sometimes erroneously cited as
     the authority for its contents.
+1881_springer:
+  book: rev-pcrin
+  volume: Part II
+  pubDate:
+    year: 1881
+  authors:
+  - springer
+  identifiers:
+    url: https://archive.org/details/jstor-4060543/page/n1/mode/2up
+1883_miller.s.a:
+  aliasOf: 1883_worthen_st. john_miller.s.a
+1883_worthen:
+  aliasOf: 1883_worthen_st. john_miller.s.a
+1883_worthen_st. john_miller.s.a:
+  book: geo-survey-illinois
+  volume: VII, Geology and Palæontology
+  pubDate:
+    year: 1883
+  authors:
+  - worthen
+  - st. john
+  - miller.s.a
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/64668#page/7/mode/1up
+1884_sollas:
+  title: On the Development of Halisarca lobularis (O. Schmidt)
+  journal: quart-jour-mic-sci
+  series: New Series
+  volume: 24
+  number: 96
+  pages:
+  - 603
+  - 621
+  plates:
+  - XXXVII
+  pubDate:
+    year: 1884
+    month: 10
+  authors:
+  - sollas
+  identifiers:
+    url: https://archive.org/details/quarterlyjournal241884lond/page/602/mode/2up
+1885_wachsmuth_springer:
+  book: rev-pcrin
+  volume: Part III, Section I
+  pubDate:
+    year: 1885
+  authors:
+  - wachsmuth
+  - springer
+  identifiers:
+    url: https://archive.org/details/revisionpalaeoc00sprigoog/page/n12/mode/2up
+1886_wachsmuth_springer:
+  book: rev-pcrin
+  volume: Part III, Section II
+  pubDate:
+    year: 1886
+  authors:
+  - wachsmuth
+  - springer
+  identifiers:
+    url: https://archive.org/details/jstor-4061335/page/n1/mode/2up
 1887_billings.w.r:
   title: A new genus and three new species of crinoids from the Trenton Formation with notes on a large specimen of Dendrocrinus proboscidiatus
   journal: ottawa-naturalist
@@ -1682,6 +1990,17 @@
   - billings.w.r
   identifiers:
     url: https://www.biodiversitylibrary.org/page/30200108
+1888_steinmann.g:
+  aliasOf: 1888_steinmann.g_döderlein
+1888_steinmann.g_döderlein:
+  book: elements-de
+  pubDate:
+    year: 1888
+  authors:
+  - steinmann.g
+  - döderlein
+  identifiers:
+    url: https://archive.org/details/elementederpal00stei/page/n7/mode/2up
 1889a_nicholson_lydekker:
   book: manual-3rd
   volume: I
@@ -1716,6 +2035,27 @@
   - bell.f.j
   identifiers:
     doi: 10.1080/00222939109460422
+1893_bernard.f:
+  book: elements-fr
+  pubDate:
+    year: 1893
+  authors:
+  - bernard.f
+  identifiers:
+    url: https://www.google.com/books/edition/%C3%89l%C3%A9ments_de_pal%C3%A9ontologie/OXxGAQAAMAAJ?hl=en
+1895_jaekel:
+  title: Über die Organisation der Cystoideen
+  journal: verhandlungen
+  volume: 5
+  pages:
+  - 109
+  - 124
+  pubDate:
+    year: 1895
+  authors:
+  - jaekel
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/47288899
 1896a_haeckel:
   title: "Die cambrische Stammgruppe der Echinodermen. Vorläufige Mittheilung, vorgetragen in der Sitzung der Medicinisch-Naturwissenschaftlichen Gesellschaft zu Jena am 13. December 1895"
   journal: jena-zeitschr
@@ -1770,6 +2110,39 @@
       illustrations: partly
       phylogeny: na
     notes: Reviewed against the paper 2026-09-10; see notes/reviews/review_1896_pompeckj.md
+1897a_wachsmuth_springer:
+  title: The North American Crinoidea Camerata, Vol. I
+  journal: mem-comp-zool
+  volume: 20
+  pubDate:
+    year: 1897
+  authors:
+  - wachsmuth
+  - springer
+  identifiers:
+    url: https://archive.org/details/NorthAmericanCrIWach/page/n11/mode/2up
+1897b_wachsmuth_springer:
+  title: The North American Crinoidea Camerata, Vol. II
+  journal: mem-comp-zool
+  volume: 21
+  pubDate:
+    year: 1897
+  authors:
+  - wachsmuth
+  - springer
+  identifiers:
+    url: https://archive.org/details/NorthAmericanCrIIWach/page/n1/mode/2up
+1897c_wachsmuth_springer:
+  title: The North American Crinoidea Camerata, Plates and Descriptions
+  journal: mem-comp-zool
+  volume: Eighty-Three Plates to Accomany Vols. XX and XXI
+  pubDate:
+    year: 1897
+  authors:
+  - wachsmuth
+  - springer
+  identifiers:
+    url: https://archive.org/details/NorthAmericanCrAtlaWach/page/n7/mode/2up
 1897_whiteaves:
   title: Description of a new genus and species of cystideans from the Trenton limestone at Ottawa
   journal: canadian-record-sci
@@ -1862,6 +2235,26 @@
   - jaekel
   identifiers:
     url: https://www.google.com/books/edition/Stammesgeschichte_der_Pelmatozoen/cvdaAAAAQAAJ
+1899_sollas:
+  title: >
+    Fossils in the University Museum, Oxford: I. On Silurian Eocrinoidea
+    and Ophiuroidea
+  journal: quart-jour-geol-soc
+  volume: 55
+  number: Part 4, No. 220
+  pages:
+  - 692
+  - 715
+  pubDate:
+    year: 1899
+    month: 11
+    day: 4
+  processDates:
+    read: 1899-04-12
+  authors:
+  - sollas
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/35448220
 1900_bather:
   title: Part III — The Echinoderma
   book: treatise-zoo
@@ -1883,6 +2276,24 @@
       illustrations: none
       phylogeny: na
     notes: Reviewed against the paper 2026-09-10; see notes/reviews/review_1900_bather.md
+1900_jaekel:
+  title: Ueber Carpoideen, eine neue Classe von Pelmatozoen
+  journal: zeitschrift
+  volume: 52
+  number: 4
+  pages:
+  - 661
+  - 677
+  pubDate:
+    year: 1900
+    months:
+    - 10
+    - 11
+    - 12
+  authors:
+  - jaekel
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/43675680
 1908_bather:
   title: Studies in Edrioasteroidea. III. Lebetodiscus, n.g. for Agelacrinites Dicksoni Billings
   journal: geomag
@@ -2016,6 +2427,25 @@
     continuing 1915a_bather: P. grayae and P. ansticei, with plate III.
   authors:
   - bather
+1918_jaekel:
+  book: phy-sys-pelm
+  pubDate:
+    year: 1918
+  authors:
+  - jaekel
+1921_jaekel:
+  title: Phylogenie und System der Pelmatozoen
+  journal: p-z
+  volume: 3
+  pages:
+  - 1
+  - 128
+  pubDate:
+    year: 1921
+  authors:
+  - jaekel
+  identifiers:
+    doi: 10.1007/BF03190413
 1925_hudson:
   title: The Need of Improved Technique in Illustration
   journal: jofgeol-chicago
@@ -2072,6 +2502,17 @@
   notes: |
     "Tryckt den 21 februari 1927" (p. 5), the separate printing; communicated
     27 October 1926; Häfte 2 of Band 19 issued 3 November 1927.
+1929_chapman.f:
+  title: On some trilobites and brachiopods from the Mount Isa district, N.W. Queensland
+  journal: proc-vic
+  volume: 41
+  pages:
+  - 202
+  - 216
+  pubDate:
+    year: 1929
+  authors:
+  - chapman.f
 1929_matsumoto:
   title: Outline of a classification of Echinoermata
   journal: tohoku
@@ -2152,6 +2593,26 @@
       "C. (Hemicystites) granulatus" (p. 4) and "L. (Agelacrinites) dicksoni"
       (p. 9) is a synonymy of the earlier combination and is captured; the
       two-line citation under Discocystis kaskaskiensis (p. 21) is not.
+1938_gekker:
+  title: >
+    Новые данные о роде Rhipidocystis Jkl. (отряд Digitata n. o., класс
+    Carpoidea Jkl.) и новый род Bockia n. g. (подкласс Eocrinoidea Jkl.,
+    класс Crinoidea Mill.) из ордовика Ленинградской области СССР и Эстонии
+  journal: doklady
+  volume: 19
+  number: 5
+  pages:
+  - 421
+  - 425
+  pubDate:
+    year: 1938
+  authors:
+  - gekker
+  notes: >
+    New data on the genus Rhipidocystis Jkl. (order Digitata n. o., class
+    Carpoidea Jkl.) and a new genus Bockia n. g. (subclass Eocrinoidea Jkl.,
+    class Crinoidea Mill.) from the Ordovician of Leningrad Province, USSR,
+    and Estonia
 1941_whitehouse:
   title: "The Cambrian faunas of north-eastern Australia, Part 4: Early Cambrian echinoderms similar to the larval stages of Recent forms"
   journal: mem-q
@@ -2889,6 +3350,51 @@
   - kolata
   identifiers:
     doi: 10.1017/S0022336000061734
+1975_parsley:
+  title: >
+    Systematics and functional morphology of Columbocystis, a Middle
+    Ordovician “Cystidean” (Echinodermata) of uncertain affinities
+  journal: bullamp
+  volume: 67
+  number: 287
+  pages:
+  - 349
+  - 361
+  pubDate:
+    year: 1975
+  authors:
+  - parsley
+1975_parsley_mintz:
+  title: >
+    North American Paracrinoidea: Ordovician Echinodermata
+  journal: bullamp
+  volume: 68
+  number: 288
+  pages:
+  - 1
+  - 116
+  plates:
+  - 1
+  - 13
+  pubDate:
+    year: 1975
+  authors:
+  - parsley
+  - mintz
+1975_pope.j.k:
+  title: >
+    Evidence for relating the Lepidocoleidae, machaeridian echinoderms,
+    to the mitrate carpoids
+  journal: bullamp
+  volume: 67
+  number: 287
+  pages:
+  - 385
+  - 406
+  pubDate:
+    year: 1975
+  authors:
+  - pope.j.k
 1976_bell.b.m:
   title: A Study of North American Edrioasteroidea
   journal: nysm
@@ -3002,6 +3508,17 @@
   - bell.b.m
   identifiers:
     doi: 10.1017/S027116480000018X
+1980_sprinkle:
+  title: An overview of the fossil record
+  journal: series-geol
+  volume: "3: Echinoderms: Notes for a Short Course"
+  pages:
+  - 15
+  - 26
+  pubDate:
+    year: 1980
+  authors:
+  - sprinkle
 2015_zamora_lefebvre_hoşgör_franzen_nardin_fatka_álvaro:
   title: "The Cambrian edrioasteroid Stromatocystites (Echinodermata): Systematics, palaeogeography, and palaeoecology"
   journal: geobios
@@ -3370,6 +3887,19 @@ inprep_sprinkle_strimple:
   - sprinkle
   identifiers:
     url: https://kuscholarworks.ku.edu/entities/publication/de425cc9-1319-41f5-b1b4-0c6a6e13757a
+1985_ubaghs_robison:
+  title: A homoiostelean and a new eocrinoid from the Middle Cambrian of Utah
+  journal: kansas
+  number: 112
+  pubDate:
+    year: 1985
+    month: 9
+    day: 12
+  authors:
+  - ubaghs
+  - robison
+  identifiers:
+    url: https://www.researchgate.net/publication/29444224_A_homoiostelean_and_a_new_eocrinoid_from_the_Middle_Cambrian_of_Utah
 1987_gehling:
   title: Earliest known echinoderm — a new Ediacaran fossil from the Pound Subgroup of South Australia
   journal: alcheringa
@@ -3514,7 +4044,7 @@ inprep_sprinkle_strimple:
   authors:
   - ubaghs
   - vizcaïno
-1991_fatka:
+1991_fatka_kordule:
   title: Akadocrinus knizeki sp.nov., gogiid eocrinoid from Czechoslovakia (Echinodermata, Middle Cambrian)
   journal: vestnik
   volume: 66
@@ -3523,6 +4053,7 @@ inprep_sprinkle_strimple:
     year: 1991
   authors:
   - fatka
+  - kordule
 1992_sumrall:
   title: Spiraclavus nacoensis, a new species of clavate agelacrinitid edrioasteroid from central Arizona
   journal: jofpaleo
@@ -3758,7 +4289,9 @@ inprep_sprinkle_strimple:
   authors:
   - domínguez alonso
 1999_ubaghs:
-  title: Échinodermes nouveaux du Cambrien supérieur de la Montagne Noire (France méridionale)
+  title: >
+    Échinodermes nouveaux du Cambrien supérieur de la Montagne Noire
+    (France méridionale)
   journal: geobios
   volume: 31
   number: 6
@@ -3773,7 +4306,7 @@ inprep_sprinkle_strimple:
   authors:
   - ubaghs
 1999_vizcaïno_lefebvre:
-  title: |
+  title: >
     Les échinodermes du Paléozoïque inférieur
     de Montagne Noire: biostratigraphie et paléodiversité
   journal: geobios
@@ -3838,7 +4371,7 @@ inprep_sprinkle_strimple:
     accepted: 2000-03-30
   authors:
   - grigo
-2000_sumrall_garbisch_pope:
+2000_sumrall_garbisch_pope.j.p:
   title: The Systematics of Postibullinid Edrioasteroids
   journal: jofpaleo
   volume: 74
@@ -3852,7 +4385,7 @@ inprep_sprinkle_strimple:
   authors:
   - sumrall
   - garbisch
-  - pope
+  - pope.j.p
   identifiers:
     jstor: 1306885
 2001_rozhnov_fedorov:
@@ -4729,7 +5262,7 @@ inprep_sprinkle_strimple:
   pubDate:
     year: 2013
   processDates:
-    received: 2013-03-12
+    received: 2012-03-12
     revised: 2012-09-11
     accepted: 2012-09-11
   pages:

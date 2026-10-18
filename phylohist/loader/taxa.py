@@ -119,6 +119,7 @@ class Authority:
           and not (a.surname == 'Klein' and self._year == 1778)
           and not (a.surname == 'Linnaeus' and self._year == 1790)
           and not (a.surname == 'Forsskål' and self._year == 1775)
+          and not (a.surname == 'Spencer' and self._year == 1966)
         ):
           logger.error(
             f'Source {self} year {self._year} too far outside of {a} lifespan!',
@@ -308,7 +309,7 @@ class Taxon:
       return
 
     for suffix, rank, exceptions in (
-      ('inae', 'Subfamily', frozenset()),
+      ('inae', 'Subfamily', frozenset({'Placocystida'})),
       (
         'idae',
         'Family',
@@ -317,6 +318,9 @@ class Taxon:
             'Crinoiden',
             'Crinoideen',
             'Cystideen',
+            'Cystidea',
+            'Cystideae',
+            'Cystoidea',
             'Échinides',
             'Echinides',
             'Stelleridea',
@@ -338,11 +342,8 @@ class Taxon:
       {
         'Acalephida',
         'Arachnida',
-        'Caryocystitida',
         'Echinida',
         'Fistulida',
-        'Glyptocystitida',
-        'Hemicosmitida',
         'Medusida',
         'Stellerida',
         'Zoanthida',
@@ -350,10 +351,20 @@ class Taxon:
     )
     ida_subclasses = frozenset({'Disparida', 'Helicoplacida', 'Polyplacida'})
     ida_parvclasses = frozenset({'Cladida'})
-    ida_suborders = frozenset({'Placocystida'})
-    ida_superfamilies = frozenset({'Protocrinitida'})
+    ida_superfamilies = frozenset(
+      {
+        'Aristocystitida',
+        'Caryocystitida',
+        'Glyptocystitida',
+        'Glyptosphaeritida',
+        'Hemicosmitida',
+        'Protocrinitida',
+        'Sphaeronitida',
+      }
+    )
+    ida_subfamilies = frozenset({'Placocystida'})
     ida_exceptions = (
-      ida_classes | ida_subclasses | ida_parvclasses | ida_suborders | ida_superfamilies
+      ida_classes | ida_subclasses | ida_parvclasses | ida_superfamilies | ida_subfamilies
     )
 
     ina_exceptions = frozenset(

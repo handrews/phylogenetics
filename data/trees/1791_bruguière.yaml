@@ -16,8 +16,14 @@ taxonomies:
     rank: Order
   - taxon: mollusca
     rank: Order
-  - taxon: echinodermata-order
-    new: true
+  - taxon: echinodermata
+    rank: Order
+    notes: >
+      This (or possibly Bruguière 1789, a copy of which is not available)
+      is the first assignment of a Linnaean rank to Echinodermata,
+      and therefor the first formal use and often cited as the taxon's
+      authority.  Klein 1778 (a reprint of Klein 1734) is an earlier
+      contender without a rank.
     children:
     - taxon: asterias
     - taxon: echinus

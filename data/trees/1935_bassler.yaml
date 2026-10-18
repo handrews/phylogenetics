@@ -1,5 +1,17 @@
 taxonomies:
 - taxon: edrioasteroidea
+  citedAs: Class EDRIOASTEROIDEA Billings, 1854–58
+  rank: Class
+  authority:
+    source: 1858b_billings
+  pages: 2
+  editorial:
+    inferred: [authority]
+    basis: >
+      The 1854 appears to reference the first paper in which Billings
+      described an edrioasteroid, but that paper did not define such a taxon.
+      This seems to be non-standard notation that is probably not intended
+      to change the attribution.  1854 is not otherwise mentioned in the text.
   synonyms:
   - taxon: thyroidea
   - taxon: agelacrinoidea
@@ -218,9 +230,9 @@ taxonomies:
         - taxon: rectiradiatus_shideler_1918
           parents:
           - taxon: agelacrinites
-      - taxon: billingsi_chapman_1860
+      - taxon: billingsi_chapman.e.j_1860
         synonyms:
-        - taxon: billingsi_chapman_1860
+        - taxon: billingsi_chapman.e.j_1860
           parents:
           - taxon: agelacrinus
       - taxon: youngi_raymond_1915
@@ -315,6 +327,9 @@ taxonomies:
           parents:
           - taxon: agelacrinus
   - taxon: edrioasteridae
+    citedAs: Family EDRIOASTERIDAE Bather
+    rank: Family
+    pages: 8
     children:
     - taxon: edrioaster
       synonyms:

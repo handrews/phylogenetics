@@ -1,28 +1,229 @@
 taxonomies:
-- taxon: echinodermata
+- notes: >
+    Labeled "Conventional Classification"
+    Echinodermata not in the table or declared; mentioned in introduction.
+  taxon: echinodermata
+  rank: Phylum
+  citedAs: phylum Echinodermata
+  authority: null
+  pages: 1
   children:
-  - taxon: homalozoa
+  - taxon: pelmatozoa
+    citedAs: Subphylum Pelmatozoa
+    rank: Subphylum
+    authority: null
+    pages: 14
     children:
     - taxon: carpoidea
+      citedAs: Class Carpoidea
+      rank: Class
+      authority: null
+      pages: 14
+    - taxon: cystoidea
+      citedAs: Class Cystoidea
+      rank: Class
+      authority: null
+      pages: 14
+    - taxon: eocrinoidea
+      citedAs: Class Eocrinoidea
+      rank: Class
+      authority: null
+      pages: 14
+    - taxon: paracrinoidea
+      citedAs: Class Paracrinoidea
+      rank: Class
+      authority: null
+      pages: 14
+    - taxon: blastoidea
+      citedAs: Class Blastoidea
+      rank: Class
+      authority: null
+      pages: 14
+    - taxon: edrioblastoidea
+      citedAs: Class Edrioblastoidea
+      rank: Class
+      authority: null
+      pages: 14
+    - taxon: crinoidea
+      citedAs: Class Crinoidea
+      rank: Class
+      authority: null
+      pages: 14
+    - taxon: edrioasteroidea
+      citedAs: Class Edrioasteroidea
+      rank: Class
+      authority: null
+      pages: 14
+  - taxon: eleutherozoa
+    citedAs: Subphylum Eleutherozoa
+    rank: Subphylum
+    authority: null
+    pages: 14
+    children:
+    - taxon: ophiocistioidea
+      citedAs: Class Ophiocistioidea
+      rank: Class
+      authority: null
+      pages: 14
+    - taxon: echinoidea
+      citedAs: Class Echinoidea
+      rank: Class
+      authority: null
+      pages: 14
+    - taxon: holothuroidea
+      citedAs: Class Holothuroidea
+      rank: Class
+      authority: null
+      pages: 14
+    - taxon: asteroidea
+      citedAs: Class Asteroidea
+      rank: Class
+      authority: null
+      pages: 14
+    - taxon: ophiuroidea
+      citedAs: Class Ophiuroidea
+      rank: Class
+      authority: null
+      pages: 14
+- notes: >
+    Labeled "Classification Herein Adopted"
+    Echinodermata not in the table or declared; mentioned in introduction.
+  taxon: echinodermata
+  rank: Phylum
+  citedAs: phylum Echinodermata
+  authority: null
+  pages: 1
+  children:
+  - taxon: homalozoa
+    citedAs: Subphylum Homalozoa
+    rank: Subphylum
+    authority: null
+    pages: 14
+    children:
+    - taxon: carpoidea
+      citedAs: Class Carpoidea
+      rank: Class
+      authority: null
+      moved:
+        taxon: pelmatozoa
+      pages: 14
   - taxon: crinozoa
+    citedAs: Subphylum Crinozoa Matsumoto, 1929 (redefined)
+    emended: true
+    rank: Subphylum
+    pages: 13
     children:
     - taxon: cystoidea
+      citedAs: Class Cystoidea
+      rank: Class
+      authority: null
+      moved:
+        taxon: pelmatozoa
+      pages: 14
     - taxon: eocrinoidea
+      citedAs: Class Eocrinoidea
+      rank: Class
+      authority: null
+      moved:
+        taxon: pelmatozoa
+      pages: 14
     - taxon: paracrinoidea
+      citedAs: Class Paracrinoidea
+      rank: Class
+      authority: null
+      moved:
+        taxon: pelmatozoa
+      pages: 14
     - taxon: blastoidea
+      citedAs: Class Blastoidea
+      rank: Class
+      authority: null
+      moved:
+        taxon: pelmatozoa
+      pages: 14
     - taxon: edrioblastoidea
+      citedAs: Class Edrioblastoidea
+      rank: Class
+      authority: null
+      moved:
+        taxon: pelmatozoa
+      pages: 14
     - taxon: crinoidea
+      citedAs: Class Crinoidea
+      rank: Class
+      authority: null
+      moved:
+        taxon: pelmatozoa
+      pages: 14
   - taxon: echinozoa
+    citedAs: Subphylum Echinozoa Zittel, 1895 (redefined)
+    emended: true
+    rank: Subphylum
+    pages: 13
     children:
     - taxon: helicoplacoidea
+      citedAs: Class Helicoplacoidea
+      rank: Class
+      authority: null
+      pages: 14
     - taxon: edrioasteroidea
+      citedAs: Class Edrioasteroidea
+      rank: Class
+      authority: null
+      moved:
+        taxon: pelmatozoa
+      pages: 14
     - taxon: ophiocistioidea
+      citedAs: Class Ophiocistioidea
+      rank: Class
+      authority: null
+      moved:
+        taxon: eleutherozoa
+      pages: 14
     - taxon: echinoidea
+      citedAs: Class Echinoidea
+      rank: Class
+      authority: null
+      moved:
+        taxon: eleutherozoa
+      pages: 14
     - taxon: holothuroidea
+      citedAs: Class Holothuroidea
+      rank: Class
+      authority: null
+      moved:
+        taxon: eleutherozoa
+      pages: 14
   - taxon: asterozoa
+    citedAs: Subphylum Asterozoa
+    rank: Subphylum
+    pages: 14
     children:
     - taxon: stelleroidea
+      citedAs: Class Stelleroidea
+      rank: Class
+      authority: null
+      pages: 14
       children:
-      - taxon: somasteroidea-subclass
-      - taxon: asteroidea-subclass
-      - taxon: ophiuroidea-subclass
+      - taxon: somasteroidea
+        citedAs: >
+          inluding the subclasses Somasteroidea, Asteroidea and Ophiuroidea
+        rank: Subclass
+        authority: null
+        pages: 14
+      - taxon: asteroidea
+        citedAs: >
+          inluding the subclasses Somasteroidea, Asteroidea and Ophiuroidea
+        rank: Subclass
+        authority: null
+        moved:
+          taxon: eleutherozoa
+        pages: 14
+      - taxon: ophiuroidea
+        citedAs: >
+          inluding the subclasses Somasteroidea, Asteroidea and Ophiuroidea
+        rank: Subclass
+        authority: null
+        moved:
+          taxon: eleutherozoa
+        pages: 14

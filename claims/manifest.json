@@ -5,6 +5,7 @@
   "arbizu": "Arbizu",
   "ausich": "Ausich",
   "austin.t": "Austin",
+  "austin.t.j": "Austin",
   "babcock": "Babcock",
   "baer": "Baer",
   "bailey.j.b": "Bailey",
@@ -15,6 +16,7 @@
   "beecher": "Beecher",
   "bell.b.m": "Bell",
   "bell.f.j": "Bell",
+  "bernard.f": "Bernard",
   "billings": "Billings",
   "billings.w.r": "Billings",
   "blainville": "Blainville",
@@ -27,6 +29,7 @@
   "brett": "Brett",
   "briggs.d.e.g": "Briggs",
   "broadhead": "Broadhead",
+  "bronn.h.g": "Bronn",
   "brown.i.a": "Brown",
   "bruguière": "Bruguière",
   "buch": "Buch",
@@ -35,6 +38,8 @@
   "calvin.s": "Calvin",
   "candia carnevali": "Candia Carnevali",
   "caster": "Caster",
+  "chapman.e.j": "Chapman",
+  "chapman.f": "Chapman",
   "chen.a": "Chen",
   "chen.g.y": "Chen",
   "chen.j.y": "Chen",
@@ -65,6 +70,7 @@
   "doweld": "Doweld",
   "durham": "Durham",
   "dzik": "Dzik",
+  "döderlein": "Döderlein",
   "eichwald": "Eichwald",
   "erdtmann": "Erdtmann",
   "escarguel": "Escarguel",
@@ -76,6 +82,7 @@
   "fell": "Fell",
   "ferhi": "Ferhi",
   "fischer": "Fischer",
+  "fleming.j": "Fleming",
   "foerste": "Foerste",
   "forbes": "Forbes",
   "forsskål": "Forsskål",
@@ -88,6 +95,7 @@
   "gahn": "Gahn",
   "garbisch": "Garbisch",
   "gehling": "Gehling",
+  "gekker": "Gekker",
   "gibson": "Gibson",
   "gil cid": "Gil Cid",
   "gill": "Gill",
@@ -97,6 +105,7 @@
   "gong.y.m": "Gong",
   "gozalo": "Gozalo",
   "grant": "Grant",
+  "gravenhorst": "Gravenhorst",
   "gray.g.r": "Gray",
   "gray.j.e": "Gray",
   "grigo": "Grigo",
@@ -123,6 +132,7 @@
   "huang.y.z": "Huang",
   "hudson": "Hudson",
   "hughes": "Hughes",
+  "huxley.t.h": "Huxley",
   "hyman": "Hyman",
   "isotalo": "Isotalo",
   "jaekel": "Jaekel",
@@ -183,6 +193,7 @@
   "müller.o.f": "Müller",
   "müller.p": "Müller",
   "müller.p.l.s": "Müller",
+  "münster": "Münster",
   "nardin": "Nardin",
   "nedjari": "Nedjari",
   "neumayr": "Neumayr",
@@ -202,7 +213,8 @@
   "petersen.m.s": "Petersen",
   "phillips.j": "Phillips",
   "pompeckj": "Pompeckj",
-  "pope": "Pope",
+  "pope.j.k": "Pope",
+  "pope.j.p": "Pope",
   "prokop": "Prokop",
   "qian.y": "Qian",
   "rahman": "Rahman",
@@ -228,14 +240,19 @@
   "schuchert": "Schuchert",
   "seibert.r": "Seibert",
   "selden": "Selden",
+  "siebold": "Siebold",
   "siveter.da.j": "Siveter",
   "siveter.de.j": "Siveter",
   "smith.a.b": "Smith",
+  "sollas": "Sollas",
   "sowerby.g.b": "Sowerby",
   "sowerby.j.d.c": "Sowerby",
   "spencer": "Spencer",
   "springer": "Springer",
   "sprinkle": "Sprinkle",
+  "st. john": "St. John",
+  "stannius": "Stannius",
+  "steinmann.g": "Steinmann",
   "stewart": "Stewart",
   "strimple": "Strimple",
   "sumrall": "Sumrall",
@@ -245,6 +262,7 @@
   "tao.j.l": "Tao",
   "tarlo": "Tarlo",
   "thompson": "Thompson",
+  "tilas": "Tilas",
   "ubaghs": "Ubaghs",
   "ulrich": "Ulrich",
   "van phelsum": "van Phelsum",
@@ -252,6 +270,7 @@
   "vaucher": "Vaucher",
   "vizcaïno": "Vizcaïno",
   "volborth": "Volborth",
+  "wachsmuth": "Wachsmuth",
   "wagner": "Wagner",
   "wahlenberg": "Wahlenberg",
   "wahlman": "Wahlman",
@@ -303,6 +322,42 @@
     "in": "Naturalis Dispositio Echinodermatum. Accessit Lucubratiuncula de Aculeis Echinorum Marinorum, cum Specilegio de Belemnitis",
     "title": null,
     "year": 1734
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1740_tilas": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Tilas"
+    ],
+    "in": "Kungliga Svenska vetenskapsakademiens handlingar",
+    "number": 2,
+    "pages": [
+     196,
+     203
+    ],
+    "title": "Mineral-historia öfwer Osmundsberget uti Rättwiks Socken och Öster-Dalarne\n",
+    "volume": 1,
+    "year": 1740
    },
    "claims": {},
    "coverage": {
@@ -1182,7 +1237,7 @@
     "authors": [
      "Leske"
     ],
-    "in": "Additamenta ad Iacobi Theodori Klein Naturalem Dispositionem Echinodermatum et Lucubratiunculam de Aculeis Echinorum Marinorum",
+    "in": "Additamenta ad Iacobi Theodori Klein Naturalem Dispositionem Echinodermatum et Lucubratiunculam de Aculeis Echinorum Marinorum\n",
     "title": null,
     "year": 1778
    },
@@ -1516,9 +1571,7 @@
    "tree": false
   },
   "1791_bruguière": {
-   "acts": {
-    "new": 1
-   },
+   "acts": {},
    "audit": {
     "state": "unaudited"
    },
@@ -1531,7 +1584,6 @@
     "year": 1791
    },
    "claims": {
-    "act": 1,
     "placement": 8,
     "usage": 9
    },
@@ -1546,7 +1598,6 @@
     "types": null
    },
    "derived": {
-    "newTaxa": 1,
     "skeleton": 17
    },
    "derivedCoverage": {
@@ -2367,6 +2418,42 @@
    "inconsistencies": [],
    "material": {},
    "tree": true
+  },
+  "1818_goldfuss": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Goldfuss"
+    ],
+    "in": "Isis von Oken",
+    "number": 6,
+    "pages": [
+     1008,
+     1013
+    ],
+    "title": "Ueber die Classification der Zoophyten",
+    "volume": 2,
+    "year": 1818
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
   },
   "1818_lamarck": {
    "acts": {},
@@ -3315,6 +3402,36 @@
    "material": {},
    "tree": false
   },
+  "1828_fleming.j": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Fleming"
+    ],
+    "in": "A history of British animals",
+    "title": null,
+    "year": 1828
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1828_hisinger": {
    "acts": {
     "new": 1,
@@ -3333,11 +3450,12 @@
     "year": 1828
    },
    "claims": {
-    "acceptance": 8,
+    "acceptance": 7,
     "act": 2,
+    "editorial": 1,
     "material": 2,
     "placement": 16,
-    "usage": 28
+    "usage": 27
    },
    "coverage": {
     "illustrations": null,
@@ -3352,8 +3470,8 @@
    "derived": {
     "illustrations": 2,
     "newTaxa": 2,
-    "skeleton": 44,
-    "synonymy": 8
+    "skeleton": 43,
+    "synonymy": 7
    },
    "derivedCoverage": {
     "illustrations": null,
@@ -3576,6 +3694,48 @@
     "illustration": 14
    },
    "tree": true
+  },
+  "1831_goldfuss": {
+   "aliasOf": "1831_goldfuss_münster",
+   "citation": {
+    "authors": [
+     "Goldfuss"
+    ],
+    "in": "Petrefacta Germaniæ tam ea: quae in Museo Universitatis Regiae Borussicae Fridericiae Wilhelmiae Rhenanae servantur quam alia quaecunque in Museis Hoeninghusiano Muensteriano aliisque extant, iconibus et descriptionibus illustrata = Abbildungen und Beschreibungen der petrefacten Deutschlands und der angränzenden Länder\n",
+    "title": null,
+    "year": 1831
+   }
+  },
+  "1831_goldfuss_münster": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Goldfuss",
+     "Münster"
+    ],
+    "in": "Petrefacta Germaniæ tam ea: quae in Museo Universitatis Regiae Borussicae Fridericiae Wilhelmiae Rhenanae servantur quam alia quaecunque in Museis Hoeninghusiano Muensteriano aliisque extant, iconibus et descriptionibus illustrata = Abbildungen und Beschreibungen der petrefacten Deutschlands und der angränzenden Länder\n",
+    "title": null,
+    "year": 1831
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
   },
   "1836_burmeister": {
    "acts": {},
@@ -3895,7 +4055,7 @@
     "authors": [
      "Buch"
     ],
-    "in": "Bericht über die zur Bekanntmachung geeigneten Verhandlungen der Königl. Preufs. Akademie der Wissenschaften zu Berlin.",
+    "in": "Bericht über die zur Bekanntmachung geeigneten Verhandlungen der Königl. Preufs. Akademie der Wissenschaften zu Berlin.\n",
     "pages": [
      56,
      59
@@ -3987,6 +4147,43 @@
     "title": "Beiträge zur Bestimmung der Oebirgsformationen in Russland",
     "volume": 15,
     "year": 1841
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1842_austin.t_austin.t.j": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Austin",
+     "Austin"
+    ],
+    "in": "The Annals and Magazine of Natural History",
+    "number": 63,
+    "pages": [
+     106,
+     113
+    ],
+    "title": "Proposed Arrangement of the Echinodermata, particularly as regards the Crinoidea, and a Scooping out of the Alveoli\n",
+    "volume": 10,
+    "year": 1842
    },
    "claims": {},
    "coverage": {
@@ -4186,6 +4383,36 @@
    "material": {},
    "tree": true
   },
+  "1843_gravenhorst": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Gravenhorst"
+    ],
+    "in": "Vergleichende Zoologie",
+    "title": null,
+    "year": 1843
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1843_hall": {
    "acts": {
     "new": 4
@@ -4198,7 +4425,7 @@
      "Hall"
     ],
     "in": "Natural History of New York",
-    "title": "Geology of New-York. Part IV. Comprising the Survey of the Fourth Geological District",
+    "title": "Geology of New-York. Part IV. Comprising the Survey of the Fourth Geological District\n",
     "year": 1843
    },
    "claims": {
@@ -4236,7 +4463,7 @@
   },
   "1844_buch": {
    "acts": {
-    "new": 4,
+    "new": 2,
     "type": 1
    },
    "audit": {
@@ -4246,14 +4473,18 @@
     "authors": [
      "Buch"
     ],
-    "title": "Über Cystideen eingeleitet durch die Entwicklung der Eigenthümlichkeiten von Caryocrinus ornatus",
+    "in": "Bericht über die zur Bekanntmachung geeigneten Verhandlungen der Königl. Preufs. Akademie der Wissenschaften zu Berlin.\n",
+    "number": "March",
+    "title": "Hr. v. Buch las über Cystideen, eingeleitet durch die Entwickelung der Eigenthümlichkeiten des Caryocrinus ornatus.\n",
+    "volume": 1844,
     "year": 1844
    },
    "claims": {
-    "acceptance": 11,
-    "act": 5,
-    "placement": 20,
-    "usage": 44
+    "acceptance": 13,
+    "act": 3,
+    "editorial": 1,
+    "placement": 11,
+    "usage": 29
    },
    "coverage": {
     "illustrations": null,
@@ -4266,8 +4497,64 @@
     "types": null
    },
    "derived": {
-    "newTaxa": 4,
-    "skeleton": 64,
+    "newTaxa": 2,
+    "skeleton": 40,
+    "synonymy": 13,
+    "types": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "inconsistencies": [],
+   "material": {},
+   "tree": true
+  },
+  "1845_buch": {
+   "acts": {
+    "type": 1
+   },
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Buch"
+    ],
+    "in": "Über Cystideen, eingeleitet durch die Entwicklung der Eigenthümlichkeiten von Caryocrinus ornatus Say\n",
+    "pages": [
+     1,
+     28
+    ],
+    "plates": [
+     "I",
+     "II"
+    ],
+    "title": null,
+    "year": 1845
+   },
+   "claims": {
+    "acceptance": 11,
+    "act": 1,
+    "placement": 18,
+    "usage": 42
+   },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {
+    "skeleton": 60,
     "synonymy": 11,
     "types": 1
    },
@@ -4283,21 +4570,50 @@
    "material": {},
    "tree": true
   },
-  "1846a_buch": {
+  "1845_siebold": {
    "acts": {},
    "audit": {
     "state": "unaudited"
    },
    "citation": {
     "authors": [
-     "Buch"
+     "Siebold"
     ],
-    "in": "Abhandlungen der Königlichen Akademie der Wissenschaften zu Berlin",
-    "pages": [
-     89,
-     116
+    "in": "Lehrbuch der vergleichenden Anatomie",
+    "number": 1,
+    "title": null,
+    "volume": "1 Wirbellosen Thiere",
+    "year": 1845
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1846_stannius": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Stannius"
     ],
-    "title": "Über Cystideen eingeleitet durch die Entwicklung der Eigenthümlichkeiten von Caryocrinus ornatus SAY",
+    "in": "Lehrbuch der vergleichenden Anatomie",
+    "title": null,
+    "volume": "2 Wirbellthiere",
     "year": 1846
    },
    "claims": {},
@@ -4317,7 +4633,7 @@
    "material": {},
    "tree": false
   },
-  "1846b_buch": {
+  "1846a_buch": {
    "acts": {},
    "audit": {
     "state": "unaudited"
@@ -4336,7 +4652,11 @@
     "volume": 2,
     "year": 1846
    },
-   "claims": {},
+   "claims": {
+    "acceptance": 1,
+    "editorial": 1,
+    "usage": 2
+   },
    "coverage": {
     "illustrations": null,
     "material": null,
@@ -4347,13 +4667,23 @@
     "synonymy": null,
     "types": null
    },
-   "derived": {},
-   "derivedCoverage": {},
+   "derived": {
+    "skeleton": 2,
+    "synonymy": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "inconsistencies": [],
    "material": {},
-   "tree": false
+   "tree": true
   },
-  "1846c_buch": {
+  "1846b_buch": {
    "acts": {},
    "audit": {
     "state": "unaudited"
@@ -4393,9 +4723,48 @@
    "material": {},
    "tree": false
   },
+  "1846c_buch": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Buch"
+    ],
+    "in": "Abhandlungen der Königlichen Akademie der Wissenschaften zu Berlin",
+    "pages": [
+     89,
+     116
+    ],
+    "plates": [
+     "II",
+     "III"
+    ],
+    "title": "Über Cystideen eingeleitet durch die Entwicklung der Eigenthümlichkeiten von Caryocrinus ornatus SAY",
+    "year": 1846
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1847_hall": {
    "acts": {
-    "new": 18
+    "new": 17,
+    "placeholder": 1
    },
    "audit": {
     "state": "unaudited"
@@ -4412,9 +4781,10 @@
    "claims": {
     "acceptance": 7,
     "act": 18,
+    "editorial": 3,
     "material": 3,
-    "placement": 31,
-    "usage": 41
+    "placement": 26,
+    "usage": 35
    },
    "coverage": {
     "illustrations": null,
@@ -4429,7 +4799,7 @@
    "derived": {
     "illustrations": 3,
     "newTaxa": 18,
-    "skeleton": 72,
+    "skeleton": 61,
     "synonymy": 7
    },
    "derivedCoverage": {
@@ -4445,6 +4815,38 @@
     "illustration": 3
    },
    "tree": true
+  },
+  "1847_siebold": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Siebold"
+    ],
+    "in": "Lehrbuch der vergleichenden Anatomie",
+    "number": 2,
+    "title": null,
+    "volume": "1 Wirbellosen Thiere",
+    "year": 1847
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
   },
   "1848_austin.t": {
    "acts": {},
@@ -4560,6 +4962,38 @@
    "material": {},
    "tree": false
   },
+  "1848a_siebold": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Siebold"
+    ],
+    "in": "Lehrbuch der vergleichenden Anatomie",
+    "number": 3,
+    "title": null,
+    "volume": "1 Wirbellosen Thiere",
+    "year": 1848
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1848b_forbes": {
    "acts": {
     "emended": 1,
@@ -4599,10 +5033,10 @@
     "year": 1848
    },
    "claims": {
-    "acceptance": 18,
+    "acceptance": 17,
     "act": 17,
     "placement": 33,
-    "usage": 63
+    "usage": 62
    },
    "coverage": {
     "illustrations": "none",
@@ -4616,8 +5050,8 @@
    },
    "derived": {
     "newTaxa": 16,
-    "skeleton": 96,
-    "synonymy": 18
+    "skeleton": 95,
+    "synonymy": 17
    },
    "derivedCoverage": {
     "illustrations": null,
@@ -4630,6 +5064,37 @@
    "inconsistencies": [],
    "material": {},
    "tree": true
+  },
+  "1848b_siebold": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Siebold"
+    ],
+    "in": "Lehrbuch der vergleichenden Anatomie",
+    "title": null,
+    "volume": "1 Wirbellosen Thiere",
+    "year": 1848
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
   },
   "1852_hall": {
    "acts": {
@@ -4661,9 +5126,10 @@
    "claims": {
     "acceptance": 10,
     "act": 41,
+    "editorial": 5,
     "material": 4,
-    "placement": 65,
-    "usage": 81
+    "placement": 67,
+    "usage": 83
    },
    "coverage": {
     "illustrations": "partly",
@@ -4678,7 +5144,7 @@
    "derived": {
     "illustrations": 4,
     "newTaxa": 41,
-    "skeleton": 146,
+    "skeleton": 150,
     "synonymy": 10
    },
    "derivedCoverage": {
@@ -4892,8 +5358,8 @@
     "act": 7,
     "editorial": 1,
     "material": 5,
-    "placement": 8,
-    "usage": 9
+    "placement": 9,
+    "usage": 10
    },
    "coverage": {
     "illustrations": "partly",
@@ -4908,7 +5374,7 @@
    "derived": {
     "illustrations": 5,
     "newTaxa": 6,
-    "skeleton": 17
+    "skeleton": 19
    },
    "derivedCoverage": {
     "illustrations": null,
@@ -5008,8 +5474,8 @@
    },
    "claims": {
     "act": 3,
-    "placement": 3,
-    "usage": 5
+    "placement": 4,
+    "usage": 6
    },
    "coverage": {
     "illustrations": null,
@@ -5023,7 +5489,7 @@
    },
    "derived": {
     "newTaxa": 3,
-    "skeleton": 8
+    "skeleton": 10
    },
    "derivedCoverage": {
     "illustrations": null,
@@ -5378,6 +5844,111 @@
    "material": {},
    "tree": false
   },
+  "1860_bronn.h.g": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Bronn"
+    ],
+    "in": "Die Klassen und Ordnungen des Thier-Reichs, wissenschaftlich dargestellt\n",
+    "title": null,
+    "volume": 2,
+    "year": 1860
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1860a_chapman.e.j": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Chapman"
+    ],
+    "in": "The Canadian Journal of Industry, Science, and Art",
+    "number": 26,
+    "pages": [
+     204,
+     205
+    ],
+    "series": "New Series",
+    "title": "Agelacrinities billingsi.  A new species.  Preliminary notice of.",
+    "volume": 5,
+    "year": 1860
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1860b_chapman.e.j": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Chapman"
+    ],
+    "in": "The Canadian Journal of Industry, Science, and Art",
+    "number": 28,
+    "pages": [
+     358,
+     365
+    ],
+    "series": "New Series",
+    "title": "On a new species of Agelacrinites, and on the structural relations of that genus",
+    "volume": 5,
+    "year": 1860
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1865_norman": {
    "acts": {},
    "audit": {
@@ -5669,6 +6240,66 @@
    "material": {},
    "tree": false
   },
+  "1877_huxley.t.h": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Huxley"
+    ],
+    "in": "A manual of the anatomy of invertebrated animals",
+    "title": null,
+    "year": 1877
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1877_miller.s.a": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Miller"
+    ],
+    "in": "The American Palæozoic Fossils: A Catalogue of the Genera and Species, with Names of Authors, Dates, Places of Publication, Groups of Rocks in which Found, and the Etymology and Signification of the Words.\n",
+    "title": null,
+    "year": 1877
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1879_dames": {
    "acts": {},
    "audit": {
@@ -5722,6 +6353,37 @@
     "series": 2,
     "title": "Ueber Cyathocystis Plautinae,eine neue Cystideenform aus Reval",
     "volume": 15,
+    "year": 1879
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1879_springer": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Springer"
+    ],
+    "in": "Revision of the Palaeocrinoidea",
+    "title": null,
+    "volume": "Part I",
     "year": 1879
    },
    "claims": {},
@@ -5876,6 +6538,198 @@
    "material": {},
    "tree": false
   },
+  "1881_springer": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Springer"
+    ],
+    "in": "Revision of the Palaeocrinoidea",
+    "title": null,
+    "volume": "Part II",
+    "year": 1881
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1883_miller.s.a": {
+   "aliasOf": "1883_worthen_st. john_miller.s.a",
+   "citation": {
+    "authors": [
+     "Miller"
+    ],
+    "in": "Geological Survey of Illinois",
+    "title": null,
+    "volume": "VII, Geology and Palæontology",
+    "year": 1883
+   }
+  },
+  "1883_worthen": {
+   "aliasOf": "1883_worthen_st. john_miller.s.a",
+   "citation": {
+    "authors": [
+     "Worthen"
+    ],
+    "in": "Geological Survey of Illinois",
+    "title": null,
+    "volume": "VII, Geology and Palæontology",
+    "year": 1883
+   }
+  },
+  "1883_worthen_st. john_miller.s.a": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Worthen",
+     "St. John",
+     "Miller"
+    ],
+    "in": "Geological Survey of Illinois",
+    "title": null,
+    "volume": "VII, Geology and Palæontology",
+    "year": 1883
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1884_sollas": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Sollas"
+    ],
+    "in": "Quarterly Juornal of Microscopal Science",
+    "number": 96,
+    "pages": [
+     603,
+     621
+    ],
+    "plates": [
+     "XXXVII"
+    ],
+    "series": "New Series",
+    "title": "On the Development of Halisarca lobularis (O. Schmidt)",
+    "volume": 24,
+    "year": 1884
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1885_wachsmuth_springer": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Wachsmuth",
+     "Springer"
+    ],
+    "in": "Revision of the Palaeocrinoidea",
+    "title": null,
+    "volume": "Part III, Section I",
+    "year": 1885
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1886_wachsmuth_springer": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Wachsmuth",
+     "Springer"
+    ],
+    "in": "Revision of the Palaeocrinoidea",
+    "title": null,
+    "volume": "Part III, Section II",
+    "year": 1886
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1887_billings.w.r": {
    "acts": {
     "new": 4,
@@ -5925,6 +6779,48 @@
    "inconsistencies": [],
    "material": {},
    "tree": true
+  },
+  "1888_steinmann.g": {
+   "aliasOf": "1888_steinmann.g_döderlein",
+   "citation": {
+    "authors": [
+     "Steinmann"
+    ],
+    "in": "Elemente der Paläontologie",
+    "title": null,
+    "year": 1888
+   }
+  },
+  "1888_steinmann.g_döderlein": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Steinmann",
+     "Döderlein"
+    ],
+    "in": "Elemente der Paläontologie",
+    "title": null,
+    "year": 1888
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
   },
   "1889a_nicholson_lydekker": {
    "acts": {},
@@ -6008,6 +6904,71 @@
     "title": "On the Arrangement and Inter-relations of the Classes of the Echinodermata",
     "volume": 8,
     "year": 1891
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1893_bernard.f": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Bernard"
+    ],
+    "in": "Éléments de paléontologie",
+    "title": null,
+    "year": 1893
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1895_jaekel": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Jaekel"
+    ],
+    "in": "Verhandlungen der Deutschen Zoologischen Gesellschaft",
+    "pages": [
+     109,
+     124
+    ],
+    "title": "Über die Organisation der Cystoideen",
+    "volume": 5,
+    "year": 1895
    },
    "claims": {},
    "coverage": {
@@ -6135,7 +7096,7 @@
     "authors": [
      "Haeckel"
     ],
-    "in": "Die Amphorideen und Cystoideen: beiträge zur Morphologie und Phylogenie der Echinodermen",
+    "in": "Die Amphorideen und Cystoideen: beiträge zur Morphologie und Phylogenie der Echinodermen\n",
     "pages": [
      1,
      179
@@ -6221,6 +7182,102 @@
     "specimen": 3
    },
    "tree": true
+  },
+  "1897a_wachsmuth_springer": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Wachsmuth",
+     "Springer"
+    ],
+    "in": "Memoirs of the Museum of Comparative Zoology at Harvard College",
+    "title": "The North American Crinoidea Camerata, Vol. I",
+    "volume": 20,
+    "year": 1897
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1897b_wachsmuth_springer": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Wachsmuth",
+     "Springer"
+    ],
+    "in": "Memoirs of the Museum of Comparative Zoology at Harvard College",
+    "title": "The North American Crinoidea Camerata, Vol. II",
+    "volume": 21,
+    "year": 1897
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1897c_wachsmuth_springer": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Wachsmuth",
+     "Springer"
+    ],
+    "in": "Memoirs of the Museum of Comparative Zoology at Harvard College",
+    "title": "The North American Crinoidea Camerata, Plates and Descriptions",
+    "volume": "Eighty-Three Plates to Accomany Vols. XX and XXI",
+    "year": 1897
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
   },
   "1898_bather": {
    "acts": {},
@@ -6412,10 +7469,47 @@
    "material": {},
    "tree": false
   },
+  "1899_sollas": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Sollas"
+    ],
+    "in": "Quarterly Journal of the Geological Society",
+    "number": "Part 4, No. 220",
+    "pages": [
+     692,
+     715
+    ],
+    "title": "Fossils in the University Museum, Oxford: I. On Silurian Eocrinoidea and Ophiuroidea\n",
+    "volume": 55,
+    "year": 1899
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1900_bather": {
    "acts": {
-    "emended": 3,
-    "new": 2
+    "emended": 7,
+    "new": 2,
+    "restricted": 1
    },
    "audit": {
     "coverage": {
@@ -6440,10 +7534,11 @@
     "year": 1900
    },
    "claims": {
-    "acceptance": 7,
-    "act": 5,
-    "placement": 44,
-    "usage": 52
+    "acceptance": 13,
+    "act": 10,
+    "editorial": 1,
+    "placement": 48,
+    "usage": 62
    },
    "coverage": {
     "illustrations": "none",
@@ -6457,8 +7552,8 @@
    },
    "derived": {
     "newTaxa": 2,
-    "skeleton": 96,
-    "synonymy": 7
+    "skeleton": 110,
+    "synonymy": 13
    },
    "derivedCoverage": {
     "illustrations": null,
@@ -6471,6 +7566,42 @@
    "inconsistencies": [],
    "material": {},
    "tree": true
+  },
+  "1900_jaekel": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Jaekel"
+    ],
+    "in": "Zeitschrift der Deutschen Geologischen Gesellschaft",
+    "number": 4,
+    "pages": [
+     661,
+     677
+    ],
+    "title": "Ueber Carpoideen, eine neue Classe von Pelmatozoen",
+    "volume": 52,
+    "year": 1900
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
   },
   "1908_bather": {
    "acts": {},
@@ -6791,6 +7922,71 @@
    "material": {},
    "tree": false
   },
+  "1918_jaekel": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Jaekel"
+    ],
+    "in": "Phylogenie und System der Pelmatoloen",
+    "title": null,
+    "year": 1918
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1921_jaekel": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Jaekel"
+    ],
+    "in": "Paläontologische Zeitschrift",
+    "pages": [
+     1,
+     128
+    ],
+    "title": "Phylogenie und System der Pelmatozoen",
+    "volume": 3,
+    "year": 1921
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1925_hudson": {
    "acts": {},
    "audit": {
@@ -6893,6 +8089,41 @@
     "title": "Cyathotheca suecica n. g. n. sp., eine Thecoidee des schwedischen Ordoviciums",
     "volume": 19,
     "year": 1927
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1929_chapman.f": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Chapman"
+    ],
+    "in": "Proceedings of the Royal Society of Victoria",
+    "pages": [
+     202,
+     216
+    ],
+    "title": "On some trilobites and brachiopods from the Mount Isa district, N.W. Queensland",
+    "volume": 41,
+    "year": 1929
    },
    "claims": {},
    "coverage": {
@@ -7015,6 +8246,7 @@
    "claims": {
     "acceptance": 59,
     "act": 34,
+    "editorial": 1,
     "placement": 98,
     "usage": 203
    },
@@ -7078,9 +8310,10 @@
    "claims": {
     "acceptance": 2,
     "act": 35,
+    "editorial": 1,
     "material": 4,
-    "placement": 87,
-    "usage": 93
+    "placement": 84,
+    "usage": 92
    },
    "coverage": {
     "illustrations": "none",
@@ -7095,7 +8328,7 @@
    "derived": {
     "material": 4,
     "newTaxa": 28,
-    "skeleton": 180,
+    "skeleton": 176,
     "synonymy": 2,
     "types": 7
    },
@@ -7113,8 +8346,45 @@
    },
    "tree": true
   },
+  "1938_gekker": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Gekker"
+    ],
+    "in": "Doklady Akademii Nauk SSSR",
+    "number": 5,
+    "pages": [
+     421,
+     425
+    ],
+    "title": "Новые данные о роде Rhipidocystis Jkl. (отряд Digitata n. o., класс Carpoidea Jkl.) и новый род Bockia n. g. (подкласс Eocrinoidea Jkl., класс Crinoidea Mill.) из ордовика Ленинградской области СССР и Эстонии\n",
+    "volume": 19,
+    "year": 1938
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1941_whitehouse": {
    "acts": {
+    "moved": 2,
     "new": 10,
     "type": 2
    },
@@ -7136,10 +8406,11 @@
     "year": 1941
    },
    "claims": {
-    "act": 12,
+    "act": 14,
     "material": 4,
     "placement": 18,
-    "usage": 20
+    "rejection": 2,
+    "usage": 22
    },
    "coverage": {
     "illustrations": null,
@@ -7155,7 +8426,7 @@
     "material": 4,
     "newTaxa": 10,
     "phylogeny": 6,
-    "skeleton": 32,
+    "skeleton": 36,
     "types": 2
    },
    "derivedCoverage": {
@@ -7245,7 +8516,7 @@
   "1960_gill_caster": {
    "acts": {
     "corrected": 2,
-    "emended": 1,
+    "emended": 3,
     "new": 13,
     "placeholder": 2,
     "type": 5
@@ -7270,7 +8541,8 @@
    },
    "claims": {
     "acceptance": 1,
-    "act": 23,
+    "act": 25,
+    "editorial": 2,
     "placement": 40,
     "usage": 44
    },
@@ -7530,7 +8802,7 @@
     "authors": [
      "Brown"
     ],
-    "in": "Proceddings of the Linnaean Society of New South Wales",
+    "in": "Proceedings of the Linnaean Society of New South Wales",
     "number": 3,
     "title": "A new cystoid (Pelmatozoa, Echinodermata) from the Silurian of New South Wales",
     "volume": 88,
@@ -7538,6 +8810,7 @@
    },
    "claims": {
     "act": 3,
+    "editorial": 2,
     "placement": 6,
     "usage": 7
    },
@@ -7629,7 +8902,10 @@
    "tree": true
   },
   "1965_fell": {
-   "acts": {},
+   "acts": {
+    "emended": 2,
+    "moved": 13
+   },
    "audit": {
     "state": "unaudited"
    },
@@ -7647,8 +8923,10 @@
     "year": 1965
    },
    "claims": {
-    "placement": 20,
-    "usage": 21
+    "act": 15,
+    "placement": 35,
+    "rejection": 13,
+    "usage": 50
    },
    "coverage": {
     "illustrations": null,
@@ -7661,7 +8939,7 @@
     "types": null
    },
    "derived": {
-    "skeleton": 41
+    "skeleton": 98
    },
    "derivedCoverage": {
     "illustrations": null,
@@ -7761,6 +9039,7 @@
    },
    "claims": {
     "act": 3,
+    "editorial": 1,
     "placement": 7,
     "usage": 8
    },
@@ -7776,7 +9055,7 @@
    },
    "derived": {
     "newTaxa": 2,
-    "skeleton": 15,
+    "skeleton": 14,
     "types": 1
    },
    "derivedCoverage": {
@@ -7889,6 +9168,7 @@
    "claims": {
     "acceptance": 4,
     "act": 3,
+    "editorial": 1,
     "placement": 19,
     "usage": 26
    },
@@ -7903,7 +9183,7 @@
     "types": null
    },
    "derived": {
-    "skeleton": 45,
+    "skeleton": 44,
     "synonymy": 4,
     "types": 3
    },
@@ -7941,6 +9221,7 @@
    "claims": {
     "acceptance": 3,
     "act": 28,
+    "editorial": 1,
     "placement": 65,
     "usage": 69
    },
@@ -7955,7 +9236,7 @@
     "types": null
    },
    "derived": {
-    "skeleton": 134,
+    "skeleton": 133,
     "synonymy": 3,
     "types": 28
    },
@@ -8229,6 +9510,7 @@
    },
    "claims": {
     "act": 3,
+    "editorial": 1,
     "placement": 5,
     "usage": 7
    },
@@ -8244,7 +9526,7 @@
    },
    "derived": {
     "newTaxa": 1,
-    "skeleton": 12,
+    "skeleton": 11,
     "types": 1
    },
    "derivedCoverage": {
@@ -8282,6 +9564,7 @@
    "claims": {
     "acceptance": 2,
     "act": 1,
+    "editorial": 1,
     "placement": 6,
     "usage": 9
    },
@@ -8296,7 +9579,7 @@
     "types": null
    },
    "derived": {
-    "skeleton": 15,
+    "skeleton": 14,
     "synonymy": 2,
     "types": 1
    },
@@ -8364,6 +9647,7 @@
     "year": 1967
    },
    "claims": {
+    "editorial": 1,
     "placement": 25,
     "usage": 26
    },
@@ -8415,6 +9699,7 @@
    },
    "claims": {
     "act": 3,
+    "editorial": 1,
     "placement": 5,
     "usage": 6
    },
@@ -8430,7 +9715,7 @@
    },
    "derived": {
     "newTaxa": 2,
-    "skeleton": 11,
+    "skeleton": 10,
     "types": 1
    },
    "derivedCoverage": {
@@ -8467,6 +9752,7 @@
    },
    "claims": {
     "act": 2,
+    "editorial": 1,
     "placement": 7,
     "usage": 8
    },
@@ -8481,7 +9767,7 @@
     "types": null
    },
    "derived": {
-    "skeleton": 15,
+    "skeleton": 14,
     "types": 2
    },
    "derivedCoverage": {
@@ -8716,6 +10002,7 @@
    },
    "claims": {
     "act": 4,
+    "editorial": 1,
     "placement": 5,
     "rejection": 2,
     "usage": 8
@@ -8731,7 +10018,7 @@
     "types": null
    },
    "derived": {
-    "skeleton": 15,
+    "skeleton": 14,
     "types": 2
    },
    "derivedCoverage": {
@@ -9112,7 +10399,7 @@
    "claims": {
     "act": 1,
     "editorial": 1,
-    "usage": 2
+    "usage": 1
    },
    "coverage": {
     "illustrations": null,
@@ -9401,6 +10688,7 @@
    "claims": {
     "acceptance": 18,
     "act": 43,
+    "editorial": 1,
     "placement": 144,
     "usage": 179
    },
@@ -9431,6 +10719,119 @@
    "inconsistencies": [],
    "material": {},
    "tree": true
+  },
+  "1975_parsley": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Parsley"
+    ],
+    "in": "Bulletins of American Paleontology",
+    "number": 287,
+    "pages": [
+     349,
+     361
+    ],
+    "title": "Systematics and functional morphology of Columbocystis, a Middle Ordovician “Cystidean” (Echinodermata) of uncertain affinities\n",
+    "volume": 67,
+    "year": 1975
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1975_parsley_mintz": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Parsley",
+     "Mintz"
+    ],
+    "in": "Bulletins of American Paleontology",
+    "number": 288,
+    "pages": [
+     1,
+     116
+    ],
+    "plates": [
+     1,
+     13
+    ],
+    "title": "North American Paracrinoidea: Ordovician Echinodermata\n",
+    "volume": 68,
+    "year": 1975
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1975_pope.j.k": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Pope"
+    ],
+    "in": "Bulletins of American Paleontology",
+    "number": 287,
+    "pages": [
+     385,
+     406
+    ],
+    "title": "Evidence for relating the Lepidocoleidae, machaeridian echinoderms, to the mitrate carpoids\n",
+    "volume": 67,
+    "year": 1975
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
   },
   "1976_bell.b.m": {
    "acts": {
@@ -9674,7 +11075,8 @@
   },
   "1979_guensburg": {
    "acts": {
-    "moved": 1
+    "combNov": 1,
+    "moved": 2
    },
    "audit": {
     "state": "unaudited"
@@ -9694,10 +11096,11 @@
    },
    "claims": {
     "acceptance": 2,
-    "act": 1,
-    "placement": 5,
-    "rejection": 1,
-    "usage": 15
+    "act": 3,
+    "editorial": 1,
+    "placement": 2,
+    "rejection": 2,
+    "usage": 9
    },
    "coverage": {
     "illustrations": null,
@@ -9710,7 +11113,7 @@
     "types": null
    },
    "derived": {
-    "skeleton": 21,
+    "skeleton": 12,
     "synonymy": 2
    },
    "derivedCoverage": {
@@ -9774,6 +11177,57 @@
    },
    "inconsistencies": [],
    "material": {},
+   "tree": true
+  },
+  "1980_sprinkle": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Sprinkle"
+    ],
+    "in": "Series in Geology, Notes for a Short Course",
+    "pages": [
+     15,
+     26
+    ],
+    "title": "An overview of the fossil record",
+    "volume": "3: Echinoderms: Notes for a Short Course",
+    "year": 1980
+   },
+   "claims": {
+    "material": 22,
+    "placement": 25,
+    "usage": 26
+   },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {
+    "occurrences": 22,
+    "skeleton": 51
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "inconsistencies": [],
+   "material": {
+    "range": 22
+   },
    "tree": true
   },
   "1981_bockelie": {
@@ -9857,7 +11311,7 @@
    },
    "claims": {
     "placement": 11,
-    "usage": 13
+    "usage": 12
    },
    "coverage": {
     "illustrations": null,
@@ -9871,7 +11325,7 @@
    },
    "derived": {
     "phylogeny": 11,
-    "skeleton": 13
+    "skeleton": 12
    },
    "derivedCoverage": {
     "illustrations": null,
@@ -9887,6 +11341,7 @@
   },
   "1982_bell.b.m": {
    "acts": {
+    "placeholder": 1,
     "type": 1
    },
    "audit": {
@@ -9896,7 +11351,7 @@
     "authors": [
      "Bell"
     ],
-    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma",
+    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma\n",
     "pages": [
      297,
      306
@@ -9905,7 +11360,7 @@
     "year": 1982
    },
    "claims": {
-    "act": 1,
+    "act": 2,
     "placement": 18,
     "usage": 19
    },
@@ -9920,6 +11375,7 @@
     "types": null
    },
    "derived": {
+    "newTaxa": 1,
     "skeleton": 37,
     "types": 1
    },
@@ -9998,7 +11454,7 @@
     "authors": [
      "Kolata"
     ],
-    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma",
+    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma\n",
     "pages": [
      309,
      309
@@ -10102,7 +11558,7 @@
      "Sprinkle",
      "Parsley"
     ],
-    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma",
+    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma\n",
     "pages": [
      224,
      230
@@ -10155,7 +11611,7 @@
     "authors": [
      "Parsley"
     ],
-    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma",
+    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma\n",
     "pages": [
      212,
      223
@@ -10210,7 +11666,7 @@
     "authors": [
      "Parsley"
     ],
-    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma",
+    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma\n",
     "pages": [
      274,
      279
@@ -10222,7 +11678,7 @@
     "acceptance": 2,
     "act": 4,
     "placement": 9,
-    "usage": 14
+    "usage": 13
    },
    "coverage": {
     "illustrations": null,
@@ -10235,7 +11691,7 @@
     "types": null
    },
    "derived": {
-    "skeleton": 23,
+    "skeleton": 22,
     "synonymy": 2,
     "types": 2
    },
@@ -10264,7 +11720,7 @@
     "authors": [
      "Parsley"
     ],
-    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma",
+    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma\n",
     "pages": [
      280,
      288
@@ -10275,8 +11731,8 @@
    "claims": {
     "acceptance": 2,
     "act": 4,
-    "placement": 6,
-    "usage": 11
+    "placement": 7,
+    "usage": 12
    },
    "coverage": {
     "illustrations": null,
@@ -10289,7 +11745,7 @@
     "types": null
    },
    "derived": {
-    "skeleton": 17,
+    "skeleton": 19,
     "synonymy": 2,
     "types": 1
    },
@@ -10314,7 +11770,7 @@
     "authors": [
      "Parsley"
     ],
-    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma",
+    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma\n",
     "pages": [
      322,
      323
@@ -10352,7 +11808,7 @@
     "authors": [
      "Sprinkle"
     ],
-    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma",
+    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma\n",
     "pages": [
      231,
      273
@@ -10406,7 +11862,7 @@
     "authors": [
      "Sprinkle"
     ],
-    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma",
+    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma\n",
     "pages": [
      289,
      296
@@ -10417,7 +11873,7 @@
    "claims": {
     "act": 4,
     "placement": 6,
-    "usage": 7
+    "usage": 8
    },
    "coverage": {
     "illustrations": null,
@@ -10431,7 +11887,7 @@
    },
    "derived": {
     "newTaxa": 3,
-    "skeleton": 13,
+    "skeleton": 14,
     "types": 1
    },
    "derivedCoverage": {
@@ -10448,6 +11904,7 @@
   },
   "1982i_sprinkle": {
    "acts": {
+    "placeholder": 2,
     "type": 1
    },
    "audit": {
@@ -10457,7 +11914,7 @@
     "authors": [
      "Sprinkle"
     ],
-    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma",
+    "in": "Echinoderm Faunas from the Bromide Formation (Middle Ordovician) of Oklahoma\n",
     "pages": [
      307,
      308
@@ -10466,7 +11923,7 @@
     "year": 1982
    },
    "claims": {
-    "act": 1,
+    "act": 3,
     "placement": 8,
     "usage": 9
    },
@@ -10481,6 +11938,7 @@
     "types": null
    },
    "derived": {
+    "newTaxa": 2,
     "skeleton": 17,
     "types": 1
    },
@@ -10870,7 +12328,8 @@
   },
   "1985_smith.a.b": {
    "acts": {
-    "emended": 1,
+    "emended": 2,
+    "lapsus": 1,
     "nomTransl": 2,
     "type": 5
    },
@@ -10904,9 +12363,10 @@
    },
    "claims": {
     "acceptance": 2,
-    "act": 8,
+    "act": 10,
+    "editorial": 1,
     "placement": 90,
-    "usage": 71
+    "usage": 72
    },
    "coverage": {
     "illustrations": "none",
@@ -10989,6 +12449,38 @@
    },
    "tree": true
   },
+  "1985_ubaghs_robison": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Ubaghs",
+     "Robison"
+    ],
+    "in": "The University of Kansas Paleontological Contributions",
+    "number": 112,
+    "title": "A homoiostelean and a new eocrinoid from the Middle Cambrian of Utah",
+    "year": 1985
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1987_gehling": {
    "acts": {
     "new": 2,
@@ -11013,9 +12505,9 @@
    },
    "claims": {
     "act": 3,
-    "material": 2,
+    "material": 5,
     "placement": 3,
-    "usage": 4
+    "usage": 5
    },
    "coverage": {
     "illustrations": null,
@@ -11028,9 +12520,10 @@
     "types": null
    },
    "derived": {
+    "illustrations": 3,
     "material": 2,
     "newTaxa": 2,
-    "skeleton": 7,
+    "skeleton": 8,
     "types": 1
    },
    "derivedCoverage": {
@@ -11043,6 +12536,7 @@
    },
    "inconsistencies": [],
    "material": {
+    "illustration": 3,
     "specimen": 2
    },
    "tree": true
@@ -11234,6 +12728,7 @@
    "claims": {
     "acceptance": 3,
     "act": 6,
+    "editorial": 1,
     "placement": 15,
     "usage": 21
    },
@@ -11249,7 +12744,7 @@
    },
    "derived": {
     "newTaxa": 4,
-    "skeleton": 36,
+    "skeleton": 35,
     "synonymy": 3,
     "types": 2
    },
@@ -11268,6 +12763,7 @@
   "1988_ubaghs_robison": {
    "acts": {
     "new": 4,
+    "placeholder": 1,
     "type": 1
    },
    "audit": {
@@ -11285,7 +12781,7 @@
     "year": 1988
    },
    "claims": {
-    "act": 5,
+    "act": 6,
     "material": 3,
     "placement": 16,
     "usage": 17
@@ -11302,7 +12798,7 @@
    },
    "derived": {
     "material": 3,
-    "newTaxa": 4,
+    "newTaxa": 5,
     "skeleton": 33,
     "types": 1
    },
@@ -11490,7 +12986,7 @@
    "material": {},
    "tree": true
   },
-  "1991_fatka": {
+  "1991_fatka_kordule": {
    "acts": {
     "new": 1,
     "type": 1
@@ -11500,7 +12996,8 @@
    },
    "citation": {
     "authors": [
-     "Fatka"
+     "Fatka",
+     "Kordule"
     ],
     "in": "Věstník Ústředního ústavu geologického",
     "number": 4,
@@ -11510,6 +13007,7 @@
    },
    "claims": {
     "act": 2,
+    "editorial": 1,
     "placement": 5,
     "usage": 6
    },
@@ -11696,6 +13194,7 @@
   },
   "1993_young.t.p_donovan.s.k": {
    "acts": {
+    "nomTransl": 1,
     "placeholder": 1
    },
    "audit": {
@@ -11716,7 +13215,7 @@
     "year": 1993
    },
    "claims": {
-    "act": 1,
+    "act": 2,
     "placement": 8,
     "usage": 9
    },
@@ -12171,7 +13670,7 @@
    "acts": {
     "emended": 2,
     "new": 8,
-    "placeholder": 3,
+    "placeholder": 6,
     "type": 4
    },
    "audit": {
@@ -12195,7 +13694,7 @@
    },
    "claims": {
     "acceptance": 1,
-    "act": 17,
+    "act": 20,
     "placement": 36,
     "usage": 42
    },
@@ -12210,7 +13709,7 @@
     "types": null
    },
    "derived": {
-    "newTaxa": 11,
+    "newTaxa": 14,
     "skeleton": 78,
     "synonymy": 1,
     "types": 4
@@ -12340,7 +13839,7 @@
   "1999_ubaghs": {
    "acts": {
     "new": 9,
-    "placeholder": 2,
+    "placeholder": 3,
     "type": 4
    },
    "audit": {
@@ -12356,12 +13855,12 @@
      809,
      829
     ],
-    "title": "Échinodermes nouveaux du Cambrien supérieur de la Montagne Noire (France méridionale)",
+    "title": "Échinodermes nouveaux du Cambrien supérieur de la Montagne Noire (France méridionale)\n",
     "volume": 31,
     "year": 1999
    },
    "claims": {
-    "act": 15,
+    "act": 16,
     "placement": 16,
     "usage": 20
    },
@@ -12376,7 +13875,7 @@
     "types": null
    },
    "derived": {
-    "newTaxa": 11,
+    "newTaxa": 12,
     "skeleton": 36,
     "types": 4
    },
@@ -12407,7 +13906,7 @@
      353,
      364
     ],
-    "title": "Les échinodermes du Paléozoïque inférieur\nde Montagne Noire: biostratigraphie et paléodiversité\n",
+    "title": "Les échinodermes du Paléozoïque inférieur de Montagne Noire: biostratigraphie et paléodiversité\n",
     "volume": 32,
     "year": 1999
    },
@@ -12592,7 +14091,7 @@
    },
    "tree": true
   },
-  "2000_sumrall_garbisch_pope": {
+  "2000_sumrall_garbisch_pope.j.p": {
    "acts": {
     "new": 4
    },
@@ -13311,6 +14810,7 @@
    },
    "claims": {
     "act": 3,
+    "editorial": 2,
     "placement": 6,
     "usage": 7
    },
@@ -14055,7 +15555,7 @@
   },
   "2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l": {
    "acts": {
-    "placeholder": 1
+    "placeholder": 5
    },
    "audit": {
     "state": "unaudited"
@@ -14076,9 +15576,10 @@
     "year": 2010
    },
    "claims": {
-    "act": 1,
-    "placement": 6,
-    "usage": 7
+    "act": 5,
+    "editorial": 1,
+    "placement": 11,
+    "usage": 13
    },
    "coverage": {
     "illustrations": null,
@@ -14091,8 +15592,8 @@
     "types": null
    },
    "derived": {
-    "newTaxa": 1,
-    "skeleton": 13
+    "newTaxa": 5,
+    "skeleton": 24
    },
    "derivedCoverage": {
     "illustrations": null,
@@ -16733,10 +18234,10 @@
    },
    "claims": {
     "act": 4,
-    "material": 2,
+    "material": 8,
     "placement": 5,
     "rejection": 1,
-    "usage": 7
+    "usage": 8
    },
    "coverage": {
     "illustrations": null,
@@ -16749,9 +18250,11 @@
     "types": null
    },
    "derived": {
+    "illustrations": 5,
     "material": 2,
     "newTaxa": 2,
-    "skeleton": 13,
+    "occurrences": 1,
+    "skeleton": 14,
     "types": 1
    },
    "derivedCoverage": {
@@ -16764,6 +18267,8 @@
    },
    "inconsistencies": [],
    "material": {
+    "illustration": 5,
+    "occurrence": 1,
     "specimen": 2
    },
    "tree": true
@@ -16826,6 +18331,8 @@
   },
   "2024_zamora_guensburg_sprinkle": {
    "acts": {
+    "combNov": 1,
+    "emended": 1,
     "moved": 1,
     "type": 1
    },
@@ -16848,11 +18355,11 @@
     "year": 2024
    },
    "claims": {
-    "act": 2,
-    "material": 1,
-    "placement": 5,
+    "act": 4,
+    "material": 2,
+    "placement": 6,
     "rejection": 1,
-    "usage": 7
+    "usage": 10
    },
    "coverage": {
     "illustrations": null,
@@ -16865,8 +18372,8 @@
     "types": null
    },
    "derived": {
-    "material": 1,
-    "skeleton": 13,
+    "material": 2,
+    "skeleton": 17,
     "types": 1
    },
    "derivedCoverage": {
@@ -16879,7 +18386,7 @@
    },
    "inconsistencies": [],
    "material": {
-    "specimen": 1
+    "specimen": 2
    },
    "tree": true
   },
@@ -17084,7 +18591,8 @@
   "agelacrinidae": [
    "1900_bather",
    "1935_bassler",
-   "2009_sumrall"
+   "2009_sumrall",
+   "2009_sumrall_brett_mckinney"
   ],
   "agelacrinites": [
    "1842_vanuxem",
@@ -17101,7 +18609,7 @@
    "1987_smith.a.b_arbizu",
    "1993_sumrall",
    "1994_guensburg_sprinkle",
-   "2000_sumrall_garbisch_pope",
+   "2000_sumrall_garbisch_pope.j.p",
    "2006_sumrall_gahn",
    "2010_müller.p_hahn",
    "2011_sumrall_zamora"
@@ -17132,12 +18640,11 @@
    "1996_sumrall",
    "1996_sumrall_bowsher",
    "2000_grigo",
-   "2000_sumrall_garbisch_pope",
+   "2000_sumrall_garbisch_pope.j.p",
    "2001_sumrall",
    "2006_sumrall_brett_cornell",
    "2006_sumrall_gahn",
    "2006_sumrall_sprinkle_bonem",
-   "2009_sumrall_brett_mckinney",
    "2010_müller.p_hahn",
    "2013_müller.p_hahn_bohatý"
   ],
@@ -17183,7 +18690,7 @@
   "akadocrinus": [
    "1973_sprinkle",
    "1982_broadhead",
-   "1991_fatka",
+   "1991_fatka_kordule",
    "1998_dean.j_smith.a.b",
    "2006_parsley_zhao.y.l",
    "2012_zamora_smith.a.b",
@@ -17193,8 +18700,8 @@
   "akera": [
    "1776_müller.o.f"
   ],
-  "alabamensis_sumrall_garbisch_pope_2000": [
-   "2000_sumrall_garbisch_pope",
+  "alabamensis_sumrall_garbisch_pope.j.p_2000": [
+   "2000_sumrall_garbisch_pope.j.p",
    "2010_müller.p_hahn"
   ],
   "alanisicystis-subgenus": [
@@ -17335,7 +18842,7 @@
    "1816b_lamarck"
   ],
   "anapeptamenus_austen_1843": [
-   "1844_buch"
+   "1845_buch"
   ],
   "anastatica_linnaeus_1758": [
    "1758_linnaeus",
@@ -17385,10 +18892,10 @@
   "angulosa_pander_1830": [
    "1830_pander",
    "1842_volborth",
-   "1844_buch"
+   "1845_buch"
   ],
   "angulosus_buch_1844": [
-   "1844_buch"
+   "1845_buch"
   ],
   "angulosus_leske_1778_echinocyamus": [
    "1778_leske"
@@ -17605,13 +19112,10 @@
    "1900_bather",
    "1997_paul.c.r.c"
   ],
-  "aristocystitida-superfamily": [
+  "aristocystitida": [
    "1997_paul.c.r.c"
   ],
   "aristocystitidae": [
-   "1971_paul.c.r.c"
-  ],
-  "aristocystitidae-superfamily": [
    "1971_paul.c.r.c"
   ],
   "arkarua": [
@@ -17630,6 +19134,18 @@
   ],
   "arthriticus_phillips.j_1839": [
    "1839_murchison"
+  ],
+  "arthropoda": [
+   "2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l"
+  ],
+  "arthropoda-class-uncertain_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010": [
+   "2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l"
+  ],
+  "arthropoda-family-uncertain_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010": [
+   "2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l"
+  ],
+  "arthropoda-order-uncertain_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010": [
+   "2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l"
   ],
   "articulata": [
    "1973_sprinkle"
@@ -17652,6 +19168,9 @@
    "1767_linnaeus",
    "1776_müller.o.f",
    "1789a_bruguière"
+  ],
+  "ascidiastella": [
+   "1900_bather"
   ],
   "ascidiens": [
    "1816b_lamarck"
@@ -17716,12 +19235,12 @@
   ],
   "asteriadae-gen-sp_sowerby.g.b_1825": [
    "1825b_sowerby.g.b",
-   "1844_buch",
+   "1845_buch",
    "1848b_forbes"
   ],
   "asteriadae-gen_sowerby.g.b_1825": [
    "1825b_sowerby.g.b",
-   "1844_buch",
+   "1845_buch",
    "1848b_forbes"
   ],
   "asteriadae-order": [
@@ -17748,6 +19267,9 @@
    "1817d_cuvier",
    "1828_hisinger"
   ],
+  "asterias-sp_hall_1847": [
+   "1847_hall"
+  ],
   "asterizans_leske_1778": [
    "1778_leske"
   ],
@@ -17755,14 +19277,14 @@
    "1840_eichwald"
   ],
   "asteroidea": [
-   "1967a_ubaghs"
+   "1900_bather",
+   "1965_fell",
+   "1967a_ubaghs",
+   "1975_kolata",
+   "1980_sprinkle"
   ],
   "asteroidea-order": [
    "1848_leuckart"
-  ],
-  "asteroidea-subclass": [
-   "1965_fell",
-   "1975_kolata"
   ],
   "asteroids": [
    "1990_smith.a.b_jell"
@@ -17770,6 +19292,7 @@
   "asterozoa": [
    "1965_fell",
    "1967a_ubaghs",
+   "1980_sprinkle",
    "1981_derstler"
   ],
   "astrea": [
@@ -17860,6 +19383,7 @@
    "1840a_buch",
    "1840b_buch",
    "1844_buch",
+   "1845_buch",
    "1848b_forbes",
    "1854_müller.j.p",
    "1997_paul.c.r.c"
@@ -18043,7 +19567,7 @@
    "1816a_lamarck"
   ],
   "bicopuladigiti_garnet_1844": [
-   "1844_buch"
+   "1845_buch"
   ],
   "bicordata_leske_1778": [
    "1816b_lamarck"
@@ -18081,7 +19605,7 @@
    "1975_kolata",
    "1976_bell.b.m"
   ],
-  "billingsi_chapman_1860": [
+  "billingsi_chapman.e.j_1860": [
    "1935_bassler",
    "1936_bassler",
    "1976_bell.b.m"
@@ -18125,6 +19649,7 @@
    "1965_fell",
    "1967a_ubaghs",
    "1973_sprinkle",
+   "1980_sprinkle",
    "1983_jell"
   ],
   "blastoidea-family": [
@@ -18137,6 +19662,7 @@
   ],
   "blastozoa": [
    "1973_sprinkle",
+   "1980_sprinkle",
    "1981_derstler",
    "1982b_parsley",
    "1982c_parsley",
@@ -18144,6 +19670,7 @@
    "1982h_sprinkle",
    "1983_brett_frest_sprinkle_clement.c.r",
    "1987_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley",
+   "1993_young.t.p_donovan.s.k",
    "1994_sprinkle_wahlman",
    "2005_frest",
    "2006_parsley_zhao.y.l",
@@ -18174,9 +19701,6 @@
    "2022_zamora_rahman_sumrall_gibson_thompson",
    "2022_zhao.j_guo.j_selden_cong.p.y_li.y.j",
    "2024_wang.d.z_nohejlová_sun.z.x_zeng.h_lefebvre_yang.x.l_zhao.f.c"
-  ],
-  "blastozoa-class": [
-   "1993_young.t.p_donovan.s.k"
   ],
   "blastozoa-indeterminate-class_sprinkle_1973": [
    "1973_sprinkle"
@@ -18653,7 +20177,7 @@
    "1981_bockelie"
   ],
   "caryocystites": [
-   "1844_buch",
+   "1845_buch",
    "1848b_forbes",
    "1854_müller.j.p",
    "1997_paul.c.r.c"
@@ -18661,7 +20185,7 @@
   "caryocystites-cf-lagenallis_paul.c.r.c_1997": [
    "1997_paul.c.r.c"
   ],
-  "caryocystitida-superfamily": [
+  "caryocystitida": [
    "1968b_paul.c.r.c",
    "1997_paul.c.r.c"
   ],
@@ -18735,7 +20259,8 @@
    "1840_eichwald",
    "1840a_buch",
    "1840b_buch",
-   "1844_buch"
+   "1844_buch",
+   "1845_buch"
   ],
   "ceratocystis": [
    "1987_ubaghs",
@@ -18884,11 +20409,9 @@
    "1976_bell.b.m",
    "1983_holloway_jell"
   ],
-  "cincta-class": [
+  "cincta": [
+   "1960_gill_caster",
    "1981_derstler"
-  ],
-  "cincta-order": [
-   "1960_gill_caster"
   ],
   "circinnatus_leske_1778": [
    "1778_leske"
@@ -18915,7 +20438,7 @@
    "2009_guensburg_sprinkle"
   ],
   "clausus_austen_1843": [
-   "1844_buch"
+   "1845_buch"
   ],
   "clavata_müller.o.f_1776": [
    "1776_müller.o.f",
@@ -18952,6 +20475,12 @@
   "clypeatus_lamarck_1801": [
    "1801_lamarck"
   ],
+  "clypecaris": [
+   "2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l"
+  ],
+  "clypecaris-sp_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l_2010": [
+   "2010_liu.q_hu.s.x_zhang.z_cuevas-castell_gong.y.m_tao.j.l"
+  ],
   "clypeus": [
    "1778_leske",
    "1816b_lamarck"
@@ -18968,13 +20497,13 @@
   "codyensis_sumrall_sprinkle_guensburg_1997": [
    "1997_sumrall_sprinkle_guensburg"
   ],
-  "coelentera-grade": [
+  "coelentera": [
    "1900_bather"
   ],
-  "coelomata-grade": [
+  "coelomata": [
    "1900_bather"
   ],
-  "coelomocoela-grade": [
+  "coelomocoela": [
    "1900_bather"
   ],
   "coleoptera": [
@@ -19236,11 +20765,17 @@
    "1816b_lamarck"
   ],
   "crinoidea": [
+   "1847_hall",
+   "1848_leuckart",
+   "1848b_forbes",
+   "1852_hall",
+   "1857_billings",
    "1900_bather",
    "1965_fell",
    "1967a_ubaghs",
    "1973_sprinkle",
    "1975_kolata",
+   "1980_sprinkle",
    "1981_derstler",
    "1994_sprinkle_wahlman",
    "2003_guensburg_sprinkle",
@@ -19260,10 +20795,7 @@
    "1842_conrad.t.a",
    "1842_vanuxem",
    "1842_volborth",
-   "1843_hall",
-   "1844_buch",
-   "1847_hall",
-   "1852_hall"
+   "1843_hall"
   ],
   "crinoidea-genus-a_guensburg_sprinkle_2003": [
    "2003_guensburg_sprinkle"
@@ -19274,17 +20806,9 @@
   "crinoidea-indeterminate-subclass_sprinkle_1973": [
    "1973_sprinkle"
   ],
-  "crinoidea-order": [
-   "1847_hall",
-   "1848_leuckart",
+  "crinoideae": [
    "1848b_forbes",
-   "1857_billings"
-  ],
-  "crinoideae-family": [
    "1852_hall"
-  ],
-  "crinoideae-order": [
-   "1848b_forbes"
   ],
   "crinoideen": [
    "1840_eichwald"
@@ -19301,6 +20825,7 @@
    "1970_mintz",
    "1973_sprinkle",
    "1975_kolata",
+   "1980_sprinkle",
    "1982_sprinkle_parsley",
    "1982a_parsley",
    "1994_sprinkle_wahlman",
@@ -19342,6 +20867,7 @@
    "1840a_buch",
    "1840b_buch",
    "1844_buch",
+   "1845_buch",
    "1973_sprinkle",
    "1981_bockelie"
   ],
@@ -19380,6 +20906,7 @@
   ],
   "ctenocystoidea": [
    "1969_robison_sprinkle",
+   "1980_sprinkle",
    "1981_derstler",
    "1985_fatka_kordule",
    "1985_jell_burrett_banks",
@@ -19543,7 +21070,7 @@
    "1966_kesling",
    "1967a_ubaghs",
    "1975_kolata",
-   "1979_guensburg",
+   "1980_sprinkle",
    "1981_derstler",
    "1982_kolata"
   ],
@@ -19646,27 +21173,20 @@
    "1935_bassler"
   ],
   "cystidea": [
-   "1900_bather"
-  ],
-  "cystidea-family": [
-   "1844_buch",
+   "1846a_buch",
    "1847_hall",
-   "1852_hall"
-  ],
-  "cystidea-order": [
-   "1848b_forbes",
+   "1852_hall",
    "1854a_billings",
    "1854b_billings",
    "1854c_billings",
-   "1858a_billings"
+   "1900_bather"
   ],
-  "cystideae-family": [
-   "1852_hall"
-  ],
-  "cystideae-order": [
+  "cystideae": [
    "1848b_forbes",
+   "1852_hall",
    "1857_billings",
-   "1858_salter_billings"
+   "1858_salter_billings",
+   "1858a_billings"
   ],
   "cystideae-unnamed-group_müller.j.p_1854": [
    "1854_müller.j.p"
@@ -19678,9 +21198,13 @@
    "1854_müller.j.p"
   ],
   "cystideen": [
+   "1844_buch",
+   "1845_buch",
+   "1846a_buch",
    "1854_müller.j.p"
   ],
   "cystoidea": [
+   "1848_leuckart",
    "1896_pompeckj",
    "1897_whiteaves",
    "1963_brown.i.a",
@@ -19689,9 +21213,6 @@
    "1975_kolata",
    "1993_dzik_orłowski",
    "1999_ubaghs"
-  ],
-  "cystoidea-order": [
-   "1848_leuckart"
   ],
   "cystostellaroidea": [
    "1935_bassler"
@@ -19845,7 +21366,7 @@
   ],
   "devonicum_bassler_1936": [
    "1976_bell.b.m",
-   "2000_sumrall_garbisch_pope"
+   "2000_sumrall_garbisch_pope.j.p"
   ],
   "devonicus_bassler_1936": [
    "1936_bassler",
@@ -19934,20 +21455,18 @@
   "diplobathrida": [
    "2003_guensburg_sprinkle"
   ],
-  "diploporita-class": [
+  "diploporita": [
+   "1900_bather",
+   "1963_brown.i.a",
    "1971_paul.c.r.c",
    "1972_paul.c.r.c",
    "1973_sprinkle",
+   "1980_sprinkle",
    "1982c_parsley",
    "1997_paul.c.r.c"
   ],
   "diploporita-incertae-sedis": [
    "1997_paul.c.r.c"
-  ],
-  "diploporita-order": [
-   "1900_bather",
-   "1963_brown.i.a",
-   "1972_paul.c.r.c"
   ],
   "diploporita-sp-e_paul.c.r.c_1997": [
    "1997_paul.c.r.c"
@@ -20095,8 +21614,7 @@
    "1825i_gray.j.e"
   ],
   "echinidea-family": [
-   "1825a_say",
-   "1847_hall"
+   "1825a_say"
   ],
   "echinides": [
    "1825i_gray.j.e"
@@ -20117,7 +21635,7 @@
    "1848b_forbes"
   ],
   "echino-encrinus": [
-   "1844_buch",
+   "1845_buch",
    "1847_hall",
    "1848b_forbes"
   ],
@@ -20154,8 +21672,20 @@
    "1900_bather"
   ],
   "echinodermata": [
+   "1778_klein",
+   "1791_bruguière",
+   "1821_miller.j.s",
    "1825i_gray.j.e",
+   "1828_hisinger",
+   "1837_hisinger",
    "1848_leuckart",
+   "1848b_forbes",
+   "1852_hall",
+   "1854a_billings",
+   "1854b_billings",
+   "1854c_billings",
+   "1857_billings",
+   "1858_salter_billings",
    "1941_whitehouse",
    "1960_gill_caster",
    "1963_brown.i.a",
@@ -20172,6 +21702,7 @@
    "1969_robison_sprinkle",
    "1973_sprinkle",
    "1975_kolata",
+   "1980_sprinkle",
    "1981_derstler",
    "1982_bell.b.m",
    "1982_kolata",
@@ -20204,16 +21735,8 @@
    "2022_zamora_rahman_sumrall_gibson_thompson",
    "2022_zhao.j_guo.j_selden_cong.p.y_li.y.j",
    "2022_zhao.j_rahman_zamora_chen.a_cong.p.y",
+   "2024_wang.d.z_nohejlová_sun.z.x_zeng.h_lefebvre_yang.x.l_zhao.f.c",
    "2024_zamora_guensburg_sprinkle"
-  ],
-  "echinodermata-class": [
-   "1828_hisinger",
-   "1837_hisinger",
-   "1847_hall",
-   "1848b_forbes",
-   "1854a_billings",
-   "1854b_billings",
-   "1857_billings"
   ],
   "echinodermata-incertae-sedis": [
    "1967e_ubaghs"
@@ -20224,19 +21747,9 @@
   "echinodermata-indeterminate-subphylum_bell.b.m_1982": [
    "1982_bell.b.m"
   ],
-  "echinodermata-order": [
-   "1791_bruguière",
-   "1821_miller.j.s",
-   "1844_buch",
-   "1852_hall"
-  ],
   "echinodermata-unnamed-family_hisinger_1828": [
    "1828_hisinger",
    "1837_hisinger"
-  ],
-  "echinodermata_klein_1778": [
-   "1778_klein",
-   "2024_wang.d.z_nohejlová_sun.z.x_zeng.h_lefebvre_yang.x.l_zhao.f.c"
   ],
   "echinodermen": [
    "1854_müller.j.p"
@@ -20274,7 +21787,8 @@
    "1900_bather",
    "1965_fell",
    "1967a_ubaghs",
-   "1975_kolata"
+   "1975_kolata",
+   "1980_sprinkle"
   ],
   "echinoidea-family": [
    "1837_hisinger"
@@ -20320,6 +21834,7 @@
    "1840b_buch",
    "1842_volborth",
    "1844_buch",
+   "1845_buch",
    "1847_hall",
    "1848b_forbes",
    "1854_müller.j.p",
@@ -20370,6 +21885,7 @@
    "1967a_durham",
    "1967a_ubaghs",
    "1973_sprinkle",
+   "1980_sprinkle",
    "1981_derstler",
    "1982_kolata",
    "1982i_sprinkle",
@@ -20401,15 +21917,12 @@
    "1830_pander",
    "1837_hisinger",
    "1840a_buch",
-   "1844_buch",
+   "1845_buch",
    "1848b_forbes"
   ],
   "echinus-family": [
    "1817d_cuvier",
    "1828_hisinger"
-  ],
-  "echinus-order": [
-   "1778_leske"
   ],
   "echinus-sp_hisinger_1802": [
    "1802_hisinger",
@@ -20419,6 +21932,9 @@
    "1741_linnaeus",
    "1821_wahlenberg",
    "1826_schlotheim"
+  ],
+  "echinus_leske_1778": [
+   "1778_leske"
   ],
   "echmatocrinidae": [
    "1973_sprinkle"
@@ -20493,7 +22009,7 @@
    "1994_guensburg_sprinkle",
    "2015_sprinkle_sumrall"
   ],
-  "edrioasteridae-suborder": [
+  "edrioasteridae_billings_1858b": [
    "1858b_billings"
   ],
   "edrioasterids": [
@@ -20502,6 +22018,9 @@
   "edrioasterina": [
    "1994_guensburg_sprinkle",
    "2015_sprinkle_sumrall"
+  ],
+  "edrioasteroida": [
+   "1985_smith.a.b"
   ],
   "edrioasteroidea": [
    "1900_bather",
@@ -20517,8 +22036,8 @@
    "1976_bell.b.m",
    "1976_bell.b.m_petersen.m.s",
    "1978_bell.b.m_sprinkle",
-   "1979_guensburg",
    "1980_bell.b.m",
+   "1980_sprinkle",
    "1981_derstler",
    "1982_bell.b.m",
    "1983_bockelie_paul.c.r.c",
@@ -20537,7 +22056,7 @@
    "1999_ubaghs",
    "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y",
    "2000_grigo",
-   "2000_sumrall_garbisch_pope",
+   "2000_sumrall_garbisch_pope.j.p",
    "2001_sumrall",
    "2004_parsley_prokop",
    "2006_sumrall_brett_cornell",
@@ -20605,6 +22124,7 @@
    "1970_mintz",
    "1973_sprinkle",
    "1980_bell.b.m",
+   "1980_sprinkle",
    "1982i_sprinkle",
    "1994_guensburg_sprinkle"
   ],
@@ -20677,10 +22197,9 @@
    "1758_linnaeus"
   ],
   "eleutherozoa": [
-   "1941_whitehouse"
-  ],
-  "eleutherozoa-grade": [
-   "1900_bather"
+   "1900_bather",
+   "1941_whitehouse",
+   "1965_fell"
   ],
   "elizae_bather_1913": [
    "1988_ubaghs_robison"
@@ -20742,10 +22261,10 @@
   "endeca_linnaeus_1771": [
    "1816a_lamarck"
   ],
-  "enterocoela-grade": [
+  "enterocoela": [
    "1900_bather"
   ],
-  "enterozoa-branch": [
+  "enterozoa": [
    "1900_bather"
   ],
   "entozoa": [
@@ -20766,7 +22285,7 @@
    "1978_durham",
    "1982_broadhead",
    "1990_ubaghs_vizcaïno",
-   "1991_fatka",
+   "1991_fatka_kordule",
    "2006_parsley_zhao.y.l",
    "2006_sprinkle_collins.d",
    "2007_zhao.y.l_parsley_peng.j",
@@ -20781,14 +22300,12 @@
   "eocrinoidae": [
    "2021_parsley"
   ],
-  "eocrinoidae-class": [
-   "1991_fatka"
-  ],
   "eocrinoidea": [
    "1965_fell",
    "1967a_ubaghs",
    "1973_sprinkle",
    "1978_durham",
+   "1980_sprinkle",
    "1981_bockelie",
    "1982_broadhead",
    "1982_smith.a.b",
@@ -20798,6 +22315,7 @@
    "1987_ubaghs",
    "1990_fatka_kordule",
    "1990_ubaghs_vizcaïno",
+   "1991_fatka_kordule",
    "1993_young.t.p_donovan.s.k",
    "1994_sprinkle_wahlman",
    "1997_sumrall_sprinkle_guensburg",
@@ -20896,7 +22414,7 @@
   "eocrinus": [
    "1973_sprinkle"
   ],
-  "eocrinus?-sp_caster_pope_1960": [
+  "eocrinus?-sp_caster_pope.j.k_1960": [
    "1973_sprinkle"
   ],
   "eocystidae": [
@@ -20977,6 +22495,9 @@
    "1985_fatka_kordule",
    "1999_domínguez alonso"
   ],
+  "eublastoidea": [
+   "1900_bather"
+  ],
   "eucalyptocrinites": [
    "1837_hisinger"
   ],
@@ -21051,7 +22572,8 @@
    "1839_murchison"
   ],
   "extenuatus_zhao.j_rahman_zamora_chen.a_cong.p.y_2022": [
-   "2022_zhao.j_rahman_zamora_chen.a_cong.p.y"
+   "2022_zhao.j_rahman_zamora_chen.a_cong.p.y",
+   "2024_zamora_guensburg_sprinkle"
   ],
   "externes": [
    "1801_lamarck"
@@ -21165,7 +22687,8 @@
   "fistulides": [
    "1801_lamarck",
    "1816b_lamarck",
-   "1825i_gray.j.e"
+   "1825i_gray.j.e",
+   "1900_bather"
   ],
   "fistuliporita": [
    "1968b_paul.c.r.c",
@@ -21189,9 +22712,6 @@
   ],
   "flexibilis_parsley_prokop_2004": [
    "2004_parsley_prokop"
-  ],
-  "flexulosa_hall_1847": [
-   "1847_hall"
   ],
   "florealis_billings_1854": [
    "1854c_billings",
@@ -21490,27 +23010,22 @@
    "2017_zamora_sumrall_zhu.x.j_lefebvre"
   ],
   "glyptocystitida": [
-   "1982g_sprinkle",
-   "1994_sprinkle_wahlman"
-  ],
-  "glyptocystitida-order": [
-   "1975_broadhead_strimple",
-   "2017_zamora_sumrall_zhu.x.j_lefebvre"
-  ],
-  "glyptocystitida-superfamily": [
    "1967_paul.c.r.c",
    "1968a_paul.c.r.c",
    "1968b_paul.c.r.c",
+   "1975_broadhead_strimple",
    "1975_kolata",
    "1982b_parsley",
+   "1982g_sprinkle",
    "1987_ubaghs",
+   "1994_sprinkle_wahlman",
    "1997_paul.c.r.c",
    "1999_ubaghs",
-   "2013_nardin_bohatý"
+   "2013_nardin_bohatý",
+   "2017_zamora_sumrall_zhu.x.j_lefebvre"
   ],
   "glyptocystitidae": [
    "1968b_paul.c.r.c",
-   "1982b_parsley",
    "1982g_sprinkle"
   ],
   "glyptosphaeridae": [
@@ -21553,7 +23068,7 @@
   ],
   "gogiida": [
    "1982_broadhead",
-   "1991_fatka",
+   "1991_fatka_kordule",
    "1997_sumrall_sprinkle_guensburg",
    "2006_parsley_zhao.y.l",
    "2006_sprinkle_collins.d",
@@ -21670,6 +23185,7 @@
    "1840b_buch",
    "1842_volborth",
    "1844_buch",
+   "1845_buch",
    "1848b_forbes",
    "1854_müller.j.p",
    "1997_paul.c.r.c"
@@ -21828,7 +23344,7 @@
    "1935_bassler",
    "1966_regnéll",
    "1976_bell.b.m",
-   "2000_sumrall_garbisch_pope",
+   "2000_sumrall_garbisch_pope.j.p",
    "2010_müller.p_hahn"
   ],
   "hamptonii_unknown": [
@@ -21897,6 +23413,7 @@
    "1966_durham_caster",
    "1967a_ubaghs",
    "1967c_durham",
+   "1980_sprinkle",
    "1981_derstler",
    "2022_zamora_rahman_sumrall_gibson_thompson"
   ],
@@ -21944,6 +23461,7 @@
    "1840a_buch",
    "1840b_buch",
    "1844_buch",
+   "1845_buch",
    "1848b_forbes",
    "1854_müller.j.p",
    "1968b_paul.c.r.c",
@@ -21958,7 +23476,7 @@
   "hemicosmites-sp-3_paul.c.r.c_1968": [
    "1968b_paul.c.r.c"
   ],
-  "hemicosmitida-superfamily": [
+  "hemicosmitida": [
    "1968b_paul.c.r.c",
    "1997_paul.c.r.c"
   ],
@@ -22131,10 +23649,13 @@
   "holothuria_linnaeus_1758": [
    "1758_linnaeus"
   ],
+  "holothurioidea": [
+   "1900_bather"
+  ],
   "holothuroidea": [
-   "1900_bather",
    "1965_fell",
    "1967a_ubaghs",
+   "1980_sprinkle",
    "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y"
   ],
   "holothuroidea-genus_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y_1999": [
@@ -22149,6 +23670,7 @@
    "1967a_ubaghs",
    "1969_robison_sprinkle",
    "1975_kolata",
+   "1980_sprinkle",
    "1988_ubaghs_robison",
    "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y"
   ],
@@ -22163,8 +23685,10 @@
    "1997_paul.c.r.c"
   ],
   "homoiostelea": [
+   "1960_gill_caster",
    "1967a_ubaghs",
    "1975_kolata",
+   "1980_sprinkle",
    "1988_ubaghs_robison",
    "1997_sumrall_sprinkle_guensburg",
    "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y"
@@ -22172,17 +23696,13 @@
   "homoiostelea-indeterminate-family_ubaghs_robison_1988": [
    "1988_ubaghs_robison"
   ],
-  "homoiostelea-subclass": [
-   "1960_gill_caster"
-  ],
   "homoiostenea": [
    "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y"
   ],
   "homostelea": [
-   "1967a_ubaghs"
-  ],
-  "homostelea-subclass": [
-   "1960_gill_caster"
+   "1960_gill_caster",
+   "1967a_ubaghs",
+   "1980_sprinkle"
   ],
   "hudsonaster": [
    "1975_kolata"
@@ -22232,7 +23752,7 @@
    "2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler"
   ],
   "hybolopus_fraunfelter_utgaard_1970": [
-   "2000_sumrall_garbisch_pope",
+   "2000_sumrall_garbisch_pope.j.p",
    "2010_müller.p_hahn"
   ],
   "hydra": [
@@ -22446,7 +23966,6 @@
    "1975_bell.b.m",
    "1976_bell.b.m",
    "1976_bell.b.m_petersen.m.s",
-   "1979_guensburg",
    "1980_bell.b.m",
    "1982_bell.b.m",
    "1983_bockelie_paul.c.r.c",
@@ -22462,7 +23981,7 @@
    "1996_sumrall",
    "1996_sumrall_bowsher",
    "2000_grigo",
-   "2000_sumrall_garbisch_pope",
+   "2000_sumrall_garbisch_pope.j.p",
    "2001_sumrall",
    "2006_sumrall_brett_cornell",
    "2006_sumrall_gahn",
@@ -22517,14 +24036,13 @@
   "isorophina": [
    "1976_bell.b.m",
    "1976_bell.b.m_petersen.m.s",
-   "1979_guensburg",
    "1980_bell.b.m",
    "1985_smith.a.b",
    "1992_sumrall",
    "1993_sumrall",
    "1996_sumrall",
    "1996_sumrall_bowsher",
-   "2000_sumrall_garbisch_pope",
+   "2000_sumrall_garbisch_pope.j.p",
    "2001_sumrall",
    "2006_sumrall_brett_cornell",
    "2006_sumrall_sprinkle_bonem",
@@ -22584,7 +24102,7 @@
    "1758_linnaeus"
   ],
   "jacksoni_austen_1843": [
-   "1844_buch"
+   "1845_buch"
   ],
   "jaekelocystis": [
    "1968b_paul.c.r.c"
@@ -22595,7 +24113,7 @@
   ],
   "jani_prokop_1962": [
    "1973_sprinkle",
-   "1991_fatka"
+   "1991_fatka_kordule"
   ],
   "jasperensis_harker_1953": [
    "1975_bell.b.m",
@@ -22650,6 +24168,9 @@
    "2022_deshmukh",
    "2022_zamora_rahman_sumrall_gibson_thompson"
   ],
+  "kalckballar_tilas_1740": [
+   "1844_buch"
+  ],
   "kaskaskiensis_hall_1858": [
    "1935_bassler",
    "1936_bassler",
@@ -22666,7 +24187,7 @@
   ],
   "keslingi_bell.b.m_1976": [
    "1976_bell.b.m",
-   "2000_sumrall_garbisch_pope"
+   "2000_sumrall_garbisch_pope.j.p"
   ],
   "kildarensis_paul.c.r.c_1997": [
    "1997_paul.c.r.c"
@@ -22693,8 +24214,8 @@
    "1973_sprinkle",
    "2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler"
   ],
-  "knizeki_fatka_1991": [
-   "1991_fatka"
+  "knizeki_fatka_kordule_1991": [
+   "1991_fatka_kordule"
   ],
   "koenigii_murchison_1839": [
    "1840b_buch"
@@ -22709,7 +24230,7 @@
    "1980_bell.b.m",
    "1987_smith.a.b_arbizu",
    "1994_guensburg_sprinkle",
-   "2000_sumrall_garbisch_pope",
+   "2000_sumrall_garbisch_pope.j.p",
    "2010_müller.p_hahn",
    "2013_müller.p_hahn_bohatý"
   ],
@@ -22771,7 +24292,7 @@
    "1840_eichwald",
    "1840a_buch",
    "1840b_buch",
-   "1844_buch",
+   "1845_buch",
    "1973_sprinkle",
    "1981_bockelie"
   ],
@@ -22878,7 +24399,7 @@
   "legrandensis_miller.s.a_gurley_1894": [
    "1976_bell.b.m",
    "1976_bell.b.m_petersen.m.s",
-   "2000_sumrall_garbisch_pope",
+   "2000_sumrall_garbisch_pope.j.p",
    "2010_müller.p_hahn"
   ],
   "lehmani_chauvel_régnault_1986": [
@@ -23186,7 +24707,7 @@
   ],
   "lukei_bell.b.m_petersen.m.s_1976": [
    "1976_bell.b.m_petersen.m.s",
-   "2000_sumrall_garbisch_pope",
+   "2000_sumrall_garbisch_pope.j.p",
    "2010_müller.p_hahn"
   ],
   "lumbricus": [
@@ -23310,6 +24831,7 @@
    "1840_eichwald",
    "1840a_buch",
    "1844_buch",
+   "1845_buch",
    "1848b_forbes",
    "1968b_paul.c.r.c"
   ],
@@ -23492,7 +25014,7 @@
   "mespilocystites": [
    "1983_brett_frest_sprinkle_clement.c.r"
   ],
-  "metazoa-grade": [
+  "metazoa": [
    "1900_bather"
   ],
   "metularia_lamarck_1816": [
@@ -23749,8 +25271,8 @@
   "murinus_linnaeus_1758": [
    "1758_linnaeus"
   ],
-  "murphyi_sumrall_garbisch_pope_2000": [
-   "2000_sumrall_garbisch_pope",
+  "murphyi_sumrall_garbisch_pope.j.p_2000": [
+   "2000_sumrall_garbisch_pope.j.p",
    "2010_müller.p_hahn"
   ],
   "mus": [
@@ -23837,7 +25359,7 @@
    "2012_doweld"
   ],
   "neglecta_smith.a.b_1983": [
-   "2000_sumrall_garbisch_pope",
+   "2000_sumrall_garbisch_pope.j.p",
    "2010_müller.p_hahn"
   ],
   "neglectus_hecker_1940": [
@@ -24052,6 +25574,7 @@
   "ophiocistioidea": [
    "1965_fell",
    "1967a_ubaghs",
+   "1980_sprinkle",
    "1983_jell"
   ],
   "ophiura": [
@@ -24073,14 +25596,14 @@
    "1801_lamarck"
   ],
   "ophiuroidea": [
+   "1900_bather",
+   "1965_fell",
    "1967a_ubaghs",
+   "1980_sprinkle",
    "2014_jell"
   ],
   "ophiuroidea-fam-uncertaion_jell_2014": [
    "2014_jell"
-  ],
-  "ophiuroidea-subclass": [
-   "1965_fell"
   ],
   "ophiuroids": [
    "1990_smith.a.b_jell"
@@ -24315,12 +25838,14 @@
   "parablastoidea": [
    "1967a_ubaghs",
    "1967b_fay",
-   "1973_sprinkle"
+   "1973_sprinkle",
+   "1980_sprinkle"
   ],
   "paracrinoidea": [
    "1965_fell",
    "1967a_ubaghs",
    "1973_sprinkle",
+   "1980_sprinkle",
    "1982_sprinkle_parsley",
    "1982a_parsley"
   ],
@@ -24359,18 +25884,18 @@
    "1789a_bruguière"
   ],
   "parapostibulla": [
-   "2000_sumrall_garbisch_pope",
+   "2000_sumrall_garbisch_pope.j.p",
    "2006_sumrall_sprinkle_bonem",
    "2010_müller.p_hahn"
   ],
-  "parapostibulla-cf-hybolopus_sumrall_garbisch_pope_2000": [
-   "2000_sumrall_garbisch_pope"
+  "parapostibulla-cf-hybolopus_sumrall_garbisch_pope.j.p_2000": [
+   "2000_sumrall_garbisch_pope.j.p"
   ],
-  "parapostibulla-sp-a_sumrall_garbisch_pope_2000": [
-   "2000_sumrall_garbisch_pope"
+  "parapostibulla-sp-a_sumrall_garbisch_pope.j.p_2000": [
+   "2000_sumrall_garbisch_pope.j.p"
   ],
-  "parapostibulls-sp-indeterminate_sumrall_garbisch_pope_2000": [
-   "2000_sumrall_garbisch_pope"
+  "parapostibulls-sp-indeterminate_sumrall_garbisch_pope.j.p_2000": [
+   "2000_sumrall_garbisch_pope.j.p"
   ],
   "pararotadiscus_zhu.m.y_erdtmann_zhao.y.l_1999": [
    "1999_zhao.y.l_yuan.j.l_zhu.m.y_yang.r.d_guo.q.j_qian.y_huang.y.z_pan.y"
@@ -24384,7 +25909,7 @@
    "1966_regnéll",
    "1976_bell.b.m"
   ],
-  "parazoa-branch": [
+  "parazoa": [
    "1900_bather"
   ],
   "paredriophus": [
@@ -24471,17 +25996,13 @@
    "1816b_lamarck"
   ],
   "pelmatozoa": [
-   "1936_bassler",
+   "1848_leuckart",
+   "1900_bather",
    "1941_whitehouse",
    "1960_gill_caster",
    "1963_brown.i.a",
+   "1965_fell",
    "1968_webby"
-  ],
-  "pelmatozoa-class": [
-   "1848_leuckart"
-  ],
-  "pelmatozoa-grade": [
-   "1900_bather"
   ],
   "pelmatozoa-uncertain-order_bassler_1936": [
    "1936_bassler"
@@ -24939,6 +26460,7 @@
    "1840a_buch",
    "1840b_buch",
    "1844_buch",
+   "1845_buch",
    "1854_müller.j.p"
   ],
   "pomum_leuchtenberg_1843": [
@@ -24971,13 +26493,13 @@
    "1987_smith.a.b_arbizu",
    "1993_sumrall",
    "1994_guensburg_sprinkle",
-   "2000_sumrall_garbisch_pope",
+   "2000_sumrall_garbisch_pope.j.p",
    "2006_sumrall_gahn",
    "2006_sumrall_sprinkle_bonem",
    "2010_müller.p_hahn"
   ],
   "postibullinae": [
-   "2000_sumrall_garbisch_pope",
+   "2000_sumrall_garbisch_pope.j.p",
    "2006_sumrall_brett_cornell",
    "2006_sumrall_sprinkle_bonem",
    "2010_müller.p_hahn"
@@ -25097,6 +26619,7 @@
    "1801_lamarck"
   ],
   "protoblastoidea": [
+   "1900_bather",
    "1936_bassler"
   ],
   "protocrinidae": [
@@ -25118,7 +26641,7 @@
    "2010_zamora_smith.a.b",
    "2013_zamora"
   ],
-  "protozoa-grade": [
+  "protozoa": [
    "1900_bather"
   ],
   "prunella_lamarck_1816": [
@@ -25142,7 +26665,7 @@
    "1816b_lamarck"
   ],
   "pseudocrinites": [
-   "1844_buch",
+   "1845_buch",
    "1848b_forbes",
    "1854_müller.j.p",
    "1967_paul.c.r.c",
@@ -25297,6 +26820,7 @@
    "1840a_buch",
    "1840b_buch",
    "1844_buch",
+   "1845_buch",
    "1848b_forbes",
    "1968b_paul.c.r.c"
   ],
@@ -25380,14 +26904,14 @@
    "1825b_sowerby.g.b"
   ],
   "radiata": [
-   "1825i_gray.j.e"
+   "1825i_gray.j.e",
+   "1857_billings"
   ],
   "radiata-phylum": [
    "1821_macleay"
   ],
   "radiata-subkingdom": [
-   "1837_hisinger",
-   "1857_billings"
+   "1837_hisinger"
   ],
   "radiata_leske_1778": [
    "1778_leske",
@@ -25641,26 +27165,23 @@
    "1857_billings"
   ],
   "rhombifera": [
-   "1968b_paul.c.r.c",
-   "2013_nardin_bohatý"
+   "1968b_paul.c.r.c"
   ],
-  "rhombifera-class": [
+  "rhombifera_zittel_1879": [
+   "1900_bather",
    "1968b_paul.c.r.c",
    "1973_sprinkle",
    "1975_broadhead_strimple",
+   "1975_kolata",
+   "1980_sprinkle",
    "1982b_parsley",
+   "1982g_sprinkle",
    "1983_jell",
    "1994_sprinkle_wahlman",
    "1997_paul.c.r.c",
    "2012_zamora_smith.a.b",
+   "2013_nardin_bohatý",
    "2017_zamora_sumrall_zhu.x.j_lefebvre"
-  ],
-  "rhombifera-group": [
-   "1982g_sprinkle"
-  ],
-  "rhombifera-order": [
-   "1900_bather",
-   "1975_kolata"
   ],
   "rhombiferi": [
    "1897_whiteaves"
@@ -26018,8 +27539,12 @@
    "1847_hall",
    "1975_kolata"
   ],
+  "scytactinota": [
+   "1900_bather"
+  ],
   "scytodermata": [
-   "1848_leuckart"
+   "1848_leuckart",
+   "1900_bather"
   ],
   "segurae_gil cid_domínguez alonso_2002": [
    "2002_gil cid_domínguez alonso",
@@ -26043,6 +27568,7 @@
   "senckenbergii_meyer_1826": [
    "1826_meyer",
    "1844_buch",
+   "1845_buch",
    "1968b_paul.c.r.c"
   ],
   "senegalensis_lamarck_1816": [
@@ -26205,21 +27731,17 @@
   "solitarius_bell.b.m_1976": [
    "1976_bell.b.m"
   ],
-  "soluta-class": [
-   "1981_derstler",
-   "2018_lefebvre_lerosey-aubril"
-  ],
-  "soluta-order": [
+  "soluta": [
    "1960_gill_caster",
    "1975_kolata",
+   "1981_derstler",
    "1988_ubaghs_robison",
-   "1997_sumrall_sprinkle_guensburg"
+   "1997_sumrall_sprinkle_guensburg",
+   "2018_lefebvre_lerosey-aubril"
   ],
   "somasteroidea": [
+   "1965_fell",
    "1967a_ubaghs"
-  ],
-  "somasteroidea-subclass": [
-   "1965_fell"
   ],
   "sorex": [
    "1758_linnaeus"
@@ -26293,11 +27815,12 @@
    "1840b_buch",
    "1842_volborth",
    "1844_buch",
+   "1845_buch",
    "1848b_forbes",
    "1854_müller.j.p",
    "1997_paul.c.r.c"
   ],
-  "sphaeronitida-superfamily": [
+  "sphaeronitida": [
    "1997_paul.c.r.c"
   ],
   "sphaeronitidae": [
@@ -26548,7 +28071,7 @@
   "striata_pander_1830": [
    "1830_pander",
    "1842_volborth",
-   "1844_buch"
+   "1845_buch"
   ],
   "striato radiatus_leske_1778": [
    "1778_leske"
@@ -26644,7 +28167,9 @@
    "1821_miller.j.s"
   ],
   "stylophora": [
+   "1960_gill_caster",
    "1967a_ubaghs",
+   "1980_sprinkle",
    "1981_derstler",
    "1987_ubaghs",
    "1988_ubaghs_robison",
@@ -26653,9 +28178,6 @@
   ],
   "stylophora-sp-indeterminate_sumrall_sprinkle_guensburg_1997": [
    "1997_sumrall_sprinkle_guensburg"
-  ],
-  "stylophora-superorder": [
-   "1960_gill_caster"
   ],
   "subangularis_leske_1778": [
    "1778_leske"
@@ -26729,10 +28251,11 @@
    "1758_linnaeus"
   ],
   "sycocrinites": [
-   "1844_buch"
+   "1845_buch"
   ],
   "sycocystites": [
    "1844_buch",
+   "1845_buch",
    "1847_hall",
    "1848b_forbes"
   ],
@@ -26807,9 +28330,6 @@
   "tennesseensis_bassler_1936": [
    "1936_bassler"
   ],
-  "tentaculites_emmons_1842": [
-   "1847_hall"
-  ],
   "tentaculées": [
    "1816b_lamarck"
   ],
@@ -26868,6 +28388,7 @@
   "testudinarius_hisinger_1837": [
    "1837_hisinger",
    "1844_buch",
+   "1845_buch",
    "1848b_forbes",
    "1854_müller.j.p"
   ],
@@ -27681,7 +29202,8 @@
    "1758_linnaeus",
    "1761_linnaeus",
    "1767_linnaeus",
-   "1791_bruguière"
+   "1791_bruguière",
+   "1847_hall"
   ],
   "zoophytes": [
    "1798_cuvier",
@@ -27697,13 +29219,14 @@
    "1801_lamarck",
    "1816b_lamarck"
   ],
+  "échinodermes": [
+   "1798_cuvier"
+  ],
   "échinodermes-class": [
-   "1817d_cuvier",
-   "1828_hisinger"
+   "1817d_cuvier"
   ],
   "échinodermes-order": [
    "1789a_bruguière",
-   "1798_cuvier",
    "1801_lamarck",
    "1816a_lamarck"
   ],

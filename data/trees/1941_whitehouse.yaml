@@ -2,14 +2,23 @@ prefixes:
   F.: uq-f
 taxonomies:
 - taxon: echinodermata
+  citedAs: PHYLUM ECHINODERMATA KLEIN, 1734.
+  rank: Phylum
   auth: [klein]
   year: 1734
+  pages: 4
   children:
   - taxon: haplozoa
+    citedAs: Sub-Phylum Haplozoa nov.
+    rank: Subphylum
     new: true
+    pages: 4
     children:
     - taxon: cyamoidea
+      citedAs: Class CYAMOIDEA nov.
+      rank: Class
       new: true
+      pages: 5
       children:
       - taxon: peridionitidae
         new: true
@@ -28,7 +37,10 @@ taxonomies:
               numbers: [5399, 5400, 5401, 5402, 5403]
               role: paratype
     - taxon: cycloidea
+      citedAs: Class CYCLOIDEA nov.
+      rank: Class
       new: true
+      pages: 8
       children:
       - taxon: cymbionitidae
         new: true
@@ -46,10 +58,31 @@ taxonomies:
             - prefix: F.
               numbers: [5410, 5411, 5412, 5413, 5414, 5415, 5416, 5417, 5418, 5419, 5420]
   - taxon: homalozoa
+    citedAs: HOMALOZOA
+    rank: Subphylum
     new: true
+    questionable: true
+    pages: 22
+    notes: >
+      No formal declaration, just prose.
+      "Tentatively I suggest that they represent a separate group
+      (a sub-phylum it would have to be) for which the term
+      HOMALOZOA ... would be appropriate."
     children:
     - taxon: carpoidea
+      provisional: true
+      moved:
+        taxon: pelmatozoa
+      pages: 22
+      notes: >
+        No formal declaration, just prose.
     - taxon: machaeridia
+      provisional: true
+      moved:
+        taxon: pelmatozoa
+      pages: 22
+      notes: >
+        No formal declaration, just prose.
 phylogenies:
 - treeType: diagram
   tree:

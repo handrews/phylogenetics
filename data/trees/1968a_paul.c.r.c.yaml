@@ -1,5 +1,6 @@
 taxonomies:
-- taxon: glyptocystitida-superfamily
+- taxon: glyptocystitida
+  rank: Superfamily
   children:
   - taxon: macrocystellidae
     emended: true

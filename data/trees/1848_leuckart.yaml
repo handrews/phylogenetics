@@ -1,11 +1,14 @@
 taxonomies:
 - taxon: echinodermata
   children:
-  - taxon: pelmatozoa-class
+  - taxon: pelmatozoa
+    rank: Class
     new: true
     children:
-    - taxon: cystoidea-order
-    - taxon: crinoidea-order
+    - taxon: cystoidea
+      rank: Order
+    - taxon: crinoidea
+      rank: Order
   - taxon: actinozoa
     children:
     - taxon: echinoidea-order

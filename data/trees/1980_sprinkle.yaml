@@ -1,0 +1,203 @@
+taxonomies:
+- taxon: echinodermata
+  citedAs: Phylum Echinodermata de Bruguière, 1791
+  rank: Phylum
+  authority:
+    source: 1791_bruguière
+  pages: 26
+  children:
+  - taxon: crinozoa
+    citedAs: Subphylum Crinozoa Matsumoto, 1929
+    rank: Subphylum
+    pages: 26
+    children:
+    - taxon: crinoidea
+      citedAs: Class Crinoidea Miller, 1821
+      rank: Class
+      pages: 26
+      ranges:
+      - series: Middle Cambrian
+        asPrinted: M.Camb., E.Ord.-Holocene
+      - seriesRange: [Lower Ordovician, Holocene]
+        asPrinted: M.Camb., E.Ord.-Holocene
+      notes: ~1500 Genera
+    - taxon: paracrinoidea
+      citedAs: Class Paracrinoidea† Regnéll, 1945
+      rank: Class
+      pages: 26
+      ranges:
+      - seriesRange: [Middle Ordovician, Lower Silurian]
+        asPrinted: M.Ord.-E.Si1.
+      notes: 16–17 Genera
+  - taxon: blastozoa
+    citedAs: Subphylum Blastozoa† Sprinkle, 1973
+    rank: Subphylum
+    pages: 26
+    children:
+    - taxon: eocrinoidea
+      citedAs: Class Eocrinoidea† Jaekel, 1918
+      rank: Class
+      pages: 26
+      ranges:
+      - seriesRange: [Lower Cambrian, Upper Silurian]
+        asPrinted: E.Camb.-L.Sil
+      notes: 32–33 Genera
+    - taxon: rhombifera_zittel_1879
+      citedAs: Class Rhombifera† Zittel, 1879
+      rank: Class
+      pages: 26
+      ranges:
+      - seriesRange: [Lower Ordovician, Upper Devonian]
+        asPrinted: E.Ord.-L.Dev.
+      notes: ~60 Genera
+    - taxon: diploporita
+      citedAs: Class Diploporita† Muller, 1854
+      rank: Class
+      pages: 26
+      ranges:
+      - seriesRange: [Lower Ordovician, Lower Devonian]
+        asPrinted: E.Ord.-E.Dev.
+      notes: ~42 Genera
+    - taxon: parablastoidea
+      citedAs: Class Parablastoidea† Hudson, 1907
+      rank: Class
+      pages: 26
+      ranges:
+      - series: Middle Ordovician
+        asPrinted: M.Ord.
+      notes: 3 Genera
+    - taxon: blastoidea
+      citedAs: Class Blastoidea† Say, 1825
+      rank: Class
+      pages: 26
+      ranges:
+      - series: Middle Ordovician
+        tentative: true
+        asPrinted: M.Ord.?, M.Sil.-L.Perm.
+      - seriesRange: [Middle Silurian, Upper Permian]
+        asPrinted: M.Ord.?, M.Sil.-L.Perm.
+      notes: ~95 Genera
+  - taxon: asterozoa
+    citedAs: Subphylum Asterozoa Zittel, 1895
+    rank: Subphylum
+    pages: 26
+    children:
+    - taxon: asteroidea
+      citedAs: Class Asteroidea de B1ainville, 1830
+      rank: Class
+      pages: 26
+      ranges:
+      - seriesRange: [Lower Ordovician, Holocene]
+        asPrinted: E.Ord.-Holocene
+      notes: ~430 Genera
+    - taxon: ophiuroidea
+      citedAs: Class Ophiuroidea Cray, 1840
+      rank: Class
+      pages: 26
+      ranges:
+      - seriesRange: [Lower Ordovician, Holocene]
+        asPrinted: E.Ord.-Holocene
+      notes: ~340 Genera
+  - taxon: echinozoa
+    citedAs: Subphylum Echinozoa Zittel, 1895
+    rank: Subphylum
+    pages: 26
+    children:
+    - taxon: edrioasteroidea
+      citedAs: Class Edrioasteroidea† Billings, 1858
+      rank: Class
+      pages: 26
+      ranges:
+      - seriesRange: [Lower Cambrian, Middle Permian]
+        asPrinted: E.Camb.-M.Penn.
+        notes: >
+          "Penn" is presumably a typo for "Perm"; these notes were
+          clearly typed on a manual typewriter so... literally a typo.
+      notes: ~35 Genera
+    - taxon: edrioblastoidea
+      citedAs: Class Edrioblastoidea† Fay, 1962
+      rank: Class
+      pages: 26
+      ranges:
+      - seriesRange: [Middle Ordovician, Upper Ordovician]
+        asPrinted: M.-L.Ord.
+      notes: 1 Genus
+    - taxon: cyclocystoidea
+      citedAs: Class Cyclocystoidea† Miller and Gurley, 1895
+      rank: Class
+      pages: 26
+      ranges:
+      - seriesRange: [Middle Cambrian, Middle Devonian]
+        asPrinted: M.Camb.-M.Dev
+      notes: 2 Genera
+    - taxon: helicoplacoidea
+      citedAs: Class Helicoplacoidea† Durham and Caster, 1963
+      rank: Class
+      pages: 26
+      ranges:
+      - series: Lower Cambrian
+        asPrinted: E.Camb.
+      notes: 3 Genera
+    - taxon: ophiocistioidea
+      citedAs: Class Ophiocistioidea† Sollas, 1899
+      rank: Class
+      pages: 26
+      ranges:
+      - seriesRange: [Lower Ordovician, Lower Mississippian]
+        asPrinted: E.Ord.-E.Miss
+      notes: 6 Genera
+    - taxon: echinoidea
+      citedAs: Class Echinoidea, Leske, 1778
+      rank: Class
+      pages: 26
+      ranges:
+      - seriesRange: [Middle Ordovician, Holocene]
+        asPrinted: M.Ord.-Holocene
+      notes: ~785 Genera
+    - taxon: holothuroidea
+      citedAs: Class Holothuroidea de Blainvi1le, 1834
+      rank: Class
+      pages: 26
+      ranges:
+      - seriesRange: [Middle Ordovician, Holocene]
+        asPrinted: M.Ord.?-Holocene
+        tentative: true
+        notes: Only the beginning of the range is tentative.
+      notes: ~200 Genera
+  - taxon: homalozoa
+    citedAs: Subphylum Homalozoa† Whitehouse, 1941
+    rank: Subphylum
+    pages: 26
+    children:
+    - taxon: stylophora
+      citedAs: Class Stylophora† Gill and Caster, 1960
+      rank: Class
+      pages: 26
+      ranges:
+      - seriesRange: [Middle Cambrian, Middle Devonian]
+        asPrinted: M.Camb.-M.Dev.
+      notes: ~32 Genera
+    - taxon: homoiostelea
+      citedAs: Class Homoiostelea† Gill and Caster, 1960
+      rank: Class
+      pages: 26
+      ranges:
+      - seriesRange: [Upper Cambrian, Lower Devonian]
+        asPrinted: L.Camb.-E.Dev.
+      notes: 12–13 Genera
+    - taxon: homostelea
+      citedAs: Class Homostelea† Gill and Caster, 1960
+      rank: Class
+      pages: 26
+      ranges:
+      - series: Middle Cambrian
+        asPrinted: M.Camb.
+      notes: 3 Genera
+    - taxon: ctenocystoidea
+      citedAs: Class Ctenocystoidea† Robison and Sprinkle, 1969
+      rank: Class
+      pages: 26
+      ranges:
+      - series: Middle Cambrian
+        asPrinted: M.Camb.
+      notes: 1 Genus

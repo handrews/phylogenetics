@@ -1,5 +1,10 @@
 phylogenies:
-- treeType: diagram
+- treeType: other
+  notes: >
+    The text layes out a very speculative organization of early higher taxa,
+    grouping three in a proposed unnamed clade and treating the others as
+    all indpendent of each other rather than grouped.  To the best of my
+    knowledge, this idea was not developed further.
   tree:
     taxon: echinodermata
     children:
@@ -9,18 +14,19 @@ phylogenies:
       - taxon: helicoplacoidea
       - taxon: blastozoa
     - notes: early cambrian
-      taxon: soluta-class
+      taxon: soluta
     - notes: middle cambrian
-      taxon: cincta-class
+      taxon: cincta
     - notes: middle cambrian
       taxon: ctenocystoidea
     - notes: middle cambrian
       taxon: stylophora
-    - notes: middle cambrian
+    - notes: >
+        middle cambrian
+        Placed here "if they are not related to the edrioasteroids", but it
+        is not clear if the alternate placement would be within or beside them.
       taxon: cyclocystoidea
       provisional: true
-      altPlacements:
-      - taxon: edrioasteroidea
     - notes: middle cambrian or upper cambrian
       taxon: crinoidea
     - notes: ordovician

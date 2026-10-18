@@ -1,21 +1,60 @@
 prefixes:
+  KUMIP: u-kansas-mip
   PE: fmnh-pe
 taxonomies:
 - taxon: echinodermata
+  citedAs: Phylum Echinodermata Bruguière, 1791 (ex Klein, 1734)
+  rank: Phylum
+  authority:
+    source: 1791_bruguière
+    ex:
+      source: 1734_klein
+  pages: 954
   children:
   - taxon: edrioasteroidea
+    citedAs: Class Edrioasteroidea Billings, 1858
+    rank: Class
+    pages: 954
     children:
     - taxon: edrioasterida
+      citedAs: Order ?Edrioasterida Bell, 1976
+      rank: Order
+      pages: 954
       children:
       - taxon: sprinkleoglobus
+        citedAs: Genus Sprinkleoglobus
         provisional: true
+        pages: 954
+        type:
+          taxon: lloydi_sprinkle_1985
+          citedAs: >
+            Type species. Totiglobus? lloydi Sprinkle,
+            1985 under original designation.
+          parents:
+          - taxon: totiglobus
+            provisional: true
+          fixation: originalDesignation
         children:
         - taxon: lloydi_sprinkle_1985
-          isType: true
+          citedAs: Sprinkleoglobus lloydi (Sprinkle, 1985)
+          pages: 955
+        - taxon: extenuatus_zhao.j_rahman_zamora_chen.a_cong.p.y_2022
+          citedAs: S. extenuatus Zhao et al., 2022
+          pages: 955
         - taxon: spencensis_wen.r.q_babcock_peng.j_robison_2019
+          citedAs: Sprinkleoglobus spencensis n. comb.
+          recombined: true
+          emended: true
           moved:
             taxon: totiglobus
+          pages: 955
           material:
+          - prefix: KUMIP
+            numbers: [49294A, 49294B]
+            role: holotype
+            notes: >
+              Written "492941B" but comparing with Wen et al. 2019 the
+              trailing digit "1" is an error.
           - prefix: PE
             numbers: [93415]
             role: paratype
