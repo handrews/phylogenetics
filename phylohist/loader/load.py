@@ -16,7 +16,7 @@ import logging
 from . import material, nomenclature
 from .io import DATA_DIR, TREE_DIR, LoadError, display_path, load_files
 from .research import Author, Publication, Source
-from .taxa import Section, Taxon, Tree
+from .taxa import RANKS, Section, Taxon, Tree
 
 logger = logging.getLogger(__name__)
 
@@ -217,6 +217,11 @@ def _report_protologue_mismatches(data, roots):
     for node in nodes:
       for field, verb in _PROTOLOGUE_FIELDS:
         if field == 'rank' and field not in node.data:
+          if taxon.name is None:
+            # An open form or bin has no name to read a rank from; its
+            # record spells one, and `_report_rank_order` checks it
+            # against the node's parent.
+            continue
           # The node leaves a genus or species implicit; the record, which
           # has `pages`, spells its rank, and the two must agree.
           implied = _implicit_rank(node)
@@ -238,6 +243,49 @@ def _report_protologue_mismatches(data, roots):
         )
         mismatches += 1
   logger.info(f'{mismatches} disagreements between a taxa record and its protologue node')
+
+
+# The ranks whose order every source keeps: a genus holds subgenera and
+# species, a species its subspecies and varieties. Above the genus group a
+# source's scheme is its own (roadmap G8; Macleay 1821 lists classes under
+# an order), so a node there says nothing about the ranks of its children.
+_ORDERED_GROUPS = frozenset({'genus', 'subgenus', 'species', 'subspecies', 'variety'})
+
+
+def _placed_rank(node):
+  """The rank a node sits at: its printed rank word, else its record's."""
+  return node.data.get('rank') or node.taxon.rank
+
+
+def _report_rank_order(roots):
+  # A child of a genus, subgenus or species in a taxonomy is at a rank
+  # below its parent's. A node printing no rank word sits where its
+  # record's rank says, so the record must agree with the tree: an open
+  # form under a genus is a species, whatever its record says.
+  misplaced = 0
+  for trees in roots.values():
+    for root in trees:
+      if root.tree_type != Tree.TYPE_TAXONOMY:
+        continue
+      for node in root.walk():
+        if node.axis != 'children' or node.taxon is None or node.data.get('rank'):
+          continue
+        parent = node.parent
+        while parent is not None and parent.taxon is None:
+          parent = parent.parent
+        if parent is None:
+          continue
+        above, own = _placed_rank(parent), node.taxon.rank
+        if (above or '').lower() not in _ORDERED_GROUPS or (own or '').lower() not in RANKS:
+          continue
+        if RANKS[own.lower()] < RANKS[above.lower()]:
+          continue
+        logger.error(
+          f'taxa.yaml {node.taxon.key}: rank {_protologue_value(own)} but the tree places '
+          f'it under {parent.taxon.key} ({above}) at {node}'
+        )
+        misplaced += 1
+  logger.info(f'{misplaced} taxa placed under a genus or species at no lower rank')
 
 
 # The fields a section record and its protologue marker both give.
@@ -365,6 +413,7 @@ def _load_trees(data):
   _report_cited_sources(data)
   _report_missing_protologues(data)
   _report_protologue_mismatches(data, roots)
+  _report_rank_order(roots)
   _report_section_protologues(data, roots)
   _report_lapsus_records(roots)
   _report_material(data)

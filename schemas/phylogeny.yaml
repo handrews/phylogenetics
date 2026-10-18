@@ -484,7 +484,10 @@ $defs:
         description: |
           Explicit on a record that gives its protologue `pages`, where the
           tree node leaves a genus or species implicit; `null` says the
-          protologue placed the taxon with no rank word.
+          protologue placed the taxon with no rank word. An unnamed record
+          spells its rank, and a node printing no rank word under a genus,
+          subgenus or species is at a rank below its parent's (the loader
+          checks this).
         oneOf:
         - $ref: "#/$defs/rank"
         - type: "null"

@@ -35,7 +35,7 @@ RANKS = {
   'subgenus': 13,
   'species': 5,
   'subspecies': 3,
-  'variety': 5,
+  'variety': 2,
 }
 
 NON_RANKS = {
