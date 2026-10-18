@@ -31,15 +31,16 @@ taxonomies:
         1) SPHAERONITES Aurantium
       pages: 126
       synonyms:
-      - citedAs: Tilas, Vet. Acad. Hand. 1840. t. XI. f.18.
+      - taxon: kalckballar_tilas_1740
+        citedAs: Tilas, Vet. Acad. Hand. 1840. t. XI. f.18.
         editorial:
           corrections:
             citedAs: Tilas, Vet. Acad. Hand. 1740. t. II. f.18.
           basis: >
             Tilas published in 1740 but not a century later, and the relevant
             figure 18 is on plate II; there is no pate XI.
-        auth: [Tilas]
-        year: 1740
+        authority:
+          source: 1740_tilas
         illustrations:
         - plate: XI
           figures: 18
@@ -73,7 +74,24 @@ taxonomies:
           - plate: I
             figures: 14
     - taxon: pomum_gyllenhaal_1772
+      citedAs: Sphaeronites Pomum
       pages: 127
+      synonyms:
+      - citedAs: >
+          Beitr. zur Best. der Geb. in Ruſsland, t.1. 15,16, nach Gyllenhal.
+        authority:
+          source: 1840a_buch
+          notes: >
+              "after Gyllenhaal" ("hal" is incorrect).
+          illustrations:
+          - plate: I
+            figures: [15, 16]
+      - citedAs: Hisinger, Lethaea Sueeica, t. XXV. f. 7
+        authority:
+          source: 1837_hisinger
+          illustrations:
+          - plate: XXV
+            figures: 7
   - citedAs: CARYOCYSTITES
     new: true
     pages: 128
@@ -146,55 +164,14 @@ taxonomies:
             figures:
             - [1, 13]
   - taxon: sycocystites
+    citedAs: SYCOCYSTITES
     new: true
+    notes: Unclear if actually new?
     children:
-    - taxon: angulosus_buch_1844
-      new: true
-      or:
-      - taxon: senckenbergii_meyer_1826
-      synonyms:
-      - taxon: senckenbergii_meyer_1826
-        parents:
-        - taxon: echino-encrinus
-      - taxon: angulosa_pander_1830
-        parents:
-        - taxon: echinosphaerites
-      - taxon: striata_pander_1830
-        parents:
-        - taxon: echinosphaerites
+    - taxon: senckenbergii_meyer_1826
+      citedAs: SYCOCYSTITES Senckenbergii Meyer
+      notes: TODO - Synonyms are hard to decipher
   - taxon: cryptocrinites
     children:
     - taxon: cerasus_buch_1840
-      synonyms:
-      - taxon: laevis_pander_1830
-        parents:
-        - taxon: echinosphaerites
-      - taxon: jacksoni_austen_1843
-        parents:
-        - taxon: sycocrinites
-      - taxon: anapeptamenus_austen_1843
-        parents:
-        - taxon: sycocrinites
-  - taxon: sycocrinites
-    children:
-    - taxon: clausus_austen_1843
-  - taxon: pseudocrinites
-    children:
-    - taxon: bicopuladigiti_garnet_1844
-      notes: |
-        "is manifestly a Cystidea resembling Caryocystites" (1846
-        translation). A comparison of form; von Buch places the
-        species in the family and does not move it to Caryocystites.
-  - openTaxon: asteriadae-gen_sowerby.g.b_1825
-    provisional: true
-    authority:
-      source: 1825b_sowerby.g.b
-      pages: 318
-    children:
-    - openTaxon: asteriadae-gen-sp_sowerby.g.b_1825
-      notes: |
-        "A species figured and described by Mr. J. Sowerby in the
-        'Zoological Journal' (ii. 318) also probably belongs to this
-        family. [...] a considerable number of irregular plates
-        surround, as in Sphaeronites, the spheroidal figure." (1846
-        translation). The Sphaeronites remark describes the plating.
+      notes: TODO - Synonyms are hard to decipher

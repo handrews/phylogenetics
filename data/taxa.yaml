@@ -6874,6 +6874,14 @@ kailidiscus-sp_jell_sprinkle_2021:
   rank: species
   authority:
     source: 2021_jell_sprinkle
+kalckballar_tilas_1740:
+  name: kalckballar
+  citedAs: kalckbållar
+  needsQualification: true  # To get it to look like a species
+  rank: null
+  authority:
+    source: 1740_tilas
+  notes: Thought to be mineral formation.
 kaskaskiensis_hall_1858:
   name: kaskaskiensis
   auth: [hall]

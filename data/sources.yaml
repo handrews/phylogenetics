@@ -8,6 +8,26 @@
   identifiers:
     doi: 10.5962/bhl.title.65731
     url: https://www.biodiversitylibrary.org/bibliography/65731
+1740_tilas:
+  title: >
+    Mineral-historia öfwer Osmundsberget uti Rättwiks Socken och Öster-Dalarne
+  journal: kungliga-svenska
+  volume: 1
+  number: 2
+  pages:
+  - 196
+  - 203
+  pubDate:
+    year: 1740
+    months:
+    - 4
+    - 5
+    - 6
+  authors:
+  - tilas
+  notes: >
+    The pages are for the first printing of the journal issue.  Later
+    printings have the article on pages 202–209.
 1741_linnaeus:
   book: cl-olandska
   pubDate:
