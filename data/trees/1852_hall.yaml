@@ -1,10 +1,15 @@
+notes: >
+  Hall calls nearly everything a "family", and only mentions orders in
+  the context of von Buch's definition of Cystidea as "an order distinct
+  from 
+
 taxonomies:
 - taxon: echinodermata
   rank: null
   children:
   - taxon: crinoidea
     rank: Order
-    notes: Rank based on that of Cystidea mentioned relative to Crinoidea
+    notes: Rank based on a mention of 
     synonyms:
     - taxon: crinoideae
       notes: Alternate spelling used in text.
@@ -14,25 +19,34 @@ taxonomies:
       children:
       - taxon: elongatus_hall_1852
         new: true
+        notes: Clinton Group
     - taxon: glyptocrinus
       children:
       - taxon: plumosus_hall_1843
+        notes: Clinton Group
         synonyms:
         - taxon: plumosus_hall_1843
           provisional: true
           parents:
           - taxon: actinocrinus
       - openTaxon: glyptocrinus-sp_hall_1852
+        notes: Clinton Group
     - taxon: ichthyocrinus
       children:
       - taxon: clintonensis_hall_1852
         provisional: true
         new: true
+        notes: Clinton Group
     - taxon: caryocrinus
+      notes: >
+        These characters show more clearly how near is the Caryocrinus
+        to Cystideans, and suggests whether it should not be included
+        in this family. (p. 225)
       children:
       - taxon: ornatus_say_1825
-- taxon: echinodermata-order
-  notes: Rank is a guess.  Presence implied from text.
+        notes: Clinton Group
+- taxon: echinodermata
+  rank: null
   children:
   - taxon: crinoidea-family
     notes: Rank is a guess.  Middle Silurian of Niagra Group.
@@ -45,46 +59,57 @@ taxonomies:
       children:
       - taxon: parvus_hall_1852
         new: true
+        notes: Niagara Group
       - taxon: cylindricus_hall_1852
         new: true
+        notes: Niagara Group
     - taxon: glyptaster
       new: true
       children:
       - taxon: brachiatus_hall_1852_glyptaster
         new: true
+        notes: Niagara Group
     - taxon: thysanocrinus
       new: true
       children:
       - taxon: liliiformis_hall_1852
         new: true
+        notes: Niagara Group
       - taxon: canaliculatus_hall_1852
         new: true
+        notes: Niagara Group
       - taxon: aculeatus_hall_1852
         new: true
+        notes: Niagara Group
       - taxon: immaturis_hall_1852
         new: true
+        notes: Niagara Group
     - taxon: myelodactylus
       new: true
       children:
       - taxon: convolutus_hall_1852
         new: true
+        notes: Niagara Group
       - taxon: brachiatus_hall_1852_myelodactylus
-        notes: Described in section on fragments
+        notes: Described in section on fragments. Niagara Group.
         new: true
       - openTaxon: myelodactylus-sp_hall_1852
-        notes: Described in section on fragments
+        notes: Described in section on fragments. Niagara Group.
     - taxon: dendrocrinus
       new: true
       children:
       - taxon: longidactylus_hall_1852
         new: true
+        notes: Niagara Group
     - taxon: ichthyocrinus
       children:
       - taxon: laevis_conrad.t.a_1842
+        notes: Niagara Group
     - taxon: lyriocrinus
       new: true
       children:
       - taxon: dactylus_hall_1843
+        notes: Niagara Group
         synonyms:
         - taxon: dactylus_hall_1843
           provisional: true
@@ -95,22 +120,28 @@ taxonomies:
       children:
       - taxon: macropetalus_hall_1852
         new: true
+        notes: Niagara Group
       - taxon: ornatus_hall_1852_lecanocrinus
         new: true
+        notes: Niagara Group
       - taxon: simplex_hall_1852
         new: true
+        notes: Niagara Group
       - taxon: caliculus_hall_1852
         new: true
+        notes: Niagara Group
     - taxon: macrostylocrinus
       new: true
       children:
       - taxon: ornatus_hall_1852_macrostylocrinus
         new: true
+        notes: Niagara Group
     - taxon: saccocrinus
       new: true
       children:
       - taxon: speciosus_hall_1852
         new: true
+        notes: Niagara Group
     - taxon: eucalyptocrinus
       notes: 'printed "Genus EUCALYPTOCRINUS." with the synonyms Eucalyptocrinites Goldfuss 1826 and Hypanthocrinites Phillips 1839'
       children:
@@ -118,23 +149,27 @@ taxonomies:
         notes: |
           Compare H. cœlatus. Id. pag. 113, fig. 1;
           and pl. 47 ut sup. fig. 4 a.
+          Niagara Group.
         synonyms:
         - taxon: decorus_phillips.j_1839
           parents:
           - taxon: hypanthocrinites
       - taxon: caelatus_hall_1843
+        notes: Niagara Group
         synonyms:
         - taxon: caelatus_hall_1843
           parents:
           - taxon: hypanthocrinites
       - taxon: papulosus_hall_1852
-        notes: Compare E. decorus, ut supra.
+        notes: Compare E. decorus, ut supra. Niagara Group.
         new: true
     - taxon: stephanocrinus
       children:
       - taxon: angulatus_conrad.t.a_1842
+        notes: Niagara Group
       - taxon: gemmiformis_hall_1852
         new: true
+        notes: Niagara Group
     - taxon: caryocrinus
       notes: |
         Prof. Troost has enumerated five species as occurring in Tennessee:
@@ -142,6 +177,7 @@ taxonomies:
         C. insculptus, C. globosus
       children:
       - taxon: ornatus_say_1825
+        notes: Niagara Group
         synonyms:
         - taxon: loricatus_say_1825
     - taxon: melocrinites
@@ -154,14 +190,16 @@ taxonomies:
         notes: |
           Compare Melocrinites lævis Golfuss.  Not stated as new but
           other sources credit this one.  Possibly because fragmentary?
+          Niagara Group.
     - taxon: heterocystites
       new: true
       children:
       - taxon: armatus_hall_1852
         new: true
+        notes: Niagara Group
     - taxon: calceocrinus
       new: true
-      notes: Errata and additions; no species defined.
+      notes: Niagara Group. Errata and additions; no species defined.
   - taxon: cystideae
     citedAs: >
       CYSTIDEÆ ... to which the name of Cystidee has been given by
@@ -184,9 +222,11 @@ taxonomies:
           figures:
           - [1, 11]
         new: true
+        notes: Niagara Group.
         children:
         - openTaxon: jewettii-var_hall_1852
           questionable: true
+          notes: Niagara Group.
           illustrations:
           - plate: L
             figures:
@@ -203,15 +243,16 @@ taxonomies:
         notes: |
           Compare Apiocystites pentremitoides, ForBrs, Mem. Geol. Survey
           of Great Britain, 1848, Vol.  li, part ii, pag. 502, pl. xv.
+          Niagara Group.
     - taxon: hemicystites
       pages: 245
       new: true
+      notes: Niagara Group.
       synonyms:
       - tentative: true
         taxon: agelacrinites
         authority:
           source: 1842_vanuxem
-        notes: Only Agelacrinites Vanuxem, non Agelacrinites Forbes.
       non:
       - taxon: agelacrinites
         authority:
@@ -225,6 +266,7 @@ taxonomies:
           - [18, 20]
           - 20†
         new: true
+        notes: Niagara Group.
   - taxon: asteriadae-family
     children:
     - taxon: palaeaster
@@ -232,3 +274,4 @@ taxonomies:
       children:
       - taxon: niagarensis_hall_1852_palaeaster
         new: true
+        notes: Niagara Group.
