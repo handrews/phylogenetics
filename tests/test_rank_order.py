@@ -1,9 +1,10 @@
 """A child of a genus, subgenus or species node in a taxonomy is at a rank
-below its parent's. A node printing no rank word sits where its record's
-rank says, so the record must agree with the tree: an open form under a
-genus is a species, whatever its record says, and an error otherwise.
-Above the genus group a source's scheme is its own (roadmap G8), and
-nothing is checked.
+below its parent's. A node giving no rank of its own sits where its
+record's rank says, so the record must agree with the tree: an open form
+under a genus is a species, whatever its record says, and an error
+otherwise. A node written `rank: null` stands outside the order, and above
+the genus group a source's scheme is its own (roadmap G8), so nothing is
+checked there.
 
 The records and trees are synthetic, built on the loaded test corpus
 (`Taxon` and `Tree` keep class-level registries, so each test gets its
@@ -112,11 +113,16 @@ def test_the_parents_printed_rank_word_is_the_rank_it_sits_at(caplog):
 
 def test_a_node_printing_its_own_rank_word_is_left_to_the_protologue_check(caplog):
   # The source's own rank word is compared with the record where the node
-  # is the protologue; this check reads only a node that prints none, a
-  # `rank: null` node among them.
+  # is the protologue; this check reads only a node that gives none.
   assert _check(_open_under(GENUS, rank='Genus'), rank='genus', caplog=caplog)[0] == []
-  errors, _, root = _check(_open_under(GENUS, rank=None), rank='genus', caplog=caplog)
-  assert errors == [_misplaced(OPEN, 'genus', GENUS, 'genus', f'{root}/0/{OPEN}')]
+
+
+def test_a_null_rank_stands_outside_the_order(caplog):
+  # `rank: null` says the source places the taxon with no rank, so any
+  # rank may sit above or below it, whatever its record says.
+  assert _check(_open_under(GENUS, rank=None), rank='genus', caplog=caplog)[0] == []
+  tree = {'taxon': GENUS, 'rank': None, 'children': [{'openTaxon': OPEN, 'new': True}]}
+  assert _check(tree, rank='genus', caplog=caplog)[0] == []
 
 
 def test_above_the_genus_group_nothing_is_said(caplog):

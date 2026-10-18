@@ -253,22 +253,28 @@ _ORDERED_GROUPS = frozenset({'genus', 'subgenus', 'species', 'subspecies', 'vari
 
 
 def _placed_rank(node):
-  """The rank a node sits at: its printed rank word, else its record's."""
-  return node.data.get('rank') or node.taxon.rank
+  """The rank a node sits at: its printed rank word, or its record's where
+  it gives none; `None` for a node written `rank: null`, which the source
+  places with no rank, so that any rank may sit above or below it."""
+  if 'rank' in node.data:
+    return node.data['rank']
+  return node.taxon.rank
 
 
 def _report_rank_order(roots):
   # A child of a genus, subgenus or species in a taxonomy is at a rank
-  # below its parent's. A node printing no rank word sits where its
+  # below its parent's. A node giving no rank of its own sits where its
   # record's rank says, so the record must agree with the tree: an open
-  # form under a genus is a species, whatever its record says.
+  # form under a genus is a species, whatever its record says. A node
+  # with a rank word is the protologue check's, and one written
+  # `rank: null` stands outside the order.
   misplaced = 0
   for trees in roots.values():
     for root in trees:
       if root.tree_type != Tree.TYPE_TAXONOMY:
         continue
       for node in root.walk():
-        if node.axis != 'children' or node.taxon is None or node.data.get('rank'):
+        if node.axis != 'children' or node.taxon is None or 'rank' in node.data:
           continue
         parent = node.parent
         while parent is not None and parent.taxon is None:
