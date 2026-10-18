@@ -1,5 +1,7 @@
 taxonomies:
-- taxon: blastozoa-class
+- taxon: blastozoa
+  rank: Class
+  translated: true
   children:
   - taxon: eocrinoidea
     rank: Group

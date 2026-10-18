@@ -1558,9 +1558,6 @@ blastozoa:
   bracket: Blastozoans
   authority:
     source: 1973_sprinkle
-blastozoa-class:
-  rank: Class
-  altRankOf: blastozoa
 blastozoa-indeterminate-class_sprinkle_1973:
   name: null
   rank: Class
@@ -4603,9 +4600,6 @@ eocrinoidea:
   status: informal
   auth: [jaekel]
   year: 1918
-eocrinoidae-class:
-  name: Eocrinoidae
-  altSpellingOf: eocrinoidea
 eocrinoidea-incertae-sedis_smith.a.b_1982:
   name: null
   rank: genus
@@ -6921,10 +6915,10 @@ kitchnerensis_sprinkle_1973:
   name: kitchnerensis
   authority:
     source: 1973_sprinkle
-knizeki_fatka_1991:
+knizeki_fatka_kordule_1991:
   name: knizeki
   authority:
-    source: 1991_fatka
+    source: 1991_fatka_kordule
 koenigii_murchison_1839:
   name: koenigii
   authority:

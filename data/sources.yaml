@@ -4024,7 +4024,7 @@ inprep_sprinkle_strimple:
   authors:
   - ubaghs
   - vizcaïno
-1991_fatka:
+1991_fatka_kordule:
   title: Akadocrinus knizeki sp.nov., gogiid eocrinoid from Czechoslovakia (Echinodermata, Middle Cambrian)
   journal: vestnik
   volume: 66
@@ -4033,6 +4033,7 @@ inprep_sprinkle_strimple:
     year: 1991
   authors:
   - fatka
+  - kordule
 1992_sumrall:
   title: Spiraclavus nacoensis, a new species of clavate agelacrinitid edrioasteroid from central Arizona
   journal: jofpaleo
