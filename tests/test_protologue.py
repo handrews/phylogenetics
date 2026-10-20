@@ -1,7 +1,8 @@
 """A taxa record that gives its protologue page agrees with the node marked
 `new` for it, on the fields the node declares (`rank`, `pages`,
 `illustrations`, `citedAs`, `designation`), and gives nothing its tree file lists as
-unused; `citedAs` validates on a record.
+unused; `citedAs` validates on a record; and a record whose protologue source has a tree that uses
+it is flagged `new` there.
 
 The records and trees are synthetic, built on the loaded test corpus
 (`Taxon` and `Tree` keep class-level registries, so each test gets
@@ -15,7 +16,7 @@ import logging
 import pytest
 
 from phylohist.loader import io
-from phylohist.loader.load import _report_protologue_mismatches
+from phylohist.loader.load import _report_missing_protologues, _report_protologue_mismatches
 from phylohist.loader.taxa import Taxon, Tree
 from tests import support
 
@@ -317,3 +318,52 @@ def test_an_unnamed_record_implies_no_rank_by_its_name(caplog):
   # spells its rank, which `_report_rank_order` checks against the parent.
   assert _check_open({'rank': 'species'}, caplog=caplog) == []
   assert _check_open({'rank': 'genus'}, caplog=caplog) == []
+
+
+# -- the protologue flagged `new` ------------------------------------------------
+
+
+def _flagged(*roots, caplog):
+  """The errors and info `_report_missing_protologues` logs for a record
+  whose authority is `SOURCE`, over one tree per root given: `(tree type,
+  fields of the root node)`, the root being the record itself."""
+  Taxon.add({'name': 'testum', 'rank': 'species', 'authority': {'source': SOURCE}}, KEY)
+  trees = [
+    Tree(
+      {'taxon': KEY, **fields},
+      {'source_key': SOURCE, 'type': tree_type, 'position': next(POSITIONS)},
+    )
+    for tree_type, fields in roots
+  ]
+  with caplog.at_level(logging.INFO, logger='phylohist'):
+    caplog.clear()
+    _report_missing_protologues({'trees': {SOURCE: {}}}, {SOURCE: trees})
+  return [r.getMessage() for r in caplog.records if r.levelno == logging.ERROR], [
+    r.getMessage() for r in caplog.records if r.levelno == logging.INFO
+  ]
+
+
+def test_a_tree_using_its_own_record_without_new_is_named(caplog):
+  errors, info = _flagged(('cladogram', {}), caplog=caplog)
+  assert errors == [f'Protologue not flagged: {KEY} in {SOURCE}']
+  assert info == ['1 taxa with an unflagged protologue']
+
+
+def test_a_tree_flagging_its_own_record_new_says_nothing(caplog):
+  errors, info = _flagged(('cladogram', {'new': True}), caplog=caplog)
+  assert errors == []
+  assert info == ['0 taxa with an unflagged protologue']
+
+
+def test_a_record_flagged_new_in_one_tree_is_flagged_for_the_source(caplog):
+  # A cladogram beside the taxonomy that names the record uses it again.
+  roots = (('taxonomy', {'new': True}), ('cladogram', {}))
+  assert _flagged(*roots, caplog=caplog)[0] == []
+
+
+def test_a_tree_that_does_not_use_the_record_says_nothing(caplog):
+  # The part of the source we have not recorded is not an error.
+  Taxon.add({'name': 'testorum', 'rank': 'species', 'authority': {'source': SOURCE}}, 'other')
+  errors, info = _flagged(('taxonomy', {'new': True}), caplog=caplog)
+  assert errors == []
+  assert info == ['0 taxa with an unflagged protologue']
