@@ -222,10 +222,11 @@ def _report_protologue_mismatches(data, roots):
     for node in nodes:
       for field, verb in _PROTOLOGUE_FIELDS:
         if field == 'rank' and field not in node.data:
-          if taxon.name is None:
+          if taxon.name is None or taxon.mineral:
             # An open form or bin has no name to read a rank from; its
             # record spells one, and `_report_rank_order` checks it
-            # against the node's parent.
+            # against the node's parent. A mineral has no rank at all,
+            # and its record says so.
             continue
           # The node leaves a genus or species implicit; the record, which
           # has `pages`, spells its rank, and the two must agree.
@@ -508,6 +509,7 @@ def _report_nomenclature(data):
       for check, args in (
         (nomenclature.compared_links, (node, Taxon.get)),
         (nomenclature.quoted_parent, (node, Taxon.get)),
+        (nomenclature.mineral_fields, (node, Taxon.get)),
         (nomenclature.role_uncertain, (node,)),
         (nomenclature.type_node, (node, is_cited)),
         (nomenclature.children_null, (node, is_cited)),

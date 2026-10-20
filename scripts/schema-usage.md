@@ -194,10 +194,11 @@ property.
 
 | property | data | data % |
 |---|---|---|
-| `taxon` | 5969 | 90.8% |
+| `taxon` | 5968 | 90.7% |
 | `openTaxon` | 248 | 3.8% |
 | `cf` | 15 | 0.2% |
 | `aff` | 14 | 0.2% |
+| `mineralTaxon` | 1 | 0.0% |
 | `designation` | 0 | 0.0% |
 
 ### `illustration` -- 512 instances in `data/`
@@ -436,10 +437,11 @@ property.
 | `altRankOf` | 51 | 1.8% |
 | `vulgarSpellingOf` | 45 | 1.6% |
 | `homonym` | 16 | 0.6% |
-| `needsQualification` | 14 | 0.5% |
+| `needsQualification` | 13 | 0.5% |
 | `bracket` | 9 | 0.3% |
 | `designation` | 4 | 0.1% |
 | `holotype` | 1 | 0.0% |
+| `mineral` | 1 | 0.0% |
 | `status` | 1 | 0.0% |
 
 ### `timeFields` -- 194 instances in `data/`

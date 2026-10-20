@@ -58,10 +58,14 @@ carries `citesAuctt` with its value in place of `citesSource`.
 
 ### `usage`
 
-Emitted for every node that cites a name: `taxon`, `openTaxon`, and for
+Emitted for every node that cites a name: `taxon`, `openTaxon`,
+`mineralTaxon`, and for
 every `synonyms`, `non`, `removed`, `parents`, `or` and `type` entry. Fields added:
 
-- `form`: which field carried the name (`taxon` or `openTaxon`); `bracket`
+- `form`: which field carried the name (`taxon`, `openTaxon` or
+  `mineralTaxon`, the last naming a record with `mineral: true`: a mineral
+  formation's name under which a fossil was once described, which has no
+  rank and which no other field may name); `bracket`
   for a cladogram's bracket, emitted at the start of a bracket span (the
   node with `bracketStart`), with `bracketEnd` the path where the span ends
   (the node with the matching `bracketEnd`; the same path for a one-node
@@ -82,7 +86,7 @@ every `synonyms`, `non`, `removed`, `parents`, `or` and `type` entry. Fields add
   qualifier.
 - `designation`: the phrase the node prints for an open taxon, when it
   declares one (an `openTaxon` node only; the loader rejects it beside
-  `taxon`).
+  `taxon` or `mineralTaxon`).
 - A `synonyms` or `non` entry with no name field of its own is a usage of
   the node's own name by the cited source (the 2020 tree's stacked
   citations of *grayae* are this shape); it carries `ownName: true`.
@@ -429,7 +433,8 @@ closes emits none; the loader reports it). Fields: the shared record (`id`,
   leave a `section` claim out.
 - `name`: the record's `name`, or its `designation` when the name is null.
 - `members`: the record keys of the named siblings in the span, in list
-  order; a sibling with no `taxon` or `openTaxon` is a member by path only.
+  order; a sibling with no `taxon`, `openTaxon` or `mineralTaxon` is a
+  member by path only.
 - `memberPaths`: the path of every sibling in the span, in list order (a
   sibling's subtree is no member).
 - `endPath`: the path of the node that closes the span (the start node's
@@ -552,7 +557,8 @@ each entry's `name`, `type`, `subject`, `within`, `prefixes`, `otherNames` and
 types into its holder and its bare number.
 `claims/names.json` has
 one row per taxon record: name, rank, kind (`primary`, `altSpellingOf`,
-`altRankOf`, `vulgarSpellingOf`, `placeholder`), the base record of a
+`altRankOf`, `vulgarSpellingOf`, `placeholder`), `mineral: true` on a
+mineral formation's name, the base record of a
 variant, the authority as displayed and its resolved source, and the
 folded lookup forms (`phylohist/names.py`). A section has no row there: its
 record is in `data/sections.yaml` and only its `section` claim names it.
@@ -651,7 +657,7 @@ blocks; the CLI (`phylohist <tool>`, `--style`), the MCP server
 
 | tool | answers |
 |---|---|
-| `resolve_name(query, rank)` | which records a printed name can mean, with each record's variants (the same name at other ranks or spellings) and the count of sources with statements about it; empty is the closed-world answer. Unnamed records (bins, open nomenclature) are never found by name: the words in their designation name other taxa. Keys are lowercase; every tool accepts a key in any case, or a printed name that resolves to one record ("Rhenopyrgus grayae", "Pyrgocystis (Rhenopyrgus) coronaeformis", "Pyrgocystis (Rhenopyrgus)"); a name that can mean several records is refused with the candidates |
+| `resolve_name(query, rank)` | which records a printed name can mean, with each record's variants (the same name at other ranks or spellings) and the count of sources with statements about it; empty is the closed-world answer. A mineral formation's name resolves like any named record and is marked `mineral`. Unnamed records (bins, open nomenclature) are never found by name: the words in their designation name other taxa. Keys are lowercase; every tool accepts a key in any case, or a printed name that resolves to one record ("Rhenopyrgus grayae", "Pyrgocystis (Rhenopyrgus) coronaeformis", "Pyrgocystis (Rhenopyrgus)"); a name that can mean several records is refused with the candidates |
 | `resolve_source(query)` | the sources a citation can mean ("Dehm 1961", "Holloway & Jell 1983", "Sumrall et al. 2013", "Fay 1967a"): key, citation, year, authors, entered or not; empty means no source in the corpus is that paper. Every `source` parameter accepts a key or the citation as the blocks print it; a citation that can mean several papers is refused with their keys |
 | `contents(source, record, depth, synonymy)` | a classification block of what a source places under a record; every source that places it when no source is given |
 | `placements(records, sources, years, …)` | the matrix: records as rows (variants folded) with their rank, sources as columns in year order, the parent each gives (a rejection marked "; not X"); the schemes measured in the header |

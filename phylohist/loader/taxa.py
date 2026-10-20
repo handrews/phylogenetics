@@ -200,6 +200,7 @@ class Taxon:
     self._key = taxon_key
     self._name = self._data.get('name')
     self._rank = self._data.get('rank')
+    self._mineral = bool(self._data.get('mineral'))
 
     if 'rank' in self._data and self._rank is None:
       # An explicit null: the protologue placed the taxon with no rank word.
@@ -217,6 +218,7 @@ class Taxon:
       alt = self._known(alt_key, 'alt spelling')
       self._alt = alt
       self._rank = alt.rank
+      self._mineral = alt.mineral
       if 'auth' in self._data or 'authority' in self._data:
         self._authority = Authority(taxon_data)
       else:
@@ -229,6 +231,7 @@ class Taxon:
       latin = self._known(latin_key, 'vulgar spelling')
       self._alt = latin
       self._rank = latin.rank
+      self._mineral = latin.mineral
       if 'auth' in self._data or 'authority' in self._data:
         self._authority = Authority(taxon_data)
       else:
@@ -282,6 +285,8 @@ class Taxon:
       self._data.get('homonym')
       or self._data.get('needsQualification')
       or self.rank in ('species', 'subspecies', 'variety')
+      # A mineral formation's name is keyed as a species is.
+      or self.mineral
     ):
       suffix_expected = expected + '_' + self.authority.taxon_suffix
       expected_set = {suffix_expected}
@@ -302,7 +307,8 @@ class Taxon:
 
   def _check_rank(self):
     if (
-      self.rank in NON_RANKS
+      self.mineral
+      or self.rank in NON_RANKS
       or self.name.lower() == self.name
       or self.key.endswith('-' + self.rank.lower())
     ):
@@ -439,6 +445,12 @@ class Taxon:
   def rank(self):
     # TODO: Handle this properly, it's more complex than it looks
     return self._rank
+
+  @property
+  def mineral(self):
+    # The name of a mineral formation (`mineral: true`): it has no rank,
+    # and a tree names it only through `mineralTaxon`.
+    return self._mineral
 
   @property
   def authority(self):
@@ -667,7 +679,7 @@ _COMBINATION_RANKS = _SPECIES_LEVEL_RANKS | {'subgenus'}
 
 
 class Tree:
-  _NAMED_FIELDS = {'taxon'}
+  _NAMED_FIELDS = {'taxon', 'mineralTaxon'}
   _UNNAMED_FIELDS = {'openTaxon'}
   _ALL_TAXON_FIELDS = _NAMED_FIELDS | _UNNAMED_FIELDS
 
@@ -770,7 +782,7 @@ class Tree:
 
     self._check_metadata()
     self._check_primary_taxon()
-    if 'designation' in self._data and 'taxon' in self._data:
+    if 'designation' in self._data and self._NAMED_FIELDS & self._data.keys():
       logger.error(f'{self} has `designation` but is not an `openTaxon` node')
 
     self._bracket_start = self._check_taxon('bracketStart')

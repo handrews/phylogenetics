@@ -1,5 +1,6 @@
 """Open-nomenclature integrity checks: the `cf`/`aff` link of an open form,
-`quotedParent`, a queried role, the `type` node, and `pages: null`.
+`quotedParent`, the pairing of `mineralTaxon` with a mineral record, a
+queried role, the `type` node, and `pages: null`.
 
 Pure functions over a raw node dict, in the way of `material.py`: the
 loader (`load.py`) runs them over the corpus's own documents and
@@ -7,7 +8,7 @@ loader (`load.py`) runs them over the corpus's own documents and
 ``(level, message)`` pairs, ``level`` being ``'error'`` or ``'warning'``;
 the caller adds the source key and, for a per-node check, the node's path.
 A check that needs a taxon record takes `taxa`, a callable from a taxon
-key to an object with `name` and `rank` (a loaded `Taxon` does), or `None`
+key to an object with `name`, `rank` and `mineral` (a loaded `Taxon` does), or `None`
 for a key with no record; `record_lookup` builds one from the raw
 `data/taxa.yaml` for a caller that has not loaded the corpus.
 """
@@ -20,26 +21,42 @@ from .material import walk_document
 # it is compared with.
 SIGNS = ('cf', 'aff')
 _SPECIES_RANKS = ('species', 'subspecies', 'variety')
-_OWN_FIELDS = ('taxon', 'openTaxon')
+_OWN_FIELDS = ('taxon', 'openTaxon', 'mineralTaxon')
+# The node fields that name a record, `_OWN_FIELDS` and the bracket marks.
+_NAMING_FIELDS = (*_OWN_FIELDS, 'bracketStart', 'bracketEnd')
 # The `fixation` values that a `fixedBy` work or ruling can explain.
 _FIXED_BY_FIXATIONS = ('subsequentDesignation', 'subsequentMonotypy', 'iczn')
 
-_Record = collections.namedtuple('_Record', 'name rank')
+_Record = collections.namedtuple('_Record', 'name rank mineral')
 
 
-def _raw_rank(records, key, seen=()):
-  """The rank `Taxon` would give the raw record: that of the record a
-  spelling is of, else its own `rank`, else a species when its name is
-  lower-case and a genus otherwise; `None` when it has neither."""
+def _base_record(records, key, seen=()):
+  """The raw record a spelling is of, followed to the record that is no
+  spelling; the record itself otherwise."""
   data = records[key]
   for field in ('altSpellingOf', 'vulgarSpellingOf'):
     target = data.get(field)
     if target in records and target not in seen:
-      return _raw_rank(records, target, (*seen, key))
-  if data.get('rank'):
-    return data['rank']
+      return _base_record(records, target, (*seen, key))
+  return data
+
+
+def _raw_rank(records, key):
+  """The rank `Taxon` would give the raw record: that of the record a
+  spelling is of, else its own `rank` (`Unranked` for an explicit null),
+  else a species when its name is lower-case and a genus otherwise; `None`
+  when it has neither."""
+  data = _base_record(records, key)
+  if 'rank' in data:
+    return data['rank'] or 'Unranked'
   name = data.get('name')
   return None if name is None else 'species' if name.islower() else 'genus'
+
+
+def _raw_mineral(records, key):
+  """Whether `Taxon` would read the raw record as a mineral: its own
+  `mineral`, or that of the record a spelling is of."""
+  return bool(_base_record(records, key).get('mineral'))
 
 
 def record_lookup(records):
@@ -48,7 +65,7 @@ def record_lookup(records):
   def lookup(key):
     if key not in records:
       return None
-    return _Record(records[key].get('name'), _raw_rank(records, key))
+    return _Record(records[key].get('name'), _raw_rank(records, key), _raw_mineral(records, key))
 
   return lookup
 
@@ -113,6 +130,29 @@ def quoted_parent(node, taxa):
   if record is None or not record.rank or _is_species_level(record):
     return []
   return [('error', '`quotedParent` on a node that is not a species-level name')]
+
+
+def mineral_fields(node, taxa):
+  """`mineralTaxon` names a record with `mineral: true`, and such a record
+  is named by nothing else (a `type` node included); an error otherwise. A
+  key with no record is another check's."""
+  messages = []
+  for field in _NAMING_FIELDS:
+    key = node.get(field)
+    if not isinstance(key, str):
+      continue
+    record = taxa(key)
+    if record is None:
+      continue
+    if field == 'mineralTaxon' and not record.mineral:
+      messages.append(
+        ('error', f'`mineralTaxon` "{key}" is not a mineral record (`mineral: true`)'),
+      )
+    elif field != 'mineralTaxon' and record.mineral:
+      messages.append(
+        ('error', f'`{field}` "{key}" is a mineral record, which only `mineralTaxon` names'),
+      )
+  return messages
 
 
 def role_uncertain(node):

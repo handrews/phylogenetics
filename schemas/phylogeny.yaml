@@ -476,6 +476,18 @@ $defs:
       - required: [vulgarSpellingOf, name]
     dependentRequired:
       pages: [rank]
+    dependentSchemas:
+      mineral:
+        $comment: A mineral formation's name has no rank, and the record says so.
+        if:
+          properties:
+            mineral:
+              const: true
+        then:
+          required: [rank]
+          properties:
+            rank:
+              type: "null"
     properties:
       bracket:
         ### TODO: Replace this property name (roadmap B7: to be renamed `vernacular`)
@@ -488,7 +500,8 @@ $defs:
           spells its rank, and a node giving no rank of its own under a
           genus, subgenus or species is at a rank below its parent's; a
           node written `rank: null` stands outside that order (the loader
-          checks this).
+          checks this). A record with `mineral: true` writes `rank: null`:
+          a mineral formation's name has no rank.
         oneOf:
         - $ref: "#/$defs/rank"
         - type: "null"
@@ -507,6 +520,14 @@ $defs:
         type: string
         minLength: 1
       needsQualification:
+        type: boolean
+        default: false
+      mineral:
+        description: |
+          The name of a mineral formation under which a fossil was once
+          described, as a later synonymy cites it. It has no rank, written
+          `rank: null`, and a tree names it only through `mineralTaxon`
+          (the loader checks both).
         type: boolean
         default: false
       originalParent:
@@ -746,6 +767,13 @@ $defs:
         type: string
       openTaxon:
         type: string
+      mineralTaxon:
+        description: |
+          The key of a record with `mineral: true`, a fossil this source
+          cites under a mineral formation's name, in place of `taxon`. The
+          loader rejects it on any other record, and such a record under
+          `taxon`, `openTaxon`, `bracketStart`, `bracketEnd` or `type`.
+        type: string
       cf:
         description: |
           The taxon this open form is compared with, "cf." for a provisional
@@ -759,7 +787,8 @@ $defs:
       designation:
         description: |
           The phrase this source prints for an open taxon; only on an
-          `openTaxon` node (the loader rejects it beside `taxon`).
+          `openTaxon` node (the loader rejects it beside `taxon` or
+          `mineralTaxon`).
         type: string
         minLength: 1
 

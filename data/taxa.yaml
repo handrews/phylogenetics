@@ -6877,7 +6877,7 @@ kailidiscus-sp_jell_sprinkle_2021:
 kalckballar_tilas_1740:
   name: kalckballar
   citedAs: kalckbållar
-  needsQualification: true  # To get it to look like a species
+  mineral: true
   rank: null
   authority:
     source: 1740_tilas

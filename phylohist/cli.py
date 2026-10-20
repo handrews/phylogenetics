@@ -233,7 +233,8 @@ def _print_resolved(result, style):
     print('(no record in the corpus carries this name)')
     return
   for c in result:
-    line = f'{c["key"]}  {c["name"] or "[placeholder]"} ({c["rank"]}, {c["kind"]}'
+    rank = 'mineral' if c.get('mineral') else c['rank']
+    line = f'{c["key"]}  {c["name"] or "[placeholder]"} ({rank}, {c["kind"]}'
     if c.get('of'):
       line += f', of {c["of"]}'
     line += f'); {c.get("authority") or "authority not recorded"}; '
