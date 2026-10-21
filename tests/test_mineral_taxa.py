@@ -58,8 +58,7 @@ ONLY_MINERAL_TAXON = '`{}` "{}" is a mineral record, which only `mineralTaxon` n
 def registries(monkeypatch):
   """Private copies of the class-level registries a `Tree` writes to, with
   the synthetic records loaded."""
-  for name in ('_taxon_index', '_new_index', '_author_index'):
-    monkeypatch.setattr(Tree, name, collections.defaultdict(set))
+  monkeypatch.setattr(Tree, '_new_index', collections.defaultdict(set))
   monkeypatch.setattr(Tree, '_type_index', {k: set() for k in Tree._type_index})
   monkeypatch.setattr(Taxon, '_taxa', dict(Taxon._taxa))
   for key, record in RECORDS.items():

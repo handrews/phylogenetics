@@ -104,6 +104,7 @@ property.
 | `chapter` | 2 | 0.5% |
 | `translationOf` | 2 | 0.5% |
 | `translations` | 2 | 0.5% |
+| `/oneOf/3.inPrep` | 1 | 100.0% |
 | `editors` | 1 | 0.3% |
 | `inPrep` | 1 | 0.3% |
 | `processDates.printed` | 1 | 1.0% |

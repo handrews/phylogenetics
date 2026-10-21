@@ -39,7 +39,17 @@ TREE_DEF = 'treeDocument'
 
 
 class LoadError(ValueError):
-  """The schema or a data file failed validation; the errors were logged."""
+  """The schema or a data file failed validation, or a record the load
+  cannot continue without is missing; the errors were logged."""
+
+
+def fail(message, reason):
+  """Log `message` as an error, on the caller's line, and end the load with
+  `LoadError(reason)`: for a data problem the load cannot continue past,
+  which stops it at once, as a file that fails the schema does, instead of
+  being counted with the rest (`load.load`)."""
+  logger.error(message, stacklevel=2)
+  raise LoadError(reason)
 
 
 class _Checks:

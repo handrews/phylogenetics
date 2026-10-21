@@ -2,7 +2,7 @@ import collections
 import logging
 from functools import cached_property, reduce
 
-from .io import LoadError
+from .io import fail
 from .research import Author, Source
 
 logger = logging.getLogger(__name__)
@@ -67,18 +67,29 @@ def _check_unregistered_author(author_string, where=None):
 
 
 class Authority:
-  def __init__(self, data):
+  def __init__(self, data, where=None):
+    """`where` names the record the authority is on (`taxa.yaml <key>`),
+    for the errors; a record the authority needs and cannot find ends the
+    load (`io.fail`)."""
     self._source = None
+    at = f' at {where}' if where is not None else ''
 
     if a := data.get('authority'):
-      source_key = a['source']
+      source_key = a.get('source')
+      if source_key is None:
+        # The general authority shape admits `auctt` in place of a source;
+        # only an `ex` can be written so, and the loader reads a source.
+        fail(f'Authority{at} has an `ex` with no source', 'an ex authority needs a source')
       self._source = Source.get(source_key)
       if not self._source:
-        logger.error(f'Authority source "{source_key}" not recognized')
+        fail(
+          f'Authority source "{source_key}" not recognized{at}',
+          f'authority source "{source_key}" has no source record',
+        )
 
       self._source_authors = self._source.authors
       if 'attributedTo' in a:
-        self._authors = self._find_authors(a['attributedTo'])
+        self._authors = self._find_authors(a['attributedTo'], at)
       else:
         self._authors = None
 
@@ -89,31 +100,29 @@ class Authority:
         self._disambiguator = self.source.disambiguator
 
       if 'ex' in a:
-        self._ex = Authority({'authority': a['ex']})
+        self._ex = Authority({'authority': a['ex']}, where=where)
       else:
         self._ex = None
 
     else:
       if not data['auth']:
+        # The record names no author (`auth: []`): the author is unknown.
         self._source_authors = None
         self._authors = None
       else:
-        auth_authors = self._find_authors(data['auth'])
+        auth_authors = self._find_authors(data['auth'], at)
         if 'in' in data:
-          self._source_authors = self._find_authors(data['in'])
+          self._source_authors = self._find_authors(data['in'], at)
           self._authors = auth_authors
         else:
           self._source_authors = auth_authors
           self._authors = None
-        self._year = data.get('year')
-
-        assert 'ex' not in data, "TODO: 'ex' outside of 'authority'"
-        self._ex = None
-
+      self._ex = None
       self._year = data.get('year')
 
     if self._year:
-      for a in self._source_authors:
+      # A record naming no author has no lifespan to check.
+      for a in self._source_authors or ():
         if (
           not a.could_publish_in(self._year)
           and not (a.surname == 'Klein' and self._year == 1778)
@@ -127,14 +136,14 @@ class Authority:
 
   def __str__(self):
     # TODO: Figure out when/how to add disambiguating intitials.
-    string = ', '.join([a.surname for a in self.authors])
+    string = ', '.join([a.surname for a in self.authors or ()])
     if self.attribution_differs_from_source:
       string += ' in ' + ', '.join([a.surname for a in self.source_authors])
     if self._year:
-      string = f'{string} {self._year}'
+      string = f'{string} {self._year}' if string else str(self._year)
     return string
 
-  def _find_authors(self, author_strings):
+  def _find_authors(self, author_strings, at=''):
     authors = []
     for author_string in author_strings:
       if author_string == 'et al.':
@@ -146,7 +155,10 @@ class Authority:
         authors.append(Author({'surname': author_string}))
       else:
         if not (author := Author.get(author_string)):
-          logger.error(f'Author for author key {author_string} not found!')
+          fail(
+            f'Author for author key {author_string} not found!{at}',
+            f'author key "{author_string}" has no author record',
+          )
         authors.append(author)
     return tuple(authors)
 
@@ -198,6 +210,7 @@ class Taxon:
   def __init__(self, taxon_data, taxon_key):
     self._data = taxon_data
     self._key = taxon_key
+    where = f'taxa.yaml {taxon_key}'
     self._name = self._data.get('name')
     self._rank = self._data.get('rank')
     self._mineral = bool(self._data.get('mineral'))
@@ -207,8 +220,11 @@ class Taxon:
       self._rank = 'Unranked'
     if not self._rank:
       if self._name is None:
-        logger.error(f'Unnamed, unranked taxon {taxon_key}!')
-
+        # The schema requires `rank` on a null-name record; this is the backstop.
+        fail(
+          f'Unnamed, unranked taxon {taxon_key}!',
+          f'taxon {taxon_key} has neither a name nor a rank',
+        )
       self._rank = 'species' if self._name.islower() else 'genus'
       # TODO: Figure out if homonym/originalParent/needsQualification relevant.
 
@@ -220,7 +236,7 @@ class Taxon:
       self._rank = alt.rank
       self._mineral = alt.mineral
       if 'auth' in self._data or 'authority' in self._data:
-        self._authority = Authority(taxon_data)
+        self._authority = Authority(taxon_data, where=where)
       else:
         self._authority = alt.authority
       for field in ('homonym', 'originalParent', 'needsQualification'):
@@ -233,7 +249,7 @@ class Taxon:
       self._rank = latin.rank
       self._mineral = latin.mineral
       if 'auth' in self._data or 'authority' in self._data:
-        self._authority = Authority(taxon_data)
+        self._authority = Authority(taxon_data, where=where)
       else:
         self._authority = latin.authority
 
@@ -245,13 +261,13 @@ class Taxon:
       else:
         self._name = alt.name
       if 'auth' in self._data or 'authority' in self._data:
-        self._authority = Authority(taxon_data)
+        self._authority = Authority(taxon_data, where=where)
       else:
         self._authority = alt.authority
 
     else:
       self._alt = None
-      self._authority = Authority(taxon_data)
+      self._authority = Authority(taxon_data, where=where)
 
     if self._name is not None:
       expected = self._name.lower()
@@ -270,8 +286,10 @@ class Taxon:
     fails the schema does."""
     target = Taxon.get(target_key)
     if target is None:
-      logger.error(f'Taxon {self._key} {relation} of unknown {target_key}')
-      raise LoadError(f'taxon {self._key} is a {relation} of an unknown record')
+      fail(
+        f'Taxon {self._key} {relation} of unknown {target_key}',
+        f'taxon {self._key} is a {relation} of an unknown record',
+      )
     return target
 
   def _check_expected_taxon(self, expected):
@@ -490,7 +508,7 @@ class Section:
       logger.error(f'Unnamed section {section_key} has no designation!')
     # A section may leave its attribution to the work that prints it.
     if 'authority' in section_data or 'auth' in section_data:
-      self._authority = Authority(section_data)
+      self._authority = Authority(section_data, where=f'sections.yaml {section_key}')
     else:
       self._authority = None
 
@@ -713,47 +731,13 @@ class Tree:
   )
   CITED_AXES = frozenset(axis.name for axis in RELATED_AXES if axis.cited)
 
-  _taxon_index = collections.defaultdict(set)
   _new_index = collections.defaultdict(set)
-  _author_index = collections.defaultdict(set)
   _type_index = {
     TYPE_TAXONOMY: set(),
     TYPE_CLADOGRAM: set(),
     TYPE_DIAGRAM: set(),
     TYPE_OTHER: set(),
   }
-
-  @classmethod
-  def find(
-    cls,
-    taxa=frozenset(),
-    authors=frozenset(),
-    tree_types=frozenset(),
-  ):
-    if not taxa and not authors:
-      return frozenset()
-
-    trees = set()
-    if tree_types:
-      for t in cls._type_index.keys() & tree_types:
-        trees |= cls._type_index[t]
-    else:
-      for typed_set in cls._type_index.values():
-        trees |= typed_set
-
-    if taxa:
-      taxa_trees = set()
-      for k in cls._taxon_index.keys() & taxa:
-        taxa_trees |= cls._taxon_index[k]
-      trees &= taxa_trees
-
-    if authors:
-      author_trees = set()
-      for k in cls._author_index.keys() & authors:
-        author_trees |= cls._author_index[k]
-      trees &= author_trees
-
-    return trees
 
   def __init__(
     self,
@@ -762,14 +746,12 @@ class Tree:
     parent=None,
     relpath=(),
   ):
-    if (tree_metadata, parent) == (None, None) or (
-      tree_metadata is not None and parent is not None
-    ):
-      logger.error(
-        'Tree nodes must have either a parent or metadata, but not both!',
-      )
+    # Programming errors, not data errors: a root takes metadata, any other
+    # node its parent and a relative path.
+    if (tree_metadata is None) == (parent is None):
+      raise TypeError('a Tree node takes either metadata (a root) or a parent, not both or neither')
     if parent is not None and relpath == ():
-      logger.error('Non-root nodes must have a non-root relative path')
+      raise TypeError('a non-root Tree node needs a non-empty relative path')
 
     self._data = tree_data
     self._metadata = tree_metadata
@@ -833,9 +815,6 @@ class Tree:
           'only a taxon above the species says the tree stops'
         )
 
-      if self._taxon.name:
-        Tree._taxon_index[self._taxon.name].add(self.root)
-
       # A slip of the pen is where the name it prints appears, so the node
       # under `lapsus` is that name's protologue whether or not the slip
       # also claimed it as new.
@@ -845,12 +824,6 @@ class Tree:
       for author_string in self._data.get('auth') or ():
         if author_string.lower() != author_string:
           _check_unregistered_author(author_string, where=self)
-
-      # For now, only registered authors are supported in order to use
-      # their unique keys.  TODO: Better options.
-      if self._taxon.authority.source:
-        for author in self._taxon.authority.source.authors:
-          Tree._author_index[author.key].add(self.root)
 
     if self._parent is None:
       self._pair_brackets()
@@ -955,13 +928,19 @@ class Tree:
 
   def _check_metadata(self):
     if self._metadata:
+      # `_load_trees` skips a file with no source record and the schema fixes
+      # the tree types, so these fire only for synthetic metadata; every node
+      # hashes by its source, so neither can be logged and passed over.
       self._source = Source.get(self._metadata['source_key'])
       if self._source is None:
-        logger.error(f'Tree source {self._metadata["source_key"]} not recognized!')
+        fail(
+          f'Tree source {self._metadata["source_key"]} not recognized!',
+          f'tree of "{self._metadata["source_key"]}" has no source record',
+        )
 
       self._type = self._metadata['type']
-      if self._type not in Tree._type_index:
-        logger.error(f'Unrecognized tree type {self._type}')
+      if self._type not in Tree.TYPES:
+        fail(f'Unrecognized tree type {self._type}', f'unknown tree type "{self._type}"')
 
       self._position = self._metadata['position']
 
@@ -970,12 +949,8 @@ class Tree:
       self._type = self._parent._type
       self._position = self._parent._position
 
-  def _check_taxon(self, field, index=None):
-    if index is None:
-      taxon_key = self._data.get(field)
-    else:
-      taxon_key = self._data['field'][index]
-
+  def _check_taxon(self, field):
+    taxon_key = self._data.get(field)
     if taxon_key:
       taxon = Taxon.get(taxon_key)
       if taxon is None:
@@ -989,7 +964,7 @@ class Tree:
         )
       if field in self._UNNAMED_FIELDS and taxon.name:
         logger.error(
-          f'Taxon {self._taxon} at {self}/{field} expected to not be named.',
+          f'Taxon {taxon} at {self}/{field} expected to not be named.',
         )
       return taxon
     return None

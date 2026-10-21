@@ -82,7 +82,7 @@ _RECORDS = (
   (Taxon, '_taxa'),
   (Section, '_sections'),
 )
-_INDEXES = ('_taxon_index', '_new_index', '_author_index')
+_INDEXES = ('_new_index',)
 
 
 def snapshot():

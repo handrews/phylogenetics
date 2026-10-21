@@ -158,8 +158,10 @@ def test_an_unknown_spelling_or_rank_target_is_named(field, relation, caplog):
 
   with caplog.at_level(logging.ERROR, logger='phylohist'), pytest.raises(LoadError):
     Taxon.add({'name': 'Testum', field: 'nobody_nowhere'}, 'testum')
-  [message] = [r.getMessage() for r in caplog.records if r.levelno == logging.ERROR]
-  assert message == f'Taxon testum {relation} of unknown nobody_nowhere'
+  [record] = [r for r in caplog.records if r.levelno == logging.ERROR]
+  assert record.getMessage() == f'Taxon testum {relation} of unknown nobody_nowhere'
+  # `io.fail` logs on the check's own line.
+  assert (record.filename, record.funcName) == ('taxa.py', '_known')
   assert Taxon.get('testum') is None
 
 
@@ -268,3 +270,213 @@ def test_tree_without_a_source_record_is_skipped(monkeypatch):
     load()
   _, roots = load(tolerate=True)
   assert roots == {}
+
+
+# -- a record the load cannot continue without ------------------------------
+#
+# These checks used to log the error and go on to dereference the `None` they
+# had reported, so a typo in a key ended the load in an AttributeError. Each
+# now ends it in a `LoadError` naming the record (`io.fail`), with whatever
+# was logged before it.
+
+
+def _errors(caplog):
+  return [r.getMessage() for r in caplog.records if r.levelno >= logging.ERROR]
+
+
+def test_fail_logs_the_detail_on_the_callers_line_and_raises_the_reason(caplog):
+  import inspect
+
+  from phylohist.loader import io
+
+  with (
+    caplog.at_level(logging.ERROR, logger='phylohist'),
+    pytest.raises(io.LoadError, match='^why$'),
+  ):
+    line = inspect.currentframe().f_lineno + 1
+    io.fail('what', 'why')
+  [record] = [r for r in caplog.records if r.levelno >= logging.ERROR]
+  assert (record.getMessage(), record.filename, record.lineno) == ('what', 'test_load.py', line)
+
+
+@pytest.mark.parametrize('kind, file', [('Taxon', 'taxa.yaml'), ('Section', 'sections.yaml')])
+def test_an_authority_source_with_no_record_ends_the_load(kind, file, caplog):
+  # The record's authors and year are the source's, so there is nothing to
+  # build without it; the error names the record.
+  from phylohist.loader import LoadError, taxa
+
+  cls = getattr(taxa, kind)
+  with (
+    caplog.at_level(logging.ERROR, logger='phylohist'),
+    pytest.raises(LoadError, match='authority source "1899_nobody" has no source record'),
+  ):
+    cls.add({'name': 'Testum', 'authority': {'source': '1899_nobody'}}, 'testum')
+  assert _errors(caplog) == [f'Authority source "1899_nobody" not recognized at {file} testum']
+  assert cls.get('testum') is None
+
+
+def test_an_ex_authority_without_a_source_ends_the_load(caplog):
+  # `ex` takes the general authority shape, which admits `auctt` in place of
+  # a source; the loader reads a source from it, so one without is an error
+  # rather than a KeyError.
+  from phylohist.loader import LoadError
+  from phylohist.loader.taxa import Taxon
+
+  record = {'name': 'Testum', 'authority': {'source': '1758_linnaeus', 'ex': {'auctt': True}}}
+  with (
+    caplog.at_level(logging.ERROR, logger='phylohist'),
+    pytest.raises(LoadError, match='an ex authority needs a source'),
+  ):
+    Taxon.add(record, 'testum')
+  assert _errors(caplog) == ['Authority at taxa.yaml testum has an `ex` with no source']
+
+
+@pytest.mark.parametrize(
+  'record',
+  [
+    {'name': 'Testum', 'auth': ['nobody'], 'year': 1850},
+    {
+      'name': 'testa',
+      'rank': 'species',
+      'authority': {'source': '1758_linnaeus', 'attributedTo': ['nobody']},
+    },
+  ],
+)
+def test_an_author_key_with_no_record_ends_the_load(record, caplog):
+  # Whether the key is in `auth` (the lifespan check reads the author) or in
+  # `attributedTo` (the key check reads it), the load stops at the lookup.
+  from phylohist.loader import LoadError
+  from phylohist.loader.taxa import Taxon
+
+  with (
+    caplog.at_level(logging.ERROR, logger='phylohist'),
+    pytest.raises(LoadError, match='author key "nobody" has no author record'),
+  ):
+    Taxon.add(record, 'testum')
+  assert _errors(caplog) == ['Author for author key nobody not found! at taxa.yaml testum']
+  assert Taxon.get('testum') is None
+
+
+def test_a_source_author_with_no_record_ends_the_load(caplog):
+  from phylohist.loader import LoadError
+  from phylohist.loader.research import Source
+
+  data = {**Source.get('1758_linnaeus')._data, 'authors': ['nobody']}
+  with (
+    caplog.at_level(logging.ERROR, logger='phylohist'),
+    pytest.raises(LoadError, match='source 1758_nobody names author "nobody", which has no record'),
+  ):
+    Source.add(data, '1758_nobody')
+  assert _errors(caplog) == ['Author "nobody" not found for source_data 1758_nobody!']
+  assert Source.get('1758_nobody') is None
+
+
+def test_an_author_key_is_built_from_the_surname(caplog):
+  # `person` allows a surname or a given name alone: without a surname there
+  # is no key form, so the load stops; without a given name the key is the
+  # bare surname.
+  from phylohist.loader import LoadError
+  from phylohist.loader.research import Author
+
+  with (
+    caplog.at_level(logging.ERROR, logger='phylohist'),
+    pytest.raises(LoadError, match='author nobody has no surname'),
+  ):
+    Author.add({'given': 'Nobody'}, 'nobody')
+  assert _errors(caplog) == ['Author "nobody" has no surname!']
+  assert Author.get('nobody') is None
+  Author.add({'surname': 'Somebody'}, 'somebody')
+  assert _errors(caplog) == ['Author "nobody" has no surname!']
+  assert Author.get('somebody').surname == 'Somebody'
+
+
+def test_an_unnamed_record_spells_its_rank(caplog):
+  # Without a name there is no genus or species to read a rank from: the
+  # schema requires `rank` on a null-name record, and the loader stops on
+  # one that slipped through.
+  from phylohist.loader import LoadError
+  from phylohist.loader.taxa import Taxon
+  from tests import support
+
+  check = support.schema()['taxa'].check
+  unnamed = {'name': None, 'authority': {'source': '1758_linnaeus'}}
+  assert not check({'testum-sp': unnamed})
+  assert check({'testum-sp': {**unnamed, 'rank': 'genus'}})
+  assert check({'testum-sp': {**unnamed, 'rank': None}})
+  with (
+    caplog.at_level(logging.ERROR, logger='phylohist'),
+    pytest.raises(LoadError, match='taxon testum-sp has neither a name nor a rank'),
+  ):
+    Taxon.add(unnamed, 'testum-sp')
+  assert 'Unnamed, unranked taxon testum-sp!' in _errors(caplog)
+  assert Taxon.get('testum-sp') is None
+
+
+def test_a_record_naming_no_author_loads(caplog):
+  # `auth: []` says the author is unknown: the suffix is `unknown`, the
+  # authority prints as its year alone, and there is no lifespan to check.
+  from phylohist.loader.taxa import Taxon
+
+  with caplog.at_level(logging.ERROR, logger='phylohist'):
+    Taxon.add({'name': 'testa', 'rank': 'species', 'auth': [], 'year': 1850}, 'testa_unknown_1850')
+  assert _errors(caplog) == []
+  authority = Taxon.get('testa_unknown_1850').authority
+  assert authority.authors is None
+  assert (str(authority), authority.taxon_suffix) == ('1850', 'unknown_1850')
+  assert str(Taxon.get('hamptonii_unknown').authority) == ''
+
+
+def test_a_tree_needs_metadata_or_a_parent():
+  # A programming error, not a data error: it raises instead of logging.
+  from phylohist.loader.taxa import Tree
+
+  with pytest.raises(TypeError):
+    Tree({'taxon': 'rhenopyrgus'})
+
+
+@pytest.mark.parametrize(
+  'metadata, reason',
+  [
+    (
+      {'source_key': '1899_nobody', 'type': 'taxonomy'},
+      'tree of "1899_nobody" has no source record',
+    ),
+    ({'source_key': '1961_dehm', 'type': 'table'}, 'unknown tree type "table"'),
+  ],
+)
+def test_a_root_needs_a_source_record_and_a_known_type(metadata, reason, caplog):
+  # Every node hashes by its source, so a root whose metadata names no
+  # source record (or a type the loader does not know) cannot be built.
+  from phylohist.loader import LoadError
+  from phylohist.loader.taxa import Tree
+
+  with caplog.at_level(logging.ERROR, logger='phylohist'), pytest.raises(LoadError, match=reason):
+    Tree({'taxon': 'rhenopyrgus'}, {**metadata, 'position': 0, 'file_unused': ()})
+  assert len(_errors(caplog)) == 1
+
+
+def test_a_missing_record_ends_the_load_whatever_tolerate_says(monkeypatch, caplog):
+  # The checks before the stop have reported; the stop itself is the reason
+  # raised, not the count, and `tolerate` cannot see past it.
+  import importlib
+
+  from phylohist.loader import LoadError, load
+
+  loading = importlib.import_module('phylohist.loader.load')
+
+  def broken(drafts=False, **_):
+    logging.getLogger('phylohist.loader.taxa').error('a check fired')
+    data = {k: {} for k in ('authors', 'publications', 'sources', 'sections', 'trees')}
+    data['taxa'] = {'testum': {'name': 'Testum', 'authority': {'source': '1899_nobody'}}}
+    return data
+
+  monkeypatch.setattr(loading, 'load_files', broken)
+  with (
+    caplog.at_level(logging.ERROR, logger='phylohist'),
+    pytest.raises(LoadError, match='authority source "1899_nobody" has no source record'),
+  ):
+    load(tolerate=True)
+  assert _errors(caplog) == [
+    'a check fired',
+    'Authority source "1899_nobody" not recognized at taxa.yaml testum',
+  ]

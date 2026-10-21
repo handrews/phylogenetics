@@ -271,7 +271,10 @@ def main(argv):
   parser.add_argument(
     '--tolerate',
     action='store_true',
-    help='write the claims even when the load logs integrity errors; the exit status is still 1',
+    help=(
+      'write the claims even when the load logs integrity errors (a record the load cannot '
+      'continue without still stops it); the exit status is still 1'
+    ),
   )
   parser.add_argument(
     '--errors-only',
