@@ -16,8 +16,9 @@ import contextlib
 import json
 import logging
 
+from ..derivatives import kind_of
 from . import material, nomenclature
-from .io import DATA_DIR, TREE_DIR, LoadError, display_path, load_files
+from .io import DATA_DIR, TREE_DIR, LoadError, display_path, fail, load_files
 from .research import Author, Publication, Source
 from .taxa import RANKS, Section, Taxon, Tree
 
@@ -48,22 +49,35 @@ def _load_sources(data):
 
 def _load_taxa(data):
   logger.info(f'Processing {len(data["taxa"])} taxa...')
-  deferred = []
-  deferring_fields = frozenset(
-    {
-      'altRankOf',
-      'altSpellingOf',
-      'vulgarSpellingOf',
-    }
-  )
+  # A derivative is built after its target, wherever the file puts them.
+  waiting = {}
   for taxon_key, taxon_data in data['taxa'].items():
-    if taxon_data.keys() & deferring_fields:
-      deferred.append((taxon_key, taxon_data))
-      continue
-    Taxon.add(taxon_data, taxon_key)
-  for taxon_key, taxon_data in deferred:
-    Taxon.add(taxon_data, taxon_key)
+    if kind_of(taxon_data) is None:
+      Taxon.add(taxon_data, taxon_key)
+    else:
+      waiting[taxon_key] = taxon_data
+  while waiting:
+    _add_derivative(next(iter(waiting)), waiting)
   logger.info('...taxa processed.')
+
+
+def _add_derivative(taxon_key, waiting, chain=()):
+  """Build the derivative `taxon_key` out of `waiting`, its target first
+  when that is waiting too; a target that closes a loop ends the load, and
+  one with no record is `Taxon._known`'s to report."""
+  taxon_data = waiting.pop(taxon_key)
+  kind = kind_of(taxon_data)
+  target_key = taxon_data[kind.field]
+  if target_key == taxon_key or target_key in chain:
+    loop = (*chain[chain.index(target_key) :], taxon_key) if target_key in chain else (taxon_key,)
+    fail(
+      f'Taxon {taxon_key} {kind.relation} of {target_key} closes a loop: '
+      + ' -> '.join((*loop, target_key)),
+      f'taxon {taxon_key} is in a loop of derivative records',
+    )
+  if target_key in waiting:
+    _add_derivative(target_key, waiting, (*chain, taxon_key))
+  Taxon.add(taxon_data, taxon_key)
 
 
 def _report_merge_targets(data):

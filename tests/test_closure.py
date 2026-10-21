@@ -89,6 +89,17 @@ def test_schemes_for_rhenopyrgidae(closure):
   assert schemes[0]['lastYear'] >= schemes[-1]['lastYear']
 
 
+def test_a_parent_and_its_spellings_are_one_scheme(closure):
+  # Sprinkle 1973 places Lepidocystis in Lepidocystidae and Nardin et al.
+  # 2017 in Lepidocystoidae, a spelling of it: one position, not two, and
+  # the same from either spelling (`family` closes over the variants).
+  [scheme] = closure.schemes(['lepidocystis'])
+  assert [p['key'] for p in scheme['parents']] == ['lepidocystidae', 'lepidocystoidae']
+  assert scheme['papers'] == 2 and scheme['firstYear'] == 1973
+  assert closure.family('lepidocystoidae') == closure.family('lepidocystidae')
+  assert 'lepidocystoidae' in closure.family('lepidocystoidea-family')
+
+
 def test_measurement_of_rhenopyrgus(closure):
   m = closure.measurement('rhenopyrgus')
   assert m['records'] == ['rhenopyrgus', 'rhenopyrgus-subgenus']

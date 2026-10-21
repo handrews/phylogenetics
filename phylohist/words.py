@@ -12,6 +12,7 @@ import re
 
 from . import blocks
 from .acts import RELATED_ACTS
+from .derivatives import BY_FIELD
 from .names import fold, fold_forms, key_stem
 
 # The community's words for what the table records.
@@ -857,12 +858,17 @@ class Words:
 
   def variant_words(self, key, base):
     """How a record reached by a variant edge relates to the record it
-    is a variant of: a spelling at the same rank, or the name at another
-    rank."""
-    of = self.store.names[key].get('of') == base or self.store.names[base].get('of') == key
+    is a variant of: by the kind of the link between them, read from
+    whichever end carries it (`derivatives.KINDS`), or, with no link, the
+    same name at the same or another rank."""
+    names = self.store.names
+    if names[key].get('of') == base and (kind := BY_FIELD.get(names[key].get('kind'))):
+      return f'{kind.words} {self.display(base)}'
+    if names[base].get('of') == key and (kind := BY_FIELD.get(names[base].get('kind'))):
+      return f'{kind.reverse} {self.display(base)}'
     same_rank = (self.store.rank(key) or '').lower() == (self.store.rank(base) or '').lower()
     if same_rank:
-      return f'{"spelling" if of else "same name"} variant of {self.display(base)}'
+      return f'same name variant of {self.display(base)}'
     return f'same name at another rank as {self.display(base)}'
 
   def attribution_words(self, printed):

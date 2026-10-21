@@ -556,10 +556,12 @@ each entry's `name`, `type`, `subject`, `within`, `prefixes`, `otherNames` and
 `place` as present: the store reads it to split a catalog number a reader
 types into its holder and its bare number.
 `claims/names.json` has
-one row per taxon record: name, rank, kind (`primary`, `altSpellingOf`,
-`altRankOf`, `vulgarSpellingOf`, `placeholder`), `mineral: true` on a
-mineral formation's name, the base record of a
-variant, the authority as displayed and its resolved source, and the
+one row per taxon record: name, rank, kind (`primary`; for a derivative
+the field naming its target, `altSpellingOf`, `altGenderOf`,
+`latinSpellingOf`, `vulgarSpellingOf` or `altRankOf`, as
+`phylohist/derivatives.py` lists them; `placeholder`), `mineral: true` on a
+mineral formation's name, the record a variant derives from (`of`, one
+link, which may itself be a variant), the authority as displayed and its resolved source, and the
 folded lookup forms (`phylohist/names.py`). A section has no row there: its
 record is in `data/sections.yaml` and only its `section` claim names it.
 Each manifest source row

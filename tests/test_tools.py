@@ -331,6 +331,60 @@ def test_rank_variants_linked(store):
   assert claim['rankVariants'] == ['diploporita-order', 'diploporita-suborder']
 
 
+def test_candidates_sort_primary_then_derivatives_then_placeholders():
+  from phylohist import resolve
+
+  assert resolve._KIND_ORDER == {
+    'primary': 0,
+    'altRankOf': 1,
+    'altSpellingOf': 2,
+    'altGenderOf': 2,
+    'latinSpellingOf': 2,
+    'vulgarSpellingOf': 3,
+    'placeholder': 4,
+  }
+
+
+def test_variant_words_read_the_kind_of_the_link(store, monkeypatch):
+  # The wording follows the kind of the `of` link, from whichever end
+  # carries it; two records that share a name with no link are "the same
+  # name" at the same or another rank.
+  rows = {
+    'testen': {'name': 'Testen', 'rank': 'Family', 'kind': 'primary', 'lang': 'DE'},
+    'testidae': {'name': 'Testidae', 'rank': 'Family', 'kind': 'latinSpellingOf', 'of': 'testen'},
+    'testidaea': {'name': 'Testidaea', 'rank': 'Family', 'kind': 'altGenderOf', 'of': 'testidae'},
+    'testidae-again': {'name': 'Testidae', 'rank': 'Family', 'kind': 'primary'},
+    'testidae-order': {'name': 'Testidae', 'rank': 'Order', 'kind': 'primary'},
+  }
+  for key, row in rows.items():
+    monkeypatch.setitem(store.names, key, {**row, 'folded': []})
+  words = store.words.variant_words
+  assert words('testidae', 'testen') == 'Latin form of Testen'
+  assert words('testen', 'testidae') == 'vernacular form of Testidae'
+  assert words('testidaea', 'testidae') == 'gender variant of Testidae'
+  assert words('testidae', 'testidaea') == 'gender variant of Testidaea'
+  assert words('testidae-again', 'testidae') == 'same name variant of Testidae'
+  assert words('testidae-order', 'testidae') == 'same name at another rank as Testidae'
+
+
+def test_variants_are_followed_as_far_as_the_links_go(store, closure):
+  # Lepidocystoidae and Lepidocystoidea are each a spelling of
+  # Lepidocystidae: a question about either covers the other through the
+  # base, from any member alike, and the resolver says so.
+  family = ['lepidocystidae', 'lepidocystoidae', 'lepidocystoidea', 'lepidocystoidea-family']
+  for key in family:
+    assert store.related_keys(key) == [k for k in family if k != key], key
+  assert store.linked_keys('lepidocystoidae') == {'lepidocystidae'}
+  assert closure.expand(['lepidocystoidae'], True) == [
+    'lepidocystoidae',
+    'lepidocystidae',
+    'lepidocystoidea',
+    'lepidocystoidea-family',
+  ]
+  [candidate] = store.resolve_name('Lepidocystoidae')
+  assert candidate['variants'] == ['lepidocystidae', 'lepidocystoidea', 'lepidocystoidea-family']
+
+
 def test_epithets_do_not_relate_records(store):
   # Two species called casteri in different genera are different names;
   # a gender or spelling variant is linked explicitly.
@@ -355,9 +409,11 @@ def test_epithets_do_not_relate_records(store):
 def test_senior_synonym_and_designation_shown_as_combinations(store):
   under = store.descendants(['pyrgocystis'], style='json')
   procera = [r for r in under['rows'] if r['record'] == 'procera_aurivillius_1892']
-  assert (
-    procera[0]['cells'][2][-1]['value'] == 'Ewin et al. 2020: synonym of Rhenopyrgus sp. indet. 1'
-  )
+  values = [cell.get('value') for cell in procera[0]['cells'][2]]
+  assert 'Ewin et al. 2020: synonym of Rhenopyrgus sp. indet. 1' in values
+  # The link to its spelling follows the sourced entries, whichever was
+  # reached first.
+  assert values[-1] == 'spelling variant of Pyrgocystis procerum'
   indet = next(
     r for r in under['rows'] if r['record'] == 'rhenopyrgus-sp-1_ewin_martin.m_isotalo_zamora_2020'
   )

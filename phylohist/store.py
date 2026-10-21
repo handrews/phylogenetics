@@ -240,9 +240,13 @@ class ClaimStore:
       self.by_source[path.stem] = claims
 
     self.by_folded = collections.defaultdict(list)
+    # The records deriving from each record (the reverse of a row's `of`).
+    self.variants_of = collections.defaultdict(list)
     for key, row in self.names.items():
       for form in row['folded']:
         self.by_folded[form].append(key)
+      if 'of' in row:
+        self.variants_of[row['of']].append(key)
     self._closure = None
     self._combinations_at = {}
     # An `or` entry is the same taxon under another name in that source:
@@ -1613,6 +1617,9 @@ class ClaimStore:
 
   def related_keys(self, taxon_key):
     return self.resolver.related_keys(taxon_key)
+
+  def linked_keys(self, taxon_key):
+    return self.resolver.linked_keys(taxon_key)
 
   def heading(self, key, asked=None):
     return self.words.heading(key, asked)

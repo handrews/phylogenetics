@@ -78,8 +78,15 @@ class Closure:
     return (self.names.get(key) or {}).get('rank')
 
   def variants(self, key):
-    """Records of the same name at another rank or spelling."""
+    """Records of the same name at another rank or spelling, followed as
+    far as the links go (`Resolver.related_keys`)."""
     return self.store.related_keys(key)
+
+  def family(self, key):
+    """`key` and its variants, sorted: the same tuple from any member, so
+    two parents that are variants of one name, directly or through a
+    third, fall in one scheme."""
+    return tuple(sorted({key, *self.variants(key)}))
 
   def expand(self, records, include_variants):
     keys = list(dict.fromkeys(records))
@@ -220,10 +227,14 @@ class Closure:
               seen.add(key)
               nxt.append(key)
         if include_variants:
+          # The whole family joins the result; the edge recorded is the
+          # direct link, whichever way the record was reached first.
+          linked = self.store.linked_keys(parent)
           for variant in self.variants(parent):
+            if variant in linked:
+              found.setdefault(variant, []).append({'variantOf': parent})
             if variant not in seen:
               seen.add(variant)
-              found.setdefault(variant, []).append({'variantOf': parent})
               nxt.append(variant)
       frontier = nxt
     for vias in found.values():
@@ -280,27 +291,21 @@ class Closure:
 
   def schemes(self, records, include_variants=True, trees=TAXONOMY, years=None):
     """The sources partitioned by the placement they give the set: one
-    scheme per family of parent names (a parent and its rank variants
-    count as one), each with its sources in year order, first and last
-    year, the co-author sets, and the last paper."""
+    scheme per family of parent names (a parent and its variants, at
+    another rank or in another spelling, count as one, `family`), each
+    with its sources in year order, first and last year, the co-author
+    sets, and the last paper."""
     start = self.expand(records, include_variants)
     groups = {}
+    families = {}
     for key in start:
       for claim in self.placements_of.get(key, ()):
         if not self._wanted(claim, trees, years) or not claim.get('parent'):
           continue
         parent = claim['parent']
-        family = tuple(
-          sorted(
-            {parent}
-            | set(
-              v
-              for v in self.variants(parent)
-              if (self.names.get(v) or {}).get('kind') != 'altSpellingOf'
-            )
-          )
-        )
-        group = groups.setdefault(family, {'parents': {}, 'entries': []})
+        if parent not in families:
+          families[parent] = self.family(parent)
+        group = groups.setdefault(families[parent], {'parents': {}, 'entries': []})
         group['parents'].setdefault(
           parent,
           {

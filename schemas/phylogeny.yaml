@@ -477,8 +477,11 @@ $defs:
       - required: [altRankOf, rank]
       - required: [altSpellingOf, name]
       - required: [vulgarSpellingOf, name]
+      - required: [altGenderOf, name]
+      - required: [latinSpellingOf, name]
     dependentRequired:
       pages: [rank]
+      vulgarSpellingOf: [lang]
     dependentSchemas:
       mineral:
         $comment: A mineral formation's name has no rank, and the record says so.
@@ -549,12 +552,44 @@ $defs:
       status:
         type: string
       altRankOf:
+        description: |
+          The record of the same name at another rank (a nomen translatum)
+          that this one derives from. It spells its own rank, borrows the
+          name when it gives none, and the authority unless it gives its
+          own. The derivative kinds are listed in `phylohist/derivatives.py`.
         type: string
       altSpellingOf:
+        description: |
+          The record this one is another spelling of: an erroneous or
+          historical spelling, or any variation that is not a gender form
+          (`altGenderOf`) or a language form (`latinSpellingOf`,
+          `vulgarSpellingOf`). It borrows the rank and the authority unless
+          it gives its own; `homonym`, `originalParent` and
+          `needsQualification` are each spelling's own, since they tell
+          identically spelled records apart.
+        type: string
+      altGenderOf:
+        description: |
+          The record this one is a grammatical-gender form of (an epithet
+          agreeing with another genus). Borrows as a spelling does.
+        type: string
+      latinSpellingOf:
+        description: |
+          The vernacular record this one is the first Latin spelling of; the
+          vernacular original holds the authority and carries `lang` (the
+          loader checks that). Borrows as a spelling does.
         type: string
       vulgarSpellingOf:
+        description: |
+          The Latin record this one is a vernacular form of. The record
+          carries `lang`, and borrows as a spelling does.
         type: string
       lang:
+        description: |
+          The language of a vernacular record, as a two-letter code: on
+          every `vulgarSpellingOf` record, on the target of every
+          `latinSpellingOf` (the loader checks both), and on any other
+          vernacular record.
         type: string
         minLength: 2
         maxLength: 2
@@ -1206,7 +1241,7 @@ $defs:
       whose existence or placement is the editor's, not the source's, or
       names the fields that are, when the node is printed. Not for an
       apparently-intentional change of spelling, which is tracked as an
-      `altSpellingOf` record.
+      `altSpellingOf` or `altGenderOf` record.
     type: object
     additionalProperties: false
     required: [basis]

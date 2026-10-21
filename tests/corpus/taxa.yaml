@@ -5030,6 +5030,7 @@ fistulida-class:
   altRankOf: fistulidae
 fistulides:
   name: Fistulides
+  lang: FR
   vulgarSpellingOf: fistulidae
 fistuliporita:
   name: Fistuliporita
@@ -10096,6 +10097,7 @@ pustulosa_leske_1778_cidaris:
     source: 1778_leske
 pustulosus_leske_1778_cidaris:
   name: pustulosus
+  originalParent: cidaris
   altSpellingOf: pustulosa_leske_1778_cidaris
 pustulosus_leske_1778_echinocorys:
   name: pustulosus
@@ -11786,6 +11788,7 @@ strabocystis:
     source: 1982g_sprinkle
 strahlthiere:
   name: Strahlthiere
+  lang: DE
   vulgarSpellingOf: radiata
 strangwaysii_koenig_1825:
   name: strangwaysii

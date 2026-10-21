@@ -10,6 +10,7 @@ import html
 import re
 
 from . import blocks
+from .derivatives import KINDS
 from .names import fold, fold_forms
 from .words import short_citation
 
@@ -18,13 +19,9 @@ def _species_group(rank):
   return (rank or '').lower() in blocks.SPECIES_GROUP
 
 
-_KIND_ORDER = {
-  'primary': 0,
-  'altRankOf': 1,
-  'altSpellingOf': 2,
-  'vulgarSpellingOf': 3,
-  'placeholder': 4,
-}
+# A primary record first, then the derivatives in the table's order, a
+# placeholder last.
+_KIND_ORDER = {'primary': 0, **{kind.field: kind.order for kind in KINDS}, 'placeholder': 4}
 
 
 class Resolver:
@@ -162,15 +159,15 @@ class Resolver:
   def source_keys(self, keys):
     return [self.key_of('source', k) for k in keys]
 
-  def related_keys(self, taxon_key):
-    """Records sharing the name at another rank or spelling, and the
-    base or variants a record is linked to. An epithet is not a name on
-    its own, so species-group records relate only through explicit
-    links: two species called casteri in different genera are different
-    names."""
+  def linked_keys(self, taxon_key):
+    """One step from a record: the records sharing its name at another
+    rank, the record it derives from, and the records deriving from it.
+    An epithet is not a name on its own, so species-group records relate
+    only through explicit links: two species called casteri in different
+    genera are different names."""
     row = self.store.names.get(taxon_key)
     if row is None:
-      return []
+      return set()
     keys = set()
     # A mineral formation's name is no taxon's name at another rank.
     if not _species_group(row.get('rank')) and not row.get('mineral'):
@@ -182,11 +179,27 @@ class Resolver:
         )
     if 'of' in row:
       keys.add(row['of'])
-    for key, other in self.store.names.items():
-      if other.get('of') == taxon_key:
-        keys.add(key)
+    keys.update(self.store.variants_of.get(taxon_key, ()))
     keys.discard(taxon_key)
-    return sorted(keys)
+    return keys
+
+  def related_keys(self, taxon_key):
+    """Every record a record is a variant of, followed as far as the links
+    go (`linked_keys`): two spellings of one base relate through the
+    base, a spelling of a rank variant through the variant, so a question
+    about any member of a family covers them all, and the set is the same
+    from any member."""
+    if taxon_key not in self.store.names:
+      return []
+    members = {taxon_key}
+    frontier = [taxon_key]
+    while frontier:
+      for key in self.linked_keys(frontier.pop()):
+        if key not in members:
+          members.add(key)
+          frontier.append(key)
+    members.discard(taxon_key)
+    return sorted(members)
 
   def _candidate(self, key):
     row = self.store.names[key]
