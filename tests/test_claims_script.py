@@ -1,12 +1,14 @@
 """`report_inconsistencies` in scripts/claims.py: the explanation it prints
 for each kind of manifest inconsistency row, on a synthetic tree;
-`--errors-only`, over a load that logs what the test says; and the pruning
-of the expected-warnings file from the same load."""
+`--errors-only`, over a load that logs what the test says, and the lines
+the script itself logs when a load fails or errs; and the pruning of the
+expected-warnings file from the same load."""
 
 import logging
 
 from phylohist import regenerate
 from phylohist.claims import extract
+from phylohist.loader import LoadError
 from phylohist.loader.research import Source
 from phylohist.loader.taxa import Tree
 from tests import support
@@ -115,6 +117,12 @@ def test_repositories_file_keeps_the_registry_fields_the_store_reads():
   assert all(set(entry) <= set(claims_script._REPOSITORY_FIELDS) for entry in registry.values())
 
 
+def _own(caplog):
+  """``(level, message)`` for each record the script itself logged."""
+  name = claims_script.logger.name
+  return [(r.levelno, r.getMessage()) for r in caplog.records if r.name == name]
+
+
 def _run(monkeypatch, caplog, tmp_path, flag, *, error):
   """Run the script over a load that logs a warning, and an error when
   `error`; the messages that come out, in order."""
@@ -134,12 +142,21 @@ def _run(monkeypatch, caplog, tmp_path, flag, *, error):
   return [r.getMessage() for r in caplog.records if r.name == 'phylohist.loader.load']
 
 
-def test_errors_only_shows_the_errors_when_there_are_any(monkeypatch, caplog, tmp_path, capsys):
+def test_errors_only_shows_the_errors_when_there_are_any(monkeypatch, caplog, tmp_path):
   assert _run(monkeypatch, caplog, tmp_path, [], error=True) == ['a warning', 'an error']
   caplog.clear()
   assert _run(monkeypatch, caplog, tmp_path, ['--errors-only'], error=True) == ['an error']
-  # The final count is the script's own and stays.
-  assert '1 integrity errors while loading (tolerated)' in capsys.readouterr().err
+  # The final count is the script's own, logged as an error, and stays.
+  assert _own(caplog) == [(logging.ERROR, '1 integrity errors while loading (tolerated)')]
+
+
+def test_a_failed_load_logs_why(monkeypatch, caplog, tmp_path):
+  def failing_load(**_):
+    raise LoadError('2 integrity errors while loading; see the log')
+
+  monkeypatch.setattr(claims_script, 'load', failing_load)
+  assert claims_script.main(['--out', str(tmp_path)]) == 1
+  assert _own(caplog) == [(logging.ERROR, '2 integrity errors while loading; see the log')]
 
 
 def test_errors_only_shows_the_warnings_when_there_are_no_errors(monkeypatch, caplog, tmp_path):
@@ -173,10 +190,13 @@ def test_a_run_drops_the_expected_warnings_the_load_no_longer_produces(
   assert '1 stale expected warnings removed from expected.txt' in capsys.readouterr().out
 
 
-def test_a_load_with_errors_leaves_the_expected_warnings(monkeypatch, tmp_path, capsys):
+def test_a_load_with_errors_leaves_the_expected_warnings(monkeypatch, tmp_path, caplog):
   status, lines = _prune_run(monkeypatch, tmp_path, '--tolerate', error=True)
   assert status == 1 and lines == {'a warning', 'stale'}
-  assert 'expected.txt is left as it is' in capsys.readouterr().err
+  assert _own(caplog) == [
+    (logging.WARNING, 'expected.txt is left as it is: the load logged errors'),
+    (logging.ERROR, '1 integrity errors while loading (tolerated)'),
+  ]
 
 
 def test_a_run_elsewhere_leaves_the_committed_expected_warnings(monkeypatch, caplog, tmp_path):

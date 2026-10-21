@@ -47,6 +47,9 @@ from phylohist.regenerate import EXPECTED_WARNINGS, prune_expected  # noqa: E402
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DEFAULT_OUT = ROOT / 'claims'
 
+# Under the package logger, whose handler prints the record; __name__ is __main__ here.
+logger = logging.getLogger('phylohist.scripts.claims')
+
 
 # The registry fields `repositories.json` keeps.
 _REPOSITORY_FIELDS = ('name', 'type', 'subject', 'within', 'prefixes', 'otherNames', 'place')
@@ -293,7 +296,7 @@ def main(argv):
     except LoadError as exc:
       failure = exc
   if failure:
-    print(f'error: {failure}', file=sys.stderr)
+    logger.error(str(failure))
     return 1
   claims_by_source = extract(roots, sources=set(args.source or ()) or None)
   if args.inconsistencies:
@@ -310,7 +313,7 @@ def main(argv):
       expected = EXPECTED_WARNINGS
   if expected is not None:
     if errors.count:
-      print(f'{expected.name} is left as it is: the load logged errors', file=sys.stderr)
+      logger.warning(f'{expected.name} is left as it is: the load logged errors')
     else:
       produced = {r.getMessage() for r in logged.records if r.levelno == logging.WARNING}
       stale, new = prune_expected(produced, expected)
@@ -320,7 +323,7 @@ def main(argv):
           f'{len(new)} new warnings not expected; add them with scripts/expected_warnings.py --add'
         )
   if errors.count:
-    print(f'{errors.count} integrity errors while loading (tolerated)', file=sys.stderr)
+    logger.error(f'{errors.count} integrity errors while loading (tolerated)')
     return 1
   return 0
 

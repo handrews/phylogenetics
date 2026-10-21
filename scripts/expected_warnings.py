@@ -24,6 +24,9 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 from phylohist.loader import LoadError, load  # noqa: E402
 from phylohist.regenerate import EXPECTED_WARNINGS, prune_expected  # noqa: E402
 
+# Under the package logger, whose handler prints the record; __name__ is __main__ here.
+logger = logging.getLogger('phylohist.scripts.expected_warnings')
+
 
 class _Collecting(logging.Handler):
   """Keeps the WARNING and ERROR records of the load."""
@@ -42,13 +45,16 @@ def produced():
   handler = _Collecting()
   package = logging.getLogger('phylohist')
   package.addHandler(handler)
+  failure = None
   try:
     load(tolerate=True)
   except LoadError as error:
-    print(f'error: {error}', file=sys.stderr)
-    return set(), 1
+    failure = error
   finally:
     package.removeHandler(handler)
+  if failure:
+    logger.error(str(failure))
+    return set(), 1
   warnings = {r.getMessage() for r in handler.records if r.levelno == logging.WARNING}
   errors = sum(1 for r in handler.records if r.levelno >= logging.ERROR)
   return warnings, errors
@@ -64,7 +70,7 @@ def main(argv):
 
   actual, errors = produced()
   if errors:
-    print(f'{errors} errors while loading; {args.file.name} is left as it is', file=sys.stderr)
+    logger.error(f'{errors} errors while loading; {args.file.name} is left as it is')
     return 1
   stale, new = prune_expected(actual, args.file, add=args.add)
   print(f'{len(stale)} stale expected warnings removed from {args.file.name}')
