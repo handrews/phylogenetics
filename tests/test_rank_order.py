@@ -37,8 +37,7 @@ INFO = ' taxa placed under a genus or species at no lower rank'
 def registries(monkeypatch):
   """Private copies of the class-level registries a `Tree` writes to, with
   the named records the trees place."""
-  for name in ('_taxon_index', '_new_index', '_author_index'):
-    monkeypatch.setattr(Tree, name, collections.defaultdict(set))
+  monkeypatch.setattr(Tree, '_new_index', collections.defaultdict(set))
   monkeypatch.setattr(Tree, '_type_index', {k: set() for k in Tree._type_index})
   monkeypatch.setattr(Taxon, '_taxa', dict(Taxon._taxa))
   Taxon.add({'name': 'Testidae', 'rank': 'Family', **EARLIER}, FAMILY)

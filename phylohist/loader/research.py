@@ -2,6 +2,8 @@ import calendar
 import logging
 from functools import cached_property
 
+from .io import fail
+
 logger = logging.getLogger(__name__)
 
 
@@ -24,8 +26,13 @@ class Author:
     if not self._key:
       return
 
-    surname_only = author_data['surname'].lower()
-    givens = author_data['given'].split(' ')
+    # `person` allows a surname or a given name alone; the key is built from
+    # the surname, so a record without one ends the load.
+    surname = author_data.get('surname')
+    if surname is None:
+      fail(f'Author "{author_key}" has no surname!', f'author {author_key} has no surname')
+    surname_only = surname.lower()
+    givens = [given for given in (author_data.get('given') or '').split(' ') if given]
     if len(givens) == 1:
       givens = givens[0].split('-')
     if surname_only == 'siveter':
@@ -190,8 +197,9 @@ class Source:
 
     for author_key in self._author_keys:
       if (author := Author.get(author_key)) is None:
-        logger.error(
+        fail(
           f'Author "{author_key}" not found for source_data {source_key}!',
+          f'source {source_key} names author "{author_key}", which has no record',
         )
       self._authors.append(author)
       expected_key += '_' + author.key
@@ -292,7 +300,10 @@ class SourceAlias(Source):
     self._authors = []
     for author_key in self._author_keys:
       if (author := Author.get(author_key)) is None:
-        logger.error(f'Author "{author_key}" not found for source alias {source_key}!')
+        fail(
+          f'Author "{author_key}" not found for source alias {source_key}!',
+          f'source alias {source_key} names author "{author_key}", which has no record',
+        )
       self._authors.append(author)
     self._authors = tuple(self._authors)
 

@@ -6,7 +6,10 @@ and returns the raw data with the tree roots per source. The scripts,
 the tests and the extractor all come through here. Every integrity
 problem is logged where it is found so that one run reports them all;
 the load then fails with their count, unless the caller asks for the
-data anyway.
+data anyway. The exception is a record another record cannot be built
+without (an authority's source, an author key): that ends the load where
+it is missing (`io.fail`), whatever the caller asked, with what was
+logged before it.
 """
 
 import contextlib
@@ -128,8 +131,8 @@ def _report_cited_sources(data):
 
 def _report_missing_protologues(data, roots):
   # A protologue is the source that names a taxon; if that source is one of
-  # our trees, the taxon should show up flagged `new` in it. `Tree._taxon_index`
-  # is by name and holds roots, so the keys each tree uses come from a walk.
+  # our trees, the taxon should show up flagged `new` in it. The keys each
+  # tree uses come from a walk.
   used = {
     (node.taxon.key, source_key)
     for source_key, trees in roots.items()
@@ -415,9 +418,7 @@ def _load_trees(data):
       }
       position += 1
 
-      if (tree_type := phy_tree.get('treeType', '').lower()) not in Tree.TYPES:
-        logger.error(f'Unknown tree type {tree_type}')
-      metadata['type'] = tree_type
+      metadata['type'] = phy_tree['treeType'].lower()
 
       if 'characteristics' in phy_tree:
         metadata['characteristics'] = phy_tree['characteristics']
@@ -561,7 +562,8 @@ def load(drafts=False, tolerate=False, data_dir=DATA_DIR, fast=False):
   Raises `LoadError` when any integrity check logged an error, with the
   count, so a caller cannot take a broken load for a good one; with
   ``tolerate`` the data comes back regardless, for a caller that wants
-  to see everything before stopping. ``data_dir`` and ``fast`` are
+  to see everything before stopping. A record the load cannot continue
+  without ends it at once, ``tolerate`` or not (`io.fail`). ``data_dir`` and ``fast`` are
   `load_files`'s: another directory shaped like `data/`, and libyaml."""
   with counting_errors() as errors:
     data = load_files(drafts=drafts, data_dir=data_dir, fast=fast)

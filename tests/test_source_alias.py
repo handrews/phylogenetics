@@ -60,9 +60,18 @@ def test_a_key_that_does_not_fit_its_target_is_an_error(key, message, caplog):
   assert len(errors) == 1 and message in errors[0]
 
 
-def test_an_author_with_no_record_is_an_error_not_a_crash(caplog):
-  errors = _add('1985_nobody', caplog=caplog)
-  assert 'Author "nobody" not found for source alias 1985_nobody!' in errors
+def test_an_author_with_no_record_ends_the_load(caplog):
+  # The alias cannot be built without its authors, so the load stops here
+  # with a `LoadError` instead of going on to a crash in `Source.__str__`.
+  with (
+    caplog.at_level(logging.ERROR, logger='phylohist'),
+    pytest.raises(LoadError, match='source alias 1985_nobody names author "nobody"'),
+  ):
+    Source.add({'aliasOf': TARGET}, '1985_nobody')
+  assert [r.getMessage() for r in caplog.records if r.levelno >= logging.ERROR] == [
+    'Author "nobody" not found for source alias 1985_nobody!'
+  ]
+  assert Source.get('1985_nobody') is None
 
 
 def test_the_target_must_be_a_source_record(caplog):

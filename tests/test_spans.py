@@ -1500,5 +1500,11 @@ def test_the_schema_takes_designation_on_a_node_and_still_on_a_taxa_record():
     child = (node.get('tree') or node)['children'][0]
     child['designation'] = 1
     assert not _valid(document)
-  record = {'name': None, 'designation': 'Genus A', 'authority': {'source': PROTOLOGUE_SOURCE}}
+  # An unnamed record spells its rank; the designation stands in for the name.
+  record = {
+    'name': None,
+    'rank': 'genus',
+    'designation': 'Genus A',
+    'authority': {'source': PROTOLOGUE_SOURCE},
+  }
   assert support.schema()['taxa'].check({'x': record})

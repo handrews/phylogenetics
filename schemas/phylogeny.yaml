@@ -149,6 +149,9 @@ $defs:
     - required: [book, pubDate]
     - required: [reading, title, pubDate]
     - required: [inPrep]  # Allow for a never-published untitled source
+      properties:
+        inPrep:
+          const: true
     unevaluatedProperties: false
     properties:
       seen:
@@ -488,6 +491,17 @@ $defs:
           properties:
             rank:
               type: "null"
+      name:
+        $comment: |
+          An unnamed record has no name to read a genus or species from, so
+          it spells its rank (`null` for none); the loader stops on one that
+          does not.
+        if:
+          properties:
+            name:
+              type: "null"
+        then:
+          required: [rank]
     properties:
       bracket:
         ### TODO: Replace this property name (roadmap B7: to be renamed `vernacular`)

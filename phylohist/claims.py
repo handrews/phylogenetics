@@ -1109,10 +1109,7 @@ def names_index():
     if taxon.derivative_of is not None:
       row['of'] = taxon.derivative_of.key
     authority = taxon.authority
-    try:
-      display = str(authority)
-    except TypeError:
-      display = None
+    display = str(authority)
     if display or authority.source is not None:
       row['authority'] = {'display': display or None}
       # The parts a heading is built from, in the corpus's citation form;
