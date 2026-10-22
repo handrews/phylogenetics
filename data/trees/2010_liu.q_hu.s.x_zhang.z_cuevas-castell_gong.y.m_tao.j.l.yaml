@@ -2,13 +2,14 @@ taxonomies:
 - taxon: arthropoda
   citedAs: Phylum Arthropoda Siebold and Stannius, 1845
   rank: Phylum
-  auth: [siebold, stannius]
-  year: 1845
+  authority:
+    auth: [siebold, stannius]
+    year: 1845
   editorial:
     corrections:
-      auth: null
-      year: null
       authority:
+        auth: null
+        year: null
         source: 1845_siebold
     basis: >
       Siebold and Stannius were the editors of the series, but each

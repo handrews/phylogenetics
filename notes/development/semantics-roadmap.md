@@ -103,8 +103,8 @@ recorded as a synonym; see [Terminology updates](#terminology-updates-1966--2023
   modern one and simply leave most of them empty.
 - Consult `notes` before deciding what a value means. YAML comments carry no
   meaning.
-- Migrations are data-only wherever possible. Tree-node attribution fields
-  (`authority`, `auth`, `year`, `in`) are not read by `phylohist/loader/taxa.py`.
+- Migrations are data-only wherever possible. A tree node's `authority`
+  block is not resolved by `phylohist/loader/taxa.py`, only checked.
 - `citedAs` is the line as printed, kept and searchable, shown by the
   printed-forms tool only (2026-09-20). Every other rendering is built
   from fields; what an answer needs from the printed line is a field.
@@ -112,7 +112,7 @@ recorded as a synonym; see [Terminology updates](#terminology-updates-1966--2023
 ### The `editorial` block
 
 A tree node's own fields record what the source printed: the resolved
-`taxon`, `auth`/`year`/`citedAs` as printed, and the printed flags.
+`taxon`, `citedAs` and the `authority` block as printed, and the printed flags.
 `editorial` sits beside them and never replaces any of them. It records what
 the data editor did that the printed line does not establish, and `basis`
 says on what evidence. Two kinds:
@@ -122,9 +122,9 @@ says on what evidence. Two kinds:
   `null` deletes a printed field that is wrong with nothing known to put
   in its place; an array such as `illustrations` is restated whole). A
   citation that cannot resolve as printed (in press, wrong year, a page
-  from another printing) is the first case: the printed
-  `auth`/`year`/`citedAs` stay, and the corrections delete the two and set
-  `authority.source` to the record (A6).
+  from another printing) is the first case: the printed `citedAs` and
+  `authority: {auth, year}` stay, and the corrections, in the block's own
+  shape, delete the credit and set `source` to the record (A6).
 - `inferred: true`: the node's existence or placement is the editor's, not
   the source's (B20). When the node is printed but one of its fields is
   not, `inferred` names the fields instead: Fay 1962 prints *Astrocystites
@@ -138,8 +138,8 @@ the taxon record. A printed attribution that merely disagrees with the
 record is kept as printed and the disagreement is derived (B19);
 `corrections` is for what the editor judges wrong on the page, with the
 evidence in `basis`.
-Bockelie 1981's "Balanticystis Ubaghs 1972" is the worked case: `auth`,
-`year`, `citedAs` as printed, identity through `balanticystis`
+Bockelie 1981's "Balanticystis Ubaghs 1972" is the worked case: `citedAs`
+and `authority: {auth, year}` as printed, identity through `balanticystis`
 (`altSpellingOf: balantiocystis`), the reading in `notes`, no `editorial`.
 
 `corrections` is that editor-verified marker for a discrepancy that is
@@ -183,9 +183,10 @@ migrated.
 
 ## A. Attribution
 
-One field, `authority` (or `auth`+`year`+`in`), whose meaning is always "the
-attribution printed on this line". What that attribution *identifies* depends on
-where the line is:
+One field, `authority`, whose meaning is always "the attribution printed on
+this line": a `source` record, `auctt`, or the printed credit `auth`/`year`/`in`
+(A4), with the locators in the work it names. What that attribution
+*identifies* depends on where the line is:
 
 | where | identifies | question it answers |
 |---|---|---|
@@ -200,8 +201,7 @@ echinodermata:
 
 # 1975_kolata tree: Kolata credits Fleming
 - taxon: echinodermata
-  auth: [Fleming]
-  year: 1828
+  authority: {auth: [Fleming], year: 1828}
 
 # 1976_bell.b.m synonymy of Lebetodiscus (p. 54): an accepted earlier usage
 - taxon: agelacrinites
@@ -210,8 +210,9 @@ echinodermata:
   citedAs: "Geol. Surv. Canada, Fig. and Descriptions of Canadian Organic Remains, dec. 3:84"
 ```
 
-**A1 (MVP). Document the table above in the schema; no rename.** `citedAs`
+**A1 (MVP, done). Document the table above in the schema; no rename.** `citedAs`
 stays a node field: the bibliographic string exactly as the source printed it.
+The `authority` definition carries the table.
 
 **A2 (MVP). Attribution on a `children` node that matches the record.**
 Integrity check, report not error: if the printed attribution resolves to the
@@ -226,17 +227,23 @@ the claim table emits it.
   `source` is the work that did. Two uses, both Klein 1734. The *Preface* (xv,
   xviii) uses "ex" in a second sense, the name a nom. transl. was derived from;
   that sense is handled by `altRankOf` and B6, not by this field.
-- `attributedTo` (with a source record) and `in` (with `auth`+`year`) — the
-  credited authors differ from the work's authors ("Luo & Hu in Luo et al.,
-  1999"). One per mechanism; they never co-occur.
+- `attributedTo` (with a source record) and `in` (with `auth`, inside the
+  same block) — the credited authors differ from the work's authors ("Luo &
+  Hu in Luo et al., 1999"). One per mechanism; the schema keeps them apart.
 
-**A4.** Finish the `auth`→`authority` migration from the audit (117 mechanical,
-54 needing a choice). Not MVP-blocking.
+**A4 (done).** Every attribution is an `authority` block: `source`, `auctt`,
+or the printed credit `auth`/`year`/`in` (`auth: []` for an unknown author;
+a year may stand alone), with the cited work's `pages`/`illustrations`
+inside it, alone on a cited entry whose line names no work. A taxon or
+section record's protologue locators sit in its block too. The flat fields
+are gone from the schema; `scripts/migrate_authority.py` moved the data and
+stays until every branch has run it. Still open: resolving a printed credit
+to a source record where one exists (A2 reports the matches).
 
 **A6 (MVP). Attribution that cannot resolve as printed.** Bell 1975 cites
 "Bell, 1974" for a work that appeared in 1976; the correct citation would have
-been "in press". The tree records what was printed (`auth: [bell.b.m]`,
-`year: 1974`, `citedAs: Bell, 1974`) and explains in `notes`. That is right,
+been "in press". The tree records what was printed (`authority: {auth:
+[bell.b.m], year: 1974}`, `citedAs: Bell, 1974`) and explains in `notes`. That is right,
 and the taxon record already carries the true authority. What is missing is a
 machine-readable link from the printed line to the resolved work, so the claim
 table can attach the usage to `1976_bell.b.m` without guessing. Reuse the
@@ -244,13 +251,15 @@ editorial block from B8:
 
 ```yaml
 - taxon: isorophida
-  auth: [bell.b.m]
-  year: 1974
+  authority: {auth: [bell.b.m], year: 1974}
   citedAs: Bell, 1974
   editorial:
-    source: 1976_bell.b.m
+    corrections: {authority: {auth: null, year: null, source: 1976_bell.b.m}}
     basis: cited before publication; printed with the intended year
 ```
+
+(As done: the editorial block's `corrections` patch, in the node's own
+shape, rather than a separate `editorial.source`.)
 
 The same block covers a wrong page, a wrong year, or a citation to a reprint.
 It is editorial because the printed line alone does not establish it. See
@@ -335,7 +344,7 @@ identity: a bare "Echinodermata" at phylum rank resolves to the single record.
 That is an editorial rule for well-established high-rank names, stated here,
 and it does not extend downward.
 
-**A5.** `auth` free-text names (521 uses, 220 distinct): decide the rule for
+**A5.** `authority.auth` free-text names (521 uses, 220 distinct): decide the rule for
 surname-only author records. Add alias support to `person` while there: the
 *Preface 2023* (xxi–xxii) retains each author's own romanization per
 publication, so one person legitimately appears under several spellings
@@ -343,8 +352,8 @@ publication, so one person legitimately appears under several spellings
 records keeps the printed form and the identity. Not MVP-blocking.
 
 **A12 (MVP). A printed attribution that disagrees with the record goes on
-the node.** Classification nodes in almost every tree carry no `auth`,
-`year` or `citedAs`; the reading round found the same disagreement pattern
+the node.** Classification nodes in almost every tree carry no `authority`
+or `citedAs`; the reading round found the same disagreement pattern
 in six papers and none of it is visible: *Cambraster* printed "Cabibel,
 Termier & Termier, 1958" (Jell et al. 1985 p. 185; Smith 1985 p. 734;
 Guensburg & Sprinkle 1994 p. 42; Jell & Sprinkle 2021 p. 35) against a
@@ -353,7 +362,7 @@ record of Jaekel 1923; *Isorophus* and *Carneyella* "Foerste, 1917" (1978,
 p. 246) and "Bather, 1899" (Sprinkle & Sumrall 2015 p. 348) against Bather
 1898; Camptostromatidae "Durham, 1968" against 1967; Stromatocystitidae
 "Bassler, 1935" (Zamora et al. 2015) against 1936; *Echino-encrinites* "Von
-Meyer" (Forbes 1848 p. 504) against Volborth 1842. Rule: absence of `auth`
+Meyer" (Forbes 1848 p. 504) against Volborth 1842. Rule: absence of `authority`
 on a node means "as the record"; whenever the printed line differs, the
 node records the printed form; `authority: null` on a node says the
 source prints no authority at all (2026-10-08), and the claim carries
@@ -366,7 +375,7 @@ Bather 1900 prints a compound credit for the class itself, "CLASS IV.
 EDRIOASTEROIDEA, E. Billings (1854,-58; Huxley, 1877; and Bather, 1899)"
 (p. 205), and two-author credits on its synonyms ("AGELACRINOIDEA, S. A.
 Miller, 1877-83; Worthen, 1883"): `citedAs` holds the printed line whole,
-and `auth`/`year` take the first credit only.
+and the block's `auth`/`year` take the first credit only.
 
 **A13. A collected reprint is one printing of several works.** Bather's
 *Studies in Edrioasteroidea* (1915) reprints nine Geological Magazine
@@ -628,9 +637,9 @@ either a tree claim or a `notes` citation of the senior homonym.
 rest as subjective. Add `objective: true` to a synonymy entry only where a source
 prints it.
 
-**B12. "auctt."** (*Preface* xxii: auctorum, "of authors") marks a usage by
-various later authors rather than the original one. Allow `auth: [auctt.]` on
-an entry and document it.
+**B12 (done). "auctt."** (*Preface* xxii: auctorum, "of authors") marks a usage by
+various later authors rather than the original one. An `authority` block
+gives `auctt` (`true`, or the authors it qualifies) in place of a source.
 
 **B13. "s.l." and "s.s."** (*Preface* xxiii). Done 2026-09-20: `sensu:
 stricto | lato | emendato` on the node, first printed by Bell 1891 ("(s. s.)"
@@ -803,7 +812,7 @@ ULRICHI, n. sp. (Bassler and Shideler)" (Bassler 1936 p. 8). The tree
 records the printed form in `citedAs` and models each by its meaning: (a)
 a subgenus node, and a `-subgenus` record only where a source declares or
 uses one; (b) the original combination through `synonyms` + `parents`, the
-mechanism already used for *primotica*, never a subgenus; (c) `auth`. The
+mechanism already used for *primotica*, never a subgenus; (c) `authority.auth`. The
 17 `-subgenus` records need auditing against this; those that exist only
 because of Bassler's convention (e.g. `hemicystites-subgenus` under
 *Cincinnatidiscus* in the 1936 tree) are original-combination links.
@@ -1036,8 +1045,8 @@ taxonomy with a record of its own:
   (`integra`); `needsQualification: true` adds the authority suffix, since
   a section's first user is often unknowable: `name` (or `null` with a
   `designation` for a heading that is only a descriptive phrase),
-  `authority` (the source that prints it) or `auth`/`year`, `citedAs`,
-  `pages` (the protologue page; checked against the `new` marker),
+  `authority` (the source that prints it, or a printed `auth`/`year`, with
+  the protologue page inside it, checked against the `new` marker), `citedAs`,
   `notes`. The file is empty today; the loader reads it after the taxa
   (`taxa.Section`).
 - One `section` claim per span, emitted by the start node: the section's
@@ -1222,13 +1231,13 @@ material entry, in the same shape (D11).
 
 
 **D4. One name, two roles.** The same locator fields serve two roles
-under one field name, `illustrations`, fixed by whether the node is a
-cited entry. On a primary node the list records what a figure in this
-source shows; on a cited entry (a synonymy entry, an earlier state) and
-inside an `authority` it locates a figure in the cited work. `of` and
-`depicts` belong only to the primary-node role: a cited entry's or an
-`authority`'s locator carrying either is an error, and a cited entry's
-`illustrations` is never null. Both roles take `non` for a figure-level
+under one field name, `illustrations`, fixed by where it sits. On a
+primary node the list records what a figure in this source shows; inside
+an `authority` block it locates a figure in the cited work, which is the
+only place a cited entry (a synonymy entry, an earlier state) carries one
+(A4). `of` and `depicts` belong only to the primary-node role: an
+`authority`'s locator carrying either is an error, as is a cited entry's
+node-level `pages` or `illustrations`, null or not. Both roles take `non` for a figure-level
 exclusion or a correction of another work's numbering, which D6 keeps as
 the worked case: Kesling 1967 writes "Hisinger, 1837, pl. 25, fig. 8d,
 non fig. 9d" because von Buch read the plate's 8d as 9d; von Buch's tree
@@ -1819,7 +1828,7 @@ Each has a home; none needs a new top-level construct.
 The example sources are cataloged in
 [`source-observations.md`](source-observations.md).
 | a genus in parentheses meaning the original genus | "Carneyella (Agelacrinus) pileus" (Bassler 1935 pl. 1) | original combination via `parents` (B23) |
-| a genus in parentheses meaning joint authorship | "n. sp. (Bassler and Shideler)" (Bassler 1936 p. 8) | `auth` (B23) |
+| a genus in parentheses meaning joint authorship | "n. sp. (Bassler and Shideler)" (Bassler 1936 p. 8) | `authority.auth` (B23) |
 | a hedge printed in prose | "I name it provisionally as above" (Forbes 1848 p. 518) | `provisional` (B16) |
 | a diagnosis deferred to another node | "Diagnosis.—Same as for species." (Sprinkle & Sumrall 2015) | printed phrase in `diagnosis` (D8) |
 | a class erected straight over a genus | Edrioblastoidea for *Astrocystites* (Fay 1962 p. 201) | ordinary nesting; no order or family node (B24) |

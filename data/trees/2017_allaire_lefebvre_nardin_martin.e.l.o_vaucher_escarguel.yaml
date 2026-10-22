@@ -36,17 +36,20 @@ taxonomies:
             - 4
           synonyms:
           - openTaxon: rhopalocystis-sp_chauvel_1971
-            pages: 44
-            illustrations:
-            - plate: 1
-              figures:
-              - [9, 10]
+            authority:
+              pages: 44
+              illustrations:
+              - plate: 1
+                figures:
+                - [9, 10]
           - openTaxon: rhopalocystis-sp-a_chauvel_1978
-            pages: 54
+            authority:
+              pages: 54
           - openTaxon: rhopalocystis-sp-b_chauvel_1978
-            pages: 54
-            illustrations:
-            - textFigures: 11q
+            authority:
+              pages: 54
+              illustrations:
+              - textFigures: 11q
         - taxon: grandis_chauvel_1971
           pages:
           - [703, 704]
@@ -70,14 +73,16 @@ taxonomies:
             figures: 13
           synonyms:
           - openTaxon: rhopalocystis-sp-c_chauvel_1978
-            pages: 55
-            illustrations:
-            - plate: 5
-              figures: 4
-            - textFigures:
-              - [11o, 11p]
+            authority:
+              pages: 55
+              illustrations:
+              - plate: 5
+                figures: 4
+              - textFigures:
+                - [11o, 11p]
           - openTaxon: rhopalocystis-sp-c_chauvel_régnault_1986
-            pages: 870
+            authority:
+              pages: 870
         - taxon: zagoraensis_chauvel_1971
           pages:
           - [707, 712]
@@ -88,10 +93,11 @@ taxonomies:
             figures: 15
           synonyms:
           - taxon: lehmani_chauvel_régnault_1986
-            pages: 866
-            illustrations:
-            - plate: 1
-              figures:
-              - [9, 10]
-            - textFigures:
-              - [3I, 3N]
+            authority:
+              pages: 866
+              illustrations:
+              - plate: 1
+                figures:
+                - [9, 10]
+              - textFigures:
+                - [3I, 3N]

@@ -4,8 +4,9 @@ taxonomies:
 - taxon: echinodermata
   citedAs: PHYLUM ECHINODERMATA KLEIN, 1734.
   rank: Phylum
-  auth: [klein]
-  year: 1734
+  authority:
+    auth: [klein]
+    year: 1734
   pages: 4
   children:
   - taxon: haplozoa

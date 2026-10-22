@@ -41,9 +41,9 @@ taxonomies:
             figure 18 is on plate II; there is no pate XI.
         authority:
           source: 1740_tilas
-        illustrations:
-        - plate: XI
-          figures: 18
+          illustrations:
+          - plate: XI
+            figures: 18
       - citedAs: Gyllenhal, Vet. Acad. Nya Handl. 1772, 242. t. VII f.4,5.
         authority:
           source: 1772_gyllenhaal
@@ -63,10 +63,11 @@ taxonomies:
           - plate: XXIX
             figures: [2, 3]
       - citedAs: Herzog von Leuchtenberg, t. II. f. 17.
-        auth: [Leuchtenberg]
-        illustrations:
-        - plate: II
-          figures: 17
+        authority:
+          auth: [Leuchtenberg]
+          illustrations:
+          - plate: II
+            figures: 17
       - citedAs: Buch, Beitr. zur Kenntn. der Geb. in Ruſsland, t. I. f. 14
         authority:
           source: 1840a_buch

@@ -3,9 +3,10 @@ prefixes:
   QMF: qm-f
 taxonomies:
 - taxon: echinodermata
-  auth: [bruguière]
+  authority:
+    auth: [bruguière]
+    year: 1791
   citedAs: Brugière, 1791
-  year: 1791
   children:
   - taxon: blastozoa
     children:

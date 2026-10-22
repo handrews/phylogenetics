@@ -16,8 +16,9 @@ taxonomies:
         # - seriesRange: [Lower Cambrian, Upper Devonian]
         children:
         - taxon: stromatocystites
-          auth: [pompeckj]
-          year: 1896
+          authority:
+            auth: [pompeckj]
+            year: 1896
           synonyms:
           - taxon: stromatocystis
             authority:

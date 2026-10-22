@@ -247,14 +247,16 @@ taxonomies:
               synonyms:
               - openTaxon: pyrgocystis-sp_vizcaïno_lefebvre_1999
                 provisional: true
-                pages: 356
+                authority:
+                  pages: 356
                 parents:
                 - taxon: pyrgocystis
                   authority:
                     source: 1915a_bather
               - openTaxon: pyrgocystis-sp_vizcaïno_álvaro_lefebvre_2001
                 provisional: true
-                pages: 218
+                authority:
+                  pages: 218
                 parents:
                 - taxon: pyrgocystis
                   authority:

@@ -79,8 +79,9 @@ taxonomies:
                   - taxon: echinoencrinites
                 - taxon: loeblichi_bassler_1943
                   pars: true
-                  auth: [paul.c.r.c]
-                  year: 1972
+                  authority:
+                    auth: [paul.c.r.c]
+                    year: 1972
                   parents:
                   - taxon: glyptocystella
             - taxon: hesperocystis

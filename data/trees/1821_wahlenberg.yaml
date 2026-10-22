@@ -51,11 +51,12 @@ taxonomies:
         provisional: true
         parents:
         - taxon: ostracion
-        pages: 259
-        illustrations:
-        - plate: 5
-          figures:
-          - [1, 2]
+        authority:
+          pages: 259
+          illustrations:
+          - plate: 5
+            figures:
+            - [1, 2]
     - taxon: granatum_wahlenberg_1821
       pages: 53
       new: true
@@ -64,11 +65,12 @@ taxonomies:
       - openTaxon: echinus-sp_hisinger_1802
         parents:
         - taxon: echinus
-        pages: 189
-        illustrations:
-        - plate: VII
-          figures:
-          - b
+        authority:
+          pages: 189
+          illustrations:
+          - plate: VII
+            figures:
+            - b
     - taxon: pomum_gyllenhaal_1772
       synonyms:
       - taxon: pomum_gyllenhaal_1772

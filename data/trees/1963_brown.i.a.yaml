@@ -28,13 +28,14 @@ taxonomies:
       - taxon: diploporita
         citedAs: Order DIPLOPORITA J. Müller, 1954.
         rank: Order
-        auth: [müller.j.p]
-        year: 1954
+        authority:
+          auth: [müller.j.p]
+          year: 1954
         editorial:
           corrections:
-            auth: null
-            year: null
             authority:
+              auth: null
+              year: null
               source: 1854_müller.j.p
           basis:
             The year "1954" is used in the paper but clearly an error.

@@ -34,14 +34,16 @@ taxonomies:
           children:
           - taxon: neglecta_hecker_1940
             isType: true
-            year: 1938
+            authority:
+              year: 1938
             notes: Year appears wrong?  1940?
             synonyms:
             - taxon: neglecta_hecker_1940
-              auth: [Hecker]
+              authority:
+                auth: [Hecker]
+                year: 1938
+                pages: 423
               notes: Year appears wrong?  1940?
-              year: 1938
-              pages: 423
           - taxon: elpasoensis_sprinkle_wahlman_1994
             provisional: true
             new: true

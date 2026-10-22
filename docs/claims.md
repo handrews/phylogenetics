@@ -25,14 +25,14 @@ Every claim carries:
 | `source` | the tree file's source key |
 | `path` | the node's position and pointer, `0/children/0/children/0`, the same string the id carries |
 | `tree` | `taxonomy`, or a phylogeny's `treeType`; a phylogeny's `notes` ride along as `treeNotes` |
-| `pages` | the node's `pages` as written; a node without `pages` has none, since a parent's page says where the parent is printed, not its children. An inferred node written `pages: null` (it has no page in this source) carries none. On a cited entry (a `synonyms` or `non` entry, a `type` node, or the earlier state of a name under `translated`, `corrected`, `substituted`, `moved` or `removed`) `pages` and `illustrations` locate the cited usage in the cited work, whether written flat or inside an `authority` block, so they appear as `citedPages` and `citedIllustrations` and the claim has no `pages` of its own. |
+| `pages` | the node's `pages` as written; a node without `pages` has none, since a parent's page says where the parent is printed, not its children. An inferred node written `pages: null` (it has no page in this source) carries none. On a cited entry (a `synonyms` or `non` entry, a `type` node, or the earlier state of a name under `translated`, `corrected`, `substituted`, `moved` or `removed`) the `pages` and `illustrations` inside its `authority` block locate the cited usage in the cited work, so they appear as `citedPages` and `citedIllustrations` and the claim has no `pages` of its own; a block of locators alone means the record's authority at those locators. |
 | `subject` | the resolved taxon key the claim is about; a `section` claim's is the section's key (a record of `data/sections.yaml`, no taxon) |
-| `printed` | the printed form on that line: `citedAs` verbatim, and `auth`, `year`, `in` as written (A1, A12). Absent `auth` means "as the record"; the claim says so with `printedAttribution: as-record`. A node written `authority: null` (the source cites the name with no authority; on a cited entry, with no reference) says so with `printedAttribution: none`, whether or not it has a `citedAs`. |
+| `printed` | the printed form on that line: `citedAs` verbatim, and the `auth`, `year`, `in` of the node's `authority` block as written (A1, A12). No block, or a block of locators alone, means "as the record"; the claim says so with `printedAttribution: as-record`. A node written `authority: null` (the source cites the name with no authority; on a cited entry, with no reference) says so with `printedAttribution: none`, whether or not it has a `citedAs`. |
 | `audit` | the source's `audit.state`; `coverageKind`, the coverage kind the claim counts under (`skeleton` for usage, rejection and a taxonomy placement, `phylogeny` for a placement in a phylogeny, `synonymy` for acceptance, `newTaxa`/`types` for the matching acts, `material`/`occurrences`/`illustrations` by material kind); and `coverage`, the effective value for that kind (declared, or derived where "Derived coverage" says so) |
 | `editorial` | the node's `editorial` block, copied through |
 | `inferred` | `true` when the editorial block says the editor supplied the field this claim comes from (`inferred: true`, or a list naming it). The claim is then the editor's, not the paper's, and the manifest does not count it |
 | `erroneous` | `true` when the editorial block's `corrections` touch the field this claim comes from. The claim stays the paper's and is counted; what the editor reads instead is in `corrected` |
-| `printedErrors` | the printed attribution fields (`auth`, `year`, `in`, `citedAs`, `authority`) the editorial block's `corrections` touch |
+| `printedErrors` | the printed attribution fields the editorial block's `corrections` touch, by the names the claim uses: `citedAs` on the node; inside `authority`, `auth`, `year` and `in` under their own names and any other key (`source`, `pages`, ...) as `authority`. A key counts only when the node prints it: a correction that adds a field corrects nothing printed |
 | `corrected` | the attribution as the editor reads it, when the editorial block gives `corrections`: the same keys as the printed attribution (`printed`, `citesSource`, `citedPages`, ...) for whichever differ. The corrections are a JSON Merge Patch over the node; only the attribution is derived here |
 | `notes` | the node's `notes`, copied through verbatim |
 
@@ -42,17 +42,19 @@ bin is never reported as a taxon and an unnamed group is not reported as
 a bin. A placement whose parent is a placeholder carries the parent's
 kind as `parentPlaceholder`.
 
-Attribution appears in trees in two shapes and both produce the same
-`printed` fields: the flat form (`auth`, `year`, `in`, `citedAs`) and the
-nested form (`authority: {source, pages, illustrations}`), which also
-resolves the citation to a source record and carries the cited pages. When
-the nested form names a source, the claim adds `citesSource`, `citedPages`,
-`citedIllustrations` and `citedAttributedTo` as present. An authority may
-give `auctt` in place of a source: the name cited auctorum, "of authors",
-in its general current sense (`auctt: true`, printed "auctt.") or of the
-authors it qualifies (`auctt: veterum`, "auctt. veterum"). It names no
-work, so it has no pages, illustrations or attribution, and the claim
-carries `citesAuctt` with its value in place of `citesSource`.
+An attribution is one `authority` block in one of three forms, beside
+the `citedAs` that keeps the line as printed: `source`, the work it
+resolves to, with `attributedTo` and `ex` as the record allows; `auctt`,
+the name cited auctorum, "of authors", in its general current sense
+(`auctt: true`, printed "auctt.") or of the authors it qualifies (`auctt:
+veterum`, "auctt. veterum"), which names no work and so has no pages,
+illustrations or attribution; or the printed credit `auth` (`[]` for an
+author the source does not name), `year` and `in`, as the source printed
+them, which may be a year alone. A block with `source` or a credit also
+carries the locators in that work, `pages` and `illustrations`; a cited
+entry whose line names no work carries the locators alone. The claim
+copies the credit into `printed`, and the rest as present: `citesSource`
+or `citesAuctt`, `citedPages`, `citedIllustrations`, `citedAttributedTo`.
 
 ## The kinds
 
@@ -201,13 +203,13 @@ Something this source does to a name. One claim per flag, `actKind` being:
 
 A node under `translated`, `corrected`, `substituted`, `moved` or `removed` is the
 earlier state of the name as this source cites it: its own `authority`,
-`auth`, `year`, `pages` and `illustrations` locate that earlier use, and
-it emits a `usage` claim on its axis like any cited entry. The change is
+with the `pages` and `illustrations` inside it, locates that earlier use,
+and it emits a `usage` claim on its axis like any cited entry. The change is
 this source's act. `emended`, `restricted`, `recombined` and `translated`
 are the acts a source may follow rather than perform: `emendedBy` and
 `restrictedBy` list the works whose emendations and restrictions it
-follows, and `by` (an `authority`) on `recombined` and `translated` names
-the work that performed the act. A classification line names that work
+follows, and `by` (a cited work: `source` or `auctt`) on `recombined` and
+`translated` names the work that performed the act. A classification line names that work
 after the act's mark. Any of these authorities, and `fixedBy`, may be
 `auctt` in place of a work: the act then carries `byAuctt` (or
 `fixedByAuctt`) in place of `by` and `byPages`, and the mark reads
@@ -363,10 +365,11 @@ can ask whether a placement is the paper's or the editor's. Fields:
 Merge Patch over the node: every key it touches is printed in error, and
 its value is what the editor reads instead; `null` deletes a printed field
 that is wrong with nothing known to replace it; an array is restated
-whole), `basis`. Bell 1975 cites "Bell, 1974" for a paper that appeared in
-1976: corrections delete `auth` and `year` and set `authority.source:
-1976_bell.b.m`. The claim it qualifies
-carries the same block, so both directions are answerable.
+whole), `basis`. The patch follows the node's shape: Bell 1975 cites
+"Bell, 1974" for a paper that appeared in 1976, so its corrections are
+`authority: {auth: null, year: null, source: 1976_bell.b.m}`, deleting the
+printed credit and naming the work. The claim it qualifies carries the
+same block, so both directions are answerable.
 
 ### `absence`
 

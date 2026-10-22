@@ -15,12 +15,14 @@ even when its parent is also unreached, so read parents first.
 |---|---|
 | `actAndModifierFields` | `phylogeny#/$defs/actAndModifierFields/properties/recombined/oneOf/1`<br>`phylogeny#/$defs/actAndModifierFields/properties/restrictedBy`<br>`phylogeny#/$defs/actAndModifierFields/properties/restrictedBy/items` |
 | `article` | `phylogeny#/$defs/article/oneOf/2`<br>`phylogeny#/$defs/article/properties/reading` |
-| `authority` | `phylogeny#/$defs/authority/properties/auctt/oneOf/1` |
+| `authority` | `phylogeny#/$defs/authority/oneOf/3/not`<br>`phylogeny#/$defs/authority/oneOf/3/not/anyOf/0`<br>`phylogeny#/$defs/authority/oneOf/3/not/anyOf/1`<br>`phylogeny#/$defs/authority/oneOf/3/not/anyOf/2`<br>`phylogeny#/$defs/authority/oneOf/3/not/anyOf/3`<br>`phylogeny#/$defs/authority/properties/auctt/oneOf/1` |
 | `catalogNumber` | `phylogeny#/$defs/catalogNumber`<br>`phylogeny#/$defs/catalogNumber/oneOf/0`<br>`phylogeny#/$defs/catalogNumber/oneOf/1`<br>`phylogeny#/$defs/catalogNumber/oneOf/1/items` |
 | `citedAct` | `phylogeny#/$defs/citedAct`<br>`phylogeny#/$defs/citedAct/properties/by` |
+| `citedWork` | `phylogeny#/$defs/citedWork/anyOf/1` |
 | `cladisticFields` | `phylogeny#/$defs/cladisticFields/properties/data`<br>`phylogeny#/$defs/cladisticFields/properties/data/additionalProperties` |
 | `context` | `phylogeny#/$defs/context/properties/biozones`<br>`phylogeny#/$defs/context/properties/biozones/items`<br>`phylogeny#/$defs/context/properties/collectedDate`<br>`phylogeny#/$defs/context/properties/paleocontinent`<br>`phylogeny#/$defs/context/properties/sources`<br>`phylogeny#/$defs/context/properties/sources/items`<br>`phylogeny#/$defs/context/properties/tentative/oneOf/0` |
 | `contextRef` | `phylogeny#/$defs/contextRef/oneOf/1`<br>`phylogeny#/$defs/contextRef/oneOf/1/properties/key`<br>`phylogeny#/$defs/contextRef/oneOf/1/properties/tentative` |
+| `editorialObject` | `phylogeny#/$defs/editorialObject/properties/corrections/not`<br>`phylogeny#/$defs/editorialObject/properties/corrections/not/anyOf/0`<br>`phylogeny#/$defs/editorialObject/properties/corrections/not/anyOf/1`<br>`phylogeny#/$defs/editorialObject/properties/corrections/not/anyOf/2`<br>`phylogeny#/$defs/editorialObject/properties/corrections/properties/authority/properties/in`<br>`phylogeny#/$defs/editorialObject/properties/corrections/properties/authority/properties/in/items` |
 | `entryRef` | `phylogeny#/$defs/entryRef` |
 | `entryRefFields` | `phylogeny#/$defs/entryRefFields`<br>`phylogeny#/$defs/entryRefFields/oneOf/0`<br>`phylogeny#/$defs/entryRefFields/oneOf/1`<br>`phylogeny#/$defs/entryRefFields/properties/label`<br>`phylogeny#/$defs/entryRefFields/properties/number`<br>`phylogeny#/$defs/entryRefFields/properties/prefix` |
 | `entryRefOrNumber` | `phylogeny#/$defs/entryRefOrNumber/oneOf/1` |
@@ -37,10 +39,10 @@ even when its parent is also unreached, so read parents first.
 | `publication` | `phylogeny#/$defs/publication/properties/type` |
 | `range` | `phylogeny#/$defs/range/properties/inferred` |
 | `relationalFields` | `phylogeny#/$defs/relationalFields/properties/type/oneOf/1` |
+| `sectionRecord` | `phylogeny#/$defs/sectionRecord/properties/authority/not` |
 | `stageRange` | `phylogeny#/$defs/stageRange`<br>`phylogeny#/$defs/stageRange/items` |
-| `taxonRecord` | `phylogeny#/$defs/taxonRecord/else/oneOf/3`<br>`phylogeny#/$defs/taxonRecord/else/oneOf/4`<br>`phylogeny#/$defs/taxonRecord/properties/altGenderOf`<br>`phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items/items`<br>`phylogeny#/$defs/taxonRecord/properties/latinSpellingOf` |
+| `taxonRecord` | `phylogeny#/$defs/taxonRecord/else/oneOf/3`<br>`phylogeny#/$defs/taxonRecord/else/oneOf/4`<br>`phylogeny#/$defs/taxonRecord/properties/altGenderOf`<br>`phylogeny#/$defs/taxonRecord/properties/authority/not`<br>`phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items/items`<br>`phylogeny#/$defs/taxonRecord/properties/latinSpellingOf` |
 | `timeFields` | `phylogeny#/$defs/timeFields/properties/eon`<br>`phylogeny#/$defs/timeFields/properties/era`<br>`phylogeny#/$defs/timeFields/properties/seriesBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageRange` |
-| `tree` | `tree#/then/not`<br>`tree#/then/not/anyOf/0`<br>`tree#/then/not/anyOf/1`<br>`tree#/then/not/anyOf/2` |
 | `typeNode` | `phylogeny#/$defs/typeNode/properties/fixedBy` |
 | `uncertaintyFields` | `phylogeny#/$defs/uncertaintyFields/properties/nonMonophyletic/oneOf/1` |
 
@@ -113,25 +115,20 @@ property.
 | `quotes` | 1 | 0.3% |
 | `reading` | 0 | 0.0% |
 
-### `authority` -- 2027 instances in `data/`
+### `authority` -- 2896 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `source` | 2025 | 99.9% |
-| `pages` | 67 | 3.3% |
-| `illustrations` | 41 | 2.0% |
-| `attributedTo` | 24 | 1.2% |
-| `ex` | 15 | 0.7% |
-| `notes` | 4 | 0.2% |
+| `source` | 2025 | 69.9% |
+| `auth` | 847 | 29.2% |
+| `year` | 844 | 29.1% |
+| `pages` | 370 | 12.8% |
+| `illustrations` | 61 | 2.1% |
+| `in` | 28 | 1.0% |
+| `attributedTo` | 24 | 0.8% |
+| `ex` | 15 | 0.5% |
+| `notes` | 4 | 0.1% |
 | `auctt` | 2 | 0.1% |
-
-### `authorityFields` -- 9419 instances in `data/`
-
-| property | data | data % |
-|---|---|---|
-| `auth` | 847 | 9.0% |
-| `year` | 846 | 9.0% |
-| `in` | 28 | 0.3% |
 
 ### `citationFields` -- 9407 instances in `data/`
 
@@ -177,8 +174,11 @@ property.
 | `basis` | 53 | 100.0% |
 | `inferred` | 39 | 73.6% |
 | `corrections` | 14 | 26.4% |
-| `corrections.authority` | 9 | 64.3% |
-| `corrections.authority.source` | 9 | 100.0% |
+| `corrections.authority` | 10 | 71.4% |
+| `corrections.authority.source` | 9 | 90.0% |
+| `corrections.authority.auth` | 8 | 80.0% |
+| `corrections.authority.year` | 8 | 80.0% |
+| `corrections.authority.in` | 0 | 0.0% |
 
 ### `figureLocatorFields` -- 513 instances in `data/`
 
@@ -240,11 +240,11 @@ property.
 | `prefix` | 28 | 47.5% |
 | `register` | 0 | 0.0% |
 
-### `locationFields` -- 9407 instances in `data/`
+### `locationFields` -- 6577 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `illustrations` | 201 | 2.1% |
+| `illustrations` | 181 | 2.8% |
 
 ### `materialEntry` -- 299 instances in `data/`
 
@@ -408,10 +408,9 @@ property.
 
 | property | data | data % |
 |---|---|---|
+| `authority` | 12 | 100.0% |
 | `citedAs` | 12 | 100.0% |
 | `name` | 12 | 100.0% |
-| `pages` | 12 | 100.0% |
-| `authority` | 11 | 91.7% |
 | `notes` | 5 | 41.7% |
 | `/if.name` | 3 | 100.0% |
 | `designation` | 3 | 25.0% |
@@ -428,9 +427,9 @@ property.
 | property | data | data % |
 |---|---|---|
 | `name` | 2800 | 98.9% |
-| `authority` | 1803 | 63.7% |
+| `authority` | 2607 | 92.1% |
+| `/if.authority` | 2606 | 100.0% |
 | `rank` | 969 | 34.2% |
-| `pages` | 260 | 9.2% |
 | `notes` | 239 | 8.4% |
 | `altSpellingOf` | 149 | 5.3% |
 | `lang` | 76 | 2.7% |
@@ -474,11 +473,10 @@ property.
 | property | data | data % |
 |---|---|---|
 | `children` | 2220 | 33.8% |
-| `pages` | 1216 | 18.5% |
+| `pages` | 1185 | 18.0% |
 | `rank` | 601 | 9.1% |
 | `parents` | 329 | 5.0% |
-| `authority` | 262 | 4.0% |
-| `/if.authority` | 76 | 100.0% |
+| `authority` | 326 | 5.0% |
 | `bracketEnd` | 28 | 0.4% |
 | `bracketStart` | 28 | 0.4% |
 | `mergeInto` | 14 | 0.2% |
@@ -825,8 +823,9 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/citationNumber` | integer/string | intx2649, strx267 | `IV`, `II`, `IX`, `VIII` | - |
 | `phylogeny#/$defs/cladisticFields/properties/matrix/items` | integer/string | intx139, strx5 | `?` | - |
 | `phylogeny#/$defs/contexts` | object/null | dictx59, nullx41 | - | - |
+| `phylogeny#/$defs/editorialObject/properties/corrections/properties/authority/properties/auth` | array/null | nullx7, listx1 | - | - |
 | `phylogeny#/$defs/editorialObject/properties/inferred` | boolean/array | listx25, boolx14 | - | - |
-| `phylogeny#/$defs/locationFields/properties/illustrations` | array/null | listx189, nullx12 | - | - |
+| `phylogeny#/$defs/locationFields/properties/illustrations` | array/null | listx169, nullx12 | - | - |
 | `phylogeny#/$defs/materialsFields/properties/material` | array/null | listx116, nullx9 | - | - |
 | `phylogeny#/$defs/materialsFields/properties/ranges` | array/null | listx72, nullx41 | - | - |
 | `phylogeny#/$defs/person/properties/death` | integer/null | intx104, nullx1 | - | - |

@@ -26,7 +26,7 @@ from tests import support
 
 SOURCE = '1961_dehm'
 CF_KEY = 'lepidocystis-cf-wanneri_sprinkle_1973'
-CF_RECORD = {'name': None, 'rank': 'species', 'auth': ['sprinkle'], 'year': 1973}
+CF_RECORD = {'name': None, 'rank': 'species', 'authority': {'auth': ['sprinkle'], 'year': 1973}}
 
 # Synthetic records for the checks: a genus, a species, an unnamed species,
 # a bin, and a spelling of the species.

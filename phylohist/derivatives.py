@@ -8,8 +8,8 @@ writes the field name as the row's `kind`, and the query side reads that
 kind back here for the candidate order and the wording. Both sides import
 this module, which imports nothing of either.
 
-Every kind takes its target's authority unless the record gives its own
-`auth` or `authority`. `homonym`, `originalParent` and `needsQualification`
+Every kind takes its target's authority unless the record's own `authority`
+names one (a block of locators alone does not). `homonym`, `originalParent` and `needsQualification`
 are never borrowed: they tell identically spelled records apart, so each
 spelling carries its own.
 """

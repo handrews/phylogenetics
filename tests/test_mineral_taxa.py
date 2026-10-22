@@ -329,7 +329,7 @@ def test_check_draft_lists_a_mineral_taxon_key_without_a_record(tmp_path, minera
 
 def test_the_protologue_check_reads_no_rank_off_a_mineral(caplog):
   own = 'calculus_linnaeus_1766'
-  record = {'name': 'calculus', 'rank': None, 'pages': 22, 'authority': {'source': SOURCE}}
+  record = {'name': 'calculus', 'rank': None, 'authority': {'source': SOURCE, 'pages': 22}}
   Taxon.add({**record, 'mineral': True}, own)
   tree = _tree({'mineralTaxon': own, 'new': True})
   _, errors = _logged(

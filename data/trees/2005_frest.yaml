@@ -12,17 +12,19 @@ taxonomies:
         synonyms:
         - taxon: ampheristocystis
           nudum: true
-          auth: [frest]
-          year: 1984
-          pages: 2097
+          authority:
+            auth: [frest]
+            year: 1984
+            pages: 2097
           citedAs: |
             Studies of Silurian echinoderms. Dissertation Abstracts
             International B44
         - taxon: ampheristocystis
           nudum: true
-          auth: [frest, brett, witzke]
-          year: 1999
-          pages: [728, 729]
+          authority:
+            auth: [frest, brett, witzke]
+            year: 1999
+            pages: [728, 729]
           citedAs: |
             "Caradocian-Gedinnian echinoderm associations of central and
             eastern North America. In Paleocommunity Analysis: A
@@ -34,8 +36,9 @@ taxonomies:
           synonyms:
           - taxon: concentricus_frest_2005
             nudum: true
-            year: 1999
-            pages: 729
+            authority:
+              year: 1999
+              pages: 729
             citedAs: |
               "Caradocian-Gedinnian echinoderm associations of central and
               eastern North America. In Paleocommunity Analysis: A

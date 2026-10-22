@@ -9,79 +9,80 @@ cochleae:
   citedAs: "* * * Univalvia Spiralia COCHLEÆ."
   authority:
     source: 1758_linnaeus
-  pages: 645
+    pages: 645
   notes: Only present in the genus-level outline of Vermes.
 conchae:
   name: Conchae
   citedAs: "* * Bivalvia CONCHÆ."
   authority:
     source: 1758_linnaeus
-  pages: 645
+    pages: 645
   notes: Only present in the genus-level outline of Vermes.
 echinus-irregulares:
   name: null
   designation: Irregular opening of the anus beneath the mouth
-  pages: 665
   authority:
     source: 1758_linnaeus
+    pages: 665
   citedAs: "* * Irregulares: apertura ani ſubtus uti os."
 echinus-regulares:
   name: null
   designation: Regular vertical anus
-  pages: 663
   authority:
     source: 1758_linnaeus
+    pages: 663
   citedAs: "* Regulares ano verticali."
 fixata:
   name: Fixata
-  pages: 1074
   authority:
     source: 1767_linnaeus
+    pages: 1074
   citedAs: "* Fixata."
   notes: Only present in the genus-level outline of Vermes.
 integra:
   name: Integra
-  pages: 661
   authority:
     source: 1758_linnaeus
+    pages: 661
   citedAs: "* Integra."
 locomotiva:
   name: Locomotiva
-  pages: 1074
   authority:
     source: 1767_linnaeus
+    pages: 1074
   citedAs: Locomotiva.
   notes: >
     No "* *" before the word for citedAs.
     Only present in the genus-level outline of Vermes.
 lunatae:
   name: Lunatae
-  pages: 233
   authority:
     source: 1776_müller.o.f
+    pages: 233
   citedAs: "* Lunatæ."
 multivalvia:
   name: Multivalvia
-  pages: 645
+  authority:
+    pages: 645
   citedAs: "* Multivalvia."
   notes: Only present in the genus-level outline of Vermes.
 radiatae:
   name: Radiatae
-  pages: 662
   authority:
     source: 1758_linnaeus
+    pages: 662
   citedAs: "* * * Radiatæ."
 stellatae:
   name: Stellatae
-  pages: 661
   authority:
     source: 1758_linnaeus
+    pages: 661
   citedAs: "* * Stellatæ."
 testacea-section-4_linnaeus_1758:
   name: null
   designation: Univalves without a regular spire.
   needsQualification: true
-  pages: 645
   authority:
     source: 1758_linnaeus
+    pages: 645
   citedAs: "* * * * Univalvia absque ſpira regulari."

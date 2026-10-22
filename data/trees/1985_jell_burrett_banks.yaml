@@ -61,8 +61,9 @@ taxonomies:
           comparison" (p. 190), not part of the 1971 type series
         synonyms:
         - taxon: primotica_henderson_shergold_1971
-          auth: [Henderson, Shergold]
-          year: 1971
+          authority:
+            auth: [Henderson, Shergold]
+            year: 1971
           parents:
           - taxon: cyclocystoides
     - taxon: stromatocystites

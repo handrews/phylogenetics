@@ -27,7 +27,7 @@ prefix and numbers, entered separately, their role and holder; the file's
 `ranges` a source gives for a taxon, this source's `illustrations` on a
 primary node (tied to a material entry by `of`, with `depicts` when the
 figure is not a specimen photograph; on a cited entry an illustration is
-only a locator), and the page, plate and figure numbers that locate them. It does not carry diagnoses, descriptions, figure captions,
+only a locator, inside the entry's `authority`), and the page, plate and figure numbers that locate them. It does not carry diagnoses, descriptions, figure captions,
 artists' names, physical descriptions of specimens, or a narration of the
 paper's argument. Everything of that kind that a drafter finds worth
 recording goes into the review file under `notes/reviews/`, where
@@ -41,6 +41,13 @@ Conventions the promotion of the Whiteaves and Bather drafts settled:
   there in the first place.
 - `pages` is one page: the page where the name is formally stated, or
   where its prose treatment begins. A range is for exceptional cases.
+- An attribution is `citedAs`, the line as printed, with an `authority`
+  block: `source` when the cited work has a record, else `auth`/`year`/`in`
+  as printed (`auth: []` when the source names no author); `null` when the
+  line prints none; no block when it matches the record. A synonymy entry's
+  page and figure numbers in the cited work go inside the block, alone when
+  the line names no work; a primary node's own `pages` and `illustrations`
+  stay on the node.
 - A classification the paper adopts by citation is recorded as the
   paper's usage, with the ranks the paper attributes to it, even where the
   paper places nothing under most of it. The genus is not made the top

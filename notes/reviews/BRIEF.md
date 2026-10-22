@@ -29,8 +29,11 @@ opinions exactly as each publication printed them, with no normalisation.
   descendant of the end node), `sectionStart`/`sectionEnd` (an informal
   heading over a span of siblings in one `children` list, named by a record
   in `data/sections.yaml`, keyed by its name lower-cased),
-  `auth`/`year`/`in`/`citedAs`
-  (= attribution exactly as printed on that line), `pages`, `material` (one entry per specimen
+  `citedAs` (= the line exactly as printed) with `authority` (its
+  attribution: `source` when the cited work has a record, else `auth`/`year`/`in`
+  as printed; `null` when none is printed; absent when it matches the record;
+  on a cited entry the cited work's `pages`/`illustrations` sit inside it),
+  `pages`, `material` (one entry per specimen
   or batch: `prefix` and `numbers` (the prefix resolved by the `prefixes` map at
   the top of the tree file), `role`, `repository`, `context`; `uncertain`
   for a doubtfully assigned specimen, `roleUncertain` for a queried role), `contexts`

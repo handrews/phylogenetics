@@ -5,16 +5,17 @@ taxonomies:
   pages: 35
   children:
   - taxon: isorophida
-    auth: [bell.b.m]
-    year: 1974
+    authority:
+      auth: [bell.b.m]
+      year: 1974
     citedAs: Order ISOROPHIDA Bell, 1974
     rank: Order
     pages: 35
     editorial:
       corrections:
-        auth: null
-        year: null
         authority:
+          auth: null
+          year: null
           source: 1976_bell.b.m
       basis: cited before publication; printed with the intended year
     notes: |
@@ -65,14 +66,15 @@ taxonomies:
           provisional: true
           children:
           - taxon: commensalus_bell.b.m_1976
-            auth: [bell.b.m]
-            year: 1974
+            authority:
+              auth: [bell.b.m]
+              year: 1974
             citedAs: Bell, 1974
             editorial:
               corrections:
-                auth: null
-                year: null
                 authority:
+                  auth: null
+                  year: null
                   source: 1976_bell.b.m
               basis: cited before publication; printed with the intended year
             notes: |

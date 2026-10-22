@@ -2,8 +2,9 @@ prefixes:
   F.: uq-f
 taxonomies:
 - taxon: echinodermata
-  auth: [klein]
-  year: 1734
+  authority:
+    auth: [klein]
+    year: 1734
   children:
   - taxon: haplozoa
     new: true

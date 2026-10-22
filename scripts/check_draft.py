@@ -67,20 +67,16 @@ def walk(node, taxa, authors, sources, sections=None):
         sections.add(start['section'])
       if isinstance(node.get('sectionEnd'), str):
         sections.add(node['sectionEnd'])
-    for author in node.get('auth') or ():
-      # A capitalised author string is the convention for an author with no
-      # record; only key-form strings are expected to resolve.
-      if isinstance(author, str) and author.lower() == author:
-        authors.add(author)
-    for field in ('source', 'in'):
-      value = node.get(field)
-      if isinstance(value, str):
-        sources.add(value)
-    editorial = node.get('editorial')
-    if isinstance(editorial, dict):
-      corrected = (editorial.get('corrections') or {}).get('authority') or {}
-      if isinstance(corrected.get('source'), str):
-        sources.add(corrected['source'])
+    # The credits inside an `authority` block, which the recursion reaches
+    # (a correction's too). A capitalised author string is the convention
+    # for an author with no record; only key-form strings are expected to
+    # resolve.
+    for field in ('auth', 'in', 'attributedTo'):
+      for author in node.get(field) or ():
+        if isinstance(author, str) and author.lower() == author:
+          authors.add(author)
+    if isinstance(node.get('source'), str):
+      sources.add(node['source'])
     for value in node.values():
       walk(value, taxa, authors, sources, sections)
   elif isinstance(node, list):

@@ -661,7 +661,10 @@ def test_the_sections_schema_takes_a_name_or_a_designation():
   assert schema.check(
     {UNNAMED: {'name': None, 'designation': 'Multivalvia', 'authority': authority, 'notes': 'A.'}}
   )
-  assert schema.check({INTEGRA: {'name': 'Integra', 'auth': ['linnaeus'], 'year': 1758}})
+  assert schema.check(
+    {INTEGRA: {'name': 'Integra', 'authority': {'auth': ['linnaeus'], 'year': 1758}}}
+  )
+  assert not schema.check({INTEGRA: {'name': 'Integra', 'auth': ['linnaeus'], 'year': 1758}})
   assert schema.check({INTEGRA: {'name': 'Integra'}})
   assert schema.check({INTEGRA: {'name': 'Integra', 'needsQualification': True}})
 
@@ -1277,15 +1280,9 @@ def _protologue(caplog, record=None, marker=None, tree_source=PROTOLOGUE_SOURCE,
   section `integra` with `pages: 661` and `record` fields on top, whose
   marker in a taxonomy of `tree_source` has `marker` on top (flagged `new`
   unless `new` is false)."""
-  Section.add(
-    {
-      'name': 'Integra',
-      'authority': {'source': PROTOLOGUE_SOURCE},
-      'pages': 661,
-      **(record or {}),
-    },
-    INTEGRA,
-  )
+  record = dict(record or {})
+  authority = {'source': PROTOLOGUE_SOURCE, 'pages': record.pop('pages', 661)}
+  Section.add({'name': 'Integra', 'authority': authority, **record}, INTEGRA)
   start = _start(INTEGRA, **({'new': True} if new else {}), **(marker or {}))
   node = {'taxon': 'luna_linnaeus_1758', 'sectionStart': start, 'sectionEnd': INTEGRA}
   tree = Tree(
@@ -1474,10 +1471,11 @@ def test_the_usage_of_an_open_taxon_node_carries_its_designation():
 def test_the_schema_takes_pages_on_a_section_record_and_the_new_marker():
   schema = support.schema()['sections']
   authority = {'source': PROTOLOGUE_SOURCE}
-  record = {'name': None, 'designation': 'Multivalvia', 'authority': authority, 'pages': 654}
+  record = {'name': None, 'designation': 'Multivalvia', 'authority': {**authority, 'pages': 654}}
   assert schema.check({UNNAMED: record})
-  assert schema.check({UNNAMED: {**record, 'pages': [654, 655]}})
-  assert not schema.check({UNNAMED: {**record, 'pages': {'a': 1}}})
+  assert schema.check({UNNAMED: {**record, 'authority': {**authority, 'pages': [654, 655]}}})
+  assert not schema.check({UNNAMED: {**record, 'authority': {**authority, 'pages': {'a': 1}}}})
+  assert not schema.check({UNNAMED: {**record, 'pages': 654}})
   marker = _start(UNNAMED, new=True, designation='Multivalvia', pages=654)
   node = {'taxon': 'luna_linnaeus_1758', 'sectionStart': marker, 'sectionEnd': UNNAMED}
   assert _valid({'taxonomies': [{'taxon': 'asterias', 'children': [node]}]})

@@ -40,9 +40,9 @@ taxonomies:
           pages: 11
           editorial:
             corrections:
-              auth: null
-              year: null
               authority:
+                auth: null
+                year: null
                 source: 1918_jaekel
             basis: >
               There's no clear evidence that this was meant to indicate as
@@ -76,9 +76,9 @@ taxonomies:
             pages: 11
             editorial:
               corrections:
-                auth: null
-                year: null
                 authority:
+                  auth: null
+                  year: null
                   source: 1918_jaekel
               basis: >
                 There's no clear evidence that this was meant to indicate as

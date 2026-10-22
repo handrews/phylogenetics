@@ -67,20 +67,35 @@ def _check_unregistered_author(author_string, where=None):
     )
 
 
+# The keys of an `authority` block that name an attribution, as against the
+# locators (`pages`, `illustrations`) a block may carry alone.
+ATTRIBUTION_KEYS = ('source', 'auctt', 'auth', 'year')
+
+
+def names_attribution(block):
+  """Whether an `authority` block names an attribution, a work or a printed
+  credit, rather than locators alone (or nothing at all)."""
+  return isinstance(block, dict) and any(key in block for key in ATTRIBUTION_KEYS)
+
+
 class Authority:
-  def __init__(self, data, where=None):
-    """`where` names the record the authority is on (`taxa.yaml <key>`),
-    for the errors; a record the authority needs and cannot find ends the
-    load (`io.fail`)."""
+  def __init__(self, block, where=None):
+    """An `authority` block (`$defs/authority`) that names an attribution:
+    a `source`, or the printed credit `auth`, `year`, `in`. `where` names
+    the record it is on (`taxa.yaml <key>`), for the errors; a record the
+    block needs and cannot find ends the load (`io.fail`)."""
     self._source = None
+    self._ex = None
     at = f' at {where}' if where is not None else ''
 
-    if a := data.get('authority'):
-      source_key = a.get('source')
-      if source_key is None:
-        # The general authority shape admits `auctt` in place of a source;
-        # only an `ex` can be written so, and the loader reads a source.
-        fail(f'Authority{at} has an `ex` with no source', 'an ex authority needs a source')
+    if 'auctt' in block:
+      # A work, or the authors who printed it: "of authors" names neither.
+      fail(
+        f'Authority{at} cites auctt, which names no work',
+        "a record's authority names a work or a printed credit",
+      )
+    elif 'source' in block:
+      source_key = block['source']
       self._source = Source.get(source_key)
       if not self._source:
         fail(
@@ -89,8 +104,8 @@ class Authority:
         )
 
       self._source_authors = self._source.authors
-      if 'attributedTo' in a:
-        self._authors = self._find_authors(a['attributedTo'], at)
+      if 'attributedTo' in block:
+        self._authors = self._find_authors(block['attributedTo'], at)
       else:
         self._authors = None
 
@@ -100,26 +115,24 @@ class Authority:
         self._year = self.source.year
         self._disambiguator = self.source.disambiguator
 
-      if 'ex' in a:
-        self._ex = Authority({'authority': a['ex']}, where=where)
-      else:
-        self._ex = None
+      if 'ex' in block:
+        self._ex = Authority(block['ex'], where=where)
 
     else:
-      if not data['auth']:
-        # The record names no author (`auth: []`): the author is unknown.
+      # The printed credit. No `auth`, or `[]`, names an author the corpus
+      # cannot: the author is unknown, and a year may stand alone.
+      if not block.get('auth'):
         self._source_authors = None
         self._authors = None
       else:
-        auth_authors = self._find_authors(data['auth'], at)
-        if 'in' in data:
-          self._source_authors = self._find_authors(data['in'], at)
+        auth_authors = self._find_authors(block['auth'], at)
+        if 'in' in block:
+          self._source_authors = self._find_authors(block['in'], at)
           self._authors = auth_authors
         else:
           self._source_authors = auth_authors
           self._authors = None
-      self._ex = None
-      self._year = data.get('year')
+      self._year = block.get('year')
 
     if self._year:
       # A record naming no author has no lifespan to check.
@@ -236,9 +249,13 @@ class Taxon:
     # and mineral flag for every spelling, the authority for any that gives
     # none of its own.
     self._kind = kind = kind_of(taxon_data)
+    block = self._data.get('authority')
     if kind is None:
       self._alt = None
-      self._authority = Authority(taxon_data, where=where)
+      if not names_attribution(block):
+        # The schema requires a work or a printed credit; this is the backstop.
+        fail(f'Taxon {taxon_key} names no authority', f'taxon {taxon_key} has no authority')
+      self._authority = Authority(block, where=where)
     else:
       target = self._known(taxon_data[kind.field], kind.relation)
       self._alt = target
@@ -247,9 +264,10 @@ class Taxon:
       if kind.borrows_rank:
         self._rank = target.rank
         self._mineral = target.mineral
-      if 'auth' in self._data or 'authority' in self._data:
-        self._authority = Authority(taxon_data, where=where)
+      if names_attribution(block):
+        self._authority = Authority(block, where=where)
       else:
+        # Borrowed; a block of locators alone is the record's own page.
         self._authority = target.authority
       self._check_lang(kind, target)
 
@@ -491,9 +509,10 @@ class Section:
     self._designation = section_data.get('designation')
     if self._name is None and not self._designation:
       logger.error(f'Unnamed section {section_key} has no designation!')
-    # A section may leave its attribution to the work that prints it.
-    if 'authority' in section_data or 'auth' in section_data:
-      self._authority = Authority(section_data, where=f'sections.yaml {section_key}')
+    # A section may leave its attribution to the work that prints it, and
+    # give only its page.
+    if names_attribution(section_data.get('authority')):
+      self._authority = Authority(section_data['authority'], where=f'sections.yaml {section_key}')
     else:
       self._authority = None
 
@@ -545,7 +564,8 @@ class Section:
 
   @property
   def pages(self):
-    return self._data.get('pages')
+    """The protologue page, from the record's `authority` block."""
+    return (self._data.get('authority') or {}).get('pages')
 
   @property
   def notes(self):
@@ -555,8 +575,8 @@ class Section:
 # A subtree of a tree node other than `children`: the field holding it;
 # whether that holds a list of nodes rather than a single one; and whether
 # its nodes cite a use of the name in another work (a synonymy entry, or
-# the earlier state of a name the source changes), so that their pages and
-# illustrations locate that use rather than the citing source's own.
+# the earlier state of a name the source changes), so that the locators in
+# their `authority` are the cited work's, not the citing source's own.
 RelatedAxis = collections.namedtuple('RelatedAxis', 'name many cited')
 
 
@@ -806,9 +826,12 @@ class Tree:
       if self._data.get('new') or self.axis == 'lapsus':
         Tree._new_index[self._taxon.key].add(self._source.key)
 
-      for author_string in self._data.get('auth') or ():
-        if author_string.lower() != author_string:
-          _check_unregistered_author(author_string, where=self)
+      block = self._data.get('authority')
+      if isinstance(block, dict):
+        for field in ('auth', 'in', 'attributedTo'):
+          for author_string in block.get(field) or ():
+            if author_string.lower() != author_string:
+              _check_unregistered_author(author_string, where=self)
 
     if self._parent is None:
       self._pair_brackets()
@@ -1090,8 +1113,8 @@ class Tree:
 
   @property
   def is_cited(self):
-    # Whether the node cites a use of the name in another work, which its
-    # pages and illustrations locate (`RelatedAxis.cited`).
+    # Whether the node cites a use of the name in another work, which the
+    # locators in its `authority` point into (`RelatedAxis.cited`).
     return self.axis in self.CITED_AXES
 
   @property

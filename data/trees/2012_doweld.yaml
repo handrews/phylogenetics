@@ -14,7 +14,8 @@ taxonomies:
           new: true
           synonyms:
           - taxon: bockia_hecker_1938
-            year: 1940
+            authority:
+              year: 1940
             notes: Reason for erroneous year unclear.
             parents:
             - taxon: bockiidae

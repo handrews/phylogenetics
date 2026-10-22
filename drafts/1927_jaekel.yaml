@@ -160,10 +160,11 @@ taxonomies:
         synonyms:
         - parents:
           - taxon: cyathocystis
-          auth: [jaekel]
-          year: 1918
+          authority:
+            auth: [jaekel]
+            year: 1918
+            pages: 3
           citedAs: Cyathocystis corallum
-          pages: 3
           notes: |
             "die ich als Cyathocystis corallum in meinem System der
             Pelmatozoen pag. 112 abbildete" (p. 3) -- "which I figured as

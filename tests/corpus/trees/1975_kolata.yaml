@@ -1,7 +1,8 @@
 taxonomies:
 - taxon: echinodermata
-  auth: [Fleming] # WTF????
-  year: 1828
+  authority:
+    auth: [Fleming] # WTF????
+    year: 1828
   children:
   - taxon: homalozoa
     children:

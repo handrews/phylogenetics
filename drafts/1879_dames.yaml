@@ -21,8 +21,9 @@ notes: |
 taxonomies:
 - taxon: cyathocystis
   citedAs: Cyathocystis
-  auth: [Schmidt]
-  year: 1879
+  authority:
+    auth: [Schmidt]
+    year: 1879
   pages: 1001
   notes: |
     No parent node is entered: the group Dames places the genus with is
@@ -74,8 +75,9 @@ taxonomies:
       note rather than a specimen record.
   - taxon: rhizophora_schmidt.c.f_1879
     citedAs: Cyathocystis rhizophora
-    auth: [Schmidt]
-    year: 1879
+    authority:
+      auth: [Schmidt]
+      year: 1879
     pages: 1001
     contexts:
       jewesche-schicht:

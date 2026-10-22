@@ -200,13 +200,14 @@ taxonomies:
                       citedAs: =SCYTODERMATA, Burmeister, 1837
                     - taxon: ascidiastella
                       citedAs: =ASCIDIASTELLA, T. & T. Austin, 1840
-                      auth: [austin.t, austin.t.j]
-                      year: 1840
+                      authority:
+                        auth: [austin.t, austin.t.j]
+                        year: 1840
                       editorial:
                         corrections:
-                          auth: null
-                          year: null
                           authority:
+                            auth: null
+                            year: null
                             source: 1842_austin.t_austin.t.j
                         basis: >
                           T. & T. Austin, 1842 mentions that the classification

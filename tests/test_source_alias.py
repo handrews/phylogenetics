@@ -95,7 +95,7 @@ def test_an_alias_may_precede_its_target(caplog):
 
 def test_an_authority_by_alias_cites_the_alias_authors(caplog):
   _add('1985_banks', caplog=caplog)
-  authority = Authority({'authority': {'source': '1985_banks'}})
+  authority = Authority({'source': '1985_banks'})
   assert str(authority) == 'Banks 1985'
   assert authority.taxon_suffix == 'banks_1985'
 
