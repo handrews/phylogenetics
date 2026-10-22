@@ -1601,10 +1601,13 @@ Decided 2026-10-22, for the rank table (`data/ranks.yaml` with
   enum is checked against the table; every comparison folds the case; a
   word a source prints that the table lacks (Stage, Sub-branch) is added by
   the auditor, never allowed open.
-- The suffix lint applies to non-derivative records above the genus group
-  whose authority year is 1900 or later, in both directions (a rank's
-  expected ending, and an ending's expected ranks); a name before 1900 is
-  never checked. A superfamily accepts -acea before 1999 and -oidea always.
+- The suffix lint applies to records above the genus group whose authority
+  year is 1900 or later, in both directions (a rank's expected ending, and
+  an ending's expected ranks); a name before 1900 is never checked. A
+  spelling derivative is skipped (it borrows its rank and may be a
+  vernacular form); a rank variant (`altRankOf`) is checked at its own
+  rank, like any record (today the eleven that would warn are all
+  pre-1900 families and classes of Linnaeus, Klein and Lamarck). A superfamily accepts -acea before 1999 and -oidea always.
   The exceptions live in the table, each with a note, and the loader errors
   on one that names no record or a record at another rank, so the list
   cannot go stale.
