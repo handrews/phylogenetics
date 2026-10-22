@@ -100,7 +100,8 @@ taxonomies:
       - 12
     synonyms:
     - taxon: granatum_wahlenberg_1821
-      pages: 53
+      authority:
+        pages: 53
       questionable: true
       notes: |
         Given as "(Echinosph. Granatum? Wahlenberg, p. 53.)",

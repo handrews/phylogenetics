@@ -107,11 +107,10 @@ def test_merge_patch_follows_rfc_7396():
 def test_corrected_node_applies_the_editorial_corrections():
   data = {
     'taxon': 'isorophida',
-    'auth': ['bell.b.m'],
-    'year': 1974,
+    'authority': {'auth': ['bell.b.m'], 'year': 1974},
     'citedAs': 'Bell, 1974',
     'editorial': {
-      'corrections': {'auth': None, 'year': None, 'authority': {'source': '1976_bell.b.m'}},
+      'corrections': {'authority': {'auth': None, 'year': None, 'source': '1976_bell.b.m'}},
       'basis': 'cited before publication',
     },
   }
@@ -142,7 +141,10 @@ def test_corrections_reach_the_claims(claims):
   }
   assert 'erroneous' not in usage
   note = by_id['1975_bell.b.m:0/children/0:editorial']
-  assert 'errors' not in note and note['corrections']['authority'] == {'source': '1976_bell.b.m'}
+  assert 'errors' not in note
+  assert note['corrections'] == {
+    'authority': {'auth': None, 'year': None, 'source': '1976_bell.b.m'}
+  }
 
 
 def test_manifest_carries_author_surnames(claims, roots):
@@ -177,13 +179,13 @@ def test_change_node_acts(claims):
 @pytest.mark.parametrize('axis', ['translated', 'corrected', 'substituted', 'moved', 'removed'])
 def test_earlier_state_entries_are_cited(caplog, axis):
   # The node under a change is the earlier state of the name as this
-  # source cites it: as on a synonymy entry, its pages and illustrations
-  # locate that earlier use, never this source's own page or figure.
+  # source cites it: as on a synonymy entry, the pages and illustrations in
+  # its `authority` locate that earlier use, never this source's own page or
+  # figure.
   illustrations = [{'page': 13, 'figures': ['1']}]
   earlier = {
     'taxon': 'rhenopyrgidae',
-    'pages': 12,
-    'illustrations': illustrations,
+    'authority': {'pages': 12, 'illustrations': illustrations},
     # The cited work's own material is not this source's: none of the four
     # material fields on a cited entry emits a claim.
     'material': [{'prefix': 'GSC', 'numbers': [1]}],

@@ -26,7 +26,8 @@ taxonomies:
     type:
       taxon: plautinae_schmidt.c.f_1879
       fixation: originalDesignation
-      pages: 7
+      authority:
+        pages: 7
       notes: >
         C. rhizophora is contrasted with "the typical species", and
         C. plautinae is the only other species described.

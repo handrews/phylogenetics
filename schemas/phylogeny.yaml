@@ -315,19 +315,53 @@ $defs:
       aliasOf:
         $ref: "#/$defs/sourceId"
   authority:
+    description: |
+      An attribution as a line prints it, in one of three forms: `source`,
+      a work with a record; `auctt`, "of authors"; or the printed credit,
+      `auth` with `year` and `in`, for a work with no record. The block
+      also carries the locators in the work it names (`pages`,
+      `illustrations`): a cited entry's, or a taxon or section record's
+      protologue page and figures. On a cited entry, a derivative record
+      or a section, a block of locators alone means "as the record's
+      authority, at these pages".
     type: object
     oneOf:
     - required: [source]
     - required: [auctt]
+    - anyOf:
+      - required: [auth]
+      - required: [year]
+    - anyOf:
+      - required: [pages]
+      - required: [illustrations]
+      not:
+        anyOf:
+        - required: [source]
+        - required: [auctt]
+        - required: [auth]
+        - required: [year]
+    dependentRequired:
+      attributedTo: [source]
+      ex: [source]
     dependentSchemas:
       auctt:
-        $comment: These locate or qualify a particular work.
+        $comment: These locate, qualify or print a particular work.
         not:
           anyOf:
           - required: [attributedTo]
           - required: [ex]
           - required: [pages]
           - required: [illustrations]
+          - required: [auth]
+          - required: [year]
+          - required: [in]
+      in:
+        $comment: |
+          `in` qualifies printed authors; `auth: []` names none.
+        required: [auth]
+        properties:
+          auth:
+            minItems: 1
     unevaluatedProperties: false
     properties:
       source:
@@ -342,6 +376,25 @@ $defs:
         - const: true
         - type: string
           minLength: 1
+      auth:
+        description: |
+          The authors credited on the line, as author keys or, for an
+          author with no record, as printed; `[]` when the line credits
+          an author the corpus cannot name.
+        type: array
+        items:
+          type: string
+      year:
+        description: The year printed with the credit.
+        $ref: "#/$defs/publicationYear"
+      in:
+        description: |
+          The authors of the work the name appeared in, when the credit
+          names others ("Bather in Smith 1900").
+        type: array
+        minItems: 1
+        items:
+          type: string
       attributedTo:
         $comment: |
           The authors credited with the taxon, when they differ from the authors
@@ -351,7 +404,7 @@ $defs:
         items:
           type: string
       ex:
-        $ref: "#/$defs/authority"
+        $ref: "#/$defs/citedWork"
       pages:
         $ref: "#/$defs/citationNumbers"
       illustrations:
@@ -360,6 +413,15 @@ $defs:
           $ref: "#/$defs/illustration"
       notes:
         type: string
+  citedWork:
+    $comment: |
+      An authority that names a work, by `source` or `auctt`: what an act
+      is followed from (`by`, `emendedBy`, `restrictedBy`), a type's
+      `fixedBy`, an `ex`.
+    $ref: "#/$defs/authority"
+    anyOf:
+    - required: [source]
+    - required: [auctt]
   rank:
     type: string
     enum:
@@ -398,49 +460,30 @@ $defs:
 
   citationFields:
     $comment: |
-      What a tree node and a taxon record share. `rank`, `pages` and
-      `authority` are declared by each (a node's may be `null`), so none
-      is here.
+      What a tree node and a taxon record share. `rank` and `authority`
+      are declared by each (a node's may be `null`), so neither is here.
     properties:
       citedAs:
         description: |
           A bibliographic reference exactly as printed in the source being
           transcribed, including any errors or OCR artifacts.  Used for synonymy
           lists, where the point is to record what that paper listed.  The
-          citation's own attribution goes in `authority` when the work has a
-          record in sources.yaml, or in `auth`/`year` when it does not.
+          citation's own attribution goes in `authority`: its `source` when
+          the work has a record in sources.yaml, else `auth`/`year`/`in`
+          inside it.
           On a taxa record, the name as its protologue prints it, when that
           differs from `name` (the heading REGNUM ANIMALE for Animalia; a
           variety printed as 'Afer δ').
         type: string
-    allOf:
-    - $ref: "#/$defs/authorityFields"
-    - $ref: "#/$defs/locationFields"
-
-  authorityFields:
-    $comment: |
-      `authority` is declared by each user (a tree node's may be `null`).
-    properties:
-      auth:
-        type: array
-        items:
-          type: string
-      year:
-        $ref: "#/$defs/publicationYear"
-      in:
-        type: array
-        minItems: 1
-        items:
-          type: string
 
   locationFields:
     properties:
       illustrations:
         description: |
           On a primary node, the figures this source prints for it; `null`
-          says the source prints no figure for the node (roadmap G11). On a
-          cited entry, locators for a figure in the cited work; `null` is
-          not allowed there (the loader checks that).
+          says the source prints no figure for the node (roadmap G11). A
+          cited entry carries none here: locators for a figure in the cited
+          work go inside its `authority` (the loader checks that).
         type: [array, "null"]
         items:
           $ref: "#/$defs/illustration"
@@ -467,9 +510,17 @@ $defs:
     $ref: "#/$defs/citationFields"
     unevaluatedProperties: false
     if:
-      oneOf:
-      - required: [auth]
-      - required: [authority]
+      $comment: |
+        A record that names its own authority, a work or the printed
+        credit; a block of locators alone borrows one, so it is a
+        derivative's.
+      required: [authority]
+      properties:
+        authority:
+          anyOf:
+          - required: [source]
+          - required: [auth]
+          - required: [year]
     then:
       required: [name]
     else:
@@ -480,9 +531,18 @@ $defs:
       - required: [altGenderOf, name]
       - required: [latinSpellingOf, name]
     dependentRequired:
-      pages: [rank]
       vulgarSpellingOf: [lang]
     dependentSchemas:
+      authority:
+        $comment: |
+          A record that gives its protologue page spells its rank, where
+          the tree node leaves a genus or species implicit.
+        if:
+          properties:
+            authority:
+              required: [pages]
+        then:
+          required: [rank]
       mineral:
         $comment: A mineral formation's name has no rank, and the record says so.
         if:
@@ -511,8 +571,9 @@ $defs:
         type: string
       rank:
         description: |
-          Explicit on a record that gives its protologue `pages`, where the
-          tree node leaves a genus or species implicit; `null` says the
+          Explicit on a record that gives its protologue page
+          (`authority.pages`), where the tree node leaves a genus or
+          species implicit; `null` says the
           protologue placed the taxon with no rank word. An unnamed record
           spells its rank, and a node giving no rank of its own under a
           genus, subgenus or species is at a rank below its parent's; a
@@ -522,12 +583,20 @@ $defs:
         oneOf:
         - $ref: "#/$defs/rank"
         - type: "null"
-      pages:
-        $ref: "#/$defs/citationNumbers"
       authority:
-        $comment: A protologue is a particular work, so never `auctt`.
+        description: |
+          The protologue: the work that names the taxon (`source`), or the
+          printed credit (`auth`, `year`, `in`) when that work has no
+          record; never `auctt`. Its `pages` and `illustrations` locate the
+          protologue, and giving `pages` makes the record subject to the
+          protologue check: the node flagged `new: true` for it in that
+          source's tree must agree on `rank`, `pages`, `illustrations`,
+          `citedAs` and `designation` where the node declares them. On a
+          derivative record a block of locators alone borrows the target's
+          attribution.
         $ref: "#/$defs/authority"
-        required: [source]
+        not:
+          required: [auctt]
       name:
         type: [string, "null"]
         pattern: ^[\w][\w._ -]*$
@@ -623,7 +692,6 @@ $defs:
       given as `designation`. The key is the name lower-cased (`integra`,
       `stellatae`, `radiatae`) unless `needsQualification` is set.
     type: object
-    $ref: "#/$defs/authorityFields"
     unevaluatedProperties: false
     required: [name]
     if:
@@ -635,9 +703,18 @@ $defs:
       required: [designation]
     properties:
       authority:
-        $comment: A protologue is a particular work, so never `auctt`.
+        description: |
+          The protologue: the work that prints the heading (`source`), or
+          the printed credit (`auth`, `year`, `in`); never `auctt`. A
+          section may leave its attribution to the work that prints it
+          and give only its page. Its `pages` is the protologue page, and
+          giving it makes the record subject to the protologue check: the
+          `sectionStart` marker flagged `new: true` for this key in the
+          authority's trees must agree on `pages`, `citedAs` and
+          `designation` where it declares them.
         $ref: "#/$defs/authority"
-        required: [source]
+        not:
+          required: [auctt]
       name:
         type: [string, "null"]
         minLength: 1
@@ -652,14 +729,6 @@ $defs:
           The heading as its protologue prints it, when that differs from
           `name`.
         type: string
-      pages:
-        description: |
-          The page of the section's protologue; giving it makes the record
-          subject to the protologue check: the `sectionStart` marker
-          flagged `new: true` for this key in the authority's trees must
-          agree on `pages`, `citedAs` and `designation` where it declares
-          them.
-        $ref: "#/$defs/citationNumbers"
       needsQualification:
         description: |
           The key takes the authority suffix (`<name>_<author>_<year>`), as
@@ -731,25 +800,20 @@ $defs:
     allOf:
     - $ref: "phylogeny#/$defs/identificationFields"
     - $ref: "phylogeny#/$defs/citationFields"
+    - $ref: "phylogeny#/$defs/locationFields"
     - $ref: "phylogeny#/$defs/uncertaintyFields"
     - $ref: "phylogeny#/$defs/metaFields"
-    if:
-      required: [authority]
-      properties:
-        authority:
-          type: "null"
-    then:
-      not:
-        anyOf:
-        - required: [auth]
-        - required: [year]
-        - required: [in]
     properties:
       authority:
         description: |
-          `null`: the source cites the taxon with no authority (on a cited
-          entry, with no reference), so `auth`, `year` and `in` are not
-          allowed beside it. Absent, with no `auth`, means as the record.
+          The attribution as this line prints it (`$defs/authority`).
+          Absent means as the record; `null` says the source cites the
+          taxon with no authority (on a cited entry, with no reference).
+          On a cited entry the block also carries the cited work's `pages`
+          and `illustrations`, and a block of locators alone is the
+          record's authority at those locators; a primary node's own
+          `pages` and `illustrations` stay on the node (the loader checks
+          both).
         oneOf:
         - $ref: "phylogeny#/$defs/authority"
         - type: "null"
@@ -761,9 +825,11 @@ $defs:
         - type: "null"
       pages:
         description: |
-          `null` only on an inferred node (`editorial.inferred: true`): the
-          editor supplied the node and it has no page in this source (the
-          loader checks this).
+          This source's own page for the node. `null` only on an inferred
+          node (`editorial.inferred: true`): the editor supplied the node
+          and it has no page in this source (the loader checks this). A
+          cited entry's pages are the cited work's and go inside
+          `authority`.
         oneOf:
         - $ref: "phylogeny#/$defs/citationNumbers"
         - type: "null"
@@ -950,7 +1016,7 @@ $defs:
         type: array
         minItems: 1
         items:
-          $ref: "#/$defs/authority"
+          $ref: "#/$defs/citedWork"
       restricted:
         description: |
           This source restricts the taxon's definition: a tightening of
@@ -967,7 +1033,7 @@ $defs:
         type: array
         minItems: 1
         items:
-          $ref: "#/$defs/authority"
+          $ref: "#/$defs/citedWork"
       recombined:
         description: |
           Combinatio nova: the source prints this species-group name in a
@@ -982,7 +1048,7 @@ $defs:
           Nomen translatum: the name is used at another rank than the one
           it was proposed at.  `true` when the earlier rank is not stated;
           otherwise the node names the taxon at the earlier rank, with the
-          node's citation fields locating that earlier use as this source
+          node's `authority` locating that earlier use as this source
           cites it.  The act is this source's unless `by` names the work
           that made it.
         oneOf:
@@ -1023,8 +1089,8 @@ $defs:
         items:
           $ref: taxonomyTree
       # Nodes under these fields state the previous state of the name as
-      # this source cites it (their citation fields locate that earlier
-      # use); the change itself is this source's act.
+      # this source cites it (their `authority` locates that earlier use);
+      # the change itself is this source's act.
       removed:
         type: array
         items:
@@ -1074,14 +1140,14 @@ $defs:
     required: [by]
     properties:
       by:
-        $ref: "#/$defs/authority"
+        $ref: "#/$defs/citedWork"
 
   translatedNode:
     $ref: "#/$defs/baseTaxonomyTree"
     unevaluatedProperties: false
     properties:
       by:
-        $ref: "#/$defs/authority"
+        $ref: "#/$defs/citedWork"
 
   typeNode:
     $ref: "#/$defs/baseTaxonomyTree"
@@ -1108,7 +1174,7 @@ $defs:
         description: |
           The work that designated the type, or the Opinion that ruled on it;
           only with `subsequentDesignation`, `subsequentMonotypy` or `iczn`.
-        $ref: "#/$defs/authority"
+        $ref: "#/$defs/citedWork"
 
   phylogenyTree:
     $id: phylogenyTree
@@ -1201,9 +1267,9 @@ $defs:
       material entry it depicts, by a catalog number or label on the same
       node, or by an `entryRef` object when a bare number would match
       entries under two prefixes; none means the source never ties it to a
-      specimen), or a locator for a figure in the cited work when on a cited
-      entry or inside `authority`, where `of` and `depicts` are not allowed
-      (the loader checks that).
+      specimen), or a locator for a figure in the cited work when inside an
+      `authority`, where `of` and `depicts` are not allowed (the loader
+      checks that).
     type: object
     $ref: "#/$defs/figureLocatorFields"
     unevaluatedProperties: false
@@ -1268,12 +1334,34 @@ $defs:
         # TODO: Probably nest entire the parent object here, but with no
         #       required fields? Recursively? This will do for now.
         type: object
+        not:
+          $comment: |
+            The printed credit lives inside `authority`, and so does a
+            patch to it: Bell 1975's "Bell, 1974" for the paper of 1976 is
+            `corrections: {authority: {auth: null, year: null, source:
+            1976_bell.b.m}}`.
+          anyOf:
+          - required: [auth]
+          - required: [year]
+          - required: [in]
         properties:
           authority:
             type: object
             properties:
               source:
                 $ref: "#/$defs/sourceId"
+              auth:
+                type: [array, "null"]
+                items:
+                  type: string
+              year:
+                oneOf:
+                - $ref: "#/$defs/publicationYear"
+                - type: "null"
+              in:
+                type: [array, "null"]
+                items:
+                  type: string
         additionalProperties: true
       basis:
         description: |

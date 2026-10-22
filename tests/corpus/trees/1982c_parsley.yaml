@@ -1,7 +1,8 @@
 taxonomies:
 - taxon: echinodermata
-  auth: [bruguiére]
-  year: 1791
+  authority:
+    auth: [bruguiére]
+    year: 1791
   children:
   - taxon: blastozoa
     children:

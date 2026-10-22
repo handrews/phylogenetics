@@ -186,6 +186,18 @@ _PROTOLOGUE_FIELDS = (
 )
 
 
+# The protologue fields a record carries inside its `authority` block.
+_PROTOLOGUE_LOCATORS = frozenset({'pages', 'illustrations'})
+
+
+def _record_value(record, field):
+  """A record's side of a protologue field: the locators from its
+  `authority` block, the rest from the record itself."""
+  if field in _PROTOLOGUE_LOCATORS:
+    return (record.get('authority') or {}).get(field)
+  return record.get(field)
+
+
 def _page_form(value):
   """`pages` as a comparable value: a number and its digits are one, and a
   bare locator is a one-entry list (the schema says `52` and `[52]` agree)."""
@@ -223,7 +235,7 @@ def _report_protologue_mismatches(data, roots):
   # field its tree file lists as unused.
   mismatches = 0
   for taxon in Taxon._taxa.values():
-    if 'pages' not in taxon._data:
+    if 'pages' not in (taxon._data.get('authority') or {}):
       continue
     source = taxon.authority.source
     if source is None or source.canonical.key not in data['trees']:
@@ -234,7 +246,7 @@ def _report_protologue_mismatches(data, roots):
     where = f'taxa.yaml {taxon.key}'
 
     for field, _ in _PROTOLOGUE_FIELDS:
-      if trees and field in trees[0].file_unused and taxon._data.get(field) is not None:
+      if trees and field in trees[0].file_unused and _record_value(taxon._data, field) is not None:
         logger.error(f'{where}: {field} given but {tree_file} lists it as unused')
         mismatches += 1
 
@@ -265,7 +277,7 @@ def _report_protologue_mismatches(data, roots):
           continue
         if field not in node.data:
           continue
-        record_value, node_value = taxon._data.get(field), node.data[field]
+        record_value, node_value = _record_value(taxon._data, field), node.data[field]
         if _same_protologue_value(field, record_value, node_value):
           continue
         logger.error(
@@ -339,7 +351,7 @@ def _report_section_protologues(data, roots):
   # marker declares.
   mismatches = 0
   for section in Section._sections.values():
-    if 'pages' not in section._data:
+    if 'pages' not in (section._data.get('authority') or {}):
       continue
     source = section.authority.source if section.authority else None
     if source is None or source.canonical.key not in data['trees']:
@@ -360,7 +372,7 @@ def _report_section_protologues(data, roots):
       for field, verb in _SECTION_PROTOLOGUE_FIELDS:
         if field not in marker:
           continue
-        record_value, node_value = section._data.get(field), marker[field]
+        record_value, node_value = _record_value(section._data, field), marker[field]
         if _same_protologue_value(field, record_value, node_value):
           continue
         logger.error(

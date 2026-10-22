@@ -27,11 +27,12 @@ taxonomies:
         source: 1821_wahlenberg
         pages: 53
     - openTaxon: echinosphaerites-sp_hisinger_1802
-      pages: 189
-      illustrations:
-      - plate: 7
-        figures:
-        - b
+      authority:
+        pages: 189
+        illustrations:
+        - plate: 7
+          figures:
+          - b
   - taxon: aurantium_gyllenhaal_1772
     pages: 312
     notes: |

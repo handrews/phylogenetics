@@ -32,7 +32,8 @@ taxonomies:
           type:
             taxon: bassleri_sprinkle_1982h
             citedAs: Type species.--Bromidocystis bassleri Sprinkle, n. sp.
-            pages: 289
+            authority:
+              pages: 289
           children:
           - taxon: bassleri_sprinkle_1982h
             citedAs: BROMIDOCYSTIS BASSLERI Sprinkle, n. sp.

@@ -75,12 +75,14 @@ taxonomies:
               - taxon: bromidensis_bassler_1943
               - openTaxon: platycystites-cf-bromidensis_bassler_sinclair_1945
                 cf: bromidensis_bassler_1943
-                auth: [bassler, Sinclair]
-                year: 1945
+                authority:
+                  auth: [bassler, Sinclair]
+                  year: 1945
               - openTaxon: platycystites-cf-levatus_bassler_sinclair_1945
                 cf: levatus_bassler_1943
-                auth: [bassler, Sinclair]
-                year: 1945
+                authority:
+                  auth: [bassler, Sinclair]
+                  year: 1945
               - taxon: cristatus_bassler_1943
                 pars: true
             - taxon: cristatus_bassler_1943
@@ -90,8 +92,9 @@ taxonomies:
                   source: 1975_parsley_mintz
                 pars: true
               - taxon: cristatus_bassler_1943
-                auth: [frest, strimple, Coney]
-                year: 1979
+                authority:
+                  auth: [frest, strimple, Coney]
+                  year: 1979
                 parents:
                 - taxon: globulocystites
               synonyms:

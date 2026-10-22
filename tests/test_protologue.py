@@ -35,11 +35,21 @@ def registries(monkeypatch):
   monkeypatch.setattr(Taxon, '_taxa', dict(Taxon._taxa))
 
 
+def _record(record=None, **base):
+  """A record with `pages: 22` in its `authority` block and `record` fields
+  on top; a record-side `pages` or `illustrations` goes into the block."""
+  record = dict(record or {})
+  authority = {'source': SOURCE, 'pages': 22}
+  for field in ('pages', 'illustrations'):
+    if field in record:
+      authority[field] = record.pop(field)
+  return {**base, 'authority': authority, **record}
+
+
 def _check(record=None, node=None, unused=(), caplog=None):
   """The messages `_report_protologue_mismatches` logs for a record with
   `record` fields on top of its pages, and a protologue node with `node`."""
-  data = {'name': 'testum', 'rank': 'species', 'pages': 22, 'authority': {'source': SOURCE}}
-  Taxon.add({**data, **(record or {})}, KEY)
+  Taxon.add(_record(record, name='testum', rank='species'), KEY)
   tree = Tree(
     {'taxon': KEY, 'new': True, **(node or {})},
     {
@@ -187,9 +197,7 @@ def test_a_node_not_marked_new_is_not_the_protologue(caplog):
 
 
 def test_a_cited_use_of_the_record_is_not_the_protologue(caplog):
-  Taxon.add(
-    {'name': 'testum', 'rank': 'species', 'pages': 22, 'authority': {'source': SOURCE}}, KEY
-  )
+  Taxon.add(_record(name='testum', rank='species'), KEY)
   tree = Tree(
     {
       'taxon': 'vermes',
@@ -198,7 +206,7 @@ def test_a_cited_use_of_the_record_is_not_the_protologue(caplog):
           'taxon': KEY,
           'new': True,
           'pages': 22,
-          'synonyms': [{'taxon': KEY, 'new': True, 'pages': 99}],
+          'synonyms': [{'taxon': KEY, 'new': True, 'authority': {'pages': 99}}],
         }
       ],
     },
@@ -223,9 +231,7 @@ def test_an_unused_field_the_record_does_not_give_is_clean(caplog):
 
 
 def test_a_source_without_a_tree_is_not_checked(caplog):
-  Taxon.add(
-    {'name': 'testum', 'rank': 'variety', 'pages': 22, 'authority': {'source': SOURCE}}, KEY
-  )
+  Taxon.add(_record(name='testum', rank='variety'), KEY)
   with caplog.at_level(logging.INFO, logger='phylohist'):
     caplog.clear()
     _report_protologue_mismatches({'trees': {}}, {})
@@ -234,7 +240,7 @@ def test_a_source_without_a_tree_is_not_checked(caplog):
 
 def test_schema_accepts_cited_as_on_a_record_and_a_node():
   schema = support.schema()
-  record = {'name': 'afer', 'rank': 'variety', 'pages': 22, 'authority': {'source': SOURCE}}
+  record = _record(name='afer', rank='variety')
   assert schema['taxa'].check({'afer_linnaeus_1758': {**record, 'citedAs': 'Afer δ'}})
   assert not schema['taxa'].check({'afer_linnaeus_1758': {**record, 'citedAs': 1}})
   assert not schema['taxa'].check({'afer_linnaeus_1758': {**record, 'printedAs': 'Afer δ'}})
@@ -260,8 +266,9 @@ def test_a_node_without_a_rank_implies_a_species_or_a_genus(caplog):
 
 
 def test_a_record_with_pages_spells_its_rank():
+  # The page sits in the `authority` block; the rank the record spells.
   schema = support.schema()
-  record = {'name': 'afer', 'pages': 22, 'authority': {'source': SOURCE}}
+  record = _record(name='afer')
   assert not schema['taxa'].check({'afer_linnaeus_1758': record})
   assert schema['taxa'].check({'afer_linnaeus_1758': {**record, 'rank': 'variety'}})
   assert schema['taxa'].check({'afer_linnaeus_1758': {**record, 'rank': None}})
@@ -278,14 +285,7 @@ OPEN_KEY = 'testum-genus-a_linnaeus_1758'
 def _check_open(record=None, node=None, caplog=None):
   """As `_check`, for an open taxon: a record with a `designation` and a
   protologue `openTaxon` node."""
-  data = {
-    'name': None,
-    'designation': 'Genus A',
-    'rank': 'genus',
-    'pages': 22,
-    'authority': {'source': SOURCE},
-  }
-  Taxon.add({**data, **(record or {})}, OPEN_KEY)
+  Taxon.add(_record(record, name=None, designation='Genus A', rank='genus'), OPEN_KEY)
   tree = Tree(
     {'openTaxon': OPEN_KEY, 'new': True, **(node or {})},
     {'source_key': SOURCE, 'type': 'taxonomy', 'position': next(POSITIONS)},

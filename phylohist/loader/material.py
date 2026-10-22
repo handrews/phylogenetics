@@ -26,6 +26,7 @@ from .taxa import (
   SECTION_NOT_TAXONOMY,
   Tree,
   bracket_spans,
+  names_attribution,
   section_spans,
 )
 
@@ -532,25 +533,35 @@ def _authorities(node):
 def null_material(node, is_cited):
   """A cited entry (a synonymy entry, an earlier state) locates the cited
   work's own material, so it carries none of `material`, `contexts` or
-  `ranges`, null or not. It may carry `illustrations`, locators for a
-  figure in the cited work, but never null and never with `of` or
-  `depicts`; the same ban on `of` and `depicts` holds for
-  `authority.illustrations` on any node. A `material: null` node beside an
-  illustration that still names one (`of` set) contradicts itself. A
-  `synonyms: null` (the source prints no synonymy for the node) is an
-  error on a cited entry, which lists synonymy of its own, and beside a
-  `non` list, which is a synonymy."""
+  `ranges`, null or not, and none of `pages` or `illustrations` either:
+  the cited work's locators go inside its `authority`, where `of` and
+  `depicts` are not allowed, on any node. A primary node's own page and
+  figures sit on the node, so its `authority` never carries locators
+  alone. A `material: null` node beside an illustration that still names
+  one (`of` set) contradicts itself. A `synonyms: null` (the source prints
+  no synonymy for the node) is an error on a cited entry, which lists
+  synonymy of its own, and beside a `non` list, which is a synonymy."""
   messages = []
+  block = node.get('authority')
   if is_cited:
     for field in NULLABLE_FIELDS:
-      if field not in node:
-        continue
-      if field != 'illustrations':
+      if field in node and field != 'illustrations':
         messages.append(('error', f'cited entry carries `{field}`'))
-      elif node[field] is None:
-        messages.append(('error', 'cited entry carries `illustrations: null`'))
-      else:
-        messages.extend(_locator_errors(node[field], 'cited entry `illustrations`'))
+    for field in ('pages', 'illustrations'):
+      if field in node:
+        messages.append(
+          (
+            'error',
+            f"cited entry carries `{field}`; the cited work's locators go inside `authority`",
+          )
+        )
+  elif isinstance(block, dict) and block and not names_attribution(block):
+    messages.append(
+      (
+        'error',
+        "primary node's `authority` carries locators alone; its own page and figures sit on it",
+      )
+    )
   for authority in _authorities(node):
     messages.extend(_locator_errors(authority.get('illustrations'), '`authority.illustrations`'))
   if not is_cited and 'material' in node and node.get('material') is None:
@@ -568,16 +579,16 @@ def null_material(node, is_cited):
 
 def unused_fields(document):
   """A field the file's `unused` lists still appears, even as `null`, on
-  some node: an error naming that node's path. `illustrations` counts only
-  on a primary node; a cited entry's locators are another use. A node
-  marked `isType` is a use of `type` too, the older form of the statement."""
+  some node: an error naming that node's path (a cited entry's locators sit
+  inside its `authority`, so they are not this field). A node marked
+  `isType` is a use of `type` too, the older form of the statement."""
   unused = document.get('unused') or ()
   if not unused:
     return []
   messages = []
-  for path, node, is_cited in walk_document(document):
+  for path, node, _ in walk_document(document):
     for field in unused:
-      if field in node and not (field == 'illustrations' and is_cited):
+      if field in node:
         messages.append(('error', f'`{field}` is listed as `unused` but appears at {path}'))
     if 'type' in unused and node.get('isType'):
       messages.append(

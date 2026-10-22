@@ -35,7 +35,8 @@ taxonomies:
             type:
               taxon: ottawaensis_whiteaves_1897
               citedAs: Type species.--Astrocystites ottawaensis Whiteaves, 1897.
-              pages: 307
+              authority:
+                pages: 307
             children:
             - openTaxon: astrocystites-sp-a_sprinkle_1982i
               citedAs: ASTROCYSTITES sp. A

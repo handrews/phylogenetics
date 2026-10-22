@@ -33,17 +33,19 @@ taxonomies:
                 figures: [3, 3a, 4, 4a]
             citedAs: Geol. Surv. Canada, Fig. and Descriptions of Canadian Organic Remains, dec. 3:84
           - taxon: agelacrinites
-            auth: [grant]
-            year: 1881
-            illustrations:
-            - plate: 1
-              figures: 9
+            authority:
+              auth: [grant]
+              year: 1881
+              illustrations:
+              - plate: 1
+                figures: 9
             citedAs: Ottawa Field Naturalists' Club, Trans. 2
           - taxon: agelacrinites
             pars: true # partim
-            auth: [barrande]
-            year: 1887
-            pages: [55, 83]
+            authority:
+              auth: [barrande]
+              year: 1887
+              pages: [55, 83]
             citedAs: Systeme Silurien du centre de la Boheme, Prague, pt. 1, 7(1)
           - taxon: agelacrinus
             authority:
@@ -62,21 +64,23 @@ taxonomies:
                 figures: 2
             citedAs: Starnmes- geschichte der Pelmatozoen, Bd. 1, Thecoidea und Cys- toidea, Berlin
           - taxon: agelacrinites
-            auth: [clarke.j.m]
-            year: 1901
-            pages: 191
-            illustrations:
-            - textFigures: 3
+            authority:
+              auth: [clarke.j.m]
+              year: 1901
+              pages: 191
+              illustrations:
+              - textFigures: 3
             citedAs: New York State Mus. Bull. 49(2)
           - taxon: lebetodiscus
             new: true
-            auth: [bather]
-            year: 1908
-            pages:
-            - [543, 550]
-            illustrations:
-            - plate: 25
-              figures: 1
+            authority:
+              auth: [bather]
+              year: 1908
+              pages:
+              - [543, 550]
+              illustrations:
+              - plate: 25
+                figures: 1
             citedAs: GeoI. Mag. (n.s.) , dec. 5, 5
           children:
           - taxon: dicksoni_billings_1857

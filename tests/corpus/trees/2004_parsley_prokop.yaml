@@ -18,9 +18,10 @@ taxonomies:
         synonyms:
         - openTaxon: stromatocystites-aff-pentangularis_prokop_1961
           aff: pentangularis_pompeckj_1896
-          auth: [prokop]
-          year: 1961
-          pages: 42
+          authority:
+            auth: [prokop]
+            year: 1961
+            pages: 42
         pages: 152
         illustrations:
         - plate: 1
@@ -44,13 +45,14 @@ taxonomies:
         synonyms:
         - taxon: priscus_barrande_1846
           pars: true
-          auth: [pompeckj]
-          year: 1896
-          pages: 502
-          illustrations:
-          - plate: 13
-            figures:
-            - [7a, 7c]
+          authority:
+            auth: [pompeckj]
+            year: 1896
+            pages: 502
+            illustrations:
+            - plate: 13
+              figures:
+              - [7a, 7c]
         pages:
         - [154, 155]
         illustrations:

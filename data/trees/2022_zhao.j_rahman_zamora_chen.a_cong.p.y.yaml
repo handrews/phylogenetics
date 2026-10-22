@@ -28,7 +28,8 @@ taxonomies:
           taxon: extenuatus_zhao.j_rahman_zamora_chen.a_cong.p.y_2022
           citedAs: Type species. Sprinkleoglobus extenuatus sp. nov.
           fixation: originalDesignation
-          pages: 2
+          authority:
+            pages: 2
           notes: >
             The "by original designation" modifier is attached to
             "Other species. Totiglobus? lloydi Sprinkle 1985",

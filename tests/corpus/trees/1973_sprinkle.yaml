@@ -430,8 +430,9 @@ contexts:
     mapSheet: West York 7½′ Quad.
 taxonomies:
 - taxon: echinodermata
-  auth: [Klein]
-  year: 1734
+  authority:
+    auth: [Klein]
+    year: 1734
   pages: 56
   contexts: null
   ranges: null
@@ -857,24 +858,28 @@ taxonomies:
                 parents:
                 - taxon: eocystites
                 provisional: true
-                auth: [walcott]
-                year: 1886
+                authority:
+                  auth: [walcott]
+                  year: 1886
               - taxon: longidactylus_walcott_1886
                 parents:
                 - taxon: eocystis
-                auth: [bather]
-                year: 1900
+                authority:
+                  auth: [bather]
+                  year: 1900
               - taxon: longidactylus_walcott_1886
                 parents:
                 - taxon: eocrinus
-                auth: [jaekel]
-                year: 1980
+                authority:
+                  auth: [jaekel]
+                  year: 1980
               - openTaxon: gogia-cf-longidactylus_robison_1965
                 cf: longidactylus_walcott_1886
                 parents:
                 - taxon: gogia
-                auth: [robison]
-                year: 1965
+                authority:
+                  auth: [robison]
+                  year: 1965
               material:
               - prefix: USNM
                 numbers: [15315]
@@ -1031,8 +1036,9 @@ taxonomies:
               - taxon: multibrachiatus_kirk_1945
                 parents:
                 - taxon: eocrinus
-                auth: [kirk]
-                year: 1945
+                authority:
+                  auth: [kirk]
+                  year: 1945
               material:
               - prefix: USNM
                 numbers: [108556a]
@@ -1187,8 +1193,9 @@ taxonomies:
                 - taxon: eocrinus
                 notes: specimen provisionally assigned to this species
                 pars: true
-                auth: [Ressler]
-                year: 1939
+                authority:
+                  auth: [Ressler]
+                  year: 1939
               material:
               - prefix: UU
                 numbers: [1001]
@@ -1548,8 +1555,9 @@ taxonomies:
                 parents:
                 - taxon: gogia
                 pars: true
-                auth: [Harker, Hutchinson]
-                year: 1953
+                authority:
+                  auth: [Harker, Hutchinson]
+                  year: 1953
               - openTaxon: eocrinus?-sp_caster_pope_1960
                 parents:
                 - taxon: eocrinus

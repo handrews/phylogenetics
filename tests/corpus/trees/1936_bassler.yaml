@@ -74,11 +74,13 @@ taxonomies:
           new: true
         - taxon: ulrichi_bassler_shideler_1936
           new: true
-          auth: [bassler, Shideler]
+          authority:
+            auth: [bassler, Shideler]
           citedAs: 'n. sp. (Bassler and Shideler)'
         - taxon: foerstei_bassler_shideler_1936
           new: true
-          auth: [bassler, Shideler]
+          authority:
+            auth: [bassler, Shideler]
           citedAs: 'n. sp. (Bassler and Shideler)'
           material:
           - prefix: USNM

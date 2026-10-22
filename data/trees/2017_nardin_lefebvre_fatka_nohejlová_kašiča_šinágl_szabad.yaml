@@ -17,31 +17,36 @@ taxonomies:
         new: true
         synonyms:
         - openTaxon: undescribed-genus_fatka_kordule_szabad_2004
-          auth: [fatka, kordule, szabad]
-          year: 2004
-          children:
-          - openTaxon: undescribed-sp_fatka_kordule_szabad_2004
+          authority:
             auth: [fatka, kordule, szabad]
             year: 2004
+          children:
+          - openTaxon: undescribed-sp_fatka_kordule_szabad_2004
+            authority:
+              auth: [fatka, kordule, szabad]
+              year: 2004
             pages: 379
         - openTaxon: undescribed-transitional-genus_lefebvre_nardin_fatka_2015
-          auth: [lefebvre, nardin, fatka]
-          year: 2015
-          children:
-          - openTaxon: undescribed-transitional-sp_lefebvre_nardin_fatka_2015
+          authority:
             auth: [lefebvre, nardin, fatka]
             year: 2015
+          children:
+          - openTaxon: undescribed-transitional-sp_lefebvre_nardin_fatka_2015
+            authority:
+              auth: [lefebvre, nardin, fatka]
+              year: 2015
             pages: 89
             illustrations:
             - figures:
               - 1B
         - openTaxon: imbricata-sp_nohejlová_fatka_2015
-          auth: [noheljová, fatka]
-          year: 2015
-          pages: 119
-          illustrations:
-          - figures:
-            - 2D
+          authority:
+            auth: [noheljová, fatka]
+            year: 2015
+            pages: 119
+            illustrations:
+            - figures:
+              - 2D
 phylogenies:
 - treeType: cladogram
   tree:

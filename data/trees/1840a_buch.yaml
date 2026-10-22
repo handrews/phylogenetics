@@ -76,10 +76,11 @@ taxonomies:
       - taxon: malum_pander_1830
         parents:
         - taxon: echinosphaerites
-        illustrations:
-        - plate: XXIX
-          figures:
-          - [1a, 1c]
+        authority:
+          illustrations:
+          - plate: XXIX
+            figures:
+            - [1a, 1c]
   - taxon: cryptocrinites
     new: true
     pages: 36

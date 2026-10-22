@@ -19,7 +19,7 @@ from .loader.material import (
   same_as_matches,
 )
 from .loader.research import Author, Publication, Source
-from .loader.taxa import Taxon
+from .loader.taxa import Taxon, names_attribution
 from .names import fold, fold_forms, key_stem
 
 KINDS = (
@@ -49,7 +49,10 @@ COVERAGE_KINDS = (
 )
 
 _TAXON_FIELDS = ('taxon', 'openTaxon', 'mineralTaxon')
+# What a claim's `printed` carries, in this order: the line as printed on
+# the node and the credit inside its `authority` block.
 _PRINTED_FIELDS = ('citedAs', 'auth', 'year', 'in')
+_PRINTED_CREDIT = ('auth', 'year', 'in')
 # The node fields a correction can touch that bear on attribution.
 _ATTRIBUTION_FIELDS = tuple(_PRINTED_FIELDS) + ('authority',)
 
@@ -66,6 +69,25 @@ def merge_patch(target, patch):
     else:
       result[key] = merge_patch(result.get(key), value)
   return result
+
+
+def _printed_errors(data, corrections):
+  """The printed attribution fields a correction touches, by the names the
+  claim uses: `citedAs` on the node; inside `authority`, `auth`, `year`
+  and `in` under their own names and any other key as `authority`. A key
+  counts only when the node prints it: a correction that adds a field
+  corrects nothing printed."""
+  touched = set()
+  if 'citedAs' in corrections and 'citedAs' in data:
+    touched.add('citedAs')
+  if 'authority' in corrections and 'authority' in data:
+    patch, block = corrections['authority'], data['authority']
+    if isinstance(patch, dict) and isinstance(block, dict):
+      touched.update(k if k in _PRINTED_CREDIT else 'authority' for k in patch if k in block)
+    else:
+      # The block replaced or deleted whole, or a patch over `authority: null`.
+      touched.add('authority')
+  return [field for field in _ATTRIBUTION_FIELDS if field in touched]
 
 
 def corrected_node(data):
@@ -299,8 +321,8 @@ class _NodeClaims:
     root = node.root
     self.tree = 'taxonomy' if node.tree_type == 'taxonomy' else node.tree_type
     self.tree_notes = root.tree_notes
-    # A cited entry's `pages` and `illustrations` locate the cited usage in
-    # the cited work, never the citing source's own page or figure.
+    # A cited entry's locators sit in its `authority` and locate the cited
+    # usage in the cited work, never the citing source's own page or figure.
     self.cited_entry = node.is_cited
     # A node's pages are its own: a parent's page says where the parent is
     # printed, not its children.
@@ -344,8 +366,7 @@ class _NodeClaims:
     # printed in error, and the corrected node gives the attribution the
     # editor reads instead.
     corrections = (self.data.get('editorial') or {}).get('corrections') or {}
-    # A key the node prints; a correction that adds a field corrects nothing printed.
-    in_error = [f for f in _ATTRIBUTION_FIELDS if f in corrections and f in self.data]
+    in_error = _printed_errors(self.data, corrections)
     if in_error:
       claim['printedErrors'] = in_error
     corrected = corrected_node(self.data)
@@ -357,33 +378,28 @@ class _NodeClaims:
         claim['corrected'] = changed
 
   def _attribution(self, claim, data):
-    printed = {f: data[f] for f in _PRINTED_FIELDS if f in data}
     authority = data.get('authority')
+    block = authority if isinstance(authority, dict) else {}
+    printed = {'citedAs': data['citedAs']} if 'citedAs' in data else {}
+    printed.update({f: block[f] for f in _PRINTED_CREDIT if f in block})
     if printed:
       claim['printed'] = printed
-    if authority:
-      if 'auctt' in authority:
-        claim['citesAuctt'] = authority['auctt']
-      else:
-        claim['citesSource'] = authority.get('source')
-      for field, name in (
-        ('pages', 'citedPages'),
-        ('illustrations', 'citedIllustrations'),
-        ('attributedTo', 'citedAttributedTo'),
-      ):
-        if field in authority:
-          claim[name] = authority[field]
-    if self.cited_entry:
-      for field, name in (
-        ('pages', 'citedPages'),
-        ('illustrations', 'citedIllustrations'),
-      ):
-        if field in data:
-          claim[name] = data[field]
+    if 'auctt' in block:
+      claim['citesAuctt'] = block['auctt']
+    elif 'source' in block:
+      claim['citesSource'] = block['source']
+    for field, name in (
+      ('pages', 'citedPages'),
+      ('illustrations', 'citedIllustrations'),
+      ('attributedTo', 'citedAttributedTo'),
+    ):
+      if field in block:
+        claim[name] = block[field]
     if 'authority' in data and authority is None:
       # `authority: null`: the source cites the name with no authority.
       claim['printedAttribution'] = 'none'
-    elif not printed and not authority:
+    elif not printed and not names_attribution(block):
+      # No block, or a block of locators alone: as the record.
       claim['printedAttribution'] = 'as-record'
 
   def _emit(self, claim, field=None):

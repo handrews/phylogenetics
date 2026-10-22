@@ -506,34 +506,57 @@ def test_null_ranges_is_accepted_on_a_primary_node_and_rejected_on_a_cited_entry
   ]
 
 
-def test_null_material_cited_entry_may_carry_locators():
-  node = {'illustrations': [{'plate': 15, 'figures': [1, 3, 4], 'uncertain': True}]}
-  assert material.null_material(node, is_cited=True) == []
+LOCATORS_GO_INSIDE = "; the cited work's locators go inside `authority`"
+
+
+def test_null_material_cited_entry_carries_its_locators_in_authority():
+  locators = {'illustrations': [{'plate': 15, 'figures': [1, 3, 4], 'uncertain': True}]}
+  assert material.null_material({'authority': locators}, is_cited=True) == []
+  assert material.null_material({'authority': {**locators, 'pages': 5}}, is_cited=True) == []
+  assert material.null_material(locators, is_cited=True) == [
+    ('error', 'cited entry carries `illustrations`' + LOCATORS_GO_INSIDE),
+  ]
+  assert material.null_material({'pages': 5}, is_cited=True) == [
+    ('error', 'cited entry carries `pages`' + LOCATORS_GO_INSIDE),
+  ]
 
 
 def test_null_material_cited_entry_with_null_illustrations_is_error():
   assert material.null_material({'illustrations': None}, is_cited=True) == [
-    ('error', 'cited entry carries `illustrations: null`'),
+    ('error', 'cited entry carries `illustrations`' + LOCATORS_GO_INSIDE),
   ]
 
 
+def test_null_material_primary_node_authority_with_locators_alone_is_error():
+  node = {'authority': {'pages': 5}}
+  assert material.null_material(node, is_cited=True) == []
+  assert material.null_material(node, is_cited=False) == [
+    (
+      'error',
+      "primary node's `authority` carries locators alone; its own page and figures sit on it",
+    ),
+  ]
+  assert material.null_material({'authority': {'source': 'x', 'pages': 5}}, is_cited=False) == []
+  assert material.null_material({'authority': {}}, is_cited=False) == []
+
+
 def test_null_material_cited_entry_illustration_with_of_is_error():
-  node = {'illustrations': [{'plate': 1, 'of': 'A'}, {'plate': 2}]}
+  node = {'authority': {'illustrations': [{'plate': 1, 'of': 'A'}, {'plate': 2}]}}
   assert material.null_material(node, is_cited=True) == [
-    ('error', 'cited entry `illustrations` entry carries `of`'),
+    ('error', '`authority.illustrations` entry carries `of`'),
   ]
 
 
 def test_null_material_cited_entry_illustration_with_depicts_is_error():
-  node = {'illustrations': [{'plate': 1, 'depicts': 'cast'}]}
+  node = {'authority': {'illustrations': [{'plate': 1, 'depicts': 'cast'}]}}
   assert material.null_material(node, is_cited=True) == [
-    ('error', 'cited entry `illustrations` entry carries `depicts`'),
+    ('error', '`authority.illustrations` entry carries `depicts`'),
   ]
 
 
 def test_null_material_cited_entry_reports_each_offending_entry():
-  node = {'illustrations': [{'plate': 1, 'of': 'A', 'depicts': 'cast'}, {'plate': 2, 'of': 'B'}]}
-  assert len(material.null_material(node, is_cited=True)) == 3
+  figures = [{'plate': 1, 'of': 'A', 'depicts': 'cast'}, {'plate': 2, 'of': 'B'}]
+  assert len(material.null_material({'authority': {'illustrations': figures}}, is_cited=True)) == 3
 
 
 @pytest.mark.parametrize('is_cited', [False, True])
@@ -640,10 +663,9 @@ def test_unused_fields_ignores_nodes_without_it():
 
 
 def test_unused_illustrations_tolerates_a_cited_entrys_locators():
-  document = {
-    'unused': ['illustrations'],
-    'taxonomies': [{'taxon': 'a', 'synonyms': [{'taxon': 'b', 'illustrations': [{'plate': 1}]}]}],
-  }
+  # A cited entry's locators sit in its `authority`, which is not the field.
+  synonym = {'taxon': 'b', 'authority': {'illustrations': [{'plate': 1}]}}
+  document = {'unused': ['illustrations'], 'taxonomies': [{'taxon': 'a', 'synonyms': [synonym]}]}
   assert material.unused_fields(document) == []
 
 
@@ -653,7 +675,7 @@ def test_unused_illustrations_flags_a_primary_node_even_with_null():
     'taxonomies': [
       {
         'taxon': 'a',
-        'synonyms': [{'taxon': 'b', 'illustrations': [{'plate': 1}]}],
+        'synonyms': [{'taxon': 'b', 'authority': {'illustrations': [{'plate': 1}]}}],
         'children': [{'taxon': 'c', 'illustrations': None}],
       },
     ],
@@ -918,13 +940,26 @@ def test_check_draft_exits_one_on_of_in_a_cited_entrys_illustrations(tmp_path):
     '- taxon: cyathocystis\n'
     '  synonyms:\n'
     '  - taxon: cyathocystidae\n'
-    '    illustrations:\n'
-    '    - plate: 1\n'
-    '      of: A\n',
+    '    authority:\n'
+    '      illustrations:\n'
+    '      - plate: 1\n'
+    '        of: A\n',
   )
   result = _run_check_draft(draft)
   assert result.returncode == 1, result.stdout + result.stderr
-  assert 'cited entry `illustrations` entry carries `of`' in result.stdout
+  assert '`authority.illustrations` entry carries `of`' in result.stdout
+
+
+def test_check_draft_exits_one_on_a_cited_entrys_node_level_pages(tmp_path):
+  draft = tmp_path / '1898_bather.yaml'
+  draft.write_text(
+    'taxonomies:\n- taxon: cyathocystis\n  synonyms:\n  - taxon: cyathocystidae\n    pages: 5\n',
+  )
+  result = _run_check_draft(draft)
+  assert result.returncode == 1, result.stdout + result.stderr
+  assert (
+    "cited entry carries `pages`; the cited work's locators go inside `authority`" in result.stdout
+  )
 
 
 def test_check_draft_warns_on_a_locality_number_with_no_register_and_is_quiet_with_one(tmp_path):

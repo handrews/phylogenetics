@@ -317,26 +317,25 @@ def test_an_authority_source_with_no_record_ends_the_load(kind, file, caplog):
   assert cls.get('testum') is None
 
 
-def test_an_ex_authority_without_a_source_ends_the_load(caplog):
-  # `ex` takes the general authority shape, which admits `auctt` in place of
-  # a source; the loader reads a source from it, so one without is an error
-  # rather than a KeyError.
+def test_an_ex_authority_citing_auctt_ends_the_load(caplog):
+  # `ex` names a work (`citedWork`), which admits `auctt`; the loader
+  # resolves a source, so "of authors" is an error rather than a KeyError.
   from phylohist.loader import LoadError
   from phylohist.loader.taxa import Taxon
 
   record = {'name': 'Testum', 'authority': {'source': '1758_linnaeus', 'ex': {'auctt': True}}}
   with (
     caplog.at_level(logging.ERROR, logger='phylohist'),
-    pytest.raises(LoadError, match='an ex authority needs a source'),
+    pytest.raises(LoadError, match="a record's authority names a work or a printed credit"),
   ):
     Taxon.add(record, 'testum')
-  assert _errors(caplog) == ['Authority at taxa.yaml testum has an `ex` with no source']
+  assert _errors(caplog) == ['Authority at taxa.yaml testum cites auctt, which names no work']
 
 
 @pytest.mark.parametrize(
   'record',
   [
-    {'name': 'Testum', 'auth': ['nobody'], 'year': 1850},
+    {'name': 'Testum', 'authority': {'auth': ['nobody'], 'year': 1850}},
     {
       'name': 'testa',
       'rank': 'species',
@@ -420,7 +419,10 @@ def test_a_record_naming_no_author_loads(caplog):
   from phylohist.loader.taxa import Taxon
 
   with caplog.at_level(logging.ERROR, logger='phylohist'):
-    Taxon.add({'name': 'testa', 'rank': 'species', 'auth': [], 'year': 1850}, 'testa_unknown_1850')
+    Taxon.add(
+      {'name': 'testa', 'rank': 'species', 'authority': {'auth': [], 'year': 1850}},
+      'testa_unknown_1850',
+    )
   assert _errors(caplog) == []
   authority = Taxon.get('testa_unknown_1850').authority
   assert authority.authors is None

@@ -367,7 +367,7 @@ def _plain(claim):
 def test_a_type_that_is_also_a_child_is_listed_and_places_nothing():
   root = {
     'taxon': GENUS,
-    'type': {**ORIGINAL, 'pages': 12},
+    'type': {**ORIGINAL, 'authority': {'pages': 12}},
     'children': [{'taxon': BIGSBYI}, {'taxon': PRIORITY}],
   }
   at = _by_path(_claims(root, 300, '1961_dehm'))

@@ -34,7 +34,7 @@ def _valid(document):
   return support.schema()[io.TREE_DEF].check(document)
 
 
-RECORD = {'name': 'Vermes', 'authority': {'source': '1758_linnaeus'}, 'rank': 'Class', 'pages': 5}
+RECORD = {'name': 'Vermes', 'authority': {'source': '1758_linnaeus', 'pages': 5}, 'rank': 'Class'}
 
 
 def _record_valid(record):
@@ -60,10 +60,11 @@ def test_schema_accepts_a_null_rank_and_a_null_pages_on_a_node():
 
 def test_schema_rejects_null_pages_on_a_taxon_record():
   # A record's `rank` may be null (the protologue placed it with no rank
-  # word); its `pages` may not.
+  # word); its `authority.pages` may not, and `pages` sits nowhere else.
   assert _record_valid(RECORD)
   assert _record_valid({**RECORD, 'rank': None})
-  assert not _record_valid({**RECORD, 'pages': None})
+  assert not _record_valid({**RECORD, 'authority': {'source': '1758_linnaeus', 'pages': None}})
+  assert not _record_valid({**RECORD, 'pages': 5})
 
 
 def test_schema_rejects_a_null_authority_pages():
@@ -823,9 +824,11 @@ def test_schema_accepts_a_null_authority_on_a_node_and_a_cited_entry():
 
 
 @pytest.mark.parametrize('field', [{'auth': ['linnaeus']}, {'year': 1758}, {'in': ['linnaeus']}])
-def test_schema_rejects_a_printed_attribution_beside_a_null_authority(field):
-  assert _valid({'taxonomies': [{'taxon': 'vermes', **field}]})
+def test_schema_takes_a_printed_attribution_only_inside_the_authority_block(field):
+  assert not _valid({'taxonomies': [{'taxon': 'vermes', **field}]})
   assert not _valid({'taxonomies': [{'taxon': 'vermes', 'authority': None, **field}]})
+  block = {'auth': ['linnaeus'], **field}
+  assert _valid({'taxonomies': [{'taxon': 'vermes', 'authority': block}]})
 
 
 def test_schema_rejects_a_null_authority_on_a_record_or_a_section():
@@ -842,7 +845,7 @@ def test_a_null_authority_says_none_was_printed():
     'children': [
       {'taxon': 'vermes', 'authority': None, 'citedAs': 'VERMES'},
       {'taxon': 'mollusca'},
-      {'taxon': 'echinodermata', 'auth': ['linnaeus']},
+      {'taxon': 'echinodermata', 'authority': {'auth': ['linnaeus']}},
     ],
   }
   claims = _claims(root, 342)

@@ -109,8 +109,9 @@ taxonomies:
         pages:
         - [189, 191]
         synonyms:
-        - auth: [eichwald]
-          year: 1829
+        - authority:
+            auth: [eichwald]
+            year: 1829
           notes: "Zoologia specialis quam expositus animalibus tum vivis"
           parents:
           - taxon: echinosphaerites
