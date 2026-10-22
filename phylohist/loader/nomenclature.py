@@ -9,7 +9,8 @@ loader (`load.py`) runs them over the corpus's own documents and
 ``(level, message)`` pairs, ``level`` being ``'error'`` or ``'warning'``;
 the caller adds the source key and, for a per-node check, the node's path.
 A check that needs a taxon record takes `taxa`, a callable from a taxon
-key to an object with `name`, `rank` and `mineral` (a loaded `Taxon` does), or `None`
+key to an object with `name`, `rank` and `mineral` (a loaded corpus's `taxa.get` gives a
+`Taxon`, which does), or `None`
 for a key with no record; `record_lookup` builds one from the raw
 `data/taxa.yaml` for a caller that has not loaded the corpus.
 """

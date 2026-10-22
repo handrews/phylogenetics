@@ -1,6 +1,6 @@
 """What the test modules share and the fixtures do not hand out: one
 compiled schema, the scripts as modules, `scripts/check_draft.py` run in
-this process, and the registries copied and restored.
+this process, and a corpus holding a test's own documents.
 
 Every module that checked a document against the schema used to build the
 schema afresh for each check, and every check of a draft started an
@@ -8,7 +8,6 @@ interpreter that parsed `data/` again; the suite spent most of its time
 there.
 """
 
-import collections
 import contextlib
 import functools
 import importlib.util
@@ -16,10 +15,7 @@ import io as stdio
 import pathlib
 import types
 
-from phylohist import claims
-from phylohist.loader import collecting, io, material
-from phylohist.loader.research import Author, Publication, Source
-from phylohist.loader.taxa import Section, Taxon, Tree
+from phylohist.loader import collecting, io
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SCRIPTS = ROOT / 'scripts'
@@ -64,53 +60,30 @@ def run_check_draft(path, data_dir=CORPUS):
   return types.SimpleNamespace(returncode=status, stdout=out.getvalue(), stderr=stderr)
 
 
-# -- the registries -----------------------------------------------------------
-
-# The class-level registries a load fills and a synthetic tree writes to:
-# the record classes' dicts, and the `Tree` indexes of sets.
-_RECORDS = (
-  (Author, '_authors'),
-  (Publication, '_publications'),
-  (Source, '_sources'),
-  (Taxon, '_taxa'),
-  (Section, '_sections'),
-)
-_INDEXES = ('_new_index',)
+# -- a corpus over a test's documents -----------------------------------------
 
 
-def snapshot():
-  """A copy of every registry as it stands: the record dicts, the `Tree`
-  indexes with their sets, and the repository registry."""
-  return {
-    'records': {name: dict(getattr(owner, name)) for owner, name in _RECORDS},
-    'indexes': {
-      name: {key: set(value) for key, value in getattr(Tree, name).items()} for name in _INDEXES
-    },
-    'repositories': dict(material.repository_registry()),
-  }
+def with_documents(corpus, data=None, roots=None):
+  """A copy of `corpus` holding the documents `data` and the trees `roots`
+  in place of its own (none by default), and only the repositories `data`
+  gives: what a loader `_report_*` or `_load_*` reads, run over a few
+  synthetic documents. The records are the corpus's, so a tree built
+  against it resolves the same objects."""
+  view = corpus.copy()
+  view.data, view.roots = data or {}, roots or {}
+  view.repositories = dict(view.data.get('repositories') or {})
+  return view
 
 
-def restore(snap):
-  """Rebind every registry to a fresh copy of `snap`, so that what a test
-  added (a `Taxon.add`, a `Tree`) is gone before the next one; the rank
-  hubs `claims` derives from the taxa are dropped with them."""
-  for owner, name in _RECORDS:
-    setattr(owner, name, dict(snap['records'][name]))
-  for name in _INDEXES:
-    index = collections.defaultdict(set)
-    for key, value in snap['indexes'][name].items():
-      index[key] = set(value)
-    setattr(Tree, name, index)
-  material.set_repository_registry(snap['repositories'])
-  claims._rank_hubs = None
-
-
-def reset():
-  """Empty every registry, as a process that has loaded nothing has them."""
-  restore(
-    {
-      'records': {name: {} for _, name in _RECORDS},
-      'indexes': {name: {} for name in _INDEXES},
-      'repositories': {},
-    }
+def footprint(corpus):
+  """The size of each registry and the identity of `data` and `roots`: what
+  a test must leave as it found it on the session corpus."""
+  return (
+    len(corpus.authors),
+    len(corpus.publications),
+    len(corpus.sources),
+    len(corpus.taxa),
+    len(corpus.sections),
+    id(corpus.data),
+    id(corpus.roots),
   )

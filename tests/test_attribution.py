@@ -3,9 +3,9 @@ every cited work sits in an `authority` block, and a block carries the
 locators in the work it names. The schema, the loader, the extractor and
 the script that put the data into this shape.
 
-Synthetic records and trees are built on the loaded test corpus (the
-registries are restored before each test); the script is exercised over
-small texts and over the corpus files, which it must leave as they are.
+Synthetic records and trees are built on each test's own copy of the
+loaded test corpus (`records`); the script is exercised over small texts
+and over the corpus files, which it must leave as they are.
 """
 
 import logging
@@ -16,7 +16,7 @@ import yaml
 from phylohist.claims import extract, names_index
 from phylohist.loader import io
 from phylohist.loader.load import _report_material
-from phylohist.loader.taxa import Authority, Section, Taxon, Tree
+from phylohist.loader.taxa import Authority, Tree
 from tests import support
 
 SOURCE = '1758_linnaeus'
@@ -159,7 +159,7 @@ def _warnings(caplog):
   return [r.getMessage() for r in caplog.records if r.levelno == logging.WARNING]
 
 
-def test_a_cited_entrys_node_level_locators_end_in_an_error(caplog):
+def test_a_cited_entrys_node_level_locators_end_in_an_error(records, caplog):
   figures = [{'plate': 1}]
   entries = [
     {'taxon': 'cyathocystidae', 'pages': 5},
@@ -174,7 +174,7 @@ def test_a_cited_entrys_node_level_locators_end_in_an_error(caplog):
     }
   }
   with caplog.at_level(logging.WARNING, logger='phylohist'):
-    _report_material({'trees': trees})
+    _report_material(support.with_documents(records, {'trees': trees}))
   errors = _errors(caplog)
   tail = "; the cited work's locators go inside `authority`"
   assert f'_synthetic_source at 0/synonyms/0: cited entry carries `pages`{tail}' in errors
@@ -200,64 +200,66 @@ def test_check_draft_exits_one_on_a_cited_entrys_node_level_illustrations(tmp_pa
   assert 'cited entry carries `illustrations`' in result.stdout
 
 
-def test_a_year_alone_and_an_empty_auth_name_no_author():
-  year_only = Authority({'year': 1850})
+def test_a_year_alone_and_an_empty_auth_name_no_author(records):
+  year_only = Authority({'year': 1850}, records)
   assert str(year_only) == '1850' and year_only.taxon_suffix == 'unknown_1850'
   assert year_only.authors is None and year_only.source is None
-  unknown = Authority({'auth': []})
+  unknown = Authority({'auth': []}, records)
   assert str(unknown) == '' and unknown.taxon_suffix == 'unknown'
-  Taxon.add({'name': 'Testum', 'rank': 'genus', 'authority': {'year': 1850}}, 'testum')
-  assert str(Taxon.get('testum').authority) == '1850'
+  records.add_taxon({'name': 'Testum', 'rank': 'genus', 'authority': {'year': 1850}}, 'testum')
+  assert str(records.taxa['testum'].authority) == '1850'
 
 
-def test_in_credits_the_authors_within_the_works_authors():
-  authority = Authority(CREDIT)
+def test_in_credits_the_authors_within_the_works_authors(records):
+  authority = Authority(CREDIT, records)
   assert str(authority) == 'Linnaeus in Gmelin 1788'
   assert [a.key for a in authority.authors] == ['linnaeus']
   assert [a.key for a in authority.source_authors] == ['gmelin']
   assert authority.taxon_suffix == 'linnaeus_1788'
 
 
-def test_a_derivative_with_locators_alone_borrows_its_targets_authority():
-  Taxon.add(
+def test_a_derivative_with_locators_alone_borrows_its_targets_authority(records):
+  records.add_taxon(
     {'name': 'Testum', 'rank': 'genus', 'authority': {'source': SOURCE, 'pages': 10}}, 'testum'
   )
-  Taxon.add({'name': 'Testvm', 'altSpellingOf': 'testum', 'authority': {'pages': 799}}, 'testvm')
-  spelling = Taxon.get('testvm')
-  assert spelling.authority is Taxon.get('testum').authority
+  records.add_taxon(
+    {'name': 'Testvm', 'altSpellingOf': 'testum', 'authority': {'pages': 799}}, 'testvm'
+  )
+  spelling = records.taxa['testvm']
+  assert spelling.authority is records.taxa['testum'].authority
   assert (spelling.pages, spelling.illustrations) == (799, None)
-  assert Taxon.get('testum').pages == 10
+  assert records.taxa['testum'].pages == 10
   # A derivative that names a credit of its own keeps it.
-  Taxon.add({'name': 'Testvn', 'altSpellingOf': 'testum', 'authority': PRINTED}, 'testvn')
-  assert str(Taxon.get('testvn').authority) == 'Linnaeus 1758'
+  records.add_taxon({'name': 'Testvn', 'altSpellingOf': 'testum', 'authority': PRINTED}, 'testvn')
+  assert str(records.taxa['testvn'].authority) == 'Linnaeus 1758'
 
 
-def test_a_section_with_locators_alone_has_no_authority():
-  Section.add({'name': 'Testa', 'authority': {'pages': 645}}, 'testa')
-  section = Section.get('testa')
+def test_a_section_with_locators_alone_has_no_authority(records):
+  records.add_section({'name': 'Testa', 'authority': {'pages': 645}}, 'testa')
+  section = records.sections['testa']
   assert section.authority is None and section.pages == 645
-  Section.add({'name': 'Testae', 'authority': {'source': SOURCE, 'pages': 646}}, 'testae')
-  assert Section.get('testae').authority.source.key == SOURCE
-  assert Section.get('testae').pages == 646
+  records.add_section({'name': 'Testae', 'authority': {'source': SOURCE, 'pages': 646}}, 'testae')
+  assert records.sections['testae'].authority.source.key == SOURCE
+  assert records.sections['testae'].pages == 646
 
 
-def test_a_capitalised_author_in_a_nodes_block_warns_when_its_key_is_registered(caplog):
+def test_a_capitalised_author_in_a_nodes_block_warns_when_its_key_is_registered(records, caplog):
   node = {
     'taxon': 'rhenopyrgus',
     'authority': {'auth': ['linnaeus'], 'in': ['Gmelin'], 'year': 1788},
   }
   with caplog.at_level(logging.WARNING, logger='phylohist'):
-    Tree(node, {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 940})
+    Tree(node, {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 940}, corpus=records)
   assert [w for w in _warnings(caplog) if 'Unregistered author "Gmelin"' in w and '"gmelin"' in w]
 
 
-def test_a_capitalised_author_in_a_records_credit_warns_at_the_record(caplog):
+def test_a_capitalised_author_in_a_records_credit_warns_at_the_record(records, caplog):
   # The warning names the record the credit is on; a bare block has none.
   credit = {'auth': ['Linnaeus'], 'year': 1758}
   with caplog.at_level(logging.WARNING, logger='phylohist'):
-    Taxon.add({'name': 'Testum', 'rank': 'genus', 'authority': credit}, 'testum')
-    Section.add({'name': 'Testa', 'authority': credit}, 'testa')
-    Authority(credit)
+    records.add_taxon({'name': 'Testum', 'rank': 'genus', 'authority': credit}, 'testum')
+    records.add_section({'name': 'Testa', 'authority': credit}, 'testa')
+    Authority(credit, records)
   assert _warnings(caplog) == [
     'Unregistered author "Linnaeus" at taxa.yaml testum matches registered key "linnaeus"',
     'Unregistered author "Linnaeus" at sections.yaml testa matches registered key "linnaeus"',
@@ -265,45 +267,46 @@ def test_a_capitalised_author_in_a_records_credit_warns_at_the_record(caplog):
   ]
 
 
-def test_qualified_keys_add_the_sources_disambiguator():
-  keys = Authority({'source': '1760a_linnaeus'}).qualified_keys('testa')
+def test_qualified_keys_add_the_sources_disambiguator(records):
+  keys = Authority({'source': '1760a_linnaeus'}, records).qualified_keys('testa')
   assert keys == {'testa_linnaeus_1760', 'testa_linnaeus_1760a'}
-  assert Authority(PRINTED).qualified_keys('testa') == {'testa_linnaeus_1758'}
+  assert Authority(PRINTED, records).qualified_keys('testa') == {'testa_linnaeus_1758'}
 
 
 # -- extractor ----------------------------------------------------------------
 
 
-def _usage(root_data, subject, position=941):
-  root = Tree(root_data, {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': position})
-  claims = extract({'1961_dehm': [root]})['1961_dehm']
+def _usage(records, root_data, subject, position=941):
+  metadata = {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': position}
+  root = Tree(root_data, metadata, corpus=records)
+  claims = extract(records, {'1961_dehm': [root]})['1961_dehm']
   [claim] = [c for c in claims if c['kind'] == 'usage' and c['subject'] == subject]
   return claim
 
 
-def test_a_cited_entry_prints_its_credit_from_the_block():
+def test_a_cited_entry_prints_its_credit_from_the_block(records):
   entry = {
     'taxon': 'rhenopyrgidae',
     'citedAs': 'Rhenopyrgidae Linnaeus in Gmelin, 1788',
     'authority': {**CREDIT, 'pages': 12},
   }
-  claim = _usage({'taxon': 'rhenopyrgus', 'synonyms': [entry]}, 'rhenopyrgidae')
+  claim = _usage(records, {'taxon': 'rhenopyrgus', 'synonyms': [entry]}, 'rhenopyrgidae')
   assert claim['printed'] == {'citedAs': entry['citedAs'], **CREDIT}
   assert claim['citedPages'] == 12
   for absent in ('citesSource', 'citesAuctt', 'printedAttribution', 'pages'):
     assert absent not in claim
 
 
-def test_locators_alone_are_the_records_authority_at_those_locators():
+def test_locators_alone_are_the_records_authority_at_those_locators(records):
   figures = [{'plate': 1, 'figures': [2]}]
   entry = {'taxon': 'rhenopyrgidae', 'authority': {'pages': 12, 'illustrations': figures}}
-  claim = _usage({'taxon': 'rhenopyrgus', 'synonyms': [entry]}, 'rhenopyrgidae')
+  claim = _usage(records, {'taxon': 'rhenopyrgus', 'synonyms': [entry]}, 'rhenopyrgidae')
   assert claim['printedAttribution'] == 'as-record'
   assert claim['citedPages'] == 12 and claim['citedIllustrations'] == figures
   assert 'printed' not in claim and 'pages' not in claim and 'citesSource' not in claim
 
 
-def test_the_nested_correction_names_the_printed_fields_in_error():
+def test_the_nested_correction_names_the_printed_fields_in_error(records):
   child = {
     'taxon': 'rhenopyrgidae',
     'authority': {'auth': ['bell.b.m'], 'year': 1974},
@@ -313,7 +316,7 @@ def test_the_nested_correction_names_the_printed_fields_in_error():
       'basis': 'cited before publication',
     },
   }
-  claim = _usage({'taxon': 'rhenopyrgus', 'children': [child]}, 'rhenopyrgidae')
+  claim = _usage(records, {'taxon': 'rhenopyrgus', 'children': [child]}, 'rhenopyrgidae')
   assert claim['printedErrors'] == ['auth', 'year']
   assert claim['corrected'] == {
     'printed': {'citedAs': 'Bell, 1974'},
@@ -321,35 +324,35 @@ def test_the_nested_correction_names_the_printed_fields_in_error():
   }
 
 
-def test_a_patch_over_the_source_is_an_authority_error():
+def test_a_patch_over_the_source_is_an_authority_error(records):
   entry = {
     'taxon': 'rhenopyrgidae',
     'authority': {'source': SOURCE, 'pages': 5},
     'editorial': {'corrections': {'authority': {'source': LATER}}, 'basis': 'the later part'},
   }
-  claim = _usage({'taxon': 'rhenopyrgus', 'synonyms': [entry]}, 'rhenopyrgidae')
+  claim = _usage(records, {'taxon': 'rhenopyrgus', 'synonyms': [entry]}, 'rhenopyrgidae')
   assert claim['printedErrors'] == ['authority']
   assert claim['corrected'] == {'citesSource': LATER}
   # So is a block put in place of `authority: null`.
   entry['authority'] = None
-  claim = _usage({'taxon': 'rhenopyrgus', 'synonyms': [entry]}, 'rhenopyrgidae', 942)
+  claim = _usage(records, {'taxon': 'rhenopyrgus', 'synonyms': [entry]}, 'rhenopyrgidae', 942)
   assert claim['printedErrors'] == ['authority']
 
 
-def test_a_patch_that_adds_a_block_corrects_nothing_printed():
+def test_a_patch_that_adds_a_block_corrects_nothing_printed(records):
   entry = {
     'taxon': 'rhenopyrgidae',
     'citedAs': 'Rhenopyrgidae',
     'editorial': {'corrections': {'authority': {'source': LATER}}, 'basis': 'the work meant'},
   }
-  claim = _usage({'taxon': 'rhenopyrgus', 'synonyms': [entry]}, 'rhenopyrgidae')
+  claim = _usage(records, {'taxon': 'rhenopyrgus', 'synonyms': [entry]}, 'rhenopyrgidae')
   assert 'printedErrors' not in claim and 'corrected' not in claim
   assert claim['printed'] == {'citedAs': 'Rhenopyrgidae'} and 'citesSource' not in claim
 
 
-def test_names_index_rows_for_an_unknown_author_and_a_year_alone():
-  Taxon.add({'name': 'Testum', 'rank': 'genus', 'authority': {'year': 1850}}, 'testum')
-  rows = names_index()
+def test_names_index_rows_for_an_unknown_author_and_a_year_alone(records):
+  records.add_taxon({'name': 'Testum', 'rank': 'genus', 'authority': {'year': 1850}}, 'testum')
+  rows = names_index(records)
   assert 'authority' not in rows['hamptonii_unknown']
   assert rows['testum']['authority'] == {'display': '1850'}
 

@@ -7,16 +7,6 @@ logger = logging.getLogger(__name__)
 
 
 class Author:
-  _authors = {}
-
-  @classmethod
-  def add(cls, author_data, author_key):
-    cls._authors[author_key] = Author(author_data, author_key)
-
-  @classmethod
-  def get(cls, author_key):
-    return cls._authors.get(author_key, None)
-
   def __init__(self, author_data, author_key=None):
     self._data = author_data
     self._key = author_key
@@ -92,19 +82,19 @@ class Author:
     return True
 
 
-def check_unregistered_author(author_string, where=None):
+def check_unregistered_author(corpus, author_string, where=None):
   """A capitalised author string is the convention for an author with no
-  record; when its key form is registered, the record was meant, and the
-  warning names `where` the string is."""
-  if Author.get(author_string.lower()):
+  record; when its key form is one of the corpus's authors, the record was
+  meant, and the warning names `where` the string is."""
+  if corpus.authors.get(author_string.lower()):
     at = f' at {where}' if where is not None else ''
     logger.warning(
       f'Unregistered author "{author_string}"{at} matches registered key "{author_string.lower()}"',
     )
 
 
-def resolve_authors(keys, missing, *, credit=False, where=None):
-  """The `Author` records `keys` name, as a tuple in their order. A key with
+def resolve_authors(corpus, keys, missing, *, credit=False, where=None):
+  """The corpus's `Author` records `keys` name, as a tuple in their order. A key with
   no record ends the load (`io.fail`) with the message and the reason
   `missing(key)` gives, each kind of record wording its own. A printed
   credit (`credit`: an authority's `auth`, `in` or `attributedTo`) may also
@@ -116,9 +106,9 @@ def resolve_authors(keys, missing, *, credit=False, where=None):
     if credit and key == 'et al.':
       continue
     if credit and key.lower() != key:
-      check_unregistered_author(key, where)
+      check_unregistered_author(corpus, key, where)
       authors.append(Author({'surname': key}))
-    elif (author := Author.get(key)) is None:
+    elif (author := corpus.authors.get(key)) is None:
       fail(*missing(key))
     else:
       authors.append(author)
@@ -126,22 +116,12 @@ def resolve_authors(keys, missing, *, credit=False, where=None):
 
 
 class Publication:
-  _publications = {}
-
-  @classmethod
-  def add(cls, pub_data, pub_key):
-    cls._publications[pub_key] = Publication(pub_data, pub_key)
-
-  @classmethod
-  def get(cls, pub_key):
-    return cls._publications.get(pub_key)
-
-  def __init__(self, pub_data, pub_key):
+  def __init__(self, pub_data, pub_key, corpus):
     self._data = pub_data
     self._key = pub_key
 
     for editor in self._data.get('editors', ()):
-      if Author.get(editor) is None:
+      if corpus.authors.get(editor) is None:
         logger.error(f'Editor "{editor}" not found for publication {pub_key}!')
 
   @property
@@ -167,26 +147,12 @@ CITATION_FIELDS = ('title', 'journal', 'book', 'series', 'volume', 'number', 'pa
 
 
 class Source:
-  _sources = {}
-
-  @classmethod
-  def add(cls, source_data, source_key):
-    if 'aliasOf' in source_data:
-      alias = SourceAlias(source_data, source_key)
-      if alias.canonical is not None:
-        cls._sources[source_key] = alias
-    else:
-      cls._sources[source_key] = Source(source_data, source_key)
-
-  @classmethod
-  def get(cls, source_key):
-    return cls._sources.get(source_key)
-
-  def __init__(self, source_data, source_key):
+  def __init__(self, source_data, source_key, corpus):
     self._data = source_data
     self._key = source_key
 
     self._author_keys = tuple(self._data['authors'])
+    self._publication = None
 
     if self.in_preparation:
       self._pub_date = None
@@ -199,7 +165,8 @@ class Source:
       expected_key = 'inprep'
     else:
       source_type = (source_data.keys() & {'journal', 'book', 'reading'}).pop()
-      if Publication.get(source_data[source_type]) is None:
+      self._publication = corpus.publications.get(source_data[source_type])
+      if self._publication is None:
         logger.error(f'{source_type} "{source_data[source_type]}" not found!')
       expected_key = f'{source_data["pubDate"]["year"]}'
       if source_key[4] != '_':
@@ -208,6 +175,7 @@ class Source:
         expected_key += source_key[4]
 
     self._authors = resolve_authors(
+      corpus,
       self._author_keys,
       lambda key: (
         f'Author "{key}" not found for source_data {source_key}!',
@@ -217,13 +185,13 @@ class Source:
     expected_key += ''.join(f'_{author.key}' for author in self._authors)
 
     for editor_key in source_data.get('editors', ()):
-      if Author.get(editor_key) is None:
+      if corpus.authors.get(editor_key) is None:
         logger.error(f'Editor "{editor_key}" not found for source_data {source_key}!')
 
     if source_key != expected_key:
       logger.error(f'Expected "{expected_key}" but found "{source_key}"')
 
-    if (trans_of := source_data.get('translationOf')) and Source.get(trans_of) is None:
+    if (trans_of := source_data.get('translationOf')) and corpus.sources.get(trans_of) is None:
       logger.error(f'Translation source "{trans_of}" for "{source_key}" not found!')
 
   def __str__(self):
@@ -241,6 +209,12 @@ class Source:
   @property
   def year(self):
     return self._pub_date.year
+
+  @property
+  def publication(self):
+    """The `Publication` the record's `journal`, `book` or `reading` names;
+    `None` for a work in preparation or a key with no record."""
+    return self._publication
 
   @property
   def disambiguator(self):
@@ -272,8 +246,9 @@ class Source:
   @property
   def citation_fields(self):
     """The record's bibliographic fields as written, for `claims.citation`:
-    the title as printed, `journal` or `book` as a publication key, and
-    the series, volume, number, pages and plates it gives."""
+    the title as printed, `journal` or `book` as a publication key (the
+    record itself is `publication`), and the series, volume, number, pages
+    and plates it gives."""
     return {field: self._data[field] for field in CITATION_FIELDS if field in self._data}
 
 
@@ -281,13 +256,13 @@ class SourceAlias(Source):
   """A key citing a source by some of its authors (`aliasOf`): the authors
   are the key's own, everything else is the target's."""
 
-  def __init__(self, source_data, source_key):
+  def __init__(self, source_data, source_key, corpus):
     self._key = source_key
     self._target = None
     logger.debug(f'Processing source alias "{source_key}"')
 
     target_key = source_data['aliasOf']
-    target = Source.get(target_key)
+    target = corpus.sources.get(target_key)
     if target is None:
       logger.error(f'Alias "{source_key}" names source "{target_key}", which does not exist')
       return
@@ -308,6 +283,7 @@ class SourceAlias(Source):
 
     self._author_keys = tuple(authors.split('_'))
     self._authors = resolve_authors(
+      corpus,
       self._author_keys,
       lambda key: (
         f'Author "{key}" not found for source alias {source_key}!',
@@ -335,3 +311,7 @@ class SourceAlias(Source):
   @property
   def year(self):
     return self._target.year
+
+  @property
+  def publication(self):
+    return self._target.publication

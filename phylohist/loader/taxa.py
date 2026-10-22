@@ -5,7 +5,7 @@ from functools import cached_property, reduce
 from ..derivatives import kind_of
 from ..ranks import SPECIES_GROUP, fold_rank, implied_rank
 from .io import fail
-from .research import Source, check_unregistered_author, resolve_authors
+from .research import check_unregistered_author, resolve_authors
 
 logger = logging.getLogger(__name__)
 
@@ -29,11 +29,12 @@ def names_attribution(block):
 
 
 class Authority:
-  def __init__(self, block, where=None):
+  def __init__(self, block, corpus, where=None):
     """An `authority` block (`$defs/authority`) that names an attribution:
-    a `source`, or the printed credit `auth`, `year`, `in`. `where` names
-    the record it is on (`taxa.yaml <key>`), for the errors; a record the
-    block needs and cannot find ends the load (`io.fail`)."""
+    a `source`, or the printed credit `auth`, `year`, `in`, resolved in
+    `corpus`. `where` names the record it is on (`taxa.yaml <key>`), for
+    the errors; a record the block needs and cannot find ends the load
+    (`io.fail`)."""
     self._source = None
     at = f' at {where}' if where is not None else ''
 
@@ -45,7 +46,7 @@ class Authority:
       )
     elif 'source' in block:
       source_key = block['source']
-      self._source = Source.get(source_key)
+      self._source = corpus.sources.get(source_key)
       if not self._source:
         fail(
           f'Authority source "{source_key}" not recognized{at}',
@@ -54,7 +55,7 @@ class Authority:
 
       self._source_authors = self._source.authors
       if 'attributedTo' in block:
-        self._authors = self._find_authors(block['attributedTo'], where)
+        self._authors = self._find_authors(corpus, block['attributedTo'], where)
       else:
         self._authors = None
 
@@ -65,7 +66,7 @@ class Authority:
 
       if 'ex' in block:
         # Built for its checks: the work the name derives from must resolve.
-        Authority(block['ex'], where=where)
+        Authority(block['ex'], corpus, where=where)
 
     else:
       # The printed credit. No `auth`, or `[]`, names an author the corpus
@@ -74,9 +75,9 @@ class Authority:
         self._source_authors = None
         self._authors = None
       else:
-        auth_authors = self._find_authors(block['auth'], where)
+        auth_authors = self._find_authors(corpus, block['auth'], where)
         if 'in' in block:
-          self._source_authors = self._find_authors(block['in'], where)
+          self._source_authors = self._find_authors(corpus, block['in'], where)
           self._authors = auth_authors
         else:
           self._source_authors = auth_authors
@@ -106,9 +107,10 @@ class Authority:
       string = f'{string} {self._year}' if string else str(self._year)
     return string
 
-  def _find_authors(self, author_strings, where):
+  def _find_authors(self, corpus, author_strings, where):
     at = f' at {where}' if where is not None else ''
     return resolve_authors(
+      corpus,
       author_strings,
       lambda key: (
         f'Author for author key {key} not found!{at}',
@@ -162,17 +164,7 @@ class Authority:
 
 
 class Taxon:
-  _taxa = {}
-
-  @classmethod
-  def add(cls, taxon_data, taxon_key):
-    cls._taxa[taxon_key] = Taxon(taxon_data, taxon_key)
-
-  @classmethod
-  def get(cls, taxon_key):
-    return cls._taxa.get(taxon_key)
-
-  def __init__(self, taxon_data, taxon_key):
+  def __init__(self, taxon_data, taxon_key, corpus):
     self._data = taxon_data
     self._key = taxon_key
     where = f'taxa.yaml {taxon_key}'
@@ -206,9 +198,9 @@ class Taxon:
       if not names_attribution(block):
         # The schema requires a work or a printed credit; this is the backstop.
         fail(f'Taxon {taxon_key} names no authority', f'taxon {taxon_key} has no authority')
-      self._authority = Authority(block, where=where)
+      self._authority = Authority(block, corpus, where=where)
     else:
-      target = self._known(taxon_data[kind.field], kind.relation)
+      target = self._known(corpus, taxon_data[kind.field], kind.relation)
       self._alt = target
       if kind.borrows_name and 'name' not in self._data:
         self._name = target.name
@@ -216,7 +208,7 @@ class Taxon:
         self._rank = target.rank
         self._mineral = target.mineral
       if names_attribution(block):
-        self._authority = Authority(block, where=where)
+        self._authority = Authority(block, corpus, where=where)
       else:
         # Borrowed; a block of locators alone is the record's own page.
         self._authority = target.authority
@@ -233,11 +225,11 @@ class Taxon:
 
     logger.debug(f'    ...all authorities for "{taxon_key}" processed')
 
-  def _known(self, target_key, relation):
+  def _known(self, corpus, target_key, relation):
     """The record this one is a `relation` of, which `_load_taxa` loads
     first; an unknown key is logged and ends the load, as a file that
     fails the schema does."""
-    target = Taxon.get(target_key)
+    target = corpus.taxa.get(target_key)
     if target is None:
       fail(
         f'Taxon {self._key} {relation} of unknown {target_key}',
@@ -482,17 +474,7 @@ class Section:
   `sectionStart` and `sectionEnd`. Its key is its name lower-cased, like a
   genus's, or with the authority suffix when `needsQualification` is set."""
 
-  _sections = {}
-
-  @classmethod
-  def add(cls, section_data, section_key):
-    cls._sections[section_key] = Section(section_data, section_key)
-
-  @classmethod
-  def get(cls, section_key):
-    return cls._sections.get(section_key)
-
-  def __init__(self, section_data, section_key):
+  def __init__(self, section_data, section_key, corpus):
     self._data = section_data
     self._key = section_key
     self._name = section_data.get('name')
@@ -502,7 +484,8 @@ class Section:
     # A section may leave its attribution to the work that prints it, and
     # give only its page.
     if names_attribution(section_data.get('authority')):
-      self._authority = Authority(section_data['authority'], where=f'sections.yaml {section_key}')
+      where = f'sections.yaml {section_key}'
+      self._authority = Authority(section_data['authority'], corpus, where=where)
     else:
       self._authority = None
 
@@ -716,25 +699,29 @@ class Tree:
   )
   CITED_AXES = frozenset(axis.name for axis in RELATED_AXES if axis.cited)
 
-  _new_index = collections.defaultdict(set)
-
   def __init__(
     self,
     tree_data,
     tree_metadata=None,
     parent=None,
     relpath=(),
+    *,
+    corpus=None,
   ):
-    # Programming errors, not data errors: a root takes metadata, any other
-    # node its parent and a relative path.
+    # Programming errors, not data errors: a root takes metadata and the
+    # corpus its records are in; any other node its parent, whose corpus it
+    # shares, and a relative path.
     if (tree_metadata is None) == (parent is None):
       raise TypeError('a Tree node takes either metadata (a root) or a parent, not both or neither')
+    if (corpus is None) == (parent is None):
+      raise TypeError('a root Tree node takes a corpus, and any other node shares its root corpus')
     if parent is not None and relpath == ():
       raise TypeError('a non-root Tree node needs a non-empty relative path')
 
     self._data = tree_data
     self._metadata = tree_metadata
     self._parent = parent
+    self._corpus = corpus if parent is None else parent._corpus
     self._taxon = None
     self._relpath = relpath
 
@@ -794,18 +781,12 @@ class Tree:
           'only a taxon above the species says the tree stops'
         )
 
-      # A slip of the pen is where the name it prints appears, so the node
-      # under `lapsus` is that name's protologue whether or not the slip
-      # also claimed it as new.
-      if self._data.get('new') or self.axis == 'lapsus':
-        Tree._new_index[self._taxon.key].add(self._source.key)
-
       block = self._data.get('authority')
       if isinstance(block, dict):
         for field in ('auth', 'in', 'attributedTo'):
           for author_string in block.get(field) or ():
             if author_string.lower() != author_string:
-              check_unregistered_author(author_string, where=self)
+              check_unregistered_author(self._corpus, author_string, where=self)
 
     if self._parent is None:
       self._pair_brackets()
@@ -878,7 +859,7 @@ class Tree:
 
   def _check_section(self, field, key):
     """The `Section` a marker names; logs a key with no record."""
-    section = Section.get(key)
+    section = self._corpus.sections.get(key)
     if section is None:
       logger.error(f'Unrecognized section "{key}" in field "{field}" for {self}')
     return section
@@ -912,7 +893,7 @@ class Tree:
       # `_load_trees` skips a file with no source record and the schema fixes
       # the tree types, so these fire only for synthetic metadata; every node
       # hashes by its source, so neither can be logged and passed over.
-      self._source = Source.get(self._metadata['source_key'])
+      self._source = self._corpus.sources.get(self._metadata['source_key'])
       if self._source is None:
         fail(
           f'Tree source {self._metadata["source_key"]} not recognized!',
@@ -933,7 +914,7 @@ class Tree:
   def _check_taxon(self, field):
     taxon_key = self._data.get(field)
     if taxon_key:
-      taxon = Taxon.get(taxon_key)
+      taxon = self._corpus.taxa.get(taxon_key)
       if taxon is None:
         # TODO: Is this error message right?
         logger.error(f'Unrecognized tree {field} {taxon_key} for {self}')

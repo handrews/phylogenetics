@@ -8,7 +8,7 @@ import logging
 import pytest
 
 from phylohist import regenerate
-from phylohist.loader import LoadError
+from phylohist.loader import Corpus, LoadError
 from tests import support
 
 script = support.script('expected_warnings')
@@ -21,7 +21,7 @@ def _fake_load(*messages, errors=0):
       logger.warning(message)
     for n in range(errors):
       logger.error(f'error {n}')
-    return {}, {}
+    return Corpus()
 
   return load
 

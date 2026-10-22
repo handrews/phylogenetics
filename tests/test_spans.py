@@ -6,8 +6,8 @@ schema, and the corpus. A section is a span of siblings, `sectionStart`
 through `sectionEnd`, with a record in `data/sections.yaml`: the same
 for sections (the last part of the file).
 
-Synthetic trees are built on the loaded test corpus under positions
-2000 and up (`Tree` keeps class-level registries); the closure test reads
+Synthetic trees are built on each test's copy of the loaded test corpus
+(`records`) under positions 2000 and up; the closure test reads
 a `ClaimStore` over a copy of `claims/` whose file for `1766_linnaeus` is
 replaced by the claims of one of them.
 """
@@ -22,8 +22,7 @@ from phylohist.claims import extract, manifest
 from phylohist.closure import Closure
 from phylohist.loader import io, material
 from phylohist.loader.load import _report_section_protologues
-from phylohist.loader.research import Source
-from phylohist.loader.taxa import Section, Tree
+from phylohist.loader.taxa import Tree
 from phylohist.store import ClaimStore
 from tests import support
 
@@ -67,10 +66,11 @@ SPANS = {
 POSITIONS = iter(range(2000, 3000))
 
 
-def _tree(root, tree_type='cladogram'):
+def _tree(records, root, tree_type='cladogram'):
   return Tree(
     root,
     {'source_key': SOURCE, 'type': tree_type, 'position': next(POSITIONS)},
+    corpus=records,
   )
 
 
@@ -82,8 +82,8 @@ def _keys(node):
   return tuple(taxon.key for taxon in node.brackets)
 
 
-def _claims(tree):
-  return extract({SOURCE: [tree]})[SOURCE]
+def _claims(records, tree):
+  return extract(records, {SOURCE: [tree]})[SOURCE]
 
 
 def _bracket_placements(claims, path):
@@ -105,8 +105,8 @@ def _errors(caplog):
 # -- the span rule ------------------------------------------------------------
 
 
-def test_an_end_on_an_internal_node_takes_its_subtree():
-  tree = _tree(SPANS)
+def test_an_end_on_an_internal_node_takes_its_subtree(records):
+  tree = _tree(records, SPANS)
   by_path = {node.pointer: node for node in _nodes(tree)}
   inside = [
     '/children/0',
@@ -126,11 +126,11 @@ def test_an_end_on_an_internal_node_takes_its_subtree():
     assert 'camerata' not in _keys(by_path[pointer]), pointer
 
 
-def test_an_unmarked_unnamed_node_between_start_and_end_is_in_the_span():
-  tree = _tree(SPANS)
+def test_an_unmarked_unnamed_node_between_start_and_end_is_in_the_span(records):
+  tree = _tree(records, SPANS)
   unnamed = next(n for n in _nodes(tree) if n.pointer == '/children/1')
   assert unnamed.taxon is None and _keys(unnamed) == ('camerata',)
-  claims = _claims(tree)
+  claims = _claims(records, tree)
   assert _bracket_placements(claims, unnamed_path := f'{unnamed.position}{unnamed.pointer}') == []
   # Its named children are placed under Camerata, though the old field
   # was on none of them.
@@ -139,16 +139,17 @@ def test_an_unmarked_unnamed_node_between_start_and_end_is_in_the_span():
     assert placement['parent'] == 'camerata'
 
 
-def test_both_markers_on_one_node_are_a_one_node_span():
-  tree = _tree(SPANS)
+def test_both_markers_on_one_node_are_a_one_node_span(records):
+  tree = _tree(records, SPANS)
   by_path = {node.pointer: node for node in _nodes(tree)}
   assert _keys(by_path['/children/1/children/3/children/0']) == ('disparida',)
   assert _keys(by_path['/children/1/children/3/children/1']) == ()
   assert _keys(by_path['/children/1/children/3']) == ()
 
 
-def test_a_one_node_span_still_takes_the_nodes_own_subtree():
+def test_a_one_node_span_still_takes_the_nodes_own_subtree(records):
   tree = _tree(
+    records,
     {
       'children': [
         {
@@ -159,7 +160,7 @@ def test_a_one_node_span_still_takes_the_nodes_own_subtree():
         },
         {'taxon': 'glenocrinus'},
       ]
-    }
+    },
   )
   assert {node.taxon.key: _keys(node) for node in _nodes(tree) if node.taxon} == {
     'cnemecrinus': ('camerata',),
@@ -168,8 +169,9 @@ def test_a_one_node_span_still_takes_the_nodes_own_subtree():
   }
 
 
-def test_spans_of_different_taxa_nest_and_a_node_has_one_placement_for_each():
+def test_spans_of_different_taxa_nest_and_a_node_has_one_placement_for_each(records):
   tree = _tree(
+    records,
     {
       'children': [
         {
@@ -183,7 +185,7 @@ def test_spans_of_different_taxa_nest_and_a_node_has_one_placement_for_each():
         },
         {'taxon': 'pariocrinus'},
       ]
-    }
+    },
   )
   keys = {node.taxon.key: _keys(node) for node in _nodes(tree) if node.taxon}
   assert keys == {
@@ -193,15 +195,16 @@ def test_spans_of_different_taxa_nest_and_a_node_has_one_placement_for_each():
     'glenocrinus': ('protocrinoida',),
     'pariocrinus': (),
   }
-  claims = _claims(tree)
+  claims = _claims(records, tree)
   p = tree.position
   parents = [c['parent'] for c in _bracket_placements(claims, f'{p}/children/0/children/0')]
   assert parents == ['protocrinoida', 'camerata']
   assert _bracket_placements(claims, f'{p}/children/1') == []
 
 
-def test_disjoint_spans_of_one_taxon_are_two_usages_and_the_right_placements():
+def test_disjoint_spans_of_one_taxon_are_two_usages_and_the_right_placements(records):
   tree = _tree(
+    records,
     {
       'children': [
         {'taxon': 'cnemecrinus', 'bracketStart': 'camerata', 'bracketEnd': 'camerata'},
@@ -209,10 +212,10 @@ def test_disjoint_spans_of_one_taxon_are_two_usages_and_the_right_placements():
         {'taxon': 'adelphicrinus', 'bracketStart': 'camerata'},
         {'taxon': 'eknomocrinus', 'bracketEnd': 'camerata'},
       ]
-    }
+    },
   )
   assert [_keys(n) for n in _nodes(tree)[1:]] == [('camerata',), (), ('camerata',), ('camerata',)]
-  claims = _claims(tree)
+  claims = _claims(records, tree)
   usages = _bracket_usages(claims)
   assert [(c['path'], c['bracketEnd']) for c in usages] == [
     (f'{tree.position}/children/0', f'{tree.position}/children/0'),
@@ -226,8 +229,9 @@ def test_disjoint_spans_of_one_taxon_are_two_usages_and_the_right_placements():
   assert placed == [f'{tree.position}/children/{i}' for i in (0, 2, 3)]
 
 
-def test_a_span_ending_the_tree_lets_the_last_end_close_it():
+def test_a_span_ending_the_tree_lets_the_last_end_close_it(records):
   tree = _tree(
+    records,
     {
       'children': [
         {'taxon': 'cnemecrinus', 'bracketStart': 'camerata'},
@@ -237,13 +241,14 @@ def test_a_span_ending_the_tree_lets_the_last_end_close_it():
           'children': [{'taxon': 'eknomocrinus'}],
         },
       ]
-    }
+    },
   )
   assert [_keys(n) for n in _nodes(tree)[1:]] == [('camerata',)] * 3
 
 
-def test_brackets_are_valid_in_a_taxonomy_too():
+def test_brackets_are_valid_in_a_taxonomy_too(records):
   tree = _tree(
+    records,
     {
       'taxon': 'crinoidea',
       'children': [{'taxon': 'cnemecrinus', 'bracketStart': 'camerata', 'bracketEnd': 'camerata'}],
@@ -289,42 +294,44 @@ def test_brackets_are_valid_in_a_taxonomy_too():
     ),
   ],
 )
-def test_the_loader_reports_a_marker_that_does_not_pair(caplog, root, message):
+def test_the_loader_reports_a_marker_that_does_not_pair(records, caplog, root, message):
   with caplog.at_level(logging.ERROR, logger='phylohist'):
-    tree = _tree(root)
+    tree = _tree(records, root)
   [error] = _errors(caplog)
   assert error.endswith(message)
   # The message names the offending node.
   assert f'[{tree.position}]/' in error
 
 
-def test_the_unclosed_error_is_on_the_start_node(caplog):
+def test_the_unclosed_error_is_on_the_start_node(records, caplog):
   with caplog.at_level(logging.ERROR, logger='phylohist'):
     _tree(
+      records,
       {
         'children': [
           {'taxon': 'glenocrinus'},
           {'taxon': 'cnemecrinus', 'bracketStart': 'camerata'},
           {'taxon': 'adelphicrinus'},
         ]
-      }
+      },
     )
   [error] = _errors(caplog)
   assert '/cnemecrinus opens a bracket' in error
 
 
-def test_a_marker_is_checked_as_the_old_field_was(caplog):
+def test_a_marker_is_checked_as_the_old_field_was(records, caplog):
   with caplog.at_level(logging.ERROR, logger='phylohist'):
-    _tree({'children': [{'taxon': 'cnemecrinus', 'bracketStart': 'no-such-taxon'}]})
+    _tree(records, {'children': [{'taxon': 'cnemecrinus', 'bracketStart': 'no-such-taxon'}]})
   assert any('Unrecognized tree bracketStart no-such-taxon' in e for e in _errors(caplog))
   caplog.clear()
   with caplog.at_level(logging.ERROR, logger='phylohist'):
     _tree(
+      records,
       {
         'children': [
           {'taxon': 'cnemecrinus', 'bracketEnd': 'crinoidea-genus-a_guensburg_sprinkle_2003'}
         ]
-      }
+      },
     )
   assert any('expected to be named' in e for e in _errors(caplog))
 
@@ -432,10 +439,10 @@ def test_check_draft_reports_a_marker_that_does_not_pair(tmp_path, body, message
 # -- the claims ---------------------------------------------------------------
 
 
-def test_the_usage_is_at_the_start_node_and_names_the_end_nodes_path():
-  tree = _tree(SPANS)
+def test_the_usage_is_at_the_start_node_and_names_the_end_nodes_path(records):
+  tree = _tree(records, SPANS)
   p = tree.position
-  usages = _bracket_usages(_claims(tree))
+  usages = _bracket_usages(_claims(records, tree))
   assert [(c['subject'], c['path'], c['bracketEnd']) for c in usages] == [
     ('camerata', f'{p}/children/0', f'{p}/children/1/children/2'),
     ('disparida', f'{p}/children/1/children/3/children/0', f'{p}/children/1/children/3/children/0'),
@@ -447,9 +454,9 @@ def test_the_usage_is_at_the_start_node_and_names_the_end_nodes_path():
     assert 'placeholder' not in usage
 
 
-def test_the_placement_is_under_the_bracket_via_bracket():
-  tree = _tree(SPANS)
-  claims = _claims(tree)
+def test_the_placement_is_under_the_bracket_via_bracket(records):
+  tree = _tree(records, SPANS)
+  claims = _claims(records, tree)
   p = tree.position
   [placement] = _bracket_placements(claims, f'{p}/children/1/children/2/children/1')
   assert placement['subject'] == 'celtocrinus'
@@ -469,8 +476,9 @@ def test_the_placement_is_under_the_bracket_via_bracket():
   ]
 
 
-def test_the_nodes_own_placement_wins_by_path(corpus, tmp_path):
+def test_the_nodes_own_placement_wins_by_path(records, corpus, tmp_path):
   tree = _tree(
+    records,
     {
       'taxon': 'crinoidea',
       'children': [
@@ -480,7 +488,7 @@ def test_the_nodes_own_placement_wins_by_path(corpus, tmp_path):
     },
     tree_type='taxonomy',
   )
-  claims = _claims(tree)
+  claims = _claims(records, tree)
   directory = tmp_path / 'claims'
   shutil.copytree(corpus.claims, directory)
   (directory / f'{SOURCE}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
@@ -492,15 +500,20 @@ def test_the_nodes_own_placement_wins_by_path(corpus, tmp_path):
     assert placed['position'] == index
 
 
-def test_the_nodes_own_placement_follows_its_bracket_placements():
+def test_the_nodes_own_placement_follows_its_bracket_placements(records):
   tree = _tree(
+    records,
     {
       'taxon': 'crinoidea',
       'children': [{'taxon': 'cnemecrinus', 'bracketStart': 'camerata', 'bracketEnd': 'camerata'}],
     },
     tree_type='taxonomy',
   )
-  at = [c for c in _claims(tree) if c['kind'] == 'placement' and c['path'].endswith('/children/0')]
+  at = [
+    c
+    for c in _claims(records, tree)
+    if c['kind'] == 'placement' and c['path'].endswith('/children/0')
+  ]
   assert [c.get('via') for c in at] == ['bracket', None]
 
 
@@ -597,23 +610,24 @@ UNNAMED = 'testacea-multivalvia_linnaeus_1758'
 
 
 @pytest.fixture
-def sections(monkeypatch):
-  """A synthetic sections registry, in place of the corpus's."""
-  monkeypatch.setattr(Section, '_sections', {})
+def sections(records):
+  """Synthetic section records in the test's copy of the corpus, in place
+  of the corpus's."""
+  records.sections = {}
   authority = {'source': '1758_linnaeus'}
-  Section.add({'name': 'Integra', 'authority': authority, 'citedAs': 'Integra'}, INTEGRA)
-  Section.add({'name': 'Stellatae', 'authority': authority}, STELLATAE)
-  Section.add({'name': 'Radiatae', 'authority': authority}, RADIATAE)
-  Section.add({'name': None, 'designation': 'Multivalvia', 'authority': authority}, UNNAMED)
-  return Section._sections
+  records.add_section({'name': 'Integra', 'authority': authority, 'citedAs': 'Integra'}, INTEGRA)
+  records.add_section({'name': 'Stellatae', 'authority': authority}, STELLATAE)
+  records.add_section({'name': 'Radiatae', 'authority': authority}, RADIATAE)
+  records.add_section({'name': None, 'designation': 'Multivalvia', 'authority': authority}, UNNAMED)
+  return records.sections
 
 
 def _start(key, **marker):
   return {'section': key, **marker}
 
 
-def _taxonomy(children):
-  return _tree({'taxon': 'asterias', 'children': children}, tree_type='taxonomy')
+def _taxonomy(records, children):
+  return _tree(records, {'taxon': 'asterias', 'children': children}, tree_type='taxonomy')
 
 
 def _in(node):
@@ -646,8 +660,8 @@ ASTERIAS = [
 ]
 
 
-def _section_claims(tree):
-  return [c for c in _claims(tree) if c['kind'] == 'section']
+def _section_claims(records, tree):
+  return [c for c in _claims(records, tree) if c['kind'] == 'section']
 
 
 # -- the schema ---------------------------------------------------------------
@@ -724,8 +738,8 @@ def test_the_markers_are_valid_in_a_taxonomy_only():
 # -- the loader ---------------------------------------------------------------
 
 
-def test_a_clean_sibling_list_with_three_sections(sections):
-  tree = _taxonomy(ASTERIAS)
+def test_a_clean_sibling_list_with_three_sections(records, sections):
+  tree = _taxonomy(records, ASTERIAS)
   assert [_in(n) for n in _listed(tree)] == [
     (INTEGRA,),
     (STELLATAE,),
@@ -758,17 +772,18 @@ def test_a_clean_sibling_list_with_three_sections(sections):
   assert luna.section_start_marker == {'section': INTEGRA, 'citedAs': 'Integra', 'pages': 661}
 
 
-def test_both_markers_on_one_node_are_a_one_node_section(sections):
+def test_both_markers_on_one_node_are_a_one_node_section(records, sections):
   tree = _taxonomy(
-    [{'taxon': 'luna_linnaeus_1758', **ASTERIAS[0]}, {'taxon': 'rubens_linnaeus_1758'}]
+    records, [{'taxon': 'luna_linnaeus_1758', **ASTERIAS[0]}, {'taxon': 'rubens_linnaeus_1758'}]
   )
   first, second = _listed(tree)
   assert (_in(first), _in(second)) == ((INTEGRA,), ())
   assert first.section_end_node is first
 
 
-def test_sections_of_a_list_nest(sections):
+def test_sections_of_a_list_nest(records, sections):
   tree = _taxonomy(
+    records,
     [
       {'taxon': 'luna_linnaeus_1758', 'sectionStart': _start(INTEGRA)},
       {'taxon': 'rubens_linnaeus_1758', 'sectionStart': _start(STELLATAE)},
@@ -779,7 +794,7 @@ def test_sections_of_a_list_nest(sections):
       },
       {'taxon': 'laevigata_linnaeus_1758', 'sectionEnd': INTEGRA},
       {'taxon': 'ophiura_linnaeus_1758'},
-    ]
+    ],
   )
   assert [_in(n) for n in _listed(tree)] == [
     (INTEGRA,),
@@ -795,8 +810,9 @@ def test_sections_of_a_list_nest(sections):
   ]
 
 
-def test_a_subtree_carries_the_sections_of_its_ancestors_below_its_own(sections):
+def test_a_subtree_carries_the_sections_of_its_ancestors_below_its_own(records, sections):
   tree = _taxonomy(
+    records,
     [
       {
         'taxon': 'luna_linnaeus_1758',
@@ -809,7 +825,7 @@ def test_a_subtree_carries_the_sections_of_its_ancestors_below_its_own(sections)
         ],
       },
       {'taxon': 'ophiura_linnaeus_1758'},
-    ]
+    ],
   )
   assert [_in(n) for n in _listed(tree)] == [
     (INTEGRA,),
@@ -820,16 +836,17 @@ def test_a_subtree_carries_the_sections_of_its_ancestors_below_its_own(sections)
   ]
 
 
-def test_sections_of_different_lists_do_not_pair(sections, caplog):
+def test_sections_of_different_lists_do_not_pair(records, sections, caplog):
   with caplog.at_level(logging.ERROR, logger='phylohist'):
     _taxonomy(
+      records,
       [
         {
           'taxon': 'luna_linnaeus_1758',
           'sectionStart': _start(INTEGRA),
           'children': [{'taxon': 'rubens_linnaeus_1758', 'sectionEnd': INTEGRA}],
         },
-      ]
+      ],
     )
   messages = _errors(caplog)
   assert len(messages) == 2
@@ -839,50 +856,50 @@ def test_sections_of_different_lists_do_not_pair(sections, caplog):
   )
 
 
-def test_the_section_of_an_unnamed_heading_has_a_designation(sections):
-  assert Section.get(UNNAMED).name is None
-  assert Section.get(UNNAMED).label == 'Multivalvia'
-  assert Section.get(INTEGRA).label == 'Integra'
-  assert Section.get(INTEGRA).authority.source.key == '1758_linnaeus'
-  assert Section.get(INTEGRA).cited_as == 'Integra'
-  assert Section.get('nope') is None
+def test_the_section_of_an_unnamed_heading_has_a_designation(records, sections):
+  assert records.sections[UNNAMED].name is None
+  assert records.sections[UNNAMED].label == 'Multivalvia'
+  assert records.sections[INTEGRA].label == 'Integra'
+  assert records.sections[INTEGRA].authority.source.key == '1758_linnaeus'
+  assert records.sections[INTEGRA].cited_as == 'Integra'
+  assert records.sections.get('nope') is None
 
 
-def _section_errors(caplog, key, record):
+def _section_errors(records, caplog, key, record):
   with caplog.at_level(logging.ERROR, logger='phylohist'):
-    Section.add(record, key)
+    records.add_section(record, key)
   return _errors(caplog)
 
 
-def test_a_sections_key_is_its_name(caplog):
+def test_a_sections_key_is_its_name(records, caplog):
   record = {'name': 'Integra', 'authority': {'source': '1758_linnaeus'}}
-  assert _section_errors(caplog, 'integra', record) == []
-  [error] = _section_errors(caplog, 'integra_linnaeus_1758', record)
+  assert _section_errors(records, caplog, 'integra', record) == []
+  [error] = _section_errors(records, caplog, 'integra_linnaeus_1758', record)
   assert error == '"integra_linnaeus_1758" not in expected set: {\'integra\'}'
-  assert len(_section_errors(caplog, 'stellatae', record)) == 2
+  assert len(_section_errors(records, caplog, 'stellatae', record)) == 2
 
 
-def test_a_section_that_needs_qualification_takes_the_authority_suffix(caplog):
+def test_a_section_that_needs_qualification_takes_the_authority_suffix(records, caplog):
   record = {
     'name': 'Integra',
     'authority': {'source': '1758_linnaeus'},
     'needsQualification': True,
   }
-  assert _section_errors(caplog, 'integra_linnaeus_1758', record) == []
-  [error] = _section_errors(caplog, 'integra', record)
+  assert _section_errors(records, caplog, 'integra_linnaeus_1758', record) == []
+  [error] = _section_errors(records, caplog, 'integra', record)
   assert error == '"integra" not in expected set: {\'integra_linnaeus_1758\'}'
 
 
-def test_a_section_that_needs_qualification_has_an_authority(caplog):
+def test_a_section_that_needs_qualification_has_an_authority(records, caplog):
   record = {'name': 'Integra', 'needsQualification': True}
-  assert _section_errors(caplog, 'integra', record) == [
+  assert _section_errors(records, caplog, 'integra', record) == [
     'Section integra needs qualification but has no authority'
   ]
 
 
-def test_an_unnamed_section_has_any_key(caplog):
+def test_an_unnamed_section_has_any_key(records, caplog):
   record = {'name': None, 'designation': 'Multivalvia'}
-  assert _section_errors(caplog, 'any-key-at-all', record) == []
+  assert _section_errors(records, caplog, 'any-key-at-all', record) == []
 
 
 @pytest.mark.parametrize(
@@ -934,33 +951,37 @@ def test_an_unnamed_section_has_any_key(caplog):
   ],
 )
 def test_the_loader_reports_a_section_marker_that_does_not_pair(
-  sections, caplog, children, message
+  records, sections, caplog, children, message
 ):
   with caplog.at_level(logging.ERROR, logger='phylohist'):
-    tree = _taxonomy(children)
+    tree = _taxonomy(records, children)
   [error] = _errors(caplog)
   assert message in error
   # The message names the offending node, except where it names the key.
   assert f'[{tree.position}]/asterias' in error
 
 
-def test_the_unclosed_section_error_is_on_the_start_node(sections, caplog):
+def test_the_unclosed_section_error_is_on_the_start_node(records, sections, caplog):
   with caplog.at_level(logging.ERROR, logger='phylohist'):
     _taxonomy(
+      records,
       [
         {'taxon': 'luna_linnaeus_1758'},
         {'taxon': 'rubens_linnaeus_1758', 'sectionStart': _start(INTEGRA)},
         {'taxon': 'glacialis_linnaeus_1758'},
-      ]
+      ],
     )
   [error] = _errors(caplog)
   assert '/rubens_linnaeus_1758 opens a section' in error
 
 
 @pytest.mark.parametrize('tree_type', ['cladogram', 'diagram', 'other'])
-def test_the_loader_reports_a_marker_in_a_tree_that_is_no_taxonomy(sections, caplog, tree_type):
+def test_the_loader_reports_a_marker_in_a_tree_that_is_no_taxonomy(
+  records, sections, caplog, tree_type
+):
   with caplog.at_level(logging.ERROR, logger='phylohist'):
     tree = _tree(
+      records,
       {'children': [{'taxon': 'luna_linnaeus_1758', 'sectionStart': _start(INTEGRA)}]},
       tree_type=tree_type,
     )
@@ -973,22 +994,24 @@ def test_the_loader_reports_a_marker_in_a_tree_that_is_no_taxonomy(sections, cap
   assert _listed(tree)[0].section_start is None
 
 
-def test_the_loader_reports_a_marker_on_a_cited_entry_or_a_root(sections, caplog):
+def test_the_loader_reports_a_marker_on_a_cited_entry_or_a_root(records, sections, caplog):
   not_a_child = 'is not a `children` entry; a root or a cited entry cannot start or end a section'
   with caplog.at_level(logging.ERROR, logger='phylohist'):
     _taxonomy(
+      records,
       [
         {
           'taxon': 'luna_linnaeus_1758',
           'synonyms': [{'taxon': 'rubens_linnaeus_1758', 'sectionEnd': INTEGRA}],
         }
-      ]
+      ],
     )
   [error] = _errors(caplog)
   assert error.endswith(f'has `sectionEnd` but {not_a_child}')
   caplog.clear()
   with caplog.at_level(logging.ERROR, logger='phylohist'):
     _tree(
+      records,
       {'taxon': 'asterias', 'sectionStart': _start(INTEGRA), 'sectionEnd': INTEGRA},
       tree_type='taxonomy',
     )
@@ -1112,10 +1135,10 @@ def test_check_draft_checks_the_section_keys_and_the_pairing(tmp_path):
 # -- the claims ---------------------------------------------------------------
 
 
-def test_the_section_claims_of_asterias(sections):
-  tree = _taxonomy(ASTERIAS)
+def test_the_section_claims_of_asterias(records, sections):
+  tree = _taxonomy(records, ASTERIAS)
   p = tree.position
-  integra, stellatae, radiatae = _section_claims(tree)
+  integra, stellatae, radiatae = _section_claims(records, tree)
   common = {'kind': 'section', 'source': SOURCE, 'tree': 'taxonomy'}
   assert {k: v for k, v in integra.items() if k != 'audit'} == {
     **common,
@@ -1161,47 +1184,51 @@ def test_the_section_claims_of_asterias(sections):
     assert 'printedAttribution' not in claim
 
 
-def test_a_section_claim_names_an_unnamed_section_by_its_designation(sections):
+def test_a_section_claim_names_an_unnamed_section_by_its_designation(records, sections):
   tree = _taxonomy(
-    [{'taxon': 'luna_linnaeus_1758', 'sectionStart': _start(UNNAMED), 'sectionEnd': UNNAMED}]
+    records,
+    [{'taxon': 'luna_linnaeus_1758', 'sectionStart': _start(UNNAMED), 'sectionEnd': UNNAMED}],
   )
-  [claim] = _section_claims(tree)
+  [claim] = _section_claims(records, tree)
   assert claim['name'] == 'Multivalvia'
   assert claim['members'] == ['luna_linnaeus_1758']
 
 
-def test_a_section_claim_carries_the_markers_editorial_block(sections):
+def test_a_section_claim_carries_the_markers_editorial_block(records, sections):
   block = {'inferred': ['new'], 'basis': 'No earlier source is known.'}
   tree = _taxonomy(
+    records,
     [
       {
         'taxon': 'luna_linnaeus_1758',
         'sectionStart': _start(INTEGRA, new=True, editorial=block),
         'sectionEnd': INTEGRA,
       }
-    ]
+    ],
   )
-  [claim] = _section_claims(tree)
+  [claim] = _section_claims(records, tree)
   assert claim['new'] is True
   assert claim['editorial'] == block
   assert claim['inferredFields'] == ['new']
   assert 'inferred' not in claim
   whole = {'inferred': True, 'basis': "The heading is the editor's reading."}
   tree = _taxonomy(
+    records,
     [
       {
         'taxon': 'luna_linnaeus_1758',
         'sectionStart': _start(INTEGRA, editorial=whole),
         'sectionEnd': INTEGRA,
       }
-    ]
+    ],
   )
-  [claim] = _section_claims(tree)
+  [claim] = _section_claims(records, tree)
   assert claim['inferred'] is True and 'inferredFields' not in claim
 
 
-def test_a_node_opening_two_sections_has_a_numbered_claim_for_each(sections):
+def test_a_node_opening_two_sections_has_a_numbered_claim_for_each(records, sections):
   tree = _taxonomy(
+    records,
     [
       {
         'taxon': 'luna_linnaeus_1758',
@@ -1209,28 +1236,35 @@ def test_a_node_opening_two_sections_has_a_numbered_claim_for_each(sections):
         'sectionEnd': INTEGRA,
       },
       {'taxon': 'rubens_linnaeus_1758', 'sectionStart': _start(STELLATAE), 'sectionEnd': STELLATAE},
-    ]
+    ],
   )
-  assert [c['id'].rpartition(':')[2] for c in _section_claims(tree)] == ['section', 'section']
+  assert [c['id'].rpartition(':')[2] for c in _section_claims(records, tree)] == [
+    'section',
+    'section',
+  ]
   tree = _taxonomy(
+    records,
     [
       {'taxon': 'luna_linnaeus_1758', 'sectionStart': _start(INTEGRA)},
       {'taxon': 'rubens_linnaeus_1758', 'sectionEnd': INTEGRA},
-    ]
+    ],
   )
-  [claim] = _section_claims(tree)
+  [claim] = _section_claims(records, tree)
   assert claim['members'] == ['luna_linnaeus_1758', 'rubens_linnaeus_1758']
 
 
-def test_a_section_never_closed_has_no_claim(sections):
-  tree = _taxonomy([{'taxon': 'luna_linnaeus_1758', 'sectionStart': _start(INTEGRA)}])
-  assert _section_claims(tree) == []
+def test_a_section_never_closed_has_no_claim(records, sections):
+  tree = _taxonomy(records, [{'taxon': 'luna_linnaeus_1758', 'sectionStart': _start(INTEGRA)}])
+  assert _section_claims(records, tree) == []
 
 
-def test_a_section_is_no_placement_or_usage_and_the_nodes_claims_are_unchanged(sections):
-  marked = _claims(_taxonomy(ASTERIAS))
+def test_a_section_is_no_placement_or_usage_and_the_nodes_claims_are_unchanged(records, sections):
+  marked = _claims(records, _taxonomy(records, ASTERIAS))
   plain = _claims(
-    _taxonomy([{k: v for k, v in n.items() if not k.startswith('section')} for n in ASTERIAS])
+    records,
+    _taxonomy(
+      records, [{k: v for k, v in n.items() if not k.startswith('section')} for n in ASTERIAS]
+    ),
   )
   strip = lambda claims: [  # noqa: E731
     {k: v for k, v in c.items() if k != 'path' and k != 'id'}
@@ -1241,12 +1275,12 @@ def test_a_section_is_no_placement_or_usage_and_the_nodes_claims_are_unchanged(s
 
 
 def test_a_claim_store_over_a_section_claim_loads_and_the_tools_run_clean(
-  corpus, sections, tmp_path
+  records, corpus, sections, tmp_path
 ):
-  tree = _taxonomy(ASTERIAS)
-  claims = _claims(tree)
+  tree = _taxonomy(records, ASTERIAS)
+  claims = _claims(records, tree)
   roots = {SOURCE: [tree]}
-  table = manifest({SOURCE: claims}, roots)
+  table = manifest(records, {SOURCE: claims}, roots)
   assert table['sources'][SOURCE]['claims']['section'] == 3
   # A section's subject is no taxon: the per-taxon source lists skip it.
   assert not {INTEGRA, STELLATAE, RADIATAE} & set(table['taxa'])
@@ -1275,24 +1309,29 @@ PROTOLOGUE_FILE = 'data/trees/1758_linnaeus.yaml'
 OPEN = 'testacea-unnamed-section-1_linnaeus_1758'
 
 
-def _protologue(caplog, record=None, marker=None, tree_source=PROTOLOGUE_SOURCE, new=True):
+def _protologue(records, caplog, record=None, marker=None, tree_source=PROTOLOGUE_SOURCE, new=True):
   """The (errors, warnings, infos) `_report_section_protologues` logs for the
   section `integra` with `pages: 661` and `record` fields on top, whose
   marker in a taxonomy of `tree_source` has `marker` on top (flagged `new`
   unless `new` is false)."""
   record = dict(record or {})
   authority = {'source': PROTOLOGUE_SOURCE, 'pages': record.pop('pages', 661)}
-  Section.add({'name': 'Integra', 'authority': authority, **record}, INTEGRA)
+  records.add_section({'name': 'Integra', 'authority': authority, **record}, INTEGRA)
   start = _start(INTEGRA, **({'new': True} if new else {}), **(marker or {}))
   node = {'taxon': 'luna_linnaeus_1758', 'sectionStart': start, 'sectionEnd': INTEGRA}
   tree = Tree(
     {'taxon': 'asterias', 'children': [node]},
     {'source_key': tree_source, 'type': 'taxonomy', 'position': next(POSITIONS)},
+    corpus=records,
   )
   with caplog.at_level(logging.INFO, logger='phylohist'):
     caplog.clear()
     _report_section_protologues(
-      {'trees': {PROTOLOGUE_SOURCE: {}}}, {PROTOLOGUE_SOURCE: [tree], tree_source: [tree]}
+      support.with_documents(
+        records,
+        {'trees': {PROTOLOGUE_SOURCE: {}}},
+        {PROTOLOGUE_SOURCE: [tree], tree_source: [tree]},
+      )
     )
   return tuple(
     [r.getMessage() for r in caplog.records if r.levelno == level]
@@ -1300,10 +1339,10 @@ def _protologue(caplog, record=None, marker=None, tree_source=PROTOLOGUE_SOURCE,
   )
 
 
-def test_a_section_matching_its_marker_on_all_three_fields_is_clean(sections, caplog):
+def test_a_section_matching_its_marker_on_all_three_fields_is_clean(records, sections, caplog):
   record = {'citedAs': 'Integra', 'designation': 'Integra'}
   marker = {'pages': 661, 'citedAs': 'Integra', 'designation': 'Integra'}
-  errors, warnings, info = _protologue(caplog, record, marker)
+  errors, warnings, info = _protologue(records, caplog, record, marker)
   assert (errors, warnings) == ([], [])
   assert info == ['0 disagreements between a section record and its protologue marker']
 
@@ -1335,16 +1374,17 @@ def test_a_section_matching_its_marker_on_all_three_fields_is_clean(sections, ca
   ],
 )
 def test_a_field_differing_from_the_marker_is_named_with_both_values(
-  sections, caplog, record, marker, message
+  records, sections, caplog, record, marker, message
 ):
-  errors, warnings, info = _protologue(caplog, record, marker)
+  errors, warnings, info = _protologue(records, caplog, record, marker)
   assert errors == [f'sections.yaml {INTEGRA}: ' + message.format(file=PROTOLOGUE_FILE)]
   assert warnings == []
   assert info == ['1 disagreements between a section record and its protologue marker']
 
 
-def test_each_differing_field_has_its_own_message(sections, caplog):
+def test_each_differing_field_has_its_own_message(records, sections, caplog):
   errors, _, info = _protologue(
+    records,
     caplog,
     {'citedAs': 'Integra', 'designation': 'Integra'},
     {'pages': 662, 'citedAs': 'Integrae', 'designation': 'Entire'},
@@ -1353,69 +1393,75 @@ def test_each_differing_field_has_its_own_message(sections, caplog):
   assert info == ['3 disagreements between a section record and its protologue marker']
 
 
-def test_pages_of_a_section_agree_across_forms(sections, caplog):
-  assert _protologue(caplog, {'pages': '661'}, {'pages': [661]})[0] == []
+def test_pages_of_a_section_agree_across_forms(records, sections, caplog):
+  assert _protologue(records, caplog, {'pages': '661'}, {'pages': [661]})[0] == []
 
 
-def test_a_marker_declaring_none_of_the_fields_says_nothing(sections, caplog):
-  errors, warnings, _ = _protologue(caplog, {'citedAs': 'Integra', 'designation': 'Integra'})
+def test_a_marker_declaring_none_of_the_fields_says_nothing(records, sections, caplog):
+  errors, warnings, _ = _protologue(
+    records, caplog, {'citedAs': 'Integra', 'designation': 'Integra'}
+  )
   assert (errors, warnings) == ([], [])
 
 
-def test_a_section_without_pages_is_not_checked(sections, caplog):
-  Section.add({'name': 'Integra', 'authority': {'source': PROTOLOGUE_SOURCE}}, INTEGRA)
+def test_a_section_without_pages_is_not_checked(records, sections, caplog):
+  records.add_section({'name': 'Integra', 'authority': {'source': PROTOLOGUE_SOURCE}}, INTEGRA)
   with caplog.at_level(logging.INFO, logger='phylohist'):
     caplog.clear()
-    _report_section_protologues({'trees': {PROTOLOGUE_SOURCE: {}}}, {})
+    _report_section_protologues(support.with_documents(records, {'trees': {PROTOLOGUE_SOURCE: {}}}))
   assert [r.levelno for r in caplog.records] == [logging.INFO]
 
 
-def test_a_section_with_pages_and_no_new_marker_is_not_flagged(sections, caplog):
-  errors, warnings, info = _protologue(caplog, None, {'pages': 662}, new=False)
+def test_a_section_with_pages_and_no_new_marker_is_not_flagged(records, sections, caplog):
+  errors, warnings, info = _protologue(records, caplog, None, {'pages': 662}, new=False)
   assert errors == []
   assert warnings == [f'Section protologue not flagged: {INTEGRA} in {PROTOLOGUE_SOURCE}']
   assert info == ['0 disagreements between a section record and its protologue marker']
 
 
-def test_a_new_marker_in_another_source_is_an_error(sections, caplog):
+def test_a_new_marker_in_another_source_is_an_error(records, sections, caplog):
   with caplog.at_level(logging.ERROR, logger='phylohist'):
-    Section.add({'name': 'Integra', 'authority': {'source': PROTOLOGUE_SOURCE}}, INTEGRA)
+    records.add_section({'name': 'Integra', 'authority': {'source': PROTOLOGUE_SOURCE}}, INTEGRA)
     _taxonomy(
+      records,
       [{'taxon': 'luna_linnaeus_1758', 'sectionStart': _start(INTEGRA, new=True)}],
     )
   assert _errors(caplog)[:1] == [
-    f'Expected source {Source.get(SOURCE)} for new section {INTEGRA}, '
-    f'got source {Source.get(PROTOLOGUE_SOURCE)}'
+    f'Expected source {records.sources[SOURCE]} for new section {INTEGRA}, '
+    f'got source {records.sources[PROTOLOGUE_SOURCE]}'
   ]
 
 
-def test_a_marker_without_new_or_a_record_without_authority_is_no_error(sections, caplog):
+def test_a_marker_without_new_or_a_record_without_authority_is_no_error(records, sections, caplog):
   with caplog.at_level(logging.ERROR, logger='phylohist'):
     _taxonomy(
+      records,
       [
         {
           'taxon': 'luna_linnaeus_1758',
           'sectionStart': _start(INTEGRA),
           'sectionEnd': INTEGRA,
         }
-      ]
+      ],
     )
-    Section.add({'name': 'Stellatae'}, STELLATAE)
+    records.add_section({'name': 'Stellatae'}, STELLATAE)
     _taxonomy(
+      records,
       [
         {
           'taxon': 'luna_linnaeus_1758',
           'sectionStart': _start(STELLATAE, new=True),
           'sectionEnd': STELLATAE,
         }
-      ]
+      ],
     )
   assert _errors(caplog) == []
 
 
-def test_designation_is_for_an_open_taxon_node_only(caplog):
+def test_designation_is_for_an_open_taxon_node_only(records, caplog):
   with caplog.at_level(logging.ERROR, logger='phylohist'):
     tree = _tree(
+      records,
       {'taxon': 'asterias', 'children': [{'taxon': 'luna_linnaeus_1758', 'designation': 'x'}]},
       tree_type='taxonomy',
     )
@@ -1425,14 +1471,16 @@ def test_designation_is_for_an_open_taxon_node_only(caplog):
   caplog.clear()
   with caplog.at_level(logging.ERROR, logger='phylohist'):
     _tree(
+      records,
       {'taxon': 'asterias', 'children': [{'openTaxon': OPEN, 'designation': 'Multivalvia'}]},
       tree_type='taxonomy',
     )
   assert _errors(caplog) == []
 
 
-def test_the_section_claim_carries_new_and_designation(sections):
+def test_the_section_claim_carries_new_and_designation(records, sections):
   tree = _taxonomy(
+    records,
     [
       {
         'taxon': 'luna_linnaeus_1758',
@@ -1444,9 +1492,9 @@ def test_the_section_claim_carries_new_and_designation(sections):
         'sectionStart': _start(INTEGRA),
         'sectionEnd': INTEGRA,
       },
-    ]
+    ],
   )
-  marked, plain = _section_claims(tree)
+  marked, plain = _section_claims(records, tree)
   assert marked['new'] is True
   assert marked['designation'] == 'Multivalvia'
   assert marked['pages'] == 654
@@ -1454,17 +1502,20 @@ def test_the_section_claim_carries_new_and_designation(sections):
   assert 'designation' not in plain
 
 
-def test_the_usage_of_an_open_taxon_node_carries_its_designation():
+def test_the_usage_of_an_open_taxon_node_carries_its_designation(records):
   tree = _taxonomy(
+    records,
     [{'openTaxon': OPEN, 'designation': 'Multivalvia'}, {'openTaxon': OPEN}],
   )
   with_phrase, without = [
-    c for c in _claims(tree) if c['kind'] == 'usage' and c['form'] == 'openTaxon'
+    c for c in _claims(records, tree) if c['kind'] == 'usage' and c['form'] == 'openTaxon'
   ]
   assert with_phrase['designation'] == 'Multivalvia'
   assert 'designation' not in without
-  phylogeny = _tree({'children': [{'openTaxon': OPEN, 'designation': 'Multivalvia'}]})
-  [usage] = [c for c in _claims(phylogeny) if c['kind'] == 'usage' and c['form'] == 'openTaxon']
+  phylogeny = _tree(records, {'children': [{'openTaxon': OPEN, 'designation': 'Multivalvia'}]})
+  [usage] = [
+    c for c in _claims(records, phylogeny) if c['kind'] == 'usage' and c['form'] == 'openTaxon'
+  ]
   assert usage['designation'] == 'Multivalvia'
 
 

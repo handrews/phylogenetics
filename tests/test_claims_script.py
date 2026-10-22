@@ -8,8 +8,7 @@ import logging
 
 from phylohist import regenerate
 from phylohist.claims import extract
-from phylohist.loader import LoadError
-from phylohist.loader.research import Source
+from phylohist.loader import Corpus, LoadError
 from phylohist.loader.taxa import Tree
 from tests import support
 
@@ -18,13 +17,13 @@ claims_script = support.script('claims')
 _WHERE = 'in data/sources.yaml (1961_dehm.audit.coverage.{})'
 
 
-def _report(capsys, roots):
-  found = claims_script.report_inconsistencies(extract(roots), roots)
+def _report(capsys, records, roots):
+  found = claims_script.report_inconsistencies(records, extract(records, roots), roots)
   return found, capsys.readouterr().out
 
 
-def test_report_explains_both_row_forms(monkeypatch, capsys):
-  coverage = Source.get('1961_dehm')._data['audit']['coverage']
+def test_report_explains_both_row_forms(records, monkeypatch, capsys):
+  coverage = records.sources['1961_dehm']._data['audit']['coverage']
   roots = {
     '1961_dehm': [
       Tree(
@@ -36,6 +35,7 @@ def test_report_explains_both_row_forms(monkeypatch, capsys):
           ],
         },
         {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 0},
+        corpus=records,
       )
     ]
   }
@@ -46,7 +46,7 @@ def test_report_explains_both_row_forms(monkeypatch, capsys):
   # the tree beside a declared `all`.
   monkeypatch.setitem(coverage, 'synonymy', 'all')
 
-  found, out = _report(capsys, roots)
+  found, out = _report(capsys, records, roots)
   assert found >= 1
   # The source's review file is named when there is one.
   assert '1961_dehm  (notes/reviews/review_1961_dehm.md)' in out
@@ -59,7 +59,7 @@ def test_report_explains_both_row_forms(monkeypatch, capsys):
   assert 'to resolve: enter what the paper prints, or declare na or none' in out
 
 
-def test_report_lists_holotypes_that_differ_without_counting_them(capsys):
+def test_report_lists_holotypes_that_differ_without_counting_them(records, capsys):
   def tree(source, prefix, number):
     return Tree(
       {
@@ -72,13 +72,14 @@ def test_report_lists_holotypes_that_differ_without_counting_them(capsys):
         'position': 0,
         'file_prefixes': {prefix: 'uq-f'},
       },
+      corpus=records,
     )
 
   roots = {
     '2021_jell_sprinkle': [tree('2021_jell_sprinkle', 'UQF', 9)],
     '1941_whitehouse': [tree('1941_whitehouse', 'F.', 5404)],
   }
-  found, out = _report(capsys, roots)
+  found, out = _report(capsys, records, roots)
   # Per-source rows come first and are all that is counted.
   assert out.index(f'{found} sources with inconsistencies') < out.index(
     'holotypes that differ between sources:'
@@ -89,7 +90,7 @@ def test_report_lists_holotypes_that_differ_without_counting_them(capsys):
   )
 
 
-def test_report_prints_no_holotype_section_when_none_differ(capsys):
+def test_report_prints_no_holotype_section_when_none_differ(records, capsys):
   roots = {
     '1941_whitehouse': [
       Tree(
@@ -103,15 +104,16 @@ def test_report_prints_no_holotype_section_when_none_differ(capsys):
           'position': 0,
           'file_prefixes': {'F.': 'uq-f'},
         },
+        corpus=records,
       )
     ]
   }
-  _, out = _report(capsys, roots)
+  _, out = _report(capsys, records, roots)
   assert 'holotypes that differ' not in out
 
 
-def test_repositories_file_keeps_the_registry_fields_the_store_reads():
-  registry = claims_script._repositories()
+def test_repositories_file_keeps_the_registry_fields_the_store_reads(corpus):
+  registry = claims_script._repositories(corpus.records)
   assert list(registry) == sorted(registry)
   assert registry['uq-f']['prefixes'] == ['UQF', 'F']
   assert all(set(entry) <= set(claims_script._REPOSITORY_FIELDS) for entry in registry.values())
@@ -133,7 +135,7 @@ def _run(monkeypatch, caplog, tmp_path, flag, *, error):
     if error:
       log.error('an error')
     log.info('a note')
-    return {}, {}
+    return Corpus()
 
   monkeypatch.setattr(claims_script, 'load', fake_load)
   argv = ['--out', str(tmp_path), *flag]
@@ -173,7 +175,7 @@ def _prune_run(monkeypatch, tmp_path, *flags, error=False):
     log.warning('a warning')
     if error:
       log.error('an error')
-    return {}, {}
+    return Corpus()
 
   monkeypatch.setattr(claims_script, 'load', fake_load)
   expected = tmp_path / 'expected.txt'

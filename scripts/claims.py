@@ -42,7 +42,6 @@ from phylohist.claims import extract, manifest, names_index  # noqa: E402
 from phylohist.loader import LoadError, collecting, load  # noqa: E402
 from phylohist.loader.io import DATA_DIR  # noqa: E402
 from phylohist.loader.load import Collector  # noqa: E402
-from phylohist.loader.material import repository_registry  # noqa: E402
 from phylohist.regenerate import EXPECTED_WARNINGS, prune_expected  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -56,16 +55,16 @@ logger = logging.getLogger('phylohist.scripts.claims')
 _REPOSITORY_FIELDS = ('name', 'type', 'subject', 'within', 'prefixes', 'otherNames', 'place')
 
 
-def _repositories():
-  """The loaded registry for `claims/repositories.json`: the fields the
-  store reads, as present."""
+def _repositories(corpus):
+  """`data/repositories.yaml` as the load read it, for
+  `claims/repositories.json`: the fields the store reads, as present."""
   return {
     key: {field: entry[field] for field in _REPOSITORY_FIELDS if field in entry}
-    for key, entry in sorted(repository_registry().items())
+    for key, entry in sorted(corpus.repositories.items())
   }
 
 
-def write(out, claims_by_source, roots, full):
+def write(out, corpus, claims_by_source, full):
   out.mkdir(parents=True, exist_ok=True)
   if full:
     for stale in out.glob('*.jsonl'):
@@ -77,9 +76,9 @@ def write(out, claims_by_source, roots, full):
         fd.write('\n')
   if full:
     for name, content in (
-      ('manifest.json', manifest(claims_by_source, roots)),
-      ('names.json', names_index()),
-      ('repositories.json', _repositories()),
+      ('manifest.json', manifest(corpus, claims_by_source)),
+      ('names.json', names_index(corpus)),
+      ('repositories.json', _repositories(corpus)),
     ):
       with open(out / name, 'w') as fd:
         json.dump(content, fd, ensure_ascii=False, indent=1, sort_keys=True)
@@ -129,7 +128,7 @@ def _describe_holotype(holotype):
   return f'{holotype["source"]} {", ".join(numbers) or holotype.get("label", "(unnumbered)")}'
 
 
-def report_inconsistencies(claims_by_source, roots):
+def report_inconsistencies(corpus, claims_by_source, roots=None):
   """Explain each declared-versus-derived disagreement.
 
   The declared side is the audit block in data/sources.yaml; the derived
@@ -137,7 +136,7 @@ def report_inconsistencies(claims_by_source, roots):
   report names both, and lists the inferred claims so that "no claims
   derived" beside an obviously flagged node is not a mystery.
   """
-  report = manifest(claims_by_source, roots)
+  report = manifest(corpus, claims_by_source, roots)
   rows = report['sources']
   found = 0
   for source_key, entry in rows.items():
@@ -269,18 +268,18 @@ def main(argv):
   failure = None
   with _holding(args.errors_only), collecting() as logged:
     try:
-      _, roots = load(drafts=args.draft, tolerate=args.tolerate, data_dir=args.data)
+      corpus = load(drafts=args.draft, tolerate=args.tolerate, data_dir=args.data)
     except LoadError as exc:
       failure = exc
   if failure:
     logger.error(str(failure))
     return 1
   errors = len(logged.errors)
-  claims_by_source = extract(roots, sources=set(args.source or ()) or None)
+  claims_by_source = extract(corpus, sources=set(args.source or ()) or None)
   if args.inconsistencies:
-    return 1 if report_inconsistencies(claims_by_source, roots) else 0
+    return 1 if report_inconsistencies(corpus, claims_by_source) else 0
   full = args.source is None
-  write(out, claims_by_source, roots, full)
+  write(out, corpus, claims_by_source, full)
 
   total = sum(len(c) for c in claims_by_source.values())
   print(f'{total} claims from {len(claims_by_source)} sources -> {out}')

@@ -203,10 +203,13 @@ planner reached 41/47)
   block.
 - `loader`: the four loader modules move to `phylohist/loader/`, and
   `load()` counts the errors its checks log and fails with the count
-  (scripts exit 1; `--tolerate` on `scripts/claims.py` writes anyway).
+  (scripts exit 1; `--tolerate` on `scripts/claims.py` writes anyway);
+  the class-level registries, `Tree._new_index` and the repository
+  registry became a `Corpus` that `load()` builds and returns, handed
+  explicitly to everything that looks a record up.
 - Deliberately left: the loader subpackage (`phylohist/loader/`: the
-  checks still log and continue so one run reports everything,
-  class-level registries, its TODOs, no direct tests beyond the load
+  checks still log and continue so one run reports everything, its
+  TODOs, no direct tests beyond the load
   snapshot) is the earlier layer the demo does not showcase; `tools` renders through
   `render` as the surface's presentation step; no type checker; no
   retry around the runner's API call; `PHYLOHIST_DRAFTS` mode skips

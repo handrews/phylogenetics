@@ -3,10 +3,9 @@ synonymy entry: the schema, the loader checks, the claims, and the words
 and listings the tools say.
 
 Synthetic trees are built on the loaded test corpus under positions
-300 and up (`Tree` keeps class-level registries); the tool tests read a
-`ClaimStore` over a copy of `claims/` whose files for the sources named in
-`TREES` are replaced by the claims of those trees, since no data uses
-`type` yet.
+300 and up; the tool tests read a `ClaimStore` over a copy of `claims/`
+whose files for the sources named in `TREES` are replaced by the claims of
+those trees, since no data uses `type` yet.
 """
 
 import collections
@@ -204,7 +203,7 @@ def test_the_checks_can_all_fire_on_one_node():
   assert len(nomenclature.type_node(node, is_cited=False)) == 3
 
 
-def test_load_reports_the_type_checks_with_the_nodes_path(caplog):
+def test_load_reports_the_type_checks_with_the_nodes_path(records, caplog):
   data = {
     'trees': {
       'src1': {
@@ -230,7 +229,7 @@ def test_load_reports_the_type_checks_with_the_nodes_path(caplog):
     },
   }
   with caplog.at_level(logging.WARNING, logger='phylohist'):
-    _report_nomenclature(data)
+    _report_nomenclature(support.with_documents(records, data))
   errors = [r.getMessage() for r in caplog.records if r.levelno == logging.ERROR]
   assert any('src1 at 0/children/0: `type` names no taxon' in m for m in errors)
   assert any('src1 at 0/children/1: `type` beside a child marked `isType`' in m for m in errors)
@@ -253,7 +252,7 @@ def test_the_type_node_is_walked_as_a_cited_entry():
 
 
 def test_the_corpus_has_no_type_node_messages(corpus):
-  data = corpus.data
+  data = corpus.records.data
   found = []
   for opinion in data['trees'].values():
     for _, node, is_cited in walk_document(opinion):
@@ -261,18 +260,18 @@ def test_the_corpus_has_no_type_node_messages(corpus):
   assert found == []
 
 
-def test_a_species_level_name_cannot_carry_a_type(caplog):
+def test_a_species_level_name_cannot_carry_a_type(records, caplog):
   root = {'taxon': BIGSBYI, 'type': {'taxon': PRIORITY}}
   with caplog.at_level(logging.ERROR, logger='phylohist'):
-    Tree(root, {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 290})
+    Tree(root, {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 290}, corpus=records)
   [error] = [r.getMessage() for r in caplog.records if r.levelno == logging.ERROR]
   assert 'carries `type` but is a species-level name; its type is a specimen' in error
 
 
-def test_a_genus_or_family_may_carry_a_type(caplog):
+def test_a_genus_or_family_may_carry_a_type(records, caplog):
   root = {'taxon': FAMILY, 'type': {'taxon': GENUS}, 'children': [{'taxon': GENUS}]}
   with caplog.at_level(logging.ERROR, logger='phylohist'):
-    Tree(root, {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 291})
+    Tree(root, {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 291}, corpus=records)
   assert not [r for r in caplog.records if r.levelno >= logging.ERROR]
 
 
@@ -332,10 +331,9 @@ def test_check_draft_reports_the_type_checks(tmp_path):
 # -- claims -------------------------------------------------------------------
 
 
-def _claims(root, position, source):
-  return extract(
-    {source: [Tree(root, {'source_key': source, 'type': 'taxonomy', 'position': position})]}
-  )[source]
+def _claims(records, root, position, source):
+  metadata = {'source_key': source, 'type': 'taxonomy', 'position': position}
+  return extract(records, {source: [Tree(root, metadata, corpus=records)]})[source]
 
 
 def _by_path(claims):
@@ -364,13 +362,13 @@ def _plain(claim):
   return {k: v for k, v in claim.items() if k not in ('audit', 'treeNotes')}
 
 
-def test_a_type_that_is_also_a_child_is_listed_and_places_nothing():
+def test_a_type_that_is_also_a_child_is_listed_and_places_nothing(records):
   root = {
     'taxon': GENUS,
     'type': {**ORIGINAL, 'authority': {'pages': 12}},
     'children': [{'taxon': BIGSBYI}, {'taxon': PRIORITY}],
   }
-  at = _by_path(_claims(root, 300, '1961_dehm'))
+  at = _by_path(_claims(records, root, 300, '1961_dehm'))
   claims = at['300/type']
   assert not _of_kind(claims, 'placement')
   assert _one(claims, 'usage')['axis'] == 'type'
@@ -394,9 +392,9 @@ def test_a_type_that_is_also_a_child_is_listed_and_places_nothing():
   assert not _of_kind(at['300/children/0'], 'act')
 
 
-def test_a_type_that_is_no_child_is_a_placement_of_its_own():
+def test_a_type_that_is_no_child_is_a_placement_of_its_own(records):
   root = {'taxon': FAMILY, 'children': [{'taxon': GENUS, 'type': ORIGINAL, 'children': []}]}
-  at = _by_path(_claims(root, 301, '1985_jell_burrett_banks'))
+  at = _by_path(_claims(records, root, 301, '1985_jell_burrett_banks'))
   claims = at['301/children/0/type']
   assert _act(claims)['listed'] is False
   assert _act(claims)['typeOf'] == GENUS
@@ -412,20 +410,20 @@ def test_a_type_that_is_no_child_is_a_placement_of_its_own():
   assert genus['parent'] == FAMILY and 'via' not in genus
 
 
-def test_a_type_on_a_root_node_is_placed_under_the_root():
+def test_a_type_on_a_root_node_is_placed_under_the_root(records):
   root = {'taxon': GENUS, 'type': ORIGINAL, 'children': []}
-  claims = _by_path(_claims(root, 302, '1891_bell.f.j'))['302/type']
+  claims = _by_path(_claims(records, root, 302, '1891_bell.f.j'))['302/type']
   placement = _one(claims, 'placement')
   assert placement['parent'] == GENUS and placement['via'] == 'type'
 
 
-def test_a_type_on_a_cited_entry_places_nothing():
+def test_a_type_on_a_cited_entry_places_nothing(records):
   root = {
     'taxon': GENUS,
     'synonyms': [{'taxon': CYCLASTER, 'type': {'taxon': BIGSBYI, 'fixation': 'monotypy'}}],
     'children': [{'taxon': BIGSBYI}],
   }
-  at = _by_path(_claims(root, 303, '1927_jaekel'))
+  at = _by_path(_claims(records, root, 303, '1927_jaekel'))
   claims = at['303/synonyms/0/type']
   assert not _of_kind(claims, 'placement')
   act = _act(claims)
@@ -439,54 +437,51 @@ def test_a_type_on_a_cited_entry_places_nothing():
   assert _one(at['303/synonyms/0'], 'acceptance')['under'] == GENUS
 
 
-def test_a_type_under_a_non_taxonomy_places_nothing():
+def test_a_type_under_a_non_taxonomy_places_nothing(records):
   root = {'taxon': GENUS, 'type': ORIGINAL, 'children': []}
-  claims = extract(
-    {
-      '1927_jaekel': [
-        Tree(root, {'source_key': '1927_jaekel', 'type': 'cladogram', 'position': 304})
-      ]
-    }
-  )['1927_jaekel']
+  metadata = {'source_key': '1927_jaekel', 'type': 'cladogram', 'position': 304}
+  claims = extract(records, {'1927_jaekel': [Tree(root, metadata, corpus=records)]})['1927_jaekel']
   assert _act(claims)['listed'] is False
   assert not _of_kind(claims, 'placement')
 
 
-def test_a_type_names_a_record_not_a_rank_variant():
+def test_a_type_names_a_record_not_a_rank_variant(records):
   # "The same record": a child of another record does not list the type.
   root = {'taxon': GENUS, 'type': ORIGINAL, 'children': [{'taxon': PRIORITY}]}
-  assert _act(_by_path(_claims(root, 305, '1927_jaekel'))['305/type'])['listed'] is False
+  assert _act(_by_path(_claims(records, root, 305, '1927_jaekel'))['305/type'])['listed'] is False
 
 
-def test_fixed_by_rides_on_the_act_as_a_source_and_pages():
+def test_fixed_by_rides_on_the_act_as_a_source_and_pages(records):
   node = {
     'taxon': BIGSBYI,
     'fixation': 'subsequentDesignation',
     'fixedBy': {'source': '1899_bather', 'pages': [12, 13]},
   }
   root = {'taxon': GENUS, 'type': node, 'children': []}
-  act = _act(_by_path(_claims(root, 306, '1927_jaekel'))['306/type'])
+  act = _act(_by_path(_claims(records, root, 306, '1927_jaekel'))['306/type'])
   assert act['fixation'] == 'subsequentDesignation'
   assert act['fixedBy'] == '1899_bather' and act['fixedByPages'] == [12, 13]
   # Without pages there is no `fixedByPages`.
   node['fixedBy'] = {'source': '1899_bather'}
-  act = _act(_by_path(_claims({'taxon': GENUS, 'type': node}, 307, '1927_jaekel'))['307/type'])
+  act = _act(
+    _by_path(_claims(records, {'taxon': GENUS, 'type': node}, 307, '1927_jaekel'))['307/type']
+  )
   assert act['fixedBy'] == '1899_bather' and 'fixedByPages' not in act
 
 
-def test_an_inferred_type_statement_is_inferred_throughout():
+def test_an_inferred_type_statement_is_inferred_throughout(records):
   node = {**ORIGINAL, 'editorial': {'inferred': True, 'basis': 'one species listed'}}
   root = {'taxon': GENUS, 'type': node, 'children': []}
-  claims = _by_path(_claims(root, 308, '1927_jaekel'))['308/type']
+  claims = _by_path(_claims(records, root, 308, '1927_jaekel'))['308/type']
   act = _act(claims)
   assert act['inferred'] is True and 'inferredFields' not in act
   assert _one(claims, 'placement')['inferred'] is True
 
 
-def test_an_inferred_method_is_the_acts_alone():
+def test_an_inferred_method_is_the_acts_alone(records):
   node = {**ORIGINAL, 'editorial': {'inferred': ['fixation'], 'basis': 'one species listed'}}
   root = {'taxon': GENUS, 'type': node, 'children': []}
-  claims = _by_path(_claims(root, 309, '1927_jaekel'))['309/type']
+  claims = _by_path(_claims(records, root, 309, '1927_jaekel'))['309/type']
   act = _act(claims)
   assert act['inferredFields'] == ['fixation']
   assert 'inferred' not in act
@@ -494,27 +489,29 @@ def test_an_inferred_method_is_the_acts_alone():
   assert 'inferred' not in _one(claims, 'usage')
   # An inferred list that does not name the fixation leaves the act alone.
   node['editorial'] = {'inferred': ['taxon'], 'basis': 'x'}
-  claims = _by_path(_claims({'taxon': GENUS, 'type': node}, 310, '1927_jaekel'))['310/type']
+  claims = _by_path(_claims(records, {'taxon': GENUS, 'type': node}, 310, '1927_jaekel'))[
+    '310/type'
+  ]
   assert 'inferredFields' not in _act(claims)
   assert 'inferred' not in _act(claims)
   assert _one(claims, 'usage')['inferred'] is True
 
 
-def test_the_type_act_counts_as_a_type_designation():
+def test_the_type_act_counts_as_a_type_designation(records):
   from phylohist.claims import _coverage_kind
 
   root = {'taxon': GENUS, 'type': ORIGINAL, 'children': [{'taxon': BIGSBYI}]}
-  claims = _by_path(_claims(root, 311, '1927_jaekel'))['311/type']
+  claims = _by_path(_claims(records, root, 311, '1927_jaekel'))['311/type']
   assert _coverage_kind(_act(claims)) == 'types'
   assert _act(claims)['audit']['coverageKind'] == 'types'
 
 
-def test_an_is_type_childs_claim_is_what_it_was():
+def test_an_is_type_childs_claim_is_what_it_was(records):
   root = {
     'taxon': GENUS,
     'children': [{'taxon': BIGSBYI, 'isType': True}, {'taxon': PRIORITY}],
   }
-  at = _by_path(_claims(root, 312, '1927_jaekel'))
+  at = _by_path(_claims(records, root, 312, '1927_jaekel'))
   act = _act(at['312/children/0'])
   assert _plain(act) == {
     'kind': 'act',
@@ -530,15 +527,17 @@ def test_an_is_type_childs_claim_is_what_it_was():
   assert placement['position'] == 0 and 'via' not in placement
 
 
-def test_a_type_node_does_not_emit_a_second_act_from_is_type():
+def test_a_type_node_does_not_emit_a_second_act_from_is_type(records):
   node = {**ORIGINAL, 'isType': True}
-  claims = _by_path(_claims({'taxon': GENUS, 'type': node}, 313, '1927_jaekel'))['313/type']
+  claims = _by_path(_claims(records, {'taxon': GENUS, 'type': node}, 313, '1927_jaekel'))[
+    '313/type'
+  ]
   assert len([c for c in claims if c['kind'] == 'act']) == 1
 
 
-def test_a_type_has_no_acceptance_and_no_synonymy():
+def test_a_type_has_no_acceptance_and_no_synonymy(records):
   root = {'taxon': GENUS, 'type': ORIGINAL, 'children': []}
-  claims = _claims(root, 314, '1927_jaekel')
+  claims = _claims(records, root, 314, '1927_jaekel')
   assert not _of_kind(claims, 'acceptance')
   assert not _of_kind(claims, 'rejection')
 
@@ -664,7 +663,7 @@ def synthetic(corpus, tmp_path_factory):
   directory = tmp_path_factory.mktemp('claims')
   shutil.copytree(corpus.claims, directory, dirs_exist_ok=True)
   for source_key, (root, position) in TREES.items():
-    claims = _claims(root, position, source_key)
+    claims = _claims(corpus.records, root, position, source_key)
     (directory / f'{source_key}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
   return ClaimStore(directory)
 
@@ -1062,8 +1061,9 @@ def test_statements_of_the_type_include_the_act_line(synthetic):
   assert block['entries'][0].get('name') in (None, 'Cyclaster bigsbyi')
 
 
-def test_printed_forms_of_a_type_does_not_fail(synthetic):
+def test_printed_forms_of_a_type_does_not_fail(records, synthetic):
   claims = _claims(
+    records,
     {
       'taxon': GENUS,
       'type': {
@@ -1217,7 +1217,7 @@ def test_type_null_beside_a_child_marked_is_type_is_an_error():
   assert len(nomenclature.type_node(node, is_cited=True)) == 2
 
 
-def test_load_reports_a_null_type_with_the_nodes_path(caplog):
+def test_load_reports_a_null_type_with_the_nodes_path(records, caplog):
   data = {
     'trees': {
       'src1': {
@@ -1239,7 +1239,7 @@ def test_load_reports_a_null_type_with_the_nodes_path(caplog):
     },
   }
   with caplog.at_level(logging.WARNING, logger='phylohist'):
-    _report_nomenclature(data)
+    _report_nomenclature(support.with_documents(records, data))
   errors = [r.getMessage() for r in caplog.records if r.levelno == logging.ERROR]
   assert any(
     'src1 at 0/children/1: `type: null` beside a child marked `isType`' in m for m in errors
@@ -1250,18 +1250,20 @@ def test_load_reports_a_null_type_with_the_nodes_path(caplog):
   assert len(errors) == 2
 
 
-def test_a_species_level_name_cannot_carry_a_null_type_either(caplog):
+def test_a_species_level_name_cannot_carry_a_null_type_either(records, caplog):
   root = {'taxon': BIGSBYI, 'type': None}
   with caplog.at_level(logging.ERROR, logger='phylohist'):
-    Tree(root, {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 950})
+    Tree(root, {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 950}, corpus=records)
   [error] = [r.getMessage() for r in caplog.records if r.levelno == logging.ERROR]
   assert 'carries `type` but is a species-level name; its type is a specimen' in error
 
 
-def test_a_genus_may_carry_a_null_type_and_places_nothing(caplog):
+def test_a_genus_may_carry_a_null_type_and_places_nothing(records, caplog):
   root = {'taxon': FAMILY, 'children': [{'taxon': GENUS, 'type': None}]}
   with caplog.at_level(logging.ERROR, logger='phylohist'):
-    tree = Tree(root, {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 951})
+    tree = Tree(
+      root, {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 951}, corpus=records
+    )
   assert not [r for r in caplog.records if r.levelno >= logging.ERROR]
   [node] = [n for n in tree.walk() if n.taxon is not None and n.taxon.key == GENUS]
   assert node.related_node('type') is None
@@ -1331,8 +1333,9 @@ _BASE = {'source_key': '1961_dehm', 'type': 'taxonomy'}
 _TYPE = {'taxon': BIGSBYI}
 
 
-def _derived(node, position, file_unused=(), tree_type='taxonomy'):
-  root = Tree(node, {**_BASE, 'type': tree_type, 'position': position, 'file_unused': file_unused})
+def _derived(records, node, position, file_unused=(), tree_type='taxonomy'):
+  metadata = {**_BASE, 'type': tree_type, 'position': position, 'file_unused': file_unused}
+  root = Tree(node, metadata, corpus=records)
   return derived_coverage({'s': [root]})['s']['types']
 
 
@@ -1340,74 +1343,80 @@ def _family(*genera):
   return {'taxon': FAMILY, 'children': list(genera)}
 
 
-def test_types_coverage_declares_nothing_without_a_null():
-  assert _derived(_family({'taxon': GENUS, 'type': _TYPE}), 960) is None
-  assert _derived(_family({'taxon': GENUS}), 961) is None
-  assert _derived(_family({'taxon': GENUS, 'children': [{**_TYPE, 'isType': True}]}), 962) is None
+def test_types_coverage_declares_nothing_without_a_null(records):
+  assert _derived(records, _family({'taxon': GENUS, 'type': _TYPE}), 960) is None
+  assert _derived(records, _family({'taxon': GENUS}), 961) is None
+  assert (
+    _derived(records, _family({'taxon': GENUS, 'children': [{**_TYPE, 'isType': True}]}), 962)
+    is None
+  )
 
 
-def test_types_coverage_all_when_every_genus_states_a_type_or_a_null():
+def test_types_coverage_all_when_every_genus_states_a_type_or_a_null(records):
   family = _family(
     {'taxon': GENUS, 'type': _TYPE},
     {'taxon': 'cyclaster', 'type': None},
     {'taxon': 'carneyella', 'children': [{'taxon': PRIORITY, 'isType': True}]},
   )
-  assert _derived(family, 963) == 'all'
+  assert _derived(records, family, 963) == 'all'
 
 
-def test_types_coverage_partly_when_a_genus_has_none():
+def test_types_coverage_partly_when_a_genus_has_none(records):
   family = _family({'taxon': GENUS, 'type': None}, {'taxon': 'cyclaster', 'children': []})
-  assert _derived(family, 964) == 'partly'
+  assert _derived(records, family, 964) == 'partly'
   # A child that is not marked `isType` is no statement.
   family = _family(
     {'taxon': GENUS, 'type': None},
     {'taxon': 'cyclaster', 'children': [{'taxon': PRIORITY, 'isType': False}]},
   )
-  assert _derived(family, 965) == 'partly'
+  assert _derived(records, family, 965) == 'partly'
 
 
-def test_types_coverage_na_when_unused_lists_type():
+def test_types_coverage_na_when_unused_lists_type(records):
   family = _family({'taxon': GENUS, 'type': None})
-  assert _derived(family, 966, file_unused=('type',)) == 'na'
-  assert _derived(_family({'taxon': GENUS}), 967, file_unused=('type',)) == 'na'
-  assert _derived(_family({'taxon': GENUS}), 968, file_unused=('synonyms',)) is None
+  assert _derived(records, family, 966, file_unused=('type',)) == 'na'
+  assert _derived(records, _family({'taxon': GENUS}), 967, file_unused=('type',)) == 'na'
+  assert _derived(records, _family({'taxon': GENUS}), 968, file_unused=('synonyms',)) is None
 
 
-def test_a_family_without_a_type_is_not_counted():
+def test_a_family_without_a_type_is_not_counted(records):
   genus = {'taxon': GENUS, 'type': None}
-  assert _derived({'taxon': FAMILY, 'children': [genus]}, 969) == 'all'
+  assert _derived(records, {'taxon': FAMILY, 'children': [genus]}, 969) == 'all'
   # A family's own type, a node or a null, is written and not counted.
-  assert _derived({'taxon': FAMILY, 'type': {'taxon': GENUS}, 'children': [genus]}, 970) == 'all'
-  assert _derived({'taxon': FAMILY, 'type': None, 'children': []}, 971) is None
+  assert (
+    _derived(records, {'taxon': FAMILY, 'type': {'taxon': GENUS}, 'children': [genus]}, 970)
+    == 'all'
+  )
+  assert _derived(records, {'taxon': FAMILY, 'type': None, 'children': []}, 971) is None
 
 
-def test_a_placeholder_genus_is_not_counted():
+def test_a_placeholder_genus_is_not_counted(records):
   family = _family({'taxon': GENUS, 'type': None}, {'taxon': PLACEHOLDER})
-  assert _derived(family, 972) == 'all'
+  assert _derived(records, family, 972) == 'all'
 
 
-def test_a_subgenus_is_counted():
+def test_a_subgenus_is_counted(records):
   family = _family(
     {'taxon': 'carneyella', 'type': None, 'children': [{'taxon': SUBGENUS_KEY}]},
   )
-  assert _derived(family, 973) == 'partly'
+  assert _derived(records, family, 973) == 'partly'
   family = _family(
     {'taxon': 'carneyella', 'type': None, 'children': [{'taxon': SUBGENUS_KEY, 'type': _TYPE}]}
   )
-  assert _derived(family, 974) == 'all'
+  assert _derived(records, family, 974) == 'all'
 
 
-def test_a_species_is_not_counted_and_a_cladogram_contributes_nothing():
+def test_a_species_is_not_counted_and_a_cladogram_contributes_nothing(records):
   family = _family(
     {'taxon': GENUS, 'type': None, 'children': [{'taxon': BIGSBYI}, {'taxon': PRIORITY}]}
   )
-  assert _derived(family, 975) == 'all'
-  assert _derived(family, 976, tree_type='cladogram') is None
+  assert _derived(records, family, 975) == 'all'
+  assert _derived(records, family, 976, tree_type='cladogram') is None
 
 
-def test_a_null_type_is_an_absence_claim():
+def test_a_null_type_is_an_absence_claim(records):
   root = {'taxon': FAMILY, 'children': [{'taxon': GENUS, 'type': None}]}
-  claims = _claims(root, 977, '1961_dehm')
+  claims = _claims(records, root, 977, '1961_dehm')
   [absence] = _of_kind(claims, 'absence')
   assert absence['absenceOf'] == 'types'
   assert absence['fields'] == ['type']
@@ -1417,39 +1426,40 @@ def test_a_null_type_is_an_absence_claim():
   # The words of an absence say what the null says.
   assert ABSENCE_WORDS['types'] == 'no type stated'
   # A type node, or a node with no `type`, is no absence.
-  assert not _of_kind(_claims({'taxon': GENUS, 'type': _TYPE}, 978, '1961_dehm'), 'absence')
-  assert not _of_kind(_claims({'taxon': GENUS}, 979, '1961_dehm'), 'absence')
+  assert not _of_kind(
+    _claims(records, {'taxon': GENUS, 'type': _TYPE}, 978, '1961_dehm'), 'absence'
+  )
+  assert not _of_kind(_claims(records, {'taxon': GENUS}, 979, '1961_dehm'), 'absence')
 
 
-def test_a_null_type_is_the_last_of_a_nodes_absences():
+def test_a_null_type_is_the_last_of_a_nodes_absences(records):
   node = {'taxon': BIGSBYI, 'synonyms': None, 'material': None}
   claims = _claims(
-    {'taxon': GENUS, **{k: v for k, v in node.items() if k != 'taxon'}}, 980, '1961_dehm'
+    records, {'taxon': GENUS, **{k: v for k, v in node.items() if k != 'taxon'}}, 980, '1961_dehm'
   )
   assert [c['absenceOf'] for c in _of_kind(claims, 'absence')] == ['material', 'synonymy']
-  claims = _claims({'taxon': GENUS, 'synonyms': None, 'type': None}, 981, '1961_dehm')
+  claims = _claims(records, {'taxon': GENUS, 'synonyms': None, 'type': None}, 981, '1961_dehm')
   assert [c['absenceOf'] for c in _of_kind(claims, 'absence')] == ['synonymy', 'types']
 
 
-def _manifest_entry(values):
-  entry = manifest(extract(values), values)['sources']['1961_dehm']
+def _manifest_entry(records, values):
+  entry = manifest(records, extract(records, values), values)['sources']['1961_dehm']
   return entry
 
 
-def test_manifest_types_declared_beside_a_derived_value_is_inconsistent(monkeypatch):
-  from phylohist.loader.research import Source
-
-  coverage = Source.get('1961_dehm')._data['audit']['coverage']
+def test_manifest_types_declared_beside_a_derived_value_is_inconsistent(records, monkeypatch):
+  coverage = records.sources['1961_dehm']._data['audit']['coverage']
   monkeypatch.setitem(coverage, 'types', 'all')
   values = {
     '1961_dehm': [
       Tree(
         _family({'taxon': GENUS, 'type': None}, {'taxon': 'cyclaster'}),
         {**_BASE, 'position': 982},
+        corpus=records,
       )
     ]
   }
-  entry = _manifest_entry(values)
+  entry = _manifest_entry(records, values)
   assert entry['derivedCoverage']['types'] == 'partly'
   assert entry['coverage']['types'] == 'partly'
   assert (
@@ -1460,24 +1470,27 @@ def test_manifest_types_declared_beside_a_derived_value_is_inconsistent(monkeypa
 
 
 def test_manifest_types_keeps_the_claim_count_check_for_a_source_that_derives_nothing(
+  records,
   monkeypatch,
 ):
-  from phylohist.loader.research import Source
-
-  coverage = Source.get('1961_dehm')._data['audit']['coverage']
+  coverage = records.sources['1961_dehm']._data['audit']['coverage']
   # Declared, nothing written and no type claim: the check fires, as for `synonymy`.
   monkeypatch.setitem(coverage, 'types', 'all')
-  values = {'1961_dehm': [Tree(_family({'taxon': GENUS}), {**_BASE, 'position': 983})]}
-  entry = _manifest_entry(values)
+  values = {
+    '1961_dehm': [Tree(_family({'taxon': GENUS}), {**_BASE, 'position': 983}, corpus=records)]
+  }
+  entry = _manifest_entry(records, values)
   assert entry['derivedCoverage']['types'] is None
   assert entry['coverage']['types'] == 'all'
   assert 'types: declared all, no claims derived' in entry['inconsistencies']
   # Declared none beside a type node: the other direction.
   monkeypatch.setitem(coverage, 'types', 'none')
   values = {
-    '1961_dehm': [Tree(_family({'taxon': GENUS, 'type': _TYPE}), {**_BASE, 'position': 984})]
+    '1961_dehm': [
+      Tree(_family({'taxon': GENUS, 'type': _TYPE}), {**_BASE, 'position': 984}, corpus=records)
+    ]
   }
-  entry = _manifest_entry(values)
+  entry = _manifest_entry(records, values)
   assert any(r.startswith('types: declared none, ') for r in entry['inconsistencies'])
 
 
@@ -1506,7 +1519,7 @@ def nulled(corpus, tmp_path_factory):
   replaced by those of `NULLS`, its `types` coverage `partly`."""
   directory = tmp_path_factory.mktemp('claims_nulls')
   shutil.copytree(corpus.claims, directory, dirs_exist_ok=True)
-  claims = _claims(NULLS, 985, '1961_dehm')
+  claims = _claims(corpus.records, NULLS, 985, '1961_dehm')
   (directory / '1961_dehm.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
   store = ClaimStore(directory)
   store.sources['1961_dehm']['coverage'] = {
