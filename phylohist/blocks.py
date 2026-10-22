@@ -20,7 +20,7 @@ line per source: the chain of taxa from a higher taxon down to a record),
 import hashlib
 import json
 
-SPECIES_GROUP = ('species', 'subspecies', 'variety')
+from .ranks import fold_rank
 
 TYPES = ('classification', 'table', 'list', 'statement', 'chains', 'timeline')
 
@@ -68,7 +68,7 @@ _NEW_MARKS = {
 def new_mark(rank):
   """How a new taxon is marked when the source's own wording is not
   recorded: the rank's abbreviation, or "nov." for a rank without one."""
-  return _NEW_MARKS.get((rank or '').lower(), 'nov.')
+  return _NEW_MARKS.get(fold_rank(rank), 'nov.')
 
 
 def _claims_of(value):

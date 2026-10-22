@@ -82,7 +82,7 @@ def validate(plan):
         problems.append(f'{where}: {block["tool"]} has no parameter {name}')
         continue
       schema = spec['input_schema']['properties'].get(name) or {}
-      if not _type_ok(value, schema):
+      if not _value_ok(value, schema):
         problems.append(
           f'{where}: {block["tool"]} {name} must be {_type_words(schema)}, '
           f'not {value!r}; leave it out for the default'
@@ -104,7 +104,11 @@ _TYPES = {
 }
 
 
-def _type_ok(value, schema):
+def _value_ok(value, schema):
+  """Whether `value` meets the part of JSON Schema the specs use: `type`,
+  `enum`, and for a list `minItems`, `maxItems` and `items`."""
+  if 'enum' in schema and value not in schema['enum']:
+    return False
   kinds = schema.get('type')
   if kinds is None:
     return True
@@ -116,8 +120,11 @@ def _type_ok(value, schema):
     if isinstance(value, bool) and kind != 'boolean':
       continue
     if isinstance(value, expected):
-      if kind == 'array' and schema.get('items'):
-        return all(_type_ok(v, schema['items']) for v in value)
+      if kind == 'array':
+        if not schema.get('minItems', 0) <= len(value) <= schema.get('maxItems', len(value)):
+          return False
+        if schema.get('items'):
+          return all(_value_ok(v, schema['items']) for v in value)
       return True
   return False
 
@@ -134,6 +141,10 @@ def _type_words(schema):
     'null': 'omitted',
   }
   said = [words.get(k, k) for k in kinds if k != 'null']
+  if 'enum' in schema:
+    said = ['one of ' + ', '.join(str(v) for v in schema['enum'] if v is not None)]
+  elif 'array' in kinds and 'enum' in (schema.get('items') or {}):
+    said = ['a list of ' + ', '.join(schema['items']['enum'])]
   if schema.get('description'):
     return (' or '.join(said) or 'omitted') + f' ({schema["description"]})'
   return ' or '.join(said) or 'omitted'
@@ -157,7 +168,9 @@ def execute(plan):
     params = dict(spec.get('parameters') or {})
     try:
       result = tools.call(spec['tool'], params, style='json')
-    except (ValueError, KeyError, TypeError) as exc:
+    except ValueError as exc:
+      # A bad parameter is a block that cannot be built; anything else
+      # is a bug and propagates.
       errors.append({'block': i + 1, 'tool': spec['tool'], 'parameters': params, 'error': str(exc)})
       continue
     got = result if isinstance(result, list) else [result]

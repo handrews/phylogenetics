@@ -3,57 +3,17 @@ import logging
 from functools import cached_property, reduce
 
 from ..derivatives import kind_of
+from ..ranks import SPECIES_GROUP, fold_rank
 from .io import fail
 from .research import Author, Source
 
 logger = logging.getLogger(__name__)
-
-RANKS = {
-  'superdomain': 77,
-  'domain': 75,
-  'subdomain': 74,
-  'superkingdom': 67,
-  'kingdom': 65,
-  'subkingdom': 64,
-  'superphylum': 57,
-  'phylum': 55,
-  'subphylum': 54,
-  'infraphylum': 52,
-  'superclass': 47,
-  'class': 45,
-  'subclass': 43,
-  'infraclass': 42,
-  'parvclass': 41,
-  'superorder': 37,
-  'order': 35,
-  'suborder': 33,
-  'infraorder': 32,
-  'parvorder': 31,
-  'superfamily': 27,
-  'family': 25,
-  'subfamily': 23,
-  'genus': 15,
-  'subgenus': 13,
-  'species': 5,
-  'subspecies': 3,
-  'variety': 2,
-}
 
 NON_RANKS = {
   'Grade',
   'Branch',
   'Group',
   'Plesion',
-}
-
-RANK_GROUPS = {
-  'phylum': ('superphylum', 'phylum', 'subphylum', 'infraphylum'),
-  'class': ('superclass', 'class', 'subclass', 'infraclass', 'parvclass'),
-  'order': ('superorder', 'order', 'suborder', 'infraorder', 'parvorder'),
-  'family': ('superfamily', 'family', 'subfamily'),
-  'genus': ('genus', 'subgenus'),
-  'species': ('species', 'subspecies'),
-  'variety': ('variety',),
 }
 
 
@@ -312,7 +272,7 @@ class Taxon:
     if (
       self._data.get('homonym')
       or self._data.get('needsQualification')
-      or self.rank in ('species', 'subspecies', 'variety')
+      or fold_rank(self.rank) in SPECIES_GROUP
       # A mineral formation's name is keyed as a species is.
       or self.mineral
     ):
@@ -694,11 +654,8 @@ def section_spans(entries):
   return sections, errors, spans
 
 
-# The ranks of a species-level name, whose type is a specimen.
-_SPECIES_LEVEL_RANKS = frozenset({'species', 'subspecies', 'variety'})
-
 # The ranks whose names are combinations with a genus.
-_COMBINATION_RANKS = _SPECIES_LEVEL_RANKS | {'subgenus'}
+_COMBINATION_RANKS = (*SPECIES_GROUP, 'subgenus')
 
 
 class Tree:
@@ -808,13 +765,13 @@ class Tree:
 
     if self._taxon:
       # A new combination is an act on a species-group name.
-      if self._data.get('recombined') and self._taxon.rank.lower() not in _COMBINATION_RANKS:
+      if self._data.get('recombined') and fold_rank(self._taxon.rank) not in _COMBINATION_RANKS:
         logger.error(f'{self} is `recombined` but is not a species-group name')
 
-      if 'type' in self._data and self._taxon.rank.lower() in _SPECIES_LEVEL_RANKS:
+      if 'type' in self._data and fold_rank(self._taxon.rank) in SPECIES_GROUP:
         logger.error(f'{self} carries `type` but is a species-level name; its type is a specimen')
 
-      if children_null and self._taxon.rank.lower() in _SPECIES_LEVEL_RANKS:
+      if children_null and fold_rank(self._taxon.rank) in SPECIES_GROUP:
         logger.error(
           f'{self} carries `children: null` but is a species-level name; '
           'only a taxon above the species says the tree stops'

@@ -13,6 +13,7 @@ source, which year and which claim it rests on.
 import collections
 
 from .acts import SYNONYMY_ACTS
+from .ranks import fold_rank
 
 TAXONOMY = ('taxonomy',)
 
@@ -71,11 +72,10 @@ class Closure:
     return tuple(sorted(row.get('citation', {}).get('authors') or ()))
 
   def name(self, key):
-    row = self.names.get(key) or {}
-    return row.get('name') or f'[{key}]'
+    return self.store.name(key)
 
   def rank(self, key):
-    return (self.names.get(key) or {}).get('rank')
+    return self.store.rank(key)
 
   def variants(self, key):
     """Records of the same name at another rank or spelling, followed as
@@ -105,6 +105,13 @@ class Closure:
     if claim.get('via') == 'type':
       return claim['path'].removesuffix('/type')
     return claim['path'].rsplit('/children/', 1)[0]
+
+  @staticmethod
+  def owner_path(path):
+    """The node an entry on a related axis hangs off: `…/synonyms/2` and
+    `…/corrected` both hang off `…`."""
+    head, _, last = path.rpartition('/')
+    return head.rpartition('/')[0] if last.isdigit() else head
 
   def parent_claim(self, source_key, claim):
     """The placement claim of the node above, along the children axis (or,
@@ -356,7 +363,7 @@ class Closure:
     # are entered less consistently and are a later concern.
     ranks = {}
     for key in keys:
-      rank = (self.rank(key) or '').lower() or 'unranked'
+      rank = fold_rank(self.rank(key)) or 'unranked'
       for claim in self.store.by_subject.get(key, ()):
         if claim['kind'] != 'usage':
           continue

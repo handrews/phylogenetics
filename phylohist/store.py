@@ -16,10 +16,12 @@ import pathlib
 import re
 
 from . import blocks
+from .acts import ACT_KINDS
 from .claims import specimen_components
 from .closure import TAXONOMY, Closure, in_years
 from .loader.material import in_run
 from .names import fold
+from .ranks import GENUS_GROUP, SPECIES_GROUP, fold_rank, rank_order
 from .render import node_label, pages_text, render
 from .resolve import Resolver
 from .words import COVERAGE_WORDS, PLURAL_KINDS, Words, short_citation, years_span
@@ -116,14 +118,13 @@ _COVERAGE_OF_KIND = {
   'occurrences': 'occurrences',
   'illustrations': 'illustrations',
   'specimens': 'material',
-  'ranges': 'occurrences',
-  'range': 'occurrences',
   'acceptance': 'synonymy',
   'usage': 'skeleton',
   'placement': 'skeleton',
   'rejection': 'skeleton',
   'act': 'skeleton',
   'editorial': 'skeleton',
+  'absence': 'skeleton',
 }
 
 # The `statements` kinds that select material claims, by `materialKind`.
@@ -132,6 +133,21 @@ _MATERIAL_KINDS = {
   'illustrations': {'illustration'},
   'specimens': {'specimen'},
 }
+
+# The kinds `statements` selects by: the claim kinds a record's statements
+# carry (a `section` claim is about no taxon; `secondhand` is reserved and
+# never emitted), then the material kinds a reader asks for by name.
+STATEMENT_KINDS = (
+  'usage',
+  'placement',
+  'acceptance',
+  'act',
+  'rejection',
+  'material',
+  'editorial',
+  'absence',
+  *_MATERIAL_KINDS,
+)
 
 # The `absence` claims (by `absenceOf`) a `statements` kind also selects; an
 # explicit `absence` kind selects all of them.
@@ -165,49 +181,17 @@ _SPECIES_LEVEL_CONTENT = frozenset({'specimens', 'figures'})
 # A type is stated for a genus or subgenus: at another rank a node with no
 # type statement and no `types` absence leaves the row out.
 _GENUS_LEVEL_CONTENT = frozenset({'type'})
-_GENUS_LEVEL_RANKS = ('genus', 'subgenus')
 # The members of a taxon above the species level are its subtree (a genus's
 # species, which a source often lists none of); at species level (infraspecific
 # names are entered when present) and for a placeholder the row appears only
 # with children entered or the `skeleton` absence.
 _ABOVE_SPECIES_CONTENT = frozenset({'members'})
 
-_RANK_ORDER = (
-  'kingdom',
-  'phylum',
-  'subphylum',
-  'superclass',
-  'class',
-  'subclass',
-  'superorder',
-  'order',
-  'suborder',
-  'superfamily',
-  'family',
-  'subfamily',
-  'genus',
-  'subgenus',
-  'species',
-  'subspecies',
-)
-
-
-def _rank_order(rank):
-  rank = (rank or '').lower()
-  return _RANK_ORDER.index(rank) if rank in _RANK_ORDER else len(_RANK_ORDER)
-
 
 def _with_style(block, style):
   if style != 'json':
     block['rendered'] = render(block, style)
   return block
-
-
-def _owner_path(path):
-  """The node an entry on a related axis hangs off: `…/synonyms/2` and
-  `…/corrected` both hang off `…`."""
-  head, _, last = path.rpartition('/')
-  return head.rpartition('/')[0] if last.isdigit() else head
 
 
 class ClaimStore:
@@ -256,7 +240,7 @@ class ClaimStore:
     for claims in self.by_source.values():
       for claim in claims:
         if claim['kind'] == 'usage' and claim.get('axis') == 'or':
-          node_path = claim['path'].rsplit('/or/', 1)[0]
+          node_path = Closure.owner_path(claim['path'])
           self.or_usages[claim['subject']].append((claim['source'], node_path, claim))
           self.or_names_at[(claim['source'], node_path)].append(claim['subject'])
     # The open forms compared with a taxon (`cf.`, `aff.`): for an open
@@ -348,7 +332,7 @@ class ClaimStore:
     return (self.names.get(key) or {}).get('rank')
 
   def _rank_of(self, key):
-    return (self.rank(key) or '').lower()
+    return fold_rank(self.rank(key))
 
   def _node_claims(self, source_key, path):
     return self.at_path[source_key].get(path, [])
@@ -666,7 +650,7 @@ class ClaimStore:
       list(records), include_synonyms, include_variants, trees, years
     )
     rows = []
-    for key in sorted(found, key=lambda k: (_rank_order(self.rank(k)), self.name(k))):
+    for key in sorted(found, key=lambda k: (rank_order(self.rank(k)), self.name(k))):
       # One row per combination: a species recombined is a different name.
       by_label = {}
       for via in found[key]:
@@ -699,7 +683,9 @@ class ClaimStore:
           elif 'synonymOf' in via:
             # The senior name as that source combines it.
             claim = self.by_id[via['claim']]
-            senior = self.words.display(via['synonymOf'], via['source'], _owner_path(claim['path']))
+            senior = self.words.display(
+              via['synonymOf'], via['source'], Closure.owner_path(claim['path'])
+            )
             how.append(
               {
                 'value': f'{self.cite(via["source"])}: synonym of {senior}',
@@ -941,11 +927,11 @@ class ClaimStore:
       # name is also in the history the two share one line.
       node_paths = {c['path'] for c in uses}
       uses += [
-        dict(c, path=c['path'].rsplit('/or/', 1)[0])
+        dict(c, path=Closure.owner_path(c['path']))
         for c in claims
         if c['kind'] == 'usage'
         and c.get('axis') == 'or'
-        and c['path'].rsplit('/or/', 1)[0] not in node_paths
+        and Closure.owner_path(c['path']) not in node_paths
       ]
       if uses:
         for use in uses:
@@ -997,7 +983,7 @@ class ClaimStore:
           if c['kind'] != 'acceptance':
             continue
           under = c.get('under')
-          under_path = c['path'].rsplit('/', 2)[0]
+          under_path = Closure.owner_path(c['path'])
           words = self.words.display(c['subject'], source_key, c['path'])
           if c.get('lapsusFor'):
             intended = self.words.display(c['lapsusFor'], source_key, under_path)
@@ -1022,10 +1008,10 @@ class ClaimStore:
     deco = {}
     if m['papers']:
       sets = len(m['coauthorSets'])
-      years = years_span(self.source_year(m['sources'][0]), self.source_year(m['sources'][-1]))
+      span = years_span(self.source_year(m['sources'][0]), self.source_year(m['sources'][-1]))
       deco['measure'] = (
         f'{m["papers"]} paper{"s" if m["papers"] != 1 else ""}, '
-        f'{sets} co-author set{"s" if sets != 1 else ""}, {years}'
+        f'{sets} co-author set{"s" if sets != 1 else ""}, {span}'
       )
     ranks = self.words.rank_lines(m)
     if ranks:
@@ -1090,7 +1076,7 @@ class ClaimStore:
           {
             'key': record,
             'name': self.words.display(record, source_key, path),
-            'rank': None if self._rank_of(record) in blocks.SPECIES_GROUP else self.rank(record),
+            'rank': None if self._rank_of(record) in SPECIES_GROUP else self.rank(record),
           },
           entries,
           {'record': record, 'source': source_key, 'path': path},
@@ -1148,13 +1134,13 @@ class ClaimStore:
     species level only with children entered or a `skeleton` absence."""
     at = self._node_claims(source_key, path)
     coverage = self.sources[source_key].get('coverage') or {}
-    species_level = self._rank_of(record) in blocks.SPECIES_GROUP
+    species_level = self._rank_of(record) in SPECIES_GROUP
     # A placeholder (an unnamed or open genus) has no type to state.
-    genus_level = self._rank_of(record) in _GENUS_LEVEL_RANKS and not (
-      self.names.get(record) or {}
-    ).get('placeholder')
+    genus_level = self._rank_of(record) in GENUS_GROUP and not (self.names.get(record) or {}).get(
+      'placeholder'
+    )
     # A placeholder (an unnamed or open taxon) has no members of its own.
-    above_species = self._rank_of(record) not in blocks.SPECIES_GROUP and not (
+    above_species = self._rank_of(record) not in SPECIES_GROUP and not (
       self.names.get(record) or {}
     ).get('placeholder')
     rows = []
@@ -1200,6 +1186,10 @@ class ClaimStore:
   def statements(self, record, source=None, kind=None, act_kind=None, style='text'):
     """Every statement the corpus holds about one record, in publication
     order, each as a sentence."""
+    if kind is not None and kind not in STATEMENT_KINDS:
+      raise ValueError(f'kind must be one of {", ".join(STATEMENT_KINDS)}, not {kind!r}')
+    if act_kind is not None and act_kind not in ACT_KINDS:
+      raise ValueError(f'act_kind must be one of {", ".join(ACT_KINDS)}, not {act_kind!r}')
     raw = record
     record, source = self.resolver.key(record), self.resolver.source_key(source)
     claims = self.by_subject.get(record, [])
@@ -1519,9 +1509,11 @@ class ClaimStore:
     # Without a kind the question is whether the source's classification
     # is entered at all.
     kind = kind or 'skeleton'
+    if kind not in COVERAGE_WORDS:
+      raise ValueError(f'kind must be one of {", ".join(COVERAGE_WORDS)}, not {kind!r}')
     source = self.resolver.source_key(source)
     row = self.sources.get(source)
-    what = COVERAGE_WORDS.get(kind, kind)
+    what = COVERAGE_WORDS[kind]
     if row is None:
       fields = {'source': source, 'known': False, 'what': what, 'kind': kind}
       block = blocks.statement(
@@ -1593,7 +1585,7 @@ class ClaimStore:
       {
         'key': record,
         'name': self.words.display(record),
-        'rank': None if self._rank_of(record) in blocks.SPECIES_GROUP else self.rank(record),
+        'rank': None if self._rank_of(record) in SPECIES_GROUP else self.rank(record),
       },
       entries,
       {'record': record, 'source': source},

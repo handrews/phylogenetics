@@ -60,6 +60,32 @@ def test_every_act_kind_is_offered(store):
   assert f'act_kind ({", ".join(ACT_KINDS)})' in PLANNER_PROMPT.read_text()
 
 
+def test_every_statement_kind_is_offered(store):
+  # The kinds `statements` selects by are the claim kinds a record's
+  # statements carry plus the material kinds asked for by name; the tool
+  # description, the planner prompt and the gap mapping list the same.
+  from phylohist.store import _COVERAGE_OF_KIND, _MATERIAL_KINDS, STATEMENT_KINDS
+
+  assert {c['kind'] for c in store.by_id.values()} - {'section'} <= set(STATEMENT_KINDS)
+  assert set(_COVERAGE_OF_KIND) == set(STATEMENT_KINDS)
+  claim_kinds = [k for k in STATEMENT_KINDS if k not in _MATERIAL_KINDS]
+  listed = f'({", ".join(claim_kinds)}; or {", ".join(_MATERIAL_KINDS)} for one kind of material)'
+  assert listed in tools.TOOL_DESCRIPTIONS['statements']
+  assert listed in PLANNER_PROMPT.read_text()
+
+
+@pytest.mark.parametrize(
+  ('command', 'dest'), [('statements', 'kind'), ('statements', 'act_kind'), ('gap', 'kind')]
+)
+def test_cli_choices_are_the_specified_enums(command, dest):
+  subparsers = next(
+    a for a in cli.build_parser()._actions if isinstance(a, argparse._SubParsersAction)
+  )
+  action = next(a for a in subparsers.choices[command]._actions if a.dest == dest)
+  enum = SPECS[command]['input_schema']['properties'][dest]['enum']
+  assert list(action.choices) == [v for v in enum if v is not None]
+
+
 def test_style_is_the_callers_not_a_parameter():
   block = tools.call('history', {'record': 'rhenopyrgidae'}, style='json')
   assert 'rendered' not in block
@@ -70,6 +96,8 @@ def test_years_through_call_filter_as_a_tuple_does():
   by_call = tools.call('history', {'record': 'rhenopyrgidae', 'years': [1990, 2000]}, style='json')
   direct = tools.history('rhenopyrgidae', years=(1990, 2000), style='json')
   assert by_call['blockId'] == direct['blockId']
+  assert by_call['parameters'] == direct['parameters']
+  assert list(by_call['parameters']['years']) == [1990, 2000]
   assert {e['year'] for e in by_call['entries']} <= set(range(1990, 2001))
 
 
@@ -100,6 +128,10 @@ def test_mcp_lookups_and_gap_kind(mcp):
   assert mcp.source_coverage('Dehm 1961')['known']
   with pytest.raises(ValueError, match='kind must be one of'):
     mcp.gap(source='Dehm 1961', kind='bogus')
+  with pytest.raises(ValueError, match='kind must be one of'):
+    mcp.statements(record='rhenopyrgidae', source='Dehm 1961', kind='specimen')
+  with pytest.raises(ValueError, match=r'years must be \[first, last\]'):
+    mcp.history(record='rhenopyrgidae', years=[1990])
 
 
 def test_mcp_plan_tool(mcp):

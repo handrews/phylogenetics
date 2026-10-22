@@ -8,7 +8,8 @@ CLI, the MCP server, the eval runner and plans all go through `call`,
 which applies the caller's style and names the tool on each block.
 """
 
-from .acts import ACT_KINDS
+from .acts import ACT_KINDS as ACT_KINDS
+from .store import STATEMENT_KINDS as STATEMENT_KINDS
 from .store import ClaimStore as ClaimStore
 from .words import COVERAGE_WORDS as COVERAGE_WORDS
 from .words import short_citation as short_citation
@@ -408,8 +409,8 @@ TOOL_SPECS = [
     {
       'record': {'type': 'string'},
       'source': _SOURCE,
-      'kind': {'type': ['string', 'null']},
-      'act_kind': {'type': ['string', 'null']},
+      'kind': {'type': ['string', 'null'], 'enum': [*STATEMENT_KINDS, None]},
+      'act_kind': {'type': ['string', 'null'], 'enum': [*ACT_KINDS, None]},
     },
     ['record'],
   ),
@@ -501,6 +502,10 @@ def call(name, arguments, style='text'):
   none."""
   arguments = dict(arguments)
   if 'years' in arguments and arguments['years'] is not None:
+    # The MCP surface does not pass through `plan.validate`, so the span's
+    # shape is checked here for every caller.
+    if len(arguments['years']) != 2:
+      raise ValueError(f'years must be [first, last], not {list(arguments["years"])!r}')
     arguments['years'] = tuple(arguments['years'])
   if name not in LOOKUPS:
     arguments['style'] = style

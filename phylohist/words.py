@@ -12,8 +12,10 @@ import re
 
 from . import blocks
 from .acts import RELATED_ACTS
+from .closure import Closure
 from .derivatives import BY_FIELD
 from .names import fold, fold_forms, key_stem
+from .ranks import GENUS_GROUP, SPECIES_GROUP, fold_rank
 
 # The community's words for what the table records.
 COVERAGE_WORDS = {
@@ -212,7 +214,7 @@ class Words:
   def label(self, key, source=None, path=None):
     rank = self.store.rank(key)
     name = self.display(key, source, path)
-    return f'{name} ({rank})' if rank and rank.lower() not in blocks.SPECIES_GROUP else name
+    return f'{name} ({rank})' if rank and fold_rank(rank) not in SPECIES_GROUP else name
 
   def combination(self, source_key, path):
     """The name a source uses at a node: for a species-group record the
@@ -263,7 +265,7 @@ class Words:
           genus = parents[0]
           subgenus = parents[1] if len(parents) > 1 else None
         elif not self.store.names[key].get('placeholder'):
-          owner = self.combination(source_key, path.rsplit('/', 2)[0])
+          owner = self.combination(source_key, Closure.owner_path(path))
           genus, subgenus = owner.get('genus'), owner.get('subgenus')
         # A cited open form with no combination given reads in the words of
         # its own record ("Agelacrinitidae sp."), never under the owner's genus.
@@ -273,13 +275,13 @@ class Words:
           f'{self.store.name(genus)} ({self.store.name(key)})' if genus else self.store.name(key)
         )
       elif (
-        rank in blocks.SPECIES_GROUP
+        rank in SPECIES_GROUP
         and not self.store.names[key].get('name')
         and self.store.names[key].get('designation')
       ):
         # An unnamed species designated as printed ("Rhenopyrgus sp. indet. 1").
         label = self.store.names[key]['designation']
-      elif rank in blocks.SPECIES_GROUP:
+      elif rank in SPECIES_GROUP:
         parts = []
         if genus:
           genus_name = self.store.name(genus)
@@ -327,9 +329,9 @@ class Words:
     parents = (act or {}).get('parents') or []
     if parents:
       return parents[0], parents[1] if len(parents) > 1 else None
-    if self.store._rank_of(key) not in blocks.SPECIES_GROUP:
+    if self.store._rank_of(key) not in SPECIES_GROUP:
       return None, None
-    owner = self.combination(source_key, path.rsplit('/', 1)[0])
+    owner = self.combination(source_key, Closure.owner_path(path))
     owner_rank = self.store._rank_of(owner.get('record'))
     if owner_rank == 'genus':
       return owner['record'], None
@@ -379,13 +381,13 @@ class Words:
     the name otherwise."""
     if (self.store.names.get(key) or {}).get('placeholder') and self.store._rank_of(
       key
-    ) not in blocks.SPECIES_GROUP:
+    ) not in SPECIES_GROUP:
       return self.placeholder_words(key, source, path)
     if source is not None and path is not None:
       label = self.combination(source, path).get('label')
       if label and self.combination(source, path).get('record') == key:
         return label
-    if self.store._rank_of(key) in blocks.SPECIES_GROUP:
+    if self.store._rank_of(key) in SPECIES_GROUP:
       combos = self.combinations(key)
       if combos:
         return ' / '.join(c['label'] for c in combos)
@@ -499,7 +501,7 @@ class Words:
     if row.get('placeholder'):
       return self.placeholder_words(key)
     author = self.authority_words(key)
-    if self.store._rank_of(key) in blocks.SPECIES_GROUP:
+    if self.store._rank_of(key) in SPECIES_GROUP:
       original = self.original_combination(key)
       if asked:
         shown = self._asked_label(key, asked)
@@ -559,9 +561,9 @@ class Words:
     """What a type is called by the rank of the name that bears it: the
     type species of a genus, the type genus of a family."""
     rank = self.store._rank_of(key)
-    if rank in blocks.SPECIES_GROUP:
+    if rank in SPECIES_GROUP:
       return 'type species'
-    return 'type genus' if rank in ('genus', 'subgenus') else 'type'
+    return 'type genus' if rank in GENUS_GROUP else 'type'
 
   def fixation_words(self, claim, note=True):
     """How a type was fixed, as a `type` claim says it: the method, the work
@@ -581,7 +583,7 @@ class Words:
     <taxon>" and how it was fixed."""
     words = self.type_noun(claim['subject'])
     if claim.get('typeOf'):
-      owner_path = claim['path'].rsplit('/', 1)[0]
+      owner_path = Closure.owner_path(claim['path'])
       words += f' of {self.display(claim["typeOf"], claim["source"], owner_path)}'
       if method := self.fixation_words(claim):
         words += f', {method}'
@@ -591,9 +593,9 @@ class Words:
     """The mark on a listing line for a record the source names only as
     the type of a taxon (a `via: type` placement), by the record's rank."""
     rank = self.store._rank_of(key)
-    if rank in blocks.SPECIES_GROUP:
+    if rank in SPECIES_GROUP:
       return '(named as the type species; not listed among the species)'
-    if rank in ('genus', 'subgenus'):
+    if rank in GENUS_GROUP:
       return '(named as the type genus; not listed among the genera)'
     return '(named as the type; not listed)'
 
@@ -630,7 +632,7 @@ class Words:
       verb = 'accepts' if claim['stance'] == 'accepts' else 'rejects'
       cite = self.store.cite_work(claim, 'citesSource')
       cited = f' ({cite})' if cite else ''
-      owner_path = claim['path'].rsplit('/', 2)[0]
+      owner_path = Closure.owner_path(claim['path'])
       if claim.get('lapsusFor'):
         intended = self.display(claim['lapsusFor'], claim['source'], owner_path)
         return f'cites {target}{cited} in error for {intended}'
@@ -866,7 +868,7 @@ class Words:
       return f'{kind.words} {self.display(base)}'
     if names[base].get('of') == key and (kind := BY_FIELD.get(names[base].get('kind'))):
       return f'{kind.reverse} {self.display(base)}'
-    same_rank = (self.store.rank(key) or '').lower() == (self.store.rank(base) or '').lower()
+    same_rank = self.store._rank_of(key) == self.store._rank_of(base)
     if same_rank:
       return f'same name variant of {self.display(base)}'
     return f'same name at another rank as {self.display(base)}'

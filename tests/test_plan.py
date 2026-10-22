@@ -6,7 +6,9 @@ what could not be built. Every eval question's expected blocks are a
 plan that executes and shows its strings (the claims test covers that).
 """
 
-from phylohist import plan
+import pytest
+
+from phylohist import plan, tools
 from phylohist.render import render_composition
 
 
@@ -70,6 +72,39 @@ def test_execute_builds_the_blocks_in_order():
   assert text.startswith('Rhenopyrgidae under Cyathocystidae; all years\n\n')
   assert 'first Guensburg & Sprinkle 1994, last Grigo 2000' in text
   assert text.index('first Guensburg') < text.index('Placements by source')
+
+
+def test_validate_checks_enums_and_list_lengths():
+  blocks = [
+    {'tool': 'history', 'parameters': {'record': 'rhenopyrgus', 'years': [1990]}},
+    {'tool': 'history', 'parameters': {'record': 'rhenopyrgus', 'trees': ['bogus']}},
+    {'tool': 'gap', 'parameters': {'source': 'Dehm 1961', 'kind': 'bogus'}},
+    {'tool': 'statements', 'parameters': {'record': 'rhenopyrgus', 'kind': 'specimen'}},
+    {
+      'tool': 'statements',
+      'parameters': {'record': 'rhenopyrgus', 'kind': None, 'act_kind': 'type'},
+    },
+  ]
+  problems = plan.validate({'header': 'x', 'blocks': blocks})
+  assert [p.split(':')[0] for p in problems] == ['block 1', 'block 2', 'block 3', 'block 4']
+  assert problems[0].endswith('not [1990]; leave it out for the default')
+  assert problems[1].startswith('block 2: history trees must be a list of taxonomy, cladogram')
+  assert problems[2].startswith('block 3: gap kind must be one of skeleton, newTaxa,')
+  assert problems[3].startswith('block 4: statements kind must be one of usage, placement,')
+  # A plan that fails validation never reaches the tools.
+  outcome = plan.execute({'header': 'x', 'blocks': blocks[:1]})
+  assert outcome['composition'] is None
+  assert [e['block'] for e in outcome['errors']] == [None]
+
+
+def test_execute_lets_a_bug_through(monkeypatch):
+  # Only a ValueError is a block that cannot be built; anything else is a bug.
+  def broken(**kwargs):
+    raise KeyError('bug')
+
+  monkeypatch.setitem(tools.TOOLS, 'history', broken)
+  with pytest.raises(KeyError):
+    plan.execute({'header': 'x', 'blocks': [{'tool': 'history', 'parameters': {'record': 'x'}}]})
 
 
 def test_execute_reports_what_it_cannot_build():

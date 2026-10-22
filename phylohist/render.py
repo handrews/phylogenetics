@@ -17,6 +17,7 @@ on every cell, so both can be drawn from the model as it is).
 import json
 
 from . import blocks
+from .ranks import SPECIES_GROUP, fold_rank
 
 STYLES = {}
 
@@ -66,7 +67,7 @@ def node_label(node):
   if node.get('or'):
     name += ' or ' + ' or '.join(node['or'])
   rank_word = node.get('rankWord')
-  if rank_word and rank_word.lower() not in blocks.SPECIES_GROUP and not node.get('placeholder'):
+  if rank_word and fold_rank(rank_word) not in SPECIES_GROUP and not node.get('placeholder'):
     name = f'{rank_word} {name}'
   if (node.get('flags') or {}).get('new') and not node.get('compared'):
     mark = node.get('newMark') or blocks.new_mark(rank_word)
