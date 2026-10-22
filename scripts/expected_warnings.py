@@ -21,43 +21,26 @@ import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
-from phylohist.loader import LoadError, load  # noqa: E402
+from phylohist.loader import LoadError, collecting, load  # noqa: E402
 from phylohist.regenerate import EXPECTED_WARNINGS, prune_expected  # noqa: E402
 
 # Under the package logger, whose handler prints the record; __name__ is __main__ here.
 logger = logging.getLogger('phylohist.scripts.expected_warnings')
 
 
-class _Collecting(logging.Handler):
-  """Keeps the WARNING and ERROR records of the load."""
-
-  def __init__(self):
-    super().__init__(level=logging.WARNING)
-    self.records = []
-
-  def emit(self, record):
-    self.records.append(record)
-
-
 def produced():
   """``(warnings, errors)``: the WARNING messages the load of `data/` logs,
   and how many errors it logs (or raises for)."""
-  handler = _Collecting()
-  package = logging.getLogger('phylohist')
-  package.addHandler(handler)
   failure = None
-  try:
-    load(tolerate=True)
-  except LoadError as error:
-    failure = error
-  finally:
-    package.removeHandler(handler)
+  with collecting() as logged:
+    try:
+      load(tolerate=True)
+    except LoadError as error:
+      failure = error
   if failure:
     logger.error(str(failure))
     return set(), 1
-  warnings = {r.getMessage() for r in handler.records if r.levelno == logging.WARNING}
-  errors = sum(1 for r in handler.records if r.levelno >= logging.ERROR)
-  return warnings, errors
+  return logged.warnings, len(logged.errors)
 
 
 def main(argv):

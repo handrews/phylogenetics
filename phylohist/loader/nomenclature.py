@@ -4,7 +4,8 @@ queried role, the `type` node, and `pages: null`.
 
 Pure functions over a raw node dict, in the way of `material.py`: the
 loader (`load.py`) runs them over the corpus's own documents and
-`scripts/check_draft.py` over an unloaded draft. Each returns a list of
+`scripts/check_draft.py` over an unloaded draft, both from the tables in
+`checks.py`. Each returns a list of
 ``(level, message)`` pairs, ``level`` being ``'error'`` or ``'warning'``;
 the caller adds the source key and, for a per-node check, the node's path.
 A check that needs a taxon record takes `taxa`, a callable from a taxon
@@ -16,7 +17,7 @@ for a key with no record; `record_lookup` builds one from the raw
 import collections
 
 from ..derivatives import kind_of
-from ..ranks import SPECIES_GROUP, fold_rank
+from ..ranks import SPECIES_GROUP, fold_rank, implied_rank
 from .material import walk_document
 
 # The two signs of an open form's link, as the node fields naming the taxon
@@ -61,7 +62,7 @@ def _raw_rank(records, key):
   if 'rank' in data:
     return data['rank'] or 'Unranked'
   name = data.get('name')
-  return None if name is None else 'species' if name.islower() else 'genus'
+  return None if name is None else implied_rank(name)
 
 
 def _raw_mineral(records, key):

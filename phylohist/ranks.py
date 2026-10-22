@@ -62,3 +62,9 @@ def rank_order(rank):
   """Where `rank` sorts: its place in `RANKS`, after all of them for a rank
   outside them or none."""
   return _ORDER.get(fold_rank(rank), len(RANKS))
+
+
+def implied_rank(name):
+  """The rank a record or node that gives none takes from its name: a
+  species when the name is lower-case, else a genus."""
+  return 'species' if name.islower() else 'genus'

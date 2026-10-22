@@ -42,7 +42,9 @@ def test_an_ordered_strict_subset_is_an_alias(key, caplog):
   assert alias.alias_of == TARGET
   assert alias.author_keys_string == key.partition('_')[2]
   assert [a.key for a in alias.authors] == key.partition('_')[2].split('_')
-  assert (alias.year, alias.disambiguator, alias.title) == (1985, '', Source.get(TARGET).title)
+  assert (alias.year, alias.disambiguator) == (1985, '')
+  assert alias.author_keys == tuple(key.partition('_')[2].split('_'))
+  assert alias.citation_fields == Source.get(TARGET).citation_fields
 
 
 @pytest.mark.parametrize(

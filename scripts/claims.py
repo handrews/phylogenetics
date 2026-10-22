@@ -39,8 +39,9 @@ import sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
 from phylohist.claims import extract, manifest, names_index  # noqa: E402
-from phylohist.loader import LoadError, counting_errors, load  # noqa: E402
+from phylohist.loader import LoadError, collecting, load  # noqa: E402
 from phylohist.loader.io import DATA_DIR  # noqa: E402
+from phylohist.loader.load import Collector  # noqa: E402
 from phylohist.loader.material import repository_registry  # noqa: E402
 from phylohist.regenerate import EXPECTED_WARNINGS, prune_expected  # noqa: E402
 
@@ -198,46 +199,18 @@ def report_inconsistencies(claims_by_source, roots):
   return found
 
 
-class _Held(logging.Handler):
-  """Keeps the records of WARNING and above instead of letting them print;
-  `replay` prints the errors alone when there are any, else every one.
-  (Not `release`: `logging.Handler` uses that name for its lock.)"""
-
-  def __init__(self):
-    super().__init__(level=logging.WARNING)
-    self.records = []
-
-  def emit(self, record):
-    self.records.append(record)
-
-  def replay(self, logger):
-    errors = [r for r in self.records if r.levelno >= logging.ERROR]
-    for record in errors or self.records:
-      logger.callHandlers(record)
-
-
-@contextlib.contextmanager
-def _attached(handler):
-  """A block whose records the package logger also hands to `handler`."""
-  package = logging.getLogger('phylohist')
-  package.addHandler(handler)
-  try:
-    yield handler
-  finally:
-    package.removeHandler(handler)
-
-
 @contextlib.contextmanager
 def _holding(enabled):
   """A block whose log records are shown, on leaving it, as `--errors-only`
-  asks. The package logger prints its own records (every INFO line too)
-  and passes them to the root; while it holds, only the holder sees them."""
+  asks: the errors alone when there are any, else every warning. The
+  package logger prints its own records (every INFO line too) and passes
+  them to the root; while it holds, only the holder sees them."""
   if not enabled:
     yield
     return
   package = logging.getLogger('phylohist')
   printing = package.handlers[:]
-  held = _Held()
+  held = Collector()
   package.handlers[:] = [held]
   package.propagate = False
   try:
@@ -245,7 +218,8 @@ def _holding(enabled):
   finally:
     package.handlers[:] = printing
     package.propagate = True
-    held.replay(package)
+    for record in held.errors or held.records:
+      package.callHandlers(record)
 
 
 def main(argv):
@@ -293,7 +267,7 @@ def main(argv):
   # The package logger prints its own records (phylohist/__init__.py); a
   # root handler would print each of them a second time.
   failure = None
-  with _holding(args.errors_only), counting_errors() as errors, _attached(_Held()) as logged:
+  with _holding(args.errors_only), collecting() as logged:
     try:
       _, roots = load(drafts=args.draft, tolerate=args.tolerate, data_dir=args.data)
     except LoadError as exc:
@@ -301,6 +275,7 @@ def main(argv):
   if failure:
     logger.error(str(failure))
     return 1
+  errors = len(logged.errors)
   claims_by_source = extract(roots, sources=set(args.source or ()) or None)
   if args.inconsistencies:
     return 1 if report_inconsistencies(claims_by_source, roots) else 0
@@ -315,18 +290,17 @@ def main(argv):
     if args.data.resolve() == DATA_DIR.resolve():
       expected = EXPECTED_WARNINGS
   if expected is not None:
-    if errors.count:
+    if errors:
       logger.warning(f'{expected.name} is left as it is: the load logged errors')
     else:
-      produced = {r.getMessage() for r in logged.records if r.levelno == logging.WARNING}
-      stale, new = prune_expected(produced, expected)
+      stale, new = prune_expected(logged.warnings, expected)
       print(f'{len(stale)} stale expected warnings removed from {expected.name}')
       if new:
         print(
           f'{len(new)} new warnings not expected; add them with scripts/expected_warnings.py --add'
         )
-  if errors.count:
-    logger.error(f'{errors.count} integrity errors while loading (tolerated)')
+  if errors:
+    logger.error(f'{errors} integrity errors while loading (tolerated)')
     return 1
   return 0
 

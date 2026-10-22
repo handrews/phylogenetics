@@ -1,4 +1,3 @@
-import calendar
 import logging
 from functools import cached_property
 
@@ -93,6 +92,39 @@ class Author:
     return True
 
 
+def check_unregistered_author(author_string, where=None):
+  """A capitalised author string is the convention for an author with no
+  record; when its key form is registered, the record was meant, and the
+  warning names `where` the string is."""
+  if Author.get(author_string.lower()):
+    at = f' at {where}' if where is not None else ''
+    logger.warning(
+      f'Unregistered author "{author_string}"{at} matches registered key "{author_string.lower()}"',
+    )
+
+
+def resolve_authors(keys, missing, *, credit=False, where=None):
+  """The `Author` records `keys` name, as a tuple in their order. A key with
+  no record ends the load (`io.fail`) with the message and the reason
+  `missing(key)` gives, each kind of record wording its own. A printed
+  credit (`credit`: an authority's `auth`, `in` or `attributedTo`) may also
+  print `et al.`, which names no one, and the surname of an author with no
+  record (none has given names yet), warned of at `where` when its key
+  form is registered."""
+  authors = []
+  for key in keys:
+    if credit and key == 'et al.':
+      continue
+    if credit and key.lower() != key:
+      check_unregistered_author(key, where)
+      authors.append(Author({'surname': key}))
+    elif (author := Author.get(key)) is None:
+      fail(*missing(key))
+    else:
+      authors.append(author)
+  return tuple(authors)
+
+
 class Publication:
   _publications = {}
 
@@ -124,28 +156,14 @@ class Publication:
 class PublicationDate:
   def __init__(self, pub_date):
     self._year = pub_date['year']
-    self._month = pub_date.get('month')
-    self._day = pub_date.get('day')
-
-  def __str__(self):
-    string = self._year
-    if self._month:
-      string = f'{calendar.month_name[self._month]} {string}'
-      if self._day:
-        string = f'{self._day} {string}'
-    return string
 
   @property
   def year(self):
     return self._year
 
-  @property
-  def month(self):
-    return self._month
 
-  @property
-  def day(self):
-    return self._day
+# The bibliographic fields a source record writes, in citation order.
+CITATION_FIELDS = ('title', 'journal', 'book', 'series', 'volume', 'number', 'pages', 'plates')
 
 
 class Source:
@@ -164,17 +182,11 @@ class Source:
   def get(cls, source_key):
     return cls._sources.get(source_key)
 
-  @classmethod
-  def count(cls):
-    return len(cls._sources)
-
   def __init__(self, source_data, source_key):
     self._data = source_data
     self._key = source_key
 
     self._author_keys = tuple(self._data['authors'])
-    self._authors = []
-    self._editors = []
 
     if self.in_preparation:
       self._pub_date = None
@@ -195,23 +207,18 @@ class Source:
         # TODO: figure out something better for disambiguation letters.
         expected_key += source_key[4]
 
-    for author_key in self._author_keys:
-      if (author := Author.get(author_key)) is None:
-        fail(
-          f'Author "{author_key}" not found for source_data {source_key}!',
-          f'source {source_key} names author "{author_key}", which has no record',
-        )
-      self._authors.append(author)
-      expected_key += '_' + author.key
-    self._authors = tuple(self._authors)
+    self._authors = resolve_authors(
+      self._author_keys,
+      lambda key: (
+        f'Author "{key}" not found for source_data {source_key}!',
+        f'source {source_key} names author "{key}", which has no record',
+      ),
+    )
+    expected_key += ''.join(f'_{author.key}' for author in self._authors)
 
     for editor_key in source_data.get('editors', ()):
-      if (editor := Author.get(editor_key)) is None:
-        logger.error(
-          f'Editor "{editor_key}" not found for source_data {source_key}!',
-        )
-      self._editors.append(editor)
-    self._editors = tuple(self._editors)
+      if Author.get(editor_key) is None:
+        logger.error(f'Editor "{editor_key}" not found for source_data {source_key}!')
 
     if source_key != expected_key:
       logger.error(f'Expected "{expected_key}" but found "{source_key}"')
@@ -258,12 +265,16 @@ class Source:
     # The declared audit block; a source without one is unaudited.
     return self._data.get('audit') or {'state': 'unaudited'}
 
-  @cached_property
-  def title(self):
-    try:
-      return self._data['title']
-    except KeyError:
-      return Publication.get(self._data['book']).name
+  @property
+  def author_keys(self):
+    return self._author_keys
+
+  @property
+  def citation_fields(self):
+    """The record's bibliographic fields as written, for `claims.citation`:
+    the title as printed, `journal` or `book` as a publication key, and
+    the series, volume, number, pages and plates it gives."""
+    return {field: self._data[field] for field in CITATION_FIELDS if field in self._data}
 
 
 class SourceAlias(Source):
@@ -285,10 +296,9 @@ class SourceAlias(Source):
       return
     self._target = target
 
-    # Everything but the authors is the target's.
+    # Everything but the authors is the target's: the alias shares its
+    # record, so what a `Source` reads from `_data` answers for it too.
     self._data = target._data
-    self._pub_date = target._pub_date
-    self._editors = target._editors
 
     prefix, _, authors = source_key.partition('_')
     if prefix != target_key.partition('_')[0]:
@@ -297,20 +307,18 @@ class SourceAlias(Source):
       )
 
     self._author_keys = tuple(authors.split('_'))
-    self._authors = []
-    for author_key in self._author_keys:
-      if (author := Author.get(author_key)) is None:
-        fail(
-          f'Author "{author_key}" not found for source alias {source_key}!',
-          f'source alias {source_key} names author "{author_key}", which has no record',
-        )
-      self._authors.append(author)
-    self._authors = tuple(self._authors)
+    self._authors = resolve_authors(
+      self._author_keys,
+      lambda key: (
+        f'Author "{key}" not found for source alias {source_key}!',
+        f'source alias {source_key} names author "{key}", which has no record',
+      ),
+    )
 
     # A strict subset of the target's authors, in the target's order.
-    remaining = iter(target._author_keys)
+    remaining = iter(target.author_keys)
     in_order = all(key in remaining for key in self._author_keys)
-    if not in_order or len(self._author_keys) >= len(target._author_keys):
+    if not in_order or len(self._author_keys) >= len(target.author_keys):
       logger.error(
         f'Alias "{source_key}" authors must be a strict subset of '
         f'"{target_key}" authors, in their order',
@@ -323,3 +331,7 @@ class SourceAlias(Source):
   @property
   def alias_of(self):
     return self._target.key
+
+  @property
+  def year(self):
+    return self._target.year

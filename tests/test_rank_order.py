@@ -38,7 +38,6 @@ def registries(monkeypatch):
   """Private copies of the class-level registries a `Tree` writes to, with
   the named records the trees place."""
   monkeypatch.setattr(Tree, '_new_index', collections.defaultdict(set))
-  monkeypatch.setattr(Tree, '_type_index', {k: set() for k in Tree._type_index})
   monkeypatch.setattr(Taxon, '_taxa', dict(Taxon._taxa))
   Taxon.add({'name': 'Testidae', 'rank': 'Family', **EARLIER}, FAMILY)
   Taxon.add({'name': 'Testum', 'rank': 'genus', **EARLIER}, GENUS)
