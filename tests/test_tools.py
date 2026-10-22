@@ -768,6 +768,17 @@ def test_followed_acts_and_sensu_words(store):
   assert words.claim_words(usage) == 'cites the name sensu stricto'
   node = {'key': 'crinoidea', 'name': 'Crinoidea', 'rank': 'Class', 'sensu': 'stricto'}
   assert node_label(node).endswith('Crinoidea (s. s.)')
+  # Every `sensu` the schema allows has a mark; Bather 1900 prints "sensu
+  # extenso" on Blastoidea, and the listing used to fail on it.
+  from phylohist import blocks
+  from phylohist.loader import io
+
+  schema = io.load_yaml(io.SCHEMA_PATH)
+  assert set(blocks.SENSU_MARKS) == set(
+    schema['$defs']['uncertaintyFields']['properties']['sensu']['enum']
+  )
+  node = {'key': 'blastoidea', 'name': 'Blastoidea', 'rank': 'Class', 'sensu': 'extenso'}
+  assert node_label(node).endswith('Blastoidea (s. ext.)')
 
 
 def test_material_words(store):

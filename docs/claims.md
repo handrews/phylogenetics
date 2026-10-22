@@ -84,8 +84,8 @@ every `synonyms`, `non`, `removed`, `parents`, `or` and `type` entry. Fields add
   node's claims belong to the open form, so the compared taxon's
   statements do not include them; `history` lists the form under its own
   name, marked `compared`.
-- `sensu`: `stricto`, `lato` or `emendato` when the node prints the
-  qualifier.
+- `sensu`: `stricto`, `lato`, `emendato` or `extenso` when the node prints
+  the qualifier.
 - `designation`: the phrase the node prints for an open taxon, when it
   declares one (an `openTaxon` node only; the loader rejects it beside
   `taxon` or `mineralTaxon`).
